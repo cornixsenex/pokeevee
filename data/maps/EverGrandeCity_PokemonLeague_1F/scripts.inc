@@ -47,29 +47,22 @@ EverGrandeCity_PokemonLeague_1F_Pokemart_229624: @ 8229624
 
 EverGrandeCity_PokemonLeague_1F_EventScript_229636:: @ 8229636
 	lockall
-	goto_if_set FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_2296BB
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_0, 11
-	call_if_ge EverGrandeCity_PokemonLeague_1F_EventScript_229698
-	compare VAR_TEMP_0, 8
-	call_if_le EverGrandeCity_PokemonLeague_1F_EventScript_2296A3
-	message EverGrandeCity_PokemonLeague_1F_Text_2296E8
-	waitmessage
-	delay 120
-	goto_if_unset FLAG_BADGE06_GET, EverGrandeCity_PokemonLeague_1F_EventScript_2296AE
-	closemessage
-	applymovement 3, EverGrandeCity_PokemonLeague_1F_Movement_2296E2
-	applymovement 4, EverGrandeCity_PokemonLeague_1F_Movement_2296E5
-	waitmovement 0
-	delay 10
-	playfanfare MUS_ME_BACHI
-	message EverGrandeCity_PokemonLeague_1F_Text_2297EF
-	waitmessage
-	waitfanfare
-	closemessage
-	moveobjectoffscreen 3
-	moveobjectoffscreen 4
-	setflag FLAG_ENTERED_ELITE_FOUR
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 190
+	setvar VAR_0x8006, 98
+	callnative LoadFieldPic
+	copyvar VAR_0x8008, VAR_RESULT
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 32
+	setvar VAR_0x8006, 112
+	callnative LoadFieldPic
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
+	setvar VAR_0x8004, 0
+	copyvar VAR_0x8005, VAR_0x8008
+	callnative DestroyFieldPic
+	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 0xFF
+	callnative DestroyFieldPic
 	releaseall
 	end
 
