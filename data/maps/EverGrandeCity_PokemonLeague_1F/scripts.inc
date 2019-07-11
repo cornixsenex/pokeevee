@@ -47,24 +47,25 @@ EverGrandeCity_PokemonLeague_1F_Pokemart_229624: @ 8229624
 
 EverGrandeCity_PokemonLeague_1F_EventScript_229636:: @ 8229636
 	lockall
-	setvar VAR_0x8004, 0
-	setvar VAR_0x8005, 190
-	setvar VAR_0x8006, 98
-	callnative LoadFieldPic
-	copyvar VAR_0x8008, VAR_RESULT
-	setvar VAR_0x8004, 1
-	setvar VAR_0x8005, 32
-	setvar VAR_0x8006, 112
-	callnative LoadFieldPic
-	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
-	setvar VAR_0x8004, 0
-	copyvar VAR_0x8005, VAR_0x8008
-	callnative DestroyFieldPic
-	setvar VAR_0x8004, 1
-	setvar VAR_0x8005, 0xFF
-	callnative DestroyFieldPic
+	call FieldPicExample_2pics
+	call FieldPicExample_1pic
 	releaseall
 	end
+	
+@ Some arguments can be omitted
+FieldPicExample_1pic:
+	load_field_pic 0, 190, 98
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
+	destroy_field_pic 0
+	return
+	
+FieldPicExample_2pics:
+	load_field_pic 0, 190, 98, VAR_0x8008
+	load_field_pic 1, 32, 112, VAR_0x8009
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
+	destroy_field_pic 0, VAR_0x8008
+	destroy_field_pic 1, VAR_0x8009
+	return
 
 EverGrandeCity_PokemonLeague_1F_EventScript_229698:: @ 8229698
 	applymovement EVENT_OBJ_ID_PLAYER, EverGrandeCity_PokemonLeague_1F_Movement_2296DA

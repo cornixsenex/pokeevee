@@ -47,9 +47,9 @@ void LoadFieldPic(void)
     struct SpritePalette palSheet;
     struct SpriteTemplate spriteTempl;
     struct OamData oam = {0};
-    u32 id = gSpecialVar_0x8004;
-    s16 x = (s16)gSpecialVar_0x8005;
-    s16 y = (s16)gSpecialVar_0x8006;
+    u32 id = VarGet(gSpecialVar_0x8004);
+    s16 x = (s16)(VarGet(gSpecialVar_0x8005));
+    s16 y = (s16)(VarGet(gSpecialVar_0x8006));
 
     gSpecialVar_Result = 0xFF;
 
@@ -96,7 +96,7 @@ void LoadFieldPic(void)
 
 void HideFieldPic(void)
 {
-    u32 spriteId = gSpecialVar_0x8004;
+    u32 spriteId = VarGet(gSpecialVar_0x8004);
 
     if (spriteId == 0xFF)
         gSprites[sLastPicId].invisible = TRUE;
@@ -106,7 +106,7 @@ void HideFieldPic(void)
 
 void ShowFieldPic(void)
 {
-    u32 spriteId = gSpecialVar_0x8004;
+    u32 spriteId = VarGet(gSpecialVar_0x8004);
 
     if (spriteId == 0xFF)
         gSprites[sLastPicId].invisible = FALSE;
@@ -116,8 +116,8 @@ void ShowFieldPic(void)
 
 void ChangeFieldPicFrame(void)
 {
-    u32 spriteId = gSpecialVar_0x8004;
-    u32 num = gSpecialVar_0x8005;
+    u32 num = VarGet(gSpecialVar_0x8004);
+    u32 spriteId = VarGet(gSpecialVar_0x8005);
 
     if (spriteId == 0xFF)
         StartSpriteAnim(&gSprites[sLastPicId], num);
@@ -127,8 +127,8 @@ void ChangeFieldPicFrame(void)
 
 void DestroyFieldPic(void)
 {
-    u32 id = gSpecialVar_0x8004;
-    u32 spriteId = gSpecialVar_0x8005;
+    u32 id = VarGet(gSpecialVar_0x8004);
+    u32 spriteId = VarGet(gSpecialVar_0x8005);
 
     if (spriteId == 0xFF)
         DestroySprite(&gSprites[sLastPicId]);
