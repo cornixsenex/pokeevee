@@ -15,6 +15,7 @@ struct Pic
     SpriteCallback callback;
 };
 
+// These are example entries.
 static const union AnimCmd sAnimCmdLoop[] =
 {
     ANIMCMD_FRAME(0, 50),
@@ -32,6 +33,26 @@ static const u16 sPic1Pal[] = INCBIN_U16("graphics/pokemon/altaria/normal.gbapal
 
 static const u32 sPic2Gfx[] = INCBIN_U32("graphics/battle_anims/sprites/duck.4bpp.lz");
 static const u16 sPic2Pal[] = INCBIN_U16("graphics/battle_anims/sprites/duck.gbapal");
+
+/* And this is an example script.
+
+
+FieldPicExample_2pics:
+	load_field_pic 0, 190, 98, VAR_0x8008
+	load_field_pic 1, 32, 112, VAR_0x8009
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
+	destroy_field_pic 0, VAR_0x8008
+	destroy_field_pic 1, VAR_0x8009
+	return
+
+    @ Some arguments can be omitted
+FieldPicExample_1pic:
+	load_field_pic 0, 190, 98
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
+	destroy_field_pic 0
+	return
+
+*/
 
 static const struct Pic sPics[] =
 {

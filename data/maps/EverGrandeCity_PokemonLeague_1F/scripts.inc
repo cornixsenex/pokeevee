@@ -47,25 +47,31 @@ EverGrandeCity_PokemonLeague_1F_Pokemart_229624: @ 8229624
 
 EverGrandeCity_PokemonLeague_1F_EventScript_229636:: @ 8229636
 	lockall
-	call FieldPicExample_2pics
-	call FieldPicExample_1pic
+	goto_if_set FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_2296BB
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 11
+	call_if_ge EverGrandeCity_PokemonLeague_1F_EventScript_229698
+	compare VAR_TEMP_0, 8
+	call_if_le EverGrandeCity_PokemonLeague_1F_EventScript_2296A3
+	message EverGrandeCity_PokemonLeague_1F_Text_2296E8
+	waitmessage
+	delay 120
+	goto_if_unset FLAG_BADGE06_GET, EverGrandeCity_PokemonLeague_1F_EventScript_2296AE
+	closemessage
+	applymovement 3, EverGrandeCity_PokemonLeague_1F_Movement_2296E2
+	applymovement 4, EverGrandeCity_PokemonLeague_1F_Movement_2296E5
+	waitmovement 0
+	delay 10
+	playfanfare MUS_ME_BACHI
+	message EverGrandeCity_PokemonLeague_1F_Text_2297EF
+	waitmessage
+	waitfanfare
+	closemessage
+	moveobjectoffscreen 3
+	moveobjectoffscreen 4
+	setflag FLAG_ENTERED_ELITE_FOUR
 	releaseall
 	end
-	
-@ Some arguments can be omitted
-FieldPicExample_1pic:
-	load_field_pic 0, 190, 98
-	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
-	destroy_field_pic 0
-	return
-	
-FieldPicExample_2pics:
-	load_field_pic 0, 190, 98, VAR_0x8008
-	load_field_pic 1, 32, 112, VAR_0x8009
-	msgbox EverGrandeCity_PokemonLeague_1F_Text_229787, MSGBOX_DEFAULT
-	destroy_field_pic 0, VAR_0x8008
-	destroy_field_pic 1, VAR_0x8009
-	return
 
 EverGrandeCity_PokemonLeague_1F_EventScript_229698:: @ 8229698
 	applymovement EVENT_OBJ_ID_PLAYER, EverGrandeCity_PokemonLeague_1F_Movement_2296DA
