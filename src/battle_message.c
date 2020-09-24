@@ -2587,6 +2587,8 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 else
                 {
                     toCpy = gTrainers[gTrainerBattleOpponent_A].trainerName;
+                    if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_RIVAL_NAME)
+                        toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
                 }
                 break;
             case B_TXT_LINK_PLAYER_NAME: // link player name
@@ -2741,6 +2743,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
             case B_TXT_PARTNER_NAME:
                 GetFrontierTrainerName(text, gPartnerTrainerId);
                 toCpy = text;
+                break;
+            case B_TXT_RIVAL_NAME:
+                toCpy = gSaveBlock2Ptr->rivalName;
                 break;
             }
 
