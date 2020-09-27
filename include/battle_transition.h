@@ -1,6 +1,8 @@
 #ifndef GUARD_BATTLE_TRANSITION_H
 #define GUARD_BATTLE_TRANSITION_H
 
+#include "constants/battle_transition.h"
+
 void TestBattleTransition(u8 transitionId);
 void BattleTransition_StartOnField(u8 transitionId);
 void BattleTransition_Start(u8 transitionId);
@@ -11,16 +13,7 @@ void GetBg0TilesDst(u16 **tilemap, u16 **tileset);
 
 extern const struct SpritePalette gSpritePalette_Pokeball;
 
-enum // TRANSITION_MUGSHOT
-{
-    MUGSHOT_MAY,
-    MUGSHOT_SIDNEY,
-    MUGSHOT_PHOEBE,
-    MUGSHOT_GLACIA,
-    MUGSHOT_DRAKE,
-    MUGSHOT_CHAMPION,
-    MUGSHOTS_COUNT
-};
+
 
 // credits for the names go to Dyskinesia, Tetrable and Farore
 // names are naturally subject to change
