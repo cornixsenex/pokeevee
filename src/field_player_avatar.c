@@ -2288,7 +2288,6 @@ static void Task_WaitStartSurfing(u8 taskId)
 
     if (ObjectEventClearHeldMovementIfFinished(playerObjEvent))
     {
-        ObjectEventSetGraphicsId(playerObjEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_FLAG_SURFING));
         ObjectEventSetHeldMovement(playerObjEvent, GetFaceDirectionMovementAction(playerObjEvent->facingDirection));
         PlayerAvatarTransition_Surfing(playerObjEvent);
         gPlayerAvatar.preventStep = FALSE;
