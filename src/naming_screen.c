@@ -27,6 +27,7 @@
 #include "overworld.h"
 #include "constants/event_objects.h"
 #include "constants/rgb.h"
+#include "random.h"
 
 enum {
     INPUT_NONE,
@@ -308,6 +309,54 @@ static const u8 sPageColumnXPos[KBPAGE_COUNT * KBCOL_COUNT] = {
     0, 12, 24, 56, 68, 80, 92, 123, // KEYBOARD_LETTERS_LOWER
     0, 12, 24, 56, 68, 80, 92, 123, // KEYBOARD_LETTERS_UPPER
     0, 22, 44, 66, 88, 110          // KEYBOARD_SYMBOLS
+};
+
+static const u8 *const gMalePresetNames[] = {
+    gText_ExpandedPlaceholder_Brendan,
+    gText_DefaultNameStu,
+    gText_DefaultNameMilton,
+    gText_DefaultNameTom,
+    gText_DefaultNameKenny,
+    gText_DefaultNameReid,
+    gText_DefaultNameJude,
+    gText_DefaultNameJaxson,
+    gText_DefaultNameEaston,
+    gText_DefaultNameWalker,
+    gText_DefaultNameTeru,
+    gText_DefaultNameJohnny,
+    gText_DefaultNameBrett,
+    gText_DefaultNameSeth,
+    gText_DefaultNameTerry,
+    gText_DefaultNameCasey,
+    gText_DefaultNameDarren,
+    gText_DefaultNameLandon,
+    gText_DefaultNameCollin,
+    gText_DefaultNameStanley,
+    gText_DefaultNameQuincy
+};
+
+static const u8 *const gFemalePresetNames[] = {
+    gText_ExpandedPlaceholder_May,
+    gText_DefaultNameKimmy,
+    gText_DefaultNameTiara,
+    gText_DefaultNameBella,
+    gText_DefaultNameJayla,
+    gText_DefaultNameAllie,
+    gText_DefaultNameLianna,
+    gText_DefaultNameSara,
+    gText_DefaultNameMonica,
+    gText_DefaultNameCamila,
+    gText_DefaultNameAubree,
+    gText_DefaultNameRuthie,
+    gText_DefaultNameHazel,
+    gText_DefaultNameNadine,
+    gText_DefaultNameTanja,
+    gText_DefaultNameYasmin,
+    gText_DefaultNameNicola,
+    gText_DefaultNameLillie,
+    gText_DefaultNameTerra,
+    gText_DefaultNameLucy,
+    gText_DefaultNameHalie
 };
 
 // forward declarations
@@ -2097,9 +2146,10 @@ static void Debug_NamingScreenNickname(void)
 
 void NameRival(void)
 {
-    static const u8 *const sDefaultRivalNames[2] = {gText_ExpandedPlaceholder_Brendan, gText_ExpandedPlaceholder_May};
-    
-    StringCopy(gSaveBlock2Ptr->rivalName, sDefaultRivalNames[gSaveBlock2Ptr->playerGender]);    //set default rival name
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        StringCopy(gSaveBlock2Ptr->rivalName, gFemalePresetNames[Random() % NELEMS(gFemalePresetNames)]); // choose a random name from gFemalePresetNames for a male player's rival
+    else
+        StringCopy(gSaveBlock2Ptr->rivalName, gMalePresetNames[Random() % NELEMS(gMalePresetNames)]); // choose a random name from gMalePresetNames for a female player's rival
     DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock2Ptr->rivalName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
