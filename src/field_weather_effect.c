@@ -1352,6 +1352,7 @@ void FogHorizontal_InitAll(void)
         FogHorizontal_Main();
 }
 
+#include "constants/rgb.h"
 void FogHorizontal_Main(void)
 {
     gWeatherPtr->fogHScrollPosX = (gSpriteCoordOffsetX - gWeatherPtr->fogHScrollOffset) & 0xFF;
@@ -1375,6 +1376,7 @@ void FogHorizontal_Main(void)
         {
             gWeatherPtr->weatherGfxLoaded = TRUE;
             gWeatherPtr->initStep++;
+            ApplyFogBlend(0, RGB_WHITEALPHA);
         }
         break;
     }
