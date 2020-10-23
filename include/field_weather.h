@@ -212,4 +212,6 @@ void DoCurrentWeather(void);
 void UpdateWeatherPerDay(u16 increment);
 void ResumePausedWeather(void);
 
+void ApplyFogBlend(u8 blendCoeff, u16 blendColor);
+
 #endif // GUARD_WEATHER_H
