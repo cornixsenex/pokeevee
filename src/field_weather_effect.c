@@ -12,6 +12,8 @@
 #include "task.h"
 #include "trig.h"
 #include "gpu_regs.h"
+#include "constants/rgb.h"
+#include "palette.h"
 
 // EWRAM
 EWRAM_DATA static u8 gCurrentAbnormalWeather = 0;
@@ -1352,7 +1354,6 @@ void FogHorizontal_InitAll(void)
         FogHorizontal_Main();
 }
 
-#include "constants/rgb.h"
 void FogHorizontal_Main(void)
 {
     gWeatherPtr->fogHScrollPosX = (gSpriteCoordOffsetX - gWeatherPtr->fogHScrollOffset) & 0xFF;
@@ -1366,17 +1367,20 @@ void FogHorizontal_Main(void)
     case 0:
         CreateFogHorizontalSprites();
         if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
+        {
             Weather_SetTargetBlendCoeffs(12, 8, 3);
+        }
         else
+        {
             Weather_SetTargetBlendCoeffs(4, 16, 0);
-        gWeatherPtr->initStep++;
+        }
+        gWeatherPtr->initStep++;        
         break;
     case 1:
         if (Weather_UpdateBlend())
         {
             gWeatherPtr->weatherGfxLoaded = TRUE;
             gWeatherPtr->initStep++;
-            ApplyFogBlend(0, RGB_WHITEALPHA);
         }
         break;
     }

@@ -53,7 +53,7 @@ static void UpdateWeatherGammaShift(void);
 static void ApplyGammaShift(u8 startPalIndex, u8 numPalettes, s8 gammaIndex);
 static void ApplyGammaShiftWithBlend(u8 startPalIndex, u8 numPalettes, s8 gammaIndex, u8 blendCoeff, u16 blendColor);
 static void ApplyDroughtGammaShiftWithBlend(s8 gammaIndex, u8 blendCoeff, u16 blendColor);
-//static void ApplyFogBlend(u8 blendCoeff, u16 blendColor);
+static void ApplyFogBlend(u8 blendCoeff, u16 blendColor);
 static bool8 FadeInScreen_RainShowShade(void);
 static bool8 FadeInScreen_Drought(void);
 static bool8 FadeInScreen_FogHorizontal(void);
@@ -201,6 +201,11 @@ void SetNextWeather(u8 weather)
     gWeatherPtr->weatherChangeComplete = FALSE;
     gWeatherPtr->nextWeather = weather;
     gWeatherPtr->finishStep = 0;
+
+    if (gWeatherPtr->nextWeather == WEATHER_FOG_HORIZONTAL)
+        BlendPalettesGradually(0x3FF0000, 12, 3, 8, RGB_WHITEALPHA, 0, 0);  //10 sprite palettes
+    else if (gWeatherPtr->nextWeather != gWeatherPtr->currWeather && gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
+        BlendPalettesGradually(0x3FF0000, 12, 8, 0, RGB_WHITEALPHA, 0, 0);  //10 sprite palettes
 }
 
 void SetCurrentAndNextWeather(u8 weather)
@@ -642,7 +647,7 @@ static void ApplyDroughtGammaShiftWithBlend(s8 gammaIndex, u8 blendCoeff, u16 bl
     }
 }
 
-void ApplyFogBlend(u8 blendCoeff, u16 blendColor)
+static void ApplyFogBlend(u8 blendCoeff, u16 blendColor)
 {
     struct RGBColor color;
     u8 rBlend;
