@@ -202,10 +202,20 @@ void SetNextWeather(u8 weather)
     gWeatherPtr->nextWeather = weather;
     gWeatherPtr->finishStep = 0;
 
-    if (gWeatherPtr->nextWeather == WEATHER_FOG_HORIZONTAL)
-        BlendPalettesGradually(0x3FF0000, 12, 3, 8, RGB_WHITEALPHA, 0, 0);  //10 sprite palettes
-    else if (gWeatherPtr->nextWeather != gWeatherPtr->currWeather && gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
-        BlendPalettesGradually(0x3FF0000, 12, 8, 0, RGB_WHITEALPHA, 0, 0);  //10 sprite palettes
+    if (gWeatherPtr->nextWeather != gWeatherPtr->currWeather)
+    {
+        #if DYNAMIC_OW_PALS
+            if (gWeatherPtr->nextWeather == WEATHER_FOG_HORIZONTAL)
+                BlendPalettesGradually(0x7FFFFFFF, 12, 3, 8, RGB_WHITEALPHA, 0, 0);  //all but last sprite pal
+            else if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
+                BlendPalettesGradually(0x7FFFFFFF, 12, 8, 0, RGB_WHITEALPHA, 0, 0);  //undo fog pal blend
+        #else
+            if (gWeatherPtr->nextWeather == WEATHER_FOG_HORIZONTAL)
+                BlendPalettesGradually(0x3FF0000, 12, 3, 8, RGB_WHITEALPHA, 0, 0);  //blend first 10 sprite palette slots
+            else if (gWeatherPtr->nextWeather != gWeatherPtr->currWeather && gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
+                BlendPalettesGradually(0x3FF0000, 12, 8, 0, RGB_WHITEALPHA, 0, 0);  //undo fog pal blend
+        #endif
+    }
 }
 
 void SetCurrentAndNextWeather(u8 weather)
