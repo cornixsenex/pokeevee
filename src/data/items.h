@@ -4161,6 +4161,7 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
+
     [ITEM_15B] =
     {
         .name = _("????????"),
@@ -4171,7 +4172,6 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
-
     [ITEM_15C] =
     {
         .name = _("????????"),

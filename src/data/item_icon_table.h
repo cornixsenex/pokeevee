@@ -368,6 +368,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_HM06] = {gItemIcon_HM, gItemIconPalette_FightingTMHM},
     [ITEM_HM07] = {gItemIcon_HM, gItemIconPalette_WaterTMHM},
     [ITEM_HM08] = {gItemIcon_HM, gItemIconPalette_WaterTMHM},
+
     // ????????
     [ITEM_15B] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_15C] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},

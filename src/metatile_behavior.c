@@ -250,13 +250,9 @@ static const u8 sTileBitAttributes[] =
     [MB_UP_LEFT_STAIR_WARP] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_DOWN_RIGHT_STAIR_WARP] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_DOWN_LEFT_STAIR_WARP] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_EF] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
 
-    [MB_UNUSED_EB] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_EC] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_ED] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_EE] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_ROCK_CLIMB] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+
 
 };
 
@@ -1504,7 +1500,6 @@ bool8 MetatileBehavior_IsTrainerHillTimer(u8 metatileBehavior)
         return FALSE;
 }
 
-<<<<<<< HEAD
 bool8 MetatileBehavior_IsDirectionalUpRightStairWarp(u8 metatileBehavior)
 {
     if(metatileBehavior == MB_UP_RIGHT_STAIR_WARP)
@@ -1540,11 +1535,14 @@ bool8 MetatileBehavior_IsDirectionalDownLeftStairWarp(u8 metatileBehavior)
 bool8 MetatileBehavior_IsDirectionalStairWarp(u8 metatileBehavior)
 {
     if (metatileBehavior >= MB_UP_RIGHT_STAIR_WARP && metatileBehavior <= MB_DOWN_LEFT_STAIR_WARP)
-=======
+		return TRUE;
+	else
+		return FALSE;
+}
+
 bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ROCK_CLIMB)
->>>>>>> df145ecb24ac7ae65699d66d46b87dee335a07cb
         return TRUE;
     else
         return FALSE;

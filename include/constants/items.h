@@ -380,6 +380,7 @@
 #define ITEM_HM06 344
 #define ITEM_HM07 345
 #define ITEM_HM08 346
+#define ITEM_HM09 347
 
 #define ITEM_TM01_FOCUS_PUNCH ITEM_TM01
 #define ITEM_TM02_DRAGON_CLAW ITEM_TM02
@@ -441,6 +442,7 @@
 #define ITEM_HM08_DIVE ITEM_HM08
 
 // Unknown
+//
 #define ITEM_15B 347
 #define ITEM_15C 348
 
@@ -506,7 +508,7 @@
 #define ITEM_TO_BERRY(itemId)(((itemId - FIRST_BERRY_INDEX) + 1))
 
 #define NUM_TECHNICAL_MACHINES 50
-#define NUM_HIDDEN_MACHINES     8
+#define NUM_HIDDEN_MACHINES     9
 
 #define MAX_BAG_ITEM_CAPACITY  99
 #define MAX_PC_ITEM_CAPACITY   999

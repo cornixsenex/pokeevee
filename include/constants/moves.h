@@ -359,4 +359,6 @@
 
 #define MOVES_COUNT 355
 
+//MAX = 511
+
 #endif  // GUARD_CONSTANTS_MOVES_H
