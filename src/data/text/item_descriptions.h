@@ -1555,3 +1555,10 @@ static const u8 sKindBudDesc[] = _(
     "cum gaudio tussi.\n"
     "Se deosque ride.");
 
+
+// Surfboard
+static const u8 sSurfboardDesc[] = _(
+	"This flat board\n"
+    "is shaped for\n"
+    "riding waves.");
+

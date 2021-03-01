@@ -8,6 +8,7 @@
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
+#include "item.h"
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -139,6 +140,14 @@ static u8 Fishing_EndNoMon(struct Task *task);
 static void AlignFishingAnimationFrames(void);
 
 static u8 TrySpinPlayerForWarp(struct ObjectEvent *object, s16 *a1);
+
+// Surfboard
+static void Task_WaitStopSurfing(u8 taskId);
+static void CreateStartSurfingTask(u8);
+static void Task_StartSurfingInit(u8 taskId);
+static void Task_WaitStartSurfing(u8 taskId);
+static bool8 CanStopSurfing(s16, s16, u8);
+static bool8 CanStartSurfing(s16, s16, u8);
 
 // .rodata
 
@@ -676,6 +685,10 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
+        
+    // Surfboard
+    if (collision == COLLISION_ELEVATION_MISMATCH && CanStartSurfing(x, y, direction))
+        return COLLISION_START_SURFING;
 
     if (ShouldJumpLedge(x, y, direction))
     {
@@ -2215,4 +2228,75 @@ static u8 TrySpinPlayerForWarp(struct ObjectEvent *object, s16 *delayTimer)
     ObjectEventForceSetHeldMovement(object, GetFaceDirectionMovementAction(sSpinDirections[object->facingDirection]));
     *delayTimer = 0;
     return sSpinDirections[object->facingDirection];
+}
+
+// Surfboard
+static bool8 CanStartSurfing(s16 x, s16 y, u8 direction)
+{
+    if (CheckBagHasItem(ITEM_SURFBOARD, 1) == FALSE)
+    {
+        return FALSE;
+    }
+
+    if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+     && MapGridGetZCoordAt(x, y) == 1
+     && GetObjectEventIdByXYZ(x, y, 1) == OBJECT_EVENTS_COUNT)
+    {
+        CreateStartSurfingTask(direction);
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+//For the record, I have no idea how any of this works
+//Its probably a horried, bugged up mess...
+//
+//  Condolences,
+//  Pyredrid
+static void CreateStartSurfingTask(u8 direction)
+{
+    u8 taskId;
+
+    ScriptContext2_Enable();
+    Overworld_ClearSavedMusic();
+    Overworld_ChangeMusicTo(MUS_NAMINORI);
+    gPlayerAvatar.flags ^= PLAYER_AVATAR_FLAG_ON_FOOT;
+    gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_SURFING;
+    gPlayerAvatar.preventStep = TRUE;
+    taskId = CreateTask(Task_StartSurfingInit, 0xFF);
+    gTasks[taskId].data[0] = direction;
+    Task_StartSurfingInit(taskId);
+}
+
+static void Task_StartSurfingInit(u8 taskId)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (ObjectEventIsMovementOverridden(playerObjEvent))
+    {
+        if (!ObjectEventClearHeldMovementIfFinished(playerObjEvent))
+            return;
+    }
+    SetPlayerAvatarStateMask(8);
+    ObjectEventSetGraphicsId(playerObjEvent, GetPlayerAvatarGraphicsIdByStateId(3));
+    ObjectEventClearHeldMovementIfFinished(playerObjEvent);
+    ObjectEventSetHeldMovement(playerObjEvent, GetJumpSpecialMovementAction((u8)gTasks[taskId].data[0]));
+    gTasks[taskId].func = Task_WaitStartSurfing;
+}
+
+static void Task_WaitStartSurfing(u8 taskId)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (ObjectEventClearHeldMovementIfFinished(playerObjEvent))
+    {
+        ObjectEventSetHeldMovement(playerObjEvent, GetFaceDirectionMovementAction(playerObjEvent->facingDirection));
+        PlayerAvatarTransition_Surfing(playerObjEvent);
+        gPlayerAvatar.preventStep = FALSE;
+        ScriptContext2_Disable();
+        DestroyTask(taskId);
+    }
 }

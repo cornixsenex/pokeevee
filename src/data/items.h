@@ -4550,5 +4550,19 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    // Surfboard
+    [ITEM_SURFBOARD] =
+    {
+        .name = _("Surfboard"),
+        .itemId = ITEM_SURFBOARD,
+        .price = 0,
+        .description = sSurfboardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+    },
 };
 
