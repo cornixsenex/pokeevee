@@ -8,6 +8,14 @@ LoonixBeach_EventScript_Trainer_Skoob::
 	end
 
 
+LoonixBeach_EventScript_Item_Surfboard::
+	lock
+	finditem ITEM_SURFBOARD
+	setflag FLAG_UNUSED_0x023
+	release
+	end
+
+
 LoonixBeach_EventScript_Trainer_Skoob_Text_0:
 	.string "Dude...weed!$"
 
