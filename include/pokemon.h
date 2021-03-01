@@ -4,6 +4,9 @@
 #include "constants/pokemon.h"
 #include "sprite.h"
 
+#define DAY_START 6
+#define NIGHT_START 18
+
 struct PokemonSubstruct0
 {
     u16 species;

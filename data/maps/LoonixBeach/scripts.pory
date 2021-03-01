@@ -1,0 +1,9 @@
+mapscripts LoonixBeach_MapScripts {}
+
+
+script LoonixBeach_EventScript_Trainer_Skoob {
+	trainerbattle_single(TRAINER_KIYO, "Dude...weed!", "Weed, dude.")
+	msgbox("Man you got a light?", MSGBOX_AUTOCLOSE)
+	end
+}
+

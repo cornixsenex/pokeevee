@@ -4410,6 +4410,46 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOONIX",
+      "name": "Loonix_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_UnionRoom",
+      "border_filepath": "data/layouts/Loonix/border.bin",
+      "blockdata_filepath": "data/layouts/Loonix/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOONIX_INSIDE_REAL",
+      "name": "LoonixInsideReal_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/LoonixInsideReal/border.bin",
+      "blockdata_filepath": "data/layouts/LoonixInsideReal/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOONIX_GIFT_HOUSE",
+      "name": "LoonixGiftHouse_Layout",
+      "width": 6,
+      "height": 5,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/LoonixGiftHouse/border.bin",
+      "blockdata_filepath": "data/layouts/LoonixGiftHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOONIX_BEACH",
+      "name": "LoonixBeach_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/LoonixBeach/border.bin",
+      "blockdata_filepath": "data/layouts/LoonixBeach/map.bin"
     }
   ]
 }

@@ -86,9 +86,11 @@
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+
+//DEBUG
+#define FLAG_SYS_NO_COLLISION    0x4D
+#define FLAG_SYS_NO_ENCOUNTER    0x4E 
+#define FLAG_SYS_NO_TRAINER_SEE  0x4F
 
 // Scripts
 #define FLAG_HIDE_RAYQUAZA_SKY_TOWER_SUMMIT  0x50

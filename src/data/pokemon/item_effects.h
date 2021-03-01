@@ -401,9 +401,15 @@ const u8 gItemEffect_TamatoBerry[10] = {
     [9] = 2,
 };
 
+const u8 gItemEffect_KindBud[7] = {
+    [4] = ITEM4_HEAL_HP,
+    [6] = ITEM6_HEAL_FULL,
+};
+
 const u8 *const gItemEffectTable[] =
 {
-    [ITEM_POTION - ITEM_POTION] = gItemEffect_Potion,
+    [ITEM_POTION - ITEM_POTION] = gItemEffect_Potion,  
+  	[ITEM_KIND_BUD - ITEM_POTION] = gItemEffect_KindBud,
     [ITEM_ANTIDOTE - ITEM_POTION] = gItemEffect_Antidote,
     [ITEM_BURN_HEAL - ITEM_POTION] = gItemEffect_BurnHeal,
     [ITEM_ICE_HEAL - ITEM_POTION] = gItemEffect_IceHeal,

@@ -63,7 +63,9 @@
 #define ITEM_BLUE_SHARD 49
 #define ITEM_YELLOW_SHARD 50
 #define ITEM_GREEN_SHARD 51
-#define ITEM_034 52
+//KUSTOM
+#define ITEM_KIND_BUD 52
+// #define ITEM_034 52
 #define ITEM_035 53
 #define ITEM_036 54
 #define ITEM_037 55
@@ -474,7 +476,10 @@
 #define ITEM_MAGMA_EMBLEM 375
 #define ITEM_OLD_SEA_MAP 376
 
-#define ITEMS_COUNT 377
+// EXTRA
+#define ITEM_034 377
+
+#define ITEMS_COUNT 378
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

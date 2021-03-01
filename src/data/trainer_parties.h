@@ -2173,13 +2173,26 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Hitoshi[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Kiyo[] = {
-    {
-    .iv = 100,
-    .lvl = 34,
-    .species = SPECIES_HARIYAMA,
-    }
+static const struct TrainerMonNoItemDefaultMoves sParty_Skoob[] = {
+	{
+	.iv = 100,
+	.lvl = 3,
+	.species = SPECIES_ABRA,
+	},
+	{
+		.iv = 100,
+		.lvl = 3,
+		.species = SPECIES_TOGEPI,
+	}
 };
+
+//static const struct TrainerMonNoItemDefaultMoves sParty_Kiyo[] = {
+//    {
+//    .iv = 100,
+//    .lvl = 34,
+//    .species = SPECIES_HARIYAMA,
+//    }
+//};
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Koichi[] = {
     {

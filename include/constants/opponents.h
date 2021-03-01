@@ -1,6 +1,8 @@
 #ifndef GUARD_CONSTANTS_OPPONENTS_H
 #define GUARD_CONSTANTS_OPPONENTS_H
 
+#define TRAINER_SKOOB						181
+
 #define TRAINER_NONE                          0
 #define TRAINER_SAWYER_1                      1
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
@@ -182,6 +184,7 @@
 #define TRAINER_TONY_5                      178
 #define TRAINER_TAKAO                       179
 #define TRAINER_HITOSHI                     180
+//I took KIYO out of the game already...more to follow lol
 #define TRAINER_KIYO                        181
 #define TRAINER_KOICHI                      182
 #define TRAINER_NOB_1                       183

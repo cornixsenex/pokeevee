@@ -2533,19 +2533,33 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Hitoshi},
     },
 
-    [TRAINER_KIYO] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("KIYO"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Kiyo),
-        .party = {.NoItemDefaultMoves = sParty_Kiyo},
-    },
+	[TRAINER_SKOOB] =
+	{
+		.partyFlags = 0,
+		.trainerClass = TRAINER_CLASS_YOUNGSTER,
+		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+		.trainerPic = TRAINER_PIC_BLUE,
+		.trainerName = _("SKOOB"),
+		.items = {},
+		.doubleBattle = FALSE,
+		.aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+		.partySize = ARRAY_COUNT(sParty_Skoob),
+		.party = {.NoItemDefaultMoves = sParty_Skoob},
+	},
+
+    //[TRAINER_KIYO] =
+    //{
+    //    .partyFlags = 0,
+    //    .trainerClass = TRAINER_CLASS_BLACK_BELT,
+    //    .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+    //    .trainerPic = TRAINER_PIC_BLACK_BELT,
+    //    .trainerName = _("KIYO"),
+    //    .items = {},
+    //    .doubleBattle = FALSE,
+    //    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+    //    .partySize = ARRAY_COUNT(sParty_Kiyo),
+    //    .party = {.NoItemDefaultMoves = sParty_Kiyo},
+    //},
 
     [TRAINER_KOICHI] =
     {

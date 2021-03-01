@@ -16,10 +16,10 @@ Route132_EventScript_Ronald:: @ 81F7518
 	msgbox Route132_Text_RonaldPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route132_EventScript_Kiyo:: @ 81F752F
-	trainerbattle_single TRAINER_KIYO, Route132_Text_KiyoIntro, Route132_Text_KiyoDefeat
-	msgbox Route132_Text_KiyoPostBattle, MSGBOX_AUTOCLOSE
-	end
+//Route132_EventScript_Kiyo:: @ 81F752F
+//	trainerbattle_single TRAINER_KIYO, Route132_Text_KiyoIntro, Route132_Text_KiyoDefeat
+//	msgbox Route132_Text_KiyoPostBattle, MSGBOX_AUTOCLOSE
+//	end
 
 Route132_EventScript_Paxton:: @ 81F7546
 	trainerbattle_single TRAINER_PAXTON, Route132_Text_PaxtonIntro, Route132_Text_PaxtonDefeat

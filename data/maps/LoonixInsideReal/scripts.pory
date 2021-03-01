@@ -1,0 +1,9 @@
+mapscripts LoonixInsideReal_MapScripts {}
+
+script Watch_TV {
+	lock
+	msgbox("MEW has returned!", MSGBOX_SIGN)
+	release
+	end
+}
+
