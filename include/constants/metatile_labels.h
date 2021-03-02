@@ -70,6 +70,7 @@
 #define METATILE_BattlePike_Curtain_Stage3_Tile5  0x2BB
 #define METATILE_BattlePike_Curtain_Stage3_Tile6  0x2BC
 
+
 // gTileset_BattleTent
 #define METATILE_BattleTent_Door  0x26B
 
@@ -112,6 +113,8 @@
 #define METATILE_Building_PC_On   0x005
 
 // gTileset_Cave
+#define METATILE_Cave_CrackedFloor_Hole                  0x206
+#define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_EntranceCover                      0x229
 #define METATILE_Cave_SealedChamberBraille_Mid           0x235
 #define METATILE_Cave_SealedChamberEntrance_BottomLeft   0x232
@@ -363,6 +366,7 @@
 #define METATILE_Mossdeep_Door_SpaceCenter  0x2ED
 
 // gTileset_Pacifidlog
+ #define METATILE_Pacifidlog_SkyPillar_CrackedFloor_Hole   0x237
 #define METATILE_Pacifidlog_Door                           0x21A
 #define METATILE_Pacifidlog_FloatingLogs_Horizontal0       0x250
 #define METATILE_Pacifidlog_FloatingLogs_Horizontal1       0x251

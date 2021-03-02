@@ -739,7 +739,7 @@ static void Task_ShowAiPoints(u8 taskId)
             {
                 data->aiIconSpriteIds[i] = CreateMonIcon(gBattleMons[i].species,
                                                          SpriteCallbackDummy,
-                                                         95 + (count * 60), 17, 0, 0);
+                                                         95 + (count * 60), 17, 0, 0, 1);
                 gSprites[data->aiIconSpriteIds[i]].data[0] = i; // battler id
                 count++;
             }

@@ -34,6 +34,7 @@
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "region_map.h"
+#include "reset_rtc_screen.h"
 #include "script.h"
 #include "script_pokemon_util.h"
 #include "sound.h"
