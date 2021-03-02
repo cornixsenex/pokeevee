@@ -913,7 +913,7 @@ void BagMenu_ItemPrintCallback(u8 windowId, s32 itemIndex, u8 y)
         itemId = BagGetItemIdByPocketPosition(gBagPositionStruct.pocket + 1, itemIndex);
         itemQuantity = BagGetQuantityByPocketPosition(gBagPositionStruct.pocket + 1, itemIndex);
 
-        if (itemId >= ITEM_HM01 && itemId <= ITEM_HM09)
+        if (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
             BlitBitmapToWindow(windowId, gBagMenuHMIcon_Gfx, 8, y - 1, 16, 16);
 
         if (gBagPositionStruct.pocket == BERRIES_POCKET)
