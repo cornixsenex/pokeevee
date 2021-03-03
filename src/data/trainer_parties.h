@@ -2174,6 +2174,13 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Hitoshi[] = {
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Skoob[] = {
+
+	{
+		.iv = 100,
+		.lvl = 3,
+		.species = SPECIES_DRAGONAIR,
+	},
+
 	{
 	.iv = 100,
 	.lvl = 3,

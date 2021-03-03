@@ -145,7 +145,7 @@
 #define B_CATCHING_CHARM_BOOST      20    // % boost in Critical Capture odds if player has the Catching Charm.
 
 // Other
-#define B_DOUBLE_WILD_CHANCE        0     // % chance of encountering two Pokémon in a Wild Encounter.
+#define B_DOUBLE_WILD_CHANCE        1     // % chance of encountering two Pokémon in a Wild Encounter.
 #define B_SLEEP_TURNS               GEN_4 // In Gen5+, sleep lasts for 1-3 turns instead of 2-5 turns.
 #define B_PARALYZE_ELECTRIC         GEN_4 // In Gen6+, Electric-type Pokémon can't be paralyzed.
 #define B_POWDER_GRASS              GEN_4 // In Gen6+, Grass-type Pokémon are immune to powder and spore moves.
