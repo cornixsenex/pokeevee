@@ -4427,7 +4427,7 @@
       "width": 10,
       "height": 10,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LoonixInsideReal/border.bin",
       "blockdata_filepath": "data/layouts/LoonixInsideReal/map.bin"
     },
