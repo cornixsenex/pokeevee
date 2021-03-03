@@ -594,6 +594,8 @@
 #define MAP_LOONIX_INSIDE_REAL                     (2 | (33 << 8))
 #define MAP_LOONIX_GIFT_HOUSE                      (3 | (33 << 8))
 #define MAP_LOONIX_BEACH                           (4 | (33 << 8))
+#define MAP_LOONIX_HILLS                           (5 | (33 << 8))
+#define MAP_LOONIX_SNOW                            (6 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

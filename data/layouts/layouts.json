@@ -4450,6 +4450,26 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/LoonixBeach/border.bin",
       "blockdata_filepath": "data/layouts/LoonixBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOONIX_HILLS",
+      "name": "LoonixHills_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/LoonixHills/border.bin",
+      "blockdata_filepath": "data/layouts/LoonixHills/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOONIX_SNOW",
+      "name": "LoonixSnow_Layout",
+      "width": 85,
+      "height": 85,
+      "primary_tileset": "gTileset_Snow",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/LoonixSnow/border.bin",
+      "blockdata_filepath": "data/layouts/LoonixSnow/map.bin"
     }
   ]
 }

@@ -17,6 +17,11 @@
       "direction": "right",
       "offset": -12,
       "map": "MAP_LOONIX"
+    },
+    {
+      "direction": "left",
+      "offset": 0,
+      "map": "MAP_LOONIX_HILLS"
     }
   ],
   "object_events": [
