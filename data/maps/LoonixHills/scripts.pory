@@ -45,6 +45,28 @@ script LoonixHills_Script_DialgaFanfare {
 	return
 }
 
+script LoonixHills_Script_CheckRivalName {
+	lock
+	msgbox(format("Your rival's name is {RIVAL}"))
+	release
+	end
+}
+
+script LoonixHills_Script_SetRivalName {
+	lock
+	msgbox (LoonixHills_Text_SetRivalName, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		special (NameRival)
+		waitstate
+	}
+	release
+	end
+}
+
+text LoonixHills_Text_SetRivalName {
+	format("Would you like to change your rival's name?")
+}
+
 text LoonixHills_Text_GiftBall {
 	format("This ball contains Dialga.\n Will you take it?")
 }

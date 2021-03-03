@@ -61,6 +61,35 @@ LoonixHills_Script_DialgaFanfare::
 	return
 
 
+LoonixHills_Script_CheckRivalName::
+	lock
+	msgbox LoonixHills_Script_CheckRivalName_Text_0
+	release
+	end
+
+
+LoonixHills_Script_SetRivalName::
+	lock
+	msgbox LoonixHills_Text_SetRivalName, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq LoonixHills_Script_SetRivalName_2
+LoonixHills_Script_SetRivalName_1:
+	release
+	end
+
+LoonixHills_Script_SetRivalName_2:
+	special NameRival
+	waitstate
+	goto LoonixHills_Script_SetRivalName_1
+
+
+LoonixHills_Script_CheckRivalName_Text_0:
+	.string "Your rival's name is {RIVAL}$"
+
+LoonixHills_Text_SetRivalName::
+	.string "Would you like to change your rival's\n"
+	.string "name?$"
+
 LoonixHills_Text_GiftBall::
 	.string "This ball contains Dialga.\n"
 	.string "Will you take it?$"
