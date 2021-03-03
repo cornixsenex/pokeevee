@@ -2533,7 +2533,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Hitoshi},
     },
 
-	[TRAINER_SKOOB] =
+	[TRAINER_BLUE] =
 	{
 		.partyFlags = 0,
 		.trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -2545,6 +2545,8 @@ const struct Trainer gTrainers[] = {
 		.aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
 		.partySize = ARRAY_COUNT(sParty_Skoob),
 		.party = {.NoItemDefaultMoves = sParty_Skoob},
+		.hasCustomTransition = TRUE,
+		.transition = B_TRANSITION_MUGSHOT,
 	},
 
     //[TRAINER_KIYO] =

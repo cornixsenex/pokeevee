@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_OPPONENTS_H
 #define GUARD_CONSTANTS_OPPONENTS_H
 
-#define TRAINER_SKOOB						181
+#define TRAINER_BLUE						181
 
 #define TRAINER_NONE                          0
 #define TRAINER_SAWYER_1                      1

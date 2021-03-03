@@ -2,9 +2,15 @@ LoonixBeach_MapScripts::
 	.byte 0
 
 
-LoonixBeach_EventScript_Trainer_Skoob::
-	trainerbattle_single TRAINER_KIYO, LoonixBeach_EventScript_Trainer_Skoob_Text_0, LoonixBeach_EventScript_Trainer_Skoob_Text_1
-	msgbox LoonixBeach_EventScript_Trainer_Skoob_Text_2, MSGBOX_AUTOCLOSE
+LoonixBeach_EventScript_Trainer_Blue::
+	lockall
+	faceplayer
+	message LoonixBeach_Text_BlueFight
+	waitmessage
+	setvar VAR_MUGSHOT_ID, MUGSHOT_BLUE
+	trainerbattle_no_intro TRAINER_BLUE, LoonixBeach_Text_BlueLost
+	setflag FLAG_UNUSED_0x025
+	releaseall
 	end
 
 
@@ -16,11 +22,8 @@ LoonixBeach_EventScript_Item_Surfboard::
 	end
 
 
-LoonixBeach_EventScript_Trainer_Skoob_Text_0:
-	.string "Dude...weed!$"
+LoonixBeach_Text_BlueFight::
+	.string "Dude....weed$"
 
-LoonixBeach_EventScript_Trainer_Skoob_Text_1:
-	.string "Weed, dude.$"
-
-LoonixBeach_EventScript_Trainer_Skoob_Text_2:
-	.string "Man you got a light?$"
+LoonixBeach_Text_BlueLost::
+	.string "Have you got a light?$"
