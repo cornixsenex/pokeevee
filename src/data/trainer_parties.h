@@ -2178,7 +2178,7 @@ static const struct TrainerMon sParty_Skoob[] = {
 		.iv = 100,
 		.lvl = 3,
 		.species = SPECIES_ABRA,
-		.ball = ITEM_ULTRA_BALL,
+		.ball = ITEM_DUSK_BALL,
 	},
 	{
 		.iv = 100,
