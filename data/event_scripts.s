@@ -1076,3 +1076,5 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/LoonixHills/scripts.inc"
 
 	.include "data/maps/LoonixSnow/scripts.inc"
+
+	.include "data/maps/LoonixInsideReal_F2/scripts.inc"

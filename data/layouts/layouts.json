@@ -4470,6 +4470,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/LoonixSnow/border.bin",
       "blockdata_filepath": "data/layouts/LoonixSnow/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOONIX_INSIDE_REAL_F2",
+      "name": "LoonixInsideReal_F2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/LoonixInsideReal_F2/border.bin",
+      "blockdata_filepath": "data/layouts/LoonixInsideReal_F2/map.bin"
     }
   ]
 }

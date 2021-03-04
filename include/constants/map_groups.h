@@ -596,6 +596,7 @@
 #define MAP_LOONIX_BEACH                           (4 | (33 << 8))
 #define MAP_LOONIX_HILLS                           (5 | (33 << 8))
 #define MAP_LOONIX_SNOW                            (6 | (33 << 8))
+#define MAP_LOONIX_INSIDE_REAL_F2                  (7 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

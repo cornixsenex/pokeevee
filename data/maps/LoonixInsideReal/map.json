@@ -30,6 +30,13 @@
       "elevation": 0,
       "dest_map": "MAP_LOONIX",
       "dest_warp_id": 0
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_LOONIX_INSIDE_REAL_F2",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
