@@ -2693,6 +2693,15 @@ const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2] =
     {35, 10}, // +5
     {40, 10}, // +6, MAX_STAT_STAGE
 };
+static const u16 sDeoxysBaseStats[] =
+{
+    [STAT_HP]    = 50,
+    [STAT_ATK]   = 95,
+    [STAT_DEF]   = 90,
+    [STAT_SPEED] = 180,
+    [STAT_SPATK] = 95,
+    [STAT_SPDEF] = 90,
+};
 
 const u16 gLinkPlayerFacilityClasses[NUM_MALE_LINK_FACILITY_CLASSES + NUM_FEMALE_LINK_FACILITY_CLASSES] =
 {
@@ -3008,37 +3017,58 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     else
         personality = Random32();
 
-    //Determine original trainer ID
-    if (otIdType == OT_ID_RANDOM_NO_SHINY) //Pokemon cannot be shiny
+    SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
+
+    switch (otIdType)
     {
-        u32 shinyValue;
-        do
+        case OT_ID_SHINY:
         {
-            value = Random32();
-            shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
-        } while (shinyValue < SHINY_ODDS);
-    }
-    else if (otIdType == OT_ID_PRESET) //Pokemon has a preset OT ID
-    {
-        value = fixedOtId;
-    }
-    else //Player is the OT
-    {
-        value = gSaveBlock2Ptr->playerTrainerId[0]
-              | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
-              | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
-              | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
-        
-        if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
-        {
-            u32 shinyValue;
-            u32 rolls = 0;
+            u32 shinyValue = 0;
             do
             {
-                personality = Random32();
+                value = Random32();
                 shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
-                rolls++;
-            } while (shinyValue >= SHINY_ODDS && rolls < I_SHINY_CHARM_REROLLS);
+            } while (shinyValue >= SHINY_ODDS);
+        }
+        break;
+
+        case OT_ID_RANDOM_NO_SHINY:
+        {
+            u32 shinyValue = 0;
+            do
+            {
+                value = Random32();
+                shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
+            } while (shinyValue < SHINY_ODDS);
+        }
+        break;
+
+        case OT_ID_PRESET:
+        {
+            value = fixedOtId;
+        }
+        break;
+
+        default:
+        {
+            value = gSaveBlock2Ptr->playerTrainerId[0]
+                 | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+                 | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+                 | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+#ifdef ITEM_SHINY_CHARM
+            if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+            {
+                u32 shinyValue;
+                u32 rolls = 0;
+                do
+                {
+                    personality = Random32();
+                    shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
+                    rolls++;
+                } while (shinyValue >= SHINY_ODDS && rolls < I_SHINY_CHARM_REROLLS);
+            }
+#endif
         }
     }
 
@@ -3116,7 +3146,7 @@ void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV,
     CreateMon(mon, species, level, fixedIV, 1, personality, OT_ID_PLAYER_ID, 0);
 }
 
-void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter)
+void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter, u8 otIdType)
 {
     u32 personality;
 
@@ -3494,6 +3524,51 @@ bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId)
     }
 
     return TRUE;
+}
+
+static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
+{
+    s32 ivVal, evVal;
+    u16 statValue = 0;
+    u8 nature;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_LINK_IN_BATTLE || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+        return 0;
+
+    ivVal = GetMonData(mon, MON_DATA_HP_IV + statId, NULL);
+    evVal = GetMonData(mon, MON_DATA_HP_EV + statId, NULL);
+    statValue = ((sDeoxysBaseStats[statId] * 2 + ivVal + evVal / 4) * mon->level) / 100 + 5;
+    nature = GetNature(mon);
+    statValue = ModifyStatByNature(nature, statValue, (u8)statId);
+    return statValue;
+}
+
+void SetDeoxysStats(void)
+{
+    s32 i, value;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+
+        if (GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+            continue;
+
+        value = GetMonData(mon, MON_DATA_ATK, NULL);
+        SetMonData(mon, MON_DATA_ATK, &value);
+
+        value = GetMonData(mon, MON_DATA_DEF, NULL);
+        SetMonData(mon, MON_DATA_DEF, &value);
+
+        value = GetMonData(mon, MON_DATA_SPEED, NULL);
+        SetMonData(mon, MON_DATA_SPEED, &value);
+
+        value = GetMonData(mon, MON_DATA_SPATK, NULL);
+        SetMonData(mon, MON_DATA_SPATK, &value);
+
+        value = GetMonData(mon, MON_DATA_SPDEF, NULL);
+        SetMonData(mon, MON_DATA_SPDEF, &value);
+    }
 }
 
 u16 GetUnionRoomTrainerPic(void)

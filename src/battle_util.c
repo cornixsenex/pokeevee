@@ -7727,7 +7727,14 @@ static bool32 IsPartnerMonFromSameTrainer(u8 battlerId)
 u16 GetMegaEvolutionSpecies(u16 preEvoSpecies, u16 heldItemId)
 {
     u32 i;
+    s32 rnd;
+    s32 calc;
+    u8 obedienceLevel = 0;
 
+    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
+        return 0;
+    if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT)
+        return 0;
     for (i = 0; i < EVOS_PER_MON; i++)
     {
         if (gEvolutionTable[preEvoSpecies][i].method == EVO_MEGA_EVOLUTION

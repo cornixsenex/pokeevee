@@ -13,45 +13,29 @@ struct MonCoords
     u8 y_offset;
 };
 
-struct TrainerMonNoItemDefaultMoves
+struct TrainerMon
 {
     u16 iv;
-    u8 lvl;
-    u16 species;
-};
-
-struct TrainerMonItemDefaultMoves
-{
-    u16 iv;
-    u8 lvl;
-    u16 species;
-    u16 heldItem;
-};
-
-struct TrainerMonNoItemCustomMoves
-{
-    u16 iv;
-    u8 lvl;
-    u16 species;
-    u16 moves[MAX_MON_MOVES];
-};
-
-struct TrainerMonItemCustomMoves
-{
-    u16 iv;
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+    u8 ivs[NUM_STATS];
     u8 lvl;
     u16 species;
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
+    u8 gender;
+    u8 nature;
+    u8 ability;
+    u8 evs[NUM_STATS];
+    u8 ball;
+    bool32 shiny;
+    u8 friendship;
 };
 
 union TrainerMonPtr
 {
-    const struct TrainerMonNoItemDefaultMoves *NoItemDefaultMoves;
-    const struct TrainerMonNoItemCustomMoves *NoItemCustomMoves;
-    const struct TrainerMonItemDefaultMoves *ItemDefaultMoves;
-    const struct TrainerMonItemCustomMoves *ItemCustomMoves;
+    const struct TrainerMon *TrainerMon;
 };
+
 
 struct Trainer
 {

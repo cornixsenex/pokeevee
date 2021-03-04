@@ -184,8 +184,6 @@
 #define TRAINER_TONY_5                      178
 #define TRAINER_TAKAO                       179
 #define TRAINER_HITOSHI                     180
-//I took KIYO out of the game already...more to follow lol
-#define TRAINER_KIYO                        181
 #define TRAINER_KOICHI                      182
 #define TRAINER_NOB_1                       183
 #define TRAINER_NOB_2                       184
