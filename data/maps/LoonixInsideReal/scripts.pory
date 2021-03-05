@@ -7,3 +7,25 @@ script Watch_TV {
 	end
 }
 
+script LoonixInsideReal_EventScript_Statue {
+	lock
+	msgbox(format("This is the statue they sent us after Dad left...\pGrandma must have forgotten to polish it."))
+	release
+	end
+}
+
+script LoonixInsideReal_EventScript_Junk {
+	lock
+	msgbox(format("Here's another pile of junk grandma left lying around."))
+	release
+	end
+}
+
+script LoonixInsideReal_EventScript_Special {
+	lock
+	showmonpic (SPECIES_KRABBY, 10, 3)
+	msgbox(format("What's for dinner?"))
+	hidemonpic
+	release
+	end
+}

@@ -1,0 +1,64 @@
+mapscripts GrandmasCabin_MapScripts {}
+
+script GrandmasCabin_EventScript_EeveeFanfare {
+	bufferspeciesname (1, SPECIES_EEVEE)
+	call (GrandmasCabin_EventScript_FadeOut)
+	playfanfare (MUS_OBTAIN_ITEM)
+	setflag (FLAG_SYS_POKEMON_GET)
+	message (GrandmasCabin_ObtainedEevee)
+	waitmessage
+	waitfanfare
+	bufferspeciesname (0, SPECIES_EEVEE)
+	return
+}
+
+text GrandmasCabin_ObtainedEevee {
+	"{PLAYER} obtained Eevee!"
+}
+
+raw `
+
+GrandmasCabin_EventScript_FadeOut::
+	fadescreen 1
+	removeobject 1
+	fadescreen 0
+	return
+`
+	
+
+script GrandmasCabin_EventScript_GiveEevee {
+	givemon (SPECIES_EEVEE, 5, ITEM_NONE)
+	if (var(VAR_RESULT) == 0) {
+		call (GrandmasCabin_EventScript_EeveeFanfare)
+		msgbox (format("Would you like to give a nickname to Eevee?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+		setflag (FLAG_UNUSED_0x026)
+	}
+	releaseall
+	end
+}
+
+script GrandmasCabin_EventScript_StarterMonEevee {
+	lockall
+	if (flag(FLAG_SYS_POKEMON_GET)) {
+		msgbox (format("Sorry Eevee, you'll have to stay behind."))
+		releaseall
+		end
+	} 
+	else {
+		msgbox (format("Will you take Eevee with you?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox (format("You decided not to bring Eevee."))
+			releaseall
+			end
+		}
+		else {
+			call (GrandmasCabin_EventScript_GiveEevee)
+		}
+	releaseall
+	end
+	}
+}		

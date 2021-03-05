@@ -4424,8 +4424,8 @@
     {
       "id": "LAYOUT_LOONIX_INSIDE_REAL",
       "name": "LoonixInsideReal_Layout",
-      "width": 10,
-      "height": 10,
+      "width": 13,
+      "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LoonixInsideReal/border.bin",
@@ -4474,12 +4474,22 @@
     {
       "id": "LAYOUT_LOONIX_INSIDE_REAL_F2",
       "name": "LoonixInsideReal_F2_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 9,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LoonixInsideReal_F2/border.bin",
       "blockdata_filepath": "data/layouts/LoonixInsideReal_F2/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANDMAS_CABIN",
+      "name": "GrandmasCabin_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/GrandmasCabin/border.bin",
+      "blockdata_filepath": "data/layouts/GrandmasCabin/map.bin"
     }
   ]
 }

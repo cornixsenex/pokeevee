@@ -1,1 +1,21 @@
 mapscripts LoonixInsideReal_F2_MapScripts {}
+
+
+
+script LoonixInsideReal_F2_EventScript_PC {
+	lockall
+	//special (DoPCTurnOnEffect)
+	playse (SE_PC_ON)
+	msgbox (gText_PlayerHouseBootPC, MSGBOX_DEFAULT)
+	special (BedroomPC)
+	waitstate
+	releaseall
+	end
+}
+
+script LoonixInsideReal_F2_EventScript_PS2 {
+	lock
+	msgbox(format("It's your PS2 and your favorite game,Star Wars Battlefront 2!"))
+	release
+	end
+}
