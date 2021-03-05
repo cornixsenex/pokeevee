@@ -2355,15 +2355,15 @@ const struct Trainer gTrainers[] = {
 	[TRAINER_BLUE] =
 	{
 		.partyFlags = 0,
-		.trainerClass = TRAINER_CLASS_GUITARIST,
+		.trainerClass = TRAINER_CLASS_YOUNGSTER,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
 		.trainerPic = TRAINER_PIC_BLUE,
 		.trainerName = _("BLUE"),
 		.items = {},
 		.doubleBattle = FALSE,
 		.aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-		.partySize = ARRAY_COUNT(sParty_Skoob),
-		.party = {.TrainerMon = sParty_Skoob},
+		.partySize = ARRAY_COUNT(sParty_Blue),
+		.party = {.TrainerMon = sParty_Blue},
 		.hasCustomTransition = TRUE,
 		.transition = B_TRANSITION_MUGSHOT,
 	},

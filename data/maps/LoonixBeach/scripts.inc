@@ -23,7 +23,7 @@ LoonixBeach_EventScript_Item_Surfboard::
 
 
 LoonixBeach_Text_BlueFight::
-	.string "Dude....weed$"
+	.string "My first Pokeball is a BEAST BALL$"
 
 LoonixBeach_Text_BlueLost::
-	.string "Have you got a light?$"
+	.string "I wonder why my face looks like that.$"

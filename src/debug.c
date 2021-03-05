@@ -137,7 +137,7 @@ struct DebugMonData
 //Main Menu
 static const u8 gDebugText_Utilities[] =        _("Utilities");
 static const u8 gDebugText_Flags[] =            _("Flags");
-static const u8 gDebugText_Give[] =             _("Flags");
+static const u8 gDebugText_Give[] =             _("Give");
 static const u8 gDebugText_Cancel[] = 		    _("Cancel");
 
 //Util Menu
@@ -258,7 +258,7 @@ static const struct ListMenuItem sDebugMenu_Items_Main[] =
 {
 	[DEBUG_MENU_ITEM_UTILITIES] = {gDebugText_Utilities, DEBUG_MENU_ITEM_UTILITIES},
 	[DEBUG_MENU_ITEM_FLAGS] = {gDebugText_Flags, DEBUG_MENU_ITEM_FLAGS},
-	[DEBUG_MENU_ITEM_GIVE] = {gDebugText_Flags, DEBUG_MENU_ITEM_GIVE},
+	[DEBUG_MENU_ITEM_GIVE] = {gDebugText_Give, DEBUG_MENU_ITEM_GIVE},
 	[DEBUG_MENU_ITEM_CANCEL] = {gDebugText_Cancel, DEBUG_MENU_ITEM_CANCEL},
 };
 

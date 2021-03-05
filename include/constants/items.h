@@ -31,6 +31,10 @@
 #define ITEM_BEAST_BALL 26
 #define ITEM_PREMIER_BALL 27
 
+//Thru Luxury ball is good + Premier Ball
+//Dusk - Sport are black squares
+//Beast, Dream, and Park,  ball fuck the thing up
+
 // Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
 //       Several places expect the ball IDs to be first and contiguous (e.g. gBattlescriptsForBallThrow and MON_DATA_POKEBALL)
 //       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)

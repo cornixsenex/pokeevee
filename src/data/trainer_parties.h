@@ -2173,32 +2173,49 @@ static const struct TrainerMon sParty_Hitoshi[] = {
     }
 };
 
-static const struct TrainerMon sParty_Skoob[] = {
+static const struct TrainerMon sParty_Blue[] = {
 	{
-		.iv = 100,
+		.species = SPECIES_CLEFFA,
 		.lvl = 3,
-		.species = SPECIES_ABRA,
+		.nickname = _("DUSK"),
+		.iv = 100,
+		.gender = MON_MALE,
+//		.nature = NATURE_ADAMANT,
+		.heldItem = ITEM_KIND_BUD,
+		.ability = ABILITY_SLOT_2,
 		.ball = ITEM_DUSK_BALL,
+		.shiny = FALSE,
 	},
 	{
-		.iv = 100,
+		.species = SPECIES_HOPPIP,
+		.nickname = _("Luxury"),
 		.lvl = 3,
-		.species = SPECIES_DRAGONAIR,
-		.ball = ITEM_POKE_BALL
+		.ball = ITEM_LUXURY_BALL,
 	},
 
 	{
-		.species = SPECIES_TOGEPI,
+		.species = SPECIES_TANGELA,
+		.nickname = _("DREAM"),
 		.lvl = 3,
-		.nickname = _("Humptee"),
-		.iv = 100,
-		.gender = MON_MALE,
-		.nature = NATURE_ADAMANT,
-		.heldItem = ITEM_KIND_BUD,
-		.ability = ABILITY_SLOT_2,
-		.ball = ITEM_MASTER_BALL,
-		.shiny = TRUE,
+		.ball = ITEM_DREAM_BALL,
 	},
+
+	{
+		.iv = 100,
+		.lvl = 3,
+		.nickname = _("Park"),
+		.species = SPECIES_SUNFLORA,
+		.ball = ITEM_PARK_BALL,
+	},
+
+	{
+		.iv = 100,
+		.lvl = 3,
+		.nickname = _("Dusk"),
+		.species = SPECIES_PICHU,
+		.ball = ITEM_DUSK_BALL,
+	},
+
 
 };
 

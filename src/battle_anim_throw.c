@@ -447,7 +447,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_LEVEL] =    {
         .tileTag = TAG_PARTICLES_LEVELBALL,
         .paletteTag = TAG_PARTICLES_LEVELBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -456,7 +456,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_LURE] =    {
         .tileTag = TAG_PARTICLES_LUREBALL,
         .paletteTag = TAG_PARTICLES_LUREBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -465,7 +465,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_MOON] =    {
         .tileTag = TAG_PARTICLES_MOONBALL,
         .paletteTag = TAG_PARTICLES_MOONBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -474,7 +474,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_FRIEND] =    {
         .tileTag = TAG_PARTICLES_FRIENDBALL,
         .paletteTag = TAG_PARTICLES_FRIENDBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -483,7 +483,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_LOVE] =    {
         .tileTag = TAG_PARTICLES_LOVEBALL,
         .paletteTag = TAG_PARTICLES_LOVEBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -492,7 +492,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_HEAVY] =    {
         .tileTag = TAG_PARTICLES_HEAVYBALL,
         .paletteTag = TAG_PARTICLES_HEAVYBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -501,7 +501,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_FAST] =    {
         .tileTag = TAG_PARTICLES_FASTBALL,
         .paletteTag = TAG_PARTICLES_FASTBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -510,7 +510,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_SPORT] =    {
         .tileTag = TAG_PARTICLES_SPORTBALL,
         .paletteTag = TAG_PARTICLES_SPORTBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -519,7 +519,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+     [BALL_DUSK] =   {
         .tileTag = TAG_PARTICLES_DUSKBALL,
         .paletteTag = TAG_PARTICLES_DUSKBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -528,7 +528,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+   [BALL_QUICK] =     {
         .tileTag = TAG_PARTICLES_QUICKBALL,
         .paletteTag = TAG_PARTICLES_QUICKBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -537,7 +537,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+     [BALL_HEAL] =   {
         .tileTag = TAG_PARTICLES_HEALBALL,
         .paletteTag = TAG_PARTICLES_HEALBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -546,7 +546,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_CHERISH] =    {
         .tileTag = TAG_PARTICLES_CHERISHBALL,
         .paletteTag = TAG_PARTICLES_CHERISHBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -555,7 +555,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_PARK] =    {
         .tileTag = TAG_PARTICLES_PARKBALL,
         .paletteTag = TAG_PARTICLES_PARKBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -564,7 +564,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_DREAM] =    {
         .tileTag = TAG_PARTICLES_DREAMBALL,
         .paletteTag = TAG_PARTICLES_DREAMBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -573,7 +573,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    {
+    [BALL_BEAST] =    {
         .tileTag = TAG_PARTICLES_BEASTBALL,
         .paletteTag = TAG_PARTICLES_BEASTBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
