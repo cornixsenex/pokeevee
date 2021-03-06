@@ -4490,6 +4490,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/GrandmasCabin/border.bin",
       "blockdata_filepath": "data/layouts/GrandmasCabin/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1",
+      "name": "Route1_Layout",
+      "width": 22,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Route1/border.bin",
+      "blockdata_filepath": "data/layouts/Route1/map.bin"
     }
   ]
 }

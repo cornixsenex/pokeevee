@@ -19,3 +19,26 @@ script LoonixInsideReal_F2_EventScript_PS2 {
 	release
 	end
 }
+
+script LoonixInsideReal_F2_EventScript_Bed {
+	lockall
+	msgbox(LoonixInsideReal_F2_Text_Bed, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		if (flag(FLAG_SYS_POKEMON_GET)) {
+			call (Common_EventScript_OutOfCenterPartyHeal)
+		} else {
+			playfanfare (MUS_HEAL)
+			fadescreen (1)
+			waitfanfare
+			fadescreen (0)
+		}
+	}
+	releaseall
+	end
+}
+
+text LoonixInsideReal_F2_Text_Bed {
+	format("It's your old bed!\pWould you like to take a rest?")
+}
+		

@@ -1,4 +1,16 @@
-mapscripts LoonixInsideReal_MapScripts {}
+mapscripts LoonixInsideReal_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		call (LoonixInsideReal_OnWarp)
+    }
+}
+
+script LoonixInsideReal_OnWarp {
+	if (var(VAR_ROUTE101_STATE) < 1) {
+		setobjectxyperm (1, 8, 6)
+		applymovement(1, LoonixInsideReal_Movement_GrandmaUp)
+	}
+	end
+}
 
 script Watch_TV {
 	lock
@@ -29,3 +41,112 @@ script LoonixInsideReal_EventScript_Special {
 	release
 	end
 }
+
+script LoonixInsideReal_EventScript_GrandmaTV {
+	lockall
+	applymovement(1, LoonixInsideReal_Movement_GrandmaUp)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+	waitmovement (0)
+	msgbox (format("Oh {PLAYER}!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox ("Come here sweetie.")
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_GrandmaTV)
+	waitmovement (0)
+	applymovement (1, LoonixInsideReal_Movement_GrandmaLeft)
+	waitmovement (0)
+	msgbox (LoonixInsideReal_Text_GrandmaTVSpeech)
+	closemessage
+	applymovement (1, LoonixInsideReal_Movement_GrandmaMono)
+	waitmovement (0)
+	msgbox (LoonixInsideReal_Text_GrandmaMono)
+	closemessage
+	applymovement (1, LoonixInsideReal_Movement_GrandmaLeft)
+	waitmovement (0)
+	msgbox (LoonixInsideReal_Text_GrandmaToBed)
+	closemessage	
+	applymovement (1, LoonixInsideReal_Movement_GrandmaBed)
+	applymovement(OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerBed)
+	waitmovement (0)
+	addvar (VAR_ROUTE101_STATE, 1)
+	msgbox (LoonixInsideReal_Text_GrandmaBed)
+	releaseall
+	end
+}
+	
+
+script LoonixInsideReal_EventScript_PreventExit {
+	lockall
+	msgbox (format("You don't have a Pokemon yet!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PreventExit)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script LoonixInsideReal_EventScript_Grandma {
+	lockall
+	if (var(VAR_ROUTE101_STATE) == 1) {
+		msgbox(format("{PLAYER}, take our Pokemon from the backyard to protect you on the road."))
+	}
+	else {
+	msgbox(format("Grandma?\pShe must be sleeping..."))
+	}
+	releaseall
+	end
+}
+
+movement LoonixInsideReal_Movement_PreventExit {
+	face_up
+	walk_up * 4
+	face_down
+}
+
+movement LoonixInsideReal_Movement_GrandmaTV {
+	walk_down * 4
+	walk_right * 2
+}
+
+movement LoonixInsideReal_Movement_GrandmaBed {
+	walk_right * 2
+	walk_up * 3
+	walk_right
+	face_down
+}
+
+movement LoonixInsideReal_Movement_PlayerBed {
+	walk_right * 3
+	walk_up * 3
+	face_right
+}
+
+movement LoonixInsideReal_Movement_GrandmaUp {
+	face_up
+}
+
+movement LoonixInsideReal_Movement_GrandmaLeft {
+	face_left
+}
+
+movement LoonixInsideReal_Movement_GrandmaMono {
+	face_down
+}
+
+text LoonixInsideReal_Text_GrandmaTVSpeech {
+	format("It's all over the news that Mew's returned!\n My boy, this is a God sent mircale.\pJust once...to see the living shape of Mew...there's nothing more of life that I would ask.")
+}
+
+text LoonixInsideReal_Text_GrandmaMono {
+	format("But now the strength of life has left these bones, and I can hardly walk across the yard. Saeclara City is too far away for this old crow to fly.")
+}	
+
+text LoonixInsideReal_Text_GrandmaToBed {
+	format("I'll have to stay.\p {PLAYER} will you help me get into bed?")
+}
+
+text LoonixInsideReal_Text_GrandmaBed {
+	format("Thank you.")
+}
+
+

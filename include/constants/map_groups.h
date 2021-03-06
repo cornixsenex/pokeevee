@@ -598,6 +598,7 @@
 #define MAP_LOONIX_SNOW                            (6 | (33 << 8))
 #define MAP_LOONIX_INSIDE_REAL_F2                  (7 | (33 << 8))
 #define MAP_GRANDMAS_CABIN                         (8 | (33 << 8))
+#define MAP_ROUTE1                                 (9 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

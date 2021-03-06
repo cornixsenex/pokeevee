@@ -234,9 +234,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Red = {0xFFFF, OBJ
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue = {0xFFFF, OBJ_EVENT_PAL_TAG_BLUE, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Blue, gDummySpriteAffineAnimTable};
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grandma = {0xFFFF, OBJ_EVENT_PAL_TAG_GRANDMA, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Grandma, gDummySpriteAffineAnimTable};
 
 
-
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee = {0xFFFF, OBJ_EVENT_PAL_TAG_EEVEE, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, gObjectEventImageAnimTable_PokemonSpecies, gObjectEventPicTable_Eevee, gDummySpriteAffineAnimTable};
 
 
 
