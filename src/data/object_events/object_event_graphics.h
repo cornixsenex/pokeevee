@@ -248,6 +248,40 @@ const u32 gObjectEventPic_EnemyZigzagoon[] = INCBIN_U32("graphics/object_events/
 const u16 gObjectEventPal_EnemyZigzagoon[] = INCBIN_U16("graphics/object_events/palettes/enemy_zigzagoon.gbapal");
 const u32 gObjectEventPic_Poochyena[] = INCBIN_U32("graphics/object_events/pics/pokemon/poochyena.4bpp");
 const u16 gObjectEventPal_Poochyena[] = INCBIN_U16("graphics/object_events/palettes/poochyena.gbapal");
+
+
+const u32 gObjectEventPic_Eevee[] = INCBIN_U32("graphics/object_events/pics/pokemon/eevee.4bpp");
+const u16 gObjectEventPal_Eevee[] = INCBIN_U16("graphics/object_events/palettes/eevee.gbapal");
+
+
+const u32 gObjectEventPic_Flareon[] = INCBIN_U32("graphics/object_events/pics/pokemon/flareon.4bpp");
+const u16 gObjectEventPal_Flareon[] = INCBIN_U16("graphics/object_events/palettes/flareon.gbapal");
+
+
+const u32 gObjectEventPic_Jolteon[] = INCBIN_U32("graphics/object_events/pics/pokemon/jolteon.4bpp");
+const u16 gObjectEventPal_Jolteon[] = INCBIN_U16("graphics/object_events/palettes/jolteon.gbapal");
+
+
+const u32 gObjectEventPic_Vaporeon[] = INCBIN_U32("graphics/object_events/pics/pokemon/vaporeon.4bpp");
+const u16 gObjectEventPal_Vaporeon[] = INCBIN_U16("graphics/object_events/palettes/vaporeon.gbapal");
+
+
+const u32 gObjectEventPic_Espeon[] = INCBIN_U32("graphics/object_events/pics/pokemon/espeon.4bpp");
+const u16 gObjectEventPal_Espeon[] = INCBIN_U16("graphics/object_events/palettes/espeon.gbapal");
+
+
+const u32 gObjectEventPic_Umbreon[] = INCBIN_U32("graphics/object_events/pics/pokemon/umbreon.4bpp");
+const u16 gObjectEventPal_Umbreon[] = INCBIN_U16("graphics/object_events/palettes/umbreon.gbapal");
+
+
+const u32 gObjectEventPic_Leafeon[] = INCBIN_U32("graphics/object_events/pics/pokemon/leafeon.4bpp");
+const u16 gObjectEventPal_Leafeon[] = INCBIN_U16("graphics/object_events/palettes/leafeon.gbapal");
+
+
+const u32 gObjectEventPic_Glaceon[] = INCBIN_U32("graphics/object_events/pics/pokemon/glaceon.4bpp");
+const u16 gObjectEventPal_Glaceon[] = INCBIN_U16("graphics/object_events/palettes/glaceon.gbapal");
+
+
 const u32 gObjectEventPic_CableCar[] = INCBIN_U32("graphics/object_events/pics/misc/cable_car.4bpp");
 const u16 gObjectEventPal_CableCar[] = INCBIN_U16("graphics/object_events/palettes/cable_car.gbapal");
 const u32 gObjectEventPic_SSTidal[] = INCBIN_U32("graphics/object_events/pics/misc/ss_tidal.4bpp");
@@ -378,5 +412,4 @@ const u32 gObjectEventPic_Blue[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u16 gObjectEventPal_Blue[] = INCBIN_U16("graphics/object_events/palettes/blue.gbapal");
 const u32 gObjectEventPic_Grandma[] = INCBIN_U32("graphics/object_events/pics/people/grandma.4bpp");
 const u16 gObjectEventPal_Grandma[] = INCBIN_U16("graphics/object_events/palettes/grandma.gbapal");
-const u32 gObjectEventPic_Eevee[] = INCBIN_U32("graphics/object_events/pics/pokemon/eevee.4bpp");
-const u16 gObjectEventPal_Eevee[] = INCBIN_U16("graphics/object_events/palettes/eevee.gbapal");
+

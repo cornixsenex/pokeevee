@@ -17,6 +17,16 @@
       "direction": "left",
       "offset": -7,
       "map": "MAP_GRANDMAS_CABIN"
+    },
+    {
+      "direction": "up",
+      "offset": 16,
+      "map": "MAP_RIVAL_HOUSE"
+    },
+    {
+      "direction": "right",
+      "offset": 31,
+      "map": "MAP_ALDEON_TOWN"
     }
   ],
   "object_events": [

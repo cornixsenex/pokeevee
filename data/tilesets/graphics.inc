@@ -1749,3 +1749,43 @@ gTilesetPalettes_Snow::
 	.align 2
 gTilesetTiles_Snow::
 	.incbin "data/tilesets/primary/snow/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CityClara::
+	.incbin "data/tilesets/secondary/cityclara/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/cityclara/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_CityClara::
+	.incbin "data/tilesets/secondary/cityclara/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_lodge::
+	.incbin "data/tilesets/secondary/lodge/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/lodge/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_lodge::
+	.incbin "data/tilesets/secondary/lodge/tiles.4bpp.lz"

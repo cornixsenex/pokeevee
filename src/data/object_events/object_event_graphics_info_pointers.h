@@ -228,7 +228,18 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dusclops;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnionRoomAttendant;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sudowoodo;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mew;
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee;
+
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flareon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jolteon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vaporeon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Espeon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Umbreon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leafeon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Glaceon;
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grandma;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Red;
@@ -483,7 +494,16 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RED] =                      &gObjectEventGraphicsInfo_Red,
     [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
     [OBJ_EVENT_GFX_GRANDMA] =                  &gObjectEventGraphicsInfo_Grandma,
+
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
+
+    [OBJ_EVENT_GFX_FLAREON] =                    &gObjectEventGraphicsInfo_Flareon,
+    [OBJ_EVENT_GFX_JOLTEON] =                    &gObjectEventGraphicsInfo_Jolteon,
+    [OBJ_EVENT_GFX_VAPOREON] =                    &gObjectEventGraphicsInfo_Vaporeon,
+    [OBJ_EVENT_GFX_ESPEON] =                    &gObjectEventGraphicsInfo_Espeon,
+    [OBJ_EVENT_GFX_UMBREON] =                    &gObjectEventGraphicsInfo_Umbreon,
+    [OBJ_EVENT_GFX_LEAFEON] =                    &gObjectEventGraphicsInfo_Leafeon,
+    [OBJ_EVENT_GFX_GLACEON] =                    &gObjectEventGraphicsInfo_Glaceon,
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,
     [OBJ_EVENT_GFX_DEOXYS] =                   &gObjectEventGraphicsInfo_Deoxys,
     [OBJ_EVENT_GFX_DEOXYS_TRIANGLE] =          &gObjectEventGraphicsInfo_BirthIslandStone,

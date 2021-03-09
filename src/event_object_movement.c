@@ -436,6 +436,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_BLUE		              0x1124
 #define OBJ_EVENT_PAL_TAG_GRANDMA		          0x1125
 #define OBJ_EVENT_PAL_TAG_EEVEE		          	  0x1126
+#define OBJ_EVENT_PAL_TAG_FLAREON		          0x1127
+#define OBJ_EVENT_PAL_TAG_JOLTEON		          0x1128
+#define OBJ_EVENT_PAL_TAG_VAPOREON		          0x1129
+#define OBJ_EVENT_PAL_TAG_ESPEON		          0x112A
+#define OBJ_EVENT_PAL_TAG_UMBREON		          0x112B
+#define OBJ_EVENT_PAL_TAG_LEAFEON		          0x112C
+#define OBJ_EVENT_PAL_TAG_GLACEON		          0x112D
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -485,6 +492,13 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Blue,       			OBJ_EVENT_PAL_TAG_BLUE},
     {gObjectEventPal_Grandma,       		OBJ_EVENT_PAL_TAG_GRANDMA},
     {gObjectEventPal_Eevee,       			OBJ_EVENT_PAL_TAG_EEVEE},
+    {gObjectEventPal_Flareon,       		OBJ_EVENT_PAL_TAG_FLAREON},
+    {gObjectEventPal_Jolteon,       		OBJ_EVENT_PAL_TAG_JOLTEON},
+    {gObjectEventPal_Vaporeon,       		OBJ_EVENT_PAL_TAG_VAPOREON},
+    {gObjectEventPal_Espeon,       			OBJ_EVENT_PAL_TAG_ESPEON},
+    {gObjectEventPal_Umbreon,       		OBJ_EVENT_PAL_TAG_UMBREON},
+    {gObjectEventPal_Leafeon,       		OBJ_EVENT_PAL_TAG_LEAFEON},
+    {gObjectEventPal_Glaceon,       		OBJ_EVENT_PAL_TAG_GLACEON},
     {NULL,                                  0x0000},
 };
 

@@ -26,6 +26,7 @@ static void _InitSecondaryTilesetAnimation(void);
 static void TilesetAnim_General(u16);
 static void TilesetAnim_Building(u16);
 static void TilesetAnim_Rustboro(u16);
+static void TilesetAnim_CityClara(u16);
 static void TilesetAnim_Dewford(u16);
 static void TilesetAnim_Slateport(u16);
 static void TilesetAnim_Mauville(u16);
@@ -50,6 +51,7 @@ static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
 static void QueueAnimTiles_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Rustboro_WindyWater(u16, u8);
+static void QueueAnimTiles_CityClara_WindyWater(u16, u8);
 static void QueueAnimTiles_Rustboro_Fountain(u16);
 static void QueueAnimTiles_Dewford_Flag(u16);
 static void QueueAnimTiles_Slateport_Balloons(u16);
@@ -291,6 +293,15 @@ const u16 gTilesetAnims_Rustboro_WindyWater_Frame5[] = INCBIN_U16("data/tilesets
 const u16 gTilesetAnims_Rustboro_WindyWater_Frame6[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/windy_water/6.4bpp");
 const u16 gTilesetAnims_Rustboro_WindyWater_Frame7[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/windy_water/7.4bpp");
 
+const u16 gTilesetAnims_CityClara_WindyWater_Frame0[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/0.4bpp");
+const u16 gTilesetAnims_CityClara_WindyWater_Frame1[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/1.4bpp");
+const u16 gTilesetAnims_CityClara_WindyWater_Frame2[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/2.4bpp");
+const u16 gTilesetAnims_CityClara_WindyWater_Frame3[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/3.4bpp");
+const u16 gTilesetAnims_CityClara_WindyWater_Frame4[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/4.4bpp");
+const u16 gTilesetAnims_CityClara_WindyWater_Frame5[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/5.4bpp");
+const u16 gTilesetAnims_CityClara_WindyWater_Frame6[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/6.4bpp");
+const u16 gTilesetAnims_CityClara_WindyWater_Frame7[] = INCBIN_U16("data/tilesets/secondary/cityclara/anim/windy_water/7.4bpp");
+
 u16 *const gTilesetAnims_Rustboro_WindyWater_VDests[] = {
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 128)),
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 132)),
@@ -300,6 +311,17 @@ u16 *const gTilesetAnims_Rustboro_WindyWater_VDests[] = {
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 148)),
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 152)),
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 156))
+};
+
+u16 *const gTilesetAnims_CityClara_WindyWater_VDests[] = {
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 480)),
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 484)),
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 488)),
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 492)),
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 496)),
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 500)),
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 504)),	
+    (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 508))
 };
 
 const u16 *const gTilesetAnims_Rustboro_WindyWater[] = {
@@ -313,6 +335,16 @@ const u16 *const gTilesetAnims_Rustboro_WindyWater[] = {
     gTilesetAnims_Rustboro_WindyWater_Frame7
 };
 
+const u16 *const gTilesetAnims_CityClara_WindyWater[] = {
+    gTilesetAnims_CityClara_WindyWater_Frame0,
+    gTilesetAnims_CityClara_WindyWater_Frame1,
+    gTilesetAnims_CityClara_WindyWater_Frame2,
+    gTilesetAnims_CityClara_WindyWater_Frame3,
+    gTilesetAnims_CityClara_WindyWater_Frame4,
+    gTilesetAnims_CityClara_WindyWater_Frame5,
+    gTilesetAnims_CityClara_WindyWater_Frame6,
+    gTilesetAnims_CityClara_WindyWater_Frame7
+};
 const u16 gTilesetAnims_Rustboro_Fountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/fountain/0.4bpp");
 const u16 gTilesetAnims_Rustboro_Fountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/fountain/1.4bpp");
 const u16 tileset_anims_space_2[16] = {};
@@ -687,6 +719,13 @@ void InitTilesetAnim_Rustboro(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_Rustboro;
 }
 
+void InitTilesetAnim_CityClara(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_CityClara;
+}
+
 void InitTilesetAnim_Dewford(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -832,6 +871,27 @@ void InitTilesetAnim_BattleDome(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_BattleDome;
+}
+
+
+static void TilesetAnim_CityClara(u16 timer)
+{
+    if (timer % 8 == 0)
+		QueueAnimTiles_CityClara_WindyWater(timer >> 3, 0);
+    if (timer % 8 == 1)
+        QueueAnimTiles_CityClara_WindyWater(timer >> 3, 1);
+    if (timer % 8 == 2)
+        QueueAnimTiles_CityClara_WindyWater(timer >> 3, 2);
+    if (timer % 8 == 3)
+        QueueAnimTiles_CityClara_WindyWater(timer >> 3, 3);
+    if (timer % 8 == 4)
+        QueueAnimTiles_CityClara_WindyWater(timer >> 3, 4);
+    if (timer % 8 == 5)
+        QueueAnimTiles_CityClara_WindyWater(timer >> 3, 5);
+    if (timer % 8 == 6)
+        QueueAnimTiles_CityClara_WindyWater(timer >> 3, 6);
+    if (timer % 8 == 7)
+        QueueAnimTiles_CityClara_WindyWater(timer >> 3, 7);
 }
 
 static void TilesetAnim_Rustboro(u16 timer)
@@ -1011,6 +1071,14 @@ static void QueueAnimTiles_Rustboro_WindyWater(u16 timer_div, u8 timer_mod)
     timer_div %= 8;
     if (gTilesetAnims_Rustboro_WindyWater[timer_div])
         AppendTilesetAnimToBuffer(gTilesetAnims_Rustboro_WindyWater[timer_div], gTilesetAnims_Rustboro_WindyWater_VDests[timer_mod], 0x80);
+}
+
+static void QueueAnimTiles_CityClara_WindyWater(u16 timer_div, u8 timer_mod)
+{
+    timer_div -= timer_mod;
+    timer_div %= 8;
+    if (gTilesetAnims_CityClara_WindyWater[timer_div])
+        AppendTilesetAnimToBuffer(gTilesetAnims_CityClara_WindyWater[timer_div], gTilesetAnims_CityClara_WindyWater_VDests[timer_mod], 0x80);
 }
 
 static void QueueAnimTiles_Rustboro_Fountain(u16 timer)

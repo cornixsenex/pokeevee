@@ -599,6 +599,18 @@
 #define MAP_LOONIX_INSIDE_REAL_F2                  (7 | (33 << 8))
 #define MAP_GRANDMAS_CABIN                         (8 | (33 << 8))
 #define MAP_ROUTE1                                 (9 | (33 << 8))
+#define MAP_RIVAL_HOUSE                            (10 | (33 << 8))
+#define MAP_RIVAL_HOUSE_INSIDE                     (11 | (33 << 8))
+#define MAP_ALDEON_TOWN                            (12 | (33 << 8))
+#define MAP_ROUTE2                                 (13 | (33 << 8))
+#define MAP_BULBUS_TOWN                            (14 | (33 << 8))
+#define MAP_ROUTE3                                 (15 | (33 << 8))
+#define MAP_CITY_CLARA                             (16 | (33 << 8))
+#define MAP_ROUTE4                                 (17 | (33 << 8))
+#define MAP_ROUTE5                                 (18 | (33 << 8))
+#define MAP_DOAK_TOWN                              (19 | (33 << 8))
+#define MAP_ROUTE6                                 (20 | (33 << 8))
+#define MAP_SROUTE18                               (21 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

@@ -243,8 +243,15 @@
 #define OBJ_EVENT_GFX_BLUE						 239
 #define OBJ_EVENT_GFX_GRANDMA				     240
 #define OBJ_EVENT_GFX_EEVEE				         241
+#define OBJ_EVENT_GFX_FLAREON				     242
+#define OBJ_EVENT_GFX_JOLTEON				     243
+#define OBJ_EVENT_GFX_VAPOREON				     244
+#define OBJ_EVENT_GFX_ESPEON				     245
+#define OBJ_EVENT_GFX_UMBREON				     246
+#define OBJ_EVENT_GFX_LEAFEON				     247
+#define OBJ_EVENT_GFX_GLACEON				     248
 
-#define NUM_OBJ_EVENT_GFX                        242
+#define NUM_OBJ_EVENT_GFX                        249
 
 
 // These are dynamic object gfx ids.

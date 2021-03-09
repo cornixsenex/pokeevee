@@ -1135,40 +1135,6 @@ const union AffineAnimCmd *const gObjectEventRotScalAnimTable_KyogreGroudon[] = 
     gObjectEventRotScalAnim_8509060,
 };
 
-const struct UnkStruct_085094AC gUnknown_085094AC[] = {
-    {
-        .anims = gObjectEventImageAnimTable_QuintyPlump,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = gObjectEventImageAnimTable_Standard,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = gObjectEventImageAnimTable_BrendanMayNormal,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = gObjectEventImageAnimTable_AcroBike,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = gObjectEventImageAnimTable_Surfing,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = gObjectEventImageAnimTable_Nurse,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        .anims = gObjectEventImageAnimTable_Fishing,
-        .animPos = {1, 3, 0, 2},
-    },
-    {
-        NULL,
-        {0, 0, 0, 0},
-    },
-};
 
 //Pokemon species overworlds
 const union AnimCmd gObjectEventImageAnim_Pokemon_FaceSouth[] =
@@ -1342,3 +1308,41 @@ const union AnimCmd *const gObjectEventImageAnimTable_PokemonSpecies[] = {
     gObjectEventImageAnim_Pokemon_GoFastestEast,
 };
 
+const struct UnkStruct_085094AC gUnknown_085094AC[] = {
+    {
+        .anims = gObjectEventImageAnimTable_QuintyPlump,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = gObjectEventImageAnimTable_Standard,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = gObjectEventImageAnimTable_BrendanMayNormal,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = gObjectEventImageAnimTable_AcroBike,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = gObjectEventImageAnimTable_Surfing,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = gObjectEventImageAnimTable_Nurse,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = gObjectEventImageAnimTable_Fishing,
+        .animPos = {1, 3, 0, 2},
+    },
+	{
+        .anims = gObjectEventImageAnimTable_PokemonSpecies,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        NULL,
+        {0, 0, 0, 0},
+    },
+};

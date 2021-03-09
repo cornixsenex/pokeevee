@@ -565,3 +565,17 @@ gMetatiles_Snow::
 	.align 1
 gMetatileAttributes_Snow::
 	.incbin "data/tilesets/primary/snow/metatile_attributes.bin"
+	.align 1
+gMetatiles_CityClara::
+	.incbin "data/tilesets/secondary/cityclara/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CityClara::
+	.incbin "data/tilesets/secondary/cityclara/metatile_attributes.bin"
+	.align 1
+gMetatiles_lodge::
+	.incbin "data/tilesets/secondary/lodge/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_lodge::
+	.incbin "data/tilesets/secondary/lodge/metatile_attributes.bin"

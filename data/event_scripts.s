@@ -1082,3 +1082,27 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/GrandmasCabin/scripts.inc"
 
 	.include "data/maps/Route1/scripts.inc"
+
+	.include "data/maps/RivalHouse/scripts.inc"
+
+	.include "data/maps/RivalHouseInside/scripts.inc"
+
+	.include "data/maps/AldeonTown/scripts.inc"
+
+	.include "data/maps/Route2/scripts.inc"
+
+	.include "data/maps/BulbusTown/scripts.inc"
+
+	.include "data/maps/Route3/scripts.inc"
+
+	.include "data/maps/CityClara/scripts.inc"
+
+	.include "data/maps/Route4/scripts.inc"
+
+	.include "data/maps/Route5/scripts.inc"
+
+	.include "data/maps/DoakTown/scripts.inc"
+
+	.include "data/maps/Route6/scripts.inc"
+
+	.include "data/maps/SRoute18/scripts.inc"

@@ -841,3 +841,25 @@ gTileset_Snow::
 	.4byte gMetatiles_Snow
 	.4byte gMetatileAttributes_Snow
 	.4byte NULL
+
+	.align 2
+gTileset_CityClara::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_CityClara
+	.4byte gTilesetPalettes_CityClara
+	.4byte gMetatiles_CityClara
+	.4byte gMetatileAttributes_CityClara
+	.4byte InitTilesetAnim_CityClara
+
+	.align 2
+gTileset_lodge::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_lodge
+	.4byte gTilesetPalettes_lodge
+	.4byte gMetatiles_lodge
+	.4byte gMetatileAttributes_lodge
+	.4byte NULL
