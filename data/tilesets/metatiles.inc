@@ -579,3 +579,10 @@ gMetatiles_lodge::
 	.align 1
 gMetatileAttributes_lodge::
 	.incbin "data/tilesets/secondary/lodge/metatile_attributes.bin"
+	.align 1
+gMetatiles_BigCity::
+	.incbin "data/tilesets/secondary/bigcity/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_BigCity::
+	.incbin "data/tilesets/secondary/bigcity/metatile_attributes.bin"

@@ -863,3 +863,14 @@ gTileset_lodge::
 	.4byte gMetatiles_lodge
 	.4byte gMetatileAttributes_lodge
 	.4byte NULL
+
+	.align 2
+gTileset_BigCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_BigCity
+	.4byte gTilesetPalettes_BigCity
+	.4byte gMetatiles_BigCity
+	.4byte gMetatileAttributes_BigCity
+	.4byte NULL

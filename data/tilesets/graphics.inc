@@ -1789,3 +1789,23 @@ gTilesetPalettes_lodge::
 	.align 2
 gTilesetTiles_lodge::
 	.incbin "data/tilesets/secondary/lodge/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_BigCity::
+	.incbin "data/tilesets/secondary/bigcity/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/bigcity/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_BigCity::
+	.incbin "data/tilesets/secondary/bigcity/tiles.4bpp.lz"

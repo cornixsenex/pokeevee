@@ -4620,6 +4620,116 @@
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/SRoute18/border.bin",
       "blockdata_filepath": "data/layouts/SRoute18/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE7",
+      "name": "Route7_Layout",
+      "width": 26,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route7/border.bin",
+      "blockdata_filepath": "data/layouts/Route7/map.bin"
+    },
+    {
+      "id": "LAYOUT_SROUTE19",
+      "name": "SRoute19_Layout",
+      "width": 32,
+      "height": 72,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/SRoute19/border.bin",
+      "blockdata_filepath": "data/layouts/SRoute19/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE8",
+      "name": "Route8_Layout",
+      "width": 28,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route8/border.bin",
+      "blockdata_filepath": "data/layouts/Route8/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE9",
+      "name": "Route9_Layout",
+      "width": 72,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route9/border.bin",
+      "blockdata_filepath": "data/layouts/Route9/map.bin"
+    },
+    {
+      "id": "LAYOUT_ELICIUS_BEACH",
+      "name": "EliciusBeach_Layout",
+      "width": 40,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/EliciusBeach/border.bin",
+      "blockdata_filepath": "data/layouts/EliciusBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE10",
+      "name": "Route10_Layout",
+      "width": 80,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/Route10/border.bin",
+      "blockdata_filepath": "data/layouts/Route10/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE11",
+      "name": "Route11_Layout",
+      "width": 40,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route11/border.bin",
+      "blockdata_filepath": "data/layouts/Route11/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_E",
+      "name": "MareE_Layout",
+      "width": 115,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/MareE/border.bin",
+      "blockdata_filepath": "data/layouts/MareE/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_C",
+      "name": "MareC_Layout",
+      "width": 126,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/MareC/border.bin",
+      "blockdata_filepath": "data/layouts/MareC/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORT_MONTGOMERY",
+      "name": "FortMontgomery_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/FortMontgomery/border.bin",
+      "blockdata_filepath": "data/layouts/FortMontgomery/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY",
+      "name": "GatoCity_Layout",
+      "width": 80,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BigCity",
+      "border_filepath": "data/layouts/GatoCity/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCity/map.bin"
     }
   ]
 }

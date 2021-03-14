@@ -1106,3 +1106,25 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/Route6/scripts.inc"
 
 	.include "data/maps/SRoute18/scripts.inc"
+
+	.include "data/maps/Route7/scripts.inc"
+
+	.include "data/maps/SRoute19/scripts.inc"
+
+	.include "data/maps/Route8/scripts.inc"
+
+	.include "data/maps/Route9/scripts.inc"
+
+	.include "data/maps/EliciusBeach/scripts.inc"
+
+	.include "data/maps/Route10/scripts.inc"
+
+	.include "data/maps/Route11/scripts.inc"
+
+	.include "data/maps/MareE/scripts.inc"
+
+	.include "data/maps/MareC/scripts.inc"
+
+	.include "data/maps/FortMontgomery/scripts.inc"
+
+	.include "data/maps/GatoCity/scripts.inc"

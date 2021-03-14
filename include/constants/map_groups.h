@@ -611,6 +611,17 @@
 #define MAP_DOAK_TOWN                              (19 | (33 << 8))
 #define MAP_ROUTE6                                 (20 | (33 << 8))
 #define MAP_SROUTE18                               (21 | (33 << 8))
+#define MAP_ROUTE7                                 (22 | (33 << 8))
+#define MAP_SROUTE19                               (23 | (33 << 8))
+#define MAP_ROUTE8                                 (24 | (33 << 8))
+#define MAP_ROUTE9                                 (25 | (33 << 8))
+#define MAP_ELICIUS_BEACH                          (26 | (33 << 8))
+#define MAP_ROUTE10                                (27 | (33 << 8))
+#define MAP_ROUTE11                                (28 | (33 << 8))
+#define MAP_MARE_E                                 (29 | (33 << 8))
+#define MAP_MARE_C                                 (30 | (33 << 8))
+#define MAP_FORT_MONTGOMERY                        (31 | (33 << 8))
+#define MAP_GATO_CITY                              (32 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 
