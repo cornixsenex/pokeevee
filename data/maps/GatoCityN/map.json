@@ -1,0 +1,39 @@
+{
+  "id": "MAP_GATO_CITY_N",
+  "name": "GatoCityN",
+  "layout": "LAYOUT_GATO_CITY_N",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_INSIDE_OF_TRUCK",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "direction": "down",
+      "offset": -18,
+      "map": "MAP_GATO_CITY"
+    },
+    {
+      "direction": "down",
+      "offset": 38,
+      "map": "MAP_GATO_CITY_DT"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

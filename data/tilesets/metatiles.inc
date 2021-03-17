@@ -586,3 +586,31 @@ gMetatiles_BigCity::
 	.align 1
 gMetatileAttributes_BigCity::
 	.incbin "data/tilesets/secondary/bigcity/metatile_attributes.bin"
+	.align 1
+gMetatiles_downtown::
+	.incbin "data/tilesets/secondary/downtown/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_downtown::
+	.incbin "data/tilesets/secondary/downtown/metatile_attributes.bin"
+	.align 1
+gMetatiles_swhj::
+	.incbin "data/tilesets/secondary/swhj/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_swhj::
+	.incbin "data/tilesets/secondary/swhj/metatile_attributes.bin"
+	.align 1
+gMetatiles_CityNorth::
+	.incbin "data/tilesets/secondary/citynorth/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CityNorth::
+	.incbin "data/tilesets/secondary/citynorth/metatile_attributes.bin"
+	.align 1
+gMetatiles_gatosouth::
+	.incbin "data/tilesets/secondary/gatosouth/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_gatosouth::
+	.incbin "data/tilesets/secondary/gatosouth/metatile_attributes.bin"

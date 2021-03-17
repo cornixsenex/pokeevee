@@ -15,8 +15,23 @@
   "connections": [
     {
       "direction": "left",
-      "offset": 42,
+      "offset": 21,
       "map": "MAP_ROUTE11"
+    },
+    {
+      "direction": "right",
+      "offset": 4,
+      "map": "MAP_GATO_CITY_DT"
+    },
+    {
+      "direction": "up",
+      "offset": 18,
+      "map": "MAP_GATO_CITY_N"
+    },
+    {
+      "direction": "down",
+      "offset": 3,
+      "map": "MAP_GATO_CITY_S"
     }
   ],
   "object_events": [

@@ -4724,12 +4724,52 @@
     {
       "id": "LAYOUT_GATO_CITY",
       "name": "GatoCity_Layout",
-      "width": 80,
-      "height": 80,
+      "width": 56,
+      "height": 56,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BigCity",
       "border_filepath": "data/layouts/GatoCity/border.bin",
       "blockdata_filepath": "data/layouts/GatoCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_DT",
+      "name": "GatoCityDT_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_downtown",
+      "border_filepath": "data/layouts/GatoCityDT/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityDT/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_E",
+      "name": "GatoCityE_Layout",
+      "width": 48,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_swhj",
+      "border_filepath": "data/layouts/GatoCityE/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityE/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_N",
+      "name": "GatoCityN_Layout",
+      "width": 96,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CityNorth",
+      "border_filepath": "data/layouts/GatoCityN/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityN/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_S",
+      "name": "GatoCityS_Layout",
+      "width": 104,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_gatosouth",
+      "border_filepath": "data/layouts/GatoCityS/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityS/map.bin"
     }
   ]
 }

@@ -622,6 +622,10 @@
 #define MAP_MARE_C                                 (30 | (33 << 8))
 #define MAP_FORT_MONTGOMERY                        (31 | (33 << 8))
 #define MAP_GATO_CITY                              (32 | (33 << 8))
+#define MAP_GATO_CITY_DT                           (33 | (33 << 8))
+#define MAP_GATO_CITY_E                            (34 | (33 << 8))
+#define MAP_GATO_CITY_N                            (35 | (33 << 8))
+#define MAP_GATO_CITY_S                            (36 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

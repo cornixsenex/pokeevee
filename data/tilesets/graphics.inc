@@ -1809,3 +1809,83 @@ gTilesetPalettes_BigCity::
 	.align 2
 gTilesetTiles_BigCity::
 	.incbin "data/tilesets/secondary/bigcity/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_downtown::
+	.incbin "data/tilesets/secondary/downtown/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/downtown/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_downtown::
+	.incbin "data/tilesets/secondary/downtown/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_swhj::
+	.incbin "data/tilesets/secondary/swhj/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/swhj/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_swhj::
+	.incbin "data/tilesets/secondary/swhj/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CityNorth::
+	.incbin "data/tilesets/secondary/citynorth/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/citynorth/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_CityNorth::
+	.incbin "data/tilesets/secondary/citynorth/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_gatosouth::
+	.incbin "data/tilesets/secondary/gatosouth/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/gatosouth/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_gatosouth::
+	.incbin "data/tilesets/secondary/gatosouth/tiles.4bpp.lz"

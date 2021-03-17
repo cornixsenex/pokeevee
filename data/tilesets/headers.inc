@@ -874,3 +874,47 @@ gTileset_BigCity::
 	.4byte gMetatiles_BigCity
 	.4byte gMetatileAttributes_BigCity
 	.4byte NULL
+
+	.align 2
+gTileset_downtown::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_downtown
+	.4byte gTilesetPalettes_downtown
+	.4byte gMetatiles_downtown
+	.4byte gMetatileAttributes_downtown
+	.4byte NULL
+
+	.align 2
+gTileset_swhj::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_swhj
+	.4byte gTilesetPalettes_swhj
+	.4byte gMetatiles_swhj
+	.4byte gMetatileAttributes_swhj
+	.4byte NULL
+
+	.align 2
+gTileset_CityNorth::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_CityNorth
+	.4byte gTilesetPalettes_CityNorth
+	.4byte gMetatiles_CityNorth
+	.4byte gMetatileAttributes_CityNorth
+	.4byte NULL
+
+	.align 2
+gTileset_gatosouth::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_gatosouth
+	.4byte gTilesetPalettes_gatosouth
+	.4byte gMetatiles_gatosouth
+	.4byte gMetatileAttributes_gatosouth
+	.4byte NULL

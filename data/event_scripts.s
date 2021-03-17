@@ -1128,3 +1128,11 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/FortMontgomery/scripts.inc"
 
 	.include "data/maps/GatoCity/scripts.inc"
+
+	.include "data/maps/GatoCityDT/scripts.inc"
+
+	.include "data/maps/GatoCityE/scripts.inc"
+
+	.include "data/maps/GatoCityN/scripts.inc"
+
+	.include "data/maps/GatoCityS/scripts.inc"
