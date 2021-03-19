@@ -63,6 +63,7 @@
 #define MAP_UNDERWATER_ROUTE129 (54 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
+#define MAP_GATO_CITY_ZOO       (57 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -626,6 +627,8 @@
 #define MAP_GATO_CITY_E                            (34 | (33 << 8))
 #define MAP_GATO_CITY_N                            (35 | (33 << 8))
 #define MAP_GATO_CITY_S                            (36 | (33 << 8))
+#define MAP_GATO_CITY_PARK                         (37 | (33 << 8))
+#define MAP_GATO_CITY_PARK_N                       (38 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

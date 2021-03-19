@@ -1136,3 +1136,9 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/GatoCityN/scripts.inc"
 
 	.include "data/maps/GatoCityS/scripts.inc"
+
+	.include "data/maps/GatoCityZoo/scripts.inc"
+
+	.include "data/maps/GatoCityPark/scripts.inc"
+
+	.include "data/maps/GatoCityParkN/scripts.inc"

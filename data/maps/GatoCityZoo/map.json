@@ -1,12 +1,12 @@
 {
-  "id": "MAP_GATO_CITY_E",
-  "name": "GatoCityE",
-  "layout": "LAYOUT_GATO_CITY_E",
+  "id": "MAP_GATO_CITY_ZOO",
+  "name": "GatoCityZoo",
+  "layout": "LAYOUT_GATO_CITY_ZOO",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_KINDLE_ROAD",
+  "region_map_section": "MAPSEC_ROCKET_WAREHOUSE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_CITY",
+  "map_type": "MAP_TYPE_NONE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -14,18 +14,13 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
-      "offset": 1,
-      "map": "MAP_GATO_CITY_DT"
-    },
-    {
-      "direction": "down",
-      "offset": 8,
-      "map": "MAP_GATO_CITY_ZOO"
+      "direction": "up",
+      "offset": -8,
+      "map": "MAP_GATO_CITY_E"
     },
     {
       "direction": "right",
-      "offset": 0,
+      "offset": -32,
       "map": "MAP_GATO_CITY_PARK"
     }
   ],

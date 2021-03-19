@@ -4744,7 +4744,7 @@
     {
       "id": "LAYOUT_GATO_CITY_E",
       "name": "GatoCityE_Layout",
-      "width": 48,
+      "width": 56,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_swhj",
@@ -4764,12 +4764,42 @@
     {
       "id": "LAYOUT_GATO_CITY_S",
       "name": "GatoCityS_Layout",
-      "width": 104,
+      "width": 112,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_gatosouth",
       "border_filepath": "data/layouts/GatoCityS/border.bin",
       "blockdata_filepath": "data/layouts/GatoCityS/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_ZOO",
+      "name": "GatoCityZoo_Layout",
+      "width": 48,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GatoCityZoo/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityZoo/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_PARK",
+      "name": "GatoCityPark_Layout",
+      "width": 40,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GatoCityPark/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityPark/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_PARK_N",
+      "name": "GatoCityParkN_Layout",
+      "width": 40,
+      "height": 96,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GatoCityParkN/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityParkN/map.bin"
     }
   ]
 }
