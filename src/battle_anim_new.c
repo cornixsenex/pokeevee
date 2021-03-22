@@ -56,6 +56,47 @@ static void SpriteCB_SearingShotRock(struct Sprite* sprite);
 static void AnimHappyHourCoinShower(struct Sprite *sprite);
 static void SpriteCB_Geyser(struct Sprite* sprite);
 
+
+static const union AnimCmd sAnim_Fist[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FootWide[] =
+{
+    ANIMCMD_FRAME(16, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FootTall[] =
+{
+    ANIMCMD_FRAME(32, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_HandLeft[] =
+{
+    ANIMCMD_FRAME(48, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_HandRight[] =
+{
+    ANIMCMD_FRAME(48, 1, .hFlip = TRUE),
+    ANIMCMD_END,
+};
+
+
+static const union AnimCmd *const sAnims_HandsAndFeet[] =
+{
+    sAnim_Fist,
+    sAnim_FootWide,
+    sAnim_FootTall,
+    sAnim_HandLeft,
+    sAnim_HandRight,
+};
+
 //////// const data
 //// general
 static const union AffineAnimCmd sSquishTargetAffineAnimCmds[] =
@@ -353,7 +394,7 @@ const struct SpriteTemplate gQuickGuardArmImpactTemplate =
     .tileTag = ANIM_TAG_QUICK_GUARD_HAND,
     .paletteTag = ANIM_TAG_QUICK_GUARD_HAND,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimBasicFistOrFoot
@@ -421,7 +462,7 @@ const struct SpriteTemplate gQuashArmHitTemplate =
     .tileTag = ANIM_TAG_ASSURANCE_HAND,
     .paletteTag = ANIM_TAG_ASSURANCE_HAND,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimStompFoot
@@ -534,7 +575,7 @@ const struct SpriteTemplate gHeartStampSpinningHeartTemplate =
     .tileTag = ANIM_TAG_HEART_STAMP,
     .paletteTag = ANIM_TAG_HEART_STAMP,
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gAffineAnims_SpinningHandOrFoot,
     .callback = AnimSpinningKickOrPunch
@@ -720,7 +761,7 @@ const struct SpriteTemplate gSearingShotEruptionImpactTemplate =
     .tileTag = ANIM_TAG_WARM_ROCK,
     .paletteTag = ANIM_TAG_WARM_ROCK,
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = sSpriteAffineAnimTable_SearingShotRock,
     .callback = SpriteCB_SearingShotRock
@@ -2170,7 +2211,7 @@ const struct SpriteTemplate gIceHammerPunchStompTemplate =
     .tileTag = ANIM_TAG_HORSESHOE_SIDE_FIST,
     .paletteTag = ANIM_TAG_HORSESHOE_SIDE_FIST,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimStompFoot
@@ -2238,7 +2279,7 @@ const struct SpriteTemplate gHighHorsepowerHorseshoeTemplate =
     .tileTag = ANIM_TAG_HORSESHOE_SIDE_FIST,
     .paletteTag = ANIM_TAG_HORSESHOE_SIDE_FIST,
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gAffineAnims_MegaPunchKick,
     .callback = AnimSpinningKickOrPunch
@@ -2807,7 +2848,7 @@ const struct SpriteTemplate gTropKickGreenFootTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimJumpKick
@@ -3731,7 +3772,7 @@ const struct SpriteTemplate gClangorousSoulRedFistTemplate =
     .tileTag = ANIM_TAG_HORSESHOE_SIDE_FIST,
     .paletteTag = ANIM_TAG_VERTICAL_HEX,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimJumpKick

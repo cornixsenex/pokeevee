@@ -44,51 +44,44 @@ const struct SpriteTemplate gUnusedSpriteTemplate_08595E14 =
     .callback = AnimUnused_080B08A0,
 };
 
-static const union AnimCmd sAnim_HandOrFoot[] =
+static const union AnimCmd sAnim_Fist[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_SlidingKick_0[] =
+static const union AnimCmd sAnim_FootWide[] =
 {
     ANIMCMD_FRAME(16, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_SlidingKick_1[] =
+static const union AnimCmd sAnim_FootTall[] =
 {
     ANIMCMD_FRAME(32, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_CrossChopHand_0[] =
+static const union AnimCmd sAnim_HandLeft[] =
 {
     ANIMCMD_FRAME(48, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_CrossChopHand_1[] =
+static const union AnimCmd sAnim_HandRight[] =
 {
     ANIMCMD_FRAME(48, 1, .hFlip = TRUE),
     ANIMCMD_END,
 };
 
-const union AnimCmd *const gAnims_HandOrFoot[] =
-{
-    sAnim_HandOrFoot,
-};
 
-static const union AnimCmd *const sAnims_SlidingKick[] =
+static const union AnimCmd *const sAnims_HandsAndFeet[] =
 {
-    sAnim_SlidingKick_0,
-    sAnim_SlidingKick_1,
-};
-
-static const union AnimCmd *const sAnims_CrossChopHand[] =
-{
-    sAnim_CrossChopHand_0,
-    sAnim_CrossChopHand_1,
+    sAnim_Fist,
+    sAnim_FootWide,
+    sAnim_FootTall,
+    sAnim_HandLeft,
+    sAnim_HandRight,
 };
 
 const struct SpriteTemplate gKarateChopSpriteTemplate =
@@ -96,7 +89,7 @@ const struct SpriteTemplate gKarateChopSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimSlideHandOrFootToTarget,
@@ -107,7 +100,7 @@ const struct SpriteTemplate gJumpKickSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimJumpKick,
@@ -118,7 +111,7 @@ const struct SpriteTemplate gFistFootSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimBasicFistOrFoot,
@@ -129,7 +122,7 @@ const struct SpriteTemplate gFistFootRandomPosSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimFistOrFootRandomPos,
@@ -140,7 +133,7 @@ const struct SpriteTemplate gCrossChopHandSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = sAnims_CrossChopHand,
+    .anims = &sAnims_HandsAndFeet[3],
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimCrossChopHand,
@@ -151,7 +144,7 @@ const struct SpriteTemplate gSlidingKickSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = sAnims_SlidingKick,
+    .anims = &sAnims_HandsAndFeet[1],
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimSlidingKick,
@@ -175,7 +168,7 @@ const struct SpriteTemplate gSpinningHandOrFootSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gAffineAnims_SpinningHandOrFoot,
     .callback = AnimSpinningKickOrPunch,
@@ -198,7 +191,7 @@ const struct SpriteTemplate gMegaPunchKickSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gAffineAnims_MegaPunchKick,
     .callback = AnimSpinningKickOrPunch,
@@ -209,7 +202,7 @@ const struct SpriteTemplate gStompFootSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = sAnims_SlidingKick,
+    .anims = &sAnims_HandsAndFeet[1],
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimStompFoot,
@@ -300,7 +293,7 @@ const struct SpriteTemplate gArmThrustHandSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimArmThrustHit,
@@ -404,7 +397,7 @@ const struct SpriteTemplate gFocusPunchFistSpriteTemplate =
     .tileTag = ANIM_TAG_HANDS_AND_FEET,
     .paletteTag = ANIM_TAG_HANDS_AND_FEET,
     .oam = &gOamData_AffineDouble_ObjNormal_32x32,
-    .anims = gAnims_HandOrFoot,
+    .anims = sAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = sAffineAnims_FocusPunchFist,
     .callback = AnimFocusPunchFist,
@@ -415,7 +408,7 @@ const struct SpriteTemplate gPalmSpriteTemplate =
 	.tileTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
 	.paletteTag = ANIM_TAG_PURPLE_HAND_OUTLINE,
 	.oam = &gOamData_AffineOff_ObjNormal_32x32,
-	.anims = gAnims_HandOrFoot,
+	.anims = sAnims_HandsAndFeet,
 	.images = NULL,
 	.affineAnims = gDummySpriteAffineAnimTable,
 	.callback = AnimBasicFistOrFoot,

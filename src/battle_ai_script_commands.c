@@ -2302,7 +2302,8 @@ static void Cmd_get_used_held_item(void)
     else
         battlerId = gBattlerTarget;
 
-    AI_THINKING_STRUCT->funcResult = gBattleStruct->usedHeldItems[battlerId];
+    //AI_THINKING_STRUCT->funcResult = gBattleStruct->usedHeldItems[battlerId];
+    AI_THINKING_STRUCT->funcResult = *(u8 *)&gBattleStruct->usedHeldItems[battlerId];
 
     gAIScriptPtr += 2;
 }
