@@ -4850,6 +4850,26 @@
       "secondary_tileset": "gTileset_graveyard",
       "border_filepath": "data/layouts/Graveyard/border.bin",
       "blockdata_filepath": "data/layouts/Graveyard/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE12",
+      "name": "Route12_Layout",
+      "width": 126,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/Route12/border.bin",
+      "blockdata_filepath": "data/layouts/Route12/map.bin"
+    },
+    {
+      "id": "LAYOUT_SLABS",
+      "name": "Slabs_Layout",
+      "width": 48,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/Slabs/border.bin",
+      "blockdata_filepath": "data/layouts/Slabs/map.bin"
     }
   ]
 }

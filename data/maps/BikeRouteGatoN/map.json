@@ -25,8 +25,13 @@
     },
     {
       "direction": "left",
-      "offset": 0,
+      "offset": -14,
       "map": "MAP_GRAVEYARD"
+    },
+    {
+      "direction": "right",
+      "offset": -15,
+      "map": "MAP_ROUTE12"
     }
   ],
   "object_events": [

@@ -634,6 +634,8 @@
 #define MAP_BIKE_ROUTE_GATO_N                      (41 | (33 << 8))
 #define MAP_BIKE_ROUTE_NE                          (42 | (33 << 8))
 #define MAP_GRAVEYARD                              (43 | (33 << 8))
+#define MAP_ROUTE12                                (44 | (33 << 8))
+#define MAP_SLABS                                  (45 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 
