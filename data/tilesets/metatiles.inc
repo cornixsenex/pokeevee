@@ -614,3 +614,10 @@ gMetatiles_gatosouth::
 	.align 1
 gMetatileAttributes_gatosouth::
 	.incbin "data/tilesets/secondary/gatosouth/metatile_attributes.bin"
+	.align 1
+gMetatiles_graveyard::
+	.incbin "data/tilesets/secondary/graveyard/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_graveyard::
+	.incbin "data/tilesets/secondary/graveyard/metatile_attributes.bin"

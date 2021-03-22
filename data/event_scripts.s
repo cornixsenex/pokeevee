@@ -1142,3 +1142,13 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/GatoCityPark/scripts.inc"
 
 	.include "data/maps/GatoCityParkN/scripts.inc"
+
+	.include "data/maps/BikeMapW/scripts.inc"
+
+	.include "data/maps/BikeMapE/scripts.inc"
+
+	.include "data/maps/BikeRouteGatoN/scripts.inc"
+
+	.include "data/maps/BikeRouteNE/scripts.inc"
+
+	.include "data/maps/Graveyard/scripts.inc"

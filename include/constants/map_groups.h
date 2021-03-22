@@ -629,6 +629,11 @@
 #define MAP_GATO_CITY_S                            (36 | (33 << 8))
 #define MAP_GATO_CITY_PARK                         (37 | (33 << 8))
 #define MAP_GATO_CITY_PARK_N                       (38 | (33 << 8))
+#define MAP_BIKE_MAP_W                             (39 | (33 << 8))
+#define MAP_BIKE_MAP_E                             (40 | (33 << 8))
+#define MAP_BIKE_ROUTE_GATO_N                      (41 | (33 << 8))
+#define MAP_BIKE_ROUTE_NE                          (42 | (33 << 8))
+#define MAP_GRAVEYARD                              (43 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

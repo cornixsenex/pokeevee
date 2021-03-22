@@ -22,6 +22,11 @@
       "direction": "down",
       "offset": 38,
       "map": "MAP_GATO_CITY_DT"
+    },
+    {
+      "direction": "up",
+      "offset": 28,
+      "map": "MAP_BIKE_ROUTE_GATO_N"
     }
   ],
   "object_events": [

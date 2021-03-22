@@ -918,3 +918,14 @@ gTileset_gatosouth::
 	.4byte gMetatiles_gatosouth
 	.4byte gMetatileAttributes_gatosouth
 	.4byte NULL
+
+	.align 2
+gTileset_graveyard::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_graveyard
+	.4byte gTilesetPalettes_graveyard
+	.4byte gMetatiles_graveyard
+	.4byte gMetatileAttributes_graveyard
+	.4byte NULL

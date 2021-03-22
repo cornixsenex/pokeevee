@@ -17,6 +17,11 @@
       "direction": "left",
       "offset": 20,
       "map": "MAP_ROUTE5"
+    },
+    {
+      "direction": "right",
+      "offset": -2,
+      "map": "MAP_BIKE_MAP_W"
     }
   ],
   "object_events": [

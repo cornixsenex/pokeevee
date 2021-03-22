@@ -659,6 +659,11 @@
     "GatoCityN",
     "GatoCityS",
     "GatoCityPark",
-    "GatoCityParkN"
+    "GatoCityParkN",
+    "BikeMapW",
+    "BikeMapE",
+    "BikeRouteGatoN",
+    "BikeRouteNE",
+    "Graveyard"
   ]
 }

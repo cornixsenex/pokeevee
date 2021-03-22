@@ -4755,7 +4755,7 @@
       "id": "LAYOUT_GATO_CITY_N",
       "name": "GatoCityN_Layout",
       "width": 96,
-      "height": 32,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CityNorth",
       "border_filepath": "data/layouts/GatoCityN/border.bin",
@@ -4797,9 +4797,59 @@
       "width": 40,
       "height": 96,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/GatoCityParkN/border.bin",
       "blockdata_filepath": "data/layouts/GatoCityParkN/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_MAP_W",
+      "name": "BikeMapW_Layout",
+      "width": 160,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/BikeMapW/border.bin",
+      "blockdata_filepath": "data/layouts/BikeMapW/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_MAP_E",
+      "name": "BikeMapE_Layout",
+      "width": 126,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/BikeMapE/border.bin",
+      "blockdata_filepath": "data/layouts/BikeMapE/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_ROUTE_GATO_N",
+      "name": "BikeRouteGatoN_Layout",
+      "width": 32,
+      "height": 128,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/BikeRouteGatoN/border.bin",
+      "blockdata_filepath": "data/layouts/BikeRouteGatoN/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_ROUTE_NE",
+      "name": "BikeRouteNE_Layout",
+      "width": 96,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/BikeRouteNE/border.bin",
+      "blockdata_filepath": "data/layouts/BikeRouteNE/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRAVEYARD",
+      "name": "Graveyard_Layout",
+      "width": 126,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_graveyard",
+      "border_filepath": "data/layouts/Graveyard/border.bin",
+      "blockdata_filepath": "data/layouts/Graveyard/map.bin"
     }
   ]
 }
