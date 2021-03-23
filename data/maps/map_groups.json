@@ -94,7 +94,8 @@
     "Underwater_Route129",
     "Underwater_Route105",
     "Underwater_Route125",
-    "GatoCityZoo"
+    "GatoCityZoo",
+    "BikeRouteNWS"
   ],
   "gMapGroup1": [
     "LittlerootTown_BrendansHouse_1F",
@@ -666,6 +667,7 @@
     "BikeRouteNE",
     "Graveyard",
     "Route12",
-    "Slabs"
+    "Slabs",
+    "Route14"
   ]
 }

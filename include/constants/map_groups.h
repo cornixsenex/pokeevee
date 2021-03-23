@@ -64,6 +64,7 @@
 #define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
 #define MAP_GATO_CITY_ZOO       (57 | (0 << 8))
+#define MAP_BIKE_ROUTE_NWS      (58 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -636,6 +637,7 @@
 #define MAP_GRAVEYARD                              (43 | (33 << 8))
 #define MAP_ROUTE12                                (44 | (33 << 8))
 #define MAP_SLABS                                  (45 | (33 << 8))
+#define MAP_ROUTE14                                (46 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 
