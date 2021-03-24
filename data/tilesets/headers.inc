@@ -929,3 +929,14 @@ gTileset_graveyard::
 	.4byte gMetatiles_graveyard
 	.4byte gMetatileAttributes_graveyard
 	.4byte NULL
+
+	.align 2
+gTileset_pyramids::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_pyramids
+	.4byte gTilesetPalettes_pyramids
+	.4byte gMetatiles_pyramids
+	.4byte gMetatileAttributes_pyramids
+	.4byte NULL

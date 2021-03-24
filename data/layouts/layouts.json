@@ -4890,6 +4890,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/BikeRouteNWS/border.bin",
       "blockdata_filepath": "data/layouts/BikeRouteNWS/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYRAMIDS",
+      "name": "Pyramids_Layout",
+      "width": 72,
+      "height": 72,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_pyramids",
+      "border_filepath": "data/layouts/Pyramids/border.bin",
+      "blockdata_filepath": "data/layouts/Pyramids/map.bin"
     }
   ]
 }

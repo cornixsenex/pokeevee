@@ -621,3 +621,10 @@ gMetatiles_graveyard::
 	.align 1
 gMetatileAttributes_graveyard::
 	.incbin "data/tilesets/secondary/graveyard/metatile_attributes.bin"
+	.align 1
+gMetatiles_pyramids::
+	.incbin "data/tilesets/secondary/pyramids/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_pyramids::
+	.incbin "data/tilesets/secondary/pyramids/metatile_attributes.bin"

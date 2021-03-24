@@ -1909,3 +1909,23 @@ gTilesetPalettes_graveyard::
 	.align 2
 gTilesetTiles_graveyard::
 	.incbin "data/tilesets/secondary/graveyard/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_pyramids::
+	.incbin "data/tilesets/secondary/pyramids/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/pyramids/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_pyramids::
+	.incbin "data/tilesets/secondary/pyramids/tiles.4bpp.lz"
