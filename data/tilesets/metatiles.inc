@@ -628,3 +628,10 @@ gMetatiles_pyramids::
 	.align 1
 gMetatileAttributes_pyramids::
 	.incbin "data/tilesets/secondary/pyramids/metatile_attributes.bin"
+	.align 1
+gMetatiles_phoenix::
+	.incbin "data/tilesets/secondary/phoenix/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_phoenix::
+	.incbin "data/tilesets/secondary/phoenix/metatile_attributes.bin"

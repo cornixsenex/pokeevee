@@ -1929,3 +1929,23 @@ gTilesetPalettes_pyramids::
 	.align 2
 gTilesetTiles_pyramids::
 	.incbin "data/tilesets/secondary/pyramids/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_phoenix::
+	.incbin "data/tilesets/secondary/phoenix/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/phoenix/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_phoenix::
+	.incbin "data/tilesets/secondary/phoenix/tiles.4bpp.lz"

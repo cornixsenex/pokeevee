@@ -940,3 +940,14 @@ gTileset_pyramids::
 	.4byte gMetatiles_pyramids
 	.4byte gMetatileAttributes_pyramids
 	.4byte NULL
+
+	.align 2
+gTileset_phoenix::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_phoenix
+	.4byte gTilesetPalettes_phoenix
+	.4byte gMetatiles_phoenix
+	.4byte gMetatileAttributes_phoenix
+	.4byte NULL

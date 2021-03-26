@@ -4900,6 +4900,16 @@
       "secondary_tileset": "gTileset_pyramids",
       "border_filepath": "data/layouts/Pyramids/border.bin",
       "blockdata_filepath": "data/layouts/Pyramids/map.bin"
+    },
+    {
+      "id": "LAYOUT_PHOENIX",
+      "name": "Phoenix_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_phoenix",
+      "border_filepath": "data/layouts/Phoenix/border.bin",
+      "blockdata_filepath": "data/layouts/Phoenix/map.bin"
     }
   ]
 }

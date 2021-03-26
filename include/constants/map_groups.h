@@ -639,6 +639,7 @@
 #define MAP_SLABS                                  (45 | (33 << 8))
 #define MAP_ROUTE14                                (46 | (33 << 8))
 #define MAP_PYRAMIDS                               (47 | (33 << 8))
+#define MAP_PHOENIX                                (48 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 
