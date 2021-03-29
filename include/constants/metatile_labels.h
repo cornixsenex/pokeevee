@@ -782,6 +782,9 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_desert
+#define METATILE_desert_DeepSand_Center  0x219
+
 // gTileset_pyramids
 #define METATILE_pyramids_DeepSand_Center  0x251
 

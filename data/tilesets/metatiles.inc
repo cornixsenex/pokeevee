@@ -635,3 +635,17 @@ gMetatiles_phoenix::
 	.align 1
 gMetatileAttributes_phoenix::
 	.incbin "data/tilesets/secondary/phoenix/metatile_attributes.bin"
+	.align 1
+gMetatiles_desert::
+	.incbin "data/tilesets/secondary/desert/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_desert::
+	.incbin "data/tilesets/secondary/desert/metatile_attributes.bin"
+	.align 1
+gMetatiles_vegas::
+	.incbin "data/tilesets/secondary/vegas/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_vegas::
+	.incbin "data/tilesets/secondary/vegas/metatile_attributes.bin"

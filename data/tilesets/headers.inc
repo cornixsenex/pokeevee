@@ -951,3 +951,25 @@ gTileset_phoenix::
 	.4byte gMetatiles_phoenix
 	.4byte gMetatileAttributes_phoenix
 	.4byte NULL
+
+	.align 2
+gTileset_desert::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_desert
+	.4byte gTilesetPalettes_desert
+	.4byte gMetatiles_desert
+	.4byte gMetatileAttributes_desert
+	.4byte NULL
+
+	.align 2
+gTileset_vegas::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_vegas
+	.4byte gTilesetPalettes_vegas
+	.4byte gMetatiles_vegas
+	.4byte gMetatileAttributes_vegas
+	.4byte NULL

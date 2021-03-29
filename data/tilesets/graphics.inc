@@ -1949,3 +1949,43 @@ gTilesetPalettes_phoenix::
 	.align 2
 gTilesetTiles_phoenix::
 	.incbin "data/tilesets/secondary/phoenix/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_desert::
+	.incbin "data/tilesets/secondary/desert/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/desert/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_desert::
+	.incbin "data/tilesets/secondary/desert/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_vegas::
+	.incbin "data/tilesets/secondary/vegas/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/vegas/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_vegas::
+	.incbin "data/tilesets/secondary/vegas/tiles.4bpp.lz"

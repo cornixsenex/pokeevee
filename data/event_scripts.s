@@ -1164,3 +1164,7 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/Pyramids/scripts.inc"
 
 	.include "data/maps/Phoenix/scripts.inc"
+
+	.include "data/maps/Route15/scripts.inc"
+
+	.include "data/maps/Vegas/scripts.inc"

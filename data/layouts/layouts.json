@@ -4910,6 +4910,26 @@
       "secondary_tileset": "gTileset_phoenix",
       "border_filepath": "data/layouts/Phoenix/border.bin",
       "blockdata_filepath": "data/layouts/Phoenix/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE15",
+      "name": "Route15_Layout",
+      "width": 96,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_desert",
+      "border_filepath": "data/layouts/Route15/border.bin",
+      "blockdata_filepath": "data/layouts/Route15/map.bin"
+    },
+    {
+      "id": "LAYOUT_VEGAS",
+      "name": "Vegas_Layout",
+      "width": 48,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_vegas",
+      "border_filepath": "data/layouts/Vegas/border.bin",
+      "blockdata_filepath": "data/layouts/Vegas/map.bin"
     }
   ]
 }
