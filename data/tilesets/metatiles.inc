@@ -649,3 +649,10 @@ gMetatiles_vegas::
 	.align 1
 gMetatileAttributes_vegas::
 	.incbin "data/tilesets/secondary/vegas/metatile_attributes.bin"
+	.align 1
+gMetatiles_willow::
+	.incbin "data/tilesets/secondary/willow/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_willow::
+	.incbin "data/tilesets/secondary/willow/metatile_attributes.bin"

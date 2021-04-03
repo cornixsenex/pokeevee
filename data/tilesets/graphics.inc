@@ -1989,3 +1989,23 @@ gTilesetPalettes_vegas::
 	.align 2
 gTilesetTiles_vegas::
 	.incbin "data/tilesets/secondary/vegas/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_willow::
+	.incbin "data/tilesets/secondary/willow/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/willow/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_willow::
+	.incbin "data/tilesets/secondary/willow/tiles.4bpp.lz"

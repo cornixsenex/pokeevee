@@ -4970,6 +4970,16 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route17/border.bin",
       "blockdata_filepath": "data/layouts/Route17/map.bin"
+    },
+    {
+      "id": "LAYOUT_WILLOW",
+      "name": "Willow_Layout",
+      "width": 48,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_willow",
+      "border_filepath": "data/layouts/Willow/border.bin",
+      "blockdata_filepath": "data/layouts/Willow/map.bin"
     }
   ]
 }

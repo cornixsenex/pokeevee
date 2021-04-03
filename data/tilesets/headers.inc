@@ -973,3 +973,14 @@ gTileset_vegas::
 	.4byte gMetatiles_vegas
 	.4byte gMetatileAttributes_vegas
 	.4byte NULL
+
+	.align 2
+gTileset_willow::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_willow
+	.4byte gTilesetPalettes_willow
+	.4byte gMetatiles_willow
+	.4byte gMetatileAttributes_willow
+	.4byte NULL
