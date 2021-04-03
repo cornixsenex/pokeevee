@@ -1,12 +1,12 @@
 {
-  "id": "MAP_VEGAS",
-  "name": "Vegas",
-  "layout": "LAYOUT_VEGAS",
+  "id": "MAP_ROUTE16",
+  "name": "Route16",
+  "layout": "LAYOUT_ROUTE16",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_MAUVILLE_CITY",
+  "region_map_section": "MAPSEC_ROUTE_16",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_TOWN",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -15,13 +15,8 @@
   "connections": [
     {
       "direction": "right",
-      "offset": -14,
-      "map": "MAP_ROUTE15"
-    },
-    {
-      "direction": "left",
       "offset": 0,
-      "map": "MAP_ROUTE16"
+      "map": "MAP_VEGAS"
     }
   ],
   "object_events": [

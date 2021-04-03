@@ -4545,7 +4545,7 @@
       "id": "LAYOUT_BULBUS_TOWN",
       "name": "BulbusTown_Layout",
       "width": 36,
-      "height": 32,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/BulbusTown/border.bin",
@@ -4615,7 +4615,7 @@
       "id": "LAYOUT_SROUTE18",
       "name": "SRoute18_Layout",
       "width": 56,
-      "height": 126,
+      "height": 127,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/SRoute18/border.bin",
@@ -4930,6 +4930,46 @@
       "secondary_tileset": "gTileset_vegas",
       "border_filepath": "data/layouts/Vegas/border.bin",
       "blockdata_filepath": "data/layouts/Vegas/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE16",
+      "name": "Route16_Layout",
+      "width": 48,
+      "height": 72,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_vegas",
+      "border_filepath": "data/layouts/Route16/border.bin",
+      "blockdata_filepath": "data/layouts/Route16/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_W",
+      "name": "MareW_Layout",
+      "width": 151,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareW/border.bin",
+      "blockdata_filepath": "data/layouts/MareW/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_WW",
+      "name": "MareWW_Layout",
+      "width": 126,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareWW/border.bin",
+      "blockdata_filepath": "data/layouts/MareWW/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE17",
+      "name": "Route17_Layout",
+      "width": 40,
+      "height": 172,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route17/border.bin",
+      "blockdata_filepath": "data/layouts/Route17/map.bin"
     }
   ]
 }

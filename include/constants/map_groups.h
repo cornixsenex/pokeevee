@@ -642,6 +642,10 @@
 #define MAP_PHOENIX                                (48 | (33 << 8))
 #define MAP_ROUTE15                                (49 | (33 << 8))
 #define MAP_VEGAS                                  (50 | (33 << 8))
+#define MAP_ROUTE16                                (51 | (33 << 8))
+#define MAP_MARE_W                                 (52 | (33 << 8))
+#define MAP_MARE_WW                                (53 | (33 << 8))
+#define MAP_ROUTE17                                (54 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

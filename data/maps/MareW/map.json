@@ -1,12 +1,12 @@
 {
-  "id": "MAP_VEGAS",
-  "name": "Vegas",
-  "layout": "LAYOUT_VEGAS",
+  "id": "MAP_MARE_W",
+  "name": "MareW",
+  "layout": "LAYOUT_MARE_W",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_MAUVILLE_CITY",
+  "region_map_section": "MAPSEC_AQUA_HIDEOUT_OLD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_TOWN",
+  "map_type": "MAP_TYPE_NONE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -14,14 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
-      "offset": -14,
-      "map": "MAP_ROUTE15"
-    },
-    {
       "direction": "left",
       "offset": 0,
-      "map": "MAP_ROUTE16"
+      "map": "MAP_MARE_WW"
+    },
+    {
+      "direction": "up",
+      "offset": 59,
+      "map": "MAP_SROUTE18"
+    },
+    {
+      "direction": "right",
+      "offset": -26,
+      "map": "MAP_MARE_C"
     }
   ],
   "object_events": [
