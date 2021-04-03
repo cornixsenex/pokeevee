@@ -647,6 +647,7 @@
 #define MAP_MARE_WW                                (53 | (33 << 8))
 #define MAP_ROUTE17                                (54 | (33 << 8))
 #define MAP_WILLOW                                 (55 | (33 << 8))
+#define MAP_WILLOW_EAST                            (56 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

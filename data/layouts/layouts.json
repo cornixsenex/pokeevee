@@ -4980,6 +4980,16 @@
       "secondary_tileset": "gTileset_willow",
       "border_filepath": "data/layouts/Willow/border.bin",
       "blockdata_filepath": "data/layouts/Willow/map.bin"
+    },
+    {
+      "id": "LAYOUT_WILLOW_EAST",
+      "name": "WillowEast_Layout",
+      "width": 32,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/WillowEast/border.bin",
+      "blockdata_filepath": "data/layouts/WillowEast/map.bin"
     }
   ]
 }
