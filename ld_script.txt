@@ -330,6 +330,7 @@ SECTIONS {
         src/gym_leader_rematch.o(.text);
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
+        src/field_pic.o(.text);
     } =0
 
     script_data :
@@ -685,6 +686,7 @@ SECTIONS {
         src/walda_phrase.o(.rodata);
         src/gym_leader_rematch.o(.rodata);
         src/battle_transition_frontier.o(.rodata);
+		src/field_pic.o(.rodata);
         src/text_input_strings.o(.rodata);
         data/fonts.o(.rodata);
         src/mystery_event_msg.o(.rodata);

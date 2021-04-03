@@ -57,7 +57,9 @@ LoonixInsideReal_EventScript_GrandmaTV::
 	msgbox LoonixInsideReal_EventScript_GrandmaTV_Text_0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
+	load_field_pic 2, 190, 98
 	msgbox LoonixInsideReal_EventScript_GrandmaTV_Text_1
+	destroy_field_pic 0
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_GrandmaTV
 	waitmovement 0
