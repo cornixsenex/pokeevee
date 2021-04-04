@@ -4990,6 +4990,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/WillowEast/border.bin",
       "blockdata_filepath": "data/layouts/WillowEast/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALDEON_LEAF_HOUSE",
+      "name": "Aldeon_Leaf_House_Layout",
+      "width": 16,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Aldeon_Leaf_House/border.bin",
+      "blockdata_filepath": "data/layouts/Aldeon_Leaf_House/map.bin"
     }
   ]
 }

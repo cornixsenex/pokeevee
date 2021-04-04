@@ -37,6 +37,14 @@ static const u16 sPic2Pal[] = INCBIN_U16("graphics/battle_anims/sprites/duck.gba
 static const u32 sPic3Gfx[] = INCBIN_U32("graphics/object_events/pics/people/grandma.4bpp.lz");
 static const u16 sPic3Pal[] = INCBIN_U16("graphics/object_events/palettes/grandma.gbapal");
 
+static const u32 sPic4Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blue_1_front_pic.4bpp.lz");
+static const u16 sPic4Pal[] = INCBIN_U16("graphics/trainers/palettes/blue.gbapal");
+
+
+static const u32 sPic5Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leaf_front_pic.4bpp.lz");
+static const u16 sPic5Pal[] = INCBIN_U16("graphics/trainers/palettes/leaf.gbapal");
+
+
 /* And this is an example script.
 
 
@@ -61,7 +69,9 @@ static const struct Pic sPics[] =
 {
     {sPic1Gfx, sPic1Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
     {sPic2Gfx, sPic2Pal, SPRITE_SHAPE(16x16), SPRITE_SIZE(16x16)},
-    {sPic3Gfx, sPic3Pal, SPRITE_SHAPE(16x32), SPRITE_SIZE(16x32), sAnims},
+    {sPic3Gfx, sPic3Pal, SPRITE_SHAPE(16x32), SPRITE_SIZE(16x32)},
+    {sPic4Gfx, sPic4Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+    {sPic5Gfx, sPic5Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

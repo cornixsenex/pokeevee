@@ -2355,10 +2355,10 @@ const struct Trainer gTrainers[] = {
 	[TRAINER_BLUE] =
 	{
 		.partyFlags = 0,
-		.trainerClass = TRAINER_CLASS_YOUNGSTER,
+		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
 		.trainerPic = TRAINER_PIC_BLUE,
-		.trainerName = _("BLUE"),
+		.trainerName = _("???"),
 		.items = {},
 		.doubleBattle = FALSE,
 		.aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,

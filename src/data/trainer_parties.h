@@ -2175,18 +2175,20 @@ static const struct TrainerMon sParty_Hitoshi[] = {
 
 static const struct TrainerMon sParty_Blue[] = {
 	{
-		.species = SPECIES_CLEFFA,
-		.lvl = 3,
-		.nickname = _("DUSK"),
+		.species = SPECIES_TOGEPI,
+		.lvl = 5,
+		.nickname = _("HUMPTY"),
 		.iv = 100,
 		.gender = MON_MALE,
-//		.nature = NATURE_ADAMANT,
+		.nature = NATURE_ADAMANT,
 		.heldItem = ITEM_KIND_BUD,
 		.ability = ABILITY_SLOT_2,
-		.ball = ITEM_DUSK_BALL,
+		.ball = ITEM_POKE_BALL,
 		.shiny = FALSE,
 	},
-	{
+
+	
+	/*	{
 		.species = SPECIES_HOPPIP,
 		.nickname = _("Luxury"),
 		.lvl = 3,
@@ -2214,7 +2216,7 @@ static const struct TrainerMon sParty_Blue[] = {
 		.nickname = _("Dusk"),
 		.species = SPECIES_PICHU,
 		.ball = ITEM_DUSK_BALL,
-	},
+	},*/
 
 
 };

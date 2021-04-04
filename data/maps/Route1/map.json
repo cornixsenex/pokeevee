@@ -67,7 +67,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE1_RIVAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
@@ -80,14 +80,22 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE1_RIVAL"
     }
   ],
   "warp_events": [
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE1_STATE",
+      "var_value": "0",
+      "script": "Route1_EventScript_RivalTrigger1"
+    }
   ],
   "bg_events": [
 

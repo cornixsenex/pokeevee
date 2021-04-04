@@ -59,7 +59,7 @@ LoonixInsideReal_EventScript_GrandmaTV::
 	waitmovement 0
 	load_field_pic 2, 190, 98
 	msgbox LoonixInsideReal_EventScript_GrandmaTV_Text_1
-	destroy_field_pic 0
+	destroy_field_pic 2
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_GrandmaTV
 	waitmovement 0
@@ -80,6 +80,8 @@ LoonixInsideReal_EventScript_GrandmaTV::
 	waitmovement 0
 	addvar VAR_ROUTE101_STATE, 1
 	msgbox LoonixInsideReal_Text_GrandmaBed
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_B_DASH
 	releaseall
 	end
 

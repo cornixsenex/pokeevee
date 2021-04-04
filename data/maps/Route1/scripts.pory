@@ -1,1 +1,150 @@
 mapscripts Route1_MapScripts {}
+
+
+
+
+script Route1_EventScript_RivalTrigger1 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_FaceDown)
+	call (Route1_EventScript_Rival1)
+	applymovement (4, Route1_Movement_LeafWalk1)
+	waitmovement (0)
+	call (Route1_EventScript_Rival2)
+	applymovement (4, Route1_Movement_LeafStepLU)
+	applymovement (3, Route1_Movement_RivalStep1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_PlayerStep1)
+	waitmovement (0)
+	call (Route1_EventScript_Rival3)
+	warp (MAP_LOONIX_INSIDE_REAL, 255, 4, 5)
+	waitstate
+	releaseall	
+	end
+}
+	
+
+
+script Route1_EventScript_Rival1 {
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival1)
+	destroy_field_pic (3)
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf1)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (4, Route1_Movement_FaceLeft)
+	waitmovement (0)
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival2)
+	closemessage
+	destroy_field_pic (3)
+	applymovement (3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	return	
+}
+
+script Route1_EventScript_Rival2 {
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival3)
+	destroy_field_pic (3)
+	closemessage
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf2)
+	destroy_field_pic (4)
+	closemessage
+	return
+}
+
+script Route1_EventScript_Rival3 {
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival4)
+	destroy_field_pic(3)
+	closemessage
+	setvar (VAR_MUGSHOT_ID, MUGSHOT_BLUE)
+	trainerbattle_no_intro(TRAINER_BLUE, Route1_Text_RivalLost)
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival5)
+	destroy_field_pic (3)
+	closemessage
+	applymovement (3, Route1_Movement_RivalExit)
+	waitmovement (0)
+	removeobject (3)
+	setflag (FLAG_ROUTE1_RIVAL)
+	addvar (VAR_ROUTE1_STATE, 1)	
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf3)
+	closemessage
+	destroy_field_pic (4)
+	return
+}
+	
+	
+movement Route1_Movement_FaceDown {
+	face_down
+}
+
+movement Route1_Movement_FaceLeft {
+	face_left
+}
+
+movement Route1_Movement_LeafWalk1 {
+	walk_left * 2
+	walk_up * 3
+}
+
+movement Route1_Movement_LeafStepLU {
+	walk_left
+	walk_up
+	face_down
+}
+
+movement Route1_Movement_RivalStep1 {
+	walk_left * 3
+	walk_up * 2
+}
+
+movement Route1_Movement_PlayerStep1 {
+	walk_down
+}
+
+movement Route1_Movement_RivalExit {
+	walk_right * 2
+	walk_down * 8
+}
+
+text Route1_Text_Rival1 {
+	format("Come with me babe, today's your lucky day.")
+}
+
+text Route1_Text_Rival2 {
+	format("You stop right there, we're doing things my way!")
+}
+
+text Route1_Text_Rival3 {
+	format("Now where are you...\pand who are YOU?")
+}
+
+text Route1_Text_Rival4 {
+	format("You think that you can steal my girl from me? I'll show you which one of us is the man.")
+}
+
+text Route1_Text_RivalLost {
+	format("Humpty?\pHumpty!??\p Noooo!")
+}
+
+text Route1_Text_Rival5 {
+	format("My God!\p Humpty it's Daddy can you hear my broken voice or feel my stinging tears? Oh Humpty!\pIt's all your fault you monster\pMurderer!\pYou will not get away, violence won't win, I'll make sure in the end that freedom wins.")
+}
+
+text Route1_Text_Leaf1 {
+	format("Hold on! I thought you just wanted to smoke. I think that I should maybe head home soon.")
+}
+
+text Route1_Text_Leaf2 {
+	format("Hey there stranger, think you could lend a hand? This creepy dude will not leave me alone and if you kick his ass we'll hella smoke")
+}
+
+text Route1_Text_Leaf3 {
+	format("Hey way to go let's head back to your place.")
+}
+
+
