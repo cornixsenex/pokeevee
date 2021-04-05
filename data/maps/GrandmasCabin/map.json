@@ -51,7 +51,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_ROUTE1_STATE",
+      "var_value": "3",
+      "script": "GrandmasCabin_EventScript_Trigger"
+    }
   ],
   "bg_events": [
 

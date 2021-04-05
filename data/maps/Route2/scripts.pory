@@ -1,1 +1,25 @@
 mapscripts Route2_MapScripts {}
+
+
+script Route2_EventScript_Trainer_Adam {
+	trainerbattle_single(TRAINER_BLUE, Route2_Text_AdamFight, Route2_Text_AdamLost)
+	msgbox (Route2_Text_AdamPost)	
+	closemessage
+	end
+}
+
+text Route2_Text_AdamFight {
+	format("I wear shorts and you look like a bitch.")
+}
+
+text Route2_Text_AdamLost {
+	format("Damn, I knew I should have worn jeans.")
+}
+
+text Route2_Text_AdamPost {
+	format("Come back in the summer time then I'll kick your ass!")
+}
+
+
+
+

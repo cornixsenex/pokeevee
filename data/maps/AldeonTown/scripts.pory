@@ -1,1 +1,26 @@
 mapscripts AldeonTown_MapScripts {}
+
+
+script AldeonTown_EventScript_FatMan {
+	lockall
+	faceplayer
+	if (var(VAR_ROUTE1_STATE) == 3) {
+		msgbox (AldeonTown_Text_FatMan_BlockExit)
+	} 
+	else {
+		msgbox (AldeonTown_Text_FatMan2)
+	}
+	closemessage
+	releaseall
+	end
+}
+
+
+text AldeonTown_Text_FatMan_BlockExit {
+	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlacis, can be mighty dangerous you don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")
+}
+
+text AldeonTown_Text_FatMan2 {
+	format("This town is great cuz the Rocket Party rarely ever bothers us!")
+}
+

@@ -97,9 +97,9 @@ bool8 IsPhraseTrendy(u16 *a)
 
     if (!SB1ContainsWords(a))
     {
-        if (!FlagGet(FLAG_SYS_POPWORD_INPUT))
+        if (!FlagGet(FLAG_SYS_CHANGED_DEWFORD_TREND))
         {
-            FlagSet(FLAG_SYS_POPWORD_INPUT);
+            FlagSet(FLAG_SYS_CHANGED_DEWFORD_TREND);
             if (!FlagGet(FLAG_SYS_MIX_RECORD))
             {
                 gSaveBlock1Ptr->easyChatPairs[0].words[0] = a[0];

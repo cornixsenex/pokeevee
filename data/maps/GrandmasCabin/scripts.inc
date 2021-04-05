@@ -2,6 +2,12 @@ GrandmasCabin_MapScripts::
 	.byte 0
 
 
+GrandmasCabin_EventScript_Trigger::
+	setvar VAR_ROUTE1_STATE, 4
+	setflag FLAG_UNUSED_0x027
+	return
+
+
 GrandmasCabin_EventScript_EeveeFanfare::
 	bufferspeciesname 1, SPECIES_EEVEE
 	call GrandmasCabin_EventScript_FadeOut

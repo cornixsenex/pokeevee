@@ -4525,7 +4525,7 @@
       "id": "LAYOUT_ALDEON_TOWN",
       "name": "AldeonTown_Layout",
       "width": 28,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/AldeonTown/border.bin",
@@ -4564,7 +4564,7 @@
     {
       "id": "LAYOUT_CITY_CLARA",
       "name": "CityClara_Layout",
-      "width": 80,
+      "width": 88,
       "height": 64,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CityClara",
@@ -4997,9 +4997,19 @@
       "width": 16,
       "height": 13,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Lab",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/Aldeon_Leaf_House/border.bin",
       "blockdata_filepath": "data/layouts/Aldeon_Leaf_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALDEON_LEAF_HOUSE_2F",
+      "name": "Aldeon_Leaf_House_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Aldeon_Leaf_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Aldeon_Leaf_House_2F/map.bin"
     }
   ]
 }

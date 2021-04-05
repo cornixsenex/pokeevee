@@ -1182,3 +1182,5 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/WillowEast/scripts.inc"
 
 	.include "data/maps/Aldeon_Leaf_House/scripts.inc"
+
+	.include "data/maps/Aldeon_Leaf_House_2F/scripts.inc"

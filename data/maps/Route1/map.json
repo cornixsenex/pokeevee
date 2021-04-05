@@ -25,7 +25,7 @@
     },
     {
       "direction": "right",
-      "offset": 31,
+      "offset": 25,
       "map": "MAP_ALDEON_TOWN"
     }
   ],
@@ -98,6 +98,21 @@
     }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route1_EventScript_RockTest"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route1_EventScript_RockTest"
+    }
   ]
 }

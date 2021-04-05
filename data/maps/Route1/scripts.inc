@@ -2,22 +2,39 @@ Route1_MapScripts::
 	.byte 0
 
 
+Route1_EventScript_RockTest::
+	lock
+	call Route1_EventScript_WarpToLeafHouse
+	release
+	end
+
+
 Route1_EventScript_RivalTrigger1::
-	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Route1_Movement_FaceDown
+	lock
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Route1_Movement_Player1
+	waitmovement 0
 	call Route1_EventScript_Rival1
 	applymovement 4, Route1_Movement_LeafWalk1
 	waitmovement 0
 	call Route1_EventScript_Rival2
 	applymovement 4, Route1_Movement_LeafStepLU
 	applymovement 3, Route1_Movement_RivalStep1
-	applymovement OBJ_EVENT_ID_PLAYER, Route1_Movement_PlayerStep1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	call Route1_EventScript_Rival3
-	warp MAP_LOONIX_INSIDE_REAL, 255, 4, 5
-	waitstate
-	releaseall
+	call Route1_EventScript_RockTest
+	release
 	end
+
+
+Route1_EventScript_WarpToLeafHouse::
+	setvar VAR_ROUTE1_STATE, 1
+	warp MAP_ALDEON_LEAF_HOUSE_2F, 255, 6, 5
+	waitstate
+	return
 
 
 Route1_EventScript_Rival1::
@@ -26,7 +43,6 @@ Route1_EventScript_Rival1::
 	destroy_field_pic 3
 	load_field_pic 4, 190, 98
 	msgbox Route1_Text_Leaf1
-	closemessage
 	destroy_field_pic 4
 	applymovement 4, Route1_Movement_FaceLeft
 	waitmovement 0
@@ -43,7 +59,6 @@ Route1_EventScript_Rival2::
 	load_field_pic 3, 190, 98
 	msgbox Route1_Text_Rival3
 	destroy_field_pic 3
-	closemessage
 	load_field_pic 4, 190, 98
 	msgbox Route1_Text_Leaf2
 	destroy_field_pic 4
@@ -65,8 +80,9 @@ Route1_EventScript_Rival3::
 	applymovement 3, Route1_Movement_RivalExit
 	waitmovement 0
 	removeobject 3
-	setflag FLAG_ROUTE1_RIVAL
-	addvar VAR_ROUTE1_STATE, 1
+	applymovement 4, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
 	load_field_pic 4, 190, 98
 	msgbox Route1_Text_Leaf3
 	closemessage
@@ -86,8 +102,6 @@ Route1_Movement_LeafWalk1:
 	walk_left
 	walk_left
 	walk_up
-	walk_up
-	walk_up
 	step_end
 
 Route1_Movement_LeafStepLU:
@@ -99,9 +113,14 @@ Route1_Movement_LeafStepLU:
 Route1_Movement_RivalStep1:
 	walk_left
 	walk_left
-	walk_left
 	walk_up
 	walk_up
+	face_left
+	step_end
+
+Route1_Movement_Player1:
+	walk_down
+	walk_down
 	step_end
 
 Route1_Movement_PlayerStep1:
@@ -120,6 +139,9 @@ Route1_Movement_RivalExit:
 	walk_down
 	walk_down
 	step_end
+
+Route1_Text_RockWarp::
+	.string "Wanna warp?$"
 
 Route1_Text_Rival1::
 	.string "Come with me babe, today's your lucky\n"
@@ -166,5 +188,7 @@ Route1_Text_Leaf2::
 	.string "we'll hella smoke$"
 
 Route1_Text_Leaf3::
-	.string "Hey way to go let's head back to your\n"
-	.string "place.$"
+	.string "Hey look at you, you're like a real hero\n"
+	.string "all big and strong, and chivalrous to\l"
+	.string "boot. Do you smoke weed? C'mon back to\l"
+	.string "my place.$"

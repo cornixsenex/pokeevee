@@ -1,1 +1,183 @@
-mapscripts Aldeon_Leaf_House_MapScripts {}
+mapscripts Aldeon_Leaf_House_MapScripts {	
+	MAP_SCRIPT_ON_TRANSITION {
+		call (Aldeon_Leaf_House_OnTransition)
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ROUTE1_STATE, 2: Aldeon_Leaf_House_OnWarp
+	]
+}
+
+script Aldeon_Leaf_House_OnWarp {
+	setvar (VAR_ROUTE1_STATE, 3)
+	lockall
+	applymovement (1, Common_Movement_FaceRight)
+	applymovement (2, Common_Movement_FaceLeft)
+	waitmovement (0)
+	applymovement (2, Aldeon_Leaf_House_Movement_Leaf1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_Movement_Player1)
+	load_field_pic (4, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf1)
+	waitmovement (0)
+	//closemessage
+	destroy_field_pic (4)	
+	load_field_pic (5, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Dad1)
+	closemessage
+	destroy_field_pic (5)
+	applymovement (2, Aldeon_Leaf_House_Movement_Leaf2)	
+	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_Movement_Player2)
+	waitmovement (0)
+	load_field_pic (5, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Dad2)
+	//closemessage
+	destroy_field_pic (5)
+	load_field_pic (4, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf2)
+	waitmovement (0)
+	//closemessage
+	destroy_field_pic (4)	
+	load_field_pic (5, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Dad3)
+	//closemessage
+	destroy_field_pic (5)
+	load_field_pic (4, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf3)
+	waitmovement (0)
+	//closemessage
+	destroy_field_pic (4)
+	load_field_pic (5, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Dad4)
+	//closemessage
+	destroy_field_pic (5)
+	load_field_pic (4, 190, 98)
+	applymovement (2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Aldeon_Leaf_House_Text_Leaf4)
+	//closemessage
+	destroy_field_pic (4)
+	load_field_pic (5, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Dad5)
+	//closemessage
+	destroy_field_pic (5)
+	load_field_pic (4, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf5)
+	//closemessage
+	destroy_field_pic (4)
+	load_field_pic (5, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Dad6)
+	//closemessage
+	destroy_field_pic (5)
+	setflag (FLAG_SYS_POKEDEX_GET)
+	setflag (FLAG_SYS_NATIONAL_DEX)
+	additem (ITEM_POKE_BALL, 5)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox (Aldeon_Leaf_House_Text_DexBallGet)
+	//closemessage
+	load_field_pic (5, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Dad7)
+	destroy_field_pic (5)
+	closemessage	
+	applymovement (1, Aldeon_Movement_DadExit)
+	applymovement (2, Aldeon_Movement_DadExit)
+	waitmovement (0)
+	removeobject (1)
+	removeobject (2)
+	setflag (FLAG_MEW_NOTDONE)
+	releaseall
+	end
+}	
+
+script Aldeon_Leaf_House_OnTransition {
+	if (var(VAR_ROUTE1_STATE) == 2) {	
+		setobjectxyperm (1, 11, 6)
+		setobjectxyperm (2, 5, 2)
+	}
+	end
+}
+
+movement Aldeon_Leaf_House_Movement_Leaf1 {
+	walk_down * 4
+	walk_right * 5
+	walk_up * 2
+	walk_right * 2
+	face_down
+}
+
+movement Aldeon_Leaf_House_Movement_Player1 {
+	walk_left
+	walk_down * 4
+	walk_right * 5
+	walk_up * 2
+	walk_right
+	face_down
+}
+
+movement Aldeon_Leaf_House_Movement_Leaf2 {
+	walk_right * 2
+	walk_down * 2
+	face_left
+}
+
+movement Aldeon_Leaf_House_Movement_Player2 {
+	walk_right * 3
+	walk_down
+	face_left
+}
+
+movement Aldeon_Movement_DadExit {
+	walk_down * 8
+}	
+
+text Aldeon_Leaf_House_Text_Leaf1 {
+	format("Daddy there's someon I want you to meet.")
+}
+
+text Aldeon_Leaf_House_Text_Dad1 {
+	format ("I think you two had better take a seat.")
+}
+
+text Aldeon_Leaf_House_Text_Dad2 {
+	format("You seem allright\p What's up? My name is Scott.\p So, what is he your boydriend or...?")
+}
+
+text Aldeon_Leaf_House_Text_Leaf2 {
+	format("A friend.\p Young master {PLAYER} here rescued me from a viscious incel who tried to assualt me.")
+}
+
+text Aldeon_Leaf_House_Text_Dad3 {
+	format ("Some shithead tried to hurt...")
+}
+
+text Aldeon_Leaf_House_Text_Leaf3 {
+	format("Daddy, I'm fine. All thanks to {PLAYER} here {RIVAL} ran away.")
+}
+
+text Aldeon_Leaf_House_Text_Dad4 {
+	format("My God.. well {PLAYER} you have proven yourself a noble man and worthy in my eyes to share our table here most any day. You've come however at a special time. Have you two heard that Mew has come again?")
+}
+
+text Aldeon_Leaf_House_Text_Leaf4 {
+	format("The legendary Pokemon?")
+}
+
+text Aldeon_Leaf_House_Text_Dad5 {
+	format("That's right\p Mew has returned to Saeclara City. At first I hardly thought the news was true, and I assumed it was Propaganda to celebrate the party's vixtory but earlier I met down on the road an older sir I have know from my youth who swore to me that he had just seen Mew as he had journeyed north from Saeclara.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf5 {
+	format("If this is true, then we should go see Mew!")
+}
+
+text Aldeon_Leaf_House_Text_Dad6 {
+	format("Of course we must! Such things were only myths...last week I would have said you were crazy to claim the existence much less return of mythic Pokemon from the fabels. Not in two thousand years has this happened, so {PLAYER} I'm sure you'll be goiong with Leaf? Before we go she'll need a Pokemon and you should go let your own family know, but first take this for saving my daughter.")
+}
+
+text Aldeon_Leaf_House_Text_DexBallGet {
+	format("{PLAYER} recieved the PokeDex and 5 PokeBalls!")
+} 
+
+text Aldeon_Leaf_House_Text_Dad7 {
+	format("That Pokedex belonged to my father who gave it to me when I was a lad. I've got a much nicer one I use now but I think it will suit you very well. I've also given you five Pokeballs so that you can better protect yourself. The road to Bulbus Town should not be hard. I run the The Chronic Cannabis Centers, now that the shops are opening back up I've expanded across most of the state. We'll wait for you down at my Club in town you'll recognize it by it's big red roof. Now come on Leaf let's go catch Pokemon.")
+}
+
+

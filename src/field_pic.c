@@ -28,22 +28,29 @@ static const union AnimCmd *const sAnims[] =
     sAnimCmdLoop
 };
 
+//Altaria Test Example
 static const u32 sPic1Gfx[] = INCBIN_U32("graphics/pokemon/altaria/anim_front.4bpp.lz");
 static const u16 sPic1Pal[] = INCBIN_U16("graphics/pokemon/altaria/normal.gbapal");
 
+//Duck Test Example
 static const u32 sPic2Gfx[] = INCBIN_U32("graphics/battle_anims/sprites/duck.4bpp.lz");
 static const u16 sPic2Pal[] = INCBIN_U16("graphics/battle_anims/sprites/duck.gbapal");
 
+//Grandma - Bad OW Sprite shit
 static const u32 sPic3Gfx[] = INCBIN_U32("graphics/object_events/pics/people/grandma.4bpp.lz");
 static const u16 sPic3Pal[] = INCBIN_U16("graphics/object_events/palettes/grandma.gbapal");
 
+//Blue Rival Chad Pose
 static const u32 sPic4Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blue_1_front_pic.4bpp.lz");
 static const u16 sPic4Pal[] = INCBIN_U16("graphics/trainers/palettes/blue.gbapal");
 
-
+//Leaf Battle
 static const u32 sPic5Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leaf_front_pic.4bpp.lz");
 static const u16 sPic5Pal[] = INCBIN_U16("graphics/trainers/palettes/leaf.gbapal");
 
+//Leaf's Dad
+static const u32 sPic6Gfx[] = INCBIN_U32("graphics/trainers/front_pics/running_triathlete_m_front_pic.4bpp.lz");
+static const u16 sPic6Pal[] = INCBIN_U16("graphics/trainers/palettes/running_triathlete_m.gbapal");
 
 /* And this is an example script.
 
@@ -69,9 +76,14 @@ static const struct Pic sPics[] =
 {
     {sPic1Gfx, sPic1Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
     {sPic2Gfx, sPic2Pal, SPRITE_SHAPE(16x16), SPRITE_SIZE(16x16)},
+	//Gma shit
     {sPic3Gfx, sPic3Pal, SPRITE_SHAPE(16x32), SPRITE_SIZE(16x32)},
+	//Blue
     {sPic4Gfx, sPic4Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Leaf
     {sPic5Gfx, sPic5Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Leafs Dad Triathlete
+    {sPic6Gfx, sPic6Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
