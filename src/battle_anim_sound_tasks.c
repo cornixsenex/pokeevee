@@ -8,6 +8,8 @@
 #include "constants/battle_anim.h"
 
 extern struct MusicPlayerInfo gMPlayInfo_SE1;
+
+
 static void SoundTask_FireBlast_Step1(u8 taskId);
 static void SoundTask_FireBlast_Step2(u8 taskId);
 static void SoundTask_LoopSEAdjustPanning_Step(u8 taskId);

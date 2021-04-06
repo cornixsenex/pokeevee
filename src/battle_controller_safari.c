@@ -81,7 +81,6 @@ static void SafariHandleBattleAnimation(void);
 static void SafariHandleLinkStandbyMsg(void);
 static void SafariHandleResetActionMoveSelection(void);
 static void SafariHandleEndLinkBattle(void);
-static void SafariHandleCmd55(void);
 static void SafariHandleBattleDebug(void);
 static void SafariCmdEnd(void);
 

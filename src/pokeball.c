@@ -76,7 +76,7 @@ static u16 GetBattlerPokeballItemId(u8 battlerId);
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
-  /*  [BALL_POKE]    = {gInterfaceGfx_PokeBall,    384, GFX_TAG_POKEBALL},
+    [BALL_POKE]    = {gInterfaceGfx_PokeBall,    384, GFX_TAG_POKEBALL},
     [BALL_GREAT]   = {gInterfaceGfx_GreatBall,   384, GFX_TAG_GREATBALL},
     [BALL_SAFARI]  = {gInterfaceGfx_SafariBall,  384, GFX_TAG_SAFARIBALL},
     [BALL_ULTRA]   = {gInterfaceGfx_UltraBall,   384, GFX_TAG_ULTRABALL},
@@ -102,9 +102,9 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 	[BALL_CHERISH] = {gInterfaceGfx_CherishBall, 384, GFX_TAG_CHERISHBALL},
 	[BALL_PARK]    = {gInterfaceGfx_ParkBall,    384, GFX_TAG_PARKBALL},
 	[BALL_DREAM]   = {gInterfaceGfx_DreamBall,   384, GFX_TAG_DREAMBALL},
-	[BALL_BEAST]   = {gInterfaceGfx_BeastBall,   384, GFX_TAG_BEASTBALL},*/
+	[BALL_BEAST]   = {gInterfaceGfx_BeastBall,   384, GFX_TAG_BEASTBALL},
 
-    {gInterfaceGfx_PokeBall,    384, GFX_TAG_POKEBALL},
+    /*{gInterfaceGfx_PokeBall,    384, GFX_TAG_POKEBALL},
     {gInterfaceGfx_GreatBall,   384, GFX_TAG_GREATBALL},
     {gInterfaceGfx_SafariBall,  384, GFX_TAG_SAFARIBALL},
     {gInterfaceGfx_UltraBall,   384, GFX_TAG_ULTRABALL},
@@ -130,12 +130,13 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     {gInterfaceGfx_CherishBall, 384, GFX_TAG_CHERISHBALL},
     {gInterfaceGfx_ParkBall,    384, GFX_TAG_PARKBALL},
     {gInterfaceGfx_DreamBall,   384, GFX_TAG_DREAMBALL},
-    {gInterfaceGfx_BeastBall,   384, GFX_TAG_BEASTBALL},
+    {gInterfaceGfx_BeastBall,   384, GFX_TAG_BEASTBALL},*/
+
 };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
 {
-  /*  [BALL_POKE]    = {gInterfacePal_PokeBall,    GFX_TAG_POKEBALL},
+    [BALL_POKE]    = {gInterfacePal_PokeBall,    GFX_TAG_POKEBALL},
     [BALL_GREAT]   = {gInterfacePal_GreatBall,   GFX_TAG_GREATBALL},
     [BALL_SAFARI]  = {gInterfacePal_SafariBall,  GFX_TAG_SAFARIBALL},
     [BALL_ULTRA]   = {gInterfacePal_UltraBall,   GFX_TAG_ULTRABALL},
@@ -161,11 +162,11 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
 	[BALL_CHERISH] = {gInterfaceGfx_CherishBall, GFX_TAG_CHERISHBALL},
 	[BALL_PARK]    = {gInterfaceGfx_ParkBall,    GFX_TAG_PARKBALL},
 	[BALL_DREAM]   = {gInterfaceGfx_DreamBall,   GFX_TAG_DREAMBALL},
-	[BALL_BEAST]   = {gInterfaceGfx_BeastBall,   GFX_TAG_BEASTBALL},*/
+	[BALL_BEAST]   = {gInterfaceGfx_BeastBall,   GFX_TAG_BEASTBALL},
 
 
 
-    {gInterfacePal_PokeBall,    GFX_TAG_POKEBALL},
+   /* {gInterfacePal_PokeBall,    GFX_TAG_POKEBALL},
     {gInterfacePal_GreatBall,   GFX_TAG_GREATBALL},
     {gInterfacePal_SafariBall,  GFX_TAG_SAFARIBALL},
     {gInterfacePal_UltraBall,   GFX_TAG_ULTRABALL},
@@ -191,7 +192,7 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     {gInterfacePal_CherishBall, GFX_TAG_CHERISHBALL},
     {gInterfacePal_ParkBall,    GFX_TAG_PARKBALL},
     {gInterfacePal_DreamBall,   GFX_TAG_DREAMBALL},
-    {gInterfacePal_BeastBall,   GFX_TAG_BEASTBALL},
+    {gInterfacePal_BeastBall,   GFX_TAG_BEASTBALL},*/
 };
 
 static const struct OamData sBallOamData =
@@ -1507,7 +1508,7 @@ void LoadBallGfx(u8 ballId)
         break;
     default:
         var = GetSpriteTileStartByTag(gBallSpriteSheets[ballId].tag);
-        LZDecompressVram(gOpenPokeballGfx, (void *)(VRAM + 0x10100 + var * 32));
+        LZDecompressVram(gOpenPokeballGfx, (void *)(OBJ_VRAM0 + 0x100 + var * 32));
         break;
     }
 }

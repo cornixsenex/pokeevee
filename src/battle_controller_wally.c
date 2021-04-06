@@ -159,7 +159,6 @@ static void (*const sWallyBufferCommands[CONTROLLER_CMDS_COUNT])(void) =
     [CONTROLLER_LINKSTANDBYMSG]           = WallyHandleLinkStandbyMsg,
     [CONTROLLER_RESETACTIONMOVESELECTION] = WallyHandleResetActionMoveSelection,
     [CONTROLLER_ENDLINKBATTLE]            = WallyHandleEndLinkBattle,
-
     [CONTROLLER_DEBUGMENU]                = WallyHandleBattleDebug,
     [CONTROLLER_TERMINATOR_NOP]           = WallyCmdEnd
 };

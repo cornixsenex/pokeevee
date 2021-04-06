@@ -802,6 +802,7 @@ static void AnimTask_FlashAnimTagWithColor_Step2(u8 taskId)
 void AnimTask_InvertScreenColor(u8 taskId)
 {
     u32 selectedPalettes = 0;
+
     if (gBattleAnimArgs[0] & 0x1)
         selectedPalettes = GetBattleBgPalettesMask(1, 0, 0, 0, 0, 0, 0);
     if (gBattleAnimArgs[0] & 0x2)
