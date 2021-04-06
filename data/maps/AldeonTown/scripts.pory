@@ -1,5 +1,38 @@
-mapscripts AldeonTown_MapScripts {}
+mapscripts AldeonTown_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {	
+		call (AldeonTown_OnTransition)
+	}
 
+}
+
+script AldeonTown_OnTransition {
+	if (var(VAR_ROUTE1_STATE) > 3) {
+		setobjectxyperm (2, 20, 20)
+	}
+}
+
+
+script AldeonTown_EventScript_SnorlaxTrigger1 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, AldeonTown_Movement_PlayerSnorlax1)
+	waitmovement (0)
+	call (AldeonTown_EventScript_FatMan)
+	releaseall
+	end
+}
+
+script AldeonTown_EventScript_SnorlaxTrigger2 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, AldeonTown_Movement_PlayerSnorlax2)
+	waitmovement (0)
+	call (AldeonTown_EventScript_FatMan)
+	releaseall
+	end
+}
 
 script AldeonTown_EventScript_FatMan {
 	lockall
@@ -7,12 +40,46 @@ script AldeonTown_EventScript_FatMan {
 	if (var(VAR_ROUTE1_STATE) == 3) {
 		msgbox (AldeonTown_Text_FatMan_BlockExit)
 	} 
-	else {
+	elif (var(VAR_ROUTE1_STATE) == 4){
 		msgbox (AldeonTown_Text_FatMan2)
+	}
+	else {
+		msgbox (AldeonTown_Text_FatMan3)
 	}
 	closemessage
 	releaseall
 	end
+}
+
+script AldeonTown_EventScript_TownSign {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_TownSign)
+	closemessage
+	release
+	end
+}	
+
+script AldeonTown_EventScript_HouseSign {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_TownSign)
+	closemessage
+	release
+	end
+}	
+
+movement AldeonTown_Movement_PlayerSnorlax1 {
+	walk_left
+	walk_up
+	face_right
+}
+
+movement AldeonTown_Movement_PlayerSnorlax2 {
+	walk_up
+	walk_left
+	walk_up
+	face_right
 }
 
 
@@ -21,6 +88,20 @@ text AldeonTown_Text_FatMan_BlockExit {
 }
 
 text AldeonTown_Text_FatMan2 {
+	format("See, I told you that Snorlax would move eventually.")
+}
+
+text AldeonTown_Text_FatMan3 {
 	format("This town is great cuz the Rocket Party rarely ever bothers us!")
 }
+
+text AldeonTown_Text_TownSign {
+	format("Aldeon Town - Where Snorlax has the Right of Way")
+}
+
+text AldeonTown_Text_HouseSign {
+	format("Johnson Residence\n No Solicitors!")
+}
+
+
 

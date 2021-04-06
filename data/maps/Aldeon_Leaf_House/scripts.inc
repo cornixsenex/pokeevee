@@ -64,6 +64,7 @@ Aldeon_Leaf_House_OnWarp::
 	destroy_field_pic 5
 	setflag FLAG_SYS_POKEDEX_GET
 	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
 	additem ITEM_POKE_BALL, 5
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Aldeon_Leaf_House_Text_DexBallGet
@@ -155,20 +156,21 @@ Aldeon_Movement_DadExit:
 	step_end
 
 Aldeon_Leaf_House_Text_Leaf1::
-	.string "Daddy there's someon I want you to\n"
+	.string "Daddy there's someone I want you to\n"
 	.string "meet.$"
 
 Aldeon_Leaf_House_Text_Dad1::
-	.string "I think you two had better take a seat.$"
+	.string "He's come at a most unexpected time. I\n"
+	.string "think you two had better take a seat.$"
 
 Aldeon_Leaf_House_Text_Dad2::
-	.string "You seem allright\p"
+	.string "You seem allright\n"
 	.string "What's up? My name is Scott.\p"
 	.string "So, what is he your boydriend or...?$"
 
 Aldeon_Leaf_House_Text_Leaf2::
-	.string "A friend.\p"
-	.string "Young master {PLAYER} here rescued\n"
+	.string "A friend.\n"
+	.string "Young master {PLAYER} here rescued\l"
 	.string "me from a viscious incel who tried to\l"
 	.string "assualt me.$"
 
@@ -182,58 +184,43 @@ Aldeon_Leaf_House_Text_Leaf3::
 Aldeon_Leaf_House_Text_Dad4::
 	.string "My God.. well {PLAYER} you have proven\n"
 	.string "yourself a noble man and worthy in my\l"
-	.string "eyes to share our table here most any\l"
-	.string "day. You've come however at a special\l"
+	.string "eyes. You've come however at a special\l"
 	.string "time. Have you two heard that Mew has\l"
 	.string "come again?$"
 
 Aldeon_Leaf_House_Text_Leaf4::
-	.string "The legendary Pokemon?$"
+	.string "The legendary Mew?$"
 
 Aldeon_Leaf_House_Text_Dad5::
-	.string "That's right\p"
-	.string "Mew has returned to Saeclara City. At\n"
-	.string "first I hardly thought the news was\l"
-	.string "true, and I assumed it was Propaganda\l"
-	.string "to celebrate the party's vixtory but\l"
-	.string "earlier I met down on the road an older\l"
-	.string "sir I have know from my youth who swore\l"
-	.string "to me that he had just seen Mew as he\l"
-	.string "had journeyed north from Saeclara.$"
+	.string "The very same.\n"
+	.string "At first I hardly thought the news was\l"
+	.string "true, and I assumed it was propaganda\l"
+	.string "to celebrate the party's victory but\l"
+	.string "earlier as I was walking home I saw her\l"
+	.string "flying south with my own eyes.$"
 
 Aldeon_Leaf_House_Text_Leaf5::
-	.string "If this is true, then we should go see\n"
-	.string "Mew!$"
+	.string "If this is true, then we should go at\n"
+	.string "once!$"
 
 Aldeon_Leaf_House_Text_Dad6::
-	.string "Of course we must! Such things were\n"
-	.string "only myths...last week I would have said\l"
-	.string "you were crazy to claim the existence\l"
-	.string "much less return of mythic Pokemon\l"
-	.string "from the fabels. Not in two thousand\l"
-	.string "years has this happened, so {PLAYER}\l"
-	.string "I'm sure you'll be goiong with Leaf?\l"
-	.string "Before we go she'll need a Pokemon and\l"
-	.string "you should go let your own family know,\l"
-	.string "but first take this for saving my\l"
-	.string "daughter.$"
+	.string "Of course we must! To think such things\n"
+	.string "were only myths last week. Not in two\l"
+	.string "thousand years has this happened.\n"
+	.string "So {PLAYER} I'm sure you'll be going\l"
+	.string "with Leaf? Before we go she'll need a\l"
+	.string "Pokemon and you should go let your own\l"
+	.string "family know, but first take this for\l"
+	.string "saving my daughter.$"
 
 Aldeon_Leaf_House_Text_DexBallGet::
 	.string "{PLAYER} recieved the PokeDex and 5\n"
 	.string "PokeBalls!$"
 
 Aldeon_Leaf_House_Text_Dad7::
-	.string "That Pokedex belonged to my father who\n"
-	.string "gave it to me when I was a lad. I've got\l"
-	.string "a much nicer one I use now but I think\l"
-	.string "it will suit you very well. I've also\l"
-	.string "given you five Pokeballs so that you\l"
-	.string "can better protect yourself. The road\l"
-	.string "to Bulbus Town should not be hard. I\l"
-	.string "run the The Chronic Cannabis Centers,\l"
-	.string "now that the shops are opening back up\l"
-	.string "I've expanded across most of the\l"
-	.string "state. We'll wait for you down at my\l"
-	.string "Club in town you'll recognize it by it's\l"
-	.string "big red roof. Now come on Leaf let's go\l"
+	.string "That Pokedex belonged to my father.\n"
+	.string "The road to Bulbus Town should not be\l"
+	.string "hard. We'll wait for you down at my Club\l"
+	.string "in town you'll recognize it by the big\l"
+	.string "red roof. Now come on Leaf let's go\l"
 	.string "catch Pokemon.$"

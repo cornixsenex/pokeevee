@@ -62,9 +62,41 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_ROUTE1_STATE",
+      "var_value": "3",
+      "script": "AldeonTown_EventScript_SnorlaxTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_ROUTE1_STATE",
+      "var_value": "3",
+      "script": "AldeonTown_EventScript_SnorlaxTrigger2"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AldeonTown_EventScript_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AldeonTown_EventScript_HouseSign"
+    }
   ]
 }

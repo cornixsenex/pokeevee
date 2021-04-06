@@ -87,7 +87,42 @@ Route1_EventScript_Rival3::
 	msgbox Route1_Text_Leaf3
 	closemessage
 	destroy_field_pic 4
+	call Common_EventScript_OutOfCenterPartyHeal
+	load_field_pic 4, 190, 98
+	msgbox Route1_Text_Leaf4
+	closemessage
+	destroy_field_pic 4
 	return
+
+
+Route1_EventScript_Boy::
+	lockall
+	faceplayer
+	msgbox Route1_Text_Boy1
+	closemessage
+	releaseall
+	end
+
+
+Route1_EventScript_BugCatcher::
+	trainerbattle_single TRAINER_ETIENNE, Route1_Text_BugCatcherFight, Route1_Text_BugCatcherLost
+	msgbox Route1_Text_BugCatcherPost
+	closemessage
+	end
+
+
+Route1_EventScript_Lass::
+	trainerbattle_single TRAINER_KIM, Route1_Text_LassFight, Route1_Text_LassLost
+	msgbox Route1_Text_LassPost
+	closemessage
+	end
+
+
+Route1_EventScript_LittleBoy::
+	trainerbattle_single TRAINER_LOGAN, Route1_Text_LittleBoyFight, Route1_Text_LittleBoyLost
+	msgbox Route1_Text_LittleBoyPost
+	closemessage
+	end
 
 
 Route1_Movement_FaceDown:
@@ -190,5 +225,41 @@ Route1_Text_Leaf2::
 Route1_Text_Leaf3::
 	.string "Hey look at you, you're like a real hero\n"
 	.string "all big and strong, and chivalrous to\l"
-	.string "boot. Do you smoke weed? C'mon back to\l"
-	.string "my place.$"
+	.string "boot. Do you smoke weed? Here take a\l"
+	.string "puff on this.$"
+
+Route1_Text_Leaf4::
+	.string "You're pretty cool, c'mon back to my\n"
+	.string "place.$"
+
+Route1_Text_Boy1::
+	.string "Be careful friend the roads are\n"
+	.string "dangerous and filled with wild beasts\l"
+	.string "and criminals.$"
+
+Route1_Text_BugCatcherFight::
+	.string "Hey, check out my bugs!$"
+
+Route1_Text_BugCatcherLost::
+	.string "Dude, what did you do to my bugs?$"
+
+Route1_Text_BugCatcherPost::
+	.string "I don't think we should talk anymore.$"
+
+Route1_Text_LassFight::
+	.string "Wow! {PLAYER} you came back for me.$"
+
+Route1_Text_LassLost::
+	.string "Heartbroken again.$"
+
+Route1_Text_LassPost::
+	.string "Get out of here! I'll never love again...$"
+
+Route1_Text_LittleBoyFight::
+	.string "Dude, weed!$"
+
+Route1_Text_LittleBoyLost::
+	.string "Dang, I got smoked.$"
+
+Route1_Text_LittleBoyPost::
+	.string "Maybe we can smoke sometime?$"

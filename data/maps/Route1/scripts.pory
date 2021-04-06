@@ -89,9 +89,43 @@ script Route1_EventScript_Rival3 {
 	msgbox (Route1_Text_Leaf3)
 	closemessage
 	destroy_field_pic (4)
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf4)
+	closemessage
+	destroy_field_pic (4)
 	return
 }
-		
+
+script Route1_EventScript_Boy {
+	lockall
+	faceplayer
+	msgbox (Route1_Text_Boy1)
+	closemessage
+	releaseall
+	end
+}
+script Route1_EventScript_BugCatcher {
+	trainerbattle_single(TRAINER_ETIENNE, Route1_Text_BugCatcherFight, Route1_Text_BugCatcherLost)
+	msgbox (Route1_Text_BugCatcherPost)
+	closemessage
+	end
+}
+
+script Route1_EventScript_Lass {
+	trainerbattle_single(TRAINER_KIM, Route1_Text_LassFight, Route1_Text_LassLost)
+	msgbox (Route1_Text_LassPost)
+	closemessage
+	end
+}
+
+script Route1_EventScript_LittleBoy {
+	trainerbattle_single(TRAINER_LOGAN, Route1_Text_LittleBoyFight, Route1_Text_LittleBoyLost)
+	msgbox (Route1_Text_LittleBoyPost)
+	closemessage
+	end
+}
+	
 movement Route1_Movement_FaceDown {
 	face_down
 }
@@ -167,6 +201,62 @@ text Route1_Text_Leaf2 {
 }
 
 text Route1_Text_Leaf3 {
-	format("Hey look at you, you're like a real hero all big and strong, and chivalrous to boot. Do you smoke weed? C'mon back to my place.")
+	format("Hey look at you, you're like a real hero all big and strong, and chivalrous to boot. Do you smoke weed? Here take a puff on this.")
 }
+
+text Route1_Text_Leaf4 {
+	format("You're pretty cool, c'mon back to my place.")
+}
+
+text Route1_Text_Boy1 {
+	format("Be careful friend the roads are dangerous and filled with wild beasts and criminals.")
+}
+
+text Route1_Text_BugCatcherFight {
+	format("Hey, check out my bugs!")
+}
+
+text Route1_Text_BugCatcherLost {
+	format("Dude, what did you do to my bugs?")
+}
+
+text Route1_Text_BugCatcherPost {
+	format("I don't think we should talk anymore.")
+}
+
+text Route1_Text_LassFight {
+	format("Wow! {PLAYER} you came back for me.")
+}
+
+text Route1_Text_LassLost {
+	format("Heartbroken again.")
+}
+
+text Route1_Text_LassPost {
+	format("Get out of here! I'll never love again...")
+}
+
+text Route1_Text_LittleBoyFight {
+	format("Dude, weed!")
+}
+
+text Route1_Text_LittleBoyLost {
+	format("Dang, I got smoked.")
+}
+
+text Route1_Text_LittleBoyPost {
+	format("Maybe we can smoke sometime?")
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

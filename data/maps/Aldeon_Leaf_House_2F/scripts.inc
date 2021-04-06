@@ -62,6 +62,29 @@ Aldeon_Leaf_House_2F_OnFrame::
 	end
 
 
+Aldeon_Leaf_House_2F_EventScript_Bed::
+	lockall
+	msgbox Aldeon_Leaf_House_2F_Text_Bed, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Aldeon_Leaf_House_2F_EventScript_Bed_2
+Aldeon_Leaf_House_2F_EventScript_Bed_1:
+	releaseall
+	end
+
+Aldeon_Leaf_House_2F_EventScript_Bed_2:
+	closemessage
+	goto_if_set FLAG_SYS_POKEMON_GET, Aldeon_Leaf_House_2F_EventScript_Bed_4
+	playfanfare MUS_HEAL
+	fadescreen 1
+	waitfanfare
+	fadescreen 0
+	goto Aldeon_Leaf_House_2F_EventScript_Bed_1
+
+Aldeon_Leaf_House_2F_EventScript_Bed_4:
+	call Common_EventScript_OutOfCenterPartyHeal
+	goto Aldeon_Leaf_House_2F_EventScript_Bed_1
+
+
 Aldeon_Leaf_House_2F_PlayerHump:
 	walk_in_place_up
 	walk_in_place_up
@@ -130,3 +153,7 @@ Aldeon_Leaf_House_2F_Text_Leaf2::
 	.string "So his name must be {RIVAL} that\n"
 	.string "makes sense. C'mon downstairs and you\l"
 	.string "can meet my dad.$"
+
+Aldeon_Leaf_House_2F_Text_Bed::
+	.string "It's Leaf's bed!\p"
+	.string "Would you like to take a rest?$"
