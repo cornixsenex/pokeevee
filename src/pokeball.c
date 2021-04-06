@@ -103,36 +103,7 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 	[BALL_PARK]    = {gInterfaceGfx_ParkBall,    384, GFX_TAG_PARKBALL},
 	[BALL_DREAM]   = {gInterfaceGfx_DreamBall,   384, GFX_TAG_DREAMBALL},
 	[BALL_BEAST]   = {gInterfaceGfx_BeastBall,   384, GFX_TAG_BEASTBALL},
-
-    /*{gInterfaceGfx_PokeBall,    384, GFX_TAG_POKEBALL},
-    {gInterfaceGfx_GreatBall,   384, GFX_TAG_GREATBALL},
-    {gInterfaceGfx_SafariBall,  384, GFX_TAG_SAFARIBALL},
-    {gInterfaceGfx_UltraBall,   384, GFX_TAG_ULTRABALL},
-    {gInterfaceGfx_MasterBall,  384, GFX_TAG_MASTERBALL},
-    {gInterfaceGfx_NetBall,     384, GFX_TAG_NETBALL},
-    {gInterfaceGfx_DiveBall,    384, GFX_TAG_DIVEBALL},
-    {gInterfaceGfx_NestBall,    384, GFX_TAG_NESTBALL},
-    {gInterfaceGfx_RepeatBall,  384, GFX_TAG_REPEATBALL},
-    {gInterfaceGfx_TimerBall,   384, GFX_TAG_TIMERBALL},
-    {gInterfaceGfx_LuxuryBall,  384, GFX_TAG_LUXURYBALL},
-    {gInterfaceGfx_PremierBall, 384, GFX_TAG_PREMIERBALL},
-    {gInterfaceGfx_LevelBall,   384, GFX_TAG_LEVELBALL},
-    {gInterfaceGfx_LureBall,    384, GFX_TAG_LUREBALL},
-    {gInterfaceGfx_MoonBall,    384, GFX_TAG_MOONBALL},
-    {gInterfaceGfx_FriendBall,  384, GFX_TAG_FRIENDBALL},
-    {gInterfaceGfx_LoveBall,    384, GFX_TAG_LOVEBALL},
-    {gInterfaceGfx_HeavyBall,   384, GFX_TAG_HEAVYBALL},
-    {gInterfaceGfx_FastBall,    384, GFX_TAG_FASTBALL},
-    {gInterfaceGfx_SportBall,   384, GFX_TAG_SPORTBALL},
-    {gInterfaceGfx_DuskBall,    384, GFX_TAG_DUSKBALL},
-    {gInterfaceGfx_QuickBall,   384, GFX_TAG_QUICKBALL},
-    {gInterfaceGfx_HealBall,    384, GFX_TAG_HEALBALL},
-    {gInterfaceGfx_CherishBall, 384, GFX_TAG_CHERISHBALL},
-    {gInterfaceGfx_ParkBall,    384, GFX_TAG_PARKBALL},
-    {gInterfaceGfx_DreamBall,   384, GFX_TAG_DREAMBALL},
-    {gInterfaceGfx_BeastBall,   384, GFX_TAG_BEASTBALL},*/
-
-};
+ };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
 {
@@ -163,36 +134,6 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
 	[BALL_PARK]    = {gInterfaceGfx_ParkBall,    GFX_TAG_PARKBALL},
 	[BALL_DREAM]   = {gInterfaceGfx_DreamBall,   GFX_TAG_DREAMBALL},
 	[BALL_BEAST]   = {gInterfaceGfx_BeastBall,   GFX_TAG_BEASTBALL},
-
-
-
-   /* {gInterfacePal_PokeBall,    GFX_TAG_POKEBALL},
-    {gInterfacePal_GreatBall,   GFX_TAG_GREATBALL},
-    {gInterfacePal_SafariBall,  GFX_TAG_SAFARIBALL},
-    {gInterfacePal_UltraBall,   GFX_TAG_ULTRABALL},
-    {gInterfacePal_MasterBall,  GFX_TAG_MASTERBALL},
-    {gInterfacePal_NetBall,     GFX_TAG_NETBALL},
-    {gInterfacePal_DiveBall,    GFX_TAG_DIVEBALL},
-    {gInterfacePal_NestBall,    GFX_TAG_NESTBALL},
-    {gInterfacePal_RepeatBall,  GFX_TAG_REPEATBALL},
-    {gInterfacePal_TimerBall,   GFX_TAG_TIMERBALL},
-    {gInterfacePal_LuxuryBall,  GFX_TAG_LUXURYBALL},
-    {gInterfacePal_PremierBall, GFX_TAG_PREMIERBALL},
-    {gInterfacePal_LevelBall,   GFX_TAG_LEVELBALL},
-    {gInterfacePal_LureBall,    GFX_TAG_LUREBALL},
-    {gInterfacePal_MoonBall,    GFX_TAG_MOONBALL},
-    {gInterfacePal_FriendBall,  GFX_TAG_FRIENDBALL},
-    {gInterfacePal_LoveBall,    GFX_TAG_LOVEBALL},
-    {gInterfacePal_HeavyBall,   GFX_TAG_HEAVYBALL},
-    {gInterfacePal_FastBall,    GFX_TAG_FASTBALL},
-    {gInterfacePal_SportBall,   GFX_TAG_SPORTBALL},
-    {gInterfacePal_DuskBall,    GFX_TAG_DUSKBALL},
-    {gInterfacePal_QuickBall,   GFX_TAG_QUICKBALL},
-    {gInterfacePal_HealBall,    GFX_TAG_HEALBALL},
-    {gInterfacePal_CherishBall, GFX_TAG_CHERISHBALL},
-    {gInterfacePal_ParkBall,    GFX_TAG_PARKBALL},
-    {gInterfacePal_DreamBall,   GFX_TAG_DREAMBALL},
-    {gInterfacePal_BeastBall,   GFX_TAG_BEASTBALL},*/
 };
 
 static const struct OamData sBallOamData =
