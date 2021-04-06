@@ -1,9 +1,44 @@
-mapscripts GrandmasCabin_MapScripts {}
+mapscripts GrandmasCabin_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_ROUTE1_STATE, 1: GrandmasCabin_HideMew
+		VAR_ROUTE1_STATE, 2: GrandmasCabin_HideMew
+		VAR_ROUTE1_STATE, 3: GrandmasCabin_HideMew
+		VAR_ROUTE1_STATE, 4: GrandmasCabin_HideMew
+		]
+}
 
 script GrandmasCabin_EventScript_Trigger {
+	lockall
+	call (GrandmasCabin_EventScript_Mew)
 	setvar (VAR_ROUTE1_STATE, 4)
 	setflag (FLAG_UNUSED_0x027)	
+	releaseall
+	end
 }
+
+script GrandmasCabin_HideMew {
+	removeobject (2)
+}
+
+	
+
+script GrandmasCabin_EventScript_Mew {
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	fadescreen (1)
+	addobject (2)
+	//setobjectxyperm (2, 10, 14)
+	fadescreen (0)
+	applymovement (2, GrandmasCabin_Movement_Mew)
+	waitmovement (0)
+	playmoncry (SPECIES_MEW, 0)
+	fadescreen (1)
+	waitmoncry
+	removeobject (2)
+	fadescreen (0)
+	return
+}
+	
 
 script GrandmasCabin_EventScript_EeveeFanfare {
 	bufferspeciesname (1, SPECIES_EEVEE)
@@ -68,3 +103,12 @@ script GrandmasCabin_EventScript_StarterMonEevee {
 	end
 	}
 }		
+
+movement GrandmasCabin_Movement_Mew {
+	walk_left * 4
+	walk_right * 6
+	walk_down
+}
+	
+
+

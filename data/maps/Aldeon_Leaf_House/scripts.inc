@@ -94,6 +94,29 @@ Aldeon_Leaf_House_OnTransition_2:
 	goto Aldeon_Leaf_House_OnTransition_1
 
 
+Aldeon_Leaf_House_EventScript_ScottBed::
+	lockall
+	msgbox Aldeon_Leaf_House_Text_ScottBed, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Aldeon_Leaf_House_EventScript_ScottBed_2
+Aldeon_Leaf_House_EventScript_ScottBed_1:
+	releaseall
+	end
+
+Aldeon_Leaf_House_EventScript_ScottBed_2:
+	closemessage
+	goto_if_set FLAG_SYS_POKEMON_GET, Aldeon_Leaf_House_EventScript_ScottBed_4
+	playfanfare MUS_HEAL
+	fadescreen 1
+	waitfanfare
+	fadescreen 0
+	goto Aldeon_Leaf_House_EventScript_ScottBed_1
+
+Aldeon_Leaf_House_EventScript_ScottBed_4:
+	call Common_EventScript_OutOfCenterPartyHeal
+	goto Aldeon_Leaf_House_EventScript_ScottBed_1
+
+
 Aldeon_Leaf_House_Movement_Leaf1:
 	walk_down
 	walk_down
@@ -224,3 +247,7 @@ Aldeon_Leaf_House_Text_Dad7::
 	.string "in town you'll recognize it by the big\l"
 	.string "red roof. Now come on Leaf let's go\l"
 	.string "catch Pokemon.$"
+
+Aldeon_Leaf_House_Text_ScottBed::
+	.string "It's Scott's Bed. Would you like to take\n"
+	.string "a rest?$"

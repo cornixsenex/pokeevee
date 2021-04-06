@@ -18,7 +18,6 @@ script Aldeon_Leaf_House_OnWarp {
 	load_field_pic (4, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Leaf1)
 	waitmovement (0)
-	//closemessage
 	destroy_field_pic (4)	
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad1)
@@ -29,43 +28,34 @@ script Aldeon_Leaf_House_OnWarp {
 	waitmovement (0)
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad2)
-	//closemessage
 	destroy_field_pic (5)
 	load_field_pic (4, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Leaf2)
 	waitmovement (0)
-	//closemessage
 	destroy_field_pic (4)	
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad3)
-	//closemessage
 	destroy_field_pic (5)
 	load_field_pic (4, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Leaf3)
 	waitmovement (0)
-	//closemessage
 	destroy_field_pic (4)
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad4)
-	//closemessage
 	destroy_field_pic (5)
 	load_field_pic (4, 190, 98)
 	applymovement (2, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	msgbox (Aldeon_Leaf_House_Text_Leaf4)
-	//closemessage
 	destroy_field_pic (4)
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad5)
-	//closemessage
 	destroy_field_pic (5)
 	load_field_pic (4, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Leaf5)
-	//closemessage
 	destroy_field_pic (4)
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad6)
-	//closemessage
 	destroy_field_pic (5)
 	setflag (FLAG_SYS_POKEDEX_GET)
 	setflag (FLAG_SYS_NATIONAL_DEX)
@@ -73,7 +63,6 @@ script Aldeon_Leaf_House_OnWarp {
 	additem (ITEM_POKE_BALL, 5)
 	playfanfare (MUS_OBTAIN_ITEM)
 	msgbox (Aldeon_Leaf_House_Text_DexBallGet)
-	//closemessage
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad7)
 	destroy_field_pic (5)
@@ -95,6 +84,25 @@ script Aldeon_Leaf_House_OnTransition {
 	}
 	end
 }
+
+script Aldeon_Leaf_House_EventScript_ScottBed {
+	lockall
+	msgbox(Aldeon_Leaf_House_Text_ScottBed, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		if (flag(FLAG_SYS_POKEMON_GET)) {
+			call (Common_EventScript_OutOfCenterPartyHeal)
+		} else {
+			playfanfare (MUS_HEAL)
+			fadescreen (1)
+			waitfanfare
+			fadescreen (0)
+		}
+	}
+	releaseall
+	end
+}
+
 
 movement Aldeon_Leaf_House_Movement_Leaf1 {
 	walk_down * 4
@@ -181,4 +189,7 @@ text Aldeon_Leaf_House_Text_Dad7 {
 	format("That Pokedex belonged to my father. The road to Bulbus Town should not be hard. We'll wait for you down at my Club in town you'll recognize it by the big red roof. Now come on Leaf let's go catch Pokemon.")
 }
 
+text Aldeon_Leaf_House_Text_ScottBed {
+	format("It's Scott's Bed. Would you like to take a rest?")
+}
 

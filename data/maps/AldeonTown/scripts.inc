@@ -41,13 +41,16 @@ AldeonTown_EventScript_SnorlaxTrigger2::
 
 AldeonTown_EventScript_FatMan::
 	lockall
-	faceplayer
+	applymovement 2, Common_Movement_FaceLeft
+	waitmovement 0
 	compare VAR_ROUTE1_STATE, 3
 	goto_if_eq AldeonTown_EventScript_FatMan_2
 	compare VAR_ROUTE1_STATE, 4
 	goto_if_eq AldeonTown_EventScript_FatMan_3
 	msgbox AldeonTown_Text_FatMan3
 AldeonTown_EventScript_FatMan_1:
+	applymovement 2, Common_Movement_FaceDown
+	waitmovement 0
 	closemessage
 	releaseall
 	end

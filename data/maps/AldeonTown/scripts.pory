@@ -36,7 +36,8 @@ script AldeonTown_EventScript_SnorlaxTrigger2 {
 
 script AldeonTown_EventScript_FatMan {
 	lockall
-	faceplayer
+	applymovement (2, Common_Movement_FaceLeft)
+	waitmovement (0)
 	if (var(VAR_ROUTE1_STATE) == 3) {
 		msgbox (AldeonTown_Text_FatMan_BlockExit)
 	} 
@@ -46,6 +47,8 @@ script AldeonTown_EventScript_FatMan {
 	else {
 		msgbox (AldeonTown_Text_FatMan3)
 	}
+	applymovement (2, Common_Movement_FaceDown)
+	waitmovement (0)
 	closemessage
 	releaseall
 	end
