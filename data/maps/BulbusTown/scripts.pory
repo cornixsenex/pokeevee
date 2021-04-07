@@ -1,1 +1,56 @@
 mapscripts BulbusTown_MapScripts {}
+
+
+script BulbusTown_EventScript_Sailor {
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_Sailor) 
+	release
+	end
+}
+
+script BulbusTown_EventScript_Fisherman {
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_Fisherman) 
+	release
+	end
+}
+
+script BulbusTown_EventScript_FightA{
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_FightA) 
+	release
+	end
+}
+
+script BulbusTown_EventScript_FightB {
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_FightB) 
+	release
+	end
+}
+
+text BulbusTown_Text_Sailor {
+	format("I'm not working, us sailors went on strike.")
+
+
+}
+
+text BulbusTown_Text_Fisherman {
+	format("Hey watch your step, this town is sometimes rough.")
+}
+
+
+text BulbusTown_Text_FightA {
+	format("How dare you speak of my sweet mum that way?")
+}
+
+text BulbusTown_Text_FightB {
+	format("This town ain't big enough for both of us!")
+}
+
+
+

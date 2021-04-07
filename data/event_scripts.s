@@ -1185,3 +1185,15 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/Aldeon_Leaf_House/scripts.inc"
 
 	.include "data/maps/Aldeon_Leaf_House_2F/scripts.inc"
+
+	.include "data/maps/AldeonTown_House/scripts.inc"
+
+	.include "data/maps/AldeonTown_ServantHouse/scripts.inc"
+
+	.include "data/maps/AldeonTown_Mart/scripts.inc"
+
+	.include "data/maps/BulbusTown_PokemonCenter/scripts.inc"
+
+	.include "data/maps/BulbusTown_CannabisCenter/scripts.inc"
+
+	.include "data/maps/BulbusTown_Mart/scripts.inc"

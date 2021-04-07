@@ -11,9 +11,9 @@
 #define TRAINER_MADDIE         				  5
 #define TRAINER_MIA						      6
 #define TRAINER_MANNY					      7
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
-#define TRAINER_GABRIELLE_1                   9
-#define TRAINER_GRUNT_PETALBURG_WOODS        10
+#define TRAINER_ROSS					      8
+#define TRAINER_IZZY                          9
+#define TRAINER_RICARDO                      10
 #define TRAINER_MARCEL                       11
 #define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13

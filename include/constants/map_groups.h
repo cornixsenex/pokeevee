@@ -586,6 +586,12 @@
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (31 << 8))
 #define MAP_ALDEON_LEAF_HOUSE            (1 | (31 << 8))
 #define MAP_ALDEON_LEAF_HOUSE_2F         (2 | (31 << 8))
+#define MAP_ALDEON_TOWN_HOUSE            (3 | (31 << 8))
+#define MAP_ALDEON_TOWN_SERVANT_HOUSE    (4 | (31 << 8))
+#define MAP_ALDEON_TOWN_MART             (5 | (31 << 8))
+#define MAP_BULBUS_TOWN_POKEMON_CENTER   (6 | (31 << 8))
+#define MAP_BULBUS_TOWN_CANNABIS_CENTER  (7 | (31 << 8))
+#define MAP_BULBUS_TOWN_MART             (8 | (31 << 8))
 
 // Map Group 32
 #define MAP_ROUTE119_WEATHER_INSTITUTE_1F (0 | (32 << 8))

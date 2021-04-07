@@ -616,7 +616,13 @@
   "gMapGroup31": [
     "Route123_BerryMastersHouse",
     "Aldeon_Leaf_House",
-    "Aldeon_Leaf_House_2F"
+    "Aldeon_Leaf_House_2F",
+    "AldeonTown_House",
+    "AldeonTown_ServantHouse",
+    "AldeonTown_Mart",
+    "BulbusTown_PokemonCenter",
+    "BulbusTown_CannabisCenter",
+    "BulbusTown_Mart"
   ],
   "gMapGroup32": [
     "Route119_WeatherInstitute_1F",

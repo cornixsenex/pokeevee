@@ -78,6 +78,7 @@ Aldeon_Leaf_House_OnWarp::
 	removeobject 1
 	removeobject 2
 	setflag FLAG_MEW_NOTDONE
+	clearflag FLAG_HIDE_GRANDMASCABIN_MEW
 	releaseall
 	end
 

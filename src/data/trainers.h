@@ -104,44 +104,47 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Manny},
     },
 
-    [TRAINER_GRUNT_SEAFLOOR_CAVERN_3] =
+
+    [TRAINER_ROSS] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_TUBER_M,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_TUBER_M,
+        .trainerName = _("ROSS"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntSeafloorCavern3),
-        .party = {.TrainerMon = sParty_GruntSeafloorCavern3},
+        .partySize = ARRAY_COUNT(sParty_Ross),
+        .party = {.TrainerMon = sParty_Ross},
     },
 
-    [TRAINER_GABRIELLE_1] =
+	[TRAINER_IZZY] =
     {
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
-        .trainerName = _("GABRIELLE"),
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = _("IZZY"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Gabrielle1),
-        .party = {.TrainerMon = sParty_Gabrielle1},
+        .partySize = ARRAY_COUNT(sParty_Izzy),
+        .party = {.TrainerMon = sParty_Izzy},
     },
 
-    [TRAINER_GRUNT_PETALBURG_WOODS] =
+
+    [TRAINER_RICARDO] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_SAILOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_SAILOR,
+        .trainerName = _("RICARDO"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntPetalburgWoods),
-        .party = {.TrainerMon = sParty_GruntPetalburgWoods},
+        .partySize = ARRAY_COUNT(sParty_Ricardo),
+        .party = {.TrainerMon = sParty_Ricardo},
     },
+
 
     [TRAINER_MARCEL] =
     {

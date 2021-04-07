@@ -1,0 +1,17 @@
+mapscripts AldeonTown_House_MapScripts {}
+
+
+script AldeonTown_House_EventScript_OldMan {
+	lockall
+	faceplayer
+	msgbox (AldeonTown_House_Text_OldMan)
+	closemessage
+	releaseall
+	end
+}
+
+text AldeonTown_House_Text_OldMan {
+	format("If you feel tired why not take a nap?")
+}
+
+

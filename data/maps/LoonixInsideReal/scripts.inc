@@ -80,6 +80,7 @@ LoonixInsideReal_EventScript_GrandmaTV::
 	waitmovement 0
 	addvar VAR_ROUTE101_STATE, 1
 	msgbox LoonixInsideReal_Text_GrandmaBed
+	setrespawn HEAL_LOCATION_GRANDMAS_CABIN
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
 	releaseall

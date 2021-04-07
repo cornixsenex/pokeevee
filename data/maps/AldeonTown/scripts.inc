@@ -64,6 +64,15 @@ AldeonTown_EventScript_FatMan_3:
 	goto AldeonTown_EventScript_FatMan_1
 
 
+AldeonTown_EventScript_DoorWoman::
+	lock
+	faceplayer
+	msgbox AldeonTown_Text_DoorWoman
+	closemessage
+	release
+	end
+
+
 AldeonTown_EventScript_TownSign::
 	lock
 	faceplayer
@@ -76,7 +85,7 @@ AldeonTown_EventScript_TownSign::
 AldeonTown_EventScript_HouseSign::
 	lock
 	faceplayer
-	msgbox AldeonTown_Text_TownSign
+	msgbox AldeonTown_Text_HouseSign
 	closemessage
 	release
 	end
@@ -110,6 +119,10 @@ AldeonTown_Text_FatMan2::
 AldeonTown_Text_FatMan3::
 	.string "This town is great cuz the Rocket Party\n"
 	.string "rarely ever bothers us!$"
+
+AldeonTown_Text_DoorWoman::
+	.string "I'm sorry but if you no business with Mr.\n"
+	.string "Johnson then you need to leave/$"
 
 AldeonTown_Text_TownSign::
 	.string "Aldeon Town - Where Snorlax has the\n"

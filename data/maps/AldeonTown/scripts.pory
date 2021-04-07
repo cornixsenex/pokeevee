@@ -54,6 +54,15 @@ script AldeonTown_EventScript_FatMan {
 	end
 }
 
+script AldeonTown_EventScript_DoorWoman {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_DoorWoman)
+	closemessage
+	release
+	end
+}	
+
 script AldeonTown_EventScript_TownSign {
 	lock
 	faceplayer
@@ -66,7 +75,7 @@ script AldeonTown_EventScript_TownSign {
 script AldeonTown_EventScript_HouseSign {
 	lock
 	faceplayer
-	msgbox (AldeonTown_Text_TownSign)
+	msgbox (AldeonTown_Text_HouseSign)
 	closemessage
 	release
 	end
@@ -96,6 +105,10 @@ text AldeonTown_Text_FatMan2 {
 
 text AldeonTown_Text_FatMan3 {
 	format("This town is great cuz the Rocket Party rarely ever bothers us!")
+}
+
+text AldeonTown_Text_DoorWoman {
+	format("I'm sorry but if you no business with Mr. Johnson then you need to leave/")
 }
 
 text AldeonTown_Text_TownSign {

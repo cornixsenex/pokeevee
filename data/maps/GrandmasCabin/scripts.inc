@@ -1,12 +1,19 @@
 GrandmasCabin_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, GrandmasCabin_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, GrandmasCabin_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
+GrandmasCabin_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call GrandmasCabin_HideMew
+	return
+
 GrandmasCabin_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_ROUTE1_STATE, 0, GrandmasCabin_HideMew
 	map_script_2 VAR_ROUTE1_STATE, 1, GrandmasCabin_HideMew
 	map_script_2 VAR_ROUTE1_STATE, 2, GrandmasCabin_HideMew
 	map_script_2 VAR_ROUTE1_STATE, 3, GrandmasCabin_HideMew
 	map_script_2 VAR_ROUTE1_STATE, 4, GrandmasCabin_HideMew
+	map_script_2 VAR_ROUTE1_STATE, 5, GrandmasCabin_HideMew
 	.2byte 0
 
 
@@ -15,21 +22,19 @@ GrandmasCabin_EventScript_Trigger::
 	call GrandmasCabin_EventScript_Mew
 	setvar VAR_ROUTE1_STATE, 4
 	setflag FLAG_UNUSED_0x027
+	setflag FLAG_HIDE_GRANDMASCABIN_MEW
 	releaseall
 	end
 
 
 GrandmasCabin_HideMew::
 	removeobject 2
-	return
+	end
 
 
 GrandmasCabin_EventScript_Mew::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	fadescreen 1
-	addobject 2
-	fadescreen 0
 	applymovement 2, GrandmasCabin_Movement_Mew
 	waitmovement 0
 	playmoncry SPECIES_MEW, 0
@@ -104,6 +109,7 @@ GrandmasCabin_EventScript_StarterMonEevee_5:
 
 
 GrandmasCabin_Movement_Mew:
+	face_down
 	walk_left
 	walk_left
 	walk_left

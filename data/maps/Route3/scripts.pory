@@ -1,1 +1,68 @@
 mapscripts Route3_MapScripts {}
+
+script Route3_EventScript_Ross {
+	trainerbattle_single(TRAINER_ROSS, Route3_Text_RossIntro, Route3_Text_RossLost)
+	msgbox (Route3_Text_RossPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Izzy {
+	trainerbattle_single(TRAINER_IZZY, Route3_Text_IzzyIntro, Route3_Text_IzzyLost)
+	msgbox (Route3_Text_IzzyPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Ricardo {
+	trainerbattle_single(TRAINER_RICARDO, Route3_Text_RicardoIntro, Route3_Text_RicardoLost)
+	msgbox (Route3_Text_RicardoPost)	
+	closemessage
+	end
+}
+
+text Route3_Text_RossIntro {
+	format("I'm learning how to swim! Here check this out!")
+}
+
+text Route3_Text_RossLost {
+	format("Help mom I'm gonna drown!")
+}
+
+text Route3_Text_RossPost {
+	format("Wow you showed me! Looks like I need to practice dog paddling.")
+}
+
+
+text Route3_Text_IzzyIntro {
+	format("Eww gross get away from me you weirdo!")
+}
+
+text Route3_Text_IzzyLost {
+	format("Please help please help!")
+}
+
+text Route3_Text_IzzyPost {
+	format("I think you made me wet.")
+}
+
+text Route3_Text_RicardoIntro {
+	format("I brought my son here to play on the beach.")
+}
+
+text Route3_Text_RicardoLost {
+	format("You're making me look weak...")
+}
+
+text Route3_Text_RicardoPost {
+	format("Have you explored the cave carved in the rock down by the sea?")
+}
+
+
+
+
+
+
+
+
+
