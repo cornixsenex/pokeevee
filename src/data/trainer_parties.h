@@ -87,30 +87,20 @@ static const struct TrainerMon sParty_Ricardo[] = {
 
 };
 
-static const struct TrainerMon sParty_Marcel[] = {
+static const struct TrainerMon sParty_Pedro[] = {
     {
-    .iv = 100,
-    .lvl = 29,
-    .species = SPECIES_MANECTRIC,
+    .iv = 0,
+    .lvl = 7,
+    .species = SPECIES_STARYU,
     },
-    {
-    .iv = 100,
-    .lvl = 29,
-    .species = SPECIES_SHIFTRY,
-    }
 };
 
-static const struct TrainerMon sParty_Alberto[] = {
+static const struct TrainerMon sParty_Monica[] = {
     {
     .iv = 0,
-    .lvl = 30,
-    .species = SPECIES_PELIPPER,
+    .lvl = 8,
+    .species = SPECIES_JIGGLYPUFF,
     },
-    {
-    .iv = 0,
-    .lvl = 30,
-    .species = SPECIES_XATU,
-    }
 };
 
 static const struct TrainerMon sParty_Ed[] = {

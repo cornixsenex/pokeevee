@@ -21,6 +21,20 @@ script Route3_EventScript_Ricardo {
 	end
 }
 
+script Route3_EventScript_Pedro {
+	trainerbattle_single(TRAINER_PEDRO, Route3_Text_PedroIntro, Route3_Text_PedroLost)
+	msgbox (Route3_Text_PedroPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Monica {
+	trainerbattle_single(TRAINER_MONICA, Route3_Text_MonicaIntro, Route3_Text_MonicaLost)
+	msgbox (Route3_Text_MonicaPost)	
+	closemessage
+	end
+}
+
 text Route3_Text_RossIntro {
 	format("I'm learning how to swim! Here check this out!")
 }
@@ -58,9 +72,29 @@ text Route3_Text_RicardoPost {
 	format("Have you explored the cave carved in the rock down by the sea?")
 }
 
+text Route3_Text_PedroIntro {
+	format("Me and my dad are gonna kick your ass!")
+}
 
+text Route3_Text_PedroLost {
+	format("Dad how did we just loose?")
+}
 
+text Route3_Text_PedroPost {
+	format("Okay, you're good.")
+}
 
+text Route3_Text_MonicaIntro {
+	format("Hey! Stay away from my children.")
+}
+
+text Route3_Text_MonicaLost {
+	format("You know, I'm still available.")
+}
+
+text Route3_Text_MonicaPost {
+	format("Nice to see you!")
+}
 
 
 

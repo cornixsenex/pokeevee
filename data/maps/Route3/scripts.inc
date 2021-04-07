@@ -23,6 +23,13 @@ Route3_EventScript_Ricardo::
 	end
 
 
+Route3_EventScript_Pedro::
+	trainerbattle_single TRAINER_PEDRO, Route3_Text_PedroIntro, Route3_Text_PedroLost
+	msgbox Route3_Text_PedroPost
+	closemessage
+	end
+
+
 Route3_Text_RossIntro::
 	.string "I'm learning how to swim! Here check\n"
 	.string "this out!$"
@@ -53,3 +60,12 @@ Route3_Text_RicardoLost::
 Route3_Text_RicardoPost::
 	.string "Have you explored the cave carved in\n"
 	.string "the rock down by the sea?$"
+
+Route3_Text_PedroIntro::
+	.string "Me and my dad are gonna kick your ass!$"
+
+Route3_Text_PedroLost::
+	.string "Dad how did we just loose?$"
+
+Route3_Text_PedroPost::
+	.string "Okay, you're good.$"

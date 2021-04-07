@@ -14,8 +14,8 @@
 #define TRAINER_ROSS					      8
 #define TRAINER_IZZY                          9
 #define TRAINER_RICARDO                      10
-#define TRAINER_MARCEL                       11
-#define TRAINER_ALBERTO                      12
+#define TRAINER_PEDRO                        11
+#define TRAINER_MONICA                       12
 #define TRAINER_ED                           13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
 #define TRAINER_DECLAN                       15
