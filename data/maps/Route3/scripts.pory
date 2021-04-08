@@ -1,5 +1,52 @@
 mapscripts Route3_MapScripts {}
 
+
+script Route3_EventScript_LeafTrigger1 {
+	lockall
+	addobject (13)
+	showobjectat (13, MAP_ROUTE3)	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (13, Route3_Movement_LeafIntro1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route3_EventScript_Leaf1)
+	releaseall
+	end
+}
+
+script Route3_EventScript_LeafTrigger2 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)	
+	addobject (13)
+	showobjectat (13, MAP_ROUTE3)
+	applymovement (13, Route3_Movement_LeafIntro2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	call (Route3_EventScript_Leaf1)
+	releaseall
+	end
+}
+
+script Route3_EventScript_Leaf1 {
+	load_field_pic(4, 190, 98)
+	msgbox (Route3_Text_Leaf1)
+	destroy_field_pic (4)
+	closemessage
+	setvar (VAR_MUGSHOT_ID, MUGSHOT_LEAF)
+	trainerbattle_no_intro(TRAINER_LEAF1, Route3_Text_LeafLost)
+	load_field_pic(4, 190, 98)
+	msgbox (Route3_Text_Leaf1Post)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (13, Route3_Movement_LeafExit)
+	waitmovement (0)
+	removeobject (13)
+	setvar (VAR_ROUTE3_STATE, 1)
+	return
+}
+
 script Route3_EventScript_Ross {
 	trainerbattle_single(TRAINER_ROSS, Route3_Text_RossIntro, Route3_Text_RossLost)
 	msgbox (Route3_Text_RossPost)	
@@ -33,6 +80,79 @@ script Route3_EventScript_Monica {
 	msgbox (Route3_Text_MonicaPost)	
 	closemessage
 	end
+}
+
+script Route3_EventScript_Amber {
+	trainerbattle_single(TRAINER_AMBER, Route3_Text_AmberIntro, Route3_Text_AmberLost)
+	msgbox (Route3_Text_AmberPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Dustin {
+	trainerbattle_single(TRAINER_DUSTIN, Route3_Text_DustinIntro, Route3_Text_DustinLost)
+	msgbox (Route3_Text_DustinPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Jon {
+	trainerbattle_single(TRAINER_JON, Route3_Text_JonIntro, Route3_Text_JonLost)
+	msgbox (Route3_Text_JonPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Joe {
+	trainerbattle_single(TRAINER_JOE, Route3_Text_JoeIntro, Route3_Text_JoeLost)
+	msgbox (Route3_Text_JoePost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Ryan {
+	trainerbattle_single(TRAINER_RYAN, Route3_Text_RyanIntro, Route3_Text_RyanLost)
+	msgbox (Route3_Text_RyanPost)	
+	closemessage
+	end
+}
+script Route3_EventScript_Megan {
+	trainerbattle_single(TRAINER_MEGAN, Route3_Text_MeganIntro, Route3_Text_MeganLost)
+	msgbox (Route3_Text_MeganPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Devon {
+	trainerbattle_single(TRAINER_DEVON, Route3_Text_DevonIntro, Route3_Text_DevonLost)
+	msgbox (Route3_Text_DevonPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_OldMan {
+	lock
+	faceplayer
+	msgbox (Route3_Text_OldMan)
+	closemessage
+	release
+	end
+}
+
+movement Route3_Movement_LeafIntro1 {
+	walk_down
+	walk_right
+	walk_down
+	face_left
+}
+
+movement Route3_Movement_LeafIntro2 {
+	walk_down * 2
+	face_right
+}
+
+movement Route3_Movement_LeafExit {
+	walk_up * 2
 }
 
 text Route3_Text_RossIntro {
@@ -95,6 +215,107 @@ text Route3_Text_MonicaLost {
 text Route3_Text_MonicaPost {
 	format("Nice to see you!")
 }
+
+text Route3_Text_AmberIntro {
+	format("My mommy took me and Ross to the beach!")
+}
+
+text Route3_Text_AmberLost {
+	format("No, Mom!")
+}
+
+text Route3_Text_AmberPost {
+	format("You hurt my feelings, go awawy.")
+}
+
+text Route3_Text_DustinIntro {
+	format("Hey man do you ever want to race birds?")
+}
+
+text Route3_Text_DustinLost {
+	format("That's not correct.")
+}
+
+text Route3_Text_DustinPost {
+	format("Did you go thrugh the woods?")
+}
+
+text Route3_Text_JonIntro {
+	format("Today I thought I'd be a fisherman.")
+}
+
+text Route3_Text_JonLost {
+	format("I've lost my fish...")
+}
+
+text Route3_Text_JonPost {
+	format("Let's drink a few more beers!")
+}
+
+text Route3_Text_JoeIntro {
+	format("My friend Jon ain't great at outdoorsy stuff.")
+}
+
+text Route3_Text_JoeLost {
+	format("So much for that.")
+}
+
+text Route3_Text_JoePost {
+	format("Think I'll try a new bait.")
+}
+
+text Route3_Text_RyanIntro {
+	format("The Bugs!\nTHE BUGS!!!")
+}
+
+text Route3_Text_RyanLost {
+	format("You helped me scratch the bugs.")
+}
+
+text Route3_Text_RyanPost {
+	format("Thank you a lot, these bugs are dangerous.")
+}
+
+text Route3_Text_MeganIntro {
+	format("Hey, didn't you use to make fun of me.")
+}
+
+text Route3_Text_MeganLost {
+	format("Looks like you're still laughing.")
+}
+
+text Route3_Text_MeganPost {
+	format("Hey haven't you heard anything about a new freeway the party was planning to build through here?")
+}
+
+text Route3_Text_DevonIntro {
+	format("You're not headed into the woods are you?")
+}
+
+text Route3_Text_DevonLost {
+	format("You're pretty tough.")
+}
+
+text Route3_Text_DevonPost {
+	format("You should be safe enough, but be careful that you do not get lost.")
+}
+
+text Route3_Text_Leaf1 {
+	format("Hey {PLAYER} long time no see how have you been? While you slowpokes were getting stoned in town I was training my fresh caught Pokemon. Look {PLAYER} they're almost as cute as I am.")
+}
+
+text Route3_Text_LeafLost {
+	format("Wow {PLAYER} looks like I have a lot to learn")
+}
+
+text Route3_Text_Leaf1Post {
+	format("Haha you're way too good for me.\p But wait weren't you supposed to meet me with my dad?\p We need to find him! Where could he be?\p DAD?!")
+}
+
+text Route3_Text_OldMan {
+	format("Caverna Ithica was this cave's name before The Party changed it to Beach Cave.\p You should only go in if you're prepared.")
+}
+
 
 
 

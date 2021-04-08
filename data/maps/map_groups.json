@@ -611,7 +611,9 @@
     "Route110_SeasideCyclingRoadSouthEntrance"
   ],
   "gMapGroup30": [
-    "Route113_GlassWorkshop"
+    "Route113_GlassWorkshop",
+    "SilvanWoods",
+    "BeachCave"
   ],
   "gMapGroup31": [
     "Route123_BerryMastersHouse",
@@ -622,7 +624,11 @@
     "AldeonTown_Mart",
     "BulbusTown_PokemonCenter",
     "BulbusTown_CannabisCenter",
-    "BulbusTown_Mart"
+    "BulbusTown_Mart",
+    "BulbusTown_House1",
+    "BulbusTown_House2",
+    "BulbusTown_House3",
+    "BulbusTown_House4"
   ],
   "gMapGroup32": [
     "Route119_WeatherInstitute_1F",

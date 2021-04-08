@@ -1197,3 +1197,15 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/BulbusTown_CannabisCenter/scripts.inc"
 
 	.include "data/maps/BulbusTown_Mart/scripts.inc"
+
+	.include "data/maps/SilvanWoods/scripts.inc"
+
+	.include "data/maps/BulbusTown_House1/scripts.inc"
+
+	.include "data/maps/BulbusTown_House2/scripts.inc"
+
+	.include "data/maps/BulbusTown_House3/scripts.inc"
+
+	.include "data/maps/BulbusTown_House4/scripts.inc"
+
+	.include "data/maps/BeachCave/scripts.inc"

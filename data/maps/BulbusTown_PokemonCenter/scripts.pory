@@ -16,8 +16,9 @@ script BulbusTown_PokemonCenter_EventScript_Nurse {
 			closemessage
 		}
 		else {
+			showmoneybox (0, 0, 0)
 			msgbox (BulbusTown_PokemonCenter_Text_OutOfPocket, MSGBOX_YESNO)
-			if (var(VAR_RESULT) == 0) {
+			if (var(VAR_RESULT) == 1) {
 				removemoney (2500, 0)
 				updatemoneybox (0, 0)
 				call (Common_EventScript_PkmnCenterNurse)
@@ -28,6 +29,7 @@ script BulbusTown_PokemonCenter_EventScript_Nurse {
 				msgbox (BulbusTown_PokemonCenter_Text_Goodbye)
 				closemessage
 			}
+			hidemoneybox
 		}
 		
 	}
@@ -46,7 +48,7 @@ text BulbusTown_PokemonCenter_Text_TooPoor {
 
 
 text BulbusTown_PokemonCenter_Text_OutOfPocket{
-	format(" Our healthcare costs $2500 would you like to pay out of pocket?")
+	format(" Our healthcare costs 2,500 dollars. Would you like to pay out of pocket?")
 }
 
 text BulbusTown_PokemonCenter_Text_Goodbye {

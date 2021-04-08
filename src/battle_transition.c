@@ -524,7 +524,8 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_GLACIA] = TRAINER_PIC_ELITE_FOUR_GLACIA,
     [MUGSHOT_DRAKE] = TRAINER_PIC_ELITE_FOUR_DRAKE,
     [MUGSHOT_CHAMPION] = TRAINER_PIC_CHAMPION_WALLACE,
-	[MUGSHOT_BLUE]   = TRAINER_PIC_BLUE
+	[MUGSHOT_BLUE]   = TRAINER_PIC_BLUE,
+	[MUGSHOT_LEAF]   = TRAINER_PIC_LEAF
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
@@ -535,6 +536,7 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_DRAKE] =    {0x1A0, 0x1A0},
     [MUGSHOT_CHAMPION] = {0x188, 0x188},
     [MUGSHOT_BLUE]    =   {0x200, 0x200},
+    [MUGSHOT_LEAF]    =   {0x200, 0x200},
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -545,6 +547,7 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_DRAKE] =    {0,     5},
     [MUGSHOT_CHAMPION] = {-8,    7},
     [MUGSHOT_BLUE]      = {0,     0},
+    [MUGSHOT_LEAF]      = {0,     0},
 };
 
 static const TransitionSpriteCallback sTrainerPicSpriteCbs[] =
@@ -847,6 +850,7 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_DRAKE] = sMugshotPal_Drake,
     [MUGSHOT_CHAMPION] = sMugshotPal_Champion,
     [MUGSHOT_BLUE]    = sMugshotPal_Drake,
+    [MUGSHOT_LEAF]    = sMugshotPal_Phoebe,
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =

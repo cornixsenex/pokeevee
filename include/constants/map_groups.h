@@ -581,6 +581,8 @@
 
 // Map Group 30
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (30 << 8))
+#define MAP_SILVAN_WOODS            (1 | (30 << 8))
+#define MAP_BEACH_CAVE              (2 | (30 << 8))
 
 // Map Group 31
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (31 << 8))
@@ -592,6 +594,10 @@
 #define MAP_BULBUS_TOWN_POKEMON_CENTER   (6 | (31 << 8))
 #define MAP_BULBUS_TOWN_CANNABIS_CENTER  (7 | (31 << 8))
 #define MAP_BULBUS_TOWN_MART             (8 | (31 << 8))
+#define MAP_BULBUS_TOWN_HOUSE1           (9 | (31 << 8))
+#define MAP_BULBUS_TOWN_HOUSE2           (10 | (31 << 8))
+#define MAP_BULBUS_TOWN_HOUSE3           (11 | (31 << 8))
+#define MAP_BULBUS_TOWN_HOUSE4           (12 | (31 << 8))
 
 // Map Group 32
 #define MAP_ROUTE119_WEATHER_INSTITUTE_1F (0 | (32 << 8))

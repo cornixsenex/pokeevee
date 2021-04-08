@@ -37,17 +37,7 @@ Route119_WeatherInstitute_2F_EventScript_Grunt5:: @ 826FF68
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route119_WeatherInstitute_2F_EventScript_Grunt2:: @ 826FF7F
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat
-	msgbox Route119_WeatherInstitute_2F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route119_WeatherInstitute_2F_EventScript_Grunt3:: @ 826FF96
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_3, Route119_WeatherInstitute_2F_Text_Grunt3Intro, Route119_WeatherInstitute_2F_Text_Grunt3Defeat
-	msgbox Route119_WeatherInstitute_2F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route119_WeatherInstitute_2F_EventScript_Shelly:: @ 826FFAD
+	Route119_WeatherInstitute_2F_EventScript_Shelly:: @ 826FFAD
 	trainerbattle_single TRAINER_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated
 	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
 	end
@@ -217,19 +207,6 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist:: @ 827018B
 	goto_if_set FLAG_RECEIVED_CASTFORM, Route119_WeatherInstitute_2F_EventScript_ScientistMentionWeather
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
-
-Route119_WeatherInstitute_2F_Text_Grunt2Intro: @ 827019C
-	.string "The INSTITUTE created a type of\n"
-	.string "POKéMON that has something to do with\l"
-	.string "the weather. We're here to take them!$"
-
-Route119_WeatherInstitute_2F_Text_Grunt2Defeat: @ 8270208
-	.string "Our plan's being spoiled by a kid?$"
-
-Route119_WeatherInstitute_2F_Text_Grunt2PostBattle: @ 827022B
-	.string "If the POKéMON they made here can\n"
-	.string "control the weather freely, then we of\l"
-	.string "TEAM AQUA definitely need it!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3Intro: @ 8270292
 	.string "We're TEAM AQUA!\n"

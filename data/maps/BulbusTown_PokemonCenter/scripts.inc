@@ -10,11 +10,14 @@ BulbusTown_PokemonCenter_EventScript_Nurse::
 	checkmoney 2500, 0
 	compare VAR_RESULT, 0
 	goto_if_eq BulbusTown_PokemonCenter_EventScript_Nurse_5
+	showmoneybox 0, 0, 0
 	msgbox BulbusTown_PokemonCenter_Text_OutOfPocket, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_eq BulbusTown_PokemonCenter_EventScript_Nurse_8
+	compare VAR_RESULT, 1
+	goto_if_eq BulbusTown_PokemonCenter_EventScript_Nurse_9
 	msgbox BulbusTown_PokemonCenter_Text_Goodbye
 	closemessage
+BulbusTown_PokemonCenter_EventScript_Nurse_8:
+	hidemoneybox
 BulbusTown_PokemonCenter_EventScript_Nurse_1:
 	release
 	end
@@ -30,13 +33,13 @@ BulbusTown_PokemonCenter_EventScript_Nurse_5:
 	closemessage
 	goto BulbusTown_PokemonCenter_EventScript_Nurse_1
 
-BulbusTown_PokemonCenter_EventScript_Nurse_8:
+BulbusTown_PokemonCenter_EventScript_Nurse_9:
 	removemoney 2500, 0
 	updatemoneybox 0, 0
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress
-	goto BulbusTown_PokemonCenter_EventScript_Nurse_1
+	goto BulbusTown_PokemonCenter_EventScript_Nurse_8
 
 
 BulbusTown_PokemonCenter_Text_NoInsurance::
@@ -50,8 +53,8 @@ BulbusTown_PokemonCenter_Text_TooPoor::
 	.string "here!$"
 
 BulbusTown_PokemonCenter_Text_OutOfPocket::
-	.string "Our healthcare costs $2500 would you\n"
-	.string "like to pay out of pocket?$"
+	.string "Our healthcare costs 2,500 dollars.\n"
+	.string "Would you like to pay out of pocket?$"
 
 BulbusTown_PokemonCenter_Text_Goodbye::
 	.string "In that case you should go away.\n"

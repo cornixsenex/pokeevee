@@ -19,7 +19,6 @@ script BulbusTown_EventScript_Fisherman {
 
 script BulbusTown_EventScript_FightA{
 	lock
-	faceplayer
 	msgbox (BulbusTown_Text_FightA) 
 	release
 	end
@@ -27,7 +26,6 @@ script BulbusTown_EventScript_FightA{
 
 script BulbusTown_EventScript_FightB {
 	lock
-	faceplayer
 	msgbox (BulbusTown_Text_FightB) 
 	release
 	end

@@ -63,31 +63,10 @@ Route119_WeatherInstitute_1F_EventScript_Bed:: @ 826FB18
 	releaseall
 	end
 
-Route119_WeatherInstitute_1F_EventScript_Grunt1:: @ 826FB29
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_1, Route119_WeatherInstitute_1F_Text_Grunt1Intro, Route119_WeatherInstitute_1F_Text_Grunt1Defeat
-	msgbox Route119_WeatherInstitute_1F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route119_WeatherInstitute_1F_EventScript_Grunt4:: @ 826FB40
 	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_4, Route119_WeatherInstitute_1F_Text_Grunt4Intro, Route119_WeatherInstitute_1F_Text_Grunt4Defeat
 	msgbox Route119_WeatherInstitute_1F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
-
-Route119_WeatherInstitute_1F_Text_Grunt1Intro: @ 826FB57
-	.string "The BOSS got interested in\n"
-	.string "the research they have going here,\l"
-	.string "so he sent us out.\p"
-	.string "You quit meddling!$"
-
-Route119_WeatherInstitute_1F_Text_Grunt1Defeat: @ 826FBBB
-	.string "Blast it…\n"
-	.string "Blasted by a kid…$"
-
-Route119_WeatherInstitute_1F_Text_Grunt1PostBattle: @ 826FBD7
-	.string "Our BOSS knows everything.\p"
-	.string "But I'm just a GRUNT. What would I know\n"
-	.string "about what he's thinking?$"
-
 Route119_WeatherInstitute_1F_Text_Grunt4Intro: @ 826FC34
 	.string "Huh?\n"
 	.string "What's a kid doing here?$"

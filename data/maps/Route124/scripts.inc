@@ -92,10 +92,6 @@ Route124_EventScript_RematchRoy:: @ 81F66F0
 	msgbox Route124_Text_RoyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-Route124_EventScript_Declan:: @ 81F670B
-	trainerbattle_single TRAINER_DECLAN, Route124_Text_DeclanIntro, Route124_Text_DeclanDefeat
-	msgbox Route124_Text_DeclanPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 Route124_EventScript_Isabella:: @ 81F6722
 	trainerbattle_single TRAINER_ISABELLA, Route124_Text_IsabellaIntro, Route124_Text_IsabellaDefeat

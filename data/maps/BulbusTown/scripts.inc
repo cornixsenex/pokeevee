@@ -20,7 +20,6 @@ BulbusTown_EventScript_Fisherman::
 
 BulbusTown_EventScript_FightA::
 	lock
-	faceplayer
 	msgbox BulbusTown_Text_FightA
 	release
 	end
@@ -28,7 +27,6 @@ BulbusTown_EventScript_FightA::
 
 BulbusTown_EventScript_FightB::
 	lock
-	faceplayer
 	msgbox BulbusTown_Text_FightB
 	release
 	end

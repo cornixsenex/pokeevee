@@ -123,13 +123,7 @@ Route123_EventScript_Frederick:: @ 81F631B
 	msgbox Route123_Text_FrederickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-
-Route123_EventScript_Ed:: @ 81F6349
-	trainerbattle_single TRAINER_ED, Route123_Text_EdIntro, Route123_Text_EdDefeat
-	msgbox Route123_Text_EdPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route123_EventScript_Kayley:: @ 81F6360
+	Route123_EventScript_Kayley:: @ 81F6360
 	trainerbattle_single TRAINER_KAYLEY, Route123_Text_KayleyIntro, Route123_Text_KayleyDefeat
 	msgbox Route123_Text_KayleyPostBattle, MSGBOX_AUTOCLOSE
 	end

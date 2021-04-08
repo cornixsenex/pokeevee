@@ -82,9 +82,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Route3_EventScript_Jon",
       "flag": "0"
     },
     {
@@ -92,12 +92,12 @@
       "x": 46,
       "y": 28,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Route3_EventScript_Joe",
       "flag": "0"
     },
     {
@@ -108,9 +108,9 @@
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 5,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Amber",
       "flag": "0"
     },
     {
@@ -121,9 +121,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "Route3_EventScript_Ryan",
       "flag": "0"
     },
     {
@@ -131,12 +131,12 @@
       "x": 53,
       "y": 24,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
-      "movement_range_x": 2,
+      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN4",
+      "movement_range_x": 4,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "Route3_EventScript_Megan",
       "flag": "0"
     },
     {
@@ -160,9 +160,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "NULL",
+      "script": "Route3_EventScript_Devon",
       "flag": "0"
     },
     {
@@ -177,6 +177,45 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route3_EventScript_Izzy",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "x": 38,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Dustin",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 65,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ROUTE1_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 14,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route3_EventScript_OldMan",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -184,19 +223,71 @@
       "x": 65,
       "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
+      "dest_map": "MAP_SILVAN_WOODS",
       "dest_warp_id": 0
     },
     {
       "x": 66,
       "y": 24,
       "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 68,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 69,
+      "y": 24,
+      "elevation": 0,
       "dest_map": "MAP_ROUTE3",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 71,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE3",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 72,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE3",
+      "dest_warp_id": 5
+    },
+    {
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_BEACH_CAVE",
       "dest_warp_id": 0
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "0",
+      "script": "Route3_EventScript_LeafTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "0",
+      "script": "Route3_EventScript_LeafTrigger2"
+    }
   ],
   "bg_events": [
 
