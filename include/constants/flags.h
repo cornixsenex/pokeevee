@@ -56,8 +56,8 @@
 #define FLAG_HIDE_BULBUSSCOTT 0x2C // Hide Scott in Bulbus Canna Center
 #define FLAG_HIDE_RT17_BLOCK1 0x2D // Hides the first block
 #define FLAG_BULBUS_HIDE_STRIKE 0x2E // Hides strike (opens boat + shop)
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
+#define FLAG_SILVANWOODS_HIDEFIGHT1   0x2F // After Leaf1 fight hides Fight1
+#define FLAG_SILVANWOODS_HIDEFIGHT2    0x30 // After Mew sight / Stoney fight
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag

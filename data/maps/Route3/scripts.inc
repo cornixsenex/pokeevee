@@ -45,6 +45,7 @@ Route3_EventScript_Leaf1::
 	waitmovement 0
 	removeobject 13
 	setvar VAR_ROUTE3_STATE, 1
+	setflag FLAG_SILVANWOODS_HIDEFIGHT1
 	return
 
 

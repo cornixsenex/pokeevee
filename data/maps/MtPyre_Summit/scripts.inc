@@ -430,70 +430,12 @@ MtPyre_Summit_Movement_MaxieApproachArchie2: @ 82323F8
 	walk_in_place_fastest_left
 	step_end
 
-MtPyre_Summit_EventScript_Grunt1:: @ 82323FD
-	trainerbattle_single TRAINER_GRUNT_MT_PYRE_1, MtPyre_Summit_Text_Grunt1Intro, MtPyre_Summit_Text_Grunt1Defeat
-	msgbox MtPyre_Summit_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-MtPyre_Summit_EventScript_Grunt2:: @ 8232414
-	trainerbattle_single TRAINER_GRUNT_MT_PYRE_2, MtPyre_Summit_Text_Grunt2Intro, MtPyre_Summit_Text_Grunt2Defeat
-	msgbox MtPyre_Summit_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-MtPyre_Summit_EventScript_Grunt3:: @ 823242B
-	trainerbattle_single TRAINER_GRUNT_MT_PYRE_3, MtPyre_Summit_Text_Grunt3Intro, MtPyre_Summit_Text_Grunt3Defeat
-	msgbox MtPyre_Summit_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
-	end
 
 MtPyre_Summit_EventScript_Grunt4:: @ 8232442
 	trainerbattle_single TRAINER_GRUNT_MT_PYRE_4, MtPyre_Summit_Text_Grunt4Intro, MtPyre_Summit_Text_Grunt4Defeat
 	msgbox MtPyre_Summit_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MtPyre_Summit_Text_Grunt1Intro: @ 8232459
-	.string "No! Those TEAM MAGMA goons got\n"
-	.string "here ahead of us!\p"
-	.string "We can't fall behind!$"
-
-MtPyre_Summit_Text_Grunt1Defeat: @ 82324A0
-	.string "I thought you were one of the MAGMAS\n"
-	.string "who happened to come back…$"
-
-MtPyre_Summit_Text_Grunt1PostBattle: @ 82324E0
-	.string "Yeah, so you are strong…\n"
-	.string "But there're a lot of us!$"
-
-MtPyre_Summit_Text_Grunt2Intro: @ 8232513
-	.string "Hah!\n"
-	.string "Too bad for you!\p"
-	.string "If you came earlier, you only would've\n"
-	.string "had to battle the wimpy TEAM MAGMA.\p"
-	.string "But since you arrived now, you have\n"
-	.string "to take on us toughies!$"
-
-MtPyre_Summit_Text_Grunt2Defeat: @ 82325B0
-	.string "Urgh… I should've let you take on\n"
-	.string "TEAM MAGMA first…$"
-
-MtPyre_Summit_Text_Grunt2PostBattle: @ 82325E4
-	.string "You don't know anything!\n"
-	.string "So why are you messing with us?$"
-
-MtPyre_Summit_Text_Grunt3Intro: @ 823261D
-	.string "You…\n"
-	.string "We saw you at MT. CHIMNEY.\p"
-	.string "You don't belong to either TEAM,\n"
-	.string "so why would you be here?$"
-
-MtPyre_Summit_Text_Grunt3Defeat: @ 8232678
-	.string "If you're going to mess with anyone,\n"
-	.string "let it be TEAM MAGMA…$"
-
-MtPyre_Summit_Text_Grunt3PostBattle: @ 82326B3
-	.string "Heh, it doesn't matter!\n"
-	.string "We bought ourselves some time!\p"
-	.string "The BOSS should have snatched what\n"
-	.string "he was after!$"
 
 MtPyre_Summit_Text_Grunt4Intro: @ 823271B
 	.string "Oh, I know!\n"

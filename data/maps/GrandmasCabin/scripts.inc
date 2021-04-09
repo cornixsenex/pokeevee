@@ -35,8 +35,6 @@ GrandmasCabin_HideMew::
 GrandmasCabin_EventScript_Mew::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement 2, GrandmasCabin_Movement_Mew
-	waitmovement 0
 	playmoncry SPECIES_MEW, 0
 	fadescreen 1
 	waitmoncry

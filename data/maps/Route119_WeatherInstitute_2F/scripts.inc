@@ -1,6 +1,5 @@
 .set LOCALID_GRUNT_1, 1
 .set LOCALID_GRUNT_2, 2
-.set LOCALID_SHELLY, 3
 .set LOCALID_SCIENTIST, 5
 .set LOCALID_GRUNT_3, 7
 .set LOCALID_GRUNT_4, 8
@@ -37,46 +36,7 @@ Route119_WeatherInstitute_2F_EventScript_Grunt5:: @ 826FF68
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-	Route119_WeatherInstitute_2F_EventScript_Shelly:: @ 826FFAD
-	trainerbattle_single TRAINER_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated
-	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
-	end
 
-Route119_WeatherInstitute_2F_EventScript_ShellyDefeated:: @ 826FFC8
-	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_DEFAULT
-	closemessage
-	addobject LOCALID_GRUNT_3
-	applymovement LOCALID_GRUNT_3, Route119_WeatherInstitute_2F_Movement_GruntApproachShelly
-	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_Movement_ShovePlayerOutOfWay
-	waitmovement 0
-	msgbox Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy, MSGBOX_DEFAULT
-	closemessage
-	playse SE_PIN
-	applymovement LOCALID_SHELLY, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_SHELLY, Common_Movement_Delay48
-	waitmovement 0
-	msgbox Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_WEATHER_INSTITUTE_STATE, 1
-	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
-	fadedefaultbgm
-	fadescreen FADE_TO_BLACK
-	setflag FLAG_HIDE_ROUTE_119_TEAM_AQUA
-	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M
-	removeobject LOCALID_GRUNT_1
-	removeobject LOCALID_GRUNT_2
-	removeobject LOCALID_SHELLY
-	removeobject LOCALID_GRUNT_4
-	removeobject LOCALID_GRUNT_3
-	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_Movement_PlayerReturnToPosition
-	waitmovement 0
-	fadescreen FADE_FROM_BLACK
-	applymovement LOCALID_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
-	waitmovement 0
-	copyobjectxytoperm LOCALID_SCIENTIST
-	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
-	end
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastform:: @ 827004D
 	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon, MSGBOX_DEFAULT

@@ -15,19 +15,6 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
-      "x": 4,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_WeatherInstitute_2F_EventScript_Shelly",
-      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 0,
       "y": 6,

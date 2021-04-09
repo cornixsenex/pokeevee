@@ -30,6 +30,89 @@ Route1_EventScript_RivalTrigger1::
 	end
 
 
+Route1_EventScript_RivalTrigger2::
+	lock
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Route1_Movement_Player2
+	waitmovement 0
+	call Route1_EventScript_Rival1
+	applymovement 4, Route1_Movement_LeafWalk1
+	waitmovement 0
+	call Route1_EventScript_Rival2
+	applymovement 4, Route1_Movement_LeafStepLU
+	applymovement 3, Route1_Movement_RivalStep1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	call Route1_EventScript_Rival3
+	call Route1_EventScript_RockTest
+	release
+	end
+
+
+Route1_EventScript_RivalTrigger3::
+	lock
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	call Route1_EventScript_Rival1
+	applymovement 4, Route1_Movement_LeafWalk1
+	waitmovement 0
+	call Route1_EventScript_Rival2
+	applymovement 4, Route1_Movement_LeafStepLU
+	applymovement 3, Route1_Movement_RivalStep1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	call Route1_EventScript_Rival3
+	call Route1_EventScript_RockTest
+	release
+	end
+
+
+Route1_EventScript_RivalTrigger4::
+	lock
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	call Route1_EventScript_Rival1
+	applymovement 4, Route1_Movement_LeafWalk2
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	call Route1_EventScript_Rival2
+	applymovement 4, Route1_Movement_LeafStepLU
+	applymovement 3, Route1_Movement_RivalStep2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	call Route1_EventScript_Rival3
+	call Route1_EventScript_RockTest
+	release
+	end
+
+
+Route1_EventScript_RivalTrigger5::
+	lock
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	call Route1_EventScript_Rival1
+	applymovement 4, Route1_Movement_LeafWalk3
+	waitmovement 0
+	call Route1_EventScript_Rival2
+	applymovement 4, Route1_Movement_LeafStepUL
+	applymovement 3, Route1_Movement_RivalStep3
+	waitmovement 0
+	call Route1_EventScript_Rival3B
+	call Route1_EventScript_RockTest
+	release
+	end
+
+
 Route1_EventScript_WarpToLeafHouse::
 	setvar VAR_ROUTE1_STATE, 1
 	warp MAP_ALDEON_LEAF_HOUSE_2F, 255, 6, 5
@@ -95,6 +178,35 @@ Route1_EventScript_Rival3::
 	return
 
 
+Route1_EventScript_Rival3B::
+	load_field_pic 3, 190, 98
+	msgbox Route1_Text_Rival4
+	destroy_field_pic 3
+	closemessage
+	setvar VAR_MUGSHOT_ID, MUGSHOT_BLUE
+	trainerbattle_no_intro TRAINER_BLUE, Route1_Text_RivalLost
+	load_field_pic 3, 190, 98
+	msgbox Route1_Text_Rival5
+	destroy_field_pic 3
+	closemessage
+	applymovement 3, Route1_Movement_RivalExit
+	waitmovement 0
+	removeobject 3
+	applymovement 4, Common_Movement_FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	load_field_pic 4, 190, 98
+	msgbox Route1_Text_Leaf3
+	closemessage
+	destroy_field_pic 4
+	call Common_EventScript_OutOfCenterPartyHeal
+	load_field_pic 4, 190, 98
+	msgbox Route1_Text_Leaf4
+	closemessage
+	destroy_field_pic 4
+	return
+
+
 Route1_EventScript_Boy::
 	lockall
 	faceplayer
@@ -139,10 +251,26 @@ Route1_Movement_LeafWalk1:
 	walk_up
 	step_end
 
+Route1_Movement_LeafWalk2:
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Route1_Movement_LeafWalk3:
+	walk_left
+	step_end
+
 Route1_Movement_LeafStepLU:
 	walk_left
 	walk_up
 	face_down
+	step_end
+
+Route1_Movement_LeafStepUL:
+	walk_up
+	walk_left
+	face_right
 	step_end
 
 Route1_Movement_RivalStep1:
@@ -153,8 +281,24 @@ Route1_Movement_RivalStep1:
 	face_left
 	step_end
 
+Route1_Movement_RivalStep2:
+	walk_left
+	walk_left
+	walk_up
+	face_left
+	step_end
+
+Route1_Movement_RivalStep3:
+	walk_left
+	walk_left
+	step_end
+
 Route1_Movement_Player1:
 	walk_down
+	walk_down
+	step_end
+
+Route1_Movement_Player2:
 	walk_down
 	step_end
 
