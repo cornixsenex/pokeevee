@@ -40,12 +40,12 @@
 #define TRAINER_MARY_AND_MOLLY               34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36
-#define TRAINER_ROSE_1                       37
+#define TRAINER_KELSEY                       37
 #define TRAINER_FELIX                        38
 #define TRAINER_VIOLET                       39
-#define TRAINER_ROSE_2                       40
-#define TRAINER_ROSE_3                       41
-#define TRAINER_ROSE_4                       42
+#define TRAINER_RUBY_AND_JACK                40
+#define TRAINER_LESTER                       41
+#define TRAINER_NEVILLE                      42
 #define TRAINER_ROSE_5                       43
 #define TRAINER_DUSTY_1                      44
 #define TRAINER_CHIP                         45

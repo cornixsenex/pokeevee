@@ -164,15 +164,7 @@ static void PopulateBattleFrontierStreak(int, u8 *);
 
 static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
 {
-    {
-        .trainerId = TRAINER_ROSE_1,
-        .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(8),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 3),
-        .battleFrontierRecordStreakTextIndex = 8,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 8),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
-    },
+
     {
         .trainerId = TRAINER_ANDRES_1,
         .unused = 0,

@@ -86,6 +86,21 @@ script SilvanWoods_EventScript_Matt {
 	end
 }
 
+script SilvanWoods_EventScript_Zander {
+	trainerbattle_single(TRAINER_ZANDER, SilvanWoods_Text_ZanderIntro, SilvanWoods_Text_MattLost)
+	msgbox (SilvanWoods_Text_ZanderPost)
+	closemessage
+	end
+}
+
+
+script SilvanWoods_EventScript_Julia {
+	trainerbattle_single(TRAINER_JULIA, SilvanWoods_Text_JuliaIntro, SilvanWoods_Text_JuliaLost)
+	msgbox (SilvanWoods_Text_JuliaPost)
+	closemessage
+	end
+}
+
 script SilvanWoods_EventScript_Rosa {
 	trainerbattle_single(TRAINER_ROSA, SilvanWoods_Text_RosaIntro, SilvanWoods_Text_RosaLost)
 	msgbox (SilvanWoods_Text_RosaPost)
@@ -114,6 +129,60 @@ script SilvanWoods_EventScript_Leah {
 	end
 }
 
+script SilvanWoods_EventScript_Daisy {
+	trainerbattle_single(TRAINER_DAISY, SilvanWoods_Text_DaisyIntro, SilvanWoods_Text_DaisyLost)
+	msgbox (SilvanWoods_Text_DaisyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Kelsey {
+	trainerbattle_single(TRAINER_KELSEY, SilvanWoods_Text_KelseyIntro, SilvanWoods_Text_KelseyLost)
+	msgbox (SilvanWoods_Text_KelseyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Felix {
+	trainerbattle_single(TRAINER_FELIX, SilvanWoods_Text_FelixIntro, SilvanWoods_Text_FelixLost)
+	msgbox (SilvanWoods_Text_FelixPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Violet {
+	trainerbattle_single(TRAINER_VIOLET, SilvanWoods_Text_VioletIntro, SilvanWoods_Text_VioletLost)
+	msgbox (SilvanWoods_Text_VioletPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Ruby {
+	trainerbattle_single(TRAINER_RUBY_AND_JACK, SilvanWoods_Text_RubyIntro, SilvanWoods_Text_RubyLost)
+	msgbox (SilvanWoods_Text_RubyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Jack {
+	trainerbattle_single(TRAINER_RUBY_AND_JACK, SilvanWoods_Text_JackIntro, SilvanWoods_Text_JackLost)
+	msgbox (SilvanWoods_Text_JackPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Lester {
+	trainerbattle_single(TRAINER_LESTER, SilvanWoods_Text_LesterIntro, SilvanWoods_Text_LesterLost)
+	msgbox (SilvanWoods_Text_LesterPost)
+	closemessage
+	end
+}
+script SilvanWoods_EventScript_Neville {
+	trainerbattle_single(TRAINER_NEVILLE, SilvanWoods_Text_NevilleIntro, SilvanWoods_Text_JackLost)
+	msgbox (SilvanWoods_Text_NevillePost)
+	closemessage
+	end
+}
 movement SilvanWoods_Movement_PlayerRival {
 	walk_left
 }
@@ -185,6 +254,18 @@ text SilvanWoods_Text_ZanderPost {
 	format("My bug was not stronger.")
 }
 
+text SilvanWoods_Text_JuliaIntro {
+	format("Haha I'm getting lit in the forest.")
+}
+
+text SilvanWoods_Text_JuliaLost {
+	format("You have no chill.")
+}
+
+text SilvanWoods_Text_JuliaPost {
+	format("Bro are you seeling weed?")
+}
+
 text SilvanWoods_Text_RosaIntro {
 	format("Let's see how you perform.")
 }
@@ -234,13 +315,102 @@ text SilvanWoods_Text_LeahPost {
 }
 
 text SilvanWoods_Text_DaisyIntro {
-	format("I think you'll find I'm not like other girls.")
+	format("Men don't like me. They say I'm too forward.")
 }
 
 text SilvanWoods_Text_DaisyLost {
-	format("Looks like I still have a lot left to learn.")
+	format("I can't believe I'm such a dumb lolcow!")
 }
 
 text SilvanWoods_Text_DaisyPost {
-	format("I love it here and feel at complete peace whenever I can walk among these trees.")
+	format("I hear men like it when you squish your face. Maybe I'll share a pic with Agatha.")
 }
+
+text SilvanWoods_Text_KelseyIntro {
+	format("I'm searching for a four leafed clover.")
+}
+
+text SilvanWoods_Text_KelseyLost {
+	format("Looks like I am in need of better luck.")
+}
+
+text SilvanWoods_Text_KelseyPost {
+	format("They say the four leaf clover is lucky.")
+}
+
+text SilvanWoods_Text_FelixIntro {
+	format("You will eat bugs and you will be happy.")
+}
+
+text SilvanWoods_Text_FelixLost {
+	format("Uhh dude now what will I have for dinner?")
+}
+
+text SilvanWoods_Text_FelixPost {
+	format("Crickets and worms are sources of protein.")
+}
+
+text SilvanWoods_Text_VioletIntro {
+	format("Each flower grows unique from all the rest.")
+}
+
+text SilvanWoods_Text_VioletLost {
+	format("No two roses are ever quite the same.")
+}
+
+text SilvanWoods_Text_VioletPost {
+	format("How many are the blooms that we call rose? ")
+}
+
+text SilvanWoods_Text_RubyIntro {
+	format("I had suggested we go to the book depository but Jack insisted...")
+}
+
+text SilvanWoods_Text_RubyLost {
+	format("You can't say Silvan Woods has no welcome.")
+}
+
+text SilvanWoods_Text_RubyPost {
+	format("What do you mean? There was but one of us!")
+}
+
+text SilvanWoods_Text_JackIntro {
+	format("Are you aware of the Zapruder film?")
+}
+
+text SilvanWoods_Text_JackLost {
+	format("What's that? You say Mr. Oswald did it?")
+}
+
+text SilvanWoods_Text_JackPost {
+	format("Who was the man with the black umbrella?")
+}
+
+text SilvanWoods_Text_LesterIntro {
+	format("I had to take a rest after walking so far but there is nowhere great to sit.")
+}
+
+text SilvanWoods_Text_LesterLost {
+	format("Just goes to show the importance of health.")
+}
+
+text SilvanWoods_Text_LesterPost {
+	format("Oh man I'm not sure I can make it out...")
+}
+
+text SilvanWoods_Text_NevilleIntro {
+	format("No insect has ever broken my heart.")
+}
+
+text SilvanWoods_Text_NevilleLost {
+	format("My bugs! They let me down!")
+}
+
+text SilvanWoods_Text_NevillePost {
+	format("Dissapointing is the only thing I have to say.")
+}
+
+
+
+
+

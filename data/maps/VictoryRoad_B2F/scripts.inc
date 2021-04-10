@@ -21,10 +21,6 @@ VictoryRoad_B2F_EventScript_Julie:: @ 823691A
 	msgbox VictoryRoad_B2F_Text_JuliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-VictoryRoad_B2F_EventScript_Felix:: @ 8236931
-	trainerbattle_single TRAINER_FELIX, VictoryRoad_B2F_Text_FelixIntro, VictoryRoad_B2F_Text_FelixDefeat
-	msgbox VictoryRoad_B2F_Text_FelixPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 VictoryRoad_B2F_EventScript_Dianne:: @ 8236948
 	trainerbattle_single TRAINER_DIANNE, VictoryRoad_B2F_Text_DianneIntro, VictoryRoad_B2F_Text_DianneDefeat
@@ -80,19 +76,6 @@ VictoryRoad_B2F_Text_JulieDefeat: @ 8236C0A
 VictoryRoad_B2F_Text_JuliePostBattle: @ 8236C21
 	.string "Gaze on your collected BADGES and\n"
 	.string "remember the TRAINERS you've faced.$"
-
-VictoryRoad_B2F_Text_FelixIntro: @ 8236C67
-	.string "I've come this far, but the tension's\n"
-	.string "giving me awful stomach pain…$"
-
-VictoryRoad_B2F_Text_FelixDefeat: @ 8236CAB
-	.string "Ooh…\n"
-	.string "It hurts…$"
-
-VictoryRoad_B2F_Text_FelixPostBattle: @ 8236CBA
-	.string "I can't help getting all tense knowing\n"
-	.string "that I'm nearing the POKéMON LEAGUE.\p"
-	.string "It's all I can do to feign calm.$"
 
 VictoryRoad_B2F_Text_DianneIntro: @ 8236D27
 	.string "The elite among the elite gather in\n"
