@@ -474,28 +474,6 @@ Route111_EventScript_Becky:: @ 81F1249
 	msgbox Route111_Text_BeckyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route111_EventScript_Dusty:: @ 81F1260
-	trainerbattle_single TRAINER_DUSTY_1, Route111_Text_DustyIntro, Route111_Text_DustyDefeat, Route111_EventScript_RegisterDusty
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route111_EventScript_RematchDusty
-	msgbox Route111_Text_DustyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route111_EventScript_RegisterDusty:: @ 81F128C
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route111_Text_DustyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_DUSTY_1
-	release
-	end
-
-Route111_EventScript_RematchDusty:: @ 81F12AB
-	trainerbattle_rematch TRAINER_DUSTY_1, Route111_Text_DustyRematchIntro, Route111_Text_DustyRematchDefeat
-	msgbox Route111_Text_DustyPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route111_EventScript_Travis:: @ 81F12C2
 	trainerbattle_single TRAINER_TRAVIS, Route111_Text_TravisIntro, Route111_Text_TravisDefeat
 	msgbox Route111_Text_TravisPostBattle, MSGBOX_AUTOCLOSE

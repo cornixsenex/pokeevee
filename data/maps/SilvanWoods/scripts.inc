@@ -179,8 +179,71 @@ SilvanWoods_EventScript_Lester::
 
 
 SilvanWoods_EventScript_Neville::
-	trainerbattle_single TRAINER_NEVILLE, SilvanWoods_Text_NevilleIntro, SilvanWoods_Text_JackLost
+	trainerbattle_single TRAINER_NEVILLE, SilvanWoods_Text_NevilleIntro, SilvanWoods_Text_NevilleLost
 	msgbox SilvanWoods_Text_NevillePost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Wang::
+	trainerbattle_single TRAINER_WANG, SilvanWoods_Text_WangIntro, SilvanWoods_Text_WangLost
+	msgbox SilvanWoods_Text_WangPost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Sally::
+	trainerbattle_single TRAINER_SALLY_AND_ED, SilvanWoods_Text_SallyIntro, SilvanWoods_Text_SallyLost
+	msgbox SilvanWoods_Text_SallyPost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Ed::
+	trainerbattle_single TRAINER_SALLY_AND_ED, SilvanWoods_Text_EdIntro, SilvanWoods_Text_EdLost
+	msgbox SilvanWoods_Text_EdPost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Jay::
+	trainerbattle_single TRAINER_JAY, SilvanWoods_Text_JayIntro, SilvanWoods_Text_JayLost
+	msgbox SilvanWoods_Text_JayPost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Foster::
+	trainerbattle_single TRAINER_FOSTER, SilvanWoods_Text_FosterIntro, SilvanWoods_Text_FosterLost
+	msgbox SilvanWoods_Text_FosterPost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Douggie::
+	trainerbattle_single TRAINER_DOUGGIE, SilvanWoods_Text_DouggieIntro, SilvanWoods_Text_FosterLost
+	msgbox SilvanWoods_Text_DouggiePost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Smokey::
+	trainerbattle_single TRAINER_DOUGGIE, SilvanWoods_Text_SmokeyIntro, SilvanWoods_Text_SmokeyLost
+	msgbox SilvanWoods_Text_SmokeyPost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Stoney::
+	trainerbattle_single TRAINER_DOUGGIE, SilvanWoods_Text_StoneyIntro, SilvanWoods_Text_StoneyLost
+	msgbox SilvanWoods_Text_StoneyPost
+	closemessage
+	end
+
+
+SilvanWoods_EventScript_Gary::
+	trainerbattle_single TRAINER_GARY, SilvanWoods_Text_GaryIntro, SilvanWoods_Text_GaryLost
+	msgbox SilvanWoods_Text_GaryPost
 	closemessage
 	end
 
@@ -390,3 +453,104 @@ SilvanWoods_Text_NevilleLost::
 SilvanWoods_Text_NevillePost::
 	.string "Dissapointing is the only thing I have\n"
 	.string "to say.$"
+
+SilvanWoods_Text_WangIntro::
+	.string "Hey kid would you like to see my big\n"
+	.string "worm?$"
+
+SilvanWoods_Text_WangLost::
+	.string "No need to cause a scene$"
+
+SilvanWoods_Text_WangPost::
+	.string "C'mon calm down. Besides it really was a\n"
+	.string "monster worm!$"
+
+SilvanWoods_Text_SallyIntro::
+	.string "We walk out here as often as we can.$"
+
+SilvanWoods_Text_SallyLost::
+	.string "Video games are ruining the youth!$"
+
+SilvanWoods_Text_SallyPost::
+	.string "Back in my day we had no Pokemon and I\n"
+	.string "don't like the way you kids trust them!$"
+
+SilvanWoods_Text_EdIntro::
+	.string "When I was young we stormed Normandy!$"
+
+SilvanWoods_Text_EdLost::
+	.string "Get off my lawn!$"
+
+SilvanWoods_Text_EdPost::
+	.string "I'm sorry, who are you?$"
+
+SilvanWoods_Text_JayIntro::
+	.string "We aren't here to enjoy the wood\n"
+	.string "instead we came out here to get fucked\l"
+	.string "up.$"
+
+SilvanWoods_Text_JayLost::
+	.string "Hey bitch don't kill my vibe!$"
+
+SilvanWoods_Text_JayPost::
+	.string "Dude schools so hard, these teachers\n"
+	.string "think that I should understand this\l"
+	.string "complicated shit like traingles.$"
+
+SilvanWoods_Text_FosterIntro::
+	.string "Man have you ever just looked at your\n"
+	.string "hands?$"
+
+SilvanWoods_Text_FosterLost::
+	.string "Did you steal my lighter?$"
+
+SilvanWoods_Text_FosterPost::
+	.string "I met this guy who told me that pig\n"
+	.string "tastes just like human.$"
+
+SilvanWoods_Text_DouggieIntro::
+	.string "Haha! Dude, RIZZLAM! We're all\n"
+	.string "RIZZLAMIC!$"
+
+SilvanWoods_Text_DouggieLost::
+	.string "You're honestly acting just like a\n"
+	.string "bitch.$"
+
+SilvanWoods_Text_DouggiePost::
+	.string "I stole that kid's lighter wanna buy it?$"
+
+SilvanWoods_Text_SmokeyIntro::
+	.string "Oh dude I just picked up some fire weed!$"
+
+SilvanWoods_Text_SmokeyLost::
+	.string "I was thinking about some crazy shit.$"
+
+SilvanWoods_Text_SmokeyPost::
+	.string "Just sitting here all day and smoking\n"
+	.string "weed sometimes I worry I may have\l"
+	.string "fucked up.$"
+
+SilvanWoods_Text_StoneyIntro::
+	.string "Uhh bro we're taking dabs under the\n"
+	.string "trees.$"
+
+SilvanWoods_Text_StoneyLost::
+	.string "Dabbed out! I need to go eat a hot dog...$"
+
+SilvanWoods_Text_StoneyPost::
+	.string "It's pretty cool up here in the forest\n"
+	.string "the weed's better but I still miss the\l"
+	.string "beach.$"
+
+SilvanWoods_Text_GaryIntro::
+	.string "There is no man alive who outsmokes me.$"
+
+SilvanWoods_Text_GaryLost::
+	.string "I'm smoked out man, I can' take one more\n"
+	.string "hit.$"
+
+SilvanWoods_Text_GaryPost::
+	.string "Ok ok you've proved you aren't a bitch\n"
+	.string "and we spent so long standing here\l"
+	.string "fighting I might need to take another\l"
+	.string "hit soon.$"
