@@ -59,6 +59,71 @@ SilvanWoods_RivalTrigger2::
 	end
 
 
+SilvanWoods_EventScript_ScottTrigger::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 9, SilvanWoods_Movement_Scott1
+	load_field_pic 5, 190, 98
+	msgbox SilvanWoods_Text_ScottBlock
+	waitmovement 0
+	closemessage
+	destroy_field_pic 5
+	applymovement 9, SilvanWoods_Movement_Scott2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepBack
+	waitmovement 0
+	releaseall
+	end
+
+
+SilvanWoods_EventScript_ScottTriggerB::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 9, SilvanWoods_Movement_Scott1B
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	load_field_pic 5, 190, 98
+	msgbox SilvanWoods_Text_ScottBlock
+	waitmovement 0
+	closemessage
+	destroy_field_pic 5
+	applymovement 9, SilvanWoods_Movement_Scott2B
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepBack
+	waitmovement 0
+	releaseall
+	end
+
+
+SilvanWoods_EventScript_Scott2Trigger::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepUp
+	load_field_pic 4, 190, 98
+	msgbox SilvanWoods_Text_Leaf1
+	waitmovement 0
+	destroy_field_pic 4
+	load_field_pic 5, 190, 98
+	msgbox SilvanWoods_Text_ScottPass
+	destroy_field_pic 5
+	load_field_pic 4, 190, 98
+	msgbox SilvanWoods_Text_Leaf2
+	closemessage
+	destroy_field_pic 4
+	applymovement 9, SilvanWoods_Movement_ScottExit
+	applymovement 40, SilvanWoods_Movement_ScottExit
+	waitmovement 0
+	removeobject 9
+	removeobject 40
+	setflag FLAG_HIDE_SILVANWOODS_LEAF1
+	setflag FLAG_HIDE_SILVANWOODS_SCOTT
+	setvar VAR_ROUTE3_STATE, 5
+	releaseall
+	end
+
+
 SilvanWoods_EventScript_Crystal::
 	trainerbattle_single TRAINER_CRYSTAL, SilvanWoods_Text_CrystalIntro, SilvanWoods_Text_CrystalLost
 	msgbox SilvanWoods_Text_CrystalPost
@@ -244,6 +309,7 @@ SilvanWoods_EventScript_Stoney::
 SilvanWoods_EventScript_Gary::
 	trainerbattle_single TRAINER_GARY, SilvanWoods_Text_GaryIntro, SilvanWoods_Text_GaryLost
 	msgbox SilvanWoods_Text_GaryPost
+	setvar VAR_ROUTE3_STATE, 3
 	closemessage
 	end
 
@@ -266,6 +332,49 @@ SilvanWoods_Movement_RivalWalk:
 	walk_up
 	walk_left
 	walk_left
+	step_end
+
+SilvanWoods_Movement_Scott1:
+	walk_down
+	walk_down
+	step_end
+
+SilvanWoods_Movement_Scott2:
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+SilvanWoods_Movement_PlayerStepBack:
+	walk_down
+	step_end
+
+SilvanWoods_Movement_Scott1B:
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+SilvanWoods_Movement_Scott2B:
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+SilvanWoods_Movement_PlayerStepUp:
+	walk_up
+	walk_up
+	step_end
+
+SilvanWoods_Movement_ScottExit:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 SilvanWoods_Text_CrystalIntro::
@@ -554,3 +663,33 @@ SilvanWoods_Text_GaryPost::
 	.string "and we spent so long standing here\l"
 	.string "fighting I might need to take another\l"
 	.string "hit soon.$"
+
+SilvanWoods_Text_ScottBlock::
+	.string "Oh no this is not good I can't find Leaf!\n"
+	.string "You haven't seen her recently have\l"
+	.string "you? I know she must be somewhere in\l"
+	.string "these woods. Will you please go find her\l"
+	.string "and bring her here?$"
+
+SilvanWoods_Text_Leaf1::
+	.string "Hey {PLAYER}! There you are! Thanks\n"
+	.string "for saving me again.$"
+
+SilvanWoods_Text_ScottPass::
+	.string "This {RIVAL} who is stalking you\n"
+	.string "sounds dangerous we should stay as a\l"
+	.string "group. Anyways {PLAYER} we're quite\l"
+	.string "near Saeclara. This path should lead us\l"
+	.string "directly to Mew. I cannot speak for\l"
+	.string "either of you but all this excitement\l"
+	.string "makes me want a bowl. So once your safe\l"
+	.string "in town you can find me poking some\l"
+	.string "smot in my local weed shop. Come with me\l"
+	.string "Leaf we'll smoke some Indica.$"
+
+SilvanWoods_Text_Leaf2::
+	.string "Ok that's fine but I want to see Mew.\n"
+	.string "Well {PLAYER} don't spend all day\l"
+	.string "lollygagging here in the woods. We'll\l"
+	.string "wait for you in town down at my dad's\l"
+	.string "Chronic Cannabis store.$"

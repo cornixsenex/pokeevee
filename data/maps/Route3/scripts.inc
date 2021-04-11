@@ -30,6 +30,86 @@ Route3_EventScript_LeafTrigger2::
 	end
 
 
+Route3_EventScript_MewTrigger1::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	playmoncry SPECIES_MEW, 0
+	fadescreen 1
+	waitmoncry
+	removeobject 15
+	setflag FLAG_SILVANWOODS_HIDEFIGHT2
+	setvar VAR_ROUTE3_STATE, 3
+	fadescreen 0
+	releaseall
+	end
+
+
+Route3_EventScript_RivalTrigger1::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Route3_Movement_RivalPlayer1
+	applymovement 16, Common_Movement_FaceLeft
+	waitmovement 0
+	call Route3_EventScript_Rival
+	releaseall
+	end
+
+
+Route3_EventScript_RivalTrigger2::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Route3_Movement_RivalPlayer1B
+	applymovement 16, Common_Movement_FaceLeft
+	waitmovement 0
+	call Route3_EventScript_Rival
+	releaseall
+	end
+
+
+Route3_EventScript_Rival::
+	load_field_pic 4, 190, 98
+	msgbox Route3_Text_Leaf2
+	waitmovement 0
+	applymovement 16, Common_Movement_FaceLeft
+	waitmovement 0
+	closemessage
+	destroy_field_pic 4
+	addobject 17
+	showobjectat 17, MAP_ROUTE3
+	applymovement 17, Route3_Movement_Rival1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	load_field_pic 3, 190, 98
+	msgbox Route3_Text_RivalIntro
+	destroy_field_pic 3
+	closemessage
+	setvar VAR_MUGSHOT_ID, MUGSHOT_BLUE
+	trainerbattle_no_intro TRAINER_RIVAL2, Route3_Text_RivalLost
+	load_field_pic 3, 190, 98
+	msgbox Route3_Text_RivalPost
+	destroy_field_pic 3
+	closemessage
+	applymovement 17, Route3_Movement_Rival2
+	waitmovement 0
+	removeobject 17
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	load_field_pic 4, 190, 98
+	msgbox Route3_Text_Leaf3
+	destroy_field_pic 4
+	closemessage
+	applymovement 16, Route3_Movement_RivalLeafExit
+	waitmovement 0
+	removeobject 16
+	setvar VAR_ROUTE3_STATE, 4
+	setflag FLAG_HIDE_SILVANWOODS_LEAF2
+	clearflag FLAG_HIDE_SILVANWOODS_LEAF1
+	return
+
+
 Route3_EventScript_Leaf1::
 	load_field_pic 4, 190, 98
 	msgbox Route3_Text_Leaf1
@@ -158,6 +238,43 @@ Route3_Movement_LeafIntro2:
 Route3_Movement_LeafExit:
 	walk_up
 	walk_up
+	step_end
+
+Route3_Movement_RivalPlayer1:
+	walk_right
+	walk_down
+	walk_right
+	step_end
+
+Route3_Movement_RivalPlayer1B:
+	walk_right
+	walk_right
+	step_end
+
+Route3_Movement_Rival1:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route3_Movement_Rival2:
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	step_end
+
+Route3_Movement_RivalLeafExit:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 Route3_Text_RossIntro::
@@ -303,3 +420,43 @@ Route3_Text_OldMan::
 	.string "before The Party changed it to Beach\l"
 	.string "Cave.\p"
 	.string "You should only go in if you're prepared.$"
+
+Route3_Text_Leaf2::
+	.string "Look out {PLAYER} it's {RIVAL}\n"
+	.string "this is a trap!$"
+
+Route3_Text_RivalIntro::
+	.string "It's {PLAYER} is it? What a disgusting\n"
+	.string "name though fitting for an animal like\l"
+	.string "you. I spent six hours saving Humpty's\l"
+	.string "life after the hospital turned me away\l"
+	.string "but in the end I could not bring him\l"
+	.string "back. You killed my only friend and now\l"
+	.string "you're trapped the both of you like\l"
+	.string "flies caught in my net.$"
+
+Route3_Text_RivalLost::
+	.string "These pathetic insects all let me down!!$"
+
+Route3_Text_RivalPost::
+	.string "You anal sniffing worm, you piece of\n"
+	.string "filth! I will not have you make a fool of\l"
+	.string "me. Already you have stolen my whole\l"
+	.string "life from me. There's nothing to go\l"
+	.string "back, nothing to return to. I'm all\l"
+	.string "alone with nothing, and therefore\l"
+	.string "nothing to loose. I swear to you now\l"
+	.string "{PLAYER} on my own heart and by the\l"
+	.string "mighty power of the sun, in recognition\l"
+	.string "of the River Styx, and under penalty of\l"
+	.string "doom and death you will be met with\l"
+	.string "Justice by my hand. Never know rest for\l"
+	.string "I will never sleep until that day when I\l"
+	.string "have made you pay.$"
+
+Route3_Text_Leaf3::
+	.string "Wow {PLAYER} I'm glad you're here all\n"
+	.string "big and strong to protect me from\l"
+	.string "creeps like that {RIVAL}. It's\l"
+	.string "getting late and I want to see Mew!\l"
+	.string "C'mon silly we need to find my dad!$"

@@ -58,9 +58,9 @@
 #define FLAG_BULBUS_HIDE_STRIKE 0x2E // Hides strike (opens boat + shop)
 #define FLAG_SILVANWOODS_HIDEFIGHT1   0x2F // After Leaf1 fight hides Fight1
 #define FLAG_SILVANWOODS_HIDEFIGHT2    0x30 // After Mew sight / Stoney fight
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define FLAG_HIDE_SILVANWOODS_LEAF1    0x31 // Hide Leaf near Silvan Woods exit (starts flagged!)
+#define FLAG_HIDE_SILVANWOODS_LEAF2    0x32 // Hide Leaf in Route3 after rival fight
+#define FLAG_HIDE_SILVANWOODS_SCOTT    0x33 // Hide Scott near Silvan Woods exit
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag

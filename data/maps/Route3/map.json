@@ -219,8 +219,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MEW",
-      "x": 58,
-      "y": 5,
+      "x": 52,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -235,7 +235,20 @@
       "x": 70,
       "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SILVANWOODS_LEAF2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "x": 65,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -307,6 +320,20 @@
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
       "dest_warp_id": 7
+    },
+    {
+      "x": 65,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 66,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": 9
     }
   ],
   "coord_events": [
@@ -327,6 +354,42 @@
       "var": "VAR_ROUTE3_STATE",
       "var_value": "0",
       "script": "Route3_EventScript_LeafTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "2",
+      "script": "Route3_EventScript_MewTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "2",
+      "script": "Route3_EventScript_MewTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "3",
+      "script": "Route3_EventScript_RivalTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "3",
+      "script": "Route3_EventScript_RivalTrigger2"
     }
   ],
   "bg_events": [

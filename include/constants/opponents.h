@@ -60,7 +60,7 @@
 #define TRAINER_GABBY_AND_TY_4               54
 #define TRAINER_GABBY_AND_TY_5               55
 #define TRAINER_GABBY_AND_TY_6               56
-#define TRAINER_LOLA_1                       57
+#define TRAINER_RIVAL2                       57
 #define TRAINER_AUSTINA                      58
 #define TRAINER_GWEN                         59
 #define TRAINER_LOLA_2                       60
