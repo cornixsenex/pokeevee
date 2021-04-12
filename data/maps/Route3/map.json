@@ -334,6 +334,20 @@
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
       "dest_warp_id": 9
+    },
+    {
+      "x": 74,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": 10
+    },
+    {
+      "x": 75,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": 11
     }
   ],
   "coord_events": [

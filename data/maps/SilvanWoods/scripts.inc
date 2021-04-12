@@ -594,9 +594,9 @@ SilvanWoods_Text_EdPost::
 	.string "I'm sorry, who are you?$"
 
 SilvanWoods_Text_JayIntro::
-	.string "We aren't here to enjoy the wood\n"
-	.string "instead we came out here to get fucked\l"
-	.string "up.$"
+	.string "We aren't here to enjoy the woods\n"
+	.string "instead we came out here to fight and\l"
+	.string "get fucked up.$"
 
 SilvanWoods_Text_JayLost::
 	.string "Hey bitch don't kill my vibe!$"
