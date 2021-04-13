@@ -264,7 +264,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rocket_F;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lorelei;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine;
-
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jessie;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -505,6 +505,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GIOVANNI] =                 &gObjectEventGraphicsInfo_Giovanni,
 	[OBJ_EVENT_GFX_LORELEI] =                  &gObjectEventGraphicsInfo_Lorelei,
     [OBJ_EVENT_GFX_BLAINE] =                   &gObjectEventGraphicsInfo_Blaine,
+    [OBJ_EVENT_GFX_JESSIE] =                   &gObjectEventGraphicsInfo_Jessie,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 

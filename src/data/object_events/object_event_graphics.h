@@ -422,5 +422,13 @@ const u32 gObjectEventPic_Lorelei[] = INCBIN_U32("graphics/object_events/pics/pe
 const u16 gObjectEventPal_Lorelei[] = INCBIN_U16("graphics/object_events/palettes/lorelei.gbapal");
 const u32 gObjectEventPic_Blaine[] = INCBIN_U32("graphics/object_events/pics/people/blaine.4bpp");
 const u16 gObjectEventPal_Blaine[] = INCBIN_U16("graphics/object_events/palettes/blaine.gbapal");
+const u32 gObjectEventPic_Jessie[] = INCBIN_U32("graphics/object_events/pics/people/jessie.4bpp");
+const u16 gObjectEventPal_Jessie[] = INCBIN_U16("graphics/object_events/palettes/jessie.gbapal");
+
+
+
+
+
+
 
 
