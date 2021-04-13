@@ -260,6 +260,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldM
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rocket_M;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rocket_F;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lorelei;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -498,6 +502,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GRANDMA] =                  &gObjectEventGraphicsInfo_Grandma,
     [OBJ_EVENT_GFX_ROCKET_M] =                 &gObjectEventGraphicsInfo_Rocket_M,
     [OBJ_EVENT_GFX_ROCKET_F] =                 &gObjectEventGraphicsInfo_Rocket_F,
+    [OBJ_EVENT_GFX_GIOVANNI] =                 &gObjectEventGraphicsInfo_Giovanni,
+	[OBJ_EVENT_GFX_LORELEI] =                  &gObjectEventGraphicsInfo_Lorelei,
+    [OBJ_EVENT_GFX_BLAINE] =                   &gObjectEventGraphicsInfo_Blaine,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 

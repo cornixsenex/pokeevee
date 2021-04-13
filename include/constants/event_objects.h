@@ -252,8 +252,11 @@
 #define OBJ_EVENT_GFX_GLACEON				     248
 #define OBJ_EVENT_GFX_ROCKET_M				     249
 #define OBJ_EVENT_GFX_ROCKET_F				     250
+#define OBJ_EVENT_GFX_GIOVANNI				     251
+#define OBJ_EVENT_GFX_LORELEI				     252
+#define OBJ_EVENT_GFX_BLAINE				     253
 
-#define NUM_OBJ_EVENT_GFX                        251
+#define NUM_OBJ_EVENT_GFX                        254
 
 
 // These are dynamic object gfx ids.
