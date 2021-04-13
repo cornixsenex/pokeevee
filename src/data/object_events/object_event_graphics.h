@@ -412,4 +412,12 @@ const u32 gObjectEventPic_Blue[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u16 gObjectEventPal_Blue[] = INCBIN_U16("graphics/object_events/palettes/blue.gbapal");
 const u32 gObjectEventPic_Grandma[] = INCBIN_U32("graphics/object_events/pics/people/grandma.4bpp");
 const u16 gObjectEventPal_Grandma[] = INCBIN_U16("graphics/object_events/palettes/grandma.gbapal");
+const u32 gObjectEventPic_Rocket_M[] = INCBIN_U32("graphics/object_events/pics/people/rocket_m.4bpp");
+const u16 gObjectEventPal_Rocket_M[] = INCBIN_U16("graphics/object_events/palettes/rocket_m.gbapal");
+const u32 gObjectEventPic_Rocket_F[] = INCBIN_U32("graphics/object_events/pics/people/rocket_f.4bpp");
+const u16 gObjectEventPal_Rocket_F[] = INCBIN_U16("graphics/object_events/palettes/rocket_m.gbapal");
+
+
+
+
 

@@ -432,7 +432,6 @@ void SetObjectEventSpriteAnim(u8 objectEventId, u8 animNum);
 bool32 IsObjectEventSpriteAnimating(u8 objectEventId);
 void SetObjectEventSpriteInvisibility(u8 var, bool32 var2);
 bool32 IsObjectEventSpriteInvisible(u8 var);
-//void SetObjectEventSpriteGraphics(u8 var1, u8 graphicsId);
 void SetObjectEventSpriteAnim(u8 var1, u8 var2);
 bool32 IsObjectEventSpriteAnimating(u8 var);
 bool8 IsObjectEventPaletteIndex(u8 paletteIndex);

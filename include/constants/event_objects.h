@@ -250,8 +250,10 @@
 #define OBJ_EVENT_GFX_UMBREON				     246
 #define OBJ_EVENT_GFX_LEAFEON				     247
 #define OBJ_EVENT_GFX_GLACEON				     248
+#define OBJ_EVENT_GFX_ROCKET_M				     249
+#define OBJ_EVENT_GFX_ROCKET_F				     250
 
-#define NUM_OBJ_EVENT_GFX                        249
+#define NUM_OBJ_EVENT_GFX                        251
 
 
 // These are dynamic object gfx ids.
