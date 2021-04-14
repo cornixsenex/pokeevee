@@ -265,6 +265,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lorelei;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jessie;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meowth;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Soldier;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -506,6 +509,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_LORELEI] =                  &gObjectEventGraphicsInfo_Lorelei,
     [OBJ_EVENT_GFX_BLAINE] =                   &gObjectEventGraphicsInfo_Blaine,
     [OBJ_EVENT_GFX_JESSIE] =                   &gObjectEventGraphicsInfo_Jessie,
+    [OBJ_EVENT_GFX_JAMES] =                   &gObjectEventGraphicsInfo_James,    
+	[OBJ_EVENT_GFX_MEOWTH] =                   &gObjectEventGraphicsInfo_Meowth,
+	[OBJ_EVENT_GFX_SOLDIER] =                   &gObjectEventGraphicsInfo_Soldier,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 
@@ -535,3 +541,16 @@ const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[
     [MAUVILLE_MAN_UNUSED1]     = &gObjectEventGraphicsInfo_UnusedMauvilleOldMan1,
     [MAUVILLE_MAN_UNUSED2]     = &gObjectEventGraphicsInfo_UnusedMauvilleOldMan2,
 };
+
+
+
+
+
+
+
+
+
+
+
+
+

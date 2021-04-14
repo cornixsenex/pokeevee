@@ -283,6 +283,14 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine = {0xFFFF, 
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jessie = {0xFFFF, OBJ_EVENT_PAL_TAG_JESSIE, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Jessie, gDummySpriteAffineAnimTable};
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James = {0xFFFF, OBJ_EVENT_PAL_TAG_JAMES, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_James, gDummySpriteAffineAnimTable};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meowth = {0xFFFF, OBJ_EVENT_PAL_TAG_MEOWTH, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Meowth, gDummySpriteAffineAnimTable};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Soldier = {0xFFFF, OBJ_EVENT_PAL_TAG_SOLDIER, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Soldier, gDummySpriteAffineAnimTable};
+
+
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leaf = {0xFFFF, OBJ_EVENT_PAL_TAG_RED_LEAF, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Leaf, gDummySpriteAffineAnimTable};
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sudowoodo = {0xFFFF, OBJ_EVENT_PAL_TAG_NPC_3, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Sudowoodo, gDummySpriteAffineAnimTable};
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mew = {0xFFFF, OBJ_EVENT_PAL_TAG_NPC_1, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Mew, gDummySpriteAffineAnimTable};

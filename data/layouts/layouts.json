@@ -4554,7 +4554,7 @@
     {
       "id": "LAYOUT_ROUTE3",
       "name": "Route3_Layout",
-      "width": 80,
+      "width": 84,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
