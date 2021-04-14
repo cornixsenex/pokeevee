@@ -31,6 +31,41 @@ script BulbusTown_EventScript_FightB {
 	end
 }
 
+script BulbusTown_EventScript_ClubSign {
+	lock
+	msgbox (BulbusTown_Text_ClubSign)
+	closemessage
+	release
+	end
+}
+
+script BulbusTown_EventScript_TownSign {
+	lock
+	msgbox (BulbusTown_Text_TownSign)
+	closemessage
+	release
+	end
+}
+
+script BulbusTown_EventScript_Striker1 {
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_Striker1)
+	closemessage
+	release
+	end
+}
+
+script BulbusTown_EventScript_Striker2 {
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_Striker2)
+	closemessage
+	release
+	end
+}
+
+
 text BulbusTown_Text_Sailor {
 	format("I'm not working, us sailors went on strike.")
 
@@ -49,6 +84,25 @@ text BulbusTown_Text_FightA {
 text BulbusTown_Text_FightB {
 	format("This town ain't big enough for both of us!")
 }
+
+text BulbusTown_Text_ClubSign {
+	format("The Chronic\nPremium Cannabis Club")
+}
+
+text BulbusTown_Text_TownSign {
+	format("Built on the bay, welcome to Bulbus Town!")
+}
+
+text BulbusTown_Text_Striker1 {
+	format("We need more money!")
+}
+
+text BulbusTown_Text_Striker2 {
+	format("We deserve more rights!")
+}
+
+
+
 
 
 

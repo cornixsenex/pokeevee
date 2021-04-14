@@ -1,1 +1,30 @@
 mapscripts CityClara_MapScripts {}
+
+
+script CityClara_EventScript_ClubSign {	
+	lock
+	msgbox (CityClara_Text_ClubSign)
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_CannaWoman {
+	lockall
+	faceplayer
+	msgbox (CityClara_Text_CannaWoman)
+	closemessage
+	releaseall
+	end
+}
+
+text CityClara_Text_ClubSign {
+	format("The Chronic\nPremium Cannabis Club")
+}
+
+text CityClara_Text_CannaWoman {
+	format("You see this building here? The Chronic Club? They got me so high I can barely walk!")
+}
+
+
+

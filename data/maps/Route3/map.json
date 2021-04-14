@@ -407,6 +407,13 @@
     }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 80,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route3_EventScript_SaeclaraSign"
+    }
   ]
 }

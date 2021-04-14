@@ -86,7 +86,7 @@ text Route2_Text_MannyFight {
 }
 
 text Route2_Text_MannyLost {
-	format("Nigguh")
+	format("Neighbor!")
 }
 
 text Route2_Text_MannyPost {

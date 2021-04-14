@@ -220,6 +220,14 @@ script Route3_EventScript_OldMan {
 	end
 }
 
+script Route3_EventScript_SaeclaraSign {
+	lock
+	msgbox (Route3_Text_SaeclaraSign)
+	closemessage
+	release
+	end
+}
+
 movement Route3_Movement_LeafIntro1 {
 	walk_down
 	walk_right
@@ -444,6 +452,7 @@ text Route3_Text_Leaf3 {
 	format ("Wow {PLAYER} I'm glad you're here all big and strong to protect me from creeps like that {RIVAL}. It's getting late and I want to see Mew! C'mon silly we need to find my dad!")
 }
 
-
-
+text Route3_Text_SaeclaraSign {
+	format("City Saeclara ->\n<- Silvan Woods\n <- Bulbus Town")
+}
 

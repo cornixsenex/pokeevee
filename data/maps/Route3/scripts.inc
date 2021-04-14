@@ -222,6 +222,14 @@ Route3_EventScript_OldMan::
 	end
 
 
+Route3_EventScript_SaeclaraSign::
+	lock
+	msgbox Route3_Text_SaeclaraSign
+	closemessage
+	release
+	end
+
+
 Route3_Movement_LeafIntro1:
 	walk_down
 	walk_right
@@ -460,3 +468,8 @@ Route3_Text_Leaf3::
 	.string "creeps like that {RIVAL}. It's\l"
 	.string "getting late and I want to see Mew!\l"
 	.string "C'mon silly we need to find my dad!$"
+
+Route3_Text_SaeclaraSign::
+	.string "City Saeclara ->\n"
+	.string "<- Silvan Woods\n"
+	.string "<- Bulbus Town$"
