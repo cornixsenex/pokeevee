@@ -274,5 +274,6 @@ EventScript_ResetAllMapFlags:: @ 82715DE
 	setflag FLAG_HIDE_RAYQUAZA_SKY_TOWER_SUMMIT
 	setflag FLAG_HIDE_GRANDMASCABIN_MEW
 	setflag FLAG_HIDE_SILVANWOODS_LEAF1
+	setflag FLAG_CLARACITY_HIDELEAF
 	call EventScript_ResetAllBerries
 	end

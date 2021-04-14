@@ -61,8 +61,8 @@
 #define FLAG_HIDE_SILVANWOODS_LEAF1    0x31 // Hide Leaf near Silvan Woods exit (starts flagged!)
 #define FLAG_HIDE_SILVANWOODS_LEAF2    0x32 // Hide Leaf in Route3 after rival fight
 #define FLAG_HIDE_SILVANWOODS_SCOTT    0x33 // Hide Scott near Silvan Woods exit
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_CLARACLUB_HIDELEAF   0x34 // Hide Leaf After leaving the first time
+#define FLAG_CLARACITY_HIDELEAF   0x35 // Starts set, hides Leaf in Clara City
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag

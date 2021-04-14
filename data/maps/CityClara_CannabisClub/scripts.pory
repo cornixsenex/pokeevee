@@ -1,0 +1,32 @@
+mapscripts CityClara_CannabisClub_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		setweather (WEATHER_FOG_DIAGONAL)
+	}
+}
+
+script CityClara_CannabisCenter_Clerk {
+	lock
+	faceplayer
+	msgbox (CityClara_CannabisCenter_Intro)
+	closemessage	
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	msgbox (CityClara_CannabisCenter_Outtro)
+	release
+	end
+}
+
+text CityClara_CannabisCenter_Intro {
+	format("Hey, good to see you. Here man hit the bong!")
+}
+
+text CityClara_CannabisCenter_Outtro {
+	format("Just let me know if you want to smoke more.")
+}
+
+
+
+
+
+
+
+

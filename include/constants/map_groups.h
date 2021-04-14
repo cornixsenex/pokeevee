@@ -598,6 +598,7 @@
 #define MAP_BULBUS_TOWN_HOUSE2           (10 | (31 << 8))
 #define MAP_BULBUS_TOWN_HOUSE3           (11 | (31 << 8))
 #define MAP_BULBUS_TOWN_HOUSE4           (12 | (31 << 8))
+#define MAP_CITY_CLARA_CANNABIS_CLUB     (13 | (31 << 8))
 
 // Map Group 32
 #define MAP_ROUTE119_WEATHER_INSTITUTE_1F (0 | (32 << 8))

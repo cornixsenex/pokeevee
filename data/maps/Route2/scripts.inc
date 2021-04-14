@@ -81,7 +81,7 @@ Route2_Text_MannyFight::
 	.string "Uhh suh dude do you wanna do a dab?$"
 
 Route2_Text_MannyLost::
-	.string "Nigguh$"
+	.string "Neighbor!$"
 
 Route2_Text_MannyPost::
 	.string "I can't believe you'd act like that!$"
