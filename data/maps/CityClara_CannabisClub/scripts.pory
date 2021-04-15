@@ -2,6 +2,37 @@ mapscripts CityClara_CannabisClub_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		setweather (WEATHER_FOG_DIAGONAL)
 	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_CITYCLARA_STATE, 0: CityClar_CannabisCenter_ScottTrigger
+	]
+}
+
+script CityClar_CannabisCenter_ScottTrigger {
+	setvar (VAR_CITYCLARA_STATE, 1)
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (CityClara_CannabisCenter_Text_Leaf1) 
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_CannabisCenter_Movement_PlayerToScott)
+	waitmovement (0)
+	destroy_field_pic (4)	
+	load_field_pic (5, 190, 98)
+	msgbox (CityClara_CannabisCenter_Text_Scott1)	
+	destroy_field_pic (5)	
+	load_field_pic (4, 190, 98)
+	msgbox (CityClara_CannabisCenter_Text_Leaf2) 
+	destroy_field_pic (4)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)	
+	applymovement (3, CityClara_CannabisCenter_Movement_LeafExit)
+	waitmovement (0)
+	removeobject (3)
+	setflag (FLAG_CLARACITY_HIDELEAF)
+	releaseall
+	end
 }
 
 script CityClara_CannabisCenter_Clerk {
@@ -15,6 +46,13 @@ script CityClara_CannabisCenter_Clerk {
 	end
 }
 
+movement CityClara_CannabisCenter_Movement_PlayerToScott {
+	walk_up * 3
+	walk_right * 5
+	face_up
+}
+
+
 text CityClara_CannabisCenter_Intro {
 	format("Hey, good to see you. Here man hit the bong!")
 }
@@ -23,6 +61,17 @@ text CityClara_CannabisCenter_Outtro {
 	format("Just let me know if you want to smoke more.")
 }
 
+text CityClara_CannabisCenter_Text_Leaf1 {
+	format("Oh {PLAYER} there you are! What took you so long? While we were waiting my dad got too high but I've grown impatient and must see mew.")
+}
+
+text CityClara_CannabisCenter_Text_Scott1 {
+	format("Mew's like....a Pokemon...man...a LEDGEND!")
+}
+
+text CityClara_CannabisCenter_Text_Leaf1 {
+	format("See what I mean? Dad is totally blitzed. I'll wait for you down by the church I guess but make sure to smoke up if you're tired.")
+}
 
 
 

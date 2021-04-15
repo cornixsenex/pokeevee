@@ -18,6 +18,19 @@ script CityClara_EventScript_CannaWoman {
 	end
 }
 
+script CityClara_EventScript_LeafBridge {
+	lock
+	faceplayer
+	load_field_pic (4, 190, 98)
+	msgbox (CityClara_EventScript_LeafBridge)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (22, Common_Movement_FaceDown)
+	waitmovement (0)
+	releaseall
+	end
+}
+
 text CityClara_Text_ClubSign {
 	format("The Chronic\nPremium Cannabis Club")
 }
@@ -26,5 +39,8 @@ text CityClara_Text_CannaWoman {
 	format("You see this building here? The Chronic Club? They got me so high I can barely walk!")
 }
 
+text CityClara_EventScript_LeafBridge {
+	format("I can't believe how long this line appears! We'll wait all day and night to move halfway up to the top. Oh {PLAYER} I bet you could find another way we could sneak around. Maybe you could learn how to cut down trees and we could sneak in, go around the back! I bet they teach you how to cut down trees and things like that if you go to the school! I've never been myself but you should go! The school is that orange building over there on the corner of the south eastern street.")
+}
 
 
