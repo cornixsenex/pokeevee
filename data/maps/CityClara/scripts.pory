@@ -1,4 +1,28 @@
-mapscripts CityClara_MapScripts {}
+mapscripts CityClara_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		call (CityClara_OnTransition)
+	}
+}
+
+script CityClara_OnTransition {
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		setobjectxyperm (4, 39, 34)
+		setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_AROUND)
+		setobjectxyperm (5, 30, 32)
+		setobjectmovementtype (5, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (6, 58, 12)
+		setobjectmovementtype (6, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (8, 18, 40)
+		setobjectmovementtype (8, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (9, 55, 25)
+		setobjectmovementtype (9, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (12, 30, 38)
+		setobjectmovementtype (12, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (13, 39, 40)
+		setobjectmovementtype (13, MOVEMENT_TYPE_WANDER_AROUND)	
+	}
+	end
+}
 
 
 script CityClara_EventScript_ClubSign {	
@@ -18,11 +42,109 @@ script CityClara_EventScript_CannaWoman {
 	end
 }
 
+script CityClara_EventScript_GreenSuit {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_GreenSuit2)
+	} 
+	else {
+		msgbox (CityClara_Text_GreenSuit)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_FatMan {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_FatMan2)
+	} 
+	else {
+		msgbox (CityClara_Text_FatMan)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_WomanA {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_WomanA2)
+	} 
+	else {
+		msgbox (CityClara_Text_WomanA)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_RedWoman {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_RedWoman2)
+	} 
+	else {
+		msgbox (CityClara_Text_RedWoman)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_OldMan {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_OldMan2)
+	} 
+	else {
+		msgbox (CityClara_Text_OldMan)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_OldWoman {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_OldWoman2)
+	} 
+	else {
+		msgbox (CityClara_Text_OldWoman)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_Lass {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_Lass2)
+	} 
+	else {
+		msgbox (CityClara_Text_Lass)
+	}
+	closemessage
+	release
+	end
+}
+
 script CityClara_EventScript_LeafBridge {
 	lock
 	faceplayer
 	load_field_pic (4, 190, 98)
-	msgbox (CityClara_EventScript_LeafBridge)
+	msgbox (CityClara_Text_LeafBridge)
 	closemessage
 	destroy_field_pic (4)
 	applymovement (22, Common_Movement_FaceDown)
@@ -39,8 +161,77 @@ text CityClara_Text_CannaWoman {
 	format("You see this building here? The Chronic Club? They got me so high I can barely walk!")
 }
 
-text CityClara_EventScript_LeafBridge {
+text CityClara_Text_LeafBridge {
 	format("I can't believe how long this line appears! We'll wait all day and night to move halfway up to the top. Oh {PLAYER} I bet you could find another way we could sneak around. Maybe you could learn how to cut down trees and we could sneak in, go around the back! I bet they teach you how to cut down trees and things like that if you go to the school! I've never been myself but you should go! The school is that orange building over there on the corner of the south eastern street.")
 }
+
+text CityClara_Text_GreenSuit {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_GreenSuit2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_FatMan {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_FatMan2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_WomanA {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_WomanA2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_RedWoman {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_RedWoman2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_OldMan {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_OldMan2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_OldWoman {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_OldWoman2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_Lass {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_Lass2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

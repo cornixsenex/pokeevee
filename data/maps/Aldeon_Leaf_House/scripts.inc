@@ -72,6 +72,9 @@ Aldeon_Leaf_House_OnWarp::
 	msgbox Aldeon_Leaf_House_Text_Dad7
 	destroy_field_pic 5
 	closemessage
+	applymovement 1, Aldeon_Movement_DadStepDown
+	applymovement 2, Aldeon_Movement_LeafStepDown
+	waitmovement 0
 	applymovement 1, Aldeon_Movement_DadExit
 	applymovement 2, Aldeon_Movement_DadExit
 	waitmovement 0
@@ -168,8 +171,18 @@ Aldeon_Leaf_House_Movement_Player2:
 	face_left
 	step_end
 
-Aldeon_Movement_DadExit:
+Aldeon_Movement_DadStepDown:
 	walk_down
+	face_right
+	step_end
+
+Aldeon_Movement_LeafStepDown:
+	walk_down
+	walk_left
+	walk_left
+	step_end
+
+Aldeon_Movement_DadExit:
 	walk_down
 	walk_down
 	walk_down

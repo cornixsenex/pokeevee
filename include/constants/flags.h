@@ -63,7 +63,7 @@
 #define FLAG_HIDE_SILVANWOODS_SCOTT    0x33 // Hide Scott near Silvan Woods exit
 #define FLAG_CLARACLUB_HIDELEAF   0x34 // Hide Leaf After leaving the first time
 #define FLAG_CLARACITY_HIDELEAF   0x35 // Starts set, hides Leaf in Clara City
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_CLARACITY_AFTERMEW   0x36 // Hides Scott in the club, and the line outside the church
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag

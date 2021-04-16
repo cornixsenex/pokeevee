@@ -67,6 +67,9 @@ script Aldeon_Leaf_House_OnWarp {
 	msgbox (Aldeon_Leaf_House_Text_Dad7)
 	destroy_field_pic (5)
 	closemessage	
+	applymovement (1, Aldeon_Movement_DadStepDown)
+	applymovement (2, Aldeon_Movement_LeafStepDown)
+	waitmovement (0)
 	applymovement (1, Aldeon_Movement_DadExit)
 	applymovement (2, Aldeon_Movement_DadExit)
 	waitmovement (0)
@@ -134,8 +137,18 @@ movement Aldeon_Leaf_House_Movement_Player2 {
 	face_left
 }
 
+movement Aldeon_Movement_DadStepDown {
+	walk_down
+	face_right
+}
+
+movement Aldeon_Movement_LeafStepDown {
+	walk_down
+	walk_left * 2
+}
+
 movement Aldeon_Movement_DadExit {
-	walk_down * 8
+	walk_down * 7
 }	
 
 text Aldeon_Leaf_House_Text_Leaf1 {
