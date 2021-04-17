@@ -5040,6 +5040,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/BeachCave/border.bin",
       "blockdata_filepath": "data/layouts/BeachCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_CITY_CLARA_SCHOOL",
+      "name": "CityClara_School_Layout",
+      "width": 16,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/CityClara_School/border.bin",
+      "blockdata_filepath": "data/layouts/CityClara_School/map.bin"
     }
   ]
 }

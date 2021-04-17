@@ -47,6 +47,8 @@ script LoonixInsideReal_EventScript_GrandmaTV {
 	applymovement(1, LoonixInsideReal_Movement_GrandmaUp)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
 	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerToGma)
+	waitmovement (0)
 	msgbox (format("Oh {PLAYER}!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
@@ -109,7 +111,7 @@ movement LoonixInsideReal_Movement_PreventExit {
 }
 
 movement LoonixInsideReal_Movement_GrandmaTV {
-	walk_down * 4
+	walk_down
 	walk_right * 2
 }
 
@@ -136,6 +138,10 @@ movement LoonixInsideReal_Movement_GrandmaLeft {
 
 movement LoonixInsideReal_Movement_GrandmaMono {
 	face_down
+}
+
+movement LoonixInsideReal_Movement_PlayerToGma {
+	walk_down * 3
 }
 
 text LoonixInsideReal_Text_GrandmaTVSpeech {

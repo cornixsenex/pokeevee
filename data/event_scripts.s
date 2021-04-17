@@ -1211,3 +1211,13 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/BeachCave/scripts.inc"
 
 	.include "data/maps/CityClara_CannabisClub/scripts.inc"
+
+	.include "data/maps/CityClara_House1/scripts.inc"
+
+	.include "data/maps/CityClara_House2/scripts.inc"
+
+	.include "data/maps/CityClara_PokemonCenter/scripts.inc"
+
+	.include "data/maps/CityClara_School/scripts.inc"
+
+	.include "data/maps/CityClara_Mart/scripts.inc"

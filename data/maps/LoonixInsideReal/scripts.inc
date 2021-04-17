@@ -54,6 +54,8 @@ LoonixInsideReal_EventScript_GrandmaTV::
 	applymovement 1, LoonixInsideReal_Movement_GrandmaUp
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerToGma
+	waitmovement 0
 	msgbox LoonixInsideReal_EventScript_GrandmaTV_Text_0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -121,9 +123,6 @@ LoonixInsideReal_Movement_PreventExit:
 
 LoonixInsideReal_Movement_GrandmaTV:
 	walk_down
-	walk_down
-	walk_down
-	walk_down
 	walk_right
 	walk_right
 	step_end
@@ -158,6 +157,12 @@ LoonixInsideReal_Movement_GrandmaLeft:
 
 LoonixInsideReal_Movement_GrandmaMono:
 	face_down
+	step_end
+
+LoonixInsideReal_Movement_PlayerToGma:
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 Watch_TV_Text_0:

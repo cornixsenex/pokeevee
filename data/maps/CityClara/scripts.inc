@@ -165,9 +165,37 @@ CityClara_EventScript_LeafBridge::
 	end
 
 
+CityClara_EventScript_TownSign::
+	lock
+	msgbox CityClara_Text_TownSign
+	closemessage
+	release
+	end
+
+
+CityClara_EventScript_Senex::
+	lockall
+	faceplayer
+	msgbox CityClara_Text_Senex1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CityClara_EventScript_Senex_2
+	msgbox CityClara_Text_Senex3
+CityClara_EventScript_Senex_1:
+	closemessage
+	releaseall
+	end
+
+CityClara_EventScript_Senex_2:
+	msgbox CityClara_Text_Senex2
+	goto CityClara_EventScript_Senex_1
+
+
 CityClara_Text_ClubSign::
 	.string "The Chronic\n"
 	.string "Premium Cannabis Club$"
+
+CityClara_Text_TownSign::
+	.string "City Saeclara built upon the lake$"
 
 CityClara_Text_CannaWoman::
 	.string "You see this building here? The Chronic\n"
@@ -230,3 +258,28 @@ CityClara_Text_Lass::
 
 CityClara_Text_Lass2::
 	.string "I trust the Party to take care of Mew.$"
+
+CityClara_Text_Senex1::
+	.string "My boy come here, or no, are you a girl?\n"
+	.string "Forgive me for my eyes are old as I\l"
+	.string "have grown. Tell me would you ask me to\l"
+	.string "speak and tell to you the tale of this\l"
+	.string "city?$"
+
+CityClara_Text_Senex2::
+	.string "This place is ancient, older than I am.\n"
+	.string "They say that people first lived on the\l"
+	.string "lake thousands of years ago. Escpaing\l"
+	.string "drought the elder race escaped across\l"
+	.string "the sea and here observed a certain\l"
+	.string "sign of fate. Upon the crystal clear\l"
+	.string "basin surface a Charizard devoured\l"
+	.string "it's own tail. The elders knew their\l"
+	.string "fate: To build a town upon the lake in\l"
+	.string "reverence of their god. And now\l"
+	.string "thousands of years in the future is it\l"
+	.string "coincedance that Mew is here?$"
+
+CityClara_Text_Senex3::
+	.string "No one has time for history these\n"
+	.string "days...$"

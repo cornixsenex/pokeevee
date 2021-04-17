@@ -33,7 +33,7 @@ CityClar_CannabisCenter_ScottTrigger::
 	applymovement 3, CityClara_CannabisCenter_Movement_LeafExit
 	waitmovement 0
 	removeobject 3
-	setflag FLAG_CLARACITY_HIDELEAF
+	clearflag FLAG_CLARACITY_HIDELEAF
 	releaseall
 	end
 

@@ -613,7 +613,9 @@
   "gMapGroup30": [
     "Route113_GlassWorkshop",
     "SilvanWoods",
-    "BeachCave"
+    "BeachCave",
+    "CityClara_House2",
+    "CityClara_Mart"
   ],
   "gMapGroup31": [
     "Route123_BerryMastersHouse",
@@ -629,7 +631,10 @@
     "BulbusTown_House2",
     "BulbusTown_House3",
     "BulbusTown_House4",
-    "CityClara_CannabisClub"
+    "CityClara_CannabisClub",
+    "CityClara_House1",
+    "CityClara_PokemonCenter",
+    "CityClara_School"
   ],
   "gMapGroup32": [
     "Route119_WeatherInstitute_1F",
