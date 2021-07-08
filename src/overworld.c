@@ -67,6 +67,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "pokemon_overworld_follower.h"
 
 struct CableClubPlayer
 {
@@ -419,6 +420,7 @@ static void Overworld_ResetStateAfterWhiteOut(void)
         VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 0);
         VarSet(VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_NONE);
     }
+    POF_FollowMe_TryRemoveFollowerOnWhiteOut(); // pokemon_overworld_follower
 }
 
 static void UpdateMiscOverworldStates(void)
@@ -1444,6 +1446,10 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
             PlayerStep(inputStruct.dpadDirection, newKeys, heldKeys);
         }
     }
+
+    // if stop running but keep holding B -> fix follower frame
+    if (POF_PlayerHasFollower() && POF_IsPlayerOnFoot() && IsPlayerStandingStill())
+        ObjectEventSetHeldMovement(&gObjectEvents[POF_GetFollowerObjectId()], GetFaceDirectionAnimNum(gObjectEvents[POF_GetFollowerObjectId()].facingDirection));
 }
 
 void CB1_Overworld(void)
@@ -2165,6 +2171,7 @@ static void InitObjectEventsLocal(void)
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
     TryRunOnWarpIntoMapScript();
+    POF_FollowMe_HandleSprite(); // pokemon_overworld_follower
 }
 
 static void InitObjectEventsReturnToField(void)

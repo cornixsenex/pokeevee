@@ -418,4 +418,12 @@ void SetObjectEventSpriteGraphics(u8 objectEventId, u8 graphicsId);
 void SetObjectEventSpriteAnim(u8 objectEventId, u8 animNum);
 bool32 IsObjectEventSpriteAnimating(u8 objectEventId);
 
+// pokemon_overworld_follower
+void RemoveObjectEvent(struct ObjectEvent *objectEvent);
+struct ObjectEventTemplate *GetObjectEventTemplateByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
+u8 TrySpawnObjectEventTemplate(struct ObjectEventTemplate *objectEventTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY);
+u16 GetMiniStepCount(u8 speed);
+void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
+bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
+
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

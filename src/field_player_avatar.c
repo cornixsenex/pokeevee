@@ -30,6 +30,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "pokemon_overworld_follower.h"
 
 static EWRAM_DATA u8 sSpinStartFacingDir = 0;
 EWRAM_DATA struct ObjectEvent gObjectEvents[OBJECT_EVENTS_COUNT] = {};
@@ -637,7 +638,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
-     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
+     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !POF_FollowerComingThroughDoor())
     {
         PlayerRun(direction);
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
@@ -1390,6 +1391,7 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     gPlayerAvatar.spriteId = objectEvent->spriteId;
     gPlayerAvatar.gender = gender;
     SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_5 | PLAYER_AVATAR_FLAG_ON_FOOT);
+    POF_CreateFollowerAvatar(); // pokemon_overworld_follower
 }
 
 void SetPlayerInvisibility(bool8 invisible)
@@ -1635,6 +1637,7 @@ static void CreateStopSurfingTask(u8 direction)
     taskId = CreateTask(Task_StopSurfingInit, 0xFF);
     gTasks[taskId].data[0] = direction;
     Task_StopSurfingInit(taskId);
+    POF_PrepareFollowerDismountSurf(); // pokemon_overworld_follower
 }
 
 static void Task_StopSurfingInit(u8 taskId)
@@ -1662,6 +1665,12 @@ static void Task_WaitStopSurfing(u8 taskId)
         gPlayerAvatar.preventStep = FALSE;
         ScriptContext2_Disable();
         DestroySprite(&gSprites[playerObjEvent->fieldEffectSpriteId]);
+        
+        if(POF_PlayerHasFollower()) // pokemon_overworld_follower
+        {
+            POF_FollowMe_Unhidden();
+            CB2_ReturnToField();
+        }
         DestroyTask(taskId);
     }
 }

@@ -34,6 +34,7 @@
 #include "constants/rgb.h"
 #include "trainer_hill.h"
 #include "fldeff.h"
+#include "pokemon_overworld_follower.h"
 
 // This file's functions.
 static void Task_ExitNonAnimDoor(u8);
@@ -43,7 +44,7 @@ static void FillPalBufferWhite(void);
 static void Task_ExitDoor(u8);
 static bool32 WaitForWeatherFadeIn(void);
 static void Task_SpinEnterWarp(u8 taskId);
-static void Task_WarpAndLoadMap(u8 taskId);
+// static void Task_WarpAndLoadMap(u8 taskId);
 static void Task_DoDoorWarp(u8 taskId);
 static void Task_EnableScriptAfterMusicFade(u8 taskId);
 
@@ -112,7 +113,7 @@ void WarpFadeOutScreen(void)
     }
 }
 
-static void SetPlayerVisibility(bool8 visible)
+void SetPlayerVisibility(bool8 visible)
 {
     SetPlayerInvisibility(!visible);
 }
@@ -278,6 +279,7 @@ void FieldCB_DefaultWarpExit(void)
     Overworld_PlaySpecialMapMusic();
     WarpFadeInScreen();
     SetUpWarpExitTask();
+    POF_FollowMe_WarpSetEnd(); // pokemon_overworld_follower
     ScriptContext2_Enable();
 }
 
@@ -326,6 +328,7 @@ static void Task_ExitDoor(u8 taskId)
     switch (task->tState)
     {
     case 0:
+        POF_HideFollower(); // pokemon_overworld_follower
         SetPlayerVisibility(FALSE);
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
@@ -355,6 +358,8 @@ static void Task_ExitDoor(u8 taskId)
     case 3:
         if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
         {
+            POF_FollowMe_SetIndicatorToComeOutDoor(); // pokemon_overworld_follower
+            POF_FollowMe_WarpSetEnd();
             UnfreezeObjectEvents();
             task->tState = 4;
         }
@@ -375,6 +380,7 @@ static void Task_ExitNonAnimDoor(u8 taskId)
     switch (task->tState)
     {
     case 0:
+        POF_HideFollower(); // pokemon_overworld_follower
         SetPlayerVisibility(FALSE);
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
@@ -393,6 +399,8 @@ static void Task_ExitNonAnimDoor(u8 taskId)
     case 2:
         if (IsPlayerStandingStill())
         {
+            POF_FollowMe_SetIndicatorToComeOutDoor(); // pokemon_overworld_follower
+            POF_FollowMe_WarpSetEnd();
             UnfreezeObjectEvents();
             task->tState = 3;
         }
@@ -519,7 +527,7 @@ void DoDoorWarp(void)
 {
     ScriptContext2_Enable();
     gFieldCallback = FieldCB_DefaultWarpExit;
-    CreateTask(Task_DoDoorWarp, 10);
+    CreateTask(POF_Task_DoDoorWarp, 10); //CreateTask(Task_DoDoorWarp, 10);
 }
 
 void DoFallWarp(void)
@@ -646,7 +654,7 @@ void ReturnFromLinkRoom(void)
     CreateTask(Task_ReturnToWorldFromLinkRoom, 10);
 }
 
-static void Task_WarpAndLoadMap(u8 taskId)
+void Task_WarpAndLoadMap(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
 
@@ -1013,6 +1021,7 @@ static void Task_SpinEnterWarp(u8 taskId)
     case 1:
         if (WaitForWeatherFadeIn() && IsPlayerSpinEntranceActive() != TRUE)
         {
+            POF_FollowMe_WarpSetEnd(); // pokemon_overworld_follower
             UnfreezeObjectEvents();
             ScriptContext2_Disable();
             DestroyTask(taskId);

@@ -60,6 +60,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "cable_club.h"
+#include "pokemon_overworld_follower.h"
 
 extern struct MusicPlayerInfo gMPlayInfo_SE1;
 extern struct MusicPlayerInfo gMPlayInfo_SE2;
@@ -5013,6 +5014,9 @@ static void HandleEndTurn_MonFled(void)
 
 static void HandleEndTurn_FinishBattle(void)
 {
+    if (POF_PlayerHasFollower() && !POF_IsFollowerAliveAndWell()) // pokemon_overworld_follower
+        POF_DestroyFollower();
+
     if (gCurrentActionFuncId == B_ACTION_TRY_FINISH || gCurrentActionFuncId == B_ACTION_FINISHED)
     {
         if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK
@@ -5159,6 +5163,12 @@ static void ReturnFromBattleToOverworld(void)
 
     m4aSongNumStop(SE_LOW_HEALTH);
     SetMainCallback2(gMain.savedCallback);
+
+    // if you experience the follower de-syncing with the player after battle, set POST_BATTLE_FOLLOWER_FIX to TRUE in include/constants/global.h
+    #if POST_BATTLE_FOLLOWER_FIX
+        POF_FollowMe_WarpSetEnd();
+        gObjectEvents[POF_GetFollowerObjectId()].invisible = TRUE;
+    #endif
 }
 
 void RunBattleScriptCommands_PopCallbacksStack(void)
