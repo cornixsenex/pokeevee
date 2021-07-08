@@ -60,7 +60,7 @@ bool8 POF_IsFollowerAliveAndWell(void);
 void POF_Task_DoDoorWarp(u8 taskId);
 bool8 POF_IsPlayerOnFoot(void);
 
-void TEST_function(void);
+void POF_ToggleFollower(void);
 
 
 static const u16 gSpeciesLookUpTable[] = 

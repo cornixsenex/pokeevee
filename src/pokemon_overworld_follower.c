@@ -71,6 +71,7 @@ static void POF_Task_FollowerHandleEscalator(u8 taskId);
 static void POF_Task_FollowerHandleEscalatorFinish(u8 taskId);
 static void POF_CalculateFollowerEscalatorTrajectoryUp(struct Task *task);
 static void POF_CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
+static void POF_MoveFollowerIntoPlayer(void);
 
 // Const Data
 static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
@@ -632,11 +633,11 @@ void POF_FollowMe_FollowerToWater(void)
     POF_FollowMe_HandleBike();
 }
 
-void POF_PrepareFollowerDismountSurf(void)
-{
-    if (!gSaveBlock2Ptr->follower.inProgress)
-        return;
-}
+// void POF_PrepareFollowerDismountSurf(void)
+// {
+//     if (!gSaveBlock2Ptr->follower.inProgress)
+//         return;
+// }
 
 static void POF_Task_FinishSurfDismount(u8 taskId)
 {
@@ -957,8 +958,9 @@ void POF_FollowMe_HandleBike(void)
     // if (gSaveBlock2Ptr->follower.currentSprite == FOLLOWER_SPRITE_INDEX_SURF) //Follower is surfing
     //     return; //Sprite will automatically be adjusted when they finish surfing
 
-    gSaveBlock2Ptr->follower.hidden = TRUE;
-    POF_FollowerHide();
+    // gSaveBlock2Ptr->follower.hidden = TRUE;
+    // POF_FollowerHide();
+    POF_ToggleFollower();
 }
 
 void POF_FollowerUnhide(void)
@@ -1282,10 +1284,14 @@ void POF_CreateMonFromPartySlotId(void)
     if (species > 251)
         species = gSpeciesLookUpTable[species];
 
+    // gfx_id = gSaveBlock2Ptr->follower.graphicsId;
+    // if (gfx_id < NUM_REGULAR_OBJ_EVENT_GFX)
+    //     gfx_id = NUM_REGULAR_OBJ_EVENT_GFX + species - 1;
+    // else
+    //     gfx_id = gSaveBlock2Ptr->follower.graphicsId;
+
     gfx_id = NUM_REGULAR_OBJ_EVENT_GFX + species - 1;
 
-    if (gSaveBlock2Ptr->follower.inProgress)
-        POF_DestroyFollower();
 
     for (eventObjId = 0; eventObjId < OBJECT_EVENTS_COUNT; eventObjId++) //For each NPC on the map
     {
@@ -1316,24 +1322,37 @@ void POF_CreateMonFromPartySlotId(void)
 
 }
 
-void TEST_function(void)
+static void POF_MoveFollowerIntoPlayer(void)
 {
-    s16 x = 100;
-    s16 y = 80;
-    u8 subpriority = 0;
-    u8 oldSpriteId;
-
     struct ObjectEvent *follower;
     follower = &gObjectEvents[POF_GetFollowerMapObjId()];
-    oldSpriteId = follower->spriteId;
-
-    POF_FollowerHide();
-    DestroySprite(&gSprites[oldSpriteId]);
-    gSaveBlock2Ptr->follower.graphicsId++;
-    follower->spriteId = CreateObjectSprite(gSaveBlock2Ptr->follower.graphicsId, gSaveBlock2Ptr->follower.objId, x, y, 0, DIR_SOUTH);       //CreateSprite(const struct SpriteTemplate *template, x, y, subpriority);
     MoveObjectEventToMapCoords(follower, follower->currentCoords.x, follower->currentCoords.y);
-    ObjectEventTurn(follower, follower->facingDirection);
-    
-    POF_FollowerUnhide();
+}
+
+static void POF_DisableFollowerTemp(void)
+{
+    if (gSaveBlock2Ptr->follower.inProgress)
+    {
+        RemoveObjectEvent(&gObjectEvents[gSaveBlock2Ptr->follower.objId]);
+        gSaveBlock2Ptr->follower.inProgress = FALSE;
+    }
+}
+
+static void POF_RenableFollower(void)
+{
+    if (!gSaveBlock2Ptr->follower.inProgress && gSaveBlock2Ptr->follower.partySlotId != 0)
+    {
+        gSaveBlock2Ptr->follower.inProgress = TRUE;
+        POF_CreateMonFromPartySlotId();
+        POF_MoveFollowerIntoPlayer();
+    }
+}
+
+void POF_ToggleFollower(void)
+{
+    if (gSaveBlock2Ptr->follower.inProgress)
+        POF_DisableFollowerTemp();
+    else
+        POF_RenableFollower();
 }
 

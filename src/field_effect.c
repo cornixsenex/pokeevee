@@ -3199,6 +3199,7 @@ static void FlyOutFieldEffect_ShowMon(struct Task *task)
         task->tState++;
         gFieldEffectArguments[0] = task->tMonId;
         FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        POF_ToggleFollower();
     }
 }
 
@@ -3596,11 +3597,7 @@ static void FlyInFieldEffect_End(struct Task *task)
         FieldEffectActiveListRemove(FLDEFF_FLY_IN);
         DestroyTask(FindTaskIdByFunc(Task_FlyIn));
 
-        if(POF_PlayerHasFollower()) // pokemon_overworld_follower
-        {
-            POF_FollowerUnhide();
-            CB2_ReturnToField();
-        }
+        POF_ToggleFollower();
     }
 }
 

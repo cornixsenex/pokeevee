@@ -1637,7 +1637,6 @@ static void CreateStopSurfingTask(u8 direction)
     taskId = CreateTask(Task_StopSurfingInit, 0xFF);
     gTasks[taskId].data[0] = direction;
     Task_StopSurfingInit(taskId);
-    POF_PrepareFollowerDismountSurf(); // pokemon_overworld_follower
 }
 
 static void Task_StopSurfingInit(u8 taskId)
@@ -1665,12 +1664,7 @@ static void Task_WaitStopSurfing(u8 taskId)
         gPlayerAvatar.preventStep = FALSE;
         ScriptContext2_Disable();
         DestroySprite(&gSprites[playerObjEvent->fieldEffectSpriteId]);
-        
-        if(POF_PlayerHasFollower()) // pokemon_overworld_follower
-        {
-            POF_FollowerUnhide();
-            CB2_ReturnToField();
-        }
+        POF_ToggleFollower();
         DestroyTask(taskId);
     }
 }
