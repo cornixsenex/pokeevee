@@ -203,7 +203,7 @@ bool8 POF_IsFollowerAliveAndWell(void)
 }
 
 
-void POF_HideFollower(void)
+void POF_FollowerHide(void)
 {
     if (!gSaveBlock2Ptr->follower.inProgress)
         return;
@@ -958,10 +958,10 @@ void POF_FollowMe_HandleBike(void)
     //     return; //Sprite will automatically be adjusted when they finish surfing
 
     gSaveBlock2Ptr->follower.hidden = TRUE;
-    POF_HideFollower();
+    POF_FollowerHide();
 }
 
-void POF_FollowMe_Unhidden(void)
+void POF_FollowerUnhide(void)
 {
     if(gSaveBlock2Ptr->follower.partySlotId == 0 || !gSaveBlock2Ptr->follower.inProgress)
         return;
@@ -1724,3 +1724,25 @@ void POF_CreateMonFromPartySlotId(void)
     }
 
 }
+
+void TEST_function(void)
+{
+    s16 x = 100;
+    s16 y = 80;
+    u8 subpriority = 0;
+    u8 oldSpriteId;
+
+    struct ObjectEvent *follower;
+    follower = &gObjectEvents[POF_GetFollowerMapObjId()];
+    oldSpriteId = follower->spriteId;
+
+    POF_FollowerHide();
+    DestroySprite(&gSprites[oldSpriteId]);
+    gSaveBlock2Ptr->follower.graphicsId++;
+    follower->spriteId = CreateObjectSprite(gSaveBlock2Ptr->follower.graphicsId, gSaveBlock2Ptr->follower.objId, x, y, 0, DIR_SOUTH);       //CreateSprite(const struct SpriteTemplate *template, x, y, subpriority);
+    MoveObjectEventToMapCoords(follower, follower->currentCoords.x, follower->currentCoords.y);
+    ObjectEventTurn(follower, follower->facingDirection);
+    
+    POF_FollowerUnhide();
+}
+

@@ -1668,7 +1668,7 @@ static void Task_WaitStopSurfing(u8 taskId)
         
         if(POF_PlayerHasFollower()) // pokemon_overworld_follower
         {
-            POF_FollowMe_Unhidden();
+            POF_FollowerUnhide();
             CB2_ReturnToField();
         }
         DestroyTask(taskId);

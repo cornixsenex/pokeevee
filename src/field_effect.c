@@ -3598,7 +3598,7 @@ static void FlyInFieldEffect_End(struct Task *task)
 
         if(POF_PlayerHasFollower()) // pokemon_overworld_follower
         {
-            POF_FollowMe_Unhidden();
+            POF_FollowerUnhide();
             CB2_ReturnToField();
         }
     }

@@ -24,7 +24,7 @@ bool8 POF_FollowerComingThroughDoor(void);
 u8 POF_GetFollowerObjectId(void);
 // u8 POF_GetFollowerLocalId(void); //
 const u8* POF_GetFollowerScriptPointer(void);
-void POF_HideFollower(void);
+void POF_FollowerHide(void);
 // void POF_TryFreezeFollowerAnim(struct ObjectEvent* npc); //
 void POF_IsFollowerStoppingRockClimb(void);
 void POF_FollowMe_SetIndicatorToComeOutDoor(void);
@@ -49,7 +49,7 @@ void POF_FollowerPositionFix(u8 offset);
 void POF_SetFollowerSprite(u8 spriteIndex);
 bool8 POF_PlayerHasFollower(void);
 void POF_CreateMonFromPartySlotId(void);
-void POF_FollowMe_Unhidden(void);
+void POF_FollowerUnhide(void);
 u8 POF_GetFollowerSlotId(void);
 void POF_SetFollowerSlotId(u8 slotId);
 bool8 POF_IsFollowerSlotId(u8 slotId);
@@ -60,6 +60,6 @@ bool8 POF_IsFollowerAliveAndWell(void);
 void POF_Task_DoDoorWarp(u8 taskId);
 bool8 POF_IsPlayerOnFoot(void);
 
-
+void TEST_function(void);
 
 #endif

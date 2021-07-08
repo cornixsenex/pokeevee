@@ -187,8 +187,11 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
-    if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+    if (input->pressedSelectButton)// && UseRegisteredKeyItemOnField() == TRUE)
+    {
+        TEST_function();
         return TRUE;
+    }
 
     return FALSE;
 }

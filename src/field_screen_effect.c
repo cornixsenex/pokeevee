@@ -328,7 +328,7 @@ static void Task_ExitDoor(u8 taskId)
     switch (task->tState)
     {
     case 0:
-        POF_HideFollower(); // pokemon_overworld_follower
+        POF_FollowerHide(); // pokemon_overworld_follower
         SetPlayerVisibility(FALSE);
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
@@ -380,7 +380,7 @@ static void Task_ExitNonAnimDoor(u8 taskId)
     switch (task->tState)
     {
     case 0:
-        POF_HideFollower(); // pokemon_overworld_follower
+        POF_FollowerHide(); // pokemon_overworld_follower
         SetPlayerVisibility(FALSE);
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
