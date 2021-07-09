@@ -71,7 +71,7 @@ static void POF_Task_FollowerHandleEscalator(u8 taskId);
 static void POF_Task_FollowerHandleEscalatorFinish(u8 taskId);
 static void POF_CalculateFollowerEscalatorTrajectoryUp(struct Task *task);
 static void POF_CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
-static void POF_MoveFollowerIntoPlayer(void);
+static void POF_MoveFollowerToPlayer(void);
 
 // Const Data
 static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
@@ -1086,6 +1086,8 @@ void POF_CreateFollowerAvatar(void)
     //     gSaveBlock2Ptr->follower.createSurfBlob = 0;
 
     gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible = TRUE;
+
+    POF_MoveFollowerToPlayer();
 }
 
 // static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
@@ -1322,11 +1324,70 @@ void POF_CreateMonFromPartySlotId(void)
 
 }
 
-static void POF_MoveFollowerIntoPlayer(void)
+static u8 GetClockwiseNextDirection(u8 direction)
 {
-    struct ObjectEvent *follower;
-    follower = &gObjectEvents[POF_GetFollowerMapObjId()];
-    MoveObjectEventToMapCoords(follower, follower->currentCoords.x, follower->currentCoords.y);
+    switch (direction) 
+    {
+    case DIR_NORTH:
+        direction = DIR_EAST;
+        break;
+    case DIR_SOUTH:
+        direction = DIR_WEST;
+        break;
+    case DIR_WEST:
+        direction = DIR_NORTH;
+        break;
+    case DIR_EAST:
+        direction = DIR_SOUTH;
+        break;
+    }
+    return direction;
+}
+
+static void POF_MoveFollowerToPlayer(void)
+{
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct ObjectEvent *follower = &gObjectEvents[POF_GetFollowerMapObjId()];
+    s16 xx = follower->currentCoords.x; 
+    s16 yy = follower->currentCoords.y;
+    s16 playerDirection = player->previousMovementDirection;//POF_DetermineFollowerDirection(player, follower);
+    s16 followerDirection = playerDirection;
+    u8 collision = 0xFF;
+    u8 i;
+
+    // MoveObjectEventToMapCoords(follower, xx, yy);
+
+    for (i = 0; i<4; i++)
+    {
+        followerDirection = GetOppositeDirection(playerDirection);
+        collision = GetCollisionInDirection(player, followerDirection);
+
+        if (collision == COLLISION_NONE)
+        {
+            switch (playerDirection) 
+            {
+            case DIR_NORTH:
+                yy += 1;
+                break;
+            case DIR_SOUTH:
+                yy += -1;
+                break;
+            case DIR_WEST:
+                xx += 1;
+                break;
+            case DIR_EAST:
+                xx += -1;
+                break;
+            }
+            i = 5;
+        }
+
+        playerDirection = GetClockwiseNextDirection(playerDirection);
+    }
+    
+    MoveObjectEventToMapCoords(follower, xx, yy);
+    followerDirection = POF_DetermineFollowerDirection(player, follower);
+    ObjectEventTurn(follower, followerDirection);
 }
 
 static void POF_DisableFollowerTemp(void)
@@ -1344,7 +1405,7 @@ static void POF_RenableFollower(void)
     {
         gSaveBlock2Ptr->follower.inProgress = TRUE;
         POF_CreateMonFromPartySlotId();
-        POF_MoveFollowerIntoPlayer();
+        // POF_MoveFollowerToPlayer();
     }
 }
 
