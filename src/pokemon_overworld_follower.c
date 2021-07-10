@@ -71,7 +71,6 @@ static void POF_Task_FollowerHandleEscalator(u8 taskId);
 static void POF_Task_FollowerHandleEscalatorFinish(u8 taskId);
 static void POF_CalculateFollowerEscalatorTrajectoryUp(struct Task *task);
 static void POF_CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
-static void POF_MoveFollowerToPlayer(void);
 
 // Const Data
 static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
@@ -1086,8 +1085,6 @@ void POF_CreateFollowerAvatar(void)
     //     gSaveBlock2Ptr->follower.createSurfBlob = 0;
 
     gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible = TRUE;
-
-    POF_MoveFollowerToPlayer();
 }
 
 // static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
@@ -1344,7 +1341,7 @@ static u8 GetClockwiseNextDirection(u8 direction)
     return direction;
 }
 
-static void POF_MoveFollowerToPlayer(void)
+void POF_MoveFollowerToPlayer(void)
 {
     struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
     struct ObjectEvent *follower = &gObjectEvents[POF_GetFollowerMapObjId()];
@@ -1405,7 +1402,7 @@ static void POF_RenableFollower(void)
     {
         gSaveBlock2Ptr->follower.inProgress = TRUE;
         POF_CreateMonFromPartySlotId();
-        // POF_MoveFollowerToPlayer();
+        POF_MoveFollowerToPlayer();
     }
 }
 
