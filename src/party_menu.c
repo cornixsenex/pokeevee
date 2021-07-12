@@ -6375,6 +6375,31 @@ void IsLastMonThatKnowsSurf(void)
 }
 
 
+static void POF_Task_ClosePartyMenuAndSetCB2(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        POF_MoveFollowerToPlayer();
+        if (gPartyMenu.menuType == PARTY_MENU_TYPE_IN_BATTLE)
+            UpdatePartyToFieldOrder();
+
+        if (sPartyMenuInternal->exitCallback != NULL)
+            SetMainCallback2(sPartyMenuInternal->exitCallback);
+        else
+            SetMainCallback2(gPartyMenu.exitCallback);
+
+        ResetSpriteData();
+        FreePartyPointers();
+        DestroyTask(taskId);
+    }
+}
+
+static void POF_Task_ClosePartyMenu(u8 taskId)
+{
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    gTasks[taskId].func = POF_Task_ClosePartyMenuAndSetCB2;
+}
+
 static void CursorCb_PkmFollow(u8 taskId)
 {
     PlaySE(SE_SELECT);
@@ -6385,7 +6410,7 @@ static void CursorCb_PkmFollow(u8 taskId)
     gSaveBlock2Ptr->follower.partySlotId = (gPartyMenu.slotId + 1);
     POF_CreateMonFromPartySlotId();
 
-    Task_ClosePartyMenu(taskId);
+    POF_Task_ClosePartyMenu(taskId);
 }
 
 static void CursorCb_PkmUnfollow(u8 taskId)
