@@ -98,14 +98,6 @@ u8 POF_GetFollowerObjectId(void)
     return gSaveBlock2Ptr->follower.objId;
 }
 
-u8 POF_GetFollowerLocalId(void)
-{
-    if (!gSaveBlock2Ptr->follower.inProgress)
-        return 0;
-
-    return gObjectEvents[gSaveBlock2Ptr->follower.objId].localId;
-}
-
 static u8 POF_GetFollowerMapObjId(void)
 {
     return gSaveBlock2Ptr->follower.objId;
@@ -209,13 +201,6 @@ void POF_FollowerHide(void)
     if (!gSaveBlock2Ptr->follower.inProgress)
         return;
 
-    // if (gSaveBlock2Ptr->follower.createSurfBlob == 2 || gSaveBlock2Ptr->follower.createSurfBlob == 3)
-    // {
-    //     SetSurfBobState(gObjectEvents[POF_GetFollowerMapObjId()].fieldEffectSpriteId, 2);
-    //     DestroySprite(&gSprites[gObjectEvents[POF_GetFollowerMapObjId()].fieldEffectSpriteId]);
-    //     gObjectEvents[POF_GetFollowerMapObjId()].fieldEffectSpriteId = 0; //Unbind
-    // }
-
     gObjectEvents[POF_GetFollowerMapObjId()].invisible = TRUE;
 }
 
@@ -235,12 +220,6 @@ void POF_FollowMe_SetIndicatorToComeOutDoor(void)
     if (gSaveBlock2Ptr->follower.inProgress)
         gSaveBlock2Ptr->follower.comeOutDoorStairs = 1;
 }
-
-// void POF_FollowMe_SetIndicatorToRecreateSurfBlob(void)
-// {
-//     if (gSaveBlock2Ptr->follower.inProgress)
-//         gSaveBlock2Ptr->follower.createSurfBlob = 2;
-// }
 
 void POF_FollowMe_TryRemoveFollowerOnWhiteOut(void)
 {
@@ -270,14 +249,6 @@ void POF_FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
         return;
     else if (ScriptContext2_IsEnabled() && !ignoreScriptActive)
         return; //Don't follow during a script
-                
-    
-    // fix post-surf jump
-    // if ((gSaveBlock2Ptr->follower.currentSprite == FOLLOWER_SPRITE_INDEX_SURF) && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING) && follower->fieldEffectSpriteId == 0)
-    // {
-    //     POF_SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
-    //     gSaveBlock2Ptr->follower.createSurfBlob = 0;
-    // }
     
     //Check if state would cause hidden follower to reappear
     if (POF_IsStateMovement(state) && gSaveBlock2Ptr->follower.warpEnd && !gSaveBlock2Ptr->follower.hidden)
@@ -633,12 +604,6 @@ void POF_FollowMe_FollowerToWater(void)
     POF_FollowMe_HandleBike();
 }
 
-// void POF_PrepareFollowerDismountSurf(void)
-// {
-//     if (!gSaveBlock2Ptr->follower.inProgress)
-//         return;
-// }
-
 static void POF_Task_FinishSurfDismount(u8 taskId)
 {
     DestroySprite(&gSprites[gTasks[taskId].data[0]]);
@@ -955,11 +920,6 @@ static void POF_CalculateFollowerEscalatorTrajectoryUp(struct Task *task)
 
 void POF_FollowMe_HandleBike(void)
 {
-    // if (gSaveBlock2Ptr->follower.currentSprite == FOLLOWER_SPRITE_INDEX_SURF) //Follower is surfing
-    //     return; //Sprite will automatically be adjusted when they finish surfing
-
-    // gSaveBlock2Ptr->follower.hidden = TRUE;
-    // POF_FollowerHide();
     POF_ToggleFollower();
 }
 
@@ -1052,8 +1012,6 @@ void POF_CreateFollowerAvatar(void)
 
     if (!gSaveBlock2Ptr->follower.inProgress || gSaveBlock2Ptr->follower.hidden)
         return;
-    // else if (GetMonData(&gPlayerParty[POF_GetFollowerSlotId()], MON_DATA_HP) <= 0)
-    //     POF_DestroyFollower();
 
     player = &gObjectEvents[gPlayerAvatar.objectEventId];
     clone = *GetObjectEventTemplateByLocalIdAndMap(gSaveBlock2Ptr->follower.map.id, gSaveBlock2Ptr->follower.map.number, gSaveBlock2Ptr->follower.map.group);
@@ -1082,59 +1040,10 @@ void POF_CreateFollowerAvatar(void)
     if (gSaveBlock2Ptr->follower.objId == OBJECT_EVENTS_COUNT)
         gSaveBlock2Ptr->follower.inProgress = FALSE; //Cancel the following because couldn't load sprite
 
-    // if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
-    //     gSaveBlock2Ptr->follower.createSurfBlob = 0;
-
     gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible = TRUE;
 
     POF_MoveFollowerToPlayer();
 }
-
-// static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
-// {
-//     // struct ObjectEvent* follower;
-//     // u8 eventObjId;
-//     // const u8 *script;
-//     // u16 flag;
-    
-//     // if (gSaveBlock2Ptr->follower.inProgress)
-//     //     return; //Only 1 NPC following at a time
-
-//     // for (eventObjId = 0; eventObjId < OBJECT_EVENTS_COUNT; eventObjId++) //For each NPC on the map
-//     // {
-//     //     if (!gObjectEvents[eventObjId].active || gObjectEvents[eventObjId].isPlayer)
-//     //         continue;
-
-//     //     if (gObjectEvents[eventObjId].localId == localId)
-//     //     {
-//     //         follower = &gObjectEvents[eventObjId];
-//     //         follower->movementType = MOVEMENT_TYPE_NONE; //Doesn't get to move on its own anymore
-//     //         gSprites[follower->spriteId].callback = MovementType_None; //MovementType_None
-//     //         Overworld_SetObjEventTemplateMovementType(localId, 0);
-//     //         if (POF_CheckFollowerFlag(FOLLOWER_FLAG_CUSTOM_FOLLOW_SCRIPT))
-//     //             script = (const u8 *)ReadWord(0);
-//     //         else
-//     //             script = GetObjectEventScriptPointerByObjectEventId(eventObjId);
-            
-//     //         flag = GetObjectEventTemplateByLocalIdAndMap(follower->localId, follower->mapNum, follower->mapGroup)->flagId;
-//     //         gSaveBlock2Ptr->follower.inProgress = TRUE;
-//     //         gSaveBlock2Ptr->follower.objId = eventObjId;
-//     //         gSaveBlock2Ptr->follower.graphicsId = follower->graphicsId;
-//     //         gSaveBlock2Ptr->follower.map.id = gObjectEvents[eventObjId].localId;
-//     //         gSaveBlock2Ptr->follower.map.number = gSaveBlock1Ptr->location.mapNum;
-//     //         gSaveBlock2Ptr->follower.map.group = gSaveBlock1Ptr->location.mapGroup;
-//     //         gSaveBlock2Ptr->follower.script = script;
-//     //         gSaveBlock2Ptr->follower.flag = flag;
-//     //         gSaveBlock2Ptr->follower.flags = followerFlags;
-//     //         gSaveBlock2Ptr->follower.createSurfBlob = 0;
-//     //         gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
-            
-//     //         if (!(gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CAN_BIKE) //Follower can't bike
-//     //         &&  TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE)) //Player on bike
-//     //             SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Dismmount Bike
-//     //     }
-//     // }
-// }
 
 enum
 {
@@ -1286,14 +1195,8 @@ void POF_CreateMonFromPartySlotId(void)
     if (species > 251)
         species = gSpeciesLookUpTable[species];
 
-    // gfx_id = gSaveBlock2Ptr->follower.graphicsId;
-    // if (gfx_id < NUM_REGULAR_OBJ_EVENT_GFX)
-    //     gfx_id = NUM_REGULAR_OBJ_EVENT_GFX + species - 1;
-    // else
-    //     gfx_id = gSaveBlock2Ptr->follower.graphicsId;
 
     gfx_id = NUM_REGULAR_OBJ_EVENT_GFX + species - 1;
-
 
     for (eventObjId = 0; eventObjId < OBJECT_EVENTS_COUNT; eventObjId++) //For each NPC on the map
     {
@@ -1350,7 +1253,7 @@ static void POF_MoveFollowerToPlayer(void)
     struct ObjectEvent *follower = &gObjectEvents[POF_GetFollowerMapObjId()];
     s16 xx = follower->currentCoords.x; 
     s16 yy = follower->currentCoords.y;
-    s16 playerDirection = player->previousMovementDirection;//POF_DetermineFollowerDirection(player, follower);
+    s16 playerDirection = player->previousMovementDirection;
     s16 followerDirection = playerDirection;
     u8 collision = 0xFF;
     u8 i;
@@ -1405,7 +1308,6 @@ static void POF_RenableFollower(void)
     {
         gSaveBlock2Ptr->follower.inProgress = TRUE;
         POF_CreateMonFromPartySlotId();
-        // POF_MoveFollowerToPlayer();
     }
 }
 
