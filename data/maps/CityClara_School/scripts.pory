@@ -1,1 +1,14 @@
 mapscripts CityClara_School_MapScripts {}
+
+
+script CityClara_EventScript_Mrs_Sully {
+	msgbox (CityClara_Text_Test)
+	closemessage
+	end
+}
+
+text CityClara_Text_Test {
+	format("Yeah testing here...cool")
+}
+
+
