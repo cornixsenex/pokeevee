@@ -585,6 +585,7 @@
 #define MAP_BEACH_CAVE              (2 | (30 << 8))
 #define MAP_CITY_CLARA_HOUSE2       (3 | (30 << 8))
 #define MAP_CITY_CLARA_MART         (4 | (30 << 8))
+#define MAP_CITY_CLARA_CHURCH       (5 | (30 << 8))
 
 // Map Group 31
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (31 << 8))

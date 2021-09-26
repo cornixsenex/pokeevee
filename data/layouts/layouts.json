@@ -5050,6 +5050,16 @@
       "secondary_tileset": "gTileset_PokemonSchool",
       "border_filepath": "data/layouts/CityClara_School/border.bin",
       "blockdata_filepath": "data/layouts/CityClara_School/map.bin"
+    },
+    {
+      "id": "LAYOUT_CITY_CLARA_CHURCH",
+      "name": "CityClara_Church_Layout",
+      "width": 41,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/CityClara_Church/border.bin",
+      "blockdata_filepath": "data/layouts/CityClara_Church/map.bin"
     }
   ]
 }
