@@ -726,11 +726,11 @@ static const struct TrainerMon sParty_Rival2[] = {
 	}
 };
 
-static const struct TrainerMon sParty_Austina[] = {
+static const struct TrainerMon sParty_Mrs_Sully[] = {
     {
     .iv = 0,
     .lvl = 26,
-    .species = SPECIES_MARILL,
+    .species = SPECIES_EEVEE,
     }
 };
 

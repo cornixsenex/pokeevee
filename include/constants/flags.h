@@ -64,7 +64,7 @@
 #define FLAG_CLARACLUB_HIDELEAF   0x34 // Hide Leaf After leaving the first time
 #define FLAG_CLARACITY_HIDELEAF   0x35 // Starts set, hides Leaf in Clara City
 #define FLAG_CLARACITY_AFTERMEW   0x36 // Hides Scott in the club, and the line outside the church
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define FLAG_RECEIVED_CUT    0x37 // Have gotten cut from Mrs. Sully?
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag

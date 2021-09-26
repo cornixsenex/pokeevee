@@ -760,17 +760,17 @@ const struct Trainer gTrainers[] = {
 		.transition = B_TRANSITION_MUGSHOT,
     },
 
-    [TRAINER_AUSTINA] =
+    [TRAINER_MRS_SULLY] =
     {
-        .trainerClass = TRAINER_CLASS_TUBER_F,
+        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_F,
-        .trainerName = _("AUSTINA"),
+        .trainerPic = TRAINER_PIC_RS_MAY,
+        .trainerName = _("MRS. SULLY"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Austina),
-        .party = {.TrainerMon = sParty_Austina},
+        .partySize = ARRAY_COUNT(sParty_Mrs_Sully),
+        .party = {.TrainerMon = sParty_Mrs_Sully},
     },
 
     [TRAINER_GWEN] =

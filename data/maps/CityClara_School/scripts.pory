@@ -1,14 +1,50 @@
 mapscripts CityClara_School_MapScripts {}
 
 
-script CityClara_EventScript_Mrs_Sully {
-	msgbox (CityClara_Text_Test)
+script CityClara_School_EventScript_Mrs_Sully {
+	lockall
+	if (!flag(FLAG_RECEIVED_CUT)) {
+		faceplayer
+		msgbox (CityClara_School_Text_Mrs_SullyIntroA)
+		closemessage
+		trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
+		call (CityClara_School_EventScript_GiveCut)
+	}
+	msgbox (CityClara_School_Text_Mrs_SullyPost)
 	closemessage
+	releaseall
 	end
 }
 
-text CityClara_Text_Test {
-	format("Yeah testing here...cool")
+script CityClara_School_EventScript_GiveCut {
+	lock
+	setflag (FLAG_BADGE01_GET)
+	giveitem (ITEM_HM01)	
+	msgbox (CityClara_School_Text_ExplainCut)	
+	setflag (FLAG_RECEIVED_CUT)
+	release
+	end
 }
+
+text CityClara_School_Text_Mrs_SullyIntroA{
+	format("I've not seen you before you some truant?")
+}
+
+text CityClara_School_Text_Mrs_SullyIntro {
+	format("Win this battle and I'll give you cut")
+}
+
+text CityClara_School_Text_Mrs_SullyLost {
+	format("I can't believe a kid like you just won")
+}
+
+text CityClara_School_Text_Mrs_SullyPost {
+	format("With that move cut you can enter the church")
+}
+
+text CityClara_School_Text_ExplainCut {
+	format("This is a Hidden Move, HM for short, which will allow you to cut down small trees.")
+}
+
 
 

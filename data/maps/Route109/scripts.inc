@@ -417,11 +417,11 @@ Route109_EventScript_RickyRematch:: @ 81EEAE4
 	trainerbattle_rematch TRAINER_RICKY_1, Route109_Text_RickyRematchIntro, Route109_Text_RickyRematchDefeated
 	msgbox Route109_Text_RickyRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
-
-Route109_EventScript_Austina:: @ 81EEB5D
-	trainerbattle_single TRAINER_AUSTINA, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
-	msgbox Route109_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
-	end
+///
+///Route109_EventScript_Austina:: @ 81EEB5D
+///	trainerbattle_single TRAINER_AUSTINA, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
+///	msgbox Route109_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
+///	end
 
 Route109_EventScript_Gwen:: @ 81EEB74
 	trainerbattle_single TRAINER_GWEN, Route109_Text_GwenIntro, Route109_Text_GwenDefeated
