@@ -291,3 +291,9 @@ const u32 gTrainerBackPicPalette_Leaf[] = INCBIN_U32("graphics/trainers/palettes
 
 const u32 gTrainerFrontPic_Blue[] = INCBIN_U32("graphics/trainers/front_pics/blue_1_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Blue[] = INCBIN_U32("graphics/trainers/palettes/blue_1.gbapal.lz");
+
+const u32 gTrainerFrontPic_Lorelei[] = INCBIN_U32("graphics/trainers/front_pics/lorelei_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Lorelei[] = INCBIN_U32("graphics/trainers/palettes/lorelei_front_pic.gbapal.lz");
+
+
+
