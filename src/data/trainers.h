@@ -762,7 +762,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MRS_SULLY] =
     {
-        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
+        .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
         .trainerPic = TRAINER_PIC_LORELEI,
         .trainerName = _("MRS. SULLY"),

@@ -19,11 +19,78 @@ script CityClara_School_EventScript_Mrs_Sully {
 script CityClara_School_EventScript_GiveCut {
 	lock
 	setflag (FLAG_BADGE01_GET)
+	msgbox (CityClara_School_Text_Mrs_SullyDefeat)
 	giveitem (ITEM_HM01)	
 	msgbox (CityClara_School_Text_ExplainCut)	
 	setflag (FLAG_RECEIVED_CUT)
 	release
 	end
+}
+
+script CityClara_School_EventScript_GradeTrigger1 {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	msgbox (CityClara_School_Text_PeevesGrade1)
+	closemessage
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_PlayerGrade)
+	applymovement (7, CityClara_School_Movement_PeevesGrade1)
+	waitmovement (0)
+	msgbox (CityClara_School_Text_PeevesGrade2)
+	closemessage
+	applymovement (7, CityClara_School_Movement_PeevesGrade1Return)
+	waitmovement (0)
+	release
+} 
+
+script CityClara_School_EventScript_GradeTrigger2 {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	msgbox (CityClara_School_Text_PeevesGrade1)
+	waitmovement (0)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_PlayerGrade)
+	applymovement (7, CityClara_School_Movement_PeevesGrade2)
+	waitmovement (0)
+	msgbox (CityClara_School_Text_PeevesGrade2)
+	closemessage
+	applymovement (7, CityClara_School_Movement_PeevesGrade2Return)
+	waitmovement (0)
+	release
+} 
+
+movement CityClara_School_Movement_PlayerGrade {
+	walk_left
+	face_right
+}
+
+movement CityClara_School_Movement_PeevesGrade1 {
+	walk_down
+	face_left
+}
+
+movement CityClara_School_Movement_PeevesGrade2 {
+	walk_down * 2
+	face_left
+}
+
+movement CityClara_School_Movement_PeevesGrade1Return {
+	walk_up
+	face_down
+}
+
+movement CityClara_School_Movement_PeevesGrade2Return {
+	walk_up * 2
+	face_down
+}
+
+
+text CityClara_School_Text_PeevesGrade1 {
+	format("Hey you! Where do you think that you're going?")
+}
+
+text CityClara_School_Text_PeevesGrade2 {
+	format("This class is only for the older kids, Come back when you've graduated first grade.")
 }
 
 text CityClara_School_Text_Mrs_SullyIntroA{
@@ -38,8 +105,12 @@ text CityClara_School_Text_Mrs_SullyLost {
 	format("I can't believe a kid like you just won")
 }
 
+text CityClara_School_Text_Mrs_SullyDefeat {
+	format("That was a thrill! {PLAYER} you are so advanced. I've never had a student make me feel like they were the one who was in control.")
+}
+
 text CityClara_School_Text_Mrs_SullyPost {
-	format("With that move cut you can enter the church")
+	format("You can come back anytime to study")
 }
 
 text CityClara_School_Text_ExplainCut {
