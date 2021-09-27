@@ -2,6 +2,45 @@ CityClara_School_MapScripts::
 	.byte 0
 
 
+CityClara_School_EventScript_Karlye::
+	lock
+	call CityClara_School_EventScript_IncrementSchoolVar
+	trainerbattle_single TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost
+	msgbox CityClara_School_Text_KarlyePost
+	release
+	return
+
+
+CityClara_School_EventScript_IncrementSchoolVar::
+	switch VAR_CITYCLARA_SCHOOL_STATE
+	case 0, CityClara_School_EventScript_IncrementSchoolVar_2
+	case 1, CityClara_School_EventScript_IncrementSchoolVar_3
+	case 2, CityClara_School_EventScript_IncrementSchoolVar_4
+	case 3, CityClara_School_EventScript_IncrementSchoolVar_5
+	case 4, CityClara_School_EventScript_IncrementSchoolVar_6
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_2:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 1
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_3:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 2
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_4:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 3
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_5:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 4
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_6:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 5
+	return
+
+
 CityClara_School_EventScript_Mrs_Sully::
 	lockall
 	goto_if_unset FLAG_RECEIVED_CUT, CityClara_School_EventScript_Mrs_Sully_2
@@ -91,6 +130,18 @@ CityClara_School_Movement_PeevesGrade2Return:
 	walk_up
 	face_down
 	step_end
+
+CityClara_School_Text_KarlyeIntro::
+	.string "Watch out I'm going to give you coodies!$"
+
+CityClara_School_Text_KarlyeLost::
+	.string "Looks like you just gave your coodies\n"
+	.string "to me.$"
+
+CityClara_School_Text_KarlyePost::
+	.string "Sometimes I hang out after school\n"
+	.string "behind the school and sell my cudies to\l"
+	.string "the boys.$"
 
 CityClara_School_Text_PeevesGrade1::
 	.string "Hey you! Where do you think that you're\n"

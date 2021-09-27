@@ -298,6 +298,14 @@ static const struct TrainerMon sParty_Crystal[] = {
     }
 };
 
+static const struct TrainerMon sParty_Karlye[] = {
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_JIGGLYPUFF,
+    }
+};
+
 static const struct TrainerMon sParty_Noah[] = {
     {
     .iv = 0,

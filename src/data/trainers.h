@@ -368,6 +368,19 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Crystal},
     },
 
+    [TRAINER_KARLYE] =
+    {
+         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerName = _("KARLYE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Karlye),
+        .party = {.TrainerMon = sParty_Karlye},
+    },
+
     [TRAINER_NOAH] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
@@ -664,19 +677,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Gary),
         .party = {.TrainerMon = sParty_Gary},
-    },
-
-    [TRAINER_GABBY_AND_TY_1] =
-    {
-        .trainerClass = TRAINER_CLASS_INTERVIEWER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
-        .trainerPic = TRAINER_PIC_INTERVIEWER,
-        .trainerName = _("GABBY & TY"),
-        .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GabbyAndTy1),
-        .party = {.TrainerMon = sParty_GabbyAndTy1},
     },
 
     [TRAINER_GABBY_AND_TY_2] =

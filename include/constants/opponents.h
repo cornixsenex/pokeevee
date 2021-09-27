@@ -55,7 +55,7 @@
 #define TRAINER_STONEY                       49
 #define TRAINER_GARY                         50
 
-#define TRAINER_GABBY_AND_TY_1               51
+#define TRAINER_KARLYE               		 51
 #define TRAINER_GABBY_AND_TY_2               52
 #define TRAINER_GABBY_AND_TY_3               53
 #define TRAINER_GABBY_AND_TY_4               54

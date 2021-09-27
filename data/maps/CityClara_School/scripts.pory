@@ -1,6 +1,30 @@
 mapscripts CityClara_School_MapScripts {}
 
 
+script CityClara_School_EventScript_Karlye {
+	lock
+	call (CityClara_School_EventScript_IncrementSchoolVar)
+	trainerbattle_single(TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost)
+	msgbox (CityClara_School_Text_KarlyePost)	
+	release
+}
+
+script CityClara_School_EventScript_IncrementSchoolVar {
+	switch (var(VAR_CITYCLARA_SCHOOL_STATE)) {
+		case 0:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 1)
+		case 1:	
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 2)
+		case 2:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 3)
+		case 3:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 4)
+		case 4:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 5)
+	}
+}	
+
+
 script CityClara_School_EventScript_Mrs_Sully {
 	lockall
 	if (!flag(FLAG_RECEIVED_CUT)) {
@@ -84,6 +108,17 @@ movement CityClara_School_Movement_PeevesGrade2Return {
 	face_down
 }
 
+text CityClara_School_Text_KarlyeIntro {
+	format("Watch out I'm going to give you coodies!")
+}
+
+text CityClara_School_Text_KarlyeLost {
+	format("Looks like you just gave your coodies to me.")
+}
+
+text CityClara_School_Text_KarlyePost {
+	format("Sometimes I hang out after school behind the school and sell my cudies to the boys.")
+}
 
 text CityClara_School_Text_PeevesGrade1 {
 	format("Hey you! Where do you think that you're going?")
