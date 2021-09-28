@@ -56,10 +56,10 @@
 #define TRAINER_GARY                         50
 
 #define TRAINER_KARLYE               		 51
-#define TRAINER_GABBY_AND_TY_2               52
-#define TRAINER_GABBY_AND_TY_3               53
-#define TRAINER_GABBY_AND_TY_4               54
-#define TRAINER_GABBY_AND_TY_5               55
+#define TRAINER_RICKY               		 52
+#define TRAINER_PETER             			 53
+#define TRAINER_DANNY             			 54
+#define TRAINER_MR_GLASMAN               	 55
 #define TRAINER_GABBY_AND_TY_6               56
 
 #define TRAINER_RIVAL2                       57

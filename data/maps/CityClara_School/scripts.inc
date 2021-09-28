@@ -4,11 +4,85 @@ CityClara_School_MapScripts::
 
 CityClara_School_EventScript_Karlye::
 	lock
-	call CityClara_School_EventScript_IncrementSchoolVar
-	trainerbattle_single TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost
+	checktrainerflag TRAINER_KARLYE
+	goto_if 0, CityClara_School_EventScript_Karlye_2
+CityClara_School_EventScript_Karlye_1:
 	msgbox CityClara_School_Text_KarlyePost
 	release
 	return
+
+CityClara_School_EventScript_Karlye_2:
+	call CityClara_School_EventScript_IncrementSchoolVar
+	trainerbattle_single TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost
+	goto CityClara_School_EventScript_Karlye_1
+
+
+CityClara_School_EventScript_Ricky::
+	lock
+	checktrainerflag TRAINER_RICKY
+	goto_if 0, CityClara_School_EventScript_Ricky_2
+CityClara_School_EventScript_Ricky_1:
+	msgbox CityClara_School_Text_RickyPost
+	release
+	return
+
+CityClara_School_EventScript_Ricky_2:
+	call CityClara_School_EventScript_IncrementSchoolVar
+	trainerbattle_single TRAINER_RICKY, CityClara_School_Text_RickyIntro, CityClara_School_Text_RickyLost
+	goto CityClara_School_EventScript_Ricky_1
+
+
+CityClara_School_EventScript_Peter::
+	lock
+	checktrainerflag TRAINER_PETER
+	goto_if 0, CityClara_School_EventScript_Peter_2
+CityClara_School_EventScript_Peter_1:
+	msgbox CityClara_School_Text_PeterPost
+	release
+	return
+
+CityClara_School_EventScript_Peter_2:
+	call CityClara_School_EventScript_IncrementSchoolVar
+	trainerbattle_single TRAINER_PETER, CityClara_School_Text_PeterIntro, CityClara_School_Text_PeterLost
+	goto CityClara_School_EventScript_Peter_1
+
+
+CityClara_School_EventScript_Danny::
+	lock
+	checktrainerflag TRAINER_DANNY
+	goto_if 0, CityClara_School_EventScript_Danny_2
+CityClara_School_EventScript_Danny_1:
+	msgbox CityClara_School_Text_DannyPost
+	release
+	return
+
+CityClara_School_EventScript_Danny_2:
+	call CityClara_School_EventScript_IncrementSchoolVar
+	trainerbattle_single TRAINER_DANNY, CityClara_School_Text_DannyIntro, CityClara_School_Text_DannyLost
+	goto CityClara_School_EventScript_Danny_1
+
+
+CityClara_School_EventScript_Mr_Glasman::
+	lock
+	faceplayer
+	compare VAR_CITYCLARA_SCHOOL_STATE, 4
+	goto_if_lt CityClara_School_EventScript_Mr_Glasman_2
+	compare VAR_CITYCLARA_SCHOOL_STATE, 4
+	goto_if_eq CityClara_School_EventScript_Mr_Glasman_3
+	msgbox CityClara_School_Text_Mr_GlasmanPost
+CityClara_School_EventScript_Mr_Glasman_1:
+	release
+	return
+
+CityClara_School_EventScript_Mr_Glasman_2:
+	msgbox CityClara_School_Text_Mr_Glasman1
+	closemessage
+	goto CityClara_School_EventScript_Mr_Glasman_1
+
+CityClara_School_EventScript_Mr_Glasman_3:
+	call CityClara_School_EventScript_IncrementSchoolVar
+	trainerbattle_single TRAINER_MR_GLASMAN, CityClara_School_Text_Mr_GlasmanIntro, CityClara_School_Text_Mr_GlasmanLost
+	goto CityClara_School_EventScript_Mr_Glasman_1
 
 
 CityClara_School_EventScript_IncrementSchoolVar::
@@ -142,6 +216,57 @@ CityClara_School_Text_KarlyePost::
 	.string "Sometimes I hang out after school\n"
 	.string "behind the school and sell my cudies to\l"
 	.string "the boys.$"
+
+CityClara_School_Text_RickyIntro::
+	.string "Will you vote for me as class president?$"
+
+CityClara_School_Text_RickyLost::
+	.string "I'm the most popular kid at this school!$"
+
+CityClara_School_Text_RickyPost::
+	.string "Everyone's coming over to my house\n"
+	.string "today except for you. You're not\l"
+	.string "allowed.$"
+
+CityClara_School_Text_PeterIntro::
+	.string "It's disgusting they let the common\n"
+	.string "trash mingle with the elite at public\l"
+	.string "school.$"
+
+CityClara_School_Text_PeterLost::
+	.string "Unhand me you vulgar barbarian!$"
+
+CityClara_School_Text_PeterPost::
+	.string "My daddy owns the inn across the\n"
+	.string "street$"
+
+CityClara_School_Text_DannyIntro::
+	.string "Leave me alone, I want to play my game.$"
+
+CityClara_School_Text_DannyLost::
+	.string "I think you might have broke my GBA!$"
+
+CityClara_School_Text_DannyPost::
+	.string "Mommy gave me that toy that you just\n"
+	.string "broke.$"
+
+CityClara_School_Text_Mr_Glasman1::
+	.string "Before we start why don't you all\n"
+	.string "review, among yourselves, in groups,\l"
+	.string "for five minutes$"
+
+CityClara_School_Text_Mr_GlasmanIntro::
+	.string "Shekit Bavakash, that means shut up! I\n"
+	.string "need you to show me some more respect\l"
+	.string "and recognize my doctorate. Now time\l"
+	.string "for you to take a test...to pass or fail.$"
+
+CityClara_School_Text_Mr_GlasmanLost::
+	.string "I told you this before, it's DOCTOR G!$"
+
+CityClara_School_Text_Mr_GlasmanPost::
+	.string "You've proven yourself a brilliant pupil.\n"
+	.string "Good luck in your education.$"
 
 CityClara_School_Text_PeevesGrade1::
 	.string "Hey you! Where do you think that you're\n"

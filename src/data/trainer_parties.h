@@ -306,6 +306,56 @@ static const struct TrainerMon sParty_Karlye[] = {
     }
 };
 
+static const struct TrainerMon sParty_Ricky[] = {
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_DODUO,
+    },
+	{
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_DODUO,
+    },
+
+};
+
+static const struct TrainerMon sParty_Peter[] = {
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_MEOWTH,
+    },
+	{
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_FARFETCHD,
+    },
+
+};
+
+static const struct TrainerMon sParty_Danny[] = {
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_TEDDIURSA,
+    },
+};
+
+static const struct TrainerMon sParty_Mr_Glasman[] = {
+    {
+    .iv = 0,
+    .lvl = 19,
+    .species = SPECIES_WHISMUR,
+    },
+	{
+    .iv = 69,
+    .lvl = 20,
+    .species = SPECIES_VIGOROTH,
+    },
+
+};
+
 static const struct TrainerMon sParty_Noah[] = {
     {
     .iv = 0,
