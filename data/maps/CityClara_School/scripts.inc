@@ -80,6 +80,13 @@ CityClara_School_EventScript_Sagis::
 	return
 
 
+CityClara_School_EventScript_Emily::
+	trainerbattle_single TRAINER_EMILY, CityClara_School_Text_EmilyIntro, CityClara_School_Text_EmilyLost
+	msgbox CityClara_School_Text_EmilyPost
+	closemessage
+	return
+
+
 CityClara_School_EventScript_Mr_Glasman::
 	lock
 	faceplayer
@@ -237,6 +244,20 @@ CityClara_School_EventScript_PeevesFight2::
 	return
 
 
+CityClara_School_EventScript_Tyler::
+	trainerbattle_double TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerIntro, CityClara_School_Text_TylerLost, Route104_Text_GinaNotEnoughMons
+	msgbox CityClara_School_Text_TylerPost
+	closemessage
+	return
+
+
+CityClara_School_EventScript_Gabe::
+	trainerbattle_double TRAINER_TYLER_AND_GABE, CityClara_School_Text_GabeIntro, CityClara_School_Text_GabeLost, Route104_Text_GinaNotEnoughMons
+	msgbox CityClara_School_Text_GabePost
+	closemessage
+	return
+
+
 CityClara_School_Movement_PlayerGrade:
 	walk_left
 	face_right
@@ -342,6 +363,17 @@ CityClara_School_Text_SagisPost::
 	.string "Did I ever tell you about the time I\n"
 	.string "hung out in a crack den in Gato?$"
 
+CityClara_School_Text_EmilyIntro::
+	.string "I think most of us are still practicing\n"
+	.string "but I can hold my own among the best.$"
+
+CityClara_School_Text_EmilyLost::
+	.string "That isn't fair! You're gonna make me\n"
+	.string "cry!$"
+
+CityClara_School_Text_EmilyPost::
+	.string "If I had a boyfriend he'd kick your ass.$"
+
 CityClara_School_Text_Mr_Glasman1::
 	.string "Before we start why don't you all\n"
 	.string "review, among yourselves, in groups,\l"
@@ -381,6 +413,28 @@ CityClara_School_Text_PeevesLost::
 
 CityClara_School_Text_PeevesPost::
 	.string "Teacher made me monitor of the halls!$"
+
+CityClara_School_Text_TylerIntro::
+	.string "Get in looser, we're riding on the bus!$"
+
+CityClara_School_Text_TylerLost::
+	.string "Well go thy way. Thou shalt not from\n"
+	.string "this grove!$"
+
+CityClara_School_Text_TylerPost::
+	.string "I'll see you in the morning...on the bus!$"
+
+CityClara_School_Text_GabeIntro::
+	.string "There is no reason for this senseless\n"
+	.string "duel.$"
+
+CityClara_School_Text_GabeLost::
+	.string "Much wasted blood but none of it was\n"
+	.string "mine.$"
+
+CityClara_School_Text_GabePost::
+	.string "Your history, the sum of all your crimes,\n"
+	.string "will ever bring you, till you repent.$"
 
 CityClara_School_Text_Mrs_SullyIntroA::
 	.string "I've not seen you before you some\n"

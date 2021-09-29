@@ -64,8 +64,8 @@
 #define TRAINER_MRS_SULLY                    58
 #define TRAINER_ETHAN                        59
 #define TRAINER_SAGIS                        60
-#define TRAINER_LOLA_3                       61
-#define TRAINER_LOLA_4                       62
+#define TRAINER_EMILY                        61
+#define TRAINER_TYLER_AND_GABE               62
 #define TRAINER_LOLA_5                       63
 #define TRAINER_RICKY_1                      64
 #define TRAINER_SIMON                        65

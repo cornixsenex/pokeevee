@@ -57,6 +57,11 @@ script CityClara_School_EventScript_Sagis {
 	closemessage	
 }
 
+script CityClara_School_EventScript_Emily {
+	trainerbattle_single(TRAINER_EMILY, CityClara_School_Text_EmilyIntro, CityClara_School_Text_EmilyLost)
+	msgbox (CityClara_School_Text_EmilyPost)
+	closemessage	
+}
 
 script CityClara_School_EventScript_Mr_Glasman {
 	lock
@@ -181,7 +186,19 @@ script CityClara_School_EventScript_PeevesFight2 {
 	waitmovement (0)
 	trainerbattle_single(TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost)
 	release
-}	
+}
+
+script CityClara_School_EventScript_Tyler {
+	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerIntro, CityClara_School_Text_TylerLost, Route104_Text_GinaNotEnoughMons)
+	msgbox (CityClara_School_Text_TylerPost)
+	closemessage
+}
+
+script CityClara_School_EventScript_Gabe {
+	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_GabeIntro, CityClara_School_Text_GabeLost, Route104_Text_GinaNotEnoughMons)
+	msgbox (CityClara_School_Text_GabePost)
+	closemessage
+}
 
 movement CityClara_School_Movement_PlayerGrade {
 	walk_left
@@ -291,6 +308,18 @@ text CityClara_School_Text_SagisPost {
 	format("Did I ever tell you about the time I hung out in a crack den in Gato?")
 }
 
+text CityClara_School_Text_EmilyIntro {
+	format("I think most of us are still practicing but I can hold my own among the best.")
+}
+
+text CityClara_School_Text_EmilyLost {
+	format("That isn't fair! You're gonna make me cry!")
+}
+
+text CityClara_School_Text_EmilyPost {
+	format("If I had a boyfriend he'd kick your ass.")
+}
+
 text CityClara_School_Text_Mr_Glasman1 {
 	format("Before we start why don't you all review, among yourselves, in groups, for five minutes")
 }
@@ -325,6 +354,30 @@ text CityClara_School_Text_PeevesLost {
 
 text CityClara_School_Text_PeevesPost {
 	format("Teacher made me monitor of the halls!")
+}
+
+text CityClara_School_Text_TylerIntro {
+	format("Get in looser, we're riding on the bus!")
+}
+
+text CityClara_School_Text_TylerLost {
+	format("Well go thy way. Thou shalt not from this grove!")
+}
+
+text CityClara_School_Text_TylerPost {
+	format("I'll see you in the morning...on the bus!")
+}
+
+text CityClara_School_Text_GabeIntro {
+	format("There is no reason for this senseless duel.")
+}
+
+text CityClara_School_Text_GabeLost {
+	format("Much wasted blood but none of it was mine.")
+}
+
+text CityClara_School_Text_GabePost {
+	format("Your history, the sum of all your crimes, will ever bring you, till you repent.")
 }
 
 text CityClara_School_Text_Mrs_SullyIntroA{
