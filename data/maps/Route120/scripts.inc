@@ -65,7 +65,7 @@ Route120_EventScript_SetBridgeKecleonMovement:: @ 81F54C8
 	return
 
 Route120_OnTransition: @ 81F54CD
-	call GabbyAndTy_EventScript_UpdateLocation
+	//call GabbyAndTy_EventScript_UpdateLocation
 	call Route120_EventScript_SetWeather
 	end
 

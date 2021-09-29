@@ -356,6 +356,36 @@ static const struct TrainerMon sParty_Mr_Glasman[] = {
 
 };
 
+static const struct TrainerMon sParty_Peeves[] = {
+    {
+    .iv = 0,
+    .lvl = 21,
+    .species = SPECIES_BIBAREL,
+    },
+};
+
+static const struct TrainerMon sParty_Ethan[] = {
+    {
+    .iv = 0,
+    .lvl = 20,
+    .species = SPECIES_SWABLU,
+    },
+};
+
+static const struct TrainerMon sParty_Sagis[] = {
+    {
+    .iv = 0,
+    .lvl = 20,
+    .species = SPECIES_PIDGEY,
+    },
+	{
+    .iv = 0,
+    .lvl = 20,
+    .species = SPECIES_PIDGEOTTO,
+    },
+
+};
+
 static const struct TrainerMon sParty_Noah[] = {
     {
     .iv = 0,
@@ -789,27 +819,6 @@ static const struct TrainerMon sParty_Mrs_Sully[] = {
     .iv = 0,
     .lvl = 26,
     .species = SPECIES_EEVEE,
-    }
-};
-
-static const struct TrainerMon sParty_Gwen[] = {
-    {
-    .iv = 0,
-    .lvl = 26,
-    .species = SPECIES_MARILL,
-    }
-};
-
-static const struct TrainerMon sParty_Lola2[] = {
-    {
-    .iv = 10,
-    .lvl = 26,
-    .species = SPECIES_MARILL,
-    },
-    {
-    .iv = 10,
-    .lvl = 26,
-    .species = SPECIES_MARILL,
     }
 };
 

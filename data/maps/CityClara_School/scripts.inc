@@ -4,6 +4,7 @@ CityClara_School_MapScripts::
 
 CityClara_School_EventScript_Karlye::
 	lock
+	faceplayer
 	checktrainerflag TRAINER_KARLYE
 	goto_if 0, CityClara_School_EventScript_Karlye_2
 CityClara_School_EventScript_Karlye_1:
@@ -19,6 +20,7 @@ CityClara_School_EventScript_Karlye_2:
 
 CityClara_School_EventScript_Ricky::
 	lock
+	faceplayer
 	checktrainerflag TRAINER_RICKY
 	goto_if 0, CityClara_School_EventScript_Ricky_2
 CityClara_School_EventScript_Ricky_1:
@@ -34,6 +36,7 @@ CityClara_School_EventScript_Ricky_2:
 
 CityClara_School_EventScript_Peter::
 	lock
+	faceplayer
 	checktrainerflag TRAINER_PETER
 	goto_if 0, CityClara_School_EventScript_Peter_2
 CityClara_School_EventScript_Peter_1:
@@ -49,6 +52,7 @@ CityClara_School_EventScript_Peter_2:
 
 CityClara_School_EventScript_Danny::
 	lock
+	faceplayer
 	checktrainerflag TRAINER_DANNY
 	goto_if 0, CityClara_School_EventScript_Danny_2
 CityClara_School_EventScript_Danny_1:
@@ -60,6 +64,24 @@ CityClara_School_EventScript_Danny_2:
 	call CityClara_School_EventScript_IncrementSchoolVar
 	trainerbattle_single TRAINER_DANNY, CityClara_School_Text_DannyIntro, CityClara_School_Text_DannyLost
 	goto CityClara_School_EventScript_Danny_1
+
+
+CityClara_School_EventScript_Ethan::
+	lock
+	trainerbattle_single TRAINER_ETHAN, CityClara_School_Text_EthanIntro, CityClara_School_Text_EthanLost
+	msgbox CityClara_School_Text_EthanPost
+	closemessage
+	release
+	return
+
+
+CityClara_School_EventScript_Sagis::
+	lock
+	trainerbattle_single TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost
+	msgbox CityClara_School_Text_SagisPost
+	closemessage
+	release
+	return
 
 
 CityClara_School_EventScript_Mr_Glasman::
@@ -85,6 +107,15 @@ CityClara_School_EventScript_Mr_Glasman_3:
 	goto CityClara_School_EventScript_Mr_Glasman_1
 
 
+CityClara_School_EventScript_Peeves::
+	lock
+	faceplayer
+	msgbox CityClara_School_Text_PeevesPost
+	closemessage
+	release
+	end
+
+
 CityClara_School_EventScript_IncrementSchoolVar::
 	switch VAR_CITYCLARA_SCHOOL_STATE
 	case 0, CityClara_School_EventScript_IncrementSchoolVar_2
@@ -92,6 +123,8 @@ CityClara_School_EventScript_IncrementSchoolVar::
 	case 2, CityClara_School_EventScript_IncrementSchoolVar_4
 	case 3, CityClara_School_EventScript_IncrementSchoolVar_5
 	case 4, CityClara_School_EventScript_IncrementSchoolVar_6
+	case 5, CityClara_School_EventScript_IncrementSchoolVar_7
+	case 6, CityClara_School_EventScript_IncrementSchoolVar_8
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_2:
@@ -114,9 +147,18 @@ CityClara_School_EventScript_IncrementSchoolVar_6:
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 5
 	return
 
+CityClara_School_EventScript_IncrementSchoolVar_7:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 6
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_8:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 7
+	return
+
 
 CityClara_School_EventScript_Mrs_Sully::
 	lockall
+	faceplayer
 	goto_if_unset FLAG_RECEIVED_CUT, CityClara_School_EventScript_Mrs_Sully_2
 CityClara_School_EventScript_Mrs_Sully_1:
 	msgbox CityClara_School_Text_Mrs_SullyPost
@@ -125,7 +167,6 @@ CityClara_School_EventScript_Mrs_Sully_1:
 	end
 
 CityClara_School_EventScript_Mrs_Sully_2:
-	faceplayer
 	msgbox CityClara_School_Text_Mrs_SullyIntroA
 	closemessage
 	trainerbattle_no_intro TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost
@@ -178,6 +219,28 @@ CityClara_School_EventScript_GradeTrigger2::
 	return
 
 
+CityClara_School_EventScript_PeevesFight1::
+	lock
+	call CityClara_School_EventScript_IncrementSchoolVar
+	applymovement 7, Common_Movement_ExclamationMark
+	waitmovement 0
+	trainerbattle_single TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost
+	release
+	return
+
+
+CityClara_School_EventScript_PeevesFight2::
+	lock
+	call CityClara_School_EventScript_IncrementSchoolVar
+	applymovement 7, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 7, CityClara_School_Movement_Peeves_WalkDown
+	waitmovement 0
+	trainerbattle_single TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost
+	release
+	return
+
+
 CityClara_School_Movement_PlayerGrade:
 	walk_left
 	face_right
@@ -203,6 +266,18 @@ CityClara_School_Movement_PeevesGrade2Return:
 	walk_up
 	walk_up
 	face_down
+	step_end
+
+CityClara_School_Movement_Peeves_FaceUp:
+	face_up
+	step_end
+
+CityClara_School_Movement_Peeves_FaceDown:
+	face_down
+	step_end
+
+CityClara_School_Movement_Peeves_WalkDown:
+	walk_down
 	step_end
 
 CityClara_School_Text_KarlyeIntro::
@@ -250,6 +325,27 @@ CityClara_School_Text_DannyPost::
 	.string "Mommy gave me that toy that you just\n"
 	.string "broke.$"
 
+CityClara_School_Text_EthanIntro::
+	.string "Wait, who are you? I only talk to girls!$"
+
+CityClara_School_Text_EthanLost::
+	.string "And that's exactly why we shouldn't\n"
+	.string "speak.$"
+
+CityClara_School_Text_EthanPost::
+	.string "Dude, quit trying to stare into my eyes!$"
+
+CityClara_School_Text_SagisIntro::
+	.string "Wait bro, are you for real? We're gonna\n"
+	.string "fight?$"
+
+CityClara_School_Text_SagisLost::
+	.string "Whatever dude, I heard you were crazy.$"
+
+CityClara_School_Text_SagisPost::
+	.string "Did I ever tell you about the time I\n"
+	.string "hung out in a crack den in Gato?$"
+
 CityClara_School_Text_Mr_Glasman1::
 	.string "Before we start why don't you all\n"
 	.string "review, among yourselves, in groups,\l"
@@ -276,6 +372,19 @@ CityClara_School_Text_PeevesGrade2::
 	.string "This class is only for the older kids,\n"
 	.string "Come back when you've graduated first\l"
 	.string "grade.$"
+
+CityClara_School_Text_PeevesIntro::
+	.string "Well looky here looks like there's a new\n"
+	.string "kid. You think you're so grown up well\l"
+	.string "time to learn what guys like me do to\l"
+	.string "freshmeat like you.$"
+
+CityClara_School_Text_PeevesLost::
+	.string "I'll let you keep my lunch money this\n"
+	.string "time...$"
+
+CityClara_School_Text_PeevesPost::
+	.string "Teacher made me monitor of the halls!$"
 
 CityClara_School_Text_Mrs_SullyIntroA::
 	.string "I've not seen you before you some\n"

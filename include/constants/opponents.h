@@ -54,18 +54,16 @@
 #define TRAINER_SMOKEY                       48
 #define TRAINER_STONEY                       49
 #define TRAINER_GARY                         50
-
 #define TRAINER_KARLYE               		 51
 #define TRAINER_RICKY               		 52
 #define TRAINER_PETER             			 53
 #define TRAINER_DANNY             			 54
 #define TRAINER_MR_GLASMAN               	 55
-#define TRAINER_GABBY_AND_TY_6               56
-
+#define TRAINER_PEEVES               		 56
 #define TRAINER_RIVAL2                       57
 #define TRAINER_MRS_SULLY                    58
-#define TRAINER_GWEN                         59
-#define TRAINER_LOLA_2                       60
+#define TRAINER_ETHAN                        59
+#define TRAINER_SAGIS                        60
 #define TRAINER_LOLA_3                       61
 #define TRAINER_LOLA_4                       62
 #define TRAINER_LOLA_5                       63

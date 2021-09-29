@@ -3,6 +3,7 @@ mapscripts CityClara_School_MapScripts {}
 
 script CityClara_School_EventScript_Karlye {
 	lock
+	faceplayer
 	if (!defeated(TRAINER_KARLYE)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		trainerbattle_single(TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost)
@@ -13,6 +14,7 @@ script CityClara_School_EventScript_Karlye {
 
 script CityClara_School_EventScript_Ricky {
 	lock
+	faceplayer
 	if (!defeated(TRAINER_RICKY)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		trainerbattle_single(TRAINER_RICKY, CityClara_School_Text_RickyIntro, CityClara_School_Text_RickyLost)
@@ -23,6 +25,7 @@ script CityClara_School_EventScript_Ricky {
 
 script CityClara_School_EventScript_Peter {
 	lock
+	faceplayer
 	if (!defeated(TRAINER_PETER)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		trainerbattle_single(TRAINER_PETER, CityClara_School_Text_PeterIntro, CityClara_School_Text_PeterLost)
@@ -33,6 +36,7 @@ script CityClara_School_EventScript_Peter {
 
 script CityClara_School_EventScript_Danny {
 	lock
+	faceplayer
 	if (!defeated(TRAINER_DANNY)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		trainerbattle_single(TRAINER_DANNY, CityClara_School_Text_DannyIntro, CityClara_School_Text_DannyLost)
@@ -40,6 +44,23 @@ script CityClara_School_EventScript_Danny {
 	msgbox (CityClara_School_Text_DannyPost)	
 	release
 }
+
+script CityClara_School_EventScript_Ethan {
+	lock
+	trainerbattle_single(TRAINER_ETHAN, CityClara_School_Text_EthanIntro, CityClara_School_Text_EthanLost)
+	msgbox (CityClara_School_Text_EthanPost)
+	closemessage	
+	release
+}
+
+script CityClara_School_EventScript_Sagis {
+	lock
+	trainerbattle_single(TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost)
+	msgbox (CityClara_School_Text_SagisPost)
+	closemessage	
+	release
+}
+
 
 script CityClara_School_EventScript_Mr_Glasman {
 	lock
@@ -56,6 +77,15 @@ script CityClara_School_EventScript_Mr_Glasman {
 	release
 }
 
+script CityClara_School_EventScript_Peeves {
+	lock
+	faceplayer
+	msgbox (CityClara_School_Text_PeevesPost)
+	closemessage
+	release
+	end
+}
+
 script CityClara_School_EventScript_IncrementSchoolVar {
 	switch (var(VAR_CITYCLARA_SCHOOL_STATE)) {
 		case 0:
@@ -68,14 +98,17 @@ script CityClara_School_EventScript_IncrementSchoolVar {
 			setvar(VAR_CITYCLARA_SCHOOL_STATE, 4)
 		case 4:
 			setvar(VAR_CITYCLARA_SCHOOL_STATE, 5)
+		case 5:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 6)
+		case 6:	
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 7)
 	}
 }	
 
-
 script CityClara_School_EventScript_Mrs_Sully {
 	lockall
+	faceplayer
 	if (!flag(FLAG_RECEIVED_CUT)) {
-		faceplayer
 		msgbox (CityClara_School_Text_Mrs_SullyIntroA)
 		closemessage
 		trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
@@ -130,6 +163,30 @@ script CityClara_School_EventScript_GradeTrigger2 {
 	release
 } 
 
+script CityClara_School_EventScript_PeevesFight1 {
+	lock
+	call (CityClara_School_EventScript_IncrementSchoolVar)	
+	applymovement(7, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//applymovement(OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_Peeves_FaceUp)
+	//waitmovement (0)
+	trainerbattle_single(TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost)
+	release
+} 
+
+script CityClara_School_EventScript_PeevesFight2 {
+	lock
+	call (CityClara_School_EventScript_IncrementSchoolVar)	
+	applymovement(7, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//applymovement(OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_Peeves_FaceUp)
+	//#waitmovement (0)
+	applymovement(7, CityClara_School_Movement_Peeves_WalkDown)
+	waitmovement (0)
+	trainerbattle_single(TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost)
+	release
+}	
+
 movement CityClara_School_Movement_PlayerGrade {
 	walk_left
 	face_right
@@ -153,6 +210,17 @@ movement CityClara_School_Movement_PeevesGrade1Return {
 movement CityClara_School_Movement_PeevesGrade2Return {
 	walk_up * 2
 	face_down
+}
+movement CityClara_School_Movement_Peeves_FaceUp {
+	face_up
+}
+
+movement CityClara_School_Movement_Peeves_FaceDown {
+	face_down
+}
+
+movement CityClara_School_Movement_Peeves_WalkDown {
+	walk_down
 }
 
 text CityClara_School_Text_KarlyeIntro {
@@ -203,6 +271,30 @@ text CityClara_School_Text_DannyPost {
 	format("Mommy gave me that toy that you just broke.")
 }
 
+text CityClara_School_Text_EthanIntro {
+	format("Wait, who are you? I only talk to girls!")
+}
+
+text CityClara_School_Text_EthanLost {
+	format("And that's exactly why we shouldn't speak.")
+}
+
+text CityClara_School_Text_EthanPost {
+	format("Dude, quit trying to stare into my eyes!")
+}
+
+text CityClara_School_Text_SagisIntro {
+	format("Wait bro, are you for real? We're gonna fight?")
+}
+
+text CityClara_School_Text_SagisLost {
+	format("Whatever dude, I heard you were crazy.")
+}
+
+text CityClara_School_Text_SagisPost {
+	format("Did I ever tell you about the time I hung out in a crack den in Gato?")
+}
+
 text CityClara_School_Text_Mr_Glasman1 {
 	format("Before we start why don't you all review, among yourselves, in groups, for five minutes")
 }
@@ -225,6 +317,18 @@ text CityClara_School_Text_PeevesGrade1 {
 
 text CityClara_School_Text_PeevesGrade2 {
 	format("This class is only for the older kids, Come back when you've graduated first grade.")
+}
+
+text CityClara_School_Text_PeevesIntro {
+	format("Well looky here looks like there's a new kid. You think you're so grown up well time to learn what guys like me do to freshmeat like you.")
+}
+
+text CityClara_School_Text_PeevesLost {
+	format("I'll let you keep my lunch money this time...")
+}
+
+text CityClara_School_Text_PeevesPost {
+	format("Teacher made me monitor of the halls!")
 }
 
 text CityClara_School_Text_Mrs_SullyIntroA{
@@ -250,6 +354,5 @@ text CityClara_School_Text_Mrs_SullyPost {
 text CityClara_School_Text_ExplainCut {
 	format("This is a Hidden Move, HM for short, which will allow you to cut down small trees.")
 }
-
 
 

@@ -54,7 +54,7 @@ Route111_OnTransition: @ 81F0D87
 	compare VAR_MIRAGE_TOWER_STATE, 2
 	call_if_eq Route111_EventScript_SetMirageTowerGone
 	call Route111_EventScript_CheckSetSandstorm
-	call GabbyAndTy_EventScript_UpdateLocation
+	//call GabbyAndTy_EventScript_UpdateLocation
 	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
 	end
 
