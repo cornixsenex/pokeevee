@@ -67,20 +67,16 @@ CityClara_School_EventScript_Danny_2:
 
 
 CityClara_School_EventScript_Ethan::
-	lock
 	trainerbattle_single TRAINER_ETHAN, CityClara_School_Text_EthanIntro, CityClara_School_Text_EthanLost
 	msgbox CityClara_School_Text_EthanPost
 	closemessage
-	release
 	return
 
 
 CityClara_School_EventScript_Sagis::
-	lock
 	trainerbattle_single TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost
 	msgbox CityClara_School_Text_SagisPost
 	closemessage
-	release
 	return
 
 
