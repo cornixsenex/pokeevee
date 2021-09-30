@@ -144,7 +144,11 @@ script CityClara_EventScript_LeafBridge {
 	lock
 	faceplayer
 	load_field_pic (4, 190, 98)
-	msgbox (CityClara_Text_LeafBridge)
+	if (var(VAR_CITYCLARA_SCHOOL_STATE) != 8) {
+		msgbox (CityClara_Text_LeafBridge)
+	} else {
+		msgbox (CityClara_Text_LeafBridge2)
+	}
 	closemessage
 	destroy_field_pic (4)
 	applymovement (22, Common_Movement_FaceDown)
@@ -172,6 +176,28 @@ script CityClara_EventScript_Senex {
 		msgbox (CityClara_Text_Senex3)
 	}
 	closemessage
+	releaseall
+	end
+}
+
+script CityClara_EventScript_Jessie {
+	lockall
+	faceplayer
+	msgbox (CityClara_Text_Jessie)
+	closemessage	
+	applymovement (14, Common_Movement_FaceDown)
+	waitmovement (0)
+	releaseall
+	end
+}
+
+script CityClara_EventScript_James {
+	lockall
+	faceplayer
+	msgbox (CityClara_Text_James)
+	closemessage	
+	applymovement (15, Common_Movement_FaceDown)
+	waitmovement (0)
 	releaseall
 	end
 }
@@ -308,6 +334,10 @@ text CityClara_Text_LeafBridge {
 	format("I can't believe how long this line appears! We'll wait all day and night to move halfway up to the top. Oh {PLAYER} I bet you could find another way we could sneak around. Maybe you could learn how to cut down trees and we could sneak in, go around the back! I bet they teach you how to cut down trees and things like that if you go to the school! I've never been myself but you should go! The school is that orange building over there on the corner of the south eastern street.")
 }
 
+text CityClara_Text_LeafBridge2 {
+	format("Oh my gosh {PLAYER}! Is that the HM CUT? You are the best! Let's sneak into the church!")
+}
+
 text CityClara_Text_GreenSuit {
 	format("I'm first in line because I payed for it.")
 }
@@ -396,5 +426,12 @@ text CityClara_Text_Rocket2 {
 	format("The party only wants the very best people to represent their interests. Perhaps with time, and practice, and some luck, you could one day wear our great uniform. Never forget the party's here for you.")
 }
 
+text CityClara_Text_Jessie {
+	format("This church is being occupied by the Rocket Party and we're watching the door. You'll have to get in line and wait your turn then pay the entrance fee to step inside.")
+}
+
+text CityClara_Text_James {
+	format("This town is so antique it's comical. Look at all these people waiting in line just for a glimpse of some old pokemon. The city is a better place to live and party people are superior.")
+}
 
 

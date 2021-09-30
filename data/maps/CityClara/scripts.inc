@@ -156,13 +156,20 @@ CityClara_EventScript_LeafBridge::
 	lock
 	faceplayer
 	load_field_pic 4, 190, 98
-	msgbox CityClara_Text_LeafBridge
+	compare VAR_CITYCLARA_SCHOOL_STATE, 8
+	goto_if_ne CityClara_EventScript_LeafBridge_2
+	msgbox CityClara_Text_LeafBridge2
+CityClara_EventScript_LeafBridge_1:
 	closemessage
 	destroy_field_pic 4
 	applymovement 22, Common_Movement_FaceDown
 	waitmovement 0
 	releaseall
 	end
+
+CityClara_EventScript_LeafBridge_2:
+	msgbox CityClara_Text_LeafBridge
+	goto CityClara_EventScript_LeafBridge_1
 
 
 CityClara_EventScript_TownSign::
@@ -188,6 +195,28 @@ CityClara_EventScript_Senex_1:
 CityClara_EventScript_Senex_2:
 	msgbox CityClara_Text_Senex2
 	goto CityClara_EventScript_Senex_1
+
+
+CityClara_EventScript_Jessie::
+	lockall
+	faceplayer
+	msgbox CityClara_Text_Jessie
+	closemessage
+	applymovement 14, Common_Movement_FaceDown
+	waitmovement 0
+	releaseall
+	end
+
+
+CityClara_EventScript_James::
+	lockall
+	faceplayer
+	msgbox CityClara_Text_James
+	closemessage
+	applymovement 15, Common_Movement_FaceDown
+	waitmovement 0
+	releaseall
+	end
 
 
 CityClara_EventScript_RocketBlockA::
@@ -338,6 +367,11 @@ CityClara_Text_LeafBridge::
 	.string "that orange building over there on the\l"
 	.string "corner of the south eastern street.$"
 
+CityClara_Text_LeafBridge2::
+	.string "Oh my gosh {PLAYER}! Is that the HM\n"
+	.string "CUT? You are the best! Let's sneak into\l"
+	.string "the church!$"
+
 CityClara_Text_GreenSuit::
 	.string "I'm first in line because I payed for it.$"
 
@@ -433,3 +467,17 @@ CityClara_Text_Rocket2::
 	.string "some luck, you could one day wear our\l"
 	.string "great uniform. Never forget the\l"
 	.string "party's here for you.$"
+
+CityClara_Text_Jessie::
+	.string "This church is being occupied by the\n"
+	.string "Rocket Party and we're watching the\l"
+	.string "door. You'll have to get in line and wait\l"
+	.string "your turn then pay the entrance fee to\l"
+	.string "step inside.$"
+
+CityClara_Text_James::
+	.string "This town is so antique it's comical.\n"
+	.string "Look at all these people waiting in line\l"
+	.string "just for a glimpse of some old pokemon.\l"
+	.string "The city is a better place to live and\l"
+	.string "party people are superior.$"

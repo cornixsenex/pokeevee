@@ -103,6 +103,8 @@ script CityClara_School_EventScript_IncrementSchoolVar {
 			setvar(VAR_CITYCLARA_SCHOOL_STATE, 6)
 		case 6:	
 			setvar(VAR_CITYCLARA_SCHOOL_STATE, 7)
+		case 7:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 8)
 	}
 }	
 
@@ -110,6 +112,7 @@ script CityClara_School_EventScript_Mrs_Sully {
 	lockall
 	faceplayer
 	if (!flag(FLAG_RECEIVED_CUT)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
 		msgbox (CityClara_School_Text_Mrs_SullyIntroA)
 		closemessage
 		trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
@@ -325,7 +328,7 @@ text CityClara_School_Text_Mr_Glasman1 {
 }
 
 text CityClara_School_Text_Mr_GlasmanIntro {
-	format("Shekit Bavakash, that means shut up! I need you to show me some more respect and recognize my doctorate. Now time for you to take a test...to pass or fail.")
+	format("Sheket Bevakasha, that means shut up! I need you to show me some more respect and recognize my doctorate. Now time for you to take a test...to pass or fail.")
 }
 
 text CityClara_School_Text_Mr_GlasmanLost {

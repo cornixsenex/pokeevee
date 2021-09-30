@@ -128,6 +128,7 @@ CityClara_School_EventScript_IncrementSchoolVar::
 	case 4, CityClara_School_EventScript_IncrementSchoolVar_6
 	case 5, CityClara_School_EventScript_IncrementSchoolVar_7
 	case 6, CityClara_School_EventScript_IncrementSchoolVar_8
+	case 7, CityClara_School_EventScript_IncrementSchoolVar_9
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_2:
@@ -158,6 +159,10 @@ CityClara_School_EventScript_IncrementSchoolVar_8:
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 7
 	return
 
+CityClara_School_EventScript_IncrementSchoolVar_9:
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 8
+	return
+
 
 CityClara_School_EventScript_Mrs_Sully::
 	lockall
@@ -170,6 +175,7 @@ CityClara_School_EventScript_Mrs_Sully_1:
 	end
 
 CityClara_School_EventScript_Mrs_Sully_2:
+	call CityClara_School_EventScript_IncrementSchoolVar
 	msgbox CityClara_School_Text_Mrs_SullyIntroA
 	closemessage
 	trainerbattle_no_intro TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost
@@ -380,10 +386,11 @@ CityClara_School_Text_Mr_Glasman1::
 	.string "for five minutes$"
 
 CityClara_School_Text_Mr_GlasmanIntro::
-	.string "Shekit Bavakash, that means shut up! I\n"
-	.string "need you to show me some more respect\l"
-	.string "and recognize my doctorate. Now time\l"
-	.string "for you to take a test...to pass or fail.$"
+	.string "Sheket Bevakasha, that means shut up!\n"
+	.string "I need you to show me some more\l"
+	.string "respect and recognize my doctorate.\l"
+	.string "Now time for you to take a test...to\l"
+	.string "pass or fail.$"
 
 CityClara_School_Text_Mr_GlasmanLost::
 	.string "I told you this before, it's DOCTOR G!$"
