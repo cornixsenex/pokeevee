@@ -190,6 +190,127 @@ CityClara_EventScript_Senex_2:
 	goto CityClara_EventScript_Senex_1
 
 
+CityClara_EventScript_RocketBlockA::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	msgbox CityClara_Text_RocketBlock1
+	closemessage
+	waitmovement 0
+	applymovement 1, CityClara_Movement_RocketBlock1A
+	applymovement 3, CityClara_Movement_RocketBlock2A
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft
+	waitmovement 0
+	msgbox CityClara_Text_RocketBlock2
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight
+	waitmovement 0
+	msgbox CityClara_Text_RocketBlock3
+	closemessage
+	applymovement 1, CityClara_Movement_RocketReturn1A
+	applymovement 3, CityClara_Movement_RocketReturn2A
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn
+	waitmovement 0
+	release
+	return
+
+
+CityClara_EventScript_RocketBlockB::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	msgbox CityClara_Text_RocketBlock1
+	closemessage
+	waitmovement 0
+	applymovement 1, CityClara_Movement_RocketBlock1B
+	applymovement 3, CityClara_Movement_RocketBlock2B
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight
+	waitmovement 0
+	msgbox CityClara_Text_RocketBlock2
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft
+	waitmovement 0
+	msgbox CityClara_Text_RocketBlock3
+	closemessage
+	applymovement 1, CityClara_Movement_RocketReturn1B
+	applymovement 3, CityClara_Movement_RocketReturn2B
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn
+	waitmovement 0
+	release
+	return
+
+
+CityClara_EventScript_Rocket1::
+	lock
+	faceplayer
+	msgbox CityClara_Text_Rocket1
+	closemessage
+	release
+	return
+
+
+CityClara_EventScript_Rocket2::
+	lock
+	faceplayer
+	msgbox CityClara_Text_Rocket2
+	closemessage
+	release
+	return
+
+
+CityClara_Movement_RocketBlock1A:
+	walk_down
+	face_right
+	step_end
+
+CityClara_Movement_RocketBlock2A:
+	walk_down
+	walk_left
+	step_end
+
+CityClara_Movement_PlayerFaceLeft:
+	face_left
+	step_end
+
+CityClara_Movement_PlayerFaceRight:
+	face_right
+	step_end
+
+CityClara_Movement_RocketReturn1A:
+	walk_up
+	face_down
+	step_end
+
+CityClara_Movement_RocketReturn2A:
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+CityClara_Movement_PlayerReturn:
+	walk_down
+	walk_down
+	step_end
+
+CityClara_Movement_RocketBlock1B:
+	walk_down
+	walk_right
+	step_end
+
+CityClara_Movement_RocketBlock2B:
+	walk_down
+	face_left
+	step_end
+
+CityClara_Movement_RocketReturn1B:
+	walk_left
+	walk_up
+	face_down
+	step_end
+
+CityClara_Movement_RocketReturn2B:
+	walk_up
+	face_down
+	step_end
+
 CityClara_Text_ClubSign::
 	.string "The Chronic\n"
 	.string "Premium Cannabis Club$"
@@ -283,3 +404,32 @@ CityClara_Text_Senex2::
 CityClara_Text_Senex3::
 	.string "No one has time for history these\n"
 	.string "days...$"
+
+CityClara_Text_RocketBlock1::
+	.string "Hey You!$"
+
+CityClara_Text_RocketBlock2::
+	.string "Stop right there! Take not one more\n"
+	.string "stop. This road is closed, we shall let\l"
+	.string "no one pass.$"
+
+CityClara_Text_RocketBlock3::
+	.string "By order of the Rocket High Command\n"
+	.string "only party business will be allowed\l"
+	.string "until our mission has been completed.\l"
+	.string "Now get thee gone, noone wants more\l"
+	.string "trouble$"
+
+CityClara_Text_Rocket1::
+	.string "The Rocket Party helped me buy a home!\n"
+	.string "Standing watch on the road's the very\l"
+	.string "least I can do to pay back our dear\l"
+	.string "leader.$"
+
+CityClara_Text_Rocket2::
+	.string "The party only wants the very best\n"
+	.string "people to represent their interests.\l"
+	.string "Perhaps with time, and practice, and\l"
+	.string "some luck, you could one day wear our\l"
+	.string "great uniform. Never forget the\l"
+	.string "party's here for you.$"

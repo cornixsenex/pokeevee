@@ -40,7 +40,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CityClara_EventScript_Rocket1",
       "flag": "FLAG_CLARACITY_AFTERMEW"
     },
     {
@@ -66,7 +66,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CityClara_EventScript_Rocket2",
       "flag": "FLAG_CLARACITY_AFTERMEW"
     },
     {
@@ -402,7 +402,42 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_CITYCLARA_STATE",
+      "var_value": "0",
+      "script": "CityClara_EventScript_RocketBlockA"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_CITYCLARA_STATE",
+      "var_value": "0",
+      "script": "CityClara_EventScript_RocketBlockB"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_CITYCLARA_STATE",
+      "var_value": "1",
+      "script": "CityClara_EventScript_RocketBlockA"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_CITYCLARA_STATE",
+      "var_value": "1",
+      "script": "CityClara_EventScript_RocketBlockB"
+    }
   ],
   "bg_events": [
     {
