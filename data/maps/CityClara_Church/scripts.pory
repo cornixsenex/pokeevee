@@ -106,10 +106,38 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	closemessage
 	destroy_field_pic (6)
 	load_field_pic (7, 190, 98)
+
 	msgbox(CityClara_Church_Text_Blaine1)
 	closemessage
 	destroy_field_pic (7)
-	return	
+
+	msgbox(CityClara_Church_Text_Sage2)
+	closemessage
+	destroy_field_pic (6)
+
+	msgbox(CityClara_Church_Text_Blaine2)
+	closemessage
+	destroy_field_pic (7)
+
+	msgbox(CityClara_Church_Text_Sage3)
+	closemessage
+
+	msgbox(CityClara_Church_Text_Blaine3)
+	closemessage
+	destroy_field_pic (7)
+
+	msgbox(CityClara_Church_Text_Blaine4)
+	closemessage
+	destroy_field_pic (7)
+
+	msgbox(CityClara_Church_Text_Blaine5)
+	closemessage
+	destroy_field_pic (7)
+
+	msgbox(CityClara_Church_Text_Blaine6)
+	closemessage
+	destroy_field_pic (7)
+
 }
 
 script CityClara_Church_EventScript_BlaineTest{
@@ -120,65 +148,65 @@ script CityClara_Church_EventScript_BlaineTest{
 
 movement CityClara_Church_Movement_PanCamera1A {
 	walk_slow_right * 3
-	walk_slow_diag_northeast
+	walk_slow_diag_southeast
 	walk_slow_right * 2
 }
 
 movement CityClara_Church_Movement_PanCamera1B {
 	walk_slow_left * 2
-	walk_slow_diag_southwest
+	walk_slow_diag_northwest
 	walk_slow_left * 3
 }
 
 movement CityClara_Church_Movement_PanCamera2A {
-	walk_slow_right * 4
-	walk_slow_diag_northeast * 2
+	walk_slow_right * 6
 }
 
 movement CityClara_Church_Movement_PanCamera2B {
-	walk_slow_diag_southwest
-	walk_slow_left * 4
+	walk_slow_left * 6
 }
 
 movement CityClara_Church_Movement_PanCamera3A {
 	walk_slow_right * 3
-	walk_slow_diag_northeast * 3
+	walk_slow_diag_northeast
+	walk_slow_right * 2
 }
 
 movement CityClara_Church_Movement_PanCamera3B {
-	walk_slow_diag_southwest * 3
+	walk_slow_right * 2
+	walk_slow_diag_southwest
 	walk_slow_left * 3
 }
 
 movement CityClara_Church_Movement_PanCamera4A {
 	walk_slow_left * 3
-	walk_slow_diag_northwest
+	walk_slow_diag_southwest
 	walk_slow_left * 2
 }
 
 movement CityClara_Church_Movement_PanCamera4B {
 	walk_slow_right * 2
-	walk_slow_diag_southeast
+	walk_slow_diag_northeast
 	walk_slow_right * 3
 }
 
 movement CityClara_Church_Movement_PanCamera5A {
-	walk_slow_left * 4
-	walk_slow_diag_northwest * 2
+	walk_slow_left * 6
 }
 
 movement CityClara_Church_Movement_PanCamera5B {
-	walk_slow_diag_southeast
-	walk_slow_right * 4
+	walk_slow_right * 6
 }
 
 movement CityClara_Church_Movement_PanCamera6A {
 	walk_slow_left * 3
-	walk_slow_diag_northwest * 3
+	walk_slow_diag_northwest
+	walk_slow_left * 2
 }
 
 movement CityClara_Church_Movement_PanCamera6B {
-	walk_slow_diag_southeast * 3
+	walk_slow_right * 2
+	walk_slow_diag_southeast
 	walk_slow_right * 3
 }
 
@@ -190,6 +218,35 @@ text CityClara_Church_Text_Blaine1 {
 	format("A final warning, get thee gone dumb girl.")
 }
 
+text CityClara_Church_Text_Sage2 {
+	format("You must be stopped, you know not what you do.")
+}
+
+text CityClara_Church_Text_Blaine2 {
+	format("I know exactly what I have achieved, with this new power we will not be stopped. If foolishly you will never submit to the authority of our party you and your people will vaish to dust
+}
+
+//Rockets move forward and grab her
+
+text CityClara_Church_Text_Sage3 {
+	format("Unhand me I am great Mew's supplicant! The foundations of this city were built on solid rock of our worship of Mew. One thousand years we cultivated art, sharing discoveries with even you, we must thank Mew for all our modern world. Your foolish pride is threatening to end this thousand years of joy which Mew exclusively made possible for us!")
+}
+
+CityClara_Church_Text_Blaine3 {
+	format("You speak of foolish pride most narrowly your sad devotion to this religion has not helped you amass a massive worth nor given you the clairvoyance to see your fated destruction. Social progress has overcome your myth. No simple spoken prayer will stop the launch of Rocket Party's sailing in the stars.
+}
+
+
+text CityClara_Church_Text_Blaine4 {
+	format("I now will demonstrate our victory. The party truly has suprassed the gods.")
+}
+
+text CityClara_Church_Text_Blaine5 {
+	format("Today")
+}
+
+
+
 text CityClara_Church_Text_BlaineIntro {
 	format("Test 1")
 }
@@ -197,7 +254,6 @@ text CityClara_Church_Text_BlaineIntro {
 text CityClara_Church_Text_BlaineLost {
 	format("Test 2")
 }
-
 
 text CityClara_Church_Text_BlainePost {
 	format("Test 3")

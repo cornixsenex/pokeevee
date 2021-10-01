@@ -483,3 +483,4 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_LORELEI] = sAnims_Lorelei,
     [TRAINER_PIC_BLAINE] = sAnims_Blaine,
 };
+

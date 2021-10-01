@@ -127,7 +127,7 @@ CityClara_Church_Movement_PanCamera1A:
 	walk_slow_right
 	walk_slow_right
 	walk_slow_right
-	walk_slow_diag_northeast
+	walk_slow_diag_southeast
 	walk_slow_right
 	walk_slow_right
 	step_end
@@ -135,7 +135,7 @@ CityClara_Church_Movement_PanCamera1A:
 CityClara_Church_Movement_PanCamera1B:
 	walk_slow_left
 	walk_slow_left
-	walk_slow_diag_southwest
+	walk_slow_diag_northwest
 	walk_slow_left
 	walk_slow_left
 	walk_slow_left
@@ -146,12 +146,13 @@ CityClara_Church_Movement_PanCamera2A:
 	walk_slow_right
 	walk_slow_right
 	walk_slow_right
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
+	walk_slow_right
+	walk_slow_right
 	step_end
 
 CityClara_Church_Movement_PanCamera2B:
-	walk_slow_diag_southwest
+	walk_slow_left
+	walk_slow_left
 	walk_slow_left
 	walk_slow_left
 	walk_slow_left
@@ -163,13 +164,13 @@ CityClara_Church_Movement_PanCamera3A:
 	walk_slow_right
 	walk_slow_right
 	walk_slow_diag_northeast
-	walk_slow_diag_northeast
-	walk_slow_diag_northeast
+	walk_slow_right
+	walk_slow_right
 	step_end
 
 CityClara_Church_Movement_PanCamera3B:
-	walk_slow_diag_southwest
-	walk_slow_diag_southwest
+	walk_slow_right
+	walk_slow_right
 	walk_slow_diag_southwest
 	walk_slow_left
 	walk_slow_left
@@ -180,7 +181,7 @@ CityClara_Church_Movement_PanCamera4A:
 	walk_slow_left
 	walk_slow_left
 	walk_slow_left
-	walk_slow_diag_northwest
+	walk_slow_diag_southwest
 	walk_slow_left
 	walk_slow_left
 	step_end
@@ -188,7 +189,7 @@ CityClara_Church_Movement_PanCamera4A:
 CityClara_Church_Movement_PanCamera4B:
 	walk_slow_right
 	walk_slow_right
-	walk_slow_diag_southeast
+	walk_slow_diag_northeast
 	walk_slow_right
 	walk_slow_right
 	walk_slow_right
@@ -199,12 +200,13 @@ CityClara_Church_Movement_PanCamera5A:
 	walk_slow_left
 	walk_slow_left
 	walk_slow_left
-	walk_slow_diag_northwest
-	walk_slow_diag_northwest
+	walk_slow_left
+	walk_slow_left
 	step_end
 
 CityClara_Church_Movement_PanCamera5B:
-	walk_slow_diag_southeast
+	walk_slow_right
+	walk_slow_right
 	walk_slow_right
 	walk_slow_right
 	walk_slow_right
@@ -216,13 +218,13 @@ CityClara_Church_Movement_PanCamera6A:
 	walk_slow_left
 	walk_slow_left
 	walk_slow_diag_northwest
-	walk_slow_diag_northwest
-	walk_slow_diag_northwest
+	walk_slow_left
+	walk_slow_left
 	step_end
 
 CityClara_Church_Movement_PanCamera6B:
-	walk_slow_diag_southeast
-	walk_slow_diag_southeast
+	walk_slow_right
+	walk_slow_right
 	walk_slow_diag_southeast
 	walk_slow_right
 	walk_slow_right
