@@ -50,10 +50,60 @@ script CityClara_Church_EventScript_BlainTrigger3 {
 	end
 }
 
+script CityClara_Church_EventScript_BlainTrigger4 {
+	lockall
+	setvar(VAR_CITYCLARA_STATE, 2)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4A)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	call (CityClara_Church_EventScript_BlaineCutscene)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4B)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	releaseall
+	end
+}
+script CityClara_Church_EventScript_BlainTrigger5 {
+	lockall
+	setvar(VAR_CITYCLARA_STATE, 2)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5A)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	call (CityClara_Church_EventScript_BlaineCutscene)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5B)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	releaseall
+	end
+}
 
+script CityClara_Church_EventScript_BlainTrigger6 {
+	lockall
+	setvar(VAR_CITYCLARA_STATE, 2)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6A)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	call (CityClara_Church_EventScript_BlaineCutscene)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6B)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	releaseall
+	end
+}
 
 script CityClara_Church_EventScript_BlaineCutscene {
+	load_field_pic (6, 190, 98)
 	msgbox(CityClara_Church_EventScript_Sage1)
+	destroy_field_pic (6)
 	closemessage
 	return	
 }
@@ -88,6 +138,38 @@ movement CityClara_Church_Movement_PanCamera3A {
 movement CityClara_Church_Movement_PanCamera3B {
 	walk_slow_diag_southwest * 3
 	walk_slow_left * 3
+}
+
+movement CityClara_Church_Movement_PanCamera4A {
+	walk_slow_left * 3
+	walk_slow_diag_northwest
+	walk_slow_left * 2
+}
+
+movement CityClara_Church_Movement_PanCamera4B {
+	walk_slow_right * 2
+	walk_slow_diag_southeast
+	walk_slow_right * 3
+}
+
+movement CityClara_Church_Movement_PanCamera5A {
+	walk_slow_left * 4
+	walk_slow_diag_northwest * 2
+}
+
+movement CityClara_Church_Movement_PanCamera5B {
+	walk_slow_diag_southeast
+	walk_slow_right * 4
+}
+
+movement CityClara_Church_Movement_PanCamera6A {
+	walk_slow_left * 3
+	walk_slow_diag_northwest * 3
+}
+
+movement CityClara_Church_Movement_PanCamera6B {
+	walk_slow_diag_southeast * 3
+	walk_slow_right * 3
 }
 
 text CityClara_Church_EventScript_Sage1 {

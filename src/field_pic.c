@@ -44,17 +44,17 @@ static const u16 sPic3Pal[] = INCBIN_U16("graphics/object_events/palettes/grandm
 static const u32 sPic4Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blue_1_front_pic.4bpp.lz");
 static const u16 sPic4Pal[] = INCBIN_U16("graphics/trainers/palettes/blue.gbapal");
 
-//Leaf Battle
+//Leaf Battle = 4
 static const u32 sPic5Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leaf_front_pic.4bpp.lz");
 static const u16 sPic5Pal[] = INCBIN_U16("graphics/trainers/palettes/leaf.gbapal");
 
-//Leaf's Dad
+//Leaf's Dad = 5
 static const u32 sPic6Gfx[] = INCBIN_U32("graphics/trainers/front_pics/running_triathlete_m_front_pic.4bpp.lz");
 static const u16 sPic6Pal[] = INCBIN_U16("graphics/trainers/palettes/running_triathlete_m.gbapal");
 
-//Lorelei
-static const u32 sPic7Gfx[] = INCBIN_U32("graphics/trainers/front_pics/lorelei_front_pic.4bpp.lz");
-static const u16 sPic7Pal[] = INCBIN_U16("graphics/trainers/palettes/lorelei_front_pic.gbapal");
+//Sage = 6
+static const u32 sPic7Gfx[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_glacia_front_pic.4bpp.lz");
+static const u16 sPic7Pal[] = INCBIN_U16("graphics/trainers/palettes/elite_four_glacia.gbapal");
 
 /* And this is an example script.
 
