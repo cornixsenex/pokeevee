@@ -112,6 +112,7 @@
 #define TRAINER_PIC_RS_MAY                92
 #define TRAINER_PIC_BLUE                  93
 #define TRAINER_PIC_LORELEI               94
+#define TRAINER_PIC_BLAINE                95
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
@@ -355,6 +356,7 @@
 #define TRAINER_CLASS_RS_PROTAG      0x41
 #define TRAINER_CLASS_FUCKBOY		 0x42
 #define TRAINER_CLASS_PKMN_TEACHER   0x43
+#define TRAINER_CLASS_PKMN_SCIENTIST 0x44
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

@@ -825,19 +825,20 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_TylerAndGabe),
         .party = {.TrainerMon = sParty_TylerAndGabe},
     },
-
-    [TRAINER_LOLA_5] =
-    {
-        .trainerClass = TRAINER_CLASS_TUBER_F,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_F,
-        .trainerName = _("LOLA"),
-        .items = {},
-        .doubleBattle = FALSE,
+	
+	[TRAINER_BLAINE] =
+	{
+		.trainerClass = TRAINER_CLASS_PKMN_SCIENTIST,
+		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+		.trainerPic = TRAINER_PIC_BLAINE,
+		.trainerName = _("BLAINE"),
+		.items = {},
+		.doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Lola5),
-        .party = {.TrainerMon = sParty_Lola5},
-    },
+        .partySize = ARRAY_COUNT(sParty_Blaine),
+        .party = {.TrainerMon = sParty_Blaine},
+	},
+
 
     [TRAINER_RICKY_1] =
     {

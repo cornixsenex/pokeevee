@@ -843,6 +843,14 @@ static const struct TrainerMon sParty_Mrs_Sully[] = {
     }
 };
 
+static const struct TrainerMon sParty_Blaine[] = {
+    {
+    .iv = 0,
+    .lvl = 26,
+    .species = SPECIES_EEVEE,
+    }
+};
+
 static const struct TrainerMon sParty_Lola3[] = {
     {
     .iv = 20,

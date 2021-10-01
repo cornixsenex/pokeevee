@@ -56,6 +56,11 @@ static const u16 sPic6Pal[] = INCBIN_U16("graphics/trainers/palettes/running_tri
 static const u32 sPic7Gfx[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_glacia_front_pic.4bpp.lz");
 static const u16 sPic7Pal[] = INCBIN_U16("graphics/trainers/palettes/elite_four_glacia.gbapal");
 
+//Blaine = 7
+static const u32 sPic8Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blaine_front_pic.4bpp.lz");
+static const u16 sPic8Pal[] = INCBIN_U16("graphics/trainers/palettes/blaine.gbapal");
+
+
 /* And this is an example script.
 
 
@@ -88,8 +93,10 @@ static const struct Pic sPics[] =
     {sPic5Gfx, sPic5Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Leafs Dad Triathlete
     {sPic6Gfx, sPic6Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},	
-	//Lorelei...for some reason :(
+	//SAGE
     {sPic7Gfx, sPic7Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Blaine
+    {sPic8Gfx, sPic8Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

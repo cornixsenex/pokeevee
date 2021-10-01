@@ -106,8 +106,19 @@ CityClara_Church_EventScript_BlainTrigger6::
 
 CityClara_Church_EventScript_BlaineCutscene::
 	load_field_pic 6, 190, 98
-	msgbox CityClara_Church_EventScript_Sage1
+	msgbox CityClara_Church_Text_Sage1
+	closemessage
 	destroy_field_pic 6
+	load_field_pic 7, 190, 98
+	msgbox CityClara_Church_Text_Blaine1
+	closemessage
+	destroy_field_pic 7
+	return
+
+
+CityClara_Church_EventScript_BlaineTest::
+	trainerbattle_single TRAINER_BLAINE, CityClara_Church_Text_BlaineIntro, CityClara_Church_Text_BlaineLost
+	msgbox CityClara_Church_Text_BlainePost
 	closemessage
 	return
 
@@ -218,6 +229,18 @@ CityClara_Church_Movement_PanCamera6B:
 	walk_slow_right
 	step_end
 
-CityClara_Church_EventScript_Sage1::
+CityClara_Church_Text_Sage1::
 	.string "I beg of you, please, stop what you're\n"
 	.string "doing.$"
+
+CityClara_Church_Text_Blaine1::
+	.string "A final warning, get thee gone dumb girl.$"
+
+CityClara_Church_Text_BlaineIntro::
+	.string "Test 1$"
+
+CityClara_Church_Text_BlaineLost::
+	.string "Test 2$"
+
+CityClara_Church_Text_BlainePost::
+	.string "Test 3$"
