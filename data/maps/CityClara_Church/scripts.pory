@@ -1,8 +1,8 @@
 mapscripts CityClara_Church_MapScripts {}
 
 script CityClara_Church_EventScript_BlainTrigger1 {
-	lockall
-	setvar(VAR_CITYCLARA_STATE, 2)
+	lock
+	setvar(VAR_CITYCLARA_STATE, 1)
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera1A)
@@ -13,11 +13,11 @@ script CityClara_Church_EventScript_BlainTrigger1 {
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera1B)
 	waitmovement (0)
 	special (RemoveCameraObject)
-	releaseall
+	release
 	end
 }
 script CityClara_Church_EventScript_BlainTrigger2 {
-	lockall
+	lock
 	setvar(VAR_CITYCLARA_STATE, 2)
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
@@ -29,13 +29,13 @@ script CityClara_Church_EventScript_BlainTrigger2 {
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera2B)
 	waitmovement (0)
 	special (RemoveCameraObject)
-	releaseall
+	release
 	end
 }
 
 script CityClara_Church_EventScript_BlainTrigger3 {
-	lockall
-	setvar(VAR_CITYCLARA_STATE, 2)
+	lock
+	setvar(VAR_CITYCLARA_STATE, 3)
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera3A)
@@ -46,13 +46,13 @@ script CityClara_Church_EventScript_BlainTrigger3 {
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera3B)
 	waitmovement (0)
 	special (RemoveCameraObject)
-	releaseall
+	release
 	end
 }
 
 script CityClara_Church_EventScript_BlainTrigger4 {
-	lockall
-	setvar(VAR_CITYCLARA_STATE, 2)
+	lock
+	setvar(VAR_CITYCLARA_STATE, 4)
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4A)
@@ -63,12 +63,12 @@ script CityClara_Church_EventScript_BlainTrigger4 {
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4B)
 	waitmovement (0)
 	special (RemoveCameraObject)
-	releaseall
+	release
 	end
 }
 script CityClara_Church_EventScript_BlainTrigger5 {
-	lockall
-	setvar(VAR_CITYCLARA_STATE, 2)
+	lock
+	setvar(VAR_CITYCLARA_STATE, 5)
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5A)
@@ -79,13 +79,13 @@ script CityClara_Church_EventScript_BlainTrigger5 {
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5B)
 	waitmovement (0)
 	special (RemoveCameraObject)
-	releaseall
+	release
 	end
 }
 
 script CityClara_Church_EventScript_BlainTrigger6 {
-	lockall
-	setvar(VAR_CITYCLARA_STATE, 2)
+	lock
+	setvar(VAR_CITYCLARA_STATE, 6)
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6A)
@@ -96,7 +96,7 @@ script CityClara_Church_EventScript_BlainTrigger6 {
 	applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6B)
 	waitmovement (0)
 	special (RemoveCameraObject)
-	releaseall
+	release
 	end
 }
 
@@ -106,38 +106,104 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	closemessage
 	destroy_field_pic (6)
 	load_field_pic (7, 190, 98)
-
 	msgbox(CityClara_Church_Text_Blaine1)
 	closemessage
 	destroy_field_pic (7)
-
+	load_field_pic (6, 190, 98)
 	msgbox(CityClara_Church_Text_Sage2)
 	closemessage
 	destroy_field_pic (6)
-
+	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine2)
 	closemessage
 	destroy_field_pic (7)
+//Rockets move to grab her
 
+	applymovement(4, CityClara_Church_Movement_Rocket1SageGrab)
+	applymovement(5, CityClara_Church_Movement_Rocket2SageGrab)
+	waitmovement (0)
+	
+
+	load_field_pic (6, 190, 98)
 	msgbox(CityClara_Church_Text_Sage3)
 	closemessage
+	destroy_field_pic (6)
+//Rockets take her away
 
+	applymovement(4, CityClara_Church_Movement_Rocket1SageExit)
+	applymovement(5, CityClara_Church_Movement_Rocket2SageExit)
+	applymovement(2, CityClara_Church_Movement_SageExit)
+
+	waitmovement (0)
+	removeobject (5)
+	removeobject (2)
+	removeobject (4)
+
+	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine3)
 	closemessage
 	destroy_field_pic (7)
-
+//Blaine chases Mew
+	
+	applymovement (3, CityClara_Church_Movement_BlaineChase1)
+	waitmovement (0)
+	applymovement (1, CityClara_Church_Movement_MewChase1)
+	waitmovement (0)
+	applymovement (3, CityClara_Church_Movement_BlaineChase2)
+	waitmovement (0)
+	applymovement (1, CityClara_Church_Movement_MewChase2)
+	waitmovement (0)
+	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine4)
 	closemessage
 	destroy_field_pic (7)
+	applymovement (3, CityClara_Church_Movement_BlaineChase3)
+	waitmovement (0)
+	playmoncry (SPECIES_MEW, 0)
+	fadescreen (1)
+	waitmoncry
+	removeobject (1)
+	addobject (4)
+	addobject (5)
+	fadescreen (0)	
+	applymovement (3, CityClara_Church_Movement_BlaineChase4)
+	waitmovement (0)
 
+	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine5)
+
 	closemessage
 	destroy_field_pic (7)
 
+	applymovement (3, CityClara_Church_Movement_Blaine5)
+	waitmovement (0)
+
+	if (var(VAR_CITYCLARA_STATE) == 1 || var(VAR_CITYCLARA_STATE) == 2 || var(VAR_CITYCLARA_STATE) == 3) {
+		applymovement (3, CityClara_Church_Movement_FaceLeft)	
+		waitmovement (0)
+		applymovement (4, CityClara_Church_Movement_FaceLeft)
+		waitmovement (0)
+		applymovement (5, CityClara_Church_Movement_FaceLeft)
+		waitmovement (0)
+	} else {
+		applymovement (3, CityClara_Church_Movement_FaceRight)	
+		waitmovement (0)
+		applymovement (4, CityClara_Church_Movement_FaceRight)
+		waitmovement (0)
+		applymovement (5, CityClara_Church_Movement_FaceRight)
+		waitmovement(0)		
+	}
+	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine6)
 	closemessage
+	applymovement (3, CityClara_Church_Movement_FaceDown)
+	waitmovement (0)
+	msgbox (CityClara_Church_Text_Blaine7)
 	destroy_field_pic (7)
 
+	setflag(FLAG_CLARACITY_AFTERMEW)
+	setvar(VAR_CITYCLARA_STATE, 2)
+	return
 }
 
 script CityClara_Church_EventScript_BlaineTest{
@@ -210,6 +276,80 @@ movement CityClara_Church_Movement_PanCamera6B {
 	walk_slow_right * 3
 }
 
+movement CityClara_Church_Movement_Rocket1SageGrab {
+	walk_up * 3
+	face_right
+}
+
+movement CityClara_Church_Movement_Rocket2SageGrab {
+	walk_up * 3
+	face_left
+}
+
+movement CityClara_Church_Movement_Rocket1SageExit {
+	walk_down
+	walk_right * 3
+	walk_down * 5
+}
+
+movement CityClara_Church_Movement_Rocket2SageExit {
+	walk_down
+	walk_right
+	walk_down * 5
+}
+
+movement CityClara_Church_Movement_SageExit {
+	walk_down
+	walk_right * 2
+	walk_down * 5
+}
+
+movement CityClara_Church_Movement_BlaineChase1 {
+	walk_up * 3
+}
+
+movement CityClara_Church_Movement_MewChase1 {
+	walk_up
+	face_left
+	face_right
+	face_left
+}
+
+movement CityClara_Church_Movement_BlaineChase2 {
+	walk_left
+	walk_up * 2
+	face_right
+}
+	
+movement CityClara_Church_Movement_MewChase2 {
+	walk_slow_right
+	face_left
+}
+
+movement CityClara_Church_Movement_BlaineChase3 {
+	walk_right
+}
+
+movement CityClara_Church_Movement_BlaineChase4 {
+	walk_down
+}
+
+movement CityClara_Church_Movement_Blaine5 {
+	walk_down * 3
+}
+
+movement CityClara_Church_Movement_FaceLeft {
+	face_left
+}
+
+movement CityClara_Church_Movement_FaceRight {
+	face_right
+}
+
+movement CityClara_Church_Movement_FaceDown {
+	face_down
+}
+
 text CityClara_Church_Text_Sage1 {
 	format("I beg of you, please, stop what you're doing.")
 }
@@ -223,26 +363,36 @@ text CityClara_Church_Text_Sage2 {
 }
 
 text CityClara_Church_Text_Blaine2 {
-	format("I know exactly what I have achieved, with this new power we will not be stopped. If foolishly you will never submit to the authority of our party you and your people will vaish to dust
+	format("I know exactly what I have achieved, with this new power we will not be stopped. If foolishly you will never submit to the authority of our party you and your people will vaish to dust")
 }
 
 //Rockets move forward and grab her
 
 text CityClara_Church_Text_Sage3 {
-	format("Unhand me I am great Mew's supplicant! The foundations of this city were built on solid rock of our worship of Mew. One thousand years we cultivated art, sharing discoveries with even you, we must thank Mew for all our modern world. Your foolish pride is threatening to end this thousand years of joy which Mew exclusively made possible for us!")
+	format("Unhand me I am Mew's true suppliant! The foundations of this city were built on solid rock of our worship of Mew. One thousand years we cultivated art, sharing discoveries with even you, we must thank Mew for all our modern world. Your foolish pride is threatening to end this thousand years of joy which Mew exclusively made possible for us!")
 }
 
-CityClara_Church_Text_Blaine3 {
-	format("You speak of foolish pride most narrowly your sad devotion to this religion has not helped you amass a massive worth nor given you the clairvoyance to see your fated destruction. Social progress has overcome your myth. No simple spoken prayer will stop the launch of Rocket Party's sailing in the stars.
+text CityClara_Church_Text_Blaine3 {
+	format("You speak of foolish pride most narrowly your sad devotion to this religion has not helped you amass a massive worth nor given you the clairvoyance to see your fated destruction. Social progress has overcome your myth. No simple spoken prayer will stop the launch of Rocket Party's sailing in the stars.")
 }
 
+//Blaine approches mew, Mew walks back but has not where to vanish
+//Blaine goes left mew runs right
 
 text CityClara_Church_Text_Blaine4 {
-	format("I now will demonstrate our victory. The party truly has suprassed the gods.")
+	format("No where to run now Mew we have you trapped. I now will demonstrate our victory. The party truly has suprassed the gods.")
 }
 
 text CityClara_Church_Text_Blaine5 {
-	format("Today")
+	format("Today we defeated superstition and proudly declare this the age of man! Throwing a yoke on this defeated god shall empower us to design our fate. Under the leadership of us Rockets humanity will live to touch the stars, to take the place of Jove in Illion, and shake the universe as we see fit... Enough of this, we leave now for Gato.")
+}
+
+text CityClara_Church_Text_Blaine6 {
+	format("What's that? How did this rat mouse his way here? Who was watching the doors?")
+}
+
+text CityClara_Church_Text_Blaine7 {
+	format(" Jessie and James!")
 }
 
 
