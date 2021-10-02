@@ -171,16 +171,19 @@ CityClara_Church_EventScript_BlaineCutscene::
 	compare VAR_CITYCLARA_STATE, 1
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_2
 	compare VAR_CITYCLARA_STATE, 2
-	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_2
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_3
 	compare VAR_CITYCLARA_STATE, 3
-	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_2
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_4
+	compare VAR_CITYCLARA_STATE, 4
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_5
+	compare VAR_CITYCLARA_STATE, 5
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_6
+	compare VAR_CITYCLARA_STATE, 6
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_7
 	applymovement 3, CityClara_Church_Movement_FaceRight
-	waitmovement 0
-	applymovement 4, CityClara_Church_Movement_FaceRight
-	waitmovement 0
-	applymovement 5, CityClara_Church_Movement_FaceRight
-	waitmovement 0
+	msgbox CityClara_Church_Text_ERROR
 CityClara_Church_EventScript_BlaineCutscene_1:
+	waitmovement 0
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine6
 	closemessage
@@ -194,11 +197,38 @@ CityClara_Church_EventScript_BlaineCutscene_1:
 
 CityClara_Church_EventScript_BlaineCutscene_2:
 	applymovement 3, CityClara_Church_Movement_FaceLeft
-	waitmovement 0
-	applymovement 4, CityClara_Church_Movement_FaceLeft
-	waitmovement 0
-	applymovement 5, CityClara_Church_Movement_FaceLeft
-	waitmovement 0
+	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab1
+	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab1
+	goto CityClara_Church_EventScript_BlaineCutscene_1
+
+CityClara_Church_EventScript_BlaineCutscene_3:
+	applymovement 3, CityClara_Church_Movement_FaceLeft
+	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab2
+	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab2
+	goto CityClara_Church_EventScript_BlaineCutscene_1
+
+CityClara_Church_EventScript_BlaineCutscene_4:
+	applymovement 3, CityClara_Church_Movement_FaceLeft
+	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab3
+	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab3
+	goto CityClara_Church_EventScript_BlaineCutscene_1
+
+CityClara_Church_EventScript_BlaineCutscene_5:
+	applymovement 3, CityClara_Church_Movement_FaceRight
+	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab4
+	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab4
+	goto CityClara_Church_EventScript_BlaineCutscene_1
+
+CityClara_Church_EventScript_BlaineCutscene_6:
+	applymovement 3, CityClara_Church_Movement_FaceRight
+	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab5
+	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab5
+	goto CityClara_Church_EventScript_BlaineCutscene_1
+
+CityClara_Church_EventScript_BlaineCutscene_7:
+	applymovement 3, CityClara_Church_Movement_FaceRight
+	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab6
+	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab6
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 
@@ -255,8 +285,8 @@ CityClara_Church_Movement_PanCamera3A:
 	step_end
 
 CityClara_Church_Movement_PanCamera3B:
-	walk_slow_right
-	walk_slow_right
+	walk_slow_left
+	walk_slow_left
 	walk_slow_diag_southwest
 	walk_slow_left
 	walk_slow_left
@@ -415,6 +445,128 @@ CityClara_Church_Movement_FaceDown:
 	face_down
 	step_end
 
+CityClara_Church_Movement_Rocket1PlayerGrab1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_diag_northwest
+	walk_up
+	face_right
+	step_end
+
+CityClara_Church_Movement_Rocket1PlayerGrab2:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	walk_diag_northwest
+	face_right
+	step_end
+
+CityClara_Church_Movement_Rocket1PlayerGrab3:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	face_right
+	step_end
+
+CityClara_Church_Movement_Rocket1PlayerGrab4:
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	walk_diag_northeast
+	walk_diag_northeast
+	face_right
+	step_end
+
+CityClara_Church_Movement_Rocket1PlayerGrab5:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	walk_diag_northeast
+	face_right
+	step_end
+
+CityClara_Church_Movement_Rocket1PlayerGrab6:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	face_right
+	step_end
+
+CityClara_Church_Movement_Rocket2PlayerGrab1:
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	walk_diag_northwest
+	walk_diag_northwest
+	face_left
+	step_end
+
+CityClara_Church_Movement_Rocket2PlayerGrab2:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	walk_diag_northwest
+	face_left
+	step_end
+
+CityClara_Church_Movement_Rocket2PlayerGrab3:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	face_left
+	step_end
+
+CityClara_Church_Movement_Rocket2PlayerGrab4:
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	walk_diag_northeast
+	walk_diag_northeast
+	face_left
+	step_end
+
+CityClara_Church_Movement_Rocket2PlayerGrab5:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	walk_diag_northeast
+	face_left
+	step_end
+
+CityClara_Church_Movement_Rocket2PlayerGrab6:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	face_left
+	step_end
+
 CityClara_Church_Text_Sage1::
 	.string "I beg of you, please, stop what you're\n"
 	.string "doing.$"
@@ -488,3 +640,6 @@ CityClara_Church_Text_BlaineLost::
 
 CityClara_Church_Text_BlainePost::
 	.string "Test 3$"
+
+CityClara_Church_Text_ERROR::
+	.string "VAR CITYCLARA STATE OUT OF BOUNDS$"
