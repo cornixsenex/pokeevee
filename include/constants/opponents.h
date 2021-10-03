@@ -67,7 +67,7 @@
 #define TRAINER_EMILY                        61
 #define TRAINER_TYLER_AND_GABE               62
 #define TRAINER_BLAINE                       63
-#define TRAINER_RICKY_1                      64
+#define TRAINER_JESSE_AND_JAMES_1            64
 #define TRAINER_SIMON                        65
 #define TRAINER_CHARLIE                      66
 #define TRAINER_RICKY_2                      67

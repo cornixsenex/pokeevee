@@ -839,21 +839,21 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Blaine},
 	},
 
-
-    [TRAINER_RICKY_1] =
+    [TRAINER_JESSE_AND_JAMES_1] =
     {
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
-        .trainerName = _("RICKY"),
+        .trainerClass = TRAINER_CLASS_TWINS,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_TWINS,
+        .trainerName = _("JESSE&JAMES"),
         .items = {},
-        .doubleBattle = FALSE,
+        .doubleBattle = TRUE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Ricky1),
-        .party = {.TrainerMon = sParty_Ricky1},
+        .partySize = ARRAY_COUNT(sParty_JesseAndJames),
+        .party = {.TrainerMon = sParty_JesseAndJames},
     },
+	
 
-    [TRAINER_SIMON] =
+	[TRAINER_SIMON] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,

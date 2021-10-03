@@ -12,7 +12,7 @@ CityClara_Church_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 
 
 CityClara_Church_OnWarp_HideJesseAndJames::
-	setflag FLAG_CLARACITY_CHURCH_HIDEJESSIEJAMES
+	setflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
 	hideobjectat 8, MAP_CITY_CLARA_CHURCH
 	hideobjectat 9, MAP_CITY_CLARA_CHURCH
 	hideobjectat 10, MAP_CITY_CLARA_CHURCH
@@ -32,6 +32,7 @@ CityClara_Church_EventScript_BlainTrigger1::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera1B
 	waitmovement 0
 	special RemoveCameraObject
+	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
 	release
 	end
 
@@ -49,6 +50,7 @@ CityClara_Church_EventScript_BlainTrigger2::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera2B
 	waitmovement 0
 	special RemoveCameraObject
+	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
 	release
 	end
 
@@ -66,6 +68,7 @@ CityClara_Church_EventScript_BlainTrigger3::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera3B
 	waitmovement 0
 	special RemoveCameraObject
+	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
 	release
 	end
 
@@ -83,6 +86,7 @@ CityClara_Church_EventScript_BlainTrigger4::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4B
 	waitmovement 0
 	special RemoveCameraObject
+	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
 	release
 	end
 
@@ -100,6 +104,7 @@ CityClara_Church_EventScript_BlainTrigger5::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5B
 	waitmovement 0
 	special RemoveCameraObject
+	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
 	release
 	end
 
@@ -117,6 +122,7 @@ CityClara_Church_EventScript_BlainTrigger6::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6B
 	waitmovement 0
 	special RemoveCameraObject
+	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
 	release
 	end
 
@@ -210,12 +216,40 @@ CityClara_Church_EventScript_BlaineCutscene_1:
 	applymovement 3, CityClara_Church_Movement_FaceDown
 	waitmovement 0
 	msgbox CityClara_Church_Text_Blaine7
-	destroy_field_pic 7
-	clearflag FLAG_CLARACITY_CHURCH_HIDEJESSIEJAMES
+	clearflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
 	showobjectat 8, MAP_CITY_CLARA_CHURCH
 	showobjectat 9, MAP_CITY_CLARA_CHURCH
-	setflag FLAG_CLARACITY_AFTERMEW
-	setvar VAR_CITYCLARA_STATE, 2
+	applymovement 8, CityClara_Church_Movement_Rocket1Enter
+	applymovement 9, CityClara_Church_Movement_Rocket2Enter
+	waitmovement 0
+	closemessage
+	destroy_field_pic 7
+	msgbox CityClara_Church_Text_Meowth
+	showobjectat 10, MAP_CITY_CLARA_CHURCH
+	applymovement 10, CityClara_Church_Movement_MeowthEnter
+	waitmovement 0
+	load_field_pic 7, 190, 98
+	msgbox CityClara_Church_Text_Blaine8
+	closemessage
+	destroy_field_pic 7
+	applymovement 3, CityClara_Church_Movement_BlaineExit
+	applymovement 6, CityClara_Church_Movement_GruntLExit
+	applymovement 7, CityClara_Church_Movement_GruntRExit
+	compare VAR_CITYCLARA_STATE, 1
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_16
+	compare VAR_CITYCLARA_STATE, 2
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_17
+	compare VAR_CITYCLARA_STATE, 3
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_18
+	compare VAR_CITYCLARA_STATE, 4
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_19
+	compare VAR_CITYCLARA_STATE, 5
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_20
+	compare VAR_CITYCLARA_STATE, 6
+	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_21
+	msgbox CityClara_Church_Text_ERROR
+CityClara_Church_EventScript_BlaineCutscene_15:
+	waitmovement 0
 	return
 
 CityClara_Church_EventScript_BlaineCutscene_2:
@@ -253,6 +287,72 @@ CityClara_Church_EventScript_BlaineCutscene_7:
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab6
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab6
 	goto CityClara_Church_EventScript_BlaineCutscene_1
+
+CityClara_Church_EventScript_BlaineCutscene_16:
+	applymovement 4, CityClara_Church_Movement_Rocket1Exit1
+	applymovement 5, CityClara_Church_Movement_Rocket2Exit1
+	waitmovement 0
+	applymovement 8, CityClara_Church_Movement_JesseEngage1
+	applymovement 9, CityClara_Church_Movement_JamesEngage1
+	applymovement 10, CityClara_Church_Movement_MeowthEngage1
+	goto CityClara_Church_EventScript_BlaineCutscene_15
+
+CityClara_Church_EventScript_BlaineCutscene_17:
+	applymovement 4, CityClara_Church_Movement_Rocket1Exit2
+	applymovement 5, CityClara_Church_Movement_Rocket2Exit2
+	waitmovement 0
+	applymovement 8, CityClara_Church_Movement_JesseEngage1
+	applymovement 9, CityClara_Church_Movement_JamesEngage1
+	applymovement 10, CityClara_Church_Movement_MeowthEngage1
+	goto CityClara_Church_EventScript_BlaineCutscene_15
+
+CityClara_Church_EventScript_BlaineCutscene_18:
+	applymovement 4, CityClara_Church_Movement_Rocket1Exit3
+	applymovement 5, CityClara_Church_Movement_Rocket2Exit3
+	waitmovement 0
+	applymovement 8, CityClara_Church_Movement_JesseEngage3
+	applymovement 9, CityClara_Church_Movement_JamesEngage3
+	applymovement 10, CityClara_Church_Movement_JesseEngage3
+	goto CityClara_Church_EventScript_BlaineCutscene_15
+
+CityClara_Church_EventScript_BlaineCutscene_19:
+	applymovement 4, CityClara_Church_Movement_Rocket1Exit4
+	applymovement 5, CityClara_Church_Movement_Rocket2Exit4
+	waitmovement 0
+	applymovement 8, CityClara_Church_Movement_JesseEngage4
+	applymovement 9, CityClara_Church_Movement_JamesEngage4
+	applymovement 10, CityClara_Church_Movement_MeowthEngage4
+	goto CityClara_Church_EventScript_BlaineCutscene_15
+
+CityClara_Church_EventScript_BlaineCutscene_20:
+	applymovement 4, CityClara_Church_Movement_Rocket1Exit5
+	applymovement 5, CityClara_Church_Movement_Rocket2Exit5
+	waitmovement 0
+	applymovement 8, CityClara_Church_Movement_JesseEngage4
+	applymovement 9, CityClara_Church_Movement_JamesEngage4
+	applymovement 10, CityClara_Church_Movement_MeowthEngage4
+	goto CityClara_Church_EventScript_BlaineCutscene_15
+
+CityClara_Church_EventScript_BlaineCutscene_21:
+	applymovement 4, CityClara_Church_Movement_Rocket1Exit6
+	applymovement 5, CityClara_Church_Movement_Rocket2Exit6
+	waitmovement 0
+	applymovement 8, CityClara_Church_Movement_JesseEngage6
+	applymovement 9, CityClara_Church_Movement_JamesEngage6
+	applymovement 10, CityClara_Church_Movement_JamesEngage6
+	goto CityClara_Church_EventScript_BlaineCutscene_15
+
+
+CityClara_Church_EventScript_JesseAndJamesDefeated::
+	msgbox CityClara_Church_Text_JesseAndJamesPost
+	closemessage
+	fadescreen 1
+	setflag FLAG_CLARACITY_AFTERMEW
+	setflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
+	setvar VAR_CITYCLARA_STATE, 2
+	fadescreen 0
+	release
+	end
 
 
 CityClara_Church_EventScript_BlaineTest::
@@ -604,6 +704,221 @@ CityClara_Church_Movement_Rocket2PlayerGrab6:
 	face_left
 	step_end
 
+CityClara_Church_Movement_MeowthEnter:
+	walk_up
+	walk_diag_northeast
+	walk_diag_northeast
+	face_up
+	step_end
+
+CityClara_Church_Movement_BlaineExit:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_diag_southwest
+	walk_diag_southwest
+	face_down
+	step_end
+
+CityClara_Church_Movement_GruntLExit:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	step_end
+
+CityClara_Church_Movement_GruntRExit:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket1Exit1:
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_down
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket1Exit2:
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket1Exit3:
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	face_down
+	step_end
+
+CityClara_Church_Movement_Rocket1Exit4:
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket1Exit5:
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_down
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket1Exit6:
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket2Exit1:
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket2Exit2:
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_down
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket2Exit3:
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_diag_southeast
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket2Exit4:
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_down
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket2Exit5:
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_down
+	step_end
+
+CityClara_Church_Movement_Rocket2Exit6:
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	walk_diag_southwest
+	face_down
+	step_end
+
+CityClara_Church_Movement_JesseEngage1:
+	walk_left
+	walk_left
+	walk_diag_northwest
+	walk_diag_northwest
+	face_left
+	step_end
+
+CityClara_Church_Movement_JamesEngage1:
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	walk_diag_northwest
+	walk_diag_northwest
+	face_left
+	step_end
+
+CityClara_Church_Movement_MeowthEngage1:
+	walk_left
+	walk_diag_northwest
+	walk_diag_northwest
+	walk_diag_northwest
+	face_left
+	step_end
+
+CityClara_Church_Movement_JesseEngage3:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+CityClara_Church_Movement_JamesEngage3:
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	walk_left
+	walk_left
+	step_end
+
+CityClara_Church_Movement_JesseEngage4:
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	walk_diag_northeast
+	walk_diag_northeast
+	face_right
+	step_end
+
+CityClara_Church_Movement_JamesEngage4:
+	walk_right
+	walk_right
+	walk_diag_northeast
+	walk_diag_northeast
+	face_right
+	step_end
+
+CityClara_Church_Movement_MeowthEngage4:
+	walk_right
+	walk_diag_northeast
+	walk_diag_northeast
+	walk_diag_northeast
+	face_right
+	step_end
+
+CityClara_Church_Movement_JesseEngage6:
+	walk_right
+	walk_right
+	walk_right
+	walk_diag_northeast
+	walk_right
+	walk_right
+	step_end
+
+CityClara_Church_Movement_JamesEngage6:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 CityClara_Church_Text_Sage1::
 	.string "I beg of you, please, stop what you're\n"
 	.string "doing.$"
@@ -667,7 +982,28 @@ CityClara_Church_Text_Blaine6::
 	.string "way here? Who was watching the doors?$"
 
 CityClara_Church_Text_Blaine7::
-	.string "Jessie and James!$"
+	.string "Jesse and James!$"
+
+CityClara_Church_Text_Meowth::
+	.string "We're right here boss. And don't forget\n"
+	.string "Meowth!$"
+
+CityClara_Church_Text_Blaine8::
+	.string "You have both failed me look what you\n"
+	.string "let in! We must away, you two clean up\l"
+	.string "this mess. Rockets forward! March\l"
+	.string "onward to the stars!$"
+
+CityClara_Church_Text_JesseAndJamesIntro::
+	.string "Prepare for trouble. And make it double$"
+
+CityClara_Text_JesseAndJamesLost::
+	.string "I can't believe it! How did this twerp\n"
+	.string "win?$"
+
+CityClara_Church_Text_JesseAndJamesPost::
+	.string "Looks like Team Rocket's blasting off\n"
+	.string "again!$"
 
 CityClara_Church_Text_BlaineIntro::
 	.string "Test 1$"
