@@ -67,7 +67,7 @@
 #define FLAG_CLARACITY_AFTERMEW   0x36 // Hides Scott in the club, and the line outside the church
 #define FLAG_RECEIVED_CUT    0x37 // Have gotten cut from Mrs. Sully?
 
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES    0x38 // Hides Jessee and James in ClaraCity Church
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag

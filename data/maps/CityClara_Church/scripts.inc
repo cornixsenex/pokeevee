@@ -1,5 +1,22 @@
 CityClara_Church_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CityClara_Church_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
+
+CityClara_Church_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_CITYCLARA_STATE, 0, CityClara_Church_OnWarp_HideJesseAndJames
+	map_script_2 VAR_CITYCLARA_STATE, 1, CityClara_Church_OnWarp_HideJesseAndJames
+	map_script_2 VAR_CITYCLARA_STATE, 2, CityClara_Church_OnWarp_HideJesseAndJames
+	map_script_2 VAR_CITYCLARA_STATE, 3, CityClara_Church_OnWarp_HideJesseAndJames
+	map_script_2 VAR_CITYCLARA_STATE, 4, CityClara_Church_OnWarp_HideJesseAndJames
+	.2byte 0
+
+
+CityClara_Church_OnWarp_HideJesseAndJames::
+	setflag FLAG_CLARACITY_CHURCH_HIDEJESSIEJAMES
+	hideobjectat 8, MAP_CITY_CLARA_CHURCH
+	hideobjectat 9, MAP_CITY_CLARA_CHURCH
+	hideobjectat 10, MAP_CITY_CLARA_CHURCH
+	end
 
 
 CityClara_Church_EventScript_BlainTrigger1::
@@ -132,9 +149,10 @@ CityClara_Church_EventScript_BlaineCutscene::
 	applymovement 5, CityClara_Church_Movement_Rocket2SageExit
 	applymovement 2, CityClara_Church_Movement_SageExit
 	waitmovement 0
-	removeobject 5
+	hideobjectat 5, MAP_CITY_CLARA_CHURCH
+	setobjectxy 4, 18, 23
 	removeobject 2
-	removeobject 4
+	hideobjectat 4, MAP_CITY_CLARA_CHURCH
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine3
 	closemessage
@@ -157,10 +175,12 @@ CityClara_Church_EventScript_BlaineCutscene::
 	fadescreen 1
 	waitmoncry
 	removeobject 1
-	addobject 4
-	addobject 5
+	showobjectat 4, MAP_CITY_CLARA_CHURCH
+	showobjectat 5, MAP_CITY_CLARA_CHURCH
 	fadescreen 0
 	applymovement 3, CityClara_Church_Movement_BlaineChase4
+	applymovement 4, CityClara_Church_Movement_Rocket1Enter
+	applymovement 5, CityClara_Church_Movement_Rocket2Enter
 	waitmovement 0
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine5
@@ -191,6 +211,9 @@ CityClara_Church_EventScript_BlaineCutscene_1:
 	waitmovement 0
 	msgbox CityClara_Church_Text_Blaine7
 	destroy_field_pic 7
+	clearflag FLAG_CLARACITY_CHURCH_HIDEJESSIEJAMES
+	showobjectat 8, MAP_CITY_CLARA_CHURCH
+	showobjectat 9, MAP_CITY_CLARA_CHURCH
 	setflag FLAG_CLARACITY_AFTERMEW
 	setvar VAR_CITYCLARA_STATE, 2
 	return
@@ -443,6 +466,20 @@ CityClara_Church_Movement_FaceRight:
 
 CityClara_Church_Movement_FaceDown:
 	face_down
+	step_end
+
+CityClara_Church_Movement_Rocket1Enter:
+	walk_up
+	walk_up
+	walk_diag_northeast
+	face_up
+	step_end
+
+CityClara_Church_Movement_Rocket2Enter:
+	walk_up
+	walk_up
+	walk_diag_northwest
+	face_up
 	step_end
 
 CityClara_Church_Movement_Rocket1PlayerGrab1:
