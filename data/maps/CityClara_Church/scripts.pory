@@ -380,7 +380,6 @@ script CityClara_Church_EventScript_JesseAndJamesDefeated {
 	msgbox(CityClara_Church_Text_JesseAndJamesPost)
 	closemessage
 	fadescreen (1)
-
 	removeobject (8) 
 	removeobject (9) 
 	removeobject (10) 

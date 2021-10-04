@@ -113,6 +113,7 @@
 #define TRAINER_PIC_BLUE                  93
 #define TRAINER_PIC_LORELEI               94
 #define TRAINER_PIC_BLAINE                95
+#define TRAINER_PIC_JESSEANDJAMES         96
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
