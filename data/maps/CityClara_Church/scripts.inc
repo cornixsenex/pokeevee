@@ -215,6 +215,8 @@ CityClara_Church_EventScript_BlaineCutscene::
 	closemessage
 	applymovement 3, CityClara_Church_Movement_Blaine5
 	waitmovement 0
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
 	compare VAR_CITYCLARA_STATE, 1
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_2
 	compare VAR_CITYCLARA_STATE, 2
@@ -278,42 +280,36 @@ CityClara_Church_EventScript_BlaineCutscene_15:
 
 CityClara_Church_EventScript_BlaineCutscene_2:
 	applymovement 3, CityClara_Church_Movement_FaceLeft
-	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab1
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab1
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_3:
 	applymovement 3, CityClara_Church_Movement_FaceLeft
-	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab2
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab2
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_4:
 	applymovement 3, CityClara_Church_Movement_FaceLeft
-	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab3
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab3
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_5:
 	applymovement 3, CityClara_Church_Movement_FaceRight
-	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab4
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab4
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_6:
 	applymovement 3, CityClara_Church_Movement_FaceRight
-	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab5
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab5
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_7:
 	applymovement 3, CityClara_Church_Movement_FaceRight
-	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab6
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab6
 	goto CityClara_Church_EventScript_BlaineCutscene_1
