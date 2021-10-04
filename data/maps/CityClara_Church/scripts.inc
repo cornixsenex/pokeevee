@@ -128,6 +128,9 @@ CityClara_Church_EventScript_BlainTrigger6::
 
 
 CityClara_Church_EventScript_BlaineCutscene::
+	hideobjectat 8, MAP_CITY_CLARA_CHURCH
+	hideobjectat 9, MAP_CITY_CLARA_CHURCH
+	hideobjectat 10, MAP_CITY_CLARA_CHURCH
 	load_field_pic 6, 190, 98
 	msgbox CityClara_Church_Text_Sage1
 	closemessage
@@ -216,15 +219,18 @@ CityClara_Church_EventScript_BlaineCutscene_1:
 	applymovement 3, CityClara_Church_Movement_FaceDown
 	waitmovement 0
 	msgbox CityClara_Church_Text_Blaine7
+	closemessage
+	destroy_field_pic 7
 	clearflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
+	addobject 8
+	addobject 9
 	showobjectat 8, MAP_CITY_CLARA_CHURCH
 	showobjectat 9, MAP_CITY_CLARA_CHURCH
 	applymovement 8, CityClara_Church_Movement_Rocket1Enter
 	applymovement 9, CityClara_Church_Movement_Rocket2Enter
 	waitmovement 0
-	closemessage
-	destroy_field_pic 7
 	msgbox CityClara_Church_Text_Meowth
+	addobject 10
 	showobjectat 10, MAP_CITY_CLARA_CHURCH
 	applymovement 10, CityClara_Church_Movement_MeowthEnter
 	waitmovement 0
@@ -254,36 +260,42 @@ CityClara_Church_EventScript_BlaineCutscene_15:
 
 CityClara_Church_EventScript_BlaineCutscene_2:
 	applymovement 3, CityClara_Church_Movement_FaceLeft
+	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab1
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab1
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_3:
 	applymovement 3, CityClara_Church_Movement_FaceLeft
+	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab2
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab2
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_4:
 	applymovement 3, CityClara_Church_Movement_FaceLeft
+	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab3
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab3
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_5:
 	applymovement 3, CityClara_Church_Movement_FaceRight
+	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab4
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab4
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_6:
 	applymovement 3, CityClara_Church_Movement_FaceRight
+	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab5
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab5
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_7:
 	applymovement 3, CityClara_Church_Movement_FaceRight
+	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab6
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab6
 	goto CityClara_Church_EventScript_BlaineCutscene_1
@@ -347,6 +359,14 @@ CityClara_Church_EventScript_JesseAndJamesDefeated::
 	msgbox CityClara_Church_Text_JesseAndJamesPost
 	closemessage
 	fadescreen 1
+	removeobject 3
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 7
+	removeobject 8
+	removeobject 9
+	removeobject 10
 	setflag FLAG_CLARACITY_AFTERMEW
 	setflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
 	setvar VAR_CITYCLARA_STATE, 2
