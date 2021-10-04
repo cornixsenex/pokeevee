@@ -32,7 +32,10 @@ CityClara_Church_EventScript_BlainTrigger1::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera1B
 	waitmovement 0
 	special RemoveCameraObject
-	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
+	msgbox CityClara_Church_Text_JesseAndJamesIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
+	call CityClara_Church_EventScript_JesseAndJamesDefeated
 	release
 	end
 
@@ -50,7 +53,10 @@ CityClara_Church_EventScript_BlainTrigger2::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera2B
 	waitmovement 0
 	special RemoveCameraObject
-	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
+	msgbox CityClara_Church_Text_JesseAndJamesIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
+	call CityClara_Church_EventScript_JesseAndJamesDefeated
 	release
 	end
 
@@ -68,7 +74,10 @@ CityClara_Church_EventScript_BlainTrigger3::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera3B
 	waitmovement 0
 	special RemoveCameraObject
-	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
+	msgbox CityClara_Church_Text_JesseAndJamesIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
+	call CityClara_Church_EventScript_JesseAndJamesDefeated
 	release
 	end
 
@@ -86,7 +95,10 @@ CityClara_Church_EventScript_BlainTrigger4::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4B
 	waitmovement 0
 	special RemoveCameraObject
-	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
+	msgbox CityClara_Church_Text_JesseAndJamesIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
+	call CityClara_Church_EventScript_JesseAndJamesDefeated
 	release
 	end
 
@@ -104,7 +116,10 @@ CityClara_Church_EventScript_BlainTrigger5::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5B
 	waitmovement 0
 	special RemoveCameraObject
-	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
+	msgbox CityClara_Church_Text_JesseAndJamesIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
+	call CityClara_Church_EventScript_JesseAndJamesDefeated
 	release
 	end
 
@@ -122,7 +137,10 @@ CityClara_Church_EventScript_BlainTrigger6::
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6B
 	waitmovement 0
 	special RemoveCameraObject
-	trainerbattle_double TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_EventScript_JesseAndJamesDefeated, NO_MUSIC
+	msgbox CityClara_Church_Text_JesseAndJamesIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
+	call CityClara_Church_EventScript_JesseAndJamesDefeated
 	release
 	end
 
@@ -133,27 +151,27 @@ CityClara_Church_EventScript_BlaineCutscene::
 	hideobjectat 10, MAP_CITY_CLARA_CHURCH
 	load_field_pic 6, 190, 98
 	msgbox CityClara_Church_Text_Sage1
-	closemessage
 	destroy_field_pic 6
+	closemessage
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine1
-	closemessage
 	destroy_field_pic 7
+	closemessage
 	load_field_pic 6, 190, 98
 	msgbox CityClara_Church_Text_Sage2
-	closemessage
 	destroy_field_pic 6
+	closemessage
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine2
-	closemessage
 	destroy_field_pic 7
+	closemessage
 	applymovement 4, CityClara_Church_Movement_Rocket1SageGrab
 	applymovement 5, CityClara_Church_Movement_Rocket2SageGrab
 	waitmovement 0
 	load_field_pic 6, 190, 98
 	msgbox CityClara_Church_Text_Sage3
-	closemessage
 	destroy_field_pic 6
+	closemessage
 	applymovement 4, CityClara_Church_Movement_Rocket1SageExit
 	applymovement 5, CityClara_Church_Movement_Rocket2SageExit
 	applymovement 2, CityClara_Church_Movement_SageExit
@@ -164,8 +182,8 @@ CityClara_Church_EventScript_BlaineCutscene::
 	hideobjectat 4, MAP_CITY_CLARA_CHURCH
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine3
-	closemessage
 	destroy_field_pic 7
+	closemessage
 	applymovement 3, CityClara_Church_Movement_BlaineChase1
 	waitmovement 0
 	applymovement 1, CityClara_Church_Movement_MewChase1
@@ -176,8 +194,8 @@ CityClara_Church_EventScript_BlaineCutscene::
 	waitmovement 0
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine4
-	closemessage
 	destroy_field_pic 7
+	closemessage
 	applymovement 3, CityClara_Church_Movement_BlaineChase3
 	waitmovement 0
 	playmoncry SPECIES_MEW, 0
@@ -193,8 +211,8 @@ CityClara_Church_EventScript_BlaineCutscene::
 	waitmovement 0
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine5
-	closemessage
 	destroy_field_pic 7
+	closemessage
 	applymovement 3, CityClara_Church_Movement_Blaine5
 	waitmovement 0
 	compare VAR_CITYCLARA_STATE, 1
@@ -219,8 +237,8 @@ CityClara_Church_EventScript_BlaineCutscene_1:
 	applymovement 3, CityClara_Church_Movement_FaceDown
 	waitmovement 0
 	msgbox CityClara_Church_Text_Blaine7
-	closemessage
 	destroy_field_pic 7
+	closemessage
 	clearflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
 	addobject 8
 	addobject 9
@@ -236,8 +254,8 @@ CityClara_Church_EventScript_BlaineCutscene_1:
 	waitmovement 0
 	load_field_pic 7, 190, 98
 	msgbox CityClara_Church_Text_Blaine8
-	closemessage
 	destroy_field_pic 7
+	closemessage
 	applymovement 3, CityClara_Church_Movement_BlaineExit
 	applymovement 6, CityClara_Church_Movement_GruntLExit
 	applymovement 7, CityClara_Church_Movement_GruntRExit
@@ -304,6 +322,11 @@ CityClara_Church_EventScript_BlaineCutscene_16:
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit1
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit1
 	waitmovement 0
+	removeobject 3
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 7
 	applymovement 8, CityClara_Church_Movement_JesseEngage1
 	applymovement 9, CityClara_Church_Movement_JamesEngage1
 	applymovement 10, CityClara_Church_Movement_MeowthEngage1
@@ -313,6 +336,11 @@ CityClara_Church_EventScript_BlaineCutscene_17:
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit2
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit2
 	waitmovement 0
+	removeobject 3
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 7
 	applymovement 8, CityClara_Church_Movement_JesseEngage1
 	applymovement 9, CityClara_Church_Movement_JamesEngage1
 	applymovement 10, CityClara_Church_Movement_MeowthEngage1
@@ -322,6 +350,11 @@ CityClara_Church_EventScript_BlaineCutscene_18:
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit3
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit3
 	waitmovement 0
+	removeobject 3
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 7
 	applymovement 8, CityClara_Church_Movement_JesseEngage3
 	applymovement 9, CityClara_Church_Movement_JamesEngage3
 	applymovement 10, CityClara_Church_Movement_JesseEngage3
@@ -331,6 +364,11 @@ CityClara_Church_EventScript_BlaineCutscene_19:
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit4
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit4
 	waitmovement 0
+	removeobject 3
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 7
 	applymovement 8, CityClara_Church_Movement_JesseEngage4
 	applymovement 9, CityClara_Church_Movement_JamesEngage4
 	applymovement 10, CityClara_Church_Movement_MeowthEngage4
@@ -340,6 +378,11 @@ CityClara_Church_EventScript_BlaineCutscene_20:
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit5
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit5
 	waitmovement 0
+	removeobject 3
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 7
 	applymovement 8, CityClara_Church_Movement_JesseEngage4
 	applymovement 9, CityClara_Church_Movement_JamesEngage4
 	applymovement 10, CityClara_Church_Movement_MeowthEngage4
@@ -349,6 +392,11 @@ CityClara_Church_EventScript_BlaineCutscene_21:
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit6
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit6
 	waitmovement 0
+	removeobject 3
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 7
 	applymovement 8, CityClara_Church_Movement_JesseEngage6
 	applymovement 9, CityClara_Church_Movement_JamesEngage6
 	applymovement 10, CityClara_Church_Movement_JamesEngage6
@@ -359,11 +407,6 @@ CityClara_Church_EventScript_JesseAndJamesDefeated::
 	msgbox CityClara_Church_Text_JesseAndJamesPost
 	closemessage
 	fadescreen 1
-	removeobject 3
-	removeobject 4
-	removeobject 5
-	removeobject 6
-	removeobject 7
 	removeobject 8
 	removeobject 9
 	removeobject 10
@@ -732,13 +775,13 @@ CityClara_Church_Movement_MeowthEnter:
 	step_end
 
 CityClara_Church_Movement_BlaineExit:
+	walk_right
+	walk_right
 	walk_down
 	walk_down
 	walk_down
 	walk_down
-	walk_diag_southwest
-	walk_diag_southwest
-	face_down
+	walk_down
 	step_end
 
 CityClara_Church_Movement_GruntLExit:
