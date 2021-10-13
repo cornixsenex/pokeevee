@@ -12,7 +12,7 @@ static void AnimSimplePaletteBlend_Step(struct Sprite *);
 static void AnimComplexPaletteBlend(struct Sprite *);
 static void AnimComplexPaletteBlend_Step1(struct Sprite *);
 static void AnimComplexPaletteBlend_Step2(struct Sprite *);
-static void AnimUnused_81159B4(struct Sprite *);
+static void AnimCirclingSparkle(struct Sprite *);
 static void AnimShakeMonOrBattleTerrain(struct Sprite *);
 static void AnimShakeMonOrBattleTerrain_Step(struct Sprite *);
 static void AnimShakeMonOrBattleTerrain_UpdateCoordOffsetEnabled(void);
@@ -144,7 +144,7 @@ const struct SpriteTemplate gPowerSwapGuardSwapSpriteTemplate =
     .callback = AnimMovePowerSwapGuardSwap
 };
 
-static const union AnimCmd sAnim_Unused_085972A4[] =
+static const union AnimCmd sAnim_CirclingSparkle[] =
 {
     ANIMCMD_FRAME(0, 3),
     ANIMCMD_FRAME(16, 3),
@@ -154,21 +154,21 @@ static const union AnimCmd sAnim_Unused_085972A4[] =
     ANIMCMD_JUMP(0),
 };
 
-static const union AnimCmd *const sAnims_Unused_085972BC[] =
+static const union AnimCmd *const sAnims_CirclingSparkle[] =
 {
-    sAnim_Unused_085972A4,
+    sAnim_CirclingSparkle,
 };
 
 // Unused
-const struct SpriteTemplate gUnusedSpriteTemplate_085972C0 =
+static const struct SpriteTemplate sCirclingSparkleSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SPARKLE_4,
     .paletteTag = ANIM_TAG_SPARKLE_4,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = sAnims_Unused_085972BC,
+    .anims = sAnims_CirclingSparkle,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimUnused_81159B4,
+    .callback = AnimCirclingSparkle,
 };
 
 const struct SpriteTemplate gShakeMonOrTerrainSpriteTemplate =
@@ -346,8 +346,8 @@ static void AnimMovePowerSwapGuardSwap(struct Sprite* sprite)
 // arg 4: duration
 static void AnimConfusionDuck(struct Sprite *sprite)
 {
-    sprite->pos1.x += gBattleAnimArgs[0];
-    sprite->pos1.y += gBattleAnimArgs[1];
+    sprite->x += gBattleAnimArgs[0];
+    sprite->y += gBattleAnimArgs[1];
     sprite->data[0] = gBattleAnimArgs[2];
     if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
     {
@@ -368,8 +368,8 @@ static void AnimConfusionDuck(struct Sprite *sprite)
 
 static void AnimConfusionDuck_Step(struct Sprite *sprite)
 {
-    sprite->pos2.x = Cos(sprite->data[0], 30);
-    sprite->pos2.y = Sin(sprite->data[0], 10);
+    sprite->x2 = Cos(sprite->data[0], 30);
+    sprite->y2 = Sin(sprite->data[0], 10);
 
     if ((u16)sprite->data[0] < 128)
         sprite->oam.priority = 1;
@@ -483,10 +483,10 @@ static void AnimComplexPaletteBlend_Step2(struct Sprite *sprite)
     }
 }
 
-static void AnimUnused_81159B4(struct Sprite *sprite)
+static void AnimCirclingSparkle(struct Sprite *sprite)
 {
-    sprite->pos1.x += gBattleAnimArgs[0];
-    sprite->pos1.y += gBattleAnimArgs[1];
+    sprite->x += gBattleAnimArgs[0];
+    sprite->y += gBattleAnimArgs[1];
     sprite->data[0] = 0;
     sprite->data[1] = 10;
     sprite->data[2] = 8;
@@ -1054,8 +1054,8 @@ void AnimHitSplatRandom(struct Sprite *sprite)
         return;
     StartSpriteAffineAnim(sprite, gBattleAnimArgs[1]);
 
-    sprite->pos2.x += (Random2() % 48) - 24;
-    sprite->pos2.y += (Random2() % 24) - 12;
+    sprite->x2 += (Random2() % 48) - 24;
+    sprite->y2 += (Random2() % 24) - 12;
 
     StoreSpriteCallbackInData6(sprite, DestroySpriteAndMatrix);
     sprite->callback = RunStoredCallbackWhenAffineAnimEnds;
@@ -1064,10 +1064,10 @@ void AnimHitSplatRandom(struct Sprite *sprite)
 void AnimHitSplatOnMonEdge(struct Sprite *sprite)
 {
     sprite->data[0] = GetAnimBattlerSpriteId(gBattleAnimArgs[0]);
-    sprite->pos1.x = gSprites[sprite->data[0]].pos1.x + gSprites[sprite->data[0]].pos2.x;
-    sprite->pos1.y = gSprites[sprite->data[0]].pos1.y + gSprites[sprite->data[0]].pos2.y;
-    sprite->pos2.x = gBattleAnimArgs[1];
-    sprite->pos2.y = gBattleAnimArgs[2];
+    sprite->x = gSprites[sprite->data[0]].x + gSprites[sprite->data[0]].x2;
+    sprite->y = gSprites[sprite->data[0]].y + gSprites[sprite->data[0]].y2;
+    sprite->x2 = gBattleAnimArgs[1];
+    sprite->y2 = gBattleAnimArgs[2];
     StartSpriteAffineAnim(sprite, gBattleAnimArgs[3]);
     StoreSpriteCallbackInData6(sprite, DestroySpriteAndMatrix);
     sprite->callback = RunStoredCallbackWhenAffineAnimEnds;

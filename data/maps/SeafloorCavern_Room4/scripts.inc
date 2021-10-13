@@ -1,3 +1,3 @@
-SeafloorCavern_Room4_MapScripts:: @ 8234C9B
+SeafloorCavern_Room4_MapScripts::
 	.byte 0
 

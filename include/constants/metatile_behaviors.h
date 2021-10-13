@@ -244,4 +244,6 @@
 #define MB_ROCK_CLIMB 0xEF
 
 
+#define MB_INVALID   0xFF
+
 #endif // GUARD_METATILE_BEHAVIORS_H

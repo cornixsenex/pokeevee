@@ -1,13 +1,12 @@
-SeafloorCavern_Room3_MapScripts:: @ 8234937
+SeafloorCavern_Room3_MapScripts::
 	.byte 0
 
-
-SeafloorCavern_Room3_EventScript_Grunt5:: @ 823494F
+SeafloorCavern_Room3_EventScript_Grunt5::
 	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_5, SeafloorCavern_Room3_Text_Grunt5Intro, SeafloorCavern_Room3_Text_Grunt5Defeat
 	msgbox SeafloorCavern_Room3_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-SeafloorCavern_Room3_Text_Grunt5Intro: @ 8234B3A
+SeafloorCavern_Room3_Text_Grunt5Intro:
 	.string "For our dream to become real, we need\n"
 	.string "the power of POKéMON.\p"
 	.string "But meddlers like you use the power of\n"
@@ -16,10 +15,10 @@ SeafloorCavern_Room3_Text_Grunt5Intro: @ 8234B3A
 	.string "Life just doesn't work the way we\n"
 	.string "need it to!$"
 
-SeafloorCavern_Room3_Text_Grunt5Defeat: @ 8234BFE
+SeafloorCavern_Room3_Text_Grunt5Defeat:
 	.string "Gwah!$"
 
-SeafloorCavern_Room3_Text_Grunt5PostBattle: @ 8234C04
+SeafloorCavern_Room3_Text_Grunt5PostBattle:
 	.string "You know, we don't dare question\n"
 	.string "the motives of our leader.\p"
 	.string "But here you are, just some punk,\n"

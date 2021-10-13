@@ -274,6 +274,8 @@ CityClara_Church_EventScript_BlaineCutscene_1:
 	compare VAR_CITYCLARA_STATE, 6
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_21
 	msgbox CityClara_Church_Text_ERROR
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 CityClara_Church_EventScript_BlaineCutscene_15:
 	waitmovement 0
 	return
@@ -925,6 +927,7 @@ CityClara_Church_Movement_JesseEngage3:
 	walk_left
 	walk_left
 	walk_left
+	face_left
 	step_end
 
 CityClara_Church_Movement_JamesEngage3:
@@ -934,6 +937,7 @@ CityClara_Church_Movement_JamesEngage3:
 	walk_diag_northwest
 	walk_left
 	walk_left
+	face_left
 	step_end
 
 CityClara_Church_Movement_JesseEngage4:
@@ -969,6 +973,7 @@ CityClara_Church_Movement_JesseEngage6:
 	walk_diag_northeast
 	walk_right
 	walk_right
+	face_right
 	step_end
 
 CityClara_Church_Movement_JamesEngage6:
@@ -976,6 +981,7 @@ CityClara_Church_Movement_JamesEngage6:
 	walk_right
 	walk_right
 	walk_right
+	face_right
 	step_end
 
 CityClara_Church_Text_Sage1::

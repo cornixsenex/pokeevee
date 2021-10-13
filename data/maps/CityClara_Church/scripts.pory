@@ -327,7 +327,6 @@ script CityClara_Church_EventScript_BlaineCutscene {
 		applymovement (8, CityClara_Church_Movement_JesseEngage3)
 		applymovement (9, CityClara_Church_Movement_JamesEngage3)
 		applymovement (10, CityClara_Church_Movement_JesseEngage3)
-
 	} elif (var(VAR_CITYCLARA_STATE) == 4) {
 		applymovement (4, CityClara_Church_Movement_Rocket1Exit4)
 		applymovement (5, CityClara_Church_Movement_Rocket2Exit4)
@@ -340,7 +339,6 @@ script CityClara_Church_EventScript_BlaineCutscene {
 		applymovement (8, CityClara_Church_Movement_JesseEngage4)
 		applymovement (9, CityClara_Church_Movement_JamesEngage4)
 		applymovement (10, CityClara_Church_Movement_MeowthEngage4)
-
 	} elif (var(VAR_CITYCLARA_STATE) == 5) {
 		applymovement (4, CityClara_Church_Movement_Rocket1Exit5)
 		applymovement (5, CityClara_Church_Movement_Rocket2Exit5)
@@ -353,7 +351,6 @@ script CityClara_Church_EventScript_BlaineCutscene {
 		applymovement (8, CityClara_Church_Movement_JesseEngage4)
 		applymovement (9, CityClara_Church_Movement_JamesEngage4)
 		applymovement (10, CityClara_Church_Movement_MeowthEngage4)
-
 	} elif (var(VAR_CITYCLARA_STATE) == 6) {
 		applymovement (4, CityClara_Church_Movement_Rocket1Exit6)
 		applymovement (5, CityClara_Church_Movement_Rocket2Exit6)
@@ -368,6 +365,8 @@ script CityClara_Church_EventScript_BlaineCutscene {
 		applymovement (10, CityClara_Church_Movement_JamesEngage6)
 	} else {
 		msgbox(CityClara_Church_Text_ERROR)
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	}	
 	waitmovement (0)	
 	return
@@ -721,12 +720,14 @@ movement CityClara_Church_Movement_MeowthEngage1 {
 
 movement CityClara_Church_Movement_JesseEngage3 {
 	walk_left * 4
+	face_left
 }
 
 movement CityClara_Church_Movement_JamesEngage3 {
 	walk_left * 3
 	walk_diag_northwest
 	walk_left * 2
+	face_left
 }
 
 movement CityClara_Church_Movement_JesseEngage4 {
@@ -750,10 +751,12 @@ movement CityClara_Church_Movement_JesseEngage6 {
 	walk_right * 3
 	walk_diag_northeast
 	walk_right * 2
+	face_right
 }
 
 movement CityClara_Church_Movement_JamesEngage6 {
 	walk_right * 4
+	face_right
 }	
 
 text CityClara_Church_Text_Sage1 {
