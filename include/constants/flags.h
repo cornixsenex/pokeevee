@@ -68,9 +68,9 @@
 #define FLAG_RECEIVED_CUT    0x37 // Have gotten cut from Mrs. Sully?
 
 #define FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES    0x38 // Hides Jessee and James in ClaraCity Church
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_CLARACITY_CHURCH_HIDELEAF    0x39 // Hides leaf for her intro
+#define FLAG_CLARACITY_CHURCH_HIDEDAD     0x3A // Hides Dad and Sage for intro
+#define FLAG_CLARACITY_CHURCH_HIDESAGE    0x3B // Hides Sage and the church people
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag

@@ -658,6 +658,13 @@ const u8 gText_Satisfied[] = _("Satisfied");
 const u8 gText_Dissatisfied[] = _("Dissatisfied");
 const u8 gText_DeepSeaTooth[] = _("DEEPSEATOOTH");
 const u8 gText_DeepSeaScale[] = _("DEEPSEASCALE");
+
+
+const u8 gText_StoneChooseFire[] = _("FIRE STONE");
+const u8 gText_StoneChooseWater[] = _("WATER STONE");
+const u8 gText_StoneChooseThunder[] = _("THUNDER STONE");
+const u8 gText_StoneChooseNone[] = _("NONE STONE");
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE"); 
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");

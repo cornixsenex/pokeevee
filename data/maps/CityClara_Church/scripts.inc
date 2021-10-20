@@ -3,19 +3,35 @@ CityClara_Church_MapScripts::
 	.byte 0
 
 CityClara_Church_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-	map_script_2 VAR_CITYCLARA_STATE, 0, CityClara_Church_OnWarp_HideJesseAndJames
-	map_script_2 VAR_CITYCLARA_STATE, 1, CityClara_Church_OnWarp_HideJesseAndJames
-	map_script_2 VAR_CITYCLARA_STATE, 2, CityClara_Church_OnWarp_HideJesseAndJames
-	map_script_2 VAR_CITYCLARA_STATE, 3, CityClara_Church_OnWarp_HideJesseAndJames
-	map_script_2 VAR_CITYCLARA_STATE, 4, CityClara_Church_OnWarp_HideJesseAndJames
+	map_script_2 VAR_CITYCLARA_STATE, 0, CityClara_Church_OnWarp_HidePreChurchCutscene
+	map_script_2 VAR_CITYCLARA_STATE, 1, CityClara_Church_OnWarp_HidePreChurchCutscene
+	map_script_2 VAR_CITYCLARA_STATE, 2, CityClara_Church_OnWarp_HidePreChurchCutscene
+	map_script_2 VAR_CITYCLARA_STATE, 3, CityClara_Church_OnWarp_HidePreChurchCutscene
+	map_script_2 VAR_CITYCLARA_STATE, 4, CityClara_Church_OnWarp_HidePreChurchCutscene
+	map_script_2 VAR_CITYCLARA_STATE, 10, CicyClara_Church_OnWarp_ShowAfterChurchCutscene
 	.2byte 0
 
 
-CityClara_Church_OnWarp_HideJesseAndJames::
+CityClara_Church_OnWarp_HidePreChurchCutscene::
 	setflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
-	hideobjectat 8, MAP_CITY_CLARA_CHURCH
-	hideobjectat 9, MAP_CITY_CLARA_CHURCH
-	hideobjectat 10, MAP_CITY_CLARA_CHURCH
+	setflag FLAG_CLARACITY_CHURCH_HIDELEAF
+	setflag FLAG_CLARACITY_CHURCH_HIDEDAD
+	removeobject 8
+	removeobject 9
+	removeobject 10
+	removeobject 11
+	removeobject 12
+	removeobject 13
+	end
+
+
+CicyClara_Church_OnWarp_ShowAfterChurchCutscene::
+	removeobject 11
+	removeobject 12
+	setobjectxyperm 13, 20, 15
+	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_DOWN
+	addobject 13
+	showobjectat 12, MAP_CITY_CLARA_CHURCH
 	end
 
 
@@ -146,9 +162,6 @@ CityClara_Church_EventScript_BlainTrigger6::
 
 
 CityClara_Church_EventScript_BlaineCutscene::
-	hideobjectat 8, MAP_CITY_CLARA_CHURCH
-	hideobjectat 9, MAP_CITY_CLARA_CHURCH
-	hideobjectat 10, MAP_CITY_CLARA_CHURCH
 	load_field_pic 6, 190, 98
 	msgbox CityClara_Church_Text_Sage1
 	destroy_field_pic 6
@@ -172,6 +185,10 @@ CityClara_Church_EventScript_BlaineCutscene::
 	msgbox CityClara_Church_Text_Sage3
 	destroy_field_pic 6
 	closemessage
+	load_field_pic 7, 190, 98
+	msgbox CityClara_Church_Text_Blaine3
+	destroy_field_pic 7
+	closemessage
 	applymovement 4, CityClara_Church_Movement_Rocket1SageExit
 	applymovement 5, CityClara_Church_Movement_Rocket2SageExit
 	applymovement 2, CityClara_Church_Movement_SageExit
@@ -180,10 +197,6 @@ CityClara_Church_EventScript_BlaineCutscene::
 	setobjectxy 4, 18, 23
 	removeobject 2
 	hideobjectat 4, MAP_CITY_CLARA_CHURCH
-	load_field_pic 7, 190, 98
-	msgbox CityClara_Church_Text_Blaine3
-	destroy_field_pic 7
-	closemessage
 	applymovement 3, CityClara_Church_Movement_BlaineChase1
 	waitmovement 0
 	applymovement 1, CityClara_Church_Movement_MewChase1
@@ -410,9 +423,232 @@ CityClara_Church_EventScript_JesseAndJamesDefeated::
 	removeobject 10
 	setflag FLAG_CLARACITY_AFTERMEW
 	setflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
-	setvar VAR_CITYCLARA_STATE, 2
 	fadescreen 0
-	release
+	compare VAR_CITYCLARA_STATE, 1
+	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_2
+	compare VAR_CITYCLARA_STATE, 2
+	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_3
+	compare VAR_CITYCLARA_STATE, 4
+	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_4
+	compare VAR_CITYCLARA_STATE, 5
+	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_5
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	msgbox CityClara_Church_Text_ERROR
+CityClara_Church_EventScript_JesseAndJamesDefeated_1:
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	clearflag FLAG_CLARACITY_CHURCH_HIDELEAF
+	addobject 11
+	showobjectat 11, MAP_CITY_CLARA_CHURCH
+	applymovement 11, CityClara_Church_Movement_LeafEnter
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER Common_Movement_FaceLeft
+	waitmovement 0
+	load_field_pic 4, 190, 98
+	msgbox CityClara_Church_Text_Leaf1
+	closemessage
+	destroy_field_pic 4
+	applymovement 11, Common_Movement_FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement 11, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	clearflag FLAG_CLARACITY_CHURCH_HIDEDAD
+	addobject 12
+	showobjectat 12, MAP_CITY_CLARA_CHURCH
+	addobject 13
+	showobjectat 13, MAP_CITY_CLARA_CHURCH
+	applymovement 12, CityClara_Church_Movement_DadEnter
+	applymovement 13, CityClara_Church_Movement_DadEnter
+	waitmovement 0
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad1
+	closemessage
+	destroy_field_pic 5
+	load_field_pic 4, 190, 98
+	msgbox CityClara_Church_Text_Leaf2
+	closemessage
+	destroy_field_pic 4
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad2
+	closemessage
+	destroy_field_pic 5
+	load_field_pic 6, 190, 98
+	msgbox CityClara_Church_Text_Sage4
+	closemessage
+	destroy_field_pic 6
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad3
+	closemessage
+	destroy_field_pic 5
+	load_field_pic 6, 190, 98
+	msgbox CityClara_Church_Text_Sage5
+	closemessage
+	destroy_field_pic 6
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad4
+	closemessage
+	destroy_field_pic 5
+	load_field_pic 6, 190, 98
+	msgbox CityClara_Church_Text_Sage6
+	closemessage
+	destroy_field_pic 6
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad5
+	closemessage
+	destroy_field_pic 5
+	applymovement 12, Common_Movement_ExclamationMark
+	waitmovement 0
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad6
+	closemessage
+	destroy_field_pic 5
+	load_field_pic 6, 190, 98
+	msgbox CityClara_Church_Text_Sage7
+	closemessage
+	destroy_field_pic 6
+	call CityClara_Church_EventScript_ChooseStone
+	load_field_pic 6, 190, 98
+	msgbox CityClara_Church_Text_Sage8
+	closemessage
+	destroy_field_pic 6
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad7
+	closemessage
+	destroy_field_pic 5
+	load_field_pic 4, 190, 98
+	msgbox CityClara_Church_Text_Leaf3
+	closemessage
+	destroy_field_pic 4
+	load_field_pic 5, 190, 98
+	msgbox CityClara_Church_Text_Dad8
+	closemessage
+	destroy_field_pic 5
+	applymovement 12, CityClara_Church_Movement_DadExit
+	waitmovement 0
+	removeobject 12
+	load_field_pic 4, 190, 98
+	msgbox CityClara_Church_Text_Leaf4
+	closemessage
+	destroy_field_pic 4
+	applymovement 11, CityClara_Church_Movement_LeafExit
+	waitmovement 0
+	removeobject 11
+	applymovement 13, CityClara_Church_Movement_SageCenter
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	load_field_pic 6, 190, 98
+	msgbox CityClara_Church_Text_Sage9
+	closemessage
+	destroy_field_pic 6
+	setflag FLAG_CLARACITY_CHURCH_HIDELEAF
+	setvar VAR_CITYCLARA_STATE, 10
+	return
+
+CityClara_Church_EventScript_JesseAndJamesDefeated_2:
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter1
+	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
+
+CityClara_Church_EventScript_JesseAndJamesDefeated_3:
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter2
+	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
+
+CityClara_Church_EventScript_JesseAndJamesDefeated_4:
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter4
+	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
+
+CityClara_Church_EventScript_JesseAndJamesDefeated_5:
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter5
+	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
+
+
+CityClara_Church_EventScript_ChooseStone::
+	multichoice 0, 0, MULTI_CITYCLARA_CHURCH_STONE, TRUE
+	switch VAR_RESULT
+	case 0, CityClara_Church_EventScript_ChooseStone_3
+	case 1, CityClara_Church_EventScript_ChooseStone_4
+	case 2, CityClara_Church_EventScript_ChooseStone_5
+	case 3, CityClara_Church_EventScript_ChooseStone_6
+CityClara_Church_EventScript_ChooseStone_1:
+	return
+
+CityClara_Church_EventScript_ChooseStone_3:
+	call CityClara_Church_EventScript_GiveFireStone
+	goto CityClara_Church_EventScript_ChooseStone_1
+
+CityClara_Church_EventScript_ChooseStone_4:
+	call CityClara_Church_EventScript_GiveWaterStone
+	goto CityClara_Church_EventScript_ChooseStone_1
+
+CityClara_Church_EventScript_ChooseStone_5:
+	call CityClara_Church_EventScript_GiveThunderStone
+	goto CityClara_Church_EventScript_ChooseStone_1
+
+CityClara_Church_EventScript_ChooseStone_6:
+	call CityClara_Church_EventScript_GiveNoneStone
+	goto CityClara_Church_EventScript_ChooseStone_1
+
+
+CityClara_Church_EventScript_GiveFireStone::
+	msgbox CityClara_Church_Text_GiveFireStone, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CityClara_Church_EventScript_GiveFireStone_2
+	call CityClara_Church_EventScript_ChooseStone
+CityClara_Church_EventScript_GiveFireStone_1:
+	return
+
+CityClara_Church_EventScript_GiveFireStone_2:
+	giveitem ITEM_FIRE_STONE
+	msgbox CityClara_Church_Text_TakeStone
+	goto CityClara_Church_EventScript_GiveFireStone_1
+
+
+CityClara_Church_EventScript_GiveWaterStone::
+	msgbox CityClara_Church_Text_GiveWaterStone, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CityClara_Church_EventScript_GiveWaterStone_2
+	call CityClara_Church_EventScript_ChooseStone
+CityClara_Church_EventScript_GiveWaterStone_1:
+	return
+
+CityClara_Church_EventScript_GiveWaterStone_2:
+	giveitem ITEM_WATER_STONE
+	msgbox CityClara_Church_Text_TakeStone
+	goto CityClara_Church_EventScript_GiveWaterStone_1
+
+
+CityClara_Church_EventScript_GiveThunderStone::
+	msgbox CityClara_Church_Text_GiveThunderStone, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CityClara_Church_EventScript_GiveThunderStone_2
+	call CityClara_Church_EventScript_ChooseStone
+CityClara_Church_EventScript_GiveThunderStone_1:
+	return
+
+CityClara_Church_EventScript_GiveThunderStone_2:
+	giveitem ITEM_THUNDER_STONE
+	msgbox CityClara_Church_Text_TakeStone
+	goto CityClara_Church_EventScript_GiveThunderStone_1
+
+
+CityClara_Church_EventScript_GiveNoneStone::
+	msgbox CityClara_Church_Text_GiveNoneStone, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CityClara_Church_EventScript_GiveNoneStone_1
+	call CityClara_Church_EventScript_ChooseStone
+	return
+
+CityClara_Church_EventScript_GiveNoneStone_1:
+	msgbox CityClara_Church_Text_DenyStone
+	return
+
+
+CityClara_Church_EventScript_Sage::
+	faceplayer
+	msgbox CityClara_Church_Text_SageAfterMew
+	closemessage
 	end
 
 
@@ -984,6 +1220,91 @@ CityClara_Church_Movement_JamesEngage6:
 	face_right
 	step_end
 
+CityClara_Church_Movement_PlayerCenter1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+CityClara_Church_Movement_PlayerCenter2:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+CityClara_Church_Movement_PlayerCenter4:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+CityClara_Church_Movement_PlayerCenter5:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+CityClara_Church_Movement_LeafEnter:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+CityClara_Church_Movement_DadEnter:
+	walk_up
+	walk_diag_northwest
+	walk_diag_northwest
+	walk_diag_northwest
+	face_up
+	step_end
+
+CityClara_Church_Movement_DadExit:
+	walk_down
+	walk_down
+	walk_diag_southwest
+	walk_down
+	step_end
+
+CityClara_Church_Movement_LeafExit:
+	walk_down
+	walk_down
+	walk_down
+	walk_diag_southwest
+	walk_down
+	step_end
+
+CityClara_Church_Movement_SageCenter:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	face_down
+	step_end
+
 CityClara_Church_Text_Sage1::
 	.string "I beg of you, please, stop what you're\n"
 	.string "doing.$"
@@ -1023,7 +1344,8 @@ CityClara_Church_Text_Blaine3::
 	.string "destruction. Social progress has\l"
 	.string "overcome your myth. No simple spoken\l"
 	.string "prayer will stop the launch of Rocket\l"
-	.string "Party's sailing in the stars.$"
+	.string "Party's sailing in the stars. Now\l"
+	.string "faithful Rocket grunts, take her away!$"
 
 CityClara_Church_Text_Blaine4::
 	.string "No where to run now Mew we have you\n"
@@ -1078,6 +1400,173 @@ CityClara_Church_Text_BlaineLost::
 
 CityClara_Church_Text_BlainePost::
 	.string "Test 3$"
+
+CityClara_Church_Text_Leaf1::
+	.string "Hey {PLAYER}! C'mon! Why didn't you\n"
+	.string "wait up? And where is everyone!? And\l"
+	.string "hey! Where's MEW?$"
+
+CityClara_Church_Text_Dad1::
+	.string "Thank Mew you're both alright! The\n"
+	.string "Rockets have...$"
+
+CityClara_Church_Text_Leaf2::
+	.string "What's going on? Where's Mew? And who is\n"
+	.string "this?$"
+
+CityClara_Church_Text_Dad2::
+	.string "If you'd calm down we'd properly explain$"
+
+CityClara_Church_Text_Sage4::
+	.string "My name is Lamina, I serve the church\n"
+	.string "where for one thousand years we've\l"
+	.string "worshipped Mew. Today that wicked man\l"
+	.string "of pure evil has somehow found a way to\l"
+	.string "enslave Mew. After the Rockets\l"
+	.string "outlawed religion we feared every day\l"
+	.string "would be our last but knew our faith in\l"
+	.string "Mew would kept us safe. Until today\l"
+	.string "they had left us alone and we truly\l"
+	.string "believed Mew had appeared to prove\l"
+	.string "once and for all our church was safe...$"
+
+CityClara_Church_Text_Dad3::
+	.string "But can't you see they just used you as\n"
+	.string "bait? This sanctuary was allowed to\l"
+	.string "stand so that Mew would be lured back\l"
+	.string "to appear! As soon as party men had\l"
+	.string "heard the news, they journeyed here to\l"
+	.string "execute their plan. They wanted to\l"
+	.string "capture Mew for something.$"
+
+CityClara_Church_Text_Sage5::
+	.string "I would never imagine what they'll do\n"
+	.string "but now I fear the worst. They might\l"
+	.string "exploit somehow the powerful nature of\l"
+	.string "Mew and with that power work wicked\l"
+	.string "evil. They must be stopped at any and\l"
+	.string "all cost...$"
+
+CityClara_Church_Text_Dad4::
+	.string "The party is extremely powerful, and I\n"
+	.string "should know I faught them in the war. I\l"
+	.string "watched so many of our best men die,\l"
+	.string "those of us still alive were forced to\l"
+	.string "hide, and powerlessly watch their\l"
+	.string "takeover. We'll never win now that\l"
+	.string "they've captured Mew.$"
+
+CityClara_Church_Text_Sage6::
+	.string "Do not speak of defeat, good shall\n"
+	.string "prevail. The party now has grown too\l"
+	.string "arrogant, there are forces at work\l"
+	.string "beyond ourselves, and this supurbly\l"
+	.string "bold youngster shall help.$"
+
+CityClara_Church_Text_Dad5::
+	.string "Of course! How could I not notice\n"
+	.string "before? This kid, this {PLAYER} will\l"
+	.string "defeat the party! But {PLAYER}\l"
+	.string "cannot defeat them all alone, we need\l"
+	.string "allies when all the world's afraid to\l"
+	.string "fight for that which is worth fighting\l"
+	.string "for.$"
+
+CityClara_Church_Text_Dad6::
+	.string "I think I know someone who just might\n"
+	.string "help. You should {PLAYER} travel\l"
+	.string "north to the desert and there seek out\l"
+	.string "the university. It stands in the\l"
+	.string "ancient city, Ardor. There you will meet\l"
+	.string "my old friend from the war, Indiana is\l"
+	.string "in hiding disguised as an archaeology\l"
+	.string "professor. If there still stands a man\l"
+	.string "with will to fight it will be him. Tell him\l"
+	.string "the time has come.$"
+
+CityClara_Church_Text_Sage7::
+	.string "This journey will be long, and ardous. I\n"
+	.string "wish to help you on your fated quest.\l"
+	.string "Please take one of our ancient holy\l"
+	.string "stones. These jewels have been kept\l"
+	.string "safe within this church one thousand\l"
+	.string "years we've saved them for this task.\l"
+	.string "Now {PLAYER} you must choose wisely\l"
+	.string "which to take.$"
+
+CityClara_Church_Text_Sage8::
+	.string "The fate of all the world now rests with\n"
+	.string "you, go forth young {PLAYER} and\l"
+	.string "know you have our faith.$"
+
+CityClara_Church_Text_Dad7::
+	.string "That's right {PLAYER} you know I\n"
+	.string "believe in you. So Leaf what say you we\l"
+	.string "be on our way back to the club in order\l"
+	.string "to protect in case any Rockets should\l"
+	.string "come around?$"
+
+CityClara_Church_Text_Leaf3::
+	.string "I'm sorry father, I cannot obey. I'm\n"
+	.string "going to Ardor along with {PLAYER}.\l"
+	.string "Someone needs to make sure that he\l"
+	.string "stays safe, and we can have some fun\l"
+	.string "along the way!$"
+
+CityClara_Church_Text_Dad8::
+	.string "That's fine with me, you know I love you\n"
+	.string "Leaf. If anyone needs me, go to the\l"
+	.string "club.$"
+
+CityClara_Church_Text_Leaf4::
+	.string "Let's do it {PLAYER} we'll have\n"
+	.string "eachother's backs! I think we should\l"
+	.string "start by taking Route 4. I'll meet you\l"
+	.string "somewhere up in Robustus.$"
+
+CityClara_Church_Text_Sage9::
+	.string "Good luck {PLAYER} and may you soon\n"
+	.string "rescue Mew.$"
+
+CityClara_Church_Text_GiveFireStone::
+	.string "This Fire Stone will give you great\n"
+	.string "power. Be cautious that you don't allow\l"
+	.string "your strength to overcome your wits,\l"
+	.string "or to enrage you while you battle. You\l"
+	.string "must remain calm. Is this the stone\l"
+	.string "you're sure you wish to hold?$"
+
+CityClara_Church_Text_GiveWaterStone::
+	.string "This Water Stone will help you on your\n"
+	.string "quest. Across the open seas, and under\l"
+	.string "hills, this stone will safeguard you on\l"
+	.string "your journey. Is this the stone you're\l"
+	.string "sure you want from me?$"
+
+CityClara_Church_Text_GiveThunderStone::
+	.string "This Thunder Stone shall bring you\n"
+	.string "victory. Neither reckless, nor too\l"
+	.string "cautionary, you must remain to harness\l"
+	.string "thunderbolts. Are you prepared to hold\l"
+	.string "the Thunder Stone?$"
+
+CityClara_Church_Text_GiveNoneStone::
+	.string "You are most noble for your age young\n"
+	.string "{PLAYER}. The stone could have given\l"
+	.string "you great power but if you don't want\l"
+	.string "it, I'll keep them safe. Are you certain\l"
+	.string "that you will take no stone?$"
+
+CityClara_Church_Text_TakeStone::
+	.string "May Mew allow this stone to give you\n"
+	.string "strength!$"
+
+CityClara_Church_Text_DenyStone::
+	.string "I wish you luck, but offer no more help.$"
+
+CityClara_Church_Text_SageAfterMew::
+	.string "Be on your way {PLAYER} you must\n"
+	.string "rescue Mew.$"
 
 CityClara_Church_Text_ERROR::
 	.string "VAR CITYCLARA STATE OUT OF BOUNDS$"
