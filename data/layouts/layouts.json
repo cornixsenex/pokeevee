@@ -4575,7 +4575,7 @@
       "id": "LAYOUT_ROUTE4",
       "name": "Route4_Layout",
       "width": 26,
-      "height": 60,
+      "height": 80,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route4/border.bin",
