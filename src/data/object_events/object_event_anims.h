@@ -1143,8 +1143,7 @@ static const union AffineAnimCmd *const sAffineAnimTable_KyogreGroudon[] = {
     sAffineAnim_KyogreGroudon_DipEast,      // Unused
 };
 
-//Pokemon species overworlds
-
+//Pokemon overworlds
 static const union AnimCmd sAnim_Pokemon_FaceSouth[] =
 {
     ANIMCMD_FRAME(0, 16),
@@ -1313,6 +1312,7 @@ static const union AnimCmd sAnim_Pokemon_GoFastestEast[] =
     ANIMCMD_JUMP(0),
 };
 
+//Pokemon overworlds
 static const union AnimCmd *const sAnimTable_PokemonSpecies[] = {
     sAnim_Pokemon_FaceSouth,
     sAnim_Pokemon_FaceNorth,
@@ -1336,6 +1336,7 @@ static const union AnimCmd *const sAnimTable_PokemonSpecies[] = {
     sAnim_Pokemon_GoFastestEast,
 };
 
+// For animations with alternating steps
 static const struct StepAnimTable sStepAnimTables[] = {
     {
         .anims = sAnimTable_QuintyPlump,
@@ -1365,13 +1366,9 @@ static const struct StepAnimTable sStepAnimTables[] = {
         .anims = sAnimTable_Fishing,
         .animPos = {1, 3, 0, 2},
     },
-	{
+    {
         .anims = sAnimTable_PokemonSpecies,
         .animPos = {1, 3, 0, 2},
     },
-    {
-        NULL,
-        {0, 0, 0, 0},
-    },
-
+    {},
 };
