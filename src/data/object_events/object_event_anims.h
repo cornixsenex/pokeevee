@@ -1143,7 +1143,7 @@ static const union AffineAnimCmd *const sAffineAnimTable_KyogreGroudon[] = {
     sAffineAnim_KyogreGroudon_DipEast,      // Unused
 };
 
-//Pokemon overworlds
+//Pokemon species overworlds
 static const union AnimCmd sAnim_Pokemon_FaceSouth[] =
 {
     ANIMCMD_FRAME(0, 16),
@@ -1372,3 +1372,4 @@ static const struct StepAnimTable sStepAnimTables[] = {
     },
     {},
 };
+

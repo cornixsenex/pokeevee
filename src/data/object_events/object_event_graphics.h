@@ -2973,6 +2973,3 @@ const u32 gObjectEventPic_Pokemon_Species_904[] = INCBIN_U32("graphics/object_ev
 const u16 gObjectEventPalette_Pokemon_Species_904[] = INCBIN_U16("graphics/object_events/pics/pokemon/species/904.gbapal");
 
 
-
-
-

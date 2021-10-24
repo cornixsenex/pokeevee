@@ -154,12 +154,10 @@ void StartWeather(void)
 {
     if (!FuncIsActiveTask(Task_WeatherMain))
     {
-        //u8 index = AllocSpritePalette(TAG_WEATHER_START);
-		u8 index = 15;
+        u8 index = 15;
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[0x100 + index * 16], 32);
         BuildGammaShiftTables();
         gWeatherPtr->altGammaSpritePalIndex = index;
-        gWeatherPtr->weatherPicSpritePalIndex = AllocSpritePalette(PALTAG_WEATHER_2);
         gWeatherPtr->rainSpriteCount = 0;
         gWeatherPtr->curRainSpriteIndex = 0;
         gWeatherPtr->cloudSpritesCreated = 0;

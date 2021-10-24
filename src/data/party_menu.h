@@ -685,6 +685,8 @@ enum
     MENU_ITEM,
     MENU_GIVE,
     MENU_TAKE_ITEM,
+    MENU_FOLLOW, // pokemon_overworld_follower
+    MENU_UNFOLLOW,
     MENU_MAIL,
     MENU_TAKE_MAIL,
     MENU_READ,
@@ -723,6 +725,10 @@ enum
 // What a weird choice of table termination;
 #define FIELD_MOVE_TERMINATOR MOVE_SWORDS_DANCE
 
+// pokemon_overworld_follower
+static const u8 gText_SummaryPkmFollow[] = _("FOLLOW");
+static const u8 gText_SummaryPkmUnfollow[] = _("UNFOLLOW");
+
 struct
 {
     const u8 *text;
@@ -735,6 +741,8 @@ struct
     [MENU_ITEM] = {gText_Item, CursorCb_Item},
     [MENU_GIVE] = {gMenuText_Give, CursorCb_Give},
     [MENU_TAKE_ITEM] = {gText_Take, CursorCb_TakeItem},
+    [MENU_FOLLOW] = {gText_SummaryPkmFollow, CursorCb_PkmFollow}, // pokemon_overworld_follower
+    [MENU_UNFOLLOW] = {gText_SummaryPkmUnfollow, CursorCb_PkmUnfollow},
     [MENU_MAIL] = {gText_Mail, CursorCb_Mail},
     [MENU_TAKE_MAIL] = {gText_Take2, CursorCb_TakeMail},
     [MENU_READ] = {gText_Read2, CursorCb_Read},

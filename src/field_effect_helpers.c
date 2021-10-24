@@ -32,11 +32,11 @@ static void SpriteCB_UnderwaterSurfBlob(struct Sprite *);
 static u32 ShowDisguiseFieldEffect(u8, u8);
 
 void LoadObjectEventPalette(u16);
+static void LoadFieldEffectPalette_(u8 fieldEffect, bool8 updateGammaType);
 
 void LoadSpecialReflectionPalette(struct Sprite *sprite);
 
 extern u16 gReflectionPaletteBuffer[];
-
 
 // Used by several field effects to determine which of a group it is
 #define sFldEff    data[1]
@@ -75,24 +75,24 @@ static s16 GetReflectionVerticalOffset(struct ObjectEvent *objectEvent)
 
 #define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION 0x1102
 
-void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+static void LoadObjectReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *reflectionSprite)
 {
     u8 bridgeType;
     u16 bridgeReflectionVerticalOffsets[] = { 12, 28, 44 };
-    sprite->data[2] = 0;
+    reflectionSprite->sReflectionVerticalOffset = 0;
     if (!GetObjectEventGraphicsInfo(objectEvent->graphicsId)->disableReflectionPaletteLoad && ((bridgeType = MetatileBehavior_GetBridgeType(objectEvent->previousMetatileBehavior)) || (bridgeType = MetatileBehavior_GetBridgeType(objectEvent->currentMetatileBehavior))))
     {
         // When walking on a bridge high above water (Route 120), the reflection is a solid dark blue color.
         // This is so the sprite blends in with the dark water metatile underneath the bridge.
-        sprite->data[2] = bridgeReflectionVerticalOffsets[bridgeType - 1];
+        reflectionSprite->sReflectionVerticalOffset = bridgeReflectionVerticalOffsets[bridgeType - 1];
         LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION);
-        sprite->oam.paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION);
-        UpdatePaletteGammaType(sprite->oam.paletteNum, GAMMA_NORMAL);
-        UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
+        reflectionSprite->oam.paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION);
+        UpdatePaletteGammaType(reflectionSprite->oam.paletteNum, GAMMA_NORMAL);
+        UpdateSpritePaletteWithWeather(reflectionSprite->oam.paletteNum);
     }
     else
     {
-        LoadSpecialReflectionPalette(sprite);
+        LoadSpecialReflectionPalette(reflectionSprite);
     }
 }
 
@@ -164,8 +164,7 @@ u8 CreateWarpArrowSprite(void)
 {
     u8 spriteId;
     struct Sprite *sprite;
-
-    LoadFieldEffectPalette(FLDEFFOBJ_ARROW);
+    LoadFieldEffectPalette_(FLDEFFOBJ_ARROW, FALSE);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_ARROW], 0, 0, 0x52);
     if (spriteId != MAX_SPRITES)
     {
@@ -224,7 +223,7 @@ u32 FldEff_Shadow(void)
 
     objectEventId = GetObjectEventIdByLocalIdAndMap(gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
     graphicsInfo = GetObjectEventGraphicsInfo(gObjectEvents[objectEventId].graphicsId);
-    LoadFieldEffectPalette(sShadowEffectTemplateIds[graphicsInfo->shadowSize]);
+    LoadFieldEffectPalette_(sShadowEffectTemplateIds[graphicsInfo->shadowSize], FALSE);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[sShadowEffectTemplateIds[graphicsInfo->shadowSize]], 0, 0, 0x94);
     if (spriteId != MAX_SPRITES)
     {
@@ -1694,7 +1693,7 @@ static void UpdateGrassFieldEffectSubpriority(struct Sprite *sprite, u8 z, u8 of
     }
 }
 
-void LoadFieldEffectPalette(u8 fieldEffect)
+static void LoadFieldEffectPalette_(u8 fieldEffect, bool8 updateGammaType)
 {
     const struct SpriteTemplate *spriteTemplate;
 
@@ -1702,8 +1701,14 @@ void LoadFieldEffectPalette(u8 fieldEffect)
     if (spriteTemplate->paletteTag != 0xffff)
     {
         LoadObjectEventPalette(spriteTemplate->paletteTag);
-        UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate->paletteTag), GAMMA_NORMAL);
+        if (updateGammaType)
+            UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate->paletteTag), GAMMA_NORMAL);
     }
+}
+
+void LoadFieldEffectPalette(u8 fieldEffect)
+{
+    LoadFieldEffectPalette_(fieldEffect, TRUE);
 }
 
 // Unused, duplicates of data in event_object_movement.c

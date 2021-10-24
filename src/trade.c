@@ -51,6 +51,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/union_room.h"
+#include "pokemon_overworld_follower.h"
 
 // The following tags are offsets from GFXTAG_MENU_TEXT
 // They're looped over in CB2_CreateTradeMenu and CB2_ReturnToTradeMenu
@@ -365,6 +366,8 @@ static void InitTradeMenu(void)
         sTradeMenuData->partnerLinkFlagStatus = 0;
         sTradeMenuData->timer = 0;
     }
+    if (POF_PlayerHasFollower()) // pokemon_overworld_follower
+        POF_DestroyFollower();
 }
 
 void CB2_StartCreateTradeMenu(void)

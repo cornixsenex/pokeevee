@@ -260,7 +260,7 @@
 #define OBJ_EVENT_GFX_JAMES				         255
 #define OBJ_EVENT_GFX_MEOWTH			         256
 #define OBJ_EVENT_GFX_SOLDIER			         257
-#define NUM_REGULAR_OBJ_EVENT_GFX                        258
+#define NUM_REGULAR_OBJ_EVENT_GFX                258
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)
@@ -1151,6 +1151,7 @@
 
 // Special object event local ids
 #define OBJ_EVENT_ID_PLAYER 0xFF
+#define OBJ_EVENT_ID_FOLLOWER 0xFE // pokemon_overworld_follower
 #define OBJ_EVENT_ID_CAMERA 0x7F
 
 // Object event local ids referenced in C files

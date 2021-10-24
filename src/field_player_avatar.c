@@ -32,6 +32,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "pokemon_overworld_follower.h"
 
 static EWRAM_DATA u8 sSpinStartFacingDir = 0;
 EWRAM_DATA struct ObjectEvent gObjectEvents[OBJECT_EVENTS_COUNT] = {};
@@ -655,7 +656,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON || gSaveBlock2Ptr->autoRun) && FlagGet(FLAG_SYS_B_DASH)
-     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
+     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !POF_FollowerComingThroughDoor())
     {
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
             PlayerRunSlow(direction);
@@ -1460,6 +1461,7 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     gPlayerAvatar.spriteId = objectEvent->spriteId;
     gPlayerAvatar.gender = gender;
     SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_5 | PLAYER_AVATAR_FLAG_ON_FOOT);
+    POF_CreateFollowerAvatar(); // pokemon_overworld_follower
 }
 
 void SetPlayerInvisibility(bool8 invisible)
@@ -1733,6 +1735,7 @@ static void Task_WaitStopSurfing(u8 taskId)
         ScriptContext2_Disable();
         DestroySprite(&gSprites[playerObjEvent->fieldEffectSpriteId]);
 		playerObjEvent->triggerGroundEffectsOnMove = TRUE;
+        POF_ToggleFollower();
         DestroyTask(taskId);
     }
 }

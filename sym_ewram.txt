@@ -150,4 +150,4 @@
 	.include "src/rayquaza_scene.o"
 	.include "src/debug.o"
 	.include "src/field_pic.o"
-
+	.include "src/pokemon_overworld_follower.o"

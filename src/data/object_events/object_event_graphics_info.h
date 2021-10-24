@@ -1113,3 +1113,5 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_90
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_904 = { 0xFFFF, OBJ_EVENT_PAL_TAG_POKEMON_904, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_PokemonSpecies, gObjectEventPicTable_Pokemon_Species_904, gDummySpriteAffineAnimTable};
 
 
+
+

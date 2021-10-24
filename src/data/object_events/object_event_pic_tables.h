@@ -2403,6 +2403,8 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
 
 
 //Pokemon overworlds
+
+//Pokemon species overworlds
 const struct SpriteFrameImage gObjectEventPicTable_Pokemon_Species_001[] = {
     overworld_frame(gObjectEventPic_Pokemon_Species_001, 4, 4, 0),
     overworld_frame(gObjectEventPic_Pokemon_Species_001, 4, 4, 1),
@@ -11709,3 +11711,4 @@ const struct SpriteFrameImage gObjectEventPicTable_Pokemon_Species_904[] = {
     overworld_frame(gObjectEventPic_Pokemon_Species_904, 4, 4, 7),
     overworld_frame(gObjectEventPic_Pokemon_Species_904, 4, 4, 8),
 };
+

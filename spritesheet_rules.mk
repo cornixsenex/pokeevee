@@ -767,6 +767,8 @@ $(OBJEVENTGFXDIR)/people/soldier.4bpp: %.4bpp: %.png
 
 
 
+
+
 $(OBJEVENTGFXDIR)/pokemon/species/001.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
@@ -3304,4 +3306,5 @@ $(OBJEVENTGFXDIR)/pokemon/species/903.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokemon/species/904.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 
