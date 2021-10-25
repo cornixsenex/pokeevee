@@ -4,27 +4,218 @@ Route4_MapScripts::
 
 Route4_EventScript_Delia::
 	msgbox Route4_Text_Test
-	return
+	closemessage
+	end
 
 
 Route4_EventScript_Bonnie::
 	msgbox Route4_Text_Test
-	return
+	closemessage
+	end
 
 
 Route4_EventScript_Roy::
 	msgbox Route4_Text_Test
-	return
+	closemessage
+	end
 
 
 Route4_EventScript_Will::
 	msgbox Route4_Text_Test
-	return
+	closemessage
+	end
 
 
 Route4_EventScript_Walton::
 	msgbox Route4_Text_Test
-	return
+	closemessage
+	end
+
+
+Route4_EventScript_Lewis::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Liz::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Lindsey::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Lexy::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Jeremy::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Orion::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Kipland::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Mandy::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Tecmessa::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Aias::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Les::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Sanjay::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Willie::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Harry::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Teucer::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Syra::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Sky::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Rocky::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Tyson::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Stu::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Ali::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Hektor::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Epeus::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Sandy::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Pygmalion::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Dido::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Betty::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Donovan::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Helen::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_Menelaus::
+	msgbox Route4_Text_Test
+	closemessage
+	end
+
+
+Route4_EventScript_FatMan::
+	msgbox Route4_Text_Test
+	closemessage
+	end
 
 
 Route4_Text_Test::

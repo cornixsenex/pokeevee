@@ -345,7 +345,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 63,
-      "y": 3,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 0,
