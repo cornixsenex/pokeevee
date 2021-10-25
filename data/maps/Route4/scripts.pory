@@ -221,39 +221,37 @@ script Route4_EventScript_FatMan {
 	end
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+script Route4_EventScript_RocketTrigger {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Route4_Text_Rocket1)
+	closemessage
+	msgbox (Route4_Text_Rocket2)
+	applymovement (14, Route4_Movement_RocketExit)
+	applymovement (15, Route4_Movement_RocketExit)
+	waitmovement (0)
+	removeobject (14)
+	removeobject (15)
+	setflag (FLAG_ROUTE4_HIDEROCKETS)
+	setvar (VAR_ROUTE4_STATE, 1)
+	release
+	end
+}
+	
+movement Route4_Movement_RocketExit {
+	walk_left * 9
+}
 
 text Route4_Text_Test {
 	format("Just a Test Message srry")	
 }
 
+text Route4_Text_Rocket1 {
+	format("This is no good what will we tell the boss?")
+}
+
+text Route4_Text_Rocket2 {
+	format("Don't worry about that, leave it to me. There's no sign of her out here anyways...")
+}
 

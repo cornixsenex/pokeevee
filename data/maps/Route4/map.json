@@ -215,7 +215,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE4_HIDEROCKETS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
@@ -228,7 +228,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE4_HIDEROCKETS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
@@ -578,18 +578,18 @@
       "x": 21,
       "y": 60,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_ROUTE4_STATE",
       "var_value": "0",
-      "script": "NULL"
+      "script": "Route4_EventScript_RocketTrigger"
     },
     {
       "type": "trigger",
       "x": 22,
       "y": 60,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_ROUTE4_STATE",
       "var_value": "0",
-      "script": "NULL"
+      "script": "Route4_EventScript_RocketTrigger"
     }
   ],
   "bg_events": [
