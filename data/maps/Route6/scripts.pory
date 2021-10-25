@@ -1,1 +1,59 @@
 mapscripts Route6_MapScripts {}
+
+
+
+script Route6_EventScript_GirafarigSign {
+	msgbox (Route6_Text_GirafarigSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_UrsaringSign {
+	msgbox (Route6_Text_UrsaringSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_MonfernoSign {
+	msgbox (Route6_Text_MonfernoSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_PiplupSign {
+	msgbox (Route6_Text_PiplupSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_SavannaSign {
+	msgbox (Route6_Text_SavannaSign)
+	closemessage
+	end
+}
+
+text Route6_Text_GirafarigSign {
+	format("Girafarig the psychic giraffe pokemon")
+}
+
+text Route6_Text_UrsaringSign {
+	format("Ursaring the grateful bear pokemon")
+}
+
+text Route6_Text_MonfernoSign {
+	format("Monferno the monkey fire pokemon")
+}
+
+text Route6_Text_PiplupSign {
+	format("Piplup the baby penguin pokemon")
+}
+
+text Route6_Text_SavannaSign {
+	format("Scenes from the savanna! Rhyhorn, Hippopotas, and Luxray")
+}
+
+text Route6_Text_Test {
+	format("Just a Test Message srry")
+}
+
+
