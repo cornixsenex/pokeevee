@@ -6,13 +6,15 @@ mapscripts Route4_MapScripts {}
 
 
 script Route4_EventScript_Delia {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single(TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost)
+	msgbox(Route4_Text_DeliaPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Bonnie {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single(TRAINER_DELIA_AND_BONNIE, Route4_Text_BonnieIntro, Route4_Text_BonnieLost)
+	msgbox(Route4_Text_BonniePost)
 	closemessage
 	end
 }
@@ -241,6 +243,30 @@ script Route4_EventScript_RocketTrigger {
 	
 movement Route4_Movement_RocketExit {
 	walk_left * 9
+}
+
+text Route4_Text_DeliaIntro {
+	format("We just got out of school. We're here to play!")
+}
+
+text Route4_Text_DeliaLost {
+	format("Why don't you pick on someone your own size?")
+}
+
+text Route4_Text_DeliaPost {
+	format("We actually don't go to school no more.")
+}
+
+text Route4_Text_BonnieIntro {
+	format("Watch out Delia! This guy wants to fight.")
+}
+
+text Route4_Text_BonnieLost {
+	format("You sure showed us that you can beat us up.")
+}
+
+text Route4_Text_BonniePost {
+	format("I hope we never see your face again.")
 }
 
 text Route4_Text_Test {

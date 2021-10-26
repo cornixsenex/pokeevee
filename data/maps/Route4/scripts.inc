@@ -3,13 +3,15 @@ Route4_MapScripts::
 
 
 Route4_EventScript_Delia::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost
+	msgbox Route4_Text_DeliaPost
 	closemessage
 	end
 
 
 Route4_EventScript_Bonnie::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_DELIA_AND_BONNIE, Route4_Text_BonnieIntro, Route4_Text_BonnieLost
+	msgbox Route4_Text_BonniePost
 	closemessage
 	end
 
@@ -247,6 +249,28 @@ Route4_Movement_RocketExit:
 	walk_left
 	walk_left
 	step_end
+
+Route4_Text_DeliaIntro::
+	.string "We just got out of school. We're here to\n"
+	.string "play!$"
+
+Route4_Text_DeliaLost::
+	.string "Why don't you pick on someone your own\n"
+	.string "size?$"
+
+Route4_Text_DeliaPost::
+	.string "We actually don't go to school no more.$"
+
+Route4_Text_BonnieIntro::
+	.string "Watch out Delia! This guy wants to\n"
+	.string "fight.$"
+
+Route4_Text_BonnieLost::
+	.string "You sure showed us that you can beat\n"
+	.string "us up.$"
+
+Route4_Text_BonniePost::
+	.string "I hope we never see your face again.$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"

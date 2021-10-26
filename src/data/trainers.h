@@ -877,19 +877,18 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_JesseAndJames),
         .party = {.TrainerMon = sParty_JesseAndJames},
     },
-	
 
-	[TRAINER_SIMON] =
+    [TRAINER_DELIA_AND_BONNIE] =
     {
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
-        .trainerName = _("SIMON"),
+        .trainerClass = TRAINER_CLASS_TWINS,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_TWINS,
+        .trainerName = _("DELIA&BONNY"),
         .items = {},
-        .doubleBattle = FALSE,
+        .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Simon),
-        .party = {.TrainerMon = sParty_Simon},
+        .partySize = ARRAY_COUNT(sParty_DeliaAndBonnie),
+        .party = {.TrainerMon = sParty_DeliaAndBonnie},
     },
 
     [TRAINER_CHARLIE] =
