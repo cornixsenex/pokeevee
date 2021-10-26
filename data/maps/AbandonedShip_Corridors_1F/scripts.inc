@@ -5,11 +5,6 @@ AbandonedShip_Corridors_1F_EventScript_Youngster::
 	msgbox AbandonedShip_Corridors_1F_Text_IsntItFunHere, MSGBOX_NPC
 	end
 
-AbandonedShip_Corridors_1F_EventScript_Charlie::
-	trainerbattle_single TRAINER_CHARLIE, AbandonedShip_Corridors_1F_Text_CharlieIntro, AbandonedShip_Corridors_1F_Text_CharlieDefeat
-	msgbox AbandonedShip_Corridors_1F_Text_CharliePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 AbandonedShip_Corridors_1F_Text_CharlieIntro:
 	.string "What's so funny about having my inner\n"
 	.string "tube aboard the ship?$"

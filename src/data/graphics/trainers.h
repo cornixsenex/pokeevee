@@ -301,7 +301,8 @@ const u32 gTrainerPalette_Blaine[] = INCBIN_U32("graphics/trainers/palettes/blai
 const u32 gTrainerFrontPic_JesseAndJames[] = INCBIN_U32("graphics/trainers/front_pics/jesseandjames.4bpp.lz");
 const u32 gTrainerPalette_JesseAndJames[] = INCBIN_U32("graphics/trainers/palettes/jesseandjames.gbapal.lz");
 
-
+const u32 gTrainerFrontPic_SuperNerd[] = INCBIN_U32("graphics/trainers/front_pics/super_nerd_front_pic.4bpp.lz");
+const u32 gTrainerPalette_SuperNerd[] = INCBIN_U32("graphics/trainers/palettes/super_nerd.gbapal.lz");
 
 
 

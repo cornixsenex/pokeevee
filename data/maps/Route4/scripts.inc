@@ -3,21 +3,36 @@ Route4_MapScripts::
 
 
 Route4_EventScript_Delia::
-	trainerbattle_single TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost
+	trainerbattle_double TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost, Route124_Text_LilaNotEnoughMons
 	msgbox Route4_Text_DeliaPost
 	closemessage
 	end
 
 
 Route4_EventScript_Bonnie::
-	trainerbattle_single TRAINER_DELIA_AND_BONNIE, Route4_Text_BonnieIntro, Route4_Text_BonnieLost
+	trainerbattle_double TRAINER_DELIA_AND_BONNIE, Route4_Text_BonnieIntro, Route4_Text_BonnieLost, Route124_Text_LilaNotEnoughMons
 	msgbox Route4_Text_BonniePost
 	closemessage
 	end
 
 
+Route4_EventScript_Charlie::
+	trainerbattle_single TRAINER_CHARLIE, Route4_Text_CharlieIntro, Route4_Text_CharlieLost
+	msgbox Route4_Text_CharliePost
+	closemessage
+	end
+
+
+Route4_EventScript_Andy::
+	trainerbattle_single TRAINER_ANDY, Route4_Text_AndyIntro, Route4_Text_AndyLost
+	msgbox Route4_Text_AndyPost
+	closemessage
+	end
+
+
 Route4_EventScript_Roy::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_ROY, Route4_Text_RoyIntro, Route4_Text_CharlieLost
+	msgbox Route4_Text_RoyPost
 	closemessage
 	end
 
@@ -271,6 +286,40 @@ Route4_Text_BonnieLost::
 
 Route4_Text_BonniePost::
 	.string "I hope we never see your face again.$"
+
+Route4_Text_CharlieIntro::
+	.string "One day I'll practice law and smash\n"
+	.string "those rats.$"
+
+Route4_Text_CharlieLost::
+	.string "Ok, you win.$"
+
+Route4_Text_CharliePost::
+	.string "Please don't tell the waitress!$"
+
+Route4_Text_AndyIntro::
+	.string "It seems like everyone out here is rude.\n"
+	.string "You can't even say hi to anyone\l"
+	.string "without them trying to start up a\l"
+	.string "fight.$"
+
+Route4_Text_AndyLost::
+	.string "This only proves my point...$"
+
+Route4_Text_AndyPost::
+	.string "Get out of here! You've messed me up\n"
+	.string "enough!$"
+
+Route4_Text_RoyIntro::
+	.string "I excersize, shower, and I dress well.\n"
+	.string "It's not my fault that I was born like\l"
+	.string "this.$"
+
+Route4_Text_RoyLost::
+	.string "I would have won if I had better teeth.$"
+
+Route4_Text_RoyPost::
+	.string "Just go away! Stop looking at my teeth!$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"

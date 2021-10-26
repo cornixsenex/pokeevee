@@ -6,21 +6,36 @@ mapscripts Route4_MapScripts {}
 
 
 script Route4_EventScript_Delia {
-	trainerbattle_single(TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost)
+	trainerbattle_double (TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost, Route124_Text_LilaNotEnoughMons)
 	msgbox(Route4_Text_DeliaPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Bonnie {
-	trainerbattle_single(TRAINER_DELIA_AND_BONNIE, Route4_Text_BonnieIntro, Route4_Text_BonnieLost)
+	trainerbattle_double (TRAINER_DELIA_AND_BONNIE, Route4_Text_BonnieIntro, Route4_Text_BonnieLost, Route124_Text_LilaNotEnoughMons)
 	msgbox(Route4_Text_BonniePost)
 	closemessage
 	end
 }
 
+script Route4_EventScript_Charlie {
+	trainerbattle_single (TRAINER_CHARLIE, Route4_Text_CharlieIntro, Route4_Text_CharlieLost)
+	msgbox(Route4_Text_CharliePost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Andy {
+	trainerbattle_single (TRAINER_ANDY, Route4_Text_AndyIntro, Route4_Text_AndyLost)
+	msgbox(Route4_Text_AndyPost)
+	closemessage
+	end
+}
+
 script Route4_EventScript_Roy {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_ROY, Route4_Text_RoyIntro, Route4_Text_CharlieLost)
+	msgbox(Route4_Text_RoyPost)
 	closemessage
 	end
 }
@@ -269,6 +284,54 @@ text Route4_Text_BonniePost {
 	format("I hope we never see your face again.")
 }
 
+text Route4_Text_CharlieIntro {
+	format("One day I'll practice law and smash those rats.")
+}
+
+text Route4_Text_CharlieLost {
+	format("Ok, you win.")
+}
+
+text Route4_Text_CharliePost {
+	format("Please don't tell the waitress!")
+}
+
+text Route4_Text_AndyIntro {
+	format("It seems like everyone out here is rude. You can't even say hi to anyone without them trying to start up a fight.")
+
+}
+
+text Route4_Text_AndyLost {
+	format("This only proves my point...")
+}
+
+text Route4_Text_AndyPost {
+	format("Get out of here! You've messed me up enough!")
+}
+
+text Route4_Text_RoyIntro {
+	format("I excersize, shower, and I dress well. It's not my fault that I was born like this.")
+
+}
+
+text Route4_Text_RoyLost {
+	format("I would have won if I had better teeth.")
+}
+
+text Route4_Text_RoyPost {
+	format("Just go away! Stop looking at my teeth!")
+}
+
+
+
+
+
+
+
+
+
+
+
 text Route4_Text_Test {
 	format("Just a Test Message srry")	
 }
@@ -280,4 +343,8 @@ text Route4_Text_Rocket1 {
 text Route4_Text_Rocket2 {
 	format("Don't worry about that, leave it to me. There's no sign of her out here anyways...")
 }
+
+
+
+
 
