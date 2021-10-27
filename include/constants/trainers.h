@@ -128,6 +128,23 @@
 #define TRAINER_PIC_CUE_BALL			  108
 #define TRAINER_PIC_AGATHA				  109
 #define TRAINER_PIC_BRUNO				  110
+#define TRAINER_PIC_LANCE				  111
+#define TRAINER_PIC_ENGINEER			  112
+#define TRAINER_PIC_GAMER			      113
+#define TRAINER_PIC_GENTLEMAN2			  114
+#define TRAINER_PIC_HIKER2			  	  115
+#define TRAINER_PIC_JUGGLER			  	  116
+#define TRAINER_PIC_LADY2			  	  117
+#define TRAINER_PIC_LASS2			  	  118
+#define TRAINER_PIC_BROCK			  	  119
+#define TRAINER_PIC_ERIKA			  	  120
+#define TRAINER_PIC_GIOVANNI			  121
+#define TRAINER_PIC_KOGA			  	  122
+#define TRAINER_PIC_LT_SURGE			  123
+#define TRAINER_PIC_MISTY			      124
+#define TRAINER_PIC_SABRINA			      125
+#define TRAINER_PIC_PAINTER		      	  126
+#define TRAINER_PIC_PICNICKER2	      	  127
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
