@@ -98,6 +98,15 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_BLAINE] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_JESSEANDJAMES] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_SUPER_NERD] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_AROMA_LADY2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BIKER] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BIRD_KEEPER2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BEAUTY2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BLACK_BELT2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BURGLAR] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_CAMPER2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BLUE2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_BLUE3] = {.size = 8, .y_offset = 1},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -202,6 +211,17 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(BLAINE, gTrainerFrontPic_Blaine, 0x800),
     TRAINER_SPRITE(JESSEANDJAMES, gTrainerFrontPic_JesseAndJames, 0x800),
     TRAINER_SPRITE(SUPER_NERD, gTrainerFrontPic_SuperNerd, 0x800),
+    TRAINER_SPRITE(AROMA_LADY2, gTrainerFrontPic_AromaLady2, 0x800),
+    TRAINER_SPRITE(BIKER, gTrainerFrontPic_Biker, 0x800),
+    TRAINER_SPRITE(BIRD_KEEPER2, gTrainerFrontPic_BirdKeeper2, 0x800),
+    TRAINER_SPRITE(BEAUTY2, gTrainerFrontPic_Beauty2, 0x800),
+    TRAINER_SPRITE(BLACK_BELT2, gTrainerFrontPic_BlackBelt2, 0x800),
+    TRAINER_SPRITE(BURGLAR, gTrainerFrontPic_Burglar, 0x800),
+    TRAINER_SPRITE(CAMPER2, gTrainerFrontPic_Camper2, 0x800),
+    TRAINER_SPRITE(BLUE2, gTrainerFrontPic_Blue2, 0x800),
+    TRAINER_SPRITE(BLUE3, gTrainerFrontPic_Blue3, 0x800),
+
+
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
@@ -306,5 +326,13 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(BLAINE, gTrainerPalette_Blaine),
     TRAINER_PAL(JESSEANDJAMES, gTrainerPalette_JesseAndJames),
     TRAINER_PAL(SUPER_NERD, gTrainerPalette_SuperNerd),
+    TRAINER_PAL(AROMA_LADY2, gTrainerPalette_AromaLady2),
+    TRAINER_PAL(BIKER, gTrainerPalette_Biker),
+    TRAINER_PAL(BIRD_KEEPER2, gTrainerPalette_BirdKeeper2),
+    TRAINER_PAL(BEAUTY2, gTrainerPalette_Beauty2),
+    TRAINER_PAL(BLACK_BELT2, gTrainerPalette_BlackBelt2),
+    TRAINER_PAL(CAMPER2, gTrainerPalette_Camper),
+    TRAINER_PAL(BLUE2, gTrainerPalette_Blue2),
+    TRAINER_PAL(BLUE3, gTrainerPalette_Blue3),
 };
 

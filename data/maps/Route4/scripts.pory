@@ -34,20 +34,22 @@ script Route4_EventScript_Andy {
 }
 
 script Route4_EventScript_Roy {
-	trainerbattle_single (TRAINER_ROY, Route4_Text_RoyIntro, Route4_Text_CharlieLost)
+	trainerbattle_single (TRAINER_ROY, Route4_Text_RoyIntro, Route4_Text_RoyLost)
 	msgbox(Route4_Text_RoyPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Will {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_WILL, Route4_Text_WillIntro, Route4_Text_WillLost)
+	msgbox(Route4_Text_WillPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Walton {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_WALTON, Route4_Text_WaltonIntro, Route4_Text_WaltonLost)
+	msgbox(Route4_Text_WaltonPost)
 	closemessage
 	end
 }
@@ -322,12 +324,31 @@ text Route4_Text_RoyPost {
 	format("Just go away! Stop looking at my teeth!")
 }
 
+text Route4_Text_WillIntro {
+	format("Can you imagine our reality?")
 
+}
 
+text Route4_Text_WillLost {
+	format("A rectangle twenty by twenty one.")
+}
 
+text Route4_Text_WillPost {
+	format("We've come to the conclusion: COWS EAT GRASS")
+}
 
+text Route4_Text_WaltonIntro {
+	format("Some people call me Chill!")
 
+}
 
+text Route4_Text_WaltonLost {
+	format("My name is Bill!")
+}
+
+text Route4_Text_WaltonPost {
+	format("Everyone's playing in The Steel Drumm Band")
+}
 
 
 

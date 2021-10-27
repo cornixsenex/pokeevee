@@ -390,6 +390,48 @@ static const union AnimCmd *const sAnims_SuperNerd[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_AromaLady2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Biker[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_BirdKeeper2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Beauty2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_BlackBelt2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Burglar[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Camper2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Blue2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Blue3[] ={
+    sAnim_GeneralFrame0,
+};
+
+
+
+
+
+
+
 
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
@@ -490,6 +532,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_LORELEI] = sAnims_Lorelei,
     [TRAINER_PIC_BLAINE] = sAnims_Blaine,	
     [TRAINER_PIC_JESSEANDJAMES] = sAnims_JesseAndJames,
-    [TRAINER_PIC_SUPER_NERD] = sAnims_SuperNerd,	
+    [TRAINER_PIC_SUPER_NERD] = sAnims_SuperNerd,		
+    [TRAINER_PIC_AROMA_LADY2] = sAnims_AromaLady2,	
 };
 

@@ -1,0 +1,76 @@
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/egg_hatch.o src/egg_hatch.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/ereader_helpers.o src/ereader_helpers.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/field_specials.o src/field_specials.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/frontier_pass.o src/frontier_pass.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/frontier_util.o src/frontier_util.c
+tools/gbagfx/gbagfx graphics/trainers/front_pics/biker_front_pic.png graphics/trainers/front_pics/biker_front_pic.4bpp
+tools/gbagfx/gbagfx graphics/trainers/palettes/biker.pal graphics/trainers/palettes/biker.gbapal
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/hall_of_fame.o src/hall_of_fame.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/intro.o src/intro.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/intro_credits_graphics.o src/intro_credits_graphics.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/item_icon.o src/item_icon.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/item_menu.o src/item_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/item_menu_icons.o src/item_menu_icons.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/mail.o src/mail.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/main_menu.o src/main_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/match_call.o src/match_call.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/menu.o src/menu.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/menu_helpers.o src/menu_helpers.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/menu_specialized.o src/menu_specialized.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/mon_markings.o src/mon_markings.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/money.o src/money.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/naming_screen.o src/naming_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/party_menu.o src/party_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokeball.o src/pokeball.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokeblock.o src/pokeblock.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokeblock_feed.o src/pokeblock_feed.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokedex.o src/pokedex.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokedex_area_screen.o src/pokedex_area_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokemon.o src/pokemon.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokemon_icon.o src/pokemon_icon.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokemon_storage_system.o src/pokemon_storage_system.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokemon_summary_screen.o src/pokemon_summary_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokenav_conditions_2.o src/pokenav_conditions_2.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokenav_main_menu.o src/pokenav_main_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokenav_match_call_data.o src/pokenav_match_call_data.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokenav_menu_handler_2.o src/pokenav_menu_handler_2.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokenav_ribbons_2.o src/pokenav_ribbons_2.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/rayquaza_scene.o src/rayquaza_scene.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/recorded_battle.o src/recorded_battle.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/reshow_battle_screen.o src/reshow_battle_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/roulette.o src/roulette.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/save_failed_screen.o src/save_failed_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/secret_base.o src/secret_base.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/shop.o src/shop.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/slot_machine.o src/slot_machine.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/text_window.o src/text_window.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/tileset_anims.o src/tileset_anims.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/title_screen.o src/title_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/trade.o src/trade.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/trainer_card.o src/trainer_card.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/trainer_hill.o src/trainer_hill.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/trainer_pokemon_sprites.o src/trainer_pokemon_sprites.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/union_room_battle.o src/union_room_battle.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/union_room_chat.o src/union_room_chat.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/use_pokeblock.o src/use_pokeblock.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/wallclock.o src/wallclock.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/data.o src/data.c
+tools/preproc/preproc data/battle_scripts_1.s charmap.txt | cc -E -I include - | arm-none-eabi-as -mcpu=arm7tdmi --defsym MODERN=0 -o build/emerald/data/battle_scripts_1.o
+tools/preproc/preproc data/event_scripts.s charmap.txt | cc -E -I include - | arm-none-eabi-as -mcpu=arm7tdmi --defsym MODERN=0 -o build/emerald/data/event_scripts.o
+tools/gbagfx/gbagfx graphics/trainers/front_pics/biker_front_pic.4bpp graphics/trainers/front_pics/biker_front_pic.4bpp.lz
+tools/gbagfx/gbagfx graphics/trainers/palettes/biker.gbapal graphics/trainers/palettes/biker.gbapal.lz
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/graphics.o src/graphics.c
+In file included from src/data.c:319:
+src/data/trainer_graphics/front_pic_tables.h:207: `TRAINER_PIC_SUPER_AROMA_LADY2' undeclared here (not in a function)
+src/data/trainer_graphics/front_pic_tables.h:207: nonconstant array index in initializer for `gTrainerFrontPicTable'
+src/data/trainer_graphics/front_pic_tables.h:207: `TRAINER_PIC_SUPER_AROMA_LADY2' undeclared here (not in a function)
+src/data/trainer_graphics/front_pic_tables.h:207: initializer element for `gTrainerFrontPicTable[98].tag' is not constant
+src/data/trainer_graphics/front_pic_tables.h:208: `TRAINER_PIC_SUPER_BIKER' undeclared here (not in a function)
+src/data/trainer_graphics/front_pic_tables.h:208: nonconstant array index in initializer for `gTrainerFrontPicTable'
+src/data/trainer_graphics/front_pic_tables.h:208: `TRAINER_PIC_SUPER_BIKER' undeclared here (not in a function)
+src/data/trainer_graphics/front_pic_tables.h:208: initializer element for `gTrainerFrontPicTable[99].tag' is not constant
+src/data/trainer_graphics/front_pic_tables.h:313: `gTrainerPalette_AromaLady2' undeclared here (not in a function)
+src/data/trainer_graphics/front_pic_tables.h:313: initializer element for `gTrainerFrontPicPaletteTable[98].data' is not constant
+make: *** [Makefile:343: build/emerald/src/data.o] Error 1
+make: *** Deleting file 'build/emerald/src/data.o'
+make: *** Waiting for unfinished jobs....

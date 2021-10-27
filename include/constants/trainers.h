@@ -115,6 +115,15 @@
 #define TRAINER_PIC_BLAINE                95
 #define TRAINER_PIC_JESSEANDJAMES         96
 #define TRAINER_PIC_SUPER_NERD			  97
+#define TRAINER_PIC_AROMA_LADY2	    	  98
+#define TRAINER_PIC_BIKER				  99
+#define TRAINER_PIC_BIRD_KEEPER2		  100
+#define TRAINER_PIC_BEAUTY2				  101
+#define TRAINER_PIC_BLACK_BELT2			  102
+#define TRAINER_PIC_BURGLAR				  103
+#define TRAINER_PIC_CAMPER2				  104
+#define TRAINER_PIC_BLUE2				  105
+#define TRAINER_PIC_BLUE3				  106
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1

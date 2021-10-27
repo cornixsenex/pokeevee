@@ -72,8 +72,8 @@
 #define TRAINER_CHARLIE                      66
 #define TRAINER_ANDY                         67
 #define TRAINER_ROY                          68
-#define TRAINER_RICKY_4                      69
-#define TRAINER_RICKY_5                      70
+#define TRAINER_WILL                         69
+#define TRAINER_WALTON                       70
 #define TRAINER_RANDALL                      71
 #define TRAINER_PARKER                       72
 #define TRAINER_GEORGE                       73

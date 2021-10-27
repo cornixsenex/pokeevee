@@ -31,20 +31,22 @@ Route4_EventScript_Andy::
 
 
 Route4_EventScript_Roy::
-	trainerbattle_single TRAINER_ROY, Route4_Text_RoyIntro, Route4_Text_CharlieLost
+	trainerbattle_single TRAINER_ROY, Route4_Text_RoyIntro, Route4_Text_RoyLost
 	msgbox Route4_Text_RoyPost
 	closemessage
 	end
 
 
 Route4_EventScript_Will::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_WILL, Route4_Text_WillIntro, Route4_Text_WillLost
+	msgbox Route4_Text_WillPost
 	closemessage
 	end
 
 
 Route4_EventScript_Walton::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_WALTON, Route4_Text_WaltonIntro, Route4_Text_WaltonLost
+	msgbox Route4_Text_WaltonPost
 	closemessage
 	end
 
@@ -320,6 +322,26 @@ Route4_Text_RoyLost::
 
 Route4_Text_RoyPost::
 	.string "Just go away! Stop looking at my teeth!$"
+
+Route4_Text_WillIntro::
+	.string "Can you imagine our reality?$"
+
+Route4_Text_WillLost::
+	.string "A rectangle twenty by twenty one.$"
+
+Route4_Text_WillPost::
+	.string "We've come to the conclusion: COWS EAT\n"
+	.string "GRASS$"
+
+Route4_Text_WaltonIntro::
+	.string "Some people call me Chill!$"
+
+Route4_Text_WaltonLost::
+	.string "My name is Bill!$"
+
+Route4_Text_WaltonPost::
+	.string "Everyone's playing in The Steel Drumm\n"
+	.string "Band$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"

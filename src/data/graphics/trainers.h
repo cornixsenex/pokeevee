@@ -304,5 +304,35 @@ const u32 gTrainerPalette_JesseAndJames[] = INCBIN_U32("graphics/trainers/palett
 const u32 gTrainerFrontPic_SuperNerd[] = INCBIN_U32("graphics/trainers/front_pics/super_nerd_front_pic.4bpp.lz");
 const u32 gTrainerPalette_SuperNerd[] = INCBIN_U32("graphics/trainers/palettes/super_nerd.gbapal.lz");
 
+const u32 gTrainerFrontPic_AromaLady2[] = INCBIN_U32("graphics/trainers/front_pics/aroma_lady2_front_pic.4bpp.lz");
+const u32 gTrainerPalette_AromaLady2[] = INCBIN_U32("graphics/trainers/palettes/aroma_lady2.gbapal.lz");
+
+const u32 gTrainerFrontPic_Biker[] = INCBIN_U32("graphics/trainers/front_pics/biker_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Biker[] = INCBIN_U32("graphics/trainers/palettes/biker.gbapal.lz");
+
+const u32 gTrainerFrontPic_BirdKeeper2[] = INCBIN_U32("graphics/trainers/front_pics/bird_keeper2_front_pic.4bpp.lz");
+const u32 gTrainerPalette_BirdKeeper2[] = INCBIN_U32("graphics/trainers/palettes/bird_keeper2.gbapal.lz");
+
+const u32 gTrainerFrontPic_Beauty2[] = INCBIN_U32("graphics/trainers/front_pics/beauty2_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Beauty2[] = INCBIN_U32("graphics/trainers/palettes/beauty2.gbapal.lz");
+
+const u32 gTrainerFrontPic_BlackBelt2[] = INCBIN_U32("graphics/trainers/front_pics/black_belt2_front_pic.4bpp.lz");
+const u32 gTrainerPalette_BlackBelt2[] = INCBIN_U32("graphics/trainers/palettes/black_belt2.gbapal.lz");
+
+const u32 gTrainerFrontPic_Burglar[] = INCBIN_U32("graphics/trainers/front_pics/burglar_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Burglar[] = INCBIN_U32("graphics/trainers/palettes/burglar.gbapal.lz");
+
+const u32 gTrainerFrontPic_Camper2[] = INCBIN_U32("graphics/trainers/front_pics/camper2_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Camper2[] = INCBIN_U32("graphics/trainers/palettes/camper2.gbapal.lz");
+
+const u32 gTrainerFrontPic_Blue2[] = INCBIN_U32("graphics/trainers/front_pics/blue2_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Blue2[] = INCBIN_U32("graphics/trainers/palettes/blue2.gbapal.lz");
+
+const u32 gTrainerFrontPic_Blue3[] = INCBIN_U32("graphics/trainers/front_pics/blue3_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Blue3[] = INCBIN_U32("graphics/trainers/palettes/blue3.gbapal.lz");
+
+
+
+
 
 
