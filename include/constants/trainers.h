@@ -124,6 +124,10 @@
 #define TRAINER_PIC_CAMPER2				  104
 #define TRAINER_PIC_BLUE2				  105
 #define TRAINER_PIC_BLUE3				  106
+#define TRAINER_PIC_CHANNELER			  107
+#define TRAINER_PIC_CUE_BALL			  108
+#define TRAINER_PIC_AGATHA				  109
+#define TRAINER_PIC_BRUNO				  110
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1

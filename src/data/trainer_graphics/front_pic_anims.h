@@ -426,6 +426,24 @@ static const union AnimCmd *const sAnims_Blue3[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Channeler[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_CueBall[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Agatha[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Bruno[] ={
+    sAnim_GeneralFrame0,
+};
+
+
+
 
 
 
