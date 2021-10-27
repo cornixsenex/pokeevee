@@ -510,6 +510,58 @@ static const union AnimCmd *const sAnims_Picnicker2[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Pokemaniac2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_PokemonBreederF2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_ProfessorOak[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_PsychicM2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_PsychicF2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Rocker[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_RuinManiac2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Sailor2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Scientist[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Tamer[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Youngster2[] ={
+    sAnim_GeneralFrame0,
+};
+
+
+
+
+
+
+
+
+
 
 
 

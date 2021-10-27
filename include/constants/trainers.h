@@ -145,6 +145,17 @@
 #define TRAINER_PIC_SABRINA			      125
 #define TRAINER_PIC_PAINTER		      	  126
 #define TRAINER_PIC_PICNICKER2	      	  127
+#define TRAINER_PIC_POKEMANIAC2	      	  128
+#define TRAINER_PIC_POKEMON_BREEDER_F2	  129
+#define TRAINER_PIC_PROFESSOR_OAK	  	  130
+#define TRAINER_PIC_PSYCHIC_M2	  	  	  131
+#define TRAINER_PIC_PSYCHIC_F2	  	  	  132
+#define TRAINER_PIC_ROCKER	  	    	  133
+#define TRAINER_PIC_RUIN_MANIAC2  	      134
+#define TRAINER_PIC_SAILOR2  	          135
+#define TRAINER_PIC_SCIENTIST	          136
+#define TRAINER_PIC_TAMER	         	  137
+#define TRAINER_PIC_YOUNGSTER2	          138
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1

@@ -128,6 +128,17 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_SABRINA] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_PAINTER] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_PICNICKER2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_POKEMANIAC2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_POKEMON_BREEDER_F2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_PROFESSOR_OAK] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_PSYCHIC_M2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_PSYCHIC_F2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ROCKER] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_RUIN_MANIAC2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_SAILOR2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_SCIENTIST] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_TAMER] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_YOUNGSTER2] = {.size = 8, .y_offset = 1},
 
 
 };
@@ -264,6 +275,17 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 	TRAINER_SPRITE(SABRINA, gTrainerFrontPic_Sabrina, 0x800),
 	TRAINER_SPRITE(PAINTER, gTrainerFrontPic_Painter, 0x800),
 	TRAINER_SPRITE(PICNICKER2, gTrainerFrontPic_Picnicker2, 0x800),
+	TRAINER_SPRITE(POKEMANIAC2, gTrainerFrontPic_Pokemaniac2, 0x800),
+	TRAINER_SPRITE(POKEMON_BREEDER_F2, gTrainerFrontPic_PokemonBreederF2, 0x800),
+	TRAINER_SPRITE(PROFESSOR_OAK, gTrainerFrontPic_ProfessorOak, 0x800),
+	TRAINER_SPRITE(PSYCHIC_M2, gTrainerFrontPic_PsychicM2, 0x800),
+	TRAINER_SPRITE(PSYCHIC_F2, gTrainerFrontPic_PsychicF2, 0x800),
+	TRAINER_SPRITE(ROCKER, gTrainerFrontPic_Rocker, 0x800),
+	TRAINER_SPRITE(RUIN_MANIAC2, gTrainerFrontPic_RuinManiac2, 0x800),
+	TRAINER_SPRITE(SAILOR2, gTrainerFrontPic_Sailor2, 0x800),
+	TRAINER_SPRITE(SCIENTIST, gTrainerFrontPic_Scientist, 0x800),
+	TRAINER_SPRITE(TAMER, gTrainerFrontPic_Tamer, 0x800),
+	TRAINER_SPRITE(YOUNGSTER2, gTrainerFrontPic_Youngster2, 0x800),
 
 };
 
@@ -398,5 +420,16 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(SABRINA, gTrainerPalette_Sabrina),
     TRAINER_PAL(PAINTER, gTrainerPalette_Painter),
     TRAINER_PAL(PICNICKER2, gTrainerPalette_Picnicker2),
+    TRAINER_PAL(POKEMANIAC2, gTrainerPalette_Pokemaniac2),
+    TRAINER_PAL(POKEMON_BREEDER_F2, gTrainerPalette_PokemonBreederF2),
+    TRAINER_PAL(PROFESSOR_OAK, gTrainerPalette_ProfessorOak),
+    TRAINER_PAL(PSYCHIC_M2, gTrainerPalette_PsychicM2),
+    TRAINER_PAL(PSYCHIC_F2, gTrainerPalette_PsychicF2),
+    TRAINER_PAL(ROCKER, gTrainerPalette_Rocker),
+    TRAINER_PAL(RUIN_MANIAC2, gTrainerPalette_RuinManiac2),
+    TRAINER_PAL(SAILOR2, gTrainerPalette_Sailor2),
+    TRAINER_PAL(SCIENTIST, gTrainerPalette_Scientist),
+    TRAINER_PAL(TAMER, gTrainerPalette_Tamer),
+    TRAINER_PAL(YOUNGSTER2, gTrainerPalette_Youngster2),
 };
 
