@@ -1,1 +1,0 @@
-tools/preproc/preproc data/event_scripts.s charmap.txt | arm-none-eabi-cpp -I include | arm-none-eabi-as -mcpu=arm7tdmi --defsym MODERN=0 -o build/emerald/data/event_scripts.o
