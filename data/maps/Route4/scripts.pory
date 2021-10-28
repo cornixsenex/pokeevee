@@ -104,37 +104,43 @@ script Route4_EventScript_Kipland {
 }
 
 script Route4_EventScript_Mandy {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_MANDY, Route4_Text_MandyIntro, Route4_Text_MandyLost)
+	msgbox(Route4_Text_MandyPost)
 	closemessage
 	end
 }
 
-script Route4_EventScript_Tecmessa {
-	msgbox(Route4_Text_Test)
+script Route4_EventScript_Hecuba {
+	trainerbattle_double (TRAINER_AIAS_AND_HECUBA, Route4_Text_HecubaIntro, Route4_Text_HecubaLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_HecubaPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Aias {
-	msgbox(Route4_Text_Test)
+	trainerbattle_double (TRAINER_AIAS_AND_HECUBA, Route4_Text_AiasIntro, Route4_Text_AiasLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_AiasPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Les {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_LES, Route4_Text_LesIntro, Route4_Text_LesLost)
+	msgbox(Route4_Text_LesPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Sanjay {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_SANJAY, Route4_Text_SanjayIntro, Route4_Text_SanjayLost)
+	msgbox(Route4_Text_SanjayPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Willie {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_WILLIE, Route4_Text_WillieIntro, Route4_Text_WillieLost)
+	msgbox(Route4_Text_WilliePost)
 	closemessage
 	end
 }
@@ -447,6 +453,84 @@ text Route4_Text_KiplandLost {
 text Route4_Text_KiplandPost {
 	format("I totally have a hot girl friend dude!")
 }
+
+text Route4_Text_MandyIntro {
+	format("Out of my way! This lane's for bicycles.")
+
+}
+
+text Route4_Text_MandyLost {
+	format("I think my tire must have popped a flat.")
+}
+
+text Route4_Text_MandyPost {
+	format("I totally have a hot girl friend dude!")
+}
+
+
+text Route4_Text_HecubaIntro {
+	format("My great lord Aias will keep me from harm.")
+
+}
+
+text Route4_Text_HecubaLost {
+	format("Apollo has forgotten me again!")
+}
+
+text Route4_Text_HecubaPost {
+	format("My husband recently has been this way...I worry often that he's lost his mind.")
+}
+
+text Route4_Text_AiasIntro {
+	format("I rush to arms once more against this youth! No man will keep me from my victory!")
+
+}
+
+text Route4_Text_AiasLost {
+	format("My cursed enemy has brought me shame.")
+}
+
+text Route4_Text_AiasPost {
+	format("Defeated now I sit and await death.")
+}
+
+text Route4_Text_LesIntro {
+	format("When I was younger I had but one dream: To wield a rod, to be a fisherman.")
+
+}
+
+text Route4_Text_LesLost {
+	format("I lied to you, there was another dream.")
+}
+
+text Route4_Text_LesPost {
+	format("Developing pork chop flavored soda would be a better use of my time here.")
+}
+
+text Route4_Text_SanjayIntro {
+	format("The fighting men up there terrfy me!")
+}
+
+text Route4_Text_SanjayLost {
+	format("You are viscious, just like those fighting men!")
+}
+
+text Route4_Text_SanjayPost {
+	format("Be careful if you try to climb the hill, those fighting men are not to be fooled with.")
+}
+
+text Route4_Text_WillieIntro {
+	format("Nothing compares to those sweet purple pills!")
+}
+
+text Route4_Text_WillieLost {
+	format("Just so you know my left eye's made of glass.")
+}
+
+text Route4_Text_WilliePost {
+	format("Let me know if you want to share my girl.")
+}
+
 
 
 

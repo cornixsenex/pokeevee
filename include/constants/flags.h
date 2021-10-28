@@ -72,7 +72,7 @@
 #define FLAG_CLARACITY_CHURCH_HIDEDAD     0x3A // Hides Dad and Sage for intro
 #define FLAG_CLARACITY_CHURCH_HIDESAGE    0x3B // Hides Sage and the church people
 #define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
+#define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 

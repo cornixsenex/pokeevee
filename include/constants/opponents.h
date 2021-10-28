@@ -81,11 +81,11 @@
 #define TRAINER_JEREMY                       75
 #define TRAINER_ORION                        76
 #define TRAINER_KIPLAND                      77
-#define TRAINER_WILTON_1                     78
-#define TRAINER_EDGAR                        79
-#define TRAINER_ALBERT                       80
-#define TRAINER_SAMUEL                       81
-#define TRAINER_VITO                         82
+#define TRAINER_MANDY	                     78
+#define TRAINER_AIAS_AND_HECUBA              79
+#define TRAINER_LES		                     80
+#define TRAINER_SANJAY                       81
+#define TRAINER_WILLIE                       82
 #define TRAINER_OWEN                         83
 #define TRAINER_WILTON_2                     84
 #define TRAINER_WILTON_3                     85

@@ -101,37 +101,43 @@ Route4_EventScript_Kipland::
 
 
 Route4_EventScript_Mandy::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_MANDY, Route4_Text_MandyIntro, Route4_Text_MandyLost
+	msgbox Route4_Text_MandyPost
 	closemessage
 	end
 
 
-Route4_EventScript_Tecmessa::
-	msgbox Route4_Text_Test
+Route4_EventScript_Hecuba::
+	trainerbattle_double TRAINER_AIAS_AND_HECUBA, Route4_Text_HecubaIntro, Route4_Text_HecubaLost, Route124_Text_LilaNotEnoughMons
+	msgbox Route4_Text_HecubaPost
 	closemessage
 	end
 
 
 Route4_EventScript_Aias::
-	msgbox Route4_Text_Test
+	trainerbattle_double TRAINER_AIAS_AND_HECUBA, Route4_Text_AiasIntro, Route4_Text_AiasLost, Route124_Text_LilaNotEnoughMons
+	msgbox Route4_Text_AiasPost
 	closemessage
 	end
 
 
 Route4_EventScript_Les::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_LES, Route4_Text_LesIntro, Route4_Text_LesLost
+	msgbox Route4_Text_LesPost
 	closemessage
 	end
 
 
 Route4_EventScript_Sanjay::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_SANJAY, Route4_Text_SanjayIntro, Route4_Text_SanjayLost
+	msgbox Route4_Text_SanjayPost
 	closemessage
 	end
 
 
 Route4_EventScript_Willie::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_WILLIE, Route4_Text_WillieIntro, Route4_Text_WillieLost
+	msgbox Route4_Text_WilliePost
 	closemessage
 	end
 
@@ -423,6 +429,72 @@ Route4_Text_KiplandLost::
 
 Route4_Text_KiplandPost::
 	.string "I totally have a hot girl friend dude!$"
+
+Route4_Text_MandyIntro::
+	.string "Out of my way! This lane's for bicycles.$"
+
+Route4_Text_MandyLost::
+	.string "I think my tire must have popped a flat.$"
+
+Route4_Text_MandyPost::
+	.string "I totally have a hot girl friend dude!$"
+
+Route4_Text_HecubaIntro::
+	.string "My great lord Aias will keep me from\n"
+	.string "harm.$"
+
+Route4_Text_HecubaLost::
+	.string "Apollo has forgotten me again!$"
+
+Route4_Text_HecubaPost::
+	.string "My husband recently has been this\n"
+	.string "way...I worry often that he's lost his\l"
+	.string "mind.$"
+
+Route4_Text_AiasIntro::
+	.string "I rush to arms once more against this\n"
+	.string "youth! No man will keep me from my\l"
+	.string "victory!$"
+
+Route4_Text_AiasLost::
+	.string "My cursed enemy has brought me shame.$"
+
+Route4_Text_AiasPost::
+	.string "Defeated now I sit and await death.$"
+
+Route4_Text_LesIntro::
+	.string "When I was younger I had but one dream:\n"
+	.string "To wield a rod, to be a fisherman.$"
+
+Route4_Text_LesLost::
+	.string "I lied to you, there was another dream.$"
+
+Route4_Text_LesPost::
+	.string "Developing pork chop flavored soda\n"
+	.string "would be a better use of my time here.$"
+
+Route4_Text_SanjayIntro::
+	.string "The fighting men up there terrfy me!$"
+
+Route4_Text_SanjayLost::
+	.string "You are viscious, just like those\n"
+	.string "fighting men!$"
+
+Route4_Text_SanjayPost::
+	.string "Be careful if you try to climb the hill,\n"
+	.string "those fighting men are not to be\l"
+	.string "fooled with.$"
+
+Route4_Text_WillieIntro::
+	.string "Nothing compares to those sweet purple\n"
+	.string "pills!$"
+
+Route4_Text_WillieLost::
+	.string "Just so you know my left eye's made of\n"
+	.string "glass.$"
+
+Route4_Text_WilliePost::
+	.string "Let me know if you want to share my girl.$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"
