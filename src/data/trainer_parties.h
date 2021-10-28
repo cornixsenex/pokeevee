@@ -891,7 +891,7 @@ static const struct TrainerMon sParty_Walton[] = {
     }
 };
 
-static const struct TrainerMon sParty_Randall[] = {
+static const struct TrainerMon sParty_Lewis[] = {
     {
     .iv = 255,
     .lvl = 26,
@@ -901,7 +901,7 @@ static const struct TrainerMon sParty_Randall[] = {
     }
 };
 
-static const struct TrainerMon sParty_Parker[] = {
+static const struct TrainerMon sParty_Liz[] = {
     {
     .iv = 255,
     .lvl = 26,
@@ -911,7 +911,7 @@ static const struct TrainerMon sParty_Parker[] = {
     }
 };
 
-static const struct TrainerMon sParty_George[] = {
+static const struct TrainerMon sParty_Lindsey[] = {
     {
     .iv = 255,
     .lvl = 26,
@@ -921,7 +921,7 @@ static const struct TrainerMon sParty_George[] = {
     }
 };
 
-static const struct TrainerMon sParty_Berke[] = {
+static const struct TrainerMon sParty_Lexy[] = {
     {
     .iv = 255,
     .lvl = 26,
@@ -931,7 +931,7 @@ static const struct TrainerMon sParty_Berke[] = {
     }
 };
 
-static const struct TrainerMon sParty_Braxton[] = {
+static const struct TrainerMon sParty_Jeremy[] = {
     {
     .iv = 100,
     .lvl = 28,
@@ -964,7 +964,7 @@ static const struct TrainerMon sParty_Braxton[] = {
     }
 };
 
-static const struct TrainerMon sParty_Vincent[] = {
+static const struct TrainerMon sParty_Orion[] = {
     {
     .iv = 100,
     .lvl = 44,
@@ -982,7 +982,7 @@ static const struct TrainerMon sParty_Vincent[] = {
     }
 };
 
-static const struct TrainerMon sParty_Leroy[] = {
+static const struct TrainerMon sParty_Kipland[] = {
     {
     .iv = 100,
     .lvl = 46,

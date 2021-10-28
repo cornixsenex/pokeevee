@@ -55,43 +55,50 @@ script Route4_EventScript_Walton {
 }
 
 script Route4_EventScript_Lewis {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_LEWIS, Route4_Text_LewisIntro, Route4_Text_LewisLost)
+	msgbox(Route4_Text_LewisPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Liz {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_LIZ, Route4_Text_LizIntro, Route4_Text_LizLost)
+	msgbox(Route4_Text_LizPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Lindsey {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_LINDSEY, Route4_Text_LindseyIntro, Route4_Text_LindseyLost)
+	msgbox(Route4_Text_LindseyPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Lexy {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_LEXY, Route4_Text_LexyIntro, Route4_Text_LexyLost)
+	msgbox(Route4_Text_LexyPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Jeremy {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_JEREMY, Route4_Text_JeremyIntro, Route4_Text_JeremyLost)
+	msgbox(Route4_Text_JeremyPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Orion {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_ORION, Route4_Text_OrionIntro, Route4_Text_OrionLost)
+	msgbox(Route4_Text_OrionPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Kipland {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_KIPLAND, Route4_Text_KiplandIntro, Route4_Text_KiplandLost)
+	msgbox(Route4_Text_KiplandPost)
 	closemessage
 	end
 }
@@ -348,6 +355,97 @@ text Route4_Text_WaltonLost {
 
 text Route4_Text_WaltonPost {
 	format("Everyone's playing in The Steel Drumm Band")
+}
+
+text Route4_Text_LewisIntro {
+	format("I spend all of my time playing out here and helping my Pokemon grow stronger!")
+
+}
+
+text Route4_Text_LewisLost {
+	format("You're something else!")
+}
+
+text Route4_Text_LewisPost {
+	format("I'm not as strong as you. I won't give up, come back in a few years.")
+}
+
+text Route4_Text_LizIntro {
+	format("Would you mind if I stand next to you dude?")
+
+}
+
+text Route4_Text_LizLost {
+	format("Is it okay if I sit on you too?")
+}
+
+text Route4_Text_LizPost {
+	format("I think I left my jacket at your house.")
+}
+
+text Route4_Text_LindseyIntro {
+	format("I must warn you my Pokemon are fetch.")
+
+}
+
+text Route4_Text_LindseyLost {
+	format("This is the worst day I have ever had!")
+}
+
+text Route4_Text_LindseyPost {
+	format("It's not that I don't like Lexi, I do, but why does she have to borrow my clothes?")
+}
+
+text Route4_Text_LexyIntro {
+	format("I must warn you my Pokemon are fetch.")
+
+}
+
+text Route4_Text_LexyLost {
+	format("This is the worst day I have ever had!")
+}
+
+text Route4_Text_LexyPost {
+	format("It's not that I don't like Lexi, I do, but why does she have to borrow my clothes?")
+}
+
+text Route4_Text_JeremyIntro {
+	format("I've been at study now for many nights. I've mastered painting and dentistry too.")
+
+}
+
+text Route4_Text_JeremyLost {
+	format("I feel like I'm a real nobody man!")
+}
+
+text Route4_Text_JeremyPost {
+	format("I made all of my nowhere plans for nobody.")
+}
+
+text Route4_Text_OrionIntro {
+	format("I like to stay hidden, unseen, and watch.")
+
+}
+
+text Route4_Text_OrionLost {
+	format("This is exactly why I try to hide.")
+}
+
+text Route4_Text_OrionPost {
+	format("Up here, I have too many eyes on me.")
+}
+
+text Route4_Text_KiplandIntro {
+	format("I'm training!")
+
+}
+
+text Route4_Text_KiplandLost {
+	format("One day I'll be a blackbelt!")
+}
+
+text Route4_Text_KiplandPost {
+	format("I totally have a hot girl friend dude!")
 }
 
 

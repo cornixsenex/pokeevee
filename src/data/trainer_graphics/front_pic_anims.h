@@ -555,35 +555,6 @@ static const union AnimCmd *const sAnims_Youngster2[] ={
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -684,6 +655,46 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_BLAINE] = sAnims_Blaine,	
     [TRAINER_PIC_JESSEANDJAMES] = sAnims_JesseAndJames,
     [TRAINER_PIC_SUPER_NERD] = sAnims_SuperNerd,		
-    [TRAINER_PIC_AROMA_LADY2] = sAnims_AromaLady2,	
+    [TRAINER_PIC_AROMA_LADY2] = sAnims_AromaLady2,
+    [TRAINER_PIC_BIKER] = sAnims_Biker,
+    [TRAINER_PIC_BIRD_KEEPER2] = sAnims_BirdKeeper2,
+    [TRAINER_PIC_BEAUTY2] = sAnims_Beauty2,
+    [TRAINER_PIC_BLACK_BELT2] = sAnims_BlackBelt2,
+    [TRAINER_PIC_BURGLAR] = sAnims_Burglar,
+    [TRAINER_PIC_CAMPER2] = sAnims_Camper2,
+    [TRAINER_PIC_BLUE2] = sAnims_Blue2,
+    [TRAINER_PIC_BLUE3] = sAnims_Blue3,
+    [TRAINER_PIC_CHANNELER] = sAnims_Channeler,
+    [TRAINER_PIC_CUE_BALL] = sAnims_CueBall,
+    [TRAINER_PIC_AGATHA] = sAnims_Agatha,
+    [TRAINER_PIC_BRUNO] = sAnims_Bruno,
+    [TRAINER_PIC_LANCE] = sAnims_Lance,
+    [TRAINER_PIC_ENGINEER] = sAnims_Engineer,
+    [TRAINER_PIC_GAMER] = sAnims_Gamer,
+    [TRAINER_PIC_GENTLEMAN2] = sAnims_Gentleman2,
+    [TRAINER_PIC_HIKER2] = sAnims_Hiker2,
+    [TRAINER_PIC_JUGGLER] = sAnims_Juggler,
+    [TRAINER_PIC_LADY2] = sAnims_Lady2,
+    [TRAINER_PIC_LASS2] = sAnims_Lass2,
+    [TRAINER_PIC_BROCK] = sAnims_Brock,
+    [TRAINER_PIC_ERIKA] = sAnims_Erika,
+    [TRAINER_PIC_GIOVANNI] = sAnims_Giovanni,
+    [TRAINER_PIC_KOGA] = sAnims_Koga,
+    [TRAINER_PIC_LT_SURGE] = sAnims_LtSurge,
+    [TRAINER_PIC_MISTY] = sAnims_Misty,
+    [TRAINER_PIC_SABRINA] = sAnims_Sabrina,
+    [TRAINER_PIC_PAINTER] = sAnims_Painter,
+    [TRAINER_PIC_PICNICKER2] = sAnims_Picnicker2,
+    [TRAINER_PIC_POKEMANIAC2] = sAnims_Pokemaniac2,
+    [TRAINER_PIC_POKEMON_BREEDER_F2] = sAnims_PokemonBreederF2,
+    [TRAINER_PIC_PROFESSOR_OAK] = sAnims_ProfessorOak,
+    [TRAINER_PIC_PSYCHIC_M2] = sAnims_PsychicM2,
+    [TRAINER_PIC_PSYCHIC_F2] = sAnims_PsychicF2,
+    [TRAINER_PIC_ROCKER] = sAnims_Rocker,
+    [TRAINER_PIC_RUIN_MANIAC2] = sAnims_RuinManiac2,
+    [TRAINER_PIC_SAILOR2] = sAnims_Sailor2,
+    [TRAINER_PIC_SCIENTIST] = sAnims_Scientist,
+    [TRAINER_PIC_TAMER] = sAnims_Tamer,
+    [TRAINER_PIC_YOUNGSTER2] = sAnims_Youngster2,
 };
 

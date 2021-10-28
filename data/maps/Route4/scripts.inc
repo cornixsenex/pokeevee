@@ -52,43 +52,50 @@ Route4_EventScript_Walton::
 
 
 Route4_EventScript_Lewis::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_LEWIS, Route4_Text_LewisIntro, Route4_Text_LewisLost
+	msgbox Route4_Text_LewisPost
 	closemessage
 	end
 
 
 Route4_EventScript_Liz::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_LIZ, Route4_Text_LizIntro, Route4_Text_LizLost
+	msgbox Route4_Text_LizPost
 	closemessage
 	end
 
 
 Route4_EventScript_Lindsey::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_LINDSEY, Route4_Text_LindseyIntro, Route4_Text_LindseyLost
+	msgbox Route4_Text_LindseyPost
 	closemessage
 	end
 
 
 Route4_EventScript_Lexy::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_LEXY, Route4_Text_LexyIntro, Route4_Text_LexyLost
+	msgbox Route4_Text_LexyPost
 	closemessage
 	end
 
 
 Route4_EventScript_Jeremy::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_JEREMY, Route4_Text_JeremyIntro, Route4_Text_JeremyLost
+	msgbox Route4_Text_JeremyPost
 	closemessage
 	end
 
 
 Route4_EventScript_Orion::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_ORION, Route4_Text_OrionIntro, Route4_Text_OrionLost
+	msgbox Route4_Text_OrionPost
 	closemessage
 	end
 
 
 Route4_EventScript_Kipland::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_KIPLAND, Route4_Text_KiplandIntro, Route4_Text_KiplandLost
+	msgbox Route4_Text_KiplandPost
 	closemessage
 	end
 
@@ -342,6 +349,80 @@ Route4_Text_WaltonLost::
 Route4_Text_WaltonPost::
 	.string "Everyone's playing in The Steel Drumm\n"
 	.string "Band$"
+
+Route4_Text_LewisIntro::
+	.string "I spend all of my time playing out here\n"
+	.string "and helping my Pokemon grow stronger!$"
+
+Route4_Text_LewisLost::
+	.string "You're something else!$"
+
+Route4_Text_LewisPost::
+	.string "I'm not as strong as you. I won't give\n"
+	.string "up, come back in a few years.$"
+
+Route4_Text_LizIntro::
+	.string "Would you mind if I stand next to you\n"
+	.string "dude?$"
+
+Route4_Text_LizLost::
+	.string "Is it okay if I sit on you too?$"
+
+Route4_Text_LizPost::
+	.string "I think I left my jacket at your house.$"
+
+Route4_Text_LindseyIntro::
+	.string "I must warn you my Pokemon are fetch.$"
+
+Route4_Text_LindseyLost::
+	.string "This is the worst day I have ever had!$"
+
+Route4_Text_LindseyPost::
+	.string "It's not that I don't like Lexi, I do, but\n"
+	.string "why does she have to borrow my\l"
+	.string "clothes?$"
+
+Route4_Text_LexyIntro::
+	.string "I must warn you my Pokemon are fetch.$"
+
+Route4_Text_LexyLost::
+	.string "This is the worst day I have ever had!$"
+
+Route4_Text_LexyPost::
+	.string "It's not that I don't like Lexi, I do, but\n"
+	.string "why does she have to borrow my\l"
+	.string "clothes?$"
+
+Route4_Text_JeremyIntro::
+	.string "I've been at study now for many nights.\n"
+	.string "I've mastered painting and dentistry\l"
+	.string "too.$"
+
+Route4_Text_JeremyLost::
+	.string "I feel like I'm a real nobody man!$"
+
+Route4_Text_JeremyPost::
+	.string "I made all of my nowhere plans for\n"
+	.string "nobody.$"
+
+Route4_Text_OrionIntro::
+	.string "I like to stay hidden, unseen, and\n"
+	.string "watch.$"
+
+Route4_Text_OrionLost::
+	.string "This is exactly why I try to hide.$"
+
+Route4_Text_OrionPost::
+	.string "Up here, I have too many eyes on me.$"
+
+Route4_Text_KiplandIntro::
+	.string "I'm training!$"
+
+Route4_Text_KiplandLost::
+	.string "One day I'll be a blackbelt!$"
+
+Route4_Text_KiplandPost::
+	.string "I totally have a hot girl friend dude!$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"
