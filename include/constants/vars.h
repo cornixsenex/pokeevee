@@ -267,7 +267,7 @@
 #define VAR_ROUTE3_STATE                     0x40F7 // Leaf Trigger
 #define VAR_CITYCLARA_STATE                  0x40F8 // Leaf+Scott in CannaClub...
 #define VAR_CITYCLARA_SCHOOL_STATE           0x40F9 // Counts students defeated in the school
-#define VAR_ROUTE4_STATE                     0x40FA // Controls events on Route4
+#define VAR_ROUTE4_STATE                     0x40FA // Controls events on Route4 set to ONE (1) by the rocket event in Route4
 #define VAR_ROBUSTUS_STATE                  0x40FB // Controls events in Robustus
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var

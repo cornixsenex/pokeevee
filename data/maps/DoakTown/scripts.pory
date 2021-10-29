@@ -1,1 +1,141 @@
-mapscripts DoakTown_MapScripts {}
+mapscripts DoakTown_MapScripts {
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ROBUSTUS_STATE, 6: Robustus_OnFrame_ExeuntCampers
+	]
+
+}
+
+
+script Robustus_EventScript_LeafTrigger1 {
+	lock
+	call (Robustus_EventScript_Counter)
+	applymovement (2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	release
+	end
+}	
+
+script Robustus_EventScript_LeafTrigger2 {
+	lock	
+	call (Robustus_EventScript_Counter)
+	applymovement (2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	release
+	end
+}	
+
+script Robustus_EventScript_Camper1 {
+	faceplayer
+	msgbox (Robustus_Text_Test)
+	closemessage
+	call (Robustus_EventScript_Counter)
+	release
+	end
+}
+
+script Robustus_EventScript_Camper2 {
+	faceplayer
+	msgbox (Robustus_Text_Test)
+	call (Robustus_EventScript_Counter)
+	closemessage
+	release
+	end
+}
+
+script Robustus_EventScript_Camper3 {
+	faceplayer
+	msgbox (Robustus_Text_Test)
+	call (Robustus_EventScript_Counter)
+	closemessage
+	release
+	end
+}
+
+script Robustus_EventScript_Camper4 {
+	faceplayer
+	msgbox (Robustus_Text_Test)
+	call (Robustus_EventScript_Counter)
+	closemessage
+	release
+	end
+}
+
+script Robustus_EventScript_Camper5 {
+	faceplayer
+	msgbox (Robustus_Text_Test)
+	call (Robustus_EventScript_Counter)
+	closemessage
+	release
+	end
+}
+
+script Robustus_EventScript_ResetCounter {
+	if (var(VAR_ROBUSTUS_STATE) > 1) {
+		setvar (VAR_ROBUSTUS_STATE, 1)
+	} else {
+		release
+	}
+	end
+}
+
+script Robustus_EventScript_Counter {
+	addvar (VAR_ROBUSTUS_STATE, 1)
+	return
+}
+
+script Robustus_OnFrame_ExeuntCampers {
+	lock
+	call (Robustus_EventScript_Counter)
+	msgbox (Robustus_Text_Test)
+	closemessage
+	applymovement (4, Robustus_Movement_ExitCamper1)
+	applymovement (3, Robustus_Movement_ExitCamper2)
+	applymovement (5, Robustus_Movement_ExitCamper3)
+	applymovement (6, Robustus_Movement_ExitCamper4)
+	applymovement (7, Robustus_Movement_ExitCamper5)
+	waitmovement (0)
+	removeobject (3)
+	removeobject (4)
+	removeobject (5)
+	removeobject (6)
+	removeobject (7)
+	setflag (FLAG_ROBUSTUS_HIDECAMPERS)
+	release
+	end
+}
+
+movement Robustus_Movement_ExitCamper1 {	
+	walk_left 
+	walk_up * 2
+	walk_left * 7
+}
+
+movement Robustus_Movement_ExitCamper2 {	
+	walk_up * 5
+	walk_left * 11
+}
+
+movement Robustus_Movement_ExitCamper3 {	
+	walk_up * 2
+	walk_left * 15
+}
+
+movement Robustus_Movement_ExitCamper4 {
+	walk_left * 2
+	walk_up
+	walk_left * 17
+}	
+	
+movement Robustus_Movement_ExitCamper5 {
+	walk_left
+	walk_up * 5
+	walk_left * 18
+}
+
+text Robustus_Text_Test {
+	format("TEST!")
+}
+
+
+
