@@ -171,37 +171,57 @@ Route4_EventScript_Sky::
 
 
 Route4_EventScript_Rocky::
-	msgbox Route4_Text_Test
+	checktrainerflag TRAINER_ROCKY
+	goto_if 0, Route4_EventScript_Rocky_2
+	msgbox Route4_Text_RockyPost
+	closemessage
+Route4_EventScript_Rocky_1:
 	closemessage
 	end
 
+Route4_EventScript_Rocky_2:
+	msgbox Route4_Text_RockyIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_ROCKY, Route4_Text_RockyLost
+	msgbox Route4_Text_RockyDefeat
+	closemessage
+	giveitem ITEM_BLACK_BELT
+	msgbox Route4_Text_RockyPost
+	closemessage
+	goto Route4_EventScript_Rocky_1
+
 
 Route4_EventScript_Tyson::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_TYSON, Route4_Text_TysonIntro, Route4_Text_TysonLost
+	msgbox Route4_Text_TysonPost
 	closemessage
 	end
 
 
 Route4_EventScript_Stu::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_STU, Route4_Text_StuIntro, Route4_Text_StuLost
+	msgbox Route4_Text_StuPost
 	closemessage
 	end
 
 
 Route4_EventScript_Ali::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_ALI, Route4_Text_AliIntro, Route4_Text_AliLost
+	msgbox Route4_Text_AliPost
 	closemessage
 	end
 
 
-Route4_EventScript_Hektor::
-	msgbox Route4_Text_Test
+Route4_EventScript_Patroklos::
+	trainerbattle_single TRAINER_PATROKLOS, Route4_Text_PatroklosIntro, Route4_Text_PatroklosLost
+	msgbox Route4_Text_PatroklosPost
 	closemessage
 	end
 
 
 Route4_EventScript_Epeus::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_EPEUS, Route4_Text_EpeusIntro, Route4_Text_EpeusLost
+	msgbox Route4_Text_EpeusPost
 	closemessage
 	end
 
@@ -242,7 +262,7 @@ Route4_EventScript_Helen::
 	end
 
 
-Route4_EventScript_Menelaus::
+Route4_EventScript_Paris::
 	msgbox Route4_Text_Test
 	closemessage
 	end
@@ -546,6 +566,86 @@ Route4_Text_SkyPost::
 	.string "I don't think Earth is flat or anything,\n"
 	.string "but maybe there's an Earth within The\l"
 	.string "Earth.$"
+
+Route4_Text_RockyIntro::
+	.string "I've learned that in this life you have\n"
+	.string "to fight to win glory as well as win the\l"
+	.string "bread. No western man has bested me\l"
+	.string "thus far. Prepare to be tested, look to\l"
+	.string "your strength.$"
+
+Route4_Text_RockyLost::
+	.string "Congratulations {PLAYER} our new\n"
+	.string "master.$"
+
+Route4_Text_RockyDefeat::
+	.string "I must accept defeat. I kneel to you\n"
+	.string "and as our new leader you must accept\l"
+	.string "this black belt and command over our\l"
+	.string "gang.$"
+
+Route4_Text_RockyPost::
+	.string "Be safe and wear your new black belt\n"
+	.string "with pride$"
+
+Route4_Text_TysonIntro::
+	.string "I'll fuck you up! I'll bite your ear off,\n"
+	.string "bitch!$"
+
+Route4_Text_TysonLost::
+	.string "Hey! Take it easy man!$"
+
+Route4_Text_TysonPost::
+	.string "Wow! What a fight! Before you face our\n"
+	.string "master here be warned. He weilds power\l"
+	.string "that far exceeds my own. You should\l"
+	.string "not face him unprepared to lose.$"
+
+Route4_Text_StuIntro::
+	.string "I attend fighting class three times a\n"
+	.string "week.$"
+
+Route4_Text_StuLost::
+	.string "Oh yeah? Can you break a wood board in\n"
+	.string "half?$"
+
+Route4_Text_StuPost::
+	.string "You only won because you broke the\n"
+	.string "rules, our master will not be bothered\l"
+	.string "by you.$"
+
+Route4_Text_AliIntro::
+	.string "I do not want to fight. This is my job.$"
+
+Route4_Text_AliLost::
+	.string "You defeated me, with tenacity.$"
+
+Route4_Text_AliPost::
+	.string "Take caution with you if you venture\n"
+	.string "on, I am nothing compared with our\l"
+	.string "master.$"
+
+Route4_Text_PatroklosIntro::
+	.string "I've borrowed my tunic from my best\n"
+	.string "friend.$"
+
+Route4_Text_PatroklosLost::
+	.string "It was fated that I would fall to you.$"
+
+Route4_Text_PatroklosPost::
+	.string "Be wary lest you fall to our master, he\n"
+	.string "is the mightiest man that I know.$"
+
+Route4_Text_EpeusIntro::
+	.string "I cannot lose in hand to hand combat!$"
+
+Route4_Text_EpeusLost::
+	.string "I must sit down, go on, you win this\n"
+	.string "round.$"
+
+Route4_Text_EpeusPost::
+	.string "I am an architecht of great revenge,\n"
+	.string "beware I may attempt to beat you yet.$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"

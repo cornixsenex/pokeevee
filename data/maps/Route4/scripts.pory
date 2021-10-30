@@ -174,37 +174,54 @@ script Route4_EventScript_Sky {
 }
 
 script Route4_EventScript_Rocky {
-	msgbox(Route4_Text_Test)
+	if (!defeated(TRAINER_ROCKY) ) {
+		msgbox (Route4_Text_RockyIntro)
+		closemessage
+		trainerbattle_no_intro(TRAINER_ROCKY, Route4_Text_RockyLost)
+		msgbox (Route4_Text_RockyDefeat)
+		closemessage
+		giveitem (ITEM_BLACK_BELT)		
+		msgbox(Route4_Text_RockyPost)
+		closemessage
+	} else {
+		msgbox(Route4_Text_RockyPost)
+		closemessage
+	}
 	closemessage
 	end
 }
 
 script Route4_EventScript_Tyson {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_TYSON, Route4_Text_TysonIntro, Route4_Text_TysonLost)
+	msgbox(Route4_Text_TysonPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Stu {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_STU, Route4_Text_StuIntro, Route4_Text_StuLost)
+	msgbox(Route4_Text_StuPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Ali {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_ALI, Route4_Text_AliIntro, Route4_Text_AliLost)
+	msgbox(Route4_Text_AliPost)
 	closemessage
 	end
 }
 
-script Route4_EventScript_Hektor {
-	msgbox(Route4_Text_Test)
+script Route4_EventScript_Patroklos {
+	trainerbattle_single (TRAINER_PATROKLOS, Route4_Text_PatroklosIntro, Route4_Text_PatroklosLost)
+	msgbox(Route4_Text_PatroklosPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Epeus {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_EPEUS, Route4_Text_EpeusIntro, Route4_Text_EpeusLost)
+	msgbox(Route4_Text_EpeusPost)
 	closemessage
 	end
 }
@@ -245,7 +262,7 @@ script Route4_EventScript_Helen {
 	end
 }
 
-script Route4_EventScript_Menelaus {
+script Route4_EventScript_Paris {
 	msgbox(Route4_Text_Test)
 	closemessage
 	end
@@ -582,6 +599,83 @@ text Route4_Text_SkyLost {
 text Route4_Text_SkyPost {
 	format("I don't think Earth is flat or anything, but maybe there's an Earth within The Earth.")
 }
+
+text Route4_Text_RockyIntro {
+	format("I've learned that in this life you have to fight to win glory as well as win the bread. No western man has bested me thus far. Prepare to be tested, look to your strength.")
+}
+
+text Route4_Text_RockyLost {
+	format("Congratulations {PLAYER} our new master.")
+}
+
+text Route4_Text_RockyDefeat {
+	format("I must accept defeat. I kneel to you and as our new leader you must accept this black belt and command over our gang.")
+}
+
+text Route4_Text_RockyPost {
+	format("Be safe and wear your new black belt with pride")
+}
+
+text Route4_Text_TysonIntro {
+	format("I'll fuck you up! I'll bite your ear off, bitch!")
+}
+
+text Route4_Text_TysonLost {
+	format("Hey! Take it easy man!")
+}
+
+text Route4_Text_TysonPost {
+	format("Wow! What a fight! Before you face our master here be warned. He weilds power that far exceeds my own. You should not face him unprepared to lose.")
+}
+
+text Route4_Text_StuIntro {
+	 format("I attend fighting class three times a week.")
+}
+
+text Route4_Text_StuLost {
+	format("Oh yeah? Can you break a wood board in half?")
+}
+
+text Route4_Text_StuPost {
+	format("You only won because you broke the rules, our master will not be bothered by you.")
+}
+
+text Route4_Text_AliIntro {
+	 format("I do not want to fight. This is my job.")
+}
+
+text Route4_Text_AliLost {
+	format("You defeated me, with tenacity.")
+}
+
+text Route4_Text_AliPost {
+	format("Take caution with you if you venture on, I am nothing compared with our master.")
+}
+
+text Route4_Text_PatroklosIntro {
+	 format("I've borrowed my tunic from my best friend.")
+}
+
+text Route4_Text_PatroklosLost {
+	format("It was fated that I would fall to you.")
+}
+
+text Route4_Text_PatroklosPost {
+	format("Be wary lest you fall to our master, he is the mightiest man that I know.")
+}
+
+text Route4_Text_EpeusIntro {
+	 format("I cannot lose in hand to hand combat!")
+}
+
+text Route4_Text_EpeusLost {
+	format("I must sit down, go on, you win this round.")
+}
+
+text Route4_Text_EpeusPost {
+	format("I am an architecht of great revenge, beware I may attempt to beat you yet.")
+}
+
 
 
 
