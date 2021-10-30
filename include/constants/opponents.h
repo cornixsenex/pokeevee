@@ -86,10 +86,10 @@
 #define TRAINER_LES		                     80
 #define TRAINER_SANJAY                       81
 #define TRAINER_WILLIE                       82
-#define TRAINER_OWEN                         83
-#define TRAINER_WILTON_2                     84
-#define TRAINER_WILTON_3                     85
-#define TRAINER_WILTON_4                     86
+#define TRAINER_HARRY                        83
+#define TRAINER_TEUCER	                     84
+#define TRAINER_SYRA		                 85
+#define TRAINER_SKY		                     86
 #define TRAINER_WILTON_5                     87
 #define TRAINER_WARREN                       88
 #define TRAINER_MARY                         89

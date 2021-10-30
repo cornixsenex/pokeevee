@@ -143,25 +143,29 @@ Route4_EventScript_Willie::
 
 
 Route4_EventScript_Harry::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_HARRY, Route4_Text_HarryIntro, Route4_Text_HarryLost
+	msgbox Route4_Text_HarryPost
 	closemessage
 	end
 
 
 Route4_EventScript_Teucer::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_TEUCER, Route4_Text_TeucerIntro, Route4_Text_TeucerLost
+	msgbox Route4_Text_TeucerPost
 	closemessage
 	end
 
 
 Route4_EventScript_Syra::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_SYRA, Route4_Text_SyraIntro, Route4_Text_SyraLost
+	msgbox Route4_Text_SyraPost
 	closemessage
 	end
 
 
 Route4_EventScript_Sky::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_SKY, Route4_Text_SkyIntro, Route4_Text_SkyLost
+	msgbox Route4_Text_SkyPost
 	closemessage
 	end
 
@@ -494,7 +498,54 @@ Route4_Text_WillieLost::
 	.string "glass.$"
 
 Route4_Text_WilliePost::
-	.string "Let me know if you want to share my girl.$"
+	.string "Let me know when you want to share my\n"
+	.string "girl.$"
+
+Route4_Text_HarryIntro::
+	.string "They said I had this scar when I was\n"
+	.string "born!$"
+
+Route4_Text_HarryLost::
+	.string "This isn't fair! I was the chosen one!$"
+
+Route4_Text_HarryPost::
+	.string "I've walked further than you around\n"
+	.string "this world and seen many things you\l"
+	.string "would not believe. I've seen centaurs,\l"
+	.string "giants, and dragons too.$"
+
+Route4_Text_TeucerIntro::
+	.string "I lost my dad and washed across the\n"
+	.string "sea.$"
+
+Route4_Text_TeucerLost::
+	.string "I'm going under!$"
+
+Route4_Text_TeucerPost::
+	.string "Have you seen my dad?$"
+
+Route4_Text_SyraIntro::
+	.string "Excuse me, do you think my nose is big?$"
+
+Route4_Text_SyraLost::
+	.string "You wouldn't be laughing if I were rich.$"
+
+Route4_Text_SyraPost::
+	.string "My nose is way too big and ugly!$"
+
+Route4_Text_SkyIntro::
+	.string "Like I've been spending all my time with\n"
+	.string "birds and it got me like thinking...are\l"
+	.string "they real?$"
+
+Route4_Text_SkyLost::
+	.string "I know one thing for certain, that loss\n"
+	.string "was real.$"
+
+Route4_Text_SkyPost::
+	.string "I don't think Earth is flat or anything,\n"
+	.string "but maybe there's an Earth within The\l"
+	.string "Earth.$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"

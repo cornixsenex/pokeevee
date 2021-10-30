@@ -146,25 +146,29 @@ script Route4_EventScript_Willie {
 }
 
 script Route4_EventScript_Harry {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_HARRY, Route4_Text_HarryIntro, Route4_Text_HarryLost)
+	msgbox(Route4_Text_HarryPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Teucer {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_TEUCER, Route4_Text_TeucerIntro, Route4_Text_TeucerLost)
+	msgbox(Route4_Text_TeucerPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Syra {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_SYRA, Route4_Text_SyraIntro, Route4_Text_SyraLost)
+	msgbox(Route4_Text_SyraPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Sky {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_SKY, Route4_Text_SkyIntro, Route4_Text_SkyLost)
+	msgbox(Route4_Text_SkyPost)
 	closemessage
 	end
 }
@@ -528,7 +532,55 @@ text Route4_Text_WillieLost {
 }
 
 text Route4_Text_WilliePost {
-	format("Let me know if you want to share my girl.")
+	format("Let me know when you want to share my girl.")
+}
+
+text Route4_Text_HarryIntro {
+	format("They said I had this scar when I was born!")
+}
+
+text Route4_Text_HarryLost {
+	format("This isn't fair! I was the chosen one!")
+}
+
+text Route4_Text_HarryPost {
+	format("I've walked further than you around this world and seen many things you would not believe. I've seen centaurs, giants, and dragons too.")
+}
+
+text Route4_Text_TeucerIntro {
+	format("I lost my dad and washed across the sea.")
+}
+
+text Route4_Text_TeucerLost {
+	format("I'm going under!")
+}
+
+text Route4_Text_TeucerPost {
+	format("Have you seen my dad?")
+}
+
+text Route4_Text_SyraIntro {
+	format("Excuse me, do you think my nose is big?")
+}
+
+text Route4_Text_SyraLost {
+	format("You wouldn't be laughing if I were rich.")
+}
+
+text Route4_Text_SyraPost {
+	format("My nose is way too big and ugly!")
+}
+
+text Route4_Text_SkyIntro {
+	format("Like I've been spending all my time with birds and it got me like thinking...are they real?")
+}
+
+text Route4_Text_SkyLost {
+	format("I know one thing for certain, that loss was real.")
+}
+
+text Route4_Text_SkyPost {
+	format("I don't think Earth is flat or anything, but maybe there's an Earth within The Earth.")
 }
 
 
