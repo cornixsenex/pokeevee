@@ -248,32 +248,39 @@ Route4_EventScript_Dido::
 
 
 Route4_EventScript_Betty::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_BETTY, Route4_Text_BettyIntro, Route4_Text_BettyLost
+	msgbox Route4_Text_BettyPost
 	closemessage
 	end
 
 
 Route4_EventScript_Donovan::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_DONOVAN, Route4_Text_DonovanIntro, Route4_Text_DonovanLost
+	msgbox Route4_Text_DonovanPost
 	closemessage
 	end
 
 
 Route4_EventScript_Helen::
-	msgbox Route4_Text_Test
+	trainerbattle_double TRAINER_HELEN_AND_PARIS, Route4_Text_HelenIntro, Route4_Text_HelenLost, Route124_Text_LilaNotEnoughMons
+	msgbox Route4_Text_HelenPost
 	closemessage
 	end
 
 
 Route4_EventScript_Paris::
-	msgbox Route4_Text_Test
+	trainerbattle_double TRAINER_HELEN_AND_PARIS, Route4_Text_ParisIntro, Route4_Text_ParisLost, Route124_Text_LilaNotEnoughMons
+	msgbox Route4_Text_ParisPost
 	closemessage
 	end
 
 
 Route4_EventScript_FatMan::
-	msgbox Route4_Text_Test
+	lock
+	faceplayer
+	msgbox Route4_Text_FatMan
 	closemessage
+	release
 	end
 
 
@@ -683,6 +690,54 @@ Route4_Text_DidoLost::
 Route4_Text_DidoPost::
 	.string "My lover left me so now I have no reason\n"
 	.string "left to live...$"
+
+Route4_Text_BettyIntro::
+	.string "Well gee you're certainly a daring one.$"
+
+Route4_Text_BettyLost::
+	.string "I've got to ask you. What is your\n"
+	.string "secret?$"
+
+Route4_Text_BettyPost::
+	.string "To be beaten by you was something else!$"
+
+Route4_Text_DonovanIntro::
+	.string "There are two rabbits running in that\n"
+	.string "ditch.$"
+
+Route4_Text_DonovanLost::
+	.string "This was not what I saw from my window!$"
+
+Route4_Text_DonovanPost::
+	.string "I spent so long at home staring outside\n"
+	.string "wondering what the real world was\l"
+	.string "about but just so fast as I come out\l"
+	.string "to play someone like you comes\l"
+	.string "by...ruins my day.$"
+
+Route4_Text_HelenIntro::
+	.string "We ran away together. Isn't that the\n"
+	.string "best story of romance ever told?$"
+
+Route4_Text_HelenLost::
+	.string "This can't be happening! No! Not to me!$"
+
+Route4_Text_HelenPost::
+	.string "I curse the day I took him to be mine.$"
+
+Route4_Text_ParisIntro::
+	.string "The love goddess brought us two here\n"
+	.string "today.$"
+
+Route4_Text_ParisLost::
+	.string "It was nothing but fate that led to\n"
+	.string "this.$"
+
+Route4_Text_ParisPost::
+	.string "I still feel I was never in the wrong.$"
+
+Route4_Text_FatMan::
+	.string "I can't stop eating! It's all I enjoy.$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"

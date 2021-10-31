@@ -98,10 +98,10 @@
 #define TRAINER_EPEUS                        92
 #define TRAINER_SANDY                        93
 #define TRAINER_MAGO	                     94
-#define TRAINER_DIDO                    95
-#define TRAINER_HOPE                         96
-#define TRAINER_SHANNON                      97
-#define TRAINER_MICHELLE                     98
+#define TRAINER_DIDO	                     95
+#define TRAINER_BETTY                        96
+#define TRAINER_DONOVAN                      97
+#define TRAINER_HELEN_AND_PARIS              98
 #define TRAINER_CAROLINE                     99
 #define TRAINER_JULIE                       100
 #define TRAINER_BROOKE_2                    101

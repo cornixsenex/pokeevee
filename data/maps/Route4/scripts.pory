@@ -248,32 +248,39 @@ script Route4_EventScript_Dido {
 }
 
 script Route4_EventScript_Betty {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_BETTY, Route4_Text_BettyIntro, Route4_Text_BettyLost)
+	msgbox(Route4_Text_BettyPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Donovan {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_DONOVAN, Route4_Text_DonovanIntro, Route4_Text_DonovanLost)
+	msgbox(Route4_Text_DonovanPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Helen {
-	msgbox(Route4_Text_Test)
+	trainerbattle_double (TRAINER_HELEN_AND_PARIS, Route4_Text_HelenIntro, Route4_Text_HelenLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_HelenPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Paris {
-	msgbox(Route4_Text_Test)
+	trainerbattle_double (TRAINER_HELEN_AND_PARIS, Route4_Text_ParisIntro, Route4_Text_ParisLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_ParisPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_FatMan {
-	msgbox(Route4_Text_Test)
+	lock
+	faceplayer
+	msgbox(Route4_Text_FatMan)
 	closemessage
+	release
 	end
 }
 
@@ -714,6 +721,65 @@ text Route4_Text_DidoLost {
 text Route4_Text_DidoPost {
 	format("My lover left me so now I have no reason left to live...")
 }
+
+text Route4_Text_BettyIntro {
+	 format("Well gee you're certainly a daring one.") 
+}
+
+text Route4_Text_BettyLost {
+	format("I've got to ask you. What is your secret?")
+}
+
+text Route4_Text_BettyPost {
+	format("To be beaten by you was something else!")
+}
+
+text Route4_Text_DonovanIntro {
+	 format("There are two rabbits running in that ditch.") 
+}
+
+text Route4_Text_DonovanLost {
+	format("This was not what I saw from my window!")
+}
+
+text Route4_Text_DonovanPost {
+	format("I spent so long at home staring outside wondering what the real world was about but just so fast as I come out to play someone like you comes by...ruins my day.")
+}
+
+text Route4_Text_HelenIntro {
+	 format("We ran away together. Isn't that the best story of romance ever told?") 
+}
+
+text Route4_Text_HelenLost {
+	format("This can't be happening! No! Not to me!")
+}
+
+text Route4_Text_HelenPost {
+	format("I curse the day I took him to be mine.")
+}
+
+text Route4_Text_ParisIntro {
+	 format("The love goddess brought us two here today.") 
+}
+
+text Route4_Text_ParisLost {
+	format("It was nothing but fate that led to this.")
+}
+
+text Route4_Text_ParisPost {
+	format("I still feel I was never in the wrong.")
+}
+
+text Route4_Text_FatMan {
+	format("I can't stop eating! It's all I enjoy.")
+}
+
+
+
+
+
+
+
 
 
 
