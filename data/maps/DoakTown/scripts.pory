@@ -25,54 +25,90 @@ script Robustus_EventScript_LeafTrigger2 {
 	end
 }	
 
-script Robustus_EventScript_Camper1 {
-	faceplayer
-	msgbox (Robustus_Text_Test)
-	closemessage
-	call (Robustus_EventScript_Counter)
-	release
+script Robustus_EventScript_Camper1 {	
+	if (!defeated(TRAINER_PIPPIN)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_PIPPIN, Robustus_Text_PippinIntro, Robustus_Text_PippinLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_PippinPost)
+		closemessage
+		release
+	}
 	end
 }
 
 script Robustus_EventScript_Camper2 {
-	faceplayer
-	msgbox (Robustus_Text_Test)
-	call (Robustus_EventScript_Counter)
-	closemessage
-	release
-	end
+	if (!defeated(TRAINER_GRAYSON)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_GRAYSON, Robustus_Text_GraysonIntro, Robustus_Text_GraysonLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_GraysonPost)
+		closemessage
+		release
+	}
 }
 
 script Robustus_EventScript_Camper3 {
-	faceplayer
-	msgbox (Robustus_Text_Test)
-	call (Robustus_EventScript_Counter)
-	closemessage
-	release
-	end
+	if (!defeated(TRAINER_SEAN)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_SEAN, Robustus_Text_SeanIntro, Robustus_Text_SeanLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_SeanPost)
+		closemessage
+		release
+	}
 }
 
 script Robustus_EventScript_Camper4 {
-	faceplayer
-	msgbox (Robustus_Text_Test)
-	call (Robustus_EventScript_Counter)
-	closemessage
-	release
-	end
+	if (!defeated(TRAINER_MERRY)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_MERRY, Robustus_Text_MerryIntro, Robustus_Text_MerryLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_MerryPost)
+		closemessage
+		release
+	}
 }
 
 script Robustus_EventScript_Camper5 {
-	faceplayer
-	msgbox (Robustus_Text_Test)
-	call (Robustus_EventScript_Counter)
-	closemessage
-	release
-	end
+	if (!defeated(TRAINER_PATRICK)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_PATRICK, Robustus_Text_PatrickIntro, Robustus_Text_PatrickLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_PatrickPost)
+		closemessage
+		release
+	}
 }
 
 script Robustus_EventScript_ResetCounter {
 	if (var(VAR_ROBUSTUS_STATE) > 1) {
 		setvar (VAR_ROBUSTUS_STATE, 1)
+		if (defeated(TRAINER_PIPPIN)) {
+			cleartrainerflag (TRAINER_PIPPIN)
+		}
+		if (defeated(TRAINER_GRAYSON)) {
+			cleartrainerflag (TRAINER_GRAYSON)
+		}
+		if (defeated(TRAINER_SEAN)) {
+			cleartrainerflag (TRAINER_SEAN)
+		}
+		if (defeated(TRAINER_MERRY)) {
+			cleartrainerflag (TRAINER_MERRY)
+		}
+		if (defeated(TRAINER_PATRICK)) {
+			cleartrainerflag (TRAINER_PATRICK)
+		}
 	} else {
 		release
 	}
@@ -133,6 +169,65 @@ movement Robustus_Movement_ExitCamper5 {
 	walk_left * 18
 }
 
+text Robustus_Text_PippinIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_PippinLost {
+	format("TEST!")
+}
+
+text Robustus_Text_PippinPost {
+	format("TEST!")
+}	
+
+text Robustus_Text_GraysonIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_GraysonLost {
+	format("TEST!")
+}
+
+text Robustus_Text_GraysonPost {
+	format("TEST!")
+}
+
+text Robustus_Text_SeanIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_SeanLost {
+	format("TEST!")
+}
+
+text Robustus_Text_SeanPost {
+	format("TEST!")
+}		
+
+text Robustus_Text_MerryIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_MerryLost {
+	format("TEST!")
+}
+
+text Robustus_Text_MerryPost {
+	format("TEST!")
+}	
+
+text Robustus_Text_PatrickIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_PatrickLost {
+	format("TEST!")
+}
+
+text Robustus_Text_PatrickPost {
+	format("TEST!")
+}	
 text Robustus_Text_Test {
 	format("TEST!")
 }

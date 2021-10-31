@@ -102,11 +102,11 @@
 #define TRAINER_BETTY                        96
 #define TRAINER_DONOVAN                      97
 #define TRAINER_HELEN_AND_PARIS              98
-#define TRAINER_CAROLINE                     99
-#define TRAINER_JULIE                       100
-#define TRAINER_BROOKE_2                    101
-#define TRAINER_BROOKE_3                    102
-#define TRAINER_BROOKE_4                    103
+#define TRAINER_PIPPIN                       99
+#define TRAINER_GRAYSON                     100
+#define TRAINER_SEAN                        101
+#define TRAINER_MERRY                       102
+#define TRAINER_PATRICK                     103
 #define TRAINER_BROOKE_5                    104
 #define TRAINER_PATRICIA                    105
 #define TRAINER_KINDRA                      106
