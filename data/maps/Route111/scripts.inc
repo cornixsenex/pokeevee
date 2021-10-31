@@ -510,7 +510,6 @@ Route111_EventScript_RematchWilton::
 	end
 
 Route111_EventScript_Brooke::
-	trainerbattle_single TRAINER_BROOKE_1, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_EventScript_RegisterBrooke
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route111_EventScript_RematchBrooke
@@ -522,12 +521,10 @@ Route111_EventScript_RegisterBrooke::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route111_Text_BrookeRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_BROOKE_1
 	release
 	end
 
 Route111_EventScript_RematchBrooke::
-	trainerbattle_rematch TRAINER_BROOKE_1, Route111_Text_BrookeRematchIntro, Route111_Text_BrookeRematchDefeat
 	msgbox Route111_Text_BrookePostRematch, MSGBOX_AUTOCLOSE
 	end
 

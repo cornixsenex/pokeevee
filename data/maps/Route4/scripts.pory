@@ -227,19 +227,22 @@ script Route4_EventScript_Epeus {
 }
 
 script Route4_EventScript_Sandy {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_SANDY, Route4_Text_SandyIntro, Route4_Text_SandyLost)
+	msgbox(Route4_Text_SandyPost)
 	closemessage
 	end
 }
 
-script Route4_EventScript_Pygmalion {
-	msgbox(Route4_Text_Test)
+script Route4_EventScript_Mago {
+	trainerbattle_single (TRAINER_MAGO, Route4_Text_MagoIntro, Route4_Text_MagoLost)
+	msgbox(Route4_Text_MagoPost)
 	closemessage
 	end
 }
 
 script Route4_EventScript_Dido {
-	msgbox(Route4_Text_Test)
+	trainerbattle_single (TRAINER_DIDO, Route4_Text_DidoIntro, Route4_Text_DidoLost)
+	msgbox(Route4_Text_DidoPost)
 	closemessage
 	end
 }
@@ -674,6 +677,42 @@ text Route4_Text_EpeusLost {
 
 text Route4_Text_EpeusPost {
 	format("I am an architecht of great revenge, beware I may attempt to beat you yet.")
+}
+
+text Route4_Text_SandyIntro {
+	 format("I aint from round these parts, I'm from Texas!")
+}
+
+text Route4_Text_SandyLost {
+	format("I'm goin back to Texas any day.")
+}
+
+text Route4_Text_SandyPost {
+	format("I spent some time down there, under the sea, but now I reckon it's time to go home.")
+}
+
+text Route4_Text_MagoIntro {
+	 format("She's not my sister!")
+}
+
+text Route4_Text_MagoLost {
+	format("We're more like cousins...")
+}
+
+text Route4_Text_MagoPost {
+	format("A city once existed on this beach, at least that's what my grandfather told me...")
+}
+
+text Route4_Text_DidoIntro {
+	 format("A weary traveller must never be allowed to pass without recognition.") 
+}
+
+text Route4_Text_DidoLost {
+	format("Another heartbreak")
+}
+
+text Route4_Text_DidoPost {
+	format("My lover left me so now I have no reason left to live...")
 }
 
 

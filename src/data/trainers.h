@@ -1242,43 +1242,43 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Epeus},
     },
 
-    [TRAINER_KEIRA] =
+    [TRAINER_SANDY] =
     {
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .trainerName = _("KEIRA"),
+        .trainerClass = TRAINER_CLASS_TUBER_F,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_TUBER_F,
+        .trainerName = _("SANDY"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SETUP_FIRST_TURN,
-        .partySize = ARRAY_COUNT(sParty_Keira),
-        .party = {.TrainerMon = sParty_Keira},
+        .partySize = ARRAY_COUNT(sParty_Sandy),
+        .party = {.TrainerMon = sParty_Sandy},
     },
 
-    [TRAINER_BROOKE_1] =
+    [TRAINER_MAGO] =
     {
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .trainerName = _("BROOKE"),
+        .trainerClass = TRAINER_CLASS_TUBER_M,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_TUBER_M,
+        .trainerName = _("MAGO"),
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Brooke1),
-        .party = {.TrainerMon = sParty_Brooke1},
+        .partySize = ARRAY_COUNT(sParty_Mago),
+        .party = {.TrainerMon = sParty_Mago},
     },
 
-    [TRAINER_JENNIFER] =
+    [TRAINER_DIDO] =
     {
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .trainerName = _("JENNIFER"),
+        .trainerClass = TRAINER_CLASS_TUBER_F,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_TUBER_F,
+        .trainerName = _("DIDO"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Jennifer),
-        .party = {.TrainerMon = sParty_Jennifer},
+        .partySize = ARRAY_COUNT(sParty_Dido),
+        .party = {.TrainerMon = sParty_Dido},
     },
 
     [TRAINER_HOPE] =

@@ -18,7 +18,6 @@ Route110_TrickHousePuzzle8_EventScript_Vincent::
 	end
 
 Route110_TrickHousePuzzle8_EventScript_Keira::
-	trainerbattle_single TRAINER_KEIRA, Route110_TrickHousePuzzle8_Text_KeiraIntro, Route110_TrickHousePuzzle8_Text_KeiraDefeat
 	msgbox Route110_TrickHousePuzzle8_Text_KeiraPostBattle, MSGBOX_AUTOCLOSE
 	end
 

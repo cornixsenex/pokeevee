@@ -227,19 +227,22 @@ Route4_EventScript_Epeus::
 
 
 Route4_EventScript_Sandy::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_SANDY, Route4_Text_SandyIntro, Route4_Text_SandyLost
+	msgbox Route4_Text_SandyPost
 	closemessage
 	end
 
 
-Route4_EventScript_Pygmalion::
-	msgbox Route4_Text_Test
+Route4_EventScript_Mago::
+	trainerbattle_single TRAINER_MAGO, Route4_Text_MagoIntro, Route4_Text_MagoLost
+	msgbox Route4_Text_MagoPost
 	closemessage
 	end
 
 
 Route4_EventScript_Dido::
-	msgbox Route4_Text_Test
+	trainerbattle_single TRAINER_DIDO, Route4_Text_DidoIntro, Route4_Text_DidoLost
+	msgbox Route4_Text_DidoPost
 	closemessage
 	end
 
@@ -646,6 +649,40 @@ Route4_Text_EpeusLost::
 Route4_Text_EpeusPost::
 	.string "I am an architecht of great revenge,\n"
 	.string "beware I may attempt to beat you yet.$"
+
+Route4_Text_SandyIntro::
+	.string "I aint from round these parts, I'm from\n"
+	.string "Texas!$"
+
+Route4_Text_SandyLost::
+	.string "I'm goin back to Texas any day.$"
+
+Route4_Text_SandyPost::
+	.string "I spent some time down there, under the\n"
+	.string "sea, but now I reckon it's time to go\l"
+	.string "home.$"
+
+Route4_Text_MagoIntro::
+	.string "She's not my sister!$"
+
+Route4_Text_MagoLost::
+	.string "We're more like cousins...$"
+
+Route4_Text_MagoPost::
+	.string "A city once existed on this beach, at\n"
+	.string "least that's what my grandfather told\l"
+	.string "me...$"
+
+Route4_Text_DidoIntro::
+	.string "A weary traveller must never be allowed\n"
+	.string "to pass without recognition.$"
+
+Route4_Text_DidoLost::
+	.string "Another heartbreak$"
+
+Route4_Text_DidoPost::
+	.string "My lover left me so now I have no reason\n"
+	.string "left to live...$"
 
 Route4_Text_Test::
 	.string "Just a Test Message srry$"

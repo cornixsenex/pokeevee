@@ -96,9 +96,9 @@
 #define TRAINER_ALI	                         90
 #define TRAINER_PATROKLOS                    91
 #define TRAINER_EPEUS                        92
-#define TRAINER_KEIRA                        93
-#define TRAINER_BROOKE_1                     94
-#define TRAINER_JENNIFER                     95
+#define TRAINER_SANDY                        93
+#define TRAINER_MAGO	                     94
+#define TRAINER_DIDO                    95
 #define TRAINER_HOPE                         96
 #define TRAINER_SHANNON                      97
 #define TRAINER_MICHELLE                     98
