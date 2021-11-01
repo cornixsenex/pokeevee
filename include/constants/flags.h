@@ -74,7 +74,7 @@
 #define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4
 #define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
 #define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_ROUTE6_HIDEPIKACHU      0x3F // Unused Flag
 
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag

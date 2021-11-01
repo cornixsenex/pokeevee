@@ -223,7 +223,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MEOWTH",
@@ -236,20 +236,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
       "x": 48,
       "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JAMES",
@@ -262,7 +262,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ROUTE6_HIDEPIKACHU"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -386,7 +386,24 @@
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_ROUTE6_STATE",
+      "var_value": "0",
+      "script": "Route6_EventScript_JesseAndJames"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ROUTE6_STATE",
+      "var_value": "0",
+      "script": "Route6_EventScript_JesseAndJames"
+    }
   ],
   "bg_events": [
     {
