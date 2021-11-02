@@ -81,6 +81,33 @@ Route6_EventScript_JesseAndJames::
 	end
 
 
+Route6_EventScript_SafariManTrigger::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Route6_Text_SafariMan1
+	closemessage
+	applymovement 25, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox Route6_Text_SafariMan2
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Route6_Movement_SafariBlock
+	waitmovement 0
+	release
+	end
+
+
+Route6_EventScript_SafariMan::
+	lock
+	faceplayer
+	msgbox Route6_Text_SafariMan1
+	closemessage
+	msgbox Route6_Text_SafariMan2
+	closemessage
+	release
+	end
+
+
 Route6_Movement_JesseApproachPikachu:
 	walk_diag_southeast
 	face_right
@@ -115,6 +142,14 @@ Route6_Movement_JesseExit:
 	walk_right
 	walk_right
 	walk_right
+	step_end
+
+Route6_Movement_SafariBlock:
+	walk_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
 	step_end
 
 Route6_Text_GirafarigSign::
@@ -161,6 +196,15 @@ Route6_Text_Jesse3::
 
 Route6_Text_Meowth3::
 	.string "They think of me as the comic relief!$"
+
+Route6_Text_SafariMan1::
+	.string "I can't believe you're gone oh PIKACHU!$"
+
+Route6_Text_SafariMan2::
+	.string "You've got to help me find my PIKACHU!\n"
+	.string "About this tall! Yellowish! Sparky\l"
+	.string "thing that was just stolen by two\l"
+	.string "wicked things!$"
 
 Route6_Text_Test::
 	.string "Just a Test Message srry$"

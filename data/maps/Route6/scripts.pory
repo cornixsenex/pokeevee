@@ -81,6 +81,33 @@ script Route6_EventScript_JesseAndJames {
 	end
 }
 
+script Route6_EventScript_SafariManTrigger {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Route6_Text_SafariMan1)
+	closemessage
+	applymovement (25, Common_Movement_FaceLeft)
+	waitmovement (0)	
+	msgbox (Route6_Text_SafariMan2)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Route6_Movement_SafariBlock)
+	waitmovement (0)
+	release
+	end
+}
+
+script Route6_EventScript_SafariMan {
+	lock
+	faceplayer
+	msgbox (Route6_Text_SafariMan1)
+	closemessage
+	msgbox (Route6_Text_SafariMan2)
+	closemessage
+	release
+	end
+}
+
 movement Route6_Movement_JesseApproachPikachu {
 	walk_diag_southeast
 	face_right
@@ -113,7 +140,10 @@ movement Route6_Movement_JesseExit {
 	walk_right * 5
 }
 
-
+movement Route6_Movement_SafariBlock {
+	walk_down
+	walk_fast_left * 4
+}
 	
 
 
@@ -160,8 +190,14 @@ text Route6_Text_Jesse3 {
 text Route6_Text_Meowth3 {
 	format("They think of me as the comic relief!")
 }
-	
 
+text Route6_Text_SafariMan1 {
+	format("I can't believe you're gone oh PIKACHU!")
+}	
+
+text Route6_Text_SafariMan2 {
+	format("You've got to help me find my PIKACHU! About this tall! Yellowish! Sparky thing that was just stolen by two wicked things!")
+}	
 
 
 

@@ -73,10 +73,10 @@
 #define FLAG_CLARACITY_CHURCH_HIDESAGE    0x3B // Hides Sage and the church people
 #define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4
 #define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
-#define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // Unused Flag
-#define FLAG_ROUTE6_HIDEPIKACHU      0x3F // Unused Flag
+#define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // after the flower game
+#define FLAG_ROUTE6_HIDEPIKACHU      0x3F // after J&J cutscen
 
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
+#define FLAG_ROUTE7_HIDEOLDWOMAN    0x40 // Hides the old lady after the roadblock trigger
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
