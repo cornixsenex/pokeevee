@@ -1224,3 +1224,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/CityClara_Mart/scripts.inc"
 
 	.include "data/maps/CityClara_Church/scripts.inc"
+
+	.include "data/maps/CampLodge/scripts.inc"

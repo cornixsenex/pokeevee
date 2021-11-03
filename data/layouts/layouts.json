@@ -5060,6 +5060,16 @@
       "secondary_tileset": "gTileset_Contest",
       "border_filepath": "data/layouts/CityClara_Church/border.bin",
       "blockdata_filepath": "data/layouts/CityClara_Church/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAMP_LODGE",
+      "name": "CampLodge_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/CampLodge/border.bin",
+      "blockdata_filepath": "data/layouts/CampLodge/map.bin"
     }
   ]
 }

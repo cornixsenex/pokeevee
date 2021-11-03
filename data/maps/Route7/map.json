@@ -222,7 +222,7 @@
       "x": 7,
       "y": 33,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
       "movement_range_y": 6,
       "trainer_type": "TRAINER_TYPE_NONE",

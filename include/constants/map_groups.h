@@ -585,6 +585,7 @@
 #define MAP_CITY_CLARA_HOUSE2 (2 | (30 << 8))
 #define MAP_CITY_CLARA_MART   (3 | (30 << 8))
 #define MAP_CITY_CLARA_CHURCH (4 | (30 << 8))
+#define MAP_CAMP_LODGE        (5 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

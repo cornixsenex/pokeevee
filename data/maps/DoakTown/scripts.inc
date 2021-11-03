@@ -10,8 +10,17 @@ DoakTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 Robustus_EventScript_LeafTrigger1::
 	lock
 	call Robustus_EventScript_Counter
+	applymovement 2, Common_Movement_FaceLeft
 	applymovement 2, Common_Movement_ExclamationMark
 	waitmovement 0
+	applymovement 2, Robustus_Movement_LeafApproach1
+	waitmovement 0
+	msgbox Robustus_Text_Leaf1
+	closemessage
+	applymovement 2, Robustus_Movement_LeafExit
+	waitmovement 0
+	removeobject 2
+	setflag FLAG_ROBUSTUS_HIDELEAF
 	release
 	end
 
@@ -19,8 +28,17 @@ Robustus_EventScript_LeafTrigger1::
 Robustus_EventScript_LeafTrigger2::
 	lock
 	call Robustus_EventScript_Counter
+	applymovement 2, Common_Movement_FaceLeft
 	applymovement 2, Common_Movement_ExclamationMark
 	waitmovement 0
+	applymovement 2, Robustus_Movement_LeafApproach2
+	waitmovement 0
+	msgbox Robustus_Text_Leaf1
+	closemessage
+	applymovement 2, Robustus_Movement_LeafExit
+	waitmovement 0
+	removeobject 2
+	setflag FLAG_ROBUSTUS_HIDELEAF
 	release
 	end
 
@@ -280,6 +298,28 @@ Robustus_Movement_ExitCamper5:
 	walk_left
 	step_end
 
+Robustus_Movement_LeafApproach1:
+	walk_left
+	walk_left
+	step_end
+
+Robustus_Movement_LeafApproach2:
+	walk_left
+	walk_diag_southwest
+	face_left
+	step_end
+
+Robustus_Movement_LeafExit:
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 Robustus_Text_PippinIntro::
 	.string "TEST!$"
 
@@ -324,6 +364,21 @@ Robustus_Text_PatrickLost::
 
 Robustus_Text_PatrickPost::
 	.string "TEST!$"
+
+Robustus_Text_Leaf1::
+	.string "My gosh! Look at you {PLAYER} I see\n"
+	.string "you've grown more lovely in every\l"
+	.string "possible way. Unfortunately I can't\l"
+	.string "find a way to continue our trip north\l"
+	.string "to Ardor. The bicycle highway is not a\l"
+	.string "choice unless we can ground score\l"
+	.string "ourselves a bike, and rock tunnel is\l"
+	.string "blocked by hella rocks. I fear the\l"
+	.string "passage south through the city but\l"
+	.string "currently that seems our only choice.\l"
+	.string "Please find a way to keep travelling\l"
+	.string "north or brace yourself to go through\l"
+	.string "the city.$"
 
 Robustus_Text_Test::
 	.string "TEST!$"
