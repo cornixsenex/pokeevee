@@ -107,10 +107,10 @@
 #define TRAINER_SEAN                        101
 #define TRAINER_MERRY                       102
 #define TRAINER_PATRICK                     103
-#define TRAINER_BROOKE_5                    104
-#define TRAINER_PATRICIA                    105
-#define TRAINER_KINDRA                      106
-#define TRAINER_TAMMY                       107
+#define TRAINER_EURYKLEIA                   104
+#define TRAINER_ANTIKLEIA                   105
+#define TRAINER_EUMAEUS                     106
+#define TRAINER_LAERTES                     107
 #define TRAINER_VALERIE_1                   108
 #define TRAINER_TASHA                       109
 #define TRAINER_VALERIE_2                   110

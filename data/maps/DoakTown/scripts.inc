@@ -29,6 +29,7 @@ Robustus_EventScript_LeafTrigger2::
 	lock
 	call Robustus_EventScript_Counter
 	applymovement 2, Common_Movement_FaceLeft
+	waitmovement 0
 	applymovement 2, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement 2, Robustus_Movement_LeafApproach2
