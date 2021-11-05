@@ -127,6 +127,7 @@ CampLodge_EventScript_Laertes::
 	checktrainerflag TRAINER_LAERTES
 	goto_if 0, CampLodge_EventScript_Laertes_2
 	msgbox CampLodge_Text_Laertes
+	closemessage
 CampLodge_EventScript_Laertes_1:
 	end
 

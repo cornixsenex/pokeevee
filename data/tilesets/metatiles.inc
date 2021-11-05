@@ -656,3 +656,5 @@ gMetatiles_willow::
 	.align 1
 gMetatileAttributes_willow::
 	.incbin "data/tilesets/secondary/willow/metatile_attributes.bin"
+
+

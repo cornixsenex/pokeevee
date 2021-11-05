@@ -5070,6 +5070,16 @@
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/CampLodge/border.bin",
       "blockdata_filepath": "data/layouts/CampLodge/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCK_TUNNEL",
+      "name": "RockTunnel_Layout",
+      "width": 42,
+      "height": 128,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RockTunnel/border.bin",
+      "blockdata_filepath": "data/layouts/RockTunnel/map.bin"
     }
   ]
 }
