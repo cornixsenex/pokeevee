@@ -111,7 +111,7 @@
 #define TRAINER_ANTIKLEIA                   105
 #define TRAINER_EUMAEUS                     106
 #define TRAINER_LAERTES                     107
-#define TRAINER_VALERIE_1                   108
+#define TRAINER_RIVAL3	                    108
 #define TRAINER_TASHA                       109
 #define TRAINER_VALERIE_2                   110
 #define TRAINER_VALERIE_3                   111

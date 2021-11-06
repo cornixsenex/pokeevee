@@ -268,7 +268,7 @@
 #define VAR_CITYCLARA_STATE                  0x40F8 // Leaf+Scott in CannaClub...
 #define VAR_CITYCLARA_SCHOOL_STATE           0x40F9 // Counts students defeated in the school
 #define VAR_ROUTE4_STATE                     0x40FA // Controls events on Route4 set to ONE (1) by the rocket event in Route4
-#define VAR_ROBUSTUS_STATE                   0x40FB // Controls events in Robustus namely the campers and leaf event
+#define VAR_ROBUSTUS_STATE                   0x40FB // Controls events in Robustus namely the campers and leaf event; set to 7 on exeunt; triggers leaf before rock tunnel then set to 8; triggers rival ambush then set to 9;
 #define VAR_ROUTE6_STATE                     0x40FC // Triggers J&J event
 #define VAR_CAMPLODGE                        0x40FD // Controls camper / rocks
 #define VAR_UNUSED_0x40FE                    0x40FE // Unused Var

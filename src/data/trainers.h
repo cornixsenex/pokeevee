@@ -1437,17 +1437,20 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Laertes},
     },
 
-    [TRAINER_VALERIE_1] =
+    [TRAINER_RIVAL3] =
     {
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .trainerName = _("VALERIE"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Valerie1),
-        .party = {.TrainerMon = sParty_Valerie1},
+		.partyFlags = 0,
+		.trainerClass = TRAINER_CLASS_FUCKBOY,
+		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+		.trainerPic = TRAINER_PIC_BLUE2,
+		.trainerName = _("{B_RIVAL_NAME}"),
+		.items = {},
+		.doubleBattle = FALSE,
+		.aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+		.partySize = ARRAY_COUNT(sParty_Rival3),
+		.party = {.TrainerMon = sParty_Rival3},
+		.hasCustomTransition = TRUE,
+		.transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_TASHA] =
