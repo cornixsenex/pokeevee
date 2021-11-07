@@ -1,24 +1,16 @@
 Route5_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route5_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
-
-Route5_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	call Route5_OnTransition
-	return
-
-
-Route5_OnTransition::
-	removeobject 21
-	end
 
 
 Route5_EventScript_LeafTrigger1::
 	lock
+	setvar VAR_ROBUSTUS_STATE, 8
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	addobject 21
+	showobjectat 21, MAP_ROUTE5
 	applymovement 21, Route5_Movement_LeafEnter1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -36,11 +28,13 @@ Route5_EventScript_LeafTrigger1::
 
 Route5_EventScript_LeafTrigger2::
 	lock
+	setvar VAR_ROBUSTUS_STATE, 8
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	addobject 21
+	showobjectat 21, MAP_ROUTE5
 	applymovement 21, Route5_Movement_LeafEnter2
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight

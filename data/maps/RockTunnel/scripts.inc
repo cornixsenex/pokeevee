@@ -1,15 +1,5 @@
 RockTunnel_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, RockTunnel_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
-
-RockTunnel_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	call RockTunnel_OnTransition
-	return
-
-
-RockTunnel_OnTransition::
-	removeobject 3
-	end
 
 
 RockTunnel_EventScript_RivalTrigger1::
@@ -25,6 +15,7 @@ RockTunnel_EventScript_RivalTrigger1::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	addobject 3
+	showobjectat 3, MAP_ROCK_TUNNEL
 	applymovement 3, RockTunnel_Movement_RivalEntrance1
 	waitmovement 0
 	load_field_pic 3, 190, 98
@@ -66,6 +57,7 @@ RockTunnel_EventScript_RivalTrigger2::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	addobject 3
+	showobjectat 3, MAP_ROCK_TUNNEL
 	applymovement 3, RockTunnel_Movement_RivalEntrance2
 	waitmovement 0
 	load_field_pic 3, 190, 98
@@ -80,7 +72,7 @@ RockTunnel_EventScript_RivalTrigger2::
 	closemessage
 	applymovement 3, RockTunnel_Movement_RivalExit
 	waitmovement 0
-	removeobject 0
+	removeobject 3
 	applymovement 2, RockTunnel_Movement_LeafApproach2
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
@@ -88,8 +80,11 @@ RockTunnel_EventScript_RivalTrigger2::
 	msgbox RockTunnel_Text_Leaf2
 	closemessage
 	destroy_field_pic 4
-	applymovement 4, RockTunnel_Movement_LeafExit
+	applymovement 2, RockTunnel_Movement_LeafExit
 	waitmovement 0
+	removeobject 2
+	setflag FLAG_ROCKTUNNEL_RIVALDEFEATED
+	setvar VAR_ROBUSTUS_STATE, 9
 	releaseall
 	end
 
