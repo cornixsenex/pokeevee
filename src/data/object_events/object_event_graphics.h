@@ -432,6 +432,14 @@ const u32 gObjectEventPic_Meowth[] = INCBIN_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Meowth[] = INCBIN_U16("graphics/object_events/palettes/meowth.gbapal");
 const u32 gObjectEventPic_Soldier[] = INCBIN_U32("graphics/object_events/pics/people/soldier.4bpp");
 const u16 gObjectEventPal_Soldier[] = INCBIN_U16("graphics/object_events/palettes/soldier.gbapal");
+const u32 gObjectEventPic_Biker[] = INCBIN_U32("graphics/object_events/pics/people/biker.4bpp");
+const u16 gObjectEventPal_Biker[] = INCBIN_U16("graphics/object_events/palettes/biker.gbapal");
+
+
+
+
+
+
 
 //Pokemon overworlds
 const u32 gObjectEventPic_Pokemon_Species_001[] = INCBIN_U32("graphics/object_events/pics/pokemon/species/001.4bpp");

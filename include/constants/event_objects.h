@@ -260,7 +260,9 @@
 #define OBJ_EVENT_GFX_JAMES				         255
 #define OBJ_EVENT_GFX_MEOWTH			         256
 #define OBJ_EVENT_GFX_SOLDIER			         257
-#define NUM_REGULAR_OBJ_EVENT_GFX                258
+#define OBJ_EVENT_GFX_BIKER				         258
+
+#define NUM_REGULAR_OBJ_EVENT_GFX                259
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)

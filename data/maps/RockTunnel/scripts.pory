@@ -24,14 +24,14 @@ script RockTunnel_EventScript_RivalTrigger1 {
 	destroy_field_pic (3)
 	closemessage
 	setvar (VAR_MUGSHOT_ID, MUGSHOT_BLUE)
-	trainerbattle_no_intro(TRAINER_BLUE, RockTunnel_Text_RivalLost)
+	trainerbattle_no_intro(TRAINER_RIVAL3, RockTunnel_Text_RivalLost)
 	load_field_pic (3, 190, 98)
 	msgbox (RockTunnel_Text_RivalPost)
 	destroy_field_pic (3)
 	closemessage
 	applymovement (3, RockTunnel_Movement_RivalExit)
 	waitmovement (0)
-	removeobject (0)
+	removeobject (3)
 	applymovement (2, RockTunnel_Movement_LeafApproach1)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
@@ -39,8 +39,11 @@ script RockTunnel_EventScript_RivalTrigger1 {
 	msgbox (RockTunnel_Text_Leaf2)
 	closemessage
 	destroy_field_pic (4)
-	applymovement (4, RockTunnel_Movement_LeafExit)
+	applymovement (2, RockTunnel_Movement_LeafExit)
 	waitmovement (0)
+	removeobject (2)
+	setflag (FLAG_ROCKTUNNEL_RIVALDEFEATED)
+	setvar (VAR_ROBUSTUS_STATE, 9)
 	releaseall
 	end
 }

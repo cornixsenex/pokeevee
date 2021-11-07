@@ -1118,6 +1118,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jessie;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meowth;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Soldier;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker;
 
 //Pokemon species overworlds
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_001;
@@ -1752,6 +1753,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_JAMES] =                   &gObjectEventGraphicsInfo_James,    
 	[OBJ_EVENT_GFX_MEOWTH] =                   &gObjectEventGraphicsInfo_Meowth,
 	[OBJ_EVENT_GFX_SOLDIER] =                   &gObjectEventGraphicsInfo_Soldier,
+	[OBJ_EVENT_GFX_BIKER] =                   &gObjectEventGraphicsInfo_Biker,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 
