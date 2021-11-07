@@ -1119,6 +1119,13 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meowth;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Soldier;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Channeler;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chef;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rocker;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster2;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker;
 
 //Pokemon species overworlds
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_001;
@@ -1754,6 +1761,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_MEOWTH] =                   &gObjectEventGraphicsInfo_Meowth,
 	[OBJ_EVENT_GFX_SOLDIER] =                   &gObjectEventGraphicsInfo_Soldier,
 	[OBJ_EVENT_GFX_BIKER] =                   &gObjectEventGraphicsInfo_Biker,
+	[OBJ_EVENT_GFX_CHANNELER] =                   &gObjectEventGraphicsInfo_Channeler,
+	[OBJ_EVENT_GFX_CHEF] =                   &gObjectEventGraphicsInfo_Chef,
+	[OBJ_EVENT_GFX_POLICEMAN] =                   &gObjectEventGraphicsInfo_Policeman,
+	[OBJ_EVENT_GFX_PROF_OAK] =                   &gObjectEventGraphicsInfo_ProfOak,
+	[OBJ_EVENT_GFX_ROCKER] =                   &gObjectEventGraphicsInfo_Rocker,
+	[OBJ_EVENT_GFX_YOUNGSTER2] =                   &gObjectEventGraphicsInfo_Youngster2,
+	[OBJ_EVENT_GFX_WORKER] =                   &gObjectEventGraphicsInfo_Worker,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 

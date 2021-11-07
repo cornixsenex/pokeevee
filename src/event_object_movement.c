@@ -487,6 +487,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MEOWTH	              0x1135
 #define OBJ_EVENT_PAL_TAG_SOLDIER	              0x1136
 #define OBJ_EVENT_PAL_TAG_BIKER		              0x1137
+#define OBJ_EVENT_PAL_TAG_CHANNELER	              0x1138
+#define OBJ_EVENT_PAL_TAG_CHEF  	              0x1139
+#define OBJ_EVENT_PAL_TAG_POLICEMAN  	          0x1140
+#define OBJ_EVENT_PAL_TAG_PROF_OAK  	          0x1141
+#define OBJ_EVENT_PAL_TAG_ROCKER	  	          0x1142
+#define OBJ_EVENT_PAL_TAG_YOUNGSTER2	  	      0x1143
+#define OBJ_EVENT_PAL_TAG_WORKER  		  	      0x1144
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 
@@ -1405,6 +1412,13 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Meowth,       	    	OBJ_EVENT_PAL_TAG_MEOWTH},
 	{gObjectEventPal_Soldier,       	    OBJ_EVENT_PAL_TAG_SOLDIER},
 	{gObjectEventPal_Biker,       	   	    OBJ_EVENT_PAL_TAG_BIKER},
+	{gObjectEventPal_Channeler,       	   	OBJ_EVENT_PAL_TAG_CHANNELER},
+	{gObjectEventPal_Chef,       	   	    OBJ_EVENT_PAL_TAG_CHEF},
+	{gObjectEventPal_Policeman,       	   	OBJ_EVENT_PAL_TAG_POLICEMAN},
+	{gObjectEventPal_ProfOak,       	   	OBJ_EVENT_PAL_TAG_PROF_OAK},
+	{gObjectEventPal_Rocker,       	   	    OBJ_EVENT_PAL_TAG_ROCKER},
+	{gObjectEventPal_Youngster2,       	   	OBJ_EVENT_PAL_TAG_YOUNGSTER2},
+	{gObjectEventPal_Worker,       	   		OBJ_EVENT_PAL_TAG_WORKER},
 
     {NULL,                                  0x0000},
     

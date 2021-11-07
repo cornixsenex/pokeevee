@@ -261,8 +261,15 @@
 #define OBJ_EVENT_GFX_MEOWTH			         256
 #define OBJ_EVENT_GFX_SOLDIER			         257
 #define OBJ_EVENT_GFX_BIKER				         258
+#define OBJ_EVENT_GFX_CHANNELER				     259
+#define OBJ_EVENT_GFX_CHEF  				     260
+#define OBJ_EVENT_GFX_POLICEMAN 				 261
+#define OBJ_EVENT_GFX_PROF_OAK 				 	 262
+#define OBJ_EVENT_GFX_ROCKER 				 	 263
+#define OBJ_EVENT_GFX_YOUNGSTER2				 264
+#define OBJ_EVENT_GFX_WORKER					 265
 
-#define NUM_REGULAR_OBJ_EVENT_GFX                259
+#define NUM_REGULAR_OBJ_EVENT_GFX                266
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)
