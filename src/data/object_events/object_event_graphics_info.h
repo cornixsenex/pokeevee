@@ -261,6 +261,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster2 = {0xFF
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker = {0xFFFF, OBJ_EVENT_PAL_TAG_WORKER, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Worker, gDummySpriteAffineAnimTable};
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MewtwoArmor= { 0xFFFF, OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_PokemonSpecies, sPicTable_MewtwoArmor, gDummySpriteAffineAnimTable};
+
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker = {0xFFFF, OBJ_EVENT_PAL_TAG_BIKER, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_BIKE_TIRE, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_AcroBike, sPicTable_Biker, gDummySpriteAffineAnimTable};
 

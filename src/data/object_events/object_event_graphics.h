@@ -448,6 +448,8 @@ const u32 gObjectEventPic_Youngster2[] = INCBIN_U32("graphics/object_events/pics
 const u16 gObjectEventPal_Youngster2[] = INCBIN_U16("graphics/object_events/palettes/youngster2.gbapal");
 const u32 gObjectEventPic_Worker[] = INCBIN_U32("graphics/object_events/pics/people/worker.4bpp");
 const u16 gObjectEventPal_Worker[] = INCBIN_U16("graphics/object_events/palettes/worker.gbapal");
+const u32 gObjectEventPic_MewtwoArmor[] = INCBIN_U32("graphics/object_events/pics/people/mewtwo_armor.4bpp");
+const u16 gObjectEventPal_MewtwoArmor[] = INCBIN_U16("graphics/object_events/palettes/mewtwo_armor.gbapal");
 
 
 

@@ -494,6 +494,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_ROCKER	  	          0x1142
 #define OBJ_EVENT_PAL_TAG_YOUNGSTER2	  	      0x1143
 #define OBJ_EVENT_PAL_TAG_WORKER  		  	      0x1144
+#define OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR		  	  0x1145
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 
@@ -1419,6 +1420,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_Rocker,       	   	    OBJ_EVENT_PAL_TAG_ROCKER},
 	{gObjectEventPal_Youngster2,       	   	OBJ_EVENT_PAL_TAG_YOUNGSTER2},
 	{gObjectEventPal_Worker,       	   		OBJ_EVENT_PAL_TAG_WORKER},
+	{gObjectEventPal_MewtwoArmor,       	OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR},
 
     {NULL,                                  0x0000},
     

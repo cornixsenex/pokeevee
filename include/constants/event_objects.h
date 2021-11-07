@@ -268,8 +268,9 @@
 #define OBJ_EVENT_GFX_ROCKER 				 	 263
 #define OBJ_EVENT_GFX_YOUNGSTER2				 264
 #define OBJ_EVENT_GFX_WORKER					 265
+#define OBJ_EVENT_GFX_MEWTWO_ARMOR			     266
 
-#define NUM_REGULAR_OBJ_EVENT_GFX                266
+#define NUM_REGULAR_OBJ_EVENT_GFX                267
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)
