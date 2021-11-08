@@ -5100,6 +5100,16 @@
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/Vegas_PowerPlant/border.bin",
       "blockdata_filepath": "data/layouts/Vegas_PowerPlant/map.bin"
+    },
+    {
+      "id": "LAYOUT_VEGAS_POWER_PLANT2F",
+      "name": "Vegas_PowerPlant2F_Layout",
+      "width": 22,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/Vegas_PowerPlant2F/border.bin",
+      "blockdata_filepath": "data/layouts/Vegas_PowerPlant2F/map.bin"
     }
   ]
 }

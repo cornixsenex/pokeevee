@@ -1234,3 +1234,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/PowerPlant/scripts.inc"
 
 	.include "data/maps/Vegas_PowerPlant/scripts.inc"
+
+	.include "data/maps/Vegas_PowerPlant2F/scripts.inc"

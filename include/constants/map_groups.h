@@ -580,15 +580,16 @@
 #define MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE (12 | (29 << 8))
 
 // Map Group 30
-#define MAP_SILVAN_WOODS      (0 | (30 << 8))
-#define MAP_BEACH_CAVE        (1 | (30 << 8))
-#define MAP_CITY_CLARA_HOUSE2 (2 | (30 << 8))
-#define MAP_CITY_CLARA_MART   (3 | (30 << 8))
-#define MAP_CITY_CLARA_CHURCH (4 | (30 << 8))
-#define MAP_CAMP_LODGE        (5 | (30 << 8))
-#define MAP_ROCK_TUNNEL       (6 | (30 << 8))
-#define MAP_POWER_PLANT       (7 | (30 << 8))
-#define MAP_VEGAS_POWER_PLANT (8 | (30 << 8))
+#define MAP_SILVAN_WOODS        (0 | (30 << 8))
+#define MAP_BEACH_CAVE          (1 | (30 << 8))
+#define MAP_CITY_CLARA_HOUSE2   (2 | (30 << 8))
+#define MAP_CITY_CLARA_MART     (3 | (30 << 8))
+#define MAP_CITY_CLARA_CHURCH   (4 | (30 << 8))
+#define MAP_CAMP_LODGE          (5 | (30 << 8))
+#define MAP_ROCK_TUNNEL         (6 | (30 << 8))
+#define MAP_POWER_PLANT         (7 | (30 << 8))
+#define MAP_VEGAS_POWER_PLANT   (8 | (30 << 8))
+#define MAP_VEGAS_POWER_PLANT2F (9 | (30 << 8))
 
 // Map Group 31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))
