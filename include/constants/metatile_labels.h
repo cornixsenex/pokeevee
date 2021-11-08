@@ -78,6 +78,7 @@
 #define METATILE_BikeShop_Barrier_Blue_BottomMid   0x2C7
 #define METATILE_BikeShop_Barrier_Blue_Top         0x2B7
 #define METATILE_BikeShop_Barrier_Blue_TopMid      0x2BF
+#define METATILE_BikeShop_Barrier_Blue_Top_Grey    0x2AF
 #define METATILE_BikeShop_Barrier_Green_Bottom     0x2CE
 #define METATILE_BikeShop_Barrier_Green_BottomMid  0x2C6
 #define METATILE_BikeShop_Barrier_Green_Top        0x2B6

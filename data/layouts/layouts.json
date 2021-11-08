@@ -5080,6 +5080,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/RockTunnel/border.bin",
       "blockdata_filepath": "data/layouts/RockTunnel/map.bin"
+    },
+    {
+      "id": "LAYOUT_VEGAS_HOTEL1F",
+      "name": "Vegas_Hotel1F_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/Vegas_Hotel1F/border.bin",
+      "blockdata_filepath": "data/layouts/Vegas_Hotel1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_VEGAS_POWER_PLANT",
+      "name": "Vegas_PowerPlant_Layout",
+      "width": 42,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/Vegas_PowerPlant/border.bin",
+      "blockdata_filepath": "data/layouts/Vegas_PowerPlant/map.bin"
     }
   ]
 }

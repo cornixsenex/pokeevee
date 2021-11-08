@@ -1228,3 +1228,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/CampLodge/scripts.inc"
 
 	.include "data/maps/RockTunnel/scripts.inc"
+
+	.include "data/maps/Vegas_Hotel1F/scripts.inc"
+
+	.include "data/maps/PowerPlant/scripts.inc"
+
+	.include "data/maps/Vegas_PowerPlant/scripts.inc"

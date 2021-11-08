@@ -620,7 +620,9 @@
     "CityClara_Mart",
     "CityClara_Church",
     "CampLodge",
-    "RockTunnel"
+    "RockTunnel",
+    "PowerPlant",
+    "Vegas_PowerPlant"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",
@@ -638,7 +640,8 @@
     "CityClara_CannabisClub",
     "CityClara_House1",
     "CityClara_PokemonCenter",
-    "CityClara_School"
+    "CityClara_School",
+    "Vegas_Hotel1F"
   ],
   "gMapGroup_IndoorRoute113": [
     "Route113_GlassWorkshop"
