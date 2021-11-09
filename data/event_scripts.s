@@ -1236,3 +1236,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Vegas_PowerPlant/scripts.inc"
 
 	.include "data/maps/Vegas_PowerPlant2F/scripts.inc"
+
+	.include "data/maps/Ardor_Uni1F/scripts.inc"
+
+	.include "data/maps/Ardor_Uni2F/scripts.inc"
+
+	.include "data/maps/Ardor_Uni3F/scripts.inc"

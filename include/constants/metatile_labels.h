@@ -88,6 +88,7 @@
 #define METATILE_BikeShop_Button_Blue              0x236
 #define METATILE_BikeShop_Button_Green             0x22E
 #define METATILE_BikeShop_Button_Pressed           0x24F
+#define METATILE_BikeShop_Floor_Normal             0x242
 #define METATILE_BikeShop_Floor_Shadow_Top         0x26D
 #define METATILE_BikeShop_Generator_Off_Tile0      0x2F0
 #define METATILE_BikeShop_Generator_Off_Tile1      0x2F1

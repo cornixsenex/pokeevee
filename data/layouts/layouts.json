@@ -5110,6 +5110,36 @@
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/Vegas_PowerPlant2F/border.bin",
       "blockdata_filepath": "data/layouts/Vegas_PowerPlant2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARDOR_UNI1F",
+      "name": "Ardor_Uni1F_Layout",
+      "width": 32,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Ardor_Uni1F/border.bin",
+      "blockdata_filepath": "data/layouts/Ardor_Uni1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARDOR_UNI2F",
+      "name": "Ardor_Uni2F_Layout",
+      "width": 32,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Ardor_Uni2F/border.bin",
+      "blockdata_filepath": "data/layouts/Ardor_Uni2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARDOR_UNI3F",
+      "name": "Ardor_Uni3F_Layout",
+      "width": 32,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Ardor_Uni3F/border.bin",
+      "blockdata_filepath": "data/layouts/Ardor_Uni3F/map.bin"
     }
   ]
 }

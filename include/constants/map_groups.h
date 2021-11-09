@@ -590,6 +590,9 @@
 #define MAP_POWER_PLANT         (7 | (30 << 8))
 #define MAP_VEGAS_POWER_PLANT   (8 | (30 << 8))
 #define MAP_VEGAS_POWER_PLANT2F (9 | (30 << 8))
+#define MAP_ARDOR_UNI1F         (10 | (30 << 8))
+#define MAP_ARDOR_UNI2F         (11 | (30 << 8))
+#define MAP_ARDOR_UNI3F         (12 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))
