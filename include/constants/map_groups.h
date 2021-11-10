@@ -593,6 +593,11 @@
 #define MAP_ARDOR_UNI1F         (10 | (30 << 8))
 #define MAP_ARDOR_UNI2F         (11 | (30 << 8))
 #define MAP_ARDOR_UNI3F         (12 | (30 << 8))
+#define MAP_PYRAMID_INSIDE1F    (13 | (30 << 8))
+#define MAP_PYRAMID_INSIDE2F    (14 | (30 << 8))
+#define MAP_PYRAMIDS_INSIDE3F   (15 | (30 << 8))
+#define MAP_PYRAMIDS_INIDE4F    (16 | (30 << 8))
+#define MAP_PYRAMID_INSIDE5F    (17 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

@@ -3776,7 +3776,7 @@
       "name": "BattleFrontier_BattlePyramidTop_Layout",
       "width": 34,
       "height": 23,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BattlePyramid",
       "border_filepath": "data/layouts/BattleFrontier_BattlePyramidTop/border.bin",
       "blockdata_filepath": "data/layouts/BattleFrontier_BattlePyramidTop/map.bin"
@@ -5140,6 +5140,46 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Ardor_Uni3F/border.bin",
       "blockdata_filepath": "data/layouts/Ardor_Uni3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYRAMID_INSIDE1F",
+      "name": "PyramidInside1F_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/PyramidInside1F/border.bin",
+      "blockdata_filepath": "data/layouts/PyramidInside1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYRAMID_INSIDE2F",
+      "name": "PyramidInside2F_Layout",
+      "width": 28,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/PyramidInside2F/border.bin",
+      "blockdata_filepath": "data/layouts/PyramidInside2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYRAMIDS_INSIDE3F",
+      "name": "PyramidsInside3F_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/PyramidsInside3F/border.bin",
+      "blockdata_filepath": "data/layouts/PyramidsInside3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYRAMIDS_INIDE4F",
+      "name": "PyramidsInide4F_Layout",
+      "width": 13,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/PyramidsInide4F/border.bin",
+      "blockdata_filepath": "data/layouts/PyramidsInide4F/map.bin"
     }
   ]
 }

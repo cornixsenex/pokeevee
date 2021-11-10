@@ -1242,3 +1242,13 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Ardor_Uni2F/scripts.inc"
 
 	.include "data/maps/Ardor_Uni3F/scripts.inc"
+
+	.include "data/maps/PyramidInside1F/scripts.inc"
+
+	.include "data/maps/PyramidInside2F/scripts.inc"
+
+	.include "data/maps/PyramidsInside3F/scripts.inc"
+
+	.include "data/maps/PyramidsInide4F/scripts.inc"
+
+	.include "data/maps/PyramidInside5F/scripts.inc"

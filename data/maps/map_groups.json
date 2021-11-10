@@ -626,7 +626,12 @@
     "Vegas_PowerPlant2F",
     "Ardor_Uni1F",
     "Ardor_Uni2F",
-    "Ardor_Uni3F"
+    "Ardor_Uni3F",
+    "PyramidInside1F",
+    "PyramidInside2F",
+    "PyramidsInside3F",
+    "PyramidsInide4F",
+    "PyramidInside5F"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",
