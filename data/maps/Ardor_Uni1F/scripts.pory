@@ -1,1 +1,145 @@
 mapscripts Ardor_Uni1F_MapScripts {}
+
+
+
+script Ardor_Uni1F_EventScript_LeafTrigger1 {
+	lock
+	setvar (VAR_ARDOR_UNI, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (1, Ardor_Uni1F_Movement_LeafApproach1)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni1F_Text_Leaf)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (1, Ardor_Uni1F_Movement_LeafExit)
+	waitmovement (0)
+	setflag (FLAG_ARDOR_UNI1F_LEAF)
+	removeobject (1)	
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_LeafTrigger2 {
+	lock
+	setvar (VAR_ARDOR_UNI, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (1, Ardor_Uni1F_Movement_LeafApproach2)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni1F_Text_Leaf)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (1, Ardor_Uni1F_Movement_LeafExit)
+	waitmovement (0)
+	setflag (FLAG_ARDOR_UNI1F_LEAF)
+	removeobject (1)	
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_LeafTrigger3 {
+	lock
+	setvar (VAR_ARDOR_UNI, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (1, Ardor_Uni1F_Movement_LeafApproach3)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni1F_Text_Leaf)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (1, Ardor_Uni1F_Movement_LeafExit)
+	waitmovement (0)
+	setflag (FLAG_ARDOR_UNI1F_LEAF)
+	removeobject (1)	
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_LeafTrigger4 {
+	lock
+	setvar (VAR_ARDOR_UNI, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (1, Ardor_Uni1F_Movement_LeafApproach4)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni1F_Text_Leaf)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (1, Ardor_Uni1F_Movement_LeafExit)
+	waitmovement (0)
+	setflag (FLAG_ARDOR_UNI1F_LEAF)
+	removeobject (1)	
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_LeafTrigger5 {
+	lock
+	setvar (VAR_ARDOR_UNI, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (1, Ardor_Uni1F_Movement_LeafApproach5)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni1F_Text_Leaf)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (1, Ardor_Uni1F_Movement_LeafExit)
+	waitmovement (0)
+	setflag (FLAG_ARDOR_UNI1F_LEAF)
+	removeobject (1)	
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_ArchaeologyDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_ArchaeologyDoorSign)
+	closemessage
+	release
+	end
+}
+
+movement Ardor_Uni1F_Movement_LeafApproach1 {
+	walk_left
+	walk_diag_southwest
+	face_down
+}
+
+movement Ardor_Uni1F_Movement_LeafApproach2 {
+	walk_diag_southwest
+	face_down
+}
+
+movement Ardor_Uni1F_Movement_LeafApproach3 {
+	walk_down
+}
+
+movement Ardor_Uni1F_Movement_LeafApproach4 {
+	walk_diag_southeast
+	face_down
+}
+
+movement Ardor_Uni1F_Movement_LeafApproach5 {
+	walk_right
+	walk_diag_southeast
+	face_down
+}
+
+movement Ardor_Uni1F_Movement_LeafExit {
+	walk_up * 5
+}
+
+text Ardor_Uni1F_Text_Leaf {
+	format("TESTER")
+}
+
+text Ardor_Uni1F_Text_ArchaeologyDoorSign {
+	format("MAGISTER INDIANUS ARCHAEOLOGIAE EX ACADEMIA IN PYRAMIDE EST. REVERTETUR IN ANNO PROXIMO")
+}
+

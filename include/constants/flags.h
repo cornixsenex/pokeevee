@@ -79,7 +79,7 @@
 #define FLAG_ROUTE7_HIDEOLDWOMAN    0x40 // Hides the old lady after the roadblock trigger
 #define FLAG_ROCKTUNNEL_RIVALDEFEATED    0x41 // Hides Leaf on the bridge
 #define FLAG_VEGAS_POWERON   0x42 // Set after PowerPlant fixed, controls generator metatiles
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
+#define FLAG_ARDOR_UNI1F_LEAF    0x43 // Set after the LEAF intro in Ardor Uni
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag

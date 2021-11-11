@@ -577,24 +577,25 @@ HMs
 
 
 *normal - clara city
-*fire - CampLodge
+*fire - CampLodge - Camp Elders
 *electric - power plant
-*water - surf babes
-*psychic - Uni nerds
-*dark - salty spatoon
-*grass - hippie tree
-*ice - sherpa outpost
+*water - surf babes - Misty
+*psychic - Uni nerds - Artist / Faculty
+*dark - salty spatoon - Bellatrix sadolady
+*grass - hippie tree - Erica
+*ice - sherpa outpost - Old Man Spenser
 
-#bug - woods
-#flying - Gatos Aviary
-#ghost - graveyard
-#ground - Underground
-#rock - Underground
+#bug - woods; Blue Woods
+#flying - Gatos Aviary - Blue Weather Institue
+#ghost - graveyard; Blue Graveyard
+#ground - Underground; Blue Slabs
+#rock - Underground; Blue Rock Tunnel
 
-dragon
-fighting
-poison
+dragon - MewTwo Tower; 
+fighting - Beach Cave? Springs?; Hercules 
+	**Maybe have a cool side quest thing here involving different bands of 		warriors scattered about and then a central dojo with HERAKLES(Bruno)
+  	poison -Freeway;  Ninjas ; Koga
 
-steel
+steel - Pyramid; Nolan
 
 

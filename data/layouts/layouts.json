@@ -5180,6 +5180,16 @@
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/PyramidsInide4F/border.bin",
       "blockdata_filepath": "data/layouts/PyramidsInide4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARDOR_UNI_ARCHAEOLOGY_CLASS",
+      "name": "Ardor_Uni_ArchaeologyClass_Layout",
+      "width": 12,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/Ardor_Uni_ArchaeologyClass/border.bin",
+      "blockdata_filepath": "data/layouts/Ardor_Uni_ArchaeologyClass/map.bin"
     }
   ]
 }
