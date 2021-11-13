@@ -1,1 +1,22 @@
 mapscripts PyramidInside5F_MapScripts {}
+
+
+
+script PyramidInside5F_EventScript_Indy {
+	lock
+	msgbox (PyramidInside5F_Text_IndyIntro)
+	closemessage
+	fadescreen (1)
+	removeobject (1)
+	setflag (FLAG_PYRAMIDS_INDY)
+	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
+	setvar (VAR_ARDOR_UNI, 2)
+	fadescreen (0)
+	release
+	end
+}
+
+
+text PyramidInside5F_Text_IndyIntro {
+	format("I knew you were coming...say not a word before we battle. I must test your strength.")
+}

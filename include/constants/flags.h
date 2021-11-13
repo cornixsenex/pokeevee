@@ -80,9 +80,9 @@
 #define FLAG_ROCKTUNNEL_RIVALDEFEATED    0x41 // Hides Leaf on the bridge
 #define FLAG_VEGAS_POWERON   0x42 // Set after PowerPlant fixed, controls generator metatiles
 #define FLAG_ARDOR_UNI1F_LEAF    0x43 // Set after the LEAF intro in Ardor Uni
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
+#define FLAG_PYRAMIDS_INDY    0x44 // Set after defeating at the Pyramids. Hides Indy at the pyramid AND Leaf on Uni2F
+#define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Unused Flag
+#define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag

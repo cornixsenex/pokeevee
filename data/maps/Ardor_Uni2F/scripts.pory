@@ -1,1 +1,16 @@
 mapscripts Ardor_Uni2F_MapScripts {}
+
+
+
+
+script Ardor_Uni2F_EventScript_ArchaeologyDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_ArchaeologyDoorSign)
+	closemessage
+	release
+	end
+}
+
+
+
+
