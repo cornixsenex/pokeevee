@@ -83,8 +83,8 @@
 #define FLAG_PYRAMIDS_INDY    0x44 // Set after defeating at the Pyramids. Hides Indy at the pyramid AND Leaf on Uni2F
 #define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Unused Flag
 #define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
+#define FLAG_RECEIVED_FLASH    0x47 // Set after owner gives you hm05 in the hotel 1F
+#define FLAG_PYRAMIDS_HIDEMAXIE    0x48 // Should start set, clear when the battle begins in Archaeology class and then set again after Maxie enters the Dark Cave
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag

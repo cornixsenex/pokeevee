@@ -144,6 +144,50 @@ Ardor_Uni_ArchaeologyClass_EventScript_RebelReveal::
 	return
 
 
+Ardor_Uni_ArchaeologyClass_EventScript_Maxie::
+	lock
+	faceplayer
+	load_field_pic 9, 190, 98
+	goto_if_set FLAG_BADGE02_GET, Ardor_Uni_ArchaeologyClass_EventScript_Maxie_2
+	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash
+	closemessage
+	destroy_field_pic 9
+Ardor_Uni_ArchaeologyClass_EventScript_Maxie_1:
+	release
+	end
+
+Ardor_Uni_ArchaeologyClass_EventScript_Maxie_2:
+	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieAsk, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_ArchaeologyClass_EventScript_Maxie_5
+	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieWait
+	closemessage
+	destroy_field_pic 9
+	goto Ardor_Uni_ArchaeologyClass_EventScript_Maxie_1
+
+Ardor_Uni_ArchaeologyClass_EventScript_Maxie_5:
+	call Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack
+	goto Ardor_Uni_ArchaeologyClass_EventScript_Maxie_1
+
+
+Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack::
+	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack
+	closemessage
+	destroy_field_pic 9
+	applymovement 11, Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit
+	waitmovement 0
+	removeobject 11
+	load_field_pic 9, 190, 98
+	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieExit
+	closemessage
+	destroy_field_pic 9
+	fadescreen 1
+	removeobject 12
+	setflag FLAG_ARCHAELOGY_CLASS_HIDEREBELS
+	fadescreen 0
+	return
+
+
 Ardor_Uni_ArchaeologyClass_Movement_Spin:
 	face_left
 	face_up
@@ -174,6 +218,17 @@ Ardor_Uni_ArchaeologyClass_Movement_StudentReturn:
 	walk_down
 	walk_left
 	face_up
+	step_end
+
+Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 Ardor_Uni_ArchaeologyClass_Text_Indy1::
@@ -266,3 +321,26 @@ Ardor_Uni_ArchaeologyClass_Text_Indy8::
 	.string "there will be no chance for us to turn\l"
 	.string "back. When you are ready {PLAYER} we\l"
 	.string "shall depart.$"
+
+Ardor_Uni_ArchaeologyClass_Text_MaxieAsk::
+	.string "Are you ready to start the battle\n"
+	.string "{PLAYER}?$"
+
+Ardor_Uni_ArchaeologyClass_Text_MaxieWait::
+	.string "We'll wait for you to be fully prepared.$"
+
+Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash::
+	.string "I'm sorry {PLAYER} you're not ready to\n"
+	.string "go. Before we travel to the depths of\l"
+	.string "hell you must learn how to use the HM\l"
+	.string "FLASH.$"
+
+Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack::
+	.string "The die is cast. ALEA IACTA EST. Arise\n"
+	.string "arise rebels of the desert! Your time is\l"
+	.string "now rise up and sieze the school!$"
+
+Ardor_Uni_ArchaeologyClass_Text_MaxieExit::
+	.string "Now hurry {PLAYER} and meet me at the\n"
+	.string "cave entrance on the far south side of\l"
+	.string "the sand.$"

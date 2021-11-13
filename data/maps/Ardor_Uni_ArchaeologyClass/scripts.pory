@@ -56,42 +56,33 @@ script Ardor_Uni_ArchaeologyClass_EventScript_LeafTrigger {
 script Ardor_Uni_ArchaeologyClass_EventScript_Cutscene {	
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	//Sit down now class is starting soon
 	load_field_pic (8, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy1)
 	destroy_field_pic (8)
 	closemessage
-	//You don't understand my father sent us to enlist your help Mew has been captured we know you're a fighter
 	load_field_pic (4, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf1)
 	closemessage
 	destroy_field_pic (4)
-	//Have Indy say something harsh to try and chill her out
 	load_field_pic (8, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy2)
 	destroy_field_pic (8)
 	closemessage
 
-	//Leaf "Gen Kenobi" speach ala leia
 	load_field_pic (4, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf2)
 	closemessage
 	destroy_field_pic (4)
-	//have one or more of the students rush up on yall
 	applymovement (2, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	applymovement (2, Ardor_Uni_ArchaeologyClass_Movement_StudentApproach1)
 	waitmovement (0)
-	//She knows not what she says! She lies Teacher 
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Student1)
 	applymovement (4, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	applymovement (4, Ardor_Uni_ArchaeologyClass_Movement_StudentApproach2)
 	waitmovement (0)
-	//Just say the word and we'll take care of her
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Student2)
-	//have indy dismiss them and announce that the time has come. Show yourselves
-	//No both of you sit down
 	load_field_pic (8, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy3)
 	destroy_field_pic (8)
@@ -99,21 +90,17 @@ script Ardor_Uni_ArchaeologyClass_EventScript_Cutscene {
 	applymovement (2, Ardor_Uni_ArchaeologyClass_Movement_StudentReturn)
 	applymovement (4, Ardor_Uni_ArchaeologyClass_Movement_StudentReturn)
 	waitmovement (0)
-	//The time has come we must reveal ourselves and spring into action to change the world
 	load_field_pic (8, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy4)
 	destroy_field_pic (8)
 	closemessage
 
-	//transformation into magma team
 	call (Ardor_Uni_ArchaeologyClass_EventScript_RebelReveal)
-	//I had a strange feeling while battling you sneed I had secretly hoped to bring you into our group. This is proof that fate is on our side. 
 	load_field_pic (9, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy5)
 	destroy_field_pic (9)
 	closemessage
 
-	//Leaf blurts out "So you'll help us then!"
 	load_field_pic (4, 190, 98)
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf3)
 	closemessage
@@ -148,7 +135,6 @@ script Ardor_Uni_ArchaeologyClass_EventScript_Cutscene {
 	destroy_field_pic (9)
 
 	return
-	//when you speak with him it checks if you have flash and if so you get a promtp (wanna start?) If yes he tells you to meet him at the Dark Cave entrance in the desert and exits
 }
 
 script Ardor_Uni_ArchaeologyClass_EventScript_RebelReveal {
@@ -163,7 +149,46 @@ script Ardor_Uni_ArchaeologyClass_EventScript_RebelReveal {
 	applymovement (12, Common_Movement_FaceDown)
 	return 
 }
-	
+
+script Ardor_Uni_ArchaeologyClass_EventScript_Maxie {
+	lock
+	faceplayer
+	load_field_pic (9, 190, 98)
+	if (flag(FLAG_BADGE02_GET) ) {
+		msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieAsk, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack)
+		} else {
+			msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieWait)
+			closemessage
+			destroy_field_pic (9)
+		}
+	} else {
+		msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash)
+		closemessage
+		destroy_field_pic (9)
+	}
+	release
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack {
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack)
+	closemessage
+	destroy_field_pic (9)
+	applymovement (11, Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit)
+	waitmovement (0)
+	removeobject (11)
+	load_field_pic (9, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieExit)
+	closemessage
+	destroy_field_pic  (9)
+	fadescreen (1)
+	removeobject (12)
+	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
+	fadescreen (0)
+	return 
+}
 
 movement Ardor_Uni_ArchaeologyClass_Movement_Spin {
 	face_left
@@ -193,6 +218,11 @@ movement Ardor_Uni_ArchaeologyClass_Movement_StudentReturn {
 	walk_down * 2
 	walk_left
 	face_up
+}
+
+movement Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit {
+	walk_right * 4
+	walk_down * 4
 }
 
 text Ardor_Uni_ArchaeologyClass_Text_Indy1 {
@@ -255,7 +285,25 @@ text Ardor_Uni_ArchaeologyClass_Text_Indy8 {
 	format("That certainly explains the urgency. We must make our attack quickly before they end the universe with this evil. But still attacking now would be foolish. We need many allies if we shall win. Many of our best men are being held in a Rocket prison deep underground. With your help {PLAYER} we'll need to free those men. The prison is inside the labyrinth which only heroes can exit alive. Many foul creatures and a wicked maze mean certain death to most who travel there. I knew one day I'd need to free those men and in my disguise as the professor I made many daring trips to the cave. I know the way to their filthy prison and I will guide you through the labyrinth. However once we commonece the attack there will be no chance for us to turn back. When you are ready {PLAYER} we shall depart.")
 }
 
+text Ardor_Uni_ArchaeologyClass_Text_MaxieAsk {
+	format("Are you ready to start the battle {PLAYER}?")
+}
 
+text Ardor_Uni_ArchaeologyClass_Text_MaxieWait {
+	format("We'll wait for you to be fully prepared.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash {
+	format("I'm sorry {PLAYER} you're not ready to go. Before we travel to the depths of hell you must learn how to use the HM FLASH.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack {
+	format("The die is cast. ALEA IACTA EST. Arise arise rebels of the desert! Your time is now rise up and sieze the school!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieExit {
+	format("Now hurry {PLAYER} and meet me at the cave entrance on the far south side of the sand.")
+}
 
 
 
