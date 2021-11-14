@@ -171,6 +171,8 @@ Ardor_Uni_ArchaeologyClass_EventScript_Maxie_5:
 
 
 Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack::
+	setvar VAR_ARDOR_UNI, 4
+	clearflag FLAG_PYRAMIDS_HIDEMAXIE
 	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack
 	closemessage
 	destroy_field_pic 9

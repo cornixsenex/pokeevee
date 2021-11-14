@@ -11,6 +11,9 @@ script PyramidInside5F_EventScript_Indy {
 	setflag (FLAG_PYRAMIDS_INDY)
 	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
 	setvar (VAR_ARDOR_UNI, 2)
+	if (!flag(FLAG_ARDOR_UNI1F_LEAF)) {
+		setflag (FLAG_ARDOR_UNI1F_LEAF)
+	}
 	fadescreen (0)
 	release
 	end

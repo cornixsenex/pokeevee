@@ -1,5 +1,21 @@
 Ardor_Uni1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	compare VAR_ARDOR_UNI, 1
+	goto_if_gt Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	end
+
+Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+	removeobject 1
+	setflag FLAG_ARDOR_UNI1F_LEAF
+	goto Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
+	goto_if_unset FLAG_ARDOR_UNI1F_LEAF, Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 
 Ardor_Uni1F_EventScript_LeafTrigger1::
@@ -93,14 +109,6 @@ Ardor_Uni1F_EventScript_LeafTrigger5::
 	waitmovement 0
 	setflag FLAG_ARDOR_UNI1F_LEAF
 	removeobject 1
-	release
-	end
-
-
-Ardor_Uni1F_EventScript_ArchaeologyDoorSign::
-	lock
-	msgbox Ardor_Uni1F_Text_ArchaeologyDoorSign
-	closemessage
 	release
 	end
 
