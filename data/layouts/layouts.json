@@ -4874,8 +4874,8 @@
     {
       "id": "LAYOUT_ROUTE14",
       "name": "Route14_Layout",
-      "width": 32,
-      "height": 64,
+      "width": 64,
+      "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/Route14/border.bin",
