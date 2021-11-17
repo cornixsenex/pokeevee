@@ -5190,6 +5190,46 @@
       "secondary_tileset": "gTileset_PokemonSchool",
       "border_filepath": "data/layouts/Ardor_Uni_ArchaeologyClass/border.bin",
       "blockdata_filepath": "data/layouts/Ardor_Uni_ArchaeologyClass/map.bin"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_1FNW",
+      "name": "DarkCave_1FNW_Layout",
+      "width": 126,
+      "height": 58,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DarkCave_1FNW/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCave_1FNW/map.bin"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_1FN",
+      "name": "DarkCave_1FN_Layout",
+      "width": 128,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DarkCave_1FN/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCave_1FN/map.bin"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_1FS",
+      "name": "DarkCave_1FS_Layout",
+      "width": 56,
+      "height": 128,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DarkCave_1FS/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCave_1FS/map.bin"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_2F",
+      "name": "DarkCave_2F_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DarkCave_2F/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCave_2F/map.bin"
     }
   ]
 }

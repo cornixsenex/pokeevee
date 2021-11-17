@@ -632,7 +632,11 @@
     "PyramidsInside3F",
     "PyramidsInide4F",
     "PyramidInside5F",
-    "Ardor_Uni_ArchaeologyClass"
+    "Ardor_Uni_ArchaeologyClass",
+    "DarkCave_1FNW",
+    "DarkCave_1FN",
+    "DarkCave_1FS",
+    "DarkCave_2F"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",

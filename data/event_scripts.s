@@ -1254,3 +1254,11 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/PyramidInside5F/scripts.inc"
 
 	.include "data/maps/Ardor_Uni_ArchaeologyClass/scripts.inc"
+
+	.include "data/maps/DarkCave_1FNW/scripts.inc"
+
+	.include "data/maps/DarkCave_1FN/scripts.inc"
+
+	.include "data/maps/DarkCave_1FS/scripts.inc"
+
+	.include "data/maps/DarkCave_2F/scripts.inc"

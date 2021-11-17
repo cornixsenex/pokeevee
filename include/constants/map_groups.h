@@ -599,6 +599,10 @@
 #define MAP_PYRAMIDS_INIDE4F            (16 | (30 << 8))
 #define MAP_PYRAMID_INSIDE5F            (17 | (30 << 8))
 #define MAP_ARDOR_UNI_ARCHAEOLOGY_CLASS (18 | (30 << 8))
+#define MAP_DARK_CAVE_1FNW              (19 | (30 << 8))
+#define MAP_DARK_CAVE_1FN               (20 | (30 << 8))
+#define MAP_DARK_CAVE_1FS               (21 | (30 << 8))
+#define MAP_DARK_CAVE_2F                (22 | (30 << 8))
 
 // Map Group 31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

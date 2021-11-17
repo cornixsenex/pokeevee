@@ -549,7 +549,21 @@ BigCity
 beach city
 ocean
 Big Boat
-Underground Labrynth
+Underground Labrynth:
+	1F:	Slabs <-> Pyramids : 126, 64
+		BR WEST <-> BR EAST : 128, 32
+		Route9 <-> BR West : 56 , 128
+
+	2F: The Labyrinth : MAX, MAX square
+
+	3F: Goblin Town
+		Gollum's Pond
+		Rocket Prison
+
+	
+
+
+
 Lava Lake
 Graveyard
 SF
