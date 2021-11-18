@@ -28,7 +28,13 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 44,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_1FNW",
+      "dest_warp_id": 1
+    }
   ],
   "coord_events": [
 

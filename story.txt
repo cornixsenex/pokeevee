@@ -100,16 +100,17 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 >Gym 5 Dark Pool Hall and/or underground!
 >Rival Slabs fight for the bike (rock type tyrantar)
 
->Indy's hesitant to go back to fight after cuz he's afraid but he knows someone must do something. Still he doens't trust you enough, he wants you torescue his team from the PARTY prison in the Labyrinth.
+>Indy's hesitant to go back to fight after cuz he's afraid but he knows someone must do something. Leads you out to the Rocket Prison 
 >Labyrinth
 	Flash needed
 	Very large, confusing, etc
 	Rare items at SOME dead ends
 	Rare Gollum Pond at the bottom
->Venture to the depths, uncover a rare metal mine and save the team, Party Executive fight
->Return to Indy
->When ready he begins the 'battle'
->You have to sneak around and get into the Tower from the south via Beach City
+>Rocket Prison
+	Unlock different sections,mines etc, free prisoners, finally knock out Rocket Admin (Norman?)
+>Indy leads you and the gang outside to Bike Route North West
+>When outside he begins the 'battle'
+>You have to go directly through Bike Route defeating bikers and then take the tower
 >Skyscraper
 	Silph Co ripoff
 	teleports
@@ -140,8 +141,12 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 	Geodude
 	Ditto!
 >Enter top floor
->Mewtwo birth scene
->Boss and Mewtwo depart to Capital. Fight Scientist
+>SIKE! They're in the basement
+
+You enter the basement immediately after Mewtwo was chained. There should be some sense of panic. Blaine leads Mewtwo out and orders two scientists to stop you. You follow after him and find yourself in the Rocket Bunker. Giovanni is busy asking Blaine if he's sure Mewtwo is under control. Blaine sees you and suggests he use Mewtwo to destroy the player but Giovanni says the situation at the capital demands his attention. Loosing the tower now would be acceptable if he can take the capital. He orders Blaine to defend the bunker with his life and hurries down the tunell. Blaine engages with artificial pokemon mentioned above.
+
+
+>Tunnel to the Capital
 >Capital
 >Fight the Senate
 >Leader makes his boast and MewTwo bails

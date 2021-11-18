@@ -41,6 +41,13 @@
       "elevation": 0,
       "dest_map": "MAP_PYRAMID_INSIDE1F",
       "dest_warp_id": 0
+    },
+    {
+      "x": 63,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_1FNW",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
