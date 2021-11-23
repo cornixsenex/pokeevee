@@ -603,6 +603,9 @@
 #define MAP_DARK_CAVE_1FN               (20 | (30 << 8))
 #define MAP_DARK_CAVE_1FS               (21 | (30 << 8))
 #define MAP_DARK_CAVE_2F                (22 | (30 << 8))
+#define MAP_ROCKET_PRISON_GATE          (23 | (30 << 8))
+#define MAP_ROCKET_PRISON_JAIL          (24 | (30 << 8))
+#define MAP_ROCKET_PIRSON_MINES         (25 | (30 << 8))
 
 // Map Group 31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

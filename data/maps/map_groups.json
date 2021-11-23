@@ -636,7 +636,10 @@
     "DarkCave_1FNW",
     "DarkCave_1FN",
     "DarkCave_1FS",
-    "DarkCave_2F"
+    "DarkCave_2F",
+    "RocketPrison_Gate",
+    "RocketPrison_Jail",
+    "RocketPirson_Mines"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",

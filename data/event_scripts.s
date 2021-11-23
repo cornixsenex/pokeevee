@@ -1262,3 +1262,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/DarkCave_1FS/scripts.inc"
 
 	.include "data/maps/DarkCave_2F/scripts.inc"
+
+	.include "data/maps/RocketPrison_Gate/scripts.inc"
+
+	.include "data/maps/RocketPrison_Jail/scripts.inc"
+
+	.include "data/maps/RocketPirson_Mines/scripts.inc"

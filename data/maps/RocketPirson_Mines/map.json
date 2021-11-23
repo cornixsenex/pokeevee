@@ -1,16 +1,16 @@
 {
-  "id": "MAP_DARK_CAVE_2F",
-  "name": "DarkCave_2F",
-  "layout": "LAYOUT_DARK_CAVE_2F",
+  "id": "MAP_ROCKET_PIRSON_MINES",
+  "name": "RocketPirson_Mines",
+  "layout": "LAYOUT_ROCKET_PIRSON_MINES",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_GRANITE_CAVE",
+  "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
   "allow_escaping": true,
   "allow_running": true,
-  "show_map_name": false,
+  "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
@@ -18,25 +18,18 @@
   ],
   "warp_events": [
     {
-      "x": 14,
-      "y": 1,
+      "x": 12,
+      "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_DARK_CAVE_2F",
-      "dest_warp_id": 0
+      "dest_map": "MAP_ROCKET_PRISON_JAIL",
+      "dest_warp_id": 1
     },
     {
-      "x": 61,
-      "y": 5,
+      "x": 6,
+      "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_DARK_CAVE_1FNW",
+      "dest_map": "MAP_ROCKET_PRISON_JAIL",
       "dest_warp_id": 2
-    },
-    {
-      "x": 82,
-      "y": 76,
-      "elevation": 0,
-      "dest_map": "MAP_ROCKET_PRISON_GATE",
-      "dest_warp_id": 0
     }
   ],
   "coord_events": [
