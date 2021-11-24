@@ -30,6 +30,41 @@
       "elevation": 0,
       "dest_map": "MAP_ROCKET_PRISON_JAIL",
       "dest_warp_id": 2
+    },
+    {
+      "x": 18,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_PRISON_MINES1",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 24,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_PRISON_MINES1",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 24,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_PRISON_MINES2",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 18,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_PRISON_MINES2",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_PRISON_MINES2",
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [

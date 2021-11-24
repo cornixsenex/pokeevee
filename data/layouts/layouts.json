@@ -5260,6 +5260,36 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/RocketPirson_Mines/border.bin",
       "blockdata_filepath": "data/layouts/RocketPirson_Mines/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_PRISON_MINES1",
+      "name": "RocketPrison_Mines1_Layout",
+      "width": 15,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/RocketPrison_Mines1/border.bin",
+      "blockdata_filepath": "data/layouts/RocketPrison_Mines1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_PRISON_MINES2",
+      "name": "RocketPrison_Mines2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/RocketPrison_Mines2/border.bin",
+      "blockdata_filepath": "data/layouts/RocketPrison_Mines2/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP1",
+      "name": "NewMap1_Layout",
+      "width": 20,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NewMap1/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap1/map.bin"
     }
   ]
 }
