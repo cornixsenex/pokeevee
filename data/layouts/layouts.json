@@ -5290,6 +5290,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/NewMap1/border.bin",
       "blockdata_filepath": "data/layouts/NewMap1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_PRISON_OFFICE",
+      "name": "RocketPrison_Office_Layout",
+      "width": 32,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/RocketPrison_Office/border.bin",
+      "blockdata_filepath": "data/layouts/RocketPrison_Office/map.bin"
     }
   ]
 }
