@@ -209,7 +209,20 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 22,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_1FS",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 67,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_1FS",
+      "dest_warp_id": 1
+    }
   ],
   "coord_events": [
 
