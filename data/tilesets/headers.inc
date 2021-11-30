@@ -984,3 +984,25 @@ gTileset_willow::
 	.4byte gMetatiles_willow
 	.4byte gMetatileAttributes_willow
 	.4byte NULL
+
+	.align 2
+gTileset_SilphCo::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_SilphCo
+	.4byte gTilesetPalettes_SilphCo
+	.4byte gMetatiles_SilphCo
+	.4byte gMetatileAttributes_SilphCo
+	.4byte NULL
+
+	.align 2
+gTileset_FireRedBuilding::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_FireRedBuilding
+	.4byte gTilesetPalettes_FireRedBuilding
+	.4byte gMetatiles_FireRedBuilding
+	.4byte gMetatileAttributes_FireRedBuilding
+	.4byte NULL

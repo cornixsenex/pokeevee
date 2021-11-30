@@ -2009,3 +2009,43 @@ gTilesetPalettes_willow::
 	.align 2
 gTilesetTiles_willow::
 	.incbin "data/tilesets/secondary/willow/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_SilphCo::
+	.incbin "data/tilesets/secondary/silphco/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/silphco/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_SilphCo::
+	.incbin "data/tilesets/secondary/silphco/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_FireRedBuilding::
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/00.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/01.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/02.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/03.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/04.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/05.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/06.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/07.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/08.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/09.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/10.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/11.gbapal"
+	.incbin "data/tilesets/primary/fireredbuilding/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_FireRedBuilding::
+	.incbin "data/tilesets/primary/fireredbuilding/tiles.4bpp.lz"

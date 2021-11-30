@@ -658,3 +658,18 @@ gMetatileAttributes_willow::
 	.incbin "data/tilesets/secondary/willow/metatile_attributes.bin"
 
 
+
+	.align 1
+gMetatiles_SilphCo::
+	.incbin "data/tilesets/secondary/silphco/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_SilphCo::
+	.incbin "data/tilesets/secondary/silphco/metatile_attributes.bin"
+	.align 1
+gMetatiles_FireRedBuilding::
+	.incbin "data/tilesets/primary/fireredbuilding/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_FireRedBuilding::
+	.incbin "data/tilesets/primary/fireredbuilding/metatile_attributes.bin"

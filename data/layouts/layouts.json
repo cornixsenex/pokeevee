@@ -5300,6 +5300,16 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/RocketPrison_Office/border.bin",
       "blockdata_filepath": "data/layouts/RocketPrison_Office/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_TOWER_1F",
+      "name": "RocketTower_1F_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_FireRedBuilding",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/RocketTower_1F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketTower_1F/map.bin"
     }
   ]
 }
