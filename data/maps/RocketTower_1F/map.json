@@ -18,8 +18,8 @@
   ],
   "warp_events": [
     {
-      "x": 13,
-      "y": 1,
+      "x": 19,
+      "y": 21,
       "elevation": 0,
       "dest_map": "MAP_DARK_CAVE_1FS",
       "dest_warp_id": 1
