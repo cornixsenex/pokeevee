@@ -75,8 +75,7 @@ Route121_EventScript_Vanessa::
 
 Route121_EventScript_Walter::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route121_EventScript_RematchWalter
+	goto_if_eq VAR_RESULT, TRUE, Route121_EventScript_RematchWalter
 	msgbox Route121_Text_WalterPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -107,8 +106,7 @@ Route121_EventScript_Joy::
 
 Route121_EventScript_Jessica::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route121_EventScript_RematchJessica
+	goto_if_eq VAR_RESULT, TRUE, Route121_EventScript_RematchJessica
 	msgbox Route121_Text_JessicaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -139,8 +137,7 @@ Route121_EventScript_Pat::
 
 Route121_EventScript_Cristin::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route121_EventScript_RematchCristin
+	goto_if_eq VAR_RESULT, TRUE, Route121_EventScript_RematchCristin
 	msgbox Route121_Text_CristinPostBattle, MSGBOX_DEFAULT
 	release
 	end

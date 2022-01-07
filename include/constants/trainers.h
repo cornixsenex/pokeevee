@@ -157,6 +157,7 @@
 #define TRAINER_PIC_TAMER	         	  137
 #define TRAINER_PIC_YOUNGSTER2	          138
 
+// The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
 #define TRAINER_BACK_PIC_RED                    2
@@ -381,7 +382,7 @@
 #define TRAINER_CLASS_SAILOR         0x2f
 #define TRAINER_CLASS_COOLTRAINER_2  0x30 // Used for only one trainer.
 #define TRAINER_CLASS_MAGMA_ADMIN    0x31
-#define TRAINER_CLASS_PKMN_TRAINER_3 0x32
+#define TRAINER_CLASS_RIVAL          0x32
 #define TRAINER_CLASS_BUG_CATCHER    0x33
 #define TRAINER_CLASS_PKMN_RANGER    0x34
 #define TRAINER_CLASS_MAGMA_LEADER   0x35

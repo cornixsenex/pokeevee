@@ -67,7 +67,6 @@ void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void* buffe
         LZ77UnCompWram(src->data, buffer);
 }
 
-
 static void DuplicateDeoxysTiles(void *pointer, s32 species)
 {
     if (species == SPECIES_DEOXYS)
@@ -89,6 +88,14 @@ void DecompressPicFromTable_DontHandleDeoxys(const struct CompressedSpriteSheet 
         LZ77UnCompWram(gMonFrontPicTable[0].data, buffer);
     else
         LZ77UnCompWram(src->data, buffer);
+
+	
+void DecompressPicFromTableGender(void* buffer, s32 species, u32 personality)
+{
+    if (SpeciesHasGenderDifference[species] && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        DecompressPicFromTable(&gMonFrontPicTableFemale[species], buffer, species);
+    else
+        DecompressPicFromTable(&gMonFrontPicTable[species], buffer, species);
 }
 
 void HandleLoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality)
@@ -211,7 +218,7 @@ void Unused_LZDecompressWramIndirect(const void **src, void *dest)
     LZ77UnCompWram(*src, dest);
 }
 
-void sub_803471C(s32 object_size, s32 object_count, u8 *src_tiles, u8 *dest_tiles)
+static void StitchObjectsOn8x8Canvas(s32 object_size, s32 object_count, u8 *src_tiles, u8 *dest_tiles)
 {
     /*
       This function appears to emulate behaviour found in the GB(C) versions regarding how the Pokemon images

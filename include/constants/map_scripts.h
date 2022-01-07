@@ -23,13 +23,13 @@
                   In some maps this takes the metatile setting job of ON_LOAD
 
     5. ON_WARP_INTO_MAP_TABLE: Run after the map's objects are loaded.
-                               This is a table of scripts that each run if their condition is satisfied.
+                               This is a table of scripts; only the first script whose condition is satisfied is run.
                                Used to add objects to the scene or update something about the player as they warp in (e.g. their facing dir or visibility)
                                Note that ON_TRANSITION may also handle object visibility, but would do so by modifying a flag or var
 
 
     6. ON_FRAME_TABLE: Run every frame after the map has faded in, before player input is processed.
-                       This is a table of scripts that each run if their condition is satisfied.
+                       This is a table of scripts; only the first script whose condition is satisfied is run.
                        Used to trigger an event, such as the player exiting the cable car or the SS Tidal sailor announcing progress
 
 

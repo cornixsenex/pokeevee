@@ -3,8 +3,7 @@ MtPyre_6F_MapScripts::
 
 MtPyre_6F_EventScript_Valerie::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq MtPyre_6F_EventScript_RematchValerie
+	goto_if_eq VAR_RESULT, TRUE, MtPyre_6F_EventScript_RematchValerie
 	msgbox MtPyre_6F_Text_ValeriePostBattle, MSGBOX_DEFAULT
 	release
 	end

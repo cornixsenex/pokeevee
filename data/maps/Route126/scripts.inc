@@ -36,8 +36,7 @@ Route126_EventScript_Sienna::
 
 Route126_EventScript_Pablo::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route126_EventScript_RematchPablo
+	goto_if_eq VAR_RESULT, TRUE, Route126_EventScript_RematchPablo
 	msgbox Route126_Text_PabloPostBattle, MSGBOX_DEFAULT
 	release
 	end

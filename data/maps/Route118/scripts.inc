@@ -6,21 +6,15 @@ Route118_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route118_OnFrame
 	.byte 0
 
-Route118_OnTransition:
-	//call GabbyAndTy_EventScript_UpdateLocation
-	compare VAR_SHOULD_END_ABNORMAL_WEATHER, 1
-	call_if_eq AbnormalWeather_EventScript_HideMapNamePopup
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST
-	call_if_eq AbnormalWeather_StartGroudonWeather
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST
-	call_if_eq AbnormalWeather_StartGroudonWeather
+Route118_OnTransition:	//call GabbyAndTy_EventScript_UpdateLocation
+	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
+	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_StartGroudonWeather
+	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_StartGroudonWeather
 	end
 
 Route118_OnLoad:
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST
-	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute118East
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST
-	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute118West
+	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_EventScript_PlaceTilesRoute118East
+	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_EventScript_PlaceTilesRoute118West
 	end
 
 Route118_OnFrame:
@@ -32,10 +26,8 @@ Route118_EventScript_GoodRodFisherman::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_GOOD_ROD, Route118_EventScript_ReceivedGoodRod
 	msgbox Route118_Text_YouAgreeGoodRodIsGood, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq Route118_EventScript_ReceiveGoodRod
-	compare VAR_RESULT, NO
-	goto_if_eq Route118_EventScript_DeclineGoodRod
+	goto_if_eq VAR_RESULT, YES, Route118_EventScript_ReceiveGoodRod
+	goto_if_eq VAR_RESULT, NO, Route118_EventScript_DeclineGoodRod
 	end
 
 Route118_EventScript_ReceiveGoodRod::
@@ -103,12 +95,9 @@ Route118_EventScript_StevenTrigger::
 	delay 30
 	msgbox Route118_Text_StevenQuestions, MSGBOX_DEFAULT
 	closemessage
-	compare VAR_0x8008, 0
-	call_if_eq Route118_EventScript_StevenExit0
-	compare VAR_0x8008, 1
-	call_if_eq Route118_EventScript_StevenExit1
-	compare VAR_0x8008, 2
-	call_if_eq Route118_EventScript_StevenExit2
+	call_if_eq VAR_0x8008, 0, Route118_EventScript_StevenExit0
+	call_if_eq VAR_0x8008, 1, Route118_EventScript_StevenExit1
+	call_if_eq VAR_0x8008, 2, Route118_EventScript_StevenExit2
 	setvar VAR_ROUTE118_STATE, 1
 	removeobject LOCALID_STEVEN
 	releaseall
@@ -134,7 +123,7 @@ Route118_EventScript_StevenExit2::
 
 Route118_Movement_PlayerWatchStevenExit:
 	delay_16
-	walk_in_place_fastest_right
+	walk_in_place_faster_right
 	step_end
 
 Route118_Movement_StevenApproachLedge0:
@@ -200,8 +189,7 @@ Route118_EventScript_Wade::
 Route118_EventScript_Dalton::
 	trainerbattle_single TRAINER_DALTON_1, Route118_Text_DaltonIntro, Route118_Text_DaltonDefeat, Route118_EventScript_RegisterDalton
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route118_EventScript_RematchDalton
+	goto_if_eq VAR_RESULT, TRUE, Route118_EventScript_RematchDalton
 	msgbox Route118_Text_DaltonPostBattle, MSGBOX_DEFAULT
 	release
 	end

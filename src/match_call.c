@@ -29,7 +29,6 @@
 #include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/event_objects.h"
-#include "constants/maps.h"
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -971,8 +970,8 @@ static bool32 CheckMatchCallChance(void)
     int callChance = 1;
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG) && GetMonAbility(&gPlayerParty[0]) == ABILITY_LIGHTNING_ROD)
         callChance = 2;
-    
-    if (Random() % 10 < callChance * 3) 
+
+    if (Random() % 10 < callChance * 3)
         return TRUE;
     else
         return FALSE;
@@ -982,7 +981,7 @@ static bool32 MapAllowsMatchCall(void)
 {
     if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE)
         return FALSE;
-    
+
     if (gMapHeader.regionMapSectionId == MAPSEC_SOOTOPOLIS_CITY
      && FlagGet(FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA) == TRUE
      && FlagGet(FLAG_NEVER_SET_0x0DC) == FALSE)
@@ -1100,17 +1099,17 @@ static void StartMatchCall(void)
         ScriptContext2_Enable();
         FreezeObjectEvents();
         PlayerFreeze();
-        sub_808BCF4();
+        StopPlayerAvatar();
     }
 
     PlaySE(SE_POKENAV_CALL);
     CreateTask(ExecuteMatchCall, 1);
 }
 
-static const u16 sMatchCallWindow_Pal[] = INCBIN_U16("graphics/pokenav/match_call_window.gbapal");
-static const u8 sMatchCallWindow_Gfx[] = INCBIN_U8("graphics/pokenav/match_call_window.4bpp");
-static const u16 sPokenavIcon_Pal[] = INCBIN_U16("graphics/pokenav/icon.gbapal");
-static const u32 sPokenavIcon_Gfx[] = INCBIN_U32("graphics/pokenav/icon.4bpp.lz");
+static const u16 sMatchCallWindow_Pal[] = INCBIN_U16("graphics/pokenav/match_call/window.gbapal");
+static const u8 sMatchCallWindow_Gfx[] = INCBIN_U8("graphics/pokenav/match_call/window.4bpp");
+static const u16 sPokenavIcon_Pal[] = INCBIN_U16("graphics/pokenav/match_call/nav_icon.gbapal");
+static const u32 sPokenavIcon_Gfx[] = INCBIN_U32("graphics/pokenav/match_call/nav_icon.4bpp.lz");
 
 static const u8 sText_PokenavCallEllipsis[] = _("………………\p");
 
@@ -1183,7 +1182,7 @@ static bool32 MatchCall_LoadGfx(u8 taskId)
     FillWindowPixelBuffer(tWindowId, PIXEL_FILL(8));
     LoadPalette(sMatchCallWindow_Pal, 0xE0, sizeof(sMatchCallWindow_Pal));
     LoadPalette(sPokenavIcon_Pal, 0xF0, sizeof(sPokenavIcon_Pal));
-    ChangeBgY(0, -0x2000, 0);
+    ChangeBgY(0, -0x2000, BG_COORD_SET);
     return TRUE;
 }
 
@@ -1197,7 +1196,7 @@ static bool32 MatchCall_DrawWindow(u8 taskId)
     DrawMatchCallTextBoxBorder_Internal(tWindowId, TILE_MC_WINDOW, 14);
     WriteSequenceToBgTilemapBuffer(0, (0xF << 12) | TILE_POKENAV_ICON, 1, 15, 4, 4, 17, 1);
     tIconTaskId = CreateTask(Task_SpinPokenavIcon, 10);
-    CopyWindowToVram(tWindowId, 2);
+    CopyWindowToVram(tWindowId, COPYWIN_GFX);
     CopyBgTilemapBufferToVram(0);
     return TRUE;
 }
@@ -1217,9 +1216,9 @@ static bool32 MatchCall_ReadyIntro(u8 taskId)
 
 static bool32 MatchCall_SlideWindowIn(u8 taskId)
 {
-    if (ChangeBgY(0, 0x600, 1) >= 0)
+    if (ChangeBgY(0, 0x600, BG_COORD_ADD) >= 0)
     {
-        ChangeBgY(0, 0, 0);
+        ChangeBgY(0, 0, BG_COORD_SET);
         return TRUE;
     }
 
@@ -1232,7 +1231,7 @@ static bool32 MatchCall_PrintIntro(u8 taskId)
     if (!RunMatchCallTextPrinter(tWindowId))
     {
         FillWindowPixelBuffer(tWindowId, PIXEL_FILL(8));
-        
+
         // Ready the message
         if (!sMatchCallState.triggeredFromScript)
             SelectMatchCallMessage(sMatchCallState.trainerId, gStringVar4);
@@ -1249,7 +1248,7 @@ static bool32 MatchCall_PrintMessage(u8 taskId)
     if (!RunMatchCallTextPrinter(tWindowId) && !IsSEPlaying() && JOY_NEW(A_BUTTON | B_BUTTON))
     {
         FillWindowPixelBuffer(tWindowId, PIXEL_FILL(8));
-        CopyWindowToVram(tWindowId, 2);
+        CopyWindowToVram(tWindowId, COPYWIN_GFX);
         PlaySE(SE_POKENAV_HANG_UP);
         return TRUE;
     }
@@ -1260,7 +1259,7 @@ static bool32 MatchCall_PrintMessage(u8 taskId)
 static bool32 MatchCall_SlideWindowOut(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    if (ChangeBgY(0, 0x600, 2) <= -0x2000)
+    if (ChangeBgY(0, 0x600, BG_COORD_SUB) <= -0x2000)
     {
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 14, 30, 6);
         DestroyTask(tIconTaskId);
@@ -1277,7 +1276,7 @@ static bool32 MatchCall_EndCall(u8 taskId)
     u8 playerObjectId;
     if (!IsDma3ManagerBusyWithBgCopy() && !IsSEPlaying())
     {
-        ChangeBgY(0, 0, 0);
+        ChangeBgY(0, 0, BG_COORD_SET);
         if (!sMatchCallState.triggeredFromScript)
         {
             LoadMessageBoxAndBorderGfx();
@@ -1321,7 +1320,7 @@ static void InitMatchCallTextPrinter(int windowId, const u8 *str)
     struct TextPrinterTemplate printerTemplate;
     printerTemplate.currentChar = str;
     printerTemplate.windowId = windowId;
-    printerTemplate.fontId = 1;
+    printerTemplate.fontId = FONT_NORMAL;
     printerTemplate.x = 32;
     printerTemplate.y = 1;
     printerTemplate.currentX = 32;
@@ -1419,7 +1418,7 @@ bool32 SelectMatchCallMessage(int trainerId, u8 *str)
 {
     u32 matchCallId;
     const struct MatchCallText *matchCallText;
-    bool32 retVal = FALSE;
+    bool32 newRematchRequest = FALSE;
 
     matchCallId = GetTrainerMatchCallId(trainerId);
     sBattleFrontierStreakInfo.facilityId = 0;
@@ -1437,7 +1436,7 @@ bool32 SelectMatchCallMessage(int trainerId, u8 *str)
     else if (ShouldTrainerRequestBattle(matchCallId))
     {
         matchCallText = GetDifferentRouteMatchCallText(matchCallId, str);
-        retVal = TRUE;
+        newRematchRequest = TRUE;
         UpdateRematchIfDefeated(matchCallId);
     }
     else if (Random() % 3)
@@ -1452,7 +1451,7 @@ bool32 SelectMatchCallMessage(int trainerId, u8 *str)
     }
 
     BuildMatchCallString(matchCallId, matchCallText, str);
-    return retVal;
+    return newRematchRequest;
 }
 
 static int GetTrainerMatchCallId(int trainerId)
@@ -1489,7 +1488,7 @@ static const struct MatchCallText *GetBattleMatchCallText(int matchCallId, u8 *s
 {
     int mask;
     u32 textId, topic, id;
-    
+
     topic = Random() % 3;
     textId = sMatchCallTrainers[matchCallId].battleTopicTextIds[topic];
     if (!textId)
@@ -1737,7 +1736,7 @@ static void PopulateBattleFrontierStreak(int matchCallId, u8 *destStr)
         streak /= 10;
         i++;
     }
-    
+
     ConvertIntToDecimalStringN(destStr, sBattleFrontierStreakInfo.streak, STR_CONV_MODE_LEFT_ALIGN, i);
 }
 
@@ -1806,7 +1805,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
     case FRONTIER_FACILITY_DOME:
         for (i = 0; i < 2; i++)
         {
-            for (j = 0; j < 2; j++)
+            for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
             {
                 if (streak < gSaveBlock2Ptr->frontier.domeRecordWinStreaks[i][j])
                     streak = gSaveBlock2Ptr->frontier.domeRecordWinStreaks[i][j];
@@ -1819,7 +1818,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
     #else
     case FRONTIER_FACILITY_FACTORY:
     #endif
-        for (i = 0; i < 2; i++)
+        for (i = 0; i < FRONTIER_LVL_MODE_COUNT; i++)
         {
             if (streak < gSaveBlock2Ptr->frontier.pikeRecordStreaks[i])
                 streak = gSaveBlock2Ptr->frontier.pikeRecordStreaks[i];
@@ -1829,7 +1828,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
     case FRONTIER_FACILITY_TOWER:
         for (i = 0; i < 4; i++)
         {
-            for (j = 0; j < 2; j++)
+            for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
             {
                 if (streak < gSaveBlock2Ptr->frontier.towerRecordWinStreaks[i][j])
                     streak = gSaveBlock2Ptr->frontier.towerRecordWinStreaks[i][j];
@@ -1840,7 +1839,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
     case FRONTIER_FACILITY_PALACE:
         for (i = 0; i < 2; i++)
         {
-            for (j = 0; j < 2; j++)
+            for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
             {
                 if (streak < gSaveBlock2Ptr->frontier.palaceRecordWinStreaks[i][j])
                     streak = gSaveBlock2Ptr->frontier.palaceRecordWinStreaks[i][j];
@@ -1855,7 +1854,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
     #endif
         for (i = 0; i < 2; i++)
         {
-            for (j = 0; j < 2; j++)
+            for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
             {
                 if (streak < gSaveBlock2Ptr->frontier.factoryRecordWinStreaks[i][j])
                     streak = gSaveBlock2Ptr->frontier.factoryRecordWinStreaks[i][j];
@@ -1864,7 +1863,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
         *topicTextId = GEN_TOPIC_STREAK_RECORD - 1;
         break;
     case FRONTIER_FACILITY_ARENA:
-        for (i = 0; i < 2; i++)
+        for (i = 0; i < FRONTIER_LVL_MODE_COUNT; i++)
         {
             if (streak < gSaveBlock2Ptr->frontier.arenaRecordStreaks[i])
                 streak = gSaveBlock2Ptr->frontier.arenaRecordStreaks[i];
@@ -1872,7 +1871,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
         *topicTextId = GEN_TOPIC_STREAK_RECORD - 1;
         break;
     case FRONTIER_FACILITY_PYRAMID:
-        for (i = 0; i < 2; i++)
+        for (i = 0; i < FRONTIER_LVL_MODE_COUNT; i++)
         {
             if (streak < gSaveBlock2Ptr->frontier.pyramidRecordStreaks[i])
                 streak = gSaveBlock2Ptr->frontier.pyramidRecordStreaks[i];
@@ -1926,7 +1925,7 @@ static u8 GetPokedexRatingLevel(u16 numSeen)
         return 18;
     if (numSeen < 200)
         return 19;
-    
+
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_DEOXYS), FLAG_GET_CAUGHT))
         numSeen--;
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_JIRACHI), FLAG_GET_CAUGHT))

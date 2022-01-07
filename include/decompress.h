@@ -20,6 +20,8 @@ void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void* buffe
 void DecompressPicFromTable_2(const struct CompressedSpriteSheet *src, void* buffer, s32 species);
 void DecompressPicFromTable_DontHandleDeoxys(const struct CompressedSpriteSheet *src, void* buffer, s32 species);
 
+void DecompressPicFromTableGender(void* buffer, s32 species, u32 personality);
+
 void HandleLoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality);
 void HandleLoadSpecialPokePic_2(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality);
 void HandleLoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality);
