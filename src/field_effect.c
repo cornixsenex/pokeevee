@@ -4120,7 +4120,7 @@ static bool8 RockClimb_ContinueRideOrEnd(struct Task *task, struct ObjectEvent *
 
     ScriptContext2_Enable();
     gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_SURFING;
-    gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_5;
+    gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_CONTROLLABLE;
     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_ON_FOOT;
     task->tState++;
     return FALSE;

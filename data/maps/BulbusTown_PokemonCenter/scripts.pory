@@ -20,7 +20,7 @@ script BulbusTown_PokemonCenter_EventScript_Nurse {
 			msgbox (BulbusTown_PokemonCenter_Text_OutOfPocket, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == 1) {
 				removemoney (2500, 0)
-				updatemoneybox (0, 0)
+				updatemoneybox
 				call (Common_EventScript_PkmnCenterNurse)
 				waitmessage
 				waitbuttonpress

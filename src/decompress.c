@@ -82,13 +82,13 @@ void DecompressPicFromTable_2(const struct CompressedSpriteSheet *src, void* buf
     DuplicateDeoxysTiles(buffer, species);
 }
 
-void DecompressPicFromTable_DontHandleDeoxys(const struct CompressedSpriteSheet *src, void* buffer, s32 species)
-{
-    if (species > NUM_SPECIES)
-        LZ77UnCompWram(gMonFrontPicTable[0].data, buffer);
-    else
-        LZ77UnCompWram(src->data, buffer);
-
+//void DecompressPicFromTable_DontHandleDeoxys(const struct CompressedSpriteSheet *src, void* buffer, s32 species)
+//{
+//    if (species > NUM_SPECIES)
+//        LZ77UnCompWram(gMonFrontPicTable[0].data, buffer);
+//    else
+//        LZ77UnCompWram(src->data, buffer);
+//
 	
 void DecompressPicFromTableGender(void* buffer, s32 species, u32 personality)
 {

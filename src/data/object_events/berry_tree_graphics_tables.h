@@ -599,7 +599,7 @@ const struct SpriteFrameImage sPicTable_CustapBerryTree[] = {
     overworld_frame(gObjectEventPic_CustapBerryTree, 2, 4, 5),
 };
 
-const u16 gBerryTreePaletteTagTable_Cutsap[] = {OBJ_EVENT_PAL_TAG_NPC_2, OBJ_EVENT_PAL_TAG_NPC_3, OBJ_EVENT_PAL_TAG_NPC_4, OBJ_EVENT_PAL_TAG_NPC_4, OBJ_EVENT_PAL_TAG_NPC_4};
+const u16 gBerryTreePaletteTagTable_Custap[] = {OBJ_EVENT_PAL_TAG_NPC_2, OBJ_EVENT_PAL_TAG_NPC_3, OBJ_EVENT_PAL_TAG_NPC_4, OBJ_EVENT_PAL_TAG_NPC_4, OBJ_EVENT_PAL_TAG_NPC_4};
 
 const struct SpriteFrameImage sPicTable_JabocaBerryTree[] = {
     overworld_frame(gObjectEventPic_BerryTreeDirtPile, 2, 2, 0),

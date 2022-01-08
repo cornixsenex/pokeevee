@@ -1,0 +1,14 @@
+CityClara_Mart_MapScripts::
+	.byte 0
+
+
+CityClara_Mart_EventScript_Clerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SlateportCity_Mart_Pokemart
+	msgbox gText_PleaseComeAgain
+	release
+	end
+

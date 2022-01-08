@@ -78,6 +78,8 @@ static u8 setup##_callback(struct ObjectEvent *objectEvent, struct Sprite *sprit
     return 0;\
 }
 
+
+static EWRAM_DATA u16 sCurrentSpecialObjectPaletteTag = 0;
 static EWRAM_DATA struct LockedAnimObjectEvents *sLockedAnimObjectEvents = {0};
 
 static void MoveCoordsInDirection(u32, s16 *, s16 *, s16, s16);
@@ -155,7 +157,7 @@ static void ObjectEventSetSingleMovement(struct ObjectEvent *, struct Sprite *, 
 static void SetSpriteDataForNormalStep(struct Sprite *, u8, u8);
 static void InitSpriteForFigure8Anim(struct Sprite *sprite);
 static bool8 AnimateSpriteInFigure8(struct Sprite *sprite);
-//static void SpriteCB_VirtualObject(struct Sprite *);
+static void SpriteCB_VirtualObject(struct Sprite *);
 static void DoShadowFieldEffect(struct ObjectEvent *);
 static void SetJumpSpriteData(struct Sprite *, u8, u8, u8);
 static void SetWalkSlowSpriteData(struct Sprite *sprite, u8 direction);
@@ -2682,11 +2684,11 @@ const u8 gRideWaterCurrentMovementActions[] = {
     [DIR_EAST] = MOVEMENT_ACTION_RIDE_WATER_CURRENT_RIGHT,
 };
 const u8 gWalkFastestMovementActions[] = {
-    [DIR_NONE] = MOVEMENT_ACTION_WALK_FASTEST_DOWN,
-    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_FASTEST_DOWN,
-    [DIR_NORTH] = MOVEMENT_ACTION_WALK_FASTEST_UP,
-    [DIR_WEST] = MOVEMENT_ACTION_WALK_FASTEST_LEFT,
-    [DIR_EAST] = MOVEMENT_ACTION_WALK_FASTEST_RIGHT,
+    [DIR_NONE] = MOVEMENT_ACTION_WALK_FASTER_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_FASTER_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_WALK_FASTER_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_WALK_FASTER_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_WALK_FASTER_RIGHT,
 };
 const u8 gWalkFasterMovementActions[] = {
     MOVEMENT_ACTION_WALK_FASTER_DOWN,
@@ -2782,15 +2784,15 @@ const u8 gWalkInPlaceFastMovementActions[] = {
     [DIR_SOUTHEAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FAST_RIGHT
 };
 const u8 gWalkInPlaceFastestMovementActions[] = {
-    [DIR_NONE] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_DOWN,
-    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_DOWN,
-    [DIR_NORTH] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_UP,
-    [DIR_WEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_LEFT,
-    [DIR_EAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_RIGHT,
-    [DIR_SOUTHWEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_LEFT,
-    [DIR_NORTHWEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_LEFT,
-    [DIR_NORTHEAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_RIGHT,
-    [DIR_SOUTHEAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_RIGHT
+    [DIR_NONE] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT,
+    [DIR_SOUTHWEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT,
+    [DIR_NORTHWEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT,
+    [DIR_NORTHEAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT,
+    [DIR_SOUTHEAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT
 };
 const u8 gWalkInPlaceFasterMovementActions[] = {
     MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN,
@@ -4357,36 +4359,36 @@ void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup
 }
 
 //WARNING: Next two functions MAY be bad...IDK 
-void InitObjectEventPalettes(u8 palSlot)
-{
-    FreeAndReserveObjectSpritePalettes();
-    sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
-    sCurrentReflectionType = palSlot;
-    if (palSlot == 1)
-    {
-        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
-        gReservedSpritePaletteCount = 8;
-    }
-    else
-    {
-        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 10);
-    }
-}
-
-u16 GetObjectPaletteTag(u8 palSlot)
-{
-    u8 i;
-
-    if (palSlot < 10)
-        return sObjectPaletteTagSets[sCurrentReflectionType][palSlot];
-
-    for (i = 0; sSpecialObjectReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
-    {
-        if (sSpecialObjectReflectionPaletteSets[i].tag == sCurrentSpecialObjectPaletteTag)
-            return sSpecialObjectReflectionPaletteSets[i].data[sCurrentReflectionType];
-    }
-    return OBJ_EVENT_PAL_TAG_NONE;
-}
+//void InitObjectEventPalettes(u8 palSlot)
+//{
+//    FreeAndReserveObjectSpritePalettes();
+//    sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
+//    sCurrentReflectionType = palSlot;
+//    if (palSlot == 1)
+//    {
+//        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
+//        gReservedSpritePaletteCount = 8;
+//    }
+//    else
+//    {
+//        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 10);
+//    }
+//}
+//
+//u16 GetObjectPaletteTag(u8 palSlot)
+//{
+//    u8 i;
+//
+//    if (palSlot < 10)
+//        return sObjectPaletteTagSets[sCurrentReflectionType][palSlot];
+//
+//    for (i = 0; sSpecialObjectReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
+//    {
+//        if (sSpecialObjectReflectionPaletteSets[i].tag == sCurrentSpecialObjectPaletteTag)
+//            return sSpecialObjectReflectionPaletteSets[i].data[sCurrentReflectionType];
+//    }
+//    return OBJ_EVENT_PAL_TAG_NONE;
+//}
 
 movement_type_empty_callback(MovementType_None)
 movement_type_def(MovementType_WanderAround, gMovementTypeFuncs_WanderAround)
@@ -7944,7 +7946,7 @@ bool8 MovementAction_WalkFasterLeft_Step0(struct ObjectEvent *objectEvent, struc
         InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FASTER);
     else
         InitMovementNormal(objectEvent, sprite, DIR_WEST, MOVE_SPEED_FASTER);
-    return MovementAction_WalkFastestLeft_Step1(objectEvent, sprite);
+    return MovementAction_WalkFasterLeft_Step1(objectEvent, sprite);
 }
 
 bool8 MovementAction_WalkFasterLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
@@ -7963,7 +7965,7 @@ bool8 MovementAction_WalkFasterRight_Step0(struct ObjectEvent *objectEvent, stru
         InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FASTER);
     else
         InitMovementNormal(objectEvent, sprite, DIR_EAST, MOVE_SPEED_FASTER);
-    return MovementAction_WalkFastestRight_Step1(objectEvent, sprite);
+    return MovementAction_WalkFasterRight_Step1(objectEvent, sprite);
 }
 
 bool8 MovementAction_WalkFasterRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)

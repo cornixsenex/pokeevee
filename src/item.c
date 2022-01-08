@@ -1028,7 +1028,7 @@ void DrawHeaderBox(void)
     u8 *dst;
     bool8 handleFlash = FALSE;
     
-    if (Overworld_GetFlashLevel() > 1)
+    if (GetFlashLevel() > 1)
         handleFlash = TRUE;
     
     if (headerType == 1)
@@ -1130,7 +1130,7 @@ static void DestroyItemIconSprite(void)
 	FreeSpriteOamMatrix(&gSprites[sItemIconSpriteId]);
 	DestroySprite(&gSprites[sItemIconSpriteId]);
     
-    if (Overworld_GetFlashLevel() > 1 && sItemIconSpriteId2 != MAX_SPRITES)
+    if (GetFlashLevel() > 1 && sItemIconSpriteId2 != MAX_SPRITES)
     {
         //FreeSpriteTilesByTag(ITEM_TAG);
         //FreeSpritePaletteByTag(ITEM_TAG);

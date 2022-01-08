@@ -491,6 +491,11 @@
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
 
+
+// gTileset_Rustboro
+#define METATILE_Rustboro_Door_Gray  0x21F
+#define METATILE_Rustboro_Door_Tan   0x22F
+
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D
 #define METATILE_PokemonCenter_Door_CableClub            0x264

@@ -4078,13 +4078,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
 						effect++;
 					}
 					break;
-                }
-                if (effect)
-                {
-                    gBattleCommunication[MULTISTRING_CHOOSER] = GetCurrentWeather();
-                    BattleScriptPushCursorAndCallback(BattleScript_OverworldWeatherStarts);
-                }
-                break;
+				}
+			}
+			if (effect)
+			{
+				gBattleCommunication[MULTISTRING_CHOOSER] = GetCurrentWeather();
+				BattleScriptPushCursorAndCallback(BattleScript_OverworldWeatherStarts);
+			}
+			break;
 
         case ABILITY_IMPOSTER:
             if (IsBattlerAlive(BATTLE_OPPOSITE(battler))

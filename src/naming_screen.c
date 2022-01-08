@@ -1479,7 +1479,7 @@ static void NamingScreen_CreateMonIcon(void)
     u8 spriteId;
 
     LoadMonIconPalettes();
-    spriteId = CreateMonIcon(sNamingScreen->monSpecies, SpriteCallbackDummy, 56, 40, 0, sNamingScreen->monPersonality, 1);
+    spriteId = CreateMonIcon(sNamingScreen->monSpecies, SpriteCallbackDummy, 56, 40, 0, sNamingScreen->monPersonality);
     gSprites[spriteId].oam.priority = 3;
 }
 
@@ -1499,7 +1499,7 @@ static void NamingScreen_CreateRivalIcon(void)
     
     //rivalGfxId = GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender ^ 1);
     //spriteId = AddPseudoObjectEvent(rivalGfxId, SpriteCallbackDummy, 56, 37, 0);
-    spriteId = AddPseudoObjectEvent(OBJ_EVENT_GFX_BLUE, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BLUE, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], 4);
 }
