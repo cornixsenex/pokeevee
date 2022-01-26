@@ -93,12 +93,11 @@ static const u8 sTileBitAttributes[] =
     [MB_EASTWARD_CURRENT] = TILE_ATTRIBUTES(TRUE, TRUE, FALSE),
     [MB_WESTWARD_CURRENT] = TILE_ATTRIBUTES(TRUE, TRUE, FALSE),
     [MB_NORTHWARD_CURRENT] = TILE_ATTRIBUTES(TRUE, TRUE, FALSE),
-    [MB_SOUTHWARD_CURRENT] = TILE_ATTRIBUTES(TRUE, TRUE, FALSE),
-    [MB_UNUSED_54] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_55] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_56] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_57] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_58] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_SPIN_RIGHT] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_SPIN_LEFT] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_SPIN_UP] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_SPIN_DOWN] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_STOP_SPINNING] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_59] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_5A] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_5B] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
@@ -1652,4 +1651,36 @@ bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsSpinRight(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_RIGHT;
+}
+
+bool8 MetatileBehavior_IsSpinLeft(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_LEFT;
+}
+
+bool8 MetatileBehavior_IsSpinUp(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_UP;
+}
+
+bool8 MetatileBehavior_IsSpinDown(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_DOWN;
+}
+
+bool8 MetatileBehavior_IsStopSpinning(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_STOP_SPINNING;
+}
+
+bool8 MetatileBehavior_IsSpinTile(u8 metatileBehavior)
+{
+    return metatileBehavior >= MB_SPIN_RIGHT && metatileBehavior <= MB_SPIN_DOWN;
+}
+
+
 

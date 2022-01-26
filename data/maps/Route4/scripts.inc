@@ -740,7 +740,7 @@ Route4_Text_FatMan::
 	.string "I can't stop eating! It's all I enjoy.$"
 
 Route4_Text_Test::
-	.string "Just a Test Message srry$"
+	.string "Just a Test Message srry...$"
 
 Route4_Text_Rocket1::
 	.string "This is no good what will we tell the\n"

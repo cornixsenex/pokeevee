@@ -1025,7 +1025,8 @@ void BikeClearState(int newDirHistory, int newAbStartHistory)
     gPlayerAvatar.bikeFrameCounter = 0;
     gPlayerAvatar.bikeSpeed = BIKE_SPEED_STANDING;
     gPlayerAvatar.directionHistory = newDirHistory;
-    gPlayerAvatar.abStartSelectHistory = newAbStartHistory;
+    gPlayerAvatar.abStartSelectHistory = newAbStartHistory;     
+	gPlayerAvatar.lastSpinTile = 0;
 
     for (i = 0; i < ARRAY_COUNT(gPlayerAvatar.dirTimerHistory); i++)
         gPlayerAvatar.dirTimerHistory[i] = 0;
