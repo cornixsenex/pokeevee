@@ -787,7 +787,7 @@ text Route4_Text_FatMan {
 
 
 text Route4_Text_Test {
-	format("Just a Test Message srry")	
+	format("Just a Test Message srry...")	
 }
 
 text Route4_Text_Rocket1 {
