@@ -1170,7 +1170,7 @@ void PlayerFreeze(void)
 
 static void PlayerGoSpin(u8 direction)
 {
-    PlayerSetAnimId(GetSpinMovementAction(direction), 3);
+    PlayerSetAnimId(GetSpinMovementAction(direction), COPY_MOVE_WALK);
 }
 
 static void PlayerApplyTileForcedMovement(u8 metatileBehavior)
