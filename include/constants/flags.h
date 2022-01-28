@@ -50,7 +50,7 @@
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 
-#define FLAG_ROUTE1_RIVAL    0x28 // Unused Flag
+#define FLAG_ROUTE1_RIVAL    0x28 // Used Flag - ...on Route1 yknow
 #define FLAG_MEW_NOTDONE     0x29 // Shows Pop+Leaf at home
 #define FLAG_HIDE_GRANDMASCABIN_MEW      0x2A // Hides Mew
 #define FLAG_HASINSURANCE    0x2B // Allows Pokecenter Use
@@ -74,6 +74,7 @@
 #define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4
 #define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
 #define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // after the flower game
+
 #define FLAG_ROUTE6_HIDEPIKACHU      0x3F // after J&J cutscen
 
 #define FLAG_ROUTE7_HIDEOLDWOMAN    0x40 // Hides the old lady after the roadblock trigger
