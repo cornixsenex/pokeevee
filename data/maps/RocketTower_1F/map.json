@@ -23,6 +23,20 @@
       "elevation": 0,
       "dest_map": "MAP_DARK_CAVE_1FS",
       "dest_warp_id": 1
+    },
+    {
+      "x": 27,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_1F",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_1F",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [
