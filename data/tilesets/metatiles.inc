@@ -673,3 +673,6 @@ gMetatiles_FireRedBuilding::
 	.align 1
 gMetatileAttributes_FireRedBuilding::
 	.incbin "data/tilesets/primary/fireredbuilding/metatile_attributes.bin"
+
+
+
