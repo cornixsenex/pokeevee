@@ -612,6 +612,7 @@
 #define MAP_ROCKET_PRISON_OFFICE        (29 | (30 << 8))
 #define MAP_ROCKET_TOWER_1F             (30 | (30 << 8))
 #define MAP_ROCKET_TOWER_2F             (31 | (30 << 8))
+#define MAP_ROCKET_TOWER_3F             (32 | (30 << 8))
 
 // Map Group 31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))
