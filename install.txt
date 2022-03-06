@@ -32,5 +32,5 @@ open pokeevee/porymap.project.cfg
 >From here you should be able to use porymap as normal
 
 
--CornixSenex :D
+-cornixsenex :D
 
