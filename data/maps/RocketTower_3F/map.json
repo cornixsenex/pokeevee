@@ -17,7 +17,13 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_2F",
+      "dest_warp_id": 1
+    }
   ],
   "coord_events": [
 
