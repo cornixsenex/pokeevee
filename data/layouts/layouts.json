@@ -5350,6 +5350,16 @@
       "secondary_tileset": "gTileset_SilphCo",
       "border_filepath": "data/layouts/RocketTower_5F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_TOWER_6F",
+      "name": "RocketTower_6F_Layout",
+      "width": 36,
+      "height": 22,
+      "primary_tileset": "gTileset_FireRedBuilding",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/RocketTower_6F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketTower_6F/map.bin"
     }
   ]
 }
