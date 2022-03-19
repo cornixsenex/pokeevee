@@ -5362,14 +5362,14 @@
       "blockdata_filepath": "data/layouts/RocketTower_6F/map.bin"
     },
     {
-      "id": "LAYOUT_NEW_MAP2",
-      "name": "NewMap2_Layout",
+      "id": "LAYOUT_ROCKET_TOWER_7F",
+      "name": "RocketTower_7F_Layout",
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
       "secondary_tileset": "gTileset_SilphCo",
-      "border_filepath": "data/layouts/NewMap2/border.bin",
-      "blockdata_filepath": "data/layouts/NewMap2/map.bin"
+      "border_filepath": "data/layouts/RocketTower_7F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketTower_7F/map.bin"
     }
   ]
 }
