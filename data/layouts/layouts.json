@@ -5370,6 +5370,26 @@
       "secondary_tileset": "gTileset_SilphCo",
       "border_filepath": "data/layouts/RocketTower_7F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_7F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_TOWER_8F",
+      "name": "RocketTower_8F_Layout",
+      "width": 36,
+      "height": 22,
+      "primary_tileset": "gTileset_FireRedBuilding",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/RocketTower_8F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketTower_8F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_TOWER_9F",
+      "name": "RocketTower_9F_Layout",
+      "width": 36,
+      "height": 22,
+      "primary_tileset": "gTileset_FireRedBuilding",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/RocketTower_9F/border.bin",
+      "blockdata_filepath": "data/layouts/RocketTower_9F/map.bin"
     }
   ]
 }

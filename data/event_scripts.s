@@ -1286,3 +1286,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/RocketTower_6F/scripts.inc"
 
 	.include "data/maps/RocketTower_7F/scripts.inc"
+
+	.include "data/maps/RocketTower_8F/scripts.inc"
+
+	.include "data/maps/RocketTower_9F/scripts.inc"

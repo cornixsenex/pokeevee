@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROCKET_TOWER_5F",
-  "name": "RocketTower_5F",
-  "layout": "LAYOUT_ROCKET_TOWER_5F",
+  "id": "MAP_ROCKET_TOWER_9F",
+  "name": "RocketTower_9F",
+  "layout": "LAYOUT_ROCKET_TOWER_9F",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_AQUA_HIDEOUT_OLD",
   "requires_flash": false,
@@ -17,20 +17,7 @@
 
   ],
   "warp_events": [
-    {
-      "x": 7,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_ROCKET_TOWER_4F",
-      "dest_warp_id": 1
-    },
-    {
-      "x": 3,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_ROCKET_TOWER_6F",
-      "dest_warp_id": 0
-    }
+
   ],
   "coord_events": [
 
