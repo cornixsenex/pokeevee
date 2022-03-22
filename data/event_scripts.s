@@ -1290,3 +1290,11 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/RocketTower_8F/scripts.inc"
 
 	.include "data/maps/RocketTower_9F/scripts.inc"
+
+	.include "data/maps/RocketTower_10F/scripts.inc"
+
+	.include "data/maps/RocketTower_11F/scripts.inc"
+
+	.include "data/maps/RocketTower_12F/scripts.inc"
+
+	.include "data/maps/RocketTower_13F/scripts.inc"

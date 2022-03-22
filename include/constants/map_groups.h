@@ -619,6 +619,10 @@
 #define MAP_ROCKET_TOWER_7F             (36 | (30 << 8))
 #define MAP_ROCKET_TOWER_8F             (37 | (30 << 8))
 #define MAP_ROCKET_TOWER_9F             (38 | (30 << 8))
+#define MAP_ROCKET_TOWER_10F            (39 | (30 << 8))
+#define MAP_ROCKET_TOWER_11F            (40 | (30 << 8))
+#define MAP_ROCKET_TOWER_12F            (41 | (30 << 8))
+#define MAP_ROCKET_TOWER_13F            (42 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

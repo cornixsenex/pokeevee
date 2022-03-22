@@ -652,7 +652,11 @@
     "RocketTower_6F",
     "RocketTower_7F",
     "RocketTower_8F",
-    "RocketTower_9F"
+    "RocketTower_9F",
+    "RocketTower_10F",
+    "RocketTower_11F",
+    "RocketTower_12F",
+    "RocketTower_13F"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",
