@@ -676,3 +676,11 @@ gMetatileAttributes_FireRedBuilding::
 
 
 
+
+	.align 1
+gMetatiles_SilphLab::
+	.incbin "data/tilesets/secondary/silphlab/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_SilphLab::
+	.incbin "data/tilesets/secondary/silphlab/metatile_attributes.bin"

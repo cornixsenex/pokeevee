@@ -2049,3 +2049,23 @@ gTilesetPalettes_FireRedBuilding::
 	.align 2
 gTilesetTiles_FireRedBuilding::
 	.incbin "data/tilesets/primary/fireredbuilding/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_SilphLab::
+	.incbin "data/tilesets/secondary/silphlab/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/silphlab/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_SilphLab::
+	.incbin "data/tilesets/secondary/silphlab/tiles.4bpp.lz"

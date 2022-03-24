@@ -5407,7 +5407,7 @@
       "width": 36,
       "height": 22,
       "primary_tileset": "gTileset_FireRedBuilding",
-      "secondary_tileset": "gTileset_SilphCo",
+      "secondary_tileset": "gTileset_SilphLab",
       "border_filepath": "data/layouts/RocketTower_11F/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_11F/map.bin"
     },
