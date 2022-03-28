@@ -1,1 +1,15 @@
 mapscripts RocketTower_2F_MapScripts {}
+
+
+script RocketTower_2F_EventScript_StairSign {
+	lock
+	msgbox(RocketTower_2F_Text_StairSign)
+	closemessage
+	release
+	end
+}
+
+text RocketTower_2F_Text_StairSign {
+	format("Rocket Tower - Floor 2\nCafe")
+}
+
