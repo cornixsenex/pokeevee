@@ -1093,6 +1093,10 @@ static void PCTurnOnEffect_1(s16 isPcTurnedOn, s8 dx, s8 dy)
         {
             tileId = METATILE_BrendansMaysHouse_MayPC_Off;
         }
+		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
+		{
+			tileId = METATILE_SilphCo_PC_Off;
+		}
     }
     else
     {
@@ -1108,6 +1112,10 @@ static void PCTurnOnEffect_1(s16 isPcTurnedOn, s8 dx, s8 dy)
         {
             tileId = METATILE_BrendansMaysHouse_MayPC_On;
         }
+		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
+		{
+			tileId = METATILE_SilphCo_PC_On;
+		}
     }
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, tileId | METATILE_COLLISION_MASK);
 }
