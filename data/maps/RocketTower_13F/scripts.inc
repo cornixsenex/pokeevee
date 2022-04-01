@@ -8,6 +8,9 @@ RocketTower_13F_EventScript_CheckPC::
 	playse SE_PC_ON
 	special PlayerPC
 	waitstate
+	setvar VAR_0x8004, 3
+	playse SE_PC_OFF
+	special DoPCTurnOffEffect
 	releaseall
 	end
 
