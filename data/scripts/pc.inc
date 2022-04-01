@@ -51,7 +51,7 @@ EventScript_AccessLanettesPC::
 	return
 
 EventScript_TurnOffPC::
-	setvar VAR_0x8004, 0
+	//setvar VAR_0x8004, 0
 	playse SE_PC_OFF
 	special DoPCTurnOffEffect
 	releaseall

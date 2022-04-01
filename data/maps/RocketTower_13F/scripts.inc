@@ -3,14 +3,12 @@ RocketTower_13F_MapScripts::
 
 
 RocketTower_13F_EventScript_CheckPC::
+	lockall
 	setvar VAR_0x8004, 3
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
-	special PlayerPC
+	goto EventScript_PCMainMenu
 	waitstate
-	setvar VAR_0x8004, 3
-	playse SE_PC_OFF
-	special DoPCTurnOffEffect
 	releaseall
 	end
 
