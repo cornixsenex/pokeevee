@@ -73,6 +73,7 @@ The PARTY outlaws religion, alleges Mythic Pokemon aren't real. They win the war
 >Desert
 >PX
 	Acadamy
+		-Mini game thing where you can 'graduate'
 	Move Tutor
 	Fossil Restoration (Takes item from Skyscraper?)
 	Frat House
@@ -115,6 +116,19 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 >Skyscraper
 	Silph Co ripoff
 	teleports
+		1 - (1) - A (behind counter)
+		2 - (8) 
+		3 - (9)
+		4 - (8)
+		5 - (8)
+		6 - (5)*
+		7 - (6)*
+		8 - (2)*
+		9 - (7)
+		10 - (5)
+		11 - 
+		12
+		13
 	technology gone too far
 	One ditto hiding somewhere
 	One porygon hiding somewhere
