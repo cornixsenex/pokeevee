@@ -113,11 +113,25 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 >Indy leads you and the gang outside to Bike Route North West
 >When outside he begins the 'battle'
 >You have to go directly through Bike Route defeating bikers and then take the tower
->Skyscraper
-	Silph Co ripoff
-	teleports
-		1 - (1) - A (behind counter)
+>Rocket Tower
+	* Rocket Brothers and Sisters
+	* A Bed
+	* A gift pokemon (Lapras?)
+	* Rival Battle (?)
+	* TM Give Away by hostage woman
+	* Rotom(?)
+	* Up-Grade(?)
+	* Pokemon Report (In Game Lore)
+	* Porygon, Ditto, Castform(?)
+	General Teleport Path - 9F Behind Boxes warp > Spin Puzzle > Executive Office / Card Key > Spin Puzzle > Lab > Blaine Office > Gio
+
+
+		1 - (1) 
+			- A (behind counter) <=> Spin Puzzle
 		2 - (8) 
+			- ABCD (IN top corner) <=> Spin Puzzle
+			- EF (By Stairs) <=> Spin Puzzle, somewhere in the offices
+			- GH (In communal room) 
 		3 - (9)
 		4 - (8)
 		5 - (8)
