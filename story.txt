@@ -137,8 +137,13 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 		5 - (8)
 		6 - (5)*
 		7 - (6)*
+			-A (by stairs) <=> an office
+			-B (left of elevator) <=> Spin Puzzle
+			-C (right of elevator) <=> an office
+			-DEF (in lil room top right) <=> Spin Puzzle
 		8 - (2)*
 		9 - (7)
+			- A (Top closest to stairs in other room) 
 		10 - (5)
 		11 - (2 at least)
 		12 - (10)
