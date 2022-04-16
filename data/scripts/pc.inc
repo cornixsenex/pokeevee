@@ -1,6 +1,6 @@
 EventScript_PC::
 	lockall
-	setvar VAR_0x8004, 0
+	setvar VAR_0x8004, PC_LOCATION_OTHER
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
 	msgbox Text_BootUpPC, MSGBOX_DEFAULT
@@ -51,7 +51,8 @@ EventScript_AccessLanettesPC::
 	return
 
 EventScript_TurnOffPC::
-	//setvar VAR_0x8004, 0
+	//I unset this to make the silph pc work...It doesn't seem to break pokemon center PC either IDK why but to be safe just use a sign script every time you want a PC to work, see rocket tower 13F for example
+	//setvar VAR_0x8004, PC_LOCATION_OTHER
 	playse SE_PC_OFF
 	special DoPCTurnOffEffect
 	releaseall

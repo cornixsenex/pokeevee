@@ -29,7 +29,12 @@ struct MultiPartnerMenuPokemon
 };
 
 #define TYPE_NAME_LENGTH 6
+
+#if B_EXPANDED_ABILITY_NAMES
+#define ABILITY_NAME_LENGTH 16
+#else
 #define ABILITY_NAME_LENGTH 12
+#endif
 
 // defines for the 'DoBounceEffect' function
 #define BOUNCE_MON          0x0
@@ -74,6 +79,7 @@ void RunBattleScriptCommands(void);
 bool8 TryRunFromBattle(u8 battlerId);
 void SpecialStatusesClear(void);
 void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk);
+bool32 IsWildMonSmart(void);
 
 extern struct MultiPartnerMenuPokemon gMultiPartnerParty[MULTI_PARTY_SIZE];
 

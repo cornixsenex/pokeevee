@@ -78,7 +78,11 @@ static const struct CompressedSpriteSheet sSpriteSheets_HealthBar[MAX_BATTLERS_C
     {gBlankGfxCompressed, 0x0120, TAG_HEALTHBAR_OPPONENT2_TILE}
 };
 
+#if P_ENABLE_DEBUG == TRUE
+const struct SpritePalette sSpritePalettes_HealthBoxHealthBar[2] =
+#else
 static const struct SpritePalette sSpritePalettes_HealthBoxHealthBar[2] =
+#endif
 {
     {gBattleInterface_BallStatusBarPal, TAG_HEALTHBOX_PAL},
     {gBattleInterface_BallDisplayPal, TAG_HEALTHBAR_PAL}
@@ -581,27 +585,17 @@ static void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battlerId, bool32 op
 
     otId = GetMonData(mon, MON_DATA_OT_ID);
     position = GetBattlerPosition(battlerId);
-	if (opponent)
+    if (opponent)
     {
-        HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[species],
-                                              gMonSpritesGfxPtr->sprites.ptr[position],
-                                              species, currentPersonality);
+        HandleLoadSpecialPokePic(&gMonFrontPicTable[species],
+                                 gMonSpritesGfxPtr->sprites.ptr[position],
+                                 species, currentPersonality);
     }
     else
     {
-        if (ShouldIgnoreDeoxysForm(1, battlerId) == 1 || gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies != SPECIES_NONE)
-        {
-            HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[species],
-                                                      gMonSpritesGfxPtr->sprites.ptr[position],
-                                                      species, currentPersonality);
-        }
-        else
-        {
-            HandleLoadSpecialPokePic(&gMonBackPicTable[species],
-                                    gMonSpritesGfxPtr->sprites.ptr[position],
-                                    species, currentPersonality);
-        }
-
+        HandleLoadSpecialPokePic(&gMonBackPicTable[species],
+                                 gMonSpritesGfxPtr->sprites.ptr[position],
+                                 species, currentPersonality);
     }
 
     paletteOffset = 0x100 + battlerId * 16;
