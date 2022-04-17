@@ -133,8 +133,24 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 			- EF (By Stairs) <=> Spin Puzzle, somewhere in the offices
 			- GH (In communal room) 
 		3 - (9)
+			- AB (In top left corner behind boxes)
+			- C (By stairs)
+			- DE (Bottom left office)
+			- F (Mid left office)
+			- G (Mid right office)
+			- HI (right office)
 		4 - (8)
+			- AB (Top hallway left and right of stairs)
+			- CD (In left and center office)
+			- EF (In right office)
+			- GE (In bottom hallway left and right)
 		5 - (8)
+			- A (By stairs)
+			- B (By Elevator)
+			- CD (In left office)
+			- E (In bottom hallway)
+			- FG (In bottom mid office)
+			- H (In right office)	
 		6 - (5)*
 		7 - (6)*
 			-A (by stairs) <=> an office
@@ -145,8 +161,18 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 		9 - (7)
 			- A (Top closest to stairs in other room) 
 		10 - (5)
+			- AB (In top left office)
+			- C (By elevator)
+			- DE (In bottom left office)
 		11 - (2 at least)
 		12 - (10)
+			- A (By stairs)
+			- B (In middle left hallway)
+			- CDE (In far right room)
+			- F (Bottom left office)
+			- G (Bottom left hallway)
+			- H (Bottom right hallway)
+			- IJ (Bottom right office)
 		13 - (3)
 	technology gone too far
 	One ditto hiding somewhere
