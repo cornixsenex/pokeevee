@@ -28,8 +28,8 @@
       "x": 11,
       "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_ROCKET_TOWER_13F",
-      "dest_warp_id": 0
+      "dest_map": "MAP_ROCKET_TOWER_12F",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [

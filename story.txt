@@ -130,8 +130,8 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 			- A (behind counter) <=> Spin Puzzle
 		2 - (8) 
 			- ABCD (IN top corner) <=> Spin Puzzle
-			- EF (By Stairs) <=> Spin Puzzle, somewhere in the offices
-			- GH (In communal room) 
+			- EF (By Stairs) <=> Spin Puzzle, 5F-E
+			- GH (In communal room) <=> Office, Spin Puzzle
 		3 - (9)
 			- AB (In top left corner behind boxes)
 			- C (By stairs)
@@ -148,7 +148,7 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 			- A (By stairs)
 			- B (By Elevator)
 			- CD (In left office)
-			- E (In bottom hallway)
+			- E (In bottom hallway) <=> 2F-F
 			- FG (In bottom mid office)
 			- H (In right office)	
 		6 - (5)*
@@ -160,6 +160,11 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 		8 - (2)*
 		9 - (7)
 			- A (Top closest to stairs in other room) 
+			- B (Far mid left)
+			- C (Far bot left)
+			- D (In lil room at bottom)
+			- EF (In room center right)
+			- G (Bottom behind crate) <=> SPIN PUZZLE ** CORRECT PATH
 		10 - (5)
 			- AB (In top left office)
 			- C (By elevator)
@@ -168,8 +173,8 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 		12 - (10)
 			- A (By stairs)
 			- B (In middle left hallway)
-			- CDE (In far right room)
-			- F (Bottom left office)
+			- CDE (In far right room, top to bottom) <=> Laborotory, Spin Puzzle, Spin Puzzle **Correct Path**
+			- F (Bottom left office) <=> Spin Puzzle
 			- G (Bottom left hallway)
 			- H (Bottom right hallway)
 			- IJ (Bottom right office)

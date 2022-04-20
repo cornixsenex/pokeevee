@@ -739,12 +739,14 @@
 #define METATILE_Shop_Laptop2_Normal  0x2A5
 
 // gTileset_SilphCo
-#define METATILE_SilphCo_Arrow_Down   0x25F
-#define METATILE_SilphCo_Arrow_Left   0x25E
-#define METATILE_SilphCo_Arrow_Right  0x257
-#define METATILE_SilphCo_Arrow_Up     0x256
-#define METATILE_SilphCo_PC_Off       0x303
-#define METATILE_SilphCo_PC_On        0x304
+#define METATILE_SilphCo_Arrow_Down                   0x25F
+#define METATILE_SilphCo_Arrow_Left                   0x25E
+#define METATILE_SilphCo_Arrow_Right                  0x257
+#define METATILE_SilphCo_Arrow_Up                     0x256
+#define METATILE_SilphCo_FloorLight  				  0x218
+#define METATILE_SilphCo_FloorShade  				  0x219
+#define METATILE_SilphCo_PC_Off                       0x303
+#define METATILE_SilphCo_PC_On                        0x304
 
 // gTileset_Slateport
 #define METATILE_Slateport_Door             0x2DC

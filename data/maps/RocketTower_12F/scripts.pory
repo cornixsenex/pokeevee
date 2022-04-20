@@ -1,1 +1,21 @@
 mapscripts RocketTower_12F_MapScripts {}
+
+
+script RocketTower_12F_EventScript_CardKey {
+	lock
+	setflag (FLAG_RECEIVED_CARD_KEY)
+	msgbox (RocketTower_12F_Text_CardKey)
+	closemessage
+	checkitemspace (ITEM_CARD_KEY, 1)
+	if (var(VAR_RESULT) == 1) {
+		removeobject (1)
+		giveitem (ITEM_CARD_KEY)
+	}	
+	release
+	end
+}
+
+text RocketTower_12F_Text_CardKey {
+	format("A card key with the red rocket logo")
+}
+
