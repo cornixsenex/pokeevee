@@ -7505,6 +7505,7 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
 
 static bool32 IsMonEventLegal(u8 battlerId)
 {
+	//I have altered the function to enable Mew and Deoxys to obey player (pray I don't alter it any further)
    // if (GetBattlerSide(battlerId) == B_SIDE_OPPONENT)
    //     return TRUE;
    // if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS

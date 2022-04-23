@@ -2,6 +2,11 @@ mapscripts RocketTower_13F_MapScripts {}
 
 
 
+const GIO_FIELD_PIC = 10
+const BLAINE_FIELD_PIC = 7
+
+
+
 script RocketTower_13F_EventScript_CheckPC {
 	lockall
 	setvar (VAR_0x8004, 3)
@@ -18,10 +23,44 @@ script RocketTower_13F_EventScript_GioTrigger1 {
 	setvar(VAR_ROCKETTOWER_STATE, 1)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
+
+	call (RocketTower_13F_EventScript_GioCutscene)
+	
 	//Figure out the vim syntax file before you do any more bruh
 	release
 	end
 }
 
+script RocketTower_13F_EventScript_GioCutscene {
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Gio1)
+	destroy_field_pic(GIO_FIELD_PIC)
+	closemessage
+	load_field_pic(BLAINE_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Blaine1)
+	destroy_field_pic(BLAINE_FIELD_PIC)
+	closemessage
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Gio2)
+	destroy_field_pic(GIO_FIELD_PIC)
+	closemessage
 
+	return
+}
+	
+
+
+
+text RocketTower_13F_Text_Gio1 {
+	format("We stand upon the brink of destruction all of our plans will fail if we don't act")
+}
+
+text RocketTower_13F_Text_Blaine1 
+{
+	format("But sir Mewtwo has not proven himself in any battle")
+}
+
+text RocketTower_13F_Text_Gio2 {
+	format("Blaine we have no choice. The city guard has already fallen, the capital itself is under siege, and this report suggests our own tower has been penetrated by rebel spies.")
+}
 

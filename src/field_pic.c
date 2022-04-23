@@ -68,6 +68,9 @@ static const u16 sPic9Pal[] = INCBIN_U16("graphics/trainers/palettes/factory_hea
 static const u32 sPic10Gfx[] = INCBIN_U32("graphics/trainers/front_pics/magma_leader_maxie_front_pic.4bpp.lz");
 static const u16 sPic10Pal[] = INCBIN_U16("graphics/trainers/palettes/magma_leader_maxie.gbapal");
 
+//Gio = 10
+static const u32 sPic11Gfx[] = INCBIN_U32("graphics/trainers/front_pics/giovanni_front_pic.4bpp.lz");
+static const u16 sPic11Pal[] = INCBIN_U16("graphics/trainers/palettes/giovanni.gbapal");
 
 
 
@@ -112,6 +115,8 @@ static const struct Pic sPics[] =
     {sPic9Gfx, sPic9Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Maxie
     {sPic10Gfx, sPic10Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Gio
+    {sPic11Gfx, sPic11Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
