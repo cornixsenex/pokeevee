@@ -113,8 +113,11 @@
 #define VAR_MOSSDEEP_CITY_STATE              0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE            0x405E
 #define VAR_EVER_GRANDE_CITY_STATE           0x405F // Unused Var
+													//
+///Im gonna re-purpose all these vars
 #define VAR_ROUTE101_STATE                   0x4060 // LoonixInsideReal
-#define VAR_ROUTE102_STATE                   0x4061 // Unused Var
+#define VAR_ROCKETTOWER_STATE				 0x4061
+//#define VAR_ROUTE102_STATE                   0x4061 // Unused Var
 #define VAR_ROUTE103_STATE                   0x4062 // Unused Var
 #define VAR_ROUTE104_STATE                   0x4063
 #define VAR_ROUTE105_STATE                   0x4064 // Unused Var
@@ -264,6 +267,8 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER        0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER       0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 0x40F6
+
+//Literally all of those are up for grabs...Up Above
 #define VAR_ROUTE3_STATE                     0x40F7 // Leaf Trigger
 #define VAR_CITYCLARA_STATE                  0x40F8 // Leaf+Scott in CannaClub...
 #define VAR_CITYCLARA_SCHOOL_STATE           0x40F9 // Counts students defeated in the school

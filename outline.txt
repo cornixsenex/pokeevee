@@ -608,7 +608,7 @@ HMs
 dragon - MewTwo Tower; 
 fighting - Beach Cave? Springs?; Hercules 
 	**Maybe have a cool side quest thing here involving different bands of 		warriors scattered about and then a central dojo with HERAKLES(Bruno)
-  	poison -Freeway;  Ninjas ; Koga
+poison -Freeway;  Ninjas ; Koga
 
 steel - Pyramid; Nolan
 

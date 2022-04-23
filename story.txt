@@ -206,22 +206,29 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 	Geodude
 	Ditto!
 >Enter top floor
->SIKE! They're in the basement
+Blaine and Gio speech, Blaine warns Gio that MewTwo is untested in battle but does follow commands, Gio say there is no choice and God favors the bold and stuff. They notice you and Gio says he must leave, tells Blaine to destroy you and to meet him at the Capital for the establishment of the new government where he will enjoy a grand position. Gio commands MewTwo and they exit to the elevator.
+>Blaine - Artificial pokemon
+Magneton
+Ditto
+Porygon
+Pory2
+Pory2
+PoryZ*
 
-You enter the basement immediately after Mewtwo was chained. There should be some sense of panic. Blaine leads Mewtwo out and orders two scientists to stop you. You follow after him and find yourself in the Rocket Bunker. Giovanni is busy asking Blaine if he's sure Mewtwo is under control. Blaine sees you and suggests he use Mewtwo to destroy the player but Giovanni says the situation at the capital demands his attention. Loosing the tower now would be acceptable if he can take the capital. He orders Blaine to defend the bunker with his life and hurries down the tunell. Blaine engages with artificial pokemon mentioned above.
+
 
 
 >Tunnel to the Capital
 >Capital
 >Fight the Senate
 >Leader makes his boast and MewTwo bails
->Battle vs Boss
+>Battle vs Boss (Evil types)
+	Houndoom
+	Persian
+	Murkcrow
 	Spiritomb
-	Magneton
-	Porygon
 	Muk
-	Electrode
-	Ditto*
+	Nidoqueen
 >Military shows up and promise to support the Boss still but they leave.
 >He claims this is a small set back, that he will reclaim MewTwo with his technology and you are nothing to him.
 >He leaves and Indy arrives, they won the battle for LA but PARTY BOSS fled to SF and no one knows where MEWTWO could have gone.
@@ -261,7 +268,7 @@ You enter the basement immediately after Mewtwo was chained. There should be som
 >Koga, ninja master gives you a disguise to go into the Military Hideout
 >Military Installation
 	Fighting Types!
->Party Boss Fight
+>Party Boss Fight -- General Fight?
 	Ditto
 	Porygon
 	Electrode
@@ -697,3 +704,7 @@ River
 City Encounters
 Sewer (LA, LV, SF)
 
+
+>SIKE! They're in the basement
+
+You enter the basement immediately after Mewtwo was chained. There should be some sense of panic. Blaine leads Mewtwo out and orders two scientists to stop you. You follow after him and find yourself in the Rocket Bunker. Giovanni is busy asking Blaine if he's sure Mewtwo is under control. Blaine sees you and suggests he use Mewtwo to destroy the player but Giovanni says the situation at the capital demands his attention. Loosing the tower now would be acceptable if he can take the capital. He orders Blaine to defend the bunker with his life and hurries down the tunell. Blaine engages with artificial pokemon mentioned above.

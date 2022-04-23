@@ -12,3 +12,16 @@ script RocketTower_13F_EventScript_CheckPC {
 	releaseall
 	end
 }
+
+script RocketTower_13F_EventScript_GioTrigger1 {
+	lock
+	setvar(VAR_ROCKETTOWER_STATE, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Figure out the vim syntax file before you do any more bruh
+	release
+	end
+}
+
+
+
