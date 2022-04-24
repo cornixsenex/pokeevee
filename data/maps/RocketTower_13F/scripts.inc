@@ -16,9 +16,41 @@ RocketTower_13F_EventScript_CheckPC::
 RocketTower_13F_EventScript_GioTrigger1::
 	lock
 	setvar VAR_ROCKETTOWER_STATE, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1
+	waitmovement 0
+	special RemoveCameraObject
 	call RocketTower_13F_EventScript_GioCutscene
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1B
+	applymovement 3, RocketTower_13F_Movement_Blaine1
+	applymovement 5, RocketTower_13F_Movement_Porygon1
+	waitmovement 0
+	special RemoveCameraObject
+	release
+	end
+
+
+RocketTower_13F_EventScript_GioTrigger2::
+	lock
+	setvar VAR_ROCKETTOWER_STATE, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2
+	waitmovement 0
+	special RemoveCameraObject
+	call RocketTower_13F_EventScript_GioCutscene
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2B
+	applymovement 3, RocketTower_13F_Movement_Blaine2
+	applymovement 5, RocketTower_13F_Movement_Porygon2
+	waitmovement 0
+	special RemoveCameraObject
 	release
 	end
 
@@ -26,18 +58,91 @@ RocketTower_13F_EventScript_GioTrigger1::
 RocketTower_13F_EventScript_GioCutscene::
 	load_field_pic 10, 190, 98
 	msgbox RocketTower_13F_Text_Gio1
-	destroy_field_pic 10
 	closemessage
+	destroy_field_pic 10
+	delay 5
 	load_field_pic 7, 190, 98
 	msgbox RocketTower_13F_Text_Blaine1
-	destroy_field_pic 7
 	closemessage
+	destroy_field_pic 7
+	delay 5
 	load_field_pic 10, 190, 98
 	msgbox RocketTower_13F_Text_Gio2
-	destroy_field_pic 10
 	closemessage
+	destroy_field_pic 10
+	delay 5
 	return
 
+
+RocketTower_13F_Movement_PanCamera1:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_diag_northeast
+	walk_slow_diag_northeast
+	walk_slow_diag_northeast
+	step_end
+
+RocketTower_13F_Movement_PanCamera2:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_diag_northeast
+	walk_slow_diag_northeast
+	walk_slow_diag_northeast
+	walk_slow_diag_northeast
+	step_end
+
+RocketTower_13F_Movement_PanCamera1B:
+	walk_slow_diag_southwest
+	walk_slow_diag_southwest
+	walk_slow_diag_southwest
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	step_end
+
+RocketTower_13F_Movement_PanCamera2B:
+	walk_slow_diag_southwest
+	walk_slow_diag_southwest
+	walk_slow_diag_southwest
+	walk_slow_diag_southwest
+	walk_slow_left
+	walk_slow_left
+	step_end
+
+RocketTower_13F_Movement_Blaine1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+RocketTower_13F_Movement_Blaine2:
+	walk_left
+	walk_left
+	walk_diag_southwest
+	walk_left
+	step_end
+
+RocketTower_13F_Movement_Porygon1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_diag_northwest
+	walk_left
+	step_end
+
+RocketTower_13F_Movement_Porygon2:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
 
 RocketTower_13F_Text_Gio1::
 	.string "We stand upon the brink of destruction\n"

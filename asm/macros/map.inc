@@ -20,7 +20,6 @@
 	.endm
 
 	@ Defines an object event template for map data. Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
-	@@This is from ghoul's overworld expansion branch...it differs slightly from mainline pret
 	.macro object_event index:req, gfx:req, inConnection:req, x:req, y:req, elevation:req, movement_type:req, x_radius:req, y_radius:req, trainer_type:req, sight_radius_tree_etc:req, script:req, event_flag:req
 	.byte \index, \inConnection
 	.2byte \gfx

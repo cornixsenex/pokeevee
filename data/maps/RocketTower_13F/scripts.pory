@@ -4,6 +4,8 @@ mapscripts RocketTower_13F_MapScripts {}
 
 const GIO_FIELD_PIC = 10
 const BLAINE_FIELD_PIC = 7
+const OBJ_EVENT_ID_BLAINE = 3
+const OBJ_EVENT_ID_PORYGON = 5
 
 
 
@@ -21,12 +23,47 @@ script RocketTower_13F_EventScript_CheckPC {
 script RocketTower_13F_EventScript_GioTrigger1 {
 	lock
 	setvar(VAR_ROCKETTOWER_STATE, 1)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1)
+	waitmovement (0)
+	special (RemoveCameraObject)
 
 	call (RocketTower_13F_EventScript_GioCutscene)
+
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1B)
+	applymovement (OBJ_EVENT_ID_BLAINE, RocketTower_13F_Movement_Blaine1)
+	applymovement (OBJ_EVENT_ID_PORYGON, RocketTower_13F_Movement_Porygon1)
+	waitmovement (0)
+	special (RemoveCameraObject)
 	
-	//Figure out the vim syntax file before you do any more bruh
+	release
+	end
+}
+
+script RocketTower_13F_EventScript_GioTrigger2 {
+	lock
+	setvar(VAR_ROCKETTOWER_STATE, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2)
+	waitmovement (0)
+	special (RemoveCameraObject)
+
+	call (RocketTower_13F_EventScript_GioCutscene)
+
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2B)
+	applymovement (OBJ_EVENT_ID_BLAINE, RocketTower_13F_Movement_Blaine2)
+	applymovement (OBJ_EVENT_ID_PORYGON, RocketTower_13F_Movement_Porygon2)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	
 	release
 	end
 }
@@ -34,22 +71,61 @@ script RocketTower_13F_EventScript_GioTrigger1 {
 script RocketTower_13F_EventScript_GioCutscene {
 	load_field_pic (GIO_FIELD_PIC, 190, 98)
 	msgbox(RocketTower_13F_Text_Gio1)
-	destroy_field_pic(GIO_FIELD_PIC)
 	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
 	load_field_pic(BLAINE_FIELD_PIC, 190, 98)
 	msgbox(RocketTower_13F_Text_Blaine1)
-	destroy_field_pic(BLAINE_FIELD_PIC)
 	closemessage
+	destroy_field_pic(BLAINE_FIELD_PIC)
+	delay (5)
 	load_field_pic (GIO_FIELD_PIC, 190, 98)
 	msgbox(RocketTower_13F_Text_Gio2)
-	destroy_field_pic(GIO_FIELD_PIC)
 	closemessage
-
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
 	return
 }
 	
+movement RocketTower_13F_Movement_PanCamera1 {
+	walk_slow_right * 4
+	walk_slow_diag_northeast * 3
+}
 
+movement RocketTower_13F_Movement_PanCamera2 {
+	walk_slow_right * 2
+	walk_slow_diag_northeast * 4
+}
 
+movement RocketTower_13F_Movement_PanCamera1B {
+	walk_slow_diag_southwest * 3
+	walk_slow_left * 4
+}
+
+movement RocketTower_13F_Movement_PanCamera2B {
+	walk_slow_diag_southwest * 4
+	walk_slow_left * 2
+}
+
+movement RocketTower_13F_Movement_Blaine1 {
+	walk_left * 5
+}
+
+movement RocketTower_13F_Movement_Blaine2 {
+	walk_left * 2
+	walk_diag_southwest
+	walk_left
+}
+
+movement RocketTower_13F_Movement_Porygon1 {
+	walk_left * 4
+	walk_diag_northwest
+	walk_left 
+}
+
+movement RocketTower_13F_Movement_Porygon2 {
+	walk_left * 5
+}
 
 text RocketTower_13F_Text_Gio1 {
 	format("We stand upon the brink of destruction all of our plans will fail if we don't act")

@@ -80,6 +80,7 @@ struct ObjectEventTemplate
     /*0x14*/ u16 flagId;
 };
 
+
 struct WarpEvent
 {
     s16 x, y;
