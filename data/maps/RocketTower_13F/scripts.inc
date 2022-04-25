@@ -24,10 +24,11 @@ RocketTower_13F_EventScript_GioTrigger1::
 	waitmovement 0
 	special RemoveCameraObject
 	call RocketTower_13F_EventScript_GioCutscene
-	special SpawnCameraObject
-	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1B
 	applymovement 3, RocketTower_13F_Movement_Blaine1
 	applymovement 5, RocketTower_13F_Movement_Porygon1
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1B
 	waitmovement 0
 	special RemoveCameraObject
 	release
@@ -45,10 +46,11 @@ RocketTower_13F_EventScript_GioTrigger2::
 	waitmovement 0
 	special RemoveCameraObject
 	call RocketTower_13F_EventScript_GioCutscene
-	special SpawnCameraObject
-	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2B
 	applymovement 3, RocketTower_13F_Movement_Blaine2
 	applymovement 5, RocketTower_13F_Movement_Porygon2
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2B
 	waitmovement 0
 	special RemoveCameraObject
 	release
@@ -70,6 +72,11 @@ RocketTower_13F_EventScript_GioCutscene::
 	msgbox RocketTower_13F_Text_Gio2
 	closemessage
 	destroy_field_pic 10
+	delay 5
+	load_field_pic 11, 190, 98
+	msgbox RocketTower_13F_Text_Mewtwo1
+	closemessage
+	destroy_field_pic 11
 	delay 5
 	return
 
@@ -157,4 +164,8 @@ RocketTower_13F_Text_Gio2::
 	.string "has already fallen, the capital itself\l"
 	.string "is under siege, and this report\l"
 	.string "suggests our own tower has been\l"
-	.string "penetrated by rebel spies.$"
+	.string "penetrated by rebel spies. I must be\l"
+	.string "off! MEWTWO will you obey?$"
+
+RocketTower_13F_Text_Mewtwo1::
+	.string "My lord I must obey every command$"

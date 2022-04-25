@@ -4,6 +4,7 @@ mapscripts RocketTower_13F_MapScripts {}
 
 const GIO_FIELD_PIC = 10
 const BLAINE_FIELD_PIC = 7
+const MEWTWO_ARMOR_FIELD_PIC = 11
 const OBJ_EVENT_ID_BLAINE = 3
 const OBJ_EVENT_ID_PORYGON = 5
 
@@ -33,10 +34,11 @@ script RocketTower_13F_EventScript_GioTrigger1 {
 
 	call (RocketTower_13F_EventScript_GioCutscene)
 
-	special (SpawnCameraObject)
-	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1B)
 	applymovement (OBJ_EVENT_ID_BLAINE, RocketTower_13F_Movement_Blaine1)
 	applymovement (OBJ_EVENT_ID_PORYGON, RocketTower_13F_Movement_Porygon1)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1B)
 	waitmovement (0)
 	special (RemoveCameraObject)
 	
@@ -57,10 +59,11 @@ script RocketTower_13F_EventScript_GioTrigger2 {
 
 	call (RocketTower_13F_EventScript_GioCutscene)
 
-	special (SpawnCameraObject)
-	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2B)
 	applymovement (OBJ_EVENT_ID_BLAINE, RocketTower_13F_Movement_Blaine2)
 	applymovement (OBJ_EVENT_ID_PORYGON, RocketTower_13F_Movement_Porygon2)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2B)
 	waitmovement (0)
 	special (RemoveCameraObject)
 	
@@ -84,6 +87,16 @@ script RocketTower_13F_EventScript_GioCutscene {
 	closemessage
 	destroy_field_pic(GIO_FIELD_PIC)
 	delay (5)
+	load_field_pic(MEWTWO_ARMOR_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Mewtwo1)
+	closemessage
+	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
+	delay (5)
+
+	//They notice player
+
+	//My lord the spy is with us already
+	//
 	return
 }
 	
@@ -137,6 +150,10 @@ text RocketTower_13F_Text_Blaine1
 }
 
 text RocketTower_13F_Text_Gio2 {
-	format("Blaine we have no choice. The city guard has already fallen, the capital itself is under siege, and this report suggests our own tower has been penetrated by rebel spies.")
+	format("Blaine we have no choice. The city guard has already fallen, the capital itself is under siege, and this report suggests our own tower has been penetrated by rebel spies. I must be off! MEWTWO will you obey?")
+}
+
+text RocketTower_13F_Text_Mewtwo1 {
+	format("My lord I must obey every command")
 }
 
