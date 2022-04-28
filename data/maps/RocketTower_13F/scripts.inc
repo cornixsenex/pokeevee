@@ -1,5 +1,26 @@
 RocketTower_13F_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, RocketTower_13F_MapScripts_MAP_SCRIPT_ON_RESUME
 	.byte 0
+
+RocketTower_13F_MapScripts_MAP_SCRIPT_ON_RESUME:
+	call RocketTower_13F_OnResume
+	return
+
+
+RocketTower_13F_OnResume::
+	compare VAR_ROCKETTOWER_STATE, 1
+	goto_if_gt RocketTower_13F_OnResume_2
+RocketTower_13F_OnResume_1:
+	end
+
+RocketTower_13F_OnResume_2:
+	call RocketTower_13F_EventScript_OpenElevator
+	goto RocketTower_13F_OnResume_1
+
+
+RocketTower_13F_EventScript_OpenElevator::
+	setmetatile 25, 3, METATILE_SilphCo_Elevator_Door_Open, 0
+	return
 
 
 RocketTower_13F_EventScript_CheckPC::
@@ -154,8 +175,12 @@ RocketTower_13F_EventScript_BlaineDefeated::
 
 
 RocketTower_13F_EventScript_CardKey::
+	lockall
 	finditem ITEM_CARD_KEY
+	setvar VAR_ROCKETTOWER_STATE, 2
 	setflag FLAG_HIDE_CARDKEY
+	call RocketTower_13F_EventScript_OpenElevator
+	special DrawWholeMapView
 	end
 
 
