@@ -171,6 +171,13 @@ script RocketTower_13F_EventScript_BlaineDefeated {
 	fadescreen (0)
 	return
 }
+
+script RocketTower_13F_EventScript_CardKey {
+	finditem (ITEM_CARD_KEY)
+	setflag (FLAG_HIDE_CARDKEY)
+	end
+}
+
 	
 movement RocketTower_13F_Movement_PanCamera1 {
 	walk_slow_right * 6

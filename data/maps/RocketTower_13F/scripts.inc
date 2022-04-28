@@ -153,6 +153,12 @@ RocketTower_13F_EventScript_BlaineDefeated::
 	return
 
 
+RocketTower_13F_EventScript_CardKey::
+	finditem ITEM_CARD_KEY
+	setflag FLAG_HIDE_CARDKEY
+	end
+
+
 RocketTower_13F_Movement_PanCamera1:
 	walk_slow_right
 	walk_slow_right
