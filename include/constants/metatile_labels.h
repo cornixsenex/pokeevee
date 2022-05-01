@@ -750,6 +750,10 @@
 #define METATILE_SilphCo_PC_Off                0x303
 #define METATILE_SilphCo_PC_On                 0x304
 
+// gTileset_SilphLab
+#define METATILE_SilphLab_Elevator_Door_Closed  0x23D
+#define METATILE_SilphLab_Elevator_Door_Open    0x234
+
 // gTileset_Slateport
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
