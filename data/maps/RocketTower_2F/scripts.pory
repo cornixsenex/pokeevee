@@ -7,19 +7,22 @@ mapscripts RocketTower_2F_MapScripts {
 }
 
 script RocketTower_2F_OnResume {
+	call (RocketTower_2F_EventScript_SetFloor2)
 	if (var(VAR_ROCKETTOWER_STATE) > 1) {
 		call (RocketTower_2F_EventScript_OpenElevator)
 	}
 	end
 }
 
+script RocketTower_2F_EventScript_SetFloor2 {
+	setvar (VAR_ROCKETTOWER_FLOOR, 2)
+	return
+}
+
 script RocketTower_2F_EventScript_OpenElevator {	
 	setmetatile (25, 3, METATILE_SilphCo_Elevator_Door_Open, 0)
 	return
 }
-
-
-
 
 script RocketTower_2F_EventScript_StairSign {
 	lock

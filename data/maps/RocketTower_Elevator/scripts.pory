@@ -1,0 +1,115 @@
+mapscripts RocketTower_Elevator_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		call (RocketTower_Elevator_OnLoad)
+	}
+}
+
+script RocketTower_Elevator_OnLoad {
+	call (RocketTower_Elevator_EventScript_SetFloorWarp)
+	end
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp {
+	switch (var(VAR_ROCKETTOWER_FLOOR)) {
+		case 0:
+		case 1:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp1)
+		case 2:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp2)
+		case 3:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp3)
+		case 4:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp4)
+		case 5:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp5)
+		case 6:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp6)
+		case 7:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp7)
+		case 8:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp8)
+		case 9:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp9)
+		case 10:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp10)
+		case 11:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp11)
+		case 12:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp12)
+		case 13:
+			call (RocketTower_Elevator_EventScript_SetFloorWarp13)
+	}
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp1 {
+	setdynamicwarp (MAP_ROCKET_TOWER_1F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp2 {
+	setdynamicwarp (MAP_ROCKET_TOWER_2F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp3 {
+	setdynamicwarp (MAP_ROCKET_TOWER_3F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp4 {
+	setdynamicwarp (MAP_ROCKET_TOWER_4F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp5 {
+	setdynamicwarp (MAP_ROCKET_TOWER_5F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp6 {
+	setdynamicwarp (MAP_ROCKET_TOWER_6F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp7 {
+	setdynamicwarp (MAP_ROCKET_TOWER_7F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp8 {
+	setdynamicwarp (MAP_ROCKET_TOWER_8F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp9 {
+	setdynamicwarp (MAP_ROCKET_TOWER_9F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp10 {
+	setdynamicwarp (MAP_ROCKET_TOWER_10F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp11 {
+	setdynamicwarp (MAP_ROCKET_TOWER_11F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp12 {
+	setdynamicwarp (MAP_ROCKET_TOWER_12F, 25, 3)
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarp13 {
+	setdynamicwarp (MAP_ROCKET_TOWER_13F, 25, 3)
+	return
+}
+
+
+
+
+
+
+

@@ -623,6 +623,7 @@
 #define MAP_ROCKET_TOWER_11F            (40 | (30 << 8))
 #define MAP_ROCKET_TOWER_12F            (41 | (30 << 8))
 #define MAP_ROCKET_TOWER_13F            (42 | (30 << 8))
+#define MAP_ROCKET_TOWER_ELEVATOR       (43 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

@@ -30,6 +30,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_4F",
       "dest_warp_id": 0
+    },
+    {
+      "x": 25,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_ELEVATOR",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

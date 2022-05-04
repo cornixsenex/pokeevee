@@ -8,14 +8,19 @@ RocketTower_13F_MapScripts_MAP_SCRIPT_ON_RESUME:
 
 
 RocketTower_13F_OnResume::
-	compare VAR_ROCKETTOWER_STATE, 1
-	goto_if_gt RocketTower_13F_OnResume_2
+	call RocketTower_13F_EventScript_SetFloor13
+	goto_if_set FLAG_HIDE_CARDKEY, RocketTower_13F_OnResume_2
 RocketTower_13F_OnResume_1:
 	end
 
 RocketTower_13F_OnResume_2:
 	call RocketTower_13F_EventScript_OpenElevator
 	goto RocketTower_13F_OnResume_1
+
+
+RocketTower_13F_EventScript_SetFloor13::
+	setvar VAR_ROCKETTOWER_FLOOR, 13
+	return
 
 
 RocketTower_13F_EventScript_OpenElevator::

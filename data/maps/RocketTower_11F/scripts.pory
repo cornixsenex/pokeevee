@@ -7,10 +7,16 @@ mapscripts RocketTower_11F_MapScripts {
 }
 
 script RocketTower_11F_OnResume {
+	call (RocketTower_11F_EventScript_SetFloor11)
 	if (var(VAR_ROCKETTOWER_STATE) > 1) {
 		call (RocketTower_11F_EventScript_OpenElevator)
 	}
 	end
+}
+
+script RocketTower_11F_EventScript_SetFloor11 {
+	setvar (VAR_ROCKETTOWER_FLOOR, 11)
+	return
 }
 
 script RocketTower_11F_EventScript_OpenElevator {	

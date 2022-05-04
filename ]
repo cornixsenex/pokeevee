@@ -14,15 +14,13 @@ script RocketTower_12F_OnResume {
 	end
 }
 
-script RocketTower_12F_EventScript_SetFloor12 {
-	setvar (VAR_ROCKETTOWER_FLOOR, 12)
-	return
-}
-
 script RocketTower_12F_EventScript_OpenElevator {	
 	setmetatile (25, 3, METATILE_SilphCo_Elevator_Door_Open, 0)
 	return
 }
+
+
+
 
 script RocketTower_12F_EventScript_CardKey {
 	lock

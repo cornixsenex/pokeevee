@@ -8,6 +8,7 @@ RocketTower_6F_MapScripts_MAP_SCRIPT_ON_RESUME:
 
 
 RocketTower_6F_OnResume::
+	call RocketTower_6F_EventScript_SetFloor6
 	compare VAR_ROCKETTOWER_STATE, 1
 	goto_if_gt RocketTower_6F_OnResume_2
 RocketTower_6F_OnResume_1:
@@ -16,6 +17,11 @@ RocketTower_6F_OnResume_1:
 RocketTower_6F_OnResume_2:
 	call RocketTower_6F_EventScript_OpenElevator
 	goto RocketTower_6F_OnResume_1
+
+
+RocketTower_6F_EventScript_SetFloor6::
+	setvar VAR_ROCKETTOWER_FLOOR, 6
+	return
 
 
 RocketTower_6F_EventScript_OpenElevator::
