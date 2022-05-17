@@ -2312,6 +2312,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR:	
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 14;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2472,6 +2482,23 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
+    },
+    [SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR] =
+	{
+		gText_FloorChooseBF1,
+		gText_FloorChoose1,
+		gText_FloorChoose2,
+		gText_FloorChoose3,
+		gText_FloorChoose4,
+		gText_FloorChoose5,
+		gText_FloorChoose6,
+		gText_FloorChoose7,
+		gText_FloorChoose8,
+		gText_FloorChoose9,
+		gText_FloorChoose10,
+		gText_FloorChoose11,
+		gText_FloorChoose12,
+		gText_FloorChoose13,
     }
 };
 

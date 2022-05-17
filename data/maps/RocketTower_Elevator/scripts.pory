@@ -38,7 +38,14 @@ script RocketTower_Elevator_EventScript_SetFloorWarp {
 			call (RocketTower_Elevator_EventScript_SetFloorWarp12)
 		case 13:
 			call (RocketTower_Elevator_EventScript_SetFloorWarp13)
+		case 14:
+			call (RocketTower_Elevator_EventScript_SetFloorWarpBF1)
 	}
+	return
+}
+
+script RocketTower_Elevator_EventScript_SetFloorWarpBF1 {
+	setdynamicwarp (MAP_ROCKET_TOWER_BF1, 5, 1)
 	return
 }
 
@@ -107,9 +114,52 @@ script RocketTower_Elevator_EventScript_SetFloorWarp13 {
 	return
 }
 
+script RocketTower_Elevlator_EventScript_ChooseFloor {
+	lock
+	msgbox (RocketTower_Elevator_Text_ChooseFloor)
+	closemessage
+	setvar (VAR_0x8004, SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR)
+	special (ShowScrollableMultichoice)
+	waitstate
+//	multichoice (0, 0, MULTI_ROCKETTOWER_ELEVATOR_FLOOR, TRUE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_ROCKETTOWER_FLOOR, 14)
+		case 1:
+			setvar(VAR_ROCKETTOWER_FLOOR, 1)
+		case 2:
+			setvar(VAR_ROCKETTOWER_FLOOR, 2)
+		case 3:
+			setvar(VAR_ROCKETTOWER_FLOOR, 3)
+		case 4:
+			setvar(VAR_ROCKETTOWER_FLOOR, 4)
+		case 5:
+			setvar(VAR_ROCKETTOWER_FLOOR, 5)
+		case 6:
+			setvar(VAR_ROCKETTOWER_FLOOR, 6)
+		case 7:
+			setvar(VAR_ROCKETTOWER_FLOOR, 7)
+		case 8:
+			setvar(VAR_ROCKETTOWER_FLOOR, 8)
+		case 9:
+			setvar(VAR_ROCKETTOWER_FLOOR, 9)
+		case 10:
+			setvar(VAR_ROCKETTOWER_FLOOR, 10)
+		case 11:
+			setvar(VAR_ROCKETTOWER_FLOOR, 11)
+		case 12:
+			setvar(VAR_ROCKETTOWER_FLOOR, 12)
+		case 13:
+			setvar(VAR_ROCKETTOWER_FLOOR, 13)
+	}
+	call (RocketTower_Elevator_EventScript_SetFloorWarp)
+	release
+	end
+}
 
-
-
+text RocketTower_Elevator_Text_ChooseFloor {
+	format("Which floor would you like to go to?")
+}
 
 
 

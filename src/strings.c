@@ -666,6 +666,22 @@ const u8 gText_StoneChooseWater[] = _("WATER STONE");
 const u8 gText_StoneChooseThunder[] = _("THUNDER STONE");
 const u8 gText_StoneChooseNone[] = _("NONE STONE");
 
+
+const u8 gText_FloorChooseBF1[] = _("BASEMENT");
+const u8 gText_FloorChoose1[]   = _("FLOOR 1");
+const u8 gText_FloorChoose2[]   = _("FLOOR 2");
+const u8 gText_FloorChoose3[]   = _("FLOOR 3");
+const u8 gText_FloorChoose4[]   = _("FLOOR 4");
+const u8 gText_FloorChoose5[]   = _("FLOOR 5");
+const u8 gText_FloorChoose6[]   = _("FLOOR 6");
+const u8 gText_FloorChoose7[]   = _("FLOOR 7");
+const u8 gText_FloorChoose8[]   = _("FLOOR 8");
+const u8 gText_FloorChoose9[]   = _("FLOOR 9");
+const u8 gText_FloorChoose10[]  = _("FLOOR 10");
+const u8 gText_FloorChoose11[]  = _("FLOOR 11");
+const u8 gText_FloorChoose12[]  = _("FLOOR 12");
+const u8 gText_FloorChoose13[]  = _("FLOOR 13");
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");

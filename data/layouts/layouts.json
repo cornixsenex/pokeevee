@@ -5440,6 +5440,16 @@
       "secondary_tileset": "gTileset_SilphCo",
       "border_filepath": "data/layouts/RocketTower_Elevator/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_Elevator/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_TOWER_BF1",
+      "name": "RocketTower_BF1_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_FireRedBuilding",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/RocketTower_BF1/border.bin",
+      "blockdata_filepath": "data/layouts/RocketTower_BF1/map.bin"
     }
   ]
 }

@@ -28,6 +28,7 @@ RocketTower_Elevator_EventScript_SetFloorWarp::
 	case 11, RocketTower_Elevator_EventScript_SetFloorWarp_13
 	case 12, RocketTower_Elevator_EventScript_SetFloorWarp_14
 	case 13, RocketTower_Elevator_EventScript_SetFloorWarp_15
+	case 14, RocketTower_Elevator_EventScript_SetFloorWarp_16
 RocketTower_Elevator_EventScript_SetFloorWarp_1:
 	return
 
@@ -82,6 +83,15 @@ RocketTower_Elevator_EventScript_SetFloorWarp_14:
 RocketTower_Elevator_EventScript_SetFloorWarp_15:
 	call RocketTower_Elevator_EventScript_SetFloorWarp13
 	goto RocketTower_Elevator_EventScript_SetFloorWarp_1
+
+RocketTower_Elevator_EventScript_SetFloorWarp_16:
+	call RocketTower_Elevator_EventScript_SetFloorWarpBF1
+	goto RocketTower_Elevator_EventScript_SetFloorWarp_1
+
+
+RocketTower_Elevator_EventScript_SetFloorWarpBF1::
+	setdynamicwarp MAP_ROCKET_TOWER_BF1, 5, 1
+	return
 
 
 RocketTower_Elevator_EventScript_SetFloorWarp1::
@@ -148,3 +158,90 @@ RocketTower_Elevator_EventScript_SetFloorWarp13::
 	setdynamicwarp MAP_ROCKET_TOWER_13F, 25, 3
 	return
 
+
+RocketTower_Elevlator_EventScript_ChooseFloor::
+	lock
+	msgbox RocketTower_Elevator_Text_ChooseFloor
+	closemessage
+	setvar VAR_0x8004, SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, RocketTower_Elevlator_EventScript_ChooseFloor_3
+	case 1, RocketTower_Elevlator_EventScript_ChooseFloor_4
+	case 2, RocketTower_Elevlator_EventScript_ChooseFloor_5
+	case 3, RocketTower_Elevlator_EventScript_ChooseFloor_6
+	case 4, RocketTower_Elevlator_EventScript_ChooseFloor_7
+	case 5, RocketTower_Elevlator_EventScript_ChooseFloor_8
+	case 6, RocketTower_Elevlator_EventScript_ChooseFloor_9
+	case 7, RocketTower_Elevlator_EventScript_ChooseFloor_10
+	case 8, RocketTower_Elevlator_EventScript_ChooseFloor_11
+	case 9, RocketTower_Elevlator_EventScript_ChooseFloor_12
+	case 10, RocketTower_Elevlator_EventScript_ChooseFloor_13
+	case 11, RocketTower_Elevlator_EventScript_ChooseFloor_14
+	case 12, RocketTower_Elevlator_EventScript_ChooseFloor_15
+	case 13, RocketTower_Elevlator_EventScript_ChooseFloor_16
+RocketTower_Elevlator_EventScript_ChooseFloor_1:
+	call RocketTower_Elevator_EventScript_SetFloorWarp
+	release
+	end
+
+RocketTower_Elevlator_EventScript_ChooseFloor_3:
+	setvar VAR_ROCKETTOWER_FLOOR, 14
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_4:
+	setvar VAR_ROCKETTOWER_FLOOR, 1
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_5:
+	setvar VAR_ROCKETTOWER_FLOOR, 2
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_6:
+	setvar VAR_ROCKETTOWER_FLOOR, 3
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_7:
+	setvar VAR_ROCKETTOWER_FLOOR, 4
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_8:
+	setvar VAR_ROCKETTOWER_FLOOR, 5
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_9:
+	setvar VAR_ROCKETTOWER_FLOOR, 6
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_10:
+	setvar VAR_ROCKETTOWER_FLOOR, 7
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_11:
+	setvar VAR_ROCKETTOWER_FLOOR, 8
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_12:
+	setvar VAR_ROCKETTOWER_FLOOR, 9
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_13:
+	setvar VAR_ROCKETTOWER_FLOOR, 10
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_14:
+	setvar VAR_ROCKETTOWER_FLOOR, 11
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_15:
+	setvar VAR_ROCKETTOWER_FLOOR, 12
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+RocketTower_Elevlator_EventScript_ChooseFloor_16:
+	setvar VAR_ROCKETTOWER_FLOOR, 13
+	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
+
+
+RocketTower_Elevator_Text_ChooseFloor::
+	.string "Which floor would you like to go to?$"

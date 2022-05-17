@@ -779,6 +779,24 @@ static const struct MenuAction MultichoiceList_CityClara_Church_Stone[] =
     {gText_StoneChooseNone},
 };
 
+static const struct MenuAction MultichoiceList_RocketTower_Elevator_Floor[] =
+{
+	{gText_FloorChooseBF1},
+	{gText_FloorChoose1},
+	{gText_FloorChoose2},
+	{gText_FloorChoose3},
+	{gText_FloorChoose4},
+	{gText_FloorChoose5},
+	{gText_FloorChoose6},
+	{gText_FloorChoose7},
+	{gText_FloorChoose8},
+	{gText_FloorChoose9},
+	{gText_FloorChoose10},
+	{gText_FloorChoose11},
+	{gText_FloorChoose12},
+	{gText_FloorChoose13},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -907,6 +925,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_CITYCLARA_CHURCH_STONE]     = MULTICHOICE(MultichoiceList_CityClara_Church_Stone),
+    [MULTI_ROCKETTOWER_ELEVATOR_FLOOR] = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
 };
 
 const u8 *const gStdStrings[] =
