@@ -658,7 +658,8 @@
     "RocketTower_12F",
     "RocketTower_13F",
     "RocketTower_Elevator",
-    "RocketTower_BF1"
+    "RocketTower_BF1",
+    "RocketTower_Underground_Path"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",

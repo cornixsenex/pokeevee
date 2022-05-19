@@ -1017,3 +1017,14 @@ gTileset_SilphLab::
 	.4byte gMetatiles_SilphLab
 	.4byte gMetatileAttributes_SilphLab
 	.4byte NULL
+
+	.align 2
+gTileset_underground_path::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_underground_path
+	.4byte gTilesetPalettes_underground_path
+	.4byte gMetatiles_underground_path
+	.4byte gMetatileAttributes_underground_path
+	.4byte NULL

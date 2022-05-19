@@ -5450,6 +5450,16 @@
       "secondary_tileset": "gTileset_SilphCo",
       "border_filepath": "data/layouts/RocketTower_BF1/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_BF1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROCKET_TOWER_UNDERGROUND_PATH",
+      "name": "RocketTower_Underground_Path_Layout",
+      "width": 20,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_underground_path",
+      "border_filepath": "data/layouts/RocketTower_Underground_Path/border.bin",
+      "blockdata_filepath": "data/layouts/RocketTower_Underground_Path/map.bin"
     }
   ]
 }
