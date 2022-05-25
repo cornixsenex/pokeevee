@@ -1303,3 +1303,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/RocketTower_BF1/scripts.inc"
 
 	.include "data/maps/RocketTower_Underground_Path/scripts.inc"
+
+	.include "data/maps/Capital/scripts.inc"

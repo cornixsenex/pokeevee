@@ -1028,3 +1028,14 @@ gTileset_underground_path::
 	.4byte gMetatiles_underground_path
 	.4byte gMetatileAttributes_underground_path
 	.4byte NULL
+
+	.align 2
+gTileset_Capital::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Capital
+	.4byte gTilesetPalettes_Capital
+	.4byte gMetatiles_Capital
+	.4byte gMetatileAttributes_Capital
+	.4byte NULL

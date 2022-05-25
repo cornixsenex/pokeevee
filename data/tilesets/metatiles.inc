@@ -691,3 +691,11 @@ gMetatiles_underground_path::
 	.align 1
 gMetatileAttributes_underground_path::
 	.incbin "data/tilesets/secondary/underground_path/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_Capital::
+	.incbin "data/tilesets/secondary/capital/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Capital::
+	.incbin "data/tilesets/secondary/capital/metatile_attributes.bin"

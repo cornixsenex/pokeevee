@@ -5460,6 +5460,16 @@
       "secondary_tileset": "gTileset_underground_path",
       "border_filepath": "data/layouts/RocketTower_Underground_Path/border.bin",
       "blockdata_filepath": "data/layouts/RocketTower_Underground_Path/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAPITAL",
+      "name": "Capital_Layout",
+      "width": 42,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Capital",
+      "border_filepath": "data/layouts/Capital/border.bin",
+      "blockdata_filepath": "data/layouts/Capital/map.bin"
     }
   ]
 }

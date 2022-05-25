@@ -2089,3 +2089,23 @@ gTilesetPalettes_underground_path::
 	.align 2
 gTilesetTiles_underground_path::
 	.incbin "data/tilesets/secondary/underground_path/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Capital::
+	.incbin "data/tilesets/secondary/capital/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/capital/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Capital::
+	.incbin "data/tilesets/secondary/capital/tiles.4bpp.lz"
