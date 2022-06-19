@@ -23,6 +23,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_BF1",
       "dest_warp_id": 1
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_CAPITAL",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
