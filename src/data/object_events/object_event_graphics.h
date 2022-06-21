@@ -455,7 +455,8 @@ const u16 gObjectEventPal_Worker[] = INCBIN_U16("graphics/object_events/palettes
 const u32 gObjectEventPic_MewtwoArmor[] = INCBIN_U32("graphics/object_events/pics/people/mewtwo_armor.4bpp");
 const u16 gObjectEventPal_MewtwoArmor[] = INCBIN_U16("graphics/object_events/palettes/mewtwo_armor.gbapal");
 
-
+const u32 gObjectEventPic_Lt_Surge[] = INCBIN_U32("graphics/object_events/pics/people/lt_surge.4bpp");
+const u16 gObjectEventPal_Lt_Surge[] = INCBIN_U16("graphics/object_events/palettes/lt_surge.gbapal");
 
 
 

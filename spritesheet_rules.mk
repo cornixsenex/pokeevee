@@ -792,7 +792,8 @@ $(OBJEVENTGFXDIR)/people/worker.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/mewtwo_armor.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-
+$(OBJEVENTGFXDIR)/people/lt_surge.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 
 

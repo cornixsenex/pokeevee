@@ -471,6 +471,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_YOUNGSTER2	  	      0x1143
 #define OBJ_EVENT_PAL_TAG_WORKER  		  	      0x1144
 #define OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR		  	  0x1145
+#define OBJ_EVENT_PAL_TAG_LT_SURGE		  	      0x1146
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 
@@ -1397,6 +1398,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_Youngster2,       	   	OBJ_EVENT_PAL_TAG_YOUNGSTER2},
 	{gObjectEventPal_Worker,       	   		OBJ_EVENT_PAL_TAG_WORKER},
 	{gObjectEventPal_MewtwoArmor,       	OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR},
+	{gObjectEventPal_Lt_Surge,       	    OBJ_EVENT_PAL_TAG_LT_SURGE},
     
 	//Pokemon overworlds
     {gObjectEventPalette_Pokemon_Species_001, OBJ_EVENT_PAL_TAG_POKEMON_001},
