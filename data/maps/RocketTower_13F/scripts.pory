@@ -181,6 +181,7 @@ script RocketTower_13F_EventScript_BlaineDefeated {
 	removeobject(OBJ_EVENT_ID_BLAINE)
 	removeobject(OBJ_EVENT_ID_PORYGON)
 	setflag (FLAG_HIDE_ROCKETTOWER_13F_GIO)
+	setvar (VAR_CAPITAL_STATE, 0)
 	fadescreen (0)
 	return
 }

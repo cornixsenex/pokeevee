@@ -1,4 +1,111 @@
+
+//Basically trigger pulls camera to middle cutscene, battle, exits and entrances, reverse ledge climb?
+
+
+
+//President sees player and is afraid
+
+//Gio mocks him
+
+
+const OBJ_EVENT_ID_CICERO = 3
+const OBJ_EVENT_ID_GIO = 1
+const OBJ_EVENT_ID_MEWTWO_ARMOR = 2
+const OBJ_EVENT_ID_SOLDIER1 = 4
+const OBJ_EVENT_ID_SOLDIER2 = 5
+const OBJ_EVENT_ID_SOLDIER3 = 6
+
+
 mapscripts Capital_MapScripts {}
 
 
-//Basically trigger pulls camera to middle cutscene, battle, exits and entrances, reverse ledge climb?
+
+script Capital_EventScript_GioTrigger1 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 1)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioTrigger2 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 2)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioTrigger3 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 3)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioTrigger4 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 4)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioPresident {
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+		case 2:
+			applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+			waitmovement (0)
+		case 3:
+		case 4:
+			applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceRight)
+			waitmovement (0)
+	}
+	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera1)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera1)
+		//	applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera1)
+		case 2:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera2)
+		case 3:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera3)
+		case 4:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera4)
+
+
+	}
+	waitmovement(0)
+	special (RemoveCameraObject)
+
+	return
+}
+
+
+
+
+
+
+
+
+movement Capital_Movement_PanCamera1 {
+	walk_right * 7
+}
+
+movement Capital_Movement_PanCamera2 {
+	walk_diag_northeast
+	walk_right * 6
+}
+
+movement Capital_Movement_PanCamera3 {
+	walk_left * 7
+}
+
+movement Capital_Movement_PanCamera4 {
+	walk_diag_northwest
+	walk_left * 6
+}
+
+

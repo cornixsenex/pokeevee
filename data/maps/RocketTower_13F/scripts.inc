@@ -175,6 +175,7 @@ RocketTower_13F_EventScript_BlaineDefeated::
 	removeobject 3
 	removeobject 5
 	setflag FLAG_HIDE_ROCKETTOWER_13F_GIO
+	setvar VAR_CAPITAL_STATE, 0
 	fadescreen 0
 	return
 

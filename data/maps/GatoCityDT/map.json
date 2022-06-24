@@ -38,7 +38,13 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 22,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_CAPITAL",
+      "dest_warp_id": 2
+    }
   ],
   "coord_events": [
 

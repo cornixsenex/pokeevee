@@ -289,10 +289,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
-      "x": 23,
-      "y": 39,
+      "x": 22,
+      "y": 40,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_UP",
+      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -302,10 +302,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
-      "x": 18,
-      "y": 39,
+      "x": 19,
+      "y": 40,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_UP",
+      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -329,9 +329,9 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SOLDIER",
       "x": 23,
-      "y": 38,
+      "y": 40,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -381,22 +381,9 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SOLDIER",
       "x": 18,
-      "y": 38,
+      "y": 40,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SOLDIER",
-      "x": 21,
-      "y": 38,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -407,11 +394,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_LT_SURGE",
       "x": 21,
-      "y": 18,
+      "y": 38,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+      "movement_type": "MOVEMENT_TYPE_RUN_IN_PLACE_DOWN",
       "movement_range_x": 0,
-      "movement_range_y": 8,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -425,10 +412,59 @@
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_UNDERGROUND_PATH",
       "dest_warp_id": 1
+    },
+    {
+      "x": 20,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_GATO_CITY_DT",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 21,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_GATO_CITY_DT",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "0",
+      "script": "Capital_EventScript_GioTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "0",
+      "script": "Capital_EventScript_GioTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "0",
+      "script": "Capital_EventScript_GioTrigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "0",
+      "script": "Capital_EventScript_GioTrigger4"
+    }
   ],
   "bg_events": [
 
