@@ -2,6 +2,20 @@ Capital_MapScripts::
 	.byte 0
 
 
+Capital_EventScript_DeskTest::
+	lock
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_DeskTest_2
+	msgbox Capital_Text_DeskTestNo
+Capital_EventScript_DeskTest_1:
+	closemessage
+	release
+	end
+
+Capital_EventScript_DeskTest_2:
+	msgbox Capital_Text_DeskTestYes
+	goto Capital_EventScript_DeskTest_1
+
+
 Capital_EventScript_GioTrigger1::
 	lock
 	setvar VAR_CAPITAL_STATE, 1
@@ -68,7 +82,6 @@ Capital_EventScript_GioPresident_7:
 	applymovement OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera1
-	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera1
 	goto Capital_EventScript_GioPresident_5
 
 Capital_EventScript_GioPresident_8:
@@ -123,3 +136,9 @@ Capital_Movement_PanCamera4:
 	walk_left
 	walk_left
 	step_end
+
+Capital_Text_DeskTestYes::
+	.string "Yup you have a follower rn$"
+
+Capital_Text_DeskTestNo::
+	.string "Nope you aint got a follwer rn$"

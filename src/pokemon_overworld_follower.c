@@ -224,8 +224,10 @@ void POF_FollowMe_TryRemoveFollowerOnWhiteOut(void)
 {
     if (gSaveBlock2Ptr->follower.inProgress)
     {
-        if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT)
+        if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT) {
             gSaveBlock2Ptr->follower.inProgress = FALSE;
+			FlagClear(FLAG_FOLLOWER_ACTIVE);
+		}
         else
             POF_FollowMe_WarpSetEnd();
     }
@@ -1036,9 +1038,11 @@ void POF_CreateFollowerAvatar(void)
 
     // Create NPC and store ID
     gSaveBlock2Ptr->follower.objId = TrySpawnObjectEventTemplate(&clone, gSaveBlock2Ptr->follower.map.number, gSaveBlock2Ptr->follower.map.group, clone.x, clone.y);
-    if (gSaveBlock2Ptr->follower.objId == OBJECT_EVENTS_COUNT)
-        gSaveBlock2Ptr->follower.inProgress = FALSE; //Cancel the following because couldn't load sprite
-
+    if (gSaveBlock2Ptr->follower.objId == OBJECT_EVENTS_COUNT) {
+		 //Cancel the following because couldn't load sprite
+         gSaveBlock2Ptr->follower.inProgress = FALSE;	
+	 	 FlagClear(FLAG_FOLLOWER_ACTIVE);
+	}
     gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible = TRUE;
 }
 
@@ -1133,6 +1137,7 @@ void POF_DestroyFollower(void)
         RemoveObjectEvent(&gObjectEvents[gSaveBlock2Ptr->follower.objId]);
         FlagSet(gSaveBlock2Ptr->follower.flag);
         gSaveBlock2Ptr->follower.inProgress = FALSE;
+		FlagClear(FLAG_FOLLOWER_ACTIVE);
         gSaveBlock2Ptr->follower.partySlotId = 0;
     }
 }
@@ -1205,6 +1210,7 @@ void POF_CreateMonFromPartySlotId(void)
         flag = GetObjectEventTemplateByLocalIdAndMap(follower->localId, follower->mapNum, follower->mapGroup)->flagId;
 
         gSaveBlock2Ptr->follower.inProgress = TRUE;
+		FlagSet(FLAG_FOLLOWER_ACTIVE);
         gSaveBlock2Ptr->follower.objId = eventObjId;
         gSaveBlock2Ptr->follower.graphicsId = gfx_id;
         gSaveBlock2Ptr->follower.map.id = 0;
@@ -1296,6 +1302,7 @@ static void POF_DisableFollowerTemp(void)
     {
         RemoveObjectEvent(&gObjectEvents[gSaveBlock2Ptr->follower.objId]);
         gSaveBlock2Ptr->follower.inProgress = FALSE;
+		FlagClear(FLAG_FOLLOWER_ACTIVE);
     }
 }
 
@@ -1304,6 +1311,7 @@ static void POF_RenableFollower(void)
     if (!gSaveBlock2Ptr->follower.inProgress && gSaveBlock2Ptr->follower.partySlotId != 0)
     {
         gSaveBlock2Ptr->follower.inProgress = TRUE;
+		FlagSet(FLAG_FOLLOWER_ACTIVE);
         POF_CreateMonFromPartySlotId();
         POF_MoveFollowerToPlayer();
     }

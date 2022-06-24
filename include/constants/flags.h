@@ -89,7 +89,7 @@
 #define FLAG_RECEIVED_CARD_KEY    0x49 // Set after Card Key is taken in Rocket Tower, hides the pokeball as well
 #define FLAG_HIDE_ROCKETTOWER_13F_GIO    0x4A // Set by Gio cutscene
 #define FLAG_HIDE_CARDKEY    0x4B // Set after you grab the card key from 13F RocketTower
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
+#define FLAG_FOLLOWER_ACTIVE    0x4C // Set when you have follower active
 
 //DEBUG
 #define FLAG_SYS_NO_COLLISION    0x4D
