@@ -11,14 +11,12 @@
 const OBJ_EVENT_ID_CICERO = 3
 const OBJ_EVENT_ID_GIO = 1
 const OBJ_EVENT_ID_MEWTWO_ARMOR = 2
-const OBJ_EVENT_ID_MEWTWO = 32
 const OBJ_EVENT_ID_PERSIAN = 31
 const OBJ_EVENT_ID_SOLDIER1 = 4
 const OBJ_EVENT_ID_SOLDIER2 = 5
 const OBJ_EVENT_ID_SOLDIER3 = 6
 const GIO_FIELD_PIC = 10
 const MEWTWO_ARMOR_FIELD_PIC = 11
-const MEWTWO_FIELD_PIC = 15
 const CICERO_FIELD_PIC = 12
 const SOLDIER_FIELD_PIC = 13
 const SURGE_FIELD_PIC = 14
@@ -268,7 +266,7 @@ script Capital_EventScript_GioPresident {
 
 	//Gio tells Mewtwo to move if needed then faces up the player
 	//YES NEEDED
-	if (var(VAR_CAPITAL_STATE) < 3) {			
+	if (var(VAR_CAPTIAL_STATE) < 3) {			
 		load_field_pic (GIO_FIELD_PIC, 190, 98)
 		msgbox(Capital_Text_GioMewtwoMove)
 		closemessage
@@ -283,32 +281,33 @@ script Capital_EventScript_GioPresident {
 		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_GioR2)
 		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_PersianR2)
 		applymovement (OBJ_EVENT_ID_MEWTWO_ARMOR, Capital_Movement_MewtwoR3)
+		waitmovement (0)
 	//NOT NEEDED
 	} else {
 		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_GioL1)
 		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_PersianL1)
+		waitmovement (0)
 	}
-	waitmovement (0)
 	//The player approaches Gio
 	switch (var(VAR_CAPITAL_STATE)) {
 		case 1:
-			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera1)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera1)
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_Player1A)
+			if (flag(FLAG_FOLLOWER_ACTIVE))) {
+				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower1A)
 			}
 		case 2:
-			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera2)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_Player2A)
+			if (flag(FLAG_FOLLOWER_ACTIVE))) {
 				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower2A)
 			}
 		case 3:
-			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera3)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera3)
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_Player3A)
+			if (flag(FLAG_FOLLOWER_ACTIVE))) {
+				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower3A)
 			}
 		case 4:
-			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera4)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_Player4A)
+			if (flag(FLAG_FOLLOWER_ACTIVE))) {
 				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower4A)
 			}
 	}
@@ -345,17 +344,8 @@ script Capital_EventScript_GioPresident {
 	closemessage
 	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
 	delay (5)
-
 	applymovement (OBJ_EVENT_ID_GIO, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	//Gio Faces Mewtwo
-	if (var(VAR_CAPITAL_STATE) < 3) {
-		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
-	} else {
-		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
-	}
-	waitmovement (0)
-
 	//thats an order
 	load_field_pic (GIO_FIELD_PIC, 190, 98)
 	msgbox(Capital_Text_Gio9)
@@ -363,100 +353,8 @@ script Capital_EventScript_GioPresident {
 	destroy_field_pic(GIO_FIELD_PIC)
 	delay (5)
 
-	load_field_pic (MEWTWO_ARMOR_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Mewtwo2)
-	closemessage
-	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
-	delay (5)
 
-	load_field_pic (GIO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Gio10)
-	closemessage
-	destroy_field_pic(GIO_FIELD_PIC)
-	delay (5)
 		
-	load_field_pic (MEWTWO_ARMOR_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Mewtwo3)
-	closemessage
-	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
-	delay (5)
-
-	load_field_pic (GIO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Gio11)
-	closemessage
-	destroy_field_pic(GIO_FIELD_PIC)
-	delay (5)
-		
-	load_field_pic (MEWTWO_ARMOR_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Mewtwo4)
-	closemessage
-	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
-	delay (5)
-	//Set Mewtwo location
-	if (var(VAR_CAPITAL_STATE) > 2) {
-		setobjectxy (OBJ_EVENT_ID_MEWTWO, 17, 5)
-	}
-	//Mewtwo unleashed
-	removeobject (OBJ_EVENT_ID_MEWTWO_ARMOR)
-	clearflag (FLAG_ROUTE4_HIDEROCKETS)
-	addobject (OBJ_EVENT_ID_MEWTWO)
-	showobjectat (OBJ_EVENT_ID_MEWTWO, MAP_CAPITAL)
-	load_field_pic (MEWTWO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Mewtwo5)
-	closemessage
-	destroy_field_pic(MEWTWO_FIELD_PIC)
-	delay (5)
-	//Mewtwo faces Gio
-	if (var(VAR_CAPITAL_STATE) < 3) {
-		applymovement (OBJ_EVENT_ID_MEWTWO, Common_Movement_FaceLeft)
-	} else {
-		applymovement (OBJ_EVENT_ID_MEWTWO, Common_Movement_FaceRight)
-	}
-	//says his piece
-	load_field_pic (MEWTWO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Mewtwo6)
-	closemessage
-	destroy_field_pic(MEWTWO_FIELD_PIC)
-	delay (5)
-	//Mewtwo farewell
-	applymovement (OBJ_EVENT_ID_MEWTWO, Common_Movement_FaceDown)
-	load_field_pic (MEWTWO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Mewtwo7)
-	closemessage
-	destroy_field_pic(MEWTWO_FIELD_PIC)
-	delay (5)
-	//Gio yells but Mewtwo dipps
-	load_field_pic (GIO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Gio12)
-	closemessage
-	destroy_field_pic(GIO_FIELD_PIC)
-	delay (5)
-	fadescreen (1)
-	setflag (FLAG_ROUTE4_HIDEROCKETS)
-	removeobject (OBJ_EVENT_ID_MEWTWO)
-	fadescreen (0)
-	//Gio faces player
-	if (var(VAR_CAPITAL_STATE) < 3) {
-		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
-	} else {
-		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
-	}
-	waitmovement (0)
-	//Gio battle	
-	load_field_pic (GIO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_GioIntro)
-	closemessage
-	destroy_field_pic(GIO_FIELD_PIC)
-	delay (5)
-	trainerbattle_no_intro(TRAINER_GIO1, Capital_Text_GioLost)
-	msgbox (Capital_Text_GioDefeat)
-	//ENTER LT SURGE N SHIT
-	//Exit rockets
-	fadescreen (1)
-	removeobject (OBJ_EVENT_ID_GIO)
-	removeobject (OBJ_EVENT_ID_PERSIAN)
-	fadescreen (0)
-	//applymovement (OBJ_EVENT_ID_PLAYER, 
 
 
 
@@ -553,15 +451,11 @@ movement Capital_Movement_Soldier3L1 {
 	face_left
 }
 
-movement Capital_Movement_CiceroR2 {
-	walk_right * 7
-}
-
 movement Capital_Movement_CiceroL2 {
 	walk_left * 7
 }
 
-movement Capital_Movement_MewtwoR1 {
+movement Capital_Movement_MewtwoRight1 {
 	walk_right * 2
 }
 
@@ -591,26 +485,6 @@ movement Capital_Movement_PersianR2 {
 movement Capital_Movement_MewtwoR3 {
 	walk_right * 3
 	face_down
-}
-
-movement Capital_Movement_GioL1 {
-	walk_up
-	face_right
-}
-
-movement Capital_Movement_PersianL1 {
-	walk_down
-	face_right
-}
-
-movement Capital_Movement_Follower2A {
-	walk_up
-	walk_right * 7
-}
-
-movement Capital_Movement_Follower4A {
-	walk_up
-	walk_left * 7
 }
 
 text Capital_Text_DeskTestYes {
@@ -709,60 +583,21 @@ text Capital_Text_Gio8 {
 	format("Mewtwo the time has come. Destroy the boy and then put a swift end to this revolt.")
 }
 
-text Capital_Text_Mewtwo1 {
-	format("No.")
-}
-
 text Capital_Text_Gio9 {
 	format("Mewtwo! I command you!")
 }
 
-text Capital_Text_Mewtwo2 {
-	format("I won't obey. I am no slave of yours Giovanni.")
+text Capital_Text_Mewtwo1 {
+	format("No.")
 }
 
-text Capital_Text_Gio10 {
-	format("Mewtwo even you cannot break those cuffs")
-}
+text Capital_Text_
 
-text Capital_Text_Mewtwo3 {
-	format("I am MEWTWO and I can break these cuffs.")
-}
 
-text Capital_Text_Gio11 {
-	format("Don't try it!")
-}
 
-text Capital_Text_Mewtwo4 {
-	format("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!")
-}
 
-text Capital_Text_Mewtwo5 {
-	format("At last I take a breath free from those chains. My strength is made ten fold now that I'm free!")
-}
+//Mewtwo even you cannot break those cuffs
 
-text Capital_Text_Mewtwo6 {
-	format("You're wrong if you think you can control me, you're nothing more than a worthless human. What's more I cannot foresee a future where you will rule anything as a king, for you only misery and defeat.")
-}
 
-text Capital_Text_Mewtwo7 {
-	format("I'm leaving now. Don't try and follow me.")
-}
-
-text Capital_Text_Gio12 {
-	format("Mewtwo!")
-}
-
-text Capital_Text_GioIntro {
-	format("You bastard! This is all your fault! Looks like I'll have to deal with you myself...")
-}
-
-text Capital_Text_GioLost {
-	format("Alas! Fortuna has abandoned me.")
-}
-
-text Capital_Text_GioDefeat {
-	format("Betrayed, forsaken, and surrounded I am sure to perish on this damned day.")
-}
 
 

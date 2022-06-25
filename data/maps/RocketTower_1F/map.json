@@ -44,6 +44,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_ELEVATOR",
       "dest_warp_id": 0
+    },
+    {
+      "x": 15,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_GATO_CITY_S",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

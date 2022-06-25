@@ -71,7 +71,7 @@
 #define FLAG_CLARACITY_CHURCH_HIDELEAF    0x39 // Hides leaf for her intro
 #define FLAG_CLARACITY_CHURCH_HIDEDAD     0x3A // Hides Dad and Sage for intro
 #define FLAG_CLARACITY_CHURCH_HIDESAGE    0x3B // Hides Sage and the church people
-#define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4
+#define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4 - hides Mewtwo in Capital
 #define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
 #define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // after the flower game
 

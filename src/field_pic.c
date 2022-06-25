@@ -88,7 +88,9 @@ static const u16 sPic14Pal[] = INCBIN_U16("graphics/trainers/palettes/soldier.gb
 static const u32 sPic15Gfx[] = INCBIN_U32("graphics/trainers/front_pics/lt_surge_front_pic.4bpp.lz");
 static const u16 sPic15Pal[] = INCBIN_U16("graphics/trainers/palettes/lt_surge.gbapal");
 
-
+//Mewtwo = 15
+static const u32 sPic16Gfx[] = INCBIN_U32("graphics/pokemon/mewtwo/anim_front.4bpp.lz");
+static const u16 sPic16Pal[] = INCBIN_U16("graphics/pokemon/mewtwo/normal.gbapal");
 
 /* And this is an example script.
 
@@ -112,7 +114,9 @@ FieldPicExample_1pic:
 
 static const struct Pic sPics[] =
 {
+	//Alteria
     {sPic1Gfx, sPic1Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
+	//Duck
     {sPic2Gfx, sPic2Pal, SPRITE_SHAPE(16x16), SPRITE_SIZE(16x16)},
 	//Gma shit
     {sPic3Gfx, sPic3Pal, SPRITE_SHAPE(16x32), SPRITE_SIZE(16x32)},
@@ -136,6 +140,12 @@ static const struct Pic sPics[] =
 	{sPic12Gfx, sPic12Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Cicero
     {sPic13Gfx, sPic13Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Soldier
+    {sPic14Gfx, sPic14Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Lt Surge
+    {sPic15Gfx, sPic15Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Mewtwo
+    {sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

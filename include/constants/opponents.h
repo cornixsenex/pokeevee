@@ -1,7 +1,6 @@
 #ifndef GUARD_CONSTANTS_OPPONENTS_H
 #define GUARD_CONSTANTS_OPPONENTS_H
 
-#define TRAINER_BLUE						181
 
 #define TRAINER_NONE                          0
 #define TRAINER_ADAM						  1
@@ -113,7 +112,8 @@
 #define TRAINER_LAERTES                     107
 #define TRAINER_RIVAL3	                    108
 #define TRAINER_TASHA                       109
-#define TRAINER_VALERIE_2                   110
+#define TRAINER_GIO1                        110
+//BREAK
 #define TRAINER_VALERIE_3                   111
 #define TRAINER_VALERIE_4                   112
 #define TRAINER_VALERIE_5                   113
@@ -184,6 +184,9 @@
 #define TRAINER_TONY_5                      178
 #define TRAINER_TAKAO                       179
 #define TRAINER_HITOSHI                     180
+//BREAK
+#define TRAINER_BLUE						181
+//BREAK
 #define TRAINER_KOICHI                      182
 #define TRAINER_NOB_1                       183
 #define TRAINER_NOB_2                       184

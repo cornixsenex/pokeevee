@@ -1487,16 +1487,36 @@ static const struct TrainerMon sParty_Tasha[] = {
     }
 };
 
-static const struct TrainerMon sParty_Valerie2[] = {
+static const struct TrainerMon sParty_Gio1[] = {
     {
     .iv = 10,
     .lvl = 31,
-    .species = SPECIES_SABLEYE,
+    .species = SPECIES_PERSIAN,
     },
     {
     .iv = 10,
     .lvl = 31,
-    .species = SPECIES_SPOINK,
+    .species = SPECIES_HOUNDOOM,
+    },
+    {
+    .iv = 10,
+    .lvl = 31,
+    .species = SPECIES_MURKROW,
+    },
+    {
+    .iv = 10,
+    .lvl = 31,
+    .species = SPECIES_NIDOQUEEN,
+    },
+    {
+    .iv = 10,
+    .lvl = 31,
+    .species = SPECIES_NIDOKING,
+    },
+    {
+    .iv = 10,
+    .lvl = 31,
+    .species = SPECIES_KANGASKHAN,
     }
 };
 
