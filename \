@@ -154,97 +154,6 @@ script Capital_EventScript_GioPresident {
 	applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_Soldier3A)
     waitmovement (0)
 
-	load_field_pic (SOLDIER_FIELD_PIC, 190, 98)
-	msgbox (Capital_Text_Soldier1)
-	closemessage
-	destroy_field_pic(SOLDIER_FIELD_PIC)
-	delay (5)
-
-	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
-	waitmovement (0)
-
-	load_field_pic (CICERO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Cicero4)
-	closemessage
-	destroy_field_pic(CICERO_FIELD_PIC)
-	delay (5)
-
-	load_field_pic (GIO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Gio4)
-	closemessage
-	destroy_field_pic(GIO_FIELD_PIC)
-	delay (5)
-
-	load_field_pic (CICERO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Cicero5)
-	closemessage
-	destroy_field_pic(CICERO_FIELD_PIC)
-	delay (5)
-
-	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceDown)
-	applymovement (OBJ_EVENT_ID_SOLDIER2, Common_Movement_FaceDown)
-	waitmovement (0)
-
-	load_field_pic (SOLDIER_FIELD_PIC, 190, 98)
-	msgbox (Capital_Text_Soldier2)
-	closemessage
-	destroy_field_pic(SOLDIER_FIELD_PIC)
-	delay (5)
-
-	load_field_pic (CICERO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Cicero6)
-	closemessage
-	destroy_field_pic(CICERO_FIELD_PIC)
-	delay (5)
-
-	switch (var(VAR_CAPITAL_STATE)) {
-		case 1:
-		case 2:
-			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroR1)
-			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_Soldier2R1)
-			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_Soldier3R1)
-		case 3:
-		case 4:
-			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroL1)
-			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_Soldier2L1)
-			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_Soldier3L1)
-	}
-	applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceDown)
-	waitmovement (0)
-
-	load_field_pic (CICERO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Cicero7)
-	closemessage
-	destroy_field_pic(CICERO_FIELD_PIC)
-	delay (5)
-
-	load_field_pic (SOLDIER_FIELD_PIC, 190, 98)
-	msgbox (Capital_Text_Soldier3)
-	closemessage
-	destroy_field_pic(SOLDIER_FIELD_PIC)
-	delay (5)
-
-	switch (var(VAR_CAPITAL_STATE)) {
-		case 1:
-		case 2:
-			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroR2)
-			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_CiceroR2)
-			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_CiceroR2)
-		case 3:
-		case 4:
-			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroL2)
-			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_CiceroL2)
-			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_CiceroL2)
-	}
-
-	load_field_pic (CICERO_FIELD_PIC, 190, 98)
-	msgbox(Capital_Text_Cicero8)
-	closemessage
-	destroy_field_pic(CICERO_FIELD_PIC)
-	delay (5)
-
-	waitmovement (0)
-
 
 
 
@@ -281,67 +190,6 @@ movement Capital_Movement_PanCamera4 {
 	walk_left * 6
 }
 
-movement Capital_Movement_Soldier2A {
-	walk_down * 3
-	walk_left * 2
-	face_up
-}
-
-movement Capital_Movement_Soldier3A {
-	walk_left * 4
-	walk_down
-}
-
-movement Capital_Movement_CiceroR1 {
-	walk_down
-	walk_right * 2
-	walk_up
-	walk_right
-	face_up
-}
-
-movement Capital_Movement_Soldier2R1 {
-	walk_right * 2
-	walk_up
-	walk_right * 2
-}
-
-movement Capital_Movement_Soldier3R1 {
-	walk_down * 2
-	walk_right * 2
-	walk_up
-	face_right
-}
-
-movement Capital_Movement_CiceroL1 { 
-	walk_down
-	walk_left * 3
-	walk_up
-	walk_left 
-	face_down
-}
-
-movement Capital_Movement_Soldier2L1 {
-	walk_left * 3
-	walk_up
-	walk_left * 2
-}
-
-movement Capital_Movement_Soldier3L1 { 
-	walk_down * 2
-	walk_left * 3
-	walk_up
-	face_left
-}
-
-movement Capital_Movement_CiceroR2 {
-	walk_right * 5
-}
-
-
-movement Capital_Movement_CiceroL2 {
-	walk_left * 5
-}
 
 text Capital_Text_DeskTestYes {
 	format("Yup you have a follower rn")
@@ -379,35 +227,8 @@ text Capital_Text_Soldier1 {
 	format("We serve Giovanni.")
 }
 
-text Capital_Text_Cicero4 {
-	format("You traitor! Can't you see this is...")
-}
 
-text Capital_Text_Gio4 {
-	format("Enough! Old fool, can't you see this is my hour? Be gone and lament your failures in vain.")
-}
 
-text Capital_Text_Cicero5 {
-	format("You can't do this!")
-}
 
-text Capital_Text_Soldier2 {
-	format("Let's go.")
-}
 
-text Capital_Text_Cicero6 {
-	format("I'm still the president!")
-}
-
-text Capital_Text_Cicero7 {
-	format("I was elected by the senators")
-}
-
-text Capital_Text_Soldier3 {
-	format("Enough of that.")
-}
-
-text Capital_Text_Cicero8 {
-	format("Democracy!")
-}
 

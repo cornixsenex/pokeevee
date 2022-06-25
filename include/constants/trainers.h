@@ -157,6 +157,7 @@
 #define TRAINER_PIC_TAMER	         	  137
 #define TRAINER_PIC_YOUNGSTER2	          138
 #define TRAINER_PIC_MEWTWOARMOR	          139
+#define TRAINER_PIC_SOLDIER  	          140
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

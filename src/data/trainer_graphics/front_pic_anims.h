@@ -558,6 +558,9 @@ static const union AnimCmd *const sAnims_MewtwoArmor[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Soldier[] ={
+    sAnim_GeneralFrame0,
+};
 
 
 
@@ -703,5 +706,6 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_TAMER] = sAnims_Tamer,
     [TRAINER_PIC_YOUNGSTER2] = sAnims_Youngster2,
     [TRAINER_PIC_MEWTWOARMOR] = sAnims_MewtwoArmor,
+    [TRAINER_PIC_SOLDIER] = sAnims_Soldier,
 };
 

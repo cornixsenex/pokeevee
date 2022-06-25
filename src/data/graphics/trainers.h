@@ -430,6 +430,8 @@ const u32 gTrainerPalette_Youngster2[] = INCBIN_U32("graphics/trainers/palettes/
 const u32 gTrainerFrontPic_MewtwoArmor[] = INCBIN_U32("graphics/trainers/front_pics/mewtwo_armor_front_pic.4bpp.lz");
 const u32 gTrainerPalette_MewtwoArmor[] = INCBIN_U32("graphics/trainers/palettes/mewtwo_armor.gbapal.lz");
 
+const u32 gTrainerFrontPic_Soldier[] = INCBIN_U32("graphics/trainers/front_pics/soldier_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Soldier[] = INCBIN_U32("graphics/trainers/palettes/soldier.gbapal.lz");
 
 
 

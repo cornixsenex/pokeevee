@@ -76,7 +76,17 @@ static const u16 sPic11Pal[] = INCBIN_U16("graphics/trainers/palettes/giovanni.g
 static const u32 sPic12Gfx[] = INCBIN_U32("graphics/trainers/front_pics/mewtwo_armor_front_pic.4bpp.lz");
 static const u16 sPic12Pal[] = INCBIN_U16("graphics/trainers/palettes/mewtwo_armor.gbapal");
 
+//Cicero - Gentleman2 = 12
+static const u32 sPic13Gfx[] = INCBIN_U32("graphics/trainers/front_pics/gentleman2_front_pic.4bpp.lz");
+static const u16 sPic13Pal[] = INCBIN_U16("graphics/trainers/palettes/gentleman2.gbapal");
 
+//Soldier = 13
+static const u32 sPic14Gfx[] = INCBIN_U32("graphics/trainers/front_pics/soldier_front_pic.4bpp.lz");
+static const u16 sPic14Pal[] = INCBIN_U16("graphics/trainers/palettes/soldier.gbapal");
+
+//Lt_Surge = 14
+static const u32 sPic15Gfx[] = INCBIN_U32("graphics/trainers/front_pics/lt_surge_front_pic.4bpp.lz");
+static const u16 sPic15Pal[] = INCBIN_U16("graphics/trainers/palettes/lt_surge.gbapal");
 
 
 
@@ -124,6 +134,8 @@ static const struct Pic sPics[] =
     {sPic11Gfx, sPic11Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Mewtwo Armor
 	{sPic12Gfx, sPic12Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Cicero
+    {sPic13Gfx, sPic13Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
