@@ -72,7 +72,6 @@ Capital_EventScript_GioPresident_5:
 	case 4, Capital_EventScript_GioPresident_14
 Capital_EventScript_GioPresident_9:
 	waitmovement 0
-	special RemoveCameraObject
 	load_field_pic 12, 190, 98
 	msgbox Capital_Text_Cicero1
 	closemessage
@@ -160,21 +159,14 @@ Capital_EventScript_GioPresident_18:
 	closemessage
 	destroy_field_pic 12
 	delay 5
+	compare VAR_CAPITAL_STATE, 2
+	goto_if_gt Capital_EventScript_GioPresident_23
+	applymovement 3, Common_Movement_FaceLeft
+Capital_EventScript_GioPresident_22:
 	load_field_pic 13, 190, 98
 	msgbox Capital_Text_Soldier3
 	closemessage
 	destroy_field_pic 13
-	delay 5
-	switch VAR_CAPITAL_STATE
-	case 1, Capital_EventScript_GioPresident_24
-	case 2, Capital_EventScript_GioPresident_24
-	case 3, Capital_EventScript_GioPresident_25
-	case 4, Capital_EventScript_GioPresident_25
-Capital_EventScript_GioPresident_22:
-	load_field_pic 12, 190, 98
-	msgbox Capital_Text_Cicero8
-	closemessage
-	destroy_field_pic 12
 	delay 5
 	waitmovement 0
 	switch VAR_CAPITAL_STATE
@@ -183,6 +175,18 @@ Capital_EventScript_GioPresident_22:
 	case 3, Capital_EventScript_GioPresident_29
 	case 4, Capital_EventScript_GioPresident_29
 Capital_EventScript_GioPresident_26:
+	load_field_pic 12, 190, 98
+	msgbox Capital_Text_Cicero8
+	closemessage
+	destroy_field_pic 12
+	delay 5
+	waitmovement 0
+	switch VAR_CAPITAL_STATE
+	case 1, Capital_EventScript_GioPresident_32
+	case 2, Capital_EventScript_GioPresident_32
+	case 3, Capital_EventScript_GioPresident_33
+	case 4, Capital_EventScript_GioPresident_33
+Capital_EventScript_GioPresident_30:
 	waitmovement 0
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_Gio5
@@ -190,17 +194,17 @@ Capital_EventScript_GioPresident_26:
 	destroy_field_pic 10
 	delay 5
 	compare VAR_CAPITAL_STATE, 3
-	goto_if_lt Capital_EventScript_GioPresident_31
+	goto_if_lt Capital_EventScript_GioPresident_35
 	applymovement 1, Capital_Movement_GioL1
 	applymovement 31, Capital_Movement_PersianL1
-Capital_EventScript_GioPresident_30:
+Capital_EventScript_GioPresident_34:
 	waitmovement 0
 	switch VAR_CAPITAL_STATE
-	case 1, Capital_EventScript_GioPresident_36
-	case 2, Capital_EventScript_GioPresident_37
-	case 3, Capital_EventScript_GioPresident_38
-	case 4, Capital_EventScript_GioPresident_39
-Capital_EventScript_GioPresident_34:
+	case 1, Capital_EventScript_GioPresident_40
+	case 2, Capital_EventScript_GioPresident_41
+	case 3, Capital_EventScript_GioPresident_42
+	case 4, Capital_EventScript_GioPresident_43
+Capital_EventScript_GioPresident_38:
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_Gio6
 	closemessage
@@ -209,13 +213,13 @@ Capital_EventScript_GioPresident_34:
 	waitmovement 0
 	msgbox Capital_Text_PlayerJoinGio, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq Capital_EventScript_GioPresident_41
+	goto_if_eq Capital_EventScript_GioPresident_45
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_Gio7Yes
 	closemessage
 	destroy_field_pic 10
 	delay 5
-Capital_EventScript_GioPresident_40:
+Capital_EventScript_GioPresident_44:
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_Gio8
 	closemessage
@@ -229,9 +233,9 @@ Capital_EventScript_GioPresident_40:
 	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
 	compare VAR_CAPITAL_STATE, 3
-	goto_if_lt Capital_EventScript_GioPresident_53
+	goto_if_lt Capital_EventScript_GioPresident_57
 	applymovement 1, Common_Movement_FaceLeft
-Capital_EventScript_GioPresident_52:
+Capital_EventScript_GioPresident_56:
 	waitmovement 0
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_Gio9
@@ -264,8 +268,8 @@ Capital_EventScript_GioPresident_52:
 	destroy_field_pic 11
 	delay 5
 	compare VAR_CAPITAL_STATE, 2
-	goto_if_gt Capital_EventScript_GioPresident_57
-Capital_EventScript_GioPresident_56:
+	goto_if_gt Capital_EventScript_GioPresident_61
+Capital_EventScript_GioPresident_60:
 	removeobject 2
 	clearflag FLAG_ROUTE4_HIDEROCKETS
 	addobject 32
@@ -276,9 +280,9 @@ Capital_EventScript_GioPresident_56:
 	destroy_field_pic 15
 	delay 5
 	compare VAR_CAPITAL_STATE, 3
-	goto_if_lt Capital_EventScript_GioPresident_60
+	goto_if_lt Capital_EventScript_GioPresident_64
 	applymovement 32, Common_Movement_FaceRight
-Capital_EventScript_GioPresident_59:
+Capital_EventScript_GioPresident_63:
 	load_field_pic 15, 190, 98
 	msgbox Capital_Text_Mewtwo6
 	closemessage
@@ -300,9 +304,9 @@ Capital_EventScript_GioPresident_59:
 	removeobject 32
 	fadescreen 0
 	compare VAR_CAPITAL_STATE, 3
-	goto_if_lt Capital_EventScript_GioPresident_64
+	goto_if_lt Capital_EventScript_GioPresident_68
 	applymovement 1, Common_Movement_FaceRight
-Capital_EventScript_GioPresident_63:
+Capital_EventScript_GioPresident_67:
 	waitmovement 0
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_GioIntro
@@ -310,11 +314,16 @@ Capital_EventScript_GioPresident_63:
 	destroy_field_pic 10
 	delay 5
 	trainerbattle_no_intro TRAINER_GIO1, Capital_Text_GioLost
+	load_field_pic 10, 190, 98
 	msgbox Capital_Text_GioDefeat
+	closemessage
+	destroy_field_pic 10
+	delay 5
 	fadescreen 1
 	removeobject 1
 	removeobject 31
 	fadescreen 0
+	special RemoveCameraObject
 	return
 
 Capital_EventScript_GioPresident_3:
@@ -369,29 +378,33 @@ Capital_EventScript_GioPresident_21:
 	applymovement 6, Capital_Movement_Soldier3L1
 	goto Capital_EventScript_GioPresident_18
 
-Capital_EventScript_GioPresident_24:
+Capital_EventScript_GioPresident_23:
+	applymovement 3, Common_Movement_FaceLeft
+	goto Capital_EventScript_GioPresident_22
+
+Capital_EventScript_GioPresident_28:
 	applymovement 3, Capital_Movement_CiceroR2
 	applymovement 5, Capital_Movement_CiceroR2
 	applymovement 6, Capital_Movement_CiceroR2
 	applymovement 4, Capital_Movement_CiceroR2
-	goto Capital_EventScript_GioPresident_22
+	goto Capital_EventScript_GioPresident_26
 
-Capital_EventScript_GioPresident_25:
+Capital_EventScript_GioPresident_29:
 	applymovement 3, Capital_Movement_CiceroL2
 	applymovement 5, Capital_Movement_CiceroL2
 	applymovement 6, Capital_Movement_CiceroL2
 	applymovement 4, Capital_Movement_CiceroL2
-	goto Capital_EventScript_GioPresident_22
+	goto Capital_EventScript_GioPresident_26
 
-Capital_EventScript_GioPresident_28:
+Capital_EventScript_GioPresident_32:
 	applymovement 1, Common_Movement_FaceLeft
-	goto Capital_EventScript_GioPresident_26
+	goto Capital_EventScript_GioPresident_30
 
-Capital_EventScript_GioPresident_29:
+Capital_EventScript_GioPresident_33:
 	applymovement 1, Common_Movement_FaceRight
-	goto Capital_EventScript_GioPresident_26
+	goto Capital_EventScript_GioPresident_30
 
-Capital_EventScript_GioPresident_31:
+Capital_EventScript_GioPresident_35:
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_GioMewtwoMove
 	closemessage
@@ -406,67 +419,67 @@ Capital_EventScript_GioPresident_31:
 	applymovement 1, Capital_Movement_GioR2
 	applymovement 31, Capital_Movement_PersianR2
 	applymovement 2, Capital_Movement_MewtwoR3
-	goto Capital_EventScript_GioPresident_30
+	goto Capital_EventScript_GioPresident_34
 
-Capital_EventScript_GioPresident_36:
+Capital_EventScript_GioPresident_40:
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera1
-	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_GioPresident_44
-	goto Capital_EventScript_GioPresident_34
-
-Capital_EventScript_GioPresident_37:
-	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera2
-	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_GioPresident_46
-	goto Capital_EventScript_GioPresident_34
-
-Capital_EventScript_GioPresident_38:
-	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera3
 	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_GioPresident_48
-	goto Capital_EventScript_GioPresident_34
-
-Capital_EventScript_GioPresident_39:
-	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera4
-	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_GioPresident_50
-	goto Capital_EventScript_GioPresident_34
+	goto Capital_EventScript_GioPresident_38
 
 Capital_EventScript_GioPresident_41:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera2
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_GioPresident_50
+	goto Capital_EventScript_GioPresident_38
+
+Capital_EventScript_GioPresident_42:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera3
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_GioPresident_52
+	goto Capital_EventScript_GioPresident_38
+
+Capital_EventScript_GioPresident_43:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera4
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_GioPresident_54
+	goto Capital_EventScript_GioPresident_38
+
+Capital_EventScript_GioPresident_45:
 	load_field_pic 10, 190, 98
 	msgbox Capital_Text_Gio7No
 	closemessage
 	destroy_field_pic 10
 	delay 5
-	goto Capital_EventScript_GioPresident_40
-
-Capital_EventScript_GioPresident_44:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera1
-	goto Capital_EventScript_GioPresident_34
-
-Capital_EventScript_GioPresident_46:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower2A
-	goto Capital_EventScript_GioPresident_34
+	goto Capital_EventScript_GioPresident_44
 
 Capital_EventScript_GioPresident_48:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera3
-	goto Capital_EventScript_GioPresident_34
+	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera1
+	goto Capital_EventScript_GioPresident_38
 
 Capital_EventScript_GioPresident_50:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower4A
-	goto Capital_EventScript_GioPresident_34
+	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower2A
+	goto Capital_EventScript_GioPresident_38
 
-Capital_EventScript_GioPresident_53:
-	applymovement 1, Common_Movement_FaceRight
-	goto Capital_EventScript_GioPresident_52
+Capital_EventScript_GioPresident_52:
+	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera3
+	goto Capital_EventScript_GioPresident_38
+
+Capital_EventScript_GioPresident_54:
+	applymovement OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower4A
+	goto Capital_EventScript_GioPresident_38
 
 Capital_EventScript_GioPresident_57:
-	setobjectxy 32, 17, 5
+	applymovement 1, Common_Movement_FaceRight
 	goto Capital_EventScript_GioPresident_56
 
-Capital_EventScript_GioPresident_60:
-	applymovement 32, Common_Movement_FaceLeft
-	goto Capital_EventScript_GioPresident_59
+Capital_EventScript_GioPresident_61:
+	setobjectxy 32, 17, 5
+	goto Capital_EventScript_GioPresident_60
 
 Capital_EventScript_GioPresident_64:
-	applymovement 1, Common_Movement_FaceLeft
+	applymovement 32, Common_Movement_FaceLeft
 	goto Capital_EventScript_GioPresident_63
+
+Capital_EventScript_GioPresident_68:
+	applymovement 1, Common_Movement_FaceLeft
+	goto Capital_EventScript_GioPresident_67
 
 
 Capital_EventScript_GioSouth::
@@ -597,7 +610,6 @@ Capital_Movement_Soldier2L1:
 Capital_Movement_Soldier3L1:
 	walk_down
 	walk_down
-	walk_left
 	walk_left
 	walk_left
 	walk_up

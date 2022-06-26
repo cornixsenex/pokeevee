@@ -16,13 +16,14 @@ const OBJ_EVENT_ID_PERSIAN = 31
 const OBJ_EVENT_ID_SOLDIER1 = 4
 const OBJ_EVENT_ID_SOLDIER2 = 5
 const OBJ_EVENT_ID_SOLDIER3 = 6
+const OBJ_EVENT_ID_LT_SURGE = 30
 const GIO_FIELD_PIC = 10
 const MEWTWO_ARMOR_FIELD_PIC = 11
 const MEWTWO_FIELD_PIC = 15
 const CICERO_FIELD_PIC = 12
 const SOLDIER_FIELD_PIC = 13
-const SURGE_FIELD_PIC = 14
 const MAXIE_FIELD_PIC = 9
+const LT_SURGE_FIELD_PIC = 14
 
 
 mapscripts Capital_MapScripts {}
@@ -39,6 +40,26 @@ script Capital_EventScript_DeskTest {
 	end
 }
 
+script Capital_EventScript_ShowRebels {
+
+
+script Capital_EventScript_RemoveRockets {
+	removeobject(1)
+	removeobject(2)
+	removeobject(3)
+	removeobject(31)
+	removeobject(32)
+	removeobject(4)
+	removeobject(5)
+	removeobject(6)
+	removeobject(25)
+	removeobject(29)
+	removeobject(26)
+	removeobject(27)
+	removeobject(30)
+	removeobject(28)
+	return
+}
 
 script Capital_EventScript_GioTrigger1 {
 	lock
@@ -106,7 +127,6 @@ script Capital_EventScript_GioPresident {
 
 	}
 	waitmovement(0)
-	special (RemoveCameraObject)
 	//Surprise
 	load_field_pic (CICERO_FIELD_PIC, 190, 98)
 	msgbox(Capital_Text_Cicero1)
@@ -223,11 +243,17 @@ script Capital_EventScript_GioPresident {
 	destroy_field_pic(CICERO_FIELD_PIC)
 	delay (5)
 	//enough
+	if (var(VAR_CAPITAL_STATE) > 2) {
+		applymovement(OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+	} else {
+		applymovement(OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+	}
 	load_field_pic (SOLDIER_FIELD_PIC, 190, 98)
 	msgbox (Capital_Text_Soldier3)
 	closemessage
 	destroy_field_pic(SOLDIER_FIELD_PIC)
 	delay (5)
+	waitmovement (0)
 	//Cicero and soldiers exit
 	switch (var(VAR_CAPITAL_STATE)) {
 		case 1:
@@ -449,17 +475,100 @@ script Capital_EventScript_GioPresident {
 	destroy_field_pic(GIO_FIELD_PIC)
 	delay (5)
 	trainerbattle_no_intro(TRAINER_GIO1, Capital_Text_GioLost)
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
 	msgbox (Capital_Text_GioDefeat)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
 	//ENTER LT SURGE N SHIT
+
+	//Enter LT Surge
+	if (var(VAR_CAPITAL_STATE) < 3) {
+		setobjectxy (OBJ_EVENT_ID_LT_SURGE, 28, 5)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_SurgeR1)
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
+	} else {
+		setobjectxy (OBJ_EVENT_ID_LT_SURGE, 13, 5)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_SurgeL1)
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
+	}
+	load_field_pic (LT_SURGE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Surge1)
+	closemessage
+	waitmovement (0)
+
+	msgbox (Capital_Text_Surge2)
+	closemessage
+	destroy_field_pic(LT_SURGE_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Gio13)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+
+	load_field_pic (LT_SURGE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Surge3)
+	closemessage
+	applymovement (OBJ_EVENT_ID_GIO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Capital_Text_Surge4)
+	closemessage 
+	destroy_field_pic(LT_SURGE_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Gio14)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+
+	load_field_pic (LT_SURGE_FIELD_PIC, 190, 98)
+	applymovement (OBJ_EVENT_ID_LT_SURGE, Common_Exclamation_Mark)
+	waitmovement (0)
+	msgbox (Capital_Text_Surge5)
+	closemessage
+	destroy_field_pic(LT_SURGE_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Gio15)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
 	//Exit rockets
-	fadescreen (1)
-	removeobject (OBJ_EVENT_ID_GIO)
-	removeobject (OBJ_EVENT_ID_PERSIAN)
-	fadescreen (0)
-	//applymovement (OBJ_EVENT_ID_PLAYER, 
+	if (var(VAR_CAPITAL_STATE) > 3) {
+		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_LE)
+		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_LE)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_LE)
+	} else {
+		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_RE)
+		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_RE)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_RE)
+	}
+
+	setflag(FLAG_CAPITAL_HIDE_ROCKETS)
+	call (Capital_EventScript_RemoveRockets)
+
+	//Player walks to the exit of the capital
+	//Maxie Trigger
+
+	//Maxie cutscene
+
+
+	//Enter Maxie and rebels
+	
 
 
 
+
+
+	special (RemoveCameraObject)
 
 	return
 }
@@ -548,7 +657,7 @@ movement Capital_Movement_Soldier2L1 {
 
 movement Capital_Movement_Soldier3L1 { 
 	walk_down * 2
-	walk_left * 3
+	walk_left * 2
 	walk_up
 	face_left
 }
@@ -610,6 +719,22 @@ movement Capital_Movement_Follower2A {
 
 movement Capital_Movement_Follower4A {
 	walk_up
+	walk_left * 7
+}
+
+movement Capital_Movement_SurgeR1 {
+	walk_left * 6
+}
+
+movement Capital_Movement_SurgeL1 {
+	walk_right * 6
+}
+
+movement Capital_Movement_RE {
+	walk_right * 7 
+}
+
+movement Capital_Movement_LE {
 	walk_left * 7
 }
 
@@ -762,7 +887,39 @@ text Capital_Text_GioLost {
 }
 
 text Capital_Text_GioDefeat {
-	format("Betrayed, forsaken, and surrounded I am sure to perish on this damned day.")
+	format("Betrayed, forsaken, and surrounded I am sure to perish on this damned day...My coronation become funeral.")
+}
+
+text Capital_Text_Surge1 {
+	format("My lord!")
+}
+
+text Capital_Text_Surge2 {
+	format("We must evacuate at once! The rebels have...")
+}
+
+text Capital_Text_Gio13 {
+	format("Lieutenant Surge, be done, we're finished here, Mewtwo abandoned us the day is lost...")
+}
+
+text Capital_Text_Surge3 {
+	format("Yes sir, but hope remains.")
+}
+
+text Capital_Text_Surge4 {
+	format("The military remains faithfully obedient to you. If we retreat...if we regroup, return, counterattack, we might...")
+}
+
+text Capital_Text_Gio14 {
+	format("I see no hope in this retreat, only a cowardly delay of death. Mewtwo is gone, we must...")
+}
+
+text Capital_Text_Surge5 {
+	format("We need to leave! I'm going to bring you back to our fort or leave you here to die!")
+}
+
+text Capital_Text{Gio15 {
+	format("OK, lead on.")
 }
 
 
