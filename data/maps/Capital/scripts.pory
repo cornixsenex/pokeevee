@@ -557,21 +557,11 @@ script Capital_EventScript_GioPresident {
 	setflag(FLAG_CAPITAL_HIDE_ROCKETS)
 	call (Capital_EventScript_RemoveRockets)
 
-	//Player walks to the exit of the capital
-	//Maxie Trigger
-
-	//Maxie cutscene
-
-
-	//Enter Maxie and rebels
-	
-
-
-
 
 
 	special (RemoveCameraObject)
 	setvar (VAR_CAPITAL_STATE, 5)
+	setflag (FLAG_CAPITAL_HIDE_ROCKETS)
 
 	return
 }
@@ -734,7 +724,6 @@ script Capital_EventScript_MaxieScene {
 	applymovement (OBJ_EVENT_ID_REBEL4, Capital_Movement_Rebel4E)
 	waitmovement (0)
 
-	setflag (FLAG_CAPITAL_HIDEROCKETS)
 	setvar (VAR_CAPITAL_STATE, 10)
 
 	return

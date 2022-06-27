@@ -392,6 +392,7 @@ Capital_EventScript_GioPresident_75:
 	call Capital_EventScript_RemoveRockets
 	special RemoveCameraObject
 	setvar VAR_CAPITAL_STATE, 5
+	setflag FLAG_CAPITAL_HIDE_ROCKETS
 	return
 
 Capital_EventScript_GioPresident_3:
