@@ -16,6 +16,24 @@ Capital_EventScript_DeskTest_2:
 	goto Capital_EventScript_DeskTest_1
 
 
+Capital_EventScript_RemoveRockets::
+	removeobject 1
+	removeobject 2
+	removeobject 3
+	removeobject 31
+	removeobject 32
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 25
+	removeobject 29
+	removeobject 26
+	removeobject 27
+	removeobject 30
+	removeobject 28
+	return
+
+
 Capital_EventScript_GioTrigger1::
 	lock
 	setvar VAR_CAPITAL_STATE, 1
@@ -319,11 +337,61 @@ Capital_EventScript_GioPresident_67:
 	closemessage
 	destroy_field_pic 10
 	delay 5
-	fadescreen 1
-	removeobject 1
-	removeobject 31
-	fadescreen 0
+	compare VAR_CAPITAL_STATE, 3
+	goto_if_lt Capital_EventScript_GioPresident_72
+	setobjectxy 30, 13, 5
+	applymovement 30, Capital_Movement_SurgeL1
+	applymovement 1, Common_Movement_FaceLeft
+Capital_EventScript_GioPresident_71:
+	load_field_pic 14, 190, 98
+	msgbox Capital_Text_Surge1
+	closemessage
+	waitmovement 0
+	msgbox Capital_Text_Surge2
+	closemessage
+	destroy_field_pic 14
+	delay 5
+	load_field_pic 10, 190, 98
+	msgbox Capital_Text_Gio13
+	closemessage
+	destroy_field_pic 10
+	delay 5
+	load_field_pic 14, 190, 98
+	msgbox Capital_Text_Surge3
+	closemessage
+	applymovement 1, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Capital_Text_Surge4
+	closemessage
+	destroy_field_pic 14
+	delay 5
+	load_field_pic 10, 190, 98
+	msgbox Capital_Text_Gio14
+	closemessage
+	destroy_field_pic 10
+	delay 5
+	load_field_pic 14, 190, 98
+	applymovement 30, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Capital_Text_Surge5
+	closemessage
+	destroy_field_pic 14
+	delay 5
+	load_field_pic 10, 190, 98
+	msgbox Capital_Text_Gio15
+	closemessage
+	destroy_field_pic 10
+	delay 5
+	compare VAR_CAPITAL_STATE, 3
+	goto_if_gt Capital_EventScript_GioPresident_76
+	applymovement 1, Capital_Movement_RE
+	applymovement 31, Capital_Movement_RE
+	applymovement 30, Capital_Movement_RE
+Capital_EventScript_GioPresident_75:
+	setflag FLAG_CAPITAL_HIDE_ROCKETS
+	call Capital_EventScript_RemoveRockets
 	special RemoveCameraObject
+	setvar VAR_CAPITAL_STATE, 5
 	return
 
 Capital_EventScript_GioPresident_3:
@@ -481,6 +549,18 @@ Capital_EventScript_GioPresident_68:
 	applymovement 1, Common_Movement_FaceLeft
 	goto Capital_EventScript_GioPresident_67
 
+Capital_EventScript_GioPresident_72:
+	setobjectxy 30, 28, 5
+	applymovement 30, Capital_Movement_SurgeR1
+	applymovement 1, Common_Movement_FaceRight
+	goto Capital_EventScript_GioPresident_71
+
+Capital_EventScript_GioPresident_76:
+	applymovement 1, Capital_Movement_LE
+	applymovement 31, Capital_Movement_LE
+	applymovement 30, Capital_Movement_LE
+	goto Capital_EventScript_GioPresident_75
+
 
 Capital_EventScript_GioSouth::
 	setflag FLAG_FOLLOWER_ALT_APPROACH
@@ -490,6 +570,165 @@ Capital_EventScript_GioSouth::
 Capital_EventScript_GioApproach::
 	clearflag FLAG_FOLLOWER_ALT_APPROACH
 	end
+
+
+Capital_EventScript_MaxieTrigger1::
+	lock
+	setvar VAR_CAPITAL_STATE, 6
+	call Capital_EventScript_MaxiePlaceR
+	call Capital_EventScript_MaxieScene
+	release
+	return
+
+
+Capital_EventScript_MaxieTrigger2::
+	lock
+	setvar VAR_CAPITAL_STATE, 7
+	call Capital_EventScript_MaxiePlaceR
+	call Capital_EventScript_MaxieScene
+	release
+	return
+
+
+Capital_EventScript_MaxieTrigger3::
+	lock
+	setvar VAR_CAPITAL_STATE, 8
+	call Capital_EventScript_MaxiePlaceL
+	call Capital_EventScript_MaxieScene
+	release
+	return
+
+
+Capital_EventScript_MaxieTrigger4::
+	lock
+	setvar VAR_CAPITAL_STATE, 9
+	call Capital_EventScript_MaxiePlaceL
+	call Capital_EventScript_MaxieScene
+	release
+	return
+
+
+Capital_EventScript_RebelsScenePlace::
+	removeobject 22
+	setobjectxy 23, 18, 37
+	setobjectxy 19, 18, 36
+	setobjectxy 24, 23, 37
+	setobjectxy 21, 23, 36
+	return
+
+
+Capital_EventScript_MaxiePlaceL::
+	setobjectxy 20, 20, 35
+	return
+
+
+Capital_EventScript_MaxiePlaceR::
+	setobjectxy 20, 21, 35
+	return
+
+
+Capital_EventScript_MaxieScene::
+	call Capital_EventScript_RebelsScenePlace
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_MaxieScene_2
+Capital_EventScript_MaxieScene_1:
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	load_field_pic 9, 190, 98
+	msgbox Capital_Text_Maxie1
+	closemessage
+	destroy_field_pic 9
+	delay 5
+	switch VAR_CAPITAL_STATE
+	case 6, Capital_EventScript_MaxieScene_6
+	case 7, Capital_EventScript_MaxieScene_7
+	case 8, Capital_EventScript_MaxieScene_8
+	case 9, Capital_EventScript_MaxieScene_9
+Capital_EventScript_MaxieScene_4:
+	compare VAR_CAPITAL_STATE, 8
+	goto_if_lt Capital_EventScript_MaxieScene_11
+	applymovement 20, Capital_Movement_Maxie1L
+Capital_EventScript_MaxieScene_10:
+	waitmovement 0
+	load_field_pic 9, 190, 98
+	msgbox Capital_Text_Maxie2
+	closemessage
+	destroy_field_pic 9
+	delay 5
+	applymovement 20, Common_Movement_FaceUp
+	waitmovement 0
+	load_field_pic 9, 190, 98
+	msgbox Capital_Text_Maxie3
+	closemessage
+	destroy_field_pic 9
+	delay 5
+	applymovement 20, Common_Movement_FaceLeft
+	waitmovement 0
+	load_field_pic 9, 190, 98
+	msgbox Capital_Text_Maxie4
+	closemessage
+	destroy_field_pic 9
+	delay 5
+	applymovement 20, Common_Movement_FaceUp
+	waitmovement 0
+	load_field_pic 9, 190, 98
+	msgbox Capital_Text_Maxie5
+	closemessage
+	destroy_field_pic 9
+	delay 5
+	applymovement 20, Capital_Movement_MaxieE
+	applymovement 23, Capital_Movement_Rebel1E
+	applymovement 19, Capital_Movement_Rebel2E
+	applymovement 24, Capital_Movement_Rebel3E
+	applymovement 21, Capital_Movement_Rebel4E
+	waitmovement 0
+	setvar VAR_CAPITAL_STATE, 10
+	return
+
+Capital_EventScript_MaxieScene_2:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro
+	goto Capital_EventScript_MaxieScene_1
+
+Capital_EventScript_MaxieScene_6:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_MaxieScene_14
+	goto Capital_EventScript_MaxieScene_4
+
+Capital_EventScript_MaxieScene_7:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_MaxieScene_16
+	goto Capital_EventScript_MaxieScene_4
+
+Capital_EventScript_MaxieScene_8:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_MaxieScene_18
+	goto Capital_EventScript_MaxieScene_4
+
+Capital_EventScript_MaxieScene_9:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4
+	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_MaxieScene_20
+	goto Capital_EventScript_MaxieScene_4
+
+Capital_EventScript_MaxieScene_11:
+	applymovement 20, Capital_Movement_Maxie1R
+	goto Capital_EventScript_MaxieScene_10
+
+Capital_EventScript_MaxieScene_14:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1
+	goto Capital_EventScript_MaxieScene_4
+
+Capital_EventScript_MaxieScene_16:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2
+	goto Capital_EventScript_MaxieScene_4
+
+Capital_EventScript_MaxieScene_18:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3
+	goto Capital_EventScript_MaxieScene_4
+
+Capital_EventScript_MaxieScene_20:
+	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4
+	goto Capital_EventScript_MaxieScene_4
 
 
 Capital_Movement_PanCamera1:
@@ -704,6 +943,149 @@ Capital_Movement_Follower4A:
 	walk_left
 	step_end
 
+Capital_Movement_SurgeR1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Capital_Movement_SurgeL1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Capital_Movement_RE:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Capital_Movement_LE:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Capital_Movement_PlayerMaxieIntro:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Capital_Movement_PlayerMaxie1:
+	walk_down
+	walk_down
+	walk_right
+	step_end
+
+Capital_Movement_PlayerMaxie2:
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+Capital_Movement_PlayerMaxie3:
+	walk_down
+	walk_down
+	face_left
+	step_end
+
+Capital_Movement_PlayerMaxie4:
+	walk_down
+	walk_down
+	walk_left
+	step_end
+
+Capital_Movement_Maxie1R:
+	walk_up
+	walk_up
+	face_left
+	step_end
+
+Capital_Movement_Maxie1L:
+	walk_up
+	walk_up
+	face_right
+	step_end
+
+Capital_Movement_MaxieE:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Capital_Movement_Rebel1E:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Capital_Movement_Rebel2E:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Capital_Movement_Rebel3E:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Capital_Movement_Rebel4E:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 Capital_Text_DeskTestYes::
 	.string "Yup you have a follower rn$"
 
@@ -851,4 +1233,64 @@ Capital_Text_GioLost::
 
 Capital_Text_GioDefeat::
 	.string "Betrayed, forsaken, and surrounded I\n"
-	.string "am sure to perish on this damned day.$"
+	.string "am sure to perish on this damned\l"
+	.string "day...My coronation become funeral.$"
+
+Capital_Text_Surge1::
+	.string "My lord!$"
+
+Capital_Text_Surge2::
+	.string "We must evacuate at once! The rebels\n"
+	.string "have...$"
+
+Capital_Text_Gio13::
+	.string "Lieutenant Surge, be done, we're\n"
+	.string "finished here, Mewtwo abandoned us the\l"
+	.string "day is lost...$"
+
+Capital_Text_Surge3::
+	.string "Yes sir, but hope remains.$"
+
+Capital_Text_Surge4::
+	.string "The military remains faithfully\n"
+	.string "obedient to you. If we retreat...if we\l"
+	.string "regroup, return, counterattack, we\l"
+	.string "might...$"
+
+Capital_Text_Gio14::
+	.string "I see no hope in this retreat, only a\n"
+	.string "cowardly delay of death. Mewtwo is\l"
+	.string "gone, we must...$"
+
+Capital_Text_Surge5::
+	.string "We need to leave! I'm going to bring you\n"
+	.string "back to our fort or leave you here to\l"
+	.string "die!$"
+
+Capital_Text_Gio15::
+	.string "OK, lead on.$"
+
+Capital_Text_Maxie1::
+	.string "To vicory and a better new world!$"
+
+Capital_Text_Maxie2::
+	.string "With your help {PLAYER} we've won the\n"
+	.string "capital but Giovanni managed to\l"
+	.string "escape! They must be headed to Fort\l"
+	.string "Montgomery. You've demonstrated your\l"
+	.string "ability to infiltrate well defended\l"
+	.string "spaces but without the ability to\l"
+	.string "change your very face I doubt you will\l"
+	.string "succeed to penetrate the armor walls\l"
+	.string "of Fort Montgomery.$"
+
+Capital_Text_Maxie3::
+	.string "And {PLAYER} I must repeat what I\n"
+	.string "just said$"
+
+Capital_Text_Maxie4::
+	.string "To your credit we owe our newborn state\n"
+	.string "and I thank you on behalf of us all.$"
+
+Capital_Text_Maxie5::
+	.string "Now forward to proclaim our nation!$"

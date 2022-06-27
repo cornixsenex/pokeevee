@@ -145,7 +145,8 @@ static const struct Pic sPics[] =
 	//Lt Surge
     {sPic15Gfx, sPic15Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Mewtwo
-    {sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
+    //{sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
+    {sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

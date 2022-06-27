@@ -301,7 +301,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 19,
       "y": 40,
       "elevation": 3,
@@ -496,36 +496,36 @@
       "x": 19,
       "y": 28,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "5",
+      "script": "Capital_EventScript_MaxieTrigger1"
     },
     {
       "type": "trigger",
       "x": 20,
       "y": 28,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "5",
+      "script": "Capital_EventScript_MaxieTrigger2"
     },
     {
       "type": "trigger",
       "x": 21,
       "y": 28,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "5",
+      "script": "Capital_EventScript_MaxieTrigger3"
     },
     {
       "type": "trigger",
       "x": 22,
       "y": 28,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_CAPITAL_STATE",
+      "var_value": "5",
+      "script": "Capital_EventScript_MaxieTrigger4"
     }
   ],
   "bg_events": [

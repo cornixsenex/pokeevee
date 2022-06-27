@@ -24,7 +24,12 @@ const CICERO_FIELD_PIC = 12
 const SOLDIER_FIELD_PIC = 13
 const MAXIE_FIELD_PIC = 9
 const LT_SURGE_FIELD_PIC = 14
-
+const OBJ_EVENT_ID_MAXIE = 20
+const OBJ_EVENT_ID_REBEL1 = 23
+const OBJ_EVENT_ID_REBEL2 = 19
+const OBJ_EVENT_ID_REBEL3 = 24
+const OBJ_EVENT_ID_REBEL4 = 21
+const OBJ_EVENT_ID_REBEL5 = 22
 
 mapscripts Capital_MapScripts {}
 
@@ -39,9 +44,6 @@ script Capital_EventScript_DeskTest {
 	release
 	end
 }
-
-script Capital_EventScript_ShowRebels {
-
 
 script Capital_EventScript_RemoveRockets {
 	removeobject(1)
@@ -418,14 +420,14 @@ script Capital_EventScript_GioPresident {
 	closemessage
 	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
 	delay (5)
-	//Set Mewtwo location
-	if (var(VAR_CAPITAL_STATE) > 2) {
-		setobjectxy (OBJ_EVENT_ID_MEWTWO, 17, 5)
-	}
 	//Mewtwo unleashed
 	removeobject (OBJ_EVENT_ID_MEWTWO_ARMOR)
 	clearflag (FLAG_ROUTE4_HIDEROCKETS)
 	addobject (OBJ_EVENT_ID_MEWTWO)
+	//Set Mewtwo location
+	if (var(VAR_CAPITAL_STATE) > 2) {
+		setobjectxy (OBJ_EVENT_ID_MEWTWO, 17, 5)
+	}
 	showobjectat (OBJ_EVENT_ID_MEWTWO, MAP_CAPITAL)
 	load_field_pic (MEWTWO_FIELD_PIC, 190, 98)
 	msgbox(Capital_Text_Mewtwo5)
@@ -528,7 +530,7 @@ script Capital_EventScript_GioPresident {
 
 
 	load_field_pic (LT_SURGE_FIELD_PIC, 190, 98)
-	applymovement (OBJ_EVENT_ID_LT_SURGE, Common_Exclamation_Mark)
+	applymovement (OBJ_EVENT_ID_LT_SURGE, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	msgbox (Capital_Text_Surge5)
 	closemessage
@@ -569,6 +571,7 @@ script Capital_EventScript_GioPresident {
 
 
 	special (RemoveCameraObject)
+	setvar (VAR_CAPITAL_STATE, 5)
 
 	return
 }
@@ -581,6 +584,159 @@ script Capital_EventScript_GioSouth {
 script Capital_EventScript_GioApproach {
 	clearflag(FLAG_FOLLOWER_ALT_APPROACH)
 	end
+}
+
+script Capital_EventScript_MaxieTrigger1 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 6)
+	call (Capital_EventScript_MaxiePlaceR)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_MaxieTrigger2 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 7)
+	call (Capital_EventScript_MaxiePlaceR)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_MaxieTrigger3 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 8)
+	call (Capital_EventScript_MaxiePlaceL)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_MaxieTrigger4 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 9)
+	call (Capital_EventScript_MaxiePlaceL)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_RebelsScenePlace {
+	removeobject (OBJ_EVENT_ID_REBEL5)
+	setobjectxy (OBJ_EVENT_ID_REBEL1, 18, 37)
+	setobjectxy (OBJ_EVENT_ID_REBEL2, 18, 36)
+	setobjectxy (OBJ_EVENT_ID_REBEL3, 23, 37)
+	setobjectxy (OBJ_EVENT_ID_REBEL4, 23, 36)
+	return
+}
+
+script Capital_EventScript_MaxiePlaceL {
+	setobjectxy (OBJ_EVENT_ID_MAXIE, 20, 35)
+	return
+}
+
+script Capital_EventScript_MaxiePlaceR {
+	setobjectxy (OBJ_EVENT_ID_MAXIE, 21, 35)
+	return
+}
+
+script Capital_EventScript_MaxieScene {
+	
+	//position rebels for maxiescene
+	call (Capital_EventScript_RebelsScenePlace)
+	
+	//player auto-walks down a bit
+	applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro)
+	if (flag(FLAG_FOLLOWER_ACTIVE)) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro)
+	}
+	waitmovement (0)
+	
+	//player suprise
+	applymovement  (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	//Maxie Introduction
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie1)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	//Player moves to speak with Maxie - Maxie moves to speak with player
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 6:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1)
+			if (flag(FLAG_FOLLOWER_ACTIVE)) {
+				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1)
+			}
+
+		case 7:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2)
+			if (flag(FLAG_FOLLOWER_ACTIVE)) {
+				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2)
+			}
+		case 8:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3)
+			if (flag(FLAG_FOLLOWER_ACTIVE)) {
+				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3)
+			}
+		case 9:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4)
+			if (flag(FLAG_FOLLOWER_ACTIVE)) {
+				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4)
+			}
+	}
+	//Maxie moves to speak with player
+	if (var(VAR_CAPITAL_STATE) < 8) {
+		applymovement (OBJ_EVENT_ID_MAXIE, Capital_Movement_Maxie1R)
+	} else {
+		applymovement (OBJ_EVENT_ID_MAXIE, Capital_Movement_Maxie1L)
+	}
+	waitmovement (0)
+	//Maxie speaks thank you for your contribution alas we let the villian escape they still have control of fort montgomery but we have the city
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie2)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_MAXIE, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie3)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_MAXIE, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie4)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_MAXIE, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie5)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	//Maxie and rebels exit north
+	applymovement (OBJ_EVENT_ID_MAXIE, Capital_Movement_MaxieE)
+	applymovement (OBJ_EVENT_ID_REBEL1, Capital_Movement_Rebel1E)
+	applymovement (OBJ_EVENT_ID_REBEL2, Capital_Movement_Rebel2E)
+	applymovement (OBJ_EVENT_ID_REBEL3, Capital_Movement_Rebel3E)
+	applymovement (OBJ_EVENT_ID_REBEL4, Capital_Movement_Rebel4E)
+	waitmovement (0)
+
+	setvar (VAR_CAPITAL_STATE, 10)
+
+	return
 }
 
 movement Capital_Movement_PanCamera1 {
@@ -736,6 +892,68 @@ movement Capital_Movement_RE {
 
 movement Capital_Movement_LE {
 	walk_left * 7
+}
+
+movement Capital_Movement_PlayerMaxieIntro {
+	walk_down * 3
+}
+
+movement Capital_Movement_PlayerMaxie1 {
+	walk_down * 2
+	walk_right 
+}
+
+movement Capital_Movement_PlayerMaxie2 {
+	walk_down * 2
+	face_right
+}
+
+movement Capital_Movement_PlayerMaxie3 {	
+	walk_down * 2
+	face_left
+}
+
+movement Capital_Movement_PlayerMaxie4 {
+	walk_down * 2
+	walk_left 
+}
+
+movement Capital_Movement_Maxie1R {
+	walk_up * 2
+	face_left
+}
+
+movement Capital_Movement_Maxie1L {
+	walk_up * 2
+	face_right
+}
+
+movement Capital_Movement_MaxieE {
+	walk_up * 6
+}
+
+movement Capital_Movement_Rebel1E {
+	walk_up * 5
+	walk_right
+	walk_up * 5
+}
+
+movement Capital_Movement_Rebel2E {
+	walk_up * 4
+	walk_right
+	walk_up * 5
+}
+
+movement Capital_Movement_Rebel3E {
+	walk_up * 5
+	walk_left
+	walk_up * 5
+}
+
+movement Capital_Movement_Rebel4E {
+	walk_up * 4
+	walk_left
+	walk_up * 5 
 }
 
 text Capital_Text_DeskTestYes {
@@ -918,8 +1136,27 @@ text Capital_Text_Surge5 {
 	format("We need to leave! I'm going to bring you back to our fort or leave you here to die!")
 }
 
-text Capital_Text{Gio15 {
+text Capital_Text_Gio15 {
 	format("OK, lead on.")
 }
 
+text Capital_Text_Maxie1 {
+	format("To vicory and a better new world!")
+}
+
+text Capital_Text_Maxie2 {
+	format("With your help {PLAYER} we've won the capital but Giovanni managed to escape! They must be headed to Fort Montgomery. You've demonstrated your ability to infiltrate well defended spaces but without the ability to change your very face I doubt you will succeed to penetrate the armor walls of Fort Montgomery.")
+}
+
+text Capital_Text_Maxie3 {
+	format("And {PLAYER} I must repeat what I just said")
+}
+
+text Capital_Text_Maxie4 {
+	format("To your credit we owe our newborn state and I thank you on behalf of us all.")
+}
+
+text Capital_Text_Maxie5 {
+	format("Now forward to proclaim our nation!")
+}
 
