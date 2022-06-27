@@ -285,12 +285,12 @@ Capital_EventScript_GioPresident_56:
 	closemessage
 	destroy_field_pic 11
 	delay 5
-	compare VAR_CAPITAL_STATE, 2
-	goto_if_gt Capital_EventScript_GioPresident_61
-Capital_EventScript_GioPresident_60:
 	removeobject 2
 	clearflag FLAG_ROUTE4_HIDEROCKETS
 	addobject 32
+	compare VAR_CAPITAL_STATE, 2
+	goto_if_gt Capital_EventScript_GioPresident_61
+Capital_EventScript_GioPresident_60:
 	showobjectat 32, MAP_CAPITAL
 	load_field_pic 15, 190, 98
 	msgbox Capital_Text_Mewtwo5

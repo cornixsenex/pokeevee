@@ -734,6 +734,7 @@ script Capital_EventScript_MaxieScene {
 	applymovement (OBJ_EVENT_ID_REBEL4, Capital_Movement_Rebel4E)
 	waitmovement (0)
 
+	setflag (FLAG_CAPITAL_HIDEROCKETS)
 	setvar (VAR_CAPITAL_STATE, 10)
 
 	return
