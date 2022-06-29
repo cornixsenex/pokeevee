@@ -1,5 +1,41 @@
 Capital_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Capital_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Capital_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call Capital_OnTransition
+	return
+
+
+Capital_OnTransition::
+	compare VAR_CAPITAL_STATE, 0
+	goto_if_eq Capital_OnTransition_1
+	call Capital_EventScript_ShowMaxie
+	return
+
+Capital_OnTransition_1:
+	call Capital_EventScript_ShowBattle
+	return
+
+
+Capital_EventScript_ShowBattle::
+	removeobject 32
+	return
+
+
+Capital_EventScript_ShowMaxie::
+	removeobject 3
+	removeobject 1
+	removeobject 2
+	removeobject 31
+	removeobject 4
+	removeobject 5
+	removeobject 6
+	removeobject 30
+	setobjectxy 20, 21, 6
+	setobjectmovementtype 20, MOVEMENT_TYPE_FACE_DOWN
+	showobjectat 20, MAP_CAPITAL
+	return
 
 
 Capital_EventScript_DeskTest::
@@ -340,6 +376,7 @@ Capital_EventScript_GioPresident_67:
 	compare VAR_CAPITAL_STATE, 3
 	goto_if_lt Capital_EventScript_GioPresident_72
 	setobjectxy 30, 13, 5
+	showobjectat 30, MAP_CAPITAL
 	applymovement 30, Capital_Movement_SurgeL1
 	applymovement 1, Common_Movement_FaceLeft
 Capital_EventScript_GioPresident_71:
@@ -392,7 +429,6 @@ Capital_EventScript_GioPresident_75:
 	call Capital_EventScript_RemoveRockets
 	special RemoveCameraObject
 	setvar VAR_CAPITAL_STATE, 5
-	setflag FLAG_CAPITAL_HIDE_ROCKETS
 	return
 
 Capital_EventScript_GioPresident_3:
@@ -552,6 +588,7 @@ Capital_EventScript_GioPresident_68:
 
 Capital_EventScript_GioPresident_72:
 	setobjectxy 30, 28, 5
+	showobjectat 30, MAP_CAPITAL
 	applymovement 30, Capital_Movement_SurgeR1
 	applymovement 1, Common_Movement_FaceRight
 	goto Capital_EventScript_GioPresident_71
@@ -615,6 +652,10 @@ Capital_EventScript_RebelsScenePlace::
 	setobjectxy 19, 18, 36
 	setobjectxy 24, 23, 37
 	setobjectxy 21, 23, 36
+	showobjectat 23, MAP_CAPITAL
+	showobjectat 19, MAP_CAPITAL
+	showobjectat 24, MAP_CAPITAL
+	showobjectat 21, MAP_CAPITAL
 	return
 
 
@@ -630,6 +671,7 @@ Capital_EventScript_MaxiePlaceR::
 
 Capital_EventScript_MaxieScene::
 	call Capital_EventScript_RebelsScenePlace
+	showobjectat 20, MAP_CAPITAL
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro
 	goto_if_set FLAG_FOLLOWER_ACTIVE, Capital_EventScript_MaxieScene_2
 Capital_EventScript_MaxieScene_1:
@@ -730,6 +772,30 @@ Capital_EventScript_MaxieScene_18:
 Capital_EventScript_MaxieScene_20:
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4
 	goto Capital_EventScript_MaxieScene_4
+
+
+Capital_EventScript_SoldierBattle::
+	lock
+	msgbox Capital_Text_SoldierBattle
+	closemessage
+	release
+	end
+
+
+Capital_EventScript_RebelBattle::
+	lockall
+	msgbox Capital_Text_RebelBattle
+	closemessage
+	releaseall
+	end
+
+
+Capital_EventScript_SurgeBattle::
+	lockall
+	msgbox Capital_Text_SurgeBattle
+	closemessage
+	releaseall
+	end
 
 
 Capital_Movement_PanCamera1:
@@ -1294,4 +1360,15 @@ Capital_Text_Maxie4::
 	.string "and I thank you on behalf of us all.$"
 
 Capital_Text_Maxie5::
-	.string "Now forward to proclaim our nation!$"
+	.string "Now forward to declare our intentions!$"
+
+Capital_Text_SoldierBattle::
+	.string "You must leave now! The senate's\n"
+	.string "underway!$"
+
+Capital_Text_RebelBattle::
+	.string "You'll never win! Freedom will always\n"
+	.string "win!$"
+
+Capital_Text_SurgeBattle::
+	.string "Resistance is futile just give up!$"

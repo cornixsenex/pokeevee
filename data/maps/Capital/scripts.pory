@@ -1,8 +1,6 @@
 
 //Basically trigger pulls camera to middle cutscene, battle, exits and entrances, reverse ledge climb?
 
-
-
 //President sees player and is afraid
 
 //Gio mocks him
@@ -17,13 +15,6 @@ const OBJ_EVENT_ID_SOLDIER1 = 4
 const OBJ_EVENT_ID_SOLDIER2 = 5
 const OBJ_EVENT_ID_SOLDIER3 = 6
 const OBJ_EVENT_ID_LT_SURGE = 30
-const GIO_FIELD_PIC = 10
-const MEWTWO_ARMOR_FIELD_PIC = 11
-const MEWTWO_FIELD_PIC = 15
-const CICERO_FIELD_PIC = 12
-const SOLDIER_FIELD_PIC = 13
-const MAXIE_FIELD_PIC = 9
-const LT_SURGE_FIELD_PIC = 14
 const OBJ_EVENT_ID_MAXIE = 20
 const OBJ_EVENT_ID_REBEL1 = 23
 const OBJ_EVENT_ID_REBEL2 = 19
@@ -31,8 +22,53 @@ const OBJ_EVENT_ID_REBEL3 = 24
 const OBJ_EVENT_ID_REBEL4 = 21
 const OBJ_EVENT_ID_REBEL5 = 22
 
-mapscripts Capital_MapScripts {}
 
+const GIO_FIELD_PIC = 10
+const MEWTWO_ARMOR_FIELD_PIC = 11
+const MEWTWO_FIELD_PIC = 15
+const CICERO_FIELD_PIC = 12
+const SOLDIER_FIELD_PIC = 13
+const MAXIE_FIELD_PIC = 9
+
+
+const LT_SURGE_FIELD_PIC = 14mapscripts Capital_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		call (Capital_OnTransition)
+	}
+}
+
+//What I want it to do is
+//if 0 then battle
+//if 5 then maxiescene
+//if greater than 5 
+script Capital_OnTransition {
+	if (var(VAR_CAPITAL_STATE) == 0) {
+		call (Capital_EventScript_ShowBattle)
+	} else {
+		call (Capital_EventScript_ShowMaxie)
+	}
+}
+
+script Capital_EventScript_ShowBattle {
+	removeobject (OBJ_EVENT_ID_MEWTWO)
+	return
+}
+
+script Capital_EventScript_ShowMaxie {
+	removeobject (OBJ_EVENT_ID_CICERO)
+	removeobject (OBJ_EVENT_ID_GIO)
+	removeobject (OBJ_EVENT_ID_MEWTWO_ARMOR)
+	removeobject (OBJ_EVENT_ID_PERSIAN)
+	removeobject (OBJ_EVENT_ID_SOLDIER1)
+	removeobject (OBJ_EVENT_ID_SOLDIER2)
+	removeobject (OBJ_EVENT_ID_SOLDIER3)
+	removeobject (OBJ_EVENT_ID_LT_SURGE)
+	setobjectxy (OBJ_EVENT_ID_MAXIE, 21, 6)
+	setobjectmovementtype (OBJ_EVENT_ID_MAXIE, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_ID_MAXIE, MAP_CAPITAL)
+	return
+}
+	
 script Capital_EventScript_DeskTest {
 	lock
 	if (flag(FLAG_FOLLOWER_ACTIVE)) {
@@ -488,10 +524,12 @@ script Capital_EventScript_GioPresident {
 	//Enter LT Surge
 	if (var(VAR_CAPITAL_STATE) < 3) {
 		setobjectxy (OBJ_EVENT_ID_LT_SURGE, 28, 5)
+		showobjectat (OBJ_EVENT_ID_LT_SURGE, MAP_CAPITAL)
 		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_SurgeR1)
 		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
 	} else {
 		setobjectxy (OBJ_EVENT_ID_LT_SURGE, 13, 5)
+		showobjectat (OBJ_EVENT_ID_LT_SURGE, MAP_CAPITAL)
 		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_SurgeL1)
 		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
 	}
@@ -556,12 +594,9 @@ script Capital_EventScript_GioPresident {
 
 	setflag(FLAG_CAPITAL_HIDE_ROCKETS)
 	call (Capital_EventScript_RemoveRockets)
-
-
-
+	
 	special (RemoveCameraObject)
 	setvar (VAR_CAPITAL_STATE, 5)
-	setflag (FLAG_CAPITAL_HIDE_ROCKETS)
 
 	return
 }
@@ -614,6 +649,10 @@ script Capital_EventScript_RebelsScenePlace {
 	setobjectxy (OBJ_EVENT_ID_REBEL2, 18, 36)
 	setobjectxy (OBJ_EVENT_ID_REBEL3, 23, 37)
 	setobjectxy (OBJ_EVENT_ID_REBEL4, 23, 36)
+	showobjectat (OBJ_EVENT_ID_REBEL1, MAP_CAPITAL)
+	showobjectat (OBJ_EVENT_ID_REBEL2, MAP_CAPITAL)
+	showobjectat (OBJ_EVENT_ID_REBEL3, MAP_CAPITAL)
+	showobjectat (OBJ_EVENT_ID_REBEL4, MAP_CAPITAL)
 	return
 }
 
@@ -631,6 +670,8 @@ script Capital_EventScript_MaxieScene {
 	
 	//position rebels for maxiescene
 	call (Capital_EventScript_RebelsScenePlace)
+
+	showobjectat (OBJ_EVENT_ID_MAXIE, MAP_CAPITAL)
 	
 	//player auto-walks down a bit
 	applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro)
@@ -727,6 +768,30 @@ script Capital_EventScript_MaxieScene {
 	setvar (VAR_CAPITAL_STATE, 10)
 
 	return
+}
+
+script Capital_EventScript_SoldierBattle {
+	lock
+	msgbox (Capital_Text_SoldierBattle)
+	closemessage
+	release
+	end
+}
+
+script Capital_EventScript_RebelBattle {
+	lockall
+	msgbox (Capital_Text_RebelBattle)
+	closemessage
+	releaseall
+	end
+}
+
+script Capital_EventScript_SurgeBattle {
+	lockall
+	msgbox(Capital_Text_SurgeBattle)
+	closemessage
+	releaseall
+	end
 }
 
 movement Capital_Movement_PanCamera1 {
@@ -1147,6 +1212,22 @@ text Capital_Text_Maxie4 {
 }
 
 text Capital_Text_Maxie5 {
-	format("Now forward to proclaim our nation!")
+	format("Now forward to declare our intentions!")
 }
+
+text Capital_Text_SoldierBattle {
+	format("You must leave now! The senate's underway!")
+}
+
+text Capital_Text_RebelBattle {
+	format("You'll never win! Freedom will always win!")
+}
+
+text Capital_Text_SurgeBattle {
+	format("Resistance is futile just give up!")
+}
+
+
+
+
 

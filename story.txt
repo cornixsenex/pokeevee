@@ -220,7 +220,6 @@ PoryZ*
 >Elevator Card Key
 >Tunnel to the Capital
 >Capital
->Fight the Senate
 >Leader makes his boast and MewTwo bails
 >Battle vs Boss (Evil types)
 	Houndoom
@@ -232,6 +231,13 @@ PoryZ*
 >Military shows up and promise to support the Boss still but they leave.
 >He claims this is a small set back, that he will reclaim MewTwo with his technology and you are nothing to him.
 >He leaves and Indy arrives, they won the battle for LA but PARTY BOSS fled to SF and no one knows where MEWTWO could have gone.
+
+
+
+
+
+
+
 >You need to go learn from the Ninjas how to sneak into the Military Base
 >Indy gives you the climbing boots and says the Ninjas hide out in the graveyard under the Highway. You can get there through the labyrinth but there's an easier way through the pass you need the boots for to the north west of SLABS
 >Graveyard

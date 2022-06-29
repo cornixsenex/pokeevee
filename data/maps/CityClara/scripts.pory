@@ -24,7 +24,6 @@ script CityClara_OnTransition {
 	end
 }
 
-
 script CityClara_EventScript_ClubSign {	
 	lock
 	msgbox (CityClara_Text_ClubSign)
