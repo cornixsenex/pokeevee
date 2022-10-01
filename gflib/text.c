@@ -73,7 +73,7 @@ static const u8 sDarkDownArrowTiles[] = INCBIN_U8("graphics/fonts/down_arrow_alt
 static const u8 sUnusedFRLGBlankedDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_blanked_down_arrow.4bpp");
 static const u8 sUnusedFRLGDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_down_arrow.4bpp");
 static const u8 sDownArrowYCoords[] = { 0, 1, 2, 1 };
-static const u8 sWindowVerticalScrollSpeeds[] = { 
+static const u8 sWindowVerticalScrollSpeeds[] = {
     [OPTIONS_TEXT_SPEED_SLOW] = 1,
     [OPTIONS_TEXT_SPEED_MID] = 2,
     [OPTIONS_TEXT_SPEED_FAST] = 4,
@@ -299,7 +299,7 @@ bool16 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, voi
     else
     {
         sTempTextPrinter.textSpeed = 0;
-        
+
         // Render all text (up to limit) at once
         for (j = 0; j < 0x400; ++j)
         {
@@ -652,7 +652,7 @@ void ClearTextSpan(struct TextPrinter *textPrinter, u32 width)
     struct Window *window;
     struct Bitmap pixels_data;
     struct TextGlyph *glyph;
-    u8* glyphHeight;
+    u8 *glyphHeight;
 
     if (sLastTextBgColor != TEXT_COLOR_TRANSPARENT)
     {
@@ -1690,7 +1690,7 @@ u8 GetMenuCursorDimensionByFont(u8 fontId, u8 whichDimension)
 
 static void DecompressGlyph_Small(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == 1)
     {
@@ -1732,7 +1732,7 @@ static u32 GetGlyphWidth_Small(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
@@ -1774,7 +1774,7 @@ static u32 GetGlyphWidth_Narrow(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_SmallNarrow(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
@@ -1816,7 +1816,7 @@ static u32 GetGlyphWidth_SmallNarrow(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Short(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
@@ -1860,7 +1860,7 @@ static u32 GetGlyphWidth_Short(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Normal(u16 glyphId, bool32 isJapanese)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     if (isJapanese == TRUE)
     {
@@ -1902,7 +1902,7 @@ static u32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese)
 
 static void DecompressGlyph_Bold(u16 glyphId)
 {
-    const u16* glyphs;
+    const u16 *glyphs;
 
     glyphs = sFontBoldJapaneseGlyphs + (0x100 * (glyphId >> 4)) + (0x8 * (glyphId & 0xF));
     DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);

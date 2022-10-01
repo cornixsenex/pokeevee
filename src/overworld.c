@@ -128,9 +128,9 @@ static void CreateLinkPlayerSprites(void);
 static void ClearAllPlayerKeys(void);
 static void ResetAllPlayerLinkStates(void);
 static void UpdateHeldKeyCode(u16);
-static void UpdateAllLinkPlayers(u16*, s32);
+static void UpdateAllLinkPlayers(u16 *, s32);
 static u8 FlipVerticalAndClearForced(u8, u8);
-static u8 LinkPlayerDetectCollision(u8, u8, s16, s16);
+static u8 LinkPlayerGetCollision(u8, u8, s16, s16);
 static void CreateLinkPlayerSprite(u8, u8);
 static void GetLinkPlayerCoords(u8, u16 *, u16 *);
 static u8 GetLinkPlayerFacingDirection(u8);
@@ -361,7 +361,7 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
-    ScriptContext2_RunNewScript(EventScript_WhiteOut);
+    RunScriptImmediately(EventScript_WhiteOut);
     #if B_WHITEOUT_MONEY == GEN_3
     SetMoney(&gSaveBlock1Ptr->money, GetMoney(&gSaveBlock1Ptr->money) / 2);
     #endif
@@ -389,7 +389,7 @@ void Overworld_ResetStateAfterTeleport(void)
     FlagClear(FLAG_SYS_SAFARI_MODE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
-    ScriptContext2_RunNewScript(EventScript_ResetMrBriney);
+    RunScriptImmediately(EventScript_ResetMrBriney);
 }
 
 void Overworld_ResetStateAfterDigEscRope(void)
@@ -410,9 +410,9 @@ static void Overworld_ResetStateAfterWhiteOut(void)
     FlagClear(FLAG_SYS_SAFARI_MODE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
-    #if VAR_TERRAIN != 0
-        VarSet(VAR_TERRAIN, 0);
-    #endif
+#if VAR_TERRAIN != 0
+    VarSet(VAR_TERRAIN, 0);
+#endif
     // If you were defeated by Kyogre/Groudon and the step counter has
     // maxed out, end the abnormal weather.
     if (VarGet(VAR_SHOULD_END_ABNORMAL_WEATHER) == 1)
@@ -1443,11 +1443,11 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     UpdatePlayerAvatarTransitionState();
     FieldClearPlayerInput(&inputStruct);
     FieldGetPlayerInput(&inputStruct, newKeys, heldKeys);
-    if (!ScriptContext2_IsEnabled())
+    if (!ArePlayerFieldControlsLocked())
     {
         if (ProcessPlayerFieldInput(&inputStruct) == 1)
         {
-            ScriptContext2_Enable();
+            LockPlayerFieldControls();
             HideMapNamePopUpWindow();
         }
         else
@@ -1469,7 +1469,7 @@ void CB1_Overworld(void)
 
 static void OverworldBasic(void)
 {
-    ScriptContext2_RunScript();
+    ScriptContext_RunScript();
     RunTasks();
     AnimateSprites();
     CameraUpdate();
@@ -1542,8 +1542,9 @@ void CB2_NewGame(void)
     NewGameInitData();
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
-    ScriptContext1_Init();
-    ScriptContext2_Disable();
+    ScriptContext_Init();
+    UnlockPlayerFieldControls();
+	//This is disables to allow the custom game to load over Emerald
     //gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
@@ -1563,8 +1564,8 @@ void CB2_WhiteOut(void)
         ResetSafariZoneFlag_();
         DoWhiteOut();
         ResetInitialPlayerAvatarState();
-        ScriptContext1_Init();
-        ScriptContext2_Disable();
+        ScriptContext_Init();
+        UnlockPlayerFieldControls();
         gFieldCallback = FieldCB_WarpExitFadeFromBlack;
         state = 0;
         DoMapLoadLoop(&state);
@@ -1577,8 +1578,8 @@ void CB2_WhiteOut(void)
 void CB2_LoadMap(void)
 {
     FieldClearVBlankHBlankCallbacks();
-    ScriptContext1_Init();
-    ScriptContext2_Disable();
+    ScriptContext_Init();
+    UnlockPlayerFieldControls();
     SetMainCallback1(NULL);
     SetMainCallback2(CB2_DoChangeMap);
     gMain.savedCallback = CB2_LoadMap2;
@@ -1597,8 +1598,8 @@ void CB2_ReturnToFieldContestHall(void)
     if (!gMain.state)
     {
         FieldClearVBlankHBlankCallbacks();
-        ScriptContext1_Init();
-        ScriptContext2_Disable();
+        ScriptContext_Init();
+        UnlockPlayerFieldControls();
         SetMainCallback1(NULL);
     }
     if (LoadMapInStepsLocal(&gMain.state, TRUE))
@@ -1667,8 +1668,8 @@ void CB2_ReturnToFieldFromMultiplayer(void)
     else
         gFieldCallback = FieldCB_ReturnToFieldCableLink;
 
-    ScriptContext1_Init();
-    ScriptContext2_Disable();
+    ScriptContext_Init();
+    UnlockPlayerFieldControls();
     CB2_ReturnToField();
 }
 
@@ -1738,8 +1739,8 @@ void CB2_ContinueSavedGame(void)
         InitMapFromSavedGame();
 
     PlayTimeCounter_Start();
-    ScriptContext1_Init();
-    ScriptContext2_Disable();
+    ScriptContext_Init();
+    UnlockPlayerFieldControls();
     InitMatchCallCounters();
     if (UseContinueGameWarp() == TRUE)
     {
@@ -1818,8 +1819,8 @@ static bool32 LoadMapInStepsLink(u8 *state)
     {
     case 0:
         InitOverworldBgs();
-        ScriptContext1_Init();
-        ScriptContext2_Disable();
+        ScriptContext_Init();
+        UnlockPlayerFieldControls();
         ResetMirageTowerAndSaveBlockPtrs();
         ResetScreenForMapLoad();
         (*state)++;
@@ -2518,7 +2519,7 @@ static void ResetPlayerHeldKeys(u16 *keys)
 
 static u16 KeyInterCB_SelfIdle(u32 key)
 {
-    if (ScriptContext2_IsEnabled() == TRUE)
+    if (ArePlayerFieldControlsLocked() == TRUE)
         return LINK_KEY_CODE_EMPTY;
     if (GetLinkRecvQueueLength() > 4)
         return LINK_KEY_CODE_HANDLE_RECV_QUEUE;
@@ -2533,12 +2534,11 @@ static u16 KeyInterCB_Idle(u32 key)
     return LINK_KEY_CODE_EMPTY;
 }
 
-// Ignore the player's inputs as long as there is an event script
-// in ScriptContext2.
+// Ignore the player's inputs as long as there is an event script being executed.
 static u16 KeyInterCB_DeferToEventScript(u32 key)
 {
     u16 retVal;
-    if (ScriptContext2_IsEnabled() == TRUE)
+    if (ArePlayerFieldControlsLocked() == TRUE)
     {
         retVal = LINK_KEY_CODE_EMPTY;
     }
@@ -2561,7 +2561,7 @@ static u16 KeyInterCB_DeferToRecvQueue(u32 key)
     else
     {
         retVal = LINK_KEY_CODE_IDLE;
-        ScriptContext2_Disable();
+        UnlockPlayerFieldControls();
         SetKeyInterceptCallback(KeyInterCB_Idle);
     }
     return retVal;
@@ -2578,7 +2578,7 @@ static u16 KeyInterCB_DeferToSendQueue(u32 key)
     else
     {
         retVal = LINK_KEY_CODE_IDLE;
-        ScriptContext2_Disable();
+        UnlockPlayerFieldControls();
         SetKeyInterceptCallback(KeyInterCB_Idle);
     }
     return retVal;
@@ -2631,7 +2631,7 @@ static u16 KeyInterCB_WaitForPlayersToExit(u32 keyOrPlayerId)
         CheckRfuKeepAliveTimer();
     if (AreAllPlayersInLinkState(PLAYER_LINK_STATE_EXITING_ROOM) == TRUE)
     {
-        ScriptContext1_SetupScript(EventScript_DoLinkRoomExit);
+        ScriptContext_SetupScript(EventScript_DoLinkRoomExit);
         SetKeyInterceptCallback(KeyInterCB_SendNothing);
     }
     return LINK_KEY_CODE_EMPTY;
@@ -2810,41 +2810,41 @@ static u16 GetDirectionForEventScript(const u8 *script)
 
 static void InitLinkPlayerQueueScript(void)
 {
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
 }
 
 static void InitLinkRoomStartMenuScript(void)
 {
     PlaySE(SE_WIN_OPEN);
     ShowStartMenu();
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
 }
 
 static void RunInteractLocalPlayerScript(const u8 *script)
 {
     PlaySE(SE_SELECT);
-    ScriptContext1_SetupScript(script);
-    ScriptContext2_Enable();
+    ScriptContext_SetupScript(script);
+    LockPlayerFieldControls();
 }
 
 static void RunConfirmLeaveCableClubScript(void)
 {
     PlaySE(SE_WIN_OPEN);
-    ScriptContext1_SetupScript(EventScript_ConfirmLeaveCableClubRoom);
-    ScriptContext2_Enable();
+    ScriptContext_SetupScript(EventScript_ConfirmLeaveCableClubRoom);
+    LockPlayerFieldControls();
 }
 
 static void InitMenuBasedScript(const u8 *script)
 {
     PlaySE(SE_SELECT);
-    ScriptContext1_SetupScript(script);
-    ScriptContext2_Enable();
+    ScriptContext_SetupScript(script);
+    LockPlayerFieldControls();
 }
 
 static void RunTerminateLinkScript(void)
 {
-    ScriptContext1_SetupScript(EventScript_TerminateLink);
-    ScriptContext2_Enable();
+    ScriptContext_SetupScript(EventScript_TerminateLink);
+    LockPlayerFieldControls();
 }
 
 bool32 Overworld_IsRecvQueueAtMax(void)
@@ -2936,7 +2936,7 @@ static void ZeroObjectEvent(struct ObjectEvent *objEvent)
 // conflict with the usual Event Object struct, thus the definitions.
 #define linkGender(obj) obj->singleMovementActive
 // not even one can reference *byte* aligned bitfield members...
-#define linkDirection(obj) ((u8*)obj)[offsetof(typeof(*obj), fieldEffectSpriteId) - 1] // -> rangeX
+#define linkDirection(obj) ((u8 *)obj)[offsetof(typeof(*obj), fieldEffectSpriteId) - 1] // -> rangeX
 
 static void SpawnLinkPlayerObjectEvent(u8 linkPlayerId, s16 x, s16 y, u8 gender)
 {
@@ -3100,7 +3100,7 @@ static bool8 FacingHandler_DpadMovement(struct LinkPlayerObjectEvent *linkPlayer
     linkDirection(objEvent) = FlipVerticalAndClearForced(dir, linkDirection(objEvent));
     ObjectEventMoveDestCoords(objEvent, linkDirection(objEvent), &x, &y);
 
-    if (LinkPlayerDetectCollision(linkPlayerObjEvent->objEventId, linkDirection(objEvent), x, y))
+    if (LinkPlayerGetCollision(linkPlayerObjEvent->objEventId, linkDirection(objEvent), x, y))
     {
         return FALSE;
     }
@@ -3160,7 +3160,7 @@ static u8 FlipVerticalAndClearForced(u8 newFacing, u8 oldFacing)
     return oldFacing;
 }
 
-static bool8 LinkPlayerDetectCollision(u8 selfObjEventId, u8 direction, s16 x, s16 y)
+static u8 LinkPlayerGetCollision(u8 selfObjEventId, u8 direction, s16 x, s16 y)
 {
     u8 i;
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
@@ -3170,11 +3170,11 @@ static bool8 LinkPlayerDetectCollision(u8 selfObjEventId, u8 direction, s16 x, s
             if ((gObjectEvents[i].currentCoords.x == x && gObjectEvents[i].currentCoords.y == y)
              || (gObjectEvents[i].previousCoords.x == x && gObjectEvents[i].previousCoords.y == y))
             {
-                return TRUE;
+                return 1;
             }
         }
     }
-    return MapGridIsImpassableAt(x, y);
+    return MapGridGetCollisionAt(x, y);
 }
 
 static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
@@ -3222,7 +3222,7 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
     else
         StartSpriteAnimIfDifferent(sprite, GetMoveDirectionAnimNum(linkDirection(objEvent)));
 
-    UpdateObjectEventSpriteInvisibility(sprite, 0);
+    UpdateObjectEventSpriteInvisibility(sprite, FALSE);
     if (objEvent->triggerGroundEffectsOnMove)
     {
         sprite->invisible = ((sprite->data[7] & 4) >> 2);

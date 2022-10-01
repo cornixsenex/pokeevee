@@ -2390,7 +2390,7 @@ s32 GetGameProgressForLinkTrade(void)
     s32 isGameFrLg;
     u16 version;
 
-    if (gReceivedRemoteLinkPlayers != 0)
+    if (gReceivedRemoteLinkPlayers)
     {
         isGameFrLg = 0;
         version = (gLinkPlayers[GetMultiplayerId() ^ 1].version & 0xFF);
@@ -2464,7 +2464,7 @@ int GetUnionRoomTradeMessageId(struct RfuGameCompatibilityData player, struct Rf
     else
     {
         // Player's Pokémon must be of the type the partner requested
-        if (gBaseStats[playerSpecies2].type1 != requestedType 
+        if (gBaseStats[playerSpecies2].type1 != requestedType
          && gBaseStats[playerSpecies2].type2 != requestedType)
             return UR_TRADE_MSG_NOT_MON_PARTNER_WANTS;
     }
@@ -2737,7 +2737,7 @@ static void LoadTradeMonPic(u8 whichParty, u8 state)
         species = GetMonData(mon, MON_DATA_SPECIES2);
         personality = GetMonData(mon, MON_DATA_PERSONALITY);
 
-        HandleLoadSpecialPokePic(&gMonFrontPicTable[species], gMonSpritesGfxPtr->sprites.ptr[whichParty * 2 + B_POSITION_OPPONENT_LEFT], species, personality);
+        HandleLoadSpecialPokePic(TRUE, gMonSpritesGfxPtr->sprites.ptr[whichParty * 2 + B_POSITION_OPPONENT_LEFT], species, personality);
 
         LoadCompressedSpritePalette(GetMonSpritePalStruct(mon));
         sTradeData->monSpecies[whichParty] = species;
@@ -3730,7 +3730,7 @@ static bool8 AnimateTradeSequenceCable(void)
     case TS_STATE_POKEBALL_ARRIVE_WAIT:
         if (gSprites[sTradeData->bouncingPokeballSpriteId].callback == SpriteCallbackDummy)
         {
-            HandleLoadSpecialPokePic(&gMonFrontPicTable[sTradeData->monSpecies[TRADE_PARTNER]], gMonSpritesGfxPtr->sprites.ptr[B_POSITION_OPPONENT_RIGHT], sTradeData->monSpecies[TRADE_PARTNER], sTradeData->monPersonalities[TRADE_PARTNER]);
+            HandleLoadSpecialPokePic(TRUE, gMonSpritesGfxPtr->sprites.ptr[B_POSITION_OPPONENT_RIGHT], sTradeData->monSpecies[TRADE_PARTNER], sTradeData->monPersonalities[TRADE_PARTNER]);
             sTradeData->state++;
         }
         break;
@@ -4227,7 +4227,7 @@ static bool8 AnimateTradeSequenceWireless(void)
     case TS_STATE_POKEBALL_ARRIVE_WAIT:
         if (gSprites[sTradeData->bouncingPokeballSpriteId].callback == SpriteCallbackDummy)
         {
-            HandleLoadSpecialPokePic(&gMonFrontPicTable[sTradeData->monSpecies[TRADE_PARTNER]],
+            HandleLoadSpecialPokePic(TRUE,
                                       gMonSpritesGfxPtr->sprites.ptr[B_POSITION_OPPONENT_RIGHT],
                                       sTradeData->monSpecies[TRADE_PARTNER],
                                       sTradeData->monPersonalities[TRADE_PARTNER]);
@@ -4704,7 +4704,7 @@ static void CB2_SaveAndEndTrade(void)
     case 42:
         if (_IsLinkTaskFinished())
         {
-            LinkFullSave_SetLastSectorSecurity();
+            LinkFullSave_SetLastSectorSignature();
             gMain.state = 5;
         }
         break;
@@ -4790,7 +4790,7 @@ static void CB2_FreeTradeData(void)
 
 void DoInGameTradeScene(void)
 {
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
     CreateTask(Task_InGameTrade, 10);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
 }
@@ -4817,7 +4817,7 @@ static void CheckPartnersMonForRibbons(void)
         FlagSet(FLAG_SYS_RIBBON_GET);
 }
 
-void InitTradeBg(void)
+void LoadTradeAnimGfx(void)
 {
     InitTradeBgInternal();
 }
@@ -5008,7 +5008,7 @@ static void CB2_SaveAndEndWirelessTrade(void)
     case 8:
         if (_IsLinkTaskFinished())
         {
-            LinkFullSave_SetLastSectorSecurity();
+            LinkFullSave_SetLastSectorSignature();
             gMain.state = 9;
         }
         break;
