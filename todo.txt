@@ -2,3 +2,4 @@ Elevator notifications
 House interiors
 Wall collisions
 Movie Theater in Smokeland
+Add MOVE_ROCK_CLIMB to src/data/pokemon/teachable_learnsets.h

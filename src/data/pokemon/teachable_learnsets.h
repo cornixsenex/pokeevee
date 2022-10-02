@@ -112,6 +112,7 @@ static const u16 sVenusaurTeachableLearnset[] = {
     MOVE_SUBSTITUTE,
     MOVE_SWAGGER,
     MOVE_SWORDS_DANCE,
+	MOVE_ROCK_CLIMB,
     MOVE_UNAVAILABLE,
 };
 
@@ -6298,6 +6299,7 @@ static const u16 sMewTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
+	MOVE_ROCK_CLIMB,
     MOVE_UNAVAILABLE,
 };
 

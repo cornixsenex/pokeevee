@@ -51,6 +51,13 @@ LoonixHills_Script_GiftBall_14:
 	goto LoonixHills_Script_GiftBall_13
 
 
+LoonixHills_Script_RockClimb::
+	lock
+	giveitem ITEM_HM08_DIVE
+	release
+	end
+
+
 LoonixHills_Script_DialgaFanfare::
 	bufferspeciesname 1, SPECIES_DIALGA
 	playfanfare MUS_OBTAIN_ITEM
