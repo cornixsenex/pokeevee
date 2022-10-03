@@ -1,1 +1,30 @@
 mapscripts GatoCityS_MapScripts {}
+
+script GatoCityS_WatchSeller {
+	lock 
+	msgbox (GatoCityS_Text_WatchSeller1)
+	waitmessage
+	pokemart(GatoCityS_Mart_WatchSeller)
+	msgbox (GatoCityS_Text_WatchSeller2)
+	release
+	end
+}
+
+mart GatoCityS_Mart_WatchSeller {
+	ITEM_LAVA_COOKIE
+	ITEM_MOOMOO_MILK
+	ITEM_RARE_CANDY
+	ITEM_LEMONADE
+	ITEM_BERRY_JUICE
+}
+
+text GatoCityS_Text_WatchSeller1 {
+	format("Hey kid, you wanna buy a watch? Come here.")
+}
+
+text GatoCityS_Text_WatchSeller2 {
+	format("You don't know who I am! We never talked...")
+}
+
+
+
