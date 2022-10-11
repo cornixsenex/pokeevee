@@ -45,28 +45,28 @@ static const u32 sPic4Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blue_1_fr
 static const u16 sPic4Pal[] = INCBIN_U16("graphics/trainers/palettes/blue.gbapal");
 
 //Leaf Battle = 4
-static const u32 sPic5Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leaf_front_pic.4bpp.lz");
-static const u16 sPic5Pal[] = INCBIN_U16("graphics/trainers/palettes/leaf.gbapal");
+static const u32 sPic5Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leaf.4bpp.lz");
+static const u16 sPic5Pal[] = INCBIN_U16("graphics/trainers/front_pics/leaf.gbapal.lz");
 
 //Leaf's Dad = 5
-static const u32 sPic6Gfx[] = INCBIN_U32("graphics/trainers/front_pics/running_triathlete_m_front_pic.4bpp.lz");
-static const u16 sPic6Pal[] = INCBIN_U16("graphics/trainers/palettes/running_triathlete_m.gbapal");
+static const u32 sPic6Gfx[] = INCBIN_U32("graphics/trainers/front_pics/cycling_triathlete_m.4bpp.lz");
+static const u16 sPic6Pal[] = INCBIN_U16("graphics/trainers/front_pics/cycling_triathlete_m.gbapal.lz");
 
 //Sage = 6
-static const u32 sPic7Gfx[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_glacia_front_pic.4bpp.lz");
-static const u16 sPic7Pal[] = INCBIN_U16("graphics/trainers/palettes/elite_four_glacia.gbapal");
+static const u32 sPic7Gfx[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_glacia.4bpp.lz");
+static const u16 sPic7Pal[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_glacia.gbapal.lz");
 
 //Blaine = 7
 static const u32 sPic8Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blaine_front_pic.4bpp.lz");
 static const u16 sPic8Pal[] = INCBIN_U16("graphics/trainers/palettes/blaine.gbapal");
 
 //Indy = 8
-static const u32 sPic9Gfx[] = INCBIN_U32("graphics/trainers/front_pics/factory_head_noland_front_pic.4bpp.lz");
-static const u16 sPic9Pal[] = INCBIN_U16("graphics/trainers/palettes/factory_head_noland.gbapal");
+static const u32 sPic9Gfx[] = INCBIN_U32("graphics/trainers/front_pics/factory_head_noland.4bpp.lz");
+static const u16 sPic9Pal[] = INCBIN_U16("graphics/trainers/front_pics/factory_head_noland.gbapal.lz");
 
 //Maxie = 9
-static const u32 sPic10Gfx[] = INCBIN_U32("graphics/trainers/front_pics/magma_leader_maxie_front_pic.4bpp.lz");
-static const u16 sPic10Pal[] = INCBIN_U16("graphics/trainers/palettes/magma_leader_maxie.gbapal");
+static const u32 sPic10Gfx[] = INCBIN_U32("graphics/trainers/front_pics/magma_leader_maxie.4bpp.lz");
+static const u16 sPic10Pal[] = INCBIN_U16("graphics/trainers/front_pics/magma_leader_maxie.gbapal.lz");
 
 //Gio = 10
 static const u32 sPic11Gfx[] = INCBIN_U32("graphics/trainers/front_pics/giovanni_front_pic.4bpp.lz");

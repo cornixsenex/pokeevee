@@ -6210,6 +6210,8 @@ static const u16 sMewtwoTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+// Instead of reading this array for Mew, it checks for exceptions in CanLearnTeachableMove instead.
+// NOTE: I'm finna leave this array here but I do think it's not doing anything...so yeh -cornix
 static const u16 sMewTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
@@ -16205,8 +16207,7 @@ static const u16 sDeoxysTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_NEW_POKEMON == TRUE
-
+#if P_GEN_4_POKEMON == TRUE
 static const u16 sTurtwigTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BULLET_SEED,
@@ -20328,7 +20329,9 @@ static const u16 sArceusTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_5_POKEMON == TRUE
 static const u16 sVictiniTeachableLearnset[] = {
     MOVE_BRICK_BREAK,
     MOVE_DOUBLE_TEAM,
@@ -25419,7 +25422,9 @@ static const u16 sGenesectTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_6_POKEMON == TRUE
 static const u16 sChespinTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
@@ -27828,7 +27833,9 @@ static const u16 sVolcanionTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_7_POKEMON == TRUE
 static const u16 sRowletTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_DOUBLE_TEAM,
@@ -30210,7 +30217,9 @@ static const u16 sMelmetalTeachableLearnset[] = {
     MOVE_HIDDEN_POWER,
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_8_POKEMON == TRUE
 static const u16 sGrookeyTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_FACADE,
@@ -32122,6 +32131,7 @@ static const u16 sOverqwilTeachableLearnset[] = {
 static const u16 sEnamorusTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
+#endif
 
 static const u16 sRattataAlolanTeachableLearnset[] = {
     MOVE_BLIZZARD,
@@ -32851,6 +32861,7 @@ static const u16 sLinooneGalarianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+#if P_GEN_5_POKEMON == TRUE
 static const u16 sDarumakaGalarianTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
@@ -32960,6 +32971,7 @@ static const u16 sStunfiskGalarianTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
+#endif
 
 static const u16 sGrowlitheHisuianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
@@ -32989,6 +33001,7 @@ static const u16 sSneaselHisuianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+#if P_GEN_5_POKEMON == TRUE
 static const u16 sSamurottHisuianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
@@ -33008,7 +33021,9 @@ static const u16 sZoroarkHisuianTeachableLearnset[] = {
 static const u16 sBraviaryHisuianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_6_POKEMON == TRUE
 static const u16 sSliggooHisuianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
@@ -33020,11 +33035,12 @@ static const u16 sGoodraHisuianTeachableLearnset[] = {
 static const u16 sAvaluggHisuianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_7_POKEMON == TRUE
 static const u16 sDecidueyeHisuianTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
-
 #endif
 
 static const u16 sDeoxysAttackTeachableLearnset[] = {
@@ -33147,8 +33163,7 @@ static const u16 sDeoxysSpeedTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_NEW_POKEMON == TRUE
-
+#if P_GEN_4_POKEMON == TRUE
 static const u16 sBurmySandyCloakTeachableLearnset[] = {
     MOVE_HIDDEN_POWER,
     MOVE_PROTECT,
@@ -33282,7 +33297,9 @@ static const u16 sShayminSkyTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_6_POKEMON == TRUE
 static const u16 sFloetteEternalFlowerTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_CALM_MIND,
@@ -33375,7 +33392,9 @@ static const u16 sMeowsticFemaleTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_7_POKEMON == TRUE
 static const u16 sLycanrocMidnightTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
@@ -33413,7 +33432,9 @@ static const u16 sLycanrocDuskTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_UNAVAILABLE,
 };
+#endif
 
+#if P_GEN_8_POKEMON == TRUE
 static const u16 sToxtricityLowKeyTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_FACADE,
@@ -33554,5 +33575,4 @@ static const u16 sCalyrexShadowRiderTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
-
 #endif
