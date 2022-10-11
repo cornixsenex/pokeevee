@@ -154,7 +154,6 @@
 #define DIR_NORTHWEST   7
 #define DIR_NORTHEAST   8
 
-//#define FOLLOW_ME_IMPLEMENTED       FALSE
 #define SLOW_MOVEMENT_ON_STAIRS         TRUE
 #define FOLLOW_ME_IMPLEMENTED           FALSE    //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
 #define DYNAMIC_OW_PALS         TRUE
