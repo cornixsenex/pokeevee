@@ -267,6 +267,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker = {TAG_NONE,
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lt_Surge = {TAG_NONE, OBJ_EVENT_PAL_TAG_LT_SURGE, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Lt_Surge, gDummySpriteAffineAnimTable};
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty = {TAG_NONE, OBJ_EVENT_PAL_TAG_MISTY, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Misty, gDummySpriteAffineAnimTable};
+
 
 
 

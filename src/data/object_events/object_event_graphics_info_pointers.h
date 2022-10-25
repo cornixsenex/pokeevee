@@ -1128,6 +1128,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lt_Surge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MewtwoArmor;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 
 
 
@@ -1371,19 +1372,20 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_LORELEI] =                  &gObjectEventGraphicsInfo_Lorelei,
     [OBJ_EVENT_GFX_BLAINE] =                   &gObjectEventGraphicsInfo_Blaine,
     [OBJ_EVENT_GFX_JESSIE] =                   &gObjectEventGraphicsInfo_Jessie,
-    [OBJ_EVENT_GFX_JAMES] =                   &gObjectEventGraphicsInfo_James,    
+    [OBJ_EVENT_GFX_JAMES] =                    &gObjectEventGraphicsInfo_James,    
 	[OBJ_EVENT_GFX_MEOWTH] =                   &gObjectEventGraphicsInfo_Meowth,
-	[OBJ_EVENT_GFX_SOLDIER] =                   &gObjectEventGraphicsInfo_Soldier,
-	[OBJ_EVENT_GFX_BIKER] =                   &gObjectEventGraphicsInfo_Biker,
-	[OBJ_EVENT_GFX_CHANNELER] =                   &gObjectEventGraphicsInfo_Channeler,
-	[OBJ_EVENT_GFX_CHEF] =                   &gObjectEventGraphicsInfo_Chef,
-	[OBJ_EVENT_GFX_POLICEMAN] =                   &gObjectEventGraphicsInfo_Policeman,
-	[OBJ_EVENT_GFX_PROF_OAK] =                   &gObjectEventGraphicsInfo_ProfOak,
+	[OBJ_EVENT_GFX_SOLDIER] =                  &gObjectEventGraphicsInfo_Soldier,
+	[OBJ_EVENT_GFX_BIKER] =                    &gObjectEventGraphicsInfo_Biker,
+	[OBJ_EVENT_GFX_CHANNELER] =                &gObjectEventGraphicsInfo_Channeler,
+	[OBJ_EVENT_GFX_CHEF] =                     &gObjectEventGraphicsInfo_Chef,
+	[OBJ_EVENT_GFX_POLICEMAN] =                &gObjectEventGraphicsInfo_Policeman,
+	[OBJ_EVENT_GFX_PROF_OAK] =                 &gObjectEventGraphicsInfo_ProfOak,
 	[OBJ_EVENT_GFX_ROCKER] =                   &gObjectEventGraphicsInfo_Rocker,
-	[OBJ_EVENT_GFX_YOUNGSTER2] =                   &gObjectEventGraphicsInfo_Youngster2,
+	[OBJ_EVENT_GFX_YOUNGSTER2] =               &gObjectEventGraphicsInfo_Youngster2,
 	[OBJ_EVENT_GFX_WORKER] =                   &gObjectEventGraphicsInfo_Worker,
-	[OBJ_EVENT_GFX_MEWTWO_ARMOR] =                   &gObjectEventGraphicsInfo_MewtwoArmor,
-	[OBJ_EVENT_GFX_LT_SURGE] =                   &gObjectEventGraphicsInfo_Lt_Surge,
+	[OBJ_EVENT_GFX_MEWTWO_ARMOR] =             &gObjectEventGraphicsInfo_MewtwoArmor,
+	[OBJ_EVENT_GFX_LT_SURGE] =                 &gObjectEventGraphicsInfo_Lt_Surge,
+	[OBJ_EVENT_GFX_MISTY]   =			   	   &gObjectEventGraphicsInfo_Misty,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 
