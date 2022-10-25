@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_LOONIX",
       "offset": -12,
-      "map": "MAP_LOONIX"
+      "direction": "right"
     },
     {
-      "direction": "left",
+      "map": "MAP_LOONIX_HILLS",
       "offset": 0,
-      "map": "MAP_LOONIX_HILLS"
+      "direction": "left"
     }
   ],
   "object_events": [
