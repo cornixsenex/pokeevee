@@ -4664,7 +4664,7 @@
     {
       "id": "LAYOUT_ELICIUS_BEACH",
       "name": "EliciusBeach_Layout",
-      "width": 40,
+      "width": 42,
       "height": 56,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
