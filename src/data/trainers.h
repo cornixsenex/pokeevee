@@ -1479,11 +1479,11 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Gio1},
     },
 
-    [TRAINER_VALERIE_3] =
+    [TRAINER_MISTY] =
     {
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerPic = TRAINER_PIC_MISTY2,
         .trainerName = _("VALERIE"),
         .items = {},
         .doubleBattle = FALSE,

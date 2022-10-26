@@ -1,1 +1,38 @@
 mapscripts EliciusBeach_MapScripts {}
+
+
+
+script EliciusBeach_EventScript_Misty {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_MISTY)) {
+		trainerbattle_single(TRAINER_MISTY, EliciusBeach_Text_MistyIntro, EliciusBeach_Text_MistyLost)
+	}
+	msgbox (EliciusBeach_Text_MistyPost)
+	release
+}
+
+
+
+
+
+text EliciusBeach_Text_MistyIntro {
+	format("Lets battle")
+}
+
+
+
+text EliciusBeach_Text_MistyLost {
+	format("I've lost")
+}
+
+
+text EliciusBeach_Text_MistyPost {
+	format("You've already beaten me")
+}
+
+
+
+
+
+
