@@ -92,6 +92,11 @@ static const u16 sPic15Pal[] = INCBIN_U16("graphics/trainers/palettes/lt_surge.g
 static const u32 sPic16Gfx[] = INCBIN_U32("graphics/pokemon/mewtwo/anim_front.4bpp.lz");
 static const u16 sPic16Pal[] = INCBIN_U16("graphics/pokemon/mewtwo/normal.gbapal");
 
+//Rival2 = 16
+static const u32 sPic17Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blue2_front_pic.4bpp.lz");
+static const u16 sPic17Pal[] = INCBIN_U16("graphics/trainers/palettes/blue2.gbapal");
+
+
 /* And this is an example script.
 
 
@@ -120,7 +125,7 @@ static const struct Pic sPics[] =
     {sPic2Gfx, sPic2Pal, SPRITE_SHAPE(16x16), SPRITE_SIZE(16x16)},
 	//Gma shit
     {sPic3Gfx, sPic3Pal, SPRITE_SHAPE(16x32), SPRITE_SIZE(16x32)},
-	//Blue
+	//Blue - Chad Pose
     {sPic4Gfx, sPic4Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Leaf
     {sPic5Gfx, sPic5Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
@@ -147,6 +152,8 @@ static const struct Pic sPics[] =
 	//Mewtwo
     //{sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
     {sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//BLUE2 - Manic Pose
+    {sPic17Gfx, sPic17Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

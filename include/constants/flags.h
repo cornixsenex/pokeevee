@@ -97,17 +97,18 @@
 #define FLAG_SYS_NO_TRAINER_SEE  0x4F
 
 // Scripts
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
-#define FLAG_SET_WALL_CLOCK                      0x51
-#define FLAG_RESCUED_BIRCH                       0x52
-#define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
+#define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
+#define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
+												  ////BREAK
+#define FLAG_RESCUED_BIRCH                   0x52
+#define FLAG_LEGENDARIES_IN_SOOTOPOLIS       0x53
 
 #define FLAG_FOLLOWER_ALT_APPROACH           0x54  // Give alternate route to follower in cutscenes
 #define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_AVAILABLE             			 0x57  //OOPS
-#define FLAG_ROUTE10_HIDE_KRABBY       0x58
+#define FLAG_ROUTE10_HIDE_KRABBY             0x58
 #define FLAG_DECLINED_BIKE                   0x59
 #define FLAG_RECEIVED_BIKE                   0x5A
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B

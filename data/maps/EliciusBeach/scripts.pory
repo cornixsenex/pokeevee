@@ -1,3 +1,8 @@
+
+
+const OBJ_EVENT_ID_MISTY = 1
+
+
 mapscripts EliciusBeach_MapScripts {}
 
 
@@ -5,16 +10,39 @@ mapscripts EliciusBeach_MapScripts {}
 script EliciusBeach_EventScript_Misty {
 	lock
 	faceplayer
-	if (!defeated(TRAINER_MISTY)) {
-		trainerbattle_single(TRAINER_MISTY, EliciusBeach_Text_MistyIntro, EliciusBeach_Text_MistyLost)
+	if (!defeated(TRAINER_RIVAL4)) {
+
+		if (flag (FLAG_ROUTE10_HIDE_RIVAL)) {
+			msgbox (EliciusBeach_Text_Misty1)
+			clearflag (FLAG_ROUTE10_HIDE_RIVAL)
+			} 
+		else {
+			msgbox (EliciusBeach_Text_Misty2)
+		}
 	}
-	msgbox (EliciusBeach_Text_MistyPost)
+	else {
+		msgbox (EliciusBeach_Text_Misty3)
+		applymovement (OBJ_EVENT_ID_MISTY, Common_Movement_WalkUp)
+		waitmovement (0)
+		removeobject (OBJ_EVENT_ID_MISTY)
+		setflag (FLAG_ELICIUS_BEACH_HIDE_MISTY)
+
+	}
 	release
 }
 
 
+text EliciusBeach_Text_Misty1 {
+	format("Please help some weirdo stole our keys!")
+}
 
+text EliciusBeach_Text_Misty2 {
+	format("I think he went down the beach")
+}
 
+text EliciusBeach_Text_Misty3 {
+	format("Thanks!")
+}
 
 text EliciusBeach_Text_MistyIntro {
 	format("Lets battle")

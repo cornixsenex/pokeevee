@@ -114,8 +114,8 @@
 #define TRAINER_TASHA                       109
 #define TRAINER_GIO1                        110
 #define TRAINER_MISTY                       111
+#define TRAINER_RIVAL4                      112
 //BREAK
-#define TRAINER_VALERIE_4                   112
 #define TRAINER_VALERIE_5                   113
 #define TRAINER_CINDY_1                     114
 #define TRAINER_DAPHNE                      115
