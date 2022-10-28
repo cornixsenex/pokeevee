@@ -4635,7 +4635,7 @@
       "id": "LAYOUT_SROUTE19",
       "name": "SRoute19_Layout",
       "width": 32,
-      "height": 72,
+      "height": 78,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/SRoute19/border.bin",
