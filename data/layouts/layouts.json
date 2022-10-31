@@ -5470,6 +5470,16 @@
       "secondary_tileset": "gTileset_Capital",
       "border_filepath": "data/layouts/Capital/border.bin",
       "blockdata_filepath": "data/layouts/Capital/map.bin"
+    },
+    {
+      "id": "LAYOUT_SECRET_CAVE",
+      "name": "SecretCave_Layout",
+      "width": 40,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/SecretCave/border.bin",
+      "blockdata_filepath": "data/layouts/SecretCave/map.bin"
     }
   ]
 }

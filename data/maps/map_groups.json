@@ -660,7 +660,8 @@
     "RocketTower_Elevator",
     "RocketTower_BF1",
     "RocketTower_Underground_Path",
-    "Capital"
+    "Capital",
+    "SecretCave"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",
