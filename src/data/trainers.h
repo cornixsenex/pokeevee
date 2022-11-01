@@ -1509,19 +1509,23 @@ const struct Trainer gTrainers[] = {
 		.transition = B_TRANSITION_MUGSHOT,
     },
 
-///	====BREAK====
-    [TRAINER_VALERIE_5] =
+    [TRAINER_RIVAL5] =
     {
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .trainerName = _("VALERIE"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Valerie5),
-        .party = {.TrainerMon = sParty_Valerie5},
+		.partyFlags = 0,
+		.trainerClass = TRAINER_CLASS_FUCKBOY,
+		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+		.trainerPic = TRAINER_PIC_BLUE2,
+		.trainerName = _("{B_RIVAL_NAME}"),
+		.items = {},
+		.doubleBattle = FALSE,
+		.aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+		.partySize = ARRAY_COUNT(sParty_Rival5),
+		.party = {.TrainerMon = sParty_Rival5},
+		.hasCustomTransition = TRUE,
+		.transition = B_TRANSITION_MUGSHOT,
     },
+
+///	====BREAK====
 
     [TRAINER_CINDY_1] =
     {

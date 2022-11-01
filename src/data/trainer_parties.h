@@ -1549,25 +1549,24 @@ static const struct TrainerMon sParty_Rival4[] = {
 	},
 };
 
-//BREAK
 
-static const struct TrainerMon sParty_Valerie5[] = {
+static const struct TrainerMon sParty_Rival5[] = {
     {
-    .iv = 40,
-    .lvl = 42,
-    .species = SPECIES_DUSKULL,
-    },
-    {
-    .iv = 40,
-    .lvl = 42,
-    .species = SPECIES_SABLEYE,
-    },
-    {
-    .iv = 40,
-    .lvl = 42,
-    .species = SPECIES_GRUMPIG,
+		.species = SPECIES_TYRANITAR,
+		.lvl = 55,
+		.nickname = _("REX"),
+		.iv = 100,
+		.gender = MON_MALE,
+		.nature = NATURE_ADAMANT,
+		.heldItem = ITEM_KIND_BUD,
+		.ability = ABILITY_SLOT_2,
+		.ball = ITEM_POKE_BALL,
+		.shiny = FALSE,
+		.moves = {MOVE_BITE, MOVE_AQUA_TAIL, MOVE_ICE_FANG, MOVE_DRAGON_RAGE}
     }
 };
+
+//BREAK
 
 static const struct TrainerMon sParty_Cindy1[] = {
     {

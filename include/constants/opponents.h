@@ -115,8 +115,8 @@
 #define TRAINER_GIO1                        110
 #define TRAINER_MISTY                       111
 #define TRAINER_RIVAL4                      112
+#define TRAINER_RIVAL5                      113
 //BREAK
-#define TRAINER_VALERIE_5                   113
 #define TRAINER_CINDY_1                     114
 #define TRAINER_DAPHNE                      115
 #define TRAINER_GRUNT_SPACE_CENTER_2        116
