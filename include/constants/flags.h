@@ -99,8 +99,8 @@
 // Scripts
 #define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
 #define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
+#define FLAG_SLABS_HIDE_RIVAL                0x52
 												  ////BREAK
-#define FLAG_RESCUED_BIRCH                   0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS       0x53
 
 #define FLAG_FOLLOWER_ALT_APPROACH           0x54  // Give alternate route to follower in cutscenes

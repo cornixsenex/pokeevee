@@ -1,1 +1,61 @@
+
+const OBJ_EVENT_ID_RIVA = 1
+const RIVAL_FIELD_PIC = 16
+
+
+
+
+
 mapscripts Slabs_MapScripts {}
+
+
+
+
+
+
+
+
+
+script Slabs_EventScript_Rival {
+	lock
+	faceplayer
+	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
+	msgbox (Slabs_Text_Rival1)
+	closemessage
+	destroy_field_pic (RIVAL_FIELD_PIC)
+	setvar (VAR_MUGSHOT_ID, MUGSHOT_BLUE)
+	trainerbattle_no_intro(TRAINER_RIVAL5, Slabs_Text_RivalLost)	
+	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
+	msgbox (Slabs_Text_RivalPost)
+	closemessage
+	destroy_field_pic (RIVAL_FIELD_PIC)
+// remove rival
+	fadescreen (1)
+	setflag (FLAG_SLABS_HIDE_RIVAL)
+	removeobject (OBJ_EVENT_ID_RIVAL)
+//set var to hide one of the bikes
+	setvar (VAR_SLABS_STATE, 1)
+//remove one of the bikes
+	call (Slabs_EventScript_HideBike1)
+	fadescreen (0)
+	release
+	end
+}
+
+
+script Slabs_EventScript_HideBike1 {
+	setmetatile (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
