@@ -299,6 +299,8 @@ static u8 CheckMovementInputAcroBike(u8 *newDirection, u16 newKeys, u16 heldKeys
     return sAcroBikeInputHandlers[gPlayerAvatar.acroBikeState](newDirection, newKeys, heldKeys);
 }
 
+
+//DO NOTE: I ripped out the wheelie functionality because I dislike it, to revert just uncomment the lines and...
 static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
     u8 direction = GetPlayerMovementDirection();
@@ -306,37 +308,60 @@ static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
     gPlayerAvatar.bikeFrameCounter = 0;
     if (*newDirection == DIR_NONE)
     {
-        if (newKeys & B_BUTTON)
-        {
-            //We're standing still with the B button held.
-            //Do a wheelie.
-            *newDirection = direction;
-            gPlayerAvatar.runningState = NOT_MOVING;
-            gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_STANDING;
-            return ACRO_TRANS_NORMAL_TO_WHEELIE;
-        }
-        else
-        {
+     //   if (newKeys & B_BUTTON)
+     //   {
+     //       //We're standing still with the B button held.
+     //       //Do a wheelie.
+     //       *newDirection = direction;
+     //       gPlayerAvatar.runningState = NOT_MOVING;
+     //       gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_STANDING;
+     //       return ACRO_TRANS_NORMAL_TO_WHEELIE;
+     //   }
+     //   else
+     //   {
             *newDirection = direction;
             gPlayerAvatar.runningState = NOT_MOVING;
             return ACRO_TRANS_FACE_DIRECTION;
-        }
+      //  }
     }
-    if (*newDirection == direction && (heldKeys & B_BUTTON) && gPlayerAvatar.bikeSpeed == PLAYER_SPEED_STANDING)
-    {
-        gPlayerAvatar.bikeSpeed++;
-        gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_MOVING;
-        return ACRO_TRANS_WHEELIE_RISING_MOVING;
-    }
-    if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
-    {
-        gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
-        gPlayerAvatar.newDirBackup = *newDirection;
-        gPlayerAvatar.runningState = NOT_MOVING;
-        return CheckMovementInputAcroBike(newDirection, newKeys, heldKeys);
-    }
-    gPlayerAvatar.runningState = MOVING;
-    return ACRO_TRANS_MOVING;
+
+
+	//
+	//
+	//REMOVE THIS SECTION AS WELL
+	else
+	{
+		if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
+		{
+			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+			gPlayerAvatar.newDirBackup = *newDirection;
+			gPlayerAvatar.runningState = NOT_MOVING;
+			return CheckMovementInputAcroBike(newDirection, newKeys, heldKeys);
+		}
+		else 
+		{
+			gPlayerAvatar.runningState = MOVING;
+			return ACRO_TRANS_MOVING;
+		}
+	}
+
+
+
+    //if (*newDirection == direction && (heldKeys & B_BUTTON) && gPlayerAvatar.bikeSpeed == PLAYER_SPEED_STANDING)
+    //{
+    //    gPlayerAvatar.bikeSpeed++;
+    //    gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_MOVING;
+    //    return ACRO_TRANS_WHEELIE_RISING_MOVING;
+    //}
+    //if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
+    //{
+    //    gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+    //    gPlayerAvatar.newDirBackup = *newDirection;
+    //    gPlayerAvatar.runningState = NOT_MOVING;
+    //    return CheckMovementInputAcroBike(newDirection, newKeys, heldKeys);
+    //}
+    //gPlayerAvatar.runningState = MOVING;
+    //return ACRO_TRANS_MOVING;
 }
 
 static u8 AcroBikeHandleInputTurning(u8 *newDirection, u16 newKeys, u16 heldKeys)

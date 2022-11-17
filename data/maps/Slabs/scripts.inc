@@ -80,7 +80,7 @@ Slabs_EventScript_RivalBattle::
 
 Slabs_EventScript_Bike::
 	lockall
-	finditem ITEM_MACH_BIKE
+	finditem ITEM_ACRO_BIKE
 	setvar VAR_SLABS_STATE, 2
 	call Slabs_EventScript_HideBike2
 	special DrawWholeMapView
