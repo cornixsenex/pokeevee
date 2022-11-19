@@ -53,6 +53,11 @@ static u8 CanBikeFaceDirOnMetatile(u8, u8);
 static bool8 WillPlayerCollideWithCollision(u8, u8);
 static void Bike_SetBikeStill(void);
 
+//Cycling Road Pull functions
+static u8 AcroBikeHandleInputSlope(u8 *, u16, u16);
+static void AcroBikeTransition_Downhill(u8);
+static void AcroBikeTransition_Uphill(u8);
+
 // const rom data
 
 /*
@@ -95,6 +100,8 @@ static void (*const sAcroBikeTransitions[])(u8) =
     AcroBikeTransition_WheelieMoving,
     AcroBikeTransition_WheelieRisingMoving,
     AcroBikeTransition_WheelieLoweringMoving,
+	AcroBikeTransition_Downhill,
+	AcroBikeTransition_Uphill,
 };
 
 static u8 (*const sAcroBikeInputHandlers[])(u8 *, u16, u16) =
@@ -106,6 +113,7 @@ static u8 (*const sAcroBikeInputHandlers[])(u8 *, u16, u16) =
     AcroBikeHandleInputWheelieMoving,
     AcroBikeHandleInputSidewaysJump,
     AcroBikeHandleInputTurnJump,
+	AcroBikeHandleInputSlope,
 };
 
 // used with bikeFrameCounter from mach bike
@@ -303,9 +311,40 @@ static u8 CheckMovementInputAcroBike(u8 *newDirection, u16 newKeys, u16 heldKeys
 //DO NOTE: I ripped out the wheelie functionality because I dislike it, to revert just uncomment the lines and...
 static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
-    u8 direction = GetPlayerMovementDirection();
+	//Needed for pull tiles
+	
+	u8 direction;
+    struct ObjectEvent *playerObjEvent;
+    playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    direction = GetPlayerMovementDirection();
+
 
     gPlayerAvatar.bikeFrameCounter = 0;
+
+	//Needed for pull tiles
+    if (MetatileBehavior_IsCyclingRoadPullDownTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    {
+    	if (!(heldKeys & B_BUTTON))
+        {
+            gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
+            gPlayerAvatar.runningState = MOVING;
+            if (*newDirection < DIR_NORTH)
+                return ACRO_TRANS_DOWNHILL;
+            else
+                return ACRO_TRANS_UPHILL;
+        }
+        else
+        {
+            if (*newDirection != DIR_NONE)
+            {
+                gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
+                gPlayerAvatar.runningState = MOVING;
+                return ACRO_TRANS_UPHILL;
+            }
+        }
+    }
+
     if (*newDirection == DIR_NONE)
     {
      //   if (newKeys & B_BUTTON)
@@ -328,7 +367,7 @@ static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
 
 	//
 	//
-	//REMOVE THIS SECTION AS WELL
+	//REMOVE THIS SECTION AS WELL TO REVERT
 	else
 	{
 		if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
@@ -364,43 +403,49 @@ static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
     //return ACRO_TRANS_MOVING;
 }
 
+
+//DO NOTE: I stripped this function down...idk what I did tbh but it just werks now so :idk
 static u8 AcroBikeHandleInputTurning(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
     u8 direction;
 
     *newDirection = gPlayerAvatar.newDirBackup;
-    gPlayerAvatar.bikeFrameCounter++;
+	gPlayerAvatar.runningState = TURN_DIRECTION;
+	gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+	Bike_SetBikeStill();
+	return ACRO_TRANS_TURN_DIRECTION;
+   // gPlayerAvatar.bikeFrameCounter++;
 
     // Wait 6 frames before actually changing direction
-    if (gPlayerAvatar.bikeFrameCounter > 6) // ... because it takes 6 frames to advance 1 tile.
-    {
-        gPlayerAvatar.runningState = TURN_DIRECTION;
-        gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
-        Bike_SetBikeStill();
-        return ACRO_TRANS_TURN_DIRECTION;
-    }
-    direction = GetPlayerMovementDirection();
-    if (*newDirection == AcroBike_GetJumpDirection())
-    {
-        Bike_SetBikeStill(); // Bike_SetBikeStill sets speed to standing, but the next line immediately overrides it. could have just reset acroBikeState to 0 here instead of wasting a jump.
-        gPlayerAvatar.bikeSpeed = PLAYER_SPEED_NORMAL;
-        if (*newDirection == GetOppositeDirection(direction))
-        {
-            // do a turn jump.
-            // no need to update runningState, didnt move.
-            gPlayerAvatar.acroBikeState = ACRO_STATE_TURN_JUMP;
-            return ACRO_TRANS_TURN_JUMP;
-        }
-        else
-        {
-            // do a sideways jump.
-            gPlayerAvatar.runningState = MOVING; // we need to move, set state to moving.
-            gPlayerAvatar.acroBikeState = ACRO_STATE_SIDE_JUMP;
-            return ACRO_TRANS_SIDE_JUMP;
-        }
-    }
-    *newDirection = direction;
-    return ACRO_TRANS_FACE_DIRECTION;
+    //if (gPlayerAvatar.bikeFrameCounter > 6) // ... because it takes 6 frames to advance 1 tile.
+    //{
+    //    gPlayerAvatar.runningState = TURN_DIRECTION;
+    //    gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+    //    Bike_SetBikeStill();
+    //    return ACRO_TRANS_TURN_DIRECTION;
+    //}
+    //direction = GetPlayerMovementDirection();
+    //if (*newDirection == AcroBike_GetJumpDirection())
+    //{
+    //    Bike_SetBikeStill(); // Bike_SetBikeStill sets speed to standing, but the next line immediately overrides it. could have just reset acroBikeState to 0 here instead of wasting a jump.
+    //    gPlayerAvatar.bikeSpeed = PLAYER_SPEED_NORMAL;
+    //    if (*newDirection == GetOppositeDirection(direction))
+    //    {
+    //        // do a turn jump.
+    //        // no need to update runningState, didnt move.
+    //        gPlayerAvatar.acroBikeState = ACRO_STATE_TURN_JUMP;
+    //        return ACRO_TRANS_TURN_JUMP;
+    //    }
+    //    else
+    //    {
+    //        // do a sideways jump.
+    //        gPlayerAvatar.runningState = MOVING; // we need to move, set state to moving.
+    //        gPlayerAvatar.acroBikeState = ACRO_STATE_SIDE_JUMP;
+    //        return ACRO_TRANS_SIDE_JUMP;
+    //    }
+    //}
+    //*newDirection = direction;
+    //return ACRO_TRANS_FACE_DIRECTION;
 }
 
 static u8 AcroBikeHandleInputWheelieStanding(u8 *newDirection, u16 newKeys, u16 heldKeys)
@@ -568,6 +613,43 @@ static u8 AcroBikeHandleInputTurnJump(u8 *ptr, u16 newKeys, u16 heldKeys)
     gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
     return CheckMovementInputAcroBike(ptr, newKeys, heldKeys);
 }
+
+static u8 AcroBikeHandleInputSlope(u8 *direction_p, u16 newKeys, u16 heldKeys)
+{
+	u8 direction = GetPlayerMovementDirection();
+    if (MetatileBehavior_IsCyclingRoadPullDownTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+	{
+		if (*direction_p != direction)
+		{
+			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+			gPlayerAvatar.newDirBackup = *direction_p;
+			gPlayerAvatar.runningState = NOT_MOVING;
+			return CheckMovementInputAcroBike(direction_p, newKeys, heldKeys);
+		}
+		else 
+		{
+            gPlayerAvatar.runningState = MOVING;
+            gPlayerAvatar.acroBikeState = ACRO_STATE_SLOPE;
+            if (*direction_p < DIR_NORTH)
+				return ACRO_TRANS_DOWNHILL;
+			else
+				return ACRO_TRANS_UPHILL;
+		}
+	}
+    gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+    if (*direction_p == DIR_NONE)
+    {
+        *direction_p = direction;
+        gPlayerAvatar.runningState = NOT_MOVING;
+        return ACRO_TRANS_FACE_DIRECTION;
+    }
+    else
+    {
+        gPlayerAvatar.runningState = MOVING;
+        return ACRO_TRANS_MOVING;
+	}
+}
+	
 
 static void AcroBikeTransition_FaceDirection(u8 direction)
 {
@@ -907,6 +989,22 @@ static u8 Bike_DPadToDirection(u16 heldKeys)
     if (heldKeys & DPAD_RIGHT)
         return DIR_EAST;
     return DIR_NONE;
+}
+
+static void AcroBikeTransition_Downhill (u8 v)
+{
+	u8 collision = GetBikeCollision(DIR_SOUTH);
+
+	if (collision == COLLISION_NONE)
+		PlayerWalkFaster(DIR_SOUTH);
+	else if (collision == COLLISION_LEDGE_JUMP)
+		PlayerJumpLedge(DIR_SOUTH);
+}
+
+static void AcroBikeTransition_Uphill (u8 direction)
+{
+	if (GetBikeCollision(direction) == COLLISION_NONE)
+		PlayerWalkNormal(direction);
 }
 
 static u8 GetBikeCollision(u8 direction)

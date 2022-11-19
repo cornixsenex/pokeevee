@@ -173,4 +173,7 @@ bool8 MetatileBehavior_IsSpinDown(u8);
 bool8 MetatileBehavior_IsStopSpinning(u8);
 bool8 MetatileBehavior_IsSpinTile(u8);
 
+//Cycling Road Pull Tiles
+bool8 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior);
+
 #endif // GUARD_METATILE_BEHAVIOR_H

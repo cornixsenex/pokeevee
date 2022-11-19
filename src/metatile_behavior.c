@@ -1580,5 +1580,17 @@ bool8 MetatileBehavior_IsSpinTile(u8 metatileBehavior)
     return metatileBehavior >= MB_SPIN_RIGHT && metatileBehavior <= MB_SPIN_DOWN;
 }
 
+//Cycling Road Pull Tiles
+
+bool8 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
+
+
 
 
