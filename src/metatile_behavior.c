@@ -1590,6 +1590,30 @@ bool8 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior)
 		return FALSE;
 }
 
+bool8 MetatileBehavior_IsCyclingRoadPullUpTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_UP) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadPullLeftTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_LEFT) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadPullRightTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
 
 
 
