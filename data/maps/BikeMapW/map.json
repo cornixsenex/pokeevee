@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_DOAK_TOWN",
       "offset": 2,
-      "map": "MAP_DOAK_TOWN"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_BIKE_MAP_E",
       "offset": -2,
-      "map": "MAP_BIKE_MAP_E"
+      "direction": "right"
     },
     {
-      "direction": "up",
+      "map": "MAP_BIKE_ROUTE_NWS",
       "offset": 59,
-      "map": "MAP_BIKE_ROUTE_NWS"
+      "direction": "up"
     }
   ],
   "object_events": [

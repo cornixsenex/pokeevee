@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_BIKE_MAP_W",
       "offset": -59,
-      "map": "MAP_BIKE_MAP_W"
+      "direction": "down"
     }
   ],
   "object_events": [
