@@ -34,7 +34,7 @@
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

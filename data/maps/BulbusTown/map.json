@@ -128,49 +128,49 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_BULBUS_TOWN_POKEMON_CENTER",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 8,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_BULBUS_TOWN_CANNABIS_CENTER",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 2,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_BULBUS_TOWN_MART",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 25,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_BULBUS_TOWN_HOUSE1",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 29,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_BULBUS_TOWN",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_BULBUS_TOWN_HOUSE3",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 25,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_BULBUS_TOWN_HOUSE4",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

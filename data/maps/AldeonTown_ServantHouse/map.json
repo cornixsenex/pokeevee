@@ -22,14 +22,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ALDEON_TOWN",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 4,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ALDEON_TOWN",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

@@ -22,14 +22,14 @@
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_PYRAMID_INSIDE2F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 9,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_PYRAMIDS_INIDE4F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

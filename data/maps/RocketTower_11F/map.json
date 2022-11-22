@@ -22,35 +22,35 @@
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_10F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 3,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_12F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 26,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_12F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 9,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_12F",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 25,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_ELEVATOR",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

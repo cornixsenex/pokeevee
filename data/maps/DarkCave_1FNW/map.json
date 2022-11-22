@@ -22,21 +22,21 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_PYRAMIDS",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 116,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_SLABS",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 13,
       "y": 51,
       "elevation": 0,
       "dest_map": "MAP_DARK_CAVE_2F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

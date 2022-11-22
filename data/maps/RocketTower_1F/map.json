@@ -22,35 +22,35 @@
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_GATO_CITY_S",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 14,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_2F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 24,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_13F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 25,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_ELEVATOR",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 15,
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_GATO_CITY_S",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

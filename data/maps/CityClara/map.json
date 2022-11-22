@@ -362,56 +362,56 @@
       "y": 51,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_CANNABIS_CLUB",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 18,
       "y": 38,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_HOUSE1",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 24,
       "y": 38,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_HOUSE2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 20,
       "y": 30,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_POKEMON_CENTER",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 48,
       "y": 41,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_SCHOOL",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 59,
       "y": 41,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 35,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_CHURCH",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 35,
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_CHURCH",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

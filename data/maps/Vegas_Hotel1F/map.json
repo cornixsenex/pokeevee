@@ -73,14 +73,14 @@
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_VEGAS",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_VEGAS",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

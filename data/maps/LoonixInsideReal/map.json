@@ -34,28 +34,28 @@
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_GRANDMAS_CABIN",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 4,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_GRANDMAS_CABIN",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 6,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_LOONIX_INSIDE_REAL_F2",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 0,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_GRANDMAS_CABIN",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

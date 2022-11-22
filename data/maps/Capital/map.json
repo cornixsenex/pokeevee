@@ -437,21 +437,21 @@
       "y": 31,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_UNDERGROUND_PATH",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 20,
       "y": 41,
       "elevation": 0,
       "dest_map": "MAP_GATO_CITY_DT",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 21,
       "y": 41,
       "elevation": 0,
       "dest_map": "MAP_GATO_CITY_DT",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

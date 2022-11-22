@@ -177,14 +177,14 @@
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI2F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 5,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI2F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

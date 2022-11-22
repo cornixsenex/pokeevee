@@ -171,10 +171,26 @@ static bool8 NpcTakeStep(struct Sprite *);
 static bool8 IsElevationMismatchAt(u8, s16, s16);
 static bool8 AreElevationsCompatible(u8, u8);
 
+
+static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
+
 //This has something to do with Ghoul's sideways stairs I believe
 static void StartSlowRunningAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction);
 
-static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
+const u8 gReflectionEffectPaletteMap[16] = {
+        [PALSLOT_PLAYER]                 = PALSLOT_PLAYER_REFLECTION,
+        [PALSLOT_PLAYER_REFLECTION]      = PALSLOT_PLAYER_REFLECTION,
+        [PALSLOT_NPC_1]                  = PALSLOT_NPC_1_REFLECTION,
+        [PALSLOT_NPC_2]                  = PALSLOT_NPC_2_REFLECTION,
+        [PALSLOT_NPC_3]                  = PALSLOT_NPC_3_REFLECTION,
+        [PALSLOT_NPC_4]                  = PALSLOT_NPC_4_REFLECTION,
+        [PALSLOT_NPC_1_REFLECTION]       = PALSLOT_NPC_1_REFLECTION,
+        [PALSLOT_NPC_2_REFLECTION]       = PALSLOT_NPC_2_REFLECTION,
+        [PALSLOT_NPC_3_REFLECTION]       = PALSLOT_NPC_3_REFLECTION,
+        [PALSLOT_NPC_4_REFLECTION]       = PALSLOT_NPC_4_REFLECTION,
+        [PALSLOT_NPC_SPECIAL]            = PALSLOT_NPC_SPECIAL_REFLECTION,
+        [PALSLOT_NPC_SPECIAL_REFLECTION] = PALSLOT_NPC_SPECIAL_REFLECTION
+};
 
 static const struct SpriteTemplate sCameraSpriteTemplate = {
     .tileTag = 0,
@@ -2376,55 +2392,55 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
 };
 
 static const u16 sObjectPaletteTags0[] = {
-    OBJ_EVENT_PAL_TAG_BRENDAN,
-    OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_1,
-    OBJ_EVENT_PAL_TAG_NPC_2,
-    OBJ_EVENT_PAL_TAG_NPC_3,
-    OBJ_EVENT_PAL_TAG_NPC_4,
-    OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
+    [PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
+    [PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
+    [PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
+    [PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
+    [PALSLOT_NPC_4]             = OBJ_EVENT_PAL_TAG_NPC_4,
+    [PALSLOT_NPC_1_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
+    [PALSLOT_NPC_2_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
+    [PALSLOT_NPC_3_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
+    [PALSLOT_NPC_4_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
 };
 
 static const u16 sObjectPaletteTags1[] = {
-    OBJ_EVENT_PAL_TAG_BRENDAN,
-    OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_1,
-    OBJ_EVENT_PAL_TAG_NPC_2,
-    OBJ_EVENT_PAL_TAG_NPC_3,
-    OBJ_EVENT_PAL_TAG_NPC_4,
-    OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
+    [PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
+    [PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
+    [PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
+    [PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
+    [PALSLOT_NPC_4]             = OBJ_EVENT_PAL_TAG_NPC_4,
+    [PALSLOT_NPC_1_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
+    [PALSLOT_NPC_2_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
+    [PALSLOT_NPC_3_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
+    [PALSLOT_NPC_4_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
 };
 
 static const u16 sObjectPaletteTags2[] = {
-    OBJ_EVENT_PAL_TAG_BRENDAN,
-    OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_1,
-    OBJ_EVENT_PAL_TAG_NPC_2,
-    OBJ_EVENT_PAL_TAG_NPC_3,
-    OBJ_EVENT_PAL_TAG_NPC_4,
-    OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
+    [PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
+    [PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
+    [PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
+    [PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
+    [PALSLOT_NPC_4]             = OBJ_EVENT_PAL_TAG_NPC_4,
+    [PALSLOT_NPC_1_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
+    [PALSLOT_NPC_2_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
+    [PALSLOT_NPC_3_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
+    [PALSLOT_NPC_4_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
 };
 
 static const u16 sObjectPaletteTags3[] = {
-    OBJ_EVENT_PAL_TAG_BRENDAN,
-    OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_1,
-    OBJ_EVENT_PAL_TAG_NPC_2,
-    OBJ_EVENT_PAL_TAG_NPC_3,
-    OBJ_EVENT_PAL_TAG_NPC_4,
-    OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
-    OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
+    [PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
+    [PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
+    [PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
+    [PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
+    [PALSLOT_NPC_4]             = OBJ_EVENT_PAL_TAG_NPC_4,
+    [PALSLOT_NPC_1_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION,
+    [PALSLOT_NPC_2_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION,
+    [PALSLOT_NPC_3_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION,
+    [PALSLOT_NPC_4_REFLECTION]  = OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION,
 };
 
 static const u16 *const sObjectPaletteTagSets[] = {
@@ -3658,7 +3674,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
     graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     sprite = &gSprites[objectEvent->spriteId];
     paletteSlot = graphicsInfo->paletteSlot;
-    if (paletteSlot == 0)
+    if (paletteSlot == PALSLOT_PLAYER)
     {
         PatchObjectPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
     }
@@ -3840,7 +3856,7 @@ void SetObjectEventSpritePosByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, 
 void FreeAndReserveObjectSpritePalettes(void)
 {
     FreeAllSpritePalettes();
-    gReservedSpritePaletteCount = 12;
+    gReservedSpritePaletteCount = OBJ_PALSLOT_COUNT;
 }
 
 void LoadObjectEventPalette(u16 paletteTag)
@@ -4382,38 +4398,6 @@ void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup
         }
     }
 }
-
-//WARNING: Next two functions MAY be bad...IDK 
-//void InitObjectEventPalettes(u8 palSlot)
-//{
-//    FreeAndReserveObjectSpritePalettes();
-//    sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
-//    sCurrentReflectionType = palSlot;
-//    if (palSlot == 1)
-//    {
-//        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
-//        gReservedSpritePaletteCount = 8;
-//    }
-//    else
-//    {
-//        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], 0, 10);
-//    }
-//}
-//
-//u16 GetObjectPaletteTag(u8 palSlot)
-//{
-//    u8 i;
-//
-//    if (palSlot < 10)
-//        return sObjectPaletteTagSets[sCurrentReflectionType][palSlot];
-//
-//    for (i = 0; sSpecialObjectReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
-//    {
-//        if (sSpecialObjectReflectionPaletteSets[i].tag == sCurrentSpecialObjectPaletteTag)
-//            return sSpecialObjectReflectionPaletteSets[i].data[sCurrentReflectionType];
-//    }
-//    return OBJ_EVENT_PAL_TAG_NONE;
-//}
 
 movement_type_empty_callback(MovementType_None)
 movement_type_def(MovementType_WanderAround, gMovementTypeFuncs_WanderAround)

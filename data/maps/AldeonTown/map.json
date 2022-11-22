@@ -71,28 +71,28 @@
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ALDEON_LEAF_HOUSE",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 14,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ALDEON_TOWN_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 3,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ALDEON_TOWN_SERVANT_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 23,
       "y": 20,
       "elevation": 0,
       "dest_map": "MAP_ALDEON_TOWN_MART",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

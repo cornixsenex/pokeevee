@@ -263,91 +263,91 @@
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 66,
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 68,
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 69,
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 71,
       "y": 25,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 72,
       "y": 25,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 11,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_BEACH_CAVE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 55,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     },
     {
       "x": 56,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 7
+      "dest_warp_id": "7"
     },
     {
       "x": 65,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 8
+      "dest_warp_id": "8"
     },
     {
       "x": 66,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 9
+      "dest_warp_id": "9"
     },
     {
       "x": 74,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 10
+      "dest_warp_id": "10"
     },
     {
       "x": 75,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": 11
+      "dest_warp_id": "11"
     }
   ],
   "coord_events": [

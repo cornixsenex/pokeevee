@@ -22,14 +22,14 @@
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_DARK_CAVE_2F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 18,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_PRISON_JAIL",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

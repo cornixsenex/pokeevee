@@ -33,14 +33,14 @@
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_LOONIX_INSIDE_REAL",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 12,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_LOONIX_GIFT_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

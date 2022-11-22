@@ -22,14 +22,14 @@
       "y": 51,
       "elevation": 0,
       "dest_map": "MAP_GATO_CITY_PARK_N",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 23,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ROUTE12",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

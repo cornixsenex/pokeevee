@@ -30,7 +30,7 @@ static void RedrawMapSliceWest(struct FieldCameraOffset *, const struct MapLayou
 static s32 MapPosToBgTilemapOffset(struct FieldCameraOffset *, s32, s32);
 static void DrawWholeMapViewInternal(int, int, const struct MapLayout *);
 static void DrawMetatileAt(const struct MapLayout *, u16, int, int);
-static void DrawMetatile(s32, u16 *, u16);
+static void DrawMetatile(s32, const u16 *, u16);
 static void CameraPanningCB_PanAhead(void);
 
 static struct FieldCameraOffset sFieldCameraOffset;
@@ -228,7 +228,7 @@ void DrawDoorMetatileAt(int x, int y, u16 *tiles)
 static void DrawMetatileAt(const struct MapLayout *mapLayout, u16 offset, int x, int y)
 {
     u16 metatileId = MapGridGetMetatileIdAt(x, y);
-    u16 *metatiles;
+    const u16 *metatiles;
 
     if (metatileId > NUM_METATILES_TOTAL)
         metatileId = 0;
@@ -243,7 +243,7 @@ static void DrawMetatileAt(const struct MapLayout *mapLayout, u16 offset, int x,
 }
 
 //This function was edited to support triple metatiles in commit 1da701e3dffd28e5519a92e80ffcc3441165169d
-static void DrawMetatile(s32 metatileLayerType, u16 *tiles, u16 offset)
+static void DrawMetatile(s32 metatileLayerType, const u16 *tiles, u16 offset)
 {
     if(metatileLayerType == 0xFF)
     {

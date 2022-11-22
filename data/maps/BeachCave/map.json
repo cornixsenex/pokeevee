@@ -99,7 +99,7 @@
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     }
   ],
   "coord_events": [

@@ -22,14 +22,14 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_RIVAL_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 4,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_RIVAL_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

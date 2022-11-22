@@ -34,21 +34,21 @@
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_PYRAMIDS",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 11,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_PYRAMID_INSIDE2F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 28,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_PYRAMID_INSIDE1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
