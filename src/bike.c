@@ -491,6 +491,7 @@ static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
 //DO NOTE: I stripped this function down...idk what I did tbh but it just werks now so :idk
 static u8 AcroBikeHandleInputTurning(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
+
     u8 direction;
 
     *newDirection = gPlayerAvatar.newDirBackup;
@@ -701,9 +702,10 @@ static u8 AcroBikeHandleInputTurnJump(u8 *ptr, u16 newKeys, u16 heldKeys)
 static u8 AcroBikeHandleInputPullDown(u8 *direction_p, u16 newKeys, u16 heldKeys)
 {
 	u8 direction = GetPlayerMovementDirection();
+
     if (MetatileBehavior_IsCyclingRoadPullDownTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
 	{
-		if (*direction_p != direction)
+		if (*direction_p != direction && *direction_p != DIR_NONE)
 		{
 			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
 			gPlayerAvatar.newDirBackup = *direction_p;
@@ -739,7 +741,7 @@ static u8 AcroBikeHandleInputPullUp(u8 *direction_p, u16 newKeys, u16 heldKeys)
 	u8 direction = GetPlayerMovementDirection();
     if (MetatileBehavior_IsCyclingRoadPullUpTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
 	{
-		if (*direction_p != direction)
+		if (*direction_p != direction && *direction_p != DIR_NONE)
 		{
 			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
 			gPlayerAvatar.newDirBackup = *direction_p;
@@ -775,7 +777,7 @@ static u8 AcroBikeHandleInputPullLeft(u8 *direction_p, u16 newKeys, u16 heldKeys
 	u8 direction = GetPlayerMovementDirection();
     if (MetatileBehavior_IsCyclingRoadPullLeftTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
 	{
-		if (*direction_p != direction)
+		if (*direction_p != direction && *direction_p != DIR_NONE)
 		{
 			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
 			gPlayerAvatar.newDirBackup = *direction_p;
@@ -811,7 +813,7 @@ static u8 AcroBikeHandleInputPullRight(u8 *direction_p, u16 newKeys, u16 heldKey
 	u8 direction = GetPlayerMovementDirection();
     if (MetatileBehavior_IsCyclingRoadPullRightTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
 	{
-		if (*direction_p != direction)
+		if (*direction_p != direction && *direction_p != DIR_NONE)
 		{
 			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
 			gPlayerAvatar.newDirBackup = *direction_p;
@@ -860,6 +862,7 @@ static void AcroBikeTransition_TurnDirection(u8 direction)
 static void AcroBikeTransition_Moving(u8 direction)
 {
     u8 collision;
+
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
     if (CanBikeFaceDirOnMetatile(direction, playerObjEvent->currentMetatileBehavior) == 0)
