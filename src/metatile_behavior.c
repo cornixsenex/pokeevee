@@ -2,6 +2,9 @@
 #include "metatile_behavior.h"
 #include "constants/metatile_behaviors.h"
 
+//To check elevation for CyclingRoad_Bridge_Pull tiles
+#include "field_player_avatar.h"
+
 #define TILE_FLAG_HAS_ENCOUNTERS (1 << 0)
 #define TILE_FLAG_SURFABLE       (1 << 1)
 #define TILE_FLAG_UNUSED         (1 << 2) // Roughly all of the traversable metatiles. Set but never read
@@ -126,13 +129,16 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_HORIZONTAL_RAIL]                 = TILE_FLAG_UNUSED,
 
 
-	//Special Metatiles - note I just set them all to unused IDK if that's correct or not
+	//Special Metatiles
+	
+	//Sideways Stair Warps
     [MB_UP_RIGHT_STAIR_WARP] = TILE_FLAG_UNUSED,
     [MB_UP_LEFT_STAIR_WARP] = TILE_FLAG_UNUSED,
     [MB_DOWN_RIGHT_STAIR_WARP] = TILE_FLAG_UNUSED,
     [MB_DOWN_LEFT_STAIR_WARP] = TILE_FLAG_UNUSED,
 
 
+	//Sideways Stairs
     [MB_SIDEWAYS_STAIRS_RIGHT_SIDE] = TILE_FLAG_UNUSED,
     [MB_SIDEWAYS_STAIRS_LEFT_SIDE] = TILE_FLAG_UNUSED,
     [MB_SIDEWAYS_STAIRS_RIGHT_SIDE_TOP] = TILE_FLAG_UNUSED,
@@ -141,13 +147,24 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM] = TILE_FLAG_UNUSED,
     [MB_ROCK_STAIRS] = TILE_FLAG_UNUSED,
 
+	//Rock Climb
     [MB_ROCK_CLIMB] = TILE_FLAG_UNUSED,
 
+	//Spin Tiles
     [MB_SPIN_RIGHT] = TILE_FLAG_UNUSED,
     [MB_SPIN_LEFT] = TILE_FLAG_UNUSED,
     [MB_SPIN_UP] = TILE_FLAG_UNUSED,
     [MB_SPIN_DOWN] = TILE_FLAG_UNUSED,
     [MB_STOP_SPINNING] = TILE_FLAG_UNUSED,
+
+	//Cycling Road Tiles
+	
+	[MB_CYCLING_ROAD_PULL_DOWN]  = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_UP]    = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_LEFT]  = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_RIGHT] = TILE_FLAG_UNUSED,
+	
+	[MB_CYCLING_ROAD_BRIDGE_PULL_RIGHT] = TILE_FLAG_UNUSED,
 
 };
 
@@ -1614,6 +1631,23 @@ bool8 MetatileBehavior_IsCyclingRoadPullRightTile(u8 metatileBehavior)
 		return FALSE;
 }
 
+bool8 MetatileBehavior_IsCyclingRoadBridgePullRightTile(u8 metatileBehavior)
+{
+	u8 elevation = PlayerGetElevation();
+	if (metatileBehavior == MB_CYCLING_ROAD_BRIDGE_PULL_RIGHT && elevation == 3)
+		return TRUE;
+	else
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadBridgePullLeftTile(u8 metatileBehavior)
+{
+	u8 elevation = PlayerGetElevation();
+	if (metatileBehavior == MB_CYCLING_ROAD_BRIDGE_PULL_LEFT && elevation == 3)
+		return TRUE;
+	else
+		return FALSE;
+}
 
 
 

@@ -385,7 +385,7 @@ static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
         }
     }
 	//Needed for pull tiles - LEFT
-    if (MetatileBehavior_IsCyclingRoadPullLeftTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    if (MetatileBehavior_IsCyclingRoadPullLeftTile(playerObjEvent->currentMetatileBehavior) == TRUE || MetatileBehavior_IsCyclingRoadBridgePullLeftTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
     	if (!(heldKeys & B_BUTTON))
         {
@@ -407,7 +407,7 @@ static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
         }
     }
 	//Needed for pull tiles - RIGHT
-    if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE || MetatileBehavior_IsCyclingRoadBridgePullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
     	if (!(heldKeys & B_BUTTON))
         {
@@ -775,7 +775,7 @@ static u8 AcroBikeHandleInputPullUp(u8 *direction_p, u16 newKeys, u16 heldKeys)
 static u8 AcroBikeHandleInputPullLeft(u8 *direction_p, u16 newKeys, u16 heldKeys)
 {
 	u8 direction = GetPlayerMovementDirection();
-    if (MetatileBehavior_IsCyclingRoadPullLeftTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+    if (MetatileBehavior_IsCyclingRoadPullLeftTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) || MetatileBehavior_IsCyclingRoadBridgePullLeftTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) )
 	{
 		if (*direction_p != direction && *direction_p != DIR_NONE)
 		{
@@ -811,7 +811,7 @@ static u8 AcroBikeHandleInputPullLeft(u8 *direction_p, u16 newKeys, u16 heldKeys
 static u8 AcroBikeHandleInputPullRight(u8 *direction_p, u16 newKeys, u16 heldKeys)
 {
 	u8 direction = GetPlayerMovementDirection();
-    if (MetatileBehavior_IsCyclingRoadPullRightTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+    if (MetatileBehavior_IsCyclingRoadPullRightTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) || MetatileBehavior_IsCyclingRoadBridgePullRightTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) )
 	{
 		if (*direction_p != direction && *direction_p != DIR_NONE)
 		{

@@ -307,7 +307,7 @@ movement Route1_Movement_RivalExit {
 }
 	
 text Route1_Text_RockWarp {
-	format("Wanna warp?")
+	format("Wanna warp - test?")
 }
 
 text Route1_Text_Rival1 {

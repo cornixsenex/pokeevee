@@ -320,7 +320,7 @@ Route1_Movement_RivalExit:
 	step_end
 
 Route1_Text_RockWarp::
-	.string "Wanna warp?$"
+	.string "Wanna warp - test?$"
 
 Route1_Text_Rival1::
 	.string "Come with me babe, today's your lucky\n"

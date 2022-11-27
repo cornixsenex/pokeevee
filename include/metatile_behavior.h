@@ -179,4 +179,7 @@ bool8 MetatileBehavior_IsCyclingRoadPullUpTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCyclingRoadPullLeftTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCyclingRoadPullRightTile(u8 metatileBehavior);
 
+bool8 MetatileBehavior_IsCyclingRoadBridgePullRightTile(u8 metatileBehavior);
+bool8 MetatileBehavior_IsCyclingRoadBridgePullLeftTile(u8 metatileBehavior);
+
 #endif // GUARD_METATILE_BEHAVIOR_H
