@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ROUTE10",
       "offset": 40,
-      "map": "MAP_ROUTE10"
+      "direction": "left"
     },
     {
-      "direction": "down",
+      "map": "MAP_MARE_E",
       "offset": -80,
-      "map": "MAP_MARE_E"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_GATO_CITY",
       "offset": -21,
-      "map": "MAP_GATO_CITY"
+      "direction": "right"
     }
   ],
   "object_events": [

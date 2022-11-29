@@ -310,3 +310,6 @@ const u16 gMetatileAttributes_Capital[] = INCBIN_U16("data/tilesets/secondary/ca
 
 
 
+
+const u16 gMetatiles_weeniehutjr[] = INCBIN_U16("data/tilesets/secondary/weeniehutjr/metatiles.bin");
+const u16 gMetatileAttributes_weeniehutjr[] = INCBIN_U16("data/tilesets/secondary/weeniehutjr/metatile_attributes.bin");

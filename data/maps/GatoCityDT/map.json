@@ -14,24 +14,24 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_GATO_CITY",
       "offset": -4,
-      "map": "MAP_GATO_CITY"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_GATO_CITY_E",
       "offset": -1,
-      "map": "MAP_GATO_CITY_E"
+      "direction": "right"
     },
     {
-      "direction": "up",
+      "map": "MAP_GATO_CITY_N",
       "offset": -38,
-      "map": "MAP_GATO_CITY_N"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_GATO_CITY_S",
       "offset": -53,
-      "map": "MAP_GATO_CITY_S"
+      "direction": "down"
     }
   ],
   "object_events": [

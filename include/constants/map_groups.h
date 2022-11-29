@@ -628,6 +628,8 @@
 #define MAP_ROCKET_TOWER_UNDERGROUND_PATH (45 | (30 << 8))
 #define MAP_CAPITAL                       (46 | (30 << 8))
 #define MAP_SECRET_CAVE                   (47 | (30 << 8))
+#define MAP_SUPER_WEENIE_HUT_JR           (48 | (30 << 8))
+#define MAP_WEENIE_HUT_JR                 (49 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

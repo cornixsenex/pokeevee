@@ -1044,3 +1044,14 @@ const struct Tileset gTileset_Capital =
 
 
 
+
+const struct Tileset gTileset_weeniehutjr =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_weeniehutjr,
+    .palettes = gTilesetPalettes_weeniehutjr,
+    .metatiles = gMetatiles_weeniehutjr,
+    .metatileAttributes = gMetatileAttributes_weeniehutjr,
+    .callback = NULL,
+};

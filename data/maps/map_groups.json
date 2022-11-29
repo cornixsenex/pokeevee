@@ -661,7 +661,9 @@
     "RocketTower_BF1",
     "RocketTower_Underground_Path",
     "Capital",
-    "SecretCave"
+    "SecretCave",
+    "SuperWeenieHutJr",
+    "WeenieHutJr"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",

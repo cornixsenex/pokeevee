@@ -5480,6 +5480,26 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/SecretCave/border.bin",
       "blockdata_filepath": "data/layouts/SecretCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUPER_WEENIE_HUT_JR",
+      "name": "SuperWeenieHutJr_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/SuperWeenieHutJr/border.bin",
+      "blockdata_filepath": "data/layouts/SuperWeenieHutJr/map.bin"
+    },
+    {
+      "id": "LAYOUT_WEENIE_HUT_JR",
+      "name": "WeenieHutJr_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_weeniehutjr",
+      "border_filepath": "data/layouts/WeenieHutJr/border.bin",
+      "blockdata_filepath": "data/layouts/WeenieHutJr/map.bin"
     }
   ]
 }

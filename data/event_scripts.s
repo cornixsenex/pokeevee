@@ -1308,3 +1308,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Capital/scripts.inc"
 
 	.include "data/maps/SecretCave/scripts.inc"
+
+	.include "data/maps/SuperWeenieHutJr/scripts.inc"
+
+	.include "data/maps/WeenieHutJr/scripts.inc"
