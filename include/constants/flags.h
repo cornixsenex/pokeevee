@@ -100,8 +100,21 @@
 #define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
 #define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
 #define FLAG_SLABS_HIDE_RIVAL                0x52
+#define FLAG_HEALTH_INSURANCE_OBTAINED       0x53
+
+
+
+
+
+
+
 												  ////BREAK
-#define FLAG_LEGENDARIES_IN_SOOTOPOLIS       0x53
+
+
+
+
+
+
 
 #define FLAG_FOLLOWER_ALT_APPROACH           0x54  // Give alternate route to follower in cutscenes
 #define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 

@@ -620,7 +620,10 @@ static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
         return FALSE;
     }
 
-    return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
+   // return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
+
+   // Obviously I removed the flag above, just put this placeholder incase something happens in the future
+      return FlagGet(FLAG_HEALTH_INSURANCE_OBTAINED);
 }
 
 bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)

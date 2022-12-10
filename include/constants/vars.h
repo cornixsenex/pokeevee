@@ -132,11 +132,17 @@
 #define VAR_CAPITAL_STATE                                0x4063 // Gio trigger
 #define VAR_ROUTE9_STATE                                 0x4064 // Triggers route9 block
 #define VAR_SLABS_STATE                                  0x4065 //Hides bikes after the rival battle
-																//
-																// BREAK
+#define VAR_WHJ_STATE                                    0x4066 // Changed in SWHJ; door trigger at WHJ
+#define VAR_SWHJ_STATE                                   0x4067 // Changed with insurance; door trigger at SWHJ
+	
 
-#define VAR_ROUTE107_STATE                               0x4066 // Unused Var
-#define VAR_ROUTE108_STATE                               0x4067 // Unused Var
+
+
+						// BREAK
+
+
+
+
 #define VAR_ROUTE109_STATE                               0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                               0x4069
 #define VAR_ROUTE111_STATE                               0x406A // Unused Var

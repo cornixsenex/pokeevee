@@ -1,1 +1,49 @@
 mapscripts SuperWeenieHutJr_MapScripts {}
+
+
+script SuperWeenieHutJr_EventScript_DoorTriggerL {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	call (SuperWeenieHutJr_EventScript_DoorBlock)
+	release
+}
+
+script SuperWeenieHutJr_EventScript_DoorTriggerR {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (SuperWeenieHutJr_EventScript_DoorBlock)
+	release
+}
+
+script SuperWeenieHutJr_EventScript_DoorBlock {
+	msgbox (SuperWeenieHutJr_Text_DoorBlockA)
+	closemessage
+	if (flag(FLAG_HEALTH_INSURANCE_OBTAINED)) {
+		setvar (VAR_SWHJ_STATE, 1)
+		msgbox (SuperWeenieHutJr_Text_DoorBlockC)
+		closemessage
+	}
+	else {
+		msgbox (SuperWeenieHutJr_Text_DoorBlockB)
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement (0)
+	}
+	return
+}
+
+text SuperWeenieHutJr_Text_DoorBlockA {
+	format("Hello there cutie tootie sunshine ray! Welcome to Super Weenie Hut Junior's where we make smiles and brighten your day. We just can't wait for you to play with us but first thing let's make sure you're insured.")
+}
+
+text SuperWeenieHutJr_Text_DoorBlockB {
+	format("Oh noodles! That's no good looks like you don't have insurance. At Super Weenie Hut Junior's safety is our priority and we don't want anyone to get hurt. I'm sorry but you will have to come back after getting insured. Have a good day!")
+}
+
+text SuperWeenieHutJr_Text_DoorBlockC {
+	format("Good news! You've been insured through Weenie Hut General. Welcome to Super Weenie Hut Juniors I hope you have an awesome time")
+}
+
+
