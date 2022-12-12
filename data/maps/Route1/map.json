@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_GRANDMAS_CABIN",
       "offset": -7,
-      "map": "MAP_GRANDMAS_CABIN"
+      "direction": "left"
     },
     {
-      "direction": "up",
+      "map": "MAP_RIVAL_HOUSE",
       "offset": 16,
-      "map": "MAP_RIVAL_HOUSE"
+      "direction": "up"
     },
     {
-      "direction": "right",
+      "map": "MAP_ALDEON_TOWN",
       "offset": 25,
-      "map": "MAP_ALDEON_TOWN"
+      "direction": "right"
     }
   ],
   "object_events": [
