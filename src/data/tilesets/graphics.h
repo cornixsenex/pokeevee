@@ -2044,3 +2044,22 @@ const u16 gTilesetPalettes_weeniehutjr[][16] =
 };
 
 const u32 gTilesetTiles_weeniehutjr[] = INCBIN_U32("data/tilesets/secondary/weeniehutjr/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Hospital[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/hospital/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Hospital[] = INCBIN_U32("data/tilesets/primary/hospital/tiles.4bpp.lz");
