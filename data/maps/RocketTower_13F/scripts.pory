@@ -36,7 +36,7 @@ script RocketTower_13F_EventScript_OpenElevator {
 
 script RocketTower_13F_EventScript_CheckPC {
 	lockall
-	setvar (VAR_0x8004, 3)
+	setvar (VAR_0x8004, PC_LOCATION_ROCKET_TOWER)
 	special (DoPCTurnOnEffect)
 	playse (SE_PC_ON)
 	goto (EventScript_PCMainMenu)

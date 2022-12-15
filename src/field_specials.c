@@ -966,7 +966,11 @@ static bool8 IsPlayerInFrontOfPC(void)
          || tileInFront == METATILE_BrendansMaysHouse_MayPC_On
          || tileInFront == METATILE_BrendansMaysHouse_MayPC_Off
          || tileInFront == METATILE_Building_PC_On
-         || tileInFront == METATILE_Building_PC_Off);
+         || tileInFront == METATILE_Building_PC_Off
+		 || tileInFront == METATILE_SilphCo_PC_On
+		 || tileInFront == METATILE_SilphCo_PC_Off
+		 || tileInFront == METATILE_Hospital_PC_On
+		 || tileInFront == METATILE_Hospital_PC_Off);
 }
 
 void DoPCTurnOnEffect(void)
@@ -1035,6 +1039,8 @@ static void PCTurnOnEffect_1(s16 isPcTurnedOn, s8 dx, s8 dy)
             tileId = METATILE_BrendansMaysHouse_MayPC_Off;
 		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
 			tileId = METATILE_SilphCo_PC_Off;
+		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
+			tileId = METATILE_Hospital_PC_Off;
     }
     else
     {
@@ -1046,6 +1052,8 @@ static void PCTurnOnEffect_1(s16 isPcTurnedOn, s8 dx, s8 dy)
             tileId = METATILE_BrendansMaysHouse_MayPC_On;
 		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
 			tileId = METATILE_SilphCo_PC_On;
+		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
+			tileId = METATILE_Hospital_PC_On;
     }
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, tileId | MAPGRID_COLLISION_MASK);
 }
@@ -1087,6 +1095,8 @@ static void PCTurnOffEffect(void)
         tileId = METATILE_BrendansMaysHouse_MayPC_Off;
     else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
 			tileId = METATILE_SilphCo_PC_Off;
+    else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
+			tileId = METATILE_Hospital_PC_Off;
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, tileId | MAPGRID_COLLISION_MASK);
     DrawWholeMapView();
 }

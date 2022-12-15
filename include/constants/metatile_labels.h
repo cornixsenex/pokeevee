@@ -445,6 +445,8 @@
 #define METATILE_PokemonCenter_Floor_Plain_Alt           0x2E4
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
+#define METATILE_PokemonCenter_PC_Off                    0x214
+#define METATILE_PokemonCenter_PC_On                     0x2AE
 
 // gTileset_RS
 #define METATILE_RS_MossdeepGym_RedArrow_Down   0x205
@@ -825,5 +827,9 @@
 
 // gTileset_pyramids
 #define METATILE_pyramids_DeepSand_Center  0x251
+
+
+#define METATILE_Hospital_PC_Off    0x214
+#define METATILE_Hospital_PC_On    0x2AE
 
 #endif // GUARD_METATILE_LABELS_H
