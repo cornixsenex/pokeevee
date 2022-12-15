@@ -252,6 +252,10 @@
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
 
+// gTileset_Hospital
+#define METATILE_Hospital_PC_Off  0x000
+#define METATILE_Hospital_PC_On   0x001
+
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
 #define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x215
@@ -445,8 +449,6 @@
 #define METATILE_PokemonCenter_Floor_Plain_Alt           0x2E4
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
-#define METATILE_PokemonCenter_PC_Off                    0x214
-#define METATILE_PokemonCenter_PC_On                     0x2AE
 
 // gTileset_RS
 #define METATILE_RS_MossdeepGym_RedArrow_Down   0x205
@@ -827,9 +829,5 @@
 
 // gTileset_pyramids
 #define METATILE_pyramids_DeepSand_Center  0x251
-
-
-#define METATILE_Hospital_PC_Off    0x214
-#define METATILE_Hospital_PC_On    0x2AE
 
 #endif // GUARD_METATILE_LABELS_H
