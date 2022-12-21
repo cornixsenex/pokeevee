@@ -608,7 +608,7 @@
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
-      "border_filepath": "data/layouts/PokemonCenter_1F/border\u0000\u0000\u0000\u0000",
+      "border_filepath": "data/layouts/PokemonCenter_1F/border.bin",
       "blockdata_filepath": "data/layouts/PokemonCenter_1F/map.bin"
     },
     {
@@ -619,7 +619,7 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/PokemonCenter_2F/border.bin",
-      "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bi\u0000"
+      "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bin"
     },
     {
       "id": "LAYOUT_MART",
@@ -1317,7 +1317,7 @@
       "width": 42,
       "height": 15,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTil\u0000\u0000\u0000\u0000_Cave",
+      "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/GraniteCave_1F/border.bin",
       "blockdata_filepath": "data/layouts/GraniteCave_1F/map.bin"
     },
@@ -1369,7 +1369,7 @@
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MtPyre_1F/border.bin",
-      "blockdata_filepath": "\u0002\u0000\u001e\u0000\u001f\u0000\u0000\u0000\u0000\u0000\u0000\u0000data/layouts/MtPyr"
+      "blockdata_filepath": "data/layouts/MtPyre_1F/map.bin"
     },
     {
       "id": "LAYOUT_MT_PYRE_2F",
