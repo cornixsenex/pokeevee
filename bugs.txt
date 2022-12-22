@@ -1,9 +1,0 @@
-Castform DOES NOT WORK
-
-Missing bottom of the stairs tiles for LoonixInside
-
-Grandma pops up during the opening cutscene
-
-Text breaks during Scots convo at the dinner table
-
-

@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_BIKE_ROUTE_GATO_N",
       "offset": -64,
-      "map": "MAP_BIKE_ROUTE_GATO_N"
+      "direction": "right"
     },
     {
-      "direction": "down",
+      "map": "MAP_BIKE_MAP_E",
       "offset": -95,
-      "map": "MAP_BIKE_MAP_E"
+      "direction": "down"
     }
   ],
   "object_events": [
