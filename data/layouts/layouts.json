@@ -5510,6 +5510,16 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Hospital1F/border.bin",
       "blockdata_filepath": "data/layouts/Hospital1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOSPITAL2F",
+      "name": "Hospital2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Hospital",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Hospital2F/border.bin",
+      "blockdata_filepath": "data/layouts/Hospital2F/map.bin"
     }
   ]
 }

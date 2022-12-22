@@ -1314,3 +1314,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/WeenieHutJr/scripts.inc"
 
 	.include "data/maps/Hospital1F/scripts.inc"
+
+	.include "data/maps/Hospital2F/scripts.inc"
