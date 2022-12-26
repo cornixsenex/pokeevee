@@ -1,0 +1,27 @@
+mapscripts Hospital5F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Hospital5F_OnResume)
+	}
+
+}
+
+
+
+
+script Hospital5F_OnResume {
+	call (Hospital5F_EventScript_SetFloor5)
+}
+
+script Hospital5F_EventScript_SetFloor5 {
+	setvar (VAR_HOSPITAL_FLOOR, 5)
+	return
+}
+
+
+
+
+
+
+
+

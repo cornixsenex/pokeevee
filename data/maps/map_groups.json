@@ -666,7 +666,12 @@
     "WeenieHutJr",
     "Hospital1F",
     "Hospital2F",
-    "Hospital3F"
+    "Hospital3F",
+    "Hospital4F",
+    "Hospital5F",
+    "Hospital6F",
+    "Hospital7F",
+    "Hospital_Elevator"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",

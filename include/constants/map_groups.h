@@ -633,6 +633,11 @@
 #define MAP_HOSPITAL1F                    (50 | (30 << 8))
 #define MAP_HOSPITAL2F                    (51 | (30 << 8))
 #define MAP_HOSPITAL3F                    (52 | (30 << 8))
+#define MAP_HOSPITAL4F                    (53 | (30 << 8))
+#define MAP_HOSPITAL5F                    (54 | (30 << 8))
+#define MAP_HOSPITAL6F                    (55 | (30 << 8))
+#define MAP_HOSPITAL7F                    (56 | (30 << 8))
+#define MAP_HOSPITAL_ELEVATOR             (57 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

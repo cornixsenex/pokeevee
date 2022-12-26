@@ -1,0 +1,27 @@
+mapscripts Hospital4F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Hospital4F_OnResume)
+	}
+
+}
+
+
+
+
+script Hospital4F_OnResume {
+	call (Hospital4F_EventScript_SetFloor4)
+}
+
+script Hospital4F_EventScript_SetFloor4 {
+	setvar (VAR_HOSPITAL_FLOOR, 4)
+	return
+}
+
+
+
+
+
+
+
+

@@ -124,6 +124,7 @@
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_CITYCLARA_CHURCH_STONE	   114
 #define MULTI_ROCKETTOWER_ELEVATOR_FLOOR   115
+#define MULTI_HOSPITAL_ELEVATOR_FLOOR      116
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

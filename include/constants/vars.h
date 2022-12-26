@@ -116,25 +116,18 @@
 
 
 
-//HERE BEGINS THE LIST OF REMOVED REPURPOSED VARS FROM EMERALD
-//#define VAR_ROUTE102_STATE                             0x4061 // Unused Var
-//#define VAR_ROUTE103_STATE                             0x4062 // Unused Var
-//#define VAR_ROUTE104_STATE                             0x4063
-//#define VAR_ROUTE105_STATE                             0x4064 // Unused Var
-//#define VAR_ROUTE106_STATE                             0x4065 // Unused Var
-
 
 
 ///HERE BEGINS THE REPURPOSED VARS FROM EMERALD
 #define VAR_ROUTE101_STATE                               0x4060 // LoonixInsideReal
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
-#define VAR_ROCKETTOWER_FLOOR				             0x4062 // Tells elevator what floor you're on
+#define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 
 #define VAR_CAPITAL_STATE                                0x4063 // Gio trigger
 #define VAR_ROUTE9_STATE                                 0x4064 // Triggers route9 block
-#define VAR_SLABS_STATE                                  0x4065 //Hides bikes after the rival battle
+#define VAR_SLABS_STATE                                  0x4065 // Hides bikes after the rival battle
 #define VAR_WHJ_STATE                                    0x4066 // Changed in SWHJ; door trigger at WHJ
 #define VAR_SWHJ_STATE                                   0x4067 // Changed with insurance; door trigger at SWHJ
-	
+#define VAR_HOSPITAL_FLOOR                               0x4068 // Hospital elevator floor control
 
 
 
@@ -143,7 +136,6 @@
 
 
 
-#define VAR_ROUTE109_STATE                               0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                               0x4069
 #define VAR_ROUTE111_STATE                               0x406A // Unused Var
 #define VAR_ROUTE112_STATE                               0x406B // Unused Var

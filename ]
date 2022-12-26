@@ -2525,7 +2525,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_FloorChoose11,
 		gText_FloorChoose12,
 		gText_FloorChoose13,
-    },
+    }
     [SCROLL_MULTI_HOSPITAL_ELEVATOR_FLOOR] =
 	{
 		gText_FloorChoose1,
@@ -2535,7 +2535,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_FloorChoose5,
 		gText_FloorChoose6,
 		gText_FloorChoose7,
-    },
+    }
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)

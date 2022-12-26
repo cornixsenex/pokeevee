@@ -5530,6 +5530,56 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Hospital3F/border.bin",
       "blockdata_filepath": "data/layouts/Hospital3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOSPITAL4F",
+      "name": "Hospital4F_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Hospital",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Hospital4F/border.bin",
+      "blockdata_filepath": "data/layouts/Hospital4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOSPITAL5F",
+      "name": "Hospital5F_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Hospital",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Hospital5F/border.bin",
+      "blockdata_filepath": "data/layouts/Hospital5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOSPITAL6F",
+      "name": "Hospital6F_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Hospital",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Hospital6F/border.bin",
+      "blockdata_filepath": "data/layouts/Hospital6F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOSPITAL7F",
+      "name": "Hospital7F_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Hospital",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Hospital7F/border.bin",
+      "blockdata_filepath": "data/layouts/Hospital7F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOSPITAL_ELEVATOR",
+      "name": "Hospital_Elevator_Layout",
+      "width": 5,
+      "height": 7,
+      "primary_tileset": "gTileset_FireRedBuilding",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/Hospital_Elevator/border.bin",
+      "blockdata_filepath": "data/layouts/Hospital_Elevator/map.bin"
     }
   ]
 }

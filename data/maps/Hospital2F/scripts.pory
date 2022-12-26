@@ -1,1 +1,27 @@
-mapscripts Hospital2F_MapScripts {}
+mapscripts Hospital2F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Hospital2F_OnResume)
+	}
+
+}
+
+
+
+
+script Hospital2F_OnResume {
+	call (Hospital2F_EventScript_SetFloor2)
+}
+
+script Hospital2F_EventScript_SetFloor2 {
+	setvar (VAR_HOSPITAL_FLOOR, 2)
+	return
+}
+
+
+
+
+
+
+
+

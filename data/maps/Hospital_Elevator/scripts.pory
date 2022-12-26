@@ -1,0 +1,105 @@
+mapscripts Hospital_Elevator_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		call (Hospital_Elevator_OnLoad)
+	}
+}
+
+
+script Hospital_Elevator_OnLoad {
+	call (Hospital_Elevator_EventScript_SetFloorWarp)
+	end
+}
+
+
+script Hospital_Elevator_EventScript_SetFloorWarp {
+	switch (var(VAR_HOSPITAL_FLOOR)) {
+		case 0:
+		case 1:
+			call (Hospital_Elevator_EventScript_SetFloorWarp1)
+		case 2:
+			call (Hospital_Elevator_EventScript_SetFloorWarp2)
+		case 3:
+			call (Hospital_Elevator_EventScript_SetFloorWarp3)
+		case 4:
+			call (Hospital_Elevator_EventScript_SetFloorWarp4)
+		case 5:
+			call (Hospital_Elevator_EventScript_SetFloorWarp5)
+		case 6:
+			call (Hospital_Elevator_EventScript_SetFloorWarp6)
+		case 7:
+			call (Hospital_Elevator_EventScript_SetFloorWarp7)
+	}
+	return
+}
+
+
+script Hospital_Elevator_EventScript_SetFloorWarp1 {
+	setdynamicwarp (MAP_HOSPITAL1F, 10, 2)
+	return
+}
+
+script Hospital_Elevator_EventScript_SetFloorWarp2 {
+	setdynamicwarp (MAP_HOSPITAL2F, 10, 2)
+	return
+}
+
+script Hospital_Elevator_EventScript_SetFloorWarp3 {
+	setdynamicwarp (MAP_HOSPITAL3F, 10, 2)
+	return
+}
+
+script Hospital_Elevator_EventScript_SetFloorWarp4 {
+	setdynamicwarp (MAP_HOSPITAL4F, 10, 2)
+	return
+}
+
+script Hospital_Elevator_EventScript_SetFloorWarp5 {
+	setdynamicwarp (MAP_HOSPITAL5F, 10, 2)
+	return
+}
+
+script Hospital_Elevator_EventScript_SetFloorWarp6 {
+	setdynamicwarp (MAP_HOSPITAL6F, 10, 2)
+	return
+}
+
+script Hospital_Elevator_EventScript_SetFloorWarp7 {
+	setdynamicwarp (MAP_HOSPITAL7F, 10, 2)
+	return
+}
+
+script Hospital_Elevator_EventScript_ChooseFloor {
+	lock
+	msgbox (Hospital_Elevator_Text_ChooseFloor)
+	closemessage
+	setvar (VAR_0x8004, SCROLL_MULTI_HOSPITAL_ELEVATOR_FLOOR)
+	special (ShowScrollableMultichoice)
+	waitstate
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setvar(VAR_HOSPITAL_FLOOR, 1)
+		case 1:
+			setvar(VAR_HOSPITAL_FLOOR, 2)
+		case 2:
+			setvar(VAR_HOSPITAL_FLOOR, 3)
+		case 3:
+			setvar(VAR_HOSPITAL_FLOOR, 4)
+		case 4:
+			setvar(VAR_HOSPITAL_FLOOR, 5)
+		case 5:
+			setvar(VAR_HOSPITAL_FLOOR, 6)
+		case 6:
+			setvar(VAR_HOSPITAL_FLOOR, 7)
+	}
+	call (Hospital_Elevator_EventScript_SetFloorWarp)
+	release
+	end
+}
+
+
+text Hospital_Elevator_Text_ChooseFloor {
+	format("Which floor would you like to go to?")
+}
+
+
+

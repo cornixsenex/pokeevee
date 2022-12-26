@@ -1318,3 +1318,13 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Hospital2F/scripts.inc"
 
 	.include "data/maps/Hospital3F/scripts.inc"
+
+	.include "data/maps/Hospital4F/scripts.inc"
+
+	.include "data/maps/Hospital5F/scripts.inc"
+
+	.include "data/maps/Hospital6F/scripts.inc"
+
+	.include "data/maps/Hospital7F/scripts.inc"
+
+	.include "data/maps/Hospital_Elevator/scripts.inc"
