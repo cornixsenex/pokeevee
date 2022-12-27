@@ -142,6 +142,7 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_MEWTWOARMOR] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_SOLDIER] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_MISTY2] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_JANITOR] = {.size = 8, .y_offset = 1},
 
 
 };
@@ -292,6 +293,7 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 	TRAINER_SPRITE(MEWTWOARMOR, gTrainerFrontPic_MewtwoArmor, 0x800),
 	TRAINER_SPRITE(SOLDIER, gTrainerFrontPic_Soldier, 0x800),
 	TRAINER_SPRITE(MISTY2, gTrainerFrontPic_Misty2, 0x800),
+	TRAINER_SPRITE(JANITOR, gTrainerFrontPic_Janitor, 0x800),
 
 };
 
@@ -440,5 +442,6 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(MEWTWOARMOR, gTrainerPalette_MewtwoArmor),
     TRAINER_PAL(SOLDIER, gTrainerPalette_Soldier),
     TRAINER_PAL(MISTY2, gTrainerPalette_Misty2),
+    TRAINER_PAL(JANITOR, gTrainerPalette_Janitor),
 };
 
