@@ -1525,20 +1525,20 @@ const struct Trainer gTrainers[] = {
 		.transition = B_TRANSITION_MUGSHOT,
     },
 
-///	====BREAK====
 
-    [TRAINER_CINDY_1] =
+    [TRAINER_GLENN] =
     {
-        .trainerClass = TRAINER_CLASS_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("CINDY"),
+        .trainerClass = TRAINER_CLASS_JANITOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_JANITOR,
+        .trainerName = _("GLENN"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Cindy1),
-        .party = {.TrainerMon = sParty_Cindy1},
+        .partySize = ARRAY_COUNT(sParty_Glenn),
+        .party = {.TrainerMon = sParty_Glenn},
     },
+///	====BREAK====
 
     [TRAINER_DAPHNE] =
     {

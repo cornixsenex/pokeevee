@@ -19,9 +19,23 @@ script Hospital5F_EventScript_SetFloor5 {
 }
 
 
+script Hospital5F_EventScript_Glenn {
+	trainerbattle_single(TRAINER_GLENN, Hospital5F_Text_GlennPre, Hospital5F_Text_GlennLost)
+	msgbox (Hospital5F_Text_GlennPost)
+	closemessage
+	end
+}
 
+text Hospital5F_Text_GlennPre {
+	format("What are you doing? Hey! I just mopped there!")
+}
 
+text Hospital5F_Text_GlennLost {
+	format("Just look at the gigantic mess you made.")
+}
 
-
+text Hospital5F_Text_GlennPost {
+	format("Working at the hospital's not so bad, I get dental insurance and sick days.")
+}
 
 

@@ -1566,16 +1566,18 @@ static const struct TrainerMon sParty_Rival5[] = {
     }
 };
 
-//BREAK
 
-static const struct TrainerMon sParty_Cindy1[] = {
+static const struct TrainerMon sParty_Glenn[] = {
     {
     .iv = 0,
-    .lvl = 7,
+    .lvl = 37,
     .species = SPECIES_ZIGZAGOON,
-    .heldItem = ITEM_NUGGET
+    .heldItem = ITEM_NUGGET,
+	.moves = {MOVE_HYPER_BEAM, MOVE_SURF, MOVE_ICE_FANG, MOVE_SPITE},
     }
 };
+
+//BREAK
 
 static const struct TrainerMon sParty_Daphne[] = {
     {
