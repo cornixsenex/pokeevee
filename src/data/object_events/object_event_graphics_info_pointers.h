@@ -1130,6 +1130,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lt_Surge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MewtwoArmor;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mauville_Old_Man_2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nurse_Joy;
 
 
 
@@ -1387,7 +1388,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_MEWTWO_ARMOR] =             &gObjectEventGraphicsInfo_MewtwoArmor,
 	[OBJ_EVENT_GFX_LT_SURGE] =                 &gObjectEventGraphicsInfo_Lt_Surge,
 	[OBJ_EVENT_GFX_MISTY]   =			   	   &gObjectEventGraphicsInfo_Misty,
-	[OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2]   =     &gObjectEventGraphicsInfo_Mauville_Old_Man_2,
+	[OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2] =       &gObjectEventGraphicsInfo_Mauville_Old_Man_2,
+	[OBJ_EVENT_GFX_NURSE_JOY] =                &gObjectEventGraphicsInfo_Nurse_Joy,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 

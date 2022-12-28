@@ -272,8 +272,9 @@
 #define OBJ_EVENT_GFX_LT_SURGE			         267
 #define OBJ_EVENT_GFX_MISTY						 268
 #define OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2		 269
+#define OBJ_EVENT_GFX_NURSE_JOY		             270
 
-#define NUM_REGULAR_OBJ_EVENT_GFX                270
+#define NUM_REGULAR_OBJ_EVENT_GFX                271
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)
