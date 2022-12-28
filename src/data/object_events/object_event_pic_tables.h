@@ -2509,6 +2509,18 @@ static const struct SpriteFrameImage sPicTable_Misty[] = {
     overworld_frame(gObjectEventPic_Misty, 2, 4, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_Mauville_Old_Man_2[] = {
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Mauville_Old_Man_2, 2, 4, 8),
+};
+
 static const struct SpriteFrameImage sPicTable_RubySapphireBrendan[] = {
     overworld_frame(gObjectEventPic_RubySapphireBrendanNormal, 2, 4, 0),
     overworld_frame(gObjectEventPic_RubySapphireBrendanNormal, 2, 4, 1),

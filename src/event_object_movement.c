@@ -490,6 +490,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR		  	  0x1145
 #define OBJ_EVENT_PAL_TAG_LT_SURGE		  	      0x1146
 #define OBJ_EVENT_PAL_TAG_MISTY		  	          0x1147
+#define OBJ_EVENT_PAL_TAG_MAUVILLE_OLD_MAN_2	  0x1148
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 
@@ -1418,6 +1419,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_MewtwoArmor,       	OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR},
 	{gObjectEventPal_Lt_Surge,       	    OBJ_EVENT_PAL_TAG_LT_SURGE},
 	{gObjectEventPal_Misty,       	        OBJ_EVENT_PAL_TAG_MISTY},
+	{gObjectEventPal_Mauville_Old_Man_2,    OBJ_EVENT_PAL_TAG_MAUVILLE_OLD_MAN_2},
     
 	//Pokemon overworlds
     {gObjectEventPalette_Pokemon_Species_001, OBJ_EVENT_PAL_TAG_POKEMON_001},
