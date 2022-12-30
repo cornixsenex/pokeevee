@@ -22,7 +22,7 @@ qmake
 make
 
 >Configure triple layer metatiles
-Rune porymap one time
+Run porymap one time
 point it at your pokeevee directory 
 observe the chaos
 close porymap

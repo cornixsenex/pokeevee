@@ -4,13 +4,3 @@ Wall collisions
 Movie Theater in Smokeland
 Add MOVE_ROCK_CLIMB to src/data/pokemon/teachable_learnsets.h
 
-
-
-
-Add Nurse Joy trainer sprite: trainersprites/trainer_battle_sprites_by_kyle_dove
-Add Nurse Joy OW sprite: nursejoy_teraneck OR npc_pack_rse_by_teraneck
-
-
-
-
-
