@@ -7233,6 +7233,7 @@ extern const u32 gTrainerFrontPic_MewtwoArmor[];
 extern const u32 gTrainerFrontPic_Soldier[];
 extern const u32 gTrainerFrontPic_Misty2[];
 extern const u32 gTrainerFrontPic_Janitor[];
+extern const u32 gTrainerFrontPic_Nurse_Joy[];
 
 extern const u32 gTrainerPalette_Hiker[];
 extern const u32 gTrainerPalette_AquaGruntM[];
@@ -7377,6 +7378,7 @@ extern const u32 gTrainerPalette_MewtwoArmor[];
 extern const u32 gTrainerPalette_Soldier[];
 extern const u32 gTrainerPalette_Misty2[];
 extern const u32 gTrainerPalette_Janitor[];
+extern const u32 gTrainerPalette_Nurse_Joy[];
 
 extern const u8 gTrainerBackPic_Brendan[];
 extern const u8 gTrainerBackPic_May[];
