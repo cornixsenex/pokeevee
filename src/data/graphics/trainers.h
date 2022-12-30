@@ -439,6 +439,8 @@ const u32 gTrainerPalette_Misty2[] = INCBIN_U32("graphics/trainers/palettes/mist
 const u32 gTrainerFrontPic_Janitor[] = INCBIN_U32("graphics/trainers/front_pics/janitor_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Janitor[] = INCBIN_U32("graphics/trainers/palettes/janitor.gbapal.lz");
 
+const u32 gTrainerFrontPic_Nurse_Joy[] = INCBIN_U32("graphics/trainers/front_pics/nurse_joy_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Nurse_Joy[] = INCBIN_U32("graphics/trainers/palettes/nurse_joy.gbapal.lz");
 
 
 
