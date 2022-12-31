@@ -1538,33 +1538,35 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_Glenn),
         .party = {.TrainerMon = sParty_Glenn},
     },
-///	====BREAK====
 
-    [TRAINER_DAPHNE] =
+    [TRAINER_TOBOGAN] =
     {
-        .trainerClass = TRAINER_CLASS_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("DAPHNE"),
+        .trainerClass = TRAINER_CLASS_DOCTOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_PROFESSOR_OAK,
+        .trainerName = _("TOBOGAN"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Daphne),
-        .party = {.TrainerMon = sParty_Daphne},
+        .partySize = ARRAY_COUNT(sParty_Tobogan),
+        .party = {.TrainerMon = sParty_Tobogan},
     },
 
-    [TRAINER_GRUNT_SPACE_CENTER_2] =
+    [TRAINER_JUDY] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
-        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_NURSE,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE_JOY,
+        .trainerName = _("JUDY"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntSpaceCenter2),
-        .party = {.TrainerMon = sParty_GruntSpaceCenter2},
+        .partySize = ARRAY_COUNT(sParty_Judy),
+        .party = {.TrainerMon = sParty_Judy},
     },
+///	====BREAK====
+
+
 
     [TRAINER_CINDY_2] =
     {

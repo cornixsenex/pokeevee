@@ -65,6 +65,8 @@
 #include "cable_club.h"
 #include "pokemon_overworld_follower.h"
 
+
+//Pretty sure this is not being used anymore
 const struct TrainerBall gTrainerBallTable[] = {
     {TRAINER_CLASS_TEAM_AQUA, ITEM_NET_BALL},
     {TRAINER_CLASS_AQUA_ADMIN, ITEM_NET_BALL},
@@ -127,6 +129,9 @@ const struct TrainerBall gTrainerBallTable[] = {
     {TRAINER_CLASS_PKMN_SCIENTIST, ITEM_POKE_BALL},
 	{TRAINER_CLASS_ROCKET_BOSS, ITEM_POKE_BALL},
 	{TRAINER_CLASS_JANITOR, ITEM_POKE_BALL},
+	{TRAINER_CLASS_NURSE, ITEM_HEAL_BALL},
+	{TRAINER_CLASS_DOCTOR, ITEM_ULTRA_BALL},
+	//Make sure you add to the other TrainerBall spot that got included with rhh I think this one is no longer doing anything
     {0xFF, ITEM_POKE_BALL},
 };
 
@@ -460,6 +465,8 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_PKMN_SCIENTIST, 20},
     {TRAINER_CLASS_ROCKET_BOSS, 25},
     {TRAINER_CLASS_JANITOR, 5},
+    {TRAINER_CLASS_NURSE, 20},
+    {TRAINER_CLASS_DOCTOR, 50},
     {0xFF, 5}, // Any trainer class not listed above uses this
 };
 
@@ -478,6 +485,8 @@ static const u16 sTrainerBallTable[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_AQUA_LEADER] = ITEM_MASTER_BALL,
     [TRAINER_CLASS_GENTLEMAN] = ITEM_LUXURY_BALL,
     [TRAINER_CLASS_ELITE_FOUR] = ITEM_ULTRA_BALL,
+    [TRAINER_CLASS_DOCTOR] = ITEM_ULTRA_BALL,
+	[TRAINER_CLASS_NURSE]      = ITEM_HEAL_BALL,
 #if B_TRAINER_CLASS_POKE_BALLS == GEN_7
     [TRAINER_CLASS_FISHERMAN] = ITEM_LURE_BALL,
 #elif B_TRAINER_CLASS_POKE_BALLS == GEN_8
