@@ -20,8 +20,21 @@ script Hospital6F_EventScript_SetFloor6 {
 
 
 
+//gen, shiny, nature, lobo
+
+//From .pory script:
+	//special ChoosePartyMon
+	//waitstate
+	//if nothing then nill, else goto another script
+
+//check if it's an egg
+//specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+//if EGG then cant do it, else
+//special MakeShiny
 
 
+// SetMonShiny(struct Pokemon *pokemon)
+	//u32 current personality = GetMonData(pokemon, MON_DATA_PERSONALITY, NULL);
 
 
 
