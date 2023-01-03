@@ -31,6 +31,7 @@ script Hospital6F_EventScript_SetFloor6 {
 //specialvar VAR_RESULT, ScriptGetPartyMonSpecies
 //if EGG then cant do it, else
 //special MakeShiny
+//debug.c pokemon.h verdanturf/friendshipratershouse src/field_specials src/tv.c data/eventscripts slateportnamerater pokemon.c
 
 
 // SetMonShiny(struct Pokemon *pokemon)
