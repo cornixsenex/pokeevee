@@ -65,20 +65,20 @@ script Hospital6F_EventScript_DocLobo_ChooseMon {
 	else {
 		call (Hospital6F_EventScript_DocLobo_DoLobo)
 	}
-	end
+	return
 }
 
 script Hospital6F_EventScript_DocLobo_CantLobo {
 	msgbox (Hospital6F_Text_DocLobo_CantLobo)
 	release
-	end
+	return
 }
 
 
 script Hospital6F_EventScript_DocLobo_DeclineLobo {
 	msgbox (Hospital6F_Text_DocLobo_DeclineLobo)
 	release
-	end
+	return
 }
 
 script Hospital6F_EventScript_DocLobo_DoLobo {
@@ -90,7 +90,7 @@ script Hospital6F_EventScript_DocLobo_DoLobo {
 		//Set the selected mon's level to 1 and replace all it's moves
 		special (LobotomizePokemon)
 	}
-	end
+	return	
 }
 
 

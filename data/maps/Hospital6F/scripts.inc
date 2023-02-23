@@ -43,7 +43,7 @@ Hospital6F_EventScript_DocLobo_ChooseMon::
 	goto_if_eq Hospital6F_EventScript_DocLobo_ChooseMon_2
 	call Hospital6F_EventScript_DocLobo_DoLobo
 Hospital6F_EventScript_DocLobo_ChooseMon_1:
-	end
+	return
 
 Hospital6F_EventScript_DocLobo_ChooseMon_2:
 	call Hospital6F_EventScript_DocLobo_DeclineLobo
@@ -53,13 +53,13 @@ Hospital6F_EventScript_DocLobo_ChooseMon_2:
 Hospital6F_EventScript_DocLobo_CantLobo::
 	msgbox Hospital6F_Text_DocLobo_CantLobo
 	release
-	end
+	return
 
 
 Hospital6F_EventScript_DocLobo_DeclineLobo::
 	msgbox Hospital6F_Text_DocLobo_DeclineLobo
 	release
-	end
+	return
 
 
 Hospital6F_EventScript_DocLobo_DoLobo::
@@ -68,7 +68,7 @@ Hospital6F_EventScript_DocLobo_DoLobo::
 	goto_if_eq Hospital6F_EventScript_DocLobo_DoLobo_2
 	special LobotomizePokemon
 Hospital6F_EventScript_DocLobo_DoLobo_1:
-	end
+	return
 
 Hospital6F_EventScript_DocLobo_DoLobo_2:
 	call Hospital6F_EventScript_DocLobo_CantLobo
