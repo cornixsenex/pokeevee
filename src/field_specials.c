@@ -4194,3 +4194,18 @@ u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
+
+//CUSTOMS
+void LobotomizePokemon(void)
+{
+	struct Pokemon *mon;
+
+	int levelone = 1;
+
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+	SetMonData(mon, MON_DATA_LEVEL, &levelone);
+
+}
+
+
+

@@ -16,3 +16,79 @@ Hospital6F_EventScript_SetFloor6::
 	setvar VAR_HOSPITAL_FLOOR, 6
 	return
 
+
+Hospital6F_EventScript_DocLobo::
+	lock
+	faceplayer
+	msgbox Hospital6F_Text_DocLobo_1, MSGBOX_YESNO
+	closemessage
+	compare VAR_RESULT, YES
+	goto_if_eq Hospital6F_EventScript_DocLobo_2
+Hospital6F_EventScript_DocLobo_1:
+	msgbox Hospital6F_Text_DocLobo_ComeBack
+	closemessage
+	release
+	end
+
+Hospital6F_EventScript_DocLobo_2:
+	call Hospital6F_EventScript_DocLobo_ChooseMon
+	goto Hospital6F_EventScript_DocLobo_1
+
+
+Hospital6F_EventScript_DocLobo_ChooseMon::
+	msgbox Hospital6F_Text_DocLobo_WhichMon
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq Hospital6F_EventScript_DocLobo_ChooseMon_2
+	call Hospital6F_EventScript_DocLobo_DoLobo
+Hospital6F_EventScript_DocLobo_ChooseMon_1:
+	end
+
+Hospital6F_EventScript_DocLobo_ChooseMon_2:
+	call Hospital6F_EventScript_DocLobo_DeclineLobo
+	goto Hospital6F_EventScript_DocLobo_ChooseMon_1
+
+
+Hospital6F_EventScript_DocLobo_CantLobo::
+	msgbox Hospital6F_Text_DocLobo_CantLobo
+	release
+	end
+
+
+Hospital6F_EventScript_DocLobo_DeclineLobo::
+	msgbox Hospital6F_Text_DocLobo_DeclineLobo
+	release
+	end
+
+
+Hospital6F_EventScript_DocLobo_DoLobo::
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq Hospital6F_EventScript_DocLobo_DoLobo_2
+	special LobotomizePokemon
+Hospital6F_EventScript_DocLobo_DoLobo_1:
+	end
+
+Hospital6F_EventScript_DocLobo_DoLobo_2:
+	call Hospital6F_EventScript_DocLobo_CantLobo
+	goto Hospital6F_EventScript_DocLobo_DoLobo_1
+
+
+Hospital6F_Text_DocLobo_ComeBack::
+	.string "Please don't forget I'm here and do\n"
+	.string "come back.$"
+
+Hospital6F_Text_DocLobo_1::
+	.string "I am a doctor of lobotomy. Would you be\n"
+	.string "interested in my services?$"
+
+Hospital6F_Text_DocLobo_WhichMon::
+	.string "Which {PKMN} should I lobotomize?$"
+
+Hospital6F_Text_DocLobo_DeclineLobo::
+	.string "Oh. I guess that means you must have\n"
+	.string "changed your mind.$"
+
+Hospital6F_Text_DocLobo_CantLobo::
+	.string "I am afraid I can't alter this egg.$"
