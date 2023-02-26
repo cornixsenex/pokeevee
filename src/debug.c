@@ -63,7 +63,7 @@
 #include "constants/species.h"
 #include "constants/weather.h"
 
-#if DEBUG_SYSTEM_ENABLE == TRUE
+#if DEBUG_OVERWORLD_MENU == TRUE
 // *******************************
 // Enums
 enum { // Main
@@ -2187,6 +2187,8 @@ static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId)
         {
             PlaySE(MUS_LEVEL_UP);
             ScriptGiveMon(sDebugMonData->mon_speciesId, gTasks[taskId].data[3], ITEM_NONE, 0,0,0);
+            //Set flag for user convenience
+            FlagSet(FLAG_SYS_POKEMON_GET);
             Free(sDebugMonData); //Frees EWRAM of MonData Struct
             DebugAction_DestroyExtraWindow(taskId);
         }
@@ -2741,6 +2743,9 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
     case MON_CANT_GIVE:
         break;
     }
+
+    //Set flag for user convenience
+    FlagSet(FLAG_SYS_POKEMON_GET);
 
     Free(sDebugMonData); //Frees EWRAM of MonData Struct
     DebugAction_DestroyExtraWindow(taskId); //return sentToPc;
@@ -3525,4 +3530,4 @@ SOUND_LIST_SE
 };
 #undef X
 
-#endif //DEBUG_SYSTEM_ENABLE == TRUE
+#endif //DEBUG_OVERWORLD_MENU == TRUE

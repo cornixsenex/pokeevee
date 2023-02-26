@@ -804,9 +804,18 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_TEA] = {gItemIcon_Tea, gItemIconPalette_Tea},
     [ITEM_RUBY] = {gItemIcon_Gem, gItemIconPalette_Ruby},
     [ITEM_SAPPHIRE] = {gItemIcon_Gem, gItemIconPalette_Sapphire},
+    [ITEM_ABILITY_SHIELD] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // {gItemIcon_AbilityShield, gItemIconPalette_AbilityShield},
+    [ITEM_CLEAR_AMULET] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // {gItemIcon_ClearAmulet, gItemIconPalette_ClearAmulet},
+    [ITEM_PUNCHING_GLOVE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // {gItemIcon_PunchingGlove, gItemIconPalette_PunchingGlove},
+    [ITEM_COVERT_CLOAK] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // {gItemIcon_CovertCloak, gItemIconPalette_CovertCloak},
+    [ITEM_LOADED_DICE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // {gItemIcon_LoadedDice, gItemIconPalette_LoadedDice},
+
+
 	//Custom Item Shits
  	[ITEM_SURFBOARD] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_KIND_BUD] = {gItemIcon_KindBud, gItemIconPalette_KindBud},
+
+
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

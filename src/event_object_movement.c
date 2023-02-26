@@ -1390,7 +1390,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
-    {gObjectEventPal_Blue,       			OBJ_EVENT_PAL_TAG_BLUE},
+   //CUSTOMS 
+	{gObjectEventPal_Blue,       			OBJ_EVENT_PAL_TAG_BLUE},
     {gObjectEventPal_Grandma,       		OBJ_EVENT_PAL_TAG_GRANDMA},
     {gObjectEventPal_Eevee,       			OBJ_EVENT_PAL_TAG_EEVEE},
     {gObjectEventPal_Flareon,       		OBJ_EVENT_PAL_TAG_FLAREON},
@@ -2271,6 +2272,13 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPalette_Pokemon_Species_903, OBJ_EVENT_PAL_TAG_POKEMON_903},
 	{gObjectEventPalette_Pokemon_Species_904, OBJ_EVENT_PAL_TAG_POKEMON_904},
     {},
+
+#ifdef BUGFIX
+    {NULL,                                  OBJ_EVENT_PAL_TAG_NONE}, 
+#else
+    {}, // BUG: FindObjectEventPaletteIndexByTag looks for OBJ_EVENT_PAL_TAG_NONE and not 0x0.
+        // If it's looking for a tag that isn't in this table, the game locks in an infinite loop.
+#endif
 };
 
 static const u16 sReflectionPaletteTags_Brendan[] = {
@@ -3867,7 +3875,12 @@ void LoadObjectEventPalette(u16 paletteTag)
 {
     u16 i = FindObjectEventPaletteIndexByTag(paletteTag);
 
-    if (i != OBJ_EVENT_PAL_TAG_NONE) // always true
+// FindObjectEventPaletteIndexByTag returns 0xFF on failure, not OBJ_EVENT_PAL_TAG_NONE.
+#ifdef BUGFIX
+    if (i != 0xFF)
+#else
+    if (i != OBJ_EVENT_PAL_TAG_NONE)
+#endif
         LoadSpritePaletteIfTagExists(&sObjectEventSpritePalettes[i]);
 }
 
@@ -3892,7 +3905,7 @@ void PatchObjectPalette(u16 paletteTag, u8 paletteSlot)
 {
     u16 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
 
-    LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, 16 * paletteSlot + 0x100, 0x20);
+    LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
 }
 
 void PatchObjectPaletteRange(const u16 *paletteTags, u8 minSlot, u8 maxSlot)
@@ -6547,7 +6560,7 @@ u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 curren
 static u8 GetVanillaCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction)
 {    
 
-#if DEBUG_SYSTEM_ENABLE == TRUE
+#if DEBUG_FLAG_NO_COLLISION != 0
     if (FlagGet(DEBUG_FLAG_NO_COLLISION))
         return COLLISION_NONE;
 #endif
