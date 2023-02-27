@@ -4274,12 +4274,40 @@ u8 Script_TryGainNewFanFromCounter(void)
 void LobotomizePokemon(void)
 {
 	struct Pokemon *mon;
-
 	int levelone = 1;
-
+	u16 struggle;
+	struggle = MOVE_STRUGGLE;
 	mon = &gPlayerParty[gSpecialVar_0x8004];
 	SetMonData(mon, MON_DATA_LEVEL, &levelone);
-
+	SetMonData(mon, MON_DATA_EXP, &levelone);
+	SetMonData(mon, MON_DATA_FRIENDSHIP, &levelone);
+	SetMonData(mon, MON_DATA_HP,    &levelone);
+	SetMonData(mon, MON_DATA_MAX_HP, &levelone);
+	SetMonData(mon, MON_DATA_ATK,   &levelone);
+	SetMonData(mon, MON_DATA_DEF,   &levelone);
+	SetMonData(mon, MON_DATA_SPEED, &levelone);
+	SetMonData(mon, MON_DATA_SPATK, &levelone);
+	SetMonData(mon, MON_DATA_SPDEF, &levelone);
+	SetMonData(mon, MON_DATA_MOVE1, &struggle);
+	SetMonData(mon, MON_DATA_MOVE2, &struggle);
+	SetMonData(mon, MON_DATA_MOVE3, &struggle);
+	SetMonData(mon, MON_DATA_MOVE4, &struggle);
+	SetMonData(mon, MON_DATA_PP1, &levelone);
+	SetMonData(mon, MON_DATA_PP2, &levelone);
+	SetMonData(mon, MON_DATA_PP3, &levelone);
+	SetMonData(mon, MON_DATA_PP4, &levelone);
+	SetMonData(mon, MON_DATA_HP_EV,    &levelone);
+	SetMonData(mon, MON_DATA_ATK_EV,   &levelone);
+	SetMonData(mon, MON_DATA_DEF_EV,   &levelone);
+	SetMonData(mon, MON_DATA_SPEED_EV, &levelone);
+	SetMonData(mon, MON_DATA_SPATK_EV, &levelone);
+	SetMonData(mon, MON_DATA_SPDEF_EV, &levelone);
+	SetMonData(mon, MON_DATA_HP_IV,    &levelone);
+	SetMonData(mon, MON_DATA_ATK_IV,   &levelone);
+	SetMonData(mon, MON_DATA_DEF_IV,   &levelone);
+	SetMonData(mon, MON_DATA_SPEED_IV, &levelone);
+	SetMonData(mon, MON_DATA_SPATK_IV, &levelone);
+	SetMonData(mon, MON_DATA_SPDEF_IV, &levelone);
 }
 
 
