@@ -538,5 +538,5 @@ gSpecials::
 	def_special TrySpecialOverworldEvo
     def_special NameRival
 	def_special LobotomizePokemon
-
+	def_special ChangePersonality 
 

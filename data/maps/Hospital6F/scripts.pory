@@ -93,9 +93,59 @@ script Hospital6F_EventScript_DocLobo_DoLobo {
 	return	
 }
 
+// Plastic Surgeon
+
+script Hospital6F_EventScript_DocPS {
+	lock
+	faceplayer
+	msgbox (Hospital6F_Text_DocPS_1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		call (Hospital6F_EventScript_DocPS_ChooseMon)
+	}
+	msgbox (Hospital6F_Text_DocLobo_ComeBack)
+	closemessage
+	release
+	end
+}
+
+script Hospital6F_EventScript_DocPS_ChooseMon {
+	msgbox (Hospital6F_Text_DocPS_WhichMon)
+	special (ChoosePartyMon)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		call (Hospital6F_EventScript_DocPS_DeclinePS)
+	}
+	else {
+		call (Hospital6F_EventScript_DocPS_DoPS)
+	}
+	return
+}
+
+script Hospital6F_EventScript_DocPS_CantPS {
+	msgbox (Hospital6F_Text_DocPS_CantPS)
+	release
+	return
+}
 
 
+script Hospital6F_EventScript_DocPS_DeclinePS {
+	msgbox (Hospital6F_Text_DocPS_DeclinePS)
+	release
+	return
+}
 
+script Hospital6F_EventScript_DocPS_DoPS {
+	specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+	if (var(VAR_RESULT) == SPECIES_EGG) {
+		call (Hospital6F_EventScript_DocPS_CantPS)
+	}
+	else {
+		
+		special (ChangePersonality)
+	}
+	return	
+}
 
 text Hospital6F_Text_DocLobo_ComeBack {
 	format("Please don't forget I'm here and do come back.")
@@ -114,6 +164,29 @@ text Hospital6F_Text_DocLobo_DeclineLobo {
 }
 
 text Hospital6F_Text_DocLobo_CantLobo {
+	format("I am afraid I can't alter this egg.")
+}
+
+
+
+
+text Hospital6F_Text_DocPS_ComeBack {
+	format("Please don't forget I'm here and do come back.")
+}
+
+text Hospital6F_Text_DocPS_1 {
+	format("Hello. I perform plastic surgery. Would you be interested in my services?")
+}
+
+text Hospital6F_Text_DocPS_WhichMon {
+	format("Which {PKMN} should I make beautiful?")
+}
+
+text Hospital6F_Text_DocPS_DeclinePS {
+	format("Oh. I guess that means you must have changed your mind.")
+}
+
+text Hospital6F_Text_DocPS_CantPS {
 	format("I am afraid I can't alter this egg.")
 }
 

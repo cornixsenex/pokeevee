@@ -4271,6 +4271,20 @@ u8 Script_TryGainNewFanFromCounter(void)
 }
 
 //CUSTOMS
+//
+
+void ChangePersonality (void)
+{
+	struct Pokemon *mon;
+	u32 personality;
+	personality = Random32();
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+
+	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+	//SetMonData(mon, MON_DATA_PERSONALITY, &personality);
+}
+
+
 void LobotomizePokemon(void)
 {
 	struct Pokemon *mon;
