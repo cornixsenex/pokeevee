@@ -124,7 +124,7 @@ Hospital6F_EventScript_DocPS_DoPS::
 	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
 	compare VAR_RESULT, SPECIES_EGG
 	goto_if_eq Hospital6F_EventScript_DocPS_DoPS_2
-	special ChangePersonality
+	special MakeShiny
 Hospital6F_EventScript_DocPS_DoPS_1:
 	return
 

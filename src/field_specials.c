@@ -4281,9 +4281,36 @@ void ChangePersonality (void)
 	mon = &gPlayerParty[gSpecialVar_0x8004];
 
 	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
-	//SetMonData(mon, MON_DATA_PERSONALITY, &personality);
 }
 
+void MakeShiny (void)
+{
+	struct Pokemon *mon;
+	//mon = &gPlayerParty[gSpecialVar_0x8004];
+
+	u32 personality;
+	u8 nature;
+	u8 gender;
+	u16 species;
+	u32 otid;
+	
+	nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
+	gender = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+
+    otid = gSaveBlock2Ptr->playerTrainerId[0]
+        | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+        | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+        | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+    do
+	{
+		personality = Random32();
+		personality = ((((Random() % 8) ^ (HIHALF(otid) ^ LOHALF(otid))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+	} while (nature != GetNatureFromPersonality(personality) || gender != GetGenderFromSpeciesAndPersonality(species, personality));
+
+	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+}
 
 void LobotomizePokemon(void)
 {

@@ -142,7 +142,7 @@ script Hospital6F_EventScript_DocPS_DoPS {
 	}
 	else {
 		
-		special (ChangePersonality)
+		special (MakeShiny)
 	}
 	return	
 }
