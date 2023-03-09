@@ -540,4 +540,6 @@ gSpecials::
 	def_special LobotomizePokemon
 	def_special ChangePersonality
 	def_special MakeShiny 
+	def_special ChangeGen
+	def_special CheckMonHasGen
 

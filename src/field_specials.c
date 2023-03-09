@@ -4271,23 +4271,127 @@ u8 Script_TryGainNewFanFromCounter(void)
 }
 
 //CUSTOMS
-//
+// - DO NOTE: VARIABLES MUST BE DECLARED AT THE TOP OF FUNCTION C89 BS OR SMTHN
 
 void ChangePersonality (void)
 {
 	struct Pokemon *mon;
 	u32 personality;
-	personality = Random32();
+	u8 gender;
+	u16 species;
+	int levelone = 1, HP, MAX_HP, ATK, DEF, SPEED, SPATK, SPDEF, HP_IV, ATK_IV, DEF_IV, SPEED_IV, SPATK_IV, SPDEF_IV;
+
 	mon = &gPlayerParty[gSpecialVar_0x8004];
 
+	HP        = GetMonData(mon, MON_DATA_HP);
+	MAX_HP    = GetMonData(mon, MON_DATA_MAX_HP);
+	ATK       = GetMonData(mon, MON_DATA_ATK);
+	DEF       = GetMonData(mon, MON_DATA_DEF);
+	SPEED     = GetMonData(mon, MON_DATA_SPEED);
+	SPATK     = GetMonData(mon, MON_DATA_SPATK);
+	SPDEF     = GetMonData(mon, MON_DATA_SPDEF);
+	HP_IV     = GetMonData(mon, MON_DATA_HP_IV);
+	ATK_IV    = GetMonData(mon, MON_DATA_ATK_IV);
+	DEF_IV    = GetMonData(mon, MON_DATA_DEF_IV);
+	SPEED_IV  = GetMonData(mon, MON_DATA_SPEED_IV);
+	SPATK_IV  = GetMonData(mon, MON_DATA_SPATK_IV);
+	SPDEF_IV  = GetMonData(mon, MON_DATA_SPDEF_IV);
+
+
+
+	if (HP > 5)
+		HP -= 5;
+	else
+		HP = 1;
+
+	if (MAX_HP > 5)
+		MAX_HP -= 5;
+	else
+		MAX_HP = 1;
+
+	if (ATK > 5)
+		ATK -= 5;
+	else
+		ATK = 1;
+
+	if (DEF > 5)
+		DEF -= 5;
+	else
+		DEF = 1;
+
+	if (SPEED > 5)
+		SPEED -= 5;
+	else
+		SPEED = 1;
+
+	if (SPATK > 5)
+		SPATK -= 5;
+	else
+		SPATK = 1;
+
+	if (SPDEF > 5)
+		SPDEF -= 5;
+	else
+		SPDEF = 1;
+
+	if (HP_IV > 5)
+		HP_IV -= 5;
+	else
+		HP_IV = 1;
+
+	if (ATK_IV > 5)
+		ATK_IV -= 5;
+	else
+		ATK_IV = 1;
+
+	if (DEF_IV > 5)
+		DEF_IV -= 5;
+	else
+		DEF_IV = 1;
+
+	if (SPEED_IV > 5)
+		SPEED_IV -= 5;
+	else
+		SPEED_IV = 1;
+
+	if (SPATK_IV > 5)
+		SPATK_IV -= 5;
+	else
+		SPATK_IV = 1;
+
+	if (SPDEF_IV > 5)
+		SPDEF_IV -= 5;
+	else
+		SPDEF_IV = 1;
+
+	gender = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+
+	do
+	{
+		personality = Random32();
+	} while (gender != GetGenderFromSpeciesAndPersonality(species, personality));
+
 	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+
+	SetMonData(mon, MON_DATA_FRIENDSHIP,    &levelone);
+	SetMonData(mon, MON_DATA_HP,            &HP);
+	SetMonData(mon, MON_DATA_MAX_HP,        &MAX_HP);
+	SetMonData(mon, MON_DATA_ATK,           &ATK);
+	SetMonData(mon, MON_DATA_DEF,           &DEF);
+	SetMonData(mon, MON_DATA_SPEED,         &SPEED);
+	SetMonData(mon, MON_DATA_SPATK,         &SPATK);
+	SetMonData(mon, MON_DATA_SPDEF,         &SPDEF);
+	SetMonData(mon, MON_DATA_HP_IV,         &HP_IV);
+	SetMonData(mon, MON_DATA_ATK_IV,        &ATK_IV);
+	SetMonData(mon, MON_DATA_DEF_IV,        &DEF_IV);
+	SetMonData(mon, MON_DATA_SPEED_IV,      &SPEED_IV);
+	SetMonData(mon, MON_DATA_SPATK_IV,      &SPATK_IV);
+	SetMonData(mon, MON_DATA_SPDEF_IV,      &SPDEF_IV);
 }
 
 void MakeShiny (void)
 {
-	struct Pokemon *mon;
-	//mon = &gPlayerParty[gSpecialVar_0x8004];
-
 	u32 personality;
 	u8 nature;
 	u8 gender;
@@ -4311,6 +4415,97 @@ void MakeShiny (void)
 
 	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
 }
+
+bool8 CheckMonHasGen (void)
+{
+	u8 Gen;
+	Gen = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	if (Gen == MON_FEMALE || Gen == MON_MALE) 
+		return TRUE;
+	else
+		return FALSE;
+}
+
+void ChangeGen (void)
+{
+	struct Pokemon *mon;
+	u32 personality;
+	u8 OGen;
+	u8 NGen;
+	u16 species; 
+	u8 nature;
+	int levelone = 1, MAX_HP, ATK, DEF, SPEED, SPATK, SPDEF;
+
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+	nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
+	species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+	OGen = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	if (OGen == MON_FEMALE)
+		NGen = MON_MALE;
+	else
+		NGen = MON_FEMALE;
+
+	MAX_HP = GetMonData(mon, MON_DATA_MAX_HP);
+	ATK    = GetMonData(mon, MON_DATA_ATK);
+	DEF    = GetMonData(mon, MON_DATA_DEF);
+	SPEED  = GetMonData(mon, MON_DATA_SPEED);
+	SPATK  = GetMonData(mon, MON_DATA_SPATK);
+	SPDEF  = GetMonData(mon, MON_DATA_SPDEF);
+
+	if (MAX_HP > 2)
+		MAX_HP /= 2;
+	else
+		MAX_HP = 1;
+
+	if (ATK > 2)
+		ATK /= 2;
+	else
+		ATK = 1;
+
+	if (DEF > 2)
+		DEF /= 2;
+	else
+		DEF = 1;
+
+	if (SPEED > 2)
+		SPEED /= 2;
+	else
+		SPEED = 1;
+
+	if (SPATK > 2)
+		SPATK /= 2;
+	else
+		SPATK = 1;
+
+	if (SPDEF > 2)
+		SPDEF /= 2;
+	else
+		SPDEF = 1;
+
+	do
+	{
+		personality = Random32();
+	} while (nature != GetNatureFromPersonality(personality) || NGen != GetGenderFromSpeciesAndPersonality(species, personality));
+
+	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+
+	SetMonData(mon, MON_DATA_HP_IV,      &levelone);
+	SetMonData(mon, MON_DATA_ATK_IV,     &levelone);
+	SetMonData(mon, MON_DATA_DEF_IV,     &levelone);
+	SetMonData(mon, MON_DATA_SPEED_IV,   &levelone);
+	SetMonData(mon, MON_DATA_SPATK_IV,   &levelone);
+	SetMonData(mon, MON_DATA_SPDEF_IV,   &levelone);
+	SetMonData(mon, MON_DATA_FRIENDSHIP, &levelone);
+	SetMonData(mon, MON_DATA_HP,         &levelone);
+	SetMonData(mon, MON_DATA_MAX_HP,     &MAX_HP);
+	SetMonData(mon, MON_DATA_ATK,        &ATK);
+	SetMonData(mon, MON_DATA_DEF,        &DEF);
+	SetMonData(mon, MON_DATA_SPEED,      &SPEED);
+	SetMonData(mon, MON_DATA_SPATK,      &SPATK);
+	SetMonData(mon, MON_DATA_SPDEF,      &SPDEF);
+}
+	
+
 
 void LobotomizePokemon(void)
 {
