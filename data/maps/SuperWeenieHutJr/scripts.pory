@@ -87,7 +87,7 @@ script SuperWeenieHutJr_EventScript_Graduate {
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Orange {
 	lock
-	setvar (VAR_BOARD, ORANGE)
+	setvar (VAR_BOARD, 3)
 	faceplayer
 	if (flag(FLAG_TEMP_3)) {
 		msgbox (SuperWeenieHutJr_Text_TicTacToe_Post)
@@ -104,8 +104,8 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Orange {
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_ClearGame {
-	setvar (TTTURN, 0)
-	setvar (PTOKEN, 0)
+	setvar (VAR_TEMP_C, 0)
+	setvar (VAR_TEMP_D, 0)
 	setvar (VAR_TEMP_1, 0)
 	setvar (VAR_TEMP_2, 0)
 	setvar (VAR_TEMP_3, 0)
@@ -122,15 +122,20 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetToken {
 	call (SuperWeenieHutJr_EventScript_TicTacToe_ClearGame)	
 	msgbox (SuperWeenieHutJr_Text_TicTacToe_XYes, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		setvar (PTOKEN, 1)
+		setvar (VAR_TEMP_D, 1)
 	} else {
-		setvar (PTOKEN, 2)
+		setvar (VAR_TEMP_D, 2)
 	}
 	call (SuperWeenieHutJr_EventScript_TicTacToe_Brain)
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Brain {
+		
 
+	msgbox ("Top of Brain")
+	closemessage
+	// Draw the new Map
+	special (DrawWholeMapView)
 	//Check For Win
 
 	//check top row
@@ -246,20 +251,54 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Brain {
 		}
 	} else {
 		//Increase Turn
-		setvar (TTTURN, TTTURN+1)
+
 
 		if (var(VAR_TEMP_C) == 10) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_Tie)
+		} elif (var(VAR_TEMP_C) == 9) {
+			setvar (VAR_TEMP_C, 10)
+			call (SuperWeenieHutJr_EventScript_TicTacToe_Tie)
+		} elif (var(VAR_TEMP_C) == 8) {
+			setvar (VAR_TEMP_C, 9)
+		} elif (var(VAR_TEMP_C) == 7) {
+			setvar (VAR_TEMP_C, 8)
+		} elif (var(VAR_TEMP_C) == 6) {
+			setvar (VAR_TEMP_C, 7)
+		} elif (var(VAR_TEMP_C) == 5) {
+			setvar (VAR_TEMP_C, 6)
+		} elif (var(VAR_TEMP_C) == 4) {
+			setvar (VAR_TEMP_C, 5)
+		} elif (var(VAR_TEMP_C) == 3) {
+			setvar (VAR_TEMP_C, 4)
+		} elif (var(VAR_TEMP_C) == 2) {
+			setvar (VAR_TEMP_C, 3)
+		} elif (var(VAR_TEMP_C) == 1) {
+			setvar (VAR_TEMP_C, 2)
+		} else {
+			setvar (VAR_TEMP_C, 1)
 		}
 
-		if (var(VAR_TEMP_C) == 1 ||
-			var(VAR_TEMP_C) == 3 ||
-			var(VAR_TEMP_C) == 5 ||
-			var(VAR_TEMP_C) == 7 ||
-			var(VAR_TEMP_C) == 9 ) {
-				call (SuperWeenieHutJr_EventScript_TicTacToe_GetX)
-		} else {
+		//Whos turn is it anyways
+		if (var(VAR_TEMP_C) == 1) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 2) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 3) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 4) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 5) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 6) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 7) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 8) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 9) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetX)
+		} else {
+			msgbox ("TOO MANY TURNS IDK BOTTOM OF BRAIN")
 		}
 	}
 }
@@ -271,32 +310,32 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetX {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
 	//Paint a X somewhere
-	if (var(VAR_BOARD) == ORANGE) {
-		if (var(TTTMOVE) == 1) {
+	if (var(VAR_BOARD) == 3) {
+		if (var(VAR_TEMP_B) == 1) {
 			setvar (VAR_TEMP_1, 1)
 			setmetatile (6, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 2) {
+		} elif (var(VAR_TEMP_B) == 2) {
 			setvar (VAR_TEMP_2, 1)
 			setmetatile (7, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 3) {
+		} elif (var(VAR_TEMP_B) == 3) {
 			setvar (VAR_TEMP_3, 1)
 			setmetatile (8, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 4) {
+		} elif (var(VAR_TEMP_B) == 4) {
 			setvar (VAR_TEMP_4, 1)
 			setmetatile (6, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 5) {
+		} elif (var(VAR_TEMP_B) == 5) {
 			setvar (VAR_TEMP_5, 1)
 			setmetatile (7, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 6) {
+		} elif (var(VAR_TEMP_B) == 6) {
 			setvar (VAR_TEMP_6, 1)
 			setmetatile (8, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 7) {
+		} elif (var(VAR_TEMP_B) == 7) {
 			setvar (VAR_TEMP_7, 1)
 			setmetatile (6, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 8) {
+		} elif (var(VAR_TEMP_B) == 8) {
 			setvar (VAR_TEMP_8, 1)
 			setmetatile (7, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
-		} elif (var(TTTMOVE) == 9) {
+		} elif (var(VAR_TEMP_B) == 9) {
 			setvar (VAR_TEMP_9, 1)
 			setmetatile (8, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
 		}
@@ -306,38 +345,38 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetX {
 
 
 script SuperWeenieHutJr_EventScript_TicTacToe_GetO {
-	if (var(PTOKEN) == 2) {
+	if (var(VAR_TEMP_D) == 2) {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 	} else {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
 	//Paint a O somewhere
-	if (var(VAR_BOARD) == ORANGE) {
-		if (var(TTTMOVE) == 1) {
+	if (var(VAR_BOARD) == 3) {
+		if (var(VAR_TEMP_B) == 1) {
 			setvar (VAR_TEMP_1, 2)
 			setmetatile (6, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 2) {
+		} elif (var(VAR_TEMP_B) == 2) {
 			setvar (VAR_TEMP_2, 2)
 			setmetatile (7, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 3) {
+		} elif (var(VAR_TEMP_B) == 3) {
 			setvar (VAR_TEMP_3, 2)
 			setmetatile (8, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 4) {
+		} elif (var(VAR_TEMP_B) == 4) {
 			setvar (VAR_TEMP_4, 2)
 			setmetatile (6, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 5) {
+		} elif (var(VAR_TEMP_B) == 5) {
 			setvar (VAR_TEMP_5, 2)
 			setmetatile (7, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 6) {
+		} elif (var(VAR_TEMP_B) == 6) {
 			setvar (VAR_TEMP_6, 2)
 			setmetatile (8, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 7) {
+		} elif (var(VAR_TEMP_B) == 7) {
 			setvar (VAR_TEMP_7, 2)
 			setmetatile (6, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 8) {
+		} elif (var(VAR_TEMP_B) == 8) {
 			setvar (VAR_TEMP_8, 2)
 			setmetatile (7, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
-		} elif (var(TTTMOVE) == 9) {
+		} elif (var(VAR_TEMP_B) == 9) {
 			setvar (VAR_TEMP_9, 2)
 			setmetatile (8, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		}
@@ -355,7 +394,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 1)
 		}
 	} elif (var(VAR_RESULT) == 1) {
 		if (var(VAR_TEMP_2) > 0) {
@@ -363,7 +402,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 2)
 		}
 	} elif (var(VAR_RESULT) == 2) {
 		if (var(VAR_TEMP_3) > 0) {
@@ -371,7 +410,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 3)
 		}
 	} elif (var(VAR_RESULT) == 3) {
 		if (var(VAR_TEMP_4) > 0) {
@@ -379,7 +418,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 4)
 		}
 	} elif (var(VAR_RESULT) == 4) {
 		if (var(VAR_TEMP_5) > 0) {
@@ -387,7 +426,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 5)
 		}
 	} elif (var(VAR_RESULT) == 5) {
 		if (var(VAR_TEMP_6) > 0) {
@@ -395,7 +434,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 6)
 		}
 	} elif (var(VAR_RESULT) == 6) {
 		if (var(VAR_TEMP_7) > 0) {
@@ -403,7 +442,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 7)
 		}
 	} elif (var(VAR_RESULT) == 7) {
 		if (var(VAR_TEMP_8) > 0) {
@@ -411,7 +450,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 8)
 		}
 	} elif (var(VAR_RESULT) == 8) {
 		if (var(VAR_TEMP_9) > 0) {
@@ -419,7 +458,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 			closemessage
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 9)
 		}
 	} else {
 		msgbox (SuperWeenieHutJr_Text_BottomOfGetPlayerMove)
@@ -436,60 +475,59 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove {
 		if (var(VAR_TEMP_1) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 1) {
 		if (var(VAR_TEMP_2) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 2) {
 		if (var(VAR_TEMP_3) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 3) {
 		if (var(VAR_TEMP_4) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 4) {
 		if (var(VAR_TEMP_5) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 5) {
 		if (var(VAR_TEMP_6) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 6) {
 		if (var(VAR_TEMP_7) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 7) {
 		if (var(VAR_TEMP_8) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, VAR_RESULT)
 		}
 	} elif (var(VAR_RESULT) == 8) {
 		if (var(VAR_TEMP_9) > 0) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 		} else {
-			setvar (TTTMOVE, VAR_RESULT+1)
+			setvar (VAR_TEMP_B, 9)
 		}
 	} else {
-		msgbox (SuperWeenieHutJr_Text_BottomOfGetCPUMove)
-		closemessage
-	}
+		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		}
 	return
 }
 
@@ -497,7 +535,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Win {
 	//increase wins
 	setvar (VAR_WINS, VAR_WINS+1)
 	//set relevant board flag
-	if (var(VAR_BOARD) == ORANGE) {
+	if (var(VAR_BOARD) == 3) {
 		setflag (FLAG_TEMP_3)
 	}
 	//Lost txt
@@ -507,7 +545,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Win {
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Lose {
-	if (var(VAR_BOARD) == ORANGE) {
+	if (var(VAR_BOARD) == 3) {
 		setflag (FLAG_TEMP_3)
 	}
 	msgbox (SuperWeenieHutJr_Text_TicTacToe_Won)
@@ -516,7 +554,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Lose {
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Tie {
-	if (var(VAR_BOARD) == ORANGE) {
+	if (var(VAR_BOARD) == 3) {
 		setflag (FLAG_TEMP_3)
 	}
 	msgbox (SuperWeenieHutJr_Text_TicTacToe_Tied)
