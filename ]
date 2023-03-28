@@ -85,19 +85,6 @@ script SuperWeenieHutJr_EventScript_Graduate {
 	return
 }
 
-
-///TIC TAC TOE CURRENTLY BREAKS FOR SOME UNKNOWN REASON ON THE RETURN TO GETX IDK WHY
-/// GENERAL TIC TAC TOE GAME FLOW DESCRIBED AS FOLLOWS FOR FUTURE REFERENCE
-
-//       TTT_COLOR SETS GAME BOARD AND CALLS GETTOKEN
-//       GETTOKEN CLEARS THE VARS AND CHOOSES A PLAYER TOKEN AND CALLS BRAIN
-//       BRAIN DRAWS THE BOARD, CHECKS FOR A WIN, INCREASES THE TURN, THEN GETS EITHER AN X OR AN O DEPENDING ON TURN
-//       GET X CHECKS WHETHER TO GET A PLAYER OR CPU MOVE THEN PAINTS THE METATILE WHERE THE SELECTION IS MADE
-//       GETPLAYERMOVE PROVIDES A LIST OF MOVES, CHECKS IF THE MOVE IS GOOD, AND RETURNS TO GETX OR GETO (THIS BREAKS FOR SOME REASON AFTER MULTIPLE RECURSIONS IDK WHY)
-//       GETCPUMOVE JUST PICKS A RANDOM MOVE, CHECKS IF THE MOVE IS GOOD, AND RETURNS TO GETX OR GETO (THIS ALSO BREAKS FOR SOME UNKNOWN REASON IF IT GOES TOO LONG IDK WHY)
-
-//I'm sleep deprived but i've also re-read the code a dozen times and used msgbox to diagnose exactly where the problem is. The function fails to return to GetX from GetPlayerMove only after numerous recursive attempts. For example on turn 9 it just fails to return, or a bad input is given multiple times it just fails to return after a while. I do not know or understand why. Everything works fine if the game is played quickly.
-
 script SuperWeenieHutJr_EventScript_TicTacToe_Purple {
 	lock
 	setvar (VAR_BOARD, 1)
@@ -374,14 +361,14 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Brain {
 script SuperWeenieHutJr_EventScript_TicTacToe_GetX {
 	if (var(VAR_TEMP_D) == 1) {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
-		//msgbox ("BACK IN GETX RIGHT AFTER CALL TO GETPLAYERMOVE")
-		//closemessage
+		msgbox ("BACK IN GETX RIGHT AFTER CALL TO GETPLAYERMOVE")
+		closemessage
 	} else {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
 	//Paint a X somewhere
-	//msgbox ("PAINT AN X")
-	//closemessage
+	msgbox ("PAINT AN X")
+	closemessage
 //Purple
 	if (var(VAR_BOARD) == 1) {
 		if (var(VAR_TEMP_B) == 1) {
@@ -521,8 +508,8 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetO {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
 	//Paint a O somewhere
-	//msgbox ("PAIN A O")
-	//closemessage
+	msgbox ("PAIN A O")
+	closemessage
 
 //Purple
 	if (var(VAR_BOARD) == 1) {
@@ -735,8 +722,8 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 		msgbox (SuperWeenieHutJr_Text_BottomOfGetPlayerMove)
 		closemessage
 	}
-	//msgbox ("BOTTOM OF GETPLAYERMOVE")
-	//closemessage
+	msgbox ("BOTTOM OF GETPLAYERMOVE")
+	closemessage
 	return
 }
 
@@ -802,8 +789,8 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove {
 	} else {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
-	//msgbox ("BOTTOM OF GETCPUMOVE")
-	//closemessage
+	msgbox ("BOTTOM OF GETCPUMOVE")
+	closemessage
 	return
 }
 
@@ -859,8 +846,8 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Lose {
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Tie {
-	//msgbox ("TIE FUNCTION")
-	//closemessage
+	msgbox ("TIE FUNCTION")
+	closemessage
 	if (var(VAR_TEMP_E) == 1) {
 		setflag (FLAG_TEMP_1)
 	}

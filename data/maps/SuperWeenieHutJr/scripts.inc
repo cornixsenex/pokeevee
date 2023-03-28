@@ -979,6 +979,8 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetO::
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_2
 	call SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_1:
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetO_Text_0
+	closemessage
 	compare VAR_TEMP_E, 1
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_6
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_5:
@@ -1264,6 +1266,7 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetO_79:
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove::
+	setvar VAR_TEMP_B, 0
 	multichoicegrid 0, 0, MULTI_TICTACTOE_CHOOSE_MOVE, 3 TRUE
 	compare VAR_RESULT, 0
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_2
@@ -1424,6 +1427,8 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove::
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_10
 	call SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1:
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_Text_0
+	closemessage
 	return
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_2:
@@ -1660,11 +1665,17 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetX_Text_0:
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_Text_1:
 	.string "PAINT AN X$"
 
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_Text_0:
+	.string "PAIN A O$"
+
 SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_Text_0:
 	.string "BOTTOM OF GETPLAYERMOVE$"
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_Text_1:
 	.string "GONE TOO FAR GETPLAYERMOVE$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_Text_0:
+	.string "BOTTOM OF GETCPUMOVE$"
 
 SuperWeenieHutJr_EventScript_TicTacToe_Win_Text_0:
 	.string "TOO MANY WINS IDK$"
