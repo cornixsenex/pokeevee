@@ -1329,6 +1329,18 @@ extern const u8 gText_FloorChoose11[];
 extern const u8 gText_FloorChoose12[];
 extern const u8 gText_FloorChoose13[];
 
+//Tic Tac Toe Moves
+extern const u8 gText_TicTacToeChoose1[];
+extern const u8 gText_TicTacToeChoose2[];
+extern const u8 gText_TicTacToeChoose3[];
+extern const u8 gText_TicTacToeChoose4[];
+extern const u8 gText_TicTacToeChoose5[];
+extern const u8 gText_TicTacToeChoose6[];
+extern const u8 gText_TicTacToeChoose7[];
+extern const u8 gText_TicTacToeChoose8[];
+extern const u8 gText_TicTacToeChoose9[];
+
+
 // Cable Club multichoice text
 extern const u8 CableClub_Text_TradeUsingLinkCable[];
 extern const u8 CableClub_Text_BattleUsingLinkCable[];

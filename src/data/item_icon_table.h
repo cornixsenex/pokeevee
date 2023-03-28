@@ -814,7 +814,9 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
 	//Custom Item Shits
  	[ITEM_SURFBOARD] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_KIND_BUD] = {gItemIcon_KindBud, gItemIconPalette_KindBud},
-
+    [ITEM_INSURANCE_FORM_A] = {gItemIcon_BlunderPolicy, gItemIconPalette_BlunderPolicy},
+    [ITEM_INSURANCE_FORM_B] = {gItemIcon_BlunderPolicy, gItemIconPalette_BlunderPolicy},
+    [ITEM_INSURANCE_CARD] = {gItemIcon_RainbowPass, gItemIconPalette_RainbowPass},
 
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

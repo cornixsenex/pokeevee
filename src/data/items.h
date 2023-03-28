@@ -9949,5 +9949,44 @@ const struct Item gItems[] =
         .battleUsage = ITEM_B_USE_MEDICINE,
         .battleUseFunc = ItemUseInBattle_Medicine,
 	},
+
+	[ITEM_INSURANCE_FORM_A] =
+	{
+		.name = _("FORMS"),
+        .itemId = ITEM_INSURANCE_FORM_A,
+        .price = 0,
+        .description = sInsuranceFormADesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_INSURANCE_FORM_B] =
+	{
+		.name = _("FORMS"),
+        .itemId = ITEM_INSURANCE_FORM_B,
+        .price = 0,
+        .description = sInsuranceFormBDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_INSURANCE_CARD] =
+	{
+		.name = _("INSURANCE"),
+        .itemId = ITEM_INSURANCE_CARD,
+        .price = 0,
+        .description = sInsuranceCardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
 };
 

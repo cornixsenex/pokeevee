@@ -3829,3 +3829,23 @@ static const u8 sSurfboardDesc[] = _(
 	"This flat board\n"
     "is shaped for\n"
     "riding waves.");
+
+static const u8 sInsuranceFormADesc[] = _(
+	"Insurance forms\n"
+	"1099 and 420\n"
+	"Both blank.\n");
+
+static const u8 sInsuranceFormBDesc[] = _(
+	"Insurance forms\n"
+	"1099 and 420\n"
+	"Both filled in.\n");
+
+static const u8 sInsuranceCardDesc[] = _(
+	"Weenie Hut General\n"
+	"Preferred Member\n"
+	"Fully Insured\n");
+
+
+
+
+

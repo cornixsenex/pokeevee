@@ -1,1 +1,50 @@
 mapscripts WeenieHutJr_MapScripts {}
+
+
+script WeenieHutJr_EventScript_DoorTriggerL {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	call (WeenieHutJr_EventScript_DoorBlock)
+	release
+}
+
+script WeenieHutJr_EventScript_DoorTriggerR {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (WeenieHutJr_EventScript_DoorBlock)
+	release
+}
+
+script WeenieHutJr_EventScript_DoorBlock {
+	msgbox (WeenieHutJr_Text_DoorBlockA)
+	closemessage
+	if (var(VAR_SWHJ_STATE) == 2) {
+		setvar (VAR_SWHJ_STATE, 3)
+		msgbox (WeenieHutJr_Text_DoorBlockC)
+		closemessage
+	}
+	else {
+		msgbox (WeenieHutJr_Text_DoorBlockB)
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement (0)
+	}
+	return
+}
+
+text WeenieHutJr_Text_DoorBlockA {
+	format("Hello. Welcome to Weenie Hut Junior's.")
+}
+
+text WeenieHutJr_Text_DoorBlockB {
+	format("This lounge is only for those few elite who graduate from Super Weenie Hut Junior's. I think that might be more your speed.")
+}
+
+text WeenieHutJr_Text_DoorBlockC {
+	format("Congratulations on your achievement! Enjoy your time at Weenie Hut Juniors!")
+}
+
+
+

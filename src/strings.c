@@ -686,6 +686,19 @@ const u8 gText_FloorChoose11[]  = _("FLOOR 11");
 const u8 gText_FloorChoose12[]  = _("FLOOR 12");
 const u8 gText_FloorChoose13[]  = _("FLOOR 13");
 
+
+
+
+const u8 gText_TicTacToeChoose1[]   = _("1");
+const u8 gText_TicTacToeChoose2[]   = _("2");
+const u8 gText_TicTacToeChoose3[]   = _("3");
+const u8 gText_TicTacToeChoose4[]   = _("4");
+const u8 gText_TicTacToeChoose5[]   = _("5");
+const u8 gText_TicTacToeChoose6[]   = _("6");
+const u8 gText_TicTacToeChoose7[]   = _("7");
+const u8 gText_TicTacToeChoose8[]   = _("8");
+const u8 gText_TicTacToeChoose9[]   = _("9");
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");

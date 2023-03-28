@@ -100,7 +100,7 @@
 #define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
 #define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
 #define FLAG_SLABS_HIDE_RIVAL                0x52
-#define FLAG_HEALTH_INSURANCE_OBTAINED       0x53
+#define FLAG_HEALTH_INSURANCE_OBTAINED       0x53 //// UNUSED!!!!!
 
 
 

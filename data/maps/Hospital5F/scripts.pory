@@ -26,6 +26,39 @@ script Hospital5F_EventScript_Glenn {
 	end
 }
 
+script Hospital5F_EventScript_Admin {
+	faceplayer
+	checkitem (ITEM_INSURANCE_CARD, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox (Hospital5F_Text_Admin4)
+		closemessage
+		end
+	} else {
+		checkitem (ITEM_INSURANCE_FORM_B, 1)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox (Hospital5F_Text_Admin3)
+			closemessage
+			setvar (VAR_HOSPITAL_STATE, 3)
+			removeitem (ITEM_INSURANCE_FORM_B)
+			giveitem (ITEM_INSURANCE_CARD)
+			end
+		} else {
+			checkitem (ITEM_INSURANCE_FORM_A)
+			if (var(VAR_RESULT) == TRUE) {
+				msgbox (Hospital5F_Text_Admin2)
+				closemessage
+				end
+			} else {
+				msgbox (Hospital5F_Text_Admin1)
+				closemessage
+				giveitem (ITEM_INSURANCE_FORM_A)
+				end
+			}
+		}
+	}
+}
+
+
 text Hospital5F_Text_GlennPre {
 	format("What are you doing? Hey! I just mopped there!")
 }
@@ -38,4 +71,18 @@ text Hospital5F_Text_GlennPost {
 	format("Working at the hospital's not so bad, I get dental insurance and sick days.")
 }
 
+text Hospital5F_Text_Admin1 {
+	format("So what do you want? How can I help you? Insurance card? Honey don't fool yourself. Insurance is only for privaleged folk but go ahead and knock yourself out here are forms 1069 and 420.")
+}
 
+text Hospital5F_Text_Admin2 {
+	format("You need to get your forms filled properly before filing for insurance dear.")
+}
+
+text Hospital5F_Text_Admin3 {
+	format("It's you again? Didn't I already....Hey! Now what is this? How did you fill these out? Why I outta...AHEM! Please excuse me. Here's your INSURANCE CARD have a good day.")
+}
+
+text Hospital5F_Text_Admin4 {
+	format("You have your card, now go enjoy your day.")
+}

@@ -128,7 +128,7 @@
 #define VAR_WHJ_STATE                                    0x4066 // Changed in SWHJ; door trigger at WHJ
 #define VAR_SWHJ_STATE                                   0x4067 // Changed with insurance; door trigger at SWHJ
 #define VAR_HOSPITAL_FLOOR                               0x4068 // Hospital elevator floor control
-
+#define VAR_HOSPITAL_STATE                               0x4069 // Man on 2nd floor state
 
 
 						// BREAK
@@ -136,8 +136,6 @@
 
 
 
-#define VAR_ROUTE110_STATE                               0x4069
-#define VAR_ROUTE111_STATE                               0x406A // Unused Var
 #define VAR_ROUTE112_STATE                               0x406B // Unused Var
 #define VAR_ROUTE113_STATE                               0x406C // Unused Var
 #define VAR_ROUTE114_STATE                               0x406D // Unused Var
