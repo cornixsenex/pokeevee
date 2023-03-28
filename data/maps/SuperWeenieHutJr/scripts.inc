@@ -122,8 +122,6 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetToken_2:
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_Brain::
-	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_0
-	closemessage
 	special DrawWholeMapView
 	compare VAR_TEMP_1, 1
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Brain_93
@@ -213,7 +211,7 @@ SuperWeenieHutJr_EventScript_TicTacToe_Brain_146:
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Brain_175
 	compare VAR_TEMP_C, 9
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Brain_176
-	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_1
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_0
 	return
 
 SuperWeenieHutJr_EventScript_TicTacToe_Brain_1:
@@ -913,8 +911,6 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_45:
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove::
-	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_Text_0
-	closemessage
 	specialvar VAR_RESULT, GetCPUTicTacToeMove
 	compare VAR_RESULT, 0
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_2
@@ -1070,13 +1066,7 @@ SuperWeenieHutJr_EventScript_TicTacToe_Tie_2:
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_0:
-	.string "Top of Brain$"
-
-SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_1:
 	.string "TOO MANY TURNS IDK BOTTOM OF BRAIN$"
-
-SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_Text_0:
-	.string "TOP OF GETCPUMOVE$"
 
 SuperWeenieHutJr_Text_DoorBlockA::
 	.string "Hello there cutie tootie sunshine ray!\n"

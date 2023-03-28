@@ -132,8 +132,6 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetToken {
 script SuperWeenieHutJr_EventScript_TicTacToe_Brain {
 		
 
-	msgbox ("Top of Brain")
-	closemessage
 	// Draw the new Map
 	special (DrawWholeMapView)
 	//Check For Win
@@ -468,8 +466,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove {
-	msgbox ("TOP OF GETCPUMOVE")
-	closemessage
+
 	specialvar (VAR_RESULT, GetCPUTicTacToeMove)
 	//make sure move is ok
 
