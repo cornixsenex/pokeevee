@@ -85,11 +85,65 @@ script SuperWeenieHutJr_EventScript_Graduate {
 	return
 }
 
+script SuperWeenieHutJr_EventScript_TicTacToe_Purple {
+	lock
+	setvar (VAR_BOARD, 1)
+	faceplayer
+	if (flag(FLAG_TEMP_1)) {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_Post)
+	} else {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetToken)
+		}
+		else {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_Decline)
+		}
+	}
+	release
+}
+
+script SuperWeenieHutJr_EventScript_TicTacToe_Blue {
+	lock
+	setvar (VAR_BOARD, 2)
+	faceplayer
+	if (flag(FLAG_TEMP_2)) {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_Post)
+	} else {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetToken)
+		}
+		else {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_Decline)
+		}
+	}
+	release
+}
+
 script SuperWeenieHutJr_EventScript_TicTacToe_Orange {
 	lock
 	setvar (VAR_BOARD, 3)
 	faceplayer
 	if (flag(FLAG_TEMP_3)) {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_Post)
+	} else {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (SuperWeenieHutJr_EventScript_TicTacToe_GetToken)
+		}
+		else {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_Decline)
+		}
+	}
+	release
+}
+
+script SuperWeenieHutJr_EventScript_TicTacToe_Pink {
+	lock
+	setvar (VAR_BOARD, 4)
+	faceplayer
+	if (flag(FLAG_TEMP_4)) {
 		msgbox (SuperWeenieHutJr_Text_TicTacToe_Post)
 	} else {
 		msgbox (SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO)
@@ -126,6 +180,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetToken {
 	} else {
 		setvar (VAR_TEMP_D, 2)
 	}
+	closemessage
 	call (SuperWeenieHutJr_EventScript_TicTacToe_Brain)
 }
 
@@ -254,6 +309,8 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Brain {
 		if (var(VAR_TEMP_C) == 10) {
 			call (SuperWeenieHutJr_EventScript_TicTacToe_Tie)
 		} elif (var(VAR_TEMP_C) == 9) {
+			msgbox ("TURN 9 INTO 10")
+			closemessage
 			setvar (VAR_TEMP_C, 10)
 			call (SuperWeenieHutJr_EventScript_TicTacToe_Tie)
 		} elif (var(VAR_TEMP_C) == 8) {
@@ -304,10 +361,79 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Brain {
 script SuperWeenieHutJr_EventScript_TicTacToe_GetX {
 	if (var(VAR_TEMP_D) == 1) {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		msgbox ("BACK IN GETX RIGHT AFTER CALL TO GETPLAYERMOVE")
+		closemessage
 	} else {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
 	//Paint a X somewhere
+	msgbox ("PAINT AN X")
+	closemessage
+//Purple
+	if (var(VAR_BOARD) == 1) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 1)
+			setmetatile (6, 8, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 1)
+			setmetatile (7, 8, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 1)
+			setmetatile (8, 8, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 1)
+			setmetatile (6, 9, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 1)
+			setmetatile (7, 9, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 1)
+			setmetatile (8, 9, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 1)
+			setmetatile (6, 10, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 1)
+			setmetatile (7, 10, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 1)
+			setmetatile (8, 10, METATILE_weeniehutjr_TicTacToe_PurpleX, 1)
+		}
+	}
+
+//Blue
+	if (var(VAR_BOARD) == 2) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 1)
+			setmetatile (11, 8, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 1)
+			setmetatile (12, 8, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 1)
+			setmetatile (13, 8, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 1)
+			setmetatile (11, 9, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 1)
+			setmetatile (12, 9, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 1)
+			setmetatile (13, 9, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 1)
+			setmetatile (11, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 1)
+			setmetatile (12, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 1)
+			setmetatile (13, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		}
+	}
+
+//Orange
 	if (var(VAR_BOARD) == 3) {
 		if (var(VAR_TEMP_B) == 1) {
 			setvar (VAR_TEMP_1, 1)
@@ -338,6 +464,39 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetX {
 			setmetatile (8, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
 		}
 	}
+
+//Pink
+	if (var(VAR_BOARD) == 4) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 1)
+			setmetatile (11, 12, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 1)
+			setmetatile (12, 12, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 1)
+			setmetatile (13, 12, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 1)
+			setmetatile (11, 13, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 1)
+			setmetatile (12, 13, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 1)
+			setmetatile (13, 13, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 1)
+			setmetatile (11, 14, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 1)
+			setmetatile (12, 14, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 1)
+			setmetatile (13, 14, METATILE_weeniehutjr_TicTacToe_PinkX, 1)
+		}
+	}
+	
 	call (SuperWeenieHutJr_EventScript_TicTacToe_Brain)
 }
 
@@ -349,6 +508,72 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetO {
 		call (SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
 	//Paint a O somewhere
+
+//Purple
+	if (var(VAR_BOARD) == 1) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 2)
+			setmetatile (6, 8, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 2)
+			setmetatile (7, 8, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 2)
+			setmetatile (8, 8, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 2)
+			setmetatile (6, 9, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 2)
+			setmetatile (7, 9, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 2)
+			setmetatile (8, 9, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 2)
+			setmetatile (6, 10, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 2)
+			setmetatile (7, 10, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 2)
+			setmetatile (8, 10, METATILE_weeniehutjr_TicTacToe_PurpleO, 1)
+		}
+	}
+
+//Blue
+	if (var(VAR_BOARD) == 2) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 2)
+			setmetatile (11, 8, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 2)
+			setmetatile (12, 8, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 2)
+			setmetatile (13, 8, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 2)
+			setmetatile (11, 9, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 2)
+			setmetatile (12, 9, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 2)
+			setmetatile (13, 9, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 2)
+			setmetatile (11, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 2)
+			setmetatile (12, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 2)
+			setmetatile (13, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		}
+	}
+
+//Orange
 	if (var(VAR_BOARD) == 3) {
 		if (var(VAR_TEMP_B) == 1) {
 			setvar (VAR_TEMP_1, 2)
@@ -379,11 +604,44 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetO {
 			setmetatile (8, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		}
 	}
+
+//Pink
+	if (var(VAR_BOARD) == 4) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 2)
+			setmetatile (11, 12, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 2)
+			setmetatile (12, 12, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 2)
+			setmetatile (13, 12, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 2)
+			setmetatile (11, 13, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 2)
+			setmetatile (12, 13, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 2)
+			setmetatile (13, 13, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 2)
+			setmetatile (11, 14, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 2)
+			setmetatile (12, 14, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 2)
+			setmetatile (13, 14, METATILE_weeniehutjr_TicTacToe_PinkO, 1)
+		}
+	}
+
 	call (SuperWeenieHutJr_EventScript_TicTacToe_Brain)
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
-	multichoice (0, 0, MULTI_TICTACTOE_CHOOSE_MOVE, TRUE)
+	multichoicegrid (0, 0, MULTI_TICTACTOE_CHOOSE_MOVE, 3 TRUE)
 	//make sure move is ok
 	
 	if (var(VAR_RESULT) == 0) {
@@ -462,7 +720,11 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 		msgbox (SuperWeenieHutJr_Text_BottomOfGetPlayerMove)
 		closemessage
 	}
+	msgbox ("BOTTOM OF GETPLAYERMOVE")
+	closemessage
 	return
+	msgbox ("GONE TOO FAR GETPLAYERMOVE")
+	closemessage
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove {
@@ -532,10 +794,30 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove {
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Win {
 	//increase wins
-	setvar (VAR_WINS, VAR_WINS+1)
+	if (var(VAR_TEMP_F) == 3) {
+		setvar (VAR_SWHJ_STATE, 2)
+		setvar (VAR_TEMP_F, 4)
+	} elif (var(VAR_TEMP_F) == 2) {
+		setvar (VAR_TEMP_F, 3)
+	} elif (var(VAR_TEMP_F) == 1) {
+		setvar (VAR_TEMP_F, 2)
+	} elif (var(VAR_TEMP_F) == 0) {
+		setvar (VAR_TEMP_F, 1)
+	} else {
+		msgbox ("TOO MANY WINS IDK")
+	}
 	//set relevant board flag
-	if (var(VAR_BOARD) == 3) {
+	if (var(VAR_TEMP_E) == 1) {
+		setflag (FLAG_TEMP_1)
+	}
+	if (var(VAR_TEMP_E) == 2) {
+		setflag (FLAG_TEMP_2)
+	}
+	if (var(VAR_TEMP_E) == 3) {
 		setflag (FLAG_TEMP_3)
+	}
+	if (var(VAR_TEMP_E) == 4) {
+		setflag (FLAG_TEMP_4)
 	}
 	//Lost txt
 	msgbox  (SuperWeenieHutJr_Text_TicTacToe_Lost)
@@ -544,8 +826,17 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Win {
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Lose {
-	if (var(VAR_BOARD) == 3) {
+	if (var(VAR_TEMP_E) == 1) {
+		setflag (FLAG_TEMP_1)
+	}
+	if (var(VAR_TEMP_E) == 2) {
+		setflag (FLAG_TEMP_2)
+	}
+	if (var(VAR_TEMP_E) == 3) {
 		setflag (FLAG_TEMP_3)
+	}
+	if (var(VAR_TEMP_E) == 4) {
+		setflag (FLAG_TEMP_4)
 	}
 	msgbox (SuperWeenieHutJr_Text_TicTacToe_Won)
 	closemessage
@@ -553,8 +844,19 @@ script SuperWeenieHutJr_EventScript_TicTacToe_Lose {
 }
 
 script SuperWeenieHutJr_EventScript_TicTacToe_Tie {
-	if (var(VAR_BOARD) == 3) {
+	msgbox ("TIE FUNCTION")
+	closemessage
+	if (var(VAR_TEMP_E) == 1) {
+		setflag (FLAG_TEMP_1)
+	}
+	if (var(VAR_TEMP_E) == 2) {
+		setflag (FLAG_TEMP_2)
+	}
+	if (var(VAR_TEMP_E) == 3) {
 		setflag (FLAG_TEMP_3)
+	}
+	if (var(VAR_TEMP_E) == 4) {
+		setflag (FLAG_TEMP_4)
 	}
 	msgbox (SuperWeenieHutJr_Text_TicTacToe_Tied)
 	closemessage
@@ -587,7 +889,7 @@ text SuperWeenieHutJr_Text_TicTacToe_Decline {
 }
 
 text SuperWeenieHutJr_Text_TicTacToe_Post {
-	format("I can't believe you won! Good game, I guess...")
+	format("Good game, I guess...")
 }
 
 text SuperWeenieHutJr_Text_TicTacToe_XYes {
@@ -595,11 +897,11 @@ text SuperWeenieHutJr_Text_TicTacToe_XYes {
 }
 
 text SuperWeenieHutJr_Text_TicTacToe_Lost {
-	format("Looks like I lost.")
+	format("Looks like I lost. I can't believe you won!")
 }
 
 text SuperWeenieHutJr_Text_TicTacToe_Won {
-	format("Looks like I won.")
+	format("Looks like I won. I can't believe I won!")
 }
 
 text SuperWeenieHutJr_Text_TicTacToe_Tied {

@@ -831,7 +831,13 @@
 #define METATILE_pyramids_DeepSand_Center  0x251
 
 // gTileset_weeniehutjr
+#define METATILE_weeniehutjr_TicTacToe_BlueO    0x256
+#define METATILE_weeniehutjr_TicTacToe_BlueX    0x255
 #define METATILE_weeniehutjr_TicTacToe_OrangeO  0x276
 #define METATILE_weeniehutjr_TicTacToe_OrangeX  0x275
+#define METATILE_weeniehutjr_TicTacToe_PinkO    0x254
+#define METATILE_weeniehutjr_TicTacToe_PinkX    0x253
+#define METATILE_weeniehutjr_TicTacToe_PurpleO  0x236
+#define METATILE_weeniehutjr_TicTacToe_PurpleX  0x235
 
 #endif // GUARD_METATILE_LABELS_H

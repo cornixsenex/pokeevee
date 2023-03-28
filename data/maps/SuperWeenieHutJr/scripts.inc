@@ -69,6 +69,50 @@ SuperWeenieHutJr_EventScript_Graduate::
 	return
 
 
+SuperWeenieHutJr_EventScript_TicTacToe_Purple::
+	lock
+	setvar VAR_TEMP_E, 1
+	faceplayer
+	goto_if_set FLAG_TEMP_1, SuperWeenieHutJr_EventScript_TicTacToe_Purple_2
+	msgbox SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Purple_5
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Decline
+SuperWeenieHutJr_EventScript_TicTacToe_Purple_1:
+	release
+	return
+
+SuperWeenieHutJr_EventScript_TicTacToe_Purple_2:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Post
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Purple_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Purple_5:
+	call SuperWeenieHutJr_EventScript_TicTacToe_GetToken
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Purple_1
+
+
+SuperWeenieHutJr_EventScript_TicTacToe_Blue::
+	lock
+	setvar VAR_TEMP_E, 2
+	faceplayer
+	goto_if_set FLAG_TEMP_2, SuperWeenieHutJr_EventScript_TicTacToe_Blue_2
+	msgbox SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Blue_5
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Decline
+SuperWeenieHutJr_EventScript_TicTacToe_Blue_1:
+	release
+	return
+
+SuperWeenieHutJr_EventScript_TicTacToe_Blue_2:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Post
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Blue_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Blue_5:
+	call SuperWeenieHutJr_EventScript_TicTacToe_GetToken
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Blue_1
+
+
 SuperWeenieHutJr_EventScript_TicTacToe_Orange::
 	lock
 	setvar VAR_TEMP_E, 3
@@ -89,6 +133,28 @@ SuperWeenieHutJr_EventScript_TicTacToe_Orange_2:
 SuperWeenieHutJr_EventScript_TicTacToe_Orange_5:
 	call SuperWeenieHutJr_EventScript_TicTacToe_GetToken
 	goto SuperWeenieHutJr_EventScript_TicTacToe_Orange_1
+
+
+SuperWeenieHutJr_EventScript_TicTacToe_Pink::
+	lock
+	setvar VAR_TEMP_E, 4
+	faceplayer
+	goto_if_set FLAG_TEMP_4, SuperWeenieHutJr_EventScript_TicTacToe_Pink_2
+	msgbox SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Pink_5
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Decline
+SuperWeenieHutJr_EventScript_TicTacToe_Pink_1:
+	release
+	return
+
+SuperWeenieHutJr_EventScript_TicTacToe_Pink_2:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Post
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Pink_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Pink_5:
+	call SuperWeenieHutJr_EventScript_TicTacToe_GetToken
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Pink_1
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_ClearGame::
@@ -113,6 +179,7 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetToken::
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetToken_2
 	setvar VAR_TEMP_D, 2
 SuperWeenieHutJr_EventScript_TicTacToe_GetToken_1:
+	closemessage
 	call SuperWeenieHutJr_EventScript_TicTacToe_Brain
 	return
 
@@ -211,7 +278,7 @@ SuperWeenieHutJr_EventScript_TicTacToe_Brain_146:
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Brain_175
 	compare VAR_TEMP_C, 9
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Brain_176
-	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_0
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_1
 	return
 
 SuperWeenieHutJr_EventScript_TicTacToe_Brain_1:
@@ -539,6 +606,8 @@ SuperWeenieHutJr_EventScript_TicTacToe_Brain_147:
 	goto SuperWeenieHutJr_EventScript_TicTacToe_Brain_146
 
 SuperWeenieHutJr_EventScript_TicTacToe_Brain_148:
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_0
+	closemessage
 	setvar VAR_TEMP_C, 10
 	call SuperWeenieHutJr_EventScript_TicTacToe_Tie
 	goto SuperWeenieHutJr_EventScript_TicTacToe_Brain_146
@@ -617,81 +686,292 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetX::
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_2
 	call SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_1:
-	compare VAR_TEMP_E, 3
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetX_Text_1
+	closemessage
+	compare VAR_TEMP_E, 1
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_6
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_5:
+	compare VAR_TEMP_E, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_9
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_8:
+	compare VAR_TEMP_E, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_30
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_29:
+	compare VAR_TEMP_E, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_51
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_50:
 	call SuperWeenieHutJr_EventScript_TicTacToe_Brain
 	return
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_2:
 	call SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetX_Text_0
+	closemessage
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_6:
 	compare VAR_TEMP_B, 1
-	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
-	compare VAR_TEMP_B, 2
-	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_9
-	compare VAR_TEMP_B, 3
-	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_10
-	compare VAR_TEMP_B, 4
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_11
-	compare VAR_TEMP_B, 5
+	compare VAR_TEMP_B, 2
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_12
-	compare VAR_TEMP_B, 6
+	compare VAR_TEMP_B, 3
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_13
-	compare VAR_TEMP_B, 7
+	compare VAR_TEMP_B, 4
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_14
-	compare VAR_TEMP_B, 8
+	compare VAR_TEMP_B, 5
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_15
-	compare VAR_TEMP_B, 9
+	compare VAR_TEMP_B, 6
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_16
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
-
-SuperWeenieHutJr_EventScript_TicTacToe_GetX_8:
-	setvar VAR_TEMP_1, 1
-	setmetatile 6, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_17
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_18
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_19
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_9:
-	setvar VAR_TEMP_2, 1
-	setmetatile 7, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
-
-SuperWeenieHutJr_EventScript_TicTacToe_GetX_10:
-	setvar VAR_TEMP_3, 1
-	setmetatile 8, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
+	compare VAR_TEMP_B, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_32
+	compare VAR_TEMP_B, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_33
+	compare VAR_TEMP_B, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_34
+	compare VAR_TEMP_B, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_35
+	compare VAR_TEMP_B, 5
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_36
+	compare VAR_TEMP_B, 6
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_37
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_38
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_39
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_40
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_11:
-	setvar VAR_TEMP_4, 1
-	setmetatile 6, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	setvar VAR_TEMP_1, 1
+	setmetatile 6, 8, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_12:
-	setvar VAR_TEMP_5, 1
-	setmetatile 7, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	setvar VAR_TEMP_2, 1
+	setmetatile 7, 8, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_13:
-	setvar VAR_TEMP_6, 1
-	setmetatile 8, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	setvar VAR_TEMP_3, 1
+	setmetatile 8, 8, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_14:
-	setvar VAR_TEMP_7, 1
-	setmetatile 6, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	setvar VAR_TEMP_4, 1
+	setmetatile 6, 9, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_15:
-	setvar VAR_TEMP_8, 1
-	setmetatile 7, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	setvar VAR_TEMP_5, 1
+	setmetatile 7, 9, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetX_16:
+	setvar VAR_TEMP_6, 1
+	setmetatile 8, 9, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_17:
+	setvar VAR_TEMP_7, 1
+	setmetatile 6, 10, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_18:
+	setvar VAR_TEMP_8, 1
+	setmetatile 7, 10, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_19:
+	setvar VAR_TEMP_9, 1
+	setmetatile 8, 10, METATILE_weeniehutjr_TicTacToe_PurpleX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_30:
+	compare VAR_TEMP_B, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_53
+	compare VAR_TEMP_B, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_54
+	compare VAR_TEMP_B, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_55
+	compare VAR_TEMP_B, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_56
+	compare VAR_TEMP_B, 5
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_57
+	compare VAR_TEMP_B, 6
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_58
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_59
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_60
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_61
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_32:
+	setvar VAR_TEMP_1, 1
+	setmetatile 11, 8, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_33:
+	setvar VAR_TEMP_2, 1
+	setmetatile 12, 8, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_34:
+	setvar VAR_TEMP_3, 1
+	setmetatile 13, 8, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_35:
+	setvar VAR_TEMP_4, 1
+	setmetatile 11, 9, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_36:
+	setvar VAR_TEMP_5, 1
+	setmetatile 12, 9, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_37:
+	setvar VAR_TEMP_6, 1
+	setmetatile 13, 9, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_38:
+	setvar VAR_TEMP_7, 1
+	setmetatile 11, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_39:
+	setvar VAR_TEMP_8, 1
+	setmetatile 12, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_40:
+	setvar VAR_TEMP_9, 1
+	setmetatile 13, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_51:
+	compare VAR_TEMP_B, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_71
+	compare VAR_TEMP_B, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_72
+	compare VAR_TEMP_B, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_73
+	compare VAR_TEMP_B, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_74
+	compare VAR_TEMP_B, 5
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_75
+	compare VAR_TEMP_B, 6
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_76
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_77
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_78
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetX_79
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_53:
+	setvar VAR_TEMP_1, 1
+	setmetatile 6, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_54:
+	setvar VAR_TEMP_2, 1
+	setmetatile 7, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_55:
+	setvar VAR_TEMP_3, 1
+	setmetatile 8, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_56:
+	setvar VAR_TEMP_4, 1
+	setmetatile 6, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_57:
+	setvar VAR_TEMP_5, 1
+	setmetatile 7, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_58:
+	setvar VAR_TEMP_6, 1
+	setmetatile 8, 13, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_59:
+	setvar VAR_TEMP_7, 1
+	setmetatile 6, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_60:
+	setvar VAR_TEMP_8, 1
+	setmetatile 7, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_61:
 	setvar VAR_TEMP_9, 1
 	setmetatile 8, 14, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_5
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_71:
+	setvar VAR_TEMP_1, 1
+	setmetatile 11, 12, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_72:
+	setvar VAR_TEMP_2, 1
+	setmetatile 12, 12, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_73:
+	setvar VAR_TEMP_3, 1
+	setmetatile 13, 12, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_74:
+	setvar VAR_TEMP_4, 1
+	setmetatile 11, 13, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_75:
+	setvar VAR_TEMP_5, 1
+	setmetatile 12, 13, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_76:
+	setvar VAR_TEMP_6, 1
+	setmetatile 13, 13, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_77:
+	setvar VAR_TEMP_7, 1
+	setmetatile 11, 14, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_78:
+	setvar VAR_TEMP_8, 1
+	setmetatile 12, 14, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_79:
+	setvar VAR_TEMP_9, 1
+	setmetatile 13, 14, METATILE_weeniehutjr_TicTacToe_PinkX, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetX_50
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO::
@@ -699,9 +979,18 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetO::
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_2
 	call SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_1:
-	compare VAR_TEMP_E, 3
+	compare VAR_TEMP_E, 1
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_6
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_5:
+	compare VAR_TEMP_E, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_9
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_8:
+	compare VAR_TEMP_E, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_30
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_29:
+	compare VAR_TEMP_E, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_51
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_50:
 	call SuperWeenieHutJr_EventScript_TicTacToe_Brain
 	return
 
@@ -711,73 +1000,271 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetO_2:
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_6:
 	compare VAR_TEMP_B, 1
-	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
-	compare VAR_TEMP_B, 2
-	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_9
-	compare VAR_TEMP_B, 3
-	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_10
-	compare VAR_TEMP_B, 4
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_11
-	compare VAR_TEMP_B, 5
+	compare VAR_TEMP_B, 2
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_12
-	compare VAR_TEMP_B, 6
+	compare VAR_TEMP_B, 3
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_13
-	compare VAR_TEMP_B, 7
+	compare VAR_TEMP_B, 4
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_14
-	compare VAR_TEMP_B, 8
+	compare VAR_TEMP_B, 5
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_15
-	compare VAR_TEMP_B, 9
+	compare VAR_TEMP_B, 6
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_16
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
-
-SuperWeenieHutJr_EventScript_TicTacToe_GetO_8:
-	setvar VAR_TEMP_1, 2
-	setmetatile 6, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_17
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_18
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_19
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_9:
-	setvar VAR_TEMP_2, 2
-	setmetatile 7, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
-
-SuperWeenieHutJr_EventScript_TicTacToe_GetO_10:
-	setvar VAR_TEMP_3, 2
-	setmetatile 8, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
+	compare VAR_TEMP_B, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_32
+	compare VAR_TEMP_B, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_33
+	compare VAR_TEMP_B, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_34
+	compare VAR_TEMP_B, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_35
+	compare VAR_TEMP_B, 5
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_36
+	compare VAR_TEMP_B, 6
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_37
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_38
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_39
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_40
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_11:
-	setvar VAR_TEMP_4, 2
-	setmetatile 6, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	setvar VAR_TEMP_1, 2
+	setmetatile 6, 8, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_12:
-	setvar VAR_TEMP_5, 2
-	setmetatile 7, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	setvar VAR_TEMP_2, 2
+	setmetatile 7, 8, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_13:
-	setvar VAR_TEMP_6, 2
-	setmetatile 8, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	setvar VAR_TEMP_3, 2
+	setmetatile 8, 8, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_14:
-	setvar VAR_TEMP_7, 2
-	setmetatile 6, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	setvar VAR_TEMP_4, 2
+	setmetatile 6, 9, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_15:
-	setvar VAR_TEMP_8, 2
-	setmetatile 7, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	setvar VAR_TEMP_5, 2
+	setmetatile 7, 9, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetO_16:
+	setvar VAR_TEMP_6, 2
+	setmetatile 8, 9, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_17:
+	setvar VAR_TEMP_7, 2
+	setmetatile 6, 10, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_18:
+	setvar VAR_TEMP_8, 2
+	setmetatile 7, 10, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_19:
+	setvar VAR_TEMP_9, 2
+	setmetatile 8, 10, METATILE_weeniehutjr_TicTacToe_PurpleO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_30:
+	compare VAR_TEMP_B, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_53
+	compare VAR_TEMP_B, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_54
+	compare VAR_TEMP_B, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_55
+	compare VAR_TEMP_B, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_56
+	compare VAR_TEMP_B, 5
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_57
+	compare VAR_TEMP_B, 6
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_58
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_59
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_60
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_61
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_32:
+	setvar VAR_TEMP_1, 2
+	setmetatile 11, 8, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_33:
+	setvar VAR_TEMP_2, 2
+	setmetatile 12, 8, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_34:
+	setvar VAR_TEMP_3, 2
+	setmetatile 13, 8, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_35:
+	setvar VAR_TEMP_4, 2
+	setmetatile 11, 9, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_36:
+	setvar VAR_TEMP_5, 2
+	setmetatile 12, 9, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_37:
+	setvar VAR_TEMP_6, 2
+	setmetatile 13, 9, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_38:
+	setvar VAR_TEMP_7, 2
+	setmetatile 11, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_39:
+	setvar VAR_TEMP_8, 2
+	setmetatile 12, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_40:
+	setvar VAR_TEMP_9, 2
+	setmetatile 13, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_8
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_51:
+	compare VAR_TEMP_B, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_71
+	compare VAR_TEMP_B, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_72
+	compare VAR_TEMP_B, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_73
+	compare VAR_TEMP_B, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_74
+	compare VAR_TEMP_B, 5
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_75
+	compare VAR_TEMP_B, 6
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_76
+	compare VAR_TEMP_B, 7
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_77
+	compare VAR_TEMP_B, 8
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_78
+	compare VAR_TEMP_B, 9
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetO_79
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_53:
+	setvar VAR_TEMP_1, 2
+	setmetatile 6, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_54:
+	setvar VAR_TEMP_2, 2
+	setmetatile 7, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_55:
+	setvar VAR_TEMP_3, 2
+	setmetatile 8, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_56:
+	setvar VAR_TEMP_4, 2
+	setmetatile 6, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_57:
+	setvar VAR_TEMP_5, 2
+	setmetatile 7, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_58:
+	setvar VAR_TEMP_6, 2
+	setmetatile 8, 13, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_59:
+	setvar VAR_TEMP_7, 2
+	setmetatile 6, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_60:
+	setvar VAR_TEMP_8, 2
+	setmetatile 7, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_61:
 	setvar VAR_TEMP_9, 2
 	setmetatile 8, 14, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
-	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_5
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_29
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_71:
+	setvar VAR_TEMP_1, 2
+	setmetatile 11, 12, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_72:
+	setvar VAR_TEMP_2, 2
+	setmetatile 12, 12, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_73:
+	setvar VAR_TEMP_3, 2
+	setmetatile 13, 12, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_74:
+	setvar VAR_TEMP_4, 2
+	setmetatile 11, 13, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_75:
+	setvar VAR_TEMP_5, 2
+	setmetatile 12, 13, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_76:
+	setvar VAR_TEMP_6, 2
+	setmetatile 13, 13, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_77:
+	setvar VAR_TEMP_7, 2
+	setmetatile 11, 14, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_78:
+	setvar VAR_TEMP_8, 2
+	setmetatile 12, 14, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetO_79:
+	setvar VAR_TEMP_9, 2
+	setmetatile 13, 14, METATILE_weeniehutjr_TicTacToe_PinkO, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_GetO_50
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove::
-	multichoice 0, 0, MULTI_TICTACTOE_CHOOSE_MOVE, TRUE
+	multichoicegrid 0, 0, MULTI_TICTACTOE_CHOOSE_MOVE, 3 TRUE
 	compare VAR_RESULT, 0
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_2
 	compare VAR_RESULT, 1
@@ -799,6 +1286,11 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove::
 	msgbox SuperWeenieHutJr_Text_BottomOfGetPlayerMove
 	closemessage
 SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1:
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_Text_0
+	closemessage
+	return
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_Text_1
+	closemessage
 	return
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_2:
@@ -1026,47 +1518,159 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_45:
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_Win::
-	setvar VAR_TEMP_F, VAR_TEMP_F + 1
-	compare VAR_TEMP_E, 3
+	compare VAR_TEMP_F, 3
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_2
+	compare VAR_TEMP_F, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_3
+	compare VAR_TEMP_F, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_4
+	compare VAR_TEMP_F, 0
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_5
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Win_Text_0
 SuperWeenieHutJr_EventScript_TicTacToe_Win_1:
+	compare VAR_TEMP_E, 1
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_12
+SuperWeenieHutJr_EventScript_TicTacToe_Win_11:
+	compare VAR_TEMP_E, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_15
+SuperWeenieHutJr_EventScript_TicTacToe_Win_14:
+	compare VAR_TEMP_E, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_18
+SuperWeenieHutJr_EventScript_TicTacToe_Win_17:
+	compare VAR_TEMP_E, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Win_21
+SuperWeenieHutJr_EventScript_TicTacToe_Win_20:
 	msgbox SuperWeenieHutJr_Text_TicTacToe_Lost
 	closemessage
 	end
 
 SuperWeenieHutJr_EventScript_TicTacToe_Win_2:
-	setflag FLAG_TEMP_3
+	setvar VAR_SWHJ_STATE, 2
+	setvar VAR_TEMP_F, 4
 	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_3:
+	setvar VAR_TEMP_F, 3
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_4:
+	setvar VAR_TEMP_F, 2
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_5:
+	setvar VAR_TEMP_F, 1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_12:
+	setflag FLAG_TEMP_1
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_11
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_15:
+	setflag FLAG_TEMP_2
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_14
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_18:
+	setflag FLAG_TEMP_3
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_17
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_21:
+	setflag FLAG_TEMP_4
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Win_20
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_Lose::
-	compare VAR_TEMP_E, 3
+	compare VAR_TEMP_E, 1
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Lose_2
 SuperWeenieHutJr_EventScript_TicTacToe_Lose_1:
+	compare VAR_TEMP_E, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Lose_5
+SuperWeenieHutJr_EventScript_TicTacToe_Lose_4:
+	compare VAR_TEMP_E, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Lose_8
+SuperWeenieHutJr_EventScript_TicTacToe_Lose_7:
+	compare VAR_TEMP_E, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Lose_11
+SuperWeenieHutJr_EventScript_TicTacToe_Lose_10:
 	msgbox SuperWeenieHutJr_Text_TicTacToe_Won
 	closemessage
 	end
 
 SuperWeenieHutJr_EventScript_TicTacToe_Lose_2:
-	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_Lose_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Lose_5:
+	setflag FLAG_TEMP_2
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Lose_4
+
+SuperWeenieHutJr_EventScript_TicTacToe_Lose_8:
+	setflag FLAG_TEMP_3
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Lose_7
+
+SuperWeenieHutJr_EventScript_TicTacToe_Lose_11:
+	setflag FLAG_TEMP_4
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Lose_10
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_Tie::
-	compare VAR_TEMP_E, 3
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_Tie_Text_0
+	closemessage
+	compare VAR_TEMP_E, 1
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Tie_2
 SuperWeenieHutJr_EventScript_TicTacToe_Tie_1:
+	compare VAR_TEMP_E, 2
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Tie_5
+SuperWeenieHutJr_EventScript_TicTacToe_Tie_4:
+	compare VAR_TEMP_E, 3
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Tie_8
+SuperWeenieHutJr_EventScript_TicTacToe_Tie_7:
+	compare VAR_TEMP_E, 4
+	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_Tie_11
+SuperWeenieHutJr_EventScript_TicTacToe_Tie_10:
 	msgbox SuperWeenieHutJr_Text_TicTacToe_Tied
 	closemessage
 	end
 
 SuperWeenieHutJr_EventScript_TicTacToe_Tie_2:
-	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_Tie_1
+
+SuperWeenieHutJr_EventScript_TicTacToe_Tie_5:
+	setflag FLAG_TEMP_2
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Tie_4
+
+SuperWeenieHutJr_EventScript_TicTacToe_Tie_8:
+	setflag FLAG_TEMP_3
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Tie_7
+
+SuperWeenieHutJr_EventScript_TicTacToe_Tie_11:
+	setflag FLAG_TEMP_4
+	goto SuperWeenieHutJr_EventScript_TicTacToe_Tie_10
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_0:
+	.string "TURN 9 INTO 10$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_1:
 	.string "TOO MANY TURNS IDK BOTTOM OF BRAIN$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_Text_0:
+	.string "BACK IN GETX RIGHT AFTER CALL TO GETPLAYERMOVE$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetX_Text_1:
+	.string "PAINT AN X$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_Text_0:
+	.string "BOTTOM OF GETPLAYERMOVE$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_Text_1:
+	.string "GONE TOO FAR GETPLAYERMOVE$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_Win_Text_0:
+	.string "TOO MANY WINS IDK$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_Tie_Text_0:
+	.string "TIE FUNCTION$"
 
 SuperWeenieHutJr_Text_DoorBlockA::
 	.string "Hello there cutie tootie sunshine ray!\n"
@@ -1107,17 +1711,17 @@ SuperWeenieHutJr_Text_TicTacToe_Decline::
 	.string "know.$"
 
 SuperWeenieHutJr_Text_TicTacToe_Post::
-	.string "I can't believe you won! Good game, I\n"
-	.string "guess...$"
+	.string "Good game, I guess...$"
 
 SuperWeenieHutJr_Text_TicTacToe_XYes::
 	.string "Would you like to be X?$"
 
 SuperWeenieHutJr_Text_TicTacToe_Lost::
-	.string "Looks like I lost.$"
+	.string "Looks like I lost. I can't believe you\n"
+	.string "won!$"
 
 SuperWeenieHutJr_Text_TicTacToe_Won::
-	.string "Looks like I won.$"
+	.string "Looks like I won. I can't believe I won!$"
 
 SuperWeenieHutJr_Text_TicTacToe_Tied::
 	.string "Oh rats! Looks like we've tied in a\n"
