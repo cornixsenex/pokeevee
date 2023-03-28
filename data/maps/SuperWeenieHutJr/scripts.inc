@@ -913,6 +913,8 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove_45:
 
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove::
+	msgbox SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_Text_0
+	closemessage
 	specialvar VAR_RESULT, GetCPUTicTacToeMove
 	compare VAR_RESULT, 0
 	goto_if_eq SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_2
@@ -939,49 +941,49 @@ SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1:
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_2:
 	compare VAR_TEMP_1, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_21
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 1
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_3:
 	compare VAR_TEMP_2, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_24
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 2
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_4:
 	compare VAR_TEMP_3, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_27
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 3
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_5:
 	compare VAR_TEMP_4, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_30
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 4
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_6:
 	compare VAR_TEMP_5, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_33
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 5
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_7:
 	compare VAR_TEMP_6, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_36
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 6
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_8:
 	compare VAR_TEMP_7, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_39
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 7
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_9:
 	compare VAR_TEMP_8, 0
 	goto_if_gt SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_42
-	setvar VAR_TEMP_B, VAR_RESULT
+	setvar VAR_TEMP_B, 8
 	goto SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
 
 SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_10:
@@ -1072,6 +1074,9 @@ SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_0:
 
 SuperWeenieHutJr_EventScript_TicTacToe_Brain_Text_1:
 	.string "TOO MANY TURNS IDK BOTTOM OF BRAIN$"
+
+SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove_Text_0:
+	.string "TOP OF GETCPUMOVE$"
 
 SuperWeenieHutJr_Text_DoorBlockA::
 	.string "Hello there cutie tootie sunshine ray!\n"
