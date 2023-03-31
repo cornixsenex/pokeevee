@@ -31,7 +31,7 @@ Debug_CheatStart::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2 @ 2: Met Rival's Mom (and is corresponding gender)
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 2 @ 2: Met Rival's Mom (and is corresponding gender)
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4 @ 4: Received Pokedex
-	setflag FLAG_RECEIVED_BIKE
+@	setflag FLAG_RECEIVED_BIKE - DO NOTE I RE_PURPOSED THIS FLAG
 	additem ITEM_ACRO_BIKE
 	setvar VAR_BRINEY_HOUSE_STATE, 1
 	setvar VAR_ROUTE116_STATE, 2

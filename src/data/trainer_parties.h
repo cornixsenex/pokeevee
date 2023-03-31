@@ -1612,19 +1612,39 @@ static const struct TrainerMon sParty_Judy[] = {
     }
 };
 
-//BREAK
-
-
-static const struct TrainerMon sParty_Cindy2[] = {
+static const struct TrainerMon sParty_MeiAndLisa[] = {
     {
-    .iv = 0,
-    .lvl = 11,
-    .species = SPECIES_ZIGZAGOON,
-    .heldItem = ITEM_NUGGET,
-    .moves = {MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_NONE, MOVE_NONE}
+    .iv = 250,
+    .lvl = 4,
+    .species = SPECIES_CLAYDOL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER, MOVE_PSYCHIC, MOVE_LIGHT_SCREEN}
+    },
+    {
+    .iv = 250,
+    .lvl = 4,
+    .species = SPECIES_XATU,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PSYCHIC, MOVE_SUNNY_DAY, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
+    },
+    {
+    .iv = 250,
+    .lvl = 4,
+    .species = SPECIES_LUNATONE,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_CALM_MIND}
+    },
+    {
+    .iv = 250,
+    .lvl = 4,
+    .species = SPECIES_SOLROCK,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_PSYCHIC, MOVE_FLAMETHROWER}
     }
 };
 
+
+//BREAK
 static const struct TrainerMon sParty_Brianna[] = {
     {
     .iv = 150,

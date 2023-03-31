@@ -79,7 +79,7 @@ script SuperWeenieHutJr_EventScript_GraduateR {
 }
 
 script SuperWeenieHutJr_EventScript_Graduate {
-	setvar (VAR_SWHJ_STATE, 2)
+	setvar (VAR_SWHJ_STATE, 3)
 	msgbox (SuperWeenieHutJr_Text_Graduate)
 	closemessage
 	return

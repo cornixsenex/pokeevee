@@ -101,30 +101,28 @@
 #define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
 #define FLAG_SLABS_HIDE_RIVAL                0x52
 #define FLAG_HEALTH_INSURANCE_OBTAINED       0x53 //// UNUSED!!!!!
-
-
-
-
+#define FLAG_FOLLOWER_ALT_APPROACH           0x54  // Give alternate route to follower in cutscenes
+#define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
+#define FLAG_WHJ_OPEN                        0x56  // Set when allowed into WHJ 					
+#define FLAG_GATOCITYS_HIDEM1             	 0x57  // Hides M1 in line...should be an easier way but this is expedient.
+#define FLAG_ROUTE10_HIDE_KRABBY             0x58
+#define FLAG_GATOCITYS_HIDEM2                0x59
+#define FLAG_GATOCITYS_HIDEM3                0x5A
+#define FLAG_AVAILABLE    	      		     0x5B
 
 
 
 												  ////BREAK
+													  
+												  
+												  
+												//Example for newgame set flag
+//#define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 
 
 
 
 
-
-
-#define FLAG_FOLLOWER_ALT_APPROACH           0x54  // Give alternate route to follower in cutscenes
-#define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
-
-#define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
-#define FLAG_AVAILABLE             			 0x57  //OOPS
-#define FLAG_ROUTE10_HIDE_KRABBY             0x58
-#define FLAG_DECLINED_BIKE                   0x59
-#define FLAG_RECEIVED_BIKE                   0x5A
-#define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
 #define FLAG_RECEIVED_WAILMER_PAIL           0x5E

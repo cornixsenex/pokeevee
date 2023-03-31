@@ -1564,22 +1564,22 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_Judy),
         .party = {.TrainerMon = sParty_Judy},
     },
-///	====BREAK====
 
-
-
-    [TRAINER_CINDY_2] =
+    [TRAINER_MEI_AND_LISA] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("CINDY"),
+        .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
+        .trainerName = _("LISA&MEI"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Cindy2),
-        .party = {.TrainerMon = sParty_Cindy2},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_MeiAndLisa),
+        .party = {.TrainerMon = sParty_MeiAndLisa},
     },
+///	====BREAK====
+
+
 
     [TRAINER_BRIANNA] =
     {

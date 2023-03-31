@@ -574,6 +574,10 @@ static const union AnimCmd *const sAnims_Nurse_Joy[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_CueBallNoBike[] ={
+    sAnim_GeneralFrame0,
+};
+
 
 
 
@@ -724,5 +728,6 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_MISTY2] = sAnims_Misty2,
     [TRAINER_PIC_JANITOR] = sAnims_Janitor,
     [TRAINER_PIC_NURSE_JOY] = sAnims_Nurse_Joy,
+    [TRAINER_PIC_CUE_BALL_NO_BIKE] = sAnims_CueBallNoBike,
 };
 

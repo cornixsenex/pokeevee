@@ -23,8 +23,10 @@ WeenieHutJr_EventScript_DoorTriggerR::
 WeenieHutJr_EventScript_DoorBlock::
 	msgbox WeenieHutJr_Text_DoorBlockA
 	closemessage
-	compare VAR_SWHJ_STATE, 2
+	compare VAR_SWHJ_STATE, 3
 	goto_if_eq WeenieHutJr_EventScript_DoorBlock_2
+	compare VAR_SWHJ_STATE, 4
+	goto_if_eq WeenieHutJr_EventScript_DoorBlock_3
 	msgbox WeenieHutJr_Text_DoorBlockB
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
@@ -33,11 +35,1249 @@ WeenieHutJr_EventScript_DoorBlock_1:
 	return
 
 WeenieHutJr_EventScript_DoorBlock_2:
-	setvar VAR_SWHJ_STATE, 3
 	msgbox WeenieHutJr_Text_DoorBlockC
 	closemessage
 	goto WeenieHutJr_EventScript_DoorBlock_1
 
+WeenieHutJr_EventScript_DoorBlock_3:
+	applymovement 3, Common_Movement_ExclamationMark
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox WeenieHutJr_Text_DoorBlockD
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	goto WeenieHutJr_EventScript_DoorBlock_1
+
+
+WeenieHutJr_EventScript_KickOutR::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	call WeenieHutJr_EventScript_KickOut
+	release
+	return
+
+
+WeenieHutJr_EventScript_KickOutL::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	call WeenieHutJr_EventScript_KickOut
+	release
+	return
+
+
+WeenieHutJr_EventScript_KickOut::
+	setvar VAR_SWHJ_STATE, 4
+	msgbox WeenieHutJr_Text_KickOut
+	closemessage
+	return
+
+
+WeenieHutJr_EventScript_TicTacToe_Blue::
+	lock
+	setvar VAR_TEMP_E, 1
+	faceplayer
+	goto_if_set FLAG_TEMP_1, WeenieHutJr_EventScript_TicTacToe_Blue_2
+	msgbox SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Blue_8
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Decline
+WeenieHutJr_EventScript_TicTacToe_Blue_1:
+	release
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Blue_2:
+	checktrainerflag TRAINER_MEI_AND_LISA
+	goto_if 1, WeenieHutJr_EventScript_TicTacToe_Blue_5
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Post
+	goto WeenieHutJr_EventScript_TicTacToe_Blue_1
+
+WeenieHutJr_EventScript_TicTacToe_Blue_5:
+	msgbox WeenieHutJr_Text_MeiAndLisaPost
+	goto WeenieHutJr_EventScript_TicTacToe_Blue_1
+
+WeenieHutJr_EventScript_TicTacToe_Blue_8:
+	call WeenieHutJr_EventScript_TicTacToe_GetToken
+	goto WeenieHutJr_EventScript_TicTacToe_Blue_1
+
+
+WeenieHutJr_EventScript_TicTacToe_Orange::
+	lock
+	setvar VAR_TEMP_E, 2
+	faceplayer
+	goto_if_set FLAG_TEMP_2, WeenieHutJr_EventScript_TicTacToe_Orange_2
+	msgbox SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Orange_8
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Decline
+WeenieHutJr_EventScript_TicTacToe_Orange_1:
+	release
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Orange_2:
+	checktrainerflag TRAINER_MEI_AND_LISA
+	goto_if 1, WeenieHutJr_EventScript_TicTacToe_Orange_5
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Post
+	goto WeenieHutJr_EventScript_TicTacToe_Orange_1
+
+WeenieHutJr_EventScript_TicTacToe_Orange_5:
+	msgbox WeenieHutJr_Text_MeiAndLisaPost
+	goto WeenieHutJr_EventScript_TicTacToe_Orange_1
+
+WeenieHutJr_EventScript_TicTacToe_Orange_8:
+	call WeenieHutJr_EventScript_TicTacToe_GetToken
+	goto WeenieHutJr_EventScript_TicTacToe_Orange_1
+
+
+WeenieHutJr_EventScript_TicTacToe_ClearGame::
+	setvar VAR_TEMP_C, 0
+	setvar VAR_TEMP_D, 0
+	setvar VAR_TEMP_1, 0
+	setvar VAR_TEMP_2, 0
+	setvar VAR_TEMP_3, 0
+	setvar VAR_TEMP_4, 0
+	setvar VAR_TEMP_5, 0
+	setvar VAR_TEMP_6, 0
+	setvar VAR_TEMP_7, 0
+	setvar VAR_TEMP_8, 0
+	setvar VAR_TEMP_9, 0
+	return
+
+
+WeenieHutJr_EventScript_TicTacToe_Brain::
+	special DrawWholeMapView
+	compare VAR_TEMP_1, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_93
+WeenieHutJr_EventScript_TicTacToe_Brain_89:
+	compare VAR_TEMP_1, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_88
+WeenieHutJr_EventScript_TicTacToe_Brain_84:
+	compare VAR_TEMP_4, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_83
+WeenieHutJr_EventScript_TicTacToe_Brain_79:
+	compare VAR_TEMP_4, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_78
+WeenieHutJr_EventScript_TicTacToe_Brain_74:
+	compare VAR_TEMP_7, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_73
+WeenieHutJr_EventScript_TicTacToe_Brain_69:
+	compare VAR_TEMP_7, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_68
+WeenieHutJr_EventScript_TicTacToe_Brain_64:
+	compare VAR_TEMP_1, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_63
+WeenieHutJr_EventScript_TicTacToe_Brain_59:
+	compare VAR_TEMP_1, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_58
+WeenieHutJr_EventScript_TicTacToe_Brain_54:
+	compare VAR_TEMP_2, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_53
+WeenieHutJr_EventScript_TicTacToe_Brain_49:
+	compare VAR_TEMP_2, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_48
+WeenieHutJr_EventScript_TicTacToe_Brain_44:
+	compare VAR_TEMP_3, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_43
+WeenieHutJr_EventScript_TicTacToe_Brain_39:
+	compare VAR_TEMP_3, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_38
+WeenieHutJr_EventScript_TicTacToe_Brain_34:
+	compare VAR_TEMP_1, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_33
+WeenieHutJr_EventScript_TicTacToe_Brain_29:
+	compare VAR_TEMP_1, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_28
+WeenieHutJr_EventScript_TicTacToe_Brain_24:
+	compare VAR_TEMP_3, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_23
+WeenieHutJr_EventScript_TicTacToe_Brain_19:
+	compare VAR_TEMP_3, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_18
+WeenieHutJr_EventScript_TicTacToe_Brain_17:
+	compare VAR_TEMP_C, 10
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_147
+	compare VAR_TEMP_C, 9
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_148
+	compare VAR_TEMP_C, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_149
+	compare VAR_TEMP_C, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_150
+	compare VAR_TEMP_C, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_151
+	compare VAR_TEMP_C, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_152
+	compare VAR_TEMP_C, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_153
+	compare VAR_TEMP_C, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_154
+	compare VAR_TEMP_C, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_155
+	compare VAR_TEMP_C, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_156
+	setvar VAR_TEMP_C, 1
+WeenieHutJr_EventScript_TicTacToe_Brain_146:
+	compare VAR_TEMP_C, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_168
+	compare VAR_TEMP_C, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_169
+	compare VAR_TEMP_C, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_170
+	compare VAR_TEMP_C, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_171
+	compare VAR_TEMP_C, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_172
+	compare VAR_TEMP_C, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_173
+	compare VAR_TEMP_C, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_174
+	compare VAR_TEMP_C, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_175
+	compare VAR_TEMP_C, 9
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_176
+	msgbox WeenieHutJr_EventScript_TicTacToe_Brain_Text_1
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_1:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_98
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_2:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_101
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_3:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_104
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_4:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_107
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_5:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_110
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_6:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_113
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_7:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_116
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_8:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_119
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_9:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_122
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_10:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_125
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_11:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_128
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_12:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_131
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_13:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_134
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_14:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_137
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_15:
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_140
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_16:
+	compare VAR_TEMP_D, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_143
+	call WeenieHutJr_EventScript_TicTacToe_Lose
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_18:
+	compare VAR_TEMP_5, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_20
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_17
+
+WeenieHutJr_EventScript_TicTacToe_Brain_20:
+	compare VAR_TEMP_7, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_16
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_17
+
+WeenieHutJr_EventScript_TicTacToe_Brain_23:
+	compare VAR_TEMP_5, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_25
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_19
+
+WeenieHutJr_EventScript_TicTacToe_Brain_25:
+	compare VAR_TEMP_7, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_15
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_19
+
+WeenieHutJr_EventScript_TicTacToe_Brain_28:
+	compare VAR_TEMP_5, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_30
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_24
+
+WeenieHutJr_EventScript_TicTacToe_Brain_30:
+	compare VAR_TEMP_9, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_14
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_24
+
+WeenieHutJr_EventScript_TicTacToe_Brain_33:
+	compare VAR_TEMP_5, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_35
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_29
+
+WeenieHutJr_EventScript_TicTacToe_Brain_35:
+	compare VAR_TEMP_9, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_13
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_29
+
+WeenieHutJr_EventScript_TicTacToe_Brain_38:
+	compare VAR_TEMP_6, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_40
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_34
+
+WeenieHutJr_EventScript_TicTacToe_Brain_40:
+	compare VAR_TEMP_9, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_12
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_34
+
+WeenieHutJr_EventScript_TicTacToe_Brain_43:
+	compare VAR_TEMP_6, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_45
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_39
+
+WeenieHutJr_EventScript_TicTacToe_Brain_45:
+	compare VAR_TEMP_9, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_11
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_39
+
+WeenieHutJr_EventScript_TicTacToe_Brain_48:
+	compare VAR_TEMP_5, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_50
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_44
+
+WeenieHutJr_EventScript_TicTacToe_Brain_50:
+	compare VAR_TEMP_8, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_10
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_44
+
+WeenieHutJr_EventScript_TicTacToe_Brain_53:
+	compare VAR_TEMP_5, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_55
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_49
+
+WeenieHutJr_EventScript_TicTacToe_Brain_55:
+	compare VAR_TEMP_8, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_9
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_49
+
+WeenieHutJr_EventScript_TicTacToe_Brain_58:
+	compare VAR_TEMP_4, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_60
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_54
+
+WeenieHutJr_EventScript_TicTacToe_Brain_60:
+	compare VAR_TEMP_7, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_8
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_54
+
+WeenieHutJr_EventScript_TicTacToe_Brain_63:
+	compare VAR_TEMP_4, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_65
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_59
+
+WeenieHutJr_EventScript_TicTacToe_Brain_65:
+	compare VAR_TEMP_7, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_7
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_59
+
+WeenieHutJr_EventScript_TicTacToe_Brain_68:
+	compare VAR_TEMP_8, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_70
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_64
+
+WeenieHutJr_EventScript_TicTacToe_Brain_70:
+	compare VAR_TEMP_9, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_6
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_64
+
+WeenieHutJr_EventScript_TicTacToe_Brain_73:
+	compare VAR_TEMP_8, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_75
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_69
+
+WeenieHutJr_EventScript_TicTacToe_Brain_75:
+	compare VAR_TEMP_9, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_5
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_69
+
+WeenieHutJr_EventScript_TicTacToe_Brain_78:
+	compare VAR_TEMP_5, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_80
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_74
+
+WeenieHutJr_EventScript_TicTacToe_Brain_80:
+	compare VAR_TEMP_6, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_4
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_74
+
+WeenieHutJr_EventScript_TicTacToe_Brain_83:
+	compare VAR_TEMP_5, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_85
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_79
+
+WeenieHutJr_EventScript_TicTacToe_Brain_85:
+	compare VAR_TEMP_6, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_3
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_79
+
+WeenieHutJr_EventScript_TicTacToe_Brain_88:
+	compare VAR_TEMP_2, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_90
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_84
+
+WeenieHutJr_EventScript_TicTacToe_Brain_90:
+	compare VAR_TEMP_3, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_2
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_84
+
+WeenieHutJr_EventScript_TicTacToe_Brain_93:
+	compare VAR_TEMP_2, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_95
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_89
+
+WeenieHutJr_EventScript_TicTacToe_Brain_95:
+	compare VAR_TEMP_3, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Brain_1
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_89
+
+WeenieHutJr_EventScript_TicTacToe_Brain_98:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_101:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_104:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_107:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_110:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_113:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_116:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_119:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_122:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_125:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_128:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_131:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_134:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_137:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_140:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_143:
+	call WeenieHutJr_EventScript_TicTacToe_Win
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_147:
+	call WeenieHutJr_EventScript_TicTacToe_Tie
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_148:
+	msgbox WeenieHutJr_EventScript_TicTacToe_Brain_Text_0
+	closemessage
+	setvar VAR_TEMP_C, 10
+	call WeenieHutJr_EventScript_TicTacToe_Tie
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_149:
+	setvar VAR_TEMP_C, 9
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_150:
+	setvar VAR_TEMP_C, 8
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_151:
+	setvar VAR_TEMP_C, 7
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_152:
+	setvar VAR_TEMP_C, 6
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_153:
+	setvar VAR_TEMP_C, 5
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_154:
+	setvar VAR_TEMP_C, 4
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_155:
+	setvar VAR_TEMP_C, 3
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_156:
+	setvar VAR_TEMP_C, 2
+	goto WeenieHutJr_EventScript_TicTacToe_Brain_146
+
+WeenieHutJr_EventScript_TicTacToe_Brain_168:
+	call WeenieHutJr_EventScript_TicTacToe_GetX
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_169:
+	call WeenieHutJr_EventScript_TicTacToe_GetO
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_170:
+	call WeenieHutJr_EventScript_TicTacToe_GetX
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_171:
+	call WeenieHutJr_EventScript_TicTacToe_GetO
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_172:
+	call WeenieHutJr_EventScript_TicTacToe_GetX
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_173:
+	call WeenieHutJr_EventScript_TicTacToe_GetO
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_174:
+	call WeenieHutJr_EventScript_TicTacToe_GetX
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_175:
+	call WeenieHutJr_EventScript_TicTacToe_GetO
+	return
+
+WeenieHutJr_EventScript_TicTacToe_Brain_176:
+	call WeenieHutJr_EventScript_TicTacToe_GetX
+	return
+
+
+WeenieHutJr_EventScript_TicTacToe_GetX::
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_2
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+WeenieHutJr_EventScript_TicTacToe_GetX_1:
+	compare VAR_TEMP_E, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_6
+WeenieHutJr_EventScript_TicTacToe_GetX_5:
+	compare VAR_TEMP_E, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_9
+WeenieHutJr_EventScript_TicTacToe_GetX_8:
+	call WeenieHutJr_EventScript_TicTacToe_Brain
+	return
+
+WeenieHutJr_EventScript_TicTacToe_GetX_2:
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_1
+
+WeenieHutJr_EventScript_TicTacToe_GetX_6:
+	compare VAR_TEMP_B, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_11
+	compare VAR_TEMP_B, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_12
+	compare VAR_TEMP_B, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_13
+	compare VAR_TEMP_B, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_14
+	compare VAR_TEMP_B, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_15
+	compare VAR_TEMP_B, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_16
+	compare VAR_TEMP_B, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_17
+	compare VAR_TEMP_B, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_18
+	compare VAR_TEMP_B, 9
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_19
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_9:
+	compare VAR_TEMP_B, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_29
+	compare VAR_TEMP_B, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_30
+	compare VAR_TEMP_B, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_31
+	compare VAR_TEMP_B, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_32
+	compare VAR_TEMP_B, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_33
+	compare VAR_TEMP_B, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_34
+	compare VAR_TEMP_B, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_35
+	compare VAR_TEMP_B, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_36
+	compare VAR_TEMP_B, 9
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetX_37
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_11:
+	setvar VAR_TEMP_1, 1
+	setmetatile 6, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_12:
+	setvar VAR_TEMP_2, 1
+	setmetatile 7, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_13:
+	setvar VAR_TEMP_3, 1
+	setmetatile 8, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_14:
+	setvar VAR_TEMP_4, 1
+	setmetatile 6, 11, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_15:
+	setvar VAR_TEMP_5, 1
+	setmetatile 7, 11, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_16:
+	setvar VAR_TEMP_6, 1
+	setmetatile 8, 11, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_17:
+	setvar VAR_TEMP_7, 1
+	setmetatile 6, 12, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_18:
+	setvar VAR_TEMP_8, 1
+	setmetatile 7, 12, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_19:
+	setvar VAR_TEMP_9, 1
+	setmetatile 8, 12, METATILE_weeniehutjr_TicTacToe_BlueX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_5
+
+WeenieHutJr_EventScript_TicTacToe_GetX_29:
+	setvar VAR_TEMP_1, 1
+	setmetatile 11, 10, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_30:
+	setvar VAR_TEMP_2, 1
+	setmetatile 12, 10, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_31:
+	setvar VAR_TEMP_3, 1
+	setmetatile 13, 10, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_32:
+	setvar VAR_TEMP_4, 1
+	setmetatile 11, 11, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_33:
+	setvar VAR_TEMP_5, 1
+	setmetatile 12, 11, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_34:
+	setvar VAR_TEMP_6, 1
+	setmetatile 13, 11, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_35:
+	setvar VAR_TEMP_7, 1
+	setmetatile 11, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_36:
+	setvar VAR_TEMP_8, 1
+	setmetatile 12, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+WeenieHutJr_EventScript_TicTacToe_GetX_37:
+	setvar VAR_TEMP_9, 1
+	setmetatile 13, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetX_8
+
+
+WeenieHutJr_EventScript_TicTacToe_GetO::
+	compare VAR_TEMP_D, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_2
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+WeenieHutJr_EventScript_TicTacToe_GetO_1:
+	compare VAR_TEMP_E, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_6
+WeenieHutJr_EventScript_TicTacToe_GetO_5:
+	compare VAR_TEMP_E, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_9
+WeenieHutJr_EventScript_TicTacToe_GetO_8:
+	call WeenieHutJr_EventScript_TicTacToe_Brain
+	return
+
+WeenieHutJr_EventScript_TicTacToe_GetO_2:
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_1
+
+WeenieHutJr_EventScript_TicTacToe_GetO_6:
+	compare VAR_TEMP_B, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_11
+	compare VAR_TEMP_B, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_12
+	compare VAR_TEMP_B, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_13
+	compare VAR_TEMP_B, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_14
+	compare VAR_TEMP_B, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_15
+	compare VAR_TEMP_B, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_16
+	compare VAR_TEMP_B, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_17
+	compare VAR_TEMP_B, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_18
+	compare VAR_TEMP_B, 9
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_19
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_9:
+	compare VAR_TEMP_B, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_29
+	compare VAR_TEMP_B, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_30
+	compare VAR_TEMP_B, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_31
+	compare VAR_TEMP_B, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_32
+	compare VAR_TEMP_B, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_33
+	compare VAR_TEMP_B, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_34
+	compare VAR_TEMP_B, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_35
+	compare VAR_TEMP_B, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_36
+	compare VAR_TEMP_B, 9
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_37
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_11:
+	setvar VAR_TEMP_1, 1
+	setmetatile 6, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_12:
+	setvar VAR_TEMP_2, 1
+	setmetatile 7, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_13:
+	setvar VAR_TEMP_3, 1
+	setmetatile 8, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_14:
+	setvar VAR_TEMP_4, 1
+	setmetatile 6, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_15:
+	setvar VAR_TEMP_5, 1
+	setmetatile 7, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_16:
+	setvar VAR_TEMP_6, 1
+	setmetatile 8, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_17:
+	setvar VAR_TEMP_7, 1
+	setmetatile 6, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_18:
+	setvar VAR_TEMP_8, 1
+	setmetatile 7, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_19:
+	setvar VAR_TEMP_9, 1
+	setmetatile 8, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
+
+WeenieHutJr_EventScript_TicTacToe_GetO_29:
+	setvar VAR_TEMP_1, 1
+	setmetatile 11, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_30:
+	setvar VAR_TEMP_2, 1
+	setmetatile 12, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_31:
+	setvar VAR_TEMP_3, 1
+	setmetatile 13, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_32:
+	setvar VAR_TEMP_4, 1
+	setmetatile 11, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_33:
+	setvar VAR_TEMP_5, 1
+	setmetatile 12, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_34:
+	setvar VAR_TEMP_6, 1
+	setmetatile 13, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_35:
+	setvar VAR_TEMP_7, 1
+	setmetatile 11, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_36:
+	setvar VAR_TEMP_8, 1
+	setmetatile 12, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+WeenieHutJr_EventScript_TicTacToe_GetO_37:
+	setvar VAR_TEMP_9, 1
+	setmetatile 13, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
+
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove::
+	multichoicegrid 0, 0, MULTI_TICTACTOE_CHOOSE_MOVE, 3 TRUE
+	compare VAR_RESULT, 0
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_2
+	compare VAR_RESULT, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_3
+	compare VAR_RESULT, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_4
+	compare VAR_RESULT, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_5
+	compare VAR_RESULT, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_6
+	compare VAR_RESULT, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_7
+	compare VAR_RESULT, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_8
+	compare VAR_RESULT, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_9
+	compare VAR_RESULT, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_10
+	msgbox SuperWeenieHutJr_Text_BottomOfGetPlayerMove
+	closemessage
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1:
+	return
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_2:
+	compare VAR_TEMP_1, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_21
+	setvar VAR_TEMP_B, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_3:
+	compare VAR_TEMP_2, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_24
+	setvar VAR_TEMP_B, 2
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_4:
+	compare VAR_TEMP_3, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_27
+	setvar VAR_TEMP_B, 3
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_5:
+	compare VAR_TEMP_4, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_30
+	setvar VAR_TEMP_B, 4
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_6:
+	compare VAR_TEMP_5, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_33
+	setvar VAR_TEMP_B, 5
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_7:
+	compare VAR_TEMP_6, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_36
+	setvar VAR_TEMP_B, 6
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_8:
+	compare VAR_TEMP_7, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_39
+	setvar VAR_TEMP_B, 7
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_9:
+	compare VAR_TEMP_8, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_42
+	setvar VAR_TEMP_B, 8
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_10:
+	compare VAR_TEMP_9, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_45
+	setvar VAR_TEMP_B, 9
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_21:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_24:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_27:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_30:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_33:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_36:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_39:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_42:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_45:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_BadMove
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_GetPlayerMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_1
+
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove::
+	specialvar VAR_RESULT, GetCPUTicTacToeMove
+	compare VAR_RESULT, 0
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_2
+	compare VAR_RESULT, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_3
+	compare VAR_RESULT, 2
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_4
+	compare VAR_RESULT, 3
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_5
+	compare VAR_RESULT, 4
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_6
+	compare VAR_RESULT, 5
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_7
+	compare VAR_RESULT, 6
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_8
+	compare VAR_RESULT, 7
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_9
+	compare VAR_RESULT, 8
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_10
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1:
+	return
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_2:
+	compare VAR_TEMP_1, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_21
+	setvar VAR_TEMP_B, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_3:
+	compare VAR_TEMP_2, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_24
+	setvar VAR_TEMP_B, 2
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_4:
+	compare VAR_TEMP_3, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_27
+	setvar VAR_TEMP_B, 3
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_5:
+	compare VAR_TEMP_4, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_30
+	setvar VAR_TEMP_B, 4
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_6:
+	compare VAR_TEMP_5, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_33
+	setvar VAR_TEMP_B, 5
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_7:
+	compare VAR_TEMP_6, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_36
+	setvar VAR_TEMP_B, 6
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_8:
+	compare VAR_TEMP_7, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_39
+	setvar VAR_TEMP_B, 7
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_9:
+	compare VAR_TEMP_8, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_42
+	setvar VAR_TEMP_B, 8
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_10:
+	compare VAR_TEMP_9, 0
+	goto_if_gt WeenieHutJr_EventScript_TicTacToe_GetCPUMove_45
+	setvar VAR_TEMP_B, 9
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_21:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_24:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_27:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_30:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_33:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_36:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_39:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_42:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+WeenieHutJr_EventScript_TicTacToe_GetCPUMove_45:
+	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
+	goto WeenieHutJr_EventScript_TicTacToe_GetCPUMove_1
+
+
+WeenieHutJr_EventScript_TicTacToe_Win::
+	compare VAR_TEMP_E, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Win_2
+	setflag FLAG_TEMP_2
+	setflag FLAG_TEMP_4
+WeenieHutJr_EventScript_TicTacToe_Win_1:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Lost
+	closemessage
+	goto_if_set FLAG_TEMP_3, WeenieHutJr_EventScript_TicTacToe_Win_7
+WeenieHutJr_EventScript_TicTacToe_Win_5:
+	end
+
+WeenieHutJr_EventScript_TicTacToe_Win_2:
+	setflag FLAG_TEMP_1
+	setflag FLAG_TEMP_3
+	goto WeenieHutJr_EventScript_TicTacToe_Win_1
+
+WeenieHutJr_EventScript_TicTacToe_Win_6:
+	setvar VAR_TEMP_A, 7
+	applymovement 1, Common_Movement_FaceRight
+	applymovement 2, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox WeenieHutJr_Text_MeiandLisaIntro
+	closemessage
+	applymovement 1, Common_Movement_FaceDown
+	applymovement 2, Common_Movement_FaceDown
+	waitmovement 0
+	trainerbattle_no_intro TRAINER_MEI_AND_LISA, WeenieHutJr_Text_MeiAndLisaLost
+	goto WeenieHutJr_EventScript_TicTacToe_Win_5
+
+WeenieHutJr_EventScript_TicTacToe_Win_7:
+	goto_if_set FLAG_TEMP_4, WeenieHutJr_EventScript_TicTacToe_Win_6
+	goto WeenieHutJr_EventScript_TicTacToe_Win_5
+
+
+WeenieHutJr_EventScript_TicTacToe_Lose::
+	compare VAR_TEMP_E, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Lose_2
+	setflag FLAG_TEMP_2
+WeenieHutJr_EventScript_TicTacToe_Lose_1:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Lost
+	closemessage
+	end
+
+WeenieHutJr_EventScript_TicTacToe_Lose_2:
+	setflag FLAG_TEMP_1
+	goto WeenieHutJr_EventScript_TicTacToe_Lose_1
+
+
+WeenieHutJr_EventScript_TicTacToe_Tie::
+	compare VAR_TEMP_E, 1
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_Tie_2
+	setflag FLAG_TEMP_2
+WeenieHutJr_EventScript_TicTacToe_Tie_1:
+	msgbox SuperWeenieHutJr_Text_TicTacToe_Tied
+	closemessage
+	end
+
+WeenieHutJr_EventScript_TicTacToe_Tie_2:
+	setflag FLAG_TEMP_1
+	goto WeenieHutJr_EventScript_TicTacToe_Tie_1
+
+
+WeenieHutJr_EventScript_TicTacToe_GetToken::
+	call WeenieHutJr_EventScript_TicTacToe_ClearGame
+	msgbox SuperWeenieHutJr_Text_TicTacToe_XYes, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetToken_2
+	setvar VAR_TEMP_D, 2
+WeenieHutJr_EventScript_TicTacToe_GetToken_1:
+	closemessage
+	call WeenieHutJr_EventScript_TicTacToe_Brain
+	return
+
+WeenieHutJr_EventScript_TicTacToe_GetToken_2:
+	setvar VAR_TEMP_D, 1
+	goto WeenieHutJr_EventScript_TicTacToe_GetToken_1
+
+
+WeenieHutJr_EventScript_TicTacToe_Brain_Text_0:
+	.string "TURN 9 INTO 10$"
+
+WeenieHutJr_EventScript_TicTacToe_Brain_Text_1:
+	.string "TOO MANY TURNS IDK BOTTOM OF BRAIN$"
 
 WeenieHutJr_Text_DoorBlockA::
 	.string "Hello. Welcome to Weenie Hut Junior's.$"
@@ -51,3 +1291,27 @@ WeenieHutJr_Text_DoorBlockB::
 WeenieHutJr_Text_DoorBlockC::
 	.string "Congratulations on your achievement!\n"
 	.string "Enjoy your time at Weenie Hut Juniors!$"
+
+WeenieHutJr_Text_DoorBlockD::
+	.string "You wicked monster! Leave! Never come\n"
+	.string "back.$"
+
+WeenieHutJr_Text_KickOut::
+	.string "Fighting is strictly forbidden I must\n"
+	.string "tell you to leave. You are forever\l"
+	.string "banned as punishment for your\l"
+	.string "disgusting deeds.$"
+
+WeenieHutJr_Text_MeiandLisaIntro::
+	.string "I can't believe this guy beat you too\n"
+	.string "sis! No icky boy will make us be loosers,\l"
+	.string "C'mon Lisa let's show him what we've\l"
+	.string "got!$"
+
+WeenieHutJr_Text_MeiAndLisaLost::
+	.string "You're such a bully! Look you made Mei\n"
+	.string "cry!$"
+
+WeenieHutJr_Text_MeiAndLisaPost::
+	.string "Get out of here! I wish you'd never\n"
+	.string "lived!$"

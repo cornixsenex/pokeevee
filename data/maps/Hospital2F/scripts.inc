@@ -18,8 +18,8 @@ Hospital2F_EventScript_SetFloor2::
 
 
 Hospital2F_EventScript_Stoner::
-	lock
 	faceplayer
+	lock
 	compare VAR_HOSPITAL_STATE, 0
 	goto_if_eq Hospital2F_EventScript_Stoner_2
 Hospital2F_EventScript_Stoner_1:

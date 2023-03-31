@@ -31,7 +31,9 @@ const SOLDIER_FIELD_PIC = 13
 const MAXIE_FIELD_PIC = 9
 
 
-const LT_SURGE_FIELD_PIC = 14mapscripts Capital_MapScripts {
+const LT_SURGE_FIELD_PIC = 14
+
+mapscripts Capital_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		call (Capital_OnTransition)
 	}

@@ -20,8 +20,8 @@ script Hospital2F_EventScript_SetFloor2 {
 
 
 script Hospital2F_EventScript_Stoner {
-	lock
 	faceplayer
+	lock
 	if (var(VAR_HOSPITAL_STATE) == 0) {
 		setvar (VAR_HOSPITAL_STATE, 1)
 		msgbox (Hospital2F_Text_Stoner1)

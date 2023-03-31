@@ -1,4 +1,61 @@
-mapscripts GatoCityS_MapScripts {}
+
+const OBJ_EVENT_SALTYSPITOON_DM = 2
+const OBJ_EVENT_SALTYSPITOON_M1 = 3
+const OBJ_EVENT_SALTYSPITOON_M2 = 4
+const OBJ_EVENT_SALTYSPITOON_M3 = 5
+
+const SALTYSPITOON_DM_FIELD_PIC = 20
+const SALTYSPITOON_M1_FIELD_PIC = 18
+const SALTYSPITOON_M2_FIELD_PIC = 19
+const SALTYSPITOON_M3_FIELD_PIC = 17
+
+
+mapscripts GatoCityS_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		switch (var(VAR_SALTYSPITOON_STATE)) {
+			case 1:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var1)
+			case 2:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var1)
+			case 3:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var3)
+			case 4:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var4)
+		}
+	}
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var1 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M2, 38, 6)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 39, 6)
+	return
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var2 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 38, 6)
+	return
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var3 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M3)
+	setobjectmovementtype (OBJ_EVENT_SALTYSPITOON_DM, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var4 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M3)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_DM, 36, 6)
+	setobjectmovementtype (OBJ_EVENT_SALTYSPITOON_DM, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
 
 script GatoCityS_WatchSeller {
 	lock 
@@ -18,6 +75,74 @@ mart GatoCityS_Mart_WatchSeller {
 	ITEM_BERRY_JUICE
 }
 
+script GatoCityS_EventScript_SaltySpitoon_M3 {
+	applymovement(OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	faceplayer
+	lock
+	switch (var(VAR_SALTYSPITOON_STATE) ) {
+		case 0:
+			msgbox(GatoCityS_Text_SaltySPitoon_M3A)
+			closemessage
+			applymovement(OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_FaceLeft)
+			waitmovement (0)
+			delay (15)
+			//How tough are you
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_DM1)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//Bowl of nails
+			load_field_pic (SALTYSPITOON_M1_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_M1A)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//So?
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox("Yeah, so?")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//no milk
+			load_field_pic (SALTYSPITOON_M1_FIELD_PIC, 190, 98)
+			msgbox("Without any milk.")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//oh right this way
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox("Uhh, right this way.")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//advane line -> increase var
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_FaceDown)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_FaceUp)
+			waitmovement(0)
+			call (GatoCityS_SaltySpitoon_OnWarp_Var1)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkRight)
+			waitmovement(0)
+			setvar (VAR_SALTYSPITOON_STATE, 1)
+
+			}
+
+			
+
+	release
+}
+
+movement GatoCityS_Movement_Pacer {
+	walk_left * 3
+	walk_right *3
+}
+
 text GatoCityS_Text_WatchSeller1 {
 	format("Hey kid, you wanna buy a watch? Come here.")
 }
@@ -26,5 +151,16 @@ text GatoCityS_Text_WatchSeller2 {
 	format("You don't know who I am! We never talked...")
 }
 
+text GatoCityS_Text_SaltySPitoon_M3A {
+	format("Huh? What was that? Did someone throw a piece of paper at me?")
+}
+
+text GatoCityS_Text_SaltySPitoon_DM1 {
+	format("Welcome to the Salty Spitoon. How tough are ya?")
+}
+
+text GatoCityS_Text_SaltySPitoon_M1A {
+	format("How tough am I? I had a bowl of nails for breakfast!")
+}
 
 

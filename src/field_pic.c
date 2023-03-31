@@ -96,6 +96,21 @@ static const u16 sPic16Pal[] = INCBIN_U16("graphics/pokemon/mewtwo/normal.gbapal
 static const u32 sPic17Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blue2_front_pic.4bpp.lz");
 static const u16 sPic17Pal[] = INCBIN_U16("graphics/trainers/palettes/blue2.gbapal");
 
+//Sailor = 17
+static const u32 sPic18Gfx[] = INCBIN_U32("graphics/trainers/front_pics/sailor.4bpp.lz");
+static const u16 sPic18Pal[] = INCBIN_U16("graphics/trainers/front_pics/sailor.gbapal");
+
+//Youngster = 18
+static const u32 sPic19Gfx[] = INCBIN_U32("graphics/trainers/front_pics/youngster.4bpp.lz");
+static const u16 sPic19Pal[] = INCBIN_U16("graphics/trainers/front_pics/youngster.gbapal");
+
+//Engineer = 19
+static const u32 sPic20Gfx[] = INCBIN_U32("graphics/trainers/front_pics/engineer_front_pic.4bpp.lz");
+static const u16 sPic20Pal[] = INCBIN_U16("graphics/trainers/palettes/engineer.gbapal");
+
+//CueBallNoBike = 20
+static const u32 sPic21Gfx[] = INCBIN_U32("graphics/trainers/front_pics/cue_ball_no_bike_front_pic.4bpp.lz");
+static const u16 sPic21Pal[] = INCBIN_U16("graphics/trainers/palettes/cue_ball.gbapal");
 
 /* And this is an example script.
 
@@ -154,6 +169,14 @@ static const struct Pic sPics[] =
     {sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//BLUE2 - Manic Pose
     {sPic17Gfx, sPic17Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Sailor
+    {sPic18Gfx, sPic18Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Youngster
+    {sPic19Gfx, sPic19Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Engineer
+    {sPic20Gfx, sPic20Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Cue Ball No Bike
+    {sPic21Gfx, sPic21Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
