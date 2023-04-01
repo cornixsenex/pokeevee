@@ -84,6 +84,8 @@ GatoCityS_EventScript_SaltySpitoon_M3::
 	lock
 	switch VAR_SALTYSPITOON_STATE
 	case 0, GatoCityS_EventScript_SaltySpitoon_M3_3
+	case 1, GatoCityS_EventScript_SaltySpitoon_M3_4
+	case 2, GatoCityS_EventScript_SaltySpitoon_M3_5
 GatoCityS_EventScript_SaltySpitoon_M3_1:
 	release
 	return
@@ -100,22 +102,12 @@ GatoCityS_EventScript_SaltySpitoon_M3_3:
 	destroy_field_pic 20
 	delay 5
 	load_field_pic 18, 190, 98
-	msgbox GatoCityS_Text_SaltySPitoon_M1A
+	msgbox GatoCityS_Text_SaltySPitoon_M1B
 	closemessage
-	destroy_field_pic 20
+	destroy_field_pic 18
 	delay 5
 	load_field_pic 20, 190, 98
 	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_0
-	closemessage
-	destroy_field_pic 20
-	delay 5
-	load_field_pic 18, 190, 98
-	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_1
-	closemessage
-	destroy_field_pic 20
-	delay 5
-	load_field_pic 20, 190, 98
-	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_2
 	closemessage
 	destroy_field_pic 20
 	delay 5
@@ -133,6 +125,93 @@ GatoCityS_EventScript_SaltySpitoon_M3_3:
 	setvar VAR_SALTYSPITOON_STATE, 1
 	goto GatoCityS_EventScript_SaltySpitoon_M3_1
 
+GatoCityS_EventScript_SaltySpitoon_M3_4:
+	msgbox GatoCityS_Text_SaltySPitoon_M3B
+	closemessage
+	applymovement 5, Common_Movement_FaceLeft
+	waitmovement 0
+	delay 15
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_Text_SaltySPitoon_DM1
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	load_field_pic 19, 190, 98
+	msgbox GatoCityS_Text_SaltySPitoon_M2A
+	closemessage
+	destroy_field_pic 19
+	delay 5
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_1
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	load_field_pic 19, 190, 98
+	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_2
+	closemessage
+	destroy_field_pic 19
+	delay 5
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_3
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	applymovement 2, Common_Movement_WalkLeft
+	applymovement 4, Common_Movement_WalkLeft
+	applymovement 5, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement 2, Common_Movement_FaceDown
+	applymovement 4, Common_Movement_FaceUp
+	waitmovement 0
+	call GatoCityS_SaltySpitoon_OnWarp_Var2
+	applymovement 2, Common_Movement_WalkRight
+	waitmovement 0
+	setvar VAR_SALTYSPITOON_STATE, 2
+	goto GatoCityS_EventScript_SaltySpitoon_M3_1
+
+GatoCityS_EventScript_SaltySpitoon_M3_5:
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_Text_SaltySPitoon_DM2
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	load_field_pic 17, 190, 98
+	msgbox GatoCityS_Text_SaltySPitoon_M3C
+	closemessage
+	destroy_field_pic 17
+	delay 5
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_Text_SaltySPitoon_DM3
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	load_field_pic 17, 190, 98
+	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_4
+	closemessage
+	destroy_field_pic 17
+	delay 5
+	applymovement 2, Common_Movement_WalkLeft
+	applymovement 5, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement 2, Common_Movement_FaceDown
+	applymovement 5, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement 2, Common_Movement_WalkRight
+	call GatoCityS_SaltySpitoon_OnWarp_Var2
+	setvar VAR_SALTYSPITOON_STATE, 3
+	goto GatoCityS_EventScript_SaltySpitoon_M3_1
+
+
+GatoCityS_EventScript_SaltySpitoon_M2::
+	faceplayer
+	lock
+	msgbox GatoCityS_Text_SaltySPitoon_M2
+	closemessage
+	applymovement 4, Common_Movement_WalkLeft
+	waitmovement 0
+	release
+	end
+
 
 GatoCityS_Movement_Pacer:
 	walk_left
@@ -144,13 +223,19 @@ GatoCityS_Movement_Pacer:
 	step_end
 
 GatoCityS_EventScript_SaltySpitoon_M3_Text_0:
-	.string "Yeah, so?$"
+	.string "Alright, go right ahead.$"
 
 GatoCityS_EventScript_SaltySpitoon_M3_Text_1:
-	.string "Without any milk.$"
+	.string "Yeah, so?$"
 
 GatoCityS_EventScript_SaltySpitoon_M3_Text_2:
+	.string "Without any milk.$"
+
+GatoCityS_EventScript_SaltySpitoon_M3_Text_3:
 	.string "Uhh, right this way.$"
+
+GatoCityS_EventScript_SaltySpitoon_M3_Text_4:
+	.string "Thanks, Reg.$"
 
 GatoCityS_Text_WatchSeller1::
 	.string "Hey kid, you wanna buy a watch? Come\n"
@@ -160,14 +245,42 @@ GatoCityS_Text_WatchSeller2::
 	.string "You don't know who I am! We never\n"
 	.string "talked...$"
 
+GatoCityS_Text_SaltySPitoon_M1B::
+	.string "How tough am I? How tough am I!? Just\n"
+	.string "look at my muscles! I've got muscles on\l"
+	.string "my muscles! I've got muscles on my\l"
+	.string "eyeballs! Aaarrrrggghhh!$"
+
 GatoCityS_Text_SaltySPitoon_M3A::
 	.string "Huh? What was that? Did someone throw\n"
 	.string "a piece of paper at me?$"
+
+GatoCityS_Text_SaltySPitoon_M3B::
+	.string "Hey! Quit shovin and wait your turn in\n"
+	.string "line!$"
+
+GatoCityS_Text_SaltySPitoon_M3C::
+	.string "Yeah, and check it out I can even make\n"
+	.string "it dance. Uhh! Uhhh! Uhhhhh!$"
 
 GatoCityS_Text_SaltySPitoon_DM1::
 	.string "Welcome to the Salty Spitoon. How tough\n"
 	.string "are ya?$"
 
-GatoCityS_Text_SaltySPitoon_M1A::
+GatoCityS_Text_SaltySPitoon_DM2::
+	.string "Alright, now it's a party! Is that some\n"
+	.string "new ink you got there?$"
+
+GatoCityS_Text_SaltySPitoon_DM3::
+	.string "Looks sweet, go on in buddy.$"
+
+GatoCityS_Text_SaltySPitoon_M2A::
 	.string "How tough am I? I had a bowl of nails\n"
 	.string "for breakfast!$"
+
+GatoCityS_Text_SaltySPitoon_M2::
+	.string "This is the line to get into The Salty\n"
+	.string "Spitoon, the roughest toughest\l"
+	.string "gangster bar ever to be built in the\l"
+	.string "city. Only the toughest of the tough\l"
+	.string "can get in!$"
