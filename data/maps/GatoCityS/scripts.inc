@@ -250,7 +250,7 @@ GatoCityS_EventScript_SaltySpitoon_M2_2:
 	lock
 	msgbox GatoCityS_Text_SaltySPitoon_M2
 	closemessage
-	applymovement 4, Common_Movement_WalkLeft
+	applymovement 4, Common_Movement_FaceLeft
 	waitmovement 0
 	goto GatoCityS_EventScript_SaltySpitoon_M2_1
 
