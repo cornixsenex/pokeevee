@@ -203,14 +203,56 @@ GatoCityS_EventScript_SaltySpitoon_M3_5:
 
 
 GatoCityS_EventScript_SaltySpitoon_M2::
+	compare VAR_SALTYSPITOON_STATE, 1
+	goto_if_ne GatoCityS_EventScript_SaltySpitoon_M2_2
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_Text_SaltySPitoon_DM1
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	load_field_pic 19, 190, 98
+	msgbox GatoCityS_Text_SaltySPitoon_M2A
+	closemessage
+	destroy_field_pic 19
+	delay 5
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_1
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	load_field_pic 19, 190, 98
+	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_2
+	closemessage
+	destroy_field_pic 19
+	delay 5
+	load_field_pic 20, 190, 98
+	msgbox GatoCityS_EventScript_SaltySpitoon_M3_Text_3
+	closemessage
+	destroy_field_pic 20
+	delay 5
+	applymovement 2, Common_Movement_WalkLeft
+	applymovement 4, Common_Movement_WalkLeft
+	applymovement 5, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement 2, Common_Movement_FaceDown
+	applymovement 4, Common_Movement_FaceUp
+	waitmovement 0
+	call GatoCityS_SaltySpitoon_OnWarp_Var2
+	applymovement 2, Common_Movement_WalkRight
+	waitmovement 0
+	setvar VAR_SALTYSPITOON_STATE, 2
+GatoCityS_EventScript_SaltySpitoon_M2_1:
+	release
+	end
+
+GatoCityS_EventScript_SaltySpitoon_M2_2:
 	faceplayer
 	lock
 	msgbox GatoCityS_Text_SaltySPitoon_M2
 	closemessage
 	applymovement 4, Common_Movement_WalkLeft
 	waitmovement 0
-	release
-	end
+	goto GatoCityS_EventScript_SaltySpitoon_M2_1
 
 
 GatoCityS_Movement_Pacer:

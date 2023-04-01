@@ -210,7 +210,7 @@ script GatoCityS_EventScript_SaltySpitoon_M3 {
 }
 
 script GatoCityS_EventScript_SaltySpitoon_M2 {
-	if (var(VAR_SALTYSPITTON_STATE) != 1) {
+	if (var(VAR_SALTYSPITOON_STATE) != 1) {
 		faceplayer
 		lock
 		msgbox (GatoCityS_Text_SaltySPitoon_M2)
