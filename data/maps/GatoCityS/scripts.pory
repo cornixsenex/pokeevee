@@ -28,15 +28,15 @@ mapscripts GatoCityS_MapScripts {
 
 script GatoCityS_SaltySpitoon_OnWarp_Var1 {
 	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
-	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M2, 38, 6)
-	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 39, 6)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M2, 38, 8)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 39, 8)
 	return
 }
 
 script GatoCityS_SaltySpitoon_OnWarp_Var2 {
 	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
 	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
-	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 38, 6)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 38, 8)
 	return
 }
 
@@ -52,7 +52,7 @@ script GatoCityS_SaltySpitoon_OnWarp_Var4 {
 	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
 	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
 	removeobject (OBJ_EVENT_SALTYSPITOON_M3)
-	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_DM, 36, 6)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_DM, 36, 8)
 	setobjectmovementtype (OBJ_EVENT_SALTYSPITOON_DM, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }

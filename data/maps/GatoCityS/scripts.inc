@@ -29,15 +29,15 @@ GatoCityS_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 
 GatoCityS_SaltySpitoon_OnWarp_Var1::
 	removeobject 3
-	setobjectxyperm 4, 38, 6
-	setobjectxyperm 5, 39, 6
+	setobjectxyperm 4, 38, 8
+	setobjectxyperm 5, 39, 8
 	return
 
 
 GatoCityS_SaltySpitoon_OnWarp_Var2::
 	removeobject 3
 	removeobject 4
-	setobjectxyperm 5, 38, 6
+	setobjectxyperm 5, 38, 8
 	return
 
 
@@ -53,7 +53,7 @@ GatoCityS_SaltySpitoon_OnWarp_Var4::
 	removeobject 3
 	removeobject 4
 	removeobject 5
-	setobjectxyperm 2, 36, 6
+	setobjectxyperm 2, 36, 8
 	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
 	return
 

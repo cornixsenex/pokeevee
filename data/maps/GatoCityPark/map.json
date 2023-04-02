@@ -2,7 +2,7 @@
   "id": "MAP_GATO_CITY_PARK",
   "name": "GatoCityPark",
   "layout": "LAYOUT_GATO_CITY_PARK",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_XXPLOSIVE",
   "region_map_section": "MAPSEC_GREEN_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

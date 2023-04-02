@@ -2,7 +2,7 @@
   "id": "MAP_ROCKET_TOWER_1F",
   "name": "RocketTower_1F",
   "layout": "LAYOUT_ROCKET_TOWER_1F",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_ROCKET_HIDEOUT",
   "region_map_section": "MAPSEC_AQUA_HIDEOUT_OLD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
