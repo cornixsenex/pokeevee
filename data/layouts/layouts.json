@@ -5580,6 +5580,16 @@
       "secondary_tileset": "gTileset_SilphCo",
       "border_filepath": "data/layouts/Hospital_Elevator/border.bin",
       "blockdata_filepath": "data/layouts/Hospital_Elevator/map.bin"
+    },
+    {
+      "id": "LAYOUT_SALTY_SPITOON",
+      "name": "SaltySpitoon_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SaltySpitoon",
+      "border_filepath": "data/layouts/SaltySpitoon/border.bin",
+      "blockdata_filepath": "data/layouts/SaltySpitoon/map.bin"
     }
   ]
 }

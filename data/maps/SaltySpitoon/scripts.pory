@@ -1,0 +1,13 @@
+mapscripts SaltySpitoon_MapScripts {
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SALTYSPITOON_STATE, 4: SaltySpitoon_EventScript_SetSSVar
+	]
+}
+
+script SaltySpitoon_EventScript_SetSSVar {
+	setvar(VAR_SALTYSPITOON_STATE, 44)
+	end
+}
+
+

@@ -1066,3 +1066,14 @@ const struct Tileset gTileset_Hospital =
     .metatileAttributes = gMetatileAttributes_Hospital,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SaltySpitoon =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SaltySpitoon,
+    .palettes = gTilesetPalettes_SaltySpitoon,
+    .metatiles = gMetatiles_SaltySpitoon,
+    .metatileAttributes = gMetatileAttributes_SaltySpitoon,
+    .callback = NULL,
+};

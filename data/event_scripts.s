@@ -1328,3 +1328,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Hospital7F/scripts.inc"
 
 	.include "data/maps/Hospital_Elevator/scripts.inc"
+
+	.include "data/maps/SaltySpitoon/scripts.inc"

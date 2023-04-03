@@ -2,7 +2,7 @@
   "id": "MAP_GATO_CITY_DT",
   "name": "GatoCityDT",
   "layout": "LAYOUT_GATO_CITY_DT",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_CALIFORNIA_LOVE",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -50,6 +50,13 @@
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_WEENIE_HUT_JR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 52,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_GATO_CITY_DT",
       "dest_warp_id": "0"
     }
   ],

@@ -27,18 +27,24 @@ mapscripts WeenieHutJr_MapScripts {}
 
 
 script WeenieHutJr_EventScript_DoorTriggerL {
-	lock
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement (0)
-	call (WeenieHutJr_EventScript_DoorBlock)
+	if (!(flag(FLAG_TEMP_8))){
+		setflag(FLAG_TEMP_8)
+		lock
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+		waitmovement (0)
+		call (WeenieHutJr_EventScript_DoorBlock)
+	}
 	release
 }
 
 script WeenieHutJr_EventScript_DoorTriggerR {
-	lock
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
-	waitmovement (0)
-	call (WeenieHutJr_EventScript_DoorBlock)
+	if (!(flag(FLAG_TEMP_8))){
+		setflag(FLAG_TEMP_8)
+		lock
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+		waitmovement (0)
+		call (WeenieHutJr_EventScript_DoorBlock)
+	}
 	release
 }
 
@@ -46,7 +52,7 @@ script WeenieHutJr_EventScript_DoorBlock {
 	msgbox (WeenieHutJr_Text_DoorBlockA)
 	closemessage
 	if (var(VAR_SWHJ_STATE) == 3) {
-		msgbox (WeenieHutJr_Text_DoorBlockC)
+		msgbox (WeenieHutJr_Text_DoorOpens)
 		closemessage
 	} elif (var(VAR_SWHJ_STATE) == 4) {
 		applymovement (OBJ_EVENT_ID_LADYL, Common_Movement_ExclamationMark)
@@ -56,11 +62,13 @@ script WeenieHutJr_EventScript_DoorBlock {
 		closemessage
 		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
 		waitmovement (0)
+		clearflag (FLAG_TEMP_8)
 	} else {
 		msgbox (WeenieHutJr_Text_DoorBlockB)
 		closemessage
 		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
 		waitmovement (0)
+		clearflag (FLAG_TEMP_8)
 	}
 	return
 }
@@ -85,6 +93,7 @@ script WeenieHutJr_EventScript_KickOutL {
 }
 
 script WeenieHutJr_EventScript_KickOut {
+	clearflag (FLAG_TEMP_8)
 	setvar (VAR_SWHJ_STATE, 4)
 	msgbox (WeenieHutJr_Text_KickOut)
 	closemessage
@@ -401,7 +410,7 @@ script WeenieHutJr_EventScript_TicTacToe_GetX {
 }
 
 script WeenieHutJr_EventScript_TicTacToe_GetO {
-	if (var(VAR_TEMP_D) == 1) {
+	if (var(VAR_TEMP_D) == 2) {
 		call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
 	} else {
 		call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
@@ -411,31 +420,31 @@ script WeenieHutJr_EventScript_TicTacToe_GetO {
 //Blue
 	if (var(VAR_BOARD) == 1) {
 		if (var(VAR_TEMP_B) == 1) {
-			setvar (VAR_TEMP_1, 1)
+			setvar (VAR_TEMP_1, 2)
 			setmetatile (6, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 2) {
-			setvar (VAR_TEMP_2, 1)
+			setvar (VAR_TEMP_2, 2)
 			setmetatile (7, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 3) {
-			setvar (VAR_TEMP_3, 1)
+			setvar (VAR_TEMP_3, 2)
 			setmetatile (8, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 4) {
-			setvar (VAR_TEMP_4, 1)
+			setvar (VAR_TEMP_4, 2)
 			setmetatile (6, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 5) {
-			setvar (VAR_TEMP_5, 1)
+			setvar (VAR_TEMP_5, 2)
 			setmetatile (7, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 6) {
-			setvar (VAR_TEMP_6, 1)
+			setvar (VAR_TEMP_6, 2)
 			setmetatile (8, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 7) {
-			setvar (VAR_TEMP_7, 1)
+			setvar (VAR_TEMP_7, 2)
 			setmetatile (6, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 8) {
-			setvar (VAR_TEMP_8, 1)
+			setvar (VAR_TEMP_8, 2)
 			setmetatile (7, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		} elif (var(VAR_TEMP_B) == 9) {
-			setvar (VAR_TEMP_9, 1)
+			setvar (VAR_TEMP_9, 2)
 			setmetatile (8, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
 		}
 	}
@@ -443,31 +452,31 @@ script WeenieHutJr_EventScript_TicTacToe_GetO {
 	//Orange
 	if (var(VAR_BOARD) == 2) {
 		if (var(VAR_TEMP_B) == 1) {
-			setvar (VAR_TEMP_1, 1)
+			setvar (VAR_TEMP_1, 2)
 			setmetatile (11, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 2) {
-			setvar (VAR_TEMP_2, 1)
+			setvar (VAR_TEMP_2, 2)
 			setmetatile (12, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 3) {
-			setvar (VAR_TEMP_3, 1)
+			setvar (VAR_TEMP_3, 2)
 			setmetatile (13, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 4) {
-			setvar (VAR_TEMP_4, 1)
+			setvar (VAR_TEMP_4, 2)
 			setmetatile (11, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 5) {
-			setvar (VAR_TEMP_5, 1)
+			setvar (VAR_TEMP_5, 2)
 			setmetatile (12, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 6) {
-			setvar (VAR_TEMP_6, 1)
+			setvar (VAR_TEMP_6, 2)
 			setmetatile (13, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 7) {
-			setvar (VAR_TEMP_7, 1)
+			setvar (VAR_TEMP_7, 2)
 			setmetatile (11, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 8) {
-			setvar (VAR_TEMP_8, 1)
+			setvar (VAR_TEMP_8, 2)
 			setmetatile (12, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		} elif (var(VAR_TEMP_B) == 9) {
-			setvar (VAR_TEMP_9, 1)
+			setvar (VAR_TEMP_9, 2)
 			setmetatile (13, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
 		}
 
@@ -700,7 +709,7 @@ text WeenieHutJr_Text_DoorBlockB {
 	format("This lounge is only for those few elite who graduate from Super Weenie Hut Junior's. I think that might be more your speed.")
 }
 
-text WeenieHutJr_Text_DoorBlockC {
+text WeenieHutJr_Text_DoorOpens {
 	format("Congratulations on your achievement! Enjoy your time at Weenie Hut Juniors!")
 }
 

@@ -639,8 +639,10 @@ $(MID_SUBDIR)/mus_california_love.s: %.s: %.mid
 $(MID_SUBDIR)/mus_xxplosive.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G192 -V090
 
-
 $(MID_SUBDIR)/mus_fire_on_the_mountain.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V090
+
+$(MID_SUBDIR)/mus_cantina.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V090
 
 $(MID_SUBDIR)/ph_choice_blend.s: %.s: %.mid

@@ -48,7 +48,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GatoCityS_EventScript_SaltySpitoon_DM",
       "flag": "0"
     },
     {
@@ -61,7 +61,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GatoCityS_EventScript_SaltySpitoon_M1",
       "flag": "FLAG_GATOCITYS_HIDEM1"
     },
     {
@@ -97,6 +97,13 @@
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_ROCKET_TOWER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_SALTY_SPITOON",
       "dest_warp_id": "0"
     }
   ],

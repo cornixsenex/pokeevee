@@ -3,21 +3,33 @@ WeenieHutJr_MapScripts::
 
 
 WeenieHutJr_EventScript_DoorTriggerL::
+	goto_if_unset FLAG_TEMP_8, WeenieHutJr_EventScript_DoorTriggerL_2
+WeenieHutJr_EventScript_DoorTriggerL_1:
+	release
+	return
+
+WeenieHutJr_EventScript_DoorTriggerL_2:
+	setflag FLAG_TEMP_8
 	lock
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	call WeenieHutJr_EventScript_DoorBlock
-	release
-	return
+	goto WeenieHutJr_EventScript_DoorTriggerL_1
 
 
 WeenieHutJr_EventScript_DoorTriggerR::
+	goto_if_unset FLAG_TEMP_8, WeenieHutJr_EventScript_DoorTriggerR_2
+WeenieHutJr_EventScript_DoorTriggerR_1:
+	release
+	return
+
+WeenieHutJr_EventScript_DoorTriggerR_2:
+	setflag FLAG_TEMP_8
 	lock
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	call WeenieHutJr_EventScript_DoorBlock
-	release
-	return
+	goto WeenieHutJr_EventScript_DoorTriggerR_1
 
 
 WeenieHutJr_EventScript_DoorBlock::
@@ -31,11 +43,12 @@ WeenieHutJr_EventScript_DoorBlock::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
+	clearflag FLAG_TEMP_8
 WeenieHutJr_EventScript_DoorBlock_1:
 	return
 
 WeenieHutJr_EventScript_DoorBlock_2:
-	msgbox WeenieHutJr_Text_DoorBlockC
+	msgbox WeenieHutJr_Text_DoorOpens
 	closemessage
 	goto WeenieHutJr_EventScript_DoorBlock_1
 
@@ -47,6 +60,7 @@ WeenieHutJr_EventScript_DoorBlock_3:
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
+	clearflag FLAG_TEMP_8
 	goto WeenieHutJr_EventScript_DoorBlock_1
 
 
@@ -73,6 +87,7 @@ WeenieHutJr_EventScript_KickOutL::
 
 
 WeenieHutJr_EventScript_KickOut::
+	clearflag FLAG_TEMP_8
 	setvar VAR_SWHJ_STATE, 4
 	msgbox WeenieHutJr_Text_KickOut
 	closemessage
@@ -795,7 +810,7 @@ WeenieHutJr_EventScript_TicTacToe_GetX_37:
 
 
 WeenieHutJr_EventScript_TicTacToe_GetO::
-	compare VAR_TEMP_D, 1
+	compare VAR_TEMP_D, 2
 	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetO_2
 	call WeenieHutJr_EventScript_TicTacToe_GetCPUMove
 WeenieHutJr_EventScript_TicTacToe_GetO_1:
@@ -855,92 +870,92 @@ WeenieHutJr_EventScript_TicTacToe_GetO_9:
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_11:
-	setvar VAR_TEMP_1, 1
+	setvar VAR_TEMP_1, 2
 	setmetatile 6, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_12:
-	setvar VAR_TEMP_2, 1
+	setvar VAR_TEMP_2, 2
 	setmetatile 7, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_13:
-	setvar VAR_TEMP_3, 1
+	setvar VAR_TEMP_3, 2
 	setmetatile 8, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_14:
-	setvar VAR_TEMP_4, 1
+	setvar VAR_TEMP_4, 2
 	setmetatile 6, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_15:
-	setvar VAR_TEMP_5, 1
+	setvar VAR_TEMP_5, 2
 	setmetatile 7, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_16:
-	setvar VAR_TEMP_6, 1
+	setvar VAR_TEMP_6, 2
 	setmetatile 8, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_17:
-	setvar VAR_TEMP_7, 1
+	setvar VAR_TEMP_7, 2
 	setmetatile 6, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_18:
-	setvar VAR_TEMP_8, 1
+	setvar VAR_TEMP_8, 2
 	setmetatile 7, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_19:
-	setvar VAR_TEMP_9, 1
+	setvar VAR_TEMP_9, 2
 	setmetatile 8, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_5
 
 WeenieHutJr_EventScript_TicTacToe_GetO_29:
-	setvar VAR_TEMP_1, 1
+	setvar VAR_TEMP_1, 2
 	setmetatile 11, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_30:
-	setvar VAR_TEMP_2, 1
+	setvar VAR_TEMP_2, 2
 	setmetatile 12, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_31:
-	setvar VAR_TEMP_3, 1
+	setvar VAR_TEMP_3, 2
 	setmetatile 13, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_32:
-	setvar VAR_TEMP_4, 1
+	setvar VAR_TEMP_4, 2
 	setmetatile 11, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_33:
-	setvar VAR_TEMP_5, 1
+	setvar VAR_TEMP_5, 2
 	setmetatile 12, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_34:
-	setvar VAR_TEMP_6, 1
+	setvar VAR_TEMP_6, 2
 	setmetatile 13, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_35:
-	setvar VAR_TEMP_7, 1
+	setvar VAR_TEMP_7, 2
 	setmetatile 11, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_36:
-	setvar VAR_TEMP_8, 1
+	setvar VAR_TEMP_8, 2
 	setmetatile 12, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
 WeenieHutJr_EventScript_TicTacToe_GetO_37:
-	setvar VAR_TEMP_9, 1
+	setvar VAR_TEMP_9, 2
 	setmetatile 13, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1
 	goto WeenieHutJr_EventScript_TicTacToe_GetO_8
 
@@ -1288,7 +1303,7 @@ WeenieHutJr_Text_DoorBlockB::
 	.string "Junior's. I think that might be more\l"
 	.string "your speed.$"
 
-WeenieHutJr_Text_DoorBlockC::
+WeenieHutJr_Text_DoorOpens::
 	.string "Congratulations on your achievement!\n"
 	.string "Enjoy your time at Weenie Hut Juniors!$"
 

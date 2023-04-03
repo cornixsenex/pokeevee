@@ -1,0 +1,396 @@
+
+const OBJ_EVENT_SALTYSPITOON_DM = 2
+const OBJ_EVENT_SALTYSPITOON_M1 = 3
+const OBJ_EVENT_SALTYSPITOON_M2 = 4
+const OBJ_EVENT_SALTYSPITOON_M3 = 5
+
+const SALTYSPITOON_DM_FIELD_PIC = 20
+const SALTYSPITOON_M1_FIELD_PIC = 18
+const SALTYSPITOON_M2_FIELD_PIC = 19
+const SALTYSPITOON_M3_FIELD_PIC = 17
+
+const DIR_SOUTH =   1
+const DIR_NORTH =   2
+const DIR_WEST  =   3
+const DIR_EAST  =   4
+
+
+mapscripts GatoCityS_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		switch (var(VAR_SALTYSPITOON_STATE)) {
+			case 1:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var1)
+			case 2:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var1)
+			case 3:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var3)
+			case 4:
+				call (GatoCityS_SaltySpitoon_OnWarp_Var4)
+		}
+	}
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var1 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M2, 38, 8)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 39, 8)
+	return
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var2 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_M3, 38, 8)
+	return
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var3 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M3)
+	setobjectmovementtype (OBJ_EVENT_SALTYSPITOON_DM, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script GatoCityS_SaltySpitoon_OnWarp_Var4 {
+	removeobject (OBJ_EVENT_SALTYSPITOON_M1)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M2)
+	removeobject (OBJ_EVENT_SALTYSPITOON_M3)
+	setobjectxyperm (OBJ_EVENT_SALTYSPITOON_DM, 36, 8)
+	setobjectmovementtype (OBJ_EVENT_SALTYSPITOON_DM, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script GatoCityS_WatchSeller {
+	lock 
+	msgbox (GatoCityS_Text_WatchSeller1)
+	waitmessage
+	pokemart(GatoCityS_Mart_WatchSeller)
+	msgbox (GatoCityS_Text_WatchSeller2)
+	release
+	end
+}
+
+mart GatoCityS_Mart_WatchSeller {
+	ITEM_LAVA_COOKIE
+	ITEM_MOOMOO_MILK
+	ITEM_RARE_CANDY
+	ITEM_LEMONADE
+	ITEM_BERRY_JUICE
+}
+
+script GatoCityS_EventScript_SaltySpitoon_M3 {
+	if (var(VAR_SALTYSPITOON_STATE) < 2) {
+		applymovement(OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		faceplayer
+	}
+	lock
+	switch (var(VAR_SALTYSPITOON_STATE) ) {
+
+		case 0:
+			//Piece of Paper
+			msgbox(GatoCityS_Text_SaltySPitoon_M3A)
+			closemessage
+			applymovement(OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_FaceLeft)
+			waitmovement (0)
+			delay (15)
+			//How tough are you
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_DM1)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//Muscles on my muscles
+			load_field_pic (SALTYSPITOON_M1_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_M1B)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_M1_FIELD_PIC)
+			delay (5)
+			//go ahead
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox("Alright, go right ahead.")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//advance line -> increase var
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_FaceDown)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_FaceUp)
+			waitmovement(0)
+			call (GatoCityS_SaltySpitoon_OnWarp_Var1)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkRight)
+			waitmovement(0)
+			setvar (VAR_SALTYSPITOON_STATE, 1)
+		case 1:
+			//Quit shoving
+			msgbox(GatoCityS_Text_SaltySPitoon_M3B)
+			closemessage
+			applymovement(OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_FaceLeft)
+			waitmovement (0)
+			delay (15)
+			//How tough are you
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_DM1)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//Bowl of nails
+			load_field_pic (SALTYSPITOON_M2_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_M2A)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_M2_FIELD_PIC)
+			delay (5)
+			//So?
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox("Yeah, so?")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//no milk
+			load_field_pic (SALTYSPITOON_M2_FIELD_PIC, 190, 98)
+			msgbox("Without any milk.")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_M2_FIELD_PIC)
+			delay (5)
+			//oh right this way
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox("Uhh, right this way.")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//advane line -> increase var
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkLeft)
+			//applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_FaceDown)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_FaceUp)
+			waitmovement(0)
+			call (GatoCityS_SaltySpitoon_OnWarp_Var2)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkRight)
+			waitmovement(0)
+			setvar (VAR_SALTYSPITOON_STATE, 2)
+		case 2:
+			//alright now we got a real party new ink?
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_DM2)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//I can make it dance
+			load_field_pic (SALTYSPITOON_M3_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_M3C)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_M3_FIELD_PIC)
+			delay (5)
+			//now that's real tough go right in buddy
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_DM3)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//thanks reg
+			load_field_pic (SALTYSPITOON_M3_FIELD_PIC, 190, 98)
+			msgbox("Thanks, Reg.")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_M3_FIELD_PIC)
+			delay (5)
+			//advance line -> increase var
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_FaceDown)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_FaceUp)
+			waitmovement(0)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkRight)
+			call (GatoCityS_SaltySpitoon_OnWarp_Var3)
+			setvar (VAR_SALTYSPITOON_STATE, 3)
+	}
+	release
+}
+
+script GatoCityS_EventScript_SaltySpitoon_M2 {
+	if (var(VAR_SALTYSPITOON_STATE) != 1) {
+		faceplayer
+		lock
+		msgbox (GatoCityS_Text_SaltySPitoon_M2)
+		closemessage
+		applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_FaceLeft)
+		waitmovement (0)
+	} else {
+		//How tough are you
+		load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+		msgbox(GatoCityS_Text_SaltySPitoon_DM1)
+		closemessage	
+		destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+		delay (5)
+		//Bowl of nails
+		load_field_pic (SALTYSPITOON_M2_FIELD_PIC, 190, 98)
+		msgbox(GatoCityS_Text_SaltySPitoon_M2A)
+		closemessage	
+		destroy_field_pic(SALTYSPITOON_M2_FIELD_PIC)
+		delay (5)
+		//So?
+		load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+		msgbox("Yeah, so?")
+		closemessage	
+		destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+		delay (5)
+		//no milk
+		load_field_pic (SALTYSPITOON_M2_FIELD_PIC, 190, 98)
+		msgbox("Without any milk.")
+		closemessage	
+		destroy_field_pic(SALTYSPITOON_M2_FIELD_PIC)
+		delay (5)
+		//oh right this way
+		load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+		msgbox("Uhh, right this way.")
+		closemessage	
+		destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+		delay (5)
+		//advane line -> increase var
+		applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkLeft)
+		//applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_WalkLeft)
+		applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_WalkLeft)
+		applymovement (OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_WalkLeft)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_FaceDown)
+		applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_FaceUp)
+		waitmovement(0)
+		call (GatoCityS_SaltySpitoon_OnWarp_Var2)
+		applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkRight)
+		waitmovement(0)
+		setvar (VAR_SALTYSPITOON_STATE, 2)
+	}
+	release
+	end
+}
+
+script GatoCityS_EventScript_SaltySpitoon_M1 {		
+			//How tough are you
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_DM1)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//Muscles on my muscles
+			load_field_pic (SALTYSPITOON_M1_FIELD_PIC, 190, 98)
+			msgbox(GatoCityS_Text_SaltySPitoon_M1B)
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_M1_FIELD_PIC)
+			delay (5)
+			//go ahead
+			load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+			msgbox("Alright, go right ahead.")
+			closemessage	
+			destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+			delay (5)
+			//advance line -> increase var
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M2, Common_Movement_WalkLeft)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M3, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_FaceDown)
+			applymovement (OBJ_EVENT_SALTYSPITOON_M1, Common_Movement_FaceUp)
+			waitmovement(0)
+			call (GatoCityS_SaltySpitoon_OnWarp_Var1)
+			applymovement (OBJ_EVENT_SALTYSPITOON_DM, Common_Movement_WalkRight)
+			waitmovement(0)
+			setvar (VAR_SALTYSPITOON_STATE, 1)
+}
+
+script GatoCityS_EventScript_SaltySpitoon_DM {	
+	lock
+	if (var(VAR_SALTYSPITOON_STATE) == 3) {
+		//You cant come in, check WHJ var
+		faceplayer
+		load_field_pic (SALTYSPITOON_DM_FIELD_PIC, 190, 98)
+		msgbox(GatoCityS_Text_SaltySPitoon_DM_NoEntry)
+		closemessage	
+		destroy_field_pic(SALTYSPITOON_DM_FIELD_PIC)
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		switch (var(VAR_RESULT)) {
+			case DIR_SOUTH:
+				msgbox("Should not be possible. Utterly Illogical!")
+			case DIR_NORTH:
+				msgbox("You Face North")
+			case 3:
+				msgbox("You Face West")
+			case 4:
+				msgbox("You Face East")
+		}
+		closemessage
+		//call (GatoCityS_EventScript_DM_WHJ)
+		//Camera pans to WHJ text box WHJ
+			//set var to 5 so that the other map knows what to do
+
+			//
+		//Camera returns
+		//IF not SWHJ then
+		//Camera pans to SWHJ text box SWHJ
+	}
+	release
+}
+
+movement GatoCityS_Movement_Pacer {
+	walk_left * 3
+	walk_right *3
+}
+
+text GatoCityS_Text_WatchSeller1 {
+	format("Hey kid, you wanna buy a watch? Come here.")
+}
+
+text GatoCityS_Text_WatchSeller2 {
+	format("You don't know who I am! We never talked...")
+}
+
+text GatoCityS_Text_SaltySPitoon_M1B {
+	format("How tough am I? How tough am I!? Just look at my muscles! I've got muscles on my muscles! I've got muscles on my eyeballs! Aaarrrrggghhh!")
+}
+
+text GatoCityS_Text_SaltySPitoon_M3A {
+	format("Huh? What was that? Did someone throw a piece of paper at me?")
+}
+
+text GatoCityS_Text_SaltySPitoon_M3B {
+	format("Hey! Quit shovin and wait your turn in line!")
+}
+
+text GatoCityS_Text_SaltySPitoon_M3C {
+	format("Yeah, and check it out I can even make it dance. Uhh! Uhhh! Uhhhhh!")
+}
+
+text GatoCityS_Text_SaltySPitoon_DM1 {
+	format("Welcome to the Salty Spitoon. How tough are ya?")
+}
+
+text GatoCityS_Text_SaltySPitoon_DM2 {
+	format("Alright, now it's a party! Is that some new ink you got there?")
+}
+
+text GatoCityS_Text_SaltySPitoon_DM3 {
+	format("Looks sweet, go on in buddy.")
+}
+	
+text GatoCityS_Text_SaltySPitoon_M2A {
+	format("How tough am I? I had a bowl of nails for breakfast!")
+}
+
+text GatoCityS_Text_SaltySPitoon_M2 {
+	format("This is the line to get into The Salty Spitoon, the roughest toughest gangster bar ever to be built in the city. Only the toughest of the tough can get in!")
+}
+
+text GatoCityS_Text_SaltySPitoon_DM_NoEntry {
+	format("Woah there little man where do you think you're going? This is The Salty Spitoon, it's way too rough for you. Why don't you go hang out over there?")
+}
+
+

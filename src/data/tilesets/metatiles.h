@@ -316,3 +316,6 @@ const u16 gMetatileAttributes_weeniehutjr[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_Hospital[] = INCBIN_U16("data/tilesets/primary/hospital/metatiles.bin");
 const u16 gMetatileAttributes_Hospital[] = INCBIN_U16("data/tilesets/primary/hospital/metatile_attributes.bin");
+
+const u16 gMetatiles_SaltySpitoon[] = INCBIN_U16("data/tilesets/secondary/salty_spitoon/metatiles.bin");
+const u16 gMetatileAttributes_SaltySpitoon[] = INCBIN_U16("data/tilesets/secondary/salty_spitoon/metatile_attributes.bin");
