@@ -129,7 +129,7 @@
 #define VAR_SWHJ_STATE                                   0x4067 // Changed with insurance; door trigger at SWHJ
 #define VAR_HOSPITAL_FLOOR                               0x4068 // Hospital elevator floor control
 #define VAR_HOSPITAL_STATE                               0x4069 // Man on 2nd floor state
-#define VAR_SALTYSPITOON_STATE                           0x406B // Unused Var
+#define VAR_SALTYSPITOON_STATE                           0x406B // Controls line and door to the salty spitoon
 
 
 
