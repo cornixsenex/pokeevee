@@ -1340,6 +1340,15 @@ extern const u8 gText_TicTacToeChoose7[];
 extern const u8 gText_TicTacToeChoose8[];
 extern const u8 gText_TicTacToeChoose9[];
 
+//Salty Spitoon Get Wager - 1, 10, 100, 1000, 10000, 100000, NVM
+extern const u8 gText_SaltySpitoonWager1[];
+extern const u8 gText_SaltySpitoonWager2[];
+extern const u8 gText_SaltySpitoonWager3[];
+extern const u8 gText_SaltySpitoonWager4[];
+extern const u8 gText_SaltySpitoonWager5[];
+extern const u8 gText_SaltySpitoonWager6[];
+extern const u8 gText_SaltySpitoonWager7[];
+
 
 // Cable Club multichoice text
 extern const u8 CableClub_Text_TradeUsingLinkCable[];

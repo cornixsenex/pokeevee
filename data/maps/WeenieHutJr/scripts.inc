@@ -1095,7 +1095,7 @@ WeenieHutJr_EventScript_TicTacToe_GetPlayerMove_45:
 
 
 WeenieHutJr_EventScript_TicTacToe_GetCPUMove::
-	specialvar VAR_RESULT, GetCPUTicTacToeMove
+	specialvar VAR_RESULT, RandDigit
 	compare VAR_RESULT, 0
 	goto_if_eq WeenieHutJr_EventScript_TicTacToe_GetCPUMove_2
 	compare VAR_RESULT, 1

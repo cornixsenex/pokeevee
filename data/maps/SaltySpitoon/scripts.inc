@@ -11,3 +11,1016 @@ SaltySpitoon_EventScript_SetSSVar::
 	setvar VAR_SALTYSPITOON_STATE, 44
 	end
 
+
+SaltySpitoon_EventScript_HiLoKabutoTable::
+	lock
+	msgbox SaltySpitoon_Text_HiLoKabuto_Intro, MSGBOX_YESNO
+	closemessage
+	compare VAR_RESULT, YES
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabutoTable_2
+	call SaltySpitoon_EventScript_HiLoKabuto_Goodbye
+SaltySpitoon_EventScript_HiLoKabutoTable_1:
+	release
+	end
+
+SaltySpitoon_EventScript_HiLoKabutoTable_2:
+	msgbox SaltySpitoon_Text_HiLoKabuto_DescribeGame
+	closemessage
+	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
+	goto SaltySpitoon_EventScript_HiLoKabutoTable_1
+
+
+SaltySpitoon_EventScript_HiLoKabuto_Goodbye::
+	msgbox SaltySpitoon_Text_HiLoKabuto_Goodbye
+	closemessage
+	return
+
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager::
+	setvar VAR_TEMP_F, 0
+	showmoneybox 0, 0
+	multichoice 0, 0, MULTI_SALTYSPITOON_GET_WAGER, TRUE
+	setvar VAR_TEMP_F, VAR_RESULT
+	switch VAR_RESULT
+	case 0, SaltySpitoon_EventScript_HiLoKabuto_GetWager_3
+	case 1, SaltySpitoon_EventScript_HiLoKabuto_GetWager_4
+	case 2, SaltySpitoon_EventScript_HiLoKabuto_GetWager_5
+	case 3, SaltySpitoon_EventScript_HiLoKabuto_GetWager_6
+	case 4, SaltySpitoon_EventScript_HiLoKabuto_GetWager_7
+	case 5, SaltySpitoon_EventScript_HiLoKabuto_GetWager_8
+	case 6, SaltySpitoon_EventScript_HiLoKabuto_GetWager_9
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_1:
+	return
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_3:
+	checkmoney 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_GetWager_10
+	hidemoneybox
+	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
+	closemessage
+	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_4:
+	checkmoney 10
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_GetWager_13
+	hidemoneybox
+	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
+	closemessage
+	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_5:
+	checkmoney 100
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_GetWager_16
+	hidemoneybox
+	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
+	closemessage
+	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_6:
+	checkmoney 1000
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_GetWager_19
+	hidemoneybox
+	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
+	closemessage
+	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_7:
+	checkmoney 10000
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_GetWager_22
+	hidemoneybox
+	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
+	closemessage
+	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_8:
+	checkmoney 100000
+	compare VAR_RESULT, TRUE
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_GetWager_25
+	hidemoneybox
+	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
+	closemessage
+	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_9:
+	hidemoneybox
+	call SaltySpitoon_EventScript_HiLoKabuto_Goodbye
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_10:
+	removemoney 1
+	updatemoneybox
+	playse SE_SHOP
+	hidemoneybox
+	call SaltySpitoon_EventScript_HiLoKabuto_Brain
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_13:
+	removemoney 10
+	updatemoneybox
+	playse SE_SHOP
+	hidemoneybox
+	call SaltySpitoon_EventScript_HiLoKabuto_Brain
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_16:
+	removemoney 100
+	updatemoneybox
+	playse SE_SHOP
+	hidemoneybox
+	call SaltySpitoon_EventScript_HiLoKabuto_Brain
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_19:
+	removemoney 1000
+	updatemoneybox
+	playse SE_SHOP
+	hidemoneybox
+	call SaltySpitoon_EventScript_HiLoKabuto_Brain
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_22:
+	removemoney 10000
+	updatemoneybox
+	playse SE_SHOP
+	hidemoneybox
+	call SaltySpitoon_EventScript_HiLoKabuto_Brain
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+SaltySpitoon_EventScript_HiLoKabuto_GetWager_25:
+	removemoney 100000
+	updatemoneybox
+	playse SE_SHOP
+	hidemoneybox
+	call SaltySpitoon_EventScript_HiLoKabuto_Brain
+	goto SaltySpitoon_EventScript_HiLoKabuto_GetWager_1
+
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain::
+	call SaltySpitoon_EventScript_HiLoKabuto_Reset
+	specialvar VAR_RESULT, RandDigit
+	compare VAR_RESULT, 5
+	goto_if_lt SaltySpitoon_EventScript_HiLoKabuto_Brain_2
+	clearflag FLAG_TEMP_B
+SaltySpitoon_EventScript_HiLoKabuto_Brain_1:
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_6
+	msgbox SaltySpitoon_Text_HiLoKabuto_KabutoLo
+SaltySpitoon_EventScript_HiLoKabuto_Brain_5:
+	closemessage
+	specialvar VAR_RESULT, RandDigit
+	compare VAR_RESULT, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_12
+SaltySpitoon_EventScript_HiLoKabuto_Brain_11:
+	setvar VAR_TEMP_A, VAR_RESULT
+SaltySpitoon_EventScript_HiLoKabuto_Brain_9:
+	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
+SaltySpitoon_EventScript_HiLoKabuto_Brain_17:
+	specialvar VAR_RESULT, RandDigit
+	compare VAR_RESULT, VAR_TEMP_A
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_17
+	compare VAR_RESULT, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_22
+SaltySpitoon_EventScript_HiLoKabuto_Brain_21:
+	setvar VAR_TEMP_B, VAR_RESULT
+SaltySpitoon_EventScript_HiLoKabuto_Brain_19:
+	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
+SaltySpitoon_EventScript_HiLoKabuto_Brain_27:
+	specialvar VAR_RESULT, RandDigit
+	compare VAR_RESULT, VAR_TEMP_A
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_27
+	compare VAR_RESULT, VAR_TEMP_B
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_27
+	compare VAR_RESULT, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_34
+SaltySpitoon_EventScript_HiLoKabuto_Brain_33:
+	setvar VAR_TEMP_C, VAR_RESULT
+SaltySpitoon_EventScript_HiLoKabuto_Brain_31:
+	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
+SaltySpitoon_EventScript_HiLoKabuto_Brain_39:
+	specialvar VAR_RESULT, RandDigit
+	compare VAR_RESULT, VAR_TEMP_A
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_39
+	compare VAR_RESULT, VAR_TEMP_B
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_39
+	compare VAR_RESULT, VAR_TEMP_C
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_39
+	compare VAR_RESULT, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_48
+SaltySpitoon_EventScript_HiLoKabuto_Brain_47:
+	setvar VAR_TEMP_D, VAR_RESULT
+SaltySpitoon_EventScript_HiLoKabuto_Brain_45:
+	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
+SaltySpitoon_EventScript_HiLoKabuto_Brain_53:
+	specialvar VAR_RESULT, RandDigit
+	compare VAR_RESULT, VAR_TEMP_A
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_53
+	compare VAR_RESULT, VAR_TEMP_B
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_53
+	compare VAR_RESULT, VAR_TEMP_C
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_53
+	compare VAR_RESULT, VAR_TEMP_D
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_53
+	compare VAR_RESULT, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_64
+SaltySpitoon_EventScript_HiLoKabuto_Brain_63:
+	setvar VAR_TEMP_E, VAR_RESULT
+SaltySpitoon_EventScript_HiLoKabuto_Brain_61:
+	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
+	goto_if_unset FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_68
+SaltySpitoon_EventScript_HiLoKabuto_Brain_67:
+	goto_if_set FLAG_TEMP_1, SaltySpitoon_EventScript_HiLoKabuto_Brain_71
+SaltySpitoon_EventScript_HiLoKabuto_Brain_70:
+	goto_if_set FLAG_TEMP_2, SaltySpitoon_EventScript_HiLoKabuto_Brain_76
+SaltySpitoon_EventScript_HiLoKabuto_Brain_75:
+	goto_if_set FLAG_TEMP_3, SaltySpitoon_EventScript_HiLoKabuto_Brain_101
+SaltySpitoon_EventScript_HiLoKabuto_Brain_100:
+	goto_if_set FLAG_TEMP_4, SaltySpitoon_EventScript_HiLoKabuto_Brain_115
+SaltySpitoon_EventScript_HiLoKabuto_Brain_114:
+	goto_if_set FLAG_TEMP_5, SaltySpitoon_EventScript_HiLoKabuto_Brain_129
+SaltySpitoon_EventScript_HiLoKabuto_Brain_128:
+	goto_if_set FLAG_TEMP_6, SaltySpitoon_EventScript_HiLoKabuto_Brain_143
+SaltySpitoon_EventScript_HiLoKabuto_Brain_142:
+	goto_if_set FLAG_TEMP_7, SaltySpitoon_EventScript_HiLoKabuto_Brain_157
+SaltySpitoon_EventScript_HiLoKabuto_Brain_156:
+	goto_if_set FLAG_TEMP_8, SaltySpitoon_EventScript_HiLoKabuto_Brain_171
+SaltySpitoon_EventScript_HiLoKabuto_Brain_170:
+	goto_if_set FLAG_TEMP_9, SaltySpitoon_EventScript_HiLoKabuto_Brain_185
+SaltySpitoon_EventScript_HiLoKabuto_Brain_184:
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_199
+SaltySpitoon_EventScript_HiLoKabuto_Brain_198:
+	closemessage
+	compare VAR_TEMP_A, VAR_TEMP_B
+	goto_if_gt SaltySpitoon_EventScript_HiLoKabuto_Brain_216
+SaltySpitoon_EventScript_HiLoKabuto_Brain_214:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_67
+SaltySpitoon_EventScript_HiLoKabuto_Brain_212:
+	closemessage
+	return
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_2:
+	setflag FLAG_TEMP_B
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_1
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_6:
+	msgbox SaltySpitoon_Text_HiLoKabuto_KabutoHi
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_5
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_10:
+	setvar VAR_TEMP_A, 10
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_9
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_12:
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_10
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_11
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_20:
+	setvar VAR_TEMP_B, 10
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_19
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_22:
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_20
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_21
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_32:
+	setvar VAR_TEMP_C, 10
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_31
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_34:
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_32
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_33
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_46:
+	setvar VAR_TEMP_D, 10
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_45
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_48:
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_46
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_47
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_62:
+	setvar VAR_TEMP_E, 10
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_61
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_64:
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_62
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_63
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_68:
+	goto_if_set FLAG_TEMP_A, SaltySpitoon_EventScript_HiLoKabuto_Brain_73
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_67
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_71:
+	compare VAR_TEMP_A, 1
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_78
+	compare VAR_TEMP_B, 1
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_79
+	compare VAR_TEMP_C, 1
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_80
+	compare VAR_TEMP_D, 1
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_81
+	compare VAR_TEMP_E, 1
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_82
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_11
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_70
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_73:
+	compare VAR_TEMP_A, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_89
+	compare VAR_TEMP_B, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_90
+	compare VAR_TEMP_C, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_91
+	compare VAR_TEMP_D, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_92
+	compare VAR_TEMP_E, 0
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_93
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_5
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_67
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_76:
+	compare VAR_TEMP_A, 2
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_103
+	compare VAR_TEMP_B, 2
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_104
+	compare VAR_TEMP_C, 2
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_105
+	compare VAR_TEMP_D, 2
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_106
+	compare VAR_TEMP_E, 2
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_107
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_17
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_75
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_78:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_6
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_70
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_79:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_7
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_70
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_80:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_8
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_70
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_81:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_9
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_70
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_82:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_10
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_70
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_89:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_0
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_67
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_90:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_1
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_67
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_91:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_2
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_67
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_92:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_3
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_67
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_93:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_4
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_67
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_101:
+	compare VAR_TEMP_A, 3
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_117
+	compare VAR_TEMP_B, 3
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_118
+	compare VAR_TEMP_C, 3
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_119
+	compare VAR_TEMP_D, 3
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_120
+	compare VAR_TEMP_E, 3
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_121
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_23
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_100
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_103:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_12
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_75
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_104:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_13
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_75
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_105:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_14
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_75
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_106:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_15
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_75
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_107:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_16
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_75
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_115:
+	compare VAR_TEMP_A, 4
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_131
+	compare VAR_TEMP_B, 4
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_132
+	compare VAR_TEMP_C, 4
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_133
+	compare VAR_TEMP_D, 4
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_134
+	compare VAR_TEMP_E, 4
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_135
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_29
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_114
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_117:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_18
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_100
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_118:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_19
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_100
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_119:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_20
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_100
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_120:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_21
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_100
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_121:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_22
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_100
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_129:
+	compare VAR_TEMP_A, 5
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_145
+	compare VAR_TEMP_B, 5
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_146
+	compare VAR_TEMP_C, 5
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_147
+	compare VAR_TEMP_D, 5
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_148
+	compare VAR_TEMP_E, 5
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_149
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_35
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_128
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_131:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_24
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_114
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_132:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_25
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_114
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_133:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_26
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_114
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_134:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_27
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_114
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_135:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_28
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_114
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_143:
+	compare VAR_TEMP_A, 6
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_159
+	compare VAR_TEMP_B, 6
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_160
+	compare VAR_TEMP_C, 6
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_161
+	compare VAR_TEMP_D, 6
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_162
+	compare VAR_TEMP_E, 6
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_163
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_41
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_142
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_145:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_30
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_128
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_146:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_31
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_128
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_147:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_32
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_128
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_148:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_33
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_128
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_149:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_34
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_128
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_157:
+	compare VAR_TEMP_A, 7
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_173
+	compare VAR_TEMP_B, 7
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_174
+	compare VAR_TEMP_C, 7
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_175
+	compare VAR_TEMP_D, 7
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_176
+	compare VAR_TEMP_E, 7
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_177
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_47
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_156
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_159:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_36
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_142
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_160:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_37
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_142
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_161:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_38
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_142
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_162:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_39
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_142
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_163:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_40
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_142
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_171:
+	compare VAR_TEMP_A, 8
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_187
+	compare VAR_TEMP_B, 8
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_188
+	compare VAR_TEMP_C, 8
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_189
+	compare VAR_TEMP_D, 8
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_190
+	compare VAR_TEMP_E, 8
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_191
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_53
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_170
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_173:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_42
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_156
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_174:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_43
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_156
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_175:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_44
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_156
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_176:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_45
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_156
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_177:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_46
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_156
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_185:
+	compare VAR_TEMP_A, 9
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_201
+	compare VAR_TEMP_B, 9
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_202
+	compare VAR_TEMP_C, 9
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_203
+	compare VAR_TEMP_D, 9
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_204
+	compare VAR_TEMP_E, 9
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_205
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_59
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_184
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_187:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_48
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_170
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_188:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_49
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_170
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_189:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_50
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_170
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_190:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_51
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_170
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_191:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_52
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_170
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_199:
+	goto_if_set FLAG_TEMP_A, SaltySpitoon_EventScript_HiLoKabuto_Brain_222
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_198
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_201:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_54
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_184
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_202:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_55
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_184
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_203:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_56
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_184
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_204:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_57
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_184
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_205:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_58
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_184
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_213:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_66
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_212
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_215:
+	compare VAR_TEMP_A, VAR_TEMP_D
+	goto_if_gt SaltySpitoon_EventScript_HiLoKabuto_Brain_219
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_214
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_216:
+	compare VAR_TEMP_A, VAR_TEMP_C
+	goto_if_gt SaltySpitoon_EventScript_HiLoKabuto_Brain_215
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_214
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_219:
+	compare VAR_TEMP_A, VAR_TEMP_E
+	goto_if_gt SaltySpitoon_EventScript_HiLoKabuto_Brain_213
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_214
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_222:
+	compare VAR_TEMP_A, 10
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_224
+	compare VAR_TEMP_B, 10
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_225
+	compare VAR_TEMP_C, 10
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_226
+	compare VAR_TEMP_D, 10
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_227
+	compare VAR_TEMP_E, 10
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_228
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_65
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_198
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_224:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_60
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_198
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_225:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_61
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_198
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_226:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_62
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_198
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_227:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_63
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_198
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_228:
+	msgbox SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_64
+	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_198
+
+
+SaltySpitoon_EventScript_HiLoKabuto_Reset::
+	clearflag FLAG_TEMP_1
+	clearflag FLAG_TEMP_2
+	clearflag FLAG_TEMP_3
+	clearflag FLAG_TEMP_4
+	clearflag FLAG_TEMP_5
+	clearflag FLAG_TEMP_6
+	clearflag FLAG_TEMP_7
+	clearflag FLAG_TEMP_8
+	clearflag FLAG_TEMP_9
+	clearflag FLAG_TEMP_A
+	clearflag FLAG_TEMP_B
+	setvar VAR_TEMP_A, 0
+	setvar VAR_TEMP_B, 0
+	setvar VAR_TEMP_C, 0
+	setvar VAR_TEMP_D, 0
+	setvar VAR_TEMP_E, 0
+	return
+
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard::
+	switch VAR_RESULT
+	case 0, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_3
+	case 1, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_4
+	case 2, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_5
+	case 3, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_6
+	case 4, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_7
+	case 5, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_8
+	case 6, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_9
+	case 7, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_10
+	case 8, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_11
+	case 9, SaltySpitoon_EventScript_HiLoKabuto_TakeCard_12
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1:
+	return
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_3:
+	setflag FLAG_TEMP_A
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_4:
+	setflag FLAG_TEMP_1
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_5:
+	setflag FLAG_TEMP_2
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_6:
+	setflag FLAG_TEMP_3
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_7:
+	setflag FLAG_TEMP_4
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_8:
+	setflag FLAG_TEMP_5
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_9:
+	setflag FLAG_TEMP_6
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_10:
+	setflag FLAG_TEMP_7
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_11:
+	setflag FLAG_TEMP_8
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+SaltySpitoon_EventScript_HiLoKabuto_TakeCard_12:
+	setflag FLAG_TEMP_9
+	goto SaltySpitoon_EventScript_HiLoKabuto_TakeCard_1
+
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_0:
+	.string "John got Kabuto low\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_1:
+	.string "Bobby got Kabuto low\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_2:
+	.string "Bill got Kabuto low\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_3:
+	.string "Pete got Kabuto low\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_4:
+	.string "{PLAYER} got Kabuto low\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_5:
+	.string "Problem checking 0$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_6:
+	.string "John got one\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_7:
+	.string "Bobby got one\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_8:
+	.string "Bill got one\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_9:
+	.string "Pete got one\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_10:
+	.string "{PLAYER} got one\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_11:
+	.string "Problem checking 1$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_12:
+	.string "John got two\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_13:
+	.string "Bobby got two\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_14:
+	.string "Bill got two\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_15:
+	.string "Pete got two\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_16:
+	.string "{PLAYER} got two\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_17:
+	.string "Problem checking 2$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_18:
+	.string "John got three\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_19:
+	.string "Bobby got three\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_20:
+	.string "Bill got three\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_21:
+	.string "Pete got three\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_22:
+	.string "{PLAYER} got three\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_23:
+	.string "Problem checking 3$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_24:
+	.string "John got four\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_25:
+	.string "Bobby got four\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_26:
+	.string "Bill got four\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_27:
+	.string "Pete got four\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_28:
+	.string "{PLAYER} got four\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_29:
+	.string "Problem checking 4$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_30:
+	.string "John got five\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_31:
+	.string "Bobby got five\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_32:
+	.string "Bill got five\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_33:
+	.string "Pete got five\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_34:
+	.string "{PLAYER} got five\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_35:
+	.string "Problem checking 5$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_36:
+	.string "John got six\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_37:
+	.string "Bobby got six\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_38:
+	.string "Bill got six\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_39:
+	.string "Pete got six\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_40:
+	.string "{PLAYER} got six\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_41:
+	.string "Problem checking 6$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_42:
+	.string "John got seven\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_43:
+	.string "Bobby got seven\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_44:
+	.string "Bill got seven\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_45:
+	.string "Pete got seven\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_46:
+	.string "{PLAYER} got seven\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_47:
+	.string "Problem checking 7$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_48:
+	.string "John got eight\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_49:
+	.string "Bobby got eight\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_50:
+	.string "Bill got eight\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_51:
+	.string "Pete got eight\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_52:
+	.string "{PLAYER} got eight\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_53:
+	.string "Problem checking 8$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_54:
+	.string "John got nine\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_55:
+	.string "Bobby got nine\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_56:
+	.string "Bill got nine\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_57:
+	.string "Pete got nine\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_58:
+	.string "{PLAYER} got nine\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_59:
+	.string "Problem checking 9$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_60:
+	.string "John got Kabuto high\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_61:
+	.string "Bobby got Kabuto high\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_62:
+	.string "Bill got Kabuto high\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_63:
+	.string "Pete got Kabuto high\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_64:
+	.string "{PLAYER} got Kabuto high\n$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_65:
+	.string "Problem checking 10$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_66:
+	.string "JOHN WON$"
+
+SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_67:
+	.string "JOHN DID NOT WIN$"
+
+SaltySpitoon_Text_HiLoKabuto_Intro::
+	.string "We're playing High Low Kabuto. You in?$"
+
+SaltySpitoon_Text_HiLoKabuto_DescribeGame::
+	.string "On the table we have ten playing cards\n"
+	.string "the numbers one through nine and\l"
+	.string "Kabuto. Kabuto's value is zero or ten\l"
+	.string "therefore that card is either high or\l"
+	.string "low.$"
+
+SaltySpitoon_Text_HiLoKabuto_Goodbye::
+	.string "When you feel like playing we'll still be\n"
+	.string "here.$"
+
+SaltySpitoon_Text_HiLoKabuto_WagerPoor::
+	.string "Looks like you're short on coin to back\n"
+	.string "that bet.$"
+
+SaltySpitoon_Text_HiLoKabuto_KabutoLo::
+	.string "Gentlemen, Kabuto is low this game. Now\n"
+	.string "take your cards and let's see who has\l"
+	.string "won.$"
+
+SaltySpitoon_Text_HiLoKabuto_KabutoHi::
+	.string "Gentlemen, Kabuto is high this game. Now\n"
+	.string "take your cards and let's see who has\l"
+	.string "won.$"

@@ -664,7 +664,7 @@ const u8 gText_Dissatisfied[] = _("Dissatisfied");
 const u8 gText_DeepSeaTooth[] = _("DEEPSEATOOTH");
 const u8 gText_DeepSeaScale[] = _("DEEPSEASCALE");
 
-
+//CITYCLARA_CHURCH_CHOOSE_STONE
 const u8 gText_StoneChooseFire[] = _("FIRE STONE");
 const u8 gText_StoneChooseWater[] = _("WATER STONE");
 const u8 gText_StoneChooseThunder[] = _("THUNDER STONE");
@@ -686,9 +686,6 @@ const u8 gText_FloorChoose11[]  = _("FLOOR 11");
 const u8 gText_FloorChoose12[]  = _("FLOOR 12");
 const u8 gText_FloorChoose13[]  = _("FLOOR 13");
 
-
-
-
 const u8 gText_TicTacToeChoose1[]   = _("1");
 const u8 gText_TicTacToeChoose2[]   = _("2");
 const u8 gText_TicTacToeChoose3[]   = _("3");
@@ -698,6 +695,14 @@ const u8 gText_TicTacToeChoose6[]   = _("6");
 const u8 gText_TicTacToeChoose7[]   = _("7");
 const u8 gText_TicTacToeChoose8[]   = _("8");
 const u8 gText_TicTacToeChoose9[]   = _("9");
+
+const u8 gText_SaltySpitoonWager1[]   = _("1");
+const u8 gText_SaltySpitoonWager2[]   = _("10");
+const u8 gText_SaltySpitoonWager3[]   = _("100");
+const u8 gText_SaltySpitoonWager4[]   = _("1,000");
+const u8 gText_SaltySpitoonWager5[]   = _("10,000");
+const u8 gText_SaltySpitoonWager6[]   = _("100,000");
+const u8 gText_SaltySpitoonWager7[]   = _("NEVER MIND");
 
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");

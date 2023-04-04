@@ -542,5 +542,5 @@ gSpecials::
 	def_special MakeShiny 
 	def_special ChangeGen
 	def_special CheckMonHasGen
-	def_special GetCPUTicTacToeMove
+	def_special RandDigit
 

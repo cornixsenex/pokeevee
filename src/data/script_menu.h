@@ -821,6 +821,17 @@ static const struct MenuAction MultichoiceList_TicTacToe_Choose_Move[] =
 	{gText_TicTacToeChoose9},
 };
 
+static const struct MenuAction MultichoiceList_SaltySpitoon_Get_Wager[] =
+{
+	{gText_SaltySpitoonWager1},
+	{gText_SaltySpitoonWager2},
+	{gText_SaltySpitoonWager3},
+	{gText_SaltySpitoonWager4},
+	{gText_SaltySpitoonWager5},
+	{gText_SaltySpitoonWager6},
+	{gText_SaltySpitoonWager7},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -952,6 +963,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_ROCKETTOWER_ELEVATOR_FLOOR] = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
     [MULTI_HOSPITAL_ELEVATOR_FLOOR]    = MULTICHOICE(MultichoiceList_Hospital_Elevator_Floor),
     [MULTI_TICTACTOE_CHOOSE_MOVE]      = MULTICHOICE(MultichoiceList_TicTacToe_Choose_Move),
+    [MULTI_SALTYSPITOON_GET_WAGER]      = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
 };
 
 const u8 *const gStdStrings[] =

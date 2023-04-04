@@ -2432,6 +2432,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_SALTYSPITOON_GET_WAGER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2631,6 +2641,16 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_TicTacToeChoose7,
 		gText_TicTacToeChoose8,
 		gText_TicTacToeChoose9,
+	},
+	[SCROLL_MULTI_SALTYSPITOON_GET_WAGER] =
+	{
+		gText_SaltySpitoonWager1,
+		gText_SaltySpitoonWager2,
+		gText_SaltySpitoonWager3,
+		gText_SaltySpitoonWager4,
+		gText_SaltySpitoonWager5,
+		gText_SaltySpitoonWager6,
+		gText_SaltySpitoonWager7,
 	},
 };
 
@@ -4568,7 +4588,7 @@ void LobotomizePokemon(void)
 	SetMonData(mon, MON_DATA_SPDEF_IV, &levelone);
 }
 
-u16 GetCPUTicTacToeMove(void)
+u16 RandDigit(void)
 {
 	int RandomValue;
     RandomValue = Random();

@@ -742,7 +742,7 @@ script SuperWeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
 
 script SuperWeenieHutJr_EventScript_TicTacToe_GetCPUMove {
 
-	specialvar (VAR_RESULT, GetCPUTicTacToeMove)
+	specialvar (VAR_RESULT, RandDigit)
 	//make sure move is ok
 
 	if (var(VAR_RESULT) == 0) {
