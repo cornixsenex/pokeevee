@@ -181,7 +181,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_5:
 	compare VAR_RESULT, 0
 	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_12
 SaltySpitoon_EventScript_HiLoKabuto_Brain_11:
-	setvar VAR_TEMP_A, VAR_RESULT
+	copyvar VAR_TEMP_A, VAR_RESULT
 SaltySpitoon_EventScript_HiLoKabuto_Brain_9:
 	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
 SaltySpitoon_EventScript_HiLoKabuto_Brain_17:
@@ -191,7 +191,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_17:
 	compare VAR_RESULT, 0
 	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_22
 SaltySpitoon_EventScript_HiLoKabuto_Brain_21:
-	setvar VAR_TEMP_B, VAR_RESULT
+	copyvar VAR_TEMP_B, VAR_RESULT
 SaltySpitoon_EventScript_HiLoKabuto_Brain_19:
 	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
 SaltySpitoon_EventScript_HiLoKabuto_Brain_27:
@@ -203,7 +203,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_27:
 	compare VAR_RESULT, 0
 	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_34
 SaltySpitoon_EventScript_HiLoKabuto_Brain_33:
-	setvar VAR_TEMP_C, VAR_RESULT
+	copyvar VAR_TEMP_C, VAR_RESULT
 SaltySpitoon_EventScript_HiLoKabuto_Brain_31:
 	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
 SaltySpitoon_EventScript_HiLoKabuto_Brain_39:
@@ -217,7 +217,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_39:
 	compare VAR_RESULT, 0
 	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_48
 SaltySpitoon_EventScript_HiLoKabuto_Brain_47:
-	setvar VAR_TEMP_D, VAR_RESULT
+	copyvar VAR_TEMP_D, VAR_RESULT
 SaltySpitoon_EventScript_HiLoKabuto_Brain_45:
 	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
 SaltySpitoon_EventScript_HiLoKabuto_Brain_53:
@@ -233,7 +233,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_53:
 	compare VAR_RESULT, 0
 	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_Brain_64
 SaltySpitoon_EventScript_HiLoKabuto_Brain_63:
-	setvar VAR_TEMP_E, VAR_RESULT
+	copyvar VAR_TEMP_E, VAR_RESULT
 SaltySpitoon_EventScript_HiLoKabuto_Brain_61:
 	call SaltySpitoon_EventScript_HiLoKabuto_TakeCard
 	goto_if_unset FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_68

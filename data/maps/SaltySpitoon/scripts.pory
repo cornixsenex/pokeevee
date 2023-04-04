@@ -188,7 +188,7 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	if (var(VAR_RESULT) == 0 && (flag(KABUTOHI)) ) {
 		setvar (JOHN_CARD, 10)
 	} else {
-		setvar (JOHN_CARD, VAR_RESULT)
+		copyvar (JOHN_CARD, VAR_RESULT)
 	}
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
@@ -199,7 +199,7 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	if (var(VAR_RESULT) == 0 && (flag(KABUTOHI)) ) {
 		setvar (BOBBY_CARD, 10)
 	} else {
-		setvar (BOBBY_CARD, VAR_RESULT)
+		copyvar (BOBBY_CARD, VAR_RESULT)
 	}
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
@@ -210,7 +210,7 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	if (var(VAR_RESULT) == 0 && (flag(KABUTOHI)) ) {
 		setvar (BILL_CARD, 10)
 	} else {
-		setvar (BILL_CARD, VAR_RESULT)
+		copyvar (BILL_CARD, VAR_RESULT)
 	}
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
@@ -221,7 +221,7 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	if (var(VAR_RESULT) == 0 && (flag(KABUTOHI)) ) {
 		setvar (PETE_CARD, 10)
 	} else {
-		setvar (PETE_CARD, VAR_RESULT)
+		copyvar (PETE_CARD, VAR_RESULT)
 	}
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
@@ -232,7 +232,7 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	if (var(VAR_RESULT) == 0 && (flag(KABUTOHI)) ) {
 		setvar (PLAYER_CARD, 10)
 	} else {
-		setvar (PLAYER_CARD, VAR_RESULT)
+		copyvar (PLAYER_CARD, VAR_RESULT)
 	}
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
