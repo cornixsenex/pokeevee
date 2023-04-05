@@ -196,6 +196,7 @@ GatoCityS_WatchSeller::
 	waitmessage
 	pokemart GatoCityS_Mart_WatchSeller
 	msgbox GatoCityS_Text_WatchSeller2
+	closemessage
 	release
 	end
 

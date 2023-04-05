@@ -567,10 +567,30 @@ script SaltySpitoon_EventScript_Bartender {
 		waitmovement (0)
 		msgbox("BARTENDER TRIGGER")
 		closemessage
-		multi_fixed_2_vs_2 (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABA, SaltySpitoon_Text_PondaBabaLost, 0, 0)
+		setvar (VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL)
+		special (DoSpecialTrainerBattle)
+		waitstate
+	
+		
+
+		//multi_fixed_2_vs_2 (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABA, SaltySpitoon_Text_PondaBabaLost, 0xFFFF, 0xFFFF)
 		//trainerbattle_single (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanIntro, SaltySpitoon_Text_EvazanLost)
 		//trainerbattle_single (TRAINER_PONDA_BABA, SaltySpitoon_Text_PondaBabaIntro, SaltySpitoon_Text_PondaBabaLost)
 	}
+}
+
+script SaltySpitoon_EventScript_EvazanTrainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_EVAZAN, 0, SaltySpitoon_Text_EvazanLost, SaltySpitoon_Text_EvazanPost)
+	end
+}
+
+script SaltySpitoon_EventScript_PondaBabaTrainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PONDA_BABA, 0, SaltySpitoon_Text_PondaBabaLost, SaltySpitoon_Text_PondaBabaPost)
+	end
+}
+
+script SaltySpitoon_EventScript_PondaBaba {
+
 }
 
 script SaltySpitoon_EventScript_Evazan {
@@ -595,7 +615,6 @@ script SaltySpitoon_EventScript_Evazan {
 	}
 	end
 }
-
 
 mart SaltySpitoon_Mart_Bartender {
 	ITEM_LAVA_COOKIE

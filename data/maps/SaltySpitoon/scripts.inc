@@ -978,7 +978,23 @@ SaltySpitoon_EventScript_Bartender_1:
 	waitmovement 0
 	msgbox SaltySpitoon_EventScript_Bartender_Text_0
 	closemessage
-	multi_fixed_2_vs_2 TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABA, SaltySpitoon_Text_PondaBabaLost, 0, 0
+	setvar VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL
+	special DoSpecialTrainerBattle
+	waitstate
+	return
+
+
+SaltySpitoon_EventScript_EvazanTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_EVAZAN, 0, SaltySpitoon_Text_EvazanLost, SaltySpitoon_Text_EvazanPost
+	end
+
+
+SaltySpitoon_EventScript_PondaBabaTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PONDA_BABA, 0, SaltySpitoon_Text_PondaBabaLost, SaltySpitoon_Text_PondaBabaPost
+	end
+
+
+SaltySpitoon_EventScript_PondaBaba::
 	return
 
 
