@@ -1050,6 +1050,23 @@ SaltySpitoon_EventScript_Evazan_4:
 	goto SaltySpitoon_EventScript_Evazan_3
 
 
+SaltySpitoon_EventScript_DeathsticksGuy::
+	lock
+	faceplayer
+	msgbox SaltySpitoon_EventScript_DeathsticksGuy_Text_0
+	waitmessage
+	pokemart SaltySpitoon_Mart_Deathsticks
+	closemessage
+	release
+	end
+
+
+	.align 2
+SaltySpitoon_Mart_Deathsticks:
+	.2byte ITEM_RARE_CANDY
+	.2byte ITEM_KIND_BUD
+	.2byte ITEM_NONE
+
 	.align 2
 SaltySpitoon_Mart_Bartender:
 	.2byte ITEM_LAVA_COOKIE
@@ -1277,6 +1294,9 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_71:
 
 SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_Text_0:
 	.string "PROBLEMO bottom of Pay Wager swithc$"
+
+SaltySpitoon_EventScript_DeathsticksGuy_Text_0:
+	.string "You wanna buy some death sticks?$"
 
 SaltySpitoon_Text_Bartender1::
 	.string "You wanna buy something?$"

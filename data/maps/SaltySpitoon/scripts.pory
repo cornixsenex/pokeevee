@@ -626,6 +626,22 @@ script SaltySpitoon_EventScript_Evazan {
 	end
 }
 
+script SaltySpitoon_EventScript_DeathsticksGuy {
+	lock
+	faceplayer
+	msgbox ("You wanna buy some death sticks?")
+	waitmessage
+	pokemart (SaltySpitoon_Mart_Deathsticks)
+	closemessage
+	release
+	end
+}
+
+mart SaltySpitoon_Mart_Deathsticks {
+	ITEM_RARE_CANDY
+	ITEM_KIND_BUD
+}
+
 mart SaltySpitoon_Mart_Bartender {
 	ITEM_LAVA_COOKIE
 	ITEM_MOOMOO_MILK
