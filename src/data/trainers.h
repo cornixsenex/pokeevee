@@ -1577,11 +1577,8 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_MeiAndLisa),
         .party = {.TrainerMon = sParty_MeiAndLisa},
     },
-///	====BREAK====
 
-
-
-    [TRAINER_BRIANNA] =
+    [TRAINER_EVAZAN] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1594,7 +1591,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Brianna},
     },
 
-    [TRAINER_NAOMI] =
+    [TRAINER_PONDA_BABA] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1606,6 +1603,9 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_Naomi),
         .party = {.TrainerMon = sParty_Naomi},
     },
+///	====BREAK====
+
+
 
     [TRAINER_CINDY_3] =
     {

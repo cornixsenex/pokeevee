@@ -12,7 +12,6 @@ SootopolisCity_Gym_B1F_EventScript_Crissy::
 	end
 
 SootopolisCity_Gym_B1F_EventScript_Brianna::
-	trainerbattle_single TRAINER_BRIANNA, SootopolisCity_Gym_B1F_Text_BriannaIntro, SootopolisCity_Gym_B1F_Text_BriannaDefeat
 	msgbox SootopolisCity_Gym_B1F_Text_BriannaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

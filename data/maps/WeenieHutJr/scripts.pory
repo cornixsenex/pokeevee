@@ -632,8 +632,6 @@ script WeenieHutJr_EventScript_TicTacToe_GetCPUMove {
 	} else {
 		call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
 	}
-	//msgbox ("BOTTOM OF GETCPUMOVE")
-	//closemessage
 	return
 }
 
@@ -658,9 +656,6 @@ script WeenieHutJr_EventScript_TicTacToe_Win {
 		applymovement (2, Common_Movement_FaceDown)
 		waitmovement (0)
 		trainerbattle_no_intro(TRAINER_MEI_AND_LISA, WeenieHutJr_Text_MeiAndLisaLost)
-
-		//battle
-	//	msgbox (WeenieHutJr_Text_FightPre
 	}
 	end
 }
