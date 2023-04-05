@@ -9950,6 +9950,19 @@ const struct Item gItems[] =
         .battleUseFunc = ItemUseInBattle_Medicine,
 	},
 
+	[ITEM_DEATH_STICK] =
+	{
+		.name = _("DEATH STICK"),
+		.itemId = ITEM_DEATH_STICK,
+		.price = 415,
+		.description = sDeathStickDesc,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
+	},
+
 	[ITEM_INSURANCE_FORM_A] =
 	{
 		.name = _("FORMS"),

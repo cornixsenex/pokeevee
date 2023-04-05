@@ -629,9 +629,10 @@ script SaltySpitoon_EventScript_Evazan {
 script SaltySpitoon_EventScript_DeathsticksGuy {
 	lock
 	faceplayer
-	msgbox ("You wanna buy some death sticks?")
+	msgbox (SaltySpitoon_Text_Deathsticks1)
 	waitmessage
 	pokemart (SaltySpitoon_Mart_Deathsticks)
+	msgbox (SaltySpitoon_Text_Deathsticks2)
 	closemessage
 	release
 	end
@@ -640,6 +641,7 @@ script SaltySpitoon_EventScript_DeathsticksGuy {
 mart SaltySpitoon_Mart_Deathsticks {
 	ITEM_RARE_CANDY
 	ITEM_KIND_BUD
+	ITEM_DEATH_STICK
 }
 
 mart SaltySpitoon_Mart_Bartender {
@@ -648,6 +650,14 @@ mart SaltySpitoon_Mart_Bartender {
 	ITEM_RARE_CANDY
 	ITEM_LEMONADE
 	ITEM_BERRY_JUICE
+}
+
+text SaltySpitoon_Text_Deathsticks1 {
+	format("You wanna buy some deathsticks?")
+}
+
+text SaltySpitoon_Text_Deathsticks2 {
+	format("I don't wanna sell you any deathsticks. I wanna go home and rea think my life...")
 }
 
 text SaltySpitoon_Text_Bartender1 {

@@ -460,6 +460,7 @@ const u8 *const gItemEffectTable[] =
     // Medicine
     [ITEM_POTION - ITEM_POTION]           = gItemEffect_Potion,
   	[ITEM_KIND_BUD - ITEM_POTION]		  = gItemEffect_KindBud,
+  	[ITEM_DEATH_STICK - ITEM_POTION]      = gItemEffect_KindBud,
     [ITEM_SUPER_POTION - ITEM_POTION]     = gItemEffect_SuperPotion,
     [ITEM_HYPER_POTION - ITEM_POTION]     = gItemEffect_HyperPotion,
     [ITEM_MAX_POTION - ITEM_POTION]       = gItemEffect_MaxPotion,

@@ -3825,6 +3825,11 @@ static const u8 sKindBudDesc[] = _(
     "cum gaudio tussi.\n"
     "Se deosque ride.");
 
+static const u8 sDeathStickDesc[] = _(
+    "This paper tube \n"
+    "is stuffed with a\n"
+    "smelly brown herb.");
+
 static const u8 sSurfboardDesc[] = _(
 	"This flat board\n"
     "is shaped for\n"
