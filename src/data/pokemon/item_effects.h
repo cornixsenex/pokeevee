@@ -3,6 +3,11 @@ const u8 gItemEffect_Potion[7] = {
     [6] = 20, // Amount of HP to recover
 };
 
+const u8 gItemEffect_DeathStick[7] = {
+    [4] = ITEM4_HEAL_HP,
+    [6] = -20, // Amount of HP to recover
+};
+
 const u8 gItemEffect_Antidote[6] = {
     [3] = ITEM3_POISON,
 };
@@ -460,7 +465,7 @@ const u8 *const gItemEffectTable[] =
     // Medicine
     [ITEM_POTION - ITEM_POTION]           = gItemEffect_Potion,
   	[ITEM_KIND_BUD - ITEM_POTION]		  = gItemEffect_KindBud,
-  	[ITEM_DEATH_STICK - ITEM_POTION]      = gItemEffect_KindBud,
+  	[ITEM_DEATH_STICK - ITEM_POTION]      = gItemEffect_DeathStick,
     [ITEM_SUPER_POTION - ITEM_POTION]     = gItemEffect_SuperPotion,
     [ITEM_HYPER_POTION - ITEM_POTION]     = gItemEffect_HyperPotion,
     [ITEM_MAX_POTION - ITEM_POTION]       = gItemEffect_MaxPotion,
