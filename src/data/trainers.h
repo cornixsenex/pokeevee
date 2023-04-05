@@ -1591,7 +1591,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Brianna},
     },
 
-    [TRAINER_PONDA_BABA] =
+    [TRAINER_PONDA_BABU] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,

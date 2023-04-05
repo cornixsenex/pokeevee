@@ -41,7 +41,7 @@ extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer[];
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer[];
 
 extern const u8 SaltySpitoon_EventScript_EvazanTrainer[];
-extern const u8 SaltySpitoon_EventScript_PondaBabaTrainer[];
+extern const u8 SaltySpitoon_EventScript_PondaBabuTrainer[];
 
 // EWRAM vars.
 EWRAM_DATA const struct BattleFrontierTrainer *gFacilityTrainers = NULL;
@@ -2183,7 +2183,7 @@ void DoSpecialTrainerBattle(void)
         gApproachingTrainerId = 0;
         BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_EvazanTrainer + 1);
         gApproachingTrainerId = 1;
-        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_PondaBabaTrainer + 1);
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_PondaBabuTrainer + 1);
         CreateTask(Task_StartBattleAfterTransition, 1);
         PlayMapChosenOrBattleBGM(0);
         BattleTransition_StartOnField(GetTrainerBattleTransition());

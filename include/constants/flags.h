@@ -108,7 +108,7 @@
 #define FLAG_ROUTE10_HIDE_KRABBY             0x58
 #define FLAG_GATOCITYS_HIDEM2                0x59
 #define FLAG_GATOCITYS_HIDEM3                0x5A
-#define FLAG_AVAILABLE    	      		     0x5B
+#define FLAG_SALTYSPITOON_BRAWL    	         0x5B
 
 
 

@@ -967,44 +967,72 @@ SaltySpitoon_EventScript_Bartender::
 	pokemart SaltySpitoon_Mart_Bartender
 	msgbox SaltySpitoon_Text_Bartender2
 	closemessage
-	checktrainerflag TRAINER_EVAZAN
-	goto_if 0, SaltySpitoon_EventScript_Bartender_1
-	return
-
+	goto_if_unset FLAG_SALTYSPITOON_BRAWL, SaltySpitoon_EventScript_Bartender_2
 SaltySpitoon_EventScript_Bartender_1:
-	setflag FLAG_TEMP_C
+	end
+
+SaltySpitoon_EventScript_Bartender_2:
+	call SaltySpitoon_EventScript_CantinaBrawl
+	goto SaltySpitoon_EventScript_Bartender_1
+
+
+SaltySpitoon_EventScript_CantinaBrawl::
 	applymovement 17, Common_Movement_FaceRight
 	applymovement 18, Common_Movement_FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox SaltySpitoon_EventScript_Bartender_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox SaltySpitoon_Text_EvazanIntro
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox SaltySpitoon_Text_PondaBabuIntro
 	closemessage
 	setvar VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL
 	special DoSpecialTrainerBattle
 	waitstate
+	setflag FLAG_SALTYSPITOON_BRAWL
 	return
 
 
 SaltySpitoon_EventScript_EvazanTrainer::
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_EVAZAN, 0, SaltySpitoon_Text_EvazanLost, SaltySpitoon_Text_EvazanPost
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_EVAZAN, 0, SaltySpitoon_Text_EvazanLost, SaltySpitoon_Text_EvazanLost
 	end
 
 
-SaltySpitoon_EventScript_PondaBabaTrainer::
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PONDA_BABA, 0, SaltySpitoon_Text_PondaBabaLost, SaltySpitoon_Text_PondaBabaPost
+SaltySpitoon_EventScript_PondaBabuTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PONDA_BABU, 0, SaltySpitoon_Text_PondaBabuLost, SaltySpitoon_Text_PondaBabuLost
 	end
 
 
-SaltySpitoon_EventScript_PondaBaba::
-	return
+SaltySpitoon_EventScript_PondaBabu::
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq SaltySpitoon_EventScript_PondaBabu_4
+SaltySpitoon_EventScript_PondaBabu_3:
+	faceplayer
+	msgbox SaltySpitoon_Text_PondaBabuPost
+	closemessage
+	applymovement 18, Common_Movement_FaceUp
+	waitmovement 0
+SaltySpitoon_EventScript_PondaBabu_1:
+	end
+
+SaltySpitoon_EventScript_PondaBabu_2:
+	call SaltySpitoon_EventScript_CantinaBrawl
+	goto SaltySpitoon_EventScript_PondaBabu_1
+
+SaltySpitoon_EventScript_PondaBabu_4:
+	goto_if_unset FLAG_SALTYSPITOON_BRAWL, SaltySpitoon_EventScript_PondaBabu_2
+	goto SaltySpitoon_EventScript_PondaBabu_3
 
 
 SaltySpitoon_EventScript_Evazan::
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	compare VAR_RESULT, DIR_WEST
-	goto_if_eq SaltySpitoon_EventScript_Evazan_2
-	compare VAR_RESULT, DIR_NORTH
-	goto_if_eq SaltySpitoon_EventScript_Evazan_5
-SaltySpitoon_EventScript_Evazan_4:
+	goto_if_eq SaltySpitoon_EventScript_Evazan_4
+SaltySpitoon_EventScript_Evazan_3:
 	faceplayer
 	msgbox SaltySpitoon_Text_EvazanPost
 	closemessage
@@ -1014,22 +1042,12 @@ SaltySpitoon_EventScript_Evazan_1:
 	end
 
 SaltySpitoon_EventScript_Evazan_2:
-	trainerbattle_single TRAINER_EVAZAN, SaltySpitoon_Text_EvazanIntro, SaltySpitoon_Text_EvazanLost
-	msgbox SaltySpitoon_Text_EvazanPost
-	closemessage
+	call SaltySpitoon_EventScript_CantinaBrawl
 	goto SaltySpitoon_EventScript_Evazan_1
 
-SaltySpitoon_EventScript_Evazan_3:
-	msgbox SaltySpitoon_EventScript_Evazan_Text_0
-	closemessage
-	trainerbattle_single TRAINER_EVAZAN, SaltySpitoon_Text_EvazanIntro, SaltySpitoon_Text_EvazanLost
-	msgbox SaltySpitoon_Text_EvazanPost
-	closemessage
-	goto SaltySpitoon_EventScript_Evazan_1
-
-SaltySpitoon_EventScript_Evazan_5:
-	goto_if_set FLAG_TEMP_C, SaltySpitoon_EventScript_Evazan_3
-	goto SaltySpitoon_EventScript_Evazan_4
+SaltySpitoon_EventScript_Evazan_4:
+	goto_if_unset FLAG_SALTYSPITOON_BRAWL, SaltySpitoon_EventScript_Evazan_2
+	goto SaltySpitoon_EventScript_Evazan_3
 
 
 	.align 2
@@ -1260,12 +1278,6 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_71:
 SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_Text_0:
 	.string "PROBLEMO bottom of Pay Wager swithc$"
 
-SaltySpitoon_EventScript_Bartender_Text_0:
-	.string "BARTENDER TRIGGER$"
-
-SaltySpitoon_EventScript_Evazan_Text_0:
-	.string "NOBATTLE?$"
-
 SaltySpitoon_Text_Bartender1::
 	.string "You wanna buy something?$"
 
@@ -1327,13 +1339,13 @@ SaltySpitoon_Text_EvazanPost::
 	.string "You need to be more careful round here\n"
 	.string "kid.$"
 
-SaltySpitoon_Text_PondaBabaIntro::
+SaltySpitoon_Text_PondaBabuIntro::
 	.string "We're wanted men. I have the death\n"
 	.string "sentance.$"
 
-SaltySpitoon_Text_PondaBabaLost::
+SaltySpitoon_Text_PondaBabuLost::
 	.string "Cold blood! Ow! My arm!$"
 
-SaltySpitoon_Text_PondaBabaPost::
+SaltySpitoon_Text_PondaBabuPost::
 	.string "You watch yourself. They say this place\n"
 	.string "is rough.$"

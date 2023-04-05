@@ -560,55 +560,65 @@ script SaltySpitoon_EventScript_Bartender {
 	pokemart(SaltySpitoon_Mart_Bartender)
 	msgbox (SaltySpitoon_Text_Bartender2)
 	closemessage
-	if (!defeated(TRAINER_EVAZAN)) {
-		setflag (FLAGBRAWL)
-		applymovement (OBJ_EVENT_EVAZAN, Common_Movement_FaceRight)
-		applymovement (OBJ_EVENT_PONDA, Common_Movement_FaceLeft)
-		waitmovement (0)
-		msgbox("BARTENDER TRIGGER")
-		closemessage
-		setvar (VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL)
-		special (DoSpecialTrainerBattle)
-		waitstate
-	
-		
-
-		//multi_fixed_2_vs_2 (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABA, SaltySpitoon_Text_PondaBabaLost, 0xFFFF, 0xFFFF)
-		//trainerbattle_single (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanIntro, SaltySpitoon_Text_EvazanLost)
-		//trainerbattle_single (TRAINER_PONDA_BABA, SaltySpitoon_Text_PondaBabaIntro, SaltySpitoon_Text_PondaBabaLost)
+	if (!flag(FLAG_SALTYSPITOON_BRAWL)) {
+		call (SaltySpitoon_EventScript_CantinaBrawl)
 	}
+	end
+}
+
+script SaltySpitoon_EventScript_CantinaBrawl {
+	applymovement (OBJ_EVENT_EVAZAN, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_PONDA, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	msgbox (SaltySpitoon_Text_EvazanIntro)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	msgbox (SaltySpitoon_Text_PondaBabuIntro)
+	closemessage
+	setvar (VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL)
+	special (DoSpecialTrainerBattle)
+	waitstate
+	setflag (FLAG_SALTYSPITOON_BRAWL)
+	return
 }
 
 script SaltySpitoon_EventScript_EvazanTrainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_EVAZAN, 0, SaltySpitoon_Text_EvazanLost, SaltySpitoon_Text_EvazanPost)
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_EVAZAN, 0, SaltySpitoon_Text_EvazanLost, SaltySpitoon_Text_EvazanLost)
 	end
 }
 
-script SaltySpitoon_EventScript_PondaBabaTrainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PONDA_BABA, 0, SaltySpitoon_Text_PondaBabaLost, SaltySpitoon_Text_PondaBabaPost)
+script SaltySpitoon_EventScript_PondaBabuTrainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PONDA_BABU, 0, SaltySpitoon_Text_PondaBabuLost, SaltySpitoon_Text_PondaBabuLost)
 	end
 }
 
-script SaltySpitoon_EventScript_PondaBaba {
-
+script SaltySpitoon_EventScript_PondaBabu {
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	//Speak to him in the middle
+	if (var(VAR_RESULT) == DIR_EAST && !flag(FLAG_SALTYSPITOON_BRAWL)) {
+		call (SaltySpitoon_EventScript_CantinaBrawl)
+	} else {
+		faceplayer
+		msgbox (SaltySpitoon_Text_PondaBabuPost)
+		closemessage
+		applymovement (OBJ_EVENT_PONDA, Common_Movement_FaceUp)
+		waitmovement (0)
+	}
+	end
 }
 
 script SaltySpitoon_EventScript_Evazan {
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
 	//Speak to him in the middle
-	if (var(VAR_RESULT) == DIR_WEST) {
-		trainerbattle_single (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanIntro, SaltySpitoon_Text_EvazanLost)
-		msgbox(SaltySpitoon_Text_EvazanPost)
-		closemessage
-	} elif (var(VAR_RESULT) == DIR_NORTH && flag(FLAGBRAWL)) {
-		msgbox("NOBATTLE?")
-		closemessage
-		trainerbattle_single (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanIntro, SaltySpitoon_Text_EvazanLost)
-		msgbox(SaltySpitoon_Text_EvazanPost)
-		closemessage
+	if (var(VAR_RESULT) == DIR_WEST && !flag(FLAG_SALTYSPITOON_BRAWL)) {
+		call (SaltySpitoon_EventScript_CantinaBrawl)
 	} else {
 		faceplayer
-		msgbox(SaltySpitoon_Text_EvazanPost)
+		msgbox (SaltySpitoon_Text_EvazanPost)
 		closemessage
 		applymovement (OBJ_EVENT_EVAZAN, Common_Movement_FaceUp)
 		waitmovement (0)
@@ -684,15 +694,15 @@ text SaltySpitoon_Text_EvazanPost {
 	format("You need to be more careful round here kid.")
 }
 
-text SaltySpitoon_Text_PondaBabaIntro { 
+text SaltySpitoon_Text_PondaBabuIntro { 
 	format("We're wanted men. I have the death sentance.")
 }
 
-text SaltySpitoon_Text_PondaBabaLost {
+text SaltySpitoon_Text_PondaBabuLost {
 	format("Cold blood! Ow! My arm!")
 }
 
-text SaltySpitoon_Text_PondaBabaPost {
+text SaltySpitoon_Text_PondaBabuPost {
 	format("You watch yourself. They say this place is rough.")
 }
 
