@@ -1583,7 +1583,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("BRIANNA"),
+        .trainerName = _("EVAZAN"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1596,23 +1596,20 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("NAOMI"),
+        .trainerName = _("PONDA BABU"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Naomi),
         .party = {.TrainerMon = sParty_Naomi},
     },
-///	====BREAK====
 
-
-
-    [TRAINER_CINDY_3] =
+    [TRAINER_REESE] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("CINDY"),
+        .trainerName = _("REESE"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -1620,18 +1617,21 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Cindy3},
     },
 
-    [TRAINER_CINDY_4] =
+    [TRAINER_JOHN] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("CINDY"),
+        .trainerName = _("JOHN"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Cindy4),
         .party = {.TrainerMon = sParty_Cindy4},
     },
+
+
+///	====BREAK====
 
     [TRAINER_CINDY_5] =
     {

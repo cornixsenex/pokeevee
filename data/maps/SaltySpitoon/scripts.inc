@@ -14,16 +14,22 @@ SaltySpitoon_EventScript_SetSSVar::
 
 SaltySpitoon_EventScript_HiLoKabutoTable::
 	lock
+	goto_if_set FLAG_TEMP_C, SaltySpitoon_EventScript_HiLoKabutoTable_2
 	msgbox SaltySpitoon_Text_HiLoKabuto_Intro, MSGBOX_YESNO
 	closemessage
 	compare VAR_RESULT, YES
-	goto_if_eq SaltySpitoon_EventScript_HiLoKabutoTable_2
+	goto_if_eq SaltySpitoon_EventScript_HiLoKabutoTable_5
 	call SaltySpitoon_EventScript_HiLoKabuto_Goodbye
 SaltySpitoon_EventScript_HiLoKabutoTable_1:
 	release
 	end
 
 SaltySpitoon_EventScript_HiLoKabutoTable_2:
+	msgbox SaltySpitoon_Text_NoGame
+	closemessage
+	goto SaltySpitoon_EventScript_HiLoKabutoTable_1
+
+SaltySpitoon_EventScript_HiLoKabutoTable_5:
 	msgbox SaltySpitoon_Text_HiLoKabuto_DescribeGame
 	closemessage
 	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
@@ -295,8 +301,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_38:
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_37
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_39:
-	compare FLAG_TEMP_B, 0
-	goto_if_ne SaltySpitoon_EventScript_HiLoKabuto_Brain_38
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_38
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_37
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_43:
@@ -304,8 +309,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_43:
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_42
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_44:
-	compare FLAG_TEMP_B, 0
-	goto_if_ne SaltySpitoon_EventScript_HiLoKabuto_Brain_43
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_43
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_42
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_48:
@@ -313,8 +317,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_48:
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_47
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_49:
-	compare FLAG_TEMP_B, 0
-	goto_if_ne SaltySpitoon_EventScript_HiLoKabuto_Brain_48
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_48
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_47
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_53:
@@ -322,8 +325,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_53:
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_52
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_54:
-	compare FLAG_TEMP_B, 0
-	goto_if_ne SaltySpitoon_EventScript_HiLoKabuto_Brain_53
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_53
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_52
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_58:
@@ -331,8 +333,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_58:
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_57
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_59:
-	compare FLAG_TEMP_B, 0
-	goto_if_ne SaltySpitoon_EventScript_HiLoKabuto_Brain_58
+	goto_if_set FLAG_TEMP_B, SaltySpitoon_EventScript_HiLoKabuto_Brain_58
 	goto SaltySpitoon_EventScript_HiLoKabuto_Brain_57
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_63:
@@ -821,11 +822,13 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_254:
 SaltySpitoon_EventScript_HiLoKabuto_PlayerLost::
 	msgbox SaltySpitoon_Text_HiLoKabuto_YouLost
 	closemessage
+	setvar VAR_TEMP_9, 0
 	call SaltySpitoon_EventScript_HiLoKabuto_PlayAgain
 	return
 
 
 SaltySpitoon_EventScript_HiLoKabuto_PlayerWon::
+	setvar VAR_TEMP_9, VAR_TEMP_9 + 1
 	showmoneybox 0, 0
 	msgbox SaltySpitoon_Text_HiLoKabuto_YouWon
 	closemessage
@@ -843,6 +846,8 @@ SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_1:
 	playse SE_SHOP
 	waitse
 	hidemoneybox
+	compare VAR_TEMP_9, 1
+	goto_if_ge SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_10
 	call SaltySpitoon_EventScript_HiLoKabuto_PlayAgain
 	return
 
@@ -869,6 +874,31 @@ SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_7:
 SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_8:
 	addmoney 500000
 	goto SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_1
+
+SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_10:
+	call SaltySpitoon_EventScript_HiLoKabuto_Fight
+	return
+
+
+SaltySpitoon_EventScript_HiLoKabuto_Fight::
+	setflag FLAG_TEMP_C
+	msgbox SaltySpitoon_Text_HiLoKabuto_Fight
+	closemessage
+	setvar VAR_0x8004, SPECIAL_BATTLE_HILOKABUTO
+	special DoSpecialTrainerBattle
+	waitstate
+	release
+	end
+
+
+SaltySpitoon_EventScript_ReeseTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_REESE, 0, SaltySpitoon_Text_ReeseLost, SaltySpitoon_Text_ReeseLost
+	end
+
+
+SaltySpitoon_EventScript_JohnTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_JOHN, 0, SaltySpitoon_Text_JohnLost, SaltySpitoon_Text_JohnLost
+	end
 
 
 SaltySpitoon_EventScript_HiLoKabuto_PlayAgain::
@@ -1062,6 +1092,57 @@ SaltySpitoon_EventScript_DeathsticksGuy::
 	end
 
 
+SaltySpitoon_EventScript_BigGreen::
+	lock
+	faceplayer
+	msgbox SaltySpitoon_Text_BigGreen1
+	applymovement 12, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox SaltySpitoon_Text_BigGreen2
+	closemessage
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq SaltySpitoon_EventScript_BigGreen_2
+	applymovement 12, SaltySpitoon_Movement_BigGreenExitL
+SaltySpitoon_EventScript_BigGreen_1:
+	waitmovement 0
+	removeobject 12
+	setflag FLAG_SALTYSPITOON_BIGGREEN
+	release
+	end
+
+SaltySpitoon_EventScript_BigGreen_2:
+	applymovement 12, SaltySpitoon_Movement_BigGreenExitR
+	goto SaltySpitoon_EventScript_BigGreen_1
+
+
+SaltySpitoon_Movement_BigGreenExitL:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+SaltySpitoon_Movement_BigGreenExitR:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 	.align 2
 SaltySpitoon_Mart_Deathsticks:
 	.2byte ITEM_RARE_CANDY
@@ -1088,7 +1169,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_2:
 	.string "Bill got Kabuto low\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_3:
-	.string "Pete got Kabuto low\n$"
+	.string "Reese got Kabuto low\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_4:
 	.string "{PLAYER} got Kabuto low\n$"
@@ -1106,7 +1187,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_8:
 	.string "Bill got one\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_9:
-	.string "Pete got one\n$"
+	.string "Reese got one\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_10:
 	.string "{PLAYER} got one\n$"
@@ -1124,7 +1205,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_14:
 	.string "Bill got two\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_15:
-	.string "Pete got two\n$"
+	.string "Reese got two\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_16:
 	.string "{PLAYER} got two\n$"
@@ -1142,7 +1223,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_20:
 	.string "Bill got three\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_21:
-	.string "Pete got three\n$"
+	.string "Reese got three\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_22:
 	.string "{PLAYER} got three\n$"
@@ -1160,7 +1241,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_26:
 	.string "Bill got four\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_27:
-	.string "Pete got four\n$"
+	.string "Reese got four\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_28:
 	.string "{PLAYER} got four\n$"
@@ -1178,7 +1259,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_32:
 	.string "Bill got five\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_33:
-	.string "Pete got five\n$"
+	.string "Reese got five\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_34:
 	.string "{PLAYER} got five\n$"
@@ -1196,7 +1277,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_38:
 	.string "Bill got six\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_39:
-	.string "Pete got six\n$"
+	.string "Reese got six\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_40:
 	.string "{PLAYER} got six\n$"
@@ -1214,7 +1295,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_44:
 	.string "Bill got seven\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_45:
-	.string "Pete got seven\n$"
+	.string "Reese got seven\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_46:
 	.string "{PLAYER} got seven\n$"
@@ -1232,7 +1313,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_50:
 	.string "Bill got eight\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_51:
-	.string "Pete got eight\n$"
+	.string "Reese got eight\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_52:
 	.string "{PLAYER} got eight\n$"
@@ -1250,7 +1331,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_56:
 	.string "Bill got nine\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_57:
-	.string "Pete got nine\n$"
+	.string "Reese got nine\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_58:
 	.string "{PLAYER} got nine\n$"
@@ -1268,7 +1349,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_62:
 	.string "Bill got Kabuto high\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_63:
-	.string "Pete got Kabuto high\n$"
+	.string "Reese got Kabuto high\n$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_64:
 	.string "{PLAYER} got Kabuto high\n$"
@@ -1286,7 +1367,7 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_68:
 	.string "Bill won!$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_69:
-	.string "Pete won!$"
+	.string "Reese won!$"
 
 SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_70:
 	.string "{PLAYER} won!$"
@@ -1375,3 +1456,36 @@ SaltySpitoon_Text_PondaBabuLost::
 SaltySpitoon_Text_PondaBabuPost::
 	.string "You watch yourself. They say this place\n"
 	.string "is rough.$"
+
+SaltySpitoon_Text_BigGreen1::
+	.string "I'm here because I am a troubled man.\n"
+	.string "These dancing girls help me forget\l"
+	.string "trouble, let sorrow waste away as time\l"
+	.string "endures. Outside my troubles grow while\l"
+	.string "I decline. Oh woe is me!$"
+
+SaltySpitoon_Text_BigGreen2::
+	.string "But where are my manners? My name is\n"
+	.string "Melvin. You call me Big Green. I'm sure\l"
+	.string "you're looking to make a fortune and\l"
+	.string "secure status among our city. Come see\l"
+	.string "me at our safe house on Grow Street\l"
+	.string "where we might discuss this at our\l"
+	.string "leisure.$"
+
+SaltySpitoon_Text_ReeseLost::
+	.string "Prolly cheated at that too...$"
+
+SaltySpitoon_Text_JohnLost::
+	.string "Tarnation!$"
+
+SaltySpitoon_Text_NoGame::
+	.string "We're not playing right now so get you\n"
+	.string "gone.$"
+
+SaltySpitoon_Text_HiLoKabuto_Fight::
+	.string "No one can win three hands\n"
+	.string "successively! This kind stranger\l"
+	.string "{PLAYER} here must be cheating! To\l"
+	.string "arms! To arms! Destroy the cheating\l"
+	.string "man!$"

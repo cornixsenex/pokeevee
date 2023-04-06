@@ -109,7 +109,7 @@
 #define FLAG_GATOCITYS_HIDEM2                0x59
 #define FLAG_GATOCITYS_HIDEM3                0x5A
 #define FLAG_SALTYSPITOON_BRAWL    	         0x5B
-
+#define FLAG_SALTYSPITOON_BIGGREEN           0x5C
 
 
 												  ////BREAK
@@ -123,7 +123,6 @@
 
 
 
-#define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
 #define FLAG_RECEIVED_WAILMER_PAIL           0x5E
 #define FLAG_RECEIVED_POKEBLOCK_CASE         0x5F

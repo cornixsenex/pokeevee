@@ -2,10 +2,11 @@
 
 
 //Kabuto HiLo 
+const WINSTREAK   = VAR_TEMP_9
 const JOHN_CARD   = VAR_TEMP_A
 const BOBBY_CARD  = VAR_TEMP_B
 const BILL_CARD   = VAR_TEMP_C
-const PETE_CARD   = VAR_TEMP_D
+const REESE_CARD  = VAR_TEMP_D
 const PLAYER_CARD = VAR_TEMP_E
 const WAGER       = VAR_TEMP_F
 const CARD1       = FLAG_TEMP_1
@@ -19,10 +20,13 @@ const CARD8       = FLAG_TEMP_8
 const CARD9       = FLAG_TEMP_9
 const CARD0       = FLAG_TEMP_A
 const KABUTOHI    = FLAG_TEMP_B
+const GAME_FIGHT  = FLAG_TEMP_C
 
 const OBJ_EVENT_PONDA = 18
 const OBJ_EVENT_EVAZAN = 17
 const FLAGBRAWL = FLAG_TEMP_C
+
+const OBJ_EVENT_BIG_GREEN = 12
 
 
 mapscripts SaltySpitoon_MapScripts {
@@ -38,20 +42,24 @@ script SaltySpitoon_EventScript_SetSSVar {
 }
 
 script SaltySpitoon_EventScript_HiLoKabutoTable {
-
 	lock
-	//Were playing High Low Kabuto wanna play?
-	msgbox (SaltySpitoon_Text_HiLoKabuto_Intro, MSGBOX_YESNO)
-	closemessage
-	if (var(VAR_RESULT) == YES) {
-	//If Yes introduce game ten cards 1-9 plus a kabuto which is either high or low card whoever has highest card wins
-		msgbox (SaltySpitoon_Text_HiLoKabuto_DescribeGame)
+	if (flag(GAME_FIGHT)) {
+		msgbox (SaltySpitoon_Text_NoGame)
 		closemessage
-	//get wager
-		call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
-	//If no come back when you are
 	} else {
-		call (SaltySpitoon_EventScript_HiLoKabuto_Goodbye)
+		//Were playing High Low Kabuto wanna play?
+		msgbox (SaltySpitoon_Text_HiLoKabuto_Intro, MSGBOX_YESNO)
+		closemessage
+		if (var(VAR_RESULT) == YES) {
+		//If Yes introduce game ten cards 1-9 plus a kabuto which is either high or low card whoever has highest card wins
+			msgbox (SaltySpitoon_Text_HiLoKabuto_DescribeGame)
+			closemessage
+		//get wager
+			call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+		//If no come back when you are
+		} else {
+			call (SaltySpitoon_EventScript_HiLoKabuto_Goodbye)
+		}
 	}
 	release
 	end
@@ -214,34 +222,34 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	copyvar (BILL_CARD, VAR_RESULT)
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
-	//Pete - pick random number, check against john AND BOBBY AND BILL, set bobby number ,take out card	
+	//Reese - pick random number, check against john AND BOBBY AND BILL, set bobby number ,take out card	
 	do {
 		specialvar (VAR_RESULT, RandDigit)
 	} while (var(VAR_RESULT) == JOHN_CARD || (var(VAR_RESULT) == BOBBY_CARD) || (var(VAR_RESULT) == BILL_CARD))
-	copyvar (PETE_CARD, VAR_RESULT)
+	copyvar (REESE_CARD, VAR_RESULT)
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
 	//Player - pick random number, check against john AND BOBBY AND BILL, set bobby number ,take out card	
 	do {
 		specialvar (VAR_RESULT, RandDigit)
-	} while (var(VAR_RESULT) == JOHN_CARD || (var(VAR_RESULT) == BOBBY_CARD) || (var(VAR_RESULT) == BILL_CARD) || (var(VAR_RESULT) == PETE_CARD))
+	} while (var(VAR_RESULT) == JOHN_CARD || (var(VAR_RESULT) == BOBBY_CARD) || (var(VAR_RESULT) == BILL_CARD) || (var(VAR_RESULT) == REESE_CARD))
 	copyvar (PLAYER_CARD, VAR_RESULT)
 	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
 
 	// Hanlde Kabuto high or low
-	if (var(JOHN_CARD) == 0 && var(KABUTOHI)) {
+	if (var(JOHN_CARD) == 0 && flag(KABUTOHI)) {
 		setvar (JOHN_CARD, 10)
 	}
-	if (var(BOBBY_CARD) == 0 && var(KABUTOHI)) {
+	if (var(BOBBY_CARD) == 0 && flag(KABUTOHI)) {
 		setvar (BOBBY_CARD, 10)
 	}
-	if (var(BILL_CARD) == 0 && var(KABUTOHI)) {
+	if (var(BILL_CARD) == 0 && flag(KABUTOHI)) {
 		setvar (BILL_CARD, 10)
 	}
-	if (var(PETE_CARD) == 0 && var(KABUTOHI)) {
-		setvar (PETE_CARD, 10)
+	if (var(REESE_CARD) == 0 && flag(KABUTOHI)) {
+		setvar (REESE_CARD, 10)
 	}
-	if (var(PLAYER_CARD) == 0 && var(KABUTOHI)) {
+	if (var(PLAYER_CARD) == 0 && flag(KABUTOHI)) {
 		setvar (PLAYER_CARD, 10)
 	}
 
@@ -254,8 +262,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 				msgbox ("Bobby got Kabuto low\n")
 			} elif (var(BILL_CARD) == 0) {
 				msgbox ("Bill got Kabuto low\n")
-			} elif (var(PETE_CARD) == 0) {
-				msgbox ("Pete got Kabuto low\n")
+			} elif (var(REESE_CARD) == 0) {
+				msgbox ("Reese got Kabuto low\n")
 			} elif (var(PLAYER_CARD) == 0) {
 				msgbox ("{PLAYER} got Kabuto low\n")
 			} else {
@@ -271,8 +279,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got one\n")
 		} elif (var(BILL_CARD) == 1) {
 			msgbox ("Bill got one\n")
-		} elif (var(PETE_CARD) == 1) {
-			msgbox ("Pete got one\n")
+		} elif (var(REESE_CARD) == 1) {
+			msgbox ("Reese got one\n")
 		} elif (var(PLAYER_CARD) == 1) {
 			msgbox ("{PLAYER} got one\n")
 		} else {
@@ -287,8 +295,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got two\n")
 		} elif (var(BILL_CARD) == 2) {
 			msgbox ("Bill got two\n")
-		} elif (var(PETE_CARD) == 2) {
-			msgbox ("Pete got two\n")
+		} elif (var(REESE_CARD) == 2) {
+			msgbox ("Reese got two\n")
 		} elif (var(PLAYER_CARD) == 2) {
 			msgbox ("{PLAYER} got two\n")
 		} else {
@@ -303,8 +311,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got three\n")
 		} elif (var(BILL_CARD) == 3) {
 			msgbox ("Bill got three\n")
-		} elif (var(PETE_CARD) == 3) {
-			msgbox ("Pete got three\n")
+		} elif (var(REESE_CARD) == 3) {
+			msgbox ("Reese got three\n")
 		} elif (var(PLAYER_CARD) == 3) {
 			msgbox ("{PLAYER} got three\n")
 		} else {
@@ -319,8 +327,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got four\n")
 		} elif (var(BILL_CARD) == 4) {
 			msgbox ("Bill got four\n")
-		} elif (var(PETE_CARD) == 4) {
-			msgbox ("Pete got four\n")
+		} elif (var(REESE_CARD) == 4) {
+			msgbox ("Reese got four\n")
 		} elif (var(PLAYER_CARD) == 4) {
 			msgbox ("{PLAYER} got four\n")
 		} else {
@@ -335,8 +343,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got five\n")
 		} elif (var(BILL_CARD) == 5) {
 			msgbox ("Bill got five\n")
-		} elif (var(PETE_CARD) == 5) {
-			msgbox ("Pete got five\n")
+		} elif (var(REESE_CARD) == 5) {
+			msgbox ("Reese got five\n")
 		} elif (var(PLAYER_CARD) == 5) {
 			msgbox ("{PLAYER} got five\n")
 		} else {
@@ -351,8 +359,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got six\n")
 		} elif (var(BILL_CARD) == 6) {
 			msgbox ("Bill got six\n")
-		} elif (var(PETE_CARD) == 6) {
-			msgbox ("Pete got six\n")
+		} elif (var(REESE_CARD) == 6) {
+			msgbox ("Reese got six\n")
 		} elif (var(PLAYER_CARD) == 6) {
 			msgbox ("{PLAYER} got six\n")
 		} else {
@@ -367,8 +375,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got seven\n")
 		} elif (var(BILL_CARD) == 7) {
 			msgbox ("Bill got seven\n")
-		} elif (var(PETE_CARD) == 7) {
-			msgbox ("Pete got seven\n")
+		} elif (var(REESE_CARD) == 7) {
+			msgbox ("Reese got seven\n")
 		} elif (var(PLAYER_CARD) == 7) {
 			msgbox ("{PLAYER} got seven\n")
 		} else {
@@ -383,8 +391,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got eight\n")
 		} elif (var(BILL_CARD) == 8) {
 			msgbox ("Bill got eight\n")
-		} elif (var(PETE_CARD) == 8) {
-			msgbox ("Pete got eight\n")
+		} elif (var(REESE_CARD) == 8) {
+			msgbox ("Reese got eight\n")
 		} elif (var(PLAYER_CARD) == 8) {
 			msgbox ("{PLAYER} got eight\n")
 		} else {
@@ -399,8 +407,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 			msgbox ("Bobby got nine\n")
 		} elif (var(BILL_CARD) == 9) {
 			msgbox ("Bill got nine\n")
-		} elif (var(PETE_CARD) == 9) {
-			msgbox ("Pete got nine\n")
+		} elif (var(REESE_CARD) == 9) {
+			msgbox ("Reese got nine\n")
 		} elif (var(PLAYER_CARD) == 9) {
 			msgbox ("{PLAYER} got nine\n")
 		} else {
@@ -416,8 +424,8 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 				msgbox ("Bobby got Kabuto high\n")
 			} elif (var(BILL_CARD) == 10) {
 				msgbox ("Bill got Kabuto high\n")
-			} elif (var(PETE_CARD) == 10) {
-				msgbox ("Pete got Kabuto high\n")
+			} elif (var(REESE_CARD) == 10) {
+				msgbox ("Reese got Kabuto high\n")
 			} elif (var(PLAYER_CARD) == 10) {
 				msgbox ("{PLAYER} got Kabuto high\n")
 			} else {
@@ -430,23 +438,23 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	//NOTE var(VARIABLE) only on the LEFT SIDE
 
 	//Did John Win?
-	if ( var(JOHN_CARD) > BOBBY_CARD && var(JOHN_CARD) > BILL_CARD  && var(JOHN_CARD) > PETE_CARD  && var(JOHN_CARD) > PLAYER_CARD ) {
+	if ( var(JOHN_CARD) > BOBBY_CARD && var(JOHN_CARD) > BILL_CARD  && var(JOHN_CARD) > REESE_CARD  && var(JOHN_CARD) > PLAYER_CARD ) {
 		msgbox ("John won!")
 		call (SaltySpitoon_EventScript_HiLoKabuto_PlayerLost)
 	//Did Bobby Win
-	} elif (var(BOBBY_CARD) > JOHN_CARD && var(BOBBY_CARD) > BILL_CARD && var(BOBBY_CARD) > PETE_CARD && var(BOBBY_CARD) > PLAYER_CARD) {
+	} elif (var(BOBBY_CARD) > JOHN_CARD && var(BOBBY_CARD) > BILL_CARD && var(BOBBY_CARD) > REESE_CARD && var(BOBBY_CARD) > PLAYER_CARD) {
 		msgbox ("Bobby won!")
 		call (SaltySpitoon_EventScript_HiLoKabuto_PlayerLost)
 	//Did Bill Win
-	} elif (var(BILL_CARD) > JOHN_CARD && var(BILL_CARD) > BOBBY_CARD && var(BILL_CARD) > PETE_CARD && var(BILL_CARD) > PLAYER_CARD) {
+	} elif (var(BILL_CARD) > JOHN_CARD && var(BILL_CARD) > BOBBY_CARD && var(BILL_CARD) > REESE_CARD && var(BILL_CARD) > PLAYER_CARD) {
 		msgbox ("Bill won!")
 		call (SaltySpitoon_EventScript_HiLoKabuto_PlayerLost)
-	//Did Pete win
-	} elif (var(PETE_CARD) > JOHN_CARD && var(PETE_CARD) > BOBBY_CARD && var(PETE_CARD) > BILL_CARD && var(PETE_CARD) > PLAYER_CARD) {
-		msgbox ("Pete won!")
+	//Did Reese win
+	} elif (var(REESE_CARD) > JOHN_CARD && var(REESE_CARD) > BOBBY_CARD && var(REESE_CARD) > BILL_CARD && var(REESE_CARD) > PLAYER_CARD) {
+		msgbox ("Reese won!")
 		call (SaltySpitoon_EventScript_HiLoKabuto_PlayerLost)
 	//Did player win
-	} elif (var(PLAYER_CARD) > JOHN_CARD && var(PLAYER_CARD) > BOBBY_CARD && var(PLAYER_CARD) > BILL_CARD && var(PLAYER_CARD) > PETE_CARD) {
+	} elif (var(PLAYER_CARD) > JOHN_CARD && var(PLAYER_CARD) > BOBBY_CARD && var(PLAYER_CARD) > BILL_CARD && var(PLAYER_CARD) > REESE_CARD) {
 		msgbox ("{PLAYER} won!")
 		call (SaltySpitoon_EventScript_HiLoKabuto_PlayerWon)
 	//Else problemo
@@ -460,12 +468,12 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 script SaltySpitoon_EventScript_HiLoKabuto_PlayerLost {
 	msgbox (SaltySpitoon_Text_HiLoKabuto_YouLost)
 	closemessage
-	//reset win streak
-
+	setvar (WINSTREAK, 0)
 	call (SaltySpitoon_EventScript_HiLoKabuto_PlayAgain)
 }
 
 script SaltySpitoon_EventScript_HiLoKabuto_PlayerWon {
+	setvar (WINSTREAK, WINSTREAK+1)
 	showmoneybox (0, 0)
 	msgbox (SaltySpitoon_Text_HiLoKabuto_YouWon)
 	closemessage
@@ -491,9 +499,34 @@ script SaltySpitoon_EventScript_HiLoKabuto_PlayerWon {
 	playse (SE_SHOP)
 	waitse
 	hidemoneybox
-	call (SaltySpitoon_EventScript_HiLoKabuto_PlayAgain)
+	if (var(WINSTREAK) >= 1) {
+		call (SaltySpitoon_EventScript_HiLoKabuto_Fight)
+	} else {
+		call (SaltySpitoon_EventScript_HiLoKabuto_PlayAgain)
+	}
 }
 
+script SaltySpitoon_EventScript_HiLoKabuto_Fight {
+	setflag (GAME_FIGHT)
+	msgbox (SaltySpitoon_Text_HiLoKabuto_Fight)
+	//No way someone wins that many times lets get him!
+	closemessage
+	setvar (VAR_0x8004, SPECIAL_BATTLE_HILOKABUTO)
+	special (DoSpecialTrainerBattle)
+	waitstate
+	release
+	end
+}
+
+script SaltySpitoon_EventScript_ReeseTrainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_REESE, 0, SaltySpitoon_Text_ReeseLost, SaltySpitoon_Text_ReeseLost)
+	end
+}
+
+script SaltySpitoon_EventScript_JohnTrainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_JOHN, 0, SaltySpitoon_Text_JohnLost, SaltySpitoon_Text_JohnLost)
+	end
+}
 
 script SaltySpitoon_EventScript_HiLoKabuto_PlayAgain {
 	msgbox (SaltySpitoon_Text_HiLoKabuto_PlayAgain, MSGBOX_YESNO)
@@ -520,7 +553,7 @@ script SaltySpitoon_EventScript_HiLoKabuto_Reset {
 	setvar (JOHN_CARD, 0)
 	setvar (BOBBY_CARD, 0)
 	setvar (BILL_CARD, 0)
-	setvar (PETE_CARD, 0)
+	setvar (REESE_CARD, 0)
 	setvar (PLAYER_CARD, 0)
 	return
 }
@@ -638,6 +671,37 @@ script SaltySpitoon_EventScript_DeathsticksGuy {
 	end
 }
 
+script SaltySpitoon_EventScript_BigGreen {
+	lock
+	faceplayer
+	msgbox (SaltySpitoon_Text_BigGreen1)
+	applymovement (OBJ_EVENT_BIG_GREEN, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (SaltySpitoon_Text_BigGreen2)
+	closemessage
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_EAST) {
+		applymovement (OBJ_EVENT_BIG_GREEN, SaltySpitoon_Movement_BigGreenExitR)
+	} else {
+		applymovement (OBJ_EVENT_BIG_GREEN, SaltySpitoon_Movement_BigGreenExitL)
+	}
+	waitmovement (0)
+	removeobject (OBJ_EVENT_BIG_GREEN)
+	setflag (FLAG_SALTYSPITOON_BIGGREEN)
+	release
+	end
+}
+
+movement SaltySpitoon_Movement_BigGreenExitL {
+	walk_left * 4
+	walk_down * 6
+}
+
+movement SaltySpitoon_Movement_BigGreenExitR {
+	walk_right * 5
+	walk_down * 6
+}
+
 mart SaltySpitoon_Mart_Deathsticks {
 	ITEM_RARE_CANDY
 	ITEM_KIND_BUD
@@ -731,4 +795,29 @@ text SaltySpitoon_Text_PondaBabuLost {
 text SaltySpitoon_Text_PondaBabuPost {
 	format("You watch yourself. They say this place is rough.")
 }
+
+text SaltySpitoon_Text_BigGreen1 {
+	format("I'm here because I am a troubled man. These dancing girls help me forget trouble, let sorrow waste away as time endures. Outside my troubles grow while I decline. Oh woe is me!")
+}
+
+text SaltySpitoon_Text_BigGreen2 {
+	format("But where are my manners? My name is Melvin. You call me Big Green. I'm sure you're looking to make a fortune and secure status among our city. Come see me at our safe house on Grow Street where we might discuss this at our leisure.")
+}
+
+text SaltySpitoon_Text_ReeseLost {
+	format("Prolly cheated at that too...")
+}
+
+text SaltySpitoon_Text_JohnLost {
+	format("Tarnation!")
+}
+
+text SaltySpitoon_Text_NoGame {
+	format("We're not playing right now so get you gone.")
+}
+
+text  SaltySpitoon_Text_HiLoKabuto_Fight {
+	format("No one can win three hands successively! This kind stranger {PLAYER} here must be cheating! To arms! To arms! Destroy the cheating man!")
+}
+
 

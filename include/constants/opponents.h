@@ -122,9 +122,9 @@
 #define TRAINER_MEI_AND_LISA                117
 #define TRAINER_EVAZAN                      118
 #define TRAINER_PONDA_BABU                  119
+#define TRAINER_REESE                       120
+#define TRAINER_JOHN                        121
 //BREAK
-#define TRAINER_CINDY_3                     120
-#define TRAINER_CINDY_4                     121
 #define TRAINER_CINDY_5                     122
 #define TRAINER_CINDY_6                     123
 #define TRAINER_MELISSA                     124
