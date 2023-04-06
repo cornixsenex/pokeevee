@@ -1,8 +1,10 @@
-# pokeemerald Expansion
+# POKE EVE 
 
-## What is the pokeemerald Expansion?
+## What is Poke Eve?
 
-The Pokeemerald Expansion is a collection of feature branches that can be integrated into existing [pokeemerald](https://github.com/pret/pokeemerald) projects.
+Poke Eve is a collection of feature branches and scripts which will one day become a full fledged standalone FOSS gameboi game
+
+based on [pokeemerald](https://github.com/pret/pokeemerald) projects.
 
 ## What features are included?
 - Upgraded battle engine.
@@ -25,6 +27,7 @@ Certain mechanics, moves, abilities and species sprites are missing. For more in
 ### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
 
 ## Who maintains the project?
+This project is maintained by cornixsenex
 
 The project was originally started by DizzyEgg alongside other contributors.
 
@@ -40,4 +43,4 @@ Yes! Contributions are welcome via Pull Requests and they will be reviewed by ma
 
 A Discord-based ROM hacking community that has many members who hack using the disassembly and decompilation projects for Pokémon. Quite a few contributors to the original feature branches by DizzyEgg were members of ROM Hacking Hideout. You can call it RHH for short!
 
-[Click here to join the RHH Discord Server!](https://discord.gg/6CzjAG6GZk)
+[Click here to join the RHH Discord Server! NOTE: THIS DISCORD IS NOT SPECIFIC TO THIS REPO DO NOT ASK REPO SPECIFIC QUESTION HERE ASK CORNIXSENEX INSTEAD](https://discord.gg/6CzjAG6GZk)
