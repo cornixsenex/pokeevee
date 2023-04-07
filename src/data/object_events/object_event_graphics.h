@@ -470,6 +470,13 @@ const u16 gObjectEventPal_Nurse_Joy[] = INCBIN_U16("graphics/object_events/palet
 const u32 gObjectEventPic_Big_Green[] = INCBIN_U32("graphics/object_events/pics/people/fat_man.4bpp");
 const u16 gObjectEventPal_Big_Green[] = INCBIN_U16("graphics/object_events/palettes/biggreen.gbapal");
 
+const u32 gObjectEventPic_Youngster_Red[] = INCBIN_U32("graphics/object_events/pics/people/youngster.4bpp");
+const u16 gObjectEventPal_Youngster_Red[] = INCBIN_U16("graphics/object_events/palettes/youngster_red.gbapal");
+
+const u32 gObjectEventPic_Green[] = INCBIN_U32("graphics/object_events/pics/people/green.4bpp");
+const u16 gObjectEventPal_Green[] = INCBIN_U16("graphics/object_events/palettes/green.gbapal");
+
+
 
 
 //Pokemon overworlds
