@@ -2190,6 +2190,7 @@ void DoSpecialTrainerBattle(void)
         CreateTask(Task_StartBattleAfterTransition, 1);
         PlayMapChosenOrBattleBGM(0);
         BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
 	case SPECIAL_BATTLE_HILOKABUTO:            
 		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
         gApproachingTrainerId = 0;
