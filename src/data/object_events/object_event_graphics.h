@@ -476,6 +476,10 @@ const u16 gObjectEventPal_Youngster_Red[] = INCBIN_U16("graphics/object_events/p
 const u32 gObjectEventPic_Green[] = INCBIN_U32("graphics/object_events/pics/people/green.4bpp");
 const u16 gObjectEventPal_Green[] = INCBIN_U16("graphics/object_events/palettes/green.gbapal");
 
+const u32 gObjectEventPic_OldManLyingDown[] = INCBIN_U32("graphics/object_events/pics/people/old_man_lying_down.4bpp");
+const u16 gObjectEventPal_OldManLyingDown[] = INCBIN_U16("graphics/object_events/palettes/old_man_lying_down.gbapal");
+
+
 
 
 

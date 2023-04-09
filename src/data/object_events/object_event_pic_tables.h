@@ -2569,6 +2569,21 @@ static const struct SpriteFrameImage sPicTable_Green[] = {
     overworld_frame(gObjectEventPic_Green, 2, 4, 8),
 };
 
+//NOTE THIS ONE IS DIFFERENT LYINGDOWN DOES NOT MOVE!!!!!!!!!
+static const struct SpriteFrameImage sPicTable_OldManLyingDown[] = {
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+    overworld_frame(gObjectEventPic_OldManLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+};
+
+/// BREAK ///
+
 static const struct SpriteFrameImage sPicTable_RubySapphireBrendan[] = {
     overworld_frame(gObjectEventPic_RubySapphireBrendanNormal, 2, 4, 0),
     overworld_frame(gObjectEventPic_RubySapphireBrendanNormal, 2, 4, 1),
