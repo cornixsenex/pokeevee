@@ -5590,6 +5590,16 @@
       "secondary_tileset": "gTileset_SaltySpitoon",
       "border_filepath": "data/layouts/SaltySpitoon/border.bin",
       "blockdata_filepath": "data/layouts/SaltySpitoon/map.bin"
+    },
+    {
+      "id": "LAYOUT_SALTY_SPITOON_2F",
+      "name": "SaltySpitoon_2F_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/SaltySpitoon_2F/border.bin",
+      "blockdata_filepath": "data/layouts/SaltySpitoon_2F/map.bin"
     }
   ]
 }

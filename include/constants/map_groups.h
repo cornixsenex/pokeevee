@@ -639,6 +639,7 @@
 #define MAP_HOSPITAL7F                    (56 | (30 << 8))
 #define MAP_HOSPITAL_ELEVATOR             (57 | (30 << 8))
 #define MAP_SALTY_SPITOON                 (58 | (30 << 8))
+#define MAP_SALTY_SPITOON_2F              (59 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))
