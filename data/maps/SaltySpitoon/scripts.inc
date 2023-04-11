@@ -1108,6 +1108,7 @@ SaltySpitoon_EventScript_BigGreen_1:
 	waitmovement 0
 	removeobject 12
 	setflag FLAG_SALTYSPITOON_BIGGREEN
+	setvar VAR_GANG_STATE, 1
 	release
 	end
 

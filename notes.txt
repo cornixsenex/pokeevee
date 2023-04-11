@@ -1,4 +1,11 @@
-How to import music (my method)
+#How large is the ROM
+	>Open the Makefile, remove the -p argument in the line where gbafix is called, build a ROM and then check the properties of the file.
+
+
+
+
+
+#How to import music (my method)
 	>Find or produce .midi
 	>Use Ardour to listen / preview / stage
 	>Use Muse to actually trim the song (count the beats)

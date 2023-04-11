@@ -5600,6 +5600,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/SaltySpitoon_2F/border.bin",
       "blockdata_filepath": "data/layouts/SaltySpitoon_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_WAREHOUSE_GREEN",
+      "name": "Warehouse_Green_Layout",
+      "width": 20,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Warehouse_Green/border.bin",
+      "blockdata_filepath": "data/layouts/Warehouse_Green/map.bin"
     }
   ]
 }

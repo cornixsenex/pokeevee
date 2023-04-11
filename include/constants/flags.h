@@ -110,6 +110,10 @@
 #define FLAG_GATOCITYS_HIDEM3                0x5A
 #define FLAG_SALTYSPITOON_BRAWL    	         0x5B
 #define FLAG_SALTYSPITOON_BIGGREEN           0x5C
+#define FLAG_GATOS_VAGRANTS                  0x5D //Set after speaking with Big Green in the warehouse
+#define FLAG_WAREHOUSE_GREEN_BIGGREEN        0x5E
+
+
 
 
 												  ////BREAK
@@ -123,8 +127,6 @@
 
 
 
-#define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
-#define FLAG_RECEIVED_WAILMER_PAIL           0x5E
 #define FLAG_RECEIVED_POKEBLOCK_CASE         0x5F
 #define FLAG_RECEIVED_SECRET_POWER           0x60
 #define FLAG_MET_TEAM_AQUA_HARBOR            0x61

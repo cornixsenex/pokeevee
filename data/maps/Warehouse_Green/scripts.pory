@@ -1,0 +1,20 @@
+const OBJ_EVENT_BIGGREEN = 5
+
+
+
+mapscripts Warehouse_Green_MapScripts {
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_GANG_STATE, 0: Warehouse_Green_EventScript_HideBigGreen
+		VAR_GANG_STATE, 1: Warehouse_Green_EventScript_HideBigGreen
+		]
+}
+
+
+script Warehouse_Green_EventScript_HideBigGreen {
+	removeobject (OBJ_EVENT_BIGGREEN)
+	return
+}
+
+
+

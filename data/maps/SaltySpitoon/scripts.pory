@@ -688,6 +688,7 @@ script SaltySpitoon_EventScript_BigGreen {
 	waitmovement (0)
 	removeobject (OBJ_EVENT_BIG_GREEN)
 	setflag (FLAG_SALTYSPITOON_BIGGREEN)
+	setvar (VAR_GANG_STATE, 1)
 	release
 	end
 }
