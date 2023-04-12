@@ -53,7 +53,7 @@ Warehouse_Green_EventScript_BigGreen_6:
 	goto Warehouse_Green_EventScript_BigGreen_1
 
 Warehouse_Green_EventScript_BigGreen_7:
-	mgsbox Warehouse_Green_EventScript_BigGreen_Text_2
+	msgbox Warehouse_Green_EventScript_BigGreen_Text_2
 	goto Warehouse_Green_EventScript_BigGreen_1
 
 

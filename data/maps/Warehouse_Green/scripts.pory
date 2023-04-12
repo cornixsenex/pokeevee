@@ -34,7 +34,7 @@ script Warehouse_Green_EventScript_BigGreen {
 		case 3:
 			msgbox("VAR is 3")
 		case 4:
-			mgsbox("VAR is 4")
+			msgbox("VAR is 4")
 		default:
 			msgbox("VAR OUT OF SCOPE")
 	}
