@@ -26,24 +26,26 @@ script Warehouse_Green_EventScript_BigGreen {
 	faceplayer
 	switch (var(VAR_GANG_STATE)) {
 		case 0:
-			msgbox("VAR0")
-			closemessage
+			msgbox("VAR is 0")
 		case 1:
-			call (Warehouse_Green_EventScript_BigGreen1)
+			call (Warehouse_Green_EventScript_BigGreenA)
 		case 2:
-			call (Warehouse_Green_EventScript_BigGreen2)
+			call (Warehouse_Green_EventScript_BigGreenB)
+		case 3:
+			msgbox("VAR is 3")
+		case 4:
+			mgsbox("VAR is 4")
+		default:
+			msgbox("VAR OUT OF SCOPE")
 	}
+	closemessage
 	applymovement(OBJ_EVENT_BIGGREEN, Common_Movement_FaceDown)
 	waitmovement (0)
 	release
 	end
 }
 
-script Warehouse_Green_EventScript_BigGreen1 {
-	//Glad you made it see we've got this problem
-	//You seem up to the task if you take out the warehouses we'll make you member
-	//Come back after you take out all the warehouses
-	//set var clear vagrants
+script Warehouse_Green_EventScript_BigGreenA {
 	setvar (VAR_GANG_STATE, 2)
 	setflag(FLAG_GATOS_VAGRANTS)
 	msgbox(Warehouse_Green_Text_BigGreenA)
@@ -51,13 +53,11 @@ script Warehouse_Green_EventScript_BigGreen1 {
 	return
 }
 
-script Warehouse_Green_EventScript_BigGreen2 {
+script Warehouse_Green_EventScript_BigGreenB {
 	msgbox(Warehouse_Green_Text_BigGreenB)
 	closemessage
 	return
 }
-
-
 
 text Warehouse_Green_Text_BigGreenA {
 	format("Ahh {PLAYER} so wise to join us here. Welcome, please make yourself at home. I understand you're here to help us. You've come just in time. The neighborhood is not as it once was, ever since The Great War, the reds and blues have sold drugs on our streets and stole our turf. We must strike back or soon we'll be destroyed! I need you to stop their operations. Go to their warehouses. Don't hesitate! Do not show mercy. Do what must be done! Only then can you join our merry gang.")

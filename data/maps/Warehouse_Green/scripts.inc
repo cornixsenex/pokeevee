@@ -26,7 +26,11 @@ Warehouse_Green_EventScript_BigGreen::
 	case 0, Warehouse_Green_EventScript_BigGreen_3
 	case 1, Warehouse_Green_EventScript_BigGreen_4
 	case 2, Warehouse_Green_EventScript_BigGreen_5
+	case 3, Warehouse_Green_EventScript_BigGreen_6
+	case 4, Warehouse_Green_EventScript_BigGreen_7
+	msgbox Warehouse_Green_EventScript_BigGreen_Text_3
 Warehouse_Green_EventScript_BigGreen_1:
+	closemessage
 	applymovement 5, Common_Movement_FaceDown
 	waitmovement 0
 	release
@@ -34,19 +38,26 @@ Warehouse_Green_EventScript_BigGreen_1:
 
 Warehouse_Green_EventScript_BigGreen_3:
 	msgbox Warehouse_Green_EventScript_BigGreen_Text_0
-	closemessage
 	goto Warehouse_Green_EventScript_BigGreen_1
 
 Warehouse_Green_EventScript_BigGreen_4:
-	call Warehouse_Green_EventScript_BigGreen1
+	call Warehouse_Green_EventScript_BigGreenA
 	goto Warehouse_Green_EventScript_BigGreen_1
 
 Warehouse_Green_EventScript_BigGreen_5:
-	call Warehouse_Green_EventScript_BigGreen2
+	call Warehouse_Green_EventScript_BigGreenB
+	goto Warehouse_Green_EventScript_BigGreen_1
+
+Warehouse_Green_EventScript_BigGreen_6:
+	msgbox Warehouse_Green_EventScript_BigGreen_Text_1
+	goto Warehouse_Green_EventScript_BigGreen_1
+
+Warehouse_Green_EventScript_BigGreen_7:
+	mgsbox Warehouse_Green_EventScript_BigGreen_Text_2
 	goto Warehouse_Green_EventScript_BigGreen_1
 
 
-Warehouse_Green_EventScript_BigGreen1::
+Warehouse_Green_EventScript_BigGreenA::
 	setvar VAR_GANG_STATE, 2
 	setflag FLAG_GATOS_VAGRANTS
 	msgbox Warehouse_Green_Text_BigGreenA
@@ -54,14 +65,23 @@ Warehouse_Green_EventScript_BigGreen1::
 	return
 
 
-Warehouse_Green_EventScript_BigGreen2::
+Warehouse_Green_EventScript_BigGreenB::
 	msgbox Warehouse_Green_Text_BigGreenB
 	closemessage
 	return
 
 
 Warehouse_Green_EventScript_BigGreen_Text_0:
-	.string "VAR0$"
+	.string "VAR is 0$"
+
+Warehouse_Green_EventScript_BigGreen_Text_1:
+	.string "VAR is 3$"
+
+Warehouse_Green_EventScript_BigGreen_Text_2:
+	.string "VAR is 4$"
+
+Warehouse_Green_EventScript_BigGreen_Text_3:
+	.string "VAR OUT OF SCOPE$"
 
 Warehouse_Green_Text_BigGreenA::
 	.string "Ahh {PLAYER} so wise to join us here.\n"
