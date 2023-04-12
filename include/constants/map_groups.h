@@ -641,6 +641,9 @@
 #define MAP_SALTY_SPITOON                 (58 | (30 << 8))
 #define MAP_SALTY_SPITOON_2F              (59 | (30 << 8))
 #define MAP_WAREHOUSE_GREEN               (60 | (30 << 8))
+#define MAP_WAREHOUSE_RED                 (61 | (30 << 8))
+#define MAP_WAREHOUSE_BLUE                (62 | (30 << 8))
+#define MAP_WAREHOUSE_YELLOW              (63 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

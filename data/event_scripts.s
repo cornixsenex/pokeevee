@@ -1334,3 +1334,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/SaltySpitoon_2F/scripts.inc"
 
 	.include "data/maps/Warehouse_Green/scripts.inc"
+
+	.include "data/maps/Warehouse_Red/scripts.inc"
+
+	.include "data/maps/Warehouse_Blue/scripts.inc"
+
+	.include "data/maps/Warehouse_Yellow/scripts.inc"

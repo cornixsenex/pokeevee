@@ -797,14 +797,6 @@ text SaltySpitoon_Text_PondaBabuPost {
 	format("You watch yourself. They say this place is rough.")
 }
 
-text SaltySpitoon_Text_BigGreen1 {
-	format("I'm here because I am a troubled man. These dancing girls help me forget trouble, let sorrow waste away as time endures. Outside my troubles grow while I decline. Oh woe is me!")
-}
-
-text SaltySpitoon_Text_BigGreen2 {
-	format("But where are my manners? My name is Melvin. You call me Big Green. I'm sure you're looking to make a fortune and secure status among our city. Come see me at our safe house on Grow Street where we might discuss this at our leisure.")
-}
-
 text SaltySpitoon_Text_ReeseLost {
 	format("Prolly cheated at that too...")
 }
@@ -819,6 +811,14 @@ text SaltySpitoon_Text_NoGame {
 
 text  SaltySpitoon_Text_HiLoKabuto_Fight {
 	format("No one can win three hands successively! This kind stranger {PLAYER} here must be cheating! To arms! To arms! Destroy the cheating man!")
+}
+
+text SaltySpitoon_Text_BigGreen1 {
+	format("I'm here because I am a troubled man. These dancing girls help me forget trouble, let sorrow waste away as time endures. Outside my troubles grow while I decline. Oh woe is me!")
+}
+
+text SaltySpitoon_Text_BigGreen2 {
+	format("But where are my manners? My name is Melvin. You call me Big Green. I'm sure you're looking to make a fortune and secure status among our city. Come see me at our safe house on Grow Street where we might discuss this at our leisure.")
 }
 
 

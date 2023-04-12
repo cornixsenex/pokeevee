@@ -673,7 +673,10 @@
     "Hospital_Elevator",
     "SaltySpitoon",
     "SaltySpitoon_2F",
-    "Warehouse_Green"
+    "Warehouse_Green",
+    "Warehouse_Red",
+    "Warehouse_Blue",
+    "Warehouse_Yellow"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",

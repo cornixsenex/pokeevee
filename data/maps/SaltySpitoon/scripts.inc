@@ -1458,22 +1458,6 @@ SaltySpitoon_Text_PondaBabuPost::
 	.string "You watch yourself. They say this place\n"
 	.string "is rough.$"
 
-SaltySpitoon_Text_BigGreen1::
-	.string "I'm here because I am a troubled man.\n"
-	.string "These dancing girls help me forget\l"
-	.string "trouble, let sorrow waste away as time\l"
-	.string "endures. Outside my troubles grow while\l"
-	.string "I decline. Oh woe is me!$"
-
-SaltySpitoon_Text_BigGreen2::
-	.string "But where are my manners? My name is\n"
-	.string "Melvin. You call me Big Green. I'm sure\l"
-	.string "you're looking to make a fortune and\l"
-	.string "secure status among our city. Come see\l"
-	.string "me at our safe house on Grow Street\l"
-	.string "where we might discuss this at our\l"
-	.string "leisure.$"
-
 SaltySpitoon_Text_ReeseLost::
 	.string "Prolly cheated at that too...$"
 
@@ -1490,3 +1474,19 @@ SaltySpitoon_Text_HiLoKabuto_Fight::
 	.string "{PLAYER} here must be cheating! To\l"
 	.string "arms! To arms! Destroy the cheating\l"
 	.string "man!$"
+
+SaltySpitoon_Text_BigGreen1::
+	.string "I'm here because I am a troubled man.\n"
+	.string "These dancing girls help me forget\l"
+	.string "trouble, let sorrow waste away as time\l"
+	.string "endures. Outside my troubles grow while\l"
+	.string "I decline. Oh woe is me!$"
+
+SaltySpitoon_Text_BigGreen2::
+	.string "But where are my manners? My name is\n"
+	.string "Melvin. You call me Big Green. I'm sure\l"
+	.string "you're looking to make a fortune and\l"
+	.string "secure status among our city. Come see\l"
+	.string "me at our safe house on Grow Street\l"
+	.string "where we might discuss this at our\l"
+	.string "leisure.$"

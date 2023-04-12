@@ -6,15 +6,63 @@ mapscripts Warehouse_Green_MapScripts {
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_GANG_STATE, 0: Warehouse_Green_EventScript_HideBigGreen
-		VAR_GANG_STATE, 1: Warehouse_Green_EventScript_HideBigGreen
+		VAR_GANG_STATE, 1: Warehouse_Green_EventScript_ShowBigGreen
 		]
 }
 
+script Warehouse_Green_EventScript_ShowBigGreen {
+	clearflag (FLAG_WAREHOUSE_GREEN_BIGGREEN)
+	return
+}
 
 script Warehouse_Green_EventScript_HideBigGreen {
 	removeobject (OBJ_EVENT_BIGGREEN)
+	setflag (FLAG_WAREHOUSE_GREEN_BIGGREEN)
+	return
+}
+
+script Warehouse_Green_EventScript_BigGreen {
+	lock
+	faceplayer
+	switch (var(VAR_GANG_STATE)) {
+		case 0:
+			msgbox("VAR0")
+			closemessage
+		case 1:
+			call (Warehouse_Green_EventScript_BigGreen1)
+		case 2:
+			call (Warehouse_Green_EventScript_BigGreen2)
+	}
+	applymovement(OBJ_EVENT_BIGGREEN, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Warehouse_Green_EventScript_BigGreen1 {
+	//Glad you made it see we've got this problem
+	//You seem up to the task if you take out the warehouses we'll make you member
+	//Come back after you take out all the warehouses
+	//set var clear vagrants
+	setvar (VAR_GANG_STATE, 2)
+	setflag(FLAG_GATOS_VAGRANTS)
+	msgbox(Warehouse_Green_Text_BigGreenA)
+	closemessage
+	return
+}
+
+script Warehouse_Green_EventScript_BigGreen2 {
+	msgbox(Warehouse_Green_Text_BigGreenB)
+	closemessage
 	return
 }
 
 
 
+text Warehouse_Green_Text_BigGreenA {
+	format("Ahh {PLAYER} so wise to join us here. Welcome, please make yourself at home. I understand you're here to help us. You've come just in time. The neighborhood is not as it once was, ever since The Great War, the reds and blues have sold drugs on our streets and stole our turf. We must strike back or soon we'll be destroyed! I need you to stop their operations. Go to their warehouses. Don't hesitate! Do not show mercy. Do what must be done! Only then can you join our merry gang.")
+}
+
+text Warehouse_Green_Text_BigGreenB {
+	format("You've agreed to perform a great favor and win renoun amoung our merry band. You must destroy the three colored warehouses: the Red the Blue and the Yellow one too. When you return I'll let you in our gang.")
+}
