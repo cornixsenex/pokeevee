@@ -155,7 +155,7 @@ Route1_EventScript_Rival3::
 	destroy_field_pic 3
 	closemessage
 	setvar VAR_MUGSHOT_ID, MUGSHOT_BLUE
-	trainerbattle_no_intro TRAINER_BLUE, Route1_Text_RivalLost
+	trainerbattle_no_intro TRAINER_RIVAL1, Route1_Text_RivalLost
 	load_field_pic 3, 190, 98
 	msgbox Route1_Text_Rival5
 	destroy_field_pic 3
@@ -184,7 +184,7 @@ Route1_EventScript_Rival3B::
 	destroy_field_pic 3
 	closemessage
 	setvar VAR_MUGSHOT_ID, MUGSHOT_BLUE
-	trainerbattle_no_intro TRAINER_BLUE, Route1_Text_RivalLost
+	trainerbattle_no_intro TRAINER_RIVAL1, Route1_Text_RivalLost
 	load_field_pic 3, 190, 98
 	msgbox Route1_Text_Rival5
 	destroy_field_pic 3

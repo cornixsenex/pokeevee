@@ -10,7 +10,7 @@ Warehouse_Yellow_EventScript_TrainerYellow5::
 
 
 Warehouse_Yellow_EventScript_TrainerYellow4::
-	trainerbattle_single TRAINER_YELLOW4, Warehouse_Yellow_Text_Yellow2Intro, Warehouse_Yellow_Text_Yellow2Lost
+	trainerbattle_single TRAINER_YELLOW4, Warehouse_Yellow_Text_Yellow4Intro, Warehouse_Yellow_Text_Yellow4Lost
 	msgbox Warehouse_Yellow_Text_Yellow4Post
 	closemessage
 	end

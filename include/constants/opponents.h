@@ -129,12 +129,12 @@
 #define TRAINER_YELLOW3                     124
 #define TRAINER_YELLOW2                     125
 #define TRAINER_YELLOW1                     126
+#define TRAINER_BLUE1                       127
+#define TRAINER_BLUE2                       128
+#define TRAINER_BLUE3                       129
+#define TRAINER_BLUE4                       130
+#define TRAINER_BLUE5                       131
 //BREAK
-#define TRAINER_JESSICA_1                   127
-#define TRAINER_CONNIE                      128
-#define TRAINER_BRIDGET                     129
-#define TRAINER_OLIVIA                      130
-#define TRAINER_TIFFANY                     131
 #define TRAINER_JESSICA_2                   132
 #define TRAINER_JESSICA_3                   133
 #define TRAINER_JESSICA_4                   134
@@ -185,7 +185,7 @@
 #define TRAINER_TAKAO                       179
 #define TRAINER_HITOSHI                     180
 //BREAK
-#define TRAINER_BLUE						181
+#define TRAINER_RIVAL1						181
 //BREAK
 #define TRAINER_KOICHI                      182
 #define TRAINER_NOB_1                       183

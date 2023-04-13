@@ -1,1 +1,97 @@
 mapscripts Warehouse_Blue_MapScripts {}
+
+
+
+script Warehouse_Blue_EventScript_TrainerBlue5 {	
+	trainerbattle_single(TRAINER_BLUE5, Warehouse_Blue_Text_Blue5Intro, Warehouse_Blue_Text_Blue5Lost)
+	msgbox(Warehouse_Blue_Text_Blue5Post)
+	closemessage
+	end
+}
+script Warehouse_Blue_EventScript_TrainerBlue4 {	
+	trainerbattle_single(TRAINER_BLUE4, Warehouse_Blue_Text_Blue4Intro, Warehouse_Blue_Text_Blue4Lost)
+	msgbox(Warehouse_Blue_Text_Blue4Post)
+	closemessage
+	end
+}
+
+script Warehouse_Blue_EventScript_TrainerBlue3 {	
+	trainerbattle_single(TRAINER_BLUE3, Warehouse_Blue_Text_Blue3Intro, Warehouse_Blue_Text_Blue3Lost)
+	msgbox(Warehouse_Blue_Text_Blue3Post)
+	closemessage
+	end
+}
+
+script Warehouse_Blue_EventScript_TrainerBlue2 {	
+	trainerbattle_single(TRAINER_BLUE2, Warehouse_Blue_Text_Blue2Intro, Warehouse_Blue_Text_Blue2Lost)
+	msgbox(Warehouse_Blue_Text_Blue2Post)
+	closemessage
+	end
+}
+
+script Warehouse_Blue_EventScript_TrainerBlue1 {	
+	trainerbattle_single(TRAINER_BLUE1, Warehouse_Blue_Text_Blue1Intro, Warehouse_Blue_Text_Blue1Lost)
+	msgbox(Warehouse_Blue_Text_Blue1Post)
+	closemessage
+	end
+}
+
+text Warehouse_Blue_Text_Blue5Intro {
+	format("What you want skinny? Where's your girl?")
+}
+
+text Warehouse_Blue_Text_Blue5Lost {
+	format("You fucking crazy skinny guy!")
+}
+
+text Warehouse_Blue_Text_Blue5Post {
+	format("Why do you always look so sad?")
+}
+
+text Warehouse_Blue_Text_Blue4Intro {
+	format("I fucked your mom's unshaved pussy!")
+}
+
+text Warehouse_Blue_Text_Blue4Lost {
+	format("Fucking A!")
+}
+
+text Warehouse_Blue_Text_Blue4Post {
+	format("You smoke weed green boy?")
+}
+
+text Warehouse_Blue_Text_Blue3Intro {
+	format("What's up man are you from round here?")
+}
+
+text Warehouse_Blue_Text_Blue3Lost {
+	format("I don't think that's OK. No way!")
+}
+
+text Warehouse_Blue_Text_Blue3Post {
+	format("Quit fucking around. Back to work!")
+}
+
+text Warehouse_Blue_Text_Blue2Intro {
+	format("What's happenin man? You work fast?")
+}
+
+text Warehouse_Blue_Text_Blue2Lost {
+	format("Alright holmes.")
+}
+
+text Warehouse_Blue_Text_Blue2Post {
+	format("I need to get my wisdom tooth pulled out. It hurts bad!")
+}
+
+text Warehouse_Blue_Text_Blue1Intro {
+	format("You came from sidewalks. We're from streets.")
+}
+
+text Warehouse_Blue_Text_Blue1Lost {
+	format("Alright, by bad.")
+}
+
+text Warehouse_Blue_Text_Blue1Post {
+	format("You are too strong.")
+}

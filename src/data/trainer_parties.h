@@ -1719,12 +1719,7 @@ static const struct TrainerMon sParty_Yellow1[] = {
     }
 };
 
-
-
-//BREAK
-
-
-static const struct TrainerMon sParty_Jessica1[] = {
+static const struct TrainerMon sParty_Blue1[] = {
     {
     .iv = 0,
     .lvl = 29,
@@ -1739,7 +1734,7 @@ static const struct TrainerMon sParty_Jessica1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Connie[] = {
+static const struct TrainerMon sParty_Blue2[] = {
     {
     .iv = 100,
     .lvl = 40,
@@ -1747,7 +1742,7 @@ static const struct TrainerMon sParty_Connie[] = {
     }
 };
 
-static const struct TrainerMon sParty_Bridget[] = {
+static const struct TrainerMon sParty_Blue3[] = {
     {
     .iv = 150,
     .lvl = 40,
@@ -1755,7 +1750,7 @@ static const struct TrainerMon sParty_Bridget[] = {
     }
 };
 
-static const struct TrainerMon sParty_Olivia[] = {
+static const struct TrainerMon sParty_Blue4[] = {
     {
     .iv = 100,
     .lvl = 35,
@@ -1776,7 +1771,7 @@ static const struct TrainerMon sParty_Olivia[] = {
     }
 };
 
-static const struct TrainerMon sParty_Tiffany[] = {
+static const struct TrainerMon sParty_Blue5[] = {
     {
     .iv = 100,
     .lvl = 39,
@@ -1788,6 +1783,11 @@ static const struct TrainerMon sParty_Tiffany[] = {
     .species = SPECIES_SHARPEDO,
     }
 };
+
+
+
+
+//BREAK
 
 static const struct TrainerMon sParty_Jessica2[] = {
     {

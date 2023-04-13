@@ -57,27 +57,7 @@ FortreeCity_Gym_SetGymTrainers::
 	return
 
 MossdeepCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_PRESTON
-	settrainerflag TRAINER_VIRGIL
-	settrainerflag TRAINER_BLAKE
-	settrainerflag TRAINER_HANNAH
-	settrainerflag TRAINER_SAMANTHA
-	settrainerflag TRAINER_MAURA
-	settrainerflag TRAINER_SYLVIA
-	settrainerflag TRAINER_NATE
-	settrainerflag TRAINER_KATHLEEN
-	settrainerflag TRAINER_CLIFFORD
-	settrainerflag TRAINER_MACEY
-	settrainerflag TRAINER_NICHOLAS
 	return
 
 SootopolisCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_ANDREA
-	settrainerflag TRAINER_CRISSY
-	settrainerflag TRAINER_CONNIE
-	settrainerflag TRAINER_BRIDGET
-	settrainerflag TRAINER_OLIVIA
-	settrainerflag TRAINER_TIFFANY
-	settrainerflag TRAINER_BETHANY
-	settrainerflag TRAINER_ANNIKA
 	return
