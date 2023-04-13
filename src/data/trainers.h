@@ -1613,8 +1613,8 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Cindy3),
-        .party = {.TrainerMon = sParty_Cindy3},
+        .partySize = ARRAY_COUNT(sParty_Reese),
+        .party = {.TrainerMon = sParty_Reese},
     },
 
     [TRAINER_JOHN] =
@@ -1626,77 +1626,84 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Cindy4),
-        .party = {.TrainerMon = sParty_Cindy4},
+        .partySize = ARRAY_COUNT(sParty_John),
+        .party = {.TrainerMon = sParty_John},
     },
 
-
-///	====BREAK====
-
-    [TRAINER_CINDY_5] =
+    [TRAINER_YELLOW5] =
     {
-        .trainerClass = TRAINER_CLASS_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("CINDY"),
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_YOUNGSTER2,
+        .trainerName = _("ANDY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Yellow5),
+        .party = {.TrainerMon = sParty_Yellow5},
+	},
+
+	[TRAINER_YELLOW4] =
+    {
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_YOUNGSTER2,
+        .trainerName = _("CAESAR"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Cindy5),
-        .party = {.TrainerMon = sParty_Cindy5},
+        .partySize = ARRAY_COUNT(sParty_Yellow4),
+        .party = {.TrainerMon = sParty_Yellow4},
     },
 
-    [TRAINER_CINDY_6] =
+    [TRAINER_YELLOW3] =
     {
-        .trainerClass = TRAINER_CLASS_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("CINDY"),
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Cindy6),
-        .party = {.TrainerMon = sParty_Cindy6},
-    },
-
-    [TRAINER_MELISSA] =
-    {
-        .trainerClass = TRAINER_CLASS_BEAUTY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BEAUTY,
-        .trainerName = _("MELISSA"),
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_YOUNGSTER2,
+        .trainerName = _("CARLOS"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Melissa),
-        .party = {.TrainerMon = sParty_Melissa},
+        .partySize = ARRAY_COUNT(sParty_Yellow3),
+        .party = {.TrainerMon = sParty_Yellow3},
     },
 
-    [TRAINER_SHEILA] =
+    [TRAINER_YELLOW2] =
     {
-        .trainerClass = TRAINER_CLASS_BEAUTY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BEAUTY,
-        .trainerName = _("SHEILA"),
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_YOUNGSTER2,
+        .trainerName = _("OSCAR"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Sheila),
-        .party = {.TrainerMon = sParty_Sheila},
+        .partySize = ARRAY_COUNT(sParty_Yellow2),
+        .party = {.TrainerMon = sParty_Yellow2},
     },
 
-    [TRAINER_SHIRLEY] =
+    [TRAINER_YELLOW1] =
     {
-        .trainerClass = TRAINER_CLASS_BEAUTY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BEAUTY,
-        .trainerName = _("SHIRLEY"),
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_YOUNGSTER2,
+        .trainerName = _("PEDRO"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Shirley),
-        .party = {.TrainerMon = sParty_Shirley},
+        .partySize = ARRAY_COUNT(sParty_Yellow1),
+        .party = {.TrainerMon = sParty_Yellow1},
     },
+
+
+
+
+
+///	====BREAK====    
+///
+
+
+
 
     [TRAINER_JESSICA_1] =
     {
@@ -7832,7 +7839,7 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_GruntWeatherInst5),
         .party = {.TrainerMon = sParty_GruntWeatherInst5},
-    },
+	},
 
     [TRAINER_TABITHA_MT_CHIMNEY] =
     {

@@ -124,12 +124,12 @@
 #define TRAINER_PONDA_BABU                  119
 #define TRAINER_REESE                       120
 #define TRAINER_JOHN                        121
+#define TRAINER_YELLOW5                     122
+#define TRAINER_YELLOW4                     123
+#define TRAINER_YELLOW3                     124
+#define TRAINER_YELLOW2                     125
+#define TRAINER_YELLOW1                     126
 //BREAK
-#define TRAINER_CINDY_5                     122
-#define TRAINER_CINDY_6                     123
-#define TRAINER_MELISSA                     124
-#define TRAINER_SHEILA                      125
-#define TRAINER_SHIRLEY                     126
 #define TRAINER_JESSICA_1                   127
 #define TRAINER_CONNIE                      128
 #define TRAINER_BRIDGET                     129

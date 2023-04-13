@@ -1643,8 +1643,30 @@ static const struct TrainerMon sParty_MeiAndLisa[] = {
     }
 };
 
+static const struct TrainerMon sParty_Reese[] = {
+	{
+		.iv = 230,
+		.lvl = 14,
+		.species = SPECIES_HITMONLEE,
+	}
+};
 
-//BREAK
+static const struct TrainerMon sParty_John[] = {
+	{
+		.iv = 230,
+		.lvl = 14,
+		.species = SPECIES_LOTAD,
+	}
+};
+
+static const struct TrainerMon sParty_Yellow5[] = {
+	{
+		.iv = 230,
+		.lvl = 14,
+		.species = SPECIES_MUK,
+	}
+};
+
 static const struct TrainerMon sParty_Brianna[] = {
     {
     .iv = 150,
@@ -1663,34 +1685,7 @@ static const struct TrainerMon sParty_Naomi[] = {
     }
 };
 
-static const struct TrainerMon sParty_Cindy3[] = {
-    {
-    .iv = 10,
-    .lvl = 27,
-    .species = SPECIES_LINOONE,
-    .heldItem = ITEM_NUGGET
-    }
-};
-
-static const struct TrainerMon sParty_Cindy4[] = {
-    {
-    .iv = 20,
-    .lvl = 30,
-    .species = SPECIES_LINOONE,
-    .heldItem = ITEM_NUGGET
-    }
-};
-
-static const struct TrainerMon sParty_Cindy5[] = {
-    {
-    .iv = 30,
-    .lvl = 33,
-    .species = SPECIES_LINOONE,
-    .heldItem = ITEM_NUGGET
-    }
-};
-
-static const struct TrainerMon sParty_Cindy6[] = {
+static const struct TrainerMon sParty_Yellow4[] = {
     {
     .iv = 40,
     .lvl = 36,
@@ -1700,7 +1695,7 @@ static const struct TrainerMon sParty_Cindy6[] = {
     }
 };
 
-static const struct TrainerMon sParty_Melissa[] = {
+static const struct TrainerMon sParty_Yellow3[] = {
     {
     .iv = 0,
     .lvl = 21,
@@ -1708,7 +1703,7 @@ static const struct TrainerMon sParty_Melissa[] = {
     }
 };
 
-static const struct TrainerMon sParty_Sheila[] = {
+static const struct TrainerMon sParty_Yellow2[] = {
     {
     .iv = 0,
     .lvl = 21,
@@ -1716,13 +1711,18 @@ static const struct TrainerMon sParty_Sheila[] = {
     }
 };
 
-static const struct TrainerMon sParty_Shirley[] = {
+static const struct TrainerMon sParty_Yellow1[] = {
     {
     .iv = 0,
     .lvl = 21,
     .species = SPECIES_NUMEL,
     }
 };
+
+
+
+//BREAK
+
 
 static const struct TrainerMon sParty_Jessica1[] = {
     {
