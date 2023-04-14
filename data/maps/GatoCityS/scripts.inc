@@ -610,6 +610,22 @@ GatoCityS_EventScript_OpenSaltySpitoon_5:
 	goto GatoCityS_EventScript_OpenSaltySpitoon_4
 
 
+GatoCityS_EventScript_SaltySpitoon_Vagrant1::
+	lock
+	msgbox GatoCityS_Text_Vagrant1
+	closemessage
+	release
+	end
+
+
+GatoCityS_EventScript_SaltySpitoon_Vagrant2::
+	lock
+	msgbox GatoCityS_Text_Vagrant2
+	closemessage
+	release
+	end
+
+
 GatoCityS_Movement_Pacer:
 	walk_left
 	walk_left
@@ -702,3 +718,10 @@ GatoCityS_Text_SaltySpitoon_DM_Pass::
 GatoCityS_Text_SaltySpitoon_DM_SWHJ::
 	.string "Actually, I was pointing to the place\n"
 	.string "down the street$"
+
+GatoCityS_Text_Vagrant1::
+	.string "Motherfucker! Man you're a\n"
+	.string "motherfucker...$"
+
+GatoCityS_Text_Vagrant2::
+	.string "I'd slap his bitch face and shit...$"

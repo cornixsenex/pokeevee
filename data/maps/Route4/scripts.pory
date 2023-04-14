@@ -1,5 +1,41 @@
 mapscripts Route4_MapScripts {}
 
+//School to understand Latin
+//Nestor prompts you to gather the heroes
+//Convince the heroes to gather
+//Nestor summons Heracles
+//
+
+//Catalogue of Heroes
+//Achilleus
+//Hektor
+//Ulysses
+//Aeneis
+//Ajax
+//Diomedes
+//Menelaus
+//Alexandros
+//Agamamnon
+//Theseus
+//Perseus -> philoctetes? / Orpheus
+//Jason
+
+//12 trials
+//defeat nemean lion
+//defeat hydra
+//capture hind (stantler)
+//capture boar
+//clean stables
+//defeat stygian birds
+//capture bull
+//capture mare
+//defeat hippolyta
+//catpure cattle
+//steal 3 golden apples
+//capture ceberus
+
+
+
 
 script Route4_EventScript_Delia {
 	trainerbattle_double (TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost, Route124_Text_LilaNotEnoughMons)

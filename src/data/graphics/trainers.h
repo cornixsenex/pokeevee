@@ -446,6 +446,11 @@ const u32 gTrainerPalette_Nurse_Joy[] = INCBIN_U32("graphics/trainers/palettes/n
 const u32 gTrainerFrontPic_Green[] = INCBIN_U32("graphics/trainers/front_pics/green_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Green[] = INCBIN_U32("graphics/trainers/palettes/green.gbapal.lz");
 
+const u32 gTrainerFrontPic_BigBlue[] = INCBIN_U32("graphics/trainers/front_pics/big_blue_front_pic.4bpp.lz");
+const u32 gTrainerPalette_BigBlue[] = INCBIN_U32("graphics/trainers/palettes/big_blue.gbapal.lz");
+
+const u32 gTrainerFrontPic_BigYellow[] = INCBIN_U32("graphics/trainers/front_pics/big_yellow_front_pic.4bpp.lz");
+const u32 gTrainerPalette_BigYellow[] = INCBIN_U32("graphics/trainers/palettes/big_yellow.gbapal.lz");
 
 
 

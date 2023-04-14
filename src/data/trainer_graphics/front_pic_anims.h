@@ -582,6 +582,18 @@ static const union AnimCmd *const sAnims_Green[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_BigBlue[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_BigYellow[] ={
+    sAnim_GeneralFrame0,
+};
+
+
+
+
+
 
 
 
@@ -735,5 +747,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_NURSE_JOY] = sAnims_Nurse_Joy,
     [TRAINER_PIC_CUE_BALL_NO_BIKE] = sAnims_CueBallNoBike,
     [TRAINER_PIC_GREEN] = sAnims_Green,
+    [TRAINER_PIC_BIG_BLUE] = sAnims_BigBlue,
+    [TRAINER_PIC_BIG_YELLOW] = sAnims_BigYellow,
 };
 

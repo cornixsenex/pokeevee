@@ -27,13 +27,24 @@ const OBJ_EVENT_EVAZAN = 17
 const FLAGBRAWL = FLAG_TEMP_C
 
 const OBJ_EVENT_BIG_GREEN = 12
-
+const OBJ_EVENT_DOORMAN = 20
 
 mapscripts SaltySpitoon_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_GANG_STATE) > 3) {
+			call (SaltySpitoon_EventScript_MoveDoorMan)
+		}
+	}
+
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_SALTYSPITOON_STATE, 4: SaltySpitoon_EventScript_SetSSVar
-	]
+		]
+}
+
+script SaltySpitoon_EventScript_MoveDoorMan {
+	setobjectxyperm (OBJ_EVENT_DOORMAN, 20, 3)
+	return
 }
 
 script SaltySpitoon_EventScript_SetSSVar {

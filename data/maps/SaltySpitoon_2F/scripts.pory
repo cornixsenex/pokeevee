@@ -1,1 +1,29 @@
-mapscripts SaltySpitoon_2F_MapScripts {}
+mapscripts SaltySpitoon_2F_MapScripts {
+	}
+
+script SaltySpitoon_2F_EventScript_LockDoor {
+	setvar (VAR_GANG_STATE, 6)
+	setmetatile (17, 1, METATILE_BrendansMaysHouse_StairsDown, 1)
+	msgbox(SaltySpitoon_2F_Text_LockDoor)
+	closemessage
+	playse (SE_PIN)
+	waitse
+	end
+}
+
+script SaltySpitoon_2F_EventScript_DoorSign {
+	lock
+	msgbox(SaltySpitoon_2F_Text_DoorSign)
+	closemessage
+	release
+	end
+}
+
+text SaltySpitoon_2F_Text_LockDoor {
+	format("The door locks behind you.")
+}
+
+text SaltySpitoon_2F_Text_DoorSign {
+	format("The door is locked.")
+}
+

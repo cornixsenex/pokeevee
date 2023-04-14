@@ -550,6 +550,22 @@ script GatoCityS_EventScript_OpenSaltySpitoon {
 	return
 }
 
+script GatoCityS_EventScript_SaltySpitoon_Vagrant1 {
+	lock
+	msgbox (GatoCityS_Text_Vagrant1)
+	closemessage
+	release
+	end
+}
+
+script GatoCityS_EventScript_SaltySpitoon_Vagrant2 {
+	lock
+	msgbox (GatoCityS_Text_Vagrant2)
+	closemessage
+	release
+	end
+}
+
 movement GatoCityS_Movement_Pacer {
 	walk_left * 3
 	walk_right *3
@@ -614,3 +630,12 @@ text GatoCityS_Text_SaltySpitoon_DM_Pass {
 text GatoCityS_Text_SaltySpitoon_DM_SWHJ {
 	format("Actually, I was pointing to the place down the street")
 }
+
+text GatoCityS_Text_Vagrant1 {
+	format("Motherfucker! Man you're a motherfucker...")
+}
+
+text GatoCityS_Text_Vagrant2 {
+	format("I'd slap his bitch face and shit...")
+}
+

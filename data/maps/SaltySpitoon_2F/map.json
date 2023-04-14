@@ -26,9 +26,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_GANG_STATE",
+      "var_value": "4",
+      "script": "SaltySpitoon_2F_EventScript_LockDoor"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "SaltySpitoon_2F_EventScript_DoorSign"
+    }
   ]
 }

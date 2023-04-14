@@ -163,6 +163,10 @@
 #define TRAINER_PIC_NURSE_JOY             143
 #define TRAINER_PIC_CUE_BALL_NO_BIKE	  144
 #define TRAINER_PIC_GREEN            	  145
+#define TRAINER_PIC_BIG_BLUE              146
+#define TRAINER_PIC_BIG_YELLOW            147
+
+
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
