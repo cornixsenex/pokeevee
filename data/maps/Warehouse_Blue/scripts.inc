@@ -38,49 +38,59 @@ Warehouse_Blue_EventScript_TrainerBlue1::
 
 
 Warehouse_Blue_Text_Blue5Intro::
-	.string "What you want skinny? Where's your\n"
-	.string "girl?$"
+	.string "You're in the trenches! This the pit\n"
+	.string "spot bro you already know.$"
 
 Warehouse_Blue_Text_Blue5Lost::
-	.string "You fucking crazy skinny guy!$"
+	.string "But, like, we didn't come yesterday to\n"
+	.string "lose.$"
 
 Warehouse_Blue_Text_Blue5Post::
-	.string "Why do you always look so sad?$"
+	.string "When you step out here we show love. We\n"
+	.string "show mad love to everybody you\l"
+	.string "understand?$"
 
 Warehouse_Blue_Text_Blue4Intro::
-	.string "I fucked your mom's unshaved pussy!$"
+	.string "I'm blessed! This my third fight in three\n"
+	.string "years.$"
 
 Warehouse_Blue_Text_Blue4Lost::
-	.string "Fucking A!$"
+	.string "That's what happened. I'm keep my faith\n"
+	.string "in God.$"
 
 Warehouse_Blue_Text_Blue4Post::
-	.string "You smoke weed green boy?$"
+	.string "Everyone else going crazy I'm more chill\n"
+	.string "about those things man.$"
 
 Warehouse_Blue_Text_Blue3Intro::
-	.string "What's up man are you from round here?$"
+	.string "I'm very happy the public enjoys what I\n"
+	.string "do.$"
 
 Warehouse_Blue_Text_Blue3Lost::
-	.string "I don't think that's OK. No way!$"
+	.string "I will continue to put a lot of pride in\n"
+	.string "my work.$"
 
 Warehouse_Blue_Text_Blue3Post::
-	.string "Quit fucking around. Back to work!$"
+	.string "Every time I take an L I never take it\n"
+	.string "lightly.$"
 
 Warehouse_Blue_Text_Blue2Intro::
-	.string "What's happenin man? You work fast?$"
+	.string "Time to prove it again. Every time you\n"
+	.string "step in the ring you gotta prove it.$"
 
 Warehouse_Blue_Text_Blue2Lost::
-	.string "Alright holmes.$"
+	.string "They should do a lightweight\n"
+	.string "tournement.$"
 
 Warehouse_Blue_Text_Blue2Post::
-	.string "I need to get my wisdom tooth pulled\n"
-	.string "out. It hurts bad!$"
+	.string "Ahh you destroyed everybody!$"
 
 Warehouse_Blue_Text_Blue1Intro::
-	.string "You came from sidewalks. We're from\n"
-	.string "streets.$"
+	.string "We world champions! This our street!$"
 
 Warehouse_Blue_Text_Blue1Lost::
-	.string "Alright, by bad.$"
+	.string "We gonna do it again for the Blue tho.$"
 
 Warehouse_Blue_Text_Blue1Post::
-	.string "You are too strong.$"
+	.string "Dang we was flat. Just kind of let you\n"
+	.string "go where you wanted to go. Damn.$"

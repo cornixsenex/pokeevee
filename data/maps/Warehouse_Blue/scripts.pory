@@ -37,61 +37,66 @@ script Warehouse_Blue_EventScript_TrainerBlue1 {
 }
 
 text Warehouse_Blue_Text_Blue5Intro {
-	format("What you want skinny? Where's your girl?")
+	format("You're in the trenches! This the pit spot bro you already know.")
 }
 
 text Warehouse_Blue_Text_Blue5Lost {
-	format("You fucking crazy skinny guy!")
+	format("But, like, we didn't come yesterday to lose.")
 }
 
 text Warehouse_Blue_Text_Blue5Post {
-	format("Why do you always look so sad?")
+	format("When you step out here we show love. We show mad love to everybody you understand?")
 }
 
 text Warehouse_Blue_Text_Blue4Intro {
-	format("I fucked your mom's unshaved pussy!")
+	format("I'm blessed! This my third fight in three years.")
 }
 
 text Warehouse_Blue_Text_Blue4Lost {
-	format("Fucking A!")
+	format("That's what happened. I'm keep my faith in God.")
 }
 
 text Warehouse_Blue_Text_Blue4Post {
-	format("You smoke weed green boy?")
+	format("Everyone else going crazy I'm more chill about those things man.")
 }
 
 text Warehouse_Blue_Text_Blue3Intro {
-	format("What's up man are you from round here?")
+	format("I'm very happy the public enjoys what I do.")
 }
 
 text Warehouse_Blue_Text_Blue3Lost {
-	format("I don't think that's OK. No way!")
+	format("I will continue to put a lot of pride in my work.")
 }
 
 text Warehouse_Blue_Text_Blue3Post {
-	format("Quit fucking around. Back to work!")
+	format("Every time I take an L I never take it lightly.")
 }
 
 text Warehouse_Blue_Text_Blue2Intro {
-	format("What's happenin man? You work fast?")
+	format("Time to prove it again. Every time you step in the ring you gotta prove it.")
 }
 
 text Warehouse_Blue_Text_Blue2Lost {
-	format("Alright holmes.")
+	format("They should do a lightweight tournement.")
 }
 
 text Warehouse_Blue_Text_Blue2Post {
-	format("I need to get my wisdom tooth pulled out. It hurts bad!")
+	format("Ahh you destroyed everybody!")
 }
 
 text Warehouse_Blue_Text_Blue1Intro {
-	format("You came from sidewalks. We're from streets.")
+	format("We world champions! This our street!")
 }
 
 text Warehouse_Blue_Text_Blue1Lost {
-	format("Alright, by bad.")
+	format("We gonna do it again for the Blue tho.")
 }
 
 text Warehouse_Blue_Text_Blue1Post {
-	format("You are too strong.")
+	format("Dang we was flat. Just kind of let you go where you wanted to go. Damn.")
 }
+
+
+
+
+

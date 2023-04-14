@@ -24,7 +24,7 @@ Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
 
 Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
 	checktrainerflag TRAINER_YELLOW5
-	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
 	return
 
 Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
@@ -33,6 +33,56 @@ Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 	return
 
 Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
+	checktrainerflag TRAINER_BLUE2
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_15
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
+	checktrainerflag TRAINER_BLUE1
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_14:
+	checktrainerflag TRAINER_BLUE4
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_19
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_15:
+	checktrainerflag TRAINER_BLUE3
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_14
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_18:
+	checktrainerflag TRAINER_RED1
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_23
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_19:
+	checktrainerflag TRAINER_BLUE5
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_18
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_22:
+	checktrainerflag TRAINER_RED3
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_27
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_23:
+	checktrainerflag TRAINER_RED2
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_22
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_26:
+	checktrainerflag TRAINER_RED5
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_30
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_27:
+	checktrainerflag TRAINER_RED4
+	goto_if 1, Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_26
+	return
+
+Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_30:
 	compare VAR_GANG_STATE, 2
 	goto_if_eq Warehouse_Green_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return

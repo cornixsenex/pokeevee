@@ -134,12 +134,12 @@
 #define TRAINER_BLUE3                       129
 #define TRAINER_BLUE4                       130
 #define TRAINER_BLUE5                       131
+#define TRAINER_RED1                        132
+#define TRAINER_RED2                        133
+#define TRAINER_RED3                        134
+#define TRAINER_RED4                        135
+#define TRAINER_RED5                        136
 //BREAK
-#define TRAINER_JESSICA_2                   132
-#define TRAINER_JESSICA_3                   133
-#define TRAINER_JESSICA_4                   134
-#define TRAINER_JESSICA_5                   135
-#define TRAINER_WINSTON_1                   136
 #define TRAINER_MOLLIE                      137
 #define TRAINER_GARRET                      138
 #define TRAINER_WINSTON_2                   139

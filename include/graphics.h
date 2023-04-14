@@ -7235,6 +7235,7 @@ extern const u32 gTrainerFrontPic_Janitor[];
 extern const u32 gTrainerFrontPic_Nurse_Joy[];
 extern const u32 gTrainerFrontPic_CueBallNoBike[];
 extern const u32 gTrainerFrontPic_Green[];
+extern const u32 gTrainerFrontPic_YoungsterRed[];
 
 extern const u32 gTrainerPalette_Hiker[];
 extern const u32 gTrainerPalette_AquaGruntM[];

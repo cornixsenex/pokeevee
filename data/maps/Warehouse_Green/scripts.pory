@@ -10,6 +10,16 @@ mapscripts Warehouse_Green_MapScripts {
 			&& defeated(TRAINER_YELLOW3)
 			&& defeated(TRAINER_YELLOW4)
 			&& defeated(TRAINER_YELLOW5)
+			&& defeated(TRAINER_BLUE1)
+			&& defeated(TRAINER_BLUE2) 
+			&& defeated(TRAINER_BLUE3)
+			&& defeated(TRAINER_BLUE4)
+			&& defeated(TRAINER_BLUE5)
+			&& defeated(TRAINER_RED1)
+			&& defeated(TRAINER_RED2) 
+			&& defeated(TRAINER_RED3)
+			&& defeated(TRAINER_RED4)
+			&& defeated(TRAINER_RED5)
 			&& var(VAR_GANG_STATE) == 2) {
 			setvar(VAR_GANG_STATE, 3)
 		}

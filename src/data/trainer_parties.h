@@ -1784,12 +1784,7 @@ static const struct TrainerMon sParty_Blue5[] = {
     }
 };
 
-
-
-
-//BREAK
-
-static const struct TrainerMon sParty_Jessica2[] = {
+static const struct TrainerMon sParty_Red1[] = {
     {
     .iv = 10,
     .lvl = 35,
@@ -1804,7 +1799,7 @@ static const struct TrainerMon sParty_Jessica2[] = {
     }
 };
 
-static const struct TrainerMon sParty_Jessica3[] = {
+static const struct TrainerMon sParty_Red2[] = {
     {
     .iv = 20,
     .lvl = 38,
@@ -1819,7 +1814,7 @@ static const struct TrainerMon sParty_Jessica3[] = {
     }
 };
 
-static const struct TrainerMon sParty_Jessica4[] = {
+static const struct TrainerMon sParty_Red3[] = {
     {
     .iv = 30,
     .lvl = 41,
@@ -1834,7 +1829,7 @@ static const struct TrainerMon sParty_Jessica4[] = {
     }
 };
 
-static const struct TrainerMon sParty_Jessica5[] = {
+static const struct TrainerMon sParty_Red4[] = {
     {
     .iv = 40,
     .lvl = 44,
@@ -1849,7 +1844,7 @@ static const struct TrainerMon sParty_Jessica5[] = {
     }
 };
 
-static const struct TrainerMon sParty_Winston1[] = {
+static const struct TrainerMon sParty_Red5[] = {
     {
     .iv = 0,
     .lvl = 7,
@@ -1857,6 +1852,12 @@ static const struct TrainerMon sParty_Winston1[] = {
     .heldItem = ITEM_NUGGET
     }
 };
+
+
+
+
+
+//BREAK
 
 static const struct TrainerMon sParty_Mollie[] = {
     {
