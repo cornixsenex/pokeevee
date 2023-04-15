@@ -1,4 +1,11 @@
+
+const OBJ_EVENT_BLUE1   = 1
+const OBJ_EVENT_BLUE2   = 2
+const OBJ_EVENT_BIGBLUE = 3
+
+
 mapscripts SaltySpitoon_2F_MapScripts {
+
 	}
 
 script SaltySpitoon_2F_EventScript_LockDoor {
@@ -24,16 +31,25 @@ script SaltySpitoon_2F_EventScript_RoomTriggerA {
 	if (var(VAR_GANG_STATE) == 5) {
 		end
 	}
-	//increment VAR_A
 	lock
-	setvar (VAR_TEMP_A, 1)
-	//set var so know where to spawn baddies
-	setvar (VAR_TEMP_E, 1)
+	//increment VAR_A
+	setvar (VAR_TEMP_1, 1)
+	//apply player movement
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	call (SaltySpitoon_2F_EventScript_AmbushPositionPlayer)	
 	//spawn baddies
 	switch (var(VAR_GANG_STATE)) {
 		case 6:
 			//Blue
+			setobjectxyperm (OBJ_EVENT_BLUE1, 1, 9)
+			setobjectxyperm (OBJ_EVENT_BIGBLUE, 2, 9)
+			setobjectxyperm (OBJ_EVENT_BLUE2, 3, 9)
+			setobjectmovementtype (OBJ_EVENT_BLUE1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGBLUE, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BLUE2, MOVEMENT_TYPE_FACE_LEFT)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushBlue)
 		case 7:
 			//Yellow
 		case 8:
@@ -44,32 +60,16 @@ script SaltySpitoon_2F_EventScript_RoomTriggerA {
 			msgbox("VAR_GANG_STATE NOT 6-9")
 			closemessage
 	}
-
-	//do baddie fight
-	call (SaltySpitoon_2F_EventScript_Ambush)
+	release
 	end
 }
 
-script SaltySpitoon_2F_EventScript_AmbushPositionPlayer {
-	if (flag(FLAG_FOLLOWER_ACTIVE)) {
-		applymovement (OBJ_EVENT_ID_PLAYER, SalySpitoon_2F_Movement_PlayerAmbush)
-	}
-	applymovement (OBJ_EVENT_ID_FOLLOWER, SalySpitoon_2F_Movement_FollowerAmbush)
-	waitmovement (0)
-	return
-}
-
-script SaltySpitoon_2F_EventScript_Ambush {
-	//always check if follower	//spawn relevant baddy (depends on VAR)
-	switch (var(VAR_TEMP_E)) {
-		case 0:
-			msgbox("VAR_TEMP_E IS 0 == PROBLEMO")
-			closemessage
-			return
-		case 1:
-		///obv not ready
-			return
-			
+script SaltySpitoon_2F_EventScript_AmbushBlue {
+	//They walk in
+	msgbox("SCRIPT HERE")
+	closemessage
+	applymovement (OBJ_EVENT_BLUE1, SaltySpitoon_2F_Movement_Ambush1)
+	waitmovement(0)
 	//baddies approach
 	//speal
 	//duo approach
@@ -81,19 +81,35 @@ script SaltySpitoon_2F_EventScript_Ambush {
 	//approach followers from all colors
 	//congrats, tattoo
 	//exeunt
-	//release
+	return
+}
+
+script SaltySpitoon_2F_EventScript_AmbushPositionPlayer {
+	if (flag(FLAG_FOLLOWER_ACTIVE)) {
+		applymovement (OBJ_EVENT_ID_PLAYER, SaltySpitoon_2F_Movement_PlayerAmbush)
+		applymovement (OBJ_EVENT_ID_FOLLOWER, SaltySpitoon_2F_Movement_FollowerAmbush)
+	} else {
+		applymovement (OBJ_EVENT_ID_PLAYER, SaltySpitoon_2F_Movement_PlayerAmbush)
 	}
-
+	waitmovement (0)
+	return
 }
 
 //placeholder
-movement SalySpitoon_2F_Movement_PlayerAmbush {
-	walk_up
+movement SaltySpitoon_2F_Movement_PlayerAmbush {
+	walk_up * 3
+	walk_right
+	face_down
 }
 
 //placeholder
-movement SalySpitoon_2F_Movement_FollowerAmbush {
-	walk_up
+movement SaltySpitoon_2F_Movement_FollowerAmbush {
+	walk_up * 4
+	face_down
+}
+
+movement SaltySpitoon_2F_Movement_Ambush1 {
+	walk_up * 4
 }
 
 
