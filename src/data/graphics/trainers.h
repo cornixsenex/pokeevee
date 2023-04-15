@@ -452,8 +452,11 @@ const u32 gTrainerPalette_BigBlue[] = INCBIN_U32("graphics/trainers/palettes/big
 const u32 gTrainerFrontPic_BigYellow[] = INCBIN_U32("graphics/trainers/front_pics/big_yellow_front_pic.4bpp.lz");
 const u32 gTrainerPalette_BigYellow[] = INCBIN_U32("graphics/trainers/palettes/big_yellow.gbapal.lz");
 
-const u32 gTrainerFrontPic_BigGreen[] = INCBIN_U32("graphics/trainers/front_pics/big_green_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_BigGreen[] = INCBIN_U32("graphics/trainers/front_pics/big_blue_front_pic.4bpp.lz");
 const u32 gTrainerPalette_BigGreen[] = INCBIN_U32("graphics/trainers/palettes/big_green.gbapal.lz");
+
+const u32 gTrainerFrontPic_BigRed[] = INCBIN_U32("graphics/trainers/front_pics/big_red_front_pic.4bpp.lz");
+const u32 gTrainerPalette_BigRed[] = INCBIN_U32("graphics/trainers/palettes/big_red.gbapal.lz");
 
 
 
