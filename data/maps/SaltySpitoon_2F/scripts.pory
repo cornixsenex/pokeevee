@@ -19,6 +19,85 @@ script SaltySpitoon_2F_EventScript_DoorSign {
 	end
 }
 
+script SaltySpitoon_2F_EventScript_RoomTriggerA {
+	//ignore if BG already cleared
+	if (var(VAR_GANG_STATE) == 5) {
+		end
+	}
+	//increment VAR_A
+	lock
+	setvar (VAR_TEMP_A, 1)
+	//set var so know where to spawn baddies
+	setvar (VAR_TEMP_E, 1)
+	call (SaltySpitoon_2F_EventScript_AmbushPositionPlayer)	
+	//spawn baddies
+	switch (var(VAR_GANG_STATE)) {
+		case 6:
+			//Blue
+		case 7:
+			//Yellow
+		case 8:
+			//Red
+		case 9:
+			//Green
+		default:
+			msgbox("VAR_GANG_STATE NOT 6-9")
+			closemessage
+	}
+
+	//do baddie fight
+	call (SaltySpitoon_2F_EventScript_Ambush)
+	end
+}
+
+script SaltySpitoon_2F_EventScript_AmbushPositionPlayer {
+	if (flag(FLAG_FOLLOWER_ACTIVE)) {
+		applymovement (OBJ_EVENT_ID_PLAYER, SalySpitoon_2F_Movement_PlayerAmbush)
+	}
+	applymovement (OBJ_EVENT_ID_FOLLOWER, SalySpitoon_2F_Movement_FollowerAmbush)
+	waitmovement (0)
+	return
+}
+
+script SaltySpitoon_2F_EventScript_Ambush {
+	//always check if follower	//spawn relevant baddy (depends on VAR)
+	switch (var(VAR_TEMP_E)) {
+		case 0:
+			msgbox("VAR_TEMP_E IS 0 == PROBLEMO")
+			closemessage
+			return
+		case 1:
+		///obv not ready
+			return
+			
+	//baddies approach
+	//speal
+	//duo approach
+	//duo battle
+	//duo complain then dip
+	//biggie approaches, speal, battle
+	//bigggle complain, hides, var goes up	
+	//check if beat Big Smoke? Or just in the bigsmoke one
+	//approach followers from all colors
+	//congrats, tattoo
+	//exeunt
+	//release
+	}
+
+}
+
+//placeholder
+movement SalySpitoon_2F_Movement_PlayerAmbush {
+	walk_up
+}
+
+//placeholder
+movement SalySpitoon_2F_Movement_FollowerAmbush {
+	walk_up
+}
+
+
+
 text SaltySpitoon_2F_Text_LockDoor {
 	format("The door locks behind you.")
 }
