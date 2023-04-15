@@ -165,6 +165,7 @@
 #define TRAINER_PIC_GREEN            	  145
 #define TRAINER_PIC_BIG_BLUE              146
 #define TRAINER_PIC_BIG_YELLOW            147
+#define TRAINER_PIC_BIG_GREEN             148
 
 
 
