@@ -1830,12 +1830,12 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .trainerName = _("MOLLIE"),
+        .trainerName = _("LIAM"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Mollie),
-        .party = {.TrainerMon = sParty_Mollie},
+        .partySize = ARRAY_COUNT(sParty_Blue6),
+        .party = {.TrainerMon = sParty_Blue6},
     },
 
     [TRAINER_BLUE7] =
@@ -1843,12 +1843,12 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .trainerName = _("GARRET"),
+        .trainerName = _("JOSHUA"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Garret),
-        .party = {.TrainerMon = sParty_Garret},
+        .partySize = ARRAY_COUNT(sParty_Blue7),
+        .party = {.TrainerMon = sParty_Blue7},
     },
 
     [TRAINER_YELLOW6] =
@@ -1856,12 +1856,12 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER2,
-        .trainerName = _("WINSTON"),
+        .trainerName = _("DIEGO"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Winston2),
-        .party = {.TrainerMon = sParty_Winston2},
+        .partySize = ARRAY_COUNT(sParty_Yellow6),
+        .party = {.TrainerMon = sParty_Yellow6},
     },
 
     [TRAINER_YELLOW7] =
@@ -1869,12 +1869,12 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_YOUNGSTER2,
-        .trainerName = _("WINSTON"),
+        .trainerName = _("ANGEL"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Winston3),
-        .party = {.TrainerMon = sParty_Winston3},
+        .partySize = ARRAY_COUNT(sParty_Yellow7),
+        .party = {.TrainerMon = sParty_Yellow7},
     },
 
     [TRAINER_RED6] =
@@ -1882,12 +1882,12 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_RED,
-        .trainerName = _("WINSTON"),
+        .trainerName = _("PAK"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Winston4),
-        .party = {.TrainerMon = sParty_Winston4},
+        .partySize = ARRAY_COUNT(sParty_Red6),
+        .party = {.TrainerMon = sParty_Red6},
     },
 
     [TRAINER_RED7] =
@@ -1895,12 +1895,12 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_RED,
-        .trainerName = _("WINSTON"),
+        .trainerName = _("DANG"),
         .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Winston5),
-        .party = {.TrainerMon = sParty_Winston5},
+        .partySize = ARRAY_COUNT(sParty_Red7),
+        .party = {.TrainerMon = sParty_Red7},
     },
 
     [TRAINER_GREEN6] =
@@ -1908,12 +1908,12 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_GREEN,
-        .trainerName = _("STEVE"),
+        .trainerName = _("SHAGGY"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Steve1),
-        .party = {.TrainerMon = sParty_Steve1},
+        .partySize = ARRAY_COUNT(sParty_Green6),
+        .party = {.TrainerMon = sParty_Green6},
     },
 
     [TRAINER_GREEN7] =
@@ -1921,14 +1921,26 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_GREEN,
-        .trainerName = _("THALIA"),
+        .trainerName = _("CHONG"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Thalia1),
-        .party = {.TrainerMon = sParty_Thalia1},
+        .partySize = ARRAY_COUNT(sParty_Green7),
+        .party = {.TrainerMon = sParty_Green7},
     },
 
+    [TRAINER_BIGBLUE] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIG_BLUE,
+        .trainerName = _("BIG BLUE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_BigBlue),
+        .party = {.TrainerMon = sParty_BigBlue},
+    },
 
 
 
@@ -1941,18 +1953,6 @@ const struct Trainer gTrainers[] = {
 
 
 
-    [TRAINER_MARK] =
-    {
-        .trainerClass = TRAINER_CLASS_POKEMANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .trainerName = _("MARK"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Mark),
-        .party = {.TrainerMon = sParty_Mark},
-    },
 
     [TRAINER_GRUNT_MT_CHIMNEY_1] =
     {

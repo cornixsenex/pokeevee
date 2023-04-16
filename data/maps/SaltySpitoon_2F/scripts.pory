@@ -97,9 +97,19 @@ script SaltySpitoon_2F_EventScript_AmbushBlue {
 	closemessage
 	applymovement (OBJ_EVENT_BIGBLUE, Common_Movement_WalkUp)
 	waitmovement (0)
+	trainerbattle_no_intro(TRAINER_BIGBLUE, SaltySpitoon_2F_Text_BigBlueLost)
 	//bigggle complain, hides, var goes up	
+	msgbox(SaltySpitoon_2F_Text_Ambush3)
+	closemessage
+	hideobjectat (OBJ_EVENT_BLUE1, MAP_SALTY_SPITOON_2F)
+	hideobjectat (OBJ_EVENT_BIGBLUE, MAP_SALTY_SPITOON_2F)
+	hideobjectat (OBJ_EVENT_BLUE2, MAP_SALTY_SPITOON_2F)
+	removeobject (OBJ_EVENT_BLUE1)
+	removeobject (OBJ_EVENT_BIGBLUE)			
+	removeobject (OBJ_EVENT_BLUE2)
+	setflag (FLAG_SS2F_BLUE)
+
 	//check if beat Big Smoke? Or just in the bigsmoke one
-	//approach followers from all colors
 	//congrats, tattoo
 	//exeunt
 	return
@@ -231,7 +241,13 @@ text SaltySpitoon_2F_Text_Ambush2 {
 	format("You wont get away from me!")
 }
 
+text SaltySpitoon_2F_Text_BigBlueLost {
+	format("Where'd this go so wrong?")
+}
 
+text SaltySpitoon_2F_Text_Ambush3 {
+	format("Well shit. Let's get out of here!")
+}
 
 
 

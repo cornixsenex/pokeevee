@@ -1853,7 +1853,7 @@ static const struct TrainerMon sParty_Red5[] = {
     }
 };
 
-static const struct TrainerMon sParty_Mollie[] = {
+static const struct TrainerMon sParty_Blue6[] = {
     {
     .iv = 0,
     .lvl = 3,
@@ -1861,7 +1861,7 @@ static const struct TrainerMon sParty_Mollie[] = {
     },
 };
 
-static const struct TrainerMon sParty_Garret[] = {
+static const struct TrainerMon sParty_Blue7[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -1870,44 +1870,44 @@ static const struct TrainerMon sParty_Garret[] = {
     }
 };
 
-static const struct TrainerMon sParty_Winston2[] = {
+static const struct TrainerMon sParty_Yellow6[] = {
     {
     .iv = 0,
-    .lvl = 27,
+    .lvl = 7,
     .species = SPECIES_LINOONE,
     .heldItem = ITEM_NUGGET
     }
 };
 
-static const struct TrainerMon sParty_Winston3[] = {
+static const struct TrainerMon sParty_Yellow7[] = {
     {
     .iv = 0,
-    .lvl = 30,
+    .lvl = 3,
     .species = SPECIES_LINOONE,
     .heldItem = ITEM_NUGGET
     }
 };
 
-static const struct TrainerMon sParty_Winston4[] = {
+static const struct TrainerMon sParty_Red6[] = {
     {
     .iv = 0,
-    .lvl = 33,
+    .lvl = 3,
     .species = SPECIES_LINOONE,
     .heldItem = ITEM_NUGGET
     }
 };
 
-static const struct TrainerMon sParty_Winston5[] = {
+static const struct TrainerMon sParty_Red7[] = {
     {
     .iv = 0,
-    .lvl = 36,
+    .lvl = 6,
     .species = SPECIES_LINOONE,
     .heldItem = ITEM_NUGGET,
     .moves = {MOVE_FURY_SWIPES, MOVE_MUD_SPORT, MOVE_ODOR_SLEUTH, MOVE_SAND_ATTACK}
     }
 };
 
-static const struct TrainerMon sParty_Steve1[] = {
+static const struct TrainerMon sParty_Green6[] = {
     {
     .iv = 0,
     .lvl = 19,
@@ -1915,12 +1915,7 @@ static const struct TrainerMon sParty_Steve1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Thalia1[] = {
-    {
-    .iv = 0,
-    .lvl = 25,
-    .species = SPECIES_WAILMER,
-    },
+static const struct TrainerMon sParty_Green7[] = {
     {
     .iv = 0,
     .lvl = 25,
@@ -1928,20 +1923,20 @@ static const struct TrainerMon sParty_Thalia1[] = {
     }
 };
 
-
-
-
-//BREAK
-
-
-
-static const struct TrainerMon sParty_Mark[] = {
+static const struct TrainerMon sParty_BigBlue[] = {
     {
     .iv = 0,
     .lvl = 31,
     .species = SPECIES_RHYHORN,
     }
 };
+
+
+
+
+
+//BREAK
+
 
 static const struct TrainerMon sParty_GruntMtChimney1[] = {
     {

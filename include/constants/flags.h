@@ -113,6 +113,10 @@
 #define FLAG_GATOS_VAGRANTS                  0x5D //Set after speaking with Big Green in the warehouse
 #define FLAG_WAREHOUSE_GREEN_BIGGREEN        0x5E
 
+#define FLAG_SS2F_BLUE                       0x5F
+#define FLAG_SS2F_YELLOW                     0x60
+#define FLAG_SS2F_RED                        0x61
+#define FLAG_SS2F_GREEN                      0x62
 
 
 
@@ -127,10 +131,6 @@
 
 
 
-#define FLAG_RECEIVED_POKEBLOCK_CASE         0x5F
-#define FLAG_RECEIVED_SECRET_POWER           0x60
-#define FLAG_MET_TEAM_AQUA_HARBOR            0x61
-#define FLAG_TV_EXPLAINED                    0x62
 #define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63
 #define FLAG_MOSSDEEP_GYM_SWITCH_1           0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
 #define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //

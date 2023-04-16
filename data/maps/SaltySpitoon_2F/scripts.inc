@@ -81,6 +81,16 @@ SaltySpitoon_2F_EventScript_AmbushBlue::
 	closemessage
 	applymovement 3, Common_Movement_WalkUp
 	waitmovement 0
+	trainerbattle_no_intro TRAINER_BIGBLUE, SaltySpitoon_2F_Text_BigBlueLost
+	msgbox SaltySpitoon_2F_Text_Ambush3
+	closemessage
+	hideobjectat 1, MAP_SALTY_SPITOON_2F
+	hideobjectat 3, MAP_SALTY_SPITOON_2F
+	hideobjectat 2, MAP_SALTY_SPITOON_2F
+	removeobject 1
+	removeobject 3
+	removeobject 2
+	setflag FLAG_SS2F_BLUE
 	return
 
 
@@ -218,3 +228,9 @@ SaltySpitoon_2F_Text_Green2Lost::
 
 SaltySpitoon_2F_Text_Ambush2::
 	.string "You wont get away from me!$"
+
+SaltySpitoon_2F_Text_BigBlueLost::
+	.string "Where'd this go so wrong?$"
+
+SaltySpitoon_2F_Text_Ambush3::
+	.string "Well shit. Let's get out of here!$"

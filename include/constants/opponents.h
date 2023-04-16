@@ -139,17 +139,16 @@
 #define TRAINER_RED3                        134
 #define TRAINER_RED4                        135
 #define TRAINER_RED5                        136
-
-#define TRAINER_BLUE6                      137
-#define TRAINER_BLUE7                      138
-#define TRAINER_YELLOW6                    139
-#define TRAINER_YELLOW7                    140
-#define TRAINER_RED6                       141
-#define TRAINER_RED7                       142
-#define TRAINER_GREEN6                     143
-#define TRAINER_GREEN7                     144
+#define TRAINER_BLUE6                       137
+#define TRAINER_BLUE7                       138
+#define TRAINER_YELLOW6                     139
+#define TRAINER_YELLOW7                     140
+#define TRAINER_RED6                        141
+#define TRAINER_RED7                        142
+#define TRAINER_GREEN6                      143
+#define TRAINER_GREEN7                      144
+#define TRAINER_BIGBLUE                     145
 //BREAK
-#define TRAINER_MARK                        145
 #define TRAINER_GRUNT_MT_CHIMNEY_1          146
 #define TRAINER_STEVE_2                     147
 #define TRAINER_STEVE_3                     148
