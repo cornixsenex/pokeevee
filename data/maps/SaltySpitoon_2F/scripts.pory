@@ -38,16 +38,25 @@ script SaltySpitoon_2F_EventScript_RoomTriggerA {
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	call (SaltySpitoon_2F_EventScript_AmbushPositionPlayer)	
-	//spawn baddies
+	//spawn baddies in place and trigger ambush
 	switch (var(VAR_GANG_STATE)) {
 		case 6:
 			//Blue
-			setobjectxyperm (OBJ_EVENT_BLUE1, 1, 9)
-			setobjectxyperm (OBJ_EVENT_BIGBLUE, 2, 9)
-			setobjectxyperm (OBJ_EVENT_BLUE2, 3, 9)
+			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGBLUE)			
+			removeobject (OBJ_EVENT_BLUE2)
+			setobjectxyperm (OBJ_EVENT_BLUE1, 1, 8)
+			setobjectxyperm (OBJ_EVENT_BIGBLUE, 2, 8)
+			setobjectxyperm (OBJ_EVENT_BLUE2, 3, 8)
 			setobjectmovementtype (OBJ_EVENT_BLUE1, MOVEMENT_TYPE_FACE_LEFT)
 			setobjectmovementtype (OBJ_EVENT_BIGBLUE, MOVEMENT_TYPE_FACE_LEFT)
 			setobjectmovementtype (OBJ_EVENT_BLUE2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_BLUE1)
+			addobject (OBJ_EVENT_BIGBLUE)			
+			addobject (OBJ_EVENT_BLUE2)
+			showobjectat (OBJ_EVENT_BLUE1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGBLUE, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BLUE2, MAP_SALTY_SPITOON_2F)
 			special (DrawWholeMapView)
 			call (SaltySpitoon_2F_EventScript_AmbushBlue)
 		case 7:
@@ -60,22 +69,34 @@ script SaltySpitoon_2F_EventScript_RoomTriggerA {
 			msgbox("VAR_GANG_STATE NOT 6-9")
 			closemessage
 	}
+	//everything should already be done by this point
 	release
 	end
 }
 
 script SaltySpitoon_2F_EventScript_AmbushBlue {
 	//They walk in
-	msgbox("SCRIPT HERE")
-	closemessage
 	applymovement (OBJ_EVENT_BLUE1, SaltySpitoon_2F_Movement_Ambush1)
+	applymovement (OBJ_EVENT_BIGBLUE, SaltySpitoon_2F_Movement_AmbushBig)
+	applymovement (OBJ_EVENT_BLUE2, SaltySpitoon_2F_Movement_Ambush2)
 	waitmovement(0)
-	//baddies approach
 	//speal
+	msgbox(SaltySpitoon_2F_Text_Ambush1)
+	closemessage
 	//duo approach
+	applymovement (OBJ_EVENT_BLUE1, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_BLUE2, Common_Movement_WalkUp)
+	waitmovement(0)
 	//duo battle
+	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_BLUE)
+	special (DoSpecialTrainerBattle)
+	waitstate
 	//duo complain then dip
 	//biggie approaches, speal, battle
+	msgbox(SaltySpitoon_2F_Text_Ambush2)
+	closemessage
+	applymovement (OBJ_EVENT_BIGBLUE, Common_Movement_WalkUp)
+	waitmovement (0)
 	//bigggle complain, hides, var goes up	
 	//check if beat Big Smoke? Or just in the bigsmoke one
 	//approach followers from all colors
@@ -95,6 +116,42 @@ script SaltySpitoon_2F_EventScript_AmbushPositionPlayer {
 	return
 }
 
+script SaltySpitoon_2F_EventScript_Blue1Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_BLUE6, 0, SaltySpitoon_2F_Text_Blue1Lost, SaltySpitoon_2F_Text_Blue1Lost)
+}
+
+script SaltySpitoon_2F_EventScript_Blue2Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_BLUE7, 0, SaltySpitoon_2F_Text_Blue2Lost, SaltySpitoon_2F_Text_Blue2Lost)
+}
+
+script SaltySpitoon_2F_EventScript_Yellow1Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_YELLOW6, 0, SaltySpitoon_2F_Text_Yellow1Lost, SaltySpitoon_2F_Text_Yellow1Lost)
+}
+
+script SaltySpitoon_2F_EventScript_Yellow2Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_YELLOW7, 0, SaltySpitoon_2F_Text_Yellow2Lost, SaltySpitoon_2F_Text_Yellow2Lost)
+}
+ 
+
+script SaltySpitoon_2F_EventScript_Red1Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_RED6, 0, SaltySpitoon_2F_Text_Red1Lost, SaltySpitoon_2F_Text_Red1Lost)
+}
+
+script SaltySpitoon_2F_EventScript_Red2Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_RED7, 0, SaltySpitoon_2F_Text_Red2Lost, SaltySpitoon_2F_Text_Red2Lost)
+}
+ 
+
+script SaltySpitoon_2F_EventScript_Green1Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_GREEN6, 0, SaltySpitoon_2F_Text_Green1Lost, SaltySpitoon_2F_Text_Green1Lost)
+}
+
+script SaltySpitoon_2F_EventScript_Green2Trainer {
+	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_GREEN7, 0, SaltySpitoon_2F_Text_Green2Lost, SaltySpitoon_2F_Text_Green2Lost)
+}
+ 
+ 
+
 //placeholder
 movement SaltySpitoon_2F_Movement_PlayerAmbush {
 	walk_up * 3
@@ -112,7 +169,19 @@ movement SaltySpitoon_2F_Movement_Ambush1 {
 	walk_up * 4
 }
 
+movement SaltySpitoon_2F_Movement_AmbushBig {
+	walk_left
+	walk_up * 3
+	walk_right
+	walk_up
+}
 
+movement SaltySpitoon_2F_Movement_Ambush2 {
+	walk_left * 2
+	walk_up * 3
+	walk_right * 2
+	walk_up
+}
 
 text SaltySpitoon_2F_Text_LockDoor {
 	format("The door locks behind you.")
@@ -121,4 +190,48 @@ text SaltySpitoon_2F_Text_LockDoor {
 text SaltySpitoon_2F_Text_DoorSign {
 	format("The door is locked.")
 }
+
+text SaltySpitoon_2F_Text_Ambush1 {
+	format("Get him boys.")
+}
+
+text SaltySpitoon_2F_Text_Blue1Lost {
+	format("This can't be happening!")
+}
+
+text SaltySpitoon_2F_Text_Blue2Lost {
+	format("Another lousy day...")
+}
+
+text SaltySpitoon_2F_Text_Yellow1Lost {
+	format("This can't be happening!")
+}
+
+text SaltySpitoon_2F_Text_Yellow2Lost {
+	format("Another lousy day...")
+}
+
+text SaltySpitoon_2F_Text_Red1Lost {
+	format("This can't be happening!")
+}
+
+text SaltySpitoon_2F_Text_Red2Lost {
+	format("Another lousy day...")
+}
+
+text SaltySpitoon_2F_Text_Green1Lost {
+	format("This can't be happening!")
+}
+
+text SaltySpitoon_2F_Text_Green2Lost {
+	format("Another lousy day...")
+}
+
+text SaltySpitoon_2F_Text_Ambush2 {
+	format("You wont get away from me!")
+}
+
+
+
+
 

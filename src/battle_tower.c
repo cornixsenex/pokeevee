@@ -46,6 +46,23 @@ extern const u8 SaltySpitoon_EventScript_PondaBabuTrainer[];
 extern const u8 SaltySpitoon_EventScript_ReeseTrainer[];
 extern const u8 SaltySpitoon_EventScript_JohnTrainer[];
 
+extern const u8 SaltySpitoon_2F_EventScript_Blue1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Blue2Trainer[];
+
+extern const u8 SaltySpitoon_2F_EventScript_Yellow1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Yellow2Trainer[];
+
+extern const u8 SaltySpitoon_2F_EventScript_Red1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Red2Trainer[];
+
+extern const u8 SaltySpitoon_2F_EventScript_Green1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Green2Trainer[];
+
+
+
+
+
+
 // EWRAM vars.
 EWRAM_DATA const struct BattleFrontierTrainer *gFacilityTrainers = NULL;
 EWRAM_DATA const struct FacilityMon *gFacilityTrainerMons = NULL;
@@ -2197,6 +2214,46 @@ void DoSpecialTrainerBattle(void)
         BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_JohnTrainer + 1);
         gApproachingTrainerId = 1;
         BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_ReeseTrainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_BLUE:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Blue1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Blue2Trainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_YELLOW:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Yellow1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Yellow2Trainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_RED:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Red1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Red2Trainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_GREEN:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Green1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Green2Trainer + 1);
         CreateTask(Task_StartBattleAfterTransition, 1);
         PlayMapChosenOrBattleBGM(0);
         BattleTransition_StartOnField(GetTrainerBattleTransition());

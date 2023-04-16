@@ -1853,29 +1853,18 @@ static const struct TrainerMon sParty_Red5[] = {
     }
 };
 
-
-
-
-
-//BREAK
-
 static const struct TrainerMon sParty_Mollie[] = {
     {
     .iv = 0,
-    .lvl = 33,
+    .lvl = 3,
     .species = SPECIES_WHISCASH,
     },
-    {
-    .iv = 200,
-    .lvl = 33,
-    .species = SPECIES_MEDITITE,
-    }
 };
 
 static const struct TrainerMon sParty_Garret[] = {
     {
     .iv = 0,
-    .lvl = 45,
+    .lvl = 5,
     .species = SPECIES_AZUMARILL,
     .heldItem = ITEM_NUGGET
     }
@@ -1938,6 +1927,13 @@ static const struct TrainerMon sParty_Thalia1[] = {
     .species = SPECIES_HORSEA,
     }
 };
+
+
+
+
+//BREAK
+
+
 
 static const struct TrainerMon sParty_Mark[] = {
     {
