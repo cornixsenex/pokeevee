@@ -148,10 +148,10 @@
 #define TRAINER_GREEN6                      143
 #define TRAINER_GREEN7                      144
 #define TRAINER_BIGBLUE                     145
+#define TRAINER_BIGYELLOW                   146
+#define TRAINER_BIGRED                      147
+#define TRAINER_BIGGREEN                    148
 //BREAK
-#define TRAINER_GRUNT_MT_CHIMNEY_1          146
-#define TRAINER_STEVE_2                     147
-#define TRAINER_STEVE_3                     148
 #define TRAINER_STEVE_4                     149
 #define TRAINER_STEVE_5                     150
 #define TRAINER_LUIS                        151

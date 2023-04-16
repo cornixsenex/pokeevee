@@ -50,7 +50,6 @@ MtChimney_EventScript_Maxie::
 	applymovement LOCALID_MAXIE, Common_Movement_Delay48
 	waitmovement 0
 	msgbox MtChimney_Text_MaxieIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat
 	msgbox MtChimney_Text_MaxieYouHaventSeenLastOfMagma, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -399,12 +398,10 @@ MtChimney_EventScript_BusyAquaGrunt3::
 	end
 
 MtChimney_EventScript_Tabitha::
-	trainerbattle_single TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_TabithaIntro, MtChimney_Text_TabithaDefeat
 	msgbox MtChimney_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtChimney_EventScript_Grunt2::
-	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_2, MtChimney_Text_Grunt2Intro, MtChimney_Text_Grunt2Defeat
 	msgbox MtChimney_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -472,7 +469,6 @@ MtChimney_EventScript_RouteSign::
 	end
 
 MtChimney_EventScript_Shelby::
-	trainerbattle_single TRAINER_SHELBY_1, MtChimney_Text_ShelbyIntro, MtChimney_Text_ShelbyDefeat, MtChimney_EventScript_DefeatedShelby
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, MtChimney_EventScript_RematchShelby
 	msgbox MtChimney_Text_ShelbyPostBattle, MSGBOX_DEFAULT
@@ -483,12 +479,10 @@ MtChimney_EventScript_DefeatedShelby::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox MtChimney_Text_ShelbyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_SHELBY_1
 	release
 	end
 
 MtChimney_EventScript_RematchShelby::
-	trainerbattle_rematch TRAINER_SHELBY_1, MtChimney_Text_ShelbyRematchIntro, MtChimney_Text_ShelbyRematchDefeat
 	msgbox MtChimney_Text_ShelbyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -505,7 +499,6 @@ MtChimney_EventScript_Shirley::
 	end
 
 MtChimney_EventScript_Grunt1::
-	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_1, MtChimney_Text_Grunt1Intro, MtChimney_Text_Grunt1Defeat
 	msgbox MtChimney_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 

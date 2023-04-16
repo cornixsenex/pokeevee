@@ -2,6 +2,15 @@
 const OBJ_EVENT_BLUE1   = 1
 const OBJ_EVENT_BLUE2   = 2
 const OBJ_EVENT_BIGBLUE = 3
+const OBJ_EVENT_YELLOW1   = 4
+const OBJ_EVENT_YELLOW2   = 5
+const OBJ_EVENT_BIGYELLOW = 6
+const OBJ_EVENT_RED1   = 7
+const OBJ_EVENT_RED2   = 8
+const OBJ_EVENT_BIGRED = 9
+const OBJ_EVENT_GREEN1   = 10
+const OBJ_EVENT_GREEN2   = 11
+const OBJ_EVENT_BIGGREEN = 12
 
 
 mapscripts SaltySpitoon_2F_MapScripts {
@@ -60,11 +69,61 @@ script SaltySpitoon_2F_EventScript_RoomTriggerA {
 			special (DrawWholeMapView)
 			call (SaltySpitoon_2F_EventScript_AmbushBlue)
 		case 7:
-			//Yellow
+			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGYELLOW)			
+			removeobject (OBJ_EVENT_YELLOW2)
+			setobjectxyperm (OBJ_EVENT_YELLOW1, 1, 8)
+			setobjectxyperm (OBJ_EVENT_BIGYELLOW, 2, 8)
+			setobjectxyperm (OBJ_EVENT_YELLOW2, 3, 8)
+			setobjectmovementtype (OBJ_EVENT_YELLOW1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGYELLOW, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_YELLOW2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_YELLOW1)
+			addobject (OBJ_EVENT_BIGYELLOW)			
+			addobject (OBJ_EVENT_YELLOW2)
+			showobjectat (OBJ_EVENT_YELLOW1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGYELLOW, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_YELLOW2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushYellow)
 		case 8:
 			//Red
+			removeobject (OBJ_EVENT_RED1)
+			removeobject (OBJ_EVENT_BIGRED)			
+			removeobject (OBJ_EVENT_RED2)
+			setobjectxyperm (OBJ_EVENT_RED1, 1, 8)
+			setobjectxyperm (OBJ_EVENT_BIGRED, 2, 8)
+			setobjectxyperm (OBJ_EVENT_RED2, 3, 8)
+			setobjectmovementtype (OBJ_EVENT_RED1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGRED, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_RED2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_RED1)
+			addobject (OBJ_EVENT_BIGRED)			
+			addobject (OBJ_EVENT_RED2)
+			showobjectat (OBJ_EVENT_RED1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGRED, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_RED2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushRed)
 		case 9:
 			//Green
+			removeobject (OBJ_EVENT_GREEN1)
+			removeobject (OBJ_EVENT_BIGGREEN)			
+			removeobject (OBJ_EVENT_GREEN2)
+			setobjectxyperm (OBJ_EVENT_GREEN1, 1, 8)
+			setobjectxyperm (OBJ_EVENT_BIGGREEN, 2, 8)
+			setobjectxyperm (OBJ_EVENT_GREEN2, 3, 8)
+			setobjectmovementtype (OBJ_EVENT_GREEN1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGGREEN, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_GREEN2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_GREEN1)
+			addobject (OBJ_EVENT_BIGGREEN)			
+			addobject (OBJ_EVENT_GREEN2)
+			showobjectat (OBJ_EVENT_GREEN1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGGREEN, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_GREEN2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushGreen)
 		default:
 			msgbox("VAR_GANG_STATE NOT 6-9")
 			closemessage
@@ -72,6 +131,315 @@ script SaltySpitoon_2F_EventScript_RoomTriggerA {
 	//everything should already be done by this point
 	release
 	end
+}
+
+script SaltySpitoon_2F_EventScript_RoomTriggerB {
+	//ignore if BG already cleared
+	if (var(VAR_GANG_STATE) == 5) {
+		end
+	}
+	lock
+	//increment VAR_A
+	setvar (VAR_TEMP_2, 1)
+	//apply player movement
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	call (SaltySpitoon_2F_EventScript_AmbushPositionPlayer)	
+	//spawn baddies in place and trigger ambush
+	switch (var(VAR_GANG_STATE)) {
+		case 6:
+			//Blue
+			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGBLUE)			
+			removeobject (OBJ_EVENT_BLUE2)
+			setobjectxyperm (OBJ_EVENT_BLUE1, 11, 8)
+			setobjectxyperm (OBJ_EVENT_BIGBLUE, 12, 8)
+			setobjectxyperm (OBJ_EVENT_BLUE2, 13, 8)
+			setobjectmovementtype (OBJ_EVENT_BLUE1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGBLUE, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BLUE2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_BLUE1)
+			addobject (OBJ_EVENT_BIGBLUE)			
+			addobject (OBJ_EVENT_BLUE2)
+			showobjectat (OBJ_EVENT_BLUE1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGBLUE, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BLUE2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushBlue)
+		case 7:
+			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGYELLOW)			
+			removeobject (OBJ_EVENT_YELLOW2)
+			setobjectxyperm (OBJ_EVENT_YELLOW1, 11, 8)
+			setobjectxyperm (OBJ_EVENT_BIGYELLOW, 12, 8)
+			setobjectxyperm (OBJ_EVENT_YELLOW2, 13, 8)
+			setobjectmovementtype (OBJ_EVENT_YELLOW1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGYELLOW, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_YELLOW2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_YELLOW1)
+			addobject (OBJ_EVENT_BIGYELLOW)			
+			addobject (OBJ_EVENT_YELLOW2)
+			showobjectat (OBJ_EVENT_YELLOW1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGYELLOW, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_YELLOW2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushYellow)
+		case 8:
+			//Red
+			removeobject (OBJ_EVENT_RED1)
+			removeobject (OBJ_EVENT_BIGRED)			
+			removeobject (OBJ_EVENT_RED2)
+			setobjectxyperm (OBJ_EVENT_RED1, 11, 8)
+			setobjectxyperm (OBJ_EVENT_BIGRED, 12, 8)
+			setobjectxyperm (OBJ_EVENT_RED2, 13, 8)
+			setobjectmovementtype (OBJ_EVENT_RED1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGRED, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_RED2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_RED1)
+			addobject (OBJ_EVENT_BIGRED)			
+			addobject (OBJ_EVENT_RED2)
+			showobjectat (OBJ_EVENT_RED1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGRED, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_RED2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushRed)
+		case 9:
+			//Green
+			removeobject (OBJ_EVENT_GREEN1)
+			removeobject (OBJ_EVENT_BIGGREEN)			
+			removeobject (OBJ_EVENT_GREEN2)
+			setobjectxyperm (OBJ_EVENT_GREEN1, 11, 8)
+			setobjectxyperm (OBJ_EVENT_BIGGREEN, 12, 8)
+			setobjectxyperm (OBJ_EVENT_GREEN2, 13, 8)
+			setobjectmovementtype (OBJ_EVENT_GREEN1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGGREEN, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_GREEN2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_GREEN1)
+			addobject (OBJ_EVENT_BIGGREEN)			
+			addobject (OBJ_EVENT_GREEN2)
+			showobjectat (OBJ_EVENT_GREEN1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGGREEN, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_GREEN2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushGreen)
+		default:
+			msgbox("VAR_GANG_STATE NOT 6-9")
+			closemessage
+	}
+	//everything should already be done by this point
+	release
+	end
+}
+
+script SaltySpitoon_2F_EventScript_RoomTriggerC {
+	//ignore if BG already cleared
+	if (var(VAR_GANG_STATE) == 5) {
+		end
+	}
+	lock
+	//increment VAR_A
+	setvar (VAR_TEMP_3, 1)
+	//apply player movement
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	call (SaltySpitoon_2F_EventScript_AmbushPositionPlayer)	
+	//spawn baddies in place and trigger ambush
+	switch (var(VAR_GANG_STATE)) {
+		case 6:
+			//Blue
+			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGBLUE)			
+			removeobject (OBJ_EVENT_BLUE2)
+			setobjectxyperm (OBJ_EVENT_BLUE1, 1, 18)
+			setobjectxyperm (OBJ_EVENT_BIGBLUE, 2, 18)
+			setobjectxyperm (OBJ_EVENT_BLUE2, 3, 18)
+			setobjectmovementtype (OBJ_EVENT_BLUE1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGBLUE, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BLUE2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_BLUE1)
+			addobject (OBJ_EVENT_BIGBLUE)			
+			addobject (OBJ_EVENT_BLUE2)
+			showobjectat (OBJ_EVENT_BLUE1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGBLUE, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BLUE2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushBlue)
+		case 7:
+			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGYELLOW)			
+			removeobject (OBJ_EVENT_YELLOW2)
+			setobjectxyperm (OBJ_EVENT_YELLOW1, 1, 18)
+			setobjectxyperm (OBJ_EVENT_BIGYELLOW, 2, 18)
+			setobjectxyperm (OBJ_EVENT_YELLOW2, 3, 18)
+			setobjectmovementtype (OBJ_EVENT_YELLOW1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGYELLOW, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_YELLOW2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_YELLOW1)
+			addobject (OBJ_EVENT_BIGYELLOW)			
+			addobject (OBJ_EVENT_YELLOW2)
+			showobjectat (OBJ_EVENT_YELLOW1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGYELLOW, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_YELLOW2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushYellow)
+		case 8:
+			//Red
+			removeobject (OBJ_EVENT_RED1)
+			removeobject (OBJ_EVENT_BIGRED)			
+			removeobject (OBJ_EVENT_RED2)
+			setobjectxyperm (OBJ_EVENT_RED1, 1, 18)
+			setobjectxyperm (OBJ_EVENT_BIGRED, 2, 18)
+			setobjectxyperm (OBJ_EVENT_RED2, 3, 18)
+			setobjectmovementtype (OBJ_EVENT_RED1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGRED, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_RED2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_RED1)
+			addobject (OBJ_EVENT_BIGRED)			
+			addobject (OBJ_EVENT_RED2)
+			showobjectat (OBJ_EVENT_RED1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGRED, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_RED2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushRed)
+		case 9:
+			//Green
+			removeobject (OBJ_EVENT_GREEN1)
+			removeobject (OBJ_EVENT_BIGGREEN)			
+			removeobject (OBJ_EVENT_GREEN2)
+			setobjectxyperm (OBJ_EVENT_GREEN1, 1, 18)
+			setobjectxyperm (OBJ_EVENT_BIGGREEN, 2, 18)
+			setobjectxyperm (OBJ_EVENT_GREEN2, 3, 18)
+			setobjectmovementtype (OBJ_EVENT_GREEN1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGGREEN, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_GREEN2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_GREEN1)
+			addobject (OBJ_EVENT_BIGGREEN)			
+			addobject (OBJ_EVENT_GREEN2)
+			showobjectat (OBJ_EVENT_GREEN1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGGREEN, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_GREEN2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushGreen)
+		default:
+			msgbox("VAR_GANG_STATE NOT 6-9")
+			closemessage
+	}
+	//everything should already be done by this point
+	release
+	end
+}
+
+script SaltySpitoon_2F_EventScript_RoomTriggerD {
+	//ignore if BG already cleared
+	if (var(VAR_GANG_STATE) == 5) {
+		end
+	}
+	lock
+	//increment VAR_A
+	setvar (VAR_TEMP_4, 1)
+	//apply player movement
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	call (SaltySpitoon_2F_EventScript_AmbushPositionPlayer)	
+	//spawn baddies in place and trigger ambush
+	switch (var(VAR_GANG_STATE)) {
+		case 6:
+			//Blue
+			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGBLUE)			
+			removeobject (OBJ_EVENT_BLUE2)
+			setobjectxyperm (OBJ_EVENT_BLUE1, 11, 18)
+			setobjectxyperm (OBJ_EVENT_BIGBLUE, 12, 18)
+			setobjectxyperm (OBJ_EVENT_BLUE2, 13, 18)
+			setobjectmovementtype (OBJ_EVENT_BLUE1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGBLUE, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BLUE2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_BLUE1)
+			addobject (OBJ_EVENT_BIGBLUE)			
+			addobject (OBJ_EVENT_BLUE2)
+			showobjectat (OBJ_EVENT_BLUE1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGBLUE, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BLUE2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushBlue)
+		case 7:
+			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			removeobject (OBJ_EVENT_BIGYELLOW)			
+			removeobject (OBJ_EVENT_YELLOW2)
+			setobjectxyperm (OBJ_EVENT_YELLOW1, 11, 18)
+			setobjectxyperm (OBJ_EVENT_BIGYELLOW, 12, 18)
+			setobjectxyperm (OBJ_EVENT_YELLOW2, 13, 18)
+			setobjectmovementtype (OBJ_EVENT_YELLOW1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGYELLOW, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_YELLOW2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_YELLOW1)
+			addobject (OBJ_EVENT_BIGYELLOW)			
+			addobject (OBJ_EVENT_YELLOW2)
+			showobjectat (OBJ_EVENT_YELLOW1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGYELLOW, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_YELLOW2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushYellow)
+		case 8:
+			//Red
+			removeobject (OBJ_EVENT_RED1)
+			removeobject (OBJ_EVENT_BIGRED)			
+			removeobject (OBJ_EVENT_RED2)
+			setobjectxyperm (OBJ_EVENT_RED1, 11, 18)
+			setobjectxyperm (OBJ_EVENT_BIGRED, 12, 18)
+			setobjectxyperm (OBJ_EVENT_RED2, 13, 18)
+			setobjectmovementtype (OBJ_EVENT_RED1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGRED, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_RED2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_RED1)
+			addobject (OBJ_EVENT_BIGRED)			
+			addobject (OBJ_EVENT_RED2)
+			showobjectat (OBJ_EVENT_RED1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGRED, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_RED2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushRed)
+		case 9:
+			//Green
+			removeobject (OBJ_EVENT_GREEN1)
+			removeobject (OBJ_EVENT_BIGGREEN)			
+			removeobject (OBJ_EVENT_GREEN2)
+			setobjectxyperm (OBJ_EVENT_GREEN1, 11, 18)
+			setobjectxyperm (OBJ_EVENT_BIGGREEN, 12, 18)
+			setobjectxyperm (OBJ_EVENT_GREEN2, 13, 18)
+			setobjectmovementtype (OBJ_EVENT_GREEN1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_BIGGREEN, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectmovementtype (OBJ_EVENT_GREEN2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (OBJ_EVENT_GREEN1)
+			addobject (OBJ_EVENT_BIGGREEN)			
+			addobject (OBJ_EVENT_GREEN2)
+			showobjectat (OBJ_EVENT_GREEN1, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_BIGGREEN, MAP_SALTY_SPITOON_2F)
+			showobjectat (OBJ_EVENT_GREEN2, MAP_SALTY_SPITOON_2F)
+			special (DrawWholeMapView)
+			call (SaltySpitoon_2F_EventScript_AmbushGreen)
+		default:
+			msgbox("VAR_GANG_STATE NOT 6-9")
+			closemessage
+	}
+	//everything should already be done by this point
+	release
+	end
+}
+
+script SaltySpitoon_2F_EventScript_IncVar {
+	switch (var(VAR_GANG_STATE)) {
+		case 6:	
+			setvar (VAR_GANG_STATE, 7)
+		case 7:
+			setvar (VAR_GANG_STATE, 8)
+		case 8:
+			setvar (VAR_GANG_STATE, 9)
+		default:
+			msgbox("IncVar Var out of scope")
+			closemessage
+	}
+	return
 }
 
 script SaltySpitoon_2F_EventScript_AmbushBlue {
@@ -108,9 +476,144 @@ script SaltySpitoon_2F_EventScript_AmbushBlue {
 	removeobject (OBJ_EVENT_BIGBLUE)			
 	removeobject (OBJ_EVENT_BLUE2)
 	setflag (FLAG_SS2F_BLUE)
+	call (SaltySpitoon_2F_EventScript_IncVar)
 
 	//check if beat Big Smoke? Or just in the bigsmoke one
 	//congrats, tattoo
+	//exeunt
+	return
+}
+
+script SaltySpitoon_2F_EventScript_AmbushYellow {
+	//They walk in
+	applymovement (OBJ_EVENT_YELLOW1, SaltySpitoon_2F_Movement_Ambush1)
+	applymovement (OBJ_EVENT_BIGYELLOW, SaltySpitoon_2F_Movement_AmbushBig)
+	applymovement (OBJ_EVENT_YELLOW2, SaltySpitoon_2F_Movement_Ambush2)
+	waitmovement(0)
+	//speal
+	msgbox(SaltySpitoon_2F_Text_Ambush1)
+	closemessage
+	//duo approach
+	applymovement (OBJ_EVENT_YELLOW1, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_YELLOW2, Common_Movement_WalkUp)
+	waitmovement(0)
+	//duo battle
+	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_YELLOW)
+	special (DoSpecialTrainerBattle)
+	waitstate
+	//duo complain then dip
+	//biggie approaches, speal, battle
+	msgbox(SaltySpitoon_2F_Text_Ambush2)
+	closemessage
+	applymovement (OBJ_EVENT_BIGYELLOW, Common_Movement_WalkUp)
+	waitmovement (0)
+	trainerbattle_no_intro(TRAINER_BIGYELLOW, SaltySpitoon_2F_Text_BigYellowLost)
+	//bigggle complain, hides, var goes up	
+	msgbox(SaltySpitoon_2F_Text_Ambush3)
+	closemessage
+	hideobjectat (OBJ_EVENT_YELLOW1, MAP_SALTY_SPITOON_2F)
+	hideobjectat (OBJ_EVENT_BIGYELLOW, MAP_SALTY_SPITOON_2F)
+	hideobjectat (OBJ_EVENT_YELLOW2, MAP_SALTY_SPITOON_2F)
+	removeobject (OBJ_EVENT_YELLOW1)
+	removeobject (OBJ_EVENT_BIGYELLOW)			
+	removeobject (OBJ_EVENT_YELLOW2)
+	setflag (FLAG_SS2F_YELLOW)
+	call (SaltySpitoon_2F_EventScript_IncVar)
+
+	//check if beat Big Smoke? Or just in the bigsmoke one
+	//congrats, tattoo
+	//exeunt
+	return
+}
+
+script SaltySpitoon_2F_EventScript_AmbushRed {
+	//They walk in
+	applymovement (OBJ_EVENT_RED1, SaltySpitoon_2F_Movement_Ambush1)
+	applymovement (OBJ_EVENT_BIGRED, SaltySpitoon_2F_Movement_AmbushBig)
+	applymovement (OBJ_EVENT_RED2, SaltySpitoon_2F_Movement_Ambush2)
+	waitmovement(0)
+	//speal
+	msgbox(SaltySpitoon_2F_Text_Ambush1)
+	closemessage
+	//duo approach
+	applymovement (OBJ_EVENT_RED1, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_RED2, Common_Movement_WalkUp)
+	waitmovement(0)
+	//duo battle
+	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_RED)
+	special (DoSpecialTrainerBattle)
+	waitstate
+	//duo complain then dip
+	//biggie approaches, speal, battle
+	msgbox(SaltySpitoon_2F_Text_Ambush2)
+	closemessage
+	applymovement (OBJ_EVENT_BIGRED, Common_Movement_WalkUp)
+	waitmovement (0)
+	trainerbattle_no_intro(TRAINER_BIGRED, SaltySpitoon_2F_Text_BigRedLost)
+	//bigggle complain, hides, var goes up	
+	msgbox(SaltySpitoon_2F_Text_Ambush3)
+	closemessage
+	hideobjectat (OBJ_EVENT_RED1, MAP_SALTY_SPITOON_2F)
+	hideobjectat (OBJ_EVENT_BIGRED, MAP_SALTY_SPITOON_2F)
+	hideobjectat (OBJ_EVENT_RED2, MAP_SALTY_SPITOON_2F)
+	removeobject (OBJ_EVENT_RED1)
+	removeobject (OBJ_EVENT_BIGRED)			
+	removeobject (OBJ_EVENT_RED2)
+	setflag (FLAG_SS2F_RED)
+	call (SaltySpitoon_2F_EventScript_IncVar)
+
+	//check if beat Big Smoke? Or just in the bigsmoke one
+	//congrats, tattoo
+	//exeunt
+	return
+}
+
+script SaltySpitoon_2F_EventScript_AmbushGreen {
+	//They walk in
+	applymovement (OBJ_EVENT_GREEN1, SaltySpitoon_2F_Movement_Ambush1)
+	applymovement (OBJ_EVENT_BIGGREEN, SaltySpitoon_2F_Movement_AmbushBig)
+	applymovement (OBJ_EVENT_GREEN2, SaltySpitoon_2F_Movement_Ambush2)
+	waitmovement(0)
+	//speal
+	msgbox(SaltySpitoon_2F_Text_Ambush1)
+	closemessage
+	//duo approach
+	applymovement (OBJ_EVENT_GREEN1, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_GREEN2, Common_Movement_WalkUp)
+	waitmovement(0)
+	//duo battle
+	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_GREEN)
+	special (DoSpecialTrainerBattle)
+	waitstate
+	//duo complain then dip
+	//biggie approaches, speal, battle
+	msgbox(SaltySpitoon_2F_Text_Ambush2)
+	closemessage
+	applymovement (OBJ_EVENT_BIGGREEN, Common_Movement_WalkUp)
+	waitmovement (0)
+	trainerbattle_no_intro(TRAINER_BIGGREEN, SaltySpitoon_2F_Text_BigGreenLost)
+	//bigggle complain, hides, var goes up	
+	msgbox(SaltySpitoon_2F_Text_Ambush3)
+	closemessage
+	hideobjectat (OBJ_EVENT_BIGGREEN, MAP_SALTY_SPITOON_2F)
+	removeobject (OBJ_EVENT_BIGGREEN)	
+	//congrats, tattoo
+	msgbox(SaltySpitoon_2F_Text_GetTattoo)
+	closemessage	
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	giveitem (ITEM_TATTOO)
+	msgbox(SaltySpitoon_2F_Text_GetTattoo2)
+	closemessage	
+	hideobjectat (OBJ_EVENT_GREEN1, MAP_SALTY_SPITOON_2F)
+	hideobjectat (OBJ_EVENT_GREEN2, MAP_SALTY_SPITOON_2F)
+	removeobject (OBJ_EVENT_GREEN2)
+	removeobject (OBJ_EVENT_GREEN1)
+	setflag (FLAG_SS2F_GREEN)
+	setflag (FLAG_SS2F_GREEN)
+	setvar (VAR_GANG_STATE, 5)
+	setmetatile (17, 1, METATILE_BrendansMaysHouse_StairsDown, 0)
+	
+
 	//exeunt
 	return
 }
@@ -245,9 +748,26 @@ text SaltySpitoon_2F_Text_BigBlueLost {
 	format("Where'd this go so wrong?")
 }
 
+text SaltySpitoon_2F_Text_BigYellowLost {
+	format("Where'd this go so wrong?")
+}
+
+text SaltySpitoon_2F_Text_BigRedLost {
+	format("Where'd this go so wrong?")
+}
+
+text SaltySpitoon_2F_Text_BigGreenLost {
+	format("Where'd this go so wrong?")
+}
+
 text SaltySpitoon_2F_Text_Ambush3 {
 	format("Well shit. Let's get out of here!")
 }
 
+text SaltySpitoon_2F_Text_GetTattoo {
+	format("Like zoinks dude you're super strong man!\n Like yeah man we're totally your dudes now. You're in the gang man!\n Like we never liked that Big Smoke anyways man.\n Here hang tight man I'll give you your official gang tattoo this should only take a sec...")
+}
 
-
+text SaltySpitoon_2F_Text_GetTattoo2 {
+	format("Hey! That looks real cool man!\n Like zoinks you look like a real tough guy now.\n I'm gonna head back to the shack to smoke. See you around boss.\n Like zoins bro see ya.")
+}

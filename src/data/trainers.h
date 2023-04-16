@@ -1942,6 +1942,46 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_BigBlue},
     },
 
+    [TRAINER_BIGYELLOW] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIG_YELLOW,
+        .trainerName = _("BIG YELLOW"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_GruntMtChimney1),
+        .party = {.TrainerMon = sParty_GruntMtChimney1},
+    },
+
+    [TRAINER_BIGRED] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIG_RED,
+        .trainerName = _("BIG RED"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Steve2),
+        .party = {.TrainerMon = sParty_Steve2},
+    },
+
+    [TRAINER_BIGGREEN] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIG_GREEN,
+        .trainerName = _("BIG GREEN"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Steve3),
+        .party = {.TrainerMon = sParty_Steve3},
+    },
+
+
 
 
 ///	====BREAK====    
@@ -1954,44 +1994,6 @@ const struct Trainer gTrainers[] = {
 
 
 
-    [TRAINER_GRUNT_MT_CHIMNEY_1] =
-    {
-        .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
-        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .trainerName = _("GRUNT"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntMtChimney1),
-        .party = {.TrainerMon = sParty_GruntMtChimney1},
-    },
-
-    [TRAINER_STEVE_2] =
-    {
-        .trainerClass = TRAINER_CLASS_POKEMANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .trainerName = _("STEVE"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Steve2),
-        .party = {.TrainerMon = sParty_Steve2},
-    },
-
-    [TRAINER_STEVE_3] =
-    {
-        .trainerClass = TRAINER_CLASS_POKEMANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_POKEMANIAC,
-        .trainerName = _("STEVE"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Steve3),
-        .party = {.TrainerMon = sParty_Steve3},
-    },
 
     [TRAINER_STEVE_4] =
     {

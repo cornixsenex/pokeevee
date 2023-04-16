@@ -10001,5 +10001,22 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = 0,
 	},
+
+	[ITEM_TATTOO] =
+	{
+		.name = _("TOUGH TATTOO"),
+        .itemId = ITEM_TATTOO,
+        .price = 0,
+        .description = sTattooDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+
+
+
 };
 

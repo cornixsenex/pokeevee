@@ -3850,6 +3850,9 @@ static const u8 sInsuranceCardDesc[] = _(
 	"Preferred Member\n"
 	"Fully Insured\n");
 
+static const u8 sTattooDesc[] = _(
+	"A tough tattoo it\n"
+	"Says MOM or WOW\n");
 
 
 
