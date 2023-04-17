@@ -4,11 +4,9 @@ SootopolisCity_House1_MapScripts::
 SootopolisCity_House1_EventScript_BrickBreakBlackBelt::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM31, SootopolisCity_House1_EventScript_ReceivedBrickBreak
 	msgbox SootopolisCity_House1_Text_DevelopedThisTM, MSGBOX_DEFAULT
 	giveitem ITEM_TM31
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM31
 	msgbox SootopolisCity_House1_Text_ExplainBrickBreak, MSGBOX_DEFAULT
 	release
 	end

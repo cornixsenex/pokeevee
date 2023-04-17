@@ -3,11 +3,11 @@ mapscripts Aldeon_Leaf_House_MapScripts {
 		call (Aldeon_Leaf_House_OnTransition)
 	}
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ROUTE1_STATE, 2: Aldeon_Leaf_House_OnWarp
+		VAR_ROUTE1_STATE, 2: Aldeon_Leaf_House_IntroScene
 	]
 }
 
-script Aldeon_Leaf_House_OnWarp {
+script Aldeon_Leaf_House_IntroScene {
 	setvar (VAR_ROUTE1_STATE, 3)
 	lockall
 	applymovement (1, Common_Movement_FaceRight)
@@ -164,7 +164,7 @@ text Aldeon_Leaf_House_Text_Dad2 {
 }
 
 text Aldeon_Leaf_House_Text_Leaf2 {
-	format("A friend.\n Young master {PLAYER} here rescued me from a viscious incel who tried to assualt me.")
+	format("A friend. Young master {PLAYER} here rescued me from a viscious incel who tried to assualt me.")
 }
 
 text Aldeon_Leaf_House_Text_Dad3 {
@@ -184,7 +184,7 @@ text Aldeon_Leaf_House_Text_Leaf4 {
 }
 
 text Aldeon_Leaf_House_Text_Dad5 {
-	format("The very same.\nAt first I hardly thought the news was true, and I assumed it was propaganda to celebrate the party's victory but earlier as I was walking home I saw her flying south with my own eyes.")
+	format("The very same. At first I hardly thought the news was true, and I assumed it was propaganda to celebrate the party's victory but earlier as I was walking home I saw her flying south with my own eyes.")
 }
 
 text Aldeon_Leaf_House_Text_Leaf5 {
@@ -192,7 +192,7 @@ text Aldeon_Leaf_House_Text_Leaf5 {
 }
 
 text Aldeon_Leaf_House_Text_Dad6 {
-	format("Of course we must! To think such things were only myths last week. Not in two thousand years has this happened.\nSo {PLAYER} I'm sure you'll be going with Leaf? Before we go she'll need a Pokemon and you should go let your own family know, but first take this for saving my daughter.")
+	format("Of course we must! To think such things were only myths last week. Not in two thousand years has this happened. So {PLAYER} I'm sure you'll be going with Leaf? Before we go she'll need a Pokemon and you should go let your own family know, but first take this for saving my daughter.")
 }
 
 text Aldeon_Leaf_House_Text_DexBallGet {

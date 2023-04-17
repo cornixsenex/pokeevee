@@ -34,7 +34,8 @@ mapscripts Route4_MapScripts {}
 //steal 3 golden apples
 //capture ceberus
 
-
+//UpdatePerDay
+//ClearDailyFlags
 
 
 script Route4_EventScript_Delia {

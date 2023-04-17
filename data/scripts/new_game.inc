@@ -113,7 +113,22 @@ EventScript_ResetAllBerries::
 	return
 
 EventScript_ResetAllMapFlags::
-	@ setflag FLAG_HIDE_CONTEST_POKE_BALL
+	@Hide Route4 Heros
+    setflag FLAG_ROUTE4_NESTOR     
+    setflag FLAG_ROUTE4_HERACLES   
+    setflag FLAG_ROUTE4_ACHILLES   
+    setflag FLAG_ROUTE4_HECTOR     
+    setflag FLAG_ROUTE4_ULYSSES    
+    setflag FLAG_ROUTE4_AENEAS     
+    setflag FLAG_ROUTE4_AJAX       
+    setflag FLAG_ROUTE4_DIOMEDES   
+    setflag FLAG_ROUTE4_AGAMEMNON  
+    setflag FLAG_ROUTE4_PARIS      
+    setflag FLAG_ROUTE4_MENELAUS   
+    setflag FLAG_ROUTE4_PHILOCTETES
+    setflag FLAG_ROUTE4_THESEUS    
+    setflag FLAG_ROUTE4_JASON      
+
 	setflag FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE
 	setflag FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE
 	setflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE

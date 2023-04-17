@@ -50,8 +50,6 @@ SlateportCity_OceanicMuseum_1F_EventScript_Reporter::
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, SlateportCity_OceanicMuseum_1F_EventScript_AlreadyInterviewed
 	copyvar VAR_0x8009, VAR_0x8006
-	goto_if_set FLAG_OCEANIC_MUSEUM_MET_REPORTER, SlateportCity_OceanicMuseum_1F_EventScript_RequestInterviewShort
-	setflag FLAG_OCEANIC_MUSEUM_MET_REPORTER
 	msgbox SlateportCity_OceanicMuseum_1F_Text_InterviewRequest, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, SlateportCity_OceanicMuseum_1F_EventScript_AcceptInterview
 	goto_if_eq VAR_RESULT, NO, SlateportCity_OceanicMuseum_1F_EventScript_DeclineInterview
@@ -163,7 +161,6 @@ SlateportCity_PokemonFanClub_EventScript_AlreadyInterviewed::
 LilycoveCity_ContestLobby_EventScript_Reporter::
 	lock
 	faceplayer
-	goto_if_set FLAG_TEMP_2, LilycoveCity_ContestLobby_EventScript_AlreadyInterviewed
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_POKEMON_PROFILE
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_AlreadyInterviewed
@@ -202,7 +199,6 @@ LilycoveCity_ContestLobby_EventScript_SubmitResponse::
 	faceplayer
 	goto_if_eq VAR_RESULT, 0, LilycoveCity_ContestLobby_EventScript_DeclineInterview
 	msgbox LilycoveCity_ContestLobby_Text_ThatsAllForInterview, MSGBOX_DEFAULT
-	setflag FLAG_TEMP_2
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_POKEMON_PROFILE
 	goto Interview_EventScript_EndInterview
 	end
@@ -227,7 +223,6 @@ LilycoveCity_ContestLobby_EventScript_TryShowContestReporter::
 	end
 
 LilycoveCity_ContestLobby_EventScript_ShowContestReporter::
-	clearflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
 	return
 
 LilycoveCity_ContestLobby_EventScript_DontShowContestReporter::
@@ -236,7 +231,6 @@ LilycoveCity_ContestLobby_EventScript_DontShowContestReporter::
 BattleFrontier_BattleTowerLobby_EventScript_Reporter::
 	lock
 	faceplayer
-	goto_if_set FLAG_TEMP_2, BattleFrontier_BattleTowerLobby_EventScript_AlreadyInterviewed
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_BATTLE_TOWER_PROFILE
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_BattleTowerLobby_EventScript_AlreadyInterviewed
@@ -279,7 +273,6 @@ BattleFrontier_BattleTowerLobby_EventScript_Dissatisfied::
 BattleFrontier_BattleTowerLobby_EventScript_SubmitResponse::
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattleTowerLobby_EventScript_CancelInterview
 	msgbox BattleFrontier_BattleTowerLobby_Text_ThatsGreatLine, MSGBOX_DEFAULT
-	setflag FLAG_TEMP_2
 	copyvar VAR_0x8004, VAR_0x8008
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_BATTLE_TOWER_PROFILE
 	goto Interview_EventScript_EndInterview
@@ -300,11 +293,9 @@ BattleFrontier_BattleTowerLobby_EventScript_ShowOrHideReporter::
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_BATTLE_TOWER_PROFILE
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_BattleTowerLobby_EventScript_HideReporter
-	clearflag FLAG_HIDE_BATTLE_TOWER_REPORTER
 	return
 
 BattleFrontier_BattleTowerLobby_EventScript_HideReporter::
-	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
 	return
 
 @ Unused

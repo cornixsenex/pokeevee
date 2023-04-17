@@ -69,7 +69,8 @@ script SaltySpitoon_2F_EventScript_RoomTriggerA {
 			special (DrawWholeMapView)
 			call (SaltySpitoon_2F_EventScript_AmbushBlue)
 		case 7:
-			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			//Yellow			
+			removeobject (OBJ_EVENT_BLUE1)
 			removeobject (OBJ_EVENT_BIGYELLOW)			
 			removeobject (OBJ_EVENT_YELLOW2)
 			setobjectxyperm (OBJ_EVENT_YELLOW1, 1, 8)
@@ -167,7 +168,8 @@ script SaltySpitoon_2F_EventScript_RoomTriggerB {
 			special (DrawWholeMapView)
 			call (SaltySpitoon_2F_EventScript_AmbushBlue)
 		case 7:
-			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			//Yellow			
+			removeobject (OBJ_EVENT_YELLOW1)
 			removeobject (OBJ_EVENT_BIGYELLOW)			
 			removeobject (OBJ_EVENT_YELLOW2)
 			setobjectxyperm (OBJ_EVENT_YELLOW1, 11, 8)
@@ -265,7 +267,8 @@ script SaltySpitoon_2F_EventScript_RoomTriggerC {
 			special (DrawWholeMapView)
 			call (SaltySpitoon_2F_EventScript_AmbushBlue)
 		case 7:
-			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			//Yellow			
+			removeobject (OBJ_EVENT_YELLOW1)
 			removeobject (OBJ_EVENT_BIGYELLOW)			
 			removeobject (OBJ_EVENT_YELLOW2)
 			setobjectxyperm (OBJ_EVENT_YELLOW1, 1, 18)
@@ -363,7 +366,8 @@ script SaltySpitoon_2F_EventScript_RoomTriggerD {
 			special (DrawWholeMapView)
 			call (SaltySpitoon_2F_EventScript_AmbushBlue)
 		case 7:
-			//Yellow			removeobject (OBJ_EVENT_BLUE1)
+			//Yellow			
+			removeobject (OBJ_EVENT_YELLOW1)
 			removeobject (OBJ_EVENT_BIGYELLOW)			
 			removeobject (OBJ_EVENT_YELLOW2)
 			setobjectxyperm (OBJ_EVENT_YELLOW1, 11, 18)
@@ -765,9 +769,9 @@ text SaltySpitoon_2F_Text_Ambush3 {
 }
 
 text SaltySpitoon_2F_Text_GetTattoo {
-	format("Like zoinks dude you're super strong man!\n Like yeah man we're totally your dudes now. You're in the gang man!\n Like we never liked that Big Smoke anyways man.\n Here hang tight man I'll give you your official gang tattoo this should only take a sec...")
+	format("Like zoinks dude you're super strong man!\n Like yeah man we're totally your dudes now. You're in the gang man! Like we never liked that Big Smoke anyways man.\n Here hang tight man I'll give you your official gang tattoo this should only take a sec...")
 }
 
 text SaltySpitoon_2F_Text_GetTattoo2 {
-	format("Hey! That looks real cool man!\n Like zoinks you look like a real tough guy now.\n I'm gonna head back to the shack to smoke. See you around boss.\n Like zoins bro see ya.")
+	format("Hey! That looks real cool man! Like zoinks you look like a real tough guy now. I'm gonna head back to the shack to smoke. See you around boss. Like zoins bro see ya.")
 }

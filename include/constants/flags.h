@@ -112,56 +112,50 @@
 #define FLAG_SALTYSPITOON_BIGGREEN           0x5C
 #define FLAG_GATOS_VAGRANTS                  0x5D //Set after speaking with Big Green in the warehouse
 #define FLAG_WAREHOUSE_GREEN_BIGGREEN        0x5E
-
+//4 flags hide actors in SS2F for ambush
 #define FLAG_SS2F_BLUE                       0x5F
 #define FLAG_SS2F_YELLOW                     0x60
 #define FLAG_SS2F_RED                        0x61
 #define FLAG_SS2F_GREEN                      0x62
+//27 (12 home + 12 route4 + 2 nestor + 1 herc)
+//ROUTE4 Flags set at NewGame Start
+#define FLAG_ROUTE4_NESTOR                   0x63
+#define FLAG_ROUTE4_HERACLES                 0x64 
+#define FLAG_ROUTE4_ACHILLES                 0x65 
+#define FLAG_ROUTE4_HECTOR                   0x66 
+#define FLAG_ROUTE4_ULYSSES                  0x67 
+#define FLAG_ROUTE4_AENEAS                   0x68  
+#define FLAG_ROUTE4_AJAX                     0x69
+#define FLAG_ROUTE4_DIOMEDES                 0x6A
+#define FLAG_ROUTE4_AGAMEMNON                0x6B
+#define FLAG_ROUTE4_PARIS                    0x6C 
+#define FLAG_ROUTE4_MENELAUS                 0x6D
+#define FLAG_ROUTE4_PHILOCTETES              0x6E
+#define FLAG_ROUTE4_THESEUS                  0x6F
+#define FLAG_ROUTE4_JASON                    0x70
+
+#define FLAG_HOME_NESTOR                     0x71 
+#define FLAG_HOME_ACHILLES                   0x72 
+#define FLAG_HOME_HECTOR                     0x73
+#define FLAG_HOME_ULYSSES                    0x74 
+#define FLAG_HOME_AENEAS                     0x75 
+#define FLAG_HOME_AJAX                       0x76
+#define FLAG_HOME_DIOMEDES                   0x77
+#define FLAG_HOME_AGAMEMNON                  0x78
+#define FLAG_HOME_PARIS                      0x79
+#define FLAG_HOME_MENELAUS                   0x7A
+#define FLAG_HOME_PHILOCTETES                0x7B
+#define FLAG_HOME_THESEUS                    0x7C
+#define FLAG_HOME_JASON                      0x7D
 
 
 
 												  ////BREAK
 													  
-												  
-												  
-												//Example for newgame set flag
-//#define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
+				
 
 
 
-
-
-#define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63
-#define FLAG_MOSSDEEP_GYM_SWITCH_1           0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
-#define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
-
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
-
-#define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
-#define FLAG_RECEIVED_HM04                   0x6A
-#define FLAG_RECEIVED_HM06                   0x6B
-#define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
-#define FLAG_RECEIVED_HM05                   0x6D
-#define FLAG_RECEIVED_HM02                   0x6E
-#define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
-#define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
-#define FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE 0x71 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
-#define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
-#define FLAG_RECEIVED_METEORITE              0x73
-#define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
-#define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define FLAG_MET_HIDDEN_POWER_GIVER          0x76
-
-#define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
-
-#define FLAG_LANDMARK_MIRAGE_TOWER           0x78
-#define FLAG_RECEIVED_TM31                   0x79
-#define FLAG_RECEIVED_HM03                   0x7A
-#define FLAG_RECEIVED_HM08                   0x7B
-#define FLAG_REGISTER_RIVAL_POKENAV          0x7C
-#define FLAG_DEFEATED_RIVAL_ROUTE_104        0x7D
 #define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0x7E
 #define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.

@@ -63,6 +63,7 @@ SaltySpitoon_2F_EventScript_RoomTriggerA_6:
 	goto SaltySpitoon_2F_EventScript_RoomTriggerA_4
 
 SaltySpitoon_2F_EventScript_RoomTriggerA_7:
+	removeobject 1
 	removeobject 6
 	removeobject 5
 	setobjectxyperm 4, 1, 8
@@ -165,6 +166,7 @@ SaltySpitoon_2F_EventScript_RoomTriggerB_6:
 	goto SaltySpitoon_2F_EventScript_RoomTriggerB_4
 
 SaltySpitoon_2F_EventScript_RoomTriggerB_7:
+	removeobject 4
 	removeobject 6
 	removeobject 5
 	setobjectxyperm 4, 11, 8
@@ -267,6 +269,7 @@ SaltySpitoon_2F_EventScript_RoomTriggerC_6:
 	goto SaltySpitoon_2F_EventScript_RoomTriggerC_4
 
 SaltySpitoon_2F_EventScript_RoomTriggerC_7:
+	removeobject 4
 	removeobject 6
 	removeobject 5
 	setobjectxyperm 4, 1, 18
@@ -369,6 +372,7 @@ SaltySpitoon_2F_EventScript_RoomTriggerD_6:
 	goto SaltySpitoon_2F_EventScript_RoomTriggerD_4
 
 SaltySpitoon_2F_EventScript_RoomTriggerD_7:
+	removeobject 4
 	removeobject 6
 	removeobject 5
 	setobjectxyperm 4, 11, 18
@@ -740,17 +744,16 @@ SaltySpitoon_2F_Text_GetTattoo::
 	.string "Like zoinks dude you're super strong\n"
 	.string "man!\n"
 	.string "Like yeah man we're totally your dudes\l"
-	.string "now. You're in the gang man!\n"
-	.string "Like we never liked that Big Smoke\l"
-	.string "anyways man.\n"
+	.string "now. You're in the gang man! Like we\l"
+	.string "never liked that Big Smoke anyways\l"
+	.string "man.\n"
 	.string "Here hang tight man I'll give you your\l"
 	.string "official gang tattoo this should only\l"
 	.string "take a sec...$"
 
 SaltySpitoon_2F_Text_GetTattoo2::
-	.string "Hey! That looks real cool man!\n"
-	.string "Like zoinks you look like a real tough\l"
-	.string "guy now.\n"
-	.string "I'm gonna head back to the shack to\l"
-	.string "smoke. See you around boss.\n"
-	.string "Like zoins bro see ya.$"
+	.string "Hey! That looks real cool man! Like\n"
+	.string "zoinks you look like a real tough guy\l"
+	.string "now. I'm gonna head back to the shack\l"
+	.string "to smoke. See you around boss. Like\l"
+	.string "zoins bro see ya.$"

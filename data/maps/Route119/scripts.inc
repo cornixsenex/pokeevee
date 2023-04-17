@@ -8,7 +8,6 @@ Route119_MapScripts::
 	.byte 0
 
 Route119_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route119_EventScript_TryRemoveKecleon
 	end
 
 Route119_EventScript_TryRemoveKecleon::
@@ -25,8 +24,6 @@ Route119_OnTransition:
 	end
 
 Route119_EventScript_MoveInstituteWorkersDownstairs::
-	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
-	clearflag FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS
 	setvar VAR_WEATHER_INSTITUTE_STATE, 2
 	return
 
@@ -133,7 +130,6 @@ Route119_EventScript_DefeatedBrendan::
 
 Route119_EventScript_GiveFlyHM::
 	giveitem ITEM_HM02
-	setflag FLAG_RECEIVED_HM02
 	return
 
 Route119_EventScript_RivalExitScottArrive::
@@ -474,7 +470,6 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 	lockall
 	pokenavcall Route119_Text_ScottYouWonAtFortreeGym
 	waitmessage
-	clearflag FLAG_SCOTT_CALL_FORTREE_GYM
 	addvar VAR_SCOTT_STATE, 1
 	releaseall
 	end

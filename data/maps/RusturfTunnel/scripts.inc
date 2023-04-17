@@ -34,8 +34,6 @@ RusturfTunnel_EventScript_Wanda::
 RusturfTunnel_EventScript_WandasBoyfriend::
 	lock
 	faceplayer
-	goto_if_set FLAG_TEMP_1, RusturfTunnel_EventScript_AlreadySpokenTo
-	setflag FLAG_TEMP_1
 	msgbox RusturfTunnel_Text_WhyCantTheyKeepDigging, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
@@ -61,7 +59,6 @@ RusturfTunnel_EventScript_ClearTunnelScene::
 	call_if_eq VAR_TEMP_1, 2, RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
 	call_if_eq VAR_TEMP_1, 3, RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
 	giveitem ITEM_HM04
-	setflag FLAG_RECEIVED_HM04
 	msgbox RusturfTunnel_Text_ExplainStrength, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_TEMP_1, 1, RusturfTunnel_EventScript_BoyfriendApproachWanda1
@@ -333,11 +330,8 @@ RusturfTunnel_EventScript_Peeko::
 //	waitmovement 0
 //	removeobject LOCALID_BRINEY
 //	removeobject LOCALID_PEEKO
-//	clearflag FLAG_DEVON_GOODS_STOLEN
-//	setflag FLAG_RECOVERED_DEVON_GOODS
 //	setvar VAR_RUSTBORO_CITY_STATE, 4
 //	setvar VAR_BRINEY_HOUSE_STATE, 1
-//	setflag FLAG_HIDE_ROUTE_116_MR_BRINEY
 //	release
 //	end
 

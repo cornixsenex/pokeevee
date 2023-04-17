@@ -8,11 +8,11 @@ Aldeon_Leaf_House_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 Aldeon_Leaf_House_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_ROUTE1_STATE, 2, Aldeon_Leaf_House_OnWarp
+	map_script_2 VAR_ROUTE1_STATE, 2, Aldeon_Leaf_House_IntroScene
 	.2byte 0
 
 
-Aldeon_Leaf_House_OnWarp::
+Aldeon_Leaf_House_IntroScene::
 	setvar VAR_ROUTE1_STATE, 3
 	lockall
 	applymovement 1, Common_Movement_FaceRight
@@ -206,10 +206,9 @@ Aldeon_Leaf_House_Text_Dad2::
 	.string "So, what is he your boydriend or...?$"
 
 Aldeon_Leaf_House_Text_Leaf2::
-	.string "A friend.\n"
-	.string "Young master {PLAYER} here rescued\l"
-	.string "me from a viscious incel who tried to\l"
-	.string "assualt me.$"
+	.string "A friend. Young master {PLAYER} here\n"
+	.string "rescued me from a viscious incel who\l"
+	.string "tried to assualt me.$"
 
 Aldeon_Leaf_House_Text_Dad3::
 	.string "Some shithead tried to hurt...$"
@@ -229,10 +228,10 @@ Aldeon_Leaf_House_Text_Leaf4::
 	.string "The legendary Mew?$"
 
 Aldeon_Leaf_House_Text_Dad5::
-	.string "The very same.\n"
-	.string "At first I hardly thought the news was\l"
-	.string "true, and I assumed it was propaganda\l"
-	.string "to celebrate the party's victory but\l"
+	.string "The very same. At first I hardly\n"
+	.string "thought the news was true, and I\l"
+	.string "assumed it was propaganda to\l"
+	.string "celebrate the party's victory but\l"
 	.string "earlier as I was walking home I saw her\l"
 	.string "flying south with my own eyes.$"
 
@@ -243,9 +242,9 @@ Aldeon_Leaf_House_Text_Leaf5::
 Aldeon_Leaf_House_Text_Dad6::
 	.string "Of course we must! To think such things\n"
 	.string "were only myths last week. Not in two\l"
-	.string "thousand years has this happened.\n"
-	.string "So {PLAYER} I'm sure you'll be going\l"
-	.string "with Leaf? Before we go she'll need a\l"
+	.string "thousand years has this happened. So\l"
+	.string "{PLAYER} I'm sure you'll be going with\l"
+	.string "Leaf? Before we go she'll need a\l"
 	.string "Pokemon and you should go let your own\l"
 	.string "family know, but first take this for\l"
 	.string "saving my daughter.$"

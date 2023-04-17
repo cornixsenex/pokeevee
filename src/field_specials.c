@@ -404,7 +404,9 @@ bool32 ShouldDoScottFortreeCall(void)
 
 bool32 ShouldDoScottBattleFrontierCall(void)
 {
-    if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
+    //if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
+	//Flat replace didn't want to remove entire function just in case
+	if (FlagGet(FLAG_HOME_ACHILLES))
     {
         switch (gMapHeader.mapType)
         {
@@ -454,7 +456,8 @@ bool32 ShouldDoRoxanneCall(void)
 
 bool32 ShouldDoRivalRayquazaCall(void)
 {
-    if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
+    //if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
+	if (FlagGet(FLAG_HOME_AENEAS))
     {
         switch (gMapHeader.mapType)
         {

@@ -1511,11 +1511,12 @@ static void Task_NewGameBirchSpeech_ChooseGender(u8 taskId)
             gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
             break;
         case FEMALE:
-            PlaySE(SE_SELECT);
-            gSaveBlock2Ptr->playerGender = gender;
-            NewGameBirchSpeech_ClearGenderWindow(1, 1);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
-            break;
+			NewGameBirchSpeech_ShowGenderMenu();
+            //PlaySE(SE_SELECT);
+            //gSaveBlock2Ptr->playerGender = gender;
+            //NewGameBirchSpeech_ClearGenderWindow(1, 1);
+            //gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            //break;
     }
     gender2 = Menu_GetCursorPos();
     if (gender2 != gTasks[taskId].tPlayerGender)

@@ -3074,11 +3074,13 @@ void TryHideBattleTowerReporter(void)
 {
     if (gSaveBlock2Ptr->frontier.challengeStatus == CHALLENGE_STATUS_SAVING)
         HideBattleTowerReporter();
-    if (FlagGet(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE) == TRUE)
-    {
-        HideBattleTowerReporter();
-        FlagClear(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE);
-    }
+	//DO NOTE I REMOVED THIS FOR HERO FLAGS :D
+	//
+    //if (FlagGet(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE) == TRUE)
+    //{
+    //    HideBattleTowerReporter();
+    //    FlagClear(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE);
+    //}
 }
 
 #define STEVEN_OTID 61226
