@@ -1485,7 +1485,7 @@ CityClara_Church_Text_Dad6::
 	.string "the time has come.$"
 
 CityClara_Church_Text_Sage7::
-	.string "This journey will be long, and ardous. I\n"
+	.string "This journey will be long, and arduous. I\n"
 	.string "wish to help you on your fated quest.\l"
 	.string "Please take one of our ancient holy\l"
 	.string "stones. These jewels have been kept\l"

@@ -286,21 +286,21 @@ SilvanWoods_EventScript_Foster::
 
 
 SilvanWoods_EventScript_Douggie::
-	trainerbattle_single TRAINER_DOUGGIE, SilvanWoods_Text_DouggieIntro, SilvanWoods_Text_FosterLost
+	trainerbattle_single TRAINER_DOUGGIE, SilvanWoods_Text_DouggieIntro, SilvanWoods_Text_DouggieLost
 	msgbox SilvanWoods_Text_DouggiePost
 	closemessage
 	end
 
 
 SilvanWoods_EventScript_Smokey::
-	trainerbattle_single TRAINER_DOUGGIE, SilvanWoods_Text_SmokeyIntro, SilvanWoods_Text_SmokeyLost
+	trainerbattle_single TRAINER_SMOKEY, SilvanWoods_Text_SmokeyIntro, SilvanWoods_Text_SmokeyLost
 	msgbox SilvanWoods_Text_SmokeyPost
 	closemessage
 	end
 
 
 SilvanWoods_EventScript_Stoney::
-	trainerbattle_single TRAINER_DOUGGIE, SilvanWoods_Text_StoneyIntro, SilvanWoods_Text_StoneyLost
+	trainerbattle_single TRAINER_STONEY, SilvanWoods_Text_StoneyIntro, SilvanWoods_Text_StoneyLost
 	msgbox SilvanWoods_Text_StoneyPost
 	closemessage
 	end

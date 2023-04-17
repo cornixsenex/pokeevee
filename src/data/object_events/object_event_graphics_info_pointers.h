@@ -1137,6 +1137,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Green;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldManLyingDown;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigRed;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigYellow;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno;
 
 
 
@@ -1402,6 +1403,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN] =       &gObjectEventGraphicsInfo_OldManLyingDown,
 	[OBJ_EVENT_GFX_BIG_RED] =                  &gObjectEventGraphicsInfo_BigRed,
 	[OBJ_EVENT_GFX_BIG_YELLOW] =               &gObjectEventGraphicsInfo_BigYellow,
+	[OBJ_EVENT_GFX_BRUNO] =                    &gObjectEventGraphicsInfo_Bruno,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 

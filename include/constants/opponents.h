@@ -90,11 +90,11 @@
 #define TRAINER_SYRA		                 85
 #define TRAINER_SKY		                     86
 #define TRAINER_ROCKY	                     87
-#define TRAINER_TYSON	                     88
-#define TRAINER_STU	                         89
-#define TRAINER_ALI	                         90
-#define TRAINER_PATROKLOS                    91
-#define TRAINER_EPEUS                        92
+#define TRAINER_TYSON	                     88  //UNUSED NOW
+#define TRAINER_STU	                         89  //UNUSED NOW
+#define TRAINER_ALI	                         90  //UNUSED NOW
+#define TRAINER_PATROKLOS                    91  //UNUSED NOW
+#define TRAINER_EPEUS                        92  //UNUSED NOW
 #define TRAINER_SANDY                        93
 #define TRAINER_MAGO	                     94
 #define TRAINER_DIDO	                     95
@@ -151,7 +151,7 @@
 #define TRAINER_BIGYELLOW                   146
 #define TRAINER_BIGRED                      147
 #define TRAINER_BIGGREEN                    148
-//BREAK
+//BREAK - NOTE UNUSED TRAINERS ABOVE
 #define TRAINER_STEVE_4                     149
 #define TRAINER_STEVE_5                     150
 #define TRAINER_LUIS                        151

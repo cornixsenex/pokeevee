@@ -485,7 +485,8 @@ const u16 gObjectEventPal_BigRed[] = INCBIN_U16("graphics/object_events/palettes
 const u32 gObjectEventPic_BigYellow[] = INCBIN_U32("graphics/object_events/pics/people/fat_man.4bpp");
 const u16 gObjectEventPal_BigYellow[] = INCBIN_U16("graphics/object_events/palettes/big_yellow.gbapal");
 
-
+const u32 gObjectEventPic_Bruno[] = INCBIN_U32("graphics/object_events/pics/people/bruno.4bpp");
+const u16 gObjectEventPal_Bruno[] = INCBIN_U16("graphics/object_events/palettes/bruno.gbapal");
 
 
 

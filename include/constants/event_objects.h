@@ -279,8 +279,9 @@
 #define OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN         274
 #define OBJ_EVENT_GFX_BIG_RED                    275
 #define OBJ_EVENT_GFX_BIG_YELLOW                 276
+#define OBJ_EVENT_GFX_BRUNO                      277
 
-#define NUM_REGULAR_OBJ_EVENT_GFX                277
+#define NUM_REGULAR_OBJ_EVENT_GFX                278
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)

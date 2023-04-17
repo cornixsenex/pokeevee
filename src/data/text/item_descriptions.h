@@ -3854,6 +3854,11 @@ static const u8 sTattooDesc[] = _(
 	"A tough tattoo it\n"
 	"Says MOM or WOW\n");
 
+static const u8 sDiplomaDesc[] = _(
+	"VNIVERSITAS ARDENS\n"
+	"PRAESES ET SOCII\n"
+	"IN CVIVS REI\n"
+	"TESTIMONIVM HIS...\n");
 
 
 

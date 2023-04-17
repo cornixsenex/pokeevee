@@ -57,9 +57,6 @@ script Aldeon_Leaf_House_IntroScene {
 	load_field_pic (5, 190, 98)
 	msgbox (Aldeon_Leaf_House_Text_Dad6)
 	destroy_field_pic (5)
-	setflag (FLAG_SYS_POKEDEX_GET)
-	setflag (FLAG_SYS_NATIONAL_DEX)
-	special (EnableNationalPokedex)
 	additem (ITEM_POKE_BALL, 5)
 	playfanfare (MUS_OBTAIN_ITEM)
 	msgbox (Aldeon_Leaf_House_Text_DexBallGet)
@@ -196,11 +193,11 @@ text Aldeon_Leaf_House_Text_Dad6 {
 }
 
 text Aldeon_Leaf_House_Text_DexBallGet {
-	format("{PLAYER} recieved the PokeDex and 5 PokeBalls!")
+	format("{PLAYER} recieved 5 PokeBalls!")
 } 
 
 text Aldeon_Leaf_House_Text_Dad7 {
-	format("That Pokedex belonged to my father. The road to Bulbus Town should not be hard. We'll wait for you down at my Club in town you'll recognize it by the big red roof. Now come on Leaf let's go catch Pokemon.")
+	format("Those Pokeballs belonged to my father. The road to Bulbus Town should not be hard. We'll wait for you down at my Club in town you'll recognize it by the big red roof. Now come on Leaf let's go catch Pokemon.")
 }
 
 text Aldeon_Leaf_House_Text_ScottBed {

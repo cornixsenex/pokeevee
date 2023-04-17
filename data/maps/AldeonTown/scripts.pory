@@ -108,7 +108,7 @@ text AldeonTown_Text_FatMan3 {
 }
 
 text AldeonTown_Text_DoorWoman {
-	format("I'm sorry but if you no business with Mr. Johnson then you need to leave/")
+	format("I'm sorry but if you no business with Mr. Johnson then you need to leave.")
 }
 
 text AldeonTown_Text_TownSign {

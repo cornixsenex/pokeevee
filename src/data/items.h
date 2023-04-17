@@ -10015,6 +10015,19 @@ const struct Item gItems[] =
         .secondaryId = 0,
 	},
 
+	[ITEM_DIPLOMA] =
+	{
+		.name = _("DIPLOMA"),
+        .itemId = ITEM_DIPLOMA,
+        .price = 0,
+		.description = sDiplomaDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
 
 
 

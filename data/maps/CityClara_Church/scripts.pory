@@ -1193,7 +1193,7 @@ text CityClara_Church_Text_Dad6 {
 }
 
 text CityClara_Church_Text_Sage7 {
-	format("This journey will be long, and ardous. I wish to help you on your fated quest. Please take one of our ancient holy stones. These jewels have been kept safe within this church one thousand years we've saved them for this task. Now {PLAYER} you must choose wisely which to take.")
+	format("This journey will be long, and arduous. I wish to help you on your fated quest. Please take one of our ancient holy stones. These jewels have been kept safe within this church one thousand years we've saved them for this task. Now {PLAYER} you must choose wisely which to take.")
 }
 
 text CityClara_Church_Text_Sage8 {

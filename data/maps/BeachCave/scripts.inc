@@ -44,6 +44,28 @@ BeachCave_EventScript_Trevor::
 	end
 
 
+BeachCave_EventScript_Hector::
+	lock
+	faceplayer
+	checkitem ITEM_DIPLOMA, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq BeachCave_EventScript_Hector_2
+	msgbox BeachCave_EventScript_Hector_Text_1
+BeachCave_EventScript_Hector_1:
+	closemessage
+	return
+
+BeachCave_EventScript_Hector_2:
+	msgbox BeachCave_EventScript_Hector_Text_0
+	goto BeachCave_EventScript_Hector_1
+
+
+BeachCave_EventScript_Hector_Text_0:
+	.string "ENGLISH$"
+
+BeachCave_EventScript_Hector_Text_1:
+	.string "LATINA$"
+
 Route3_Text_NickIntro::
 	.string "We come here to train! Yodaleeahooh!$"
 

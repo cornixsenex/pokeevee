@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_MARE_W",
       "offset": 0,
-      "map": "MAP_MARE_W"
+      "direction": "right"
     },
     {
-      "direction": "up",
+      "map": "MAP_BULBUS_TOWN",
       "offset": 10,
-      "map": "MAP_BULBUS_TOWN"
+      "direction": "up"
     },
     {
-      "direction": "up",
+      "map": "MAP_ROUTE3",
       "offset": 46,
-      "map": "MAP_ROUTE3"
+      "direction": "up"
     }
   ],
   "object_events": [

@@ -429,7 +429,7 @@ text Route3_Text_Leaf1Post {
 }
 
 text Route3_Text_OldMan {
-	format("Caverna Ithica was this cave's name before The Party changed it to Beach Cave.\p You should only go in if you're prepared.")
+	format("Caverna Ilium was this cave's name before The Party changed it to Beach Cave.\p You should only go in if you're prepared.")
 }
 
 text Route3_Text_Leaf2 {

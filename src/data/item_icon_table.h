@@ -819,6 +819,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_INSURANCE_CARD] = {gItemIcon_RainbowPass, gItemIconPalette_RainbowPass},
     [ITEM_DEATH_STICK] = {gItemIcon_DragonFang, gItemIconPalette_DragonFang},
     [ITEM_TATTOO] = {gItemIcon_ShalourSable, gItemIconPalette_ShalourSable},
+    [ITEM_DIPLOMA] = {gItemIcon_BlunderPolicy, gItemIconPalette_BlunderPolicy},
 
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

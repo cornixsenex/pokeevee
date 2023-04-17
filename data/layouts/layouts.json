@@ -5035,7 +5035,7 @@
       "id": "LAYOUT_BEACH_CAVE",
       "name": "BeachCave_Layout",
       "width": 32,
-      "height": 24,
+      "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/BeachCave/border.bin",

@@ -424,7 +424,7 @@ Route3_Text_Leaf1Post::
 	.string "DAD?!$"
 
 Route3_Text_OldMan::
-	.string "Caverna Ithica was this cave's name\n"
+	.string "Caverna Ilium was this cave's name\n"
 	.string "before The Party changed it to Beach\l"
 	.string "Cave.\p"
 	.string "You should only go in if you're prepared.$"

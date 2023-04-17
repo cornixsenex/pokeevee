@@ -48,6 +48,9 @@ GrandmasCabin_EventScript_EeveeFanfare::
 	call GrandmasCabin_EventScript_FadeOut
 	playfanfare MUS_OBTAIN_ITEM
 	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
 	addvar VAR_ROUTE101_STATE, 1
 	message GrandmasCabin_ObtainedEevee
 	waitmessage

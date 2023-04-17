@@ -62,9 +62,6 @@ Aldeon_Leaf_House_IntroScene::
 	load_field_pic 5, 190, 98
 	msgbox Aldeon_Leaf_House_Text_Dad6
 	destroy_field_pic 5
-	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
 	additem ITEM_POKE_BALL, 5
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Aldeon_Leaf_House_Text_DexBallGet
@@ -250,11 +247,10 @@ Aldeon_Leaf_House_Text_Dad6::
 	.string "saving my daughter.$"
 
 Aldeon_Leaf_House_Text_DexBallGet::
-	.string "{PLAYER} recieved the PokeDex and 5\n"
-	.string "PokeBalls!$"
+	.string "{PLAYER} recieved 5 PokeBalls!$"
 
 Aldeon_Leaf_House_Text_Dad7::
-	.string "That Pokedex belonged to my father.\n"
+	.string "Those Pokeballs belonged to my father.\n"
 	.string "The road to Bulbus Town should not be\l"
 	.string "hard. We'll wait for you down at my Club\l"
 	.string "in town you'll recognize it by the big\l"

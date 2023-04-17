@@ -191,39 +191,20 @@ Route4_EventScript_Rocky_2:
 	goto Route4_EventScript_Rocky_1
 
 
-Route4_EventScript_Tyson::
-	trainerbattle_single TRAINER_TYSON, Route4_Text_TysonIntro, Route4_Text_TysonLost
-	msgbox Route4_Text_TysonPost
+Route4_EventScript_Nestor::
+	lock
+	faceplayer
+	checkitem ITEM_DIPLOMA, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route4_EventScript_Nestor_2
+	msgbox Route4_EventScript_Nestor_Text_1
+Route4_EventScript_Nestor_1:
 	closemessage
-	end
+	return
 
-
-Route4_EventScript_Stu::
-	trainerbattle_single TRAINER_STU, Route4_Text_StuIntro, Route4_Text_StuLost
-	msgbox Route4_Text_StuPost
-	closemessage
-	end
-
-
-Route4_EventScript_Ali::
-	trainerbattle_single TRAINER_ALI, Route4_Text_AliIntro, Route4_Text_AliLost
-	msgbox Route4_Text_AliPost
-	closemessage
-	end
-
-
-Route4_EventScript_Patroklos::
-	trainerbattle_single TRAINER_PATROKLOS, Route4_Text_PatroklosIntro, Route4_Text_PatroklosLost
-	msgbox Route4_Text_PatroklosPost
-	closemessage
-	end
-
-
-Route4_EventScript_Epeus::
-	trainerbattle_single TRAINER_EPEUS, Route4_Text_EpeusIntro, Route4_Text_EpeusLost
-	msgbox Route4_Text_EpeusPost
-	closemessage
-	end
+Route4_EventScript_Nestor_2:
+	msgbox Route4_EventScript_Nestor_Text_0
+	goto Route4_EventScript_Nestor_1
 
 
 Route4_EventScript_Sandy::
@@ -313,6 +294,12 @@ Route4_Movement_RocketExit:
 	walk_left
 	walk_left
 	step_end
+
+Route4_EventScript_Nestor_Text_0:
+	.string "ENGLISH$"
+
+Route4_EventScript_Nestor_Text_1:
+	.string "LATINA$"
 
 Route4_Text_DeliaIntro::
 	.string "We just got out of school. We're here to\n"

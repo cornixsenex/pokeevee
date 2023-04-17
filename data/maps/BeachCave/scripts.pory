@@ -43,6 +43,18 @@ script BeachCave_EventScript_Trevor {
 	end
 }
 
+script BeachCave_EventScript_Hector {
+	lock
+	faceplayer
+	checkitem (ITEM_DIPLOMA, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox("ENGLISH")
+	} else {
+		msgbox("LATINA")
+	}
+	closemessage
+}
+
 text Route3_Text_NickIntro {
 	format("We come here to train! Yodaleeahooh!")
 }

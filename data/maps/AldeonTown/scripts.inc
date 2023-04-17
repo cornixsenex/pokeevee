@@ -122,7 +122,7 @@ AldeonTown_Text_FatMan3::
 
 AldeonTown_Text_DoorWoman::
 	.string "I'm sorry but if you no business with Mr.\n"
-	.string "Johnson then you need to leave/$"
+	.string "Johnson then you need to leave.$"
 
 AldeonTown_Text_TownSign::
 	.string "Aldeon Town - Where Snorlax has the\n"

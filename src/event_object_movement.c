@@ -498,6 +498,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_OLD_MAN_LYING_DOWN      0x1147
 #define OBJ_EVENT_PAL_TAG_BIG_RED                 0x1148
 #define OBJ_EVENT_PAL_TAG_BIG_YELLOW              0x1149
+#define OBJ_EVENT_PAL_TAG_BRUNO                   0x114A
 //HEXDECIMAL ABOVE 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -1436,6 +1437,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_OldManLyingDown,       OBJ_EVENT_PAL_TAG_OLD_MAN_LYING_DOWN},
 	{gObjectEventPal_BigRed,                OBJ_EVENT_PAL_TAG_BIG_RED},
 	{gObjectEventPal_BigYellow,             OBJ_EVENT_PAL_TAG_BIG_YELLOW},
+	{gObjectEventPal_Bruno,                 OBJ_EVENT_PAL_TAG_BRUNO},
     
 	//Pokemon overworlds
     {gObjectEventPalette_Pokemon_Species_001, OBJ_EVENT_PAL_TAG_POKEMON_001},

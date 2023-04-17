@@ -14,24 +14,24 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_BULBUS_TOWN",
       "offset": 0,
-      "map": "MAP_BULBUS_TOWN"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_CITY_CLARA",
       "offset": -45,
-      "map": "MAP_CITY_CLARA"
+      "direction": "right"
     },
     {
-      "direction": "down",
+      "map": "MAP_MARE_WW",
       "offset": -46,
-      "map": "MAP_MARE_WW"
+      "direction": "down"
     },
     {
-      "direction": "up",
+      "map": "MAP_ROUTE17",
       "offset": 9,
-      "map": "MAP_ROUTE17"
+      "direction": "up"
     }
   ],
   "object_events": [
