@@ -149,8 +149,3 @@ Ardor_Uni1F_Movement_LeafExit:
 
 Ardor_Uni1F_Text_Leaf::
 	.string "TESTER$"
-
-Ardor_Uni1F_Text_ArchaeologyDoorSign::
-	.string "MAGISTER INDIANUS ARCHAEOLOGIAE EX\n"
-	.string "ACADEMIA IN PYRAMIDE EST. REVERTETUR\l"
-	.string "IN ANNO PROXIMO$"

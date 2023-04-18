@@ -1340,3 +1340,42 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Warehouse_Blue/scripts.inc"
 
 	.include "data/maps/Warehouse_Yellow/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_GeologyClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_BiologyClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_ChemistryClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_MusicClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_ArithmeticClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_GrammarClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_ArtClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_GeometryClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_AlgebraClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_ComputerClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_HistoryClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_PsychologyClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_CalculusClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_PhysicsClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_PhilosophyClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_LiteratureClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_PoetryClass/scripts.inc"
+
+	.include "data/maps/Ardor_Uni_RhetoricClass/scripts.inc"
+
+
+	.include "data/maps/Ardor_Uni_Office/scripts.inc"

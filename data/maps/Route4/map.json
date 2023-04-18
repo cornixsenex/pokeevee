@@ -423,7 +423,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route4_EventScript_Nestor",
-      "flag": "0"
+      "flag": "FLAG_ROUTE4_HERACLES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",

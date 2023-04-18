@@ -97,7 +97,8 @@
     "Underwater_Route105",
     "Underwater_Route125",
     "GatoCityZoo",
-    "BikeRouteNWS"
+    "BikeRouteNWS",
+    "Ardor_Uni_GeometryClass"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -676,7 +677,25 @@
     "Warehouse_Green",
     "Warehouse_Red",
     "Warehouse_Blue",
-    "Warehouse_Yellow"
+    "Warehouse_Yellow",
+    "Ardor_Uni_GeologyClass",
+    "Ardor_Uni_BiologyClass",
+    "Ardor_Uni_ChemistryClass",
+    "Ardor_Uni_MusicClass",
+    "Ardor_Uni_ArithmeticClass",
+    "Ardor_Uni_GrammarClass",
+    "Ardor_Uni_ArtClass",
+    "Ardor_Uni_AlgebraClass",
+    "Ardor_Uni_ComputerClass",
+    "Ardor_Uni_HistoryClass",
+    "Ardor_Uni_PsychologyClass",
+    "Ardor_Uni_CalculusClass",
+    "Ardor_Uni_PhysicsClass",
+    "Ardor_Uni_PhilosophyClass",
+    "Ardor_Uni_LiteratureClass",
+    "Ardor_Uni_PoetryClass",
+    "Ardor_Uni_RhetoricClass",
+    "Ardor_Uni_Office"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",

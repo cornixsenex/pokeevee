@@ -18,11 +18,60 @@
   ],
   "warp_events": [
     {
-      "x": 14,
+      "x": 17,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI2F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 21,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_OFFICE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_PHYSICS_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_PHILOSOPHY_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_CALCULUS_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_LITERATURE_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_RHETORIC_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_POETRY_CLASS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

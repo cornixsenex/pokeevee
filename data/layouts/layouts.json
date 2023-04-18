@@ -5114,7 +5114,7 @@
     {
       "id": "LAYOUT_ARDOR_UNI1F",
       "name": "Ardor_Uni1F_Layout",
-      "width": 32,
+      "width": 39,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
@@ -5124,7 +5124,7 @@
     {
       "id": "LAYOUT_ARDOR_UNI2F",
       "name": "Ardor_Uni2F_Layout",
-      "width": 32,
+      "width": 39,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
@@ -5134,7 +5134,7 @@
     {
       "id": "LAYOUT_ARDOR_UNI3F",
       "name": "Ardor_Uni3F_Layout",
-      "width": 32,
+      "width": 39,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
@@ -5610,6 +5610,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Warehouse_Green/border.bin",
       "blockdata_filepath": "data/layouts/Warehouse_Green/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARDOR_UNI_OFFICE",
+      "name": "Ardor_Uni_Office_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Ardor_Uni_Office/border.bin",
+      "blockdata_filepath": "data/layouts/Ardor_Uni_Office/map.bin"
     }
   ]
 }

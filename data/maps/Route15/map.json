@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_PHOENIX",
       "offset": 2,
-      "map": "MAP_PHOENIX"
+      "direction": "right"
     },
     {
-      "direction": "left",
+      "map": "MAP_VEGAS",
       "offset": 14,
-      "map": "MAP_VEGAS"
+      "direction": "left"
     }
   ],
   "object_events": [

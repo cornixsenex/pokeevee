@@ -139,7 +139,4 @@ text Ardor_Uni1F_Text_Leaf {
 	format("TESTER")
 }
 
-text Ardor_Uni1F_Text_ArchaeologyDoorSign {
-	format("MAGISTER INDIANUS ARCHAEOLOGIAE EX ACADEMIA IN PYRAMIDE EST. REVERTETUR IN ANNO PROXIMO")
-}
 

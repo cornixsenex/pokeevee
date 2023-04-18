@@ -114,7 +114,6 @@ EventScript_ResetAllBerries::
 
 EventScript_ResetAllMapFlags::
 	@Hide Route4 Heros
-    setflag FLAG_ROUTE4_NESTOR     
     setflag FLAG_ROUTE4_HERACLES   
     setflag FLAG_ROUTE4_ACHILLES   
     setflag FLAG_ROUTE4_HECTOR     

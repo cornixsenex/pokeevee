@@ -147,7 +147,7 @@
 #define FLAG_HOME_PHILOCTETES                0x7B
 #define FLAG_HOME_THESEUS                    0x7C
 #define FLAG_HOME_JASON                      0x7D
-
+#define FLAG_ARDOR_UNI2F_LEAF                0x7E
 
 
 												  ////BREAK
@@ -156,7 +156,6 @@
 
 
 
-#define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0x7E
 #define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
