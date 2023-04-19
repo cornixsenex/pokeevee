@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE15",
       "offset": -2,
       "direction": "left"
+    },
+    {
+      "map": "MAP_FOOTBALL_FIELD",
+      "offset": -9,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -157,6 +162,13 @@
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI1F",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 10,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_PHOENIX_MART",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

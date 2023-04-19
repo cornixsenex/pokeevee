@@ -1379,3 +1379,7 @@ Common_EventScript_LegendaryFlewAway::
 
 
 	.include "data/maps/Ardor_Uni_Office/scripts.inc"
+
+	.include "data/maps/FootballField/scripts.inc"
+
+	.include "data/maps/Phoenix_Mart/scripts.inc"

@@ -714,7 +714,8 @@
     "CityClara_House1",
     "CityClara_PokemonCenter",
     "CityClara_School",
-    "Vegas_Hotel1F"
+    "Vegas_Hotel1F",
+    "Phoenix_Mart"
   ],
   "gMapGroup_IndoorRoute113": [
     "Route113_GlassWorkshop"
@@ -783,7 +784,8 @@
     "MareWW",
     "Route17",
     "Willow",
-    "WillowEast"
+    "WillowEast",
+    "FootballField"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

@@ -1311,7 +1311,7 @@ static const struct TrainerMon sParty_Pippin[] = {
     {
     .iv = 100,
     .lvl = 43,
-    .species = SPECIES_SKARMORY,
+    .species = SPECIES_BELLOSSOM,
     },
     {
     .iv = 100,

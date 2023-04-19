@@ -682,6 +682,7 @@
 #define MAP_CITY_CLARA_POKEMON_CENTER   (14 | (31 << 8))
 #define MAP_CITY_CLARA_SCHOOL           (15 | (31 << 8))
 #define MAP_VEGAS_HOTEL1F               (16 | (31 << 8))
+#define MAP_PHOENIX_MART                (17 | (31 << 8))
 
 // gMapGroup_IndoorRoute113
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (32 << 8))
@@ -751,6 +752,7 @@
 #define MAP_ROUTE17               (53 | (35 << 8))
 #define MAP_WILLOW                (54 | (35 << 8))
 #define MAP_WILLOW_EAST           (55 | (35 << 8))
+#define MAP_FOOTBALL_FIELD        (56 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))

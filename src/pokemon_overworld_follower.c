@@ -1194,8 +1194,8 @@ void POF_CreateMonFromPartySlotId(void)
     if(gSaveBlock2Ptr->follower.partySlotId == 0)
         return;
 
-    if (species > 251)
-        species = gSpeciesLookUpTable[species];
+  //  if (species > 251 && species < 387)
+   //     species = gSpeciesLookUpTable[species];
 
 
     gfx_id = NUM_REGULAR_OBJ_EVENT_GFX + species - 1;
