@@ -192,7 +192,6 @@ static const u16 gSpeciesLookUpTable[] =
     [SPECIES_RAYQUAZA] = 384,
     [SPECIES_JIRACHI] = 385,
     [SPECIES_DEOXYS] = 386,
-	//[SPECIES_TORTERRA] = 389,
 };
 
 #endif
