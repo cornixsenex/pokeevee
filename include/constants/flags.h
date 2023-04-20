@@ -149,6 +149,29 @@
 #define FLAG_HOME_JASON                      0x7D
 #define FLAG_ARDOR_UNI2F_LEAF                0x7E
 
+//Open Class Door Flags - Twenty
+#define FLAG_OPEN_CLASS_GEOLOGY              0x7F
+#define FLAG_OPEN_CLASS_BIOLOGY              0x80 
+#define FLAG_OPEN_CLASS_CHEMISTRY            0x81
+#define FLAG_OPEN_CLASS_MUSIC                0x82
+#define FLAG_OPEN_CLASS_ARITHMETIC           0x83
+#define FLAG_OPEN_CLASS_GRAMMAR              0x84
+#define FLAG_OPEN_CLASS_ART                  0x85
+#define FLAG_OPEN_CLASS_COMPUTER             0x86
+#define FLAG_OPEN_CLASS_ALGEBRA              0x87
+#define FLAG_OPEN_CLASS_GEOMETRY             0x88 
+#define FLAG_OPEN_CLASS_HISTORY              0x89
+#define FLAG_OPEN_CLASS_ARCHAEOLOGY          0x8A 
+#define FLAG_OPEN_CLASS_PSYCHOLOGY           0x8B
+#define FLAG_OPEN_CLASS_PHILOSOPHY           0x8C
+#define FLAG_OPEN_CLASS_PHYSICS              0x8D
+#define FLAG_OPEN_CLASS_CALCULUS             0x8E
+#define FLAG_OPEN_CLASS_LITERATURE           0x8F
+#define FLAG_OPEN_CLASS_POETRY               0x90
+#define FLAG_OPEN_CLASS_RHETORIC             0x91
+#define FLAG_OPEN_CLASS_PE                   0x92
+#define FLAG_PHOENIX_PARTY                   0x93
+#define FLAG_PLEDGE_HAS_KEG                  0x94
 
 												  ////BREAK
 													  
@@ -156,28 +179,7 @@
 
 
 
-#define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
-#define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
-#define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
-#define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
-#define FLAG_RECEIVED_DOLL_LANETTE           0x83
-#define FLAG_RECEIVED_POTION_OLDALE          0x84
-#define FLAG_RECEIVED_AMULET_COIN            0x85
-#define FLAG_PENDING_DAYCARE_EGG             0x86
-#define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
-#define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
-#define FLAG_RECEIVED_HM01                   0x89
-#define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
-#define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
-#define FLAG_RECEIVED_6_SODA_POP             0x8C
-#define FLAG_DEFEATED_SEASHORE_HOUSE         0x8D
-#define FLAG_DEVON_GOODS_STOLEN              0x8E
-#define FLAG_RECOVERED_DEVON_GOODS           0x8F
-#define FLAG_RETURNED_DEVON_GOODS            0x90
-#define FLAG_CAUGHT_LUGIA                    0x91
-#define FLAG_CAUGHT_HO_OH                    0x92
-#define FLAG_MR_BRINEY_SAILING_INTRO         0x93
-#define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
+
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
 #define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
 #define FLAG_RECEIVED_CASTFORM               0x97
@@ -1321,7 +1323,7 @@
 #define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
 #define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
+#define FLAG_PENDING_DAYCARE_EGG                                    0x4EF // Just moved this flag which looked somewhat important for day care stuff
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1

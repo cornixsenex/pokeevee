@@ -5,16 +5,12 @@ Underwater_SeafloorCavern_MapScripts::
 	.byte 0
 
 Underwater_SeafloorCavern_OnTransition:
-	setflag FLAG_LANDMARK_SEAFLOOR_CAVERN
-	goto_if_set FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, Underwater_SeafloorCavern_EventScript_HideSubmarine
 	end
 
 Underwater_SeafloorCavern_EventScript_HideSubmarine::
-	setflag FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE
 	end
 
 Underwater_SeafloorCavern_OnLoad:
-	call_if_set FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, Underwater_SeafloorCavern_EventScript_SetSubmarineGoneMetatiles
 	end
 
 Underwater_SeafloorCavern_EventScript_SetSubmarineGoneMetatiles::

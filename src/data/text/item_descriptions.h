@@ -3860,5 +3860,11 @@ static const u8 sDiplomaDesc[] = _(
 	"IN CVIVS REI\n"
 	"TESTIMONIVM HIS...\n");
 
+static const u8 sKegDesc[] = _(
+	"A large and heavy\n"
+	"tank filled with\n"
+	"beer.\n");
+
+
 
 

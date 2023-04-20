@@ -35,14 +35,14 @@
       "x": 2,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_ARDOR_UNI_PHYSICS_CLASS",
+      "dest_map": "MAP_ARDOR_UNI_PHILOSOPHY_CLASS",
       "dest_warp_id": "0"
     },
     {
       "x": 7,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_ARDOR_UNI_PHILOSOPHY_CLASS",
+      "dest_map": "MAP_ARDOR_UNI_PHYSICS_CLASS",
       "dest_warp_id": "0"
     },
     {

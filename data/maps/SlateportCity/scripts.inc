@@ -34,9 +34,7 @@ SlateportCity_OnTransition:
 	end
 
 SlateportCity_EventScript_EnterSlateport::
-	setflag FLAG_VISITED_SLATEPORT_CITY
 	setvar VAR_CONTEST_HALL_STATE, 0
-	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER
 	return
 
 SlateportCity_EventScript_MovePeopleForSternInterview::
@@ -57,7 +55,6 @@ SlateportCity_EventScript_MovePeopleForSternInterview::
 	return
 
 SlateportCity_EventScript_SetReadyForScottScene::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	getplayerxy VAR_0x8004, VAR_0x8005
 	goto_if_eq VAR_0x8004, 30, SlateportCity_EventScript_MoveScottLeft
 	setobjectxyperm LOCALID_SCOTT, 23, 27
@@ -95,7 +92,6 @@ SlateportCity_EventScript_ScottScene::
 	waitfanfare
 	closemessage
 	delay 30
-	setflag FLAG_ENABLE_SCOTT_MATCH_CALL
 	msgbox SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExit
@@ -103,7 +99,6 @@ SlateportCity_EventScript_ScottScene::
 	removeobject LOCALID_SCOTT
 	setobjectxyperm LOCALID_SCOTT, 10, 12
 	setobjectmovementtype LOCALID_SCOTT, MOVEMENT_TYPE_FACE_DOWN
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 2
 	addvar VAR_SCOTT_STATE, 1
 	releaseall
@@ -268,7 +263,6 @@ SlateportCity_EventScript_Man1SternInterview::
 SlateportCity_EventScript_Woman1::
 	lock
 	faceplayer
-	goto_if_set FLAG_DOCK_REJECTED_DEVON_GOODS, SlateportCity_EventScript_Woman1AquaGone
 	msgbox SlateportCity_Text_WhatsLongLineOverThere, MSGBOX_DEFAULT
 	release
 	end
@@ -284,8 +278,6 @@ SlateportCity_EventScript_BattleTentSign::
 
 SlateportCity_EventScript_SternsShipyardSign::
 	lockall
-	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_SternsShipyardFerryComplete
-	goto_if_set FLAG_BADGE07_GET, SlateportCity_EventScript_SternsShipyardNearsCompletion
 	msgbox SlateportCity_Text_SternsShipyardWantedSign, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -318,7 +310,6 @@ SlateportCity_EventScript_MarketSign::
 
 SlateportCity_EventScript_HarborSign::
 	lockall
-	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_EventScript_HarborSignFerryComplete
 	msgbox SlateportCity_Text_HarborFerryUnderConstruction, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -618,10 +609,6 @@ SlateportCity_EventScript_CaptStern::
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerEnterHarbor
 	waitmovement 0
 	removeobject LOCALID_CAPT_STERN
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE
 	setvar VAR_SLATEPORT_CITY_STATE, 2
 	warp MAP_SLATEPORT_CITY_HARBOR, 11, 14
 	waitstate

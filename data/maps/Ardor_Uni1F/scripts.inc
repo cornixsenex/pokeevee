@@ -1,6 +1,11 @@
 Ardor_Uni1F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_LOAD
 	map_script MAP_SCRIPT_ON_TRANSITION, Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call Ardor_Uni1F_EventScript_OpenDoors
+	return
 
 Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	compare VAR_ARDOR_UNI, 1
@@ -18,134 +23,48 @@ Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
 	goto Ardor_Uni1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 
-Ardor_Uni1F_EventScript_LeafTrigger1::
-	lock
-	setvar VAR_ARDOR_UNI, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement 1, Ardor_Uni1F_Movement_LeafApproach1
-	waitmovement 0
-	load_field_pic 4, 190, 98
-	msgbox Ardor_Uni1F_Text_Leaf
-	closemessage
-	destroy_field_pic 4
-	applymovement 1, Ardor_Uni1F_Movement_LeafExit
-	waitmovement 0
-	setflag FLAG_ARDOR_UNI1F_LEAF
-	removeobject 1
-	release
+Ardor_Uni1F_EventScript_OpenDoors::
+	goto_if_set FLAG_OPEN_CLASS_GEOLOGY, Ardor_Uni1F_EventScript_OpenDoors_2
+Ardor_Uni1F_EventScript_OpenDoors_1:
+	goto_if_set FLAG_OPEN_CLASS_BIOLOGY, Ardor_Uni1F_EventScript_OpenDoors_5
+Ardor_Uni1F_EventScript_OpenDoors_4:
+	goto_if_set FLAG_OPEN_CLASS_CHEMISTRY, Ardor_Uni1F_EventScript_OpenDoors_8
+Ardor_Uni1F_EventScript_OpenDoors_7:
+	goto_if_set FLAG_OPEN_CLASS_MUSIC, Ardor_Uni1F_EventScript_OpenDoors_11
+Ardor_Uni1F_EventScript_OpenDoors_10:
+	goto_if_set FLAG_OPEN_CLASS_ARITHMETIC, Ardor_Uni1F_EventScript_OpenDoors_14
+Ardor_Uni1F_EventScript_OpenDoors_13:
+	goto_if_set FLAG_OPEN_CLASS_GRAMMAR, Ardor_Uni1F_EventScript_OpenDoors_17
+Ardor_Uni1F_EventScript_OpenDoors_16:
+	goto_if_set FLAG_OPEN_CLASS_ART, Ardor_Uni1F_EventScript_OpenDoors_20
+Ardor_Uni1F_EventScript_OpenDoors_19:
 	end
 
+Ardor_Uni1F_EventScript_OpenDoors_2:
+	setmetatile 2, 9, METATILE_General_Door, 0
+	goto Ardor_Uni1F_EventScript_OpenDoors_1
 
-Ardor_Uni1F_EventScript_LeafTrigger2::
-	lock
-	setvar VAR_ARDOR_UNI, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement 1, Ardor_Uni1F_Movement_LeafApproach2
-	waitmovement 0
-	load_field_pic 4, 190, 98
-	msgbox Ardor_Uni1F_Text_Leaf
-	closemessage
-	destroy_field_pic 4
-	applymovement 1, Ardor_Uni1F_Movement_LeafExit
-	waitmovement 0
-	setflag FLAG_ARDOR_UNI1F_LEAF
-	removeobject 1
-	release
-	end
+Ardor_Uni1F_EventScript_OpenDoors_5:
+	setmetatile 7, 9, METATILE_General_Door, 0
+	goto Ardor_Uni1F_EventScript_OpenDoors_4
 
+Ardor_Uni1F_EventScript_OpenDoors_8:
+	setmetatile 12, 9, METATILE_General_Door, 0
+	goto Ardor_Uni1F_EventScript_OpenDoors_7
 
-Ardor_Uni1F_EventScript_LeafTrigger3::
-	lock
-	setvar VAR_ARDOR_UNI, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement 1, Ardor_Uni1F_Movement_LeafApproach3
-	waitmovement 0
-	load_field_pic 4, 190, 98
-	msgbox Ardor_Uni1F_Text_Leaf
-	closemessage
-	destroy_field_pic 4
-	applymovement 1, Ardor_Uni1F_Movement_LeafExit
-	waitmovement 0
-	setflag FLAG_ARDOR_UNI1F_LEAF
-	removeobject 1
-	release
-	end
+Ardor_Uni1F_EventScript_OpenDoors_11:
+	setmetatile 17, 1, METATILE_General_Door, 0
+	goto Ardor_Uni1F_EventScript_OpenDoors_10
 
+Ardor_Uni1F_EventScript_OpenDoors_14:
+	setmetatile 26, 9, METATILE_General_Door, 0
+	goto Ardor_Uni1F_EventScript_OpenDoors_13
 
-Ardor_Uni1F_EventScript_LeafTrigger4::
-	lock
-	setvar VAR_ARDOR_UNI, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement 1, Ardor_Uni1F_Movement_LeafApproach4
-	waitmovement 0
-	load_field_pic 4, 190, 98
-	msgbox Ardor_Uni1F_Text_Leaf
-	closemessage
-	destroy_field_pic 4
-	applymovement 1, Ardor_Uni1F_Movement_LeafExit
-	waitmovement 0
-	setflag FLAG_ARDOR_UNI1F_LEAF
-	removeobject 1
-	release
-	end
+Ardor_Uni1F_EventScript_OpenDoors_17:
+	setmetatile 31, 9, METATILE_General_Door, 0
+	goto Ardor_Uni1F_EventScript_OpenDoors_16
 
+Ardor_Uni1F_EventScript_OpenDoors_20:
+	setmetatile 36, 9, METATILE_General_Door, 0
+	goto Ardor_Uni1F_EventScript_OpenDoors_19
 
-Ardor_Uni1F_EventScript_LeafTrigger5::
-	lock
-	setvar VAR_ARDOR_UNI, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement 1, Ardor_Uni1F_Movement_LeafApproach5
-	waitmovement 0
-	load_field_pic 4, 190, 98
-	msgbox Ardor_Uni1F_Text_Leaf
-	closemessage
-	destroy_field_pic 4
-	applymovement 1, Ardor_Uni1F_Movement_LeafExit
-	waitmovement 0
-	setflag FLAG_ARDOR_UNI1F_LEAF
-	removeobject 1
-	release
-	end
-
-
-Ardor_Uni1F_Movement_LeafApproach1:
-	walk_left
-	walk_diag_southwest
-	face_down
-	step_end
-
-Ardor_Uni1F_Movement_LeafApproach2:
-	walk_diag_southwest
-	face_down
-	step_end
-
-Ardor_Uni1F_Movement_LeafApproach3:
-	walk_down
-	step_end
-
-Ardor_Uni1F_Movement_LeafApproach4:
-	walk_diag_southeast
-	face_down
-	step_end
-
-Ardor_Uni1F_Movement_LeafApproach5:
-	walk_right
-	walk_diag_southeast
-	face_down
-	step_end
-
-Ardor_Uni1F_Movement_LeafExit:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-Ardor_Uni1F_Text_Leaf::
-	.string "TESTER$"

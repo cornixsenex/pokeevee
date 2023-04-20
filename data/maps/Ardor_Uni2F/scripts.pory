@@ -4,9 +4,34 @@ const OBJ_EVENT_LEAF = 1
 mapscripts Ardor_Uni2F_MapScripts {
 
 	MAP_SCRIPT_ON_LOAD {
+		call (Ardor_Uni2F_EventScript_OpenDoors)
 	}
 
 }
+
+script Ardor_Uni2F_EventScript_OpenDoors {
+	if (flag(FLAG_OPEN_CLASS_COMPUTER) ){
+		setmetatile (2, 9, METATILE_General_Door, 0)
+	}
+	if (flag(FLAG_OPEN_CLASS_ALGEBRA) ){
+		setmetatile (7, 9, METATILE_General_Door, 0)
+	}
+	if (flag(FLAG_OPEN_CLASS_GEOMETRY) ){
+		setmetatile (12, 9, METATILE_General_Door, 0)
+	}
+	if (flag(FLAG_OPEN_CLASS_HISTORY) ){
+		setmetatile (26, 9, METATILE_General_Door, 0)
+	}
+	if (flag(FLAG_OPEN_CLASS_ARCHAEOLOGY) ){
+		setmetatile (31, 9, METATILE_General_Door, 0)
+	}
+	if (flag(FLAG_OPEN_CLASS_PSYCHOLOGY) ){
+		setmetatile (36, 9, METATILE_General_Door, 0)
+	}
+	end
+}
+
+
 
 script Ardor_Uni2F_EventScript_Leaf {
 	lock

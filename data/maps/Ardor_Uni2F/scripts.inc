@@ -3,7 +3,48 @@ Ardor_Uni2F_MapScripts::
 	.byte 0
 
 Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call Ardor_Uni2F_EventScript_OpenDoors
 	return
+
+
+Ardor_Uni2F_EventScript_OpenDoors::
+	goto_if_set FLAG_OPEN_CLASS_COMPUTER, Ardor_Uni2F_EventScript_OpenDoors_2
+Ardor_Uni2F_EventScript_OpenDoors_1:
+	goto_if_set FLAG_OPEN_CLASS_ALGEBRA, Ardor_Uni2F_EventScript_OpenDoors_5
+Ardor_Uni2F_EventScript_OpenDoors_4:
+	goto_if_set FLAG_OPEN_CLASS_GEOMETRY, Ardor_Uni2F_EventScript_OpenDoors_8
+Ardor_Uni2F_EventScript_OpenDoors_7:
+	goto_if_set FLAG_OPEN_CLASS_HISTORY, Ardor_Uni2F_EventScript_OpenDoors_11
+Ardor_Uni2F_EventScript_OpenDoors_10:
+	goto_if_set FLAG_OPEN_CLASS_ARCHAEOLOGY, Ardor_Uni2F_EventScript_OpenDoors_14
+Ardor_Uni2F_EventScript_OpenDoors_13:
+	goto_if_set FLAG_OPEN_CLASS_PSYCHOLOGY, Ardor_Uni2F_EventScript_OpenDoors_17
+Ardor_Uni2F_EventScript_OpenDoors_16:
+	end
+
+Ardor_Uni2F_EventScript_OpenDoors_2:
+	setmetatile 2, 9, METATILE_General_Door, 0
+	goto Ardor_Uni2F_EventScript_OpenDoors_1
+
+Ardor_Uni2F_EventScript_OpenDoors_5:
+	setmetatile 7, 9, METATILE_General_Door, 0
+	goto Ardor_Uni2F_EventScript_OpenDoors_4
+
+Ardor_Uni2F_EventScript_OpenDoors_8:
+	setmetatile 12, 9, METATILE_General_Door, 0
+	goto Ardor_Uni2F_EventScript_OpenDoors_7
+
+Ardor_Uni2F_EventScript_OpenDoors_11:
+	setmetatile 26, 9, METATILE_General_Door, 0
+	goto Ardor_Uni2F_EventScript_OpenDoors_10
+
+Ardor_Uni2F_EventScript_OpenDoors_14:
+	setmetatile 31, 9, METATILE_General_Door, 0
+	goto Ardor_Uni2F_EventScript_OpenDoors_13
+
+Ardor_Uni2F_EventScript_OpenDoors_17:
+	setmetatile 36, 9, METATILE_General_Door, 0
+	goto Ardor_Uni2F_EventScript_OpenDoors_16
 
 
 Ardor_Uni2F_EventScript_Leaf::

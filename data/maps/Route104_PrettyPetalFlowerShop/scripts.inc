@@ -5,10 +5,6 @@ Route104_PrettyPetalFlowerShop_MapScripts::
 	.byte 0
 
 Route104_PrettyPetalFlowerShop_OnTransition:
-	setflag FLAG_LANDMARK_FLOWER_SHOP
-	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
-	goto_if_unset FLAG_BADGE03_GET, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
-	setflag FLAG_TEMP_1
 	end
 
 Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
@@ -18,10 +14,7 @@ Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
 Route104_PrettyPetalFlowerShop_EventScript_ShopOwner::
 	lock
 	faceplayer
-	goto_if_set FLAG_TEMP_1, Route104_PrettyPetalFlowerShop_EventScript_SellDecorations
 	msgbox Route104_PrettyPetalFlowerShop_Text_ThisIsPrettyPetalFlowerShop, MSGBOX_DEFAULT
-	goto_if_set FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_PrettyPetalFlowerShop_EventScript_AlreadyMet
-	setflag FLAG_MET_PRETTY_PETAL_SHOP_OWNER
 	msgbox Route104_PrettyPetalFlowerShop_Text_IntroLearnAboutBerries, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, Route104_PrettyPetalFlowerShop_EventScript_ExplainBerries
 	call_if_eq VAR_RESULT, NO, Route104_PrettyPetalFlowerShop_EventScript_DontExplainBerries
@@ -81,13 +74,11 @@ Route104_PrettyPetalFlowerShop_EventScript_RandomBerryGirl::
 	lock
 	faceplayer
 	dotimebasedevents
-	goto_if_set FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY, Route104_PrettyPetalFlowerShop_EventScript_AlreadyReceivedBerry
 	msgbox Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers, MSGBOX_DEFAULT
 	random 8
 	addvar VAR_RESULT, FIRST_BERRY_INDEX
 	giveitem VAR_RESULT
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
-	setflag FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY
 	msgbox Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries, MSGBOX_DEFAULT
 	release
 	end

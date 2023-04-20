@@ -10028,6 +10028,19 @@ const struct Item gItems[] =
         .secondaryId = 0,
 	},
 
+	[ITEM_KEG] =
+	{
+		.name = _("KEG"),
+        .itemId = ITEM_KEG,
+        .price = 0,
+		.description = sKegDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
 
 
 

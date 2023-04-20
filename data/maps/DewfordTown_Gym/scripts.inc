@@ -136,7 +136,6 @@ DewfordTown_Gym_EventScript_Brawly::
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch
-	goto_if_unset FLAG_RECEIVED_TM08, DewfordTown_Gym_EventScript_GiveBulkUp2
 	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -147,8 +146,6 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis, MSGBOX_DEFAULT
-	setflag FLAG_DEFEATED_DEWFORD_GYM
-	setflag FLAG_BADGE02_GET
 	addvar VAR_PETALBURG_GYM_STATE, 1
 	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
 	setvar VAR_0x8008, 2
@@ -161,9 +158,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	waitfanfare
 	closemessage
 	delay 30
-	setflag FLAG_ENABLE_BRAWLY_MATCH_CALL
 	setvar VAR_ROXANNE_CALL_STEP_COUNTER, 0
-	setflag FLAG_ENABLE_ROXANNE_FIRST_CALL
 	release
 	end
 
@@ -171,14 +166,12 @@ DewfordTown_Gym_EventScript_GiveBulkUp::
 	giveitem ITEM_TM08
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_BagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM08
 	return
 
 DewfordTown_Gym_EventScript_GiveBulkUp2:
 	giveitem ITEM_TM08
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM08
 	release
 	end
 
@@ -250,7 +243,6 @@ DewfordTown_Gym_EventScript_LilithBrightenRoom::
 DewfordTown_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
 	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end
@@ -262,13 +254,11 @@ DewfordTown_Gym_EventScript_GymGuidePostVictory::
 
 DewfordTown_Gym_EventScript_LeftGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE02_GET, DewfordTown_Gym_EventScript_GymStatueCertified
 	goto DewfordTown_Gym_EventScript_GymStatue
 	end
 
 DewfordTown_Gym_EventScript_RightGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE02_GET, DewfordTown_Gym_EventScript_GymStatueCertified
 	goto DewfordTown_Gym_EventScript_GymStatue
 	end
 

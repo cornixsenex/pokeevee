@@ -25,9 +25,6 @@ SootopolisCity_MapScripts::
 	.byte 0
 
 SootopolisCity_OnLoad:
-	call_if_unset FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_LockGymDoor
-	goto_if_unset FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, SootopolisCity_EventScript_LegendariesNotArrived
-	call_if_unset FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_LockHouseDoors
 	end
 
 SootopolisCity_EventScript_LegendariesNotArrived::
@@ -50,7 +47,6 @@ SootopolisCity_EventScript_LockGymDoor::
 	return
 
 SootopolisCity_OnTransition:
-	setflag FLAG_VISITED_SOOTOPOLIS_CITY
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call SootopolisCity_EventScript_SetWeather
@@ -68,7 +64,6 @@ SootopolisCity_OnTransition:
 	end
 
 SootopolisCity_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 SootopolisCity_EventScript_SetBattleSpectators::
@@ -115,7 +110,6 @@ SootopolisCity_EventScript_SetDownpour::
 	return
 
 SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos::
-	goto_if_set FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN, SootopolisCity_EventScript_SetEnterCaveOfOriginObjPos
 	return
 
 SootopolisCity_EventScript_SetEnterCaveOfOriginObjPos::
@@ -260,7 +254,6 @@ SootopolisCity_EventScript_LegendariesSceneFromPokeCenter::
 	waitmovement 0
 	special RemoveCameraObject
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 2
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -360,7 +353,6 @@ SootopolisCity_EventScript_LegendariesSceneFromDive::
 	waitmovement 0
 	special RemoveCameraObject
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 2
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -526,12 +518,9 @@ SootopolisCity_EventScript_RayquazaSceneFromPokeCenter::
 	removeobject LOCALID_RAYQUAZA
 	special WaitWeather
 	waitstate
-	clearflag FLAG_SYS_WEATHER_CTRL
 	setvar VAR_SKY_PILLAR_STATE, 3
-//	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
 	fadenewbgm MUS_SOOTOPOLIS
 	delay 120
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	warpwhitefade MAP_SOOTOPOLIS_CITY, 43, 32
 	waitstate
 	end
@@ -579,12 +568,9 @@ SootopolisCity_EventScript_RayquazaSceneFromDive::
 	removeobject LOCALID_RAYQUAZA
 	special WaitWeather
 	waitstate
-	clearflag FLAG_SYS_WEATHER_CTRL
 	setvar VAR_SKY_PILLAR_STATE, 2
-//	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
 	fadenewbgm MUS_SURF
 	delay 120
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	warpwhitefade MAP_SOOTOPOLIS_CITY, 29, 53
 	waitstate
 	end
@@ -729,14 +715,12 @@ SootopolisCity_EventScript_KiriRayquaza::
 SootopolisCity_EventScript_KiriGiveBerry::
 	dotimebasedevents
 	special GetPlayerBigGuyGirlString
-	goto_if_set FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY, SootopolisCity_EventScript_KiriReceivedBerry
 	msgbox SootopolisCity_Text_NameIsKiriHaveOneOfThese, MSGBOX_DEFAULT
 	random NUM_KIRI_BERRIES
 	addvar VAR_RESULT, NUM_KIRI_BERRIES_SKIPPED
 	addvar VAR_RESULT, FIRST_BERRY_INDEX
 	giveitem VAR_RESULT
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY
 	msgbox SootopolisCity_Text_GiveYouThisBerryToo, MSGBOX_DEFAULT
 	random 2
 	goto_if_eq VAR_RESULT, 0, SootopolisCity_EventScript_GiveFigyBerry
@@ -856,7 +840,6 @@ SootopolisCity_EventScript_Boy1::
 	applymovement LOCALID_BOY_1, Common_Movement_FacePlayer
 	waitmovement 0
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_Boy1Rayquaza
-	goto_if_set FLAG_SYS_GAME_CLEAR, SootopolisCity_EventScript_Boy1GameClear
 	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_Boy1Normal
 	goto_if_le VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_Boy1Normal
 	msgbox SootopolisCity_Text_GiantPokemonSuddenlyAppeared, MSGBOX_DEFAULT
@@ -897,11 +880,9 @@ SootopolisCity_EventScript_Steven::
 	lockall
 	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
 	waitmovement 0
-	call_if_unset FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN, SootopolisCity_EventScript_StevenLeadPlayerCaveOfOrigin
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_StevenHelpWallace
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SootopolisCity_EventScript_StevenHelpedWallace
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_StevenHelpedWallace
-	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_StevenMaxieArchieLeft
 	msgbox SootopolisCity_Text_SoThatsRayquaza, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -939,7 +920,6 @@ SootopolisCity_EventScript_StevenLeadPlayerCaveOfOrigin::
 	waitmovement 0
 	msgbox SootopolisCity_Text_HereWereAreHelpWallace, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN
 	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerEnterCaveOfOrigin
 	waitmovement 0
 	warp MAP_CAVE_OF_ORIGIN_ENTRANCE, 9, 20
@@ -1300,8 +1280,6 @@ SootopolisCity_EventScript_Wallace::
 	lock
 	faceplayer
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_GoToSkyPillar
-	goto_if_set FLAG_RECEIVED_HM07, SootopolisCity_EventScript_GoToGym
-	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_GiveWaterfall
 	msgbox SootopolisCity_Text_AquaMagmaDidntMeanHarm, MSGBOX_DEFAULT
 	release
 	end
@@ -1309,7 +1287,6 @@ SootopolisCity_EventScript_Wallace::
 SootopolisCity_EventScript_GiveWaterfall::
 	msgbox SootopolisCity_Text_ThankYouForHelpAcceptThis, MSGBOX_DEFAULT
 	giveitem ITEM_HM07
-	setflag FLAG_RECEIVED_HM07
 	msgbox SootopolisCity_Text_ExplainWaterfallGoToGym, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, SootopolisCity_EventScript_WallaceMoveFromGym
@@ -1362,8 +1339,6 @@ SootopolisCity_EventScript_Maxie::
 
 SootopolisCity_EventScript_MaxieRayquaza::
 	msgbox SootopolisCity_Text_AfterAllOurScheming, MSGBOX_DEFAULT
-	setflag FLAG_MET_MAXIE_SOOTOPOLIS
-	goto_if_set FLAG_MET_ARCHIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
 	end
 
@@ -1377,17 +1352,10 @@ SootopolisCity_EventScript_Archie::
 
 SootopolisCity_EventScript_ArchieRayquaza::
 	msgbox SootopolisCity_Text_TryingMeaninglessToPokemon, MSGBOX_DEFAULT
-	setflag FLAG_MET_ARCHIE_SOOTOPOLIS
-	goto_if_set FLAG_MET_MAXIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
 	end
 
 SootopolisCity_EventScript_MaxieArchieLeave::
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE
-	setflag FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE
-	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE
-	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE
 	setvar VAR_MT_PYRE_STATE, 2
 	warpsilent MAP_SOOTOPOLIS_CITY, 31, 34
 	waitstate

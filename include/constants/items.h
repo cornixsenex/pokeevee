@@ -948,8 +948,9 @@
 #define ITEM_DEATH_STICK 768
 #define ITEM_TATTOO      769
 #define ITEM_DIPLOMA      770
+#define ITEM_KEG      771
 
-#define ITEMS_COUNT 771
+#define ITEMS_COUNT 772
 
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 

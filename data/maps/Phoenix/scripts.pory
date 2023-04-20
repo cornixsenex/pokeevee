@@ -1,1 +1,71 @@
+
+const OBJ_EVENT_FRATBOY = 5
+
 mapscripts Phoenix_MapScripts {}
+
+script Phoenix_EventScript_PartyTrigger {
+	if (flag(FLAG_PHOENIX_PARTY)) {
+		end
+	} else {
+		lock
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+		applymovement(OBJ_EVENT_FRATBOY, Common_Movement_FaceLeft)
+		waitmovement (0)
+		msgbox(Phoenix_Text_FratBoyBlockA)
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		applymovement(OBJ_EVENT_FRATBOY, Common_Movement_FaceDown)
+		waitmovement (0)
+		release
+		end
+	}
+}
+
+script Phoenix_EventScript_Pledge {
+	lock
+	faceplayer
+	if (flag(FLAG_PLEDGE_HAS_KEG) ) {
+		msgbox(Phoenix_Text_Pledge3)
+		closemessage
+	} else {
+		msgbox(Phoenix_Text_Pledge1)
+		closemessage
+		checkitem (ITEM_KEG)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox(Phoenix_Text_Pledge2, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				removeitem (ITEM_KEG)
+				setflag (FLAG_PLEDGE_HAS_KEG)
+				msgbox(Phoenix_Text_Pledge3)
+				closemessage
+			} else {
+				msgbox(Phoenix_Text_Pledge2No)
+				closemessage
+			}
+		}
+	}
+	release
+	end
+}
+
+text Phoenix_Text_Pledge1 {
+	format("This is no good! I want to join the frat but they won't let me join their big party. Maybe if I threw a big party here They'd think I'm cool and let me join there frat but I don't have a Keg... What can I do?")
+}
+
+text Phoenix_Text_Pledge2 {
+	format("No way! You have a keg? Is that for me?")
+}
+
+text Phoenix_Text_Pledge2No {
+	format("Whatever can I do to join the frat?")
+}
+
+text Phoenix_Text_Pledge3 {
+	format("Thank you so much! This is gonna be sweet! Go tell the boys party at the frat house. I'll prepare everything for the party.")
+}
+
+text Phoenix_Text_FratBoyBlockA {
+	format("Hey watch out bro! We're mud wrestling here!")
+}

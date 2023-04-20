@@ -19,7 +19,6 @@ FortreeCity_Gym_EventScript_Winona::
 	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaRematch
-	goto_if_unset FLAG_RECEIVED_TM40, FortreeCity_Gym_EventScript_GiveAerialAce2
 	msgbox FortreeCity_Gym_Text_WinonaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -29,8 +28,6 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis, MSGBOX_DEFAULT
-	setflag FLAG_DEFEATED_FORTREE_GYM
-	setflag FLAG_BADGE06_GET
 	setvar VAR_0x8008, 6
 	call Common_EventScript_SetGymTrainers
 	call FortreeCity_Gym_EventScript_GiveAerialAce
@@ -41,9 +38,7 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	waitfanfare
 	closemessage
 	delay 30
-	setflag FLAG_ENABLE_WINONA_MATCH_CALL
 	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
-	setflag FLAG_SCOTT_CALL_FORTREE_GYM
 	release
 	end
 
@@ -51,7 +46,6 @@ FortreeCity_Gym_EventScript_GiveAerialAce2::
 	giveitem ITEM_TM40
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM40
 	release
 	end
 
@@ -59,7 +53,6 @@ FortreeCity_Gym_EventScript_GiveAerialAce::
 	giveitem ITEM_TM40
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM40
 	return
 
 FortreeCity_Gym_EventScript_WinonaRematch::
@@ -100,7 +93,6 @@ FortreeCity_Gym_EventScript_Darius::
 FortreeCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_FORTREE_GYM, FortreeCity_Gym_EventScript_GymGuidePostVictory
 	msgbox FortreeCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end
@@ -112,13 +104,11 @@ FortreeCity_Gym_EventScript_GymGuidePostVictory::
 
 FortreeCity_Gym_EventScript_LeftGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE06_GET, FortreeCity_Gym_EventScript_GymStatueCertified
 	goto FortreeCity_Gym_EventScript_GymStatue
 	end
 
 FortreeCity_Gym_EventScript_RightGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE06_GET, FortreeCity_Gym_EventScript_GymStatueCertified
 	goto FortreeCity_Gym_EventScript_GymStatue
 	end
 
