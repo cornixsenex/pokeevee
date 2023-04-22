@@ -131,6 +131,7 @@
 #define VAR_HOSPITAL_STATE                               0x4069 // Man on 2nd floor state
 #define VAR_SALTYSPITOON_STATE                           0x406B // Controls line and door to the salty spitoon
 #define VAR_GANG_STATE                                   0x406C // Controls SS and warehouse quest
+#define VAR_UNI_STATE                                    0x406D // Set by Uni Consul
 
 
 
@@ -140,7 +141,6 @@
 
 
 
-#define VAR_ROUTE114_STATE                               0x406D // Unused Var
 #define VAR_ROUTE115_STATE                               0x406E // Unused Var
 #define VAR_ROUTE116_STATE                               0x406F
 #define VAR_ROUTE117_STATE                               0x4070 // Unused Var
@@ -287,7 +287,7 @@
 #define VAR_ROBUSTUS_STATE                   			 0x40FB // Controls events in Robustus namely the campers and leaf event; set to 7 on exeunt; triggers leaf before rock tunnel then set to 8; triggers rival ambush then set to 9;
 #define VAR_ROUTE6_STATE                     			 0x40FC // Triggers J&J event
 #define VAR_CAMPLODGE                        			 0x40FD // Controls camper / rocks
-#define VAR_ARDOR_UNI                    	 			 0x40FE // Set to 1 after leaf intro, set to 2 after Indy returns set to 3 after rebel reveal set to 4 after Attack Begins  
+#define VAR_INDY_STATE                    	 			 0x40FE // Set to 1 after leaf intro, set to 2 after Indy returns set to 3 after rebel reveal set to 4 after Attack Begins  
 #define VAR_UNUSED_0x40FF                    			 0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

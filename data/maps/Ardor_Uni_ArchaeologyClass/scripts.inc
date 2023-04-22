@@ -8,7 +8,7 @@ Ardor_Uni_ArchaeologyClass_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 
 Ardor_Uni_ArchaeologyClass_OnTransition::
-	compare VAR_ARDOR_UNI, 3
+	compare VAR_INDY_STATE, 3
 	goto_if_ge Ardor_Uni_ArchaeologyClass_OnTransition_2
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
 Ardor_Uni_ArchaeologyClass_OnTransition_1:
@@ -41,7 +41,7 @@ Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels::
 
 
 Ardor_Uni_ArchaeologyClass_EventScript_AddRebels::
-	setvar VAR_ARDOR_UNI, 3
+	setvar VAR_INDY_STATE, 3
 	clearflag FLAG_ARCHAELOGY_CLASS_HIDEREBELS
 	addobject 11
 	showobjectat 11, MAP_ARDOR_UNI_ARCHAEOLOGY_CLASS
@@ -171,7 +171,7 @@ Ardor_Uni_ArchaeologyClass_EventScript_Maxie_5:
 
 
 Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack::
-	setvar VAR_ARDOR_UNI, 4
+	setvar VAR_INDY_STATE, 4
 	clearflag FLAG_PYRAMIDS_HIDEMAXIE
 	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack
 	closemessage

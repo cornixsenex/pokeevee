@@ -193,7 +193,7 @@
       "x": 4,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_ARDOR_UNI",
+      "var": "VAR_INDY_STATE",
       "var_value": "2",
       "script": "Ardor_Uni_ArchaeologyClass_EventScript_LeafTrigger"
     },
@@ -202,7 +202,7 @@
       "x": 5,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_ARDOR_UNI",
+      "var": "VAR_INDY_STATE",
       "var_value": "2",
       "script": "Ardor_Uni_ArchaeologyClass_EventScript_LeafTrigger"
     },
@@ -211,7 +211,7 @@
       "x": 6,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_ARDOR_UNI",
+      "var": "VAR_INDY_STATE",
       "var_value": "2",
       "script": "Ardor_Uni_ArchaeologyClass_EventScript_LeafTrigger"
     },
@@ -220,7 +220,7 @@
       "x": 7,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_ARDOR_UNI",
+      "var": "VAR_INDY_STATE",
       "var_value": "2",
       "script": "Ardor_Uni_ArchaeologyClass_EventScript_LeafTrigger"
     }

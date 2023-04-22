@@ -1,20 +1,58 @@
+
+const OBJ_EVENT_CONSULL = 1
+const OBJ_EVENT_CONSULR = 2
+
 mapscripts Ardor_Uni_Office_MapScripts {
-
-
-
 
 	}
 
-script Ardor_Uni_Office_EventScript_Consul {
+
+script Ardor_Uni_Office_EventScript_ConsulL {
 	lock
 	faceplayer
-	//I don't believe we've met
-	//setvar
-	//if done then donation else
-	//If you would like to sign up for classes it is 10,000 a semester
-	//if yes then set gradevar to started grade(x)
-
+	if (var(VAR_UNI_STATE) > 0) {
+		call (Ardor_Uni_Office_EventScript_Consul)
+	} else {
+		setvar (VAR_UNI_STATE, 1)
+		msgbox(Ardor_Uni_Office_Text_ConsulLIntro)
+		closemessage
+		call (Ardor_Uni_Office_EventScript_Consul)
+	}
+	applymovement (OBJ_EVENT_CONSULL, Common_Movement_FaceDown)
+	waitmovement (0)
 	release
 	end
 }
 
+script Ardor_Uni_Office_EventScript_ConsulR {
+	lock
+	faceplayer
+	if (var(VAR_UNI_STATE) > 0) {
+		call (Ardor_Uni_Office_EventScript_Consul)
+	} else {
+		setvar (VAR_UNI_STATE, 1)
+		msgbox(Ardor_Uni_Office_Text_ConsulRIntro)
+		closemessage
+		call (Ardor_Uni_Office_EventScript_Consul)
+	}
+	applymovement (OBJ_EVENT_CONSULR, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_Office_EventScript_Consul {
+	//if graduated ask donation
+	//if not enrolled ask enrollment
+	//if enrolled read off class list
+
+	return
+}
+
+text Ardor_Uni_Office_Text_ConsulLIntro {
+	format("Te non cognosco. Sum Albinus consulque Collegi Ardentis.")
+}
+
+text Ardor_Uni_Office_Text_ConsulRIntro {
+	format("Te non cognosco. Sum Platonus consulque Collegi Ardentis.")
+}
