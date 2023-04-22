@@ -142,7 +142,7 @@ script Ardor_Uni_Office_EventScript_ConsulEnrolled {
 		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_RHETORIC) && (!defeated(TRAINER_UNI_RHETORIC))) {
+	if (flag(FLAG_OPEN_CLASS_ORATION) && (!defeated(TRAINER_UNI_ORATION))) {
 		msgbox(Ardor_Uni_Office_Text_FinishRhetoric)
 		closemessage
 	}
@@ -182,32 +182,32 @@ script Ardor_Uni_Office_EventScript_ConsulEnrolled {
 		msgbox(Ardor_Uni_Office_Text_FinishHistory)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
-		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+	if (flag(FLAG_OPEN_CLASS_ARCHAEOLOGY) && (!defeated(TRAINER_UNI_ARCHAEOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishArchaeology)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
-		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+	if (flag(FLAG_OPEN_CLASS_PSYCHOLOGY) && (!defeated(TRAINER_UNI_PSYCHOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPsychology)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
-		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+	if (flag(FLAG_OPEN_CLASS_PHILOSOPHY) && (!defeated(TRAINER_UNI_PHILOSOPHY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPhilosophy)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
-		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+	if (flag(FLAG_OPEN_CLASS_GYM) && (!defeated(TRAINER_UNI_GYM))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGym)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
-		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+	if (flag(FLAG_OPEN_CLASS_ART) && (!defeated(TRAINER_UNI_ART))) {
+		msgbox(Ardor_Uni_Office_Text_FinishArt)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
-		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+	if (flag(FLAG_OPEN_CLASS_MUSIC) && (!defeated(TRAINER_UNI_MUSIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishMusic)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
-		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+	if (flag(FLAG_OPEN_CLASS_COMPUTER) && (!defeated(TRAINER_UNI_COMPUTER))) {
+		msgbox(Ardor_Uni_Office_Text_FinishComputer)
 		closemessage
 	}
 
@@ -290,31 +290,31 @@ text Ardor_Uni_Office_Text_FinishHistory {
 	format("Stude historiam in cubiculo quarto in tabulatione secunda.")
 }
 
-text Ardor_Uni_Office_Text_FinishPoetry {
-	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+text Ardor_Uni_Office_Text_FinishArchaeology {
+	format("Stude archaeologiam in cubiculo quinto in tabulatione secunda.")
 }
 
-text Ardor_Uni_Office_Text_FinishPoetry {
-	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+text Ardor_Uni_Office_Text_FinishPsychology {
+	format("Stude psychologiam in cubiculo sexto in tabulatione secunda.")
 }
 
-text Ardor_Uni_Office_Text_FinishPoetry {
-	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+text Ardor_Uni_Office_Text_FinishPhilosophy {
+	format("Stude philosophiam in cubiculo primo in tabulatione tertia.")
 }
 
-text Ardor_Uni_Office_Text_FinishPoetry {
-	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+text Ardor_Uni_Office_Text_FinishGym {
+	format("Stude gymnasium in campo harpasti prope Collegium Ardentem in urbe.")
 }
 
-text Ardor_Uni_Office_Text_FinishPoetry {
-	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+text Ardor_Uni_Office_Text_FinishArt {
+	format("Stude picturam in cubiculo sexto in tabulatione prima.")
 }
 
-text Ardor_Uni_Office_Text_FinishPoetry {
-	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+text Ardor_Uni_Office_Text_FinishMusic {
+	format("Stude musicam prope ascensionem in tabulatione prima.")
 }
 
-text Ardor_Uni_Office_Text_FinishPoetry {
-	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+text Ardor_Uni_Office_Text_FinishComputer {
+	format("Stude computatrum in cubiculo primo in tabulatione secunda.")
 }
 

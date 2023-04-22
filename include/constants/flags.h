@@ -168,8 +168,8 @@
 #define FLAG_OPEN_CLASS_CALCULUS             0x8E
 #define FLAG_OPEN_CLASS_LITERATURE           0x8F
 #define FLAG_OPEN_CLASS_POETRY               0x90
-#define FLAG_OPEN_CLASS_RHETORIC             0x91
-#define FLAG_OPEN_CLASS_GYM                   0x92
+#define FLAG_OPEN_CLASS_ORATION              0x91
+#define FLAG_OPEN_CLASS_GYM                  0x92
 #define FLAG_PHOENIX_PARTY                   0x93
 #define FLAG_PLEDGE_HAS_KEG                  0x94
 
