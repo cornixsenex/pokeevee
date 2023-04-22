@@ -130,7 +130,86 @@ script Ardor_Uni_Office_EventScript_ConsulEnrolled {
 	}
 	closemessage
 	//go down the list to see which classes are opened but unfinished
-
+	if (flag(FLAG_OPEN_CLASS_GRAMMAR) && (!defeated(TRAINER_UNI_GRAMMAR))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGrammar)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_LITERATURE) && (!defeated(TRAINER_UNI_LITERATURE))) {
+		msgbox(Ardor_Uni_Office_Text_FinishLiterature)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_RHETORIC) && (!defeated(TRAINER_UNI_RHETORIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishRhetoric)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_ARITHMETIC) && (!defeated(TRAINER_UNI_ARITHMETIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishArithmetic)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_ALGEBRA) && (!defeated(TRAINER_UNI_ALGEBRA))) {
+		msgbox(Ardor_Uni_Office_Text_FinishAlgebra)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_GEOMETRY) && (!defeated(TRAINER_UNI_GEOMETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGeometry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_CALCULUS) && (!defeated(TRAINER_UNI_CALCULUS))) {
+		msgbox(Ardor_Uni_Office_Text_FinishCalculus)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_BIOLOGY) && (!defeated(TRAINER_UNI_BIOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishBiology)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_GEOLOGY) && (!defeated(TRAINER_UNI_GEOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGeology)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_CHEMISTRY) && (!defeated(TRAINER_UNI_CHEMISTRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishChemistry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_PHYSICS) && (!defeated(TRAINER_UNI_PHYSICS))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPhysics)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_HISTORY) && (!defeated(TRAINER_UNI_HISTORY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishHistory)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
 
 	return
 }
@@ -157,5 +236,85 @@ text Ardor_Uni_Office_Text_ConsulEnrolled3 {
 
 text Ardor_Uni_Office_Text_ConsulEnrolled4 {
 	format("In sessione quarta necesse est studere oratum et calculum.")
+}
+
+text Ardor_Uni_Office_Text_FinishGrammar {
+	format("Stude grammaticam in cubiculo quinto in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishLiterature {
+	format("Stude litteraturam in cubiculo quarto in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishRhetoric {
+	format("Stude oratum in cubiculo quinto in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishArithmetic {
+	format("Stude arithmeticum in cubiculo quarto in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishAlgebra {
+	format("Stude algebram in cubiculo duo in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishGeometry {
+	format("Stude geometriam in cubiculo tertio in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishCalculus {
+	format("Stude calculum in cubiculo tertio in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishBiology {
+	format("Stude biologiam in cubiculo secundo in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishGeology {
+	format("Stude geologiam in cubiculo primo in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishChemistry {
+	format("Stude alchemiam in cubiculo tertio in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishPhysics {
+	format("Stude physicas in cubiculo secundo in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishHistory {
+	format("Stude historiam in cubiculo quarto in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertio.")
 }
 

@@ -178,6 +178,10 @@ Ardor_Uni_Office_EventScript_ConsulEnrolled::
 	msgbox Ardor_Uni_Office_EventScript_ConsulEnrolled_Text_0
 Ardor_Uni_Office_EventScript_ConsulEnrolled_1:
 	closemessage
+	goto_if_set FLAG_OPEN_CLASS_GRAMMAR, Ardor_Uni_Office_EventScript_ConsulEnrolled_10
+Ardor_Uni_Office_EventScript_ConsulEnrolled_8:
+	goto_if_set FLAG_OPEN_CLASS_LITERATURE, Ardor_Uni_Office_EventScript_ConsulEnrolled_15
+Ardor_Uni_Office_EventScript_ConsulEnrolled_13:
 	return
 
 Ardor_Uni_Office_EventScript_ConsulEnrolled_3:
@@ -195,6 +199,26 @@ Ardor_Uni_Office_EventScript_ConsulEnrolled_5:
 Ardor_Uni_Office_EventScript_ConsulEnrolled_6:
 	msgbox Ardor_Uni_Office_Text_ConsulEnrolled4
 	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_1
+
+Ardor_Uni_Office_EventScript_ConsulEnrolled_9:
+	msgbox Ardor_Uni_Office_Text_FinishGrammar
+	closemessage
+	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_8
+
+Ardor_Uni_Office_EventScript_ConsulEnrolled_10:
+	checktrainerflag TRAINER_UNI_GRAMMAR
+	goto_if 0, Ardor_Uni_Office_EventScript_ConsulEnrolled_9
+	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_8
+
+Ardor_Uni_Office_EventScript_ConsulEnrolled_14:
+	msgbox Ardor_Uni_Office_Text_FinishLiterature
+	closemessage
+	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_13
+
+Ardor_Uni_Office_EventScript_ConsulEnrolled_15:
+	checktrainerflag TRAINER_UNI_LITERATURE
+	goto_if 0, Ardor_Uni_Office_EventScript_ConsulEnrolled_14
+	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_13
 
 
 Ardor_Uni_Office_EventScript_IncrementVar_Text_0:
@@ -232,3 +256,11 @@ Ardor_Uni_Office_Text_ConsulEnrolled3::
 Ardor_Uni_Office_Text_ConsulEnrolled4::
 	.string "In sessione quarta necesse est\n"
 	.string "studere oratum et calculum.$"
+
+Ardor_Uni_Office_Text_FinishGrammar::
+	.string "Stude grammaticam in cubiculo quinto in\n"
+	.string "tabulatione primo.$"
+
+Ardor_Uni_Office_Text_FinishLiterature::
+	.string "Stude litteraturam in cubiculo quarto\n"
+	.string "in tabulatione tertio.$"
