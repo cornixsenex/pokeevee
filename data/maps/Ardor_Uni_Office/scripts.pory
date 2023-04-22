@@ -4,8 +4,38 @@ const OBJ_EVENT_CONSULR = 2
 
 mapscripts Ardor_Uni_Office_MapScripts {
 
-	}
+}
 
+script Ardor_Uni_Office_EventScript_IncrementVar {
+	switch (var(VAR_UNI_STATE)) {
+		case 0:
+			setvar(VAR_UNI_STATE, 1)
+		case 1:
+			setvar(VAR_UNI_STATE, 2)
+		case 2:
+			setvar(VAR_UNI_STATE, 3)
+		case 3:
+			setvar(VAR_UNI_STATE, 4)
+		case 4:
+			setvar(VAR_UNI_STATE, 5)
+		case 5:
+			setvar(VAR_UNI_STATE, 6)
+		case 6:
+			setvar(VAR_UNI_STATE, 7)
+		case 7:
+			setvar(VAR_UNI_STATE, 8)
+		case 8:
+			setvar(VAR_UNI_STATE, 9)
+		case 9:
+			setvar(VAR_UNI_STATE, 10)
+		case 10:
+			setvar(VAR_UNI_STATE, 11)
+		default:
+			msgbox("VAR_UNI_STATE bad in IncVar")
+			closemessage
+	}
+	return
+}
 
 script Ardor_Uni_Office_EventScript_ConsulL {
 	lock
@@ -45,6 +75,62 @@ script Ardor_Uni_Office_EventScript_Consul {
 	//if graduated ask donation
 	//if not enrolled ask enrollment
 	//if enrolled read off class list
+	switch (var(VAR_UNI_STATE)) {
+		case 0:
+			msgbox("UNI_STATE is 0 in consul")
+			closemessage
+		case 1:
+			call (Ardor_Uni_Office_EventScript_ConsulRegister)
+		case 2:
+			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+		case 3:
+			call (Ardor_Uni_Office_EventScript_ConsulRegister)
+		case 4:
+			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+		case 5:
+			call (Ardor_Uni_Office_EventScript_ConsulRegister)
+		case 6:
+			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+		case 7:
+			call (Ardor_Uni_Office_EventScript_ConsulRegister)
+		case 8:
+			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+		case 9:
+		case 10:
+			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+		default:
+			msgbox("UNI_STATE problemo in consul")
+			closemessage
+	}	return
+}
+
+script Ardor_Uni_Office_EventScript_ConsulRegister {
+	//Price is 1,000 will you pay YESNO
+	//increment var
+	//Welcome blurb
+	//switch on grade level (2, 4, 6, 8) for class intro blurb (open doors!)
+	//ask science, social, elective (open doors!)
+	//good luck with your studies
+	return
+}
+
+script Ardor_Uni_Office_EventScript_ConsulEnrolled {
+	//switch on grade level to say "you are in grade x"
+	switch (var(VAR_UNI_STATE)) {
+		case 2:
+			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled1)
+		case 4:
+			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled2)
+		case 6:
+			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled3)
+		case 8:
+			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled4)
+		default:
+			msgbox("Bad var in consul enrolled switch")
+	}
+	closemessage
+	//go down the list to see which classes are opened but unfinished
+
 
 	return
 }
@@ -56,3 +142,20 @@ text Ardor_Uni_Office_Text_ConsulLIntro {
 text Ardor_Uni_Office_Text_ConsulRIntro {
 	format("Te non cognosco. Sum Platonus consulque Collegi Ardentis.")
 }
+
+text Ardor_Uni_Office_Text_ConsulEnrolled1 {
+	format("In sessione prima necesse est studere artem gramatici et arithmeticam.")
+}
+
+text Ardor_Uni_Office_Text_ConsulEnrolled2 {
+	format("In sessione secunda necesse est studere literaturam at algebram.")
+}
+
+text Ardor_Uni_Office_Text_ConsulEnrolled3 {
+	format("In sessione tertia necesse est studere artem artes poematis et geometriae.")
+}
+
+text Ardor_Uni_Office_Text_ConsulEnrolled4 {
+	format("In sessione quarta necesse est studere oratum et calculum.")
+}
+

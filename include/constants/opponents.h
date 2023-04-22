@@ -151,27 +151,30 @@
 #define TRAINER_BIGYELLOW                   146
 #define TRAINER_BIGRED                      147
 #define TRAINER_BIGGREEN                    148
-//BREAK - NOTE UNUSED TRAINERS ABOVE
-#define TRAINER_STEVE_4                     149
-#define TRAINER_STEVE_5                     150
-#define TRAINER_LUIS                        151
-#define TRAINER_DOMINIK                     152
-#define TRAINER_DOUGLAS                     153
-#define TRAINER_DARRIN                      154
-#define TRAINER_TONY_1                      155
-#define TRAINER_JEROME                      156
-#define TRAINER_MATTHEW                     157
-#define TRAINER_DAVID                       158
-#define TRAINER_SPENCER                     159
-#define TRAINER_ROLAND                      160
-#define TRAINER_NOLEN                       161
-#define TRAINER_STAN                        162
-#define TRAINER_BARRY                       163
-#define TRAINER_DEAN                        164
-#define TRAINER_RODNEY                      165
-#define TRAINER_RICHARD                     166
-#define TRAINER_HERMAN                      167
-#define TRAINER_SANTIAGO                    168
+#define TRAINER_UNI_GRAMMAR                 149
+#define TRAINER_UNI_LITERATURE              150
+#define TRAINER_UNI_POETRY                  151
+#define TRAINER_UNI_ORATION                 152
+#define TRAINER_UNI_ARITHMETIC              153
+#define TRAINER_UNI_ALGEBRA                 154
+#define TRAINER_UNI_GEOMETRY                155
+#define TRAINER_UNI_CALCULUS                156
+#define TRAINER_UNI_BIOLOGY                 157
+#define TRAINER_UNI_CHEMISTRY               158
+#define TRAINER_UNI_PHYSICS                 159
+#define TRAINER_UNI_GEOLOGY                 160
+#define TRAINER_UNI_HISTORY                 161
+#define TRAINER_UNI_ARCHAEOLOGY             162
+#define TRAINER_UNI_PSYCHOLOGY              163
+#define TRAINER_UNI_PHILOSOPHY              164
+#define TRAINER_UNI_ART                     165
+#define TRAINER_UNI_MUSIC                   166
+#define TRAINER_UNI_COMPUTER                167
+#define TRAINER_UNI_GYM                     168
+
+//BREAK - NOTE FIVE UNUSED TRAINERS ABOVE
+
+
 #define TRAINER_GILBERT                     169
 #define TRAINER_FRANKLIN                    170
 #define TRAINER_KEVIN                       171
