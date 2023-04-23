@@ -1349,6 +1349,26 @@ extern const u8 gText_SaltySpitoonWager5[];
 extern const u8 gText_SaltySpitoonWager6[];
 extern const u8 gText_SaltySpitoonWager7[];
 
+//Ardor Choose Science
+extern const u8 gText_ArdorChooseScience1[];
+extern const u8 gText_ArdorChooseScience2[];
+extern const u8 gText_ArdorChooseScience3[];
+extern const u8 gText_ArdorChooseScience4[];
+
+//Ardor Choose Social
+extern const u8 gText_ArdorChooseSocial1[];
+extern const u8 gText_ArdorChooseSocial2[];
+extern const u8 gText_ArdorChooseSocial3[];
+extern const u8 gText_ArdorChooseSocial4[];
+
+//Ardor Choose Elective
+extern const u8 gText_ArdorChooseElective1[];
+extern const u8 gText_ArdorChooseElective2[];
+extern const u8 gText_ArdorChooseElective3[];
+extern const u8 gText_ArdorChooseElective4[];
+
+
+
 
 // Cable Club multichoice text
 extern const u8 CableClub_Text_TradeUsingLinkCable[];

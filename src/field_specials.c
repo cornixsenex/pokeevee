@@ -2451,6 +2451,36 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_ARDOR_CHOOSE_SCIENCE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 4;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_ARDOR_CHOOSE_SOCIAL:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 4;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_ARDOR_CHOOSE_ELECTIVE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 4;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2660,6 +2690,27 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_SaltySpitoonWager5,
 		gText_SaltySpitoonWager6,
 		gText_SaltySpitoonWager7,
+	},
+	[SCROLL_MULTI_ARDOR_CHOOSE_SCIENCE] =
+	{
+		gText_ArdorChooseScience1,
+		gText_ArdorChooseScience2,
+		gText_ArdorChooseScience3,
+		gText_ArdorChooseScience4,
+	},
+	[SCROLL_MULTI_ARDOR_CHOOSE_SOCIAL] =
+	{
+		gText_ArdorChooseSocial1,
+		gText_ArdorChooseSocial2,
+		gText_ArdorChooseSocial3,
+		gText_ArdorChooseSocial4,
+	},
+	[SCROLL_MULTI_ARDOR_CHOOSE_ELECTIVE] =
+	{
+		gText_ArdorChooseElective1,
+		gText_ArdorChooseElective2,
+		gText_ArdorChooseElective3,
+		gText_ArdorChooseElective4,
 	},
 };
 

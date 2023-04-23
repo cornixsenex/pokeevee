@@ -832,6 +832,30 @@ static const struct MenuAction MultichoiceList_SaltySpitoon_Get_Wager[] =
 	{gText_SaltySpitoonWager7},
 };
 
+static const struct MenuAction MultichoiceList_Ardor_ChooseScience[] =
+{
+	{gText_ArdorChooseScience1},
+	{gText_ArdorChooseScience2},
+	{gText_ArdorChooseScience3},
+	{gText_ArdorChooseScience4},
+};
+
+static const struct MenuAction MultichoiceList_Ardor_ChooseSocial[] =
+{
+	{gText_ArdorChooseSocial1},
+	{gText_ArdorChooseSocial2},
+	{gText_ArdorChooseSocial3},
+	{gText_ArdorChooseSocial4},
+};
+
+static const struct MenuAction MultichoiceList_Ardor_ChooseElective[] =
+{
+	{gText_ArdorChooseElective1},
+	{gText_ArdorChooseElective2},
+	{gText_ArdorChooseElective3},
+	{gText_ArdorChooseElective4},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -963,7 +987,10 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_ROCKETTOWER_ELEVATOR_FLOOR] = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
     [MULTI_HOSPITAL_ELEVATOR_FLOOR]    = MULTICHOICE(MultichoiceList_Hospital_Elevator_Floor),
     [MULTI_TICTACTOE_CHOOSE_MOVE]      = MULTICHOICE(MultichoiceList_TicTacToe_Choose_Move),
-    [MULTI_SALTYSPITOON_GET_WAGER]      = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
+    [MULTI_SALTYSPITOON_GET_WAGER]     = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
+    [MULTI_ARDOR_CHOOSE_SCIENCE]       = MULTICHOICE(MultichoiceList_Ardor_ChooseScience),
+    [MULTI_ARDOR_CHOOSE_SOCIAL]        = MULTICHOICE(MultichoiceList_Ardor_ChooseSocial),
+    [MULTI_ARDOR_CHOOSE_ELECTIVE]      = MULTICHOICE(MultichoiceList_Ardor_ChooseElective),
 };
 
 const u8 *const gStdStrings[] =

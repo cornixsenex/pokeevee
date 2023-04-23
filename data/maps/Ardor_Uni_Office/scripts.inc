@@ -166,7 +166,272 @@ Ardor_Uni_Office_EventScript_Consul_12:
 
 
 Ardor_Uni_Office_EventScript_ConsulRegister::
+	showmoneybox 0, 0
+	msgbox Ardor_Uni_Office_Text_ConsulRegister1, MSGBOX_YESNO
+	closemessage
+	compare VAR_RESULT, NO
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulRegister_1
+	checkmoney 1000
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulRegister_4
+	removemoney 1000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	call Ardor_Uni_Office_EventScript_IncrementVar
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterWelcome
+	closemessage
+	hidemoneybox
+	switch VAR_UNI_STATE
+	case 2, Ardor_Uni_Office_EventScript_ConsulRegister_9
+	case 4, Ardor_Uni_Office_EventScript_ConsulRegister_10
+	case 6, Ardor_Uni_Office_EventScript_ConsulRegister_11
+	case 8, Ardor_Uni_Office_EventScript_ConsulRegister_12
+	msgbox Ardor_Uni_Office_EventScript_ConsulRegister_Text_0
+Ardor_Uni_Office_EventScript_ConsulRegister_7:
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollScience
 	return
+
+Ardor_Uni_Office_EventScript_ConsulRegister_1:
+	msgbox Ardor_Uni_Office_EventScript_ConsulRegisterNo
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulRegister_4:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulRegister_9:
+	msgbox Ardor_Uni_Office_Text_ClassDefault1
+	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
+
+Ardor_Uni_Office_EventScript_ConsulRegister_10:
+	msgbox Ardor_Uni_Office_Text_ClassDefault2
+	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
+
+Ardor_Uni_Office_EventScript_ConsulRegister_11:
+	msgbox Ardor_Uni_Office_Text_ClassDefault3
+	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
+
+Ardor_Uni_Office_EventScript_ConsulRegister_12:
+	msgbox Ardor_Uni_Office_Text_ClassDefault4
+	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
+
+
+Ardor_Uni_Office_EventScript_EnrollSocial::
+	msgbox Ardor_Uni_Office_Text_EnrollSocialIntro
+	multichoice 0, 0, MULTI_ARDOR_CHOOSE_SOCIAL, TRUE
+	switch VAR_RESULT
+	case 0, Ardor_Uni_Office_EventScript_EnrollSocial_3
+	case 1, Ardor_Uni_Office_EventScript_EnrollSocial_4
+	case 2, Ardor_Uni_Office_EventScript_EnrollSocial_5
+	case 3, Ardor_Uni_Office_EventScript_EnrollSocial_6
+	msgbox Ardor_Uni_Office_EventScript_EnrollSocial_Text_0
+	closemessage
+	end
+
+Ardor_Uni_Office_EventScript_EnrollSocial_1:
+	return
+
+Ardor_Uni_Office_EventScript_EnrollSocial_3:
+	goto_if_set FLAG_OPEN_CLASS_HISTORY, Ardor_Uni_Office_EventScript_EnrollSocial_8
+	setflag FLAG_OPEN_CLASS_HISTORY
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+Ardor_Uni_Office_EventScript_EnrollSocial_4:
+	goto_if_set FLAG_OPEN_CLASS_ARCHAEOLOGY, Ardor_Uni_Office_EventScript_EnrollSocial_11
+	setflag FLAG_OPEN_CLASS_ARCHAEOLOGY
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+Ardor_Uni_Office_EventScript_EnrollSocial_5:
+	goto_if_set FLAG_OPEN_CLASS_PSYCHOLOGY, Ardor_Uni_Office_EventScript_EnrollSocial_14
+	setflag FLAG_OPEN_CLASS_PSYCHOLOGY
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+Ardor_Uni_Office_EventScript_EnrollSocial_6:
+	goto_if_set FLAG_OPEN_CLASS_PHILOSOPHY, Ardor_Uni_Office_EventScript_EnrollSocial_17
+	setflag FLAG_OPEN_CLASS_PHILOSOPHY
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+Ardor_Uni_Office_EventScript_EnrollSocial_8:
+	msgbox Ardor_Uni_Office_Text_HistoryRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+Ardor_Uni_Office_EventScript_EnrollSocial_11:
+	msgbox Ardor_Uni_Office_Text_ArchaeologyRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+Ardor_Uni_Office_EventScript_EnrollSocial_14:
+	msgbox Ardor_Uni_Office_Text_PsychologyRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+Ardor_Uni_Office_EventScript_EnrollSocial_17:
+	msgbox Ardor_Uni_Office_Text_PhilosophyRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollSocial_1
+
+
+Ardor_Uni_Office_EventScript_EnrollScience::
+	msgbox Ardor_Uni_Office_Text_EnrollScienceIntro
+	multichoice 0, 0, MULTI_ARDOR_CHOOSE_SCIENCE, TRUE
+	switch VAR_RESULT
+	case 0, Ardor_Uni_Office_EventScript_EnrollScience_3
+	case 1, Ardor_Uni_Office_EventScript_EnrollScience_4
+	case 2, Ardor_Uni_Office_EventScript_EnrollScience_5
+	case 3, Ardor_Uni_Office_EventScript_EnrollScience_6
+	msgbox Ardor_Uni_Office_EventScript_EnrollScience_Text_0
+	closemessage
+	end
+
+Ardor_Uni_Office_EventScript_EnrollScience_1:
+	return
+
+Ardor_Uni_Office_EventScript_EnrollScience_3:
+	goto_if_set FLAG_OPEN_CLASS_GEOLOGY, Ardor_Uni_Office_EventScript_EnrollScience_8
+	setflag FLAG_OPEN_CLASS_GEOLOGY
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_4:
+	goto_if_set FLAG_OPEN_CLASS_BIOLOGY, Ardor_Uni_Office_EventScript_EnrollScience_11
+	setflag FLAG_OPEN_CLASS_BIOLOGY
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_5:
+	goto_if_set FLAG_OPEN_CLASS_CHEMISTRY, Ardor_Uni_Office_EventScript_EnrollScience_14
+	checktrainerflag TRAINER_UNI_BIOLOGY
+	goto_if 0, Ardor_Uni_Office_EventScript_EnrollScience_15
+	setflag FLAG_OPEN_CLASS_CHEMISTRY
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_6:
+	goto_if_set FLAG_OPEN_CLASS_PHYSICS, Ardor_Uni_Office_EventScript_EnrollScience_19
+	checktrainerflag TRAINER_UNI_CHEMISTRY
+	goto_if 0, Ardor_Uni_Office_EventScript_EnrollScience_20
+	setflag FLAG_OPEN_CLASS_PHYSICS
+	call Ardor_Uni_Office_EventScript_EnrollSocial
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_8:
+	msgbox Ardor_Uni_Office_Text_GeologyRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollScience
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_11:
+	msgbox Ardor_Uni_Office_Text_BiologyRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollScience
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_14:
+	msgbox Ardor_Uni_Office_Text_ChemistryRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollScience
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_15:
+	msgbox Ardor_Uni_Office_Text_ChemistryPrereq
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollScience
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_19:
+	msgbox Ardor_Uni_Office_Text_PhysicsRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollScience
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+Ardor_Uni_Office_EventScript_EnrollScience_20:
+	msgbox Ardor_Uni_Office_Text_PhysicsPrereq
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollScience
+	goto Ardor_Uni_Office_EventScript_EnrollScience_1
+
+
+Ardor_Uni_Office_EventScript_EnrollElective::
+	msgbox Ardor_Uni_Office_Text_EnrollElectiveIntro
+	multichoice 0, 0, MULTI_ARDOR_CHOOSE_ELECTIVE, TRUE
+	switch VAR_RESULT
+	case 0, Ardor_Uni_Office_EventScript_EnrollElective_3
+	case 1, Ardor_Uni_Office_EventScript_EnrollElective_4
+	case 2, Ardor_Uni_Office_EventScript_EnrollElective_5
+	case 3, Ardor_Uni_Office_EventScript_EnrollElective_6
+	msgbox Ardor_Uni_Office_EventScript_EnrollElective_Text_0
+	closemessage
+	end
+
+Ardor_Uni_Office_EventScript_EnrollElective_1:
+	return
+
+Ardor_Uni_Office_EventScript_EnrollElective_3:
+	goto_if_set FLAG_OPEN_CLASS_ART, Ardor_Uni_Office_EventScript_EnrollElective_8
+	setflag FLAG_OPEN_CLASS_ART
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_4:
+	goto_if_set FLAG_OPEN_CLASS_MUSIC, Ardor_Uni_Office_EventScript_EnrollElective_11
+	setflag FLAG_OPEN_CLASS_MUSIC
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_5:
+	goto_if_set FLAG_OPEN_CLASS_GYM, Ardor_Uni_Office_EventScript_EnrollElective_14
+	setflag FLAG_OPEN_CLASS_GYM
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_6:
+	goto_if_set FLAG_OPEN_CLASS_COMPUTER, Ardor_Uni_Office_EventScript_EnrollElective_17
+	checktrainerflag TRAINER_UNI_ALGEBRA
+	goto_if 0, Ardor_Uni_Office_EventScript_EnrollElective_18
+	setflag FLAG_OPEN_CLASS_COMPUTER
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_8:
+	msgbox Ardor_Uni_Office_Text_ArtRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_11:
+	msgbox Ardor_Uni_Office_Text_MusicRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_14:
+	msgbox Ardor_Uni_Office_Text_GymRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_17:
+	msgbox Ardor_Uni_Office_Text_ComputerRepeat
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
+
+Ardor_Uni_Office_EventScript_EnrollElective_18:
+	msgbox Ardor_Uni_Office_Text_ComputerPrereq
+	closemessage
+	call Ardor_Uni_Office_EventScript_EnrollElective
+	goto Ardor_Uni_Office_EventScript_EnrollElective_1
 
 
 Ardor_Uni_Office_EventScript_ConsulEnrolled::
@@ -446,6 +711,18 @@ Ardor_Uni_Office_EventScript_Consul_Text_0:
 Ardor_Uni_Office_EventScript_Consul_Text_1:
 	.string "UNI_STATE problemo in consul$"
 
+Ardor_Uni_Office_EventScript_ConsulRegister_Text_0:
+	.string "PROBLEM IN UNI_STATE switch in ConsulRegister$"
+
+Ardor_Uni_Office_EventScript_EnrollSocial_Text_0:
+	.string "PROBLEMO in enroll social switcher$"
+
+Ardor_Uni_Office_EventScript_EnrollScience_Text_0:
+	.string "PROBLEMO in enroll science switcher$"
+
+Ardor_Uni_Office_EventScript_EnrollElective_Text_0:
+	.string "PROBLEMO in enroll elective switcher$"
+
 Ardor_Uni_Office_EventScript_ConsulEnrolled_Text_0:
 	.string "Bad var in consul enrolled switch$"
 
@@ -552,3 +829,120 @@ Ardor_Uni_Office_Text_FinishMusic::
 Ardor_Uni_Office_Text_FinishComputer::
 	.string "Stude computatrum in cubiculo primo in\n"
 	.string "tabulatione secunda.$"
+
+Ardor_Uni_Office_EventScript_ConsulRegisterNo::
+	.string "Reveni cum lubidine descere. Vale.$"
+
+Ardor_Uni_Office_Text_ConsulRegisterShort::
+	.string "Sacculus parvus est tuus. Reveni cum\n"
+	.string "sacculo pleno.$"
+
+Ardor_Uni_Office_Text_ConsulRegisterWelcome::
+	.string "Satis est nummerus tributi tui.\n"
+	.string "Congratulatio! Numerus quinque est\l"
+	.string "scholas te studere necesse est.\l"
+	.string "Latinam, scientiam, artes, homines,\l"
+	.string "matematicasque studebis sessione.\l"
+	.string "Sessiones quattor diplomam Ardentis\l"
+	.string "accipies post.$"
+
+Ardor_Uni_Office_Text_ClassDefault1::
+	.string "In sessione prima necesse est studere\n"
+	.string "artes gramatici arithmeticasque.$"
+
+Ardor_Uni_Office_Text_ClassDefault2::
+	.string "In sessione secunda necesse est\n"
+	.string "studere literaturam et algebram.$"
+
+Ardor_Uni_Office_Text_ClassDefault3::
+	.string "In sessione tertia necesse est studere\n"
+	.string "artes poematis et geometriae.$"
+
+Ardor_Uni_Office_Text_ClassDefault4::
+	.string "In sessione quarta necesse est\n"
+	.string "studere oratum et calculum.$"
+
+Ardor_Uni_Office_Text_ConsulRegister1::
+	.string "Salve puer, dice sic venisti studere\n"
+	.string "Ardente artes. Pretium sessionis\l"
+	.string "sestertii mille est. Emesne mille?$"
+
+Ardor_Uni_Office_Text_EnrollScienceIntro::
+	.string "Quam scientiam studebis?$"
+
+Ardor_Uni_Office_Text_EnrollSocialIntro::
+	.string "Quam scientiam societatis studebis?$"
+
+Ardor_Uni_Office_Text_EnrollElectiveIntro::
+	.string "Quam artem otii studebis?$"
+
+Ardor_Uni_Office_Text_GeologyRepeat::
+	.string "Scientem geologiae iam studuisti!\n"
+	.string "Necesse semper est artes scientiasque\l"
+	.string "studere novas.$"
+
+Ardor_Uni_Office_Text_BiologyRepeat::
+	.string "Scientem biologiae iam studuisti!\n"
+	.string "Necesse semper est artes scientiasque\l"
+	.string "studere novas.$"
+
+Ardor_Uni_Office_Text_ChemistryRepeat::
+	.string "Scientem alchemiae iam studuisti!\n"
+	.string "Necesse semper est artes scientiasque\l"
+	.string "studere novas.$"
+
+Ardor_Uni_Office_Text_PhysicsRepeat::
+	.string "Scientem physicarum iam studuisti!\n"
+	.string "Necesse semper est artes scientiasque\l"
+	.string "studere novas.$"
+
+Ardor_Uni_Office_Text_HistoryRepeat::
+	.string "Historiam iam studuisti! Necesse semper\n"
+	.string "est artes scientiasque studere novas.$"
+
+Ardor_Uni_Office_Text_ArchaeologyRepeat::
+	.string "Archaeologiam iam studuisti! Necesse\n"
+	.string "semper est artes scientiasque studere\l"
+	.string "novas.$"
+
+Ardor_Uni_Office_Text_PsychologyRepeat::
+	.string "Psychologiam iam studuisti! Necesse\n"
+	.string "semper est artes scientiasque studere\l"
+	.string "novas.$"
+
+Ardor_Uni_Office_Text_PhilosophyRepeat::
+	.string "Philosophiam iam studuisti! Necesse\n"
+	.string "semper est artes scientiasque studere\l"
+	.string "novas.$"
+
+Ardor_Uni_Office_Text_GymRepeat::
+	.string "Gymnasium iam studuisti! Necesse\n"
+	.string "semper est artes scientiasque studere\l"
+	.string "novas.$"
+
+Ardor_Uni_Office_Text_ArtRepeat::
+	.string "Artem picturae iam studuisti! Necesse\n"
+	.string "semper est artes scientiasque studere\l"
+	.string "novas.$"
+
+Ardor_Uni_Office_Text_MusicRepeat::
+	.string "Artem musicae iam studuisti! Necesse\n"
+	.string "semper est artes scientiasque studere\l"
+	.string "novas.$"
+
+Ardor_Uni_Office_Text_ComputerRepeat::
+	.string "Computatra iam studuisti! Necesse\n"
+	.string "semper est artes scientiasque studere\l"
+	.string "novas.$"
+
+Ardor_Uni_Office_Text_ChemistryPrereq::
+	.string "Necesse est studere scientiam\n"
+	.string "biologiae ante alchemiam.$"
+
+Ardor_Uni_Office_Text_PhysicsPrereq::
+	.string "Necesse est studere scientiam\n"
+	.string "alchemiae ante physicas.$"
+
+Ardor_Uni_Office_Text_ComputerPrereq::
+	.string "Necesse est studere algebram ante\n"
+	.string "computatra.$"

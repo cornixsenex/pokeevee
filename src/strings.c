@@ -704,6 +704,21 @@ const u8 gText_SaltySpitoonWager5[]   = _("10,000");
 const u8 gText_SaltySpitoonWager6[]   = _("100,000");
 const u8 gText_SaltySpitoonWager7[]   = _("NEVER MIND");
 
+const u8 gText_ArdorChooseScience1[]    = _("GEOLOGIAM");
+const u8 gText_ArdorChooseScience2[]    = _("BIOLOGIAM");
+const u8 gText_ArdorChooseScience3[]    = _("ALCHEMIAM");
+const u8 gText_ArdorChooseScience4[]    = _("PHYSICAS");
+
+const u8 gText_ArdorChooseSocial1[]     = _("HISTORIAM");
+const u8 gText_ArdorChooseSocial2[]     = _("ARCHAEOLOGIAM");
+const u8 gText_ArdorChooseSocial3[]     = _("PSYCHOLOGIAM");
+const u8 gText_ArdorChooseSocial4[]     = _("PHILOSOPHIAM");
+
+const u8 gText_ArdorChooseElective1[]   = _("PICTURAM");
+const u8 gText_ArdorChooseElective2[]   = _("MUSICAM");
+const u8 gText_ArdorChooseElective3[]   = _("GYMNASIUM");
+const u8 gText_ArdorChooseElective4[]   = _("COMPUTATRA");
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");
