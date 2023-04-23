@@ -106,63 +106,240 @@ Ardor_Uni_Office_EventScript_ConsulR_2:
 
 
 Ardor_Uni_Office_EventScript_Consul::
+	compare VAR_UNI_TERM_STATE, 4
+	goto_if_gt Ardor_Uni_Office_EventScript_Consul_2
 	switch VAR_UNI_STATE
-	case 0, Ardor_Uni_Office_EventScript_Consul_3
-	case 1, Ardor_Uni_Office_EventScript_Consul_4
-	case 2, Ardor_Uni_Office_EventScript_Consul_5
-	case 3, Ardor_Uni_Office_EventScript_Consul_6
-	case 4, Ardor_Uni_Office_EventScript_Consul_7
-	case 5, Ardor_Uni_Office_EventScript_Consul_8
-	case 6, Ardor_Uni_Office_EventScript_Consul_9
-	case 7, Ardor_Uni_Office_EventScript_Consul_10
-	case 8, Ardor_Uni_Office_EventScript_Consul_11
-	case 9, Ardor_Uni_Office_EventScript_Consul_12
-	case 10, Ardor_Uni_Office_EventScript_Consul_12
+	case 0, Ardor_Uni_Office_EventScript_Consul_6
+	case 1, Ardor_Uni_Office_EventScript_Consul_7
+	case 2, Ardor_Uni_Office_EventScript_Consul_8
+	case 3, Ardor_Uni_Office_EventScript_Consul_9
+	case 4, Ardor_Uni_Office_EventScript_Consul_10
+	case 5, Ardor_Uni_Office_EventScript_Consul_11
+	case 6, Ardor_Uni_Office_EventScript_Consul_12
+	case 7, Ardor_Uni_Office_EventScript_Consul_13
+	case 8, Ardor_Uni_Office_EventScript_Consul_14
+	case 9, Ardor_Uni_Office_EventScript_Consul_15
+	case 10, Ardor_Uni_Office_EventScript_Consul_15
 	msgbox Ardor_Uni_Office_EventScript_Consul_Text_1
 	closemessage
 Ardor_Uni_Office_EventScript_Consul_1:
 	return
 
-Ardor_Uni_Office_EventScript_Consul_3:
+Ardor_Uni_Office_EventScript_Consul_2:
+	call Ardor_Uni_Office_EventScript_Graduate
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_6:
 	msgbox Ardor_Uni_Office_EventScript_Consul_Text_0
 	closemessage
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
-Ardor_Uni_Office_EventScript_Consul_4:
-	call Ardor_Uni_Office_EventScript_ConsulRegister
-	goto Ardor_Uni_Office_EventScript_Consul_1
-
-Ardor_Uni_Office_EventScript_Consul_5:
-	call Ardor_Uni_Office_EventScript_ConsulEnrolled
-	goto Ardor_Uni_Office_EventScript_Consul_1
-
-Ardor_Uni_Office_EventScript_Consul_6:
-	call Ardor_Uni_Office_EventScript_ConsulRegister
-	goto Ardor_Uni_Office_EventScript_Consul_1
-
 Ardor_Uni_Office_EventScript_Consul_7:
-	call Ardor_Uni_Office_EventScript_ConsulEnrolled
+	call Ardor_Uni_Office_EventScript_ConsulRegister
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
 Ardor_Uni_Office_EventScript_Consul_8:
-	call Ardor_Uni_Office_EventScript_ConsulRegister
+	call Ardor_Uni_Office_EventScript_ConsulEnrolled
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
 Ardor_Uni_Office_EventScript_Consul_9:
-	call Ardor_Uni_Office_EventScript_ConsulEnrolled
-	goto Ardor_Uni_Office_EventScript_Consul_1
-
-Ardor_Uni_Office_EventScript_Consul_10:
 	call Ardor_Uni_Office_EventScript_ConsulRegister
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
-Ardor_Uni_Office_EventScript_Consul_11:
+Ardor_Uni_Office_EventScript_Consul_10:
 	call Ardor_Uni_Office_EventScript_ConsulEnrolled
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_11:
+	call Ardor_Uni_Office_EventScript_ConsulRegister
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
 Ardor_Uni_Office_EventScript_Consul_12:
 	call Ardor_Uni_Office_EventScript_ConsulEnrolled
 	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_13:
+	call Ardor_Uni_Office_EventScript_ConsulRegister
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_14:
+	call Ardor_Uni_Office_EventScript_ConsulEnrolled
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_15:
+	call Ardor_Uni_Office_EventScript_ConsulEnrolled
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+
+Ardor_Uni_Office_EventScript_Graduate::
+	setvar VAR_UNI_TERM_STATE, 0
+	call Ardor_Uni_Office_EventScript_IncrementVar
+	msgbox Ardor_Uni_Office_Text_ConsulCongrats
+	closemessage
+	compare VAR_UNI_STATE, 9
+	goto_if_eq Ardor_Uni_Office_EventScript_Graduate_2
+	call Ardor_Uni_Office_EventScript_ConsulRegister
+Ardor_Uni_Office_EventScript_Graduate_1:
+	return
+
+Ardor_Uni_Office_EventScript_Graduate_2:
+	setvar VAR_UNI_STATE, 10
+	msgbox Ardor_Uni_Office_Text_ConsulGradutate
+	closemessage
+	giveitem ITEM_DIPLOMA
+	call Ardor_Uni_Office_EventScript_ConsulDonate
+	goto Ardor_Uni_Office_EventScript_Graduate_1
+
+
+Ardor_Uni_Office_EventScript_ConsulDonate::
+	showmoneybox 0, 0
+	msgbox Ardor_Uni_Office_Text_ConsulDonate, MSGBOX_YESNO
+	closemessage
+	compare VAR_RESULT, NO
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_1
+	switch VAR_UNI_TERM_STATE
+	case 0, Ardor_Uni_Office_EventScript_ConsulDonate_5
+	case 1, Ardor_Uni_Office_EventScript_ConsulDonate_6
+	case 2, Ardor_Uni_Office_EventScript_ConsulDonate_7
+	case 3, Ardor_Uni_Office_EventScript_ConsulDonate_8
+	case 4, Ardor_Uni_Office_EventScript_ConsulDonate_9
+	case 5, Ardor_Uni_Office_EventScript_ConsulDonate_10
+	checkmoney 999998
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_30
+	removemoney 999998
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	msgbox Ardor_Uni_Office_Text_ConsulDonated
+	closemessage
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_1:
+	msgbox Ardor_Uni_Office_Text_ConsulDonateNo
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_5:
+	checkmoney 1000
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_12
+	removemoney 1000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	setvar VAR_UNI_TERM_STATE, 1
+	msgbox Ardor_Uni_Office_Text_ConsulDonated
+	closemessage
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_6:
+	checkmoney 5000
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_15
+	removemoney 5000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	setvar VAR_UNI_TERM_STATE, 2
+	msgbox Ardor_Uni_Office_Text_ConsulDonated
+	closemessage
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_7:
+	checkmoney 10000
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_18
+	removemoney 10000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	setvar VAR_UNI_TERM_STATE, 3
+	msgbox Ardor_Uni_Office_Text_ConsulDonated
+	closemessage
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_8:
+	checkmoney 50000
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_21
+	removemoney 50000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	setvar VAR_UNI_TERM_STATE, 4
+	msgbox Ardor_Uni_Office_Text_ConsulDonated
+	closemessage
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_9:
+	checkmoney 100000
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_24
+	removemoney 100000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	setvar VAR_UNI_TERM_STATE, 5
+	msgbox Ardor_Uni_Office_Text_ConsulDonated
+	closemessage
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_10:
+	checkmoney 500000
+	compare VAR_RESULT, FALSE
+	goto_if_eq Ardor_Uni_Office_EventScript_ConsulDonate_27
+	removemoney 1000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	setvar VAR_UNI_TERM_STATE, 6
+	msgbox Ardor_Uni_Office_Text_ConsulDonated
+	closemessage
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_12:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_15:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_18:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_21:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_24:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_27:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
+
+Ardor_Uni_Office_EventScript_ConsulDonate_30:
+	msgbox Ardor_Uni_Office_Text_ConsulRegisterShort
+	closemessage
+	hidemoneybox
+	return
 
 
 Ardor_Uni_Office_EventScript_ConsulRegister::
@@ -946,3 +1123,21 @@ Ardor_Uni_Office_Text_PhysicsPrereq::
 Ardor_Uni_Office_Text_ComputerPrereq::
 	.string "Necesse est studere algebram ante\n"
 	.string "computatra.$"
+
+Ardor_Uni_Office_Text_ConsulCongrats::
+	.string "Artes quinque iam studuisti.\n"
+	.string "Congratulation! Sessionem perfecisti.$"
+
+Ardor_Uni_Office_Text_ConsulGradutate::
+	.string "Omnia artes iam studuisti.\n"
+	.string "Congratulatio! Collegium Ardentem\l"
+	.string "perfecisti! Accipe hoc diploma.$"
+
+Ardor_Uni_Office_Text_ConsulDonated::
+	.string "Gratias tibi ago.$"
+
+Ardor_Uni_Office_Text_ConsulDonate::
+	.string "Salve alumne. Venisti donare?$"
+
+Ardor_Uni_Office_Text_ConsulDonateNo::
+	.string "Reveni cum lubidine donare. Vale alumne.$"

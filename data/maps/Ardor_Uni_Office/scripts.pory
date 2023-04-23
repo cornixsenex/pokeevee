@@ -75,35 +75,197 @@ script Ardor_Uni_Office_EventScript_Consul {
 	//if graduated ask donation
 	//if not enrolled ask enrollment
 	//if enrolled read off class list
-	switch (var(VAR_UNI_STATE)) {
-		case 0:
-			msgbox("UNI_STATE is 0 in consul")
-			closemessage
-		case 1:
-			call (Ardor_Uni_Office_EventScript_ConsulRegister)
-		case 2:
-			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
-		case 3:
-			call (Ardor_Uni_Office_EventScript_ConsulRegister)
-		case 4:
-			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
-		case 5:
-			call (Ardor_Uni_Office_EventScript_ConsulRegister)
-		case 6:
-			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
-		case 7:
-			call (Ardor_Uni_Office_EventScript_ConsulRegister)
-		case 8:
-			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
-		case 9:
-		case 10:
-			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
-		default:
-			msgbox("UNI_STATE problemo in consul")
-			closemessage
-	}	
+	if (var(VAR_UNI_TERM_STATE) > 4) {
+		call (Ardor_Uni_Office_EventScript_Graduate)
+	} else {
+		switch (var(VAR_UNI_STATE)) {
+			case 0:
+				msgbox("UNI_STATE is 0 in consul")
+				closemessage
+			case 1:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 2:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 3:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 4:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 5:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 6:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 7:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 8:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 9:
+			case 10:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			default:
+				msgbox("UNI_STATE problemo in consul")
+				closemessage
+		}	
+	}
 	return
 }
+
+script Ardor_Uni_Office_EventScript_Graduate {
+	setvar(VAR_UNI_TERM_STATE, 0)
+	call (Ardor_Uni_Office_EventScript_IncrementVar)
+	msgbox(Ardor_Uni_Office_Text_ConsulCongrats)
+	closemessage
+	if (var(VAR_UNI_STATE) == 9) {
+		setvar (VAR_UNI_STATE, 10)
+		msgbox(Ardor_Uni_Office_Text_ConsulGradutate)
+		closemessage
+		giveitem (ITEM_DIPLOMA)
+		call (Ardor_Uni_Office_EventScript_ConsulDonate)
+	} else {
+		call (Ardor_Uni_Office_EventScript_ConsulRegister)
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_ConsulDonate {
+	showmoneybox(0, 0)
+	msgbox(Ardor_Uni_Office_Text_ConsulDonate, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Ardor_Uni_Office_Text_ConsulDonateNo)
+		closemessage
+		hidemoneybox
+		return
+	} else {
+		switch (var(VAR_UNI_TERM_STATE)) {
+			case 0:
+			checkmoney (1000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (1000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 1)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				return
+			}
+			case 1:
+			//5000
+			checkmoney (5000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (5000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 2)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				return
+			}
+			case 2:
+			//10000
+			checkmoney (10000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (10000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 3)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				return
+			}
+			case 3:
+			//50000
+			checkmoney (50000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (50000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 4)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				return
+			}
+			case 4:
+			//100000
+			checkmoney (100000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (100000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 5)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				return
+			}
+			case 5:
+			//500000
+			checkmoney (500000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (1000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 6)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				return
+			}
+			default:
+			//999999
+			checkmoney (999998)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (999998)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				return
+			}
+		}
+	}
+}
+
+		
 
 script Ardor_Uni_Office_EventScript_ConsulRegister {
 	//Price is 1,000 will you pay YESNO
@@ -623,5 +785,22 @@ text Ardor_Uni_Office_Text_ComputerPrereq {
 	format("Necesse est studere algebram ante computatra.")
 }
 
+text Ardor_Uni_Office_Text_ConsulCongrats {
+	format("Artes quinque iam studuisti. Congratulation! Sessionem perfecisti.")
+}
 
+text Ardor_Uni_Office_Text_ConsulGradutate {
+	format("Omnia artes iam studuisti. Congratulatio! Collegium Ardentem perfecisti! Accipe hoc diploma.")
+}
 
+text Ardor_Uni_Office_Text_ConsulDonated {
+	format("Gratias tibi ago.")
+}
+
+text Ardor_Uni_Office_Text_ConsulDonate {
+	format("Salve alumne. Venisti donare?")
+}
+
+text Ardor_Uni_Office_Text_ConsulDonateNo {
+	format("Reveni cum lubidine donare. Vale alumne.")
+}

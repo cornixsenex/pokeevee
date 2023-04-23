@@ -132,6 +132,7 @@
 #define VAR_SALTYSPITOON_STATE                           0x406B // Controls line and door to the salty spitoon
 #define VAR_GANG_STATE                                   0x406C // Controls SS and warehouse quest
 #define VAR_UNI_STATE                                    0x406D // Set by Uni Consul
+#define VAR_UNI_TERM_STATE                               0x406E // Counts completed classes per term 
 
 
 
@@ -141,7 +142,6 @@
 
 
 
-#define VAR_ROUTE115_STATE                               0x406E // Unused Var
 #define VAR_ROUTE116_STATE                               0x406F
 #define VAR_ROUTE117_STATE                               0x4070 // Unused Var
 #define VAR_ROUTE118_STATE                               0x4071
