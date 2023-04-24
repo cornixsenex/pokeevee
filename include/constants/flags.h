@@ -172,6 +172,7 @@
 #define FLAG_OPEN_CLASS_GYM                  0x92
 #define FLAG_PHOENIX_PARTY                   0x93
 #define FLAG_PLEDGE_HAS_KEG                  0x94
+#define FLAG_PHOENIX_LEAF                    0x95
 
 												  ////BREAK
 													  
@@ -180,7 +181,6 @@
 
 
 
-#define FLAG_DELIVERED_DEVON_GOODS           0x95
 #define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98

@@ -45,7 +45,6 @@ SlateportCity_OceanicMuseum_1F_EventScript_CheckMoneyForFee::
 	end
 
 SlateportCity_OceanicMuseum_1F_EventScript_NotEnoughMoney::
-	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, SlateportCity_OceanicMuseum_1F_EventScript_AllowEntranceAnyway
 	msgbox SlateportCity_OceanicMuseum_1F_Text_NotEnoughMoney, MSGBOX_DEFAULT
 	closemessage
 	hidemoneybox
@@ -153,7 +152,6 @@ SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGrunt::
 	msgbox SlateportCity_OceanicMuseum_1F_Text_RememberMeTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM46
 	goto_if_eq VAR_RESULT, 0, SlateportCity_OceanicMuseum_1F_EventScript_NoRoomForThief
-	setflag FLAG_RECEIVED_TM46
 	msgbox SlateportCity_OceanicMuseum_1F_Text_HopeINeverSeeYouAgain, MSGBOX_DEFAULT
 	closemessage
 	goto_if_eq VAR_FACING, DIR_NORTH, SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitNorth
@@ -183,7 +181,6 @@ SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExitWestEast::
 	end
 
 SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGruntExited::
-	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT
 	playse SE_EXIT
 	removeobject LOCALID_FAMILIAR_GRUNT
 	release
