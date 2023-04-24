@@ -383,18 +383,26 @@ Ardor_Uni_Office_EventScript_ConsulRegister_4:
 	return
 
 Ardor_Uni_Office_EventScript_ConsulRegister_9:
+	setflag FLAG_OPEN_CLASS_GRAMMAR
+	setflag FLAG_OPEN_CLASS_ARITHMETIC
 	msgbox Ardor_Uni_Office_Text_ClassDefault1
 	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
 
 Ardor_Uni_Office_EventScript_ConsulRegister_10:
+	setflag FLAG_OPEN_CLASS_ALGEBRA
+	setflag FLAG_OPEN_CLASS_LITERATURE
 	msgbox Ardor_Uni_Office_Text_ClassDefault2
 	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
 
 Ardor_Uni_Office_EventScript_ConsulRegister_11:
+	setflag FLAG_OPEN_CLASS_GEOMETRY
+	setflag FLAG_OPEN_CLASS_POETRY
 	msgbox Ardor_Uni_Office_Text_ClassDefault3
 	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
 
 Ardor_Uni_Office_EventScript_ConsulRegister_12:
+	setflag FLAG_OPEN_CLASS_CALCULUS
+	setflag FLAG_OPEN_CLASS_POETRY
 	msgbox Ardor_Uni_Office_Text_ClassDefault4
 	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
 

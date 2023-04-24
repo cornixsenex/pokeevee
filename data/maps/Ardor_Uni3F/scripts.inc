@@ -8,41 +8,41 @@ Ardor_Uni3F_MapScripts_MAP_SCRIPT_ON_LOAD:
 
 
 Ardor_Uni3F_EventScript_OpenDoors::
-	goto_if_set FLAG_OPEN_CLASS_PHILOSOPHY, Ardor_Uni3F_EventScript_OpenDoors_2
+	goto_if_unset FLAG_OPEN_CLASS_PHILOSOPHY, Ardor_Uni3F_EventScript_OpenDoors_2
 Ardor_Uni3F_EventScript_OpenDoors_1:
-	goto_if_set FLAG_OPEN_CLASS_PHYSICS, Ardor_Uni3F_EventScript_OpenDoors_5
+	goto_if_unset FLAG_OPEN_CLASS_PHYSICS, Ardor_Uni3F_EventScript_OpenDoors_5
 Ardor_Uni3F_EventScript_OpenDoors_4:
-	goto_if_set FLAG_OPEN_CLASS_CALCULUS, Ardor_Uni3F_EventScript_OpenDoors_8
+	goto_if_unset FLAG_OPEN_CLASS_CALCULUS, Ardor_Uni3F_EventScript_OpenDoors_8
 Ardor_Uni3F_EventScript_OpenDoors_7:
-	goto_if_set FLAG_OPEN_CLASS_LITERATURE, Ardor_Uni3F_EventScript_OpenDoors_11
+	goto_if_unset FLAG_OPEN_CLASS_LITERATURE, Ardor_Uni3F_EventScript_OpenDoors_11
 Ardor_Uni3F_EventScript_OpenDoors_10:
-	goto_if_set FLAG_OPEN_CLASS_POETRY, Ardor_Uni3F_EventScript_OpenDoors_14
+	goto_if_unset FLAG_OPEN_CLASS_POETRY, Ardor_Uni3F_EventScript_OpenDoors_14
 Ardor_Uni3F_EventScript_OpenDoors_13:
-	goto_if_set FLAG_OPEN_CLASS_ORATION, Ardor_Uni3F_EventScript_OpenDoors_17
+	goto_if_unset FLAG_OPEN_CLASS_ORATION, Ardor_Uni3F_EventScript_OpenDoors_17
 Ardor_Uni3F_EventScript_OpenDoors_16:
 	end
 
 Ardor_Uni3F_EventScript_OpenDoors_2:
-	setmetatile 2, 9, METATILE_General_Door, 0
+	setmetatile 2, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni3F_EventScript_OpenDoors_1
 
 Ardor_Uni3F_EventScript_OpenDoors_5:
-	setmetatile 7, 9, METATILE_General_Door, 0
+	setmetatile 7, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni3F_EventScript_OpenDoors_4
 
 Ardor_Uni3F_EventScript_OpenDoors_8:
-	setmetatile 12, 9, METATILE_General_Door, 0
+	setmetatile 12, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni3F_EventScript_OpenDoors_7
 
 Ardor_Uni3F_EventScript_OpenDoors_11:
-	setmetatile 26, 9, METATILE_General_Door, 0
+	setmetatile 26, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni3F_EventScript_OpenDoors_10
 
 Ardor_Uni3F_EventScript_OpenDoors_14:
-	setmetatile 31, 9, METATILE_General_Door, 0
+	setmetatile 31, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni3F_EventScript_OpenDoors_13
 
 Ardor_Uni3F_EventScript_OpenDoors_17:
-	setmetatile 36, 9, METATILE_General_Door, 0
+	setmetatile 36, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni3F_EventScript_OpenDoors_16
 

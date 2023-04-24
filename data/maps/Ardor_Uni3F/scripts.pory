@@ -6,23 +6,23 @@ mapscripts Ardor_Uni3F_MapScripts {
 }
 
 script Ardor_Uni3F_EventScript_OpenDoors {
-	if (flag(FLAG_OPEN_CLASS_PHILOSOPHY) ){
-		setmetatile (2, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_PHILOSOPHY) ){
+		setmetatile (2, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_PHYSICS) ){
-		setmetatile (7, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_PHYSICS) ){
+		setmetatile (7, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_CALCULUS) ){
-		setmetatile (12, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_CALCULUS) ){
+		setmetatile (12, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_LITERATURE) ){
-		setmetatile (26, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_LITERATURE) ){
+		setmetatile (26, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_POETRY) ){
-		setmetatile (31, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_POETRY) ){
+		setmetatile (31, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_ORATION) ){
-		setmetatile (36, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_ORATION) ){
+		setmetatile (36, 9, METATILE_Facility_DoorBlock, 1)
 	}
 	end
 }

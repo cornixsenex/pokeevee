@@ -7,26 +7,26 @@ mapscripts Ardor_Uni1F_MapScripts {
 }
 
 script Ardor_Uni1F_EventScript_OpenDoors {
-	if (flag(FLAG_OPEN_CLASS_GEOLOGY) ){
-		setmetatile (2, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_GEOLOGY) ){
+		setmetatile (2, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_BIOLOGY) ){
-		setmetatile (7, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_BIOLOGY) ){
+		setmetatile (7, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_CHEMISTRY) ){
-		setmetatile (12, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_CHEMISTRY) ){
+		setmetatile (12, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_MUSIC) ) {
-		setmetatile (17, 1, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_MUSIC) ) {
+		setmetatile (17, 1, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_ARITHMETIC) ){
-		setmetatile (26, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_ARITHMETIC) ){
+		setmetatile (26, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_GRAMMAR) ){
-		setmetatile (31, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_GRAMMAR) ){
+		setmetatile (31, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (flag(FLAG_OPEN_CLASS_ART) ){
-		setmetatile (36, 9, METATILE_General_Door, 0)
+	if (!flag(FLAG_OPEN_CLASS_ART) ){
+		setmetatile (36, 9, METATILE_Facility_DoorBlock, 1)
 	}
 	end
 }

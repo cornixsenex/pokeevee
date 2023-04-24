@@ -9,7 +9,17 @@ const OBJ_EVENT_LEAF = 9
 const OBJ_EVENT_FRATFIGHTL = 4
 const OBJ_EVENT_FRATFIGHTR = 6
 
-mapscripts Phoenix_MapScripts {}
+mapscripts Phoenix_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		call (Phoenix_EventScript_TryPrimePartyTrigger)
+	}
+}
+
+script Phoenix_EventScript_TryPrimePartyTrigger {
+	if (!flag(FLAG_PHOENIX_PARTY) ) {
+		setvar (VAR_UNI_STATE, 69)
+	} 
+}
 
 script Phoenix_EventScript_PartyTrigger {
 	if (flag(FLAG_PHOENIX_PARTY)) {
@@ -105,7 +115,9 @@ script Phoenix_EventScript_ClearParty {
 	waitmovement (0)
 	msgbox(Phoenix_Text_FratPartyClear)
 	closemessage
+	fadescreen (1)
 	setflag (FLAG_PHOENIX_PARTY)
+	setvar (VAR_UNI_STATE, 0)
 	removeobject (OBJ_EVENT_FRATBOY)
 	removeobject (OBJ_EVENT_FRATBOY)
 	removeobject (OBJ_EVENT_FRATBOY1)
@@ -115,6 +127,8 @@ script Phoenix_EventScript_ClearParty {
 	removeobject (OBJ_EVENT_FRATGIRL2)
 	removeobject (OBJ_EVENT_FRATFIGHTL)
     removeobject (OBJ_EVENT_FRATFIGHTR)
+	playse (SE_WARP_OUT)
+	waitse
 	call (Phoenix_EventScript_LeafApproach)
 	return
 }
@@ -123,19 +137,15 @@ script Phoenix_EventScript_LeafApproach {
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
 	if (var(VAR_RESULT) == DIR_EAST) {
 		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafApproach1)
-		setflag (FLAG_TEMP_6)
 	} else {
 		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafApproach2)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 	}
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	fadescreen (0)
 	waitmovement (0)
 	msgbox(Phoenix_Text_LeafExit)
 	closemessage
-	if (flag(FLAG_TEMP_6) ) {
-		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafExitA)
-	} else {
-		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafExitB)
-	}
+	applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafExit)
 	waitmovement (0)
 	setflag (FLAG_PHOENIX_LEAF)
 	removeobject (OBJ_EVENT_LEAF)
@@ -170,22 +180,16 @@ script Phoenix_EventScript_Pledge {
 }
 
 movement Phoenix_Movement_LeafApproach1 {
-	walk_right * 2
+	walk_right * 4
+	walk_up
+	face_left
 }
 
 movement Phoenix_Movement_LeafApproach2 {
-	walk_right * 2
-	walk_down
-	face_right
+	walk_right * 3 
 }
 
-movement Phoenix_Movement_LeafExitA {
-	walk_down * 2
-	walk_right * 2
-	walk_up * 8
-}
-
-movement Phoenix_Movement_LeafExitB {
+movement Phoenix_Movement_LeafExit {
 	walk_up * 6
 }
 
@@ -238,5 +242,8 @@ text Phoenix_Text_Leaf {
 	format("Hey Andre so you know you are awesome. I rarely feel this kind of connection, only to someone as special as you.")
 }
 
+text Phoenix_Text_FratPartyClear {
+	format("What's that? A party? With an open keg!? Dear friends lets go! Follow me! \pHouse party!")
+}
 
 

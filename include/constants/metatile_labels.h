@@ -161,6 +161,7 @@
 
 // gTileset_Facility
 #define METATILE_Facility_DataPad                       0x3E4
+#define METATILE_Facility_DoorBlock                     0x3F7
 #define METATILE_Facility_NewMauvilleDoor_Closed_Tile0  0x314
 #define METATILE_Facility_NewMauvilleDoor_Closed_Tile1  0x315
 #define METATILE_Facility_NewMauvilleDoor_Closed_Tile2  0x316

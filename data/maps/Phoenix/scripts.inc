@@ -1,5 +1,19 @@
 Phoenix_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Phoenix_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Phoenix_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call Phoenix_EventScript_TryPrimePartyTrigger
+	return
+
+
+Phoenix_EventScript_TryPrimePartyTrigger::
+	goto_if_unset FLAG_PHOENIX_PARTY, Phoenix_EventScript_TryPrimePartyTrigger_1
+	return
+
+Phoenix_EventScript_TryPrimePartyTrigger_1:
+	setvar VAR_UNI_STATE, 69
+	return
 
 
 Phoenix_EventScript_PartyTrigger::
@@ -96,7 +110,13 @@ Phoenix_EventScript_FratBoy_2:
 
 
 Phoenix_EventScript_ClearParty::
+	applymovement 5, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Phoenix_Text_FratPartyClear
+	closemessage
+	fadescreen 1
 	setflag FLAG_PHOENIX_PARTY
+	setvar VAR_UNI_STATE, 0
 	removeobject 5
 	removeobject 5
 	removeobject 1
@@ -106,6 +126,8 @@ Phoenix_EventScript_ClearParty::
 	removeobject 7
 	removeobject 4
 	removeobject 6
+	playse SE_WARP_OUT
+	waitse
 	call Phoenix_EventScript_LeafApproach
 	return
 
@@ -115,14 +137,13 @@ Phoenix_EventScript_LeafApproach::
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq Phoenix_EventScript_LeafApproach_2
 	applymovement 9, Phoenix_Movement_LeafApproach2
-Phoenix_EventScript_LeafApproach_1:
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+Phoenix_EventScript_LeafApproach_1:
+	fadescreen 0
 	waitmovement 0
 	msgbox Phoenix_Text_LeafExit
 	closemessage
-	goto_if_set FLAG_TEMP_6, Phoenix_EventScript_LeafApproach_6
-	applymovement 9, Phoenix_Movement_LeafExitB
-Phoenix_EventScript_LeafApproach_5:
+	applymovement 9, Phoenix_Movement_LeafExit
 	waitmovement 0
 	setflag FLAG_PHOENIX_LEAF
 	removeobject 9
@@ -130,12 +151,7 @@ Phoenix_EventScript_LeafApproach_5:
 
 Phoenix_EventScript_LeafApproach_2:
 	applymovement 9, Phoenix_Movement_LeafApproach1
-	setflag FLAG_TEMP_6
 	goto Phoenix_EventScript_LeafApproach_1
-
-Phoenix_EventScript_LeafApproach_6:
-	applymovement 9, Phoenix_Movement_LeafExitA
-	goto Phoenix_EventScript_LeafApproach_5
 
 
 Phoenix_EventScript_Pledge::
@@ -175,31 +191,19 @@ Phoenix_EventScript_Pledge_7:
 Phoenix_Movement_LeafApproach1:
 	walk_right
 	walk_right
+	walk_right
+	walk_right
+	walk_up
+	face_left
 	step_end
 
 Phoenix_Movement_LeafApproach2:
 	walk_right
 	walk_right
-	walk_down
-	face_right
+	walk_right
 	step_end
 
-Phoenix_Movement_LeafExitA:
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-Phoenix_Movement_LeafExitB:
+Phoenix_Movement_LeafExit:
 	walk_up
 	walk_up
 	walk_up
@@ -259,3 +263,8 @@ Phoenix_Text_Leaf::
 	.string "Hey Andre so you know you are awesome.\n"
 	.string "I rarely feel this kind of connection,\l"
 	.string "only to someone as special as you.$"
+
+Phoenix_Text_FratPartyClear::
+	.string "What's that? A party? With an open\n"
+	.string "keg!? Dear friends lets go! Follow me!\p"
+	.string "House party!$"
