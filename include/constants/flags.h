@@ -80,7 +80,7 @@
 #define FLAG_ROUTE7_HIDEOLDWOMAN    0x40 // Hides the old lady after the roadblock trigger
 #define FLAG_ROCKTUNNEL_RIVALDEFEATED    0x41 // Hides Leaf on the bridge
 #define FLAG_VEGAS_POWERON   0x42 // Set after PowerPlant fixed, controls generator metatiles
-#define FLAG_ARDOR_UNI1F_LEAF    0x43 // Set after the LEAF intro in Ardor Uni
+#define FLAG_FRAT_LEAF    0x43 // Set after Indy leaves pyramids 
 #define FLAG_PYRAMIDS_INDY    0x44 // Set after defeating at the Pyramids. Hides Indy at the pyramid AND Leaf on Uni2F
 #define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Unused Flag
 #define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Unused Flag
@@ -173,16 +173,17 @@
 #define FLAG_PHOENIX_PARTY                   0x93
 #define FLAG_PLEDGE_HAS_KEG                  0x94
 #define FLAG_PHOENIX_LEAF                    0x95
+#define FLAG_CLASS_INDY                      0x96 // Hides Indy and Leaf in class. Set frat party, cleared indy pyramid
+#define FLAG_CLASS_LEAF                      0x97
+
+
+
 
 												  ////BREAK
 													  
 				
 
 
-
-
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
-#define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
 #define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
 #define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A

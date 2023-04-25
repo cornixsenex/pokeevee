@@ -1,22 +1,61 @@
 Ardor_Uni_ArchaeologyClass_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Ardor_Uni_ArchaeologyClass_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Ardor_Uni_ArchaeologyClass_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
 Ardor_Uni_ArchaeologyClass_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	call Ardor_Uni_ArchaeologyClass_OnTransition
 	return
 
+Ardor_Uni_ArchaeologyClass_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_INDY_STATE, 0, Ardor_Uni_ArchaeologyClass_EventScript_FaceTA
+	.2byte 0
+
 
 Ardor_Uni_ArchaeologyClass_OnTransition::
+	compare VAR_INDY_STATE, 0
+	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_2
+	compare VAR_INDY_STATE, 1
+	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_3
+	compare VAR_INDY_STATE, 2
+	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_4
 	compare VAR_INDY_STATE, 3
-	goto_if_ge Ardor_Uni_ArchaeologyClass_OnTransition_2
+	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_5
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
+	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents
 Ardor_Uni_ArchaeologyClass_OnTransition_1:
 	end
 
 Ardor_Uni_ArchaeologyClass_OnTransition_2:
+	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
+	call Ardor_Uni_ArchaeologyClass_EventScript_SetupTA
+	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
+
+Ardor_Uni_ArchaeologyClass_OnTransition_3:
+	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
+	clearflag FLAG_CLASS_LEAF
+	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
+
+Ardor_Uni_ArchaeologyClass_OnTransition_4:
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents
 	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
+
+Ardor_Uni_ArchaeologyClass_OnTransition_5:
+	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
+	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents
+	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
+
+
+Ardor_Uni_ArchaeologyClass_EventScript_FaceTA::
+	turnobject 6, DIR_SOUTH
+	end
+
+
+Ardor_Uni_ArchaeologyClass_EventScript_SetupTA::
+	setobjectxyperm 6, 6, 3
+	setflag FLAG_CLASS_LEAF
+	setflag FLAG_CLASS_INDY
+	return
 
 
 Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents::

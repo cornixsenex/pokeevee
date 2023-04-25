@@ -5,7 +5,7 @@ Pyramids_MapScripts::
 Pyramids_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	pyramid_updatelight 200, PYRAMID_LIGHT_SET_RADIUS
 	setvar VAR_TEMP_F, 1
-	compare VAR_INDY_STATE, 4
+	compare VAR_INDY_STATE, 3
 	goto_if_ne Pyramids_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
 Pyramids_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	end

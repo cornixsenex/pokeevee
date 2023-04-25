@@ -1,16 +1,47 @@
+
+const OBJ_EVENT_TA = 6
+
+
+
 mapscripts Ardor_Uni_ArchaeologyClass_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		call (Ardor_Uni_ArchaeologyClass_OnTransition)
 	}
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_INDY_STATE, 0: Ardor_Uni_ArchaeologyClass_EventScript_FaceTA
+	]
 }
 
 script Ardor_Uni_ArchaeologyClass_OnTransition {
-	if (var(VAR_INDY_STATE) >= 3) {
+	//0 = TA in charge
+	if (var(VAR_INDY_STATE) == 0) {
+		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+		call (Ardor_Uni_ArchaeologyClass_EventScript_SetupTA)
+	} elif (var(VAR_INDY_STATE) == 1) {
+		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+		clearflag (FLAG_CLASS_LEAF)
+	} elif (var(VAR_INDY_STATE) == 2) {
+		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+	} elif (var(VAR_INDY_STATE) == 3) {
+		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
 		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
 	} else {
 		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
 	}
 	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_FaceTA {
+	turnobject (OBJ_EVENT_TA, DIR_SOUTH)
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_SetupTA {
+	setobjectxyperm (OBJ_EVENT_TA, 6, 3)
+	setflag (FLAG_CLASS_LEAF)
+	setflag (FLAG_CLASS_INDY)
 }
 
 script Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents {

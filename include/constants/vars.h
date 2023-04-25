@@ -287,7 +287,7 @@
 #define VAR_ROBUSTUS_STATE                   			 0x40FB // Controls events in Robustus namely the campers and leaf event; set to 7 on exeunt; triggers leaf before rock tunnel then set to 8; triggers rival ambush then set to 9;
 #define VAR_ROUTE6_STATE                     			 0x40FC // Triggers J&J event
 #define VAR_CAMPLODGE                        			 0x40FD // Controls camper / rocks
-#define VAR_INDY_STATE                    	 			 0x40FE // Set to 1 after leaf intro, set to 2 after Indy returns set to 3 after rebel reveal set to 4 after Attack Begins  
+#define VAR_INDY_STATE                    	 			 0x40FE // 1 after Indy leaves pyramids, 2 after rebel reveal, 3 after attack starts  
 #define VAR_UNUSED_0x40FF                    			 0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
