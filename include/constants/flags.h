@@ -175,6 +175,7 @@
 #define FLAG_PHOENIX_LEAF                    0x95
 #define FLAG_CLASS_INDY                      0x96 // Hides Indy and Leaf in class. Set frat party, cleared indy pyramid
 #define FLAG_CLASS_LEAF                      0x97
+#define FLAG_ARDOR_ARCHAEOLOGY_INTRO              0x98
 
 
 
@@ -184,7 +185,6 @@
 				
 
 
-#define FLAG_RECEIVED_SUPER_ROD              0x98
 #define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
 #define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A
 #define FLAG_FORTREE_NPC_TRADE_COMPLETED     0x9B

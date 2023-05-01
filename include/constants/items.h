@@ -949,8 +949,9 @@
 #define ITEM_TATTOO      769
 #define ITEM_DIPLOMA      770
 #define ITEM_KEG      771
+#define ITEM_ANCIENT_LAMP      772
 
-#define ITEMS_COUNT 772
+#define ITEMS_COUNT 773
 
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 

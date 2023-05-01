@@ -298,7 +298,6 @@ RustboroCity_EventScript_StolenGoodsScene::
 	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 30, 10
 	setvar VAR_RUSTBORO_CITY_STATE, 2
 	setvar VAR_RUSTURF_TUNNEL_STATE, 2
-	setvar VAR_ROUTE116_STATE, 1
 	releaseall
 	end
 

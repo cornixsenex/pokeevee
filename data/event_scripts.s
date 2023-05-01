@@ -1383,3 +1383,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/FootballField/scripts.inc"
 
 	.include "data/maps/Phoenix_Mart/scripts.inc"
+
+	.include "data/maps/DesertTemple_5F/scripts.inc"
+
+	.include "data/maps/DesertTemple_4F/scripts.inc"
+
+	.include "data/maps/DesertTemple_3F/scripts.inc"
+
+	.include "data/maps/DesertTemple_2F/scripts.inc"
+
+	.include "data/maps/DesertTemple_1F/scripts.inc"
+
+	.include "data/maps/DesertTemple_B1F/scripts.inc"

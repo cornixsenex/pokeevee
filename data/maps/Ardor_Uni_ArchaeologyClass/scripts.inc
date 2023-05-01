@@ -9,38 +9,36 @@ Ardor_Uni_ArchaeologyClass_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 Ardor_Uni_ArchaeologyClass_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	map_script_2 VAR_INDY_STATE, 0, Ardor_Uni_ArchaeologyClass_EventScript_FaceTA
+	map_script_2 VAR_INDY_STATE, 1, Ardor_Uni_ArchaeologyClass_EventScript_DoIndyReveal
 	.2byte 0
 
 
 Ardor_Uni_ArchaeologyClass_OnTransition::
-	compare VAR_INDY_STATE, 0
-	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_2
-	compare VAR_INDY_STATE, 1
-	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_3
-	compare VAR_INDY_STATE, 2
-	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_4
-	compare VAR_INDY_STATE, 3
-	goto_if_eq Ardor_Uni_ArchaeologyClass_OnTransition_5
+	switch VAR_INDY_STATE
+	case 0, Ardor_Uni_ArchaeologyClass_OnTransition_3
+	case 1, Ardor_Uni_ArchaeologyClass_OnTransition_4
+	case 2, Ardor_Uni_ArchaeologyClass_OnTransition_5
+	case 3, Ardor_Uni_ArchaeologyClass_OnTransition_6
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents
 Ardor_Uni_ArchaeologyClass_OnTransition_1:
 	end
 
-Ardor_Uni_ArchaeologyClass_OnTransition_2:
+Ardor_Uni_ArchaeologyClass_OnTransition_3:
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
 	call Ardor_Uni_ArchaeologyClass_EventScript_SetupTA
 	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
 
-Ardor_Uni_ArchaeologyClass_OnTransition_3:
+Ardor_Uni_ArchaeologyClass_OnTransition_4:
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
 	clearflag FLAG_CLASS_LEAF
 	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
 
-Ardor_Uni_ArchaeologyClass_OnTransition_4:
+Ardor_Uni_ArchaeologyClass_OnTransition_5:
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents
 	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
 
-Ardor_Uni_ArchaeologyClass_OnTransition_5:
+Ardor_Uni_ArchaeologyClass_OnTransition_6:
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels
 	call Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents
 	goto Ardor_Uni_ArchaeologyClass_OnTransition_1
@@ -49,6 +47,79 @@ Ardor_Uni_ArchaeologyClass_OnTransition_5:
 Ardor_Uni_ArchaeologyClass_EventScript_FaceTA::
 	turnobject 6, DIR_SOUTH
 	end
+
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA::
+	lock
+	faceplayer
+	switch VAR_INDY_STATE
+	case 0, Ardor_Uni_ArchaeologyClass_EventScript_TA_3
+	case 1, Ardor_Uni_ArchaeologyClass_EventScript_TA_4
+	case 2, Ardor_Uni_ArchaeologyClass_EventScript_TA_5
+	case 3, Ardor_Uni_ArchaeologyClass_EventScript_TA_6
+	msgbox Ardor_Uni_ArchaeologyClass_EventScript_TA_Text_1
+	closemessage
+Ardor_Uni_ArchaeologyClass_EventScript_TA_1:
+	release
+	end
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_3:
+	checktrainerflag TRAINER_UNI_ARCHAEOLOGY
+	goto_if 1, Ardor_Uni_ArchaeologyClass_EventScript_TA_9
+	checkitem ITEM_ANCIENT_LAMP
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_ArchaeologyClass_EventScript_TA_12
+	goto_if_set FLAG_ARDOR_ARCHAEOLOGY_INTRO, Ardor_Uni_ArchaeologyClass_EventScript_TA_15
+	msgbox Ardor_Uni_ArchaeologyClass_Text_ClassBegin
+	closemessage
+	msgbox Ardor_Uni_ArchaeologyClass_Text_ClassBegun
+	closemessage
+	setflag FLAG_ARDOR_ARCHAEOLOGY_INTRO
+Ardor_Uni_ArchaeologyClass_EventScript_TA_8:
+	applymovement 6, Common_Movement_FaceDown
+	waitmovement 0
+	goto Ardor_Uni_ArchaeologyClass_EventScript_TA_1
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_4:
+	msgbox Ardor_Uni_ArchaeologyClass_Text_TAInDesk
+	closemessage
+	goto Ardor_Uni_ArchaeologyClass_EventScript_TA_1
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_5:
+	msgbox Ardor_Uni_ArchaeologyClass_Text_TARebel
+	closemessage
+	goto Ardor_Uni_ArchaeologyClass_EventScript_TA_1
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_6:
+	msgbox Ardor_Uni_ArchaeologyClass_EventScript_TA_Text_0
+	closemessage
+	goto Ardor_Uni_ArchaeologyClass_EventScript_TA_1
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_9:
+	msgbox Ardor_Uni_ArchaeologyClass_Text_ClassFinished
+	closemessage
+	goto Ardor_Uni_ArchaeologyClass_EventScript_TA_8
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_12:
+	call Ardor_Uni_ArchaeologyClass_EventScript_TATest
+	goto Ardor_Uni_ArchaeologyClass_EventScript_TA_8
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_15:
+	msgbox Ardor_Uni_ArchaeologyClass_Text_ClassBegun
+	closemessage
+	goto Ardor_Uni_ArchaeologyClass_EventScript_TA_8
+
+
+Ardor_Uni_ArchaeologyClass_EventScript_TATest::
+	msgbox Ardor_Uni_ArchaeologyClass_Text_FoundLamp
+	closemessage
+	removeitem ITEM_ANCIENT_LAMP
+	msgbox Ardor_Uni_ArchaeologyClass_Text_TABattleIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_UNI_ARCHAEOLOGY, Ardor_Uni_ArchaeologyClass_Text_TABattleLost
+	msgbox Ardor_Uni_ArchaeologyClass_Text_ClassFinished
+	closemessage
+	return
 
 
 Ardor_Uni_ArchaeologyClass_EventScript_SetupTA::
@@ -89,8 +160,12 @@ Ardor_Uni_ArchaeologyClass_EventScript_AddRebels::
 	return
 
 
-Ardor_Uni_ArchaeologyClass_EventScript_LeafTrigger::
+Ardor_Uni_ArchaeologyClass_EventScript_DoIndyReveal::
 	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene
+	waitmovement 0
 	call Ardor_Uni_ArchaeologyClass_EventScript_Cutscene
 	releaseall
 	end
@@ -272,6 +347,20 @@ Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit:
 	walk_down
 	step_end
 
+Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene:
+	walk_up
+	walk_up
+	walk_up
+	walk_diag_northwest
+	walk_up
+	step_end
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_Text_0:
+	.string "VAR_INDY_STATE is 3 rn$"
+
+Ardor_Uni_ArchaeologyClass_EventScript_TA_Text_1:
+	.string "VAR_INDY_STATE is over 3 in TA switcheroo$"
+
 Ardor_Uni_ArchaeologyClass_Text_Indy1::
 	.string "Now please sit down so our class may\n"
 	.string "begin$"
@@ -385,3 +474,34 @@ Ardor_Uni_ArchaeologyClass_Text_MaxieExit::
 	.string "Now hurry {PLAYER} and meet me at the\n"
 	.string "cave entrance on the far south side of\l"
 	.string "the sand.$"
+
+Ardor_Uni_ArchaeologyClass_Text_ClassBegin::
+	.string "Salve puer. Magister Indianus in\n"
+	.string "pyramide est. Marcus adjustor Indiani\l"
+	.string "sum. Sine magistro archaeologiam\l"
+	.string "doceo.$"
+
+Ardor_Uni_ArchaeologyClass_Text_ClassBegun::
+	.string "In eremis circum Ardentem multae sunt\n"
+	.string "reliquiae. Reperi thesaurum anteanum\l"
+	.string "et reveni cum eam.$"
+
+Ardor_Uni_ArchaeologyClass_Text_TAInDesk::
+	.string "Revenit magister Indianus.$"
+
+Ardor_Uni_ArchaeologyClass_Text_TARebel::
+	.string "Iam scis, rebelles sumus.$"
+
+Ardor_Uni_ArchaeologyClass_Text_FoundLamp::
+	.string "Mea Hercule! Reperisti lampadem\n"
+	.string "anticam!$"
+
+Ardor_Uni_ArchaeologyClass_Text_TABattleIntro::
+	.string "Tempus iam est examinis.$"
+
+Ardor_Uni_ArchaeologyClass_Text_TABattleLost::
+	.string "Omnia quod scio tibi docui.$"
+
+Ardor_Uni_ArchaeologyClass_Text_ClassFinished::
+	.string "Congratulatio! Iam studuisti\n"
+	.string "Archaeologiam.$"

@@ -663,6 +663,12 @@
 #define MAP_ARDOR_UNI_POETRY_CLASS        (79 | (30 << 8))
 #define MAP_ARDOR_UNI_RHETORIC_CLASS      (80 | (30 << 8))
 #define MAP_ARDOR_UNI_OFFICE              (81 | (30 << 8))
+#define MAP_DESERT_TEMPLE_5F              (82 | (30 << 8))
+#define MAP_DESERT_TEMPLE_4F              (83 | (30 << 8))
+#define MAP_DESERT_TEMPLE_3F              (84 | (30 << 8))
+#define MAP_DESERT_TEMPLE_2F              (85 | (30 << 8))
+#define MAP_DESERT_TEMPLE_1F              (86 | (30 << 8))
+#define MAP_DESERT_TEMPLE_B1F             (87 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

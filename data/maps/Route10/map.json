@@ -14,24 +14,24 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ELICIUS_BEACH",
       "offset": -16,
-      "map": "MAP_ELICIUS_BEACH"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE11",
       "offset": -40,
-      "map": "MAP_ROUTE11"
+      "direction": "right"
     },
     {
-      "direction": "down",
+      "map": "MAP_MARE_E",
       "offset": 0,
-      "map": "MAP_MARE_E"
+      "direction": "down"
     },
     {
-      "direction": "down",
+      "map": "MAP_MARE_C",
       "offset": -126,
-      "map": "MAP_MARE_C"
+      "direction": "down"
     }
   ],
   "object_events": [

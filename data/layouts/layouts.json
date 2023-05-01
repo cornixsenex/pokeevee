@@ -5630,6 +5630,66 @@
       "secondary_tileset": "gTileset_phoenix",
       "border_filepath": "data/layouts/FootballField/border.bin",
       "blockdata_filepath": "data/layouts/FootballField/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_TEMPLE_5F",
+      "name": "DesertTemple_5F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DesertTemple_5F/border.bin",
+      "blockdata_filepath": "data/layouts/DesertTemple_5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_TEMPLE_4F",
+      "name": "DesertTemple_4F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DesertTemple_4F/border.bin",
+      "blockdata_filepath": "data/layouts/DesertTemple_4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_TEMPLE_3F",
+      "name": "DesertTemple_3F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DesertTemple_3F/border.bin",
+      "blockdata_filepath": "data/layouts/DesertTemple_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_TEMPLE_2F",
+      "name": "DesertTemple_2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DesertTemple_2F/border.bin",
+      "blockdata_filepath": "data/layouts/DesertTemple_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_TEMPLE_1F",
+      "name": "DesertTemple_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DesertTemple_1F/border.bin",
+      "blockdata_filepath": "data/layouts/DesertTemple_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_TEMPLE_B1F",
+      "name": "DesertTemple_B1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DesertTemple_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/DesertTemple_B1F/map.bin"
     }
   ]
 }

@@ -131,7 +131,6 @@ Route116_EventScript_Briney::
 	lock
 	faceplayer
 	msgbox Route116_Text_ScoundrelMadeOffWithPeeko, MSGBOX_DEFAULT
-	setvar VAR_ROUTE116_STATE, 2
 	release
 	end
 
@@ -141,7 +140,6 @@ Route116_EventScript_BrineyTrigger::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox Route116_Text_ScoundrelMadeOffWithPeeko, MSGBOX_DEFAULT
-	setvar VAR_ROUTE116_STATE, 2
 	releaseall
 	end
 

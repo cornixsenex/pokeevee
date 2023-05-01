@@ -1,3 +1,17 @@
 Route15_MapScripts::
 	.byte 0
 
+
+Route15_EventScript_DesertTempleWarp::
+	lockall
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_SetInvisible
+	waitmovement 0
+	playse SE_FALL
+	delay 60
+	warpsilent MAP_DESERT_TEMPLE_B1F, 2, 2
+	waitstate
+	end
+

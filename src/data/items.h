@@ -10041,8 +10041,18 @@ const struct Item gItems[] =
         .secondaryId = 0,
 	},
 
-
-
+	[ITEM_ANCIENT_LAMP] =
+	{
+		.name = _("ANCIENT LAMP"),
+        .itemId = ITEM_ANCIENT_LAMP,
+        .price = 0,
+		.description = sAncientLampDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
 
 };
 

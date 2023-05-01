@@ -3865,6 +3865,11 @@ static const u8 sKegDesc[] = _(
 	"tank filled with\n"
 	"beer.\n");
 
+static const u8 sAncientLampDesc[] = _(
+	"A strange energy\n"
+	"radiates from\n"
+	"this gold lamp.\n");
+
 
 
 

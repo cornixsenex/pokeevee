@@ -5,30 +5,36 @@ const OBJ_EVENT_TA = 6
 
 mapscripts Ardor_Uni_ArchaeologyClass_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
+		//get this to do the indy scene on correct var
 		call (Ardor_Uni_ArchaeologyClass_OnTransition)
 	}
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		VAR_INDY_STATE, 0: Ardor_Uni_ArchaeologyClass_EventScript_FaceTA
+		VAR_INDY_STATE, 1: Ardor_Uni_ArchaeologyClass_EventScript_DoIndyReveal
 	]
 }
 
 script Ardor_Uni_ArchaeologyClass_OnTransition {
 	//0 = TA in charge
-	if (var(VAR_INDY_STATE) == 0) {
-		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
-		call (Ardor_Uni_ArchaeologyClass_EventScript_SetupTA)
-	} elif (var(VAR_INDY_STATE) == 1) {
-		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
-		clearflag (FLAG_CLASS_LEAF)
-	} elif (var(VAR_INDY_STATE) == 2) {
-		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
-	} elif (var(VAR_INDY_STATE) == 3) {
-		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
-		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
-	} else {
-		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
-		call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+	//1 = Indy has returned
+	//2 = Rebels are revealed
+	//3 = Rebels are gone
+	switch (var(VAR_INDY_STATE)) {
+		case 0:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			call (Ardor_Uni_ArchaeologyClass_EventScript_SetupTA)
+		case 1:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			clearflag (FLAG_CLASS_LEAF)
+		case 2:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+		case 3:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+		default:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
 	}
 	end
 }
@@ -36,6 +42,68 @@ script Ardor_Uni_ArchaeologyClass_OnTransition {
 script Ardor_Uni_ArchaeologyClass_EventScript_FaceTA {
 	turnobject (OBJ_EVENT_TA, DIR_SOUTH)
 	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_TA {
+	lock
+	faceplayer
+	switch (var(VAR_INDY_STATE) ) {
+		case 0:
+			//is the TA
+			if (defeated(TRAINER_UNI_ARCHAEOLOGY) ) {
+				msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassFinished)
+				closemessage
+			} else {
+				checkitem (ITEM_ANCIENT_LAMP)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_ArchaeologyClass_EventScript_TATest)
+				} else {
+					if (flag(FLAG_ARDOR_ARCHAEOLOGY_INTRO) ) {
+						//Reminder what to do
+						msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassBegun)
+						closemessage
+					} else {
+						//intro to what to do
+						msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassBegin)
+						closemessage
+						msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassBegun)
+						closemessage
+						setflag (FLAG_ARDOR_ARCHAEOLOGY_INTRO)
+					}
+				}
+			}
+			applymovement (OBJ_EVENT_TA, Common_Movement_FaceDown)
+			waitmovement (0)
+		case 1:
+			//is a student in Indy class
+			msgbox(Ardor_Uni_ArchaeologyClass_Text_TAInDesk)
+			closemessage
+		case 2:
+			//is a rebel in indy class
+			msgbox(Ardor_Uni_ArchaeologyClass_Text_TARebel)
+			closemessage
+		case 3:
+			//is in attack position
+			msgbox("VAR_INDY_STATE is 3 rn")
+			closemessage
+		default:
+			msgbox("VAR_INDY_STATE is over 3 in TA switcheroo")
+			closemessage
+	}
+	release
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_TATest {
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_FoundLamp)
+	closemessage
+	removeitem (ITEM_ANCIENT_LAMP)
+	msgbox(Ardor_Uni_ArchaeologyClass_Text_TABattleIntro)
+	closemessage
+	trainerbattle_no_intro(TRAINER_UNI_ARCHAEOLOGY, Ardor_Uni_ArchaeologyClass_Text_TABattleLost)
+	msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassFinished)
+	closemessage
+	return
 }
 
 script Ardor_Uni_ArchaeologyClass_EventScript_SetupTA {
@@ -75,14 +143,16 @@ script Ardor_Uni_ArchaeologyClass_EventScript_AddRebels {
 	return
 }
 	
-
-script Ardor_Uni_ArchaeologyClass_EventScript_LeafTrigger {
+script Ardor_Uni_ArchaeologyClass_EventScript_DoIndyReveal {
 	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene)
+	waitmovement  (0)
 	call (Ardor_Uni_ArchaeologyClass_EventScript_Cutscene)
 	releaseall
 	end
 }
-
 
 script Ardor_Uni_ArchaeologyClass_EventScript_Cutscene {	
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
@@ -258,6 +328,12 @@ movement Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit {
 	walk_down * 4
 }
 
+movement Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene {
+	walk_up * 3
+	walk_diag_northwest
+	walk_up
+}
+
 text Ardor_Uni_ArchaeologyClass_Text_Indy1 {
 	format("Now please sit down so our class may begin")
 }
@@ -338,5 +414,36 @@ text Ardor_Uni_ArchaeologyClass_Text_MaxieExit {
 	format("Now hurry {PLAYER} and meet me at the cave entrance on the far south side of the sand.")
 }
 
+text Ardor_Uni_ArchaeologyClass_Text_ClassBegin {
+	format("Salve puer. Magister Indianus in pyramide est. Marcus adjustor Indiani sum. Sine magistro archaeologiam doceo.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_ClassBegun {
+	format("In eremis circum Ardentem multae sunt reliquiae. Reperi thesaurum anteanum et reveni cum eam.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TAInDesk {
+	format("Revenit magister Indianus.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TARebel {
+	format("Iam scis, rebelles sumus.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_FoundLamp {
+	format("Mea Hercule! Reperisti lampadem anticam!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TABattleIntro {
+	format("Tempus iam est examinis.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TABattleLost {
+	format("Omnia quod scio tibi docui.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti Archaeologiam.")
+}
 
 

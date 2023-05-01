@@ -695,7 +695,13 @@
     "Ardor_Uni_LiteratureClass",
     "Ardor_Uni_PoetryClass",
     "Ardor_Uni_RhetoricClass",
-    "Ardor_Uni_Office"
+    "Ardor_Uni_Office",
+    "DesertTemple_5F",
+    "DesertTemple_4F",
+    "DesertTemple_3F",
+    "DesertTemple_2F",
+    "DesertTemple_1F",
+    "DesertTemple_B1F"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",
