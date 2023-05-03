@@ -3,7 +3,7 @@ mapscripts DesertTemple_B1F_MapScripts {}
 script DesertTemple_B1F_EventScript_Rat {
 	lock
 	//setflag (FLAG_DESERTTEMPLE_BASEMENT_RAT)
-	msgbox("TESTER")
+	msgbox("RAT SCRIPT")
 	closemessage
 	//removeobject (1)
 	release

@@ -11,4 +11,4 @@ DesertTemple_B1F_EventScript_Rat::
 
 
 DesertTemple_B1F_EventScript_Rat_Text_0:
-	.string "TESTER$"
+	.string "RAT SCRIPT$"

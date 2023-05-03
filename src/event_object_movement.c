@@ -171,6 +171,8 @@ static bool8 NpcTakeStep(struct Sprite *);
 static bool8 IsElevationMismatchAt(u8, s16, s16);
 static bool8 AreElevationsCompatible(u8, u8);
 
+//Kustom Collisions
+static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *, s16, s16);
 
 static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
 
@@ -6588,9 +6590,11 @@ static u8 GetVanillaCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 
         return COLLISION_IMPASSABLE;
     else if (IsElevationMismatchAt(objectEvent->currentElevation, x, y))
         return COLLISION_ELEVATION_MISMATCH;
+	else if (IsSpecialCollisionWithPlayer(objectEvent, x, y))
+		return COLLISION_SPECIAL_OBJECT;
     else if (DoesObjectCollideWithObjectAt(objectEvent, x, y))
         return COLLISION_OBJECT_EVENT;
-    
+	
     return COLLISION_NONE;
 }
 
@@ -6722,6 +6726,27 @@ static bool8 IsMetatileDirectionallyImpassable(struct ObjectEvent *objectEvent, 
         return TRUE;
 
     return FALSE;
+}
+
+static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x, s16 y)
+{
+	struct ObjectEvent *playerObject;
+	u8 objectEventId = GetObjectEventIdByXY(x, y);
+    s16 playerX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+    s16 playerY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+	//Check if it's a special Object Eventa
+	if (objectEventId != OBJECT_EVENTS_COUNT && objectEvent->graphicsId != OBJ_EVENT_GFX_POKEMON_019)
+	{
+		return FALSE;
+	}
+	if (playerX == x && playerY == y)
+	{
+		if (AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation))
+			return TRUE;
+	}
+	return FALSE;
 }
 
 static bool8 DoesObjectCollideWithObjectAt(struct ObjectEvent *objectEvent, s16 x, s16 y)

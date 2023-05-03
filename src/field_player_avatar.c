@@ -807,7 +807,7 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
 	//Kustom Collisions
 	if (collision == COLLISION_OBJECT_EVENT && CheckSpecialObjectCollision(x, y, direction))
 	{
-		DebugPrintf("RETURN COLLISION_SPECIAL_OBJECT", 0);
+		//DebugPrintf("RETURN COLLISION_SPECIAL_OBJECT", 0);
 		return COLLISION_SPECIAL_OBJECT;
 	}
 
