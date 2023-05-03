@@ -169,6 +169,9 @@ static void Task_WaitStartSurfing(u8 taskId);
 static bool8 CanStopSurfing(s16, s16, u8);
 static bool8 CanStartSurfing(s16, s16, u8);
 
+//Kustom Collisions
+static bool8 CheckSpecialObjectCollision(s16, s16, u8);
+
 // .rodata
 
 static bool8 (*const sForcedMovementTestFuncs[NUM_FORCED_MOVEMENTS])(u8) =
@@ -801,6 +804,13 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
     if (collision == COLLISION_OBJECT_EVENT && TryPushBoulder(x, y, direction))
         return COLLISION_PUSHED_BOULDER;
 
+	//Kustom Collisions
+	if (collision == COLLISION_OBJECT_EVENT && CheckSpecialObjectCollision(x, y, direction))
+	{
+		DebugPrintf("RETURN COLLISION_SPECIAL_OBJECT", 0);
+		return COLLISION_SPECIAL_OBJECT;
+	}
+
     if (collision == COLLISION_NONE)
     {
         if (CheckForRotatingGatePuzzleCollision(direction, x, y))
@@ -860,6 +870,20 @@ static bool8 ShouldJumpLedge(s16 x, s16 y, u8 direction)
         return TRUE;
     else
         return FALSE;
+}
+
+static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
+{
+	u8 objectEventId = GetObjectEventIdByXY(x, y);
+	const u8 *script;
+	if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_POKEMON_019)
+	{
+		script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
+		ScriptContext_SetupScript(script);
+		return TRUE;
+	}
+
+	return FALSE;
 }
 
 static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
