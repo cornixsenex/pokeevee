@@ -6732,7 +6732,6 @@ static bool8 IsMetatileDirectionallyImpassable(struct ObjectEvent *objectEvent, 
 static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x, s16 y)
 {
 	struct ObjectEvent *playerObject;
-	u8 objectEventId = GetObjectEventIdByXY(x, y);
     s16 playerX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
     s16 playerY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
 	const u8 *script;
@@ -6746,7 +6745,8 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 			//Check if it's a special Object Event and call correct script
 			if (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RAT)
 			{
-				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, gObjectEvents[objectEventId].mapNum, gObjectEvents[objectEventId].mapGroup);
+				//Yes, it's a special collision with player do script
+				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);
 				ScriptContext_SetupScript(script);
 				return TRUE;
 			}
