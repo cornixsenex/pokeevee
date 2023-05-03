@@ -876,7 +876,7 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 {
 	u8 objectEventId = GetObjectEventIdByXY(x, y);
 	const u8 *script;
-	if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_POKEMON_019)
+	if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_RAT)
 	{
 		script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
 		ScriptContext_SetupScript(script);

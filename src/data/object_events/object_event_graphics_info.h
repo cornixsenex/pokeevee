@@ -216,8 +216,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno = {
 }; // YOU READ THE NOTE RIGHT? BRUNO IS IRREGULAR!
 
 
-
-
+//SPECIES NOT NORMAL BE WARNED - BIGYELLOW BETTER
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRat = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_POKEMON_019,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = 10,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_PokemonSpecies,
+    .images = gObjectEventPicTable_Pokemon_Species_019,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+//DID YOU READ THE ABOVE? SPECIES NOT NORMAL
 
 //BREAK//
 

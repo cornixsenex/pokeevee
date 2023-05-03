@@ -33,6 +33,7 @@
 #include "constants/trainer_types.h"
 #include "constants/union_room.h"
 #include "pokemon_overworld_follower.h"
+#include "script.h"
 
 // this file was known as evobjmv.c in Game Freak's original source
 
@@ -6734,17 +6735,22 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 	u8 objectEventId = GetObjectEventIdByXY(x, y);
     s16 playerX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
     s16 playerY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	const u8 *script;
 	playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];
 
-	//Check if it's a special Object Eventa
-	if (objectEventId != OBJECT_EVENTS_COUNT && objectEvent->graphicsId != OBJ_EVENT_GFX_POKEMON_019)
-	{
-		return FALSE;
-	}
+	//Check if there is an object colliding with player
 	if (playerX == x && playerY == y)
 	{
 		if (AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation))
-			return TRUE;
+		{
+			//Check if it's a special Object Event and call correct script
+			if (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RAT)
+			{
+				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, gObjectEvents[objectEventId].mapNum, gObjectEvents[objectEventId].mapGroup);
+				ScriptContext_SetupScript(script);
+				return TRUE;
+			}
+		}
 	}
 	return FALSE;
 }
