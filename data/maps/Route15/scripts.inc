@@ -11,7 +11,7 @@ Route15_EventScript_DesertTempleWarp::
 	waitmovement 0
 	playse SE_FALL
 	delay 60
-	warpsilent MAP_DESERT_TEMPLE_B1F, 2, 2
+	warpsilent MAP_DESERT_TEMPLE_B1F, 9, 9
 	waitstate
 	end
 

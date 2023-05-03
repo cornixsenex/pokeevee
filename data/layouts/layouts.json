@@ -5684,8 +5684,8 @@
     {
       "id": "LAYOUT_DESERT_TEMPLE_B1F",
       "name": "DesertTemple_B1F_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 54,
+      "height": 36,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/DesertTemple_B1F/border.bin",
