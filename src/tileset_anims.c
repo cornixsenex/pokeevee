@@ -1161,7 +1161,7 @@ static void TilesetAnim_BattlePyramid(u16 timer)
 {
     if (timer % 8 == 0)
     {
-        QueueAnimTiles_BattlePyramid_Torch(timer / 8);
+        //QueueAnimTiles_BattlePyramid_Torch(timer / 8);
         QueueAnimTiles_BattlePyramid_StatueShadow(timer / 8);
     }
 }
@@ -1224,7 +1224,8 @@ static void QueueAnimTiles_Sootopolis_StormyWater(u16 timer)
 static void QueueAnimTiles_BattlePyramid_Torch(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_BattlePyramid_Torch);
-    AppendTilesetAnimToBuffer(gTilesetAnims_BattlePyramid_Torch[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 151)), 8 * TILE_SIZE_4BPP);
+	//I just took this out but ideally would like it to work
+    //AppendTilesetAnimToBuffer(gTilesetAnims_BattlePyramid_Torch[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 151)), 8 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_BattlePyramid_StatueShadow(u16 timer)
