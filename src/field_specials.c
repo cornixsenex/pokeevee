@@ -4656,3 +4656,27 @@ u16 RandDigit(void)
 	return RandomValue;
 }
 
+void FalseFloor(void)
+{
+	int x, y;
+	//Get player X and Y
+    x = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+    y = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	//Set Fire if correct Coords, else set regular
+	if (y == 17 || y == 20 || y == 23 || y == 26)
+	{
+		if ( (x == 0)  ||
+			 (x == 6)  ||
+			 (x == 9)  ||
+			 (x == 13) ||
+			 (x == 16) ||
+			 (x == 19)  )
+			MapGridSetMetatileIdAt(x, y, METATILE_BattlePyramid_FalseFloorFire);
+	}
+	else 
+	{
+		MapGridSetMetatileIdAt(x, y, METATILE_BattlePyramid_FalseFloor);
+	}
+}
+
+

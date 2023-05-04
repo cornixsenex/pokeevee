@@ -543,4 +543,5 @@ gSpecials::
 	def_special ChangeGen
 	def_special CheckMonHasGen
 	def_special RandDigit
+	def_special FalseFloor
 
