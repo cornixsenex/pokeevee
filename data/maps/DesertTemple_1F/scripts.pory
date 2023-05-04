@@ -1,1 +1,14 @@
-mapscripts DesertTemple_1F_MapScripts {}
+mapscripts DesertTemple_1F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (DesertTemple_1F_OnResume)
+	}
+
+}
+
+
+script DesertTemple_1F_OnResume {
+	setstepcallback (STEP_CB_CRACKED_FLOOR)
+	setholewarp (MAP_MIRAGE_TOWER_1F)
+	end
+}

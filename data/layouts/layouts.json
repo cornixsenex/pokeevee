@@ -5674,10 +5674,10 @@
     {
       "id": "LAYOUT_DESERT_TEMPLE_1F",
       "name": "DesertTemple_1F_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 23,
+      "height": 28,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_BattlePyramid",
       "border_filepath": "data/layouts/DesertTemple_1F/border.bin",
       "blockdata_filepath": "data/layouts/DesertTemple_1F/map.bin"
     },

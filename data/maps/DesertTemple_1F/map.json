@@ -17,10 +17,24 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 11,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_B1F",
+      "dest_warp_id": "17"
+    }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    }
   ],
   "bg_events": [
 
