@@ -17,7 +17,62 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_3F",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

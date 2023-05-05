@@ -23,6 +23,34 @@
       "elevation": 0,
       "dest_map": "MAP_DESERT_TEMPLE_B1F",
       "dest_warp_id": "17"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_1F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
