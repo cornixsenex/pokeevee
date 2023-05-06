@@ -6743,7 +6743,8 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 		if (AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation))
 		{
 			//Check if it's a special Object Event and call correct script
-			if (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RAT)
+			if (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RAT
+					|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_SNAKE)
 			{
 				//Yes, it's a special collision with player do script
 				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);

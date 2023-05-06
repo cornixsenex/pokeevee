@@ -4708,7 +4708,7 @@ bool16 IsDesertTemple4FSolved(void)
 					objectEventId5 = i;
 					break;
 			}
-			j += 1;
+			j++;
 		}
 	 }
 	 x1 = gObjectEvents[objectEventId1].currentCoords.x;
@@ -4721,17 +4721,17 @@ bool16 IsDesertTemple4FSolved(void)
 	 y3 = gObjectEvents[objectEventId3].currentCoords.y;
 	 y4 = gObjectEvents[objectEventId4].currentCoords.y;
 	 y5 = gObjectEvents[objectEventId5].currentCoords.y;
-	 //Real Coords are offset by 7 for some reason idk
-	 x1 -= 7;
-	 x2 -= 7;
-	 x3 -= 7;
-	 x4 -= 7;
-	 x5 -= 7;
-	 y1 -= 7;
-	 y2 -= 7;
-	 y3 -= 7;
-	 y4 -= 7;
-	 y5 -= 7;
+	 //Real Coords are offset
+	 x1 -= MAP_OFFSET;
+	 x2 -= MAP_OFFSET;
+	 x3 -= MAP_OFFSET;
+	 x4 -= MAP_OFFSET;
+	 x5 -= MAP_OFFSET;
+	 y1 -= MAP_OFFSET;
+	 y2 -= MAP_OFFSET;
+	 y3 -= MAP_OFFSET;
+	 y4 -= MAP_OFFSET;
+	 y5 -= MAP_OFFSET;
 
 	 //If ANY of the statues on 1...and 2....and 3...and 4 then yes else nah
 	 if ( (x1 == 2 && y1 == 12) || (x2 == 2 && y2 == 12) || (x3 == 2 && y3 == 12) || (x4 == 2 && y4 == 12) || (x5 == 2 && y5 == 12) ) 

@@ -876,11 +876,15 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 {
 	u8 objectEventId = GetObjectEventIdByXY(x, y);
 	const u8 *script;
-	if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_RAT)
+	if (objectEventId != OBJECT_EVENTS_COUNT) 
 	{
-		script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
-		ScriptContext_SetupScript(script);
-		return TRUE;
+		if (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_RAT
+				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_SNAKE)
+		{
+			script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
+			ScriptContext_SetupScript(script);
+			return TRUE;
+		}
 	}
 
 	return FALSE;
