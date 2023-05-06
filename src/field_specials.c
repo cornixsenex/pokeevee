@@ -4680,7 +4680,7 @@ void FalseFloor(void)
 	}
 }
 
-bool32 IsDesertTemple4FSolved(void)
+bool16 IsDesertTemple4FSolved(void)
 {
 	 u32 objectEventId1, objectEventId2, objectEventId3, objectEventId4, objectEventId5, i, j;
 	 s32 x1, x2, x3, x4, x5, y1, y2, y3, y4, y5;
