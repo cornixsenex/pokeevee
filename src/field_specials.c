@@ -140,6 +140,7 @@ static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 
+
 void Special_ShowDiploma(void)
 {
     SetMainCallback2(CB2_ShowDiploma);
@@ -4678,5 +4679,80 @@ void FalseFloor(void)
 		MapGridSetMetatileIdAt(x, y, METATILE_BattlePyramid_FalseFloor);
 	}
 }
+
+u16 IsDesertTemple4FSolved(void)
+{
+	 u8 objectEventId1, objectEventId2, objectEventId3, objectEventId4, objectEventId5, i, j;
+	 s16 x1, x2, x3, x4, x5, y1, y2, y3, y4, y5;
+
+	 j = 0;
+	 for (i = 0; i< OBJECT_EVENTS_COUNT; i++)
+	 {
+		if (gObjectEvents[i].active && gObjectEvents[i].graphicsId == OBJ_EVENT_GFX_TRICK_HOUSE_STATUE) 
+		{
+			switch (j)
+			{
+				case 0:
+					objectEventId1 = i;
+					break;
+				case 1:
+					objectEventId2 = i;
+					break;
+				case 2:
+					objectEventId3 = i;
+					break;
+				case 3:
+					objectEventId4 = i;
+					break;
+				case 4:
+					objectEventId5 = i;
+					break;
+			}
+			j += 1;
+		}
+	 }
+	 x1 = gObjectEvents[objectEventId1].currentCoords.x;
+	 x2 = gObjectEvents[objectEventId2].currentCoords.x;
+	 x3 = gObjectEvents[objectEventId3].currentCoords.x;
+	 x4 = gObjectEvents[objectEventId4].currentCoords.x;
+	 x5 = gObjectEvents[objectEventId5].currentCoords.x;
+	 y1 = gObjectEvents[objectEventId1].currentCoords.y;
+	 y2 = gObjectEvents[objectEventId2].currentCoords.y;
+	 y3 = gObjectEvents[objectEventId3].currentCoords.y;
+	 y4 = gObjectEvents[objectEventId4].currentCoords.y;
+	 y5 = gObjectEvents[objectEventId5].currentCoords.y;
+	 //Real Coords are offset by 7 for some reason idk
+	 x1 -= 7;
+	 x2 -= 7;
+	 x3 -= 7;
+	 x4 -= 7;
+	 x5 -= 7;
+	 y1 -= 7;
+	 y2 -= 7;
+	 y3 -= 7;
+	 y4 -= 7;
+	 y5 -= 7;
+
+	 //If ANY of the statues on 1...and 2....and 3...and 4 then yes else nah
+	 if ( (x1 == 2 && y1 == 12) || (x2 == 2 && y2 == 12) || (x3 == 2 && y3 == 12) || (x4 == 2 && y4 == 12) || (x5 == 2 && y5 == 12) ) 
+	 {
+		 if ( (x1 == 2 && y1 == 14) || (x2 == 2 && y2 == 14) || (x3 == 2 && y3 == 14) || (x4 == 2 && y4 == 14) || (x5 == 2 && y5 == 14) )
+		 {
+			 if ( (x1 == 8 && y1 == 12) || (x2 == 8 && y2 == 12) || (x3 == 8 && y3 == 12) || (x4 == 8 && y4 == 12) || (x5 == 8 && y5 == 12) )
+			 {
+				 if ( (x1 == 8 && y1 == 14) || (x2 == 8 && y2 == 14) || (x3 == 8 && y3 == 14) || (x4 == 8 && y4 == 14) || (x5 == 8 && y5 == 14) )
+				 {
+					 return 1;
+				 }
+			 }
+		 }
+	 }
+	 return 0;
+}
+
+
+
+
+
 
 

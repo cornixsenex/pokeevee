@@ -544,4 +544,5 @@ gSpecials::
 	def_special CheckMonHasGen
 	def_special RandDigit
 	def_special FalseFloor
+	def_special IsDesertTemple4FSolved
 

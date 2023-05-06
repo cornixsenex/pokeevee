@@ -1,1 +1,123 @@
 mapscripts DesertTemple_4F_MapScripts {}
+
+
+script DesertTemple_4F_EventScript_Trigger1 {
+	//Clear all vars
+	call (DesertTemple_4F_EventScript_ClearAllVars)
+	//Set varX
+	setvar (VAR_TEMP_1, 1)
+	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
+	if (var(VAR_RESULT) == 1) {
+		call (DesertTemple_4F_EventScript_ClearPuzzle)
+	}
+	end
+}
+
+script DesertTemple_4F_EventScript_Trigger2 {
+	//Clear all vars
+	call (DesertTemple_4F_EventScript_ClearAllVars)
+	//Set varX
+	setvar (VAR_TEMP_2, 1)
+	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
+	if (var(VAR_RESULT) == 1) {
+		call (DesertTemple_4F_EventScript_ClearPuzzle)
+	}
+	end
+}
+
+script DesertTemple_4F_EventScript_Trigger3 {
+	//Clear all vars
+	call (DesertTemple_4F_EventScript_ClearAllVars)
+	//Set varX
+	setvar (VAR_TEMP_3, 1)
+	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
+	if (var(VAR_RESULT) == 1) {
+		call (DesertTemple_4F_EventScript_ClearPuzzle)
+	}
+	end
+}
+
+script DesertTemple_4F_EventScript_Trigger4 {
+	//Clear all vars
+	call (DesertTemple_4F_EventScript_ClearAllVars)
+	//Set varX
+	setvar (VAR_TEMP_4, 1)
+	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
+	if (var(VAR_RESULT) == 1) {
+		call (DesertTemple_4F_EventScript_ClearPuzzle)
+	}
+	end
+}
+
+script DesertTemple_4F_EventScript_Trigger5 {
+	//Clear all vars
+	call (DesertTemple_4F_EventScript_ClearAllVars)
+	//Set varX
+	setvar (VAR_TEMP_5, 1)
+	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
+	if (var(VAR_RESULT) == 1) {
+		call (DesertTemple_4F_EventScript_ClearPuzzle)
+	}
+	end
+}
+
+script DesertTemple_4F_EventScript_Trigger6 {
+	//Clear all vars
+	call (DesertTemple_4F_EventScript_ClearAllVars)
+	//Set varX
+	setvar (VAR_TEMP_6, 1)
+	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
+	if (var(VAR_RESULT) == 1) {
+		call (DesertTemple_4F_EventScript_ClearPuzzle)
+	}
+	end
+}
+
+script DesertTemple_4F_EventScript_Trigger7 {
+	//Clear all vars
+	call (DesertTemple_4F_EventScript_ClearAllVars)
+	//Set varX
+	setvar (VAR_TEMP_7, 1)
+	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
+	if (var(VAR_RESULT) == 1) {
+		call (DesertTemple_4F_EventScript_ClearPuzzle)
+	}
+	end
+}
+
+script DesertTemple_4F_EventScript_ClearAllVars {
+	setvar (VAR_TEMP_1, 0)
+	setvar (VAR_TEMP_2, 0)
+	setvar (VAR_TEMP_3, 0)
+	setvar (VAR_TEMP_4, 0)
+	setvar (VAR_TEMP_5, 0)
+	setvar (VAR_TEMP_6, 0)
+	setvar (VAR_TEMP_7, 0)
+}
+
+script DesertTemple_4F_EventScript_SetAllVars {
+	setvar (VAR_TEMP_1, 1)
+	setvar (VAR_TEMP_2, 1)
+	setvar (VAR_TEMP_3, 1)
+	setvar (VAR_TEMP_4, 1)
+	setvar (VAR_TEMP_5, 1)
+	setvar (VAR_TEMP_6, 1)
+	setvar (VAR_TEMP_7, 1)
+}
+
+script  DesertTemple_4F_EventScript_ClearPuzzle {
+	setflag (FLAG_TEMP_1)
+	call (DesertTemple_4F_EventScript_SetAllVars)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	removeobject (1)
+	removeobject (2)
+	removeobject (3)
+	removeobject (4)
+	removeobject (5)
+	waitmovement (0)
+	return
+}
+
+
+
+
