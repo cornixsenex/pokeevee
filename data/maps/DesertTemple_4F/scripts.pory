@@ -7,7 +7,7 @@ script DesertTemple_4F_EventScript_Trigger1 {
 	//Set varX
 	setvar (VAR_TEMP_1, 1)
 	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
-	if (var(VAR_RESULT) == 1) {
+	if (var(VAR_RESULT) == TRUE) {
 		call (DesertTemple_4F_EventScript_ClearPuzzle)
 	}
 	end
@@ -19,7 +19,7 @@ script DesertTemple_4F_EventScript_Trigger2 {
 	//Set varX
 	setvar (VAR_TEMP_2, 1)
 	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
-	if (var(VAR_RESULT) == 1) {
+	if (var(VAR_RESULT) == TRUE) {
 		call (DesertTemple_4F_EventScript_ClearPuzzle)
 	}
 	end
@@ -31,7 +31,7 @@ script DesertTemple_4F_EventScript_Trigger3 {
 	//Set varX
 	setvar (VAR_TEMP_3, 1)
 	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
-	if (var(VAR_RESULT) == 1) {
+	if (var(VAR_RESULT) == TRUE) {
 		call (DesertTemple_4F_EventScript_ClearPuzzle)
 	}
 	end
@@ -43,7 +43,7 @@ script DesertTemple_4F_EventScript_Trigger4 {
 	//Set varX
 	setvar (VAR_TEMP_4, 1)
 	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
-	if (var(VAR_RESULT) == 1) {
+	if (var(VAR_RESULT) == TRUE) {
 		call (DesertTemple_4F_EventScript_ClearPuzzle)
 	}
 	end
@@ -55,7 +55,7 @@ script DesertTemple_4F_EventScript_Trigger5 {
 	//Set varX
 	setvar (VAR_TEMP_5, 1)
 	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
-	if (var(VAR_RESULT) == 1) {
+	if (var(VAR_RESULT) == TRUE) {
 		call (DesertTemple_4F_EventScript_ClearPuzzle)
 	}
 	end
@@ -67,7 +67,7 @@ script DesertTemple_4F_EventScript_Trigger6 {
 	//Set varX
 	setvar (VAR_TEMP_6, 1)
 	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
-	if (var(VAR_RESULT) == 1) {
+	if (var(VAR_RESULT) == TRUE) {
 		call (DesertTemple_4F_EventScript_ClearPuzzle)
 	}
 	end
@@ -79,7 +79,7 @@ script DesertTemple_4F_EventScript_Trigger7 {
 	//Set varX
 	setvar (VAR_TEMP_7, 1)
 	specialvar (VAR_RESULT, IsDesertTemple4FSolved)
-	if (var(VAR_RESULT) == 1) {
+	if (var(VAR_RESULT) == TRUE) {
 		call (DesertTemple_4F_EventScript_ClearPuzzle)
 	}
 	end

@@ -4680,10 +4680,10 @@ void FalseFloor(void)
 	}
 }
 
-u16 IsDesertTemple4FSolved(void)
+bool32 IsDesertTemple4FSolved(void)
 {
-	 u8 objectEventId1, objectEventId2, objectEventId3, objectEventId4, objectEventId5, i, j;
-	 s16 x1, x2, x3, x4, x5, y1, y2, y3, y4, y5;
+	 u32 objectEventId1, objectEventId2, objectEventId3, objectEventId4, objectEventId5, i, j;
+	 s32 x1, x2, x3, x4, x5, y1, y2, y3, y4, y5;
 
 	 j = 0;
 	 for (i = 0; i< OBJECT_EVENTS_COUNT; i++)
@@ -4742,12 +4742,12 @@ u16 IsDesertTemple4FSolved(void)
 			 {
 				 if ( (x1 == 8 && y1 == 14) || (x2 == 8 && y2 == 14) || (x3 == 8 && y3 == 14) || (x4 == 8 && y4 == 14) || (x5 == 8 && y5 == 14) )
 				 {
-					 return 1;
+					 return TRUE;
 				 }
 			 }
 		 }
 	 }
-	 return 0;
+	 return FALSE;
 }
 
 
