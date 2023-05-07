@@ -5690,6 +5690,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/DesertTemple_B1F/border.bin",
       "blockdata_filepath": "data/layouts/DesertTemple_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE15_DESERT_CAVE",
+      "name": "Route15_DesertCave_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route15_DesertCave/border.bin",
+      "blockdata_filepath": "data/layouts/Route15_DesertCave/map.bin"
     }
   ]
 }

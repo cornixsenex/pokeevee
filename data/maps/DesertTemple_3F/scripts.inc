@@ -30,7 +30,7 @@ DesertTemple_3F_EventScript_CollisionSnake::
 	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	playmoncry SPECIES_EKANS, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_EKANS, CRY_MODE_NORMAL
 	waitmoncry
 	delay 20
 	warpsilent MAP_DESERT_TEMPLE_1F, 11, 27

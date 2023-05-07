@@ -669,6 +669,7 @@
 #define MAP_DESERT_TEMPLE_2F              (85 | (30 << 8))
 #define MAP_DESERT_TEMPLE_1F              (86 | (30 << 8))
 #define MAP_DESERT_TEMPLE_B1F             (87 | (30 << 8))
+#define MAP_ROUTE15_DESERT_CAVE           (88 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

@@ -1395,3 +1395,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/DesertTemple_1F/scripts.inc"
 
 	.include "data/maps/DesertTemple_B1F/scripts.inc"
+
+	.include "data/maps/Route15_DesertCave/scripts.inc"

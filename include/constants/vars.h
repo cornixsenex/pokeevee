@@ -133,6 +133,8 @@
 #define VAR_GANG_STATE                                   0x406C // Controls SS and warehouse quest
 #define VAR_UNI_STATE                                    0x406D // Set by Uni Consul
 #define VAR_UNI_TERM_STATE                               0x406E // Counts completed classes per term 
+
+//THIS ONE AVAILABLE
 #define VAR_JINN_STATE                                   0x406F
 
 

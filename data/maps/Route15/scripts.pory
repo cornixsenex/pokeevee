@@ -1,7 +1,18 @@
 mapscripts Route15_MapScripts {
+
+	MAP_SCRIPT_ON_LOAD {
+		if (flag(FLAG_ROUTE15_DESERTCAVE_OPEN)) {
+			call (Route15_EventScript_ShowCaveDoor)
+		}
+	}
+
 }
 
-
+script Route15_EventScript_ShowCaveDoor {
+	setmetatile (43, 38, METATILE_General_CaveEntrance_Bottom, 0)
+	setmetatile (43, 37, METATILE_General_CaveEntrance_Top, 1)
+	end
+}
 
 script Route15_EventScript_DesertTempleWarp {
 	lockall

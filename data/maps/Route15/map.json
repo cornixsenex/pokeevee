@@ -34,6 +34,27 @@
       "elevation": 0,
       "dest_map": "MAP_DESERT_TEMPLE_5F",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 46,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE15_DESERT_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE15_DESERT_CAVE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 43,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE15_DESERT_CAVE",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [
@@ -42,7 +63,7 @@
       "x": 29,
       "y": 24,
       "elevation": 0,
-      "var": "VAR_JINN_STATE",
+      "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "Route15_EventScript_DesertTempleWarp"
     }
