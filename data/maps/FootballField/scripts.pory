@@ -100,7 +100,7 @@ text FootballField_Text_GymIntro {
 }
 
 text FootballField_Text_NoFollowersAllowed {
-	format("Hey! We don't let those animals on our grass. Your Pokemon, it has to wait outside we don't want it here.")
+	format("Hey! We don't let those filthy animals on our grass. Your Pokemon, it has to wait outside we don't want it here.")
 }
 
 text FootballField_Text_BeginRunningTest {
