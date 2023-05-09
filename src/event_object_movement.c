@@ -6240,7 +6240,7 @@ bool32 MovementType_ChasePlayer_Step0(struct ObjectEvent *objectEvent, struct Sp
 
 bool32 MovementType_ChasePlayer_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-	u32 collision;
+	bool32 collision;
 	u32 direction;
     s32 x = objectEvent->currentCoords.x;
     s32 y = objectEvent->currentCoords.y;
@@ -6270,6 +6270,42 @@ bool32 MovementType_ChasePlayer_Step1(struct ObjectEvent *objectEvent, struct Sp
 	}
 	
     SetObjectEventDirection(objectEvent, direction);
+    collision = GetCollisionInDirection(objectEvent, objectEvent->movementDirection);
+	if (collision)
+	{
+		if (direction == DIR_NORTH || direction == DIR_SOUTH) 
+		{
+			if (abs(dX) > 0)
+			{
+				if (dX > 0)
+				{
+					direction = DIR_WEST;
+				} 
+				else
+				{
+					direction = DIR_EAST;
+				}
+				SetObjectEventDirection(objectEvent, direction);
+			}
+		}
+		else
+		{
+			if (abs(dY) > 0)
+			{
+				if (dY > 0)
+				{
+					direction = DIR_NORTH;
+				} 
+				else
+				{
+					direction = DIR_SOUTH;
+				}
+				SetObjectEventDirection(objectEvent, direction);
+			}
+		}
+
+	}
+
     sprite->sTypeFuncId = 2;
     return TRUE;
 }
