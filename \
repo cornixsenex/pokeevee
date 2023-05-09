@@ -342,8 +342,7 @@ static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_COPY_PLAYER_OPPOSITE_IN_GRASS] = TRUE,
     [MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE_IN_GRASS] = TRUE,
     [MOVEMENT_TYPE_COPY_PLAYER_CLOCKWISE_IN_GRASS] = TRUE,
-	//Uncomment below to set XY limits on Chase range
-    //[MOVEMENT_TYPE_CHASE_PLAYER] = TRUE,
+    [MOVEMENT_TYPE_CHASE_PLAYER] = TRUE,
 };
 
 const u8 gInitialMovementTypeFacingDirections[] = {
@@ -6233,6 +6232,7 @@ movement_type_def(MovementType_ChasePlayer, gMovementTypeFuncs_ChasePlayer)
 
 bool32 MovementType_ChasePlayer_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
+	DebugPrintf("Step 0", 0);
     ClearObjectEventMovement(objectEvent, sprite);
     sprite->sTypeFuncId = 1;
     return TRUE;
@@ -6252,10 +6252,15 @@ bool32 MovementType_ChasePlayer_Step1(struct ObjectEvent *objectEvent, struct Sp
 	dX = x - playerX;
 	dY = y - playerY;
 
+	DebugPrintf("Step 1", 0);
 	if (dX == 0 && dY == 0)
+	{
+		DebugPrintf("RETURNING FALSE", 0);
 		return FALSE;
+	}
 	else if ( abs(dY) >= abs(dX) )
 	{
+		DebugPrintf("North or South", 0);
 		if (dY > 0)
 			direction = DIR_NORTH;
 		else
@@ -6263,6 +6268,7 @@ bool32 MovementType_ChasePlayer_Step1(struct ObjectEvent *objectEvent, struct Sp
 	} 
 	else
 	{
+		DebugPrintf("West or East", 0);
 		if (dX > 0)
 			direction = DIR_WEST;
 		else
