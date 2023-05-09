@@ -50,8 +50,8 @@ script Route15_DesertCave_EventScript_ShowOpenDoor {
 
 script Route15_DesertCave_EventScript_OpenDoor {
 	setmetatile (14, 19, METATILE_Cave_CaveType3BottomHole, 0)
-	setmetatile (13, 19, METATILE_Cave_CaveType3BottomHoleLeft, 0)
-	setmetatile (15, 19, METATILE_Cave_CaveType3BottomHoleRight, 0)
+	setmetatile (13, 19, METATILE_Cave_CaveType3BottomHoleLeft, 1)
+	setmetatile (15, 19, METATILE_Cave_CaveType3BottomHoleRight, 1)
 	return
 }
 

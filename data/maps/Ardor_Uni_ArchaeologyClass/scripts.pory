@@ -55,7 +55,7 @@ script Ardor_Uni_ArchaeologyClass_EventScript_TA {
 				closemessage
 			} else {
 				checkitem (ITEM_ANCIENT_LAMP)
-				if (var(VAR_RESULT) == TRUE) {
+				if (var(VAR_RESULT) == TRUE && (flag(FLAG_ARDOR_ARCHAEOLOGY_INTRO))) {
 					call (Ardor_Uni_ArchaeologyClass_EventScript_TATest)
 				} else {
 					if (flag(FLAG_ARDOR_ARCHAEOLOGY_INTRO) ) {

@@ -1,1 +1,112 @@
-mapscripts FootballField_MapScripts {}
+const OBJ_EVENT_ID_FOOTBALLCOACH = 1
+
+
+mapscripts FootballField_MapScripts {
+
+
+
+	}
+
+script FootballField_EventScript_FieldTrigger1 {
+	lockall
+	setvar (VAR_TEMP_0, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
+	waitmovement (0)
+	if (!flag(FLAG_OPEN_CLASS_GYM)) {
+		call (FootballField_EventScript_FieldClosed)
+	} else {
+		call (FootballField_EventScript_FootballCoach)
+	}
+}
+
+script FootballField_EventScript_FieldTrigger2 {
+	lockall
+	setvar (VAR_TEMP_0, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	if (!flag(FLAG_OPEN_CLASS_GYM)) {
+		call (FootballField_EventScript_FieldClosed)
+	} else {
+		call (FootballField_EventScript_FootballCoach)
+	}
+}
+
+script FootballField_EventScript_FootballCoach {
+	lockall
+	faceplayer
+	if (!flag(FLAG_OPEN_CLASS_GYM)) {
+		call (FootballField_EventScript_FieldClosed)
+	} else {
+		call (FootballField_EventScript_GymClass)
+	}
+	release
+	end
+}
+
+script FootballField_EventScript_GymClass {
+	//intro	//Check no PokemonFollower
+	if (flag(FLAG_FOLLOWER_ACTIVE)) {
+		msgbox(FootballField_Text_NoFollowersAllowed)
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement (0)
+		return
+	}
+	msgbox(FootballField_Text_GymIntro)
+	closemessage
+	//running test
+	call (FootballField_EventScript_BeginRunningTest)
+	//catching test
+	//throwing test
+	//game
+	//pass the class
+	//championship
+
+	return
+}
+
+script FootballField_EventScript_BeginRunningTest {
+	//fadeblack
+	fadescreen (0)
+	//set player position
+	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 13, 31)
+	//set coach position
+	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 5)
+	//set team running position
+
+	fadescreen (1)
+	return
+}
+
+script FootballField_EventScript_FieldClosed {
+	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(FootballField_Text_FieldClosed)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0) 
+	return
+}
+
+
+text FootballField_Text_FieldClosed {
+	format("Hey you! Field's closed! We only want student atheletes touching this grass.")
+}
+
+text FootballField_Text_GymIntro {
+	format("Wait. Whats that? You're here from the college? Oh shit! Uhh...Ellohey....uhh...elcomeway...to...uhhh...assclay..uhhh. Look, here's the thing. Out here we don't speak that fancy academic talk we only speak championships. If you mention this to those stuffy bearded academics we'll beat the pulp out of you. Anyway I need to win this championship and if you're enrolled in Gym class I need you to help me.")
+}
+
+text FootballField_Text_NoFollowersAllowed {
+	format("Hey! We don't let those animals on our grass. Your Pokemon, it has to wait outside we don't want it here.")
+}
+
+text FootballField_Text_BeginRunningTest {
+	format("First things first let's see if you can run.")
+}
+
+
+
+
