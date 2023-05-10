@@ -282,8 +282,10 @@
 #define OBJ_EVENT_GFX_BRUNO                      277
 #define OBJ_EVENT_GFX_COLLISION_RAT              278
 #define OBJ_EVENT_GFX_COLLISION_SNAKE            279
+#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER        280
+#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2      281
 
-#define NUM_REGULAR_OBJ_EVENT_GFX                280
+#define NUM_REGULAR_OBJ_EVENT_GFX                282
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)

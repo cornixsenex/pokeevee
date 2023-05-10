@@ -879,6 +879,8 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 	if (objectEventId != OBJECT_EVENTS_COUNT) 
 	{
 		if (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_RAT
+				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
+				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_SNAKE)
 		{
 			script = GetObjectEventScriptPointerByObjectEventId(objectEventId);

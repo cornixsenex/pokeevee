@@ -6856,6 +6856,8 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 		{
 			//Check if it's a special Object Event and call correct script
 			if (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RAT
+                    || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
+                    || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
 					|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_SNAKE)
 			{
 				//Yes, it's a special collision with player do script
