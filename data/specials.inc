@@ -545,4 +545,5 @@ gSpecials::
 	def_special RandDigit
 	def_special FalseFloor
 	def_special IsDesertTemple4FSolved
+	def_special ResetCamera
 

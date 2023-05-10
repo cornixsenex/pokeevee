@@ -4,13 +4,64 @@ const OBJ_EVENT_ID_FOOTBALLCOACH = 1
 mapscripts FootballField_MapScripts {
 
 
+	//Set Object Position and Movement Types
+//	MAP_SCRIPT_ON_TRANSITION {
+//
+//		switch (var(VAR_TEMP_1)) {
+//			case 1:
+//				call (FootballField_EventScript_SetupRunningTest)
+//		}
+//	}
+//
+//	//Lock, explain the current situation, then increment var to end the lock
+//	MAP_SCRIPT_ON_FRAME_TABLE [
+//		VAR_TEMP_1, 1: FootballField_EventScript_StartRunningTest
+//	]
 
-	}
+}
+
+script FootballField_EventScript_RunningTest {
+	//set positions
+	call (FootballField_EventScript_SetupRunningTest)
+	call (FootballField_EventScript_StartRunningTest)
+	return
+}
+
+script FootballField_EventScript_SetupRunningTest {
+
+	fadescreen (1)
+	//Setup all Object position and movmement types
+
+	//Player
+	setobjectxy (OBJ_EVENT_ID_PLAYER, 13, 27)
+	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 13, 27)
+	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+	
+	//Coach
+	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
+	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
+	setobjectmovementtype (OBJ_EVENT_ID_FOOTBALLCOACH, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	fadescreen (0)
+	special (ResetCamera)
+
+
+	return
+}
+
+script FootballField_EventScript_StartRunningTest {
+	msgbox(FootballField_Text_BeginRunningTest)
+	closemessage
+	setvar (VAR_TEMP_1, 1)
+	return
+}
 
 script FootballField_EventScript_FieldTrigger1 {
 	lockall
-	setvar (VAR_TEMP_0, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
 	waitmovement (0)
 	if (!flag(FLAG_OPEN_CLASS_GYM)) {
@@ -22,9 +73,11 @@ script FootballField_EventScript_FieldTrigger1 {
 
 script FootballField_EventScript_FieldTrigger2 {
 	lockall
-	setvar (VAR_TEMP_0, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)	
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
 	waitmovement (0)
 	if (!flag(FLAG_OPEN_CLASS_GYM)) {
 		call (FootballField_EventScript_FieldClosed)
@@ -33,9 +86,16 @@ script FootballField_EventScript_FieldTrigger2 {
 	}
 }
 
+script FootballField_EventScript_FieldTrigger3 {
+	lockall
+	msgbox("THIS 3 TRIGGER")
+	closemessage
+	releaseall
+	end
+}
+
 script FootballField_EventScript_FootballCoach {
 	lockall
-	faceplayer
 	if (!flag(FLAG_OPEN_CLASS_GYM)) {
 		call (FootballField_EventScript_FieldClosed)
 	} else {
@@ -54,10 +114,14 @@ script FootballField_EventScript_GymClass {
 		waitmovement (0)
 		return
 	}
+	msgbox(FootballField_Text_FieldClosed)
+	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	msgbox(FootballField_Text_GymIntro)
 	closemessage
+	delay (30)
 	//running test
-	call (FootballField_EventScript_BeginRunningTest)
+	call (FootballField_EventScript_RunningTest)
 	//catching test
 	//throwing test
 	//game
@@ -67,18 +131,6 @@ script FootballField_EventScript_GymClass {
 	return
 }
 
-script FootballField_EventScript_BeginRunningTest {
-	//fadeblack
-	fadescreen (0)
-	//set player position
-	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 13, 31)
-	//set coach position
-	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 5)
-	//set team running position
-
-	fadescreen (1)
-	return
-}
 
 script FootballField_EventScript_FieldClosed {
 	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_ExclamationMark)
@@ -96,7 +148,7 @@ text FootballField_Text_FieldClosed {
 }
 
 text FootballField_Text_GymIntro {
-	format("Wait. Whats that? You're here from the college? Oh shit! Uhh...Ellohey....uhh...elcomeway...to...uhhh...assclay..uhhh. Look, here's the thing. Out here we don't speak that fancy academic talk we only speak championships. If you mention this to those stuffy bearded academics we'll beat the pulp out of you. Anyway I need to win this championship and if you're enrolled in Gym class I need you to help me.")
+	format("Wait. Whats that? You're here from the college? Oh shit! Uhh... Ellohey.... uhh... elcomeway... to... uhhh... assclay.. uhhh. Oh fuck it! Look, here's the thing. Out here we don't speak that fancy academic talk we only speak championships. If you mention this to those stuffy bearded academics we'll beat the pulp out of you. Anyway I need to win this championship and if you're enrolled in Gym class I need you to help me.")
 }
 
 text FootballField_Text_NoFollowersAllowed {

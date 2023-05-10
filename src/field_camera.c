@@ -411,13 +411,23 @@ void CameraUpdate(void)
     gTotalCameraPixelOffsetY -= movementSpeedY;
 }
 
-void MoveCameraAndRedrawMap(int deltaX, int deltaY) //unused
+void MoveCameraAndRedrawMap(int deltaX, int deltaY) 
 {
     CameraMove(deltaX, deltaY);
     UpdateObjectEventsForCameraUpdate(deltaX, deltaY);
     DrawWholeMapView();
     gTotalCameraPixelOffsetX -= deltaX * 16;
     gTotalCameraPixelOffsetY -= deltaY * 16;
+}
+
+void ResetCamera(void)
+{
+    struct ObjectEvent * player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    s16 x = player->currentCoords.x - 7;
+    s16 y = player->currentCoords.y - 7;
+    s16 deltaX = x - gSaveBlock1Ptr->pos.x;
+    s16 deltaY = y - gSaveBlock1Ptr->pos.y;
+    MoveCameraAndRedrawMap(deltaX,deltaY);
 }
 
 void SetCameraPanningCallback(void (*callback)(void))
