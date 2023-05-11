@@ -1,1 +1,355 @@
 mapscripts Ardor_Uni_GeologyClass_MapScripts {}
+
+
+
+
+script Ardor_Uni_GeologyClass_EventScript_FossilMachine {
+	lock	
+	msgbox (Ardor_Uni_GeologyClass_Text_FossilMachine)
+	closemessage
+	if ((flagFLAG_GEOLOGY_MACHINE_OPEN)) {
+		//Select a Fossil to ressurect
+		checkitem (ITEM_HELIX_FOSSIL)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_GeologyClass_EventScript_ChooseFossil)
+		} 
+		checkitem (ITEM_DOME_FOSSIL)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_GeologyClass_EventScript_ChooseFossil)
+		} 
+		checkitem (ITEM_OLD_AMBER)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_GeologyClass_EventScript_ChooseFossil)
+		} 
+		checkitem (ITEM_ROOT_FOSSIL)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_GeologyClass_EventScript_ChooseFossil)
+		} 
+		checkitem (ITEM_CLAW_FOSSIL)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_GeologyClass_EventScript_ChooseFossil)
+		} 
+		checkitem (ITEM_SKULL_FOSSIL)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_GeologyClass_EventScript_ChooseFossil)
+		} 
+		checkitem (ITEM_ARMOR_FOSSIL)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_GeologyClass_EventScript_ChooseFossil)
+		} 
+
+	}
+	release
+	end
+}
+
+script Ardor_Uni_GeologyClass_EventScript_MachineEnd {
+	msgbox(Ardor_Uni_GeologyClass_Text_NextTime)
+	closemessage
+	end
+}
+
+script Ardor_Uni_GeologyClass_EventScript_GiveHelix {
+	removeitem (ITEM_HELIX_FOSSIL)
+	bufferspeciesname (STR_VAR_1, SPECIES_OMANYTE)
+	bufferspeciesname (STR_VAR_2, SPECIES_OMANYTE)
+	msgbox(Ardor_Uni_GeologyClass_Text_GiveHelix)
+	closemessage
+	givemon (SPECIES_OMANYTE, 1)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	} elif (var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_NameReceivedBoxMon)
+		}
+		call (Common_EventScript_TransferredToPC)
+	} else {
+		call (Common_EventScript_NoMoreRoomForPokemon)
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+script Ardor_Uni_GeologyClass_EventScript_GiveDome {
+	removeitem (ITEM_DOME_FOSSIL)
+	bufferspeciesname (STR_VAR_1, SPECIES_KABUTO)
+	bufferspeciesname (STR_VAR_2, SPECIES_KABUTO)
+	msgbox(Ardor_Uni_GeologyClass_Text_GiveDome)
+	closemessage
+	givemon (SPECIES_KABUTO, 1)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedKabuto)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	} elif (var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedKabuto)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_NameReceivedBoxMon)
+		}
+		call (Common_EventScript_TransferredToPC)
+	} else {
+		call (Common_EventScript_NoMoreRoomForPokemon)
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+script Ardor_Uni_GeologyClass_EventScript_GiveOldAmber {
+	removeitem (ITEM_OLD_AMBER)
+	bufferspeciesname (STR_VAR_1, SPECIES_AERODACTYL)
+	bufferspeciesname (STR_VAR_2, SPECIES_AERODACTYL)
+	msgbox(Ardor_Uni_GeologyClass_Text_GiveOldAmber)
+	closemessage
+	givemon (SPECIES_AERODACTYL, 1)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedAerodactyl)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	} elif (var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedAerodactyl)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_NameReceivedBoxMon)
+		}
+		call (Common_EventScript_TransferredToPC)
+	} else {
+		call (Common_EventScript_NoMoreRoomForPokemon)
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+script Ardor_Uni_GeologyClass_EventScript_GiveRoot {
+	removeitem (ITEM_ROOT_FOSSIL)
+	bufferspeciesname (STR_VAR_1, SPECIES_LILEEP)
+	bufferspeciesname (STR_VAR_2, SPECIES_LILEEP)
+	msgbox(Ardor_Uni_GeologyClass_Text_GiveRoot)
+	closemessage
+	givemon (SPECIES_LILEEP, 1)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedLileep)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	} elif (var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedLileep)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_NameReceivedBoxMon)
+		}
+		call (Common_EventScript_TransferredToPC)
+	} else {
+		call (Common_EventScript_NoMoreRoomForPokemon)
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+script Ardor_Uni_GeologyClass_EventScript_GiveHelix {
+	removeitem (ITEM_HELIX_FOSSIL)
+	bufferspeciesname (STR_VAR_1, SPECIES_OMANYTE)
+	bufferspeciesname (STR_VAR_2, SPECIES_OMANYTE)
+	msgbox(Ardor_Uni_GeologyClass_Text_GiveHelix)
+	closemessage
+	givemon (SPECIES_OMANYTE, 1)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	} elif (var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_NameReceivedBoxMon)
+		}
+		call (Common_EventScript_TransferredToPC)
+	} else {
+		call (Common_EventScript_NoMoreRoomForPokemon)
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+script Ardor_Uni_GeologyClass_EventScript_GiveHelix {
+	removeitem (ITEM_HELIX_FOSSIL)
+	bufferspeciesname (STR_VAR_1, SPECIES_OMANYTE)
+	bufferspeciesname (STR_VAR_2, SPECIES_OMANYTE)
+	msgbox(Ardor_Uni_GeologyClass_Text_GiveHelix)
+	closemessage
+	givemon (SPECIES_OMANYTE, 1)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	} elif (var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_NameReceivedBoxMon)
+		}
+		call (Common_EventScript_TransferredToPC)
+	} else {
+		call (Common_EventScript_NoMoreRoomForPokemon)
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+script Ardor_Uni_GeologyClass_EventScript_GiveHelix {
+	removeitem (ITEM_HELIX_FOSSIL)
+	bufferspeciesname (STR_VAR_1, SPECIES_OMANYTE)
+	bufferspeciesname (STR_VAR_2, SPECIES_OMANYTE)
+	msgbox(Ardor_Uni_GeologyClass_Text_GiveHelix)
+	closemessage
+	givemon (SPECIES_OMANYTE, 1)
+	if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_GetGiftMonPartySlot)
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	} elif (var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare (MUS_OBTAIN_ITEM)
+		message (Ardor_Uni_Text_ObtainedOmanyte)
+		waitmessage
+		waitfanfare
+		msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Common_EventScript_NameReceivedBoxMon)
+		}
+		call (Common_EventScript_TransferredToPC)
+	} else {
+		call (Common_EventScript_NoMoreRoomForPokemon)
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+script Ardor_Uni_GeologyClass_EventScript_ChooseFossil {
+	msgbox(Ardor_Uni_GeologyClass_Text_FossilYN, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == TRUE) {
+		multichoice (0, 0, MULTI_CHOOSE_FOSSIL)
+		switch (var(VAR_RESULT)) {
+			//Helix
+			case 0:
+				checkitem (ITEM_HELIX_FOSSIL)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_GeologyClass_EventScript_GiveHelix)
+				} else {
+					call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+				}
+			//Dome
+			case 1:
+				checkitem (ITEM_DOME_FOSSIL)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_GeologyClass_EventScript_GiveDome)
+				} else {
+					call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+				}
+			//Old Amber
+			case 2:
+				checkitem (ITEM_OLD_AMBER)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_GeologyClass_EventScript_GiveOldAmber)
+				} else {
+					call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+				}
+			//Root Fossil
+			case 3:
+				checkitem (ITEM_ROOT_FOSSIL)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_GeologyClass_EventScript_GiveRoot)
+				} else {
+					call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+				}
+			//Claw Fossil
+			case 4:
+				checkitem (ITEM_CLAW_FOSSIL)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_GeologyClass_EventScript_GiveClaw)
+				} else {
+					call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+				}
+			//Skull Fossil
+			case 5:
+				checkitem (ITEM_SKULL_FOSSIL)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_GeologyClass_EventScript_GiveSkull)
+				} else {
+					call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+				}
+			//Armor Fossil
+			case 6:
+				checkitem (ITEM_ARMOR_FOSSIL)
+				if (var(VAR_RESULT) == TRUE) {
+					call (Ardor_Uni_GeologyClass_EventScript_GiveArmor)
+				} else {
+					call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+				}
+			default:
+				call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+		}
+	}
+	call (Ardor_Uni_GeologyClass_EventScript_MachineEnd)
+}
+
+
+text Ardor_Uni_GeologyClass_Text_NextTime {
+	format("Please return with a fossil to ressurect.")
+}
+

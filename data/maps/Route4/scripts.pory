@@ -37,6 +37,8 @@ mapscripts Route4_MapScripts {}
 //UpdatePerDay
 //ClearDailyFlags
 
+//ChangeBoxPokemonName --- This could help with re-setting the mythical pokemon on the timer
+
 
 script Route4_EventScript_Delia {
 	trainerbattle_double (TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost, Route124_Text_LilaNotEnoughMons)

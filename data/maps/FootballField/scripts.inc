@@ -345,22 +345,25 @@ FootballField_Text_DoNotLeaveField::
 
 FootballField_Text_ClassFinished::
 	.string "Hey what do you think you're doing? You\n"
-	.string "call that running? Get off my field!$"
+	.string "just made my boys look like total\l"
+	.string "loosers! Get off my field!$"
 
 FootballField_Text_CoachIntro::
-	.string "We can't use some useless slug like you.\n"
-	.string "I'll teach you how to hustle. Come here!$"
+	.string "We can't have some game changer like\n"
+	.string "you running around making us feel bad.\l"
+	.string "We got a championship to win!$"
 
 FootballField_Text_CoachLost::
 	.string "I think I broke something...$"
 
 FootballField_Text_CoachPost::
-	.string "I'll be alright. Get out of here kid you\n"
-	.string "passed the class.$"
+	.string "We don't need your fucking help to win.\n"
+	.string "Get out of here kid you passed the\l"
+	.string "class.$"
 
 FootballField_Text_CoachComplete::
-	.string "I told you already you passed the class\n"
-	.string "now get out of here.$"
+	.string "I told you already, you passed the\n"
+	.string "class, now get out of here.$"
 
 FootballField_Text_RunningTestFail::
 	.string "Hey! One of my boys got ya! You're too\n"

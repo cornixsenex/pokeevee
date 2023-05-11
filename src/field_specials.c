@@ -2482,6 +2482,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_CHOOSE_FOSSIL:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2712,6 +2722,16 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_ArdorChooseElective2,
 		gText_ArdorChooseElective3,
 		gText_ArdorChooseElective4,
+	},
+	[SCROLL_MULTI_CHOOSE_FOSSIL] =
+	{
+		gText_ChooseFossil1,
+		gText_ChooseFossil2,
+		gText_ChooseFossil3,
+		gText_ChooseFossil4,
+		gText_ChooseFossil5,
+		gText_ChooseFossil6,
+		gText_ChooseFossil7,
 	},
 };
 

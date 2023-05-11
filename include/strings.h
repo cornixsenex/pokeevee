@@ -1367,6 +1367,17 @@ extern const u8 gText_ArdorChooseElective2[];
 extern const u8 gText_ArdorChooseElective3[];
 extern const u8 gText_ArdorChooseElective4[];
 
+//Choose Fossil (Geology)
+extern const u8 gText_ChooseFossil1[];
+extern const u8 gText_ChooseFossil2[];
+extern const u8 gText_ChooseFossil3[];
+extern const u8 gText_ChooseFossil4[];
+extern const u8 gText_ChooseFossil5[];
+extern const u8 gText_ChooseFossil6[];
+extern const u8 gText_ChooseFossil7[];
+
+
+
 
 
 

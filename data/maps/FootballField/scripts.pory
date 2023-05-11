@@ -364,11 +364,11 @@ text  FootballField_Text_DoNotLeaveField {
 }
 
 text FootballField_Text_ClassFinished {
-	format("Hey what do you think you're doing? You call that running? Get off my field!")
+	format("Hey what do you think you're doing? You just made my boys look like total loosers! Get off my field!")
 }
 
 text FootballField_Text_CoachIntro {
-	format("We can't use some useless slug like you. I'll teach you how to hustle. Come here!")
+	format("We can't have some game changer like you running around making us feel bad. We got a championship to win!")
 }
 
 text FootballField_Text_CoachLost {
@@ -376,11 +376,11 @@ text FootballField_Text_CoachLost {
 }
 
 text FootballField_Text_CoachPost {
-	format("I'll be alright. Get out of here kid you passed the class.")
+	format("We don't need your fucking help to win. Get out of here kid you passed the class.")
 }
 
 text FootballField_Text_CoachComplete {
-	format("I told you already you passed the class now get out of here.")
+	format("I told you already, you passed the class, now get out of here.")
 }
 
 text FootballField_Text_RunningTestFail {

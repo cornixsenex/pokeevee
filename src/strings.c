@@ -719,6 +719,14 @@ const u8 gText_ArdorChooseElective2[]   = _("MUSICAM");
 const u8 gText_ArdorChooseElective3[]   = _("GYMNASIUM");
 const u8 gText_ArdorChooseElective4[]   = _("COMPUTATRA");
 
+const u8 gText_ChooseFossil1[]   = _("HELIX FOSSIL");
+const u8 gText_ChooseFossil2[]   = _("DOME FOSSIL");
+const u8 gText_ChooseFossil3[]   = _("OLD AMBER");
+const u8 gText_ChooseFossil4[]   = _("ROOT FOSSIL");
+const u8 gText_ChooseFossil5[]   = _("CLAW FOSSIL");
+const u8 gText_ChooseFossil6[]   = _("SKULL FOSSIL");
+const u8 gText_ChooseFossil7[]   = _("ARMOR FOSSIL");
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");
