@@ -546,4 +546,6 @@ gSpecials::
 	def_special FalseFloor
 	def_special IsDesertTemple4FSolved
 	def_special ResetCamera
+	def_special IsRockTypeInParty
+	def_special IsGroundTypeInParty
 

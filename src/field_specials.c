@@ -4770,8 +4770,45 @@ bool16 IsDesertTemple4FSolved(void)
 	 return FALSE;
 }
 
+bool32 IsRockTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_ROCK || gSpeciesInfo[species].types[1] == TYPE_ROCK)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
 
-
+bool32 IsGroundTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_GROUND || gSpeciesInfo[species].types[1] == TYPE_GROUND)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
 
 
 

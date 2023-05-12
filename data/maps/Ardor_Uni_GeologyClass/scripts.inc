@@ -1,3 +1,658 @@
 Ardor_Uni_GeologyClass_MapScripts::
 	.byte 0
 
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine::
+	lock
+	msgbox Ardor_Uni_GeologyClass_Text_FossilMachine
+	closemessage
+	goto_if_set FLAG_GEOLOGY_MACHINE_OPEN, Ardor_Uni_GeologyClass_EventScript_FossilMachine_2
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_1:
+	release
+	end
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_2:
+	checkitem ITEM_HELIX_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_FossilMachine_5
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_4:
+	checkitem ITEM_DOME_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_FossilMachine_8
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_7:
+	checkitem ITEM_OLD_AMBER
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_FossilMachine_11
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_10:
+	checkitem ITEM_ROOT_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_FossilMachine_14
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_13:
+	checkitem ITEM_CLAW_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_FossilMachine_17
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_16:
+	checkitem ITEM_SKULL_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_FossilMachine_20
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_19:
+	checkitem ITEM_ARMOR_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_FossilMachine_22
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_1
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_5:
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_4
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_8:
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_7
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_11:
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_10
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_14:
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_13
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_17:
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_16
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_20:
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_19
+
+Ardor_Uni_GeologyClass_EventScript_FossilMachine_22:
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_FossilMachine_1
+
+
+Ardor_Uni_GeologyClass_EventScript_MachineEnd::
+	msgbox Ardor_Uni_GeologyClass_Text_NextTime
+	closemessage
+	end
+
+
+Ardor_Uni_GeologyClass_EventScript_GiveHelix::
+	removeitem ITEM_HELIX_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_HELIX_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_OMANYTE
+	msgbox Ardor_Uni_GeologyClass_Text_GiveFossil
+	closemessage
+	givemon SPECIES_OMANYTE, 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveHelix_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveHelix_3
+	call Common_EventScript_NoMoreRoomForPokemon
+Ardor_Uni_GeologyClass_EventScript_GiveHelix_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_GiveHelix_2:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveHelix_7
+	goto Ardor_Uni_GeologyClass_EventScript_GiveHelix_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveHelix_3:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveHelix_10
+Ardor_Uni_GeologyClass_EventScript_GiveHelix_9:
+	call Common_EventScript_TransferredToPC
+	goto Ardor_Uni_GeologyClass_EventScript_GiveHelix_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveHelix_7:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveHelix_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveHelix_10:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveHelix_9
+
+
+Ardor_Uni_GeologyClass_EventScript_GiveDome::
+	removeitem ITEM_DOME_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_DOME_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_KABUTO
+	msgbox Ardor_Uni_GeologyClass_Text_GiveFossil
+	closemessage
+	givemon SPECIES_KABUTO, 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveDome_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveDome_3
+	call Common_EventScript_NoMoreRoomForPokemon
+Ardor_Uni_GeologyClass_EventScript_GiveDome_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_GiveDome_2:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveDome_7
+	goto Ardor_Uni_GeologyClass_EventScript_GiveDome_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveDome_3:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveDome_10
+Ardor_Uni_GeologyClass_EventScript_GiveDome_9:
+	call Common_EventScript_TransferredToPC
+	goto Ardor_Uni_GeologyClass_EventScript_GiveDome_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveDome_7:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveDome_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveDome_10:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveDome_9
+
+
+Ardor_Uni_GeologyClass_EventScript_GiveOldAmber::
+	removeitem ITEM_OLD_AMBER
+	bufferitemname STR_VAR_1, ITEM_OLD_AMBER
+	bufferspeciesname STR_VAR_2, SPECIES_AERODACTYL
+	msgbox Ardor_Uni_GeologyClass_Text_GiveFossil
+	closemessage
+	givemon SPECIES_AERODACTYL, 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_3
+	call Common_EventScript_NoMoreRoomForPokemon
+Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_2:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_7
+	goto Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_3:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_10
+Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_9:
+	call Common_EventScript_TransferredToPC
+	goto Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_7:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_10:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_9
+
+
+Ardor_Uni_GeologyClass_EventScript_GiveRoot::
+	removeitem ITEM_ROOT_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_ROOT_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_LILEEP
+	msgbox Ardor_Uni_GeologyClass_Text_GiveFossil
+	closemessage
+	givemon SPECIES_LILEEP, 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveRoot_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveRoot_3
+	call Common_EventScript_NoMoreRoomForPokemon
+Ardor_Uni_GeologyClass_EventScript_GiveRoot_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_GiveRoot_2:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveRoot_7
+	goto Ardor_Uni_GeologyClass_EventScript_GiveRoot_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveRoot_3:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveRoot_10
+Ardor_Uni_GeologyClass_EventScript_GiveRoot_9:
+	call Common_EventScript_TransferredToPC
+	goto Ardor_Uni_GeologyClass_EventScript_GiveRoot_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveRoot_7:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveRoot_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveRoot_10:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveRoot_9
+
+
+Ardor_Uni_GeologyClass_EventScript_GiveClaw::
+	removeitem ITEM_CLAW_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_CLAW_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_ANORITH
+	msgbox Ardor_Uni_GeologyClass_Text_GiveFossil
+	closemessage
+	givemon SPECIES_ANORITH, 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveClaw_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveClaw_3
+	call Common_EventScript_NoMoreRoomForPokemon
+Ardor_Uni_GeologyClass_EventScript_GiveClaw_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_GiveClaw_2:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveClaw_7
+	goto Ardor_Uni_GeologyClass_EventScript_GiveClaw_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveClaw_3:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveClaw_10
+Ardor_Uni_GeologyClass_EventScript_GiveClaw_9:
+	call Common_EventScript_TransferredToPC
+	goto Ardor_Uni_GeologyClass_EventScript_GiveClaw_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveClaw_7:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveClaw_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveClaw_10:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveClaw_9
+
+
+Ardor_Uni_GeologyClass_EventScript_GiveSkull::
+	removeitem ITEM_SKULL_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_SKULL_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_CRANIDOS
+	msgbox Ardor_Uni_GeologyClass_Text_GiveFossil
+	closemessage
+	givemon SPECIES_CRANIDOS, 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveSkull_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveSkull_3
+	call Common_EventScript_NoMoreRoomForPokemon
+Ardor_Uni_GeologyClass_EventScript_GiveSkull_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_GiveSkull_2:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveSkull_7
+	goto Ardor_Uni_GeologyClass_EventScript_GiveSkull_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveSkull_3:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveSkull_10
+Ardor_Uni_GeologyClass_EventScript_GiveSkull_9:
+	call Common_EventScript_TransferredToPC
+	goto Ardor_Uni_GeologyClass_EventScript_GiveSkull_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveSkull_7:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveSkull_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveSkull_10:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveSkull_9
+
+
+Ardor_Uni_GeologyClass_EventScript_GiveArmor::
+	removeitem ITEM_ARMOR_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_ARMOR_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_SHIELDON
+	msgbox Ardor_Uni_GeologyClass_Text_GiveFossil
+	closemessage
+	givemon SPECIES_SHIELDON, 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveArmor_2
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveArmor_3
+	call Common_EventScript_NoMoreRoomForPokemon
+Ardor_Uni_GeologyClass_EventScript_GiveArmor_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_GiveArmor_2:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveArmor_7
+	goto Ardor_Uni_GeologyClass_EventScript_GiveArmor_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveArmor_3:
+	playfanfare MUS_OBTAIN_ITEM
+	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveArmor_10
+Ardor_Uni_GeologyClass_EventScript_GiveArmor_9:
+	call Common_EventScript_TransferredToPC
+	goto Ardor_Uni_GeologyClass_EventScript_GiveArmor_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveArmor_7:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveArmor_1
+
+Ardor_Uni_GeologyClass_EventScript_GiveArmor_10:
+	call Common_EventScript_NameReceivedBoxMon
+	goto Ardor_Uni_GeologyClass_EventScript_GiveArmor_9
+
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil::
+	msgbox Ardor_Uni_GeologyClass_Text_FossilYN, MSGBOX_YESNO
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_2
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1:
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	return
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_2:
+	msgbox Ardor_Uni_GeologyClass_Text_WhichFossil
+	multichoice 0, 0, MULTI_CHOOSE_FOSSIL, FALSE
+	switch VAR_RESULT
+	case 0, Ardor_Uni_GeologyClass_EventScript_ChooseFossil_5
+	case 1, Ardor_Uni_GeologyClass_EventScript_ChooseFossil_6
+	case 2, Ardor_Uni_GeologyClass_EventScript_ChooseFossil_7
+	case 3, Ardor_Uni_GeologyClass_EventScript_ChooseFossil_8
+	case 4, Ardor_Uni_GeologyClass_EventScript_ChooseFossil_9
+	case 5, Ardor_Uni_GeologyClass_EventScript_ChooseFossil_10
+	case 6, Ardor_Uni_GeologyClass_EventScript_ChooseFossil_11
+	call Ardor_Uni_GeologyClass_EventScript_MachineEnd
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_5:
+	checkitem ITEM_HELIX_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_13
+	bufferitemname STR_VAR_1, ITEM_HELIX_FOSSIL
+	message Ardor_Uni_GeologyClass_Text_NoFossil
+	waitmessage
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_6:
+	checkitem ITEM_DOME_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_16
+	bufferitemname STR_VAR_1, ITEM_DOME_FOSSIL
+	message Ardor_Uni_GeologyClass_Text_NoFossil
+	waitmessage
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_7:
+	checkitem ITEM_OLD_AMBER
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_19
+	bufferitemname STR_VAR_1, ITEM_OLD_AMBER
+	message Ardor_Uni_GeologyClass_Text_NoFossil
+	waitmessage
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_8:
+	checkitem ITEM_ROOT_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_22
+	bufferitemname STR_VAR_1, ITEM_ROOT_FOSSIL
+	message Ardor_Uni_GeologyClass_Text_NoFossil
+	waitmessage
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_9:
+	checkitem ITEM_CLAW_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_25
+	bufferitemname STR_VAR_1, ITEM_CLAW_FOSSIL
+	message Ardor_Uni_GeologyClass_Text_NoFossil
+	waitmessage
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_10:
+	checkitem ITEM_SKULL_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_28
+	bufferitemname STR_VAR_1, ITEM_SKULL_FOSSIL
+	message Ardor_Uni_GeologyClass_Text_NoFossil
+	waitmessage
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_11:
+	checkitem ITEM_ARMOR_FOSSIL
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_31
+	bufferitemname STR_VAR_1, ITEM_ARMOR_FOSSIL
+	message Ardor_Uni_GeologyClass_Text_NoFossil
+	waitmessage
+	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_13:
+	call Ardor_Uni_GeologyClass_EventScript_GiveHelix
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_16:
+	call Ardor_Uni_GeologyClass_EventScript_GiveDome
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_19:
+	call Ardor_Uni_GeologyClass_EventScript_GiveOldAmber
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_22:
+	call Ardor_Uni_GeologyClass_EventScript_GiveRoot
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_25:
+	call Ardor_Uni_GeologyClass_EventScript_GiveClaw
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_28:
+	call Ardor_Uni_GeologyClass_EventScript_GiveSkull
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+Ardor_Uni_GeologyClass_EventScript_ChooseFossil_31:
+	call Ardor_Uni_GeologyClass_EventScript_GiveArmor
+	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
+
+
+Ardor_Uni_GeologyClass_EventScript_Teacher::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_UNI_GEOLOGY
+	goto_if 1, Ardor_Uni_GeologyClass_EventScript_Teacher_2
+	goto_if_set FLAG_GOELOGY_INTRO, Ardor_Uni_GeologyClass_EventScript_Teacher_3
+	call Ardor_Uni_GeologyClass_EventScript_ClassIntro
+Ardor_Uni_GeologyClass_EventScript_Teacher_1:
+	applymovement 2, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+Ardor_Uni_GeologyClass_EventScript_Teacher_2:
+	msgbox Ardor_Uni_GeologyClass_Text_ClassFinished
+	closemessage
+	goto Ardor_Uni_GeologyClass_EventScript_Teacher_1
+
+Ardor_Uni_GeologyClass_EventScript_Teacher_3:
+	specialvar VAR_RESULT, IsRockTypeInParty
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_Teacher_8
+	msgbox Ardor_Uni_GeologyClass_Text_BringRockType
+Ardor_Uni_GeologyClass_EventScript_Teacher_7:
+	specialvar VAR_RESULT, IsGroundTypeInParty
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_GeologyClass_EventScript_Teacher_12
+	msgbox Ardor_Uni_GeologyClass_Text_BringGroundType
+Ardor_Uni_GeologyClass_EventScript_Teacher_11:
+	goto_if_set FLAG_TEMP_1, Ardor_Uni_GeologyClass_EventScript_Teacher_16
+	goto Ardor_Uni_GeologyClass_EventScript_Teacher_1
+
+Ardor_Uni_GeologyClass_EventScript_Teacher_8:
+	setflag FLAG_TEMP_1
+	goto Ardor_Uni_GeologyClass_EventScript_Teacher_7
+
+Ardor_Uni_GeologyClass_EventScript_Teacher_12:
+	setflag FLAG_TEMP_2
+	goto Ardor_Uni_GeologyClass_EventScript_Teacher_11
+
+Ardor_Uni_GeologyClass_EventScript_Teacher_15:
+	call Ardor_Uni_GeologyClass_EventScript_Test
+	goto Ardor_Uni_GeologyClass_EventScript_Teacher_1
+
+Ardor_Uni_GeologyClass_EventScript_Teacher_16:
+	goto_if_set FLAG_TEMP_2, Ardor_Uni_GeologyClass_EventScript_Teacher_15
+	goto Ardor_Uni_GeologyClass_EventScript_Teacher_1
+
+
+Ardor_Uni_GeologyClass_EventScript_ClassIntro::
+	setflag FLAG_GOELOGY_INTRO
+	msgbox Ardor_Uni_GeologyClass_Text_ClassIntro
+	closemessage
+	msgbox Ardor_Uni_GeologyClass_Text_BringRockType
+	closemessage
+	msgbox Ardor_Uni_GeologyClass_Text_BringGroundType
+	closemessage
+	return
+
+
+Ardor_Uni_GeologyClass_EventScript_Test::
+	msgbox Ardor_Uni_GeologyClass_Text_Test
+	closemessage
+	msgbox Ardor_Uni_Text_TestIntro
+	closemessage
+	trainerbattle_no_intro TRAINER_UNI_GEOLOGY, Ardor_Uni_GeologyClass_Text_TeacherBattleLost
+	msgbox Ardor_Uni_GeologyClass_Text_ClassFinished
+	closemessage
+	return
+
+
+Ardor_Uni_Text_TestIntro::
+	.string "Tempus iam est examinis.$"
+
+Ardor_Uni_GeologyClass_Text_FossilMachine::
+	.string "It's a machine used to ressurect fossil\n"
+	.string "{PKMN}.$"
+
+Ardor_Uni_GeologyClass_Text_NextTime::
+	.string "Better come back later with more\n"
+	.string "fossils to ressurect.$"
+
+Ardor_Uni_GeologyClass_Text_FossilYN::
+	.string "Will you put a fossil into the machine?$"
+
+Ardor_Uni_GeologyClass_Text_GiveFossil::
+	.string "{PLAYER} put the {STR_VAR_1} into\n"
+	.string "the machine.$"
+
+Ardor_Uni_GeologyClass_Text_ObtainedPokemon::
+	.string "{PLAYER} received {STR_VAR_2}\n"
+	.string "from the machine.$"
+
+Ardor_Uni_GeologyClass_Text_NoFossil::
+	.string "{PLAYER} does not have any\n"
+	.string "{STR_VAR_1}!$"
+
+Ardor_Uni_GeologyClass_Text_WhichFossil::
+	.string "Which type of fossil will you put into\n"
+	.string "the machine?$"
+
+Ardor_Uni_GeologyClass_Text_ClassFinished::
+	.string "Congratulation! Iam studuisti\n"
+	.string "Geologiam. Usa machinam quando volas.$"
+
+Ardor_Uni_GeologyClass_Text_TeacherBattleLost::
+	.string "Lapides tui superiores sunt.$"
+
+Ardor_Uni_GeologyClass_Text_Test::
+	.string "Revenisti cum monstro lapidis et\n"
+	.string "monstro telluris!$"
+
+Ardor_Uni_GeologyClass_Text_BringGroundType::
+	.string "Reveni cum monstro telluris.$"
+
+Ardor_Uni_GeologyClass_Text_BringRockType::
+	.string "Reveni cum monstro lapidis.$"
+
+Ardor_Uni_GeologyClass_Text_ClassIntro::
+	.string "Salve puer. Magister Patricius sum.\n"
+	.string "Necesse est tibi docere scientiam\l"
+	.string "geologiae. Geologia studium est lapidum\l"
+	.string "et tellurum.$"
