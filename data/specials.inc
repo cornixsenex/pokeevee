@@ -548,4 +548,7 @@ gSpecials::
 	def_special ResetCamera
 	def_special IsRockTypeInParty
 	def_special IsGroundTypeInParty
+	def_special IsAnimalTypeInParty
+	def_special IsPlantTypeInParty
+	def_special IsFungusTypeInParty
 

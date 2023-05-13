@@ -399,12 +399,14 @@ script Ardor_Uni_GeologyClass_EventScript_Teacher  {
 			setflag (FLAG_TEMP_1)
 		} else {
 			msgbox(Ardor_Uni_GeologyClass_Text_BringRockType)
+			closemessage
 		}
 		specialvar (VAR_RESULT, IsGroundTypeInParty)
 		if (var(VAR_RESULT) == TRUE) {
 			setflag (FLAG_TEMP_2)
 		} else {
 			msgbox(Ardor_Uni_GeologyClass_Text_BringGroundType)
+			closemessage
 		}
 		if (flag(FLAG_TEMP_1) && (flag(FLAG_TEMP_2))) {
 			call (Ardor_Uni_GeologyClass_EventScript_Test)
@@ -475,7 +477,7 @@ text Ardor_Uni_GeologyClass_Text_WhichFossil {
 }
 
 text Ardor_Uni_GeologyClass_Text_ClassFinished {
-	format("Congratulation! Iam studuisti Geologiam. Usa machinam quando volas.")
+	format("Congratulatio! Iam studuisti Geologiam. Usa machinam quando volas.")
 }
 
 text Ardor_Uni_GeologyClass_Text_TeacherBattleLost {

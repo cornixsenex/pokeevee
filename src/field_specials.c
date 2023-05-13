@@ -4810,6 +4810,485 @@ bool32 IsGroundTypeInParty(void)
     return FALSE;
 }
 
+bool32 IsAnimalTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_BULBASAUR 
+			  || species == SPECIES_IVYSAUR 
+			  || species == SPECIES_VENUSAUR
+			  || species == SPECIES_CHARMANDER
+			  || species == SPECIES_CHARMELEON
+			  || species == SPECIES_CHARIZARD
+			  || species == SPECIES_SQUIRTLE 
+			  || species == SPECIES_WARTORTLE
+			  || species == SPECIES_BLASTOISE
+			  || species == SPECIES_CATERPIE 
+			  || species == SPECIES_METAPOD 
+			  || species == SPECIES_BUTTERFREE 
+			  || species == SPECIES_WEEDLE 
+			  || species == SPECIES_KAKUNA 
+			  || species == SPECIES_BEEDRILL 
+			  || species == SPECIES_PIDGEY 
+			  || species == SPECIES_PIDGEOTTO 
+			  || species == SPECIES_PIDGEOT 
+			  || species == SPECIES_RATTATA 
+			  || species == SPECIES_RATICATE 
+			  || species == SPECIES_SPEAROW 
+			  || species == SPECIES_FEAROW 
+			  || species == SPECIES_EKANS 
+			  || species == SPECIES_ARBOK 
+			  || species == SPECIES_PIKACHU 
+			  || species == SPECIES_RAICHU 
+			  || species == SPECIES_SANDSHREW 
+			  || species == SPECIES_SANDSLASH 
+			  || species == SPECIES_NIDORAN_F 
+			  || species == SPECIES_NIDORINA 
+			  || species == SPECIES_NIDOQUEEN 
+			  || species == SPECIES_NIDORAN_M 
+			  || species == SPECIES_NIDORINO 
+			  || species == SPECIES_NIDOKING 
+			  || species == SPECIES_CLEFAIRY 
+			  || species == SPECIES_CLEFABLE 
+			  || species == SPECIES_VULPIX 
+			  || species == SPECIES_NINETALES 
+			  || species == SPECIES_JIGGLYPUFF  
+			  || species == SPECIES_WIGGLYTUFF
+			  || species == SPECIES_ZUBAT 
+			  || species == SPECIES_GOLBAT 
+			  || species == SPECIES_VENONAT 
+			  || species == SPECIES_VENOMOTH 
+			  || species == SPECIES_DIGLETT 
+			  || species == SPECIES_DUGTRIO 
+			  || species == SPECIES_MEOWTH 
+			  || species == SPECIES_PERSIAN 
+			  || species == SPECIES_PSYDUCK 
+			  || species == SPECIES_GOLDUCK 
+			  || species == SPECIES_MANKEY 
+			  || species == SPECIES_PRIMEAPE 
+			  || species == SPECIES_GROWLITHE 
+			  || species == SPECIES_ARCANINE 
+			  || species == SPECIES_POLIWAG 
+			  || species == SPECIES_POLIWHIRL 
+			  || species == SPECIES_POLIWRATH 
+			  || species == SPECIES_ABRA 
+			  || species == SPECIES_KADABRA 
+			  || species == SPECIES_ALAKAZAM 
+			  || species == SPECIES_MACHOP 
+			  || species == SPECIES_MACHOKE 
+			  || species == SPECIES_MACHAMP 
+			  || species == SPECIES_TENTACOOL 
+			  || species == SPECIES_TENTACRUEL
+			  || species == SPECIES_PONYTA 
+			  || species == SPECIES_RAPIDASH
+			  || species == SPECIES_SLOWPOKE
+			  || species == SPECIES_SLOWBRO 
+			  || species == SPECIES_FARFETCHD
+			  || species == SPECIES_DODUO 
+			  || species == SPECIES_DODRIO 
+			  || species == SPECIES_SEEL 
+			  || species == SPECIES_DEWGONG 
+			  || species == SPECIES_SHELLDER
+			  || species == SPECIES_CLOYSTER
+			  || species == SPECIES_DROWZEE
+			  || species == SPECIES_HYPNO 
+			  || species == SPECIES_KRABBY 
+			  || species == SPECIES_KINGLER
+			  || species == SPECIES_CUBONE 
+			  || species == SPECIES_MAROWAK 
+			  || species == SPECIES_HITMONLEE 
+			  || species == SPECIES_HITMONCHAN
+			  || species == SPECIES_LICKITUNG 
+			  || species == SPECIES_KOFFING 
+			  || species == SPECIES_WEEZING 
+			  || species == SPECIES_RHYHORN 
+			  || species == SPECIES_RHYDON 
+			  || species == SPECIES_CHANSEY 
+			  || species == SPECIES_KANGASKHAN
+			  || species == SPECIES_HORSEA 
+			  || species == SPECIES_SEADRA 
+			  || species == SPECIES_GOLDEEN 
+			  || species == SPECIES_SEAKING 
+			  || species == SPECIES_STARYU 
+			  || species == SPECIES_STARMIE 
+			  || species == SPECIES_MR_MIME 
+			  || species == SPECIES_SCYTHER 
+			  || species == SPECIES_JYNX 
+			  || species == SPECIES_ELECTABUZZ
+			  || species == SPECIES_MAGMAR 
+			  || species == SPECIES_PINSIR 
+			  || species == SPECIES_TAUROS 
+			  || species == SPECIES_MAGIKARP 
+			  || species == SPECIES_GYARADOS 
+			  || species == SPECIES_LAPRAS 
+			  || species == SPECIES_VAPOREON 
+			  || species == SPECIES_JOLTEON 
+			  || species == SPECIES_FLAREON  
+			  || species == SPECIES_PORYGON  
+			  || species == SPECIES_OMANYTE 
+			  || species == SPECIES_OMASTAR 
+			  || species == SPECIES_KABUTO 
+			  || species == SPECIES_KABUTOPS  
+			  || species == SPECIES_AERODACTYL
+			  || species == SPECIES_SNORLAX 
+			  || species == SPECIES_ARTICUNO 
+			  || species == SPECIES_ZAPDOS 
+			  || species == SPECIES_MOLTRES  
+			  || species == SPECIES_DRATINI  
+			  || species == SPECIES_DRAGONAIR
+			  || species == SPECIES_DRAGONITE
+			  || species == SPECIES_MEWTWO 
+			  || species == SPECIES_MEW    
+			  || species == SPECIES_CHIKORITA 
+			  || species == SPECIES_BAYLEEF 
+			  || species == SPECIES_MEGANIUM 
+			  || species == SPECIES_CYNDAQUIL
+			  || species == SPECIES_QUILAVA  
+			  || species == SPECIES_TYPHLOSION
+			  || species == SPECIES_TOTODILE 
+			  || species == SPECIES_CROCONAW 
+			  || species == SPECIES_FERALIGATR
+			  || species == SPECIES_SENTRET 
+			  || species == SPECIES_FURRET  
+			  || species == SPECIES_HOOTHOOT 
+			  || species == SPECIES_NOCTOWL
+			  || species == SPECIES_LEDYBA 
+			  || species == SPECIES_LEDIAN  
+			  || species == SPECIES_SPINARAK  
+			  || species == SPECIES_ARIADOS 
+			  || species == SPECIES_CROBAT 
+			  || species == SPECIES_CHINCHOU 
+			  || species == SPECIES_LANTURN  
+			  || species == SPECIES_PICHU  
+			  || species == SPECIES_CLEFFA 
+			  || species == SPECIES_IGGLYBUFF
+			  || species == SPECIES_TOGEPI 
+			  || species == SPECIES_TOGETIC  
+			  || species == SPECIES_NATU  
+			  || species == SPECIES_XATU 
+			  || species == SPECIES_MAREEP 
+			  || species == SPECIES_FLAAFFY
+			  || species == SPECIES_AMPHAROS  
+			  || species == SPECIES_MARILL 
+			  || species == SPECIES_AZUMARILL
+			  || species == SPECIES_POLITOED 
+			  || species == SPECIES_AIPOM 
+			  || species == SPECIES_YANMA 
+			  || species == SPECIES_WOOPER 
+			  || species == SPECIES_QUAGSIRE
+			  || species == SPECIES_ESPEON 
+			  || species == SPECIES_UMBREON 
+			  || species == SPECIES_MURKROW 
+			  || species == SPECIES_SLOWKING
+			  || species == SPECIES_WOBBUFFET
+			  || species == SPECIES_GIRAFARIG
+			  || species == SPECIES_DUNSPARCE
+			  || species == SPECIES_GLIGAR 
+			  || species == SPECIES_SNUBBULL 
+			  || species == SPECIES_GRANBULL 
+			  || species == SPECIES_QWILFISH 
+			  || species == SPECIES_SCIZOR 
+			  || species == SPECIES_SHUCKLE
+			  || species == SPECIES_HERACROSS
+			  || species == SPECIES_SNEASEL 
+			  || species == SPECIES_TEDDIURSA
+			  || species == SPECIES_URSARING 
+			  || species == SPECIES_SLUGMA 
+			  || species == SPECIES_MAGCARGO 
+			  || species == SPECIES_SWINUB 
+			  || species == SPECIES_PILOSWINE 
+			  || species == SPECIES_CORSOLA 
+			  || species == SPECIES_REMORAID 
+			  || species == SPECIES_OCTILLERY
+			  || species == SPECIES_DELIBIRD 
+			  || species == SPECIES_MANTINE 
+			  || species == SPECIES_SKARMORY 
+			  || species == SPECIES_HOUNDOUR 
+			  || species == SPECIES_HOUNDOOM 
+			  || species == SPECIES_KINGDRA
+			  || species == SPECIES_PHANPY 
+			  || species == SPECIES_DONPHAN
+			  || species == SPECIES_STANTLER 
+			  || species == SPECIES_SMEARGLE
+			  || species == SPECIES_TYROGUE 
+			  || species == SPECIES_HITMONTOP
+			  || species == SPECIES_SMOOCHUM 
+			  || species == SPECIES_ELEKID
+			  || species == SPECIES_MAGBY 
+			  || species == SPECIES_MILTANK 
+			  || species == SPECIES_BLISSEY  
+			  || species == SPECIES_RAIKOU
+			  || species == SPECIES_ENTEI 
+			  || species == SPECIES_SUICUNE 
+			  || species == SPECIES_LARVITAR 
+			  || species == SPECIES_PUPITAR 
+			  || species == SPECIES_TYRANITAR
+			  || species == SPECIES_LUGIA 
+			  || species == SPECIES_HO_OH  
+			  || species == SPECIES_CELEBI
+			  || species == SPECIES_TREECKO 
+			  || species == SPECIES_GROVYLE 
+			  || species == SPECIES_SCEPTILE 
+			  || species == SPECIES_TORCHIC 
+			  || species == SPECIES_COMBUSKEN
+			  || species == SPECIES_BLAZIKEN
+			  || species == SPECIES_MUDKIP  
+			  || species == SPECIES_MARSHTOMP
+			  || species == SPECIES_SWAMPERT
+			  || species == SPECIES_POOCHYENA
+			  || species == SPECIES_MIGHTYENA
+			  || species == SPECIES_ZIGZAGOON
+			  || species == SPECIES_LINOONE 
+			  || species == SPECIES_WURMPLE 
+			  || species == SPECIES_SILCOON  
+			  || species == SPECIES_BEAUTIFLY
+			  || species == SPECIES_CASCOON 
+			  || species == SPECIES_DUSTOX
+			  || species == SPECIES_LOTAD  
+			  || species == SPECIES_LOMBRE
+			  || species == SPECIES_LUDICOLO
+			  || species == SPECIES_TAILLOW 
+			  || species == SPECIES_SWELLOW 
+			  || species == SPECIES_WINGULL 
+			  || species == SPECIES_PELIPPER 
+			  || species == SPECIES_RALTS 
+			  || species == SPECIES_KIRLIA 
+			  || species == SPECIES_GARDEVOIR 
+			  || species == SPECIES_SURSKIT 
+			  || species == SPECIES_MASQUERAIN
+			  || species == SPECIES_SLAKOTH 
+			  || species == SPECIES_VIGOROTH
+			  || species == SPECIES_SLAKING 
+			  || species == SPECIES_NINCADA 
+			  || species == SPECIES_NINJASK 
+			  || species == SPECIES_SHEDINJA
+			  || species == SPECIES_WHISMUR 
+			  || species == SPECIES_LOUDRED 
+			  || species == SPECIES_EXPLOUD 
+			  || species == SPECIES_MAKUHITA
+			  || species == SPECIES_HARIYAMA
+			  || species == SPECIES_AZURILL 
+			  || species == SPECIES_SKITTY 
+			  || species == SPECIES_DELCATTY
+			  || species == SPECIES_MAWILE
+			  || species == SPECIES_ARON 
+			  || species == SPECIES_LAIRON 
+			  || species == SPECIES_AGGRON 
+			  || species == SPECIES_MEDITITE 
+			  || species == SPECIES_MEDICHAM 
+			  || species == SPECIES_ELECTRIKE
+			  || species == SPECIES_MANECTRIC
+			  || species == SPECIES_PLUSLE 
+			  || species == SPECIES_MINUN 
+			  || species == SPECIES_VOLBEAT 
+			  || species == SPECIES_ILLUMISE 
+			  || species == SPECIES_GULPIN 
+			  || species == SPECIES_SWALOT 
+			  || species == SPECIES_CARVANHA
+			  || species == SPECIES_SHARPEDO
+			  || species == SPECIES_WAILMER 
+			  || species == SPECIES_WAILORD 
+			  || species == SPECIES_NUMEL 
+			  || species == SPECIES_CAMERUPT
+			  || species == SPECIES_TORKOAL 
+			  || species == SPECIES_SPOINK 
+			  || species == SPECIES_GRUMPIG 
+			  || species == SPECIES_SPINDA 
+			  || species == SPECIES_TRAPINCH
+			  || species == SPECIES_VIBRAVA 
+			  || species == SPECIES_FLYGON 
+			  || species == SPECIES_SWABLU 
+			  || species == SPECIES_ALTARIA 
+			  || species == SPECIES_ZANGOOSE
+			  || species == SPECIES_SEVIPER 
+			  || species == SPECIES_BARBOACH 
+			  || species == SPECIES_WHISCASH 
+			  || species == SPECIES_CORPHISH 
+			  || species == SPECIES_CRAWDAUNT
+			  || species == SPECIES_ANORITH
+			  || species == SPECIES_ARMALDO
+			  || species == SPECIES_FEEBAS 
+			  || species == SPECIES_MILOTIC
+			  || species == SPECIES_KECLEON
+			  || species == SPECIES_TROPIUS
+			  || species == SPECIES_WYNAUT 
+			  || species == SPECIES_SNORUNT
+			  || species == SPECIES_SPHEAL 
+			  || species == SPECIES_SEALEO 
+			  || species == SPECIES_WALREIN
+			  || species == SPECIES_CLAMPERL 
+			  || species == SPECIES_HUNTAIL 
+			  || species == SPECIES_GOREBYSS 
+			  || species == SPECIES_RELICANTH
+			  || species == SPECIES_BAGON 
+			  || species == SPECIES_SHELGON 
+			  || species == SPECIES_SALAMENCE
+			  || species == SPECIES_CHIMCHAR 
+			  || species == SPECIES_MONFERNO 
+			  || species == SPECIES_INFERNAPE 
+			  || species == SPECIES_PIPLUP 
+			  || species == SPECIES_PRINPLUP 
+			  || species == SPECIES_EMPOLEON 
+			  || species == SPECIES_STARLY 
+			  || species == SPECIES_STARAVIA 
+			  || species == SPECIES_STARAPTOR 
+			  || species == SPECIES_BIDOOF 
+			  || species == SPECIES_BIBAREL
+			  || species == SPECIES_KRICKETOT 
+			  || species == SPECIES_KRICKETUNE
+			  || species == SPECIES_SHINX 
+			  || species == SPECIES_LUXIO 
+			  || species == SPECIES_LUXRAY
+			  || species == SPECIES_CRANIDOS 
+			  || species == SPECIES_RAMPARDOS
+			  || species == SPECIES_SHIELDON 
+			  || species == SPECIES_BASTIODON
+			  || species == SPECIES_BURMY 
+			  || species == SPECIES_WORMADAM 
+			  || species == SPECIES_MOTHIM 
+			  || species == SPECIES_COMBEE 
+			  || species == SPECIES_VESPIQUEN
+			  || species == SPECIES_PACHIRISU
+			  || species == SPECIES_BUIZEL 
+			  || species == SPECIES_FLOATZEL 
+			  || species == SPECIES_SHELLOS 
+			  || species == SPECIES_GASTRODON
+			  || species == SPECIES_AMBIPOM 
+			  || species == SPECIES_BUNEARY
+			  || species == SPECIES_LOPUNNY
+			  || species == SPECIES_HONCHKROW
+			  || species == SPECIES_GLAMEOW 
+			  || species == SPECIES_PURUGLY 
+			  || species == SPECIES_STUNKY 
+			  || species == SPECIES_SKUNTANK
+			  || species == SPECIES_MIME_JR
+			  || species == SPECIES_HAPPINY
+			  || species == SPECIES_CHATOT 
+			  || species == SPECIES_GIBLE 
+			  || species == SPECIES_GABITE
+			  || species == SPECIES_GARCHOMP 
+			  || species == SPECIES_MUNCHLAX 
+			  || species == SPECIES_RIOLU 
+			  || species == SPECIES_LUCARIO 
+			  || species == SPECIES_HIPPOPOTAS
+			  || species == SPECIES_HIPPOWDON 
+			  || species == SPECIES_SKORUPI
+			  || species == SPECIES_DRAPION
+			  || species == SPECIES_CROAGUNK 
+			  || species == SPECIES_TOXICROAK 
+			  || species == SPECIES_FINNEON 
+			  || species == SPECIES_LUMINEON
+			  || species == SPECIES_MANTYKE 
+			  || species == SPECIES_SNOVER 
+			  || species == SPECIES_ABOMASNOW 
+			  || species == SPECIES_WEAVILE 
+			  || species == SPECIES_LICKILICKY
+			  || species == SPECIES_ELECTIVIRE
+			  || species == SPECIES_MAGMORTAR 
+			  || species == SPECIES_TOGEKISS 
+			  || species == SPECIES_YANMEGA 
+			  || species == SPECIES_LEAFEON 
+			  || species == SPECIES_GLACEON 
+			  || species == SPECIES_GLISCOR 
+			  || species == SPECIES_MAMOSWINE 
+			  || species == SPECIES_GALLADE 
+			  )  
+            {    
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsPlantTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_ODDISH 
+			  || species == SPECIES_GLOOM 
+			  || species == SPECIES_VILEPLUME 
+			  || species == SPECIES_BELLSPROUT
+			  || species == SPECIES_WEEPINBELL
+			  || species == SPECIES_VICTREEBEL
+			  || species == SPECIES_EXEGGCUTE
+			  || species == SPECIES_EXEGGUTOR
+			  || species == SPECIES_TANGELA
+			  || species == SPECIES_BELLOSSOM 
+			  || species == SPECIES_HOPPIP 
+			  || species == SPECIES_SKIPLOOM
+			  || species == SPECIES_JUMPLUFF
+			  || species == SPECIES_SUNKERN 
+			  || species == SPECIES_SUNFLORA
+			  || species == SPECIES_PINECO 
+			  || species == SPECIES_FORRETRESS
+			  || species == SPECIES_SEEDOT 
+			  || species == SPECIES_NUZLEAF
+			  || species == SPECIES_SHIFTRY
+			  || species == SPECIES_ROSELIA
+			  || species == SPECIES_CACNEA 
+			  || species == SPECIES_CACTURNE
+			  || species == SPECIES_LILEEP 
+			  || species == SPECIES_CRADILY
+			  || species == SPECIES_BUDEW 
+			  || species == SPECIES_ROSERADE
+			  || species == SPECIES_CHERUBI
+			  || species == SPECIES_CHERRIM
+			  || species == SPECIES_CARNIVINE 
+			  || species == SPECIES_TANGROWTH 
+
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsFungusTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_PARAS 
+			  || species == SPECIES_PARASECT 
+			  || species == SPECIES_SHROOMISH 
+			  || species == SPECIES_BRELOOM 
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+
+
+
+
+
 
 
 

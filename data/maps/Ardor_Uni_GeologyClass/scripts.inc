@@ -571,11 +571,13 @@ Ardor_Uni_GeologyClass_EventScript_Teacher_3:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_Teacher_8
 	msgbox Ardor_Uni_GeologyClass_Text_BringRockType
+	closemessage
 Ardor_Uni_GeologyClass_EventScript_Teacher_7:
 	specialvar VAR_RESULT, IsGroundTypeInParty
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_Teacher_12
 	msgbox Ardor_Uni_GeologyClass_Text_BringGroundType
+	closemessage
 Ardor_Uni_GeologyClass_EventScript_Teacher_11:
 	goto_if_set FLAG_TEMP_1, Ardor_Uni_GeologyClass_EventScript_Teacher_16
 	goto Ardor_Uni_GeologyClass_EventScript_Teacher_1
@@ -651,8 +653,8 @@ Ardor_Uni_GeologyClass_Text_WhichFossil::
 	.string "the machine?$"
 
 Ardor_Uni_GeologyClass_Text_ClassFinished::
-	.string "Congratulation! Iam studuisti\n"
-	.string "Geologiam. Usa machinam quando volas.$"
+	.string "Congratulatio! Iam studuisti Geologiam.\n"
+	.string "Usa machinam quando volas.$"
 
 Ardor_Uni_GeologyClass_Text_TeacherBattleLost::
 	.string "Lapides tui superiores sunt.$"
