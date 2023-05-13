@@ -34,6 +34,7 @@ FootballField_EventScript_FinishClass::
 	msgbox FootballField_Text_CoachIntro
 	closemessage
 	trainerbattle_no_intro TRAINER_UNI_GYM, FootballField_Text_CoachLost
+	call Ardor_Uni_TermState_Incrementvar
 	msgbox FootballField_Text_CoachPost
 	closemessage
 	clearflag FLAG_OPEN_CLASS_GYM

@@ -105,6 +105,44 @@ Ardor_Uni_Office_EventScript_ConsulR_2:
 	goto Ardor_Uni_Office_EventScript_ConsulR_1
 
 
+Ardor_Uni_TermState_Incrementvar::
+	switch VAR_UNI_TERM_STATE
+	case 0, Ardor_Uni_TermState_Incrementvar_3
+	case 1, Ardor_Uni_TermState_Incrementvar_4
+	case 2, Ardor_Uni_TermState_Incrementvar_5
+	case 3, Ardor_Uni_TermState_Incrementvar_6
+	case 4, Ardor_Uni_TermState_Incrementvar_7
+	case 5, Ardor_Uni_TermState_Incrementvar_8
+	msgbox Ardor_Uni_TermState_Incrementvar_Text_0
+	closemessage
+Ardor_Uni_TermState_Incrementvar_1:
+	return
+
+Ardor_Uni_TermState_Incrementvar_3:
+	setvar VAR_UNI_TERM_STATE, 1
+	goto Ardor_Uni_TermState_Incrementvar_1
+
+Ardor_Uni_TermState_Incrementvar_4:
+	setvar VAR_UNI_TERM_STATE, 2
+	goto Ardor_Uni_TermState_Incrementvar_1
+
+Ardor_Uni_TermState_Incrementvar_5:
+	setvar VAR_UNI_TERM_STATE, 3
+	goto Ardor_Uni_TermState_Incrementvar_1
+
+Ardor_Uni_TermState_Incrementvar_6:
+	setvar VAR_UNI_TERM_STATE, 4
+	goto Ardor_Uni_TermState_Incrementvar_1
+
+Ardor_Uni_TermState_Incrementvar_7:
+	setvar VAR_UNI_TERM_STATE, 5
+	goto Ardor_Uni_TermState_Incrementvar_1
+
+Ardor_Uni_TermState_Incrementvar_8:
+	setvar VAR_UNI_TERM_STATE, 6
+	goto Ardor_Uni_TermState_Incrementvar_1
+
+
 Ardor_Uni_Office_EventScript_Consul::
 	compare VAR_UNI_TERM_STATE, 4
 	goto_if_gt Ardor_Uni_Office_EventScript_Consul_2
@@ -889,6 +927,9 @@ Ardor_Uni_Office_EventScript_ConsulEnrolled_105:
 
 Ardor_Uni_Office_EventScript_IncrementVar_Text_0:
 	.string "VAR_UNI_STATE bad in IncVar$"
+
+Ardor_Uni_TermState_Incrementvar_Text_0:
+	.string "VAR_UNI_TERM_STATE BAD VALUE$"
 
 Ardor_Uni_Office_EventScript_Consul_Text_0:
 	.string "UNI_STATE is 0 in consul$"

@@ -87,6 +87,7 @@ Ardor_Uni_ArithmeticClass_EventScript_Test::
 	msgbox Ardor_Uni_Text_TestIntro
 	waitmessage
 	trainerbattle_no_intro TRAINER_UNI_ARITHMETIC, Ardor_Uni_ArithmeticClass_Text_TeacherBattleLost
+	call Ardor_Uni_TermState_Incrementvar
 	msgbox Ardor_Uni_ArithmeticClass_Text_ClassFinished
 	closemessage
 	return
