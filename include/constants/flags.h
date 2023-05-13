@@ -181,9 +181,8 @@
 #define FLAG_ROUTE15_DESERTCAVE_OPEN         0x99
 #define FLAG_DESERTTEMPLE_BF1_HIDELAMP       0x9A
 #define FLAG_GEOLOGY_INTRO                   0x9B
-#define FLAG_UNUSED_OPEN_HEY_HELLO           0x9C  //UNUSED = AVAILABLE = USE THIS ONE!!!
-//Use the one above pls
-
+#define FLAG_GRAMMAR_INTRO                   0x9C  
+#define FLAG_ARITHMETIC_INTRO                0x9D
 
 
 
@@ -192,7 +191,6 @@
 				
 
 
-#define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
 #define FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE   0x9E
 #define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0x9F
 #define FLAG_COOL_PAINTING_MADE              0xA0

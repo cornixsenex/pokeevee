@@ -1,5 +1,5 @@
 #How large is the ROM
-	>Open the Makefile, remove the -p argument in the line where gbafix is called, build a ROM and then check the properties of the file.
+	>Open the Makefile, REMOVE the -p argument in the line where gbafix is called, build a ROM and then check the properties of the file.
 
 
 

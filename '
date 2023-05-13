@@ -1,11 +1,11 @@
 
 const OBJ_EVENT_TEACHER = 1
-const OBJ_EVENT_STUDENT1 = 2
-const OBJ_EVENT_STUDENT2 = 3
-const OBJ_EVENT_STUDENT3 = 4
-const OBJ_EVENT_STUDENT4 = 5
-const OBJ_EVENT_STUDENT5 = 6
-const OBJ_EVENT_STUDENT6 = 7
+const OBJ_EVENT_STUDIENT1 = 2
+const OBJ_EVENT_STUDIENT2 = 3
+const OBJ_EVENT_STUDIENT3 = 4
+const OBJ_EVENT_STUDIENT4 = 5
+const OBJ_EVENT_STUDIENT5 = 6
+const OBJ_EVENT_STUDIENT6 = 7
 
 mapscripts Ardor_Uni_ArithmeticClass_MapScripts {
 
@@ -32,36 +32,35 @@ script Ardor_Uni_ArithmeticClass_EventScript_Teacher {
 }
 
 script Ardor_Uni_ArithmeticClass_EventScript_CheckLessons {
-	setvar (VAR_TEMP_7, 0)
 	if (flag(FLAG_TEMP_1)) {
-		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+		call (Ardor_Uni_ArithmeticClass_EventScript_IncrementVar)
 	} else {
 		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyAddition)
 	}
 	if (flag(FLAG_TEMP_2)) {
 		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
 	} else {
-		msgbox(Ardor_Uni_ArithmeticClass_Text_StudySubtraction)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyPronouns)
 	}
 	if (flag(FLAG_TEMP_3)) {
 		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
 	} else {
-		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyMultiplication)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyVerbs)
 	}
 	if (flag(FLAG_TEMP_4)) {
 		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
 	} else {
-		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyDivision)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyAdverbs)
 	}
 	if (flag(FLAG_TEMP_5)) {
 		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
 	} else {
-		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyExponents)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyParticiples)
 	}
 	if (flag(FLAG_TEMP_6)) {
 		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
 	} else {
-		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyRadicals)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyConjunctions)
 	}
 	if (var(VAR_TEMP_7) == 6) {
 		call (Ardor_Uni_ArithmeticClass_EventScript_Test)
@@ -210,62 +209,28 @@ text Ardor_Uni_ArithmeticClass_Text_Student6 {
 	format("")
 }
 
-text Ardor_Uni_ArithmeticClass_Text_Lesson1 {
-	format("Additio est operatio arithmetica qua summa numerorum quantitatumve quarundam describitur.")
+text Ardor_Uni_ArithmeticClass_Text_Student1 {
+	format("")
 }
 
-text Ardor_Uni_ArithmeticClass_Text_Lesson2 {
-	format("Subtractio est operatio arithmetica contraria additio. Subtractio est additio numeri negativi.")
+text Ardor_Uni_ArithmeticClass_Text_Student2 {
+	format("")
 }
 
-text Ardor_Uni_ArithmeticClass_Text_Lesson3 {
-	format("Multiplicatio operatio arithmetica est inversa divisio.")
+text Ardor_Uni_ArithmeticClass_Text_Student3 {
+	format("")
 }
 
-text Ardor_Uni_ArithmeticClass_Text_Lesson4 {
-	format("Divisio est operatio quae numerum in partes aequales dividit.")
+text Ardor_Uni_ArithmeticClass_Text_Student4 {
+	format("")
 }
 
-text Ardor_Uni_ArithmeticClass_Text_Lesson5 {
-	format("Potentia multiplicatio est repetita")
+text Ardor_Uni_ArithmeticClass_Text_Student5 {
+	format("")
 }
 
-text Ardor_Uni_ArithmeticClass_Text_Lesson6 {
-	format("Radicis extractio significat aequationem solvere cuius forma est (n)(n) = x.")
+text Ardor_Uni_ArithmeticClass_Text_Student6 {
+	format("")
 }
 
-text Ardor_Uni_ArithmeticClass_Text_TeacherBattleLost {
-	format("Me subtraxisti.")
-}
 
-text Ardor_Uni_ArithmeticClass_Text_ClassFinished {
-	format("Iam studuisti arithmeticam.")
-}
-
-text Ardor_Uni_ArithmeticClass_Text_TestBegin {
-	format("Iam studuisti partes sex.")
-}
-
-text Ardor_Uni_ArithmeticClass_Text_StudyAddition {
-	format("Stude additionem.")
-}
-
-text Ardor_Uni_ArithmeticClass_Text_StudySubtraction {
-	format("Stude subtractionem.")
-}
-
-text Ardor_Uni_ArithmeticClass_Text_StudyMultiplication {
-	format("Stude multiplicationem.")
-}
-
-text Ardor_Uni_ArithmeticClass_Text_StudyDivision {
-	format("Stude divisionem.")
-}
-
-text Ardor_Uni_ArithmeticClass_Text_StudyExponents {
-	format("Stude potentias.")
-}
-
-text Ardor_Uni_ArithmeticClass_Text_StudyRadicals {
-	format("Stude radices.")
-}

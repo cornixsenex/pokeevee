@@ -6,7 +6,8 @@ Ardor_Uni_GeologyClass_EventScript_FossilMachine::
 	lock
 	msgbox Ardor_Uni_GeologyClass_Text_FossilMachine
 	closemessage
-	goto_if_set FLAG_GEOLOGY_MACHINE_OPEN, Ardor_Uni_GeologyClass_EventScript_FossilMachine_2
+	checktrainerflag TRAINER_UNI_GEOLOGY
+	goto_if 1, Ardor_Uni_GeologyClass_EventScript_FossilMachine_2
 Ardor_Uni_GeologyClass_EventScript_FossilMachine_1:
 	release
 	end
@@ -94,9 +95,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveHelix_1:
 
 Ardor_Uni_GeologyClass_EventScript_GiveHelix_2:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_OMANYTE
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveHelix_7
@@ -104,9 +106,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveHelix_2:
 
 Ardor_Uni_GeologyClass_EventScript_GiveHelix_3:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_OMANYTE
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveHelix_10
@@ -142,9 +145,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveDome_1:
 
 Ardor_Uni_GeologyClass_EventScript_GiveDome_2:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_KABUTO
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveDome_7
@@ -152,9 +156,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveDome_2:
 
 Ardor_Uni_GeologyClass_EventScript_GiveDome_3:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_KABUTO
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveDome_10
@@ -190,9 +195,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_1:
 
 Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_2:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_AERODACTYL
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_7
@@ -200,9 +206,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_2:
 
 Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_3:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_AERODACTYL
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveOldAmber_10
@@ -238,9 +245,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveRoot_1:
 
 Ardor_Uni_GeologyClass_EventScript_GiveRoot_2:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveRoot_7
@@ -248,9 +256,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveRoot_2:
 
 Ardor_Uni_GeologyClass_EventScript_GiveRoot_3:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveRoot_10
@@ -286,9 +295,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveClaw_1:
 
 Ardor_Uni_GeologyClass_EventScript_GiveClaw_2:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveClaw_7
@@ -296,9 +306,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveClaw_2:
 
 Ardor_Uni_GeologyClass_EventScript_GiveClaw_3:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveClaw_10
@@ -334,9 +345,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveSkull_1:
 
 Ardor_Uni_GeologyClass_EventScript_GiveSkull_2:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CRANIDOS
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveSkull_7
@@ -344,9 +356,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveSkull_2:
 
 Ardor_Uni_GeologyClass_EventScript_GiveSkull_3:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CRANIDOS
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveSkull_10
@@ -382,9 +395,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveArmor_1:
 
 Ardor_Uni_GeologyClass_EventScript_GiveArmor_2:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SHIELDON
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveArmor_7
@@ -392,9 +406,10 @@ Ardor_Uni_GeologyClass_EventScript_GiveArmor_2:
 
 Ardor_Uni_GeologyClass_EventScript_GiveArmor_3:
 	playfanfare MUS_OBTAIN_ITEM
-	message Ardor_Uni_GeologyClass_Text_ObtainedPokemon
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_ObtainedPokemon
+	closemessage
 	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SHIELDON
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_GiveArmor_10
@@ -439,8 +454,8 @@ Ardor_Uni_GeologyClass_EventScript_ChooseFossil_5:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_13
 	bufferitemname STR_VAR_1, ITEM_HELIX_FOSSIL
-	message Ardor_Uni_GeologyClass_Text_NoFossil
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_NoFossil
+	closemessage
 	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
 	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
 
@@ -449,8 +464,8 @@ Ardor_Uni_GeologyClass_EventScript_ChooseFossil_6:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_16
 	bufferitemname STR_VAR_1, ITEM_DOME_FOSSIL
-	message Ardor_Uni_GeologyClass_Text_NoFossil
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_NoFossil
+	closemessage
 	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
 	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
 
@@ -459,8 +474,8 @@ Ardor_Uni_GeologyClass_EventScript_ChooseFossil_7:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_19
 	bufferitemname STR_VAR_1, ITEM_OLD_AMBER
-	message Ardor_Uni_GeologyClass_Text_NoFossil
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_NoFossil
+	closemessage
 	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
 	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
 
@@ -469,8 +484,8 @@ Ardor_Uni_GeologyClass_EventScript_ChooseFossil_8:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_22
 	bufferitemname STR_VAR_1, ITEM_ROOT_FOSSIL
-	message Ardor_Uni_GeologyClass_Text_NoFossil
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_NoFossil
+	closemessage
 	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
 	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
 
@@ -479,8 +494,8 @@ Ardor_Uni_GeologyClass_EventScript_ChooseFossil_9:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_25
 	bufferitemname STR_VAR_1, ITEM_CLAW_FOSSIL
-	message Ardor_Uni_GeologyClass_Text_NoFossil
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_NoFossil
+	closemessage
 	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
 	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
 
@@ -489,8 +504,8 @@ Ardor_Uni_GeologyClass_EventScript_ChooseFossil_10:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_28
 	bufferitemname STR_VAR_1, ITEM_SKULL_FOSSIL
-	message Ardor_Uni_GeologyClass_Text_NoFossil
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_NoFossil
+	closemessage
 	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
 	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
 
@@ -499,8 +514,8 @@ Ardor_Uni_GeologyClass_EventScript_ChooseFossil_11:
 	compare VAR_RESULT, TRUE
 	goto_if_eq Ardor_Uni_GeologyClass_EventScript_ChooseFossil_31
 	bufferitemname STR_VAR_1, ITEM_ARMOR_FOSSIL
-	message Ardor_Uni_GeologyClass_Text_NoFossil
-	waitmessage
+	msgbox Ardor_Uni_GeologyClass_Text_NoFossil
+	closemessage
 	call Ardor_Uni_GeologyClass_EventScript_ChooseFossil
 	goto Ardor_Uni_GeologyClass_EventScript_ChooseFossil_1
 
@@ -538,7 +553,7 @@ Ardor_Uni_GeologyClass_EventScript_Teacher::
 	faceplayer
 	checktrainerflag TRAINER_UNI_GEOLOGY
 	goto_if 1, Ardor_Uni_GeologyClass_EventScript_Teacher_2
-	goto_if_set FLAG_GOELOGY_INTRO, Ardor_Uni_GeologyClass_EventScript_Teacher_3
+	goto_if_set FLAG_GEOLOGY_INTRO, Ardor_Uni_GeologyClass_EventScript_Teacher_3
 	call Ardor_Uni_GeologyClass_EventScript_ClassIntro
 Ardor_Uni_GeologyClass_EventScript_Teacher_1:
 	applymovement 2, Common_Movement_FaceDown
@@ -583,7 +598,7 @@ Ardor_Uni_GeologyClass_EventScript_Teacher_16:
 
 
 Ardor_Uni_GeologyClass_EventScript_ClassIntro::
-	setflag FLAG_GOELOGY_INTRO
+	setflag FLAG_GEOLOGY_INTRO
 	msgbox Ardor_Uni_GeologyClass_Text_ClassIntro
 	closemessage
 	msgbox Ardor_Uni_GeologyClass_Text_BringRockType
