@@ -184,6 +184,7 @@
 #define FLAG_GRAMMAR_INTRO                   0x9C  
 #define FLAG_ARITHMETIC_INTRO                0x9D
 #define FLAG_BIOLOGY_INTRO                   0x9E
+#define FLAG_CHEMISTRY_INTRO                 0x9F
 
 
 
@@ -192,7 +193,6 @@
 				
 
 
-#define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0x9F
 #define FLAG_COOL_PAINTING_MADE              0xA0
 #define FLAG_BEAUTY_PAINTING_MADE            0xA1
 #define FLAG_CUTE_PAINTING_MADE              0xA2

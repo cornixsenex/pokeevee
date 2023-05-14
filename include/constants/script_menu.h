@@ -131,6 +131,7 @@
 #define MULTI_ARDOR_CHOOSE_SOCIAL          120
 #define MULTI_ARDOR_CHOOSE_ELECTIVE        121
 #define MULTI_CHOOSE_FOSSIL                122
+#define MULTI_ARDOR_MUSIC_CHOOSE_NOTE      123
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

@@ -727,6 +727,16 @@ const u8 gText_ChooseFossil5[]   = _("CLAW FOSSIL");
 const u8 gText_ChooseFossil6[]   = _("SKULL FOSSIL");
 const u8 gText_ChooseFossil7[]   = _("ARMOR FOSSIL");
 
+const u8 gText_Ardor_MusicChooseNote1[]   = _("C");
+const u8 gText_Ardor_MusicChooseNote2[]   = _("B");
+const u8 gText_Ardor_MusicChooseNote3[]   = _("A");
+const u8 gText_Ardor_MusicChooseNote4[]   = _("F");
+const u8 gText_Ardor_MusicChooseNote5[]   = _("E");
+const u8 gText_Ardor_MusicChooseNote6[]   = _("G");
+const u8 gText_Ardor_MusicChooseNote7[]   = _("D");
+const u8 gText_Ardor_MusicChooseNote8[]   = _("C");
+
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");

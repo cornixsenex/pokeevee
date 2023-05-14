@@ -2492,6 +2492,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case MULTI_ARDOR_MUSIC_CHOOSE_NOTE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 8;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2732,6 +2742,17 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_ChooseFossil5,
 		gText_ChooseFossil6,
 		gText_ChooseFossil7,
+	},
+	[MULTI_ARDOR_MUSIC_CHOOSE_NOTE] =
+	{
+		gText_Ardor_MusicChooseNote1,
+		gText_Ardor_MusicChooseNote2,
+		gText_Ardor_MusicChooseNote3,
+		gText_Ardor_MusicChooseNote4,
+		gText_Ardor_MusicChooseNote5,
+		gText_Ardor_MusicChooseNote6,
+		gText_Ardor_MusicChooseNote7,
+		gText_Ardor_MusicChooseNote8,
 	},
 };
 
@@ -4802,6 +4823,66 @@ bool32 IsGroundTypeInParty(void)
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
             if (gSpeciesInfo[species].types[0] == TYPE_GROUND || gSpeciesInfo[species].types[1] == TYPE_GROUND)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsFireTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_FIRE || gSpeciesInfo[species].types[1] == TYPE_FIRE)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsWaterTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_WATER || gSpeciesInfo[species].types[1] == TYPE_WATER)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsFlyingTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_FLYING || gSpeciesInfo[species].types[1] == TYPE_FLYING)
             {
                 return TRUE;
             }

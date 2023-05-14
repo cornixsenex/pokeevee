@@ -551,4 +551,7 @@ gSpecials::
 	def_special IsAnimalTypeInParty
 	def_special IsPlantTypeInParty
 	def_special IsFungusTypeInParty
+	def_special IsFireTypeInParty
+	def_special IsWaterTypeInParty
+	def_special IsFlyingTypeInParty
 

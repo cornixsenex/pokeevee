@@ -1376,8 +1376,15 @@ extern const u8 gText_ChooseFossil5[];
 extern const u8 gText_ChooseFossil6[];
 extern const u8 gText_ChooseFossil7[];
 
-
-
+//Choose Music Note (Ardor Music Class)
+extern const u8 gText_Ardor_MusicChooseNote1[];
+extern const u8 gText_Ardor_MusicChooseNote2[];
+extern const u8 gText_Ardor_MusicChooseNote3[];
+extern const u8 gText_Ardor_MusicChooseNote4[];
+extern const u8 gText_Ardor_MusicChooseNote5[];
+extern const u8 gText_Ardor_MusicChooseNote6[];
+extern const u8 gText_Ardor_MusicChooseNote7[];
+extern const u8 gText_Ardor_MusicChooseNote8[];
 
 
 

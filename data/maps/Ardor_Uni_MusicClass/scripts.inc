@@ -1,3 +1,1273 @@
 Ardor_Uni_MusicClass_MapScripts::
 	.byte 0
 
+
+Ardor_Uni_MusicClass_EventScript_Teacher::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_UNI_ARITHMETIC
+	goto_if 1, Ardor_Uni_MusicClass_EventScript_Teacher_2
+	msgbox Ardor_Uni_MusicClass_Text_ClassIntro
+	closemessage
+	call Ardor_Uni_MusicClass_EventScript_MakeMusic
+Ardor_Uni_MusicClass_EventScript_Teacher_1:
+	applymovement OBJ_EVENT_TEACHER, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+Ardor_Uni_MusicClass_EventScript_Teacher_2:
+	msgbox Ardor_Uni_MusicClass_Text_ClassFinished
+	closemessage
+	goto Ardor_Uni_MusicClass_EventScript_Teacher_1
+
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic::
+	msgbox Ardor_Uni_MusicClass_Text_Music1
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_1, VAR_RESULT
+	msgbox Ardor_Uni_MusicClass_Text_MusicPlay
+	switch VAR_TEMP_1
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_3
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_4
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_5
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_6
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_7
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_8
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_9
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_10
+Ardor_Uni_MusicClass_EventScript_MakeMusic_1:
+	waitse
+	closemessage
+	msgbox Ardor_Uni_MusicClass_Text_Music2
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_1, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_2, VAR_RESULT
+	msgbox Ardor_Uni_MusicClass_Text_MusicPlay
+	switch VAR_TEMP_1
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_13
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_14
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_15
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_16
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_17
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_18
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_19
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_20
+Ardor_Uni_MusicClass_EventScript_MakeMusic_11:
+	waitse
+	switch VAR_TEMP_2
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_23
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_24
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_25
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_26
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_27
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_28
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_29
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_30
+Ardor_Uni_MusicClass_EventScript_MakeMusic_21:
+	waitse
+	closemessage
+	msgbox Ardor_Uni_MusicClass_Text_Music4
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_1, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_2, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_3, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_4, VAR_RESULT
+	closemessage
+	msgbox Ardor_Uni_MusicClass_Text_MusicPlay
+	switch VAR_TEMP_1
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_33
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_34
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_35
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_36
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_37
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_38
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_39
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_40
+Ardor_Uni_MusicClass_EventScript_MakeMusic_31:
+	waitse
+	switch VAR_TEMP_2
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_43
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_44
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_45
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_46
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_47
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_48
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_49
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_50
+Ardor_Uni_MusicClass_EventScript_MakeMusic_41:
+	waitse
+	switch VAR_TEMP_3
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_53
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_54
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_55
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_56
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_57
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_58
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_59
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_60
+Ardor_Uni_MusicClass_EventScript_MakeMusic_51:
+	waitse
+	switch VAR_TEMP_4
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_63
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_64
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_65
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_66
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_67
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_68
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_69
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_70
+Ardor_Uni_MusicClass_EventScript_MakeMusic_61:
+	waitse
+	closemessage
+	msgbox Ardor_Uni_MusicClass_Text_Music8
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_1, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_2, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_3, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_4, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_5, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_6, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_7, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_8, VAR_RESULT
+	closemessage
+	msgbox Ardor_Uni_MusicClass_Text_MusicPlay
+	switch VAR_TEMP_1
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_73
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_74
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_75
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_76
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_77
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_78
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_79
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_80
+Ardor_Uni_MusicClass_EventScript_MakeMusic_71:
+	waitse
+	switch VAR_TEMP_2
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_83
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_84
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_85
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_86
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_87
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_88
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_89
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_90
+Ardor_Uni_MusicClass_EventScript_MakeMusic_81:
+	waitse
+	switch VAR_TEMP_3
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_93
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_94
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_95
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_96
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_97
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_98
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_99
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_100
+Ardor_Uni_MusicClass_EventScript_MakeMusic_91:
+	waitse
+	switch VAR_TEMP_4
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_103
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_104
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_105
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_106
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_107
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_108
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_109
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_110
+Ardor_Uni_MusicClass_EventScript_MakeMusic_101:
+	waitse
+	switch VAR_TEMP_5
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_113
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_114
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_115
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_116
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_117
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_118
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_119
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_120
+Ardor_Uni_MusicClass_EventScript_MakeMusic_111:
+	waitse
+	switch VAR_TEMP_6
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_123
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_124
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_125
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_126
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_127
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_128
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_129
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_130
+Ardor_Uni_MusicClass_EventScript_MakeMusic_121:
+	waitse
+	switch VAR_TEMP_7
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_133
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_134
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_135
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_136
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_137
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_138
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_139
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_140
+Ardor_Uni_MusicClass_EventScript_MakeMusic_131:
+	waitse
+	switch VAR_TEMP_8
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_143
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_144
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_145
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_146
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_147
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_148
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_149
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_150
+Ardor_Uni_MusicClass_EventScript_MakeMusic_141:
+	waitse
+	closemessage
+	msgbox Ardor_Uni_MusicClass_Text_Music12
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_1, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_2, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_3, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_4, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_5, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_6, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_7, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_8, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_9, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_0, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_A, VAR_RESULT
+	multichoice 0, 0, MULTI_ARDOR_MUSIC_CHOOSE_NOTE, TRUE
+	copyvar VAR_TEMP_B, VAR_RESULT
+	closemessage
+	msgbox Ardor_Uni_MusicClass_Text_MusicPlay
+	switch VAR_TEMP_1
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_153
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_154
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_155
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_156
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_157
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_158
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_159
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_160
+Ardor_Uni_MusicClass_EventScript_MakeMusic_151:
+	waitse
+	switch VAR_TEMP_2
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_163
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_164
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_165
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_166
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_167
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_168
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_169
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_170
+Ardor_Uni_MusicClass_EventScript_MakeMusic_161:
+	waitse
+	switch VAR_TEMP_3
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_173
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_174
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_175
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_176
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_177
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_178
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_179
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_180
+Ardor_Uni_MusicClass_EventScript_MakeMusic_171:
+	waitse
+	switch VAR_TEMP_4
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_183
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_184
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_185
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_186
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_187
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_188
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_189
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_190
+Ardor_Uni_MusicClass_EventScript_MakeMusic_181:
+	waitse
+	switch VAR_TEMP_5
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_193
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_194
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_195
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_196
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_197
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_198
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_199
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_200
+Ardor_Uni_MusicClass_EventScript_MakeMusic_191:
+	waitse
+	switch VAR_TEMP_6
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_203
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_204
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_205
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_206
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_207
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_208
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_209
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_210
+Ardor_Uni_MusicClass_EventScript_MakeMusic_201:
+	waitse
+	switch VAR_TEMP_7
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_213
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_214
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_215
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_216
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_217
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_218
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_219
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_220
+Ardor_Uni_MusicClass_EventScript_MakeMusic_211:
+	waitse
+	switch VAR_TEMP_8
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_223
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_224
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_225
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_226
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_227
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_228
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_229
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_230
+Ardor_Uni_MusicClass_EventScript_MakeMusic_221:
+	waitse
+	switch VAR_TEMP_9
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_233
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_234
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_235
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_236
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_237
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_238
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_239
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_240
+Ardor_Uni_MusicClass_EventScript_MakeMusic_231:
+	waitse
+	switch VAR_TEMP_0
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_243
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_244
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_245
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_246
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_247
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_248
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_249
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_250
+Ardor_Uni_MusicClass_EventScript_MakeMusic_241:
+	waitse
+	switch VAR_TEMP_A
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_253
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_254
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_255
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_256
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_257
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_258
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_259
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_260
+Ardor_Uni_MusicClass_EventScript_MakeMusic_251:
+	waitse
+	switch VAR_TEMP_B
+	case 0, Ardor_Uni_MusicClass_EventScript_MakeMusic_263
+	case 1, Ardor_Uni_MusicClass_EventScript_MakeMusic_264
+	case 2, Ardor_Uni_MusicClass_EventScript_MakeMusic_265
+	case 3, Ardor_Uni_MusicClass_EventScript_MakeMusic_266
+	case 4, Ardor_Uni_MusicClass_EventScript_MakeMusic_267
+	case 5, Ardor_Uni_MusicClass_EventScript_MakeMusic_268
+	case 6, Ardor_Uni_MusicClass_EventScript_MakeMusic_269
+	case 7, Ardor_Uni_MusicClass_EventScript_MakeMusic_270
+Ardor_Uni_MusicClass_EventScript_MakeMusic_261:
+	waitse
+	closemessage
+	call Ardor_Uni_MusicClass_EventScript_Test
+	return
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_3:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_4:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_5:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_6:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_7:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_8:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_9:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_10:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_1
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_13:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_14:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_15:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_16:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_17:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_18:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_19:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_20:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_11
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_23:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_24:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_25:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_26:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_27:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_28:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_29:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_30:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_21
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_33:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_34:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_35:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_36:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_37:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_38:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_39:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_40:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_31
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_43:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_44:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_45:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_46:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_47:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_48:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_49:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_50:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_41
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_53:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_54:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_55:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_56:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_57:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_58:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_59:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_60:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_51
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_63:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_64:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_65:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_66:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_67:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_68:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_69:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_70:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_61
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_73:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_74:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_75:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_76:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_77:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_78:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_79:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_80:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_71
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_83:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_84:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_85:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_86:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_87:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_88:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_89:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_90:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_81
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_93:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_94:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_95:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_96:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_97:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_98:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_99:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_100:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_91
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_103:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_104:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_105:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_106:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_107:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_108:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_109:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_110:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_101
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_113:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_114:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_115:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_116:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_117:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_118:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_119:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_120:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_111
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_123:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_124:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_125:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_126:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_127:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_128:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_129:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_130:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_121
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_133:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_134:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_135:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_136:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_137:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_138:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_139:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_140:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_131
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_143:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_144:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_145:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_146:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_147:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_148:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_149:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_150:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_141
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_153:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_154:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_155:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_156:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_157:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_158:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_159:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_160:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_151
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_163:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_164:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_165:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_166:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_167:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_168:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_169:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_170:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_161
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_173:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_174:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_175:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_176:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_177:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_178:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_179:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_180:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_171
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_183:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_184:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_185:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_186:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_187:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_188:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_189:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_190:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_181
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_193:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_194:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_195:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_196:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_197:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_198:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_199:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_200:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_191
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_203:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_204:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_205:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_206:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_207:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_208:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_209:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_210:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_201
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_213:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_214:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_215:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_216:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_217:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_218:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_219:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_220:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_211
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_223:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_224:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_225:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_226:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_227:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_228:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_229:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_230:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_221
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_233:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_234:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_235:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_236:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_237:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_238:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_239:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_240:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_231
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_243:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_244:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_245:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_246:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_247:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_248:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_249:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_250:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_241
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_253:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_254:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_255:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_256:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_257:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_258:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_259:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_260:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_251
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_263:
+	playse SE_NOTE_C_HIGH
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_264:
+	playse SE_NOTE_B
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_265:
+	playse SE_NOTE_A
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_266:
+	playse SE_NOTE_G
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_267:
+	playse SE_NOTE_F
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_268:
+	playse SE_NOTE_E
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_269:
+	playse SE_NOTE_D
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+Ardor_Uni_MusicClass_EventScript_MakeMusic_270:
+	playse SE_NOTE_C
+	goto Ardor_Uni_MusicClass_EventScript_MakeMusic_261
+
+
+Ardor_Uni_MusicClass_EventScript_Test::
+	msgbox Ardor_Uni_MusicClass_Text_TestBegin
+	waitmessage
+	msgbox Ardor_Uni_Text_TestIntro
+	waitmessage
+	trainerbattle_no_intro TRAINER_UNI_MUSIC, Ardor_Uni_MusicClass_Text_TeacherBattleLost
+	call Ardor_Uni_TermState_Incrementvar
+	msgbox Ardor_Uni_MusicClass_Text_ClassFinished
+	closemessage
+	return
+
