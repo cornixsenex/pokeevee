@@ -5700,6 +5700,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route15_DesertCave/border.bin",
       "blockdata_filepath": "data/layouts/Route15_DesertCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_ART_CANVAS",
+      "name": "ArtCanvas_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_downtown",
+      "border_filepath": "data/layouts/ArtCanvas/border.bin",
+      "blockdata_filepath": "data/layouts/ArtCanvas/map.bin"
     }
   ]
 }

@@ -839,6 +839,10 @@
 // gTileset_desert
 #define METATILE_desert_DeepSand_Center  0x219
 
+// gTileset_downtown
+#define METATILE_downtown_CanvasBlank   0x3A0
+#define METATILE_downtown_CanvasFilled  0x398
+
 // gTileset_pyramids
 #define METATILE_pyramids_DeepSand_Center  0x251
 

@@ -33,6 +33,7 @@
  *      . EndTruckSequence: Sets the moving truck boxes to their final position when the truck sequence ends.
  *      . SecretBasePerStepCallback: Records the decorations in a friend's secret base that the player steps on.
  *      . CrackedFloorPerStepCallback: Breaks cracked floors that the player steps on.
+ *      - CanvasPerStepCallback: Kustom to change metatile from white to black on canvas.
  *
  *  NOTE: "PerStep" is perhaps misleading. One function in sPerStepCallbacks is called
  *        every frame while in the overworld by Task_RunPerStepCallback regardless of
@@ -50,6 +51,7 @@ struct PacifidlogMetatileOffsets
 
 static void DummyPerStepCallback(u8);
 static void AshGrassPerStepCallback(u8);
+static void CanvasPerStepCallback(u8);
 static void FortreeBridgePerStepCallback(u8);
 static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
@@ -65,7 +67,8 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_SOOTOPOLIS_ICE]    = SootopolisGymIcePerStepCallback,
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
-    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback
+    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
+    [STEP_CB_CANVAS]            = CanvasPerStepCallback
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.
@@ -770,6 +773,35 @@ static void AshGrassPerStepCallback(u8 taskId)
             if (*ashGatherCount < 9999)
                 (*ashGatherCount)++;
         }
+    }
+}
+
+#undef tPrevX
+#undef tPrevY
+
+#define tPrevX data[1]
+#define tPrevY data[2]
+
+static void CanvasPerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    u16 *canvasStepCount;
+    s16 *data = gTasks[taskId].data;
+    PlayerGetDestCoords(&x, &y);
+
+    // End if player hasn't moved
+    if (x == tPrevX && y == tPrevY)
+        return;
+
+    tPrevX = x;
+    tPrevY = y;
+    if (MetatileBehavior_IsCanvas(MapGridGetMetatileBehaviorAt(x, y)))
+    {
+        // Change Canvas
+		MapGridSetMetatileIdAt(x, y, METATILE_downtown_CanvasFilled);
+		CurrentMapDrawMetatileAt(x, y);
+        canvasStepCount = GetVarPointer(VAR_CANVAS_STEP_COUNTER);
+		(*canvasStepCount)++;
     }
 }
 
