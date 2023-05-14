@@ -11,7 +11,7 @@ Ardor_Uni_MusicClass_EventScript_Teacher::
 	closemessage
 	call Ardor_Uni_MusicClass_EventScript_MakeMusic
 Ardor_Uni_MusicClass_EventScript_Teacher_1:
-	applymovement OBJ_EVENT_TEACHER, Common_Movement_FaceDown
+	applymovement 1, Common_Movement_FaceDown
 	waitmovement 0
 	release
 	end
@@ -1261,8 +1261,6 @@ Ardor_Uni_MusicClass_EventScript_MakeMusic_270:
 
 
 Ardor_Uni_MusicClass_EventScript_Test::
-	msgbox Ardor_Uni_MusicClass_Text_TestBegin
-	waitmessage
 	msgbox Ardor_Uni_Text_TestIntro
 	waitmessage
 	trainerbattle_no_intro TRAINER_UNI_MUSIC, Ardor_Uni_MusicClass_Text_TeacherBattleLost
@@ -1271,3 +1269,33 @@ Ardor_Uni_MusicClass_EventScript_Test::
 	closemessage
 	return
 
+
+Ardor_Uni_MusicClass_Text_ClassIntro::
+	.string "Salve puer. Magister Gerardus sum.\n"
+	.string "Necesse est tibi docere musicam.\l"
+	.string "Musica non ludus est ergo non debes\l"
+	.string "subridere.$"
+
+Ardor_Uni_MusicClass_Text_Music1::
+	.string "Selige unum notam musicae.$"
+
+Ardor_Uni_MusicClass_Text_Music2::
+	.string "Selige duas notas musicae.$"
+
+Ardor_Uni_MusicClass_Text_Music4::
+	.string "Selige notas quattor musicae.$"
+
+Ardor_Uni_MusicClass_Text_Music8::
+	.string "Selige notas octo musicae.$"
+
+Ardor_Uni_MusicClass_Text_Music12::
+	.string "Selige notas duodecim musicae.$"
+
+Ardor_Uni_MusicClass_Text_MusicPlay::
+	.string "Fiat musica!$"
+
+Ardor_Uni_MusicClass_Text_ClassFinished::
+	.string "Congratulatio! Iam studuisti Musicam.$"
+
+Ardor_Uni_MusicClass_Text_TeacherBattleLost::
+	.string "Sellam iactabo!$"

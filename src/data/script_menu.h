@@ -869,13 +869,13 @@ static const struct MenuAction MultichoiceList_ChooseFossil[] =
 
 static const struct MenuAction MultichoiceList_Ardor_MusicChooseNote[] =
 {
-	{gText_Ardor_ChooseMusicNote1},
-	{gText_Ardor_ChooseMusicNote2},
-	{gText_Ardor_ChooseMusicNote3},
-	{gText_Ardor_ChooseMusicNote4},
-	{gText_Ardor_ChooseMusicNote5},
-	{gText_Ardor_ChooseMusicNote6},
-	{gText_Ardor_ChooseMusicNote7},
+	{gText_Ardor_MusicChooseNote1},
+	{gText_Ardor_MusicChooseNote2},
+	{gText_Ardor_MusicChooseNote3},
+	{gText_Ardor_MusicChooseNote4},
+	{gText_Ardor_MusicChooseNote5},
+	{gText_Ardor_MusicChooseNote6},
+	{gText_Ardor_MusicChooseNote7},
 };
 
 static const struct MenuAction MultichoiceList_Exit[] =
