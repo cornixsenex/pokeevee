@@ -53,7 +53,7 @@ script Ardor_Uni_LogicClass_EventScript_DoLogic {
 	if (var(VAR_RESULT) == DIR_EAST) {
 		setvar (VAR_LOGIC_CLASS_STATE, 100)
 	}
-	warpsilent (MAP_LOGIC_CANVAS, 32, 32)
+	warpsilent (MAP_LOGIC_PUZZLE, 8, 12)
 	waitstate
 	end
 }
