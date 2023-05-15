@@ -134,7 +134,7 @@
 #define VAR_UNI_STATE                                    0x406D // Set by Uni Consul
 #define VAR_UNI_TERM_STATE                               0x406E // Counts completed classes per term 
 #define VAR_CANVAS_STEP_COUNTER                          0x406F // Counts steps player takes on the canvas
-
+#define VAR_LOGIC_CLASS_STATE                            0x4070 // Controls the Logic Puzzle and triggers test on return to class
 
 
 
@@ -143,7 +143,6 @@
 
 
 
-#define VAR_ROUTE117_STATE                               0x4070 // Unused Var
 #define VAR_ROUTE118_STATE                               0x4071
 #define VAR_ROUTE119_STATE                               0x4072
 #define VAR_ROUTE120_STATE                               0x4073 // Unused Var

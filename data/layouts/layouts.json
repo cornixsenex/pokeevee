@@ -5710,6 +5710,16 @@
       "secondary_tileset": "gTileset_downtown",
       "border_filepath": "data/layouts/ArtCanvas/border.bin",
       "blockdata_filepath": "data/layouts/ArtCanvas/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOGIC_PUZZLE",
+      "name": "LogicPuzzle_Layout",
+      "width": 16,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MauvilleGym",
+      "border_filepath": "data/layouts/LogicPuzzle/border.bin",
+      "blockdata_filepath": "data/layouts/LogicPuzzle/map.bin"
     }
   ]
 }

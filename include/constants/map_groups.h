@@ -653,7 +653,7 @@
 #define MAP_ARDOR_UNI_GRAMMAR_CLASS       (69 | (30 << 8))
 #define MAP_ARDOR_UNI_ART_CLASS           (70 | (30 << 8))
 #define MAP_ARDOR_UNI_ALGEBRA_CLASS       (71 | (30 << 8))
-#define MAP_ARDOR_UNI_COMPUTER_CLASS      (72 | (30 << 8))
+#define MAP_ARDOR_UNI_LOGIC_CLASS         (72 | (30 << 8))
 #define MAP_ARDOR_UNI_HISTORY_CLASS       (73 | (30 << 8))
 #define MAP_ARDOR_UNI_PSYCHOLOGY_CLASS    (74 | (30 << 8))
 #define MAP_ARDOR_UNI_CALCULUS_CLASS      (75 | (30 << 8))
@@ -671,6 +671,7 @@
 #define MAP_DESERT_TEMPLE_B1F             (87 | (30 << 8))
 #define MAP_ROUTE15_DESERT_CAVE           (88 | (30 << 8))
 #define MAP_ART_CANVAS                    (89 | (30 << 8))
+#define MAP_LOGIC_PUZZLE                  (90 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

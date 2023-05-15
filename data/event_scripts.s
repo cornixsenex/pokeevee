@@ -1359,7 +1359,7 @@ Common_EventScript_LegendaryFlewAway::
 
 	.include "data/maps/Ardor_Uni_AlgebraClass/scripts.inc"
 
-	.include "data/maps/Ardor_Uni_ComputerClass/scripts.inc"
+	.include "data/maps/Ardor_Uni_LogicClass/scripts.inc"
 
 	.include "data/maps/Ardor_Uni_HistoryClass/scripts.inc"
 
@@ -1399,3 +1399,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route15_DesertCave/scripts.inc"
 
 	.include "data/maps/ArtCanvas/scripts.inc"
+
+	.include "data/maps/LogicPuzzle/scripts.inc"

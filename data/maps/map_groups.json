@@ -686,7 +686,7 @@
     "Ardor_Uni_GrammarClass",
     "Ardor_Uni_ArtClass",
     "Ardor_Uni_AlgebraClass",
-    "Ardor_Uni_ComputerClass",
+    "Ardor_Uni_LogicClass",
     "Ardor_Uni_HistoryClass",
     "Ardor_Uni_PsychologyClass",
     "Ardor_Uni_CalculusClass",
@@ -703,7 +703,8 @@
     "DesertTemple_1F",
     "DesertTemple_B1F",
     "Route15_DesertCave",
-    "ArtCanvas"
+    "ArtCanvas",
+    "LogicPuzzle"
   ],
   "gMapGroup31": [
     "Aldeon_Leaf_House",
