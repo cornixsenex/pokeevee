@@ -157,7 +157,7 @@
 #define FLAG_OPEN_CLASS_ARITHMETIC           0x83
 #define FLAG_OPEN_CLASS_GRAMMAR              0x84
 #define FLAG_OPEN_CLASS_ART                  0x85
-#define FLAG_OPEN_CLASS_COMPUTER             0x86
+#define FLAG_OPEN_CLASS_LOGIC                0x86
 #define FLAG_OPEN_CLASS_ALGEBRA              0x87
 #define FLAG_OPEN_CLASS_GEOMETRY             0x88 
 #define FLAG_OPEN_CLASS_HISTORY              0x89
@@ -185,6 +185,7 @@
 #define FLAG_ARITHMETIC_INTRO                0x9D
 #define FLAG_BIOLOGY_INTRO                   0x9E
 #define FLAG_CHEMISTRY_INTRO                 0x9F
+#define FLAG_ALGEBRA_INTRO                   0xA0
 
 
 
@@ -193,7 +194,6 @@
 				
 
 
-#define FLAG_COOL_PAINTING_MADE              0xA0
 #define FLAG_BEAUTY_PAINTING_MADE            0xA1
 #define FLAG_CUTE_PAINTING_MADE              0xA2
 #define FLAG_SMART_PAINTING_MADE             0xA3

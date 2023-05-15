@@ -169,7 +169,7 @@
 #define TRAINER_UNI_PHILOSOPHY              164
 #define TRAINER_UNI_ART                     165
 #define TRAINER_UNI_MUSIC                   166
-#define TRAINER_UNI_COMPUTER                167
+#define TRAINER_UNI_LOGIC                   167
 #define TRAINER_UNI_GYM                     168
 
 //BREAK - NOTE FIVE UNUSED TRAINERS ABOVE

@@ -2215,7 +2215,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_UniMusic},
     },
 
-    [TRAINER_UNI_COMPUTER] =
+    [TRAINER_UNI_LOGIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -2224,8 +2224,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_UniComputer),
-        .party = {.TrainerMon = sParty_UniComputer},
+        .partySize = ARRAY_COUNT(sParty_UniLogic),
+        .party = {.TrainerMon = sParty_UniLogic},
     },
 
     [TRAINER_UNI_GYM] =

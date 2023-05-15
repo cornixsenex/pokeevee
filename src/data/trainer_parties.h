@@ -2148,7 +2148,7 @@ static const struct TrainerMon sParty_UniMusic[] = {
     }
 };
 
-static const struct TrainerMon sParty_UniComputer[] = {
+static const struct TrainerMon sParty_UniLogic[] = {
     {
     .iv = 0,
     .lvl = 33,

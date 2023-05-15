@@ -8,7 +8,7 @@ Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_LOAD:
 
 
 Ardor_Uni2F_EventScript_OpenDoors::
-	goto_if_unset FLAG_OPEN_CLASS_COMPUTER, Ardor_Uni2F_EventScript_OpenDoors_2
+	goto_if_unset FLAG_OPEN_CLASS_LOGIC, Ardor_Uni2F_EventScript_OpenDoors_2
 Ardor_Uni2F_EventScript_OpenDoors_1:
 	goto_if_unset FLAG_OPEN_CLASS_ALGEBRA, Ardor_Uni2F_EventScript_OpenDoors_5
 Ardor_Uni2F_EventScript_OpenDoors_4:

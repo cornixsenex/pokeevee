@@ -10,7 +10,7 @@ mapscripts Ardor_Uni2F_MapScripts {
 }
 
 script Ardor_Uni2F_EventScript_OpenDoors {
-	if (!flag(FLAG_OPEN_CLASS_COMPUTER) ){
+	if (!flag(FLAG_OPEN_CLASS_LOGIC) ){
 		setmetatile (2, 9, METATILE_Facility_DoorBlock, 1)
 	}
 	if (!flag(FLAG_OPEN_CLASS_ALGEBRA) ){

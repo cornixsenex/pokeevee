@@ -5,7 +5,7 @@ Ardor_Uni_MusicClass_MapScripts::
 Ardor_Uni_MusicClass_EventScript_Teacher::
 	lock
 	faceplayer
-	checktrainerflag TRAINER_UNI_ARITHMETIC
+	checktrainerflag TRAINER_UNI_MUSIC
 	goto_if 1, Ardor_Uni_MusicClass_EventScript_Teacher_2
 	msgbox Ardor_Uni_MusicClass_Text_ClassIntro
 	closemessage

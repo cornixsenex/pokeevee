@@ -487,16 +487,16 @@ script Ardor_Uni_Office_EventScript_EnrollElective {
 				setflag (FLAG_OPEN_CLASS_GYM)
 			}
 		case 3:
-			if (flag(FLAG_OPEN_CLASS_COMPUTER)) {
-				msgbox(Ardor_Uni_Office_Text_ComputerRepeat)
+			if (flag(FLAG_OPEN_CLASS_LOGIC)) {
+				msgbox(Ardor_Uni_Office_Text_LogicRepeat)
 				closemessage
 				call (Ardor_Uni_Office_EventScript_EnrollElective)
 			} elif (!defeated(TRAINER_UNI_ALGEBRA) ) {
-				msgbox(Ardor_Uni_Office_Text_ComputerPrereq)
+				msgbox(Ardor_Uni_Office_Text_LogicPrereq)
 				closemessage
 				call (Ardor_Uni_Office_EventScript_EnrollElective)
 			} else {
-				setflag (FLAG_OPEN_CLASS_COMPUTER)
+				setflag (FLAG_OPEN_CLASS_LOGIC)
 			}
 		default:
 			msgbox("PROBLEMO in enroll elective switcher")
@@ -598,8 +598,8 @@ script Ardor_Uni_Office_EventScript_ConsulEnrolled {
 		msgbox(Ardor_Uni_Office_Text_FinishMusic)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_COMPUTER) && (!defeated(TRAINER_UNI_COMPUTER))) {
-		msgbox(Ardor_Uni_Office_Text_FinishComputer)
+	if (flag(FLAG_OPEN_CLASS_LOGIC) && (!defeated(TRAINER_UNI_LOGIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishLogic)
 		closemessage
 	}
 
@@ -706,8 +706,8 @@ text Ardor_Uni_Office_Text_FinishMusic {
 	format("Stude musicam prope ascensionem in tabulatione prima.")
 }
 
-text Ardor_Uni_Office_Text_FinishComputer {
-	format("Stude computatrum in cubiculo primo in tabulatione secunda.")
+text Ardor_Uni_Office_Text_FinishLogic {
+	format("Stude logicam in cubiculo primo in tabulatione secunda.")
 }
 
 text Ardor_Uni_Office_EventScript_ConsulRegisterNo {
@@ -798,8 +798,8 @@ text Ardor_Uni_Office_Text_MusicRepeat {
 	format("Artem musicae iam studuisti! Necesse semper est artes scientiasque studere novas.")
 }
 
-text Ardor_Uni_Office_Text_ComputerRepeat {
-	format("Computatra iam studuisti! Necesse semper est artes scientiasque studere novas.")
+text Ardor_Uni_Office_Text_LogicRepeat {
+	format("Logicam iam studuisti! Necesse semper est artes scientiasque studere novas.")
 }
 
 text Ardor_Uni_Office_Text_ChemistryPrereq {
@@ -810,8 +810,8 @@ text Ardor_Uni_Office_Text_PhysicsPrereq {
 	format("Necesse est studere scientiam alchemiae ante physicas.")
 }
 
-text Ardor_Uni_Office_Text_ComputerPrereq {
-	format("Necesse est studere algebram ante computatra.")
+text Ardor_Uni_Office_Text_LogicPrereq {
+	format("Necesse est studere algebram ante logicam.")
 }
 
 text Ardor_Uni_Office_Text_ConsulCongrats {

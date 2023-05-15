@@ -620,10 +620,10 @@ Ardor_Uni_Office_EventScript_EnrollElective_5:
 	goto Ardor_Uni_Office_EventScript_EnrollElective_1
 
 Ardor_Uni_Office_EventScript_EnrollElective_6:
-	goto_if_set FLAG_OPEN_CLASS_COMPUTER, Ardor_Uni_Office_EventScript_EnrollElective_17
+	goto_if_set FLAG_OPEN_CLASS_LOGIC, Ardor_Uni_Office_EventScript_EnrollElective_17
 	checktrainerflag TRAINER_UNI_ALGEBRA
 	goto_if 0, Ardor_Uni_Office_EventScript_EnrollElective_18
-	setflag FLAG_OPEN_CLASS_COMPUTER
+	setflag FLAG_OPEN_CLASS_LOGIC
 	goto Ardor_Uni_Office_EventScript_EnrollElective_1
 
 Ardor_Uni_Office_EventScript_EnrollElective_8:
@@ -645,13 +645,13 @@ Ardor_Uni_Office_EventScript_EnrollElective_14:
 	goto Ardor_Uni_Office_EventScript_EnrollElective_1
 
 Ardor_Uni_Office_EventScript_EnrollElective_17:
-	msgbox Ardor_Uni_Office_Text_ComputerRepeat
+	msgbox Ardor_Uni_Office_Text_LogicRepeat
 	closemessage
 	call Ardor_Uni_Office_EventScript_EnrollElective
 	goto Ardor_Uni_Office_EventScript_EnrollElective_1
 
 Ardor_Uni_Office_EventScript_EnrollElective_18:
-	msgbox Ardor_Uni_Office_Text_ComputerPrereq
+	msgbox Ardor_Uni_Office_Text_LogicPrereq
 	closemessage
 	call Ardor_Uni_Office_EventScript_EnrollElective
 	goto Ardor_Uni_Office_EventScript_EnrollElective_1
@@ -704,7 +704,7 @@ Ardor_Uni_Office_EventScript_ConsulEnrolled_88:
 Ardor_Uni_Office_EventScript_ConsulEnrolled_93:
 	goto_if_set FLAG_OPEN_CLASS_MUSIC, Ardor_Uni_Office_EventScript_ConsulEnrolled_100
 Ardor_Uni_Office_EventScript_ConsulEnrolled_98:
-	goto_if_set FLAG_OPEN_CLASS_COMPUTER, Ardor_Uni_Office_EventScript_ConsulEnrolled_105
+	goto_if_set FLAG_OPEN_CLASS_LOGIC, Ardor_Uni_Office_EventScript_ConsulEnrolled_105
 Ardor_Uni_Office_EventScript_ConsulEnrolled_103:
 	return
 
@@ -915,12 +915,12 @@ Ardor_Uni_Office_EventScript_ConsulEnrolled_100:
 	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_98
 
 Ardor_Uni_Office_EventScript_ConsulEnrolled_104:
-	msgbox Ardor_Uni_Office_Text_FinishComputer
+	msgbox Ardor_Uni_Office_Text_FinishLogic
 	closemessage
 	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_103
 
 Ardor_Uni_Office_EventScript_ConsulEnrolled_105:
-	checktrainerflag TRAINER_UNI_COMPUTER
+	checktrainerflag TRAINER_UNI_LOGIC
 	goto_if 0, Ardor_Uni_Office_EventScript_ConsulEnrolled_104
 	goto Ardor_Uni_Office_EventScript_ConsulEnrolled_103
 
@@ -1052,8 +1052,8 @@ Ardor_Uni_Office_Text_FinishMusic::
 	.string "Stude musicam prope ascensionem in\n"
 	.string "tabulatione prima.$"
 
-Ardor_Uni_Office_Text_FinishComputer::
-	.string "Stude computatrum in cubiculo primo in\n"
+Ardor_Uni_Office_Text_FinishLogic::
+	.string "Stude logicam in cubiculo primo in\n"
 	.string "tabulatione secunda.$"
 
 Ardor_Uni_Office_EventScript_ConsulRegisterNo::
@@ -1156,10 +1156,9 @@ Ardor_Uni_Office_Text_MusicRepeat::
 	.string "semper est artes scientiasque studere\l"
 	.string "novas.$"
 
-Ardor_Uni_Office_Text_ComputerRepeat::
-	.string "Computatra iam studuisti! Necesse\n"
-	.string "semper est artes scientiasque studere\l"
-	.string "novas.$"
+Ardor_Uni_Office_Text_LogicRepeat::
+	.string "Logicam iam studuisti! Necesse semper\n"
+	.string "est artes scientiasque studere novas.$"
 
 Ardor_Uni_Office_Text_ChemistryPrereq::
 	.string "Necesse est studere scientiam\n"
@@ -1169,9 +1168,9 @@ Ardor_Uni_Office_Text_PhysicsPrereq::
 	.string "Necesse est studere scientiam\n"
 	.string "alchemiae ante physicas.$"
 
-Ardor_Uni_Office_Text_ComputerPrereq::
+Ardor_Uni_Office_Text_LogicPrereq::
 	.string "Necesse est studere algebram ante\n"
-	.string "computatra.$"
+	.string "logicam.$"
 
 Ardor_Uni_Office_Text_ConsulCongrats::
 	.string "Artes quinque iam studuisti.\n"

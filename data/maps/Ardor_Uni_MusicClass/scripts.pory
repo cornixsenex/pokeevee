@@ -9,7 +9,7 @@ mapscripts Ardor_Uni_MusicClass_MapScripts {}
 script Ardor_Uni_MusicClass_EventScript_Teacher {
 	lock
 	faceplayer
-	if (defeated(TRAINER_UNI_ARITHMETIC)) {
+	if (defeated(TRAINER_UNI_MUSIC)) {
 		msgbox(Ardor_Uni_MusicClass_Text_ClassFinished)
 		closemessage
 	} else {
