@@ -4,13 +4,13 @@ Ardor_Uni_LogicClass_MapScripts::
 	.byte 0
 
 Ardor_Uni_LogicClass_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-	map_script_2 VAR_LOGIC_CLASS_STATE, 17, Ardor_Uni_LogicClass_EventScript_FacePlayerLeft
-	map_script_2 VAR_LOGIC_CLASS_STATE, 117, Ardor_Uni_LogicClass_EventScript_FacePlayerRight
+	map_script_2 VAR_LOGIC_CLASS_STATE, 1, Ardor_Uni_LogicClass_EventScript_FacePlayerLeft
+	map_script_2 VAR_LOGIC_CLASS_STATE, 2, Ardor_Uni_LogicClass_EventScript_FacePlayerRight
 	.2byte 0
 
 Ardor_Uni_LogicClass_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_LOGIC_CLASS_STATE, 17, Ardor_Uni_LogicClass_EventScript_Test
-	map_script_2 VAR_LOGIC_CLASS_STATE, 117, Ardor_Uni_LogicClass_EventScript_Test
+	map_script_2 VAR_LOGIC_CLASS_STATE, 1, Ardor_Uni_LogicClass_EventScript_Test
+	map_script_2 VAR_LOGIC_CLASS_STATE, 2, Ardor_Uni_LogicClass_EventScript_Test
 	.2byte 0
 
 
@@ -63,7 +63,7 @@ Ardor_Uni_LogicClass_EventScript_DoLogic_1:
 	end
 
 Ardor_Uni_LogicClass_EventScript_DoLogic_2:
-	setvar VAR_LOGIC_CLASS_STATE, 100
+	setflag FLAG_RETURN_LOGIC_PUZZLE_LEFT
 	goto Ardor_Uni_LogicClass_EventScript_DoLogic_1
 
 

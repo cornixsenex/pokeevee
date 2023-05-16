@@ -4,13 +4,13 @@ const OBJ_EVENT_TEACHER = 1
 mapscripts Ardor_Uni_LogicClass_MapScripts {
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_LOGIC_CLASS_STATE,  17: Ardor_Uni_LogicClass_EventScript_FacePlayerLeft
-		VAR_LOGIC_CLASS_STATE, 117: Ardor_Uni_LogicClass_EventScript_FacePlayerRight
+		VAR_LOGIC_CLASS_STATE, 1: Ardor_Uni_LogicClass_EventScript_FacePlayerLeft
+		VAR_LOGIC_CLASS_STATE, 2: Ardor_Uni_LogicClass_EventScript_FacePlayerRight
 	]
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_LOGIC_CLASS_STATE,  17: Ardor_Uni_LogicClass_EventScript_Test
-		VAR_LOGIC_CLASS_STATE, 117: Ardor_Uni_LogicClass_EventScript_Test
+		VAR_LOGIC_CLASS_STATE, 1: Ardor_Uni_LogicClass_EventScript_Test
+		VAR_LOGIC_CLASS_STATE, 2: Ardor_Uni_LogicClass_EventScript_Test
 	]
 
 }
@@ -51,8 +51,8 @@ script Ardor_Uni_LogicClass_EventScript_DoLogic {
 	
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
 	if (var(VAR_RESULT) == DIR_EAST) {
-		setvar (VAR_LOGIC_CLASS_STATE, 100)
-	}
+		setflag(FLAG_RETURN_LOGIC_PUZZLE_LEFT)
+	} 
 	warpsilent (MAP_LOGIC_PUZZLE, 8, 12)
 	waitstate
 	end

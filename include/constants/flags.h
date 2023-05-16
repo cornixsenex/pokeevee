@@ -186,6 +186,7 @@
 #define FLAG_BIOLOGY_INTRO                   0x9E
 #define FLAG_CHEMISTRY_INTRO                 0x9F
 #define FLAG_ALGEBRA_INTRO                   0xA0
+#define FLAG_RETURN_LOGIC_PUZZLE_LEFT        0xA1
 
 
 
@@ -194,7 +195,6 @@
 				
 
 
-#define FLAG_BEAUTY_PAINTING_MADE            0xA1
 #define FLAG_CUTE_PAINTING_MADE              0xA2
 #define FLAG_SMART_PAINTING_MADE             0xA3
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
