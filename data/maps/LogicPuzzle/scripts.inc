@@ -35,7 +35,7 @@ LogicPuzzle_EventScript_Trigger1_1:
 	end
 
 LogicPuzzle_EventScript_Trigger1_2:
-	call LogicPuzzle_EventScript_SetPuzzle1
+	call LogicPuzzle_EventScript_SetPuzzleState1
 	goto LogicPuzzle_EventScript_Trigger1_1
 
 
@@ -48,7 +48,7 @@ LogicPuzzle_EventScript_Trigger2_1:
 	end
 
 LogicPuzzle_EventScript_Trigger2_2:
-	call LogicPuzzle_EventScript_SetPuzzle2
+	call LogicPuzzle_EventScript_SetPuzzleState2
 	goto LogicPuzzle_EventScript_Trigger2_1
 
 
@@ -61,7 +61,7 @@ LogicPuzzle_EventScript_Trigger3_1:
 	end
 
 LogicPuzzle_EventScript_Trigger3_2:
-	call LogicPuzzle_EventScript_SetPuzzle3
+	call LogicPuzzle_EventScript_SetPuzzleState3
 	goto LogicPuzzle_EventScript_Trigger3_1
 
 
@@ -74,7 +74,7 @@ LogicPuzzle_EventScript_Trigger4_1:
 	end
 
 LogicPuzzle_EventScript_Trigger4_2:
-	call LogicPuzzle_EventScript_SetPuzzle4
+	call LogicPuzzle_EventScript_SetPuzzleState4
 	goto LogicPuzzle_EventScript_Trigger4_1
 
 
@@ -87,7 +87,7 @@ LogicPuzzle_EventScript_Trigger5_1:
 	end
 
 LogicPuzzle_EventScript_Trigger5_2:
-	call LogicPuzzle_EventScript_SetPuzzle5
+	call LogicPuzzle_EventScript_SetPuzzleState5
 	goto LogicPuzzle_EventScript_Trigger5_1
 
 
@@ -100,7 +100,7 @@ LogicPuzzle_EventScript_Trigger6_1:
 	end
 
 LogicPuzzle_EventScript_Trigger6_2:
-	call LogicPuzzle_EventScript_SetPuzzle6
+	call LogicPuzzle_EventScript_SetPuzzleState6
 	goto LogicPuzzle_EventScript_Trigger6_1
 
 
@@ -113,7 +113,7 @@ LogicPuzzle_EventScript_Trigger7_1:
 	end
 
 LogicPuzzle_EventScript_Trigger7_2:
-	call LogicPuzzle_EventScript_SetPuzzle7
+	call LogicPuzzle_EventScript_SetPuzzleState7
 	goto LogicPuzzle_EventScript_Trigger7_1
 
 
@@ -126,7 +126,7 @@ LogicPuzzle_EventScript_Trigger8_1:
 	end
 
 LogicPuzzle_EventScript_Trigger8_2:
-	call LogicPuzzle_EventScript_SetPuzzle8
+	call LogicPuzzle_EventScript_SetPuzzleState8
 	goto LogicPuzzle_EventScript_Trigger8_1
 
 
@@ -139,7 +139,7 @@ LogicPuzzle_EventScript_Trigger9_1:
 	end
 
 LogicPuzzle_EventScript_Trigger9_2:
-	call LogicPuzzle_EventScript_SetPuzzle9
+	call LogicPuzzle_EventScript_SetPuzzleState9
 	goto LogicPuzzle_EventScript_Trigger9_1
 
 
@@ -152,7 +152,7 @@ LogicPuzzle_EventScript_Trigger10_1:
 	end
 
 LogicPuzzle_EventScript_Trigger10_2:
-	call LogicPuzzle_EventScript_SetPuzzle10
+	call LogicPuzzle_EventScript_SetPuzzleState10
 	goto LogicPuzzle_EventScript_Trigger10_1
 
 
@@ -165,7 +165,7 @@ LogicPuzzle_EventScript_Trigger11_1:
 	end
 
 LogicPuzzle_EventScript_Trigger11_2:
-	call LogicPuzzle_EventScript_SetPuzzle11
+	call LogicPuzzle_EventScript_SetPuzzleState11
 	goto LogicPuzzle_EventScript_Trigger11_1
 
 
@@ -178,11 +178,11 @@ LogicPuzzle_EventScript_Trigger12_1:
 	end
 
 LogicPuzzle_EventScript_Trigger12_2:
-	call LogicPuzzle_EventScript_SetPuzzle12
+	call LogicPuzzle_EventScript_SetPuzzleState12
 	goto LogicPuzzle_EventScript_Trigger12_1
 
 
-LogicPuzzle_EventScript_SetPuzzle1::
+LogicPuzzle_EventScript_SetPuzzleState1::
 	setvar VAR_LOGIC_CLASS_STATE, 1
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 1, 3, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -202,27 +202,27 @@ LogicPuzzle_EventScript_SetPuzzle1::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle2::
+LogicPuzzle_EventScript_SetPuzzleState2::
 	setvar VAR_LOGIC_CLASS_STATE, 2
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 14, 3, METATILE_MauvilleGym_PressedSwitch, FALSE
-	call LogicPuzzle_EventScript_SetBlock1
+	call LogicPuzzle_EventScript_ClearBlock1
 	call LogicPuzzle_EventScript_SetBlock2
 	call LogicPuzzle_EventScript_ClearBlock3
 	call LogicPuzzle_EventScript_SetBlock4
 	call LogicPuzzle_EventScript_SetBlock5
-	call LogicPuzzle_EventScript_SetBlock6
+	call LogicPuzzle_EventScript_ClearBlock6
 	call LogicPuzzle_EventScript_SetBlock7
-	call LogicPuzzle_EventScript_SetBlock8
-	call LogicPuzzle_EventScript_SetBlock9
-	call LogicPuzzle_EventScript_SetBlock10
+	call LogicPuzzle_EventScript_ClearBlock8
+	call LogicPuzzle_EventScript_ClearBlock9
+	call LogicPuzzle_EventScript_ClearBlock10
 	special DrawWholeMapView
 	playse SE_UNLOCK
 	waitse
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle3::
+LogicPuzzle_EventScript_SetPuzzleState3::
 	setvar VAR_LOGIC_CLASS_STATE, 3
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 1, 7, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -242,13 +242,13 @@ LogicPuzzle_EventScript_SetPuzzle3::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle4::
+LogicPuzzle_EventScript_SetPuzzleState4::
 	setvar VAR_LOGIC_CLASS_STATE, 4
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 6, 6, METATILE_MauvilleGym_PressedSwitch, FALSE
 	call LogicPuzzle_EventScript_SetBlock1
 	call LogicPuzzle_EventScript_SetBlock2
-	call LogicPuzzle_EventScript_SetBlock3
+	call LogicPuzzle_EventScript_ClearBlock3
 	call LogicPuzzle_EventScript_SetBlock4
 	call LogicPuzzle_EventScript_ClearBlock5
 	call LogicPuzzle_EventScript_SetBlock6
@@ -262,11 +262,11 @@ LogicPuzzle_EventScript_SetPuzzle4::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle5::
+LogicPuzzle_EventScript_SetPuzzleState5::
 	setvar VAR_LOGIC_CLASS_STATE, 5
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 9, 6, METATILE_MauvilleGym_PressedSwitch, FALSE
-	call LogicPuzzle_EventScript_SetBlock1
+	call LogicPuzzle_EventScript_ClearBlock1
 	call LogicPuzzle_EventScript_SetBlock2
 	call LogicPuzzle_EventScript_SetBlock3
 	call LogicPuzzle_EventScript_SetBlock4
@@ -282,7 +282,7 @@ LogicPuzzle_EventScript_SetPuzzle5::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle6::
+LogicPuzzle_EventScript_SetPuzzleState6::
 	setvar VAR_LOGIC_CLASS_STATE, 6
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 14, 7, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -302,7 +302,7 @@ LogicPuzzle_EventScript_SetPuzzle6::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle7::
+LogicPuzzle_EventScript_SetPuzzleState7::
 	setvar VAR_LOGIC_CLASS_STATE, 7
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 2, 11, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -322,7 +322,7 @@ LogicPuzzle_EventScript_SetPuzzle7::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle8::
+LogicPuzzle_EventScript_SetPuzzleState8::
 	setvar VAR_LOGIC_CLASS_STATE, 8
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 2, 13, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -342,7 +342,7 @@ LogicPuzzle_EventScript_SetPuzzle8::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle9::
+LogicPuzzle_EventScript_SetPuzzleState9::
 	setvar VAR_LOGIC_CLASS_STATE, 9
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 6, 11, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -362,7 +362,7 @@ LogicPuzzle_EventScript_SetPuzzle9::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle10::
+LogicPuzzle_EventScript_SetPuzzleState10::
 	setvar VAR_LOGIC_CLASS_STATE, 10
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 9, 11, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -382,7 +382,7 @@ LogicPuzzle_EventScript_SetPuzzle10::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle11::
+LogicPuzzle_EventScript_SetPuzzleState11::
 	setvar VAR_LOGIC_CLASS_STATE, 11
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 13, 11, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -402,7 +402,7 @@ LogicPuzzle_EventScript_SetPuzzle11::
 	return
 
 
-LogicPuzzle_EventScript_SetPuzzle12::
+LogicPuzzle_EventScript_SetPuzzleState12::
 	setvar VAR_LOGIC_CLASS_STATE, 12
 	call LogicPuzzle_EventScript_ResetButtons
 	setmetatile 13, 13, METATILE_MauvilleGym_PressedSwitch, FALSE
@@ -424,7 +424,7 @@ LogicPuzzle_EventScript_SetPuzzle12::
 
 LogicPuzzle_EventScript_ResetButtons::
 	setmetatile 1, 3, METATILE_MauvilleGym_RaisedSwitch, FALSE
-	setmetatile 14, 13, METATILE_MauvilleGym_RaisedSwitch, FALSE
+	setmetatile 13, 13, METATILE_MauvilleGym_RaisedSwitch, FALSE
 	setmetatile 1, 7, METATILE_MauvilleGym_RaisedSwitch, FALSE
 	setmetatile 6, 6, METATILE_MauvilleGym_RaisedSwitch, FALSE
 	setmetatile 9, 6, METATILE_MauvilleGym_RaisedSwitch, FALSE

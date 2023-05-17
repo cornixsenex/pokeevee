@@ -27,7 +27,7 @@ script LogicPuzzle_EventScript_Intro {
 script LogicPuzzle_EventScript_Trigger1 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 1) {
-		call (LogicPuzzle_EventScript_SetPuzzle1)
+		call (LogicPuzzle_EventScript_SetPuzzleState1)
 	}
 	releaseall
 	end
@@ -36,7 +36,7 @@ script LogicPuzzle_EventScript_Trigger1 {
 script LogicPuzzle_EventScript_Trigger2 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 2) {
-		call (LogicPuzzle_EventScript_SetPuzzle2)
+		call (LogicPuzzle_EventScript_SetPuzzleState2)
 	}
 	releaseall
 	end
@@ -45,7 +45,7 @@ script LogicPuzzle_EventScript_Trigger2 {
 script LogicPuzzle_EventScript_Trigger3 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 3) {
-		call (LogicPuzzle_EventScript_SetPuzzle3)
+		call (LogicPuzzle_EventScript_SetPuzzleState3)
 	}
 	releaseall
 	end
@@ -54,7 +54,7 @@ script LogicPuzzle_EventScript_Trigger3 {
 script LogicPuzzle_EventScript_Trigger4 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 4) {
-		call (LogicPuzzle_EventScript_SetPuzzle4)
+		call (LogicPuzzle_EventScript_SetPuzzleState4)
 	}
 	releaseall
 	end
@@ -63,7 +63,7 @@ script LogicPuzzle_EventScript_Trigger4 {
 script LogicPuzzle_EventScript_Trigger5 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 5) {
-		call (LogicPuzzle_EventScript_SetPuzzle5)
+		call (LogicPuzzle_EventScript_SetPuzzleState5)
 	}
 	releaseall
 	end
@@ -72,7 +72,7 @@ script LogicPuzzle_EventScript_Trigger5 {
 script LogicPuzzle_EventScript_Trigger6 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 6) {
-		call (LogicPuzzle_EventScript_SetPuzzle6)
+		call (LogicPuzzle_EventScript_SetPuzzleState6)
 	}
 	releaseall
 	end
@@ -81,7 +81,7 @@ script LogicPuzzle_EventScript_Trigger6 {
 script LogicPuzzle_EventScript_Trigger7 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 7) {
-		call (LogicPuzzle_EventScript_SetPuzzle7)
+		call (LogicPuzzle_EventScript_SetPuzzleState7)
 	}
 	releaseall
 	end
@@ -90,7 +90,7 @@ script LogicPuzzle_EventScript_Trigger7 {
 script LogicPuzzle_EventScript_Trigger8 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 8) {
-		call (LogicPuzzle_EventScript_SetPuzzle8)
+		call (LogicPuzzle_EventScript_SetPuzzleState8)
 	}
 	releaseall
 	end
@@ -99,7 +99,7 @@ script LogicPuzzle_EventScript_Trigger8 {
 script LogicPuzzle_EventScript_Trigger9 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 9) {
-		call (LogicPuzzle_EventScript_SetPuzzle9)
+		call (LogicPuzzle_EventScript_SetPuzzleState9)
 	}
 	releaseall
 	end
@@ -108,7 +108,7 @@ script LogicPuzzle_EventScript_Trigger9 {
 script LogicPuzzle_EventScript_Trigger10 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 10) {
-		call (LogicPuzzle_EventScript_SetPuzzle10)
+		call (LogicPuzzle_EventScript_SetPuzzleState10)
 	}
 	releaseall
 	end
@@ -117,7 +117,7 @@ script LogicPuzzle_EventScript_Trigger10 {
 script LogicPuzzle_EventScript_Trigger11 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 11) {
-		call (LogicPuzzle_EventScript_SetPuzzle11)
+		call (LogicPuzzle_EventScript_SetPuzzleState11)
 	}
 	releaseall
 	end
@@ -126,13 +126,13 @@ script LogicPuzzle_EventScript_Trigger11 {
 script LogicPuzzle_EventScript_Trigger12 {
 	lockall
 	if (var(VAR_LOGIC_CLASS_STATE) != 12) {
-		call (LogicPuzzle_EventScript_SetPuzzle12)
+		call (LogicPuzzle_EventScript_SetPuzzleState12)
 	}
 	releaseall
 	end
 }
 
-script LogicPuzzle_EventScript_SetPuzzle1 {
+script LogicPuzzle_EventScript_SetPuzzleState1 {
 	setvar (VAR_LOGIC_CLASS_STATE, 1)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (1, 3, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -152,27 +152,27 @@ script LogicPuzzle_EventScript_SetPuzzle1 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle2 {
+script LogicPuzzle_EventScript_SetPuzzleState2 {
 	setvar (VAR_LOGIC_CLASS_STATE, 2)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (14, 3, METATILE_MauvilleGym_PressedSwitch, FALSE)
-	call (LogicPuzzle_EventScript_SetBlock1)
+	call (LogicPuzzle_EventScript_ClearBlock1)
 	call (LogicPuzzle_EventScript_SetBlock2)
 	call (LogicPuzzle_EventScript_ClearBlock3)
 	call (LogicPuzzle_EventScript_SetBlock4)
 	call (LogicPuzzle_EventScript_SetBlock5)
-	call (LogicPuzzle_EventScript_SetBlock6)
+	call (LogicPuzzle_EventScript_ClearBlock6)
 	call (LogicPuzzle_EventScript_SetBlock7)
-	call (LogicPuzzle_EventScript_SetBlock8)
-	call (LogicPuzzle_EventScript_SetBlock9)
-	call (LogicPuzzle_EventScript_SetBlock10)
+	call (LogicPuzzle_EventScript_ClearBlock8)
+	call (LogicPuzzle_EventScript_ClearBlock9)
+	call (LogicPuzzle_EventScript_ClearBlock10)
 	special (DrawWholeMapView)
 	playse (SE_UNLOCK)
 	waitse
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle3 {
+script LogicPuzzle_EventScript_SetPuzzleState3 {
 	setvar (VAR_LOGIC_CLASS_STATE, 3)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (1, 7, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -192,13 +192,13 @@ script LogicPuzzle_EventScript_SetPuzzle3 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle4 {
+script LogicPuzzle_EventScript_SetPuzzleState4 {
 	setvar (VAR_LOGIC_CLASS_STATE, 4)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (6, 6, METATILE_MauvilleGym_PressedSwitch, FALSE)
 	call (LogicPuzzle_EventScript_SetBlock1)
 	call (LogicPuzzle_EventScript_SetBlock2)
-	call (LogicPuzzle_EventScript_SetBlock3)
+	call (LogicPuzzle_EventScript_ClearBlock3)
 	call (LogicPuzzle_EventScript_SetBlock4)
 	call (LogicPuzzle_EventScript_ClearBlock5)
 	call (LogicPuzzle_EventScript_SetBlock6)
@@ -212,11 +212,11 @@ script LogicPuzzle_EventScript_SetPuzzle4 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle5 {
+script LogicPuzzle_EventScript_SetPuzzleState5 {
 	setvar (VAR_LOGIC_CLASS_STATE, 5)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (9, 6, METATILE_MauvilleGym_PressedSwitch, FALSE)
-	call (LogicPuzzle_EventScript_SetBlock1)
+	call (LogicPuzzle_EventScript_ClearBlock1)
 	call (LogicPuzzle_EventScript_SetBlock2)
 	call (LogicPuzzle_EventScript_SetBlock3)
 	call (LogicPuzzle_EventScript_SetBlock4)
@@ -232,7 +232,7 @@ script LogicPuzzle_EventScript_SetPuzzle5 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle6 {
+script LogicPuzzle_EventScript_SetPuzzleState6 {
 	setvar (VAR_LOGIC_CLASS_STATE, 6)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (14, 7, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -252,7 +252,7 @@ script LogicPuzzle_EventScript_SetPuzzle6 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle7 {
+script LogicPuzzle_EventScript_SetPuzzleState7 {
 	setvar (VAR_LOGIC_CLASS_STATE, 7)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (2, 11, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -272,7 +272,7 @@ script LogicPuzzle_EventScript_SetPuzzle7 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle8 {
+script LogicPuzzle_EventScript_SetPuzzleState8 {
 	setvar (VAR_LOGIC_CLASS_STATE, 8)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (2, 13, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -292,7 +292,7 @@ script LogicPuzzle_EventScript_SetPuzzle8 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle9 {
+script LogicPuzzle_EventScript_SetPuzzleState9 {
 	setvar (VAR_LOGIC_CLASS_STATE, 9)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (6, 11, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -312,7 +312,7 @@ script LogicPuzzle_EventScript_SetPuzzle9 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle10 {
+script LogicPuzzle_EventScript_SetPuzzleState10 {
 	setvar (VAR_LOGIC_CLASS_STATE, 10)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (9, 11, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -332,7 +332,7 @@ script LogicPuzzle_EventScript_SetPuzzle10 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle11 {
+script LogicPuzzle_EventScript_SetPuzzleState11 {
 	setvar (VAR_LOGIC_CLASS_STATE, 11)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (13, 11, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -352,7 +352,7 @@ script LogicPuzzle_EventScript_SetPuzzle11 {
 	return
 }
 
-script LogicPuzzle_EventScript_SetPuzzle12 {
+script LogicPuzzle_EventScript_SetPuzzleState12 {
 	setvar (VAR_LOGIC_CLASS_STATE, 12)
 	call (LogicPuzzle_EventScript_ResetButtons)
 	setmetatile (13, 13, METATILE_MauvilleGym_PressedSwitch, FALSE)
@@ -374,7 +374,7 @@ script LogicPuzzle_EventScript_SetPuzzle12 {
 
 script LogicPuzzle_EventScript_ResetButtons {
 	setmetatile (1, 3, METATILE_MauvilleGym_RaisedSwitch, FALSE)
-	setmetatile (14, 13, METATILE_MauvilleGym_RaisedSwitch, FALSE)
+	setmetatile (13, 13, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (1, 7, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (6, 6, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (9, 6, METATILE_MauvilleGym_RaisedSwitch, FALSE)

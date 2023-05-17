@@ -78,14 +78,15 @@ Ardor_Uni_LogicClass_EventScript_Test::
 
 
 Ardor_Uni_LogicClass_Text_BeginLogic::
-	.string "Salve puer. Magistra Gina sum. Necesse\n"
-	.string "est pingere. Praestasne pingere?$"
+	.string "Salve puer. Magister Joannes sum.\n"
+	.string "Necesse est exolvere enigma.\l"
+	.string "Praestasne exolvere enigma?$"
 
 Ardor_Uni_LogicClass_Text_ReturnSoon::
-	.string "Reveni cum amore artis.$"
+	.string "Reveni cum amore logici.$"
 
 Ardor_Uni_LogicClass_Text_ClassFinished::
-	.string "Congratulatio! Iam studuisti artem.$"
+	.string "Congratulatio! Iam studuisti logicum.$"
 
 Ardor_Uni_LogicClass_Text_TeacherBattleLost::
-	.string "Pictor es.$"
+	.string "Logicus es.$"

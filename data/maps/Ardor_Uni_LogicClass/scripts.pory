@@ -69,19 +69,19 @@ script Ardor_Uni_LogicClass_EventScript_Test {
 }
 
 text Ardor_Uni_LogicClass_Text_BeginLogic {
-	format("Salve puer. Magistra Gina sum. Necesse est pingere. Praestasne pingere?")
+	format("Salve puer. Magister Joannes sum. Necesse est exolvere enigma. Praestasne exolvere enigma?")
 }
 
 text Ardor_Uni_LogicClass_Text_ReturnSoon {
-	format("Reveni cum amore artis.")
+	format("Reveni cum amore logici.")
 }
 
 text Ardor_Uni_LogicClass_Text_ClassFinished {
-	format("Congratulatio! Iam studuisti artem.")
+	format("Congratulatio! Iam studuisti logicum.")
 }
 
 text Ardor_Uni_LogicClass_Text_TeacherBattleLost {
-	format("Pictor es.")
+	format("Logicus es.")
 }
 
 
