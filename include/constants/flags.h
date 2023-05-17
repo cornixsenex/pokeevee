@@ -187,7 +187,7 @@
 #define FLAG_CHEMISTRY_INTRO                 0x9F
 #define FLAG_ALGEBRA_INTRO                   0xA0
 #define FLAG_RETURN_LOGIC_PUZZLE_LEFT        0xA1
-
+#define FLAG_HISTORY_INTRO                   0xA2
 
 
 												  ////BREAK
@@ -195,7 +195,6 @@
 				
 
 
-#define FLAG_CUTE_PAINTING_MADE              0xA2
 #define FLAG_SMART_PAINTING_MADE             0xA3
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
 #define FLAG_RECEIVED_TM39                   0xA5
