@@ -25,6 +25,7 @@ script Ardor_Uni_HistoryClass_EventScript_Teacher {
 		setflag (FLAG_HISTORY_INTRO)
 		msgbox(Ardor_Uni_HistoryClass_Text_ClassIntro)
 		closemessage
+		call (Ardor_Uni_HistoryClass_EventScript_CheckLessons)
 	}
 	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
 	waitmovement (0)
@@ -109,8 +110,12 @@ script Ardor_Uni_HistoryClass_EventScript_Student2 {
 	lock
 	faceplayer
 	if (flag(FLAG_HISTORY_INTRO)) {
-		setflag (FLAG_TEMP_2)
-		msgbox(Ardor_Uni_HistoryClass_Text_Lesson2)
+		if (flag(FLAG_TEMP_1)) {
+			setflag (FLAG_TEMP_2)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson2)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson1)
+		}
 	} else {
 		msgbox(Ardor_Uni_HistoryClass_Text_Student2)
 	}
@@ -126,8 +131,12 @@ script Ardor_Uni_HistoryClass_EventScript_Student3 {
 	lock
 	faceplayer
 	if (flag(FLAG_HISTORY_INTRO)) {
-		setflag (FLAG_TEMP_3)
-		msgbox(Ardor_Uni_HistoryClass_Text_Lesson3)
+		if (flag(FLAG_TEMP_2)) {
+			setflag (FLAG_TEMP_3)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson3)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson2)
+		}
 	} else {
 		msgbox(Ardor_Uni_HistoryClass_Text_Student3)
 	}
@@ -143,8 +152,12 @@ script Ardor_Uni_HistoryClass_EventScript_Student4 {
 	lock
 	faceplayer
 	if (flag(FLAG_HISTORY_INTRO)) {
-		setflag (FLAG_TEMP_4)
-		msgbox(Ardor_Uni_HistoryClass_Text_Lesson4)
+		if (flag(FLAG_TEMP_3)) {
+			setflag (FLAG_TEMP_4)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson4)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson3)
+		}
 	} else {
 		msgbox(Ardor_Uni_HistoryClass_Text_Student4)
 	}
@@ -160,8 +173,12 @@ script Ardor_Uni_HistoryClass_EventScript_Student5 {
 	lock
 	faceplayer
 	if (flag(FLAG_HISTORY_INTRO)) {
-		setflag (FLAG_TEMP_5)
-		msgbox(Ardor_Uni_HistoryClass_Text_Lesson5)
+		if (flag(FLAG_TEMP_4)) {
+			setflag (FLAG_TEMP_5)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson5)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson4)
+		}
 	} else {
 		msgbox(Ardor_Uni_HistoryClass_Text_Student5)
 	}
@@ -177,8 +194,12 @@ script Ardor_Uni_HistoryClass_EventScript_Student6 {
 	lock
 	faceplayer
 	if (flag(FLAG_HISTORY_INTRO)) {
-		setflag (FLAG_TEMP_6)
-		msgbox(Ardor_Uni_HistoryClass_Text_Lesson6)
+		if (flag(FLAG_TEMP_5)) {
+			setflag (FLAG_TEMP_6)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson6)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson5)
+		}
 	} else {
 		msgbox(Ardor_Uni_HistoryClass_Text_Student6)
 	}
@@ -194,20 +215,24 @@ script Ardor_Uni_HistoryClass_EventScript_Student7 {
 	lock
 	faceplayer
 	if (flag(FLAG_HISTORY_INTRO)) {
-		setflag (FLAG_TEMP_7)
-		msgbox(Ardor_Uni_HistoryClass_Text_Lesson7)
+		if (flag(FLAG_TEMP_6)) {
+			setflag (FLAG_TEMP_7)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson7)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson6)
+		}
 	} else {
 		msgbox(Ardor_Uni_HistoryClass_Text_Student7)
 	}
 	closemessage
-	applymovement (OBJ_EVENT_STUDENT6, Common_Movement_FaceUp)
+	applymovement (OBJ_EVENT_STUDENT7, Common_Movement_FaceUp)
 	waitmovement (0)
 	release
 	end
 }
 
 text Ardor_Uni_HistoryClass_Text_ClassIntro {
-	format("Tace puer! Doctor, non magister tantum Virtreus sum. Necesse est tibi docere historiam. Epochae historiae sunt septem: Historia Antiqua, Historia Classica, Historia Aevorum Mediorum, Historia Colonia, Historia Industria, Historia Belli, et Historia Nova.")
+	format("Tace puer! Doctor, non magister tantum, Virtreus sum. Necesse est tibi docere historiam. Epochae historiae sunt septem: Historia Antiqua, Historia Classica, Historia Aevorum Mediorum, Historia Colonia, Historia Industria, Historia Belli, et Historia Nova.")
 }
 
 text Ardor_Uni_HistoryClass_Text_Student1 {
@@ -234,6 +259,10 @@ text Ardor_Uni_HistoryClass_Text_Student6 {
 	format("")
 }
 
+text Ardor_Uni_HistoryClass_Text_Student7 {
+	format("")
+}
+
 text Ardor_Uni_HistoryClass_Text_StudyLesson1 {
 	format("Stude historiam antiquam.")
 }
@@ -251,15 +280,15 @@ text Ardor_Uni_HistoryClass_Text_StudyLesson4 {
 }
 
 text Ardor_Uni_HistoryClass_Text_StudyLesson5 {
-	format("Stude historiam ")
+	format("Stude historiam industriam")
 }
 
 text Ardor_Uni_HistoryClass_Text_StudyLesson6 {
-	format("Stude historiam ")
+	format("Stude historiam bellum")
 }
 
 text Ardor_Uni_HistoryClass_Text_StudyLesson7 {
-	format("Stude historiam ")
+	format("Stude historiam novum")
 }
 
 text Ardor_Uni_HistoryClass_Text_TeacherBattleLost {
@@ -287,13 +316,17 @@ text Ardor_Uni_HistoryClass_Text_Lesson3 {
 }
 
 text Ardor_Uni_HistoryClass_Text_Lesson4 {
-	format("")
+	format("In temporibus colonicis viri oppidorum montes transierunt et viros feroces caperunt")
 }
 
 text Ardor_Uni_HistoryClass_Text_Lesson5 {
-	format("")
+	format("In temporibus industriis viri invenerunt motrum et creaverunt vehicula multa.")
 }
 
 text Ardor_Uni_HistoryClass_Text_Lesson6 {
-	format("")
+	format("In temporibus belli magni multi viri occiderunt.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson7 {
+	format("Post bellum magnum factio Rocheta republicam viri cepit.")
 }
