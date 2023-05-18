@@ -3,9 +3,6 @@ const OBJ_EVENT_TEACHER = 1
 
 mapscripts Ardor_Uni_ChemistryClass_MapScripts {}
 
-
-
-
 script Ardor_Uni_ChemistryClass_EventScript_Teacher  {
 	lock
 	faceplayer

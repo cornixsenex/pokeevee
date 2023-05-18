@@ -328,5 +328,5 @@ text Ardor_Uni_HistoryClass_Text_Lesson6 {
 }
 
 text Ardor_Uni_HistoryClass_Text_Lesson7 {
-	format("Post bellum magnum factio Rocheta republicam viri cepit.")
+	format("Post bellum magnum factio Rocheta republicam virorum cepit.")
 }

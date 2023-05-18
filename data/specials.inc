@@ -554,4 +554,5 @@ gSpecials::
 	def_special IsFireTypeInParty
 	def_special IsWaterTypeInParty
 	def_special IsFlyingTypeInParty
+	def_special IsPsychicTypeInParty
 

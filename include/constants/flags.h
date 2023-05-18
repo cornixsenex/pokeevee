@@ -188,14 +188,16 @@
 #define FLAG_ALGEBRA_INTRO                   0xA0
 #define FLAG_RETURN_LOGIC_PUZZLE_LEFT        0xA1
 #define FLAG_HISTORY_INTRO                   0xA2
+#define FLAG_PSYCHOLOGY_INTRO                0xA3
 
 
-												  ////BREAK
+
+
+					                     ////BREAK
 													  
 				
 
 
-#define FLAG_SMART_PAINTING_MADE             0xA3
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
 #define FLAG_RECEIVED_TM39                   0xA5
 #define FLAG_RECEIVED_TM08                   0xA6

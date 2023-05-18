@@ -241,7 +241,7 @@ Ardor_Uni_HistoryClass_EventScript_Student7::
 	msgbox Ardor_Uni_HistoryClass_Text_Student7
 Ardor_Uni_HistoryClass_EventScript_Student7_1:
 	closemessage
-	applymovement 7, Common_Movement_FaceUp
+	applymovement 8, Common_Movement_FaceUp
 	waitmovement 0
 	release
 	end
@@ -346,4 +346,4 @@ Ardor_Uni_HistoryClass_Text_Lesson6::
 
 Ardor_Uni_HistoryClass_Text_Lesson7::
 	.string "Post bellum magnum factio Rocheta\n"
-	.string "republicam viri cepit.$"
+	.string "republicam virorum cepit.$"
