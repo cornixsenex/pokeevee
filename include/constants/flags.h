@@ -190,6 +190,7 @@
 #define FLAG_HISTORY_INTRO                   0xA2
 #define FLAG_PSYCHOLOGY_INTRO                0xA3
 #define FLAG_GEOMETRY_INTRO                  0xA4
+#define FLAG_CALCULUS_INTRO                  0xA5
 
 
 
@@ -199,7 +200,6 @@
 				
 
 
-#define FLAG_RECEIVED_TM39                   0xA5
 #define FLAG_RECEIVED_TM08                   0xA6
 #define FLAG_RECEIVED_TM34                   0xA7
 #define FLAG_RECEIVED_TM50                   0xA8
