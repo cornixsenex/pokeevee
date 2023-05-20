@@ -555,4 +555,5 @@ gSpecials::
 	def_special IsWaterTypeInParty
 	def_special IsFlyingTypeInParty
 	def_special IsPsychicTypeInParty
+	def_special IsMagnetTypeInParty
 

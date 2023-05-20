@@ -5386,6 +5386,34 @@ bool32 IsPsychicTypeInParty(void)
     return FALSE;
 }
 
+bool32 IsMagnetTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_MAGNEMITE 
+			  || species == SPECIES_MAGNETON 
+			  || species == SPECIES_PLUSLE 
+			  || species == SPECIES_MINUN 
+			  || species == SPECIES_MAGNEZONE 
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+
+
+
 
 
 

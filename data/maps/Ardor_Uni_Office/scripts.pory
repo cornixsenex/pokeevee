@@ -448,6 +448,7 @@ script Ardor_Uni_Office_EventScript_EnrollScience {
 				call (Ardor_Uni_Office_EventScript_EnrollScience)
 			} else {
 				setflag (FLAG_OPEN_CLASS_PHYSICS)
+				setflag (FLAG_PHYSICS_HIDE_GEM)
 				call (Ardor_Uni_Office_EventScript_EnrollSocial)
 			}
 		default:

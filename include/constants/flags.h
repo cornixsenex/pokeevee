@@ -191,6 +191,9 @@
 #define FLAG_PSYCHOLOGY_INTRO                0xA3
 #define FLAG_GEOMETRY_INTRO                  0xA4
 #define FLAG_CALCULUS_INTRO                  0xA5
+#define FLAG_PHYSICS_INTRO                   0xA6
+#define FLAG_PHYSICS_HIDE_GEM                0xA7
+#define FLAG_PHYSICS_MAGNETDONE              0xA8
 
 
 
@@ -200,9 +203,6 @@
 				
 
 
-#define FLAG_RECEIVED_TM08                   0xA6
-#define FLAG_RECEIVED_TM34                   0xA7
-#define FLAG_RECEIVED_TM50                   0xA8
 #define FLAG_RECEIVED_TM42                   0xA9
 #define FLAG_RECEIVED_TM40                   0xAA
 #define FLAG_RECEIVED_TM04                   0xAB

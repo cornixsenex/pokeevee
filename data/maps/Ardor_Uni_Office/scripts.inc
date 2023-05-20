@@ -549,6 +549,7 @@ Ardor_Uni_Office_EventScript_EnrollScience_6:
 	checktrainerflag TRAINER_UNI_CHEMISTRY
 	goto_if 0, Ardor_Uni_Office_EventScript_EnrollScience_20
 	setflag FLAG_OPEN_CLASS_PHYSICS
+	setflag FLAG_PHYSICS_HIDE_GEM
 	call Ardor_Uni_Office_EventScript_EnrollSocial
 	goto Ardor_Uni_Office_EventScript_EnrollScience_1
 
