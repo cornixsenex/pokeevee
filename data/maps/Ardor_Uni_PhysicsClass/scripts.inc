@@ -56,6 +56,8 @@ Ardor_Uni_PhysicsClass_EventScript_GemIntro::
 Ardor_Uni_PhysicsClass_EventScript_GemIntro_1:
 	addobject 10
 	showobjectat 10, MAP_ARDOR_UNI_PHYSICS_CLASS
+	applymovement 1, Common_Movement_ExclamationMark
+	waitmovement 0
 	msgbox Ardor_Uni_PhysicsClass_Text_WhereIsMyGem
 	closemessage
 	return

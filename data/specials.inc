@@ -556,4 +556,6 @@ gSpecials::
 	def_special IsFlyingTypeInParty
 	def_special IsPsychicTypeInParty
 	def_special IsMagnetTypeInParty
+	def_special NamePhilosophy
+	def_special IsPhilosophyPhrase
 

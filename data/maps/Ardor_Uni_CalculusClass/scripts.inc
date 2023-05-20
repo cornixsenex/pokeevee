@@ -107,6 +107,30 @@ Ardor_Uni_CalculusClass_EventScript_Student2_5:
 	goto Ardor_Uni_CalculusClass_EventScript_Student2_1
 
 
+Ardor_Uni_CalculusClass_EventScript_PhiloTest::
+	lock
+	special NamePhilosophy
+	waitstate
+	specialvar VAR_RESULT, IsPhilosophyPhrase
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_CalculusClass_EventScript_PhiloTest_2
+	msgbox Ardor_Uni_CalculusClass_EventScript_PhiloTest_Text_1
+Ardor_Uni_CalculusClass_EventScript_PhiloTest_1:
+	closemessage
+	release
+	end
+
+Ardor_Uni_CalculusClass_EventScript_PhiloTest_2:
+	msgbox Ardor_Uni_CalculusClass_EventScript_PhiloTest_Text_0
+	goto Ardor_Uni_CalculusClass_EventScript_PhiloTest_1
+
+
+Ardor_Uni_CalculusClass_EventScript_PhiloTest_Text_0:
+	.string "Yes$"
+
+Ardor_Uni_CalculusClass_EventScript_PhiloTest_Text_1:
+	.string "No$"
+
 Ardor_Uni_CalculusClass_Text_ClassIntro::
 	.string "Salve puer! Magister Hagus sum. Necesse\n"
 	.string "est tibi docere calculum. Calculus duas\l"

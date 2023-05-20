@@ -5412,6 +5412,14 @@ bool32 IsMagnetTypeInParty(void)
 }
 
 
+bool32 IsPhilosophyPhrase(void)
+{
+	//StringCompare returns  opposites
+	if (!StringCompare(gStringVar1, (const u8[]) _("Why") ))
+        return TRUE;
+
+    return FALSE;
+}
 
 
 
