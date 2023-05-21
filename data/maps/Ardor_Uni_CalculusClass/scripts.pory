@@ -102,23 +102,6 @@ script Ardor_Uni_CalculusClass_EventScript_Student2 {
 	end
 }
 
-script Ardor_Uni_CalculusClass_EventScript_PhiloTest {
-	lock
-	special (NamePhilosophy)
-	waitstate
-	//msgbox("You said {STR_VAR_1}")
-	//closemessage
-	specialvar (VAR_RESULT, IsPhilosophyPhrase)
-	if (var(VAR_RESULT) == TRUE) {
-		msgbox("Yes")
-	} else {
-		msgbox("No")
-	}
-	closemessage
-	release
-	end
-}
-
 text Ardor_Uni_CalculusClass_Text_ClassIntro {
 	format("Salve puer! Magister Hagus sum. Necesse est tibi docere calculum. Calculus duas partes, derivativa integraliaque, habet. Stude partes duas et reveni.")
 }

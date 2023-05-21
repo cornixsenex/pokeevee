@@ -1424,6 +1424,7 @@ static void NamingScreen_CreatePCIcon(void);
 static void NamingScreen_CreateMonIcon(void);
 static void NamingScreen_CreateWaldaDadIcon(void);
 static void NamingScreen_CreateRivalIcon(void);
+static void NamingScreen_CreateQmarkIcon(void);
 
 static void (*const sIconFunctions[])(void) =
 {
@@ -1433,6 +1434,7 @@ static void (*const sIconFunctions[])(void) =
     NamingScreen_CreateMonIcon,
     NamingScreen_CreateWaldaDadIcon,
     NamingScreen_CreateRivalIcon,
+    NamingScreen_CreateQmarkIcon,
 };
 
 static void CreateInputTargetIcon(void)
@@ -1494,6 +1496,17 @@ static void NamingScreen_CreateRivalIcon(void)
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], 4);
 }
+
+static void NamingScreen_CreateQmarkIcon(void)
+{
+	//This just does a regular A Unown from overworld branch :/
+    u8 spriteId;
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_POKEMON_201, SpriteCallbackDummy, 56, 37, 0);
+    gSprites[spriteId].oam.priority = 3;
+    StartSpriteAnim(&gSprites[spriteId], 4);
+}
+
+
 
 //--------------------------------------------------
 // Keyboard handling
@@ -2159,7 +2172,6 @@ void NameRival(void)
 void NamePhilosophy(void)
 {
     DoNamingScreen(NAMING_SCREEN_PHILOSOPHY, gStringVar1, 0, 0, 0, CB2_ReturnToFieldContinueScript);
-	DebugPrintf("TEST", 0);
 }
 
 
@@ -2229,7 +2241,7 @@ static const struct NamingScreenTemplate sPhilosophyNamingScreenTemplate =
 {
     .copyExistingString = FALSE,
     .maxChars = PLAYER_NAME_LENGTH,
-    .iconFunction = 0,
+    .iconFunction = 6,
     .addGenderIcon = FALSE,
     .initialPage = KBPAGE_LETTERS_UPPER,
     .unused = 35,

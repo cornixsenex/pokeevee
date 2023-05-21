@@ -5417,6 +5417,48 @@ bool32 IsPhilosophyPhrase(void)
 	//StringCompare returns  opposites
 	if (!StringCompare(gStringVar1, (const u8[]) _("Why") ))
         return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("Why?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("WHY") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("WHY?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("why") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("why?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("???") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("y") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("Y") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("Cur") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("Cur?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("CUR") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("CUR?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("cur") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("cur?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("Quod") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("Quod?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("QUOD") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("QUOD?") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("quod") ))
+        return TRUE;
+	if (!StringCompare(gStringVar1, (const u8[]) _("quod?") ))
+        return TRUE;
 
     return FALSE;
 }
