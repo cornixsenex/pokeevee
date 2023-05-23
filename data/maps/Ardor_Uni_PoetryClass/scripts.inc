@@ -153,7 +153,8 @@ Ardor_Uni_PoetryClass_EventScript_Student4_2:
 
 
 Ardor_Uni_PoetryClass_Text_ClassIntro::
-	.string "Salve puer. Magistra$"
+	.string "Salve puer. Magistra Anna sum. Necesse\n"
+	.string "est tibi docere poemata.$"
 
 Ardor_Uni_PoetryClass_Text_Student1::
 	.string "$"
@@ -168,34 +169,67 @@ Ardor_Uni_PoetryClass_Text_Student4::
 	.string "$"
 
 Ardor_Uni_PoetryClass_Text_StudyLesson1::
-	.string "$"
+	.string "Stude Virgilium.$"
 
 Ardor_Uni_PoetryClass_Text_StudyLesson2::
-	.string "$"
+	.string "Stude Ovidium.$"
 
 Ardor_Uni_PoetryClass_Text_StudyLesson3::
-	.string "$"
+	.string "Stude Horatium.$"
 
 Ardor_Uni_PoetryClass_Text_StudyLesson4::
-	.string "$"
+	.string "Stude Martialem.$"
 
 Ardor_Uni_PoetryClass_Text_TeacherBattleLost::
-	.string "$"
+	.string "Lacrimae clademque cano!$"
 
 Ardor_Uni_PoetryClass_Text_ClassFinished::
-	.string "$"
+	.string "Congratulatio! Iam studuisti poemata.$"
 
 Ardor_Uni_PoetryClass_Text_TestBegin::
-	.string "$"
+	.string "Iam studuisti poetas quattor.$"
 
 Ardor_Uni_PoetryClass_Text_Lesson1::
-	.string "$"
+	.string "Virgilius cecinit,\n"
+	.string "'Arma virumque cano, Troiae qui primus\l"
+	.string "ab oris\p"
+	.string "Italiam, fato profugus, Laviniaque\n"
+	.string "venit\p"
+	.string "litora, multum ille et terris iactatus et\n"
+	.string "alto\p"
+	.string "vi superum saevae memorem Iunonis ob\n"
+	.string "iram;\p"
+	.string "multa quoque et bello passus, dum\n"
+	.string "conderet urbem,\p"
+	.string "inferretque deos Latio, genus unde\n"
+	.string "Latinum,\p"
+	.string "Albanique patres, atque altae moenia\n"
+	.string "Romae.'$"
 
 Ardor_Uni_PoetryClass_Text_Lesson2::
-	.string "$"
+	.string "Cecinit Ovidius, 'In nova fert animus\n"
+	.string "mutatas dicere formas\p"
+	.string "corpora; di, coeptis (nam vos mutastis\n"
+	.string "et illas)\n"
+	.string "adspirate meis primaque ab origine\l"
+	.string "mundi\p"
+	.string "ad mea perpetuum deducite tempora\n"
+	.string "carmen!'$"
 
 Ardor_Uni_PoetryClass_Text_Lesson3::
-	.string "$"
+	.string "Cecinit,\n"
+	.string "'Dulce et decorum est pro patria mori:\p"
+	.string "mors et fugacem persequitur virum\n"
+	.string "nec parcit in bellis iuventae\p"
+	.string "poplitibus timidove tergo.\n"
+	.string "' Horatius.$"
 
 Ardor_Uni_PoetryClass_Text_Lesson4::
-	.string "$"
+	.string "'Fetere multo Myrtale solet uino,\n"
+	.string "sed fallat ut nos, folia deuorat lauri\p"
+	.string "merumque cauta fronde, non aqua,\n"
+	.string "miscet.\n"
+	.string "Hanc tu rubentem prominentibus uenis\p"
+	.string "quotiens uenire, Paule, uideris contra,\n"
+	.string "dicas licebit Myrtale bibit laurum.'\p"
+	.string "Martialis cecinit.$"

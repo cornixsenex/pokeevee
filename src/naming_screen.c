@@ -1807,6 +1807,7 @@ static void (*const sDrawTextEntryBoxFuncs[])(void) =
     [NAMING_SCREEN_WALDA]      = DrawNormalTextEntryBox,
     [NAMING_SCREEN_RIVAL]      = DrawNormalTextEntryBox,
     [NAMING_SCREEN_PHILOSOPHY] = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_RHETORIC]   = DrawNormalTextEntryBox,
 };
 
 static void DrawTextEntryBox(void)
@@ -2174,6 +2175,13 @@ void NamePhilosophy(void)
     DoNamingScreen(NAMING_SCREEN_PHILOSOPHY, gStringVar1, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
+void DoRhetoric(void)
+{
+    DoNamingScreen(NAMING_SCREEN_RHETORIC, gStringVar1, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
+
+
 
 //--------------------------------------------------
 // Forward-declared variables
@@ -2248,6 +2256,20 @@ static const struct NamingScreenTemplate sPhilosophyNamingScreenTemplate =
     .title = sText_Philosophy,
 };
 
+static const u8 sText_Rhetoric[] = _("Quod loqueris?");
+static const struct NamingScreenTemplate sRhetoricNamingScreenTemplate =
+{
+    .copyExistingString = FALSE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 6,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = sText_Rhetoric,
+};
+
+
+
 
 
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
@@ -2259,6 +2281,7 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_WALDA]      = &sWaldaWordsScreenTemplate,
     [NAMING_SCREEN_RIVAL]      = &sRivalNamingScreenTemplate,
     [NAMING_SCREEN_PHILOSOPHY] = &sPhilosophyNamingScreenTemplate,
+    [NAMING_SCREEN_RHETORIC]   = &sRhetoricNamingScreenTemplate,
 };
 
 static const struct OamData sOam_8x8 =

@@ -141,7 +141,7 @@ script Ardor_Uni_PoetryClass_EventScript_Student4 {
 
 
 text Ardor_Uni_PoetryClass_Text_ClassIntro {
-	format("Salve puer. Magistra ")
+	format("Salve puer. Magistra Anna sum. Necesse est tibi docere poemata.")
 }
 
 text Ardor_Uni_PoetryClass_Text_Student1 {
@@ -161,45 +161,45 @@ text Ardor_Uni_PoetryClass_Text_Student4 {
 }
 
 text Ardor_Uni_PoetryClass_Text_StudyLesson1 {
-	format("")
+	format("Stude Virgilium.")
 }
 
 text Ardor_Uni_PoetryClass_Text_StudyLesson2 {
-	format("")
+	format("Stude Ovidium.")
 }
 
 text Ardor_Uni_PoetryClass_Text_StudyLesson3 {
-	format("")
+	format("Stude Horatium.")
 }
 
 text Ardor_Uni_PoetryClass_Text_StudyLesson4 {
-	format("")
+	format("Stude Martialem.")
 }
 
 text Ardor_Uni_PoetryClass_Text_TeacherBattleLost {
-	format("")
+	format("Lacrimae clademque cano!")
 }
 
 text Ardor_Uni_PoetryClass_Text_ClassFinished {
-	format("")
+	format("Congratulatio! Iam studuisti poemata.")
 }
 
 text Ardor_Uni_PoetryClass_Text_TestBegin {
-	format("")
+	format("Iam studuisti poetas quattor.")
 }
 
 text Ardor_Uni_PoetryClass_Text_Lesson1 {
-	format("")
+	format("Virgilius cecinit, \n'Arma virumque cano, Troiae qui primus ab oris\pItaliam, fato profugus, Laviniaque venit\plitora, multum ille et terris iactatus et alto\pvi superum saevae memorem Iunonis ob iram;\pmulta quoque et bello passus, dum conderet urbem,\pinferretque deos Latio, genus unde Latinum,\pAlbanique patres, atque altae moenia Romae.'")
 }
 
 text Ardor_Uni_PoetryClass_Text_Lesson2 {
-	format("")
+	format("Cecinit Ovidius, 'In nova fert animus mutatas dicere formas\pcorpora; di, coeptis (nam vos mutastis et illas)\nadspirate meis primaque ab origine mundi\pad mea perpetuum deducite tempora carmen!'")
 }
 
 text Ardor_Uni_PoetryClass_Text_Lesson3 {
-	format("")
+	format("Cecinit,\n'Dulce et decorum est pro patria mori:\pmors et fugacem persequitur virum\nnec parcit in bellis iuventae\ppoplitibus timidove tergo.\n' Horatius.")
 }
 
 text Ardor_Uni_PoetryClass_Text_Lesson4 {
-	format("")
+	format("'Fetere multo Myrtale solet uino,\nsed fallat ut nos, folia deuorat lauri\pmerumque cauta fronde, non aqua, miscet.\nHanc tu rubentem prominentibus uenis\pquotiens uenire, Paule, uideris contra,\ndicas licebit Myrtale bibit laurum.'\pMartialis cecinit.")
 }

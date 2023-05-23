@@ -11,6 +11,7 @@ enum {
     NAMING_SCREEN_WALDA,
     NAMING_SCREEN_RIVAL,
     NAMING_SCREEN_PHILOSOPHY,
+    NAMING_SCREEN_RHETORIC,
 };
 
 void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback);

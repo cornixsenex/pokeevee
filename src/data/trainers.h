@@ -2020,7 +2020,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_UniPoetry},
     },
 
-    [TRAINER_UNI_ORATION] =
+    [TRAINER_UNI_RHETORIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,

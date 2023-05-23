@@ -558,4 +558,5 @@ gSpecials::
 	def_special IsMagnetTypeInParty
 	def_special NamePhilosophy
 	def_special IsPhilosophyPhrase
+	def_special DoRhetoric
 

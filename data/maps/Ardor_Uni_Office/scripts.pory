@@ -535,7 +535,7 @@ script Ardor_Uni_Office_EventScript_ConsulEnrolled {
 		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
 		closemessage
 	}
-	if (flag(FLAG_OPEN_CLASS_ORATION) && (!defeated(TRAINER_UNI_ORATION))) {
+	if (flag(FLAG_OPEN_CLASS_RHETORIC) && (!defeated(TRAINER_UNI_RHETORIC))) {
 		msgbox(Ardor_Uni_Office_Text_FinishRhetoric)
 		closemessage
 	}

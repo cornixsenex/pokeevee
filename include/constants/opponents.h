@@ -154,7 +154,7 @@
 #define TRAINER_UNI_GRAMMAR                 149
 #define TRAINER_UNI_LITERATURE              150
 #define TRAINER_UNI_POETRY                  151
-#define TRAINER_UNI_ORATION                 152
+#define TRAINER_UNI_RHETORIC                152
 #define TRAINER_UNI_ARITHMETIC              153
 #define TRAINER_UNI_ALGEBRA                 154
 #define TRAINER_UNI_GEOMETRY                155
