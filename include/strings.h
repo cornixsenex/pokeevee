@@ -3113,4 +3113,18 @@ extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
 
+//Book Verse
+
+extern const u8 gText_BookVerse1[];
+extern const u8 gText_BookVerse2[];
+extern const u8 gText_BookVerse3[];
+extern const u8 gText_BookVerse4[];
+extern const u8 gText_BookVerse5[];
+extern const u8 gText_BookVerse6[];
+extern const u8 gText_BookVerse7[];
+extern const u8 gText_BookVerse8[];
+extern const u8 gText_BookVerse9[];
+extern const u8 gText_BookVerse10[];
+
 #endif // GUARD_STRINGS_H
+
