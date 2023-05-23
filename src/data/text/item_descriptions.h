@@ -3870,6 +3870,13 @@ static const u8 sAncientLampDesc[] = _(
 	"radiates from\n"
 	"this gold lamp.\n");
 
+static const u8 sTestBookDesc[] = _(
+	"An ancient book\n"
+	"with many pages\n"
+	"missing TEST.\n");
+
+
+
 
 
 

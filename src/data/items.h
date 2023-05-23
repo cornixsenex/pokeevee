@@ -10054,5 +10054,18 @@ const struct Item gItems[] =
         .secondaryId = 0,
 	},
 
+	[ITEM_BOOK] =
+	{
+		.name = _("TEST BOOK"),
+        .itemId = ITEM_BOOK,
+        .price = 0,
+		.description = sTestBookDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_TestBook,
+        .secondaryId = 0,
+	},
+
 };
 
