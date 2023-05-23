@@ -157,7 +157,7 @@ text Aldeon_Leaf_House_Text_Dad1 {
 }
 
 text Aldeon_Leaf_House_Text_Dad2 {
-	format("You seem allright\nWhat's up? My name is Scott.\p So, what is he your boydriend or...?")
+	format("You seem allright\nWhat's up? My name is Scott.\p So, what is he your boyfriend or...?")
 }
 
 text Aldeon_Leaf_House_Text_Leaf2 {
