@@ -200,7 +200,7 @@ Aldeon_Leaf_House_Text_Dad1::
 Aldeon_Leaf_House_Text_Dad2::
 	.string "You seem allright\n"
 	.string "What's up? My name is Scott.\p"
-	.string "So, what is he your boydriend or...?$"
+	.string "So, what is he your boyfriend or...?$"
 
 Aldeon_Leaf_House_Text_Leaf2::
 	.string "A friend. Young master {PLAYER} here\n"

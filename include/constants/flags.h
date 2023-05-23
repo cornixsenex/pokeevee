@@ -196,6 +196,7 @@
 #define FLAG_PHYSICS_MAGNETDONE              0xA8
 #define FLAG_PHILOSOPHY_INTRO                0xA9
 #define FLAG_LITERATURE_INTRO                0xAA
+#define FLAG_POETRY_INTRO                    0xAB
 
 
 
@@ -205,7 +206,6 @@
 				
 
 
-#define FLAG_RECEIVED_TM04                   0xAB
 #define FLAG_RECEIVED_TM03                   0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
