@@ -822,6 +822,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_DIPLOMA] = {gItemIcon_BlunderPolicy, gItemIconPalette_BlunderPolicy},
     [ITEM_KEG] = {gItemIcon_TerrainExtender, gItemIconPalette_TerrainExtender},
     [ITEM_ANCIENT_LAMP] = {gItemIcon_CrackedPot, gItemIconPalette_Pot},
+    [ITEM_BOOK] = {gItemIcon_Book, gItemIconPalette_Book},
 
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

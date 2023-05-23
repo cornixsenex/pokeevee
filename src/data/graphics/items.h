@@ -1949,3 +1949,7 @@ const u32 gItemIconPalette_Sapphire[] = INCBIN_U32("graphics/items/icon_palettes
 //Custom KindBud shit
 const u32 gItemIcon_KindBud[] = INCBIN_U32("graphics/items/icons/kind_bud.4bpp.lz");
 const u32 gItemIconPalette_KindBud[] = INCBIN_U32("graphics/items/icon_palettes/kind_bud.gbapal.lz");
+
+//Custom Book shit
+const u32 gItemIcon_Book[] = INCBIN_U32("graphics/items/icons/book.4bpp.lz");
+const u32 gItemIconPalette_Book[] = INCBIN_U32("graphics/items/icon_palettes/book.gbapal.lz");
