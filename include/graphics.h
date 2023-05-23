@@ -8951,6 +8951,9 @@ extern const u32 gItemIconPalette_Sapphire[];
 extern const u32 gItemIcon_KindBud[];
 extern const u32 gItemIconPalette_KindBud[];
 
+extern const u32 gItemIcon_Book[];
+extern const u32 gItemIconPalette_Book[];
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 
