@@ -44,6 +44,7 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 #include "pokemon_overworld_follower.h"
+#include "random.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -650,6 +651,39 @@ static void Task_OpenRegisteredPokeblockCase(u8 taskId)
         DestroyTask(taskId);
     }
 }
+
+static const u8 *const gBookVerseCollection[] =
+{
+	gText_BookVerse1,
+	gText_BookVerse2,
+	gText_BookVerse3,
+	gText_BookVerse4,
+	gText_BookVerse5,
+	gText_BookVerse6,
+	gText_BookVerse7,
+	gText_BookVerse8,
+	gText_BookVerse9,
+	gText_BookVerse10
+};
+
+//Test Book
+void ItemUseOutOfBattle_TestBook(u8 taskId)
+{
+	//create a container for the chosen verse
+	const u8 *thisVerse;
+	//thisVerse = gText_BookVerse1;
+	thisVerse = gBookVerseCollection[Random() % NELEMS(gBookVerseCollection)];
+	//print the verse out
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        DisplayItemMessage(taskId, FONT_NORMAL, thisVerse, CloseItemMessage);
+    }
+    else
+    {
+        DisplayItemMessageOnField(taskId, thisVerse, Task_CloseCantUseKeyItemMessage);
+    }
+}
+
 
 void ItemUseOutOfBattle_CoinCase(u8 taskId)
 {
