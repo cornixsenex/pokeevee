@@ -5411,56 +5411,64 @@ bool32 IsMagnetTypeInParty(void)
     return FALSE;
 }
 
+//Philosphy Answers
+static const u8 sText_Philosophy1[]  = _("Why");
+static const u8 sText_Philosophy2[]  = _("Why?");
+static const u8 sText_Philosophy3[]  = _("WHY");
+static const u8 sText_Philosophy4[]  = _("WHY?");
+static const u8 sText_Philosophy5[]  = _("why");
+static const u8 sText_Philosophy6[]  = _("why?");
+static const u8 sText_Philosophy7[]  = _("?");
+static const u8 sText_Philosophy8[]  = _("???");
+static const u8 sText_Philosophy9[]  = _("y");
+static const u8 sText_Philosophy10[] = _("Y");
+static const u8 sText_Philosophy11[] = _("Cur");
+static const u8 sText_Philosophy12[] = _("Cur?");
+static const u8 sText_Philosophy13[] = _("CUR");
+static const u8 sText_Philosophy14[] = _("CUR?");
+static const u8 sText_Philosophy15[] = _("cur");
+static const u8 sText_Philosophy16[] = _("cur?");
+static const u8 sText_Philosophy17[] = _("Quod");
+static const u8 sText_Philosophy18[] = _("Quod?");
+static const u8 sText_Philosophy19[] = _("QUOD");
+static const u8 sText_Philosophy20[] = _("QUOD?");
+static const u8 sText_Philosophy21[] = _("quod");
+static const u8 sText_Philosophy22[] = _("quod?");
+
+static const u8 *const sPhilosophyTextOptions[] =
+{
+	sText_Philosophy1,
+	sText_Philosophy2,
+	sText_Philosophy3,
+    sText_Philosophy4,
+    sText_Philosophy5,
+    sText_Philosophy6,
+    sText_Philosophy7,
+    sText_Philosophy8,
+    sText_Philosophy9,
+    sText_Philosophy10,
+    sText_Philosophy11,
+    sText_Philosophy12,
+    sText_Philosophy13,
+    sText_Philosophy14,
+    sText_Philosophy15,
+    sText_Philosophy16,
+    sText_Philosophy17,
+    sText_Philosophy18,
+    sText_Philosophy19,
+    sText_Philosophy20,
+    sText_Philosophy21,
+    sText_Philosophy22
+};
 
 bool32 IsPhilosophyPhrase(void)
 {
-	//StringCompare returns  opposites
-	if (!StringCompare(gStringVar1, (const u8[]) _("Why") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("Why?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("WHY") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("WHY?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("why") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("why?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("???") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("y") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("Y") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("Cur") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("Cur?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("CUR") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("CUR?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("cur") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("cur?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("Quod") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("Quod?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("QUOD") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("QUOD?") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("quod") ))
-        return TRUE;
-	if (!StringCompare(gStringVar1, (const u8[]) _("quod?") ))
-        return TRUE;
-
-    return FALSE;
+	u32 i;
+	for (i=0; i<NELEMS(sPhilosophyTextOptions); i++) {
+		if (!StringCompare(gStringVar1, sPhilosophyTextOptions[i]))
+			return TRUE;
+	}
+	return FALSE;
 }
 
 
