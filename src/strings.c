@@ -255,6 +255,18 @@ const u8 gText_ThePokemonList[] = _("the POKéMON LIST");
 const u8 gText_TheShop[] = _("the shop");
 const u8 gText_ThePC[] = _("the PC");
 
+const u8 gText_BookVerse1[]  = _("In principio creavit Deus caelum\net terram.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse2[]  = _("Sitting on a cornflake waiting for\nthe van to come.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse3[]  = _("There is a fountain that was not\nmade by the hands of man.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse4[]  = _("You will hear birds.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse5[]  = _("Tonight: The return of the outlaw.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse6[]  = _("Do or do not. There is no try.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse7[]  = _("You must learn the ways of the force.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse8[]  = _("Old fool! This is my hour. Do you\nnot know death when you see it?\pDie now and curse in vain!{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse9[]  = _("You cannot enter here. Go back to\nthe abyss prepared for you! Go\pback! Fall into the nothingness\nthat awaits you and your Master.\pGo!{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse10[] = _("Don't trust no one!{PAUSE_UNTIL_PRESS}");
+
+
 const u8 *const gBagMenu_ReturnToStrings[] =
 {
     [ITEMMENULOCATION_FIELD]               = gText_TheField,
@@ -1898,3 +1910,4 @@ const u8 gText_Answer[] = _("ANSWER");
 const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
+
