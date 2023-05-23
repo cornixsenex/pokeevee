@@ -195,6 +195,7 @@
 #define FLAG_PHYSICS_HIDE_GEM                0xA7
 #define FLAG_PHYSICS_MAGNETDONE              0xA8
 #define FLAG_PHILOSOPHY_INTRO                0xA9
+#define FLAG_LITERATURE_INTRO                0xAA
 
 
 
@@ -204,7 +205,6 @@
 				
 
 
-#define FLAG_RECEIVED_TM40                   0xAA
 #define FLAG_RECEIVED_TM04                   0xAB
 #define FLAG_RECEIVED_TM03                   0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
