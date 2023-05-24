@@ -120,51 +120,59 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 8,
+      "x": 7,
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni1F_EventScript_BiologyDoorSign"
     },
     {
       "type": "sign",
-      "x": 13,
+      "x": 12,
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni1F_EventScript_ChemistryDoorSign"
     },
     {
       "type": "sign",
-      "x": 16,
+      "x": 17,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni1F_EventScript_MusicDoorSign"
     },
     {
       "type": "sign",
-      "x": 19,
-      "y": 1,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
-      "type": "sign",
-      "x": 25,
+      "x": 2,
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni1F_EventScript_GeologyDoorSign"
     },
     {
       "type": "sign",
-      "x": 30,
+      "x": 26,
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni1F_EventScript_ArithmeticDoorSign"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni1F_EventScript_GrammarDoorSign"
+    },
+    {
+      "type": "sign",
+      "x": 36,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni1F_EventScript_ArtDoorSign"
     }
   ]
 }
