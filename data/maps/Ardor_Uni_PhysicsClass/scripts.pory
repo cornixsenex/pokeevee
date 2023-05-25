@@ -63,6 +63,8 @@ script Ardor_Uni_PhysicsClass_EventScript_GemIntro {
 	addobject (OBJ_EVENT_GEM)
 	showobjectat (OBJ_EVENT_GEM, MAP_ARDOR_UNI_PHYSICS_CLASS)
 	//special (DrawWholeMapView)
+	playse (SE_BALL_THROW)
+	waitse
 	applymovement (OBJ_EVENT_TEACHER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	msgbox(Ardor_Uni_PhysicsClass_Text_WhereIsMyGem)
