@@ -255,17 +255,47 @@ const u8 gText_ThePokemonList[] = _("the POKéMON LIST");
 const u8 gText_TheShop[] = _("the shop");
 const u8 gText_ThePC[] = _("the PC");
 
-const u8 gText_BookVerse1[]  = _("In principio creavit Deus caelum\net terram.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse2[]  = _("Sitting on a cornflake waiting for\nthe van to come.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse3[]  = _("There is a fountain that was not\nmade by the hands of man.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse4[]  = _("You will hear birds.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse5[]  = _("Tonight: The return of the outlaw.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse6[]  = _("Do or do not. There is no try.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse7[]  = _("You must learn the ways of the force.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse8[]  = _("Old fool! This is my hour. Do you\nnot know death when you see it?\pDie now and curse in vain!{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse9[]  = _("You cannot enter here. Go back to\nthe abyss prepared for you! Go\pback! Fall into the nothingness\nthat awaits you and your Master.\pGo!{PAUSE_UNTIL_PRESS}");
-const u8 gText_BookVerse10[] = _("Don't trust no one!{PAUSE_UNTIL_PRESS}");
-
+const u8 gText_BookVerse1[]  = _("Like glowing coals the words\nfall off the page:\pIn principio creavit Deus caelum\net terram.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse2[]  = _("Like glowing coals the words\nfall off the page:\pSitting on a cornflake waiting for\nthe van to come.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse3[]  = _("Like glowing coals the words\nfall off the page:\pThere is a fountain that was not\nmade by the hands of man.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse4[]  = _("Like glowing coals the words\nfall off the page:\pYou will hear birds.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse5[]  = _("Like glowing coals the words\nfall off the page:\pTonight: The return of the outlaw.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse6[]  = _("Like glowing coals the words\nfall off the page:\pDo or do not. There is no try.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse7[]  = _("Like glowing coals the words\nfall off the page:\pYou must learn the ways of the force.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse8[]  = _("Like glowing coals the words\nfall off the page:\pOld fool! This is my hour. Do you\nnot know death when you see it?\pDie now and curse in vain!{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse9[]  = _("Like glowing coals the words\nfall off the page:\pYou cannot enter here. Go back to\nthe abyss prepared for you! Go\pback! Fall into the nothingness\nthat awaits you and your Master.\pGo!{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse10[] = _("Like glowing coals the words\nfall off the page:\pDon't trust no one!{PAUSE_UNTIL_PRESS}");
+//Bobby Dylan
+//Tamberine Man
+const u8 gText_BookVerse11[] = _("Like glowing coals the words\nfall off the page:\pKnow that evenings empire has\nreturned into sand.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse12[] = _("Like glowing coals the words\nfall off the page:\pThe ancient empty street's too\ndead for dreaming.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse13[] = _("Like glowing coals the words\nfall off the page:\pThough you might hear laughing,\nspinning, swinging madly across\pthe sun it's not aimed at anyone\nit's just escaping on the run and\pbut for the sky there are no fences\nfacing.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse14[] = _("Like glowing coals the words\nfall off the page:\pDance beneath the diamond sky with\none hand waving free silhouetted\pby the sea circled by the circus\nsands.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse15[] = _("Like glowing coals the words\nfall off the page:\pForget about today until tomorrow.{PAUSE_UNTIL_PRESS}");
+//Times they are a changing
+const u8 gText_BookVerse16[] = _("Like glowing coals the words\nfall off the page:\pAdmit that the waters around you\nhave grown.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse17[] = _("Like glowing coals the words\nfall off the page:\pAccept it that soon youll be\ndrenched to the bone.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse18[] = _("Like glowing coals the words\nfall off the page:\pIf your time to you is worth\nsavin' you better start swimmin'\por you'll sink like a stone.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse19[] = _("Like glowing coals the words\nfall off the page:\pKeep your eyes wide the chance\nwon't come again.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse20[] = _("Like glowing coals the words\nfall off the page:\pDon't speak too soon for the\nwheel's still in spin.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse21[] = _("Like glowing coals the words\nfall off the page:\pThe loser now will be later to win.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse22[] = _("Like glowing coals the words\nfall off the page:\pDon't stand in the doorway don't\nblock up the hall for he that\pgets hurt will be he who has\nstalled.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse23[] = _("Like glowing coals the words\nfall off the page:\pThe battle outside ragin will soon\nshake your windows and rattle\pyour walls.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse24[] = _("Like glowing coals the words\nfall off the page:\pDon't criticize What you can't\nunderstand.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse25[] = _("Like glowing coals the words\nfall off the page:\pYour old road is rapidly agin'\nplease get out of the new one\pif you can't lend your hand.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse26[] = _("Like glowing coals the words\nfall off the page:\pThe slow one now will later be\nfast.{PAUSE_UNTIL_PRESS}");
+//Its alright ma
+const u8 gText_BookVerse27[] =_("Like glowing coals the words\nfall off the page:\pThe handmade blade, the child's\nballoon, eclipses both the sun\pand moon.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse28[] =_("Like glowing coals the words\nfall off the page:\pThe fool's gold mouthpiece, the\nhollow horn, plays wasted words.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse29[] =_("Like glowing coals the words\nfall off the page:\pHe not busy being born is busy\ndying.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse30[] =_("Like glowing coals the words\nfall off the page:\pHuman gods aim for their mark make\neverything from toy guns that spark\pto flesh-colored Christs\nthat glow in the dark.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse31[] =_("Like glowing coals the words\nfall off the page:\pPreachers preach of evil fates.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse32[] =_("Like glowing coals the words\nfall off the page:\pEven the president of the United\nStates sometimes must have to\pstand naked.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse33[] =_("Like glowing coals the words\nfall off the page:\pIt's only people's games that you\ngot to dodge.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse34[] =_("Like glowing coals the words\nfall off the page:\pAdvertising signs they con you\ninto thinking you're the one\pthat can do what's never been done\nthat can win what's never been won\pmeantime life outside goes on\nall around you.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse35[] =_("Like glowing coals the words\nfall off the page:\pIt is not he or she or them or it\nthat you belong to.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse36[] =_("Like glowing coals the words\nfall off the page:\pThe masters make the rules for\nthe wise men and the fools.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse37[] =_("Like glowing coals the words\nfall off the page:\pOne who sings with his tongue on\nfire gargles in the rat race choir.{PAUSE_UNTIL_PRESS}");
 
 const u8 *const gBagMenu_ReturnToStrings[] =
 {

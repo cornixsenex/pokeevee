@@ -3125,6 +3125,33 @@ extern const u8 gText_BookVerse7[];
 extern const u8 gText_BookVerse8[];
 extern const u8 gText_BookVerse9[];
 extern const u8 gText_BookVerse10[];
+extern const u8 gText_BookVerse11[];
+extern const u8 gText_BookVerse12[];
+extern const u8 gText_BookVerse13[];
+extern const u8 gText_BookVerse14[];
+extern const u8 gText_BookVerse15[];
+extern const u8 gText_BookVerse16[];
+extern const u8 gText_BookVerse17[];
+extern const u8 gText_BookVerse18[];
+extern const u8 gText_BookVerse19[];
+extern const u8 gText_BookVerse20[];
+extern const u8 gText_BookVerse21[];
+extern const u8 gText_BookVerse22[];
+extern const u8 gText_BookVerse23[];
+extern const u8 gText_BookVerse24[];
+extern const u8 gText_BookVerse25[];
+extern const u8 gText_BookVerse26[];
+extern const u8 gText_BookVerse27[];
+extern const u8 gText_BookVerse28[];
+extern const u8 gText_BookVerse29[];
+extern const u8 gText_BookVerse30[];
+extern const u8 gText_BookVerse31[];
+extern const u8 gText_BookVerse32[];
+extern const u8 gText_BookVerse33[];
+extern const u8 gText_BookVerse34[];
+extern const u8 gText_BookVerse35[];
+extern const u8 gText_BookVerse36[];
+extern const u8 gText_BookVerse37[];
 
 #endif // GUARD_STRINGS_H
 
