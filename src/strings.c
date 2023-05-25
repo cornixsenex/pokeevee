@@ -729,7 +729,7 @@ const u8 gText_ArdorChooseSocial4[]     = _("PHILOSOPHIAM");
 const u8 gText_ArdorChooseElective1[]   = _("PICTURAM");
 const u8 gText_ArdorChooseElective2[]   = _("MUSICAM");
 const u8 gText_ArdorChooseElective3[]   = _("GYMNASIUM");
-const u8 gText_ArdorChooseElective4[]   = _("COMPUTATRA");
+const u8 gText_ArdorChooseElective4[]   = _("LOGICAM");
 
 const u8 gText_ChooseFossil1[]   = _("HELIX FOSSIL");
 const u8 gText_ChooseFossil2[]   = _("DOME FOSSIL");
