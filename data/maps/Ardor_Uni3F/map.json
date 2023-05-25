@@ -81,58 +81,58 @@
     {
       "type": "sign",
       "x": 2,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni3F_EventScript_PhilosophyDoorSign"
     },
     {
       "type": "sign",
       "x": 7,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni3F_EventScript_PhysicsDoorSign"
     },
     {
       "type": "sign",
       "x": 12,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni3F_EventScript_CalculusDoorSign"
     },
     {
       "type": "sign",
       "x": 26,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni3F_EventScript_LiteratureDoorSign"
     },
     {
       "type": "sign",
       "x": 31,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni3F_EventScript_RhetoricDoorSign"
     },
     {
       "type": "sign",
       "x": 36,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni3F_EventScript_PoetryDoorSign"
     },
     {
       "type": "sign",
       "x": 21,
-      "y": 2,
+      "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Ardor_Uni3F_EventScript_OfficeDoorSign"
     }
   ]
 }

@@ -68,6 +68,7 @@ Ardor_Uni_ArtClass_EventScript_DoArt_2:
 
 
 Ardor_Uni_ArtClass_EventScript_Test::
+	setvar VAR_CANVAS_STEP_COUNTER, 420
 	msgbox Ardor_Uni_Text_TestIntro
 	closemessage
 	trainerbattle_no_intro TRAINER_UNI_ART, Ardor_Uni_ArtClass_Text_TeacherBattleLost

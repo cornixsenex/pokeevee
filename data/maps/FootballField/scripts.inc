@@ -241,11 +241,14 @@ FootballField_EventScript_EndZone_3:
 
 FootballField_EventScript_FootballCoach::
 	lockall
+	faceplayer
 	checktrainerflag TRAINER_UNI_GYM
 	goto_if 1, FootballField_EventScript_FootballCoach_2
 	goto_if_unset FLAG_OPEN_CLASS_GYM, FootballField_EventScript_FootballCoach_3
 	call FootballField_EventScript_GymClass
 FootballField_EventScript_FootballCoach_1:
+	applymovement 1, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 
