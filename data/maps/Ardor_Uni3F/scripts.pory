@@ -18,10 +18,10 @@ script Ardor_Uni3F_EventScript_OpenDoors {
 	if (!flag(FLAG_OPEN_CLASS_LITERATURE) ){
 		setmetatile (26, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (!flag(FLAG_OPEN_CLASS_POETRY) ){
+	if (!flag(FLAG_OPEN_CLASS_RHETORIC) ){
 		setmetatile (31, 9, METATILE_Facility_DoorBlock, 1)
 	}
-	if (!flag(FLAG_OPEN_CLASS_RHETORIC) ){
+	if (!flag(FLAG_OPEN_CLASS_POETRY) ){
 		setmetatile (36, 9, METATILE_Facility_DoorBlock, 1)
 	}
 	end

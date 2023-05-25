@@ -239,9 +239,9 @@ Ardor_Uni_AlgebraClass_Text_Lesson3::
 	.string "est II$"
 
 Ardor_Uni_AlgebraClass_Text_Lesson4::
-	.string "Rectangulus tenet area MMX et\n"
+	.string "Rectangulus tenet area MMC et\n"
 	.string "longitudino V ergo latitudinum\l"
-	.string "rectanguli CDII est$"
+	.string "rectanguli CDXX est$"
 
 Ardor_Uni_AlgebraClass_Text_Lesson5::
 	.string "i est unitas imaginaria quia\n"

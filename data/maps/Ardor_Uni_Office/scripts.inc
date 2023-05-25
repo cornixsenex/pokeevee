@@ -440,7 +440,7 @@ Ardor_Uni_Office_EventScript_ConsulRegister_11:
 
 Ardor_Uni_Office_EventScript_ConsulRegister_12:
 	setflag FLAG_OPEN_CLASS_CALCULUS
-	setflag FLAG_OPEN_CLASS_POETRY
+	setflag FLAG_OPEN_CLASS_RHETORIC
 	msgbox Ardor_Uni_Office_Text_ClassDefault4
 	goto Ardor_Uni_Office_EventScript_ConsulRegister_7
 
