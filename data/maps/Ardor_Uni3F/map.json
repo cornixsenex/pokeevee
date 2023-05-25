@@ -81,7 +81,7 @@
     {
       "type": "sign",
       "x": 2,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Ardor_Uni3F_EventScript_PhilosophyDoorSign"
@@ -89,7 +89,7 @@
     {
       "type": "sign",
       "x": 7,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Ardor_Uni3F_EventScript_PhysicsDoorSign"
@@ -97,7 +97,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Ardor_Uni3F_EventScript_CalculusDoorSign"

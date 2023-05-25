@@ -151,14 +151,14 @@
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI3F",
-      "dest_warp_id": "2"
+      "dest_warp_id": "3"
     },
     {
       "x": 5,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI3F",
-      "dest_warp_id": "2"
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [

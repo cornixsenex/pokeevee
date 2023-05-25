@@ -104,8 +104,8 @@ script Ardor_Uni_PhysicsClass_EventScript_Gem {
 	clearflag (FLAG_OPEN_CLASS_PHYSICS)
 	msgbox(Ardor_Uni_PhysicsClass_Text_BattleIntro)
 	closemessage
-	trainerbattle_no_intro(TRAINER_UNI_LOGIC, Ardor_Uni_LogicClass_Text_TeacherBattleLost)
-	msgbox(Ardor_Uni_LogicClass_Text_ClassFinished)
+	trainerbattle_no_intro(TRAINER_UNI_PHYSICS, Ardor_Uni_PhysicsClass_Text_TeacherBattleLost)
+	msgbox(Ardor_Uni_PhysicsClass_Text_ClassFinished)
 	closemessage
 	return
 }
@@ -120,6 +120,10 @@ text Ardor_Uni_PhysicsClass_Text_WhereIsMyGem {
 
 text Ardor_Uni_PhysicsClass_Text_ClassIntro {
 	format("Salve puer. Magister Clancius sum. Necesse est tibi docere scientiam physicae. Partes physicarum sum tres: electromagnetica, optica, et nuclearis. Primum electromagneticam tibi docere.")
+}
+
+text Ardor_Uni_PhysicsClass_Text_TeacherBattleLost {
+	format("Malum fuit victor")
 }
 
 text Ardor_Uni_PhysicsClass_Text_ClassFinished {

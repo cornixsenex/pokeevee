@@ -47,14 +47,14 @@
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI3F",
-      "dest_warp_id": "3"
+      "dest_warp_id": "2"
     },
     {
       "x": 5,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ARDOR_UNI3F",
-      "dest_warp_id": "3"
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

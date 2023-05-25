@@ -88,8 +88,8 @@ Ardor_Uni_PhysicsClass_EventScript_Gem_1:
 	clearflag FLAG_OPEN_CLASS_PHYSICS
 	msgbox Ardor_Uni_PhysicsClass_Text_BattleIntro
 	closemessage
-	trainerbattle_no_intro TRAINER_UNI_LOGIC, Ardor_Uni_LogicClass_Text_TeacherBattleLost
-	msgbox Ardor_Uni_LogicClass_Text_ClassFinished
+	trainerbattle_no_intro TRAINER_UNI_PHYSICS, Ardor_Uni_PhysicsClass_Text_TeacherBattleLost
+	msgbox Ardor_Uni_PhysicsClass_Text_ClassFinished
 	closemessage
 	return
 
@@ -116,6 +116,9 @@ Ardor_Uni_PhysicsClass_Text_ClassIntro::
 	.string "physicae. Partes physicarum sum tres:\l"
 	.string "electromagnetica, optica, et nuclearis.\l"
 	.string "Primum electromagneticam tibi docere.$"
+
+Ardor_Uni_PhysicsClass_Text_TeacherBattleLost::
+	.string "Malum fuit victor$"
 
 Ardor_Uni_PhysicsClass_Text_ClassFinished::
 	.string "Discede numquamque reveni.$"
