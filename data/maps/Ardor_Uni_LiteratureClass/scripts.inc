@@ -203,8 +203,8 @@ Ardor_Uni_LiteratureClass_EventScript_Student6_2:
 
 
 Ardor_Uni_LiteratureClass_Text_ClassIntro::
-	.string "Salve puer. Magistra Emma sum. Necesse\n"
-	.string "est tibi docere litteraturam.$"
+	.string "Salve puer. Magistra Aemilia sum.\n"
+	.string "Necesse est tibi docere litteraturam.$"
 
 Ardor_Uni_LiteratureClass_Text_Student1::
 	.string "$"

@@ -59,6 +59,46 @@ script Ardor_Uni2F_EventScript_ArchaeologyDoorSign {
 	end
 }
 
+script Ardor_Uni2F_EventScript_LogicDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_LogicDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_AlgebraDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_AlgebraDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_GeometryDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_GeometryDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_HistoryDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_HistoryDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_PsychologyDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_PsychologyDoorSign)
+	closemessage
+	release
+	end
+}
+
 movement Ardor_Uni2F_Movement_LeafExitS {
 	walk_down * 2
 	walk_right * 3
@@ -77,6 +117,22 @@ text Ardor_Uni2F_Text_Leaf1 {
 	format("My gosh! This cafeteria's not bad! Oh hey {PLAYER} I found an Indianus. His door is halfway down the eastern hall but it won't open. I can't understand anything anybody even says so I don't know where Indianus is. I think I'm going back to the party, that boy told me to meet him at his frat, but don't give up! We need to find Indy and rescue Mew!")
 }
 
+text Ardor_Uni2F_Text_LogicDoorSign {
+	format("LOGICA\nMAGISTER JOANNES")
+}
 
+text Ardor_Uni2F_Text_AlgebraDoorSign {
+	format("ALGEBRA\nMAGISTRA CAMILLA")
+}
 
+text Ardor_Uni2F_Text_GeometryDoorSign {
+	format("GEOMETRIA\nMAGISTER JEFFERSON")
+}
 
+text Ardor_Uni2F_Text_HistoryDoorSign {
+	format("HISTORIA\nDOCTOR VIRTREUS")
+}
+
+text Ardor_Uni2F_Text_PsychologyDoorSign {
+	format("PSYCHOLOGIA\nMAGISTRA LINDA")
+}

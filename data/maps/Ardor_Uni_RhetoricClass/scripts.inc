@@ -40,7 +40,7 @@ Ardor_Uni_RhetoricClass_Text_ClassFinished::
 	.string "Congratulatio! Iam studuisti oratum.$"
 
 Ardor_Uni_RhetoricClass_Text_Intro::
-	.string "Salve puer. Magister Steven sum.\n"
+	.string "Salve puer. Magister Stephanus sum.\n"
 	.string "Necesse est tibi docere oratum.$"
 
 Ardor_Uni_RhetoricClass_Text_RepeatRhetoric::

@@ -41,7 +41,7 @@ text Ardor_Uni_RhetoricClass_Text_ClassFinished {
 }
 
 text Ardor_Uni_RhetoricClass_Text_Intro {
-	format("Salve puer. Magister Steven sum. Necesse est tibi docere oratum.")
+	format("Salve puer. Magister Stephanus sum. Necesse est tibi docere oratum.")
 }
 
 text Ardor_Uni_RhetoricClass_Text_RepeatRhetoric {

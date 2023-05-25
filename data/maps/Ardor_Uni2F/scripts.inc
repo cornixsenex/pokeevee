@@ -76,6 +76,46 @@ Ardor_Uni2F_EventScript_ArchaeologyDoorSign::
 	end
 
 
+Ardor_Uni2F_EventScript_LogicDoorSign::
+	lock
+	msgbox Ardor_Uni2F_Text_LogicDoorSign
+	closemessage
+	release
+	end
+
+
+Ardor_Uni2F_EventScript_AlgebraDoorSign::
+	lock
+	msgbox Ardor_Uni2F_Text_AlgebraDoorSign
+	closemessage
+	release
+	end
+
+
+Ardor_Uni2F_EventScript_GeometryDoorSign::
+	lock
+	msgbox Ardor_Uni2F_Text_GeometryDoorSign
+	closemessage
+	release
+	end
+
+
+Ardor_Uni2F_EventScript_HistoryDoorSign::
+	lock
+	msgbox Ardor_Uni2F_Text_HistoryDoorSign
+	closemessage
+	release
+	end
+
+
+Ardor_Uni2F_EventScript_PsychologyDoorSign::
+	lock
+	msgbox Ardor_Uni2F_Text_PsychologyDoorSign
+	closemessage
+	release
+	end
+
+
 Ardor_Uni2F_Movement_LeafExitS:
 	walk_down
 	walk_down
@@ -119,3 +159,23 @@ Ardor_Uni2F_Text_Leaf1::
 	.string "me to meet him at his frat, but don't\l"
 	.string "give up! We need to find Indy and\l"
 	.string "rescue Mew!$"
+
+Ardor_Uni2F_Text_LogicDoorSign::
+	.string "LOGICA\n"
+	.string "MAGISTER JOANNES$"
+
+Ardor_Uni2F_Text_AlgebraDoorSign::
+	.string "ALGEBRA\n"
+	.string "MAGISTRA CAMILLA$"
+
+Ardor_Uni2F_Text_GeometryDoorSign::
+	.string "GEOMETRIA\n"
+	.string "MAGISTER JEFFERSON$"
+
+Ardor_Uni2F_Text_HistoryDoorSign::
+	.string "HISTORIA\n"
+	.string "DOCTOR VIRTREUS$"
+
+Ardor_Uni2F_Text_PsychologyDoorSign::
+	.string "PSYCHOLOGIA\n"
+	.string "MAGISTRA LINDA$"
