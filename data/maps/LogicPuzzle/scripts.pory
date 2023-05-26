@@ -374,6 +374,7 @@ script LogicPuzzle_EventScript_SetPuzzleState12 {
 
 script LogicPuzzle_EventScript_ResetButtons {
 	setmetatile (1, 3, METATILE_MauvilleGym_RaisedSwitch, FALSE)
+	setmetatile (14, 3, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (13, 13, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (1, 7, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (6, 6, METATILE_MauvilleGym_RaisedSwitch, FALSE)
@@ -384,7 +385,6 @@ script LogicPuzzle_EventScript_ResetButtons {
 	setmetatile (6, 11, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (9, 11, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	setmetatile (13, 11, METATILE_MauvilleGym_RaisedSwitch, FALSE)
-	setmetatile (13, 13, METATILE_MauvilleGym_RaisedSwitch, FALSE)
 	return
 }
 
@@ -451,18 +451,18 @@ script LogicPuzzle_EventScript_SetBlock6 {
 }
 
 script LogicPuzzle_EventScript_SetBlock7 {
-	setmetatile (5, 9, METATILE_MauvilleGym_GreenBeamH1_On, FALSE)
-	setmetatile (5, 10, METATILE_MauvilleGym_GreenBeamH3_On, FALSE)
-	setmetatile (6, 9, METATILE_MauvilleGym_GreenBeamH2_On, FALSE)
-	setmetatile (6, 10, METATILE_MauvilleGym_GreenBeamH4_On, FALSE)
-	setmetatile (7, 9, METATILE_MauvilleGym_GreenBeamH1_On, FALSE)
-	setmetatile (7, 10, METATILE_MauvilleGym_GreenBeamH3_On, FALSE)
-	setmetatile (8, 9, METATILE_MauvilleGym_GreenBeamH2_On, FALSE)
-	setmetatile (8, 10, METATILE_MauvilleGym_GreenBeamH4_On, FALSE)
-	setmetatile (9, 9, METATILE_MauvilleGym_GreenBeamH1_On, FALSE)
-	setmetatile (9, 10, METATILE_MauvilleGym_GreenBeamH3_On, FALSE)
-	setmetatile (10, 9, METATILE_MauvilleGym_GreenBeamH2_On, FALSE)
-	setmetatile (10, 10, METATILE_MauvilleGym_GreenBeamH4_On, FALSE)
+	setmetatile (5, 9,  METATILE_MauvilleGym_GreenBeamH1_On, TRUE)
+	setmetatile (5, 10, METATILE_MauvilleGym_GreenBeamH3_On, TRUE)
+	setmetatile (6, 9,  METATILE_MauvilleGym_GreenBeamH2_On, TRUE)
+	setmetatile (6, 10, METATILE_MauvilleGym_GreenBeamH4_On, TRUE)
+	setmetatile (7, 9,  METATILE_MauvilleGym_GreenBeamH1_On, TRUE)
+	setmetatile (7, 10, METATILE_MauvilleGym_GreenBeamH3_On, TRUE)
+	setmetatile (8, 9,  METATILE_MauvilleGym_GreenBeamH2_On, TRUE)
+	setmetatile (8, 10, METATILE_MauvilleGym_GreenBeamH4_On, TRUE)
+	setmetatile (9, 9,  METATILE_MauvilleGym_GreenBeamH1_On, TRUE)
+	setmetatile (9, 10, METATILE_MauvilleGym_GreenBeamH3_On, TRUE)
+	setmetatile (10, 9, METATILE_MauvilleGym_GreenBeamH2_On, TRUE)
+	setmetatile (10, 10,METATILE_MauvilleGym_GreenBeamH4_On, TRUE)
 	return
 }
 

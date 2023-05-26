@@ -945,7 +945,7 @@ Ardor_Uni_Office_Text_ConsulEnrolled2::
 
 Ardor_Uni_Office_Text_ConsulEnrolled3::
 	.string "In sessione tertia necesse est studere\n"
-	.string "artem artes poematis et geometriae.$"
+	.string "artes poematis et geometriae.$"
 
 Ardor_Uni_Office_Text_ConsulEnrolled4::
 	.string "In sessione quarta necesse est\n"
