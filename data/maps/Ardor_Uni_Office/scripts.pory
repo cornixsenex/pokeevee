@@ -96,7 +96,10 @@ script Ardor_Uni_Office_EventScript_Consul {
 	//if graduated ask donation
 	//if not enrolled ask enrollment
 	//if enrolled read off class list
-	if (var(VAR_UNI_TERM_STATE) > 4) {
+	checkitem (ITEM_DIPLOMA)
+	if (var(VAR_RESULT) == TRUE) {
+		call (Ardor_Uni_Office_EventScript_ConsulDonate)
+	} elif (var(VAR_UNI_TERM_STATE) > 4) {
 		call (Ardor_Uni_Office_EventScript_Graduate)
 	} else {
 		switch (var(VAR_UNI_STATE)) {

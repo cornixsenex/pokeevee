@@ -144,40 +144,39 @@ Ardor_Uni_TermState_IncrementVar_8:
 
 
 Ardor_Uni_Office_EventScript_Consul::
+	checkitem ITEM_DIPLOMA
+	compare VAR_RESULT, TRUE
+	goto_if_eq Ardor_Uni_Office_EventScript_Consul_2
 	compare VAR_UNI_TERM_STATE, 4
-	goto_if_gt Ardor_Uni_Office_EventScript_Consul_2
+	goto_if_gt Ardor_Uni_Office_EventScript_Consul_3
 	switch VAR_UNI_STATE
-	case 0, Ardor_Uni_Office_EventScript_Consul_6
-	case 1, Ardor_Uni_Office_EventScript_Consul_7
-	case 2, Ardor_Uni_Office_EventScript_Consul_8
-	case 3, Ardor_Uni_Office_EventScript_Consul_9
-	case 4, Ardor_Uni_Office_EventScript_Consul_10
-	case 5, Ardor_Uni_Office_EventScript_Consul_11
-	case 6, Ardor_Uni_Office_EventScript_Consul_12
-	case 7, Ardor_Uni_Office_EventScript_Consul_13
-	case 8, Ardor_Uni_Office_EventScript_Consul_14
-	case 9, Ardor_Uni_Office_EventScript_Consul_15
-	case 10, Ardor_Uni_Office_EventScript_Consul_15
+	case 0, Ardor_Uni_Office_EventScript_Consul_8
+	case 1, Ardor_Uni_Office_EventScript_Consul_9
+	case 2, Ardor_Uni_Office_EventScript_Consul_10
+	case 3, Ardor_Uni_Office_EventScript_Consul_11
+	case 4, Ardor_Uni_Office_EventScript_Consul_12
+	case 5, Ardor_Uni_Office_EventScript_Consul_13
+	case 6, Ardor_Uni_Office_EventScript_Consul_14
+	case 7, Ardor_Uni_Office_EventScript_Consul_15
+	case 8, Ardor_Uni_Office_EventScript_Consul_16
+	case 9, Ardor_Uni_Office_EventScript_Consul_17
+	case 10, Ardor_Uni_Office_EventScript_Consul_17
 	msgbox Ardor_Uni_Office_EventScript_Consul_Text_1
 	closemessage
 Ardor_Uni_Office_EventScript_Consul_1:
 	return
 
 Ardor_Uni_Office_EventScript_Consul_2:
+	call Ardor_Uni_Office_EventScript_ConsulDonate
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_3:
 	call Ardor_Uni_Office_EventScript_Graduate
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
-Ardor_Uni_Office_EventScript_Consul_6:
+Ardor_Uni_Office_EventScript_Consul_8:
 	msgbox Ardor_Uni_Office_EventScript_Consul_Text_0
 	closemessage
-	goto Ardor_Uni_Office_EventScript_Consul_1
-
-Ardor_Uni_Office_EventScript_Consul_7:
-	call Ardor_Uni_Office_EventScript_ConsulRegister
-	goto Ardor_Uni_Office_EventScript_Consul_1
-
-Ardor_Uni_Office_EventScript_Consul_8:
-	call Ardor_Uni_Office_EventScript_ConsulEnrolled
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
 Ardor_Uni_Office_EventScript_Consul_9:
@@ -205,6 +204,14 @@ Ardor_Uni_Office_EventScript_Consul_14:
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
 Ardor_Uni_Office_EventScript_Consul_15:
+	call Ardor_Uni_Office_EventScript_ConsulRegister
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_16:
+	call Ardor_Uni_Office_EventScript_ConsulEnrolled
+	goto Ardor_Uni_Office_EventScript_Consul_1
+
+Ardor_Uni_Office_EventScript_Consul_17:
 	call Ardor_Uni_Office_EventScript_ConsulEnrolled
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
