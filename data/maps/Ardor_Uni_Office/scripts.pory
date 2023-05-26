@@ -323,19 +323,19 @@ script Ardor_Uni_Office_EventScript_ConsulRegister {
 				case 2:
 					setflag (FLAG_OPEN_CLASS_GRAMMAR)
 					setflag (FLAG_OPEN_CLASS_ARITHMETIC)
-					msgbox(Ardor_Uni_Office_Text_ClassDefault1)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled1)
 				case 4:
 					setflag (FLAG_OPEN_CLASS_ALGEBRA)
 					setflag (FLAG_OPEN_CLASS_LITERATURE)
-					msgbox(Ardor_Uni_Office_Text_ClassDefault2)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled2)
 				case 6:
 					setflag (FLAG_OPEN_CLASS_GEOMETRY)
 					setflag (FLAG_OPEN_CLASS_POETRY)
-					msgbox(Ardor_Uni_Office_Text_ClassDefault3)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled3)
 				case 8:
 					setflag (FLAG_OPEN_CLASS_CALCULUS)
 					setflag (FLAG_OPEN_CLASS_RHETORIC)
-					msgbox(Ardor_Uni_Office_Text_ClassDefault4)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled4)
 				default:
 					msgbox("PROBLEM IN UNI_STATE switch in ConsulRegister")
 			}
@@ -347,6 +347,7 @@ script Ardor_Uni_Office_EventScript_ConsulRegister {
 			call (Ardor_Uni_Office_EventScript_EnrollScience)
 
 			//good luck
+			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
 
 			return
 		}
@@ -508,20 +509,6 @@ script Ardor_Uni_Office_EventScript_EnrollElective {
 }
 
 script Ardor_Uni_Office_EventScript_ConsulEnrolled {
-	//switch on grade level to say "you are in grade x"
-	switch (var(VAR_UNI_STATE)) {
-		case 2:
-			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled1)
-		case 4:
-			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled2)
-		case 6:
-			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled3)
-		case 8:
-			msgbox(Ardor_Uni_Office_Text_ConsulEnrolled4)
-		default:
-			msgbox("Bad var in consul enrolled switch")
-	}
-	closemessage
 	//go down the list to see which classes are opened but unfinished
 	if (flag(FLAG_OPEN_CLASS_GRAMMAR) && (!defeated(TRAINER_UNI_GRAMMAR))) {
 		msgbox(Ardor_Uni_Office_Text_FinishGrammar)
@@ -721,22 +708,6 @@ text Ardor_Uni_Office_Text_ConsulRegisterShort {
 
 text Ardor_Uni_Office_Text_ConsulRegisterWelcome {
 	format("Satis est nummerus tributi tui. Congratulatio! Numerus quinque est scholas te studere necesse est. Latinam, scientiam, artes, homines, matematicasque studebis sessione. Sessiones quattor diplomam Ardentis accipies post.")
-}
-
-text Ardor_Uni_Office_Text_ClassDefault1 {
-	format("In sessione prima necesse est studere artes gramatici arithmeticasque.")
-}
-
-text Ardor_Uni_Office_Text_ClassDefault2 {
-	format("In sessione secunda necesse est studere literaturam et algebram.") 
-}
-
-text Ardor_Uni_Office_Text_ClassDefault3 {
-	format("In sessione tertia necesse est studere artes poematis et geometriae.")
-}
-
-text Ardor_Uni_Office_Text_ClassDefault4 {
-	format("In sessione quarta necesse est studere oratum et calculum.")
 }
 
 text Ardor_Uni_Office_Text_ConsulRegister1 {

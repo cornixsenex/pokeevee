@@ -54,7 +54,7 @@ Ardor_Uni2F_EventScript_Leaf::
 	closemessage
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	compare VAR_RESULT, DIR_SOUTH
-	goto_if_eq Ardor_Uni2F_EventScript_Leaf_2
+	goto_if_ne Ardor_Uni2F_EventScript_Leaf_2
 	applymovement 1, Ardor_Uni2F_Movement_LeafExitS
 Ardor_Uni2F_EventScript_Leaf_1:
 	waitmovement 0

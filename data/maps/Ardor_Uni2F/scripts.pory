@@ -39,7 +39,7 @@ script Ardor_Uni2F_EventScript_Leaf {
 	msgbox(Ardor_Uni2F_Text_Leaf1)
 	closemessage
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
-	if (var(VAR_RESULT) == DIR_SOUTH) {
+	if (var(VAR_RESULT) != DIR_SOUTH) {
 		applymovement (OBJ_EVENT_LEAF, Ardor_Uni2F_Movement_LeafExitN)
 	} else {
 		applymovement (OBJ_EVENT_LEAF, Ardor_Uni2F_Movement_LeafExitS)
