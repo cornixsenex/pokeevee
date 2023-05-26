@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER2",
       "x": 8,
       "y": 10,
       "elevation": 0,
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 10,
       "y": 10,
       "elevation": 0,
