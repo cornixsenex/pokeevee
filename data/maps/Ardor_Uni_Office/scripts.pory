@@ -40,7 +40,11 @@ script Ardor_Uni_Office_EventScript_IncrementVar {
 script Ardor_Uni_Office_EventScript_ConsulL {
 	lock
 	faceplayer
+	msgbox("TEST CONSULL")
+	closemessage
 	if (var(VAR_UNI_STATE) > 0) {
+		msgbox("TEST UNI_STATE > 0")
+		closemessage
 		call (Ardor_Uni_Office_EventScript_Consul)
 	} else {
 		setvar (VAR_UNI_STATE, 1)
@@ -96,7 +100,11 @@ script Ardor_Uni_Office_EventScript_Consul {
 	//if graduated ask donation
 	//if not enrolled ask enrollment
 	//if enrolled read off class list
+	msgbox("TEST CONSUL")
+	closemessage
 	if (var(VAR_UNI_TERM_STATE) > 4) {
+		msgbox("TEST TERM_STATE > 4")
+		closemessage
 		call (Ardor_Uni_Office_EventScript_Graduate)
 	} else {
 		switch (var(VAR_UNI_STATE)) {
@@ -131,6 +139,8 @@ script Ardor_Uni_Office_EventScript_Consul {
 }
 
 script Ardor_Uni_Office_EventScript_Graduate {
+	msgbox("TEST GRADUATE")
+	closemessage
 	setvar(VAR_UNI_TERM_STATE, 0)
 	call (Ardor_Uni_Office_EventScript_IncrementVar)
 	msgbox(Ardor_Uni_Office_Text_ConsulCongrats)
