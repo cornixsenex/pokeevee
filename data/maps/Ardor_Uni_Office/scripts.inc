@@ -68,8 +68,6 @@ Ardor_Uni_Office_EventScript_IncrementVar_13:
 Ardor_Uni_Office_EventScript_ConsulL::
 	lock
 	faceplayer
-	msgbox Ardor_Uni_Office_EventScript_ConsulL_Text_0
-	closemessage
 	compare VAR_UNI_STATE, 0
 	goto_if_gt Ardor_Uni_Office_EventScript_ConsulL_2
 	setvar VAR_UNI_STATE, 1
@@ -83,8 +81,6 @@ Ardor_Uni_Office_EventScript_ConsulL_1:
 	end
 
 Ardor_Uni_Office_EventScript_ConsulL_2:
-	msgbox Ardor_Uni_Office_EventScript_ConsulL_Text_1
-	closemessage
 	call Ardor_Uni_Office_EventScript_Consul
 	goto Ardor_Uni_Office_EventScript_ConsulL_1
 
@@ -148,8 +144,6 @@ Ardor_Uni_TermState_IncrementVar_8:
 
 
 Ardor_Uni_Office_EventScript_Consul::
-	msgbox Ardor_Uni_Office_EventScript_Consul_Text_0
-	closemessage
 	compare VAR_UNI_TERM_STATE, 4
 	goto_if_gt Ardor_Uni_Office_EventScript_Consul_2
 	switch VAR_UNI_STATE
@@ -164,19 +158,17 @@ Ardor_Uni_Office_EventScript_Consul::
 	case 8, Ardor_Uni_Office_EventScript_Consul_14
 	case 9, Ardor_Uni_Office_EventScript_Consul_15
 	case 10, Ardor_Uni_Office_EventScript_Consul_15
-	msgbox Ardor_Uni_Office_EventScript_Consul_Text_3
+	msgbox Ardor_Uni_Office_EventScript_Consul_Text_1
 	closemessage
 Ardor_Uni_Office_EventScript_Consul_1:
 	return
 
 Ardor_Uni_Office_EventScript_Consul_2:
-	msgbox Ardor_Uni_Office_EventScript_Consul_Text_1
-	closemessage
 	call Ardor_Uni_Office_EventScript_Graduate
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
 Ardor_Uni_Office_EventScript_Consul_6:
-	msgbox Ardor_Uni_Office_EventScript_Consul_Text_2
+	msgbox Ardor_Uni_Office_EventScript_Consul_Text_0
 	closemessage
 	goto Ardor_Uni_Office_EventScript_Consul_1
 
@@ -218,8 +210,6 @@ Ardor_Uni_Office_EventScript_Consul_15:
 
 
 Ardor_Uni_Office_EventScript_Graduate::
-	msgbox Ardor_Uni_Office_EventScript_Graduate_Text_0
-	closemessage
 	setvar VAR_UNI_TERM_STATE, 0
 	call Ardor_Uni_Office_EventScript_IncrementVar
 	msgbox Ardor_Uni_Office_Text_ConsulCongrats
@@ -261,6 +251,7 @@ Ardor_Uni_Office_EventScript_ConsulDonate::
 	waitse
 	msgbox Ardor_Uni_Office_Text_ConsulDonated
 	closemessage
+	hidemoneybox
 	return
 
 Ardor_Uni_Office_EventScript_ConsulDonate_1:
@@ -280,6 +271,7 @@ Ardor_Uni_Office_EventScript_ConsulDonate_5:
 	setvar VAR_UNI_TERM_STATE, 1
 	msgbox Ardor_Uni_Office_Text_ConsulDonated
 	closemessage
+	hidemoneybox
 	return
 
 Ardor_Uni_Office_EventScript_ConsulDonate_6:
@@ -293,6 +285,7 @@ Ardor_Uni_Office_EventScript_ConsulDonate_6:
 	setvar VAR_UNI_TERM_STATE, 2
 	msgbox Ardor_Uni_Office_Text_ConsulDonated
 	closemessage
+	hidemoneybox
 	return
 
 Ardor_Uni_Office_EventScript_ConsulDonate_7:
@@ -306,6 +299,7 @@ Ardor_Uni_Office_EventScript_ConsulDonate_7:
 	setvar VAR_UNI_TERM_STATE, 3
 	msgbox Ardor_Uni_Office_Text_ConsulDonated
 	closemessage
+	hidemoneybox
 	return
 
 Ardor_Uni_Office_EventScript_ConsulDonate_8:
@@ -319,6 +313,7 @@ Ardor_Uni_Office_EventScript_ConsulDonate_8:
 	setvar VAR_UNI_TERM_STATE, 4
 	msgbox Ardor_Uni_Office_Text_ConsulDonated
 	closemessage
+	hidemoneybox
 	return
 
 Ardor_Uni_Office_EventScript_ConsulDonate_9:
@@ -332,6 +327,7 @@ Ardor_Uni_Office_EventScript_ConsulDonate_9:
 	setvar VAR_UNI_TERM_STATE, 5
 	msgbox Ardor_Uni_Office_Text_ConsulDonated
 	closemessage
+	hidemoneybox
 	return
 
 Ardor_Uni_Office_EventScript_ConsulDonate_10:
@@ -345,6 +341,7 @@ Ardor_Uni_Office_EventScript_ConsulDonate_10:
 	setvar VAR_UNI_TERM_STATE, 6
 	msgbox Ardor_Uni_Office_Text_ConsulDonated
 	closemessage
+	hidemoneybox
 	return
 
 Ardor_Uni_Office_EventScript_ConsulDonate_12:
@@ -916,29 +913,14 @@ Ardor_Uni_Office_EventScript_ConsulEnrolled_98:
 Ardor_Uni_Office_EventScript_IncrementVar_Text_0:
 	.string "VAR_UNI_STATE bad in IncVar$"
 
-Ardor_Uni_Office_EventScript_ConsulL_Text_0:
-	.string "TEST CONSULL$"
-
-Ardor_Uni_Office_EventScript_ConsulL_Text_1:
-	.string "TEST UNI_STATE > 0$"
-
 Ardor_Uni_TermState_IncrementVar_Text_0:
 	.string "VAR_UNI_TERM_STATE BAD VALUE$"
 
 Ardor_Uni_Office_EventScript_Consul_Text_0:
-	.string "TEST CONSUL$"
-
-Ardor_Uni_Office_EventScript_Consul_Text_1:
-	.string "TEST TERM_STATE > 4$"
-
-Ardor_Uni_Office_EventScript_Consul_Text_2:
 	.string "UNI_STATE is 0 in consul$"
 
-Ardor_Uni_Office_EventScript_Consul_Text_3:
+Ardor_Uni_Office_EventScript_Consul_Text_1:
 	.string "UNI_STATE problemo in consul$"
-
-Ardor_Uni_Office_EventScript_Graduate_Text_0:
-	.string "TEST GRADUATE$"
 
 Ardor_Uni_Office_EventScript_ConsulRegister_Text_0:
 	.string "PROBLEM IN UNI_STATE switch in ConsulRegister$"
