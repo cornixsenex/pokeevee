@@ -68,6 +68,7 @@ Ardor_Uni_LogicClass_EventScript_DoLogic_2:
 
 
 Ardor_Uni_LogicClass_EventScript_Test::
+	setvar VAR_LOGIC_CLASS_STATE, 69
 	msgbox Ardor_Uni_Text_TestIntro
 	closemessage
 	trainerbattle_no_intro TRAINER_UNI_LOGIC, Ardor_Uni_LogicClass_Text_TeacherBattleLost
