@@ -30,7 +30,7 @@ Ardor_Uni_RhetoricClass_EventScript_DoRhetoric::
 	msgbox Ardor_Uni_Text_TestIntro
 	waitmessage
 	trainerbattle_no_intro TRAINER_UNI_RHETORIC, Ardor_Uni_RhetoricClass_Text_TeacherBattleLost
-	call Ardor_Uni_TermState_Incrementvar
+	call Ardor_Uni_TermState_IncrementVar
 	msgbox Ardor_Uni_RhetoricClass_Text_ClassFinished
 	closemessage
 	return

@@ -75,7 +75,7 @@ script Ardor_Uni_Office_EventScript_ConsulR {
 	end
 }
 
-script Ardor_Uni_TermState_Incrementvar {
+script Ardor_Uni_TermState_IncrementVar {
 	switch (var(VAR_UNI_TERM_STATE)) {
 		case 0:
 			setvar(VAR_UNI_TERM_STATE, 1)

@@ -90,6 +90,7 @@ Ardor_Uni_PhysicsClass_EventScript_Gem_1:
 	clearflag FLAG_OPEN_CLASS_PHYSICS
 	msgbox Ardor_Uni_PhysicsClass_Text_BattleIntro
 	closemessage
+	call Ardor_Uni_TermState_IncrementVar
 	trainerbattle_no_intro TRAINER_UNI_PHYSICS, Ardor_Uni_PhysicsClass_Text_TeacherBattleLost
 	msgbox Ardor_Uni_PhysicsClass_Text_ClassFinished
 	closemessage

@@ -122,7 +122,7 @@ Ardor_Uni_ArchaeologyClass_EventScript_TATest::
 	msgbox Ardor_Uni_ArchaeologyClass_Text_TABattleIntro
 	closemessage
 	trainerbattle_no_intro TRAINER_UNI_ARCHAEOLOGY, Ardor_Uni_ArchaeologyClass_Text_TABattleLost
-	call Ardor_Uni_TermState_Incrementvar
+	call Ardor_Uni_TermState_IncrementVar
 	msgbox Ardor_Uni_ArchaeologyClass_Text_ClassFinished
 	closemessage
 	return

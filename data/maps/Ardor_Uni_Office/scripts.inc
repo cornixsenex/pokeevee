@@ -109,42 +109,42 @@ Ardor_Uni_Office_EventScript_ConsulR_2:
 	goto Ardor_Uni_Office_EventScript_ConsulR_1
 
 
-Ardor_Uni_TermState_Incrementvar::
+Ardor_Uni_TermState_IncrementVar::
 	switch VAR_UNI_TERM_STATE
-	case 0, Ardor_Uni_TermState_Incrementvar_3
-	case 1, Ardor_Uni_TermState_Incrementvar_4
-	case 2, Ardor_Uni_TermState_Incrementvar_5
-	case 3, Ardor_Uni_TermState_Incrementvar_6
-	case 4, Ardor_Uni_TermState_Incrementvar_7
-	case 5, Ardor_Uni_TermState_Incrementvar_8
-	msgbox Ardor_Uni_TermState_Incrementvar_Text_0
+	case 0, Ardor_Uni_TermState_IncrementVar_3
+	case 1, Ardor_Uni_TermState_IncrementVar_4
+	case 2, Ardor_Uni_TermState_IncrementVar_5
+	case 3, Ardor_Uni_TermState_IncrementVar_6
+	case 4, Ardor_Uni_TermState_IncrementVar_7
+	case 5, Ardor_Uni_TermState_IncrementVar_8
+	msgbox Ardor_Uni_TermState_IncrementVar_Text_0
 	closemessage
-Ardor_Uni_TermState_Incrementvar_1:
+Ardor_Uni_TermState_IncrementVar_1:
 	return
 
-Ardor_Uni_TermState_Incrementvar_3:
+Ardor_Uni_TermState_IncrementVar_3:
 	setvar VAR_UNI_TERM_STATE, 1
-	goto Ardor_Uni_TermState_Incrementvar_1
+	goto Ardor_Uni_TermState_IncrementVar_1
 
-Ardor_Uni_TermState_Incrementvar_4:
+Ardor_Uni_TermState_IncrementVar_4:
 	setvar VAR_UNI_TERM_STATE, 2
-	goto Ardor_Uni_TermState_Incrementvar_1
+	goto Ardor_Uni_TermState_IncrementVar_1
 
-Ardor_Uni_TermState_Incrementvar_5:
+Ardor_Uni_TermState_IncrementVar_5:
 	setvar VAR_UNI_TERM_STATE, 3
-	goto Ardor_Uni_TermState_Incrementvar_1
+	goto Ardor_Uni_TermState_IncrementVar_1
 
-Ardor_Uni_TermState_Incrementvar_6:
+Ardor_Uni_TermState_IncrementVar_6:
 	setvar VAR_UNI_TERM_STATE, 4
-	goto Ardor_Uni_TermState_Incrementvar_1
+	goto Ardor_Uni_TermState_IncrementVar_1
 
-Ardor_Uni_TermState_Incrementvar_7:
+Ardor_Uni_TermState_IncrementVar_7:
 	setvar VAR_UNI_TERM_STATE, 5
-	goto Ardor_Uni_TermState_Incrementvar_1
+	goto Ardor_Uni_TermState_IncrementVar_1
 
-Ardor_Uni_TermState_Incrementvar_8:
+Ardor_Uni_TermState_IncrementVar_8:
 	setvar VAR_UNI_TERM_STATE, 6
-	goto Ardor_Uni_TermState_Incrementvar_1
+	goto Ardor_Uni_TermState_IncrementVar_1
 
 
 Ardor_Uni_Office_EventScript_Consul::
@@ -922,7 +922,7 @@ Ardor_Uni_Office_EventScript_ConsulL_Text_0:
 Ardor_Uni_Office_EventScript_ConsulL_Text_1:
 	.string "TEST UNI_STATE > 0$"
 
-Ardor_Uni_TermState_Incrementvar_Text_0:
+Ardor_Uni_TermState_IncrementVar_Text_0:
 	.string "VAR_UNI_TERM_STATE BAD VALUE$"
 
 Ardor_Uni_Office_EventScript_Consul_Text_0:

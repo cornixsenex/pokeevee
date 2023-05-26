@@ -98,7 +98,7 @@ Ardor_Uni_ChemistryClass_EventScript_Test::
 	msgbox Ardor_Uni_Text_TestIntro
 	closemessage
 	trainerbattle_no_intro TRAINER_UNI_CHEMISTRY, Ardor_Uni_ChemistryClass_Text_TeacherBattleLost
-	call Ardor_Uni_TermState_Incrementvar
+	call Ardor_Uni_TermState_IncrementVar
 	msgbox Ardor_Uni_ChemistryClass_Text_ClassFinished
 	closemessage
 	return

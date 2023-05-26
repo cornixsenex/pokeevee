@@ -87,7 +87,7 @@ Ardor_Uni_AlgebraClass_EventScript_Test::
 	msgbox Ardor_Uni_Text_TestIntro
 	waitmessage
 	trainerbattle_no_intro TRAINER_UNI_ALGEBRA, Ardor_Uni_AlgebraClass_Text_TeacherBattleLost
-	call Ardor_Uni_TermState_Incrementvar
+	call Ardor_Uni_TermState_IncrementVar
 	msgbox Ardor_Uni_AlgebraClass_Text_ClassFinished
 	closemessage
 	return
