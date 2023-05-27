@@ -16,8 +16,13 @@ mapscripts Route4_MapScripts {}
 //Menelaus
 //Alexandros
 //Agamamnon
+//Philoctetes
+//Troilus
+//Lesser Ajax
+//Calchas
+
 //Theseus
-//Perseus -> philoctetes? / Orpheus
+//Perseus / Orpheus
 //Jason
 
 //12 trials
@@ -37,10 +42,10 @@ mapscripts Route4_MapScripts {}
 //UpdatePerDay
 //ClearDailyFlags
 
+//  --- This could help with re-setting the mythical pokemon on the timer
 //ChangeBoxPokemonName 
 //SetBoxMonData
 //GetBoxedMonPtr
-//  --- This could help with re-setting the mythical pokemon on the timer
 
 
 
