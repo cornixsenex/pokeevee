@@ -17,16 +17,6 @@
       "map": "MAP_MARE_W",
       "offset": 0,
       "direction": "right"
-    },
-    {
-      "map": "MAP_BULBUS_TOWN",
-      "offset": 10,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE3",
-      "offset": 46,
-      "direction": "up"
     }
   ],
   "object_events": [

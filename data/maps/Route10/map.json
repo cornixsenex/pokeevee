@@ -27,11 +27,6 @@
       "map": "MAP_MARE_E",
       "offset": 0,
       "direction": "down"
-    },
-    {
-      "map": "MAP_MARE_C",
-      "offset": -126,
-      "direction": "down"
     }
   ],
   "object_events": [

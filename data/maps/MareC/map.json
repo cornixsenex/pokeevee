@@ -19,16 +19,6 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ELICIUS_BEACH",
-      "offset": 86,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE10",
-      "offset": 126,
-      "direction": "up"
-    },
-    {
       "map": "MAP_MARE_W",
       "offset": 26,
       "direction": "left"

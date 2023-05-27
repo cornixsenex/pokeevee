@@ -19,11 +19,6 @@
       "direction": "left"
     },
     {
-      "map": "MAP_SROUTE18",
-      "offset": 59,
-      "direction": "up"
-    },
-    {
       "map": "MAP_MARE_C",
       "offset": -26,
       "direction": "right"

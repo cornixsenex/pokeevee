@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE11",
-      "offset": 80,
-      "direction": "up"
-    },
-    {
       "map": "MAP_ROUTE10",
       "offset": 0,
       "direction": "up"
@@ -27,11 +22,6 @@
       "map": "MAP_MARE_C",
       "offset": 0,
       "direction": "left"
-    },
-    {
-      "map": "MAP_ELICIUS_BEACH",
-      "offset": -40,
-      "direction": "up"
     }
   ],
   "object_events": [

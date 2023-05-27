@@ -32,11 +32,6 @@
       "map": "MAP_SROUTE19",
       "offset": 5,
       "direction": "right"
-    },
-    {
-      "map": "MAP_MARE_W",
-      "offset": -59,
-      "direction": "down"
     }
   ],
   "object_events": [

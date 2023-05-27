@@ -24,11 +24,6 @@
       "direction": "right"
     },
     {
-      "map": "MAP_MARE_WW",
-      "offset": -46,
-      "direction": "down"
-    },
-    {
       "map": "MAP_ROUTE17",
       "offset": 9,
       "direction": "up"
