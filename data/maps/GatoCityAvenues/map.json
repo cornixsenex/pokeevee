@@ -1,12 +1,12 @@
 {
-  "id": "MAP_SROUTE19",
-  "name": "SRoute19",
-  "layout": "LAYOUT_SROUTE19",
+  "id": "MAP_GATO_CITY_AVENUES",
+  "name": "GatoCityAvenues",
+  "layout": "LAYOUT_GATO_CITY_AVENUES",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ROUTE_119",
+  "region_map_section": "MAPSEC_PEWTER_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "map_type": "MAP_TYPE_CITY",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -14,18 +14,8 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SROUTE18",
-      "offset": 0,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_ROUTE7",
-      "offset": -16,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_ROUTE6",
-      "offset": -56,
+      "map": "MAP_GATO_CITY_S",
+      "offset": -35,
       "direction": "up"
     }
   ],

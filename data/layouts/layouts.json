@@ -4625,7 +4625,7 @@
       "id": "LAYOUT_ROUTE7",
       "name": "Route7_Layout",
       "width": 32,
-      "height": 64,
+      "height": 72,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route7/border.bin",
@@ -4635,7 +4635,7 @@
       "id": "LAYOUT_SROUTE19",
       "name": "SRoute19_Layout",
       "width": 24,
-      "height": 78,
+      "height": 84,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/SRoute19/border.bin",
@@ -5720,6 +5720,16 @@
       "secondary_tileset": "gTileset_MauvilleGym",
       "border_filepath": "data/layouts/LogicPuzzle/border.bin",
       "blockdata_filepath": "data/layouts/LogicPuzzle/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATO_CITY_AVENUES",
+      "name": "GatoCityAvenues_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_gatosouth",
+      "border_filepath": "data/layouts/GatoCityAvenues/border.bin",
+      "blockdata_filepath": "data/layouts/GatoCityAvenues/map.bin"
     }
   ]
 }
