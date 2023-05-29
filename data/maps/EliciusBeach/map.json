@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE10",
       "offset": 16,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PENNINSULA_E",
+      "offset": 39,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -22,6 +22,11 @@
       "map": "MAP_MARE_C",
       "offset": -26,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PENINSULA_W",
+      "offset": 102,
+      "direction": "up"
     }
   ],
   "object_events": [

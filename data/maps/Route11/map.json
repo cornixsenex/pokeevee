@@ -22,6 +22,11 @@
       "map": "MAP_GATO_CITY",
       "offset": -21,
       "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_E",
+      "offset": -80,
+      "direction": "down"
     }
   ],
   "object_events": [

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_MARE_E",
-  "name": "MareE",
-  "layout": "LAYOUT_MARE_E",
+  "id": "MAP_PENNINSULA_E",
+  "name": "PenninsulaE",
+  "layout": "LAYOUT_PENNINSULA_E",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_SIX_ISLAND",
+  "region_map_section": "MAPSEC_PEWTER_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE10",
-      "offset": 0,
-      "direction": "up"
+      "map": "MAP_ELICIUS_BEACH",
+      "offset": -39,
+      "direction": "right"
     },
     {
       "map": "MAP_MARE_C",
       "offset": 0,
-      "direction": "left"
+      "direction": "down"
     },
     {
-      "map": "MAP_ROUTE11",
-      "offset": 80,
-      "direction": "up"
+      "map": "MAP_PENINSULA_W",
+      "offset": 23,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -763,6 +763,9 @@
 #define MAP_WILLOW_EAST           (55 | (35 << 8))
 #define MAP_FOOTBALL_FIELD        (56 | (35 << 8))
 #define MAP_GATO_CITY_AVENUES     (57 | (35 << 8))
+#define MAP_PENNINSULA_E          (58 | (35 << 8))
+#define MAP_PENINSULA_W           (59 | (35 << 8))
+#define MAP_MARE_WWW              (60 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))

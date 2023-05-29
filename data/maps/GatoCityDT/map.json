@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_GATO_CITY",
-      "offset": -4,
+      "offset": 0,
       "direction": "left"
     },
     {

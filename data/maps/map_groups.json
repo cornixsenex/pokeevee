@@ -795,7 +795,10 @@
     "Willow",
     "WillowEast",
     "FootballField",
-    "GatoCityAvenues"
+    "GatoCityAvenues",
+    "PenninsulaE",
+    "PeninsulaW",
+    "MareWWW"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

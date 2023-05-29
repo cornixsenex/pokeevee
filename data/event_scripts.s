@@ -1403,3 +1403,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/LogicPuzzle/scripts.inc"
 
 	.include "data/maps/GatoCityAvenues/scripts.inc"
+
+	.include "data/maps/PenninsulaE/scripts.inc"
+
+	.include "data/maps/PeninsulaW/scripts.inc"
+
+	.include "data/maps/MareWWW/scripts.inc"

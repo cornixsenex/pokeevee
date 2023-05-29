@@ -4565,7 +4565,7 @@
       "id": "LAYOUT_CITY_CLARA",
       "name": "CityClara_Layout",
       "width": 88,
-      "height": 64,
+      "height": 75,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CityClara",
       "border_filepath": "data/layouts/CityClara/border.bin",
@@ -4614,8 +4614,8 @@
     {
       "id": "LAYOUT_SROUTE18",
       "name": "SRoute18_Layout",
-      "width": 56,
-      "height": 127,
+      "width": 53,
+      "height": 135,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/SRoute18/border.bin",
@@ -4634,7 +4634,7 @@
     {
       "id": "LAYOUT_SROUTE19",
       "name": "SRoute19_Layout",
-      "width": 24,
+      "width": 27,
       "height": 84,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
@@ -4704,7 +4704,7 @@
     {
       "id": "LAYOUT_MARE_C",
       "name": "MareC_Layout",
-      "width": 126,
+      "width": 124,
       "height": 56,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
@@ -4725,7 +4725,7 @@
       "id": "LAYOUT_GATO_CITY",
       "name": "GatoCity_Layout",
       "width": 56,
-      "height": 56,
+      "height": 52,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BigCity",
       "border_filepath": "data/layouts/GatoCity/border.bin",
@@ -4814,7 +4814,7 @@
     {
       "id": "LAYOUT_BIKE_MAP_E",
       "name": "BikeMapE_Layout",
-      "width": 126,
+      "width": 133,
       "height": 48,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
@@ -4835,7 +4835,7 @@
       "id": "LAYOUT_BIKE_ROUTE_NE",
       "name": "BikeRouteNE_Layout",
       "width": 96,
-      "height": 23,
+      "height": 37,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/BikeRouteNE/border.bin",
@@ -4954,7 +4954,7 @@
     {
       "id": "LAYOUT_MARE_WW",
       "name": "MareWW_Layout",
-      "width": 126,
+      "width": 39,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -5730,6 +5730,36 @@
       "secondary_tileset": "gTileset_gatosouth",
       "border_filepath": "data/layouts/GatoCityAvenues/border.bin",
       "blockdata_filepath": "data/layouts/GatoCityAvenues/map.bin"
+    },
+    {
+      "id": "LAYOUT_PENNINSULA_E",
+      "name": "PenninsulaE_Layout",
+      "width": 82,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/PenninsulaE/border.bin",
+      "blockdata_filepath": "data/layouts/PenninsulaE/map.bin"
+    },
+    {
+      "id": "LAYOUT_PENINSULA_W",
+      "name": "PeninsulaW_Layout",
+      "width": 49,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/PeninsulaW/border.bin",
+      "blockdata_filepath": "data/layouts/PeninsulaW/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_WWW",
+      "name": "MareWWW_Layout",
+      "width": 120,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/MareWWW/border.bin",
+      "blockdata_filepath": "data/layouts/MareWWW/map.bin"
     }
   ]
 }
