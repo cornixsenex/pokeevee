@@ -798,7 +798,9 @@
     "GatoCityAvenues",
     "PenninsulaE",
     "PeninsulaW",
-    "MareWWW"
+    "MareWWW",
+    "BikeRouteNW",
+    "BikeRouteNNW"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

@@ -15,8 +15,13 @@
   "connections": [
     {
       "map": "MAP_BIKE_MAP_W",
-      "offset": -59,
+      "offset": -113,
       "direction": "down"
+    },
+    {
+      "map": "MAP_BIKE_ROUTE_NW",
+      "offset": -25,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -1409,3 +1409,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/PeninsulaW/scripts.inc"
 
 	.include "data/maps/MareWWW/scripts.inc"
+
+	.include "data/maps/BikeRouteNW/scripts.inc"
+
+	.include "data/maps/BikeRouteNNW/scripts.inc"

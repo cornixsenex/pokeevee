@@ -4735,7 +4735,7 @@
       "id": "LAYOUT_GATO_CITY_DT",
       "name": "GatoCityDT_Layout",
       "width": 64,
-      "height": 32,
+      "height": 52,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_downtown",
       "border_filepath": "data/layouts/GatoCityDT/border.bin",
@@ -4815,7 +4815,7 @@
       "id": "LAYOUT_BIKE_MAP_E",
       "name": "BikeMapE_Layout",
       "width": 133,
-      "height": 48,
+      "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/BikeMapE/border.bin",
@@ -4925,7 +4925,7 @@
       "id": "LAYOUT_VEGAS",
       "name": "Vegas_Layout",
       "width": 48,
-      "height": 32,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_vegas",
       "border_filepath": "data/layouts/Vegas/border.bin",
@@ -5760,6 +5760,26 @@
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/MareWWW/border.bin",
       "blockdata_filepath": "data/layouts/MareWWW/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_ROUTE_NW",
+      "name": "BikeRouteNW_Layout",
+      "width": 160,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_vegas",
+      "border_filepath": "data/layouts/BikeRouteNW/border.bin",
+      "blockdata_filepath": "data/layouts/BikeRouteNW/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_ROUTE_NNW",
+      "name": "BikeRouteNNW_Layout",
+      "width": 32,
+      "height": 84,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_vegas",
+      "border_filepath": "data/layouts/BikeRouteNNW/border.bin",
+      "blockdata_filepath": "data/layouts/BikeRouteNNW/map.bin"
     }
   ]
 }
