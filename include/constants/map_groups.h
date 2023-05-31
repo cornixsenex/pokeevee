@@ -66,6 +66,7 @@
 #define MAP_GATO_CITY_ZOO            (57 | (0 << 8))
 #define MAP_BIKE_ROUTE_NWS           (58 | (0 << 8))
 #define MAP_ARDOR_UNI_GEOMETRY_CLASS (59 | (0 << 8))
+#define MAP_TUCSON                   (60 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

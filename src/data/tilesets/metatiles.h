@@ -319,3 +319,6 @@ const u16 gMetatileAttributes_Hospital[] = INCBIN_U16("data/tilesets/primary/hos
 
 const u16 gMetatiles_SaltySpitoon[] = INCBIN_U16("data/tilesets/secondary/salty_spitoon/metatiles.bin");
 const u16 gMetatileAttributes_SaltySpitoon[] = INCBIN_U16("data/tilesets/secondary/salty_spitoon/metatile_attributes.bin");
+
+const u16 gMetatiles_Tucson[] = INCBIN_U16("data/tilesets/secondary/tucson/metatiles.bin");
+const u16 gMetatileAttributes_Tucson[] = INCBIN_U16("data/tilesets/secondary/tucson/metatile_attributes.bin");

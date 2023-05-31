@@ -5780,6 +5780,16 @@
       "secondary_tileset": "gTileset_vegas",
       "border_filepath": "data/layouts/BikeRouteNNW/border.bin",
       "blockdata_filepath": "data/layouts/BikeRouteNNW/map.bin"
+    },
+    {
+      "id": "LAYOUT_TUCSON",
+      "name": "Tucson_Layout",
+      "width": 127,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Tucson",
+      "border_filepath": "data/layouts/Tucson/border.bin",
+      "blockdata_filepath": "data/layouts/Tucson/map.bin"
     }
   ]
 }

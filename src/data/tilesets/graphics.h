@@ -2082,3 +2082,22 @@ const u16 gTilesetPalettes_SaltySpitoon[][16] =
 };
 
 const u32 gTilesetTiles_SaltySpitoon[] = INCBIN_U32("data/tilesets/secondary/salty_spitoon/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Tucson[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/tucson/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Tucson[] = INCBIN_U32("data/tilesets/secondary/tucson/tiles.4bpp.lz");
