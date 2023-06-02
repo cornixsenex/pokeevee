@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_BIKE_ROUTE_GATO_N",
-      "offset": -31,
+      "offset": 15,
       "direction": "right"
     }
   ],

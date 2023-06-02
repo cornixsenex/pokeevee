@@ -801,7 +801,8 @@
     "PeninsulaW",
     "MareWWW",
     "BikeRouteNW",
-    "BikeRouteNNW"
+    "BikeRouteNNW",
+    "MountainPath"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

@@ -4695,7 +4695,7 @@
       "id": "LAYOUT_MARE_E",
       "name": "MareE_Layout",
       "width": 115,
-      "height": 56,
+      "height": 57,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/MareE/border.bin",
@@ -4874,8 +4874,8 @@
     {
       "id": "LAYOUT_ROUTE14",
       "name": "Route14_Layout",
-      "width": 64,
-      "height": 32,
+      "width": 69,
+      "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/Route14/border.bin",
@@ -5790,6 +5790,16 @@
       "secondary_tileset": "gTileset_Tucson",
       "border_filepath": "data/layouts/Tucson/border.bin",
       "blockdata_filepath": "data/layouts/Tucson/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOUNTAIN_PATH",
+      "name": "MountainPath_Layout",
+      "width": 145,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Tucson",
+      "border_filepath": "data/layouts/MountainPath/border.bin",
+      "blockdata_filepath": "data/layouts/MountainPath/map.bin"
     }
   ]
 }

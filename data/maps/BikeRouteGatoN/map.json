@@ -25,7 +25,7 @@
     },
     {
       "map": "MAP_GRAVEYARD",
-      "offset": 31,
+      "offset": -15,
       "direction": "left"
     },
     {

@@ -769,6 +769,7 @@
 #define MAP_MARE_WWW              (60 | (35 << 8))
 #define MAP_BIKE_ROUTE_NW         (61 | (35 << 8))
 #define MAP_BIKE_ROUTE_NNW        (62 | (35 << 8))
+#define MAP_MOUNTAIN_PATH         (63 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))

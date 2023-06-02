@@ -1,12 +1,12 @@
 {
-  "id": "MAP_TUCSON",
-  "name": "Tucson",
-  "layout": "LAYOUT_TUCSON",
+  "id": "MAP_MOUNTAIN_PATH",
+  "name": "MountainPath",
+  "layout": "LAYOUT_MOUNTAIN_PATH",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_CITY",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_FOOTBALL_FIELD",
-      "offset": 0,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_MOUNTAIN_PATH",
+      "map": "MAP_ROUTE14",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_TUCSON",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

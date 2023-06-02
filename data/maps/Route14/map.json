@@ -15,8 +15,13 @@
   "connections": [
     {
       "map": "MAP_SLABS",
-      "offset": 17,
+      "offset": 22,
       "direction": "down"
+    },
+    {
+      "map": "MAP_MOUNTAIN_PATH",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

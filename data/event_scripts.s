@@ -1415,3 +1415,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/BikeRouteNNW/scripts.inc"
 
 	.include "data/maps/Tucson/scripts.inc"
+
+	.include "data/maps/MountainPath/scripts.inc"
