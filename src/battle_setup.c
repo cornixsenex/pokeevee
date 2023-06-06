@@ -733,7 +733,7 @@ static u16 GetSumOfPlayerPartyLevel(u8 numMons)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        u32 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2);
+        u32 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
 
         if (species != SPECIES_EGG && species != SPECIES_NONE && GetMonData(&gPlayerParty[i], MON_DATA_HP) != 0)
         {
@@ -747,21 +747,59 @@ static u16 GetSumOfPlayerPartyLevel(u8 numMons)
 
 static u8 GetSumOfEnemyPartyLevel(u16 opponentId, u8 numMons)
 {
-    const struct TrainerMon *party;
     u8 i;
     u8 sum;
     u32 count = numMons;
-
-    party = gTrainers[opponentId].party.TrainerMon;
 
     if (gTrainers[opponentId].partySize < count)
         count = gTrainers[opponentId].partySize;
 
     sum = 0;
 
-    for (i = 0; i < count; i++)
-        sum += party[i].lvl;
-    
+    switch (gTrainers[opponentId].partyFlags)
+    {
+    case 0:
+        {
+            const struct TrainerMonNoItemDefaultMoves *party;
+            party = gTrainers[opponentId].party.NoItemDefaultMoves;
+            for (i = 0; i < count; i++)
+                sum += party[i].lvl;
+        }
+        break;
+    case F_TRAINER_PARTY_CUSTOM_MOVESET:
+        {
+            const struct TrainerMonNoItemCustomMoves *party;
+            party = gTrainers[opponentId].party.NoItemCustomMoves;
+            for (i = 0; i < count; i++)
+                sum += party[i].lvl;
+        }
+        break;
+    case F_TRAINER_PARTY_HELD_ITEM:
+        {
+            const struct TrainerMonItemDefaultMoves *party;
+            party = gTrainers[opponentId].party.ItemDefaultMoves;
+            for (i = 0; i < count; i++)
+                sum += party[i].lvl;
+        }
+        break;
+    case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
+        {
+            const struct TrainerMonItemCustomMoves *party;
+            party = gTrainers[opponentId].party.ItemCustomMoves;
+            for (i = 0; i < count; i++)
+                sum += party[i].lvl;
+        }
+        break;
+    case F_TRAINER_PARTY_EVERYTHING_CUSTOMIZED:
+        {
+            const struct TrainerMonCustomized *party;
+            party = gTrainers[opponentId].party.EverythingCustomized;
+            for (i = 0; i < count; i++)
+                sum += party[i].lvl;
+        }
+        break;
+    }
+
     return sum;
 }
 
