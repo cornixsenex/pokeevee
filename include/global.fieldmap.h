@@ -63,11 +63,14 @@ struct BackupMapLayout
     u16 *map;
 };
 
+//DO NOTE THIS IS CHANGED FOR OVERWORLD EXPANSION CUIDADO PORFA
 struct ObjectEventTemplate
 {
     /*0x00*/ u8 localId;
     /*0x01*/ u16 graphicsId;
-    /*0x03*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
+	//DO NOTE THIS IS REMOVED FOR OVERWORLD EXPANSION
+    /*0x03*/ /*u8 kind;*/ // Always OBJ_KIND_NORMAL in Emerald.
+	//DID YOU NOTE ABOVE
     /*0x04*/ s16 x;
     /*0x06*/ s16 y;
     /*0x08*/ u8 elevation;
@@ -81,6 +84,7 @@ struct ObjectEventTemplate
     /*0x14*/ u16 flagId;
     /*0x16*/ //u8 padding3[2];
 };
+//DID YOU NOTE ABOVE?
 
 
 struct WarpEvent

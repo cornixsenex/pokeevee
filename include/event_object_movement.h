@@ -440,7 +440,7 @@ u32 MovementType_ChasePlayer_Step2(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChasePlayer_Step3(struct ObjectEvent *, struct Sprite *);
 
 
-u8 CreateVirtualObject(u8 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction);
+u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction);
 void TurnVirtualObject(u8 virtualObjId, u8 direction);
 void SetVirtualObjectGraphics(u8 virtualObjId, u16 graphicsId);
 void SetVirtualObjectInvisibility(u8 virtualObjId, bool32 invisible);
