@@ -139,24 +139,25 @@ script LoonixGiftHouse_MewFanfare {
 script LoonixGiftHouse_Item_Kind_Bud {
 	lock
 	faceplayer
-	checkitem (ITEM_KIND_BUD, 1)
-	if (var(VAR_RESULT) == 0) {
-		msgbox (LoonixGiftHouse_Kind_Bud_Find)
-		checkitemspace (ITEM_KIND_BUD, 1)
-		if (var(VAR_RESULT) == 1) {
-			giveitem (ITEM_KIND_BUD)
-		} else {
-			goto (Common_EventScript_ShowBagIsFull)
-		}
-	} else {
-		msgbox (LoonixGiftHouse_Item_Kind_Bud_Deny)
-	}		
+	giveitem (ITEM_POTION)
+	//checkitem (ITEM_KIND_BUD, 1)
+	//if (var(VAR_RESULT) == 0) {
+	//	msgbox (LoonixGiftHouse_Kind_Bud_Find)
+	//	checkitemspace (ITEM_KIND_BUD, 1)
+	//	if (var(VAR_RESULT) == 1) {
+	//		giveitem (ITEM_ANCIENT_LAMP)
+	//	} else {
+	//		goto (Common_EventScript_ShowBagIsFull)
+	//	}
+	//} else {
+	//	msgbox (LoonixGiftHouse_Item_Kind_Bud_Deny)
+	//}		
 	release
 	end	
 }
 
 text LoonixGiftHouse_Kind_Bud_Find {
-	format("Hey! Looks like Dad left his bag here. What's this?")
+	format("GIVEITEM ITEM_POTION")
 }
 
 text LoonixGiftHouse_Item_Kind_Bud_Deny {

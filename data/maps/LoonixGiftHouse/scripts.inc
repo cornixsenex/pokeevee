@@ -169,30 +169,13 @@ LoonixGiftHouse_MewFanfare::
 LoonixGiftHouse_Item_Kind_Bud::
 	lock
 	faceplayer
-	checkitem ITEM_KIND_BUD, 1
-	compare VAR_RESULT, 0
-	goto_if_eq LoonixGiftHouse_Item_Kind_Bud_2
-	msgbox LoonixGiftHouse_Item_Kind_Bud_Deny
-LoonixGiftHouse_Item_Kind_Bud_1:
+	giveitem ITEM_POTION
 	release
 	end
 
-LoonixGiftHouse_Item_Kind_Bud_2:
-	msgbox LoonixGiftHouse_Kind_Bud_Find
-	checkitemspace ITEM_KIND_BUD, 1
-	compare VAR_RESULT, 1
-	goto_if_eq LoonixGiftHouse_Item_Kind_Bud_5
-	goto Common_EventScript_ShowBagIsFull
-	goto LoonixGiftHouse_Item_Kind_Bud_1
-
-LoonixGiftHouse_Item_Kind_Bud_5:
-	giveitem ITEM_KIND_BUD
-	goto LoonixGiftHouse_Item_Kind_Bud_1
-
 
 LoonixGiftHouse_Kind_Bud_Find::
-	.string "Hey! Looks like Dad left his bag here.\n"
-	.string "What's this?$"
+	.string "GIVEITEM ITEM_POTION$"
 
 LoonixGiftHouse_Item_Kind_Bud_Deny::
 	.string "I've already got enough to smoke.\n"
