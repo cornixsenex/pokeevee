@@ -79,8 +79,6 @@
 #define METATILE_BattlePyramid_FloorPit        0x2A9
 #define METATILE_BattlePyramid_FloorPitBorder  0x2A8
 #define METATILE_BattlePyramid_NormalFloor     0x2AA
-#define METATILE_BattlePyramid_Exit            0x28E
-#define METATILE_BattlePyramid_Floor           0x28D
 
 // gTileset_BattleTent
 #define METATILE_BattleTent_Door  0x26B
@@ -483,7 +481,6 @@
 #define METATILE_SecretBase_BigPlant_TopLeftWall        0x2E5
 #define METATILE_SecretBase_BigPlant_TopRight           0x2E6
 #define METATILE_SecretBase_BigPlant_TopRightWall       0x2E6
-#define METATILE_SecretBase_BigPlant_TopRight           0x2E6
 #define METATILE_SecretBase_BlueBalloon                 0x33C
 #define METATILE_SecretBase_BlueBrick_Bottom            0x22F
 #define METATILE_SecretBase_BlueBrick_Top               0x227

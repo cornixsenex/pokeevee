@@ -12,3 +12,15 @@ script Route14_OnResume {
 	setstepcallback (STEP_CB_ASH)
 	end
 }
+
+script Route14_EventScript_TestBattle {
+	lock
+	msgbox("Test Battle!")
+	closemessage
+	trainerbattle_no_intro(TRAINER_UNI_GEOLOGY, Ardor_Uni_GeologyClass_Text_TeacherBattleLost)
+	msgbox("Battle Done")
+	closemessage
+	release
+	end
+}
+
