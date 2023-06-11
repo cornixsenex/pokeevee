@@ -1,2 +1,12 @@
 MountainPath_MapScripts::
 	.byte 0
+
+
+MountainPath_EventScript_TestTrigger::
+	lock
+	setvar VAR_TEMP_0, 54
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	release
+	end
+
