@@ -10,3 +10,19 @@ MountainPath_EventScript_TestTrigger::
 	release
 	end
 
+
+MountainPath_EventScript_SandstormTrigger::
+	setvar VAR_TEMP_0, 1
+	setweather WEATHER_SANDSTORM
+	fadenewbgm MUS_DESERT
+	doweather
+	end
+
+
+MountainPath_EventScript_SunTrigger::
+	setvar VAR_TEMP_0, 0
+	setweather WEATHER_SUNNY
+	fadenewbgm MUS_ABANDONED_SHIP
+	doweather
+	end
+
