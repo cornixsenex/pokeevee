@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE4",
-      "offset": 46,
-      "direction": "down"
-    },
-    {
       "map": "MAP_DOAK_TOWN",
       "offset": -20,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE4",
+      "offset": 46,
+      "direction": "down"
     }
   ],
   "object_events": [
