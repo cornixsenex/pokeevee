@@ -1417,3 +1417,27 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Tucson/scripts.inc"
 
 	.include "data/maps/MountainPath/scripts.inc"
+
+	.include "data/maps/MareS1/scripts.inc"
+
+	.include "data/maps/MareS2/scripts.inc"
+
+	.include "data/maps/MareS3/scripts.inc"
+
+	.include "data/maps/MareS4/scripts.inc"
+
+	.include "data/maps/MareS5/scripts.inc"
+
+	.include "data/maps/MareS6/scripts.inc"
+
+	.include "data/maps/BigIslandN/scripts.inc"
+
+	.include "data/maps/BigIslandS/scripts.inc"
+
+	.include "data/maps/MareS7/scripts.inc"
+
+	.include "data/maps/MareS8/scripts.inc"
+
+	.include "data/maps/MareS9/scripts.inc"
+
+	.include "data/maps/MareS10/scripts.inc"

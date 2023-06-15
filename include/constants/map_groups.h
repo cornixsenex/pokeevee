@@ -770,6 +770,18 @@
 #define MAP_BIKE_ROUTE_NW         (61 | (35 << 8))
 #define MAP_BIKE_ROUTE_NNW        (62 | (35 << 8))
 #define MAP_MOUNTAIN_PATH         (63 | (35 << 8))
+#define MAP_MARE_S1               (64 | (35 << 8))
+#define MAP_MARE_S2               (65 | (35 << 8))
+#define MAP_MARE_S3               (66 | (35 << 8))
+#define MAP_MARE_S4               (67 | (35 << 8))
+#define MAP_MARE_S5               (68 | (35 << 8))
+#define MAP_MARE_S6               (69 | (35 << 8))
+#define MAP_BIG_ISLAND_N          (70 | (35 << 8))
+#define MAP_BIG_ISLAND_S          (71 | (35 << 8))
+#define MAP_MARE_S7               (72 | (35 << 8))
+#define MAP_MARE_S8               (73 | (35 << 8))
+#define MAP_MARE_S9               (74 | (35 << 8))
+#define MAP_MARE_S10              (75 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))

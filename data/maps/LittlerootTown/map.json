@@ -16,13 +16,13 @@
     {
       "map": "MAP_ROUTE101",
       "offset": 0,
-	  "direction": "up"
-	},
+      "direction": "up"
+    },
     {
       "map": "MAP_LOONIX",
       "offset": 5,
-	  "direction": "down"
-	}
+      "direction": "down"
+    }
   ],
   "object_events": [
     {

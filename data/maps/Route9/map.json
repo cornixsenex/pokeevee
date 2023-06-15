@@ -15,12 +15,12 @@
   "connections": [
     {
       "map": "MAP_ROUTE7",
-      "offset": -32,
+      "offset": -40,
       "direction": "left"
     },
     {
       "map": "MAP_ELICIUS_BEACH",
-      "offset": 22,
+      "offset": 14,
       "direction": "right"
     }
   ],

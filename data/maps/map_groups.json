@@ -802,7 +802,19 @@
     "MareWWW",
     "BikeRouteNW",
     "BikeRouteNNW",
-    "MountainPath"
+    "MountainPath",
+    "MareS1",
+    "MareS2",
+    "MareS3",
+    "MareS4",
+    "MareS5",
+    "MareS6",
+    "BigIslandN",
+    "BigIslandS",
+    "MareS7",
+    "MareS8",
+    "MareS9",
+    "MareS10"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

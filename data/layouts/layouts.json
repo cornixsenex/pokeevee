@@ -4657,7 +4657,7 @@
       "width": 72,
       "height": 32,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route9/border.bin",
       "blockdata_filepath": "data/layouts/Route9/map.bin"
     },
@@ -4695,7 +4695,7 @@
       "id": "LAYOUT_MARE_E",
       "name": "MareE_Layout",
       "width": 115,
-      "height": 57,
+      "height": 58,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/MareE/border.bin",
@@ -4705,7 +4705,7 @@
       "id": "LAYOUT_MARE_C",
       "name": "MareC_Layout",
       "width": 124,
-      "height": 56,
+      "height": 58,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/MareC/border.bin",
@@ -5800,6 +5800,126 @@
       "secondary_tileset": "gTileset_Tucson",
       "border_filepath": "data/layouts/MountainPath/border.bin",
       "blockdata_filepath": "data/layouts/MountainPath/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S1",
+      "name": "MareS1_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS1/border.bin",
+      "blockdata_filepath": "data/layouts/MareS1/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S2",
+      "name": "MareS2_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS2/border.bin",
+      "blockdata_filepath": "data/layouts/MareS2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S3",
+      "name": "MareS3_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS3/border.bin",
+      "blockdata_filepath": "data/layouts/MareS3/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S4",
+      "name": "MareS4_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS4/border.bin",
+      "blockdata_filepath": "data/layouts/MareS4/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S5",
+      "name": "MareS5_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS5/border.bin",
+      "blockdata_filepath": "data/layouts/MareS5/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S6",
+      "name": "MareS6_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS6/border.bin",
+      "blockdata_filepath": "data/layouts/MareS6/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIG_ISLAND_N",
+      "name": "BigIslandN_Layout",
+      "width": 164,
+      "height": 43,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_DewfordVanilla",
+      "border_filepath": "data/layouts/BigIslandN/border.bin",
+      "blockdata_filepath": "data/layouts/BigIslandN/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIG_ISLAND_S",
+      "name": "BigIslandS_Layout",
+      "width": 123,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/BigIslandS/border.bin",
+      "blockdata_filepath": "data/layouts/BigIslandS/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S7",
+      "name": "MareS7_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS7/border.bin",
+      "blockdata_filepath": "data/layouts/MareS7/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S8",
+      "name": "MareS8_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS8/border.bin",
+      "blockdata_filepath": "data/layouts/MareS8/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S9",
+      "name": "MareS9_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS9/border.bin",
+      "blockdata_filepath": "data/layouts/MareS9/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARE_S10",
+      "name": "MareS10_Layout",
+      "width": 86,
+      "height": 86,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MareS10/border.bin",
+      "blockdata_filepath": "data/layouts/MareS10/map.bin"
     }
   ]
 }

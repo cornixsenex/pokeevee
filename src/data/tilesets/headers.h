@@ -1088,3 +1088,14 @@ const struct Tileset gTileset_Tucson =
     .metatileAttributes = gMetatileAttributes_Tucson,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_DewfordVanilla =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_DewfordVanilla,
+    .palettes = gTilesetPalettes_DewfordVanilla,
+    .metatiles = gMetatiles_DewfordVanilla,
+    .metatileAttributes = gMetatileAttributes_DewfordVanilla,
+    .callback = NULL,
+};

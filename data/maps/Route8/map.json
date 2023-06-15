@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE7",
-      "offset": 6,
-      "direction": "up"
-    },
-    {
       "map": "MAP_FORT_MONTGOMERY",
       "offset": 24,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE7",
+      "offset": 6,
+      "direction": "up"
     }
   ],
   "object_events": [

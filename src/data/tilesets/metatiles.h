@@ -322,3 +322,6 @@ const u16 gMetatileAttributes_SaltySpitoon[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_Tucson[] = INCBIN_U16("data/tilesets/secondary/tucson/metatiles.bin");
 const u16 gMetatileAttributes_Tucson[] = INCBIN_U16("data/tilesets/secondary/tucson/metatile_attributes.bin");
+
+const u16 gMetatiles_DewfordVanilla[] = INCBIN_U16("data/tilesets/secondary/dewford_vanilla/metatiles.bin");
+const u16 gMetatileAttributes_DewfordVanilla[] = INCBIN_U16("data/tilesets/secondary/dewford_vanilla/metatile_attributes.bin");
