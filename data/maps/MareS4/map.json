@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_MARE_S3",
-      "offset": 0,
-      "direction": "right"
-    },
-    {
       "map": "MAP_MARE_S5",
       "offset": 0,
       "direction": "left"
@@ -26,6 +21,21 @@
     {
       "map": "MAP_MARE_S8",
       "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S7",
+      "offset": 86,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S3",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_S9",
+      "offset": -86,
       "direction": "down"
     }
   ],

@@ -17,6 +17,16 @@
       "map": "MAP_MARE_S5",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_S9",
+      "offset": 86,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S10",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [

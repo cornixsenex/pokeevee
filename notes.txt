@@ -2,8 +2,14 @@
 	>Open the Makefile, REMOVE the -p argument in the line where gbafix is called, build a ROM and then check the properties of the file.
 
 
-
-
+#Want to skip the intro?
+	>src/intro.c
+	>include main_menu.h
+	>CB2_InitCopyrightScreenAfterBootup:
+    --	if (!SetUpCopyrightScreen())
+	++  if (gMain.state == 0)
+	>At end of same function add
+	++  CB2_InitMainMenu
 
 #How to import music (my method)
 	>Find or produce .midi

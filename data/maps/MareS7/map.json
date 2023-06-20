@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_BIG_ISLAND_N",
-      "offset": 0,
-      "direction": "right"
+      "map": "MAP_MARE_S4",
+      "offset": -86,
+      "direction": "up"
     },
     {
       "map": "MAP_MARE_S8",
@@ -27,6 +27,16 @@
       "map": "MAP_MARE_S3",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S2",
+      "offset": 86,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_BIG_ISLAND_N",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
