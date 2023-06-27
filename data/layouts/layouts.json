@@ -5867,7 +5867,7 @@
       "width": 164,
       "height": 43,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_DewfordVanilla",
+      "secondary_tileset": "gTileset_BigIsland",
       "border_filepath": "data/layouts/BigIslandN/border.bin",
       "blockdata_filepath": "data/layouts/BigIslandN/map.bin"
     },

@@ -325,3 +325,6 @@ const u16 gMetatileAttributes_Tucson[] = INCBIN_U16("data/tilesets/secondary/tuc
 
 const u16 gMetatiles_DewfordVanilla[] = INCBIN_U16("data/tilesets/secondary/dewford_vanilla/metatiles.bin");
 const u16 gMetatileAttributes_DewfordVanilla[] = INCBIN_U16("data/tilesets/secondary/dewford_vanilla/metatile_attributes.bin");
+
+const u16 gMetatiles_BigIsland[] = INCBIN_U16("data/tilesets/secondary/big_island/metatiles.bin");
+const u16 gMetatileAttributes_BigIsland[] = INCBIN_U16("data/tilesets/secondary/big_island/metatile_attributes.bin");
