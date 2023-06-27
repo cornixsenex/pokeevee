@@ -25,6 +25,19 @@ mapscripts Route4_MapScripts {}
 	//Refuses to leave his ship until Patrokoles falls
 //Ulysses
 	//Feigning madness at home, then must be guided to Nestor after getting lost many times
+		//Odyssey:
+			//  1: Lotus Eaters - Bring lotus to go for him
+			//  2: Cyclops - Help him escape from the cave
+			//  3: Circe - Use Moly to cure the swine and learn from the men how to infiltrate her castle
+			//  4: Shades - Sacrifice to the shades?
+			//  5: Sirens - defeat the sirens so they stop singing
+			//  6: Scylla and Charybdis - Defeat the monsters
+			//  7: Helios Cattle... shipwreck? He needs a new sail, or bag of winds
+			//  8: Calypso - defeat calypso
+			//  9: Atlantis? The fast ships of utopia
+			// 10: Swineherd - needs a loaf of bread to eat
+			// 11: Beggar - asks for money, if you give him instead a brooch from his wife he becomes enraged and attacks.
+			// 12: Battle
 //Agamemnon
 	//Under the spell of Clytemnestra, needs Oresetes help to recover. Orestes, pursued by the 3 ghosts runs madly through the forest. Once the furies are vanquished he will show you the secret way into Agamemnon's palace where you together battle Clytemnestra and Aegisthus. Once defeated the spell is broken and Agamemnon is freed from the spell. Orestes' ghost re-appear to torment him for his deed. They can be defeated again and he will return to be at peace in the house of Agamemnon.
 //Menelaus
@@ -36,7 +49,7 @@ mapscripts Route4_MapScripts {}
 //Teucer
 	//Failed at the GD concert, will leave after the music stops
 //Philoctetes
-	//Stranded on the Big island in the middle of the jungle, injured foot he needs medicine
+	//Stranded on the Big island in the middle of the jungle, injured foot he needs medicine. He hides in a shack deep in the jungle of Big Island. He tells you to stay back, attacks when you get near, then tells his tale. Abandoned there to die and in desperate need of medicine. Bring him the medicine and he will depart
 //Tiresies / calchas
 	//With Oedipus, will leave after odipus does his thing
 
@@ -45,8 +58,8 @@ mapscripts Route4_MapScripts {}
 //Alexandros
 	//In hiding with his beloved helen. A wild bull attacks which he yokes, the people exclaim that none but the great Alexandros, prince paris, could have done such a thing. When confronted he immediately goes to Nestor in fear. Helen attacks refusing to return to her husband but relents after defeat.
 //Aeneis
-	//Must found the great city of Rome. 
-	//On the shore searching for his twin boys, won't leave until he knows they are safe, find them in the cave, defeat the wolf, teleport back to Aeneis he is happy but now realizes he can't leave the boys alone either. Bring Faustulus.
+	//On Lavinian shores! Arms and the boys of whom I cry!
+	//Aeneis recognizes the authority of Nestor and wishes to return but admits his obligation to the pythia who told him to found a city here, and to his family, is higher. On the shore Aeneis runs up and down saying his twin grandsons have gone missing for days. He and his son, Faustulus, don't have much hope but he refuses to rest until they are found. In the Lupercal Cave (deep?) you find the boys and the wolf. Upon approach the boys retread and mama approaches. She growls as you approach and if you get too close she attacks. After being defeated or captured Faustulus will enter and exclaim with joy at the discover of his boys and bring them home where you will find Aeneis ready to meet Nestory. Faustulus makes some joke about how the twins are constantly fighting with eachother but that the auspices are good, a great city will be built and his descendants shall inherit the earth.
 
 
 //Theseus - something underground minotaur
