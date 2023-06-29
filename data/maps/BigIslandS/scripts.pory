@@ -1,1 +1,13 @@
-mapscripts BigIslandS_MapScripts {}
+mapscripts BigIslandS_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (BigIslandS_OnResume)
+	}
+
+}
+
+
+script BigIslandS_OnResume {
+	setstepcallback (STEP_CB_ASH)
+	end
+}
