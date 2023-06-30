@@ -46,11 +46,11 @@ mapscripts Route4_MapScripts {}
 	//Has gone mad, butchered a flock of sheep and found somewhere contemplating suicide
 //Diomedes
 	//The greatest racer in the hippodrome must be defeated in a race
-//Teucer
+//Teucer / Lesser Aias
 	//Failed at the GD concert, will leave after the music stops
 //Philoctetes
 	//Stranded on the Big island in the middle of the jungle, injured foot he needs medicine. He hides in a shack deep in the jungle of Big Island. He tells you to stay back, attacks when you get near, then tells his tale. Abandoned there to die and in desperate need of medicine. Bring him the medicine and he will depart
-//Tiresies / calchas
+//Tiresies / Calchas
 	//With Oedipus, will leave after odipus does his thing
 
 //Hektor
@@ -61,11 +61,6 @@ mapscripts Route4_MapScripts {}
 	//On Lavinian shores! Arms and the boys of whom I cry!
 	//Aeneis recognizes the authority of Nestor and wishes to return but admits his obligation to the pythia who told him to found a city here, and to his family, is higher. On the shore Aeneis runs up and down saying his twin grandsons have gone missing for days. He and his son, Faustulus, don't have much hope but he refuses to rest until they are found. In the Lupercal Cave (deep?) you find the boys and the wolf. Upon approach the boys retread and mama approaches. She growls as you approach and if you get too close she attacks. After being defeated or captured Faustulus will enter and exclaim with joy at the discover of his boys and bring them home where you will find Aeneis ready to meet Nestory. Faustulus makes some joke about how the twins are constantly fighting with eachother but that the auspices are good, a great city will be built and his descendants shall inherit the earth.
 
-
-//Theseus - something underground minotaur
-//Perseus - monster head turns victims to stone
-//Orpheus - flute to lull cerberus to sleep
-//Jason   - out on a boat - golden fleece
 
 //12 trials
 //defeat nemean lion
@@ -80,6 +75,33 @@ mapscripts Route4_MapScripts {}
 //catpure cattle
 //steal 3 golden apples
 //capture ceberus
+
+
+// *Catalogue of other myths*
+//Theseus - something underground minotaur
+//Perseus - monster head turns victims to stone
+//Orpheus - flute to lull cerberus to sleep
+//Jason   - out on a boat - golden fleece
+//Atlas
+//Belerophon
+//Daedalus and Icarus
+//Minos
+//Narcissus
+//Proteus
+//Prometheus
+//Cadmus
+//Pyramus and Thisbe
+//Muses
+//Persephone / Proserpine
+//Pygmalion (statue lover)
+//Io and Zeus
+//Phaethon
+//Danaides / Amazonians
+//Calydonian Boar Hunt
+//Asclepius (Doctor who ressurected the dead)
+//Castor and Pollux - Dioscuri
+//Meleager and Althea (Son kills brothers, mother kills son)
+//Oedipus (Sphinx, tradgedy, blidning, 7 against thebes)
 
 //UpdatePerDay
 //ClearDailyFlags
