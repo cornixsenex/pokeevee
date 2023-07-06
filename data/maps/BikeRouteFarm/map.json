@@ -1,12 +1,12 @@
 {
-  "id": "MAP_BIKE_MAP_E",
-  "name": "BikeMapE",
-  "layout": "LAYOUT_BIKE_MAP_E",
+  "id": "MAP_BIKE_ROUTE_FARM",
+  "name": "BikeRouteFarm",
+  "layout": "LAYOUT_BIKE_ROUTE_FARM",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ROUTE_120",
+  "region_map_section": "MAPSEC_ROUTE_126",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -15,18 +15,13 @@
   "connections": [
     {
       "map": "MAP_BIKE_MAP_W",
-      "offset": 2,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_BIKE_ROUTE_NE",
-      "offset": 102,
+      "offset": -114,
       "direction": "up"
     },
     {
-      "map": "MAP_BIKE_ROUTE_FARM",
-      "offset": -46,
-      "direction": "down"
+      "map": "MAP_BIKE_MAP_E",
+      "offset": 46,
+      "direction": "up"
     }
   ],
   "object_events": [

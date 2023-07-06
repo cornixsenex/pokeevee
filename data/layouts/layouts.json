@@ -5920,6 +5920,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/MareS10/border.bin",
       "blockdata_filepath": "data/layouts/MareS10/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_ROUTE_FARM",
+      "name": "BikeRouteFarm_Layout",
+      "width": 164,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/BikeRouteFarm/border.bin",
+      "blockdata_filepath": "data/layouts/BikeRouteFarm/map.bin"
     }
   ]
 }
