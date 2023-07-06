@@ -5930,6 +5930,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/BikeRouteFarm/border.bin",
       "blockdata_filepath": "data/layouts/BikeRouteFarm/map.bin"
+    },
+    {
+      "id": "LAYOUT_FARM",
+      "name": "Farm_Layout",
+      "width": 122,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LavaridgeGym",
+      "border_filepath": "data/layouts/Farm/border.bin",
+      "blockdata_filepath": "data/layouts/Farm/map.bin"
     }
   ]
 }

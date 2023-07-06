@@ -1443,3 +1443,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/MareS10/scripts.inc"
 
 	.include "data/maps/BikeRouteFarm/scripts.inc"
+
+	.include "data/maps/Farm/scripts.inc"
