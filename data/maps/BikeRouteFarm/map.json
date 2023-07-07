@@ -27,6 +27,11 @@
       "map": "MAP_FARM",
       "offset": 36,
       "direction": "down"
+    },
+    {
+      "map": "MAP_HIPPODROME",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
