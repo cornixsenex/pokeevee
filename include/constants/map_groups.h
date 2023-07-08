@@ -785,6 +785,7 @@
 #define MAP_BIKE_ROUTE_FARM       (76 | (35 << 8))
 #define MAP_FARM                  (77 | (35 << 8))
 #define MAP_HIPPODROME            (78 | (35 << 8))
+#define MAP_TROY                  (79 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))

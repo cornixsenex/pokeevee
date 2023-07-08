@@ -1110,3 +1110,14 @@ const struct Tileset gTileset_BigIsland =
     .metatileAttributes = gMetatileAttributes_BigIsland,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Troy =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Troy,
+    .palettes = gTilesetPalettes_Troy,
+    .metatiles = gMetatiles_Troy,
+    .metatileAttributes = gMetatileAttributes_Troy,
+    .callback = NULL,
+};

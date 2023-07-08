@@ -2139,3 +2139,22 @@ const u16 gTilesetPalettes_BigIsland[][16] =
 };
 
 const u32 gTilesetTiles_BigIsland[] = INCBIN_U32("data/tilesets/secondary/big_island/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Troy[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/troy/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Troy[] = INCBIN_U32("data/tilesets/secondary/troy/tiles.4bpp.lz");

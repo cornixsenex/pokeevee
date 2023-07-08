@@ -5950,6 +5950,16 @@
       "secondary_tileset": "gTileset_LavaridgeGym",
       "border_filepath": "data/layouts/Hippodrome/border.bin",
       "blockdata_filepath": "data/layouts/Hippodrome/map.bin"
+    },
+    {
+      "id": "LAYOUT_TROY",
+      "name": "Troy_Layout",
+      "width": 37,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Troy",
+      "border_filepath": "data/layouts/Troy/border.bin",
+      "blockdata_filepath": "data/layouts/Troy/map.bin"
     }
   ]
 }

@@ -27,6 +27,11 @@
       "map": "MAP_BIKE_ROUTE_FARM",
       "offset": -46,
       "direction": "down"
+    },
+    {
+      "map": "MAP_TROY",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
