@@ -1449,3 +1449,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Hippodrome/scripts.inc"
 
 	.include "data/maps/Troy/scripts.inc"
+
+	.include "data/maps/TroyE/scripts.inc"
+
+	.include "data/maps/TroyS/scripts.inc"
+
+	.include "data/maps/HippodromeW/scripts.inc"

@@ -4755,7 +4755,7 @@
       "id": "LAYOUT_GATO_CITY_N",
       "name": "GatoCityN_Layout",
       "width": 96,
-      "height": 34,
+      "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CityNorth",
       "border_filepath": "data/layouts/GatoCityN/border.bin",
@@ -5960,6 +5960,36 @@
       "secondary_tileset": "gTileset_Troy",
       "border_filepath": "data/layouts/Troy/border.bin",
       "blockdata_filepath": "data/layouts/Troy/map.bin"
+    },
+    {
+      "id": "LAYOUT_TROY_E",
+      "name": "TroyE_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TroyE/border.bin",
+      "blockdata_filepath": "data/layouts/TroyE/map.bin"
+    },
+    {
+      "id": "LAYOUT_TROY_S",
+      "name": "TroyS_Layout",
+      "width": 18,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TroyS/border.bin",
+      "blockdata_filepath": "data/layouts/TroyS/map.bin"
+    },
+    {
+      "id": "LAYOUT_HIPPODROME_W",
+      "name": "HippodromeW_Layout",
+      "width": 6,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/HippodromeW/border.bin",
+      "blockdata_filepath": "data/layouts/HippodromeW/map.bin"
     }
   ]
 }

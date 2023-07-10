@@ -818,7 +818,10 @@
     "BikeRouteFarm",
     "Farm",
     "Hippodrome",
-    "Troy"
+    "Troy",
+    "TroyE",
+    "TroyS",
+    "HippodromeW"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

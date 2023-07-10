@@ -17,6 +17,11 @@
       "map": "MAP_BIKE_ROUTE_FARM",
       "offset": -36,
       "direction": "up"
+    },
+    {
+      "map": "MAP_HIPPODROME_W",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
