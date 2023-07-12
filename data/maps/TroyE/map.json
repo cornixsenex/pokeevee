@@ -17,6 +17,11 @@
       "map": "MAP_TROY",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_BIKE_ROUTE_NE",
+      "offset": -68,
+      "direction": "up"
     }
   ],
   "object_events": [

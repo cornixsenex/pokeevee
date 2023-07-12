@@ -22,6 +22,16 @@
       "map": "MAP_BIKE_MAP_E",
       "offset": -102,
       "direction": "down"
+    },
+    {
+      "map": "MAP_TROY",
+      "offset": 31,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_TROY_E",
+      "offset": 68,
+      "direction": "down"
     }
   ],
   "object_events": [
