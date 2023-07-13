@@ -4837,7 +4837,7 @@
       "width": 96,
       "height": 37,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Troy",
       "border_filepath": "data/layouts/BikeRouteNE/border.bin",
       "blockdata_filepath": "data/layouts/BikeRouteNE/map.bin"
     },
@@ -5967,7 +5967,7 @@
       "width": 28,
       "height": 27,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Troy",
       "border_filepath": "data/layouts/TroyE/border.bin",
       "blockdata_filepath": "data/layouts/TroyE/map.bin"
     },

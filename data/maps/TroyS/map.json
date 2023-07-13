@@ -17,6 +17,21 @@
       "map": "MAP_HIPPODROME",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_TROY",
+      "offset": -19,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_GATO_CITY",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_GATO_CITY_N",
+      "offset": -19,
+      "direction": "right"
     }
   ],
   "object_events": [

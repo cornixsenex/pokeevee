@@ -27,6 +27,21 @@
       "map": "MAP_MARE_E",
       "offset": -80,
       "direction": "down"
+    },
+    {
+      "map": "MAP_HIPPODROME",
+      "offset": 6,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_HIPPODROME_W",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_FARM",
+      "offset": -16,
+      "direction": "left"
     }
   ],
   "object_events": [
