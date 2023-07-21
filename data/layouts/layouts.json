@@ -5990,6 +5990,36 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/HippodromeW/border.bin",
       "blockdata_filepath": "data/layouts/HippodromeW/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_MAP_NE",
+      "name": "BikeMapNE_Layout",
+      "width": 64,
+      "height": 68,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BikeMapNE/border.bin",
+      "blockdata_filepath": "data/layouts/BikeMapNE/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_MAP_NNE",
+      "name": "BikeMapNNE_Layout",
+      "width": 56,
+      "height": 61,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BikeMapNNE/border.bin",
+      "blockdata_filepath": "data/layouts/BikeMapNNE/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_MAP_TUCSON",
+      "name": "BikeMapTucson_Layout",
+      "width": 134,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BikeMapTucson/border.bin",
+      "blockdata_filepath": "data/layouts/BikeMapTucson/map.bin"
     }
   ]
 }

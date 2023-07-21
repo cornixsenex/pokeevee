@@ -789,6 +789,9 @@
 #define MAP_TROY_E                (80 | (35 << 8))
 #define MAP_TROY_S                (81 | (35 << 8))
 #define MAP_HIPPODROME_W          (82 | (35 << 8))
+#define MAP_BIKE_MAP_NE           (83 | (35 << 8))
+#define MAP_BIKE_MAP_NNE          (84 | (35 << 8))
+#define MAP_BIKE_MAP_TUCSON       (85 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))
