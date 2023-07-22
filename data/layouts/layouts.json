@@ -6017,7 +6017,7 @@
       "width": 134,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Tucson",
       "border_filepath": "data/layouts/BikeMapTucson/border.bin",
       "blockdata_filepath": "data/layouts/BikeMapTucson/map.bin"
     }

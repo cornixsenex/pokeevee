@@ -17,6 +17,11 @@
       "map": "MAP_BIKE_MAP_NNE",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_TUCSON",
+      "offset": 7,
+      "direction": "up"
     }
   ],
   "object_events": [
