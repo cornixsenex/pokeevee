@@ -202,6 +202,7 @@ static const u8 sMapName_ARTISAN_CAVE[] = _("ARTISAN CAVE");
 static const u8 sMapName_MARINE_CAVE[] = _("MARINE CAVE");
 static const u8 sMapName_TERRA_CAVE[] = _("TERRA CAVE");
 static const u8 sMapName_DESERT_UNDERPASS[] = _("DESERT UNDERPASS");
+static const u8 sMapName_ELICIUS_BEACH[] = _("ELICIUS BEACH");
 static const u8 sMapName_TRAINER_HILL[] = _("TRAINER HILL");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
@@ -417,6 +418,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_DESERT_UNDERPASS] = { 2, 0, 1, 1, sMapName_DESERT_UNDERPASS},
     [MAPSEC_ALTERING_CAVE] = { 6, 8, 1, 1, sMapName_ALTERING_CAVE},
     [MAPSEC_NAVEL_ROCK] = { 0, 0, 1, 1, sMapName_NAVEL_ROCK},
+    [MAPSEC_ELICIUS_BEACH] = { 0, 0, 1, 1, sMapName_ELICIUS_BEACH},
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };
 
