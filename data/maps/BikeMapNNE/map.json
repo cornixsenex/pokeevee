@@ -34,6 +34,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BikeMapNNE_EventScript_TallGrassTest"
+    }
   ]
 }

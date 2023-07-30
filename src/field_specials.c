@@ -5469,7 +5469,8 @@ bool32 IsPhilosophyPhrase(void)
 			return TRUE;
 	}
 	return FALSE;
-}
+};
+
 
 
 
