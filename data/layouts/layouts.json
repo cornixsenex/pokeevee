@@ -6020,6 +6020,16 @@
       "secondary_tileset": "gTileset_Tucson",
       "border_filepath": "data/layouts/BikeMapTucson/border.bin",
       "blockdata_filepath": "data/layouts/BikeMapTucson/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_MAP_TUCSON_S",
+      "name": "BikeMapTucsonS_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Tucson",
+      "border_filepath": "data/layouts/BikeMapTucsonS/border.bin",
+      "blockdata_filepath": "data/layouts/BikeMapTucsonS/map.bin"
     }
   ]
 }

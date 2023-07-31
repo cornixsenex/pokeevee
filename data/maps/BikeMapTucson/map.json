@@ -27,6 +27,11 @@
       "map": "MAP_FOOTBALL_FIELD",
       "offset": -19,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BIKE_MAP_TUCSON_S",
+      "offset": 56,
+      "direction": "down"
     }
   ],
   "object_events": [

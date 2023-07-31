@@ -22,6 +22,11 @@
       "map": "MAP_BIKE_MAP_NNE",
       "offset": 8,
       "direction": "up"
+    },
+    {
+      "map": "MAP_PYRAMIDS",
+      "offset": -64,
+      "direction": "up"
     }
   ],
   "object_events": [

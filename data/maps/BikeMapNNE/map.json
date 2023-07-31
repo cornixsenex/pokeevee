@@ -22,6 +22,11 @@
       "map": "MAP_BIKE_MAP_TUCSON",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_PYRAMIDS",
+      "offset": -11,
+      "direction": "left"
     }
   ],
   "object_events": [

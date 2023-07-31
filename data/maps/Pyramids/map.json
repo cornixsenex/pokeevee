@@ -17,6 +17,16 @@
       "map": "MAP_PHOENIX",
       "offset": 5,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BIKE_MAP_NNE",
+      "offset": 11,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_BIKE_MAP_NE",
+      "offset": 64,
+      "direction": "down"
     }
   ],
   "object_events": [
