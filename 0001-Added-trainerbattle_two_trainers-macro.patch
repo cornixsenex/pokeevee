@@ -1,0 +1,86 @@
+From f5efaf777f30144af35bb6d3f6ca204df06a4fc7 Mon Sep 17 00:00:00 2001
+From: Ariel A <24759293+aarant@users.noreply.github.com>
+Date: Thu, 3 Aug 2023 19:29:42 -0400
+Subject: [PATCH] Added `trainerbattle_two_trainers` macro.
+
+---
+ asm/macros/event.inc             | 10 ++++++++++
+ include/constants/battle_setup.h |  1 +
+ src/battle_setup.c               | 22 ++++++++++++++++++++++
+ 3 files changed, 33 insertions(+)
+
+diff --git a/asm/macros/event.inc b/asm/macros/event.inc
+index cd20fe62e..2ec9d3cf0 100644
+--- a/asm/macros/event.inc
++++ b/asm/macros/event.inc
+@@ -778,6 +778,16 @@
+ 	trainerbattle TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT, \trainer, 0, \lose_text
+ 	.endm
+ 
++	@ Starts a double battle with the player against two trainers
++	@ Takes two trainers and defeat text for each
++	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
++	.byte 0x5c
++	.byte TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO
++	.2byte \trainer_a
++	.4byte \lose_text_a
++	.2byte \trainer_b
++	.4byte \lose_text_b
++	.endm
+ 
+ 	@ Starts a trainer battle using the battle information stored in RAM (usually by the scripts in trainer_battle.inc, which
+ 	@ are run by trainerbattle), and blocks script execution until the battle finishes.
+diff --git a/include/constants/battle_setup.h b/include/constants/battle_setup.h
+index d825c88bc..bb7f9adef 100644
+--- a/include/constants/battle_setup.h
++++ b/include/constants/battle_setup.h
+@@ -14,5 +14,6 @@
+ #define TRAINER_BATTLE_SET_TRAINER_A                    10
+ #define TRAINER_BATTLE_SET_TRAINER_B                    11
+ #define TRAINER_BATTLE_HILL                             12
++#define TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO            13
+ 
+ #endif // GUARD_CONSTANTS_BATTLE_SETUP_H
+diff --git a/src/battle_setup.c b/src/battle_setup.c
+index 5327262fd..cf38091fc 100644
+--- a/src/battle_setup.c
++++ b/src/battle_setup.c
+@@ -247,6 +247,23 @@ static const struct TrainerBattleParameter sTrainerBContinueScriptBattleParams[]
+     {&sTrainerBattleEndScript,      TRAINER_PARAM_LOAD_SCRIPT_RET_ADDR},
+ };
+ 
++// two trainers, each with a defeat speech
++static const struct TrainerBattleParameter sTrainerTwoTrainerBattleParams[] =
++{
++    {&sTrainerBattleMode,           TRAINER_PARAM_LOAD_VAL_8BIT},
++    {&sTrainerObjectEventLocalId,   TRAINER_PARAM_CLEAR_VAL_16BIT},
++    {&gTrainerBattleOpponent_A,     TRAINER_PARAM_LOAD_VAL_16BIT},
++    {&sTrainerAIntroSpeech,         TRAINER_PARAM_CLEAR_VAL_32BIT},
++    {&sTrainerADefeatSpeech,        TRAINER_PARAM_LOAD_VAL_32BIT},
++    {&gTrainerBattleOpponent_B,     TRAINER_PARAM_LOAD_VAL_16BIT},
++    {&sTrainerBIntroSpeech,         TRAINER_PARAM_CLEAR_VAL_32BIT},
++    {&sTrainerBDefeatSpeech,        TRAINER_PARAM_LOAD_VAL_32BIT},
++    {&sTrainerVictorySpeech,        TRAINER_PARAM_CLEAR_VAL_32BIT},
++    {&sTrainerCannotBattleSpeech,   TRAINER_PARAM_CLEAR_VAL_32BIT},
++    {&sTrainerBBattleScriptRetAddr, TRAINER_PARAM_CLEAR_VAL_32BIT},
++    {&sTrainerBattleEndScript,      TRAINER_PARAM_LOAD_SCRIPT_RET_ADDR},
++};
++
+ #define REMATCH(trainer1, trainer2, trainer3, trainer4, trainer5, map)  \
+ {                                                                       \
+     .trainerIds = {trainer1, trainer2, trainer3, trainer4, trainer5},   \
+@@ -1233,6 +1250,11 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
+             gTrainerBattleOpponent_B = LocalIdToHillTrainerId(gSpecialVar_LastTalked);
+         }
+         return EventScript_TryDoNormalTrainerBattle;
++    case TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO:
++        gNoOfApproachingTrainers = 2; // set TWO_OPPONENTS gBattleTypeFlags
++        gApproachingTrainerId = 1; // prevent trainer approach
++        TrainerBattleLoadArgs(sTrainerTwoTrainerBattleParams, data);
++        return EventScript_DoNoIntroTrainerBattle;
+     default:
+         if (gApproachingTrainerId == 0)
+         {
+-- 
+2.31.1.windows.1
+
