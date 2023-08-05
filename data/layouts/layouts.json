@@ -5997,7 +5997,7 @@
       "width": 64,
       "height": 68,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Unused2",
+      "secondary_tileset": "gTileset_Tucson",
       "border_filepath": "data/layouts/BikeMapNE/border.bin",
       "blockdata_filepath": "data/layouts/BikeMapNE/map.bin"
     },
@@ -6007,7 +6007,7 @@
       "width": 56,
       "height": 61,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Tucson",
       "border_filepath": "data/layouts/BikeMapNNE/border.bin",
       "blockdata_filepath": "data/layouts/BikeMapNNE/map.bin"
     },

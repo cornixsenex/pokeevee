@@ -797,7 +797,7 @@ text SaltySpitoon_Text_EvazanPost {
 }
 
 text SaltySpitoon_Text_PondaBabuIntro { 
-	format("We're wanted men. I have the death sentance.")
+	format("We're wanted men. I have the death sentence.")
 }
 
 text SaltySpitoon_Text_PondaBabuLost {

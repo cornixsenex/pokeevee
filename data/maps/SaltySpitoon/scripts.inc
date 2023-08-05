@@ -1464,7 +1464,7 @@ SaltySpitoon_Text_EvazanPost::
 
 SaltySpitoon_Text_PondaBabuIntro::
 	.string "We're wanted men. I have the death\n"
-	.string "sentance.$"
+	.string "sentence.$"
 
 SaltySpitoon_Text_PondaBabuLost::
 	.string "Cold blood! Ow! My arm!$"
