@@ -1095,6 +1095,18 @@ SaltySpitoon_EventScript_Evazan_4:
 	goto SaltySpitoon_EventScript_Evazan_3
 
 
+SaltySpitoon_EventScript_Test::
+	lock
+	faceplayer
+	msgbox SaltySpitoon_EventScript_Test_Text_0
+	closemessage
+	trainerbattle_two_trainers TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABU, SaltySpitoon_Text_PondaBabuLost
+	msgbox SaltySpitoon_EventScript_Test_Text_1
+	closemessage
+	release
+	end
+
+
 SaltySpitoon_EventScript_DeathsticksGuy::
 	lock
 	faceplayer
@@ -1393,6 +1405,12 @@ SaltySpitoon_EventScript_HiLoKabuto_Brain_Text_71:
 
 SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_Text_0:
 	.string "PROBLEMO bottom of Pay Wager swithc$"
+
+SaltySpitoon_EventScript_Test_Text_0:
+	.string "TEST DOUBLE BATTLE$"
+
+SaltySpitoon_EventScript_Test_Text_1:
+	.string "TEST DONE$"
 
 SaltySpitoon_Text_Deathsticks1::
 	.string "You wanna buy some deathsticks?$"

@@ -670,6 +670,18 @@ script SaltySpitoon_EventScript_Evazan {
 	end
 }
 
+script SaltySpitoon_EventScript_Test {
+	lock
+	faceplayer
+	msgbox("TEST DOUBLE BATTLE")
+	closemessage
+	trainerbattle_two_trainers (TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABU, SaltySpitoon_Text_PondaBabuLost)
+	msgbox("TEST DONE")
+	closemessage
+	release
+	end
+}
+
 script SaltySpitoon_EventScript_DeathsticksGuy {
 	lock
 	faceplayer
