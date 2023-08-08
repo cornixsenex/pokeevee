@@ -2880,10 +2880,10 @@ static void PrintOnAbilityPopUp(const u8 *str, u8 *spriteTileData1, u8 *spriteTi
     }
 }
 
-static const u8 sText_Space16[]= _("                ");
+static const u8 sText_Spaces20[]= _("                    ");
 static void ClearAbilityName(u8 spriteId1, u8 spriteId2)
 {
-    PrintOnAbilityPopUp(sText_Space16,
+    PrintOnAbilityPopUp(sText_Spaces20,
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 256,
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
                         5, 12,
@@ -3188,8 +3188,8 @@ void DestroyAbilityPopUp(u8 battlerId)
     {
         gSprites[gBattleStruct->abilityPopUpSpriteIds[battlerId][0]].tFrames = 0;
         gSprites[gBattleStruct->abilityPopUpSpriteIds[battlerId][1]].tFrames = 0;
-        gBattleScripting.fixedPopup = FALSE;
     }
+    gBattleScripting.fixedPopup = FALSE;
 }
 
 static void Task_FreeAbilityPopUpGfx(u8 taskId)

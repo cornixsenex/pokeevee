@@ -212,6 +212,7 @@ struct SideTimer
     u8 toxicSpikesAmount;
     u8 stealthRockAmount;
     u8 stickyWebAmount;
+    u8 stickyWebBattlerId;
     u8 stickyWebBattlerSide; // Used for Court Change
     u8 auroraVeilTimer;
     u8 auroraVeilBattlerId;
@@ -594,6 +595,7 @@ struct BattleStruct
     u8 wishPerishSongBattlerId;
     bool8 overworldWeatherDone;
     bool8 terrainDone;
+    u8 isAtkCancelerForCalledMove; // Certain cases in atk canceler should only be checked once, when the original move is called, however others need to be checked the twice.
     u8 atkCancellerTracker;
     struct BattleTvMovePoints tvMovePoints;
     struct BattleTv tv;
@@ -635,7 +637,7 @@ struct BattleStruct
     bool8 friskedAbility; // If identifies two mons, show the ability pop-up only once.
     u8 sameMoveTurns[MAX_BATTLERS_COUNT]; // For Metronome, number of times the same moves has been SUCCESFULLY used.
     u16 moveEffect2; // For Knock Off
-    u16 changedSpecies[PARTY_SIZE]; // For Zygarde or future forms when multiple mons can change into the same pokemon.
+    u16 changedSpecies[NUM_BATTLE_SIDES][PARTY_SIZE]; // For forms when multiple mons can change into the same pokemon.
     u8 quickClawBattlerId;
     struct LostItem itemLost[PARTY_SIZE];  // Player's team that had items consumed or stolen (two bytes per party member)
     u8 blunderPolicy:1; // should blunder policy activate
@@ -643,7 +645,6 @@ struct BattleStruct
     u8 forcedSwitch:4; // For each battler
     u8 switchInAbilityPostponed:4; // To not activate against an empty field, each bit for battler
     u8 ballSpriteIds[2];    // item gfx, window gfx
-    u8 stickyWebUser;
     u8 appearedInBattle; // Bitfield to track which Pokemon appeared in battle. Used for Burmy's form change
     u8 skyDropTargets[MAX_BATTLERS_COUNT]; // For Sky Drop, to account for if multiple Pokemon use Sky Drop in a double battle.
     // When using a move which hits multiple opponents which is then bounced by a target, we need to make sure, the move hits both opponents, the one with bounce, and the one without.
