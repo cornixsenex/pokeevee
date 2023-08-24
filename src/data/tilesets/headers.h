@@ -1121,3 +1121,14 @@ const struct Tileset gTileset_Troy =
     .metatileAttributes = gMetatileAttributes_Troy,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Argo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Argo,
+    .palettes = gTilesetPalettes_Argo,
+    .metatiles = gMetatiles_Argo,
+    .metatileAttributes = gMetatileAttributes_Argo,
+    .callback = NULL,
+};

@@ -2158,3 +2158,22 @@ const u16 gTilesetPalettes_Troy[][16] =
 };
 
 const u32 gTilesetTiles_Troy[] = INCBIN_U32("data/tilesets/secondary/troy/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Argo[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/argo/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Argo[] = INCBIN_U32("data/tilesets/secondary/argo/tiles.4bpp.lz");

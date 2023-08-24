@@ -674,6 +674,7 @@
 #define MAP_ROUTE15_DESERT_CAVE           (88 | (30 << 8))
 #define MAP_ART_CANVAS                    (89 | (30 << 8))
 #define MAP_LOGIC_PUZZLE                  (90 | (30 << 8))
+#define MAP_ARGO                          (91 | (30 << 8))
 
 // gMapGroup31
 #define MAP_ALDEON_LEAF_HOUSE           (0 | (31 << 8))

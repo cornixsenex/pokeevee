@@ -5847,7 +5847,7 @@
       "width": 86,
       "height": 86,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/MareS5/border.bin",
       "blockdata_filepath": "data/layouts/MareS5/map.bin"
     },
@@ -6030,6 +6030,16 @@
       "secondary_tileset": "gTileset_Tucson",
       "border_filepath": "data/layouts/BikeMapTucsonS/border.bin",
       "blockdata_filepath": "data/layouts/BikeMapTucsonS/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARGO",
+      "name": "Argo_Layout",
+      "width": 24,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Argo",
+      "border_filepath": "data/layouts/Argo/border.bin",
+      "blockdata_filepath": "data/layouts/Argo/map.bin"
     }
   ]
 }
