@@ -6603,8 +6603,9 @@ static u8 DamagedStatBoostBerryEffect(u8 battlerId, u8 statId, u8 split)
     if (IsBattlerAlive(battlerId)
      && TARGET_TURN_DAMAGED
      && CompareStat(battlerId, statId, MAX_STAT_STAGE, CMP_LESS_THAN)
-     && !DoesSubstituteBlockMove(gBattlerAttacker, battlerId, gCurrentMove)
-     && GetBattleMoveSplit(gCurrentMove) == split)
+     && (gBattleScripting.overrideBerryRequirements
+         || (!DoesSubstituteBlockMove(gBattlerAttacker, battlerId, gCurrentMove) && GetBattleMoveSplit(gCurrentMove) == split))
+        )
     {
         BufferStatChange(battlerId, statId, STRINGID_STATROSE);
 
@@ -6809,6 +6810,12 @@ static u8 ItemEffectMoveEnd(u32 battlerId, u16 holdEffect)
         break;
     case HOLD_EFFECT_SP_DEFENSE_UP:
         effect = StatRaiseBerry(battlerId, gLastUsedItem, STAT_SPDEF, FALSE);
+        break;
+    case HOLD_EFFECT_KEE_BERRY:  // consume and boost defense if used physical move
+        effect = DamagedStatBoostBerryEffect(battlerId, STAT_DEF, SPLIT_PHYSICAL);
+        break;
+    case HOLD_EFFECT_MARANGA_BERRY:  // consume and boost sp. defense if used special move
+        effect = DamagedStatBoostBerryEffect(battlerId, STAT_SPDEF, SPLIT_SPECIAL);
         break;
     case HOLD_EFFECT_RANDOM_STAT_UP:
         effect = RandomStatRaiseBerry(battlerId, gLastUsedItem, FALSE);
@@ -10502,11 +10509,9 @@ static u8 GetFlingPowerFromItemId(u16 itemId)
         return ItemId_GetFlingPower(itemId);
 }
 
-// Make sure the input bank is any bank on the specific mon's side
-bool32 CanFling(u8 battlerId)
+bool32 CanFling(u32 battlerId)
 {
     u16 item = gBattleMons[battlerId].item;
-    u16 itemEffect = ItemId_GetHoldEffect(item);
 
     if (item == ITEM_NONE
       #if B_KLUTZ_FLING_INTERACTION >= GEN_5
