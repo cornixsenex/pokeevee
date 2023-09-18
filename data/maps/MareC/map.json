@@ -32,6 +32,26 @@
       "map": "MAP_PENINSULA_W",
       "offset": -9,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ELICIUS_BEACH",
+      "offset": 82,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE10",
+      "offset": 124,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S2",
+      "offset": 67,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S3",
+      "offset": -19,
+      "direction": "down"
     }
   ],
   "object_events": [

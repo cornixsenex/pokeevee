@@ -37,6 +37,11 @@
       "map": "MAP_PENINSULA_W",
       "offset": 100,
       "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_W",
+      "offset": -49,
+      "direction": "down"
     }
   ],
   "object_events": [

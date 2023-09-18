@@ -27,6 +27,31 @@
       "map": "MAP_PENINSULA_W",
       "offset": 102,
       "direction": "up"
+    },
+    {
+      "map": "MAP_CITY_CLARA",
+      "offset": -39,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_SROUTE18",
+      "offset": 49,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S3",
+      "offset": 132,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S4",
+      "offset": 46,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S5",
+      "offset": -40,
+      "direction": "down"
     }
   ],
   "object_events": [

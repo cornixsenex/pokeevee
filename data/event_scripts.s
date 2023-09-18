@@ -1465,3 +1465,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/BikeMapTucsonS/scripts.inc"
 
 	.include "data/maps/Argo/scripts.inc"
+
+	.include "data/maps/BigIslandFillerW/scripts.inc"
+
+	.include "data/maps/BigIslandFillerE/scripts.inc"

@@ -6040,6 +6040,26 @@
       "secondary_tileset": "gTileset_Argo",
       "border_filepath": "data/layouts/Argo/border.bin",
       "blockdata_filepath": "data/layouts/Argo/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIG_ISLAND_FILLER_W",
+      "name": "BigIslandFillerW_Layout",
+      "width": 16,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BigIslandFillerW/border.bin",
+      "blockdata_filepath": "data/layouts/BigIslandFillerW/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIG_ISLAND_FILLER_E",
+      "name": "BigIslandFillerE_Layout",
+      "width": 25,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BigIslandFillerE/border.bin",
+      "blockdata_filepath": "data/layouts/BigIslandFillerE/map.bin"
     }
   ]
 }

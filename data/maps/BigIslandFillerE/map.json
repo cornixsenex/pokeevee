@@ -1,32 +1,27 @@
 {
-  "id": "MAP_BIG_ISLAND_S",
-  "name": "BigIslandS",
-  "layout": "LAYOUT_BIG_ISLAND_S",
+  "id": "MAP_BIG_ISLAND_FILLER_E",
+  "name": "BigIslandFillerE",
+  "layout": "LAYOUT_BIG_ISLAND_FILLER_E",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_ROUTE",
-  "allow_cycling": true,
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": true,
+  "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
       "map": "MAP_BIG_ISLAND_N",
-      "offset": -16,
+      "offset": -139,
       "direction": "up"
     },
     {
-      "map": "MAP_BIG_ISLAND_FILLER_W",
+      "map": "MAP_BIG_ISLAND_S",
       "offset": 0,
       "direction": "left"
-    },
-    {
-      "map": "MAP_BIG_ISLAND_FILLER_E",
-      "offset": 0,
-      "direction": "right"
     }
   ],
   "object_events": [

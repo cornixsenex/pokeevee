@@ -37,13 +37,28 @@
       "map": "MAP_MARE_S10",
       "offset": -86,
       "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_W",
+      "offset": 40,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_WW",
+      "offset": 1,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_WWW",
+      "offset": -119,
+      "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
-      "x": 38,
-      "y": 59,
+      "x": 45,
+      "y": 43,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 10,

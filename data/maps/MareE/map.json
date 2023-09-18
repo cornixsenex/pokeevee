@@ -32,6 +32,16 @@
       "map": "MAP_MARE_S1",
       "offset": 29,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ELICIUS_BEACH",
+      "offset": -42,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S2",
+      "offset": -57,
+      "direction": "down"
     }
   ],
   "object_events": [

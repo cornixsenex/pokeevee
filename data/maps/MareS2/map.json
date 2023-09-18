@@ -32,6 +32,16 @@
       "map": "MAP_MARE_S7",
       "offset": -86,
       "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_E",
+      "offset": 57,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_C",
+      "offset": -67,
+      "direction": "up"
     }
   ],
   "object_events": [

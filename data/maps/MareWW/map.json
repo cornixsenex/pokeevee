@@ -22,6 +22,26 @@
       "map": "MAP_MARE_WWW",
       "offset": 10,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE3",
+      "offset": -30,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_CITY_CLARA",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S5",
+      "offset": -1,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S6",
+      "offset": -87,
+      "direction": "down"
     }
   ],
   "object_events": [

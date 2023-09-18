@@ -27,6 +27,16 @@
       "map": "MAP_PENNINSULA_E",
       "offset": 39,
       "direction": "left"
+    },
+    {
+      "map": "MAP_MARE_C",
+      "offset": -82,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_E",
+      "offset": 42,
+      "direction": "down"
     }
   ],
   "object_events": [
