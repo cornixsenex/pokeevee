@@ -1,1 +1,38 @@
+
+const OBJ_EVENT_ARGO = 1
+
 mapscripts MareS5_MapScripts {}
+
+
+
+
+
+
+
+
+script MareS5_EventScript_Argo {
+	lockall
+	applymovement (OBJ_EVENT_ARGO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(MareS5_Text_ArgoIntro1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		warpsilent (MAP_ARGO, 16, 9)
+		waitstate
+	} else {
+		msgbox(MareS5_Text_ArgoFarewell)
+		closemessage
+	}
+	releaseall
+	end
+}
+
+
+text MareS5_Text_ArgoIntro1 {
+	format("Ahoy matey! If you be lost at sea feel free to join us!\nWill you board Argo?")
+}
+
+text MareS5_Text_ArgoFarewell {
+	format("Farewell! Calm winds and gentle seas to you.")
+}
+

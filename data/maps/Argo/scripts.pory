@@ -1,1 +1,10 @@
 mapscripts Argo_MapScripts {}
+
+
+script Argo_EventScript_ExitWarp {
+	lock
+	warpsilent (MAP_MARE_S5, 45, 43)
+	waitstate
+	release
+	end
+}
