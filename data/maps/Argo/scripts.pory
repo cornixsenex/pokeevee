@@ -8,3 +8,16 @@ script Argo_EventScript_ExitWarp {
 	release
 	end
 }
+
+
+script Argo_EventScript_Jason {
+	lock
+	faceplayer
+	
+
+
+
+
+
+
+
