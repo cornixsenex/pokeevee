@@ -9,3 +9,10 @@ Argo_EventScript_ExitWarp::
 	release
 	end
 
+
+Argo_EventScript_Jason::
+	lock
+	faceplayer
+	release
+	end
+
