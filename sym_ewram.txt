@@ -151,4 +151,5 @@
 	.include "src/debug.o"
 	.include "src/field_pic.o"
 	.include "src/pokemon_overworld_follower.o"
+	.include "src/battle_controller_player.o"
 

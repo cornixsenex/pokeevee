@@ -129,7 +129,7 @@ Route119_EventScript_DefeatedBrendan::
 	end
 
 Route119_EventScript_GiveFlyHM::
-	giveitem ITEM_HM02
+	giveitem ITEM_HM_FLY
 	return
 
 Route119_EventScript_RivalExitScottArrive::

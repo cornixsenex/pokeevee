@@ -5,7 +5,7 @@ MauvilleCity_House1_EventScript_RockSmashDude::
 	lock
 	faceplayer
 	msgbox MauvilleCity_House1_Text_ImRockSmashDudeTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_HM06
+	giveitem ITEM_HM_ROCK_SMASH
 	msgbox MauvilleCity_House1_Text_ExplainRockSmash, MSGBOX_DEFAULT
 	release
 	end

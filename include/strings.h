@@ -3116,8 +3116,11 @@ extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
 
-//Book Verse
+// Exp. Share
+extern const u8 gText_ExpShareOn[];
+extern const u8 gText_ExpShareOff[];
 
+//Book Verse
 extern const u8 gText_BookVerse1[];
 extern const u8 gText_BookVerse2[];
 extern const u8 gText_BookVerse3[];

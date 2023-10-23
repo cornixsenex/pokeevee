@@ -5,7 +5,7 @@ GraniteCave_1F_EventScript_Hiker::
 	lock
 	faceplayer
 	msgbox GraniteCave_1F_Text_GetsDarkAheadHereYouGo, MSGBOX_DEFAULT
-	giveitem ITEM_HM05
+	giveitem ITEM_HM_FLASH
 	msgbox GraniteCave_1F_Text_ExplainFlash, MSGBOX_DEFAULT
 	release
 	end

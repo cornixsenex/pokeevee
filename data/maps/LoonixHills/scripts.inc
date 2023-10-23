@@ -53,7 +53,7 @@ LoonixHills_Script_GiftBall_14:
 
 LoonixHills_Script_RockClimb::
 	lock
-	giveitem ITEM_HM08_DIVE
+	giveitem ITEM_HM08
 	release
 	end
 
