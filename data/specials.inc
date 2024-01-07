@@ -536,6 +536,12 @@ gSpecials::
 	def_special TrySetBattleTowerLinkType
 	def_special SetTotemBoost
 	def_special TrySpecialOverworldEvo
+	def_special GetNumberSprayStrength
+	def_special GetSprayId
+	def_special GetLastUsedSprayType
+	def_special TrySkyBattle
+	def_special VsSeekerResetObjectMovementAfterChargeComplete
+	def_special VsSeekerFreezeObjectsAfterChargeComplete
     def_special NameRival
 	def_special LobotomizePokemon
 	def_special ChangePersonality
@@ -559,4 +565,3 @@ gSpecials::
 	def_special NamePhilosophy
 	def_special IsPhilosophyPhrase
 	def_special DoRhetoric
-

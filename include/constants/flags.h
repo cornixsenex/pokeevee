@@ -198,6 +198,7 @@
 #define FLAG_PHILOSOPHY_INTRO                0xA9
 #define FLAG_LITERATURE_INTRO                0xAA
 #define FLAG_POETRY_INTRO                    0xAB
+#define FLAG_RECEIVED_SECRET_POWER           0xAC
 
 
 
@@ -224,7 +225,6 @@
 				
 
 
-#define FLAG_RECEIVED_TM03                   0xAC
 #define FLAG_LANDMARK_MIRAGE_TOWER           0x78
 #define FLAG_RECEIVED_TM_BRICK_BREAK         0x79
 #define FLAG_RECEIVED_HM_SURF                0x7A

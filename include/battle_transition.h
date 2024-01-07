@@ -3,7 +3,6 @@
 
 #include "constants/battle_transition.h"
 
-void TestBattleTransition(u8 transitionId);
 void BattleTransition_StartOnField(u8 transitionId);
 void BattleTransition_Start(u8 transitionId);
 bool8 IsBattleTransitionDone(void);

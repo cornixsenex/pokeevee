@@ -1,0 +1,33 @@
+/usr/lib/gcc/arm-none-eabi/13.2.0/cc1 -quiet <flags> -o build/modern/src/event_object_movement.o src/event_object_movement.c
+In file included from src/event_object_movement.c:3073:
+src/data/object_events/movement_action_func_tables.h:639:14: error: initialized field overwritten [-Werror=override-init]
+  639 |     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT] = gMovementActionFuncs_WalkFastDiagonalUpLeft,
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/object_events/movement_action_func_tables.h:639:14: note: (near initialization for 'gMovementActionFuncs[158]')
+src/data/object_events/movement_action_func_tables.h:640:14: error: initialized field overwritten [-Werror=override-init]
+  640 |     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT] = gMovementActionFuncs_WalkFastDiagonalUpRight,
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/object_events/movement_action_func_tables.h:640:14: note: (near initialization for 'gMovementActionFuncs[159]')
+src/event_object_movement.c: In function 'TrySetupObjectEventSprite':
+src/event_object_movement.c:3320:8: error: unused variable 'paletteSlot' [-Werror=unused-variable]
+ 3320 |     u8 paletteSlot;
+      |        ^~~~~~~~~~~
+src/event_object_movement.c: In function 'SpawnObjectEventOnReturnToField':
+src/event_object_movement.c:3628:8: error: unused variable 'paletteSlot' [-Werror=unused-variable]
+ 3628 |     u8 paletteSlot;
+      |        ^~~~~~~~~~~
+src/event_object_movement.c: In function 'GetCollisionAtCoords':
+src/event_object_movement.c:6744:8: error: unused variable 'direction' [-Werror=unused-variable]
+ 6744 |     u8 direction = dir;
+      |        ^~~~~~~~~
+src/event_object_movement.c: In function 'GetGroundEffectFlags_Tracks':
+src/event_object_movement.c:9752:8: error: unused variable 'behavior' [-Werror=unused-variable]
+ 9752 |     u8 behavior = objEvent->previousMetatileBehavior;
+      |        ^~~~~~~~
+src/event_object_movement.c: At top level:
+src/event_object_movement.c:84:51: error: 'sCurrentSpecialObjectPaletteTag' defined but not used [-Werror=unused-variable]
+   84 | static EWRAM_DATA u16 sCurrentSpecialObjectPaletteTag = 0;
+      |                                                   ^~~~~~~~                       
+cc1: all warnings being treated as errors
+make: *** [Makefile:389: build/modern/src/event_object_movement.o] Error 1
+make: *** Deleting file 'build/modern/src/event_object_movement.o'

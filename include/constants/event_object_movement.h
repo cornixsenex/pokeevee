@@ -258,6 +258,9 @@
 #define MOVEMENT_ACTION_SPIN_UP                         0xA7
 #define MOVEMENT_ACTION_SPIN_LEFT                       0xA8
 #define MOVEMENT_ACTION_SPIN_RIGHT                      0xA9
+//These are for VS SEEKER added by rhh
+#define MOVEMENT_ACTION_EMOTE_X                         0x9E
+#define MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK          0x9F
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -320,6 +323,7 @@
 #define ANIM_GET_ON_OFF_POKEMON_EAST  (ANIM_STD_COUNT + 3)
 
 #define ANIM_NURSE_BOW (ANIM_STD_COUNT + 0)
+#define ANIM_RAISE_HAND (ANIM_STD_COUNT + 0)
 
 #define ANIM_FIELD_MOVE 0
 

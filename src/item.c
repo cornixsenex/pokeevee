@@ -1085,7 +1085,7 @@ void HideHeaderBox(void)
 #define ITEM_TAG 0x2722 //same as money label
 static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
 {
-	s16 x, y;
+	u32 x, y;
 	u8 iconSpriteId;   
     u8 spriteId2 = MAX_SPRITES;
     
@@ -1099,25 +1099,21 @@ static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
     if (flash)
         spriteId2 = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
     
-	if (iconSpriteId != MAX_SPRITES)
-	{        
-        if (!firstTime)
-        {
-            //show in message box
-			x = 213;
-			y = 140;
-        }
-        else
-        {
-            // show in header box
-			x = ITEM_ICON_X;
-			y = ITEM_ICON_Y;
-        }
-
-		gSprites[iconSpriteId].x2 = x;
-		gSprites[iconSpriteId].y2 = y;
-		gSprites[iconSpriteId].oam.priority = 0;
+	if (iconSpriteId != MAX_SPRITES && !firstTime)
+	{
+		x = 213;
+		y = 140;
 	}
+	else
+	{
+		// show in header box
+		x = ITEM_ICON_X;
+		y = ITEM_ICON_Y;
+	}
+
+	gSprites[iconSpriteId].x2 = x;
+	gSprites[iconSpriteId].y2 = y;
+	gSprites[iconSpriteId].oam.priority = 0;
     
     if (spriteId2 != MAX_SPRITES)
     {

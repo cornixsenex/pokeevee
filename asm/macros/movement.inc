@@ -166,5 +166,7 @@
 	create_movement_action spin_up, MOVEMENT_ACTION_SPIN_UP
 	create_movement_action spin_left, MOVEMENT_ACTION_SPIN_LEFT
 	create_movement_action spin_right, MOVEMENT_ACTION_SPIN_RIGHT
+	create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
+	create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
 
 	create_movement_action step_end, MOVEMENT_ACTION_STEP_END

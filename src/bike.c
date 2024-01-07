@@ -492,7 +492,7 @@ static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
 static u8 AcroBikeHandleInputTurning(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
 
-    u8 direction;
+    u8 UNUSED direction;
 
     *newDirection = gPlayerAvatar.newDirBackup;
 	gPlayerAvatar.runningState = TURN_DIRECTION;
@@ -1133,7 +1133,7 @@ static bool8 HasPlayerInputTakenLongerThanList(const u8 *dirTimerList, const u8 
     return TRUE;
 }
 
-static u8 AcroBike_GetJumpDirection(void)
+static UNUSED u8 AcroBike_GetJumpDirection(void)
 {
     u32 i;
 

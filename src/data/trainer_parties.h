@@ -4444,7 +4444,7 @@ static const struct TrainerMon sParty_Kim[] = {
 		.lvl = 4,
 		.nickname = COMPOUND_STRING("KIPPIE"),
 		.iv = 100,
-		.gender = MON_FEMALE,
+		.gender = TRAINER_MON_FEMALE,
 		//.nature = NATURE_ADAMANT,
 		.heldItem = ITEM_KIND_BUD,
 		//.ability = ABILITY_SLOT_2,
@@ -6015,7 +6015,7 @@ static const struct TrainerMon sParty_Angelica[] = {
     {
     .iv = 50,
     .lvl = 30,
-    .species = SPECIES_CASTFORM,
+    .species = SPECIES_CASTFORM_NORMAL,
     .moves = {MOVE_RAIN_DANCE, MOVE_WEATHER_BALL, MOVE_THUNDER, MOVE_WATER_PULSE}
     }
 };
@@ -6880,7 +6880,7 @@ static const struct TrainerMon sParty_Kayley[] = {
     {
     .iv = 0,
     .lvl = 31,
-    .species = SPECIES_CASTFORM,
+    .species = SPECIES_CASTFORM_NORMAL,
     .moves = {MOVE_SUNNY_DAY, MOVE_WEATHER_BALL, MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM}
     }
 };

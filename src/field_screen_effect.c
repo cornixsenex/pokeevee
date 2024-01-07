@@ -44,7 +44,7 @@ static void Task_ExitDoor(u8);
 static bool32 WaitForWeatherFadeIn(void);
 static void Task_SpinEnterWarp(u8 taskId);
 // static void Task_WarpAndLoadMap(u8 taskId);
-static void Task_DoDoorWarp(u8 taskId);
+static void UNUSED Task_DoDoorWarp(u8 taskId);
 static void Task_EnableScriptAfterMusicFade(u8 taskId);
 static void Task_ExitStairs(u8 taskId);
 
@@ -685,7 +685,7 @@ void Task_WarpAndLoadMap(u8 taskId)
     }
 }
 
-static void Task_DoDoorWarp(u8 taskId)
+static void UNUSED Task_DoDoorWarp(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
     s16 *x = &task->data[2];

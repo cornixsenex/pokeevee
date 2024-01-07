@@ -8,7 +8,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = 0,
-        .party = TRAINER_PARTY(NULL),
+        .party = NULL,
     },
 
 	[TRAINER_ADAM] =
