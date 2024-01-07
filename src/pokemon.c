@@ -1337,22 +1337,22 @@ bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId)
     return TRUE;
 }
 
-static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
-{
-    s32 ivVal, evVal;
-    u16 statValue = 0;
-    u8 nature;
-
-    if (gBattleTypeFlags & BATTLE_TYPE_LINK_IN_BATTLE || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
-        return 0;
-
-    ivVal = GetMonData(mon, MON_DATA_HP_IV + statId, NULL);
-    evVal = GetMonData(mon, MON_DATA_HP_EV + statId, NULL);
-    statValue = ((sDeoxysBaseStats[statId] * 2 + ivVal + evVal / 4) * mon->level) / 100 + 5;
-    nature = GetNature(mon);
-    statValue = ModifyStatByNature(nature, statValue, (u8)statId);
-    return statValue;
-}
+//static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
+//{
+//    s32 ivVal, evVal;
+//    u16 statValue = 0;
+//    u8 nature;
+//
+//    if (gBattleTypeFlags & BATTLE_TYPE_LINK_IN_BATTLE || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+//        return 0;
+//
+//    ivVal = GetMonData(mon, MON_DATA_HP_IV + statId, NULL);
+//    evVal = GetMonData(mon, MON_DATA_HP_EV + statId, NULL);
+//    statValue = ((sDeoxysBaseStats[statId] * 2 + ivVal + evVal / 4) * mon->level) / 100 + 5;
+//    nature = GetNature(mon);
+//    statValue = ModifyStatByNature(nature, statValue, (u8)statId);
+//    return statValue;
+//}
 
 void SetDeoxysStats(void)
 {

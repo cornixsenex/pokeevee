@@ -57,7 +57,7 @@ static void QueueAnimTiles_Dewford_Flag(u16);
 static void QueueAnimTiles_Slateport_Balloons(u16);
 static void QueueAnimTiles_Mauville_Flowers(u16, u8);
 static void QueueAnimTiles_BikeShop_BlinkingLights(u16);
-static void QueueAnimTiles_BattlePyramid_Torch(u16);
+//static void QueueAnimTiles_BattlePyramid_Torch(u16);
 static void QueueAnimTiles_BattlePyramid_StatueShadow(u16);
 static void BlendAnimPalette_BattleDome_FloorLights(u16);
 static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16);
@@ -1223,12 +1223,13 @@ static void QueueAnimTiles_Sootopolis_StormyWater(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_Sootopolis_StormyWater[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 240)), 96 * TILE_SIZE_4BPP);
 }
 
-static void QueueAnimTiles_BattlePyramid_Torch(u16 timer)
-{
-    u16 i = timer % ARRAY_COUNT(gTilesetAnims_BattlePyramid_Torch);
-	//I just took this out but ideally would like it to work
-    //AppendTilesetAnimToBuffer(gTilesetAnims_BattlePyramid_Torch[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 151)), 8 * TILE_SIZE_4BPP);
-}
+//static void QueueAnimTiles_BattlePyramid_Torch(u16 timer)
+//{
+//    u16 i = timer % ARRAY_COUNT(gTilesetAnims_BattlePyramid_Torch);
+//	//I just took this out but ideally would like it to work
+//    //AppendTilesetAnimToBuffer(gTilesetAnims_BattlePyramid_Torch[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 151)), 8 * TILE_SIZE_4BPP);
+//}
+//
 
 static void QueueAnimTiles_BattlePyramid_StatueShadow(u16 timer)
 {

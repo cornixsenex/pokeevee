@@ -64,7 +64,7 @@ static void POF_PlayerLogCoordinates(struct ObjectEvent* player);
 static u8 POF_DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 direction);
 static bool8 POF_IsStateMovement(u8 state);
 static u8 POF_ReturnFollowerDelayedState(u8 direction);
-static void POF_Task_FinishSurfDismount(u8 taskId);
+//static void POF_Task_FinishSurfDismount(u8 taskId);
 static void POF_Task_FollowerOutOfDoor(u8 taskId);
 static void POF_Task_FollowerHandleIndoorStairs(u8 taskId);
 static void POF_Task_FollowerHandleEscalator(u8 taskId);
@@ -605,16 +605,16 @@ void POF_FollowMe_FollowerToWater(void)
     POF_FollowMe_HandleBike();
 }
 
-static void POF_Task_FinishSurfDismount(u8 taskId)
-{
-    DestroySprite(&gSprites[gTasks[taskId].data[0]]);
-    UnfreezeObjectEvents();
-    DestroyTask(taskId);
-    gPlayerAvatar.preventStep = FALSE;
-
-    gSaveBlock2Ptr->follower.hidden = FALSE;
-    gObjectEvents[POF_GetFollowerMapObjId()].invisible = FALSE;
-}
+//static void POF_Task_FinishSurfDismount(u8 taskId)
+//{
+//    DestroySprite(&gSprites[gTasks[taskId].data[0]]);
+//    UnfreezeObjectEvents();
+//    DestroyTask(taskId);
+//    gPlayerAvatar.preventStep = FALSE;
+//
+//    gSaveBlock2Ptr->follower.hidden = FALSE;
+//    gObjectEvents[POF_GetFollowerMapObjId()].invisible = FALSE;
+//}
 
 void POF_Task_DoDoorWarp(u8 taskId)
 {
@@ -716,7 +716,7 @@ static void POF_Task_FollowerOutOfDoor(u8 taskId)
         //SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Temporarily stop running
 
     if (ObjectEventClearHeldMovementIfFinished(player))
-        //ObjectEventTurn(player, GetPlayerFaceToDoorDirection(player, follower)); //The player should face towards the follow as the exit the door
+        ObjectEventTurn(player, GetPlayerFaceToDoorDirection(player, follower)); //The player should face towards the follow as the exit the door
 
     switch (task->data[0])
     {
@@ -1183,9 +1183,9 @@ void POF_PlayerFaceFollowerSprite(void)
 
 void POF_CreateMonFromPartySlotId(void)
 {
-    struct ObjectEvent* follower;
+    struct ObjectEvent* follower = {};
     u8 eventObjId;
-    const u8 *script;
+    //const u8 *script;
     u16 flag;
     u16 gfx_id;
     u8 slotId = (gSaveBlock2Ptr->follower.partySlotId-1);

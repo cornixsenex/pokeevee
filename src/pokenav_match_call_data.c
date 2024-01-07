@@ -1077,4 +1077,6 @@ bool32 MatchCall_HasRematchId(u32 idx)
 void SetMatchCallRegisteredFlag(void)
 {
     int r0 = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
+    if (r0 >= 0)
+        FlagSet(FLAG_MATCH_CALL_REGISTERED + r0);
 }
