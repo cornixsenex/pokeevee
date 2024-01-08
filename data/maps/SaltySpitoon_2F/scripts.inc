@@ -1285,4 +1285,4 @@ SaltySpitoon_2F_Text_GetTattoo2::
 	.string "zoinks you look like a real tough guy\l"
 	.string "now. I'm gonna head back to the shack\l"
 	.string "to smoke. See you around boss. Like\l"
-	.string "zoins bro see ya.$"
+	.string "zoinks bro see ya.$"

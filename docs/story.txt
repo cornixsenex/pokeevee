@@ -714,3 +714,87 @@ Sewer (LA, LV, SF)
 >SIKE! They're in the basement
 
 You enter the basement immediately after Mewtwo was chained. There should be some sense of panic. Blaine leads Mewtwo out and orders two scientists to stop you. You follow after him and find yourself in the Rocket Bunker. Giovanni is busy asking Blaine if he's sure Mewtwo is under control. Blaine sees you and suggests he use Mewtwo to destroy the player but Giovanni says the situation at the capital demands his attention. Loosing the tower now would be acceptable if he can take the capital. He orders Blaine to defend the bunker with his life and hurries down the tunell. Blaine engages with artificial pokemon mentioned above.
+
+
+
+
+mew
+grandma
+eevee
+blue1
+aldeon
+back to grandma
+Bulbus Smokes
+Forest
+City Clara
+School
+Church
+Indianus
+Long Road to Pyramid
+Strong
+	>Nestor orders you to bring the great heros to assail troy and take Helen back.
+	>Once the heros are assembles Nestor will conduct a headcount but find only 11 men present. At this point Menelaus will exclaim "He's stolen her!" Paris has stolen Helen. Menelaus insists the heros assemble to defeat Paris and win her back. Hektor and Aeneas say they will not fight their own brother, they give respect to Nestor and the heros but leave to defend their family. Nestor laments the breaking of the heros but suggests you join the heros to get Helen back so that the heros can re-assemble and summon heracles.
+	>Iphigenia
+		>The Heros assemble (somewhere not Troy) and realize they don't know where Paris has gone. Tiresias communes with the divine and declares that one of them must sacrifice their child. It goes around the horn that everyone is shocked but Agamemnon rises and says he will sacricfice his daughter Iphigenia after her mother had tried to kill him. He charges you to go retrieve her.
+		>Return to Orestes @ Agamemnon house
+		>Orestes says that Iphigenia has gone to Aulis (why?)
+		>When you two go to fetch her you are captured and brought to be sacrificed?
+		>When she realizes what's happened create plan to escape
+		>Sneak to lake, escape on the boat that brought you
+		>Back at palace of Agamemnon lie to her and say she's going to marry Achilles
+		>Bring her to the greek camp
+		>Sacrifice
+		>The way to Troy is made clear
+	>Trojan War
+		>Arrival at Troy (Castle tiles available at Docs/Poke/art/castle...png - NOT in the sub directories)
+		>12 battles all together, final 3: Hektor, Aeneas, Paris
+		>After first X battles Achilles goes to get supplies
+		>Go with him to raid somewhere
+		>He returns with Briseis
+		>A great plague strikes the army
+		>Tiresias says Briseis must be returned
+		>Achilles throws a fit
+		>Pandaros fight
+		>Trojans push to the ships
+		>Patrokles fall (IDK)
+		>Achilles returns
+		>Hektor fight
+		>Ulysses trojan horse device to infiltrate Troy (Probably just a tunnel) - TROJAN WHORES!
+		>Aeneas
+		>Priam
+		>Paris
+		>Helen
+	>Return to Church for wedding
+	>Wedding of Menelaus and Helen
+	>Castor and Pollux bring Heracles to the party
+	>Heracles Drunk
+	>Heracles Boast
+	>Complete Trials of Heracles
+		>1: Defeat Nemean Lion
+		>2: Defeat Hydra
+		>3: Capture Hind
+		>4: Capture Boar
+		>5: Clean Stables
+		>6: Defeat Stygian Birds
+		>7: Capture bull
+		>8: Capture Mare
+		>9: Defeat Hippolyta
+		>10 Capture Cow
+		>11 Steal golden apples
+		>12 Capture Ceberus
+	>Heracles Fight
+	>Get Gauntlets of Strength
+	>Move Boulders
+Wise
+	>University
+Girlfriend (leaf)
+	>rich
+	>has own bike
+	>has a tattoo
+Back to Class
+Begin Revolution
+Prison Break
+Road to the capital
+Rocket Tower
+Capital
+

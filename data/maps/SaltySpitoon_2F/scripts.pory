@@ -773,5 +773,5 @@ text SaltySpitoon_2F_Text_GetTattoo {
 }
 
 text SaltySpitoon_2F_Text_GetTattoo2 {
-	format("Hey! That looks real cool man! Like zoinks you look like a real tough guy now. I'm gonna head back to the shack to smoke. See you around boss. Like zoins bro see ya.")
+	format("Hey! That looks real cool man! Like zoinks you look like a real tough guy now. I'm gonna head back to the shack to smoke. See you around boss. Like zoinks bro see ya.")
 }
