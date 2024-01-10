@@ -732,10 +732,31 @@ Church
 Indianus
 Long Road to Pyramid
 Strong
-	>Nestor orders you to bring the great heros to assail troy and take Helen back.
-	>Once the heros are assembles Nestor will conduct a headcount but find only 11 men present. At this point Menelaus will exclaim "He's stolen her!" Paris has stolen Helen. Menelaus insists the heros assemble to defeat Paris and win her back. Hektor and Aeneas say they will not fight their own brother, they give respect to Nestor and the heros but leave to defend their family. Nestor laments the breaking of the heros but suggests you join the heros to get Helen back so that the heros can re-assemble and summon heracles.
+	>Nestor wants to marry his daughter Helen to ensure the survival of his dynasty only daughter
+	>She will not marry without her brothers there Castor and Pollux (but she's also clearly fucking Paris)
+	>Dioscuri are away on the Argo
+	>ARGO
+	>Castor and Pollux return
+	>Nestor makes his decision and has both suitors swear to uphold his desicion
+	>Has player bring their brothers and best men to celebrate the great wedding
+		>ULYSSES - ODYSSES
+		>AGAMEMNON - ORESTES - KLYDOMNESTRA ETC
+		>AENEIS - Lavinian Shores - Romulus and Remus
+		>HEKTOR - Training Cave
+	>All gathered Nestor announces Menelaus will marry his daughter and inherit his fortune / remnants of his Duchy or whatever. Invites all to meet him at the church next door. Helen is clearly upset Paris is trying to calm her
+	>Gathered at the Church Nestor conducts a headcount and finds Helen and Paris missing.
+	>Accuses Hektor and Aeneis. Aeneis claims love will find a way Hektor maintains his family can do no wrong they both leave.
+	>Nestor orders you to bring the great heros to assail troy and take Helen back - Castor and Pollux go to get Heracles
+		>Achilles
+		>Patrokles
+		>Ajax - On the beach, after his PTSD madness. Butchered a flock of sheep
+		>Lesser Ajax
+		>Diomedes - Horse Races
+		>Teucer
+		>Philoctetes (Not yet)
+		>Tiresies (Oedipus, 12 Against Thebes, Antigone)
 	>Iphigenia
-		>The Heros assemble (somewhere not Troy) and realize they don't know where Paris has gone. Tiresias communes with the divine and declares that one of them must sacrifice their child. It goes around the horn that everyone is shocked but Agamemnon rises and says he will sacricfice his daughter Iphigenia after her mother had tried to kill him. He charges you to go retrieve her.
+		>The Heros assemble  and realize they don't know where Paris has gone. Tiresias communes with the divine and declares that one of them must sacrifice their child. It goes around the horn that everyone is shocked but Agamemnon rises and says he will sacricfice his daughter Iphigenia after her mother had tried to kill him. He charges you to go retrieve her.
 		>Return to Orestes @ Agamemnon house
 		>Orestes says that Iphigenia has gone to Aulis (why?)
 		>When you two go to fetch her you are captured and brought to be sacrificed?
@@ -746,20 +767,26 @@ Strong
 		>Sacrifice
 		>The way to Troy is made clear
 	>Trojan War
-		>Arrival at Troy (Castle tiles available at Docs/Poke/art/castle...png - NOT in the sub directories)
-		>12 battles all together, final 3: Hektor, Aeneas, Paris
-		>After first X battles Achilles goes to get supplies
-		>Go with him to raid somewhere
-		>He returns with Briseis
-		>A great plague strikes the army
-		>Tiresias says Briseis must be returned
-		>Achilles throws a fit
-		>Pandaros fight
-		>Trojans push to the ships
-		>Patrokles fall (IDK)
-		>Achilles returns
-		>Hektor fight
-		>Ulysses trojan horse device to infiltrate Troy (Probably just a tunnel) - TROJAN WHORES!
+		>Arrival at Troy 
+		>Skirmish at the wall (Antenor)
+		>Supply raid; Briseis at the horse enclosure (Memnon)
+		>Meeting of the armies
+			>Proposal for Menelaus and Paris to duel
+			>Paris chicken
+			>General Battle (Glaucus)
+		>A respite
+		>A second meeting of the armies (Deiphobus)
+		>Retreat to the camp
+		>Hold the camp (Dolon)
+		>Debate what to do - Old Nestor Joke
+		>Fetch Philoctetes
+		>Troilus is cought sneaking around. Agrees to give up Troy in exchange for his love. Rage of Achilleus.
+		>Take the 3 Palladia
+			>Lake (Sarpedon)
+			>Forest (Pandarus)
+			>Mountain (Adrastus)
+		>Another attack on the walls of Troy (Hektor)
+		>Ulysses' plan: Trojan whores
 		>Aeneas
 		>Priam
 		>Paris
