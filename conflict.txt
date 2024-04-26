@@ -64,6 +64,9 @@
 >Check item description (header and menu and battle?)
 
 
+!!!
+> Add TRAINER_SPRITE(SPRITE, Sprite) for ALL Kustom Trainer Sprites :/
+
 >Remove TrainerBall gTrainerBallTable from src/battle_main.c
 >CameraObjectReset1 -> CameraObjectReset
 >CameraObjectReset2 -> CameraObjectFreeze

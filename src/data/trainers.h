@@ -736,7 +736,7 @@ const struct Trainer gTrainers[] = {
     {
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
-		.trainerPic = TRAINER_PIC_BLUE,
+		.trainerPic = TRAINER_PIC_BLUE1,
 		.trainerName = _("{B_RIVAL_NAME}"),
 		.items = {},
 		.doubleBattle = FALSE,
@@ -2211,7 +2211,7 @@ const struct Trainer gTrainers[] = {
 	{
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
-		.trainerPic = TRAINER_PIC_BLUE,
+		.trainerPic = TRAINER_PIC_BLUE1,
 		.trainerName = _("???"),
 		.items = {},
 		.doubleBattle = FALSE,

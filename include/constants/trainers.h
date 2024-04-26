@@ -109,7 +109,7 @@
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
 //CUSTOMS
-#define TRAINER_PIC_BLUE                  93
+#define TRAINER_PIC_BLUE1                 93
 #define TRAINER_PIC_LORELEI               94
 #define TRAINER_PIC_BLAINE                95
 #define TRAINER_PIC_JESSEANDJAMES         96

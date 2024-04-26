@@ -370,7 +370,7 @@ static const union AnimCmd *const sAnims_RubySapphireMay[] ={
     sAnim_GeneralFrame0,
 };
 
-static const union AnimCmd *const sAnims_Blue[] ={
+static const union AnimCmd *const sAnims_Blue1[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -570,7 +570,7 @@ static const union AnimCmd *const sAnims_Janitor[] ={
     sAnim_GeneralFrame0,
 };
 
-static const union AnimCmd *const sAnims_Nurse_Joy[] ={
+static const union AnimCmd *const sAnims_NurseJoy[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -703,7 +703,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_LEAF] = sAnims_Leaf,
     [TRAINER_PIC_RS_BRENDAN] = sAnims_RubySapphireBrendan,
     [TRAINER_PIC_RS_MAY] = sAnims_RubySapphireMay,
-    [TRAINER_PIC_BLUE] = sAnims_Blue,
+    [TRAINER_PIC_BLUE1] = sAnims_Blue1,
     [TRAINER_PIC_LORELEI] = sAnims_Lorelei,
     [TRAINER_PIC_BLAINE] = sAnims_Blaine,	
     [TRAINER_PIC_JESSEANDJAMES] = sAnims_JesseAndJames,
@@ -753,7 +753,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_SOLDIER] = sAnims_Soldier,
     [TRAINER_PIC_MISTY2] = sAnims_Misty2,
     [TRAINER_PIC_JANITOR] = sAnims_Janitor,
-    [TRAINER_PIC_NURSE_JOY] = sAnims_Nurse_Joy,
+    [TRAINER_PIC_NURSE_JOY] = sAnims_NurseJoy,
     [TRAINER_PIC_CUE_BALL_NO_BIKE] = sAnims_CueBallNoBike,
     [TRAINER_PIC_GREEN] = sAnims_Green,
     [TRAINER_PIC_BIG_BLUE] = sAnims_BigBlue,
