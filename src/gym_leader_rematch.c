@@ -5,7 +5,9 @@
 #include "gym_leader_rematch.h"
 
 static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 maxRematch);
+#if FREE_MATCH_CALL == FALSE
 static s32 GetRematchIndex(u32 trainerIdx);
+#endif //FREE_MATCH_CALL
 
 static const u16 GymLeaderRematches_AfterNewMauville[] = {
     REMATCH_ROXANNE,
@@ -43,10 +45,12 @@ void UpdateGymLeaderRematch(void)
 
 static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 maxRematch)
 {
+#if FREE_MATCH_CALL == FALSE
     s32 whichLeader = 0;
     s32 lowestRematchIndex = 5;
     u32 i;
     s32 rematchIndex;
+
     for (i = 0; i < size; i++)
     {
         if (!gSaveBlock1Ptr->trainerRematches[data[i]])
@@ -90,8 +94,10 @@ static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 ma
             }
         }
     }
+#endif //FREE_MATCH_CALL
 }
 
+#if FREE_MATCH_CALL == FALSE
 static s32 GetRematchIndex(u32 trainerIdx)
 {
     s32 i;
@@ -104,3 +110,4 @@ static s32 GetRematchIndex(u32 trainerIdx)
     }
     return 5;
 }
+#endif //FREE_MATCH_CALL

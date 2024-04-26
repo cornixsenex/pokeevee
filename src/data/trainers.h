@@ -251,8 +251,6 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_Leaf1),
-		.hasCustomTransition = TRUE,
-		.transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_NICK] =
@@ -744,8 +742,6 @@ const struct Trainer gTrainers[] = {
 		.doubleBattle = FALSE,
 		.aiFlags = AI_FLAG_CHECK_BAD_MOVE,
 		.party = TRAINER_PARTY(sParty_Rival2),
-		.hasCustomTransition = TRUE,
-		.transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_EMILY] =
@@ -1334,8 +1330,6 @@ const struct Trainer gTrainers[] = {
 		.doubleBattle = FALSE,
 		.aiFlags = AI_FLAG_CHECK_BAD_MOVE,
 		.party = TRAINER_PARTY(sParty_Rival3),
-		.hasCustomTransition = TRUE,
-		.transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_TASHA] =
@@ -1385,8 +1379,6 @@ const struct Trainer gTrainers[] = {
 		.doubleBattle = FALSE,
 		.aiFlags = AI_FLAG_CHECK_BAD_MOVE,
 		.party = TRAINER_PARTY(sParty_Rival4),
-		.hasCustomTransition = TRUE,
-		.transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_RIVAL5] =
@@ -1399,8 +1391,6 @@ const struct Trainer gTrainers[] = {
 		.doubleBattle = FALSE,
 		.aiFlags = AI_FLAG_CHECK_BAD_MOVE,
 		.party = TRAINER_PARTY(sParty_Rival5),
-		.hasCustomTransition = TRUE,
-		.transition = B_TRANSITION_MUGSHOT,
     },
 
 
@@ -2227,8 +2217,6 @@ const struct Trainer gTrainers[] = {
 		.doubleBattle = FALSE,
 		.aiFlags = AI_FLAG_CHECK_BAD_MOVE,
 		.party = TRAINER_PARTY(sParty_Rival1),
-		.hasCustomTransition = TRUE,
-		.transition = B_TRANSITION_MUGSHOT,
 	},
 
     //[TRAINER_KIYO] =
@@ -3199,6 +3187,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("SIDNEY"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN,
         .party = TRAINER_PARTY(sParty_Sidney),
     },
@@ -3211,6 +3201,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("PHOEBE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Phoebe),
     },
@@ -3223,6 +3215,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("GLACIA"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PINK,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Glacia),
     },
@@ -3235,6 +3229,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("DRAKE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_BLUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Drake),
     },
@@ -4087,6 +4083,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("WALLACE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_YELLOW,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Wallace),
     },
@@ -6409,8 +6407,6 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MAY_ROUTE_103_MUDKIP] =
     {
-        .hasCustomTransition = TRUE,
-        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_MAY,
@@ -6447,8 +6443,6 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MAY_ROUTE_103_TREECKO] =
     {
-        .hasCustomTransition = TRUE,
-        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_MAY,
@@ -6485,8 +6479,6 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MAY_ROUTE_103_TORCHIC] =
     {
-        .hasCustomTransition = TRUE,
-        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_MAY,
