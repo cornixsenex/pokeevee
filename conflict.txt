@@ -55,7 +55,6 @@
 	>Empty -> ?? Just read the rhh diff / blame and see whats going on here
 
 ###
->Check Rock Climb
 >Check custom trainer mon is shiny. Check givemon is shiny (debug, then scripted)
 >How to add custom transitions
 >Check items work in battle and in menu
@@ -65,7 +64,6 @@
 
 
 !!!
->Fix followers
 >Fix face wrong direction on sideways stairs
 
 >Remove TrainerBall gTrainerBallTable from src/battle_main.c
