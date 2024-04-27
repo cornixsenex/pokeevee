@@ -881,6 +881,7 @@ void FieldEffectActiveListClear(void)
 void FieldEffectActiveListAdd(u8 id)
 {
     u8 i;
+
     for (i = 0; i < ARRAY_COUNT(sActiveList); i++)
     {
         if (sActiveList[i] == 0xFF)

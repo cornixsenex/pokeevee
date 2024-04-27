@@ -1248,6 +1248,7 @@ bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
 {
     u8 playerObjectId;
 
+
     HideFieldMessageBox();
     playerObjectId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
@@ -2080,6 +2081,7 @@ bool8 ScrCmd_contestlinktransfer(struct ScriptContext *ctx)
 bool8 ScrCmd_dofieldeffect(struct ScriptContext *ctx)
 {
     u16 effectId = VarGet(ScriptReadHalfword(ctx));
+
 
     sFieldEffectScriptId = effectId;
     FieldEffectStart(sFieldEffectScriptId);

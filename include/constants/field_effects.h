@@ -71,8 +71,10 @@
 #define FLDEFF_USE_VS_SEEKER             67
 #define FLDEFF_X_ICON                    68
 #define FLDEFF_DOUBLE_EXCL_MARK_ICON     69
+//NOTE if these values change be sure to re-arrange the table at data/field_effect_scripts.s
 #define FLDEFF_USE_ROCK_CLIMB            70
 #define FLDEFF_ROCK_CLIMB_DUST           71
+
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

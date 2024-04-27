@@ -65,9 +65,8 @@
 
 
 !!!
->Fix Rock Climb
->Fix item description on obtain
 >Fix followers
+>Fix face wrong direction on sideways stairs
 
 >Remove TrainerBall gTrainerBallTable from src/battle_main.c
 >CameraObjectReset1 -> CameraObjectReset
