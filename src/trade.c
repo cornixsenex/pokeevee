@@ -50,7 +50,6 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/union_room.h"
-#include "pokemon_overworld_follower.h"
 
 // IDs for RunTradeMenuCallback
 enum {
@@ -434,8 +433,6 @@ static void InitTradeMenu(void)
         sTradeMenu->partnerConfirmStatus = STATUS_NONE;
         sTradeMenu->timer = 0;
     }
-    if (POF_PlayerHasFollower()) // pokemon_overworld_follower
-        POF_DestroyFollower();
 }
 
 void CB2_StartCreateTradeMenu(void)

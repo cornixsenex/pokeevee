@@ -300,13 +300,6 @@ script FootballField_EventScript_ClassFinished {
 
 script FootballField_EventScript_GymClass {
 	//intro	//Check no PokemonFollower
-	if (flag(FLAG_FOLLOWER_ACTIVE)) {
-		msgbox(FootballField_Text_NoFollowersAllowed)
-		closemessage
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-		waitmovement (0)
-		return
-	}
 	msgbox(FootballField_Text_FieldClosed)
 	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_ExclamationMark)
 	waitmovement (0)

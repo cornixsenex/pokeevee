@@ -73,11 +73,7 @@ script Capital_EventScript_ShowMaxie {
 	
 script Capital_EventScript_DeskTest {
 	lock
-	if (flag(FLAG_FOLLOWER_ACTIVE)) {
-		msgbox (Capital_Text_DeskTestYes)
-	} else {
-		msgbox (Capital_Text_DeskTestNo)
-	}
+	msgbox (Capital_Text_DeskTestNo)
 	closemessage
 	release
 	end
@@ -359,24 +355,12 @@ script Capital_EventScript_GioPresident {
 	switch (var(VAR_CAPITAL_STATE)) {
 		case 1:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera1)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera1)
-			}
 		case 2:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera2)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower2A)
-			}
 		case 3:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera3)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_PanCamera3)
-			}
 		case 4:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera4)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_FOLLOWER, Capital_Movement_Follower4A)
-			}
 	}
 	//Gio bean expectin	+
 	load_field_pic (GIO_FIELD_PIC, 190, 98)
@@ -677,9 +661,6 @@ script Capital_EventScript_MaxieScene {
 	
 	//player auto-walks down a bit
 	applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro)
-	if (flag(FLAG_FOLLOWER_ACTIVE)) {
-		applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro)
-	}
 	waitmovement (0)
 	
 	//player suprise
@@ -697,25 +678,12 @@ script Capital_EventScript_MaxieScene {
 	switch (var(VAR_CAPITAL_STATE)) {
 		case 6:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1)
-			}
-
 		case 7:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2)
-			}
 		case 8:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3)
-			}
 		case 9:
 			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4)
-			if (flag(FLAG_FOLLOWER_ACTIVE)) {
-				applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4)
-			}
 	}
 	//Maxie moves to speak with player
 	if (var(VAR_CAPITAL_STATE) < 8) {

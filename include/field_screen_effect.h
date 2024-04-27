@@ -44,8 +44,5 @@ bool8 IsPlayerStandingStill(void);
 void DoStairWarp(u16 metatileBehavior, u16 delay);
 bool8 IsDirectionalStairWarpMetatileBehavior(u16 metatileBehavior, u8 playerDirection);
 
-// pokemon_overworld_follower
-void SetPlayerVisibility(bool8 visible);
-void Task_WarpAndLoadMap(u8 taskId);
 
 #endif // GUARD_FIELD_SCREEN_EFFECT_H

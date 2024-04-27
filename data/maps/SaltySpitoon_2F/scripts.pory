@@ -623,12 +623,7 @@ script SaltySpitoon_2F_EventScript_AmbushGreen {
 }
 
 script SaltySpitoon_2F_EventScript_AmbushPositionPlayer {
-	if (flag(FLAG_FOLLOWER_ACTIVE)) {
-		applymovement (OBJ_EVENT_ID_PLAYER, SaltySpitoon_2F_Movement_PlayerAmbush)
-		applymovement (OBJ_EVENT_ID_FOLLOWER, SaltySpitoon_2F_Movement_FollowerAmbush)
-	} else {
-		applymovement (OBJ_EVENT_ID_PLAYER, SaltySpitoon_2F_Movement_PlayerAmbush)
-	}
+	applymovement (OBJ_EVENT_ID_PLAYER, SaltySpitoon_2F_Movement_PlayerAmbush)
 	waitmovement (0)
 	return
 }

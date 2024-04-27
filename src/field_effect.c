@@ -32,7 +32,6 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "pokemon_overworld_follower.h"
 #include "constants/map_types.h"
 
 #define subsprite_table(ptr) {.subsprites = ptr, .subspriteCount = (sizeof ptr) / (sizeof(struct Subsprite))}
@@ -1572,7 +1571,6 @@ static bool8 FallWarpEffect_End(struct Task *task)
     UnfreezeObjectEvents();
     InstallCameraPanAheadCallback();
     DestroyTask(FindTaskIdByFunc(Task_FallWarpFieldEffect));
-    POF_FollowMe_WarpSetEnd(); // pokemon_overworld_follower
     return FALSE;
 }
 
@@ -1624,7 +1622,6 @@ static bool8 EscalatorWarpOut_WaitForPlayer(struct Task *task)
         task->tState++;
         task->data[2] = 0;
         task->data[3] = 0;
-        POF_EscalatorMoveFollower(task->data[1]); // pokemon_overworld_follower
         if ((u8)task->tGoingUp == FALSE)
         {
             task->tState = 4; // jump to EscalatorWarpOut_Down_Ride
@@ -1761,7 +1758,6 @@ static bool8 EscalatorWarpIn_Init(struct Task *task)
         behavior = FALSE;
     }
     StartEscalator(behavior);
-    POF_EscalatorMoveFollowerFinish(); // pokemon_overworld_follower
     return TRUE;
 }
 
@@ -3078,7 +3074,6 @@ static void SurfFieldEffect_JumpOnSurfBlob(struct Task *task)
         ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_SURFING));
         ObjectEventClearHeldMovementIfFinished(objectEvent);
         ObjectEventSetHeldMovement(objectEvent, GetJumpSpecialMovementAction(objectEvent->movementDirection));
-        POF_FollowMe_FollowerToWater(); // pokemon_overworld_follower
         gFieldEffectArguments[0] = task->tDestX;
         gFieldEffectArguments[1] = task->tDestY;
         gFieldEffectArguments[2] = gPlayerAvatar.objectEventId;
@@ -3240,7 +3235,6 @@ static void FlyOutFieldEffect_ShowMon(struct Task *task)
         task->tState++;
         gFieldEffectArguments[0] = task->tMonId;
         FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
-        POF_ToggleFollower();
     }
 }
 
@@ -3638,8 +3632,6 @@ static void FlyInFieldEffect_End(struct Task *task)
         gPlayerAvatar.preventStep = FALSE;
         FieldEffectActiveListRemove(FLDEFF_FLY_IN);
         DestroyTask(FindTaskIdByFunc(Task_FlyIn));
-
-        POF_ToggleFollower();
     }
 }
 

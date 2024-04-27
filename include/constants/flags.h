@@ -102,7 +102,7 @@
 #define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
 #define FLAG_SLABS_HIDE_RIVAL                0x52
 #define FLAG_HEALTH_INSURANCE_OBTAINED       0x53 //// UNUSED!!!!!
-#define FLAG_FOLLOWER_ALT_APPROACH           0x54  // Give alternate route to follower in cutscenes
+#define FLAG_FOLLOWER_ALT_APPROACH           0x54  // UNUSED !!!!!
 #define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
 #define FLAG_WHJ_OPEN                        0x56  // Set when allowed into WHJ 					
 #define FLAG_GATOCITYS_HIDEM1             	 0x57  // Hides M1 in line...should be an easier way but this is expedient.

@@ -435,67 +435,54 @@ FootballField_EventScript_ClassFinished::
 
 FootballField_EventScript_GymClass::
 # 303 "data/maps/FootballField/scripts.pory"
-	goto_if_set FLAG_FOLLOWER_ACTIVE, FootballField_EventScript_GymClass_2
-# 310 "data/maps/FootballField/scripts.pory"
 	msgbox FootballField_Text_FieldClosed
-# 311 "data/maps/FootballField/scripts.pory"
-	applymovement 1, Common_Movement_ExclamationMark
-# 312 "data/maps/FootballField/scripts.pory"
-	waitmovement 0
-# 313 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_GymIntro
-# 314 "data/maps/FootballField/scripts.pory"
-	closemessage
-# 315 "data/maps/FootballField/scripts.pory"
-	delay 30
-# 317 "data/maps/FootballField/scripts.pory"
-	call FootballField_EventScript_RunningTest
-	return
-
-FootballField_EventScript_GymClass_2:
 # 304 "data/maps/FootballField/scripts.pory"
-	msgbox FootballField_Text_NoFollowersAllowed
+	applymovement 1, Common_Movement_ExclamationMark
 # 305 "data/maps/FootballField/scripts.pory"
-	closemessage
-# 306 "data/maps/FootballField/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 307 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
+# 306 "data/maps/FootballField/scripts.pory"
+	msgbox FootballField_Text_GymIntro
+# 307 "data/maps/FootballField/scripts.pory"
+	closemessage
+# 308 "data/maps/FootballField/scripts.pory"
+	delay 30
+# 310 "data/maps/FootballField/scripts.pory"
+	call FootballField_EventScript_RunningTest
 	return
 
 
 FootballField_EventScript_CollisionYoungster::
-# 328 "data/maps/FootballField/scripts.pory"
+# 321 "data/maps/FootballField/scripts.pory"
 	lockall
-# 329 "data/maps/FootballField/scripts.pory"
+# 322 "data/maps/FootballField/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 330 "data/maps/FootballField/scripts.pory"
+# 323 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
-# 331 "data/maps/FootballField/scripts.pory"
+# 324 "data/maps/FootballField/scripts.pory"
 	msgbox FootballField_Text_RunningTestFail
-# 332 "data/maps/FootballField/scripts.pory"
+# 325 "data/maps/FootballField/scripts.pory"
 	closemessage
-# 333 "data/maps/FootballField/scripts.pory"
+# 326 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_SetupRunningTest
-# 334 "data/maps/FootballField/scripts.pory"
+# 327 "data/maps/FootballField/scripts.pory"
 	call FootballField_EventScript_StartRunningTest
-# 335 "data/maps/FootballField/scripts.pory"
+# 328 "data/maps/FootballField/scripts.pory"
 	releaseall
 	return
 
 
 FootballField_EventScript_FieldClosed::
-# 340 "data/maps/FootballField/scripts.pory"
+# 333 "data/maps/FootballField/scripts.pory"
 	applymovement 1, Common_Movement_ExclamationMark
-# 341 "data/maps/FootballField/scripts.pory"
+# 334 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
-# 342 "data/maps/FootballField/scripts.pory"
+# 335 "data/maps/FootballField/scripts.pory"
 	msgbox FootballField_Text_FieldClosed
-# 343 "data/maps/FootballField/scripts.pory"
+# 336 "data/maps/FootballField/scripts.pory"
 	closemessage
-# 344 "data/maps/FootballField/scripts.pory"
+# 337 "data/maps/FootballField/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 345 "data/maps/FootballField/scripts.pory"
+# 338 "data/maps/FootballField/scripts.pory"
 	waitmovement 0
 	return
 
@@ -505,13 +492,13 @@ FootballField_EventScript_EndZone_Text_0:
 	.string "EndZone Trigger Var 0$"
 
 FootballField_Text_FieldClosed::
-# 350 "data/maps/FootballField/scripts.pory"
-	.string "Hey you! Field's closed! We only want\n"
+# 343 "data/maps/FootballField/scripts.pory"
+	.string "Hey you! Field's closed! We only want\l"
 	.string "student atheletes touching this grass.$"
 
 FootballField_Text_GymIntro::
-# 354 "data/maps/FootballField/scripts.pory"
-	.string "Wait. Whats that? You're here from the\n"
+# 347 "data/maps/FootballField/scripts.pory"
+	.string "Wait. Whats that? You're here from the\l"
 	.string "college? Oh shit! Uhh... Ellohey.... uhh...\l"
 	.string "elcomeway... to... uhhh... assclay.. uhhh.\l"
 	.string "Oh fuck it! Look, here's the thing. Out\l"
@@ -525,52 +512,52 @@ FootballField_Text_GymIntro::
 	.string "me.$"
 
 FootballField_Text_NoFollowersAllowed::
-# 358 "data/maps/FootballField/scripts.pory"
-	.string "Hey! We don't let those filthy animals\n"
+# 351 "data/maps/FootballField/scripts.pory"
+	.string "Hey! We don't let those filthy animals\l"
 	.string "on our grass. Your Pokemon, it has to\l"
 	.string "wait outside we don't want it here.$"
 
 FootballField_Text_BeginRunningTest::
-# 362 "data/maps/FootballField/scripts.pory"
-	.string "First things first let's see if you can\n"
+# 355 "data/maps/FootballField/scripts.pory"
+	.string "First things first let's see if you can\l"
 	.string "run. Try to make it to the other side of\l"
 	.string "the field without letting any of my\l"
 	.string "boys hit you first.$"
 
 FootballField_Text_DoNotLeaveField::
-# 366 "data/maps/FootballField/scripts.pory"
-	.string "Hey! Where do you think you're going?\n"
+# 359 "data/maps/FootballField/scripts.pory"
+	.string "Hey! Where do you think you're going?\l"
 	.string "Get your lazy ass back on the field and\l"
 	.string "finish the drill!$"
 
 FootballField_Text_ClassFinished::
-# 370 "data/maps/FootballField/scripts.pory"
-	.string "Hey what do you think you're doing? You\n"
+# 363 "data/maps/FootballField/scripts.pory"
+	.string "Hey what do you think you're doing? You\l"
 	.string "just made my boys look like total\l"
 	.string "loosers! Get off my field!$"
 
 FootballField_Text_CoachIntro::
-# 374 "data/maps/FootballField/scripts.pory"
-	.string "We can't have some game changer like\n"
+# 367 "data/maps/FootballField/scripts.pory"
+	.string "We can't have some game changer like\l"
 	.string "you running around making us feel bad.\l"
 	.string "We got a championship to win!$"
 
 FootballField_Text_CoachLost::
-# 378 "data/maps/FootballField/scripts.pory"
+# 371 "data/maps/FootballField/scripts.pory"
 	.string "I think I broke something...$"
 
 FootballField_Text_CoachPost::
-# 382 "data/maps/FootballField/scripts.pory"
-	.string "We don't need your fucking help to win.\n"
+# 375 "data/maps/FootballField/scripts.pory"
+	.string "We don't need your fucking help to win.\l"
 	.string "Get out of here kid you passed the\l"
 	.string "class.$"
 
 FootballField_Text_CoachComplete::
-# 386 "data/maps/FootballField/scripts.pory"
-	.string "I told you already, you passed the\n"
+# 379 "data/maps/FootballField/scripts.pory"
+	.string "I told you already, you passed the\l"
 	.string "class, now get out of here.$"
 
 FootballField_Text_RunningTestFail::
-# 390 "data/maps/FootballField/scripts.pory"
-	.string "Hey! One of my boys got ya! You're too\n"
+# 383 "data/maps/FootballField/scripts.pory"
+	.string "Hey! One of my boys got ya! You're too\l"
 	.string "slow out there do it again!$"

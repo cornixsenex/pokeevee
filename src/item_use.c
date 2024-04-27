@@ -44,7 +44,6 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
-#include "pokemon_overworld_follower.h"
 #include "random.h"
 #include "constants/map_types.h"
 
@@ -260,7 +259,6 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
         GetOnOffBike(PLAYER_AVATAR_FLAG_MACH_BIKE);
     else // ACRO_BIKE
         GetOnOffBike(PLAYER_AVATAR_FLAG_ACRO_BIKE);
-    POF_FollowMe_HandleBike(); // pokemon_overworld_follower
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     DestroyTask(taskId);

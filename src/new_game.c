@@ -45,7 +45,6 @@
 #include "mystery_gift.h"
 #include "union_room_chat.h"
 #include "constants/items.h"
-#include "pokemon_overworld_follower.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -207,8 +206,6 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetContestLinkResults();
 	
-	POF_DestroyFollower();
-    
     memset(&gSaveBlock2Ptr->itemFlags, 0, sizeof(gSaveBlock2Ptr->itemFlags));
 }
 

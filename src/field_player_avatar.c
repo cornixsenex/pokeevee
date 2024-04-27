@@ -32,7 +32,6 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
-#include "pokemon_overworld_follower.h"
 
 //I don't like this hard code define...it should reference NELEMS(sForcedMovementTestFuncs) but whatever
 #define NUM_FORCED_MOVEMENTS 22
@@ -734,7 +733,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON || gSaveBlock2Ptr->autoRun) && FlagGet(FLAG_SYS_B_DASH)
-     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !POF_FollowerComingThroughDoor())
+     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
     {
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
             PlayerRunSlow(direction);
@@ -1583,7 +1582,6 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     gPlayerAvatar.spriteId = objectEvent->spriteId;
     gPlayerAvatar.gender = gender;
     SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_CONTROLLABLE | PLAYER_AVATAR_FLAG_ON_FOOT);
-    POF_CreateFollowerAvatar(); // pokemon_overworld_follower
 }
 
 void SetPlayerInvisibility(bool8 invisible)
@@ -1864,7 +1862,6 @@ static void Task_WaitStopSurfing(u8 taskId)
         // If this is not defined but the player steps into grass from surfing, they will appear over the grass instead of in the grass.
         playerObjEvent->triggerGroundEffectsOnMove = TRUE;
 #endif
-        POF_ToggleFollower();
         DestroyTask(taskId);
     }
 }
@@ -2531,8 +2528,6 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
         
         //#if FOLLOW_ME_IMPLEMENTED
             //if (PlayerHasFollower() && (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId()))
-            if (POF_PlayerHasFollower() && (objectEvent->isPlayer || objectEvent->localId == POF_GetFollowerObjectId()))
-                return FALSE;
         //#endif
         
         switch (direction)

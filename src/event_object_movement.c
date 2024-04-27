@@ -32,7 +32,6 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/trainer_types.h"
 #include "constants/union_room.h"
-#include "pokemon_overworld_follower.h"
 #include "script.h"
 
 // this file was known as evobjmv.c in Game Freak's original source
@@ -88,7 +87,6 @@ static void MoveCoordsInDirection(u32, s16 *, s16 *, s16, s16);
 static bool8 ObjectEventExecSingleMovementAction(struct ObjectEvent *, struct Sprite *);
 static void SetMovementDelay(struct Sprite *, s16);
 static bool8 WaitForMovementDelay(struct Sprite *);
-// static u8 GetCollisionInDirection(struct ObjectEvent *, u8);
 static u32 GetCopyDirection(u8, u32, u32);
 static void TryEnableObjectEventAnim(struct ObjectEvent *, struct Sprite *);
 static void ObjectEventExecHeldMovementAction(struct ObjectEvent *, struct Sprite *);
@@ -139,7 +137,7 @@ static void MakeSpriteTemplateFromObjectEventTemplate(const struct ObjectEventTe
 static void GetObjectEventMovingCameraOffset(s16 *, s16 *);
 static u8 GetObjectEventIdByLocalId(u8);
 const struct ObjectEventTemplate *GetObjectEventTemplateByLocalIdAndMap(u8, u8, u8);
-void LoadObjectEventPalette(u16); //This is static in rhh, changed from follower system
+void LoadObjectEventPalette(u16); 
 static void RemoveObjectEventIfOutsideView(struct ObjectEvent *);
 static void SpawnObjectEventOnReturnToField(u8, s16, s16);
 static void SetPlayerAvatarObjectEventIdAndObjectId(u8, u8);
@@ -3132,8 +3130,7 @@ u8 GetFirstInactiveObjectEventId(void)
 
 u8 GetObjectEventIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroupId)
 {
-    if (localId == OBJ_EVENT_ID_FOLLOWER) // pokemon_overworld_follower
-        return POF_GetFollowerObjectId();
+
     if (localId < OBJ_EVENT_ID_PLAYER)
         return GetObjectEventIdByLocalIdAndMapInternal(localId, mapNum, mapGroupId);
 
@@ -3428,6 +3425,7 @@ u8 SpawnSpecialObjectEventParameterized(u16 graphicsId, u8 movementBehavior, u8 
 
 u8 TrySpawnObjectEvent(u8 localId, u8 mapNum, u8 mapGroup)
 {
+
     const struct ObjectEventTemplate *objectEventTemplate;
     s16 cameraX, cameraY;
 
@@ -3592,7 +3590,7 @@ void RemoveObjectEventsOutsideView(void)
         {
             struct ObjectEvent *objectEvent = &gObjectEvents[i];
 
-            if (objectEvent->active && !objectEvent->isPlayer && i != POF_GetFollowerObjectId())
+            if (objectEvent->active && !objectEvent->isPlayer)
                 RemoveObjectEventIfOutsideView(objectEvent);
         }
     }
@@ -6877,7 +6875,7 @@ static bool8 DoesObjectCollideWithObjectAt(struct ObjectEvent *objectEvent, s16 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
         curObject = &gObjectEvents[i];
-        if (curObject->active && curObject != objectEvent && !POF_FollowMe_IsCollisionExempt(curObject, objectEvent))
+        if (curObject->active && curObject != objectEvent)
         {            
             // check for collision if curObject is active, not the object in question, and not exempt from collisions
             if ((curObject->currentCoords.x == x && curObject->currentCoords.y == y) || (curObject->previousCoords.x == x && curObject->previousCoords.y == y))
@@ -7018,14 +7016,12 @@ bool8 ObjectEventIsHeldMovementActive(struct ObjectEvent *objectEvent)
 
 static u8 TryUpdateMovementActionOnStairs(struct ObjectEvent *objectEvent, u8 movementActionId)
 {
-    //#if FOLLOW_ME_IMPLEMENTED
-        //if (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId())
-		if (objectEvent->isPlayer || objectEvent->localId == POF_GetFollowerObjectId())
+    #if FOLLOW_ME_IMPLEMENTED
+      if (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId())
+    #else
+        if (objectEvent->isPlayer)
             return movementActionId;    //handled separately
-    //#else
-    //    if (objectEvent->isPlayer)
-    //        return movementActionId;    //handled separately
-    //#endif
+    #endif
     
     if (!ObjectMovingOnRockStairs(objectEvent, objectEvent->movementDirection))
         return movementActionId;
@@ -7057,7 +7053,6 @@ bool8 ObjectEventSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementAct
     objectEvent->heldMovementActive = TRUE;
     objectEvent->heldMovementFinished = FALSE;
     gSprites[objectEvent->spriteId].sActionFuncId = 0;
-    POF_FollowMe(objectEvent, movementActionId, FALSE); // pokemon_overworld_follower
     return FALSE;
 }
 
@@ -11312,7 +11307,6 @@ bool8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *objectEvent, str
     return FALSE;
 }
 
-// pokemon_overworld_follower
 u16 GetMiniStepCount(u8 speed)
 {
     return (u16)sStepTimes[speed];

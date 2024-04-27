@@ -45,7 +45,6 @@
 #include "party_menu.h"
 #include "player_pc.h"
 #include "pokemon.h"
-#include "pokemon_overworld_follower.h"
 #include "pokemon_icon.h"
 #include "pokemon_jump.h"
 #include "pokemon_storage_system.h"
@@ -487,8 +486,6 @@ static void CursorCb_Cancel1(u8);
 static void CursorCb_Item(u8);
 static void CursorCb_Give(u8);
 static void CursorCb_TakeItem(u8);
-static void CursorCb_PkmFollow(u8); //Pokemon overworld follower
-static void CursorCb_PkmUnfollow(u8); //Pokemon overworld follower
 static void CursorCb_Mail(u8);
 static void CursorCb_Read(u8);
 static void CursorCb_TakeMail(u8);
@@ -2830,15 +2827,6 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
     }
-    // pokemon_overworld_follower
-    ailment = GetMonAilment(&mons[slotId]); 
-    if (GetMonData(&mons[slotId], MON_DATA_HP) > 0 && (ailment == AILMENT_NONE || ailment == AILMENT_PKRS))
-    {
-        if (slotId == gSaveBlock2Ptr->follower.partySlotId - 1) //Pokemon overworld follower
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_UNFOLLOW);
-        else
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FOLLOW);
-    }
 
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
@@ -3245,11 +3233,6 @@ static void SwitchPartyMon(void)
     SwitchMenuBoxSprites(&menuBoxes[0]->itemSpriteId, &menuBoxes[1]->itemSpriteId);
     SwitchMenuBoxSprites(&menuBoxes[0]->monSpriteId, &menuBoxes[1]->monSpriteId);
     SwitchMenuBoxSprites(&menuBoxes[0]->statusSpriteId, &menuBoxes[1]->statusSpriteId);
-    // pokemon_overworld_follower
-    if (POF_IsFollowerSlotId(gPartyMenu.slotId))
-        POF_SetFollowerSlotId(gPartyMenu.slotId2);
-    else if (POF_IsFollowerSlotId(gPartyMenu.slotId2))
-        POF_SetFollowerSlotId(gPartyMenu.slotId);
 }
 
 // Finish switching mons or using Softboiled
@@ -4139,7 +4122,6 @@ static bool8 SetUpFieldMove_Dive(void)
     gFieldEffectArguments[1] = TrySetDiveWarp();
     if (gFieldEffectArguments[1] != 0)
     {
-        POF_FollowMe_HandleBike(); // pokemon_overworld_follower
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Dive;
         return TRUE;
@@ -7789,51 +7771,5 @@ static bool8 SetUpFieldMove_RockClimb(void)
     }
     
     return FALSE;
-}
-
-static void POF_Task_ClosePartyMenuAndSetCB2(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        POF_MoveFollowerToPlayer();
-        if (gPartyMenu.menuType == PARTY_MENU_TYPE_IN_BATTLE)
-            UpdatePartyToFieldOrder();
-
-        if (sPartyMenuInternal->exitCallback != NULL)
-            SetMainCallback2(sPartyMenuInternal->exitCallback);
-        else
-            SetMainCallback2(gPartyMenu.exitCallback);
-
-        ResetSpriteData();
-        FreePartyPointers();
-        DestroyTask(taskId);
-    }
-}
-
-static void POF_Task_ClosePartyMenu(u8 taskId)
-{
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-    gTasks[taskId].func = POF_Task_ClosePartyMenuAndSetCB2;
-}
-
-static void CursorCb_PkmFollow(u8 taskId)
-{
-    PlaySE(SE_SELECT);
-
-    gSaveBlock2Ptr->follower.partySlotId = 0;
-    POF_DestroyFollower();
-
-    gSaveBlock2Ptr->follower.partySlotId = (gPartyMenu.slotId + 1);
-    POF_CreateMonFromPartySlotId();
-
-    POF_Task_ClosePartyMenu(taskId);
-}
-
-static void CursorCb_PkmUnfollow(u8 taskId)
-{
-    PlaySE(SE_SELECT);
-    gSaveBlock2Ptr->follower.partySlotId = 0;
-    POF_DestroyFollower();
-    Task_ClosePartyMenu(taskId);
 }
 
