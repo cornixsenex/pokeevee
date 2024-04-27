@@ -232,5 +232,9 @@ gScriptCmdTable::
 	.4byte ScrCmd_showitemdesc                      @ 0xe5
 	.4byte ScrCmd_hideitemdesc                      @ 0xe6
 
+@@@	 IF THIS TABLE ABOVE CHANGES
+@@@	 DOUBLE CHECK THE HEX CODES DONT SKIP
+@@@	 THE HEX CODES NEED TO MATCH IN /asm/macros/event.inc as well
+
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

@@ -55,17 +55,19 @@
 	>Empty -> ?? Just read the rhh diff / blame and see whats going on here
 
 ###
->Check Stair exits
 >Check Rock Climb
 >Check custom trainer mon is shiny. Check givemon is shiny (debug, then scripted)
 >How to add custom transitions
 >Check items work in battle and in menu
->Check berries (names, effect, sprites)
+>Check berries (names, effect, sprites, held, in battle, menu)
 >Check item description (header and menu and battle?)
+>Check every custom trainer sprite (.pal and .png)
 
 
 !!!
-> Add TRAINER_SPRITE(SPRITE, Sprite) for ALL Kustom Trainer Sprites :/
+>Fix Rock Climb
+>Fix item description on obtain
+>Fix followers
 
 >Remove TrainerBall gTrainerBallTable from src/battle_main.c
 >CameraObjectReset1 -> CameraObjectReset

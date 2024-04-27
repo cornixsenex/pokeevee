@@ -102,10 +102,8 @@ const u8 sText_s[] =_("s");
 void CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity)
 {
     u8 *end = StringCopy(dst, ItemId_GetName(itemId)) - 1;
-
     if (quantity < 2)
         return;
-
     if (DoesItemHavePluralName(itemId))
         StringCopy(dst, ItemId_GetPluralName(itemId));
     else
@@ -991,9 +989,7 @@ static u8 ReformatItemDescription(u16 item, u8 *dest)
     u8 count = 0;
     u8 numLines = 1;
     u8 maxChars = 32;
-	//This needs to be fixed gItems does not exist anymore. See ItemId_GetDescription but you need the itemId
-    //u8 *desc = (u8 *)gItems[item].description;
-	u8 *desc = (u8 *)ItemId_GetDescription(item);
+    u8 *desc = (u8 *)gItemsInfo[item].description;
     
     while (*desc != EOS)
     {        
@@ -1040,7 +1036,7 @@ void DrawHeaderBox(void)
     u8 textY;
     u8 *dst;
     bool8 handleFlash = FALSE;
-    
+
     if (GetFlashLevel() > 1)
         handleFlash = TRUE;
     
