@@ -2,7 +2,13 @@
 
 ## What is Poke Eve?
 
-Poke Eve is a collection of feature branches and scripts which will one day become a full fledged standalone FOSS gameboi game
+Poke Eve is a collection of feature branches and scripts which will one day become a full fledged standalone FOSS gameboi game.
+
+NOTE: The following document is NOT specific to Poke Eve, it's specific to the RHH expansion project which Poke Eve is based on. I (cornixsenex) am not going to write my own readme because I am lazy. Do NOT confuse Poke Eve with the RHH expansion. If you have a question, comment, concern etc specific to this repo (poke eve) contact me directly or submit a pull request here. PLEASE do not bother the rhh team with questions about this specific repo. Please DO feel free to browse their repo, play around with their project, and engage with their community (which I am lucky to be a part of)
+Again
+THIS IS NOT RHH pokeemerald-expansion 
+THIS IS POKE EVE BY CORNIXSENEX
+thank you for reading :D
 
 # pokeemerald-expansion
 
