@@ -447,8 +447,8 @@ const u32 gTrainerPalette_Janitor[] = INCBIN_U32("graphics/trainers/palettes/jan
 const u32 gTrainerFrontPic_NurseJoy[] = INCBIN_U32("graphics/trainers/front_pics/nurse_joy_front_pic.4bpp.lz");
 const u32 gTrainerPalette_NurseJoy[] = INCBIN_U32("graphics/trainers/palettes/nurse_joy.gbapal.lz");
 
-const u32 gTrainerFrontPic_CueBallNoBike[] = INCBIN_U32("graphics/trainers/front_pics/cue_ball_front_pic.4bpp.lz");
-const u32 gTrainerPalette_CueBallNoBike[] = INCBIN_U32("graphics/trainers/palettes/cue_ball.gbapal.lz");
+const u32 gTrainerFrontPic_CueBallNoBike[] = INCBIN_U32("graphics/trainers/front_pics/cue_ball_no_bike_front_pic.4bpp.lz");
+const u32 gTrainerPalette_CueBallNoBike[] = INCBIN_U32("graphics/trainers/palettes/cue_ball_no_bike.gbapal.lz");
 
 const u32 gTrainerFrontPic_Green[] = INCBIN_U32("graphics/trainers/front_pics/green_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Green[] = INCBIN_U32("graphics/trainers/palettes/green.gbapal.lz");
