@@ -260,7 +260,7 @@ bool8 MetatileBehavior_IsIce(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsWarpDoor(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_ANIMATED_DOOR)
+    if (metatileBehavior == MB_ANIMATED_DOOR) 
         return TRUE;
     else
         return FALSE;

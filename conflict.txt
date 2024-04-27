@@ -55,12 +55,12 @@
 	>Empty -> ?? Just read the rhh diff / blame and see whats going on here
 
 ###
->Check items work in battle and in menu
 >Check berries (names, effect, sprites, held, in battle, menu)
 >Check item description (header and menu and battle?)
 
 
 !!!
+>Fix doors not working
 
 >Remove TrainerBall gTrainerBallTable from src/battle_main.c
 >CameraObjectReset1 -> CameraObjectReset
