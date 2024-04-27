@@ -85,7 +85,6 @@ script Route3_EventScript_Rival {
 	msgbox (Route3_Text_RivalIntro)
 	destroy_field_pic (3)
 	closemessage
-	setvar (VAR_MUGSHOT_ID, MUGSHOT_BLUE)
 	trainerbattle_no_intro(TRAINER_RIVAL2, Route3_Text_RivalLost)
 	load_field_pic(3, 190, 98)
 	msgbox (Route3_Text_RivalPost)
@@ -114,7 +113,6 @@ script Route3_EventScript_Leaf1 {
 	msgbox (Route3_Text_Leaf1)
 	destroy_field_pic (4)
 	closemessage
-	setvar (VAR_MUGSHOT_ID, MUGSHOT_LEAF)
 	trainerbattle_no_intro(TRAINER_LEAF1, Route3_Text_LeafLost)
 	load_field_pic(4, 190, 98)
 	msgbox (Route3_Text_Leaf1Post)

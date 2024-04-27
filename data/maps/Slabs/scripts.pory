@@ -68,7 +68,6 @@ script Slabs_EventScript_RivalBattle {
 	msgbox (Slabs_Text_Rival1)
 	closemessage
 	destroy_field_pic (RIVAL_FIELD_PIC)
-	setvar (VAR_MUGSHOT_ID, MUGSHOT_BLUE)
 	trainerbattle_no_intro(TRAINER_RIVAL5, Slabs_Text_RivalLost)	
 	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
 	msgbox (Slabs_Text_RivalPost)

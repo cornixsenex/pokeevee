@@ -52,43 +52,41 @@ Route10_EventScript_Rival::
 # 41 "data/maps/Route10/scripts.pory"
 	destroy_field_pic 16
 # 42 "data/maps/Route10/scripts.pory"
-	setvar VAR_MUGSHOT_ID, MUGSHOT_BLUE
-# 43 "data/maps/Route10/scripts.pory"
 	trainerbattle_no_intro TRAINER_RIVAL4, Route10_Text_RivalLost
-# 44 "data/maps/Route10/scripts.pory"
+# 43 "data/maps/Route10/scripts.pory"
 	load_field_pic 16, 190, 98
-# 45 "data/maps/Route10/scripts.pory"
+# 44 "data/maps/Route10/scripts.pory"
 	msgbox Route10_Text_Rival3
-# 46 "data/maps/Route10/scripts.pory"
+# 45 "data/maps/Route10/scripts.pory"
 	closemessage
-# 47 "data/maps/Route10/scripts.pory"
+# 46 "data/maps/Route10/scripts.pory"
 	destroy_field_pic 16
-# 48 "data/maps/Route10/scripts.pory"
+# 47 "data/maps/Route10/scripts.pory"
 	fadescreen 1
-# 49 "data/maps/Route10/scripts.pory"
+# 48 "data/maps/Route10/scripts.pory"
 	setflag FLAG_ROUTE10_HIDE_RIVAL
-# 50 "data/maps/Route10/scripts.pory"
+# 49 "data/maps/Route10/scripts.pory"
 	removeobject 1
-# 51 "data/maps/Route10/scripts.pory"
+# 50 "data/maps/Route10/scripts.pory"
 	fadescreen 0
-# 52 "data/maps/Route10/scripts.pory"
+# 51 "data/maps/Route10/scripts.pory"
 	release
 	return
 
 
 Route10_Text_Rival1::
-# 59 "data/maps/Route10/scripts.pory"
+# 58 "data/maps/Route10/scripts.pory"
 	.string "I love the beach$"
 
 Route10_Text_Rival2::
-# 63 "data/maps/Route10/scripts.pory"
-	.string "What are you doing here? So what I\n"
+# 62 "data/maps/Route10/scripts.pory"
+	.string "What are you doing here? So what I\l"
 	.string "stole the keys?$"
 
 Route10_Text_RivalLost::
-# 67 "data/maps/Route10/scripts.pory"
+# 66 "data/maps/Route10/scripts.pory"
 	.string "How do you always win?$"
 
 Route10_Text_Rival3::
-# 71 "data/maps/Route10/scripts.pory"
+# 70 "data/maps/Route10/scripts.pory"
 	.string "Take the stupid keys and screw off$"

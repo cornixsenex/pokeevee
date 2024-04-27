@@ -39,7 +39,6 @@ script Route10_EventScript_Rival {
 	msgbox (Route10_Text_Rival2)
 	closemessage
 	destroy_field_pic (RIVAL_FIELD_PIC)
-	setvar (VAR_MUGSHOT_ID, MUGSHOT_BLUE)
 	trainerbattle_no_intro(TRAINER_RIVAL4, Route10_Text_RivalLost)	
 	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
 	msgbox (Route10_Text_Rival3)

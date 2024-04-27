@@ -260,7 +260,7 @@
 #define VAR_GIFT_UNUSED_5                    			 0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                    			 0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                    			 0x40E4 // var is written to, but never read
-#define VAR_MUGSHOT_ID                       			 0x40E5 // (formerly) Unused Var now it controls the mugshot thingy...
+#define VAR_UNUSED_FORMERLY_MUGSHOT                      0x40E5 // (formerly) the mugshot thingy...
 #define VAR_DAILY_SLOTS                      			 0x40E6
 #define VAR_DAILY_WILDS                      			 0x40E7
 #define VAR_DAILY_BLENDER                    			 0x40E8

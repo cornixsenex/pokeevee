@@ -89,64 +89,62 @@ Slabs_EventScript_RivalBattle::
 # 70 "data/maps/Slabs/scripts.pory"
 	destroy_field_pic 16
 # 71 "data/maps/Slabs/scripts.pory"
-	setvar VAR_MUGSHOT_ID, MUGSHOT_BLUE
-# 72 "data/maps/Slabs/scripts.pory"
 	trainerbattle_no_intro TRAINER_RIVAL5, Slabs_Text_RivalLost
-# 73 "data/maps/Slabs/scripts.pory"
+# 72 "data/maps/Slabs/scripts.pory"
 	load_field_pic 16, 190, 98
-# 74 "data/maps/Slabs/scripts.pory"
+# 73 "data/maps/Slabs/scripts.pory"
 	msgbox Slabs_Text_RivalPost
-# 75 "data/maps/Slabs/scripts.pory"
+# 74 "data/maps/Slabs/scripts.pory"
 	closemessage
-# 76 "data/maps/Slabs/scripts.pory"
+# 75 "data/maps/Slabs/scripts.pory"
 	destroy_field_pic 16
-# 78 "data/maps/Slabs/scripts.pory"
+# 77 "data/maps/Slabs/scripts.pory"
 	fadescreen 1
-# 79 "data/maps/Slabs/scripts.pory"
+# 78 "data/maps/Slabs/scripts.pory"
 	setflag FLAG_SLABS_HIDE_RIVAL
-# 80 "data/maps/Slabs/scripts.pory"
+# 79 "data/maps/Slabs/scripts.pory"
 	removeobject 1
-# 82 "data/maps/Slabs/scripts.pory"
+# 81 "data/maps/Slabs/scripts.pory"
 	setvar VAR_SLABS_STATE, 1
-# 84 "data/maps/Slabs/scripts.pory"
+# 83 "data/maps/Slabs/scripts.pory"
 	call Slabs_EventScript_HideBike1
-# 85 "data/maps/Slabs/scripts.pory"
+# 84 "data/maps/Slabs/scripts.pory"
 	special DrawWholeMapView
-# 86 "data/maps/Slabs/scripts.pory"
+# 85 "data/maps/Slabs/scripts.pory"
 	fadescreen 0
 	return
 
 
 Slabs_EventScript_Bike::
-# 91 "data/maps/Slabs/scripts.pory"
+# 90 "data/maps/Slabs/scripts.pory"
 	lockall
-# 92 "data/maps/Slabs/scripts.pory"
+# 91 "data/maps/Slabs/scripts.pory"
 	finditem ITEM_ACRO_BIKE
-# 93 "data/maps/Slabs/scripts.pory"
+# 92 "data/maps/Slabs/scripts.pory"
 	setvar VAR_SLABS_STATE, 2
-# 94 "data/maps/Slabs/scripts.pory"
+# 93 "data/maps/Slabs/scripts.pory"
 	call Slabs_EventScript_HideBike2
-# 95 "data/maps/Slabs/scripts.pory"
+# 94 "data/maps/Slabs/scripts.pory"
 	special DrawWholeMapView
-# 96 "data/maps/Slabs/scripts.pory"
+# 95 "data/maps/Slabs/scripts.pory"
 	releaseall
 	end
 
 
 Slabs_Text_Rival1::
-# 102 "data/maps/Slabs/scripts.pory"
-	.string "What are you doing here? You pushed me\n"
+# 101 "data/maps/Slabs/scripts.pory"
+	.string "What are you doing here? You pushed me\l"
 	.string "to the outer fringes of society where\l"
 	.string "I've started a succesful renegade\l"
 	.string "bicycle repair shop I'll never let you\l"
 	.string "take this from me too!$"
 
 Slabs_Text_RivalLost::
-# 106 "data/maps/Slabs/scripts.pory"
+# 105 "data/maps/Slabs/scripts.pory"
 	.string "I can't even live my life here in peace$"
 
 Slabs_Text_RivalPost::
-# 110 "data/maps/Slabs/scripts.pory"
-	.string "You've destroyed everything I ever had,\n"
+# 109 "data/maps/Slabs/scripts.pory"
+	.string "You've destroyed everything I ever had,\l"
 	.string "taken everything I've ever loved away\l"
 	.string "from me where can I turn$"

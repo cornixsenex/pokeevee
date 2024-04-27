@@ -55,12 +55,9 @@
 	>Empty -> ?? Just read the rhh diff / blame and see whats going on here
 
 ###
->Check custom trainer mon is shiny. Check givemon is shiny (debug, then scripted)
->How to add custom transitions
 >Check items work in battle and in menu
 >Check berries (names, effect, sprites, held, in battle, menu)
 >Check item description (header and menu and battle?)
->Check every custom trainer sprite (.pal and .png)
 
 
 !!!
