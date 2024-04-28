@@ -1088,18 +1088,18 @@ static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
 {
 	u32 x, y;
 	u8 iconSpriteId;   
-    u8 spriteId2 = MAX_SPRITES;
-    
-    if (flash)
-    {
-        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
-        SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
-    }
-    
-    iconSpriteId = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
-    if (flash)
-        spriteId2 = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
-    
+	u8 spriteId2 = MAX_SPRITES;
+	
+	if (flash)
+	{
+		SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
+		SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
+	}
+
+	iconSpriteId = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
+	if (flash)
+		spriteId2 = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
+
 	if (iconSpriteId != MAX_SPRITES && !firstTime)
 	{
 		x = 213;
@@ -1115,15 +1115,15 @@ static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
 	gSprites[iconSpriteId].x2 = x;
 	gSprites[iconSpriteId].y2 = y;
 	gSprites[iconSpriteId].oam.priority = 0;
-    
-    if (spriteId2 != MAX_SPRITES)
-    {
-        gSprites[spriteId2].x2 = x;
-        gSprites[spriteId2].y2 = y;
-        gSprites[spriteId2].oam.priority = 0;
-        gSprites[spriteId2].oam.objMode = ST_OAM_OBJ_WINDOW;
-        sItemIconSpriteId2 = spriteId2;
-    }
+
+	if (spriteId2 != MAX_SPRITES)
+	{
+		gSprites[spriteId2].x2 = x;
+		gSprites[spriteId2].y2 = y;
+		gSprites[spriteId2].oam.priority = 0;
+		gSprites[spriteId2].oam.objMode = ST_OAM_OBJ_WINDOW;
+		sItemIconSpriteId2 = spriteId2;
+	}
 
 	sItemIconSpriteId = iconSpriteId;
 }

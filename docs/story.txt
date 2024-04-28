@@ -735,26 +735,72 @@ Strong
 	>Nestor wants to marry his daughter Helen to ensure the survival of his dynasty only daughter
 	>She will not marry without her brothers there Castor and Pollux (but she's also clearly fucking Paris)
 	>Dioscuri are away on the Argo
-	>ARGO
+	>ARGO: Jason, Castor, Pollux, Theseus, Orpheus, Meleager
+		>Women of Lesbos (Island where all the men were murdered.)
+		>Cyzicus (first arrival heroes, return by accident at night and war)
+		>Heracles is lost
+		>Boxing island
+		>Lost at sea (here enter player)
+		>Map of Colchis (Map of Hawaii)
+		>Argo sails to Cave of Colchis
+		>Wall wille not open
+		>Consult Prometheus
+		>Defended by Harpies
+		>Defeat mighty Eagle
+		>Prometheus says "release a spearow to open the rocks"
+		>Clashing Rocks - release a spearow, wall opens to cave
+		>Cave dungeon / Colchis (A path, could be a river, a penninsula, a cave, a forest...a DUNGEON)
+		>Cave boss = Aeetes. Foretold his reign would last as long as the golden fleece is his
+		>Medea wants the fleece. Alive
+		>Guarded by a mighty beast / dragon
+		>Shiny Mareep
+		>If caught and given to Jason then A else B
+		>End of the Argo - Where do the heros go?
 	>Castor and Pollux return
 	>Nestor makes his decision and has both suitors swear to uphold his desicion
 	>Has player bring their brothers and best men to celebrate the great wedding
 		>ULYSSES - ODYSSES
+			>Ulysses
+				>Feigning madness at home, then must be guided to Nestor after getting lost many times
+					>Odyssey:
+						>  1: Odysseus feigns madness. He has released his sheep and now keeps rocks in the pasture. He runs in circles muttering mumbo jumbo. His wife assures you he is quite insane. His son plays with the sheep but seems bored since his father won't play with him. He asks if you'd like to play hide and seek. When he's found he will either go to a new hiding spot, or return to the sheep. When he's in hiding if you speak with Penelope she will freak and go mad searching for her son, she will go to Ulysses who will then break character and agree to go to Nestor if you bring his boy back. Then when you find the boy when he returns to the sheep Ulysses will be with Penelope and will leave when you speak with him.
+						>  2: Lotus Eaters - Ulysses is in the Lotus Grove on Maui and won't leave until you bring him some Kind Bud
+						>  3: Cyclops - Bring Ulysses a sheeps skin while he's locked in the cave (take the back way since front way is blocked by Polyphemus) He will give you a Krater of wine, if you deliver that to Polyphemus he will drink it and then let the sheep out not noticing Ulysses imperfect disguise. Speak to Ulysses in the field with the Sheep in his disguise and he will depart. I think Polyphemus can play a part in another myth as well somewhere down the line.
+						>  4: Circe - When you meet her she offers you a drink. If you drink it KO otherwise she attacks. After being defeated she will heal you in bed. When Ulysses arrives there will be a new pig NPC who if you interact with it while holding "Moly" it will transform into Ulysses...in fact all the animals should be interactable with 'Moly' Moly is a berry, or flower or herb not mota...or maybe mota.
+						>  5: Shades - Sacrifice to the shades
+						>  6: Sirens - defeat the sirens so they stop singing - (Musical hut on Big Island?)
+						>  7: Scylla and Charybdis - Ulysses appears on the norther spit of Italia along with a Tentecruel patrolling the waters inbetween italia and Maui. After defeat / capture Scylla speak to him he will leave
+						>  8: Calypso - Within the sea cave south Big Island Ulysses has become Calypso's boy toy. She is enraged when you arrive to take him from her and does battle, after which speak to him he will leave. She will then rest / heal you in bed
+						>  9: Atlantis? - Ulysses arrives on the mainland where he begins gambling saying he can't leave the lucky table until he's defeated. BlackJack in Vegas probably
+						> 10: Swineherd - Ulysses is in a poor farmer's hut where he refuses to leave to join Nestor until you bring something for the poor man to eat.
+						> 11: Beggar - A new beggar appears in the city who asks for money. At this point Penelope whill lose her wedding ring. If you find it and return it to her she will just lose it again and again, if you give the ring to Ulysses instead he will become enraged and accuse you of cucking him
+						> 12: Battle - He uses tricky pokemon, trojan horse, big dog named (I forgot), prolly some psychic types. After he's defeated he FINALLY returns to Nestor
 		>AGAMEMNON - ORESTES - KLYDOMNESTRA ETC
 		>AENEIS - Lavinian Shores - Romulus and Remus
+			>Aeneis recognizes the authority of Nestor and wishes to return but admits his obligation to the pythia who told him to found a city here, and to his family, is higher. On the shore Aeneis runs up and down saying his twin grandsons have gone missing for days. He and his son, Faustulus, don't have much hope but he refuses to rest until they are found. In the Lupercal Cave (deep?) you find the boys and the wolf. Upon approach the boys retread and mama approaches. She growls as you approach and if you get too close she attacks. After being defeated or captured Faustulus will enter and exclaim with joy at the discover of his boys and bring them home where you will find Aeneis ready to meet Nestory. Faustulus makes some joke about how the twins are constantly fighting with eachother but that the auspices are good, a great city will be built and his descendants shall inherit the earth.
 		>HEKTOR - Training Cave
 	>All gathered Nestor announces Menelaus will marry his daughter and inherit his fortune / remnants of his Duchy or whatever. Invites all to meet him at the church next door. Helen is clearly upset Paris is trying to calm her
 	>Gathered at the Church Nestor conducts a headcount and finds Helen and Paris missing.
 	>Accuses Hektor and Aeneis. Aeneis claims love will find a way Hektor maintains his family can do no wrong they both leave.
 	>Nestor orders you to bring the great heros to assail troy and take Helen back - Castor and Pollux go to get Heracles
 		>Achilles
-		>Patrokles
-		>Ajax - On the beach, after his PTSD madness. Butchered a flock of sheep
-		>Lesser Ajax
+			>LA Docks
+			>Achilles is locked in his ship pouting because his lover Philoctetes has left him (to buy something in town)
+			>Intercept Philoctetes in town who runs off
+			>Return to Achilles' boat he confronts you as the one who hurt his beloved
+			>Defeated he returns to Nestor
+		>Ajax 
+			>Ajax is mad on the beach
+			>Visit the zoo
+			>Someone has murdered all the sheep(?)
+			>When accused he attacks
+			>Defeated he repents of his sin and agrees to join Nestor
+		>Lesser Ajax 
+			>Decides to leave the show and join nestor once the Music Stops
 		>Diomedes - Horse Races
-		>Teucer
-		>Philoctetes (Not yet)
-		>Tiresies (Oedipus, 12 Against Thebes, Antigone)
+			>Defeat Diomedes in a race - Hippodrome
+		>Teucer - Darts
+			>He's an archer. Make a dart minigame
 	>Iphigenia
 		>The Heros assemble  and realize they don't know where Paris has gone. Tiresias communes with the divine and declares that one of them must sacrifice their child. It goes around the horn that everyone is shocked but Agamemnon rises and says he will sacricfice his daughter Iphigenia after her mother had tried to kill him. He charges you to go retrieve her.
 		>Return to Orestes @ Agamemnon house
@@ -768,8 +814,7 @@ Strong
 		>The way to Troy is made clear
 	>Trojan War
 		>Arrival at Troy 
-		>Skirmish at the wall (Antenor)
-		>Supply raid; Briseis at the horse enclosure (Memnon)
+		>Supply raid; Briseis (Cressida) at the horse enclosure (Memnon)
 		>Meeting of the armies
 			>Proposal for Menelaus and Paris to duel
 			>Paris chicken
@@ -785,9 +830,10 @@ Strong
 			>Lake (Sarpedon)
 			>Forest (Pandarus)
 			>Mountain (Adrastus)
-		>Another attack on the walls of Troy (Hektor)
+		>Another attack on the walls of Troy (Antenor)
 		>Ulysses' plan: Trojan whores
 		>Aeneas
+		>Hektor
 		>Priam
 		>Paris
 		>Helen
@@ -798,17 +844,24 @@ Strong
 	>Heracles Boast
 	>Complete Trials of Heracles
 		>1: Defeat Nemean Lion
-		>2: Defeat Hydra
-		>3: Capture Hind
+		>2: Defeat Hydra - Swamp
+		>3: Capture Hind - Silvan Woods
 		>4: Capture Boar
-		>5: Clean Stables
+		>5: Clean Stables - City
 		>6: Defeat Stygian Birds
-		>7: Capture bull
+		>7: Capture bull - Underground
+			>Theseus Helps
+			>In DarkCave2F Labyrinth
+			>Near Gollums Cave
+			>Near Road to Hell
 		>8: Capture Mare
 		>9: Defeat Hippolyta
 		>10 Capture Cow
-		>11 Steal golden apples
-		>12 Capture Ceberus
+		>11 Steal golden apples - Garden of Eden (East)
+		>12 Capture Ceberus - Hades
+			>Orpheus Helps
+			>Across the river styx with Charon
+			>
 	>Heracles Fight
 	>Get Gauntlets of Strength
 	>Move Boulders
