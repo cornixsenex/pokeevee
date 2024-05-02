@@ -753,10 +753,29 @@ Strong
 
 ***GREEK MYTHOLOGY CATALOG***
 
-Agamemnon
-	>
+Agamemnon - extremely mysoginistic literally sacrifices his daughte
+	#House of Atreidae
+	>Under the spell of Klytemnestra
+	>Spell broken he expells her from his house (Theoden vs Wormtongue)
+	>Gives player something as thanks (GIFT)
+	>Wholeheartedly agrees to join Nestor for the wedding of Helen
+	#House of Nestor
+	>Speaks of how the wedding will bring great prosperity to House of Atreidae 
+	#Church
+	>A great and proud day
+	>Agrees to lead the attack on Troy
+	>Asks player to gather the Heroes
+	>Agrees not to wait on Castor, Pollux, and Heracles (fight with the army you have not what you want, cannot wait while my brother is cucked and my dear sister raped)
+	>Orders all heroes to take The vow (Swear to fight until Troy is taken, Helen is returned, or dead)
+	>Departure
+	#Church Square
+	>Agamemnon agrees with Nestor and asks for Tiresias to be brought
+	>Hearing Tiresias' prophecy (Iphigeneia will show the way to Troy) laments his daughter had run away after Klytemnestra was defeated asks player to search for her. Perhaps Orestes will know where she is
+	>When joined by Iphigeneia he becomes insulted at the order that she must be sacrificed 
+	>Gives in when other heroes (Ulysses, Achilles, Menelaus?) chime in how they must risk their own familes in this war but Agamemnon won't risk his own
+	>I have no choice, I must defend the family that I still have even if it means losing the family that I already lost; You already left me so it is done
 
-Iphigeneia
+Iphigeneia - hot headed green hair type lefty girl
 	>daughter of Agamemnon and Klytemnestra
 	>at home for the withdrawl of Agamemnon / sorcery of klytemnestra
 	>Took mother's side
@@ -776,6 +795,27 @@ Jason
 	>Gets lost at sea
 	>Recovers(?) Fleece with help of PLAYER
 	>
+
+Menelaus - Like Cloten from Cymbaline (cloddish and arrogant, incel type, etc)
+	#Nestor's Big House
+	>Incel type fetishises Helen creepy angry jelous etc
+	>says something creepy after Nestor announces he will marry Helen
+	#Church
+	>impatient waiting for Helen at the Altar
+	>Extremely upset and violent when Helen and Paris are discovered missing
+
+Nestor - Old man, rambling stories, back in my day etc
+	#Big House
+	>Wants to marry his daughter Helen to ensure an heir to his fortune and has narrowed his search down to two suitors (Menelaus and Paris) but she refuses to marry until Dioscuri return
+	>Wait till Dioscuri return
+	>Nestor announces he has made his decision and has both suitors swear to uphold his decision
+	>Has player invite both suitors brothers and best men (Agamemnon, Hektor, Ulysses, Aeneis)
+	>Wait till 4 all assembled
+	>Nestor announces Menelaus will marry Helen and inherit his fortune / Duchy / whatever. Invites all to meet at the church next door for the ceremony
+	#In church
+	>Nestor stands at the altar with Menelaus wondering where Helen can be, realizes Paris is missing too, accuses Hektor and Aeneis. Hektor maintains his family does no wrong Aeneis claims that true love will always prevail and they leave
+	>Menelaus / Agamemnon / Nestor vows to win Helen back even if he must destroy the great citadel of Troy itself
+	>Player ordered to  	
 
 Oedipus
 	>Born to degenerate gambling parents (Laius and Jocasta)
@@ -847,8 +887,10 @@ Orestes
 	>at home klytemnestra's favorite upset at her defeat
 	>runs away to join a cult
 
-Theseus
-	>Womanizer - He steals women
+Theseus - Womanizer - He steals women
+	#ARGO
+	>Recants the story of the Isle of Lesbos where he wishes they had never left
+	>After Argo he returns to his home in Smokeland
 	>Endters the underworld
 	>Defeats the minotaur
 	>Steals Hippolyta 
@@ -944,7 +986,11 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 	>All gathered Nestor announces Menelaus will marry his daughter and inherit his fortune / remnants of his Duchy or whatever. Invites all to meet him at the church next door. Helen is clearly upset Paris is trying to calm her
 	>Gathered at the Church Nestor conducts a headcount and finds Helen and Paris missing.
 	>Accuses Hektor and Aeneis. Aeneis claims love will find a way Hektor maintains his family can do no wrong they both leave.
-	>Nestor orders you to bring the great heros to assail troy and take Helen back - Castor and Pollux go to get Heracles
+	>Menelaus furious declares he will storm the walls of Troy himself
+	>Nestor gives a long story about caution but agrees Helen must be rescued. He suggests Agamemnon lead the expedition since Menelaus is too hot headed and he himself is too old to be an effective leader
+	>Agamenon agrees to lead the expidition adding that Nestor will be his councilor and vows he will not cease until Helen is won back for his brother.
+	>Agamemnon says it will take a mighty host to take the walls of Troy and tells player to gather the great heroes
+	>Castor and Pollux go to get Heracles
 		>Achilles & Patrokles
 			>LA Docks
 			>Achilles is locked in his ship pouting because his lover Patrokles has left him (to buy something in town)
@@ -965,8 +1011,9 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 			>Maybe just beat him in a horse race betting thing. Easy to script a single lap horse race where the inside horse always wins
 		>Teucer - Darts
 			>He's an archer. Make a dart minigame
-	>The Heros assemble and exit
-	>Gather outside and realize they don't know where Paris has gone. 
+	>The Heros assembled Menelaus will not wait until Castor and Pollux return with Heracles and Nestor agrees. Agamemnon orders the army to depart for Troy
+	>Gather outside and realize Nestor has forgotten where Troy is. 
+	>Nestor suggests a prophet the wise Tiresias from back in his day (a man transformed into a women...9/10 the pleasure etc)
 	>Agamemnon sends for Tiresias
 	>Tiresias 
 	>Oedipus Rex in Vegas
@@ -1022,13 +1069,19 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 		>Orestes says that Iphigenia has gone to Aulis (why?)
 		>When you two go to fetch her you are captured and brought to be sacrificed?
 		>When she learns she's to marry Achilles she agrees to leave 
-		>Bring her to the greek  Church?
+		>Bring her to the Church square
+	>Iphigeneia rushes to Achilles and exclaims her joy to be joined with him in marriage
+	>Achilles is disgusted and states he can only love Patrokles
+	>Iphigeneia: "I only came for Achilles, I was misled, what are your intentions?"
+	>Agamemnon: "Tiresias says you will show us the way to Troy"
+	>Iphigeneia: "I have no idea where that is"
+	>Tiresias: "In death her entrails will point us to the castle walls"
 	>Tiresias reveals that only in death can she reveal the way to Troy
 	>Agamemnon protests but the other heroes demand she be sacrificed (a bit worried about his daughter, but actually just doesn't want the dishonor of kinslaying)
 		>Why must we risk our own families for his war if he refuses to risk his own for ours?
 	>Menelaus debates that he must agree to the sacrifice or else the warriors will mutiny (but he clearly just wants Helen back)
 	>Agamemon wildly changes position and clamors for the death of his daughter fearing for his house and manor back home in Aldeon
-	>Iphigeneia protests her sacrifice
+	>Iphigeneia protests her sacrifice "I don't want to die etc"
 	>Agamemnon defends his choice (I have no choice, I must save that which I still have rather than sacrifice everything)
 	>Led to the altar
 	>Iphigeneia final line (Fathers, as you bid me, I am here. I give my body, freely on behalf of my country, for all the land of Greece. Lead me to the altar. There, if that is the gods' will, sacrifice me. May this gift from me bring you success. May you win the crown of victory and win thereafter a glorious homecoming. And no, do not let any man lay his hands upon me. In peace and in good heart I offer you my throat.)
@@ -1037,8 +1090,9 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 	>Tiresias tells the heroes to gather on the Dardarian(?) Plain before the castle of Troy by the slopes of Mt. Ida north of the Horse Circus
 	>Trojan War
 		>Arrival at Troy 
-		>Supply raid; Briseis (Cressida) at the horse enclosure (Memnon)
-		>Nestor will wait back at the square (camp) with Cressida
+		>Impatient Achilles goes to raid the horse stables immediately
+		>Supply raid; Briseis (Cressida) at the horse enclosure (Memnon) with Achilles
+		>Achilles is given Briseis as prize for leading the first great victory. Agamemnon promises greater prizes for the first man to break Troy's walls and marches out
 		>Meeting of the armies
 			>Proposal for Menelaus and Paris to duel (arranged by Hektor and Agamemnon)
 			>Paris chicken
@@ -1047,7 +1101,7 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 		>A second meeting of the armies (Deiphobus)
 		>Retreat to the camp
 		>Hold the camp (Dolon)
-		>Debate what to do - Old Nestor Joke
+		>Debate what to do - Old Nestor Joke fighting the Centaurs
 		>Soldiers grow tired of his rambling, ask Tiresias what to do
 		>Troy will not fall without the bow of Philoctetes
 		>Philoctetes
@@ -1066,7 +1120,7 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 			>Lake (Sarpedon)
 			>Forest (Pandarus)
 			>Mountain (Adrastus)
-		>Another attack on the walls of Troy (Antenor)
+		>Another attack on the walls of Troy (Antenor) trojans driven back but the gates will not open
 		>Ulysses' plan: Trojan whores
 		>Aeneas
 		>Hektor
@@ -1080,16 +1134,22 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 	>Heracles Boast
 	>Complete Trials of Heracles
 		>1: Defeat Nemean Lion - Bulbus north route
+			>A Raiku / Entei object event is roaming around. Speak to and then defeat it
 		>2: Defeat Hydra - Swamp
 			>the lake of City Clara is polluted by poison creatures (Ekans?)
 			>The townspeople think the source must be in the swamp where the river flows in from
 			>travel to the swamp, find, and eliminate the hydra (With Perseus' help?)
+			>many ekans OBJ which go towards and attack player, one mighty Arbok to be defeated
 		>3: Capture Hind - Silvan Woods
+			>Stantler which only appears in nighttime roams the woods
 		>4: Capture Boar - Calydonion boar hunt (Roaming pokemon)
 			>There is a boar terrorizing the state
 			>Heracles boasts he could easily capture the creature
+			>Grumpig / Mamoswine
 		>5: Clean Stables - City
+			>Clear the many piles of Poo OBJ in the city. They should be grimer / Muk or maybe item, some should be nothing I guess depends on how many there are to be
 		>6: Defeat Stygian Birds - elicius beach (wingulls? lol)
+			>Many many wingull / pelipper OBJ to be defeated
 		>7: Capture bull - Underground
 			>Theseus Helps
 			>In DarkCave2F Labyrinth
