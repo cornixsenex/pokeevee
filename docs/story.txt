@@ -733,6 +733,24 @@ Indianus
 Long Road to Pyramid
 Strong
 
+7 Sages / Future tellers / Helpers
+>Oracle at Clara
+>Syballine books (Sibylla)
+	>1: Random Verses
+	>2: Poetic directions
+	>3: Clear directions
+>Tiresias
+	>Troy / Greek myth help
+>Cassandra
+	>Never believed
+>Nostradomus
+	>Man, where to find evo stones?
+>Mirror / Crystal Ball (Things that are, that were, that have not come to pass)
+	>gimmick
+>Tealeaf reader
+	>
+
+
 ***GREEK MYTHOLOGY CATALOG***
 
 Agamemnon
@@ -759,10 +777,76 @@ Jason
 	>Recovers(?) Fleece with help of PLAYER
 	>
 
+Oedipus
+	>Born to degenerate gambling parents (Laius and Jocasta)
+	>Father loses him to a bet
+	>Winner feels pity and donates him to (Orphanage? Church? Fire Department?)
+	>He is raised by two loving / wealthy / sucessful adoptave parents (Polybus and Merope)
+	>Told by a drunk he's adopted
+	>Seeks the truth (Tiresias)	
+		>He somehow helps Tiresias return to being a man or blinds him and gifts him with prophecy or some Tiresias backstory
+	>Told he will kill his father and fuck his mother
+	>Does not return to home, goes to Vegas instead
+	>Becomes very sucessful gambler and even manages to win the entire life of his real father Laius the degenerate gambler who owns the Hotel Penthous
+	> His father becomes a drunk beggar on the streets and Rex marries Jocasta. They have at least one child together
+	>Time passes
+	>A shinx who none have returned alive from after confronting occupies the vegas powerplant and threatens the lives (and profits) of the people
+	>Tiresias warns Oedipus that no man in Vegas can defeat the Shinx
+
+	>ENTER PLAYER
+	(Somewhere PLAYER Meets Liaus at his absolute lowest on the streets of Vegas where he does August West 'I was once so high now so low, thrown down by the wicked Rex I was once like him and I now know his end will be much like mine as I die my only regret is that I never got to know my son. I lost him in a foolish gamble years ago and I have no idea where he's gone. If you ever come across him, PLAYER, let him know I thought of him before the end. Goodbye"
+
+	>Oedipus in dark Vegas begs PLAYER to confront the Shinx after he arrives quoting the prophecy gives PLAYER flash
+	>PLAYER enters the power plant
+	>Unwravel me or I'll devour you
+	>What creature goes on four legs in morning
+	>On only two legs in the afternoon
+	>and in the evening shuffles past on three? 
+	>PLAYER defeats the Shinx (Either riddle or very very powerful Shinx)
+	>Power in Vegas is restored
+	>REx thanks and gives player GIFT (some gambling cash) and invites him to his suite
+	>Rex / Oedipus will now invite you up to his suite for the party
+	>Oedipus Rex introduces Tiresias who he claims has helped him to all his success.
+	>Oedipus Rex tells the story of how he won the casino: I ran the tables until the owner himself challenged me to a game of dice. Tiresias foresaw four fours and I had him wager his life against mine. I won the roll and stripped him of all his possesions, his wife included.
+	>Joke about Rex and Jocasta's age difference
+	>Rex responds that she is beautiful and loving and has given him (at least one child Antigone)
+	>Jocasta adds that since she lost her first child in infancy she was as if unspoiled
+	>At party someone will offhandedly mention Oedipus' past as the runaway child of bankers
+	>Yes I was once the son of mighty Polybus but the wealth you earn yourself is ten times sweeter than the spoils of your father's treasury
+
+	>Player speaks to Merope in GatoCityN nice house where she mourns the death of her late husband Polybus and also her longing to see her runaway son Rex. She gives PLAYER a note explaining herself and asks PLAYER to deliver it to Rex should they ever meet.
+	>Talk to Rex he will accept the note, 
+	>Rex is relieved to hear that his father has died and exclaims that Tiriseis has been proved wrong at last. 
+	>Tiresias chimes in that Oedipus the story is not yet told in full
+	>Rex agrees that Tiresias has always been good and though he misses his mother dearly and greaves the loss of his father he will not risk returning lest he inadvertadly marries her
+	>Oh look, there's more!
+	>Oedipus reads on "Ever since we carried you away from The Orphanage / The Church / The Rescue / The Fire Department we always loved you as our own, please attend the funeral and see your mother who misses you dearly"
+	>Jocasta becomes hysterical and begs him to stop the search that it will only lead to more sorrow for him and thus for her as well. She runs to her room or Rex orders her locked in the room to calm down and discover the truth
+	>Rex accepts the fact he was adopted but boasts that she only fears he's born from very poor parents (Just as the wealth you earn for yourself, the family that you build for yourself is ten times better than the one you inherit)
+	>Rex asks PLAYER to go to ORPHANAGE to get to the bottom of this, offers to pay him handsomely.
+	>PLAYER visits ORPHANAGE, asks about 'Rex of Polybus and Merope"
+	>Oh he was brought to us by a good man who said he had rescued him from the degenerate gambler Liaus who cared so little for his own son he offered him up as a wager and lost it. 
+	>Take Oedipus' birth certificate
+	>PLAYER returns to Oedipus and gives him proof
+	>Oedipus runs to Jocasta
+	>Discover Jocasta is dead
+	>Oedipus puts out his eyes with the brooch of her dress (her earings? IDFK)
+	>The people all say they should throw Oedipus out and treat him with the same disgust he treated his father with
+	>Antigone / Tiresias intervene saying that to continue the cylce of misery would only perpetuate suffering and it would be better to pity this man and let him stay here
+	>Oedipus refuses and decides to voluntarily go into exile and releases Tiresias from his service and gives all his property to PLAYER (The suite I guess and Tiresias)
+	>Antigone will go with Rex into exile
+	>Tiresias will join player
+	>Oedipus will wander around, when you speak to him he will die and bless the area he dies in.
+		>Higher shiny chance? A unique item? Other?
+
+
+>
+
 Orestes
 	>Son of Agamemnon and Klytemnestra
 	>at home klytemnestra's favorite upset at her defeat
 	>runs away to join a cult
+
 Theseus
 	>Womanizer - He steals women
 	>Endters the underworld
@@ -772,18 +856,37 @@ Theseus
 	>He wants women / misses the land of the lesbos
 	>After the argo he returns to his home town and continues womanizing
 
+Tiresias - Speaks in short cryptic lines which are never wrong but never 100% the truth either "Where is Troy?" "Iphigeneia will lead us to Troy (in death)"
+	>born young boy
+	>hits two snakes copulating
+	>transformed into young woman
+	>has children, grows old
+	>again find snakes but kills them (or leaves them be)
+	>transformed again
+	>blinded for revealing women have 9/10 the pleasue as a man 1/10 in sex but given foresight and long lifein recompense?
+	>Warns Cadmus against denouncing the worship of Bacchus and goes up the mountain to join the revelers
+	>Is called upon by Oedipus to aide him in his struggle to save Thebes from it's curse
+	>Reveals that the curse will not be lifted until the killer of Laius is expelled from the city
+	>It is someone who you do not wish to know, Oedipus
+	>After the servant reveals Oedipus' true identity he refuses to believe it but Tiresias confirms it
+	>Outraged Oedipus demands he's exilled but the people instead blind Oedipus and exhile him (?) Oedipus blinds himself and exiles himself idk
+	>Oedipus' sons fight over the kingship and are both killed
+	>Uncle Creon (Jocasta's brother) or someone else (maybe the victorious brother?) assume command and refuse to honor the defeated party
+	>Tiresias protests the mistreatment of the defeated and advises Antigone (PLAYER?) to bury / otherwise honor the defeated
+	>This results in battle against Creon and the eventual institution of a commune. Tiriesias leaves in peace
 
 
+	*** GREEK MYTHOLOGY ***
 
 	>Nestor wants to marry his daughter Helen to ensure the survival of his dynasty only daughter
 	>She will not marry without her brothers there Castor and Pollux (but she's also clearly fucking Paris)
 	>Dioscuri are away on the Argo
 	>ARGO: Jason, Castor, Pollux, Theseus, Orpheus, Philoctetes
-		>Women of Lesbos (Island where all the men were murdered.)
-		>Cyzicus (first arrival heroes, return by accident at night and war)
-		>Heracles is lost
-		>Boxing island
-		>Lost at sea (here enter player)
+		>Women of Lesbos (Island where all the men were murdered.) - Theseus talks about this
+		>Cyzicus (first arrival heroes, return by accident at night and war) - Castor
+		>Heracles is lost - Philoctetes talks about this
+		>Boxing island - Pollux
+		>Lost at sea (here enter player) - Orpheus
 		>Map of Colchis (Map of Hawaii)
 			>On Toursist Beach, Oahu, a street vendor sells trinkets like 'ancient map of the islands' which shows Colchis
 		Argo sails to Cave of Colchis
@@ -865,17 +968,54 @@ Theseus
 	>The Heros assemble and exit
 	>Gather outside and realize they don't know where Paris has gone. 
 	>Agamemnon sends for Tiresias
-	>Tiresias / Thebes
-		>Thebes is under attack by a Sphinx
-		>Defeat the riddle of the sphinx
-		>See Tiresias
-		>He cannot joing Nestor until he says Thebes is cleansed
-		>Cursed city
-		>Oedipus the King
-		>Oedipus, blind, wanders with Antigone
-		>7 against Thebes (Brother's civil war)
-		>Antigone (She wants to bury the defeated brother)
-		>Return with Tiresias to Church Courtyard
+	>Tiresias 
+	>Oedipus Rex in Vegas
+		>Oedipus in dark Vegas begs PLAYER to confront the Shinx after he arrives quoting the prophecy gives PLAYER flash
+		>PLAYER enters the power plant
+		>Unwravel me or I'll devour you
+		>What creature goes on four legs in morning
+		>On only two legs in the afternoon
+		>and in the evening shuffles past on three? 
+		>PLAYER defeats the Shinx (Either riddle or very very powerful Shinx)
+		>Power in Vegas is restored
+		>REx thanks and gives player GIFT (some gambling cash) and invites him to his suite
+		>Rex / Oedipus will now invite you up to his suite for the party
+		>Oedipus Rex introduces Tiresias who he claims has helped him to all his success.
+		>Oedipus Rex tells the story of how he won the casino: I ran the tables until the owner himself challenged me to a game of dice. Tiresias foresaw four fours and I had him wager his life against mine. I won the roll and stripped him of all his possesions, his wife included.
+		>Joke about Rex and Jocasta's age difference
+		>Rex responds that she is beautiful and loving and has given him (at least one child Antigone)
+		>Jocasta adds that since she lost her first child in infancy she was as if unspoiled
+		>At party someone will offhandedly mention Oedipus' past as the runaway child of bankers
+		>Yes I was once the son of mighty Polybus but the wealth you earn yourself is ten times sweeter than the spoils of your father's treasury
+
+		>Player speaks to Merope in GatoCityN nice house where she mourns the death of her late husband Polybus and also her longing to see her runaway son Rex. She gives PLAYER a note explaining herself and asks PLAYER to deliver it to Rex should they ever meet.
+
+		>Talk to Rex he will accept the note, 
+		>Rex is relieved to hear that his father has died and exclaims that Tiriseis has been proved wrong at last. 
+		>Tiresias chimes in that Oedipus the story is not yet told in full
+		>Rex agrees that Tiresias has always been good and though he misses his mother dearly and greaves the loss of his father he will not risk returning lest he inadvertadly marries her
+		>Oh look, there's more!
+		>Oedipus reads on "Ever since we carried you away from The Orphanage / The Church / The Rescue / The Fire Department we always loved you as our own, please attend the funeral and see your mother who misses you dearly"
+		>Jocasta becomes hysterical and begs him to stop the search that it will only lead to more sorrow for him and thus for her as well. She runs to her room or Rex orders her locked in the room to calm down and discover the truth
+		>Rex accepts the fact he was adopted but boasts that she only fears he's born from very poor parents (Just as the wealth you earn for yourself, the family that you build for yourself is ten times better than the one you inherit)
+		>Rex asks PLAYER to go to ORPHANAGE to get to the bottom of this, offers to pay him handsomely.
+
+		>PLAYER visits ORPHANAGE, asks about 'Rex of Polybus and Merope"
+		>Oh he was brought to us by a good man who said he had rescued him from the degenerate gambler Liaus who cared so little for his own son he offered him up as a wager and lost it. 
+		>Take Oedipus' birth certificate
+
+		>PLAYER returns to Oedipus and gives him proof
+		>Oedipus runs to Jocasta
+		>Discover Jocasta is dead
+		>Oedipus puts out his eyes with the brooch of her dress (her earings? IDFK)
+		>The people all say they should throw Oedipus out and treat him with the same disgust he treated his father with
+		>Antigone / Tiresias intervene saying that to continue the cylce of misery would only perpetuate suffering and it would be better to pity this man and let him stay here
+		>Oedipus refuses and decides to voluntarily go into exile and releases Tiresias from his service and gives all his property to PLAYER (The suite I guess and Tiresias)
+		>Antigone will go with Rex into exile
+		>Tiresias will join player
+		>Oedipus will wander around, when you speak to him he will die and bless the area he dies in.
+			>Higher shiny chance? A unique item? Other?
+
 	>Tiresias communes with the divine and declares that Agamemnon's daughter will show them the way (poetically)
 	>Iphigeneia
 		>Return to Orestes @ Agamemnon house
@@ -911,7 +1051,16 @@ Theseus
 		>Soldiers grow tired of his rambling, ask Tiresias what to do
 		>Troy will not fall without the bow of Philoctetes
 		>Philoctetes
-			>Terribly wounded on Fire Island (connect to Argo?) by a snakebite(?)
+			>Was left behind wounded on Big Island during Argo
+			>Player and Ulysses are sent to bring him back (And Achilles and Patrokles? You need a boat to get down there)
+			>Upon arrival you find Philoctetes living in the shack / forest / cave
+			>Ulysses insults him and makes fun of the smell his wound causes and roughly demands he come with them
+			>Philoctetes is enraged and threatens to kill them all where they stand
+			>Ulysses withdraws warning caution lest they become infected with the same affliction as Philoctetes
+			>Player speaks to Philoctetes in private and gives him some Kind Bud
+			>Philoctetes says his pain is finally reduced and he can sleep, bids Player go leave him to dream
+			>Player returns with Ulysses where Philoctetes relates his dream where Heracles tells him he must return to Troy it is his destiny
+		>Upon returning to Troy Philoctetes' wound is healed and the council convenes
 		>Troilus is cought sneaking around. Agrees to give up Troy in exchange for his love. Rage of Achilleus.
 		>Take the 3 Palladia
 			>Lake (Sarpedon)
@@ -959,11 +1108,15 @@ Theseus
 		>12 Capture Ceberus - Hades
 			>Orpheus Helps
 			>Across the river styx with Charon
-			>DARK type area
+			>DARK type area, Sysyphus, Dante
 			>Maybe some way to open the road for if you die in the future(?) at least the same area
 	>Heracles Fight - He refuses to accept the challenges because you had help
 	>Get Gauntlets of Strength
 	>Move Boulders
+
+
+*** END GREEK MYTHOLOGY ***
+
 Wise
 	>University
 Girlfriend (leaf)

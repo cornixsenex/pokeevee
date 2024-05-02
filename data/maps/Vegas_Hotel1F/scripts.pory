@@ -16,7 +16,10 @@ script Vegas_Hotel1F_EventScript_Owner {
 	release
 	end
 }
-		
+
+
+//Owner is now Oedipus Rex
+
 text Vegas_Hotel1F_Text_OwnerPost {
 	format("That hidden move alone is not enough to have your pokemon light up dark spots. You'll need to know how to use it correct. I think someone at the old power plant can help you and maybe you'll help us back!")
 }

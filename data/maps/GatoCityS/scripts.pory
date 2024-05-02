@@ -565,6 +565,9 @@ script GatoCityS_EventScript_SaltySpitoon_Vagrant2 {
 	end
 }
 
+//Laius, father of Oedipus, at his lowest just before death. 
+//(PLAYER Meets Liaus at his absolute lowest on the streets where he does August West "I was once so high now so low, thrown down by the wicked Rex I was once like him and I now know his end will be much like mine as I die my only regret is that I never got to know my son. I lost him in a foolish gamble years ago and I have no idea where he's gone. If you ever come across him, PLAYER, let him know I thought of him before the end. Goodbye"
+
 movement GatoCityS_Movement_Pacer {
 	walk_left * 3
 	walk_right *3

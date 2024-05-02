@@ -1014,19 +1014,19 @@ GatoCityS_EventScript_SaltySpitoon_Vagrant2::
 	end
 
 
-# 568 "data/maps/GatoCityS/scripts.pory"
+# 571 "data/maps/GatoCityS/scripts.pory"
 GatoCityS_Movement_Pacer:
-# 569 "data/maps/GatoCityS/scripts.pory"
+# 572 "data/maps/GatoCityS/scripts.pory"
 	walk_left
-# 569 "data/maps/GatoCityS/scripts.pory"
+# 572 "data/maps/GatoCityS/scripts.pory"
 	walk_left
-# 569 "data/maps/GatoCityS/scripts.pory"
+# 572 "data/maps/GatoCityS/scripts.pory"
 	walk_left
-# 570 "data/maps/GatoCityS/scripts.pory"
+# 573 "data/maps/GatoCityS/scripts.pory"
 	walk_right
-# 570 "data/maps/GatoCityS/scripts.pory"
+# 573 "data/maps/GatoCityS/scripts.pory"
 	walk_right
-# 570 "data/maps/GatoCityS/scripts.pory"
+# 573 "data/maps/GatoCityS/scripts.pory"
 	walk_right
 	step_end
 
@@ -1055,91 +1055,91 @@ GatoCityS_EventScript_SaltySpitoon_DM_Text_0:
 	.string "What are you looking at?$"
 
 GatoCityS_Text_DM_Welcome::
-# 573 "data/maps/GatoCityS/scripts.pory"
+# 576 "data/maps/GatoCityS/scripts.pory"
 	.string "Welcome to the Salty Spitoon. Go on in.$"
 
 GatoCityS_Text_WatchSeller1::
-# 577 "data/maps/GatoCityS/scripts.pory"
-	.string "Hey kid, you wanna buy a watch? Come\n"
+# 580 "data/maps/GatoCityS/scripts.pory"
+	.string "Hey kid, you wanna buy a watch? Come\l"
 	.string "here.$"
 
 GatoCityS_Text_WatchSeller2::
-# 581 "data/maps/GatoCityS/scripts.pory"
-	.string "You don't know who I am! We never\n"
+# 584 "data/maps/GatoCityS/scripts.pory"
+	.string "You don't know who I am! We never\l"
 	.string "talked...$"
 
 GatoCityS_Text_SaltySpitoon_M1B::
-# 585 "data/maps/GatoCityS/scripts.pory"
-	.string "How tough am I? How tough am I!? Just\n"
+# 588 "data/maps/GatoCityS/scripts.pory"
+	.string "How tough am I? How tough am I!? Just\l"
 	.string "look at my muscles! I've got muscles on\l"
 	.string "my muscles! I've got muscles on my\l"
 	.string "eyeballs! Aaarrrrggghhh!$"
 
 GatoCityS_Text_SaltySpitoon_M3A::
-# 589 "data/maps/GatoCityS/scripts.pory"
-	.string "Huh? What was that? Did someone throw\n"
+# 592 "data/maps/GatoCityS/scripts.pory"
+	.string "Huh? What was that? Did someone throw\l"
 	.string "a piece of paper at me?$"
 
 GatoCityS_Text_SaltySpitoon_M3B::
-# 593 "data/maps/GatoCityS/scripts.pory"
-	.string "Hey! Quit shovin and wait your turn in\n"
+# 596 "data/maps/GatoCityS/scripts.pory"
+	.string "Hey! Quit shovin and wait your turn in\l"
 	.string "line!$"
 
 GatoCityS_Text_SaltySpitoon_M3C::
-# 597 "data/maps/GatoCityS/scripts.pory"
-	.string "Yeah, and check it out I can even make\n"
+# 600 "data/maps/GatoCityS/scripts.pory"
+	.string "Yeah, and check it out I can even make\l"
 	.string "it dance. Uhh! Uhhh! Uhhhhh!$"
 
 GatoCityS_Text_SaltySpitoon_DM1::
-# 601 "data/maps/GatoCityS/scripts.pory"
-	.string "Welcome to the Salty Spitoon. How tough\n"
+# 604 "data/maps/GatoCityS/scripts.pory"
+	.string "Welcome to the Salty Spitoon. How tough\l"
 	.string "are ya?$"
 
 GatoCityS_Text_SaltySpitoon_DM2::
-# 605 "data/maps/GatoCityS/scripts.pory"
-	.string "Alright, now it's a party! Is that some\n"
+# 608 "data/maps/GatoCityS/scripts.pory"
+	.string "Alright, now it's a party! Is that some\l"
 	.string "new ink you got there?$"
 
 GatoCityS_Text_SaltySpitoon_DM3::
-# 609 "data/maps/GatoCityS/scripts.pory"
+# 612 "data/maps/GatoCityS/scripts.pory"
 	.string "Looks sweet, go on in buddy.$"
 
 GatoCityS_Text_SaltySpitoon_M2A::
-# 613 "data/maps/GatoCityS/scripts.pory"
-	.string "How tough am I? I had a bowl of nails\n"
+# 616 "data/maps/GatoCityS/scripts.pory"
+	.string "How tough am I? I had a bowl of nails\l"
 	.string "for breakfast!$"
 
 GatoCityS_Text_SaltySpitoon_M2::
-# 617 "data/maps/GatoCityS/scripts.pory"
-	.string "This is the line to get into The Salty\n"
+# 620 "data/maps/GatoCityS/scripts.pory"
+	.string "This is the line to get into The Salty\l"
 	.string "Spitoon, the roughest toughest\l"
 	.string "gangster bar ever to be built in the\l"
 	.string "city. Only the toughest of the tough\l"
 	.string "can get in!$"
 
 GatoCityS_Text_SaltySpitoon_DM_NoEntry::
-# 621 "data/maps/GatoCityS/scripts.pory"
-	.string "Woah there little man where do you\n"
+# 624 "data/maps/GatoCityS/scripts.pory"
+	.string "Woah there little man where do you\l"
 	.string "think you're going? This is The Salty\l"
 	.string "Spitoon, it's way too rough for you. Why\l"
 	.string "don't you go hang out over there?$"
 
 GatoCityS_Text_SaltySpitoon_DM_Pass::
-# 625 "data/maps/GatoCityS/scripts.pory"
-	.string "Whats that? You got kicked out of\n"
+# 628 "data/maps/GatoCityS/scripts.pory"
+	.string "Whats that? You got kicked out of\l"
 	.string "Weenie Hut Jr's for fighting? Yeah I\l"
 	.string "guess that is pretty tough.$"
 
 GatoCityS_Text_SaltySpitoon_DM_SWHJ::
-# 629 "data/maps/GatoCityS/scripts.pory"
-	.string "Actually, I was pointing to the place\n"
+# 632 "data/maps/GatoCityS/scripts.pory"
+	.string "Actually, I was pointing to the place\l"
 	.string "down the street$"
 
 GatoCityS_Text_Vagrant1::
-# 633 "data/maps/GatoCityS/scripts.pory"
-	.string "Motherfucker! Man you're a\n"
+# 636 "data/maps/GatoCityS/scripts.pory"
+	.string "Motherfucker! Man you're a\l"
 	.string "motherfucker...$"
 
 GatoCityS_Text_Vagrant2::
-# 637 "data/maps/GatoCityS/scripts.pory"
+# 640 "data/maps/GatoCityS/scripts.pory"
 	.string "I'd slap his bitch face and shit...$"
