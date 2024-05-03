@@ -1,17 +1,53 @@
 
 const OBJ_NESTOR = 1
+const OBJ_HECTOR = 17
 
-mapscripts Tucson_MapScripts {}
+mapscripts Tucson_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		call (Tucson_OnTransition)
+	}
+}
+
+//Heros start out invisible this script shows them after they have arrived
+script Tucson_OnTransition { 
+	
+	// Hector
+	if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
+		setobjectxyperm (OBJ_HECTOR, 23, 10)
+		setobjectmovementtype (OBJ_HECTOR, MOVEMENT_TYPE_FACE_DOWN)
+	}
+	end
+}
 
 script Tucson_Script_Nestor {
-	msgbox (Tucson_Text_Nestor, MSGBOX_NPC)
+	msgbox (Tucson_Text_Nestor_Intro, MSGBOX_NPC)
 	applymovement (OBJ_NESTOR, Common_Movement_FaceDown)
 	waitmovement (0)
 	end
 }
 
-
-text Tucson_Text_Nestor {
-	format("I've lived a happy and eventful life but now I see my end approaching fast. Without a son to inherit my wealth I must rely on Helen, my daughter, to give birth to a legitimate heir and to that end I've arranged a marrieage between her and one of the two suitors: Menelaus, that brilliant business man, and the absent minded pretty Paris. My daughter Helen, much to my dismay, refuses to marry until Castor and Pollux her twin brothers return home. Please find them and tell them to hurry home.")
+script Tucson_Script_Hector {
+	lock
+	faceplayer
+	msgbox (Tucson_Text_Hector, MSGBOX_NPC)
+	release
+	end
 }
+
+text Tucson_Text_Nestor_Intro {
+	format("I've lived a happy and eventful life but now I see my end approaching fast. Without a son to inherit my wealth I must rely on Helen, my daughter, to give birth to a legitimate heir and to that end I've arranged a marrieage between her and one of the two suitors: Menelaus, that brilliant business man, and the absent minded pretty Paris.")
+}
+
+text Tucson_Text_Nestor1 {
+	format("My daughter Helen, much to my dismay, refuses to marry until Castor and Pollux her twin brothers return home. Tell Castor and Pollux to hurry home.")
+}
+
+text Tucson_Text_Nestor2 {
+	format("")
+}
+
+text Tucson_Text_Hector {
+	format("It is a great honor and true privaledge to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
+}
+

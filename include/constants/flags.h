@@ -42,7 +42,7 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Mew Flag
+#define FLAG_UNUSED_0x020    0x20 // Mew Flag also a placeholder flag in src/wild_encounter.c
 #define FLAG_UNUSED_0x021    0x21 // Gift Egg
 #define FLAG_UNUSED_0x022    0x22 // Arbok Dude
 #define FLAG_UNUSED_0x023    0x23 // Surfboard Flag
@@ -101,7 +101,7 @@
 #define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
 #define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
 #define FLAG_SLABS_HIDE_RIVAL                0x52
-#define FLAG_HEALTH_INSURANCE_OBTAINED       0x53 //// UNUSED!!!!!
+#define FLAG_BEACHCAVE_HIDE_HECTOR           0x53  // Set after talk to hector W/ wedding invitation. Hides Hector in beach cave (and shows hector in Tuscon?) 
 #define FLAG_FOLLOWER_ALT_APPROACH           0x54  // UNUSED !!!!!
 #define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
 #define FLAG_WHJ_OPEN                        0x56  // Set when allowed into WHJ 					
@@ -137,7 +137,7 @@
 
 #define FLAG_HOME_NESTOR                     0x71 
 #define FLAG_HOME_ACHILLES                   0x72 
-#define FLAG_HOME_HECTOR                     0x73
+#define FLAG_HOME_HECTOR                     0x73 // UNUSED
 #define FLAG_HOME_ULYSSES                    0x74 
 #define FLAG_HOME_AENEAS                     0x75 
 #define FLAG_HOME_AJAX                       0x76

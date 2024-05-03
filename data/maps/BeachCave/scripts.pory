@@ -1,3 +1,7 @@
+
+const OBJ_HECTOR = 7
+
+
 mapscripts BeachCave_MapScripts {}
 
 
@@ -46,13 +50,19 @@ script BeachCave_EventScript_Trevor {
 script BeachCave_EventScript_Hector {
 	lock
 	faceplayer
-	checkitem (ITEM_DIPLOMA, 1)
+	checkitem (ITEM_WEDDING_INVITATION, 1)
 	if (var(VAR_RESULT) == TRUE) {
-		msgbox("ENGLISH")
+		msgbox(BeachCave_Text_Hector2)
+		closemessage
+		fadescreen (1)
+		removeobject (OBJ_HECTOR)
+		setflag (FLAG_BEACHCAVE_HIDE_HECTOR)
+		fadescreen (0)
 	} else {
-		msgbox("LATINA")
+		msgbox(BeachCave_Text_Hector1)
+		closemessage
 	}
-	closemessage
+	release
 }
 
 text Route3_Text_NickIntro {
@@ -127,3 +137,10 @@ text Route3_Text_TrevorPost {
 	format("There's no way I'm going to pay for this...")
 }
 
+text BeachCave_Text_Hector1 {
+	format("Hello. My name is Hector, I'm from Troy. I dedicate every waking moment to self improvement, pious discipline, and rightous action. Go with God stranger.")
+}
+
+text BeachCave_Text_Hector2 {
+	format("What's this invitation that you've brought me? My brother Paris will marry Helen? I must travel to Nestor's house at once!")
+}

@@ -12465,35 +12465,6 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    // Surfboard
-    [ITEM_SURFBOARD] =
-    {
-        .name = _("Surfboard"),
-        .price = 0,
-        .description = sSurfboardDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-	
-	// KIND BUD
-	[ITEM_KIND_BUD] =
-	{
-		.name = _("KIND BUD"),
-		.price = 420,
-        .holdEffectParam = 255,
-		.description = sKindBudDesc,
-		.importance = 1,
-		.pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_Potion,
-        .flingPower = 30,
-    },
-
     [ITEM_METAL_ALLOY] =
     {
         .name = _("Metal Alloy"),
@@ -12545,19 +12516,6 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
 	},
 
-	[ITEM_DEATH_STICK] =
-	{
-		.name = _("DEATH STICK"),
-		.price = 420,
-        .holdEffectParam = 255,
-		.description = sDeathStickDesc,
-		.pocket = POCKET_ITEMS,
-		.type = ITEM_USE_PARTY_MENU,
-		.fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .flingPower = 30,
-	},
-
     [ITEM_FINE_REMEDY] =
     {
         .name = _("Fine Remedy"),
@@ -12578,103 +12536,7 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
 	},
 
-	[ITEM_INSURANCE_FORM_A] =
-	{
-		.name = _("FORMS"),
-        .price = 0,
-        .description = sInsuranceFormADesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-	},
-
-	[ITEM_INSURANCE_FORM_B] =
-	{
-		.name = _("FORMS"),
-        .price = 0,
-        .description = sInsuranceFormBDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-	},
-
-	[ITEM_INSURANCE_CARD] =
-	{
-		.name = _("INSURANCE"),
-        .price = 0,
-        .description = sInsuranceCardDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-	},
-
-	[ITEM_TATTOO] =
-	{
-		.name = _("TOUGH TATTOO"),
-        .price = 0,
-        .description = sTattooDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-	},
-
-	[ITEM_DIPLOMA] =
-	{
-		.name = _("DIPLOMA"),
-        .price = 0,
-		.description = sDiplomaDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-	},
-
-	[ITEM_KEG] =
-	{
-		.name = _("KEG"),
-        .price = 0,
-		.description = sKegDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-	},
-
-	[ITEM_ANCIENT_LAMP] =
-	{
-		.name = _("ANCIENT LAMP"),
-        .price = 0,
-		.description = sAncientLampDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-	},
-
-	[ITEM_BOOK] =
-	{
-		.name = _("TEST BOOK"),
-        .price = 0,
-		.description = sTestBookDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_TestBook,
-        .secondaryId = 0,
-	},
-
-    [ITEM_SUPERB_REMEDY] =
+	[ITEM_SUPERB_REMEDY] =
     {
         .name = _("Superb Remedy"),
         .price = 750,
@@ -12820,5 +12682,162 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+///	KUSTOM ITEMS START ///
+    
+    [ITEM_SURFBOARD] =
+    {
+        .name = _("Surfboard"),
+        .price = 0,
+        .description = sSurfboardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+    },
+	
+	[ITEM_KIND_BUD] =
+	{
+		.name = _("Kind Bud"),
+		.price = 420,
+        .holdEffectParam = 255,
+		.description = sKindBudDesc,
+		.importance = 1,
+		.pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_Potion,
+        .flingPower = 30,
+    },
+
+	[ITEM_INSURANCE_FORM_A] =
+	{
+		.name = _("Forms"),
+        .price = 0,
+        .description = sInsuranceFormADesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_INSURANCE_FORM_B] =
+	{
+		.name = _("Forms"),
+        .price = 0,
+        .description = sInsuranceFormBDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_INSURANCE_CARD] =
+	{
+		.name = _("Isurance Card"),
+        .price = 0,
+        .description = sInsuranceCardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+	
+	[ITEM_DEATH_STICK] =
+	{
+		.name = _("DEATH STICK"),
+		.price = 420,
+        .holdEffectParam = 255,
+		.description = sDeathStickDesc,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_PARTY_MENU,
+		.fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .flingPower = 30,
+	},
+
+
+	[ITEM_TATTOO] =
+	{
+		.name = _("TOUGH TATTOO"),
+        .price = 0,
+        .description = sTattooDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_DIPLOMA] =
+	{
+		.name = _("DIPLOMA"),
+        .price = 0,
+		.description = sDiplomaDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_KEG] =
+	{
+		.name = _("KEG"),
+        .price = 0,
+		.description = sKegDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_ANCIENT_LAMP] =
+	{
+		.name = _("ANCIENT LAMP"),
+        .price = 0,
+		.description = sAncientLampDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+	[ITEM_BOOK] =
+	{
+		.name = _("TEST BOOK"),
+        .price = 0,
+		.description = sTestBookDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_TestBook,
+        .secondaryId = 0,
+	},
+
+	[ITEM_WEDDING_INVITATION] =
+	{
+		.name = _("INVITATION"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "An invitation to the\n"
+            "wedding of Helena and\n"
+            "Paris."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
+///	KUSTOM ITEMS END ///
+
 };
 
