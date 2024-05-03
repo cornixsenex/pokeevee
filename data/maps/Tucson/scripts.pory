@@ -1,0 +1,17 @@
+
+const OBJ_NESTOR = 1
+
+mapscripts Tucson_MapScripts {}
+
+
+script Tucson_Script_Nestor {
+	msgbox (Tucson_Text_Nestor, MSGBOX_NPC)
+	applymovement (OBJ_NESTOR, Common_Movement_FaceDown)
+	waitmovement (0)
+	end
+}
+
+
+text Tucson_Text_Nestor {
+	format("I've lived a happy and eventful life but now I see my end approaching fast. Without a son to inherit my wealth I must rely on Helen, my daughter, to give birth to a legitimate heir and to that end I've arranged a marrieage between her and one of the two suitors: Menelaus, that brilliant business man, and the absent minded pretty Paris. My daughter Helen, much to my dismay, refuses to marry until Castor and Pollux her twin brothers return home. Please find them and tell them to hurry home.")
+}

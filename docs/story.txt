@@ -106,7 +106,65 @@ Here's the deal, Leaf shows up when you first arrive at ardor university. She sa
 	Flash needed
 	Very large, confusing, etc
 	Rare items at SOME dead ends
-	Rare Gollum Pond at the bottom
+	Locations
+		Rare Gollum Pond		
+			Fall through cracked floor
+			Gollum on island in lake lost precious
+			PLAYER find precious
+			Gollum riddles in the dark 
+			What's this looks tasty we eats it. It likes riddles? 
+			My precious
+			What is that noise my precious?
+			Precious does not know...
+			Gollum approaches
+			Gollum
+			Precious my precious a tasty morsel it would make us
+			What is it my precious?
+			Gollum
+			Gollum
+			Yes Gollum
+			What's it got in it's handes? 
+			steps back
+			But perhaps he sits here and chats with it a bitsy my precious 
+			it likes riddles?
+
+			What has roots that no one sees
+			Standing taller than the trees
+			Up and up and up it goes
+			but never taller never grows
+			Mountain
+
+			Voiceless cries
+			and Wingless flutters
+			Toothless bites
+			and Mouthless mutters
+			wind
+				
+			What cannot be seen and cannot be felt
+			What cannot be heard and cannot be smelt
+			It lies behind stars and under the hills	
+			It crowds hollow halls and empty holes fill
+			This always came first and follows after
+			This will end your life this will end laughter
+			dark
+
+			This thing all things must devour
+			Slay all Birds, and beasts, trees, flowers
+			Gnaws on iron, bites at steel
+			Grinds hard stones down into meal
+			This Slays king and ruins town
+			This beats the mighty mountain down
+			time
+
+			What has it got in it's nasty little pocketses?
+			>My birthday present
+			>Thief! Thief! We hates it! We hates it for ever!!!
+		Hades
+		Dwarves / Tunnels
+		Goblins / Tunnels / mole people
+		Hidden Treasure
+		Hidden buried fossils
+	
 >Rocket Prison
 	Unlock different sections,mines etc, free prisoners, finally knock out Rocket Admin (Norman?)
 	So basically when you enter parts of it are locked down and you need the key to get it, it's revealed over time that they're not just imprisoned but being forced to work in the mines. After breaking a few of them out you enter the offices where you confront the Rocket Admin after defeating him you release the rest of the prisoners and then escape outsid
@@ -919,65 +977,65 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 
 
 	***CAST***
-Nestor Gerenios
-Helena
-Menelaus
-Paris / Alexander
-Castor
-Pollux
-Jason
-Theseus
-Orpheus
-Philoctetes
-Heracles
-Prometheus
+Nestor Gerenios         : Contest Judge
+Helena                  : Woman 2
+Menelaus				: Maniac
+Paris / Alexander		: Man 2
+Castor					: Youngster
+Pollux					: Youngster
+Jason 					: Archie?
+Theseus					: Man 3
+Orpheus					: Artist
+Philoctetes				: Oak
+Heracles				: Bruno
+Prometheus				: old man lyingdown
 Aeetes
 Medea
-Ulysses
+Ulysses					: Man 1
 Penelope
 Telemachus
-Polyphemus
+Polyphemus				:Quinty Plump
 Cirke
 Kalypso
-Nausicaa
+Nausicaa				:little girl
 Arete
 Eumaeus (swineheard)
 Beggar Ulysses
-Agamemnon
-Orestes
-Klytamnestra
-Iphigeneia
-Aeneas (older gentleman I suppose)
+Agamemnon				:Mauville Old Man / Add Mauville Old Man 1 for bewitchment
+Orestes					:fisherman
+Klytamnestra			:link receptionist
+Iphigeneia				:Beauty
+Aeneas					:Gentleman
 Faustulus (son)
 Romulus and Remus (twin babies)
-Hektor
-Achilleus
-Patrokles
-Aias
-Lessar Aias
-Diomedes
-Teukros
-Tiresias
-Oedipus (Rex)
-Laius
+Hektor					:Devon Employee
+Achilleus				:scott
+Patrokles				:Tucker
+Aias					:Boy 3
+Lessar Aias				:Fat Man
+Diomedes				:running triatholete
+Teukros					:wally
+Tiresias				:Spenser (frontier brain)
+Oedipus (Rex)			:noland
+Laius					:Old Man lying down
 Jocasta
 Merope (Polybus)
 Antigone(?)
 Briseis
 Troilus
-Priam
+Priam					:Old Man
 Hippolyta
-Atlas
-Charon
+Atlas					:Steven
+Charon					: policeman
 Minos
 Hypnos
 Hekate
 Thanatos (death)
-Pluto / Dis / Hades
+Pluto / Dis / Hades		:Giovanni
 Persephone
 
 
-Trinket Salesman
+Trinket Salesman			:mystery event deliveryman
 Lotus eaters
 Harpies
 Pigs / Circe's prisoners
@@ -994,7 +1052,7 @@ horse racers (or gamblers)
 Oedipus' guests
 Orphanage worker
 Cult people (Iphigeneia at Taurus)
-Trojan Soldiers (Memnon, Glaucus, Deiphobus, Dolon, Sarpedon, Pandarus, Adrastus, Antenor)
+Trojan Soldiers (Memnon, Glaucus, Deiphobus, Dolon, Sarpedon, Pandarus, Adrastus, Antenor)  : black belts
 Trojan whores
 Amazonians
 Helios / Fire Sun Cow farmer
@@ -1003,9 +1061,11 @@ shades
 Furies
 
 
-	*** GREEK MYTHOLOGY ***
+	*** GREEK MYTHOLOGY START***
 
 	>Nestor wants to marry his daughter Helen to ensure the survival of his dynasty only daughter
+	>He introduces Menelaus first as 'smart, frugal, etc' and Paris who has the clear adoration of my daughter
+	>Helen much prefers Paris (Chad)
 	>She will not marry without her brothers there Castor and Pollux (but she's also clearly fucking Paris)
 	>Dioscuri are away on the Argo
 	>ARGO: Jason, Castor, Pollux, Theseus, Orpheus, Philoctetes
