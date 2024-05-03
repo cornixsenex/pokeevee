@@ -696,7 +696,7 @@
 #define MAP_VEGAS_HOTEL1F               (16 | (31 << 8))
 #define MAP_PHOENIX_MART                (17 | (31 << 8))
 
-// gMapGroup_IndoorRoute113
+// gMapGroup_Myth
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (32 << 8))
 
 // gMapGroup_IndoorRoute123

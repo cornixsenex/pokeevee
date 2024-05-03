@@ -32,7 +32,7 @@
     "gMapGroup_IndoorRoute110",
     "gMapGroup30",
     "gMapGroup31",
-    "gMapGroup_IndoorRoute113",
+    "gMapGroup_Myth",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup33",
@@ -729,7 +729,7 @@
     "Vegas_Hotel1F",
     "Phoenix_Mart"
   ],
-  "gMapGroup_IndoorRoute113": [
+  "gMapGroup_Myth": [
     "Route113_GlassWorkshop"
   ],
   "gMapGroup_IndoorRoute123": [
