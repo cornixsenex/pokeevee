@@ -918,6 +918,91 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 	>This results in battle against Creon and the eventual institution of a commune. Tiriesias leaves in peace
 
 
+	***CAST***
+Nestor Gerenios
+Helena
+Menelaus
+Paris / Alexander
+Castor
+Pollux
+Jason
+Theseus
+Orpheus
+Philoctetes
+Heracles
+Prometheus
+Aeetes
+Medea
+Ulysses
+Penelope
+Telemachus
+Polyphemus
+Cirke
+Kalypso
+Nausicaa
+Arete
+Eumaeus (swineheard)
+Beggar Ulysses
+Agamemnon
+Orestes
+Klytamnestra
+Iphigeneia
+Aeneas (older gentleman I suppose)
+Faustulus (son)
+Romulus and Remus (twin babies)
+Hektor
+Achilleus
+Patrokles
+Aias
+Lessar Aias
+Diomedes
+Teukros
+Tiresias
+Oedipus (Rex)
+Laius
+Jocasta
+Merope (Polybus)
+Antigone(?)
+Briseis
+Troilus
+Priam
+Hippolyta
+Atlas
+Charon
+Minos
+Hypnos
+Hekate
+Thanatos (death)
+Pluto / Dis / Hades
+Persephone
+
+
+Trinket Salesman
+Lotus eaters
+Harpies
+Pigs / Circe's prisoners
+Shades						Ghastly Haunter Gengar
+sirens
+Phaeacians
+farmers / swinherds
+Atreidae door guard and servant(s)
+Myrmidones
+zoo man & dead sheep(?)
+grateful dead
+dead heads
+horse racers (or gamblers)
+Oedipus' guests
+Orphanage worker
+Cult people (Iphigeneia at Taurus)
+Trojan Soldiers (Memnon, Glaucus, Deiphobus, Dolon, Sarpedon, Pandarus, Adrastus, Antenor)
+Trojan whores
+Amazonians
+Helios / Fire Sun Cow farmer
+Cherubin
+shades
+Furies
+
+
 	*** GREEK MYTHOLOGY ***
 
 	>Nestor wants to marry his daughter Helen to ensure the survival of his dynasty only daughter
@@ -943,7 +1028,7 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 		>Medea wants the fleece. Alive
 		>Guarded by a mighty beast / dragon
 		>Shiny Mareep
-		>If caught and given to Jason then A else B
+		>If caught and given to Jason then he wil ferry you around for free. Otherwise Medea kills him for failing her
 		>End of the Argo - Where do the heros go?
 	>Castor and Pollux return
 	>Nestor makes his decision and has both suitors swear to uphold his desicion
@@ -962,19 +1047,22 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 						>  6: Sirens - defeat the sirens so they stop singing - Siren Beach NW Ouahu
 						>  7: Scylla and Charybdis - Ulysses appears on the norther spit of Italia along with a Tentecruel patrolling the waters inbetween italia and Maui. After defeat / capture Scylla speak to him he will leave
 						>  8: Calypso - Within the sea cave south Big Island Ulysses has become Calypso's boy toy. She is enraged when you arrive to take him from her and does battle, after which speak to him he will leave. She will then rest / heal you in bed
-						>  9: Atlantis? - Ulysses arrives on the mainland where he begins gambling saying he can't leave the lucky table until he's defeated. BlackJack in Vegas probably
+						>  9: Shipwrecked on Phaeacia
+							>Rescued from death by young girl Nausicaa (not many travelers make it out here we live forgotten from most people in huts on the water)
+							>Says her father (Arete) would hear the story and give him provisions for the journey to Nestor
+							>Back in the hut Ulysses re-tells the entire story up to this point
 						> 10: Swineherd - Ulysses is in a poor farmer's hut where he refuses to leave to join Nestor until you bring something for the poor man to eat.
 						> 11: Beggar - A new beggar appears in the city who asks for money. At this point Penelope whill lose her wedding ring. If you find it and return it to her she will just lose it again and again, if you give the ring to Ulysses instead he will become enraged and accuse you of cucking him
-						> 12: Battle - He uses tricky pokemon, trojan horse, big dog named (I forgot), prolly some psychic types. After he's defeated he FINALLY returns to Nestor
+						> 12: Battle - He uses tricky pokemon, trojan horse, big dog named Argos, prolly some psychic types. After he's defeated he FINALLY returns to Nestor
 		>AGAMEMNON - ORESTES - KLYDOMNESTRA ETC
 			>The door to the house of Atrides is shut. i
 			>The doorguard maintains that the King(?) will not come out from the company of his wife. 
 			>The servant in the sidehouse comments he has not seen his master since his son went missing.
 			>Orestes is chased by the furies up Mad River road
 			>He ends up on the bridge contemplates suicide
-			>Player defeats 3 furies
+			>Player defeats Orestes
 			>Orestes is convinced to accept and admit the truth
-			>Klytemnestra (His step mother) has bewitched Agamemnon and tried to have Orestes killed
+			>Klytamnestra (His step mother) has bewitched Agamemnon and tried to have Orestes killed
 			>He enlists PLAYER's help to defeat her and save his father
 			>Return to sidehouse
 			>A trap door leads to a secret passageway
@@ -1056,9 +1144,9 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 		>Discover Jocasta is dead
 		>Oedipus puts out his eyes with the brooch of her dress (her earings? IDFK)
 		>The people all say they should throw Oedipus out and treat him with the same disgust he treated his father with
-		>Antigone / Tiresias intervene saying that to continue the cylce of misery would only perpetuate suffering and it would be better to pity this man and let him stay here
+		>Tiresias intervene saying that to continue the cylce of misery would only perpetuate suffering and it would be better to pity this man and let him stay here
 		>Oedipus refuses and decides to voluntarily go into exile and releases Tiresias from his service and gives all his property to PLAYER (The suite I guess and Tiresias)
-		>Antigone will go with Rex into exile
+		>Rex into exile
 		>Tiresias will join player
 		>Oedipus will wander around, when you speak to him he will die and bless the area he dies in.
 			>Higher shiny chance? A unique item? Other?
@@ -1151,6 +1239,12 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 		>6: Defeat Stygian Birds - elicius beach (wingulls? lol)
 			>Many many wingull / pelipper OBJ to be defeated
 		>7: Capture bull - Underground
+			
+			>In DarkCave2F Minotaur (Very powerful Tauros) appears randomly
+			>You /can/ randomly encounter it but it's just in a random location 
+			>Theseus can lead you to where it is
+			>When you get too close Minotaur attacks
+
 			>Theseus Helps
 			>In DarkCave2F Labyrinth
 			>Near Gollums Cave
@@ -1162,14 +1256,44 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 			>Atlas claims to be singlehandedly guarding the...pandora's box / eden / something (holding the world up)
 			>He is tricked into using weed (you promise to hold it / do his work)
 			>Atlas shurgged (If the great people stop working the world falls apart)
-			>Opens the gate to Eden where the apples are guarded by a great snake(?) Dragon? It's gotta be a snake...right?
+			>Opens the gate to Eden where the apples are guarded by a great snake(?) Dragon? Cherubin?
+			>Cherubin: 4 faces, 4 wings,  calf's hoof, bronzong, flaming sword: Lion, ox, human, eagle
 			>Defeat the dragon, take the apples (fruit)
 			>Atlas realizes what he's done and kicks you out of the garden forever
 		>12 Capture Ceberus - Hades
-			>Orpheus Helps
-			>Across the river styx with Charon
-			>DARK type area, Sysyphus, Dante
-			>Maybe some way to open the road for if you die in the future(?) at least the same area
+			>You cannot return from the Underworld without Orpheus' music, but you could find the path by yourself Orpheus just leads you there, however if you cross without him and Hades never hears his music Charon will never allow you to cross back
+			>Orpheus' beloved Eurydice (maybe a pokemon lol) has died and he has decided to go and get her back. Invites you to join him hearing that you must go as well to capture Ceberus
+			>He can lead you through the labyrinth to the door to hades
+			>Reach the river styx banks where the restless dead await the ferry (or those without payment haunt the earth as well?)
+			>Charon demands a tribute (whether living or dead all men must pay) encounter those who have no way to pay their way across (help them?)
+			>Enter HADES: DARK type area, Sysyphus, Dante
+			#LIMBO / Asphodelos
+			>Upon crossing the river someone notes that this is Asphodelos and that the only road forward is forever downward into the pits of Tartarus and that as you progress you will encounter the more wicked and cursed. The blessed do not cross the river Styx but go into the undying west where the sun sets (Elysion)
+			>The entire time Orpheus must be actively searching for Eurydice and become more and more desparate as he can't find her	
+		0	>Asphodelos Limbo Field Gate 1 Minos (Judge)
+		1	>Lust Hotel - No exit joke, Gate 2 Hypnos
+		2	>Gluttony Forest - Food always getting further away Gate 3 Megaera (Jelousy)
+		3	>Greed Cave - Souls weighed down by money bags Gate 4 Aleko (Anger)
+		4	>Sloth Swamp - Souls face down in shit / mud / piss Gate 5 Tisiphone (vengeance / destruction)
+		5	>Wrath Desert - Souls constantly fight in anger Gate 6 Hekate (Sin)
+		6	>Violence Magma - Ixion spins on a wheel of fire Gate 7 Thanatos (Death)
+		7	>Treachery Ice - Sysyphus pushes the rock up the hill
+		8	>A passage to Pandamonium. Before the gates of the castle is Ceberus
+			>Orpheus' lyre can put him to sleep so the player can catch him. Otherwise idk uber powerful Houndoom or Entei
+			>PLUTO / DIS : He sits at the very bottom on a throne with his wife Persephone by his side. Stern and dignified.
+			>He is impressed(?) you've gotten past Ceberus (Heracles must have done this before) and asks how this was possible
+			>Orpheus plays his music and Pluto / Dis is emotionally moved
+			>Not even the might of Heracles moved my soul thus, what is it you would ask of me kind stranger
+			>I want to see my wife Eurydice and bring her back from death
+			>Indeed she is here with us. You can't expect to search the entire vast caverns of Tartarus with the short mortal life you have and besides bringing her back is impossible, allowing you to go yourself would be more than I should grant but I would for the master musician.
+			>Persephone moves him by a love argument saying "Lord you let me return to see my mother once a year this mortal only borrows time from us here and his music has moved us more than Apollo"
+			>Pluto relents on the condition that you not turn back on your journey out of the Underworld but to have faith that she will follow. If you turn back even once or stop to speak with any of the dead I will trap you here forever
+			>Orpheus agrees and Pluto again instructs you to turn now and not look back a single time or speak with any of the dead
+			>If you turn around a single time or speak to any of the dead before speaking with Charon he will not allow you to cross. Remove OBJ if other map, otherwise on final map have him say something like "You have betrayed your deal with Dis and will never escape now"
+			>Back in Asphodelos as you near Charon Orpheus will stop and turn back then dissapear
+			>Speak to Charon (without ever turning around) and he ferries you back across the river (for free) and you're back where you started from...
+ 			>He doesn't dissapear, but if you cross again you will never be allowed to leave (because Orpheus will never go back with you)
+	>Return to Heracles with Ceberus
 	>Heracles Fight - He refuses to accept the challenges because you had help
 	>Get Gauntlets of Strength
 	>Move Boulders
@@ -1185,7 +1309,7 @@ Girlfriend (leaf)
 	>has a tattoo
 Back to Class
 Begin Revolution
-Prison Break
+Prison Break (Build a prison map above highway to vegas)
 Road to the capital
 Rocket Tower
 Capital

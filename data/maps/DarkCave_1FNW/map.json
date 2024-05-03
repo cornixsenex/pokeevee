@@ -12,7 +12,13 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_DARK_CAVE_1FN",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
   "object_events": [
 
   ],
@@ -25,18 +31,18 @@
       "dest_warp_id": "1"
     },
     {
+      "x": 8,
+      "y": 50,
+      "elevation": 0,
+      "dest_map": "MAP_DARK_CAVE_2F",
+      "dest_warp_id": "1"
+    },
+    {
       "x": 116,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_SLABS",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 13,
-      "y": 51,
-      "elevation": 0,
-      "dest_map": "MAP_DARK_CAVE_2F",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
