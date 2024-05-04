@@ -593,7 +593,7 @@ Robustus_Text_PatrickPost::
 
 Robustus_Text_Leaf1::
 # 267 "data/maps/DoakTown/scripts.pory"
-	.string "My gosh! Look at you {PLAYER} I see\n"
+	.string "My gosh! Look at you {PLAYER} I see\l"
 	.string "you've grown more lovely in every\l"
 	.string "possible way. Unfortunately I can't\l"
 	.string "find a way to continue our trip north to\l"

@@ -54,58 +54,58 @@ Warehouse_Blue_EventScript_TrainerBlue1::
 
 Warehouse_Blue_Text_Blue5Intro::
 # 39 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "You're in the trenches! This the pit\n"
+	.string "You're in the trenches! This the pit\l"
 	.string "spot bro you already know.$"
 
 Warehouse_Blue_Text_Blue5Lost::
 # 43 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "But, like, we didn't come yesterday to\n"
+	.string "But, like, we didn't come yesterday to\l"
 	.string "lose.$"
 
 Warehouse_Blue_Text_Blue5Post::
 # 47 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "When you step out here we show love. We\n"
+	.string "When you step out here we show love. We\l"
 	.string "show mad love to everybody you\l"
 	.string "understand?$"
 
 Warehouse_Blue_Text_Blue4Intro::
 # 51 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "I'm blessed! This my third fight in three\n"
+	.string "I'm blessed! This my third fight in three\l"
 	.string "years.$"
 
 Warehouse_Blue_Text_Blue4Lost::
 # 55 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "That's what happened. I'm keep my faith\n"
+	.string "That's what happened. I'm keep my faith\l"
 	.string "in God.$"
 
 Warehouse_Blue_Text_Blue4Post::
 # 59 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "Everyone else going crazy I'm more chill\n"
+	.string "Everyone else going crazy I'm more chill\l"
 	.string "about those things man.$"
 
 Warehouse_Blue_Text_Blue3Intro::
 # 63 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "I'm very happy the public enjoys what I\n"
+	.string "I'm very happy the public enjoys what I\l"
 	.string "do.$"
 
 Warehouse_Blue_Text_Blue3Lost::
 # 67 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "I will continue to put a lot of pride in\n"
+	.string "I will continue to put a lot of pride in\l"
 	.string "my work.$"
 
 Warehouse_Blue_Text_Blue3Post::
 # 71 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "Every time I take an L I never take it\n"
+	.string "Every time I take an L I never take it\l"
 	.string "lightly.$"
 
 Warehouse_Blue_Text_Blue2Intro::
 # 75 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "Time to prove it again. Every time you\n"
+	.string "Time to prove it again. Every time you\l"
 	.string "step in the ring you gotta prove it.$"
 
 Warehouse_Blue_Text_Blue2Lost::
 # 79 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "They should do a lightweight\n"
+	.string "They should do a lightweight\l"
 	.string "tournement.$"
 
 Warehouse_Blue_Text_Blue2Post::
@@ -122,5 +122,5 @@ Warehouse_Blue_Text_Blue1Lost::
 
 Warehouse_Blue_Text_Blue1Post::
 # 95 "data/maps/Warehouse_Blue/scripts.pory"
-	.string "Dang we was flat. Just kind of let you\n"
+	.string "Dang we was flat. Just kind of let you\l"
 	.string "go where you wanted to go. Damn.$"

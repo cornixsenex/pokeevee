@@ -551,17 +551,17 @@ RocketTower_13F_Movement_Mewtwo:
 
 RocketTower_13F_Text_Gio1::
 # 265 "data/maps/RocketTower_13F/scripts.pory"
-	.string "We stand upon the brink of destruction\n"
+	.string "We stand upon the brink of destruction\l"
 	.string "all of our plans will fail if we don't act$"
 
 RocketTower_13F_Text_Blaine1::
 # 269 "data/maps/RocketTower_13F/scripts.pory"
-	.string "But sir Mewtwo has not proven himself\n"
+	.string "But sir Mewtwo has not proven himself\l"
 	.string "in any battle$"
 
 RocketTower_13F_Text_Gio2::
 # 274 "data/maps/RocketTower_13F/scripts.pory"
-	.string "Blaine we have no choice. The city guard\n"
+	.string "Blaine we have no choice. The city guard\l"
 	.string "has already fallen, the capital itself is\l"
 	.string "under siege, and this report suggests\l"
 	.string "our own tower has been penetrated by\l"
@@ -582,7 +582,7 @@ RocketTower_13F_Text_Blaine2::
 
 RocketTower_13F_Text_Gio4::
 # 290 "data/maps/RocketTower_13F/scripts.pory"
-	.string "I must be off to reach the capital\n"
+	.string "I must be off to reach the capital\l"
 	.string "before the rebel horde destroys our\l"
 	.string "plans and renders our great creation\l"
 	.string "useless. Destroy this spy and join me\l"
@@ -599,7 +599,7 @@ RocketTower_13F_Text_Gio5::
 
 RocketTower_13F_Text_Blaine4::
 # 302 "data/maps/RocketTower_13F/scripts.pory"
-	.string "My eyes would not decieve you're that\n"
+	.string "My eyes would not decieve you're that\l"
 	.string "same boy who wittnessed me take\l"
 	.string "possesion of Mew. My servants may have\l"
 	.string "failed but I shall not allow you to\l"
@@ -614,7 +614,7 @@ RocketTower_13F_Text_BlaineLost::
 
 RocketTower_13F_Text_BlainePost::
 # 310 "data/maps/RocketTower_13F/scripts.pory"
-	.string "I now must hide away. Exile in my case is\n"
+	.string "I now must hide away. Exile in my case is\l"
 	.string "preferable to the sheer pain my\l"
 	.string "creation would make when my master\l"
 	.string "learns of my great defeat.$"

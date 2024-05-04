@@ -610,23 +610,23 @@ Ardor_Uni_ArchaeologyClass_EventScript_TA_Text_1:
 
 Ardor_Uni_ArchaeologyClass_Text_Indy1::
 # 338 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Now please sit down so our class may\n"
+	.string "Now please sit down so our class may\l"
 	.string "begin$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf1::
 # 342 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "I've just told you, we're not here for\n"
+	.string "I've just told you, we're not here for\l"
 	.string "the class. We need your help to...$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy2::
 # 346 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Now is not the time! My patience is\n"
+	.string "Now is not the time! My patience is\l"
 	.string "grown thin. This is a school! If you will\l"
 	.string "not obey I'll get the dean.$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf2::
 # 350 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "I'll not sit down, we need you general.\n"
+	.string "I'll not sit down, we need you general.\l"
 	.string "Some years ago you fought with my\l"
 	.string "father and now he begs your help to\l"
 	.string "fight again. The Rockets have...$"
@@ -637,7 +637,7 @@ Ardor_Uni_ArchaeologyClass_Text_Student1::
 
 Ardor_Uni_ArchaeologyClass_Text_Student2::
 # 358 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Just say the word and we'll take care of\n"
+	.string "Just say the word and we'll take care of\l"
 	.string "her!$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy3::
@@ -646,12 +646,12 @@ Ardor_Uni_ArchaeologyClass_Text_Indy3::
 
 Ardor_Uni_ArchaeologyClass_Text_Indy4::
 # 366 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Our time has come now we must show\n"
+	.string "Our time has come now we must show\l"
 	.string "ourselves.$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy5::
 # 370 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "I hope you will forgive us our disguise\n"
+	.string "I hope you will forgive us our disguise\l"
 	.string "and please allow us an introduction. My\l"
 	.string "name truly is Magnus Maximus, I am the\l"
 	.string "leader of this rebel band. When we were\l"
@@ -668,14 +668,14 @@ Ardor_Uni_ArchaeologyClass_Text_Leaf3::
 
 Ardor_Uni_ArchaeologyClass_Text_Indy6::
 # 378 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "It is our only purpose to destroy the\n"
+	.string "It is our only purpose to destroy the\l"
 	.string "Rocket Party and retake our land. Now\l"
 	.string "tell me girl who is your father and what\l"
 	.string "is our need of urgent action now?$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf4::
 # 382 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "My father served with you in the great\n"
+	.string "My father served with you in the great\l"
 	.string "war and we have travelled far, from\l"
 	.string "Clara's Church to bring you the most\l"
 	.string "tragic horrid news. The Rockets have\l"
@@ -691,7 +691,7 @@ Ardor_Uni_ArchaeologyClass_Text_Leaf5::
 
 Ardor_Uni_ArchaeologyClass_Text_Indy8::
 # 394 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "That certainly explains the urgency. We\n"
+	.string "That certainly explains the urgency. We\l"
 	.string "must make our attack quickly before\l"
 	.string "they end the universe with this evil.\l"
 	.string "But still attacking now would be\l"
@@ -715,7 +715,7 @@ Ardor_Uni_ArchaeologyClass_Text_Indy8::
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieAsk::
 # 398 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Are you ready to start the battle\n"
+	.string "Are you ready to start the battle\l"
 	.string "{PLAYER}?$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieWait::
@@ -724,32 +724,32 @@ Ardor_Uni_ArchaeologyClass_Text_MaxieWait::
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash::
 # 406 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "I'm sorry {PLAYER} you're not ready to\n"
+	.string "I'm sorry {PLAYER} you're not ready to\l"
 	.string "go. Before we travel to the depths of\l"
 	.string "hell you must learn how to use the HM\l"
 	.string "FLASH.$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack::
 # 410 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "The die is cast. ALEA IACTA EST. Arise\n"
+	.string "The die is cast. ALEA IACTA EST. Arise\l"
 	.string "arise rebels of the desert! Your time is\l"
 	.string "now rise up and sieze the school!$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieExit::
 # 414 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Now hurry {PLAYER} and meet me at the\n"
+	.string "Now hurry {PLAYER} and meet me at the\l"
 	.string "cave entrance on the far south side of\l"
 	.string "the sand.$"
 
 Ardor_Uni_ArchaeologyClass_Text_ClassBegin::
 # 418 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Salve puer. Magister Indianus in\n"
+	.string "Salve puer. Magister Indianus in\l"
 	.string "pyramide est. Marcus adjustor Indiani\l"
 	.string "sum. Sine magistro archaeologiam doceo.$"
 
 Ardor_Uni_ArchaeologyClass_Text_ClassBegun::
 # 422 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "In eremis circum Ardentem multae sunt\n"
+	.string "In eremis circum Ardentem multae sunt\l"
 	.string "reliquiae. Reperi thesaurum anteanum et\l"
 	.string "reveni cum eam.$"
 
@@ -763,7 +763,7 @@ Ardor_Uni_ArchaeologyClass_Text_TARebel::
 
 Ardor_Uni_ArchaeologyClass_Text_FoundLamp::
 # 434 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Mea Hercule! Reperisti lampadem\n"
+	.string "Mea Hercule! Reperisti lampadem\l"
 	.string "anticam!$"
 
 Ardor_Uni_ArchaeologyClass_Text_TABattleIntro::
@@ -776,5 +776,5 @@ Ardor_Uni_ArchaeologyClass_Text_TABattleLost::
 
 Ardor_Uni_ArchaeologyClass_Text_ClassFinished::
 # 446 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	.string "Congratulatio! Iam studuisti\n"
+	.string "Congratulatio! Iam studuisti\l"
 	.string "Archaeologiam.$"

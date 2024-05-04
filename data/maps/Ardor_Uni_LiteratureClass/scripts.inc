@@ -307,7 +307,7 @@ Ardor_Uni_LiteratureClass_EventScript_Student6_2:
 
 Ardor_Uni_LiteratureClass_Text_ClassIntro::
 # 187 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "Salve puer. Magistra Aemilia sum.\n"
+	.string "Salve puer. Magistra Aemilia sum.\l"
 	.string "Necesse est tibi docere litteraturam.$"
 
 Ardor_Uni_LiteratureClass_Text_Student1::
@@ -368,7 +368,7 @@ Ardor_Uni_LiteratureClass_Text_TeacherBattleLost::
 
 Ardor_Uni_LiteratureClass_Text_ClassFinished::
 # 247 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "Congratulatio! Iam studuisti\n"
+	.string "Congratulatio! Iam studuisti\l"
 	.string "litteraturam.$"
 
 Ardor_Uni_LiteratureClass_Text_TestBegin::
@@ -377,7 +377,7 @@ Ardor_Uni_LiteratureClass_Text_TestBegin::
 
 Ardor_Uni_LiteratureClass_Text_Lesson1::
 # 255 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "Caesar scripsit, 'Gallia est omnis divisa\n"
+	.string "Caesar scripsit, 'Gallia est omnis divisa\l"
 	.string "in partes tres, quarum unam incolunt\l"
 	.string "Belgae, aliam Aquitani, tertiam qui\l"
 	.string "ipsorum lingua Celtae, nostra Galli\l"
@@ -385,7 +385,7 @@ Ardor_Uni_LiteratureClass_Text_Lesson1::
 
 Ardor_Uni_LiteratureClass_Text_Lesson2::
 # 259 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "Scripsit Livius, 'Iam primum omnium\n"
+	.string "Scripsit Livius, 'Iam primum omnium\l"
 	.string "satis constat Troia capta in ceteros\l"
 	.string "saevitum esse Troianos, duobus, Aeneae\l"
 	.string "Antenorique, et vetusti iure hospitii et\l"
@@ -403,7 +403,7 @@ Ardor_Uni_LiteratureClass_Text_Lesson2::
 
 Ardor_Uni_LiteratureClass_Text_Lesson3::
 # 263 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "Ammianus Marcellinus, 'Post incensum\n"
+	.string "Ammianus Marcellinus, 'Post incensum\l"
 	.string "corpus ossaque in argenteam urnam\l"
 	.string "conlecta, quae ad gentem humo mandanda\l"
 	.string "portari statuerat pater, agitata summa\l"
@@ -415,7 +415,7 @@ Ardor_Uni_LiteratureClass_Text_Lesson3::
 
 Ardor_Uni_LiteratureClass_Text_Lesson4::
 # 267 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "Scripsit, 'C. Pompeio Q. Veranio\n"
+	.string "Scripsit, 'C. Pompeio Q. Veranio\l"
 	.string "consulibus pactum inter Claudium et\l"
 	.string "Agrippinam matrimonium iam fama, iam\l"
 	.string "amore inlicito firmabatur; necdum\l"
@@ -430,7 +430,7 @@ Ardor_Uni_LiteratureClass_Text_Lesson4::
 
 Ardor_Uni_LiteratureClass_Text_Lesson5::
 # 271 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "In Biblia Sacra serpens dixit, 'Cur\n"
+	.string "In Biblia Sacra serpens dixit, 'Cur\l"
 	.string "praecepit vobis Deus ut non\l"
 	.string "comederetis de omni ligno paradisi?\l"
 	.string "Nequaquam morte moriemini. Scit enim\l"
@@ -440,7 +440,7 @@ Ardor_Uni_LiteratureClass_Text_Lesson5::
 
 Ardor_Uni_LiteratureClass_Text_Lesson6::
 # 275 "data/maps/Ardor_Uni_LiteratureClass/scripts.pory"
-	.string "'Pauci viri veros amicos habent, et\n"
+	.string "'Pauci viri veros amicos habent, et\l"
 	.string "pauci sunt digni. Amicitia vera est\l"
 	.string "praeclara, et omnia praeclara sunt rara.\l"
 	.string "Multi viri stulti de pecunia semper\l"

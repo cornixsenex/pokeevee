@@ -18,7 +18,7 @@ Route17_EventScript_Block1::
 
 Route17_Text_Block1::
 # 13 "data/maps/Route17/scripts.pory"
-	.string "This is the Via Fluvia which leads to\n"
+	.string "This is the Via Fluvia which leads to\l"
 	.string "Willow Spring but you cannot go\l"
 	.string "through.The storm has destroyed two\l"
 	.string "bridges ahead and it will be some time\l"

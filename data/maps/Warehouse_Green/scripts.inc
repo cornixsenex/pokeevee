@@ -351,7 +351,7 @@ Warehouse_Green_EventScript_BigGreen_Text_3:
 
 Warehouse_Green_Text_BigGreenA::
 # 171 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Ahh {PLAYER} so wise to join us here.\n"
+	.string "Ahh {PLAYER} so wise to join us here.\l"
 	.string "Welcome, please make yourself at home.\l"
 	.string "I understand you're here to help us.\l"
 	.string "You've come just in time. The\l"
@@ -367,7 +367,7 @@ Warehouse_Green_Text_BigGreenA::
 
 Warehouse_Green_Text_BigGreenB::
 # 175 "data/maps/Warehouse_Green/scripts.pory"
-	.string "You've agreed to perform a great favor\n"
+	.string "You've agreed to perform a great favor\l"
 	.string "and win renoun amoung our merry band.\l"
 	.string "You must destroy the three colored\l"
 	.string "warehouses: the Red the Blue and the\l"
@@ -376,17 +376,17 @@ Warehouse_Green_Text_BigGreenB::
 
 Warehouse_Green_Text_Green1A::
 # 179 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Like zoinks dude I think I might see a\n"
+	.string "Like zoinks dude I think I might see a\l"
 	.string "ghost.$"
 
 Warehouse_Green_Text_Green1B::
 # 183 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Like zoinks dude I think you're alright\n"
+	.string "Like zoinks dude I think you're alright\l"
 	.string "man.$"
 
 Warehouse_Green_Text_Green2A::
 # 187 "data/maps/Warehouse_Green/scripts.pory"
-	.string "West side, we call that the Orange\n"
+	.string "West side, we call that the Orange\l"
 	.string "Street cuz The Reds were the first to\l"
 	.string "put their flag down out there, but they\l"
 	.string "was more orange back when we has hipper\l"
@@ -394,37 +394,37 @@ Warehouse_Green_Text_Green2A::
 
 Warehouse_Green_Text_Green2B::
 # 191 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Man I tell you we had a blast putting it\n"
+	.string "Man I tell you we had a blast putting it\l"
 	.string "together, yknow being in the bar with\l"
 	.string "our people, yeah that shit felt good.$"
 
 Warehouse_Green_Text_Green3A::
 # 195 "data/maps/Warehouse_Green/scripts.pory"
-	.string "This leaf is a cheap ticket to the most\n"
+	.string "This leaf is a cheap ticket to the most\l"
 	.string "beautiful place on earth.$"
 
 Warehouse_Green_Text_Green3B::
 # 199 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Now I mostly stick to eating the herbs\n"
+	.string "Now I mostly stick to eating the herbs\l"
 	.string "now in my old age.$"
 
 Warehouse_Green_Text_Green4A::
 # 203 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Well, hey man! Quit staring at it man\n"
+	.string "Well, hey man! Quit staring at it man\l"
 	.string "that's like my only hat.$"
 
 Warehouse_Green_Text_Green4B::
 # 207 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Well, hey man! They told me all about\n"
+	.string "Well, hey man! They told me all about\l"
 	.string "that stuff at the bar man! Far out\l"
 	.string "dude.$"
 
 Warehouse_Green_Text_Green5A::
 # 211 "data/maps/Warehouse_Green/scripts.pory"
-	.string "The prophet speaks in all of us! Jah\n"
+	.string "The prophet speaks in all of us! Jah\l"
 	.string "Rastafari!$"
 
 Warehouse_Green_Text_Green5B::
 # 215 "data/maps/Warehouse_Green/scripts.pory"
-	.string "Jah Rastafari! The Lion of Zion has\n"
+	.string "Jah Rastafari! The Lion of Zion has\l"
 	.string "returned$"

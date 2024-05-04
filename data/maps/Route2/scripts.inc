@@ -76,12 +76,12 @@ Route2_Text_AdamLost::
 
 Route2_Text_AdamPost::
 # 56 "data/maps/Route2/scripts.pory"
-	.string "Come back in the summer time then I'll\n"
+	.string "Come back in the summer time then I'll\l"
 	.string "kick your ass!$"
 
 Route2_Text_MaddieFight::
 # 60 "data/maps/Route2/scripts.pory"
-	.string "Come sit under this tree with me\n"
+	.string "Come sit under this tree with me\l"
 	.string "Moonbeam$"
 
 Route2_Text_MaddieLost::
@@ -98,12 +98,12 @@ Route2_Text_MiaFight::
 
 Route2_Text_MiaLost::
 # 76 "data/maps/Route2/scripts.pory"
-	.string "Haha! Looks like you have been\n"
+	.string "Haha! Looks like you have been\l"
 	.string "practising$"
 
 Route2_Text_MiaPost::
 # 80 "data/maps/Route2/scripts.pory"
-	.string "Puff out your chest and do your best in\n"
+	.string "Puff out your chest and do your best in\l"
 	.string "school.$"
 
 Route2_Text_MannyFight::
@@ -120,7 +120,7 @@ Route2_Text_MannyPost::
 
 Route2_Text_AbbyIntro::
 # 96 "data/maps/Route2/scripts.pory"
-	.string "We aren't quite lovers, but we're\n"
+	.string "We aren't quite lovers, but we're\l"
 	.string "something close.$"
 
 Route2_Text_AbbyLost::
@@ -129,7 +129,7 @@ Route2_Text_AbbyLost::
 
 Route2_Text_AbbyPost::
 # 104 "data/maps/Route2/scripts.pory"
-	.string "I honestly don't think you're all that\n"
+	.string "I honestly don't think you're all that\l"
 	.string "bad.$"
 
 Route2_Text_StormyIntro::
@@ -142,5 +142,5 @@ Route2_Text_StormyLost::
 
 Route2_Text_StormyPost::
 # 116 "data/maps/Route2/scripts.pory"
-	.string "You're just like all the other men I\n"
+	.string "You're just like all the other men I\l"
 	.string "hate.$"

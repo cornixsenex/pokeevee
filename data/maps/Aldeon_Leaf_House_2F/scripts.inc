@@ -234,7 +234,7 @@ Aldeon_Leaf_House_2F_Movement_Leaf2:
 
 Aldeon_Leaf_House_2F_Text_Leaf1::
 # 105 "data/maps/Aldeon_Leaf_House_2F/scripts.pory"
-	.string "Oh {PLAYER} I just had such a lovey\n"
+	.string "Oh {PLAYER} I just had such a lovey\l"
 	.string "time. I'm so happy you kicked that\l"
 	.string "looser's ass. I wonder who that guy was\l"
 	.string "anyways?\p"
@@ -242,7 +242,7 @@ Aldeon_Leaf_House_2F_Text_Leaf1::
 
 Aldeon_Leaf_House_2F_Text_Leaf2::
 # 109 "data/maps/Aldeon_Leaf_House_2F/scripts.pory"
-	.string "So his name must be {RIVAL} that\n"
+	.string "So his name must be {RIVAL} that\l"
 	.string "makes sense. C'mon downstairs and you\l"
 	.string "can meet my dad.$"
 

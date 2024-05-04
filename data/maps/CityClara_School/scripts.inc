@@ -465,12 +465,12 @@ CityClara_School_Text_KarlyeIntro::
 
 CityClara_School_Text_KarlyeLost::
 # 246 "data/maps/CityClara_School/scripts.pory"
-	.string "Looks like you just gave your coodies\n"
+	.string "Looks like you just gave your coodies\l"
 	.string "to me.$"
 
 CityClara_School_Text_KarlyePost::
 # 250 "data/maps/CityClara_School/scripts.pory"
-	.string "Sometimes I hang out after school\n"
+	.string "Sometimes I hang out after school\l"
 	.string "behind the school and sell my cudies to\l"
 	.string "the boys.$"
 
@@ -484,13 +484,13 @@ CityClara_School_Text_RickyLost::
 
 CityClara_School_Text_RickyPost::
 # 262 "data/maps/CityClara_School/scripts.pory"
-	.string "Everyone's coming over to my house\n"
+	.string "Everyone's coming over to my house\l"
 	.string "today except for you. You're not\l"
 	.string "allowed.$"
 
 CityClara_School_Text_PeterIntro::
 # 266 "data/maps/CityClara_School/scripts.pory"
-	.string "It's disgusting they let the common\n"
+	.string "It's disgusting they let the common\l"
 	.string "trash mingle with the elite at public\l"
 	.string "school.$"
 
@@ -500,7 +500,7 @@ CityClara_School_Text_PeterLost::
 
 CityClara_School_Text_PeterPost::
 # 274 "data/maps/CityClara_School/scripts.pory"
-	.string "My daddy owns the inn across the\n"
+	.string "My daddy owns the inn across the\l"
 	.string "street$"
 
 CityClara_School_Text_DannyIntro::
@@ -513,7 +513,7 @@ CityClara_School_Text_DannyLost::
 
 CityClara_School_Text_DannyPost::
 # 286 "data/maps/CityClara_School/scripts.pory"
-	.string "Mommy gave me that toy that you just\n"
+	.string "Mommy gave me that toy that you just\l"
 	.string "broke.$"
 
 CityClara_School_Text_EthanIntro::
@@ -522,7 +522,7 @@ CityClara_School_Text_EthanIntro::
 
 CityClara_School_Text_EthanLost::
 # 294 "data/maps/CityClara_School/scripts.pory"
-	.string "And that's exactly why we shouldn't\n"
+	.string "And that's exactly why we shouldn't\l"
 	.string "speak.$"
 
 CityClara_School_Text_EthanPost::
@@ -531,7 +531,7 @@ CityClara_School_Text_EthanPost::
 
 CityClara_School_Text_SagisIntro::
 # 302 "data/maps/CityClara_School/scripts.pory"
-	.string "Wait bro, are you for real? We're gonna\n"
+	.string "Wait bro, are you for real? We're gonna\l"
 	.string "fight?$"
 
 CityClara_School_Text_SagisLost::
@@ -540,17 +540,17 @@ CityClara_School_Text_SagisLost::
 
 CityClara_School_Text_SagisPost::
 # 310 "data/maps/CityClara_School/scripts.pory"
-	.string "Did I ever tell you about the time I\n"
+	.string "Did I ever tell you about the time I\l"
 	.string "hung out in a crack den in Gato?$"
 
 CityClara_School_Text_EmilyIntro::
 # 314 "data/maps/CityClara_School/scripts.pory"
-	.string "I think most of us are still practicing\n"
+	.string "I think most of us are still practicing\l"
 	.string "but I can hold my own among the best.$"
 
 CityClara_School_Text_EmilyLost::
 # 318 "data/maps/CityClara_School/scripts.pory"
-	.string "That isn't fair! You're gonna make me\n"
+	.string "That isn't fair! You're gonna make me\l"
 	.string "cry!$"
 
 CityClara_School_Text_EmilyPost::
@@ -559,13 +559,13 @@ CityClara_School_Text_EmilyPost::
 
 CityClara_School_Text_Mr_Glasman1::
 # 326 "data/maps/CityClara_School/scripts.pory"
-	.string "Before we start why don't you all\n"
+	.string "Before we start why don't you all\l"
 	.string "review, among yourselves, in groups, for\l"
 	.string "five minutes$"
 
 CityClara_School_Text_Mr_GlasmanIntro::
 # 330 "data/maps/CityClara_School/scripts.pory"
-	.string "Sheket Bevakasha, that means shut up!\n"
+	.string "Sheket Bevakasha, that means shut up!\l"
 	.string "I need you to show me some more respect\l"
 	.string "and recognize my doctorate. Now time\l"
 	.string "for you to take a test...to pass or fail.$"
@@ -576,30 +576,30 @@ CityClara_School_Text_Mr_GlasmanLost::
 
 CityClara_School_Text_Mr_GlasmanPost::
 # 338 "data/maps/CityClara_School/scripts.pory"
-	.string "You've proven yourself a brilliant pupil.\n"
+	.string "You've proven yourself a brilliant pupil.\l"
 	.string "Good luck in your education.$"
 
 CityClara_School_Text_PeevesGrade1::
 # 342 "data/maps/CityClara_School/scripts.pory"
-	.string "Hey you! Where do you think that you're\n"
+	.string "Hey you! Where do you think that you're\l"
 	.string "going?$"
 
 CityClara_School_Text_PeevesGrade2::
 # 346 "data/maps/CityClara_School/scripts.pory"
-	.string "This class is only for the older kids,\n"
+	.string "This class is only for the older kids,\l"
 	.string "Come back when you've graduated first\l"
 	.string "grade.$"
 
 CityClara_School_Text_PeevesIntro::
 # 350 "data/maps/CityClara_School/scripts.pory"
-	.string "Well looky here looks like there's a new\n"
+	.string "Well looky here looks like there's a new\l"
 	.string "kid. You think you're so grown up well\l"
 	.string "time to learn what guys like me do to\l"
 	.string "freshmeat like you.$"
 
 CityClara_School_Text_PeevesLost::
 # 354 "data/maps/CityClara_School/scripts.pory"
-	.string "I'll let you keep my lunch money this\n"
+	.string "I'll let you keep my lunch money this\l"
 	.string "time...$"
 
 CityClara_School_Text_PeevesPost::
@@ -612,7 +612,7 @@ CityClara_School_Text_TylerIntro::
 
 CityClara_School_Text_TylerLost::
 # 366 "data/maps/CityClara_School/scripts.pory"
-	.string "Well go thy way. Thou shalt not from\n"
+	.string "Well go thy way. Thou shalt not from\l"
 	.string "this grove!$"
 
 CityClara_School_Text_TylerPost::
@@ -621,22 +621,22 @@ CityClara_School_Text_TylerPost::
 
 CityClara_School_Text_GabeIntro::
 # 374 "data/maps/CityClara_School/scripts.pory"
-	.string "There is no reason for this senseless\n"
+	.string "There is no reason for this senseless\l"
 	.string "duel.$"
 
 CityClara_School_Text_GabeLost::
 # 378 "data/maps/CityClara_School/scripts.pory"
-	.string "Much wasted blood but none of it was\n"
+	.string "Much wasted blood but none of it was\l"
 	.string "mine.$"
 
 CityClara_School_Text_GabePost::
 # 382 "data/maps/CityClara_School/scripts.pory"
-	.string "Your history, the sum of all your crimes,\n"
+	.string "Your history, the sum of all your crimes,\l"
 	.string "will ever bring you, till you repent.$"
 
 CityClara_School_Text_Mrs_SullyIntroA::
 # 386 "data/maps/CityClara_School/scripts.pory"
-	.string "I've not seen you before you some\n"
+	.string "I've not seen you before you some\l"
 	.string "truant?$"
 
 CityClara_School_Text_Mrs_SullyIntro::
@@ -649,7 +649,7 @@ CityClara_School_Text_Mrs_SullyLost::
 
 CityClara_School_Text_Mrs_SullyDefeat::
 # 398 "data/maps/CityClara_School/scripts.pory"
-	.string "That was a thrill! {PLAYER} you are so\n"
+	.string "That was a thrill! {PLAYER} you are so\l"
 	.string "advanced. I've never had a student\l"
 	.string "make me feel like they were the one who\l"
 	.string "was in control.$"
@@ -660,6 +660,6 @@ CityClara_School_Text_Mrs_SullyPost::
 
 CityClara_School_Text_ExplainCut::
 # 406 "data/maps/CityClara_School/scripts.pory"
-	.string "This is a Hidden Move, HM for short,\n"
+	.string "This is a Hidden Move, HM for short,\l"
 	.string "which will allow you to cut down small\l"
 	.string "trees.$"

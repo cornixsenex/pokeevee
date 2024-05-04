@@ -35,11 +35,11 @@ MareS5_EventScript_Argo_2:
 
 MareS5_Text_ArgoIntro1::
 # 31 "data/maps/MareS5/scripts.pory"
-	.string "Ahoy matey! If you be lost at sea feel\n"
+	.string "Ahoy matey! If you be lost at sea feel\l"
 	.string "free to join us!\n"
 	.string "Will you board Argo?$"
 
 MareS5_Text_ArgoFarewell::
 # 35 "data/maps/MareS5/scripts.pory"
-	.string "Farewell! Calm winds and gentle seas to\n"
+	.string "Farewell! Calm winds and gentle seas to\l"
 	.string "you.$"

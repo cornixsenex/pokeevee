@@ -67,21 +67,21 @@ BulbusTown_PokemonCenter_EventScript_Nurse_9:
 
 BulbusTown_PokemonCenter_Text_NoInsurance::
 # 41 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
-	.string "Hello and welcome to our Pokemon\n"
+	.string "Hello and welcome to our Pokemon\l"
 	.string "Center. I'm sorry but it seems you don't\l"
 	.string "have any Health Insurance.$"
 
 BulbusTown_PokemonCenter_Text_TooPoor::
 # 45 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
-	.string "You look too poor to afford any help.\n"
+	.string "You look too poor to afford any help.\l"
 	.string "It's time for you to go. Get out of here!$"
 
 BulbusTown_PokemonCenter_Text_OutOfPocket::
 # 50 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
-	.string "Our healthcare costs 2,500 dollars.\n"
+	.string "Our healthcare costs 2,500 dollars.\l"
 	.string "Would you like to pay out of pocket?$"
 
 BulbusTown_PokemonCenter_Text_Goodbye::
 # 54 "data/maps/BulbusTown_PokemonCenter/scripts.pory"
-	.string "In that case you should go away.\n"
+	.string "In that case you should go away.\l"
 	.string "Goodbye!$"

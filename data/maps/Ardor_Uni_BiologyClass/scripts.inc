@@ -134,7 +134,7 @@ Ardor_Uni_BiologyClass_EventScript_Test::
 
 Ardor_Uni_BiologyClass_Text_ClassIntro::
 # 72 "data/maps/Ardor_Uni_BiologyClass/scripts.pory"
-	.string "Salve puer. Magistra Philida sum.\n"
+	.string "Salve puer. Magistra Philida sum.\l"
 	.string "Necesse est tibi docere scientiam\l"
 	.string "biologiae. Biologia studium est vitae.\l"
 	.string "Vita est omnis divisa in partes tres:\l"
@@ -154,7 +154,7 @@ Ardor_Uni_BiologyClass_Text_BringFungusType::
 
 Ardor_Uni_BiologyClass_Text_LessonComplete::
 # 88 "data/maps/Ardor_Uni_BiologyClass/scripts.pory"
-	.string "Revenisti cum monstra tribus: uno\n"
+	.string "Revenisti cum monstra tribus: uno\l"
 	.string "animali, uno planta, et uno fungo.$"
 
 Ardor_Uni_BiologyClass_Text_TeacherBattleLost::

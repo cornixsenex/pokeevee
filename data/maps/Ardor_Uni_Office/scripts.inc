@@ -1387,132 +1387,132 @@ Ardor_Uni_Office_EventScript_EnrollElective_Text_0:
 
 Ardor_Uni_Office_Text_ConsulLIntro::
 # 607 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Te non cognosco. Sum Albinus consulque\n"
+	.string "Te non cognosco. Sum Albinus consulque\l"
 	.string "Collegi Ardentis.$"
 
 Ardor_Uni_Office_Text_ConsulRIntro::
 # 611 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Te non cognosco. Sum Platonus\n"
+	.string "Te non cognosco. Sum Platonus\l"
 	.string "consulque Collegi Ardentis.$"
 
 Ardor_Uni_Office_Text_ConsulEnrolled1::
 # 615 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "In sessione prima necesse est studere\n"
+	.string "In sessione prima necesse est studere\l"
 	.string "artem gramatici et arithmeticam.$"
 
 Ardor_Uni_Office_Text_ConsulEnrolled2::
 # 619 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "In sessione secunda necesse est\n"
+	.string "In sessione secunda necesse est\l"
 	.string "studere literaturam at algebram.$"
 
 Ardor_Uni_Office_Text_ConsulEnrolled3::
 # 623 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "In sessione tertia necesse est studere\n"
+	.string "In sessione tertia necesse est studere\l"
 	.string "artes poematis et geometriae.$"
 
 Ardor_Uni_Office_Text_ConsulEnrolled4::
 # 627 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "In sessione quarta necesse est\n"
+	.string "In sessione quarta necesse est\l"
 	.string "studere oratum et calculum.$"
 
 Ardor_Uni_Office_Text_FinishGrammar::
 # 631 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude grammaticam in cubiculo quinto in\n"
+	.string "Stude grammaticam in cubiculo quinto in\l"
 	.string "tabulatione prima.$"
 
 Ardor_Uni_Office_Text_FinishLiterature::
 # 635 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude litteraturam in cubiculo quarto\n"
+	.string "Stude litteraturam in cubiculo quarto\l"
 	.string "in tabulatione tertia.$"
 
 Ardor_Uni_Office_Text_FinishPoetry::
 # 639 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude poemata in cubiculo sexto in\n"
+	.string "Stude poemata in cubiculo sexto in\l"
 	.string "tabulatione tertia.$"
 
 Ardor_Uni_Office_Text_FinishRhetoric::
 # 643 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude oratum in cubiculo quinto in\n"
+	.string "Stude oratum in cubiculo quinto in\l"
 	.string "tabulatione tertia.$"
 
 Ardor_Uni_Office_Text_FinishArithmetic::
 # 647 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude arithmeticum in cubiculo quarto\n"
+	.string "Stude arithmeticum in cubiculo quarto\l"
 	.string "in tabulatione prima.$"
 
 Ardor_Uni_Office_Text_FinishAlgebra::
 # 651 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude algebram in cubiculo duo in\n"
+	.string "Stude algebram in cubiculo duo in\l"
 	.string "tabulatione secunda.$"
 
 Ardor_Uni_Office_Text_FinishGeometry::
 # 655 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude geometriam in cubiculo tertio in\n"
+	.string "Stude geometriam in cubiculo tertio in\l"
 	.string "tabulatione secunda.$"
 
 Ardor_Uni_Office_Text_FinishCalculus::
 # 659 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude calculum in cubiculo tertio in\n"
+	.string "Stude calculum in cubiculo tertio in\l"
 	.string "tabulatione tertia.$"
 
 Ardor_Uni_Office_Text_FinishBiology::
 # 663 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude biologiam in cubiculo secundo in\n"
+	.string "Stude biologiam in cubiculo secundo in\l"
 	.string "tabulatione prima.$"
 
 Ardor_Uni_Office_Text_FinishGeology::
 # 667 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude geologiam in cubiculo primo in\n"
+	.string "Stude geologiam in cubiculo primo in\l"
 	.string "tabulatione prima.$"
 
 Ardor_Uni_Office_Text_FinishChemistry::
 # 671 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude alchemiam in cubiculo tertio in\n"
+	.string "Stude alchemiam in cubiculo tertio in\l"
 	.string "tabulatione prima.$"
 
 Ardor_Uni_Office_Text_FinishPhysics::
 # 675 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude physicas in cubiculo secundo in\n"
+	.string "Stude physicas in cubiculo secundo in\l"
 	.string "tabulatione tertia.$"
 
 Ardor_Uni_Office_Text_FinishHistory::
 # 679 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude historiam in cubiculo quarto in\n"
+	.string "Stude historiam in cubiculo quarto in\l"
 	.string "tabulatione secunda.$"
 
 Ardor_Uni_Office_Text_FinishArchaeology::
 # 683 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude archaeologiam in cubiculo quinto\n"
+	.string "Stude archaeologiam in cubiculo quinto\l"
 	.string "in tabulatione secunda.$"
 
 Ardor_Uni_Office_Text_FinishPsychology::
 # 687 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude psychologiam in cubiculo sexto in\n"
+	.string "Stude psychologiam in cubiculo sexto in\l"
 	.string "tabulatione secunda.$"
 
 Ardor_Uni_Office_Text_FinishPhilosophy::
 # 691 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude philosophiam in cubiculo primo in\n"
+	.string "Stude philosophiam in cubiculo primo in\l"
 	.string "tabulatione tertia.$"
 
 Ardor_Uni_Office_Text_FinishGym::
 # 695 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude gymnasium in campo harpasti\n"
+	.string "Stude gymnasium in campo harpasti\l"
 	.string "prope Collegium Ardentem in urbe.$"
 
 Ardor_Uni_Office_Text_FinishArt::
 # 699 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude picturam in cubiculo sexto in\n"
+	.string "Stude picturam in cubiculo sexto in\l"
 	.string "tabulatione prima.$"
 
 Ardor_Uni_Office_Text_FinishMusic::
 # 703 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude musicam prope ascensionem in\n"
+	.string "Stude musicam prope ascensionem in\l"
 	.string "tabulatione prima.$"
 
 Ardor_Uni_Office_Text_FinishLogic::
 # 707 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Stude logicam in cubiculo primo in\n"
+	.string "Stude logicam in cubiculo primo in\l"
 	.string "tabulatione secunda.$"
 
 Ardor_Uni_Office_EventScript_ConsulRegisterNo::
@@ -1521,12 +1521,12 @@ Ardor_Uni_Office_EventScript_ConsulRegisterNo::
 
 Ardor_Uni_Office_Text_ConsulRegisterShort::
 # 715 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Sacculus parvus est tuus. Reveni cum\n"
+	.string "Sacculus parvus est tuus. Reveni cum\l"
 	.string "sacculo pleno.$"
 
 Ardor_Uni_Office_Text_ConsulRegisterWelcome::
 # 719 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Satis est nummerus tributi tui.\n"
+	.string "Satis est nummerus tributi tui.\l"
 	.string "Congratulatio! Numerus quinque est\l"
 	.string "scholas te studere necesse est.\l"
 	.string "Latinam, scientiam, artes, homines,\l"
@@ -1536,7 +1536,7 @@ Ardor_Uni_Office_Text_ConsulRegisterWelcome::
 
 Ardor_Uni_Office_Text_ConsulRegister1::
 # 723 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Salve puer, dice sic venisti studere\n"
+	.string "Salve puer, dice sic venisti studere\l"
 	.string "Ardente artes. Pretium sessionis\l"
 	.string "sestertii mille est. Emesne mille?$"
 
@@ -1554,97 +1554,97 @@ Ardor_Uni_Office_Text_EnrollElectiveIntro::
 
 Ardor_Uni_Office_Text_GeologyRepeat::
 # 739 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Scientem geologiae iam studuisti!\n"
+	.string "Scientem geologiae iam studuisti!\l"
 	.string "Necesse semper est artes scientiasque\l"
 	.string "studere novas.$"
 
 Ardor_Uni_Office_Text_BiologyRepeat::
 # 743 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Scientem biologiae iam studuisti!\n"
+	.string "Scientem biologiae iam studuisti!\l"
 	.string "Necesse semper est artes scientiasque\l"
 	.string "studere novas.$"
 
 Ardor_Uni_Office_Text_ChemistryRepeat::
 # 747 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Scientem alchemiae iam studuisti!\n"
+	.string "Scientem alchemiae iam studuisti!\l"
 	.string "Necesse semper est artes scientiasque\l"
 	.string "studere novas.$"
 
 Ardor_Uni_Office_Text_PhysicsRepeat::
 # 751 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Scientem physicarum iam studuisti!\n"
+	.string "Scientem physicarum iam studuisti!\l"
 	.string "Necesse semper est artes scientiasque\l"
 	.string "studere novas.$"
 
 Ardor_Uni_Office_Text_HistoryRepeat::
 # 755 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Historiam iam studuisti! Necesse semper\n"
+	.string "Historiam iam studuisti! Necesse semper\l"
 	.string "est artes scientiasque studere novas.$"
 
 Ardor_Uni_Office_Text_ArchaeologyRepeat::
 # 759 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Archaeologiam iam studuisti! Necesse\n"
+	.string "Archaeologiam iam studuisti! Necesse\l"
 	.string "semper est artes scientiasque studere\l"
 	.string "novas.$"
 
 Ardor_Uni_Office_Text_PsychologyRepeat::
 # 763 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Psychologiam iam studuisti! Necesse\n"
+	.string "Psychologiam iam studuisti! Necesse\l"
 	.string "semper est artes scientiasque studere\l"
 	.string "novas.$"
 
 Ardor_Uni_Office_Text_PhilosophyRepeat::
 # 767 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Philosophiam iam studuisti! Necesse\n"
+	.string "Philosophiam iam studuisti! Necesse\l"
 	.string "semper est artes scientiasque studere\l"
 	.string "novas.$"
 
 Ardor_Uni_Office_Text_GymRepeat::
 # 771 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Gymnasium iam studuisti! Necesse\n"
+	.string "Gymnasium iam studuisti! Necesse\l"
 	.string "semper est artes scientiasque studere\l"
 	.string "novas.$"
 
 Ardor_Uni_Office_Text_ArtRepeat::
 # 775 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Artem picturae iam studuisti! Necesse\n"
+	.string "Artem picturae iam studuisti! Necesse\l"
 	.string "semper est artes scientiasque studere\l"
 	.string "novas.$"
 
 Ardor_Uni_Office_Text_MusicRepeat::
 # 779 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Artem musicae iam studuisti! Necesse\n"
+	.string "Artem musicae iam studuisti! Necesse\l"
 	.string "semper est artes scientiasque studere\l"
 	.string "novas.$"
 
 Ardor_Uni_Office_Text_LogicRepeat::
 # 783 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Logicam iam studuisti! Necesse semper\n"
+	.string "Logicam iam studuisti! Necesse semper\l"
 	.string "est artes scientiasque studere novas.$"
 
 Ardor_Uni_Office_Text_ChemistryPrereq::
 # 787 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Necesse est studere scientiam\n"
+	.string "Necesse est studere scientiam\l"
 	.string "biologiae ante alchemiam.$"
 
 Ardor_Uni_Office_Text_PhysicsPrereq::
 # 791 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Necesse est studere scientiam\n"
+	.string "Necesse est studere scientiam\l"
 	.string "alchemiae ante physicas.$"
 
 Ardor_Uni_Office_Text_LogicPrereq::
 # 795 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Necesse est studere algebram ante\n"
+	.string "Necesse est studere algebram ante\l"
 	.string "logicam.$"
 
 Ardor_Uni_Office_Text_ConsulCongrats::
 # 799 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Artes quinque iam studuisti.\n"
+	.string "Artes quinque iam studuisti.\l"
 	.string "Congratulation! Sessionem perfecisti.$"
 
 Ardor_Uni_Office_Text_ConsulGradutate::
 # 803 "data/maps/Ardor_Uni_Office/scripts.pory"
-	.string "Omnia artes iam studuisti.\n"
+	.string "Omnia artes iam studuisti.\l"
 	.string "Congratulatio! Collegium Ardentem\l"
 	.string "perfecisti! Accipe hoc diploma.$"
 

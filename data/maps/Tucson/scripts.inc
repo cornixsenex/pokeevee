@@ -1,52 +1,108 @@
 Tucson_MapScripts::
-# 7 "data/maps/Tucson/scripts.pory"
+# 16 "data/maps/Tucson/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, Tucson_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
 Tucson_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 8 "data/maps/Tucson/scripts.pory"
+# 17 "data/maps/Tucson/scripts.pory"
 	call Tucson_OnTransition
 	return
 
 
 Tucson_OnTransition::
-# 16 "data/maps/Tucson/scripts.pory"
+# 25 "data/maps/Tucson/scripts.pory"
 	goto_if_set FLAG_BEACHCAVE_HIDE_HECTOR, Tucson_OnTransition_2
 Tucson_OnTransition_1:
 	end
 
 Tucson_OnTransition_2:
-# 17 "data/maps/Tucson/scripts.pory"
+# 26 "data/maps/Tucson/scripts.pory"
 	setobjectxyperm 17, 23, 10
-# 18 "data/maps/Tucson/scripts.pory"
+# 27 "data/maps/Tucson/scripts.pory"
 	setobjectmovementtype 17, MOVEMENT_TYPE_FACE_DOWN
 	goto Tucson_OnTransition_1
 
 
-Tucson_Script_Nestor::
-# 24 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Nestor_Intro, MSGBOX_NPC
-# 25 "data/maps/Tucson/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 26 "data/maps/Tucson/scripts.pory"
+Tucson_Script_Helen::
+# 34 "data/maps/Tucson/scripts.pory"
+	lock
+# 35 "data/maps/Tucson/scripts.pory"
+	applymovement 3, Common_Movement_FaceRight
+# 36 "data/maps/Tucson/scripts.pory"
 	waitmovement 0
+# 38 "data/maps/Tucson/scripts.pory"
+	goto_if_unset FLAG_ARGO_COMPLETED_SUCESS, Tucson_Script_Helen_4
+Tucson_Script_Helen_3:
+# 45 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Helen3, MSGBOX_NPC
+Tucson_Script_Helen_1:
+# 47 "data/maps/Tucson/scripts.pory"
+	release
 	end
+
+Tucson_Script_Helen_2:
+# 39 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Helen1
+# 40 "data/maps/Tucson/scripts.pory"
+	closemessage
+# 42 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Helen2, MSGBOX_NPC
+	goto Tucson_Script_Helen_1
+
+Tucson_Script_Helen_4:
+# 38 "data/maps/Tucson/scripts.pory"
+	goto_if_unset FLAG_ARGO_COMPLETED_FAILURE, Tucson_Script_Helen_2
+	goto Tucson_Script_Helen_3
+
+
+Tucson_Script_Nestor::
+# 53 "data/maps/Tucson/scripts.pory"
+	lock
+# 54 "data/maps/Tucson/scripts.pory"
+	faceplayer
+# 56 "data/maps/Tucson/scripts.pory"
+	goto_if_unset FLAG_TUCSON_NESTOR_INTROD, Tucson_Script_Nestor_2
+Tucson_Script_Nestor_1:
+# 61 "data/maps/Tucson/scripts.pory"
+	goto_if_unset FLAG_ARGO_COMPLETED_SUCESS, Tucson_Script_Nestor_7
+Tucson_Script_Nestor_6:
+# 66 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Nestor2, MSGBOX_NPC
+Tucson_Script_Nestor_4:
+	end
+
+Tucson_Script_Nestor_2:
+# 57 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Nestor_Intro, MSGBOX_NPC
+# 58 "data/maps/Tucson/scripts.pory"
+	setflag FLAG_TUCSON_NESTOR_INTROD
+	goto Tucson_Script_Nestor_1
+
+Tucson_Script_Nestor_5:
+# 63 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Nestor1, MSGBOX_NPC
+	goto Tucson_Script_Nestor_4
+
+Tucson_Script_Nestor_7:
+# 61 "data/maps/Tucson/scripts.pory"
+	goto_if_unset FLAG_ARGO_COMPLETED_FAILURE, Tucson_Script_Nestor_5
+	goto Tucson_Script_Nestor_6
 
 
 Tucson_Script_Hector::
-# 31 "data/maps/Tucson/scripts.pory"
+# 73 "data/maps/Tucson/scripts.pory"
 	lock
-# 32 "data/maps/Tucson/scripts.pory"
+# 74 "data/maps/Tucson/scripts.pory"
 	faceplayer
-# 33 "data/maps/Tucson/scripts.pory"
+# 75 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Hector, MSGBOX_NPC
-# 34 "data/maps/Tucson/scripts.pory"
+# 76 "data/maps/Tucson/scripts.pory"
 	release
 	end
 
 
 Tucson_Text_Nestor_Intro::
-# 38 "data/maps/Tucson/scripts.pory"
+# 80 "data/maps/Tucson/scripts.pory"
 	.string "I've lived a happy and eventful life but\l"
 	.string "now I see my end approaching fast.\l"
 	.string "Without a son to inherit my wealth I\l"
@@ -58,19 +114,42 @@ Tucson_Text_Nestor_Intro::
 	.string "and the absent minded pretty Paris.$"
 
 Tucson_Text_Nestor1::
-# 42 "data/maps/Tucson/scripts.pory"
+# 84 "data/maps/Tucson/scripts.pory"
 	.string "My daughter Helen, much to my dismay,\l"
 	.string "refuses to marry until Castor and\l"
 	.string "Pollux her twin brothers return home.\l"
 	.string "Tell Castor and Pollux to hurry home.$"
 
 Tucson_Text_Nestor2::
-# 46 "data/maps/Tucson/scripts.pory"
+# 88 "data/maps/Tucson/scripts.pory"
 	.string "$"
 
 Tucson_Text_Hector::
-# 50 "data/maps/Tucson/scripts.pory"
+# 92 "data/maps/Tucson/scripts.pory"
 	.string "It is a great honor and true privaledge\l"
 	.string "to be here in the great house of Nestor\l"
 	.string "to see the wedding of lovely Helen\l"
 	.string "whether my brother is the groom or not.$"
+
+Tucson_Text_Helen1::
+# 96 "data/maps/Tucson/scripts.pory"
+	.string "Dear Paris, know these tears that wet\l"
+	.string "my cheecks are shed out of longing for\l"
+	.string "Castor and Pollux. My dear brothers\l"
+	.string "have been away for far too long and I\l"
+	.string "now fear the worst.$"
+
+Tucson_Text_Helen2::
+# 100 "data/maps/Tucson/scripts.pory"
+	.string "Please leave us be unless you bring us\l"
+	.string "news that Castor and Pollux have\l"
+	.string "returned home.$"
+
+Tucson_Text_Helen3::
+# 104 "data/maps/Tucson/scripts.pory"
+	.string "Dear Paris I must not have slept last\l"
+	.string "night between my dreams of you and\l"
+	.string "those nightmares which filled my\l"
+	.string "fragile heart up with despair. I pray my\l"
+	.string "father says I'll marry you or never will\l"
+	.string "I be merry again.$"

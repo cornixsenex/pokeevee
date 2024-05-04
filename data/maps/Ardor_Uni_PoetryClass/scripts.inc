@@ -231,7 +231,7 @@ Ardor_Uni_PoetryClass_EventScript_Student4_2:
 
 Ardor_Uni_PoetryClass_Text_ClassIntro::
 # 143 "data/maps/Ardor_Uni_PoetryClass/scripts.pory"
-	.string "Salve puer. Magistra Anna sum. Necesse\n"
+	.string "Salve puer. Magistra Anna sum. Necesse\l"
 	.string "est tibi docere poemata.$"
 
 Ardor_Uni_PoetryClass_Text_Student1::
@@ -283,28 +283,28 @@ Ardor_Uni_PoetryClass_Text_Lesson1::
 	.string "Virgilius cecinit,\n"
 	.string "'Arma virumque cano, Troiae qui primus\l"
 	.string "ab oris\p"
-	.string "Italiam, fato profugus, Laviniaque\n"
+	.string "Italiam, fato profugus, Laviniaque\l"
 	.string "venit\p"
-	.string "litora, multum ille et terris iactatus et\n"
+	.string "litora, multum ille et terris iactatus et\l"
 	.string "alto\p"
-	.string "vi superum saevae memorem Iunonis ob\n"
+	.string "vi superum saevae memorem Iunonis ob\l"
 	.string "iram;\p"
-	.string "multa quoque et bello passus, dum\n"
+	.string "multa quoque et bello passus, dum\l"
 	.string "conderet urbem,\p"
-	.string "inferretque deos Latio, genus unde\n"
+	.string "inferretque deos Latio, genus unde\l"
 	.string "Latinum,\p"
-	.string "Albanique patres, atque altae moenia\n"
+	.string "Albanique patres, atque altae moenia\l"
 	.string "Romae.'$"
 
 Ardor_Uni_PoetryClass_Text_Lesson2::
 # 195 "data/maps/Ardor_Uni_PoetryClass/scripts.pory"
-	.string "Cecinit Ovidius, 'In nova fert animus\n"
+	.string "Cecinit Ovidius, 'In nova fert animus\l"
 	.string "mutatas dicere formas\p"
-	.string "corpora; di, coeptis (nam vos mutastis\n"
+	.string "corpora; di, coeptis (nam vos mutastis\l"
 	.string "et illas)\n"
 	.string "adspirate meis primaque ab origine\l"
 	.string "mundi\p"
-	.string "ad mea perpetuum deducite tempora\n"
+	.string "ad mea perpetuum deducite tempora\l"
 	.string "carmen!'$"
 
 Ardor_Uni_PoetryClass_Text_Lesson3::
@@ -320,7 +320,7 @@ Ardor_Uni_PoetryClass_Text_Lesson4::
 # 203 "data/maps/Ardor_Uni_PoetryClass/scripts.pory"
 	.string "'Fetere multo Myrtale solet uino,\n"
 	.string "sed fallat ut nos, folia deuorat lauri\p"
-	.string "merumque cauta fronde, non aqua,\n"
+	.string "merumque cauta fronde, non aqua,\l"
 	.string "miscet.\n"
 	.string "Hanc tu rubentem prominentibus uenis\p"
 	.string "quotiens uenire, Paule, uideris contra,\n"

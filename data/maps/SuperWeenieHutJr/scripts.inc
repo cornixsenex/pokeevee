@@ -2254,7 +2254,7 @@ SuperWeenieHutJr_EventScript_TicTacToe_Win_Text_0:
 
 SuperWeenieHutJr_Text_DoorBlockA::
 # 882 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "Hello there cutie tootie sunshine ray!\n"
+	.string "Hello there cutie tootie sunshine ray!\l"
 	.string "Welcome to Super Weenie Hut Junior's\l"
 	.string "where we make smiles and brighten your\l"
 	.string "day. We just can't wait for you to play\l"
@@ -2263,7 +2263,7 @@ SuperWeenieHutJr_Text_DoorBlockA::
 
 SuperWeenieHutJr_Text_DoorBlockB::
 # 886 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "Oh noodles! That's no good looks like\n"
+	.string "Oh noodles! That's no good looks like\l"
 	.string "you don't have insurance. At Super\l"
 	.string "Weenie Hut Junior's safety is our\l"
 	.string "priority and we don't want anyone to\l"
@@ -2273,14 +2273,14 @@ SuperWeenieHutJr_Text_DoorBlockB::
 
 SuperWeenieHutJr_Text_DoorBlockC::
 # 890 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "Good news! You've been insured through\n"
+	.string "Good news! You've been insured through\l"
 	.string "Weenie Hut General. Welcome to Super\l"
 	.string "Weenie Hut Juniors I hope you have an\l"
 	.string "awesome time$"
 
 SuperWeenieHutJr_Text_Graduate::
 # 894 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "Congratulations {PLAYER} I see that\n"
+	.string "Congratulations {PLAYER} I see that\l"
 	.string "you are gifted and prepared to\l"
 	.string "graduate. I hereby knight you Squire\l"
 	.string "Weenie Hut and invite you to our\l"
@@ -2293,7 +2293,7 @@ SuperWeenieHutJr_Text_TicTacToe_YesNo::
 
 SuperWeenieHutJr_Text_TicTacToe_Decline::
 # 902 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "When you're ready to play just let me\n"
+	.string "When you're ready to play just let me\l"
 	.string "know.$"
 
 SuperWeenieHutJr_Text_TicTacToe_Post::
@@ -2306,7 +2306,7 @@ SuperWeenieHutJr_Text_TicTacToe_XYes::
 
 SuperWeenieHutJr_Text_TicTacToe_Lost::
 # 914 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "Looks like I lost. I can't believe you\n"
+	.string "Looks like I lost. I can't believe you\l"
 	.string "won!$"
 
 SuperWeenieHutJr_Text_TicTacToe_Won::
@@ -2315,7 +2315,7 @@ SuperWeenieHutJr_Text_TicTacToe_Won::
 
 SuperWeenieHutJr_Text_TicTacToe_Tied::
 # 922 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "Oh rats! Looks like we've tied in a\n"
+	.string "Oh rats! Looks like we've tied in a\l"
 	.string "Meowth's game.$"
 
 SuperWeenieHutJr_Text_TicTacToe_BadMove::
@@ -2324,10 +2324,10 @@ SuperWeenieHutJr_Text_TicTacToe_BadMove::
 
 SuperWeenieHutJr_Text_BottomOfGetPlayerMove::
 # 930 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "This is the bottom of GetPlayerMove\n"
+	.string "This is the bottom of GetPlayerMove\l"
 	.string "something went wrong$"
 
 SuperWeenieHutJr_Text_BottomOfGetCPUMove::
 # 934 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "This is the bottom of GetCPUMove\n"
+	.string "This is the bottom of GetCPUMove\l"
 	.string "something went wrong$"

@@ -336,7 +336,7 @@ Phoenix_Movement_LeafExit:
 
 Phoenix_Text_Pledge1::
 # 197 "data/maps/Phoenix/scripts.pory"
-	.string "This is no good! I want to join the frat\n"
+	.string "This is no good! I want to join the frat\l"
 	.string "but they won't let me join their big\l"
 	.string "party. Maybe if I threw a big party here\l"
 	.string "They'd think I'm cool and let me join\l"
@@ -353,19 +353,19 @@ Phoenix_Text_Pledge2No::
 
 Phoenix_Text_Pledge3::
 # 209 "data/maps/Phoenix/scripts.pory"
-	.string "Thank you so much! This is gonna be\n"
+	.string "Thank you so much! This is gonna be\l"
 	.string "sweet! Go tell the boys party at the\l"
 	.string "frat house. I'll prepare everything for\l"
 	.string "the party.$"
 
 Phoenix_Text_FratBoyBlockA::
 # 213 "data/maps/Phoenix/scripts.pory"
-	.string "Hey watch out bro! We're mud wrestling\n"
+	.string "Hey watch out bro! We're mud wrestling\l"
 	.string "here!$"
 
 Phoenix_Text_LeafExit::
 # 217 "data/maps/Phoenix/scripts.pory"
-	.string "I had such a good time at the party.\n"
+	.string "I had such a good time at the party.\l"
 	.string "Cmon let's head inside and find Indy.$"
 
 Phoenix_Text_FratBoy1::
@@ -374,32 +374,32 @@ Phoenix_Text_FratBoy1::
 
 Phoenix_Text_FratBoy2::
 # 225 "data/maps/Phoenix/scripts.pory"
-	.string "Lets go! Lets fucking go! Who took my\n"
+	.string "Lets go! Lets fucking go! Who took my\l"
 	.string "beer?$"
 
 Phoenix_Text_FratBoy3::
 # 229 "data/maps/Phoenix/scripts.pory"
-	.string "That's right. I party with Dre all the\n"
+	.string "That's right. I party with Dre all the\l"
 	.string "time.$"
 
 Phoenix_Text_FratGirl1::
 # 233 "data/maps/Phoenix/scripts.pory"
-	.string "This one time at band camp I shoved a\n"
+	.string "This one time at band camp I shoved a\l"
 	.string "flute all the way up my pussy. LOL!$"
 
 Phoenix_Text_FratGirl2::
 # 237 "data/maps/Phoenix/scripts.pory"
-	.string "How big is your account? You have a\n"
+	.string "How big is your account? You have a\l"
 	.string "car?$"
 
 Phoenix_Text_Leaf::
 # 241 "data/maps/Phoenix/scripts.pory"
-	.string "Hey Andre so you know you are awesome.\n"
+	.string "Hey Andre so you know you are awesome.\l"
 	.string "I rarely feel this kind of connection,\l"
 	.string "only to someone as special as you.$"
 
 Phoenix_Text_FratPartyClear::
 # 245 "data/maps/Phoenix/scripts.pory"
-	.string "What's that? A party? With an open\n"
+	.string "What's that? A party? With an open\l"
 	.string "keg!? Dear friends lets go! Follow me!\p"
 	.string "House party!$"

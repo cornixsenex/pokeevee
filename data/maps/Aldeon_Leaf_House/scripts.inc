@@ -333,12 +333,12 @@ Aldeon_Movement_DadExit:
 
 Aldeon_Leaf_House_Text_Leaf1::
 # 151 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "Daddy there's someone I want you to\n"
+	.string "Daddy there's someone I want you to\l"
 	.string "meet.$"
 
 Aldeon_Leaf_House_Text_Dad1::
 # 155 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "He's come at a most unexpected time. I\n"
+	.string "He's come at a most unexpected time. I\l"
 	.string "think you two had better take a seat.$"
 
 Aldeon_Leaf_House_Text_Dad2::
@@ -349,7 +349,7 @@ Aldeon_Leaf_House_Text_Dad2::
 
 Aldeon_Leaf_House_Text_Leaf2::
 # 163 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "A friend. Young master {PLAYER} here\n"
+	.string "A friend. Young master {PLAYER} here\l"
 	.string "rescued me from a viscious incel who\l"
 	.string "tried to assualt me.$"
 
@@ -359,12 +359,12 @@ Aldeon_Leaf_House_Text_Dad3::
 
 Aldeon_Leaf_House_Text_Leaf3::
 # 171 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "Daddy, I'm fine. All thanks to\n"
+	.string "Daddy, I'm fine. All thanks to\l"
 	.string "{PLAYER} here {RIVAL} ran away.$"
 
 Aldeon_Leaf_House_Text_Dad4::
 # 175 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "My God.. well {PLAYER} you have proven\n"
+	.string "My God.. well {PLAYER} you have proven\l"
 	.string "yourself a noble man and worthy in my\l"
 	.string "eyes. You've come however at a special\l"
 	.string "time. Have you two heard that Mew has\l"
@@ -376,7 +376,7 @@ Aldeon_Leaf_House_Text_Leaf4::
 
 Aldeon_Leaf_House_Text_Dad5::
 # 183 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "The very same. At first I hardly\n"
+	.string "The very same. At first I hardly\l"
 	.string "thought the news was true, and I\l"
 	.string "assumed it was propaganda to celebrate\l"
 	.string "the party's victory but earlier as I was\l"
@@ -385,12 +385,12 @@ Aldeon_Leaf_House_Text_Dad5::
 
 Aldeon_Leaf_House_Text_Leaf5::
 # 187 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "If this is true, then we should go at\n"
+	.string "If this is true, then we should go at\l"
 	.string "once!$"
 
 Aldeon_Leaf_House_Text_Dad6::
 # 191 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "Of course we must! To think such things\n"
+	.string "Of course we must! To think such things\l"
 	.string "were only myths last week. Not in two\l"
 	.string "thousand years has this happened. So\l"
 	.string "{PLAYER} I'm sure you'll be going with\l"
@@ -405,7 +405,7 @@ Aldeon_Leaf_House_Text_DexBallGet::
 
 Aldeon_Leaf_House_Text_Dad7::
 # 199 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "Those Pokeballs belonged to my father.\n"
+	.string "Those Pokeballs belonged to my father.\l"
 	.string "The road to Bulbus Town should not be\l"
 	.string "hard. We'll wait for you down at my Club\l"
 	.string "in town you'll recognize it by the big\l"
@@ -414,5 +414,5 @@ Aldeon_Leaf_House_Text_Dad7::
 
 Aldeon_Leaf_House_Text_ScottBed::
 # 203 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "It's Scott's Bed. Would you like to take\n"
+	.string "It's Scott's Bed. Would you like to take\l"
 	.string "a rest?$"

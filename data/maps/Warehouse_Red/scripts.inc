@@ -78,7 +78,7 @@ Warehouse_Red_Text_Red4Post::
 
 Warehouse_Red_Text_Red3Intro::
 # 63 "data/maps/Warehouse_Red/scripts.pory"
-	.string "No wasting time let's get down to\n"
+	.string "No wasting time let's get down to\l"
 	.string "business.$"
 
 Warehouse_Red_Text_Red3Lost::
@@ -95,12 +95,12 @@ Warehouse_Red_Text_Red2Intro::
 
 Warehouse_Red_Text_Red2Lost::
 # 79 "data/maps/Warehouse_Red/scripts.pory"
-	.string "I think I might need to smoke some Da\n"
+	.string "I think I might need to smoke some Da\l"
 	.string "Ma.$"
 
 Warehouse_Red_Text_Red2Post::
 # 83 "data/maps/Warehouse_Red/scripts.pory"
-	.string "Have you tried the tea egg? It's rather\n"
+	.string "Have you tried the tea egg? It's rather\l"
 	.string "good.$"
 
 Warehouse_Red_Text_Red1Intro::

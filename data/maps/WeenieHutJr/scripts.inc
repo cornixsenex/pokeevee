@@ -1779,40 +1779,40 @@ WeenieHutJr_Text_DoorBlockA::
 
 WeenieHutJr_Text_DoorBlockB::
 # 703 "data/maps/WeenieHutJr/scripts.pory"
-	.string "This lounge is only for those few elite\n"
+	.string "This lounge is only for those few elite\l"
 	.string "who graduate from Super Weenie Hut\l"
 	.string "Junior's. I think that might be more\l"
 	.string "your speed.$"
 
 WeenieHutJr_Text_DoorOpens::
 # 707 "data/maps/WeenieHutJr/scripts.pory"
-	.string "Congratulations on your achievement!\n"
+	.string "Congratulations on your achievement!\l"
 	.string "Enjoy your time at Weenie Hut Juniors!$"
 
 WeenieHutJr_Text_DoorBlockD::
 # 711 "data/maps/WeenieHutJr/scripts.pory"
-	.string "You wicked monster! Leave! Never come\n"
+	.string "You wicked monster! Leave! Never come\l"
 	.string "back.$"
 
 WeenieHutJr_Text_KickOut::
 # 715 "data/maps/WeenieHutJr/scripts.pory"
-	.string "Fighting is strictly forbidden I must\n"
+	.string "Fighting is strictly forbidden I must\l"
 	.string "tell you to leave. You are forever\l"
 	.string "banned as punishment for your\l"
 	.string "disgusting deeds.$"
 
 WeenieHutJr_Text_MeiandLisaIntro::
 # 719 "data/maps/WeenieHutJr/scripts.pory"
-	.string "I can't believe this guy beat you too\n"
+	.string "I can't believe this guy beat you too\l"
 	.string "sis! No icky boy will make us be loosers,\l"
 	.string "C'mon Lisa let's show him what we've got!$"
 
 WeenieHutJr_Text_MeiAndLisaLost::
 # 723 "data/maps/WeenieHutJr/scripts.pory"
-	.string "You're such a bully! Look you made Mei\n"
+	.string "You're such a bully! Look you made Mei\l"
 	.string "cry!$"
 
 WeenieHutJr_Text_MeiAndLisaPost::
 # 727 "data/maps/WeenieHutJr/scripts.pory"
-	.string "Get out of here! I wish you'd never\n"
+	.string "Get out of here! I wish you'd never\l"
 	.string "lived!$"

@@ -87,22 +87,22 @@ Hospital5F_EventScript_Admin_7:
 
 Hospital5F_Text_GlennPre::
 # 62 "data/maps/Hospital5F/scripts.pory"
-	.string "What are you doing? Hey! I just mopped\n"
+	.string "What are you doing? Hey! I just mopped\l"
 	.string "there!$"
 
 Hospital5F_Text_GlennLost::
 # 66 "data/maps/Hospital5F/scripts.pory"
-	.string "Just look at the gigantic mess you\n"
+	.string "Just look at the gigantic mess you\l"
 	.string "made.$"
 
 Hospital5F_Text_GlennPost::
 # 70 "data/maps/Hospital5F/scripts.pory"
-	.string "Working at the hospital's not so bad, I\n"
+	.string "Working at the hospital's not so bad, I\l"
 	.string "get dental insurance and sick days.$"
 
 Hospital5F_Text_Admin1::
 # 74 "data/maps/Hospital5F/scripts.pory"
-	.string "So what do you want? How can I help\n"
+	.string "So what do you want? How can I help\l"
 	.string "you? Insurance card? Honey don't fool\l"
 	.string "yourself. Insurance is only for\l"
 	.string "privaleged folk but go ahead and knock\l"
@@ -111,13 +111,13 @@ Hospital5F_Text_Admin1::
 
 Hospital5F_Text_Admin2::
 # 78 "data/maps/Hospital5F/scripts.pory"
-	.string "You need to get your forms filled\n"
+	.string "You need to get your forms filled\l"
 	.string "properly before filing for insurance\l"
 	.string "dear.$"
 
 Hospital5F_Text_Admin3::
 # 82 "data/maps/Hospital5F/scripts.pory"
-	.string "It's you again? Didn't I already....Hey!\n"
+	.string "It's you again? Didn't I already....Hey!\l"
 	.string "Now what is this? How did you fill these\l"
 	.string "out? Why I outta...AHEM! Please excuse\l"
 	.string "me. Here's your INSURANCE CARD have a\l"
@@ -125,5 +125,5 @@ Hospital5F_Text_Admin3::
 
 Hospital5F_Text_Admin4::
 # 86 "data/maps/Hospital5F/scripts.pory"
-	.string "You have your card, now go enjoy your\n"
+	.string "You have your card, now go enjoy your\l"
 	.string "day.$"

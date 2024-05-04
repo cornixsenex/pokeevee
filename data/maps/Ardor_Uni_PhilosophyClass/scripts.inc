@@ -107,7 +107,7 @@ Ardor_Uni_PhilosophyClass_EventScript_Test::
 
 Ardor_Uni_PhilosophyClass_Text_ClassIntro::
 # 65 "data/maps/Ardor_Uni_PhilosophyClass/scripts.pory"
-	.string "Salve puer. Magister senex Hamlet sum.\n"
+	.string "Salve puer. Magister senex Hamlet sum.\l"
 	.string "Quod est Philosophia? Non scio...$"
 
 Ardor_Uni_PhilosophyClass_Text_PhilosophyIntro::
@@ -116,7 +116,7 @@ Ardor_Uni_PhilosophyClass_Text_PhilosophyIntro::
 
 Ardor_Uni_PhilosophyClass_Text_PhilosophyFail::
 # 73 "data/maps/Ardor_Uni_PhilosophyClass/scripts.pory"
-	.string "{STR_VAR_1}? Quid est\n"
+	.string "{STR_VAR_1}? Quid est\l"
 	.string "{STR_VAR_1}? Tenetne matrem\l"
 	.string "{STR_VAR_1}? Ubi est\l"
 	.string "{STR_VAR_1}? Estne senex ut iuvenis\l"
@@ -130,7 +130,7 @@ Ardor_Uni_PhilosophyClass_Text_Return::
 
 Ardor_Uni_PhilosophyClass_Text_ClassFinished::
 # 81 "data/maps/Ardor_Uni_PhilosophyClass/scripts.pory"
-	.string "Iam veritatem inquisivisti. Vale, non\n"
+	.string "Iam veritatem inquisivisti. Vale, non\l"
 	.string "plus tibi docere possum.$"
 
 Ardor_Uni_PhilosophyClass_Text_TestBegin::

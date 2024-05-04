@@ -989,923 +989,919 @@ Capital_EventScript_GioPresident_68:
 
 
 Capital_EventScript_GioSouth::
-# 591 "data/maps/Capital/scripts.pory"
-	setflag FLAG_FOLLOWER_ALT_APPROACH
 	end
 
 
 Capital_EventScript_GioApproach::
-# 596 "data/maps/Capital/scripts.pory"
-	clearflag FLAG_FOLLOWER_ALT_APPROACH
 	end
 
 
 Capital_EventScript_MaxieTrigger1::
-# 601 "data/maps/Capital/scripts.pory"
+# 599 "data/maps/Capital/scripts.pory"
 	lock
-# 602 "data/maps/Capital/scripts.pory"
+# 600 "data/maps/Capital/scripts.pory"
 	setvar VAR_CAPITAL_STATE, 6
-# 603 "data/maps/Capital/scripts.pory"
+# 601 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxiePlaceR
-# 604 "data/maps/Capital/scripts.pory"
+# 602 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxieScene
-# 605 "data/maps/Capital/scripts.pory"
+# 603 "data/maps/Capital/scripts.pory"
 	release
 	return
 
 
 Capital_EventScript_MaxieTrigger2::
-# 609 "data/maps/Capital/scripts.pory"
+# 607 "data/maps/Capital/scripts.pory"
 	lock
-# 610 "data/maps/Capital/scripts.pory"
+# 608 "data/maps/Capital/scripts.pory"
 	setvar VAR_CAPITAL_STATE, 7
-# 611 "data/maps/Capital/scripts.pory"
+# 609 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxiePlaceR
-# 612 "data/maps/Capital/scripts.pory"
+# 610 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxieScene
-# 613 "data/maps/Capital/scripts.pory"
+# 611 "data/maps/Capital/scripts.pory"
 	release
 	return
 
 
 Capital_EventScript_MaxieTrigger3::
-# 617 "data/maps/Capital/scripts.pory"
+# 615 "data/maps/Capital/scripts.pory"
 	lock
-# 618 "data/maps/Capital/scripts.pory"
+# 616 "data/maps/Capital/scripts.pory"
 	setvar VAR_CAPITAL_STATE, 8
-# 619 "data/maps/Capital/scripts.pory"
+# 617 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxiePlaceL
-# 620 "data/maps/Capital/scripts.pory"
+# 618 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxieScene
-# 621 "data/maps/Capital/scripts.pory"
+# 619 "data/maps/Capital/scripts.pory"
 	release
 	return
 
 
 Capital_EventScript_MaxieTrigger4::
-# 625 "data/maps/Capital/scripts.pory"
+# 623 "data/maps/Capital/scripts.pory"
 	lock
-# 626 "data/maps/Capital/scripts.pory"
+# 624 "data/maps/Capital/scripts.pory"
 	setvar VAR_CAPITAL_STATE, 9
-# 627 "data/maps/Capital/scripts.pory"
+# 625 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxiePlaceL
-# 628 "data/maps/Capital/scripts.pory"
+# 626 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_MaxieScene
-# 629 "data/maps/Capital/scripts.pory"
+# 627 "data/maps/Capital/scripts.pory"
 	release
 	return
 
 
 Capital_EventScript_RebelsScenePlace::
-# 633 "data/maps/Capital/scripts.pory"
+# 631 "data/maps/Capital/scripts.pory"
 	removeobject 22
-# 634 "data/maps/Capital/scripts.pory"
+# 632 "data/maps/Capital/scripts.pory"
 	setobjectxy 23, 18, 37
-# 635 "data/maps/Capital/scripts.pory"
+# 633 "data/maps/Capital/scripts.pory"
 	setobjectxy 19, 18, 36
-# 636 "data/maps/Capital/scripts.pory"
+# 634 "data/maps/Capital/scripts.pory"
 	setobjectxy 24, 23, 37
-# 637 "data/maps/Capital/scripts.pory"
+# 635 "data/maps/Capital/scripts.pory"
 	setobjectxy 21, 23, 36
-# 638 "data/maps/Capital/scripts.pory"
+# 636 "data/maps/Capital/scripts.pory"
 	showobjectat 23, MAP_CAPITAL
-# 639 "data/maps/Capital/scripts.pory"
+# 637 "data/maps/Capital/scripts.pory"
 	showobjectat 19, MAP_CAPITAL
-# 640 "data/maps/Capital/scripts.pory"
+# 638 "data/maps/Capital/scripts.pory"
 	showobjectat 24, MAP_CAPITAL
-# 641 "data/maps/Capital/scripts.pory"
+# 639 "data/maps/Capital/scripts.pory"
 	showobjectat 21, MAP_CAPITAL
 	return
 
 
 Capital_EventScript_MaxiePlaceL::
-# 646 "data/maps/Capital/scripts.pory"
+# 644 "data/maps/Capital/scripts.pory"
 	setobjectxy 20, 20, 35
 	return
 
 
 Capital_EventScript_MaxiePlaceR::
-# 651 "data/maps/Capital/scripts.pory"
+# 649 "data/maps/Capital/scripts.pory"
 	setobjectxy 20, 21, 35
 	return
 
 
 Capital_EventScript_MaxieScene::
-# 658 "data/maps/Capital/scripts.pory"
+# 656 "data/maps/Capital/scripts.pory"
 	call Capital_EventScript_RebelsScenePlace
-# 660 "data/maps/Capital/scripts.pory"
+# 658 "data/maps/Capital/scripts.pory"
 	showobjectat 20, MAP_CAPITAL
-# 663 "data/maps/Capital/scripts.pory"
+# 661 "data/maps/Capital/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro
-# 664 "data/maps/Capital/scripts.pory"
+# 662 "data/maps/Capital/scripts.pory"
 	waitmovement 0
-# 667 "data/maps/Capital/scripts.pory"
+# 665 "data/maps/Capital/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 668 "data/maps/Capital/scripts.pory"
+# 666 "data/maps/Capital/scripts.pory"
 	waitmovement 0
-# 671 "data/maps/Capital/scripts.pory"
+# 669 "data/maps/Capital/scripts.pory"
 	load_field_pic 9, 190, 98
-# 672 "data/maps/Capital/scripts.pory"
+# 670 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_Maxie1
-# 673 "data/maps/Capital/scripts.pory"
+# 671 "data/maps/Capital/scripts.pory"
 	closemessage
-# 674 "data/maps/Capital/scripts.pory"
+# 672 "data/maps/Capital/scripts.pory"
 	destroy_field_pic 9
-# 675 "data/maps/Capital/scripts.pory"
+# 673 "data/maps/Capital/scripts.pory"
 	delay 5
-# 678 "data/maps/Capital/scripts.pory"
+# 676 "data/maps/Capital/scripts.pory"
 	switch VAR_CAPITAL_STATE
-# 679 "data/maps/Capital/scripts.pory"
+# 677 "data/maps/Capital/scripts.pory"
 	case 6, Capital_EventScript_MaxieScene_3
-# 681 "data/maps/Capital/scripts.pory"
+# 679 "data/maps/Capital/scripts.pory"
 	case 7, Capital_EventScript_MaxieScene_4
-# 683 "data/maps/Capital/scripts.pory"
+# 681 "data/maps/Capital/scripts.pory"
 	case 8, Capital_EventScript_MaxieScene_5
-# 685 "data/maps/Capital/scripts.pory"
+# 683 "data/maps/Capital/scripts.pory"
 	case 9, Capital_EventScript_MaxieScene_6
 Capital_EventScript_MaxieScene_1:
-# 689 "data/maps/Capital/scripts.pory"
+# 687 "data/maps/Capital/scripts.pory"
 	compare VAR_CAPITAL_STATE, 8
 	goto_if_lt Capital_EventScript_MaxieScene_8
-# 692 "data/maps/Capital/scripts.pory"
+# 690 "data/maps/Capital/scripts.pory"
 	applymovement 20, Capital_Movement_Maxie1L
 Capital_EventScript_MaxieScene_7:
-# 694 "data/maps/Capital/scripts.pory"
+# 692 "data/maps/Capital/scripts.pory"
 	waitmovement 0
-# 697 "data/maps/Capital/scripts.pory"
+# 695 "data/maps/Capital/scripts.pory"
 	load_field_pic 9, 190, 98
-# 698 "data/maps/Capital/scripts.pory"
+# 696 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_Maxie2
+# 697 "data/maps/Capital/scripts.pory"
+	closemessage
+# 698 "data/maps/Capital/scripts.pory"
+	destroy_field_pic 9
 # 699 "data/maps/Capital/scripts.pory"
-	closemessage
-# 700 "data/maps/Capital/scripts.pory"
-	destroy_field_pic 9
+	delay 5
 # 701 "data/maps/Capital/scripts.pory"
-	delay 5
-# 703 "data/maps/Capital/scripts.pory"
 	applymovement 20, Common_Movement_FaceUp
+# 702 "data/maps/Capital/scripts.pory"
+	waitmovement 0
 # 704 "data/maps/Capital/scripts.pory"
-	waitmovement 0
-# 706 "data/maps/Capital/scripts.pory"
 	load_field_pic 9, 190, 98
-# 707 "data/maps/Capital/scripts.pory"
+# 705 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_Maxie3
+# 706 "data/maps/Capital/scripts.pory"
+	closemessage
+# 707 "data/maps/Capital/scripts.pory"
+	destroy_field_pic 9
 # 708 "data/maps/Capital/scripts.pory"
-	closemessage
-# 709 "data/maps/Capital/scripts.pory"
-	destroy_field_pic 9
+	delay 5
 # 710 "data/maps/Capital/scripts.pory"
-	delay 5
-# 712 "data/maps/Capital/scripts.pory"
 	applymovement 20, Common_Movement_FaceLeft
+# 711 "data/maps/Capital/scripts.pory"
+	waitmovement 0
 # 713 "data/maps/Capital/scripts.pory"
-	waitmovement 0
-# 715 "data/maps/Capital/scripts.pory"
 	load_field_pic 9, 190, 98
-# 716 "data/maps/Capital/scripts.pory"
+# 714 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_Maxie4
+# 715 "data/maps/Capital/scripts.pory"
+	closemessage
+# 716 "data/maps/Capital/scripts.pory"
+	destroy_field_pic 9
 # 717 "data/maps/Capital/scripts.pory"
-	closemessage
-# 718 "data/maps/Capital/scripts.pory"
-	destroy_field_pic 9
+	delay 5
 # 719 "data/maps/Capital/scripts.pory"
-	delay 5
-# 721 "data/maps/Capital/scripts.pory"
 	applymovement 20, Common_Movement_FaceUp
+# 720 "data/maps/Capital/scripts.pory"
+	waitmovement 0
 # 722 "data/maps/Capital/scripts.pory"
-	waitmovement 0
-# 724 "data/maps/Capital/scripts.pory"
 	load_field_pic 9, 190, 98
-# 725 "data/maps/Capital/scripts.pory"
+# 723 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_Maxie5
-# 726 "data/maps/Capital/scripts.pory"
+# 724 "data/maps/Capital/scripts.pory"
 	closemessage
-# 727 "data/maps/Capital/scripts.pory"
+# 725 "data/maps/Capital/scripts.pory"
 	destroy_field_pic 9
-# 728 "data/maps/Capital/scripts.pory"
+# 726 "data/maps/Capital/scripts.pory"
 	delay 5
-# 731 "data/maps/Capital/scripts.pory"
+# 729 "data/maps/Capital/scripts.pory"
 	applymovement 20, Capital_Movement_MaxieE
-# 732 "data/maps/Capital/scripts.pory"
+# 730 "data/maps/Capital/scripts.pory"
 	applymovement 23, Capital_Movement_Rebel1E
-# 733 "data/maps/Capital/scripts.pory"
+# 731 "data/maps/Capital/scripts.pory"
 	applymovement 19, Capital_Movement_Rebel2E
-# 734 "data/maps/Capital/scripts.pory"
+# 732 "data/maps/Capital/scripts.pory"
 	applymovement 24, Capital_Movement_Rebel3E
-# 735 "data/maps/Capital/scripts.pory"
+# 733 "data/maps/Capital/scripts.pory"
 	applymovement 21, Capital_Movement_Rebel4E
-# 736 "data/maps/Capital/scripts.pory"
+# 734 "data/maps/Capital/scripts.pory"
 	waitmovement 0
-# 738 "data/maps/Capital/scripts.pory"
+# 736 "data/maps/Capital/scripts.pory"
 	setvar VAR_CAPITAL_STATE, 10
 	return
 
 Capital_EventScript_MaxieScene_3:
-# 680 "data/maps/Capital/scripts.pory"
+# 678 "data/maps/Capital/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1
 	goto Capital_EventScript_MaxieScene_1
 
 Capital_EventScript_MaxieScene_4:
-# 682 "data/maps/Capital/scripts.pory"
+# 680 "data/maps/Capital/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2
 	goto Capital_EventScript_MaxieScene_1
 
 Capital_EventScript_MaxieScene_5:
-# 684 "data/maps/Capital/scripts.pory"
+# 682 "data/maps/Capital/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3
 	goto Capital_EventScript_MaxieScene_1
 
 Capital_EventScript_MaxieScene_6:
-# 686 "data/maps/Capital/scripts.pory"
+# 684 "data/maps/Capital/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4
 	goto Capital_EventScript_MaxieScene_1
 
 Capital_EventScript_MaxieScene_8:
-# 690 "data/maps/Capital/scripts.pory"
+# 688 "data/maps/Capital/scripts.pory"
 	applymovement 20, Capital_Movement_Maxie1R
 	goto Capital_EventScript_MaxieScene_7
 
 
 Capital_EventScript_SoldierBattle::
-# 744 "data/maps/Capital/scripts.pory"
+# 742 "data/maps/Capital/scripts.pory"
 	lock
-# 745 "data/maps/Capital/scripts.pory"
+# 743 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_SoldierBattle
-# 746 "data/maps/Capital/scripts.pory"
+# 744 "data/maps/Capital/scripts.pory"
 	closemessage
-# 747 "data/maps/Capital/scripts.pory"
+# 745 "data/maps/Capital/scripts.pory"
 	release
 	end
 
 
 Capital_EventScript_RebelBattle::
-# 752 "data/maps/Capital/scripts.pory"
+# 750 "data/maps/Capital/scripts.pory"
 	lockall
-# 753 "data/maps/Capital/scripts.pory"
+# 751 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_RebelBattle
-# 754 "data/maps/Capital/scripts.pory"
+# 752 "data/maps/Capital/scripts.pory"
 	closemessage
-# 755 "data/maps/Capital/scripts.pory"
+# 753 "data/maps/Capital/scripts.pory"
 	releaseall
 	end
 
 
 Capital_EventScript_SurgeBattle::
-# 760 "data/maps/Capital/scripts.pory"
+# 758 "data/maps/Capital/scripts.pory"
 	lockall
-# 761 "data/maps/Capital/scripts.pory"
+# 759 "data/maps/Capital/scripts.pory"
 	msgbox Capital_Text_SurgeBattle
-# 762 "data/maps/Capital/scripts.pory"
+# 760 "data/maps/Capital/scripts.pory"
 	closemessage
-# 763 "data/maps/Capital/scripts.pory"
+# 761 "data/maps/Capital/scripts.pory"
 	releaseall
 	end
 
 
-# 767 "data/maps/Capital/scripts.pory"
+# 765 "data/maps/Capital/scripts.pory"
 Capital_Movement_PanCamera1:
-# 768 "data/maps/Capital/scripts.pory"
+# 766 "data/maps/Capital/scripts.pory"
 	walk_right
-# 768 "data/maps/Capital/scripts.pory"
+# 766 "data/maps/Capital/scripts.pory"
 	walk_right
-# 768 "data/maps/Capital/scripts.pory"
+# 766 "data/maps/Capital/scripts.pory"
 	walk_right
-# 768 "data/maps/Capital/scripts.pory"
+# 766 "data/maps/Capital/scripts.pory"
 	walk_right
-# 768 "data/maps/Capital/scripts.pory"
+# 766 "data/maps/Capital/scripts.pory"
 	walk_right
-# 768 "data/maps/Capital/scripts.pory"
+# 766 "data/maps/Capital/scripts.pory"
 	walk_right
-# 768 "data/maps/Capital/scripts.pory"
+# 766 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 771 "data/maps/Capital/scripts.pory"
+# 769 "data/maps/Capital/scripts.pory"
 Capital_Movement_PanCamera2:
-# 772 "data/maps/Capital/scripts.pory"
+# 770 "data/maps/Capital/scripts.pory"
 	walk_diag_northeast
-# 773 "data/maps/Capital/scripts.pory"
+# 771 "data/maps/Capital/scripts.pory"
 	walk_right
-# 773 "data/maps/Capital/scripts.pory"
+# 771 "data/maps/Capital/scripts.pory"
 	walk_right
-# 773 "data/maps/Capital/scripts.pory"
+# 771 "data/maps/Capital/scripts.pory"
 	walk_right
-# 773 "data/maps/Capital/scripts.pory"
+# 771 "data/maps/Capital/scripts.pory"
 	walk_right
-# 773 "data/maps/Capital/scripts.pory"
+# 771 "data/maps/Capital/scripts.pory"
 	walk_right
-# 773 "data/maps/Capital/scripts.pory"
+# 771 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 776 "data/maps/Capital/scripts.pory"
+# 774 "data/maps/Capital/scripts.pory"
 Capital_Movement_PanCamera3:
-# 777 "data/maps/Capital/scripts.pory"
+# 775 "data/maps/Capital/scripts.pory"
 	walk_left
-# 777 "data/maps/Capital/scripts.pory"
+# 775 "data/maps/Capital/scripts.pory"
 	walk_left
-# 777 "data/maps/Capital/scripts.pory"
+# 775 "data/maps/Capital/scripts.pory"
 	walk_left
-# 777 "data/maps/Capital/scripts.pory"
+# 775 "data/maps/Capital/scripts.pory"
 	walk_left
-# 777 "data/maps/Capital/scripts.pory"
+# 775 "data/maps/Capital/scripts.pory"
 	walk_left
-# 777 "data/maps/Capital/scripts.pory"
+# 775 "data/maps/Capital/scripts.pory"
 	walk_left
-# 777 "data/maps/Capital/scripts.pory"
+# 775 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 780 "data/maps/Capital/scripts.pory"
+# 778 "data/maps/Capital/scripts.pory"
 Capital_Movement_PanCamera4:
-# 781 "data/maps/Capital/scripts.pory"
+# 779 "data/maps/Capital/scripts.pory"
 	walk_diag_northwest
-# 782 "data/maps/Capital/scripts.pory"
+# 780 "data/maps/Capital/scripts.pory"
 	walk_left
-# 782 "data/maps/Capital/scripts.pory"
+# 780 "data/maps/Capital/scripts.pory"
 	walk_left
-# 782 "data/maps/Capital/scripts.pory"
+# 780 "data/maps/Capital/scripts.pory"
 	walk_left
-# 782 "data/maps/Capital/scripts.pory"
+# 780 "data/maps/Capital/scripts.pory"
 	walk_left
-# 782 "data/maps/Capital/scripts.pory"
+# 780 "data/maps/Capital/scripts.pory"
 	walk_left
-# 782 "data/maps/Capital/scripts.pory"
+# 780 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 785 "data/maps/Capital/scripts.pory"
+# 783 "data/maps/Capital/scripts.pory"
 Capital_Movement_Soldier2A:
-# 786 "data/maps/Capital/scripts.pory"
+# 784 "data/maps/Capital/scripts.pory"
 	walk_down
-# 786 "data/maps/Capital/scripts.pory"
+# 784 "data/maps/Capital/scripts.pory"
 	walk_down
-# 786 "data/maps/Capital/scripts.pory"
+# 784 "data/maps/Capital/scripts.pory"
 	walk_down
-# 787 "data/maps/Capital/scripts.pory"
+# 785 "data/maps/Capital/scripts.pory"
 	walk_left
-# 787 "data/maps/Capital/scripts.pory"
+# 785 "data/maps/Capital/scripts.pory"
 	walk_left
-# 788 "data/maps/Capital/scripts.pory"
+# 786 "data/maps/Capital/scripts.pory"
 	face_up
 	step_end
 
-# 791 "data/maps/Capital/scripts.pory"
+# 789 "data/maps/Capital/scripts.pory"
 Capital_Movement_Soldier3A:
-# 792 "data/maps/Capital/scripts.pory"
+# 790 "data/maps/Capital/scripts.pory"
 	walk_left
-# 792 "data/maps/Capital/scripts.pory"
+# 790 "data/maps/Capital/scripts.pory"
 	walk_left
-# 792 "data/maps/Capital/scripts.pory"
+# 790 "data/maps/Capital/scripts.pory"
 	walk_left
-# 792 "data/maps/Capital/scripts.pory"
+# 790 "data/maps/Capital/scripts.pory"
 	walk_left
-# 793 "data/maps/Capital/scripts.pory"
+# 791 "data/maps/Capital/scripts.pory"
 	walk_down
 	step_end
 
-# 796 "data/maps/Capital/scripts.pory"
+# 794 "data/maps/Capital/scripts.pory"
 Capital_Movement_CiceroR1:
-# 797 "data/maps/Capital/scripts.pory"
+# 795 "data/maps/Capital/scripts.pory"
 	walk_down
-# 798 "data/maps/Capital/scripts.pory"
+# 796 "data/maps/Capital/scripts.pory"
 	walk_right
+# 796 "data/maps/Capital/scripts.pory"
+	walk_right
+# 797 "data/maps/Capital/scripts.pory"
+	walk_up
 # 798 "data/maps/Capital/scripts.pory"
 	walk_right
 # 799 "data/maps/Capital/scripts.pory"
-	walk_up
-# 800 "data/maps/Capital/scripts.pory"
-	walk_right
-# 801 "data/maps/Capital/scripts.pory"
 	face_up
 	step_end
 
-# 805 "data/maps/Capital/scripts.pory"
+# 803 "data/maps/Capital/scripts.pory"
 Capital_Movement_Soldier2R1:
-# 806 "data/maps/Capital/scripts.pory"
+# 804 "data/maps/Capital/scripts.pory"
 	walk_right
-# 806 "data/maps/Capital/scripts.pory"
+# 804 "data/maps/Capital/scripts.pory"
 	walk_right
-# 807 "data/maps/Capital/scripts.pory"
+# 805 "data/maps/Capital/scripts.pory"
 	walk_up
-# 808 "data/maps/Capital/scripts.pory"
+# 806 "data/maps/Capital/scripts.pory"
 	walk_right
-# 808 "data/maps/Capital/scripts.pory"
+# 806 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 811 "data/maps/Capital/scripts.pory"
+# 809 "data/maps/Capital/scripts.pory"
 Capital_Movement_Soldier3R1:
-# 812 "data/maps/Capital/scripts.pory"
+# 810 "data/maps/Capital/scripts.pory"
 	walk_down
-# 812 "data/maps/Capital/scripts.pory"
+# 810 "data/maps/Capital/scripts.pory"
 	walk_down
-# 813 "data/maps/Capital/scripts.pory"
+# 811 "data/maps/Capital/scripts.pory"
 	walk_right
-# 813 "data/maps/Capital/scripts.pory"
+# 811 "data/maps/Capital/scripts.pory"
 	walk_right
-# 814 "data/maps/Capital/scripts.pory"
+# 812 "data/maps/Capital/scripts.pory"
 	walk_up
-# 815 "data/maps/Capital/scripts.pory"
+# 813 "data/maps/Capital/scripts.pory"
 	face_right
 	step_end
 
-# 818 "data/maps/Capital/scripts.pory"
+# 816 "data/maps/Capital/scripts.pory"
 Capital_Movement_CiceroL1:
-# 819 "data/maps/Capital/scripts.pory"
+# 817 "data/maps/Capital/scripts.pory"
 	walk_down
-# 820 "data/maps/Capital/scripts.pory"
+# 818 "data/maps/Capital/scripts.pory"
 	walk_left
-# 820 "data/maps/Capital/scripts.pory"
+# 818 "data/maps/Capital/scripts.pory"
 	walk_left
+# 818 "data/maps/Capital/scripts.pory"
+	walk_left
+# 819 "data/maps/Capital/scripts.pory"
+	walk_up
 # 820 "data/maps/Capital/scripts.pory"
 	walk_left
 # 821 "data/maps/Capital/scripts.pory"
-	walk_up
-# 822 "data/maps/Capital/scripts.pory"
-	walk_left
-# 823 "data/maps/Capital/scripts.pory"
 	face_down
 	step_end
 
-# 826 "data/maps/Capital/scripts.pory"
+# 824 "data/maps/Capital/scripts.pory"
 Capital_Movement_Soldier1L1:
-# 827 "data/maps/Capital/scripts.pory"
+# 825 "data/maps/Capital/scripts.pory"
 	walk_down
-# 827 "data/maps/Capital/scripts.pory"
+# 825 "data/maps/Capital/scripts.pory"
 	walk_down
-# 828 "data/maps/Capital/scripts.pory"
+# 826 "data/maps/Capital/scripts.pory"
 	walk_left
-# 828 "data/maps/Capital/scripts.pory"
+# 826 "data/maps/Capital/scripts.pory"
 	walk_left
-# 828 "data/maps/Capital/scripts.pory"
+# 826 "data/maps/Capital/scripts.pory"
 	walk_left
-# 828 "data/maps/Capital/scripts.pory"
+# 826 "data/maps/Capital/scripts.pory"
 	walk_left
-# 828 "data/maps/Capital/scripts.pory"
+# 826 "data/maps/Capital/scripts.pory"
 	walk_left
-# 828 "data/maps/Capital/scripts.pory"
+# 826 "data/maps/Capital/scripts.pory"
 	walk_left
-# 829 "data/maps/Capital/scripts.pory"
+# 827 "data/maps/Capital/scripts.pory"
 	walk_up
-# 830 "data/maps/Capital/scripts.pory"
+# 828 "data/maps/Capital/scripts.pory"
 	face_left
 	step_end
 
-# 833 "data/maps/Capital/scripts.pory"
+# 831 "data/maps/Capital/scripts.pory"
 Capital_Movement_Soldier2L1:
-# 834 "data/maps/Capital/scripts.pory"
+# 832 "data/maps/Capital/scripts.pory"
 	walk_left
-# 834 "data/maps/Capital/scripts.pory"
+# 832 "data/maps/Capital/scripts.pory"
 	walk_left
-# 834 "data/maps/Capital/scripts.pory"
+# 832 "data/maps/Capital/scripts.pory"
 	walk_left
-# 835 "data/maps/Capital/scripts.pory"
+# 833 "data/maps/Capital/scripts.pory"
 	walk_up
-# 836 "data/maps/Capital/scripts.pory"
+# 834 "data/maps/Capital/scripts.pory"
 	walk_left
-# 836 "data/maps/Capital/scripts.pory"
+# 834 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 839 "data/maps/Capital/scripts.pory"
+# 837 "data/maps/Capital/scripts.pory"
 Capital_Movement_Soldier3L1:
-# 840 "data/maps/Capital/scripts.pory"
+# 838 "data/maps/Capital/scripts.pory"
 	walk_down
-# 840 "data/maps/Capital/scripts.pory"
+# 838 "data/maps/Capital/scripts.pory"
 	walk_down
-# 841 "data/maps/Capital/scripts.pory"
+# 839 "data/maps/Capital/scripts.pory"
 	walk_left
-# 841 "data/maps/Capital/scripts.pory"
+# 839 "data/maps/Capital/scripts.pory"
 	walk_left
-# 842 "data/maps/Capital/scripts.pory"
+# 840 "data/maps/Capital/scripts.pory"
 	walk_up
-# 843 "data/maps/Capital/scripts.pory"
+# 841 "data/maps/Capital/scripts.pory"
 	face_left
 	step_end
 
-# 846 "data/maps/Capital/scripts.pory"
+# 844 "data/maps/Capital/scripts.pory"
 Capital_Movement_CiceroR2:
-# 847 "data/maps/Capital/scripts.pory"
+# 845 "data/maps/Capital/scripts.pory"
 	walk_right
-# 847 "data/maps/Capital/scripts.pory"
+# 845 "data/maps/Capital/scripts.pory"
 	walk_right
-# 847 "data/maps/Capital/scripts.pory"
+# 845 "data/maps/Capital/scripts.pory"
 	walk_right
-# 847 "data/maps/Capital/scripts.pory"
+# 845 "data/maps/Capital/scripts.pory"
 	walk_right
-# 847 "data/maps/Capital/scripts.pory"
+# 845 "data/maps/Capital/scripts.pory"
 	walk_right
-# 847 "data/maps/Capital/scripts.pory"
+# 845 "data/maps/Capital/scripts.pory"
 	walk_right
-# 847 "data/maps/Capital/scripts.pory"
+# 845 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 850 "data/maps/Capital/scripts.pory"
+# 848 "data/maps/Capital/scripts.pory"
 Capital_Movement_CiceroL2:
-# 851 "data/maps/Capital/scripts.pory"
+# 849 "data/maps/Capital/scripts.pory"
 	walk_left
-# 851 "data/maps/Capital/scripts.pory"
+# 849 "data/maps/Capital/scripts.pory"
 	walk_left
-# 851 "data/maps/Capital/scripts.pory"
+# 849 "data/maps/Capital/scripts.pory"
 	walk_left
-# 851 "data/maps/Capital/scripts.pory"
+# 849 "data/maps/Capital/scripts.pory"
 	walk_left
-# 851 "data/maps/Capital/scripts.pory"
+# 849 "data/maps/Capital/scripts.pory"
 	walk_left
-# 851 "data/maps/Capital/scripts.pory"
+# 849 "data/maps/Capital/scripts.pory"
 	walk_left
-# 851 "data/maps/Capital/scripts.pory"
+# 849 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 854 "data/maps/Capital/scripts.pory"
+# 852 "data/maps/Capital/scripts.pory"
 Capital_Movement_MewtwoR1:
-# 855 "data/maps/Capital/scripts.pory"
+# 853 "data/maps/Capital/scripts.pory"
 	walk_right
-# 855 "data/maps/Capital/scripts.pory"
+# 853 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 858 "data/maps/Capital/scripts.pory"
+# 856 "data/maps/Capital/scripts.pory"
 Capital_Movement_GioR1:
-# 859 "data/maps/Capital/scripts.pory"
+# 857 "data/maps/Capital/scripts.pory"
 	walk_right
-# 860 "data/maps/Capital/scripts.pory"
+# 858 "data/maps/Capital/scripts.pory"
 	face_up
 	step_end
 
-# 863 "data/maps/Capital/scripts.pory"
+# 861 "data/maps/Capital/scripts.pory"
 Capital_Movement_PersianR1:
-# 864 "data/maps/Capital/scripts.pory"
+# 862 "data/maps/Capital/scripts.pory"
 	walk_down
 	step_end
 
-# 867 "data/maps/Capital/scripts.pory"
+# 865 "data/maps/Capital/scripts.pory"
 Capital_Movement_MewtwoR2:
-# 868 "data/maps/Capital/scripts.pory"
+# 866 "data/maps/Capital/scripts.pory"
 	walk_right
-# 868 "data/maps/Capital/scripts.pory"
+# 866 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 871 "data/maps/Capital/scripts.pory"
+# 869 "data/maps/Capital/scripts.pory"
 Capital_Movement_GioR2:
-# 872 "data/maps/Capital/scripts.pory"
+# 870 "data/maps/Capital/scripts.pory"
 	walk_up
-# 873 "data/maps/Capital/scripts.pory"
+# 871 "data/maps/Capital/scripts.pory"
 	face_left
 	step_end
 
-# 876 "data/maps/Capital/scripts.pory"
+# 874 "data/maps/Capital/scripts.pory"
 Capital_Movement_PersianR2:
-# 877 "data/maps/Capital/scripts.pory"
+# 875 "data/maps/Capital/scripts.pory"
 	walk_right
-# 878 "data/maps/Capital/scripts.pory"
+# 876 "data/maps/Capital/scripts.pory"
 	face_left
 	step_end
 
-# 881 "data/maps/Capital/scripts.pory"
+# 879 "data/maps/Capital/scripts.pory"
 Capital_Movement_MewtwoR3:
-# 882 "data/maps/Capital/scripts.pory"
+# 880 "data/maps/Capital/scripts.pory"
 	walk_right
-# 882 "data/maps/Capital/scripts.pory"
+# 880 "data/maps/Capital/scripts.pory"
 	walk_right
-# 882 "data/maps/Capital/scripts.pory"
+# 880 "data/maps/Capital/scripts.pory"
 	walk_right
-# 883 "data/maps/Capital/scripts.pory"
+# 881 "data/maps/Capital/scripts.pory"
 	face_down
 	step_end
 
-# 886 "data/maps/Capital/scripts.pory"
+# 884 "data/maps/Capital/scripts.pory"
 Capital_Movement_GioL1:
-# 887 "data/maps/Capital/scripts.pory"
+# 885 "data/maps/Capital/scripts.pory"
 	walk_up
-# 888 "data/maps/Capital/scripts.pory"
+# 886 "data/maps/Capital/scripts.pory"
 	face_right
 	step_end
 
-# 891 "data/maps/Capital/scripts.pory"
+# 889 "data/maps/Capital/scripts.pory"
 Capital_Movement_PersianL1:
-# 892 "data/maps/Capital/scripts.pory"
+# 890 "data/maps/Capital/scripts.pory"
 	walk_down
-# 893 "data/maps/Capital/scripts.pory"
+# 891 "data/maps/Capital/scripts.pory"
 	face_right
 	step_end
 
-# 896 "data/maps/Capital/scripts.pory"
+# 894 "data/maps/Capital/scripts.pory"
 Capital_Movement_Follower2A:
-# 897 "data/maps/Capital/scripts.pory"
+# 895 "data/maps/Capital/scripts.pory"
 	walk_up
-# 898 "data/maps/Capital/scripts.pory"
+# 896 "data/maps/Capital/scripts.pory"
 	walk_right
-# 898 "data/maps/Capital/scripts.pory"
+# 896 "data/maps/Capital/scripts.pory"
 	walk_right
-# 898 "data/maps/Capital/scripts.pory"
+# 896 "data/maps/Capital/scripts.pory"
 	walk_right
-# 898 "data/maps/Capital/scripts.pory"
+# 896 "data/maps/Capital/scripts.pory"
 	walk_right
-# 898 "data/maps/Capital/scripts.pory"
+# 896 "data/maps/Capital/scripts.pory"
 	walk_right
-# 898 "data/maps/Capital/scripts.pory"
+# 896 "data/maps/Capital/scripts.pory"
 	walk_right
-# 898 "data/maps/Capital/scripts.pory"
+# 896 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 901 "data/maps/Capital/scripts.pory"
+# 899 "data/maps/Capital/scripts.pory"
 Capital_Movement_Follower4A:
-# 902 "data/maps/Capital/scripts.pory"
+# 900 "data/maps/Capital/scripts.pory"
 	walk_up
-# 903 "data/maps/Capital/scripts.pory"
+# 901 "data/maps/Capital/scripts.pory"
 	walk_left
-# 903 "data/maps/Capital/scripts.pory"
+# 901 "data/maps/Capital/scripts.pory"
 	walk_left
-# 903 "data/maps/Capital/scripts.pory"
+# 901 "data/maps/Capital/scripts.pory"
 	walk_left
-# 903 "data/maps/Capital/scripts.pory"
+# 901 "data/maps/Capital/scripts.pory"
 	walk_left
-# 903 "data/maps/Capital/scripts.pory"
+# 901 "data/maps/Capital/scripts.pory"
 	walk_left
-# 903 "data/maps/Capital/scripts.pory"
+# 901 "data/maps/Capital/scripts.pory"
 	walk_left
-# 903 "data/maps/Capital/scripts.pory"
+# 901 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 906 "data/maps/Capital/scripts.pory"
+# 904 "data/maps/Capital/scripts.pory"
 Capital_Movement_SurgeR1:
-# 907 "data/maps/Capital/scripts.pory"
+# 905 "data/maps/Capital/scripts.pory"
 	walk_left
-# 907 "data/maps/Capital/scripts.pory"
+# 905 "data/maps/Capital/scripts.pory"
 	walk_left
-# 907 "data/maps/Capital/scripts.pory"
+# 905 "data/maps/Capital/scripts.pory"
 	walk_left
-# 907 "data/maps/Capital/scripts.pory"
+# 905 "data/maps/Capital/scripts.pory"
 	walk_left
-# 907 "data/maps/Capital/scripts.pory"
+# 905 "data/maps/Capital/scripts.pory"
 	walk_left
-# 907 "data/maps/Capital/scripts.pory"
+# 905 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 910 "data/maps/Capital/scripts.pory"
+# 908 "data/maps/Capital/scripts.pory"
 Capital_Movement_SurgeL1:
-# 911 "data/maps/Capital/scripts.pory"
+# 909 "data/maps/Capital/scripts.pory"
 	walk_right
-# 911 "data/maps/Capital/scripts.pory"
+# 909 "data/maps/Capital/scripts.pory"
 	walk_right
-# 911 "data/maps/Capital/scripts.pory"
+# 909 "data/maps/Capital/scripts.pory"
 	walk_right
-# 911 "data/maps/Capital/scripts.pory"
+# 909 "data/maps/Capital/scripts.pory"
 	walk_right
-# 911 "data/maps/Capital/scripts.pory"
+# 909 "data/maps/Capital/scripts.pory"
 	walk_right
-# 911 "data/maps/Capital/scripts.pory"
+# 909 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 914 "data/maps/Capital/scripts.pory"
+# 912 "data/maps/Capital/scripts.pory"
 Capital_Movement_RE:
-# 915 "data/maps/Capital/scripts.pory"
+# 913 "data/maps/Capital/scripts.pory"
 	walk_right
-# 915 "data/maps/Capital/scripts.pory"
+# 913 "data/maps/Capital/scripts.pory"
 	walk_right
-# 915 "data/maps/Capital/scripts.pory"
+# 913 "data/maps/Capital/scripts.pory"
 	walk_right
-# 915 "data/maps/Capital/scripts.pory"
+# 913 "data/maps/Capital/scripts.pory"
 	walk_right
-# 915 "data/maps/Capital/scripts.pory"
+# 913 "data/maps/Capital/scripts.pory"
 	walk_right
-# 915 "data/maps/Capital/scripts.pory"
+# 913 "data/maps/Capital/scripts.pory"
 	walk_right
-# 915 "data/maps/Capital/scripts.pory"
+# 913 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 918 "data/maps/Capital/scripts.pory"
+# 916 "data/maps/Capital/scripts.pory"
 Capital_Movement_LE:
-# 919 "data/maps/Capital/scripts.pory"
+# 917 "data/maps/Capital/scripts.pory"
 	walk_left
-# 919 "data/maps/Capital/scripts.pory"
+# 917 "data/maps/Capital/scripts.pory"
 	walk_left
-# 919 "data/maps/Capital/scripts.pory"
+# 917 "data/maps/Capital/scripts.pory"
 	walk_left
-# 919 "data/maps/Capital/scripts.pory"
+# 917 "data/maps/Capital/scripts.pory"
 	walk_left
-# 919 "data/maps/Capital/scripts.pory"
+# 917 "data/maps/Capital/scripts.pory"
 	walk_left
-# 919 "data/maps/Capital/scripts.pory"
+# 917 "data/maps/Capital/scripts.pory"
 	walk_left
-# 919 "data/maps/Capital/scripts.pory"
+# 917 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 922 "data/maps/Capital/scripts.pory"
+# 920 "data/maps/Capital/scripts.pory"
 Capital_Movement_PlayerMaxieIntro:
-# 923 "data/maps/Capital/scripts.pory"
+# 921 "data/maps/Capital/scripts.pory"
 	walk_down
-# 923 "data/maps/Capital/scripts.pory"
+# 921 "data/maps/Capital/scripts.pory"
 	walk_down
-# 923 "data/maps/Capital/scripts.pory"
+# 921 "data/maps/Capital/scripts.pory"
 	walk_down
 	step_end
 
-# 926 "data/maps/Capital/scripts.pory"
+# 924 "data/maps/Capital/scripts.pory"
 Capital_Movement_PlayerMaxie1:
-# 927 "data/maps/Capital/scripts.pory"
+# 925 "data/maps/Capital/scripts.pory"
 	walk_down
-# 927 "data/maps/Capital/scripts.pory"
+# 925 "data/maps/Capital/scripts.pory"
 	walk_down
-# 928 "data/maps/Capital/scripts.pory"
+# 926 "data/maps/Capital/scripts.pory"
 	walk_right
 	step_end
 
-# 931 "data/maps/Capital/scripts.pory"
+# 929 "data/maps/Capital/scripts.pory"
 Capital_Movement_PlayerMaxie2:
-# 932 "data/maps/Capital/scripts.pory"
+# 930 "data/maps/Capital/scripts.pory"
 	walk_down
-# 932 "data/maps/Capital/scripts.pory"
+# 930 "data/maps/Capital/scripts.pory"
 	walk_down
-# 933 "data/maps/Capital/scripts.pory"
+# 931 "data/maps/Capital/scripts.pory"
 	face_right
 	step_end
 
-# 936 "data/maps/Capital/scripts.pory"
+# 934 "data/maps/Capital/scripts.pory"
 Capital_Movement_PlayerMaxie3:
-# 937 "data/maps/Capital/scripts.pory"
+# 935 "data/maps/Capital/scripts.pory"
 	walk_down
-# 937 "data/maps/Capital/scripts.pory"
+# 935 "data/maps/Capital/scripts.pory"
 	walk_down
-# 938 "data/maps/Capital/scripts.pory"
+# 936 "data/maps/Capital/scripts.pory"
 	face_left
 	step_end
 
-# 941 "data/maps/Capital/scripts.pory"
+# 939 "data/maps/Capital/scripts.pory"
 Capital_Movement_PlayerMaxie4:
-# 942 "data/maps/Capital/scripts.pory"
+# 940 "data/maps/Capital/scripts.pory"
 	walk_down
-# 942 "data/maps/Capital/scripts.pory"
+# 940 "data/maps/Capital/scripts.pory"
 	walk_down
-# 943 "data/maps/Capital/scripts.pory"
+# 941 "data/maps/Capital/scripts.pory"
 	walk_left
 	step_end
 
-# 946 "data/maps/Capital/scripts.pory"
+# 944 "data/maps/Capital/scripts.pory"
 Capital_Movement_Maxie1R:
-# 947 "data/maps/Capital/scripts.pory"
+# 945 "data/maps/Capital/scripts.pory"
 	walk_up
-# 947 "data/maps/Capital/scripts.pory"
+# 945 "data/maps/Capital/scripts.pory"
 	walk_up
-# 948 "data/maps/Capital/scripts.pory"
+# 946 "data/maps/Capital/scripts.pory"
 	face_left
 	step_end
 
-# 951 "data/maps/Capital/scripts.pory"
+# 949 "data/maps/Capital/scripts.pory"
 Capital_Movement_Maxie1L:
-# 952 "data/maps/Capital/scripts.pory"
+# 950 "data/maps/Capital/scripts.pory"
 	walk_up
-# 952 "data/maps/Capital/scripts.pory"
+# 950 "data/maps/Capital/scripts.pory"
 	walk_up
-# 953 "data/maps/Capital/scripts.pory"
+# 951 "data/maps/Capital/scripts.pory"
 	face_right
 	step_end
 
-# 956 "data/maps/Capital/scripts.pory"
+# 954 "data/maps/Capital/scripts.pory"
 Capital_Movement_MaxieE:
-# 957 "data/maps/Capital/scripts.pory"
+# 955 "data/maps/Capital/scripts.pory"
 	walk_up
-# 957 "data/maps/Capital/scripts.pory"
+# 955 "data/maps/Capital/scripts.pory"
 	walk_up
-# 957 "data/maps/Capital/scripts.pory"
+# 955 "data/maps/Capital/scripts.pory"
 	walk_up
-# 957 "data/maps/Capital/scripts.pory"
+# 955 "data/maps/Capital/scripts.pory"
 	walk_up
-# 957 "data/maps/Capital/scripts.pory"
+# 955 "data/maps/Capital/scripts.pory"
 	walk_up
-# 957 "data/maps/Capital/scripts.pory"
+# 955 "data/maps/Capital/scripts.pory"
 	walk_up
 	step_end
 
-# 960 "data/maps/Capital/scripts.pory"
+# 958 "data/maps/Capital/scripts.pory"
 Capital_Movement_Rebel1E:
-# 961 "data/maps/Capital/scripts.pory"
+# 959 "data/maps/Capital/scripts.pory"
 	walk_up
-# 961 "data/maps/Capital/scripts.pory"
+# 959 "data/maps/Capital/scripts.pory"
 	walk_up
-# 961 "data/maps/Capital/scripts.pory"
+# 959 "data/maps/Capital/scripts.pory"
 	walk_up
-# 961 "data/maps/Capital/scripts.pory"
+# 959 "data/maps/Capital/scripts.pory"
 	walk_up
-# 961 "data/maps/Capital/scripts.pory"
+# 959 "data/maps/Capital/scripts.pory"
 	walk_up
-# 962 "data/maps/Capital/scripts.pory"
+# 960 "data/maps/Capital/scripts.pory"
 	walk_right
-# 963 "data/maps/Capital/scripts.pory"
+# 961 "data/maps/Capital/scripts.pory"
 	walk_up
-# 963 "data/maps/Capital/scripts.pory"
+# 961 "data/maps/Capital/scripts.pory"
 	walk_up
-# 963 "data/maps/Capital/scripts.pory"
+# 961 "data/maps/Capital/scripts.pory"
 	walk_up
-# 963 "data/maps/Capital/scripts.pory"
+# 961 "data/maps/Capital/scripts.pory"
 	walk_up
-# 963 "data/maps/Capital/scripts.pory"
+# 961 "data/maps/Capital/scripts.pory"
 	walk_up
 	step_end
 
-# 966 "data/maps/Capital/scripts.pory"
+# 964 "data/maps/Capital/scripts.pory"
 Capital_Movement_Rebel2E:
-# 967 "data/maps/Capital/scripts.pory"
+# 965 "data/maps/Capital/scripts.pory"
 	walk_up
-# 967 "data/maps/Capital/scripts.pory"
+# 965 "data/maps/Capital/scripts.pory"
 	walk_up
-# 967 "data/maps/Capital/scripts.pory"
+# 965 "data/maps/Capital/scripts.pory"
 	walk_up
-# 967 "data/maps/Capital/scripts.pory"
+# 965 "data/maps/Capital/scripts.pory"
 	walk_up
-# 968 "data/maps/Capital/scripts.pory"
+# 966 "data/maps/Capital/scripts.pory"
 	walk_right
-# 969 "data/maps/Capital/scripts.pory"
+# 967 "data/maps/Capital/scripts.pory"
 	walk_up
-# 969 "data/maps/Capital/scripts.pory"
+# 967 "data/maps/Capital/scripts.pory"
 	walk_up
-# 969 "data/maps/Capital/scripts.pory"
+# 967 "data/maps/Capital/scripts.pory"
 	walk_up
-# 969 "data/maps/Capital/scripts.pory"
+# 967 "data/maps/Capital/scripts.pory"
 	walk_up
-# 969 "data/maps/Capital/scripts.pory"
+# 967 "data/maps/Capital/scripts.pory"
 	walk_up
 	step_end
 
-# 972 "data/maps/Capital/scripts.pory"
+# 970 "data/maps/Capital/scripts.pory"
 Capital_Movement_Rebel3E:
-# 973 "data/maps/Capital/scripts.pory"
+# 971 "data/maps/Capital/scripts.pory"
 	walk_up
-# 973 "data/maps/Capital/scripts.pory"
+# 971 "data/maps/Capital/scripts.pory"
 	walk_up
-# 973 "data/maps/Capital/scripts.pory"
+# 971 "data/maps/Capital/scripts.pory"
 	walk_up
-# 973 "data/maps/Capital/scripts.pory"
+# 971 "data/maps/Capital/scripts.pory"
 	walk_up
-# 973 "data/maps/Capital/scripts.pory"
+# 971 "data/maps/Capital/scripts.pory"
 	walk_up
-# 974 "data/maps/Capital/scripts.pory"
+# 972 "data/maps/Capital/scripts.pory"
 	walk_left
-# 975 "data/maps/Capital/scripts.pory"
+# 973 "data/maps/Capital/scripts.pory"
 	walk_up
-# 975 "data/maps/Capital/scripts.pory"
+# 973 "data/maps/Capital/scripts.pory"
 	walk_up
-# 975 "data/maps/Capital/scripts.pory"
+# 973 "data/maps/Capital/scripts.pory"
 	walk_up
-# 975 "data/maps/Capital/scripts.pory"
+# 973 "data/maps/Capital/scripts.pory"
 	walk_up
-# 975 "data/maps/Capital/scripts.pory"
+# 973 "data/maps/Capital/scripts.pory"
 	walk_up
 	step_end
 
-# 978 "data/maps/Capital/scripts.pory"
+# 976 "data/maps/Capital/scripts.pory"
 Capital_Movement_Rebel4E:
-# 979 "data/maps/Capital/scripts.pory"
+# 977 "data/maps/Capital/scripts.pory"
 	walk_up
-# 979 "data/maps/Capital/scripts.pory"
+# 977 "data/maps/Capital/scripts.pory"
 	walk_up
-# 979 "data/maps/Capital/scripts.pory"
+# 977 "data/maps/Capital/scripts.pory"
 	walk_up
-# 979 "data/maps/Capital/scripts.pory"
+# 977 "data/maps/Capital/scripts.pory"
 	walk_up
-# 980 "data/maps/Capital/scripts.pory"
+# 978 "data/maps/Capital/scripts.pory"
 	walk_left
-# 981 "data/maps/Capital/scripts.pory"
+# 979 "data/maps/Capital/scripts.pory"
 	walk_up
-# 981 "data/maps/Capital/scripts.pory"
+# 979 "data/maps/Capital/scripts.pory"
 	walk_up
-# 981 "data/maps/Capital/scripts.pory"
+# 979 "data/maps/Capital/scripts.pory"
 	walk_up
-# 981 "data/maps/Capital/scripts.pory"
+# 979 "data/maps/Capital/scripts.pory"
 	walk_up
-# 981 "data/maps/Capital/scripts.pory"
+# 979 "data/maps/Capital/scripts.pory"
 	walk_up
 	step_end
 
 Capital_Text_DeskTestYes::
-# 984 "data/maps/Capital/scripts.pory"
+# 982 "data/maps/Capital/scripts.pory"
 	.string "Yup you have a follower rn$"
 
 Capital_Text_DeskTestNo::
-# 988 "data/maps/Capital/scripts.pory"
+# 986 "data/maps/Capital/scripts.pory"
 	.string "Nope you aint got a follwer rn$"
 
 Capital_Text_Cicero1::
-# 992 "data/maps/Capital/scripts.pory"
+# 990 "data/maps/Capital/scripts.pory"
 	.string "My god! Giovanni! They're here!$"
 
 Capital_Text_Gio1::
-# 996 "data/maps/Capital/scripts.pory"
+# 994 "data/maps/Capital/scripts.pory"
 	.string "You fool...$"
 
 Capital_Text_Gio2::
-# 1000 "data/maps/Capital/scripts.pory"
+# 998 "data/maps/Capital/scripts.pory"
 	.string "You call yourself a man, old Cicero,\l"
 	.string "shaking and crying at merely the sight\l"
 	.string "of this child? You're can't master your\l"
@@ -1914,67 +1910,67 @@ Capital_Text_Gio2::
 	.string "and resume my title as head of state.$"
 
 Capital_Text_Cicero2::
-# 1004 "data/maps/Capital/scripts.pory"
+# 1002 "data/maps/Capital/scripts.pory"
 	.string "You can't do that! It's treason!$"
 
 Capital_Text_Cicero3::
-# 1008 "data/maps/Capital/scripts.pory"
+# 1006 "data/maps/Capital/scripts.pory"
 	.string "Guards! Treason!$"
 
 Capital_Text_Gio3::
-# 1012 "data/maps/Capital/scripts.pory"
+# 1010 "data/maps/Capital/scripts.pory"
 	.string "You still don't understand there is a\l"
 	.string "new power rising.$"
 
 Capital_Text_Soldier1::
-# 1016 "data/maps/Capital/scripts.pory"
+# 1014 "data/maps/Capital/scripts.pory"
 	.string "We serve Giovanni.$"
 
 Capital_Text_Cicero4::
-# 1020 "data/maps/Capital/scripts.pory"
+# 1018 "data/maps/Capital/scripts.pory"
 	.string "You traitor! Can't you see this is...$"
 
 Capital_Text_Gio4::
-# 1024 "data/maps/Capital/scripts.pory"
+# 1022 "data/maps/Capital/scripts.pory"
 	.string "Enough! Old fool, can't you see this is\l"
 	.string "my hour? Be gone and lament your\l"
 	.string "failures in vain.$"
 
 Capital_Text_Cicero5::
-# 1028 "data/maps/Capital/scripts.pory"
+# 1026 "data/maps/Capital/scripts.pory"
 	.string "You can't do this!$"
 
 Capital_Text_Soldier2::
-# 1032 "data/maps/Capital/scripts.pory"
+# 1030 "data/maps/Capital/scripts.pory"
 	.string "Let's go.$"
 
 Capital_Text_Cicero6::
-# 1036 "data/maps/Capital/scripts.pory"
+# 1034 "data/maps/Capital/scripts.pory"
 	.string "I'm still the president!$"
 
 Capital_Text_Cicero7::
-# 1040 "data/maps/Capital/scripts.pory"
+# 1038 "data/maps/Capital/scripts.pory"
 	.string "I was elected by the senators$"
 
 Capital_Text_Soldier3::
-# 1044 "data/maps/Capital/scripts.pory"
+# 1042 "data/maps/Capital/scripts.pory"
 	.string "We've heard enough of that.$"
 
 Capital_Text_Cicero8::
-# 1048 "data/maps/Capital/scripts.pory"
+# 1046 "data/maps/Capital/scripts.pory"
 	.string "Democracy!$"
 
 Capital_Text_Gio5::
-# 1052 "data/maps/Capital/scripts.pory"
+# 1050 "data/maps/Capital/scripts.pory"
 	.string "You've done well {PLAYER} now you may\l"
 	.string "approach me.$"
 
 Capital_Text_GioMewtwoMove::
-# 1056 "data/maps/Capital/scripts.pory"
+# 1054 "data/maps/Capital/scripts.pory"
 	.string "and stand aside Mewtwo permit he pass$"
 
 Capital_Text_Gio6::
-# 1060 "data/maps/Capital/scripts.pory"
+# 1058 "data/maps/Capital/scripts.pory"
 	.string "You must be powerful to destroy Blaine\l"
 	.string "and find your way to our coronation.\l"
 	.string "I've heard many rumours about you\l"
@@ -1986,65 +1982,65 @@ Capital_Text_Gio6::
 	.string "What will we do?$"
 
 Capital_Text_PlayerJoinGio::
-# 1064 "data/maps/Capital/scripts.pory"
+# 1062 "data/maps/Capital/scripts.pory"
 	.string "Will you surrender to Giovanni?$"
 
 Capital_Text_Gio7Yes::
-# 1068 "data/maps/Capital/scripts.pory"
+# 1066 "data/maps/Capital/scripts.pory"
 	.string "You are more foolish than I had assumed\l"
 	.string "if you believed that I would let you\l"
 	.string "live.$"
 
 Capital_Text_Gio7No::
-# 1072 "data/maps/Capital/scripts.pory"
+# 1070 "data/maps/Capital/scripts.pory"
 	.string "Then your journey ends here you foolish\l"
 	.string "boy.$"
 
 Capital_Text_Gio8::
-# 1076 "data/maps/Capital/scripts.pory"
+# 1074 "data/maps/Capital/scripts.pory"
 	.string "Mewtwo the time has come. Destroy the\l"
 	.string "boy and then put a swift end to this\l"
 	.string "revolt.$"
 
 Capital_Text_Mewtwo1::
-# 1080 "data/maps/Capital/scripts.pory"
+# 1078 "data/maps/Capital/scripts.pory"
 	.string "No.$"
 
 Capital_Text_Gio9::
-# 1084 "data/maps/Capital/scripts.pory"
+# 1082 "data/maps/Capital/scripts.pory"
 	.string "Mewtwo! I command you!$"
 
 Capital_Text_Mewtwo2::
-# 1088 "data/maps/Capital/scripts.pory"
+# 1086 "data/maps/Capital/scripts.pory"
 	.string "I won't obey. I am no slave of yours\l"
 	.string "Giovanni.$"
 
 Capital_Text_Gio10::
-# 1092 "data/maps/Capital/scripts.pory"
+# 1090 "data/maps/Capital/scripts.pory"
 	.string "Mewtwo even you cannot break those\l"
 	.string "cuffs$"
 
 Capital_Text_Mewtwo3::
-# 1096 "data/maps/Capital/scripts.pory"
+# 1094 "data/maps/Capital/scripts.pory"
 	.string "I am MEWTWO and I can break these\l"
 	.string "cuffs.$"
 
 Capital_Text_Gio11::
-# 1100 "data/maps/Capital/scripts.pory"
+# 1098 "data/maps/Capital/scripts.pory"
 	.string "Don't try it!$"
 
 Capital_Text_Mewtwo4::
-# 1104 "data/maps/Capital/scripts.pory"
+# 1102 "data/maps/Capital/scripts.pory"
 	.string "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!$"
 
 Capital_Text_Mewtwo5::
-# 1108 "data/maps/Capital/scripts.pory"
+# 1106 "data/maps/Capital/scripts.pory"
 	.string "At last I take a breath free from those\l"
 	.string "chains. My strength is made ten fold\l"
 	.string "now that I'm free!$"
 
 Capital_Text_Mewtwo6::
-# 1112 "data/maps/Capital/scripts.pory"
+# 1110 "data/maps/Capital/scripts.pory"
 	.string "You're wrong if you think you can\l"
 	.string "control me, you're nothing more than a\l"
 	.string "worthless human. What's more I cannot\l"
@@ -2053,77 +2049,77 @@ Capital_Text_Mewtwo6::
 	.string "and defeat.$"
 
 Capital_Text_Mewtwo7::
-# 1116 "data/maps/Capital/scripts.pory"
+# 1114 "data/maps/Capital/scripts.pory"
 	.string "I'm leaving now. Don't try and follow me.$"
 
 Capital_Text_Gio12::
-# 1120 "data/maps/Capital/scripts.pory"
+# 1118 "data/maps/Capital/scripts.pory"
 	.string "Mewtwo!$"
 
 Capital_Text_GioIntro::
-# 1124 "data/maps/Capital/scripts.pory"
+# 1122 "data/maps/Capital/scripts.pory"
 	.string "You bastard! This is all your fault!\l"
 	.string "Looks like I'll have to deal with you\l"
 	.string "myself...$"
 
 Capital_Text_GioLost::
-# 1128 "data/maps/Capital/scripts.pory"
+# 1126 "data/maps/Capital/scripts.pory"
 	.string "Alas! Fortuna has abandoned me.$"
 
 Capital_Text_GioDefeat::
-# 1132 "data/maps/Capital/scripts.pory"
+# 1130 "data/maps/Capital/scripts.pory"
 	.string "Betrayed, forsaken, and surrounded I\l"
 	.string "am sure to perish on this damned\l"
 	.string "day...My coronation become funeral.$"
 
 Capital_Text_Surge1::
-# 1136 "data/maps/Capital/scripts.pory"
+# 1134 "data/maps/Capital/scripts.pory"
 	.string "My lord!$"
 
 Capital_Text_Surge2::
-# 1140 "data/maps/Capital/scripts.pory"
+# 1138 "data/maps/Capital/scripts.pory"
 	.string "We must evacuate at once! The rebels\l"
 	.string "have...$"
 
 Capital_Text_Gio13::
-# 1144 "data/maps/Capital/scripts.pory"
+# 1142 "data/maps/Capital/scripts.pory"
 	.string "Lieutenant Surge, be done, we're\l"
 	.string "finished here, Mewtwo abandoned us the\l"
 	.string "day is lost...$"
 
 Capital_Text_Surge3::
-# 1148 "data/maps/Capital/scripts.pory"
+# 1146 "data/maps/Capital/scripts.pory"
 	.string "Yes sir, but hope remains.$"
 
 Capital_Text_Surge4::
-# 1152 "data/maps/Capital/scripts.pory"
+# 1150 "data/maps/Capital/scripts.pory"
 	.string "The military remains faithfully\l"
 	.string "obedient to you. If we retreat...if we\l"
 	.string "regroup, return, counterattack, we\l"
 	.string "might...$"
 
 Capital_Text_Gio14::
-# 1156 "data/maps/Capital/scripts.pory"
+# 1154 "data/maps/Capital/scripts.pory"
 	.string "I see no hope in this retreat, only a\l"
 	.string "cowardly delay of death. Mewtwo is\l"
 	.string "gone, we must...$"
 
 Capital_Text_Surge5::
-# 1160 "data/maps/Capital/scripts.pory"
+# 1158 "data/maps/Capital/scripts.pory"
 	.string "We need to leave! I'm going to bring you\l"
 	.string "back to our fort or leave you here to\l"
 	.string "die!$"
 
 Capital_Text_Gio15::
-# 1164 "data/maps/Capital/scripts.pory"
+# 1162 "data/maps/Capital/scripts.pory"
 	.string "OK, lead on.$"
 
 Capital_Text_Maxie1::
-# 1168 "data/maps/Capital/scripts.pory"
+# 1166 "data/maps/Capital/scripts.pory"
 	.string "To vicory and a better new world!$"
 
 Capital_Text_Maxie2::
-# 1172 "data/maps/Capital/scripts.pory"
+# 1170 "data/maps/Capital/scripts.pory"
 	.string "With your help {PLAYER} we've won the\l"
 	.string "capital but Giovanni managed to\l"
 	.string "escape! They must be headed to Fort\l"
@@ -2135,29 +2131,29 @@ Capital_Text_Maxie2::
 	.string "of Fort Montgomery.$"
 
 Capital_Text_Maxie3::
-# 1176 "data/maps/Capital/scripts.pory"
+# 1174 "data/maps/Capital/scripts.pory"
 	.string "And {PLAYER} I must repeat what I\l"
 	.string "just said$"
 
 Capital_Text_Maxie4::
-# 1180 "data/maps/Capital/scripts.pory"
+# 1178 "data/maps/Capital/scripts.pory"
 	.string "To your credit we owe our newborn state\l"
 	.string "and I thank you on behalf of us all.$"
 
 Capital_Text_Maxie5::
-# 1184 "data/maps/Capital/scripts.pory"
+# 1182 "data/maps/Capital/scripts.pory"
 	.string "Now forward to declare our intentions!$"
 
 Capital_Text_SoldierBattle::
-# 1188 "data/maps/Capital/scripts.pory"
+# 1186 "data/maps/Capital/scripts.pory"
 	.string "You must leave now! The senate's\l"
 	.string "underway!$"
 
 Capital_Text_RebelBattle::
-# 1192 "data/maps/Capital/scripts.pory"
+# 1190 "data/maps/Capital/scripts.pory"
 	.string "You'll never win! Freedom will always\l"
 	.string "win!$"
 
 Capital_Text_SurgeBattle::
-# 1196 "data/maps/Capital/scripts.pory"
+# 1194 "data/maps/Capital/scripts.pory"
 	.string "Resistance is futile just give up!$"

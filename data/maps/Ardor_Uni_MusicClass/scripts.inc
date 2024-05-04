@@ -1848,7 +1848,7 @@ Ardor_Uni_MusicClass_EventScript_Test::
 
 Ardor_Uni_MusicClass_Text_ClassIntro::
 # 632 "data/maps/Ardor_Uni_MusicClass/scripts.pory"
-	.string "Salve puer. Magister Gerardus sum.\n"
+	.string "Salve puer. Magister Gerardus sum.\l"
 	.string "Necesse est tibi docere musicam. Musica\l"
 	.string "non ludus est ergo non debes subridere.$"
 

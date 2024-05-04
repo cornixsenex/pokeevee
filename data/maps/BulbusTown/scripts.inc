@@ -100,22 +100,22 @@ BulbusTown_EventScript_Striker2::
 
 BulbusTown_Text_Sailor::
 # 69 "data/maps/BulbusTown/scripts.pory"
-	.string "I'm not working, us sailors went on\n"
+	.string "I'm not working, us sailors went on\l"
 	.string "strike.$"
 
 BulbusTown_Text_Fisherman::
 # 75 "data/maps/BulbusTown/scripts.pory"
-	.string "Hey watch your step, this town is\n"
+	.string "Hey watch your step, this town is\l"
 	.string "sometimes rough.$"
 
 BulbusTown_Text_FightA::
 # 80 "data/maps/BulbusTown/scripts.pory"
-	.string "How dare you speak of my sweet mum\n"
+	.string "How dare you speak of my sweet mum\l"
 	.string "that way?$"
 
 BulbusTown_Text_FightB::
 # 84 "data/maps/BulbusTown/scripts.pory"
-	.string "This town ain't big enough for both of\n"
+	.string "This town ain't big enough for both of\l"
 	.string "us!$"
 
 BulbusTown_Text_ClubSign::
@@ -125,7 +125,7 @@ BulbusTown_Text_ClubSign::
 
 BulbusTown_Text_TownSign::
 # 92 "data/maps/BulbusTown/scripts.pory"
-	.string "Built on the bay, welcome to Bulbus\n"
+	.string "Built on the bay, welcome to Bulbus\l"
 	.string "Town!$"
 
 BulbusTown_Text_Striker1::

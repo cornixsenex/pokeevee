@@ -272,12 +272,12 @@ Route6_Text_PiplupSign::
 
 Route6_Text_SavannaSign::
 # 166 "data/maps/Route6/scripts.pory"
-	.string "Scenes from the savanna! Rhyhorn,\n"
+	.string "Scenes from the savanna! Rhyhorn,\l"
 	.string "Hippopotas, and Luxray$"
 
 Route6_Text_Jesse1::
 # 170 "data/maps/Route6/scripts.pory"
-	.string "We've got you now you god damned\n"
+	.string "We've got you now you god damned\l"
 	.string "pikachu! After we've captured you\l"
 	.string "you'll help us find and then destroy\l"
 	.string "that boy who snuck into the church and\l"
@@ -285,24 +285,24 @@ Route6_Text_Jesse1::
 
 Route6_Text_Meowth1::
 # 174 "data/maps/Route6/scripts.pory"
-	.string "Hey! Not so fast! We've got you\n"
+	.string "Hey! Not so fast! We've got you\l"
 	.string "surrounded!$"
 
 Route6_Text_Jesse2::
 # 178 "data/maps/Route6/scripts.pory"
-	.string "Next time we see that twerp his ass is\n"
+	.string "Next time we see that twerp his ass is\l"
 	.string "toast! With this here pikachu we'll\l"
 	.string "rough him up and win our favor back with\l"
 	.string "our good boss1$"
 
 Route6_Text_Meowth2::
 # 182 "data/maps/Route6/scripts.pory"
-	.string "Hey guys! Isn't that the same twerp\n"
+	.string "Hey guys! Isn't that the same twerp\l"
 	.string "right there?$"
 
 Route6_Text_Jesse3::
 # 186 "data/maps/Route6/scripts.pory"
-	.string "Be quiet you don't know what you're\n"
+	.string "Be quiet you don't know what you're\l"
 	.string "saying! Lets all move out! He must be\l"
 	.string "off this way$"
 
@@ -316,7 +316,7 @@ Route6_Text_SafariMan1::
 
 Route6_Text_SafariMan2::
 # 198 "data/maps/Route6/scripts.pory"
-	.string "You've got to help me find my PIKACHU!\n"
+	.string "You've got to help me find my PIKACHU!\l"
 	.string "About this tall! Yellowish! Sparky thing\l"
 	.string "that was just stolen by two wicked\l"
 	.string "things!$"

@@ -1,6 +1,15 @@
 
-const OBJ_NESTOR = 1
-const OBJ_HECTOR = 17
+const OBJ_NESTOR    = 1
+const OBJ_PARIS     = 2
+const OBJ_HELEN     = 3
+const OBJ_MENELAUS  = 4
+const OBJ_CASTOR    = 5
+const OBJ_POLLUX    = 6
+const OBJ_ULYSSES   = 14
+const OBJ_AGAMEMNON = 15
+const OBJ_AENEAS	= 16
+const OBJ_HECTOR    = 17
+
 
 mapscripts Tucson_MapScripts {
 
@@ -20,10 +29,44 @@ script Tucson_OnTransition {
 	end
 }
 
+//FIX I don't want Helen to face the player unless Helen2 text
+script Tucson_Script_Helen {
+	//By pool with Paris
+	//lock
+	//applymovement (OBJ_HELEN, Common_Movement_FaceRight)
+	//waitmovement (0)
+	//Helen loves Paris and wants her brothers back
+	if (!flag(FLAG_ARGO_COMPLETED_SUCESS) && !flag(FLAG_ARGO_COMPLETED_FAILURE)) {
+		msgbox (Tucson_Text_Helen1)
+		closemessage
+		//faceplayer
+		msgbox (Tucson_Text_Helen2, MSGBOX_NPC)
+	} else {
+		//Helen hopes her father will let her marry Paris Spoken directly to Paris ignores player
+		msgbox (Tucson_Text_Helen3, MSGBOX_NPC)
+	}
+	release
+	end
+}
+
 script Tucson_Script_Nestor {
-	msgbox (Tucson_Text_Nestor_Intro, MSGBOX_NPC)
-	applymovement (OBJ_NESTOR, Common_Movement_FaceDown)
-	waitmovement (0)
+	//I think this script should re-position the guests
+	lock
+	faceplayer	
+	//Preamble
+	if (!flag(FLAG_TUCSON_NESTOR_INTROD)) {
+		msgbox (Tucson_Text_Nestor_Intro, MSGBOX_NPC)
+		setflag (FLAG_TUCSON_NESTOR_INTROD)
+	}
+	//Dioscuri
+	if (!flag(FLAG_ARGO_COMPLETED_SUCESS) && !flag(FLAG_ARGO_COMPLETED_FAILURE)) {
+		//Go find Dioscuri
+		msgbox (Tucson_Text_Nestor1, MSGBOX_NPC)
+	} else {
+		//Thank you for bringing the Dioscuri back
+		msgbox (Tucson_Text_Nestor2, MSGBOX_NPC)
+	}
+	//Headcount - With Castor and Pollux back we have no reason to delay the wedding each of you (Men&Par) summon your closest brother, and your best man and I will announce my decision when the party is gathered. (For tho only one will wed Helen I would you were both as brothers as I hold your both families in the highest regard)
 	end
 }
 
@@ -49,5 +92,17 @@ text Tucson_Text_Nestor2 {
 
 text Tucson_Text_Hector {
 	format("It is a great honor and true privaledge to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
+}
+
+text Tucson_Text_Helen1 {
+	format ("Dear Paris, know these tears that wet my cheecks are shed out of longing for Castor and Pollux. My dear brothers have been away for far too long and I now fear the worst.")
+}
+
+text Tucson_Text_Helen2 {
+	format ("Please leave us be unless you bring us news that Castor and Pollux have returned home.")
+}
+
+text Tucson_Text_Helen3 {
+	format ("Dear Paris I must not have slept last night between my dreams of you and those nightmares which filled my fragile heart up with despair. I pray my father says I'll marry you or never will I be merry again.")
 }
 

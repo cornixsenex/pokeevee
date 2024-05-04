@@ -156,7 +156,7 @@ Route5_Movement_LeafExit2:
 
 Route5_Text_Leaf::
 # 78 "data/maps/Route5/scripts.pory"
-	.string "Good job! You found a way to break the\n"
+	.string "Good job! You found a way to break the\l"
 	.string "rocks now we can travel north and find\l"
 	.string "Indy. This tunnel takes us all the way\l"
 	.string "up north say bye to the fresh air and\l"

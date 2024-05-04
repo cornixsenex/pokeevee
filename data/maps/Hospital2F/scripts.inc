@@ -175,7 +175,7 @@ Hospital2F_EventScript_Stoner_28:
 
 Hospital2F_Text_Stoner1::
 # 102 "data/maps/Hospital2F/scripts.pory"
-	.string "Man...what the FUCK? I been sitting here\n"
+	.string "Man...what the FUCK? I been sitting here\l"
 	.string "waitin God damn nearly 45 minutes and\l"
 	.string "this bitch ass doctors and nurses aint\l"
 	.string "gave me shit yet! Fucking bullshit,\l"
@@ -184,7 +184,7 @@ Hospital2F_Text_Stoner1::
 
 Hospital2F_Text_Stoner2::
 # 106 "data/maps/Hospital2F/scripts.pory"
-	.string "Man...what the FUCK? All this sittin\n"
+	.string "Man...what the FUCK? All this sittin\l"
 	.string "round smokin in the Hospital and shit\l"
 	.string "make a man THIRSTY! Hey you! You know\l"
 	.string "what I mean young family, can you help a\l"
@@ -196,13 +196,13 @@ Hospital2F_Text_Stoner2::
 
 Hospital2F_Text_Stoner3::
 # 110 "data/maps/Hospital2F/scripts.pory"
-	.string "Man...what the FUCK? My lips chapped as\n"
+	.string "Man...what the FUCK? My lips chapped as\l"
 	.string "hell, tongue feel dry as fuck. I need me\l"
 	.string "some LEMONADE and fast...$"
 
 Hospital2F_Text_Stoner4::
 # 114 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? Is you bring me\n"
+	.string "Man..what the FUCK? Is you bring me\l"
 	.string "that LEMONADE I asked for?$"
 
 Hospital2F_Text_Stoner5::
@@ -211,20 +211,20 @@ Hospital2F_Text_Stoner5::
 
 Hospital2F_Text_Stoner6::
 # 122 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? Give me that shit!\n"
+	.string "Man..what the FUCK? Give me that shit!\l"
 	.string "-SLURP- -BURP- -SLURP- Ahhhhh that's\l"
 	.string "some good shit and you know it!$"
 
 Hospital2F_Text_Stoner7::
 # 126 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? You know you ain't\n"
+	.string "Man..what the FUCK? You know you ain't\l"
 	.string "half bad young family. You helped a\l"
 	.string "brother out. Respect. Holler if you in\l"
 	.string "the hood homie.$"
 
 Hospital2F_Text_Stoner8::
 # 130 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? You want me to like\n"
+	.string "Man..what the FUCK? You want me to like\l"
 	.string "forge these documents and shit for\l"
 	.string "you? Damn man what you think I know\l"
 	.string "about that? Well check it out if you\l"
@@ -234,18 +234,18 @@ Hospital2F_Text_Stoner8::
 
 Hospital2F_Text_Stoner9::
 # 134 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? Just bring me some\n"
+	.string "Man..what the FUCK? Just bring me some\l"
 	.string "KIND BUD and I'll get those papers\l"
 	.string "filled out for you.$"
 
 Hospital2F_Text_Stoner10::
 # 138 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? Is that KIND BUD?\n"
+	.string "Man..what the FUCK? Is that KIND BUD?\l"
 	.string "My man did you bring that for me?$"
 
 Hospital2F_Text_Stoner11::
 # 142 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? Yeah, this some\n"
+	.string "Man..what the FUCK? Yeah, this some\l"
 	.string "good shit man! Fuck yeah can't wait to\l"
 	.string "spark this shit up...Here lemme see\l"
 	.string "those forms...Let's see uhh\l"
@@ -256,6 +256,6 @@ Hospital2F_Text_Stoner11::
 
 Hospital2F_Text_Stoner12::
 # 146 "data/maps/Hospital2F/scripts.pory"
-	.string "Man..what the FUCK? How long I gotta be\n"
+	.string "Man..what the FUCK? How long I gotta be\l"
 	.string "waiting for? Least now I got me some\l"
 	.string "KIND BUD to puff on hehehe...$"

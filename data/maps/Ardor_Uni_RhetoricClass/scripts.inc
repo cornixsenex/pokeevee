@@ -63,12 +63,12 @@ Ardor_Uni_RhetoricClass_Text_ClassFinished::
 
 Ardor_Uni_RhetoricClass_Text_Intro::
 # 43 "data/maps/Ardor_Uni_RhetoricClass/scripts.pory"
-	.string "Salve puer. Magister Stephanus sum.\n"
+	.string "Salve puer. Magister Stephanus sum.\l"
 	.string "Necesse est tibi docere oratum.$"
 
 Ardor_Uni_RhetoricClass_Text_RepeatRhetoric::
 # 47 "data/maps/Ardor_Uni_RhetoricClass/scripts.pory"
-	.string "{STR_VAR_1}! Bene dixisti\n"
+	.string "{STR_VAR_1}! Bene dixisti\l"
 	.string "{STR_VAR_1}. Veritas est,\l"
 	.string "{STR_VAR_1}.$"
 

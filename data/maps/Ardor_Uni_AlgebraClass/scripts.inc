@@ -305,7 +305,7 @@ Ardor_Uni_AlgebraClass_EventScript_Student6_2:
 
 Ardor_Uni_AlgebraClass_Text_ClassIntro::
 # 187 "data/maps/Ardor_Uni_AlgebraClass/scripts.pory"
-	.string "Salve puer. Magistra Camilla sum.\n"
+	.string "Salve puer. Magistra Camilla sum.\l"
 	.string "Necesse est tibi docere algebram.\l"
 	.string "Partes algebrae sunt sex: additio,\l"
 	.string "subtractio, multiplicatio, divisio,\l"
@@ -346,26 +346,26 @@ Ardor_Uni_AlgebraClass_Text_Lesson2::
 
 Ardor_Uni_AlgebraClass_Text_Lesson3::
 # 223 "data/maps/Ardor_Uni_AlgebraClass/scripts.pory"
-	.string "Rectangulus cum latitudino XXIX et\n"
+	.string "Rectangulus cum latitudino XXIX et\l"
 	.string "longitudino n tenet area LVIII ergo n\l"
 	.string "est II$"
 
 Ardor_Uni_AlgebraClass_Text_Lesson4::
 # 227 "data/maps/Ardor_Uni_AlgebraClass/scripts.pory"
-	.string "Rectangulus tenet area MMC et\n"
+	.string "Rectangulus tenet area MMC et\l"
 	.string "longitudino V ergo latitudinum\l"
 	.string "rectanguli CDXX est$"
 
 Ardor_Uni_AlgebraClass_Text_Lesson5::
 # 231 "data/maps/Ardor_Uni_AlgebraClass/scripts.pory"
-	.string "i est unitas imaginaria quia\n"
+	.string "i est unitas imaginaria quia\l"
 	.string "rectangulus cum longitudino i et\l"
 	.string "latidudino i tenet aream unum\l"
 	.string "negativum.$"
 
 Ardor_Uni_AlgebraClass_Text_Lesson6::
 # 235 "data/maps/Ardor_Uni_AlgebraClass/scripts.pory"
-	.string "Matrix in mathematice est tabula\n"
+	.string "Matrix in mathematice est tabula\l"
 	.string "numerorum formae rectangularis. Tabula\l"
 	.string "unam tenet numeros quattor: I, V, X, L\l"
 	.string "Tubula dua tenet numeros quattor: V, X,\l"

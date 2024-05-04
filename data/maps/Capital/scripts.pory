@@ -588,12 +588,10 @@ script Capital_EventScript_GioPresident {
 }
 
 script Capital_EventScript_GioSouth {
-	setflag(FLAG_FOLLOWER_ALT_APPROACH)
 	end
 }
 
 script Capital_EventScript_GioApproach {
-	clearflag(FLAG_FOLLOWER_ALT_APPROACH)
 	end
 }
 

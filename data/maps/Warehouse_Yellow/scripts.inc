@@ -54,7 +54,7 @@ Warehouse_Yellow_EventScript_TrainerYellow1::
 
 Warehouse_Yellow_Text_Yellow5Intro::
 # 39 "data/maps/Warehouse_Yellow/scripts.pory"
-	.string "What you want skinny? Where's your\n"
+	.string "What you want skinny? Where's your\l"
 	.string "girl?$"
 
 Warehouse_Yellow_Text_Yellow5Lost::
@@ -99,12 +99,12 @@ Warehouse_Yellow_Text_Yellow2Lost::
 
 Warehouse_Yellow_Text_Yellow2Post::
 # 83 "data/maps/Warehouse_Yellow/scripts.pory"
-	.string "I need to get my wisdom tooth pulled\n"
+	.string "I need to get my wisdom tooth pulled\l"
 	.string "out. It hurts bad!$"
 
 Warehouse_Yellow_Text_Yellow1Intro::
 # 87 "data/maps/Warehouse_Yellow/scripts.pory"
-	.string "You came from sidewalks. We're from\n"
+	.string "You came from sidewalks. We're from\l"
 	.string "streets.$"
 
 Warehouse_Yellow_Text_Yellow1Lost::

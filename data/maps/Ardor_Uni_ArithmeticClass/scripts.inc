@@ -305,7 +305,7 @@ Ardor_Uni_ArithmeticClass_EventScript_Student6_2:
 
 Ardor_Uni_ArithmeticClass_Text_ClassIntro::
 # 186 "data/maps/Ardor_Uni_ArithmeticClass/scripts.pory"
-	.string "Salve puer. Magistra Sadia sum. Necesse\n"
+	.string "Salve puer. Magistra Sadia sum. Necesse\l"
 	.string "est tibi docere arithmeticam. Partes\l"
 	.string "arithmeticae sunt sex: additio,\l"
 	.string "subtractio, multiplicatio, divisio,\l"
@@ -338,24 +338,24 @@ Ardor_Uni_ArithmeticClass_Text_Student6::
 
 Ardor_Uni_ArithmeticClass_Text_Lesson1::
 # 214 "data/maps/Ardor_Uni_ArithmeticClass/scripts.pory"
-	.string "Additio est operatio arithmetica qua\n"
+	.string "Additio est operatio arithmetica qua\l"
 	.string "summa numerorum quantitatumve\l"
 	.string "quarundam describitur.$"
 
 Ardor_Uni_ArithmeticClass_Text_Lesson2::
 # 218 "data/maps/Ardor_Uni_ArithmeticClass/scripts.pory"
-	.string "Subtractio est operatio arithmetica\n"
+	.string "Subtractio est operatio arithmetica\l"
 	.string "contraria additio. Subtractio est\l"
 	.string "additio numeri negativi.$"
 
 Ardor_Uni_ArithmeticClass_Text_Lesson3::
 # 222 "data/maps/Ardor_Uni_ArithmeticClass/scripts.pory"
-	.string "Multiplicatio operatio arithmetica est\n"
+	.string "Multiplicatio operatio arithmetica est\l"
 	.string "inversa divisio.$"
 
 Ardor_Uni_ArithmeticClass_Text_Lesson4::
 # 226 "data/maps/Ardor_Uni_ArithmeticClass/scripts.pory"
-	.string "Divisio est operatio quae numerum in\n"
+	.string "Divisio est operatio quae numerum in\l"
 	.string "partes aequales dividit.$"
 
 Ardor_Uni_ArithmeticClass_Text_Lesson5::
@@ -364,7 +364,7 @@ Ardor_Uni_ArithmeticClass_Text_Lesson5::
 
 Ardor_Uni_ArithmeticClass_Text_Lesson6::
 # 234 "data/maps/Ardor_Uni_ArithmeticClass/scripts.pory"
-	.string "Radicis extractio significat\n"
+	.string "Radicis extractio significat\l"
 	.string "aequationem solvere cuius forma est\l"
 	.string "(n)(n) = x.$"
 

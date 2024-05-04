@@ -101,5 +101,5 @@ Route15_DesertCave_EventScript_OpenDoor::
 
 Route15_DesertCave_Text_ShowOpenDoor::
 # 60 "data/maps/Route15_DesertCave/scripts.pory"
-	.string "Oh! The ANCIENT LAMP begins to shake\n"
+	.string "Oh! The ANCIENT LAMP begins to shake\l"
 	.string "and glow!$"

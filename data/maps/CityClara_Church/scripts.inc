@@ -2288,7 +2288,7 @@ CityClara_Church_Movement_SageCenter:
 
 CityClara_Church_Text_Sage1::
 # 1074 "data/maps/CityClara_Church/scripts.pory"
-	.string "I beg of you, please, stop what you're\n"
+	.string "I beg of you, please, stop what you're\l"
 	.string "doing.$"
 
 CityClara_Church_Text_Blaine1::
@@ -2297,12 +2297,12 @@ CityClara_Church_Text_Blaine1::
 
 CityClara_Church_Text_Sage2::
 # 1082 "data/maps/CityClara_Church/scripts.pory"
-	.string "You must be stopped, you know not what\n"
+	.string "You must be stopped, you know not what\l"
 	.string "you do.$"
 
 CityClara_Church_Text_Blaine2::
 # 1086 "data/maps/CityClara_Church/scripts.pory"
-	.string "I know exactly what I have achieved,\n"
+	.string "I know exactly what I have achieved,\l"
 	.string "with this new power we will not be\l"
 	.string "stopped. If foolishly you will never\l"
 	.string "submit to the authority of our party\l"
@@ -2310,7 +2310,7 @@ CityClara_Church_Text_Blaine2::
 
 CityClara_Church_Text_Sage3::
 # 1092 "data/maps/CityClara_Church/scripts.pory"
-	.string "Unhand me I am Mew's true suppliant!\n"
+	.string "Unhand me I am Mew's true suppliant!\l"
 	.string "The foundations of this city were built\l"
 	.string "on solid rock of our worship of Mew. One\l"
 	.string "thousand years we cultivated art,\l"
@@ -2322,7 +2322,7 @@ CityClara_Church_Text_Sage3::
 
 CityClara_Church_Text_Blaine3::
 # 1096 "data/maps/CityClara_Church/scripts.pory"
-	.string "You speak of foolish pride most\n"
+	.string "You speak of foolish pride most\l"
 	.string "narrowly your sad devotion to this\l"
 	.string "religion has not helped you amass a\l"
 	.string "massive worth nor given you the\l"
@@ -2335,14 +2335,14 @@ CityClara_Church_Text_Blaine3::
 
 CityClara_Church_Text_Blaine4::
 # 1103 "data/maps/CityClara_Church/scripts.pory"
-	.string "No where to run now Mew we have you\n"
+	.string "No where to run now Mew we have you\l"
 	.string "trapped. I now will demonstrate our\l"
 	.string "victory. The party truly has suprassed\l"
 	.string "the gods.$"
 
 CityClara_Church_Text_Blaine5::
 # 1107 "data/maps/CityClara_Church/scripts.pory"
-	.string "Today we defeated superstition and\n"
+	.string "Today we defeated superstition and\l"
 	.string "proudly declare this the age of man!\l"
 	.string "Throwing a yoke on this defeated god\l"
 	.string "shall empower us to design our fate.\l"
@@ -2354,7 +2354,7 @@ CityClara_Church_Text_Blaine5::
 
 CityClara_Church_Text_Blaine6::
 # 1111 "data/maps/CityClara_Church/scripts.pory"
-	.string "What's that? How did this rat mouse his\n"
+	.string "What's that? How did this rat mouse his\l"
 	.string "way here? Who was watching the doors?$"
 
 CityClara_Church_Text_Blaine7::
@@ -2363,12 +2363,12 @@ CityClara_Church_Text_Blaine7::
 
 CityClara_Church_Text_Meowth::
 # 1119 "data/maps/CityClara_Church/scripts.pory"
-	.string "We're right here boss. And don't forget\n"
+	.string "We're right here boss. And don't forget\l"
 	.string "Meowth!$"
 
 CityClara_Church_Text_Blaine8::
 # 1123 "data/maps/CityClara_Church/scripts.pory"
-	.string "You have both failed me look what you\n"
+	.string "You have both failed me look what you\l"
 	.string "let in! We must away, you two clean up\l"
 	.string "this mess. Rockets forward! March\l"
 	.string "onward to the stars!$"
@@ -2379,12 +2379,12 @@ CityClara_Church_Text_JesseAndJamesIntro::
 
 CityClara_Text_JesseAndJamesLost::
 # 1131 "data/maps/CityClara_Church/scripts.pory"
-	.string "I can't believe it! How did this twerp\n"
+	.string "I can't believe it! How did this twerp\l"
 	.string "win?$"
 
 CityClara_Church_Text_JesseAndJamesPost::
 # 1135 "data/maps/CityClara_Church/scripts.pory"
-	.string "Looks like Team Rocket's blasting off\n"
+	.string "Looks like Team Rocket's blasting off\l"
 	.string "again!$"
 
 CityClara_Church_Text_BlaineIntro::
@@ -2401,18 +2401,18 @@ CityClara_Church_Text_BlainePost::
 
 CityClara_Church_Text_Leaf1::
 # 1151 "data/maps/CityClara_Church/scripts.pory"
-	.string "Hey {PLAYER}! C'mon! Why didn't you\n"
+	.string "Hey {PLAYER}! C'mon! Why didn't you\l"
 	.string "wait up? And where is everyone!? And\l"
 	.string "hey! Where's MEW?$"
 
 CityClara_Church_Text_Dad1::
 # 1155 "data/maps/CityClara_Church/scripts.pory"
-	.string "Thank Mew you're both alright! The\n"
+	.string "Thank Mew you're both alright! The\l"
 	.string "Rockets have...$"
 
 CityClara_Church_Text_Leaf2::
 # 1159 "data/maps/CityClara_Church/scripts.pory"
-	.string "What's going on? Where's Mew? And who is\n"
+	.string "What's going on? Where's Mew? And who is\l"
 	.string "this?$"
 
 CityClara_Church_Text_Dad2::
@@ -2421,7 +2421,7 @@ CityClara_Church_Text_Dad2::
 
 CityClara_Church_Text_Sage4::
 # 1167 "data/maps/CityClara_Church/scripts.pory"
-	.string "My name is Lamina, I serve the church\n"
+	.string "My name is Lamina, I serve the church\l"
 	.string "where for one thousand years we've\l"
 	.string "worshipped Mew. Today that wicked man\l"
 	.string "of pure evil has somehow found a way to\l"
@@ -2435,7 +2435,7 @@ CityClara_Church_Text_Sage4::
 
 CityClara_Church_Text_Dad3::
 # 1171 "data/maps/CityClara_Church/scripts.pory"
-	.string "But can't you see they just used you as\n"
+	.string "But can't you see they just used you as\l"
 	.string "bait? This sanctuary was allowed to\l"
 	.string "stand so that Mew would be lured back\l"
 	.string "to appear! As soon as party men had\l"
@@ -2445,7 +2445,7 @@ CityClara_Church_Text_Dad3::
 
 CityClara_Church_Text_Sage5::
 # 1175 "data/maps/CityClara_Church/scripts.pory"
-	.string "I would never imagine what they'll do\n"
+	.string "I would never imagine what they'll do\l"
 	.string "but now I fear the worst. They might\l"
 	.string "exploit somehow the powerful nature of\l"
 	.string "Mew and with that power work wicked\l"
@@ -2454,7 +2454,7 @@ CityClara_Church_Text_Sage5::
 
 CityClara_Church_Text_Dad4::
 # 1179 "data/maps/CityClara_Church/scripts.pory"
-	.string "The party is extremely powerful, and I\n"
+	.string "The party is extremely powerful, and I\l"
 	.string "should know I faught them in the war. I\l"
 	.string "watched so many of our best men die,\l"
 	.string "those of us still alive were forced to\l"
@@ -2464,7 +2464,7 @@ CityClara_Church_Text_Dad4::
 
 CityClara_Church_Text_Sage6::
 # 1183 "data/maps/CityClara_Church/scripts.pory"
-	.string "Do not speak of defeat, good shall\n"
+	.string "Do not speak of defeat, good shall\l"
 	.string "prevail. The party now has grown too\l"
 	.string "arrogant, there are forces at work\l"
 	.string "beyond ourselves, and this supurbly\l"
@@ -2472,7 +2472,7 @@ CityClara_Church_Text_Sage6::
 
 CityClara_Church_Text_Dad5::
 # 1187 "data/maps/CityClara_Church/scripts.pory"
-	.string "Of course! How could I not notice\n"
+	.string "Of course! How could I not notice\l"
 	.string "before? This kid, this {PLAYER} will\l"
 	.string "defeat the party! But {PLAYER}\l"
 	.string "cannot defeat them all alone, we need\l"
@@ -2482,7 +2482,7 @@ CityClara_Church_Text_Dad5::
 
 CityClara_Church_Text_Dad6::
 # 1191 "data/maps/CityClara_Church/scripts.pory"
-	.string "I think I know someone who just might\n"
+	.string "I think I know someone who just might\l"
 	.string "help. You should {PLAYER} travel\l"
 	.string "north to the desert and there seek out\l"
 	.string "the university. It stands in the\l"
@@ -2495,7 +2495,7 @@ CityClara_Church_Text_Dad6::
 
 CityClara_Church_Text_Sage7::
 # 1195 "data/maps/CityClara_Church/scripts.pory"
-	.string "This journey will be long, and arduous. I\n"
+	.string "This journey will be long, and arduous. I\l"
 	.string "wish to help you on your fated quest.\l"
 	.string "Please take one of our ancient holy\l"
 	.string "stones. These jewels have been kept\l"
@@ -2506,13 +2506,13 @@ CityClara_Church_Text_Sage7::
 
 CityClara_Church_Text_Sage8::
 # 1199 "data/maps/CityClara_Church/scripts.pory"
-	.string "The fate of all the world now rests with\n"
+	.string "The fate of all the world now rests with\l"
 	.string "you, go forth young {PLAYER} and know\l"
 	.string "you have our faith.$"
 
 CityClara_Church_Text_Dad7::
 # 1203 "data/maps/CityClara_Church/scripts.pory"
-	.string "That's right {PLAYER} you know I\n"
+	.string "That's right {PLAYER} you know I\l"
 	.string "believe in you. So Leaf what say you we\l"
 	.string "be on our way back to the club in order\l"
 	.string "to protect in case any Rockets should\l"
@@ -2520,7 +2520,7 @@ CityClara_Church_Text_Dad7::
 
 CityClara_Church_Text_Leaf3::
 # 1207 "data/maps/CityClara_Church/scripts.pory"
-	.string "I'm sorry father, I cannot obey. I'm\n"
+	.string "I'm sorry father, I cannot obey. I'm\l"
 	.string "going to Ardor along with {PLAYER}.\l"
 	.string "Someone needs to make sure that he\l"
 	.string "stays safe, and we can have some fun\l"
@@ -2528,25 +2528,25 @@ CityClara_Church_Text_Leaf3::
 
 CityClara_Church_Text_Dad8::
 # 1211 "data/maps/CityClara_Church/scripts.pory"
-	.string "That's fine with me, you know I love you\n"
+	.string "That's fine with me, you know I love you\l"
 	.string "Leaf. If anyone needs me, go to the\l"
 	.string "club.$"
 
 CityClara_Church_Text_Leaf4::
 # 1215 "data/maps/CityClara_Church/scripts.pory"
-	.string "Let's do it {PLAYER} we'll have\n"
+	.string "Let's do it {PLAYER} we'll have\l"
 	.string "eachother's backs! I think we should\l"
 	.string "start by taking Route 4. I'll meet you\l"
 	.string "somewhere up in Robustus.$"
 
 CityClara_Church_Text_Sage9::
 # 1219 "data/maps/CityClara_Church/scripts.pory"
-	.string "Good luck {PLAYER} and may you soon\n"
+	.string "Good luck {PLAYER} and may you soon\l"
 	.string "rescue Mew.$"
 
 CityClara_Church_Text_GiveFireStone::
 # 1223 "data/maps/CityClara_Church/scripts.pory"
-	.string "This Fire Stone will give you great\n"
+	.string "This Fire Stone will give you great\l"
 	.string "power. Be cautious that you don't allow\l"
 	.string "your strength to overcome your wits, or\l"
 	.string "to enrage you while you battle. You\l"
@@ -2555,7 +2555,7 @@ CityClara_Church_Text_GiveFireStone::
 
 CityClara_Church_Text_GiveWaterStone::
 # 1227 "data/maps/CityClara_Church/scripts.pory"
-	.string "This Water Stone will help you on your\n"
+	.string "This Water Stone will help you on your\l"
 	.string "quest. Across the open seas, and under\l"
 	.string "hills, this stone will safeguard you on\l"
 	.string "your journey. Is this the stone you're\l"
@@ -2563,7 +2563,7 @@ CityClara_Church_Text_GiveWaterStone::
 
 CityClara_Church_Text_GiveThunderStone::
 # 1231 "data/maps/CityClara_Church/scripts.pory"
-	.string "This Thunder Stone shall bring you\n"
+	.string "This Thunder Stone shall bring you\l"
 	.string "victory. Neither reckless, nor too\l"
 	.string "cautionary, you must remain to harness\l"
 	.string "thunderbolts. Are you prepared to hold\l"
@@ -2571,7 +2571,7 @@ CityClara_Church_Text_GiveThunderStone::
 
 CityClara_Church_Text_GiveNoneStone::
 # 1235 "data/maps/CityClara_Church/scripts.pory"
-	.string "You are most noble for your age young\n"
+	.string "You are most noble for your age young\l"
 	.string "{PLAYER}. The stone could have given\l"
 	.string "you great power but if you don't want\l"
 	.string "it, I'll keep them safe. Are you certain\l"
@@ -2579,7 +2579,7 @@ CityClara_Church_Text_GiveNoneStone::
 
 CityClara_Church_Text_TakeStone::
 # 1239 "data/maps/CityClara_Church/scripts.pory"
-	.string "May Mew allow this stone to give you\n"
+	.string "May Mew allow this stone to give you\l"
 	.string "strength!$"
 
 CityClara_Church_Text_DenyStone::
@@ -2588,7 +2588,7 @@ CityClara_Church_Text_DenyStone::
 
 CityClara_Church_Text_SageAfterMew::
 # 1247 "data/maps/CityClara_Church/scripts.pory"
-	.string "Be on your way {PLAYER} you must\n"
+	.string "Be on your way {PLAYER} you must\l"
 	.string "rescue Mew.$"
 
 CityClara_Church_Text_ERROR::

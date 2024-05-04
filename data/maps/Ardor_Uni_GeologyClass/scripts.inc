@@ -953,12 +953,12 @@ Ardor_Uni_Text_TestIntro::
 
 Ardor_Uni_GeologyClass_Text_FossilMachine::
 # 451 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "It's a machine used to ressurect fossil\n"
+	.string "It's a machine used to ressurect fossil\l"
 	.string "{PKMN}.$"
 
 Ardor_Uni_GeologyClass_Text_NextTime::
 # 455 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "Better come back later with more\n"
+	.string "Better come back later with more\l"
 	.string "fossils to ressurect.$"
 
 Ardor_Uni_GeologyClass_Text_FossilYN::
@@ -967,27 +967,27 @@ Ardor_Uni_GeologyClass_Text_FossilYN::
 
 Ardor_Uni_GeologyClass_Text_GiveFossil::
 # 463 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "{PLAYER} put the {STR_VAR_1} into\n"
+	.string "{PLAYER} put the {STR_VAR_1} into\l"
 	.string "the machine.$"
 
 Ardor_Uni_GeologyClass_Text_ObtainedPokemon::
 # 467 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "{PLAYER} received {STR_VAR_2}\n"
+	.string "{PLAYER} received {STR_VAR_2}\l"
 	.string "from the machine.$"
 
 Ardor_Uni_GeologyClass_Text_NoFossil::
 # 471 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "{PLAYER} does not have any\n"
+	.string "{PLAYER} does not have any\l"
 	.string "{STR_VAR_1}!$"
 
 Ardor_Uni_GeologyClass_Text_WhichFossil::
 # 475 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "Which type of fossil will you put into\n"
+	.string "Which type of fossil will you put into\l"
 	.string "the machine?$"
 
 Ardor_Uni_GeologyClass_Text_ClassFinished::
 # 479 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "Congratulatio! Iam studuisti Geologiam.\n"
+	.string "Congratulatio! Iam studuisti Geologiam.\l"
 	.string "Usa machinam quando volas.$"
 
 Ardor_Uni_GeologyClass_Text_TeacherBattleLost::
@@ -996,7 +996,7 @@ Ardor_Uni_GeologyClass_Text_TeacherBattleLost::
 
 Ardor_Uni_GeologyClass_Text_Test::
 # 487 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "Revenisti cum monstro lapidis et\n"
+	.string "Revenisti cum monstro lapidis et\l"
 	.string "monstro telluris!$"
 
 Ardor_Uni_GeologyClass_Text_BringGroundType::
@@ -1009,7 +1009,7 @@ Ardor_Uni_GeologyClass_Text_BringRockType::
 
 Ardor_Uni_GeologyClass_Text_ClassIntro::
 # 499 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "Salve puer. Magister Patricius sum.\n"
+	.string "Salve puer. Magister Patricius sum.\l"
 	.string "Necesse est tibi docere scientiam\l"
 	.string "geologiae. Geologia studium est lapidum\l"
 	.string "et tellurum.$"

@@ -115,7 +115,7 @@ Ardor_Uni_ArtClass_EventScript_Test::
 
 Ardor_Uni_ArtClass_Text_BeginArt::
 # 72 "data/maps/Ardor_Uni_ArtClass/scripts.pory"
-	.string "Salve puer. Magistra Gina sum. Necesse\n"
+	.string "Salve puer. Magistra Gina sum. Necesse\l"
 	.string "est pingere. Praestasne pingere?$"
 
 Ardor_Uni_ArtClass_Text_ReturnSoon::

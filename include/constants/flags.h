@@ -83,8 +83,8 @@
 #define FLAG_VEGAS_POWERON   0x42 // Set after PowerPlant fixed, controls generator metatiles
 #define FLAG_FRAT_LEAF    0x43 // Set after Indy leaves pyramids 
 #define FLAG_PYRAMIDS_INDY    0x44 // Set after defeating at the Pyramids. Hides Indy at the pyramid AND Leaf on Uni2F
-#define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Unused Flag
-#define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Unused Flag
+#define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Spelling error lol; also does what it says
+#define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Does what it says
 #define FLAG_RECEIVED_FLASH    0x47 // Set after owner gives you hm05 in the hotel 1F
 #define FLAG_PYRAMIDS_HIDEMAXIE    0x48 // Should start set, clear when the battle begins in Archaeology class and then set again after Maxie enters the Dark Cave
 #define FLAG_RECEIVED_CARD_KEY    0x49 // Set after Card Key is taken in Rocket Tower, hides the pokeball as well
@@ -102,7 +102,7 @@
 #define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
 #define FLAG_SLABS_HIDE_RIVAL                0x52
 #define FLAG_BEACHCAVE_HIDE_HECTOR           0x53  // Set after talk to hector W/ wedding invitation. Hides Hector in beach cave (and shows hector in Tuscon?) 
-#define FLAG_FOLLOWER_ALT_APPROACH           0x54  // UNUSED !!!!!
+#define FLAG_TUCSON_NESTOR_INTROD            0x54  // Set after speaking with Tucson Nestor one time
 #define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
 #define FLAG_WHJ_OPEN                        0x56  // Set when allowed into WHJ 					
 #define FLAG_GATOCITYS_HIDEM1             	 0x57  // Hides M1 in line...should be an easier way but this is expedient.
@@ -204,8 +204,8 @@
 
 										////REMOVED FLAGS :)
 
-//#define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
-//#define FLAG_RECEIVED_HM_STRENGTH            0x6A
+#define FLAG_ARGO_COMPLETED_SUCESS             0x69
+#define FLAG_ARGO_COMPLETED_FAILURE            0x6A
 //#define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
 //#define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
 //#define FLAG_RECEIVED_HM_FLASH               0x6D

@@ -252,7 +252,7 @@ Ardor_Uni_GeometryClass_EventScript_Student4_5:
 
 Ardor_Uni_GeometryClass_Text_ClassIntro::
 # 158 "data/maps/Ardor_Uni_GeometryClass/scripts.pory"
-	.string "Salve puer! Magister Jefferson novus\n"
+	.string "Salve puer! Magister Jefferson novus\l"
 	.string "sum. Iam non docui geometriam sed\l"
 	.string "necesse est tibi docere geometriam.\l"
 	.string "Numerus formarum facilium est quattor:\l"
@@ -297,7 +297,7 @@ Ardor_Uni_GeometryClass_Text_TeacherBattleLost::
 
 Ardor_Uni_GeometryClass_Text_ClassFinished::
 # 198 "data/maps/Ardor_Uni_GeometryClass/scripts.pory"
-	.string "Congratulatio! Iam studuisti\n"
+	.string "Congratulatio! Iam studuisti\l"
 	.string "geometriam.$"
 
 Ardor_Uni_GeometryClass_Text_TestBegin::
@@ -306,22 +306,22 @@ Ardor_Uni_GeometryClass_Text_TestBegin::
 
 Ardor_Uni_GeometryClass_Text_Lesson1::
 # 206 "data/maps/Ardor_Uni_GeometryClass/scripts.pory"
-	.string "Linea est forma cum longitudine, sed\n"
+	.string "Linea est forma cum longitudine, sed\l"
 	.string "latitudine expers.$"
 
 Ardor_Uni_GeometryClass_Text_Lesson2::
 # 210 "data/maps/Ardor_Uni_GeometryClass/scripts.pory"
-	.string "Triangulum est figura geometrica plana\n"
+	.string "Triangulum est figura geometrica plana\l"
 	.string "cui sunt tria latera et tres anguli.$"
 
 Ardor_Uni_GeometryClass_Text_Lesson3::
 # 214 "data/maps/Ardor_Uni_GeometryClass/scripts.pory"
-	.string "Quadrum est rectangulum cui sunt\n"
+	.string "Quadrum est rectangulum cui sunt\l"
 	.string "quattuor latera aequalis longitudinis.$"
 
 Ardor_Uni_GeometryClass_Text_Lesson4::
 # 218 "data/maps/Ardor_Uni_GeometryClass/scripts.pory"
-	.string "Circulus est forma, quae ex punctis in\n"
+	.string "Circulus est forma, quae ex punctis in\l"
 	.string "plano descriptis constat quae pari\l"
 	.string "intervallo, quod radius (r) vocatur, a\l"
 	.string "dato puncto, centro appellato, distant.$"
