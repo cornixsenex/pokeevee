@@ -24,33 +24,29 @@ Tucson_OnTransition_2:
 
 
 Tucson_Script_Helen::
-# 34 "data/maps/Tucson/scripts.pory"
-	lock
-# 35 "data/maps/Tucson/scripts.pory"
-	applymovement 3, Common_Movement_FaceRight
-# 36 "data/maps/Tucson/scripts.pory"
-	waitmovement 0
-# 38 "data/maps/Tucson/scripts.pory"
+# 37 "data/maps/Tucson/scripts.pory"
 	goto_if_unset FLAG_ARGO_COMPLETED_SUCESS, Tucson_Script_Helen_4
 Tucson_Script_Helen_3:
 # 45 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Helen3, MSGBOX_NPC
+	msgbox Tucson_Text_Helen3, MSGBOX_SIGN
 Tucson_Script_Helen_1:
 # 47 "data/maps/Tucson/scripts.pory"
 	release
 	end
 
 Tucson_Script_Helen_2:
-# 39 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Helen1
+# 38 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Helen1, MSGBOX_SIGN
 # 40 "data/maps/Tucson/scripts.pory"
-	closemessage
-# 42 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Helen2, MSGBOX_NPC
+# 41 "data/maps/Tucson/scripts.pory"
+	applymovement 3, Common_Movement_FaceRight
+# 42 "data/maps/Tucson/scripts.pory"
+	waitmovement 0
 	goto Tucson_Script_Helen_1
 
 Tucson_Script_Helen_4:
-# 38 "data/maps/Tucson/scripts.pory"
+# 37 "data/maps/Tucson/scripts.pory"
 	goto_if_unset FLAG_ARGO_COMPLETED_FAILURE, Tucson_Script_Helen_2
 	goto Tucson_Script_Helen_3
 
@@ -133,11 +129,13 @@ Tucson_Text_Hector::
 
 Tucson_Text_Helen1::
 # 96 "data/maps/Tucson/scripts.pory"
-	.string "Dear Paris, know these tears that wet\l"
-	.string "my cheecks are shed out of longing for\l"
-	.string "Castor and Pollux. My dear brothers\l"
-	.string "have been away for far too long and I\l"
-	.string "now fear the worst.$"
+	.string "Despite the radiant glow of your face\l"
+	.string "my heart still shivers cold, I'm\l"
+	.string "trembling. Dear Paris, know these tears\l"
+	.string "that wet my cheecks are shed out of\l"
+	.string "longing for Castor and Pollux. My dear\l"
+	.string "brothers have been away for far too\l"
+	.string "long and I now fear the worst.$"
 
 Tucson_Text_Helen2::
 # 100 "data/maps/Tucson/scripts.pory"
