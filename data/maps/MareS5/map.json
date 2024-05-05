@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS5_EventScript_Argo",
-      "flag": "0"
+      "flag": "FLAG_MARES5_HIDE_ARGO"
     }
   ],
   "warp_events": [

@@ -5,11 +5,6 @@ mapscripts MareS5_MapScripts {}
 
 
 
-
-
-
-
-
 script MareS5_EventScript_Argo {
 	lockall
 	applymovement (OBJ_EVENT_ARGO, Common_Movement_ExclamationMark)

@@ -3,23 +3,49 @@ Argo_MapScripts::
 
 
 Argo_EventScript_ExitWarp::
-# 5 "data/maps/Argo/scripts.pory"
-	lock
-# 6 "data/maps/Argo/scripts.pory"
-	warpsilent MAP_MARE_S5, 45, 43
-# 7 "data/maps/Argo/scripts.pory"
-	waitstate
 # 8 "data/maps/Argo/scripts.pory"
+	lock
+# 9 "data/maps/Argo/scripts.pory"
+	warpsilent MAP_MARE_S5, 45, 43
+# 10 "data/maps/Argo/scripts.pory"
+	waitstate
+# 11 "data/maps/Argo/scripts.pory"
 	release
 	end
 
 
-Argo_EventScript_Jason::
-# 14 "data/maps/Argo/scripts.pory"
+Argo_Script_Castor::
+	end
+
+
+Argo_Script_Pollux::
+	end
+
+
+Argo_Script_Theseus::
+	end
+
+
+Argo_Script_Orpheus::
+	end
+
+
+Argo_Script_Philoctetes::
+# 36 "data/maps/Argo/scripts.pory"
 	lock
-# 15 "data/maps/Argo/scripts.pory"
+# 37 "data/maps/Argo/scripts.pory"
 	faceplayer
-# 17 "data/maps/Argo/scripts.pory"
+# 40 "data/maps/Argo/scripts.pory"
+	release
+	end
+
+
+Argo_Script_Jason::
+# 45 "data/maps/Argo/scripts.pory"
+	lock
+# 46 "data/maps/Argo/scripts.pory"
+	faceplayer
+# 49 "data/maps/Argo/scripts.pory"
 	release
 	end
 

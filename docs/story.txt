@@ -983,7 +983,7 @@ Menelaus				: Maniac
 Paris / Alexander		: Man 2
 Castor					: Youngster
 Pollux					: Youngster
-Jason 					: Archie?
+Jason 					: Archie
 Theseus					: Man 3
 Orpheus					: Artist
 Philoctetes				: Oak
@@ -1060,6 +1060,15 @@ Cherubin
 shades
 Furies
 
+Prometheus' Eagle
+Fleece Guardian
+Scylla
+Sphynx
+Hydra
+Minotaur
+Cherubim
+Ceberus
+
 
 	*** GREEK MYTHOLOGY START***
 
@@ -1076,11 +1085,17 @@ Furies
 		>Lost at sea (here enter player) - Orpheus
 		>Map of Colchis (Map of Hawaii)
 			>On Toursist Beach, Oahu, a street vendor sells trinkets like 'ancient map of the islands' which shows Colchis
-		Argo sails to Cave of Colchis
-		>Wall wille not open
+		>give Jason MAP
+		>swear Argo oath / you're an argonaut
+		>back to MareS5
+		>Briney Boat to BigIslandDocks
+		>Madness snakes(?) lose Philoctetes (First Heracles, now Philoctetes as well)
+		>Discover wall is shut
+		>Jason sends you out to discover more about the wall, or find Philoctetes
+		>Shipwrecked / homeless / island castouts hint about Prometheus (in exchange for something)
+		>Ascend Mt. Whatever and encounter Colchians in pyramid (very religious place?)
+		>At top find Prometheus & defeat Eagle / Vulture
 		>Consult Prometheus
-		>Defended by Harpies
-		>Defeat mighty Eagle
 		>Prometheus says "release a spearow to open the rocks"
 		>Clashing Rocks - release a spearow, wall opens to cave
 		>Cave dungeon / Colchis (A path, could be a river, a penninsula, a cave, a forest...a DUNGEON)

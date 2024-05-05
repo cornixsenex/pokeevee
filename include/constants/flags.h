@@ -201,10 +201,10 @@
 #define FLAG_RECEIVED_SECRET_POWER           0xAC
 #define FLAG_ARGO_COMPLETED_SUCESS           0x78
 #define FLAG_ARGO_COMPLETED_FAILURE          0x79
+#define FLAG_MARES5_HIDE_ARGO                0x7A
 
 // BREAK //
 
-#define FLAG_RECEIVED_HM_SURF                0x7A
 #define FLAG_RECEIVED_HM_DIVE                0x7B
 #define FLAG_REGISTER_RIVAL_POKENAV          0x7C
 #define FLAG_DEFEATED_RIVAL_ROUTE_104        0x7D
