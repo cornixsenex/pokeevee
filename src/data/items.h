@@ -12837,6 +12837,21 @@ const struct Item gItemsInfo[] =
         .secondaryId = 0,
 	},
 
+	[ITEM_COLCHIS_MAP] =
+	{
+		.name = _("OLD MAP"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "An \ncient map showingn"
+            "locations sacred to\n"
+            "the native islanders"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+	},
+
 ///	KUSTOM ITEMS END ///
 
 };

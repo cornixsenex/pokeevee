@@ -1013,11 +1013,12 @@
 #define ITEM_ANCIENT_LAMP 837
 #define ITEM_BOOK      838
 #define ITEM_WEDDING_INVITATION 839
+#define ITEM_COLCHIS_MAP 840
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 840
+#define ITEMS_COUNT 841
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

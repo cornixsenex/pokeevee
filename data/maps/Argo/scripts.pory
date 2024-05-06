@@ -53,6 +53,7 @@ script Argo_Script_Jason {
 			//very well your choice is your own i cannot / will not force you one way or another return if you change your mind
 			msgbox(Argo_Text_Jason3, MSGBOX_NPC)
 		}
+	}
 	end
 }
 
@@ -87,7 +88,7 @@ text Argo_Text_Philoctetes {
 	format("We're lost and have been lost since Heracles went off in search of his beloved youth Hylas. That naive boy wandered too far in search of water and more than likely cracked his head on a rock and drowed at sea but knowing Heracles he won't quit the seach until hes swam 6 laps around Ocean.")
 }
 
-text Argo_Text_Jason {
+text Argo_Text_Jason1 {
 	format("Though we be lost at sea we travel on until we reach Colchis. We started out swearing an oath on the docks of Bulbus to never quit until we have retrieved SHINY MAREEP for my wife Medea. We'll find the way forward, or die trying.")
 }
 

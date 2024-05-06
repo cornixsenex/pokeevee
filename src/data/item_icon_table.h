@@ -887,7 +887,9 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_ANCIENT_LAMP] = {gItemIcon_CrackedPot, gItemIconPalette_Pot},
     [ITEM_BOOK] = {gItemIcon_Book, gItemIconPalette_Book},
 	[ITEM_WEDDING_INVITATION] = {gItemIcon_FabMail, gItemIconPalette_FabMail},
-    // Return to field arrow
+   	[ITEM_COLCHIS_MAP] = {gItemIcon_OldSeaMap, gItemIconPalette_OldSeaMap},
+
+   	// Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };
 
