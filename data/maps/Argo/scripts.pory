@@ -6,7 +6,7 @@ mapscripts Argo_MapScripts {}
 
 script Argo_EventScript_ExitWarp {
 	lock
-	warpsilent (MAP_MARE_S5, 45, 43)
+	warpsilent (MAP_MARE_S5, 45, 45)
 	waitstate
 	release
 	end
@@ -57,7 +57,20 @@ script Argo_Script_Jason {
 	end
 }
 
+//thanks
+//swear the Argo oath
+//Briney travel to Big Island
+//Disembark
+//Jason's orders (Dioscuri guard ship, Orpheus looks for food / water, Theseus finds shelter among the locals, Philoctetes, Player, and himself set out to find the entrance to Colchis)
+//end this part set flags & vars and setup next step (Philoctetes poisoned, Promethues etc)
+
 script Argo_Script_BeginAdventure {
+	//comment out to save test time :D
+	//msgbox (Argo_Text_BeginAdventure, MSGBOX_NPC)
+	//Set Flag & Vars & whatever
+	setvar (VAR_ARGO_BOAT_STATE, 1)
+	warp (MAP_MARE_S5, 45, 45)
+	waitstate
 	end
 }
 
@@ -98,5 +111,9 @@ text Argo_Text_Jason2 {
 
 text Argo_Text_Jason3 {
 	format("We'll find our way without you in that case. Return if you decide to join the quest.")
+}
+
+text Argo_Text_BeginAdventure {
+	format("Many thanks friend with this map we will reach Colchis and win our prize: SHINY MAREEP. In order to become an Argonaut you first must swear the oath. Repeat these words: I swear to sail under Jason's command and serve the Argo even to my death until we have attained SHINY MAREEP. That being done let us set off at once. Assemble Argonauts! We sail at once!")
 }
 

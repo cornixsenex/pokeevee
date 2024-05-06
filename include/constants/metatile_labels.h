@@ -752,6 +752,7 @@
 #define METATILE_SilphLab_Elevator_Door_Open    0x234
 
 // gTileset_Slateport
+#define METATILE_Slateport_CalmWater_False  0x338
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
 
