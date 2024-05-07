@@ -42,8 +42,19 @@ script Mares5_OnFrame_SailToColchis {
 	setobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_MARE_S5, 0)
 	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_MARE_S5)
 	call (Common_EventScript_PlayBrineysBoatMusic)
-	applymovement (OBJ_EVENT_ARGO, MareS5_Movement_SailToColchisDirect)
-	applymovement (OBJ_EVENT_ID_PLAYER, MareS5_Movement_SailToColchisDirect)
+	//applymovement (OBJ_EVENT_ARGO, MareS5_Movement_SailToColchisDirect)
+	//applymovement (OBJ_EVENT_ID_PLAYER, MareS5_Movement_SailToColchisDirect)
+	applymovement (OBJ_EVENT_ARGO, MareS5_Movement_SailToColchis1)
+	applymovement (OBJ_EVENT_ID_PLAYER, MareS5_Movement_SailToColchis1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (MareS5_Text_Scylla, MSGBOX_DEFAULT)
+	closemessage
+	showobjectat (OBJ_EVENT_ARGO, MAP_MARE_S4)
+	hideobjectat (OBJ_EVENT_ARGO, MAP_MARE_S5)
+	applymovement (OBJ_EVENT_ARGO, MareS5_Movement_SailToColchis2)
+	applymovement (OBJ_EVENT_ID_PLAYER, MareS5_Movement_SailToColchis2)
 	waitmovement (0)
 	delay (50)
 	applymovement (OBJ_EVENT_ID_PLAYER, MareS5_Movement_PlayerExitsBoat1)
@@ -65,6 +76,17 @@ movement MareS5_Movement_SailToColchisDirect {
 	walk_faster_down * 58
 }
 
+movement MareS5_Movement_SailToColchis1 {
+	walk_faster_right * 112
+	walk_faster_down * 4
+	walk_right
+}
+
+movement MareS5_Movement_SailToColchis2 {
+	walk_faster_right * 181		
+	walk_faster_down *  54
+}
+
 movement MareS5_Movement_PlayerExitsBoat1 {
 	walk_right
 }
@@ -83,6 +105,10 @@ text MareS5_Text_ArgoFarewell {
 
 text MareS5_Text_ArrivedAtColchis {
 	format("We've landed on the north side of the big island we call Ignis. According to this map Colchis is located within a cave on the west side of the island. Orpheus, search for food and fresh water And Theseus inquire with the town whether the locals will give us shelter and open their markets to Argonauts. Castor and Pollux you will guard the ship while {PLAYER} and I and Philoctetes go investigate the rumored Colchis cave.")
+}
+
+text MareS5_Text_Scylla {
+	format("Ahoy mateys! Weigh anchor! Drop your oars! A mighty monster, whirlpool, clashing rocks, lie in our path ahead. Turn back lest Argo wreck and we perish!")
 }
 
 
