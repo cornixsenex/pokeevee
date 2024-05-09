@@ -65,12 +65,24 @@ script Argo_Script_Jason {
 //end this part set flags & vars and setup next step (Philoctetes poisoned, Promethues etc)
 
 script Argo_Script_BeginAdventure {
-	//comment out to save test time :D
-	//msgbox (Argo_Text_BeginAdventure, MSGBOX_NPC)
-	//Set Flag & Vars & whatever
+	msgbox (Argo_Text_BeginAdventure, MSGBOX_NPC)
 	setvar (VAR_ARGO_BOAT_STATE, 1)
 	warp (MAP_MARE_S5, 45, 45)
 	waitstate
+	end
+}
+
+script Argo_Script_TestBeginAdventure {
+	msgbox ("TEST BEGIN", MSGBOX_NPC)
+	setvar (VAR_ARGO_BOAT_STATE, 1)
+	warp (MAP_MARE_S5, 45, 45)
+	waitstate
+	end
+}
+
+script Argo_Script_TestSign {
+	msgbox (Argo_Text_TestSign)
+	closemessage
 	end
 }
 
@@ -115,5 +127,9 @@ text Argo_Text_Jason3 {
 
 text Argo_Text_BeginAdventure {
 	format("Many thanks friend with this map we will reach Colchis and win our prize: SHINY MAREEP. In order to become an Argonaut you first must swear the oath. Repeat these words: I swear to sail under Jason's command and serve the Argo even to my death until we have attained SHINY MAREEP. That being done let us set off at once. Assemble Argonauts! We sail at once!")
+}
+
+text Argo_Text_TestSign {
+	format("abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz")
 }
 

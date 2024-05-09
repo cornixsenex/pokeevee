@@ -1,1 +1,64 @@
-mapscripts BigIslandN_MapScripts {}
+
+const OBJ_EVENT_ARGO = 1
+const OBJ_EVENT_CASTOR = 2
+const OBJ_EVENT_POLLUX = 3
+const OBJ_EVENT_ORPHEUS = 4
+const OBJ_EVENT_THESEUS = 5
+const OBJ_EVENT_JASON = 6
+const OBJ_EVENT_PHILOCTETES = 7
+
+mapscripts BigIslandN_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ARGO_BOAT_STATE) == 2) {
+			call (BigIslandN_Script_ShowArgo)
+		} else {
+			call (BigIslandN_Script_HideArgo)
+		}
+	}
+
+}
+
+script BigIslandN_Script_HideArgo {
+	hideobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_ARGO)
+	hideobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_CASTOR)
+	hideobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_POLLUX)
+	hideobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_ORPHEUS)
+	hideobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_THESEUS)
+	hideobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_JASON)
+	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_PHILOCTETES)
+	end
+}
+
+script BigIslandN_Script_ShowArgo {
+	showobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_ARGO)
+	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_CASTOR)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_POLLUX)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_ORPHEUS)
+	setobjectmovementtype (OBJ_EVENT_ORPHEUS, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_THESEUS)
+	setobjectmovementtype (OBJ_EVENT_THESEUS, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_JASON)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_PHILOCTETES)
+	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_FACE_DOWN)
+	end
+}
+

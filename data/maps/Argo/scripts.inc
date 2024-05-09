@@ -74,17 +74,43 @@ Argo_Script_Jason_4:
 
 
 Argo_Script_BeginAdventure::
-# 71 "data/maps/Argo/scripts.pory"
+# 68 "data/maps/Argo/scripts.pory"
+	msgbox Argo_Text_BeginAdventure, MSGBOX_NPC
+# 69 "data/maps/Argo/scripts.pory"
 	setvar VAR_ARGO_BOAT_STATE, 1
-# 72 "data/maps/Argo/scripts.pory"
+# 70 "data/maps/Argo/scripts.pory"
 	warp MAP_MARE_S5, 45, 45
-# 73 "data/maps/Argo/scripts.pory"
+# 71 "data/maps/Argo/scripts.pory"
 	waitstate
 	end
 
 
-Argo_Text_Castor::
+Argo_Script_TestBeginAdventure::
+# 76 "data/maps/Argo/scripts.pory"
+	msgbox Argo_Script_TestBeginAdventure_Text_0, MSGBOX_NPC
 # 77 "data/maps/Argo/scripts.pory"
+	setvar VAR_ARGO_BOAT_STATE, 1
+# 78 "data/maps/Argo/scripts.pory"
+	warp MAP_MARE_S5, 45, 45
+# 79 "data/maps/Argo/scripts.pory"
+	waitstate
+	end
+
+
+Argo_Script_TestSign::
+# 84 "data/maps/Argo/scripts.pory"
+	msgbox Argo_Text_TestSign
+# 85 "data/maps/Argo/scripts.pory"
+	closemessage
+	end
+
+
+Argo_Script_TestBeginAdventure_Text_0:
+# 76 "data/maps/Argo/scripts.pory"
+	.string "TEST BEGIN$"
+
+Argo_Text_Castor::
+# 89 "data/maps/Argo/scripts.pory"
 	.string "Though Pollux is my twin I was born\l"
 	.string "first and it was I who first leaped off\l"
 	.string "the boat when we were brought back to\l"
@@ -95,7 +121,7 @@ Argo_Text_Castor::
 	.string "they stood, and I broke their king.$"
 
 Argo_Text_Pollux::
-# 81 "data/maps/Argo/scripts.pory"
+# 93 "data/maps/Argo/scripts.pory"
 	.string "Truly Castor and I are twin brothers\l"
 	.string "but it was I who first raised pokemon.\l"
 	.string "When Argo wrecked among the Bebryces\l"
@@ -104,7 +130,7 @@ Argo_Text_Pollux::
 	.string "defeating Amycus in combat.$"
 
 Argo_Text_Dioscuri::
-# 86 "data/maps/Argo/scripts.pory"
+# 98 "data/maps/Argo/scripts.pory"
 	.string "I often think of home. I miss Helen, my\l"
 	.string "lovely sister, and Nestor, my dad but\l"
 	.string "both of us swore an most sacred oath to\l"
@@ -112,7 +138,7 @@ Argo_Text_Dioscuri::
 	.string "reach Colchis and win the fleece.$"
 
 Argo_Text_Theseus::
-# 90 "data/maps/Argo/scripts.pory"
+# 102 "data/maps/Argo/scripts.pory"
 	.string "This wretched boat is such a sausage\l"
 	.string "fest! Five days of joy we spent on that\l"
 	.string "Island Lemnos where each of us enjoyed\l"
@@ -122,7 +148,7 @@ Argo_Text_Theseus::
 	.string "fun?$"
 
 Argo_Text_Orpheus::
-# 94 "data/maps/Argo/scripts.pory"
+# 106 "data/maps/Argo/scripts.pory"
 	.string "Lost at sea the compass spins\n"
 	.string "Eurydice where have you been\n"
 	.string "I travel with The Argo's quest\n"
@@ -133,7 +159,7 @@ Argo_Text_Orpheus::
 	.string "You love me everywhere you are.$"
 
 Argo_Text_Philoctetes::
-# 100 "data/maps/Argo/scripts.pory"
+# 112 "data/maps/Argo/scripts.pory"
 	.string "We're lost and have been lost since\l"
 	.string "Heracles went off in search of his\l"
 	.string "beloved youth Hylas. That naive boy\l"
@@ -144,7 +170,7 @@ Argo_Text_Philoctetes::
 	.string "hes swam 6 laps around Ocean.$"
 
 Argo_Text_Jason1::
-# 104 "data/maps/Argo/scripts.pory"
+# 116 "data/maps/Argo/scripts.pory"
 	.string "Though we be lost at sea we travel on\l"
 	.string "until we reach Colchis. We started out\l"
 	.string "swearing an oath on the docks of Bulbus\l"
@@ -153,7 +179,7 @@ Argo_Text_Jason1::
 	.string "find the way forward, or die trying.$"
 
 Argo_Text_Jason2::
-# 108 "data/maps/Argo/scripts.pory"
+# 120 "data/maps/Argo/scripts.pory"
 	.string "What's this? You've found an ancient\l"
 	.string "island map showing our position and\l"
 	.string "Colchis too? Most noble friend, will you\l"
@@ -161,13 +187,13 @@ Argo_Text_Jason2::
 	.string "find SHINY MAREEP?$"
 
 Argo_Text_Jason3::
-# 112 "data/maps/Argo/scripts.pory"
+# 124 "data/maps/Argo/scripts.pory"
 	.string "We'll find our way without you in that\l"
 	.string "case. Return if you decide to join the\l"
 	.string "quest.$"
 
 Argo_Text_BeginAdventure::
-# 116 "data/maps/Argo/scripts.pory"
+# 128 "data/maps/Argo/scripts.pory"
 	.string "Many thanks friend with this map we will\l"
 	.string "reach Colchis and win our prize: SHINY\l"
 	.string "MAREEP. In order to become an Argonaut\l"
@@ -178,3 +204,8 @@ Argo_Text_BeginAdventure::
 	.string "SHINY MAREEP. That being done let us\l"
 	.string "set off at once. Assemble Argonauts! We\l"
 	.string "sail at once!$"
+
+Argo_Text_TestSign::
+# 132 "data/maps/Argo/scripts.pory"
+	.string "abcdefghijklmnopqrstuvwxyz\l"
+	.string "abcdefghijklmnopqrstuvwxyz$"

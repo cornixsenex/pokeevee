@@ -1,1 +1,16 @@
 mapscripts MareS9_MapScripts {}
+
+
+
+
+
+script MareS9_Script_TestSign {
+	lock
+	msgbox (MareS9_Text_TestSign, MSGBOX_SIGN)
+	release
+	end
+}
+
+text MareS9_Text_TestSign {
+	format("abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz")
+}
