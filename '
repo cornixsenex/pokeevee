@@ -1,0 +1,178 @@
+
+const OBJ_EVENT_ARGO = 1
+const OBJ_EVENT_CASTOR = 2
+const OBJ_EVENT_POLLUX = 3
+const OBJ_EVENT_ORPHEUS = 4
+const OBJ_EVENT_THESEUS = 5
+const OBJ_EVENT_JASON = 6
+const OBJ_EVENT_PHILOCTETES = 7
+
+mapscripts BigIslandN_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ARGO_BOAT_STATE) == 2) {
+			call (BigIslandN_Script_ShowArgo)
+		} else {
+			call (BigIslandN_Script_HideArgo)
+		}
+	}
+
+}
+
+script BigIslandN_Script_HideArgo {
+	hideobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_ARGO)
+	hideobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_CASTOR)
+	hideobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_POLLUX)
+	hideobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_ORPHEUS)
+	hideobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_THESEUS)
+	hideobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_JASON)
+	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_PHILOCTETES)
+	end
+}
+
+script BigIslandN_Script_ShowArgo {
+	showobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_ARGO)
+	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_CASTOR)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_POLLUX)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_ORPHEUS)
+	setobjectmovementtype (OBJ_EVENT_ORPHEUS, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_THESEUS)
+	setobjectmovementtype (OBJ_EVENT_THESEUS, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_JASON)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_PHILOCTETES)
+	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_FACE_DOWN)
+	end
+}
+
+script BigIslandN_Script_ArgoArrival {
+	call (Common_EventScript_StopBrineysBoatMusic)
+	
+	//ETC 
+	setflag (FLAG_MARES5_HIDE_ARGO)
+	resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_MARE_S5)
+	setvar (VAR_ARGO_BOAT_STATE, 2)
+
+	//Set the boat up
+	showobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+	addobject (OBJ_EVENT_ARGO)
+	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
+
+	//Clear Argonauts from map and set them on the boat
+	removeobject (OBJ_EVENT_CASTOR)
+	removeobject (OBJ_EVENT_POLLUX)
+	removeobject (OBJ_EVENT_ORPHEUS)
+	removeobject (OBJ_EVENT_THESEUS)
+	removeobject (OBJ_EVENT_PHILOCTETES)
+	removeobject (OBJ_EVENT_JASON)
+	setobjectxyperm (OBJ_EVENT_CASTOR, 80, 17)
+	setobjectxyperm (OBJ_EVENT_POLLUX, 80, 17)
+	setobjectxyperm (OBJ_EVENT_ORPHEUS, 80, 17)
+	setobjectxyperm (OBJ_EVENT_THESEUS, 80, 17)
+	setobjectxyperm (OBJ_EVENT_PHILOCTETES, 80, 17)
+	setobjectxyperm (OBJ_EVENT_JASON, 80, 17)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_ORPHEUS, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_THESEUS, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_RIGHT)
+
+	//We've landed...west side of the island
+	msgbox (BigIslandN_Text_ArrivedAtColchis1, MSGBOX_DEFAULT)
+	closemessage
+
+	//Jason and Player disembark first
+	addobject (OBJ_EVENT_JASON)
+	showobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonDisembark)
+	waitmovement (0)
+
+	showobjectat (OBJ_EVENT_ID_PLAYER, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_ID_PLAYER, MareS5_Movement_PlayerDisembark)
+	waitmovement (0)
+
+	//Orpheus
+	msgbox (BigIslandN_Text_ArrivedAtColchis2, MSGBOX_DEFAULT)
+	closemessage
+	addobject (OBJ_EVENT_ORPHEUS)
+	showobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_ORPHEUS, BigIslandN_Movement_OrpheusDisembark)
+	waitmovement (0)
+
+	//Theseus
+	msgbox (BigIslandN_Text_ArrivedAtColchis3, MSGBOX_DEFAULT)
+	closemessage
+	addobject (OBJ_EVENT_THESEUS)
+	showobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_THESEUS, BigIslandN_Movement_TheseusDisembark)
+	waitmovement (0)
+
+	//Castor, Pollux, et Philoctetes
+	msgbox (BigIslandN_Text_ArrivedAtColchis4, MSGBOX_DEFAULT)
+	closemessage
+	addobject (OBJ_EVENT_PHILOCTETES)
+	showobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_TheseusDisembark)
+	waitmovement (0)
+
+
+
+	//Argonauts now in position / save position for resets
+	call (BigIslandN_Script_ShowArgo)
+	end
+}
+
+movement BigIslandN_Movement_JasonDisembark {
+	walk_right
+	walk_down * 5
+}
+
+movement MareS5_Movement_PlayerDisembark {
+	walk_right
+	walk_down * 4
+}
+
+movement BigIslandN_Movement_OrpheusDisembark {
+	walk_right * 2
+	walk_down * 4
+	walk_right * 8
+}
+
+movement BigIslandN_Movement_TheseusDisembark {
+	walk_right * 2
+	walk_down * 12
+}
+
+text BigIslandN_Text_ArrivedAtColchis1 {
+	format("We've landed on the north side of the big island we call Ignis. According to this map Colchis is located within a cave on the west side of the island.")
+}
+
+text BigIslandN_Text_ArrivedAtColchis2 {
+	format("Orpheus, search for food and fresh water.")
+}
+
+text BigIslandN_Text_ArrivedAtColchis3 {
+	format("And Theseus inquire with the town whether the locals will give us shelter and open their markets to Argonauts.")
+}
+
+text BigIslandN_Text_ArrivedAtColchis4 {
+	format("Castor and Pollux you will guard the ship while {PLAYER} and I and Philoctetes go investigate the rumored Colchis cave.")
+}

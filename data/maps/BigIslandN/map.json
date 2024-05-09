@@ -52,8 +52,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
-      "x": 80,
-      "y": 17,
+      "x": 57,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -65,8 +65,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COLLISION_YOUNGSTER",
-      "x": 81,
-      "y": 18,
+      "x": 58,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -78,8 +78,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 82,
-      "y": 18,
+      "x": 59,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -91,8 +91,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 111,
-      "y": 16,
+      "x": 60,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -104,8 +104,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 59,
-      "y": 21,
+      "x": 61,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -117,8 +117,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
-      "x": 47,
-      "y": 31,
+      "x": 62,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -130,8 +130,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
-      "x": 50,
-      "y": 31,
+      "x": 63,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
