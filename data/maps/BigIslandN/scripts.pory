@@ -151,7 +151,7 @@ script BigIslandN_Script_ArgoArrival {
 	closemessage
 	addobject (OBJ_EVENT_PHILOCTETES)
 	showobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
-	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_TheseusDisembark)
+	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_PhiloctetesDisembark)
 	waitmovement (0)
 	addobject (OBJ_EVENT_POLLUX)
 	showobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
@@ -168,6 +168,7 @@ script BigIslandN_Script_ArgoArrival {
 	msgbox (BigIslandN_Text_ArrivedAtColchis5, MSGBOX_DEFAULT)
 	closemessage
 	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonExitArgo)
+	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_JasonExitArgo)
 	waitmovement (0)
 
 	//Argonauts now in position / save position for resets
@@ -184,6 +185,77 @@ script BigIslandN_Script_ArgoArrival {
 //	special (DrawWholeMapView)
 	end
 }
+
+script BigIslandN_Script_Philoctetes {
+	lock
+	faceplayer
+	msgbox (BigIslandN_Text_Philoctetes, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BigIslandN_Script_Jason {
+	lockall
+	faceplayer
+	msgbox (BigIslandN_Text_Jason, MSGBOX_DEFAULT)
+	closemessage
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_NORTH) {
+		call (BigIslandN_Script_ExploreA)
+	} else {
+		call (BigIslandN_Script_ExploreB)
+	}
+	releaseall
+	end
+}
+
+//Player faces up
+script BigIslandN_Script_ExploreA {
+	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonExploreA1)
+	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_PhiloctetesExploreA1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	call (BigIslandN_Script_Ambush)
+}
+
+script BigIslandN_Script_ExploreB {
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonExploreB1)
+	waitmovement (0)
+	call (BigIslandN_Script_Ambush)
+}
+
+script BigIslandN_Script_Ambush {
+	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_Ambush)
+	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_Ambush)
+	applymovement (OBJ_EVENT_ID_PLAYER, BigIslandN_Movement_Ambush)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (BigIslandN_Text_Ambush, MSGBOX_DEFAULT)
+	closemessage
+	//Fade out
+	//Dudes approach
+	//AMBUSH!
+	//Battle
+	//Fade back they gonezo
+	//Jason asseses the party
+	//Philoctetes is down
+	//Jason says no time to lose we must go forward
+	end
+}	
+
 
 movement BigIslandN_Movement_JasonDisembark {
 	walk_right
@@ -220,6 +292,32 @@ movement BigIslandN_Movement_JasonExitArgo {
 	walk_down * 6
 }
 
+movement BigIslandN_Movement_PhiloctetesDisembark {
+	walk_right * 2
+	walk_down * 5
+}
+
+movement BigIslandN_Movement_JasonExploreA1 {
+	walk_left
+	walk_down
+}
+
+movement BigIslandN_Movement_PhiloctetesExploreA1 {
+	walk_down
+}
+
+movement BigIslandN_Movement_JasonExploreB1 {
+	walk_left * 2
+	walk_down
+}
+
+movement BigIslandN_Movement_Ambush {
+	walk_left * 3
+	walk_down * 3
+	walk_left * 4
+	walk_down * 2
+}
+
 text BigIslandN_Text_ArrivedAtColchis1 {
 	format("We've landed on the north side of the big island we call Ignis. According to this map Colchis is located within a cave on the west side of the island.")
 }
@@ -238,4 +336,16 @@ text BigIslandN_Text_ArrivedAtColchis4 {
 
 text BigIslandN_Text_ArrivedAtColchis5 {
 	format("Meet Philoctetes and I in the woods when you're ready to find the Colchis cave.")
+}
+
+text BigIslandN_Text_Philoctetes {
+	format("We've finally arrived on the island! Speak to Jason and let's go find Colchis.")
+}
+
+text BigIslandN_Text_Jason {
+	format("Let us set off at once to find Colchis.")
+}
+
+text BigIslandN_Text_Ambush {
+	format("On guard friends! Something wicked heads our way.")
 }

@@ -55,9 +55,8 @@ script MareS5_OnFrame_SailToColchis {
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	//Just to skip the text for test purposes
-	//msgbox (MareS5_Text_Scylla, MSGBOX_DEFAULT)
-	//closemessage
+	msgbox (MareS5_Text_Scylla, MSGBOX_DEFAULT)
+	closemessage
 	showobjectat (OBJ_EVENT_ARGO, MAP_MARE_S4)
 	hideobjectat (OBJ_EVENT_ARGO, MAP_MARE_S5)
 	applymovement (OBJ_EVENT_ARGO, MareS5_Movement_SailToColchis2)
@@ -75,7 +74,7 @@ movement MareS5_Movement_SailToColchisDirect {
 }
 
 movement MareS5_Movement_SailToColchis1 {
-	walk_faster_right * 112
+	walk_faster_right * 111
 	walk_faster_down * 5
 	walk_right
 }
@@ -87,7 +86,7 @@ movement MareS5_Movement_SailToColchis2Totals {
 
 movement MareS5_Movement_SailToColchis2 {
 	walk_faster_up * 8
-	walk_faster_left * 4
+	walk_faster_left * 3
 	walk_faster_up * 30
 	walk_faster_right * 184
 	walk_faster_down * 91
