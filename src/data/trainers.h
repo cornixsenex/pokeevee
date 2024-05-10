@@ -1082,18 +1082,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Rocky),
     },
 
-    [TRAINER_TYSON] =
-    {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT2,
-        .trainerName = _("TYSON"),
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Tyson),
-    },
-
     [TRAINER_STU] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
@@ -2056,6 +2044,18 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_UniGym),
+    },
+
+    [TRAINER_COLCHIS_GRUNT1] =
+    {
+        .trainerClass = TRAINER_CLASS_CULTIST,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
+        .trainerName = _("CULTIST"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ColchisGrunt1),
     },
 
 

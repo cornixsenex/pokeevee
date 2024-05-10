@@ -2174,6 +2174,19 @@ static const struct TrainerMon sParty_UniGym[] = {
     }
 };
 
+static const struct TrainerMon sParty_ColchisGrunt1[] = {
+    {
+    .iv = 0,
+    .lvl = 13,
+    .species = SPECIES_SPOINK,
+    },
+    {
+    .iv = 0,
+    .lvl = 13,
+    .species = SPECIES_LATIAS,
+    }
+};
+
 
 //BREAK
 

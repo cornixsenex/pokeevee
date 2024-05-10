@@ -91,7 +91,7 @@
 #define TRAINER_SYRA		                 85
 #define TRAINER_SKY		                     86
 #define TRAINER_ROCKY	                     87
-#define TRAINER_TYSON	                     88  //UNUSED NOW
+#define TRAINER_COLCHIS_GRUNT1	             88  
 #define TRAINER_STU	                         89  //UNUSED NOW
 #define TRAINER_ALI	                         90  //UNUSED NOW
 #define TRAINER_PATROKLOS                    91  //UNUSED NOW
@@ -174,7 +174,6 @@
 #define TRAINER_UNI_GYM                     168
 
 //BREAK - NOTE FIVE UNUSED TRAINERS ABOVE
-
 
 #define TRAINER_GILBERT                     169
 #define TRAINER_FRANKLIN                    170

@@ -754,6 +754,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(JANITOR, "JANITOR"),
     TRAINER_CLASS(NURSE, "NURSE"),
     TRAINER_CLASS(DOCTOR, "{PKMN} DR."),
+    TRAINER_CLASS(CULTIST, "CULTIST"),
 };
 
 static void (* const sTurnActionsFuncsTable[])(void) =

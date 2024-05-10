@@ -6,6 +6,10 @@ const OBJ_EVENT_ORPHEUS = 4
 const OBJ_EVENT_THESEUS = 5
 const OBJ_EVENT_PHILOCTETES = 6
 const OBJ_EVENT_JASON = 7
+const OBJ_EVENT_AMBUSH1 = 8
+const OBJ_EVENT_AMBUSH2 = 9
+const OBJ_EVENT_AMBUSH3 = 10
+const OBJ_EVENT_AMBUSH4 = 11
 
 mapscripts BigIslandN_MapScripts {
 
@@ -218,8 +222,10 @@ script BigIslandN_Script_ExploreA {
 	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_PhiloctetesExploreA1)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_JASON, Common_Movement_WalkLeft)
-	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_WalkLeft)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_WalkLeft)
 	waitmovement (0)
 	call (BigIslandN_Script_Ambush)
 }
@@ -235,17 +241,88 @@ script BigIslandN_Script_ExploreB {
 }
 
 script BigIslandN_Script_Ambush {
-	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_Ambush)
-	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_Ambush)
-	applymovement (OBJ_EVENT_ID_PLAYER, BigIslandN_Movement_Ambush)
+	//walk to the meadow
+	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_AmbushAll)
+	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_AmbushAll)
+	applymovement (OBJ_EVENT_ID_PLAYER, BigIslandN_Movement_AmbushAll)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
+	playmoncry (SPECIES_CHANDELURE, CRY_MODE_NORMAL)
+	waitmoncry 
 	msgbox (BigIslandN_Text_Ambush, MSGBOX_DEFAULT)
 	closemessage
-	//Fade out
+
+	//Dudes appear
+	removeobject (OBJ_EVENT_AMBUSH1)
+	setobjectxyperm (OBJ_EVENT_AMBUSH1, 45, 36)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH1, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_AMBUSH1)
+	showobjectat (OBJ_EVENT_AMBUSH1, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_AMBUSH1, BigIslandN_Movement_Ambusher1)
+	waitmovement (0)
+
+	removeobject (OBJ_EVENT_AMBUSH2)
+	setobjectxyperm (OBJ_EVENT_AMBUSH2, 45, 37)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH2, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_AMBUSH2)
+	showobjectat (OBJ_EVENT_AMBUSH2, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_AMBUSH2, Common_Movement_WalkLeft)
+	waitmovement (0)
+
+	removeobject (OBJ_EVENT_AMBUSH3)
+	setobjectxyperm (OBJ_EVENT_AMBUSH3, 39, 35)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH3, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_AMBUSH3)
+	showobjectat (OBJ_EVENT_AMBUSH3, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_AMBUSH3, Common_Movement_WalkRight)
+	waitmovement (0)
+
+	removeobject (OBJ_EVENT_AMBUSH4)
+	setobjectxyperm (OBJ_EVENT_AMBUSH4, 39, 37)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH4, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_AMBUSH4)
+	showobjectat (OBJ_EVENT_AMBUSH4, MAP_BIG_ISLAND_N)
+	applymovement (OBJ_EVENT_AMBUSH4, Common_Movement_WalkRight)
+	waitmovement (0)
+
+
+	//Defend the party
+	msgbox(BigIslandN_Text_Ambush2, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, BigIslandN_Movement_PlayerAmbush2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonAmbush2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_AMBUSH2, Common_Movement_FaceUp)
+	applymovement (OBJ_EVENT_AMBUSH1, Common_Movement_FaceDown)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	//battle
+	trainerbattle_single (TRAINER_COLCHIS_GRUNT1, BigIslandN_Text_ColchisGrunt1Pre, BigIslandN_Text_ColchisGrunt1Lost)
+   msgbox (BigIslandN_Text_ColchisGrunt1Post, MSGBOX_DEFAULT)
+   closemessage
+   //Defeated Flee
+   applymovement (OBJ_EVENT_AMBUSH1, BigIslandN_Movement_JasonExitArgo)
+   applymovement (OBJ_EVENT_AMBUSH2, BigIslandN_Movement_JasonExitArgo)
+   waitmovement (0)
+   //Victors steal Philoctetes
+
+
+	//battle
+	//Philoctetes stolen away
+	//Leave him we must be about our mission
+	//Walk to cave entrance
+	//See defeated grunts enter and seal cave
+	//
+	
+
 	//Dudes approach
 	//AMBUSH!
 	//Battle
@@ -253,6 +330,12 @@ script BigIslandN_Script_Ambush {
 	//Jason asseses the party
 	//Philoctetes is down
 	//Jason says no time to lose we must go forward
+	
+	
+	//applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonAmbush1)
+	//applymovement (OBJ_EVENT_ID_PLAYER, BigIslandN_Movement_PlayerAmbush1)
+	//applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_PhiloctetesAmbush1)
+	//waitmovement (0)
 	end
 }	
 
@@ -311,11 +394,26 @@ movement BigIslandN_Movement_JasonExploreB1 {
 	walk_down
 }
 
-movement BigIslandN_Movement_Ambush {
+movement BigIslandN_Movement_AmbushAll {
 	walk_left * 3
 	walk_down * 3
 	walk_left * 4
 	walk_down * 2
+}
+
+movement BigIslandN_Movement_Ambusher1 {
+	walk_up
+	walk_left
+}
+
+movement BigIslandN_Movement_PlayerAmbush2 {
+	walk_down
+	walk_left 
+}
+
+movement BigIslandN_Movement_JasonAmbush2 {
+	walk_up
+	face_left
 }
 
 text BigIslandN_Text_ArrivedAtColchis1 {
@@ -349,3 +447,20 @@ text BigIslandN_Text_Jason {
 text BigIslandN_Text_Ambush {
 	format("On guard friends! Something wicked heads our way.")
 }
+
+text BigIslandN_Text_Ambush2 {
+	format("To arms! Defend the party! Now recall the sacred oaths you swore. Now to battle!")
+}
+
+text BigIslandN_Text_ColchisGrunt1Pre {
+	format("Illkay ethay invadersay anday otectpray areeppmay")
+}
+
+text BigIslandN_Text_ColchisGrunt1Lost {
+	format("Ymay ifelay isay orfeitfay. Iay eavelay inay efeatday")
+}
+
+text BigIslandN_Text_ColchisGrunt1Post {
+	format("Eway eednay otay arnway Aeetesay ofay isthat otplay otay ealstay Areepmay. Urryhay ackbay otay ethay avecay")
+}
+
