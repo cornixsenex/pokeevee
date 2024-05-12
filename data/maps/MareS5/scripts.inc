@@ -9,7 +9,7 @@ MareS5_MapScripts::
 
 MareS5_MapScripts_MAP_SCRIPT_ON_LOAD:
 # 7 "data/maps/MareS5/scripts.pory"
-	compare VAR_ARGO_BOAT_STATE, 1
+	compare VAR_ARGO_STATE, 1
 	goto_if_eq MareS5_MapScripts_MAP_SCRIPT_ON_LOAD_1
 	return
 
@@ -20,12 +20,12 @@ MareS5_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 
 MareS5_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 13 "data/maps/MareS5/scripts.pory"
-	map_script_2 VAR_ARGO_BOAT_STATE, 1, MareS5_Script_HidePlayer
+	map_script_2 VAR_ARGO_STATE, 1, MareS5_Script_HidePlayer
 	.2byte 0
 
 MareS5_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 17 "data/maps/MareS5/scripts.pory"
-	map_script_2 VAR_ARGO_BOAT_STATE, 1, MareS5_OnFrame_SailToColchis
+	map_script_2 VAR_ARGO_STATE, 1, MareS5_OnFrame_SailToColchis
 	.2byte 0
 
 

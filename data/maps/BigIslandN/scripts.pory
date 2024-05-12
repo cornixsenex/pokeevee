@@ -14,13 +14,26 @@ const OBJ_EVENT_AMBUSH4 = 11
 mapscripts BigIslandN_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		if (var(VAR_ARGO_BOAT_STATE) == 2) {
+		if (var(VAR_ARGO_STATE) == 2) {
 			call (BigIslandN_Script_ShowArgo)
 		} else {
 			call (BigIslandN_Script_HideArgo)
 		}
 	}
 
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_ARGO_STATE) < 4) {
+			call (BigIslandN_Script_HideColchisCave)
+		}
+		end
+	}
+
+}
+
+script BigIslandN_Script_HideColchisCave {
+	setmetatile (31, 35, METATILE_General_RockWall_RockBase, TRUE) 
+	setmetatile (31, 36, METATILE_General_RockWall_GrassBase, TRUE) 
+	return
 }
 
 script BigIslandN_Script_HideArgo {
@@ -88,7 +101,7 @@ script BigIslandN_Script_ArgoArrival {
 	
 	//ETC 
 	setflag (FLAG_MARES5_HIDE_ARGO)
-	setvar (VAR_ARGO_BOAT_STATE, 2)
+	setvar (VAR_ARGO_STATE, 2)
 
 
 	//Clear Argonauts from map and set them on the boat
@@ -306,15 +319,27 @@ script BigIslandN_Script_Ambush {
 
 	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_FaceUp)
 	waitmovement (0)
+	delay (10)
 	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_FaceDown)
 	waitmovement (0)
+	delay (10)
 	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_FaceRight)
 	waitmovement (0)
+	delay (10)
+	applymovement (OBJ_EVENT_PHILOCTETES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
 
 	msgbox (BigIslandN_Text_ColchisGrunt1Pre, MSGBOX_DEFAULT)
 	closemessage
 	//battle
 	trainerbattle_no_intro (TRAINER_COLCHIS_GRUNT1, BigIslandN_Text_ColchisGrunt1Lost)
+
+	//Open Cave for next shot
+	setmetatile (31, 35, METATILE_General_CaveEntrance_Top, TRUE) 
+	setmetatile (31, 36, METATILE_General_CaveEntrance_Bottom, TRUE) 
+
+	
 	
 	msgbox (BigIslandN_Text_ColchisGrunt1Post, MSGBOX_DEFAULT)
 	closemessage
@@ -344,14 +369,16 @@ script BigIslandN_Script_Ambush {
 	//Help me please I'm beaten
 	msgbox (BigIslandN_Text_PhiloctetesAbducted, MSGBOX_DEFAULT)
 	closemessage
-	msgbox(format("NOOOOOOOO!"), MSGBOX_DEFAULT)
 	//Carried off
 	applymovement (OBJ_EVENT_AMBUSH1, BigIslandN_Movement_AmbushPhiloctetesExit)
 	applymovement (OBJ_EVENT_AMBUSH2, BigIslandN_Movement_AmbushPhiloctetesExit)
 	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_AmbushPhiloctetesExit)
+	msgbox(format("NOOOOOOOO!"), MSGBOX_DEFAULT)
 	waitmovement (OBJ_EVENT_AMBUSH2)
 	closemessage
 
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
+	waitmovement (0)
 	//Leave him we must be about our mission
 	msgbox (BigIslandN_Text_JasonLeaveHim, MSGBOX_DEFAULT)
 	closemessage
@@ -366,7 +393,7 @@ script BigIslandN_Script_Ambush {
 
 	removeobject (OBJ_EVENT_AMBUSH4)
 	setobjectxyperm (OBJ_EVENT_AMBUSH4, 31, 37)
-	setobjectmovementtype (OBJ_EVENT_AMBUSH4, MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH4, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_AMBUSH4)
 	showobjectat (OBJ_EVENT_AMBUSH4, MAP_BIG_ISLAND_N)
 
@@ -384,17 +411,65 @@ script BigIslandN_Script_Ambush {
 	waitmovement (0)
 
 	//Grunts Open, enter, and seal cave (hint about Mountain Top?)
-	
 
-	//Dudes approach
-	//AMBUSH!
-	//Battle
-	//Fade back they gonezo
-	//Jason asseses the party
-	//Philoctetes is down
-	//Jason says no time to lose we must go forward
-	
-	end
+	//Hurry in before they catch up we need to warn Aeetes there are intruders on on the isle for Mareep
+	msgbox (BigIslandN_Text_CultistsEnterCave, MSGBOX_DEFAULT)
+	closemessage
+
+
+	//Exeunt Cultists
+	applymovement (OBJ_EVENT_AMBUSH3, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_AMBUSH4, Common_Movement_WalkUp)
+	waitmovement (OBJ_EVENT_AMBUSH3)
+	hideobjectat (OBJ_EVENT_AMBUSH4, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_AMBUSH4)
+
+	applymovement (OBJ_EVENT_AMBUSH3, Common_Movement_WalkUp)
+	waitmovement (OBJ_EVENT_AMBUSH3)
+	hideobjectat (OBJ_EVENT_AMBUSH3, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_AMBUSH3)
+
+	//Hide Cultists
+	setobjectxyperm (OBJ_EVENT_AMBUSH3, 28, 33)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH3, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_AMBUSH4, 28, 33)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH4, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_AMBUSH1, 28, 33)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH1, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_AMBUSH2, 28, 33)
+	setobjectmovementtype (OBJ_EVENT_AMBUSH2, MOVEMENT_TYPE_INVISIBLE)
+
+	//Set vars for ShakeCamera
+	setvar (VAR_0x8004, 1)
+	setvar (VAR_0x8005, 1)
+	setvar (VAR_0x8006, 16)
+	setvar (VAR_0x8007, 3)
+
+	//Rock Cave Entrance hides again
+	special (ShakeCamera)
+	waitstate
+	playse (SE_EFFECTIVE)
+	waitse
+	call (BigIslandN_Script_HideColchisCave)
+	special (DrawWholeMapView)
+	delay (30)
+
+	//You and Jason approach the cave wall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonApproachColchisCave)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	//Jason turns to you and says 'they've sealed it shut we must find a way inside
+	msgbox(BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
+	closemessage
+
+
+	//New state of BigIsland: Jason at Colchis Cave, Phil abducted, C&P bored somewhere (hint), Orpheus new song, Theseus new girl 
+	setvar (VAR_ARGO_STATE, 4)
+
+	return
 }	
 
 
@@ -511,6 +586,13 @@ movement BigIslandN_Movement_JasonFollowAmbush {
 	walk_up * 3
 }
 
+movement BigIslandN_Movement_JasonApproachColchisCave {
+	walk_up * 2
+	walk_right
+	face_up
+}
+
+
 text BigIslandN_Text_ArrivedAtColchis1 {
 	format("We've landed on the north side of the big island we call Ignis. According to this map Colchis is located within a cave on the west side of the island.")
 }
@@ -560,7 +642,7 @@ text BigIslandN_Text_ColchisGrunt1Post {
 }
 
 text BigIslandN_Text_PhiloctetesAbducted {
-	format("Assemble Argonauts! Jason! Please Help!")
+	format("Please help me friends! I'm lost! They're taking me! Assemble Argonauts! Jason! Please Help!")
 }
 
 text BigIslandN_Text_JasonLeaveHim {
@@ -569,6 +651,14 @@ text BigIslandN_Text_JasonLeaveHim {
 
 text BigIslandN_Text_JasonPostAmbush {
 	format("Well done your bravery has saved our quest.")
+}
+
+text BigIslandN_Text_CultistsEnterCave {
+	format("Quickly! Hurry! We must warn Aeetes that ruffians are here to steal Mareep. Enter the cave, and seal it behind you!")
+}
+
+text BigIslandN_Text_OpenColchisCave1 {
+	format("This must be where Colchis Cave is hidden. The only question now is how do we open the secret door...\NOPEN SAYS ME!\NThat didn't work, but what else could we try...")
 }
 
 

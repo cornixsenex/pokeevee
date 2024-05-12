@@ -66,7 +66,7 @@ script Argo_Script_Jason {
 
 script Argo_Script_BeginAdventure {
 	msgbox (Argo_Text_BeginAdventure, MSGBOX_NPC)
-	setvar (VAR_ARGO_BOAT_STATE, 1)
+	setvar (VAR_ARGO_STATE, 1)
 	warp (MAP_MARE_S5, 45, 45)
 	waitstate
 	end
@@ -74,7 +74,7 @@ script Argo_Script_BeginAdventure {
 
 script Argo_Script_TestBeginAdventure {
 	msgbox ("TEST BEGIN", MSGBOX_NPC)
-	setvar (VAR_ARGO_BOAT_STATE, 1)
+	setvar (VAR_ARGO_STATE, 1)
 	warp (MAP_MARE_S5, 45, 45)
 	waitstate
 	end

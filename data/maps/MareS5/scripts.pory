@@ -4,17 +4,17 @@ const OBJ_EVENT_ARGO = 1
 mapscripts MareS5_MapScripts {
 
 	MAP_SCRIPT_ON_LOAD {
-		if (var(VAR_ARGO_BOAT_STATE) == 1) {
+		if (var(VAR_ARGO_STATE) == 1) {
 			call (MareS5_Script_SupressSurf)
 		}
 	}
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_ARGO_BOAT_STATE, 1: MareS5_Script_HidePlayer
+		VAR_ARGO_STATE, 1: MareS5_Script_HidePlayer
 	]
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ARGO_BOAT_STATE, 1: MareS5_OnFrame_SailToColchis
+		VAR_ARGO_STATE, 1: MareS5_OnFrame_SailToColchis
 	]
 
 }
