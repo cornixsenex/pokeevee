@@ -64,7 +64,7 @@ LoonixInsideReal_F2_EventScript_Bed_4:
 
 LoonixInsideReal_F2_EventScript_PS2_Text_0:
 # 18 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	.string "It's your PS2 and your favorite\l"
+	.string "It's your PS2 and your favorite\n"
 	.string "game,Star Wars Battlefront 2!$"
 
 LoonixInsideReal_F2_Text_Bed::

@@ -136,7 +136,7 @@ LoonixHills_Script_CheckRivalName_Text_0:
 
 LoonixHills_Text_SetRivalName::
 # 73 "data/maps/LoonixHills/scripts.pory"
-	.string "Would you like to change your rival's\l"
+	.string "Would you like to change your rival's\n"
 	.string "name?$"
 
 LoonixHills_Text_GiftBall::

@@ -84,21 +84,21 @@ Phoenix_Mart_EventScript_Clerk_10:
 
 Phoenix_Mart_Text_ClerkKeg::
 # 41 "data/maps/Phoenix_Mart/scripts.pory"
-	.string "Hey kid, you look like you like to party,\l"
+	.string "Hey kid, you look like you like to party,\n"
 	.string "you want to buy my last keg full of\l"
 	.string "beer? I'll sell it to you for 69 bucks.$"
 
 Phoenix_Mart_Text_ClerkKegSold::
 # 45 "data/maps/Phoenix_Mart/scripts.pory"
-	.string "It's yours! Don't drink it all at the\l"
+	.string "It's yours! Don't drink it all at the\n"
 	.string "same place haha!$"
 
 Phoenix_Mart_Text_ClerkKegShortMoney::
 # 49 "data/maps/Phoenix_Mart/scripts.pory"
-	.string "Sorry, looks like you need some more\l"
+	.string "Sorry, looks like you need some more\n"
 	.string "money.$"
 
 Phoenix_Mart_Text_ClerkKegNo::
 # 53 "data/maps/Phoenix_Mart/scripts.pory"
-	.string "That's fine, but these kegs are selling\l"
+	.string "That's fine, but these kegs are selling\n"
 	.string "out fast...$"

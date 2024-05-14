@@ -489,38 +489,38 @@ Ardor_Uni_GrammarClass_Text_Lesson1::
 
 Ardor_Uni_GrammarClass_Text_Lesson2::
 # 295 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Pronomen pars orationis est quae pro\l"
+	.string "Pronomen pars orationis est quae pro\n"
 	.string "nomine posita tantundem paene\l"
 	.string "significat personamque terdum recipit.$"
 
 Ardor_Uni_GrammarClass_Text_Lesson3::
 # 299 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Verbum pars orationis est cum tempore\l"
+	.string "Verbum pars orationis est cum tempore\n"
 	.string "et persona.$"
 
 Ardor_Uni_GrammarClass_Text_Lesson4::
 # 303 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Adverbium pars orationis est quae\l"
+	.string "Adverbium pars orationis est quae\n"
 	.string "adjecta verbum.$"
 
 Ardor_Uni_GrammarClass_Text_Lesson5::
 # 307 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Participium est pars orationis partem\l"
+	.string "Participium est pars orationis partem\n"
 	.string "capiens nominis, partem verbi.$"
 
 Ardor_Uni_GrammarClass_Text_Lesson6::
 # 311 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Conjunctio est pars orationis\l"
+	.string "Conjunctio est pars orationis\n"
 	.string "adnectens ordinasque sententiam.$"
 
 Ardor_Uni_GrammarClass_Text_Lesson7::
 # 315 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Praepositio pars orationis est quae\l"
+	.string "Praepositio pars orationis est quae\n"
 	.string "praeposita aliis partes orationis.$"
 
 Ardor_Uni_GrammarClass_Text_Lesson8::
 # 319 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Mea Hercule! Interjectiones sunt\l"
+	.string "Mea Hercule! Interjectiones sunt\n"
 	.string "partes orationis significans mentis\l"
 	.string "affectum voce incondita.$"
 
@@ -558,12 +558,12 @@ Ardor_Uni_GrammarClass_Text_Student8::
 
 Ardor_Uni_GrammarClass_Text_ClassFinished::
 # 355 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Congratulatio! Iam studuisti\l"
+	.string "Congratulatio! Iam studuisti\n"
 	.string "grammaticam.$"
 
 Ardor_Uni_GrammarClass_Text_ClassIntro::
 # 359 "data/maps/Ardor_Uni_GrammarClass/scripts.pory"
-	.string "Salve puer. Magistra Smytha sum.\l"
+	.string "Salve puer. Magistra Smytha sum.\n"
 	.string "Necesse est tibi docere grammaticam.\l"
 	.string "Partes orationis sunt octo: nomina,\l"
 	.string "pronomina, verba, adverbia, participia,\l"

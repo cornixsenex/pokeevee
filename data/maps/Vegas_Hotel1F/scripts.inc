@@ -32,7 +32,7 @@ Vegas_Hotel1F_EventScript_Owner_2:
 
 Vegas_Hotel1F_Text_OwnerPost::
 # 23 "data/maps/Vegas_Hotel1F/scripts.pory"
-	.string "That hidden move alone is not enough to\l"
+	.string "That hidden move alone is not enough to\n"
 	.string "have your pokemon light up dark spots.\l"
 	.string "You'll need to know how to use it\l"
 	.string "correct. I think someone at the old\l"
@@ -41,7 +41,7 @@ Vegas_Hotel1F_Text_OwnerPost::
 
 Vegas_Hotel1F_Text_OwnerHelp::
 # 27 "data/maps/Vegas_Hotel1F/scripts.pory"
-	.string "I've had enough of this power outage!\l"
+	.string "I've had enough of this power outage!\n"
 	.string "Nobody thinks about how much money I'm\l"
 	.string "loosing every hour without light. I've\l"
 	.string "an idea. You boy! You look quite spry. Go\l"
@@ -50,7 +50,7 @@ Vegas_Hotel1F_Text_OwnerHelp::
 
 Vegas_Hotel1F_Text_ExplainFlash::
 # 31 "data/maps/Vegas_Hotel1F/scripts.pory"
-	.string "That hidden move contains a blinding\l"
+	.string "That hidden move contains a blinding\n"
 	.string "flash which can illuminate the dark\l"
 	.string "places and should be able to turn on\l"
 	.string "the lights. Go to the power plant and\l"

@@ -218,13 +218,13 @@ Ardor_Uni2F_Movement_LeafExitN:
 
 Ardor_Uni2F_Text_ArchaeologyDoorSign::
 # 112 "data/maps/Ardor_Uni2F/scripts.pory"
-	.string "MAGISTER INDIANUS ARCHAEOLOGIAE EX\l"
+	.string "MAGISTER INDIANUS ARCHAEOLOGIAE EX\n"
 	.string "ACADEMIA IN PYRAMIDE EST. REVERTETUR\l"
 	.string "IN ANNO PROXIMO$"
 
 Ardor_Uni2F_Text_Leaf1::
 # 116 "data/maps/Ardor_Uni2F/scripts.pory"
-	.string "My gosh! This cafeteria's not bad! Oh\l"
+	.string "My gosh! This cafeteria's not bad! Oh\n"
 	.string "hey {PLAYER} I found an Indianus. His\l"
 	.string "door is halfway down the eastern hall\l"
 	.string "but it won't open. I can't understand\l"

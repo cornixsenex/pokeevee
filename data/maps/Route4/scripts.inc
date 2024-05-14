@@ -446,12 +446,12 @@ Route4_EventScript_Nestor_Text_1:
 
 Route4_Text_DeliaIntro::
 # 464 "data/maps/Route4/scripts.pory"
-	.string "We just got out of school. We're here to\l"
+	.string "We just got out of school. We're here to\n"
 	.string "play!$"
 
 Route4_Text_DeliaLost::
 # 468 "data/maps/Route4/scripts.pory"
-	.string "Why don't you pick on someone your own\l"
+	.string "Why don't you pick on someone your own\n"
 	.string "size?$"
 
 Route4_Text_DeliaPost::
@@ -460,12 +460,12 @@ Route4_Text_DeliaPost::
 
 Route4_Text_BonnieIntro::
 # 476 "data/maps/Route4/scripts.pory"
-	.string "Watch out Delia! This guy wants to\l"
+	.string "Watch out Delia! This guy wants to\n"
 	.string "fight.$"
 
 Route4_Text_BonnieLost::
 # 480 "data/maps/Route4/scripts.pory"
-	.string "You sure showed us that you can beat\l"
+	.string "You sure showed us that you can beat\n"
 	.string "us up.$"
 
 Route4_Text_BonniePost::
@@ -474,7 +474,7 @@ Route4_Text_BonniePost::
 
 Route4_Text_CharlieIntro::
 # 488 "data/maps/Route4/scripts.pory"
-	.string "One day I'll practice law and smash\l"
+	.string "One day I'll practice law and smash\n"
 	.string "those rats.$"
 
 Route4_Text_CharlieLost::
@@ -487,7 +487,7 @@ Route4_Text_CharliePost::
 
 Route4_Text_AndyIntro::
 # 500 "data/maps/Route4/scripts.pory"
-	.string "It seems like everyone out here is rude.\l"
+	.string "It seems like everyone out here is rude.\n"
 	.string "You can't even say hi to anyone without\l"
 	.string "them trying to start up a fight.$"
 
@@ -497,12 +497,12 @@ Route4_Text_AndyLost::
 
 Route4_Text_AndyPost::
 # 509 "data/maps/Route4/scripts.pory"
-	.string "Get out of here! You've messed me up\l"
+	.string "Get out of here! You've messed me up\n"
 	.string "enough!$"
 
 Route4_Text_RoyIntro::
 # 513 "data/maps/Route4/scripts.pory"
-	.string "I excersize, shower, and I dress well.\l"
+	.string "I excersize, shower, and I dress well.\n"
 	.string "It's not my fault that I was born like\l"
 	.string "this.$"
 
@@ -524,7 +524,7 @@ Route4_Text_WillLost::
 
 Route4_Text_WillPost::
 # 535 "data/maps/Route4/scripts.pory"
-	.string "We've come to the conclusion: COWS EAT\l"
+	.string "We've come to the conclusion: COWS EAT\n"
 	.string "GRASS$"
 
 Route4_Text_WaltonIntro::
@@ -537,12 +537,12 @@ Route4_Text_WaltonLost::
 
 Route4_Text_WaltonPost::
 # 548 "data/maps/Route4/scripts.pory"
-	.string "Everyone's playing in The Steel Drumm\l"
+	.string "Everyone's playing in The Steel Drumm\n"
 	.string "Band$"
 
 Route4_Text_LewisIntro::
 # 552 "data/maps/Route4/scripts.pory"
-	.string "I spend all of my time playing out here\l"
+	.string "I spend all of my time playing out here\n"
 	.string "and helping my Pokemon grow stronger!$"
 
 Route4_Text_LewisLost::
@@ -551,12 +551,12 @@ Route4_Text_LewisLost::
 
 Route4_Text_LewisPost::
 # 561 "data/maps/Route4/scripts.pory"
-	.string "I'm not as strong as you. I won't give\l"
+	.string "I'm not as strong as you. I won't give\n"
 	.string "up, come back in a few years.$"
 
 Route4_Text_LizIntro::
 # 565 "data/maps/Route4/scripts.pory"
-	.string "Would you mind if I stand next to you\l"
+	.string "Would you mind if I stand next to you\n"
 	.string "dude?$"
 
 Route4_Text_LizLost::
@@ -577,7 +577,7 @@ Route4_Text_LindseyLost::
 
 Route4_Text_LindseyPost::
 # 587 "data/maps/Route4/scripts.pory"
-	.string "It's not that I don't like Lexi, I do, but\l"
+	.string "It's not that I don't like Lexi, I do, but\n"
 	.string "why does she have to borrow my\l"
 	.string "clothes?$"
 
@@ -591,13 +591,13 @@ Route4_Text_LexyLost::
 
 Route4_Text_LexyPost::
 # 600 "data/maps/Route4/scripts.pory"
-	.string "It's not that I don't like Lexi, I do, but\l"
+	.string "It's not that I don't like Lexi, I do, but\n"
 	.string "why does she have to borrow my\l"
 	.string "clothes?$"
 
 Route4_Text_JeremyIntro::
 # 604 "data/maps/Route4/scripts.pory"
-	.string "I've been at study now for many nights.\l"
+	.string "I've been at study now for many nights.\n"
 	.string "I've mastered painting and dentistry\l"
 	.string "too.$"
 
@@ -607,12 +607,12 @@ Route4_Text_JeremyLost::
 
 Route4_Text_JeremyPost::
 # 613 "data/maps/Route4/scripts.pory"
-	.string "I made all of my nowhere plans for\l"
+	.string "I made all of my nowhere plans for\n"
 	.string "nobody.$"
 
 Route4_Text_OrionIntro::
 # 617 "data/maps/Route4/scripts.pory"
-	.string "I like to stay hidden, unseen, and\l"
+	.string "I like to stay hidden, unseen, and\n"
 	.string "watch.$"
 
 Route4_Text_OrionLost::
@@ -649,7 +649,7 @@ Route4_Text_MandyPost::
 
 Route4_Text_HecubaIntro::
 # 657 "data/maps/Route4/scripts.pory"
-	.string "My great lord Aias will keep me from\l"
+	.string "My great lord Aias will keep me from\n"
 	.string "harm.$"
 
 Route4_Text_HecubaLost::
@@ -658,13 +658,13 @@ Route4_Text_HecubaLost::
 
 Route4_Text_HecubaPost::
 # 666 "data/maps/Route4/scripts.pory"
-	.string "My husband recently has been this\l"
+	.string "My husband recently has been this\n"
 	.string "way...I worry often that he's lost his\l"
 	.string "mind.$"
 
 Route4_Text_AiasIntro::
 # 670 "data/maps/Route4/scripts.pory"
-	.string "I rush to arms once more against this\l"
+	.string "I rush to arms once more against this\n"
 	.string "youth! No man will keep me from my\l"
 	.string "victory!$"
 
@@ -678,7 +678,7 @@ Route4_Text_AiasPost::
 
 Route4_Text_LesIntro::
 # 683 "data/maps/Route4/scripts.pory"
-	.string "When I was younger I had but one dream:\l"
+	.string "When I was younger I had but one dream:\n"
 	.string "To wield a rod, to be a fisherman.$"
 
 Route4_Text_LesLost::
@@ -687,7 +687,7 @@ Route4_Text_LesLost::
 
 Route4_Text_LesPost::
 # 692 "data/maps/Route4/scripts.pory"
-	.string "Developing pork chop flavored soda\l"
+	.string "Developing pork chop flavored soda\n"
 	.string "would be a better use of my time here.$"
 
 Route4_Text_SanjayIntro::
@@ -696,33 +696,33 @@ Route4_Text_SanjayIntro::
 
 Route4_Text_SanjayLost::
 # 700 "data/maps/Route4/scripts.pory"
-	.string "You are viscious, just like those\l"
+	.string "You are viscious, just like those\n"
 	.string "fighting men!$"
 
 Route4_Text_SanjayPost::
 # 704 "data/maps/Route4/scripts.pory"
-	.string "Be careful if you try to climb the hill,\l"
+	.string "Be careful if you try to climb the hill,\n"
 	.string "those fighting men are not to be fooled\l"
 	.string "with.$"
 
 Route4_Text_WillieIntro::
 # 708 "data/maps/Route4/scripts.pory"
-	.string "Nothing compares to those sweet purple\l"
+	.string "Nothing compares to those sweet purple\n"
 	.string "pills!$"
 
 Route4_Text_WillieLost::
 # 712 "data/maps/Route4/scripts.pory"
-	.string "Just so you know my left eye's made of\l"
+	.string "Just so you know my left eye's made of\n"
 	.string "glass.$"
 
 Route4_Text_WilliePost::
 # 716 "data/maps/Route4/scripts.pory"
-	.string "Let me know when you want to share my\l"
+	.string "Let me know when you want to share my\n"
 	.string "girl.$"
 
 Route4_Text_HarryIntro::
 # 720 "data/maps/Route4/scripts.pory"
-	.string "They said I had this scar when I was\l"
+	.string "They said I had this scar when I was\n"
 	.string "born!$"
 
 Route4_Text_HarryLost::
@@ -731,14 +731,14 @@ Route4_Text_HarryLost::
 
 Route4_Text_HarryPost::
 # 728 "data/maps/Route4/scripts.pory"
-	.string "I've walked further than you around\l"
+	.string "I've walked further than you around\n"
 	.string "this world and seen many things you\l"
 	.string "would not believe. I've seen centaurs,\l"
 	.string "giants, and dragons too.$"
 
 Route4_Text_TeucerIntro::
 # 732 "data/maps/Route4/scripts.pory"
-	.string "I lost my dad and washed across the\l"
+	.string "I lost my dad and washed across the\n"
 	.string "sea.$"
 
 Route4_Text_TeucerLost::
@@ -763,24 +763,24 @@ Route4_Text_SyraPost::
 
 Route4_Text_SkyIntro::
 # 756 "data/maps/Route4/scripts.pory"
-	.string "Like I've been spending all my time with\l"
+	.string "Like I've been spending all my time with\n"
 	.string "birds and it got me like thinking...are\l"
 	.string "they real?$"
 
 Route4_Text_SkyLost::
 # 760 "data/maps/Route4/scripts.pory"
-	.string "I know one thing for certain, that loss\l"
+	.string "I know one thing for certain, that loss\n"
 	.string "was real.$"
 
 Route4_Text_SkyPost::
 # 764 "data/maps/Route4/scripts.pory"
-	.string "I don't think Earth is flat or anything,\l"
+	.string "I don't think Earth is flat or anything,\n"
 	.string "but maybe there's an Earth within The\l"
 	.string "Earth.$"
 
 Route4_Text_RockyIntro::
 # 768 "data/maps/Route4/scripts.pory"
-	.string "I've learned that in this life you have\l"
+	.string "I've learned that in this life you have\n"
 	.string "to fight to win glory as well as win the\l"
 	.string "bread. No western man has bested me\l"
 	.string "thus far. Prepare to be tested, look to\l"
@@ -788,24 +788,24 @@ Route4_Text_RockyIntro::
 
 Route4_Text_RockyLost::
 # 772 "data/maps/Route4/scripts.pory"
-	.string "Congratulations {PLAYER} our new\l"
+	.string "Congratulations {PLAYER} our new\n"
 	.string "master.$"
 
 Route4_Text_RockyDefeat::
 # 776 "data/maps/Route4/scripts.pory"
-	.string "I must accept defeat. I kneel to you\l"
+	.string "I must accept defeat. I kneel to you\n"
 	.string "and as our new leader you must accept\l"
 	.string "this black belt and command over our\l"
 	.string "gang.$"
 
 Route4_Text_RockyPost::
 # 780 "data/maps/Route4/scripts.pory"
-	.string "Be safe and wear your new black belt\l"
+	.string "Be safe and wear your new black belt\n"
 	.string "with pride$"
 
 Route4_Text_TysonIntro::
 # 784 "data/maps/Route4/scripts.pory"
-	.string "I'll fuck you up! I'll bite your ear off,\l"
+	.string "I'll fuck you up! I'll bite your ear off,\n"
 	.string "bitch!$"
 
 Route4_Text_TysonLost::
@@ -814,24 +814,24 @@ Route4_Text_TysonLost::
 
 Route4_Text_TysonPost::
 # 792 "data/maps/Route4/scripts.pory"
-	.string "Wow! What a fight! Before you face our\l"
+	.string "Wow! What a fight! Before you face our\n"
 	.string "master here be warned. He weilds power\l"
 	.string "that far exceeds my own. You should not\l"
 	.string "face him unprepared to lose.$"
 
 Route4_Text_StuIntro::
 # 796 "data/maps/Route4/scripts.pory"
-	.string "I attend fighting class three times a\l"
+	.string "I attend fighting class three times a\n"
 	.string "week.$"
 
 Route4_Text_StuLost::
 # 800 "data/maps/Route4/scripts.pory"
-	.string "Oh yeah? Can you break a wood board in\l"
+	.string "Oh yeah? Can you break a wood board in\n"
 	.string "half?$"
 
 Route4_Text_StuPost::
 # 804 "data/maps/Route4/scripts.pory"
-	.string "You only won because you broke the\l"
+	.string "You only won because you broke the\n"
 	.string "rules, our master will not be bothered\l"
 	.string "by you.$"
 
@@ -845,13 +845,13 @@ Route4_Text_AliLost::
 
 Route4_Text_AliPost::
 # 816 "data/maps/Route4/scripts.pory"
-	.string "Take caution with you if you venture\l"
+	.string "Take caution with you if you venture\n"
 	.string "on, I am nothing compared with our\l"
 	.string "master.$"
 
 Route4_Text_PatroklosIntro::
 # 820 "data/maps/Route4/scripts.pory"
-	.string "I've borrowed my tunic from my best\l"
+	.string "I've borrowed my tunic from my best\n"
 	.string "friend.$"
 
 Route4_Text_PatroklosLost::
@@ -860,7 +860,7 @@ Route4_Text_PatroklosLost::
 
 Route4_Text_PatroklosPost::
 # 828 "data/maps/Route4/scripts.pory"
-	.string "Be wary lest you fall to our master, he\l"
+	.string "Be wary lest you fall to our master, he\n"
 	.string "is the mightiest man that I know.$"
 
 Route4_Text_EpeusIntro::
@@ -869,17 +869,17 @@ Route4_Text_EpeusIntro::
 
 Route4_Text_EpeusLost::
 # 836 "data/maps/Route4/scripts.pory"
-	.string "I must sit down, go on, you win this\l"
+	.string "I must sit down, go on, you win this\n"
 	.string "round.$"
 
 Route4_Text_EpeusPost::
 # 840 "data/maps/Route4/scripts.pory"
-	.string "I am an architecht of great revenge,\l"
+	.string "I am an architecht of great revenge,\n"
 	.string "beware I may attempt to beat you yet.$"
 
 Route4_Text_SandyIntro::
 # 844 "data/maps/Route4/scripts.pory"
-	.string "I aint from round these parts, I'm from\l"
+	.string "I aint from round these parts, I'm from\n"
 	.string "Texas!$"
 
 Route4_Text_SandyLost::
@@ -888,7 +888,7 @@ Route4_Text_SandyLost::
 
 Route4_Text_SandyPost::
 # 852 "data/maps/Route4/scripts.pory"
-	.string "I spent some time down there, under the\l"
+	.string "I spent some time down there, under the\n"
 	.string "sea, but now I reckon it's time to go\l"
 	.string "home.$"
 
@@ -902,13 +902,13 @@ Route4_Text_MagoLost::
 
 Route4_Text_MagoPost::
 # 864 "data/maps/Route4/scripts.pory"
-	.string "A city once existed on this beach, at\l"
+	.string "A city once existed on this beach, at\n"
 	.string "least that's what my grandfather told\l"
 	.string "me...$"
 
 Route4_Text_DidoIntro::
 # 868 "data/maps/Route4/scripts.pory"
-	.string "A weary traveller must never be allowed\l"
+	.string "A weary traveller must never be allowed\n"
 	.string "to pass without recognition.$"
 
 Route4_Text_DidoLost::
@@ -917,7 +917,7 @@ Route4_Text_DidoLost::
 
 Route4_Text_DidoPost::
 # 876 "data/maps/Route4/scripts.pory"
-	.string "My lover left me so now I have no reason\l"
+	.string "My lover left me so now I have no reason\n"
 	.string "left to live...$"
 
 Route4_Text_BettyIntro::
@@ -926,7 +926,7 @@ Route4_Text_BettyIntro::
 
 Route4_Text_BettyLost::
 # 884 "data/maps/Route4/scripts.pory"
-	.string "I've got to ask you. What is your\l"
+	.string "I've got to ask you. What is your\n"
 	.string "secret?$"
 
 Route4_Text_BettyPost::
@@ -935,7 +935,7 @@ Route4_Text_BettyPost::
 
 Route4_Text_DonovanIntro::
 # 892 "data/maps/Route4/scripts.pory"
-	.string "There are two rabbits running in that\l"
+	.string "There are two rabbits running in that\n"
 	.string "ditch.$"
 
 Route4_Text_DonovanLost::
@@ -944,7 +944,7 @@ Route4_Text_DonovanLost::
 
 Route4_Text_DonovanPost::
 # 900 "data/maps/Route4/scripts.pory"
-	.string "I spent so long at home staring outside\l"
+	.string "I spent so long at home staring outside\n"
 	.string "wondering what the real world was about\l"
 	.string "but just so fast as I come out to play\l"
 	.string "someone like you comes by...ruins my\l"
@@ -952,7 +952,7 @@ Route4_Text_DonovanPost::
 
 Route4_Text_HelenIntro::
 # 904 "data/maps/Route4/scripts.pory"
-	.string "We ran away together. Isn't that the\l"
+	.string "We ran away together. Isn't that the\n"
 	.string "best story of romance ever told?$"
 
 Route4_Text_HelenLost::
@@ -965,12 +965,12 @@ Route4_Text_HelenPost::
 
 Route4_Text_ParisIntro::
 # 916 "data/maps/Route4/scripts.pory"
-	.string "The love goddess brought us two here\l"
+	.string "The love goddess brought us two here\n"
 	.string "today.$"
 
 Route4_Text_ParisLost::
 # 920 "data/maps/Route4/scripts.pory"
-	.string "It was nothing but fate that led to\l"
+	.string "It was nothing but fate that led to\n"
 	.string "this.$"
 
 Route4_Text_ParisPost::
@@ -987,11 +987,11 @@ Route4_Text_Test::
 
 Route4_Text_Rocket1::
 # 948 "data/maps/Route4/scripts.pory"
-	.string "This is no good what will we tell the\l"
+	.string "This is no good what will we tell the\n"
 	.string "boss?$"
 
 Route4_Text_Rocket2::
 # 952 "data/maps/Route4/scripts.pory"
-	.string "Don't worry about that, leave it to me.\l"
+	.string "Don't worry about that, leave it to me.\n"
 	.string "There's no sign of her out here\l"
 	.string "anyways...$"

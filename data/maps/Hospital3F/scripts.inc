@@ -47,7 +47,7 @@ Hospital3F_EventScript_Judy::
 
 Hospital3F_Text_ToboganPre::
 # 39 "data/maps/Hospital3F/scripts.pory"
-	.string "Bad news! Your test results are\l"
+	.string "Bad news! Your test results are\n"
 	.string "positive for HIV. That's right you got\l"
 	.string "the AIDS!$"
 
@@ -61,7 +61,7 @@ Hospital3F_Text_ToboganPost::
 
 Hospital3F_Text_JudyPre::
 # 51 "data/maps/Hospital3F/scripts.pory"
-	.string "Uh-Oh! Looks like you don't have all\l"
+	.string "Uh-Oh! Looks like you don't have all\n"
 	.string "your shots. Hold still! This will only\l"
 	.string "take one minute.$"
 
@@ -71,5 +71,5 @@ Hospital3F_Text_JudyLost::
 
 Hospital3F_Text_JudyPost::
 # 59 "data/maps/Hospital3F/scripts.pory"
-	.string "Do not come back to this hospital floor\l"
+	.string "Do not come back to this hospital floor\n"
 	.string "when you get sick.$"

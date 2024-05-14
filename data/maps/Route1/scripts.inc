@@ -550,12 +550,12 @@ Route1_Text_RockWarp::
 
 Route1_Text_Rival1::
 # 311 "data/maps/Route1/scripts.pory"
-	.string "Come with me babe, today's your lucky\l"
+	.string "Come with me babe, today's your lucky\n"
 	.string "day.$"
 
 Route1_Text_Rival2::
 # 315 "data/maps/Route1/scripts.pory"
-	.string "You stop right there, we're doing things\l"
+	.string "You stop right there, we're doing things\n"
 	.string "my way!$"
 
 Route1_Text_Rival3::
@@ -565,7 +565,7 @@ Route1_Text_Rival3::
 
 Route1_Text_Rival4::
 # 323 "data/maps/Route1/scripts.pory"
-	.string "You think that you can steal my girl\l"
+	.string "You think that you can steal my girl\n"
 	.string "from me? I'll show you which one of us is\l"
 	.string "the man.$"
 
@@ -578,43 +578,43 @@ Route1_Text_RivalLost::
 Route1_Text_Rival5::
 # 331 "data/maps/Route1/scripts.pory"
 	.string "My God!\p"
-	.string "Humpty it's Daddy can you hear my\l"
+	.string "Humpty it's Daddy can you hear my\n"
 	.string "broken voice or feel my stinging tears?\l"
 	.string "Oh Humpty!\p"
 	.string "It's all your fault you monster\p"
 	.string "Murderer!\p"
-	.string "You will not get away, violence won't\l"
+	.string "You will not get away, violence won't\n"
 	.string "win, I'll make sure in the end that\l"
 	.string "freedom wins.$"
 
 Route1_Text_Leaf1::
 # 335 "data/maps/Route1/scripts.pory"
-	.string "Hold on! I thought you just wanted to\l"
+	.string "Hold on! I thought you just wanted to\n"
 	.string "smoke. I think that I should maybe head\l"
 	.string "home soon.$"
 
 Route1_Text_Leaf2::
 # 339 "data/maps/Route1/scripts.pory"
-	.string "Hey there stranger, think you could\l"
+	.string "Hey there stranger, think you could\n"
 	.string "lend a hand? This creepy dude will not\l"
 	.string "leave me alone and if you kick his ass\l"
 	.string "we'll hella smoke$"
 
 Route1_Text_Leaf3::
 # 343 "data/maps/Route1/scripts.pory"
-	.string "Hey look at you, you're like a real hero\l"
+	.string "Hey look at you, you're like a real hero\n"
 	.string "all big and strong, and chivalrous to\l"
 	.string "boot. Do you smoke weed? Here take a\l"
 	.string "puff on this.$"
 
 Route1_Text_Leaf4::
 # 347 "data/maps/Route1/scripts.pory"
-	.string "You're pretty cool, c'mon back to my\l"
+	.string "You're pretty cool, c'mon back to my\n"
 	.string "place.$"
 
 Route1_Text_Boy1::
 # 351 "data/maps/Route1/scripts.pory"
-	.string "Be careful friend the roads are\l"
+	.string "Be careful friend the roads are\n"
 	.string "dangerous and filled with wild beasts\l"
 	.string "and criminals.$"
 

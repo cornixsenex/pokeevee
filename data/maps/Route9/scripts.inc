@@ -240,6 +240,6 @@ Route9_EventScript_RoadBlock6::
 
 Route9_Text_RoadBlocker::
 # 137 "data/maps/Route9/scripts.pory"
-	.string "You must turn back! The hill has fallen\l"
+	.string "You must turn back! The hill has fallen\n"
 	.string "down and men are hard at work to clear\l"
 	.string "the road.$"

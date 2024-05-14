@@ -156,17 +156,17 @@ CityClara_CannabisCenter_Movement_LeafExit:
 
 CityClara_CannabisCenter_Text_Intro::
 # 76 "data/maps/CityClara_CannabisClub/scripts.pory"
-	.string "Hey, good to see you. Here man hit the\l"
+	.string "Hey, good to see you. Here man hit the\n"
 	.string "bong!$"
 
 CityClara_CannabisCenter_Text_Outtro::
 # 80 "data/maps/CityClara_CannabisClub/scripts.pory"
-	.string "Just let me know if you want to smoke\l"
+	.string "Just let me know if you want to smoke\n"
 	.string "more.$"
 
 CityClara_CannabisCenter_Text_Leaf1::
 # 84 "data/maps/CityClara_CannabisClub/scripts.pory"
-	.string "Oh {PLAYER} there you are! What took\l"
+	.string "Oh {PLAYER} there you are! What took\n"
 	.string "you so long? While we were waiting my\l"
 	.string "dad got too high but I've grown\l"
 	.string "impatient and must see mew.$"
@@ -177,7 +177,7 @@ CityClara_CannabisCenter_Text_Scott1::
 
 CityClara_CannabisCenter_Text_Leaf2::
 # 92 "data/maps/CityClara_CannabisClub/scripts.pory"
-	.string "See what I mean? Dad is totally blitzed.\l"
+	.string "See what I mean? Dad is totally blitzed.\n"
 	.string "I'll wait for you down by the church I\l"
 	.string "guess but make sure to smoke up if\l"
 	.string "you're tired.$"
@@ -185,7 +185,7 @@ CityClara_CannabisCenter_Text_Leaf2::
 CityClara_CannabisCenter_Text_Scott::
 # 96 "data/maps/CityClara_CannabisClub/scripts.pory"
 	.string "Bro....\p"
-	.string "Dude! It's like why do the cows eat\l"
+	.string "Dude! It's like why do the cows eat\n"
 	.string "grass? And isn't life all connected as\l"
 	.string "one straight through our moms right up\l"
 	.string "the umbral cord...You will hear birds\l"

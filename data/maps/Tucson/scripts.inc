@@ -99,7 +99,7 @@ Tucson_Script_Hector::
 
 Tucson_Text_Nestor_Intro::
 # 80 "data/maps/Tucson/scripts.pory"
-	.string "I've lived a happy and eventful life but\l"
+	.string "I've lived a happy and eventful life but\n"
 	.string "now I see my end approaching fast.\l"
 	.string "Without a son to inherit my wealth I\l"
 	.string "must rely on Helen, my daughter, to give\l"
@@ -111,7 +111,7 @@ Tucson_Text_Nestor_Intro::
 
 Tucson_Text_Nestor1::
 # 84 "data/maps/Tucson/scripts.pory"
-	.string "My daughter Helen, much to my dismay,\l"
+	.string "My daughter Helen, much to my dismay,\n"
 	.string "refuses to marry until Castor and\l"
 	.string "Pollux her twin brothers return home.\l"
 	.string "Tell Castor and Pollux to hurry home.$"
@@ -122,14 +122,14 @@ Tucson_Text_Nestor2::
 
 Tucson_Text_Hector::
 # 92 "data/maps/Tucson/scripts.pory"
-	.string "It is a great honor and true privaledge\l"
+	.string "It is a great honor and true privaledge\n"
 	.string "to be here in the great house of Nestor\l"
 	.string "to see the wedding of lovely Helen\l"
 	.string "whether my brother is the groom or not.$"
 
 Tucson_Text_Helen1::
 # 96 "data/maps/Tucson/scripts.pory"
-	.string "Despite the radiant glow of your face\l"
+	.string "Despite the radiant glow of your face\n"
 	.string "my heart still shivers cold, I'm\l"
 	.string "trembling. Dear Paris, know these tears\l"
 	.string "that wet my cheecks are shed out of\l"
@@ -139,13 +139,13 @@ Tucson_Text_Helen1::
 
 Tucson_Text_Helen2::
 # 100 "data/maps/Tucson/scripts.pory"
-	.string "Please leave us be unless you bring us\l"
+	.string "Please leave us be unless you bring us\n"
 	.string "news that Castor and Pollux have\l"
 	.string "returned home.$"
 
 Tucson_Text_Helen3::
 # 104 "data/maps/Tucson/scripts.pory"
-	.string "Dear Paris I must not have slept last\l"
+	.string "Dear Paris I must not have slept last\n"
 	.string "night between my dreams of you and\l"
 	.string "those nightmares which filled my\l"
 	.string "fragile heart up with despair. I pray my\l"

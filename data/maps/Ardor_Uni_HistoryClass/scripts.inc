@@ -387,7 +387,7 @@ Ardor_Uni_HistoryClass_EventScript_Student7_5:
 
 Ardor_Uni_HistoryClass_Text_ClassIntro::
 # 234 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "Tace puer! Doctor, non magister tantum,\l"
+	.string "Tace puer! Doctor, non magister tantum,\n"
 	.string "Virtreus sum. Necesse est tibi docere\l"
 	.string "historiam. Epochae historiae sunt\l"
 	.string "septem: Historia Antiqua, Historia\l"
@@ -465,38 +465,38 @@ Ardor_Uni_HistoryClass_Text_TestBegin::
 
 Ardor_Uni_HistoryClass_Text_Lesson1::
 # 306 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "In temporibus antiquis viri in cavernis\l"
+	.string "In temporibus antiquis viri in cavernis\n"
 	.string "vixerunt.$"
 
 Ardor_Uni_HistoryClass_Text_Lesson2::
 # 310 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "In temporibus classicis viri prope mare\l"
+	.string "In temporibus classicis viri prope mare\n"
 	.string "oppidum erexerunt.$"
 
 Ardor_Uni_HistoryClass_Text_Lesson3::
 # 314 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "In temporibus aevorum mediorum magnus\l"
+	.string "In temporibus aevorum mediorum magnus\n"
 	.string "fuit numerus regum, equorum, et\l"
 	.string "castellorum.$"
 
 Ardor_Uni_HistoryClass_Text_Lesson4::
 # 318 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "In temporibus colonicis viri oppidorum\l"
+	.string "In temporibus colonicis viri oppidorum\n"
 	.string "montes transierunt et viros feroces\l"
 	.string "caperunt$"
 
 Ardor_Uni_HistoryClass_Text_Lesson5::
 # 322 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "In temporibus industriis viri\l"
+	.string "In temporibus industriis viri\n"
 	.string "invenerunt motrum et creaverunt\l"
 	.string "vehicula multa.$"
 
 Ardor_Uni_HistoryClass_Text_Lesson6::
 # 326 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "In temporibus belli magni multi viri\l"
+	.string "In temporibus belli magni multi viri\n"
 	.string "occiderunt.$"
 
 Ardor_Uni_HistoryClass_Text_Lesson7::
 # 330 "data/maps/Ardor_Uni_HistoryClass/scripts.pory"
-	.string "Post bellum magnum factio Rocheta\l"
+	.string "Post bellum magnum factio Rocheta\n"
 	.string "republicam virorum cepit.$"

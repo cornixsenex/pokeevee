@@ -2009,7 +2009,7 @@ SaltySpitoon_Text_Deathsticks1::
 
 SaltySpitoon_Text_Deathsticks2::
 # 747 "data/maps/SaltySpitoon/scripts.pory"
-	.string "I don't wanna sell you any deathsticks.\l"
+	.string "I don't wanna sell you any deathsticks.\n"
 	.string "I wanna go home and rea think my life...$"
 
 SaltySpitoon_Text_Bartender1::
@@ -2026,12 +2026,12 @@ SaltySpitoon_Text_HiLoKabuto_Intro::
 
 SaltySpitoon_Text_HiLoKabuto_GetWager::
 # 763 "data/maps/SaltySpitoon/scripts.pory"
-	.string "How much will you be wagering this\l"
+	.string "How much will you be wagering this\n"
 	.string "round?$"
 
 SaltySpitoon_Text_HiLoKabuto_DescribeGame::
 # 767 "data/maps/SaltySpitoon/scripts.pory"
-	.string "On the table we have ten playing cards\l"
+	.string "On the table we have ten playing cards\n"
 	.string "the numbers one through nine and\l"
 	.string "Kabuto. Kabuto's value is zero or ten\l"
 	.string "therefore that card is either high or\l"
@@ -2039,44 +2039,44 @@ SaltySpitoon_Text_HiLoKabuto_DescribeGame::
 
 SaltySpitoon_Text_HiLoKabuto_Goodbye::
 # 771 "data/maps/SaltySpitoon/scripts.pory"
-	.string "When you feel like playing we'll still be\l"
+	.string "When you feel like playing we'll still be\n"
 	.string "here.$"
 
 SaltySpitoon_Text_HiLoKabuto_WagerPoor::
 # 775 "data/maps/SaltySpitoon/scripts.pory"
-	.string "Looks like you're short on coin to back\l"
+	.string "Looks like you're short on coin to back\n"
 	.string "that bet.$"
 
 SaltySpitoon_Text_HiLoKabuto_KabutoLo::
 # 779 "data/maps/SaltySpitoon/scripts.pory"
-	.string "Gentlemen, Kabuto is low this game. Now\l"
+	.string "Gentlemen, Kabuto is low this game. Now\n"
 	.string "take your cards and let's see who has\l"
 	.string "won.$"
 
 SaltySpitoon_Text_HiLoKabuto_KabutoHi::
 # 783 "data/maps/SaltySpitoon/scripts.pory"
-	.string "Gentlemen, Kabuto is high this game. Now\l"
+	.string "Gentlemen, Kabuto is high this game. Now\n"
 	.string "take your cards and let's see who has\l"
 	.string "won.$"
 
 SaltySpitoon_Text_HiLoKabuto_YouLost::
 # 787 "data/maps/SaltySpitoon/scripts.pory"
-	.string "That means you lose your wager kind\l"
+	.string "That means you lose your wager kind\n"
 	.string "stranger.$"
 
 SaltySpitoon_Text_HiLoKabuto_YouWon::
 # 791 "data/maps/SaltySpitoon/scripts.pory"
-	.string "Congratulations {PLAYER} you won\l"
+	.string "Congratulations {PLAYER} you won\n"
 	.string "this round.$"
 
 SaltySpitoon_Text_HiLoKabuto_PlayAgain::
 # 795 "data/maps/SaltySpitoon/scripts.pory"
-	.string "That was a good game. Will we play\l"
+	.string "That was a good game. Will we play\n"
 	.string "again?$"
 
 SaltySpitoon_Text_EvazanIntro::
 # 799 "data/maps/SaltySpitoon/scripts.pory"
-	.string "He doesn't like you. I don't like you\l"
+	.string "He doesn't like you. I don't like you\n"
 	.string "either.$"
 
 SaltySpitoon_Text_EvazanLost::
@@ -2085,12 +2085,12 @@ SaltySpitoon_Text_EvazanLost::
 
 SaltySpitoon_Text_EvazanPost::
 # 807 "data/maps/SaltySpitoon/scripts.pory"
-	.string "You need to be more careful round here\l"
+	.string "You need to be more careful round here\n"
 	.string "kid.$"
 
 SaltySpitoon_Text_PondaBabuIntro::
 # 811 "data/maps/SaltySpitoon/scripts.pory"
-	.string "We're wanted men. I have the death\l"
+	.string "We're wanted men. I have the death\n"
 	.string "sentence.$"
 
 SaltySpitoon_Text_PondaBabuLost::
@@ -2099,7 +2099,7 @@ SaltySpitoon_Text_PondaBabuLost::
 
 SaltySpitoon_Text_PondaBabuPost::
 # 819 "data/maps/SaltySpitoon/scripts.pory"
-	.string "You watch yourself. They say this place\l"
+	.string "You watch yourself. They say this place\n"
 	.string "is rough.$"
 
 SaltySpitoon_Text_ReeseLost::
@@ -2112,12 +2112,12 @@ SaltySpitoon_Text_JohnLost::
 
 SaltySpitoon_Text_NoGame::
 # 831 "data/maps/SaltySpitoon/scripts.pory"
-	.string "We're not playing right now so get you\l"
+	.string "We're not playing right now so get you\n"
 	.string "gone.$"
 
 SaltySpitoon_Text_HiLoKabuto_Fight::
 # 835 "data/maps/SaltySpitoon/scripts.pory"
-	.string "No one can win three hands\l"
+	.string "No one can win three hands\n"
 	.string "successively! This kind stranger\l"
 	.string "{PLAYER} here must be cheating! To\l"
 	.string "arms! To arms! Destroy the cheating\l"
@@ -2125,7 +2125,7 @@ SaltySpitoon_Text_HiLoKabuto_Fight::
 
 SaltySpitoon_Text_BigGreen1::
 # 839 "data/maps/SaltySpitoon/scripts.pory"
-	.string "I'm here because I am a troubled man.\l"
+	.string "I'm here because I am a troubled man.\n"
 	.string "These dancing girls help me forget\l"
 	.string "trouble, let sorrow waste away as time\l"
 	.string "endures. Outside my troubles grow while\l"
@@ -2133,7 +2133,7 @@ SaltySpitoon_Text_BigGreen1::
 
 SaltySpitoon_Text_BigGreen2::
 # 843 "data/maps/SaltySpitoon/scripts.pory"
-	.string "But where are my manners? My name is\l"
+	.string "But where are my manners? My name is\n"
 	.string "Melvin. You call me Big Green. I'm sure\l"
 	.string "you're looking to make a fortune and\l"
 	.string "secure status among our city. Come see\l"

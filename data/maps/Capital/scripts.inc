@@ -1902,7 +1902,7 @@ Capital_Text_Gio1::
 
 Capital_Text_Gio2::
 # 998 "data/maps/Capital/scripts.pory"
-	.string "You call yourself a man, old Cicero,\l"
+	.string "You call yourself a man, old Cicero,\n"
 	.string "shaking and crying at merely the sight\l"
 	.string "of this child? You're can't master your\l"
 	.string "own emotions let alone this rebellion.\l"
@@ -1919,7 +1919,7 @@ Capital_Text_Cicero3::
 
 Capital_Text_Gio3::
 # 1010 "data/maps/Capital/scripts.pory"
-	.string "You still don't understand there is a\l"
+	.string "You still don't understand there is a\n"
 	.string "new power rising.$"
 
 Capital_Text_Soldier1::
@@ -1932,7 +1932,7 @@ Capital_Text_Cicero4::
 
 Capital_Text_Gio4::
 # 1022 "data/maps/Capital/scripts.pory"
-	.string "Enough! Old fool, can't you see this is\l"
+	.string "Enough! Old fool, can't you see this is\n"
 	.string "my hour? Be gone and lament your\l"
 	.string "failures in vain.$"
 
@@ -1962,7 +1962,7 @@ Capital_Text_Cicero8::
 
 Capital_Text_Gio5::
 # 1050 "data/maps/Capital/scripts.pory"
-	.string "You've done well {PLAYER} now you may\l"
+	.string "You've done well {PLAYER} now you may\n"
 	.string "approach me.$"
 
 Capital_Text_GioMewtwoMove::
@@ -1971,7 +1971,7 @@ Capital_Text_GioMewtwoMove::
 
 Capital_Text_Gio6::
 # 1058 "data/maps/Capital/scripts.pory"
-	.string "You must be powerful to destroy Blaine\l"
+	.string "You must be powerful to destroy Blaine\n"
 	.string "and find your way to our coronation.\l"
 	.string "I've heard many rumours about you\l"
 	.string "{PLAYER} and now I see you with my\l"
@@ -1987,18 +1987,18 @@ Capital_Text_PlayerJoinGio::
 
 Capital_Text_Gio7Yes::
 # 1066 "data/maps/Capital/scripts.pory"
-	.string "You are more foolish than I had assumed\l"
+	.string "You are more foolish than I had assumed\n"
 	.string "if you believed that I would let you\l"
 	.string "live.$"
 
 Capital_Text_Gio7No::
 # 1070 "data/maps/Capital/scripts.pory"
-	.string "Then your journey ends here you foolish\l"
+	.string "Then your journey ends here you foolish\n"
 	.string "boy.$"
 
 Capital_Text_Gio8::
 # 1074 "data/maps/Capital/scripts.pory"
-	.string "Mewtwo the time has come. Destroy the\l"
+	.string "Mewtwo the time has come. Destroy the\n"
 	.string "boy and then put a swift end to this\l"
 	.string "revolt.$"
 
@@ -2012,17 +2012,17 @@ Capital_Text_Gio9::
 
 Capital_Text_Mewtwo2::
 # 1086 "data/maps/Capital/scripts.pory"
-	.string "I won't obey. I am no slave of yours\l"
+	.string "I won't obey. I am no slave of yours\n"
 	.string "Giovanni.$"
 
 Capital_Text_Gio10::
 # 1090 "data/maps/Capital/scripts.pory"
-	.string "Mewtwo even you cannot break those\l"
+	.string "Mewtwo even you cannot break those\n"
 	.string "cuffs$"
 
 Capital_Text_Mewtwo3::
 # 1094 "data/maps/Capital/scripts.pory"
-	.string "I am MEWTWO and I can break these\l"
+	.string "I am MEWTWO and I can break these\n"
 	.string "cuffs.$"
 
 Capital_Text_Gio11::
@@ -2035,13 +2035,13 @@ Capital_Text_Mewtwo4::
 
 Capital_Text_Mewtwo5::
 # 1106 "data/maps/Capital/scripts.pory"
-	.string "At last I take a breath free from those\l"
+	.string "At last I take a breath free from those\n"
 	.string "chains. My strength is made ten fold\l"
 	.string "now that I'm free!$"
 
 Capital_Text_Mewtwo6::
 # 1110 "data/maps/Capital/scripts.pory"
-	.string "You're wrong if you think you can\l"
+	.string "You're wrong if you think you can\n"
 	.string "control me, you're nothing more than a\l"
 	.string "worthless human. What's more I cannot\l"
 	.string "foresee a future where you will rule\l"
@@ -2058,7 +2058,7 @@ Capital_Text_Gio12::
 
 Capital_Text_GioIntro::
 # 1122 "data/maps/Capital/scripts.pory"
-	.string "You bastard! This is all your fault!\l"
+	.string "You bastard! This is all your fault!\n"
 	.string "Looks like I'll have to deal with you\l"
 	.string "myself...$"
 
@@ -2068,7 +2068,7 @@ Capital_Text_GioLost::
 
 Capital_Text_GioDefeat::
 # 1130 "data/maps/Capital/scripts.pory"
-	.string "Betrayed, forsaken, and surrounded I\l"
+	.string "Betrayed, forsaken, and surrounded I\n"
 	.string "am sure to perish on this damned\l"
 	.string "day...My coronation become funeral.$"
 
@@ -2078,12 +2078,12 @@ Capital_Text_Surge1::
 
 Capital_Text_Surge2::
 # 1138 "data/maps/Capital/scripts.pory"
-	.string "We must evacuate at once! The rebels\l"
+	.string "We must evacuate at once! The rebels\n"
 	.string "have...$"
 
 Capital_Text_Gio13::
 # 1142 "data/maps/Capital/scripts.pory"
-	.string "Lieutenant Surge, be done, we're\l"
+	.string "Lieutenant Surge, be done, we're\n"
 	.string "finished here, Mewtwo abandoned us the\l"
 	.string "day is lost...$"
 
@@ -2093,20 +2093,20 @@ Capital_Text_Surge3::
 
 Capital_Text_Surge4::
 # 1150 "data/maps/Capital/scripts.pory"
-	.string "The military remains faithfully\l"
+	.string "The military remains faithfully\n"
 	.string "obedient to you. If we retreat...if we\l"
 	.string "regroup, return, counterattack, we\l"
 	.string "might...$"
 
 Capital_Text_Gio14::
 # 1154 "data/maps/Capital/scripts.pory"
-	.string "I see no hope in this retreat, only a\l"
+	.string "I see no hope in this retreat, only a\n"
 	.string "cowardly delay of death. Mewtwo is\l"
 	.string "gone, we must...$"
 
 Capital_Text_Surge5::
 # 1158 "data/maps/Capital/scripts.pory"
-	.string "We need to leave! I'm going to bring you\l"
+	.string "We need to leave! I'm going to bring you\n"
 	.string "back to our fort or leave you here to\l"
 	.string "die!$"
 
@@ -2120,7 +2120,7 @@ Capital_Text_Maxie1::
 
 Capital_Text_Maxie2::
 # 1170 "data/maps/Capital/scripts.pory"
-	.string "With your help {PLAYER} we've won the\l"
+	.string "With your help {PLAYER} we've won the\n"
 	.string "capital but Giovanni managed to\l"
 	.string "escape! They must be headed to Fort\l"
 	.string "Montgomery. You've demonstrated your\l"
@@ -2132,12 +2132,12 @@ Capital_Text_Maxie2::
 
 Capital_Text_Maxie3::
 # 1174 "data/maps/Capital/scripts.pory"
-	.string "And {PLAYER} I must repeat what I\l"
+	.string "And {PLAYER} I must repeat what I\n"
 	.string "just said$"
 
 Capital_Text_Maxie4::
 # 1178 "data/maps/Capital/scripts.pory"
-	.string "To your credit we owe our newborn state\l"
+	.string "To your credit we owe our newborn state\n"
 	.string "and I thank you on behalf of us all.$"
 
 Capital_Text_Maxie5::
@@ -2146,12 +2146,12 @@ Capital_Text_Maxie5::
 
 Capital_Text_SoldierBattle::
 # 1186 "data/maps/Capital/scripts.pory"
-	.string "You must leave now! The senate's\l"
+	.string "You must leave now! The senate's\n"
 	.string "underway!$"
 
 Capital_Text_RebelBattle::
 # 1190 "data/maps/Capital/scripts.pory"
-	.string "You'll never win! Freedom will always\l"
+	.string "You'll never win! Freedom will always\n"
 	.string "win!$"
 
 Capital_Text_SurgeBattle::

@@ -268,7 +268,7 @@ LoonixGiftHouse_Kind_Bud_Find::
 
 LoonixGiftHouse_Item_Kind_Bud_Deny::
 # 163 "data/maps/LoonixGiftHouse/scripts.pory"
-	.string "I've already got enough to smoke.\l"
+	.string "I've already got enough to smoke.\n"
 	.string "Better come back later!$"
 
 LoonixGiftBallTextNo::
@@ -290,12 +290,12 @@ LoonixGiftHouse_SomethingNice::
 
 LoonixGiftHouse_WantEggText::
 # 184 "data/maps/LoonixGiftHouse/scripts.pory"
-	.string "Hey, could you please watch this egg\l"
+	.string "Hey, could you please watch this egg\n"
 	.string "for me?$"
 
 LoonixGiftHouse_NoRoomForEgg::
 # 188 "data/maps/LoonixGiftHouse/scripts.pory"
-	.string "Sorry, looks like you don't have room.\l"
+	.string "Sorry, looks like you don't have room.\n"
 	.string "Come back later!$"
 
 LoonixGiftHouse_TakeCare::
@@ -308,7 +308,7 @@ LoonixGiftHouse_EggText::
 
 LoonixGiftHouse_NoEggText::
 # 200 "data/maps/LoonixGiftHouse/scripts.pory"
-	.string "Okay, well let me know if you change\l"
+	.string "Okay, well let me know if you change\n"
 	.string "your mind.$"
 
 LoonixGiftHouse_HowsArbok::
@@ -317,17 +317,17 @@ LoonixGiftHouse_HowsArbok::
 
 LoonixGiftHouse_WantArbok::
 # 209 "data/maps/LoonixGiftHouse/scripts.pory"
-	.string "Hey! I've got an ARBOK for you if you'd\l"
+	.string "Hey! I've got an ARBOK for you if you'd\n"
 	.string "like.$"
 
 LoonixGiftHouse_NoArbok::
 # 213 "data/maps/LoonixGiftHouse/scripts.pory"
-	.string "That's allright, just come back if you\l"
+	.string "That's allright, just come back if you\n"
 	.string "change your mind!$"
 
 LoonixGiftHouse_EnjoyArbok::
 # 217 "data/maps/LoonixGiftHouse/scripts.pory"
-	.string "Right on, you take good care of ARBOK\l"
+	.string "Right on, you take good care of ARBOK\n"
 	.string "now you hear?$"
 
 LoonixGiftHouse_ObtainedArbok::

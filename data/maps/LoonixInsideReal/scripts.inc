@@ -273,14 +273,14 @@ Watch_TV_Text_0:
 
 LoonixInsideReal_EventScript_Statue_Text_0:
 # 24 "data/maps/LoonixInsideReal/scripts.pory"
-	.string "This is the statue they sent us after\l"
+	.string "This is the statue they sent us after\n"
 	.string "Dad left...\p"
-	.string "Grandma must have forgotten to polish\l"
+	.string "Grandma must have forgotten to polish\n"
 	.string "it.$"
 
 LoonixInsideReal_EventScript_Junk_Text_0:
 # 31 "data/maps/LoonixInsideReal/scripts.pory"
-	.string "Here's another pile of junk grandma\l"
+	.string "Here's another pile of junk grandma\n"
 	.string "left lying around.$"
 
 LoonixInsideReal_EventScript_Special_Text_0:
@@ -301,7 +301,7 @@ LoonixInsideReal_EventScript_PreventExit_Text_0:
 
 LoonixInsideReal_EventScript_Grandma_Text_0:
 # 98 "data/maps/LoonixInsideReal/scripts.pory"
-	.string "{PLAYER}, take our Pokemon from the\l"
+	.string "{PLAYER}, take our Pokemon from the\n"
 	.string "backyard to protect you on the road.$"
 
 LoonixInsideReal_EventScript_Grandma_Text_1:
@@ -311,16 +311,16 @@ LoonixInsideReal_EventScript_Grandma_Text_1:
 
 LoonixInsideReal_Text_GrandmaTVSpeech::
 # 147 "data/maps/LoonixInsideReal/scripts.pory"
-	.string "It's all over the news that Mew's\l"
+	.string "It's all over the news that Mew's\n"
 	.string "returned!\n"
 	.string "My boy, this is a God sent mircale.\p"
-	.string "Just once...to see the living shape of\l"
+	.string "Just once...to see the living shape of\n"
 	.string "Mew...there's nothing more of life that I\l"
 	.string "would ask.$"
 
 LoonixInsideReal_Text_GrandmaMono::
 # 151 "data/maps/LoonixInsideReal/scripts.pory"
-	.string "But now the strength of life has left\l"
+	.string "But now the strength of life has left\n"
 	.string "these bones, and I can hardly walk\l"
 	.string "across the yard. Saeclara City is too\l"
 	.string "far away for this old crow to fly.$"
@@ -328,7 +328,7 @@ LoonixInsideReal_Text_GrandmaMono::
 LoonixInsideReal_Text_GrandmaToBed::
 # 155 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "I'll have to stay.\p"
-	.string "{PLAYER} will you help me get into\l"
+	.string "{PLAYER} will you help me get into\n"
 	.string "bed?$"
 
 LoonixInsideReal_Text_GrandmaBed::

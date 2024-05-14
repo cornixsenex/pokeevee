@@ -133,7 +133,7 @@ Slabs_EventScript_Bike::
 
 Slabs_Text_Rival1::
 # 101 "data/maps/Slabs/scripts.pory"
-	.string "What are you doing here? You pushed me\l"
+	.string "What are you doing here? You pushed me\n"
 	.string "to the outer fringes of society where\l"
 	.string "I've started a succesful renegade\l"
 	.string "bicycle repair shop I'll never let you\l"
@@ -145,6 +145,6 @@ Slabs_Text_RivalLost::
 
 Slabs_Text_RivalPost::
 # 109 "data/maps/Slabs/scripts.pory"
-	.string "You've destroyed everything I ever had,\l"
+	.string "You've destroyed everything I ever had,\n"
 	.string "taken everything I've ever loved away\l"
 	.string "from me where can I turn$"

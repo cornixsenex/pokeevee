@@ -156,7 +156,7 @@ Ardor_Uni_ChemistryClass_EventScript_Test::
 
 Ardor_Uni_ChemistryClass_Text_ClassIntro::
 # 77 "data/maps/Ardor_Uni_ChemistryClass/scripts.pory"
-	.string "Salve puer. Magister Severus sum.\l"
+	.string "Salve puer. Magister Severus sum.\n"
 	.string "Necesse est tibi docere scientiam\l"
 	.string "alchemiae. Alchemia studium\l"
 	.string "elementorum est. Numerus elementorum\l"
@@ -180,7 +180,7 @@ Ardor_Uni_ChemistryClass_Text_BringFlyingType::
 
 Ardor_Uni_ChemistryClass_Text_LessonComplete::
 # 97 "data/maps/Ardor_Uni_ChemistryClass/scripts.pory"
-	.string "Revenisti cum monstra quattor: uno\l"
+	.string "Revenisti cum monstra quattor: uno\n"
 	.string "ignis, uno aquae, uno telluris, et uno\l"
 	.string "aeris.$"
 
@@ -190,5 +190,5 @@ Ardor_Uni_ChemistryClass_Text_TeacherBattleLost::
 
 Ardor_Uni_ChemistryClass_Text_ClassFinished::
 # 105 "data/maps/Ardor_Uni_ChemistryClass/scripts.pory"
-	.string "Congratulatio! Iam studuisti alchemiam.\l"
+	.string "Congratulatio! Iam studuisti alchemiam.\n"
 	.string "Usa machinam quando volas.$"

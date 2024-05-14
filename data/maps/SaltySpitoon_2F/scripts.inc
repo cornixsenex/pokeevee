@@ -1260,7 +1260,7 @@ SaltySpitoon_2F_Text_Ambush3::
 
 SaltySpitoon_2F_Text_GetTattoo::
 # 766 "data/maps/SaltySpitoon_2F/scripts.pory"
-	.string "Like zoinks dude you're super strong\l"
+	.string "Like zoinks dude you're super strong\n"
 	.string "man!\n"
 	.string "Like yeah man we're totally your dudes\l"
 	.string "now. You're in the gang man! Like we\l"
@@ -1271,7 +1271,7 @@ SaltySpitoon_2F_Text_GetTattoo::
 
 SaltySpitoon_2F_Text_GetTattoo2::
 # 770 "data/maps/SaltySpitoon_2F/scripts.pory"
-	.string "Hey! That looks real cool man! Like\l"
+	.string "Hey! That looks real cool man! Like\n"
 	.string "zoinks you look like a real tough guy\l"
 	.string "now. I'm gonna head back to the shack\l"
 	.string "to smoke. See you around boss. Like\l"

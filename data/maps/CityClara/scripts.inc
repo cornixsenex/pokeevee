@@ -546,13 +546,13 @@ CityClara_Text_TownSign::
 
 CityClara_Text_CannaWoman::
 # 328 "data/maps/CityClara/scripts.pory"
-	.string "You see this building here? The Chronic\l"
+	.string "You see this building here? The Chronic\n"
 	.string "Club? They got me so high I can barely\l"
 	.string "walk!$"
 
 CityClara_Text_LeafBridge::
 # 332 "data/maps/CityClara/scripts.pory"
-	.string "I can't believe how long this line\l"
+	.string "I can't believe how long this line\n"
 	.string "appears! We'll wait all day and night to\l"
 	.string "move halfway up to the top. Oh\l"
 	.string "{PLAYER} I bet you could find another\l"
@@ -568,7 +568,7 @@ CityClara_Text_LeafBridge::
 
 CityClara_Text_LeafBridge2::
 # 336 "data/maps/CityClara/scripts.pory"
-	.string "Oh my gosh {PLAYER}! Is that the HM\l"
+	.string "Oh my gosh {PLAYER}! Is that the HM\n"
 	.string "CUT? You are the best! Let's sneak into\l"
 	.string "the church!$"
 
@@ -630,14 +630,14 @@ CityClara_Text_Lass2::
 
 CityClara_Text_Senex1::
 # 396 "data/maps/CityClara/scripts.pory"
-	.string "My boy come here, or no, are you a girl?\l"
+	.string "My boy come here, or no, are you a girl?\n"
 	.string "Forgive me for my eyes are old as I have\l"
 	.string "grown. Tell me would you ask me to speak\l"
 	.string "and tell to you the tale of this city?$"
 
 CityClara_Text_Senex2::
 # 400 "data/maps/CityClara/scripts.pory"
-	.string "This place is ancient, older than I am.\l"
+	.string "This place is ancient, older than I am.\n"
 	.string "They say that people first lived on the\l"
 	.string "lake thousands of years ago. Escpaing\l"
 	.string "drought the elder race escaped across\l"
@@ -652,7 +652,7 @@ CityClara_Text_Senex2::
 
 CityClara_Text_Senex3::
 # 404 "data/maps/CityClara/scripts.pory"
-	.string "No one has time for history these\l"
+	.string "No one has time for history these\n"
 	.string "days...$"
 
 CityClara_Text_RocketBlock1::
@@ -661,13 +661,13 @@ CityClara_Text_RocketBlock1::
 
 CityClara_Text_RocketBlock2::
 # 412 "data/maps/CityClara/scripts.pory"
-	.string "Stop right there! Take not one more\l"
+	.string "Stop right there! Take not one more\n"
 	.string "stop. This road is closed, we shall let\l"
 	.string "no one pass.$"
 
 CityClara_Text_RocketBlock3::
 # 416 "data/maps/CityClara/scripts.pory"
-	.string "By order of the Rocket High Command\l"
+	.string "By order of the Rocket High Command\n"
 	.string "only party business will be allowed\l"
 	.string "until our mission has been completed.\l"
 	.string "Now get thee gone, noone wants more\l"
@@ -675,14 +675,14 @@ CityClara_Text_RocketBlock3::
 
 CityClara_Text_Rocket1::
 # 420 "data/maps/CityClara/scripts.pory"
-	.string "The Rocket Party helped me buy a home!\l"
+	.string "The Rocket Party helped me buy a home!\n"
 	.string "Standing watch on the road's the very\l"
 	.string "least I can do to pay back our dear\l"
 	.string "leader.$"
 
 CityClara_Text_Rocket2::
 # 424 "data/maps/CityClara/scripts.pory"
-	.string "The party only wants the very best\l"
+	.string "The party only wants the very best\n"
 	.string "people to represent their interests.\l"
 	.string "Perhaps with time, and practice, and\l"
 	.string "some luck, you could one day wear our\l"
@@ -691,7 +691,7 @@ CityClara_Text_Rocket2::
 
 CityClara_Text_Jessie::
 # 428 "data/maps/CityClara/scripts.pory"
-	.string "This church is being occupied by the\l"
+	.string "This church is being occupied by the\n"
 	.string "Rocket Party and we're watching the\l"
 	.string "door. You'll have to get in line and wait\l"
 	.string "your turn then pay the entrance fee to\l"
@@ -699,7 +699,7 @@ CityClara_Text_Jessie::
 
 CityClara_Text_James::
 # 432 "data/maps/CityClara/scripts.pory"
-	.string "This town is so antique it's comical.\l"
+	.string "This town is so antique it's comical.\n"
 	.string "Look at all these people waiting in line\l"
 	.string "just for a glimpse of some old pokemon.\l"
 	.string "The city is a better place to live and\l"

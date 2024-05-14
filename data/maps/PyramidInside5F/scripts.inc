@@ -30,6 +30,6 @@ PyramidInside5F_EventScript_Indy::
 
 PyramidInside5F_Text_IndyIntro::
 # 24 "data/maps/PyramidInside5F/scripts.pory"
-	.string "I knew you were coming...say not a word\l"
+	.string "I knew you were coming...say not a word\n"
 	.string "before we battle. I must test your\l"
 	.string "strength.$"

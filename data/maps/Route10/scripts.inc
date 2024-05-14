@@ -80,7 +80,7 @@ Route10_Text_Rival1::
 
 Route10_Text_Rival2::
 # 62 "data/maps/Route10/scripts.pory"
-	.string "What are you doing here? So what I\l"
+	.string "What are you doing here? So what I\n"
 	.string "stole the keys?$"
 
 Route10_Text_RivalLost::

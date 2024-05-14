@@ -185,7 +185,7 @@ Ardor_Uni_PhysicsClass_Text_WhereIsMyGem::
 
 Ardor_Uni_PhysicsClass_Text_ClassIntro::
 # 126 "data/maps/Ardor_Uni_PhysicsClass/scripts.pory"
-	.string "Salve puer. Magister Clancius sum.\l"
+	.string "Salve puer. Magister Clancius sum.\n"
 	.string "Necesse est tibi docere scientiam\l"
 	.string "physicae. Partes physicarum sum tres:\l"
 	.string "electromagnetica, optica, et nuclearis.\l"
@@ -201,14 +201,14 @@ Ardor_Uni_PhysicsClass_Text_ClassFinished::
 
 Ardor_Uni_PhysicsClass_Text_GemIntro::
 # 138 "data/maps/Ardor_Uni_PhysicsClass/scripts.pory"
-	.string "Iam revenisti cum monstro magnetis!\l"
+	.string "Iam revenisti cum monstro magnetis!\n"
 	.string "Ergo iam est tempus tibi docere\l"
 	.string "physicam opticorum. Physicam opticorum\l"
 	.string "demonstrabo cum gemma mea rubra.$"
 
 Ardor_Uni_PhysicsClass_Text_Thief::
 # 142 "data/maps/Ardor_Uni_PhysicsClass/scripts.pory"
-	.string "Praedo! Gemmam meam despoliavisti!\l"
+	.string "Praedo! Gemmam meam despoliavisti!\n"
 	.string "Redde gemmam.$"
 
 Ardor_Uni_PhysicsClass_Text_BattleIntro::

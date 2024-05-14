@@ -162,7 +162,7 @@ Ardor_Uni_CalculusClass_EventScript_Student2_5:
 
 Ardor_Uni_CalculusClass_Text_ClassIntro::
 # 105 "data/maps/Ardor_Uni_CalculusClass/scripts.pory"
-	.string "Salve puer! Magister Hagus sum. Necesse\l"
+	.string "Salve puer! Magister Hagus sum. Necesse\n"
 	.string "est tibi docere calculum. Calculus duas\l"
 	.string "partes, derivativa integraliaque,\l"
 	.string "habet. Stude partes duas et reveni.$"
@@ -197,10 +197,10 @@ Ardor_Uni_CalculusClass_Text_TestBegin::
 
 Ardor_Uni_CalculusClass_Text_Lesson1::
 # 137 "data/maps/Ardor_Uni_CalculusClass/scripts.pory"
-	.string "Derivativi sunt devexum linamenti\l"
+	.string "Derivativi sunt devexum linamenti\n"
 	.string "tangentis puncto dativo functioni.$"
 
 Ardor_Uni_CalculusClass_Text_Lesson2::
 # 141 "data/maps/Ardor_Uni_CalculusClass/scripts.pory"
-	.string "Integrale est area sub curvum fine\l"
+	.string "Integrale est area sub curvum fine\n"
 	.string "puncto dativo functioni.$"

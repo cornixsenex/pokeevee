@@ -14,8 +14,12 @@ const OBJ_EVENT_AMBUSH4 = 11
 mapscripts BigIslandN_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
+		//2 = Boat has landed, Jason waits for Ambush script
 		if (var(VAR_ARGO_STATE) == 2) {
-			call (BigIslandN_Script_ShowArgo)
+			call (BigIslandN_Script_ShowArgo2)
+		//3 = Jason at the Cave Entrance, Phils abducted, Argonauts getting bored
+		} elif (var(VAR_ARGO_STATE) == 3) {
+			call (BigIslandN_Script_ShowArgo3)
 		} else {
 			call (BigIslandN_Script_HideArgo)
 		}
@@ -54,7 +58,7 @@ script BigIslandN_Script_HideArgo {
 	end
 }
 
-script BigIslandN_Script_ShowArgo {
+script BigIslandN_Script_ShowArgo2 {
 	setobjectxyperm (OBJ_EVENT_ARGO, 80, 17)
 	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_ARGO)
@@ -92,6 +96,46 @@ script BigIslandN_Script_ShowArgo {
 	
 	end
 }
+
+script BigIslandN_Script_ShowArgo3 {
+	setobjectxyperm (OBJ_EVENT_ARGO, 80, 17)
+	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_ARGO)
+	showobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_CASTOR, 41, 12)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_CASTOR)
+	showobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_POLLUX, 42, 12)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_POLLUX)
+	showobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_ORPHEUS, 111, 14)
+	setobjectmovementtype (OBJ_EVENT_ORPHEUS, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_ORPHEUS)
+	showobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_THESEUS, 68, 26)
+	setobjectmovementtype (OBJ_EVENT_THESEUS, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_THESEUS)
+	showobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_JASON, 31, 37)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_JASON)
+	showobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_PHILOCTETES, 62, 32)
+	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_INVISIBLE)
+	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_PHILOCTETES)
+	
+	end
+}
+
 
 script BigIslandN_Script_ArgoArrival {
 
@@ -198,7 +242,7 @@ script BigIslandN_Script_ArgoArrival {
 	removeobject (OBJ_EVENT_PHILOCTETES)
 	removeobject (OBJ_EVENT_THESEUS)
 	removeobject (OBJ_EVENT_ORPHEUS)
-	call (BigIslandN_Script_ShowArgo)
+	call (BigIslandN_Script_ShowArgo2)
 //	special (DrawWholeMapView)
 	end
 }
@@ -217,14 +261,22 @@ script BigIslandN_Script_Philoctetes {
 script BigIslandN_Script_Jason {
 	lockall
 	faceplayer
-	msgbox (BigIslandN_Text_Jason, MSGBOX_DEFAULT)
-	closemessage
-	specialvar (VAR_RESULT, GetPlayerFacingDirection)
-	if (var(VAR_RESULT) == DIR_NORTH) {
-		call (BigIslandN_Script_ExploreA)
+	if (var(VAR_ARGO_STATE) == 2) {
+		msgbox (BigIslandN_Text_Jason, MSGBOX_DEFAULT)
+		closemessage
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_NORTH) {
+			call (BigIslandN_Script_ExploreA)
+		} else {
+			call (BigIslandN_Script_ExploreB)
+		}
+	} elif (var(VAR_ARGO_STATE) == 3) {
+		call (BigIslandN_Script_JasonAtColchisCave)
 	} else {
-		call (BigIslandN_Script_ExploreB)
+		msgbox (format("BAD VAR in BigIslandN_Script_Jason"), MSGBOX_DEFAULT)
+		closemessage
 	}
+		
 	releaseall
 	end
 }
@@ -460,18 +512,28 @@ script BigIslandN_Script_Ambush {
 	waitmovement (0)
 	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
 	waitmovement (0)
+	
+	setvar (VAR_ARGO_STATE, 3)
 
+	call (BigIslandN_Script_JasonAtColchisCave)
 	//Jason turns to you and says 'they've sealed it shut we must find a way inside
-	msgbox(BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
-	closemessage
 
+	call (BigIslandN_Script_ShowArgo3)
 
 	//New state of BigIsland: Jason at Colchis Cave, Phil abducted, C&P bored somewhere (hint), Orpheus new song, Theseus new girl 
-	setvar (VAR_ARGO_STATE, 4)
 
 	return
 }	
 
+script BigIslandN_Script_JasonAtColchisCave {
+	msgbox(BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
+	closemessage
+	//If finished Prometheus check for spearow YESNO release spearow then open the cave and begin Colchis
+	//if it never goes anywhere else then...
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
+	waitmovement (0)
+	return
+}
 
 movement BigIslandN_Movement_JasonDisembark {
 	walk_right

@@ -357,12 +357,12 @@ Hospital6F_EventScript_DocP_DoP_2:
 
 Hospital6F_Text_DocLobo_ComeBack::
 # 263 "data/maps/Hospital6F/scripts.pory"
-	.string "Please don't forget I'm here and do\l"
+	.string "Please don't forget I'm here and do\n"
 	.string "come back.$"
 
 Hospital6F_Text_DocLobo_1::
 # 267 "data/maps/Hospital6F/scripts.pory"
-	.string "I am a doctor of lobotomy. Would you be\l"
+	.string "I am a doctor of lobotomy. Would you be\n"
 	.string "interested in my services?$"
 
 Hospital6F_Text_DocLobo_WhichMon::
@@ -371,7 +371,7 @@ Hospital6F_Text_DocLobo_WhichMon::
 
 Hospital6F_Text_DocLobo_DeclineLobo::
 # 275 "data/maps/Hospital6F/scripts.pory"
-	.string "Oh. I guess that means you must have\l"
+	.string "Oh. I guess that means you must have\n"
 	.string "changed your mind.$"
 
 Hospital6F_Text_DocLobo_CantLobo::
@@ -380,12 +380,12 @@ Hospital6F_Text_DocLobo_CantLobo::
 
 Hospital6F_Text_DocPS_ComeBack::
 # 283 "data/maps/Hospital6F/scripts.pory"
-	.string "Please don't forget I'm here and do\l"
+	.string "Please don't forget I'm here and do\n"
 	.string "come back.$"
 
 Hospital6F_Text_DocPS_1::
 # 287 "data/maps/Hospital6F/scripts.pory"
-	.string "Hello. I perform plastic surgery. Would\l"
+	.string "Hello. I perform plastic surgery. Would\n"
 	.string "you be interested in my services?$"
 
 Hospital6F_Text_DocPS_WhichMon::
@@ -394,7 +394,7 @@ Hospital6F_Text_DocPS_WhichMon::
 
 Hospital6F_Text_DocPS_DeclinePS::
 # 295 "data/maps/Hospital6F/scripts.pory"
-	.string "Oh. I guess that means you must have\l"
+	.string "Oh. I guess that means you must have\n"
 	.string "changed your mind.$"
 
 Hospital6F_Text_DocPS_CantPS::
@@ -403,12 +403,12 @@ Hospital6F_Text_DocPS_CantPS::
 
 Hospital6F_Text_DocG_ComeBack::
 # 303 "data/maps/Hospital6F/scripts.pory"
-	.string "Please don't forget I'm here and do\l"
+	.string "Please don't forget I'm here and do\n"
 	.string "come back.$"
 
 Hospital6F_Text_DocG_1::
 # 307 "data/maps/Hospital6F/scripts.pory"
-	.string "Would you like to tranform your\l"
+	.string "Would you like to tranform your\n"
 	.string "pokemon?$"
 
 Hospital6F_Text_DocG_WhichMon::
@@ -417,7 +417,7 @@ Hospital6F_Text_DocG_WhichMon::
 
 Hospital6F_Text_DocG_DeclineG::
 # 315 "data/maps/Hospital6F/scripts.pory"
-	.string "Oh. I guess that means you must have\l"
+	.string "Oh. I guess that means you must have\n"
 	.string "changed your mind.$"
 
 Hospital6F_Text_DocG_CantG::
@@ -426,12 +426,12 @@ Hospital6F_Text_DocG_CantG::
 
 Hospital6F_Text_DocP_ComeBack::
 # 323 "data/maps/Hospital6F/scripts.pory"
-	.string "Please don't forget I'm here and do\l"
+	.string "Please don't forget I'm here and do\n"
 	.string "come back.$"
 
 Hospital6F_Text_DocP_1::
 # 327 "data/maps/Hospital6F/scripts.pory"
-	.string "Greetings. I'm a {PKMN} therapist. Are you\l"
+	.string "Greetings. I'm a {PKMN} therapist. Are you\n"
 	.string "interested in therapy?$"
 
 Hospital6F_Text_DocP_WhichMon::
@@ -440,7 +440,7 @@ Hospital6F_Text_DocP_WhichMon::
 
 Hospital6F_Text_DocP_DeclineP::
 # 335 "data/maps/Hospital6F/scripts.pory"
-	.string "Oh. I guess that means you must have\l"
+	.string "Oh. I guess that means you must have\n"
 	.string "changed your mind.$"
 
 Hospital6F_Text_DocP_CantP::

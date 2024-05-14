@@ -202,7 +202,7 @@ GrandmasCabin_Movement_Mew:
 
 GrandmasCabin_EventScript_GiveEevee_Text_0:
 # 79 "data/maps/GrandmasCabin/scripts.pory"
-	.string "Would you like to give a nickname to\l"
+	.string "Would you like to give a nickname to\n"
 	.string "Eevee?$"
 
 GrandmasCabin_EventScript_StarterMonEevee_Text_0:

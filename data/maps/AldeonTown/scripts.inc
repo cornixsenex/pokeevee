@@ -160,7 +160,7 @@ AldeonTown_Movement_PlayerSnorlax2:
 
 AldeonTown_Text_FatMan_BlockExit::
 # 98 "data/maps/AldeonTown/scripts.pory"
-	.string "Woah, hold your horses there young man!\l"
+	.string "Woah, hold your horses there young man!\n"
 	.string "Be careful these here snorlaxes..or uh\l"
 	.string "snorlacis, can be mighty dangerous you\l"
 	.string "don't wanna get too close. If you just\l"
@@ -169,22 +169,22 @@ AldeonTown_Text_FatMan_BlockExit::
 
 AldeonTown_Text_FatMan2::
 # 102 "data/maps/AldeonTown/scripts.pory"
-	.string "See, I told you that Snorlax would move\l"
+	.string "See, I told you that Snorlax would move\n"
 	.string "eventually.$"
 
 AldeonTown_Text_FatMan3::
 # 106 "data/maps/AldeonTown/scripts.pory"
-	.string "This town is great cuz the Rocket Party\l"
+	.string "This town is great cuz the Rocket Party\n"
 	.string "rarely ever bothers us!$"
 
 AldeonTown_Text_DoorWoman::
 # 110 "data/maps/AldeonTown/scripts.pory"
-	.string "I'm sorry but if you no business with Mr.\l"
+	.string "I'm sorry but if you no business with Mr.\n"
 	.string "Johnson then you need to leave.$"
 
 AldeonTown_Text_TownSign::
 # 114 "data/maps/AldeonTown/scripts.pory"
-	.string "Aldeon Town - Where Snorlax has the\l"
+	.string "Aldeon Town - Where Snorlax has the\n"
 	.string "Right of Way$"
 
 AldeonTown_Text_HouseSign::

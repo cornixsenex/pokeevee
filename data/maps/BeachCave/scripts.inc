@@ -107,17 +107,17 @@ Route3_Text_NickLost::
 
 Route3_Text_NickPost::
 # 76 "data/maps/BeachCave/scripts.pory"
-	.string "This cave has gotten rather popular\l"
+	.string "This cave has gotten rather popular\n"
 	.string "lately.$"
 
 Route3_Text_KyleIntro::
 # 80 "data/maps/BeachCave/scripts.pory"
-	.string "I'm running first, then getting stoned\l"
+	.string "I'm running first, then getting stoned\n"
 	.string "lated.$"
 
 Route3_Text_KyleLost::
 # 84 "data/maps/BeachCave/scripts.pory"
-	.string "Guess I was wrong, should have smoked a\l"
+	.string "Guess I was wrong, should have smoked a\n"
 	.string "bowl first.$"
 
 Route3_Text_KylePost::
@@ -126,7 +126,7 @@ Route3_Text_KylePost::
 
 Route3_Text_JedIntro::
 # 92 "data/maps/BeachCave/scripts.pory"
-	.string "Hey kid have you ever talked to your\l"
+	.string "Hey kid have you ever talked to your\n"
 	.string "dog?$"
 
 Route3_Text_JedLost::
@@ -135,12 +135,12 @@ Route3_Text_JedLost::
 
 Route3_Text_JedPost::
 # 100 "data/maps/BeachCave/scripts.pory"
-	.string "I moved out here last year from\l"
+	.string "I moved out here last year from\n"
 	.string "Tennessee!$"
 
 Route3_Text_RexIntro::
 # 104 "data/maps/BeachCave/scripts.pory"
-	.string "Are you ready to build muscle and gain\l"
+	.string "Are you ready to build muscle and gain\n"
 	.string "power over your life and in your core?$"
 
 Route3_Text_RexLost::
@@ -149,7 +149,7 @@ Route3_Text_RexLost::
 
 Route3_Text_RexPost::
 # 112 "data/maps/BeachCave/scripts.pory"
-	.string "You've got spunk kid, but you're still no\l"
+	.string "You've got spunk kid, but you're still no\n"
 	.string "black belt.$"
 
 Route3_Text_MorganIntro::
@@ -166,29 +166,29 @@ Route3_Text_MorganPost::
 
 Route3_Text_TrevorIntro::
 # 128 "data/maps/BeachCave/scripts.pory"
-	.string "Oh dude watch out we're skoobin in the\l"
+	.string "Oh dude watch out we're skoobin in the\n"
 	.string "cave!$"
 
 Route3_Text_TrevorLost::
 # 132 "data/maps/BeachCave/scripts.pory"
-	.string "Oh shit I think you just fucked up my\l"
+	.string "Oh shit I think you just fucked up my\n"
 	.string "hand.$"
 
 Route3_Text_TrevorPost::
 # 136 "data/maps/BeachCave/scripts.pory"
-	.string "There's no way I'm going to pay for\l"
+	.string "There's no way I'm going to pay for\n"
 	.string "this...$"
 
 BeachCave_Text_Hector1::
 # 140 "data/maps/BeachCave/scripts.pory"
-	.string "Hello. My name is Hector, I'm from Troy. I\l"
+	.string "Hello. My name is Hector, I'm from Troy. I\n"
 	.string "dedicate every waking moment to self\l"
 	.string "improvement, pious discipline, and\l"
 	.string "rightous action. Go with God stranger.$"
 
 BeachCave_Text_Hector2::
 # 144 "data/maps/BeachCave/scripts.pory"
-	.string "What's this invitation that you've\l"
+	.string "What's this invitation that you've\n"
 	.string "brought me? My brother Paris will marry\l"
 	.string "Helen? I must travel to Nestor's house\l"
 	.string "at once!$"

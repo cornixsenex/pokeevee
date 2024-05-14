@@ -100,17 +100,17 @@ BulbusTown_CannabisCenter_Movement_Scott:
 
 BulbusTown_CannabisCenter_Intro::
 # 55 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
-	.string "What's up dude? Scott told me you smoke\l"
+	.string "What's up dude? Scott told me you smoke\n"
 	.string "for free, here hit this bong!$"
 
 BulbusTown_CannabisCenter_Outtro::
 # 59 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
-	.string "Hows that feel? Just let me know if you\l"
+	.string "Hows that feel? Just let me know if you\n"
 	.string "need another one.$"
 
 BulbusTown_CannabisCenter_Text_Scott1::
 # 63 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
-	.string "Hey {PLAYER} I knew you'd come, so\l"
+	.string "Hey {PLAYER} I knew you'd come, so\n"
 	.string "what you think? The finest cannabis\l"
 	.string "shop in the state. As a reward for\l"
 	.string "saving my daughter I've let the\l"

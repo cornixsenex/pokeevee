@@ -466,7 +466,7 @@ Route3_Movement_RivalLeafExit:
 
 Route3_Text_RossIntro::
 # 272 "data/maps/Route3/scripts.pory"
-	.string "I'm learning how to swim! Here check\l"
+	.string "I'm learning how to swim! Here check\n"
 	.string "this out!$"
 
 Route3_Text_RossLost::
@@ -475,7 +475,7 @@ Route3_Text_RossLost::
 
 Route3_Text_RossPost::
 # 280 "data/maps/Route3/scripts.pory"
-	.string "Wow you showed me! Looks like I need to\l"
+	.string "Wow you showed me! Looks like I need to\n"
 	.string "practice dog paddling.$"
 
 Route3_Text_IzzyIntro::
@@ -492,7 +492,7 @@ Route3_Text_IzzyPost::
 
 Route3_Text_RicardoIntro::
 # 297 "data/maps/Route3/scripts.pory"
-	.string "I brought my son here to play on the\l"
+	.string "I brought my son here to play on the\n"
 	.string "beach.$"
 
 Route3_Text_RicardoLost::
@@ -501,7 +501,7 @@ Route3_Text_RicardoLost::
 
 Route3_Text_RicardoPost::
 # 305 "data/maps/Route3/scripts.pory"
-	.string "Have you explored the cave carved in\l"
+	.string "Have you explored the cave carved in\n"
 	.string "the rock down by the sea?$"
 
 Route3_Text_PedroIntro::
@@ -566,7 +566,7 @@ Route3_Text_JonPost::
 
 Route3_Text_JoeIntro::
 # 369 "data/maps/Route3/scripts.pory"
-	.string "My friend Jon ain't great at outdoorsy\l"
+	.string "My friend Jon ain't great at outdoorsy\n"
 	.string "stuff.$"
 
 Route3_Text_JoeLost::
@@ -588,7 +588,7 @@ Route3_Text_RyanLost::
 
 Route3_Text_RyanPost::
 # 389 "data/maps/Route3/scripts.pory"
-	.string "Thank you a lot, these bugs are\l"
+	.string "Thank you a lot, these bugs are\n"
 	.string "dangerous.$"
 
 Route3_Text_MeganIntro::
@@ -601,13 +601,13 @@ Route3_Text_MeganLost::
 
 Route3_Text_MeganPost::
 # 401 "data/maps/Route3/scripts.pory"
-	.string "Hey haven't you heard anything about a\l"
+	.string "Hey haven't you heard anything about a\n"
 	.string "new freeway the party was planning to\l"
 	.string "build through here?$"
 
 Route3_Text_DevonIntro::
 # 405 "data/maps/Route3/scripts.pory"
-	.string "You're not headed into the woods are\l"
+	.string "You're not headed into the woods are\n"
 	.string "you?$"
 
 Route3_Text_DevonLost::
@@ -616,12 +616,12 @@ Route3_Text_DevonLost::
 
 Route3_Text_DevonPost::
 # 413 "data/maps/Route3/scripts.pory"
-	.string "You should be safe enough, but be\l"
+	.string "You should be safe enough, but be\n"
 	.string "careful that you do not get lost.$"
 
 Route3_Text_Leaf1::
 # 417 "data/maps/Route3/scripts.pory"
-	.string "Hey {PLAYER} long time no see how\l"
+	.string "Hey {PLAYER} long time no see how\n"
 	.string "have you been? While you slowpokes\l"
 	.string "were getting stoned in town I was\l"
 	.string "training my fresh caught Pokemon. Look\l"
@@ -630,32 +630,32 @@ Route3_Text_Leaf1::
 
 Route3_Text_LeafLost::
 # 421 "data/maps/Route3/scripts.pory"
-	.string "Wow {PLAYER} looks like I have a lot\l"
+	.string "Wow {PLAYER} looks like I have a lot\n"
 	.string "to learn$"
 
 Route3_Text_Leaf1Post::
 # 425 "data/maps/Route3/scripts.pory"
 	.string "Haha you're way too good for me.\p"
-	.string "But wait weren't you supposed to meet\l"
+	.string "But wait weren't you supposed to meet\n"
 	.string "me with my dad?\p"
 	.string "We need to find him! Where could he be?\p"
 	.string "DAD?!$"
 
 Route3_Text_OldMan::
 # 429 "data/maps/Route3/scripts.pory"
-	.string "Caverna Ilium was this cave's name\l"
+	.string "Caverna Ilium was this cave's name\n"
 	.string "before The Party changed it to Beach\l"
 	.string "Cave.\p"
 	.string "You should only go in if you're prepared.$"
 
 Route3_Text_Leaf2::
 # 433 "data/maps/Route3/scripts.pory"
-	.string "Look out {PLAYER} it's {RIVAL}\l"
+	.string "Look out {PLAYER} it's {RIVAL}\n"
 	.string "this is a trap!$"
 
 Route3_Text_RivalIntro::
 # 437 "data/maps/Route3/scripts.pory"
-	.string "It's {PLAYER} is it? What a disgusting\l"
+	.string "It's {PLAYER} is it? What a disgusting\n"
 	.string "name though fitting for an animal like\l"
 	.string "you. I spent six hours saving Humpty's\l"
 	.string "life after the hospital turned me away\l"
@@ -670,7 +670,7 @@ Route3_Text_RivalLost::
 
 Route3_Text_RivalPost::
 # 445 "data/maps/Route3/scripts.pory"
-	.string "You anal sniffing worm, you piece of\l"
+	.string "You anal sniffing worm, you piece of\n"
 	.string "filth! I will not have you make a fool of\l"
 	.string "me. Already you have stolen my whole\l"
 	.string "life from me. There's nothing to go back,\l"
@@ -687,7 +687,7 @@ Route3_Text_RivalPost::
 
 Route3_Text_Leaf3::
 # 449 "data/maps/Route3/scripts.pory"
-	.string "Wow {PLAYER} I'm glad you're here all\l"
+	.string "Wow {PLAYER} I'm glad you're here all\n"
 	.string "big and strong to protect me from\l"
 	.string "creeps like that {RIVAL}. It's\l"
 	.string "getting late and I want to see Mew!\l"

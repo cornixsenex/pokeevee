@@ -115,7 +115,7 @@ Ardor_Uni_LogicClass_EventScript_Test::
 
 Ardor_Uni_LogicClass_Text_BeginLogic::
 # 72 "data/maps/Ardor_Uni_LogicClass/scripts.pory"
-	.string "Salve puer. Magister Joannes sum.\l"
+	.string "Salve puer. Magister Joannes sum.\n"
 	.string "Necesse est exolvere enigma.\l"
 	.string "Praestasne exolvere enigma?$"
 

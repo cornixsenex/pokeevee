@@ -493,12 +493,12 @@ FootballField_EventScript_EndZone_Text_0:
 
 FootballField_Text_FieldClosed::
 # 343 "data/maps/FootballField/scripts.pory"
-	.string "Hey you! Field's closed! We only want\l"
+	.string "Hey you! Field's closed! We only want\n"
 	.string "student atheletes touching this grass.$"
 
 FootballField_Text_GymIntro::
 # 347 "data/maps/FootballField/scripts.pory"
-	.string "Wait. Whats that? You're here from the\l"
+	.string "Wait. Whats that? You're here from the\n"
 	.string "college? Oh shit! Uhh... Ellohey.... uhh...\l"
 	.string "elcomeway... to... uhhh... assclay.. uhhh.\l"
 	.string "Oh fuck it! Look, here's the thing. Out\l"
@@ -513,32 +513,32 @@ FootballField_Text_GymIntro::
 
 FootballField_Text_NoFollowersAllowed::
 # 351 "data/maps/FootballField/scripts.pory"
-	.string "Hey! We don't let those filthy animals\l"
+	.string "Hey! We don't let those filthy animals\n"
 	.string "on our grass. Your Pokemon, it has to\l"
 	.string "wait outside we don't want it here.$"
 
 FootballField_Text_BeginRunningTest::
 # 355 "data/maps/FootballField/scripts.pory"
-	.string "First things first let's see if you can\l"
+	.string "First things first let's see if you can\n"
 	.string "run. Try to make it to the other side of\l"
 	.string "the field without letting any of my\l"
 	.string "boys hit you first.$"
 
 FootballField_Text_DoNotLeaveField::
 # 359 "data/maps/FootballField/scripts.pory"
-	.string "Hey! Where do you think you're going?\l"
+	.string "Hey! Where do you think you're going?\n"
 	.string "Get your lazy ass back on the field and\l"
 	.string "finish the drill!$"
 
 FootballField_Text_ClassFinished::
 # 363 "data/maps/FootballField/scripts.pory"
-	.string "Hey what do you think you're doing? You\l"
+	.string "Hey what do you think you're doing? You\n"
 	.string "just made my boys look like total\l"
 	.string "loosers! Get off my field!$"
 
 FootballField_Text_CoachIntro::
 # 367 "data/maps/FootballField/scripts.pory"
-	.string "We can't have some game changer like\l"
+	.string "We can't have some game changer like\n"
 	.string "you running around making us feel bad.\l"
 	.string "We got a championship to win!$"
 
@@ -548,16 +548,16 @@ FootballField_Text_CoachLost::
 
 FootballField_Text_CoachPost::
 # 375 "data/maps/FootballField/scripts.pory"
-	.string "We don't need your fucking help to win.\l"
+	.string "We don't need your fucking help to win.\n"
 	.string "Get out of here kid you passed the\l"
 	.string "class.$"
 
 FootballField_Text_CoachComplete::
 # 379 "data/maps/FootballField/scripts.pory"
-	.string "I told you already, you passed the\l"
+	.string "I told you already, you passed the\n"
 	.string "class, now get out of here.$"
 
 FootballField_Text_RunningTestFail::
 # 383 "data/maps/FootballField/scripts.pory"
-	.string "Hey! One of my boys got ya! You're too\l"
+	.string "Hey! One of my boys got ya! You're too\n"
 	.string "slow out there do it again!$"

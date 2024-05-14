@@ -276,7 +276,7 @@ RockTunnel_Text_Leaf1::
 
 RockTunnel_Text_RivalIntro::
 # 126 "data/maps/RockTunnel/scripts.pory"
-	.string "I've been waiting for you some time now\l"
+	.string "I've been waiting for you some time now\n"
 	.string "{PLAYER} while you were still too weak\l"
 	.string "to break those rocks I was mastering\l"
 	.string "the art of battle. I will destroy you\l"
@@ -288,7 +288,7 @@ RockTunnel_Text_RivalLost::
 
 RockTunnel_Text_RivalPost::
 # 134 "data/maps/RockTunnel/scripts.pory"
-	.string "You are the very worst man on this\l"
+	.string "You are the very worst man on this\n"
 	.string "earth. I curse you every day and won't\l"
 	.string "forget the torment that you've brought\l"
 	.string "into my life! Do not imagine that this is\l"
@@ -296,6 +296,6 @@ RockTunnel_Text_RivalPost::
 
 RockTunnel_Text_Leaf2::
 # 138 "data/maps/RockTunnel/scripts.pory"
-	.string "My hero {PLAYER} you saved me once\l"
+	.string "My hero {PLAYER} you saved me once\n"
 	.string "again! C'mon! We need to push through\l"
 	.string "to the end.$"

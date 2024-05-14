@@ -605,12 +605,12 @@ SilvanWoods_Text_CrystalLost::
 
 SilvanWoods_Text_CrystalPost::
 # 368 "data/maps/SilvanWoods/scripts.pory"
-	.string "I lost my boyfriend somewhere in the\l"
+	.string "I lost my boyfriend somewhere in the\n"
 	.string "woods.$"
 
 SilvanWoods_Text_NoahIntro::
 # 372 "data/maps/SilvanWoods/scripts.pory"
-	.string "I don't do drugs, I'm just playing with\l"
+	.string "I don't do drugs, I'm just playing with\n"
 	.string "bugs.$"
 
 SilvanWoods_Text_NoahLost::
@@ -623,7 +623,7 @@ SilvanWoods_Text_NoahPost::
 
 SilvanWoods_Text_FredrickIntro::
 # 384 "data/maps/SilvanWoods/scripts.pory"
-	.string "I'm teaching my boy how to hunt for\l"
+	.string "I'm teaching my boy how to hunt for\n"
 	.string "bugs!$"
 
 SilvanWoods_Text_FredrickLost::
@@ -680,12 +680,12 @@ SilvanWoods_Text_RosaLost::
 
 SilvanWoods_Text_RosaPost::
 # 440 "data/maps/SilvanWoods/scripts.pory"
-	.string "I'd like to fall in love beneath the\l"
+	.string "I'd like to fall in love beneath the\n"
 	.string "trees.$"
 
 SilvanWoods_Text_MaryIntro::
 # 444 "data/maps/SilvanWoods/scripts.pory"
-	.string "Hey watch it! This is where we like to\l"
+	.string "Hey watch it! This is where we like to\n"
 	.string "play.$"
 
 SilvanWoods_Text_MaryLost::
@@ -698,7 +698,7 @@ SilvanWoods_Text_MaryPost::
 
 SilvanWoods_Text_MollyIntro::
 # 456 "data/maps/SilvanWoods/scripts.pory"
-	.string "Who let you out of bed looking like\l"
+	.string "Who let you out of bed looking like\n"
 	.string "that?$"
 
 SilvanWoods_Text_MollyLost::
@@ -711,23 +711,23 @@ SilvanWoods_Text_MollyPost::
 
 SilvanWoods_Text_LeahIntro::
 # 468 "data/maps/SilvanWoods/scripts.pory"
-	.string "I think you'll find I'm not like other\l"
+	.string "I think you'll find I'm not like other\n"
 	.string "girls.$"
 
 SilvanWoods_Text_LeahLost::
 # 472 "data/maps/SilvanWoods/scripts.pory"
-	.string "Looks like I still have a lot left to\l"
+	.string "Looks like I still have a lot left to\n"
 	.string "learn.$"
 
 SilvanWoods_Text_LeahPost::
 # 476 "data/maps/SilvanWoods/scripts.pory"
-	.string "I love it here and feel at complete\l"
+	.string "I love it here and feel at complete\n"
 	.string "peace whenever I can walk among these\l"
 	.string "trees.$"
 
 SilvanWoods_Text_DaisyIntro::
 # 480 "data/maps/SilvanWoods/scripts.pory"
-	.string "Men don't like me. They say I'm too\l"
+	.string "Men don't like me. They say I'm too\n"
 	.string "forward.$"
 
 SilvanWoods_Text_DaisyLost::
@@ -736,7 +736,7 @@ SilvanWoods_Text_DaisyLost::
 
 SilvanWoods_Text_DaisyPost::
 # 488 "data/maps/SilvanWoods/scripts.pory"
-	.string "I hear men like it when you squish your\l"
+	.string "I hear men like it when you squish your\n"
 	.string "face. Maybe I'll share a pic with Agatha.$"
 
 SilvanWoods_Text_KelseyIntro::
@@ -757,17 +757,17 @@ SilvanWoods_Text_FelixIntro::
 
 SilvanWoods_Text_FelixLost::
 # 508 "data/maps/SilvanWoods/scripts.pory"
-	.string "Uhh dude now what will I have for\l"
+	.string "Uhh dude now what will I have for\n"
 	.string "dinner?$"
 
 SilvanWoods_Text_FelixPost::
 # 512 "data/maps/SilvanWoods/scripts.pory"
-	.string "Crickets and worms are sources of\l"
+	.string "Crickets and worms are sources of\n"
 	.string "protein.$"
 
 SilvanWoods_Text_VioletIntro::
 # 516 "data/maps/SilvanWoods/scripts.pory"
-	.string "Each flower grows unique from all the\l"
+	.string "Each flower grows unique from all the\n"
 	.string "rest.$"
 
 SilvanWoods_Text_VioletLost::
@@ -776,22 +776,22 @@ SilvanWoods_Text_VioletLost::
 
 SilvanWoods_Text_VioletPost::
 # 524 "data/maps/SilvanWoods/scripts.pory"
-	.string "How many are the blooms that we call\l"
+	.string "How many are the blooms that we call\n"
 	.string "rose?$"
 
 SilvanWoods_Text_RubyIntro::
 # 528 "data/maps/SilvanWoods/scripts.pory"
-	.string "I had suggested we go to the book\l"
+	.string "I had suggested we go to the book\n"
 	.string "depository but Jack insisted...$"
 
 SilvanWoods_Text_RubyLost::
 # 532 "data/maps/SilvanWoods/scripts.pory"
-	.string "You can't say Silvan Woods has no\l"
+	.string "You can't say Silvan Woods has no\n"
 	.string "welcome.$"
 
 SilvanWoods_Text_RubyPost::
 # 536 "data/maps/SilvanWoods/scripts.pory"
-	.string "What do you mean? There was but one of\l"
+	.string "What do you mean? There was but one of\n"
 	.string "us!$"
 
 SilvanWoods_Text_JackIntro::
@@ -804,17 +804,17 @@ SilvanWoods_Text_JackLost::
 
 SilvanWoods_Text_JackPost::
 # 548 "data/maps/SilvanWoods/scripts.pory"
-	.string "Who was the man with the black\l"
+	.string "Who was the man with the black\n"
 	.string "umbrella?$"
 
 SilvanWoods_Text_LesterIntro::
 # 552 "data/maps/SilvanWoods/scripts.pory"
-	.string "I had to take a rest after walking so\l"
+	.string "I had to take a rest after walking so\n"
 	.string "far but there is nowhere great to sit.$"
 
 SilvanWoods_Text_LesterLost::
 # 556 "data/maps/SilvanWoods/scripts.pory"
-	.string "Just goes to show the importance of\l"
+	.string "Just goes to show the importance of\n"
 	.string "health.$"
 
 SilvanWoods_Text_LesterPost::
@@ -831,12 +831,12 @@ SilvanWoods_Text_NevilleLost::
 
 SilvanWoods_Text_NevillePost::
 # 572 "data/maps/SilvanWoods/scripts.pory"
-	.string "Dissapointing is the only thing I have\l"
+	.string "Dissapointing is the only thing I have\n"
 	.string "to say.$"
 
 SilvanWoods_Text_WangIntro::
 # 576 "data/maps/SilvanWoods/scripts.pory"
-	.string "Hey kid would you like to see my big\l"
+	.string "Hey kid would you like to see my big\n"
 	.string "worm?$"
 
 SilvanWoods_Text_WangLost::
@@ -845,7 +845,7 @@ SilvanWoods_Text_WangLost::
 
 SilvanWoods_Text_WangPost::
 # 584 "data/maps/SilvanWoods/scripts.pory"
-	.string "C'mon calm down. Besides it really was a\l"
+	.string "C'mon calm down. Besides it really was a\n"
 	.string "monster worm!$"
 
 SilvanWoods_Text_SallyIntro::
@@ -858,7 +858,7 @@ SilvanWoods_Text_SallyLost::
 
 SilvanWoods_Text_SallyPost::
 # 597 "data/maps/SilvanWoods/scripts.pory"
-	.string "Back in my day we had no Pokemon and I\l"
+	.string "Back in my day we had no Pokemon and I\n"
 	.string "don't like the way you kids trust them!$"
 
 SilvanWoods_Text_EdIntro::
@@ -875,7 +875,7 @@ SilvanWoods_Text_EdPost::
 
 SilvanWoods_Text_JayIntro::
 # 613 "data/maps/SilvanWoods/scripts.pory"
-	.string "We aren't here to enjoy the woods\l"
+	.string "We aren't here to enjoy the woods\n"
 	.string "instead we came out here to fight and\l"
 	.string "get fucked up.$"
 
@@ -885,13 +885,13 @@ SilvanWoods_Text_JayLost::
 
 SilvanWoods_Text_JayPost::
 # 621 "data/maps/SilvanWoods/scripts.pory"
-	.string "Dude schools so hard, these teachers\l"
+	.string "Dude schools so hard, these teachers\n"
 	.string "think that I should understand this\l"
 	.string "complicated shit like traingles.$"
 
 SilvanWoods_Text_FosterIntro::
 # 625 "data/maps/SilvanWoods/scripts.pory"
-	.string "Man have you ever just looked at your\l"
+	.string "Man have you ever just looked at your\n"
 	.string "hands?$"
 
 SilvanWoods_Text_FosterLost::
@@ -900,17 +900,17 @@ SilvanWoods_Text_FosterLost::
 
 SilvanWoods_Text_FosterPost::
 # 633 "data/maps/SilvanWoods/scripts.pory"
-	.string "I met this guy who told me that pig\l"
+	.string "I met this guy who told me that pig\n"
 	.string "tastes just like human.$"
 
 SilvanWoods_Text_DouggieIntro::
 # 637 "data/maps/SilvanWoods/scripts.pory"
-	.string "Haha! Dude, RIZZLAM! We're all\l"
+	.string "Haha! Dude, RIZZLAM! We're all\n"
 	.string "RIZZLAMIC!$"
 
 SilvanWoods_Text_DouggieLost::
 # 641 "data/maps/SilvanWoods/scripts.pory"
-	.string "You're honestly acting just like a\l"
+	.string "You're honestly acting just like a\n"
 	.string "bitch.$"
 
 SilvanWoods_Text_DouggiePost::
@@ -927,13 +927,13 @@ SilvanWoods_Text_SmokeyLost::
 
 SilvanWoods_Text_SmokeyPost::
 # 657 "data/maps/SilvanWoods/scripts.pory"
-	.string "Just sitting here all day and smoking\l"
+	.string "Just sitting here all day and smoking\n"
 	.string "weed sometimes I worry I may have\l"
 	.string "fucked up.$"
 
 SilvanWoods_Text_StoneyIntro::
 # 661 "data/maps/SilvanWoods/scripts.pory"
-	.string "Uhh bro we're taking dabs under the\l"
+	.string "Uhh bro we're taking dabs under the\n"
 	.string "trees.$"
 
 SilvanWoods_Text_StoneyLost::
@@ -942,7 +942,7 @@ SilvanWoods_Text_StoneyLost::
 
 SilvanWoods_Text_StoneyPost::
 # 669 "data/maps/SilvanWoods/scripts.pory"
-	.string "It's pretty cool up here in the forest\l"
+	.string "It's pretty cool up here in the forest\n"
 	.string "the weed's better but I still miss the\l"
 	.string "beach.$"
 
@@ -952,19 +952,19 @@ SilvanWoods_Text_GaryIntro::
 
 SilvanWoods_Text_GaryLost::
 # 677 "data/maps/SilvanWoods/scripts.pory"
-	.string "I'm smoked out man, I can' take one more\l"
+	.string "I'm smoked out man, I can' take one more\n"
 	.string "hit.$"
 
 SilvanWoods_Text_GaryPost::
 # 681 "data/maps/SilvanWoods/scripts.pory"
-	.string "Ok ok you've proved you aren't a bitch\l"
+	.string "Ok ok you've proved you aren't a bitch\n"
 	.string "and we spent so long standing here\l"
 	.string "fighting I might need to take another\l"
 	.string "hit soon.$"
 
 SilvanWoods_Text_ScottBlock::
 # 685 "data/maps/SilvanWoods/scripts.pory"
-	.string "Oh no this is not good I can't find Leaf!\l"
+	.string "Oh no this is not good I can't find Leaf!\n"
 	.string "You haven't seen her recently have\l"
 	.string "you? I know she must be somewhere in\l"
 	.string "these woods. Will you please go find her\l"
@@ -972,12 +972,12 @@ SilvanWoods_Text_ScottBlock::
 
 SilvanWoods_Text_Leaf1::
 # 689 "data/maps/SilvanWoods/scripts.pory"
-	.string "Hey {PLAYER}! There you are! Thanks\l"
+	.string "Hey {PLAYER}! There you are! Thanks\n"
 	.string "for saving me again.$"
 
 SilvanWoods_Text_ScottPass::
 # 693 "data/maps/SilvanWoods/scripts.pory"
-	.string "This {RIVAL} who is stalking you\l"
+	.string "This {RIVAL} who is stalking you\n"
 	.string "sounds dangerous we should stay as a\l"
 	.string "group. Anyways {PLAYER} we're quite\l"
 	.string "near Saeclara. This path should lead us\l"
@@ -990,7 +990,7 @@ SilvanWoods_Text_ScottPass::
 
 SilvanWoods_Text_Leaf2::
 # 697 "data/maps/SilvanWoods/scripts.pory"
-	.string "Ok that's fine but I want to see Mew.\l"
+	.string "Ok that's fine but I want to see Mew.\n"
 	.string "Well {PLAYER} don't spend all day\l"
 	.string "lollygagging here in the woods. We'll\l"
 	.string "wait for you in town down at my dad's\l"

@@ -78,7 +78,7 @@ Ardor_Uni_PsychologyClass_EventScript_Test::
 
 Ardor_Uni_PsychologyClass_Text_Intro::
 # 46 "data/maps/Ardor_Uni_PsychologyClass/scripts.pory"
-	.string "Salve puer. Magistra Linda sum. Necesse\l"
+	.string "Salve puer. Magistra Linda sum. Necesse\n"
 	.string "est tibi docere psychologiam. Necesse\l"
 	.string "est portare mihi quod me delectat.$"
 
@@ -96,5 +96,5 @@ Ardor_Uni_PsychologyClass_Text_TeacherBattleLost::
 
 Ardor_Uni_PsychologyClass_Text_ClassFinished::
 # 62 "data/maps/Ardor_Uni_PsychologyClass/scripts.pory"
-	.string "Congratulatio! Iam studuisti\l"
+	.string "Congratulatio! Iam studuisti\n"
 	.string "psychologiam.$"

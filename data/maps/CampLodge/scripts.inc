@@ -267,7 +267,7 @@ CampLodge_Movement_EumaeusRetreat:
 
 CampLodge_Text_EurykleiaIntro::
 # 125 "data/maps/CampLodge/scripts.pory"
-	.string "I'm the troop leader of these lady\l"
+	.string "I'm the troop leader of these lady\n"
 	.string "scouts. Teaching the wisdom passed\l"
 	.string "down from grandma. To learn from her,\l"
 	.string "first you must battle me!$"
@@ -286,7 +286,7 @@ CampLodge_Text_Eurykleia::
 
 CampLodge_Text_EumaeusIntro::
 # 141 "data/maps/CampLodge/scripts.pory"
-	.string "I'm the leader in here! I've learned the\l"
+	.string "I'm the leader in here! I've learned the\n"
 	.string "most and I posses the strength to beat\l"
 	.string "you now!$"
 
@@ -304,7 +304,7 @@ CampLodge_Text_Eumaeus::
 
 CampLodge_Text_AntikleiaIntro::
 # 157 "data/maps/CampLodge/scripts.pory"
-	.string "For twenty years I've watched over this\l"
+	.string "For twenty years I've watched over this\n"
 	.string "house as our headmistress, now answer\l"
 	.string "me straight. What gives you any right to\l"
 	.string "come to me?$"
@@ -315,7 +315,7 @@ CampLodge_Text_AntikleiaLost::
 
 CampLodge_Text_AntikleiaPost::
 # 165 "data/maps/CampLodge/scripts.pory"
-	.string "Accept this gift and my message of\l"
+	.string "Accept this gift and my message of\n"
 	.string "love. Women may not beat men in\l"
 	.string "strength at arms but armies fight and\l"
 	.string "die before our breasts. To tame the\l"
@@ -325,7 +325,7 @@ CampLodge_Text_AntikleiaPost::
 
 CampLodge_Text_Antikleia::
 # 169 "data/maps/CampLodge/scripts.pory"
-	.string "You have the wisdom, and the strength\l"
+	.string "You have the wisdom, and the strength\n"
 	.string "at heart to smash every stone that\l"
 	.string "blocks your path but without the power\l"
 	.string "taught by our men you'll find your\l"
@@ -333,7 +333,7 @@ CampLodge_Text_Antikleia::
 
 CampLodge_Text_LaertesIntro::
 # 173 "data/maps/CampLodge/scripts.pory"
-	.string "While in my youth I shattered many\l"
+	.string "While in my youth I shattered many\n"
 	.string "rocks and now in my old age I teach the\l"
 	.string "boys to break them just as I was taught\l"
 	.string "myself. Now let's find out if you have\l"
@@ -346,12 +346,12 @@ CampLodge_Text_LaertesLost::
 
 CampLodge_Text_LaertesPost::
 # 181 "data/maps/CampLodge/scripts.pory"
-	.string "You've shown you are ready to learn\l"
+	.string "You've shown you are ready to learn\n"
 	.string "from me.$"
 
 CampLodge_Text_ExplainRockSmash::
 # 185 "data/maps/CampLodge/scripts.pory"
-	.string "This Hidden Move contains the move\l"
+	.string "This Hidden Move contains the move\n"
 	.string "Rock Smash. You can use it to break\l"
 	.string "rocks in your path. Be sure to use the\l"
 	.string "move responsibly and know without the\l"
@@ -359,7 +359,7 @@ CampLodge_Text_ExplainRockSmash::
 
 CampLodge_Text_Laertes::
 # 189 "data/maps/CampLodge/scripts.pory"
-	.string "Without the knowledge and love of\l"
+	.string "Without the knowledge and love of\n"
 	.string "women you'll find your Pokemon cannot\l"
 	.string "obey.$"
 

@@ -148,7 +148,7 @@ Route7_Movement_RoadBlockB2:
 
 Route7_Text_RoadBlock::
 # 73 "data/maps/Route7/scripts.pory"
-	.string "You poor little young thing! You look\l"
+	.string "You poor little young thing! You look\n"
 	.string "tired, come rest a while in grandma's\l"
 	.string "cabin. We have a bed made specially for\l"
 	.string "you!$"
