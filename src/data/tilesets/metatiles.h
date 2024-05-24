@@ -334,3 +334,6 @@ const u16 gMetatileAttributes_Troy[] = INCBIN_U16("data/tilesets/secondary/troy/
 
 const u16 gMetatiles_Argo[] = INCBIN_U16("data/tilesets/secondary/argo/metatiles.bin");
 const u16 gMetatileAttributes_Argo[] = INCBIN_U16("data/tilesets/secondary/argo/metatile_attributes.bin");
+
+const u16 gMetatiles_IgnisMons[] = INCBIN_U16("data/tilesets/secondary/ignis_mons/metatiles.bin");
+const u16 gMetatileAttributes_IgnisMons[] = INCBIN_U16("data/tilesets/secondary/ignis_mons/metatile_attributes.bin");

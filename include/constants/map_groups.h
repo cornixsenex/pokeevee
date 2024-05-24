@@ -698,6 +698,7 @@
 
 // gMapGroup_Myth
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (32 << 8))
+#define MAP_IGNIS_MONS_1F_A         (1 | (32 << 8))
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (33 << 8))

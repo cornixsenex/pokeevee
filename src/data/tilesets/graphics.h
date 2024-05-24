@@ -2177,3 +2177,22 @@ const u16 gTilesetPalettes_Argo[][16] =
 };
 
 const u32 gTilesetTiles_Argo[] = INCBIN_U32("data/tilesets/secondary/argo/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_IgnisMons[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/ignis_mons/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_IgnisMons[] = INCBIN_U32("data/tilesets/secondary/ignis_mons/tiles.4bpp.lz");

@@ -1,13 +1,13 @@
 {
-  "id": "MAP_SKY_PILLAR_2F",
-  "name": "SkyPillar_2F",
-  "layout": "LAYOUT_SKY_PILLAR_2F",
-  "music": "MUS_MT_CHIMNEY",
-  "region_map_section": "MAPSEC_SKY_PILLAR",
+  "id": "MAP_IGNIS_MONS_1F_A",
+  "name": "IgnisMons_1F_A",
+  "layout": "LAYOUT_IGNIS_MONS_1F_A",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
-  "allow_cycling": true,
+  "allow_cycling": false,
   "allow_escaping": true,
   "allow_running": true,
   "show_map_name": true,
@@ -19,16 +19,16 @@
   "warp_events": [
     {
       "x": 10,
-      "y": 1,
-      "elevation": 3,
-      "dest_map": "MAP_SKY_PILLAR_1F",
-      "dest_warp_id": "2"
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_BIG_ISLAND_S",
+      "dest_warp_id": "0"
     },
     {
-      "x": 3,
-      "y": 1,
-      "elevation": 3,
-      "dest_map": "MAP_SKY_PILLAR_3F",
+      "x": 9,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_BIG_ISLAND_S",
       "dest_warp_id": "0"
     }
   ],

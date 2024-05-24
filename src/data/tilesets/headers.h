@@ -1132,3 +1132,14 @@ const struct Tileset gTileset_Argo =
     .metatileAttributes = gMetatileAttributes_Argo,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_IgnisMons =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IgnisMons,
+    .palettes = gTilesetPalettes_IgnisMons,
+    .metatiles = gMetatiles_IgnisMons,
+    .metatileAttributes = gMetatileAttributes_IgnisMons,
+    .callback = NULL,
+};

@@ -1482,3 +1482,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BigIslandFillerW/scripts.inc"
 
 	.include "data/maps/BigIslandFillerE/scripts.inc"
+
+	.include "data/maps/IgnisMons_1F_A/scripts.inc"
