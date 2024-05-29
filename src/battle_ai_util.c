@@ -371,14 +371,17 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
     s32 moveType;
     struct AiLogicData *aiData = AI_DATA;
     u32 battlerDefAbility;
+    GET_MOVE_TYPE(move, moveType);
 
     if (DoesBattlerIgnoreAbilityChecks(aiData->abilities[battlerAtk], move))
         battlerDefAbility = ABILITY_NONE;
     else
         battlerDefAbility = aiData->abilities[battlerDef];
 
-    SetTypeBeforeUsingMove(move, battlerAtk);
-    GET_MOVE_TYPE(move, moveType);
+    // Battler doesn't see partners Ability for some reason.
+    // This is a small hack to avoid the issue but should be investigated
+    if (battlerDef == BATTLE_PARTNER(battlerAtk))
+        battlerDefAbility = GetBattlerAbility(battlerDef);
 
     switch (battlerDefAbility)
     {
@@ -423,7 +426,7 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
             return TRUE;
         break;
     case EFFECT_BELCH:
-        if (ItemId_GetPocket(GetUsedHeldItem(battlerAtk)) != POCKET_BERRIES)
+        if (IsBelchPreventingMove(battlerAtk, move))
             return TRUE;
         break;
     case EFFECT_LAST_RESORT:
@@ -431,6 +434,7 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
             return TRUE;
         break;
     case EFFECT_LOW_KICK:
+    case EFFECT_HEAT_CRASH:
         if (IsDynamaxed(battlerDef))
             return TRUE;
         break;
@@ -471,14 +475,13 @@ s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectivenes
 
     gBattleStruct->dynamicMoveType = 0;
 
-
     SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
+    effectivenessMultiplier = CalcTypeEffectivenessMultiplier(move, moveType, battlerAtk, battlerDef, aiData->abilities[battlerDef], FALSE);
 
     if (gMovesInfo[move].power)
         isDamageMoveUnusable = IsDamageMoveUnusable(move, battlerAtk, battlerDef);
 
-    effectivenessMultiplier = CalcTypeEffectivenessMultiplier(move, moveType, battlerAtk, battlerDef, aiData->abilities[battlerDef], FALSE);
     if (gMovesInfo[move].power && !isDamageMoveUnusable)
     {
         s32 critChanceIndex, normalDmg, fixedBasePower, n;
@@ -626,20 +629,33 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
             switch (gMovesInfo[move].additionalEffects[i].moveEffect)
             {
                 case MOVE_EFFECT_ATK_PLUS_1:
+                case MOVE_EFFECT_ATK_PLUS_2:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ATK))
                         return TRUE;
                     break;
-                case MOVE_EFFECT_DEF_PLUS_2:
                 case MOVE_EFFECT_DEF_PLUS_1:
+                case MOVE_EFFECT_DEF_PLUS_2:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_DEF))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SPD_PLUS_1:
+                case MOVE_EFFECT_SPD_PLUS_2:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPEED))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SP_ATK_PLUS_1:
+                case MOVE_EFFECT_SP_ATK_PLUS_2:
                     if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPATK))
+                        return TRUE;
+                    break;
+                case MOVE_EFFECT_EVS_PLUS_1:
+                case MOVE_EFFECT_EVS_PLUS_2:
+                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_EVASION))
+                        return TRUE;
+                    break;
+                case MOVE_EFFECT_ACC_PLUS_1:
+                case MOVE_EFFECT_ACC_PLUS_2:
+                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ACC))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_ALL_STATS_UP:
@@ -719,8 +735,8 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
 
     switch (gMovesInfo[move].effect)
     {
-    case EFFECT_MIND_BLOWN:
     case EFFECT_MAX_HP_50_RECOIL:
+    case EFFECT_MIND_BLOWN:
         return TRUE;
     case EFFECT_RECOIL_IF_MISS:
         if (AI_IsDamagedByRecoil(battlerAtk))
@@ -736,18 +752,45 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
                 case MOVE_EFFECT_DEF_MINUS_1:
                 case MOVE_EFFECT_SPD_MINUS_1:
                 case MOVE_EFFECT_SP_ATK_MINUS_1:
+                case MOVE_EFFECT_SP_DEF_MINUS_1:
+                case MOVE_EFFECT_EVS_MINUS_1:
+                case MOVE_EFFECT_ACC_MINUS_1:
+                case MOVE_EFFECT_ATK_MINUS_2:
+                case MOVE_EFFECT_DEF_MINUS_2:
+                case MOVE_EFFECT_SPD_MINUS_2:
+                case MOVE_EFFECT_SP_ATK_MINUS_2:
+                case MOVE_EFFECT_SP_DEF_MINUS_2:
+                case MOVE_EFFECT_EVS_MINUS_2:
+                case MOVE_EFFECT_ACC_MINUS_2:
                 case MOVE_EFFECT_SP_ATK_TWO_DOWN:
                 case MOVE_EFFECT_V_CREATE:
                 case MOVE_EFFECT_ATK_DEF_DOWN:
                 case MOVE_EFFECT_DEF_SPDEF_DOWN:
-                case MOVE_EFFECT_SP_DEF_MINUS_1:
-                case MOVE_EFFECT_SP_DEF_MINUS_2:
-                    if ((gMovesInfo[move].additionalEffects[i].self && GetBattlerAbility(battlerAtk) != ABILITY_CONTRARY)
-                        || (noOfHitsToKo != 1 && abilityDef == ABILITY_CONTRARY && !IsMoldBreakerTypeAbility(abilityAtk)))
+                    if ((gMovesInfo[move].additionalEffects[i].self && abilityAtk != ABILITY_CONTRARY)
+                        || (noOfHitsToKo != 1 && abilityDef == ABILITY_CONTRARY && !DoesBattlerIgnoreAbilityChecks(abilityAtk, move)))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_RECHARGE:
                     return gMovesInfo[move].additionalEffects[i].self;
+                case MOVE_EFFECT_ATK_PLUS_1:
+                case MOVE_EFFECT_DEF_PLUS_1:
+                case MOVE_EFFECT_SPD_PLUS_1:
+                case MOVE_EFFECT_SP_ATK_PLUS_1:
+                case MOVE_EFFECT_SP_DEF_PLUS_1:
+                case MOVE_EFFECT_EVS_PLUS_1:
+                case MOVE_EFFECT_ACC_PLUS_1:
+                case MOVE_EFFECT_ATK_PLUS_2:
+                case MOVE_EFFECT_DEF_PLUS_2:
+                case MOVE_EFFECT_SPD_PLUS_2:
+                case MOVE_EFFECT_SP_ATK_PLUS_2:
+                case MOVE_EFFECT_SP_DEF_PLUS_2:
+                case MOVE_EFFECT_EVS_PLUS_2:
+                case MOVE_EFFECT_ACC_PLUS_2:
+                case MOVE_EFFECT_ALL_STATS_UP:
+                    if ((gMovesInfo[move].additionalEffects[i].self && abilityAtk == ABILITY_CONTRARY)
+                        || (noOfHitsToKo != 1 && !(abilityDef == ABILITY_CONTRARY && !DoesBattlerIgnoreAbilityChecks(abilityAtk, move))))
+                        return TRUE;
+                    break;
             }
         }
         break;
@@ -874,48 +917,21 @@ static u32 AI_GetEffectiveness(uq4_12_t multiplier)
 */
 s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler2, u32 moveConsidered)
 {
-    u32 fasterAI = 0, fasterPlayer = 0, i;
     s8 prioAI = 0;
     s8 prioBattler2 = 0;
-    u16 *battler2Moves = GetMovesArray(battler2);
-
-    // Check move priorities first.
     prioAI = GetMovePriority(battlerAI, moveConsidered);
-    for (i = 0; i < MAX_MON_MOVES; i++)
-    {
-        prioBattler2 = GetMovePriority(battler2, battler2Moves[i]);
-        if (battler2Moves[i] == MOVE_NONE || battler2Moves[i] == MOVE_UNAVAILABLE
-            || (prioBattler2 > prioAI && !CanIndexMoveFaintTarget(battler2, battlerAI, i , 2)))
-            continue;
 
-        if (prioAI > prioBattler2)
-            fasterAI++;
-        else if (prioBattler2 > prioAI)
-            fasterPlayer++;
-    }
-
-    if (fasterAI > fasterPlayer)
-    {
+    if (prioAI > prioBattler2)
         return AI_IS_FASTER;
-    }
-    else if (fasterAI < fasterPlayer)
-    {
-        return AI_IS_SLOWER;
-    }
+
+    if (GetWhichBattlerFasterArgs(battlerAI, battler2, TRUE,
+                                  AI_DATA->abilities[battlerAI], AI_DATA->abilities[battler2],
+                                  AI_DATA->holdEffects[battlerAI], AI_DATA->holdEffects[battler2],
+                                  AI_DATA->speedStats[battlerAI], AI_DATA->speedStats[battler2],
+                                  prioAI, prioBattler2) == 1)
+        return AI_IS_FASTER;
     else
-    {
-        if (prioAI > prioBattler2)
-            return AI_IS_FASTER;    // if we didn't know any of battler 2's moves to compare priorities, assume they don't have a prio+ move
-        // Priorities are the same(at least comparing to moves the AI is aware of), decide by speed.
-        if (GetWhichBattlerFasterArgs(battlerAI, battler2, TRUE,
-                                      AI_DATA->abilities[battlerAI], AI_DATA->abilities[battler2],
-                                      AI_DATA->holdEffects[battlerAI], AI_DATA->holdEffects[battler2],
-                                      AI_DATA->speedStats[battlerAI], AI_DATA->speedStats[battler2],
-                                      prioAI, prioBattler2) == 1)
-            return AI_IS_FASTER;
-        else
-            return AI_IS_SLOWER;
-    }
+        return AI_IS_SLOWER;
 }
 
 // Check if target has means to faint ai mon.
@@ -1614,19 +1630,14 @@ bool32 ShouldLowerDefense(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 
 bool32 ShouldLowerSpeed(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 {
-    if (AI_STRIKES_FIRST(battlerAtk, battlerDef, AI_THINKING_STRUCT->moveConsidered)
-            && (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_TRY_TO_FAINT)
-            && CanAIFaintTarget(battlerAtk, battlerDef, 0))
-        return FALSE; // Don't bother lowering stats if can kill enemy.
+    if (defAbility == ABILITY_CONTRARY
+     || defAbility == ABILITY_CLEAR_BODY
+     || defAbility == ABILITY_FULL_METAL_BODY
+     || defAbility == ABILITY_WHITE_SMOKE
+     || AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_CLEAR_AMULET)
+        return FALSE;
 
-    if (!AI_STRIKES_FIRST(battlerAtk, battlerDef, AI_THINKING_STRUCT->moveConsidered)
-      && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
-      && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
-      && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
-        return TRUE;
-    return FALSE;
+    return (!AI_STRIKES_FIRST(battlerAtk, battlerDef, AI_THINKING_STRUCT->moveConsidered));
 }
 
 bool32 ShouldLowerSpAtk(u32 battlerAtk, u32 battlerDef, u32 defAbility)
@@ -3387,13 +3398,13 @@ bool32 IsRecycleEncouragedItem(u32 item)
     return FALSE;
 }
 
-void IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, u32 statId, s32 *score)
+static void IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, u32 statId, s32 *score, bool32 considerContrary)
 {
     u32 noOfHitsToFaint = NoOfHitsForTargetToFaintAI(battlerDef, battlerAtk);
     u32 aiIsFaster = GetWhichBattlerFaster(battlerAtk, battlerDef, TRUE) == AI_IS_FASTER;
     u32 shouldSetUp = ((noOfHitsToFaint >= 2 && aiIsFaster) || (noOfHitsToFaint >= 3 && !aiIsFaster) || noOfHitsToFaint == UNKNOWN_NO_OF_HITS);
 
-    if (AI_DATA->abilities[battlerAtk] == ABILITY_CONTRARY)
+    if (considerContrary && AI_DATA->abilities[battlerAtk] == ABILITY_CONTRARY)
         return;
 
     // Don't increase stat if AI is at +4
@@ -3485,6 +3496,16 @@ void IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, u32 statId, s32 *score)
             ADJUST_SCORE_PTR(DECENT_EFFECT);
         break;
     }
+}
+
+void IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, u32 statId, s32 *score)
+{
+    IncreaseStatUpScoreInternal(battlerAtk, battlerDef, statId, score, TRUE);
+}
+
+void IncreaseStatUpScoreContrary(u32 battlerAtk, u32 battlerDef, u32 statId, s32 *score)
+{
+    IncreaseStatUpScoreInternal(battlerAtk, battlerDef, statId, score, FALSE);
 }
 
 void IncreasePoisonScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
