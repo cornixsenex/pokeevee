@@ -731,7 +731,9 @@
   ],
   "gMapGroup_Myth": [
     "Route113_GlassWorkshop",
-    "IgnisMons_1F_A"
+    "IgnisMons_1F_A",
+    "IgnisMons_0F_B",
+    "IgnisMons_2F_C"
   ],
   "gMapGroup_IndoorRoute123": [
     "Route123_BerryMastersHouse"
