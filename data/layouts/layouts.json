@@ -6072,34 +6072,34 @@
       "blockdata_filepath": "data/layouts/IgnisMons_1F/map.bin"
     },
     {
-      "id": "LAYOUT_IGNIS_MONS_0F_B",
-      "name": "IgnisMons_0F_B_Layout",
+      "id": "LAYOUT_IGNIS_MONS_0F",
+      "name": "IgnisMons_0F_Layout",
       "width": 20,
       "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_IgnisMons",
-      "border_filepath": "data/layouts/IgnisMons_0F_B/border.bin",
-      "blockdata_filepath": "data/layouts/IgnisMons_0F_B/map.bin"
+      "border_filepath": "data/layouts/IgnisMons_0F/border.bin",
+      "blockdata_filepath": "data/layouts/IgnisMons_0F/map.bin"
     },
     {
-      "id": "LAYOUT_IGNIS_MONS_2F_C",
-      "name": "IgnisMons_2F_C_Layout",
+      "id": "LAYOUT_IGNIS_MONS_2F",
+      "name": "IgnisMons_2F_Layout",
       "width": 20,
       "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_IgnisMons",
-      "border_filepath": "data/layouts/IgnisMons_2F_C/border.bin",
-      "blockdata_filepath": "data/layouts/IgnisMons_2F_C/map.bin"
+      "border_filepath": "data/layouts/IgnisMons_2F/border.bin",
+      "blockdata_filepath": "data/layouts/IgnisMons_2F/map.bin"
     },
     {
-      "id": "LAYOUT_IGNIS_MONS_3F_D",
-      "name": "IgnisMons_3F_D_Layout",
+      "id": "LAYOUT_IGNIS_MONS_3F",
+      "name": "IgnisMons_3F_Layout",
       "width": 20,
       "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_IgnisMons",
-      "border_filepath": "data/layouts/IgnisMons_3F_D/border.bin",
-      "blockdata_filepath": "data/layouts/IgnisMons_3F_D/map.bin"
+      "border_filepath": "data/layouts/IgnisMons_3F/border.bin",
+      "blockdata_filepath": "data/layouts/IgnisMons_3F/map.bin"
     }
   ]
 }
