@@ -701,6 +701,7 @@
 #define MAP_IGNIS_MONS_1F_A         (1 | (32 << 8))
 #define MAP_IGNIS_MONS_0F_B         (2 | (32 << 8))
 #define MAP_IGNIS_MONS_2F_C         (3 | (32 << 8))
+#define MAP_IGNIS_MONS_3F_D         (4 | (32 << 8))
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (33 << 8))

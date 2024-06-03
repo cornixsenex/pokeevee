@@ -1094,6 +1094,12 @@ Ceberus
 		>Jason sends you out to discover more about the wall, or find Philoctetes
 		>Shipwrecked / homeless / island castouts hint about Prometheus (in exchange for something)
 		>Ascend Mt. Whatever and encounter Colchians in pyramid (very religious place?)
+		>IGNIS MONS
+>enter 1F
+>left up stairs
+>blue (green, red, blue, door)
+>downstairs go down thru blue
+
 		>At top find Prometheus & defeat Eagle / Vulture
 		>Consult Prometheus
 		>Prometheus says "release a spearow to open the rocks"

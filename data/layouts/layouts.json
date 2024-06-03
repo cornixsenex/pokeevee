@@ -6090,6 +6090,16 @@
       "secondary_tileset": "gTileset_IgnisMons",
       "border_filepath": "data/layouts/IgnisMons_2F_C/border.bin",
       "blockdata_filepath": "data/layouts/IgnisMons_2F_C/map.bin"
+    },
+    {
+      "id": "LAYOUT_IGNIS_MONS_3F_D",
+      "name": "IgnisMons_3F_D_Layout",
+      "width": 20,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_IgnisMons",
+      "border_filepath": "data/layouts/IgnisMons_3F_D/border.bin",
+      "blockdata_filepath": "data/layouts/IgnisMons_3F_D/map.bin"
     }
   ]
 }

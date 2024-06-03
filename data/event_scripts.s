@@ -1488,3 +1488,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/IgnisMons_0F_B/scripts.inc"
 
 	.include "data/maps/IgnisMons_2F_C/scripts.inc"
+
+	.include "data/maps/IgnisMons_3F_D/scripts.inc"
