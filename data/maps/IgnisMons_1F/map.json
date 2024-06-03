@@ -1,7 +1,7 @@
 {
-  "id": "MAP_IGNIS_MONS_1F_A",
-  "name": "IgnisMons_1F_A",
-  "layout": "LAYOUT_IGNIS_MONS_1F_A",
+  "id": "MAP_IGNIS_MONS_1F",
+  "name": "IgnisMons_1F",
+  "layout": "LAYOUT_IGNIS_MONS_1F",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,

@@ -6062,14 +6062,14 @@
       "blockdata_filepath": "data/layouts/BigIslandFillerE/map.bin"
     },
     {
-      "id": "LAYOUT_IGNIS_MONS_1F_A",
-      "name": "IgnisMons_1F_A_Layout",
+      "id": "LAYOUT_IGNIS_MONS_1F",
+      "name": "IgnisMons_1F_Layout",
       "width": 20,
       "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_IgnisMons",
-      "border_filepath": "data/layouts/IgnisMons_1F_A/border.bin",
-      "blockdata_filepath": "data/layouts/IgnisMons_1F_A/map.bin"
+      "border_filepath": "data/layouts/IgnisMons_1F/border.bin",
+      "blockdata_filepath": "data/layouts/IgnisMons_1F/map.bin"
     },
     {
       "id": "LAYOUT_IGNIS_MONS_0F_B",
