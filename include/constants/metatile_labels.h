@@ -268,6 +268,24 @@
 #define METATILE_Hospital_PC_Off  0x000
 #define METATILE_Hospital_PC_On   0x001
 
+// gTileset_IgnisMons
+#define METATILE_IgnisMons_Barrier_Blue          0x238
+#define METATILE_IgnisMons_Barrier_Blue_Shadow   0x239
+#define METATILE_IgnisMons_Barrier_Green         0x230
+#define METATILE_IgnisMons_Barrier_Green_Shadow  0x231
+#define METATILE_IgnisMons_Barrier_Red           0x228
+#define METATILE_IgnisMons_Barrier_Red_Shadow    0x229
+#define METATILE_IgnisMons_Button_Blue           0x250
+#define METATILE_IgnisMons_Button_Blue_Shadow    0x251
+#define METATILE_IgnisMons_Button_Green          0x248
+#define METATILE_IgnisMons_Button_Green_Shadow   0x249
+#define METATILE_IgnisMons_Button_Red            0x240
+#define METATILE_IgnisMons_Button_Red_Shadow     0x241
+#define METATILE_IgnisMons_Button_White          0x258
+#define METATILE_IgnisMons_Button_White_Shadow   0x259
+#define METATILE_IgnisMons_Floor                 0x208
+#define METATILE_IgnisMons_Floor_Shadow          0x209
+
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
 #define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x215

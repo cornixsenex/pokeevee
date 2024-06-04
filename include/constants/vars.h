@@ -136,17 +136,20 @@
 #define VAR_UNI_TERM_STATE                               0x406E // Counts completed classes per term 
 #define VAR_CANVAS_STEP_COUNTER                          0x406F // Counts steps player takes on the canvas
 #define VAR_LOGIC_CLASS_STATE                            0x4070 // Controls the Logic Puzzle and triggers test on return to class
-#define VAR_ARGO_STATE                              0x4071 //0: Argo at sea 1: Argo in transit to Colchis 2:Argo at Big Island 3: Jason at cave entrance, Philoctetes Abducted 4: Finish?
+#define VAR_ARGO_STATE                               0x4071 //0: Argo at sea 1: Argo in transit to Colchis 2:Argo at Big Island 3: Jason at cave entrance, Philoctetes Abducted 4: Finish?
 
 
 
-#define VAR_UNUSED_4072                                  0x4072 // unsused IDK
+#define VAR_IGNISMONS_STATE                          0x4072     // 0: Blank
+																// 1: Red
+																// 2: Blue
+																// 3: Green
 						// BREAK
 
 
 
 
-#define VAR_ROUTE120_STATE                               0x4073 // Unused Var
+#define VAR_UNUSED_4073                                  0x4073 // Unused Var
 #define VAR_ROUTE121_STATE                               0x4074
 #define VAR_ROUTE122_STATE                               0x4075 // Unused Var
 #define VAR_ROUTE123_STATE                               0x4076 // Unused Var

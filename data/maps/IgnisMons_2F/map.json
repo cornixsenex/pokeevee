@@ -17,10 +17,152 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 12,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 16,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_3F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 3,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 3,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 6,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 13,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 16,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "11"
+    }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    }
   ],
   "bg_events": [
 

@@ -17,10 +17,115 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 17,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 16,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 3,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 16,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_IGNIS_MONS_1F",
+      "dest_warp_id": "13"
+    }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    }
   ],
   "bg_events": [
 
