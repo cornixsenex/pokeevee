@@ -7,7 +7,8 @@
 #define MB_LONG_GRASS 0x03
 //Formerly UNUSED_04
 #define MB_CANVAS     0x04
-#define MB_UNUSED_05 0x05
+//Formerly UNUSED_05 - Fall Through Ignis Mons
+#define MB_FALSE_FLOOR 0x05
 #define MB_DEEP_SAND 0x06
 #define MB_SHORT_GRASS 0x07
 #define MB_CAVE 0x08

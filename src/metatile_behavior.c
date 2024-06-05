@@ -15,7 +15,8 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_NORMAL]                          = TILE_FLAG_UNUSED,
     [MB_TALL_GRASS]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_LONG_GRASS]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_05]                       = TILE_FLAG_HAS_ENCOUNTERS,
+	//Replaced with False Floor - Ignis Mons
+    //[MB_UNUSED_05]                       = TILE_FLAG_HAS_ENCOUNTERS,
     [MB_DEEP_SAND]                       = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SHORT_GRASS]                     = TILE_FLAG_UNUSED,
     [MB_CAVE]                            = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
@@ -382,6 +383,8 @@ bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior)
      || (metatileBehavior >= MB_EASTWARD_CURRENT && metatileBehavior <= MB_SOUTHWARD_CURRENT)
      || metatileBehavior == MB_MUDDY_SLOPE
      || metatileBehavior == MB_CRACKED_FLOOR
+	 //added for fall thru ignis mons
+     || metatileBehavior == MB_FALSE_FLOOR
      || metatileBehavior == MB_WATERFALL
      || metatileBehavior == MB_ICE
      || metatileBehavior == MB_SECRET_BASE_JUMP_MAT
@@ -407,13 +410,15 @@ bool8 MetatileBehavior_IsTrickHouseSlipperyFloor(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused05(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_UNUSED_05)
-        return TRUE;
-    else
-        return FALSE;
-}
+//Removed for False Floor - Ignis Mons
+
+//bool8 Unref_MetatileBehavior_IsUnused05(u8 metatileBehavior)
+//{
+//    if (metatileBehavior == MB_UNUSED_05)
+//        return TRUE;
+//    else
+//        return FALSE;
+//}
 
 bool8 MetatileBehavior_IsWalkNorth(u8 metatileBehavior)
 {
