@@ -5559,13 +5559,16 @@ void DoFalseFloorFall(struct ScriptContext *ctx)
 	mapNum = gSaveBlock1Ptr->location.mapNum;
 
 	//IgnisMons 1F
-	if (mapGroup == 32 && mapNum == 1)
+	if (mapGroup == 32 && mapNum == 1) {
         SetWarpDestination(mapGroup, mapNum+1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+	}
 
 	//IgnisMons 2F
-	if (mapGroup == 32 && mapNum == 3)
+	if (mapGroup == 32 && mapNum == 3)	{
 		CheckIgnisMons2FFalseFloorFallWait(x, y);
         SetWarpDestination(mapGroup, mapNum-2, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+	}
 	
 	//Ignis Mons 3F
 	if (mapGroup == 32 && mapNum == 4) {

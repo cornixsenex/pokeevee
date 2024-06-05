@@ -15,6 +15,13 @@ mapscripts IgnisMons_1F_MapScripts {
 		call (IgnisMons_1F_Script_OnResume)
 	}
 
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_FALSEFLOOR_WAIT, 1: IgnisMons_1F_FalseFloorContinue
+	]
+
+
+
 }
 
 script IgnisMons_1F_Script_OnResume {
@@ -220,6 +227,14 @@ script IgnisMons_1F_Script_HideGreen {
 	return
 }
 
-
+script IgnisMons_1F_FalseFloorContinue {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	special (FalseFloorMetatileUpdate)
+	call (EventScript_FallDownFalseFloor)
+	releaseall
+	end
+}
 
 
