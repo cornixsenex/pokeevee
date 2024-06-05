@@ -61,7 +61,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "IgnisMons_0F_Script_GreenButton"
     },
     {
       "type": "trigger",
@@ -70,25 +70,16 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "IgnisMons_0F_Script_RedButton"
     },
     {
       "type": "trigger",
-      "x": 4,
+      "x": 2,
       "y": 15,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
-    },
-    {
-      "type": "trigger",
-      "x": 17,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "script": "IgnisMons_0F_Script_BlueButton"
     },
     {
       "type": "trigger",
@@ -97,7 +88,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "IgnisMons_0F_Script_RedButton"
     },
     {
       "type": "trigger",
@@ -106,7 +97,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "IgnisMons_0F_Script_GreenButton"
     },
     {
       "type": "trigger",
@@ -115,16 +106,16 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "IgnisMons_0F_Script_RedButton"
     },
     {
       "type": "trigger",
-      "x": 7,
-      "y": 41,
+      "x": 2,
+      "y": 40,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "IgnisMons_0F_Script_RedButton"
     }
   ],
   "bg_events": [

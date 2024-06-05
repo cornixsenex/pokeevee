@@ -157,108 +157,112 @@ IgnisMons_0F_Script_SetBarriers_Green::
 
 IgnisMons_0F_Script_ShowRed::
 # 97 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 3, 8, METATILES_IgnisMons_Barrier_Red_Shadow, TRUE
+	setmetatile 3, 8, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE
 # 98 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 4, 9, METATILES_IgnisMons_Barrier_Red, TRUE
+	setmetatile 4, 9, METATILE_IgnisMons_Barrier_Red, TRUE
 # 99 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 9, 10, METATILES_IgnisMons_Barrier_Red_Shadow, TRUE
+	setmetatile 9, 10, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE
 # 100 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 10, 11, METATILES_IgnisMons_Barrier_Red, TRUE
+	setmetatile 10, 11, METATILE_IgnisMons_Barrier_Red, TRUE
 # 101 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 3, 112, METATILES_IgnisMons_Barrier_Red_Shadow, TRUE
+	setmetatile 3, 12, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE
 # 102 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 4, 13, METATILES_IgnisMons_Barrier_Red, TRUE
+	setmetatile 4, 13, METATILE_IgnisMons_Barrier_Red, TRUE
 # 103 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 17, 36, METATILES_IgnisMons_Barrier_Red, TRUE
+	setmetatile 17, 36, METATILE_IgnisMons_Barrier_Red, TRUE
 # 104 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 18, 37, METATILES_IgnisMons_Barrier_Red_Shadow, TRUE
+	setmetatile 18, 37, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE
 # 106 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 12, 8, METATILES_IgnisMons_Button_Red, FALSE
+	setmetatile 12, 8, METATILE_IgnisMons_Button_Red, FALSE
 # 107 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 1, 11, METATILES_IgnisMons_Button_Red_Shadow, FALSE
+	setmetatile 1, 11, METATILE_IgnisMons_Button_Red_Shadow, FALSE
 # 108 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 17, 21, METATILES_IgnisMons_Button_Red, FALSE
+	setmetatile 17, 21, METATILE_IgnisMons_Button_Red, FALSE
+# 109 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 2, 40, METATILE_IgnisMons_Button_Red, FALSE
 	return
 
 
 IgnisMons_0F_Script_ShowBlue::
-# 114 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 11, 16, METATILES_IgnisMons_Barrier_Blue, TRUE
 # 115 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 12, 15, METATILES_IgnisMons_Barrier_Blue_Shadow, TRUE
+	setmetatile 11, 16, METATILE_IgnisMons_Barrier_Blue, TRUE
 # 116 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 13, 16, METATILES_IgnisMons_Barrier_Blue, TRUE
-# 118 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 14, 15, METATILES_IgnisMons_Button_Blue, FALSE
+	setmetatile 12, 15, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE
+# 117 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 13, 16, METATILE_IgnisMons_Barrier_Blue, TRUE
+# 119 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 2, 15, METATILE_IgnisMons_Button_Blue, FALSE
 	return
 
 
 IgnisMons_0F_Script_ShowGreen::
-# 124 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 6, 2, METATILES_IgnisMons_Barrier_Green_Shadow, TRUE
 # 125 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 6, 3, METATILES_IgnisMons_Barrier_Green, TRUE
+	setmetatile 6, 2, METATILE_IgnisMons_Barrier_Green_Shadow, TRUE
 # 126 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 1, 19, METATILES_IgnisMons_Barrier_Green_Shadow, TRUE
+	setmetatile 6, 3, METATILE_IgnisMons_Barrier_Green, TRUE
 # 127 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 2, 18, METATILES_IgnisMons_Barrier_Green, TRUE
-# 129 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 17, 8, METATILES_IgnisMons_Button_Green, FALSE
+	setmetatile 1, 19, METATILE_IgnisMons_Barrier_Green_Shadow, TRUE
+# 128 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 2, 18, METATILE_IgnisMons_Barrier_Green, TRUE
 # 130 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 14, 34, METATILES_IgnisMons_Button_Green, FALSE
+	setmetatile 17, 8, METATILE_IgnisMons_Button_Green, FALSE
+# 131 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 14, 34, METATILE_IgnisMons_Button_Green, FALSE
 	return
 
 
 IgnisMons_0F_Script_HideRed::
-# 136 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 3, 8, METATILES_IgnisMons_Floor_Shadow, TRUE
 # 137 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 4, 9, METATILES_IgnisMons_Floor, TRUE
+	setmetatile 3, 8, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 138 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 9, 10, METATILES_IgnisMons_Floor_Shadow, TRUE
+	setmetatile 4, 9, METATILE_IgnisMons_Floor, FALSE
 # 139 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 10, 11, METATILES_IgnisMons_Floor, TRUE
+	setmetatile 9, 10, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 140 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 3, 112, METATILES_IgnisMons_Floor_Shadow, TRUE
+	setmetatile 10, 11, METATILE_IgnisMons_Floor, FALSE
 # 141 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 4, 13, METATILES_IgnisMons_Floor, TRUE
+	setmetatile 3, 12, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 142 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 17, 36, METATILES_IgnisMons_Floor, TRUE
+	setmetatile 4, 13, METATILE_IgnisMons_Floor, FALSE
 # 143 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 18, 37, METATILES_IgnisMons_Floor_Shadow, TRUE
-# 145 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 12, 8, METATILES_IgnisMons_Button_White, FALSE
+	setmetatile 17, 36, METATILE_IgnisMons_Floor, FALSE
+# 144 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 18, 37, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 146 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 1, 11, METATILES_IgnisMons_Button_White_Shadow, FALSE
+	setmetatile 12, 8, METATILE_IgnisMons_Button_White, FALSE
 # 147 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 17, 21, METATILES_IgnisMons_Button_White, FALSE
+	setmetatile 1, 11, METATILE_IgnisMons_Button_White_Shadow, FALSE
+# 148 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 17, 21, METATILE_IgnisMons_Button_White, FALSE
+# 149 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 2, 40, METATILE_IgnisMons_Button_White, FALSE
 	return
 
 
 IgnisMons_0F_Script_HideBlue::
-# 153 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 11, 16, METATILES_IgnisMons_Floor, TRUE
-# 154 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 12, 15, METATILES_IgnisMons_Floor_Shadow, TRUE
 # 155 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 13, 16, METATILES_IgnisMons_Floor, TRUE
+	setmetatile 11, 16, METATILE_IgnisMons_Floor, FALSE
+# 156 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 12, 15, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 157 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 14, 15, METATILES_IgnisMons_Button_White, FALSE
+	setmetatile 13, 16, METATILE_IgnisMons_Floor, FALSE
+# 159 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 2, 15, METATILE_IgnisMons_Button_White, FALSE
 	return
 
 
 IgnisMons_0F_Script_HideGreen::
-# 163 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 6, 2, METATILES_IgnisMons_Floor_Shadow, TRUE
-# 164 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 6, 3, METATILES_IgnisMons_Floor, TRUE
 # 165 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 1, 19, METATILES_IgnisMons_Floor_Shadow, TRUE
+	setmetatile 6, 2, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 166 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 2, 18, METATILES_IgnisMons_Floor, TRUE
+	setmetatile 6, 3, METATILE_IgnisMons_Floor, FALSE
+# 167 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 1, 19, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 168 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 17, 8, METATILES_IgnisMons_Button_White, FALSE
-# 169 "data/maps/IgnisMons_0F/scripts.pory"
-	setmetatile 14, 34, METATILES_IgnisMons_Button_White, FALSE
+	setmetatile 2, 18, METATILE_IgnisMons_Floor, FALSE
+# 170 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 17, 8, METATILE_IgnisMons_Button_White, FALSE
+# 171 "data/maps/IgnisMons_0F/scripts.pory"
+	setmetatile 14, 34, METATILE_IgnisMons_Button_White, FALSE
 	return
 

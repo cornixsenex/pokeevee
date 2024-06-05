@@ -98,7 +98,7 @@ script IgnisMons_0F_Script_ShowRed {
 	setmetatile (4, 9, METATILE_IgnisMons_Barrier_Red, TRUE)
 	setmetatile (9, 10, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
 	setmetatile (10, 11, METATILE_IgnisMons_Barrier_Red, TRUE)
-	setmetatile (3, 112, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
+	setmetatile (3, 12, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
 	setmetatile (4, 13, METATILE_IgnisMons_Barrier_Red, TRUE)
 	setmetatile (17, 36, METATILE_IgnisMons_Barrier_Red, TRUE)
 	setmetatile (18, 37, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
@@ -106,6 +106,7 @@ script IgnisMons_0F_Script_ShowRed {
 	setmetatile (12, 8, METATILE_IgnisMons_Button_Red, FALSE)
 	setmetatile (1, 11, METATILE_IgnisMons_Button_Red_Shadow, FALSE)
 	setmetatile (17, 21, METATILE_IgnisMons_Button_Red, FALSE)
+	setmetatile (2, 40, METATILE_IgnisMons_Button_Red, FALSE)
 
 	return
 }
@@ -137,7 +138,7 @@ script IgnisMons_0F_Script_HideRed {
 	setmetatile (4, 9, METATILE_IgnisMons_Floor, FALSE)
 	setmetatile (9, 10, METATILE_IgnisMons_Floor_Shadow, FALSE)
 	setmetatile (10, 11, METATILE_IgnisMons_Floor, FALSE)
-	setmetatile (3, 112, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (3, 12, METATILE_IgnisMons_Floor_Shadow, FALSE)
 	setmetatile (4, 13, METATILE_IgnisMons_Floor, FALSE)
 	setmetatile (17, 36, METATILE_IgnisMons_Floor, FALSE)
 	setmetatile (18, 37, METATILE_IgnisMons_Floor_Shadow, FALSE)
@@ -145,6 +146,7 @@ script IgnisMons_0F_Script_HideRed {
 	setmetatile (12, 8, METATILE_IgnisMons_Button_White, FALSE)
 	setmetatile (1, 11, METATILE_IgnisMons_Button_White_Shadow, FALSE)
 	setmetatile (17, 21, METATILE_IgnisMons_Button_White, FALSE)
+	setmetatile (2, 40, METATILE_IgnisMons_Button_White, FALSE)
 
 	return
 }
