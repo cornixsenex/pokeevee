@@ -819,23 +819,23 @@ static void FalseFloorPerStepCallback(u8 taskId)
 {
     s16 x, y;
 	u16 metatileId; 
+	u16 var;
 
     PlayerGetDestCoords(&x, &y);
 		
-	//Is a false floor
     if (MetatileBehavior_IsFalseFloor(MapGridGetMetatileBehaviorAt(x, y)))
 	{
-		metatileId = MapGridGetMetatileIdAt(x, y);
-	
-		//Determine whiche metatile to draw (Shadow, map etc)
-		
-		if (metatileId == METATILE_IgnisMons_FalseFloor) 
-			MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole);
-		if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
-			MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
-		
-		CurrentMapDrawMetatileAt(x, y);
-
+		//Are we in a special WAIT drop state (Don't change the metatile before we hit the ground!)
+		var = VarGet(VAR_FALSEFLOOR_WAIT);
+		if (var < 1) {	
+			//Determine whiche metatile to draw (Shadow, map etc)
+			metatileId = MapGridGetMetatileIdAt(x, y);
+			if (metatileId == METATILE_IgnisMons_FalseFloor) 
+				MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole);
+			if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
+				MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
+			CurrentMapDrawMetatileAt(x, y);
+		}
 	}
 }
 

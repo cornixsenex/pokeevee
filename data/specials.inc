@@ -578,3 +578,4 @@ gSpecials::
 	def_special IsPhilosophyPhrase
 	def_special DoRhetoric
 	def_special DoFalseFloorFall
+	def_special	FalseFloorMetatileUpdate 

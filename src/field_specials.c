@@ -140,6 +140,10 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
+
+void CheckIgnisMons3FFalseFloorFallWait(s16, s16);
+void CheckIgnisMons2FFalseFloorFallWait(s16, s16);
+
 #if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
@@ -5554,21 +5558,87 @@ void DoFalseFloorFall(struct ScriptContext *ctx)
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum = gSaveBlock1Ptr->location.mapNum;
 
-	//If IgnisMons1 ; Set Destination map IgnisMons0
+	//IgnisMons 1F
 	if (mapGroup == 32 && mapNum == 1)
         SetWarpDestination(mapGroup, mapNum+1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
 
+	//IgnisMons 2F
 	if (mapGroup == 32 && mapNum == 3)
+		CheckIgnisMons2FFalseFloorFallWait(x, y);
         SetWarpDestination(mapGroup, mapNum-2, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
-
-	if (mapGroup == 32 && mapNum == 4)
+	
+	//Ignis Mons 3F
+	if (mapGroup == 32 && mapNum == 4) {
+		CheckIgnisMons3FFalseFloorFallWait(x, y);
         SetWarpDestination(mapGroup, mapNum-1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+	}
 
 	DoFallWarp();
 	ResetInitialPlayerAvatarState();
 }
 
+void CheckIgnisMons3FFalseFloorFallWait(s16 x, s16 y)
+{
+	x = x - MAP_OFFSET;
+	y = y - MAP_OFFSET;
+	if (
+			(x == 1  && y == 8 ) ||
+			(x == 2  && y == 7 ) ||
+			(x == 6  && y == 9 ) ||
+			(x == 17 && y == 16) ||
+			(x == 18 && y == 6 ) ||
+			(x == 17 && y == 7 ) ||
+			(x == 18 && y == 7 ) ||
+			(x == 3  && y == 18) ||
+			(x == 4  && y == 16) ||
+			(x == 5  && y == 17) ||
+			(x == 15 && y == 16) ||
+			(x == 15 && y == 17) ||
+			(x == 18 && y == 18) ||
+			(x == 2  && y == 24) ||
+			(x == 8  && y == 24) 
+	   ) 
+		VarSet(VAR_FALSEFLOOR_WAIT, 1);
+	else
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+}
 
+void CheckIgnisMons2FFalseFloorFallWait(s16 x, s16 y)
+{
+	x = x - MAP_OFFSET;
+	y = y - MAP_OFFSET;
+	if (
+			(x == 7   && y == 7  ) ||
+			(x == 8   && y == 7  ) ||
+			(x == 8   && y == 8  ) ||
+			(x == 8   && y == 9  ) ||
+			(x == 17  && y == 7  ) ||
+			(x == 18  && y == 6  ) ||
+			(x == 4   && y == 16 ) ||
+			(x == 17  && y == 18 ) ||
+			(x == 18  && y == 18 ) ||
+			(x == 18  && y == 17 ) ||
+			(x == 2   && y == 24 ) 
+	   ) 
+		VarSet(VAR_FALSEFLOOR_WAIT, 1);
+	else
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+}
+
+void FalseFloorMetatileUpdate(void)
+{
+	s16 x, y;
+	u16 metatileId;
+
+	PlayerGetDestCoords(&x, &y);
+
+	metatileId = MapGridGetMetatileIdAt(x, y);
+	if (metatileId == METATILE_IgnisMons_FalseFloor) 
+		MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole);
+	if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
+		MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
+	CurrentMapDrawMetatileAt(x, y);
+}
 
 
 
