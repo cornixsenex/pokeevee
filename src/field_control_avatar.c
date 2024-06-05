@@ -585,6 +585,11 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
         ScriptContext_SetupScript(EventScript_FallDownHole);
         return TRUE;
     }
+	else if (MetatileBehavior_IsFalseFloorHole(metatileBehavior))
+    {
+        ScriptContext_SetupScript(EventScript_FallDownFalseFloor);
+        return TRUE;
+    }
     else if (MetatileBehavior_IsBattlePyramidWarp(metatileBehavior))
     {
         ScriptContext_SetupScript(BattlePyramid_WarpToNextFloor);

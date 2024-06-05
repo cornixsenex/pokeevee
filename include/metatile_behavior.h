@@ -183,4 +183,8 @@ bool8 MetatileBehavior_IsCyclingRoadPullRightTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCyclingRoadBridgePullRightTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCyclingRoadBridgePullLeftTile(u8 metatileBehavior);
 
+//Ignis Mons / Custom False Floor Fall Through
+bool8 MetatileBehavior_IsFalseFloor(u8); // Ignis Mons False Floor
+bool8 MetatileBehavior_IsFalseFloorHole(u8); // Ignis Mons False Floor
+
 #endif // GUARD_METATILE_BEHAVIOR_H

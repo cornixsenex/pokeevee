@@ -4766,7 +4766,7 @@ u16 RandDigit(void)
 	return RandomValue;
 }
 
-void FalseFloor(void)
+void DesertTemple_FalseFloor(void)
 {
 	int x, y;
 	//Get player X and Y
@@ -5541,7 +5541,32 @@ bool32 IsPhilosophyPhrase(void)
 	return FALSE;
 };
 
+void DoFalseFloorFall(struct ScriptContext *ctx)
+{
+    u8 mapGroup = ScriptReadByte(ctx);
+    u8 mapNum = ScriptReadByte(ctx);
+    s16 x;
+    s16 y;
 
+    PlayerGetDestCoords(&x, &y);
+
+	//Get current map group and number
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum = gSaveBlock1Ptr->location.mapNum;
+
+	//If IgnisMons1 ; Set Destination map IgnisMons0
+	if (mapGroup == 32 && mapNum == 1)
+        SetWarpDestination(mapGroup, mapNum+1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+
+	if (mapGroup == 32 && mapNum == 3)
+        SetWarpDestination(mapGroup, mapNum-2, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+
+	if (mapGroup == 32 && mapNum == 4)
+        SetWarpDestination(mapGroup, mapNum-1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+
+	DoFallWarp();
+	ResetInitialPlayerAvatarState();
+}
 
 
 

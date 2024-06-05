@@ -1,12 +1,13 @@
 mapscripts IgnisMons_0F_MapScripts {
 
 	MAP_SCRIPT_ON_RESUME {
-		call (IgnisMons_0F_Script_SetBarriers)
+		call (IgnisMons_0F_Script_OnResume)
 
 	}
 }
 
-script IgnisMons_0F_Script_SetBarriers {
+script IgnisMons_0F_Script_OnResume {
+	setstepcallback (STEP_CB_FALSE_FLOOR)
 	switch (var(VAR_IGNISMONS_STATE)) {
 		case 0:
 			call (IgnisMons_0F_Script_SetBarriers_Init)

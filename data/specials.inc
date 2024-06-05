@@ -561,7 +561,7 @@ gSpecials::
 	def_special ChangeGen
 	def_special CheckMonHasGen
 	def_special RandDigit
-	def_special FalseFloor
+	def_special DesertTemple_FalseFloor
 	def_special IsDesertTemple4FSolved
 	def_special ResetCamera
 	def_special IsRockTypeInParty
@@ -577,3 +577,4 @@ gSpecials::
 	def_special NamePhilosophy
 	def_special IsPhilosophyPhrase
 	def_special DoRhetoric
+	def_special DoFalseFloorFall

@@ -7,8 +7,7 @@
 #define MB_LONG_GRASS 0x03
 //Formerly UNUSED_04
 #define MB_CANVAS     0x04
-//Formerly UNUSED_05 - Fall Through Ignis Mons
-#define MB_FALSE_FLOOR 0x05
+#define MB_UNUSED_05 0x05
 #define MB_DEEP_SAND 0x06
 #define MB_SHORT_GRASS 0x07
 #define MB_CAVE 0x08
@@ -165,8 +164,8 @@
 #define MB_SECRET_BASE_SPOT_BLUE_CAVE_OPEN 0x9B
 #define MB_SECRET_BASE_SPOT_TREE_RIGHT 0x9C
 #define MB_SECRET_BASE_SPOT_TREE_RIGHT_OPEN 0x9D
-#define MB_UNUSED_9E 0x9E
-#define MB_UNUSED_9F 0x9F
+#define MB_FALSE_FLOOR 0x9E
+#define MB_FALSE_FLOOR_HOLE 0x9F
 #define MB_BERRY_TREE_SOIL 0xA0
 #define MB_UNUSED_A1 0xA1
 #define MB_UNUSED_A2 0xA2

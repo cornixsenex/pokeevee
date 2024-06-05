@@ -2,6 +2,7 @@
 #include "bike.h"
 #include "clock.h"
 #include "event_data.h"
+#include "event_scripts.h"
 #include "field_camera.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
@@ -34,6 +35,7 @@
  *      . SecretBasePerStepCallback: Records the decorations in a friend's secret base that the player steps on.
  *      . CrackedFloorPerStepCallback: Breaks cracked floors that the player steps on.
  *      - CanvasPerStepCallback: Kustom to change metatile from white to black on canvas.
+ *      - FalseFloorPerStepCallback: Kustom for Ignis Mons False Floor
  *
  *  NOTE: "PerStep" is perhaps misleading. One function in sPerStepCallbacks is called
  *        every frame while in the overworld by Task_RunPerStepCallback regardless of
@@ -56,6 +58,7 @@ static void FortreeBridgePerStepCallback(u8);
 static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
+static void FalseFloorPerStepCallback(u8);
 static void Task_MuddySlope(u8);
 
 static const TaskFunc sPerStepCallbacks[] =
@@ -68,7 +71,8 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
-    [STEP_CB_CANVAS]            = CanvasPerStepCallback
+    [STEP_CB_CANVAS]            = CanvasPerStepCallback,
+	[STEP_CB_FALSE_FLOOR]       = FalseFloorPerStepCallback
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.
@@ -810,6 +814,30 @@ static void CanvasPerStepCallback(u8 taskId)
 
 #undef tPrevX
 #undef tPrevY
+
+static void FalseFloorPerStepCallback(u8 taskId)
+{
+    s16 x, y;
+	u16 metatileId; 
+
+    PlayerGetDestCoords(&x, &y);
+		
+	//Is a false floor
+    if (MetatileBehavior_IsFalseFloor(MapGridGetMetatileBehaviorAt(x, y)))
+	{
+		metatileId = MapGridGetMetatileIdAt(x, y);
+	
+		//Determine whiche metatile to draw (Shadow, map etc)
+		
+		if (metatileId == METATILE_IgnisMons_FalseFloor) 
+			MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole);
+		if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
+			MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
+		
+		CurrentMapDrawMetatileAt(x, y);
+
+	}
+}
 
 // This function uses the constants for gTileset_Cave's metatile labels, but other tilesets with
 // the CrackedFloorPerStepCallback callback use the same metatile numbers for the cracked floor

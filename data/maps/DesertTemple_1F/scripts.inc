@@ -8,7 +8,7 @@ DesertTemple_1F_EventScript_FloorTrigger::
 # 11 "data/maps/DesertTemple_1F/scripts.pory"
 	delay 20
 # 12 "data/maps/DesertTemple_1F/scripts.pory"
-	special FalseFloor
+	special DesertTemple_FalseFloor
 # 13 "data/maps/DesertTemple_1F/scripts.pory"
 	special DrawWholeMapView
 # 14 "data/maps/DesertTemple_1F/scripts.pory"

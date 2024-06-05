@@ -9,7 +9,7 @@ mapscripts DesertTemple_1F_MapScripts {
 script DesertTemple_1F_EventScript_FloorTrigger {
 	lockall
 	delay (20)
-	special (FalseFloor)
+	special (DesertTemple_FalseFloor)
 	special (DrawWholeMapView)
 	specialvar (VAR_RESULT, RandDigit)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
