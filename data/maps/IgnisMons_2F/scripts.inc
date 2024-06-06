@@ -110,7 +110,7 @@ IgnisMons_2F_Script_RedButton_2:
 # 71 "data/maps/IgnisMons_2F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 1
 # 72 "data/maps/IgnisMons_2F/scripts.pory"
-	playse SE_PIN
+	playse SE_FU_ZAKU
 # 73 "data/maps/IgnisMons_2F/scripts.pory"
 	call IgnisMons_2F_Script_SetBarriers_Red
 # 74 "data/maps/IgnisMons_2F/scripts.pory"
@@ -133,7 +133,7 @@ IgnisMons_2F_Script_BlueButton_2:
 # 83 "data/maps/IgnisMons_2F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 2
 # 84 "data/maps/IgnisMons_2F/scripts.pory"
-	playse SE_PIN
+	playse SE_FU_ZAKU
 # 85 "data/maps/IgnisMons_2F/scripts.pory"
 	call IgnisMons_2F_Script_SetBarriers_Blue
 # 86 "data/maps/IgnisMons_2F/scripts.pory"
@@ -156,7 +156,7 @@ IgnisMons_2F_Script_GreenButton_2:
 # 95 "data/maps/IgnisMons_2F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 3
 # 96 "data/maps/IgnisMons_2F/scripts.pory"
-	playse SE_PIN
+	playse SE_FU_ZAKU
 # 97 "data/maps/IgnisMons_2F/scripts.pory"
 	call IgnisMons_2F_Script_SetBarriers_Green
 # 98 "data/maps/IgnisMons_2F/scripts.pory"
@@ -348,7 +348,7 @@ IgnisMons_2F_Script_HideGreen::
 # 213 "data/maps/IgnisMons_2F/scripts.pory"
 	setmetatile 8, 34, METATILE_IgnisMons_Floor, FALSE
 # 214 "data/maps/IgnisMons_2F/scripts.pory"
-	setmetatile 9, 33, METATILE_IgnisMons_Floor, FALSE
+	setmetatile 9, 33, METATILE_IgnisMons_Floor_Shadow, FALSE
 # 216 "data/maps/IgnisMons_2F/scripts.pory"
 	setmetatile 2, 8, METATILE_IgnisMons_Button_White, FALSE
 # 217 "data/maps/IgnisMons_2F/scripts.pory"

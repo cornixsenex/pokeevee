@@ -69,7 +69,7 @@ script IgnisMons_2F_Script_RedButton {
 	lockall
 	if (var(VAR_IGNISMONS_STATE) != 1) {	
 		setvar (VAR_IGNISMONS_STATE, 1)
-		playse (SE_PIN)
+		playse (SE_FU_ZAKU)
 		call (IgnisMons_2F_Script_SetBarriers_Red)
 		special (DrawWholeMapView)
 	}	
@@ -81,7 +81,7 @@ script IgnisMons_2F_Script_BlueButton {
 	lockall
 	if (var(VAR_IGNISMONS_STATE) != 2) {	
 		setvar (VAR_IGNISMONS_STATE, 2)
-		playse (SE_PIN)
+		playse (SE_FU_ZAKU)
 		call (IgnisMons_2F_Script_SetBarriers_Blue)
 		special (DrawWholeMapView)
 	}
@@ -93,7 +93,7 @@ script IgnisMons_2F_Script_GreenButton {
 	lockall
 	if (var(VAR_IGNISMONS_STATE) != 3) {	
 		setvar (VAR_IGNISMONS_STATE, 3)
-		playse (SE_PIN)
+		playse (SE_FU_ZAKU)
 		call (IgnisMons_2F_Script_SetBarriers_Green)
 		special (DrawWholeMapView)
 	}
@@ -211,7 +211,7 @@ script IgnisMons_2F_Script_HideGreen {
 	setmetatile (14, 27, METATILE_IgnisMons_Floor, FALSE)
 	setmetatile (15, 26, METATILE_IgnisMons_Floor_Shadow, FALSE)
 	setmetatile (8, 34, METATILE_IgnisMons_Floor, FALSE)
-	setmetatile (9, 33, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (9, 33, METATILE_IgnisMons_Floor_Shadow, FALSE)
 
 	setmetatile (2, 8, METATILE_IgnisMons_Button_White, FALSE)
 	setmetatile (12, 12, METATILE_IgnisMons_Button_White_Shadow, FALSE)

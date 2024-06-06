@@ -136,16 +136,23 @@
 #define VAR_UNI_TERM_STATE                               0x406E // Counts completed classes per term 
 #define VAR_CANVAS_STEP_COUNTER                          0x406F // Counts steps player takes on the canvas
 #define VAR_LOGIC_CLASS_STATE                            0x4070 // Controls the Logic Puzzle and triggers test on return to class
-#define VAR_ARGO_STATE                                   0x4071 //0: Argo at sea 1: Argo in transit to Colchis 2:Argo at Big Island 3: Jason at cave entrance, Philoctetes Abducted 4: Finish?
-
-
-
-#define VAR_IGNISMONS_STATE                              0x4072     // 0: Blank
+#define VAR_ARGO_STATE                                   0x4071 //Controls Argo Quest
+																//0: Argo at sea 
+																//1: Argo in transit to Colchis 
+																//2:Argo at Big Island 
+																//3: Jason at cave entrance, Philoctetes Abducted 
+																//4: Philoctetes found mad in the cave
+																//5: Philoctetes freed from Medea's spell
+																//6: After Prometheus unchained and battle (Cave ready for Spearow release)
+																//7: Cave opened; Spearow released
+																//X: Finish?
+#define VAR_IGNISMONS_STATE                              0x4072 // Controls Ignis Mons Color Puzzle
+																// 0: Blank
 																// 1: Red
 																// 2: Blue
 																// 3: Green
 
-#define VAR_FALSEFLOOR_WAIT                              0x4073 // 0: Default 1: Is Falling on another Floor Tile
+#define VAR_FALSEFLOOR_WAIT                              0x4073 // Default 0, set to 1 when continuously falling
 																
 																
 																

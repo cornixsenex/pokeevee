@@ -355,3 +355,27 @@ IgnisMons_1F_FalseFloorContinue::
 	releaseall
 	end
 
+
+IgnisMons_1F_CollisionDrifblim::
+# 241 "data/maps/IgnisMons_1F/scripts.pory"
+	lock
+# 242 "data/maps/IgnisMons_1F/scripts.pory"
+	delay 20
+# 243 "data/maps/IgnisMons_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 244 "data/maps/IgnisMons_1F/scripts.pory"
+	waitmovement 0
+# 245 "data/maps/IgnisMons_1F/scripts.pory"
+	playmoncry SPECIES_DRIFBLIM, CRY_MODE_NORMAL
+# 246 "data/maps/IgnisMons_1F/scripts.pory"
+	waitmoncry
+# 247 "data/maps/IgnisMons_1F/scripts.pory"
+	delay 20
+# 248 "data/maps/IgnisMons_1F/scripts.pory"
+	setvar VAR_IGNISMONS_STATE, 0
+# 249 "data/maps/IgnisMons_1F/scripts.pory"
+	warpsilent MAP_IGNIS_MONS_1F, 10, 41
+# 250 "data/maps/IgnisMons_1F/scripts.pory"
+	waitstate
+	end
+
