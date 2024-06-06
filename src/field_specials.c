@@ -5586,6 +5586,7 @@ void CheckIgnisMons3FFalseFloorFallWait(s16 x, s16 y)
 	y = y - MAP_OFFSET;
 	if (
 			(x == 3  && y == 11) ||
+			(x == 6  && y == 3 ) ||
 			(x == 1  && y == 8 ) ||
 			(x == 2  && y == 7 ) ||
 			(x == 6  && y == 9 ) ||

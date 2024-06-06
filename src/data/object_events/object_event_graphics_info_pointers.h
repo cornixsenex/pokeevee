@@ -1142,6 +1142,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRa
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionSnake;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionYoungster;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionYoungster2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionDrifblim;
 
 
 
@@ -1412,6 +1413,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_COLLISION_SNAKE] =          &gObjectEventGraphicsInfo_CollisionSnake,
 	[OBJ_EVENT_GFX_COLLISION_YOUNGSTER] =      &gObjectEventGraphicsInfo_CollisionYoungster,
 	[OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2] =    &gObjectEventGraphicsInfo_CollisionYoungster2,
+	[OBJ_EVENT_GFX_COLLISION_DRIFBLIM] =       &gObjectEventGraphicsInfo_CollisionDrifblim,
 
     [OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 
