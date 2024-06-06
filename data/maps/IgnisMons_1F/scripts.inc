@@ -80,7 +80,7 @@ IgnisMons_1F_Script_RedButton_2:
 # 55 "data/maps/IgnisMons_1F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 1
 # 56 "data/maps/IgnisMons_1F/scripts.pory"
-	playse SE_PIN
+	playse SE_FU_ZAKU
 # 57 "data/maps/IgnisMons_1F/scripts.pory"
 	call IgnisMons_1F_Script_SetBarriers_Red
 # 58 "data/maps/IgnisMons_1F/scripts.pory"
@@ -103,7 +103,7 @@ IgnisMons_1F_Script_BlueButton_2:
 # 67 "data/maps/IgnisMons_1F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 2
 # 68 "data/maps/IgnisMons_1F/scripts.pory"
-	playse SE_PIN
+	playse SE_FU_ZAKU
 # 69 "data/maps/IgnisMons_1F/scripts.pory"
 	call IgnisMons_1F_Script_SetBarriers_Blue
 # 70 "data/maps/IgnisMons_1F/scripts.pory"
@@ -126,7 +126,7 @@ IgnisMons_1F_Script_GreenButton_2:
 # 79 "data/maps/IgnisMons_1F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 3
 # 80 "data/maps/IgnisMons_1F/scripts.pory"
-	playse SE_PIN
+	playse SE_FU_ZAKU
 # 81 "data/maps/IgnisMons_1F/scripts.pory"
 	call IgnisMons_1F_Script_SetBarriers_Green
 # 82 "data/maps/IgnisMons_1F/scripts.pory"

@@ -91,9 +91,9 @@
 #define TRAINER_SYRA		                 85
 #define TRAINER_SKY		                     86
 #define TRAINER_ROCKY	                     87
-#define TRAINER_COLCHIS_GRUNT1	             88  
-#define TRAINER_STU	                         89  //UNUSED NOW
-#define TRAINER_ALI	                         90  //UNUSED NOW
+#define TRAINER_IGNIS_GRUNT_1	             88  
+#define TRAINER_IGNIS_GRUNT_2	             89  
+#define TRAINER_IGNIS_GRUNT_3	             90  
 #define TRAINER_PATROKLOS                    91  //UNUSED NOW
 #define TRAINER_EPEUS                        92  //UNUSED NOW
 #define TRAINER_SANDY                        93

@@ -14,10 +14,10 @@ const OBJ_EVENT_AMBUSH4 = 11
 mapscripts BigIslandN_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		//2 = Boat has landed, Jason waits for Ambush script
+		//2 = Boat has landed, Jason waits for journey to Colchis script
 		if (var(VAR_ARGO_STATE) == 2) {
 			call (BigIslandN_Script_ShowArgo2)
-		//3 = Jason at the Cave Entrance, Phils abducted, Argonauts getting bored
+		//3 = Jason at the Cave Entrance, Phil abducted, Argonauts getting bored
 		} elif (var(VAR_ARGO_STATE) == 3) {
 			call (BigIslandN_Script_ShowArgo3)
 		} else {
@@ -385,7 +385,7 @@ script BigIslandN_Script_Ambush {
 	msgbox (BigIslandN_Text_ColchisGrunt1Pre, MSGBOX_DEFAULT)
 	closemessage
 	//battle
-	trainerbattle_no_intro (TRAINER_COLCHIS_GRUNT1, BigIslandN_Text_ColchisGrunt1Lost)
+	trainerbattle_no_intro (TRAINER_IGNIS_GRUNT_1, BigIslandN_Text_ColchisGrunt1Lost)
 
 	//Open Cave for next shot
 	setmetatile (31, 35, METATILE_General_CaveEntrance_Top, TRUE) 

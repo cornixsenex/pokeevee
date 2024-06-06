@@ -606,7 +606,7 @@ BigIslandN_Script_Ambush::
 # 386 "data/maps/BigIslandN/scripts.pory"
 	closemessage
 # 388 "data/maps/BigIslandN/scripts.pory"
-	trainerbattle_no_intro TRAINER_COLCHIS_GRUNT1, BigIslandN_Text_ColchisGrunt1Lost
+	trainerbattle_no_intro TRAINER_IGNIS_GRUNT_1, BigIslandN_Text_ColchisGrunt1Lost
 # 391 "data/maps/BigIslandN/scripts.pory"
 	setmetatile 31, 35, METATILE_General_CaveEntrance_Top, TRUE
 # 392 "data/maps/BigIslandN/scripts.pory"

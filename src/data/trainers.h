@@ -1082,30 +1082,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Rocky),
     },
 
-    [TRAINER_STU] =
-    {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("STU"),
-        .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Stu),
-    },
-
-    [TRAINER_ALI] =
-    {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT2,
-        .trainerName = _("ALI"),
-        .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Ali),
-    },
-
     [TRAINER_PATROKLOS] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
@@ -2046,7 +2022,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_UniGym),
     },
 
-    [TRAINER_COLCHIS_GRUNT1] =
+    [TRAINER_IGNIS_GRUNT_1] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2055,7 +2031,31 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_ColchisGrunt1),
+        .party = TRAINER_PARTY(sParty_IgnisGrunt1),
+    },
+
+    [TRAINER_IGNIS_GRUNT_2] =
+    {
+        .trainerClass = TRAINER_CLASS_CULTIST,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
+        .trainerName = _("CULTIST"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_IgnisGrunt2),
+    },
+
+    [TRAINER_IGNIS_GRUNT_3] =
+    {
+        .trainerClass = TRAINER_CLASS_CULTIST,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
+        .trainerName = _("CULTIST"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
 

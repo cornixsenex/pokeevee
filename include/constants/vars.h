@@ -139,7 +139,7 @@
 #define VAR_ARGO_STATE                                   0x4071 //Controls Argo Quest
 																//0: Argo at sea 
 																//1: Argo in transit to Colchis 
-																//2:Argo at Big Island 
+																//2: Argo at Big Island 
 																//3: Jason at cave entrance, Philoctetes Abducted 
 																//4: Philoctetes found mad in the cave
 																//5: Philoctetes freed from Medea's spell

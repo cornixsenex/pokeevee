@@ -1,5 +1,20 @@
+
+const OBJ_EVENT_PHIL = 1
+const OBJ_EVENT_DRIFBLIM_A = 8
+const OBJ_EVENT_DRIFBLIM_B = 9
+
+
 mapscripts IgnisMons_0F_MapScripts {
 
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ARGO_STATE) < 4) {
+			call (IgnisMons_0F_Script_ShowAmbush)
+		} else {
+			call (IgnisMons_0F_Script_HideAmbush)
+		}
+	}
+	
 	MAP_SCRIPT_ON_RESUME {
 		call (IgnisMons_0F_Script_OnResume)
 
@@ -20,6 +35,28 @@ script IgnisMons_0F_Script_OnResume {
 		default:
 			call (IgnisMons_0F_Script_SetBarriers_Init)
 	}
+	end
+}
+
+script IgnisMons_0F_Script_ShowAmbush {
+	setobjectxyperm (OBJ_EVENT_PHIL, 15, 20)
+	setobjectmovementtype (OBJ_EVENT_PHIL, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_PHIL)
+	showobjectat (OBJ_EVENT_PHIL, MAP_IGNIS_MONS_0F)
+	end
+}
+
+script IgnisMons_0F_Script_HideAmbush {
+	setobjectxyperm (OBJ_EVENT_DRIFBLIM_A, 8, 15)
+	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_A, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (OBJ_EVENT_DRIFBLIM_A)
+	showobjectat (OBJ_EVENT_DRIFBLIM_A, MAP_IGNIS_MONS_0F)
+
+	setobjectxyperm (OBJ_EVENT_DRIFBLIM_B, 12, 20)
+	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_B, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (OBJ_EVENT_DRIFBLIM_B)
+	showobjectat (OBJ_EVENT_DRIFBLIM_B, MAP_IGNIS_MONS_0F)
+
 	end
 }
 
@@ -174,13 +211,51 @@ script IgnisMons_0F_Script_HideGreen {
 	return
 }
 
-
 //Philoctetes ambush
+script IgnisMons_0F_Script_PhilAmbush {
+	lockall
+	setvar (VAR_ARGO_STATE, 4)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, IgnisMons_0F_Movement_PhilAmbush1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
 
-//trigger
-//walk up
-//face right
-//Turn back. There is no hope for you. Turn back.
-//The great darkness has devoured my soul
-//Turn back or join me in hypnotic dance
-//Attack two 
+	msgbox (IgnisMons_0F_Text_PhilAmbush, MSGBOX_DEFAULT)
+	closemessage
+
+	setobjectxyperm (OBJ_EVENT_DRIFBLIM_A, 11, 19)
+	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_A, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (OBJ_EVENT_DRIFBLIM_A)
+	showobjectat (OBJ_EVENT_DRIFBLIM_A, MAP_IGNIS_MONS_0F)
+
+	setobjectxyperm (OBJ_EVENT_DRIFBLIM_B, 12, 19)
+	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_B, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (OBJ_EVENT_DRIFBLIM_B)
+	showobjectat (OBJ_EVENT_DRIFBLIM_B, MAP_IGNIS_MONS_0F)
+
+	call (IgnisMons_1F_CollisionDrifblim)
+
+	end
+}
+	
+
+movement IgnisMons_0F_Movement_PhilAmbush1 {
+	walk_up * 4
+}
+
+
+
+//turn back there is no hope for you turn back
+//Medea's spell will overcome you too
+//and trap us both in this dance of darkness
+//
+//Foolish outsider you should not have come
+//The path you tread leads only to downfall
+//be gone or you too will become my slave
+text IgnisMons_0F_Text_PhilAmbush {
+	format("Turn back there is... Oolishfay outsideray ouyay ouldshay otnay avehay omecay... no hope for you turn back! Medea's spell...Ethay athpay ouyay eadtray eadslay onlyay otay ownfallday...Will overcome you too and...Ebay onegay oray ouyay ootay...Trap us both in this dance of darkness...Illway ecomebay ymay aveslay.")
+}
+
+
