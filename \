@@ -6,6 +6,14 @@ const OBJ_EVENT_IGNIS_B = 5
 
 mapscripts BigIslandS_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		if (defeated(TRAINER_IGNIS_GRUNT_2)) {
+			call (BigIslandS_Script_HideIgnisGrunts)
+		} else {
+			call (BigIslandS_Script_ShowIgnisGrunts)
+		}
+	}
+
 	MAP_SCRIPT_ON_RESUME {
 		call (BigIslandS_OnResume)
 	}
@@ -51,8 +59,6 @@ script BigIslandS_Script_IgnisGruntFight {
 
 		call (BigIslandS_Script_HideIgnisGrunts)
 
-		setflag (FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS)
-
 		end
 }
 
@@ -62,11 +68,11 @@ script BigIslandS_Script_HideIgnisGrunts {
 	closemessage
 
 
-	setobjectxyperm (OBJ_EVENT_IGNIS_A, 58, 36)
-	setobjectmovementtype (OBJ_EVENT_IGNIS_A, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_IGNIS_, 58, 36)
+	setobjectmovementtype (OBJ_EVENT_IGNIS_, MOVEMENT_TYPE_FACE_DOWN)
 
-	setobjectxyperm (OBJ_EVENT_IGNIS_B, 59, 36)
-	setobjectmovementtype (OBJ_EVENT_IGNIS_B, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_IGNIS_, 59, 36)
+	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
 	
 	hideobjectat (OBJ_EVENT_IGNIS_A, MAP_BIG_ISLAND_S)
 	removeobject (OBJ_EVENT_IGNIS_A)
@@ -74,7 +80,7 @@ script BigIslandS_Script_HideIgnisGrunts {
 	hideobjectat (OBJ_EVENT_IGNIS_B, MAP_BIG_ISLAND_S)
 	removeobject (OBJ_EVENT_IGNIS_B)
 
-	end
+	return
 }
 
 script BigIslandS_Script_ShowIgnisGrunts {
