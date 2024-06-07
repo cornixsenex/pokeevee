@@ -2201,6 +2201,24 @@ static const struct TrainerMon sParty_IgnisGrunt3[] = {
     }
 };
 
+static const struct TrainerMon sParty_Medea[] = {
+    {
+    .iv = 0,
+    .lvl = 13,
+	.isShiny = TRUE,
+    .species = SPECIES_HYPNO,
+    }
+};
+
+static const struct TrainerMon sParty_Philoctetes[] = {
+    {
+    .iv = 0,
+    .lvl = 13,
+	.isShiny = TRUE,
+    .species = SPECIES_MACHOKE,
+    }
+};
+
 
 //BREAK
 

@@ -94,7 +94,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COLLISION_DRIFBLIM",
-      "x": 5,
+      "x": 4,
       "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -185,10 +185,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CHANNELER",
-      "x": 7,
-      "y": 31,
+      "x": 13,
+      "y": 30,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -198,10 +198,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
-      "x": 9,
-      "y": 31,
+      "x": 12,
+      "y": 30,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -211,10 +211,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_097",
-      "x": 8,
-      "y": 31,
+      "x": 14,
+      "y": 30,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -280,6 +280,24 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "IgnisMons_0F_Script_RedButton"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ARGO_STATE",
+      "var_value": "4",
+      "script": "IgnisMons_3F_Script_MedeaTriggerA"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ARGO_STATE",
+      "var_value": "4",
+      "script": "IgnisMons_3F_Script_MedeaTriggerB"
     }
   ],
   "bg_events": [

@@ -1,270 +1,544 @@
 IgnisMons_3F_MapScripts::
-# 3 "data/maps/IgnisMons_3F/scripts.pory"
+# 8 "data/maps/IgnisMons_3F/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, IgnisMons_3F_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 14 "data/maps/IgnisMons_3F/scripts.pory"
 	map_script MAP_SCRIPT_ON_RESUME, IgnisMons_3F_MapScripts_MAP_SCRIPT_ON_RESUME
 	.byte 0
 
+IgnisMons_3F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 9 "data/maps/IgnisMons_3F/scripts.pory"
+	compare VAR_ARGO_STATE, 4
+	goto_if_eq IgnisMons_3F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+IgnisMons_3F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 10 "data/maps/IgnisMons_3F/scripts.pory"
+	call IgnisMons_3F_Script_ShowMedea
+	return
+
 IgnisMons_3F_MapScripts_MAP_SCRIPT_ON_RESUME:
-# 4 "data/maps/IgnisMons_3F/scripts.pory"
+# 15 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_OnResume
 	return
 
 
 IgnisMons_3F_Script_OnResume::
-# 10 "data/maps/IgnisMons_3F/scripts.pory"
-	setstepcallback STEP_CB_FALSE_FLOOR
-# 11 "data/maps/IgnisMons_3F/scripts.pory"
-	switch VAR_IGNISMONS_STATE
-# 12 "data/maps/IgnisMons_3F/scripts.pory"
-	case 0, IgnisMons_3F_Script_OnResume_3
-# 14 "data/maps/IgnisMons_3F/scripts.pory"
-	case 1, IgnisMons_3F_Script_OnResume_4
-# 16 "data/maps/IgnisMons_3F/scripts.pory"
-	case 2, IgnisMons_3F_Script_OnResume_5
-# 18 "data/maps/IgnisMons_3F/scripts.pory"
-	case 3, IgnisMons_3F_Script_OnResume_6
 # 21 "data/maps/IgnisMons_3F/scripts.pory"
+	setstepcallback STEP_CB_FALSE_FLOOR
+# 22 "data/maps/IgnisMons_3F/scripts.pory"
+	switch VAR_IGNISMONS_STATE
+# 23 "data/maps/IgnisMons_3F/scripts.pory"
+	case 0, IgnisMons_3F_Script_OnResume_3
+# 25 "data/maps/IgnisMons_3F/scripts.pory"
+	case 1, IgnisMons_3F_Script_OnResume_4
+# 27 "data/maps/IgnisMons_3F/scripts.pory"
+	case 2, IgnisMons_3F_Script_OnResume_5
+# 29 "data/maps/IgnisMons_3F/scripts.pory"
+	case 3, IgnisMons_3F_Script_OnResume_6
+# 32 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Init
 IgnisMons_3F_Script_OnResume_1:
 	end
 
 IgnisMons_3F_Script_OnResume_3:
-# 13 "data/maps/IgnisMons_3F/scripts.pory"
+# 24 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Init
 	goto IgnisMons_3F_Script_OnResume_1
 
 IgnisMons_3F_Script_OnResume_4:
-# 15 "data/maps/IgnisMons_3F/scripts.pory"
+# 26 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Red
 	goto IgnisMons_3F_Script_OnResume_1
 
 IgnisMons_3F_Script_OnResume_5:
-# 17 "data/maps/IgnisMons_3F/scripts.pory"
+# 28 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Blue
 	goto IgnisMons_3F_Script_OnResume_1
 
 IgnisMons_3F_Script_OnResume_6:
-# 19 "data/maps/IgnisMons_3F/scripts.pory"
+# 30 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Green
 	goto IgnisMons_3F_Script_OnResume_1
 
 
+IgnisMons_3F_Script_ShowMedea::
+# 39 "data/maps/IgnisMons_3F/scripts.pory"
+	hideobjectat 15, MAP_IGNIS_MONS_3F
+# 40 "data/maps/IgnisMons_3F/scripts.pory"
+	removeobject 15
+# 42 "data/maps/IgnisMons_3F/scripts.pory"
+	hideobjectat 14, MAP_IGNIS_MONS_3F
+# 43 "data/maps/IgnisMons_3F/scripts.pory"
+	removeobject 14
+# 45 "data/maps/IgnisMons_3F/scripts.pory"
+	hideobjectat 16, MAP_IGNIS_MONS_3F
+# 46 "data/maps/IgnisMons_3F/scripts.pory"
+	removeobject 16
+# 48 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectxyperm 15, 7, 31
+# 49 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectmovementtype 15, MOVEMENT_TYPE_FACE_UP
+# 50 "data/maps/IgnisMons_3F/scripts.pory"
+	addobject 15
+# 51 "data/maps/IgnisMons_3F/scripts.pory"
+	showobjectat 15, MAP_IGNIS_MONS_3F
+# 53 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectxyperm 14, 8, 31
+# 54 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectmovementtype 14, MOVEMENT_TYPE_FACE_UP
+# 55 "data/maps/IgnisMons_3F/scripts.pory"
+	addobject 14
+# 56 "data/maps/IgnisMons_3F/scripts.pory"
+	showobjectat 14, MAP_IGNIS_MONS_3F
+# 58 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectxyperm 16, 9, 31
+# 59 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectmovementtype 16, MOVEMENT_TYPE_FACE_UP
+# 60 "data/maps/IgnisMons_3F/scripts.pory"
+	addobject 16
+# 61 "data/maps/IgnisMons_3F/scripts.pory"
+	showobjectat 16, MAP_IGNIS_MONS_3F
+	end
+
+
+IgnisMons_3F_Script_HideMedea::
+# 68 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectxyperm 15, 12, 30
+# 69 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectmovementtype 15, MOVEMENT_TYPE_INVISIBLE
+# 71 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectxyperm 14, 13, 30
+# 72 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectmovementtype 14, MOVEMENT_TYPE_INVISIBLE
+# 74 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectxyperm 16, 14, 30
+# 75 "data/maps/IgnisMons_3F/scripts.pory"
+	setobjectmovementtype 16, MOVEMENT_TYPE_INVISIBLE
+# 77 "data/maps/IgnisMons_3F/scripts.pory"
+	hideobjectat 15, MAP_IGNIS_MONS_3F
+# 78 "data/maps/IgnisMons_3F/scripts.pory"
+	removeobject 15
+# 80 "data/maps/IgnisMons_3F/scripts.pory"
+	hideobjectat 14, MAP_IGNIS_MONS_3F
+# 81 "data/maps/IgnisMons_3F/scripts.pory"
+	removeobject 14
+# 83 "data/maps/IgnisMons_3F/scripts.pory"
+	hideobjectat 16, MAP_IGNIS_MONS_3F
+# 84 "data/maps/IgnisMons_3F/scripts.pory"
+	removeobject 16
+	return
+
+
 IgnisMons_3F_Script_SetBarriers_Red::
-# 27 "data/maps/IgnisMons_3F/scripts.pory"
+# 93 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowBlue
-# 28 "data/maps/IgnisMons_3F/scripts.pory"
+# 94 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowGreen
-# 30 "data/maps/IgnisMons_3F/scripts.pory"
+# 96 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_HideRed
 	return
 
 
 IgnisMons_3F_Script_SetBarriers_Blue::
-# 36 "data/maps/IgnisMons_3F/scripts.pory"
+# 102 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowRed
-# 37 "data/maps/IgnisMons_3F/scripts.pory"
+# 103 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowGreen
-# 39 "data/maps/IgnisMons_3F/scripts.pory"
+# 105 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_HideBlue
 	return
 
 
 IgnisMons_3F_Script_SetBarriers_Green::
-# 45 "data/maps/IgnisMons_3F/scripts.pory"
+# 111 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowRed
-# 46 "data/maps/IgnisMons_3F/scripts.pory"
+# 112 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowBlue
-# 48 "data/maps/IgnisMons_3F/scripts.pory"
+# 114 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_HideGreen
 	return
 
 
 IgnisMons_3F_Script_SetBarriers_Init::
-# 54 "data/maps/IgnisMons_3F/scripts.pory"
+# 120 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowRed
-# 55 "data/maps/IgnisMons_3F/scripts.pory"
+# 121 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowBlue
-# 56 "data/maps/IgnisMons_3F/scripts.pory"
+# 122 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_ShowGreen
 	return
 
 
 IgnisMons_3F_Script_RedButton::
-# 62 "data/maps/IgnisMons_3F/scripts.pory"
+# 128 "data/maps/IgnisMons_3F/scripts.pory"
 	lockall
-# 63 "data/maps/IgnisMons_3F/scripts.pory"
+# 129 "data/maps/IgnisMons_3F/scripts.pory"
 	compare VAR_IGNISMONS_STATE, 1
 	goto_if_ne IgnisMons_3F_Script_RedButton_2
 IgnisMons_3F_Script_RedButton_1:
-# 69 "data/maps/IgnisMons_3F/scripts.pory"
+# 135 "data/maps/IgnisMons_3F/scripts.pory"
 	releaseall
 	end
 
 IgnisMons_3F_Script_RedButton_2:
-# 64 "data/maps/IgnisMons_3F/scripts.pory"
+# 130 "data/maps/IgnisMons_3F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 1
-# 65 "data/maps/IgnisMons_3F/scripts.pory"
+# 131 "data/maps/IgnisMons_3F/scripts.pory"
 	playse SE_FU_ZAKU
-# 66 "data/maps/IgnisMons_3F/scripts.pory"
+# 132 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Red
-# 67 "data/maps/IgnisMons_3F/scripts.pory"
+# 133 "data/maps/IgnisMons_3F/scripts.pory"
 	special DrawWholeMapView
 	goto IgnisMons_3F_Script_RedButton_1
 
 
 IgnisMons_3F_Script_BlueButton::
-# 74 "data/maps/IgnisMons_3F/scripts.pory"
+# 140 "data/maps/IgnisMons_3F/scripts.pory"
 	lockall
-# 75 "data/maps/IgnisMons_3F/scripts.pory"
+# 141 "data/maps/IgnisMons_3F/scripts.pory"
 	compare VAR_IGNISMONS_STATE, 2
 	goto_if_ne IgnisMons_3F_Script_BlueButton_2
 IgnisMons_3F_Script_BlueButton_1:
-# 81 "data/maps/IgnisMons_3F/scripts.pory"
+# 147 "data/maps/IgnisMons_3F/scripts.pory"
 	releaseall
 	end
 
 IgnisMons_3F_Script_BlueButton_2:
-# 76 "data/maps/IgnisMons_3F/scripts.pory"
+# 142 "data/maps/IgnisMons_3F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 2
-# 77 "data/maps/IgnisMons_3F/scripts.pory"
+# 143 "data/maps/IgnisMons_3F/scripts.pory"
 	playse SE_FU_ZAKU
-# 78 "data/maps/IgnisMons_3F/scripts.pory"
+# 144 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Blue
-# 79 "data/maps/IgnisMons_3F/scripts.pory"
+# 145 "data/maps/IgnisMons_3F/scripts.pory"
 	special DrawWholeMapView
 	goto IgnisMons_3F_Script_BlueButton_1
 
 
 IgnisMons_3F_Script_GreenButton::
-# 86 "data/maps/IgnisMons_3F/scripts.pory"
+# 152 "data/maps/IgnisMons_3F/scripts.pory"
 	lockall
-# 87 "data/maps/IgnisMons_3F/scripts.pory"
+# 153 "data/maps/IgnisMons_3F/scripts.pory"
 	compare VAR_IGNISMONS_STATE, 3
 	goto_if_ne IgnisMons_3F_Script_GreenButton_2
 IgnisMons_3F_Script_GreenButton_1:
-# 93 "data/maps/IgnisMons_3F/scripts.pory"
+# 159 "data/maps/IgnisMons_3F/scripts.pory"
 	releaseall
 	end
 
 IgnisMons_3F_Script_GreenButton_2:
-# 88 "data/maps/IgnisMons_3F/scripts.pory"
+# 154 "data/maps/IgnisMons_3F/scripts.pory"
 	setvar VAR_IGNISMONS_STATE, 3
-# 89 "data/maps/IgnisMons_3F/scripts.pory"
+# 155 "data/maps/IgnisMons_3F/scripts.pory"
 	playse SE_FU_ZAKU
-# 90 "data/maps/IgnisMons_3F/scripts.pory"
+# 156 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_SetBarriers_Green
-# 91 "data/maps/IgnisMons_3F/scripts.pory"
+# 157 "data/maps/IgnisMons_3F/scripts.pory"
 	special DrawWholeMapView
 	goto IgnisMons_3F_Script_GreenButton_1
 
 
 IgnisMons_3F_Script_ShowRed::
-# 98 "data/maps/IgnisMons_3F/scripts.pory"
+# 164 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 17, 22, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE
-# 99 "data/maps/IgnisMons_3F/scripts.pory"
+# 165 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 18, 23, METATILE_IgnisMons_Barrier_Red, TRUE
-# 102 "data/maps/IgnisMons_3F/scripts.pory"
+# 168 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 17, 35, METATILE_IgnisMons_Button_Red, FALSE
 	return
 
 
 IgnisMons_3F_Script_ShowBlue::
-# 107 "data/maps/IgnisMons_3F/scripts.pory"
+# 173 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 5, 6, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE
-# 108 "data/maps/IgnisMons_3F/scripts.pory"
+# 174 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 6, 5, METATILE_IgnisMons_Barrier_Blue, TRUE
-# 109 "data/maps/IgnisMons_3F/scripts.pory"
+# 175 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 7, 6, METATILE_IgnisMons_Barrier_Blue, TRUE
-# 110 "data/maps/IgnisMons_3F/scripts.pory"
+# 176 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 12, 15, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE
-# 111 "data/maps/IgnisMons_3F/scripts.pory"
+# 177 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 13, 14, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE
-# 112 "data/maps/IgnisMons_3F/scripts.pory"
+# 178 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 14, 15, METATILE_IgnisMons_Barrier_Blue, TRUE
-# 113 "data/maps/IgnisMons_3F/scripts.pory"
+# 179 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 9, 40, METATILE_IgnisMons_Barrier_Blue, TRUE
-# 114 "data/maps/IgnisMons_3F/scripts.pory"
+# 180 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 10, 39, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE
-# 115 "data/maps/IgnisMons_3F/scripts.pory"
+# 181 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 11, 40, METATILE_IgnisMons_Barrier_Blue, TRUE
-# 116 "data/maps/IgnisMons_3F/scripts.pory"
+# 182 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 10, 41, METATILE_IgnisMons_Barrier_Blue, TRUE
-# 118 "data/maps/IgnisMons_3F/scripts.pory"
+# 184 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 2, 40, METATILE_IgnisMons_Button_Blue, FALSE
 	return
 
 
 IgnisMons_3F_Script_ShowGreen::
-# 124 "data/maps/IgnisMons_3F/scripts.pory"
+# 190 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 1, 6, METATILE_IgnisMons_Barrier_Green_Shadow, TRUE
-# 125 "data/maps/IgnisMons_3F/scripts.pory"
+# 191 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 2, 5, METATILE_IgnisMons_Barrier_Green, TRUE
-# 126 "data/maps/IgnisMons_3F/scripts.pory"
+# 192 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 12, 7, METATILE_IgnisMons_Barrier_Green_Shadow, TRUE
-# 127 "data/maps/IgnisMons_3F/scripts.pory"
+# 193 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 13, 6, METATILE_IgnisMons_Barrier_Green_Shadow, TRUE
-# 128 "data/maps/IgnisMons_3F/scripts.pory"
+# 194 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 1, 30, METATILE_IgnisMons_Barrier_Green_Shadow, TRUE
-# 129 "data/maps/IgnisMons_3F/scripts.pory"
+# 195 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 2, 29, METATILE_IgnisMons_Barrier_Green, TRUE
-# 130 "data/maps/IgnisMons_3F/scripts.pory"
+# 196 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 3, 28, METATILE_IgnisMons_Barrier_Green, TRUE
-# 132 "data/maps/IgnisMons_3F/scripts.pory"
+# 198 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 7, 17, METATILE_IgnisMons_Button_Green, FALSE
 	return
 
 
 IgnisMons_3F_Script_HideRed::
-# 139 "data/maps/IgnisMons_3F/scripts.pory"
+# 205 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 17, 22, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 140 "data/maps/IgnisMons_3F/scripts.pory"
+# 206 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 18, 23, METATILE_IgnisMons_Floor, FALSE
-# 143 "data/maps/IgnisMons_3F/scripts.pory"
+# 209 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 17, 35, METATILE_IgnisMons_Button_White, FALSE
 	return
 
 
 IgnisMons_3F_Script_HideBlue::
-# 148 "data/maps/IgnisMons_3F/scripts.pory"
+# 214 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 5, 6, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 149 "data/maps/IgnisMons_3F/scripts.pory"
+# 215 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 6, 5, METATILE_IgnisMons_Floor, FALSE
-# 150 "data/maps/IgnisMons_3F/scripts.pory"
+# 216 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 7, 6, METATILE_IgnisMons_Floor, FALSE
-# 151 "data/maps/IgnisMons_3F/scripts.pory"
+# 217 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 12, 15, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 152 "data/maps/IgnisMons_3F/scripts.pory"
+# 218 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 13, 14, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 153 "data/maps/IgnisMons_3F/scripts.pory"
+# 219 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 14, 15, METATILE_IgnisMons_Floor, FALSE
-# 154 "data/maps/IgnisMons_3F/scripts.pory"
+# 220 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 9, 40, METATILE_IgnisMons_Floor, FALSE
-# 155 "data/maps/IgnisMons_3F/scripts.pory"
+# 221 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 10, 39, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 156 "data/maps/IgnisMons_3F/scripts.pory"
+# 222 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 11, 40, METATILE_IgnisMons_Floor, FALSE
-# 157 "data/maps/IgnisMons_3F/scripts.pory"
+# 223 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 10, 41, METATILE_IgnisMons_Floor, FALSE
-# 159 "data/maps/IgnisMons_3F/scripts.pory"
+# 225 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 2, 40, METATILE_IgnisMons_Button_White, FALSE
 	return
 
 
 IgnisMons_3F_Script_HideGreen::
-# 165 "data/maps/IgnisMons_3F/scripts.pory"
+# 231 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 1, 6, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 166 "data/maps/IgnisMons_3F/scripts.pory"
+# 232 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 2, 5, METATILE_IgnisMons_Floor, FALSE
-# 167 "data/maps/IgnisMons_3F/scripts.pory"
+# 233 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 12, 7, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 168 "data/maps/IgnisMons_3F/scripts.pory"
+# 234 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 13, 6, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 169 "data/maps/IgnisMons_3F/scripts.pory"
+# 235 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 1, 30, METATILE_IgnisMons_Floor_Shadow, FALSE
-# 170 "data/maps/IgnisMons_3F/scripts.pory"
+# 236 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 2, 29, METATILE_IgnisMons_Floor, FALSE
-# 171 "data/maps/IgnisMons_3F/scripts.pory"
+# 237 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 3, 28, METATILE_IgnisMons_Floor, FALSE
-# 173 "data/maps/IgnisMons_3F/scripts.pory"
+# 239 "data/maps/IgnisMons_3F/scripts.pory"
 	setmetatile 7, 17, METATILE_IgnisMons_Button_White, FALSE
 	return
 
+
+IgnisMons_3F_Script_MedeaTriggerA::
+# 245 "data/maps/IgnisMons_3F/scripts.pory"
+	setvar VAR_TEMP_7, 1
+# 246 "data/maps/IgnisMons_3F/scripts.pory"
+	call IgnisMons_3F_Script_Medea
+	return
+
+
+IgnisMons_3F_Script_MedeaTriggerB::
+# 250 "data/maps/IgnisMons_3F/scripts.pory"
+	call IgnisMons_3F_Script_Medea
+	return
+
+
+IgnisMons_3F_Script_Medea::
+# 254 "data/maps/IgnisMons_3F/scripts.pory"
+	lockall
+# 256 "data/maps/IgnisMons_3F/scripts.pory"
+	setvar VAR_ARGO_STATE, 5
+# 258 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, IgnisMons_3F_Movement_Medea_Player
+# 259 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+# 261 "data/maps/IgnisMons_3F/scripts.pory"
+	compare VAR_TEMP_7, 1
+	goto_if_eq IgnisMons_3F_Script_Medea_2
+IgnisMons_3F_Script_Medea_1:
+# 266 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 267 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+# 269 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 15, IgnisMons_3F_Movement_Medea_Foe
+# 270 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 14, IgnisMons_3F_Movement_Medea_Foe
+# 271 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 16, IgnisMons_3F_Movement_Medea_Foe
+# 272 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+# 274 "data/maps/IgnisMons_3F/scripts.pory"
+	msgbox IgnisMons_3F_Text_MedeaPre, MSGBOX_DEFAULT
+# 275 "data/maps/IgnisMons_3F/scripts.pory"
+	closemessage
+# 277 "data/maps/IgnisMons_3F/scripts.pory"
+	trainerbattle_two_trainers TRAINER_PHILOCTETES, IgnisMons_3F_Text_PhiloctetesLost, TRAINER_MEDEA, IgnisMons_3F_Text_MedeaLost
+# 279 "data/maps/IgnisMons_3F/scripts.pory"
+	msgbox IgnisMons_3F_Text_MedeaPost, MSGBOX_DEFAULT
+# 280 "data/maps/IgnisMons_3F/scripts.pory"
+	closemessage
+# 282 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 14, IgnisMons_3F_Movement_Medea_Exit
+# 283 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 16, IgnisMons_3F_Movement_Medea_Exit
+# 284 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+# 286 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+# 287 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 15, IgnisMons_3F_Movement_Phil
+# 288 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+# 290 "data/maps/IgnisMons_3F/scripts.pory"
+	msgbox IgnisMons_3F_Text_PhilPost, MSGBOX_DEFAULT
+# 291 "data/maps/IgnisMons_3F/scripts.pory"
+	closemessage
+# 293 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 15, IgnisMons_3F_Movement_PhilExit
+# 294 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+# 296 "data/maps/IgnisMons_3F/scripts.pory"
+	call IgnisMons_3F_Script_HideMedea
+	end
+
+IgnisMons_3F_Script_Medea_2:
+# 262 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+# 263 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+	goto IgnisMons_3F_Script_Medea_1
+
+
+# 302 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_Medea_Player:
+# 303 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_left
+# 303 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_left
+# 303 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_left
+# 303 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_left
+# 303 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_left
+# 304 "data/maps/IgnisMons_3F/scripts.pory"
+	face_down
+	step_end
+
+# 307 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_Medea_Foe:
+# 308 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+# 308 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+# 308 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+	step_end
+
+# 311 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_Medea_Exit:
+# 312 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 312 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 312 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 312 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 312 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+	step_end
+
+# 315 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_Phil:
+# 316 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+# 317 "data/maps/IgnisMons_3F/scripts.pory"
+	face_right
+	step_end
+
+# 320 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_PhilExit:
+# 321 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 322 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+	step_end
+
+IgnisMons_3F_Text_MedeaPre::
+# 329 "data/maps/IgnisMons_3F/scripts.pory"
+	.string "Impressiveay. Erethay areay ewfay\n"
+	.string "owhay omecay isthay arfay utbay ouyay\l"
+	.string "illway otnay escapeay ouryay esentpray\l"
+	.string "oomday. Ownay oinjay ouryay iendfray\l"
+	.string "asay ymay aveslay. Ogay Ypnohay!$"
+
+IgnisMons_3F_Text_MedeaLost::
+# 334 "data/maps/IgnisMons_3F/scripts.pory"
+	.string "Ypnohay! Owhay ouldcay ouyay ailfay\n"
+	.string "emay?$"
+
+IgnisMons_3F_Text_PhiloctetesLost::
+# 338 "data/maps/IgnisMons_3F/scripts.pory"
+	.string "Where am I?$"
+
+IgnisMons_3F_Text_MedeaPost::
+# 345 "data/maps/IgnisMons_3F/scripts.pory"
+	.string "Indeeday ouyay areay owerfulpay.\n"
+	.string "Ethay oddessgay ivesgay onorhay otay\l"
+	.string "osethay owhay efeatday erhay ellspay.\l"
+	.string "Iay ustmay arnway Apapay ouyay'evay\l"
+	.string "omecay orfay ouray eeceflay.$"
+
+IgnisMons_3F_Text_PhilPost::
+# 350 "data/maps/IgnisMons_3F/scripts.pory"
+	.string "How could this happen? Great\n"
+	.string "Philoctetes defeated by this boy,\l"
+	.string "abandonded by the Argonauts and\l"
+	.string "enslaved by a witch? Tell Jason and the\l"
+	.string "other Argonauts that I was not the one\l"
+	.string "who broke my oath, instead they\l"
+	.string "nullified our fellowship when they left\l"
+	.string "me for dead...Yet I was beat. I'm nothing\l"
+	.string "more than a betrayed traitor, a\l"
+	.string "disgrace to my family, and this earth.\l"
+	.string "I'll never walk among men after this. I'll\l"
+	.string "flee into the woods. Do not seek me.$"

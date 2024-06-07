@@ -338,40 +338,86 @@ IgnisMons_0F_Script_PhilAmbush::
 # 226 "data/maps/IgnisMons_0F/scripts.pory"
 	closemessage
 # 228 "data/maps/IgnisMons_0F/scripts.pory"
-	setobjectxyperm 8, 11, 19
+	applymovement 1, IgnisMons_0F_Movement_PhilAmbushExit
 # 229 "data/maps/IgnisMons_0F/scripts.pory"
-	setobjectmovementtype 8, MOVEMENT_TYPE_WANDER_AROUND
+	waitmovement 0
 # 230 "data/maps/IgnisMons_0F/scripts.pory"
-	addobject 8
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 231 "data/maps/IgnisMons_0F/scripts.pory"
-	showobjectat 8, MAP_IGNIS_MONS_0F
+	waitmovement 0
 # 233 "data/maps/IgnisMons_0F/scripts.pory"
-	setobjectxyperm 9, 12, 19
+	removeobject 8
 # 234 "data/maps/IgnisMons_0F/scripts.pory"
-	setobjectmovementtype 9, MOVEMENT_TYPE_WANDER_AROUND
+	setobjectxyperm 8, 11, 17
 # 235 "data/maps/IgnisMons_0F/scripts.pory"
-	addobject 9
+	setobjectmovementtype 8, MOVEMENT_TYPE_FACE_DOWN
 # 236 "data/maps/IgnisMons_0F/scripts.pory"
+	addobject 8
+# 237 "data/maps/IgnisMons_0F/scripts.pory"
+	showobjectat 8, MAP_IGNIS_MONS_0F
+# 239 "data/maps/IgnisMons_0F/scripts.pory"
+	removeobject 9
+# 240 "data/maps/IgnisMons_0F/scripts.pory"
+	setobjectxyperm 9, 12, 17
+# 241 "data/maps/IgnisMons_0F/scripts.pory"
+	setobjectmovementtype 9, MOVEMENT_TYPE_FACE_DOWN
+# 242 "data/maps/IgnisMons_0F/scripts.pory"
+	addobject 9
+# 243 "data/maps/IgnisMons_0F/scripts.pory"
 	showobjectat 9, MAP_IGNIS_MONS_0F
-# 238 "data/maps/IgnisMons_0F/scripts.pory"
+# 245 "data/maps/IgnisMons_0F/scripts.pory"
+	applymovement 8, IgnisMons_0F_Movement_PhilAmbusHDrifblim
+# 246 "data/maps/IgnisMons_0F/scripts.pory"
+	applymovement 9, IgnisMons_0F_Movement_PhilAmbusHDrifblim
+# 248 "data/maps/IgnisMons_0F/scripts.pory"
+	hideobjectat 1, MAP_IGNIS_MONS_0F
+# 249 "data/maps/IgnisMons_0F/scripts.pory"
+	removeobject 1
+# 252 "data/maps/IgnisMons_0F/scripts.pory"
 	call IgnisMons_1F_CollisionDrifblim
 	end
 
 
-# 244 "data/maps/IgnisMons_0F/scripts.pory"
+# 258 "data/maps/IgnisMons_0F/scripts.pory"
 IgnisMons_0F_Movement_PhilAmbush1:
-# 245 "data/maps/IgnisMons_0F/scripts.pory"
+# 259 "data/maps/IgnisMons_0F/scripts.pory"
 	walk_up
-# 245 "data/maps/IgnisMons_0F/scripts.pory"
+# 259 "data/maps/IgnisMons_0F/scripts.pory"
 	walk_up
-# 245 "data/maps/IgnisMons_0F/scripts.pory"
+# 259 "data/maps/IgnisMons_0F/scripts.pory"
 	walk_up
-# 245 "data/maps/IgnisMons_0F/scripts.pory"
+# 259 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_up
+	step_end
+
+# 262 "data/maps/IgnisMons_0F/scripts.pory"
+IgnisMons_0F_Movement_PhilAmbusHDrifblim:
+# 263 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_down
+# 263 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_down
+	step_end
+
+# 266 "data/maps/IgnisMons_0F/scripts.pory"
+IgnisMons_0F_Movement_PhilAmbushExit:
+# 267 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_up
+# 267 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_up
+# 267 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_up
+# 267 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_up
+# 267 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_up
+# 268 "data/maps/IgnisMons_0F/scripts.pory"
+	walk_right
+# 269 "data/maps/IgnisMons_0F/scripts.pory"
 	walk_up
 	step_end
 
 IgnisMons_0F_Text_PhilAmbush::
-# 257 "data/maps/IgnisMons_0F/scripts.pory"
+# 279 "data/maps/IgnisMons_0F/scripts.pory"
 	.string "Turn back there is... Oolishfay\n"
 	.string "outsideray ouyay ouldshay otnay\l"
 	.string "avehay omecay... no hope for you turn\l"

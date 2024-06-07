@@ -5,12 +5,6 @@ const OBJ_EVENT_HYPNO = 16
 
 mapscripts IgnisMons_3F_MapScripts {
 
-	MAP_SCRIPT_ON_TRANSITION {
-		if (var(VAR_ARGO_STATE) == 4) {
-			call (IgnisMons_3F_Script_ShowMedea)
-		}
-	}
-
 	MAP_SCRIPT_ON_RESUME {
 		call (IgnisMons_3F_Script_OnResume)
 	
@@ -33,61 +27,6 @@ script IgnisMons_3F_Script_OnResume {
 	}
 	end
 }
-
-script IgnisMons_3F_Script_ShowMedea {
-
-	hideobjectat (OBJ_EVENT_PHIL, MAP_IGNIS_MONS_3F)
-	removeobject (OBJ_EVENT_PHIL)
-
-	hideobjectat (OBJ_EVENT_MEDEA, MAP_IGNIS_MONS_3F)
-	removeobject (OBJ_EVENT_MEDEA)
-
-	hideobjectat (OBJ_EVENT_HYPNO, MAP_IGNIS_MONS_3F)
-	removeobject (OBJ_EVENT_HYPNO)
-
-	setobjectxyperm (OBJ_EVENT_PHIL, 7, 31)
-	setobjectmovementtype (OBJ_EVENT_PHIL, MOVEMENT_TYPE_FACE_UP)
-	addobject (OBJ_EVENT_PHIL)
-	showobjectat (OBJ_EVENT_PHIL, MAP_IGNIS_MONS_3F)
-
-	setobjectxyperm (OBJ_EVENT_MEDEA, 8, 31)
-	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_UP)
-	addobject (OBJ_EVENT_MEDEA)
-	showobjectat (OBJ_EVENT_MEDEA, MAP_IGNIS_MONS_3F)
-
-	setobjectxyperm (OBJ_EVENT_HYPNO, 9, 31)
-	setobjectmovementtype (OBJ_EVENT_HYPNO, MOVEMENT_TYPE_FACE_UP)
-	addobject (OBJ_EVENT_HYPNO)
-	showobjectat (OBJ_EVENT_HYPNO, MAP_IGNIS_MONS_3F)
-
-	end
-}
-
-script IgnisMons_3F_Script_HideMedea {
-
-	setobjectxyperm (OBJ_EVENT_PHIL, 12, 30)
-	setobjectmovementtype (OBJ_EVENT_PHIL, MOVEMENT_TYPE_INVISIBLE)
-
-	setobjectxyperm (OBJ_EVENT_MEDEA, 13, 30)
-	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_INVISIBLE)
-
-	setobjectxyperm (OBJ_EVENT_HYPNO, 14, 30)
-	setobjectmovementtype (OBJ_EVENT_HYPNO, MOVEMENT_TYPE_INVISIBLE)
-
-	hideobjectat (OBJ_EVENT_PHIL, MAP_IGNIS_MONS_3F)
-	removeobject (OBJ_EVENT_PHIL)
-
-	hideobjectat (OBJ_EVENT_MEDEA, MAP_IGNIS_MONS_3F)
-	removeobject (OBJ_EVENT_MEDEA)
-
-	hideobjectat (OBJ_EVENT_HYPNO, MAP_IGNIS_MONS_3F)
-	removeobject (OBJ_EVENT_HYPNO)
-
-	return
-
-}
-
-
 
 script IgnisMons_3F_Script_SetBarriers_Red {
 	call (IgnisMons_3F_Script_ShowBlue)
@@ -242,7 +181,7 @@ script IgnisMons_3F_Script_HideGreen {
 }
 
 script IgnisMons_3F_Script_MedeaTriggerA {
-	setvar (VAR_TEMP_7, 1)
+	setvar (VAR_TEMP_7)
 	call (IgnisMons_3F_Script_Medea)
 }
 
@@ -257,97 +196,12 @@ script IgnisMons_3F_Script_Medea {
 
 	applymovement (OBJ_EVENT_ID_PLAYER, IgnisMons_3F_Movement_Medea_Player)
 	waitmovement (0)
-
-	if (var(VAR_TEMP_7) == 1) {
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
-		waitmovement (0)
-	}
-
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movemement_ExclamationMark)
 	waitmovement (0)
 
 	applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_Medea_Foe)
-	applymovement (OBJ_EVENT_MEDEA, IgnisMons_3F_Movement_Medea_Foe)
-	applymovement (OBJ_EVENT_HYPNO, IgnisMons_3F_Movement_Medea_Foe)
 	waitmovement (0)
 
-	msgbox (IgnisMons_3F_Text_MedeaPre, MSGBOX_DEFAULT)
-	closemessage
 
-	trainerbattle_two_trainers (TRAINER_PHILOCTETES, IgnisMons_3F_Text_PhiloctetesLost, TRAINER_MEDEA, IgnisMons_3F_Text_MedeaLost)
-
-	msgbox (IgnisMons_3F_Text_MedeaPost, MSGBOX_DEFAULT)
-	closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, IgnisMons_3F_Movement_Medea_Exit)
-	applymovement (OBJ_EVENT_HYPNO, IgnisMons_3F_Movement_Medea_Exit)
-	waitmovement (0)
-
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
-	applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_Phil)
-	waitmovement (0)
-
-	msgbox (IgnisMons_3F_Text_PhilPost, MSGBOX_DEFAULT)
-	closemessage
-
-	applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_PhilExit)
-	waitmovement (0)
-
-	call (IgnisMons_3F_Script_HideMedea)
-	
 	end
-}
-
-
-movement IgnisMons_3F_Movement_Medea_Player {
-	walk_left * 5
-	face_down
-}
-
-movement IgnisMons_3F_Movement_Medea_Foe {
-	walk_up * 3
-}
-
-movement IgnisMons_3F_Movement_Medea_Exit {
-	walk_down * 5
-}
-
-movement IgnisMons_3F_Movement_Phil {
-	walk_up
-	face_right
-}
-
-movement IgnisMons_3F_Movement_PhilExit {
-	walk_up
-	walk_right * 9
-}
-
-
-//Impressive. There are few who come this far
-//but you will not escape your present doom.
-//Now join your friend as my slave. Go Hypno!
-text IgnisMons_3F_Text_MedeaPre {
-	format("Impressiveay. Erethay areay ewfay owhay omecay isthay arfay utbay ouyay illway otnay escapeay ouryay esentpray oomday. Ownay oinjay ouryay iendfray asay ymay aveslay. Ogay Ypnohay!")
-}
-
-//Hypno! How could you fail me?
-text IgnisMons_3F_Text_MedeaLost {
-	format("Ypnohay! Owhay ouldcay ouyay ailfay emay?")
-}
-
-text IgnisMons_3F_Text_PhiloctetesLost {
-	format("Where am I?")
-}
-
-//Indeed you are powerful. The goddess
-//gives honor to those who defeat her spells.
-//I must warn Papa youve come for our fleece
-text IgnisMons_3F_Text_MedeaPost {
-	format("Indeeday ouyay areay owerfulpay. Ethay oddessgay ivesgay onorhay otay osethay owhay efeatday erhay ellspay. Iay ustmay arnway Apapay ouyay'evay omecay orfay ouray eeceflay.")
-}
-
-//Disbelief. Shame at defeat. Shame to face his friends after being defeated and turned against you. Traitor. Vows to live / hide in the woods. Do not come looking for me.
-text IgnisMons_3F_Text_PhilPost {
-	format("How could this happen? Great Philoctetes defeated by this boy, abandonded by the Argonauts and enslaved by a witch? Tell Jason and the other Argonauts that I was not the one who broke my oath, instead they nullified our fellowship when they left me for dead...Yet I was beat. I'm nothing more than a betrayed traitor, a disgrace to my family, and this earth. I'll never walk among men after this. I'll flee into the woods. Do not seek me.")
-}
 

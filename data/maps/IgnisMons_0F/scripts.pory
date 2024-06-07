@@ -225,15 +225,29 @@ script IgnisMons_0F_Script_PhilAmbush {
 	msgbox (IgnisMons_0F_Text_PhilAmbush, MSGBOX_DEFAULT)
 	closemessage
 
-	setobjectxyperm (OBJ_EVENT_DRIFBLIM_A, 11, 19)
-	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_A, MOVEMENT_TYPE_WANDER_AROUND)
+	applymovement (OBJ_EVENT_PHIL, IgnisMons_0F_Movement_PhilAmbushExit)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	removeobject (OBJ_EVENT_DRIFBLIM_A)
+	setobjectxyperm (OBJ_EVENT_DRIFBLIM_A, 11, 17)
+	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_A, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_DRIFBLIM_A)
 	showobjectat (OBJ_EVENT_DRIFBLIM_A, MAP_IGNIS_MONS_0F)
 
-	setobjectxyperm (OBJ_EVENT_DRIFBLIM_B, 12, 19)
-	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_B, MOVEMENT_TYPE_WANDER_AROUND)
+	removeobject (OBJ_EVENT_DRIFBLIM_B)
+	setobjectxyperm (OBJ_EVENT_DRIFBLIM_B, 12, 17)
+	setobjectmovementtype (OBJ_EVENT_DRIFBLIM_B, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_DRIFBLIM_B)
 	showobjectat (OBJ_EVENT_DRIFBLIM_B, MAP_IGNIS_MONS_0F)
+
+	applymovement (OBJ_EVENT_DRIFBLIM_A, IgnisMons_0F_Movement_PhilAmbusHDrifblim)
+	applymovement (OBJ_EVENT_DRIFBLIM_B, IgnisMons_0F_Movement_PhilAmbusHDrifblim)
+
+	hideobjectat (OBJ_EVENT_PHIL, MAP_IGNIS_MONS_0F)
+	removeobject (OBJ_EVENT_PHIL)
+
 
 	call (IgnisMons_1F_CollisionDrifblim)
 
@@ -242,10 +256,18 @@ script IgnisMons_0F_Script_PhilAmbush {
 	
 
 movement IgnisMons_0F_Movement_PhilAmbush1 {
-	walk_up * 4
+	walk_up * 4 
 }
 
+movement IgnisMons_0F_Movement_PhilAmbusHDrifblim {
+	walk_down * 2
+}
 
+movement IgnisMons_0F_Movement_PhilAmbushExit {
+	walk_up * 5
+	walk_right
+	walk_up
+}
 
 //turn back there is no hope for you turn back
 //Medea's spell will overcome you too

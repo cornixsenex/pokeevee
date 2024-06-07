@@ -94,8 +94,8 @@
 #define TRAINER_IGNIS_GRUNT_1	             88  
 #define TRAINER_IGNIS_GRUNT_2	             89  
 #define TRAINER_IGNIS_GRUNT_3	             90  
-#define TRAINER_PATROKLOS                    91  //UNUSED NOW
-#define TRAINER_EPEUS                        92  //UNUSED NOW
+#define TRAINER_MEDEA                        91  
+#define TRAINER_PHILOCTETES                  92  
 #define TRAINER_SANDY                        93
 #define TRAINER_MAGO	                     94
 #define TRAINER_DIDO	                     95
