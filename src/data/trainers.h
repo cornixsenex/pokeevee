@@ -2037,7 +2037,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_MEDEA] =
     {
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .trainerPic = TRAINER_PIC_CHANNELER,
         .trainerName = _("MEDEA"),
         .items = {},
@@ -2049,7 +2049,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_PHILOCTETES] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .trainerPic = TRAINER_PIC_PROFESSOR_OAK,
         .trainerName = _("PHILOCTETES"),
         .items = {},

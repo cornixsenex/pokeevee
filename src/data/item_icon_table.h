@@ -888,6 +888,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_BOOK] = {gItemIcon_Book, gItemIconPalette_Book},
 	[ITEM_WEDDING_INVITATION] = {gItemIcon_FabMail, gItemIconPalette_FabMail},
    	[ITEM_COLCHIS_MAP] = {gItemIcon_OldSeaMap, gItemIconPalette_OldSeaMap},
+   	[ITEM_BIG_HAMMER] = {gItemIcon_BigHammer, gItemIconPalette_BigHammer},
 
    	// Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

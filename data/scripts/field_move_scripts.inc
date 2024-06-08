@@ -95,6 +95,14 @@ EventScript_SmashRock::
 	releaseall
 	end
 
+@Kustom Special just continues to return to script so it can trigger something
+EventScript_HammerRockSmashTrigger::
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	return
+	
+
 EventScript_EndSmash::
 	releaseall
 	end

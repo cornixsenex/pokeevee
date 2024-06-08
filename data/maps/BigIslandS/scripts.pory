@@ -2,6 +2,8 @@
 
 const OBJ_EVENT_IGNIS_A = 4
 const OBJ_EVENT_IGNIS_B = 5
+const OBJ_EVENT_HOOH  = 3
+const OBJ_EVENT_PROMETHEUS = 1
 
 
 mapscripts BigIslandS_MapScripts {
@@ -15,9 +17,16 @@ mapscripts BigIslandS_MapScripts {
 
 script BigIslandS_OnResume {
 	setstepcallback (STEP_CB_ASH)
+	if (flag(FLAG_SYS_CTRL_OBJ_DELETE) ){
+		call (BigIslandS_Script_TryRemoveHoOh)
+	}
 	end
 }
 
+script BigIslandS_Script_TryRemoveHoOh {
+	removeobject (OBJ_EVENT_HOOH)
+	return
+}
 
 script BigIslandS_Script_IgnisGrunt {
 	lock
@@ -91,9 +100,119 @@ script BigIslandS_Script_ShowIgnisGrunts {
 	return
 }
 
+script BigIslandS_Script_TestGiveHammer {
+	lock
+	faceplayer
+	giveitem (ITEM_BIG_HAMMER)
+	release
+	end
+}
+
+script BigIslandS_Script_Prometheus {
+	lock
+	msgbox (BigIslandS_Text_Prometheus1, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script BigIslandS_Script_BreakableRock {
+	lockall
+	checkitem (ITEM_BIG_HAMMER, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox (Text_WantToSmash, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			call (EventScript_CancelSmash)
+		} else {
+			call (EventScript_HammerRockSmashTrigger)
+			call (BigIslandS_Script_HoOh)
+		}
+	} else {
+		call (EventScript_CantSmashRock)
+	}
+	end
+}
+
+script BigIslandS_Script_HoOh {
+	//play sound
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitse
+	playmoncry (SPECIES_HO_OH, CRY_MODE_ENCOUNTER)
+	delay (40)
+	waitmovement (0)
+	waitmoncry
+
+	//prometheus says Oh No
+	msgbox (BigIslandS_Text_Prometheus2, MSGBOX_DEFAULT)
+	closemessage
+
+	//Player gets into position
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_WEST) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement (0)
+	} 
+	if (var(VAR_RESULT) == DIR_EAST) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		waitmovement (0)
+	}
+	if (var(VAR_RESULT) != DIR_SOUTH) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	} else {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	}
+	waitmovement (0)
+
+	//HoOh aproaches
+	removeobject (OBJ_EVENT_HOOH)
+	setobjectxyperm (OBJ_EVENT_HOOH, 46, 9)
+	setobjectmovementtype (OBJ_EVENT_HOOH, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_HOOH)
+	showobjectat (OBJ_EVENT_HOOH, MAP_BIG_ISLAND_S)
+
+	applymovement (OBJ_EVENT_HOOH, BigIslandS_Movement_HoOhApproach)
+	waitmovement (0)
+
+	//Sound Battle
+	playmoncry (SPECIES_HO_OH, CRY_MODE_ENCOUNTER)
+	delay (40)
+	waitmoncry
+	setwildbattle (SPECIES_HO_OH, 13)
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	special (BattleSetup_StartLegendaryBattle)
+	waitstate
+
+	//Post battle HoOh should be gone
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+
+	//Player goes to Prometheus
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)
+
+	//Prometheus thanks you says The cave will open when you release a Spearow
+	//Says he must be going now, free at last, returning home
+
+	msgbox (BigIslandS_Text_Prometheus3, MSGBOX_DEFAULT)
+	closemessage
+
+	//set vars and flags and be off
+	fadescreen (1)
+	setvar (VAR_ARGO_STATE, 6)
+	setflag (FLAG_BIGISLAND_S_HIDE_PROMETHEUS)
+	removeobject (OBJ_EVENT_PROMETHEUS)
+	fadescreen (0)
+
+	releaseall
+
+	end
+}
 
 movement BigIslandS_Movement_IgnisGruntClear {
 	walk_up * 6
+}
+
+movement BigIslandS_Movement_HoOhApproach {
+	walk_down * 5
 }
 
 //Only native Ignis are welcome here.
@@ -124,5 +243,16 @@ text BigIslandS_Text_IgnisGruntPost {
 	format("Eway ustmay elltay Edeamay ofay isthay efeatday.")
 }
 
+text BigIslandS_Text_Prometheus1 {
+	format("What's this? You're not one of those savages who chained me to this rock to tortue me in retribution for my refusal to serve them as some fortune teller. No, you're just a boy. Have pity on this old poor tortured soul imprisoned on this rock and forced to serve the dark witch Medea. Alas! These wicked chains gnaw my skin raw and soon I fear the mighty bird will come to torture me again with burning breath. Young man I beg you free me from this rock and I will tell what lies in your future.")
+}
+
+text BigIslandS_Text_Prometheus2 {
+	format("Beware young friend for we are not yet free. Prepare to meet a mighty foe. Defend us now or else surely perish.")
+}
+
+text BigIslandS_Text_Prometheus3 {
+	format("My lad! You've done it! You remind me of the mighty hero Heracles. I will reward your courage with a prophesy.\NIn search of Colchis' cave a hidden path\NEluding their keen sight Shiny Mareep\NSo far away lost in shadowy night\NA SPEAROW released took off graceful flight\NRevealing secrets kept by cavern walls\NThus by the SPEAROW's flight the truth was shown\NHow Jason and his crew found paths unknown.\NI must be going now. I'm free at last to return home. May God above bless you.")
+}
 
 

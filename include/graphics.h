@@ -2014,6 +2014,9 @@ extern const u32 gItemIconPalette_KindBud[];
 
 extern const u32 gItemIcon_Book[];
 extern const u32 gItemIconPalette_Book[];
+
+extern const u32 gItemIcon_BigHammer[];
+extern const u32 gItemIconPalette_BigHammer[];
 //End Kustom Items
 
 extern const u32 gItemIcon_FairyFeather[];

@@ -2098,13 +2098,14 @@ const u32 gItemIconPalette_SwapSnack[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIcon_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icons/twice_spiced_radish.4bpp.lz");
 const u32 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icon_palettes/twice_spiced_radish.gbapal.lz");
 
-// KUSTOM ITEMS
+// KUSTOM ITEM ICONS
 
-//Custom KindBud shit
 const u32 gItemIcon_KindBud[] = INCBIN_U32("graphics/items/icons/kind_bud.4bpp.lz");
 const u32 gItemIconPalette_KindBud[] = INCBIN_U32("graphics/items/icon_palettes/kind_bud.gbapal.lz");
 
-//Custom Book shit
 const u32 gItemIcon_Book[] = INCBIN_U32("graphics/items/icons/book.4bpp.lz");
 const u32 gItemIconPalette_Book[] = INCBIN_U32("graphics/items/icon_palettes/book.gbapal.lz");
+
+const u32 gItemIcon_BigHammer[] = INCBIN_U32("graphics/items/icons/big_hammer.4bpp.lz");
+const u32 gItemIconPalette_BigHammer[] = INCBIN_U32("graphics/items/icon_palettes/big_hammer.gbapal.lz");
 

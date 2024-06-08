@@ -12859,13 +12859,12 @@ const struct Item gItemsInfo[] =
 		.name = _("BIG HAMMER"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A large hammer that\n"
-            "smashes rocks with\n"
+            "A large hammer that"
+            "smashes rocks with"
             "a single blow"),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         //.fieldUseFunc = ItemUseOutOfBattle_Hammer,
         .secondaryId = 0,
 	},
