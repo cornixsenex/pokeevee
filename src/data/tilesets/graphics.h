@@ -2196,3 +2196,22 @@ const u16 gTilesetPalettes_IgnisMons[][16] =
 };
 
 const u32 gTilesetTiles_IgnisMons[] = INCBIN_U32("data/tilesets/secondary/ignis_mons/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Colchis[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/colchis/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Colchis[] = INCBIN_U32("data/tilesets/secondary/colchis/tiles.4bpp.lz");

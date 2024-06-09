@@ -5465,7 +5465,7 @@ bool32 IsMagnetTypeInParty(void)
     u32 i;
     u32 species;
     struct Pokemon *pokemon;
-    for (i = 0; i < PARTY_SIZE; i++)
+    for (i = 0;i < PARTY_SIZE; i++)
     {
         pokemon = &gPlayerParty[i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
@@ -5644,6 +5644,35 @@ void FalseFloorMetatileUpdate(void)
 	if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
 		MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
 	CurrentMapDrawMetatileAt(x, y);
+}
+
+bool32 IsSpearowInParty(void)
+{
+	u32 i;
+	u32 species;
+	struct Pokemon *pokemon;
+	
+	for (i = 0;i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_SPEAROW
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+void ReleaseChosenMon(void)
+{
+	struct Pokemon *mon;
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+	ZeroMonData(mon);
 }
 
 

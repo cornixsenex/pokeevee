@@ -204,10 +204,10 @@
 #define FLAG_MARES5_HIDE_ARGO                0x7A
 #define FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS    0x7C
 #define FLAG_BIGISLAND_S_HIDE_PROMETHEUS     0x7D // Set after Hooh battle
+#define FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO  0x7E
 
 // BREAK //
 
-#define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0x7E
 #define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81

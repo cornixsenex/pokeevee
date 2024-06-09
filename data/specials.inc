@@ -579,3 +579,5 @@ gSpecials::
 	def_special DoRhetoric
 	def_special DoFalseFloorFall
 	def_special	FalseFloorMetatileUpdate 
+	def_special IsSpearowInParty
+	def_special ReleaseChosenMon

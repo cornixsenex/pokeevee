@@ -28,4 +28,6 @@ huderlem
 Sierra
 lukcytyphlosion
 dizzyegg
+sacredfire
+	charizard tile
 

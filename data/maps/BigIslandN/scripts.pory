@@ -18,7 +18,7 @@ mapscripts BigIslandN_MapScripts {
 		if (var(VAR_ARGO_STATE) == 2) {
 			call (BigIslandN_Script_ShowArgo2)
 		//3 = Jason at the Cave Entrance, Phil abducted, Argonauts getting bored
-		} elif (var(VAR_ARGO_STATE) == 3) {
+		} elif (var(VAR_ARGO_STATE) < 8) {
 			call (BigIslandN_Script_ShowArgo3)
 		} else {
 			call (BigIslandN_Script_HideArgo)
@@ -26,12 +26,19 @@ mapscripts BigIslandN_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_LOAD {
-		if (var(VAR_ARGO_STATE) < 4) {
+		if (var(VAR_ARGO_STATE) < 7) {
 			call (BigIslandN_Script_HideColchisCave)
 		}
 		end
 	}
 
+}
+
+
+script BigIslandN_Script_ShowColchisCave {
+	setmetatile (31, 35, METATILE_General_CaveEntrance_Top, FALSE) 
+	setmetatile (31, 36, METATILE_General_CaveEntrance_Bottom, FALSE) 
+	return
 }
 
 script BigIslandN_Script_HideColchisCave {
@@ -97,6 +104,7 @@ script BigIslandN_Script_ShowArgo2 {
 	end
 }
 
+//Jason at Cave entrance, Phil gone, Theseus in town, Dioscuri at boat, Orpheus on the beach
 script BigIslandN_Script_ShowArgo3 {
 	setobjectxyperm (OBJ_EVENT_ARGO, 80, 17)
 	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
@@ -260,8 +268,8 @@ script BigIslandN_Script_Philoctetes {
 
 script BigIslandN_Script_Jason {
 	lockall
-	faceplayer
 	if (var(VAR_ARGO_STATE) == 2) {
+		faceplayer
 		msgbox (BigIslandN_Text_Jason, MSGBOX_DEFAULT)
 		closemessage
 		specialvar (VAR_RESULT, GetPlayerFacingDirection)
@@ -270,7 +278,7 @@ script BigIslandN_Script_Jason {
 		} else {
 			call (BigIslandN_Script_ExploreB)
 		}
-	} elif (var(VAR_ARGO_STATE) == 3) {
+	} elif (var(VAR_ARGO_STATE) <= 6) {
 		call (BigIslandN_Script_JasonAtColchisCave)
 	} else {
 		msgbox (format("BAD VAR in BigIslandN_Script_Jason"), MSGBOX_DEFAULT)
@@ -388,9 +396,8 @@ script BigIslandN_Script_Ambush {
 	trainerbattle_no_intro (TRAINER_IGNIS_GRUNT_1, BigIslandN_Text_ColchisGrunt1Lost)
 
 	//Open Cave for next shot
-	setmetatile (31, 35, METATILE_General_CaveEntrance_Top, TRUE) 
-	setmetatile (31, 36, METATILE_General_CaveEntrance_Bottom, TRUE) 
 
+	call (BigIslandN_Script_ShowColchisCave)
 	
 	
 	msgbox (BigIslandN_Text_ColchisGrunt1Post, MSGBOX_DEFAULT)
@@ -526,13 +533,112 @@ script BigIslandN_Script_Ambush {
 }	
 
 script BigIslandN_Script_JasonAtColchisCave {
-	msgbox(BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
+	//FLAG Here
+	if (!flag(FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO)) {
+		setflag (FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO)
+		faceplayer
+		msgbox(BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
+		waitmovement (0)
+	}
+	msgbox(BigIslandN_Text_OpenColchisCave2, MSGBOX_DEFAULT)
 	closemessage
-	//If finished Prometheus check for spearow YESNO release spearow then open the cave and begin Colchis
-	//if it never goes anywhere else then...
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_EAST) {
+		applymovement (OBJ_EVENT_JASON, Common_Movement_FaceLeft)
+	} else {
+		applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
+	}
+	waitmovement (0)
+	msgbox(BigIslandN_Text_OpenColchisCave3, MSGBOX_DEFAULT)
+	closemessage
+
+	//Ready to release Spearow
+	if (var(VAR_ARGO_STATE) == 6) {
+		specialvar (VAR_RESULT, IsSpearowInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox(BigIslandN_Text_ReleaseSpearow, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				special (ChoosePartyMon)
+				waitstate
+				if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+					msgbox (BigIslandN_Text_DeclineReleaseSpearow, MSGBOX_DEFAULT)
+					closemessage
+				} else {
+					specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+					if (var(VAR_RESULT) != SPECIES_SPEAROW) {
+						msgbox (BigIslandN_Text_DeclineReleaseSpearow, MSGBOX_DEFAULT)
+						closemessage
+					} else {
+						special (BufferMonNickname)
+						msgbox (BigIslandN_Text_ReleasedSpearow, MSGBOX_DEFAULT)
+						closemessage
+						special (ReleaseChosenMon)
+						call (BigIslandN_Script_EnterColchis)
+					}
+				}
+			} else {
+				msgbox (BigIslandN_Text_DeclineReleaseSpearow, MSGBOX_DEFAULT)
+				closemessage
+			}
+		}
+	}
 	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
 	waitmovement (0)
-	return
+	releaseall
+	end
+}
+
+script BigIslandN_Script_EnterColchis {
+	setvar (VAR_0x8004, 1)  // vertical pan
+	setvar (VAR_0x8005, 1)  // horizontal pan
+	setvar (VAR_0x8006, 8)  // num shakes
+	setvar (VAR_0x8007, 5)  // shake delay
+	special (ShakeCamera)
+	waitstate
+	playse (SE_EFFECTIVE)
+	call (BigIslandN_Script_ShowColchisCave)
+	special (DrawWholeMapView)
+	delay (30)
+	setvar (VAR_ARGO_STATE, 8)
+	waitse
+	//Jason says you've done it hurry lets get the fleece
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (BigIslandN_Text_OpenColchisCave4, MSGBOX_DEFAULT)
+	closemessage
+	//Exits
+	applymovement (OBJ_EVENT_JASON, Common_Movement_WalkUp)
+	waitmovement (0)
+	
+	//Remove object event (On_Resume doesn't fire until map re-loads
+	setobjectxyperm (OBJ_EVENT_JASON, 63, 32)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_INVISIBLE)
+	hideobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_JASON)
+
+	//Player follows
+	releaseall
+	//Story continues in next map :/
+	end
+}
+
+script BigIslandN_Script_TestNicknamer {
+	special (ChoosePartyMon)
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		msgbox ("DECLINE")
+		closemessage
+	} else {
+		specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+		if (var(VAR_RESULT) == SPECIES_EGG) {
+			msgbox ("CANT NAME EGG")
+			closemessage
+		} else {
+			call (Common_EventScript_NameReceivedPartyMon)
+		}
+	}
+	end
 }
 
 movement BigIslandN_Movement_JasonDisembark {
@@ -720,7 +826,30 @@ text BigIslandN_Text_CultistsEnterCave {
 }
 
 text BigIslandN_Text_OpenColchisCave1 {
-	format("This must be where Colchis Cave is hidden. The only question now is how do we open the secret door...\NOPEN SAYS ME!\NThat didn't work, but what else could we try...")
+	format("This must be where Colchis Cave is hidden. The only question now is how do we open the secret door...")
 }
 
+text BigIslandN_Text_OpenColchisCave2 {
+	format("OPEN SAYS ME!")
+}
+		
+text BigIslandN_Text_OpenColchisCave3 {
+	format("That didn't work, but what else could we try...")
+}
+
+text BigIslandN_Text_ReleaseSpearow {
+	format("Will you release SPEAROW?")
+}
+
+text BigIslandN_Text_DeclineReleaseSpearow {
+	format("Best not to release SPEAROW here and now.")
+}
+
+text BigIslandN_Text_OpenColchisCave4 {
+	format("My goodness lad! What kind of magic is this where SPEAROW flies and cave doors open? Let's not waste any time. Now follow me!")
+}
+
+text BigIslandN_Text_ReleasedSpearow {
+	format("{STR_VAR_1} was released!\pBye Bye {STR_VAR_1}!")
+}
 

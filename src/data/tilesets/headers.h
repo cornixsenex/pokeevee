@@ -1143,3 +1143,14 @@ const struct Tileset gTileset_IgnisMons =
     .metatileAttributes = gMetatileAttributes_IgnisMons,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Colchis =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Colchis,
+    .palettes = gTilesetPalettes_Colchis,
+    .metatiles = gMetatiles_Colchis,
+    .metatileAttributes = gMetatileAttributes_Colchis,
+    .callback = NULL,
+};

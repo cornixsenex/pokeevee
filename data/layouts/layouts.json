@@ -6100,6 +6100,16 @@
       "secondary_tileset": "gTileset_IgnisMons",
       "border_filepath": "data/layouts/IgnisMons_3F/border.bin",
       "blockdata_filepath": "data/layouts/IgnisMons_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_COLCHIS",
+      "name": "Colchis_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Colchis",
+      "border_filepath": "data/layouts/Colchis/border.bin",
+      "blockdata_filepath": "data/layouts/Colchis/map.bin"
     }
   ]
 }
