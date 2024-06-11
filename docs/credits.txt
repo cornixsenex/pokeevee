@@ -30,4 +30,6 @@ lukcytyphlosion
 dizzyegg
 sacredfire
 	charizard tile
+alphacerz
+	collum tiles
 
