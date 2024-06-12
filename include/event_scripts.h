@@ -617,8 +617,13 @@ extern const u8 VSSeeker_Text_NoTrainersWithinRange[];
 extern const u8 VSSeeker_Text_TrainersNotReady[];
 extern const u8 EventScript_VsSeekerChargingDone[];
 
-//Ignis Monte (added to cave_hole.inc
 
+//		BEGIN 	KUSTOMS		///
+
+
+//Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];
+
+extern const u8 Colchis_Script_DoForcedBattle[];
 
 #endif // GUARD_EVENT_SCRIPTS_H

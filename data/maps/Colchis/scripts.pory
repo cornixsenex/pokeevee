@@ -1,1 +1,11 @@
 mapscripts Colchis_MapScripts {}
+
+
+
+script Colchis_Script_DoForcedBattle {
+	lock
+	msgbox ("TEST SCRIPT", MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}

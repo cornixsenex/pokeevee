@@ -187,4 +187,8 @@ bool8 MetatileBehavior_IsCyclingRoadBridgePullLeftTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsFalseFloor(u8); // Ignis Mons False Floor
 bool8 MetatileBehavior_IsFalseFloorHole(u8); // Ignis Mons False Floor
 
+//Colchis Forced Battle (Can prolly be generalized)
+bool8 MetatileBehavior_IsColchisBattle(u8);
+
+
 #endif // GUARD_METATILE_BEHAVIOR_H

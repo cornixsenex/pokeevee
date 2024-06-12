@@ -1252,6 +1252,14 @@ bool8 MetatileBehavior_IsFalseFloor(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsColchisBattle(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_COLCHIS_BATTLE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsFalseFloorHole(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_FALSE_FLOOR_HOLE)
