@@ -581,3 +581,4 @@ gSpecials::
 	def_special	FalseFloorMetatileUpdate 
 	def_special IsSpearowInParty
 	def_special ReleaseChosenMon
+	def_special SetupColchisForcedBattle

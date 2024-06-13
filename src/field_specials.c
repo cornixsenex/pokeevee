@@ -5675,6 +5675,21 @@ void ReleaseChosenMon(void)
 	ZeroMonData(mon);
 }
 
+void SetupColchisForcedBattle(void)
+{
+	s16 x;
+	s16 y;
+	
+	//Get player X Y	
+	PlayerGetDestCoords(&x, &y);
+
+	//Set Colchis 1 (OBJ Event 23) to 6 tiles above player
+	SetObjEventTemplateCoords(23, x-7, y-13);
+	
+	//Set Colchis 2 (OBJ Event 24) to 6 tiles below player
+	SetObjEventTemplateCoords(24, x-7, y-1);
+}
+
 
 
 

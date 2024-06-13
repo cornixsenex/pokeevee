@@ -3,9 +3,36 @@ mapscripts Colchis_MapScripts {}
 
 
 script Colchis_Script_DoForcedBattle {
-	lock
+	lockall
+	removeobject (23)
+	removeobject (24)
+	special (SetupColchisForcedBattle)
+
+	addobject (23)
+	addobject (24)
+
+	showobjectat (23, MAP_COLCHIS)
+	showobjectat (24, MAP_COLCHIS)
+	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (23, Colchis_Movement_ForcedBattleA)
+	applymovement (24, Colchis_Movement_ForcedBattleB)
+	waitmovement (0)
+
 	msgbox ("TEST SCRIPT", MSGBOX_DEFAULT)
 	closemessage
-	release
+
+	releaseall
 	end
+}
+
+
+movement Colchis_Movement_ForcedBattleA {
+	walk_down * 5
+}
+
+
+movement Colchis_Movement_ForcedBattleB {
+	walk_up * 5
 }
