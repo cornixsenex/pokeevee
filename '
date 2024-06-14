@@ -217,8 +217,8 @@ script Colchis_Script_EnterThroneRoom {
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_Dancer1C)
 	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_Dancer2C)
-	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_Dancer3C)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_Dancer4C)
 	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_Dancer5C)
 	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_Dancer6C)
 
@@ -236,23 +236,7 @@ script Colchis_Script_EnterThroneRoom {
 
 	waitmovement (OBJ_EVENT_MEDEA)
 
-	// > Spin again
-	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
-
-	waitmovement (OBJ_EVENT_MEDEA)
-
-
 	//Movement Pattern > Medea Spins centrally (Do they circle and spin while some go in and out the circle
-
-	//1 2 5 6 circle around medea while 3 and 4 spin and go into the circle
-
-	//Two steps while other spin alternate Medea only spin
 
 	//Carry Medea to center
 
@@ -498,21 +482,33 @@ movement Colchis_Movement_MedeaDance_Dancer6B {
 	face_down
 }
 
+
 movement Colchis_Movement_MedeaDance_Dancer1C {
 	walk_diag_southeast
 }
 
 movement Colchis_Movement_MedeaDance_Dancer2C {
-	walk_diag_southwest
+	walk_diag_southeast
 }
 
+
+movement Colchis_Movement_MedeaDance_Dancer3C {
+
+}
+
+
+movement Colchis_Movement_MedeaDance_Dancer4C {
+
+}
+
+
 movement Colchis_Movement_MedeaDance_Dancer5C {
-	walk_diag_northeast
+
 }
 
 
 movement Colchis_Movement_MedeaDance_Dancer6C {
-	walk_diag_northwest
+
 }
 
 

@@ -144,8 +144,10 @@
 																//4: Philoctetes found mad in the cave
 																//5: Philoctetes freed from Medea's spell
 																//6: After Prometheus unchained and battle (Cave ready for Spearow release)
-																//7: Cave opened; Spearow released
-																//X: Finish?
+																//7: Cave opened; Spearow released; Setup colchis intro script
+																//8: Colchis introd
+																//9: Colchis Forced Battle state (Jason at entrance)
+																//10: Colchis Enter Throne Room
 #define VAR_IGNISMONS_STATE                              0x4072 // Controls Ignis Mons Color Puzzle
 																// 0: Blank
 																// 1: Red

@@ -18,7 +18,9 @@ mapscripts BigIslandN_MapScripts {
 		if (var(VAR_ARGO_STATE) == 2) {
 			call (BigIslandN_Script_ShowArgo2)
 		//3 = Jason at the Cave Entrance, Phil abducted, Argonauts getting bored
-		} elif (var(VAR_ARGO_STATE) < 8) {
+		//7 = Colchis open -> Jason hidden inside colchis
+		//Need to ammend if you can return from Colchis before it's time to Hide Argo
+		} elif (var(VAR_ARGO_STATE) < 7) {
 			call (BigIslandN_Script_ShowArgo3)
 		} else {
 			call (BigIslandN_Script_HideArgo)
@@ -601,7 +603,7 @@ script BigIslandN_Script_EnterColchis {
 	call (BigIslandN_Script_ShowColchisCave)
 	special (DrawWholeMapView)
 	delay (30)
-	setvar (VAR_ARGO_STATE, 8)
+	setvar (VAR_ARGO_STATE, 7)
 	waitse
 	//Jason says you've done it hurry lets get the fleece
 	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)

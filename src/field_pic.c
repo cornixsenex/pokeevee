@@ -60,7 +60,7 @@ static const u16 sPic7Pal[] = INCBIN_U16("graphics/trainers/front_pics/elite_fou
 static const u32 sPic8Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blaine_front_pic.4bpp.lz");
 static const u16 sPic8Pal[] = INCBIN_U16("graphics/trainers/palettes/blaine.gbapal");
 
-//Indy = 8
+//Indy = 8 = Noland
 static const u32 sPic9Gfx[] = INCBIN_U32("graphics/trainers/front_pics/factory_head_noland.4bpp.lz");
 static const u16 sPic9Pal[] = INCBIN_U16("graphics/trainers/front_pics/factory_head_noland.gbapal");
 
@@ -112,6 +112,19 @@ static const u16 sPic20Pal[] = INCBIN_U16("graphics/trainers/palettes/engineer.g
 static const u32 sPic21Gfx[] = INCBIN_U32("graphics/trainers/front_pics/cue_ball_no_bike_front_pic.4bpp.lz");
 static const u16 sPic21Pal[] = INCBIN_U16("graphics/trainers/palettes/cue_ball.gbapal");
 
+//Archie = 21
+static const u32 sPic22Gfx[] = INCBIN_U32("graphics/trainers/front_pics/aqua_leader_archie.4bpp.lz");
+static const u16 sPic22Pal[] = INCBIN_U16("graphics/trainers/front_pics/aqua_leader_archie.gbapal");
+
+//Magma M = 22
+static const u32 sPic23Gfx[] = INCBIN_U32("graphics/trainers/front_pics/magma_grunt_m.4bpp.lz");
+static const u16 sPic23Pal[] = INCBIN_U16("graphics/trainers/front_pics/magma_grunt_m.gbapal");
+
+//Magma F = 23
+static const u32 sPic24Gfx[] = INCBIN_U32("graphics/trainers/front_pics/magma_grunt_f.4bpp.lz");
+static const u16 sPic24Pal[] = INCBIN_U16("graphics/trainers/front_pics/magma_grunt_f.gbapal");
+
+
 /* And this is an example script.
 
 
@@ -150,7 +163,7 @@ static const struct Pic sPics[] =
     {sPic7Gfx, sPic7Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Blaine
     {sPic8Gfx, sPic8Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
-	//Indy
+	//Indy = Noland
     {sPic9Gfx, sPic9Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Maxie
     {sPic10Gfx, sPic10Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
@@ -177,6 +190,12 @@ static const struct Pic sPics[] =
     {sPic20Gfx, sPic20Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Cue Ball No Bike
     {sPic21Gfx, sPic21Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Archie
+    {sPic22Gfx, sPic22Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Magma M
+    {sPic23Gfx, sPic23Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Magam F
+    {sPic24Gfx, sPic24Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

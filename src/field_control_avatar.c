@@ -592,8 +592,10 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
     }
 	else if (MetatileBehavior_IsColchisBattle(metatileBehavior))
     {
-        ScriptContext_SetupScript(Colchis_Script_DoForcedBattle);
-        return TRUE;
+		if (FlagGet(FLAG_COLCHIS_FORCED_BATTLE)) {
+			ScriptContext_SetupScript(Colchis_Script_CheckForcedBattle);
+			return TRUE;
+		}
     }
     else if (MetatileBehavior_IsBattlePyramidWarp(metatileBehavior))
     {
