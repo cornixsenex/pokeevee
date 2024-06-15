@@ -24,43 +24,103 @@ mapscripts Colchis_MapScripts {
 	MAP_SCRIPT_ON_LOAD {
 		if (var(VAR_ARGO_STATE) == 7) {
 			call (Colchis_Script_IntroSetup)
+			//call (Colchis_TempScript_SetupTestMedeaDance)
 		}
+		//Jason fights at the entrance, battle path
+		if (var(VAR_ARGO_STATE) == 9) {
+			call (Colchis_Script_IntroDeclinedSetup)
+		}
+
 	}
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ARGO_STATE, 7: Colchis_Script_Intro
+		//VAR_ARGO_STATE, 7: Colchis_Script_Intro
+		VAR_ARGO_STATE, 7: Colchis_TempScript_SetupTestMedeaDance 
+		VAR_ARGO_STATE, 10: Colchis_TempScript_TestMedeaDance 
 	]
 
 
 }
 
+script Colchis_TempScript_SetupTestMedeaDance {
+	warpsilent (MAP_COLCHIS, 51, 25)
+	setvar (VAR_ARGO_STATE, 10)
+
+	end
+}
+
+script Colchis_TempScript_TestMedeaDance {
+	lockall
+	call (Colchis_Script_MedeaDance)
+	releaseall
+	end
+}
+
 script Colchis_Script_IntroSetup {
 
-	removeobject (OBJ_EVENT_INTRO_M)
-	removeobject (OBJ_EVENT_INTRO_F)
+	removeobject (OBJ_EVENT_INTRO_GRUNT_M)
+	removeobject (OBJ_EVENT_INTRO_GRUNT_F)
 
-	setobjectxyperm (OBJ_EVENT_INTRO_M, 10, 60)
-	setobjectxyperm (OBJ_EVENT_INTRO_F, 12, 60)
+	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_M, 10, 59)
+	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_F, 12, 59)
 
-	setobjectmovementtype (OBJ_EVENT_INTRO_M, MOVEMENT_TYPE_FACE_RIGHT)
-	setobjectmovementtype (OBJ_EVENT_INTRO_F, MOVEMENT_TYPE_FACE_LEFT)
+	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_M, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_F, MOVEMENT_TYPE_FACE_LEFT)
 
-	addobject (OBJ_EVENT_INTRO_M)
-	addobject (OBJ_EVENT_INTRO_F)
+	addobject (OBJ_EVENT_INTRO_GRUNT_M)
+	addobject (OBJ_EVENT_INTRO_GRUNT_F)
 
-	showobjectat (OBJ_EVENT_INTRO_M, MAP_COLCHIS)
-	showobjectat (OBJ_EVENT_INTRO_F, MAP_COLCHIS)
+	showobjectat (OBJ_EVENT_INTRO_GRUNT_M, MAP_COLCHIS)
+	showobjectat (OBJ_EVENT_INTRO_GRUNT_F, MAP_COLCHIS)
 
 	end	
 }
 
+script Colchis_Script_IntroDeclinedSetup {
+
+	removeobject (OBJ_EVENT_INTRO_GRUNT_M)
+	removeobject (OBJ_EVENT_INTRO_GRUNT_F)
+	removeobject (OBJ_EVENT_JASON)
+
+	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_M, 10, 59)
+	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_F, 12, 59)
+	setobjectxyperm (OBJ_EVENT_JASON, 11, 59)
+	
+	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_F, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_M, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
+
+	addobject (OBJ_EVENT_INTRO_GRUNT_M)
+	addobject (OBJ_EVENT_INTRO_GRUNT_F)
+	addobject (OBJ_EVENT_JASON)
+
+	showobjectat (OBJ_EVENT_INTRO_GRUNT_M, MAP_COLCHIS)
+	showobjectat (OBJ_EVENT_INTRO_GRUNT_F, MAP_COLCHIS)
+	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)
+
+	return	
+}
+
+script Colchis_Script_Jason {
+	if (var(VAR_ARGO_STATE) == 9) {
+		msgbox(Colchis_Text_JasonIntroDeclined, MSGBOX_DEFAULT)
+		closemessage
+		setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
+	}
+	end
+}
+
+
 script Colchis_Script_Intro {
 
 	lockall
+
 	setvar (VAR_ARGO_STATE, 8)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_IntroPlayer)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
 	waitmovement (0)
 
 	//Jason: Help or something
@@ -68,10 +128,16 @@ script Colchis_Script_Intro {
 	msgbox (Colchis_Text_JasonIntro1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_JASON)
 
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceRight)
+	waitmovement (0)
+
 	//Magma M: Welcome to Colchis Jason of Argo
 	load_field_pic(FIELD_PIC_COLCHIS_F, 190, 98)
 	msgbox (Colchis_Text_GruntIntro1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_COLCHIS_F)
+
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceLeft)
+	waitmovement (0)
 
 	//Magma F: Aeetes King of Colchis awaits you
 	load_field_pic(FIELD_PIC_COLCHIS_M, 190, 98)
@@ -99,15 +165,14 @@ script Colchis_Script_Intro {
 		setflag (FLAG_COLCHIS_FORCED_BATTLE)
 		setvar (VAR_ARGO_STATE, 9)
 		msgbox (Colchis_Text_JasonIntroDecline, MSGBOX_DEFAULT)
+		msgbox(Colchis_Text_JasonIntroDeclined, MSGBOX_DEFAULT)
 		closemessage
 		destroy_field_pic (FIELD_PIC_JASON)
-		setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT)
-		setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_M, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
-		setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_F, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+		releaseall
+		call (Colchis_Script_IntroDeclinedSetup)
 	}
 
 	//Else: Battle flags N shit
-	releaseall
 	end
 
 }
@@ -123,14 +188,129 @@ script Colchis_Script_EnterThroneRoom {
 	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
 	waitmovement (0)
 
-	//Dance of Medea	
+	//Dance of Medea
+
+	call (Colchis_Script_MedeaDance)
 	
-	//Medea Solo
+
+
+	//A: Greetings to Jason and his companion
+	//G: HAIL!
+	//A: Now tell me, why did you come to Colchis?
+	//J: We come in peace.
+	//A: I asked you why not how
+	//   I know you've come to steal shiny mareep 
+	//   whether by thieving or by brutish force. 
+	//   We'll never part with it. It was a gift 
+	//   given by great Ho-Oh before you fiends
+	//   defiled him on the sacred mountain.
+	//   It has brought peace and great wealth to Colchis
+	//   And if we were to lose it that would bring
+	//   a plague, a famine, and destroy us all!
+	//   We can no longer entertain these men
+	//   Noble soldiers sieze the outsiders now
+	//   and throw them in my deepest dungeoun cell.
+
+	// M: Aeetes please let one of them be free
+	// 	Truly one did defile our temple
+	//	But the other shines with divine beauty
+	//	and my heart cries that if he should perish
+	//	my own soul would expire from the grief
+
+	//A: Their doom has been pronounced dear Medea
+	//   They both came here to bring ruin on us
+	//   And neither can be trusted to go free
+	//   Take them away!
+
+	//M: Aeetes!
+
+	//G: As you wish!
+
+	//cont... in prison
+
+}
+
+
+script Colchis_Script_CheckForcedBattle {
+	
+	lockall
+	call (Colchis_Script_DoForcedBattle)
+
+	releaseall
+	end
+}
+
+script Colchis_Script_DoForcedBattle {	
+
+	//Setup grunt position
+
+	removeobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
+	removeobject (OBJ_EVENT_DYNAMIC_GRUNT_F)
+	special (SetupColchisForcedBattle)
+
+	addobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
+	addobject (OBJ_EVENT_DYNAMIC_GRUNT_F)
+
+	showobjectat (OBJ_EVENT_DYNAMIC_GRUNT_M, MAP_COLCHIS)
+	showobjectat (OBJ_EVENT_DYNAMIC_GRUNT_F, MAP_COLCHIS)
+
+	//grunts approach player
+	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	applymovement (OBJ_EVENT_DYNAMIC_GRUNT_M, Colchis_Movement_ForcedBattleA)
+	applymovement (OBJ_EVENT_DYNAMIC_GRUNT_F, Colchis_Movement_ForcedBattleB)
+	waitmovement (0)
+
+
+	//intro text
+
+	//battle
+
+	//post text
+
+	//grunts exit
+
+	//set grunts back to hidden location
+
+
+	return
+}
+
+script Colchis_Script_MedeaDance {
+//Medea Solo
+	msgbox("CAMERA PAN")
+	closemessage
+
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_CAMERA, Colchis_Movement_MedeaDance_CameraPan1)
 	waitmovement (0)
+
+	msgbox("MEDEA SOLO")
+	closemessage
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (0)
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_MedeaA)
 	waitmovement (0)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (0)
+
+	msgbox("M SPIN 12 JOIN 3456 COLUMN")
+	closemessage
 
 	//Medea Spins in place
 	//1 & 2 go behind
@@ -144,7 +324,16 @@ script Colchis_Script_EnterThroneRoom {
 	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_CircleColumn)
 	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_CircleColumn)
 
+	waitmovement (OBJ_EVENT_DANCER1)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+
 	waitmovement (OBJ_EVENT_DANCER3)
+
+	msgbox("M12 SPIN 34 JOIN 56 COLUM")
+	closemessage
 
 	//3 and 4 take position while 1 2 5 6  and Medea spin
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
@@ -155,18 +344,43 @@ script Colchis_Script_EnterThroneRoom {
 	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_CircleColumn)
 	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_CircleColumn)
 
+	waitmovement (OBJ_EVENT_DANCER3)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+
 	waitmovement (OBJ_EVENT_DANCER6)
 
+
+	msgbox ("GROUPE DOWN WHILE 56 COLUMN")
+	closemessage
+
 	//Group does dance down into position while 5 6 circle column
-	applymovement (OBJ_EVENT_MEDEA,   Colchis_Movement_MedeaDance_MedeaB)
-	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_MedeaB)
-	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_MedeaB)
-	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_MedeaB)
-	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_MedeaB)
+	applymovement (OBJ_EVENT_MEDEA,   Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_CircleColumn2)
 	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_CircleColumn2)
 
-	waitmovement (OBJ_EVENT_DANCER6)a
+	waitmovement (OBJ_EVENT_MEDEA)
+
+	applymovement (OBJ_EVENT_MEDEA,   Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkDown)
+
+	waitmovement (OBJ_EVENT_MEDEA)
+
+	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_CircleColumn2)
+	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_CircleColumn2)
+
+	waitmovement (OBJ_EVENT_DANCER6)
 
 	//5 6 join group while camer pans (go one under Medea 51, 20 tile above column showing Jason) and group spins
 	applymovement (OBJ_EVENT_ID_CAMERA, Colchis_Movement_MedeaDance_CameraPan2)
@@ -272,93 +486,11 @@ script Colchis_Script_EnterThroneRoom {
 
 	special (RemoveCameraObject)
 
-	//A: Greetings to Jason and his companion
-	//G: HAIL!
-	//A: Now tell me, why did you come to Colchis?
-	//J: We come in peace.
-	//A: I asked you why not how
-	//   I know you've come to steal shiny mareep 
-	//   whether by thieving or by brutish force. 
-	//   We'll never part with it. It was a gift 
-	//   given by great Ho-Oh before you fiends
-	//   defiled him on the sacred mountain.
-	//   It has brought peace and great wealth to Colchis
-	//   And if we were to lose it that would bring
-	//   a plague, a famine, and destroy us all!
-	//   We can no longer entertain these men
-	//   Noble soldiers sieze the outsiders now
-	//   and throw them in my deepest dungeoun cell.
-
-	// M: Aeetes please let one of them be free
-	// 	Truly one did defile our temple
-	//	But the other shines with divine beauty
-	//	and my heart cries that if he should perish
-	//	my own soul would expire from the grief
-
-	//A: Their doom has been pronounced dear Medea
-	//   They both came here to bring ruin on us
-	//   And neither can be trusted to go free
-	//   Take them away!
-
-	//M: Aeetes!
-
-	//G: As you wish!
-
-	//cont... in prison
-
-}
-
-
-script Colchis_Script_CheckForcedBattle {
-	
-	lockall
-	call (Colchis_Script_DoForcedBattle)
-
-	releaseall
-	end
-}
-
-script Colchis_Script_DoForcedBattle {	
-
-	//Setup grunt position
-
-	removeobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
-	removeobject (OBJ_EVENT_DYNAMIC_GRUNT_F)
-	special (SetupColchisForcedBattle)
-
-	addobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
-	addobject (OBJ_EVENT_DYNAMIC_GRUNT_F)
-
-	showobjectat (OBJ_EVENT_DYNAMIC_GRUNT_M, MAP_COLCHIS)
-	showobjectat (OBJ_EVENT_DYNAMIC_GRUNT_F, MAP_COLCHIS)
-
-	//grunts approach player
-	
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-
-	applymovement (OBJ_EVENT_DYNAMIC_GRUNT_M, Colchis_Movement_ForcedBattleA)
-	applymovement (OBJ_EVENT_DYNAMIC_GRUNT_F, Colchis_Movement_ForcedBattleB)
-	waitmovement (0)
-
-
-	//intro text
-
-	//battle
-
-	//post text
-
-	//grunts exit
-
-	//set grunts back to hidden location
-
-
 	return
 }
 
-
 movement Colchis_Movement_IntroPlayer {
-	walk_up * 2
+	walk_up * 3
 }
 
 movement Colchis_Movement_ForcedBattleA {
@@ -369,30 +501,42 @@ movement Colchis_Movement_ForcedBattleB {
 	walk_up * 5
 }
 
-movement Colchis_Movement_MedeaDance_CameraPan {
+movement Colchis_Movement_EnterThroneRoom {
+	walk_up * 30
+	walk_right * 5
+	walk_up * 2
+	walk_right * 35
+	walk_up * 3
+}
+
+movement Colchis_Movement_MedeaDance_CameraPan1 {
 	walk_up * 10
 }
 
-movement Colchis_Movement_MedeaDance_SpinInPlace {
-	face_right
-	face_up
-	face_down
-	walk_left
-	face_up
-	face_right
-	face_down
-	face_left
+movement Colchis_Movement_MedeaDance_MedeaA {
 	walk_diag_southeast
 }
 
 movement Colchis_Movement_MedeaDance_SpinInPlace {
-	face_left
-	face_up
 	face_right
+	face_up
+	face_left
 	face_down
-	face_left
-	face_up
 	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
 	face_down
 }
 
@@ -514,5 +658,37 @@ movement Colchis_Movement_MedeaDance_Dancer5C {
 movement Colchis_Movement_MedeaDance_Dancer6C {
 	walk_diag_northwest
 }
+
+text Colchis_Text_JasonIntro1 {
+	format ("We've been ambushed but they do not attack.")
+}
+
+//Welcome to Colchis Jason of Argo
+text Colchis_Text_GruntIntro1 {
+	format("Elcomeway otay Olchiscay Asonjay ofay Argoay.")
+}
+
+//Aeetes King of Colchis awaits you
+text Colchis_Text_GruntIntro2 {
+	format("Aeetesay ingkay ofay Olchiscay awaitsay ouyay.")
+}
+
+text Colchis_Text_JasonIntro2 {
+	format("I think they say they'll take us to their king. We're hopelessly outnumbered so I think we should agree to go but what say you?")
+}
+
+text Colchis_Text_JasonIntroAccept {
+	format("Very well then. We'll meet King Aeetes.")
+}
+
+text Colchis_Text_JasonIntroDecline {
+	format("A noble choice. To arms then!")
+}
+
+text  Colchis_Text_JasonIntroDeclined {
+	format("Seek Mareep!")
+}
+
+
 
 
