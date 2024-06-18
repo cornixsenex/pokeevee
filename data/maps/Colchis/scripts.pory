@@ -330,6 +330,12 @@ script Colchis_Script_MedeaDance {
 	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
 
+	waitmovement (OBJ_EVENT_DANCER1)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+
 	waitmovement (OBJ_EVENT_DANCER3)
 
 	msgbox("M12 SPIN 34 JOIN 56 COLUM")
@@ -345,6 +351,16 @@ script Colchis_Script_MedeaDance {
 	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_CircleColumn)
 
 	waitmovement (OBJ_EVENT_DANCER3)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+
+	waitmovement (OBJ_EVENT_DANCER3)
+
+	delay (25)
 
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
@@ -369,6 +385,7 @@ script Colchis_Script_MedeaDance {
 
 	waitmovement (OBJ_EVENT_MEDEA)
 
+	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
 	applymovement (OBJ_EVENT_MEDEA,   Common_Movement_WalkDown)
 	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkDown)
 	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkDown)
@@ -377,33 +394,68 @@ script Colchis_Script_MedeaDance {
 
 	waitmovement (OBJ_EVENT_MEDEA)
 
-	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_CircleColumn2)
-	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_CircleColumn2)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_CircleColumn)
+
+	waitmovement (OBJ_EVENT_MEDEA)
+
+	applymovement (OBJ_EVENT_MEDEA,   Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+
+	waitmovement (OBJ_EVENT_MEDEA)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_CircleColumn)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_CircleColumn)
+
+	waitmovement (OBJ_EVENT_MEDEA)
+
+	applymovement (OBJ_EVENT_MEDEA,   Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
 
 	waitmovement (OBJ_EVENT_DANCER6)
 
+	msgbox("56 JOIN")
+	closemessage
+
 	//5 6 join group while camer pans (go one under Medea 51, 20 tile above column showing Jason) and group spins
-	applymovement (OBJ_EVENT_ID_CAMERA, Colchis_Movement_MedeaDance_CameraPan2)
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_Dancer3A)
-	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_Dancer4A)
+	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_Dancer5A)
+	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_Dancer6A)
 
 	waitmovement (OBJ_EVENT_MEDEA)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	msgbox("ALL SPIN - PRE SHAPE 1")
+	closemessage
 
 	//All Spin Once	
-	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
+	call (Colchis_Script_MedeaDance_SpinAll)
 
-	waitmovement (OBJ_EVENT_MEDEA)
+	msgbox("SHAPE 1")
+	closemessage
 
 	//Shape 1 
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
@@ -416,16 +468,13 @@ script Colchis_Script_MedeaDance {
 
 	waitmovement (OBJ_EVENT_MEDEA)
 
-	// > Spin
-	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
+	msgbox("SPIN")
+	closemessage
+	
+	call (Colchis_Script_MedeaDance_SpinAll)
 
-	waitmovement (OBJ_EVENT_MEDEA)
+	msgbox("SHAPE 2")
+	closemessage
 
 	//Shape 2 
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
@@ -437,46 +486,193 @@ script Colchis_Script_MedeaDance {
 	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_Dancer6C)
 
 	waitmovement (OBJ_EVENT_MEDEA)
+
+	msgbox("SPIN X 2")
+	closemessage
 	
 	// > Spin
-
-	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
-
-	waitmovement (OBJ_EVENT_MEDEA)
+	call (Colchis_Script_MedeaDance_SpinAll)
 
 	// > Spin again
+	call (Colchis_Script_MedeaDance_SpinAll)
+
+
+	//Big Trick - 4 circle whiel other two spin and dip in and out
+
+	msgbox("BIG TRICK - STEP 1")
+	closemessage
+
+	//Step 1 (34 spin group step 1)
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkLeft)
 	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
 	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
-	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkUp)
 
-	waitmovement (OBJ_EVENT_MEDEA)
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkUp)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	msgbox("VAMP 1")
+	closemessage
+	//34 walk in while 1256 spin at corners
+	call (Colchis_Script_MedeaDance_TrickVamp)
+
+	//Step 2
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkLeft)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkLeft)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	call (Colchis_Script_MedeaDance_TrickVamp)
+
+	//Step 3
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkDown)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkDown)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	call (Colchis_Script_MedeaDance_TrickVamp)
+
+	//Step 4
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkRight)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkRight)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	call (Colchis_Script_MedeaDance_TrickVamp)
 
 
-	//Movement Pattern > Medea Spins centrally (Do they circle and spin while some go in and out the circle
+	msgbox("Carry Medea to Column")
+	closemessage
 
-	//1 2 5 6 circle around medea while 3 and 4 spin and go into the circle
-
-	//Two steps while other spin alternate Medea only spin
-
-	//Carry Medea to center
-
-
-
-	//girls encircle her
-	//make shape
-	//vamp on shape
 	//'carry' medea to center
-	//tunnel to the altar
+
+	//Dancers zigzag down and spin all each step - Do 3 times then have Medea go down two on her own (Camera follows Medea down one to put Jason in frame) and have her do a spin dance around the column while dancers go In and Out spinning here and there
+
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkSouthEast)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	call (Colchis_Script_MedeaDance_SpinAll)
+
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkSouthWest)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	call (Colchis_Script_MedeaDance_SpinAll)
+
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkSouthEast)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+
+	call (Colchis_Script_MedeaDance_SpinAll)
+
+
+	msgbox("Medea to Altar group prep vamp")
+	closemessage
+	//Have Medea walk to the altar and have the gand rotate x,y clockwise to setup vamp re-use 
+
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkSouthWest)
+	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkSouthEast)
+	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthWest)
+	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthEast)
+
+	waitmovement (OBJ_EVENT_DANCER6)
+	call (Colchis_Script_MedeaDance_SpinAll)
+
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkDown)
+
+	call (Colchis_Script_MedeaDance_TrickVamp)
+
+	//NOTE CAMERA AT 51, 20
+
+
+
+
 	//medea at the altar
 	//stops a moment to see Jason
 	//carried back to center ; circled ; girls return
@@ -484,8 +680,45 @@ script Colchis_Script_MedeaDance {
 	//Aeetes: step forward Jason
 	//Enter Jason and Player where camera ended pan :)
 
+
+	msgbox("END")
+	closemessage
+
 	special (RemoveCameraObject)
 
+	return
+}
+
+script Colchis_Script_MedeaDance_SpinAll {
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER4, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (OBJ_EVENT_MEDEA)
+	return
+}
+
+script Colchis_Script_MedeaDance_TrickVamp {
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (OBJ_EVENT_DANCER3)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER1, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER2, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkLeft)
+	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_DANCER5, Colchis_Movement_MedeaDance_SpinInPlace)
+	applymovement (OBJ_EVENT_DANCER6, Colchis_Movement_MedeaDance_SpinInPlace)
+	waitmovement (OBJ_EVENT_DANCER3)
+	call (Colchis_Script_MedeaDance_SpinAll)
 	return
 }
 
@@ -609,6 +842,20 @@ movement Colchis_Movement_MedeaDance_MedeaB {
     face_left
 	face_up
 	face_right
+	face_down
+}
+
+movement Colchis_Movement_MedeaDance_Dancer5A {
+	walk_right
+	walk_up
+	walk_diag_northeast
+	face_down
+}
+
+movement Colchis_Movement_MedeaDance_Dancer6A {
+	walk_left
+	walk_up
+	walk_diag_northwest
 	face_down
 }
 
