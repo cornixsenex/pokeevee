@@ -752,8 +752,8 @@ script Colchis_Script_MedeaDance {
 	call (Colchis_Script_MedeaDance_TrickVamp)
 	delay (25)
 
-	//msgbox("BEFORE RESET GROUP")
-	//closemessage
+	msgbox("BEFORE RESET GROUP")
+	closemessage
 
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
 	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
@@ -767,8 +767,8 @@ script Colchis_Script_MedeaDance {
 	waitmovement (OBJ_EVENT_DANCER6)
 
 
-	//msgbox("Should Be Back, goto King")
-	//closemessage
+	msgbox("Should Be Back, goto King")
+	closemessage
 
 	//Walk up 6 with pulse effect
 
@@ -785,9 +785,6 @@ script Colchis_Script_MedeaDance {
 	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthWest)
 	waitmovement (OBJ_EVENT_DANCER6)
 
-	//msgbox("STEP 1")
-	//closemessage
-
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
 	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
 	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthWest)
@@ -798,136 +795,9 @@ script Colchis_Script_MedeaDance {
 	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthEast)
 	waitmovement (OBJ_EVENT_DANCER6)
 
-	//msgbox("STEP 2")
-	//closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthWest)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	//msgbox("STEP 3")
-	//closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthEast)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	//msgbox("STEP 4")
-	//closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthWest)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	//msgbox("STEP 5")
-	//closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthEast)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	//msgbox("STEP 6")
-	//closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthWest)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	//msgbox("STEP 7")
-	//closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthEast)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	//msgbox("STEP 8")
-	//closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthWest)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkNorthEast)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_WalkNorthWest)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_WalkNorthEast)
-	waitmovement (OBJ_EVENT_DANCER6)
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER1, Common_Movement_FaceRight)
-	applymovement (OBJ_EVENT_DANCER2, Common_Movement_FaceLeft)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_WalkLeft)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_WalkRight)
-	applymovement (OBJ_EVENT_DANCER5, Common_Movement_FaceRight)
-	applymovement (OBJ_EVENT_DANCER6, Common_Movement_FaceLeft)
-	waitmovement (OBJ_EVENT_MEDEA)
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_DANCER3, Common_Movement_FaceRight)
-	applymovement (OBJ_EVENT_DANCER4, Common_Movement_FaceLeft)
-	waitmovement (OBJ_EVENT_MEDEA)
-
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
-	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
-	waitmovement (OBJ_EVENT_MEDEA)
-
-	//Here Medea on the stairs camera on her (51, 6)
 
 
-
-
-	msgbox("END")
-	closemessage
-
-
+	//They encase Medea who faces down
 	//Caryy her up to King
 	//Bow out
 
