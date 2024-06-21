@@ -921,6 +921,75 @@ script Colchis_Script_MedeaDance {
 
 	//Here Medea on the stairs camera on her (51, 6)
 
+	//Medea steps forward and speaks to King Aeetes:
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
+	waitmovement (0)
+
+	//The goddess through me speaks of things to come
+	//Among us there will come a man, Jason,
+	//Who traveled here from far beyond the sea,
+	//and any man who brings harm onto him
+	//will surely Colchis' ruin
+	msgbox(Colchis_Text_Medea1, MSGBOX_DEFAULT)
+	closemessage
+
+	//Aeetes replies:
+	//Come forward Jason. Speak with Aeetes.
+
+	//Enter Jason and Player
+
+	//Aeetes:
+	//Welcome mighty captain of the Argo.
+	//We have all heard of your heroic deeds
+	//most deserving an honorable feast
+	//but first tell me why you've come to Colchis.
+
+	//J:
+	//We come in peace
+
+	//A:
+	//I asked you why not how!
+	//I know you've come to claim shiny Mareep
+	//and that if you cannot win bargaining
+	//you plan to steal or even kill
+
+	//M: Papa!
+	//I beg your majesty to show restraint.
+
+	//A:
+	//Silence Medea. Was this not the knave
+	//who defiled the sacred temple mount
+	//that act alone deserves great punishment
+	//and if we should allow shiny Mareep
+	//to be stolen Colchis will surely fall
+	//therefore I have resolved they must be jailed
+
+	//Player & Jason ! points
+
+	//M:
+	//The lesser one before you is guilty
+	//alone of attacking sacred Ho-Oh
+	//
+	//The hero Jason has not done any crimes
+	//And the goddess through me orders he be kept safe
+	//If you must punish one then punish PLAYER but spare the lovely Jason
+
+	//A:
+	//I have already spoken. Their fate is sealed
+	//Guards
+	
+	//Assemble Guards
+
+	//A:
+	//Take them to jail
+
+	//M:
+	//NO!
+
+	//goto Jail :D
+
+	
+
 
 
 
@@ -928,15 +997,6 @@ script Colchis_Script_MedeaDance {
 	closemessage
 
 
-	//Caryy her up to King
-	//Bow out
-
-
-
-
-	//medea at the altar
-	//stops a moment to see Jason
-	//carried back to center ; circled ; girls return
 	//approaches Aeetes and speaks: 
 	//Aeetes: step forward Jason
 	//Enter Jason and Player where camera ended pan :)
@@ -1256,6 +1316,15 @@ text Colchis_Text_JasonIntroDecline {
 
 text  Colchis_Text_JasonIntroDeclined {
 	format("Seek Mareep!")
+}
+
+//The goddess through me speaks of things to come
+//Among us there will come a man Jason
+//who traveled here from far beyond the sea
+//and any man who brings harm unto him
+//will surely bring about Colchis ruin
+text Colchis_Text_Medea1 {
+	format("Ethay oddessgay oughthray emay eakspay ofay ingsthay otay omecay. Amongay usay erethay illway omecay aay anmay, Asonjay, owhay aveledtray erehay omfray arfay eyondbay ethay easay, anday anyay anmay owhay ingsbray armhay untoay imhay illway urelysay ingbray aboutay Olchiscay uinray.")
 }
 
 
