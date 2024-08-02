@@ -24,7 +24,6 @@ mapscripts Colchis_MapScripts {
 	MAP_SCRIPT_ON_LOAD {
 		if (var(VAR_ARGO_STATE) == 7) {
 			call (Colchis_Script_IntroSetup)
-			//call (Colchis_TempScript_SetupTestMedeaDance)
 		}
 		//Jason fights at the entrance, battle path
 		if (var(VAR_ARGO_STATE) == 9) {
@@ -34,9 +33,9 @@ mapscripts Colchis_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		//VAR_ARGO_STATE, 7: Colchis_Script_Intro
-		VAR_ARGO_STATE, 7: Colchis_TempScript_SetupTestMedeaDance 
-		VAR_ARGO_STATE, 10: Colchis_TempScript_TestMedeaDance 
+		VAR_ARGO_STATE, 7: Colchis_Script_Intro
+		//VAR_ARGO_STATE, 7: Colchis_TempScript_SetupTestMedeaDance 
+		//VAR_ARGO_STATE, 10: Colchis_TempScript_TestMedeaDance 
 	]
 
 
@@ -935,6 +934,8 @@ script Colchis_Script_MedeaDance {
 
 	//Aeetes replies:
 	//Come forward Jason. Speak with Aeetes.
+	msgbox(Colchis_Text_Aeetes1, MSGBOX_DEFAULT)
+	closemessage
 
 	//Enter Jason and Player
 
@@ -1325,6 +1326,11 @@ text  Colchis_Text_JasonIntroDeclined {
 //will surely bring about Colchis ruin
 text Colchis_Text_Medea1 {
 	format("Ethay oddessgay oughthray emay eakspay ofay ingsthay otay omecay. Amongay usay erethay illway omecay aay anmay, Asonjay, owhay aveledtray erehay omfray arfay eyondbay ethay easay, anday anyay anmay owhay ingsbray armhay untoay imhay illway urelysay ingbray aboutay Olchiscay uinray.")
+}
+
+//Come forward Jason. Speak with Aeetes.
+text Colchis_Text_Aeetes1 {
+	format("Omecay orwardfay Asonjay. Eakspay ithway Aeetesay.")
 }
 
 
