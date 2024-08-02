@@ -1,3 +1,4 @@
+//NOTE: Competative Syntax was introduced in 1.9.0 I found it cringe so disaabled it. rhh no longer uses this file
 static const struct TrainerMon sParty_Sawyer1[] = {
     {
     .iv = 0,

@@ -1,5 +1,7 @@
-const struct Trainer gTrainers[] = {
-    [TRAINER_NONE] =
+    
+// NOTE THIS FILE RE-FORMATTED 1.9.0 240801
+
+	[TRAINER_NONE] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -34,7 +36,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_Etienne),
     },
-
 
 	[TRAINER_KIM] =
 	{
@@ -10322,4 +10323,3 @@ const struct Trainer gTrainers[] = {
         .aiFlags = 0,
         .party = TRAINER_PARTY(sParty_MayLinkPlaceholder),
     },
-};
