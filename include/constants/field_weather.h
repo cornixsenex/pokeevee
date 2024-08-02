@@ -8,6 +8,9 @@
 #define NUM_FOG_DIAGONAL_SPRITES     20
 #define NUM_SANDSTORM_SPRITES        20
 #define NUM_SWIRL_SANDSTORM_SPRITES  5
+#define NUM_SNOWFLAKE_SPRITES        32
+// NOTE: Default is 16 CornixSenex changed this to 32 sometime back in like 2021 RHH added this constant 1.8.6
+//#define NUM_SNOWFLAKE_SPRITES        16
 
 // Controls how the weather should be changing the screen palettes.
 #define WEATHER_PAL_STATE_CHANGING_WEATHER   0
