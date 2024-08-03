@@ -1496,8 +1496,7 @@ u8 GetFirstInactiveObjectEventId(void)
 
 u8 GetObjectEventIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroupId)
 {
-	//CornixSenex combined two conditions - 240801 2153
-    if (localId < OBJ_EVENT_ID_PLAYER || localId < OBJ_EVENT_ID_FOLLOWER)
+    if (localId < OBJ_EVENT_ID_FOLLOWER)
         return GetObjectEventIdByLocalIdAndMapInternal(localId, mapNum, mapGroupId);
 
     return GetObjectEventIdByLocalId(localId);
@@ -2352,7 +2351,7 @@ void UpdateFollowingPokemon(void)
         RemoveFollowingPokemon();
         return;
     }
-
+	
     if (objEvent == NULL)
     {
         // Spawn follower
@@ -2818,11 +2817,7 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
     CopyObjectGraphicsInfoToSpriteTemplate_WithMovementType(objectEvent->graphicsId, objectEvent->movementType, &spriteTemplate, &subspriteTables);
     spriteFrameImage.size = graphicsInfo->size;
     spriteTemplate.images = &spriteFrameImage;
-    if (spriteTemplate.paletteTag != TAG_NONE)
-    {
-        LoadObjectEventPalette(spriteTemplate.paletteTag);
-        UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate.paletteTag), GAMMA_ALT);
-    }
+
     if (OW_GFX_COMPRESS)
         spriteTemplate.tileTag = LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, NULL);
     if (spriteTemplate.paletteTag != TAG_NONE && spriteTemplate.paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC)
@@ -2851,7 +2846,6 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
         if (subspriteTables != NULL)
             SetSubspriteTables(sprite, subspriteTables);
 
-        sprite->oam.paletteNum = IndexOfSpritePaletteTag(spriteTemplate.paletteTag);
         sprite->coordOffsetEnabled = TRUE;
         sprite->sObjEventId = objectEventId;
         objectEvent->spriteId = i;
@@ -2935,40 +2929,47 @@ static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct
 }
 
 
-//NOTE: This function removed / heavily scaled by in rhh master branch. Expanded in dynamic palettes. Currently have both, only really need one. But the way it is now there's two :D -1.9.0 240802
 void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
 {
-    const struct ObjectEventGraphicsInfo *graphicsInfo;
-    struct Sprite *sprite;
-    u8 paletteSlot;
-    graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
-    sprite = &gSprites[objectEvent->spriteId];
-    paletteSlot = graphicsInfo->paletteSlot;
-    if (paletteSlot == PALSLOT_PLAYER)
-    {
-        PatchObjectPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-    }
-    else if (paletteSlot >= 16)
-    {
-        paletteSlot -= 16;
-        _PatchObjectPalette(graphicsInfo->paletteTag, paletteSlot);
-    }
-    sprite->oam.shape = graphicsInfo->oam->shape;
-    sprite->oam.size = graphicsInfo->oam->size;
-    sprite->images = graphicsInfo->images;
-    sprite->anims = graphicsInfo->anims;
-    sprite->subspriteTables = graphicsInfo->subspriteTables;
-    objectEvent->inanimate = graphicsInfo->inanimate;
-    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
-    sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
-    sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-    sprite->x += 8;
-    sprite->y += 16 + sprite->centerToCornerVecY;
-    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(graphicsInfo->paletteTag)); //not paletteSlot in case of dynamic ow pals
-
-    if (objectEvent->trackedByCamera)
-        CameraObjectReset();
+    objectEvent->graphicsId = graphicsId;
+    ObjectEventSetGraphics(objectEvent, GetObjectEventGraphicsInfo(graphicsId));
+    objectEvent->graphicsId = graphicsId;
 }
+
+//NOTE: This function removed / heavily scaled by in rhh master branch. Expanded in dynamic palettes. Currently have both, only really need one. But the way it is now there's two :D -1.9.0 240802
+//void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
+//{
+//    const struct ObjectEventGraphicsInfo *graphicsInfo;
+//    struct Sprite *sprite;
+//    u8 paletteSlot;
+//    graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
+//    sprite = &gSprites[objectEvent->spriteId];
+//    paletteSlot = graphicsInfo->paletteSlot;
+//    if (paletteSlot == PALSLOT_PLAYER)
+//    {
+//        PatchObjectPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
+//    }
+//    else if (paletteSlot >= 16)
+//    {
+//        paletteSlot -= 16;
+//        _PatchObjectPalette(graphicsInfo->paletteTag, paletteSlot);
+//    }
+//    sprite->oam.shape = graphicsInfo->oam->shape;
+//    sprite->oam.size = graphicsInfo->oam->size;
+//    sprite->images = graphicsInfo->images;
+//    sprite->anims = graphicsInfo->anims;
+//    sprite->subspriteTables = graphicsInfo->subspriteTables;
+//    objectEvent->inanimate = graphicsInfo->inanimate;
+//    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
+//    sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
+//    sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
+//    sprite->x += 8;
+//    sprite->y += 16 + sprite->centerToCornerVecY;
+//    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(graphicsInfo->paletteTag)); //not paletteSlot in case of dynamic ow pals
+//
+//    if (objectEvent->trackedByCamera)
+//        CameraObjectReset();
+//}
 
 void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
 {

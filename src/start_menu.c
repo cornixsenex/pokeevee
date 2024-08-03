@@ -681,6 +681,7 @@ static bool8 StartMenuPokedexCallback(void)
 
 static bool8 StartMenuPokemonCallback(void)
 {
+	
     if (!gPaletteFade.active)
     {
         PlayRainStoppingSoundEffect();
