@@ -26,7 +26,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_473",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 4,
       "y": 10,
       "elevation": 3,
@@ -39,7 +39,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_365",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 5,
       "y": 20,
       "elevation": 3,
@@ -52,7 +52,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_053",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 39,
       "y": 4,
       "elevation": 3,
@@ -65,7 +65,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_085",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 39,
       "y": 11,
       "elevation": 3,
@@ -78,7 +78,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_112",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 39,
       "y": 21,
       "elevation": 3,
@@ -91,7 +91,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_158",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 39,
       "y": 29,
       "elevation": 3,
@@ -104,7 +104,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_078",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 27,
       "y": 4,
       "elevation": 3,
@@ -117,7 +117,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_393",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 10,
       "y": 4,
       "elevation": 3,
@@ -130,7 +130,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_393",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 14,
       "y": 6,
       "elevation": 3,
@@ -143,7 +143,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_234",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 11,
       "y": 24,
       "elevation": 3,
@@ -156,7 +156,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_264",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 17,
       "y": 29,
       "elevation": 3,
@@ -169,7 +169,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_217",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 27,
       "y": 29,
       "elevation": 3,
@@ -182,7 +182,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_450",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 24,
       "y": 20,
       "elevation": 3,
@@ -195,7 +195,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_405",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 24,
       "y": 12,
       "elevation": 3,
@@ -208,7 +208,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_392",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 28,
       "y": 15,
       "elevation": 3,
@@ -221,7 +221,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_203",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 29,
       "y": 19,
       "elevation": 3,
@@ -234,7 +234,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_289",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 11,
       "y": 15,
       "elevation": 3,
@@ -247,7 +247,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_289",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 13,
       "y": 16,
       "elevation": 3,

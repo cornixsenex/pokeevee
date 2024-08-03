@@ -28,7 +28,7 @@
       "flag": "FLAG_BADGE02_GET"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_403",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
       "x": 10,
       "y": 19,
       "elevation": 0,

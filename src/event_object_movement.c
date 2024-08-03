@@ -188,7 +188,7 @@ static void InitSpriteForFigure8Anim(struct Sprite *);
 static bool8 AnimateSpriteInFigure8(struct Sprite *);
 u8 GetDirectionToFace(s16 x1, s16 y1, s16 x2, s16 y2);
 static void FollowerSetGraphics(struct ObjectEvent *, u16, u8, bool8);
-void ObjectEventSetGraphics(struct ObjectEvent *, const struct ObjectEventGraphicsInfo *);
+static void ObjectEventSetGraphics(struct ObjectEvent *, const struct ObjectEventGraphicsInfo *);
 static void SpriteCB_VirtualObject(struct Sprite *);
 static void DoShadowFieldEffect(struct ObjectEvent *);
 static void SetJumpSpriteData(struct Sprite *, u8, u8, u8);
@@ -607,7 +607,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Blaine,       	    	OBJ_EVENT_PAL_TAG_BLAINE},
     {gObjectEventPal_Jessie,       	    	OBJ_EVENT_PAL_TAG_JESSIE},
     {gObjectEventPal_James,       	    	OBJ_EVENT_PAL_TAG_JAMES},
-    {gObjectEventPal_Meowth,       	    	OBJ_EVENT_PAL_TAG_MEOWTH},
+//    {gObjectEventPal_Meowth,       	    	OBJ_EVENT_PAL_TAG_MEOWTH},
 	{gObjectEventPal_Soldier,       	    OBJ_EVENT_PAL_TAG_SOLDIER},
 	{gObjectEventPal_Biker,       	   	    OBJ_EVENT_PAL_TAG_BIKER},
 	{gObjectEventPal_Channeler,       	   	OBJ_EVENT_PAL_TAG_CHANNELER},
@@ -2904,20 +2904,38 @@ u8 UpdateSpritePaletteByTemplate(const struct SpriteTemplate *template, struct S
 }
 
 // Set graphics *by info*
-//static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct ObjectEventGraphicsInfo *graphicsInfo)
-//{
-//    struct Sprite *sprite = &gSprites[objectEvent->spriteId];
-//    u32 i = FindObjectEventPaletteIndexByTag(graphicsInfo->paletteTag);
-//    if (i != 0xFF)
-//        UpdateSpritePalette(&sObjectEventSpritePalettes[i], sprite);
-//
-//    // If gfx size changes, we need to reallocate tiles
-//    if (OW_LARGE_OW_SUPPORT && !OW_GFX_COMPRESS && graphicsInfo->oam->size != sprite->oam.size)
-//        ReallocSpriteTiles(sprite, graphicsInfo->images->size);
-//
-//    #if OW_GFX_COMPRESS
-//    LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, sprite);
-//    #endif
+static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct ObjectEventGraphicsInfo *graphicsInfo)
+{
+    struct Sprite *sprite = &gSprites[objectEvent->spriteId];
+    u32 i = FindObjectEventPaletteIndexByTag(graphicsInfo->paletteTag);
+    if (i != 0xFF)
+        UpdateSpritePalette(&sObjectEventSpritePalettes[i], sprite);
+
+    // If gfx size changes, we need to reallocate tiles
+    if (OW_LARGE_OW_SUPPORT && !OW_GFX_COMPRESS && graphicsInfo->oam->size != sprite->oam.size)
+        ReallocSpriteTiles(sprite, graphicsInfo->images->size);
+
+    #if OW_GFX_COMPRESS
+    LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, sprite);
+    #endif
+
+    sprite->oam.shape = graphicsInfo->oam->shape;
+    sprite->oam.size = graphicsInfo->oam->size;
+    sprite->images = graphicsInfo->images;
+    sprite->anims = graphicsInfo->anims;
+    sprite->subspriteTables = graphicsInfo->subspriteTables;
+    objectEvent->inanimate = graphicsInfo->inanimate;
+    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
+    sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
+    sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
+    sprite->x += 8;
+    sprite->y += 16 + sprite->centerToCornerVecY;
+    if (objectEvent->trackedByCamera)
+        CameraObjectReset();
+}
+
+
+//NOTE: This function removed / heavily scaled by in rhh master branch. Expanded in dynamic palettes. Currently have both, only really need one. But the way it is now there's two :D -1.9.0 240802
 void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo;
@@ -2951,13 +2969,6 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
     if (objectEvent->trackedByCamera)
         CameraObjectReset();
 }
-
-//void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
-//{
-//    objectEvent->graphicsId = graphicsId;
-//    ObjectEventSetGraphics(objectEvent, GetObjectEventGraphicsInfo(graphicsId));
-//    objectEvent->graphicsId = graphicsId;
-//}
 
 void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
 {
@@ -7641,25 +7652,25 @@ static u8 LoadFillColorPalette(u16 color, u16 paletteTag, struct Sprite *sprite)
 
 static void ObjectEventSetPokeballGfx(struct ObjectEvent *objEvent)
 {
-    #if OW_FOLLOWERS_POKEBALLS
-    u32 ball = BALL_POKE;
-    if (objEvent->localId == OBJ_EVENT_ID_FOLLOWER)
-    {
-        struct Pokemon *mon = GetFirstLiveMon();
-        if (mon)
-            ball = ItemIdToBallId(GetMonData(mon, MON_DATA_POKEBALL));
-    }
+  #if OW_FOLLOWERS_POKEBALLS
+  u32 ball = BALL_POKE;
+  if (objEvent->localId == OBJ_EVENT_ID_FOLLOWER)
+  {
+      struct Pokemon *mon = GetFirstLiveMon();
+      if (mon)
+          ball = ItemIdToBallId(GetMonData(mon, MON_DATA_POKEBALL));
+  }
 
-    if (ball != BALL_POKE && ball < POKEBALL_COUNT)
-    {
-        const struct ObjectEventGraphicsInfo *info = &gPokeballGraphics[ball];
-        if (info->tileTag == TAG_NONE)
-        {
-            ObjectEventSetGraphics(objEvent, info);
-            return;
-        }
-    }
-    #endif //OW_FOLLOWERS_POKEBALLS
+  if (ball != BALL_POKE && ball < POKEBALL_COUNT)
+  {
+      const struct ObjectEventGraphicsInfo *info = &gPokeballGraphics[ball];
+      if (info->tileTag == TAG_NONE)
+      {
+          ObjectEventSetGraphics(objEvent, info);
+          return;
+      }
+  }
+  #endif //OW_FOLLOWERS_POKEBALLS
     ObjectEventSetGraphicsId(objEvent, OBJ_EVENT_GFX_POKE_BALL);
 }
 
