@@ -419,6 +419,50 @@
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
 
+//KUSTOMS
+#define OBJ_EVENT_PAL_TAG_GRANDMA		          0x1125
+#define OBJ_EVENT_PAL_TAG_BLUE		          	  0x1126
+#define OBJ_EVENT_PAL_TAG_FLAREON		          0x1127 //UNUSED
+#define OBJ_EVENT_PAL_TAG_JOLTEON		          0x1128 //UNUSED
+#define OBJ_EVENT_PAL_TAG_VAPOREON		          0x1129 //UNUSED
+#define OBJ_EVENT_PAL_TAG_ESPEON		          0x112A //UNUSED
+#define OBJ_EVENT_PAL_TAG_UMBREON		          0x112B //UNUSED
+#define OBJ_EVENT_PAL_TAG_LEAFEON		          0x112C //UNUSED
+#define OBJ_EVENT_PAL_TAG_GLACEON		          0x112D //UNUSED
+#define OBJ_EVENT_PAL_TAG_ROCKET_M		          0x112E
+#define OBJ_EVENT_PAL_TAG_ROCKET_F		          0x112F
+#define OBJ_EVENT_PAL_TAG_GIOVANNI		          0x1130
+#define OBJ_EVENT_PAL_TAG_LORELEI		          0x1131
+#define OBJ_EVENT_PAL_TAG_BLAINE		          0x1132
+#define OBJ_EVENT_PAL_TAG_JESSIE		          0x1133
+#define OBJ_EVENT_PAL_TAG_JAMES		              0x1134
+#define OBJ_EVENT_PAL_TAG_MEOWTH	              0x1135
+#define OBJ_EVENT_PAL_TAG_SOLDIER	              0x1136
+#define OBJ_EVENT_PAL_TAG_BIKER		              0x1137
+#define OBJ_EVENT_PAL_TAG_CHANNELER	              0x1138
+#define OBJ_EVENT_PAL_TAG_CHEF  	              0x1139
+#define OBJ_EVENT_PAL_TAG_POLICEMAN  	          0x113A
+#define OBJ_EVENT_PAL_TAG_PROF_OAK  	          0x113B
+#define OBJ_EVENT_PAL_TAG_ROCKER	  	          0x113C
+#define OBJ_EVENT_PAL_TAG_YOUNGSTER2	  	      0x113D
+#define OBJ_EVENT_PAL_TAG_WORKER  		  	      0x113E
+#define OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR		  	  0x113F
+#define OBJ_EVENT_PAL_TAG_LT_SURGE		  	      0x1140
+#define OBJ_EVENT_PAL_TAG_MISTY		  	          0x1141
+#define OBJ_EVENT_PAL_TAG_MAUVILLE_OLD_MAN_2	  0x1142
+#define OBJ_EVENT_PAL_TAG_NURSE_JOY          	  0x1143
+#define OBJ_EVENT_PAL_TAG_BIG_GREEN          	  0x1144
+#define OBJ_EVENT_PAL_TAG_YOUNGSTER_RED       	  0x1145
+#define OBJ_EVENT_PAL_TAG_GREEN              	  0x1146
+#define OBJ_EVENT_PAL_TAG_OLD_MAN_LYING_DOWN      0x1147
+#define OBJ_EVENT_PAL_TAG_BIG_RED                 0x1148
+#define OBJ_EVENT_PAL_TAG_BIG_YELLOW              0x1149
+#define OBJ_EVENT_PAL_TAG_BRUNO                   0x114A
+
+#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
+
+//END KUSTOMS
+
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
 #define OBJ_EVENT_PAL_TAG_BALL_MASTER             0x1150

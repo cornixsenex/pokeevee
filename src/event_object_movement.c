@@ -474,83 +474,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
     [MOVEMENT_TYPE_CHASE_PLAYER] = DIR_SOUTH,
 };
 
-#define OBJ_EVENT_PAL_TAG_BRENDAN                 0x1100
-#define OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION      0x1101
-#define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION       0x1102
-#define OBJ_EVENT_PAL_TAG_NPC_1                   0x1103
-#define OBJ_EVENT_PAL_TAG_NPC_2                   0x1104
-#define OBJ_EVENT_PAL_TAG_NPC_3                   0x1105
-#define OBJ_EVENT_PAL_TAG_NPC_4                   0x1106
-#define OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION        0x1107
-#define OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION        0x1108
-#define OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION        0x1109
-#define OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION        0x110A
-#define OBJ_EVENT_PAL_TAG_QUINTY_PLUMP            0x110B
-#define OBJ_EVENT_PAL_TAG_QUINTY_PLUMP_REFLECTION 0x110C
-#define OBJ_EVENT_PAL_TAG_TRUCK                   0x110D
-#define OBJ_EVENT_PAL_TAG_VIGOROTH                0x110E
-#define OBJ_EVENT_PAL_TAG_ZIGZAGOON               0x110F
-#define OBJ_EVENT_PAL_TAG_MAY                     0x1110
-#define OBJ_EVENT_PAL_TAG_MAY_REFLECTION          0x1111
-#define OBJ_EVENT_PAL_TAG_MOVING_BOX              0x1112
-#define OBJ_EVENT_PAL_TAG_CABLE_CAR               0x1113
-#define OBJ_EVENT_PAL_TAG_SSTIDAL                 0x1114
-#define OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER       0x1115
-#define OBJ_EVENT_PAL_TAG_KYOGRE                  0x1116
-#define OBJ_EVENT_PAL_TAG_KYOGRE_REFLECTION       0x1117
-#define OBJ_EVENT_PAL_TAG_GROUDON                 0x1118
-#define OBJ_EVENT_PAL_TAG_GROUDON_REFLECTION      0x1119
-#define OBJ_EVENT_PAL_TAG_UNUSED                  0x111A
-#define OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW        0x111B
-#define OBJ_EVENT_PAL_TAG_POOCHYENA               0x111C
-#define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111D
-#define OBJ_EVENT_PAL_TAG_DEOXYS                  0x111E
-#define OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE      0x111F
-#define OBJ_EVENT_PAL_TAG_HO_OH                   0x1120
-#define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
-#define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
-#define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
-#define OBJ_EVENT_PAL_TAG_BLUE		              0x1124
-#define OBJ_EVENT_PAL_TAG_GRANDMA		          0x1125
-#define OBJ_EVENT_PAL_TAG_EEVEE		          	  0x1126
-#define OBJ_EVENT_PAL_TAG_FLAREON		          0x1127
-#define OBJ_EVENT_PAL_TAG_JOLTEON		          0x1128
-#define OBJ_EVENT_PAL_TAG_VAPOREON		          0x1129
-#define OBJ_EVENT_PAL_TAG_ESPEON		          0x112A
-#define OBJ_EVENT_PAL_TAG_UMBREON		          0x112B
-#define OBJ_EVENT_PAL_TAG_LEAFEON		          0x112C
-#define OBJ_EVENT_PAL_TAG_GLACEON		          0x112D
-#define OBJ_EVENT_PAL_TAG_ROCKET_M		          0x112E
-#define OBJ_EVENT_PAL_TAG_ROCKET_F		          0x112F
-#define OBJ_EVENT_PAL_TAG_GIOVANNI		          0x1130
-#define OBJ_EVENT_PAL_TAG_LORELEI		          0x1131
-#define OBJ_EVENT_PAL_TAG_BLAINE		          0x1132
-#define OBJ_EVENT_PAL_TAG_JESSIE		          0x1133
-#define OBJ_EVENT_PAL_TAG_JAMES		              0x1134
-#define OBJ_EVENT_PAL_TAG_MEOWTH	              0x1135
-#define OBJ_EVENT_PAL_TAG_SOLDIER	              0x1136
-#define OBJ_EVENT_PAL_TAG_BIKER		              0x1137
-#define OBJ_EVENT_PAL_TAG_CHANNELER	              0x1138
-#define OBJ_EVENT_PAL_TAG_CHEF  	              0x1139
-#define OBJ_EVENT_PAL_TAG_POLICEMAN  	          0x113A
-#define OBJ_EVENT_PAL_TAG_PROF_OAK  	          0x113B
-#define OBJ_EVENT_PAL_TAG_ROCKER	  	          0x113C
-#define OBJ_EVENT_PAL_TAG_YOUNGSTER2	  	      0x113D
-#define OBJ_EVENT_PAL_TAG_WORKER  		  	      0x113E
-#define OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR		  	  0x113F
-#define OBJ_EVENT_PAL_TAG_LT_SURGE		  	      0x1140
-#define OBJ_EVENT_PAL_TAG_MISTY		  	          0x1141
-#define OBJ_EVENT_PAL_TAG_MAUVILLE_OLD_MAN_2	  0x1142
-#define OBJ_EVENT_PAL_TAG_NURSE_JOY          	  0x1143
-#define OBJ_EVENT_PAL_TAG_BIG_GREEN          	  0x1144
-#define OBJ_EVENT_PAL_TAG_YOUNGSTER_RED       	  0x1145
-#define OBJ_EVENT_PAL_TAG_GREEN              	  0x1146
-#define OBJ_EVENT_PAL_TAG_OLD_MAN_LYING_DOWN      0x1147
-#define OBJ_EVENT_PAL_TAG_BIG_RED                 0x1148
-#define OBJ_EVENT_PAL_TAG_BIG_YELLOW              0x1149
-#define OBJ_EVENT_PAL_TAG_BRUNO                   0x114A
-//HEXDECIMAL ABOVE 
-#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
+
 #include "data/object_events/object_event_graphics_info_pointers.h"
 #include "data/field_effects/field_effect_object_template_pointers.h"
 #include "data/object_events/object_event_pic_tables.h"
@@ -2168,21 +2092,27 @@ static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, 
 static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
 {
     u32 paletteNum;
+	DebugPrintf("TEST %d", species);
     // Use standalone palette, unless entry is OOB or NULL (fallback to front-sprite-based)
 #if OW_POKEMON_OBJECT_EVENTS == TRUE && OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     if ((shiny && gSpeciesInfo[species].overworldPalette)
     || (!shiny && gSpeciesInfo[species].overworldShinyPalette))
     {
+		DebugPrintf("LOC A %d", species);
         struct SpritePalette spritePalette;
         u16 palTag = shiny ? (species + SPECIES_SHINY_TAG + OBJ_EVENT_PAL_TAG_DYNAMIC) : (species + OBJ_EVENT_PAL_TAG_DYNAMIC);
         // palette already loaded
-        if ((paletteNum = IndexOfSpritePaletteTag(palTag)) < 16)
+        if ((paletteNum = IndexOfSpritePaletteTag(palTag)) < 16) {
+			DebugPrintf("LOC B %d", species);
             return paletteNum;
+		}
         spritePalette.tag = palTag;
         if (shiny)
             spritePalette.data = gSpeciesInfo[species].overworldShinyPalette;
-        else
+        else {
             spritePalette.data = gSpeciesInfo[species].overworldPalette;
+			DebugPrintf("LOC C %d", species);
+		}
         
         // Check if pal data must be decompressed
         if (IsLZ77Data(spritePalette.data, PLTT_SIZE_4BPP, PLTT_SIZE_4BPP))
@@ -2190,8 +2120,10 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
             // IsLZ77Data guarantees word-alignment, so casting this is safe
             LZ77UnCompWram((u32*)spritePalette.data, gDecompressionBuffer);
             spritePalette.data = (void*)gDecompressionBuffer;
+			DebugPrintf("LOC D %d", species);
         }
         paletteNum = LoadSpritePalette(&spritePalette);
+		DebugPrintf("LOC E %d", species);
     }
     else
 #endif //OW_POKEMON_OBJECT_EVENTS == TRUE && OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -2200,16 +2132,22 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
         // so that palette tags do not overlap
         const u32 *palette = GetMonSpritePalFromSpecies(species, shiny, FALSE); //ETODO
         // palette already loaded
-        if ((paletteNum = IndexOfSpritePaletteTag(species)) < 16)
+		DebugPrintf("LOC F %d", species);
+        if ((paletteNum = IndexOfSpritePaletteTag(species)) < 16) {
+			DebugPrintf("LOC G %d", species);
             return paletteNum;
+		}
         // Use matching front sprite's normal/shiny palettes
         // Load compressed palette
         LoadCompressedSpritePaletteWithTag(palette, species);
         paletteNum = IndexOfSpritePaletteTag(species); // Tag is always present
+		DebugPrintf("LOC H %d", species);
     }
 
     if (gWeatherPtr->currWeather != WEATHER_FOG_HORIZONTAL) // don't want to weather blend in fog
         UpdateSpritePaletteWithWeather(paletteNum);
+
+	DebugPrintf("LOC I %d", species);
     return paletteNum;
 }
 
