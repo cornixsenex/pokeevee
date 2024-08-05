@@ -58,6 +58,15 @@ script GrandmasCabin_EventScript_EeveeFanfare {
 	return
 }
 
+script GrandmasCabin_EventScript_SnakeTest {
+	lock
+	faceplayer
+	msgbox("COLLISION!", MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
 text GrandmasCabin_ObtainedEevee {
 	"{PLAYER} obtained Eevee!"
 }

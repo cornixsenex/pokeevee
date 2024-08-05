@@ -458,6 +458,7 @@
 #define OBJ_EVENT_PAL_TAG_BIG_RED                 0x1148
 #define OBJ_EVENT_PAL_TAG_BIG_YELLOW              0x1149
 #define OBJ_EVENT_PAL_TAG_BRUNO                   0x114A
+#define OBJ_EVENT_PAL_TAG_COLLISIONSNAKE          0x114B
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 

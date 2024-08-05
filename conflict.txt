@@ -1,7 +1,7 @@
 
 
 TESTS:
-	>Collision Mons (Rats, Snakes, Drifblim)
+	>Collision Mons (Rat, Drifblim, Youngster, Youngster2)
 	>Rock Climb mons
 	>Berries broken
 	re-inded mons

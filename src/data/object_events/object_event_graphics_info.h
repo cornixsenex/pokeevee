@@ -233,8 +233,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRat = {
 //SPECIES NOT NORMAL BE WARNED - BIGYELLOW BETTER
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionSnake = {
     .tileTag = TAG_NONE,
-   // .paletteTag = OBJ_EVENT_PAL_TAG_POKEMON_023,
-    .paletteTag = OBJ_EVENT_PAL_TAG_BRUNO,
+    .paletteTag = OBJ_EVENT_PAL_TAG_COLLISIONSNAKE,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -243,12 +242,11 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionSnake = {
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
-    .tracks = TRACKS_FOOT,
+    .tracks = TRACKS_SLITHER,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_PokemonSpecies,
-    //.images = gObjectEventPicTable_Pokemon_Species_023,
-    .images = sPicTable_Bruno,
+    .anims = sAnimTable_Following,
+    .images = sPicTable_CollisionSnake,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 //DID YOU READ THE ABOVE? SPECIES NOT NORMAL

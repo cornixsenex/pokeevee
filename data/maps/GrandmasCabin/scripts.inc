@@ -94,129 +94,147 @@ GrandmasCabin_EventScript_EeveeFanfare::
 	return
 
 
+GrandmasCabin_EventScript_SnakeTest::
+# 62 "data/maps/GrandmasCabin/scripts.pory"
+	lock
+# 63 "data/maps/GrandmasCabin/scripts.pory"
+	faceplayer
+# 64 "data/maps/GrandmasCabin/scripts.pory"
+	msgbox GrandmasCabin_EventScript_SnakeTest_Text_0, MSGBOX_DEFAULT
 # 65 "data/maps/GrandmasCabin/scripts.pory"
-
+	closemessage
 # 66 "data/maps/GrandmasCabin/scripts.pory"
+	release
+	end
 
-# 67 "data/maps/GrandmasCabin/scripts.pory"
+
+# 74 "data/maps/GrandmasCabin/scripts.pory"
+
+# 75 "data/maps/GrandmasCabin/scripts.pory"
+
+# 76 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_EventScript_FadeOut::
-# 68 "data/maps/GrandmasCabin/scripts.pory"
+# 77 "data/maps/GrandmasCabin/scripts.pory"
 	fadescreen 1
-# 69 "data/maps/GrandmasCabin/scripts.pory"
+# 78 "data/maps/GrandmasCabin/scripts.pory"
 	removeobject 1
-# 70 "data/maps/GrandmasCabin/scripts.pory"
+# 79 "data/maps/GrandmasCabin/scripts.pory"
 	fadescreen 0
-# 71 "data/maps/GrandmasCabin/scripts.pory"
+# 80 "data/maps/GrandmasCabin/scripts.pory"
 	return
 
 GrandmasCabin_EventScript_GiveEevee::
-# 76 "data/maps/GrandmasCabin/scripts.pory"
+# 85 "data/maps/GrandmasCabin/scripts.pory"
 	givemon SPECIES_EEVEE, 5, ITEM_NONE
-# 77 "data/maps/GrandmasCabin/scripts.pory"
+# 86 "data/maps/GrandmasCabin/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq GrandmasCabin_EventScript_GiveEevee_2
 GrandmasCabin_EventScript_GiveEevee_1:
-# 86 "data/maps/GrandmasCabin/scripts.pory"
+# 95 "data/maps/GrandmasCabin/scripts.pory"
 	releaseall
 	end
 
 GrandmasCabin_EventScript_GiveEevee_2:
-# 78 "data/maps/GrandmasCabin/scripts.pory"
+# 87 "data/maps/GrandmasCabin/scripts.pory"
 	call GrandmasCabin_EventScript_EeveeFanfare
-# 79 "data/maps/GrandmasCabin/scripts.pory"
+# 88 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_EventScript_GiveEevee_Text_0, MSGBOX_YESNO
-# 80 "data/maps/GrandmasCabin/scripts.pory"
+# 89 "data/maps/GrandmasCabin/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq GrandmasCabin_EventScript_GiveEevee_5
 GrandmasCabin_EventScript_GiveEevee_4:
-# 84 "data/maps/GrandmasCabin/scripts.pory"
+# 93 "data/maps/GrandmasCabin/scripts.pory"
 	setflag FLAG_UNUSED_0x026
 	goto GrandmasCabin_EventScript_GiveEevee_1
 
 GrandmasCabin_EventScript_GiveEevee_5:
-# 81 "data/maps/GrandmasCabin/scripts.pory"
+# 90 "data/maps/GrandmasCabin/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 82 "data/maps/GrandmasCabin/scripts.pory"
+# 91 "data/maps/GrandmasCabin/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto GrandmasCabin_EventScript_GiveEevee_4
 
 
 GrandmasCabin_EventScript_StarterMonEevee::
-# 91 "data/maps/GrandmasCabin/scripts.pory"
+# 100 "data/maps/GrandmasCabin/scripts.pory"
 	lockall
-# 92 "data/maps/GrandmasCabin/scripts.pory"
+# 101 "data/maps/GrandmasCabin/scripts.pory"
 	goto_if_set FLAG_SYS_POKEMON_GET, GrandmasCabin_EventScript_StarterMonEevee_1
-# 98 "data/maps/GrandmasCabin/scripts.pory"
+# 107 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_EventScript_StarterMonEevee_Text_1, MSGBOX_YESNO
-# 99 "data/maps/GrandmasCabin/scripts.pory"
+# 108 "data/maps/GrandmasCabin/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq GrandmasCabin_EventScript_StarterMonEevee_5
-# 105 "data/maps/GrandmasCabin/scripts.pory"
+# 114 "data/maps/GrandmasCabin/scripts.pory"
 	call GrandmasCabin_EventScript_GiveEevee
-# 107 "data/maps/GrandmasCabin/scripts.pory"
+# 116 "data/maps/GrandmasCabin/scripts.pory"
 	releaseall
 	end
 
 GrandmasCabin_EventScript_StarterMonEevee_1:
-# 93 "data/maps/GrandmasCabin/scripts.pory"
+# 102 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_EventScript_StarterMonEevee_Text_0
-# 94 "data/maps/GrandmasCabin/scripts.pory"
+# 103 "data/maps/GrandmasCabin/scripts.pory"
 	releaseall
 	end
 
 GrandmasCabin_EventScript_StarterMonEevee_5:
-# 100 "data/maps/GrandmasCabin/scripts.pory"
+# 109 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_EventScript_StarterMonEevee_Text_2
-# 101 "data/maps/GrandmasCabin/scripts.pory"
+# 110 "data/maps/GrandmasCabin/scripts.pory"
 	releaseall
 	end
 
 
-# 112 "data/maps/GrandmasCabin/scripts.pory"
+# 121 "data/maps/GrandmasCabin/scripts.pory"
 GrandmasCabin_Movement_Mew:
-# 113 "data/maps/GrandmasCabin/scripts.pory"
+# 122 "data/maps/GrandmasCabin/scripts.pory"
 	face_down
-# 114 "data/maps/GrandmasCabin/scripts.pory"
+# 123 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
-# 114 "data/maps/GrandmasCabin/scripts.pory"
+# 123 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
-# 114 "data/maps/GrandmasCabin/scripts.pory"
+# 123 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
-# 114 "data/maps/GrandmasCabin/scripts.pory"
+# 123 "data/maps/GrandmasCabin/scripts.pory"
 	walk_left
-# 115 "data/maps/GrandmasCabin/scripts.pory"
+# 124 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 115 "data/maps/GrandmasCabin/scripts.pory"
+# 124 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 115 "data/maps/GrandmasCabin/scripts.pory"
+# 124 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 115 "data/maps/GrandmasCabin/scripts.pory"
+# 124 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 115 "data/maps/GrandmasCabin/scripts.pory"
+# 124 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 115 "data/maps/GrandmasCabin/scripts.pory"
+# 124 "data/maps/GrandmasCabin/scripts.pory"
 	walk_right
-# 116 "data/maps/GrandmasCabin/scripts.pory"
+# 125 "data/maps/GrandmasCabin/scripts.pory"
 	walk_down
 	step_end
 
+GrandmasCabin_EventScript_SnakeTest_Text_0:
+# 64 "data/maps/GrandmasCabin/scripts.pory"
+	.string "COLLISION!$"
+
 GrandmasCabin_EventScript_GiveEevee_Text_0:
-# 79 "data/maps/GrandmasCabin/scripts.pory"
+# 88 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Would you like to give a nickname to\n"
 	.string "Eevee?$"
 
 GrandmasCabin_EventScript_StarterMonEevee_Text_0:
-# 93 "data/maps/GrandmasCabin/scripts.pory"
+# 102 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Sorry Eevee, you'll have to stay behind.$"
 
 GrandmasCabin_EventScript_StarterMonEevee_Text_1:
-# 98 "data/maps/GrandmasCabin/scripts.pory"
+# 107 "data/maps/GrandmasCabin/scripts.pory"
 	.string "Will you take Eevee with you?$"
 
 GrandmasCabin_EventScript_StarterMonEevee_Text_2:
-# 100 "data/maps/GrandmasCabin/scripts.pory"
+# 109 "data/maps/GrandmasCabin/scripts.pory"
 	.string "You decided not to bring Eevee.$"
 
 GrandmasCabin_ObtainedEevee::
-# 61 "data/maps/GrandmasCabin/scripts.pory"
+# 70 "data/maps/GrandmasCabin/scripts.pory"
 	.string "{PLAYER} obtained Eevee!$"

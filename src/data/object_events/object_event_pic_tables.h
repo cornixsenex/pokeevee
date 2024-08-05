@@ -1718,6 +1718,10 @@ static const struct SpriteFrameImage sPicTable_Bruno[] = {
 };
 
 
+static const struct SpriteFrameImage sPicTable_CollisionSnake[] = {
+    overworld_ascending_frames(gObjectEventPic_CollisionSnake, 4, 4),
+};
+
 
 
 
