@@ -1,41 +1,7 @@
-#CONFLICT (content): Merge conflict in Makefile
-	>support poryscript compile 
-#CONFLICT (content): Merge conflict in asm/macros/map.inc
-	>macro object_event re-order gfx and OBJ_KIND_NORMAL
-#CONFLICT (content): Merge conflict in data/field_effect_scripts.s
-	>RockClimb FieldEffectScripts
-#CONFLICT (content): Merge conflict in data/scripts/field_move_scripts.inc
-	>Kustom HammerRock Script (?)
-#CONFLICT (content): Merge conflict in include/event_object_movement.h
-	>Dynamic Palettes :( Going to try the usual way, comment out old school stuff. Hope for the best
-#CONFLICT (content): Merge conflict in include/global.fieldmap.h
-	>struct ObjectEventTemplate has been changed by me. Going with the rhh way for now. If not Object Events maybe comment out u8 kind...IDK why tho tbh
-#CONFLICT (content): Merge conflict in src/battle_controller_player.c
-	>If everthing smooth then delete lines 166 and 167
-#CONFLICT (content): Merge conflict in src/data/field_effects/field_effect_objects.h
-	>OBJ_EVENT_PAL_TAG_BRENDAN -> TAG_WEATHER_START
-	>OBJ_EVENT_PAL_TAG_BRENDAN -> OBJ_EVENT_PAL_TAG_MAY
-#CONFLICT (content): Merge conflict in src/event_object_movement.c
-	>Dynamic Palette meets RHH followers
-#CONFLICT (content): Merge conflict in src/field_effect_helpers.c
-	>Thinking...Yikes
-#CONFLICT (content): Merge conflict in src/trainer_see.c
-	>(if broken check SpriteTemplate sSpriteTemplate_ExclamationQuestionMark .paletteTag) changed from 1100 to TAG_MAY (1110)
+
 
 TESTS:
-	>Rock Climb
-	>Weather
-	>Kustom Items Icons
-	>New Maps (Colchis should be fine)
-	>Kustom Object Events (Blue, Lt Surge, Misty, Mewtwo Armor)
-	>Pokemon Overworld (Zoo)
-	>Birch Poochyana
-	>Custom trainer parties (blue)
-	>auto run
-	>debug menu
-	>fly sprites
-	>reflection sprite (puddle, bridges, surf etc)
-	>plural items in description ( src/item.c const u8 sText_s[] ) If good remove comments
-	>item descriptions
-	>Exclamation Emote (if broken check SpriteTemplate sSpriteTemplate_ExclamationQuestionMark .paletteTag) changed from 1100 to TAG_MAY (1110)
 	>Collision Mons (Rats, Snakes, Drifblim)
+	>Rock Climb mons
+	>Berries broken
+	re-inded mons
