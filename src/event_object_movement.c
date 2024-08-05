@@ -1752,8 +1752,9 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
 
     objectEvent = &gObjectEvents[objectEventId];
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
-    //if (spriteTemplate->paletteTag != TAG_NONE) cornix 1.9.0 merge 240801
-    if (spriteTemplate->paletteTag != TAG_NONE && spriteTemplate->paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC)
+	//cornix 1.9.0 merge 240804
+    // if (spriteTemplate->paletteTag != TAG_NONE && spriteTemplate->paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC)
+    if (spriteTemplate->paletteTag != TAG_NONE) 
     {
         LoadObjectEventPalette(spriteTemplate->paletteTag);
         UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate->paletteTag), GAMMA_ALT);
@@ -1789,7 +1790,8 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
     sprite->x += 8;
     sprite->y += 16 + sprite->centerToCornerVecY;
-    sprite->oam.paletteNum = IndexOfSpritePaletteTag(spriteTemplate->paletteTag);
+	//CornixSenex removed this line to fix OW_POKEMON palettes loading incorrectly UNLESS called by the ReturnToField function - IDK why it's here or what it does or if / what this breaks...but it works as of now 240804
+    //sprite->oam.paletteNum = IndexOfSpritePaletteTag(spriteTemplate->paletteTag);
     sprite->coordOffsetEnabled = TRUE;
     sprite->sObjEventId = objectEventId;
     objectEvent->spriteId = spriteId;
@@ -2092,18 +2094,15 @@ static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, 
 static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
 {
     u32 paletteNum;
-	DebugPrintf("TEST %d", species);
     // Use standalone palette, unless entry is OOB or NULL (fallback to front-sprite-based)
 #if OW_POKEMON_OBJECT_EVENTS == TRUE && OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     if ((shiny && gSpeciesInfo[species].overworldPalette)
     || (!shiny && gSpeciesInfo[species].overworldShinyPalette))
     {
-		DebugPrintf("LOC A %d", species);
         struct SpritePalette spritePalette;
         u16 palTag = shiny ? (species + SPECIES_SHINY_TAG + OBJ_EVENT_PAL_TAG_DYNAMIC) : (species + OBJ_EVENT_PAL_TAG_DYNAMIC);
         // palette already loaded
         if ((paletteNum = IndexOfSpritePaletteTag(palTag)) < 16) {
-			DebugPrintf("LOC B %d", species);
             return paletteNum;
 		}
         spritePalette.tag = palTag;
@@ -2111,7 +2110,6 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
             spritePalette.data = gSpeciesInfo[species].overworldShinyPalette;
         else {
             spritePalette.data = gSpeciesInfo[species].overworldPalette;
-			DebugPrintf("LOC C %d", species);
 		}
         
         // Check if pal data must be decompressed
@@ -2120,10 +2118,8 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
             // IsLZ77Data guarantees word-alignment, so casting this is safe
             LZ77UnCompWram((u32*)spritePalette.data, gDecompressionBuffer);
             spritePalette.data = (void*)gDecompressionBuffer;
-			DebugPrintf("LOC D %d", species);
         }
         paletteNum = LoadSpritePalette(&spritePalette);
-		DebugPrintf("LOC E %d", species);
     }
     else
 #endif //OW_POKEMON_OBJECT_EVENTS == TRUE && OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
@@ -2132,22 +2128,18 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
         // so that palette tags do not overlap
         const u32 *palette = GetMonSpritePalFromSpecies(species, shiny, FALSE); //ETODO
         // palette already loaded
-		DebugPrintf("LOC F %d", species);
         if ((paletteNum = IndexOfSpritePaletteTag(species)) < 16) {
-			DebugPrintf("LOC G %d", species);
             return paletteNum;
 		}
         // Use matching front sprite's normal/shiny palettes
         // Load compressed palette
         LoadCompressedSpritePaletteWithTag(palette, species);
         paletteNum = IndexOfSpritePaletteTag(species); // Tag is always present
-		DebugPrintf("LOC H %d", species);
     }
 
     if (gWeatherPtr->currWeather != WEATHER_FOG_HORIZONTAL) // don't want to weather blend in fog
         UpdateSpritePaletteWithWeather(paletteNum);
 
-	DebugPrintf("LOC I %d", species);
     return paletteNum;
 }
 
