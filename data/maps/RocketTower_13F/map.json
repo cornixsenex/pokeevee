@@ -54,7 +54,7 @@
       "flag": "FLAG_HIDE_ROCKETTOWER_13F_GIO"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PERSIAN)",
       "x": 17,
       "y": 11,
       "elevation": 3,
@@ -67,7 +67,7 @@
       "flag": "FLAG_HIDE_ROCKETTOWER_13F_GIO"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
       "x": 18,
       "y": 15,
       "elevation": 3,

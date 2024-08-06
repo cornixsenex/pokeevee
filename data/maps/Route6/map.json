@@ -140,7 +140,7 @@
       "flag": "FLAG_ROUTE6_HIDEPIKACHU"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEOWTH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH)",
       "x": 51,
       "y": 7,
       "elevation": 3,

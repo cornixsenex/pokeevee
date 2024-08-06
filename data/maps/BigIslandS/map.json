@@ -57,7 +57,7 @@
       "flag": "FLAG_BIGISLAND_S_HIDE_PROMETHEUS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HOOH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HO_OH)",
       "x": 46,
       "y": 12,
       "elevation": 0,
@@ -96,7 +96,7 @@
       "flag": "FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(INFERNAPE)",
       "x": 68,
       "y": 26,
       "elevation": 0,
@@ -109,7 +109,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MONFERNO)",
       "x": 69,
       "y": 25,
       "elevation": 0,
@@ -122,7 +122,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHIMCHAR)",
       "x": 70,
       "y": 27,
       "elevation": 0,

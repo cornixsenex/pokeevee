@@ -244,7 +244,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
       "x": 39,
       "y": 18,
       "elevation": 3,
@@ -257,7 +257,7 @@
       "flag": "FLAG_ROUTE10_HIDE_KRABBY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 31,
       "y": 2,
       "elevation": 3,
@@ -270,7 +270,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 36,
       "y": 3,
       "elevation": 3,
@@ -283,7 +283,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARIZARD)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 50,
       "y": 4,
       "elevation": 3,
