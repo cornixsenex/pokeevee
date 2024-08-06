@@ -41,7 +41,7 @@ DesertTemple_3F_EventScript_FaceSnakes::
 	end
 
 
-DesertTemple_3F_EventScript_CollisionSnake::
+DesertTemple_3F_EventScript_CollisionEkans::
 # 29 "data/maps/DesertTemple_3F/scripts.pory"
 	lock
 # 30 "data/maps/DesertTemple_3F/scripts.pory"

@@ -459,8 +459,11 @@ const u16 gObjectEventPal_BigYellow[] = INCBIN_U16("graphics/object_events/palet
 const u32 gObjectEventPic_Bruno[] = INCBIN_U32("graphics/object_events/pics/people/bruno.4bpp");
 const u16 gObjectEventPal_Bruno[] = INCBIN_U16("graphics/object_events/palettes/bruno.gbapal");
 
-const u32 gObjectEventPic_CollisionSnake[] = INCBIN_U32("graphics/pokemon/ekans/overworld.4bpp");
-const u16 gObjectEventPal_CollisionSnake[] = INCBIN_U16("graphics/pokemon/ekans/overworld_normal.gbapal");
+const u32 gObjectEventPic_CollisionRattata[] = INCBIN_U32("graphics/pokemon/rattata/overworld.4bpp");
+const u16 gObjectEventPal_CollisionRattata[] = INCBIN_U16("graphics/pokemon/rattata/overworld_normal.gbapal");
+
+const u32 gObjectEventPic_CollisionEkans[] = INCBIN_U32("graphics/pokemon/ekans/overworld.4bpp");
+const u16 gObjectEventPal_CollisionEkans[] = INCBIN_U16("graphics/pokemon/ekans/overworld_normal.gbapal");
 
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 

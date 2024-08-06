@@ -25,7 +25,7 @@ script DesertTemple_3F_EventScript_FaceSnakes {
 	end
 }
 
-script DesertTemple_3F_EventScript_CollisionSnake {
+script DesertTemple_3F_EventScript_CollisionEkans {
 	lock
 	delay (20)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)

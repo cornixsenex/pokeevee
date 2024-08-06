@@ -894,10 +894,10 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 	const u8 *script;
 	if (objectEventId != OBJECT_EVENTS_COUNT) 
 	{
-		if (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_RAT
+		if        (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_RATTATA
+				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_EKANS
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
-				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_SNAKE
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM)
 		{
 			script = GetObjectEventScriptPointerByObjectEventId(objectEventId);

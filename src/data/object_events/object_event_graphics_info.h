@@ -186,7 +186,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigYellow = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-//DO NOTE BRUNO MAY BE IRREGULAR!!! BETTER TO USE ABOVE
+//DO NOTE BRUNO MAY BE IRREGULAR!!! NO WALKING SPRITES / ANIM - BETTER TO USE ABOVE
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_BRUNO,
@@ -208,10 +208,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno = {
 
 
 //SPECIES NOT NORMAL BE WARNED - BIGYELLOW BETTER
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRat = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRattata = {
     .tileTag = TAG_NONE,
-    //.paletteTag = OBJ_EVENT_PAL_TAG_POKEMON_019,
-    .paletteTag = OBJ_EVENT_PAL_TAG_BRUNO,
+    .paletteTag = OBJ_EVENT_PAL_TAG_COLLISIONRATTATA,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -224,16 +223,15 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRat = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_PokemonSpecies,
-    //.images = gObjectEventPicTable_Pokemon_Species_019,
-    .images = sPicTable_Bruno,
+    .images = sPicTable_CollisionRattata,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 //DID YOU READ THE ABOVE? SPECIES NOT NORMAL
 
 //SPECIES NOT NORMAL BE WARNED - BIGYELLOW BETTER
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionSnake = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionEkans = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_COLLISIONSNAKE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_COLLISIONEKANS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -246,7 +244,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionSnake = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Following,
-    .images = sPicTable_CollisionSnake,
+    .images = sPicTable_CollisionEkans,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 //DID YOU READ THE ABOVE? SPECIES NOT NORMAL

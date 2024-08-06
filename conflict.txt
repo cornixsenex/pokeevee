@@ -4,4 +4,5 @@ TESTS:
 	>Collision Mons (Rat, Drifblim, Youngster, Youngster2)
 	>Rock Climb mons
 	>Berries broken
-	re-inded mons
+   	>re-inded mons
+	>Basculin broken

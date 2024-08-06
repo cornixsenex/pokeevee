@@ -292,8 +292,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldManLying
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigRed;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigYellow;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bruno;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRat;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionSnake;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRattata;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionEkans;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionYoungster;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionYoungster2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionDrifblim;
@@ -561,8 +561,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_BIG_RED] =                  &gObjectEventGraphicsInfo_BigRed,
 	[OBJ_EVENT_GFX_BIG_YELLOW] =               &gObjectEventGraphicsInfo_BigYellow,
 	[OBJ_EVENT_GFX_BRUNO] =                    &gObjectEventGraphicsInfo_Bruno,
-	[OBJ_EVENT_GFX_COLLISION_RAT] =            &gObjectEventGraphicsInfo_CollisionRat,
-	[OBJ_EVENT_GFX_COLLISION_SNAKE] =          &gObjectEventGraphicsInfo_CollisionSnake,
+	[OBJ_EVENT_GFX_COLLISION_RATTATA] =        &gObjectEventGraphicsInfo_CollisionRattata,
+	[OBJ_EVENT_GFX_COLLISION_EKANS] =          &gObjectEventGraphicsInfo_CollisionEkans,
 	[OBJ_EVENT_GFX_COLLISION_YOUNGSTER] =      &gObjectEventGraphicsInfo_CollisionYoungster,
 	[OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2] =    &gObjectEventGraphicsInfo_CollisionYoungster2,
 	[OBJ_EVENT_GFX_COLLISION_DRIFBLIM] =       &gObjectEventGraphicsInfo_CollisionDrifblim,

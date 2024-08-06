@@ -282,8 +282,8 @@
 #define OBJ_EVENT_GFX_BIG_RED                    277
 #define OBJ_EVENT_GFX_BIG_YELLOW                 278
 #define OBJ_EVENT_GFX_BRUNO                      279
-#define OBJ_EVENT_GFX_COLLISION_RAT              280
-#define OBJ_EVENT_GFX_COLLISION_SNAKE            281
+#define OBJ_EVENT_GFX_COLLISION_RATTATA          280
+#define OBJ_EVENT_GFX_COLLISION_EKANS            281
 #define OBJ_EVENT_GFX_COLLISION_YOUNGSTER        282
 #define OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2      283
 #define OBJ_EVENT_GFX_COLLISION_DRIFBLIM         284
@@ -458,7 +458,8 @@
 #define OBJ_EVENT_PAL_TAG_BIG_RED                 0x1148
 #define OBJ_EVENT_PAL_TAG_BIG_YELLOW              0x1149
 #define OBJ_EVENT_PAL_TAG_BRUNO                   0x114A
-#define OBJ_EVENT_PAL_TAG_COLLISIONSNAKE          0x114B
+#define OBJ_EVENT_PAL_TAG_COLLISIONRATTATA        0x114B
+#define OBJ_EVENT_PAL_TAG_COLLISIONEKANS          0x114C
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 

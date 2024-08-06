@@ -553,7 +553,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_BigRed,                OBJ_EVENT_PAL_TAG_BIG_RED},
 	{gObjectEventPal_BigYellow,             OBJ_EVENT_PAL_TAG_BIG_YELLOW},
 	{gObjectEventPal_Bruno,                 OBJ_EVENT_PAL_TAG_BRUNO},
-	{gObjectEventPal_CollisionSnake,        OBJ_EVENT_PAL_TAG_COLLISIONSNAKE},
+	{gObjectEventPal_CollisionRattata,      OBJ_EVENT_PAL_TAG_COLLISIONRATTATA},
+	{gObjectEventPal_CollisionEkans,        OBJ_EVENT_PAL_TAG_COLLISIONEKANS},
     
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
@@ -6478,11 +6479,11 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 		if (AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation))
 		{
 			//Check if it's a special Object Event and call correct script
-			if (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RAT
-                    || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
-                    || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
-					|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_SNAKE
-					|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM)
+			if    (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RATTATA
+				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_EKANS
+                || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
+                || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
+				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM)
 			{
 				//Yes, it's a special collision with player do script
 				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);

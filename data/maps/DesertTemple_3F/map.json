@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 8,
       "y": 15,
       "elevation": 0,
@@ -24,11 +24,11 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 9,
       "y": 14,
       "elevation": 0,
@@ -37,11 +37,11 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 5,
       "y": 15,
       "elevation": 0,
@@ -50,11 +50,11 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 9,
       "y": 16,
       "elevation": 0,
@@ -63,11 +63,11 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 11,
       "y": 15,
       "elevation": 0,
@@ -76,11 +76,11 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 6,
       "y": 16,
       "elevation": 0,
@@ -89,11 +89,11 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 10,
       "y": 16,
       "elevation": 0,
@@ -102,11 +102,11 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 7,
       "y": 14,
       "elevation": 0,
@@ -115,11 +115,11 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 1,
       "y": 17,
       "elevation": 0,
@@ -128,11 +128,11 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 15,
       "y": 17,
       "elevation": 0,
@@ -141,11 +141,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 2,
       "y": 15,
       "elevation": 0,
@@ -154,11 +154,11 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 14,
       "y": 15,
       "elevation": 0,
@@ -167,11 +167,11 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 4,
       "y": 19,
       "elevation": 0,
@@ -180,11 +180,11 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COLLISION_SNAKE",
+      "graphics_id": "OBJ_EVENT_GFX_COLLISION_EKANS",
       "x": 12,
       "y": 18,
       "elevation": 0,
@@ -193,7 +193,7 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DesertTemple_3F_EventScript_CollisionSnake",
+      "script": "DesertTemple_3F_EventScript_CollisionEkans",
       "flag": "0"
     }
   ],
