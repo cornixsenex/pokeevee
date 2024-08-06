@@ -1726,7 +1726,9 @@ static const struct SpriteFrameImage sPicTable_CollisionEkans[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionEkans, 4, 4),
 };
 
-
+static const struct SpriteFrameImage sPicTable_CollisionDrifblim[] = {
+    overworld_ascending_frames(gObjectEventPic_CollisionDrifblim, 4, 4),
+};
 
 
 /// BREAK ///

@@ -555,6 +555,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_Bruno,                 OBJ_EVENT_PAL_TAG_BRUNO},
 	{gObjectEventPal_CollisionRattata,      OBJ_EVENT_PAL_TAG_COLLISIONRATTATA},
 	{gObjectEventPal_CollisionEkans,        OBJ_EVENT_PAL_TAG_COLLISIONEKANS},
+	{gObjectEventPal_CollisionDrifblim,     OBJ_EVENT_PAL_TAG_COLLISIONDRIFBLIM},
     
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},

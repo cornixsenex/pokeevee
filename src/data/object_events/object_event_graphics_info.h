@@ -222,7 +222,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionRattata =
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_PokemonSpecies,
+    .anims = sAnimTable_Following,
     .images = sPicTable_CollisionRattata,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
@@ -252,8 +252,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionEkans = {
 //SPECIES NOT NORMAL BE WARNED - BIGYELLOW BETTER
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionDrifblim = {
     .tileTag = TAG_NONE,
-    //.paletteTag = OBJ_EVENT_PAL_TAG_POKEMON_426,
-    .paletteTag = OBJ_EVENT_PAL_TAG_BRUNO,
+    .paletteTag = OBJ_EVENT_PAL_TAG_COLLISIONDRIFBLIM,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -265,9 +264,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionDrifblim 
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_PokemonSpecies,
-    //.images = gObjectEventPicTable_Pokemon_Species_426,
-    .images = sPicTable_Bruno,
+    .anims = sAnimTable_Following,
+    .images = sPicTable_CollisionDrifblim,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 //DID YOU READ THE ABOVE? SPECIES NOT NORMAL
