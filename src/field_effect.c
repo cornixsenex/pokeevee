@@ -259,9 +259,7 @@ static bool8 RockClimb_StopRockClimbInit(struct Task *task, struct ObjectEvent *
 
 // Static RAM declarations
 
-#if FOLLOW_ME_IMPLEMENTED
 static void TryAttachFollowerToPlayer(void);
-#endif
 
 static u8 sActiveList[32];
 
@@ -4155,10 +4153,9 @@ static bool8 RockClimb_ContinueRideOrEnd(struct Task *task, struct ObjectEvent *
 {
     if (!ObjectEventClearHeldMovementIfFinished(objectEvent))
         return FALSE;
-    
-    #if FOLLOW_ME_IMPLEMENTED
-        TryAttachFollowerToPlayer();
-    #endif
+   
+   //CornixSenex Hacky solution for rockclimb - assumes no ghoul follower functionality :/	
+	TryAttachFollowerToPlayer();
     
     PlayerGetDestCoords(&task->tDestX, &task->tDestY);
     MoveCoords(objectEvent->movementDirection, &task->tDestX, &task->tDestY);
@@ -4216,19 +4213,26 @@ bool8 IsRockClimbActive(void)
         return FALSE;
 }
 
+//Cornix Senex Hacky rock climb solution
+//
+//static void TryAttachFollowerToPlayer(void)
+//{
+//    if (PlayerHasFollower())
+//    {
+//        //Keep the follow close by while its hidden to prevent it from going too far out of view
+//        struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
+//        struct ObjectEvent* follower = &gObjectEvents[GetFollowerMapObjId()];
+//        MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
+//    }
+//}
+//
 
-#if FOLLOW_ME_IMPLEMENTED
 static void TryAttachFollowerToPlayer(void)
 {
-    if (PlayerHasFollower())
-    {
-        //Keep the follow close by while its hidden to prevent it from going too far out of view
-        struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
-        struct ObjectEvent* follower = &gObjectEvents[GetFollowerMapObjId()];
-        MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
-    }
+	struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
+	struct ObjectEvent* follower = GetFollowerObject();
+	MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
 }
-#endif
 
 #undef tState
 #undef tSpriteId
