@@ -2935,7 +2935,8 @@ void PlayerObjectTurn(struct PlayerAvatar *playerAvatar, u8 direction)
     ObjectEventTurn(&gObjectEvents[playerAvatar->objectEventId], direction);
 }
 
-static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId, u8 berryStage)
+//CornixSenex disabled this function / removed it because it broke berry pals - 1.9.0 240806
+UNUSED static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId, u8 berryStage)
 {
     const u16 graphicsId = gBerryTreeObjectEventGraphicsIdTable[berryStage];
     const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
@@ -2981,7 +2982,8 @@ static void SetBerryTreeGraphics(struct ObjectEvent *objectEvent, struct Sprite 
         sprite->images = gBerryTreePicTablePointers[berryId];
         sprite->oam.paletteNum = IndexOfSpritePaletteTag(gBerryTreePaletteTagTablePointers[berryId][berryStage]);
         UpdatePaletteGammaType(sprite->oam.paletteNum, GAMMA_ALT);
-        SetBerryTreeGraphicsById(objectEvent, berryId, berryStage);
+		//CornixSenex removed because it broke berry pals - 1.9.0 240806
+        //SetBerryTreeGraphicsById(objectEvent, berryId, berryStage);
         StartSpriteAnim(sprite, berryStage);
     }
 }

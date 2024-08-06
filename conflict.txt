@@ -4,4 +4,3 @@ TESTS:
 	>Berries broken
    	>re-index mons
 	>Basculin broken
-	>Rock Climb mons
