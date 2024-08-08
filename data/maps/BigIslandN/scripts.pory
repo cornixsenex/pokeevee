@@ -20,7 +20,7 @@ mapscripts BigIslandN_MapScripts {
 		//3 = Jason at the Cave Entrance, Phil abducted, Argonauts getting bored
 		//7 = Colchis open -> Jason hidden inside colchis
 		//Need to ammend if you can return from Colchis before it's time to Hide Argo
-		} elif (var(VAR_ARGO_STATE) < 7) {
+		} elif (var(VAR_ARGO_STATE) < 7 && var(VAR_ARGO_STATE) != 1) {
 			call (BigIslandN_Script_ShowArgo3)
 		} else {
 			call (BigIslandN_Script_HideArgo)
@@ -102,8 +102,8 @@ script BigIslandN_Script_ShowArgo2 {
 	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_PHILOCTETES)
 	showobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
-	
-	end
+
+	return
 }
 
 //Jason at Cave entrance, Phil gone, Theseus in town, Dioscuri at boat, Orpheus on the beach
@@ -149,7 +149,7 @@ script BigIslandN_Script_ShowArgo3 {
 
 script BigIslandN_Script_ArgoArrival {
 
-	delay (100)
+	delay (50)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	
@@ -238,6 +238,8 @@ script BigIslandN_Script_ArgoArrival {
 	waitmovement (0)
 	msgbox (BigIslandN_Text_ArrivedAtColchis5, MSGBOX_DEFAULT)
 	closemessage
+
+	//warpsilent(MAP_BIG_ISLAND_N, 81, 22)
 	applymovement (OBJ_EVENT_JASON, BigIslandN_Movement_JasonExitArgo)
 	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_JasonExitArgo)
 	waitmovement (0)
@@ -248,12 +250,17 @@ script BigIslandN_Script_ArgoArrival {
 	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
 	hideobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
 	hideobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+	hideobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
 	removeobject (OBJ_EVENT_JASON)
 	removeobject (OBJ_EVENT_PHILOCTETES)
 	removeobject (OBJ_EVENT_THESEUS)
 	removeobject (OBJ_EVENT_ORPHEUS)
+	removeobject (OBJ_EVENT_ARGO)
 	call (BigIslandN_Script_ShowArgo2)
-//	special (DrawWholeMapView)
+	special (DrawWholeMapView)
+
+	releaseall
+
 	end
 }
 
@@ -823,8 +830,9 @@ text BigIslandN_Text_JasonPostAmbush {
 	format("Well done your bravery has saved our quest.")
 }
 
+//Quickly! Hurry! We must warn Aeetes that ruffians are here to steal Mareep. Enter the cave, and seal it behind you!
 text BigIslandN_Text_CultistsEnterCave {
-	format("Quickly! Hurry! We must warn Aeetes that ruffians are here to steal Mareep. Enter the cave, and seal it behind you!")
+	format("Uicklyquay! Urryhay! Eway ustmay arnway Aeetesay atthay uffiansray areay erehay otay ealstay Areepmay. Enteray ethay avecay anday ealsay itay ehindbay ouyay.")
 }
 
 text BigIslandN_Text_OpenColchisCave1 {

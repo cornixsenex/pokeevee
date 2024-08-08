@@ -294,6 +294,8 @@ script IgnisMons_3F_Script_Medea {
 	waitmovement (0)
 
 	call (IgnisMons_3F_Script_HideMedea)
+
+	releaseall
 	
 	end
 }

@@ -62,7 +62,7 @@ script MareS5_OnFrame_SailToColchis {
 	applymovement (OBJ_EVENT_ARGO, MareS5_Movement_SailToColchis2)
 	applymovement (OBJ_EVENT_ID_PLAYER, MareS5_Movement_SailToColchis2)
 	waitmovement (0)
-	delay (50)
+	delay (15)
 	call (BigIslandN_Script_ArgoArrival)
 	releaseall
 	end
