@@ -30,6 +30,19 @@ BattleScript_DamageToQuarterTargetHP::
 	damagetoquartertargethp
 	goto BattleScript_HitFromAtkAnimation
 
+BattleScript_EffectFickleBeam::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	ficklebeamdamagecalculation
+	goto BattleScript_HitFromCritCalc
+BattleScript_FickleBeamDoubled::
+	pause B_WAIT_TIME_SHORTEST
+	printstring STRINGID_FICKLEBEAMDOUBLED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_HitFromCritCalc
+
 BattleScript_Terastallization::
 	@ TODO: no string prints in S/V, but right now this helps with clarity
 	printstring STRINGID_PKMNSTORINGENERGY
@@ -865,6 +878,7 @@ BattleScript_OctlockTurnDmgEnd:
 
 BattleScript_EffectPoltergeist::
 	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
 	ppreduce
 	checkpoltergeist BS_TARGET, BattleScript_ButItFailed
@@ -6356,6 +6370,7 @@ BattleScript_StickyWebOnSwitchInPrintStatMsg:
 BattleScript_StickyWebOnSwitchInEnd:
 	restoretarget
 	restoreattacker
+	setbyte sSTICKY_WEB_STAT_DROP, 0
 	return
 
 BattleScript_PerishSongTakesLife::
@@ -7135,7 +7150,7 @@ BattleScript_TargetFormChangeWithStringNoPopup::
 
 BattleScript_BattlerFormChangeWithStringEnd3::
 	pause 5
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	flushtextbox
 	handleformchange BS_SCRIPTING, 0
 	handleformchange BS_SCRIPTING, 1
@@ -7739,6 +7754,15 @@ BattleScript_CheekPouchActivates::
 	copybyte gBattlerAttacker, sSAVED_BATTLER
 	return
 
+BattleScript_PickupActivates::
+	pause 5
+	tryrecycleitem BattleScript_PickupActivatesEnd
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_XFOUNDONEY
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PickupActivatesEnd:
+	end3
+
 BattleScript_HarvestActivates::
 	pause 5
 	tryrecycleitem BattleScript_HarvestActivatesEnd
@@ -7986,7 +8010,7 @@ BattleScript_DeltaStreamActivates::
 	end3
 
 BattleScript_ProtosynthesisActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_SUNLIGHTACTIVATEDABILITY
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED
