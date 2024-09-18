@@ -88,10 +88,6 @@
 #define HANDLE_EXPANDED_SPECIES_NAME(_name, ...) _(_name)
 #endif
 
-//CornixSenex added these because otherwise compiler threw a fit. It's defined in the normal place too so dupe -1.9.0 240806
-const u32 gShinyOverworldPalette_BasculinRedStriped[] = INCBIN_U32("graphics/pokemon/basculin/overworld_shiny.gbapal.lz");
-const u32 gShinyOverworldPalette_BasculinBlueStriped[] = INCBIN_U32("graphics/pokemon/basculin/blue_striped/overworld_shiny.gbapal.lz");
-
 const struct SpeciesInfo gSpeciesInfo[] =
 {
     [SPECIES_NONE] =

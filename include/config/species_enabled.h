@@ -329,8 +329,8 @@
 #define P_FAMILY_VENIPEDE                P_GEN_5_POKEMON
 #define P_FAMILY_COTTONEE                P_GEN_5_POKEMON
 #define P_FAMILY_PETILIL                 P_GEN_5_POKEMON
-#define P_FAMILY_BASCULIN                P_GEN_5_POKEMON
-//#define P_FAMILY_BASCULIN                FALSE //Broken for some reason - CornixSenex 1.9.0 240806
+//#define P_FAMILY_BASCULIN                P_GEN_5_POKEMON
+#define P_FAMILY_BASCULIN                FALSE //Broken for some reason - CornixSenex 1.9.0 240806
 #define P_FAMILY_SANDILE                 P_GEN_5_POKEMON
 #define P_FAMILY_DARUMAKA                P_GEN_5_POKEMON
 #define P_FAMILY_MARACTUS                P_GEN_5_POKEMON
