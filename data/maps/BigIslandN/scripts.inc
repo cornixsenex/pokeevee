@@ -1176,14 +1176,14 @@ BigIslandN_Movement_AmbushAll:
 	walk_left
 # 708 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 708 "data/maps/BigIslandN/scripts.pory"
+# 709 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 709 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 709 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 710 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 709 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 709 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 709 "data/maps/BigIslandN/scripts.pory"
-	walk_down
 # 710 "data/maps/BigIslandN/scripts.pory"
 	walk_left
 # 710 "data/maps/BigIslandN/scripts.pory"
@@ -1322,14 +1322,14 @@ BigIslandN_Movement_JasonFollowAmbush:
 	walk_left
 # 760 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 760 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 760 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 760 "data/maps/BigIslandN/scripts.pory"
-	walk_left
 # 761 "data/maps/BigIslandN/scripts.pory"
 	walk_down
+# 762 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 762 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 762 "data/maps/BigIslandN/scripts.pory"
+	walk_left
 # 762 "data/maps/BigIslandN/scripts.pory"
 	walk_left
 # 762 "data/maps/BigIslandN/scripts.pory"

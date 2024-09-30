@@ -705,9 +705,9 @@ movement BigIslandN_Movement_JasonExploreB1 {
 }
 
 movement BigIslandN_Movement_AmbushAll {
-	walk_left * 3
+	walk_left * 2
 	walk_down * 3
-	walk_left * 4
+	walk_left * 5
 	walk_down * 2
 }
 
@@ -757,9 +757,9 @@ movement BigIslandN_Movement_JasonSetupFollowAmbush {
 
 movement BigIslandN_Movement_JasonFollowAmbush {
 	walk_down * 4
-	walk_left * 6
+	walk_left * 3
 	walk_down
-	walk_left * 4
+	walk_left * 7
 	walk_up * 3
 }
 
