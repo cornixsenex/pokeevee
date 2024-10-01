@@ -5,4 +5,3 @@ Movie Theater in Smokeland
 Add MOVE_ROCK_CLIMB to src/data/pokemon/teachable_learnsets.h
 Add more BookVerse entries :) - This works as of right now but poryscript is behind idk what to do
 another test TEST
-

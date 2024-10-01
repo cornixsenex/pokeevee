@@ -114,7 +114,7 @@ script BigIslandN_Script_ShowArgo3 {
 	showobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
 
 	setobjectxyperm (OBJ_EVENT_CASTOR, 41, 12)
-	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype(OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_CASTOR)
 	showobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
 
@@ -533,6 +533,12 @@ script BigIslandN_Script_Ambush {
 
 	call (BigIslandN_Script_JasonAtColchisCave)
 	//Jason turns to you and says 'they've sealed it shut we must find a way inside
+
+	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_PHILOCTETES)
+	hideobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_JASON)
+
 
 	call (BigIslandN_Script_ShowArgo3)
 

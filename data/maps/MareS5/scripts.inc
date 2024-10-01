@@ -104,7 +104,7 @@ MareS5_OnFrame_SailToColchis::
 # 64 "data/maps/MareS5/scripts.pory"
 	waitmovement 0
 # 65 "data/maps/MareS5/scripts.pory"
-	delay 50
+	delay 15
 # 66 "data/maps/MareS5/scripts.pory"
 	call BigIslandN_Script_ArgoArrival
 # 67 "data/maps/MareS5/scripts.pory"
