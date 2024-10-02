@@ -1454,16 +1454,16 @@ Birds				Stygian Birds
 Mewtwo				Main Quest
 *Mew				Post Scriptum
 Beasts				Entei: Lion, Raiku: Sphynx, Suicune: Lupercal
-Lugia				Aeetes
+Lugia				Aeetes' Fleece guardian
 Hooh				Prometheus
 *Celebi				Random Mad River encounter?
 Rocks				Golden Apples
 Latios				Military?
 Latias				Military?
 Kyogre				Charybdis
-Groudon				Balrog
+Groudon				Balrog? See Heatran IDK
 Rayquaza			Snake Hydra
-*Jirachi			Atlas
+*Jirachi			Atlas / Cherubin guards gates of Eden
 *Deoxys				Rocket Tower? Military? Super Soldier
 Lakes				Orestes?
 Dialga				Meh
@@ -1482,6 +1482,14 @@ Arceus				Nah / Boar :/
 $$ BOAR $$
 
 
+7 Sages
+>Church / Pythia (Tells you who to speak with next, prophetically)
+>Sibylline 1 -can give you one of the books Tells you exactly what to do bluntly and plainly
+>Sibylline 2 -can give you one of the books Tells you the vibe of what to do in a poetic way
+>Sibylline 3 -can give you one of the books Random song lyrics
+>Medea - Maybe she knows where the sea is rough? Or something like that idk or helps you find the boar maybe
+>Cassandra - brought back to be Agamemnon's wife after Troy and Wedding. IDK what she does yet
+>Ariadne (Way through labyrinths)
 
 
 
