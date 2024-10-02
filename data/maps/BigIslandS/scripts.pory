@@ -23,6 +23,11 @@ script BigIslandS_OnResume {
 	if (flag(FLAG_SYS_CTRL_OBJ_DELETE) ){
 		call (BigIslandS_Script_TryRemoveHoOh)
 	}
+	if (var(VAR_TEMP_5) == 0) {
+		setobjectmovementtype (OBJ_EVENT_INFERNAPE, MOVEMENT_TYPE_WANDER_AROUND)
+		setobjectmovementtype (OBJ_EVENT_MONFERNO, MOVEMENT_TYPE_WANDER_AROUND)
+		setobjectmovementtype (OBJ_EVENT_CHIMCHAR, MOVEMENT_TYPE_WANDER_AROUND)
+	}
 	end
 }
 
@@ -211,12 +216,7 @@ script BigIslandS_Script_HoOh {
 }
 
 //Monkeys turn and face player then dissapear until map is re-loaded preventing player from interacting with monkeys. IF Phil stuff is ready then trigger Phil (assuming this is where he waits to be found by Player and Trojans)
-script BigIslandS_Script_MonkeyTrigger {
-	//setobjectmovementtype (OBJ_EVENT_INFERNAPE, MOVEMENT_TYPE_FACE_RIGHT)
-	//setobjectmovementtype (OBJ_EVENT_MONFERNO, MOVEMENT_TYPE_FACE_RIGHT)
-	//setobjectmovementtype (OBJ_EVENT_CHIMCHAR, MOVEMENT_TYPE_FACE_RIGHT)
-	//Set var so it doesn't loop
-	setvar (VAR_TEMP_5, 1)
+script BigIslandS_Script_HideMonkeys {
 	//Scene
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
@@ -245,7 +245,20 @@ script BigIslandS_Script_MonkeyTrigger {
 	removeobject (OBJ_EVENT_CHIMCHAR)
 	//unfade screen
 	fadescreen (0)
-	//release
+	//Persist Hidden Monkeys
+	setobjectmovementtype (OBJ_EVENT_INFERNAPE, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_INFERNAPE, 64, 24)
+	setobjectmovementtype (OBJ_EVENT_MONFERNO, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_MONFERNO, 65, 24)
+	setobjectmovementtype (OBJ_EVENT_CHIMCHAR, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_CHIMCHAR, 65, 24)
+	return
+}
+
+script BigIslandS_Script_MonkeyTrigger {
+	//Set var so it doesn't loop
+	setvar (VAR_TEMP_5, 1)
+	call (BigIslandS_Script_HideMonkeys)
 	end
 }
 
