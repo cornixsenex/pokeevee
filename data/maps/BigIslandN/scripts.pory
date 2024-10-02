@@ -142,8 +142,8 @@ script BigIslandN_Script_ShowArgo3 {
 	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_INVISIBLE)
 	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
 	removeobject (OBJ_EVENT_PHILOCTETES)
-	
-	end
+
+	end	
 }
 
 
@@ -656,6 +656,68 @@ script BigIslandN_Script_TestNicknamer {
 	end
 }
 
+script BigIslandN_Script_Argo {
+	lock
+	msgbox(BigIslandN_Text_Argo, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+//VAR = 2 They block acess to the ship and say something like "why'd we have to wait back here at the ship this sucks"
+//VAR = 3-6 IE Jason at Colchis Cave entrance Brothers on the beach with some islander talking about how they're imbibing and heard a story about some cult that abducts people and sacrifices them to the mountain or they go missing or something old religion
+script BigIslandN_Script_Dioscuri {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) == 2) {
+		msgbox(BigIslandN_Text_Dioscuri1, MSGBOX_DEFAULT)
+	} elif (var(VAR_ARGO_STATE) < 7 && var(VAR_ARGO_STATE) != 1) {
+		msgbox(BigIslandN_Text_Dioscuri2, MSGBOX_DEFAULT)
+	} else {
+		msgbox("ERROR: BigIslandN_Script_Dioscuri VAR_ARGO_STATE index not accounted for. Please report bugs to CornixSenex")
+	}
+	closemessage
+	release
+	end
+}
+
+script BigIslandN_Script_Orpheus {
+	lock
+	faceplayer
+	switch (var(VAR_ARGO_STATE)) {
+		case 0:
+			msgbox(BigIslandN_Text_Orpheus0, MSGBOX_DEFAULT)
+		case 1:
+			msgbox(BigIslandN_Text_Orpheus1, MSGBOX_DEFAULT)
+		case 2:
+			msgbox(BigIslandN_Text_Orpheus2, MSGBOX_DEFAULT)
+		case 3:
+			msgbox(BigIslandN_Text_Orpheus3, MSGBOX_DEFAULT)
+		case 4:
+			msgbox(BigIslandN_Text_Orpheus4, MSGBOX_DEFAULT)
+		case 5:
+			msgbox(BigIslandN_Text_Orpheus5, MSGBOX_DEFAULT)
+		case 6:
+			msgbox(BigIslandN_Text_Orpheus6, MSGBOX_DEFAULT)
+		case 7:
+			msgbox(BigIslandN_Text_Orpheus7, MSGBOX_DEFAULT)
+		default:
+			msgbox(BigIslandN_Text_Orpheus8, MSGBOX_DEFAULT)
+	}
+	closemessage
+	release
+	end
+}
+
+script BigIslandN_Script_Theseus {
+	lock
+	faceplayer
+	msgbox(BigIslandN_Text_Theseus, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
 movement BigIslandN_Movement_JasonDisembark {
 	walk_right
 	walk_down * 5
@@ -869,3 +931,54 @@ text BigIslandN_Text_ReleasedSpearow {
 	format("{STR_VAR_1} was released!\pBye Bye {STR_VAR_1}!")
 }
 
+text BigIslandN_Text_Argo {
+	format("The mighty ship of Jason:\nTHE ARGO")
+}
+
+text BigIslandN_Text_Orpheus0 {
+	format("ARGO VAR STATE is 0 you should never read this. Please report bugs to CornixSenex")
+}
+
+text BigIslandN_Text_Orpheus1 {
+	format("ARGO VAR STATE is 1 you should never read this. Please report bugs to CornixSenex")
+}
+
+text BigIslandN_Text_Orpheus2 {
+	format("On distant shores, where sea and sorrow meet, I stand, a wanderer, with heart forlorn and beat. My quest, lost to the waves' relentless roar, and with it, all my hopes, forever on the shore.")
+}
+
+text BigIslandN_Text_Orpheus3 {
+	format("The sun dips low, in fiery splendor set, amidst the waves, that gently lap and fret. The salty scent, of ocean's darkling breast, invades my senses, and my soul finds rest.")
+}
+
+text BigIslandN_Text_Orpheus4 {
+	format("The cries of gulls, that wheel and soar above, echo my sighs, and share my endless love, for thee, O Ocean, vast and wild and free, that holds my dreams, in thy dark secrecy.")
+}
+
+text BigIslandN_Text_Orpheus5 {
+	format("The breeze, that whispers secrets in my ear, of distant lands, and memories so dear, stirs up the depths, of sorrow and despair, and I, a shipwrecked soul, am left to stare.")
+}
+
+text BigIslandN_Text_Orpheus6 {
+	format("The tide, that ebbs and flows, with soothing sound, lulls me to sleep, on this forsaken ground, yet, in my dreams, I see the shores I've left, and wake to find, my heart still bereft.")
+}
+
+text BigIslandN_Text_Orpheus7 {
+	format("O, cruel fate, that brought me to this place! A poet, lost, without a friendly face. My lyre, silenced, and my voice, unheard. A castaway, with none to share my word.")
+}
+
+text BigIslandN_Text_Orpheus8 {
+	format("The ocean's vastness stretches far and wide. A limitless expanse, where I am lost inside. No hope, no rescue, comes to set me free. A prisoner, of the waves' eternity.")
+}
+
+text BigIslandN_Text_Dioscuri1 {
+	format("I can't believe we're stuck on guard duty!\NIt's so boring! How long have they been gone?")
+}
+
+text BigIslandN_Text_Dioscuri2 {
+	format("Hey {PLAYER} don't tell Jason that we snuck off.\NWe made friends with a couple islanders who tell us that people have been going missing recently and the rumour is they're being kidnapped by a secret cult and sacrificed to the volcano God.\NOf course it all sounds like nonesense to us.")
+}
+
+text BigIslandN_Text_Theseus {
+	format("This island's home to beautiful women!")
+}

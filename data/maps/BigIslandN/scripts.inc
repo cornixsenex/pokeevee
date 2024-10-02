@@ -1008,361 +1008,498 @@ BigIslandN_Script_TestNicknamer_5:
 	goto BigIslandN_Script_TestNicknamer_1
 
 
-# 659 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_JasonDisembark:
+BigIslandN_Script_Argo::
 # 660 "data/maps/BigIslandN/scripts.pory"
-	walk_right
+	lock
 # 661 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 661 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 661 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 661 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 661 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
+	msgbox BigIslandN_Text_Argo, MSGBOX_DEFAULT
+# 662 "data/maps/BigIslandN/scripts.pory"
+	closemessage
+# 663 "data/maps/BigIslandN/scripts.pory"
+	release
+	end
 
-# 664 "data/maps/BigIslandN/scripts.pory"
-MareS5_Movement_PlayerDisembark:
-# 665 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 666 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 666 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 666 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 666 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
 
-# 669 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_OrpheusDisembark:
+BigIslandN_Script_Dioscuri::
 # 670 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 670 "data/maps/BigIslandN/scripts.pory"
-	walk_right
+	lock
 # 671 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 671 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 671 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 671 "data/maps/BigIslandN/scripts.pory"
-	walk_down
+	faceplayer
 # 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 672 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-	step_end
-
-# 675 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_TheseusDisembark:
-# 676 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 676 "data/maps/BigIslandN/scripts.pory"
-	walk_right
+	compare VAR_ARGO_STATE, 2
+	goto_if_eq BigIslandN_Script_Dioscuri_2
+# 674 "data/maps/BigIslandN/scripts.pory"
+	compare VAR_ARGO_STATE, 7
+	goto_if_lt BigIslandN_Script_Dioscuri_5
+BigIslandN_Script_Dioscuri_4:
 # 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 677 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
-
+	msgbox BigIslandN_Script_Dioscuri_Text_0
+BigIslandN_Script_Dioscuri_1:
+# 679 "data/maps/BigIslandN/scripts.pory"
+	closemessage
 # 680 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_PolluxDisembark:
-# 681 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 681 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 682 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
+	release
+	end
 
+BigIslandN_Script_Dioscuri_2:
+# 673 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Dioscuri1, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Dioscuri_1
+
+BigIslandN_Script_Dioscuri_3:
+# 675 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Dioscuri2, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Dioscuri_1
+
+BigIslandN_Script_Dioscuri_5:
+# 674 "data/maps/BigIslandN/scripts.pory"
+	compare VAR_ARGO_STATE, 1
+	goto_if_ne BigIslandN_Script_Dioscuri_3
+	goto BigIslandN_Script_Dioscuri_4
+
+
+BigIslandN_Script_Orpheus::
 # 685 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_CastorDisembark:
+	lock
 # 686 "data/maps/BigIslandN/scripts.pory"
-	walk_right
+	faceplayer
 # 687 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
-
+	switch VAR_ARGO_STATE
+# 688 "data/maps/BigIslandN/scripts.pory"
+	case 0, BigIslandN_Script_Orpheus_3
 # 690 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_JasonExitArgo:
-# 691 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 691 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 691 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 691 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 691 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 691 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
-
+	case 1, BigIslandN_Script_Orpheus_4
+# 692 "data/maps/BigIslandN/scripts.pory"
+	case 2, BigIslandN_Script_Orpheus_5
 # 694 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_PhiloctetesDisembark:
-# 695 "data/maps/BigIslandN/scripts.pory"
-	walk_right
-# 695 "data/maps/BigIslandN/scripts.pory"
-	walk_right
+	case 3, BigIslandN_Script_Orpheus_6
 # 696 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 696 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 696 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 696 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 696 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
-
-# 699 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_JasonExploreA1:
+	case 4, BigIslandN_Script_Orpheus_7
+# 698 "data/maps/BigIslandN/scripts.pory"
+	case 5, BigIslandN_Script_Orpheus_8
 # 700 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 701 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
-
-# 704 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_PhiloctetesExploreA1:
+	case 6, BigIslandN_Script_Orpheus_9
+# 702 "data/maps/BigIslandN/scripts.pory"
+	case 7, BigIslandN_Script_Orpheus_10
 # 705 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
-
+	msgbox BigIslandN_Text_Orpheus8, MSGBOX_DEFAULT
+BigIslandN_Script_Orpheus_1:
+# 707 "data/maps/BigIslandN/scripts.pory"
+	closemessage
 # 708 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_JasonExploreB1:
-# 709 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 709 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 710 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
+	release
+	end
 
+BigIslandN_Script_Orpheus_3:
+# 689 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus0, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+BigIslandN_Script_Orpheus_4:
+# 691 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus1, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+BigIslandN_Script_Orpheus_5:
+# 693 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus2, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+BigIslandN_Script_Orpheus_6:
+# 695 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus3, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+BigIslandN_Script_Orpheus_7:
+# 697 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus4, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+BigIslandN_Script_Orpheus_8:
+# 699 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus5, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+BigIslandN_Script_Orpheus_9:
+# 701 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus6, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+BigIslandN_Script_Orpheus_10:
+# 703 "data/maps/BigIslandN/scripts.pory"
+	msgbox BigIslandN_Text_Orpheus7, MSGBOX_DEFAULT
+	goto BigIslandN_Script_Orpheus_1
+
+
+BigIslandN_Script_Theseus::
 # 713 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_AmbushAll:
+	lock
 # 714 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 714 "data/maps/BigIslandN/scripts.pory"
-	walk_left
+	faceplayer
 # 715 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 715 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 715 "data/maps/BigIslandN/scripts.pory"
-	walk_down
+	msgbox BigIslandN_Text_Theseus, MSGBOX_DEFAULT
 # 716 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 716 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 716 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 716 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 716 "data/maps/BigIslandN/scripts.pory"
-	walk_left
+	closemessage
 # 717 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 717 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-	step_end
+	release
+	end
 
-# 720 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_Ambusher1:
+
 # 721 "data/maps/BigIslandN/scripts.pory"
-	walk_up
+BigIslandN_Movement_JasonDisembark:
 # 722 "data/maps/BigIslandN/scripts.pory"
-	walk_left
+	walk_right
+# 723 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 723 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 723 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 723 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 723 "data/maps/BigIslandN/scripts.pory"
+	walk_down
 	step_end
 
-# 725 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_PlayerAmbush2:
 # 726 "data/maps/BigIslandN/scripts.pory"
-	walk_down
+MareS5_Movement_PlayerDisembark:
 # 727 "data/maps/BigIslandN/scripts.pory"
-	walk_left
+	walk_right
+# 728 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 728 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 728 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 728 "data/maps/BigIslandN/scripts.pory"
+	walk_down
 	step_end
 
-# 730 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_JasonAmbush2:
 # 731 "data/maps/BigIslandN/scripts.pory"
-	walk_up
+BigIslandN_Movement_OrpheusDisembark:
 # 732 "data/maps/BigIslandN/scripts.pory"
-	face_left
+	walk_right
+# 732 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 733 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 733 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 733 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 733 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 734 "data/maps/BigIslandN/scripts.pory"
+	walk_right
 	step_end
 
-# 735 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_AmbusherExit3:
-# 736 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 736 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 736 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 736 "data/maps/BigIslandN/scripts.pory"
-	walk_down
 # 737 "data/maps/BigIslandN/scripts.pory"
-	walk_left
+BigIslandN_Movement_TheseusDisembark:
 # 738 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 738 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 739 "data/maps/BigIslandN/scripts.pory"
 	walk_down
-# 738 "data/maps/BigIslandN/scripts.pory"
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 739 "data/maps/BigIslandN/scripts.pory"
 	walk_down
 	step_end
 
-# 741 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_AmbusherExit4:
 # 742 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 742 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 742 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 742 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 742 "data/maps/BigIslandN/scripts.pory"
-	walk_down
-# 742 "data/maps/BigIslandN/scripts.pory"
-	walk_down
+BigIslandN_Movement_PolluxDisembark:
 # 743 "data/maps/BigIslandN/scripts.pory"
-	walk_left
-# 744 "data/maps/BigIslandN/scripts.pory"
-	walk_down
+	walk_right
+# 743 "data/maps/BigIslandN/scripts.pory"
+	walk_right
 # 744 "data/maps/BigIslandN/scripts.pory"
 	walk_down
 	step_end
 
 # 747 "data/maps/BigIslandN/scripts.pory"
-BigIslandN_Movement_PhiloctetesAmbush2:
+BigIslandN_Movement_CastorDisembark:
 # 748 "data/maps/BigIslandN/scripts.pory"
-	face_up
+	walk_right
 # 749 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 752 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_JasonExitArgo:
+# 753 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 753 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 753 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 753 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 753 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 753 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 756 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_PhiloctetesDisembark:
+# 757 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 757 "data/maps/BigIslandN/scripts.pory"
+	walk_right
+# 758 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 758 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 758 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 758 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 758 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 761 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_JasonExploreA1:
+# 762 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 763 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 766 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_PhiloctetesExploreA1:
+# 767 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 770 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_JasonExploreB1:
+# 771 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 771 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 772 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 775 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_AmbushAll:
+# 776 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 776 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 777 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 777 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 777 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 778 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 778 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 778 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 778 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 778 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 779 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 779 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 782 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_Ambusher1:
+# 783 "data/maps/BigIslandN/scripts.pory"
+	walk_up
+# 784 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+	step_end
+
+# 787 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_PlayerAmbush2:
+# 788 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 789 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+	step_end
+
+# 792 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_JasonAmbush2:
+# 793 "data/maps/BigIslandN/scripts.pory"
+	walk_up
+# 794 "data/maps/BigIslandN/scripts.pory"
+	face_left
+	step_end
+
+# 797 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_AmbusherExit3:
+# 798 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 798 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 798 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 798 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 799 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 800 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 800 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 803 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_AmbusherExit4:
+# 804 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 804 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 804 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 804 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 804 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 804 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 805 "data/maps/BigIslandN/scripts.pory"
+	walk_left
+# 806 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+# 806 "data/maps/BigIslandN/scripts.pory"
+	walk_down
+	step_end
+
+# 809 "data/maps/BigIslandN/scripts.pory"
+BigIslandN_Movement_PhiloctetesAmbush2:
+# 810 "data/maps/BigIslandN/scripts.pory"
+	face_up
+# 811 "data/maps/BigIslandN/scripts.pory"
 	face_down
-# 750 "data/maps/BigIslandN/scripts.pory"
+# 812 "data/maps/BigIslandN/scripts.pory"
 	face_right
 	step_end
 
-# 753 "data/maps/BigIslandN/scripts.pory"
+# 815 "data/maps/BigIslandN/scripts.pory"
 BigIslandN_Movement_AmbushPhiloctetesExit:
-# 754 "data/maps/BigIslandN/scripts.pory"
+# 816 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 754 "data/maps/BigIslandN/scripts.pory"
+# 816 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 754 "data/maps/BigIslandN/scripts.pory"
+# 816 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 755 "data/maps/BigIslandN/scripts.pory"
+# 817 "data/maps/BigIslandN/scripts.pory"
 	walk_right
-# 755 "data/maps/BigIslandN/scripts.pory"
+# 817 "data/maps/BigIslandN/scripts.pory"
 	walk_right
-# 755 "data/maps/BigIslandN/scripts.pory"
+# 817 "data/maps/BigIslandN/scripts.pory"
 	walk_right
-# 755 "data/maps/BigIslandN/scripts.pory"
+# 817 "data/maps/BigIslandN/scripts.pory"
 	walk_right
-# 756 "data/maps/BigIslandN/scripts.pory"
+# 818 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 756 "data/maps/BigIslandN/scripts.pory"
+# 818 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 756 "data/maps/BigIslandN/scripts.pory"
+# 818 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 756 "data/maps/BigIslandN/scripts.pory"
+# 818 "data/maps/BigIslandN/scripts.pory"
 	walk_up
 	step_end
 
-# 759 "data/maps/BigIslandN/scripts.pory"
+# 821 "data/maps/BigIslandN/scripts.pory"
 BigIslandN_Movement_JasonSetupFollowAmbush:
-# 760 "data/maps/BigIslandN/scripts.pory"
+# 822 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 761 "data/maps/BigIslandN/scripts.pory"
+# 823 "data/maps/BigIslandN/scripts.pory"
 	walk_down
 	step_end
 
-# 764 "data/maps/BigIslandN/scripts.pory"
+# 826 "data/maps/BigIslandN/scripts.pory"
 BigIslandN_Movement_JasonFollowAmbush:
-# 765 "data/maps/BigIslandN/scripts.pory"
+# 827 "data/maps/BigIslandN/scripts.pory"
 	walk_down
-# 765 "data/maps/BigIslandN/scripts.pory"
+# 827 "data/maps/BigIslandN/scripts.pory"
 	walk_down
-# 765 "data/maps/BigIslandN/scripts.pory"
+# 827 "data/maps/BigIslandN/scripts.pory"
 	walk_down
-# 765 "data/maps/BigIslandN/scripts.pory"
+# 827 "data/maps/BigIslandN/scripts.pory"
 	walk_down
-# 766 "data/maps/BigIslandN/scripts.pory"
+# 828 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 766 "data/maps/BigIslandN/scripts.pory"
+# 828 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 766 "data/maps/BigIslandN/scripts.pory"
+# 828 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 767 "data/maps/BigIslandN/scripts.pory"
+# 829 "data/maps/BigIslandN/scripts.pory"
 	walk_down
-# 768 "data/maps/BigIslandN/scripts.pory"
+# 830 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 768 "data/maps/BigIslandN/scripts.pory"
+# 830 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 768 "data/maps/BigIslandN/scripts.pory"
+# 830 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 768 "data/maps/BigIslandN/scripts.pory"
+# 830 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 768 "data/maps/BigIslandN/scripts.pory"
+# 830 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 768 "data/maps/BigIslandN/scripts.pory"
+# 830 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 768 "data/maps/BigIslandN/scripts.pory"
+# 830 "data/maps/BigIslandN/scripts.pory"
 	walk_left
-# 769 "data/maps/BigIslandN/scripts.pory"
+# 831 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 769 "data/maps/BigIslandN/scripts.pory"
+# 831 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 769 "data/maps/BigIslandN/scripts.pory"
+# 831 "data/maps/BigIslandN/scripts.pory"
 	walk_up
 	step_end
 
-# 772 "data/maps/BigIslandN/scripts.pory"
+# 834 "data/maps/BigIslandN/scripts.pory"
 BigIslandN_Movement_JasonApproachColchisCave:
-# 773 "data/maps/BigIslandN/scripts.pory"
+# 835 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 773 "data/maps/BigIslandN/scripts.pory"
+# 835 "data/maps/BigIslandN/scripts.pory"
 	walk_up
-# 774 "data/maps/BigIslandN/scripts.pory"
+# 836 "data/maps/BigIslandN/scripts.pory"
 	walk_right
-# 775 "data/maps/BigIslandN/scripts.pory"
+# 837 "data/maps/BigIslandN/scripts.pory"
 	face_up
 	step_end
 
@@ -1382,94 +1519,98 @@ BigIslandN_Script_TestNicknamer_Text_1:
 # 650 "data/maps/BigIslandN/scripts.pory"
 	.string "CANT NAME EGG$"
 
+BigIslandN_Script_Dioscuri_Text_0:
+# 677 "data/maps/BigIslandN/scripts.pory"
+	.string "ERROR: BigIslandN_Script_Dioscuri VAR_ARGO_STATE index not accounted for. Please report bugs to CornixSenex$"
+
 BigIslandN_Text_ArrivedAtColchis1::
-# 779 "data/maps/BigIslandN/scripts.pory"
+# 841 "data/maps/BigIslandN/scripts.pory"
 	.string "We've landed on the north side of the\n"
 	.string "big island we call Ignis. According to\l"
 	.string "this map Colchis is located within a\l"
 	.string "cave on the west side of the island.$"
 
 BigIslandN_Text_ArrivedAtColchis2::
-# 783 "data/maps/BigIslandN/scripts.pory"
+# 845 "data/maps/BigIslandN/scripts.pory"
 	.string "Orpheus, search for food and fresh\n"
 	.string "water.$"
 
 BigIslandN_Text_ArrivedAtColchis3::
-# 787 "data/maps/BigIslandN/scripts.pory"
+# 849 "data/maps/BigIslandN/scripts.pory"
 	.string "And Theseus inquire with the town\n"
 	.string "whether the locals will give us shelter\l"
 	.string "and open their markets to Argonauts.$"
 
 BigIslandN_Text_ArrivedAtColchis4::
-# 791 "data/maps/BigIslandN/scripts.pory"
+# 853 "data/maps/BigIslandN/scripts.pory"
 	.string "Castor and Pollux you will guard the\n"
 	.string "ship while {PLAYER} and I and\l"
 	.string "Philoctetes go investigate the rumored\l"
 	.string "Colchis cave.$"
 
 BigIslandN_Text_ArrivedAtColchis5::
-# 795 "data/maps/BigIslandN/scripts.pory"
+# 857 "data/maps/BigIslandN/scripts.pory"
 	.string "Meet Philoctetes and I in the woods\n"
 	.string "when you're ready to find the Colchis\l"
 	.string "cave.$"
 
 BigIslandN_Text_Philoctetes::
-# 799 "data/maps/BigIslandN/scripts.pory"
+# 861 "data/maps/BigIslandN/scripts.pory"
 	.string "We've finally arrived on the island!\n"
 	.string "Speak to Jason and let's go find\l"
 	.string "Colchis.$"
 
 BigIslandN_Text_Jason::
-# 803 "data/maps/BigIslandN/scripts.pory"
+# 865 "data/maps/BigIslandN/scripts.pory"
 	.string "Let us set off at once to find Colchis.$"
 
 BigIslandN_Text_Ambush::
-# 807 "data/maps/BigIslandN/scripts.pory"
+# 869 "data/maps/BigIslandN/scripts.pory"
 	.string "On guard friends! Something wicked\n"
 	.string "heads our way.$"
 
 BigIslandN_Text_Ambush2::
-# 811 "data/maps/BigIslandN/scripts.pory"
+# 873 "data/maps/BigIslandN/scripts.pory"
 	.string "To arms! Defend the party! Now recall\n"
 	.string "the sacred oaths you swore. Now to\l"
 	.string "battle!$"
 
 BigIslandN_Text_ColchisGrunt1Pre::
-# 815 "data/maps/BigIslandN/scripts.pory"
+# 877 "data/maps/BigIslandN/scripts.pory"
 	.string "Illkay ethay invadersay anday\n"
 	.string "otectpray areeppmay$"
 
 BigIslandN_Text_ColchisGrunt1Lost::
-# 819 "data/maps/BigIslandN/scripts.pory"
+# 881 "data/maps/BigIslandN/scripts.pory"
 	.string "Ymay ifelay isay orfeitfay. Iay eavelay\n"
 	.string "inay efeatday$"
 
 BigIslandN_Text_ColchisGrunt1Post::
-# 823 "data/maps/BigIslandN/scripts.pory"
+# 885 "data/maps/BigIslandN/scripts.pory"
 	.string "Eway eednay otay arnway Aeetesay ofay\n"
 	.string "isthat otplay otay ealstay Areepmay.\l"
 	.string "Urryhay ackbay otay ethay avecay$"
 
 BigIslandN_Text_PhiloctetesAbducted::
-# 827 "data/maps/BigIslandN/scripts.pory"
+# 889 "data/maps/BigIslandN/scripts.pory"
 	.string "Please help me friends! I'm lost! They're\n"
 	.string "taking me! Assemble Argonauts! Jason!\l"
 	.string "Please Help!$"
 
 BigIslandN_Text_JasonLeaveHim::
-# 831 "data/maps/BigIslandN/scripts.pory"
+# 893 "data/maps/BigIslandN/scripts.pory"
 	.string "Leave him. He swore an oath that he\n"
 	.string "would die in service of our quest to\l"
 	.string "find Mareep. We must find the location\l"
 	.string "of Colchis.$"
 
 BigIslandN_Text_JasonPostAmbush::
-# 835 "data/maps/BigIslandN/scripts.pory"
+# 897 "data/maps/BigIslandN/scripts.pory"
 	.string "Well done your bravery has saved our\n"
 	.string "quest.$"
 
 BigIslandN_Text_CultistsEnterCave::
-# 840 "data/maps/BigIslandN/scripts.pory"
+# 902 "data/maps/BigIslandN/scripts.pory"
 	.string "Uicklyquay! Urryhay! Eway ustmay\n"
 	.string "arnway Aeetesay atthay uffiansray\l"
 	.string "areay erehay otay ealstay Areepmay.\l"
@@ -1477,37 +1618,133 @@ BigIslandN_Text_CultistsEnterCave::
 	.string "ehindbay ouyay.$"
 
 BigIslandN_Text_OpenColchisCave1::
-# 844 "data/maps/BigIslandN/scripts.pory"
+# 906 "data/maps/BigIslandN/scripts.pory"
 	.string "This must be where Colchis Cave is\n"
 	.string "hidden. The only question now is how do\l"
 	.string "we open the secret door...$"
 
 BigIslandN_Text_OpenColchisCave2::
-# 848 "data/maps/BigIslandN/scripts.pory"
+# 910 "data/maps/BigIslandN/scripts.pory"
 	.string "OPEN SAYS ME!$"
 
 BigIslandN_Text_OpenColchisCave3::
-# 852 "data/maps/BigIslandN/scripts.pory"
+# 914 "data/maps/BigIslandN/scripts.pory"
 	.string "That didn't work, but what else could we\n"
 	.string "try...$"
 
 BigIslandN_Text_ReleaseSpearow::
-# 856 "data/maps/BigIslandN/scripts.pory"
+# 918 "data/maps/BigIslandN/scripts.pory"
 	.string "Will you release SPEAROW?$"
 
 BigIslandN_Text_DeclineReleaseSpearow::
-# 860 "data/maps/BigIslandN/scripts.pory"
+# 922 "data/maps/BigIslandN/scripts.pory"
 	.string "Best not to release SPEAROW here and\n"
 	.string "now.$"
 
 BigIslandN_Text_OpenColchisCave4::
-# 864 "data/maps/BigIslandN/scripts.pory"
+# 926 "data/maps/BigIslandN/scripts.pory"
 	.string "My goodness lad! What kind of magic is\n"
 	.string "this where SPEAROW flies and cave doors\l"
 	.string "open? Let's not waste any time. Now\l"
 	.string "follow me!$"
 
 BigIslandN_Text_ReleasedSpearow::
-# 868 "data/maps/BigIslandN/scripts.pory"
+# 930 "data/maps/BigIslandN/scripts.pory"
 	.string "{STR_VAR_1} was released!\p"
 	.string "Bye Bye {STR_VAR_1}!$"
+
+BigIslandN_Text_Argo::
+# 934 "data/maps/BigIslandN/scripts.pory"
+	.string "The mighty ship of Jason:\n"
+	.string "THE ARGO$"
+
+BigIslandN_Text_Orpheus0::
+# 938 "data/maps/BigIslandN/scripts.pory"
+	.string "ARGO VAR STATE is 0 you should never\n"
+	.string "read this. Please report bugs to\l"
+	.string "CornixSenex$"
+
+BigIslandN_Text_Orpheus1::
+# 942 "data/maps/BigIslandN/scripts.pory"
+	.string "ARGO VAR STATE is 1 you should never\n"
+	.string "read this. Please report bugs to\l"
+	.string "CornixSenex$"
+
+BigIslandN_Text_Orpheus2::
+# 946 "data/maps/BigIslandN/scripts.pory"
+	.string "On distant shores, where sea and sorrow\n"
+	.string "meet, I stand, a wanderer, with heart\l"
+	.string "forlorn and beat. My quest, lost to the\l"
+	.string "waves' relentless roar, and with it, all\l"
+	.string "my hopes, forever on the shore.$"
+
+BigIslandN_Text_Orpheus3::
+# 950 "data/maps/BigIslandN/scripts.pory"
+	.string "The sun dips low, in fiery splendor set,\n"
+	.string "amidst the waves, that gently lap and\l"
+	.string "fret. The salty scent, of ocean's\l"
+	.string "darkling breast, invades my senses, and\l"
+	.string "my soul finds rest.$"
+
+BigIslandN_Text_Orpheus4::
+# 954 "data/maps/BigIslandN/scripts.pory"
+	.string "The cries of gulls, that wheel and soar\n"
+	.string "above, echo my sighs, and share my\l"
+	.string "endless love, for thee, O Ocean, vast\l"
+	.string "and wild and free, that holds my dreams,\l"
+	.string "in thy dark secrecy.$"
+
+BigIslandN_Text_Orpheus5::
+# 958 "data/maps/BigIslandN/scripts.pory"
+	.string "The breeze, that whispers secrets in my\n"
+	.string "ear, of distant lands, and memories so\l"
+	.string "dear, stirs up the depths, of sorrow and\l"
+	.string "despair, and I, a shipwrecked soul, am\l"
+	.string "left to stare.$"
+
+BigIslandN_Text_Orpheus6::
+# 962 "data/maps/BigIslandN/scripts.pory"
+	.string "The tide, that ebbs and flows, with\n"
+	.string "soothing sound, lulls me to sleep, on\l"
+	.string "this forsaken ground, yet, in my dreams,\l"
+	.string "I see the shores I've left, and wake to\l"
+	.string "find, my heart still bereft.$"
+
+BigIslandN_Text_Orpheus7::
+# 966 "data/maps/BigIslandN/scripts.pory"
+	.string "O, cruel fate, that brought me to this\n"
+	.string "place! A poet, lost, without a friendly\l"
+	.string "face. My lyre, silenced, and my voice,\l"
+	.string "unheard. A castaway, with none to share\l"
+	.string "my word.$"
+
+BigIslandN_Text_Orpheus8::
+# 970 "data/maps/BigIslandN/scripts.pory"
+	.string "The ocean's vastness stretches far and\n"
+	.string "wide. A limitless expanse, where I am\l"
+	.string "lost inside. No hope, no rescue, comes\l"
+	.string "to set me free. A prisoner, of the waves'\l"
+	.string "eternity.$"
+
+BigIslandN_Text_Dioscuri1::
+# 974 "data/maps/BigIslandN/scripts.pory"
+	.string "I can't believe we're stuck on guard\n"
+	.string "duty!\l"
+	.string "It's so boring! How long have they been\l"
+	.string "gone?$"
+
+BigIslandN_Text_Dioscuri2::
+# 978 "data/maps/BigIslandN/scripts.pory"
+	.string "Hey {PLAYER} don't tell Jason that we\n"
+	.string "snuck off.\l"
+	.string "We made friends with a couple islanders\l"
+	.string "who tell us that people have been going\l"
+	.string "missing recently and the rumour is\l"
+	.string "they're being kidnapped by a secret\l"
+	.string "cult and sacrificed to the volcano God.\l"
+	.string "Of course it all sounds like nonesense\l"
+	.string "to us.$"
+
+BigIslandN_Text_Theseus::
+# 982 "data/maps/BigIslandN/scripts.pory"
+	.string "This island's home to beautiful women!$"
