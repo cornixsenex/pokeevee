@@ -98,8 +98,8 @@ script CampLodge_EventScript_Laertes {
 		trainerbattle_no_intro(TRAINER_LAERTES, CampLodge_Text_LaertesLost)
 		msgbox (CampLodge_Text_LaertesPost)
 		closemessage
-		giveitem (ITEM_HM06)
-		msgbox (CampLodge_Text_ExplainRockSmash)
+		giveitem (ITEM_BIG_HAMMER)
+		msgbox (CampLodge_Text_ExplainBigHammer)
 		closemessage
 	} else {
 		msgbox (CampLodge_Text_Laertes)
@@ -163,11 +163,11 @@ text CampLodge_Text_AntikleiaLost {
 }
 
 text CampLodge_Text_AntikleiaPost {
-	format("Accept this gift and my message of love. Women may not beat men in strength at arms but armies fight and die before our breasts. To tame the world indeed you need their strength but theirs is nothing without our support.")
+	format("Accept this hug and my message of love. Women may not beat men in strength at arms but armies fight and die before our breasts. To tame the world indeed you need their strength but theirs is nothing without our support.")
 }
 
 text CampLodge_Text_Antikleia {
-	format("You have the wisdom, and the strength at heart to smash every stone that blocks your path but without the power taught by our men you'll find your Pokemon will cannot break through.")
+	format("You have the wisdom, and the strength at heart to smash every stone that blocks your path but without the technique taught by our men you'll find that will alone cannot break through.")
 }
 
 text CampLodge_Text_LaertesIntro {
@@ -186,10 +186,14 @@ text CampLodge_Text_ExplainRockSmash {
 	format("This Hidden Move contains the move Rock Smash. You can use it to break rocks in your path. Be sure to use the move responsibly and know without the girls you can't succeed.")
 }
 
+text CampLodge_Text_ExplainBigHammer {
+	format("This Big Hammer will help you in the field. You can use it to break rocks in your path.")
+}
+
 text CampLodge_Text_Laertes {
-	format("Without the knowledge and love of women you'll find your Pokemon cannot obey.")
+	format("Without the knowledge and love of women you'll find that smashing rocks becomes quite dull.")
 }
 
 text CampLodge_Text_Error {
-	format("Big TIME error")
+	format("Big TIME error - Please Report to CornixSenex")
 }

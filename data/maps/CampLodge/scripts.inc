@@ -205,9 +205,9 @@ CampLodge_EventScript_Laertes_2:
 # 100 "data/maps/CampLodge/scripts.pory"
 	closemessage
 # 101 "data/maps/CampLodge/scripts.pory"
-	giveitem ITEM_HM06
+	giveitem ITEM_BIG_HAMMER
 # 102 "data/maps/CampLodge/scripts.pory"
-	msgbox CampLodge_Text_ExplainRockSmash
+	msgbox CampLodge_Text_ExplainBigHammer
 # 103 "data/maps/CampLodge/scripts.pory"
 	closemessage
 	goto CampLodge_EventScript_Laertes_1
@@ -315,21 +315,20 @@ CampLodge_Text_AntikleiaLost::
 
 CampLodge_Text_AntikleiaPost::
 # 165 "data/maps/CampLodge/scripts.pory"
-	.string "Accept this gift and my message of\n"
-	.string "love. Women may not beat men in\l"
-	.string "strength at arms but armies fight and\l"
-	.string "die before our breasts. To tame the\l"
-	.string "world indeed you need their strength\l"
-	.string "but theirs is nothing without our\l"
-	.string "support.$"
+	.string "Accept this hug and my message of love.\n"
+	.string "Women may not beat men in strength at\l"
+	.string "arms but armies fight and die before\l"
+	.string "our breasts. To tame the world indeed\l"
+	.string "you need their strength but theirs is\l"
+	.string "nothing without our support.$"
 
 CampLodge_Text_Antikleia::
 # 169 "data/maps/CampLodge/scripts.pory"
 	.string "You have the wisdom, and the strength\n"
 	.string "at heart to smash every stone that\l"
-	.string "blocks your path but without the power\l"
-	.string "taught by our men you'll find your\l"
-	.string "Pokemon will cannot break through.$"
+	.string "blocks your path but without the\l"
+	.string "technique taught by our men you'll find\l"
+	.string "that will alone cannot break through.$"
 
 CampLodge_Text_LaertesIntro::
 # 173 "data/maps/CampLodge/scripts.pory"
@@ -357,12 +356,18 @@ CampLodge_Text_ExplainRockSmash::
 	.string "move responsibly and know without the\l"
 	.string "girls you can't succeed.$"
 
-CampLodge_Text_Laertes::
+CampLodge_Text_ExplainBigHammer::
 # 189 "data/maps/CampLodge/scripts.pory"
+	.string "This Big Hammer will help you in the\n"
+	.string "field. You can use it to break rocks in\l"
+	.string "your path.$"
+
+CampLodge_Text_Laertes::
+# 193 "data/maps/CampLodge/scripts.pory"
 	.string "Without the knowledge and love of\n"
-	.string "women you'll find your Pokemon cannot\l"
-	.string "obey.$"
+	.string "women you'll find that smashing rocks\l"
+	.string "becomes quite dull.$"
 
 CampLodge_Text_Error::
-# 193 "data/maps/CampLodge/scripts.pory"
+# 197 "data/maps/CampLodge/scripts.pory"
 	.string "Big TIME error$"
