@@ -370,4 +370,5 @@ CampLodge_Text_Laertes::
 
 CampLodge_Text_Error::
 # 197 "data/maps/CampLodge/scripts.pory"
-	.string "Big TIME error$"
+	.string "Big TIME error - Please Report to\n"
+	.string "CornixSenex$"

@@ -449,18 +449,13 @@ AutoRunEnabled:
 
 EventScript_BreakableRock::
 	lockall
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	checkitem ITEM_BIG_HAMMER
 	goto_if_eq VAR_RESULT, NO, EventScript_CantBreakRock
 	msgbox Text_WantToBreak, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
-	closemessage
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	releaseall
-	end
 
 EventScript_CantBreakRock::
 	msgbox Text_CantBreakRock, MSGBOX_DEFAULT
@@ -469,10 +464,8 @@ EventScript_CantBreakRock::
 
 Text_WantToBreak:
 	.string "This rock appears to be breakable.\n"
-	.string "Would you like use the Big Hammer?$"
+	.string "Would you like to use Big Hammer?$"
 
-Text_CantBreakRock:
-	.string "It's a rugged rock, but something\n"
-	.string "may be able to smash it.$"
+
 	
 
