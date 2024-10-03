@@ -365,52 +365,44 @@ IgnisMons_3F_Script_MedeaTriggerB::
 
 
 IgnisMons_3F_Script_Medea::
-# 254 "data/maps/IgnisMons_3F/scripts.pory"
+# 255 "data/maps/IgnisMons_3F/scripts.pory"
 	lockall
-# 256 "data/maps/IgnisMons_3F/scripts.pory"
+# 257 "data/maps/IgnisMons_3F/scripts.pory"
 	setvar VAR_ARGO_STATE, 5
-# 258 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, IgnisMons_3F_Movement_Medea_Player
-# 259 "data/maps/IgnisMons_3F/scripts.pory"
-	waitmovement 0
 # 261 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, IgnisMons_3F_Movement_ApproachMedea
+# 262 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 0
+# 264 "data/maps/IgnisMons_3F/scripts.pory"
 	compare VAR_TEMP_7, 1
 	goto_if_eq IgnisMons_3F_Script_Medea_2
 IgnisMons_3F_Script_Medea_1:
-# 266 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 267 "data/maps/IgnisMons_3F/scripts.pory"
-	waitmovement 0
 # 269 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement 15, IgnisMons_3F_Movement_Medea_Foe
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 270 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement 14, IgnisMons_3F_Movement_Medea_Foe
-# 271 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement 16, IgnisMons_3F_Movement_Medea_Foe
-# 272 "data/maps/IgnisMons_3F/scripts.pory"
 	waitmovement 0
+# 273 "data/maps/IgnisMons_3F/scripts.pory"
+	msgbox IgnisMons_3F_Text_Medea, MSGBOX_DEFAULT
 # 274 "data/maps/IgnisMons_3F/scripts.pory"
-	msgbox IgnisMons_3F_Text_MedeaPre, MSGBOX_DEFAULT
-# 275 "data/maps/IgnisMons_3F/scripts.pory"
 	closemessage
+# 276 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 15, IgnisMons_3F_Movement_PhilApproach
 # 277 "data/maps/IgnisMons_3F/scripts.pory"
-	trainerbattle_two_trainers TRAINER_PHILOCTETES, IgnisMons_3F_Text_PhiloctetesLost, TRAINER_MEDEA, IgnisMons_3F_Text_MedeaLost
+	applymovement 14, IgnisMons_3F_Movement_MedeaExit
+# 278 "data/maps/IgnisMons_3F/scripts.pory"
+	applymovement 16, IgnisMons_3F_Movement_HypnoExit
 # 279 "data/maps/IgnisMons_3F/scripts.pory"
-	msgbox IgnisMons_3F_Text_MedeaPost, MSGBOX_DEFAULT
+	waitmovement 15
 # 280 "data/maps/IgnisMons_3F/scripts.pory"
-	closemessage
-# 282 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement 14, IgnisMons_3F_Movement_Medea_Exit
-# 283 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement 16, IgnisMons_3F_Movement_Medea_Exit
-# 284 "data/maps/IgnisMons_3F/scripts.pory"
-	waitmovement 0
-# 286 "data/maps/IgnisMons_3F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+# 281 "data/maps/IgnisMons_3F/scripts.pory"
+	waitmovement 14
+# 284 "data/maps/IgnisMons_3F/scripts.pory"
+	msgbox IgnisMons_3F_Text_PhilPre, MSGBOX_DEFAULT
+# 285 "data/maps/IgnisMons_3F/scripts.pory"
+	closemessage
 # 287 "data/maps/IgnisMons_3F/scripts.pory"
-	applymovement 15, IgnisMons_3F_Movement_Phil
-# 288 "data/maps/IgnisMons_3F/scripts.pory"
-	waitmovement 0
+	trainerbattle_no_intro TRAINER_PHILOCTETES, IgnisMons_3F_Text_PhilLost
 # 290 "data/maps/IgnisMons_3F/scripts.pory"
 	msgbox IgnisMons_3F_Text_PhilPost, MSGBOX_DEFAULT
 # 291 "data/maps/IgnisMons_3F/scripts.pory"
@@ -419,94 +411,124 @@ IgnisMons_3F_Script_Medea_1:
 	applymovement 15, IgnisMons_3F_Movement_PhilExit
 # 294 "data/maps/IgnisMons_3F/scripts.pory"
 	waitmovement 0
-# 296 "data/maps/IgnisMons_3F/scripts.pory"
+# 297 "data/maps/IgnisMons_3F/scripts.pory"
 	call IgnisMons_3F_Script_HideMedea
 # 298 "data/maps/IgnisMons_3F/scripts.pory"
 	releaseall
 	end
 
 IgnisMons_3F_Script_Medea_2:
-# 262 "data/maps/IgnisMons_3F/scripts.pory"
+# 265 "data/maps/IgnisMons_3F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 263 "data/maps/IgnisMons_3F/scripts.pory"
+# 266 "data/maps/IgnisMons_3F/scripts.pory"
 	waitmovement 0
 	goto IgnisMons_3F_Script_Medea_1
 
 
-# 304 "data/maps/IgnisMons_3F/scripts.pory"
-IgnisMons_3F_Movement_Medea_Player:
-# 305 "data/maps/IgnisMons_3F/scripts.pory"
+# 327 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_ApproachMedea:
+# 328 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_left
-# 305 "data/maps/IgnisMons_3F/scripts.pory"
+# 328 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_left
-# 305 "data/maps/IgnisMons_3F/scripts.pory"
+# 328 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_left
-# 305 "data/maps/IgnisMons_3F/scripts.pory"
+# 328 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_left
-# 305 "data/maps/IgnisMons_3F/scripts.pory"
+# 328 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_left
-# 306 "data/maps/IgnisMons_3F/scripts.pory"
-	face_down
+# 329 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 329 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
 	step_end
 
-# 309 "data/maps/IgnisMons_3F/scripts.pory"
+# 332 "data/maps/IgnisMons_3F/scripts.pory"
 IgnisMons_3F_Movement_Medea_Foe:
-# 310 "data/maps/IgnisMons_3F/scripts.pory"
+# 333 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_up
-# 310 "data/maps/IgnisMons_3F/scripts.pory"
+# 333 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_up
-# 310 "data/maps/IgnisMons_3F/scripts.pory"
+# 333 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_up
 	step_end
 
-# 313 "data/maps/IgnisMons_3F/scripts.pory"
-IgnisMons_3F_Movement_Medea_Exit:
-# 314 "data/maps/IgnisMons_3F/scripts.pory"
+# 336 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_MedeaExit:
+# 337 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_right
+# 338 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_down
-# 314 "data/maps/IgnisMons_3F/scripts.pory"
+# 338 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_down
-# 314 "data/maps/IgnisMons_3F/scripts.pory"
+# 338 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_down
-# 314 "data/maps/IgnisMons_3F/scripts.pory"
+# 338 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_down
-# 314 "data/maps/IgnisMons_3F/scripts.pory"
+# 338 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_down
 	step_end
 
-# 317 "data/maps/IgnisMons_3F/scripts.pory"
+# 341 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_HypnoExit:
+# 342 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 342 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 342 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 342 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+# 342 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_down
+	step_end
+
+# 345 "data/maps/IgnisMons_3F/scripts.pory"
 IgnisMons_3F_Movement_Phil:
-# 318 "data/maps/IgnisMons_3F/scripts.pory"
+# 346 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_up
-# 319 "data/maps/IgnisMons_3F/scripts.pory"
+# 347 "data/maps/IgnisMons_3F/scripts.pory"
 	face_right
 	step_end
 
-# 322 "data/maps/IgnisMons_3F/scripts.pory"
-IgnisMons_3F_Movement_PhilExit:
-# 323 "data/maps/IgnisMons_3F/scripts.pory"
+# 350 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_PhilApproach:
+# 351 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_up
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 351 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+# 352 "data/maps/IgnisMons_3F/scripts.pory"
+	face_right
+	step_end
+
+# 355 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Movement_PhilExit:
+# 356 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+# 356 "data/maps/IgnisMons_3F/scripts.pory"
+	walk_up
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
-# 324 "data/maps/IgnisMons_3F/scripts.pory"
+# 357 "data/maps/IgnisMons_3F/scripts.pory"
 	walk_right
 	step_end
 
 IgnisMons_3F_Text_MedeaPre::
-# 331 "data/maps/IgnisMons_3F/scripts.pory"
+# 365 "data/maps/IgnisMons_3F/scripts.pory"
 	.string "Impressiveay. Erethay areay ewfay\n"
 	.string "owhay omecay isthay arfay utbay ouyay\l"
 	.string "illway otnay escapeay ouryay esentpray\l"
@@ -514,16 +536,22 @@ IgnisMons_3F_Text_MedeaPre::
 	.string "asay ymay aveslay. Ogay Ypnohay!$"
 
 IgnisMons_3F_Text_MedeaLost::
-# 336 "data/maps/IgnisMons_3F/scripts.pory"
+# 370 "data/maps/IgnisMons_3F/scripts.pory"
 	.string "Ypnohay! Owhay ouldcay ouyay ailfay\n"
 	.string "emay?$"
 
-IgnisMons_3F_Text_PhiloctetesLost::
-# 340 "data/maps/IgnisMons_3F/scripts.pory"
+IgnisMons_3F_Text_PhilPre::
+# 376 "data/maps/IgnisMons_3F/scripts.pory"
+	.string "Ownay ouyay... Get back... illway aypay...\n"
+	.string "I do not wish... orfay oulingfay... to\l"
+	.string "fight ... isthay...lwith you... empltay...$"
+
+IgnisMons_3F_Text_PhilLost::
+# 380 "data/maps/IgnisMons_3F/scripts.pory"
 	.string "Where am I?$"
 
 IgnisMons_3F_Text_MedeaPost::
-# 347 "data/maps/IgnisMons_3F/scripts.pory"
+# 387 "data/maps/IgnisMons_3F/scripts.pory"
 	.string "Indeeday ouyay areay owerfulpay.\n"
 	.string "Ethay oddessgay ivesgay onorhay otay\l"
 	.string "osethay owhay efeatday erhay ellspay.\l"
@@ -531,7 +559,7 @@ IgnisMons_3F_Text_MedeaPost::
 	.string "omecay orfay ouray eeceflay.$"
 
 IgnisMons_3F_Text_PhilPost::
-# 352 "data/maps/IgnisMons_3F/scripts.pory"
+# 392 "data/maps/IgnisMons_3F/scripts.pory"
 	.string "How could this happen? Great\n"
 	.string "Philoctetes defeated by this boy,\l"
 	.string "abandonded by the Argonauts and\l"
@@ -544,3 +572,21 @@ IgnisMons_3F_Text_PhilPost::
 	.string "disgrace to my family, and this earth.\l"
 	.string "I'll never walk among men after this. I'll\l"
 	.string "flee into the woods. Do not seek me.$"
+
+IgnisMons_3F_Text_Medea::
+# 406 "data/maps/IgnisMons_3F/scripts.pory"
+	.string "Ipmressiveay, erethat areay ewfay\n"
+	.string "owhay omecay isthay arfay utbay\l"
+	.string "entryay otay ethay acredsay allshay,\l"
+	.string "underay ictstray enaltypay ofay\l"
+	.string "eathday, isay orbiddenfay. Itay\l"
+	.string "ouldway ebay ightray otay itesmay\l"
+	.string "ouyay erewhay ouyay andstay anday\l"
+	.string "akemay ouyay ymay uppetpay, ikelay\l"
+	.string "ouryay iendfray erehay, etyay Ecatehay\l"
+	.string "onglystray ullspay ackbay ymay andhay.\l"
+	.string "Iay ensesay atthay Iay amay eedenay\l"
+	.string "achbay atay omehay. Isthay esselvay\l"
+	.string "onay ongerlay ervessay ymay urposepay.\l"
+	.string "Estroyday eachotheray! Iay ustmay\l"
+	.string "ebay offay.$"

@@ -250,12 +250,15 @@ script IgnisMons_3F_Script_MedeaTriggerB {
 	call (IgnisMons_3F_Script_Medea)
 }
 
+
 script IgnisMons_3F_Script_Medea {
 	lockall
 
 	setvar (VAR_ARGO_STATE, 5)
 
-	applymovement (OBJ_EVENT_ID_PLAYER, IgnisMons_3F_Movement_Medea_Player)
+	//Move Player into place
+
+	applymovement (OBJ_EVENT_ID_PLAYER, IgnisMons_3F_Movement_ApproachMedea)
 	waitmovement (0)
 
 	if (var(VAR_TEMP_7) == 1) {
@@ -266,51 +269,76 @@ script IgnisMons_3F_Script_Medea {
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 
-	applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_Medea_Foe)
-	applymovement (OBJ_EVENT_MEDEA, IgnisMons_3F_Movement_Medea_Foe)
-	applymovement (OBJ_EVENT_HYPNO, IgnisMons_3F_Movement_Medea_Foe)
-	waitmovement (0)
-
-	msgbox (IgnisMons_3F_Text_MedeaPre, MSGBOX_DEFAULT)
+	//Medea Speech
+	msgbox (IgnisMons_3F_Text_Medea, MSGBOX_DEFAULT)
 	closemessage
 
-	trainerbattle_two_trainers (TRAINER_PHILOCTETES, IgnisMons_3F_Text_PhiloctetesLost, TRAINER_MEDEA, IgnisMons_3F_Text_MedeaLost)
-
-	msgbox (IgnisMons_3F_Text_MedeaPost, MSGBOX_DEFAULT)
-	closemessage
-
-	applymovement (OBJ_EVENT_MEDEA, IgnisMons_3F_Movement_Medea_Exit)
-	applymovement (OBJ_EVENT_HYPNO, IgnisMons_3F_Movement_Medea_Exit)
-	waitmovement (0)
-
+	applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_PhilApproach)
+	applymovement (OBJ_EVENT_MEDEA, IgnisMons_3F_Movement_MedeaExit)
+	applymovement (OBJ_EVENT_HYPNO, IgnisMons_3F_Movement_HypnoExit)
+	waitmovement (OBJ_EVENT_PHIL)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
-	applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_Phil)
-	waitmovement (0)
+	waitmovement (OBJ_EVENT_MEDEA)
 
+	//Phil battle
+	msgbox  (IgnisMons_3F_Text_PhilPre, MSGBOX_DEFAULT)
+	closemessage
+
+	trainerbattle_no_intro (TRAINER_PHILOCTETES, IgnisMons_3F_Text_PhilLost)
+
+	//Post Battle
 	msgbox (IgnisMons_3F_Text_PhilPost, MSGBOX_DEFAULT)
 	closemessage
 
 	applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_PhilExit)
 	waitmovement (0)
-
-	call (IgnisMons_3F_Script_HideMedea)
-
-	releaseall
 	
+	//Persist hidden Medea and Phil and Hypno
+	call (IgnisMons_3F_Script_HideMedea)
+	releaseall
 	end
+
+
+
+	//applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_Medea_Foe)
+	//applymovement (OBJ_EVENT_MEDEA, IgnisMons_3F_Movement_Medea_Foe)
+	//applymovement (OBJ_EVENT_HYPNO, IgnisMons_3F_Movement_Medea_Foe)
+	//waitmovement (0)
+
+	//msgbox (IgnisMons_3F_Text_MedeaPre, MSGBOX_DEFAULT)
+	//closemessage
+
+	//trainerbattle_two_trainers (TRAINER_PHILOCTETES, IgnisMons_3F_Text_PhiloctetesLost, TRAINER_MEDEA, IgnisMons_3F_Text_MedeaLost)
+
+	//msgbox (IgnisMons_3F_Text_MedeaPost, MSGBOX_DEFAULT)
+	//closemessage
+
+	//applymovement (OBJ_EVENT_MEDEA, IgnisMons_3F_Movement_Medea_Exit)
+	//applymovement (OBJ_EVENT_HYPNO, IgnisMons_3F_Movement_Medea_Exit)
+	//waitmovement (0)
+
+	//applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	//applymovement (OBJ_EVENT_PHIL, IgnisMons_3F_Movement_Phil)
+	//waitmovement (0)
+
 }
 
 
-movement IgnisMons_3F_Movement_Medea_Player {
+movement IgnisMons_3F_Movement_ApproachMedea {
 	walk_left * 5
-	face_down
+	walk_down * 2
 }
 
 movement IgnisMons_3F_Movement_Medea_Foe {
 	walk_up * 3
 }
 
-movement IgnisMons_3F_Movement_Medea_Exit {
+movement IgnisMons_3F_Movement_MedeaExit {
+	walk_right
+	walk_down * 5
+}
+
+movement IgnisMons_3F_Movement_HypnoExit {
 	walk_down * 5
 }
 
@@ -319,10 +347,16 @@ movement IgnisMons_3F_Movement_Phil {
 	face_right
 }
 
+movement IgnisMons_3F_Movement_PhilApproach {
+	walk_up * 2
+	face_right
+}
+
 movement IgnisMons_3F_Movement_PhilExit {
-	walk_up
+	walk_up * 2
 	walk_right * 9
 }
+
 
 
 //Impressive. There are few who come this far
@@ -337,7 +371,13 @@ text IgnisMons_3F_Text_MedeaLost {
 	format("Ypnohay! Owhay ouldcay ouyay ailfay emay?")
 }
 
-text IgnisMons_3F_Text_PhiloctetesLost {
+//Get back! I do not wish to fight with you.
+//Now you will pay for fouling this temple
+text IgnisMons_3F_Text_PhilPre {
+	format("Ownay ouyay... Get back... illway aypay... I do not wish... orfay oulingfay... to fight ... isthay...lwith you... empltay...")
+}
+
+text IgnisMons_3F_Text_PhilLost {
 	format("Where am I?")
 }
 
@@ -351,5 +391,19 @@ text IgnisMons_3F_Text_MedeaPost {
 //Disbelief. Shame at defeat. Shame to face his friends after being defeated and turned against you. Traitor. Vows to live / hide in the woods. Do not come looking for me.
 text IgnisMons_3F_Text_PhilPost {
 	format("How could this happen? Great Philoctetes defeated by this boy, abandonded by the Argonauts and enslaved by a witch? Tell Jason and the other Argonauts that I was not the one who broke my oath, instead they nullified our fellowship when they left me for dead...Yet I was beat. I'm nothing more than a betrayed traitor, a disgrace to my family, and this earth. I'll never walk among men after this. I'll flee into the woods. Do not seek me.")
+}
+//Impressive. There are few who come this far
+//but entry to the sacred halls under
+//strict penalty of death is forbidden
+//It would be right to smite where you stand
+//and make you my puppet like your friend here
+//Yet Hecate strongly pulls back my hand
+//I sense that I am needed back at home
+//This vessel no longer serves my purpose
+//Destroy eachother! Forth! I must be off.
+//======
+//Impressive, there are few who come this far but entry to the sacred halls, under strict penalty of death, is forbidden. It would be right to smite you where you stand and make you my puppet, like your friend here, yet Hecate strongly pulls back my hand. I sense that I am needed back at home. This vessel no longer serves my purpose, destroy eachother! Forth! I must be off.
+text IgnisMons_3F_Text_Medea {
+	format("Ipmressiveay, erethat areay ewfay owhay omecay isthay arfay utbay entryay otay ethay acredsay allshay, underay ictstray enaltypay ofay eathday, isay orbiddenfay. Itay ouldway ebay ightray otay itesmay ouyay erewhay ouyay andstay anday akemay ouyay ymay uppetpay, ikelay ouryay iendfray erehay, etyay Ecatehay onglystray ullspay ackbay ymay andhay. Iay ensesay atthay Iay amay eedenay achbay atay omehay. Isthay esselvay onay ongerlay ervessay ymay urposepay. Estroyday eachotheray! Iay ustmay ebay offay.")
 }
 

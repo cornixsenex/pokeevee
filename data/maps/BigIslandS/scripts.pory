@@ -118,7 +118,12 @@ script BigIslandS_Script_TestGiveHammer {
 
 script BigIslandS_Script_Prometheus {
 	lock
-	msgbox (BigIslandS_Text_Prometheus1, MSGBOX_DEFAULT)
+	if (!flag(FLAG_PROMETHEUS_INTROD)) {
+		setflag (FLAG_PROMETHEUS_INTROD)
+		msgbox (BigIslandS_Text_Prometheus1, MSGBOX_DEFAULT)
+	} else {
+		msgbox (BigIslandS_Text_Prometheus1b, MSGBOX_DEFAULT)
+	}
 	closemessage
 	release
 	end
@@ -300,6 +305,10 @@ text BigIslandS_Text_IgnisGruntPost {
 
 text BigIslandS_Text_Prometheus1 {
 	format("What's this? You're not one of those savages who chained me to this rock to tortue me in retribution for my refusal to serve them as some fortune teller. No, you're just a boy. Have pity on this old poor tortured soul imprisoned on this rock and forced to serve the dark witch Medea. Alas! These wicked chains gnaw my skin raw and soon I fear the mighty bird will come to torture me again with burning breath. Young man I beg you free me from this rock and I will tell what lies in your future.")
+}
+
+text BigIslandS_Text_Prometheus1b {
+	format("Young man I beg you free me from this rock and I will tell what lies in your future.")
 }
 
 text BigIslandS_Text_Prometheus2 {
