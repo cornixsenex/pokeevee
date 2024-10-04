@@ -22,6 +22,8 @@ mapscripts BigIslandN_MapScripts {
 		//Need to ammend if you can return from Colchis before it's time to Hide Argo
 		} elif (var(VAR_ARGO_STATE) < 7 && var(VAR_ARGO_STATE) != 1) {
 			call (BigIslandN_Script_ShowArgo3)
+		} elif (var(VAR_ARGO_STATE) == 7) {
+			call (BigIslandN_Script_ShowArgo7)
 		} else {
 			call (BigIslandN_Script_HideArgo)
 		}
@@ -144,6 +146,45 @@ script BigIslandN_Script_ShowArgo3 {
 	removeobject (OBJ_EVENT_PHILOCTETES)
 
 	end	
+}
+
+script BigIslandN_Script_ShowArgo7 {
+	setobjectxyperm (OBJ_EVENT_ARGO, 80, 17)
+	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_ARGO)
+	showobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_CASTOR, 81, 18)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_CASTOR)
+	showobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_POLLUX, 82, 18)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_POLLUX)
+	showobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_ORPHEUS, 111, 14)
+	setobjectmovementtype (OBJ_EVENT_ORPHEUS, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_ORPHEUS)
+	showobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_THESEUS, 91, 26)
+	setobjectmovementtype (OBJ_EVENT_THESEUS, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_THESEUS)
+	showobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_JASON, 63, 32)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_INVISIBLE)
+	hideobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_JASON)
+
+	setobjectxyperm (OBJ_EVENT_PHILOCTETES, 62, 32)
+	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_INVISIBLE)
+	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
+	removeobject (OBJ_EVENT_PHILOCTETES)
+
+	end
 }
 
 
@@ -372,7 +413,7 @@ script BigIslandN_Script_Ambush {
 
 
 	//Defend the party
-	msgbox(BigIslandN_Text_Ambush2, MSGBOX_DEFAULT)
+	msgbox (BigIslandN_Text_Ambush2, MSGBOX_DEFAULT)
 	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, BigIslandN_Movement_PlayerAmbush2)
 	waitmovement (0)
@@ -441,7 +482,7 @@ script BigIslandN_Script_Ambush {
 	applymovement (OBJ_EVENT_AMBUSH1, BigIslandN_Movement_AmbushPhiloctetesExit)
 	applymovement (OBJ_EVENT_AMBUSH2, BigIslandN_Movement_AmbushPhiloctetesExit)
 	applymovement (OBJ_EVENT_PHILOCTETES, BigIslandN_Movement_AmbushPhiloctetesExit)
-	msgbox(format("NOOOOOOOO!"), MSGBOX_DEFAULT)
+	msgbox (format("NOOOOOOOO!"), MSGBOX_DEFAULT)
 	waitmovement (OBJ_EVENT_AMBUSH2)
 	closemessage
 
@@ -552,12 +593,12 @@ script BigIslandN_Script_JasonAtColchisCave {
 	if (!flag(FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO)) {
 		setflag (FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO)
 		faceplayer
-		msgbox(BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
+		msgbox (BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
 		closemessage
 		applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
 		waitmovement (0)
 	}
-	msgbox(BigIslandN_Text_OpenColchisCave2, MSGBOX_DEFAULT)
+	msgbox (BigIslandN_Text_OpenColchisCave2, MSGBOX_DEFAULT)
 	closemessage
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
 	if (var(VAR_RESULT) == DIR_EAST) {
@@ -566,14 +607,14 @@ script BigIslandN_Script_JasonAtColchisCave {
 		applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
 	}
 	waitmovement (0)
-	msgbox(BigIslandN_Text_OpenColchisCave3, MSGBOX_DEFAULT)
+	msgbox (BigIslandN_Text_OpenColchisCave3, MSGBOX_DEFAULT)
 	closemessage
 
 	//Ready to release Spearow
 	if (var(VAR_ARGO_STATE) == 6) {
 		specialvar (VAR_RESULT, IsSpearowInParty)
 		if (var(VAR_RESULT) == TRUE) {
-			msgbox(BigIslandN_Text_ReleaseSpearow, MSGBOX_YESNO)
+			msgbox (BigIslandN_Text_ReleaseSpearow, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				special (ChoosePartyMon)
 				waitstate
@@ -626,15 +667,11 @@ script BigIslandN_Script_EnterColchis {
 	//Exits
 	applymovement (OBJ_EVENT_JASON, Common_Movement_WalkUp)
 	waitmovement (0)
-	
-	//Remove object event (On_Resume doesn't fire until map re-loads
-	setobjectxyperm (OBJ_EVENT_JASON, 63, 32)
-	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_INVISIBLE)
-	hideobjectat (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
-	removeobject (OBJ_EVENT_JASON)
 
-	//Player follows
 	releaseall
+	call (BigIslandN_Script_ShowArgo7)
+	
+	//Player follows
 	//Story continues in next map :/
 	end
 }
@@ -658,7 +695,7 @@ script BigIslandN_Script_TestNicknamer {
 
 script BigIslandN_Script_Argo {
 	lock
-	msgbox(BigIslandN_Text_Argo, MSGBOX_DEFAULT)
+	msgbox (BigIslandN_Text_Argo, MSGBOX_DEFAULT)
 	closemessage
 	release
 	end
@@ -670,11 +707,18 @@ script BigIslandN_Script_Dioscuri {
 	lock
 	faceplayer
 	if (var(VAR_ARGO_STATE) == 2) {
-		msgbox(BigIslandN_Text_Dioscuri1, MSGBOX_DEFAULT)
+		msgbox (BigIslandN_Text_Dioscuri1, MSGBOX_DEFAULT)
 	} elif (var(VAR_ARGO_STATE) < 7 && var(VAR_ARGO_STATE) != 1) {
-		msgbox(BigIslandN_Text_Dioscuri2, MSGBOX_DEFAULT)
+		msgbox (BigIslandN_Text_Dioscuri2, MSGBOX_DEFAULT)
+	} elif (var(VAR_ARGO_STATE) == 7) {
+		if (flag(FLAG_BIGISLANDN_DIOSCURIFOUND)) {
+			clearflag (FLAG_BIGISLANDN_DIOSCURIFOUND)
+			msgbox (BigIslandN_Text_Dioscuri3, MSGBOX_DEFAULT)
+		} else {
+			msgbox (BigIslandN_Text_Dioscuri1, MSGBOX_DEFAULT)
+		}
 	} else {
-		msgbox("ERROR: BigIslandN_Script_Dioscuri VAR_ARGO_STATE index not accounted for. Please report bugs to CornixSenex")
+		msgbox (format("ERROR: BigIslandN_Script_Dioscuri VAR_ARGO_STATE index not accounted for. Please report bugs to CornixSenex"))
 	}
 	closemessage
 	release
@@ -686,23 +730,23 @@ script BigIslandN_Script_Orpheus {
 	faceplayer
 	switch (var(VAR_ARGO_STATE)) {
 		case 0:
-			msgbox(BigIslandN_Text_Orpheus0, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus0, MSGBOX_DEFAULT)
 		case 1:
-			msgbox(BigIslandN_Text_Orpheus1, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus1, MSGBOX_DEFAULT)
 		case 2:
-			msgbox(BigIslandN_Text_Orpheus2, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus2, MSGBOX_DEFAULT)
 		case 3:
-			msgbox(BigIslandN_Text_Orpheus3, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus3, MSGBOX_DEFAULT)
 		case 4:
-			msgbox(BigIslandN_Text_Orpheus4, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus4, MSGBOX_DEFAULT)
 		case 5:
-			msgbox(BigIslandN_Text_Orpheus5, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus5, MSGBOX_DEFAULT)
 		case 6:
-			msgbox(BigIslandN_Text_Orpheus6, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus6, MSGBOX_DEFAULT)
 		case 7:
-			msgbox(BigIslandN_Text_Orpheus7, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus7, MSGBOX_DEFAULT)
 		default:
-			msgbox(BigIslandN_Text_Orpheus8, MSGBOX_DEFAULT)
+			msgbox (BigIslandN_Text_Orpheus8, MSGBOX_DEFAULT)
 	}
 	closemessage
 	release
@@ -712,7 +756,7 @@ script BigIslandN_Script_Orpheus {
 script BigIslandN_Script_Theseus {
 	lock
 	faceplayer
-	msgbox(BigIslandN_Text_Theseus, MSGBOX_DEFAULT)
+	msgbox (BigIslandN_Text_Theseus, MSGBOX_DEFAULT)
 	closemessage
 	release
 	end
@@ -976,7 +1020,11 @@ text BigIslandN_Text_Dioscuri1 {
 }
 
 text BigIslandN_Text_Dioscuri2 {
-	format("Hey {PLAYER} don't tell Jason that we snuck off.\NWe made friends with a couple islanders who tell us that people have been going missing recently and the rumour is they're being kidnapped by a secret cult and sacrificed to the volcano God.\NOf course it all sounds like nonesense to us.")
+	format("We made friends with a couple islanders who tell us that people have been going missing recently and the rumour is they're being kidnapped by a secret cult and sacrificed to the volcano God.\NOf course it all sounds like nonesense to us.")
+}
+
+text BigIslandN_Text_Dioscuri3 {
+	format("Hey {PLAYER} don't tell Jason that we snuck off.")
 }
 
 text BigIslandN_Text_Theseus {

@@ -133,7 +133,7 @@ script BigIslandS_Script_BreakableRock {
 	lockall
 	checkitem (ITEM_BIG_HAMMER, 1)
 	if (var(VAR_RESULT) == TRUE) {
-		msgbox (Text_WantToSmash, MSGBOX_YESNO)
+		msgbox (Text_WantToBreak, MSGBOX_YESNO)
 		if (var(VAR_RESULT) == NO) {
 			call (EventScript_CancelSmash)
 		} else {
@@ -141,7 +141,7 @@ script BigIslandS_Script_BreakableRock {
 			call (BigIslandS_Script_HoOh)
 		}
 	} else {
-		call (EventScript_CantSmashRock)
+		call (EventScript_CantBreakRock)
 	}
 	end
 }
@@ -207,6 +207,12 @@ script BigIslandS_Script_HoOh {
 
 	msgbox (BigIslandS_Text_Prometheus3, MSGBOX_DEFAULT)
 	closemessage
+
+	giveitem (ITEM_OSTRACON)
+
+	msgbox (BigIslandS_Text_Prometheus4, MSGBOX_DEFAULT)
+	closemessage
+
 
 	//set vars and flags and be off
 	fadescreen (1)
@@ -316,7 +322,11 @@ text BigIslandS_Text_Prometheus2 {
 }
 
 text BigIslandS_Text_Prometheus3 {
-	format("My lad! You've done it! You remind me of the mighty hero Heracles. I will reward your courage with a prophesy.\NIn search of Colchis' cave a hidden path\NEluding their keen sight Shiny Mareep\NSo far away lost in shadowy night\NA SPEAROW released took off graceful flight\NRevealing secrets kept by cavern walls\NThus by the SPEAROW's flight the truth was shown\NHow Jason and his crew found paths unknown.\NI must be going now. I'm free at last to return home. May God above bless you.")
+	format("My lad! You've done it! You remind me of the mighty hero Heracles. I will reward your courage with a prophesy. Take this.")
+}
+
+text BigIslandS_Text_Prometheus4 {
+	format("You fate's carved on the Ostracon. I must be going now. I'm free at last to return home. May God above bless you.")
 }
 
 

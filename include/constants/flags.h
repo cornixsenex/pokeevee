@@ -207,10 +207,10 @@
 #define FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO  0x7E
 #define FLAG_COLCHIS_FORCED_BATTLE           0x7F
 #define FLAG_PROMETHEUS_INTROD               0x80 //Set after initial talk with Prometheus to prevent repeat exposition
+#define FLAG_BIGISLANDN_DIOSCURIFOUND        0x81 //Set after talking to Dioscuri on beach. Cleared after talk again @ boat
 
 // BREAK //
 
-#define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
 #define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
 #define FLAG_RECEIVED_DOLL_LANETTE           0x83
 #define FLAG_RECEIVED_POTION_OLDALE          0x84

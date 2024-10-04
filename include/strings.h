@@ -3157,6 +3157,10 @@ extern const u8 gText_BookVerse34[];
 extern const u8 gText_BookVerse35[];
 extern const u8 gText_BookVerse36[];
 extern const u8 gText_BookVerse37[];
+extern const u8 gText_BookVerse38[];
+
+// Ostracon
+extern const u8 gText_Ostracon[];
 
 extern const u8 gText_BasePointsResetToZero[];
 

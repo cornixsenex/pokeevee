@@ -717,7 +717,8 @@ static const u8 *const gBookVerseCollection[] =
 	gText_BookVerse34,
 	gText_BookVerse35,
 	gText_BookVerse36,
-	gText_BookVerse37
+	gText_BookVerse37,
+	gText_BookVerse38
 };
 
 //Test Book
@@ -735,6 +736,19 @@ void ItemUseOutOfBattle_TestBook(u8 taskId)
     else
     {
         DisplayItemMessageOnField(taskId, thisVerse, Task_CloseCantUseKeyItemMessage);
+    }
+}
+
+//Ostracon
+void ItemUseOutOfBattle_Ostracon(u8 taskId)
+{
+	if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_Ostracon, CloseItemMessage);
+    }
+    else
+    {
+        DisplayItemMessageOnField(taskId, gText_Ostracon, Task_CloseCantUseKeyItemMessage);
     }
 }
 

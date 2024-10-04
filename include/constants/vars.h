@@ -144,7 +144,7 @@
 																//4: Philoctetes found mad in the cave
 																//5: Philoctetes freed from Medea's spell
 																//6: After Prometheus unchained and battle (Cave ready for Spearow release)
-																//7: Cave opened; Spearow released; Setup colchis intro script
+																//7: Cave opened; Spearow released; Setup colchis intro script; Jason in Colchis 
 																//8: Colchis introd
 																//9: Colchis Forced Battle state (Jason at entrance)
 																//10: Colchis Enter Throne Room

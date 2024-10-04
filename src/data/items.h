@@ -215,6 +215,11 @@ static const u8 sBigHammerDesc[] = _(
 		"A large hammer that\n"
 		"smashes rocks with\n"
 		"a single blow");
+
+static const u8 sOstraconDesc[] = _( 
+		"A worn pottery \n"
+		"shard bearing a\n"
+		"prophecy");
 		
 
 //END KUSTOMS
@@ -14222,7 +14227,7 @@ const struct Item gItemsInfo[] =
 	
 	[ITEM_DEATH_STICK] =
 	{
-		.name = _("DEATH STICK"),
+		.name = _("Death Stick"),
 		.price = 420,
         .holdEffectParam = 255,
 		.description = sDeathStickDesc,
@@ -14238,7 +14243,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_TATTOO] =
 	{
-		.name = _("TOUGH TATTOO"),
+		.name = _("Tough Tattoo"),
         .price = 0,
         .description = sTattooDesc,
         .importance = 1,
@@ -14252,7 +14257,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_DIPLOMA] =
 	{
-		.name = _("DIPLOMA"),
+		.name = _("Diploma"),
         .price = 0,
 		.description = sDiplomaDesc,
         .importance = 1,
@@ -14266,7 +14271,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_KEG] =
 	{
-		.name = _("KEG"),
+		.name = _("Keg"),
         .price = 0,
 		.description = sKegDesc,
         .importance = 1,
@@ -14280,7 +14285,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_ANCIENT_LAMP] =
 	{
-		.name = _("ANCIENT LAMP"),
+		.name = _("Ancient Lamp"),
         .price = 0,
 		.description = sAncientLampDesc,
         .importance = 1,
@@ -14294,7 +14299,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_BOOK] =
 	{
-		.name = _("TEST BOOK"),
+		.name = _("Test Book"),
         .price = 0,
 		.description = sTestBookDesc,
         .importance = 1,
@@ -14308,7 +14313,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_WEDDING_INVITATION] =
 	{
-		.name = _("INVITATION"),
+		.name = _("Invitation"),
         .price = 0,
 		.description = sWeddingInvitationDesc,
         .importance = 1,
@@ -14322,7 +14327,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_COLCHIS_MAP] =
 	{
-		.name = _("OLD MAP"),
+		.name = _("Old Map"),
         .price = 0,
 		.description = sColchisMapDesc,
         .importance = 1,
@@ -14336,7 +14341,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_BIG_HAMMER] =
 	{
-		.name = _("BIG HAMMER"),
+		.name = _("Big Hammer"),
         .price = 0,
 		.description = sBigHammerDesc,
         .importance = 1,
@@ -14347,6 +14352,20 @@ const struct Item gItemsInfo[] =
         .secondaryId = 0,
         .iconPic = gItemIcon_BigHammer,
         .iconPalette = gItemIconPalette_BigHammer,
+	},
+
+	[ITEM_OSTRACON] =
+	{
+		.name = _("Ostracon"),
+        .price = 0,
+		.description = sOstraconDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_Ostracon,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_EarthPlate,
+        .iconPalette = gItemIconPalette_EarthPlate,
 	},
 
 ///	KUSTOM ITEMS END ///

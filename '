@@ -303,7 +303,7 @@ const u8 gText_BookVerse38[] =_("Like glowing coals the words\nfall off the page
 
 //Ostracon
 //const u8 gText_Ostracon[] =_("In search of Colchis' cave a hidden path\nEluding their keen sight Shiny Mareep\nSo far away lost in shadowy night\nA SPEAROW released took off graceful flight\nRevealing secrets kept by cavern walls\nThus by the SPEAROW's flight the truth was shown\nHow Jason and his crew found paths unknown.");
-const u8 gText_Ostracon[] =_("In search of secret cave and sacred wool\nBy SPEAROW free to show by gentle flight\pThe hidden path you seek is truely shown\nThus Argo and her crew find paths unkown{PAUSE_UNTIL_PRESS}");
+const u8 gText_Ostracon[] =_("In search of Colchis' cave a hidden path\nEluding their keen sight Shiny Mareep\nSo far away lost in shadowy night\nA SPEAROW released took off graceful flight\nRevealing secrets kept by cavern walls\nThus by the SPEAROW's flight the truth was shown\nHow Jason and his crew found paths unknown.");
 
 const u8 *const gBagMenu_ReturnToStrings[] =
 {

@@ -180,13 +180,13 @@ BigIslandS_Script_BreakableRock::
 	compare VAR_RESULT, TRUE
 	goto_if_eq BigIslandS_Script_BreakableRock_2
 # 144 "data/maps/BigIslandS/scripts.pory"
-	call EventScript_CantSmashRock
+	call EventScript_CantBreakRock
 BigIslandS_Script_BreakableRock_1:
 	end
 
 BigIslandS_Script_BreakableRock_2:
 # 136 "data/maps/BigIslandS/scripts.pory"
-	msgbox Text_WantToSmash, MSGBOX_YESNO
+	msgbox Text_WantToBreak, MSGBOX_YESNO
 # 137 "data/maps/BigIslandS/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq BigIslandS_Script_BreakableRock_5
@@ -275,17 +275,23 @@ BigIslandS_Script_HoOh_7:
 	msgbox BigIslandS_Text_Prometheus3, MSGBOX_DEFAULT
 # 209 "data/maps/BigIslandS/scripts.pory"
 	closemessage
-# 212 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 1
+# 211 "data/maps/BigIslandS/scripts.pory"
+	giveitem ITEM_OSTRACON
 # 213 "data/maps/BigIslandS/scripts.pory"
-	setvar VAR_ARGO_STATE, 6
+	msgbox BigIslandS_Text_Prometheus4, MSGBOX_DEFAULT
 # 214 "data/maps/BigIslandS/scripts.pory"
-	setflag FLAG_BIGISLAND_S_HIDE_PROMETHEUS
-# 215 "data/maps/BigIslandS/scripts.pory"
-	removeobject 1
-# 216 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 0
+	closemessage
 # 218 "data/maps/BigIslandS/scripts.pory"
+	fadescreen 1
+# 219 "data/maps/BigIslandS/scripts.pory"
+	setvar VAR_ARGO_STATE, 6
+# 220 "data/maps/BigIslandS/scripts.pory"
+	setflag FLAG_BIGISLAND_S_HIDE_PROMETHEUS
+# 221 "data/maps/BigIslandS/scripts.pory"
+	removeobject 1
+# 222 "data/maps/BigIslandS/scripts.pory"
+	fadescreen 0
+# 224 "data/maps/BigIslandS/scripts.pory"
 	releaseall
 	end
 
@@ -310,96 +316,96 @@ BigIslandS_Script_HoOh_8:
 
 
 BigIslandS_Script_HideMonkeys::
-# 226 "data/maps/BigIslandS/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 227 "data/maps/BigIslandS/scripts.pory"
-	waitmovement 0
-# 228 "data/maps/BigIslandS/scripts.pory"
-	playmoncry SPECIES_INFERNAPE, CRY_MODE_NORMAL
-# 230 "data/maps/BigIslandS/scripts.pory"
-	applymovement 6, Common_Movement_FaceRight
-# 231 "data/maps/BigIslandS/scripts.pory"
-	applymovement 7, Common_Movement_FaceRight
 # 232 "data/maps/BigIslandS/scripts.pory"
-	applymovement 8, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 233 "data/maps/BigIslandS/scripts.pory"
 	waitmovement 0
+# 234 "data/maps/BigIslandS/scripts.pory"
+	playmoncry SPECIES_INFERNAPE, CRY_MODE_NORMAL
 # 236 "data/maps/BigIslandS/scripts.pory"
-	applymovement 6, Common_Movement_ExclamationMark
+	applymovement 6, Common_Movement_FaceRight
 # 237 "data/maps/BigIslandS/scripts.pory"
-	applymovement 7, Common_Movement_ExclamationMark
+	applymovement 7, Common_Movement_FaceRight
 # 238 "data/maps/BigIslandS/scripts.pory"
-	applymovement 8, Common_Movement_ExclamationMark
+	applymovement 8, Common_Movement_FaceRight
 # 239 "data/maps/BigIslandS/scripts.pory"
 	waitmovement 0
-# 241 "data/maps/BigIslandS/scripts.pory"
-	waitmoncry
+# 242 "data/maps/BigIslandS/scripts.pory"
+	applymovement 6, Common_Movement_ExclamationMark
 # 243 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 1
+	applymovement 7, Common_Movement_ExclamationMark
+# 244 "data/maps/BigIslandS/scripts.pory"
+	applymovement 8, Common_Movement_ExclamationMark
 # 245 "data/maps/BigIslandS/scripts.pory"
-	hideobjectat 6, MAP_BIG_ISLAND_S
-# 246 "data/maps/BigIslandS/scripts.pory"
-	removeobject 6
+	waitmovement 0
 # 247 "data/maps/BigIslandS/scripts.pory"
-	hideobjectat 7, MAP_BIG_ISLAND_S
-# 248 "data/maps/BigIslandS/scripts.pory"
-	removeobject 7
+	waitmoncry
 # 249 "data/maps/BigIslandS/scripts.pory"
-	hideobjectat 8, MAP_BIG_ISLAND_S
-# 250 "data/maps/BigIslandS/scripts.pory"
-	removeobject 8
+	fadescreen 1
+# 251 "data/maps/BigIslandS/scripts.pory"
+	hideobjectat 6, MAP_BIG_ISLAND_S
 # 252 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 0
+	removeobject 6
+# 253 "data/maps/BigIslandS/scripts.pory"
+	hideobjectat 7, MAP_BIG_ISLAND_S
 # 254 "data/maps/BigIslandS/scripts.pory"
-	setobjectmovementtype 6, MOVEMENT_TYPE_INVISIBLE
+	removeobject 7
 # 255 "data/maps/BigIslandS/scripts.pory"
-	setobjectxyperm 6, 64, 24
+	hideobjectat 8, MAP_BIG_ISLAND_S
 # 256 "data/maps/BigIslandS/scripts.pory"
-	setobjectmovementtype 7, MOVEMENT_TYPE_INVISIBLE
-# 257 "data/maps/BigIslandS/scripts.pory"
-	setobjectxyperm 7, 65, 24
+	removeobject 8
 # 258 "data/maps/BigIslandS/scripts.pory"
+	fadescreen 0
+# 260 "data/maps/BigIslandS/scripts.pory"
+	setobjectmovementtype 6, MOVEMENT_TYPE_INVISIBLE
+# 261 "data/maps/BigIslandS/scripts.pory"
+	setobjectxyperm 6, 64, 24
+# 262 "data/maps/BigIslandS/scripts.pory"
+	setobjectmovementtype 7, MOVEMENT_TYPE_INVISIBLE
+# 263 "data/maps/BigIslandS/scripts.pory"
+	setobjectxyperm 7, 65, 24
+# 264 "data/maps/BigIslandS/scripts.pory"
 	setobjectmovementtype 8, MOVEMENT_TYPE_INVISIBLE
-# 259 "data/maps/BigIslandS/scripts.pory"
+# 265 "data/maps/BigIslandS/scripts.pory"
 	setobjectxyperm 8, 65, 24
 	return
 
 
 BigIslandS_Script_MonkeyTrigger::
-# 265 "data/maps/BigIslandS/scripts.pory"
+# 271 "data/maps/BigIslandS/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 266 "data/maps/BigIslandS/scripts.pory"
+# 272 "data/maps/BigIslandS/scripts.pory"
 	call BigIslandS_Script_HideMonkeys
 	end
 
 
-# 270 "data/maps/BigIslandS/scripts.pory"
+# 276 "data/maps/BigIslandS/scripts.pory"
 BigIslandS_Movement_IgnisGruntClear:
-# 271 "data/maps/BigIslandS/scripts.pory"
+# 277 "data/maps/BigIslandS/scripts.pory"
 	walk_up
-# 271 "data/maps/BigIslandS/scripts.pory"
+# 277 "data/maps/BigIslandS/scripts.pory"
 	walk_up
-# 271 "data/maps/BigIslandS/scripts.pory"
+# 277 "data/maps/BigIslandS/scripts.pory"
 	walk_up
-# 271 "data/maps/BigIslandS/scripts.pory"
+# 277 "data/maps/BigIslandS/scripts.pory"
 	walk_up
-# 271 "data/maps/BigIslandS/scripts.pory"
+# 277 "data/maps/BigIslandS/scripts.pory"
 	walk_up
-# 271 "data/maps/BigIslandS/scripts.pory"
+# 277 "data/maps/BigIslandS/scripts.pory"
 	walk_up
 	step_end
 
-# 274 "data/maps/BigIslandS/scripts.pory"
+# 280 "data/maps/BigIslandS/scripts.pory"
 BigIslandS_Movement_HoOhApproach:
-# 275 "data/maps/BigIslandS/scripts.pory"
+# 281 "data/maps/BigIslandS/scripts.pory"
 	walk_down
-# 275 "data/maps/BigIslandS/scripts.pory"
+# 281 "data/maps/BigIslandS/scripts.pory"
 	walk_down
-# 275 "data/maps/BigIslandS/scripts.pory"
+# 281 "data/maps/BigIslandS/scripts.pory"
 	walk_down
-# 275 "data/maps/BigIslandS/scripts.pory"
+# 281 "data/maps/BigIslandS/scripts.pory"
 	walk_down
-# 275 "data/maps/BigIslandS/scripts.pory"
+# 281 "data/maps/BigIslandS/scripts.pory"
 	walk_down
 	step_end
 
@@ -408,12 +414,12 @@ BigIslandS_Script_HideIgnisGrunts_Text_0:
 	.string "HIDE IGNIS GRUNTS$"
 
 BigIslandS_Text_IgnisGruntBlock::
-# 279 "data/maps/BigIslandS/scripts.pory"
+# 285 "data/maps/BigIslandS/scripts.pory"
 	.string "Onlyay ativenay ignisay areay\n"
 	.string "elcomeway erehay.$"
 
 BigIslandS_Script_IgnisGrunt1Pre::
-# 287 "data/maps/BigIslandS/scripts.pory"
+# 293 "data/maps/BigIslandS/scripts.pory"
 	.string "Owhay isay isthat outsideray?\n"
 	.string "Ehay ustmay ebay erehay otay avesay\l"
 	.string "ishay ittleay iendfray.\l"
@@ -423,20 +429,20 @@ BigIslandS_Script_IgnisGrunt1Pre::
 	.string "ountaintopmay.$"
 
 BigIslandS_Script_IgnisGrunt1Lost::
-# 292 "data/maps/BigIslandS/scripts.pory"
+# 298 "data/maps/BigIslandS/scripts.pory"
 	.string "Eway oonsay illway ebay avengeday.$"
 
 BigIslandS_Script_IgnisGrunt2Lost::
-# 297 "data/maps/BigIslandS/scripts.pory"
+# 303 "data/maps/BigIslandS/scripts.pory"
 	.string "Ouyay onway isthay oneay.$"
 
 BigIslandS_Text_IgnisGruntPost::
-# 302 "data/maps/BigIslandS/scripts.pory"
+# 308 "data/maps/BigIslandS/scripts.pory"
 	.string "Eway ustmay elltay Edeamay ofay isthay\n"
 	.string "efeatday.$"
 
 BigIslandS_Text_Prometheus1::
-# 306 "data/maps/BigIslandS/scripts.pory"
+# 312 "data/maps/BigIslandS/scripts.pory"
 	.string "What's this? You're not one of those\n"
 	.string "savages who chained me to this rock to\l"
 	.string "tortue me in retribution for my refusal\l"
@@ -452,32 +458,26 @@ BigIslandS_Text_Prometheus1::
 	.string "tell what lies in your future.$"
 
 BigIslandS_Text_Prometheus1b::
-# 310 "data/maps/BigIslandS/scripts.pory"
+# 316 "data/maps/BigIslandS/scripts.pory"
 	.string "Young man I beg you free me from this\n"
 	.string "rock and I will tell what lies in your\l"
 	.string "future.$"
 
 BigIslandS_Text_Prometheus2::
-# 314 "data/maps/BigIslandS/scripts.pory"
+# 320 "data/maps/BigIslandS/scripts.pory"
 	.string "Beware young friend for we are not yet\n"
 	.string "free. Prepare to meet a mighty foe.\l"
 	.string "Defend us now or else surely perish.$"
 
 BigIslandS_Text_Prometheus3::
-# 318 "data/maps/BigIslandS/scripts.pory"
+# 324 "data/maps/BigIslandS/scripts.pory"
 	.string "My lad! You've done it! You remind me of\n"
 	.string "the mighty hero Heracles. I will reward\l"
-	.string "your courage with a prophesy.\l"
-	.string "In search of Colchis' cave a hidden\l"
-	.string "path\l"
-	.string "Eluding their keen sight Shiny Mareep\l"
-	.string "So far away lost in shadowy night\l"
-	.string "A SPEAROW released took off graceful\l"
-	.string "flight\l"
-	.string "Revealing secrets kept by cavern walls\l"
-	.string "Thus by the SPEAROW's flight the truth\l"
-	.string "was shown\l"
-	.string "How Jason and his crew found paths\l"
-	.string "unknown.\l"
-	.string "I must be going now. I'm free at last to\l"
+	.string "your courage with a prophesy. Take\l"
+	.string "this.$"
+
+BigIslandS_Text_Prometheus4::
+# 328 "data/maps/BigIslandS/scripts.pory"
+	.string "You fate's carved on the Ostracon. I\n"
+	.string "must be going now. I'm free at last to\l"
 	.string "return home. May God above bless you.$"
