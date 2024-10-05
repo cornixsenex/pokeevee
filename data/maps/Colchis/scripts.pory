@@ -1,4 +1,56 @@
 
+//Enter Jason at center waits
+//Triggers on entry approach Jason
+//Ambushed
+//We're hopelessly outnumbered we must surrender
+//Led to Throne Room
+//Dance of Medea
+//Talk with Aeetes
+//Medea tries to throw Player under the bus to save Jason
+//A: I am king and my word is law
+//Imprisoned
+//Medea puts Colchis to sleep and rescues Jason who insists that Player be saved as well but begins falling for Medea
+//She leads you to Inner Pool but insists you do not harm the guardian
+//Jason sends you to retrieve Mareep to spend quality time alone with Medea
+//She reminds you not to harm Guardian
+//Enter sanctum: 4 results
+	//>Not engange Lugia, Capture Mareep
+	//	>All good 
+	//	>Jason gets the fleece and reveals he has completed his quest and will return to give it to his girl
+	//	>Medea indicates jelousy but goes along as thanks for sparing Lugia
+	//	>Medea leads you both out no problem
+	//	>Outside Medea convinces Jason to go with him home
+	//	>Jason offers you a ride home
+	//	>If yes goto Bulbus open else they all dip
+	//	>Dioscuri return to Nestor (and other argonauts revert)
+	//>Not engage Lugia, Destroy Mareep
+	//	>Jason is furious the quest has failed
+	//	>Battle Jason
+	//	>Medea promises she can fix all problems and they depart leaving you first attacked by Lugia, next dealing with escape from Colchis
+	//	>Dioscuri return to Nestor (and other argonauts revert)
+	//	>Jason and Medea skip ahead to Jason possesed in Bulbus (and he won't sail for you)
+	//>Engage Lugia, Capture Mareep
+	//	>Jason gets fleece
+	//	>Medea checks on Lugia
+	//	>returns upset
+	//	>Jason says she can live with him in Bulbus
+	//	>They leave you to Escape From Colchis
+	//	>Dioscuri return to Nestor (and other argonauts revert)
+	//	>Jason and Medea skip ahead to Jason possesed in Bulbus (and he won't sail for you)
+	//>Engage Lugia, Destroy Mareep
+	//	>Jason is furious the quest has failed
+	//	>Battle Jason
+	//	>Medea checks on Lugia
+	//	>returns upset
+	//	>Jason tells her he will make her his vagabond queen as he has no home
+	//	>They leave you to Escape From Colchis
+	//	>Dioscuri return to Nestor (and other argonauts revert)
+	//    >Bulbus remains closed, Jason and Medea dissapear
+
+
+
+
+
 const OBJ_EVENT_DYNAMIC_GRUNT_M = 23
 const OBJ_EVENT_DYNAMIC_GRUNT_F = 24
 const OBJ_EVENT_INTRO_GRUNT_M = 25
