@@ -590,8 +590,8 @@ script BigIslandN_Script_Ambush {
 
 script BigIslandN_Script_JasonAtColchisCave {
 	//FLAG Here
-	if (!flag(FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO)) {
-		setflag (FLAG_BIGISLAND_S_JASONCOLCHIS_INTRO)
+	if (!flag(FLAG_BIGISLAND_N_JASONCOLCHIS_INTRO)) {
+		setflag (FLAG_BIGISLAND_N_JASONCOLCHIS_INTRO)
 		faceplayer
 		msgbox (BigIslandN_Text_OpenColchisCave1, MSGBOX_DEFAULT)
 		closemessage
@@ -612,6 +612,15 @@ script BigIslandN_Script_JasonAtColchisCave {
 
 	//Ready to release Spearow
 	if (var(VAR_ARGO_STATE) == 6) {
+		//First have Jason react to the news - if it's news
+		if (!flag(FLAG_BIGISLAND_N_JASON_OSTRACON)) {
+			setflag (FLAG_BIGISLAND_N_JASON_OSTRACON)
+			applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			msgbox (BigIslandN_Text_Ostracon, MSGBOX_DEFAULT)
+			closemessage
+
+		}
 		specialvar (VAR_RESULT, IsSpearowInParty)
 		if (var(VAR_RESULT) == TRUE) {
 			msgbox (BigIslandN_Text_ReleaseSpearow, MSGBOX_YESNO)
@@ -647,6 +656,7 @@ script BigIslandN_Script_JasonAtColchisCave {
 }
 
 script BigIslandN_Script_EnterColchis {
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	setvar (VAR_0x8004, 1)  // vertical pan
 	setvar (VAR_0x8005, 1)  // horizontal pan
 	setvar (VAR_0x8006, 8)  // num shakes
@@ -668,6 +678,7 @@ script BigIslandN_Script_EnterColchis {
 	applymovement (OBJ_EVENT_JASON, Common_Movement_WalkUp)
 	waitmovement (0)
 
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	releaseall
 	call (BigIslandN_Script_ShowArgo7)
 	
@@ -957,6 +968,21 @@ text BigIslandN_Text_OpenColchisCave2 {
 		
 text BigIslandN_Text_OpenColchisCave3 {
 	format("That didn't work, but what else could we try...")
+}
+//Whats that
+//That Phil was taken by a witch and gone mad
+//And a mysterious stone prophecy and magic bird
+//By SPEAROW free? What on earth could that mean?
+//Sounds like a bunch of nonesense
+
+//Whats that? Philoctetes enchanted by
+//an evil witch and a volcanic bird?
+//An old prophet gave you an Ostracon
+//By Spearow free? What nonesense is all this?
+//We need to work on opening this cave
+
+text BigIslandN_Text_Ostracon {
+	format("What's that? Philoctetes enchanted by an evil witch?\NAnd a volcanic bird!\NAn old prophet gave you an Ostracon?\NBy SPEAROW free!\NWhat nonesense is all this? We need to work on opening this cave.")
 }
 
 text BigIslandN_Text_ReleaseSpearow {
