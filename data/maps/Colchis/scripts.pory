@@ -53,8 +53,12 @@
 
 const OBJ_EVENT_DYNAMIC_GRUNT_M = 23
 const OBJ_EVENT_DYNAMIC_GRUNT_F = 24
-const OBJ_EVENT_INTRO_GRUNT_M = 25
-const OBJ_EVENT_INTRO_GRUNT_F = 26
+const OBJ_EVENT_INTRO_GRUNT_M1 = 28
+const OBJ_EVENT_INTRO_GRUNT_M2 = 50
+const OBJ_EVENT_INTRO_GRUNT_M3 = 51
+const OBJ_EVENT_INTRO_GRUNT_F1 = 27
+const OBJ_EVENT_INTRO_GRUNT_F2 = 52
+const OBJ_EVENT_INTRO_GRUNT_F3 = 53
 const OBJ_EVENT_JASON = 54
 
 
@@ -74,13 +78,13 @@ const FIELD_PIC_COLCHIS_F = 23
 mapscripts Colchis_MapScripts {
 
 	MAP_SCRIPT_ON_LOAD {
-		if (var(VAR_ARGO_STATE) == 7) {
-			call (Colchis_Script_IntroSetup)
-		}
-		//Jason fights at the entrance, battle path
-		if (var(VAR_ARGO_STATE) == 9) {
-			call (Colchis_Script_IntroDeclinedSetup)
-		}
+		//if (var(VAR_ARGO_STATE) == 7) {
+		//	call (Colchis_Script_IntroSetup)
+		//}
+		////Jason fights at the entrance, battle path
+		//if (var(VAR_ARGO_STATE) == 9) {
+		//	call (Colchis_Script_IntroDeclinedSetup)
+		//}
 
 	}
 
@@ -107,51 +111,6 @@ script Colchis_TempScript_TestMedeaDance {
 	end
 }
 
-script Colchis_Script_IntroSetup {
-
-	removeobject (OBJ_EVENT_INTRO_GRUNT_M)
-	removeobject (OBJ_EVENT_INTRO_GRUNT_F)
-
-	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_M, 10, 59)
-	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_F, 12, 59)
-
-	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_M, MOVEMENT_TYPE_FACE_RIGHT)
-	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_F, MOVEMENT_TYPE_FACE_LEFT)
-
-	addobject (OBJ_EVENT_INTRO_GRUNT_M)
-	addobject (OBJ_EVENT_INTRO_GRUNT_F)
-
-	showobjectat (OBJ_EVENT_INTRO_GRUNT_M, MAP_COLCHIS)
-	showobjectat (OBJ_EVENT_INTRO_GRUNT_F, MAP_COLCHIS)
-
-	end	
-}
-
-script Colchis_Script_IntroDeclinedSetup {
-
-	removeobject (OBJ_EVENT_INTRO_GRUNT_M)
-	removeobject (OBJ_EVENT_INTRO_GRUNT_F)
-	removeobject (OBJ_EVENT_JASON)
-
-	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_M, 10, 59)
-	setobjectxyperm (OBJ_EVENT_INTRO_GRUNT_F, 12, 59)
-	setobjectxyperm (OBJ_EVENT_JASON, 11, 59)
-	
-	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_F, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
-	setobjectmovementtype (OBJ_EVENT_INTRO_GRUNT_M, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
-	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
-
-	addobject (OBJ_EVENT_INTRO_GRUNT_M)
-	addobject (OBJ_EVENT_INTRO_GRUNT_F)
-	addobject (OBJ_EVENT_JASON)
-
-	showobjectat (OBJ_EVENT_INTRO_GRUNT_M, MAP_COLCHIS)
-	showobjectat (OBJ_EVENT_INTRO_GRUNT_F, MAP_COLCHIS)
-	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)
-
-	return	
-}
-
 script Colchis_Script_Jason {
 	if (var(VAR_ARGO_STATE) == 9) {
 		msgbox(Colchis_Text_JasonIntroDeclined, MSGBOX_DEFAULT)
@@ -167,6 +126,7 @@ script Colchis_Script_Intro {
 	lockall
 
 	setvar (VAR_ARGO_STATE, 8)
+	//Player approach Jason
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_IntroPlayer)
@@ -174,54 +134,81 @@ script Colchis_Script_Intro {
 	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
 	waitmovement (0)
 
-	//Jason: Help or something
+	//Jason: Let us set out to claim Shiny Mareep
 	load_field_pic(FIELD_PIC_JASON, 190, 98)
 	msgbox (Colchis_Text_JasonIntro1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_JASON)
 
-	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceRight)
+	//Walk Up 8
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_JasonAmbush)
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_JasonAmbush)
 	waitmovement (0)
+
+	//Ambush
+
+	//Alert Jason and Player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Spawn Intro Grunts
+	//Move intro grunts into position
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M1, Colchis_Movement_IntroGruntM1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M2, Colchis_Movement_IntroGruntM2)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M3, Colchis_Movement_IntroGruntM3)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F1, Colchis_Movement_IntroGruntF1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F2, Colchis_Movement_IntroGruntF2)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F3, Colchis_Movement_IntroGruntF3)
+	waitmovement (OBJ_EVENT_INTRO_GRUNT_M1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M1, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M3, Common_Movement_WalkDown)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F1, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F3, Common_Movement_WalkUp)
+	waitmovement (OBJ_EVENT_INTRO_GRUNT_M1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M1, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M3, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F1, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F3, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	//Jason: We're ambushed
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox (Colchis_Text_JasonIntro2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
+	waitmovement (0)
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox (Colchis_Text_JasonIntro3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
+	waitmovement (0)
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox (Colchis_Text_JasonIntro4, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
 
 	//Magma M: Welcome to Colchis Jason of Argo
 	load_field_pic(FIELD_PIC_COLCHIS_F, 190, 98)
 	msgbox (Colchis_Text_GruntIntro1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_COLCHIS_F)
 
-	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceLeft)
-	waitmovement (0)
-
 	//Magma F: Aeetes King of Colchis awaits you
 	load_field_pic(FIELD_PIC_COLCHIS_M, 190, 98)
 	msgbox (Colchis_Text_GruntIntro2, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_COLCHIS_M)
 
-	closemessage
-
-	//Jason turns to you and asks: Should we trust them Y or N
+	//Jason turns to Player and says
+	//We have no choice we'll have to go with them	
 	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
 	waitmovement (0)
 	load_field_pic(FIELD_PIC_JASON, 190, 98)
-	msgbox (Colchis_Text_JasonIntro2, MSGBOX_YESNO)
+	msgbox (Colchis_Text_JasonIntro5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
+	waitmovement (0)
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox (Colchis_Text_JasonIntro6, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_JASON)
 
-	//If Y then goto peaceful approach of Aeetes
-	if (var(VAR_RESULT) == TRUE) {
-		msgbox (Colchis_Text_JasonIntroAccept, MSGBOX_DEFAULT)
-		destroy_field_pic (FIELD_PIC_JASON)
-		closemessage
-		call (Colchis_Script_EnterThroneRoom)
-	} else {
-		//Tough path:
-		//Jason: I'll cover your six go on ahead for the Fleece
-		setflag (FLAG_COLCHIS_FORCED_BATTLE)
-		setvar (VAR_ARGO_STATE, 9)
-		msgbox (Colchis_Text_JasonIntroDecline, MSGBOX_DEFAULT)
-		msgbox(Colchis_Text_JasonIntroDeclined, MSGBOX_DEFAULT)
-		closemessage
-		destroy_field_pic (FIELD_PIC_JASON)
-		releaseall
-		call (Colchis_Script_IntroDeclinedSetup)
-	}
+	call (Colchis_Script_EnterThroneRoom)
 
 	//Else: Battle flags N shit
 	end
@@ -229,19 +216,19 @@ script Colchis_Script_Intro {
 }
 
 script Colchis_Script_EnterThroneRoom {
-	setvar (VAR_ARGO_STATE, 10)
-	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_EnterThroneRoom)
-	applymovement (OBJ_EVENT_JASON, Colchis_Movement_EnterThroneRoom)
-	applymovement (OBJ_EVENT_INTRO_GRUNT_M, Colchis_Movement_EnterThroneRoom)
-	applymovement (OBJ_EVENT_INTRO_GRUNT_F, Colchis_Movement_EnterThroneRoom)
-	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_EnterThroneRoom1)
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_EnterThroneRoom1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M1, Colchis_Movement_EnterThroneRoom1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M2, Colchis_Movement_EnterThroneRoom1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M3, Colchis_Movement_EnterThroneRoom1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F1, Colchis_Movement_EnterThroneRoom1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F2, Colchis_Movement_EnterThroneRoom1)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F3, Colchis_Movement_EnterThroneRoom1)
 	waitmovement (0)
 
 	//Dance of Medea
 
-	call (Colchis_Script_MedeaDance)
+	//call (Colchis_Script_MedeaDance)
 	
 
 
@@ -1341,8 +1328,67 @@ movement Colchis_Movement_MedeaDance_Dancer6C {
 	walk_diag_northwest
 }
 
+movement Colchis_Movement_JasonAmbush {
+	walk_up * 6
+}
+
+movement Colchis_Movement_IntroGruntM1 {
+	walk_right * 8
+	walk_down * 2
+}
+
+movement Colchis_Movement_IntroGruntM2 {
+	walk_right * 7
+	walk_down * 2
+}
+
+movement Colchis_Movement_IntroGruntM3 {
+	walk_right * 6
+	walk_down * 2
+}
+
+movement Colchis_Movement_IntroGruntF1 {
+	walk_right * 8
+	face_up
+}
+
+movement Colchis_Movement_IntroGruntF2 {
+	walk_right * 7
+	face_up
+}
+
+movement Colchis_Movement_IntroGruntF3 {
+	walk_right * 6
+	face_up
+}
+
+movement Colchis_Movement_EnterThroneRoom1 {
+	walk_up * 23
+	walk_right * 6
+}
+
 text Colchis_Text_JasonIntro1 {
-	format ("We've been ambushed but they do not attack.")
+	format("Let us set out to claim Shiny Mareep.")
+}
+
+text Colchis_Text_JasonIntro2 {
+	format("Ambush!")
+}
+
+text Colchis_Text_JasonIntro3 {
+	format("We're hopelessly outnumbered but they don't attack.")
+}
+
+text Colchis_Text_JasonIntro4 {
+	format("Greetings! I am Jason, captain of the Argo. We come in peace.")
+}
+
+text Colchis_Text_JasonIntro5 {
+	format("We have no choice. We'll have to go with them.")
+}
+
+text Colchis_Text_JasonIntro6 {
+	format("We'll go with you. Bring us before your king.")
 }
 
 //Welcome to Colchis Jason of Argo
@@ -1353,10 +1399,6 @@ text Colchis_Text_GruntIntro1 {
 //Aeetes King of Colchis awaits you
 text Colchis_Text_GruntIntro2 {
 	format("Aeetesay ingkay ofay Olchiscay awaitsay ouyay.")
-}
-
-text Colchis_Text_JasonIntro2 {
-	format("I think they say they'll take us to their king. We're hopelessly outnumbered so I think we should agree to go but what say you?")
 }
 
 text Colchis_Text_JasonIntroAccept {
