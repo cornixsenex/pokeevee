@@ -124,6 +124,10 @@ static const u16 sPic23Pal[] = INCBIN_U16("graphics/trainers/front_pics/magma_gr
 static const u32 sPic24Gfx[] = INCBIN_U32("graphics/trainers/front_pics/magma_grunt_f.4bpp.lz");
 static const u16 sPic24Pal[] = INCBIN_U16("graphics/trainers/front_pics/magma_grunt_f.gbapal");
 
+//Hex Maniac = 24
+static const u32 sPic25Gfx[] = INCBIN_U32("graphics/trainers/front_pics/hex_maniac.4bpp.lz");
+static const u16 sPic25Pal[] = INCBIN_U16("graphics/trainers/front_pics/hex_maniac.gbapal");
+
 
 /* And this is an example script.
 
@@ -196,6 +200,8 @@ static const struct Pic sPics[] =
     {sPic23Gfx, sPic23Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Magam F
     {sPic24Gfx, sPic24Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Hex Maniac
+    {sPic25Gfx, sPic25Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

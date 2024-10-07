@@ -70,9 +70,16 @@ const OBJ_EVENT_DANCER4 = 14
 const OBJ_EVENT_DANCER5 = 15
 const OBJ_EVENT_DANCER6 = 16
 
+const OBJ_EVENT_ROYALGUARD1 = 5
+const OBJ_EVENT_ROYALGUARD2 = 6
+const OBJ_EVENT_ROYALGUARD3 = 9
+const OBJ_EVENT_ROYALGUARD4 = 10
+
 const FIELD_PIC_JASON = 21
 const FIELD_PIC_COLCHIS_M = 22
 const FIELD_PIC_COLCHIS_F = 23
+const FIELD_PIC_MEDEA = 24
+const FIELD_PIC_AEETES = 9
 
 
 mapscripts Colchis_MapScripts {
@@ -208,6 +215,8 @@ script Colchis_Script_Intro {
 	msgbox (Colchis_Text_JasonIntro6, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_JASON)
 
+	closemessage 
+
 	call (Colchis_Script_EnterThroneRoom)
 
 	//Else: Battle flags N shit
@@ -226,9 +235,22 @@ script Colchis_Script_EnterThroneRoom {
 	applymovement (OBJ_EVENT_INTRO_GRUNT_F3, Colchis_Movement_EnterThroneRoom1)
 	waitmovement (0)
 
+	//Move extras out of the way
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M2, Colchis_Movement_EnterThroneRoom2)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F2, Colchis_Movement_EnterThroneRoom2)
+	waitmovement (0)
+
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_EnterThroneRoom3)
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_EnterThroneRoom3)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M1, Colchis_Movement_EnterThroneRoom3)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_M3, Colchis_Movement_EnterThroneRoom3)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F1, Colchis_Movement_EnterThroneRoom3)
+	applymovement (OBJ_EVENT_INTRO_GRUNT_F3, Colchis_Movement_EnterThroneRoom3)
+	waitmovement (0)
+
 	//Dance of Medea
 
-	//call (Colchis_Script_MedeaDance)
+	call (Colchis_Script_MedeaDance)
 	
 
 
@@ -962,90 +984,11 @@ script Colchis_Script_MedeaDance {
 	//Medea steps forward and speaks to King Aeetes:
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
 	waitmovement (0)
-
-	//The goddess through me speaks of things to come
-	//Among us there will come a man, Jason,
-	//Who traveled here from far beyond the sea,
-	//and any man who brings harm onto him
-	//will surely Colchis' ruin
-	msgbox(Colchis_Text_Medea1, MSGBOX_DEFAULT)
-	closemessage
-
-	//Aeetes replies:
-	//Come forward Jason. Speak with Aeetes.
-	msgbox(Colchis_Text_Aeetes1, MSGBOX_DEFAULT)
-	closemessage
-
-	//Enter Jason and Player
-
-	//Aeetes:
-	//Welcome mighty captain of the Argo.
-	//We have all heard of your heroic deeds
-	//most deserving an honorable feast
-	//but first tell me why you've come to Colchis.
-
-	//J:
-	//We come in peace
-
-	//A:
-	//I asked you why not how!
-	//I know you've come to claim shiny Mareep
-	//and that if you cannot win bargaining
-	//you plan to steal or even kill
-
-	//M: Papa!
-	//I beg your majesty to show restraint.
-
-	//A:
-	//Silence Medea. Was this not the knave
-	//who defiled the sacred temple mount
-	//that act alone deserves great punishment
-	//and if we should allow shiny Mareep
-	//to be stolen Colchis will surely fall
-	//therefore I have resolved they must be jailed
-
-	//Player & Jason ! points
-
-	//M:
-	//The lesser one before you is guilty
-	//alone of attacking sacred Ho-Oh
-	//
-	//The hero Jason has not done any crimes
-	//And the goddess through me orders he be kept safe
-	//If you must punish one then punish PLAYER but spare the lovely Jason
-
-	//A:
-	//I have already spoken. Their fate is sealed
-	//Guards
 	
-	//Assemble Guards
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerApproachAeetes)
 
-	//A:
-	//Take them to jail
+	call (Colchis_Script_Aeetes)
 
-	//M:
-	//NO!
-
-	//goto Jail :D
-
-	
-
-
-
-
-	msgbox("END")
-	closemessage
-
-
-	//approaches Aeetes and speaks: 
-	//Aeetes: step forward Jason
-	//Enter Jason and Player where camera ended pan :)
-
-
-	//msgbox("END")
-	//closemessage
-
-	special (RemoveCameraObject)
 
 	return
 }
@@ -1143,6 +1086,184 @@ script Colchis_Script_MedeaDance_TrickVampLessMedea {
 	call (Colchis_Script_MedeaDance_SpinAll)
 	return
 }
+
+script Colchis_Script_Aeetes {
+	//The goddess through me speaks of things to come
+	//Among us there will come a man, Jason,
+	//Who traveled here from far beyond the sea,
+	//and any man who brings harm onto him
+	//will surely Colchis' ruin
+
+
+	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
+	msgbox(Colchis_Text_Medea1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+	closemessage
+
+	//Aeetes replies:
+	//Come forward Jason. Speak with Aeetes.
+
+	load_field_pic(FIELD_PIC_AEETES, 190, 98)
+	msgbox(Colchis_Text_Aeetes1, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_AEETES)
+
+	waitmovement (0)
+	
+	//Enter Jason and Player
+
+	removeobject (OBJ_EVENT_JASON)
+	setobjectxyperm (OBJ_EVENT_JASON, 51, 13)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_JASON)
+	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)	
+
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_JasonApproachAeetes)
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_JasonApproachAeetes)
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaFaceAeetes)
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_JasonFaceAeetes)
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerFaceAeetes)
+	waitmovement (OBJ_EVENT_JASON)
+
+
+	//Aeetes:
+	//Welcome mighty captain of the Argo.
+	//We have all heard of your heroic deeds
+	//most deserving an honorable feast
+	//but first tell me why you've come to Colchis.
+
+	load_field_pic(FIELD_PIC_AEETES, 190, 98)
+	msgbox(Colchis_Text_Aeetes2, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_AEETES)
+
+	//J:
+	//We come in peace
+
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonAeetes, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_JASON)
+
+	//A:
+	//I asked you why not how!
+	//I know you've come to claim shiny Mareep
+	//and that if you cannot win bargaining
+	//you plan to steal or even kill
+	load_field_pic(FIELD_PIC_AEETES, 190, 98)
+	msgbox(Colchis_Text_Aeetes3, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_AEETES)
+	
+	
+	//M: Papa!
+	//I beg your majesty to show restraint.
+	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
+	msgbox(Colchis_Text_Medea2, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	//A:
+	//Silence Medea. Was this not the knave
+	//who defiled the sacred temple mount
+	//that act alone deserves great punishment
+	//and if we should allow shiny Mareep
+	//to be stolen Colchis will surely fall
+	//therefore I have resolved they must be jailed
+	load_field_pic(FIELD_PIC_AEETES, 190, 98)
+	msgbox(Colchis_Text_Aeetes4, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_AEETES)
+	
+	//Player & Jason ! points
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	//M:
+	//The lesser one before you is guilty
+	//alone of attacking sacred Ho-Oh.
+	//The lovely Jason's innocent of crime
+	//and the goddess through me orders he be
+	//kept safe. If your will is set on justice
+	//let Jason go free. I'll attend to him...
+	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
+	msgbox(Colchis_Text_Medea3, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	//A:
+	//There doom has been pronounced. I have spoken
+	//Assemble Royal Guards
+	load_field_pic(FIELD_PIC_AEETES, 190, 98)
+	msgbox(Colchis_Text_Aeetes5, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_AEETES)
+
+	//Guards move into position
+	applymovement (OBJ_EVENT_ROYALGUARD1, Colchis_Movement_RoyalGuard1)
+	applymovement (OBJ_EVENT_ROYALGUARD2, Colchis_Movement_RoyalGuard2)
+	applymovement (OBJ_EVENT_ROYALGUARD3, Colchis_Movement_RoyalGuard3)
+	applymovement (OBJ_EVENT_ROYALGUARD4, Colchis_Movement_RoyalGuard4)
+	waitmovement (OBJ_EVENT_ROYALGUARD1)
+
+	//A:
+	//Take them to jail
+	load_field_pic(FIELD_PIC_AEETES, 190, 98)
+	msgbox(Colchis_Text_Aeetes6, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_AEETES)
+
+	//They exit
+
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_RoyalGuardExit)
+	applymovement (OBJ_EVENT_ROYALGUARD4, Colchis_Movement_RoyalGuardExit)
+	applymovement (OBJ_EVENT_ROYALGUARD3, Colchis_Movement_RoyalGuardExit)
+
+	applymovement (OBJ_EVENT_ROYALGUARD1, Colchis_Movement_RoyalGuardExit)
+	applymovement (OBJ_EVENT_ROYALGUARD2, Colchis_Movement_RoyalGuardExit)
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_RoyalGuardExit)
+	
+	//M:
+	//NO!
+	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
+	msgbox(Colchis_Text_Medea4, MSGBOX_DEFAULT)
+
+	waitmovement (0)
+	closemessage 
+	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	//A:
+	//Do not weep that your king keeps Colchis safe
+	//SCENE
+	//goto Jail :D
+	load_field_pic(FIELD_PIC_AEETES, 190, 98)
+	msgbox(Colchis_Text_Aeetes7, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_AEETES)
+
+	special (RemoveCameraObject)
+	
+	warpsilent (MAP_COLCHIS, 18, 10)
+
+	waitstate
+
+
+
+	//approaches Aeetes and speaks: 
+	//Aeetes: step forward Jason
+	//Enter Jason and Player where camera ended pan :)
+
+
+	//msgbox("END")
+	//closemessage
+
+
+	return
+}
+	
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -1367,6 +1488,67 @@ movement Colchis_Movement_EnterThroneRoom1 {
 	walk_right * 6
 }
 
+movement Colchis_Movement_EnterThroneRoom2 {
+	walk_right * 2
+}
+
+movement Colchis_Movement_EnterThroneRoom3 {
+	walk_up * 3
+	walk_right * 34
+	walk_up * 3
+}
+
+movement Colchis_Movement_PlayerApproachAeetes {
+		walk_up * 11
+}
+
+movement Colchis_Movement_JasonApproachAeetes {
+	walk_up * 7
+}
+
+movement Colchis_Movement_MedeaFaceAeetes {
+	walk_left
+	face_up
+}
+
+movement Colchis_Movement_JasonFaceAeetes {
+	walk_up
+	walk_right
+	face_up
+
+}	
+
+movement Colchis_Movement_PlayerFaceAeetes {
+	walk_up
+}
+
+movement Colchis_Movement_RoyalGuard1 {
+	walk_right * 2
+	walk_down
+	face_right
+}
+
+movement Colchis_Movement_RoyalGuard2 {
+	walk_left
+	face_down
+}
+
+movement Colchis_Movement_RoyalGuard3 {
+	walk_right
+	walk_up
+	face_right
+}
+
+movement Colchis_Movement_RoyalGuard4 {
+	walk_left
+	walk_up
+	face_left
+}
+
+movement Colchis_Movement_RoyalGuardExit {
+	walk_down * 8
+}
+
 text Colchis_Text_JasonIntro1 {
 	format("Let us set out to claim Shiny Mareep.")
 }
@@ -1427,6 +1609,72 @@ text Colchis_Text_Aeetes1 {
 	format("Omecay orwardfay Asonjay. Eakspay ithway Aeetesay.")
 }
 
+//Welcome mighty captain of the Argo.
+//We have all heard of your heroic deeds
+//most deserving an honorable feast
+//but first tell me why you've come to Colchis.
+//Welcome mighty captain of the Argo. We have all heard of your heroic deeds most deserving an honorable feast but first tell me why you've come to Colchis.
+text Colchis_Text_Aeetes2 {
+	format("Elcomeway ightymay aptaincay ofay ethay Argoay. Eway avehay allay eardhay ofay ouryay eroichay eedsday, ostmay eservingday anay onorablehay eastfay, utbay irstfay elltay emay ywhay ou'veyay omecay otay Olchiscay.")
+}
 
+text Colchis_Text_JasonAeetes {
+	format("We come in peace...")
+}
 
+//I asked you why not how!
+//I know you've come to claim shiny Mareep
+//and that if you cannot win bargaining
+//you plan to steal or even kill
+//I asked you why not how! I know you've come to claim shiny Mareep and that if you cannot win bargaining you plan to steal or even kill
+text Colchis_Text_Aeetes3 {
+	format("Iay askeday ouyay ywhay, otnay owhay! Iay owknay ou'veyay omecay otay aimclay inyshay Areepmay anday atthay ifay ouyay annotcay inway argainingbay ouyay anplay otay ealstay oray evenay illkay...")
+}
+
+//M: Papa!
+//I beg your majesty to show restraint.
+text Colchis_Text_Medea2 {
+	format("Apapay! Iay egbay ouryay ajestymay otay owshay estraintay.")
+}
+	
+//Silence Medea. Was this not the knave
+//who defiled the sacred temple mount
+//that act alone deserves great punishment
+//and if we should allow shiny Mareep
+//to be stolen Colchis will surely fall
+//therefore I have resolved they must be jailed
+	
+//Silence Medea. Was this not the knave who defiled the sacred temple mount that act alone deserves great punishment and if we should allow shiny Mareep to be stolen Colchis will surely fall therefore I have resolved they must be jailed
+
+text Colchis_Text_Aeetes4 {
+	format("Ilencesay Edeamay. Asway isthay otnay ethay aveknay owhay efiledday ethay acredsay empletay ountmay? Atthay actay aloneay eservesday eatgray unishmentpay anday ifay eway ouldshay alloway inyshay Areepmay otay ebay olenstay Olchiscay illway urelysay allfay. Ereforethay Iay avehay esolvedray eythay ustmay ebay ailedjay.")
+}
+
+//The lesser one before you is guilty
+//alone of attacking sacred Ho-Oh.
+//The lovely Jason's innocent of crime
+//and the goddess through me orders he be
+//kept safe. If your will is set on justice
+//let Jason go free. I'll attend to him...
+
+//The lesser one before you is guilty alone of attacking sacred Ho-Oh. The lovely Jason's innocent of crime and the goddess through me orders he be kept safe. If your will is set on justice let Jason go free. I'll attend to him...
+text Colchis_Text_Medea3 {
+	format("Ethay esserlay oneay eforebay ouyay isay uiltygay aloneay ofay attackingay acredsay Ohay-Ohay. Ethay ovelylay Ason'sjay innocentay ofay imecray anday ethay oddessgay oughthray emay ordersay ehay ebay eptkay afesay. Ifay ouryay illway isay etsay onay usticejay etlay Asonjay ogay eefray. I'llay attenday otay imhay...")
+}
+
+text Colchis_Text_Aeetes5 {
+	format("Erethay oomday ashay eenbay onouncedpray. Iay avehay okenspay. Assembleay oyalray uardsray!")
+}
+
+text Colchis_Text_Aeetes6 {
+	format("Aketay emthay otay ailjay.")
+}
+
+text Colchis_Text_Medea4 {
+	format("Onaaaaaaaaaaaaaaaaayyyyyyyyyyyyy")
+}
+
+text Colchis_Text_Aeetes7 {
+	format("Oday otnay eepway atthay ouryay ingkay eepskay Olchiscay afesay.")
+}
 
