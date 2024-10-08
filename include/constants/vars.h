@@ -146,7 +146,8 @@
 																//6: After Prometheus unchained and battle (Cave ready for Spearow release)
 																//7: Cave opened; Spearow released; Setup colchis intro script; Jason in Colchis 
 																//8: Colchis introd
-																//9: In Prison
+																//9: Trigger Prison Script
+																//10: Prison Script triggered
 #define VAR_IGNISMONS_STATE                              0x4072 // Controls Ignis Mons Color Puzzle
 																// 0: Blank
 																// 1: Red

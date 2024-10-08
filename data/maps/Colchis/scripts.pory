@@ -84,6 +84,12 @@ const FIELD_PIC_AEETES = 9
 
 mapscripts Colchis_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ARGO_STATE) == 9) {
+			call (Colchis_Script_SetupJail)
+		}
+	}
+
 	MAP_SCRIPT_ON_LOAD {
 		//if (var(VAR_ARGO_STATE) == 7) {
 		//	call (Colchis_Script_IntroSetup)
@@ -97,6 +103,7 @@ mapscripts Colchis_MapScripts {
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_ARGO_STATE, 7: Colchis_Script_Intro
+		VAR_ARGO_STATE, 9: Colchis_Script_Jail
 		//VAR_ARGO_STATE, 7: Colchis_TempScript_SetupTestMedeaDance 
 		//VAR_ARGO_STATE, 10: Colchis_TempScript_TestMedeaDance 
 	]
@@ -117,6 +124,17 @@ script Colchis_TempScript_TestMedeaDance {
 	releaseall
 	end
 }
+
+script Colchis_Script_SetupJail {
+	removeobject (OBJ_EVENT_JASON)
+	setobjectxyperm (OBJ_EVENT_JASON, 18, 13)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_JASON)
+	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)	
+	end
+}
+
+
 
 script Colchis_Script_Jason {
 	if (var(VAR_ARGO_STATE) == 9) {
@@ -1235,36 +1253,23 @@ script Colchis_Script_Aeetes {
 	destroy_field_pic (FIELD_PIC_AEETES)
 	closemessage
 
-	removeobject (OBJ_EVENT_JASON)
-	setobjectxyperm (OBJ_EVENT_JASON, 18, 13)
-	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_UP)
-	addobject (OBJ_EVENT_JASON)
-	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)	
-
-	call (Colchis_Script_Jail)
-
-	//approaches Aeetes and speaks: 
-	//Aeetes: step forward Jason
-	//Enter Jason and Player where camera ended pan :)
-
-
-	//msgbox("END")
-	//closemessage
-
-
+	//Setup for Jail Scene	
+	special (RemoveCameraObject)
+	setvar (VAR_ARGO_STATE, 9) 
+	
+	//Warp to Jail (Scene triggered by Frame Table var)
+	warpsilent (MAP_COLCHIS, 18, 10)
+	waitstate
+	
 	return
 }
 
 script Colchis_Script_Jail {
 
-	//Move to scene	
-	special (RemoveCameraObject)
+	//Set var to prevent continuous trigger
+	setvar (VAR_ARGO_STATE, 10)
 
-	msgbox ("TEST", MSGBOX_DEFAULT)
-	closemessage
-
-	warpsilent (MAP_COLCHIS, 18, 10)
-	waitstate
+	// SCENE
 
 	//Jason bangs on the door
 	//It's not use we're stuck
@@ -1298,8 +1303,11 @@ script Colchis_Script_Jail {
 	
 	//Replace the tiles
 	playse (SE_EFFECTIVE)
-	setmetatile (18, 14, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
-	setmetatile (18, 15, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+	setmetatile (18, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+	setmetatile (18, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+	special (DrawWholeMapView)
+	delay (30)
+	waitse
 	
 	//Enter Medea
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_MedeaPrisonApproachPlayer)
@@ -1355,6 +1363,8 @@ script Colchis_Script_Jail {
 	load_field_pic(FIELD_PIC_MEDEA 190, 98)
 	msgbox(Colchis_Text_MedeaPrison4, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	closemessage
 
 	//Movevement to Sanctum
 
@@ -1678,7 +1688,7 @@ movement Common_Movement_JasonPrisonExit {
 	walk_down * 16
 	walk_right * 49
 	walk_down * 28
-	walk_left * 22
+	walk_left * 21
 }
 
 movement Common_Movement_PlayerPrisonExit {
@@ -1687,10 +1697,8 @@ movement Common_Movement_PlayerPrisonExit {
 	walk_down * 16
 	walk_right * 49
 	walk_down * 28
-	walk_left * 22
+	walk_left * 20
 }
-
-
 
 text Colchis_Text_JasonIntro1 {
 	format("Let us set out to claim Shiny Mareep.")
@@ -1806,7 +1814,7 @@ text Colchis_Text_Medea3 {
 }
 
 text Colchis_Text_Aeetes5 {
-	format("Erethay oomday ashay eenbay onouncedpray. Iay avehay okenspay. Assembleay oyalray uardsray!")
+	format("Eirthay oomday ashay eenbay onouncedpray. Iay avehay okenspay. Assembleay oyalray uardsray!")
 }
 
 text Colchis_Text_Aeetes6 {
