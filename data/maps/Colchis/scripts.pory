@@ -1,5 +1,5 @@
 
-//Enter Jason at center waits
+//Enter Jason at centerwaits
 //Triggers on entry approach Jason
 //Ambushed
 //We're hopelessly outnumbered we must surrender
@@ -1098,15 +1098,14 @@ script Colchis_Script_Aeetes {
 	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
 	msgbox(Colchis_Text_Medea1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_MEDEA)
-	closemessage
 
 	//Aeetes replies:
 	//Come forward Jason. Speak with Aeetes.
 
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes1, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_AEETES)
+	closemessage
 
 	waitmovement (0)
 	
@@ -1136,7 +1135,6 @@ script Colchis_Script_Aeetes {
 
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes2, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_AEETES)
 
 	//J:
@@ -1144,7 +1142,6 @@ script Colchis_Script_Aeetes {
 
 	load_field_pic(FIELD_PIC_JASON, 190, 98)
 	msgbox(Colchis_Text_JasonAeetes, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_JASON)
 
 	//A:
@@ -1154,7 +1151,6 @@ script Colchis_Script_Aeetes {
 	//you plan to steal or even kill
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes3, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_AEETES)
 	
 	
@@ -1162,7 +1158,6 @@ script Colchis_Script_Aeetes {
 	//I beg your majesty to show restraint.
 	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
 	msgbox(Colchis_Text_Medea2, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_MEDEA)
 
 	//A:
@@ -1174,8 +1169,8 @@ script Colchis_Script_Aeetes {
 	//therefore I have resolved they must be jailed
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes4, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_AEETES)
+	closemessage
 	
 	//Player & Jason ! points
 	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
@@ -1191,7 +1186,6 @@ script Colchis_Script_Aeetes {
 	//let Jason go free. I'll attend to him...
 	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
 	msgbox(Colchis_Text_Medea3, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_MEDEA)
 
 	//A:
@@ -1199,7 +1193,6 @@ script Colchis_Script_Aeetes {
 	//Assemble Royal Guards
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes5, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_AEETES)
 
 	//Guards move into position
@@ -1213,7 +1206,6 @@ script Colchis_Script_Aeetes {
 	//Take them to jail
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes6, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_AEETES)
 
 	//They exit
@@ -1232,7 +1224,6 @@ script Colchis_Script_Aeetes {
 	msgbox(Colchis_Text_Medea4, MSGBOX_DEFAULT)
 
 	waitmovement (0)
-	closemessage 
 	destroy_field_pic (FIELD_PIC_MEDEA)
 
 	//A:
@@ -1241,16 +1232,16 @@ script Colchis_Script_Aeetes {
 	//goto Jail :D
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes7, MSGBOX_DEFAULT)
-	closemessage
 	destroy_field_pic (FIELD_PIC_AEETES)
+	closemessage
 
-	special (RemoveCameraObject)
-	
-	warpsilent (MAP_COLCHIS, 18, 10)
+	removeobject (OBJ_EVENT_JASON)
+	setobjectxyperm (OBJ_EVENT_JASON, 18, 13)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_JASON)
+	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)	
 
-	waitstate
-
-
+	call (Colchis_Script_Jail)
 
 	//approaches Aeetes and speaks: 
 	//Aeetes: step forward Jason
@@ -1263,6 +1254,121 @@ script Colchis_Script_Aeetes {
 
 	return
 }
+
+script Colchis_Script_Jail {
+
+	//Move to scene	
+	special (RemoveCameraObject)
+
+	msgbox ("TEST", MSGBOX_DEFAULT)
+	closemessage
+
+	warpsilent (MAP_COLCHIS, 18, 10)
+	waitstate
+
+	//Jason bangs on the door
+	//It's not use we're stuck
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonPrison1, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_JASON)
+
+	//Jason Walks up
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_JasonPrisonApproachPlayer)
+	waitmovement (0)
+	
+	//The quest is lost. I fear I've failed us both
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonPrison2, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_JASON)
+	
+	//He turns, ! Point
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	//Place Medea
+	removeobject (OBJ_EVENT_MEDEA)
+	setobjectxyperm (OBJ_EVENT_MEDEA, 18, 16)
+	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_MEDEA)
+	showobjectat (OBJ_EVENT_MEDEA, MAP_COLCHIS)	
+	
+	//Replace the tiles
+	playse (SE_EFFECTIVE)
+	setmetatile (18, 14, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+	setmetatile (18, 15, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+	
+	//Enter Medea
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_MedeaPrisonApproachPlayer)
+	waitmovement (0)
+
+	//I've come to save you 
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox(Colchis_Text_MedeaPrison1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	//You are a witch! Why should I now trust you?
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonPrison3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+
+	//Noone more beautiful love lets go
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox(Colchis_Text_MedeaPrison2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	//Your words do move me but I cannot leave without Mareep
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonPrison4, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+
+	//Anything for you my love
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox(Colchis_Text_MedeaPrison3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	closemessage 
+
+	//Jason Faces Player
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	//We should trust her lets go
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonPrison5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	closemessage 
+
+	//Turns back to Medea
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
+	waitmovement (0)
+
+	//What is your plan we cant take them all
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonPrison6, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+
+	//I've put my spell on them and they won't wake so long as you travel with me lets go
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox(Colchis_Text_MedeaPrison4, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+
+	//Movevement to Sanctum
+
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_MedeaPrisonExit)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_JasonPrisonExit)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_PlayerPrisonExit)
+	waitmovement (OBJ_EVENT_ID_PLAYER)
+
+	return
+
+}
+
+
+
 	
 
 movement Colchis_Movement_IntroPlayer {
@@ -1549,6 +1655,43 @@ movement Colchis_Movement_RoyalGuardExit {
 	walk_down * 8
 }
 
+movement Colchis_Movement_JasonPrisonApproachPlayer {
+	walk_up * 2
+}
+
+movement Common_Movement_MedeaPrisonApproachPlayer {
+	walk_up * 4
+}
+
+movement Common_Movement_MedeaPrisonExit {
+	walk_down * 4
+	walk_left * 15
+	walk_down * 16
+	walk_right * 49
+	walk_down * 28
+	walk_left * 22
+}
+
+movement Common_Movement_JasonPrisonExit {	
+	walk_down * 5
+	walk_left * 15
+	walk_down * 16
+	walk_right * 49
+	walk_down * 28
+	walk_left * 22
+}
+
+movement Common_Movement_PlayerPrisonExit {
+	walk_down * 6
+	walk_left * 15
+	walk_down * 16
+	walk_right * 49
+	walk_down * 28
+	walk_left * 22
+}
+
+
+
 text Colchis_Text_JasonIntro1 {
 	format("Let us set out to claim Shiny Mareep.")
 }
@@ -1678,3 +1821,65 @@ text Colchis_Text_Aeetes7 {
 	format("Oday otnay eepway atthay ouryay ingkay eepskay Olchiscay afesay.")
 }
 
+text Colchis_Text_JasonPrison1 {
+	format("Release me! I'm the great Captain Jason!")
+}
+
+text Colchis_Text_JasonPrison2 {
+	format("The quest is lost. I fear I've failed us both...")
+}
+//Most noble Jason please forget your fears.
+//I've come to you, against my father's will,
+//to save you from this unglorious fate.
+
+//Most noble Jason please forget your fears. I've come to you, against my father's will, to save you from this unglorious fate.
+
+text Colchis_Text_MedeaPrison1 {
+	format("Ostmay oblenay Asonjay easeplay orgetfay ouryay earsfay. I'veay omecay otay ouyay, againstay ymay ather'sfay illway, otay avesay ouyay omfray isthay ungloriousay atefay.")
+}
+
+text Colchis_Text_JasonPrison3 {
+	format("You are a witch! Why should I trust you now?")
+}
+
+//Those words "A witch" sting worse than burning coals
+//or gushing blood. I'd rather lose my arm
+//than know that you think of me as a witch.
+//My name is Medea I am daughter
+//of Aeetes and princess of Colchis.
+//and you Jason I treasure more than all
+//the countless riches held on our island,
+//more than our soldiers, more than family
+//For you I am prepared to trade it all
+//I swear myself loyal only to you
+//and name you now my king; yours to command.
+
+//Those words "A witch" sting worse than burning coals or gushing blood. I'd rather lose my arm than know that you think of me as a witch. My name is Medea. I am daughter of Aeetes, and princess of Colchis, and you Jason I treasure more than all the countless riches held on our island, more than our subjects, more than family. For you I am prepared to trade it all. I swear myself loyal only to you and name you now my king, yours to command.
+
+text Colchis_Text_MedeaPrison2 {
+	format("Osethay ordsway, 'aay itchway' ingstay orseway anthay urningbay oalscay oray ushinggay oodblay. I'day atherray oselay ymay armay anthay owknay atthay ouyay inkthay ofay emay asay aay itchway. Ymay amenay isay Edeamay. Iay amay aughterday of Aeetesay, anday incesspray ofay Olchiscay, anday ouyay, Asonjay, Iay easuretray oremay anthay allay ethay ounlesscay ichesray eldhay onay ouray islanday, oremay anthay ouray ubjectssay, oremay anthay amilyfay. Orfay ouyay Iay amay eparedpray otay adetray itay allay. Iay earsway yselfmay oyallay onlyay otay ouyay anday amenay ouyay ownay ymay ingkay, oursyay otay ommandcay.")
+}
+
+text Colchis_Text_JasonPrison4 {
+	format("Truly Medea your words reach my heart and scrub the barnacles of suspicion rigorously from my enamoured soul. If what you say is true, that all Colchis is but a paltry sum compared to me, then what I ask of you should be minor. Give me shiny Mareep as your dowry and I will make you Queen of the Argo.")
+}
+
+//I will do this and more for you, my love.
+text Colchis_Text_MedeaPrison3 {
+	format("Iay illway oday isthay anday oremay orfay ouyay ymay ovelay.")
+}
+
+text Colchis_Text_JasonPrison5 {
+	format("Medea is our one and only hope. Lets go with her and win shiny Mareep!")
+}
+
+text Colchis_Text_JasonPrison6 {
+	format("Let it be so then lovely Medea. We'll go with you but how can we expect to bring shiny Mareep out of this place when countless are the men who guard the doors? Indeed you may be able to persuade many but more yet remain loyal to the wicked king, your hard hearted father.")
+}
+
+
+//Don't worry sweet I put a spell on them. As long as you're with me they all will sleep. Now I will lead you to shiny Mareep
+
+text Colchis_Text_MedeaPrison4 {
+	format("On'tday orryway eetsway, Iay utpay aay ellspay onay emthay. Asay onglay asay ou'reyay ithway emay eythey allay illway eeplslay. Ownay Iay illway eadlay ouyay otay inyshay Areepmay.")
+}

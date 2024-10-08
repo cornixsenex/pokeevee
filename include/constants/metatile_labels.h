@@ -146,6 +146,10 @@
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
 
+// gTileset_Colchis
+#define METATILE_Colchis_JailDoorOpen_Bottom  0x313
+#define METATILE_Colchis_JailDoorOpen_Top     0x30B
+
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
 #define METATILE_Contest_CounterFlap_Top     0x2D1
