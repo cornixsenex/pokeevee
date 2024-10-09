@@ -209,10 +209,10 @@
 #define FLAG_PROMETHEUS_INTROD               0x80 //Set after initial talk with Prometheus to prevent repeat exposition
 #define FLAG_BIGISLANDN_DIOSCURIFOUND        0x81 //Set after talking to Dioscuri on beach. Cleared after talk again @ boat
 #define FLAG_BIGISLAND_N_JASON_OSTRACON      0x82
+#define FLAG_COLCHIS_HIDE_LUGIA              0x83
 
 // BREAK //
 
-#define FLAG_RECEIVED_DOLL_LANETTE           0x83
 #define FLAG_RECEIVED_POTION_OLDALE          0x84
 #define FLAG_RECEIVED_AMULET_COIN            0x85
 #define FLAG_PENDING_DAYCARE_EGG             0x86

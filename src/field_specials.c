@@ -5664,6 +5664,9 @@ void ReleaseChosenMon(void)
 	struct Pokemon *mon;
 	mon = &gPlayerParty[gSpecialVar_0x8004];
 	ZeroMonData(mon);
+	CompactPartySlots();
+	//CompactPartySprites();
+	CalculatePlayerPartyCount();
 }
 
 void SetupColchisForcedBattle(void)

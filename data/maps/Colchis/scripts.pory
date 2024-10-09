@@ -1472,12 +1472,29 @@ script Colchis_Script_SetupSanctum {
 	
 	//set var to activate the triggers
 	setvar (VAR_ARGO_STATE, 11)
-	
+
+	//Persist Jason and Medea outside Sanctum
+	setobjectxyperm (OBJ_EVENT_JASON, 31, 60)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_JASON)
+	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)
+
+	setobjectxyperm (OBJ_EVENT_MEDEA, 30, 60)
+	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_MEDEA)
+	showobjectat (OBJ_EVENT_MEDEA, MAP_COLCHIS)
 	//Release
 	end
 }
 
-	
+script Colchis_Script_LugiaTest {
+	lockall
+	faceplayer
+	msgbox ("TEST", MSGBOX_DEFAULT)
+	closemessage
+	releaseall
+	end
+}
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3

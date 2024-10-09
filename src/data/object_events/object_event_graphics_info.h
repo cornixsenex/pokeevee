@@ -269,7 +269,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionDrifblim 
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 //DID YOU READ THE ABOVE? SPECIES NOT NORMAL
-
+//
 
 //This is a copy of Youngster2 for special collisions
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionYoungster2 = {

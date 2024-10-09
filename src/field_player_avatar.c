@@ -898,7 +898,9 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_EKANS
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
-				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM)
+				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM
+				|| (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && gObjectEvents[objectEventId].mapNum == MAP_NUM(COLCHIS) && gObjectEvents[objectEventId].mapGroup == MAP_GROUP(COLCHIS) ) // Note Lugia different
+				)
 		{
 			script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
 			ScriptContext_SetupScript(script);

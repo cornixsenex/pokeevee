@@ -6497,7 +6497,9 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_EKANS
                 || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
                 || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
-				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM)
+				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM
+				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && objectEvent->mapNum == MAP_NUM(COLCHIS) && objectEvent->mapGroup == MAP_GROUP(COLCHIS) ) //Lugia different cuz no special COLLISION sprite
+				)
 			{
 				//Yes, it's a special collision with player do script
 				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);
