@@ -1405,13 +1405,6 @@ script Colchis_Script_SetupSanctum {
 	hideobjectat (OBJ_EVENT_SANCTUM2, MAP_COLCHIS)
 	removeobject (OBJ_EVENT_SANCTUM1)
     removeobject (OBJ_EVENT_SANCTUM2)
-
-	//Persist hidden object
-	setobjectmovementtype (OBJ_EVENT_SANCTUM1, MOVEMENT_TYPE_INVISIBLE)
-	setobjectxyperm (OBJ_EVENT_SANCTUM1, 1, 0)
-	setobjectmovementtype (OBJ_EVENT_SANCTUM2, MOVEMENT_TYPE_INVISIBLE)
-	setobjectxyperm (OBJ_EVENT_SANCTUM2, 3, 0)
-
 	
 	//Medea comes back
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaSanctum2)
@@ -1423,57 +1416,15 @@ script Colchis_Script_SetupSanctum {
 	destroy_field_pic (FIELD_PIC_MEDEA)
 	
 	//J: I couldn't bear to part with you I'm all into you your spell is over me Player you must do this for me bring back Shiny Mareep I will remain here and spend quality time with Medea
-	load_field_pic(FIELD_PIC_JASON, 190, 98)
-	msgbox(Colchis_Text_JasonSanctum1, MSGBOX_DEFAULT)
-	destroy_field_pic (FIELD_PIC_JASON)
-
-	//Jason turns to and address the player
-	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceRight)
-	waitmovement (0)
-
-	//J: Therefore I trust you to complete this quest. Go forth and bring me back shiny Mareep.
-	load_field_pic(FIELD_PIC_JASON, 190, 98)
-	msgbox(Colchis_Text_JasonSanctum2, MSGBOX_DEFAULT)
-	destroy_field_pic (FIELD_PIC_JASON)
-
-	closemessage
-	
-	//Jason turns back to Medea
-	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceLeft)
-	waitmovement (0)
-
-	//Player sets off
-	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerSanctum1)
-	waitmovement (0)
-	//Medea faces up
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_FaceUp)
-	waitmovement (0)
-	//Player faces back
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
-	waitmovement (0)
-	//! POINTS
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_ExclamationMark)
-	waitmovement (0)
 	
 	//M: One thing you must know Player. Shiny Mareep is guarded by Lugia who is precious to me. You must not bring any harm to her(?) Tho I am fated never to see her again, such is the price of Jason's love, Hecate through me demands she be kept safe
-	load_field_pic(FIELD_PIC_MEDEA 190, 98)
-	msgbox(Colchis_Text_MedeaSanctum3, MSGBOX_DEFAULT)
-	destroy_field_pic (FIELD_PIC_MEDEA)
-	closemessage
-
-	//Medea turns back to Jason
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_FaceRight)
-	waitmovement (0)
 	
 	//Player moves beyond the triggers
-	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerSanctum2)
-	waitmovement (0)
 	
 	//set var to activate the triggers
-	setvar (VAR_ARGO_STATE, 11)
 	
 	//Release
+
 	end
 }
 
@@ -1808,14 +1759,6 @@ movement Colchis_Movement_MedeaSanctum2 {
 	walk_right * 3
 }
 
-movement Colchis_Movement_PlayerSanctum1 {
-	walk_up * 3
-}
-
-movement Colchis_Movement_PlayerSanctum2 {
-	walk_up * 2
-}
-
 text Colchis_Text_JasonIntro1 {
 	format("Let us set out to claim Shiny Mareep.")
 }
@@ -2014,13 +1957,13 @@ text Colchis_Text_MedeaSanctum1 {
 
 
 //The way is open. I go no further
-//for, even as I behold my true love,
-//within the sanctum of shiny Mareep
-//dwells Lugia, my favorite Pokemon,
-//who I must be fated never again
-//to see as I leave Colchis forever.
-//I fear that seeing her would break the hold
-//of lovei that you Jason hold over me
+for, even as I behold my true love,
+within the sanctum of shiny Mareep
+dwells Lugia, my favorite Pokemon,
+who I must be fated never again
+to see as I leave Colchis forever.
+I fear that seeing her would break the hold
+of lovei that you Jason hold over me
 
 
 //The way is open. I go no further,
@@ -2032,36 +1975,19 @@ text Colchis_Text_MedeaSanctum1 {
 //I fear that seeing her would break the hold
 //of love that you, Jason, hold over me.
 
-//The way is open. I go no further, for even as I behold my true love, within the sanctum of shiny Mareep dwells Lugia, my favorite Pokemon, whom I must be fated never again to see, as I leave Colchis forever. I fear that seeing her would break the hold of love that you, Jason, hold over me.
+//The way is open. I go no further,
+//for even as I behold my true love,
+//within the sanctum of shiny Mareep
+//dwells Lugia, my favorite Pokemon,
+//whom I must be fated never again
+//to see, as I leave Colchis forever.
+//I fear that seeing her would break the hold
+//of love that you, Jason, hold over me.
 
 text Colchis_Text_MedeaSanctum2 {
-	format("Ethay ayway isay openay. Iay ogay onay urtherfay, orfay evenay asay Iay eholdbay ymay uetray ovelay, ithinway ethay anctumsay ofay inyshay Areepmay ellsdway Ugialay, ymay avoritefay okemonpay, omwhay Iay ustmay ebay atedfay evernay againay otay eesay, asay Iay eavelay Olchiscay oreverfay. Iay earfay atthay eeingsay erhay ouldway eakbray ethay oldhay ofay ovelay atthay ouyay, Asonjay, oldhay overay emay.")
-}
+	format("
 
-//I will not leave without shiny Mareep
-//but neither will I become seperate from
-//my soulmate the enchanting Medea.
 
-text Colchis_Text_JasonSanctum1 {
-	format("I will not leave without shiny Mareep but neither will I become seperate from my soulmate, the enchanting Medea.")
-}
-
-text Colchis_Text_JasonSanctum2 {
-	format("Therefore I trust you to complete this quest. Go forth and bring me back shiny Mareep.")
-}
-
-//Before you go take heed of what I say
-//Shiny Mareep is guarded by the great
-//mistress of storms: The mighty Lugia
-//She is most precious to me. You must not
-//confront her or bring harm in any way
-//or else you will surely here this day.
-
-//Before you go take heed of what I say. Shiny Mareep is guarded by the great mistress of storms, the mighty Lugia. She is most precious to me. You must not confront her, or harm her in any way, or else you will surely die here this day.
-
-text Colchis_Text_MedeaSanctum3 {
-	format("Eforebay ouyay ogay aketay eedhay ofay atwhay Iay aysay. Inyshay Areepmay isay uardedgay ybay ethay eatgray istressmay ofay ormsstay, ethay ightymay Ugialay. Eshay isay ostmay eciouspray otay emay. Ouyay ustmay otnay onfrontcay erhay, oray armhay erhay inay anyay ayway, oray elseay ouyay illway urelysay ieday erehay isthay ayday.")
-}
 
 
 
