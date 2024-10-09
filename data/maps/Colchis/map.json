@@ -734,7 +734,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_ARGO_STATE",
+      "var_value": "11",
+      "script": "Colchis_Script_SanctumTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_ARGO_STATE",
+      "var_value": "11",
+      "script": "Colchis_Script_SanctumTrigger"
+    }
   ],
   "bg_events": [
 

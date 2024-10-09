@@ -984,19 +984,21 @@ void FieldShowRegionMap(void)
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
-static bool32 IsBuildingPCTile(u32 tileId)
-{
-    return gMapHeader.mapLayout->primaryTileset == &gTileset_Building && (tileId == METATILE_Building_PC_On || tileId == METATILE_Building_PC_Off);
-}
+//NOTE: CORNIX SENEX REMOVED THESE FUNCTIONS
+//static bool32 IsBuildingPCTile(u32 tileId)
+//{
+//    return gMapHeader.mapLayout->primaryTileset == &gTileset_Building && (tileId == METATILE_Building_PC_On || tileId == METATILE_Building_PC_Off);
+//}
 
-static bool32 IsPlayerHousePCTile(u32 tileId)
-{
-    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse
-        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
-            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
-            || tileId == METATILE_BrendansMaysHouse_MayPC_On
-            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
-}
+//NOTE: CORNIX SENEX REMOVED THESE FUNCTIONS
+//static bool32 IsPlayerHousePCTile(u32 tileId)
+//{
+//    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse
+//        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
+//            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
+//            || tileId == METATILE_BrendansMaysHouse_MayPC_On
+//            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
+//}
 
 static bool8 IsPlayerInFrontOfPC(void)
 {

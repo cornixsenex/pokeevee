@@ -1496,6 +1496,24 @@ script Colchis_Script_LugiaTest {
 	end
 }
 
+script Colchis_Script_SanctumTrigger {
+
+	lockall
+
+	//face the player and !
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_FaceUp)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//if neither Lugia nor Medea send him back up
+	//else process XX XO OX OO
+
+	releaseall
+	end
+}
+
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
 }
