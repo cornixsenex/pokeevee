@@ -107,6 +107,13 @@ mapscripts Colchis_MapScripts {
 
 	}
 
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_COLCHIS_HIDE_MAREEP)) {
+			hideobjectat (OBJ_EVENT_MAREEP, MAP_COLCHIS)
+			removeobject (OBJ_EVENT_MAREEP)
+		}
+	}
+
 	MAP_SCRIPT_ON_FRAME_TABLE [
 	//	VAR_ARGO_STATE, 7: Colchis_Script_Intro
 		VAR_ARGO_STATE, 7: Colchis_TempScript_WarpSanctum
@@ -1544,10 +1551,10 @@ script Colchis_Script_ShinyMareep {
 	faceplayer
 	setflag (FLAG_COLCHIS_HIDE_MAREEP)
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
-	removeobject (OBJ_EVENT_MAREEP)
 	special (DoShinyMareepBattle)
 	waitstate
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (OBJ_EVENT_MAREEP)
 	releaseall
 	end
 }

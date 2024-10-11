@@ -4684,7 +4684,7 @@ void ChangeGen (void)
 
 	if (SPATK > 2)
 		SPATK /= 2;
-	else
+	else//
 		SPATK = 1;
 
 	if (SPDEF > 2)
@@ -5692,11 +5692,20 @@ void DoShinyMareepBattle(void)
 	//SetWildBattle
 	u16 species = SPECIES_MAREEP;
 	u8 level = 18;
+	struct Pokemon *mon;
+	bool32 makeShiny = TRUE;
+	mon = &gEnemyParty[0];
 	//Create ScriptedWildMon
 
     ZeroEnemyPartyMons();
 
-	CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+
+	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	
+	//Make Shiny Mareep
+	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+	
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
