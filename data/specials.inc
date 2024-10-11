@@ -581,3 +581,5 @@ gSpecials::
 	def_special IsSpearowInParty
 	def_special ReleaseChosenMon
 	def_special SetupColchisForcedBattle
+	def_special SetObjectMovementTypeGhoul
+	def_special DoShinyMareepBattle

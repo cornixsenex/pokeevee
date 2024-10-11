@@ -11422,6 +11422,19 @@ u8 MovementAction_SpinRight_Step1(struct ObjectEvent *objectEvent, struct Sprite
     return FALSE;
 }
 
+//KUSTOM GHOUL SET MOVEMENT TYPE ON THE FLY INSTEAD OF IN TRANSITION
+void SetObjectMovementTypeGhoul(void)
+{
+	struct ObjectEvent *objectEvent = &gObjectEvents[GetObjectEventIdByLocalIdAndMap(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)];
+	u8 movementType = gSpecialVar_0x8006;
+	
+	objectEvent->movementType = movementType;
+	objectEvent->directionSequenceIndex = 0;
+	objectEvent->playerCopyableMovement = 0;
+	gSprites[objectEvent->spriteId].callback = sMovementTypeCallbacks[movementType];
+	gSprites[objectEvent->spriteId].data[1] = 0;
+}
+
 // END CUSTOM
 
 // Get gfx data from daycare pokemon and store it in vars

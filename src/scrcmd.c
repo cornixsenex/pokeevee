@@ -1204,7 +1204,7 @@ bool8 ScrCmd_turnobject(struct ScriptContext *ctx)
 }
 
 bool8 ScrCmd_setobjectmovementtype(struct ScriptContext *ctx)
-{
+{    
     u16 localId = VarGet(ScriptReadHalfword(ctx));
     u8 movementType = ScriptReadByte(ctx);
 

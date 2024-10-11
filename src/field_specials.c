@@ -2,6 +2,7 @@
 #include "debug.h"
 #include "malloc.h"
 #include "battle.h"
+#include "battle_setup.h"
 #include "battle_tower.h"
 #include "cable_club.h"
 #include "data.h"
@@ -5684,6 +5685,21 @@ void SetupColchisForcedBattle(void)
 	
 	//Set Colchis 2 (OBJ Event 24) to 6 tiles below player
 	SetObjEventTemplateCoords(24, x-7, y-1);
+}
+
+void DoShinyMareepBattle(void)
+{
+	//SetWildBattle
+	u16 species = SPECIES_MAREEP;
+	u8 level = 18;
+	//Create ScriptedWildMon
+
+    ZeroEnemyPartyMons();
+
+	CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	//DoWildBattle
+    BattleSetup_StartScriptedWildBattle();
+    ScriptContext_Stop();
 }
 
 

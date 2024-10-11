@@ -85,6 +85,8 @@ const FIELD_PIC_COLCHIS_F = 23
 const FIELD_PIC_MEDEA = 24
 const FIELD_PIC_AEETES = 9
 
+const OBJ_EVENT_LUGIA = 1
+const OBJ_EVENT_MAREEP = 2
 
 mapscripts Colchis_MapScripts {
 
@@ -106,13 +108,20 @@ mapscripts Colchis_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ARGO_STATE, 7: Colchis_Script_Intro
+	//	VAR_ARGO_STATE, 7: Colchis_Script_Intro
+		VAR_ARGO_STATE, 7: Colchis_TempScript_WarpSanctum
 		VAR_ARGO_STATE, 9: Colchis_Script_Jail
 		//VAR_ARGO_STATE, 7: Colchis_TempScript_SetupTestMedeaDance 
 		//VAR_ARGO_STATE, 10: Colchis_TempScript_TestMedeaDance 
 	]
 
 
+}
+
+script Colchis_TempScript_WarpSanctum {
+	setvar (VAR_ARGO_STATE, 11)
+	warpsilent (MAP_COLCHIS, 34, 56)
+	end
 }
 
 script Colchis_TempScript_SetupTestMedeaDance {
@@ -1500,6 +1509,10 @@ script Colchis_Script_SanctumTrigger {
 
 	lockall
 
+	///If Player hasn't interacted with either Lugia or Mareep just send him back
+	
+	//Else figure out which ending
+
 	//face the player and !
 	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_FaceUp)
@@ -1507,9 +1520,34 @@ script Colchis_Script_SanctumTrigger {
 	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	//if neither Lugia nor Medea send him back up
+	//if neither Lugia nor Mareep send him back up
 	//else process XX XO OX OO
 
+	releaseall
+	end
+}
+
+script Colchis_Script_LugiaChaseTrigger {
+	setvar (VAR_TEMP_A, 1)
+	setobjectmovementtypeghoul (OBJ_EVENT_LUGIA, MOVEMENT_TYPE_CHASE_PLAYER)
+	end
+}
+
+script Colchis_Script_LugiaWanderTrigger {
+	setvar (VAR_TEMP_A, 0)
+	setobjectmovementtypeghoul (OBJ_EVENT_LUGIA, MOVEMENT_TYPE_WANDER_AROUND)
+	end
+}
+
+script Colchis_Script_ShinyMareep {
+	lockall
+	faceplayer
+	setflag (FLAG_COLCHIS_HIDE_MAREEP)
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (OBJ_EVENT_MAREEP)
+	special (DoShinyMareepBattle)
+	waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	releaseall
 	end
 }

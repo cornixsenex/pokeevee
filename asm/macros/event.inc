@@ -2379,3 +2379,10 @@
 	.macro togglefakertc
 	callnative Script_ToggleFakeRtc
 	.endm
+   
+	@ Ghoul Custom 
+	.macro setobjectmovementtypeghoul localId:req, movementType:req
+    setvar VAR_0x8005, \localId
+    setvar VAR_0x8006, \movementType
+    special SetObjectMovementTypeGhoul
+    .endm
