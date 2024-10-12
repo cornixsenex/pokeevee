@@ -211,10 +211,10 @@
 #define FLAG_BIGISLAND_N_JASON_OSTRACON      0x82
 #define FLAG_COLCHIS_HIDE_LUGIA              0x83
 #define FLAG_COLCHIS_HIDE_MAREEP             0x84
+#define FLAG_JASON_HAS_SHINYMAREEP           0x85
 
 // BREAK //
 
-#define FLAG_RECEIVED_AMULET_COIN            0x85
 #define FLAG_PENDING_DAYCARE_EGG             0x86
 #define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.

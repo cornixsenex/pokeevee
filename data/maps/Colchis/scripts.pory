@@ -108,15 +108,22 @@ mapscripts Colchis_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_RESUME {
+
 		if (flag(FLAG_COLCHIS_HIDE_MAREEP)) {
 			hideobjectat (OBJ_EVENT_MAREEP, MAP_COLCHIS)
 			removeobject (OBJ_EVENT_MAREEP)
 		}
+
+		if (flag(FLAG_COLCHIS_HIDE_LUGIA)) {
+			hideobjectat (OBJ_EVENT_LUGIA, MAP_COLCHIS)
+			removeobject (OBJ_EVENT_LUGIA)
+		}
+	
 	}
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-	//	VAR_ARGO_STATE, 7: Colchis_Script_Intro
-		VAR_ARGO_STATE, 7: Colchis_TempScript_WarpSanctum
+		VAR_ARGO_STATE, 7: Colchis_Script_Intro
+		//VAR_ARGO_STATE, 7: Colchis_TempScript_WarpSanctum
 		VAR_ARGO_STATE, 9: Colchis_Script_Jail
 		//VAR_ARGO_STATE, 7: Colchis_TempScript_SetupTestMedeaDance 
 		//VAR_ARGO_STATE, 10: Colchis_TempScript_TestMedeaDance 
@@ -1499,6 +1506,7 @@ script Colchis_Script_SetupSanctum {
 	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_RIGHT)
 	addobject (OBJ_EVENT_MEDEA)
 	showobjectat (OBJ_EVENT_MEDEA, MAP_COLCHIS)
+	releaseall
 	//Release
 	end
 }
@@ -1512,13 +1520,38 @@ script Colchis_Script_LugiaTest {
 	end
 }
 
+script Colchis_Script_Lugia {
+	lockall
+	faceplayer
+	playmoncry (SPECIES_LUGIA, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setflag (FLAG_COLCHIS_HIDE_LUGIA)
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	setwildbattle (SPECIES_LUGIA, 18)
+	special (BattleSetup_StartLegendaryBattle)
+	waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (OBJ_EVENT_LUGIA)
+	releaseall
+	end
+}
+
+
+script Colchis_Script_SanctumTriggerA {
+	lockall
+	setvar (VAR_TEMP_B, 0)
+	call (Colchis_Script_SanctumTrigger)
+}
+
+script Colchis_Script_SanctumTriggerB {
+	lockall
+	setvar (VAR_TEMP_B, 1)
+	call (Colchis_Script_SanctumTrigger)
+}
+
 script Colchis_Script_SanctumTrigger {
 
 	lockall
-
-	///If Player hasn't interacted with either Lugia or Mareep just send him back
-	
-	//Else figure out which ending
 
 	//face the player and !
 	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
@@ -1527,28 +1560,132 @@ script Colchis_Script_SanctumTrigger {
 	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	//if neither Lugia nor Mareep send him back up
-	//else process XX XO OX OO
+
+	///If Player hasn't interacted with either Lugia or Mareep just send him back
+	if (!flag(FLAG_COLCHIS_HIDE_MAREEP) && !flag(FLAG_COLCHIS_HIDE_LUGIA)) {
+			call (Colchis_Script_SanctumTriggerReturn
+	} else { //Player has cleared one of the two flags
+		//Set Var as this will be the next step
+		setvar (VAR_ARGO_STATE, 12)
+		//Finished? Text
+		call (Colchis_Script_SanctumTriggerEndIntro)
+		//FAILED BOTH MEDEA AND JASON
+		if (!flag(FLAG_COLCHIS_HIDE_MAREEP)) { 	
+			
+			//Medea goes to check Lugia
+			call (Colchis_Script_SanctumTriggerMedeaExit)
+
+			//Player goes to meet with Jason 
+			call (Colchis_Script_SanctumApproachJason)
+			
+			//Jason Battle (because you never interacted with Lugia)
+			call (Colchis_Script_SanctumJasonBattle)
+			
+			//Medea returns You Monster
+			call (Colchis_Script_SanctumMedeaReturn)
+
+
+			//Come my love let us care for each other's sorrows
+			//If No Fleece then Jason says they go into the wild, else He will make her his queen in his land of Bulbus but leave the player to leave on his own
+			//Maybe he turns to the player on his way out and says good luck
+			//The exit
+			//Setup Escape from Colchis
+			//Fin
+		//Cleared Mareep no interact w/ Lugia check 4 Mareep
+		} elif (!flag(FLAG_COLCHIS_HIDE_LUGIA)) { 
+			closemessage
+			call (Colchis_Script_SanctumApproachJason)
+			//Jason asks for Fleece
+			call (Colchis_Script_SanctumJasonMareep) //YES NO CLEAR OR ATTACK
+			if (flag(FLAG_JASON_HAS_SHINYMAREEP)) {
+				//Peaceful ending
+				call (Colchis_Script_Exeunt)
+			} else {
+				//Jason says they go into the wild
+				//They exeunt
+				//Setup Escape from Colchis
+				//Fin
+			}
+		} else { //both flags interacted means Medea goes to see Lugia and Jason checks Mareep
+			call (Colchis_Script_SanctumTriggerMedeaExit)
+			call (Colchis_Script_SanctumApproachJason)
+			call (Colchis_Script_SanctumJasonMareep)
+			call (Colchis_Script_SanctumMedeaReturn)
+			//Come my love let me take care of your sorrow
+			//IF JASON_HAS_SHINYMARREP then he apologizes to you and says to Medea she will go backto Bulbus with him
+			//ELSE He does his wilds speach
+			//Exeunt
+			//Setup Escape From Colchis
+			
+		}
+	}
 
 	releaseall
 	end
 }
 
+script Colchis_Script_SanctumTriggerReturn {
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonSanctumTrigger1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox(Colchis_Text_MedeaSanctumTrigger1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+	
+	closemessage
+
+	//Send you back up
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+
+	return
+}
+
+	
+
+script Colchis_Script_SanctumTriggerEndIntro {
+		load_field_pic(FIELD_PIC_JASON, 190, 98)
+		msgbox(Colchis_Text_JasonSanctumTrigger2, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_JASON)
+		return
+}
+
+script Colchis_Script_SanctumTriggerMedeaExit {
+		load_field_pic(FIELD_PIC_MEDEA 190, 98)
+		msgbox(Colchis_Text_MedeaSanctumTrigger1, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_MEDEA)
+		closemessage
+		if (var(VAR_TEMP_B) == 0) {	
+			applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaSanctum3A)
+		} else {
+			applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaSanctum3B)
+		}
+		waitmovement (0)
+		return
+}
+	
 script Colchis_Script_LugiaChaseTrigger {
 	setvar (VAR_TEMP_A, 1)
-	setobjectmovementtypeghoul (OBJ_EVENT_LUGIA, MOVEMENT_TYPE_CHASE_PLAYER)
+	if (!flag(FLAG_COLCHIS_HIDE_LUGIA)) {	
+		setobjectmovementtypeghoul (OBJ_EVENT_LUGIA, MOVEMENT_TYPE_CHASE_PLAYER)
+	}
 	end
 }
 
 script Colchis_Script_LugiaWanderTrigger {
 	setvar (VAR_TEMP_A, 0)
-	setobjectmovementtypeghoul (OBJ_EVENT_LUGIA, MOVEMENT_TYPE_WANDER_AROUND)
+	if (!flag(FLAG_COLCHIS_HIDE_LUGIA)) {
+		setobjectmovementtypeghoul (OBJ_EVENT_LUGIA, MOVEMENT_TYPE_WANDER_AROUND)
+	}
 	end
 }
 
 script Colchis_Script_ShinyMareep {
 	lockall
 	faceplayer
+	playmoncry (SPECIES_MAREEP, CRY_MODE_ENCOUNTER)
+	waitmoncry
 	setflag (FLAG_COLCHIS_HIDE_MAREEP)
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	special (DoShinyMareepBattle)
@@ -1558,6 +1695,134 @@ script Colchis_Script_ShinyMareep {
 	releaseall
 	end
 }
+
+script Colchis_Script_SanctumApproachJason {
+	if (var(VAR_TEMP_B) == 0) {	
+		applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerSanctum3A)
+	} else {
+		applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerSanctum3B)
+	}
+	waitmovement (0)
+
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceRight)
+	waitmovement (0)
+
+	return
+}
+
+script Colchis_Script_SanctumJasonBattle {
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonSanctumTrigger3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	closemessage
+
+	trainerbattle_no_intro(TRAINER_JASON, Colchis_Text_JasonLost)
+
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonPost, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	
+	return
+}
+
+script Colchis_Script_SanctumMedeaReturn {
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceUp)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox("OIMOIAY!\nOOIIMMOOIIAAYY!!", MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+	closemessage
+
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaSanctumReturn)
+	waitmovement (0)
+
+	//Shes very upset at the player - lecture player
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox(Colchis_Text_MedeaSanctumReturn1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+	closemessage
+
+	//Walks down to position
+	if (var(VAR_TEMP_B) == 0) {	
+		applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaSanctumReturn2A)
+	} else {
+		applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaSanctumReturn2B)
+	}
+	waitmovement (0)
+
+	//Lecture at Jason
+	load_field_pic(FIELD_PIC_MEDEA 190, 98)
+	msgbox(Colchis_Text_MedeaSanctumReturn2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MEDEA)
+	closemessage
+
+}
+
+script Colchis_Script_SanctumJasonMareep {
+
+	//Check if you even have Mareep
+	specialvar (VAR_RESULT, IsShinyMareepInParty)
+	//If no then goto Fight
+	if (var(VAR_RESULT) == FALSE) {
+		call (Colchis_Script_SanctumJasonBattle)
+	//If yes then YES NO
+	} else {
+		
+		load_field_pic(FIELD_PIC_JASON, 190, 98)
+		msgbox(Colchis_Text_JasonGiveMeMareep, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_JASON)
+	
+		msgbox(Colchis_Text_GiveJasonMareep, MSGBOX_YESNO)
+		//If choose no then goto Fight
+		if (var(VAR_RESULT) == FALSE) {
+			call (Colchis_Script_SanctumJasonBattle)
+		//Else Choose Shiny Mareep
+		} else {
+			special (ChoosePartyMon)
+			waitstate
+			//If nothing chosen then go back up top
+			if (var(VAR_0x8004) == PARTY_NOTHING_CHOSE) {
+				call (Colchis_Script_SanctumJasonMareep)
+			//Else if something chose first
+			} else {
+				specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+				//Check if it's Mareep
+				if (var(VAR_RESULT) != SPECIES_MAREEP) {
+					call (Colchis_Script_SanctumJasonMareep)
+				//Next check if it's Shiny
+				} else {
+					specialvar (VAR_RESULT, ScriptGetPartyMonIsShiny)
+					//Not Shiny? Back Up Top
+					if (var(VAR_RESULT) != TRUE) {
+						call (Colchis_Script_SanctumJasonMareep)
+					//YES YOU HAVE SHINY MAREEP
+					} else {
+						special (BufferMonNickname)
+						msgbox (Colchis_Text_GaveShinyMareep, MSGBOX_DEFAULT)
+						closemessage
+						special (ReleaseChosenMon)
+						//Set Flag or Var for Jason has Mareep now (will open Bulbus and the Boat)
+						setflag (FLAG_JASON_HAS_SHINYMAREEP)
+					}
+				}
+			}
+		}
+	}
+	
+	//Else GiveJason Mareep 
+
+	return
+}
+
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -1896,6 +2161,44 @@ movement Colchis_Movement_PlayerSanctum2 {
 	walk_up * 2
 }
 
+movement Colchis_Movement_MedeaSanctum3A {
+	walk_up * 2
+	walk_right * 2
+	walk_up * 7
+}
+
+movement Colchis_Movement_MedeaSanctum3B {
+	walk_up * 2
+	walk_right
+	walk_up * 7
+}
+
+movement Colchis_Movement_PlayerSanctum3A {
+	walk_down
+	walk_right
+	walk_down * 2
+	face_left
+}
+
+movement Colchis_Movement_PlayerSanctum3B {
+	walk_down * 3
+	face_left
+}
+
+movement Colchis_Movement_MedeaSanctumReturn {
+	walk_down * 7
+}
+
+movement Colchis_Movement_MedeaSanctumReturn2A {
+	walk_down * 2
+}
+
+movement Colchis_Movement_MedeaSanctumReturn2B {
+	walk_down
+	walk_left
+	walk_down
+}
+
 text Colchis_Text_JasonIntro1 {
 	format("Let us set out to claim Shiny Mareep.")
 }
@@ -2143,6 +2446,46 @@ text Colchis_Text_MedeaSanctum3 {
 	format("Eforebay ouyay ogay aketay eedhay ofay atwhay Iay aysay. Inyshay Areepmay isay uardedgay ybay ethay eatgray istressmay ofay ormsstay, ethay ightymay Ugialay. Eshay isay ostmay eciouspray otay emay. Ouyay ustmay otnay onfrontcay erhay, oray armhay erhay inay anyay ayway, oray elseay ouyay illway urelysay ieday erehay isthay ayday.")
 }
 
+text Colchis_Text_JasonSanctumTrigger1 {
+	format("Do not interrupt my private time with Medea 'till you bring shiny Mareep.")
+}
 
+//Remember, bring no harm to Lugia
+text Colchis_Text_MedeaSanctumTrigger1 {
+	format("Ememberray, ingbray onay armhay otay Ugialay.")
+}
+
+text Colchis_Text_JasonSanctumTrigger2 {
+format("Have you returned bringing Shiny Mareep?")
+}
+
+//My thoughts betray me. Excuse me Jason, against my own advice I must take leave of you and see that Lugia is safe.
+text Colchis_Text_MedeaSanctumTrigger2 {
+	format("Ymay oughtsthay etraybay emay. Excuseay emay Asonjay, againstay ymay ownay adviceay Iay ustmay aketay eavelay ofay ouyay anday eesay atthay Ugialay isay afesay.")
+}
+
+text Colchis_Text_JasonSanctumTrigger3 {
+	format("How could you fail? You only had one job! My quest has failed and it was all your fault! Now you will pay the price. Go Nosepass!")
+}
+
+text Colchis_Text_JasonLost {
+	format("I curse that day I saved you from the surf.")
+}
+
+text Colchis_Text_JasonPost {
+	format("The most wicked betrayal of all my life...")
+}
+
+text Colchis_Text_JasonGiveMeMareep {
+	format("I see that you have completed the quest. Give me shiny Mareep and let's be done.")
+}
+
+text Colchis_Text_GiveJasonMareep {
+	format("Will you give Jason shiny Mareep?")
+}
+
+text Colchis_Text_GaveShinyMareep {
+	format("You gave {STR_VAR_1} to Jason!\pBye Bye {STR_VAR_1}!")
+}
 
 

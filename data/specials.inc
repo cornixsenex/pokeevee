@@ -583,3 +583,5 @@ gSpecials::
 	def_special SetupColchisForcedBattle
 	def_special SetObjectMovementTypeGhoul
 	def_special DoShinyMareepBattle
+	def_special IsShinyMareepInParty
+	def_special ScriptGetPartyMonIsShiny

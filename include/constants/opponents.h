@@ -172,10 +172,10 @@
 #define TRAINER_UNI_MUSIC                   166
 #define TRAINER_UNI_LOGIC                   167
 #define TRAINER_UNI_GYM                     168
+#define TRAINER_JASON                       169
 
-//BREAK - NOTE FIVE UNUSED TRAINERS ABOVE
+//BREAK// 
 
-#define TRAINER_GILBERT                     169
 #define TRAINER_FRANKLIN                    170
 #define TRAINER_KEVIN                       171
 #define TRAINER_JACK                        172

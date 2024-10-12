@@ -149,6 +149,7 @@
 																//9: Trigger Prison Script
 																//10: Prison Script triggered
 																//11: In sanctum (Sanctum Trigger)
+																//12: Sanctum done Trigger progress
 #define VAR_IGNISMONS_STATE                              0x4072 // Controls Ignis Mons Color Puzzle
 																// 0: Blank
 																// 1: Red

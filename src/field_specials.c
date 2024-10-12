@@ -1608,6 +1608,11 @@ u16 ScriptGetPartyMonSpecies(void)
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
 }
 
+u16 ScriptGetPartyMonIsShiny(void)
+{
+    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, NULL);
+}
+
 // Removed for Emerald
 void TryInitBattleTowerAwardManObjectEvent(void)
 {
@@ -5662,6 +5667,29 @@ bool32 IsSpearowInParty(void)
     return FALSE;
 }
 
+bool32 IsShinyMareepInParty(void)
+{
+	u32 i;
+	u32 species;
+	bool32 isShiny;
+	struct Pokemon *pokemon;
+	
+	for (i = 0;i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+			isShiny = GetMonData(pokemon, MON_DATA_IS_SHINY);
+            if ( species == SPECIES_MAREEP && isShiny == TRUE )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
 void ReleaseChosenMon(void)
 {
 	struct Pokemon *mon;
@@ -5693,18 +5721,27 @@ void DoShinyMareepBattle(void)
 	u16 species = SPECIES_MAREEP;
 	u8 level = 18;
 	struct Pokemon *mon;
+	u16 thunder = MOVE_THUNDER;
+	u16 thunderbolt = MOVE_THUNDERBOLT;
+	u16 thunderwave = MOVE_THUNDER_WAVE;
+	u16 recover = MOVE_RECOVER;
 	bool32 makeShiny = TRUE;
+
+
 	mon = &gEnemyParty[0];
 	//Create ScriptedWildMon
 
     ZeroEnemyPartyMons();
 
-
 	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-	CreateMon(mon, species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
 	
 	//Make Shiny Mareep
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+	SetMonData(mon, MON_DATA_MOVE1, &thunder);
+	SetMonData(mon, MON_DATA_MOVE2, &thunderbolt);
+	SetMonData(mon, MON_DATA_MOVE3, &thunderwave);
+	SetMonData(mon, MON_DATA_MOVE4, &recover);
 	
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
