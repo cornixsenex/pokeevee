@@ -2226,16 +2226,16 @@ static const struct TrainerMon sParty_Jason[] = {
 		.gender = TRAINER_MON_MALE,
 		.heldItem = ITEM_LEFTOVERS,
         .iv = 255,
-        .ev = 255,
+        .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
 		.moves = {MOVE_ANCIENT_POWER, MOVE_ROCK_SLIDE, MOVE_ROLLOUT, MOVE_SELFDESTRUCT},
 		.lvl = 18,
-	}
+	},
 	{
 		.species = SPECIES_PELIPPER,
 		.gender = TRAINER_MON_FEMALE,
 		.heldItem = ITEM_LEFTOVERS,
         .iv = 255,
-        .ev = 255,
+        .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
 		.moves = {MOVE_STOCKPILE, MOVE_SPIT_UP, MOVE_SWALLOW, MOVE_HURRICANE},
 		.lvl = 18,
 	}

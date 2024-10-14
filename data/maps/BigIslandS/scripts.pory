@@ -53,7 +53,7 @@ script BigIslandS_Script_IgnisGruntFight {
 		msgbox (BigIslandS_Script_IgnisGrunt1Pre, MSGBOX_DEFAULT)
 		closemessage
 
-		trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_2, BigIslandS_Script_IgnisGrunt1Lost, TRAINER_IGNIS_GRUNT_3, BigIslandS_Script_IgnisGrunt2Lost)
+		trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt1Lost, TRAINER_IGNIS_GRUNT_3, BigIslandS_Text_IgnisGrunt2Lost)
 
 		applymovement (OBJ_EVENT_IGNIS_A, Common_Movement_FaceRight)
 		applymovement (OBJ_EVENT_IGNIS_B, Common_Movement_FaceLeft)
@@ -295,12 +295,12 @@ text BigIslandS_Script_IgnisGrunt1Pre {
 }
 
 //We soon will be avenged
-text BigIslandS_Script_IgnisGrunt1Lost {
+text BigIslandS_Text_IgnisGrunt1Lost {
 	format("Eway oonsay illway ebay avengeday.")
 }
 
 //You won this one.
-text BigIslandS_Script_IgnisGrunt2Lost {
+text BigIslandS_Text_IgnisGrunt2Lost {
 	format("Ouyay onway isthay oneay.")
 }
 

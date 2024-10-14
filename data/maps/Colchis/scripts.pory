@@ -80,11 +80,10 @@ const OBJ_EVENT_SANCTUM2 = 20
 
 
 const FIELD_PIC_JASON = 21
-const FIELD_PIC_COLCHIS_M = 22
-const FIELD_PIC_COLCHIS_F = 23
+const FIELD_PIC_CULTIST_M = 22
+const FIELD_PIC_CULTIST_F = 23
 const FIELD_PIC_MEDEA = 24
 const FIELD_PIC_AEETES = 9
-
 const OBJ_EVENT_LUGIA = 1
 const OBJ_EVENT_MAREEP = 2
 
@@ -238,14 +237,14 @@ script Colchis_Script_Intro {
 	destroy_field_pic (FIELD_PIC_JASON)
 
 	//Magma M: Welcome to Colchis Jason of Argo
-	load_field_pic(FIELD_PIC_COLCHIS_F, 190, 98)
+	load_field_pic(FIELD_PIC_CULTIST_F, 190, 98)
 	msgbox (Colchis_Text_GruntIntro1, MSGBOX_DEFAULT)
-	destroy_field_pic (FIELD_PIC_COLCHIS_F)
+	destroy_field_pic (FIELD_PIC_CULTIST_F)
 
 	//Magma F: Aeetes King of Colchis awaits you
-	load_field_pic(FIELD_PIC_COLCHIS_M, 190, 98)
+	load_field_pic(FIELD_PIC_CULTIST_M, 190, 98)
 	msgbox (Colchis_Text_GruntIntro2, MSGBOX_DEFAULT)
-	destroy_field_pic (FIELD_PIC_COLCHIS_M)
+	destroy_field_pic (FIELD_PIC_CULTIST_M)
 
 	//Jason turns to Player and says
 	//We have no choice we'll have to go with them	
@@ -346,7 +345,6 @@ script Colchis_Script_CheckForcedBattle {
 }
 
 script Colchis_Script_DoForcedBattle {	
-
 	//Setup grunt position
 
 	removeobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
@@ -368,17 +366,41 @@ script Colchis_Script_DoForcedBattle {
 	applymovement (OBJ_EVENT_DYNAMIC_GRUNT_F, Colchis_Movement_ForcedBattleB)
 	waitmovement (0)
 
-
 	//intro text
+	load_field_pic(FIELD_PIC_CULTIST_M, 190, 98)
+	msgbox (Colchis_Text_CultistMPre, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_CULTIST_M)
+	closemessage
 
 	//battle
+	trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_2, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt2Lost)
 
 	//post text
+	load_field_pic(FIELD_PIC_CULTIST_M, 190, 98)
+	msgbox (Colchis_Text_CultistMPost, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_CULTIST_M)
+	closemessage
 
 	//grunts exit
+	applymovement (OBJ_EVENT_DYNAMIC_GRUNT_M, Colchis_Movement_ForcedBattleExitA)
+	applymovement (OBJ_EVENT_DYNAMIC_GRUNT_F, Colchis_Movement_ForcedBattleExitB)
+	waitmovement (0)
 
 	//set grunts back to hidden location
+	removeobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
+	removeobject (OBJ_EVENT_DYNAMIC_GRUNT_F)
 
+	setobjectxyperm (OBJ_EVENT_DYNAMIC_GRUNT_M, 0, 0)
+	setobjectxyperm (OBJ_EVENT_DYNAMIC_GRUNT_F, 2, 0)
+
+	setobjectmovementtype (OBJ_EVENT_DYNAMIC_GRUNT_M, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_DYNAMIC_GRUNT_F, MOVEMENT_TYPE_INVISIBLE)
+
+	addobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
+	addobject (OBJ_EVENT_DYNAMIC_GRUNT_F)
+
+	showobjectat (OBJ_EVENT_DYNAMIC_GRUNT_M, MAP_COLCHIS)	
+	showobjectat (OBJ_EVENT_DYNAMIC_GRUNT_F, MAP_COLCHIS)	
 
 	return
 }
@@ -1563,7 +1585,7 @@ script Colchis_Script_SanctumTrigger {
 
 	///If Player hasn't interacted with either Lugia or Mareep just send him back
 	if (!flag(FLAG_COLCHIS_HIDE_MAREEP) && !flag(FLAG_COLCHIS_HIDE_LUGIA)) {
-			call (Colchis_Script_SanctumTriggerReturn
+			call (Colchis_Script_SanctumTriggerReturn)
 	} else { //Player has cleared one of the two flags
 		//Set Var as this will be the next step
 		setvar (VAR_ARGO_STATE, 12)
@@ -1581,16 +1603,16 @@ script Colchis_Script_SanctumTrigger {
 			//Jason Battle (because you never interacted with Lugia)
 			call (Colchis_Script_SanctumJasonBattle)
 			
-			//Medea returns You Monster
+			//Medea returns You Monster, I wont help him Jason
+			//Come my love let us care for each other's sorrows
 			call (Colchis_Script_SanctumMedeaReturn)
 
-
-			//Come my love let us care for each other's sorrows
 			//If No Fleece then Jason says they go into the wild, else He will make her his queen in his land of Bulbus but leave the player to leave on his own
-			//Maybe he turns to the player on his way out and says good luck
+			//He turns to the player to thank him and meet him later at bulbus when she's calmed down
 			//The exit
 			//Setup Escape from Colchis
 			//Fin
+			call (Colchis_Script_SetupEsacepFromColchis)
 		//Cleared Mareep no interact w/ Lugia check 4 Mareep
 		} elif (!flag(FLAG_COLCHIS_HIDE_LUGIA)) { 
 			closemessage
@@ -1604,22 +1626,17 @@ script Colchis_Script_SanctumTrigger {
 				//Jason says they go into the wild
 				//They exeunt
 				//Setup Escape from Colchis
-				//Fin
+				//Fina
+				call (Colchis_Script_SetupEsacepFromColchis)
 			}
 		} else { //both flags interacted means Medea goes to see Lugia and Jason checks Mareep
 			call (Colchis_Script_SanctumTriggerMedeaExit)
 			call (Colchis_Script_SanctumApproachJason)
 			call (Colchis_Script_SanctumJasonMareep)
 			call (Colchis_Script_SanctumMedeaReturn)
-			//Come my love let me take care of your sorrow
-			//IF JASON_HAS_SHINYMARREP then he apologizes to you and says to Medea she will go backto Bulbus with him
-			//ELSE He does his wilds speach
-			//Exeunt
-			//Setup Escape From Colchis
-			
+			call (Colchis_Script_SetupEsacepFromColchis)
 		}
 	}
-
 	releaseall
 	end
 }
@@ -1765,6 +1782,26 @@ script Colchis_Script_SanctumMedeaReturn {
 	destroy_field_pic (FIELD_PIC_MEDEA)
 	closemessage
 
+	//Jason says 
+	//Please do not cry beloved Medea
+	//lend love the power to hold back your tears
+	load_field_pic(FIELD_PIC_JASON, 190, 98)
+	msgbox(Colchis_Text_JasonMedeaReturn1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	
+
+	//IF he has the fleece Jason turns back to say (Sorry, meet me at bulbus later when she calms down)
+	if (flag(FLAG_JASON_HAS_SHINYMAREEP)) {
+		applymovement (OBJ_EVENT_JASON, Common_Movement_FaceRight)
+		waitmovement (0)
+		load_field_pic(FIELD_PIC_JASON, 190, 98)
+		msgbox(Colchis_Text_JasonMedeaReturn2, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_JASON)
+		applymovement (OBJ_EVENT_JASON, Common_Movement_FaceLeft)
+		waitmovement (0)
+	}
+
+	return
 }
 
 script Colchis_Script_SanctumJasonMareep {
@@ -1790,7 +1827,7 @@ script Colchis_Script_SanctumJasonMareep {
 			special (ChoosePartyMon)
 			waitstate
 			//If nothing chosen then go back up top
-			if (var(VAR_0x8004) == PARTY_NOTHING_CHOSE) {
+			if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 				call (Colchis_Script_SanctumJasonMareep)
 			//Else if something chose first
 			} else {
@@ -1817,12 +1854,35 @@ script Colchis_Script_SanctumJasonMareep {
 			}
 		}
 	}
-	
-	//Else GiveJason Mareep 
-
 	return
 }
 
+script Colchis_Script_Exeunt {
+	//to trigger BigIsland On Frame Table to end Argo story
+	setvar (VAR_ARGO_STATE, 14)
+	//call movement
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_Exeunt)
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_Exeunt)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_Exeunt)
+	waitmovement (0)
+	//warp out to BigIslandN
+	warpsilent (MAP_BIG_ISLAND_N, 31, 37)
+	end
+}
+
+script Colchis_Script_SetupEsacepFromColchis {
+	//Let us depart and leave this one behind
+
+	//They exit
+
+	//Set Escape Colchis Var
+	setflag (FLAG_COLCHIS_FORCED_BATTLE)
+
+	//Release
+	end
+}
+
+	
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -1834,6 +1894,14 @@ movement Colchis_Movement_ForcedBattleA {
 
 movement Colchis_Movement_ForcedBattleB {
 	walk_up * 5
+}
+
+movement Colchis_Movement_ForcedBattleExitA {
+	walk_up * 5
+}
+
+movement Colchis_Movement_ForcedBattleExitB {
+	walk_down * 5
 }
 
 movement Colchis_Movement_EnterThroneRoom {
@@ -2199,6 +2267,13 @@ movement Colchis_Movement_MedeaSanctumReturn2B {
 	walk_down
 }
 
+movement Colchis_Movement_Exeunt {
+	walk_right * 21
+	walk_up * 28
+	walk_left * 41
+	walk_down * 30
+}
+
 text Colchis_Text_JasonIntro1 {
 	format("Let us set out to claim Shiny Mareep.")
 }
@@ -2488,4 +2563,32 @@ text Colchis_Text_GaveShinyMareep {
 	format("You gave {STR_VAR_1} to Jason!\pBye Bye {STR_VAR_1}!")
 }
 
+//respasser stop fall into nothingness
+text Colchis_Text_CultistMPre {
+	format("Espassertray opstay! Allfay intoay othingnessnay")
+}
+
+//The everlasting darkness covers all
+text Colchis_Text_CultistMLost {
+	format("Ethay everlastingay arknessday overscay allay.")
+}
+
+//You may have won but you'll never escape
+text Colchis_Text_CultistMPost {
+   format("Ouyay aymay avehay onway utbay ou'llyay evernay escapeay.")
+}
+
+//You monster! How could you do this to me?
+text Colchis_Text_MedeaSanctumReturn1 {
+	format("Ouyay onstermay! Owhay ouldcay ouyay oday isthay otay emay?")
+}
+
+//My love he has attacked my Lugia! I will no longer help him leave Colchis.
+text Colchis_Text_MedeaSanctumReturn2 {
+	format("Ymay ovelay, ehay ashay attackeday ymay Ugialay! Iay illway onay ongerlay elphay imhay eavelay Olchiscay.")
+}
+
+text Colchis_Text_JasonMedeaReturn1 {
+	format("Please, do not cry beloved Medea. Lend love the power to hold back your tears.")
+}
 

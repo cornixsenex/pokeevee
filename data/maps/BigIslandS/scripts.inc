@@ -69,7 +69,7 @@ BigIslandS_Script_IgnisGruntFight::
 # 54 "data/maps/BigIslandS/scripts.pory"
 	closemessage
 # 56 "data/maps/BigIslandS/scripts.pory"
-	trainerbattle_two_trainers TRAINER_IGNIS_GRUNT_2, BigIslandS_Script_IgnisGrunt1Lost, TRAINER_IGNIS_GRUNT_3, BigIslandS_Script_IgnisGrunt2Lost
+	trainerbattle_two_trainers TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt1Lost, TRAINER_IGNIS_GRUNT_3, BigIslandS_Text_IgnisGrunt2Lost
 # 58 "data/maps/BigIslandS/scripts.pory"
 	applymovement 4, Common_Movement_FaceRight
 # 59 "data/maps/BigIslandS/scripts.pory"
@@ -428,11 +428,11 @@ BigIslandS_Script_IgnisGrunt1Pre::
 	.string "Eway illway efendday ouray acredsay\l"
 	.string "ountaintopmay.$"
 
-BigIslandS_Script_IgnisGrunt1Lost::
+BigIslandS_Text_IgnisGrunt1Lost::
 # 298 "data/maps/BigIslandS/scripts.pory"
 	.string "Eway oonsay illway ebay avengeday.$"
 
-BigIslandS_Script_IgnisGrunt2Lost::
+BigIslandS_Text_IgnisGrunt2Lost::
 # 303 "data/maps/BigIslandS/scripts.pory"
 	.string "Ouyay onway isthay oneay.$"
 

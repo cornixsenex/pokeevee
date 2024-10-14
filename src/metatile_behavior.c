@@ -129,7 +129,9 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_HORIZONTAL_RAIL]                 = TILE_FLAG_UNUSED,
 	//Ignis Mons False Floor
     [MB_FALSE_FLOOR]                     = TILE_FLAG_UNUSED,
-    [MB_FALSE_FLOOR_HOLE]                     = TILE_FLAG_UNUSED,
+    [MB_FALSE_FLOOR_HOLE]                = TILE_FLAG_UNUSED,
+	//Colchis Auto-Battle			     = TILE_FLAG_UNUSED,
+	[MB_COLCHIS_BATTLE]                  = TILE_FLAG_UNUSED, 
 
 
 	//Special Metatiles
