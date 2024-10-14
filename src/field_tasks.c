@@ -839,15 +839,6 @@ static void FalseFloorPerStepCallback(u8 taskId)
 	}
 }
 
-
-//Determine NS or EW 
-//Place Dynamic Grunts
-//Move into place
-//Battle Script
-//static void ColchisBattlePerStepCallback(u8 taskId)
-//{
-
-
 // This function uses the constants for gTileset_Cave's metatile labels, but other tilesets with
 // the CrackedFloorPerStepCallback callback use the same metatile numbers for the cracked floor
 // and hole metatiles, such as gTileset_MirageTower.
