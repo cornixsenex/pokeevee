@@ -1613,7 +1613,6 @@ script Colchis_Script_SanctumTrigger {
 		//Cleared Mareep no interact w/ Lugia check 4 Mareep
 		} elif (!flag(FLAG_COLCHIS_HIDE_LUGIA)) { 
 			closemessage
-			call (Colchis_Script_SanctumApproachJason)
 			//Jason asks for Fleece
 			call (Colchis_Script_SanctumJasonMareep) //YES NO CLEAR OR ATTACK
 			if (flag(FLAG_JASON_HAS_SHINYMAREEP)) {
