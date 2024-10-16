@@ -295,42 +295,6 @@ script Colchis_Script_EnterThroneRoom {
 	//Dance of Medea
 
 	call (Colchis_Script_MedeaDance)
-	
-
-
-	//A: Greetings to Jason and his companion
-	//G: HAIL!
-	//A: Now tell me, why did you come to Colchis?
-	//J: We come in peace.
-	//A: I asked you why not how
-	//   I know you've come to steal shiny mareep 
-	//   whether by thieving or by brutish force. 
-	//   We'll never part with it. It was a gift 
-	//   given by great Ho-Oh before you fiends
-	//   defiled him on the sacred mountain.
-	//   It has brought peace and great wealth to Colchis
-	//   And if we were to lose it that would bring
-	//   a plague, a famine, and destroy us all!
-	//   We can no longer entertain these men
-	//   Noble soldiers sieze the outsiders now
-	//   and throw them in my deepest dungeoun cell.
-
-	// M: Aeetes please let one of them be free
-	// 	Truly one did defile our temple
-	//	But the other shines with divine beauty
-	//	and my heart cries that if he should perish
-	//	my own soul would expire from the grief
-
-	//A: Their doom has been pronounced dear Medea
-	//   They both came here to bring ruin on us
-	//   And neither can be trusted to go free
-	//   Take them away!
-
-	//M: Aeetes!
-
-	//G: As you wish!
-
-	//cont... in prison
 
 }
 
@@ -373,7 +337,7 @@ script Colchis_Script_DoForcedBattle {
 	closemessage
 
 	//battle
-	trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_2, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt2Lost)
+	trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_3, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt2Lost)
 
 	//post text
 	load_field_pic(FIELD_PIC_CULTIST_M, 190, 98)
@@ -1925,7 +1889,21 @@ script Colchis_Script_SetupEscapeFromColchis {
 	end
 }
 
-	
+//Doors are locks (Set metatiles)
+//door men (room 2) can open it but wont until his girls come by (room 1)
+//His girl wont leave until you find her missing kid
+//Missing kid is locked in jail #3
+//Jailer will give you key for a warm meal
+//Chef will give you a warm meal for a nice ring
+//Nice ring is locked inside Kings Chambers
+//King will drop key after defeated
+script Colchis_Script_TrainerAeetes {
+	lockall
+	faceplayer
+	//Battle and stuff idk
+	releaseall
+	end
+}
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
