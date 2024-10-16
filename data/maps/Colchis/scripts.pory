@@ -393,8 +393,8 @@ script Colchis_Script_DoForcedBattle {
 	setobjectxyperm (OBJ_EVENT_DYNAMIC_GRUNT_M, 0, 0)
 	setobjectxyperm (OBJ_EVENT_DYNAMIC_GRUNT_F, 2, 0)
 
-	setobjectmovementtype (OBJ_EVENT_DYNAMIC_GRUNT_M, MOVEMENT_TYPE_INVISIBLE)
-	setobjectmovementtype (OBJ_EVENT_DYNAMIC_GRUNT_F, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_DYNAMIC_GRUNT_M, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_DYNAMIC_GRUNT_F, MOVEMENT_TYPE_FACE_UP)
 
 	addobject (OBJ_EVENT_DYNAMIC_GRUNT_M)
 	addobject (OBJ_EVENT_DYNAMIC_GRUNT_F)
