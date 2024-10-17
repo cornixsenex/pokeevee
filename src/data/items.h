@@ -14375,6 +14375,38 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_EarthPlate,
 	},
 
+    [ITEM_COLCHIS_KEY] =
+    {
+        .name = _("Colchis Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A rusty key from\n"
+            "the pockets of\n"
+            "King Aeetes."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_BasementKey,
+        .iconPalette = gItemIconPalette_OldKey,
+    },
+
+    [ITEM_COLCHIS_RING] =
+    {
+        .name = _("Colchis Ring"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A pretty ring\n"
+            "with a huge\n"
+            "gemstone."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_ZRing,
+        .iconPalette = gItemIconPalette_ZRing,
+    },
+
 ///	KUSTOM ITEMS END ///
 
 };

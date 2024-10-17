@@ -2241,6 +2241,19 @@ static const struct TrainerMon sParty_Jason[] = {
 	}
 };
 
+static const struct TrainerMon sParty_Aeetes[] = {
+
+	{
+		.species = SPECIES_DRIFBLIM,
+		.gender = TRAINER_MON_FEMALE,
+		.heldItem = ITEM_LEFTOVERS,
+        .iv = 255,
+        .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
+		.moves = {MOVE_STOCKPILE, MOVE_SPIT_UP, MOVE_SWALLOW, MOVE_HURRICANE},
+		.lvl = 18,
+	}
+};
+
 
 
 

@@ -259,7 +259,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_COLCHIS_FORCED_BATTLE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
@@ -272,7 +272,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_COLCHIS_FORCED_BATTLE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
@@ -715,6 +715,58 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Colchis_Script_Jason",
       "flag": "FLAG_COLCHIS_FORCED_BATTLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
+      "x": 62,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Colchis_Script_RingBlocker",
+      "flag": "FLAG_COLCHIS_HIDERINGBARRIER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
+      "x": 63,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Colchis_Script_RingBlocker",
+      "flag": "FLAG_COLCHIS_HIDERINGBARRIER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
+      "x": 63,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Colchis_Script_RingBlocker",
+      "flag": "FLAG_COLCHIS_HIDERINGBARRIER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 63,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Colchis_Script_RingItem",
+      "flag": "FLAG_COLCHIS_HIDERINGBALL"
     }
   ],
   "warp_events": [
@@ -826,6 +878,37 @@
     }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 60,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Colchis_Script_Bed"
+    },
+    {
+      "type": "sign",
+      "x": 61,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Colchis_Script_Bed"
+    },
+    {
+      "type": "sign",
+      "x": 60,
+      "y": 44,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Colchis_Script_Bed"
+    },
+    {
+      "type": "sign",
+      "x": 61,
+      "y": 44,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Colchis_Script_Bed"
+    }
   ]
 }

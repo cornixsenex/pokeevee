@@ -173,10 +173,10 @@
 #define TRAINER_UNI_LOGIC                   167
 #define TRAINER_UNI_GYM                     168
 #define TRAINER_JASON                       169
+#define TRAINER_AEETES                      170
 
 //BREAK// 
 
-#define TRAINER_FRANKLIN                    170
 #define TRAINER_KEVIN                       171
 #define TRAINER_JACK                        172
 #define TRAINER_DUDLEY                      173

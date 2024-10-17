@@ -87,6 +87,12 @@ const FIELD_PIC_AEETES = 9
 const OBJ_EVENT_LUGIA = 1
 const OBJ_EVENT_MAREEP = 2
 
+const OBJ_EVENT_RINGBARRIER1 = 55
+const OBJ_EVENT_RINGBARRIER2 = 56
+const OBJ_EVENT_RINGBARRIER3 = 57
+
+const OBJ_EVENT_RINGBALL = 58
+
 mapscripts Colchis_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
@@ -1417,9 +1423,9 @@ script Colchis_Script_SetupSanctum {
 
 	//Persist hidden object
 	setobjectmovementtype (OBJ_EVENT_SANCTUM1, MOVEMENT_TYPE_INVISIBLE)
-	setobjectxyperm (OBJ_EVENT_SANCTUM1, 1, 0)
+	setobjectxyperm (OBJ_EVENT_SANCTUM1, 1, 1)
 	setobjectmovementtype (OBJ_EVENT_SANCTUM2, MOVEMENT_TYPE_INVISIBLE)
-	setobjectxyperm (OBJ_EVENT_SANCTUM2, 3, 0)
+	setobjectxyperm (OBJ_EVENT_SANCTUM2, 3, 1)
 
 	
 	//Medea comes back
@@ -1882,7 +1888,7 @@ script Colchis_Script_SetupEscapeFromColchis {
 	removeobject (OBJ_EVENT_MEDEA)
 
 	//Set Escape Colchis Var
-	setflag (FLAG_COLCHIS_FORCED_BATTLE)
+	//setflag (FLAG_COLCHIS_FORCED_BATTLE)
 
 	//Release
 	releaseall
@@ -1901,7 +1907,105 @@ script Colchis_Script_TrainerAeetes {
 	lockall
 	faceplayer
 	//Battle and stuff idk
+	if (!defeated(TRAINER_AEETES)) {
+		//Battle
+		load_field_pic(FIELD_PIC_AEETES, 190, 98)
+		msgbox (Colchis_Text_AeetesIntro, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_AEETES)
+		closemessage
+		trainerbattle_no_intro(TRAINER_AEETES, Colchis_Text_AeetesLost)
+		load_field_pic(FIELD_PIC_AEETES, 190, 98)
+		msgbox (Colchis_Text_AeetesPost, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_AEETES)
+		//Give Key
+		giveitem (ITEM_COLCHIS_KEY)
+		//Post
+		load_field_pic(FIELD_PIC_AEETES, 190, 98)
+		msgbox (Colchis_Text_AeetesFinal, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_AEETES)
+	} else {
+		//post
+		load_field_pic(FIELD_PIC_AEETES, 190, 98)
+		msgbox (Colchis_Text_AeetesFinal, MSGBOX_DEFAULT)
+		destroy_field_pic (FIELD_PIC_AEETES)
+	}
+	closemessage
 	releaseall
+	end
+}
+
+script Colchis_Script_Bed {
+	lockall
+	msgbox(Colchis_Text_Bed, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		call (Common_EventScript_OutOfCenterPartyHeal)
+	}
+	releaseall
+	end
+}
+
+script Colchis_Script_RingBlocker {
+	lockall
+	faceplayer
+
+	//Intro - It's a block
+	msgbox (Colchis_Text_RingBlockerIntro, MSGBOX_DEFAULT)
+	//Check if you have the Key from Aeetes
+	checkitem (ITEM_COLCHIS_KEY, 1)
+	//If so then do a YESNO open the blocks
+	//The key fits!
+	//Remove blocks
+	//Persist remove blocks
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox (Colchis_Text_RingBlockerYesNo, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			//Key fits
+			//The key broke in the lock
+			msgbox (Colchis_Text_KeyFits, MSGBOX_DEFAULT)
+			closemessage
+			removeitem (ITEM_COLCHIS_KEY)
+			playse (SE_EFFECTIVE)
+			//The barriers dissapear
+			hideobjectat (OBJ_EVENT_RINGBARRIER1, MAP_COLCHIS)
+			removeobject (OBJ_EVENT_RINGBARRIER1)
+			hideobjectat (OBJ_EVENT_RINGBARRIER2, MAP_COLCHIS)
+			removeobject (OBJ_EVENT_RINGBARRIER2)
+			hideobjectat (OBJ_EVENT_RINGBARRIER3, MAP_COLCHIS)
+			removeobject (OBJ_EVENT_RINGBARRIER3)
+			//Persist Hide Ring Barriers
+			setobjectmovementtype (OBJ_EVENT_RINGBARRIER1, MOVEMENT_TYPE_INVISIBLE)
+			setobjectxyperm (OBJ_EVENT_RINGBARRIER1, 1, 3)
+			setobjectmovementtype (OBJ_EVENT_RINGBARRIER2, MOVEMENT_TYPE_INVISIBLE)
+			setobjectxyperm (OBJ_EVENT_RINGBARRIER2, 2, 3)
+			setobjectmovementtype (OBJ_EVENT_RINGBARRIER3, MOVEMENT_TYPE_INVISIBLE)
+			setobjectxyperm (OBJ_EVENT_RINGBARRIER3, 3, 3)
+
+			setflag (FLAG_COLCHIS_HIDERINGBARRIER)
+			//end
+		} else {
+			msgbox (Colchis_Text_RingBlockerDecline, MSGBOX_DEFAULT)
+			closemessage
+		}
+	} else {
+	   closemessage
+	}	   
+	
+	//fin
+	releaseall
+	end
+}
+
+script Colchis_Script_RingItem {
+	lock
+	faceplayer
+	giveitem (ITEM_COLCHIS_RING)
+	hideobjectat (OBJ_EVENT_RINGBALL, MAP_COLCHIS)
+	removeobject (OBJ_EVENT_RINGBALL)
+	setflag (FLAG_COLCHIS_HIDERINGBALL)
+	setobjectmovementtype (OBJ_EVENT_RINGBALL, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_RINGBALL, 4, 3)
+	release
 	end
 }
 
@@ -2632,5 +2736,58 @@ text Colchis_Text_JasonSanctumWilds {
 
 text Colchis_Text_JasonSanctumDepart {
 	format("Let us depart and leave this one behind.")
+}
+
+text Colchis_Text_Bed {
+	format("It's a big comfy bed!\NWould you like to take a rest?")
+}
+
+text Colchis_Text_RingBlockerIntro {
+	format("It's a large metal barrier with a keyhole in the center.")
+}
+
+text Colchis_Text_KeyFits {
+	format("The key fits into the keyhole!\NThe barriers sink into the ground but the key broke off inside!")
+}
+
+text Colchis_Text_RingBlockerDecline {
+	format("Better not try using the key here.")
+}
+
+text Colchis_Text_RingBlockerYesNo {
+	format("Would you like to try using the Colchis Key?")
+}
+
+
+//Your insolent invasion of our fair
+//and mighty kingdom will come to an end.
+//You will now learn the true power of King
+//Aeetes.
+//Your insolent invasion of our fair and mighty kingdom is now at an end. You will now learn the true power of King Aeetes.
+text Colchis_Text_AeetesIntro {
+	format("Ouryay insolentay invasionay ofay ouray airfay anday ightymay ingdomkay isay ownay atay anay enday. ouryay illway ownay earnlay ethay uetray owerpay ofay Ingkay Aeetesay.")
+}
+
+//Now my kingdom has fallen.
+text Colchis_Text_AeetesLost {
+	format("Ownay ymay ingdomkay ashay allenfay.")
+}
+
+//My daughter stolen... my kingdom fallen...
+//and I am beaten down by a mere boy
+//The greatest misery is truly mine!
+//No longer will I call myself a king.
+//Take this, the sacred key of Colchis' King
+//and leave this sad man to be with his tears.
+
+//My daughter stolen, my kingdom fallen, and I am beaten down by a mere boy The greatest misery is truly mine! No longer will I call myself a king. Take this, the sacred key of Colchis' King and leave this sad man to be with his tears.
+
+text Colchis_Text_AeetesPost {
+	format("Ymay aughterday olenstay...ymay ingdomkay allenfay...anday Iay amay eatenbay ownday ybay aay eremay oybay. Ethay eatestgray iserymay isay ulytray inemay! Onay ongerlay illway Iay allcay yselfmay aay ingkay. Aketay isthay, ethay acredsay eykay ofay Olchis'cay ingkay anday eavelay isthay adsay anmay otay ebay ithway ishay earstay.")
+}
+
+//My life has been reduced to naught. Leave me.
+text Colchis_Text_AeetesFinal {
+	format("Ymay ifelay ashay eenbay educedray otay aughtnay. Eavelay emay.")
 }
 

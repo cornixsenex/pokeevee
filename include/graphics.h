@@ -1841,6 +1841,9 @@ extern const u32 gItemIcon_ZPowerRing[];
 extern const u32 gItemIconPalette_ZPowerRing[];
 extern const u32 gItemIcon_DynamaxBand[];
 extern const u32 gItemIconPalette_DynamaxBand[];
+//Cornix Senex Had to add this
+extern const u32 gItemIcon_ZRing[];
+extern const u32 gItemIconPalette_ZRing[];
 // Misc. Key Items
 extern const u32 gItemIcon_Bicycle[];
 extern const u32 gItemIconPalette_Bicycle[];
