@@ -14407,6 +14407,38 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_ZRing,
     },
 
+    [ITEM_COLCHIS_APPLE] =
+    {
+        .name = _("Colchis Apple"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A very old apple\n"
+            "that makes certain\n"
+            "people happy."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SweetApple,
+        .iconPalette = gItemIconPalette_SweetApple,
+    },
+    
+	[ITEM_COLCHIS_JAIL_KEY] =
+    {
+        .name = HANDLE_EXPANDED_ITEM_NAME("ColchisJailKey", "Colchis Jail Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A rusty key from\n"
+            "the pockets of\n"
+            "Colchis' jailer."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_BasementKey,
+        .iconPalette = gItemIconPalette_OldKey,
+    },
+
 ///	KUSTOM ITEMS END ///
 
 };

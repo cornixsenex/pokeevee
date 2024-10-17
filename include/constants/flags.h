@@ -211,14 +211,14 @@
 #define FLAG_BIGISLAND_N_JASON_OSTRACON      0x82
 #define FLAG_COLCHIS_HIDE_LUGIA              0x83
 #define FLAG_COLCHIS_HIDE_MAREEP             0x84
-#define FLAG_JASON_HAS_SHINYMAREEP           0x85
+#define FLAG_JASON_HAS_SHINYMAREEP           0x85 //Did Jason's quest succeed?
 #define FLAG_COLCHIS_HIDERINGBARRIER         0x86 //Set after using Colchis Key to open Ring Block
-#define FLAG_COLCHIS_HIDERINGBALL            0x87
+#define FLAG_COLCHIS_HIDERINGBALL            0x87 //Set after giveitem colchis ring
+#define FLAG_COLCHIS_RETURN_LOSTKID          0x88 //Supress move kid object event during Escape From Colchis after it's been returned 
+#define FLAG_COLCHIS_MOVECHEF                0x89
 
 // BREAK //
 
-#define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
-#define FLAG_RECEIVED_HM_CUT                 0x89
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
 #define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
 #define FLAG_RECEIVED_6_SODA_POP             0x8C

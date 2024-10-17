@@ -152,6 +152,10 @@
 																//12: Sanctum done Trigger deactivated
 																//13: Escape Colchis
 																//14: Trigger happy Argo ending in BigIslandN
+																//15: Argo has sailed to  Bulbus, Strike cleared, Argo Boat is fully open @ Bulbus, Medea Post script is setup)
+																//16: Escape from Colchis! Hide door metatiles
+																//17: Colchis Door Open. Nanny w/ Guard. Trigger intro script on BigIslandN
+																//18: Argo sailed into the wilds (Jason had no Mareep) incremet to prevent BigIslandN loop OnFrame
 #define VAR_IGNISMONS_STATE                              0x4072 // Controls Ignis Mons Color Puzzle
 																// 0: Blank
 																// 1: Red

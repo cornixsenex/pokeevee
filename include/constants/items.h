@@ -1018,11 +1018,13 @@
 #define ITEM_OSTRACON 842
 #define ITEM_COLCHIS_KEY 843
 #define ITEM_COLCHIS_RING 844
+#define ITEM_COLCHIS_APPLE 845
+#define ITEM_COLCHIS_JAIL_KEY 846
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 845
+#define ITEMS_COUNT 847
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

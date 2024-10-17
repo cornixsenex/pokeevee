@@ -93,23 +93,34 @@ const OBJ_EVENT_RINGBARRIER3 = 57
 
 const OBJ_EVENT_RINGBALL = 58
 
+const OBJ_EVENT_LOSTKID = 49
+const OBJ_EVENT_NANNY = 30
+const OBJ_EVENT_DOORGUARD = 51
+const OBJ_EVENT_CHEF = 44
+const OBJ_EVENT_JAILER = 32
+const OBJ_EVENT_MAID = 37
+
 mapscripts Colchis_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
 		if (var(VAR_ARGO_STATE) == 9) {
 			call (Colchis_Script_SetupJail)
 		}
+		if (var(VAR_ARGO_STATE) == 16 && !flag(FLAG_COLCHIS_RETURN_LOSTKID)) {
+			call (Colchis_Script_SetupLostKid)
+		}
+		if (var(VAR_ARGO_STATE) == 17) {
+			call (Colchis_Script_ShowNannyWithGuard)
+		}
+		if (flag(FLAG_COLCHIS_MOVECHEF)) {
+			call (Colchis_Script_MoveChef)
+		}
 	}
 
 	MAP_SCRIPT_ON_LOAD {
-		//if (var(VAR_ARGO_STATE) == 7) {
-		//	call (Colchis_Script_IntroSetup)
-		//}
-		////Jason fights at the entrance, battle path
-		//if (var(VAR_ARGO_STATE) == 9) {
-		//	call (Colchis_Script_IntroDeclinedSetup)
-		//}
-
+		if (var(VAR_ARGO_STATE) == 16) {
+			call (Colchis_Script_CloseDoor)
+		}
 	}
 
 	MAP_SCRIPT_ON_RESUME {
@@ -1888,7 +1899,17 @@ script Colchis_Script_SetupEscapeFromColchis {
 	removeobject (OBJ_EVENT_MEDEA)
 
 	//Set Escape Colchis Var
+	//TEMP TEMP REMOVED PUT BACK TO ENABLE FORCED BATTLE TILES TEMP TEMP
 	//setflag (FLAG_COLCHIS_FORCED_BATTLE)
+
+	//Set ARGO_VAR to do this stuff on transition resume:
+	setvar (VAR_ARGO_STATE, 16)
+
+	//Close the door metatiles
+	call (Colchis_Script_CloseDoor)
+	special (DrawWholeMapView)
+	
+	//Move the lost kid 
 
 	//Release
 	releaseall
@@ -2006,6 +2027,159 @@ script Colchis_Script_RingItem {
 	setobjectmovementtype (OBJ_EVENT_RINGBALL, MOVEMENT_TYPE_INVISIBLE)
 	setobjectxyperm (OBJ_EVENT_RINGBALL, 4, 3)
 	release
+	end
+}
+
+script Colchis_Script_CloseDoor  {
+	setmetatile (10, 63, METATILE_Colchis_JailDoorOpen_Bottom, TRUE)
+	setmetatile (11, 63, METATILE_Colchis_JailDoorOpen_Bottom, TRUE)
+	return
+}
+
+script Colchis_Script_SetupLostKid {
+	removeobject (OBJ_EVENT_LOSTKID)
+	setobjectxyperm (OBJ_EVENT_LOSTKID, 28, 12)
+	setobjectmovementtype (OBJ_EVENT_LOSTKID, MOVEMENT_TYPE_LOOK_AROUND)
+	addobject (OBJ_EVENT_LOSTKID)
+	showobjectat (OBJ_EVENT_LOSTKID, MAP_COLCHIS)
+	return
+}
+
+script Colchis_Script_ShowNannyWithGuard {
+	removeobject (OBJ_EVENT_NANNY)
+	setobjectxyperm (OBJ_EVENT_NANNY, 7, 50)
+	setobjectmovementtype (OBJ_EVENT_NANNY, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_NANNY)
+	showobjectat (OBJ_EVENT_NANNY, MAP_COLCHIS)
+
+	removeobject (OBJ_EVENT_DOORGUARD)
+	setobjectxyperm (OBJ_EVENT_DOORGUARD, 6, 50)
+	setobjectmovementtype (OBJ_EVENT_DOORGUARD, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_DOORGUARD)
+	showobjectat (OBJ_EVENT_DOORGUARD, MAP_COLCHIS)
+
+	return
+}
+
+script Colchis_Script_Chef {
+	lockall
+	faceplayer
+	//If he's already moved he just says 
+	//I'm nervous. Do you think she will say yes?
+	if (flag(FLAG_COLCHIS_MOVECHEF)) {
+		msgbox(Colchis_Text_ChefProposal, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_CHEF, Common_Movement_FaceRight)
+		waitmovement (0)
+	} else {
+		//I really want to propose to my gf one of the maids but I don't have a ring. If you could help me out I'll give you a sweet treat
+		msgbox(Colchis_Movement_ChefIntro, MSGBOX_DEFAULT)
+		checkitem (ITEM_COLCHIS_RING)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox (Colchis_Text_ChefRingYesNo, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				//Gave the ring to the Chef - 
+				removeitem (ITEM_COLCHIS_RING)
+				msgbox (Colchis_Text_ChefGaveRing, MSGBOX_DEFAULT)
+				closemessage
+				//! Oh wow thank you so much
+				applymovement (OBJ_EVENT_CHEF, Common_Movement_ExclamationMark)
+				waitmovement (0)
+				msgbox (Colchis_Text_ChefThanks1, MSGBOX_DEFAULT)
+				giveitem (ITEM_COLCHIS_APPLE) 
+				//I'm off now
+				msgbox (Colchis_Text_ChefThanks2, MSGBOX_DEFAULT)
+				closemessage
+				//Chef Exits
+				specialvar (VAR_RESULT, GetPlayerFacingDirection)
+				if (var(VAR_RESULT) == DIR_WEST) {
+					applymovement (OBJ_EVENT_CHEF, Common_Movement_WalkUp)
+					waitmovement (0)
+				}
+				applymovement (OBJ_EVENT_CHEF, Colchis_Movement_ChefExit)
+				waitmovement (0)
+				//Persist exit
+				call (Colchis_Script_MoveChef)
+			} else {
+				msgbox (Colchis_Text_ChefGaveRingNo, MSGBOX_DEFAULT)
+				closemessage
+			}
+		} else {
+			closemessage
+		}
+	}
+	releaseall
+	end
+}
+
+script Colchis_Script_MoveChef {
+	removeobject (OBJ_EVENT_CHEF)
+	setobjectxyperm (OBJ_EVENT_CHEF, 59, 62)
+	setobjectmovementtype (OBJ_EVENT_CHEF, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_CHEF)
+	showobjectat (OBJ_EVENT_CHEF, MAP_COLCHIS)	
+
+	removeobject (OBJ_EVENT_MAID)
+	setobjectxyperm (OBJ_EVENT_MAID, 60, 62)
+	setobjectmovementtype (OBJ_EVENT_MAID, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_MAID)
+	showobjectat (OBJ_EVENT_MAID, MAP_COLCHIS)	
+
+	return
+}
+
+script Colchis_Script_Maid {
+	lockall
+	faceplayer
+	if (flag(FLAG_COLCHIS_MOVECHEF)) {
+		msgbox(Colchis_Text_Maid2, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_MAID, Common_Movement_FaceLeft)
+		waitmovement (0)
+	} else {
+		msgbox(Colchis_Text_Maid1, MSGBOX_DEFAULT)
+		closemessage
+	}
+	releaseall
+	end
+}
+
+script Colchis_Script_Jailer {
+	lockall
+	faceplayer
+
+	//Yeah I'm the one Aeetes left in charge
+	//of his prisons but he don't pay enough
+	//for me to care that you somehow broke out.
+	//I'll tell you what. If you bring me a sweet
+	//treat I'll give you the prison key. Sound good?
+	msgbox (Colchis_Text_JailerIntro, MSGBOX_DEFAULT)
+	
+	//He's a jailer and doesn't care you're out and about and even says he'll give you the keys to the cell if you bring him a Sweet Treat
+	checkitem (ITEM_COLCHIS_APPLE)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox (Colchis_Text_JailerAppleYesNo, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			removeitem (ITEM_COLCHIS_APPLE)
+			//Gave the apple to the jailer - 
+			msgbox (Colchis_Text_JailerGaveApple, MSGBOX_DEFAULT)
+			closemessage
+			//! Oh wow thank you so much Here is the Jail Key
+			applymovement (OBJ_EVENT_JAILER, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			msgbox (Colchis_Text_JailerThanks1, MSGBOX_DEFAULT)
+			giveitem (ITEM_COLCHIS_JAIL_KEY) 
+			//Just be careful not to lock yourself in jail. HAH!
+			msgbox (Colchis_Text_JailerThanks2, MSGBOX_DEFAULT)
+			closemessage
+		} else {
+			msgbox (Colchis_Text_JailerGaveAppleNo, MSGBOX_DEFAULT)
+			closemessage
+		}
+	} else {
+		closemessage
+	}
+	releaseall
 	end
 }
 
@@ -2408,6 +2582,10 @@ movement Colchis_Movement_JasonAndMedeaExeunt {
 	walk_right * 10
 }
 
+movement Colchis_Movement_ChefExit {
+	walk_right * 9
+}
+
 text Colchis_Text_JasonIntro1 {
 	format("Let us set out to claim Shiny Mareep.")
 }
@@ -2789,5 +2967,77 @@ text Colchis_Text_AeetesPost {
 //My life has been reduced to naught. Leave me.
 text Colchis_Text_AeetesFinal {
 	format("Ymay ifelay ashay eenbay educedray otay aughtnay. Eavelay emay.")
+}
+
+text Colchis_Text_ChefProposal {
+	format("I'm nervous! Do you think she will say yes?")
+}
+
+text Colchis_Movement_ChefIntro {
+	format("Oh! What to do? I am madly in love with one of Colchis' most beautiful maids but worry I will lose her to someone more handsome and with more money than me. If only I had an engagement ring to give her in exchange for loyalty.")
+}
+
+text Colchis_Text_ChefRingYesNo {
+	format("Give Chef the Colchis Ring?")
+}
+
+text Colchis_Text_ChefGaveRing {
+	format("{PLAYER} gave Chef the Colchis Ring.")
+}
+
+text Colchis_Text_ChefThanks1 {
+	format("Great Almighty! You're giving this to me? Take this Sweet Apple as token of thanks.")
+}
+
+text Colchis_Text_ChefThanks2 {
+	format("I'm off now to proposition the maid.")
+}
+
+text Colchis_Text_ChefGaveRingNo {
+	format("Better not give him the ring.")
+}
+
+text Colchis_Text_Maid1 {
+	format("Right now I am a maid but one day I will meet a foreign man and have his kids.")
+}
+
+text Colchis_Text_Maid2 {
+	format("I'm starting to worry this creep likes me.")
+}
+
+//Yeah I'm the one Aeetes left in charge
+//of his prisons but he don't pay enough
+//for me to care that you somehow broke out.
+//I'll tell you what. If you bring me a sweet
+//treat I'll give you the prison key. Sound good?
+
+
+//Yeah I'm the one Aeetes left in charge of his prisons but he don't pay enough for me to care that you somehow broke out. I'll tell you what. If you bring me a sweet treat I'll give you the prison key. Sound good?
+
+text Colchis_Text_JailerIntro {
+	format("Eahyay I'may ethay oneay Aeetesay eftlay inay argechay ofay ishay isonspray utbay ehay on'tday aypay enoughay orfay emay otay arecay atthay ouyay omehowsay okebray outay. I'llay elltay ouyay atwhay. Ifay ouyay ingbray emay aay eetsway eattray I'llay ivegay ouyay ethay isonpray ekay. Oundsay oodgay?")
+}
+
+text Colchis_Text_JailerAppleYesNo {
+	format("Give the Colchis Apple to the jailer?")
+}
+
+text Colchis_Text_JailerGaveApple {
+	format("{PLAYER} gave the jailer the Colchis Apple")
+}
+
+//A Colchis Apple? Now there's a sweet treat!
+//Thank you! Here's the jail key. Knock yourself out
+text Colchis_Text_JailerThanks1 {
+	format("Aay Olchiscay apple? Ownay ere'sthay aay eetsway eattray! Ankthay ouyay! Ere'shay ethay ailjay eykay. Ocknay ourselfyay outay.")
+}
+
+//Be careful not to lock yourself in jail. Ha!
+text Colchis_Text_JailerThanks2 {
+	format("Ebay arefulcay otnay otay ocklay ourselfyay inay ailjay. Ahay!")
+}
+
+text Colchis_Text_JailerGaveAppleNo {
+	format("Best not to give him the Apple now.")
 }
 

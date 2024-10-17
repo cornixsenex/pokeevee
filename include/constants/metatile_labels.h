@@ -147,6 +147,8 @@
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
 
 // gTileset_Colchis
+#define METATILE_Colchis_DoorOpen_Left        0x200
+#define METATILE_Colchis_DoorOpen_Right       0x201
 #define METATILE_Colchis_JailDoorOpen_Bottom  0x313
 #define METATILE_Colchis_JailDoorOpen_Top     0x30B
 
