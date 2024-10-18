@@ -2099,6 +2099,7 @@ script Colchis_Script_Chef {
 				applymovement (OBJ_EVENT_CHEF, Colchis_Movement_ChefExit)
 				waitmovement (0)
 				//Persist exit
+				setflag (FLAG_COLCHIS_MOVECHEF)
 				call (Colchis_Script_MoveChef)
 			} else {
 				msgbox (Colchis_Text_ChefGaveRingNo, MSGBOX_DEFAULT)
@@ -2294,8 +2295,17 @@ script Colchis_Script_DoorMan {
 		closemessage
 		applymovement (OBJ_EVENT_DOORGUARD, Common_Movement_FaceDown)
 	} else {
-		msgbox (Colchis_Text_Doorman2, MSGBOX_DEFAULT)
-		closemessage
+		if (var(VAR_ARGO_STATE) != 17) {
+			setvar (VAR_ARGO_STATE, 17)
+			msgbox (Colchis_Text_Doorman2, MSGBOX_DEFAULT)
+			closemessage
+			setmetatile (10, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+			setmetatile (11, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+			special (DrawWholeMapView)
+		} else {
+			msgbox (Colchis_Text_Doorman3, MSGBOX_DEFAULT)
+			closemessage
+		}
 		applymovement (OBJ_EVENT_DOORGUARD, Common_Movement_FaceRight)
 	}
 	waitmovement (0)
@@ -3189,10 +3199,25 @@ text Colchis_Text_LostKid2 {
 }
 
 //You'll never get out of here unless I open the door for you and there's no way I'll do that...unless you could somehow calm my girl down. She won't come spend time with me because she's all stressed out about some lost kid. What about MY needs?
+//I am Ostiarius of Colchis,
+//without my help espace's impossible,
+//and I only help people who help me.
+//Can you somehow get my girl to calm down?
+//She won't come see me cuz she's stuck at work
+//freaking out over some stupid lost kid...
+//I'm sure that's bad... but what about my needs?
+
+//I am Ostiarius of Colchis, without my help espace's impossible, and I only help people who help me. Can you somehow get my girl to calm down? She won't come see me cuz she's stuck at work freaking out over some stupid lost kid... I'm sure that's bad... but what about my needs?
 text Colchis_Text_Doorman1 {
-	format("")
+	format("Iay amay ostiariusay ofay Olchiscay, ithoutway ymay elphay escape'say impossibleay, anday Iay onlyay elphay eoplepay owhay elphay emay. Ancay ouyay omehowsay etgay ymay irlgay otay almcay ownday? Eshay on'tway omecay eesay emay uzcay e'sshay uckstay atay orkway eakingfray outay overay omesay upidstay ostlay idkay...I'may uresay at'sthay adbay...utbay atwhay aboutay ymay eedsnay?")
 }
-//You brought us back I opened the door for you
+//Thank you for bringing us back together
+//The door is open. Farewell.
 text Colchis_Text_Doorman2 {
-	format("")
+	format("Ankthay ouyay orfay ingingbray usay ackbay ogethertay. Ethay oorday isay openay. Arewellfay.")
+} 
+
+//Thanks again
+text Colchis_Text_Doorman3 {
+	format("Anksthay againay.")
 }
