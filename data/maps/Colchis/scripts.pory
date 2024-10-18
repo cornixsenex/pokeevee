@@ -1340,7 +1340,7 @@ script Colchis_Script_Jail {
 	waitse
 	
 	//Enter Medea
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_MedeaPrisonApproachPlayer)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaPrisonApproachPlayer)
 	waitmovement (0)
 
 	//I've come to save you 
@@ -1398,9 +1398,9 @@ script Colchis_Script_Jail {
 
 	//Movevement to Sanctum
 
-	applymovement (OBJ_EVENT_MEDEA, Common_Movement_MedeaPrisonExit)
-	applymovement (OBJ_EVENT_JASON, Common_Movement_JasonPrisonExit)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_PlayerPrisonExit)
+	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaPrisonExit)
+	applymovement (OBJ_EVENT_JASON, Colchis_Movement_JasonPrisonExit)
+	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerPrisonExit)
 	waitmovement (OBJ_EVENT_ID_PLAYER)
 
 	call (Colchis_Script_SetupSanctum)
@@ -2031,8 +2031,8 @@ script Colchis_Script_RingItem {
 }
 
 script Colchis_Script_CloseDoor  {
-	setmetatile (10, 63, METATILE_Colchis_JailDoorOpen_Bottom, TRUE)
-	setmetatile (11, 63, METATILE_Colchis_JailDoorOpen_Bottom, TRUE)
+	setmetatile (10, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+	setmetatile (11, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
 	return
 }
 
@@ -2182,6 +2182,128 @@ script Colchis_Script_Jailer {
 	releaseall
 	end
 }
+
+script Colchis_Script_PrisonDoor1 {
+	if (!flag(FLAG_TEMP_A)) {
+		lockall
+		//Set the temp flag
+		setflag (FLAG_TEMP_A)
+		//!
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//The prison key opened the door
+		msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
+		closemessage
+		//Open the door
+		playse (SE_EFFECTIVE)
+		setmetatile (9, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+		setmetatile (9, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+		special (DrawWholeMapView)
+		delay (30)
+		waitse
+		releaseall
+	}
+	end
+}
+
+script Colchis_Script_PrisonDoor2 {
+	if (!flag(FLAG_TEMP_B)) {
+		lockall
+		//Set the temp flag
+		setflag (FLAG_TEMP_B)
+		//!
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//The prison key opened the door
+		msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
+		closemessage
+		//Open the door
+		playse (SE_EFFECTIVE)
+		setmetatile (18, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+		setmetatile (18, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+		special (DrawWholeMapView)
+		delay (30)
+		waitse
+		releaseall
+	}
+	end
+}
+
+script Colchis_Script_PrisonDoor3 {
+	if (!flag(FLAG_TEMP_C)) {
+		lockall
+		//Set the temp flag
+		setflag (FLAG_TEMP_C)
+		//!
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//The prison key opened the door
+		msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
+		closemessage
+		//Open the door
+		playse (SE_EFFECTIVE)
+		setmetatile (27, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+		setmetatile (27, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+		special (DrawWholeMapView)
+		delay (30)
+		waitse
+		releaseall
+	}
+	end
+}
+
+script Colchis_Script_LostKid {
+	lockall
+	faceplayer
+	//If in jail say thanks for saving me and return to nanny
+	if (!flag(FLAG_COLCHIS_RETURN_LOSTKID)) {
+		msgbox(Colchis_Text_LostKid1, MSGBOX_DEFAULT)
+		closemessage
+		special (GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_NORTH) {
+			applymovement (OBJ_EVENT_LOSTKID, Colchis_Movement_LostKidExit1)
+		} else {
+			applymovement (OBJ_EVENT_LOSTKID, Colchis_Movement_LostKidExit2)
+		}
+		waitmovement (0)
+		//Persist Return Lost Kid
+		setflag (FLAG_COLCHIS_RETURN_LOSTKID)
+		
+		removeobject (OBJ_EVENT_LOSTKID)
+		setobjectxyperm (OBJ_EVENT_LOSTKID, 5, 46)
+		setobjectmovementtype (OBJ_EVENT_LOSTKID, MOVEMENT_TYPE_WANDER_AROUND)
+		addobject (OBJ_EVENT_LOSTKID)
+		showobjectat (OBJ_EVENT_LOSTKID, MAP_COLCHIS)
+		
+	//If with nanny say something like 'i love playing with my friends'
+	} else {
+		msgbox (Colchis_Text_LostKid2, MSGBOX_DEFAULT)
+		closemessage
+	}
+	releaseall
+	end
+}
+
+script Colchis_Script_DoorMan {
+	lockall
+	faceplayer
+
+	//If his girl has returned (RETURN_LOSTKID) then he says like You brought us back I opened the door for you) and turns back to his girl else he's alone and says "You'll never get out of here unless I open the door for you and there's no way I'll do that...unless you could somehow calm my girl down. She won't come spend time with me because she's all stressed out about some lost kid. What about MY needs?
+	if (!flag(FLAG_COLCHIS_RETURN_LOSTKID)) {
+		msgbox (Colchis_Text_Doorman1, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_DOORGUARD, Common_Movement_FaceDown)
+	} else {
+		msgbox (Colchis_Text_Doorman2, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_DOORGUARD, Common_Movement_FaceRight)
+	}
+	waitmovement (0)
+	releaseall
+	end
+}
+
+	
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -2479,11 +2601,11 @@ movement Colchis_Movement_JasonPrisonApproachPlayer {
 	walk_up * 2
 }
 
-movement Common_Movement_MedeaPrisonApproachPlayer {
+movement Colchis_Movement_MedeaPrisonApproachPlayer {
 	walk_up * 4
 }
 
-movement Common_Movement_MedeaPrisonExit {
+movement Colchis_Movement_MedeaPrisonExit {
 	walk_down * 4
 	walk_left * 15
 	walk_down * 16
@@ -2492,7 +2614,7 @@ movement Common_Movement_MedeaPrisonExit {
 	walk_left * 22
 }
 
-movement Common_Movement_JasonPrisonExit {	
+movement Colchis_Movement_JasonPrisonExit {	
 	walk_down * 5
 	walk_left * 15
 	walk_down * 16
@@ -2501,7 +2623,7 @@ movement Common_Movement_JasonPrisonExit {
 	walk_left * 21
 }
 
-movement Common_Movement_PlayerPrisonExit {
+movement Colchis_Movement_PlayerPrisonExit {
 	walk_down * 6
 	walk_left * 15
 	walk_down * 16
@@ -2584,6 +2706,19 @@ movement Colchis_Movement_JasonAndMedeaExeunt {
 
 movement Colchis_Movement_ChefExit {
 	walk_right * 9
+}
+
+movement Colchis_Movement_LostKidExit1 {
+	walk_left
+	walk_down * 4
+	walk_left * 7
+}
+
+movement Colchis_Movement_LostKidExit2 {
+	walk_down
+	walk_left
+	walk_down * 3
+	walk_left * 7
 }
 
 text Colchis_Text_JasonIntro1 {
@@ -3041,3 +3176,23 @@ text Colchis_Text_JailerGaveAppleNo {
 	format("Best not to give him the Apple now.")
 }
 
+text Colchis_Text_PrisonDoorOpen {
+	format("The Colchis Prison Key unlocked the door!")
+}
+
+text Colchis_Text_LostKid1 {
+	format("Hey! Thanks for finding me! I was starting to get scared but I'll go back to where I belong now.")
+}
+
+text Colchis_Text_LostKid2 {
+	format("I love playing with my friends again.")
+}
+
+//You'll never get out of here unless I open the door for you and there's no way I'll do that...unless you could somehow calm my girl down. She won't come spend time with me because she's all stressed out about some lost kid. What about MY needs?
+text Colchis_Text_Doorman1 {
+	format("")
+}
+//You brought us back I opened the door for you
+text Colchis_Text_Doorman2 {
+	format("")
+}

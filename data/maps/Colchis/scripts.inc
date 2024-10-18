@@ -1605,7 +1605,7 @@ Colchis_Script_Jail::
 # 1340 "data/maps/Colchis/scripts.pory"
 	waitse
 # 1343 "data/maps/Colchis/scripts.pory"
-	applymovement 4, Common_Movement_MedeaPrisonApproachPlayer
+	applymovement 4, Colchis_Movement_MedeaPrisonApproachPlayer
 # 1344 "data/maps/Colchis/scripts.pory"
 	waitmovement 0
 # 1347 "data/maps/Colchis/scripts.pory"
@@ -1671,11 +1671,11 @@ Colchis_Script_Jail::
 # 1397 "data/maps/Colchis/scripts.pory"
 	closemessage
 # 1401 "data/maps/Colchis/scripts.pory"
-	applymovement 4, Common_Movement_MedeaPrisonExit
+	applymovement 4, Colchis_Movement_MedeaPrisonExit
 # 1402 "data/maps/Colchis/scripts.pory"
-	applymovement 54, Common_Movement_JasonPrisonExit
+	applymovement 54, Colchis_Movement_JasonPrisonExit
 # 1403 "data/maps/Colchis/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_PlayerPrisonExit
+	applymovement OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerPrisonExit
 # 1404 "data/maps/Colchis/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 1406 "data/maps/Colchis/scripts.pory"
@@ -2501,9 +2501,9 @@ Colchis_Script_RingItem::
 
 Colchis_Script_CloseDoor::
 # 2034 "data/maps/Colchis/scripts.pory"
-	setmetatile 10, 63, METATILE_Colchis_JailDoorOpen_Bottom, TRUE
+	setmetatile 10, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE
 # 2035 "data/maps/Colchis/scripts.pory"
-	setmetatile 11, 63, METATILE_Colchis_JailDoorOpen_Bottom, TRUE
+	setmetatile 11, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE
 	return
 
 
@@ -2735,2272 +2735,2517 @@ Colchis_Script_Jailer_5:
 	goto Colchis_Script_Jailer_1
 
 
-# 2186 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_IntroPlayer:
+Colchis_Script_PrisonDoor1::
 # 2187 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2187 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2187 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
+	goto_if_unset FLAG_TEMP_A, Colchis_Script_PrisonDoor1_2
+Colchis_Script_PrisonDoor1_1:
+	end
 
+Colchis_Script_PrisonDoor1_2:
+# 2188 "data/maps/Colchis/scripts.pory"
+	lockall
 # 2190 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_ForcedBattleA:
-# 2191 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2191 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2191 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2191 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2191 "data/maps/Colchis/scripts.pory"
-	walk_down
-	step_end
-
-# 2194 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_ForcedBattleB:
+	setflag FLAG_TEMP_A
+# 2192 "data/maps/Colchis/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 2193 "data/maps/Colchis/scripts.pory"
+	waitmovement 0
 # 2195 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2195 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2195 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2195 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2195 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
+	msgbox Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT
+# 2196 "data/maps/Colchis/scripts.pory"
+	closemessage
 # 2198 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_ForcedBattleExitA:
+	playse SE_EFFECTIVE
 # 2199 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2199 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2199 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2199 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2199 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
+	setmetatile 9, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE
+# 2200 "data/maps/Colchis/scripts.pory"
+	setmetatile 9, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE
+# 2201 "data/maps/Colchis/scripts.pory"
+	special DrawWholeMapView
 # 2202 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_ForcedBattleExitB:
+	delay 30
 # 2203 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2203 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2203 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2203 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2203 "data/maps/Colchis/scripts.pory"
-	walk_down
-	step_end
+	waitse
+# 2204 "data/maps/Colchis/scripts.pory"
+	releaseall
+	goto Colchis_Script_PrisonDoor1_1
 
-# 2206 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_EnterThroneRoom:
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2207 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2208 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2208 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2208 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2208 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2208 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2209 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2209 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2210 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2211 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2211 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2211 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
 
-# 2214 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_CameraPan1:
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2215 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
+Colchis_Script_PrisonDoor2::
+# 2210 "data/maps/Colchis/scripts.pory"
+	goto_if_unset FLAG_TEMP_B, Colchis_Script_PrisonDoor2_2
+Colchis_Script_PrisonDoor2_1:
+	end
 
+Colchis_Script_PrisonDoor2_2:
+# 2211 "data/maps/Colchis/scripts.pory"
+	lockall
+# 2213 "data/maps/Colchis/scripts.pory"
+	setflag FLAG_TEMP_B
+# 2215 "data/maps/Colchis/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 2216 "data/maps/Colchis/scripts.pory"
+	waitmovement 0
 # 2218 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_MedeaA:
+	msgbox Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT
 # 2219 "data/maps/Colchis/scripts.pory"
-	walk_diag_southeast
-	step_end
-
+	closemessage
+# 2221 "data/maps/Colchis/scripts.pory"
+	playse SE_EFFECTIVE
 # 2222 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_SpinInPlace:
+	setmetatile 18, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE
 # 2223 "data/maps/Colchis/scripts.pory"
-	face_right
+	setmetatile 18, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE
 # 2224 "data/maps/Colchis/scripts.pory"
-	face_up
+	special DrawWholeMapView
 # 2225 "data/maps/Colchis/scripts.pory"
-	face_left
+	delay 30
 # 2226 "data/maps/Colchis/scripts.pory"
-	face_down
+	waitse
 # 2227 "data/maps/Colchis/scripts.pory"
-	face_right
-# 2228 "data/maps/Colchis/scripts.pory"
-	face_up
-# 2229 "data/maps/Colchis/scripts.pory"
-	face_left
-# 2230 "data/maps/Colchis/scripts.pory"
-	face_down
-# 2231 "data/maps/Colchis/scripts.pory"
-	face_right
-# 2232 "data/maps/Colchis/scripts.pory"
-	face_up
+	releaseall
+	goto Colchis_Script_PrisonDoor2_1
+
+
+Colchis_Script_PrisonDoor3::
 # 2233 "data/maps/Colchis/scripts.pory"
-	face_left
+	goto_if_unset FLAG_TEMP_C, Colchis_Script_PrisonDoor3_2
+Colchis_Script_PrisonDoor3_1:
+	end
+
+Colchis_Script_PrisonDoor3_2:
 # 2234 "data/maps/Colchis/scripts.pory"
-	face_down
-# 2235 "data/maps/Colchis/scripts.pory"
-	face_right
+	lockall
 # 2236 "data/maps/Colchis/scripts.pory"
-	face_up
-# 2237 "data/maps/Colchis/scripts.pory"
-	face_left
+	setflag FLAG_TEMP_C
 # 2238 "data/maps/Colchis/scripts.pory"
-	face_down
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 2239 "data/maps/Colchis/scripts.pory"
-	face_right
-# 2240 "data/maps/Colchis/scripts.pory"
-	face_up
+	waitmovement 0
 # 2241 "data/maps/Colchis/scripts.pory"
-	face_left
+	msgbox Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT
 # 2242 "data/maps/Colchis/scripts.pory"
-	face_down
-	step_end
-
+	closemessage
+# 2244 "data/maps/Colchis/scripts.pory"
+	playse SE_EFFECTIVE
 # 2245 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer1A:
+	setmetatile 27, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE
 # 2246 "data/maps/Colchis/scripts.pory"
-	walk_diag_southeast
-# 2246 "data/maps/Colchis/scripts.pory"
-	walk_diag_southeast
+	setmetatile 27, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE
 # 2247 "data/maps/Colchis/scripts.pory"
-	walk_down
-	step_end
-
+	special DrawWholeMapView
+# 2248 "data/maps/Colchis/scripts.pory"
+	delay 30
+# 2249 "data/maps/Colchis/scripts.pory"
+	waitse
 # 2250 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer2A:
-# 2251 "data/maps/Colchis/scripts.pory"
-	walk_diag_southwest
-# 2251 "data/maps/Colchis/scripts.pory"
-	walk_diag_southwest
-# 2252 "data/maps/Colchis/scripts.pory"
-	walk_down
-	step_end
+	releaseall
+	goto Colchis_Script_PrisonDoor3_1
 
-# 2255 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_CircleColumn:
+
+Colchis_Script_LostKid::
 # 2256 "data/maps/Colchis/scripts.pory"
-	walk_left
+	lockall
 # 2257 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2257 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2258 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2258 "data/maps/Colchis/scripts.pory"
-	walk_right
+	faceplayer
 # 2259 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2259 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2260 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2261 "data/maps/Colchis/scripts.pory"
-	face_down
-	step_end
-
-# 2264 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_CircleColumn2:
-# 2265 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2266 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2266 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2267 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2267 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2268 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2268 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2269 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2270 "data/maps/Colchis/scripts.pory"
-	face_down
-# 2271 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2272 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2272 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2273 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2273 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2274 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2274 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2275 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2276 "data/maps/Colchis/scripts.pory"
-	face_down
-# 2277 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2278 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2278 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2279 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2279 "data/maps/Colchis/scripts.pory"
-	walk_right
+	goto_if_unset FLAG_COLCHIS_RETURN_LOSTKID, Colchis_Script_LostKid_2
 # 2280 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2280 "data/maps/Colchis/scripts.pory"
-	walk_down
+	msgbox Colchis_Text_LostKid2, MSGBOX_DEFAULT
 # 2281 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2282 "data/maps/Colchis/scripts.pory"
-	face_down
-	step_end
+	closemessage
+Colchis_Script_LostKid_1:
+# 2283 "data/maps/Colchis/scripts.pory"
+	releaseall
+	end
 
-# 2285 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_CameraPan2:
-# 2286 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2286 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2286 "data/maps/Colchis/scripts.pory"
-	walk_down
-	step_end
+Colchis_Script_LostKid_2:
+# 2260 "data/maps/Colchis/scripts.pory"
+	msgbox Colchis_Text_LostKid1, MSGBOX_DEFAULT
+# 2261 "data/maps/Colchis/scripts.pory"
+	closemessage
+# 2262 "data/maps/Colchis/scripts.pory"
+	special GetPlayerFacingDirection
+# 2263 "data/maps/Colchis/scripts.pory"
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq Colchis_Script_LostKid_6
+# 2266 "data/maps/Colchis/scripts.pory"
+	applymovement 49, Colchis_Movement_LostKidExit2
+Colchis_Script_LostKid_5:
+# 2268 "data/maps/Colchis/scripts.pory"
+	waitmovement 0
+# 2270 "data/maps/Colchis/scripts.pory"
+	setflag FLAG_COLCHIS_RETURN_LOSTKID
+# 2272 "data/maps/Colchis/scripts.pory"
+	removeobject 49
+# 2273 "data/maps/Colchis/scripts.pory"
+	setobjectxyperm 49, 5, 46
+# 2274 "data/maps/Colchis/scripts.pory"
+	setobjectmovementtype 49, MOVEMENT_TYPE_WANDER_AROUND
+# 2275 "data/maps/Colchis/scripts.pory"
+	addobject 49
+# 2276 "data/maps/Colchis/scripts.pory"
+	showobjectat 49, MAP_COLCHIS
+	goto Colchis_Script_LostKid_1
 
+Colchis_Script_LostKid_6:
+# 2264 "data/maps/Colchis/scripts.pory"
+	applymovement 49, Colchis_Movement_LostKidExit1
+	goto Colchis_Script_LostKid_5
+
+
+Colchis_Script_DoorMan::
+# 2288 "data/maps/Colchis/scripts.pory"
+	lockall
 # 2289 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer3A:
-# 2290 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2290 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2291 "data/maps/Colchis/scripts.pory"
-	face_down
-	step_end
-
-# 2294 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer4A:
-# 2295 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2295 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2296 "data/maps/Colchis/scripts.pory"
-	face_down
-	step_end
-
+	faceplayer
+# 2292 "data/maps/Colchis/scripts.pory"
+	goto_if_unset FLAG_COLCHIS_RETURN_LOSTKID, Colchis_Script_DoorMan_2
+# 2297 "data/maps/Colchis/scripts.pory"
+	msgbox Colchis_Text_Doorman2, MSGBOX_DEFAULT
+# 2298 "data/maps/Colchis/scripts.pory"
+	closemessage
 # 2299 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_MedeaB:
-# 2300 "data/maps/Colchis/scripts.pory"
-	walk_down
+	applymovement 51, Common_Movement_FaceRight
+Colchis_Script_DoorMan_1:
 # 2301 "data/maps/Colchis/scripts.pory"
-	face_left
+	waitmovement 0
 # 2302 "data/maps/Colchis/scripts.pory"
-	face_up
-# 2303 "data/maps/Colchis/scripts.pory"
-	face_right
-# 2304 "data/maps/Colchis/scripts.pory"
-	face_down
-# 2305 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2306 "data/maps/Colchis/scripts.pory"
-	face_left
-# 2307 "data/maps/Colchis/scripts.pory"
-	face_up
+	releaseall
+	end
+
+Colchis_Script_DoorMan_2:
+# 2293 "data/maps/Colchis/scripts.pory"
+	msgbox Colchis_Text_Doorman1, MSGBOX_DEFAULT
+# 2294 "data/maps/Colchis/scripts.pory"
+	closemessage
+# 2295 "data/maps/Colchis/scripts.pory"
+	applymovement 51, Common_Movement_FaceDown
+	goto Colchis_Script_DoorMan_1
+
+
 # 2308 "data/maps/Colchis/scripts.pory"
-	face_right
+Colchis_Movement_IntroPlayer:
 # 2309 "data/maps/Colchis/scripts.pory"
-	face_down
-# 2310 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2311 "data/maps/Colchis/scripts.pory"
-	face_left
-# 2312 "data/maps/Colchis/scripts.pory"
-	face_up
-# 2313 "data/maps/Colchis/scripts.pory"
-	face_right
-# 2314 "data/maps/Colchis/scripts.pory"
-	face_down
+	walk_up
+# 2309 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2309 "data/maps/Colchis/scripts.pory"
+	walk_up
 	step_end
 
+# 2312 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_ForcedBattleA:
+# 2313 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2313 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2313 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2313 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2313 "data/maps/Colchis/scripts.pory"
+	walk_down
+	step_end
+
+# 2316 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_ForcedBattleB:
 # 2317 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer5A:
-# 2318 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2319 "data/maps/Colchis/scripts.pory"
 	walk_up
+# 2317 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2317 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2317 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2317 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
 # 2320 "data/maps/Colchis/scripts.pory"
-	walk_diag_northeast
+Colchis_Movement_ForcedBattleExitA:
 # 2321 "data/maps/Colchis/scripts.pory"
-	face_down
+	walk_up
+# 2321 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2321 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2321 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2321 "data/maps/Colchis/scripts.pory"
+	walk_up
 	step_end
 
 # 2324 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer6A:
+Colchis_Movement_ForcedBattleExitB:
 # 2325 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2326 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2327 "data/maps/Colchis/scripts.pory"
-	walk_diag_northwest
-# 2328 "data/maps/Colchis/scripts.pory"
-	face_down
+	walk_down
+# 2325 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2325 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2325 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2325 "data/maps/Colchis/scripts.pory"
+	walk_down
 	step_end
 
+# 2328 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_EnterThroneRoom:
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2329 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2330 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2330 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2330 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2330 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2330 "data/maps/Colchis/scripts.pory"
+	walk_right
 # 2331 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer1B:
+	walk_up
+# 2331 "data/maps/Colchis/scripts.pory"
+	walk_up
 # 2332 "data/maps/Colchis/scripts.pory"
-	walk_diag_northwest
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2332 "data/maps/Colchis/scripts.pory"
+	walk_right
 # 2333 "data/maps/Colchis/scripts.pory"
-	face_up
+	walk_up
+# 2333 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2333 "data/maps/Colchis/scripts.pory"
+	walk_up
 	step_end
 
 # 2336 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer2B:
+Colchis_Movement_MedeaDance_CameraPan1:
 # 2337 "data/maps/Colchis/scripts.pory"
-	walk_diag_northeast
-# 2338 "data/maps/Colchis/scripts.pory"
-	face_up
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2337 "data/maps/Colchis/scripts.pory"
+	walk_up
 	step_end
 
+# 2340 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_MedeaA:
 # 2341 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer3B:
-# 2342 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2343 "data/maps/Colchis/scripts.pory"
-	face_left
+	walk_diag_southeast
 	step_end
 
-# 2346 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer4B:
-# 2347 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2348 "data/maps/Colchis/scripts.pory"
+# 2344 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_SpinInPlace:
+# 2345 "data/maps/Colchis/scripts.pory"
 	face_right
-	step_end
-
+# 2346 "data/maps/Colchis/scripts.pory"
+	face_up
+# 2347 "data/maps/Colchis/scripts.pory"
+	face_left
+# 2348 "data/maps/Colchis/scripts.pory"
+	face_down
+# 2349 "data/maps/Colchis/scripts.pory"
+	face_right
+# 2350 "data/maps/Colchis/scripts.pory"
+	face_up
 # 2351 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer5B:
+	face_left
 # 2352 "data/maps/Colchis/scripts.pory"
-	walk_diag_southwest
+	face_down
 # 2353 "data/maps/Colchis/scripts.pory"
-	face_down
-	step_end
-
+	face_right
+# 2354 "data/maps/Colchis/scripts.pory"
+	face_up
+# 2355 "data/maps/Colchis/scripts.pory"
+	face_left
 # 2356 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer6B:
+	face_down
 # 2357 "data/maps/Colchis/scripts.pory"
-	walk_diag_southeast
+	face_right
 # 2358 "data/maps/Colchis/scripts.pory"
+	face_up
+# 2359 "data/maps/Colchis/scripts.pory"
+	face_left
+# 2360 "data/maps/Colchis/scripts.pory"
+	face_down
+# 2361 "data/maps/Colchis/scripts.pory"
+	face_right
+# 2362 "data/maps/Colchis/scripts.pory"
+	face_up
+# 2363 "data/maps/Colchis/scripts.pory"
+	face_left
+# 2364 "data/maps/Colchis/scripts.pory"
 	face_down
 	step_end
 
-# 2361 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer1C:
-# 2362 "data/maps/Colchis/scripts.pory"
+# 2367 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer1A:
+# 2368 "data/maps/Colchis/scripts.pory"
 	walk_diag_southeast
-	step_end
-
-# 2365 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer2C:
-# 2366 "data/maps/Colchis/scripts.pory"
-	walk_diag_southwest
-	step_end
-
+# 2368 "data/maps/Colchis/scripts.pory"
+	walk_diag_southeast
 # 2369 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer5C:
-# 2370 "data/maps/Colchis/scripts.pory"
-	walk_diag_northeast
+	walk_down
 	step_end
 
+# 2372 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer2A:
+# 2373 "data/maps/Colchis/scripts.pory"
+	walk_diag_southwest
+# 2373 "data/maps/Colchis/scripts.pory"
+	walk_diag_southwest
 # 2374 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaDance_Dancer6C:
-# 2375 "data/maps/Colchis/scripts.pory"
-	walk_diag_northwest
+	walk_down
 	step_end
 
+# 2377 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_CircleColumn:
 # 2378 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_JasonAmbush:
+	walk_left
 # 2379 "data/maps/Colchis/scripts.pory"
 	walk_up
 # 2379 "data/maps/Colchis/scripts.pory"
 	walk_up
-# 2379 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2379 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2379 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2379 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
+# 2380 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2380 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2381 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2381 "data/maps/Colchis/scripts.pory"
+	walk_down
 # 2382 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_IntroGruntM1:
+	walk_left
 # 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2383 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2384 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2384 "data/maps/Colchis/scripts.pory"
-	walk_down
+	face_down
 	step_end
 
+# 2386 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_CircleColumn2:
 # 2387 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_IntroGruntM2:
+	walk_left
 # 2388 "data/maps/Colchis/scripts.pory"
-	walk_right
+	walk_up
 # 2388 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2388 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2388 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2388 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2388 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2388 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2389 "data/maps/Colchis/scripts.pory"
 	walk_right
 # 2389 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2390 "data/maps/Colchis/scripts.pory"
 	walk_down
-# 2389 "data/maps/Colchis/scripts.pory"
+# 2390 "data/maps/Colchis/scripts.pory"
 	walk_down
-	step_end
-
+# 2391 "data/maps/Colchis/scripts.pory"
+	walk_left
 # 2392 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_IntroGruntM3:
+	face_down
 # 2393 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2393 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2393 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2393 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2393 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2393 "data/maps/Colchis/scripts.pory"
-	walk_right
+	walk_left
 # 2394 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_up
 # 2394 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2395 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2395 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2396 "data/maps/Colchis/scripts.pory"
 	walk_down
-	step_end
-
+# 2396 "data/maps/Colchis/scripts.pory"
+	walk_down
 # 2397 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_IntroGruntF1:
+	walk_left
 # 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2398 "data/maps/Colchis/scripts.pory"
-	walk_right
+	face_down
 # 2399 "data/maps/Colchis/scripts.pory"
-	face_up
-	step_end
-
+	walk_left
+# 2400 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2400 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2401 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2401 "data/maps/Colchis/scripts.pory"
+	walk_right
 # 2402 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_IntroGruntF2:
+	walk_down
+# 2402 "data/maps/Colchis/scripts.pory"
+	walk_down
 # 2403 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2403 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2403 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2403 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2403 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2403 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2403 "data/maps/Colchis/scripts.pory"
-	walk_right
+	walk_left
 # 2404 "data/maps/Colchis/scripts.pory"
-	face_up
+	face_down
 	step_end
 
 # 2407 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_IntroGruntF3:
+Colchis_Movement_MedeaDance_CameraPan2:
 # 2408 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2408 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2408 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2408 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2408 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2408 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2409 "data/maps/Colchis/scripts.pory"
-	face_up
-	step_end
-
-# 2412 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_EnterThroneRoom1:
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2413 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2414 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2414 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2414 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2414 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2414 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2414 "data/maps/Colchis/scripts.pory"
-	walk_right
-	step_end
-
-# 2417 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_EnterThroneRoom2:
-# 2418 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2418 "data/maps/Colchis/scripts.pory"
-	walk_right
-	step_end
-
-# 2421 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_EnterThroneRoom3:
-# 2422 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2422 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2422 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2423 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2424 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2424 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2424 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
-# 2427 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_PlayerApproachAeetes:
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2428 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
-# 2431 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_JasonApproachAeetes:
-# 2432 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2432 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2432 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2432 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2432 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2432 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2432 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
-# 2435 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaFaceAeetes:
-# 2436 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2437 "data/maps/Colchis/scripts.pory"
-	face_up
-	step_end
-
-# 2440 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_JasonFaceAeetes:
-# 2441 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2442 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2443 "data/maps/Colchis/scripts.pory"
-	face_up
-	step_end
-
-# 2447 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_PlayerFaceAeetes:
-# 2448 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
-# 2451 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_RoyalGuard1:
-# 2452 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2452 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2453 "data/maps/Colchis/scripts.pory"
 	walk_down
-# 2454 "data/maps/Colchis/scripts.pory"
-	face_right
+# 2408 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2408 "data/maps/Colchis/scripts.pory"
+	walk_down
 	step_end
 
-# 2457 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_RoyalGuard2:
-# 2458 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2459 "data/maps/Colchis/scripts.pory"
+# 2411 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer3A:
+# 2412 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2412 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2413 "data/maps/Colchis/scripts.pory"
 	face_down
 	step_end
 
-# 2462 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_RoyalGuard3:
-# 2463 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2464 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2465 "data/maps/Colchis/scripts.pory"
+# 2416 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer4A:
+# 2417 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2417 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2418 "data/maps/Colchis/scripts.pory"
+	face_down
+	step_end
+
+# 2421 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_MedeaB:
+# 2422 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2423 "data/maps/Colchis/scripts.pory"
+	face_left
+# 2424 "data/maps/Colchis/scripts.pory"
+	face_up
+# 2425 "data/maps/Colchis/scripts.pory"
 	face_right
+# 2426 "data/maps/Colchis/scripts.pory"
+	face_down
+# 2427 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2428 "data/maps/Colchis/scripts.pory"
+	face_left
+# 2429 "data/maps/Colchis/scripts.pory"
+	face_up
+# 2430 "data/maps/Colchis/scripts.pory"
+	face_right
+# 2431 "data/maps/Colchis/scripts.pory"
+	face_down
+# 2432 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2433 "data/maps/Colchis/scripts.pory"
+	face_left
+# 2434 "data/maps/Colchis/scripts.pory"
+	face_up
+# 2435 "data/maps/Colchis/scripts.pory"
+	face_right
+# 2436 "data/maps/Colchis/scripts.pory"
+	face_down
+	step_end
+
+# 2439 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer5A:
+# 2440 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2441 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2442 "data/maps/Colchis/scripts.pory"
+	walk_diag_northeast
+# 2443 "data/maps/Colchis/scripts.pory"
+	face_down
+	step_end
+
+# 2446 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer6A:
+# 2447 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2448 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2449 "data/maps/Colchis/scripts.pory"
+	walk_diag_northwest
+# 2450 "data/maps/Colchis/scripts.pory"
+	face_down
+	step_end
+
+# 2453 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer1B:
+# 2454 "data/maps/Colchis/scripts.pory"
+	walk_diag_northwest
+# 2455 "data/maps/Colchis/scripts.pory"
+	face_up
+	step_end
+
+# 2458 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer2B:
+# 2459 "data/maps/Colchis/scripts.pory"
+	walk_diag_northeast
+# 2460 "data/maps/Colchis/scripts.pory"
+	face_up
+	step_end
+
+# 2463 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer3B:
+# 2464 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2465 "data/maps/Colchis/scripts.pory"
+	face_left
 	step_end
 
 # 2468 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_RoyalGuard4:
+Colchis_Movement_MedeaDance_Dancer4B:
 # 2469 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_right
 # 2470 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2471 "data/maps/Colchis/scripts.pory"
-	face_left
+	face_right
 	step_end
 
+# 2473 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer5B:
 # 2474 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_RoyalGuardExit:
+	walk_diag_southwest
 # 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2475 "data/maps/Colchis/scripts.pory"
-	walk_down
+	face_down
 	step_end
 
 # 2478 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_JasonPrisonApproachPlayer:
+Colchis_Movement_MedeaDance_Dancer6B:
 # 2479 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2479 "data/maps/Colchis/scripts.pory"
-	walk_up
+	walk_diag_southeast
+# 2480 "data/maps/Colchis/scripts.pory"
+	face_down
 	step_end
 
-# 2482 "data/maps/Colchis/scripts.pory"
-Common_Movement_MedeaPrisonApproachPlayer:
 # 2483 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2483 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2483 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2483 "data/maps/Colchis/scripts.pory"
-	walk_up
+Colchis_Movement_MedeaDance_Dancer1C:
+# 2484 "data/maps/Colchis/scripts.pory"
+	walk_diag_southeast
 	step_end
 
-# 2486 "data/maps/Colchis/scripts.pory"
-Common_Movement_MedeaPrisonExit:
 # 2487 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2487 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2487 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2487 "data/maps/Colchis/scripts.pory"
-	walk_down
+Colchis_Movement_MedeaDance_Dancer2C:
 # 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2488 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2489 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2490 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2491 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2492 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_diag_southwest
 	step_end
 
-# 2495 "data/maps/Colchis/scripts.pory"
-Common_Movement_JasonPrisonExit:
+# 2491 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaDance_Dancer5C:
+# 2492 "data/maps/Colchis/scripts.pory"
+	walk_diag_northeast
+	step_end
+
 # 2496 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2496 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2496 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2496 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2496 "data/maps/Colchis/scripts.pory"
-	walk_down
+Colchis_Movement_MedeaDance_Dancer6C:
 # 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2497 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2498 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2499 "data/maps/Colchis/scripts.pory"
-	walk_right
+	walk_diag_northwest
+	step_end
+
 # 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2500 "data/maps/Colchis/scripts.pory"
-	walk_down
+Colchis_Movement_JasonAmbush:
 # 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_up
 # 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_up
 # 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_up
 # 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_up
 # 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_up
 # 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2501 "data/maps/Colchis/scripts.pory"
-	walk_left
+	walk_up
 	step_end
 
 # 2504 "data/maps/Colchis/scripts.pory"
-Common_Movement_PlayerPrisonExit:
+Colchis_Movement_IntroGruntM1:
 # 2505 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_right
 # 2505 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_right
 # 2505 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_right
 # 2505 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_right
 # 2505 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_right
 # 2505 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2505 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2505 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2506 "data/maps/Colchis/scripts.pory"
 	walk_down
 # 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2506 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2507 "data/maps/Colchis/scripts.pory"
 	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2507 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2508 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2509 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2510 "data/maps/Colchis/scripts.pory"
-	walk_left
 	step_end
 
-# 2513 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaSanctum1:
+# 2509 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_IntroGruntM2:
+# 2510 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2510 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2510 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2510 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2510 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2510 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2510 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2511 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2511 "data/maps/Colchis/scripts.pory"
+	walk_down
+	step_end
+
 # 2514 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2514 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2514 "data/maps/Colchis/scripts.pory"
-	walk_left
+Colchis_Movement_IntroGruntM3:
 # 2515 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
-# 2518 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaSanctum2:
-# 2519 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2515 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2515 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2515 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2515 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2515 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2516 "data/maps/Colchis/scripts.pory"
 	walk_down
+# 2516 "data/maps/Colchis/scripts.pory"
+	walk_down
+	step_end
+
+# 2519 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_IntroGruntF1:
 # 2520 "data/maps/Colchis/scripts.pory"
 	walk_right
 # 2520 "data/maps/Colchis/scripts.pory"
 	walk_right
 # 2520 "data/maps/Colchis/scripts.pory"
 	walk_right
+# 2520 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2520 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2520 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2520 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2520 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2521 "data/maps/Colchis/scripts.pory"
+	face_up
 	step_end
 
-# 2523 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_PlayerSanctum1:
 # 2524 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2524 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2524 "data/maps/Colchis/scripts.pory"
-	walk_up
+Colchis_Movement_IntroGruntF2:
+# 2525 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2525 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2525 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2525 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2525 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2525 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2525 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2526 "data/maps/Colchis/scripts.pory"
+	face_up
 	step_end
 
-# 2527 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_PlayerSanctum2:
-# 2528 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2528 "data/maps/Colchis/scripts.pory"
-	walk_up
-	step_end
-
+# 2529 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_IntroGruntF3:
+# 2530 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2530 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2530 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2530 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2530 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2530 "data/maps/Colchis/scripts.pory"
+	walk_right
 # 2531 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaSanctum3A:
-# 2532 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2532 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2533 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2533 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2534 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2534 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2534 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2534 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2534 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2534 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2534 "data/maps/Colchis/scripts.pory"
-	walk_up
+	face_up
 	step_end
 
-# 2537 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaSanctum3B:
-# 2538 "data/maps/Colchis/scripts.pory"
+# 2534 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_EnterThroneRoom1:
+# 2535 "data/maps/Colchis/scripts.pory"
 	walk_up
-# 2538 "data/maps/Colchis/scripts.pory"
+# 2535 "data/maps/Colchis/scripts.pory"
 	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2535 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2536 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2536 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2536 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2536 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2536 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2536 "data/maps/Colchis/scripts.pory"
+	walk_right
+	step_end
+
 # 2539 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_EnterThroneRoom2:
+# 2540 "data/maps/Colchis/scripts.pory"
 	walk_right
 # 2540 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2540 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2540 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2540 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2540 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2540 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2540 "data/maps/Colchis/scripts.pory"
-	walk_up
+	walk_right
 	step_end
 
 # 2543 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_PlayerSanctum3A:
+Colchis_Movement_EnterThroneRoom3:
 # 2544 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_up
+# 2544 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2544 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2545 "data/maps/Colchis/scripts.pory"
+	walk_right
 # 2545 "data/maps/Colchis/scripts.pory"
 	walk_right
 # 2546 "data/maps/Colchis/scripts.pory"
-	walk_down
+	walk_up
 # 2546 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2547 "data/maps/Colchis/scripts.pory"
-	face_left
+	walk_up
+# 2546 "data/maps/Colchis/scripts.pory"
+	walk_up
 	step_end
 
+# 2549 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_PlayerApproachAeetes:
 # 2550 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_PlayerSanctum3B:
-# 2551 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2551 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2551 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2552 "data/maps/Colchis/scripts.pory"
-	face_left
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2550 "data/maps/Colchis/scripts.pory"
+	walk_up
 	step_end
 
-# 2555 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaSanctumReturn:
-# 2556 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2556 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2556 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2556 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2556 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2556 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2556 "data/maps/Colchis/scripts.pory"
-	walk_down
+# 2553 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_JasonApproachAeetes:
+# 2554 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2554 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2554 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2554 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2554 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2554 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2554 "data/maps/Colchis/scripts.pory"
+	walk_up
 	step_end
 
+# 2557 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaFaceAeetes:
+# 2558 "data/maps/Colchis/scripts.pory"
+	walk_left
 # 2559 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaSanctumReturn2A:
-# 2560 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2561 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2561 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2562 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2563 "data/maps/Colchis/scripts.pory"
-	face_right
+	face_up
 	step_end
 
-# 2566 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_MedeaSanctumReturn2B:
-# 2567 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2568 "data/maps/Colchis/scripts.pory"
-	walk_left
+# 2562 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_JasonFaceAeetes:
+# 2563 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2564 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2565 "data/maps/Colchis/scripts.pory"
+	face_up
+	step_end
+
 # 2569 "data/maps/Colchis/scripts.pory"
-	walk_down
+Colchis_Movement_PlayerFaceAeetes:
 # 2570 "data/maps/Colchis/scripts.pory"
-	face_right
+	walk_up
 	step_end
 
 # 2573 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_Exeunt:
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
-# 2574 "data/maps/Colchis/scripts.pory"
-	walk_right
+Colchis_Movement_RoyalGuard1:
 # 2574 "data/maps/Colchis/scripts.pory"
 	walk_right
 # 2574 "data/maps/Colchis/scripts.pory"
 	walk_right
 # 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2575 "data/maps/Colchis/scripts.pory"
-	walk_up
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2576 "data/maps/Colchis/scripts.pory"
-	walk_left
-# 2577 "data/maps/Colchis/scripts.pory"
 	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
-# 2577 "data/maps/Colchis/scripts.pory"
-	walk_down
+# 2576 "data/maps/Colchis/scripts.pory"
+	face_right
 	step_end
 
+# 2579 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_RoyalGuard2:
 # 2580 "data/maps/Colchis/scripts.pory"
-Colchis_Movement_JasonAndMedeaExeunt:
+	walk_left
 # 2581 "data/maps/Colchis/scripts.pory"
+	face_down
+	step_end
+
+# 2584 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_RoyalGuard3:
+# 2585 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2586 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2587 "data/maps/Colchis/scripts.pory"
+	face_right
+	step_end
+
+# 2590 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_RoyalGuard4:
+# 2591 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2592 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2593 "data/maps/Colchis/scripts.pory"
+	face_left
+	step_end
+
+# 2596 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_RoyalGuardExit:
+# 2597 "data/maps/Colchis/scripts.pory"
 	walk_down
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2597 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2597 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2597 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2597 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2597 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2597 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2597 "data/maps/Colchis/scripts.pory"
+	walk_down
+	step_end
+
+# 2600 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_JasonPrisonApproachPlayer:
+# 2601 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2601 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
+# 2604 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaPrisonApproachPlayer:
+# 2605 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2605 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2605 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2605 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
+# 2608 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaPrisonExit:
+# 2609 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2609 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2609 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2609 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2610 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2611 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2582 "data/maps/Colchis/scripts.pory"
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2612 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2613 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2614 "data/maps/Colchis/scripts.pory"
+	walk_left
+	step_end
+
+# 2617 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_JasonPrisonExit:
+# 2618 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2618 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2618 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2618 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2618 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2619 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2620 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2621 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2622 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2623 "data/maps/Colchis/scripts.pory"
+	walk_left
+	step_end
+
+# 2626 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_PlayerPrisonExit:
+# 2627 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2627 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2627 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2627 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2627 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2627 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2628 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2629 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2630 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2631 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2632 "data/maps/Colchis/scripts.pory"
+	walk_left
+	step_end
+
+# 2635 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaSanctum1:
+# 2636 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2636 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2636 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2637 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
+# 2640 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaSanctum2:
+# 2641 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2642 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2642 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2642 "data/maps/Colchis/scripts.pory"
 	walk_right
 	step_end
 
-# 2585 "data/maps/Colchis/scripts.pory"
+# 2645 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_PlayerSanctum1:
+# 2646 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2646 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2646 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
+# 2649 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_PlayerSanctum2:
+# 2650 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2650 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
+# 2653 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaSanctum3A:
+# 2654 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2654 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2655 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2655 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2656 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2656 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2656 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2656 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2656 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2656 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2656 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
+# 2659 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaSanctum3B:
+# 2660 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2660 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2661 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2662 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2662 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2662 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2662 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2662 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2662 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2662 "data/maps/Colchis/scripts.pory"
+	walk_up
+	step_end
+
+# 2665 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_PlayerSanctum3A:
+# 2666 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2667 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2668 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2668 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2669 "data/maps/Colchis/scripts.pory"
+	face_left
+	step_end
+
+# 2672 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_PlayerSanctum3B:
+# 2673 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2673 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2673 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2674 "data/maps/Colchis/scripts.pory"
+	face_left
+	step_end
+
+# 2677 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaSanctumReturn:
+# 2678 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2678 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2678 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2678 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2678 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2678 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2678 "data/maps/Colchis/scripts.pory"
+	walk_down
+	step_end
+
+# 2681 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaSanctumReturn2A:
+# 2682 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2683 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2683 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2684 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2685 "data/maps/Colchis/scripts.pory"
+	face_right
+	step_end
+
+# 2688 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_MedeaSanctumReturn2B:
+# 2689 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2690 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2691 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2692 "data/maps/Colchis/scripts.pory"
+	face_right
+	step_end
+
+# 2695 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_Exeunt:
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2696 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2697 "data/maps/Colchis/scripts.pory"
+	walk_up
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2698 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2699 "data/maps/Colchis/scripts.pory"
+	walk_down
+	step_end
+
+# 2702 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_JasonAndMedeaExeunt:
+# 2703 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+# 2704 "data/maps/Colchis/scripts.pory"
+	walk_right
+	step_end
+
+# 2707 "data/maps/Colchis/scripts.pory"
 Colchis_Movement_ChefExit:
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
-# 2586 "data/maps/Colchis/scripts.pory"
+# 2708 "data/maps/Colchis/scripts.pory"
 	walk_right
+	step_end
+
+# 2711 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_LostKidExit1:
+# 2712 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2713 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2713 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2713 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2713 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2714 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2714 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2714 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2714 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2714 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2714 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2714 "data/maps/Colchis/scripts.pory"
+	walk_left
+	step_end
+
+# 2717 "data/maps/Colchis/scripts.pory"
+Colchis_Movement_LostKidExit2:
+# 2718 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2719 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2720 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2720 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2720 "data/maps/Colchis/scripts.pory"
+	walk_down
+# 2721 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2721 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2721 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2721 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2721 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2721 "data/maps/Colchis/scripts.pory"
+	walk_left
+# 2721 "data/maps/Colchis/scripts.pory"
+	walk_left
 	step_end
 
 Colchis_Script_LugiaTest_Text_0:
@@ -5012,57 +5257,57 @@ Colchis_Script_SanctumMedeaReturn_Text_0:
 	.string "OIMOIAY!\nOOIIMMOOIIAAYY!!$"
 
 Colchis_Text_JasonIntro1::
-# 2589 "data/maps/Colchis/scripts.pory"
+# 2724 "data/maps/Colchis/scripts.pory"
 	.string "Let us set out to claim Shiny Mareep.$"
 
 Colchis_Text_JasonIntro2::
-# 2593 "data/maps/Colchis/scripts.pory"
+# 2728 "data/maps/Colchis/scripts.pory"
 	.string "Ambush!$"
 
 Colchis_Text_JasonIntro3::
-# 2597 "data/maps/Colchis/scripts.pory"
+# 2732 "data/maps/Colchis/scripts.pory"
 	.string "We're hopelessly outnumbered but they\n"
 	.string "don't attack.$"
 
 Colchis_Text_JasonIntro4::
-# 2601 "data/maps/Colchis/scripts.pory"
+# 2736 "data/maps/Colchis/scripts.pory"
 	.string "Greetings! I am Jason, captain of the\n"
 	.string "Argo. We come in peace.$"
 
 Colchis_Text_JasonIntro5::
-# 2605 "data/maps/Colchis/scripts.pory"
+# 2740 "data/maps/Colchis/scripts.pory"
 	.string "We have no choice. We'll have to go with\n"
 	.string "them.$"
 
 Colchis_Text_JasonIntro6::
-# 2609 "data/maps/Colchis/scripts.pory"
+# 2744 "data/maps/Colchis/scripts.pory"
 	.string "We'll go with you. Bring us before your\n"
 	.string "king.$"
 
 Colchis_Text_GruntIntro1::
-# 2614 "data/maps/Colchis/scripts.pory"
+# 2749 "data/maps/Colchis/scripts.pory"
 	.string "Elcomeway otay Olchiscay Asonjay ofay\n"
 	.string "Argoay.$"
 
 Colchis_Text_GruntIntro2::
-# 2619 "data/maps/Colchis/scripts.pory"
+# 2754 "data/maps/Colchis/scripts.pory"
 	.string "Aeetesay ingkay ofay Olchiscay\n"
 	.string "awaitsay ouyay.$"
 
 Colchis_Text_JasonIntroAccept::
-# 2623 "data/maps/Colchis/scripts.pory"
+# 2758 "data/maps/Colchis/scripts.pory"
 	.string "Very well then. We'll meet King Aeetes.$"
 
 Colchis_Text_JasonIntroDecline::
-# 2627 "data/maps/Colchis/scripts.pory"
+# 2762 "data/maps/Colchis/scripts.pory"
 	.string "A noble choice. To arms then!$"
 
 Colchis_Text_JasonIntroDeclined::
-# 2631 "data/maps/Colchis/scripts.pory"
+# 2766 "data/maps/Colchis/scripts.pory"
 	.string "Seek Mareep!$"
 
 Colchis_Text_Medea1::
-# 2640 "data/maps/Colchis/scripts.pory"
+# 2775 "data/maps/Colchis/scripts.pory"
 	.string "Ethay oddessgay oughthray emay\n"
 	.string "eakspay ofay ingsthay otay omecay.\l"
 	.string "Amongay usay erethay illway omecay aay\l"
@@ -5074,12 +5319,12 @@ Colchis_Text_Medea1::
 	.string "uinray.$"
 
 Colchis_Text_Aeetes1::
-# 2645 "data/maps/Colchis/scripts.pory"
+# 2780 "data/maps/Colchis/scripts.pory"
 	.string "Omecay orwardfay Asonjay. Eakspay\n"
 	.string "ithway Aeetesay.$"
 
 Colchis_Text_Aeetes2::
-# 2654 "data/maps/Colchis/scripts.pory"
+# 2789 "data/maps/Colchis/scripts.pory"
 	.string "Elcomeway ightymay aptaincay ofay\n"
 	.string "ethay Argoay. Eway avehay allay\l"
 	.string "eardhay ofay ouryay eroichay eedsday,\l"
@@ -5088,11 +5333,11 @@ Colchis_Text_Aeetes2::
 	.string "ywhay ou'veyay omecay otay Olchiscay.$"
 
 Colchis_Text_JasonAeetes::
-# 2658 "data/maps/Colchis/scripts.pory"
+# 2793 "data/maps/Colchis/scripts.pory"
 	.string "We come in peace...$"
 
 Colchis_Text_Aeetes3::
-# 2667 "data/maps/Colchis/scripts.pory"
+# 2802 "data/maps/Colchis/scripts.pory"
 	.string "Iay askeday ouyay ywhay, otnay owhay!\n"
 	.string "Iay owknay ou'veyay omecay otay\l"
 	.string "aimclay inyshay Areepmay anday atthay\l"
@@ -5101,12 +5346,12 @@ Colchis_Text_Aeetes3::
 	.string "illkay...$"
 
 Colchis_Text_Medea2::
-# 2673 "data/maps/Colchis/scripts.pory"
+# 2808 "data/maps/Colchis/scripts.pory"
 	.string "Apapay! Iay egbay ouryay ajestymay\n"
 	.string "otay owshay estraintay.$"
 
 Colchis_Text_Aeetes4::
-# 2686 "data/maps/Colchis/scripts.pory"
+# 2821 "data/maps/Colchis/scripts.pory"
 	.string "Ilencesay Edeamay. Asway isthay otnay\n"
 	.string "ethay aveknay owhay efiledday ethay\l"
 	.string "acredsay empletay ountmay? Atthay\l"
@@ -5119,7 +5364,7 @@ Colchis_Text_Aeetes4::
 	.string "ailedjay.$"
 
 Colchis_Text_Medea3::
-# 2698 "data/maps/Colchis/scripts.pory"
+# 2833 "data/maps/Colchis/scripts.pory"
 	.string "Ethay esserlay oneay eforebay ouyay\n"
 	.string "isay uiltygay aloneay ofay attackingay\l"
 	.string "acredsay Ohay-Ohay. Ethay ovelylay\l"
@@ -5131,36 +5376,36 @@ Colchis_Text_Medea3::
 	.string "attenday otay imhay...$"
 
 Colchis_Text_Aeetes5::
-# 2702 "data/maps/Colchis/scripts.pory"
+# 2837 "data/maps/Colchis/scripts.pory"
 	.string "Eirthay oomday ashay eenbay\n"
 	.string "onouncedpray. Iay avehay okenspay.\l"
 	.string "Assembleay oyalray uardsray!$"
 
 Colchis_Text_Aeetes6::
-# 2706 "data/maps/Colchis/scripts.pory"
+# 2841 "data/maps/Colchis/scripts.pory"
 	.string "Aketay emthay otay ailjay.$"
 
 Colchis_Text_Medea4::
-# 2710 "data/maps/Colchis/scripts.pory"
+# 2845 "data/maps/Colchis/scripts.pory"
 	.string "Onaaaaaaaaaaaaaaaaayyyyyyyyyyyyy$"
 
 Colchis_Text_Aeetes7::
-# 2714 "data/maps/Colchis/scripts.pory"
+# 2849 "data/maps/Colchis/scripts.pory"
 	.string "Oday otnay eepway atthay ouryay\n"
 	.string "ingkay eepskay Olchiscay afesay.$"
 
 Colchis_Text_JasonPrison1::
-# 2718 "data/maps/Colchis/scripts.pory"
+# 2853 "data/maps/Colchis/scripts.pory"
 	.string "Release me! I'm the great Captain\n"
 	.string "Jason!$"
 
 Colchis_Text_JasonPrison2::
-# 2722 "data/maps/Colchis/scripts.pory"
+# 2857 "data/maps/Colchis/scripts.pory"
 	.string "The quest is lost. I fear I've failed us\n"
 	.string "both...$"
 
 Colchis_Text_MedeaPrison1::
-# 2731 "data/maps/Colchis/scripts.pory"
+# 2866 "data/maps/Colchis/scripts.pory"
 	.string "Ostmay oblenay Asonjay easeplay\n"
 	.string "orgetfay ouryay earsfay. I'veay omecay\l"
 	.string "otay ouyay, againstay ymay ather'sfay\l"
@@ -5168,12 +5413,12 @@ Colchis_Text_MedeaPrison1::
 	.string "ungloriousay atefay.$"
 
 Colchis_Text_JasonPrison3::
-# 2735 "data/maps/Colchis/scripts.pory"
+# 2870 "data/maps/Colchis/scripts.pory"
 	.string "You are a witch! Why should I trust you\n"
 	.string "now?$"
 
 Colchis_Text_MedeaPrison2::
-# 2753 "data/maps/Colchis/scripts.pory"
+# 2888 "data/maps/Colchis/scripts.pory"
 	.string "Osethay ordsway, 'aay itchway' ingstay\n"
 	.string "orseway anthay urningbay oalscay oray\l"
 	.string "ushinggay oodblay. I'day atherray\l"
@@ -5193,7 +5438,7 @@ Colchis_Text_MedeaPrison2::
 	.string "ingkay, oursyay otay ommandcay.$"
 
 Colchis_Text_JasonPrison4::
-# 2757 "data/maps/Colchis/scripts.pory"
+# 2892 "data/maps/Colchis/scripts.pory"
 	.string "Truly Medea your words reach my heart\n"
 	.string "and scrub the barnacles of suspicion\l"
 	.string "rigorously from my enamoured soul. If\l"
@@ -5204,17 +5449,17 @@ Colchis_Text_JasonPrison4::
 	.string "make you Queen of the Argo.$"
 
 Colchis_Text_MedeaPrison3::
-# 2762 "data/maps/Colchis/scripts.pory"
+# 2897 "data/maps/Colchis/scripts.pory"
 	.string "Iay illway oday isthay anday oremay\n"
 	.string "orfay ouyay ymay ovelay.$"
 
 Colchis_Text_JasonPrison5::
-# 2766 "data/maps/Colchis/scripts.pory"
+# 2901 "data/maps/Colchis/scripts.pory"
 	.string "Medea is our one and only hope. Lets go\n"
 	.string "with her and win shiny Mareep!$"
 
 Colchis_Text_JasonPrison6::
-# 2770 "data/maps/Colchis/scripts.pory"
+# 2905 "data/maps/Colchis/scripts.pory"
 	.string "Let it be so then lovely Medea. We'll go\n"
 	.string "with you but how can we expect to bring\l"
 	.string "shiny Mareep out of this place when\l"
@@ -5225,7 +5470,7 @@ Colchis_Text_JasonPrison6::
 	.string "father.$"
 
 Colchis_Text_MedeaPrison4::
-# 2777 "data/maps/Colchis/scripts.pory"
+# 2912 "data/maps/Colchis/scripts.pory"
 	.string "On'tday orryway eetsway, Iay utpay aay\n"
 	.string "ellspay onay emthay. Asay onglay asay\l"
 	.string "ou'reyay ithway emay eythey allay\l"
@@ -5233,12 +5478,12 @@ Colchis_Text_MedeaPrison4::
 	.string "ouyay otay inyshay Areepmay.$"
 
 Colchis_Text_MedeaSanctum1::
-# 2781 "data/maps/Colchis/scripts.pory"
+# 2916 "data/maps/Colchis/scripts.pory"
 	.string "Alloway emay otay openay ethay ayway\n"
 	.string "orfay ouyay.$"
 
 Colchis_Text_MedeaSanctum2::
-# 2807 "data/maps/Colchis/scripts.pory"
+# 2942 "data/maps/Colchis/scripts.pory"
 	.string "Ethay ayway isay openay. Iay ogay onay\n"
 	.string "urtherfay, orfay evenay asay Iay\l"
 	.string "eholdbay ymay uetray ovelay, ithinway\l"
@@ -5253,19 +5498,19 @@ Colchis_Text_MedeaSanctum2::
 	.string "overay emay.$"
 
 Colchis_Text_JasonSanctum1::
-# 2815 "data/maps/Colchis/scripts.pory"
+# 2950 "data/maps/Colchis/scripts.pory"
 	.string "I will not leave without shiny Mareep\n"
 	.string "but neither will I become seperate from\l"
 	.string "my soulmate, the enchanting Medea.$"
 
 Colchis_Text_JasonSanctum2::
-# 2819 "data/maps/Colchis/scripts.pory"
+# 2954 "data/maps/Colchis/scripts.pory"
 	.string "Therefore I trust you to complete this\n"
 	.string "quest. Go forth and bring me back shiny\l"
 	.string "Mareep.$"
 
 Colchis_Text_MedeaSanctum3::
-# 2832 "data/maps/Colchis/scripts.pory"
+# 2967 "data/maps/Colchis/scripts.pory"
 	.string "Eforebay ouyay ogay aketay eedhay\n"
 	.string "ofay atwhay Iay aysay. Inyshay\l"
 	.string "Areepmay isay uardedgay ybay ethay\l"
@@ -5278,22 +5523,22 @@ Colchis_Text_MedeaSanctum3::
 	.string "erehay isthay ayday.$"
 
 Colchis_Text_JasonSanctumTrigger1::
-# 2836 "data/maps/Colchis/scripts.pory"
+# 2971 "data/maps/Colchis/scripts.pory"
 	.string "Do not interrupt my private time with\n"
 	.string "Medea 'till you bring shiny Mareep.$"
 
 Colchis_Text_MedeaSanctumTrigger1::
-# 2841 "data/maps/Colchis/scripts.pory"
+# 2976 "data/maps/Colchis/scripts.pory"
 	.string "Ememberray, ingbray onay armhay otay\n"
 	.string "Ugialay.$"
 
 Colchis_Text_JasonSanctumTrigger2::
-# 2845 "data/maps/Colchis/scripts.pory"
+# 2980 "data/maps/Colchis/scripts.pory"
 	.string "Have you returned bringing Shiny\n"
 	.string "Mareep?$"
 
 Colchis_Text_MedeaSanctumTrigger2::
-# 2850 "data/maps/Colchis/scripts.pory"
+# 2985 "data/maps/Colchis/scripts.pory"
 	.string "Ymay oughtsthay etraybay emay.\n"
 	.string "Excuseay emay Asonjay, againstay ymay\l"
 	.string "ownay adviceay Iay ustmay aketay\l"
@@ -5301,70 +5546,70 @@ Colchis_Text_MedeaSanctumTrigger2::
 	.string "Ugialay isay afesay.$"
 
 Colchis_Text_JasonSanctumTrigger3::
-# 2854 "data/maps/Colchis/scripts.pory"
+# 2989 "data/maps/Colchis/scripts.pory"
 	.string "How could you fail? You only had one\n"
 	.string "job! My quest has failed and it was all\l"
 	.string "your fault! Now you will pay the price.\l"
 	.string "Go Nosepass!$"
 
 Colchis_Text_JasonLost::
-# 2858 "data/maps/Colchis/scripts.pory"
+# 2993 "data/maps/Colchis/scripts.pory"
 	.string "I curse that day I saved you from the\n"
 	.string "surf.$"
 
 Colchis_Text_JasonPost::
-# 2862 "data/maps/Colchis/scripts.pory"
+# 2997 "data/maps/Colchis/scripts.pory"
 	.string "The most wicked betrayal of all my\n"
 	.string "life...$"
 
 Colchis_Text_JasonGiveMeMareep::
-# 2866 "data/maps/Colchis/scripts.pory"
+# 3001 "data/maps/Colchis/scripts.pory"
 	.string "I see that you have completed the\n"
 	.string "quest. Give me shiny Mareep and let's be\l"
 	.string "done.$"
 
 Colchis_Text_GiveJasonMareep::
-# 2870 "data/maps/Colchis/scripts.pory"
+# 3005 "data/maps/Colchis/scripts.pory"
 	.string "Will you give Jason shiny Mareep?$"
 
 Colchis_Text_GaveShinyMareep::
-# 2874 "data/maps/Colchis/scripts.pory"
+# 3009 "data/maps/Colchis/scripts.pory"
 	.string "You gave {STR_VAR_1} to Jason!\p"
 	.string "Bye Bye {STR_VAR_1}!$"
 
 Colchis_Text_CultistMPre::
-# 2879 "data/maps/Colchis/scripts.pory"
+# 3014 "data/maps/Colchis/scripts.pory"
 	.string "Espassertray opstay! Allfay intoay\n"
 	.string "othingnessnay$"
 
 Colchis_Text_CultistMLost::
-# 2884 "data/maps/Colchis/scripts.pory"
+# 3019 "data/maps/Colchis/scripts.pory"
 	.string "Ethay everlastingay arknessday\n"
 	.string "overscay allay.$"
 
 Colchis_Text_CultistMPost::
-# 2889 "data/maps/Colchis/scripts.pory"
+# 3024 "data/maps/Colchis/scripts.pory"
 	.string "Ouyay aymay avehay onway utbay\n"
 	.string "ou'llyay evernay escapeay.$"
 
 Colchis_Text_MedeaSanctumReturn1::
-# 2894 "data/maps/Colchis/scripts.pory"
+# 3029 "data/maps/Colchis/scripts.pory"
 	.string "Ouyay onstermay! Owhay ouldcay ouyay\n"
 	.string "oday isthay otay emay?$"
 
 Colchis_Text_MedeaSanctumReturn2::
-# 2899 "data/maps/Colchis/scripts.pory"
+# 3034 "data/maps/Colchis/scripts.pory"
 	.string "Ymay ovelay, ehay ashay attackeday\n"
 	.string "ymay Ugialay! Iay illway onay ongerlay\l"
 	.string "elphay imhay eavelay Olchiscay.$"
 
 Colchis_Text_JasonMedeaReturn1::
-# 2903 "data/maps/Colchis/scripts.pory"
+# 3038 "data/maps/Colchis/scripts.pory"
 	.string "Please, do not cry beloved Medea. Lend\n"
 	.string "love the power to hold back your tears.$"
 
 Colchis_Text_JasonMedeaReturn2::
-# 2907 "data/maps/Colchis/scripts.pory"
+# 3042 "data/maps/Colchis/scripts.pory"
 	.string "Hey, I apologize for Medea. I know she's\n"
 	.string "acting up, but we're still cool. Give it\l"
 	.string "some time I'll get her to cool down. When\l"
@@ -5372,42 +5617,42 @@ Colchis_Text_JasonMedeaReturn2::
 	.string "I'll repay you for shiny Mareep.$"
 
 Colchis_Text_JasonSanctumWilds::
-# 2911 "data/maps/Colchis/scripts.pory"
+# 3046 "data/maps/Colchis/scripts.pory"
 	.string "Alas! Medea! My quest for shiny Mareep\n"
 	.string "has failed and now we're vagabonds.$"
 
 Colchis_Text_JasonSanctumDepart::
-# 2915 "data/maps/Colchis/scripts.pory"
+# 3050 "data/maps/Colchis/scripts.pory"
 	.string "Let us depart and leave this one\n"
 	.string "behind.$"
 
 Colchis_Text_Bed::
-# 2919 "data/maps/Colchis/scripts.pory"
+# 3054 "data/maps/Colchis/scripts.pory"
 	.string "It's a big comfy bed!\n"
 	.string "Would you like to take a rest?$"
 
 Colchis_Text_RingBlockerIntro::
-# 2923 "data/maps/Colchis/scripts.pory"
+# 3058 "data/maps/Colchis/scripts.pory"
 	.string "It's a large metal barrier with a keyhole\n"
 	.string "in the center.$"
 
 Colchis_Text_KeyFits::
-# 2927 "data/maps/Colchis/scripts.pory"
+# 3062 "data/maps/Colchis/scripts.pory"
 	.string "The key fits into the keyhole!\n"
 	.string "The barriers sink into the ground but\l"
 	.string "the key broke off inside!$"
 
 Colchis_Text_RingBlockerDecline::
-# 2931 "data/maps/Colchis/scripts.pory"
+# 3066 "data/maps/Colchis/scripts.pory"
 	.string "Better not try using the key here.$"
 
 Colchis_Text_RingBlockerYesNo::
-# 2935 "data/maps/Colchis/scripts.pory"
+# 3070 "data/maps/Colchis/scripts.pory"
 	.string "Would you like to try using the Colchis\n"
 	.string "Key?$"
 
 Colchis_Text_AeetesIntro::
-# 2945 "data/maps/Colchis/scripts.pory"
+# 3080 "data/maps/Colchis/scripts.pory"
 	.string "Ouryay insolentay invasionay ofay\n"
 	.string "ouray airfay anday ightymay ingdomkay\l"
 	.string "isay ownay atay anay enday. ouryay\l"
@@ -5415,11 +5660,11 @@ Colchis_Text_AeetesIntro::
 	.string "owerpay ofay Ingkay Aeetesay.$"
 
 Colchis_Text_AeetesLost::
-# 2950 "data/maps/Colchis/scripts.pory"
+# 3085 "data/maps/Colchis/scripts.pory"
 	.string "Ownay ymay ingdomkay ashay allenfay.$"
 
 Colchis_Text_AeetesPost::
-# 2963 "data/maps/Colchis/scripts.pory"
+# 3098 "data/maps/Colchis/scripts.pory"
 	.string "Ymay aughterday olenstay...ymay\n"
 	.string "ingdomkay allenfay...anday Iay amay\l"
 	.string "eatenbay ownday ybay aay eremay\l"
@@ -5432,17 +5677,17 @@ Colchis_Text_AeetesPost::
 	.string "earstay.$"
 
 Colchis_Text_AeetesFinal::
-# 2968 "data/maps/Colchis/scripts.pory"
+# 3103 "data/maps/Colchis/scripts.pory"
 	.string "Ymay ifelay ashay eenbay educedray\n"
 	.string "otay aughtnay. Eavelay emay.$"
 
 Colchis_Text_ChefProposal::
-# 2972 "data/maps/Colchis/scripts.pory"
+# 3107 "data/maps/Colchis/scripts.pory"
 	.string "I'm nervous! Do you think she will say\n"
 	.string "yes?$"
 
 Colchis_Movement_ChefIntro::
-# 2976 "data/maps/Colchis/scripts.pory"
+# 3111 "data/maps/Colchis/scripts.pory"
 	.string "Oh! What to do? I am madly in love with\n"
 	.string "one of Colchis' most beautiful maids\l"
 	.string "but worry I will lose her to someone\l"
@@ -5451,39 +5696,39 @@ Colchis_Movement_ChefIntro::
 	.string "give her in exchange for loyalty.$"
 
 Colchis_Text_ChefRingYesNo::
-# 2980 "data/maps/Colchis/scripts.pory"
+# 3115 "data/maps/Colchis/scripts.pory"
 	.string "Give Chef the Colchis Ring?$"
 
 Colchis_Text_ChefGaveRing::
-# 2984 "data/maps/Colchis/scripts.pory"
+# 3119 "data/maps/Colchis/scripts.pory"
 	.string "{PLAYER} gave Chef the Colchis Ring.$"
 
 Colchis_Text_ChefThanks1::
-# 2988 "data/maps/Colchis/scripts.pory"
+# 3123 "data/maps/Colchis/scripts.pory"
 	.string "Great Almighty! You're giving this to\n"
 	.string "me? Take this Sweet Apple as token of\l"
 	.string "thanks.$"
 
 Colchis_Text_ChefThanks2::
-# 2992 "data/maps/Colchis/scripts.pory"
+# 3127 "data/maps/Colchis/scripts.pory"
 	.string "I'm off now to proposition the maid.$"
 
 Colchis_Text_ChefGaveRingNo::
-# 2996 "data/maps/Colchis/scripts.pory"
+# 3131 "data/maps/Colchis/scripts.pory"
 	.string "Better not give him the ring.$"
 
 Colchis_Text_Maid1::
-# 3000 "data/maps/Colchis/scripts.pory"
+# 3135 "data/maps/Colchis/scripts.pory"
 	.string "Right now I am a maid but one day I will\n"
 	.string "meet a foreign man and have his kids.$"
 
 Colchis_Text_Maid2::
-# 3004 "data/maps/Colchis/scripts.pory"
+# 3139 "data/maps/Colchis/scripts.pory"
 	.string "I'm starting to worry this creep likes\n"
 	.string "me.$"
 
 Colchis_Text_JailerIntro::
-# 3017 "data/maps/Colchis/scripts.pory"
+# 3152 "data/maps/Colchis/scripts.pory"
 	.string "Eahyay I'may ethay oneay Aeetesay\n"
 	.string "eftlay inay argechay ofay ishay\l"
 	.string "isonspray utbay ehay on'tday aypay\l"
@@ -5495,26 +5740,49 @@ Colchis_Text_JailerIntro::
 	.string "Oundsay oodgay?$"
 
 Colchis_Text_JailerAppleYesNo::
-# 3021 "data/maps/Colchis/scripts.pory"
+# 3156 "data/maps/Colchis/scripts.pory"
 	.string "Give the Colchis Apple to the jailer?$"
 
 Colchis_Text_JailerGaveApple::
-# 3025 "data/maps/Colchis/scripts.pory"
+# 3160 "data/maps/Colchis/scripts.pory"
 	.string "{PLAYER} gave the jailer the Colchis\n"
 	.string "Apple$"
 
 Colchis_Text_JailerThanks1::
-# 3031 "data/maps/Colchis/scripts.pory"
+# 3166 "data/maps/Colchis/scripts.pory"
 	.string "Aay Olchiscay apple? Ownay ere'sthay\n"
 	.string "aay eetsway eattray! Ankthay ouyay!\l"
 	.string "Ere'shay ethay ailjay eykay. Ocknay\l"
 	.string "ourselfyay outay.$"
 
 Colchis_Text_JailerThanks2::
-# 3036 "data/maps/Colchis/scripts.pory"
+# 3171 "data/maps/Colchis/scripts.pory"
 	.string "Ebay arefulcay otnay otay ocklay\n"
 	.string "ourselfyay inay ailjay. Ahay!$"
 
 Colchis_Text_JailerGaveAppleNo::
-# 3040 "data/maps/Colchis/scripts.pory"
+# 3175 "data/maps/Colchis/scripts.pory"
 	.string "Best not to give him the Apple now.$"
+
+Colchis_Text_PrisonDoorOpen::
+# 3179 "data/maps/Colchis/scripts.pory"
+	.string "The Colchis Prison Key unlocked the\n"
+	.string "door!$"
+
+Colchis_Text_LostKid1::
+# 3183 "data/maps/Colchis/scripts.pory"
+	.string "Hey! Thanks for finding me! I was\n"
+	.string "starting to get scared but I'll go back\l"
+	.string "to where I belong now.$"
+
+Colchis_Text_LostKid2::
+# 3187 "data/maps/Colchis/scripts.pory"
+	.string "I love playing with my friends again.$"
+
+Colchis_Text_Doorman1::
+# 3192 "data/maps/Colchis/scripts.pory"
+	.string "$"
+
+Colchis_Text_Doorman2::
+# 3196 "data/maps/Colchis/scripts.pory"
+	.string "$"
