@@ -145,7 +145,6 @@ mapscripts Colchis_MapScripts {
 		//VAR_ARGO_STATE, 10: Colchis_TempScript_TestMedeaDance 
 	]
 
-
 }
 
 script Colchis_TempScript_WarpSanctum {
@@ -157,7 +156,6 @@ script Colchis_TempScript_WarpSanctum {
 script Colchis_TempScript_SetupTestMedeaDance {
 	warpsilent (MAP_COLCHIS, 51, 25)
 	setvar (VAR_ARGO_STATE, 10)
-
 	end
 }
 
@@ -177,8 +175,6 @@ script Colchis_Script_SetupJail {
 	end
 }
 
-
-
 script Colchis_Script_Jason {
 	if (var(VAR_ARGO_STATE) == 9) {
 		msgbox(Colchis_Text_JasonIntroDeclined, MSGBOX_DEFAULT)
@@ -187,7 +183,6 @@ script Colchis_Script_Jason {
 	}
 	end
 }
-
 
 script Colchis_Script_Intro {
 
@@ -282,7 +277,6 @@ script Colchis_Script_Intro {
 
 	//Else: Battle flags N shit
 	end
-
 }
 
 script Colchis_Script_EnterThroneRoom {
@@ -314,7 +308,6 @@ script Colchis_Script_EnterThroneRoom {
 	call (Colchis_Script_MedeaDance)
 
 }
-
 
 script Colchis_Script_CheckForcedBattle {
 	
@@ -604,7 +597,6 @@ script Colchis_Script_MedeaDance {
 	// > Spin again
 	call (Colchis_Script_MedeaDance_SpinAll)
 
-
 	//Big Trick - 4 circle whiel other two spin and dip in and out
 
 	//msgbox("BIG TRICK - STEP 1")
@@ -708,7 +700,6 @@ script Colchis_Script_MedeaDance {
 
 	call (Colchis_Script_MedeaDance_TrickVamp)
 
-
 	//msgbox("Carry Medea to Column")
 	//closemessage
 
@@ -754,7 +745,6 @@ script Colchis_Script_MedeaDance {
 	waitmovement (OBJ_EVENT_DANCER6)
 
 	call (Colchis_Script_MedeaDance_SpinAll)
-
 
 	//msgbox("Medea to Altar group prep vamp")
 	//closemessage
@@ -874,14 +864,12 @@ script Colchis_Script_MedeaDance {
 
 	waitmovement (OBJ_EVENT_DANCER6)
 
-
 	//msgbox("Should Be Back, goto King")
 	//closemessage
 
 	//Walk up 6 with pulse effect
 
 	//STEP 1
-
 
 	applymovement (OBJ_EVENT_MEDEA, Common_Movement_WalkUp)
 	applymovement (OBJ_EVENT_ID_CAMERA, Common_Movement_WalkUp)
@@ -1037,7 +1025,6 @@ script Colchis_Script_MedeaDance {
 
 	call (Colchis_Script_Aeetes)
 
-
 	return
 }
 
@@ -1142,7 +1129,6 @@ script Colchis_Script_Aeetes {
 	//and any man who brings harm onto him
 	//will surely Colchis' ruin
 
-
 	load_field_pic(FIELD_PIC_MEDEA, 190, 98)
 	msgbox(Colchis_Text_Medea1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_MEDEA)
@@ -1174,7 +1160,6 @@ script Colchis_Script_Aeetes {
 	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_PlayerFaceAeetes)
 	waitmovement (OBJ_EVENT_JASON)
 
-
 	//Aeetes:
 	//Welcome mighty captain of the Argo.
 	//We have all heard of your heroic deeds
@@ -1200,7 +1185,6 @@ script Colchis_Script_Aeetes {
 	load_field_pic(FIELD_PIC_AEETES, 190, 98)
 	msgbox(Colchis_Text_Aeetes3, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_AEETES)
-	
 	
 	//M: Papa!
 	//I beg your majesty to show restraint.
@@ -1438,7 +1422,6 @@ script Colchis_Script_SetupSanctum {
 	setobjectmovementtype (OBJ_EVENT_SANCTUM2, MOVEMENT_TYPE_INVISIBLE)
 	setobjectxyperm (OBJ_EVENT_SANCTUM2, 3, 1)
 
-	
 	//Medea comes back
 	applymovement (OBJ_EVENT_MEDEA, Colchis_Movement_MedeaSanctum2)
 	waitmovement (0)
@@ -1641,8 +1624,6 @@ script Colchis_Script_SanctumTriggerReturn {
 
 	return
 }
-
-	
 
 script Colchis_Script_SanctumTriggerEndIntro {
 		load_field_pic(FIELD_PIC_JASON, 190, 98)
@@ -1910,6 +1891,7 @@ script Colchis_Script_SetupEscapeFromColchis {
 	special (DrawWholeMapView)
 	
 	//Move the lost kid 
+	call (Colchis_Script_SetupLostKid)
 
 	//Release
 	releaseall
@@ -2313,7 +2295,24 @@ script Colchis_Script_DoorMan {
 	end
 }
 
-	
+//At first she's stressed about the kid being missing like "This is terrible I lost one of the kids and I'm worried that the parents will figure out if I just swap her with another child... after she's with the guard down at his post and says something like "Oh thank you for finding that missing kid I feel like I can finally breath again I was so stressed out I hadn't been able to spend time with my man like I used to.
+script Colchis_Script_Nanny {
+	lockall
+	faceplayer
+
+	if (var(VAR_ARGO_STATE) == 16) {
+		msgbox (Colchis_Text_Nanny1, MSGBOX_DEFAULT)
+		closemessage
+	} else {
+		msgbox(Colchis_Text_Nanny2, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_NANNY, Common_Movement_FaceLeft)
+		waitmovement (0)
+	}
+	releaseall
+	end
+}
+
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -3081,7 +3080,6 @@ text Colchis_Text_RingBlockerYesNo {
 	format("Would you like to try using the Colchis Key?")
 }
 
-
 //Your insolent invasion of our fair
 //and mighty kingdom will come to an end.
 //You will now learn the true power of King
@@ -3220,4 +3218,12 @@ text Colchis_Text_Doorman2 {
 //Thanks again
 text Colchis_Text_Doorman3 {
 	format("Anksthay againay.")
+}
+
+text Colchis_Text_Nanny1 {
+	format("Oh no! How terrible! I'm freaking out because I lost another one. What if I get caught swapping out another kid? When they're infants they usually can't tell but this one was older...What can I do?")
+}
+
+text Colchis_Text_Nanny2 {
+	format("Oh! Thanks for finding that lost kid for me. I feel like I can finally exhale. I had been so stressed out I hadn't been able to come socialize with my man.")
 }
