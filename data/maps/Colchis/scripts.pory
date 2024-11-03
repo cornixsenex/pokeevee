@@ -103,6 +103,9 @@ const OBJ_EVENT_MAID = 37
 const OBJ_EVENT_GRUNTBREAKL = 39
 const OBJ_EVENT_GRUNTBREAKR = 38
 
+const OBJ_EVENT_MAIDL = 43
+const OBJ_EVENT_MAIDR = 42
+
 mapscripts Colchis_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
@@ -2423,6 +2426,27 @@ script Colchis_Script_GruntBreakR {
 	end
 }
 
+script Colchis_Script_MaidL {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_MaidL, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_MAIDL, Common_Movement_FaceRight)
+	waitmovement (0)
+	release
+	end
+}
+
+script Colchis_Script_MaidR {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_MaidR, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_MAIDR, Common_Movement_FaceLeft)
+	waitmovement (0)
+	release
+	end
+}
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -3421,4 +3445,12 @@ text Colchis_Text_GruntBreakL {
 text Colchis_Text_GruntBreakR {
 	format("Atthay uy'sgay anay assay, anay assay at'sthay ullfay ofay itshay.")
 }
+
+text Colchis_Text_MaidL {
+   format("I heard she said he said he had a crush on him but she said she does not like him.")
+}
+
+text Colchis_Text_MaidR {
+   format("Get out of here! We're not interested.")
+}	   
 
