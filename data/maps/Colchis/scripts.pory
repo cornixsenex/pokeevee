@@ -100,6 +100,9 @@ const OBJ_EVENT_CHEF = 44
 const OBJ_EVENT_JAILER = 32
 const OBJ_EVENT_MAID = 37
 
+const OBJ_EVENT_GRUNTBREAKL = 39
+const OBJ_EVENT_GRUNTBREAKR = 38
+
 mapscripts Colchis_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
@@ -2313,6 +2316,113 @@ script Colchis_Script_Nanny {
 	end
 }
 
+script Colchis_Script_GruntBreak {
+	lockall
+	faceplayer
+	specialvar (VAR_RESULT, RandDigit)
+	switch (var(VAR_RESULT)) {
+		case 1:
+			msgbox(Colchis_Text_GruntBreak1, MSGBOX_DEFAULT)
+		case 2:
+			msgbox(Colchis_Text_GruntBreak2, MSGBOX_DEFAULT)
+		case 3:
+			msgbox(Colchis_Text_GruntBreak3, MSGBOX_DEFAULT)
+		case 4:
+			msgbox(Colchis_Text_GruntBreak4, MSGBOX_DEFAULT)
+		case 5:
+			msgbox(Colchis_Text_GruntBreak5, MSGBOX_DEFAULT)
+		case 6:
+			msgbox(Colchis_Text_GruntBreak6, MSGBOX_DEFAULT)
+		case 7:
+			msgbox(Colchis_Text_GruntBreak7, MSGBOX_DEFAULT)
+		case 8:
+			msgbox(Colchis_Text_GruntBreak8, MSGBOX_DEFAULT)
+		case 9:
+			msgbox(Colchis_Text_GruntBreak9, MSGBOX_DEFAULT)
+		default:
+			msgbox(Colchis_Text_GruntBreak0, MSGBOX_DEFAULT)
+	}
+	closemessage
+	releaseall
+	end
+}
+
+script Colchis_Script_Kid1 {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_Kid1, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Colchis_Script_Kid2 {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_Kid2, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Colchis_Script_Kid3 {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_Kid3, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Colchis_Script_Teacher1 {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_Teacher1, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Colchis_Script_Teacher2 {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_Teacher2, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Colchis_Script_Chef2 {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_Chef2, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Colchis_Script_GruntBreakL {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_GruntBreakL, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_GRUNTBREAKL, Common_Movement_FaceRight)
+	waitmovement (0)
+	release
+	end
+}
+
+script Colchis_Script_GruntBreakR {
+	lock
+	faceplayer
+	msgbox (Colchis_Text_GruntBreakR, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_GRUNTBREAKR, Common_Movement_FaceLeft)
+	waitmovement (0)
+	release
+	end
+}
+
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -3227,3 +3337,88 @@ text Colchis_Text_Nanny1 {
 text Colchis_Text_Nanny2 {
 	format("Oh! Thanks for finding that lost kid for me. I feel like I can finally exhale. I had been so stressed out I hadn't been able to come socialize with my man.")
 }
+
+//I was just thinking about my pet cat.
+text Colchis_Text_GruntBreak1 {
+	format("Iay asway ustjay inkingthay aboutay ymay etpay atcay.")
+}
+
+//I do not think meetings are productive
+text Colchis_Text_GruntBreak2 {
+	format("Iay oday otnay inkthay eetingsmay areay oductivepray.")
+}
+
+//Do not interrupt me binge eating chips
+text Colchis_Text_GruntBreak3 {
+	format("Oday otnay interrupay emay ingebay eatingay ipschay.")
+}
+
+//I'm on my break as Colchis' law mandates
+text Colchis_Text_GruntBreak4 {
+	format("I'may onay ymay eakbray, asay Olchiscay' awlay andatesmay.")
+}
+
+//My break time is my therapy session
+text Colchis_Text_GruntBreak5 {
+	format("Ymay eakbray imetay isay ymay erapythay essionsay.")
+}
+
+//I'm not lazy! I'm preparing to work.
+text Colchis_Text_GruntBreak6 {
+	format("I'may otnay azylay! I'may eparingpray otay orkway.")
+}
+
+//They say that breaks are like hugs for your soul
+text Colchis_Text_GruntBreak7 {
+	format("Eythey aysay atthay eaksbray areay ikelay ugshay orfay ouryay oulsay.")
+}
+
+//I'm not ignoring you. I'm just resting
+text Colchis_Text_GruntBreak8 {
+	format("I'may otnay ignoringay ouyay. I'may ustjay estingray.")
+}
+
+//Don't tell my boss I've been here for hours
+text Colchis_Text_GruntBreak9 {
+	format("On'tday elltay ymay ossbay I'veay eenbay erehay orfay ourshay.")
+}
+
+//Am I supposed to be talking to you?
+text Colchis_Text_GruntBreak0 {
+	format("Amay Iay upposedsay otay ebay alkingtay otay ouyay?")
+}
+
+text Colchis_Text_Kid1 {
+	format("Baby shark doo doo doo doo doo doo baby shark doo doo doo doo doo doo baby shark doo doo doo doo doo baby shark!")
+}
+
+text Colchis_Text_Kid2 {
+	format("I love Pikachu! He's an electric Pokemon and he's my favorite! I wish I had a pet Pikachu but I think my mom would say no...Maybe one day...")
+}
+
+text Colchis_Text_Kid3 {
+	format("Have you ever had a dream so that so that you um you had you you would you could you'll do you went you want you you could do so you you do you could you you want you want him to do you so much you could do anything?")
+}
+
+text Colchis_Text_Teacher1 {
+	format("The youth is lost! They pay no attention to anything of value or substance.")
+}
+
+text Colchis_Text_Teacher2 {
+	format("Even though teaching can be exhausting it's an honor to help nurture young minds.")
+}
+
+text Colchis_Text_Chef2 {
+	format("I'm not crying! No! Just peeling onions! Not thinking 'bout the girl who left me! No!")
+}
+
+//We're not arguing. I'm proving I'm right.
+text Colchis_Text_GruntBreakL {
+	format("E'reway otnay arguinay. I'may ovingpray I'may ightray.")
+}
+
+//That guy's an ass, an ass that's full of shit
+text Colchis_Text_GruntBreakR {
+	format("Atthay uy'sgay anay assay, anay assay at'sthay ullfay ofay itshay.")
+}
+
