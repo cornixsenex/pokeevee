@@ -11,49 +11,49 @@ Common_EventScript_SetGymTrainers::
 	end
 
 RustboroCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_JOSH
-	settrainerflag TRAINER_TOMMY
-	settrainerflag TRAINER_MARC
+@@	settrainerflag TRAINER_JOSH
+@@	settrainerflag TRAINER_TOMMY
+@@	settrainerflag TRAINER_MARC
 	return
 
 DewfordTown_Gym_SetGymTrainers::
-	settrainerflag TRAINER_TAKAO
-	settrainerflag TRAINER_JOCELYN
-	settrainerflag TRAINER_LAURA
-	settrainerflag TRAINER_BRENDEN
-	settrainerflag TRAINER_CRISTIAN
-	settrainerflag TRAINER_LILITH
+@@	settrainerflag TRAINER_TAKAO
+@@	settrainerflag TRAINER_JOCELYN
+@@	settrainerflag TRAINER_LAURA
+@@	settrainerflag TRAINER_BRENDEN
+@@	settrainerflag TRAINER_CRISTIAN
+@@	settrainerflag TRAINER_LILITH
 	return
 
 MauvilleCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_KIRK
-	settrainerflag TRAINER_SHAWN
-	settrainerflag TRAINER_BEN
-	settrainerflag TRAINER_VIVIAN
-	settrainerflag TRAINER_ANGELO
+@@	settrainerflag TRAINER_KIRK
+@@	settrainerflag TRAINER_SHAWN
+@@	settrainerflag TRAINER_BEN
+@@	settrainerflag TRAINER_VIVIAN
+@@	settrainerflag TRAINER_ANGELO
 	return
 
 LavaridgeTown_Gym_SetGymTrainers::
-	settrainerflag TRAINER_COLE
-	settrainerflag TRAINER_AXLE
-	settrainerflag TRAINER_KEEGAN
-	settrainerflag TRAINER_GERALD
-	settrainerflag TRAINER_DANIELLE
-	settrainerflag TRAINER_JACE
-	settrainerflag TRAINER_JEFF
-	settrainerflag TRAINER_ELI
+@@	settrainerflag TRAINER_COLE
+@@	settrainerflag TRAINER_AXLE
+@@	settrainerflag TRAINER_KEEGAN
+@@	settrainerflag TRAINER_GERALD
+@@	settrainerflag TRAINER_DANIELLE
+@@	settrainerflag TRAINER_JACE
+@@	settrainerflag TRAINER_JEFF
+@@	settrainerflag TRAINER_ELI
 	return
 
 PetalburgCity_Gym_SetGymTrainers::
 	return
 
 FortreeCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_JARED
-	settrainerflag TRAINER_FLINT
-	settrainerflag TRAINER_ASHLEY
-	settrainerflag TRAINER_EDWARDO
-	settrainerflag TRAINER_HUMBERTO
-	settrainerflag TRAINER_DARIUS
+@@	settrainerflag TRAINER_JARED
+@@	settrainerflag TRAINER_FLINT
+@@	settrainerflag TRAINER_ASHLEY
+@@	settrainerflag TRAINER_EDWARDO
+@@	settrainerflag TRAINER_HUMBERTO
+@@	settrainerflag TRAINER_DARIUS
 	return
 
 MossdeepCity_Gym_SetGymTrainers::

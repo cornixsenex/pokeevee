@@ -174,28 +174,26 @@
 #define TRAINER_UNI_GYM                     168
 #define TRAINER_JASON                       169
 #define TRAINER_AEETES                      170
+#define TRAINER_COLCHIS_GRUNTDOOR_M         171
+#define TRAINER_COLCHIS_GRUNTDOOR_F         172
+#define TRAINER_COLCHIS_GRUNT_THRONEM1      173
+#define TRAINER_COLCHIS_GRUNT_THRONEM2      174
+#define TRAINER_COLCHIS_GRUNT_THRONEM3      175
+#define TRAINER_COLCHIS_GRUNT_THRONEM4      176
+#define TRAINER_COLCHIS_GRUNT_THRONEM5      177
+#define TRAINER_COLCHIS_GRUNT_THRONEM6      178
+#define TRAINER_UNUSED_179                  179 //OPEN FREE UNUSED
+#define TRAINER_UNUSED_180                  180 //OPEN FREE UNUSED
+#define TRAINER_RIVAL1						181
+#define TRAINER_COLCHIS_GRUNT_THRONEF1      182
+#define TRAINER_COLCHIS_GRUNT_THRONEF2      183
+#define TRAINER_COLCHIS_GRUNT_THRONEF3      184
+#define TRAINER_COLCHIS_GRUNT_THRONEF4      185
+#define TRAINER_COLCHIS_GRUNT_THRONEF5      186
+#define TRAINER_COLCHIS_GRUNT_THRONEF6      187
 
 //BREAK// 
 
-#define TRAINER_KEVIN                       171
-#define TRAINER_JACK                        172
-#define TRAINER_DUDLEY                      173
-#define TRAINER_CHAD                        174
-#define TRAINER_TONY_2                      175
-#define TRAINER_TONY_3                      176
-#define TRAINER_TONY_4                      177
-#define TRAINER_TONY_5                      178
-#define TRAINER_TAKAO                       179
-#define TRAINER_HITOSHI                     180
-//BREAK
-#define TRAINER_RIVAL1						181
-//BREAK
-#define TRAINER_KOICHI                      182
-#define TRAINER_NOB_1                       183
-#define TRAINER_NOB_2                       184
-#define TRAINER_NOB_3                       185
-#define TRAINER_NOB_4                       186
-#define TRAINER_NOB_5                       187
 #define TRAINER_YUJI                        188
 #define TRAINER_DAISUKE                     189
 #define TRAINER_ATSUSHI                     190

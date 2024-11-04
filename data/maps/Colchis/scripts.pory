@@ -2448,6 +2448,34 @@ script Colchis_Script_MaidR {
 	end
 }
 
+script Colchis_Script_GruntDoorF {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNTDOOR_F, Colchis_Text_GruntDoorFFight, Colchis_Text_GruntDoorFLost)
+	msgbox (Colchis_Text_GruntDoorFPost, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntDoorM {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNTDOOR_M, Colchis_Text_GruntDoorMFight, Colchis_Text_GruntDoorMLost)
+	msgbox (Colchis_Text_GruntDoorMPost, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneM1 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM1, Colchis_Text_GruntThroneMFight, Colchis_Text_GruntThroneMLost)
+	msgbox (Colchis_Text_GruntThroneMPost, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneF1 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneFFight, Colchis_Text_GruntThroneFLost)
+	msgbox (Colchis_Text_GruntThroneFPost, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
 }
@@ -3454,3 +3482,32 @@ text Colchis_Text_MaidR {
    format("Get out of here! We're not interested.")
 }	   
 
+//I will not let you see my ladies bed
+//You've conquered me
+//Medea's bed is yours
+text Colchis_Text_GruntDoorFFight {
+	format("Iay illway otnay etlay ouyay eesay ymay adies'lay edbay!")
+}
+
+text Colchis_Text_GruntDoorFLost {
+	format("Ou'veyay onqueredcay emay.")
+}
+
+text Colchis_Text_GruntDoorFPost {
+	format("Edea'sMay edbay isay oursyay.")
+}
+
+//The King's chambers are not for common folk
+//My lord I have failed you!
+//You rebel scum, your presence defiles this noble place
+text Colchis_Text_GruntDoorMFight {
+	format("Ethay Ing'skay Amberschay areay otnay orfay ommoncay olkfay.")
+}
+
+text Colchis_Text_GruntDoorMLost {
+	format("Ymay ordlay! Iay avehay ailedfay ouyay!")
+}
+
+text Colchis_Text_GruntDoorMPost {
+	format("Ouyay ebelray umscray, ouryay esencepray efilesday isthay oblenay aceplay.")
+}
