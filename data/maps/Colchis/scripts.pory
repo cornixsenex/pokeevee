@@ -2463,18 +2463,92 @@ script Colchis_Script_GruntDoorM {
 }
 
 script Colchis_Script_GruntThroneM1 {
-	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM1, Colchis_Text_GruntThroneMFight, Colchis_Text_GruntThroneMLost)
-	msgbox (Colchis_Text_GruntThroneMPost, MSGBOX_DEFAULT)
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM1, Colchis_Text_GruntThroneM1Fight, Colchis_Text_GruntThroneM1Lost)
+	msgbox (Colchis_Text_GruntThroneM1Post, MSGBOX_DEFAULT)
 	closemessage
 	end
 }
 
-script Colchis_Script_GruntThroneF1 {
-	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneFFight, Colchis_Text_GruntThroneFLost)
-	msgbox (Colchis_Text_GruntThroneFPost, MSGBOX_DEFAULT)
+script Colchis_Script_GruntThroneM2 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM2, Colchis_Text_GruntThroneM2Fight, Colchis_Text_GruntThroneM2Lost)
+	msgbox (Colchis_Text_GruntThroneM2Post, MSGBOX_DEFAULT)
 	closemessage
 	end
 }
+
+script Colchis_Script_GruntThroneM3 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM3, Colchis_Text_GruntThroneM3Fight, Colchis_Text_GruntThroneM3Lost)
+	msgbox (Colchis_Text_GruntThroneM3Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneM4 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM4, Colchis_Text_GruntThroneM4Fight, Colchis_Text_GruntThroneM4Lost)
+	msgbox (Colchis_Text_GruntThroneM4Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneM5 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM5, Colchis_Text_GruntThroneM5Fight, Colchis_Text_GruntThroneM5Lost)
+	msgbox (Colchis_Text_GruntThroneM5Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneM6 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEM6, Colchis_Text_GruntThroneM6Fight, Colchis_Text_GruntThroneM6Lost)
+	msgbox (Colchis_Text_GruntThroneM6Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+//
+
+script Colchis_Script_GruntThroneF1 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF1Fight, Colchis_Text_GruntThroneF1Lost)
+	msgbox (Colchis_Text_GruntThroneF1Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneF2 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF2Fight, Colchis_Text_GruntThroneF2Lost)
+	msgbox (Colchis_Text_GruntThroneF2Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneF3 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF3Fight, Colchis_Text_GruntThroneF3Lost)
+	msgbox (Colchis_Text_GruntThroneF3Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneF4 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF4Fight, Colchis_Text_GruntThroneF4Lost)
+	msgbox (Colchis_Text_GruntThroneF4Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneF5 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF5Fight, Colchis_Text_GruntThroneF5Lost)
+	msgbox (Colchis_Text_GruntThroneF5Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script Colchis_Script_GruntThroneF6 {
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF6, Colchis_Text_GruntThroneF6Fight, Colchis_Text_GruntThroneF6Lost)
+	msgbox (Colchis_Text_GruntThroneF6Post, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+
 
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
@@ -3511,3 +3585,161 @@ text Colchis_Text_GruntDoorMLost {
 text Colchis_Text_GruntDoorMPost {
 	format("Ouyay ebelray umscray, ouryay esencepray efilesday isthay oblenay aceplay.")
 }
+
+text Colchis_Text_GruntThroneF1Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF1Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF1Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF2Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF2Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF2Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF3Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF3Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF3Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF4Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF4Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF4Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF5Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF5Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF5Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF6Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF6Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneF6Post {
+	format("")
+}
+
+
+//
+
+
+
+text Colchis_Text_GruntThroneM1Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM1Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM1Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM2Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM2Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM2Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM3Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM3Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM3Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM4Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM4Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM4Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM5Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM5Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM5Post {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM6Fight {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM6Lost {
+	format("")
+}
+
+text Colchis_Text_GruntThroneM6Post {
+	format("")
+}
+
+
+
+
+
+
+
+
+
