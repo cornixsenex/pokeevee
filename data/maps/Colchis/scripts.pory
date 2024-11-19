@@ -3571,8 +3571,8 @@ text Colchis_Text_GruntDoorFPost {
 	format("Edea'sMay edbay isay oursyay.")
 }
 
-//The King's chambers are not for common folk
-//My lord I have failed you!
+//The King's chambers are not for common folk.
+//My lord, I have failed you!
 //You rebel scum, your presence defiles this noble place
 text Colchis_Text_GruntDoorMFight {
 	format("Ethay Ing'skay Amberschay areay otnay orfay ommoncay olkfay.")
@@ -3594,6 +3594,7 @@ text Colchis_Text_GruntThroneF1Lost {
 	format("")
 }
 
+
 text Colchis_Text_GruntThroneF1Post {
 	format("")
 }
@@ -3606,21 +3607,24 @@ text Colchis_Text_GruntThroneF2Lost {
 	format("")
 }
 
+
 text Colchis_Text_GruntThroneF2Post {
 	format("")
 }
-
 text Colchis_Text_GruntThroneF3Fight {
 	format("")
 }
+
 
 text Colchis_Text_GruntThroneF3Lost {
 	format("")
 }
 
+
 text Colchis_Text_GruntThroneF3Post {
 	format("")
 }
+
 
 text Colchis_Text_GruntThroneF4Fight {
 	format("")
@@ -3658,10 +3662,56 @@ text Colchis_Text_GruntThroneF6Post {
 	format("")
 }
 
+//How dare you bring war upon our king's peace?
+//The long peace of Colchis comes to an end.
+//A war, after it's concieved, is hard to kill.
 
-//
+//Stand down!
+//I've been brought to attend defeat.
+//I'll be beheaded for failing my king!
+
+//My sole purpose in life is to stop you here.
+//How could I lose?
+//What use is my life now?
+
+//Rebellion in Colchis Kingdom ends here.
+//Behold the ancient regime dies today.
+//May Ho-Oh and Lugia save our souls!
+
+//Witness the power of the royal guard!
+//The first and last loss of the royal guard.
+//You disrespect the royal Colchis Throne.
+
+//The king is good, therefore you must be bad.
+//Therefore either strength is, or I am, bad.
+//If evil wins then fate is bad or blind.
 
 
+
+//What's worse, losing our king, or your outfit?
+//Super not cool I got beat by a slob!
+//If you're here to overthrow our kingdom
+//you could at least do it with some style.
+
+//You'll never pass! Prepare to feel my wrath.
+//Damn blind anger!
+//You're mightier than me.
+
+//What? Menace!
+//You shall pay.
+//Do not go on.
+
+//In times of peace I dance for Medea.
+//I'm a better dancer than battler.
+//Please don't hurt Aeetes, he pays my bills.
+
+//What's this? How did you escape from prison?
+//Sound the alarm!
+//Who let this madman loose?
+
+//You'll never leave Colchis alive!
+//Failure...
+//Many guards yet remain. You have not won.
 
 text Colchis_Text_GruntThroneM1Fight {
 	format("")
