@@ -3586,6 +3586,10 @@ text Colchis_Text_GruntDoorMPost {
 	format("Ouyay ebelray umscray, ouryay esencepray efilesday isthay oblenay aceplay.")
 }
 
+//What's worse, losing our king, or your outfit?
+//Super not cool I got beat by a slob!
+//If you're here to overthrow our kingdom
+//you could at least do it with some style.
 text Colchis_Text_GruntThroneF1Fight {
 	format("")
 }
@@ -3594,11 +3598,13 @@ text Colchis_Text_GruntThroneF1Lost {
 	format("")
 }
 
-
 text Colchis_Text_GruntThroneF1Post {
 	format("")
 }
 
+//You'll never pass! Prepare to feel my wrath.
+//Damn blind anger!
+//You're mightier than me.
 text Colchis_Text_GruntThroneF2Fight {
 	format("")
 }
@@ -3607,25 +3613,28 @@ text Colchis_Text_GruntThroneF2Lost {
 	format("")
 }
 
-
 text Colchis_Text_GruntThroneF2Post {
 	format("")
 }
+
+//In times of peace I dance for Medea.
+//I'm a better dancer than battler.
+//Please don't hurt Aeetes, he pays my bills.
 text Colchis_Text_GruntThroneF3Fight {
 	format("")
 }
-
 
 text Colchis_Text_GruntThroneF3Lost {
 	format("")
 }
 
-
 text Colchis_Text_GruntThroneF3Post {
 	format("")
 }
 
-
+//You'll never leave Colchis alive!
+//Failure...
+//Many guards yet remain. You have not won.
 text Colchis_Text_GruntThroneF4Fight {
 	format("")
 }
@@ -3638,6 +3647,9 @@ text Colchis_Text_GruntThroneF4Post {
 	format("")
 }
 
+//What? Menace!
+//You shall pay.
+//Do not go on.
 text Colchis_Text_GruntThroneF5Fight {
 	format("")
 }
@@ -3650,6 +3662,10 @@ text Colchis_Text_GruntThroneF5Post {
 	format("")
 }
 
+
+//What's this? How did you escape from prison?
+//Sound the alarm!
+//Who let this madman loose?
 text Colchis_Text_GruntThroneF6Fight {
 	format("")
 }
@@ -3662,57 +3678,10 @@ text Colchis_Text_GruntThroneF6Post {
 	format("")
 }
 
-//How dare you bring war upon our king's peace?
-//The long peace of Colchis comes to an end.
-//A war, after it's concieved, is hard to kill.
-
-//Stand down!
-//I've been brought to attend defeat.
-//I'll be beheaded for failing my king!
-
-//My sole purpose in life is to stop you here.
-//How could I lose?
-//What use is my life now?
-
-//Rebellion in Colchis Kingdom ends here.
-//Behold the ancient regime dies today.
-//May Ho-Oh and Lugia save our souls!
 
 //Witness the power of the royal guard!
 //The first and last loss of the royal guard.
 //You disrespect the royal Colchis Throne.
-
-//The king is good, therefore you must be bad.
-//Therefore either strength is, or I am, bad.
-//If evil wins then fate is bad or blind.
-
-
-
-//What's worse, losing our king, or your outfit?
-//Super not cool I got beat by a slob!
-//If you're here to overthrow our kingdom
-//you could at least do it with some style.
-
-//You'll never pass! Prepare to feel my wrath.
-//Damn blind anger!
-//You're mightier than me.
-
-//What? Menace!
-//You shall pay.
-//Do not go on.
-
-//In times of peace I dance for Medea.
-//I'm a better dancer than battler.
-//Please don't hurt Aeetes, he pays my bills.
-
-//What's this? How did you escape from prison?
-//Sound the alarm!
-//Who let this madman loose?
-
-//You'll never leave Colchis alive!
-//Failure...
-//Many guards yet remain. You have not won.
-
 text Colchis_Text_GruntThroneM1Fight {
 	format("")
 }
@@ -3725,6 +3694,9 @@ text Colchis_Text_GruntThroneM1Post {
 	format("")
 }
 
+//My sole purpose in life's to stop you here.
+//How could I lose?
+//What use is my life now?
 text Colchis_Text_GruntThroneM2Fight {
 	format("")
 }
@@ -3737,6 +3709,10 @@ text Colchis_Text_GruntThroneM2Post {
 	format("")
 }
 
+
+//The king is good, therefore you must be bad.
+//Therefore either strength is, or I am, bad.
+//If evil wins then fate is bad or blind.
 text Colchis_Text_GruntThroneM3Fight {
 	format("")
 }
@@ -3749,6 +3725,9 @@ text Colchis_Text_GruntThroneM3Post {
 	format("")
 }
 
+//Rebellion in Colchis Kingdom ends here.
+//Behold the ancient regime dies today.
+//May Ho-Oh and Lugia save our souls!
 text Colchis_Text_GruntThroneM4Fight {
 	format("")
 }
@@ -3761,6 +3740,9 @@ text Colchis_Text_GruntThroneM4Post {
 	format("")
 }
 
+//Stand down!
+//I've been brought to attend defeat.
+//I'll be beheaded for failing my king!
 text Colchis_Text_GruntThroneM5Fight {
 	format("")
 }
@@ -3773,6 +3755,9 @@ text Colchis_Text_GruntThroneM5Post {
 	format("")
 }
 
+//How dare you bring war upon our king's peace?
+//The long peace of Colchis comes to an end.
+//A war, after it's concieved, is hard to kill.
 text Colchis_Text_GruntThroneM6Fight {
 	format("")
 }
@@ -3784,11 +3769,6 @@ text Colchis_Text_GruntThroneM6Lost {
 text Colchis_Text_GruntThroneM6Post {
 	format("")
 }
-
-
-
-
-
 
 
 
