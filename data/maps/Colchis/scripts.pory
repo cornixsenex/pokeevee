@@ -109,8 +109,14 @@ const OBJ_EVENT_MAIDR = 42
 mapscripts Colchis_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ARGO_STATE) == 7) {
+			call (Colchis_Script_ShowIntro)
+		}
 		if (var(VAR_ARGO_STATE) == 9) {
 			call (Colchis_Script_SetupJail)
+		}
+		if (var(VAR_ARGO_STATE) == 11) {
+			call (Colchis_Script_ShowJasonAndMedeaAtSanctuary)
 		}
 		if (var(VAR_ARGO_STATE) == 16 && !flag(FLAG_COLCHIS_RETURN_LOSTKID)) {
 			call (Colchis_Script_SetupLostKid)
@@ -172,9 +178,33 @@ script Colchis_TempScript_TestMedeaDance {
 	end
 }
 
+script Colchis_Script_ShowIntro {
+	setobjectxyperm (OBJ_EVENT_JASON, 11, 59)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_MEDEA, 51, 14)
+	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_DOWN)
+
+	end
+}
+
 script Colchis_Script_SetupJail {
 	setobjectxyperm (OBJ_EVENT_JASON, 18, 13)
 	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_DOWN)
+	end
+}
+
+script Colchis_Script_ShowJasonAndMedeaAtSanctuary {
+	setobjectxyperm (OBJ_EVENT_JASON, 31, 60)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_JASON)
+	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)
+
+	setobjectxyperm (OBJ_EVENT_MEDEA, 30, 60)
+	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_MEDEA)
+	showobjectat (OBJ_EVENT_MEDEA, MAP_COLCHIS)
+
 	end
 }
 
@@ -386,6 +416,10 @@ script Colchis_Script_MedeaDance {
 //Medea Solo
 	//msgbox("CAMERA PAN")
 	//closemessage
+
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_JASON, Common_Movement_ExclamationMark)
+	waitmovement (0)
 
 	special (SpawnCameraObject)
 	applymovement (OBJ_EVENT_ID_CAMERA, Colchis_Movement_MedeaDance_CameraPan1)
@@ -1486,18 +1520,32 @@ script Colchis_Script_SetupSanctum {
 	//set var to activate the triggers
 	setvar (VAR_ARGO_STATE, 11)
 
+
 	//Persist Jason and Medea outside Sanctum
+
+	//removeobject (OBJ_EVENT_MEDEA)
+
+	//addobject (OBJ_EVENT_JASON)
+	//addobject (OBJ_EVENT_MEDEA)
+
+	//showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)	
+	//showobjectat (OBJ_EVENT_MEDEA, MAP_COLCHIS)	
+
+
+	removeobject (OBJ_EVENT_JASON)
 	setobjectxyperm (OBJ_EVENT_JASON, 31, 60)
 	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_JASON)
-	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)
-
+	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)	
+//
+	removeobject (OBJ_EVENT_MEDEA)
 	setobjectxyperm (OBJ_EVENT_MEDEA, 30, 60)
 	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_RIGHT)
 	addobject (OBJ_EVENT_MEDEA)
-	showobjectat (OBJ_EVENT_MEDEA, MAP_COLCHIS)
+	showobjectat (OBJ_EVENT_MEDEA, MAP_COLCHIS)	
+
 	releaseall
-	//Release
+
 	end
 }
 
@@ -2546,8 +2594,6 @@ script Colchis_Script_GruntThroneF6 {
 	end
 }
 
-
-
 movement Colchis_Movement_IntroPlayer {
 	walk_up * 3
 }
@@ -3086,7 +3132,7 @@ text Colchis_Text_Aeetes6 {
 }
 
 text Colchis_Text_Medea4 {
-	format("Onaaaaaaaaaaaaaaaaayyyyyyyyyyyyy")
+	format("Onaaaaaaaaaaaaaaaaayyyyyyyyyyyy!")
 }
 
 text Colchis_Text_Aeetes7 {
@@ -3129,7 +3175,7 @@ text Colchis_Text_JasonPrison3 {
 //Those words "A witch" sting worse than burning coals or gushing blood. I'd rather lose my arm than know that you think of me as a witch. My name is Medea. I am daughter of Aeetes, and princess of Colchis, and you Jason I treasure more than all the countless riches held on our island, more than our subjects, more than family. For you I am prepared to trade it all. I swear myself loyal only to you and name you now my king, yours to command.
 
 text Colchis_Text_MedeaPrison2 {
-	format("Osethay ordsway, 'aay itchway' ingstay orseway anthay urningbay oalscay oray ushinggay oodblay. I'day atherray oselay ymay armay anthay owknay atthay ouyay inkthay ofay emay asay aay itchway. Ymay amenay isay Edeamay. Iay amay aughterday of Aeetesay, anday incesspray ofay Olchiscay, anday ouyay, Asonjay, Iay easuretray oremay anthay allay ethay ounlesscay ichesray eldhay onay ouray islanday, oremay anthay ouray ubjectssay, oremay anthay amilyfay. Orfay ouyay Iay amay eparedpray otay adetray itay allay. Iay earsway yselfmay oyallay onlyay otay ouyay anday amenay ouyay ownay ymay ingkay, oursyay otay ommandcay.")
+	format("Osethay ordsway, 'aay itchway' ingstay orseway anthay urningbay oalscay oray ushinggay oodblay. I'day atherray oselay ymay armay anthay owknay atthay ouyay inkthay ofay emay asay aay itchway. Ymay amenay isay Edeamay. Iay amay aughterday of Aeetesay, anday incesspray ofay Olchiscay, anday ouyay, Asonjay, Iay easuretray oremay anthay allay ethay ountlesscay ichesray eldhay onay ouray islanday, oremay anthay ouray ubjectssay, oremay anthay amilyfay. Orfay ouyay Iay amay eparedpray otay adetray itay allay. Iay earsway yselfmay oyallay onlyay otay ouyay anday amenay ouyay ownay ymay ingkay, oursyay otay ommandcay.")
 }
 
 text Colchis_Text_JasonPrison4 {
