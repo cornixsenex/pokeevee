@@ -2179,8 +2179,7 @@ static const struct TrainerMon sParty_IgnisGrunt1[] = {
     {
     .iv = 0,
     .lvl = 13,
-	.isShiny = TRUE,
-    .species = SPECIES_LATIAS,
+    .species = SPECIES_GOLBAT,
     }
 };
 
@@ -2188,8 +2187,7 @@ static const struct TrainerMon sParty_IgnisGrunt2[] = {
     {
     .iv = 0,
     .lvl = 13,
-	.isShiny = TRUE,
-    .species = SPECIES_LATIOS,
+    .species = SPECIES_VULPIX,
     }
 };
 
@@ -2197,8 +2195,7 @@ static const struct TrainerMon sParty_IgnisGrunt3[] = {
     {
     .iv = 0,
     .lvl = 13,
-	.isShiny = TRUE,
-    .species = SPECIES_HO_OH,
+    .species = SPECIES_SLUGMA,
     }
 };
 

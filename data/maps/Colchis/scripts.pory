@@ -173,11 +173,8 @@ script Colchis_TempScript_TestMedeaDance {
 }
 
 script Colchis_Script_SetupJail {
-	removeobject (OBJ_EVENT_JASON)
 	setobjectxyperm (OBJ_EVENT_JASON, 18, 13)
 	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_DOWN)
-	addobject (OBJ_EVENT_JASON)
-	showobjectat (OBJ_EVENT_JASON, MAP_COLCHIS)	
 	end
 }
 
@@ -1276,7 +1273,7 @@ script Colchis_Script_Aeetes {
 	//Setup for Jail Scene	
 	special (RemoveCameraObject)
 	setvar (VAR_ARGO_STATE, 9) 
-	
+
 	//Warp to Jail (Scene triggered by Frame Table var)
 	warpsilent (MAP_COLCHIS, 18, 10)
 	waitstate
@@ -1297,6 +1294,7 @@ script Colchis_Script_Jail {
 	msgbox(Colchis_Text_JasonPrison1, MSGBOX_DEFAULT)
 	closemessage
 	destroy_field_pic (FIELD_PIC_JASON)
+	
 
 	//Jason Walks up
 	applymovement (OBJ_EVENT_JASON, Colchis_Movement_JasonPrisonApproachPlayer)
@@ -1887,7 +1885,7 @@ script Colchis_Script_SetupEscapeFromColchis {
 
 	//Set Escape Colchis Var
 	//TEMP TEMP REMOVED PUT BACK TO ENABLE FORCED BATTLE TILES TEMP TEMP
-	//setflag (FLAG_COLCHIS_FORCED_BATTLE)
+	setflag (FLAG_COLCHIS_FORCED_BATTLE)
 
 	//Set ARGO_VAR to do this stuff on transition resume:
 	setvar (VAR_ARGO_STATE, 16)
@@ -2303,7 +2301,7 @@ script Colchis_Script_DoorMan {
 
 //At first she's stressed about the kid being missing like "This is terrible I lost one of the kids and I'm worried that the parents will figure out if I just swap her with another child... after she's with the guard down at his post and says something like "Oh thank you for finding that missing kid I feel like I can finally breath again I was so stressed out I hadn't been able to spend time with my man like I used to.
 script Colchis_Script_Nanny {
-	lockall
+	lock
 	faceplayer
 
 	if (var(VAR_ARGO_STATE) == 16) {
@@ -2315,7 +2313,7 @@ script Colchis_Script_Nanny {
 		applymovement (OBJ_EVENT_NANNY, Common_Movement_FaceLeft)
 		waitmovement (0)
 	}
-	releaseall
+	release
 	end
 }
 
@@ -3549,7 +3547,7 @@ text Colchis_Text_GruntBreakR {
 }
 
 text Colchis_Text_MaidL {
-   format("I heard she said he said he had a crush on him but she said she does not like him.")
+   format("I heard she said he said he had a crush on her but she said she does not like him.")
 }
 
 text Colchis_Text_MaidR {
@@ -3766,7 +3764,6 @@ text Colchis_Text_GruntThroneM6Lost {
 text Colchis_Text_GruntThroneM6Post {
 	format("Aay arway, afteray it'say oncievedcay, isay ardhay otay illkay.")
 }
-
 
 
 
