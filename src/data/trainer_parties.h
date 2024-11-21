@@ -2179,7 +2179,8 @@ static const struct TrainerMon sParty_IgnisGrunt1[] = {
     {
     .iv = 0,
     .lvl = 13,
-    .species = SPECIES_GOLBAT,
+	.gender = TRAINER_MON_FEMALE,
+    .species = SPECIES_VULPIX,
     }
 };
 
@@ -2187,7 +2188,8 @@ static const struct TrainerMon sParty_IgnisGrunt2[] = {
     {
     .iv = 0,
     .lvl = 13,
-    .species = SPECIES_VULPIX,
+	.gender = TRAINER_MON_MALE,
+    .species = SPECIES_GOLBAT,
     }
 };
 
@@ -2195,7 +2197,35 @@ static const struct TrainerMon sParty_IgnisGrunt3[] = {
     {
     .iv = 0,
     .lvl = 13,
+	.gender = TRAINER_MON_FEMALE,
     .species = SPECIES_SLUGMA,
+    }
+};
+
+static const struct TrainerMon sParty_IgnisGrunt4[] = {
+    {
+    .iv = 0,
+    .lvl = 13,
+	.gender = TRAINER_MON_MALE,
+    .species = SPECIES_NIDOKING,
+    }
+};
+
+static const struct TrainerMon sParty_IgnisGrunt5[] = {
+    {
+    .iv = 0,
+    .lvl = 13,
+	.gender = TRAINER_MON_FEMALE,
+    .species = SPECIES_NIDOQUEEN,
+    }
+};
+
+static const struct TrainerMon sParty_IgnisGrunt6[] = {
+    {
+    .iv = 0,
+    .lvl = 13,
+	.gender = TRAINER_MON_MALE,
+    .species = SPECIES_MANKEY,
     }
 };
 

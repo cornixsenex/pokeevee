@@ -2004,7 +2004,7 @@
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .trainerName = _("GRUNT"),
+        .trainerName = _("GRUNT♀"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2016,7 +2016,7 @@
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerName = _("GRUNT♂"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -2028,11 +2028,47 @@
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
         .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
-        .trainerName = _("GRUNT"),
+        .trainerName = _("GRUNT♀"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
+    },
+
+    [TRAINER_IGNIS_GRUNT_4] =
+    {
+        .trainerClass = TRAINER_CLASS_CULTIST,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
+        .trainerName = _("GRUNT♂"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_IgnisGrunt4),
+    },
+
+    [TRAINER_IGNIS_GRUNT_5] =
+    {
+        .trainerClass = TRAINER_CLASS_CULTIST,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
+        .trainerName = _("GRUNT♀"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_IgnisGrunt5),
+    },
+
+    [TRAINER_IGNIS_GRUNT_6] =
+    {
+        .trainerClass = TRAINER_CLASS_CULTIST,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
+        .trainerName = _("GRUNT♂"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_IgnisGrunt6),
     },
 
     [TRAINER_MEDEA] =
@@ -2249,13 +2285,8 @@
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
-    },
-
-
-///	====BREAK====   
-///
-
-
+    },	
+	
 	[TRAINER_RIVAL1] =
 	{
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
@@ -2282,17 +2313,24 @@
     //    .party = {.NoItemDefaultMoves = sParty_Kiyo),
     //},
 
-    [TRAINER_YUJI] =
-    {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("YUJI"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Yuji),
-    },
+//    [TRAINER_YUJI] =
+//    {
+//        .trainerClass = TRAINER_CLASS_BLACK_BELT,
+//        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+//        .trainerPic = TRAINER_PIC_BLACK_BELT,
+//        .trainerName = _("YUJI"),
+//        .items = {},
+//        .doubleBattle = FALSE,
+//        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+//        .party = TRAINER_PARTY(sParty_Yuji),
+//    },
+
+
+
+///	====BREAK====   
+///
+
+
 
     [TRAINER_DAISUKE] =
     {

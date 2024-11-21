@@ -380,7 +380,29 @@ script Colchis_Script_DoForcedBattle {
 	closemessage
 
 	//battle
-	trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_3, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt2Lost)
+	specialvar (VAR_RESULT, RandDigit)
+	switch (var(VAR_RESULT)) {
+		case 1:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_1, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt2Lost)
+		case 2:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_1, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_4, BigIslandS_Text_IgnisGrunt2Lost)
+		case 3:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_1, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_6, BigIslandS_Text_IgnisGrunt2Lost)
+		case 4:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_3, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt2Lost)
+		case 5:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_3, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_4, BigIslandS_Text_IgnisGrunt2Lost)
+		case 6:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_3, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_6, BigIslandS_Text_IgnisGrunt2Lost)
+		case 7:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_5, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt2Lost)
+		case 8:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_5, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_4, BigIslandS_Text_IgnisGrunt2Lost)
+		case 9:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_5, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_6, BigIslandS_Text_IgnisGrunt2Lost)
+		default:
+			trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_1, Colchis_Text_CultistMLost, TRAINER_IGNIS_GRUNT_6, BigIslandS_Text_IgnisGrunt2Lost)
+	}
 
 	//post text
 	load_field_pic(FIELD_PIC_CULTIST_M, 190, 98)

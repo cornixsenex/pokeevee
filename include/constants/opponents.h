@@ -182,8 +182,8 @@
 #define TRAINER_COLCHIS_GRUNT_THRONEM4      176
 #define TRAINER_COLCHIS_GRUNT_THRONEM5      177
 #define TRAINER_COLCHIS_GRUNT_THRONEM6      178
-#define TRAINER_UNUSED_179                  179 //OPEN FREE UNUSED
-#define TRAINER_UNUSED_180                  180 //OPEN FREE UNUSED
+#define TRAINER_IGNIS_GRUNT_4               179 
+#define TRAINER_IGNIS_GRUNT_5               180 
 #define TRAINER_RIVAL1						181
 #define TRAINER_COLCHIS_GRUNT_THRONEF1      182
 #define TRAINER_COLCHIS_GRUNT_THRONEF2      183
@@ -191,10 +191,10 @@
 #define TRAINER_COLCHIS_GRUNT_THRONEF4      185
 #define TRAINER_COLCHIS_GRUNT_THRONEF5      186
 #define TRAINER_COLCHIS_GRUNT_THRONEF6      187
+#define TRAINER_IGNIS_GRUNT_6               188
 
 //BREAK// 
 
-#define TRAINER_YUJI                        188
 #define TRAINER_DAISUKE                     189
 #define TRAINER_ATSUSHI                     190
 #define TRAINER_KIRK                        191
