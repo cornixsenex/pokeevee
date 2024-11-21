@@ -130,7 +130,7 @@ mapscripts Colchis_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_LOAD {
-		if (var(VAR_ARGO_STATE) == 16) {
+		if (var(VAR_ARGO_STATE) == 16 || var(VAR_ARGO_STATE) == 17) {
 			call (Colchis_Script_CloseDoor)
 		}
 	}
@@ -1542,6 +1542,9 @@ script Colchis_Script_SetupSanctum {
 	//set var to activate the triggers
 	setvar (VAR_ARGO_STATE, 11)
 
+	//set flag to persist Prison Door 2 open
+	setflag (FLAG_TEMP_B)
+
 
 	//Persist Jason and Medea outside Sanctum
 
@@ -2243,21 +2246,27 @@ script Colchis_Script_Jailer {
 script Colchis_Script_PrisonDoor1 {
 	if (!flag(FLAG_TEMP_A)) {
 		lockall
-		//Set the temp flag
-		setflag (FLAG_TEMP_A)
-		//!
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-		waitmovement (0)
-		//The prison key opened the door
-		msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
-		closemessage
-		//Open the door
-		playse (SE_EFFECTIVE)
-		setmetatile (9, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
-		setmetatile (9, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
-		special (DrawWholeMapView)
-		delay (30)
-		waitse
+		checkitem (ITEM_COLCHIS_JAIL_KEY)
+		if (var(VAR_RESULT) == TRUE) {
+			//Set the temp flag
+			setflag (FLAG_TEMP_A)
+			//!
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			//The prison key opened the door
+			msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
+			closemessage
+			//Open the door
+			playse (SE_EFFECTIVE)
+			setmetatile (9, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+			setmetatile (9, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+			special (DrawWholeMapView)
+			delay (30)
+			waitse
+		} else {
+			msgbox (Colchis_Text_PrisonDoorClosed, MSGBOX_DEFAULT)
+			closemessage
+		}
 		releaseall
 	}
 	end
@@ -2266,21 +2275,27 @@ script Colchis_Script_PrisonDoor1 {
 script Colchis_Script_PrisonDoor2 {
 	if (!flag(FLAG_TEMP_B)) {
 		lockall
-		//Set the temp flag
-		setflag (FLAG_TEMP_B)
-		//!
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-		waitmovement (0)
-		//The prison key opened the door
-		msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
-		closemessage
-		//Open the door
-		playse (SE_EFFECTIVE)
-		setmetatile (18, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
-		setmetatile (18, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
-		special (DrawWholeMapView)
-		delay (30)
-		waitse
+		checkitem (ITEM_COLCHIS_JAIL_KEY)
+		if (var(VAR_RESULT) == TRUE) {
+			//Set the temp flag
+			setflag (FLAG_TEMP_B)
+			//!
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			//The prison key opened the door
+			msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
+			closemessage
+			//Open the door
+			playse (SE_EFFECTIVE)
+			setmetatile (18, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+			setmetatile (18, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+			special (DrawWholeMapView)
+			delay (30)
+			waitse
+		} else {
+			msgbox (Colchis_Text_PrisonDoorClosed, MSGBOX_DEFAULT)
+			closemessage
+		}
 		releaseall
 	}
 	end
@@ -2289,21 +2304,27 @@ script Colchis_Script_PrisonDoor2 {
 script Colchis_Script_PrisonDoor3 {
 	if (!flag(FLAG_TEMP_C)) {
 		lockall
-		//Set the temp flag
-		setflag (FLAG_TEMP_C)
-		//!
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-		waitmovement (0)
-		//The prison key opened the door
-		msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
-		closemessage
-		//Open the door
-		playse (SE_EFFECTIVE)
-		setmetatile (27, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
-		setmetatile (27, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
-		special (DrawWholeMapView)
-		delay (30)
-		waitse
+		checkitem (ITEM_COLCHIS_JAIL_KEY)
+		if (var(VAR_RESULT) == TRUE) {
+			//Set the temp flag
+			setflag (FLAG_TEMP_C)
+			//!
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			//The prison key opened the door
+			msgbox (Colchis_Text_PrisonDoorOpen, MSGBOX_DEFAULT)
+			closemessage
+			//Open the door
+			playse (SE_EFFECTIVE)
+			setmetatile (27, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+			setmetatile (27, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+			special (DrawWholeMapView)
+			delay (30)
+			waitse
+		} else {
+			msgbox (Colchis_Text_PrisonDoorClosed, MSGBOX_DEFAULT)
+			closemessage
+		}
 		releaseall
 	}
 	end
@@ -2331,6 +2352,9 @@ script Colchis_Script_LostKid {
 		setobjectmovementtype (OBJ_EVENT_LOSTKID, MOVEMENT_TYPE_WANDER_AROUND)
 		addobject (OBJ_EVENT_LOSTKID)
 		showobjectat (OBJ_EVENT_LOSTKID, MAP_COLCHIS)
+
+		setvar (VAR_ARGO_STATE, 17)
+		call (Colchis_Script_ShowNannyWithGuard)
 		
 	//If with nanny say something like 'i love playing with my friends'
 	} else {
@@ -2351,12 +2375,12 @@ script Colchis_Script_DoorMan {
 		closemessage
 		applymovement (OBJ_EVENT_DOORGUARD, Common_Movement_FaceDown)
 	} else {
-		if (var(VAR_ARGO_STATE) != 17) {
-			setvar (VAR_ARGO_STATE, 17)
+		if (var(VAR_ARGO_STATE) != 18) {
+			setvar (VAR_ARGO_STATE, 18)
 			msgbox (Colchis_Text_Doorman2, MSGBOX_DEFAULT)
 			closemessage
-			setmetatile (10, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
-			setmetatile (11, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+			setmetatile (10, 63, METATILE_Colchis_DoorOpen_Left, FALSE)
+			setmetatile (11, 63, METATILE_Colchis_DoorOpen_Right, FALSE)
 			special (DrawWholeMapView)
 		} else {
 			msgbox (Colchis_Text_Doorman3, MSGBOX_DEFAULT)
@@ -2373,7 +2397,6 @@ script Colchis_Script_DoorMan {
 script Colchis_Script_Nanny {
 	lock
 	faceplayer
-
 	if (var(VAR_ARGO_STATE) == 16) {
 		msgbox (Colchis_Text_Nanny1, MSGBOX_DEFAULT)
 		closemessage
@@ -3370,6 +3393,10 @@ text Colchis_Text_RingBlockerIntro {
 	format("It's a large metal barrier with a keyhole in the center.")
 }
 
+text Colchis_Text_PrisonDoorClosed {
+	format("It's a large metal door with a keyhole in the center.")
+}
+
 text Colchis_Text_KeyFits {
 	format("The key fits into the keyhole!\NThe barriers sink into the ground but the key broke off inside!")
 }
@@ -3527,7 +3554,7 @@ text Colchis_Text_Nanny1 {
 }
 
 text Colchis_Text_Nanny2 {
-	format("Oh! Thanks for finding that lost kid for me. I feel like I can finally exhale. I had been so stressed out I hadn't been able to come socialize with my man.")
+	format("Oh! Thanks for finding that lost kid for me. I feel like I can finally exhale. I had been so stressed out I hadn't been able to go socialize with my man.")
 }
 
 //I was just thinking about my pet cat.
