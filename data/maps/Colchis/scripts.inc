@@ -3362,7 +3362,7 @@ Colchis_Script_GruntThroneF1::
 
 Colchis_Script_GruntThroneF2::
 # 2563 "data/maps/Colchis/scripts.pory"
-	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF2Fight, Colchis_Text_GruntThroneF2Lost
+	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF2, Colchis_Text_GruntThroneF2Fight, Colchis_Text_GruntThroneF2Lost
 # 2564 "data/maps/Colchis/scripts.pory"
 	msgbox Colchis_Text_GruntThroneF2Post, MSGBOX_DEFAULT
 # 2565 "data/maps/Colchis/scripts.pory"
@@ -3372,7 +3372,7 @@ Colchis_Script_GruntThroneF2::
 
 Colchis_Script_GruntThroneF3::
 # 2570 "data/maps/Colchis/scripts.pory"
-	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF3Fight, Colchis_Text_GruntThroneF3Lost
+	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF3, Colchis_Text_GruntThroneF3Fight, Colchis_Text_GruntThroneF3Lost
 # 2571 "data/maps/Colchis/scripts.pory"
 	msgbox Colchis_Text_GruntThroneF3Post, MSGBOX_DEFAULT
 # 2572 "data/maps/Colchis/scripts.pory"
@@ -3382,7 +3382,7 @@ Colchis_Script_GruntThroneF3::
 
 Colchis_Script_GruntThroneF4::
 # 2577 "data/maps/Colchis/scripts.pory"
-	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF4Fight, Colchis_Text_GruntThroneF4Lost
+	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF4, Colchis_Text_GruntThroneF4Fight, Colchis_Text_GruntThroneF4Lost
 # 2578 "data/maps/Colchis/scripts.pory"
 	msgbox Colchis_Text_GruntThroneF4Post, MSGBOX_DEFAULT
 # 2579 "data/maps/Colchis/scripts.pory"
@@ -3392,7 +3392,7 @@ Colchis_Script_GruntThroneF4::
 
 Colchis_Script_GruntThroneF5::
 # 2584 "data/maps/Colchis/scripts.pory"
-	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF5Fight, Colchis_Text_GruntThroneF5Lost
+	trainerbattle_single TRAINER_COLCHIS_GRUNT_THRONEF5, Colchis_Text_GruntThroneF5Fight, Colchis_Text_GruntThroneF5Lost
 # 2585 "data/maps/Colchis/scripts.pory"
 	msgbox Colchis_Text_GruntThroneF5Post, MSGBOX_DEFAULT
 # 2586 "data/maps/Colchis/scripts.pory"
@@ -6034,10 +6034,11 @@ Colchis_Text_MedeaSanctumTrigger2::
 
 Colchis_Text_JasonSanctumTrigger3::
 # 3278 "data/maps/Colchis/scripts.pory"
-	.string "How could you fail? You only had one\n"
-	.string "job! My quest has failed and it was all\l"
-	.string "your fault! Now you will pay the price.\l"
-	.string "Go Nosepass!$"
+	.string "What have you done? Where is Shiny\n"
+	.string "Mareep? How could you fail? You only\l"
+	.string "had one job! My quest has failed... and\l"
+	.string "it was all your fault! Now you will pay\l"
+	.string "the price. Nosepass! Attack!$"
 
 Colchis_Text_JasonLost::
 # 3282 "data/maps/Colchis/scripts.pory"

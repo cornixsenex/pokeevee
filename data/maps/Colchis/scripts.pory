@@ -2560,28 +2560,28 @@ script Colchis_Script_GruntThroneF1 {
 }
 
 script Colchis_Script_GruntThroneF2 {
-	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF2Fight, Colchis_Text_GruntThroneF2Lost)
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF2, Colchis_Text_GruntThroneF2Fight, Colchis_Text_GruntThroneF2Lost)
 	msgbox (Colchis_Text_GruntThroneF2Post, MSGBOX_DEFAULT)
 	closemessage
 	end
 }
 
 script Colchis_Script_GruntThroneF3 {
-	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF3Fight, Colchis_Text_GruntThroneF3Lost)
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF3, Colchis_Text_GruntThroneF3Fight, Colchis_Text_GruntThroneF3Lost)
 	msgbox (Colchis_Text_GruntThroneF3Post, MSGBOX_DEFAULT)
 	closemessage
 	end
 }
 
 script Colchis_Script_GruntThroneF4 {
-	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF4Fight, Colchis_Text_GruntThroneF4Lost)
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF4, Colchis_Text_GruntThroneF4Fight, Colchis_Text_GruntThroneF4Lost)
 	msgbox (Colchis_Text_GruntThroneF4Post, MSGBOX_DEFAULT)
 	closemessage
 	end
 }
 
 script Colchis_Script_GruntThroneF5 {
-	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF1, Colchis_Text_GruntThroneF5Fight, Colchis_Text_GruntThroneF5Lost)
+	trainerbattle_single(TRAINER_COLCHIS_GRUNT_THRONEF5, Colchis_Text_GruntThroneF5Fight, Colchis_Text_GruntThroneF5Lost)
 	msgbox (Colchis_Text_GruntThroneF5Post, MSGBOX_DEFAULT)
 	closemessage
 	end
@@ -3276,7 +3276,7 @@ text Colchis_Text_MedeaSanctumTrigger2 {
 }
 
 text Colchis_Text_JasonSanctumTrigger3 {
-	format("How could you fail? You only had one job! My quest has failed and it was all your fault! Now you will pay the price. Go Nosepass!")
+	format("What have you done? Where is Shiny Mareep? How could you fail? You only had one job! My quest has failed... and it was all your fault! Now you will pay the price. Nosepass! Attack!")
 }
 
 text Colchis_Text_JasonLost {
