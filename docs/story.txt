@@ -990,7 +990,7 @@ Philoctetes				: Oak
 Heracles				: Bruno
 Prometheus				: old man lyingdown
 Aeetes
-Medea
+Medea					:chaneller / hex maniac
 Ulysses					: Man 1
 Penelope
 Telemachus

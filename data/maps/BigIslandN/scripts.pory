@@ -10,6 +10,7 @@ const OBJ_EVENT_AMBUSH1 = 8
 const OBJ_EVENT_AMBUSH2 = 9
 const OBJ_EVENT_AMBUSH3 = 10
 const OBJ_EVENT_AMBUSH4 = 11
+cosnt OBJ_EVENT_MEDEA = 12
 
 mapscripts BigIslandN_MapScripts {
 
@@ -24,17 +25,25 @@ mapscripts BigIslandN_MapScripts {
 			call (BigIslandN_Script_ShowArgo3)
 		} elif (var(VAR_ARGO_STATE) == 7) {
 			call (BigIslandN_Script_ShowArgo7)
+		} elif (var(VAR_ARGO_STATE) == 14) {
+			call (BigIslandN_Script_ShowArgoExit)
+		}
 		} else {
 			call (BigIslandN_Script_HideArgo)
 		}
 	}
 
 	MAP_SCRIPT_ON_LOAD {
-		if (var(VAR_ARGO_STATE) < 7) {
+		if (var(VAR_ARGO_STATE) < 7 || var(VAR_ARGO_STATE) > 18) {
 			call (BigIslandN_Script_HideColchisCave)
 		}
 		end
 	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ARGO_STATE, 14: BigIslandN_Script_ArgoExit
+		VAR_ARGO_STATE, 18: BigIslandN_Script_EscapeColchis
+	]
 
 }
 
@@ -183,6 +192,45 @@ script BigIslandN_Script_ShowArgo7 {
 	setobjectmovementtype (OBJ_EVENT_PHILOCTETES, MOVEMENT_TYPE_INVISIBLE)
 	hideobjectat (OBJ_EVENT_PHILOCTETES, MAP_BIG_ISLAND_N)
 	removeobject (OBJ_EVENT_PHILOCTETES)
+
+	end
+}
+
+script BigIslandN_Script_HideArgo {
+	setobjectxyperm (OBJ_EVENT_ARGO, 80, 17)
+	setobjectmovementtype (OBJ_EVENT_ARGO, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_ARGO)
+	showobjectat (OBJ_EVENT_ARGO, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_CASTOR, 81, 21)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_CASTOR)
+	showobjectat (OBJ_EVENT_CASTOR, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_POLLUX, 82, 21)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_POLLUX)
+	showobjectat (OBJ_EVENT_POLLUX, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_ORPHEUS, 83, 21)
+	setobjectmovementtype (OBJ_EVENT_ORPHEUS, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_ORPHEUS)
+	showobjectat (OBJ_EVENT_ORPHEUS, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_THESEUS, 80, 21)
+	setobjectmovementtype (OBJ_EVENT_THESEUS, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_THESEUS)
+	showobjectat (OBJ_EVENT_THESEUS, MAP_BIG_ISLAND_N)
+
+	setobjectxyperm (OBJ_EVENT_JASON, 31, 39)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_JASON, MAP_BIG_ISLAND_N)
+	showobjectat (OBJ_EVENT_JASON)
+
+	setobjectxyperm (OBJ_EVENT_MEDEA, 30, 39)
+	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_MEDEA, MAP_BIG_ISLAND_N)
+	showobjectat (OBJ_EVENT_MEDEA)
 
 	end
 }

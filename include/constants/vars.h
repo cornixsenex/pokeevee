@@ -150,7 +150,7 @@
 																//10: Prison Script triggered
 																//11: In sanctum (Sanctum Trigger)
 																//12: Sanctum done Trigger deactivated
-																//13: Escape Colchis
+																//13: Unlucky, skipped? // EMPTY
 																//14: Trigger happy Argo ending in BigIslandN
 																//15: Argo has sailed to  Bulbus, Strike cleared, Argo Boat is fully open @ Bulbus, Medea Post script is setup)
 																//16: Escape from Colchis! Hide door metatiles
