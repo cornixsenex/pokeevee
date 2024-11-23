@@ -1,5 +1,59 @@
-mapscripts BulbusTown_MapScripts {}
 
+const OBJ_EVENT_JASON = 28
+const OBJ_EVENT_MEDEA = 29
+const OBJ_EVENT_MAREEP = 30
+
+
+const OBJ_EVENT_SAILOR1 = 6
+const OBJ_EVENT_SAILOR2 = 7
+const OBJ_EVENT_SAILOR3 = 27
+const OBJ_EVENT_SAILOR4 = 26
+const OBJ_EVENT_SAILOR5 = 8
+const OBJ_EVENT_SAILOR6 = 1
+
+mapscripts BulbusTown_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ARGO_STATE) < 20) {
+			call (BulbusTown_Script_ShowStrike)
+		} 
+		if (!flag(FLAG_JASON_HAS_SHINYMAREEP)) {
+			call (BulbusTown_Script_HideJason)
+		}
+	}
+
+}
+
+script BulbusTown_Script_ShowStrike {
+
+	setobjectxyperm (OBJ_EVENT_SAILOR1, 5, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR1, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR2, 6, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR2, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR3, 16, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR3, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR4, 17, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR4, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR5, 27, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR5, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR6, 28, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR6, MOVEMENT_TYPE_FACE_UP)
+
+	return
+}
+
+script BulbusTown_Script_HideJason {
+	removeobject (OBJ_EVENT_JASON)
+	removeobject (OBJ_EVENT_MEDEA)
+	removeobject (OBJ_EVENT_MAREEP)
+	
+	return
+}
 
 script BulbusTown_EventScript_Sailor {
 	lock

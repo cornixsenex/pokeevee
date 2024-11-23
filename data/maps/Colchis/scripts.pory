@@ -133,6 +133,17 @@ mapscripts Colchis_MapScripts {
 		if (var(VAR_ARGO_STATE) == 16 || var(VAR_ARGO_STATE) == 17) {
 			call (Colchis_Script_CloseDoor)
 		}
+		if (flag(FLAG_TEMP_A)) {
+			call (Colchis_Script_OpenJail1)
+		}
+		if (flag(FLAG_TEMP_B)) {
+			call (Colchis_Script_OpenJail2)
+		}
+		if (flag(FLAG_TEMP_C)) {
+			call (Colchis_Script_OpenJail3)
+		}
+
+			
 	}
 
 	MAP_SCRIPT_ON_RESUME {
@@ -1920,6 +1931,10 @@ script Colchis_Script_SanctumJasonMareep {
 script Colchis_Script_Exeunt {
 	//to trigger BigIsland On Frame Table to end Argo story
 	setvar (VAR_ARGO_STATE, 14)
+	load_field_pic (FIELD_PIC_JASON, 190, 98)
+	msgbox (Colchis_Text_JasonExeunt, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_JASON)
+	closemessage
 	//call movement
 	applymovement (OBJ_EVENT_ID_PLAYER, Colchis_Movement_Exeunt)
 	applymovement (OBJ_EVENT_JASON, Colchis_Movement_Exeunt)
@@ -2092,6 +2107,24 @@ script Colchis_Script_RingItem {
 script Colchis_Script_CloseDoor  {
 	setmetatile (10, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
 	setmetatile (11, 63, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+	return
+}
+
+script Colchis_Script_OpenJail1 {
+	setmetatile (9, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+	setmetatile (9, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+	return
+}
+
+script Colchis_Script_OpenJail2 {
+	setmetatile (18, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+	setmetatile (18, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
+	return
+}
+
+script Colchis_Script_OpenJail3 {
+	setmetatile (27, 14, METATILE_Colchis_JailDoorOpen_Top, FALSE)
+	setmetatile (27, 15, METATILE_Colchis_JailDoorOpen_Bottom, FALSE)
 	return
 }
 
@@ -3860,5 +3893,8 @@ text Colchis_Text_GruntThroneM6Post {
 	format("Aay arway, afteray it'say oncievedcay, isay ardhay otay illkay.")
 }
 
+text Colchis_Text_JasonExeunt {
+	format("Let's go. Medea, show us the way out.")
+}
 
 
