@@ -419,31 +419,32 @@ bool32 ShouldDoScottFortreeCall(void)
     //return TRUE;
 }
 
+//Function has been NUKED
 bool32 ShouldDoScottBattleFrontierCall(void)
 {
-    //if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
-	//Flat replace didn't want to remove entire function just in case
-	if (FlagGet(FLAG_HOME_ACHILLES))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+	return FALSE;
+//	if (FlagGet(FLAG_HOME_ACHILLES))
+//    {
+//        switch (gMapHeader.mapType)
+//        {
+//        case MAP_TYPE_TOWN:
+//        case MAP_TYPE_CITY:
+//        case MAP_TYPE_ROUTE:
+//        case MAP_TYPE_OCEAN_ROUTE:
+//            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
+//                return FALSE;
+//            break;
+//        default:
+//            return FALSE;
+//        }
+//    }
+//    else
+//    {
+//        return FALSE;
+//    }
+//
+//    return TRUE;
 
-    return TRUE;
 }
 
 bool32 ShouldDoRoxanneCall(void)
@@ -476,27 +477,27 @@ bool32 ShouldDoRoxanneCall(void)
 bool32 ShouldDoRivalRayquazaCall(void)
 {
     //if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
-	if (FlagGet(FLAG_HOME_AENEAS))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+    //{
+    //    switch (gMapHeader.mapType)
+    //    {
+    //    case MAP_TYPE_TOWN:
+    //    case MAP_TYPE_CITY:
+    //    case MAP_TYPE_ROUTE:
+    //    case MAP_TYPE_OCEAN_ROUTE:
+    //        if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
+    //            return FALSE;
+    //        break;
+    //    default:
+    //        return FALSE;
+    //    }
+    //}
+    //else
+    //{
+    //    return FALSE;
+    //}
 
-    return TRUE;
+    //return TRUE;
+	return FALSE;
 }
 
 u8 GetLinkPartnerNames(void)

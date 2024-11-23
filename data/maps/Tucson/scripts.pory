@@ -34,7 +34,7 @@ script Tucson_Script_Helen {
 	//By pool with Paris
 	//lock
 	//Helen loves Paris and wants her brothers back
-	if (!flag(FLAG_ARGO_COMPLETED_SUCESS) && !flag(FLAG_ARGO_COMPLETED_FAILURE)) {
+	if (var(VAR_ARGO_STATE) < 20) {
 		msgbox (Tucson_Text_Helen1, MSGBOX_SIGN)
 		//faceplayer
 		msgbox (Tucson_Text_Helen2, MSGBOX_NPC)
@@ -58,7 +58,7 @@ script Tucson_Script_Nestor {
 		setflag (FLAG_TUCSON_NESTOR_INTROD)
 	}
 	//Dioscuri
-	if (!flag(FLAG_ARGO_COMPLETED_SUCESS) && !flag(FLAG_ARGO_COMPLETED_FAILURE)) {
+	if (var(VAR_ARGO_STATE) < 20) {
 		//Go find Dioscuri
 		msgbox (Tucson_Text_Nestor1, MSGBOX_NPC)
 	} else {

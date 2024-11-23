@@ -25,8 +25,8 @@ Tucson_OnTransition_2:
 
 Tucson_Script_Helen::
 # 37 "data/maps/Tucson/scripts.pory"
-	goto_if_unset FLAG_ARGO_COMPLETED_SUCESS, Tucson_Script_Helen_4
-Tucson_Script_Helen_3:
+	compare VAR_ARGO_STATE, 20
+	goto_if_lt Tucson_Script_Helen_2
 # 45 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Helen3, MSGBOX_SIGN
 Tucson_Script_Helen_1:
@@ -45,11 +45,6 @@ Tucson_Script_Helen_2:
 	waitmovement 0
 	goto Tucson_Script_Helen_1
 
-Tucson_Script_Helen_4:
-# 37 "data/maps/Tucson/scripts.pory"
-	goto_if_unset FLAG_ARGO_COMPLETED_FAILURE, Tucson_Script_Helen_2
-	goto Tucson_Script_Helen_3
-
 
 Tucson_Script_Nestor::
 # 53 "data/maps/Tucson/scripts.pory"
@@ -60,8 +55,8 @@ Tucson_Script_Nestor::
 	goto_if_unset FLAG_TUCSON_NESTOR_INTROD, Tucson_Script_Nestor_2
 Tucson_Script_Nestor_1:
 # 61 "data/maps/Tucson/scripts.pory"
-	goto_if_unset FLAG_ARGO_COMPLETED_SUCESS, Tucson_Script_Nestor_7
-Tucson_Script_Nestor_6:
+	compare VAR_ARGO_STATE, 20
+	goto_if_lt Tucson_Script_Nestor_5
 # 66 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor2, MSGBOX_NPC
 Tucson_Script_Nestor_4:
@@ -78,11 +73,6 @@ Tucson_Script_Nestor_5:
 # 63 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor1, MSGBOX_NPC
 	goto Tucson_Script_Nestor_4
-
-Tucson_Script_Nestor_7:
-# 61 "data/maps/Tucson/scripts.pory"
-	goto_if_unset FLAG_ARGO_COMPLETED_FAILURE, Tucson_Script_Nestor_5
-	goto Tucson_Script_Nestor_6
 
 
 Tucson_Script_Hector::

@@ -5757,7 +5757,7 @@
       "width": 120,
       "height": 22,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/MareWWW/border.bin",
       "blockdata_filepath": "data/layouts/MareWWW/map.bin"
     },

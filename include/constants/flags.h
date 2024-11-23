@@ -118,37 +118,39 @@
 #define FLAG_SS2F_YELLOW                     0x60
 #define FLAG_SS2F_RED                        0x61
 #define FLAG_SS2F_GREEN                      0x62
-//27 (12 home + 12 route4 + 2 nestor + 1 herc)
-//ROUTE4 Flags set at NewGame Start
-#define FLAG_ROUTE4_NESTOR                   0x63
-#define FLAG_ROUTE4_HERACLES                 0x64 
-#define FLAG_ROUTE4_ACHILLES                 0x65 
-#define FLAG_ROUTE4_HECTOR                   0x66 
-#define FLAG_ROUTE4_ULYSSES                  0x67 
-#define FLAG_ROUTE4_AENEAS                   0x68  
-#define FLAG_ROUTE4_AJAX                     0x69
-#define FLAG_ROUTE4_DIOMEDES                 0x6A
-#define FLAG_ROUTE4_AGAMEMNON                0x6B
-#define FLAG_ROUTE4_PARIS                    0x6C 
-#define FLAG_ROUTE4_MENELAUS                 0x6D
-#define FLAG_ROUTE4_PHILOCTETES              0x6E
-#define FLAG_ROUTE4_THESEUS                  0x6F
-#define FLAG_ROUTE4_JASON                    0x70
 
-#define FLAG_HOME_NESTOR                     0x71 
-#define FLAG_HOME_ACHILLES                   0x72 
-#define FLAG_HOME_HECTOR                     0x73 // UNUSED
-#define FLAG_HOME_ULYSSES                    0x74 
-#define FLAG_HOME_AENEAS                     0x75 
-#define FLAG_HOME_AJAX                       0x76
-#define FLAG_HOME_DIOMEDES                   0x77
-#define FLAG_HOME_AGAMEMNON                  0x78
-#define FLAG_HOME_PARIS                      0x79
-#define FLAG_HOME_MENELAUS                   0x7A
-#define FLAG_HOME_PHILOCTETES                0x7B
-#define FLAG_HOME_THESEUS                    0x7C
-#define FLAG_HOME_JASON                      0x7D
-#define FLAG_ARDOR_UNI2F_LEAF                0x7E
+//These are all UNUSED
+#define FLAG_MARES5_HIDE_ARGO                0x63
+#define FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS    0x64 
+#define FLAG_BIGISLAND_S_HIDE_PROMETHEUS     0x65 // Set after Hooh battle
+#define FLAG_BIGISLAND_N_JASONCOLCHIS_INTRO  0x66 
+#define FLAG_COLCHIS_FORCED_BATTLE           0x67 
+#define FLAG_PROMETHEUS_INTROD               0x68 //Set after initial talk with Prometheus to prevent repeat exposition
+#define FLAG_BIGISLANDN_DIOSCURIFOUND        0x69 //Set after talking to Dioscuri on beach. Cleared after talk again @ boat
+#define FLAG_BIGISLAND_N_JASON_OSTRACON      0x6A
+#define FLAG_COLCHIS_HIDE_LUGIA              0x6B
+#define FLAG_COLCHIS_HIDE_MAREEP             0x6C 
+#define FLAG_JASON_HAS_SHINYMAREEP           0x6D
+#define FLAG_COLCHIS_HIDERINGBARRIER         0x6E //Set after using Colchis Key to open Ring Block
+#define FLAG_COLCHIS_HIDERINGBALL            0x6F //Set after giveitem colchis ring
+#define FLAG_COLCHIS_RETURN_LOSTKID          0x70 //Supress move kid object event during Escape From Colchis after it's been returned 
+
+#define FLAG_COLCHIS_MOVECHEF                0x71 
+#define FLAG_BULBUS_SAILORSOPEN              0x72  //Set after Jason returns to Bulbus and you talk to him and he will tell the sailors to give you free passage
+
+#define FLAG_BULBUS_SAILORS_INTROD           0x73  //Set after you speak with a sailor for the first time after Jason unlocks free boat rides
+
+#define FLAG_ALGEBRA_INTRO                       0x74  
+#define FLAG_RETURN_LOGIC_PUZZLE_LEFT            0x75  
+#define FLAG_HISTORY_INTRO                       0x76  
+#define FLAG_PSYCHOLOGY_INTRO                    0x77  
+#define FLAG_GEOMETRY_INTRO                      0x78  
+#define FLAG_CALCULUS_INTRO                      0x79  
+#define FLAG_PHYSICS_INTRO                       0x7A  
+#define FLAG_PHYSICS_HIDE_GEM                    0x7B  
+#define FLAG_PHYSICS_MAGNETDONE                  0x7C  
+#define FLAG_PHILOSOPHY_INTRO                    0x7D  
+#define FLAG_LITERATURE_INTRO                    0x7E  
 
 //Open Class Door Flags - Twenty
 #define FLAG_OPEN_CLASS_GEOLOGY              0x7F
@@ -186,74 +188,23 @@
 #define FLAG_ARITHMETIC_INTRO                0x9D
 #define FLAG_BIOLOGY_INTRO                   0x9E
 #define FLAG_CHEMISTRY_INTRO                 0x9F
-#define FLAG_ALGEBRA_INTRO                   0xA0
-#define FLAG_RETURN_LOGIC_PUZZLE_LEFT        0xA1
-#define FLAG_HISTORY_INTRO                   0xA2
-#define FLAG_PSYCHOLOGY_INTRO                0xA3
-#define FLAG_GEOMETRY_INTRO                  0xA4
-#define FLAG_CALCULUS_INTRO                  0xA5
-#define FLAG_PHYSICS_INTRO                   0xA6
-#define FLAG_PHYSICS_HIDE_GEM                0xA7
-#define FLAG_PHYSICS_MAGNETDONE              0xA8
-#define FLAG_PHILOSOPHY_INTRO                0xA9
-#define FLAG_LITERATURE_INTRO                0xAA
-#define FLAG_POETRY_INTRO                    0xAB
-#define FLAG_RECEIVED_SECRET_POWER           0xAC
-#define FLAG_ARGO_COMPLETED_SUCESS           0x78
-#define FLAG_ARGO_COMPLETED_FAILURE          0x79
-#define FLAG_MARES5_HIDE_ARGO                0x7A
-#define FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS    0x7C
-#define FLAG_BIGISLAND_S_HIDE_PROMETHEUS     0x7D // Set after Hooh battle
-#define FLAG_BIGISLAND_N_JASONCOLCHIS_INTRO  0x7E
-#define FLAG_COLCHIS_FORCED_BATTLE           0x7F
-#define FLAG_PROMETHEUS_INTROD               0x80 //Set after initial talk with Prometheus to prevent repeat exposition
-#define FLAG_BIGISLANDN_DIOSCURIFOUND        0x81 //Set after talking to Dioscuri on beach. Cleared after talk again @ boat
-#define FLAG_BIGISLAND_N_JASON_OSTRACON      0x82
-#define FLAG_COLCHIS_HIDE_LUGIA              0x83
-#define FLAG_COLCHIS_HIDE_MAREEP             0x84
-#define FLAG_JASON_HAS_SHINYMAREEP           0x85 //Did Jason's quest succeed?
-#define FLAG_COLCHIS_HIDERINGBARRIER         0x86 //Set after using Colchis Key to open Ring Block
-#define FLAG_COLCHIS_HIDERINGBALL            0x87 //Set after giveitem colchis ring
-#define FLAG_COLCHIS_RETURN_LOSTKID          0x88 //Supress move kid object event during Escape From Colchis after it's been returned 
-#define FLAG_COLCHIS_MOVECHEF                0x89
+#define FLAG_POETRY_INTRO                    0xA0
+#define FLAG_ARDOR_UNI2F_LEAF                0xA1
+
 
 // BREAK //
 
-#define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
-#define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
-#define FLAG_RECEIVED_6_SODA_POP             0x8C
-#define FLAG_DEFEATED_SEASHORE_HOUSE         0x8D
-#define FLAG_DEVON_GOODS_STOLEN              0x8E
-#define FLAG_RECOVERED_DEVON_GOODS           0x8F
-#define FLAG_RETURNED_DEVON_GOODS            0x90
-#define FLAG_CAUGHT_LUGIA                    0x91
-#define FLAG_CAUGHT_HO_OH                    0x92
-#define FLAG_MR_BRINEY_SAILING_INTRO         0x93
-#define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
-#define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
-#define FLAG_RECEIVED_CASTFORM               0x97
-#define FLAG_RECEIVED_SUPER_ROD              0x98
-#define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
-#define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A
-#define FLAG_FORTREE_NPC_TRADE_COMPLETED     0x9B
-#define FLAG_BATTLE_FRONTIER_TRADE_DONE      0x9C
-#define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
-#define FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE   0x9E
-#define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0x9F
-#define FLAG_COOL_PAINTING_MADE              0xA0
-#define FLAG_BEAUTY_PAINTING_MADE            0xA1
-#define FLAG_CUTE_PAINTING_MADE              0xA2
-#define FLAG_SMART_PAINTING_MADE             0xA3
-#define FLAG_TOUGH_PAINTING_MADE             0xA4
-#define FLAG_RECEIVED_TM_ROCK_TOMB           0xA5
-#define FLAG_RECEIVED_TM_BULK_UP             0xA6
-#define FLAG_RECEIVED_TM_SHOCK_WAVE          0xA7
-#define FLAG_RECEIVED_TM_OVERHEAT            0xA8
-#define FLAG_RECEIVED_TM_FACADE              0xA9
-#define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
-#define FLAG_RECEIVED_TM_CALM_MIND           0xAB
-#define FLAG_RECEIVED_TM_WATER_PULSE         0xAC
+#define FLAG_UNUSED_0xA2                     0xA2
+#define FLAG_UNUSED_xA3                      0xA3
+#define FLAG_UNUSED_0xA4                     0xA4
+#define FLAG_UNUSED_0xA5                     0xA5
+#define FLAG_UNUSED_0xA6                     0xA6
+#define FLAG_UNUSED_0xA7                     0xA7
+#define FLAG_UNUSED_0xA8                     0xA8
+#define FLAG_UNUSED_0xA9                     0xA9
+#define FLAG_UNUSED_0xAA                     0xAA
+#define FLAG_UNUSED_0xAB                     0xAB
+#define FLAG_RECEIVED_SECRET_POWER           0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
