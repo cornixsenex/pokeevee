@@ -152,7 +152,6 @@
 #define FLAG_PHILOSOPHY_INTRO                    0x7D  
 #define FLAG_LITERATURE_INTRO                    0x7E  
 
-//Open Class Door Flags - Twenty
 #define FLAG_OPEN_CLASS_GEOLOGY              0x7F
 #define FLAG_OPEN_CLASS_BIOLOGY              0x80 
 #define FLAG_OPEN_CLASS_CHEMISTRY            0x81
@@ -173,8 +172,7 @@
 #define FLAG_OPEN_CLASS_POETRY               0x90
 #define FLAG_OPEN_CLASS_RHETORIC             0x91
 #define FLAG_OPEN_CLASS_GYM                  0x92
-//end Open Class Flags
-//
+
 #define FLAG_PHOENIX_PARTY                   0x93
 #define FLAG_PLEDGE_HAS_KEG                  0x94
 #define FLAG_PHOENIX_LEAF                    0x95
@@ -190,12 +188,12 @@
 #define FLAG_CHEMISTRY_INTRO                 0x9F
 #define FLAG_POETRY_INTRO                    0xA0
 #define FLAG_ARDOR_UNI2F_LEAF                0xA1
+#define FLAG_TUCSON_PARIS_RECEIVED_INVITE    0xA2
+#define FLAG_TUCSON_MENELAUS_RECEIVED_INVITE 0xA3
 
 
 // BREAK //
 
-#define FLAG_UNUSED_0xA2                     0xA2
-#define FLAG_UNUSED_xA3                      0xA3
 #define FLAG_UNUSED_0xA4                     0xA4
 #define FLAG_UNUSED_0xA5                     0xA5
 #define FLAG_UNUSED_0xA6                     0xA6

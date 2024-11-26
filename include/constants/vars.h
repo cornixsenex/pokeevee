@@ -166,6 +166,11 @@
 
 #define VAR_FALSEFLOOR_WAIT                              0x4073 // Default 0, set to 1 when continuously falling
 																
+#define VAR_NESTOR_STATE                                 0x4074 //0: BEGIN
+																//1: Talk to Nestor after Dioscuri return home, Triggers NestorGather1 On Tucson Frame Table
+																//2: After NestorGather1. Nestor check for guests arrived. Suitors ready to give invitations. Party members ready to be invited.
+																//3: Talk to Nestor after all guests have arrived. Trigger NestorGather2 on Tucson Frame Table
+																//4: After NestorGather2 - Nestor house empty. Church ready for NestorChurch script
 																
 																
 																
@@ -174,7 +179,6 @@
 
 
 
-#define VAR_ROUTE121_STATE                               0x4074
 #define VAR_ROUTE122_STATE                               0x4075 // Unused Var
 #define VAR_ROUTE123_STATE                               0x4076 // Unused Var
 #define VAR_ROUTE124_STATE                               0x4077 // Unused Var

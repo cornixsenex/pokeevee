@@ -976,22 +976,33 @@ Tiresias - Speaks in short cryptic lines which are never wrong but never 100% th
 	>This results in battle against Creon and the eventual institution of a commune. Tiriesias leaves in peace
 
 
-	***CAST***
-Nestor Gerenios         : Contest Judge
-Helena                  : Woman 2
-Menelaus				: Maniac
-Paris / Alexander		: Man 2
+	***CAST*** Cast cast CAst CASt 
+
+Primary Characters:
+Nestor Gerenios         : Juan
+Helena                  : Woman 2 / Lady
+Menelaus				: Maniac / super nerd
+Paris / Alexander		: Brandon (Pyramid King)
+Orpheus					: Artist / Painter 
+Heracles				: Bruno
 Castor					: Youngster
 Pollux					: Youngster
 Jason 					: Archie
+Ulysses					: Oak
+Agamemnon				: Mauville Old Man / Add Mauville Old Man 1 for bewitchment
+Orestes					: fisherman
+Hektor					: Devon Employee
+Achilleus				: scott
+Oedipus (Rex)			: noland
+Priam					: Old Man
+Pluto / Dis / Hades		: Giovanni
+
+Secondary Characters:
 Theseus					: Man 3
-Orpheus					: Artist
-Philoctetes				: Oak
-Heracles				: Bruno
+Philoctetes				: Man 1
 Prometheus				: old man lyingdown
 Aeetes
 Medea					:chaneller / hex maniac
-Ulysses					: Man 1
 Penelope
 Telemachus
 Polyphemus				:Quinty Plump
@@ -1001,29 +1012,23 @@ Nausicaa				:little girl
 Arete
 Eumaeus (swineheard)
 Beggar Ulysses
-Agamemnon				:Mauville Old Man / Add Mauville Old Man 1 for bewitchment
-Orestes					:fisherman
 Klytamnestra			:link receptionist
 Iphigeneia				:Beauty
 Aeneas					:Gentleman
 Faustulus (son)
 Romulus and Remus (twin babies)
-Hektor					:Devon Employee
-Achilleus				:scott
 Patrokles				:Wallace
 Aias					:Boy 3
 Lessar Aias				:Fat Man
 Diomedes				:running triatholete
 Teukros					:wally
 Tiresias				:Spenser (frontier brain)
-Oedipus (Rex)			:noland
 Laius					:Old Man lying down
 Jocasta
 Merope (Polybus)
 Antigone(?)
 Briseis
 Troilus
-Priam					:Old Man
 Hippolyta
 Atlas					:Steven
 Charon					: policeman
@@ -1031,10 +1036,11 @@ Minos
 Hypnos
 Hekate
 Thanatos (death)
-Pluto / Dis / Hades		:Giovanni
 Persephone
+Helios / Fire Sun Cow farmer
+Cherubin
 
-
+Chorus:
 Trinket Salesman			:mystery event deliveryman
 Lotus eaters
 Harpies
@@ -1055,8 +1061,6 @@ Cult people (Iphigeneia at Taurus)
 Trojan Soldiers (Memnon, Glaucus, Deiphobus, Dolon, Sarpedon, Pandarus, Adrastus, Antenor)  : black belts
 Trojan whores
 Amazonians
-Helios / Fire Sun Cow farmer
-Cherubin
 shades
 Furies
 
@@ -1153,13 +1157,34 @@ Ceberus
 			>Aeneis recognizes the authority of Nestor and wishes to return but admits his obligation to the pythia who told him to found a city here, and to his family, is higher. On the shore Aeneis runs up and down saying his twin grandsons have gone missing for days. He and his son, Faustulus, don't have much hope but he refuses to rest until they are found. In the Lupercal Cave (deep?) you find the boys and the wolf. Upon approach the boys retread and mama approaches. She growls as you approach and if you get too close she attacks. After being defeated or captured Faustulus will enter and exclaim with joy at the discover of his boys and bring them home where you will find Aeneis ready to meet Nestory. Faustulus makes some joke about how the twins are constantly fighting with eachother but that the auspices are good, a great city will be built and his descendants shall inherit the earth.
 		>HEKTOR - Training Cave
 	>All gathered Nestor announces Menelaus will marry his daughter and inherit his fortune / remnants of his Duchy or whatever. Invites all to meet him at the church next door. Helen is clearly upset Paris is trying to calm her
-	>Gathered at the Church Nestor conducts a headcount and finds Helen and Paris missing.
-	>Accuses Hektor and Aeneis. Aeneis claims love will find a way Hektor maintains his family can do no wrong they both leave.
+		>Meet me at the great church
+		>Nestor Exit
+		>Dioscuri: we go with you father
+		>Dioscuri Exit
+		>Men: Sweet victory, and sweeter Helen, are mine!
+		>Aga: Congrats brother
+		>Uly: Lets get this party starteda
+		>They exit
+		>Helen goto Paris
+		>Hel: What ever shall we do
+		>Par: Fear not my love, my desire for you is so strong that even this we shall overcome
+		>Aen: Indeed love always finds a way
+		>Hel: Though my thoughts betray me, my heart wills me to go with you and fake courage this will be OK
+		>Par: Let it be so
+		>Hec: Brother, I go with you
+		>They Exit
+		>Set flags / vars to clear Nestor hous and Setup Church scene
+	
+	>Gathered at the Church Nestor conducts a headcount and finds Helen and Paris group missing.
+	>Sends Dioscuri to go find them
+	>Long Nestor story trying to joke and make it lighthearted to calm nerves
+	>Dioscuri enter to screams! They've left and steal Helen back to the house of Troy.
 	>Menelaus furious declares he will storm the walls of Troy himself
 	>Nestor gives a long story about caution but agrees Helen must be rescued. He suggests Agamemnon lead the expedition since Menelaus is too hot headed and he himself is too old to be an effective leader
 	>Agamenon agrees to lead the expidition adding that Nestor will be his councilor and vows he will not cease until Helen is won back for his brother.
 	>Agamemnon says it will take a mighty host to take the walls of Troy and tells player to gather the great heroes
 	>Castor and Pollux go to get Heracles
+	>Nestor yells after them but repeats 'elusive boys' and outlines the heros who must be gathered before we have any hope of taking Troy
 		>Achilles & Patrokles
 			>LA Docks
 			>Achilles is locked in his ship pouting because his lover Patrokles has left him (to buy something in town)

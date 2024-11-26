@@ -60,7 +60,7 @@ static const u16 sPic7Pal[] = INCBIN_U16("graphics/trainers/front_pics/elite_fou
 static const u32 sPic8Gfx[] = INCBIN_U32("graphics/trainers/front_pics/blaine_front_pic.4bpp.lz");
 static const u16 sPic8Pal[] = INCBIN_U16("graphics/trainers/palettes/blaine.gbapal");
 
-//Indy = 8 = Noland
+//Noland = 8
 static const u32 sPic9Gfx[] = INCBIN_U32("graphics/trainers/front_pics/factory_head_noland.4bpp.lz");
 static const u16 sPic9Pal[] = INCBIN_U16("graphics/trainers/front_pics/factory_head_noland.gbapal");
 
@@ -127,6 +127,26 @@ static const u16 sPic24Pal[] = INCBIN_U16("graphics/trainers/front_pics/magma_gr
 //Hex Maniac = 24
 static const u32 sPic25Gfx[] = INCBIN_U32("graphics/trainers/front_pics/hex_maniac.4bpp.lz");
 static const u16 sPic25Pal[] = INCBIN_U16("graphics/trainers/front_pics/hex_maniac.gbapal");
+
+//Juan = 25
+static const u32 sPic26Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leader_juan.4bpp.lz");
+static const u16 sPic26Pal[] = INCBIN_U16("graphics/trainers/front_pics/leader_juan.gbapal");
+
+//Super Nerd = 26
+static const u32 sPic27Gfx[] = INCBIN_U32("graphics/trainers/front_pics/super_nerd_front_pic.4bpp.lz");
+static const u16 sPic27Pal[] = INCBIN_U16("graphics/trainers/front_pics/super_nerd_front_pic.gbapal");
+
+//Brandon = 27
+static const u32 sPic28Gfx[] = INCBIN_U32("graphics/trainers/front_pics/pyramid_king_brandon.4bpp.lz");
+static const u16 sPic28Pal[] = INCBIN_U16("graphics/trainers/front_pics/pyramid_king_brandon.gbapal");
+
+//Lady = 28
+static const u32 sPic29Gfx[] = INCBIN_U32("graphics/trainers/front_pics/lady.4bpp.lz");
+static const u16 sPic29Pal[] = INCBIN_U16("graphics/trainers/front_pics/lady.gbapal");
+
+//Oak = 29
+static const u32 sPic30Gfx[] = INCBIN_U32("graphics/trainers/front_pics/professor_oak_front_pic.4bpp.lz");
+static const u16 sPic30Pal[] = INCBIN_U16("graphics/trainers/front_pics/professor_oak_front_pic.gbapal");
 
 
 /* And this is an example script.
@@ -202,6 +222,16 @@ static const struct Pic sPics[] =
     {sPic24Gfx, sPic24Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Hex Maniac
     {sPic25Gfx, sPic25Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Juan
+    {sPic26Gfx, sPic26Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Super Nerd
+    {sPic27Gfx, sPic27Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//BrandOn
+    {sPic28Gfx, sPic28Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Lady
+    {sPic29Gfx, sPic29Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Oak
+    {sPic30Gfx, sPic30Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

@@ -32,7 +32,7 @@ Route121_EventScript_AquaGruntsMoveOut::
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2
 	removeobject LOCALID_GRUNT_3
-	setvar VAR_ROUTE121_STATE, 1
+@@	setvar VAR_ROUTE121_STATE, 1
 	releaseall
 	end
 

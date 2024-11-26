@@ -50,8 +50,9 @@ script BeachCave_EventScript_Trevor {
 script BeachCave_EventScript_Hector {
 	lock
 	faceplayer
-	checkitem (ITEM_WEDDING_INVITATION, 1)
+	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
 	if (var(VAR_RESULT) == TRUE) {
+		removeitem (ITEM_WEDDING_INVITATION_HECTOR)
 		msgbox(BeachCave_Text_Hector2)
 		closemessage
 		fadescreen (1)

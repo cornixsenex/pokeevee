@@ -201,10 +201,25 @@ static const u8 sTestBookDesc[] = _(
 	"with many pages\n"
 	"missing TEST.\n");
 
-static const u8 sWeddingInvitationDesc[] = _(
+static const u8 sWeddingInvitationDesc_Hector[] = _(
+		"For Hector,\n"
 		"An invitation to the\n"
-		"wedding of Helena and\n"
-		"Paris.");
+		"wedding of Helen\n");
+
+static const u8 sWeddingInvitationDesc_Aeneas[] = _(
+		"For Hector,\n"
+		"An invitation to the\n"
+		"wedding of Helen\n");
+
+static const u8 sWeddingInvitationDesc_Agamemnon[] = _(
+		"For Agamemnon,\n"
+		"An invitation to the\n"
+		"wedding of Helen\n");
+
+static const u8 sWeddingInvitationDesc_Ulysses[] = _(
+		"For Ulysses,\n"
+		"An invitation to the\n"
+		"wedding of Helen\n");
 
 static const u8 sColchisMapDesc[] = _(
 		"An ancient map showing"
@@ -14318,11 +14333,53 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Book,
 	},
 
-	[ITEM_WEDDING_INVITATION] =
+	[ITEM_WEDDING_INVITATION_HECTOR] =
 	{
 		.name = _("Invitation"),
         .price = 0,
-		.description = sWeddingInvitationDesc,
+		.description = sWeddingInvitationDesc_Hector,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
+	},
+
+	[ITEM_WEDDING_INVITATION_AENEAS] =
+	{
+		.name = _("Invitation"),
+        .price = 0,
+		.description = sWeddingInvitationDesc_Aeneas,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
+	},
+
+	[ITEM_WEDDING_INVITATION_AGAMEMNON] =
+	{
+		.name = _("Invitation"),
+        .price = 0,
+		.description = sWeddingInvitationDesc_Agamemnon,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
+	},
+
+	[ITEM_WEDDING_INVITATION_ULYSSES] =
+	{
+		.name = _("Invitation"),
+        .price = 0,
+		.description = sWeddingInvitationDesc_Ulysses,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = 4,
