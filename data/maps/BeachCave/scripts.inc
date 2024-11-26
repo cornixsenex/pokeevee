@@ -68,126 +68,128 @@ BeachCave_EventScript_Hector::
 # 52 "data/maps/BeachCave/scripts.pory"
 	faceplayer
 # 53 "data/maps/BeachCave/scripts.pory"
-	checkitem ITEM_WEDDING_INVITATION, 1
+	checkitem ITEM_WEDDING_INVITATION_HECTOR, 1
 # 54 "data/maps/BeachCave/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq BeachCave_EventScript_Hector_2
-# 62 "data/maps/BeachCave/scripts.pory"
-	msgbox BeachCave_Text_Hector1
 # 63 "data/maps/BeachCave/scripts.pory"
+	msgbox BeachCave_Text_Hector1
+# 64 "data/maps/BeachCave/scripts.pory"
 	closemessage
 BeachCave_EventScript_Hector_1:
-# 65 "data/maps/BeachCave/scripts.pory"
+# 66 "data/maps/BeachCave/scripts.pory"
 	release
 	return
 
 BeachCave_EventScript_Hector_2:
 # 55 "data/maps/BeachCave/scripts.pory"
-	msgbox BeachCave_Text_Hector2
+	removeitem ITEM_WEDDING_INVITATION_HECTOR
 # 56 "data/maps/BeachCave/scripts.pory"
-	closemessage
+	msgbox BeachCave_Text_Hector2
 # 57 "data/maps/BeachCave/scripts.pory"
-	fadescreen 1
+	closemessage
 # 58 "data/maps/BeachCave/scripts.pory"
-	removeobject 7
+	fadescreen 1
 # 59 "data/maps/BeachCave/scripts.pory"
-	setflag FLAG_BEACHCAVE_HIDE_HECTOR
+	removeobject 7
 # 60 "data/maps/BeachCave/scripts.pory"
+	setflag FLAG_BEACHCAVE_HIDE_HECTOR
+# 61 "data/maps/BeachCave/scripts.pory"
 	fadescreen 0
 	goto BeachCave_EventScript_Hector_1
 
 
 Route3_Text_NickIntro::
-# 68 "data/maps/BeachCave/scripts.pory"
+# 69 "data/maps/BeachCave/scripts.pory"
 	.string "We come here to train! Yodaleeahooh!$"
 
 Route3_Text_NickLost::
-# 72 "data/maps/BeachCave/scripts.pory"
+# 73 "data/maps/BeachCave/scripts.pory"
 	.string "Not too bad kid$"
 
 Route3_Text_NickPost::
-# 76 "data/maps/BeachCave/scripts.pory"
+# 77 "data/maps/BeachCave/scripts.pory"
 	.string "This cave has gotten rather popular\n"
 	.string "lately.$"
 
 Route3_Text_KyleIntro::
-# 80 "data/maps/BeachCave/scripts.pory"
+# 81 "data/maps/BeachCave/scripts.pory"
 	.string "I'm running first, then getting stoned\n"
 	.string "lated.$"
 
 Route3_Text_KyleLost::
-# 84 "data/maps/BeachCave/scripts.pory"
+# 85 "data/maps/BeachCave/scripts.pory"
 	.string "Guess I was wrong, should have smoked a\n"
 	.string "bowl first.$"
 
 Route3_Text_KylePost::
-# 88 "data/maps/BeachCave/scripts.pory"
+# 89 "data/maps/BeachCave/scripts.pory"
 	.string "Come let me know if you get a surfboard!$"
 
 Route3_Text_JedIntro::
-# 92 "data/maps/BeachCave/scripts.pory"
+# 93 "data/maps/BeachCave/scripts.pory"
 	.string "Hey kid have you ever talked to your\n"
 	.string "dog?$"
 
 Route3_Text_JedLost::
-# 96 "data/maps/BeachCave/scripts.pory"
+# 97 "data/maps/BeachCave/scripts.pory"
 	.string "Looks like I head back home again.$"
 
 Route3_Text_JedPost::
-# 100 "data/maps/BeachCave/scripts.pory"
+# 101 "data/maps/BeachCave/scripts.pory"
 	.string "I moved out here last year from\n"
 	.string "Tennessee!$"
 
 Route3_Text_RexIntro::
-# 104 "data/maps/BeachCave/scripts.pory"
+# 105 "data/maps/BeachCave/scripts.pory"
 	.string "Are you ready to build muscle and gain\n"
 	.string "power over your life and in your core?$"
 
 Route3_Text_RexLost::
-# 108 "data/maps/BeachCave/scripts.pory"
+# 109 "data/maps/BeachCave/scripts.pory"
 	.string "I love the flag. I love my body too!$"
 
 Route3_Text_RexPost::
-# 112 "data/maps/BeachCave/scripts.pory"
+# 113 "data/maps/BeachCave/scripts.pory"
 	.string "You've got spunk kid, but you're still no\n"
 	.string "black belt.$"
 
 Route3_Text_MorganIntro::
-# 116 "data/maps/BeachCave/scripts.pory"
+# 117 "data/maps/BeachCave/scripts.pory"
 	.string "Hey cutie do you want to dance with me?$"
 
 Route3_Text_MorganLost::
-# 120 "data/maps/BeachCave/scripts.pory"
+# 121 "data/maps/BeachCave/scripts.pory"
 	.string "Okay, that was awkward...$"
 
 Route3_Text_MorganPost::
-# 124 "data/maps/BeachCave/scripts.pory"
+# 125 "data/maps/BeachCave/scripts.pory"
 	.string "Leave me alone!$"
 
 Route3_Text_TrevorIntro::
-# 128 "data/maps/BeachCave/scripts.pory"
+# 129 "data/maps/BeachCave/scripts.pory"
 	.string "Oh dude watch out we're skoobin in the\n"
 	.string "cave!$"
 
 Route3_Text_TrevorLost::
-# 132 "data/maps/BeachCave/scripts.pory"
+# 133 "data/maps/BeachCave/scripts.pory"
 	.string "Oh shit I think you just fucked up my\n"
 	.string "hand.$"
 
 Route3_Text_TrevorPost::
-# 136 "data/maps/BeachCave/scripts.pory"
+# 137 "data/maps/BeachCave/scripts.pory"
 	.string "There's no way I'm going to pay for\n"
 	.string "this...$"
 
 BeachCave_Text_Hector1::
-# 140 "data/maps/BeachCave/scripts.pory"
+# 141 "data/maps/BeachCave/scripts.pory"
 	.string "Hello. My name is Hector, I'm from Troy. I\n"
 	.string "dedicate every waking moment to self\l"
 	.string "improvement, pious discipline, and\l"
 	.string "rightous action. Go with God stranger.$"
 
 BeachCave_Text_Hector2::
-# 144 "data/maps/BeachCave/scripts.pory"
+# 145 "data/maps/BeachCave/scripts.pory"
 	.string "What's this invitation that you've\n"
 	.string "brought me? My brother Paris will marry\l"
 	.string "Helen? I must travel to Nestor's house\l"
