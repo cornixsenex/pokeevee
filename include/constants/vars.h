@@ -171,17 +171,17 @@
 																//2: After NestorGather1. Nestor check for guests arrived. Suitors ready to give invitations. Party members ready to be invited.
 																//3: Talk to Nestor after all guests have arrived. Trigger NestorGather2 on Tucson Frame Table
 																//4: After NestorGather2 - Nestor house empty. Church ready for NestorChurch script
-																
-																
+#define VAR_ULYSSES_STATE                                0x4075 // - Tracks Odyssey and updates maps associated
+																//0: BEGIN
+																//1: END
+#define VAR_AGAMEMNON_STATE                              0x4076 // - Tracks Orestreia and updates maps associated
+#define VAR_AENEAS_STATE                                 0x4077 // - Tracks Aeneid and updates maps associated
 																
 						// BREAK
 
 
 
 
-#define VAR_ROUTE122_STATE                               0x4075 // Unused Var
-#define VAR_ROUTE123_STATE                               0x4076 // Unused Var
-#define VAR_ROUTE124_STATE                               0x4077 // Unused Var
 #define VAR_ROUTE125_STATE                               0x4078 // Unused Var
 #define VAR_ROUTE126_STATE                               0x4079 // Unused Var
 #define VAR_ROUTE127_STATE                               0x407A // Unused Var

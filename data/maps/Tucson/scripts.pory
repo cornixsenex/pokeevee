@@ -128,26 +128,6 @@ script Tucson_Script_HideNestor {
 	return
 }
 
-script Tucson_Script_Menelaus {
-	lock
-	faceplayer
-	switch (var(VAR_NESTOR_STATE)) {
-		case 0:
-			msgbox (Tucson_Text_Menelaus1, MSGBOX_DEFAULT)
-		case 1:
-			msgbox ("NESTOR STATE 1", MSGBOX_DEFAULT)
-		case 2:
-			msgbox(format("Check if ivitations are sent, if so then check if guests are returned and say either hels over there or good to see him again"), MSGBOX_DEFAULT)
-		case 3:
-			msgbox ("NESTOR STATE 3", MSGBOX_DEFAULT)
-		default:
-			msgbox ("NESTOR STATE OOB", MSGBOX_DEFAULT)
-	}
-	closemessage
-	release
-	end
-}
-
 script Tucson_Script_Nestor {
 	//I think this script should re-position the guests
 	lock
@@ -257,9 +237,9 @@ script Tucson_Script_Paris {
 	} elif (var(VAR_NESTOR_STATE) == 2) {
 		faceplayer
 		//Before given invitation
-		if (!flag(FLAG_TUCSON_PARIS_RECEIVED_INVITE)) {
+		if (!flag(FLAG_TUCSON_PARIS_DID_INVITE)) {
 			//I've decided who to invite
-			setflag (FLAG_TUCSON_PARIS_RECEIVED_INVITE)
+			setflag (FLAG_TUCSON_PARIS_DID_INVITE)
 			msgbox (Tucson_Text_Paris_GiveInvites, MSGBOX_DEFAULT)
 			closemessage
 			giveitem (ITEM_WEDDING_INVITATION_HECTOR)
@@ -276,8 +256,7 @@ script Tucson_Script_Paris {
 			//Check if Hector is here:
 			if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
 				//check if Aeneas not here
-				checkitem (ITEM_WEDDING_INVITATION_AENEAS, 1)
-				if (var(VAR_RESULT) == TRUE) {
+				if (var(VAR_AENEAS_STATE) < 1) {
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
 					msgbox (Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT)
 					closemessage
@@ -290,8 +269,7 @@ script Tucson_Script_Paris {
 			} else {
 				msgbox (Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT)
 				//Check if Aeneis not here
-				checkitem (ITEM_WEDDING_INVITATION_AENEAS, 1)
-				if (var(VAR_RESULT) == TRUE) {
+				if (var(VAR_AENEAS_STATE) < 1) {
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
 				}
 				msgbox (Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT)
@@ -311,10 +289,45 @@ script Tucson_Script_Paris {
 	end
 }
 
+script Tucson_Script_Menelaus {
+	lock
+	faceplayer
+	switch (var(VAR_NESTOR_STATE)) {
+		case 0:
+			msgbox (Tucson_Text_Menelaus1, MSGBOX_DEFAULT)
+		case 1:
+			msgbox ("NESTOR STATE 1", MSGBOX_DEFAULT)
+		case 2:
+			if (!flag(FLAG_TUCSON_MENELAUS_DID_INVITE)) {
+				setflag (FLAG_TUCSON_MENELAUS_DID_INVITE)
+				msgbox (Tucson_Text_Paris_GiveInvites, MSGBOX_DEFAULT)
+				closemessage
+				giveitem (ITEM_WEDDING_INVITATION_AGAMEMNON)
+				msgbox (Tucson_Text_Paris_OnAgamemnon, MSGBOX_DEFAULT)
+				closemessage
+				giveitem (ITEM_WEDDING_INVITATION_AENEAS)
+				msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
+				msgbox (Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT)
+			} else {
+				//Check is Agamemnon Here
+				if (
+
+
+			msgbox(format("Check if ivitations are sent, if so then check if guests are returned and say either hels over there or good to see him again"), MSGBOX_DEFAULT)
+		case 3:
+			msgbox ("NESTOR STATE 3", MSGBOX_DEFAULT)
+		default:
+			msgbox ("NESTOR STATE OOB", MSGBOX_DEFAULT)
+	}
+	closemessage
+	release
+	end
+}
+
 script Tucson_Script_Hector {
 	lock
 	faceplayer
-	msgbox (Tucson_Text_Hector, MSGBOX_NPC)
+	msgbox (Tucson_Text_Hector, MSGBOX_DEFAULT)
 	release
 	end
 }
