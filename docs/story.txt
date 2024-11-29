@@ -1517,7 +1517,7 @@ Groudon				Balrog? See Heatran IDK
 Rayquaza			Snake Hydra
 *Jirachi			Atlas / Cherubin guards gates of Eden
 *Deoxys				Rocket Tower? Military? Super Soldier
-Lakes				Orestes?
+Lakes				Orestes' furies
 Dialga				Meh
 Palkia				Meh
 Giratina			Ceberus
@@ -1550,6 +1550,9 @@ $$ BOAR $$
 >Strength / Heracles' Gauntlets
 >Rock Climb / Climbing Shoes
 >Fly / Pegassus idk
+(Waterfall?)
+(Defog?)
+(Dive?)
 
 
 
