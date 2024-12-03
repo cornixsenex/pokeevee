@@ -32,16 +32,6 @@
 #define ITEM_BEAST_BALL 26
 #define ITEM_CHERISH_BALL 27
 
-//Thru Luxury ball is good + Premier Ball
-//Dusk - Sport are black squares
-//Beast, Dream, and Park,  ball fuck the thing up
-
-// Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
-//       Several places expect the ball IDs to be first and contiguous (e.g. MON_DATA_POKEBALL)
-//       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)
-#define FIRST_BALL ITEM_POKE_BALL
-#define LAST_BALL  ITEM_CHERISH_BALL
-
 // Medicine
 #define ITEM_POTION 28
 #define ITEM_SUPER_POTION 29
@@ -1001,7 +991,7 @@
 #define ITEM_POKESHI_DOLL 827
 
 // Unique to this project items
-#define ITEM_SURFBOARD 828
+#define ITEM_STRANGE_BALL 828
 #define ITEM_KIND_BUD 829
 #define ITEM_INSURANCE_FORM_A 830
 #define ITEM_INSURANCE_FORM_B 831
@@ -1023,11 +1013,12 @@
 #define ITEM_WEDDING_INVITATION_AENEAS 847
 #define ITEM_WEDDING_INVITATION_AGAMEMNON 848
 #define ITEM_WEDDING_INVITATION_ULYSSES 849
+#define ITEM_SURFBOARD 850
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 850
+#define ITEMS_COUNT 851
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
@@ -1103,6 +1094,7 @@
 #define EFFECT_ITEM_REVIVE                  9
 #define EFFECT_ITEM_RESTORE_PP              10
 #define EFFECT_ITEM_INCREASE_ALL_STATS      11
+#define EFFECT_ITEM_USE_POKE_FLUTE          12
 
 // Enigma Berry dummy constant
 #define EFFECT_ITEM_ENIGMA_BERRY_EREADER    1
