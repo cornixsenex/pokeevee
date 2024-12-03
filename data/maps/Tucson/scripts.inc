@@ -149,340 +149,379 @@ Tucson_Script_HideNestor::
 	return
 
 
-Tucson_Script_Menelaus::
-# 132 "data/maps/Tucson/scripts.pory"
-	lock
-# 133 "data/maps/Tucson/scripts.pory"
-	faceplayer
-# 134 "data/maps/Tucson/scripts.pory"
-	switch VAR_NESTOR_STATE
-# 135 "data/maps/Tucson/scripts.pory"
-	case 0, Tucson_Script_Menelaus_3
-# 137 "data/maps/Tucson/scripts.pory"
-	case 1, Tucson_Script_Menelaus_4
-# 139 "data/maps/Tucson/scripts.pory"
-	case 2, Tucson_Script_Menelaus_5
-# 141 "data/maps/Tucson/scripts.pory"
-	case 3, Tucson_Script_Menelaus_6
-# 144 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Script_Menelaus_Text_3, MSGBOX_DEFAULT
-Tucson_Script_Menelaus_1:
-# 146 "data/maps/Tucson/scripts.pory"
-	closemessage
-# 147 "data/maps/Tucson/scripts.pory"
-	release
-	end
-
-Tucson_Script_Menelaus_3:
-# 136 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Menelaus1, MSGBOX_DEFAULT
-	goto Tucson_Script_Menelaus_1
-
-Tucson_Script_Menelaus_4:
-# 138 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Script_Menelaus_Text_0, MSGBOX_DEFAULT
-	goto Tucson_Script_Menelaus_1
-
-Tucson_Script_Menelaus_5:
-# 140 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Script_Menelaus_Text_1, MSGBOX_DEFAULT
-	goto Tucson_Script_Menelaus_1
-
-Tucson_Script_Menelaus_6:
-# 142 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Script_Menelaus_Text_2, MSGBOX_DEFAULT
-	goto Tucson_Script_Menelaus_1
-
-
 Tucson_Script_Nestor::
-# 153 "data/maps/Tucson/scripts.pory"
+# 133 "data/maps/Tucson/scripts.pory"
 	lock
-# 154 "data/maps/Tucson/scripts.pory"
+# 134 "data/maps/Tucson/scripts.pory"
 	faceplayer
-# 156 "data/maps/Tucson/scripts.pory"
+# 136 "data/maps/Tucson/scripts.pory"
 	goto_if_unset FLAG_TUCSON_NESTOR_INTROD, Tucson_Script_Nestor_2
 Tucson_Script_Nestor_1:
-# 161 "data/maps/Tucson/scripts.pory"
+# 141 "data/maps/Tucson/scripts.pory"
 	compare VAR_ARGO_STATE, 20
 	goto_if_lt Tucson_Script_Nestor_5
-# 166 "data/maps/Tucson/scripts.pory"
+# 146 "data/maps/Tucson/scripts.pory"
 	compare VAR_NESTOR_STATE, 1
 	goto_if_lt Tucson_Script_Nestor_9
 Tucson_Script_Nestor_8:
-# 179 "data/maps/Tucson/scripts.pory"
+# 159 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor5, MSGBOX_DEFAULT
-# 180 "data/maps/Tucson/scripts.pory"
+# 160 "data/maps/Tucson/scripts.pory"
 	closemessage
 Tucson_Script_Nestor_4:
-# 182 "data/maps/Tucson/scripts.pory"
+# 162 "data/maps/Tucson/scripts.pory"
 	release
 	end
 
 Tucson_Script_Nestor_2:
-# 157 "data/maps/Tucson/scripts.pory"
+# 137 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor_Intro, MSGBOX_DEFAULT
-# 158 "data/maps/Tucson/scripts.pory"
+# 138 "data/maps/Tucson/scripts.pory"
 	setflag FLAG_TUCSON_NESTOR_INTROD
 	goto Tucson_Script_Nestor_1
 
 Tucson_Script_Nestor_5:
-# 163 "data/maps/Tucson/scripts.pory"
+# 143 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor1, MSGBOX_DEFAULT
-# 164 "data/maps/Tucson/scripts.pory"
+# 144 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Nestor_4
 
 Tucson_Script_Nestor_9:
-# 168 "data/maps/Tucson/scripts.pory"
+# 148 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor2, MSGBOX_DEFAULT
-# 169 "data/maps/Tucson/scripts.pory"
+# 149 "data/maps/Tucson/scripts.pory"
 	closemessage
-# 171 "data/maps/Tucson/scripts.pory"
+# 151 "data/maps/Tucson/scripts.pory"
 	setvar VAR_NESTOR_STATE, 1
-# 172 "data/maps/Tucson/scripts.pory"
+# 152 "data/maps/Tucson/scripts.pory"
 	release
-# 173 "data/maps/Tucson/scripts.pory"
+# 153 "data/maps/Tucson/scripts.pory"
 	warpsilent MAP_TUCSON, 36, 19
-# 174 "data/maps/Tucson/scripts.pory"
+# 154 "data/maps/Tucson/scripts.pory"
 	waitstate
 	goto Tucson_Script_Nestor_8
 
 
 Tucson_Script_NestorGather1::
-# 191 "data/maps/Tucson/scripts.pory"
+# 171 "data/maps/Tucson/scripts.pory"
 	setvar VAR_NESTOR_STATE, 2
-# 194 "data/maps/Tucson/scripts.pory"
+# 174 "data/maps/Tucson/scripts.pory"
 	load_field_pic 25, 190, 98
-# 195 "data/maps/Tucson/scripts.pory"
+# 175 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor3A, MSGBOX_DEFAULT
-# 196 "data/maps/Tucson/scripts.pory"
+# 176 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor3B, MSGBOX_DEFAULT
-# 197 "data/maps/Tucson/scripts.pory"
+# 177 "data/maps/Tucson/scripts.pory"
 	destroy_field_pic 25
-# 200 "data/maps/Tucson/scripts.pory"
+# 180 "data/maps/Tucson/scripts.pory"
 	load_field_pic 26, 190, 98
-# 201 "data/maps/Tucson/scripts.pory"
+# 181 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_NestorGather1_Menelaus1, MSGBOX_DEFAULT
-# 202 "data/maps/Tucson/scripts.pory"
+# 182 "data/maps/Tucson/scripts.pory"
 	destroy_field_pic 26
-# 204 "data/maps/Tucson/scripts.pory"
+# 184 "data/maps/Tucson/scripts.pory"
 	load_field_pic 27, 190, 98
-# 205 "data/maps/Tucson/scripts.pory"
+# 185 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_NestorGather1_Paris1, MSGBOX_DEFAULT
-# 206 "data/maps/Tucson/scripts.pory"
+# 186 "data/maps/Tucson/scripts.pory"
 	destroy_field_pic 27
-# 209 "data/maps/Tucson/scripts.pory"
+# 189 "data/maps/Tucson/scripts.pory"
 	load_field_pic 25, 190, 98
-# 210 "data/maps/Tucson/scripts.pory"
+# 190 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor4A, MSGBOX_DEFAULT
-# 211 "data/maps/Tucson/scripts.pory"
+# 191 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Nestor4B, MSGBOX_DEFAULT
-# 212 "data/maps/Tucson/scripts.pory"
+# 192 "data/maps/Tucson/scripts.pory"
 	closemessage
-# 213 "data/maps/Tucson/scripts.pory"
+# 193 "data/maps/Tucson/scripts.pory"
 	destroy_field_pic 25
-# 215 "data/maps/Tucson/scripts.pory"
+# 195 "data/maps/Tucson/scripts.pory"
 	warpsilent MAP_TUCSON, 36, 19
-# 216 "data/maps/Tucson/scripts.pory"
+# 196 "data/maps/Tucson/scripts.pory"
 	waitstate
 	return
 
 
 Tucson_Script_Helen::
-# 225 "data/maps/Tucson/scripts.pory"
+# 205 "data/maps/Tucson/scripts.pory"
 	lock
-# 227 "data/maps/Tucson/scripts.pory"
+# 207 "data/maps/Tucson/scripts.pory"
 	compare VAR_ARGO_STATE, 20
 	goto_if_lt Tucson_Script_Helen_2
-# 233 "data/maps/Tucson/scripts.pory"
+# 213 "data/maps/Tucson/scripts.pory"
 	compare VAR_NESTOR_STATE, 0
 	goto_if_eq Tucson_Script_Helen_3
-# 237 "data/maps/Tucson/scripts.pory"
+# 217 "data/maps/Tucson/scripts.pory"
 	compare VAR_NESTOR_STATE, 2
 	goto_if_eq Tucson_Script_Helen_4
-# 243 "data/maps/Tucson/scripts.pory"
+# 223 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Script_Helen_Text_0, MSGBOX_DEFAULT
-# 244 "data/maps/Tucson/scripts.pory"
+# 224 "data/maps/Tucson/scripts.pory"
 	closemessage
 Tucson_Script_Helen_1:
-# 246 "data/maps/Tucson/scripts.pory"
+# 226 "data/maps/Tucson/scripts.pory"
 	release
 	end
 
 Tucson_Script_Helen_2:
-# 228 "data/maps/Tucson/scripts.pory"
+# 208 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Helen1, MSGBOX_DEFAULT
-# 229 "data/maps/Tucson/scripts.pory"
+# 209 "data/maps/Tucson/scripts.pory"
 	applymovement 3, Common_Movement_FaceRight
-# 230 "data/maps/Tucson/scripts.pory"
+# 210 "data/maps/Tucson/scripts.pory"
 	waitmovement 0
-# 231 "data/maps/Tucson/scripts.pory"
+# 211 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Helen2, MSGBOX_NPC
-# 232 "data/maps/Tucson/scripts.pory"
+# 212 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Helen_1
 
 Tucson_Script_Helen_3:
-# 235 "data/maps/Tucson/scripts.pory"
+# 215 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Helen3, MSGBOX_DEFAULT
-# 236 "data/maps/Tucson/scripts.pory"
+# 216 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Helen_1
 
 Tucson_Script_Helen_4:
-# 239 "data/maps/Tucson/scripts.pory"
+# 219 "data/maps/Tucson/scripts.pory"
 	faceplayer
-# 240 "data/maps/Tucson/scripts.pory"
+# 220 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Helen4, MSGBOX_DEFAULT
-# 241 "data/maps/Tucson/scripts.pory"
+# 221 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Helen_1
 
 
 Tucson_Script_Paris::
-# 251 "data/maps/Tucson/scripts.pory"
+# 231 "data/maps/Tucson/scripts.pory"
 	lock
-# 253 "data/maps/Tucson/scripts.pory"
+# 233 "data/maps/Tucson/scripts.pory"
 	compare VAR_NESTOR_STATE, 0
 	goto_if_eq Tucson_Script_Paris_2
-# 257 "data/maps/Tucson/scripts.pory"
+# 237 "data/maps/Tucson/scripts.pory"
 	compare VAR_NESTOR_STATE, 2
 	goto_if_eq Tucson_Script_Paris_3
-# 306 "data/maps/Tucson/scripts.pory"
+# 284 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Script_Paris_Text_0, MSGBOX_DEFAULT
-# 307 "data/maps/Tucson/scripts.pory"
+# 285 "data/maps/Tucson/scripts.pory"
 	closemessage
 Tucson_Script_Paris_1:
-# 310 "data/maps/Tucson/scripts.pory"
+# 288 "data/maps/Tucson/scripts.pory"
 	release
 	end
 
 Tucson_Script_Paris_2:
-# 254 "data/maps/Tucson/scripts.pory"
+# 234 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris1, MSGBOX_DEFAULT
-# 255 "data/maps/Tucson/scripts.pory"
+# 235 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Paris_1
 
 Tucson_Script_Paris_3:
-# 258 "data/maps/Tucson/scripts.pory"
+# 238 "data/maps/Tucson/scripts.pory"
 	faceplayer
-# 260 "data/maps/Tucson/scripts.pory"
-	goto_if_unset FLAG_TUCSON_PARIS_RECEIVED_INVITE, Tucson_Script_Paris_8
-# 277 "data/maps/Tucson/scripts.pory"
+# 240 "data/maps/Tucson/scripts.pory"
+	goto_if_unset FLAG_TUCSON_PARIS_DID_INVITE, Tucson_Script_Paris_8
+# 257 "data/maps/Tucson/scripts.pory"
 	goto_if_set FLAG_BEACHCAVE_HIDE_HECTOR, Tucson_Script_Paris_11
-# 291 "data/maps/Tucson/scripts.pory"
+# 270 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT
-# 293 "data/maps/Tucson/scripts.pory"
-	checkitem ITEM_WEDDING_INVITATION_AENEAS, 1
-# 294 "data/maps/Tucson/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Tucson_Script_Paris_18
+# 272 "data/maps/Tucson/scripts.pory"
+	compare VAR_AENEAS_STATE, 1
+	goto_if_lt Tucson_Script_Paris_18
 Tucson_Script_Paris_17:
-# 297 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT
-# 298 "data/maps/Tucson/scripts.pory"
+# 275 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_BringGuests, MSGBOX_DEFAULT
+# 276 "data/maps/Tucson/scripts.pory"
 	closemessage
 Tucson_Script_Paris_7:
-# 302 "data/maps/Tucson/scripts.pory"
+# 280 "data/maps/Tucson/scripts.pory"
 	applymovement 2, Common_Movement_FaceLeft
-# 303 "data/maps/Tucson/scripts.pory"
+# 281 "data/maps/Tucson/scripts.pory"
 	waitmovement 0
 	goto Tucson_Script_Paris_1
 
 Tucson_Script_Paris_8:
-# 262 "data/maps/Tucson/scripts.pory"
-	setflag FLAG_TUCSON_PARIS_RECEIVED_INVITE
-# 263 "data/maps/Tucson/scripts.pory"
+# 242 "data/maps/Tucson/scripts.pory"
+	setflag FLAG_TUCSON_PARIS_DID_INVITE
+# 243 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_GiveInvites, MSGBOX_DEFAULT
-# 264 "data/maps/Tucson/scripts.pory"
+# 244 "data/maps/Tucson/scripts.pory"
 	closemessage
-# 265 "data/maps/Tucson/scripts.pory"
+# 245 "data/maps/Tucson/scripts.pory"
 	giveitem ITEM_WEDDING_INVITATION_HECTOR
-# 266 "data/maps/Tucson/scripts.pory"
+# 246 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT
-# 267 "data/maps/Tucson/scripts.pory"
+# 247 "data/maps/Tucson/scripts.pory"
 	closemessage
-# 268 "data/maps/Tucson/scripts.pory"
+# 248 "data/maps/Tucson/scripts.pory"
 	giveitem ITEM_WEDDING_INVITATION_AENEAS
-# 269 "data/maps/Tucson/scripts.pory"
+# 249 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT
-# 270 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT
-# 271 "data/maps/Tucson/scripts.pory"
+# 250 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_BringGuests, MSGBOX_DEFAULT
+# 251 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Paris_7
 
 Tucson_Script_Paris_11:
-# 279 "data/maps/Tucson/scripts.pory"
-	checkitem ITEM_WEDDING_INVITATION_AENEAS, 1
-# 280 "data/maps/Tucson/scripts.pory"
-	compare VAR_RESULT, TRUE
-	goto_if_eq Tucson_Script_Paris_14
-# 286 "data/maps/Tucson/scripts.pory"
+# 259 "data/maps/Tucson/scripts.pory"
+	compare VAR_AENEAS_STATE, 1
+	goto_if_lt Tucson_Script_Paris_14
+# 265 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris2, MSGBOX_DEFAULT
-# 287 "data/maps/Tucson/scripts.pory"
+# 266 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Paris_7
 
 Tucson_Script_Paris_14:
-# 281 "data/maps/Tucson/scripts.pory"
+# 260 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT
-# 282 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT
-# 283 "data/maps/Tucson/scripts.pory"
+# 261 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_BringGuests, MSGBOX_DEFAULT
+# 262 "data/maps/Tucson/scripts.pory"
 	closemessage
 	goto Tucson_Script_Paris_7
 
 Tucson_Script_Paris_18:
-# 295 "data/maps/Tucson/scripts.pory"
+# 273 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT
 	goto Tucson_Script_Paris_17
 
 
-Tucson_Script_Hector::
-# 315 "data/maps/Tucson/scripts.pory"
+Tucson_Script_Menelaus::
+# 293 "data/maps/Tucson/scripts.pory"
 	lock
-# 316 "data/maps/Tucson/scripts.pory"
+# 294 "data/maps/Tucson/scripts.pory"
 	faceplayer
+# 295 "data/maps/Tucson/scripts.pory"
+	switch VAR_NESTOR_STATE
+# 296 "data/maps/Tucson/scripts.pory"
+	case 0, Tucson_Script_Menelaus_3
+# 298 "data/maps/Tucson/scripts.pory"
+	case 1, Tucson_Script_Menelaus_4
+# 300 "data/maps/Tucson/scripts.pory"
+	case 2, Tucson_Script_Menelaus_5
+# 320 "data/maps/Tucson/scripts.pory"
+	case 3, Tucson_Script_Menelaus_6
+# 322 "data/maps/Tucson/scripts.pory"
+	case 4, Tucson_Script_Menelaus_7
+# 325 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Script_Menelaus_Text_5, MSGBOX_DEFAULT
+Tucson_Script_Menelaus_1:
+# 328 "data/maps/Tucson/scripts.pory"
+	closemessage
+# 329 "data/maps/Tucson/scripts.pory"
+	release
+	end
+
+Tucson_Script_Menelaus_3:
+# 297 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Menelaus1, MSGBOX_DEFAULT
+	goto Tucson_Script_Menelaus_1
+
+Tucson_Script_Menelaus_4:
+# 299 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Script_Menelaus_Text_0, MSGBOX_DEFAULT
+	goto Tucson_Script_Menelaus_1
+
+Tucson_Script_Menelaus_5:
+# 302 "data/maps/Tucson/scripts.pory"
+	goto_if_unset FLAG_TUCSON_MENELAUS_DID_INVITE, Tucson_Script_Menelaus_9
+# 314 "data/maps/Tucson/scripts.pory"
+	compare VAR_AGAMEMNON_STATE, 0
+	goto_if_gt Tucson_Script_Menelaus_12
 # 317 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_Hector, MSGBOX_NPC
-# 318 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Script_Menelaus_Text_2, MSGBOX_DEFAULT
+	goto Tucson_Script_Menelaus_1
+
+Tucson_Script_Menelaus_6:
+# 321 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Script_Menelaus_Text_3, MSGBOX_DEFAULT
+	goto Tucson_Script_Menelaus_1
+
+Tucson_Script_Menelaus_7:
+# 323 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Script_Menelaus_Text_4, MSGBOX_DEFAULT
+	goto Tucson_Script_Menelaus_1
+
+Tucson_Script_Menelaus_9:
+# 303 "data/maps/Tucson/scripts.pory"
+	setflag FLAG_TUCSON_MENELAUS_DID_INVITE
+# 304 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Menelaus_GiveInvites, MSGBOX_DEFAULT
+# 305 "data/maps/Tucson/scripts.pory"
+	closemessage
+# 306 "data/maps/Tucson/scripts.pory"
+	giveitem ITEM_WEDDING_INVITATION_AGAMEMNON
+# 307 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Menelaus_OnAgamemnon, MSGBOX_DEFAULT
+# 308 "data/maps/Tucson/scripts.pory"
+	closemessage
+# 309 "data/maps/Tucson/scripts.pory"
+	giveitem ITEM_WEDDING_INVITATION_AENEAS
+# 310 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Menelaus_OnUlysses, MSGBOX_DEFAULT
+# 311 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_BringGuests, MSGBOX_DEFAULT
+	goto Tucson_Script_Menelaus_1
+
+Tucson_Script_Menelaus_12:
+# 315 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Script_Menelaus_Text_1, MSGBOX_DEFAULT
+	goto Tucson_Script_Menelaus_1
+
+
+Tucson_Script_Hector::
+# 334 "data/maps/Tucson/scripts.pory"
+	lock
+# 335 "data/maps/Tucson/scripts.pory"
+	faceplayer
+# 336 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_Hector, MSGBOX_DEFAULT
+# 337 "data/maps/Tucson/scripts.pory"
 	release
 	end
 
 
-Tucson_Script_Menelaus_Text_0:
-# 138 "data/maps/Tucson/scripts.pory"
-	.string "NESTOR STATE 1$"
-
-Tucson_Script_Menelaus_Text_1:
-# 140 "data/maps/Tucson/scripts.pory"
-	.string "Check if ivitations are sent, if so then\n"
-	.string "check if guests are returned and say\l"
-	.string "either hels over there or good to see\l"
-	.string "him again$"
-
-Tucson_Script_Menelaus_Text_2:
-# 142 "data/maps/Tucson/scripts.pory"
-	.string "NESTOR STATE 3$"
-
-Tucson_Script_Menelaus_Text_3:
-# 144 "data/maps/Tucson/scripts.pory"
-	.string "NESTOR STATE OOB$"
-
 Tucson_Script_Helen_Text_0:
-# 243 "data/maps/Tucson/scripts.pory"
+# 223 "data/maps/Tucson/scripts.pory"
 	.string "After Wedding Return to House\n"
 	.string "Denumount$"
 
 Tucson_Script_Paris_Text_0:
-# 306 "data/maps/Tucson/scripts.pory"
+# 284 "data/maps/Tucson/scripts.pory"
 	.string "VAR_NESTOR_STATE OOB -\n"
 	.string "Tucson_Script_Paris$"
 
+Tucson_Script_Menelaus_Text_0:
+# 299 "data/maps/Tucson/scripts.pory"
+	.string "NESTOR STATE 1$"
+
+Tucson_Script_Menelaus_Text_1:
+# 315 "data/maps/Tucson/scripts.pory"
+	.string "Agamemnon is here$"
+
+Tucson_Script_Menelaus_Text_2:
+# 317 "data/maps/Tucson/scripts.pory"
+	.string "Agamemnon is NOT here$"
+
+Tucson_Script_Menelaus_Text_3:
+# 321 "data/maps/Tucson/scripts.pory"
+	.string "NESTOR STATE 3$"
+
+Tucson_Script_Menelaus_Text_4:
+# 323 "data/maps/Tucson/scripts.pory"
+	.string "NESTOR STATE 4$"
+
+Tucson_Script_Menelaus_Text_5:
+# 325 "data/maps/Tucson/scripts.pory"
+	.string "NESTOR STATE OOB$"
+
 Tucson_Text_Nestor_Intro::
-# 322 "data/maps/Tucson/scripts.pory"
+# 341 "data/maps/Tucson/scripts.pory"
 	.string "I've lived a happy and eventful life but\n"
 	.string "now I see my end approaching fast.\l"
 	.string "Without a son to inherit my wealth I\l"
@@ -494,21 +533,21 @@ Tucson_Text_Nestor_Intro::
 	.string "and the absent minded pretty Paris.$"
 
 Tucson_Text_Nestor1::
-# 326 "data/maps/Tucson/scripts.pory"
+# 345 "data/maps/Tucson/scripts.pory"
 	.string "My daughter Helen, much to my dismay,\n"
 	.string "refuses to marry until Castor and\l"
 	.string "Pollux her twin brothers return home.\l"
 	.string "Tell Castor and Pollux to hurry home.$"
 
 Tucson_Text_Nestor2::
-# 330 "data/maps/Tucson/scripts.pory"
+# 349 "data/maps/Tucson/scripts.pory"
 	.string "Thank you for helping to bring my sons\n"
 	.string "home. Without delay the preparations\l"
 	.string "for Helen's wedding must begin. Call\l"
 	.string "them in!$"
 
 Tucson_Text_Nestor3A::
-# 334 "data/maps/Tucson/scripts.pory"
+# 353 "data/maps/Tucson/scripts.pory"
 	.string "With great rejoicing we welcome back\n"
 	.string "the Dioscuri. Champion Castor and the\l"
 	.string "proud Pollux were gone for far too long\l"
@@ -537,7 +576,7 @@ Tucson_Text_Nestor3A::
 	.string "made tycoon of commerce and trade.$"
 
 Tucson_Text_Nestor3B::
-# 338 "data/maps/Tucson/scripts.pory"
+# 357 "data/maps/Tucson/scripts.pory"
 	.string "One of these two is my hand chosen heir\n"
 	.string "and groom to my only daughter, Helen.\l"
 	.string "This decision has kept me up at night,\l"
@@ -566,13 +605,13 @@ Tucson_Text_Nestor3B::
 	.string "thus?$"
 
 Tucson_Text_NestorGather1_Menelaus1::
-# 342 "data/maps/Tucson/scripts.pory"
+# 361 "data/maps/Tucson/scripts.pory"
 	.string "I swear, Nestor the wise, to hold Paris\n"
 	.string "as my brother if he, by your consent,\l"
 	.string "marries Helen and takes all your estate.$"
 
 Tucson_Text_NestorGather1_Paris1::
-# 346 "data/maps/Tucson/scripts.pory"
+# 365 "data/maps/Tucson/scripts.pory"
 	.string "Though it is most unlike myself to swear\n"
 	.string "an oath, for often oathes are lightly\l"
 	.string "made and quickly forgotten by those\l"
@@ -585,7 +624,7 @@ Tucson_Text_NestorGather1_Paris1::
 	.string "Helen shall wed.$"
 
 Tucson_Text_Nestor4A::
-# 350 "data/maps/Tucson/scripts.pory"
+# 369 "data/maps/Tucson/scripts.pory"
 	.string "It has been sworn. Now that we have\n"
 	.string "agreed that we shall hold eachother as\l"
 	.string "brothers before, during, and after the\l"
@@ -607,7 +646,7 @@ Tucson_Text_Nestor4A::
 	.string "attend will likewise be extraordinary.$"
 
 Tucson_Text_Nestor4B::
-# 354 "data/maps/Tucson/scripts.pory"
+# 373 "data/maps/Tucson/scripts.pory"
 	.string "I know the both of you have many men\n"
 	.string "under consideration to invite. Think\l"
 	.string "carefully and choose your men wisely,\l"
@@ -630,24 +669,18 @@ Tucson_Text_Nestor4B::
 	.string "us gentle and swift.$"
 
 Tucson_Text_Nestor5::
-# 358 "data/maps/Tucson/scripts.pory"
+# 377 "data/maps/Tucson/scripts.pory"
 	.string "Bring the suitors text$"
 
 Tucson_Text_Hector::
-# 362 "data/maps/Tucson/scripts.pory"
+# 381 "data/maps/Tucson/scripts.pory"
 	.string "It is a great honor and true privaledge\n"
 	.string "to be here in the great house of Nestor\l"
 	.string "to see the wedding of lovely Helen\l"
 	.string "whether my brother is the groom or not.$"
 
-Tucson_Text_Menelaus1::
-# 366 "data/maps/Tucson/scripts.pory"
-	.string "The thought of conquering Helen is more\n"
-	.string "exciting than all of the wealth I stand\l"
-	.string "to inherit from her father, Nestor.$"
-
 Tucson_Text_Helen1::
-# 370 "data/maps/Tucson/scripts.pory"
+# 385 "data/maps/Tucson/scripts.pory"
 	.string "Despite the radiant glow of your face\n"
 	.string "my heart still shivers cold, I'm\l"
 	.string "trembling. Dear Paris, know these tears\l"
@@ -657,13 +690,13 @@ Tucson_Text_Helen1::
 	.string "long and I now fear the worst.$"
 
 Tucson_Text_Helen2::
-# 374 "data/maps/Tucson/scripts.pory"
+# 389 "data/maps/Tucson/scripts.pory"
 	.string "Please leave us be unless you bring us\n"
 	.string "news that Castor and Pollux have\l"
 	.string "returned home.$"
 
 Tucson_Text_Helen3::
-# 378 "data/maps/Tucson/scripts.pory"
+# 393 "data/maps/Tucson/scripts.pory"
 	.string "Dear Paris I must not have slept last\n"
 	.string "night between my dreams of you and\l"
 	.string "those nightmares which filled my\l"
@@ -672,7 +705,7 @@ Tucson_Text_Helen3::
 	.string "I be merry again.$"
 
 Tucson_Text_Helen4::
-# 382 "data/maps/Tucson/scripts.pory"
+# 397 "data/maps/Tucson/scripts.pory"
 	.string "I secretly hope that your mission fails\n"
 	.string "and the invited guests never arrive so\l"
 	.string "my Paris and I can remain here as I fear\l"
@@ -680,7 +713,7 @@ Tucson_Text_Helen4::
 	.string "hideous as that face: Menelaus.$"
 
 Tucson_Text_Paris1::
-# 386 "data/maps/Tucson/scripts.pory"
+# 401 "data/maps/Tucson/scripts.pory"
 	.string "Do not defraud the world of your beauty\n"
 	.string "by desecrating your radiant glow with\l"
 	.string "worried looks, anxious breathes, or\l"
@@ -688,33 +721,33 @@ Tucson_Text_Paris1::
 	.string "give me.$"
 
 Tucson_Text_Paris_GiveInvites::
-# 390 "data/maps/Tucson/scripts.pory"
+# 405 "data/maps/Tucson/scripts.pory"
 	.string "Out of many brothers, and many friends,\n"
 	.string "I have decided who I shall invite. The\l"
 	.string "mighty Hector, my eldest brother, and\l"
 	.string "wise Aeneas my long time mentor.$"
 
 Tucson_Text_Paris_OnHector::
-# 394 "data/maps/Tucson/scripts.pory"
+# 409 "data/maps/Tucson/scripts.pory"
 	.string "Hector is a man of great discipline who\n"
 	.string "trains his body daily without rest. He\l"
 	.string "loves the cave beside the Bulbus Beach.$"
 
 Tucson_Text_Paris_OnAeneas::
-# 398 "data/maps/Tucson/scripts.pory"
+# 413 "data/maps/Tucson/scripts.pory"
 	.string "Old Aeneas departed these lands to\n"
 	.string "seek out Lavinian Shores across the\l"
 	.string "sea. He purposed to found a city upon\l"
 	.string "some savage uninhabited island.\l"
 	.string "Exactly where that is, I do not know.$"
 
-Tucson_Text_Paris_BringGuests::
-# 402 "data/maps/Tucson/scripts.pory"
+Tucson_Text_BringGuests::
+# 417 "data/maps/Tucson/scripts.pory"
 	.string "Deliver my invitations swiftly, gather\n"
 	.string "my guests so we can be married.$"
 
 Tucson_Text_Paris2::
-# 406 "data/maps/Tucson/scripts.pory"
+# 421 "data/maps/Tucson/scripts.pory"
 	.string "Thank you. It is a blessing to see my\n"
 	.string "brother, Hector, and dear old Aeneas,\l"
 	.string "gathered together with me in this\l"
@@ -723,3 +756,27 @@ Tucson_Text_Paris2::
 	.string "wedding, and more I hope he gives me his\l"
 	.string "consent to marry his daughter, my love,\l"
 	.string "Helen.$"
+
+Tucson_Text_Menelaus1::
+# 425 "data/maps/Tucson/scripts.pory"
+	.string "The thought of conquering Helen is more\n"
+	.string "exciting than all of the wealth I stand\l"
+	.string "to inherit from her father, Nestor.$"
+
+Tucson_Text_Menelaus_GiveInvites::
+# 429 "data/maps/Tucson/scripts.pory"
+	.string "I know exactly who I will invite to be in\n"
+	.string "attendance when I marry the luscious\l"
+	.string "Helen. My eldest brother Agamemnon and\l"
+	.string "my friend Ulysses.$"
+
+Tucson_Text_Menelaus_OnAgamemnon::
+# 433 "data/maps/Tucson/scripts.pory"
+	.string "My dear older brother Agamemnon lives\n"
+	.string "with his family in Aldeon.$"
+
+Tucson_Text_Menelaus_OnUlysses::
+# 437 "data/maps/Tucson/scripts.pory"
+	.string "Cunning Ulysses, who made great riches\n"
+	.string "with me in the business industry, lives\l"
+	.string "with wife and son on his private island.$"

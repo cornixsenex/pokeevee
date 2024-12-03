@@ -247,7 +247,7 @@ script Tucson_Script_Paris {
 			closemessage
 			giveitem (ITEM_WEDDING_INVITATION_AENEAS)
 			msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
-			msgbox (Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT)
+			msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 			closemessage
 		}
 		//He's given out his invitations
@@ -258,7 +258,7 @@ script Tucson_Script_Paris {
 				//check if Aeneas not here
 				if (var(VAR_AENEAS_STATE) < 1) {
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
-					msgbox (Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT)
+					msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 					closemessage
 				} else {
 					//His guests are here he waits excited for Nestor to gather the wedding party and announce his choice
@@ -272,7 +272,7 @@ script Tucson_Script_Paris {
 				if (var(VAR_AENEAS_STATE) < 1) {
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
 				}
-				msgbox (Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT)
+				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 				closemessage
 			}
 		}
@@ -298,26 +298,32 @@ script Tucson_Script_Menelaus {
 		case 1:
 			msgbox ("NESTOR STATE 1", MSGBOX_DEFAULT)
 		case 2:
+			//msgbox(format("Check if ivitations are sent, if so then check if guests are returned and say either hels over there or good to see him again"), MSGBOX_DEFAULT)
 			if (!flag(FLAG_TUCSON_MENELAUS_DID_INVITE)) {
 				setflag (FLAG_TUCSON_MENELAUS_DID_INVITE)
-				msgbox (Tucson_Text_Paris_GiveInvites, MSGBOX_DEFAULT)
+				msgbox (Tucson_Text_Menelaus_GiveInvites, MSGBOX_DEFAULT)
 				closemessage
 				giveitem (ITEM_WEDDING_INVITATION_AGAMEMNON)
-				msgbox (Tucson_Text_Paris_OnAgamemnon, MSGBOX_DEFAULT)
+				msgbox (Tucson_Text_Menelaus_OnAgamemnon, MSGBOX_DEFAULT)
 				closemessage
 				giveitem (ITEM_WEDDING_INVITATION_AENEAS)
-				msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
-				msgbox (Tucson_Text_Paris_BringGuests, MSGBOX_DEFAULT)
+				msgbox (Tucson_Text_Menelaus_OnUlysses, MSGBOX_DEFAULT)
+				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 			} else {
 				//Check is Agamemnon Here
-				if (
-
-
-			msgbox(format("Check if ivitations are sent, if so then check if guests are returned and say either hels over there or good to see him again"), MSGBOX_DEFAULT)
+				if (var(VAR_AGAMEMNON_STATE) > 0) {
+					msgbox (format("Agamemnon is here"), MSGBOX_DEFAULT)
+				} else {
+					msgbox (format("Agamemnon is NOT here"), MSGBOX_DEFAULT)
+				}
+			}
 		case 3:
 			msgbox ("NESTOR STATE 3", MSGBOX_DEFAULT)
+		case 4:
+			msgbox ("NESTOR STATE 4", MSGBOX_DEFAULT)
 		default:
 			msgbox ("NESTOR STATE OOB", MSGBOX_DEFAULT)
+
 	}
 	closemessage
 	release
@@ -376,10 +382,6 @@ text Tucson_Text_Hector {
 	format("It is a great honor and true privaledge to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
 }
 
-text Tucson_Text_Menelaus1 {
-	format("The thought of conquering Helen is more exciting than all of the wealth I stand to inherit from her father, Nestor.")
-}
-
 text Tucson_Text_Helen1 {
 	format ("Despite the radiant glow of your face my heart still shivers cold, I'm trembling. Dear Paris, know these tears that wet my cheecks are shed out of longing for Castor and Pollux. My dear brothers have been away for far too long and I now fear the worst.")
 }
@@ -412,10 +414,26 @@ text Tucson_Text_Paris_OnAeneas {
 	format("Old Aeneas departed these lands to seek out Lavinian Shores across the sea. He purposed to found a city upon some savage uninhabited island. Exactly where that is, I do not know.")
 }
 
-text Tucson_Text_Paris_BringGuests {
+text Tucson_Text_BringGuests {
 	format("Deliver my invitations swiftly, gather my guests so we can be married.")
 }
 
 text Tucson_Text_Paris2 {
 	format("Thank you. It is a blessing to see my brother, Hector, and dear old Aeneas, gathered together with me in this house. I hope that Nestor does not long delay the beginning of Helen's great wedding, and more I hope he gives me his consent to marry his daughter, my love, Helen.")
+}
+
+text Tucson_Text_Menelaus1 {
+	format("The thought of conquering Helen is more exciting than all of the wealth I stand to inherit from her father, Nestor.")
+}
+
+text Tucson_Text_Menelaus_GiveInvites {
+   format("I know exactly who I will invite to be in attendance when I marry the luscious Helen. My eldest brother Agamemnon and my friend Ulysses.")
+}	   
+
+text Tucson_Text_Menelaus_OnAgamemnon {
+	format("My dear older brother Agamemnon lives with his family in Aldeon.")
+}
+
+text Tucson_Text_Menelaus_OnUlysses {
+	format("Cunning Ulysses, who made great riches with me in the business industry, lives with wife and son on his private island.")
 }

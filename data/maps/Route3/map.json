@@ -24,19 +24,19 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE17",
-      "offset": 9,
+      "map": "MAP_SILVAN_WOODS",
+      "offset": 20,
       "direction": "up"
-    },
-    {
-      "map": "MAP_MARE_WWW",
-      "offset": -36,
-      "direction": "down"
     },
     {
       "map": "MAP_MARE_WW",
       "offset": 30,
       "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_WWW",
+      "offset": -36,
+      "direction": "down"
     }
   ],
   "object_events": [

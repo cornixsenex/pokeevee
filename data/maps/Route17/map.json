@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE3",
-      "offset": -9,
-      "direction": "down"
-    },
-    {
       "map": "MAP_WILLOW",
       "offset": -1,
       "direction": "up"
+    },
+    {
+      "map": "MAP_SILVAN_WOODS",
+      "offset": 146,
+      "direction": "right"
     }
   ],
   "object_events": [

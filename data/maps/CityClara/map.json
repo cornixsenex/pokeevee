@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE3",
-      "offset": 45,
-      "direction": "left"
-    },
-    {
       "map": "MAP_ROUTE4",
       "offset": 62,
       "direction": "up"
@@ -37,6 +32,16 @@
       "map": "MAP_MARE_W",
       "offset": 39,
       "direction": "down"
+    },
+    {
+      "map": "MAP_SILVAN_WOODS",
+      "offset": -23,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE3",
+      "offset": 45,
+      "direction": "left"
     }
   ],
   "object_events": [
