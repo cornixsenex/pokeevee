@@ -1,0 +1,15 @@
+
+#CONFLICT (content): Merge conflict in Makefile
+	>Add poryscript, change ROM name
+*CONFLICT (modify/delete): include/constants/layouts.h deleted in 2e6562740674f29be8c756fe6a6a91f8d5322d46 and modified in HEAD.  Version HEAD of include/constants/layouts.h left in tree.
+*CONFLICT (modify/delete): include/constants/map_groups.h deleted in 2e6562740674f29be8c756fe6a6a91f8d5322d46 and modified in HEAD.  Version HEAD of include/constants/map_groups.h left in tree.
+*CONFLICT (modify/delete): songs.mk deleted in 2e6562740674f29be8c756fe6a6a91f8d5322d46 and modified in HEAD.  Version
+#CONFLICT (content): Merge conflict in src/link_rfu_2.c
+	>Sound server
+#CONFLICT (content): Merge conflict in src/pokenav_match_call_data.cs
+	>Removed vanilla flags
+
+>Check Custom Music works
+>Check sounds in general works
+>Build
+>Check custom maps
