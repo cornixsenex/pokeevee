@@ -65,24 +65,9 @@ $CONFLICT (modify/delete): sym_common.txt deleted in 337822305fed0f9edb0d0fccf00
 $CONFLICT (modify/delete): sym_ewram.txt deleted in 337822305fed0f9edb0d0fccf00aad001bbc0b99 and modified in HEAD.  Version HEAD of sym_ewram.txt left in tree.
 
 
-
->Check ROM name
->Check item descriptions / berries 
->Check RIVAL_NAME works
->Check remove showitemdesc (RHH base should be standard)
->Check custom items work (Surfboard, Kind bud, other)
->Check sideways stairs work
->Check IgnisMons false floor
->Check Colchis forced battle
->Test Book
->Test Ostracon
->Check rock climb
->Check custom trainer classes
->Check obedience
->Check bikes on sideways stairs
->Check custom trainer sprites
->Check followers on sideways stairs
->Check new game resets items
->Check battles, ev gain correctly
->Check name rival screen
->Check IsRockTypeInParty
+Problems:
+	>Follower palette in grandmas cabin broken
+	>Kind bud has now item number like x1 when give itemed it
+	>Some berries' object events (movements?) are a little broken
+	>Mew trigger outside grandma's house may be broken or at least the show mew part
+	>Rock Climb HM description (doesn't matter I want to replace it with Climbing Shoes anyways :/ )
