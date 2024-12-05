@@ -67,7 +67,4 @@ $CONFLICT (modify/delete): sym_ewram.txt deleted in 337822305fed0f9edb0d0fccf00a
 
 Problems:
 	>Follower palette in grandmas cabin broken
-	>Kind bud has now item number like x1 when give itemed it
 	>Some berries' object events (movements?) are a little broken
-	>Mew trigger outside grandma's house may be broken or at least the show mew part
-	>Rock Climb HM description (doesn't matter I want to replace it with Climbing Shoes anyways :/ )

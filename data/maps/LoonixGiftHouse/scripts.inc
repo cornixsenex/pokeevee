@@ -256,7 +256,7 @@ LoonixGiftHouse_Item_Kind_Bud::
 # 141 "data/maps/LoonixGiftHouse/scripts.pory"
 	faceplayer
 # 142 "data/maps/LoonixGiftHouse/scripts.pory"
-	giveitem ITEM_POTION
+	giveitem ITEM_KIND_BUD, 1
 # 155 "data/maps/LoonixGiftHouse/scripts.pory"
 	release
 	end

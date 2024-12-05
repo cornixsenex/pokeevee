@@ -14210,7 +14210,6 @@ const struct Item gItemsInfo[] =
 		.price = 420,
         .holdEffectParam = 255,
 		.description = sKindBudDesc,
-		.importance = 1,
 		.pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,

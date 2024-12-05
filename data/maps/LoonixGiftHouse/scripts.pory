@@ -139,7 +139,7 @@ script LoonixGiftHouse_MewFanfare {
 script LoonixGiftHouse_Item_Kind_Bud {
 	lock
 	faceplayer
-	giveitem (ITEM_POTION)
+	giveitem (ITEM_KIND_BUD, 1)
 	//checkitem (ITEM_KIND_BUD, 1)
 	//if (var(VAR_RESULT) == 0) {
 	//	msgbox (LoonixGiftHouse_Kind_Bud_Find)
