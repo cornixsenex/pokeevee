@@ -205,12 +205,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
-<<<<<<< HEAD
-	
-    memset(&gSaveBlock2Ptr->itemFlags, 0, sizeof(gSaveBlock2Ptr->itemFlags));
-=======
     ResetItemFlags();
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 }
 
 static void ResetMiniGamesRecords(void)

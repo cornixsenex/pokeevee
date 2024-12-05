@@ -155,16 +155,14 @@ bool8 MetatileBehavior_IsDirectionalUpLeftStairWarp(u8 metatileBehavior);
 bool8 MetatileBehavior_IsDirectionalDownRightStairWarp(u8 metatileBehavior);
 bool8 MetatileBehavior_IsDirectionalDownLeftStairWarp(u8 metatileBehavior);
 bool8 MetatileBehavior_IsDirectionalStairWarp(u8 metatileBehavior);
-<<<<<<< HEAD
+
 bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior);
 bool8 MetatileBehavior_IsRockStairs(u8);
 //sideways stairs
-=======
 bool8 MetatileBehavior_IsSignpost(u32);
 bool8 MetatileBehavior_IsPokemonCenterSign(u32);
 bool8 MetatileBehavior_IsPokeMartSign(u32);
 bool8 MetatileBehavior_IsRockStairs(u8);
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 bool8 MetatileBehavior_IsSidewaysStairsRightSide(u8);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSide(u8);
 bool8 MetatileBehavior_IsSidewaysStairsRightSideTop(u8 metatileBehavior);
@@ -173,7 +171,7 @@ bool8 MetatileBehavior_IsSidewaysStairsRightSideBottom(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideBottom(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsRightSideAny(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior);
-<<<<<<< HEAD
+
 //Spin Tiles
 bool8 MetatileBehavior_IsSpinRight(u8);
 bool8 MetatileBehavior_IsSpinLeft(u8);
@@ -197,8 +195,5 @@ bool8 MetatileBehavior_IsFalseFloorHole(u8); // Ignis Mons False Floor
 
 //Colchis Forced Battle (Can prolly be generalized)
 bool8 MetatileBehavior_IsColchisBattle(u8);
-
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 
 #endif // GUARD_METATILE_BEHAVIOR_H

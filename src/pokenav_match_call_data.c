@@ -203,14 +203,9 @@ static const struct MatchCallBirch sProfBirchMatchCallHeader =
 {
     .type = MC_TYPE_BIRCH,
     .mapSec = 0,
-<<<<<<< HEAD
-    .desc = gText_ProfBirchMatchCallDesc,
-    .name = gText_ProfBirchMatchCallName
-=======
     .flag = FLAG_ENABLE_PROF_BIRCH_MATCH_CALL,
     .desc = COMPOUND_STRING("{PKMN} PROF."),
     .name = COMPOUND_STRING("PROF. BIRCH")
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 };
 
 static const match_call_text_data_t sMomTextScripts[] = {
@@ -222,14 +217,9 @@ static const struct MatchCallStructNPC sMomMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
     .mapSec = MAPSEC_LITTLEROOT_TOWN,
-<<<<<<< HEAD
-    .desc = gText_MomMatchCallDesc,
-    .name = gText_MomMatchCallName,
-=======
     .flag = FLAG_ENABLE_MOM_MATCH_CALL,
     .desc = COMPOUND_STRING("CALM & KIND"),
     .name = COMPOUND_STRING("MOM"),
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     .textData = sMomTextScripts
 };
 
@@ -242,14 +232,9 @@ static const struct MatchCallStructNPC sStevenMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
     .mapSec = MAPSEC_NONE,
-<<<<<<< HEAD
-    .desc = gText_StevenMatchCallDesc,
-    .name = gText_StevenMatchCallName,
-=======
     .flag = FLAG_REGISTERED_STEVEN_POKENAV,
     .desc = COMPOUND_STRING("HARD AS ROCK"),
     .name = COMPOUND_STRING("STEVEN"),
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     .textData = sStevenTextScripts
 };
 
@@ -340,14 +325,9 @@ static const struct MatchCallStructNPC sScottMatchCallHeader =
 {
     .type = 0,
     .mapSec = MAPSEC_NONE,
-<<<<<<< HEAD
-    .desc = gText_ScottMatchCallDesc,
-    .name = gText_ScottMatchCallName,
-=======
     .flag = FLAG_ENABLE_SCOTT_MATCH_CALL,
     .desc = COMPOUND_STRING("ELUSIVE EYES"),
     .name = COMPOUND_STRING("SCOTT"),
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     .textData = sScottTextScripts
 };
 

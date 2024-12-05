@@ -1038,11 +1038,7 @@ bool8 ScrCmd_applymovementat(struct ScriptContext *ctx)
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
 
-<<<<<<< HEAD
-   // gObjectEvents[GetObjectEventIdByLocalId(localId)].directionOverwrite = DIR_NONE;
-=======
     gObjectEvents[GetObjectEventIdByLocalId(localId)].directionOverwrite = DIR_NONE;
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     ScriptMovement_StartObjectMovementScript(localId, mapNum, mapGroup, movementScript);
     sMovingNpcId = localId;
     return FALSE;
@@ -2478,18 +2474,6 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     DoWhiteFadeWarp();
     ResetInitialPlayerAvatarState();
     return TRUE;
-}
-
-bool8 ScrCmd_showitemdesc(struct ScriptContext *ctx)
-{
-    DrawHeaderBox();
-    return FALSE;
-}
-
-bool8 ScrCmd_hideitemdesc(struct ScriptContext *ctx)
-{
-    HideHeaderBox();
-    return FALSE;
 }
 
 void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)

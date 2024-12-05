@@ -3979,11 +3979,6 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             if (dataSigned >= evCap)
                                 return TRUE;  // Prevents item use if the per-stat cap is already reached
 
-<<<<<<< HEAD
-                            // Limit the increase
-
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
                             if (dataSigned + evChange > evCap)
                                 temp2 = evCap - dataSigned;
                             else
@@ -4169,25 +4164,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             // Ensure the increase does not exceed the max EV per stat (252)
                             evCap = (itemEffect[10] & ITEM10_IS_VITAMIN) ? EV_ITEM_RAISE_LIMIT : MAX_PER_STAT_EVS;
 
-<<<<<<< HEAD
-                            if (dataSigned >= EV_ITEM_RAISE_LIMIT)
-                                break;
-
-                            if (dataSigned + evChange > evCap)
-                                temp2 = evCap - (dataSigned + evChange) + evChange;
-
-                            // Limit the increase
-                            if (dataSigned + evChange > evCap)
-                                temp2 = EV_ITEM_RAISE_LIMIT - (dataSigned + evChange) + evChange;
-
-=======
                             // Check if the per-stat limit is reached
                             if (dataSigned >= evCap)
                                 return TRUE;  // Prevents item use if the per-stat cap is already reached
 
                             if (dataSigned + evChange > evCap)
                                 temp2 = evCap - dataSigned;
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
                             else
                                 temp2 = evChange;
 

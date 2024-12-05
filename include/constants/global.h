@@ -163,7 +163,7 @@
 #define AXIS_Y     1
 #define AXIS_COUNT 2
 
-#define SLOW_MOVEMENT_ON_STAIRS         TRUE
+//Pretty sure I don't need either of these - 12-24
 #define FOLLOW_ME_IMPLEMENTED           FALSE    //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
 #define DYNAMIC_OW_PALS         TRUE
 

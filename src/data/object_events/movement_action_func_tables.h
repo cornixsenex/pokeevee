@@ -266,8 +266,8 @@ u8 MovementAction_FlyUp_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_Fly_Finish(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_FlyDown_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_FlyDown_Step1(struct ObjectEvent *, struct Sprite *);
-<<<<<<< HEAD
-//fast diagonal
+
+//fast diagonal - Added for rock climb
 u8 MovementAction_WalkFastDiagonalUpLeft_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFastDiagonalUpRight_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFastDiagonalDownLeft_Step0(struct ObjectEvent *, struct Sprite *);
@@ -275,14 +275,11 @@ u8 MovementAction_WalkFastDiagonalDownRight_Step0(struct ObjectEvent *, struct S
 u8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *, struct Sprite *);
 
 //slow running
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 u8 MovementActionFunc_RunSlowDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementActionFunc_RunSlowUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementActionFunc_RunSlowLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementActionFunc_RunSlowRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementActionFunc_RunSlow_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-<<<<<<< HEAD
 
 //Spin Tiles
 u8 MovementAction_SpinDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
@@ -293,10 +290,6 @@ u8 MovementAction_SpinLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite 
 u8 MovementAction_SpinLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementAction_SpinRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementAction_SpinRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
-
-
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 
 u8 (*const gMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FaceUp[])(struct ObjectEvent *, struct Sprite *);
@@ -652,35 +645,25 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
 
     [MOVEMENT_ACTION_EXIT_POKEBALL] = gMovementActionFuncs_ExitPokeball,
     [MOVEMENT_ACTION_ENTER_POKEBALL] = gMovementActionFuncs_EnterPokeball,
-<<<<<<< HEAD
-
-	// KUSTOM
-	
-    //fast diagonal
-    //[MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT] = gMovementActionFuncs_WalkFastDiagonalUpLeft,
-    //[MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT] = gMovementActionFuncs_WalkFastDiagonalUpRight,
-    [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT] = gMovementActionFuncs_WalkFastDiagonalDownLeft,
-    [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT] = gMovementActionFuncs_WalkFastDiagonalDownRight,
     
     //run slow
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     [MOVEMENT_ACTION_RUN_DOWN_SLOW] = gMovementActionFuncs_RunDownSlow,
     [MOVEMENT_ACTION_RUN_UP_SLOW] = gMovementActionFuncs_RunUpSlow,
     [MOVEMENT_ACTION_RUN_LEFT_SLOW] = gMovementActionFuncs_RunLeftSlow,
     [MOVEMENT_ACTION_RUN_RIGHT_SLOW] = gMovementActionFuncs_RunRightSlow,
-<<<<<<< HEAD
 
-	//Spin Tiles
+   	//fast diagonal - added for Rock Climb...
+    [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT] = gMovementActionFuncs_WalkFastDiagonalUpLeft,
+    [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT] = gMovementActionFuncs_WalkFastDiagonalUpRight,
+    [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT] = gMovementActionFuncs_WalkFastDiagonalDownLeft,
+    [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT] = gMovementActionFuncs_WalkFastDiagonalDownRight,
 	
+	//Spin Tiles
 	[MOVEMENT_ACTION_SPIN_DOWN] = gMovementActionFuncs_SpinDown,
     [MOVEMENT_ACTION_SPIN_UP] = gMovementActionFuncs_SpinUp,
     [MOVEMENT_ACTION_SPIN_LEFT] = gMovementActionFuncs_SpinLeft,
     [MOVEMENT_ACTION_SPIN_RIGHT] = gMovementActionFuncs_SpinRight,
 
-	// END KUSTOM
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 };
 
 
@@ -1644,7 +1627,6 @@ u8 (*const gMovementActionFuncs_EmoteDoubleExclMark[])(struct ObjectEvent *, str
     MovementAction_Finish,
 };
 
-<<<<<<< HEAD
 // KUSTOM
 
 // fast diagonal
@@ -1673,8 +1655,6 @@ u8 (*const gMovementActionFuncs_WalkFastDiagonalDownRight[])(struct ObjectEvent 
 };
 
 //slow running
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 u8 (*const gMovementActionFuncs_RunDownSlow[])(struct ObjectEvent *, struct Sprite *) = {
     MovementActionFunc_RunSlowDown_Step0,
     MovementActionFunc_RunSlow_Step1,
@@ -1698,7 +1678,6 @@ u8 (*const gMovementActionFuncs_RunRightSlow[])(struct ObjectEvent *, struct Spr
     MovementActionFunc_RunSlow_Step1,
     MovementAction_PauseSpriteAnim,
 };
-<<<<<<< HEAD
 
 //Spin Tiles
 
@@ -1726,7 +1705,4 @@ u8 (*const gMovementActionFuncs_SpinRight[])(struct ObjectEvent *, struct Sprite
     MovementAction_PauseSpriteAnim,
 };
 
-// END KUSTOM
 
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99

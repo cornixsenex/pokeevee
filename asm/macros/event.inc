@@ -1853,24 +1853,6 @@
 	.2byte \quantity
 	.endm
     
-    .macro showdescription
-    .byte 0xe5
-    .endm
-    
-    .macro showitemdesc
-    setvar VAR_0x8009, 0
-    showdescription
-    .endm
-    
-    .macro showberrydesc
-    setvar VAR_0x8009, 1
-    showdescription
-    .endm
-    
-    .macro hideitemdesc
-    .byte 0xe6
-    .endm
-
 	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
 	.byte 0xe3
 	.2byte \left

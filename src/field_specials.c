@@ -4504,7 +4504,62 @@ void PreparePartyForSkyBattle(void)
     CompactPartySlots();
 }
 
-<<<<<<< HEAD
+void GetObjectPosition(u16* xPointer, u16* yPointer, u32 localId, u32 useTemplate)
+{
+    u32 objectId;
+    struct ObjectEvent* objEvent;
+
+    if (useTemplate)
+    {
+        const struct ObjectEventTemplate *objTemplate = FindObjectEventTemplateByLocalId(localId, gSaveBlock1Ptr->objectEventTemplates, gMapHeader.events->objectEventCount);
+        *xPointer = objTemplate->x;
+        *yPointer = objTemplate->y;
+        return;
+    }
+
+    objectId = GetObjectEventIdByLocalId(localId);
+    objEvent = &gObjectEvents[objectId];
+    *xPointer = objEvent->currentCoords.x - 7;
+    *yPointer = objEvent->currentCoords.y - 7;
+}
+
+bool32 CheckObjectAtXY(u32 x, u32 y)
+{
+    u32 i;
+
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if (!gObjectEvents[i].active)
+            continue;
+
+        if (gObjectEvents[i].currentCoords.x != x)
+            continue;
+
+        if (gObjectEvents[i].currentCoords.y != y)
+            continue;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool32 CheckPartyHasSpecies(u32 givenSpecies)
+{
+    u32 partyIndex;
+
+    for (partyIndex = 0; partyIndex < CalculatePlayerPartyCount(); partyIndex++)
+        if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
+            return TRUE;
+
+    return FALSE;
+}
+
+void UseBlankMessageToCancelPokemonPic(void)
+{
+    u8 t = EOS;
+    AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
+    ScriptMenu_HidePokemonPic();
+}
+
 //CUSTOMS
 // - DO NOTE: VARIABLES MUST BE DECLARED AT THE TOP OF FUNCTION C89 BS OR SMTHN
 
@@ -4879,51 +4934,12 @@ bool32 IsRockTypeInParty(void)
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
             if (gSpeciesInfo[species].types[0] == TYPE_ROCK || gSpeciesInfo[species].types[1] == TYPE_ROCK)
-            {
                 return TRUE;
-            }
         }
-=======
-void GetObjectPosition(u16* xPointer, u16* yPointer, u32 localId, u32 useTemplate)
-{
-    u32 objectId;
-    struct ObjectEvent* objEvent;
-
-    if (useTemplate)
-    {
-        const struct ObjectEventTemplate *objTemplate = FindObjectEventTemplateByLocalId(localId, gSaveBlock1Ptr->objectEventTemplates, gMapHeader.events->objectEventCount);
-        *xPointer = objTemplate->x;
-        *yPointer = objTemplate->y;
-        return;
-    }
-
-    objectId = GetObjectEventIdByLocalId(localId);
-    objEvent = &gObjectEvents[objectId];
-    *xPointer = objEvent->currentCoords.x - 7;
-    *yPointer = objEvent->currentCoords.y - 7;
+	}
+	return FALSE;
 }
 
-bool32 CheckObjectAtXY(u32 x, u32 y)
-{
-    u32 i;
-
-    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
-    {
-        if (!gObjectEvents[i].active)
-            continue;
-
-        if (gObjectEvents[i].currentCoords.x != x)
-            continue;
-
-        if (gObjectEvents[i].currentCoords.y != y)
-            continue;
-        return TRUE;
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
-    }
-    return FALSE;
-}
-
-<<<<<<< HEAD
 bool32 IsGroundTypeInParty(void)
 {
     u32 i;
@@ -5787,30 +5803,3 @@ void DoShinyMareepBattle(void)
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
 }
-
-
-
-
-
-
-
-
-=======
-bool32 CheckPartyHasSpecies(u32 givenSpecies)
-{
-    u32 partyIndex;
-
-    for (partyIndex = 0; partyIndex < CalculatePlayerPartyCount(); partyIndex++)
-        if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
-            return TRUE;
-
-    return FALSE;
-}
-
-void UseBlankMessageToCancelPokemonPic(void)
-{
-    u8 t = EOS;
-    AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
-    ScriptMenu_HidePokemonPic();
-}
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99

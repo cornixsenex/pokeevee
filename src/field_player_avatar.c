@@ -105,15 +105,12 @@ static bool8 PlayerAnimIsMultiFrameStationaryAndStateNotTurning(void);
 static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
-<<<<<<< HEAD
+//Spin Tiles
 static void PlayerGoSpin(u8 direction);
 static void PlayerApplyTileForcedMovement(u8 metatileBehavior);
 
 
-static void PlayerGoSlow(u8 direction);
-=======
 static void PlayerWalkSlow(u8 direction);
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 static void PlayerRunSlow(u8 direction);
 static void PlayerRun(u8);
 static void PlayerNotOnBikeCollide(u8);
@@ -773,11 +770,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerRunSlow(direction);
         else
             PlayerRun(direction);
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
 
         if (heldKeys & B_BUTTON && gSaveBlock2Ptr->autoRun == TRUE)
@@ -794,15 +787,9 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     else
     {
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
-<<<<<<< HEAD
-            PlayerGoSlow(direction);
-        else
-        	PlayerWalkNormal(direction);
-=======
             PlayerWalkSlow(direction);
         else
             PlayerWalkNormal(direction);
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     }
 }
 
@@ -833,12 +820,10 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
 u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
-<<<<<<< HEAD
+
+	//For Kustom Special Collisions
     u8 currentBehavior = MapGridGetMetatileBehaviorAt(objectEvent->currentCoords.x, objectEvent->currentCoords.y);
     
-=======
-
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
         
@@ -867,26 +852,7 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
             return COLLISION_ROTATING_GATE;
         CheckAcroBikeCollision(x, y, metatileBehavior, &collision);
     }
-<<<<<<< HEAD
-    
-    //sideways stairs logic
-    
-    if (MetatileBehavior_IsSidewaysStairsLeftSideTop(metatileBehavior) && direction == DIR_EAST)
-        return COLLISION_IMPASSABLE;    //moving onto left-side top edge east from ground -> cannot move
-    else if (MetatileBehavior_IsSidewaysStairsRightSideTop(metatileBehavior) && direction == DIR_WEST)
-        return COLLISION_IMPASSABLE;    //moving onto left-side top edge east from ground -> cannot move
-    else if (MetatileBehavior_IsSidewaysStairsRightSideBottom(metatileBehavior) && (direction == DIR_EAST || direction == DIR_SOUTH))
-        return COLLISION_IMPASSABLE;
-    else if (MetatileBehavior_IsSidewaysStairsLeftSideBottom(metatileBehavior) && (direction == DIR_WEST || direction == DIR_SOUTH))
-        return COLLISION_IMPASSABLE;
-    else if ((MetatileBehavior_IsSidewaysStairsLeftSideTop(currentBehavior) || MetatileBehavior_IsSidewaysStairsRightSideTop(currentBehavior))
-     && direction == DIR_NORTH && collision == COLLISION_NONE)
-        return COLLISION_IMPASSABLE;    //trying to move north off of top-most tile onto same level doesn't work
-    
-        
-=======
 
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     return collision;
 }
 
@@ -1173,11 +1139,7 @@ void PlayerSetAnimId(u8 movementActionId, u8 copyableMovement)
 }
 
 // slow
-<<<<<<< HEAD
-static void PlayerGoSlow(u8 direction)
-=======
 static void PlayerWalkSlow(u8 direction)
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 {
     PlayerSetAnimId(GetWalkSlowMovementAction(direction), 2);
 }
@@ -2710,7 +2672,6 @@ static u8 TrySpinPlayerForWarp(struct ObjectEvent *object, s16 *delayTimer)
     return sSpinDirections[object->facingDirection];
 }
 
-<<<<<<< HEAD
 // Surfboard
 static bool8 CanStartSurfing(s16 x, s16 y, u8 direction)
 {
@@ -2782,8 +2743,6 @@ static void Task_WaitStartSurfing(u8 taskId)
     }
 }
 
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 //sideways stairs
 u8 GetRightSideStairsDirection(u8 direction)
 {
@@ -2796,14 +2755,9 @@ u8 GetRightSideStairsDirection(u8 direction)
     default:
         if (direction > DIR_EAST)
             direction -= DIR_EAST;
-<<<<<<< HEAD
-        
-        return direction;
-    }           
-=======
+
         return direction;
     }
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 }
 
 u8 GetLeftSideStairsDirection(u8 direction)
@@ -2817,26 +2771,12 @@ u8 GetLeftSideStairsDirection(u8 direction)
     default:
         if (direction > DIR_EAST)
             direction -= DIR_EAST;
-<<<<<<< HEAD
-        
-=======
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
         return direction;
     }
 }
 
 bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
 {
-<<<<<<< HEAD
-    #if SLOW_MOVEMENT_ON_STAIRS
-        s16 x = objectEvent->currentCoords.x;
-        s16 y = objectEvent->currentCoords.y;
-        
-        //#if FOLLOW_ME_IMPLEMENTED
-            //if (PlayerHasFollower() && (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId()))
-        //#endif
-        
-=======
     #if SLOW_MOVEMENT_ON_STAIRS == TRUE
         s16 x = objectEvent->currentCoords.x;
         s16 y = objectEvent->currentCoords.y;
@@ -2845,7 +2785,6 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
         if (IsFollowerVisible() && GetFollowerObject() != NULL && (objectEvent->isPlayer || objectEvent->localId == OBJ_EVENT_ID_FOLLOWER))
             return FALSE;
 
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
         switch (direction)
         {
         case DIR_NORTH:

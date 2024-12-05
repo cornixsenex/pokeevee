@@ -1405,13 +1405,6 @@ static void GetStairsMovementDirection(u32 metatileBehavior, s16 *speedX, s16 *s
 {
     if (MetatileBehavior_IsDirectionalUpRightStairWarp(metatileBehavior))
     {
-<<<<<<< HEAD
-        *a2 += *a0;
-        *a3 += *a1;
-        sprite->x2 = *a2 >> 5;
-        sprite->y2 = *a3 >> 5;
-        (*a4)--;
-=======
         *speedX = 16;
         *speedY = -10;
     }
@@ -1447,7 +1440,6 @@ static bool8 WaitStairExitMovementFinished(s16 *speedX, s16 *speedY, s16 *offset
         sprite->x2 = *offsetX >> 5;
         sprite->y2 = *offsetY >> 5;
         (*timer)--;
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
         return TRUE;
     }
     else
@@ -1478,17 +1470,10 @@ static void ExitStairsMovement(s16 *speedX, s16 *speedY, s16 *offsetX, s16 *offs
     *offsetY = *speedY * 16;
     *timer = 16;
     sprite = &gSprites[gPlayerAvatar.spriteId];
-<<<<<<< HEAD
-    sprite->x2 = *a2 >> 5;
-    sprite->y2 = *a3 >> 5;
-    *a0 *= -1;
-    *a1 *= -1;
-=======
     sprite->x2 = *offsetX >> 5;
     sprite->y2 = *offsetY >> 5;
     *speedX *= -1;
     *speedY *= -1;
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 }
 
 #define tState data[0]
@@ -1515,13 +1500,8 @@ static void Task_ExitStairs(u8 taskId)
         Overworld_PlaySpecialMapMusic();
         WarpFadeInScreen();
         LockPlayerFieldControls();
-<<<<<<< HEAD
-        ExitStairsMovement(&data[1], &data[2], &data[3], &data[4], &data[5]);
-        data[0]++;
-=======
         ExitStairsMovement(&tSpeedX, &tSpeedY, &tOffsetX, &tOffsetY, &tTimer);
         tState++;
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
         break;
     case 1:
         if (!WaitStairExitMovementFinished(&tSpeedX, &tSpeedY, &tOffsetX, &tOffsetY, &tTimer))
@@ -1551,20 +1531,6 @@ static void ForceStairsMovement(u32 metatileBehavior, s16 *speedX, s16 *speedY)
 
 static void UpdateStairsMovement(s16 speedX, s16 speedY, s16 *offsetX, s16 *offsetY, s16 *timer)
 {
-<<<<<<< HEAD
-    struct Sprite *playerSpr = &gSprites[gPlayerAvatar.spriteId];
-    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
-    
-    if (a1 > 0 || *a4 > 6)
-        *a3 += a1;
-    
-    *a2 += a0;
-    (*a4)++;
-    playerSpr->x2 = *a2 >> 5;
-    playerSpr->y2 = *a3 >> 5;
-    if (playerObj->heldMovementFinished)
-        ObjectEventForceSetHeldMovement(playerObj, GetWalkInPlaceNormalMovementAction(GetPlayerFacingDirection()));
-=======
     struct Sprite *playerSprite = &gSprites[gPlayerAvatar.spriteId];
     struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
@@ -1577,7 +1543,6 @@ static void UpdateStairsMovement(s16 speedX, s16 speedY, s16 *offsetX, s16 *offs
     playerSprite->y2 = *offsetY >> 5;
     if (playerObjectEvent->heldMovementFinished)
         ObjectEventForceSetHeldMovement(playerObjectEvent, GetWalkInPlaceNormalMovementAction(GetPlayerFacingDirection()));
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 }
 
 static void Task_StairWarp(u8 taskId)
@@ -1592,11 +1557,7 @@ static void Task_StairWarp(u8 taskId)
         LockPlayerFieldControls();
         FreezeObjectEvents();
         CameraObjectFreeze();
-<<<<<<< HEAD
-        data[0]++;
-=======
         tState++;
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
         break;
     case 1:
         if (!ObjectEventIsMovementOverridden(playerObjectEvent) || ObjectEventClearHeldMovementIfFinished(playerObjectEvent))

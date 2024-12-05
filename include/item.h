@@ -85,19 +85,6 @@ u32 ItemId_GetFlingPower(u32 itemId);
 u32 GetItemStatus1Mask(u16 itemId);
 u32 GetItemStatus2Mask(u16 itemId);
 
-//Ghoul's item description stuffs
-//
-void DrawHeaderBox(void);
-void HideHeaderBox(void);
-
-enum ItemObtainFlags
-{
-    FLAG_GET_OBTAINED,
-    FLAG_SET_OBTAINED,
-};
-//
-//End Ghoul's item description stuffs
-
 /* Expands to:
  * enum
  * {

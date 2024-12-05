@@ -3143,10 +3143,8 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 else
                     toCpy = sText_Opposing2;
                 break;
-<<<<<<< HEAD
             case B_TXT_RIVAL_NAME:
                 toCpy = gSaveBlock2Ptr->rivalName;
-=======
             case B_TXT_ATK_NAME_WITH_PREFIX2:
                 HANDLE_NICKNAME_STRING_LOWERCASE(gBattlerAttacker)
                 break;
@@ -3158,7 +3156,6 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 break;
             case B_TXT_SCR_ACTIVE_NAME_WITH_PREFIX2:
                 HANDLE_NICKNAME_STRING_LOWERCASE(gBattleScripting.battler)
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
                 break;
             }
 

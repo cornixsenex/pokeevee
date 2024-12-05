@@ -14498,7 +14498,7 @@ const struct Item gItemsInfo[] =
     
 	[ITEM_COLCHIS_JAIL_KEY] =
     {
-        .name = HANDLE_EXPANDED_ITEM_NAME("ColchisJailKey", "Colchis Jail Key"),
+        .name = _("Colchis Jail Key"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A rusty key from\n"

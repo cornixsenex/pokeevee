@@ -47,15 +47,12 @@ u8 CheckIfItemIsTMHMOrEvolutionStone(u16 itemId);
 void FieldUseFunc_VsSeeker(u8 taskId);
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId);
 void DisplayDadsAdviceCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField);
-<<<<<<< HEAD
+void ItemUseOutOfBattle_PokeFlute(u8 taskId);
+void ItemUseOutOfBattle_TownMap(u8 taskId);
 // CUSTOM TEST BOOK
 void ItemUseOutOfBattle_TestBook(u8);
 // Custom Ostracon
 void ItemUseOutOfBattle_Ostracon(u8);
-=======
-void ItemUseOutOfBattle_PokeFlute(u8 taskId);
-void ItemUseOutOfBattle_TownMap(u8 taskId);
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

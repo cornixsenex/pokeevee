@@ -310,54 +310,6 @@ static const u8 sPageColumnXPos[KBPAGE_COUNT][KBCOL_COUNT] = {
     [KEYBOARD_SYMBOLS]       = {0, 22, 44, 66, 88, 110}
 };
 
-static const u8 *const gMalePresetNames[] = {
-    gText_ExpandedPlaceholder_Brendan,
-    gText_DefaultNameStu,
-    gText_DefaultNameMilton,
-    gText_DefaultNameTom,
-    gText_DefaultNameKenny,
-    gText_DefaultNameReid,
-    gText_DefaultNameJude,
-    gText_DefaultNameJaxson,
-    gText_DefaultNameEaston,
-    gText_DefaultNameWalker,
-    gText_DefaultNameTeru,
-    gText_DefaultNameJohnny,
-    gText_DefaultNameBrett,
-    gText_DefaultNameSeth,
-    gText_DefaultNameTerry,
-    gText_DefaultNameCasey,
-    gText_DefaultNameDarren,
-    gText_DefaultNameLandon,
-    gText_DefaultNameCollin,
-    gText_DefaultNameStanley,
-    gText_DefaultNameQuincy
-};
-
-static const u8 *const gFemalePresetNames[] = {
-    gText_ExpandedPlaceholder_May,
-    gText_DefaultNameKimmy,
-    gText_DefaultNameTiara,
-    gText_DefaultNameBella,
-    gText_DefaultNameJayla,
-    gText_DefaultNameAllie,
-    gText_DefaultNameLianna,
-    gText_DefaultNameSara,
-    gText_DefaultNameMonica,
-    gText_DefaultNameCamila,
-    gText_DefaultNameAubree,
-    gText_DefaultNameRuthie,
-    gText_DefaultNameHazel,
-    gText_DefaultNameNadine,
-    gText_DefaultNameTanja,
-    gText_DefaultNameYasmin,
-    gText_DefaultNameNicola,
-    gText_DefaultNameLillie,
-    gText_DefaultNameTerra,
-    gText_DefaultNameLucy,
-    gText_DefaultNameHalie
-};
-
 // forward declarations
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[];
 static const struct SubspriteTable sSubspriteTable_PageSwapFrame[];
@@ -1501,7 +1453,7 @@ static void NamingScreen_CreateQmarkIcon(void)
 {
 	//This just does a regular A Unown from overworld branch :/
     u8 spriteId;
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_SPECIES(UNOWN_QMARK), SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_SPECIES(UNOWN_QUESTION), SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], 4);
 }
@@ -2181,10 +2133,12 @@ static void UNUSED Debug_NamingScreenNickname(void)
 
 void NameRival(void)
 {
-    if (gSaveBlock2Ptr->playerGender == MALE)
-        StringCopy(gSaveBlock2Ptr->rivalName, gFemalePresetNames[Random() % NELEMS(gFemalePresetNames)]); // choose a random name from gFemalePresetNames for a male player's rival
-    else
-        StringCopy(gSaveBlock2Ptr->rivalName, gMalePresetNames[Random() % NELEMS(gMalePresetNames)]); // choose a random name from gMalePresetNames for a female player's rival
+	//Set default Rival Name
+//	StringCopy(gSaveBlock2Ptr->rivalName, 
+//    if (gSaveBlock2Ptr->playerGender == MALE)
+//        StringCopy(gSaveBlock2Ptr->rivalName, gFemalePresetNames[Random() % NELEMS(gFemalePresetNames)]); // choose a random name from gFemalePresetNames for a male player's rival
+//    else
+//        StringCopy(gSaveBlock2Ptr->rivalName, gMalePresetNames[Random() % NELEMS(gMalePresetNames)]); // choose a random name from gMalePresetNames for a female player's rival
     DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock2Ptr->rivalName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 

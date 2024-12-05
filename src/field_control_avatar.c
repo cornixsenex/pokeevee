@@ -10,11 +10,8 @@
 #include "event_scripts.h"
 #include "fieldmap.h"
 #include "field_control_avatar.h"
-<<<<<<< HEAD
-#include "field_effect.h"
-=======
+#include "field_effect.h" //Rock Climb
 #include "field_message_box.h"
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 #include "field_player_avatar.h"
 #include "field_poison.h"
 #include "field_screen_effect.h"
@@ -79,15 +76,12 @@ static void UpdateFollowerStepCounter(void);
 #if OW_POISON_DAMAGE < GEN_5
 static bool8 UpdatePoisonStepCounter(void);
 #endif // OW_POISON_DAMAGE
-<<<<<<< HEAD
-static bool8 EnableAutoRun(void);
-=======
+static bool8 EnableAutoRun(void); //Apparently auto run isn't in rhh? IDK
 static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition * position, u32 metatileBehavior, u32 playerDirection);
 static void SetMsgSignPostAndVarFacing(u32 playerDirection);
 static void SetUpWalkIntoSignScript(const u8 *script, u32 playerDirection);
 static u32 GetFacingSignpostType(u16 metatileBehvaior, u32 direction);
 static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition * position);
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -357,11 +351,7 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
     s16 currX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
     s16 currY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
     u8 currBehavior = MapGridGetMetatileBehaviorAt(currX, currY);
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     switch (direction)
     {
     case DIR_EAST:
@@ -390,11 +380,7 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
         objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);
         break;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     if (objectEventId == OBJECT_EVENTS_COUNT || gObjectEvents[objectEventId].localId == OBJ_EVENT_ID_PLAYER)
     {
         if (MetatileBehavior_IsCounter(metatileBehavior) != TRUE)
@@ -838,14 +824,10 @@ static bool8 TryArrowWarp(struct MapPosition *position, u16 metatileBehavior, u8
     s32 warpEventId = GetWarpEventAtMapPosition(&gMapHeader, position);
     u32 delay;
 
-<<<<<<< HEAD
-    if (warpEventId != WARP_ID_NONE)
-=======
     if (warpEventId == WARP_ID_NONE)
         return FALSE;
 
     if (IsArrowWarpMetatileBehavior(metatileBehavior, direction) == TRUE)
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
     {
         StorePlayerStateAndSetupWarp(position, warpEventId);
         DoWarp();
@@ -1181,7 +1163,7 @@ int SetCableClubWarp(void)
     return 0;
 }
 
-<<<<<<< HEAD
+//Begin Auto Run
 extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
 
@@ -1204,8 +1186,8 @@ static bool8 EnableAutoRun(void)
     
     return TRUE;
 }
+//End Auto Run
 
-=======
 static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, u32 playerDirection)
 {
     const u8 *script;
@@ -1315,4 +1297,3 @@ void CancelSignPostMessageBox(struct FieldInput *input)
 
     CreateTask(Task_OpenStartMenu, 8);
 }
->>>>>>> 337822305fed0f9edb0d0fccf00aad001bbc0b99
