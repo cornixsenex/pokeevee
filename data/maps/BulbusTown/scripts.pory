@@ -6,8 +6,8 @@ const OBJ_EVENT_MAREEP = 18
 
 const OBJ_EVENT_SAILOR1 = 6
 const OBJ_EVENT_SAILOR2 = 7
-const OBJ_EVENT_SAILOR3 = 27
-const OBJ_EVENT_SAILOR4 = 26
+const OBJ_EVENT_SAILOR3 = 15
+const OBJ_EVENT_SAILOR4 = 14
 const OBJ_EVENT_SAILOR5 = 8
 const OBJ_EVENT_SAILOR6 = 1
 
@@ -48,10 +48,15 @@ script BulbusTown_Script_ShowStrike {
 }
 
 script BulbusTown_Script_HideJason {
-	removeobject (OBJ_EVENT_JASON)
-	removeobject (OBJ_EVENT_MEDEA)
-	removeobject (OBJ_EVENT_MAREEP)
-	
+	setobjectxyperm (OBJ_EVENT_JASON, 26, 11)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (OBJ_EVENT_MEDEA, 27, 11)
+	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (OBJ_EVENT_MAREEP, 28, 11)
+	setobjectmovementtype (OBJ_EVENT_MAREEP, MOVEMENT_TYPE_INVISIBLE)
+
 	return
 }
 
