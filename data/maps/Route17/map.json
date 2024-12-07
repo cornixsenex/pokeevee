@@ -22,6 +22,16 @@
       "map": "MAP_SILVAN_WOODS",
       "offset": 146,
       "direction": "right"
+    },
+    {
+      "map": "MAP_BULBUS_SILVAN_FILLER",
+      "offset": 16,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE2",
+      "offset": -16,
+      "direction": "down"
     }
   ],
   "object_events": [

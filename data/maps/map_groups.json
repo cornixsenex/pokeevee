@@ -833,7 +833,8 @@
     "BikeMapNNE",
     "BikeMapTucson",
     "BigIslandFillerW",
-    "BigIslandFillerE"
+    "BigIslandFillerE",
+    "BulbusSilvanFiller"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

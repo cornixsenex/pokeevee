@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE17",
       "offset": -146,
       "direction": "left"
+    },
+    {
+      "map": "MAP_BULBUS_SILVAN_FILLER",
+      "offset": 26,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -37,6 +37,11 @@
       "map": "MAP_MARE_WWW",
       "offset": -36,
       "direction": "down"
+    },
+    {
+      "map": "MAP_BULBUS_SILVAN_FILLER",
+      "offset": -4,
+      "direction": "up"
     }
   ],
   "object_events": [

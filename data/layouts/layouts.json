@@ -6110,6 +6110,16 @@
       "secondary_tileset": "gTileset_Colchis",
       "border_filepath": "data/layouts/Colchis/border.bin",
       "blockdata_filepath": "data/layouts/Colchis/map.bin"
+    },
+    {
+      "id": "LAYOUT_BULBUS_SILVAN_FILLER",
+      "name": "BulbusSilvanFiller_Layout",
+      "width": 24,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/BulbusSilvanFiller/border.bin",
+      "blockdata_filepath": "data/layouts/BulbusSilvanFiller/map.bin"
     }
   ]
 }

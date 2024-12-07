@@ -1571,3 +1571,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/IgnisMons_3F/scripts.inc"
 
 	.include "data/maps/Colchis/scripts.inc"
+
+	.include "data/maps/BulbusSilvanFiller/scripts.inc"
