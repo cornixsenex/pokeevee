@@ -675,7 +675,7 @@ text SilvanWoods_Text_GaryIntro {
 }
 
 text SilvanWoods_Text_GaryLost {
-	format("I'm smoked out man, I can' take one more hit.")
+	format("I'm smoked out man, I can't take one more hit.")
 }
 
 text SilvanWoods_Text_GaryPost {

@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_WILLOW",
-      "offset": -1,
+      "offset": 0,
       "direction": "up"
     },
     {
@@ -32,6 +32,11 @@
       "map": "MAP_ROUTE2",
       "offset": -16,
       "direction": "down"
+    },
+    {
+      "map": "MAP_LAKE_IRA",
+      "offset": -28,
+      "direction": "left"
     }
   ],
   "object_events": [

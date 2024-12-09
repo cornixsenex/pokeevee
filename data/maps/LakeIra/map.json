@@ -1,12 +1,12 @@
 {
-  "id": "MAP_WILLOW",
-  "name": "Willow",
-  "layout": "LAYOUT_WILLOW",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_PEWTER_CITY",
+  "id": "MAP_LAKE_IRA",
+  "name": "LakeIra",
+  "layout": "LAYOUT_LAKE_IRA",
+  "music": "MUS_B_PALACE",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -15,18 +15,13 @@
   "connections": [
     {
       "map": "MAP_ROUTE17",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
-      "map": "MAP_WILLOW_EAST",
-      "offset": -2,
+      "offset": 28,
       "direction": "right"
     },
     {
-      "map": "MAP_LAKE_IRA",
-      "offset": 28,
-      "direction": "left"
+      "map": "MAP_WILLOW",
+      "offset": -28,
+      "direction": "right"
     }
   ],
   "object_events": [
