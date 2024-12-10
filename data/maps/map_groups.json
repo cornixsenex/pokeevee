@@ -835,7 +835,9 @@
     "BigIslandFillerW",
     "BigIslandFillerE",
     "BulbusSilvanFiller",
-    "LakeIra"
+    "LakeIra",
+    "SilvanWoodsN",
+    "WillowWest"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

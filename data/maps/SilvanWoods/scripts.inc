@@ -952,8 +952,8 @@ SilvanWoods_Text_GaryIntro::
 
 SilvanWoods_Text_GaryLost::
 # 677 "data/maps/SilvanWoods/scripts.pory"
-	.string "I'm smoked out man, I can' take one more\n"
-	.string "hit.$"
+	.string "I'm smoked out man, I can't take one\n"
+	.string "more hit.$"
 
 SilvanWoods_Text_GaryPost::
 # 681 "data/maps/SilvanWoods/scripts.pory"

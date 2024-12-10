@@ -1575,3 +1575,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BulbusSilvanFiller/scripts.inc"
 
 	.include "data/maps/LakeIra/scripts.inc"
+
+	.include "data/maps/SilvanWoodsN/scripts.inc"
+
+	.include "data/maps/WillowWest/scripts.inc"

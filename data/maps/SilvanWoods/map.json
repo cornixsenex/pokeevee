@@ -32,6 +32,11 @@
       "map": "MAP_BULBUS_SILVAN_FILLER",
       "offset": 26,
       "direction": "left"
+    },
+    {
+      "map": "MAP_SILVAN_WOODS_N",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -557,90 +562,7 @@
     }
   ],
   "warp_events": [
-    {
-      "x": 42,
-      "y": 60,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 43,
-      "y": 60,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 52,
-      "y": 62,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 53,
-      "y": 62,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 62,
-      "y": 60,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "4"
-    },
-    {
-      "x": 63,
-      "y": 60,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "5"
-    },
-    {
-      "x": 7,
-      "y": 16,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "7"
-    },
-    {
-      "x": 8,
-      "y": 16,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "8"
-    },
-    {
-      "x": 38,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "9"
-    },
-    {
-      "x": 39,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "10"
-    },
-    {
-      "x": 54,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "11"
-    },
-    {
-      "x": 55,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE3",
-      "dest_warp_id": "12"
-    }
+
   ],
   "coord_events": [
     {

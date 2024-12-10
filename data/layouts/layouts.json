@@ -4985,7 +4985,7 @@
       "id": "LAYOUT_WILLOW_EAST",
       "name": "WillowEast_Layout",
       "width": 32,
-      "height": 18,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/WillowEast/border.bin",
@@ -6127,9 +6127,29 @@
       "width": 84,
       "height": 72,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_willow",
       "border_filepath": "data/layouts/LakeIra/border.bin",
       "blockdata_filepath": "data/layouts/LakeIra/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILVAN_WOODS_N",
+      "name": "SilvanWoodsN_Layout",
+      "width": 36,
+      "height": 120,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/SilvanWoodsN/border.bin",
+      "blockdata_filepath": "data/layouts/SilvanWoodsN/map.bin"
+    },
+    {
+      "id": "LAYOUT_WILLOW_WEST",
+      "name": "WillowWest_Layout",
+      "width": 20,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_willow",
+      "border_filepath": "data/layouts/WillowWest/border.bin",
+      "blockdata_filepath": "data/layouts/WillowWest/map.bin"
     }
   ]
 }

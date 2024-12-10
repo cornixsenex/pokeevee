@@ -37,6 +37,11 @@
       "map": "MAP_LAKE_IRA",
       "offset": -28,
       "direction": "left"
+    },
+    {
+      "map": "MAP_SILVAN_WOODS_N",
+      "offset": 26,
+      "direction": "right"
     }
   ],
   "object_events": [

@@ -27,6 +27,11 @@
       "map": "MAP_LAKE_IRA",
       "offset": 28,
       "direction": "left"
+    },
+    {
+      "map": "MAP_WILLOW_WEST",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [
