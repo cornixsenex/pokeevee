@@ -4987,7 +4987,7 @@
       "width": 32,
       "height": 40,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_willow",
       "border_filepath": "data/layouts/WillowEast/border.bin",
       "blockdata_filepath": "data/layouts/WillowEast/map.bin"
     },
@@ -5027,7 +5027,7 @@
       "width": 64,
       "height": 68,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/SilvanWoods/border.bin",
       "blockdata_filepath": "data/layouts/SilvanWoods/map.bin"
     },
@@ -6150,6 +6150,16 @@
       "secondary_tileset": "gTileset_willow",
       "border_filepath": "data/layouts/WillowWest/border.bin",
       "blockdata_filepath": "data/layouts/WillowWest/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_IRA_SOUTH",
+      "name": "LakeIraSouth_Layout",
+      "width": 28,
+      "height": 90,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/LakeIraSouth/border.bin",
+      "blockdata_filepath": "data/layouts/LakeIraSouth/map.bin"
     }
   ]
 }

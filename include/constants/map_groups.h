@@ -805,6 +805,7 @@
 #define MAP_LAKE_IRA              (89 | (35 << 8))
 #define MAP_SILVAN_WOODS_N        (90 | (35 << 8))
 #define MAP_WILLOW_WEST           (91 | (35 << 8))
+#define MAP_LAKE_IRA_SOUTH        (92 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))
