@@ -4957,7 +4957,7 @@
       "width": 39,
       "height": 32,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/MareWW/border.bin",
       "blockdata_filepath": "data/layouts/MareWW/map.bin"
     },
@@ -6137,7 +6137,7 @@
       "width": 36,
       "height": 120,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/SilvanWoodsN/border.bin",
       "blockdata_filepath": "data/layouts/SilvanWoodsN/map.bin"
     },
