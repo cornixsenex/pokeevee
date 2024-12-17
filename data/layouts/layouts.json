@@ -4574,7 +4574,7 @@
     {
       "id": "LAYOUT_ROUTE4",
       "name": "Route4_Layout",
-      "width": 26,
+      "width": 34,
       "height": 80,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",

@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_CITY_CLARA",
-      "offset": -62,
+      "offset": -54,
       "direction": "down"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "map": "MAP_ROUTE5",
-      "offset": -46,
+      "offset": -38,
       "direction": "up"
     }
   ],
