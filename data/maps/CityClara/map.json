@@ -307,8 +307,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 58,
-      "y": 42,
+      "x": 48,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -401,15 +401,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 48,
-      "y": 41,
-      "elevation": 0,
-      "dest_map": "MAP_CITY_CLARA_SCHOOL",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 59,
-      "y": 41,
+      "x": 68,
+      "y": 40,
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA",
       "dest_warp_id": "0"
