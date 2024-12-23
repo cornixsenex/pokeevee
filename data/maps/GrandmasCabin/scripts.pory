@@ -50,7 +50,7 @@ script GrandmasCabin_EventScript_EeveeFanfare {
 	setflag (FLAG_SYS_POKEDEX_GET)
 	setflag (FLAG_SYS_NATIONAL_DEX)
 	special (EnableNationalPokedex)
-	addvar (VAR_ROUTE101_STATE, 1)
+//	addvar (VAR_ROUTE101_STATE, 1)
 	message (GrandmasCabin_ObtainedEevee)
 	waitmessage
 	waitfanfare

@@ -2,7 +2,7 @@
   "id": "MAP_LOONIX_INSIDE_REAL",
   "name": "LoonixInsideReal",
   "layout": "LAYOUT_LOONIX_INSIDE_REAL",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -16,16 +16,16 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GRANDMA",
-      "x": 11,
-      "y": 3,
+      "x": 12,
+      "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LoonixInsideReal_EventScript_Grandma",
-      "flag": "FLAG_UNUSED_0x027"
+      "script": "LoonixInsideReal_Script_Grandma",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -59,51 +59,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "0",
-      "script": "LoonixInsideReal_EventScript_GrandmaTV"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 9,
-      "elevation": 0,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "LoonixInsideReal_EventScript_PreventExit"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 9,
-      "elevation": 0,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "LoonixInsideReal_EventScript_PreventExit"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 9,
-      "elevation": 0,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "LoonixInsideReal_EventScript_PreventExit"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "1",
-      "script": "LoonixInsideReal_EventScript_PreventExit"
-    }
+
   ],
   "bg_events": [
     {
@@ -112,7 +68,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Watch_TV"
+      "script": "LoonixInsideReal_Script_TV"
     },
     {
       "type": "sign",
@@ -120,7 +76,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LoonixInsideReal_EventScript_Statue"
+      "script": "LoonixInsideReal_Script_Statue"
     },
     {
       "type": "sign",
@@ -128,7 +84,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -136,7 +92,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -144,7 +100,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -152,7 +108,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -160,7 +116,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -168,7 +124,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -176,7 +132,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -184,7 +140,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_EventScript_Junk"
+      "script": "LoonixInsideReal_Script_Junk"
     },
     {
       "type": "sign",
@@ -192,7 +148,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LoonixInsideReal_EventScript_Special"
+      "script": "LoonixInsideReal_Script_Special"
     }
   ]
 }

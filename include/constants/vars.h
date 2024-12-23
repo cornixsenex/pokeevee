@@ -97,6 +97,9 @@
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
 #define VAR_UNUSED_0x404E                                0x404E // Unused Var
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
+
+//ACTUALLY HERE BEGINS THE USABLE VARS
+
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_ROUTE1_STATE           			             0x4050
 #define VAR_OLDALE_TOWN_STATE                            0x4051
@@ -119,8 +122,14 @@
 
 
 
-///HERE BEGINS THE REPURPOSED VARS FROM EMERALD
-#define VAR_ROUTE101_STATE                               0x4060 // LoonixInsideReal
+///HERE BEGINS THE REPURPOSED VARS FROM EMERALD - ACTUALLY SEE ABOVE 
+#define VAR_GRANNY_STATE                                 0x4060 // Prologue and trigger Blue1 fight.
+																// 0: New Game
+																// 1: After Grandma 1 scene
+																// 2: Begin Leaf game (Leaf is hiding somewhere)
+																// 3: During Leaf game (You are hiding somewhere)
+																// 4: After Leaf game (Leaf is being attacked)
+																// 5: After first battle (You have Eevee)
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
 #define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 
 #define VAR_CAPITAL_STATE                                0x4063 // Gio trigger

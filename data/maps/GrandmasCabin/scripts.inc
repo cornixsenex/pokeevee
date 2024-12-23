@@ -81,8 +81,6 @@ GrandmasCabin_EventScript_EeveeFanfare::
 	setflag FLAG_SYS_NATIONAL_DEX
 # 52 "data/maps/GrandmasCabin/scripts.pory"
 	special EnableNationalPokedex
-# 53 "data/maps/GrandmasCabin/scripts.pory"
-	addvar VAR_ROUTE101_STATE, 1
 # 54 "data/maps/GrandmasCabin/scripts.pory"
 	message GrandmasCabin_ObtainedEevee
 # 55 "data/maps/GrandmasCabin/scripts.pory"

@@ -1,39 +1,34 @@
+
+const OBJ_EVENT_GRANNY = 1
+
 mapscripts LoonixInsideReal_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-		call (LoonixInsideReal_OnWarp)
     }
 }
 
-script LoonixInsideReal_OnWarp {
-	if (var(VAR_ROUTE101_STATE) < 1) {
-		setobjectxyperm (1, 8, 6)
-		applymovement(1, LoonixInsideReal_Movement_GrandmaUp)
-	}
-	end
-}
 
-script Watch_TV {
+script LoonixInsideReal_Script_TV {
 	lock
 	msgbox("MEW has returned!", MSGBOX_SIGN)
 	release
 	end
 }
 
-script LoonixInsideReal_EventScript_Statue {
+script LoonixInsideReal_Script_Statue {
 	lock
 	msgbox(format("This is the statue they sent us after Dad left...\pGrandma must have forgotten to polish it."))
 	release
 	end
 }
 
-script LoonixInsideReal_EventScript_Junk {
+script LoonixInsideReal_Script_Junk {
 	lock
 	msgbox(format("Here's another pile of junk grandma left lying around."))
 	release
 	end
 }
 
-script LoonixInsideReal_EventScript_Special {
+script LoonixInsideReal_Script_Special {
 	lock
 	showmonpic (SPECIES_KRABBY, 10, 3)
 	msgbox(format("What's for dinner?"))
@@ -42,7 +37,7 @@ script LoonixInsideReal_EventScript_Special {
 	end
 }
 
-script LoonixInsideReal_EventScript_GrandmaTV {
+script LoonixInsideReal_Script_GrandmaTV {
 	lockall
 	applymovement(1, LoonixInsideReal_Movement_GrandmaUp)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
@@ -71,7 +66,7 @@ script LoonixInsideReal_EventScript_GrandmaTV {
 	applymovement (1, LoonixInsideReal_Movement_GrandmaBed)
 	applymovement(OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerBed)
 	waitmovement (0)
-	addvar (VAR_ROUTE101_STATE, 1)
+	addvar (VAR_GRANNY_STATE, 1)
 	msgbox (LoonixInsideReal_Text_GrandmaBed)
 	setrespawn (HEAL_LOCATION_GRANDMAS_CABIN)
 	setflag (FLAG_RECEIVED_RUNNING_SHOES)
@@ -81,7 +76,7 @@ script LoonixInsideReal_EventScript_GrandmaTV {
 }
 	
 
-script LoonixInsideReal_EventScript_PreventExit {
+script LoonixInsideReal_Script_PreventExit {
 	lockall
 	msgbox (format("You don't have a Pokemon yet!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PreventExit)
@@ -90,9 +85,9 @@ script LoonixInsideReal_EventScript_PreventExit {
 	end
 }
 
-script LoonixInsideReal_EventScript_Grandma {
+script LoonixInsideReal_Script_Grandma {
 	lockall
-	if (var(VAR_ROUTE101_STATE) == 1) {
+	if (var(VAR_GRANNY_STATE) == 1) {
 		msgbox(format("{PLAYER}, take our Pokemon from the backyard to protect you on the road."))
 	}
 	else {

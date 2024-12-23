@@ -69,10 +69,10 @@ gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} and you're just\n"
-	.string "waking up at your grandma's house.\l"
-	.string "That's where the game starts!\p"
+	.string "Ah, okay! You're {PLAYER}{KUN} and\p"
+	.string "you're just waking up after a\n"
+	.string "good night's sleep at home.\l"
+	.string "That's how the game starts!\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
