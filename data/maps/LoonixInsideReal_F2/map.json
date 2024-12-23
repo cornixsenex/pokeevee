@@ -42,7 +42,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LoonixInsideReal_F2_EventScript_PS2"
+      "script": "LoonixInsideReal_F2_Script_PS2"
     },
     {
       "type": "sign",
@@ -50,7 +50,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_F2_EventScript_PC"
+      "script": "LoonixInsideReal_F2_Script_PC"
     },
     {
       "type": "sign",
@@ -58,7 +58,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_SOUTH",
-      "script": "LoonixInsideReal_F2_EventScript_Bed"
+      "script": "LoonixInsideReal_F2_Script_Bed"
     },
     {
       "type": "sign",
@@ -66,7 +66,15 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LoonixInsideReal_F2_EventScript_Bed"
+      "script": "LoonixInsideReal_F2_Script_Bed"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "LoonixInsideReal_F2_Script_Book"
     }
   ]
 }

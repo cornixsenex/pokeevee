@@ -2,7 +2,7 @@ mapscripts LoonixInsideReal_F2_MapScripts {}
 
 
 
-script LoonixInsideReal_F2_EventScript_PC {
+script LoonixInsideReal_F2_Script_PC {
 	lockall
 	//special (DoPCTurnOnEffect)
 	playse (SE_PC_ON)
@@ -13,14 +13,14 @@ script LoonixInsideReal_F2_EventScript_PC {
 	end
 }
 
-script LoonixInsideReal_F2_EventScript_PS2 {
+script LoonixInsideReal_F2_Script_PS2 {
 	lock
 	msgbox(format("It's your PS2 and your favorite game,Star Wars Battlefront 2!"))
 	release
 	end
 }
 
-script LoonixInsideReal_F2_EventScript_Bed {
+script LoonixInsideReal_F2_Script_Bed {
 	lockall
 	msgbox(LoonixInsideReal_F2_Text_Bed, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
@@ -38,7 +38,19 @@ script LoonixInsideReal_F2_EventScript_Bed {
 	end
 }
 
+script LoonixInsideReal_F2_Script_Book {
+	lock
+	msgbox (LoonixInsideReal_F2_Text_Book, MSGBOX_SIGN)
+	closemessage
+	release
+	end
+}
+
 text LoonixInsideReal_F2_Text_Bed {
 	format("It's your old bed!\pWould you like to take a rest?")
+}
+
+text LoonixInsideReal_F2_Text_Book {
+	format("ARMA VIRUMQUE CANO...\nWhat does this even mean?")
 }
 		

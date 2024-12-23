@@ -127,7 +127,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(LOONIX_INSIDE_REAL_F2), MAP_NUM(LOONIX_INSIDE_REAL_F2), -1, -1, -1);
+    SetWarpDestination(MAP_GROUP(LOONIX_INSIDE_REAL_F2), MAP_NUM(LOONIX_INSIDE_REAL_F2), WARP_ID_NONE, 1, 5);
     WarpIntoMap();
 }
 
