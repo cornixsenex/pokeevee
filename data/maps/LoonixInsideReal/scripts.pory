@@ -49,9 +49,15 @@ script LoonixInsideReal_Script_GrannyScene1 {
 	msgbox (LoonixInsideReal_Text_Granny1B, MSGBOX_DEFAULT)
 	closemessage
 	//Name Leaf
+	special (NameLeaf)
 	//That's right she waiting outside for you. What a nice girl
+	msgbox (LoonixInsideReal_Text_Granny1C, MSGBOX_DEFAULT)
+	closemessage
 	//Be safe and remember to stay away from the tall grass
 	//Return granny to the kitchen
+
+	releaseall
+	end
 }
 
 
@@ -214,3 +220,6 @@ text LoonixInsideReal_Text_Granny1B {
 }
 
 //That's right {NOE}
+text LoonixInsideReal_Text_Granny1C {
+	format("That's right {LEAF}")
+}

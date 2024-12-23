@@ -555,6 +555,7 @@ gSpecials::
 	def_special Script_GetChosenMonDefensiveIVs
 	def_special UseBlankMessageToCancelPokemonPic
     def_special NameRival
+	def_special NameLeaf
 	def_special LobotomizePokemon
 	def_special ChangePersonality
 	def_special MakeShiny 

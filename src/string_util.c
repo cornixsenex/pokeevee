@@ -481,6 +481,11 @@ static const u8 *ExpandPlaceholder_RivalName(void)
     return gSaveBlock2Ptr->rivalName;
 }
 
+static const u8 *ExpandPlaceholder_LeafName(void)
+{
+    return gSaveBlock2Ptr->leafName;
+}
+
 static const u8 *ExpandPlaceholder_Version(void)
 {
     return gText_ExpandedPlaceholder_Emerald;
@@ -536,6 +541,7 @@ const u8 *GetExpandedPlaceholder(u32 id)
         [PLACEHOLDER_ID_MAXIE]        = ExpandPlaceholder_Maxie,
         [PLACEHOLDER_ID_KYOGRE]       = ExpandPlaceholder_Kyogre,
         [PLACEHOLDER_ID_GROUDON]      = ExpandPlaceholder_Groudon,
+        [PLACEHOLDER_ID_LEAF]         = ExpandPlaceholder_LeafName,
     };
 
     if (id >= ARRAY_COUNT(funcs))
