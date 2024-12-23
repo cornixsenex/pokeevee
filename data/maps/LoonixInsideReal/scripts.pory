@@ -50,6 +50,7 @@ script LoonixInsideReal_Script_GrannyScene1 {
 	closemessage
 	//Name Leaf
 	special (NameLeaf)
+	waitstate
 	//That's right she waiting outside for you. What a nice girl
 	msgbox (LoonixInsideReal_Text_Granny1C, MSGBOX_DEFAULT)
 	closemessage
