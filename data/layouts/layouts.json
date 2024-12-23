@@ -4485,7 +4485,7 @@
       "id": "LAYOUT_GRANDMAS_CABIN",
       "name": "GrandmasCabin_Layout",
       "width": 20,
-      "height": 20,
+      "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/GrandmasCabin/border.bin",

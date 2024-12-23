@@ -52,9 +52,7 @@ script LoonixInsideReal_EventScript_GrandmaTV {
 	msgbox (format("Oh {PLAYER}!"))
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	load_field_pic (2, 190, 98)
 	msgbox ("Come here sweetie.")
-	destroy_field_pic (2)
 	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_GrandmaTV)
 	waitmovement (0)
