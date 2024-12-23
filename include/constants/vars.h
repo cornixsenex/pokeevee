@@ -122,10 +122,13 @@
 
 
 
-///HERE BEGINS THE REPURPOSED VARS FROM EMERALD - ACTUALLY SEE ABOVE 
+///HERE BEGINS THE REPURPOSED VARS FROM EMERALD - ACTUALLY SEE ABOVE THERE ARE MANY MORE AVAILABLE
+
+
+
 #define VAR_GRANNY_STATE                                 0x4060 // Prologue and trigger Blue1 fight.
-																// 0: New Game
-																// 1: After Grandma 1 scene
+																// 0: New Game - trigger Granny1 scene
+																// 1: After Grandma 1 scene - granny in kitchen cooking, leaf waits outside, Eevee in backyard chillin, TV has boring news on.
 																// 2: Begin Leaf game (Leaf is hiding somewhere)
 																// 3: During Leaf game (You are hiding somewhere)
 																// 4: After Leaf game (Leaf is being attacked)

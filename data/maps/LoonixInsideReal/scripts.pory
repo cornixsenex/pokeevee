@@ -2,8 +2,56 @@
 const OBJ_EVENT_GRANNY = 1
 
 mapscripts LoonixInsideReal_MapScripts {
+
     MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_GRANNY_STATE) == 0) {
+			call (LoonixInsideReal_Script_ShowGrannyKitchen)
+		}
     }
+	
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GRANNY_STATE, 0: LoonixInsideReal_Script_GrannyScene1
+	]
+
+}
+
+
+script LoonixInsideReal_Script_ShowGrannyKitchen {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 1, 3)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_UP)
+
+	end
+}
+
+script LoonixInsideReal_Script_GrannyScene1 {
+	lockall
+
+	setvar (VAR_GRANNY_STATE, 1)
+	//Player walks to position
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)
+	//granny notices player come downstairs
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//face player
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceRight)
+	waitmovement (0)
+	//You're finally awake good to see you
+	msgbox (LoonixInsideReal_Text_Granny1A, MSGBOX_DEFAULT)
+	closemessage
+	//Approach player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_Granny1_ApproachPlayer)
+	waitmovement (0)
+	//Stil working on breakfast, Your friend came by again, whats her name again
+	msgbox (LoonixInsideReal_Text_Granny1B, MSGBOX_DEFAULT)
+	closemessage
+	//Name Leaf
+	//That's right she waiting outside for you. What a nice girl
+	//Be safe and remember to stay away from the tall grass
+	//Return granny to the kitchen
 }
 
 
@@ -137,6 +185,10 @@ movement LoonixInsideReal_Movement_PlayerToGma {
 	walk_down * 3
 }
 
+movement LoonixInsideReal_Movement_Granny1_ApproachPlayer {
+	walk_right * 3
+}
+
 text LoonixInsideReal_Text_GrandmaTVSpeech {
 	format("It's all over the news that Mew's returned!\n My boy, this is a God sent mircale.\pJust once...to see the living shape of Mew...there's nothing more of life that I would ask.")
 }
@@ -153,4 +205,12 @@ text LoonixInsideReal_Text_GrandmaBed {
 	format("Thank you.")
 }
 
+text LoonixInsideReal_Text_Granny1A {
+	format("Good morning sleepyhead!")
+}
 
+text LoonixInsideReal_Text_Granny1B {
+	format("I'm still cooking breakfast but your friend came by earlier. What was her name again?")
+}
+
+//That's right {NOE}
