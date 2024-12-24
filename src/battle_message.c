@@ -2837,6 +2837,8 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                     toCpy = gTrainers[gTrainerBattleOpponent_A].trainerName;
                     if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_RIVAL_NAME)
                         toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
+                    if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_LEAF_NAME)
+                        toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_LEAF);
                 }
                 break;
             case B_TXT_TRAINER1_NAME_WITH_CLASS: // trainer1 name with trainer class
@@ -3145,6 +3147,8 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 break;
             case B_TXT_RIVAL_NAME:
                 toCpy = gSaveBlock2Ptr->rivalName;
+			case B_TXT_LEAF_NAME:
+				toCpy = gSaveBlock2Ptr->leafName;
             case B_TXT_ATK_NAME_WITH_PREFIX2:
                 HANDLE_NICKNAME_STRING_LOWERCASE(gBattlerAttacker)
                 break;

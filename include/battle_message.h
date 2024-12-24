@@ -85,6 +85,7 @@
 #define B_TXT_ATK_TRAINER_NAME_WITH_CLASS 0x45
 //KUSTOM
 #define B_TXT_RIVAL_NAME 0x46
+#define B_TXT_LEAF_NAME 0x47
 
 #define B_BUFF_STRING                       0
 #define B_BUFF_NUMBER                       1

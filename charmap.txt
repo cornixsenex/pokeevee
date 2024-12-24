@@ -424,6 +424,7 @@ B_PARTNER_NAME_WITH_CLASS = FD 44
 B_ATK_TRAINER_NAME_WITH_CLASS = FD 45
 @KUSTOMS
 B_RIVAL_NAME = FD 46
+B_LEAF_NAME = FD 47
 
 @ indicates the end of a town/city name (before " TOWN" or " CITY")
 NAME_END = FC 00
