@@ -2145,12 +2145,9 @@ static void UNUSED Debug_NamingScreenNickname(void)
 
 void NameRival(void)
 {
+
 	//Set default Rival Name
-//	StringCopy(gSaveBlock2Ptr->rivalName, 
-//    if (gSaveBlock2Ptr->playerGender == MALE)
-//        StringCopy(gSaveBlock2Ptr->rivalName, gFemalePresetNames[Random() % NELEMS(gFemalePresetNames)]); // choose a random name from gFemalePresetNames for a male player's rival
-//    else
-//        StringCopy(gSaveBlock2Ptr->rivalName, gMalePresetNames[Random() % NELEMS(gMalePresetNames)]); // choose a random name from gMalePresetNames for a female player's rival
+	StringCopy(gSaveBlock2Ptr->rivalName, gText_ExpandedPlaceholder_Brendan); // choose a random name from gMalePresetNames for a female player's rival
     DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock2Ptr->rivalName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 
@@ -2166,6 +2163,9 @@ void DoRhetoric(void)
 
 void NameLeaf(void)
 {
+
+	//Default Noe name
+	StringCopy(gSaveBlock2Ptr->leafName, gText_ExpandedPlaceholder_May); // choose a random name from gFemalePresetNames for a male player's rival
     DoNamingScreen(NAMING_SCREEN_LEAF, gSaveBlock2Ptr->leafName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
 }
 

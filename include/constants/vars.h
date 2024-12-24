@@ -133,6 +133,9 @@
 																// 3: During Leaf game (You are hiding somewhere)
 																// 4: After Leaf game (Leaf is being attacked)
 																// 5: After first battle (You have Eevee)
+																// 6: After granny in front the house - trigger Granny Scene 2
+																// 7: After granny scene 2
+																//
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
 #define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 
 #define VAR_CAPITAL_STATE                                0x4063 // Gio trigger

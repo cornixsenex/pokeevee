@@ -241,7 +241,7 @@
       "flag": "FLAG_CLARACITY_AFTERMEW"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEOWTH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH)",
       "x": 35,
       "y": 22,
       "elevation": 3,

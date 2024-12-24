@@ -4,15 +4,41 @@ const OBJ_EVENT_GRANNY = 1
 mapscripts LoonixInsideReal_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
-		if (var(VAR_GRANNY_STATE) == 0) {
-			call (LoonixInsideReal_Script_ShowGrannyKitchen)
+
+		switch (var(VAR_GRANNY_STATE)) {
+			case 0:
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+		    case 5:
+				call (LoonixInsideReal_Script_ShowGrannyKitchen)
+			case 6:
+				call (LoonixInsideReal_Script_ShowGrannyDoorway)
+		    case 7:
+				call (LoonixInsideReal_Script_ShowGrannyTable)
+			case 8:
+				call (LoonixInsideReal_Script_ShowGrannyTV)
+			case 9:
+				call (LoonixInsideReal_Script_ShowGrannyBed)
+			default:
+				call (LoonixInsideReal_Script_HideGranny)
 		}
+
     }
 	
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_GRANNY_STATE, 0: LoonixInsideReal_Script_GrannyScene1
+		VAR_GRANNY_STATE, 6: LoonixInsideReal_Script_GrannyScene2
 	]
 
+}
+
+script LoonixInsideReal_Script_HideGranny {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 12, 10)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_INVISIBLE)
+
+	end
 }
 
 
@@ -23,10 +49,40 @@ script LoonixInsideReal_Script_ShowGrannyKitchen {
 	end
 }
 
+script LoonixInsideReal_Script_ShowGrannyDoorway {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 3, 6)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
+
+	end
+}
+
+script LoonixInsideReal_Script_ShowGrannyTable {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 9, 7)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_LEFT)
+
+	end
+}
+
+script LoonixInsideReal_Script_ShowGrannyTV {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 8, 6)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_UP)
+
+	end
+}
+script LoonixInsideReal_Script_ShowGrannyBed {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 11, 3)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
+
+	end
+}
+
 script LoonixInsideReal_Script_GrannyScene1 {
 	lockall
 
 	setvar (VAR_GRANNY_STATE, 1)
+	setflag (FLAG_RECEIVED_RUNNING_SHOES)
+	setflag (FLAG_SYS_B_DASH)
+
 	//Player walks to position
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
 	waitmovement (0)
@@ -52,15 +108,73 @@ script LoonixInsideReal_Script_GrannyScene1 {
 	special (NameLeaf)
 	waitstate
 	//That's right she waiting outside for you. What a nice girl
+	//Be safe and remember to stay away from the tall grass
 	msgbox (LoonixInsideReal_Text_Granny1C, MSGBOX_DEFAULT)
 	closemessage
-	//Be safe and remember to stay away from the tall grass
 	//Return granny to the kitchen
-
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_Granny1_ReturnToKitchen)
+	waitmovement (0)
+	//Fin
 	releaseall
 	end
 }
 
+script LoonixInsideReal_Script_GrannyScene2 {
+	lockall
+
+	setvar (VAR_GRANNY_STATE, 7)
+
+	setflag (FLAG_SYS_POKEMON_GET)
+	setflag (FLAG_SYS_POKEDEX_GET)
+	special (SetUnlockedPokedexFlags)
+	setflag (FLAG_SYS_NATIONAL_DEX)
+	special (EnableNationalPokedex)
+	
+	//I told you to keep out of the tall grass! 
+	//Oh Sneed, what can I say? I'm worried sick,
+	//so scared for you, for me. I still see you
+	//as that rambunctious boy you used to be
+	//but now you're growing up and I'm afraid
+	//of losing you like I lost your father.
+	//I long to keep you here forever safe
+	//but as your strength flowers my own decays.
+	//I often asked myself if what I did
+	//was the right thing to do to raise you best
+	//but now I see that choice is yours to make.
+	//The time has come for me to set you free
+	//for even though my heart betrays these words
+	//I trust you and I know it's for the best.
+	
+	//Granny approach Player
+
+	//Your father would have wanted you to have
+	//his Pokedex when you were old enough.
+
+	//Give pokedex
+
+	//Describe pokedex
+	//It helps keep track of different pokemon
+	//you meet in the wild. Also take this.
+
+	//Give 5 pokeballs
+	
+	//Describe pokeballs and running shoes
+	
+	//I see Eevee really likes you I know he will keep you safe 
+	//Your bond will grow over time but to become a serious trainer you need to go to trainer school
+	//There's one in Aldeon Town near by
+
+	//Now take a seat come get something to eat
+	
+	//granny and player go to table
+
+	//Promise me you'll finish school
+	//And come back home to rest up any time
+	
+	//FIN
+	release
+	end
+}
 
 script LoonixInsideReal_Script_TV {
 	lock
@@ -196,6 +310,11 @@ movement LoonixInsideReal_Movement_Granny1_ApproachPlayer {
 	walk_right * 3
 }
 
+movement LoonixInsideReal_Movement_Granny1_ReturnToKitchen {
+	walk_left * 3
+	face_up
+}
+
 text LoonixInsideReal_Text_GrandmaTVSpeech {
 	format("It's all over the news that Mew's returned!\n My boy, this is a God sent mircale.\pJust once...to see the living shape of Mew...there's nothing more of life that I would ask.")
 }
@@ -222,5 +341,5 @@ text LoonixInsideReal_Text_Granny1B {
 
 //That's right {NOE}
 text LoonixInsideReal_Text_Granny1C {
-	format("That's right {LEAF}")
+	format("That's right, {LEAF}! She's such a sweet and beautiful young girl. I think she's still waiting outside for you. Go out, have fun, but keep your distance from the tall grass where wild pokemon roam.")
 }
