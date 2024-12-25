@@ -27,6 +27,13 @@ mapscripts GrandmasCabin_MapScripts {
 		}
 
 	}
+
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			call (GrandmasCabin_Script_TryRemoveRattata)
+		}
+	}
+
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_GRANNY_STATE, 2: GrandmasCabin_Script_LeafGame1
 		]
@@ -84,6 +91,11 @@ script GrandmasCabin_Script_ShowGranny {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 10, 14)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
 
+	return
+}
+
+script GrandmasCabin_Script_TryRemoveRattata {
+	removeobject (OBJ_EVENT_RATTATA)
 	return
 }
 
@@ -212,6 +224,7 @@ script GrandmasCabin_Script_TryContinueHideAndSeekB {
 
 script GrandmasCabin_Script_ContinueHideAndSeek {
 	lock
+	playse (SE_EFFECTIVE)
 	msgbox (GrandmasCabin_Text_Leaf5, MSGBOX_DEFAULT)
 	closemessage
 
@@ -264,6 +277,7 @@ script GrandmasCabin_Script_SaveLeafC {
 
 script GrandmasCabin_Script_SaveLeaf {
 	//Help!
+	playbgm (MUS_HELP, TRUE)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	load_field_pic(FIELD_PIC_LEAF, 190, 98)
@@ -338,25 +352,38 @@ script GrandmasCabin_Script_SaveLeaf {
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	setflag (FLAG_FORCE_EEVEE_SLIDE_IN)
 	dowildbattle
-	waitstate
+	playbgm (MUS_LITTLEROOT, TRUE)
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	clearflag (FLAG_FORCE_EEVEE_SLIDE_IN)
 	//After battle - thanks lets go home
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_EEVEE, Common_Movement_WalkRight)
 	waitmovement (0)
+
+	//Hide Eevee OBJ event (it's the FOLLOWER now)
+	removeobject (OBJ_EVENT_EEVEE)
+	setobjectxyperm (OBJ_EVENT_EEVEE, 15, 0)
+	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_INVISIBLE)
+	addobject (OBJ_EVENT_EEVEE)
+	showobjectat (OBJ_EVENT_EEVEE, MAP_GRANDMAS_CABIN)
+
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
 	waitmovement (0)
+
 	msgbox (GrandmasCabin_Text_Leaf9, MSGBOX_DEFAULT)
 	closemessage
+
 	//setup granny scene
 	removeobject (OBJ_EVENT_GRANNY)
 	setobjectxyperm (OBJ_EVENT_GRANNY, 10, 14)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_GRANNY)
 	showobjectat (OBJ_EVENT_LEAF, MAP_GRANDMAS_CABIN)
+
 	//Walk home
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_EndHideAndSeek)
 	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_EndHideAndSeek)
 	waitmovement (0)
@@ -392,6 +419,7 @@ script GrandmasCabin_Script_SaveLeaf {
 	closemessage
 	//warp inside
 	setvar (VAR_GRANNY_STATE, 6)
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 
 	warpsilent (MAP_LOONIX_INSIDE_REAL, 4, 8)
 

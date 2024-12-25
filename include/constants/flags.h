@@ -193,11 +193,11 @@
 #define FLAG_TUCSON_MENELAUS_DID_INVITE      0xA3
 #define FLAG_LEAF_HIDEANDSEEK_FOUND          0xA4
 #define FLAG_FORCE_EEVEE_SLIDE_IN            0xA5
+#define FLAG_GRANDMASCABIN_HIDE_RATTATA      0xA6
 
 
 // BREAK //
 
-#define FLAG_UNUSED_0xA6                     0xA6
 #define FLAG_UNUSED_0xA7                     0xA7
 #define FLAG_UNUSED_0xA8                     0xA8
 #define FLAG_UNUSED_0xA9                     0xA9
