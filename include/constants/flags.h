@@ -189,14 +189,14 @@
 #define FLAG_CHEMISTRY_INTRO                 0x9F
 #define FLAG_POETRY_INTRO                    0xA0
 #define FLAG_ARDOR_UNI2F_LEAF                0xA1
-#define FLAG_TUCSON_PARIS_DID_INVITE    0xA2
-#define FLAG_TUCSON_MENELAUS_DID_INVITE 0xA3
+#define FLAG_TUCSON_PARIS_DID_INVITE         0xA2
+#define FLAG_TUCSON_MENELAUS_DID_INVITE      0xA3
+#define FLAG_LEAF_HIDEANDSEEK_FOUND          0xA4
+#define FLAG_FORCE_EEVEE_SLIDE_IN            0xA5
 
 
 // BREAK //
 
-#define FLAG_UNUSED_0xA4                     0xA4
-#define FLAG_UNUSED_0xA5                     0xA5
 #define FLAG_UNUSED_0xA6                     0xA6
 #define FLAG_UNUSED_0xA7                     0xA7
 #define FLAG_UNUSED_0xA8                     0xA8

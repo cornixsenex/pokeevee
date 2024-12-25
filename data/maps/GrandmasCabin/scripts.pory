@@ -1,129 +1,514 @@
-mapscripts GrandmasCabin_MapScripts {
-	MAP_SCRIPT_ON_TRANSITION {
-		call (GrandmasCabin_HideMew)
-	}
-	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 
-		VAR_ROUTE1_STATE, 0: GrandmasCabin_HideMew
-		VAR_ROUTE1_STATE, 1: GrandmasCabin_HideMew
-		VAR_ROUTE1_STATE, 2: GrandmasCabin_HideMew
-		VAR_ROUTE1_STATE, 3: GrandmasCabin_HideMew
-		VAR_ROUTE1_STATE, 4: GrandmasCabin_HideMew
-		VAR_ROUTE1_STATE, 5: GrandmasCabin_HideMew
+const OBJ_EVENT_EEVEE = 1
+const OBJ_EVENT_MEW = 2
+const OBJ_EVENT_LEAF = 3
+const OBJ_EVENT_GRANNY = 4
+const OBJ_EVENT_RATTATA = 5
+
+const FIELD_PIC_LEAF = 4
+const FIELD_PIC_GRANNY = 30
+
+mapscripts GrandmasCabin_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		switch (var(VAR_GRANNY_STATE)) {
+			case 0:
+			case 1:
+			case 2:
+				call (GrandmasCabin_Script_ShowLeaf1) //Leaf out front, Eevee out back
+			case 3:
+				call (GrandmasCabin_Script_ShowLeaf2) //Leaf in hiding place
+			case 4:
+				call (GrandmasCabin_Script_ShowLeaf3) //Leaf attacked by Poochyenaa
+			case 5:
+				call (GrandmasCabin_Script_ShowGranny)
+			default:
+				call (GrandmasCabin_Script_HideAll)
+		}
+
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GRANNY_STATE, 2: GrandmasCabin_Script_LeafGame1
 		]
 }
 
-script GrandmasCabin_EventScript_Trigger {
-	lockall
-	call (GrandmasCabin_EventScript_Mew)
-	setvar (VAR_ROUTE1_STATE, 4)
-	setflag (FLAG_UNUSED_0x027)	
-	setflag (FLAG_HIDE_GRANDMASCABIN_MEW)
-	releaseall
-	end
-}
+script GrandmasCabin_Script_HideAll {
 
-script GrandmasCabin_HideMew {
-	removeobject (2)
-	end
-}
+	setobjectxyperm (OBJ_EVENT_EEVEE, 19, 0)
+	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_INVISIBLE)
 
-	
+	setobjectxyperm (OBJ_EVENT_LEAF, 18, 0)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
 
-script GrandmasCabin_EventScript_Mew {
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	playmoncry (SPECIES_MEW, 0)
-	fadescreen (1)
-	waitmoncry
-	removeobject (2)
-	fadescreen (0)
-	return
-}
-	
+	setobjectxyperm (OBJ_EVENT_GRANNY, 17, 0)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_INVISIBLE)
 
-script GrandmasCabin_EventScript_EeveeFanfare {
-	bufferspeciesname (1, SPECIES_EEVEE)
-	call (GrandmasCabin_EventScript_FadeOut)
-	playfanfare (MUS_OBTAIN_ITEM)
-	setflag (FLAG_SYS_POKEMON_GET)
-	setflag (FLAG_SYS_POKEDEX_GET)
-	setflag (FLAG_SYS_NATIONAL_DEX)
-	special (EnableNationalPokedex)
-//	addvar (VAR_ROUTE101_STATE, 1)
-	message (GrandmasCabin_ObtainedEevee)
-	waitmessage
-	waitfanfare
-	bufferspeciesname (0, SPECIES_EEVEE)
+	setobjectxyperm (OBJ_EVENT_MEW, 16, 0)
+	setobjectmovementtype (OBJ_EVENT_MEW, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (OBJ_EVENT_RATTATA, 15, 0)
+	setobjectmovementtype (OBJ_EVENT_RATTATA, MOVEMENT_TYPE_INVISIBLE)
+
 	return
 }
 
-script GrandmasCabin_EventScript_SnakeTest {
+script GrandmasCabin_Script_ShowLeaf1 {
+
+	setobjectxyperm (OBJ_EVENT_EEVEE, 5, 6)
+	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_WANDER_AROUND)
+
+	setobjectxyperm (OBJ_EVENT_LEAF, 10, 14)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
+
+	return
+}
+
+script GrandmasCabin_Script_ShowLeaf2 {
+	setobjectxyperm (OBJ_EVENT_LEAF, 16, 28)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+
+	return
+}
+
+script GrandmasCabin_Script_ShowLeaf3 {
+	setobjectxyperm (OBJ_EVENT_LEAF, 10, 30)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+
+	setobjectxyperm (OBJ_EVENT_RATTATA, 11, 30)
+	setobjectmovementtype (OBJ_EVENT_RATTATA, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+
+	return
+}
+
+script GrandmasCabin_Script_ShowGranny {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 10, 14)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
+
+	return
+}
+
+script GrandmasCabin_Script_Eevee {
 	lock
 	faceplayer
-	msgbox("COLLISION!", MSGBOX_DEFAULT)
+	msgbox (GrandmasCabin_Text_Eevee, MSGBOX_DEFAULT)
 	closemessage
 	release
 	end
 }
 
-text GrandmasCabin_ObtainedEevee {
-	"{PLAYER} obtained Eevee!"
-}
+script GrandmasCabin_Script_Leaf {
+	lock
+	faceplayer
 
-raw `
-
-GrandmasCabin_EventScript_FadeOut::
-	fadescreen 1
-	removeobject 1
-	fadescreen 0
-	return
-`
-	
-
-script GrandmasCabin_EventScript_GiveEevee {
-	givemon (SPECIES_EEVEE, 5, ITEM_NONE)
-	if (var(VAR_RESULT) == 0) {
-		call (GrandmasCabin_EventScript_EeveeFanfare)
-		msgbox (format("Would you like to give a nickname to Eevee?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			call (Common_EventScript_GetGiftMonPartySlot)
-			call (Common_EventScript_NameReceivedPartyMon)
-		}
-		setflag (FLAG_UNUSED_0x026)
+	if (!flag(FLAG_LEAF_HIDEANDSEEK_FOUND)) {
+		setflag (FLAG_LEAF_HIDEANDSEEK_FOUND)
+		applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		msgbox  (GrandmasCabin_Text_Leaf3, MSGBOX_DEFAULT)
+	} else {
+		msgbox (GrandmasCabin_Text_Leaf4, MSGBOX_DEFAULT)
 	}
-	releaseall
+	closemessage
+
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
+	waitmovement (0)
+	
+	release
 	end
 }
 
-script GrandmasCabin_EventScript_StarterMonEevee {
+script GrandmasCabin_Script_LeafGame1 {
+
 	lockall
-	if (flag(FLAG_SYS_POKEMON_GET)) {
-		msgbox (format("Sorry Eevee, you'll have to stay behind."))
-		releaseall
-		end
-	} 
-	else {
-		msgbox (format("Will you take Eevee with you?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			msgbox (format("You decided not to bring Eevee."))
-			releaseall
-			end
-		}
-		else {
-				call (GrandmasCabin_EventScript_GiveEevee)
-		}
+	
+	setvar (VAR_GRANNY_STATE, 3)
+	
+	msgbox (GrandmasCabin_Text_Leaf1, MSGBOX_DEFAULT)
+	closemessage
+
+	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_BeginHideAndSeek)
+	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_BeginHideAndSeek)
+	waitmovement (0)
+
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceUp)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+
+	msgbox (GrandmasCabin_Text_Leaf2, MSGBOX_DEFAULT)
+	closemessage
+
+	fadescreen (FADE_TO_BLACK)
+	removeobject (OBJ_EVENT_LEAF)
+	call (GrandmasCabin_Script_ShowLeaf2)
+	fadescreen (FADE_FROM_BLACK)
+	
 	releaseall
 	end
-	}
-}		
-
-movement GrandmasCabin_Movement_Mew {
-	face_down
-	walk_left * 4
-	walk_right * 6
-	walk_down
 }
-	
 
+script GrandmasCabin_Script_Mew {
+	lock
+	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	call (GrandmasCabin_Script_HideAll)
+
+	release
+	end
+}
+
+script GrandmasCabin_Script_AvoidGrass {
+	lock
+	msgbox (GrandmasCabin_Text_AvoidGrass, MSGBOX_DEFAULT)
+	closemessage
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_SOUTH:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+		case DIR_NORTH:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		case DIR_EAST:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		case DIR_WEST:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		default:
+				applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+				msgbox("ERROR", MSGBOX_DEFAULT)
+				closemessage
+	}
+	waitmovement (0)
+	release
+	end
+}
+
+script GrandmasCabin_Script_StayHideAndSeek {
+	lock
+	msgbox (GrandmasCabin_Text_StayHideAndSeek, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script GrandmasCabin_Script_TryContinueHideAndSeekA {
+	if (flag(FLAG_LEAF_HIDEANDSEEK_FOUND)) {
+		setflag (FLAG_TEMP_5)
+		clearflag (FLAG_TEMP_6)
+		call (GrandmasCabin_Script_ContinueHideAndSeek)
+	}
+	release
+}
+
+script GrandmasCabin_Script_TryContinueHideAndSeekB {
+	if (flag(FLAG_LEAF_HIDEANDSEEK_FOUND)) {
+		setflag (FLAG_TEMP_6)
+		clearflag (FLAG_TEMP_5)
+		call (GrandmasCabin_Script_ContinueHideAndSeek)
+	}
+	release
+}
+
+script GrandmasCabin_Script_ContinueHideAndSeek {
+	lock
+	msgbox (GrandmasCabin_Text_Leaf5, MSGBOX_DEFAULT)
+	closemessage
+
+	fadescreen (FADE_TO_BLACK)
+	removeobject (OBJ_EVENT_LEAF)
+	if (flag(FLAG_TEMP_5)) { //Top
+		setobjectxyperm (OBJ_EVENT_LEAF, 7, 39)
+		setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
+		turnobject (OBJ_EVENT_ID_PLAYER, DIR_EAST)
+	} elif (flag(FLAG_TEMP_6)) { //Bottom
+		setobjectxyperm (OBJ_EVENT_LEAF, 6, 39)
+		setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+		turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+	} else { //Should never happen
+		setobjectxyperm (OBJ_EVENT_LEAF, 5, 39)
+		setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_RIGHT)
+		turnobject (OBJ_EVENT_ID_PLAYER, DIR_WEST)
+	}
+	addobject (OBJ_EVENT_LEAF)
+	showobjectat (OBJ_EVENT_LEAF, MAP_GRANDMAS_CABIN)
+	fadescreen (FADE_FROM_BLACK)
+
+	msgbox (GrandmasCabin_Text_Leaf6, MSGBOX_DEFAULT)
+	closemessage
+
+	fadescreen (FADE_TO_BLACK)
+	removeobject (OBJ_EVENT_LEAF)
+	call (GrandmasCabin_Script_ShowLeaf3)
+	fadescreen (FADE_FROM_BLACK)
+
+	setvar (VAR_GRANNY_STATE, 4)
+	release
+	end
+}
+
+script GrandmasCabin_Script_SaveLeafA {
+	setvar (VAR_TEMP_5, 1)
+	call (GrandmasCabin_Script_SaveLeaf)
+}
+
+script GrandmasCabin_Script_SaveLeafB {
+	setvar (VAR_TEMP_5, 2)
+	call (GrandmasCabin_Script_SaveLeaf)
+}
+
+script GrandmasCabin_Script_SaveLeafC {
+	setvar (VAR_TEMP_5, 3)
+	call (GrandmasCabin_Script_SaveLeaf)
+}
+
+script GrandmasCabin_Script_SaveLeaf {
+	//Help!
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	load_field_pic(FIELD_PIC_LEAF, 190, 98)
+	msgbox ("Help!", MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	closemessage
+	//Player walk up
+	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_ApproachLeafAmbush1)
+	waitmovement (0)
+	//Leaf says some more
+	load_field_pic(FIELD_PIC_LEAF, 190, 98)
+	msgbox (GrandmasCabin_Text_Leaf7, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	closemessage
+	//Player goes into position
+	switch (var(VAR_TEMP_5)) {
+		case 0:
+			msgbox("VAR_TEMP_5 = 0", MSGBOX_DEFAULT)
+			closemessage
+		case 1:
+			applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_ApproachLeafAmbush2A)
+			waitmovement (0)
+		case 2:
+			applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_ApproachLeafAmbush2B)
+			waitmovement (0)
+		case 3:
+			applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_ApproachLeafAmbush2C)
+			waitmovement (0)
+		default:			
+			msgbox("VAR_TEMP_5 = OOB", MSGBOX_DEFAULT)
+			closemessage
+	}
+
+	//Enter Eevee
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_EEVEE)
+	setobjectxyperm (OBJ_EVENT_EEVEE, 2, 31)
+	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_EEVEE)
+	showobjectat (OBJ_EVENT_EEVEE, MAP_GRANDMAS_CABIN)
+
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_EEVEE, GrandmasCabin_Movement_EeveeEnter)
+	waitmovement (0)
+
+	playmoncry (SPECIES_EEVEE, CRY_MODE_ENCOUNTER)
+	waitmoncry
+
+	givemon (SPECIES_EEVEE, 5, ITEM_NONE)	
+	setflag (FLAG_SYS_POKEMON_GET)
+
+	msgbox (GrandmasCabin_Text_Eevee, MSGBOX_DEFAULT)
+	closemessage
+
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	load_field_pic(FIELD_PIC_LEAF, 190, 98)
+	msgbox (GrandmasCabin_Text_Leaf8, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	closemessage
+	//Intro battle
+	applymovement (OBJ_EVENT_RATTATA, Common_Movement_FaceDown)
+	waitmovement (0)
+
+	playmoncry (SPECIES_RATTATA, CRY_MODE_ENCOUNTER)
+	waitmoncry 
+	
+	//battle
+	setwildbattle (SPECIES_RATTATA, 3)
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag (FLAG_FORCE_EEVEE_SLIDE_IN)
+	dowildbattle
+	waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	clearflag (FLAG_FORCE_EEVEE_SLIDE_IN)
+	//After battle - thanks lets go home
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
+	waitmovement (0)
+	msgbox (GrandmasCabin_Text_Leaf9, MSGBOX_DEFAULT)
+	closemessage
+	//setup granny scene
+	removeobject (OBJ_EVENT_GRANNY)
+	setobjectxyperm (OBJ_EVENT_GRANNY, 10, 14)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_GRANNY)
+	showobjectat (OBJ_EVENT_LEAF, MAP_GRANDMAS_CABIN)
+	//Walk home
+	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_EndHideAndSeek)
+	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_EndHideAndSeek)
+	waitmovement (0)
+
+	setvar (VAR_GRANNY_STATE, 5)
+	//Granny scene
+
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	//Granny lecture 1
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox(GrandmasCabin_Text_Granny1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_GRANNY)
+	closemessage
+	//Leaf turns to you and says she's leaving see you around
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	load_field_pic(FIELD_PIC_LEAF, 190, 98)
+	msgbox (GrandmasCabin_Text_Leaf10, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_LeafExit)
+	waitmovement (0)
+	//Granny: Get inside we have some talking to do
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox(GrandmasCabin_Text_Granny2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_GRANNY)
+	closemessage
+	//warp inside
+	setvar (VAR_GRANNY_STATE, 6)
+
+	warpsilent (MAP_LOONIX_INSIDE_REAL, 4, 8)
+
+	releaseall
+	end
+}
+
+movement GrandmasCabin_Movement_BeginHideAndSeek {
+	walk_down * 2
+	walk_left * 4
+	walk_down * 6
+	walk_left * 5
+	walk_down * 8
+	walk_right * 2
+}
+
+movement GrandmasCabin_Movement_ApproachLeafAmbush1 {
+	walk_up * 3
+}
+
+movement GrandmasCabin_Movement_ApproachLeafAmbush2A {
+	walk_up * 3
+	walk_right
+	face_up
+}
+
+movement GrandmasCabin_Movement_ApproachLeafAmbush2B {
+	walk_up * 3
+}
+
+movement GrandmasCabin_Movement_ApproachLeafAmbush2C {
+	walk_up * 3
+	walk_left
+	face_up
+}
+
+movement GrandmasCabin_Movement_EeveeEnter {
+	walk_right * 8
+}
+
+movement GrandmasCabin_Movement_EndHideAndSeek {
+	walk_left * 10
+	walk_up * 9
+	walk_right * 6
+	walk_up * 5
+	walk_right * 3
+	face_up
+}
+
+movement GrandmasCabin_Movement_LeafExit {
+	walk_up
+	walk_right * 3
+	walk_down
+	walk_right * 8
+}
+
+text GrandmasCabin_Text_Eevee {
+	format("It's your dad's old Pokemon, Eevee. He's looking at you with an unwavering intensity.")
+}
+
+text GrandmasCabin_Text_Leaf1 {
+	format("Hi {PLAYER}! C'mon lets go play Hide and Seek!")
+}
+
+text GrandmasCabin_Text_Leaf2 {
+	format("I'll go hide first. Close your eyes for a sec.")
+}
+
+text GrandmasCabin_Text_Leaf3 {
+	format("You found me! No! Now it's your turn to hide.")
+}
+
+text  GrandmasCabin_Text_Leaf4 {
+	format("Go find somewhere to hide. I'll close my eyes!")
+}
+
+text GrandmasCabin_Text_Leaf5 {
+	format("Ready or not, watch out {PLAYER}! Here I come!")
+}
+
+text GrandmasCabin_Text_Leaf6 {
+	format("Haha! I found you, now it's my turn. Close your eyes!")
+}
+
+text GrandmasCabin_Text_Leaf7 {
+	format("Please help me, {PLAYER}! I'm scared of Rattata!")
+}
+
+text GrandmasCabin_Text_AvoidGrass {
+   format("Keep your distance from the tall grass...")
+}	  
+
+text GrandmasCabin_Text_StayHideAndSeek {
+	format("I shouldn't leave {LEAF} behind...")
+}
+
+text GrandmasCabin_Text_HideAndSeek {
+	format("Ready or not, here I come!")
+}
+
+text GrandmasCabin_Text_Leaf8 {
+	format("Do it! Eevee and I believe in you.")
+}
+
+text GrandmasCabin_Text_Leaf9 {
+	format("That was so scary! {PLAYER} you are so brave. I can't believe how strong your connection with Eevee is. Now let's get out of here.")
+}
+
+text GrandmasCabin_Text_Granny1 {
+	format("What's going on? Why did Eevee run off? Where have you been? Oh God! {PLAYER} are you hurt? I told you to stay out of the tall grass!")
+}
+
+text GrandmasCabin_Text_Leaf10 {
+	format("Think I should go...sorry...See you around.")
+}
+
+text GrandmasCabin_Text_Granny2 {
+	format("March your behind inside! Let's have a chat...")
+}
 

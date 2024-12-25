@@ -1,6 +1,8 @@
 
 const OBJ_EVENT_GRANNY = 1
 
+const FIELD_PIC_GRANNY = 30
+
 mapscripts LoonixInsideReal_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
@@ -26,6 +28,10 @@ mapscripts LoonixInsideReal_MapScripts {
 		}
 
     }
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_GRANNY_STATE, 6: LoonixInsideReal_Script_FacePlayerUp
+	]
 	
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_GRANNY_STATE, 0: LoonixInsideReal_Script_GrannyScene1
@@ -73,6 +79,22 @@ script LoonixInsideReal_Script_ShowGrannyBed {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 11, 3)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
 
+	end
+}
+
+script LoonixInsideReal_Script_FacePlayerUp {
+	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+
+	end
+}
+
+script LoonixInsideReal_Script_PrepareLeafGame {
+	setvar (VAR_GRANNY_STATE, 2)
+	end
+}
+
+script LoonixInsideReal_Script_ClearLeafGame {
+	setvar (VAR_GRANNY_STATE, 1)
 	end
 }
 
@@ -129,21 +151,12 @@ script LoonixInsideReal_Script_GrannyScene2 {
 	special (SetUnlockedPokedexFlags)
 	setflag (FLAG_SYS_NATIONAL_DEX)
 	special (EnableNationalPokedex)
-	
-	//I told you to keep out of the tall grass! 
-	//Oh Sneed, what can I say? I'm worried sick,
-	//so scared for you, for me. I still see you
-	//as that rambunctious boy you used to be
-	//but now you're growing up and I'm afraid
-	//of losing you like I lost your father.
-	//I long to keep you here forever safe
-	//but as your strength flowers my own decays.
-	//I often asked myself if what I did
-	//was the right thing to do to raise you best
-	//but now I see that choice is yours to make.
-	//The time has come for me to set you free
-	//for even though my heart betrays these words
-	//I trust you and I know it's for the best.
+
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny2A, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+
 	
 	//Granny approach Player
 
@@ -178,7 +191,23 @@ script LoonixInsideReal_Script_GrannyScene2 {
 
 script LoonixInsideReal_Script_TV {
 	lock
-	msgbox("MEW has returned!", MSGBOX_SIGN)
+
+	switch (var(VAR_GRANNY_STATE)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			msgbox(LoonixInsideReal_Text_TV1, MSGBOX_SIGN)
+		case 7:
+			msgbox(LoonixInsideReal_Text_TV2, MSGBOX_SIGN)
+		default:
+			msgbox(LoonixInsideReal_Text_TVX, MSGBOX_SIGN)
+	}
+	closemessage
+	
 	release
 	end
 }
@@ -256,15 +285,56 @@ script LoonixInsideReal_Script_PreventExit {
 
 script LoonixInsideReal_Script_Grandma {
 	lockall
-	if (var(VAR_GRANNY_STATE) == 1) {
-		msgbox(format("{PLAYER}, take our Pokemon from the backyard to protect you on the road."))
-	}
-	else {
-	msgbox(format("Grandma?\pShe must be sleeping..."))
+	faceplayer
+
+	switch (var(VAR_GRANNY_STATE)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			call (LoonixInsideReal_Script_GrannyKitchen)
+		case 7:
+		case 8:
+			call (LoonixInsideReal_Script_GrannyTable)
+		default:
+			msgbox("DEFAULT", MSGBOX_DEFAULT)
+			closemessage
 	}
 	releaseall
 	end
 }
+
+script LoonixInsideReal_Script_GrannyKitchen {
+
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyKitchen, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	return
+}
+
+script LoonixInsideReal_Script_GrannyTable {
+	msgbox (LoonixInsideReal_Text_GrannyTable1, MSGBOX_DEFAULT)
+	closemessage
+
+	call (Common_EventScript_OutOfCenterPartyHeal)
+
+	msgbox (LoonixInsideReal_Text_GrannyTable2, MSGBOX_DEFAULT)
+	closemessage
+
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	return
+}
+
 
 movement LoonixInsideReal_Movement_PreventExit {
 	face_up
@@ -343,3 +413,46 @@ text LoonixInsideReal_Text_Granny1B {
 text LoonixInsideReal_Text_Granny1C {
 	format("That's right, {LEAF}! She's such a sweet and beautiful young girl. I think she's still waiting outside for you. Go out, have fun, but keep your distance from the tall grass where wild pokemon roam.")
 }
+
+text LoonixInsideReal_Text_GrannyKitchen {
+	format("Go have fun with {LEAF} but please stay safe.")
+}
+
+text LoonixInsideReal_Text_GrannyTable1 {
+	format("So nice to see you {PLAYER}! Sit down and rest.")
+}
+
+text LoonixInsideReal_Text_GrannyTable2 {
+	format("Come back anytime and good luck at school.")
+}
+
+text LoonixInsideReal_Text_TV1 {
+	format("Humans and aliens working together to explore new worlds, seek out strange new life, and boldly go where no one has ever gone before.")
+}
+
+text LoonixInsideReal_Text_TV2 {
+	format("Handsome men in suits discuss transportation infrastructure with a member of the Restoration Party.")
+}
+
+text LoonixInsideReal_Text_TVX {
+	format("Looks like the TV is switched off.")
+}
+
+//I told you to keep out of the tall grass! 
+//Oh Sneed, what can I say? I'm worried sick,
+//so scared for you, for me. I still see you
+//as that rambunctious boy you used to be
+//but now you're growing up and I'm afraid
+//of losing you like I lost your father.
+//I long to keep you here forever safe
+//but as your strength flowers my own decays.
+//I often asked myself if what I did
+//was the right thing to do to raise you best
+//but now I see that choice is yours to make.
+//The time has come for me to set you free
+//for even though my heart betrays these words
+//I trust you and I know it's for the best.
+text LoonixInsideReal_Text_Granny2A {
+	format("I told you to keep out of the tall grass! Oh Sneed, what can I say? I'm worried sick, so scared for you, for me. I still see you as that rambunctious boy you used to be but now you're growing up and I'm afraid of losing you like I lost your father. I long to keep you here forever safe but as your strength flowers my own decays. I often asked myself if what I did was the right thing to do to raise you best but now I see that choice is yours to make. The time has come for me to set you free for even though my heart betrays these words I trust you and I know it's for the best.")
+}
+
