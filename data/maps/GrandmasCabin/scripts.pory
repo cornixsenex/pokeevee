@@ -277,10 +277,10 @@ script GrandmasCabin_Script_SaveLeafC {
 
 script GrandmasCabin_Script_SaveLeaf {
 	//Help!
-	playbgm (MUS_HELP, TRUE)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	load_field_pic(FIELD_PIC_LEAF, 190, 98)
+	playbgm (MUS_HELP, TRUE)
 	msgbox ("Help!", MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
@@ -384,8 +384,15 @@ script GrandmasCabin_Script_SaveLeaf {
 
 	//Walk home
 	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_EndHideAndSeek)
-	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_EndHideAndSeek)
+	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_EndHideAndSeekA)
+	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_EndHideAndSeekA)
+	waitmovement (0)
+
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
+
+	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_EndHideAndSeekB)
+	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_EndHideAndSeekB)
 	waitmovement (0)
 
 	setvar (VAR_GRANNY_STATE, 5)
@@ -401,16 +408,19 @@ script GrandmasCabin_Script_SaveLeaf {
 	msgbox(GrandmasCabin_Text_Granny1, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_GRANNY)
 	closemessage
-	//Leaf turns to you and says she's leaving see you around
-	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	//Leaf starts to leave and says she's leaving see you around
+	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_LeafExitA)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
 	waitmovement (0)
 	load_field_pic(FIELD_PIC_LEAF, 190, 98)
 	msgbox (GrandmasCabin_Text_Leaf10, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
+	//player face granny
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
-	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_LeafExit)
+	//exit leaf
+	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_LeafExitB)
 	waitmovement (0)
 	//Granny: Get inside we have some talking to do
 	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
@@ -460,19 +470,25 @@ movement GrandmasCabin_Movement_EeveeEnter {
 	walk_right * 8
 }
 
-movement GrandmasCabin_Movement_EndHideAndSeek {
+movement GrandmasCabin_Movement_EndHideAndSeekA {
 	walk_left * 10
 	walk_up * 9
+}
+
+movement GrandmasCabin_Movement_EndHideAndSeekB {
 	walk_right * 6
 	walk_up * 5
 	walk_right * 3
 	face_up
 }
 
-movement GrandmasCabin_Movement_LeafExit {
-	walk_up
-	walk_right * 3
+movement GrandmasCabin_Movement_LeafExitA {
 	walk_down
+	walk_right * 2
+	face_up
+}
+
+movement GrandmasCabin_Movement_LeafExitB {
 	walk_right * 8
 }
 
