@@ -176,14 +176,14 @@
       "x": 2,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_CITY_CLARA",
+      "dest_map": "MAP_ALDEON_TOWN",
       "dest_warp_id": "4"
     },
     {
       "x": 3,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_CITY_CLARA",
+      "dest_map": "MAP_ALDEON_TOWN",
       "dest_warp_id": "4"
     }
   ],

@@ -58,29 +58,29 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLUE",
-      "x": 19,
-      "y": 16,
+      "x": 1,
+      "y": 0,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ROUTE1_RIVAL"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
-      "x": 18,
-      "y": 16,
+      "x": 0,
+      "y": 0,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ROUTE1_RIVAL"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
@@ -188,16 +188,16 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 16,
-      "y": 11,
+      "x": 18,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route1_EventScript_RockTest"
     },
     {
       "type": "sign",
-      "x": 20,
-      "y": 15,
+      "x": 19,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route1_EventScript_RockTest"

@@ -108,6 +108,7 @@ script LoonixInsideReal_Script_GrannyScene1 {
 	setvar (VAR_GRANNY_STATE, 1)
 	setflag (FLAG_RECEIVED_RUNNING_SHOES)
 	setflag (FLAG_SYS_B_DASH)
+	setvar (VAR_SYS_LEVEL_CAP, 8)
 
 	//Player walks to position
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)

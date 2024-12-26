@@ -8465,12 +8465,10 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
 
 u8 GetAttackerObedienceForAction()
 {
-	return FALSE;
 
 //    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
 //        return OBEYS;
-//    if (BattlerHasAi(gBattlerAttacker))
-//        return OBEYS;
+
 //
 //    if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_RIGHT)
 //        return OBEYS;
@@ -8521,45 +8519,73 @@ u8 GetAttackerObedienceForAction()
 //        gBattleStruct->gimmick.activeGimmick[GetBattlerSide(gBattlerAttacker)][gBattlerPartyIndexes[gBattlerAttacker]] = GIMMICK_NONE;
 //    }
 //
-//    // is not obedient
-//    if (gCurrentMove == MOVE_RAGE)
-//        gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_RAGE;
-//    if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP && (gMovesInfo[gCurrentMove].effect == EFFECT_SNORE || gMovesInfo[gCurrentMove].effect == EFFECT_SLEEP_TALK))
-//        return DISOBEYS_WHILE_ASLEEP;
-//
-//    calc = (levelReferenced + obedienceLevel) * ((rnd >> 8) & 255) >> 8;
-//    if (calc < obedienceLevel)
-//    {
-//        calc = CheckMoveLimitations(gBattlerAttacker, 1u << gCurrMovePos, MOVE_LIMITATIONS_ALL);
-//        if (calc == ALL_MOVES_MASK) // all moves cannot be used
-//            return DISOBEYS_LOAFS;
-//        else // use a random move
-//            do
-//                gCurrMovePos = gChosenMovePos = MOD(Random(), MAX_MON_MOVES);
-//            while ((1u << gCurrMovePos) & calc);
-//        return DISOBEYS_RANDOM_MOVE;
-//    }
-//    else
-//    {
-//        obedienceLevel = levelReferenced - obedienceLevel;
-//
-//        calc = ((rnd >> 16) & 255);
-//        if (calc < obedienceLevel && CanBeSlept(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
-//        {
-//            // try putting asleep
-//            int i;
-//            for (i = 0; i < gBattlersCount; i++)
-//                if (gBattleMons[i].status2 & STATUS2_UPROAR)
-//                    break;
-//            if (i == gBattlersCount)
-//                return DISOBEYS_FALL_ASLEEP;
-//        }
-//        calc -= obedienceLevel;
-//        if (calc < obedienceLevel)
-//            return DISOBEYS_HITS_SELF;
-//        else
-//            return DISOBEYS_LOAFS;
-//    }
+
+    s32 rnd;
+    s32 calc;
+	u16 levelCap = VarGet(VAR_SYS_LEVEL_CAP);
+	//Only Player mons can disobey
+    if (BattlerHasAi(gBattlerAttacker))
+        return OBEYS;
+	//if Eevee and under level cap + 10 then objey
+	if (gBattleMons[gBattlerAttacker].species == SPECIES_EEVEE ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_FLAREON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_VAPOREON ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_JOLTEON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_UMBREON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_ESPEON   ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_LEAFEON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_GLACEON ) 
+	{
+		if (gBattleMons[gBattlerAttacker].level <= levelCap + 1 + (levelCap / 10))
+			return OBEYS;
+	}
+
+	//if have trainer card and under or == level cap then obey
+	if (FlagGet(FLAG_SYS_TRAINER_CARD_GET) && gBattleMons[gBattlerAttacker].level <= levelCap)
+		return OBEYS;
+	//if flag (AUTO-OBEY) then obey
+	if (FlagGet(FLAG_SYS_FORCE_OBEY))
+		return
+			OBEYS;
+   
+	//Below here Mon is NOT Obedient	
+	
+	// is not obedient
+    rnd = Random();
+    if (gCurrentMove == MOVE_RAGE)
+        gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_RAGE;
+    if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP && (gMovesInfo[gCurrentMove].effect == EFFECT_SNORE || gMovesInfo[gCurrentMove].effect == EFFECT_SLEEP_TALK))
+        return DISOBEYS_WHILE_ASLEEP;
+
+    calc = (gBattleMons[gBattlerAttacker].level + levelCap) * ((rnd >> 8) & 255) >> 8;
+    if (calc < levelCap)
+    {
+        calc = CheckMoveLimitations(gBattlerAttacker, 1u << gCurrMovePos, MOVE_LIMITATIONS_ALL);
+        if (calc == ALL_MOVES_MASK) // all moves cannot be used
+            return DISOBEYS_LOAFS;
+        else // use a random move
+            do
+                gCurrMovePos = gChosenMovePos = MOD(Random(), MAX_MON_MOVES);
+            while ((1u << gCurrMovePos) & calc);
+        return DISOBEYS_RANDOM_MOVE;
+    }
+    else
+    {
+        levelCap = gBattleMons[gBattlerAttacker].level - levelCap;
+
+        calc = ((rnd >> 16) & 255);
+        if (calc < levelCap && CanBeSlept(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
+        {
+            // try putting asleep
+			if (!(gBattleMons[gBattlerAttacker].status2 & STATUS2_UPROAR))
+                return DISOBEYS_FALL_ASLEEP;
+        }
+        calc -= levelCap;
+        if (calc < levelCap)
+            return DISOBEYS_HITS_SELF;
+        else
+            return DISOBEYS_LOAFS;
+    }
 }
 
 u32 GetBattlerHoldEffect(u32 battler, bool32 checkNegating)
