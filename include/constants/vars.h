@@ -115,7 +115,6 @@
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
 #define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
-#define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
 
 
 
@@ -124,7 +123,8 @@
 ///HERE BEGINS THE REPURPOSED VARS FROM EMERALD - ACTUALLY SEE ABOVE THERE ARE MANY MORE AVAILABLE
 
 
-#define VAR_SYS_LEVEL_CAP                                    0x405F // Hold the Level Cap
+#define VAR_ALDEON_SCHOOL_STATE                          0x405E
+#define VAR_SYS_LEVEL_CAP                                0x405F // Hold the Level Cap
 #define VAR_GRANNY_STATE                                 0x4060 // Prologue and trigger Blue1 fight.
 																// 0: New Game - trigger Granny1 scene
 																// 1: After Grandma 1 scene - granny in kitchen cooking, leaf waits outside, Eevee in backyard chillin, TV has boring news on. NO Trigger on from GrannyCabin

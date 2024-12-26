@@ -8522,7 +8522,7 @@ u8 GetAttackerObedienceForAction()
 
     s32 rnd;
     s32 calc;
-	u16 levelCap = VarGet(VAR_SYS_LEVEL_CAP);
+	u32 levelCap = VarGet(VAR_SYS_LEVEL_CAP);
 	//Only Player mons can disobey
     if (BattlerHasAi(gBattlerAttacker))
         return OBEYS;
