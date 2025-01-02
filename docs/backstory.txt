@@ -108,13 +108,36 @@
 	The mob surrounds him and the king is beheaded and brought back to the capital on a pike
 	Under the pike the first Assembly is born in the capital (same capital?)
 	Royal farms and food siezed which provides them with food for the time being
-	GOV of the revolution
+	GOV of the revolution:
 		King
 		Mob
 		Assembly
-		Directory
-		Consulate / Napoleon
+		Directory (5 men above assembly to deal with crises)
+		Consulate / Napoleon (Consul above a senate (reduced assembly of only elders))
 		Republic (Senate et President)
+	Parties of the revolution:
+		Commies - abolition, atheism, abolition of private property etc
+		Jacobins - universal sufferage, republicans,
+		Thermidorians - USA type republicans. God, Democracy, Capitalism, abolition
+		Royalists - Restoration of the monarchy, slavery, God, independance of the Guild
+	Stages of the revolution
+		Famine
+		Mob
+		Bastille
+		Castle Troy
+		Assembly 1
+		Coalition 1
+		Directory
+		Reign of Terror
+		Thermidorian Reaction
+		Coalition 2
+		Consulate
+		Coalition 3
+		Peace of whatever
+		Interim Republic
+		Republica
+		
+		
 	
 
 
