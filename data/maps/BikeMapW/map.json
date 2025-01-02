@@ -27,11 +27,6 @@
       "map": "MAP_BIKE_ROUTE_NWS",
       "offset": 113,
       "direction": "up"
-    },
-    {
-      "map": "MAP_BIKE_ROUTE_FARM",
-      "offset": 114,
-      "direction": "down"
     }
   ],
   "object_events": [

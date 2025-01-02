@@ -37,6 +37,11 @@
       "map": "MAP_MARE_E",
       "offset": 42,
       "direction": "down"
+    },
+    {
+      "map": "MAP_FARM",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [

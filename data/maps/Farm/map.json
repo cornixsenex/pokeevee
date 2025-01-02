@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_BIKE_ROUTE_FARM",
-      "offset": -36,
-      "direction": "up"
-    },
-    {
       "map": "MAP_HIPPODROME_W",
       "offset": 0,
       "direction": "right"
@@ -27,6 +22,26 @@
       "map": "MAP_ROUTE11",
       "offset": 16,
       "direction": "right"
+    },
+    {
+      "map": "MAP_BIKE_ROUTE_FARM",
+      "offset": -36,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ELICIUS_BEACH",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE9",
+      "offset": 26,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_SANJO_ROCK_FILLER",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

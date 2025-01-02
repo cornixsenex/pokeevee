@@ -4484,7 +4484,7 @@
     {
       "id": "LAYOUT_GRANDMAS_CABIN",
       "name": "GrandmasCabin_Layout",
-      "width": 20,
+      "width": 22,
       "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
@@ -4497,7 +4497,7 @@
       "width": 22,
       "height": 42,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
     },
@@ -6160,6 +6160,26 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/LakeIraSouth/border.bin",
       "blockdata_filepath": "data/layouts/LakeIraSouth/map.bin"
+    },
+    {
+      "id": "LAYOUT_SANJO",
+      "name": "Sanjo_Layout",
+      "width": 36,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/Sanjo/border.bin",
+      "blockdata_filepath": "data/layouts/Sanjo/map.bin"
+    },
+    {
+      "id": "LAYOUT_SANJO_ROCK_FILLER",
+      "name": "SanjoRockFiller_Layout",
+      "width": 36,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/SanjoRockFiller/border.bin",
+      "blockdata_filepath": "data/layouts/SanjoRockFiller/map.bin"
     }
   ]
 }

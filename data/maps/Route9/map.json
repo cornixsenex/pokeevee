@@ -22,6 +22,21 @@
       "map": "MAP_ELICIUS_BEACH",
       "offset": 14,
       "direction": "right"
+    },
+    {
+      "map": "MAP_SANJO",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_SANJO_ROCK_FILLER",
+      "offset": 36,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_FARM",
+      "offset": -26,
+      "direction": "right"
     }
   ],
   "object_events": [

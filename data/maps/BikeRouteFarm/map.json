@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_BIKE_MAP_W",
-      "offset": -114,
-      "direction": "up"
+      "map": "MAP_FARM",
+      "offset": 36,
+      "direction": "down"
     },
     {
       "map": "MAP_BIKE_MAP_E",
@@ -24,8 +24,8 @@
       "direction": "up"
     },
     {
-      "map": "MAP_FARM",
-      "offset": 36,
+      "map": "MAP_SANJO_ROCK_FILLER",
+      "offset": 0,
       "direction": "down"
     },
     {
@@ -37,6 +37,11 @@
       "map": "MAP_HIPPODROME_W",
       "offset": 158,
       "direction": "down"
+    },
+    {
+      "map": "MAP_SANJO",
+      "offset": 6,
+      "direction": "left"
     }
   ],
   "object_events": [

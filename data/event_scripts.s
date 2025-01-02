@@ -1581,3 +1581,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/WillowWest/scripts.inc"
 
 	.include "data/maps/LakeIraSouth/scripts.inc"
+
+	.include "data/maps/Sanjo/scripts.inc"
+
+	.include "data/maps/SanjoRockFiller/scripts.inc"
