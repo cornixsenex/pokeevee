@@ -6167,7 +6167,7 @@
       "width": 36,
       "height": 40,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Lilycove",
+      "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/Sanjo/border.bin",
       "blockdata_filepath": "data/layouts/Sanjo/map.bin"
     },
