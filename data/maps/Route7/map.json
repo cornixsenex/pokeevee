@@ -29,11 +29,6 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE8",
-      "offset": -6,
-      "direction": "down"
-    },
-    {
       "map": "MAP_SANJO",
       "offset": 0,
       "direction": "right"
