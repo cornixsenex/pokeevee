@@ -13,6 +13,9 @@ Clara
 	-Deeply religious people who believe their lake is the center of the world where Mew first appeared
 
 Doak
+	-Merchant outpost for trading into Vegas
+	-In between for Gato et Vegas
+	-Lotus Heads, low income
 
 Sanjo
 	-Resisted King Gato in Classical period
@@ -40,6 +43,10 @@ Fort Montgomery
 	-modernized
 
 Elicius
+	-Sacred city
+	-Formerly led by the Bishop of the Church
+	-Modern days the church is not officially recognized and the people elect representatives to go to Gato while the Bishop / priestess must remain in the church at all times
+	-Lake is central to the old religion (mos
 
 Farm
 
