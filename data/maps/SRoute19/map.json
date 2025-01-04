@@ -32,6 +32,11 @@
       "map": "MAP_ROUTE8",
       "offset": 77,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PENINSULA_W",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [
