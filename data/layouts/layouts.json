@@ -4714,8 +4714,8 @@
     {
       "id": "LAYOUT_FORT_MONTGOMERY",
       "name": "FortMontgomery_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 27,
+      "height": 16,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/FortMontgomery/border.bin",

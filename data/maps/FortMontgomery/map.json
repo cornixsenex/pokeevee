@@ -12,7 +12,28 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_ROUTE8",
+      "offset": -7,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_PENINSULA_W",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_SROUTE18",
+      "offset": -84,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_SROUTE19",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
   "object_events": [
 
   ],

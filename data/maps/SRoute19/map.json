@@ -27,6 +27,16 @@
       "map": "MAP_ROUTE6",
       "offset": -53,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE8",
+      "offset": 77,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_FORT_MONTGOMERY",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [

@@ -42,6 +42,11 @@
       "map": "MAP_MARE_W",
       "offset": -49,
       "direction": "down"
+    },
+    {
+      "map": "MAP_FORT_MONTGOMERY",
+      "offset": 84,
+      "direction": "right"
     }
   ],
   "object_events": [
