@@ -37,6 +37,11 @@
       "map": "MAP_FARM",
       "offset": -26,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PENNINSULA_E",
+      "offset": -10,
+      "direction": "down"
     }
   ],
   "object_events": [
