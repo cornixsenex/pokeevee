@@ -32,6 +32,11 @@
       "map": "MAP_SANJO",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PENNINSULA_E",
+      "offset": 22,
+      "direction": "down"
     }
   ],
   "object_events": [
