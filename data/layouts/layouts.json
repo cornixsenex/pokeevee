@@ -4617,7 +4617,7 @@
       "width": 53,
       "height": 135,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Pacifidlog",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/SRoute18/border.bin",
       "blockdata_filepath": "data/layouts/SRoute18/map.bin"
     },
