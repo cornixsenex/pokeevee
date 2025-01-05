@@ -2215,3 +2215,22 @@ const u16 gTilesetPalettes_Colchis[][16] =
 };
 
 const u32 gTilesetTiles_Colchis[] = INCBIN_U32("data/tilesets/secondary/colchis/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Montgomery[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/montgomery/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Montgomery[] = INCBIN_U32("data/tilesets/secondary/montgomery/tiles.4bpp.lz");

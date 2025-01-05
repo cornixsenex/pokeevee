@@ -340,3 +340,6 @@ const u16 gMetatileAttributes_IgnisMons[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_Colchis[] = INCBIN_U16("data/tilesets/secondary/colchis/metatiles.bin");
 const u16 gMetatileAttributes_Colchis[] = INCBIN_U16("data/tilesets/secondary/colchis/metatile_attributes.bin");
+
+const u16 gMetatiles_Montgomery[] = INCBIN_U16("data/tilesets/secondary/montgomery/metatiles.bin");
+const u16 gMetatileAttributes_Montgomery[] = INCBIN_U16("data/tilesets/secondary/montgomery/metatile_attributes.bin");
