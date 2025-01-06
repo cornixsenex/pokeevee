@@ -32,4 +32,8 @@ sacredfire
 	charizard tile
 alphacerz
 	collum tiles
+deadheroalistair
+	tiles
+alienortilesheet
+	montgomery path tiles
 

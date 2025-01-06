@@ -4617,7 +4617,7 @@
       "width": 53,
       "height": 135,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Montgomery",
       "border_filepath": "data/layouts/SRoute18/border.bin",
       "blockdata_filepath": "data/layouts/SRoute18/map.bin"
     },
@@ -4637,7 +4637,7 @@
       "width": 27,
       "height": 100,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Pacifidlog",
+      "secondary_tileset": "gTileset_Montgomery",
       "border_filepath": "data/layouts/SRoute19/border.bin",
       "blockdata_filepath": "data/layouts/SRoute19/map.bin"
     },
@@ -4647,7 +4647,7 @@
       "width": 22,
       "height": 23,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_Montgomery",
       "border_filepath": "data/layouts/Route8/border.bin",
       "blockdata_filepath": "data/layouts/Route8/map.bin"
     },
