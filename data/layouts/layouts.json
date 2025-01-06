@@ -5737,7 +5737,7 @@
       "width": 82,
       "height": 32,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_Montgomery",
       "border_filepath": "data/layouts/PenninsulaE/border.bin",
       "blockdata_filepath": "data/layouts/PenninsulaE/map.bin"
     },
