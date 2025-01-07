@@ -1,4 +1,11 @@
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/battle_transition.o src/battle_transition.c
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/graphics.o src/graphics.c
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/pokemon_storage_system.o src/pokemon_storage_system.c
 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/region_map.o src/region_map.c
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/roulette.o src/roulette.c
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/slot_machine.o src/slot_machine.c
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/wallclock.o src/wallclock.c
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/union_room_chat.o src/union_room_chat.c
 src/region_map.c: In function 'InitMapBasedOnPlayerLocation':
 src/region_map.c:1064:50: error: array subscript <unknown> is outside array bounds of 'const struct RegionMapLocation[0]' [-Werror=array-bounds=]
  1064 |     dimensionScale = mapWidth / gRegionMapEntries[sRegionMap->mapSecId].width;
@@ -25,6 +32,7 @@ src/region_map.c:1120:47: error: array subscript <unknown> is outside array boun
 src/data/region_map/region_map_entries.h:10:32: note: while referencing 'gRegionMapEntries'
    10 | const struct RegionMapLocation gRegionMapEntries[] = {
       |                                ^~~~~~~~~~~~~~~~~
+/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1 -quiet <flags> -o build/modern/src/wireless_communication_status_screen.o src/wireless_communication_status_screen.c
 src/region_map.c: In function 'RegionMap_InitializeStateBasedOnSSTidalLocation':
 src/region_map.c:1155:73: error: array subscript <unknown> is outside array bounds of 'const struct RegionMapLocation[0]' [-Werror=array-bounds=]
  1155 |         dimensionScale = mapHeader->mapLayout->width / gRegionMapEntries[sRegionMap->mapSecId].width;
@@ -139,3 +147,4 @@ src/data/region_map/region_map_entries.h:10:32: note: while referencing 'gRegion
 cc1: all warnings being treated as errors
 make: *** [build/modern/src/region_map.o] Error 1
 make: *** Deleting file `build/modern/src/region_map.o'
+make: *** Waiting for unfinished jobs....
