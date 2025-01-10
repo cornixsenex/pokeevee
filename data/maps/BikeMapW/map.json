@@ -27,6 +27,11 @@
       "map": "MAP_BIKE_ROUTE_NWS",
       "offset": 113,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BIKE_MAP_VEGAS",
+      "offset": 11,
+      "direction": "up"
     }
   ],
   "object_events": [

@@ -1585,3 +1585,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Sanjo/scripts.inc"
 
 	.include "data/maps/SanjoRockFiller/scripts.inc"
+
+	.include "data/maps/BikeMapVegas/scripts.inc"

@@ -6180,6 +6180,16 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/SanjoRockFiller/border.bin",
       "blockdata_filepath": "data/layouts/SanjoRockFiller/map.bin"
+    },
+    {
+      "id": "LAYOUT_BIKE_MAP_VEGAS",
+      "name": "BikeMapVegas_Layout",
+      "width": 28,
+      "height": 45,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/BikeMapVegas/border.bin",
+      "blockdata_filepath": "data/layouts/BikeMapVegas/map.bin"
     }
   ]
 }

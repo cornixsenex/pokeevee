@@ -1,9 +1,9 @@
 {
-  "id": "MAP_BIKE_ROUTE_NW",
-  "name": "BikeRouteNW",
-  "layout": "LAYOUT_BIKE_ROUTE_NW",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_PEWTER_CITY",
+  "id": "MAP_BIKE_MAP_VEGAS",
+  "name": "BikeMapVegas",
+  "layout": "LAYOUT_BIKE_MAP_VEGAS",
+  "music": "SE_RG_SHOP",
+  "region_map_section": "MAPSEC_BIRTH_ISLAND_FRLG",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -14,18 +14,13 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_BIKE_ROUTE_NWS",
-      "offset": 25,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_BIKE_ROUTE_NNW",
-      "offset": 0,
+      "map": "MAP_BIKE_ROUTE_NW",
+      "offset": -58,
       "direction": "up"
     },
     {
-      "map": "MAP_BIKE_MAP_VEGAS",
-      "offset": 58,
+      "map": "MAP_BIKE_MAP_W",
+      "offset": -11,
       "direction": "down"
     }
   ],
