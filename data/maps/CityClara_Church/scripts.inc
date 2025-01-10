@@ -1,2307 +1,2307 @@
 CityClara_Church_MapScripts::
-# 2 "data/maps/CityClara_Church/scripts.pory"
+# 2 "data//maps/CityClara_Church/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CityClara_Church_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	.byte 0
 
 CityClara_Church_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-# 3 "data/maps/CityClara_Church/scripts.pory"
+# 3 "data//maps/CityClara_Church/scripts.pory"
 	map_script_2 VAR_CITYCLARA_STATE, 0, CityClara_Church_OnWarp_HidePreChurchCutscene
-# 4 "data/maps/CityClara_Church/scripts.pory"
+# 4 "data//maps/CityClara_Church/scripts.pory"
 	map_script_2 VAR_CITYCLARA_STATE, 1, CityClara_Church_OnWarp_HidePreChurchCutscene
-# 5 "data/maps/CityClara_Church/scripts.pory"
+# 5 "data//maps/CityClara_Church/scripts.pory"
 	map_script_2 VAR_CITYCLARA_STATE, 2, CityClara_Church_OnWarp_HidePreChurchCutscene
-# 6 "data/maps/CityClara_Church/scripts.pory"
+# 6 "data//maps/CityClara_Church/scripts.pory"
 	map_script_2 VAR_CITYCLARA_STATE, 3, CityClara_Church_OnWarp_HidePreChurchCutscene
-# 7 "data/maps/CityClara_Church/scripts.pory"
+# 7 "data//maps/CityClara_Church/scripts.pory"
 	map_script_2 VAR_CITYCLARA_STATE, 4, CityClara_Church_OnWarp_HidePreChurchCutscene
-# 8 "data/maps/CityClara_Church/scripts.pory"
+# 8 "data//maps/CityClara_Church/scripts.pory"
 	map_script_2 VAR_CITYCLARA_STATE, 10, CicyClara_Church_OnWarp_ShowAfterChurchCutscene
 	.2byte 0
 
 
 CityClara_Church_OnWarp_HidePreChurchCutscene::
-# 13 "data/maps/CityClara_Church/scripts.pory"
+# 13 "data//maps/CityClara_Church/scripts.pory"
 	setflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
-# 14 "data/maps/CityClara_Church/scripts.pory"
+# 14 "data//maps/CityClara_Church/scripts.pory"
 	setflag FLAG_CLARACITY_CHURCH_HIDELEAF
-# 15 "data/maps/CityClara_Church/scripts.pory"
+# 15 "data//maps/CityClara_Church/scripts.pory"
 	setflag FLAG_CLARACITY_CHURCH_HIDEDAD
-# 16 "data/maps/CityClara_Church/scripts.pory"
+# 16 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 8
-# 17 "data/maps/CityClara_Church/scripts.pory"
+# 17 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 9
-# 18 "data/maps/CityClara_Church/scripts.pory"
+# 18 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 10
-# 19 "data/maps/CityClara_Church/scripts.pory"
+# 19 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 11
-# 20 "data/maps/CityClara_Church/scripts.pory"
+# 20 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 12
-# 21 "data/maps/CityClara_Church/scripts.pory"
+# 21 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 13
 	end
 
 
 CicyClara_Church_OnWarp_ShowAfterChurchCutscene::
-# 26 "data/maps/CityClara_Church/scripts.pory"
+# 26 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 11
-# 27 "data/maps/CityClara_Church/scripts.pory"
+# 27 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 12
-# 28 "data/maps/CityClara_Church/scripts.pory"
+# 28 "data//maps/CityClara_Church/scripts.pory"
 	setobjectxyperm 13, 20, 15
-# 29 "data/maps/CityClara_Church/scripts.pory"
+# 29 "data//maps/CityClara_Church/scripts.pory"
 	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_DOWN
-# 30 "data/maps/CityClara_Church/scripts.pory"
+# 30 "data//maps/CityClara_Church/scripts.pory"
 	addobject 13
-# 31 "data/maps/CityClara_Church/scripts.pory"
+# 31 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 12, MAP_CITY_CLARA_CHURCH
 	end
 
 
 CityClara_Church_EventScript_BlainTrigger1::
-# 36 "data/maps/CityClara_Church/scripts.pory"
+# 36 "data//maps/CityClara_Church/scripts.pory"
 	lock
-# 37 "data/maps/CityClara_Church/scripts.pory"
+# 37 "data//maps/CityClara_Church/scripts.pory"
 	setvar VAR_CITYCLARA_STATE, 1
-# 38 "data/maps/CityClara_Church/scripts.pory"
+# 38 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 39 "data/maps/CityClara_Church/scripts.pory"
+# 39 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 40 "data/maps/CityClara_Church/scripts.pory"
+# 40 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera1A
-# 41 "data/maps/CityClara_Church/scripts.pory"
+# 41 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 42 "data/maps/CityClara_Church/scripts.pory"
+# 42 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 43 "data/maps/CityClara_Church/scripts.pory"
+# 43 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_BlaineCutscene
-# 44 "data/maps/CityClara_Church/scripts.pory"
+# 44 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 45 "data/maps/CityClara_Church/scripts.pory"
+# 45 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera1B
-# 46 "data/maps/CityClara_Church/scripts.pory"
+# 46 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 47 "data/maps/CityClara_Church/scripts.pory"
+# 47 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 48 "data/maps/CityClara_Church/scripts.pory"
+# 48 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_JesseAndJamesIntro
-# 49 "data/maps/CityClara_Church/scripts.pory"
+# 49 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 50 "data/maps/CityClara_Church/scripts.pory"
+# 50 "data//maps/CityClara_Church/scripts.pory"
 	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
-# 51 "data/maps/CityClara_Church/scripts.pory"
+# 51 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_JesseAndJamesDefeated
-# 52 "data/maps/CityClara_Church/scripts.pory"
+# 52 "data//maps/CityClara_Church/scripts.pory"
 	release
 	end
 
 
 CityClara_Church_EventScript_BlainTrigger2::
-# 56 "data/maps/CityClara_Church/scripts.pory"
+# 56 "data//maps/CityClara_Church/scripts.pory"
 	lock
-# 57 "data/maps/CityClara_Church/scripts.pory"
+# 57 "data//maps/CityClara_Church/scripts.pory"
 	setvar VAR_CITYCLARA_STATE, 2
-# 58 "data/maps/CityClara_Church/scripts.pory"
+# 58 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 59 "data/maps/CityClara_Church/scripts.pory"
+# 59 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 60 "data/maps/CityClara_Church/scripts.pory"
+# 60 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera2A
-# 61 "data/maps/CityClara_Church/scripts.pory"
+# 61 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 62 "data/maps/CityClara_Church/scripts.pory"
+# 62 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 63 "data/maps/CityClara_Church/scripts.pory"
+# 63 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_BlaineCutscene
-# 64 "data/maps/CityClara_Church/scripts.pory"
+# 64 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 65 "data/maps/CityClara_Church/scripts.pory"
+# 65 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera2B
-# 66 "data/maps/CityClara_Church/scripts.pory"
+# 66 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 67 "data/maps/CityClara_Church/scripts.pory"
+# 67 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 68 "data/maps/CityClara_Church/scripts.pory"
+# 68 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_JesseAndJamesIntro
-# 69 "data/maps/CityClara_Church/scripts.pory"
+# 69 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 70 "data/maps/CityClara_Church/scripts.pory"
+# 70 "data//maps/CityClara_Church/scripts.pory"
 	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
-# 71 "data/maps/CityClara_Church/scripts.pory"
+# 71 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_JesseAndJamesDefeated
-# 72 "data/maps/CityClara_Church/scripts.pory"
+# 72 "data//maps/CityClara_Church/scripts.pory"
 	release
 	end
 
 
 CityClara_Church_EventScript_BlainTrigger3::
-# 77 "data/maps/CityClara_Church/scripts.pory"
+# 77 "data//maps/CityClara_Church/scripts.pory"
 	lock
-# 78 "data/maps/CityClara_Church/scripts.pory"
+# 78 "data//maps/CityClara_Church/scripts.pory"
 	setvar VAR_CITYCLARA_STATE, 3
-# 79 "data/maps/CityClara_Church/scripts.pory"
+# 79 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 80 "data/maps/CityClara_Church/scripts.pory"
+# 80 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 81 "data/maps/CityClara_Church/scripts.pory"
+# 81 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera3A
-# 82 "data/maps/CityClara_Church/scripts.pory"
+# 82 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 83 "data/maps/CityClara_Church/scripts.pory"
+# 83 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 84 "data/maps/CityClara_Church/scripts.pory"
+# 84 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_BlaineCutscene
-# 85 "data/maps/CityClara_Church/scripts.pory"
+# 85 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 86 "data/maps/CityClara_Church/scripts.pory"
+# 86 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera3B
-# 87 "data/maps/CityClara_Church/scripts.pory"
+# 87 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 88 "data/maps/CityClara_Church/scripts.pory"
+# 88 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 89 "data/maps/CityClara_Church/scripts.pory"
+# 89 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_JesseAndJamesIntro
-# 90 "data/maps/CityClara_Church/scripts.pory"
+# 90 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 91 "data/maps/CityClara_Church/scripts.pory"
+# 91 "data//maps/CityClara_Church/scripts.pory"
 	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
-# 92 "data/maps/CityClara_Church/scripts.pory"
+# 92 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_JesseAndJamesDefeated
-# 93 "data/maps/CityClara_Church/scripts.pory"
+# 93 "data//maps/CityClara_Church/scripts.pory"
 	release
 	end
 
 
 CityClara_Church_EventScript_BlainTrigger4::
-# 98 "data/maps/CityClara_Church/scripts.pory"
+# 98 "data//maps/CityClara_Church/scripts.pory"
 	lock
-# 99 "data/maps/CityClara_Church/scripts.pory"
+# 99 "data//maps/CityClara_Church/scripts.pory"
 	setvar VAR_CITYCLARA_STATE, 4
-# 100 "data/maps/CityClara_Church/scripts.pory"
+# 100 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 101 "data/maps/CityClara_Church/scripts.pory"
+# 101 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 102 "data/maps/CityClara_Church/scripts.pory"
+# 102 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4A
-# 103 "data/maps/CityClara_Church/scripts.pory"
+# 103 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 104 "data/maps/CityClara_Church/scripts.pory"
+# 104 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 105 "data/maps/CityClara_Church/scripts.pory"
+# 105 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_BlaineCutscene
-# 106 "data/maps/CityClara_Church/scripts.pory"
+# 106 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 107 "data/maps/CityClara_Church/scripts.pory"
+# 107 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera4B
-# 108 "data/maps/CityClara_Church/scripts.pory"
+# 108 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 109 "data/maps/CityClara_Church/scripts.pory"
+# 109 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 110 "data/maps/CityClara_Church/scripts.pory"
+# 110 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_JesseAndJamesIntro
-# 111 "data/maps/CityClara_Church/scripts.pory"
+# 111 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 112 "data/maps/CityClara_Church/scripts.pory"
+# 112 "data//maps/CityClara_Church/scripts.pory"
 	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
-# 113 "data/maps/CityClara_Church/scripts.pory"
+# 113 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_JesseAndJamesDefeated
-# 114 "data/maps/CityClara_Church/scripts.pory"
+# 114 "data//maps/CityClara_Church/scripts.pory"
 	release
 	end
 
 
 CityClara_Church_EventScript_BlainTrigger5::
-# 118 "data/maps/CityClara_Church/scripts.pory"
+# 118 "data//maps/CityClara_Church/scripts.pory"
 	lock
-# 119 "data/maps/CityClara_Church/scripts.pory"
+# 119 "data//maps/CityClara_Church/scripts.pory"
 	setvar VAR_CITYCLARA_STATE, 5
-# 120 "data/maps/CityClara_Church/scripts.pory"
+# 120 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 121 "data/maps/CityClara_Church/scripts.pory"
+# 121 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 122 "data/maps/CityClara_Church/scripts.pory"
+# 122 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5A
-# 123 "data/maps/CityClara_Church/scripts.pory"
+# 123 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 124 "data/maps/CityClara_Church/scripts.pory"
+# 124 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 125 "data/maps/CityClara_Church/scripts.pory"
+# 125 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_BlaineCutscene
-# 126 "data/maps/CityClara_Church/scripts.pory"
+# 126 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 127 "data/maps/CityClara_Church/scripts.pory"
+# 127 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera5B
-# 128 "data/maps/CityClara_Church/scripts.pory"
+# 128 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 129 "data/maps/CityClara_Church/scripts.pory"
+# 129 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 130 "data/maps/CityClara_Church/scripts.pory"
+# 130 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_JesseAndJamesIntro
-# 131 "data/maps/CityClara_Church/scripts.pory"
+# 131 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 132 "data/maps/CityClara_Church/scripts.pory"
+# 132 "data//maps/CityClara_Church/scripts.pory"
 	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
-# 133 "data/maps/CityClara_Church/scripts.pory"
+# 133 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_JesseAndJamesDefeated
-# 134 "data/maps/CityClara_Church/scripts.pory"
+# 134 "data//maps/CityClara_Church/scripts.pory"
 	release
 	end
 
 
 CityClara_Church_EventScript_BlainTrigger6::
-# 139 "data/maps/CityClara_Church/scripts.pory"
+# 139 "data//maps/CityClara_Church/scripts.pory"
 	lock
-# 140 "data/maps/CityClara_Church/scripts.pory"
+# 140 "data//maps/CityClara_Church/scripts.pory"
 	setvar VAR_CITYCLARA_STATE, 6
-# 141 "data/maps/CityClara_Church/scripts.pory"
+# 141 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 142 "data/maps/CityClara_Church/scripts.pory"
+# 142 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 143 "data/maps/CityClara_Church/scripts.pory"
+# 143 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6A
-# 144 "data/maps/CityClara_Church/scripts.pory"
+# 144 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 145 "data/maps/CityClara_Church/scripts.pory"
+# 145 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 146 "data/maps/CityClara_Church/scripts.pory"
+# 146 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_BlaineCutscene
-# 147 "data/maps/CityClara_Church/scripts.pory"
+# 147 "data//maps/CityClara_Church/scripts.pory"
 	special SpawnCameraObject
-# 148 "data/maps/CityClara_Church/scripts.pory"
+# 148 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCamera6B
-# 149 "data/maps/CityClara_Church/scripts.pory"
+# 149 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 150 "data/maps/CityClara_Church/scripts.pory"
+# 150 "data//maps/CityClara_Church/scripts.pory"
 	special RemoveCameraObject
-# 151 "data/maps/CityClara_Church/scripts.pory"
+# 151 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_JesseAndJamesIntro
-# 152 "data/maps/CityClara_Church/scripts.pory"
+# 152 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 153 "data/maps/CityClara_Church/scripts.pory"
+# 153 "data//maps/CityClara_Church/scripts.pory"
 	trainerbattle_no_intro TRAINER_JESSE_AND_JAMES_1, CityClara_Text_JesseAndJamesLost
-# 154 "data/maps/CityClara_Church/scripts.pory"
+# 154 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_JesseAndJamesDefeated
-# 155 "data/maps/CityClara_Church/scripts.pory"
+# 155 "data//maps/CityClara_Church/scripts.pory"
 	release
 	end
 
 
 CityClara_Church_EventScript_BlaineCutscene::
-# 160 "data/maps/CityClara_Church/scripts.pory"
+# 160 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 161 "data/maps/CityClara_Church/scripts.pory"
+# 161 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage1
-# 162 "data/maps/CityClara_Church/scripts.pory"
+# 162 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 163 "data/maps/CityClara_Church/scripts.pory"
+# 163 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 164 "data/maps/CityClara_Church/scripts.pory"
+# 164 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 7, 190, 98
-# 165 "data/maps/CityClara_Church/scripts.pory"
+# 165 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine1
-# 166 "data/maps/CityClara_Church/scripts.pory"
+# 166 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 7
-# 167 "data/maps/CityClara_Church/scripts.pory"
+# 167 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 168 "data/maps/CityClara_Church/scripts.pory"
+# 168 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 169 "data/maps/CityClara_Church/scripts.pory"
+# 169 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage2
-# 170 "data/maps/CityClara_Church/scripts.pory"
+# 170 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 171 "data/maps/CityClara_Church/scripts.pory"
+# 171 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 172 "data/maps/CityClara_Church/scripts.pory"
+# 172 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 7, 190, 98
-# 173 "data/maps/CityClara_Church/scripts.pory"
+# 173 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine2
-# 174 "data/maps/CityClara_Church/scripts.pory"
+# 174 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 7
-# 175 "data/maps/CityClara_Church/scripts.pory"
+# 175 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 178 "data/maps/CityClara_Church/scripts.pory"
+# 178 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1SageGrab
-# 179 "data/maps/CityClara_Church/scripts.pory"
+# 179 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2SageGrab
-# 180 "data/maps/CityClara_Church/scripts.pory"
+# 180 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 183 "data/maps/CityClara_Church/scripts.pory"
+# 183 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 184 "data/maps/CityClara_Church/scripts.pory"
+# 184 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage3
-# 185 "data/maps/CityClara_Church/scripts.pory"
+# 185 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 186 "data/maps/CityClara_Church/scripts.pory"
+# 186 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 188 "data/maps/CityClara_Church/scripts.pory"
+# 188 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 7, 190, 98
-# 189 "data/maps/CityClara_Church/scripts.pory"
+# 189 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine3
-# 190 "data/maps/CityClara_Church/scripts.pory"
+# 190 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 7
-# 191 "data/maps/CityClara_Church/scripts.pory"
+# 191 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 194 "data/maps/CityClara_Church/scripts.pory"
+# 194 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1SageExit
-# 195 "data/maps/CityClara_Church/scripts.pory"
+# 195 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2SageExit
-# 196 "data/maps/CityClara_Church/scripts.pory"
+# 196 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 2, CityClara_Church_Movement_SageExit
-# 198 "data/maps/CityClara_Church/scripts.pory"
+# 198 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 199 "data/maps/CityClara_Church/scripts.pory"
+# 199 "data//maps/CityClara_Church/scripts.pory"
 	hideobjectat 5, MAP_CITY_CLARA_CHURCH
-# 200 "data/maps/CityClara_Church/scripts.pory"
+# 200 "data//maps/CityClara_Church/scripts.pory"
 	setobjectxy 4, 18, 23
-# 201 "data/maps/CityClara_Church/scripts.pory"
+# 201 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 2
-# 202 "data/maps/CityClara_Church/scripts.pory"
+# 202 "data//maps/CityClara_Church/scripts.pory"
 	hideobjectat 4, MAP_CITY_CLARA_CHURCH
-# 206 "data/maps/CityClara_Church/scripts.pory"
+# 206 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_BlaineChase1
-# 207 "data/maps/CityClara_Church/scripts.pory"
+# 207 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 208 "data/maps/CityClara_Church/scripts.pory"
+# 208 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 1, CityClara_Church_Movement_MewChase1
-# 209 "data/maps/CityClara_Church/scripts.pory"
+# 209 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 210 "data/maps/CityClara_Church/scripts.pory"
+# 210 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_BlaineChase2
-# 211 "data/maps/CityClara_Church/scripts.pory"
+# 211 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 212 "data/maps/CityClara_Church/scripts.pory"
+# 212 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 1, CityClara_Church_Movement_MewChase2
-# 213 "data/maps/CityClara_Church/scripts.pory"
+# 213 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 214 "data/maps/CityClara_Church/scripts.pory"
+# 214 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 7, 190, 98
-# 215 "data/maps/CityClara_Church/scripts.pory"
+# 215 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine4
-# 216 "data/maps/CityClara_Church/scripts.pory"
+# 216 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 7
-# 217 "data/maps/CityClara_Church/scripts.pory"
+# 217 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 220 "data/maps/CityClara_Church/scripts.pory"
+# 220 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_BlaineChase3
-# 221 "data/maps/CityClara_Church/scripts.pory"
+# 221 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 222 "data/maps/CityClara_Church/scripts.pory"
+# 222 "data//maps/CityClara_Church/scripts.pory"
 	playmoncry SPECIES_MEW, 0
-# 223 "data/maps/CityClara_Church/scripts.pory"
+# 223 "data//maps/CityClara_Church/scripts.pory"
 	fadescreen 1
-# 224 "data/maps/CityClara_Church/scripts.pory"
+# 224 "data//maps/CityClara_Church/scripts.pory"
 	waitmoncry
-# 225 "data/maps/CityClara_Church/scripts.pory"
+# 225 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 1
-# 226 "data/maps/CityClara_Church/scripts.pory"
+# 226 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 4, MAP_CITY_CLARA_CHURCH
-# 227 "data/maps/CityClara_Church/scripts.pory"
+# 227 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 5, MAP_CITY_CLARA_CHURCH
-# 228 "data/maps/CityClara_Church/scripts.pory"
+# 228 "data//maps/CityClara_Church/scripts.pory"
 	fadescreen 0
-# 229 "data/maps/CityClara_Church/scripts.pory"
+# 229 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_BlaineChase4
-# 230 "data/maps/CityClara_Church/scripts.pory"
+# 230 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1Enter
-# 231 "data/maps/CityClara_Church/scripts.pory"
+# 231 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2Enter
-# 232 "data/maps/CityClara_Church/scripts.pory"
+# 232 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 235 "data/maps/CityClara_Church/scripts.pory"
+# 235 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 7, 190, 98
-# 236 "data/maps/CityClara_Church/scripts.pory"
+# 236 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine5
-# 237 "data/maps/CityClara_Church/scripts.pory"
+# 237 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 7
-# 238 "data/maps/CityClara_Church/scripts.pory"
+# 238 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 240 "data/maps/CityClara_Church/scripts.pory"
+# 240 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_Blaine5
-# 241 "data/maps/CityClara_Church/scripts.pory"
+# 241 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 243 "data/maps/CityClara_Church/scripts.pory"
+# 243 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, Common_Movement_ExclamationMark
-# 244 "data/maps/CityClara_Church/scripts.pory"
+# 244 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 248 "data/maps/CityClara_Church/scripts.pory"
+# 248 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 1
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_2
-# 252 "data/maps/CityClara_Church/scripts.pory"
+# 252 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 2
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_3
-# 256 "data/maps/CityClara_Church/scripts.pory"
+# 256 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 3
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_4
-# 260 "data/maps/CityClara_Church/scripts.pory"
+# 260 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 4
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_5
-# 264 "data/maps/CityClara_Church/scripts.pory"
+# 264 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 5
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_6
-# 268 "data/maps/CityClara_Church/scripts.pory"
+# 268 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 6
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_7
-# 273 "data/maps/CityClara_Church/scripts.pory"
+# 273 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceRight
-# 274 "data/maps/CityClara_Church/scripts.pory"
+# 274 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_ERROR
 CityClara_Church_EventScript_BlaineCutscene_1:
-# 276 "data/maps/CityClara_Church/scripts.pory"
+# 276 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 277 "data/maps/CityClara_Church/scripts.pory"
+# 277 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 7, 190, 98
-# 278 "data/maps/CityClara_Church/scripts.pory"
+# 278 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine6
-# 279 "data/maps/CityClara_Church/scripts.pory"
+# 279 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 280 "data/maps/CityClara_Church/scripts.pory"
+# 280 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceDown
-# 281 "data/maps/CityClara_Church/scripts.pory"
+# 281 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 282 "data/maps/CityClara_Church/scripts.pory"
+# 282 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine7
-# 283 "data/maps/CityClara_Church/scripts.pory"
+# 283 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 7
-# 284 "data/maps/CityClara_Church/scripts.pory"
+# 284 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 287 "data/maps/CityClara_Church/scripts.pory"
+# 287 "data//maps/CityClara_Church/scripts.pory"
 	clearflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
-# 288 "data/maps/CityClara_Church/scripts.pory"
+# 288 "data//maps/CityClara_Church/scripts.pory"
 	addobject 8
-# 289 "data/maps/CityClara_Church/scripts.pory"
+# 289 "data//maps/CityClara_Church/scripts.pory"
 	addobject 9
-# 290 "data/maps/CityClara_Church/scripts.pory"
+# 290 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 8, MAP_CITY_CLARA_CHURCH
-# 291 "data/maps/CityClara_Church/scripts.pory"
+# 291 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 9, MAP_CITY_CLARA_CHURCH
-# 292 "data/maps/CityClara_Church/scripts.pory"
+# 292 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 8, CityClara_Church_Movement_Rocket1Enter
-# 293 "data/maps/CityClara_Church/scripts.pory"
+# 293 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 9, CityClara_Church_Movement_Rocket2Enter
-# 294 "data/maps/CityClara_Church/scripts.pory"
+# 294 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 295 "data/maps/CityClara_Church/scripts.pory"
+# 295 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Meowth
-# 296 "data/maps/CityClara_Church/scripts.pory"
+# 296 "data//maps/CityClara_Church/scripts.pory"
 	addobject 10
-# 297 "data/maps/CityClara_Church/scripts.pory"
+# 297 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 10, MAP_CITY_CLARA_CHURCH
-# 298 "data/maps/CityClara_Church/scripts.pory"
+# 298 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 10, CityClara_Church_Movement_MeowthEnter
-# 299 "data/maps/CityClara_Church/scripts.pory"
+# 299 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 300 "data/maps/CityClara_Church/scripts.pory"
+# 300 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 7, 190, 98
-# 301 "data/maps/CityClara_Church/scripts.pory"
+# 301 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Blaine8
-# 302 "data/maps/CityClara_Church/scripts.pory"
+# 302 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 7
-# 303 "data/maps/CityClara_Church/scripts.pory"
+# 303 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 305 "data/maps/CityClara_Church/scripts.pory"
+# 305 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_BlaineExit
-# 306 "data/maps/CityClara_Church/scripts.pory"
+# 306 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 6, CityClara_Church_Movement_GruntLExit
-# 307 "data/maps/CityClara_Church/scripts.pory"
+# 307 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 7, CityClara_Church_Movement_GruntRExit
-# 308 "data/maps/CityClara_Church/scripts.pory"
+# 308 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 1
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_16
-# 320 "data/maps/CityClara_Church/scripts.pory"
+# 320 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 2
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_17
-# 332 "data/maps/CityClara_Church/scripts.pory"
+# 332 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 3
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_18
-# 344 "data/maps/CityClara_Church/scripts.pory"
+# 344 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 4
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_19
-# 356 "data/maps/CityClara_Church/scripts.pory"
+# 356 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 5
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_20
-# 368 "data/maps/CityClara_Church/scripts.pory"
+# 368 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 6
 	goto_if_eq CityClara_Church_EventScript_BlaineCutscene_21
-# 381 "data/maps/CityClara_Church/scripts.pory"
+# 381 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_ERROR
-# 382 "data/maps/CityClara_Church/scripts.pory"
+# 382 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 383 "data/maps/CityClara_Church/scripts.pory"
+# 383 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 CityClara_Church_EventScript_BlaineCutscene_15:
-# 385 "data/maps/CityClara_Church/scripts.pory"
+# 385 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
 	return
 
 CityClara_Church_EventScript_BlaineCutscene_2:
-# 249 "data/maps/CityClara_Church/scripts.pory"
+# 249 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceLeft
-# 250 "data/maps/CityClara_Church/scripts.pory"
+# 250 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab1
-# 251 "data/maps/CityClara_Church/scripts.pory"
+# 251 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab1
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_3:
-# 253 "data/maps/CityClara_Church/scripts.pory"
+# 253 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceLeft
-# 254 "data/maps/CityClara_Church/scripts.pory"
+# 254 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab2
-# 255 "data/maps/CityClara_Church/scripts.pory"
+# 255 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab2
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_4:
-# 257 "data/maps/CityClara_Church/scripts.pory"
+# 257 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceLeft
-# 258 "data/maps/CityClara_Church/scripts.pory"
+# 258 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab3
-# 259 "data/maps/CityClara_Church/scripts.pory"
+# 259 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab3
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_5:
-# 261 "data/maps/CityClara_Church/scripts.pory"
+# 261 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceRight
-# 262 "data/maps/CityClara_Church/scripts.pory"
+# 262 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab4
-# 263 "data/maps/CityClara_Church/scripts.pory"
+# 263 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab4
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_6:
-# 265 "data/maps/CityClara_Church/scripts.pory"
+# 265 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceRight
-# 266 "data/maps/CityClara_Church/scripts.pory"
+# 266 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab5
-# 267 "data/maps/CityClara_Church/scripts.pory"
+# 267 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab5
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_7:
-# 269 "data/maps/CityClara_Church/scripts.pory"
+# 269 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_FaceRight
-# 270 "data/maps/CityClara_Church/scripts.pory"
+# 270 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1PlayerGrab6
-# 271 "data/maps/CityClara_Church/scripts.pory"
+# 271 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2PlayerGrab6
 	goto CityClara_Church_EventScript_BlaineCutscene_1
 
 CityClara_Church_EventScript_BlaineCutscene_16:
-# 309 "data/maps/CityClara_Church/scripts.pory"
+# 309 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit1
-# 310 "data/maps/CityClara_Church/scripts.pory"
+# 310 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit1
-# 311 "data/maps/CityClara_Church/scripts.pory"
+# 311 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 312 "data/maps/CityClara_Church/scripts.pory"
+# 312 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 3
-# 313 "data/maps/CityClara_Church/scripts.pory"
+# 313 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 4
-# 314 "data/maps/CityClara_Church/scripts.pory"
+# 314 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 5
-# 315 "data/maps/CityClara_Church/scripts.pory"
+# 315 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 6
-# 316 "data/maps/CityClara_Church/scripts.pory"
+# 316 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 7
-# 317 "data/maps/CityClara_Church/scripts.pory"
+# 317 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 8, CityClara_Church_Movement_JesseEngage1
-# 318 "data/maps/CityClara_Church/scripts.pory"
+# 318 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 9, CityClara_Church_Movement_JamesEngage1
-# 319 "data/maps/CityClara_Church/scripts.pory"
+# 319 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 10, CityClara_Church_Movement_MeowthEngage1
 	goto CityClara_Church_EventScript_BlaineCutscene_15
 
 CityClara_Church_EventScript_BlaineCutscene_17:
-# 321 "data/maps/CityClara_Church/scripts.pory"
+# 321 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit2
-# 322 "data/maps/CityClara_Church/scripts.pory"
+# 322 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit2
-# 323 "data/maps/CityClara_Church/scripts.pory"
+# 323 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 324 "data/maps/CityClara_Church/scripts.pory"
+# 324 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 3
-# 325 "data/maps/CityClara_Church/scripts.pory"
+# 325 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 4
-# 326 "data/maps/CityClara_Church/scripts.pory"
+# 326 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 5
-# 327 "data/maps/CityClara_Church/scripts.pory"
+# 327 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 6
-# 328 "data/maps/CityClara_Church/scripts.pory"
+# 328 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 7
-# 329 "data/maps/CityClara_Church/scripts.pory"
+# 329 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 8, CityClara_Church_Movement_JesseEngage1
-# 330 "data/maps/CityClara_Church/scripts.pory"
+# 330 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 9, CityClara_Church_Movement_JamesEngage1
-# 331 "data/maps/CityClara_Church/scripts.pory"
+# 331 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 10, CityClara_Church_Movement_MeowthEngage1
 	goto CityClara_Church_EventScript_BlaineCutscene_15
 
 CityClara_Church_EventScript_BlaineCutscene_18:
-# 333 "data/maps/CityClara_Church/scripts.pory"
+# 333 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit3
-# 334 "data/maps/CityClara_Church/scripts.pory"
+# 334 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit3
-# 335 "data/maps/CityClara_Church/scripts.pory"
+# 335 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 336 "data/maps/CityClara_Church/scripts.pory"
+# 336 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 3
-# 337 "data/maps/CityClara_Church/scripts.pory"
+# 337 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 4
-# 338 "data/maps/CityClara_Church/scripts.pory"
+# 338 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 5
-# 339 "data/maps/CityClara_Church/scripts.pory"
+# 339 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 6
-# 340 "data/maps/CityClara_Church/scripts.pory"
+# 340 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 7
-# 341 "data/maps/CityClara_Church/scripts.pory"
+# 341 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 8, CityClara_Church_Movement_JesseEngage3
-# 342 "data/maps/CityClara_Church/scripts.pory"
+# 342 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 9, CityClara_Church_Movement_JamesEngage3
-# 343 "data/maps/CityClara_Church/scripts.pory"
+# 343 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 10, CityClara_Church_Movement_JesseEngage3
 	goto CityClara_Church_EventScript_BlaineCutscene_15
 
 CityClara_Church_EventScript_BlaineCutscene_19:
-# 345 "data/maps/CityClara_Church/scripts.pory"
+# 345 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit4
-# 346 "data/maps/CityClara_Church/scripts.pory"
+# 346 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit4
-# 347 "data/maps/CityClara_Church/scripts.pory"
+# 347 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 348 "data/maps/CityClara_Church/scripts.pory"
+# 348 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 3
-# 349 "data/maps/CityClara_Church/scripts.pory"
+# 349 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 4
-# 350 "data/maps/CityClara_Church/scripts.pory"
+# 350 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 5
-# 351 "data/maps/CityClara_Church/scripts.pory"
+# 351 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 6
-# 352 "data/maps/CityClara_Church/scripts.pory"
+# 352 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 7
-# 353 "data/maps/CityClara_Church/scripts.pory"
+# 353 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 8, CityClara_Church_Movement_JesseEngage4
-# 354 "data/maps/CityClara_Church/scripts.pory"
+# 354 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 9, CityClara_Church_Movement_JamesEngage4
-# 355 "data/maps/CityClara_Church/scripts.pory"
+# 355 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 10, CityClara_Church_Movement_MeowthEngage4
 	goto CityClara_Church_EventScript_BlaineCutscene_15
 
 CityClara_Church_EventScript_BlaineCutscene_20:
-# 357 "data/maps/CityClara_Church/scripts.pory"
+# 357 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit5
-# 358 "data/maps/CityClara_Church/scripts.pory"
+# 358 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit5
-# 359 "data/maps/CityClara_Church/scripts.pory"
+# 359 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 360 "data/maps/CityClara_Church/scripts.pory"
+# 360 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 3
-# 361 "data/maps/CityClara_Church/scripts.pory"
+# 361 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 4
-# 362 "data/maps/CityClara_Church/scripts.pory"
+# 362 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 5
-# 363 "data/maps/CityClara_Church/scripts.pory"
+# 363 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 6
-# 364 "data/maps/CityClara_Church/scripts.pory"
+# 364 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 7
-# 365 "data/maps/CityClara_Church/scripts.pory"
+# 365 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 8, CityClara_Church_Movement_JesseEngage4
-# 366 "data/maps/CityClara_Church/scripts.pory"
+# 366 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 9, CityClara_Church_Movement_JamesEngage4
-# 367 "data/maps/CityClara_Church/scripts.pory"
+# 367 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 10, CityClara_Church_Movement_MeowthEngage4
 	goto CityClara_Church_EventScript_BlaineCutscene_15
 
 CityClara_Church_EventScript_BlaineCutscene_21:
-# 369 "data/maps/CityClara_Church/scripts.pory"
+# 369 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1Exit6
-# 370 "data/maps/CityClara_Church/scripts.pory"
+# 370 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2Exit6
-# 371 "data/maps/CityClara_Church/scripts.pory"
+# 371 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 372 "data/maps/CityClara_Church/scripts.pory"
+# 372 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 3
-# 373 "data/maps/CityClara_Church/scripts.pory"
+# 373 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 4
-# 374 "data/maps/CityClara_Church/scripts.pory"
+# 374 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 5
-# 375 "data/maps/CityClara_Church/scripts.pory"
+# 375 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 6
-# 376 "data/maps/CityClara_Church/scripts.pory"
+# 376 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 7
-# 377 "data/maps/CityClara_Church/scripts.pory"
+# 377 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 8, CityClara_Church_Movement_JesseEngage6
-# 378 "data/maps/CityClara_Church/scripts.pory"
+# 378 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 9, CityClara_Church_Movement_JamesEngage6
-# 379 "data/maps/CityClara_Church/scripts.pory"
+# 379 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 10, CityClara_Church_Movement_JamesEngage6
 	goto CityClara_Church_EventScript_BlaineCutscene_15
 
 
 CityClara_Church_EventScript_JesseAndJamesDefeated::
-# 391 "data/maps/CityClara_Church/scripts.pory"
+# 391 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_JesseAndJamesPost
-# 392 "data/maps/CityClara_Church/scripts.pory"
+# 392 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 393 "data/maps/CityClara_Church/scripts.pory"
+# 393 "data//maps/CityClara_Church/scripts.pory"
 	fadescreen 1
-# 394 "data/maps/CityClara_Church/scripts.pory"
+# 394 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 8
-# 395 "data/maps/CityClara_Church/scripts.pory"
+# 395 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 9
-# 396 "data/maps/CityClara_Church/scripts.pory"
+# 396 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 10
-# 397 "data/maps/CityClara_Church/scripts.pory"
+# 397 "data//maps/CityClara_Church/scripts.pory"
 	setflag FLAG_CLARACITY_AFTERMEW
-# 398 "data/maps/CityClara_Church/scripts.pory"
+# 398 "data//maps/CityClara_Church/scripts.pory"
 	setflag FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES
-# 399 "data/maps/CityClara_Church/scripts.pory"
+# 399 "data//maps/CityClara_Church/scripts.pory"
 	fadescreen 0
-# 400 "data/maps/CityClara_Church/scripts.pory"
+# 400 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 1
 	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_2
-# 402 "data/maps/CityClara_Church/scripts.pory"
+# 402 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 2
 	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_3
-# 404 "data/maps/CityClara_Church/scripts.pory"
+# 404 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 4
 	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_4
-# 406 "data/maps/CityClara_Church/scripts.pory"
+# 406 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_CITYCLARA_STATE, 5
 	goto_if_eq CityClara_Church_EventScript_JesseAndJamesDefeated_5
-# 409 "data/maps/CityClara_Church/scripts.pory"
+# 409 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 410 "data/maps/CityClara_Church/scripts.pory"
+# 410 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_ERROR
 CityClara_Church_EventScript_JesseAndJamesDefeated_1:
-# 412 "data/maps/CityClara_Church/scripts.pory"
+# 412 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 413 "data/maps/CityClara_Church/scripts.pory"
+# 413 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 416 "data/maps/CityClara_Church/scripts.pory"
+# 416 "data//maps/CityClara_Church/scripts.pory"
 	clearflag FLAG_CLARACITY_CHURCH_HIDELEAF
-# 417 "data/maps/CityClara_Church/scripts.pory"
+# 417 "data//maps/CityClara_Church/scripts.pory"
 	addobject 11
-# 418 "data/maps/CityClara_Church/scripts.pory"
+# 418 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 11, MAP_CITY_CLARA_CHURCH
-# 419 "data/maps/CityClara_Church/scripts.pory"
+# 419 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 11, CityClara_Church_Movement_LeafEnter
-# 420 "data/maps/CityClara_Church/scripts.pory"
+# 420 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 421 "data/maps/CityClara_Church/scripts.pory"
+# 421 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER Common_Movement_FaceLeft
-# 422 "data/maps/CityClara_Church/scripts.pory"
+# 422 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 423 "data/maps/CityClara_Church/scripts.pory"
+# 423 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 4, 190, 98
-# 424 "data/maps/CityClara_Church/scripts.pory"
+# 424 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Leaf1
-# 425 "data/maps/CityClara_Church/scripts.pory"
+# 425 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 426 "data/maps/CityClara_Church/scripts.pory"
+# 426 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 4
-# 427 "data/maps/CityClara_Church/scripts.pory"
+# 427 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 11, Common_Movement_FaceDown
-# 428 "data/maps/CityClara_Church/scripts.pory"
+# 428 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
-# 429 "data/maps/CityClara_Church/scripts.pory"
+# 429 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 430 "data/maps/CityClara_Church/scripts.pory"
+# 430 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 11, Common_Movement_ExclamationMark
-# 431 "data/maps/CityClara_Church/scripts.pory"
+# 431 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 432 "data/maps/CityClara_Church/scripts.pory"
+# 432 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 433 "data/maps/CityClara_Church/scripts.pory"
+# 433 "data//maps/CityClara_Church/scripts.pory"
 	clearflag FLAG_CLARACITY_CHURCH_HIDEDAD
-# 434 "data/maps/CityClara_Church/scripts.pory"
+# 434 "data//maps/CityClara_Church/scripts.pory"
 	addobject 12
-# 435 "data/maps/CityClara_Church/scripts.pory"
+# 435 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 12, MAP_CITY_CLARA_CHURCH
-# 436 "data/maps/CityClara_Church/scripts.pory"
+# 436 "data//maps/CityClara_Church/scripts.pory"
 	addobject 13
-# 437 "data/maps/CityClara_Church/scripts.pory"
+# 437 "data//maps/CityClara_Church/scripts.pory"
 	showobjectat 13, MAP_CITY_CLARA_CHURCH
-# 439 "data/maps/CityClara_Church/scripts.pory"
+# 439 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 12, CityClara_Church_Movement_DadEnter
-# 440 "data/maps/CityClara_Church/scripts.pory"
+# 440 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 13, CityClara_Church_Movement_DadEnter
-# 441 "data/maps/CityClara_Church/scripts.pory"
+# 441 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 442 "data/maps/CityClara_Church/scripts.pory"
+# 442 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 444 "data/maps/CityClara_Church/scripts.pory"
+# 444 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad1
-# 445 "data/maps/CityClara_Church/scripts.pory"
+# 445 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 446 "data/maps/CityClara_Church/scripts.pory"
+# 446 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 447 "data/maps/CityClara_Church/scripts.pory"
+# 447 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 4, 190, 98
-# 448 "data/maps/CityClara_Church/scripts.pory"
+# 448 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Leaf2
-# 449 "data/maps/CityClara_Church/scripts.pory"
+# 449 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 450 "data/maps/CityClara_Church/scripts.pory"
+# 450 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 4
-# 451 "data/maps/CityClara_Church/scripts.pory"
+# 451 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 452 "data/maps/CityClara_Church/scripts.pory"
+# 452 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad2
-# 453 "data/maps/CityClara_Church/scripts.pory"
+# 453 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 454 "data/maps/CityClara_Church/scripts.pory"
+# 454 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 455 "data/maps/CityClara_Church/scripts.pory"
+# 455 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 456 "data/maps/CityClara_Church/scripts.pory"
+# 456 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage4
-# 457 "data/maps/CityClara_Church/scripts.pory"
+# 457 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 458 "data/maps/CityClara_Church/scripts.pory"
+# 458 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 462 "data/maps/CityClara_Church/scripts.pory"
+# 462 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 463 "data/maps/CityClara_Church/scripts.pory"
+# 463 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad3
-# 464 "data/maps/CityClara_Church/scripts.pory"
+# 464 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 465 "data/maps/CityClara_Church/scripts.pory"
+# 465 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 470 "data/maps/CityClara_Church/scripts.pory"
+# 470 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 471 "data/maps/CityClara_Church/scripts.pory"
+# 471 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage5
-# 472 "data/maps/CityClara_Church/scripts.pory"
+# 472 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 473 "data/maps/CityClara_Church/scripts.pory"
+# 473 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 477 "data/maps/CityClara_Church/scripts.pory"
+# 477 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 478 "data/maps/CityClara_Church/scripts.pory"
+# 478 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad4
-# 479 "data/maps/CityClara_Church/scripts.pory"
+# 479 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 480 "data/maps/CityClara_Church/scripts.pory"
+# 480 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 486 "data/maps/CityClara_Church/scripts.pory"
+# 486 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 487 "data/maps/CityClara_Church/scripts.pory"
+# 487 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage6
-# 488 "data/maps/CityClara_Church/scripts.pory"
+# 488 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 489 "data/maps/CityClara_Church/scripts.pory"
+# 489 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 495 "data/maps/CityClara_Church/scripts.pory"
+# 495 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 496 "data/maps/CityClara_Church/scripts.pory"
+# 496 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad5
-# 497 "data/maps/CityClara_Church/scripts.pory"
+# 497 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 498 "data/maps/CityClara_Church/scripts.pory"
+# 498 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 499 "data/maps/CityClara_Church/scripts.pory"
+# 499 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 12, Common_Movement_ExclamationMark
-# 500 "data/maps/CityClara_Church/scripts.pory"
+# 500 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 501 "data/maps/CityClara_Church/scripts.pory"
+# 501 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 502 "data/maps/CityClara_Church/scripts.pory"
+# 502 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad6
-# 503 "data/maps/CityClara_Church/scripts.pory"
+# 503 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 504 "data/maps/CityClara_Church/scripts.pory"
+# 504 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 509 "data/maps/CityClara_Church/scripts.pory"
+# 509 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 510 "data/maps/CityClara_Church/scripts.pory"
+# 510 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage7
-# 511 "data/maps/CityClara_Church/scripts.pory"
+# 511 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 512 "data/maps/CityClara_Church/scripts.pory"
+# 512 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 516 "data/maps/CityClara_Church/scripts.pory"
+# 516 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_ChooseStone
-# 520 "data/maps/CityClara_Church/scripts.pory"
+# 520 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 521 "data/maps/CityClara_Church/scripts.pory"
+# 521 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage8
-# 522 "data/maps/CityClara_Church/scripts.pory"
+# 522 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 523 "data/maps/CityClara_Church/scripts.pory"
+# 523 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 527 "data/maps/CityClara_Church/scripts.pory"
+# 527 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 528 "data/maps/CityClara_Church/scripts.pory"
+# 528 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad7
-# 529 "data/maps/CityClara_Church/scripts.pory"
+# 529 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 530 "data/maps/CityClara_Church/scripts.pory"
+# 530 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 534 "data/maps/CityClara_Church/scripts.pory"
+# 534 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 4, 190, 98
-# 535 "data/maps/CityClara_Church/scripts.pory"
+# 535 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Leaf3
-# 536 "data/maps/CityClara_Church/scripts.pory"
+# 536 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 537 "data/maps/CityClara_Church/scripts.pory"
+# 537 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 4
-# 541 "data/maps/CityClara_Church/scripts.pory"
+# 541 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 5, 190, 98
-# 542 "data/maps/CityClara_Church/scripts.pory"
+# 542 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Dad8
-# 543 "data/maps/CityClara_Church/scripts.pory"
+# 543 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 544 "data/maps/CityClara_Church/scripts.pory"
+# 544 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 5
-# 548 "data/maps/CityClara_Church/scripts.pory"
+# 548 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 12, CityClara_Church_Movement_DadExit
-# 549 "data/maps/CityClara_Church/scripts.pory"
+# 549 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 550 "data/maps/CityClara_Church/scripts.pory"
+# 550 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 12
-# 554 "data/maps/CityClara_Church/scripts.pory"
+# 554 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 4, 190, 98
-# 555 "data/maps/CityClara_Church/scripts.pory"
+# 555 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Leaf4
-# 556 "data/maps/CityClara_Church/scripts.pory"
+# 556 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 557 "data/maps/CityClara_Church/scripts.pory"
+# 557 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 4
-# 560 "data/maps/CityClara_Church/scripts.pory"
+# 560 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 11, CityClara_Church_Movement_LeafExit
-# 561 "data/maps/CityClara_Church/scripts.pory"
+# 561 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 562 "data/maps/CityClara_Church/scripts.pory"
+# 562 "data//maps/CityClara_Church/scripts.pory"
 	removeobject 11
-# 567 "data/maps/CityClara_Church/scripts.pory"
+# 567 "data//maps/CityClara_Church/scripts.pory"
 	applymovement 13, CityClara_Church_Movement_SageCenter
-# 568 "data/maps/CityClara_Church/scripts.pory"
+# 568 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 569 "data/maps/CityClara_Church/scripts.pory"
+# 569 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 570 "data/maps/CityClara_Church/scripts.pory"
+# 570 "data//maps/CityClara_Church/scripts.pory"
 	waitmovement 0
-# 574 "data/maps/CityClara_Church/scripts.pory"
+# 574 "data//maps/CityClara_Church/scripts.pory"
 	load_field_pic 6, 190, 98
-# 575 "data/maps/CityClara_Church/scripts.pory"
+# 575 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_Sage9
-# 576 "data/maps/CityClara_Church/scripts.pory"
+# 576 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
-# 577 "data/maps/CityClara_Church/scripts.pory"
+# 577 "data//maps/CityClara_Church/scripts.pory"
 	destroy_field_pic 6
-# 581 "data/maps/CityClara_Church/scripts.pory"
+# 581 "data//maps/CityClara_Church/scripts.pory"
 	setflag FLAG_CLARACITY_CHURCH_HIDELEAF
-# 582 "data/maps/CityClara_Church/scripts.pory"
+# 582 "data//maps/CityClara_Church/scripts.pory"
 	setvar VAR_CITYCLARA_STATE, 10
 	return
 
 CityClara_Church_EventScript_JesseAndJamesDefeated_2:
-# 401 "data/maps/CityClara_Church/scripts.pory"
+# 401 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter1
 	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
 
 CityClara_Church_EventScript_JesseAndJamesDefeated_3:
-# 403 "data/maps/CityClara_Church/scripts.pory"
+# 403 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter2
 	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
 
 CityClara_Church_EventScript_JesseAndJamesDefeated_4:
-# 405 "data/maps/CityClara_Church/scripts.pory"
+# 405 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter4
 	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
 
 CityClara_Church_EventScript_JesseAndJamesDefeated_5:
-# 407 "data/maps/CityClara_Church/scripts.pory"
+# 407 "data//maps/CityClara_Church/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter5
 	goto CityClara_Church_EventScript_JesseAndJamesDefeated_1
 
 
 CityClara_Church_EventScript_ChooseStone::
-# 587 "data/maps/CityClara_Church/scripts.pory"
+# 587 "data//maps/CityClara_Church/scripts.pory"
 	multichoice 0, 0, MULTI_CITYCLARA_CHURCH_STONE, TRUE
-# 588 "data/maps/CityClara_Church/scripts.pory"
+# 588 "data//maps/CityClara_Church/scripts.pory"
 	switch VAR_RESULT
-# 589 "data/maps/CityClara_Church/scripts.pory"
+# 589 "data//maps/CityClara_Church/scripts.pory"
 	case 0, CityClara_Church_EventScript_ChooseStone_3
-# 591 "data/maps/CityClara_Church/scripts.pory"
+# 591 "data//maps/CityClara_Church/scripts.pory"
 	case 1, CityClara_Church_EventScript_ChooseStone_4
-# 593 "data/maps/CityClara_Church/scripts.pory"
+# 593 "data//maps/CityClara_Church/scripts.pory"
 	case 2, CityClara_Church_EventScript_ChooseStone_5
-# 595 "data/maps/CityClara_Church/scripts.pory"
+# 595 "data//maps/CityClara_Church/scripts.pory"
 	case 3, CityClara_Church_EventScript_ChooseStone_6
 CityClara_Church_EventScript_ChooseStone_1:
 	return
 
 CityClara_Church_EventScript_ChooseStone_3:
-# 590 "data/maps/CityClara_Church/scripts.pory"
+# 590 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_GiveFireStone
 	goto CityClara_Church_EventScript_ChooseStone_1
 
 CityClara_Church_EventScript_ChooseStone_4:
-# 592 "data/maps/CityClara_Church/scripts.pory"
+# 592 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_GiveWaterStone
 	goto CityClara_Church_EventScript_ChooseStone_1
 
 CityClara_Church_EventScript_ChooseStone_5:
-# 594 "data/maps/CityClara_Church/scripts.pory"
+# 594 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_GiveThunderStone
 	goto CityClara_Church_EventScript_ChooseStone_1
 
 CityClara_Church_EventScript_ChooseStone_6:
-# 596 "data/maps/CityClara_Church/scripts.pory"
+# 596 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_GiveNoneStone
 	goto CityClara_Church_EventScript_ChooseStone_1
 
 
 CityClara_Church_EventScript_GiveFireStone::
-# 602 "data/maps/CityClara_Church/scripts.pory"
+# 602 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_GiveFireStone, MSGBOX_YESNO
-# 603 "data/maps/CityClara_Church/scripts.pory"
+# 603 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CityClara_Church_EventScript_GiveFireStone_2
-# 607 "data/maps/CityClara_Church/scripts.pory"
+# 607 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_ChooseStone
 CityClara_Church_EventScript_GiveFireStone_1:
 	return
 
 CityClara_Church_EventScript_GiveFireStone_2:
-# 604 "data/maps/CityClara_Church/scripts.pory"
+# 604 "data//maps/CityClara_Church/scripts.pory"
 	giveitem ITEM_FIRE_STONE
-# 605 "data/maps/CityClara_Church/scripts.pory"
+# 605 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_TakeStone
 	goto CityClara_Church_EventScript_GiveFireStone_1
 
 
 CityClara_Church_EventScript_GiveWaterStone::
-# 613 "data/maps/CityClara_Church/scripts.pory"
+# 613 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_GiveWaterStone, MSGBOX_YESNO
-# 614 "data/maps/CityClara_Church/scripts.pory"
+# 614 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CityClara_Church_EventScript_GiveWaterStone_2
-# 618 "data/maps/CityClara_Church/scripts.pory"
+# 618 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_ChooseStone
 CityClara_Church_EventScript_GiveWaterStone_1:
 	return
 
 CityClara_Church_EventScript_GiveWaterStone_2:
-# 615 "data/maps/CityClara_Church/scripts.pory"
+# 615 "data//maps/CityClara_Church/scripts.pory"
 	giveitem ITEM_WATER_STONE
-# 616 "data/maps/CityClara_Church/scripts.pory"
+# 616 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_TakeStone
 	goto CityClara_Church_EventScript_GiveWaterStone_1
 
 
 CityClara_Church_EventScript_GiveThunderStone::
-# 624 "data/maps/CityClara_Church/scripts.pory"
+# 624 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_GiveThunderStone, MSGBOX_YESNO
-# 625 "data/maps/CityClara_Church/scripts.pory"
+# 625 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CityClara_Church_EventScript_GiveThunderStone_2
-# 629 "data/maps/CityClara_Church/scripts.pory"
+# 629 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_ChooseStone
 CityClara_Church_EventScript_GiveThunderStone_1:
 	return
 
 CityClara_Church_EventScript_GiveThunderStone_2:
-# 626 "data/maps/CityClara_Church/scripts.pory"
+# 626 "data//maps/CityClara_Church/scripts.pory"
 	giveitem ITEM_THUNDER_STONE
-# 627 "data/maps/CityClara_Church/scripts.pory"
+# 627 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_TakeStone
 	goto CityClara_Church_EventScript_GiveThunderStone_1
 
 
 CityClara_Church_EventScript_GiveNoneStone::
-# 635 "data/maps/CityClara_Church/scripts.pory"
+# 635 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_GiveNoneStone, MSGBOX_YESNO
-# 636 "data/maps/CityClara_Church/scripts.pory"
+# 636 "data//maps/CityClara_Church/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CityClara_Church_EventScript_GiveNoneStone_1
-# 639 "data/maps/CityClara_Church/scripts.pory"
+# 639 "data//maps/CityClara_Church/scripts.pory"
 	call CityClara_Church_EventScript_ChooseStone
 	return
 
 CityClara_Church_EventScript_GiveNoneStone_1:
-# 637 "data/maps/CityClara_Church/scripts.pory"
+# 637 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_DenyStone
 	return
 
 
 CityClara_Church_EventScript_Sage::
-# 644 "data/maps/CityClara_Church/scripts.pory"
+# 644 "data//maps/CityClara_Church/scripts.pory"
 	faceplayer
-# 645 "data/maps/CityClara_Church/scripts.pory"
+# 645 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_SageAfterMew
-# 646 "data/maps/CityClara_Church/scripts.pory"
+# 646 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
 	end
 
 
 CityClara_Church_EventScript_BlaineTest::
-# 652 "data/maps/CityClara_Church/scripts.pory"
+# 652 "data//maps/CityClara_Church/scripts.pory"
 	trainerbattle_single TRAINER_BLAINE, CityClara_Church_Text_BlaineIntro, CityClara_Church_Text_BlaineLost
-# 653 "data/maps/CityClara_Church/scripts.pory"
+# 653 "data//maps/CityClara_Church/scripts.pory"
 	msgbox CityClara_Church_Text_BlainePost
-# 654 "data/maps/CityClara_Church/scripts.pory"
+# 654 "data//maps/CityClara_Church/scripts.pory"
 	closemessage
 	return
 
 
-# 657 "data/maps/CityClara_Church/scripts.pory"
+# 657 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera1A:
-# 658 "data/maps/CityClara_Church/scripts.pory"
+# 658 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 658 "data/maps/CityClara_Church/scripts.pory"
+# 658 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 658 "data/maps/CityClara_Church/scripts.pory"
+# 658 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 659 "data/maps/CityClara_Church/scripts.pory"
+# 659 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_southeast
-# 660 "data/maps/CityClara_Church/scripts.pory"
+# 660 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 660 "data/maps/CityClara_Church/scripts.pory"
+# 660 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 663 "data/maps/CityClara_Church/scripts.pory"
+# 663 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera1B:
-# 664 "data/maps/CityClara_Church/scripts.pory"
+# 664 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 664 "data/maps/CityClara_Church/scripts.pory"
+# 664 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 665 "data/maps/CityClara_Church/scripts.pory"
+# 665 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_northwest
-# 666 "data/maps/CityClara_Church/scripts.pory"
+# 666 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 666 "data/maps/CityClara_Church/scripts.pory"
+# 666 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 666 "data/maps/CityClara_Church/scripts.pory"
+# 666 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 669 "data/maps/CityClara_Church/scripts.pory"
+# 669 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera2A:
-# 670 "data/maps/CityClara_Church/scripts.pory"
+# 670 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 670 "data/maps/CityClara_Church/scripts.pory"
+# 670 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 670 "data/maps/CityClara_Church/scripts.pory"
+# 670 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 670 "data/maps/CityClara_Church/scripts.pory"
+# 670 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 670 "data/maps/CityClara_Church/scripts.pory"
+# 670 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 670 "data/maps/CityClara_Church/scripts.pory"
+# 670 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 673 "data/maps/CityClara_Church/scripts.pory"
+# 673 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera2B:
-# 674 "data/maps/CityClara_Church/scripts.pory"
+# 674 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 674 "data/maps/CityClara_Church/scripts.pory"
+# 674 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 674 "data/maps/CityClara_Church/scripts.pory"
+# 674 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 674 "data/maps/CityClara_Church/scripts.pory"
+# 674 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 674 "data/maps/CityClara_Church/scripts.pory"
+# 674 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 674 "data/maps/CityClara_Church/scripts.pory"
+# 674 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 677 "data/maps/CityClara_Church/scripts.pory"
+# 677 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera3A:
-# 678 "data/maps/CityClara_Church/scripts.pory"
+# 678 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 678 "data/maps/CityClara_Church/scripts.pory"
+# 678 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 678 "data/maps/CityClara_Church/scripts.pory"
+# 678 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 679 "data/maps/CityClara_Church/scripts.pory"
+# 679 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_northeast
-# 680 "data/maps/CityClara_Church/scripts.pory"
+# 680 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 680 "data/maps/CityClara_Church/scripts.pory"
+# 680 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 683 "data/maps/CityClara_Church/scripts.pory"
+# 683 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera3B:
-# 684 "data/maps/CityClara_Church/scripts.pory"
+# 684 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 684 "data/maps/CityClara_Church/scripts.pory"
+# 684 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 685 "data/maps/CityClara_Church/scripts.pory"
+# 685 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_southwest
-# 686 "data/maps/CityClara_Church/scripts.pory"
+# 686 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 686 "data/maps/CityClara_Church/scripts.pory"
+# 686 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 686 "data/maps/CityClara_Church/scripts.pory"
+# 686 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 689 "data/maps/CityClara_Church/scripts.pory"
+# 689 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera4A:
-# 690 "data/maps/CityClara_Church/scripts.pory"
+# 690 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 690 "data/maps/CityClara_Church/scripts.pory"
+# 690 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 690 "data/maps/CityClara_Church/scripts.pory"
+# 690 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 691 "data/maps/CityClara_Church/scripts.pory"
+# 691 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_southwest
-# 692 "data/maps/CityClara_Church/scripts.pory"
+# 692 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 692 "data/maps/CityClara_Church/scripts.pory"
+# 692 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 695 "data/maps/CityClara_Church/scripts.pory"
+# 695 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera4B:
-# 696 "data/maps/CityClara_Church/scripts.pory"
+# 696 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 696 "data/maps/CityClara_Church/scripts.pory"
+# 696 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 697 "data/maps/CityClara_Church/scripts.pory"
+# 697 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_northeast
-# 698 "data/maps/CityClara_Church/scripts.pory"
+# 698 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 698 "data/maps/CityClara_Church/scripts.pory"
+# 698 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 698 "data/maps/CityClara_Church/scripts.pory"
+# 698 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 701 "data/maps/CityClara_Church/scripts.pory"
+# 701 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera5A:
-# 702 "data/maps/CityClara_Church/scripts.pory"
+# 702 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 702 "data/maps/CityClara_Church/scripts.pory"
+# 702 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 702 "data/maps/CityClara_Church/scripts.pory"
+# 702 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 702 "data/maps/CityClara_Church/scripts.pory"
+# 702 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 702 "data/maps/CityClara_Church/scripts.pory"
+# 702 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 702 "data/maps/CityClara_Church/scripts.pory"
+# 702 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 705 "data/maps/CityClara_Church/scripts.pory"
+# 705 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera5B:
-# 706 "data/maps/CityClara_Church/scripts.pory"
+# 706 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 706 "data/maps/CityClara_Church/scripts.pory"
+# 706 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 706 "data/maps/CityClara_Church/scripts.pory"
+# 706 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 706 "data/maps/CityClara_Church/scripts.pory"
+# 706 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 706 "data/maps/CityClara_Church/scripts.pory"
+# 706 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 706 "data/maps/CityClara_Church/scripts.pory"
+# 706 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 709 "data/maps/CityClara_Church/scripts.pory"
+# 709 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera6A:
-# 710 "data/maps/CityClara_Church/scripts.pory"
+# 710 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 710 "data/maps/CityClara_Church/scripts.pory"
+# 710 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 710 "data/maps/CityClara_Church/scripts.pory"
+# 710 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 711 "data/maps/CityClara_Church/scripts.pory"
+# 711 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_northwest
-# 712 "data/maps/CityClara_Church/scripts.pory"
+# 712 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
-# 712 "data/maps/CityClara_Church/scripts.pory"
+# 712 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 715 "data/maps/CityClara_Church/scripts.pory"
+# 715 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PanCamera6B:
-# 716 "data/maps/CityClara_Church/scripts.pory"
+# 716 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 716 "data/maps/CityClara_Church/scripts.pory"
+# 716 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 717 "data/maps/CityClara_Church/scripts.pory"
+# 717 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_diag_southeast
-# 718 "data/maps/CityClara_Church/scripts.pory"
+# 718 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 718 "data/maps/CityClara_Church/scripts.pory"
+# 718 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 718 "data/maps/CityClara_Church/scripts.pory"
+# 718 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 721 "data/maps/CityClara_Church/scripts.pory"
+# 721 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1SageGrab:
-# 722 "data/maps/CityClara_Church/scripts.pory"
+# 722 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 722 "data/maps/CityClara_Church/scripts.pory"
+# 722 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 722 "data/maps/CityClara_Church/scripts.pory"
+# 722 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 723 "data/maps/CityClara_Church/scripts.pory"
+# 723 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 726 "data/maps/CityClara_Church/scripts.pory"
+# 726 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2SageGrab:
-# 727 "data/maps/CityClara_Church/scripts.pory"
+# 727 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 727 "data/maps/CityClara_Church/scripts.pory"
+# 727 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 727 "data/maps/CityClara_Church/scripts.pory"
+# 727 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 728 "data/maps/CityClara_Church/scripts.pory"
+# 728 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 731 "data/maps/CityClara_Church/scripts.pory"
+# 731 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1SageExit:
-# 732 "data/maps/CityClara_Church/scripts.pory"
+# 732 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 733 "data/maps/CityClara_Church/scripts.pory"
+# 733 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 733 "data/maps/CityClara_Church/scripts.pory"
+# 733 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 733 "data/maps/CityClara_Church/scripts.pory"
+# 733 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 734 "data/maps/CityClara_Church/scripts.pory"
+# 734 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 734 "data/maps/CityClara_Church/scripts.pory"
+# 734 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 734 "data/maps/CityClara_Church/scripts.pory"
+# 734 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 734 "data/maps/CityClara_Church/scripts.pory"
+# 734 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 734 "data/maps/CityClara_Church/scripts.pory"
+# 734 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 737 "data/maps/CityClara_Church/scripts.pory"
+# 737 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2SageExit:
-# 738 "data/maps/CityClara_Church/scripts.pory"
+# 738 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 739 "data/maps/CityClara_Church/scripts.pory"
+# 739 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 740 "data/maps/CityClara_Church/scripts.pory"
+# 740 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 740 "data/maps/CityClara_Church/scripts.pory"
+# 740 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 740 "data/maps/CityClara_Church/scripts.pory"
+# 740 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 740 "data/maps/CityClara_Church/scripts.pory"
+# 740 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 740 "data/maps/CityClara_Church/scripts.pory"
+# 740 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 743 "data/maps/CityClara_Church/scripts.pory"
+# 743 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_SageExit:
-# 744 "data/maps/CityClara_Church/scripts.pory"
+# 744 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 745 "data/maps/CityClara_Church/scripts.pory"
+# 745 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 745 "data/maps/CityClara_Church/scripts.pory"
+# 745 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 746 "data/maps/CityClara_Church/scripts.pory"
+# 746 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 746 "data/maps/CityClara_Church/scripts.pory"
+# 746 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 746 "data/maps/CityClara_Church/scripts.pory"
+# 746 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 746 "data/maps/CityClara_Church/scripts.pory"
+# 746 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 746 "data/maps/CityClara_Church/scripts.pory"
+# 746 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 749 "data/maps/CityClara_Church/scripts.pory"
+# 749 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_BlaineChase1:
-# 750 "data/maps/CityClara_Church/scripts.pory"
+# 750 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 750 "data/maps/CityClara_Church/scripts.pory"
+# 750 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 750 "data/maps/CityClara_Church/scripts.pory"
+# 750 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
 	step_end
 
-# 753 "data/maps/CityClara_Church/scripts.pory"
+# 753 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_MewChase1:
-# 754 "data/maps/CityClara_Church/scripts.pory"
+# 754 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 755 "data/maps/CityClara_Church/scripts.pory"
+# 755 "data//maps/CityClara_Church/scripts.pory"
 	face_left
-# 756 "data/maps/CityClara_Church/scripts.pory"
+# 756 "data//maps/CityClara_Church/scripts.pory"
 	face_right
-# 757 "data/maps/CityClara_Church/scripts.pory"
+# 757 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 760 "data/maps/CityClara_Church/scripts.pory"
+# 760 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_BlaineChase2:
-# 761 "data/maps/CityClara_Church/scripts.pory"
+# 761 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 762 "data/maps/CityClara_Church/scripts.pory"
+# 762 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 762 "data/maps/CityClara_Church/scripts.pory"
+# 762 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 763 "data/maps/CityClara_Church/scripts.pory"
+# 763 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 766 "data/maps/CityClara_Church/scripts.pory"
+# 766 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_MewChase2:
-# 767 "data/maps/CityClara_Church/scripts.pory"
+# 767 "data//maps/CityClara_Church/scripts.pory"
 	walk_slow_right
-# 768 "data/maps/CityClara_Church/scripts.pory"
+# 768 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 771 "data/maps/CityClara_Church/scripts.pory"
+# 771 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_BlaineChase3:
-# 772 "data/maps/CityClara_Church/scripts.pory"
+# 772 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
 	step_end
 
-# 775 "data/maps/CityClara_Church/scripts.pory"
+# 775 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_BlaineChase4:
-# 776 "data/maps/CityClara_Church/scripts.pory"
+# 776 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 779 "data/maps/CityClara_Church/scripts.pory"
+# 779 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Blaine5:
-# 780 "data/maps/CityClara_Church/scripts.pory"
+# 780 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 780 "data/maps/CityClara_Church/scripts.pory"
+# 780 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 780 "data/maps/CityClara_Church/scripts.pory"
+# 780 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 783 "data/maps/CityClara_Church/scripts.pory"
+# 783 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_FaceLeft:
-# 784 "data/maps/CityClara_Church/scripts.pory"
+# 784 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 787 "data/maps/CityClara_Church/scripts.pory"
+# 787 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_FaceRight:
-# 788 "data/maps/CityClara_Church/scripts.pory"
+# 788 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 791 "data/maps/CityClara_Church/scripts.pory"
+# 791 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_FaceDown:
-# 792 "data/maps/CityClara_Church/scripts.pory"
+# 792 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
-# 795 "data/maps/CityClara_Church/scripts.pory"
+# 795 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1Enter:
-# 796 "data/maps/CityClara_Church/scripts.pory"
+# 796 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 796 "data/maps/CityClara_Church/scripts.pory"
+# 796 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 797 "data/maps/CityClara_Church/scripts.pory"
+# 797 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 798 "data/maps/CityClara_Church/scripts.pory"
+# 798 "data//maps/CityClara_Church/scripts.pory"
 	face_up
 	step_end
 
-# 801 "data/maps/CityClara_Church/scripts.pory"
+# 801 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2Enter:
-# 802 "data/maps/CityClara_Church/scripts.pory"
+# 802 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 802 "data/maps/CityClara_Church/scripts.pory"
+# 802 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 803 "data/maps/CityClara_Church/scripts.pory"
+# 803 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 804 "data/maps/CityClara_Church/scripts.pory"
+# 804 "data//maps/CityClara_Church/scripts.pory"
 	face_up
 	step_end
 
-# 807 "data/maps/CityClara_Church/scripts.pory"
+# 807 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1PlayerGrab1:
-# 808 "data/maps/CityClara_Church/scripts.pory"
+# 808 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 808 "data/maps/CityClara_Church/scripts.pory"
+# 808 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 808 "data/maps/CityClara_Church/scripts.pory"
+# 808 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 808 "data/maps/CityClara_Church/scripts.pory"
+# 808 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 808 "data/maps/CityClara_Church/scripts.pory"
+# 808 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 809 "data/maps/CityClara_Church/scripts.pory"
+# 809 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 810 "data/maps/CityClara_Church/scripts.pory"
+# 810 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 811 "data/maps/CityClara_Church/scripts.pory"
+# 811 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 812 "data/maps/CityClara_Church/scripts.pory"
+# 812 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 815 "data/maps/CityClara_Church/scripts.pory"
+# 815 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1PlayerGrab2:
-# 816 "data/maps/CityClara_Church/scripts.pory"
+# 816 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 816 "data/maps/CityClara_Church/scripts.pory"
+# 816 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 816 "data/maps/CityClara_Church/scripts.pory"
+# 816 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 816 "data/maps/CityClara_Church/scripts.pory"
+# 816 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 817 "data/maps/CityClara_Church/scripts.pory"
+# 817 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 817 "data/maps/CityClara_Church/scripts.pory"
+# 817 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 818 "data/maps/CityClara_Church/scripts.pory"
+# 818 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 821 "data/maps/CityClara_Church/scripts.pory"
+# 821 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1PlayerGrab3:
-# 822 "data/maps/CityClara_Church/scripts.pory"
+# 822 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 822 "data/maps/CityClara_Church/scripts.pory"
+# 822 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 822 "data/maps/CityClara_Church/scripts.pory"
+# 822 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 822 "data/maps/CityClara_Church/scripts.pory"
+# 822 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 822 "data/maps/CityClara_Church/scripts.pory"
+# 822 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 823 "data/maps/CityClara_Church/scripts.pory"
+# 823 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 824 "data/maps/CityClara_Church/scripts.pory"
+# 824 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 827 "data/maps/CityClara_Church/scripts.pory"
+# 827 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1PlayerGrab4:
-# 828 "data/maps/CityClara_Church/scripts.pory"
+# 828 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 828 "data/maps/CityClara_Church/scripts.pory"
+# 828 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 828 "data/maps/CityClara_Church/scripts.pory"
+# 828 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 829 "data/maps/CityClara_Church/scripts.pory"
+# 829 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 829 "data/maps/CityClara_Church/scripts.pory"
+# 829 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 829 "data/maps/CityClara_Church/scripts.pory"
+# 829 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 830 "data/maps/CityClara_Church/scripts.pory"
+# 830 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 833 "data/maps/CityClara_Church/scripts.pory"
+# 833 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1PlayerGrab5:
-# 834 "data/maps/CityClara_Church/scripts.pory"
+# 834 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 834 "data/maps/CityClara_Church/scripts.pory"
+# 834 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 834 "data/maps/CityClara_Church/scripts.pory"
+# 834 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 834 "data/maps/CityClara_Church/scripts.pory"
+# 834 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 835 "data/maps/CityClara_Church/scripts.pory"
+# 835 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 835 "data/maps/CityClara_Church/scripts.pory"
+# 835 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 836 "data/maps/CityClara_Church/scripts.pory"
+# 836 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 839 "data/maps/CityClara_Church/scripts.pory"
+# 839 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1PlayerGrab6:
-# 840 "data/maps/CityClara_Church/scripts.pory"
+# 840 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 840 "data/maps/CityClara_Church/scripts.pory"
+# 840 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 840 "data/maps/CityClara_Church/scripts.pory"
+# 840 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 840 "data/maps/CityClara_Church/scripts.pory"
+# 840 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 840 "data/maps/CityClara_Church/scripts.pory"
+# 840 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 841 "data/maps/CityClara_Church/scripts.pory"
+# 841 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 842 "data/maps/CityClara_Church/scripts.pory"
+# 842 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 845 "data/maps/CityClara_Church/scripts.pory"
+# 845 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2PlayerGrab1:
-# 846 "data/maps/CityClara_Church/scripts.pory"
+# 846 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 846 "data/maps/CityClara_Church/scripts.pory"
+# 846 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 846 "data/maps/CityClara_Church/scripts.pory"
+# 846 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 847 "data/maps/CityClara_Church/scripts.pory"
+# 847 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 847 "data/maps/CityClara_Church/scripts.pory"
+# 847 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 847 "data/maps/CityClara_Church/scripts.pory"
+# 847 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 848 "data/maps/CityClara_Church/scripts.pory"
+# 848 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 851 "data/maps/CityClara_Church/scripts.pory"
+# 851 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2PlayerGrab2:
-# 852 "data/maps/CityClara_Church/scripts.pory"
+# 852 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 852 "data/maps/CityClara_Church/scripts.pory"
+# 852 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 852 "data/maps/CityClara_Church/scripts.pory"
+# 852 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 852 "data/maps/CityClara_Church/scripts.pory"
+# 852 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 853 "data/maps/CityClara_Church/scripts.pory"
+# 853 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 853 "data/maps/CityClara_Church/scripts.pory"
+# 853 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 854 "data/maps/CityClara_Church/scripts.pory"
+# 854 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 857 "data/maps/CityClara_Church/scripts.pory"
+# 857 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2PlayerGrab3:
-# 858 "data/maps/CityClara_Church/scripts.pory"
+# 858 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 858 "data/maps/CityClara_Church/scripts.pory"
+# 858 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 858 "data/maps/CityClara_Church/scripts.pory"
+# 858 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 858 "data/maps/CityClara_Church/scripts.pory"
+# 858 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 858 "data/maps/CityClara_Church/scripts.pory"
+# 858 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 859 "data/maps/CityClara_Church/scripts.pory"
+# 859 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 860 "data/maps/CityClara_Church/scripts.pory"
+# 860 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 863 "data/maps/CityClara_Church/scripts.pory"
+# 863 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2PlayerGrab4:
-# 864 "data/maps/CityClara_Church/scripts.pory"
+# 864 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 864 "data/maps/CityClara_Church/scripts.pory"
+# 864 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 864 "data/maps/CityClara_Church/scripts.pory"
+# 864 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 865 "data/maps/CityClara_Church/scripts.pory"
+# 865 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 865 "data/maps/CityClara_Church/scripts.pory"
+# 865 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 865 "data/maps/CityClara_Church/scripts.pory"
+# 865 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 866 "data/maps/CityClara_Church/scripts.pory"
+# 866 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 869 "data/maps/CityClara_Church/scripts.pory"
+# 869 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2PlayerGrab5:
-# 870 "data/maps/CityClara_Church/scripts.pory"
+# 870 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 870 "data/maps/CityClara_Church/scripts.pory"
+# 870 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 870 "data/maps/CityClara_Church/scripts.pory"
+# 870 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 870 "data/maps/CityClara_Church/scripts.pory"
+# 870 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 871 "data/maps/CityClara_Church/scripts.pory"
+# 871 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 871 "data/maps/CityClara_Church/scripts.pory"
+# 871 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 872 "data/maps/CityClara_Church/scripts.pory"
+# 872 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 875 "data/maps/CityClara_Church/scripts.pory"
+# 875 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2PlayerGrab6:
-# 876 "data/maps/CityClara_Church/scripts.pory"
+# 876 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 876 "data/maps/CityClara_Church/scripts.pory"
+# 876 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 876 "data/maps/CityClara_Church/scripts.pory"
+# 876 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 876 "data/maps/CityClara_Church/scripts.pory"
+# 876 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 876 "data/maps/CityClara_Church/scripts.pory"
+# 876 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 877 "data/maps/CityClara_Church/scripts.pory"
+# 877 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 878 "data/maps/CityClara_Church/scripts.pory"
+# 878 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 881 "data/maps/CityClara_Church/scripts.pory"
+# 881 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_MeowthEnter:
-# 882 "data/maps/CityClara_Church/scripts.pory"
+# 882 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 883 "data/maps/CityClara_Church/scripts.pory"
+# 883 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 883 "data/maps/CityClara_Church/scripts.pory"
+# 883 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 884 "data/maps/CityClara_Church/scripts.pory"
+# 884 "data//maps/CityClara_Church/scripts.pory"
 	face_up
 	step_end
 
-# 887 "data/maps/CityClara_Church/scripts.pory"
+# 887 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_BlaineExit:
-# 888 "data/maps/CityClara_Church/scripts.pory"
+# 888 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 888 "data/maps/CityClara_Church/scripts.pory"
+# 888 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 889 "data/maps/CityClara_Church/scripts.pory"
+# 889 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 889 "data/maps/CityClara_Church/scripts.pory"
+# 889 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 889 "data/maps/CityClara_Church/scripts.pory"
+# 889 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 889 "data/maps/CityClara_Church/scripts.pory"
+# 889 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 889 "data/maps/CityClara_Church/scripts.pory"
+# 889 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 891 "data/maps/CityClara_Church/scripts.pory"
+# 891 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_GruntLExit:
-# 892 "data/maps/CityClara_Church/scripts.pory"
+# 892 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 892 "data/maps/CityClara_Church/scripts.pory"
+# 892 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 892 "data/maps/CityClara_Church/scripts.pory"
+# 892 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 892 "data/maps/CityClara_Church/scripts.pory"
+# 892 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 893 "data/maps/CityClara_Church/scripts.pory"
+# 893 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 896 "data/maps/CityClara_Church/scripts.pory"
+# 896 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_GruntRExit:
-# 897 "data/maps/CityClara_Church/scripts.pory"
+# 897 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 897 "data/maps/CityClara_Church/scripts.pory"
+# 897 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 897 "data/maps/CityClara_Church/scripts.pory"
+# 897 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 897 "data/maps/CityClara_Church/scripts.pory"
+# 897 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 898 "data/maps/CityClara_Church/scripts.pory"
+# 898 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 901 "data/maps/CityClara_Church/scripts.pory"
+# 901 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1Exit1:
-# 902 "data/maps/CityClara_Church/scripts.pory"
+# 902 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 902 "data/maps/CityClara_Church/scripts.pory"
+# 902 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 902 "data/maps/CityClara_Church/scripts.pory"
+# 902 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 902 "data/maps/CityClara_Church/scripts.pory"
+# 902 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 903 "data/maps/CityClara_Church/scripts.pory"
+# 903 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 903 "data/maps/CityClara_Church/scripts.pory"
+# 903 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 906 "data/maps/CityClara_Church/scripts.pory"
+# 906 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1Exit2:
-# 907 "data/maps/CityClara_Church/scripts.pory"
+# 907 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 907 "data/maps/CityClara_Church/scripts.pory"
+# 907 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 907 "data/maps/CityClara_Church/scripts.pory"
+# 907 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 907 "data/maps/CityClara_Church/scripts.pory"
+# 907 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 908 "data/maps/CityClara_Church/scripts.pory"
+# 908 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 911 "data/maps/CityClara_Church/scripts.pory"
+# 911 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1Exit3:
-# 912 "data/maps/CityClara_Church/scripts.pory"
+# 912 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 912 "data/maps/CityClara_Church/scripts.pory"
+# 912 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 912 "data/maps/CityClara_Church/scripts.pory"
+# 912 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 912 "data/maps/CityClara_Church/scripts.pory"
+# 912 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 913 "data/maps/CityClara_Church/scripts.pory"
+# 913 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
-# 916 "data/maps/CityClara_Church/scripts.pory"
+# 916 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1Exit4:
-# 917 "data/maps/CityClara_Church/scripts.pory"
+# 917 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 917 "data/maps/CityClara_Church/scripts.pory"
+# 917 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 917 "data/maps/CityClara_Church/scripts.pory"
+# 917 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 918 "data/maps/CityClara_Church/scripts.pory"
+# 918 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 918 "data/maps/CityClara_Church/scripts.pory"
+# 918 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 918 "data/maps/CityClara_Church/scripts.pory"
+# 918 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 921 "data/maps/CityClara_Church/scripts.pory"
+# 921 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1Exit5:
-# 922 "data/maps/CityClara_Church/scripts.pory"
+# 922 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 922 "data/maps/CityClara_Church/scripts.pory"
+# 922 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 922 "data/maps/CityClara_Church/scripts.pory"
+# 922 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 923 "data/maps/CityClara_Church/scripts.pory"
+# 923 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 923 "data/maps/CityClara_Church/scripts.pory"
+# 923 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 926 "data/maps/CityClara_Church/scripts.pory"
+# 926 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket1Exit6:
-# 927 "data/maps/CityClara_Church/scripts.pory"
+# 927 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 927 "data/maps/CityClara_Church/scripts.pory"
+# 927 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 927 "data/maps/CityClara_Church/scripts.pory"
+# 927 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 928 "data/maps/CityClara_Church/scripts.pory"
+# 928 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 931 "data/maps/CityClara_Church/scripts.pory"
+# 931 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2Exit1:
-# 932 "data/maps/CityClara_Church/scripts.pory"
+# 932 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 932 "data/maps/CityClara_Church/scripts.pory"
+# 932 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 932 "data/maps/CityClara_Church/scripts.pory"
+# 932 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 933 "data/maps/CityClara_Church/scripts.pory"
+# 933 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 933 "data/maps/CityClara_Church/scripts.pory"
+# 933 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 933 "data/maps/CityClara_Church/scripts.pory"
+# 933 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 936 "data/maps/CityClara_Church/scripts.pory"
+# 936 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2Exit2:
-# 937 "data/maps/CityClara_Church/scripts.pory"
+# 937 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 937 "data/maps/CityClara_Church/scripts.pory"
+# 937 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 937 "data/maps/CityClara_Church/scripts.pory"
+# 937 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 938 "data/maps/CityClara_Church/scripts.pory"
+# 938 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 938 "data/maps/CityClara_Church/scripts.pory"
+# 938 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 941 "data/maps/CityClara_Church/scripts.pory"
+# 941 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2Exit3:
-# 942 "data/maps/CityClara_Church/scripts.pory"
+# 942 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 942 "data/maps/CityClara_Church/scripts.pory"
+# 942 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 942 "data/maps/CityClara_Church/scripts.pory"
+# 942 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southeast
-# 943 "data/maps/CityClara_Church/scripts.pory"
+# 943 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 946 "data/maps/CityClara_Church/scripts.pory"
+# 946 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2Exit4:
-# 947 "data/maps/CityClara_Church/scripts.pory"
+# 947 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 947 "data/maps/CityClara_Church/scripts.pory"
+# 947 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 947 "data/maps/CityClara_Church/scripts.pory"
+# 947 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 947 "data/maps/CityClara_Church/scripts.pory"
+# 947 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 948 "data/maps/CityClara_Church/scripts.pory"
+# 948 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 948 "data/maps/CityClara_Church/scripts.pory"
+# 948 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 952 "data/maps/CityClara_Church/scripts.pory"
+# 952 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2Exit5:
-# 953 "data/maps/CityClara_Church/scripts.pory"
+# 953 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 953 "data/maps/CityClara_Church/scripts.pory"
+# 953 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 953 "data/maps/CityClara_Church/scripts.pory"
+# 953 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 953 "data/maps/CityClara_Church/scripts.pory"
+# 953 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 954 "data/maps/CityClara_Church/scripts.pory"
+# 954 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 957 "data/maps/CityClara_Church/scripts.pory"
+# 957 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_Rocket2Exit6:
-# 958 "data/maps/CityClara_Church/scripts.pory"
+# 958 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 958 "data/maps/CityClara_Church/scripts.pory"
+# 958 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 958 "data/maps/CityClara_Church/scripts.pory"
+# 958 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 958 "data/maps/CityClara_Church/scripts.pory"
+# 958 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 959 "data/maps/CityClara_Church/scripts.pory"
+# 959 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
-# 962 "data/maps/CityClara_Church/scripts.pory"
+# 962 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JesseEngage1:
-# 963 "data/maps/CityClara_Church/scripts.pory"
+# 963 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 963 "data/maps/CityClara_Church/scripts.pory"
+# 963 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 964 "data/maps/CityClara_Church/scripts.pory"
+# 964 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 964 "data/maps/CityClara_Church/scripts.pory"
+# 964 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 965 "data/maps/CityClara_Church/scripts.pory"
+# 965 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 968 "data/maps/CityClara_Church/scripts.pory"
+# 968 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JamesEngage1:
-# 969 "data/maps/CityClara_Church/scripts.pory"
+# 969 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 969 "data/maps/CityClara_Church/scripts.pory"
+# 969 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 969 "data/maps/CityClara_Church/scripts.pory"
+# 969 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 970 "data/maps/CityClara_Church/scripts.pory"
+# 970 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 970 "data/maps/CityClara_Church/scripts.pory"
+# 970 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 970 "data/maps/CityClara_Church/scripts.pory"
+# 970 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 971 "data/maps/CityClara_Church/scripts.pory"
+# 971 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 974 "data/maps/CityClara_Church/scripts.pory"
+# 974 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_MeowthEngage1:
-# 975 "data/maps/CityClara_Church/scripts.pory"
+# 975 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 976 "data/maps/CityClara_Church/scripts.pory"
+# 976 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 976 "data/maps/CityClara_Church/scripts.pory"
+# 976 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 976 "data/maps/CityClara_Church/scripts.pory"
+# 976 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 977 "data/maps/CityClara_Church/scripts.pory"
+# 977 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 980 "data/maps/CityClara_Church/scripts.pory"
+# 980 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JesseEngage3:
-# 981 "data/maps/CityClara_Church/scripts.pory"
+# 981 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 981 "data/maps/CityClara_Church/scripts.pory"
+# 981 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 981 "data/maps/CityClara_Church/scripts.pory"
+# 981 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 981 "data/maps/CityClara_Church/scripts.pory"
+# 981 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 982 "data/maps/CityClara_Church/scripts.pory"
+# 982 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 985 "data/maps/CityClara_Church/scripts.pory"
+# 985 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JamesEngage3:
-# 986 "data/maps/CityClara_Church/scripts.pory"
+# 986 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 986 "data/maps/CityClara_Church/scripts.pory"
+# 986 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 986 "data/maps/CityClara_Church/scripts.pory"
+# 986 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 987 "data/maps/CityClara_Church/scripts.pory"
+# 987 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 988 "data/maps/CityClara_Church/scripts.pory"
+# 988 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 988 "data/maps/CityClara_Church/scripts.pory"
+# 988 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 989 "data/maps/CityClara_Church/scripts.pory"
+# 989 "data//maps/CityClara_Church/scripts.pory"
 	face_left
 	step_end
 
-# 992 "data/maps/CityClara_Church/scripts.pory"
+# 992 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JesseEngage4:
-# 993 "data/maps/CityClara_Church/scripts.pory"
+# 993 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 993 "data/maps/CityClara_Church/scripts.pory"
+# 993 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 993 "data/maps/CityClara_Church/scripts.pory"
+# 993 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 994 "data/maps/CityClara_Church/scripts.pory"
+# 994 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 994 "data/maps/CityClara_Church/scripts.pory"
+# 994 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 994 "data/maps/CityClara_Church/scripts.pory"
+# 994 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 995 "data/maps/CityClara_Church/scripts.pory"
+# 995 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 998 "data/maps/CityClara_Church/scripts.pory"
+# 998 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JamesEngage4:
-# 999 "data/maps/CityClara_Church/scripts.pory"
+# 999 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 999 "data/maps/CityClara_Church/scripts.pory"
+# 999 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1000 "data/maps/CityClara_Church/scripts.pory"
+# 1000 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 1000 "data/maps/CityClara_Church/scripts.pory"
+# 1000 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 1001 "data/maps/CityClara_Church/scripts.pory"
+# 1001 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 1004 "data/maps/CityClara_Church/scripts.pory"
+# 1004 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_MeowthEngage4:
-# 1005 "data/maps/CityClara_Church/scripts.pory"
+# 1005 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1006 "data/maps/CityClara_Church/scripts.pory"
+# 1006 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 1006 "data/maps/CityClara_Church/scripts.pory"
+# 1006 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 1006 "data/maps/CityClara_Church/scripts.pory"
+# 1006 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 1007 "data/maps/CityClara_Church/scripts.pory"
+# 1007 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 1009 "data/maps/CityClara_Church/scripts.pory"
+# 1009 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JesseEngage6:
-# 1010 "data/maps/CityClara_Church/scripts.pory"
+# 1010 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1010 "data/maps/CityClara_Church/scripts.pory"
+# 1010 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1010 "data/maps/CityClara_Church/scripts.pory"
+# 1010 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1011 "data/maps/CityClara_Church/scripts.pory"
+# 1011 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northeast
-# 1012 "data/maps/CityClara_Church/scripts.pory"
+# 1012 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1012 "data/maps/CityClara_Church/scripts.pory"
+# 1012 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1013 "data/maps/CityClara_Church/scripts.pory"
+# 1013 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 1016 "data/maps/CityClara_Church/scripts.pory"
+# 1016 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_JamesEngage6:
-# 1017 "data/maps/CityClara_Church/scripts.pory"
+# 1017 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1017 "data/maps/CityClara_Church/scripts.pory"
+# 1017 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1017 "data/maps/CityClara_Church/scripts.pory"
+# 1017 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1017 "data/maps/CityClara_Church/scripts.pory"
+# 1017 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1018 "data/maps/CityClara_Church/scripts.pory"
+# 1018 "data//maps/CityClara_Church/scripts.pory"
 	face_right
 	step_end
 
-# 1021 "data/maps/CityClara_Church/scripts.pory"
+# 1021 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PlayerCenter1:
-# 1022 "data/maps/CityClara_Church/scripts.pory"
+# 1022 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1022 "data/maps/CityClara_Church/scripts.pory"
+# 1022 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1022 "data/maps/CityClara_Church/scripts.pory"
+# 1022 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1022 "data/maps/CityClara_Church/scripts.pory"
+# 1022 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1023 "data/maps/CityClara_Church/scripts.pory"
+# 1023 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 1024 "data/maps/CityClara_Church/scripts.pory"
+# 1024 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1024 "data/maps/CityClara_Church/scripts.pory"
+# 1024 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1025 "data/maps/CityClara_Church/scripts.pory"
+# 1025 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
-# 1028 "data/maps/CityClara_Church/scripts.pory"
+# 1028 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PlayerCenter2:
-# 1029 "data/maps/CityClara_Church/scripts.pory"
+# 1029 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1029 "data/maps/CityClara_Church/scripts.pory"
+# 1029 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1029 "data/maps/CityClara_Church/scripts.pory"
+# 1029 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1029 "data/maps/CityClara_Church/scripts.pory"
+# 1029 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1029 "data/maps/CityClara_Church/scripts.pory"
+# 1029 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1029 "data/maps/CityClara_Church/scripts.pory"
+# 1029 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1030 "data/maps/CityClara_Church/scripts.pory"
+# 1030 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
-# 1033 "data/maps/CityClara_Church/scripts.pory"
+# 1033 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PlayerCenter4:
-# 1034 "data/maps/CityClara_Church/scripts.pory"
+# 1034 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1034 "data/maps/CityClara_Church/scripts.pory"
+# 1034 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1034 "data/maps/CityClara_Church/scripts.pory"
+# 1034 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1034 "data/maps/CityClara_Church/scripts.pory"
+# 1034 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1035 "data/maps/CityClara_Church/scripts.pory"
+# 1035 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 1036 "data/maps/CityClara_Church/scripts.pory"
+# 1036 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1036 "data/maps/CityClara_Church/scripts.pory"
+# 1036 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1037 "data/maps/CityClara_Church/scripts.pory"
+# 1037 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
-# 1040 "data/maps/CityClara_Church/scripts.pory"
+# 1040 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_PlayerCenter5:
-# 1041 "data/maps/CityClara_Church/scripts.pory"
+# 1041 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1041 "data/maps/CityClara_Church/scripts.pory"
+# 1041 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1041 "data/maps/CityClara_Church/scripts.pory"
+# 1041 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1041 "data/maps/CityClara_Church/scripts.pory"
+# 1041 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1041 "data/maps/CityClara_Church/scripts.pory"
+# 1041 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1041 "data/maps/CityClara_Church/scripts.pory"
+# 1041 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1042 "data/maps/CityClara_Church/scripts.pory"
+# 1042 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
-# 1045 "data/maps/CityClara_Church/scripts.pory"
+# 1045 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_LeafEnter:
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1046 "data/maps/CityClara_Church/scripts.pory"
+# 1046 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
 	step_end
 
-# 1049 "data/maps/CityClara_Church/scripts.pory"
+# 1049 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_DadEnter:
-# 1050 "data/maps/CityClara_Church/scripts.pory"
+# 1050 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 1051 "data/maps/CityClara_Church/scripts.pory"
+# 1051 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 1051 "data/maps/CityClara_Church/scripts.pory"
+# 1051 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 1051 "data/maps/CityClara_Church/scripts.pory"
+# 1051 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_northwest
-# 1052 "data/maps/CityClara_Church/scripts.pory"
+# 1052 "data//maps/CityClara_Church/scripts.pory"
 	face_up
 	step_end
 
-# 1055 "data/maps/CityClara_Church/scripts.pory"
+# 1055 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_DadExit:
-# 1056 "data/maps/CityClara_Church/scripts.pory"
+# 1056 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 1056 "data/maps/CityClara_Church/scripts.pory"
+# 1056 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 1057 "data/maps/CityClara_Church/scripts.pory"
+# 1057 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 1058 "data/maps/CityClara_Church/scripts.pory"
+# 1058 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 1061 "data/maps/CityClara_Church/scripts.pory"
+# 1061 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_LeafExit:
-# 1062 "data/maps/CityClara_Church/scripts.pory"
+# 1062 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 1062 "data/maps/CityClara_Church/scripts.pory"
+# 1062 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 1062 "data/maps/CityClara_Church/scripts.pory"
+# 1062 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
-# 1063 "data/maps/CityClara_Church/scripts.pory"
+# 1063 "data//maps/CityClara_Church/scripts.pory"
 	walk_diag_southwest
-# 1064 "data/maps/CityClara_Church/scripts.pory"
+# 1064 "data//maps/CityClara_Church/scripts.pory"
 	walk_down
 	step_end
 
-# 1067 "data/maps/CityClara_Church/scripts.pory"
+# 1067 "data//maps/CityClara_Church/scripts.pory"
 CityClara_Church_Movement_SageCenter:
-# 1068 "data/maps/CityClara_Church/scripts.pory"
+# 1068 "data//maps/CityClara_Church/scripts.pory"
 	walk_left
-# 1069 "data/maps/CityClara_Church/scripts.pory"
+# 1069 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 1069 "data/maps/CityClara_Church/scripts.pory"
+# 1069 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 1069 "data/maps/CityClara_Church/scripts.pory"
+# 1069 "data//maps/CityClara_Church/scripts.pory"
 	walk_up
-# 1070 "data/maps/CityClara_Church/scripts.pory"
+# 1070 "data//maps/CityClara_Church/scripts.pory"
 	walk_right
-# 1071 "data/maps/CityClara_Church/scripts.pory"
+# 1071 "data//maps/CityClara_Church/scripts.pory"
 	face_down
 	step_end
 
 CityClara_Church_Text_Sage1::
-# 1074 "data/maps/CityClara_Church/scripts.pory"
+# 1074 "data//maps/CityClara_Church/scripts.pory"
 	.string "I beg of you, please, stop what you're\n"
 	.string "doing.$"
 
 CityClara_Church_Text_Blaine1::
-# 1078 "data/maps/CityClara_Church/scripts.pory"
+# 1078 "data//maps/CityClara_Church/scripts.pory"
 	.string "A final warning, get thee gone dumb girl.$"
 
 CityClara_Church_Text_Sage2::
-# 1082 "data/maps/CityClara_Church/scripts.pory"
+# 1082 "data//maps/CityClara_Church/scripts.pory"
 	.string "You must be stopped, you know not what\n"
 	.string "you do.$"
 
 CityClara_Church_Text_Blaine2::
-# 1086 "data/maps/CityClara_Church/scripts.pory"
+# 1086 "data//maps/CityClara_Church/scripts.pory"
 	.string "I know exactly what I have achieved,\n"
 	.string "with this new power we will not be\l"
 	.string "stopped. If foolishly you will never\l"
@@ -2309,7 +2309,7 @@ CityClara_Church_Text_Blaine2::
 	.string "you and your people will vaish to dust$"
 
 CityClara_Church_Text_Sage3::
-# 1092 "data/maps/CityClara_Church/scripts.pory"
+# 1092 "data//maps/CityClara_Church/scripts.pory"
 	.string "Unhand me I am Mew's true suppliant!\n"
 	.string "The foundations of this city were built\l"
 	.string "on solid rock of our worship of Mew. One\l"
@@ -2321,7 +2321,7 @@ CityClara_Church_Text_Sage3::
 	.string "Mew exclusively made possible for us!$"
 
 CityClara_Church_Text_Blaine3::
-# 1096 "data/maps/CityClara_Church/scripts.pory"
+# 1096 "data//maps/CityClara_Church/scripts.pory"
 	.string "You speak of foolish pride most\n"
 	.string "narrowly your sad devotion to this\l"
 	.string "religion has not helped you amass a\l"
@@ -2334,14 +2334,14 @@ CityClara_Church_Text_Blaine3::
 	.string "faithful Rocket grunts, take her away!$"
 
 CityClara_Church_Text_Blaine4::
-# 1103 "data/maps/CityClara_Church/scripts.pory"
+# 1103 "data//maps/CityClara_Church/scripts.pory"
 	.string "No where to run now Mew we have you\n"
 	.string "trapped. I now will demonstrate our\l"
 	.string "victory. The party truly has suprassed\l"
 	.string "the gods.$"
 
 CityClara_Church_Text_Blaine5::
-# 1107 "data/maps/CityClara_Church/scripts.pory"
+# 1107 "data//maps/CityClara_Church/scripts.pory"
 	.string "Today we defeated superstition and\n"
 	.string "proudly declare this the age of man!\l"
 	.string "Throwing a yoke on this defeated god\l"
@@ -2353,74 +2353,74 @@ CityClara_Church_Text_Blaine5::
 	.string "Enough of this, we leave now for Gato.$"
 
 CityClara_Church_Text_Blaine6::
-# 1111 "data/maps/CityClara_Church/scripts.pory"
+# 1111 "data//maps/CityClara_Church/scripts.pory"
 	.string "What's that? How did this rat mouse his\n"
 	.string "way here? Who was watching the doors?$"
 
 CityClara_Church_Text_Blaine7::
-# 1115 "data/maps/CityClara_Church/scripts.pory"
+# 1115 "data//maps/CityClara_Church/scripts.pory"
 	.string "Jesse and James!$"
 
 CityClara_Church_Text_Meowth::
-# 1119 "data/maps/CityClara_Church/scripts.pory"
+# 1119 "data//maps/CityClara_Church/scripts.pory"
 	.string "We're right here boss. And don't forget\n"
 	.string "Meowth!$"
 
 CityClara_Church_Text_Blaine8::
-# 1123 "data/maps/CityClara_Church/scripts.pory"
+# 1123 "data//maps/CityClara_Church/scripts.pory"
 	.string "You have both failed me look what you\n"
 	.string "let in! We must away, you two clean up\l"
 	.string "this mess. Rockets forward! March\l"
 	.string "onward to the stars!$"
 
 CityClara_Church_Text_JesseAndJamesIntro::
-# 1127 "data/maps/CityClara_Church/scripts.pory"
+# 1127 "data//maps/CityClara_Church/scripts.pory"
 	.string "Prepare for trouble. And make it double$"
 
 CityClara_Text_JesseAndJamesLost::
-# 1131 "data/maps/CityClara_Church/scripts.pory"
+# 1131 "data//maps/CityClara_Church/scripts.pory"
 	.string "I can't believe it! How did this twerp\n"
 	.string "win?$"
 
 CityClara_Church_Text_JesseAndJamesPost::
-# 1135 "data/maps/CityClara_Church/scripts.pory"
+# 1135 "data//maps/CityClara_Church/scripts.pory"
 	.string "Looks like Team Rocket's blasting off\n"
 	.string "again!$"
 
 CityClara_Church_Text_BlaineIntro::
-# 1139 "data/maps/CityClara_Church/scripts.pory"
+# 1139 "data//maps/CityClara_Church/scripts.pory"
 	.string "Test 1$"
 
 CityClara_Church_Text_BlaineLost::
-# 1143 "data/maps/CityClara_Church/scripts.pory"
+# 1143 "data//maps/CityClara_Church/scripts.pory"
 	.string "Test 2$"
 
 CityClara_Church_Text_BlainePost::
-# 1147 "data/maps/CityClara_Church/scripts.pory"
+# 1147 "data//maps/CityClara_Church/scripts.pory"
 	.string "Test 3$"
 
 CityClara_Church_Text_Leaf1::
-# 1151 "data/maps/CityClara_Church/scripts.pory"
+# 1151 "data//maps/CityClara_Church/scripts.pory"
 	.string "Hey {PLAYER}! C'mon! Why didn't you\n"
 	.string "wait up? And where is everyone!? And\l"
 	.string "hey! Where's MEW?$"
 
 CityClara_Church_Text_Dad1::
-# 1155 "data/maps/CityClara_Church/scripts.pory"
+# 1155 "data//maps/CityClara_Church/scripts.pory"
 	.string "Thank Mew you're both alright! The\n"
 	.string "Rockets have...$"
 
 CityClara_Church_Text_Leaf2::
-# 1159 "data/maps/CityClara_Church/scripts.pory"
+# 1159 "data//maps/CityClara_Church/scripts.pory"
 	.string "What's going on? Where's Mew? And who is\n"
 	.string "this?$"
 
 CityClara_Church_Text_Dad2::
-# 1163 "data/maps/CityClara_Church/scripts.pory"
+# 1163 "data//maps/CityClara_Church/scripts.pory"
 	.string "If you'd calm down we'd properly explain$"
 
 CityClara_Church_Text_Sage4::
-# 1167 "data/maps/CityClara_Church/scripts.pory"
+# 1167 "data//maps/CityClara_Church/scripts.pory"
 	.string "My name is Lamina, I serve the church\n"
 	.string "where for one thousand years we've\l"
 	.string "worshipped Mew. Today that wicked man\l"
@@ -2434,7 +2434,7 @@ CityClara_Church_Text_Sage4::
 	.string "once and for all our church was safe...$"
 
 CityClara_Church_Text_Dad3::
-# 1171 "data/maps/CityClara_Church/scripts.pory"
+# 1171 "data//maps/CityClara_Church/scripts.pory"
 	.string "But can't you see they just used you as\n"
 	.string "bait? This sanctuary was allowed to\l"
 	.string "stand so that Mew would be lured back\l"
@@ -2444,7 +2444,7 @@ CityClara_Church_Text_Dad3::
 	.string "capture Mew for something.$"
 
 CityClara_Church_Text_Sage5::
-# 1175 "data/maps/CityClara_Church/scripts.pory"
+# 1175 "data//maps/CityClara_Church/scripts.pory"
 	.string "I would never imagine what they'll do\n"
 	.string "but now I fear the worst. They might\l"
 	.string "exploit somehow the powerful nature of\l"
@@ -2453,7 +2453,7 @@ CityClara_Church_Text_Sage5::
 	.string "all cost...$"
 
 CityClara_Church_Text_Dad4::
-# 1179 "data/maps/CityClara_Church/scripts.pory"
+# 1179 "data//maps/CityClara_Church/scripts.pory"
 	.string "The party is extremely powerful, and I\n"
 	.string "should know I faught them in the war. I\l"
 	.string "watched so many of our best men die,\l"
@@ -2463,7 +2463,7 @@ CityClara_Church_Text_Dad4::
 	.string "they've captured Mew.$"
 
 CityClara_Church_Text_Sage6::
-# 1183 "data/maps/CityClara_Church/scripts.pory"
+# 1183 "data//maps/CityClara_Church/scripts.pory"
 	.string "Do not speak of defeat, good shall\n"
 	.string "prevail. The party now has grown too\l"
 	.string "arrogant, there are forces at work\l"
@@ -2471,7 +2471,7 @@ CityClara_Church_Text_Sage6::
 	.string "bold youngster shall help.$"
 
 CityClara_Church_Text_Dad5::
-# 1187 "data/maps/CityClara_Church/scripts.pory"
+# 1187 "data//maps/CityClara_Church/scripts.pory"
 	.string "Of course! How could I not notice\n"
 	.string "before? This kid, this {PLAYER} will\l"
 	.string "defeat the party! But {PLAYER}\l"
@@ -2481,7 +2481,7 @@ CityClara_Church_Text_Dad5::
 	.string "for.$"
 
 CityClara_Church_Text_Dad6::
-# 1191 "data/maps/CityClara_Church/scripts.pory"
+# 1191 "data//maps/CityClara_Church/scripts.pory"
 	.string "I think I know someone who just might\n"
 	.string "help. You should {PLAYER} travel\l"
 	.string "north to the desert and there seek out\l"
@@ -2494,7 +2494,7 @@ CityClara_Church_Text_Dad6::
 	.string "the time has come.$"
 
 CityClara_Church_Text_Sage7::
-# 1195 "data/maps/CityClara_Church/scripts.pory"
+# 1195 "data//maps/CityClara_Church/scripts.pory"
 	.string "This journey will be long, and arduous. I\n"
 	.string "wish to help you on your fated quest.\l"
 	.string "Please take one of our ancient holy\l"
@@ -2505,13 +2505,13 @@ CityClara_Church_Text_Sage7::
 	.string "which to take.$"
 
 CityClara_Church_Text_Sage8::
-# 1199 "data/maps/CityClara_Church/scripts.pory"
+# 1199 "data//maps/CityClara_Church/scripts.pory"
 	.string "The fate of all the world now rests with\n"
 	.string "you, go forth young {PLAYER} and know\l"
 	.string "you have our faith.$"
 
 CityClara_Church_Text_Dad7::
-# 1203 "data/maps/CityClara_Church/scripts.pory"
+# 1203 "data//maps/CityClara_Church/scripts.pory"
 	.string "That's right {PLAYER} you know I\n"
 	.string "believe in you. So Leaf what say you we\l"
 	.string "be on our way back to the club in order\l"
@@ -2519,7 +2519,7 @@ CityClara_Church_Text_Dad7::
 	.string "come around?$"
 
 CityClara_Church_Text_Leaf3::
-# 1207 "data/maps/CityClara_Church/scripts.pory"
+# 1207 "data//maps/CityClara_Church/scripts.pory"
 	.string "I'm sorry father, I cannot obey. I'm\n"
 	.string "going to Ardor along with {PLAYER}.\l"
 	.string "Someone needs to make sure that he\l"
@@ -2527,25 +2527,25 @@ CityClara_Church_Text_Leaf3::
 	.string "along the way!$"
 
 CityClara_Church_Text_Dad8::
-# 1211 "data/maps/CityClara_Church/scripts.pory"
+# 1211 "data//maps/CityClara_Church/scripts.pory"
 	.string "That's fine with me, you know I love you\n"
 	.string "Leaf. If anyone needs me, go to the\l"
 	.string "club.$"
 
 CityClara_Church_Text_Leaf4::
-# 1215 "data/maps/CityClara_Church/scripts.pory"
+# 1215 "data//maps/CityClara_Church/scripts.pory"
 	.string "Let's do it {PLAYER} we'll have\n"
 	.string "eachother's backs! I think we should\l"
 	.string "start by taking Route 4. I'll meet you\l"
 	.string "somewhere up in Robustus.$"
 
 CityClara_Church_Text_Sage9::
-# 1219 "data/maps/CityClara_Church/scripts.pory"
+# 1219 "data//maps/CityClara_Church/scripts.pory"
 	.string "Good luck {PLAYER} and may you soon\n"
 	.string "rescue Mew.$"
 
 CityClara_Church_Text_GiveFireStone::
-# 1223 "data/maps/CityClara_Church/scripts.pory"
+# 1223 "data//maps/CityClara_Church/scripts.pory"
 	.string "This Fire Stone will give you great\n"
 	.string "power. Be cautious that you don't allow\l"
 	.string "your strength to overcome your wits, or\l"
@@ -2554,7 +2554,7 @@ CityClara_Church_Text_GiveFireStone::
 	.string "you're sure you wish to hold?$"
 
 CityClara_Church_Text_GiveWaterStone::
-# 1227 "data/maps/CityClara_Church/scripts.pory"
+# 1227 "data//maps/CityClara_Church/scripts.pory"
 	.string "This Water Stone will help you on your\n"
 	.string "quest. Across the open seas, and under\l"
 	.string "hills, this stone will safeguard you on\l"
@@ -2562,7 +2562,7 @@ CityClara_Church_Text_GiveWaterStone::
 	.string "sure you want from me?$"
 
 CityClara_Church_Text_GiveThunderStone::
-# 1231 "data/maps/CityClara_Church/scripts.pory"
+# 1231 "data//maps/CityClara_Church/scripts.pory"
 	.string "This Thunder Stone shall bring you\n"
 	.string "victory. Neither reckless, nor too\l"
 	.string "cautionary, you must remain to harness\l"
@@ -2570,7 +2570,7 @@ CityClara_Church_Text_GiveThunderStone::
 	.string "the Thunder Stone?$"
 
 CityClara_Church_Text_GiveNoneStone::
-# 1235 "data/maps/CityClara_Church/scripts.pory"
+# 1235 "data//maps/CityClara_Church/scripts.pory"
 	.string "You are most noble for your age young\n"
 	.string "{PLAYER}. The stone could have given\l"
 	.string "you great power but if you don't want\l"
@@ -2578,19 +2578,19 @@ CityClara_Church_Text_GiveNoneStone::
 	.string "that you will take no stone?$"
 
 CityClara_Church_Text_TakeStone::
-# 1239 "data/maps/CityClara_Church/scripts.pory"
+# 1239 "data//maps/CityClara_Church/scripts.pory"
 	.string "May Mew allow this stone to give you\n"
 	.string "strength!$"
 
 CityClara_Church_Text_DenyStone::
-# 1243 "data/maps/CityClara_Church/scripts.pory"
+# 1243 "data//maps/CityClara_Church/scripts.pory"
 	.string "I wish you luck, but offer no more help.$"
 
 CityClara_Church_Text_SageAfterMew::
-# 1247 "data/maps/CityClara_Church/scripts.pory"
+# 1247 "data//maps/CityClara_Church/scripts.pory"
 	.string "Be on your way {PLAYER} you must\n"
 	.string "rescue Mew.$"
 
 CityClara_Church_Text_ERROR::
-# 1251 "data/maps/CityClara_Church/scripts.pory"
+# 1251 "data//maps/CityClara_Church/scripts.pory"
 	.string "VAR CITYCLARA STATE OUT OF BOUNDS$"

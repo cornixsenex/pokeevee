@@ -3,415 +3,415 @@ DesertTemple_4F_MapScripts::
 
 
 DesertTemple_4F_EventScript_Trigger1::
-# 6 "data/maps/DesertTemple_4F/scripts.pory"
+# 6 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 8 "data/maps/DesertTemple_4F/scripts.pory"
+# 8 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_1, 1
-# 9 "data/maps/DesertTemple_4F/scripts.pory"
+# 9 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 10 "data/maps/DesertTemple_4F/scripts.pory"
+# 10 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger1_2
 DesertTemple_4F_EventScript_Trigger1_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger1_2:
-# 11 "data/maps/DesertTemple_4F/scripts.pory"
+# 11 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger1_1
 
 
 DesertTemple_4F_EventScript_Trigger2::
-# 18 "data/maps/DesertTemple_4F/scripts.pory"
+# 18 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 20 "data/maps/DesertTemple_4F/scripts.pory"
+# 20 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_2, 1
-# 21 "data/maps/DesertTemple_4F/scripts.pory"
+# 21 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 22 "data/maps/DesertTemple_4F/scripts.pory"
+# 22 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger2_2
 DesertTemple_4F_EventScript_Trigger2_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger2_2:
-# 23 "data/maps/DesertTemple_4F/scripts.pory"
+# 23 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger2_1
 
 
 DesertTemple_4F_EventScript_Trigger3::
-# 30 "data/maps/DesertTemple_4F/scripts.pory"
+# 30 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 32 "data/maps/DesertTemple_4F/scripts.pory"
+# 32 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_3, 1
-# 33 "data/maps/DesertTemple_4F/scripts.pory"
+# 33 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 34 "data/maps/DesertTemple_4F/scripts.pory"
+# 34 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger3_2
 DesertTemple_4F_EventScript_Trigger3_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger3_2:
-# 35 "data/maps/DesertTemple_4F/scripts.pory"
+# 35 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger3_1
 
 
 DesertTemple_4F_EventScript_Trigger4::
-# 42 "data/maps/DesertTemple_4F/scripts.pory"
+# 42 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 44 "data/maps/DesertTemple_4F/scripts.pory"
+# 44 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_4, 1
-# 45 "data/maps/DesertTemple_4F/scripts.pory"
+# 45 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 46 "data/maps/DesertTemple_4F/scripts.pory"
+# 46 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger4_2
 DesertTemple_4F_EventScript_Trigger4_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger4_2:
-# 47 "data/maps/DesertTemple_4F/scripts.pory"
+# 47 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger4_1
 
 
 DesertTemple_4F_EventScript_Trigger5::
-# 54 "data/maps/DesertTemple_4F/scripts.pory"
+# 54 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 56 "data/maps/DesertTemple_4F/scripts.pory"
+# 56 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 57 "data/maps/DesertTemple_4F/scripts.pory"
+# 57 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 58 "data/maps/DesertTemple_4F/scripts.pory"
+# 58 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger5_2
 DesertTemple_4F_EventScript_Trigger5_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger5_2:
-# 59 "data/maps/DesertTemple_4F/scripts.pory"
+# 59 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger5_1
 
 
 DesertTemple_4F_EventScript_Trigger6::
-# 66 "data/maps/DesertTemple_4F/scripts.pory"
+# 66 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 68 "data/maps/DesertTemple_4F/scripts.pory"
+# 68 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_6, 1
-# 69 "data/maps/DesertTemple_4F/scripts.pory"
+# 69 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 70 "data/maps/DesertTemple_4F/scripts.pory"
+# 70 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger6_2
 DesertTemple_4F_EventScript_Trigger6_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger6_2:
-# 71 "data/maps/DesertTemple_4F/scripts.pory"
+# 71 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger6_1
 
 
 DesertTemple_4F_EventScript_Trigger7::
-# 78 "data/maps/DesertTemple_4F/scripts.pory"
+# 78 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 80 "data/maps/DesertTemple_4F/scripts.pory"
+# 80 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_7, 1
-# 81 "data/maps/DesertTemple_4F/scripts.pory"
+# 81 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 82 "data/maps/DesertTemple_4F/scripts.pory"
+# 82 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger7_2
 DesertTemple_4F_EventScript_Trigger7_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger7_2:
-# 83 "data/maps/DesertTemple_4F/scripts.pory"
+# 83 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger7_1
 
 
 DesertTemple_4F_EventScript_Trigger8::
-# 90 "data/maps/DesertTemple_4F/scripts.pory"
+# 90 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 92 "data/maps/DesertTemple_4F/scripts.pory"
+# 92 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_8, 1
-# 93 "data/maps/DesertTemple_4F/scripts.pory"
+# 93 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 94 "data/maps/DesertTemple_4F/scripts.pory"
+# 94 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger8_2
 DesertTemple_4F_EventScript_Trigger8_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger8_2:
-# 95 "data/maps/DesertTemple_4F/scripts.pory"
+# 95 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger8_1
 
 
 DesertTemple_4F_EventScript_Trigger9::
-# 102 "data/maps/DesertTemple_4F/scripts.pory"
+# 102 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 104 "data/maps/DesertTemple_4F/scripts.pory"
+# 104 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_9, 1
-# 105 "data/maps/DesertTemple_4F/scripts.pory"
+# 105 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 106 "data/maps/DesertTemple_4F/scripts.pory"
+# 106 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger9_2
 DesertTemple_4F_EventScript_Trigger9_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger9_2:
-# 107 "data/maps/DesertTemple_4F/scripts.pory"
+# 107 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger9_1
 
 
 DesertTemple_4F_EventScript_Trigger0::
-# 114 "data/maps/DesertTemple_4F/scripts.pory"
+# 114 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 116 "data/maps/DesertTemple_4F/scripts.pory"
+# 116 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_0, 1
-# 117 "data/maps/DesertTemple_4F/scripts.pory"
+# 117 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 118 "data/maps/DesertTemple_4F/scripts.pory"
+# 118 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_Trigger0_2
 DesertTemple_4F_EventScript_Trigger0_1:
 	end
 
 DesertTemple_4F_EventScript_Trigger0_2:
-# 119 "data/maps/DesertTemple_4F/scripts.pory"
+# 119 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_Trigger0_1
 
 
 DesertTemple_4F_EventScript_TriggerA::
-# 126 "data/maps/DesertTemple_4F/scripts.pory"
+# 126 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 128 "data/maps/DesertTemple_4F/scripts.pory"
+# 128 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_A, 1
-# 129 "data/maps/DesertTemple_4F/scripts.pory"
+# 129 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 130 "data/maps/DesertTemple_4F/scripts.pory"
+# 130 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_TriggerA_2
 DesertTemple_4F_EventScript_TriggerA_1:
 	end
 
 DesertTemple_4F_EventScript_TriggerA_2:
-# 131 "data/maps/DesertTemple_4F/scripts.pory"
+# 131 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_TriggerA_1
 
 
 DesertTemple_4F_EventScript_TriggerB::
-# 138 "data/maps/DesertTemple_4F/scripts.pory"
+# 138 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 140 "data/maps/DesertTemple_4F/scripts.pory"
+# 140 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_B, 1
-# 141 "data/maps/DesertTemple_4F/scripts.pory"
+# 141 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 142 "data/maps/DesertTemple_4F/scripts.pory"
+# 142 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_TriggerB_2
 DesertTemple_4F_EventScript_TriggerB_1:
 	end
 
 DesertTemple_4F_EventScript_TriggerB_2:
-# 143 "data/maps/DesertTemple_4F/scripts.pory"
+# 143 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_TriggerB_1
 
 
 DesertTemple_4F_EventScript_TriggerC::
-# 150 "data/maps/DesertTemple_4F/scripts.pory"
+# 150 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 152 "data/maps/DesertTemple_4F/scripts.pory"
+# 152 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_C, 1
-# 153 "data/maps/DesertTemple_4F/scripts.pory"
+# 153 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 154 "data/maps/DesertTemple_4F/scripts.pory"
+# 154 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_TriggerC_2
 DesertTemple_4F_EventScript_TriggerC_1:
 	end
 
 DesertTemple_4F_EventScript_TriggerC_2:
-# 155 "data/maps/DesertTemple_4F/scripts.pory"
+# 155 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_TriggerC_1
 
 
 DesertTemple_4F_EventScript_TriggerD::
-# 162 "data/maps/DesertTemple_4F/scripts.pory"
+# 162 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 164 "data/maps/DesertTemple_4F/scripts.pory"
+# 164 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_D, 1
-# 165 "data/maps/DesertTemple_4F/scripts.pory"
+# 165 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 166 "data/maps/DesertTemple_4F/scripts.pory"
+# 166 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_TriggerD_2
 DesertTemple_4F_EventScript_TriggerD_1:
 	end
 
 DesertTemple_4F_EventScript_TriggerD_2:
-# 167 "data/maps/DesertTemple_4F/scripts.pory"
+# 167 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_TriggerD_1
 
 
 DesertTemple_4F_EventScript_TriggerE::
-# 174 "data/maps/DesertTemple_4F/scripts.pory"
+# 174 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 176 "data/maps/DesertTemple_4F/scripts.pory"
+# 176 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_E, 1
-# 177 "data/maps/DesertTemple_4F/scripts.pory"
+# 177 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 178 "data/maps/DesertTemple_4F/scripts.pory"
+# 178 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_TriggerE_2
 DesertTemple_4F_EventScript_TriggerE_1:
 	end
 
 DesertTemple_4F_EventScript_TriggerE_2:
-# 179 "data/maps/DesertTemple_4F/scripts.pory"
+# 179 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_TriggerE_1
 
 
 DesertTemple_4F_EventScript_TriggerF::
-# 186 "data/maps/DesertTemple_4F/scripts.pory"
+# 186 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearAllVars
-# 188 "data/maps/DesertTemple_4F/scripts.pory"
+# 188 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_F, 1
-# 189 "data/maps/DesertTemple_4F/scripts.pory"
+# 189 "data//maps/DesertTemple_4F/scripts.pory"
 	specialvar VAR_RESULT, IsDesertTemple4FSolved
-# 190 "data/maps/DesertTemple_4F/scripts.pory"
+# 190 "data//maps/DesertTemple_4F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq DesertTemple_4F_EventScript_TriggerF_2
 DesertTemple_4F_EventScript_TriggerF_1:
 	end
 
 DesertTemple_4F_EventScript_TriggerF_2:
-# 191 "data/maps/DesertTemple_4F/scripts.pory"
+# 191 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_ClearPuzzle
 	goto DesertTemple_4F_EventScript_TriggerF_1
 
 
 DesertTemple_4F_EventScript_ClearAllVars::
-# 197 "data/maps/DesertTemple_4F/scripts.pory"
+# 197 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_1, 0
-# 198 "data/maps/DesertTemple_4F/scripts.pory"
+# 198 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_2, 0
-# 199 "data/maps/DesertTemple_4F/scripts.pory"
+# 199 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_3, 0
-# 200 "data/maps/DesertTemple_4F/scripts.pory"
+# 200 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_4, 0
-# 201 "data/maps/DesertTemple_4F/scripts.pory"
+# 201 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_5, 0
-# 202 "data/maps/DesertTemple_4F/scripts.pory"
+# 202 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_6, 0
-# 203 "data/maps/DesertTemple_4F/scripts.pory"
+# 203 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_7, 0
-# 204 "data/maps/DesertTemple_4F/scripts.pory"
+# 204 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_8, 0
-# 205 "data/maps/DesertTemple_4F/scripts.pory"
+# 205 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_9, 0
-# 206 "data/maps/DesertTemple_4F/scripts.pory"
+# 206 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_0, 0
-# 207 "data/maps/DesertTemple_4F/scripts.pory"
+# 207 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_A, 0
-# 208 "data/maps/DesertTemple_4F/scripts.pory"
+# 208 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_B, 0
-# 209 "data/maps/DesertTemple_4F/scripts.pory"
+# 209 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_C, 0
-# 210 "data/maps/DesertTemple_4F/scripts.pory"
+# 210 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 211 "data/maps/DesertTemple_4F/scripts.pory"
+# 211 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_E, 0
-# 212 "data/maps/DesertTemple_4F/scripts.pory"
+# 212 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_F, 0
 	return
 
 
 DesertTemple_4F_EventScript_SetAllVars::
-# 216 "data/maps/DesertTemple_4F/scripts.pory"
+# 216 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_1, 1
-# 217 "data/maps/DesertTemple_4F/scripts.pory"
+# 217 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_2, 1
-# 218 "data/maps/DesertTemple_4F/scripts.pory"
+# 218 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_3, 1
-# 219 "data/maps/DesertTemple_4F/scripts.pory"
+# 219 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_4, 1
-# 220 "data/maps/DesertTemple_4F/scripts.pory"
+# 220 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 221 "data/maps/DesertTemple_4F/scripts.pory"
+# 221 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_6, 1
-# 222 "data/maps/DesertTemple_4F/scripts.pory"
+# 222 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_7, 1
-# 223 "data/maps/DesertTemple_4F/scripts.pory"
+# 223 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_8, 1
-# 224 "data/maps/DesertTemple_4F/scripts.pory"
+# 224 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_9, 1
-# 225 "data/maps/DesertTemple_4F/scripts.pory"
+# 225 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_0, 1
-# 226 "data/maps/DesertTemple_4F/scripts.pory"
+# 226 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_A, 1
-# 227 "data/maps/DesertTemple_4F/scripts.pory"
+# 227 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_B, 1
-# 228 "data/maps/DesertTemple_4F/scripts.pory"
+# 228 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_C, 1
-# 229 "data/maps/DesertTemple_4F/scripts.pory"
+# 229 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_D, 1
-# 230 "data/maps/DesertTemple_4F/scripts.pory"
+# 230 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_E, 1
-# 231 "data/maps/DesertTemple_4F/scripts.pory"
+# 231 "data//maps/DesertTemple_4F/scripts.pory"
 	setvar VAR_TEMP_F, 1
 	return
 
 
 DesertTemple_4F_EventScript_ClearPuzzle::
-# 235 "data/maps/DesertTemple_4F/scripts.pory"
+# 235 "data//maps/DesertTemple_4F/scripts.pory"
 	setflag FLAG_TEMP_1
-# 236 "data/maps/DesertTemple_4F/scripts.pory"
+# 236 "data//maps/DesertTemple_4F/scripts.pory"
 	call DesertTemple_4F_EventScript_SetAllVars
-# 237 "data/maps/DesertTemple_4F/scripts.pory"
+# 237 "data//maps/DesertTemple_4F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 238 "data/maps/DesertTemple_4F/scripts.pory"
+# 238 "data//maps/DesertTemple_4F/scripts.pory"
 	waitmovement 0
-# 239 "data/maps/DesertTemple_4F/scripts.pory"
+# 239 "data//maps/DesertTemple_4F/scripts.pory"
 	delay 25
-# 240 "data/maps/DesertTemple_4F/scripts.pory"
+# 240 "data//maps/DesertTemple_4F/scripts.pory"
 	removeobject 2
-# 241 "data/maps/DesertTemple_4F/scripts.pory"
+# 241 "data//maps/DesertTemple_4F/scripts.pory"
 	delay 25
-# 242 "data/maps/DesertTemple_4F/scripts.pory"
+# 242 "data//maps/DesertTemple_4F/scripts.pory"
 	removeobject 3
-# 243 "data/maps/DesertTemple_4F/scripts.pory"
+# 243 "data//maps/DesertTemple_4F/scripts.pory"
 	delay 25
-# 244 "data/maps/DesertTemple_4F/scripts.pory"
+# 244 "data//maps/DesertTemple_4F/scripts.pory"
 	removeobject 4
-# 245 "data/maps/DesertTemple_4F/scripts.pory"
+# 245 "data//maps/DesertTemple_4F/scripts.pory"
 	delay 25
-# 246 "data/maps/DesertTemple_4F/scripts.pory"
+# 246 "data//maps/DesertTemple_4F/scripts.pory"
 	removeobject 5
-# 247 "data/maps/DesertTemple_4F/scripts.pory"
+# 247 "data//maps/DesertTemple_4F/scripts.pory"
 	delay 25
-# 248 "data/maps/DesertTemple_4F/scripts.pory"
+# 248 "data//maps/DesertTemple_4F/scripts.pory"
 	removeobject 1
-# 249 "data/maps/DesertTemple_4F/scripts.pory"
+# 249 "data//maps/DesertTemple_4F/scripts.pory"
 	delay 25
-# 250 "data/maps/DesertTemple_4F/scripts.pory"
+# 250 "data//maps/DesertTemple_4F/scripts.pory"
 	playse SE_FU_ZAKU
-# 251 "data/maps/DesertTemple_4F/scripts.pory"
+# 251 "data//maps/DesertTemple_4F/scripts.pory"
 	waitse
 	return
 
