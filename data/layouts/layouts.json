@@ -5767,7 +5767,7 @@
       "width": 160,
       "height": 44,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_vegas",
+      "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/BikeRouteNW/border.bin",
       "blockdata_filepath": "data/layouts/BikeRouteNW/map.bin"
     },
@@ -5777,7 +5777,7 @@
       "width": 32,
       "height": 84,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_vegas",
+      "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/BikeRouteNNW/border.bin",
       "blockdata_filepath": "data/layouts/BikeRouteNNW/map.bin"
     },
