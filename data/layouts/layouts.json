@@ -6187,7 +6187,7 @@
       "width": 28,
       "height": 45,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_MirageTower",
+      "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/BikeMapVegas/border.bin",
       "blockdata_filepath": "data/layouts/BikeMapVegas/map.bin"
     }

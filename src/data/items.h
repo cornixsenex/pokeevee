@@ -12261,7 +12261,7 @@ const struct Item gItemsInfo[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Bike,
         .iconPic = gItemIcon_Bicycle,
         .iconPalette = gItemIconPalette_Bicycle,
     },
