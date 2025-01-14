@@ -42,6 +42,11 @@
       "map": "MAP_SANJO",
       "offset": 6,
       "direction": "left"
+    },
+    {
+      "map": "MAP_BIKE_MAP_W",
+      "offset": -114,
+      "direction": "up"
     }
   ],
   "object_events": [

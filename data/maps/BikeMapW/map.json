@@ -32,6 +32,11 @@
       "map": "MAP_BIKE_MAP_VEGAS",
       "offset": 11,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BIKE_ROUTE_FARM",
+      "offset": 114,
+      "direction": "down"
     }
   ],
   "object_events": [

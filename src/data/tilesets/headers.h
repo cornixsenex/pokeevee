@@ -1165,3 +1165,14 @@ const struct Tileset gTileset_Montgomery =
     .metatileAttributes = gMetatileAttributes_Montgomery,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_sanjo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_sanjo,
+    .palettes = gTilesetPalettes_sanjo,
+    .metatiles = gMetatiles_sanjo,
+    .metatileAttributes = gMetatileAttributes_sanjo,
+    .callback = NULL,
+};
