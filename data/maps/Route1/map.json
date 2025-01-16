@@ -144,7 +144,7 @@
       "x": 16,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_ROUTE1_STATE",
+      "var": "VAR_GRANNY_STATE",
       "var_value": "0",
       "script": "Route1_EventScript_RivalTrigger1"
     },
@@ -153,7 +153,7 @@
       "x": 16,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_ROUTE1_STATE",
+      "var": "VAR_GRANNY_STATE",
       "var_value": "0",
       "script": "Route1_EventScript_RivalTrigger2"
     },
@@ -162,7 +162,7 @@
       "x": 16,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_ROUTE1_STATE",
+      "var": "VAR_GRANNY_STATE",
       "var_value": "0",
       "script": "Route1_EventScript_RivalTrigger3"
     },
@@ -171,7 +171,7 @@
       "x": 16,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_ROUTE1_STATE",
+      "var": "VAR_GRANNY_STATE",
       "var_value": "0",
       "script": "Route1_EventScript_RivalTrigger4"
     },
@@ -180,27 +180,12 @@
       "x": 16,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_ROUTE1_STATE",
+      "var": "VAR_GRANNY_STATE",
       "var_value": "0",
       "script": "Route1_EventScript_RivalTrigger5"
     }
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 18,
-      "y": 16,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route1_EventScript_RockTest"
-    },
-    {
-      "type": "sign",
-      "x": 19,
-      "y": 16,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route1_EventScript_RockTest"
-    }
+
   ]
 }
