@@ -43,10 +43,19 @@ Dreams (7):
 
 Teams:
 
-	Leaf:
-		Jigglypuff
-Meganium
-Jynx
-Milotic
-Raichu
-Houndoom
+	Leaf: - Eevee types
+		Jigglypuff - School
+		Meganium   - Garden
+		Jynx	   - School
+		Milotic    - Surf / odyssey
+		Raichu     - Siege
+		Houndoom   - Military base
+	
+	Blue: - Non Eevee types
+		Crowbat    - Intro
+		Lucario    - Rock Tunnel Ambush
+		Hippodon   - Slabs
+		Armaldo    - Lotus Eaters / beggars / relate to propaganda arc
+		Dusclops   - Graveyard
+		Haxorus    - Dragon Cave
+		

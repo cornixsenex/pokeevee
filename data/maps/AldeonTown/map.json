@@ -142,7 +142,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_ALDEON_SCHOOL_STATE",
+      "var_value": "0",
+      "script": "NULL"
+    }
   ],
   "bg_events": [
     {
