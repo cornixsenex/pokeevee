@@ -135,8 +135,8 @@
 																// 4: During Leaf ambush (Trigger  and show Ambush)
 																// 5: After Leaf ambush (Show eevee, leaf, granny outfront) 
 																// 6: After granny in front the house - trigger Granny Scene 2
-																// 7: After granny scene 2 - granny at the table
-																//
+																// 7: After granny scene 2 - granny at the table - trigger Aldeon Leaf Battle
+																// 8: After Leaf Battle - show Leaf and Blue route block
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
 #define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 
 #define VAR_CAPITAL_STATE                                0x4063 // Gio trigger

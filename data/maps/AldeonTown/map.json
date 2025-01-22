@@ -147,9 +147,9 @@
       "x": 7,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_ALDEON_SCHOOL_STATE",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_GRANNY_STATE",
+      "var_value": "7",
+      "script": "AldeonTown_Script_TriggerLeafBattle"
     }
   ],
   "bg_events": [
