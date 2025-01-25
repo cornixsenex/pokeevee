@@ -31,14 +31,11 @@ script AldeonTown_Script_TriggerLeafBattle {
 	addobject (OBJ_EVENT_LEAF)
 	showobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
 	//Show Igglybuff	
-	removeobject (OBJ_EVENT_IGGLYBUFF)
 	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 16, 9)
 	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_LEFT)
-	addobject (OBJ_EVENT_IGGLYBUFF)
-	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
 	//Enter Leaf et Iggy
 	applymovement (OBJ_EVENT_LEAF, AldeonTown_Movement_Leaf1)
-	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_Leaf1)
+	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_Iggy1)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
 	waitmovement (0)
@@ -122,6 +119,11 @@ movement AldeonTown_Movement_Leaf1 {
 	face_up
 }
 
+movement AldeonTown_Movement_Iggy1 {
+	walk_left * 8
+}
+
+
 text AldeonTown_Text_FatMan_BlockExit {
 	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlacis, can be mighty dangerous you don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")
 }
@@ -152,7 +154,7 @@ text AldeonTown_Text_Leaf1 {
 }
 
 text AldeonTown_Text_LeafLost {
-	format("Hey! That's enough! You're hurting her, please stop!")
+	format("Hey! That's enough. You're hurting her, please stop.")
 }
 
 text AldeonTown_Text_Leaf2 {

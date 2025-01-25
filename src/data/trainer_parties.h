@@ -205,21 +205,12 @@ static const struct TrainerMon sParty_Devon[] = {
 };
 
 static const struct TrainerMon sParty_Leaf1[] = {
-    {
-    .iv = 100,
-    .lvl = 10,
-    .species = SPECIES_PICHU,
-    },
 	{
-		.iv = 100,
-		.lvl = 11,
-		.species = SPECIES_LOTAD,
-	},
-	{
-		.iv = 250,
-		.lvl = 12,
-		.species = SPECIES_BULBASAUR,
-		.nickname = COMPOUND_STRING("BULBIE"),
+		.species = SPECIES_IGGLYBUFF,
+		.friendship = 255,
+		.gender = TRAINER_MON_FEMALE,
+		.lvl = 5,
+        .moves = {MOVE_SING, MOVE_DEFENSE_CURL, MOVE_CHARM, MOVE_POUND},
 	}
 };
 
