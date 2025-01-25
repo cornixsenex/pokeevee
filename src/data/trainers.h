@@ -245,11 +245,13 @@
     [TRAINER_LEAF1] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEAF,
         .trainerName = _("LEAF"),
         .items = {},
         .doubleBattle = FALSE,
+		.mugshotEnabled = TRUE,
+		.mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .party = TRAINER_PARTY(sParty_Leaf1),
     },
@@ -10298,17 +10300,17 @@
         .party = TRAINER_PARTY(sParty_Red),
     },
 
-    [TRAINER_LEAF] =
-    {
-        .trainerClass = TRAINER_CLASS_RIVAL,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEAF,
-        .trainerName = _("LEAF"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = 0,
-        .party = TRAINER_PARTY(sParty_Leaf),
-    },
+//    [TRAINER_LEAF] =
+//    {
+//        .trainerClass = TRAINER_CLASS_RIVAL,
+//        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
+//        .trainerPic = TRAINER_PIC_LEAF,
+//        .trainerName = _("LEAF"),
+//        .items = {},
+//        .doubleBattle = FALSE,
+//        .aiFlags = 0,
+//        .party = TRAINER_PARTY(sParty_Leaf),
+//    },
 
     [TRAINER_BRENDAN_PLACEHOLDER] =
     {

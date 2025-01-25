@@ -1,5 +1,7 @@
 const OBJ_EVENT_LEAF = 5
 const OBJ_EVENT_BLUE = 6
+const OBJ_EVENT_IGGLYBUFF = 7
+const OBJ_EVENT_ZUBAT = 8
 
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_BLUE = 3
@@ -26,21 +28,28 @@ script AldeonTown_Script_TriggerLeafBattle {
 	//setvars
 	setvar (VAR_GRANNY_STATE, 8)
 	//Alert Player
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
-	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	waitmovement (0)
 	//Greeting Leaf
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
 	msgbox (format("Hey {PLAYER}!"))
 	closemessage
 	destroy_field_pic (FIELD_PIC_LEAF)
-	//Enter Leaf
+	//Show Leaf
 	setobjectxyperm (OBJ_EVENT_LEAF, 15, 9)
 	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_LEAF)
 	showobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
+	//Show Igglybuff	
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 16, 9)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_IGGLYBUFF)
+	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
+	//Enter Leaf et Iggy
 	applymovement (OBJ_EVENT_LEAF, AldeonTown_Movement_Leaf1)
+	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_Leaf1)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
 	waitmovement (0)

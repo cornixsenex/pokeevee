@@ -12822,13 +12822,13 @@ static const struct TrainerMon sParty_Red[] = {
     }
 };
 
-static const struct TrainerMon sParty_Leaf[] = {
-    {
-    .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_BULBASAUR,
-    }
-};
+//static const struct TrainerMon sParty_Leaf[] = {
+//    {
+//    .iv = 0,
+//    .lvl = 5,
+//    .species = SPECIES_BULBASAUR,
+//    }
+//};
 
 static const struct TrainerMon sParty_BrendanLinkPlaceholder[] = {
     {
