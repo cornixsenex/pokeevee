@@ -2,13 +2,44 @@ const OBJ_EVENT_LEAF = 5
 const OBJ_EVENT_BLUE = 6
 const OBJ_EVENT_IGGLYBUFF = 7
 const OBJ_EVENT_ZUBAT = 8
+const OBJ_EVENT_OLDMAN = 4
 
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_BLUE = 3
 
 mapscripts AldeonTown_MapScripts {
+	
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_GRANNY_STATE) == 8) {
+			call (AldeonTown_Script_ShowBlueLeafBlock)
+		}
+	}
+
 }
 
+script AldeonTown_Script_ShowBlueLeafBlock {
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 21, 22)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+	addobject (OBJ_EVENT_ZUBAT)
+	showobjectat (OBJ_EVENT_ZUBAT, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 21, 23)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+	addobject (OBJ_EVENT_IGGLYBUFF)
+	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_BLUE, 21, 21)
+	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_BLUE)
+	showobjectat (OBJ_EVENT_BLUE, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_LEAF, 21, 24)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_LEAF)
+	showobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
+	
+	return
+}
 
 script AldeonTown_Script_TriggerLeafBattle {
 	lockall
@@ -21,7 +52,7 @@ script AldeonTown_Script_TriggerLeafBattle {
 	waitmovement (0)
 	//Greeting Leaf
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
-	msgbox (format("Hey {PLAYER}!"))
+	msgbox (format("Hey {PLAYER}!"), MSGBOX_DEFAULT)
 	closemessage
 	destroy_field_pic (FIELD_PIC_LEAF)
 	//Show Leaf
@@ -44,31 +75,135 @@ script AldeonTown_Script_TriggerLeafBattle {
 	waitmovement (0)
 	//Leaf: Daddy got me a mon lets battle
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
-	msgbox (AldeonTown_Text_Leaf1)
+	msgbox (AldeonTown_Text_Leaf1, MSGBOX_DEFAULT)
 	closemessage
 	destroy_field_pic (FIELD_PIC_LEAF)
 	//battle
 	trainerbattle_no_intro (TRAINER_LEAF1, AldeonTown_Text_LeafLost)
 	//Post battle talk
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
-	msgbox (AldeonTown_Text_Leaf2)
+	msgbox (AldeonTown_Text_Leaf2, MSGBOX_DEFAULT)
 	closemessage
 	destroy_field_pic (FIELD_PIC_LEAF)
-	//Enter Blue
-	//Alert Player and Leaf
-	//Blue: Schools a total waste of time come with me I'll teach you
-	//Leaf: I'm going
-	//Blue: Girls only. Smell you later
+	//Alert player et Leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Speak Blue
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue1, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//Face player et Leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//Show Blue
+	removeobject (OBJ_EVENT_BLUE)
+	setobjectxyperm (OBJ_EVENT_BLUE, 0, 9)
+	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_BLUE)
+	showobjectat (OBJ_EVENT_BLUE, MAP_ALDEON_TOWN)
+	//Show Zubat
+	removeobject (OBJ_EVENT_ZUBAT)
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 0, 8)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_ZUBAT)
+	showobjectat (OBJ_EVENT_ZUBAT, MAP_ALDEON_TOWN)
+	//Enter Blue et Zubat	
+	applymovement (OBJ_EVENT_BLUE, AldeonTown_Movement_Blue1)
+	applymovement (OBJ_EVENT_ZUBAT, AldeonTown_Movement_Blue1)
+	waitmovement (0)
+	//Set Zubat movement flying
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+	//savage studies
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//Face player	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//Leaf: Pardon
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//B: School a waste
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//L: Not what adults told me
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf4, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//B: Be as gods
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue4, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//L: Convinced
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//B: let us go
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	closemessage
+	//Step 1
+	applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_BLUE, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_ZUBAT, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
+	applymovement (OBJ_EVENT_ZUBAT, Common_Movement_FaceRight)
+	waitmovement (0)
+	//Blue: Girls only.	
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue6, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	closemessage
 	//Exeunt Leaf et Blue
-	//set vars, show block
-	//end
-
+	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_BlueLeafExeunt)
+	applymovement (OBJ_EVENT_LEAF, AldeonTown_Movement_BlueLeafExeunt)
+	applymovement (OBJ_EVENT_BLUE, AldeonTown_Movement_BlueLeafExeunt)
+	applymovement (OBJ_EVENT_ZUBAT, AldeonTown_Movement_BlueLeafExeunt)
+	waitmovement (0)
+	//Remove actors
+	removeobject (OBJ_EVENT_LEAF)
+	removeobject (OBJ_EVENT_BLUE)
+	removeobject (OBJ_EVENT_IGGLYBUFF)
+	removeobject (OBJ_EVENT_ZUBAT)
+	//Show BlueLeafBlock
+	call (AldeonTown_Script_ShowBlueLeafBlock)
 
 	releaseall
 	end
 }
 
+script AldeonTown_Script_Leaf {
+	msgbox (AldeonTown_Text_Leaf6, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
 
+script AldeonTown_Script_Blue {
+	msgbox (AldeonTown_Text_Blue7, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script AldeonTown_Script_Zubat {
+	playmoncry (SPECIES_ZUBAT, CRY_MODE_NORMAL)
+	waitmoncry
+	end
+}
+
+script AldeonTown_Script_Igglybuff {
+	playmoncry (SPECIES_IGGLYBUFF, CRY_MODE_NORMAL)
+	waitmoncry
+	end
+}
+	
 script AldeonTown_EventScript_FatMan {
 	lockall
 	msgbox (AldeonTown_Text_FatMan3, MSGBOX_DEFAULT)
@@ -80,7 +215,7 @@ script AldeonTown_EventScript_FatMan {
 script AldeonTown_EventScript_DoorWoman {
 	lock
 	faceplayer
-	msgbox (AldeonTown_Text_DoorWoman)
+	msgbox (AldeonTown_Text_DoorWoman, MSGBOX_DEFAULT)
 	closemessage
 	release
 	end
@@ -89,7 +224,7 @@ script AldeonTown_EventScript_DoorWoman {
 script AldeonTown_EventScript_TownSign {
 	lock
 	faceplayer
-	msgbox (AldeonTown_Text_TownSign)
+	msgbox (AldeonTown_Text_TownSign, MSGBOX_DEFAULT)
 	closemessage
 	release
 	end
@@ -98,11 +233,22 @@ script AldeonTown_EventScript_TownSign {
 script AldeonTown_EventScript_HouseSign {
 	lock
 	faceplayer
-	msgbox (AldeonTown_Text_HouseSign)
+	msgbox (AldeonTown_Text_HouseSign, MSGBOX_DEFAULT)
 	closemessage
 	release
 	end
 }	
+
+script AldeonTown_Script_OldMan {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_OldMan, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_OLDMAN, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
 
 movement AldeonTown_Movement_PlayerSnorlax1 {
 	walk_left
@@ -120,6 +266,14 @@ movement AldeonTown_Movement_PlayerSnorlax2 {
 movement AldeonTown_Movement_Leaf1 {
 	walk_left * 8
 	face_up
+}
+
+movement AldeonTown_Movement_Blue1 {
+	walk_right * 6
+}
+
+movement AldeonTown_Movement_BlueLeafExeunt {
+	walk_right * 9
 }
 
 text AldeonTown_Text_FatMan_BlockExit {
@@ -158,5 +312,62 @@ text AldeonTown_Text_LeafLost {
 text AldeonTown_Text_Leaf2 {
 	format("Looks like I need to learn better technique if I am going to keep myself safe.")
 }
+
+text AldeonTown_Text_Blue1 {
+	format("So sad...")
+}
+
+//savage studies
+text AldeonTown_Text_Blue2 {
+	format("Such savage studies of slaughter should supercede a more sound syllabus.")
+}
+
+//pardon
+text AldeonTown_Text_Leaf3 {
+	format("Well pardon me, handsome unknown stranger, but truly I do not understand you. I thought that by battling Pokemon I would grow stronger as a trainer and I was planning to attend trainer school to better learn and grow as one myself.")
+}
+
+//School waste
+text AldeonTown_Text_Blue3 {
+	format("Your Pokemon will grow from battles yes but practicing in such a wonton way will only yield you diminished results. Those stuffy fools wasting away in that archaic, tyrannical, place called school can only teach you mediocrity. To be truly great you must innovate and break out of their stifling system.")
+}
+
+//Not what adults told me
+text AldeonTown_Text_Leaf4 {
+	format("We may not learn as well unsupervised but of the Trainer School, here in our midst, many have said we must attend, study, and graduate or else never be great.")
+}
+
+//be as gods
+text AldeonTown_Text_Blue4 {
+	format("The many are not great for few are great. The teachers in their school have lied to them who lied to you. They jelously prevent their students from ever becoming great. If you will go with me you will be great, greater than all the students and teachers. You will become as gods among trainers with knowledge of both good and bad techniques.")
+}
+
+//convinced
+text AldeonTown_Text_Leaf5 {
+	format("Your flavored words and shapely form convince me there is truth in all of what you say. Therefore I will go with you. Please, teach me.")
+}
+
+//let us go
+text AldeonTown_Text_Blue5 {
+	format("Then let us go.")
+}
+
+//girls only
+text AldeonTown_Text_Blue6 {
+	format("Girls only, little bro.")
+}
+
+text AldeonTown_Text_Leaf6 {
+	format("You're so good at this! Wow! I'm learning lots!")
+}
+
+text AldeonTown_Text_Blue7 {
+	format("Yeah, just like that! You're doing so good girl.")
+}
+
+text AldeonTown_Text_OldMan {
+	format("Hello, young man, I don't recognize you. I live here, in this house, with my brother. Go in and see him if you need to rest.")
+}
+
 
 

@@ -208,6 +208,7 @@ static const struct TrainerMon sParty_Leaf1[] = {
 	{
 		.species = SPECIES_IGGLYBUFF,
 		.friendship = 255,
+        .ability = ABILITY_CUTE_CHARM,
 		.gender = TRAINER_MON_FEMALE,
 		.lvl = 5,
         .moves = {MOVE_SING, MOVE_DEFENSE_CURL, MOVE_CHARM, MOVE_POUND},

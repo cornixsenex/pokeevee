@@ -4,14 +4,23 @@ mapscripts AldeonTown_House_MapScripts {}
 script AldeonTown_House_EventScript_OldMan {
 	lockall
 	faceplayer
-	msgbox (AldeonTown_House_Text_OldMan)
+	msgbox (AldeonTown_House_Text_OldMan1)
+	closemessage
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	msgbox (AldeonTown_House_Text_OldMan2, MSGBOX_DEFAULT)
 	closemessage
 	releaseall
 	end
 }
 
-text AldeonTown_House_Text_OldMan {
+text AldeonTown_House_Text_OldMan1 {
 	format("If you feel tired why not take a nap?")
 }
+
+text AldeonTown_House_Text_OldMan2 {
+	format("Now don't you look better. Come back sometime.")
+}
+
+
 
 
