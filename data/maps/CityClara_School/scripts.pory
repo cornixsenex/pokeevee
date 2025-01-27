@@ -7,6 +7,12 @@ script CityClara_School_EventScript_Karlye {
 	if (!defeated(TRAINER_KARLYE)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		trainerbattle_single(TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost)
+		msgbox (CityClara_School_Text_KarlyeWater, MSGBOX_DEFAULT)
+		closemessage
+		giveitem (ITEM_FRESH_WATER, 1)
+		msgbox (CityClara_School_Text_KarlyePost, MSGBOX_DEFAULT)
+		closemessage
+
 	}
 	msgbox (CityClara_School_Text_KarlyePost)	
 	release
@@ -30,8 +36,23 @@ script CityClara_School_EventScript_Peter {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		trainerbattle_single(TRAINER_PETER, CityClara_School_Text_PeterIntro, CityClara_School_Text_PeterLost)
 	}
+	setvar (VAR_SYS_LEVEL_CAP, 9)
 	msgbox (CityClara_School_Text_PeterPost)	
 	release
+}
+
+script CityClara_School_Script_Emily {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_EMILY)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		trainerbattle_single(TRAINER_EMILY, CityClara_School_Text_EmilyIntro, CityClara_School_Text_EmilyLost)
+
+	}	
+	msgbox (CityClara_School_Text_DannyPost)
+	closemessage
+	release
+	end
 }
 
 script CityClara_School_EventScript_Danny {
@@ -52,14 +73,11 @@ script CityClara_School_EventScript_Ethan {
 }
 
 script CityClara_School_EventScript_Sagis {
+	if (var(VAR_SYS_LEVEL_CAP) < 11) {
+		setvar (VAR_SYS_LEVEL_CAP, 11)
+	}
 	trainerbattle_single(TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost)
 	msgbox (CityClara_School_Text_SagisPost)
-	closemessage	
-}
-
-script CityClara_School_EventScript_Emily {
-	trainerbattle_single(TRAINER_EMILY, CityClara_School_Text_EmilyIntro, CityClara_School_Text_EmilyLost)
-	msgbox (CityClara_School_Text_EmilyPost)
 	closemessage	
 }
 
@@ -111,17 +129,36 @@ script CityClara_School_EventScript_IncrementSchoolVar {
 script CityClara_School_EventScript_Mrs_Sully {
 	lockall
 	faceplayer
-	if (!flag(FLAG_RECEIVED_CUT)) {
-		call (CityClara_School_EventScript_IncrementSchoolVar)
+
+	if (var(VAR_CITYCLARA_SCHOOL_STATE) < 9) {
+		//Finish your studies
 		msgbox (CityClara_School_Text_Mrs_SullyIntroA)
 		closemessage
-		trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
-		call (CityClara_School_EventScript_GiveCut)
+	} else {
+		//If done then post
+		if (defeated(TRAINER_MRS_SULLY)) {
+			msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
+			closemessage
+		} else {
+			call (CityClara_School_EventScript_IncrementSchoolVar)
+			msgbox (CityClara_School_Text_Mrs_SullyPre, MSGBOX_DEFAULT)
+			closemessage
+			trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
+			call (CityClara_School_EventScript_GiveTrainerCard)
+		}
 	}
-	msgbox (CityClara_School_Text_Mrs_SullyPost)
-	closemessage
 	releaseall
 	end
+}
+
+script CityClara_School_EventScript_GiveTrainerCard {
+	msgbox (CityClara_School_Text_Mrs_SullyDefeat, MSGBOX_DEFAULT)
+	closemessage
+	//giveitem (
+	msgbox (CityClara_School_Text_Mrs_SullyExplainCard, MSGBOX_DEFAULT)
+	msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
+	closemessage
+	return
 }
 
 script CityClara_School_EventScript_GiveCut {
@@ -240,79 +277,83 @@ movement CityClara_School_Movement_Peeves_WalkDown {
 }
 
 text CityClara_School_Text_KarlyeIntro {
-	format("Watch out I'm going to give you coodies!")
+	format("During battles your pokemon may become tired or injured and need to rest. If you're out in the field you can use items to help your pokemon rest and recover strength. There are many items like food, drinks, and potinos which you can give your pokemon but be careful as some things might have adverse effects. You will need to give them time to consume and digest items as well so you can't use them during battles or while on the move. Now that you know about items let's have a quick battle.")
 }
 
 text CityClara_School_Text_KarlyeLost {
-	format("Looks like you just gave your coodies to me.")
+	format("Let me just give Cleffa some water...")
+}
+
+text CityClara_School_Text_KarlyeWater {
+	format("If you're Eevee is injured after that battle then give this to him.")
 }
 
 text CityClara_School_Text_KarlyePost {
-	format("Sometimes I hang out after school behind the school and sell my cudies to the boys.")
+	format("Fresh water can help injured Pokemon recover HP. There are also items which help tired Pokemon recover PP like coffee.")
 }
 
 text CityClara_School_Text_RickyIntro {
-	format("Will you vote for me as class president?")
+	format("There is a limit to how many pokemon you can keep. You can only bring 6 Pokemon with you into battle. If you want to train more than 6 Pokemon at a time you will need to store them somewhere. The Pokemon Box Company has created the Pokemon Box System, a modern marvel, which allows you to digitize and store your pokemon electronically and then retrieve them at a later date. It's a marvellous convinience and the company offers many boxes for free to all trainers. In order to access the Pokemon Box System you will need an internet connection. You can find computers with access at homes, businesses, and pokemon centers across the state. There is also a wireless connector but you'll have to find that yourself. Now that you understand the Pokemon Box System let's have a battle to test your strength.")
 }
 
 text CityClara_School_Text_RickyLost {
-	format("I'm the most popular kid at this school!")
+	format("I should haave trained more Pokemon...")
 }
 
 text CityClara_School_Text_RickyPost {
-	format("Everyone's coming over to my house today except for you. You're not allowed.")
+	format("If you're looking for a computer to access the Pokemon Box System the old men next door always let me use theirs.")
 }
 
 text CityClara_School_Text_PeterIntro {
-	format("It's disgusting they let the common trash mingle with the elite at public school.")
+	format("The most important job of a Pokemon trainer is to make sure your Pokemon obey you in battle. I can see that you have a special bond with your Eevee but in order to command wild Pokemon you will need to become a more skilled trainer by finishing school. As you grow as a trainer you will become capabble of controlling more powerful Pokemon. If an inexperienced trainer tries to command a powerful Pokemon the Pokemon may decide to disobey orders completely. All Pokemon Trainer School graduates recieve a Pokemon Trainer Card which will help you keep track of your skill as a trainer and determine the capacity of the strength of the Pokemon you will be able to command. I'm still a studen trainer so I can only command pokemon level 9. Let's have a battle to see how strong you are.")
 }
 
 text CityClara_School_Text_PeterLost {
-	format("Unhand me you vulgar barbarian!")
+	format("After beating me you should be able to train and command Eevee up to level 9 now!")
 }
 
 text CityClara_School_Text_PeterPost {
-	format("My daddy owns the inn across the street")
+	format(" Your ability as a trainer will increase as you meet and battle more experienced trainers. I wonder who the most powerful trainer in the entire state is...")
 }
 
 text CityClara_School_Text_DannyIntro {
-	format("Leave me alone, I want to play my game.")
+	format("Pokemon can only battle for so long before they must quit the field. Most trainers form an emotional bond with their Pokemon and will surrender the battle when all of their pokemon faint. Other trainers push their Pokemon over the edge and they die. A dead Pokemon cannot be revived. Let me demonstrate with a battle. I will surrender if you can knock my Teddiursa unconscious but I can tell you're the type to never surrender until I've killed your Eevee.")
 }
 
 text CityClara_School_Text_DannyLost {
-	format("I think you might have broke my GBA!")
+	format("I yield! I yield!")
 }
 
 text CityClara_School_Text_DannyPost {
-	format("Mommy gave me that toy that you just broke.")
+	format("I'll need to let my Teddiursa rest before having another battle, if you let your Pokemon die then no power on Earth can bring them back to life.")
 }
 
 text CityClara_School_Text_EthanIntro {
-	format("Wait, who are you? I only talk to girls!")
+	format("Weather conditions, like rain, can affect your Pokemon battles. There are also some Pokemon who can control battle conditions with moves. Since we're inside there won't be any special conditions during our battle but it's something to keep an eye out for.")
 }
 
 text CityClara_School_Text_EthanLost {
-	format("And that's exactly why we shouldn't speak.")
+	format("Even under perfecrt conditions I still lost...")
 }
 
 text CityClara_School_Text_EthanPost {
-	format("Dude, quit trying to stare into my eyes!")
+	format("It's important to always be aware of field conditions during your battles outside.")
 }
 
 text CityClara_School_Text_SagisIntro {
-	format("Wait bro, are you for real? We're gonna fight?")
+	format("There are certain status conditions, like poison, which persist even after a bttle. You will need to let your Pokemon rest to recover from those. My bug type pokemon specialize in poisoning your Pokemon, watch out!")
 }
 
 text CityClara_School_Text_SagisLost {
-	format("Whatever dude, I heard you were crazy.")
+	format("You overpowerd my bugs!")
 }
 
 text CityClara_School_Text_SagisPost {
-	format("Did I ever tell you about the time I hung out in a crack den in Gato?")
+	format("Be careful. If your pokemon is poisoned it can die even out of battle. It's a good idea to carry around some antivenom or extra water to help guard against poison.")
 }
 
 text CityClara_School_Text_EmilyIntro {
-	format("I think most of us are still practicing but I can hold my own among the best.")
+	format("I think there are more than 420 types of Pokemon.")
 }
 
 text CityClara_School_Text_EmilyLost {
@@ -320,7 +361,7 @@ text CityClara_School_Text_EmilyLost {
 }
 
 text CityClara_School_Text_EmilyPost {
-	format("If I had a boyfriend he'd kick your ass.")
+	format("Some trainers will be ready to battle you again after a while.")
 }
 
 text CityClara_School_Text_Mr_Glasman1 {
@@ -336,7 +377,7 @@ text CityClara_School_Text_Mr_GlasmanLost {
 }
 
 text CityClara_School_Text_Mr_GlasmanPost {
-	format("You've proven yourself a brilliant pupil. Good luck in your education.")
+	format("You've proven yourself a brilliant pupil. I have taught you everything that I know and now your level cap is raised to ten. Good luck with your future education.")
 }
 
 text CityClara_School_Text_PeevesGrade1 {
@@ -356,7 +397,7 @@ text CityClara_School_Text_PeevesLost {
 }
 
 text CityClara_School_Text_PeevesPost {
-	format("Teacher made me monitor of the halls!")
+	format("Sometimes you need to beat a strong trainer to continue your journey in this world.")
 }
 
 text CityClara_School_Text_TylerIntro {
@@ -384,23 +425,27 @@ text CityClara_School_Text_GabePost {
 }
 
 text CityClara_School_Text_Mrs_SullyIntroA{
-	format("I've not seen you before you some truant?")
+	format("I've not seen you before you some truant? Finish your studies before your exam.")
 }
 
-text CityClara_School_Text_Mrs_SullyIntro {
-	format("Win this battle and I'll give you cut")
+text CityClara_School_Text_Mrs_SullyPre {
+	format("Win this battle and you will graduate.")
 }
 
 text CityClara_School_Text_Mrs_SullyLost {
-	format("I can't believe a kid like you just won")
+	format("Congratulations on your achievement!")
 }
 
 text CityClara_School_Text_Mrs_SullyDefeat {
-	format("That was a thrill! {PLAYER} you are so advanced. I've never had a student make me feel like they were the one who was in control.")
+	format("That was a thrill! {PLAYER} you are so advanced. I've never had a student make me feel like they were the one who was in control. This Trainer Card is your school diploma.")
+}
+
+text CityClara_School_Text_Mrs_SullyExplainCard {
+	format("As a certified Pokemon Trainer wild Pokemon will now follow you and obey your commands while in battle as long as your capacity to train Pokemon is enough to handle them. You can keep track of your capacity as a trainer using the Trainer Card.")
 }
 
 text CityClara_School_Text_Mrs_SullyPost {
-	format("You can come back anytime to study")
+	format("You can come back anytime to study.")
 }
 
 text CityClara_School_Text_ExplainCut {

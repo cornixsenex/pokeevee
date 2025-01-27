@@ -3,6 +3,8 @@ const OBJ_EVENT_BLUE = 6
 const OBJ_EVENT_IGGLYBUFF = 7
 const OBJ_EVENT_ZUBAT = 8
 const OBJ_EVENT_OLDMAN = 4
+const OBJ_EVENT_SNORLAX = 9
+const OBJ_EVENT_FATMAN = 1
 
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_BLUE = 3
@@ -10,12 +12,31 @@ const FIELD_PIC_BLUE = 3
 mapscripts AldeonTown_MapScripts {
 	
 	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_GRANNY_STATE) == 7) {
+			call (AldeonTown_Script_ShowSnorlaxBlock)
+		}
 		if (var(VAR_GRANNY_STATE) == 8) {
 			call (AldeonTown_Script_ShowBlueLeafBlock)
 		}
 	}
 
 }
+
+script AldeonTown_Script_ShowSnorlaxBlock {
+	setobjectxyperm (OBJ_EVENT_SNORLAX, 27, 22)
+	setobjectmovementtype (OBJ_EVENT_SNORLAX, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (OBJ_EVENT_SNORLAX)
+	showobjectat (OBJ_EVENT_SNORLAX, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_FATMAN, 25, 21)
+	setobjectmovementtype (OBJ_EVENT_FATMAN, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_FATMAN)
+	showobjectat (OBJ_EVENT_FATMAN, MAP_ALDEON_TOWN)
+
+	return
+}
+
+
 
 script AldeonTown_Script_ShowBlueLeafBlock {
 	setobjectxyperm (OBJ_EVENT_ZUBAT, 21, 22)
@@ -205,10 +226,15 @@ script AldeonTown_Script_Igglybuff {
 }
 	
 script AldeonTown_EventScript_FatMan {
-	lockall
-	msgbox (AldeonTown_Text_FatMan3, MSGBOX_DEFAULT)
+	lock
+	faceplayer
+	if (var(VAR_GRANNY_STATE) == 7) {
+		msgbox (AldeonTown_Text_FatManBlock, MSGBOX_DEFAULT)
+	} else {
+		msgbox (AldeonTown_Text_FatMan, MSGBOX_DEFAULT)
+	}
 	closemessage
-	releaseall
+	release
 	end
 }
 
@@ -276,16 +302,12 @@ movement AldeonTown_Movement_BlueLeafExeunt {
 	walk_right * 9
 }
 
-text AldeonTown_Text_FatMan_BlockExit {
-	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlacis, can be mighty dangerous you don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")
+text AldeonTown_Text_FatManBlock {
+	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlaci, can be mighty dangerous. You don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")
 }
 
-text AldeonTown_Text_FatMan2 {
-	format("See, I told you that Snorlax would move eventually.")
-}
-
-text AldeonTown_Text_FatMan3 {
-	format("This town is great cuz the Rocket Party rarely ever bothers us!")
+text AldeonTown_Text_FatMan {
+	format("See? I told you that snorlax would move eventually.")
 }
 
 text AldeonTown_Text_DoorWoman {

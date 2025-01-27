@@ -2,8 +2,8 @@
   "id": "MAP_CITY_CLARA_SCHOOL",
   "name": "CityClara_School",
   "layout": "LAYOUT_CITY_CLARA_SCHOOL",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "music": "MUS_OLDALE",
+  "region_map_section": "MAPSEC_OLDALE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "CityClara_School_EventScript_Emily",
+      "script": "CityClara_School_Script_Emily",
       "flag": "0"
     },
     {

@@ -64,7 +64,7 @@
 #define TRAINER_MRS_SULLY                    58
 #define TRAINER_ETHAN                        59
 #define TRAINER_SAGIS                        60
-#define TRAINER_EMILY                        61
+#define TRAINER_EMILY                        61  
 #define TRAINER_TYLER_AND_GABE               62
 #define TRAINER_BLAINE                       63
 #define TRAINER_JESSE_AND_JAMES_1            64
@@ -193,7 +193,7 @@
 #define TRAINER_COLCHIS_GRUNT_THRONEF6      187
 #define TRAINER_IGNIS_GRUNT_6               188
 
-//BREAK// 
+//BREAK// - 61 UNUSED OPEN ABOVE PLZ
 
 #define TRAINER_DAISUKE                     189
 #define TRAINER_ATSUSHI                     190

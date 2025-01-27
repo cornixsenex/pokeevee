@@ -8558,7 +8558,7 @@ u8 GetAttackerObedienceForAction()
 			gBattleMons[gBattlerAttacker].species == SPECIES_LEAFEON  ||
 			gBattleMons[gBattlerAttacker].species == SPECIES_GLACEON ) 
 	{
-		if (gBattleMons[gBattlerAttacker].level <= levelCap + 1 + (levelCap / 10))
+		//if (gBattleMons[gBattlerAttacker].level <= levelCap + 1 + (levelCap / 10))
 			return OBEYS;
 	}
 

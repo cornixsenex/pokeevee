@@ -128,6 +128,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AldeonTown_Script_Zubat",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNORLAX)",
+      "x": 4,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 1,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -176,6 +189,33 @@
       "var": "VAR_GRANNY_STATE",
       "var_value": "7",
       "script": "AldeonTown_Script_TriggerLeafBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_GRANNY_STATE",
+      "var_value": "7",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_GRANNY_STATE",
+      "var_value": "7",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_GRANNY_STATE",
+      "var_value": "7",
+      "script": "NULL"
     }
   ],
   "bg_events": [

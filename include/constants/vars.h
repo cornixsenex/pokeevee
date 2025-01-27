@@ -123,8 +123,8 @@
 ///HERE BEGINS THE REPURPOSED VARS FROM EMERALD - ACTUALLY SEE ABOVE THERE ARE MANY MORE AVAILABLE
 
 
-#define VAR_ALDEON_SCHOOL_STATE                          0x405E // 0: Start, trigger Leaf Battle
-																// 1: After leaf battle, show leaf and blue block
+#define VAR_ALDEON_SCHOOL_STATE                          0x405E // 0: Track progress inside School (increment var on each trainer defeated, glassman open at 4, peaves open at 5, Sully open at 9, complete at 10
+																// 1: 
 																// 2: 
 #define VAR_SYS_LEVEL_CAP                                0x405F // Hold the Level Cap
 #define VAR_GRANNY_STATE                                 0x4060 // Prologue and trigger Blue1 fight.

@@ -448,6 +448,18 @@
         .party = TRAINER_PARTY(sParty_Ethan),
     },
 
+    [TRAINER_EMILY] =
+    {
+         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerName = _("EMILY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_Emily),
+    },
+
     [TRAINER_SAGIS] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
@@ -747,18 +759,6 @@
 		.mugshotColor = MUGSHOT_COLOR_BLUE,
 		.aiFlags = AI_FLAG_BASIC_TRAINER,
 		.party = TRAINER_PARTY(sParty_Rival2),
-    },
-
-    [TRAINER_EMILY] =
-    {
-        .trainerClass = TRAINER_CLASS_LASS,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LASS,
-        .trainerName = _("EMILY"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Emily),
     },
 
     [TRAINER_MRS_SULLY] =
