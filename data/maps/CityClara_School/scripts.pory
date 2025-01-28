@@ -129,13 +129,11 @@ script CityClara_School_EventScript_IncrementSchoolVar {
 script CityClara_School_EventScript_Mrs_Sully {
 	lockall
 	faceplayer
-
+	//Finish your studies
 	if (var(VAR_CITYCLARA_SCHOOL_STATE) < 9) {
-		//Finish your studies
 		msgbox (CityClara_School_Text_Mrs_SullyIntroA)
 		closemessage
-	} else {
-		//If done then post
+	} else {  //If done then post
 		if (defeated(TRAINER_MRS_SULLY)) {
 			msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
 			closemessage
@@ -145,6 +143,8 @@ script CityClara_School_EventScript_Mrs_Sully {
 			closemessage
 			trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
 			call (CityClara_School_EventScript_GiveTrainerCard)
+			//Set vars to setup outside rain triggers
+			setvar (VAR_GRANNY_STATE, 9)
 		}
 	}
 	releaseall

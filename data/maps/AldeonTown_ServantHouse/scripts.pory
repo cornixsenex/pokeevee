@@ -1,1 +1,55 @@
+const OBJ_EVENT_SERVANT = 1
+
 mapscripts AldeonTown_ServantHouse_MapScripts {}
+
+script AldeonTown_ServantHouse_Script_Servant {
+	lock
+	faceplayer
+	//should check state of Orpheus quest
+	specialvar (VAR_RESULT, RandDigit)
+	switch (var(VAR_RESULT)) {
+		case 1:
+		case 2:
+			msgbox (AldeonTown_ServantHouse_Text_Servant1, MSGBOX_DEFAULT)
+		case 3:
+		case 4:
+			msgbox (AldeonTown_ServantHouse_Text_Servant2, MSGBOX_DEFAULT)
+		case 5:
+		case 6:
+			msgbox (AldeonTown_ServantHouse_Text_Servant3, MSGBOX_DEFAULT)
+		case 7:
+		case 8:
+			msgbox (AldeonTown_ServantHouse_Text_Servant4, MSGBOX_DEFAULT)
+		default :
+			msgbox (AldeonTown_ServantHouse_Text_Servant5, MSGBOX_DEFAULT)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_SERVANT, Common_Movement_FaceLeft)
+	waitmovement (0)
+	release
+	end
+}
+
+//Me servin' here house me entire life. Before maters birthin' me servin' mighty Atreus here, way back before Republic nosin' around.
+text AldeonTown_ServantHouse_Text_Servant1 {
+	format("Here house me entire life me servin'.")
+} 
+
+text AldeonTown_ServantHouse_Text_Servant2 {
+	format("Before master's birthin' mighty Atreus here me servin' way back before Republic nosin' around.")
+}
+
+//Master Menelaus has been gone for some time and I think the rest of the family misses him.
+text AldeonTown_ServantHouse_Text_Servant3 {
+	format("Master Menelaus some time being gone. Family missin' him I think.")
+}
+
+//I wasn't born here but way back on my island home
+text AldeonTown_ServantHouse_Text_Servant4 {
+	format("Not here but way back in island home me birthin'.")
+}
+
+//Master Agamemnon is a good man and a kind master but he has seemed not well recently. Master Atreus never used to shut himself indoors like this. I hope Master Menelaus returns soon.
+text AldeonTown_ServantHouse_Text_Servant5 {
+	format("Good man Master Agamemnon being and kind master but recently not seemin' well. Indoors shuttin' like this Master Atreus never be doin'. Master Menelaus returnin' soon me hopin'.")
+}

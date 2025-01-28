@@ -137,6 +137,7 @@
 																// 6: After granny in front the house - trigger Granny Scene 2
 																// 7: After granny scene 2 - granny at the table - trigger Aldeon Leaf Battle
 																// 8: After Leaf Battle - show Leaf and Blue route block
+																// 9: After Graduate School - trigger Big Storm and block in Aldeon
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
 #define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 
 #define VAR_CAPITAL_STATE                                0x4063 // Gio trigger

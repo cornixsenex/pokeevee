@@ -49,10 +49,10 @@ void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId);
 void DisplayDadsAdviceCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField);
 void ItemUseOutOfBattle_PokeFlute(u8 taskId);
 void ItemUseOutOfBattle_TownMap(u8 taskId);
-// CUSTOM TEST BOOK
+// CUSTOMS
 void ItemUseOutOfBattle_TestBook(u8);
-// Custom Ostracon
 void ItemUseOutOfBattle_Ostracon(u8);
+void ItemUseOutOfBattle_TrainerCard(u8);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

@@ -5,6 +5,7 @@ const OBJ_EVENT_ZUBAT = 8
 const OBJ_EVENT_OLDMAN = 4
 const OBJ_EVENT_SNORLAX = 9
 const OBJ_EVENT_FATMAN = 1
+const OBJ_EVENT_SCOTT = 10
 
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_BLUE = 3
@@ -12,14 +13,26 @@ const FIELD_PIC_BLUE = 3
 mapscripts AldeonTown_MapScripts {
 	
 	MAP_SCRIPT_ON_TRANSITION {
-		if (var(VAR_GRANNY_STATE) == 7) {
+		if (var(VAR_GRANNY_STATE) < 9) {
 			call (AldeonTown_Script_ShowSnorlaxBlock)
 		}
 		if (var(VAR_GRANNY_STATE) == 8) {
 			call (AldeonTown_Script_ShowBlueLeafBlock)
 		}
+		if (var(VAR_GRANNY_STATE) < 9) {
+			call (AldeonTown_Script_ShowScottBlock)
+		}
 	}
 
+}
+
+script AldeonTown_Script_ShowScottBlock {
+	setobjectxyperm (OBJ_EVENT_SCOTT, 22, 8)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_SCOTT)
+	showobjectat (OBJ_EVENT_SCOTT, MAP_ALDEON_TOWN)
+
+	return
 }
 
 script AldeonTown_Script_ShowSnorlaxBlock {
@@ -35,8 +48,6 @@ script AldeonTown_Script_ShowSnorlaxBlock {
 
 	return
 }
-
-
 
 script AldeonTown_Script_ShowBlueLeafBlock {
 	setobjectxyperm (OBJ_EVENT_ZUBAT, 21, 22)
@@ -228,12 +239,16 @@ script AldeonTown_Script_Igglybuff {
 script AldeonTown_EventScript_FatMan {
 	lock
 	faceplayer
-	if (var(VAR_GRANNY_STATE) == 7) {
+	if (var(VAR_GRANNY_STATE) < 9) {
 		msgbox (AldeonTown_Text_FatManBlock, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_FATMAN, Common_Movement_FaceDown)
+		waitmovement (0)
+			
 	} else {
 		msgbox (AldeonTown_Text_FatMan, MSGBOX_DEFAULT)
+		closemessage
 	}
-	closemessage
 	release
 	end
 }
@@ -276,6 +291,29 @@ script AldeonTown_Script_OldMan {
 	end
 }
 
+script AldeonTown_Script_SnorlaxBlock {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (AldeonTown_Text_FatManBlock, MSGBOX_DEFAULT)
+	closemessage 
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	release
+	end
+}
+
+script AldeonTown_Script_Scott {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_Scott, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
 movement AldeonTown_Movement_PlayerSnorlax1 {
 	walk_left
 	walk_up
@@ -307,11 +345,12 @@ text AldeonTown_Text_FatManBlock {
 }
 
 text AldeonTown_Text_FatMan {
-	format("See? I told you that snorlax would move eventually.")
+	format("Even after we were forced to join the Republic the government still mostly leaves us alone. Still, we miss the old days of the independant merchant guild running things around here. All those taxes we spend and what do we have to show for it? A whole lot of nothing!")
 }
 
+//I'm sorry but if you no business with Mr. Johnson then you need to leave.
 text AldeonTown_Text_DoorWoman {
-	format("I'm sorry but if you no business with Mr. Johnson then you need to leave.")
+	format("Me sorry but if no business with Master you havin' then leavin' you needin'.")
 }
 
 text AldeonTown_Text_TownSign {
@@ -319,7 +358,7 @@ text AldeonTown_Text_TownSign {
 }
 
 text AldeonTown_Text_HouseSign {
-	format("Johnson Residence\n No Solicitors!")
+	format("House of Atreus\n No Solicitors!")
 }
 
 //Hey player!
@@ -391,5 +430,7 @@ text AldeonTown_Text_OldMan {
 	format("Hello, young man, I don't recognize you. I live here, in this house, with my brother. Go in and see him if you need to rest.")
 }
 
-
+text AldeonTown_Text_Scott {
+	format("My daughter left for her first day of school and I am overwhelmed by emotions. I'm fixing a hole in my doorway where the wind gets in. It helps to soothe my mind.")
+}
 

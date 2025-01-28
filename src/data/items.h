@@ -229,6 +229,11 @@ static const u8 sOstraconDesc[] = _(
 		"A worn pottery \n"
 		"shard bearing a\n"
 		"prophecy");
+
+static const u8 sTrainerCardDesc[] = _(
+		"An official \n"
+		"Pokemon Trainer \n"
+		"Card");
 		
 
 //END KUSTOMS
@@ -14510,6 +14515,20 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_BasementKey,
         .iconPalette = gItemIconPalette_OldKey,
     },
+	
+	[ITEM_TRAINER_CARD] =
+	{
+		.name = _("Trainer Card"),
+        .price = 0,
+		.description = sTrainerCardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_TrainerCard,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_RedCard,
+        .iconPalette = gItemIconPalette_RedCard,
+	},
 
 ///	KUSTOM ITEMS END ///
 

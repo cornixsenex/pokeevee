@@ -277,35 +277,37 @@ CityClara_School_EventScript_Mrs_Sully::
 # 133 "data//maps/CityClara_School/scripts.pory"
 	compare VAR_CITYCLARA_SCHOOL_STATE, 9
 	goto_if_lt CityClara_School_EventScript_Mrs_Sully_2
-# 139 "data//maps/CityClara_School/scripts.pory"
+# 137 "data//maps/CityClara_School/scripts.pory"
 	checktrainerflag TRAINER_MRS_SULLY
 	goto_if 1, CityClara_School_EventScript_Mrs_Sully_5
-# 143 "data//maps/CityClara_School/scripts.pory"
+# 141 "data//maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 144 "data//maps/CityClara_School/scripts.pory"
+# 142 "data//maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyPre, MSGBOX_DEFAULT
-# 145 "data//maps/CityClara_School/scripts.pory"
+# 143 "data//maps/CityClara_School/scripts.pory"
 	closemessage
-# 146 "data//maps/CityClara_School/scripts.pory"
+# 144 "data//maps/CityClara_School/scripts.pory"
 	trainerbattle_no_intro TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost
-# 147 "data//maps/CityClara_School/scripts.pory"
+# 145 "data//maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_GiveTrainerCard
+# 147 "data//maps/CityClara_School/scripts.pory"
+	setvar VAR_GRANNY_STATE, 9
 CityClara_School_EventScript_Mrs_Sully_1:
 # 150 "data//maps/CityClara_School/scripts.pory"
 	releaseall
 	end
 
 CityClara_School_EventScript_Mrs_Sully_2:
-# 135 "data//maps/CityClara_School/scripts.pory"
+# 134 "data//maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyIntroA
-# 136 "data//maps/CityClara_School/scripts.pory"
+# 135 "data//maps/CityClara_School/scripts.pory"
 	closemessage
 	goto CityClara_School_EventScript_Mrs_Sully_1
 
 CityClara_School_EventScript_Mrs_Sully_5:
-# 140 "data//maps/CityClara_School/scripts.pory"
+# 138 "data//maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT
-# 141 "data//maps/CityClara_School/scripts.pory"
+# 139 "data//maps/CityClara_School/scripts.pory"
 	closemessage
 	goto CityClara_School_EventScript_Mrs_Sully_1
 
