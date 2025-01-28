@@ -47,7 +47,6 @@ script CityClara_School_Script_Emily {
 	if (!defeated(TRAINER_EMILY)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		trainerbattle_single(TRAINER_EMILY, CityClara_School_Text_EmilyIntro, CityClara_School_Text_EmilyLost)
-
 	}	
 	msgbox (CityClara_School_Text_DannyPost)
 	closemessage
@@ -67,7 +66,10 @@ script CityClara_School_EventScript_Danny {
 }
 
 script CityClara_School_EventScript_Ethan {	
-	trainerbattle_single(TRAINER_ETHAN, CityClara_School_Text_EthanIntro, CityClara_School_Text_EthanLost)
+	if (!defeated(TRAINER_ETHAN)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		trainerbattle_single(TRAINER_ETHAN, CityClara_School_Text_EthanIntro, CityClara_School_Text_EthanLost)
+	}
 	msgbox (CityClara_School_Text_EthanPost)
 	closemessage	
 }
@@ -76,7 +78,10 @@ script CityClara_School_EventScript_Sagis {
 	if (var(VAR_SYS_LEVEL_CAP) < 11) {
 		setvar (VAR_SYS_LEVEL_CAP, 11)
 	}
-	trainerbattle_single(TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost)
+	if (!defeated(TRAINER_SAGIS)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		trainerbattle_single(TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost)
+	}
 	msgbox (CityClara_School_Text_SagisPost)
 	closemessage	
 }
@@ -154,7 +159,9 @@ script CityClara_School_EventScript_Mrs_Sully {
 script CityClara_School_EventScript_GiveTrainerCard {
 	msgbox (CityClara_School_Text_Mrs_SullyDefeat, MSGBOX_DEFAULT)
 	closemessage
-	//giveitem (
+	playfanfare (MUS_OBTAIN_ITEM)
+	setflag (FLAG_SYS_TRAINER_CARD_GET)
+	giveitem (ITEM_TRAINER_CARD, 1)
 	msgbox (CityClara_School_Text_Mrs_SullyExplainCard, MSGBOX_DEFAULT)
 	msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
 	closemessage
@@ -229,13 +236,13 @@ script CityClara_School_EventScript_PeevesFight2 {
 }
 
 script CityClara_School_EventScript_Tyler {
-	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerIntro, CityClara_School_Text_TylerLost, Route104_Text_GinaNotEnoughMons)
+	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerGabeIntro, CityClara_School_Text_TylerLost, Route104_Text_GinaNotEnoughMons)
 	msgbox (CityClara_School_Text_TylerPost)
 	closemessage
 }
 
 script CityClara_School_EventScript_Gabe {
-	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_GabeIntro, CityClara_School_Text_GabeLost, Route104_Text_GinaNotEnoughMons)
+	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerGabeIntro, CityClara_School_Text_GabeLost, Route104_Text_GinaNotEnoughMons)
 	msgbox (CityClara_School_Text_GabePost)
 	closemessage
 }
@@ -400,28 +407,24 @@ text CityClara_School_Text_PeevesPost {
 	format("Sometimes you need to beat a strong trainer to continue your journey in this world.")
 }
 
-text CityClara_School_Text_TylerIntro {
-	format("Get in looser, we're riding on the bus!")
+text CityClara_School_Text_TylerGabeIntro {
+	format("Sometimes two trainers will battle you at once and you will send out two Pokemon to face them both. If you do not have two Pokemon then you will have to face them while outnumbered. Since you're not a certified Pokemon Trainer then only Eevee will obey you for now. Good luck.")
 }
 
 text CityClara_School_Text_TylerLost {
-	format("Well go thy way. Thou shalt not from this grove!")
+	format("Two vs one and we still lost!")
 }
 
 text CityClara_School_Text_TylerPost {
-	format("I'll see you in the morning...on the bus!")
-}
-
-text CityClara_School_Text_GabeIntro {
-	format("There is no reason for this senseless duel.")
+	format("Sometimes you will even encounter double wild Pokemon battles.")
 }
 
 text CityClara_School_Text_GabeLost {
-	format("Much wasted blood but none of it was mine.")
+	format("We didn't have great team synergy...")
 }
 
 text CityClara_School_Text_GabePost {
-	format("Your history, the sum of all your crimes, will ever bring you, till you repent.")
+	format("Double battles sometimes require a different strategy than normal battles.")
 }
 
 text CityClara_School_Text_Mrs_SullyIntroA{

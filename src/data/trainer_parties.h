@@ -392,12 +392,12 @@ static const struct TrainerMon sParty_TylerAndGabe[] = {
     {
     .iv = 150,
     .lvl = 10,
-    .species = SPECIES_CLEFAIRY,
+    .species = SPECIES_WEEDLE,
     },
     {
     .iv = 150,
     .lvl = 10,
-    .species = SPECIES_CHANSEY,
+    .species = SPECIES_POOCHYENA,
     },
 };
 

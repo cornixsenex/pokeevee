@@ -209,10 +209,7 @@ script LoonixInsideReal_Script_GrannyScene2 {
 	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny2_PlayerToTable)
 	applymovement (OBJ_EVENT_EEVEE, LoonixInsideReal_Movement_Granny2_EeveeToTable)
 	waitmovement (0)
-
-
 	//Heal
-
 	fadescreen (FADE_TO_BLACK)
 	playfanfare (MUS_HEAL)
 	waitfanfare
@@ -224,20 +221,12 @@ script LoonixInsideReal_Script_GrannyScene2 {
 	special (HealPlayerParty)
 	callnative (UpdateFollowingPokemon)
 	fadescreen (FADE_FROM_BLACK)
-
-//	removeobject (OBJ_EVENT_EEVEE)
-//	setobjectxyperm (OBJ_EVENT_EEVEE, 11, 0)
-//	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_INVISIBLE)
-//	addobject (OBJ_EVENT_EEVEE)
-//	showobjectat (OBJ_EVENT_EEVEE, MAP_LOONIX_INSIDE_REAL)
-
 	//Promise me you'll finish school
 	//And come back home to rest up any time
 	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
 	msgbox (LoonixInsideReal_Text_Granny2E, MSGBOX_DEFAULT)
 	destroy_field_pic(FIELD_PIC_GRANNY)
 	closemessage
-
 
 	//Face granny to the table
 	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)

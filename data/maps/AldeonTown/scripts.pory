@@ -17,7 +17,7 @@ mapscripts AldeonTown_MapScripts {
 			call (AldeonTown_Script_ShowSnorlaxBlock)
 		}
 		if (var(VAR_GRANNY_STATE) == 8) {
-			call (AldeonTown_Script_ShowBlueLeafBlock)
+			call (AldeonTown_Script_ShowBlueLeaf)
 		}
 		if (var(VAR_GRANNY_STATE) < 9) {
 			call (AldeonTown_Script_ShowScottBlock)
@@ -49,24 +49,24 @@ script AldeonTown_Script_ShowSnorlaxBlock {
 	return
 }
 
-script AldeonTown_Script_ShowBlueLeafBlock {
-	setobjectxyperm (OBJ_EVENT_ZUBAT, 21, 22)
-	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+script AldeonTown_Script_ShowBlueLeaf {
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 23, 15)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
 	addobject (OBJ_EVENT_ZUBAT)
 	showobjectat (OBJ_EVENT_ZUBAT, MAP_ALDEON_TOWN)
 
-	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 21, 23)
-	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 24, 15)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
 	addobject (OBJ_EVENT_IGGLYBUFF)
 	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
 
-	setobjectxyperm (OBJ_EVENT_BLUE, 21, 21)
-	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (OBJ_EVENT_BLUE, 22, 15)
+	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_RIGHT)
 	addobject (OBJ_EVENT_BLUE)
 	showobjectat (OBJ_EVENT_BLUE, MAP_ALDEON_TOWN)
 
-	setobjectxyperm (OBJ_EVENT_LEAF, 21, 24)
-	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
+	setobjectxyperm (OBJ_EVENT_LEAF, 25, 15)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_LEAF)
 	showobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
 	
@@ -206,7 +206,7 @@ script AldeonTown_Script_TriggerLeafBattle {
 	removeobject (OBJ_EVENT_IGGLYBUFF)
 	removeobject (OBJ_EVENT_ZUBAT)
 	//Show BlueLeafBlock
-	call (AldeonTown_Script_ShowBlueLeafBlock)
+	call (AldeonTown_Script_ShowBlueLeaf)
 
 	releaseall
 	end

@@ -765,16 +765,13 @@ void ItemUseOutOfBattle_Ostracon(u8 taskId)
 //Trainer Card
 void ItemUseOutOfBattle_TrainerCard(u8 taskId)
 {
-	const u32 levelCap = VarGet(VAR_SYS_LEVEL_CAP)
-	ConvertIntToDecimalStringN(
+	const u32 levelCap = VarGet(VAR_SYS_LEVEL_CAP);
+	ConvertIntToDecimalStringN(gStringVar1, levelCap, STR_CONV_MODE_LEFT_ALIGN, 4);
+	StringExpandPlaceholders(gStringVar4, gText_TrainerCard);
 	if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        DisplayItemMessage(taskId, FONT_NORMAL, gText_Ostracon, CloseItemMessage);
-    }
+        DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
     else
-    {
-        DisplayItemMessageOnField(taskId, gText_Ostracon, Task_CloseCantUseKeyItemMessage);
-    }
+        DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
 }
 
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)

@@ -2819,6 +2819,8 @@ extern const u8 gText_BookVerse38[];
 
 // Ostracon
 extern const u8 gText_Ostracon[];
+//Trainer Card
+extern const u8 gText_TrainerCard[];
 
 extern const u8 gText_BasePointsResetToZero[];
 
