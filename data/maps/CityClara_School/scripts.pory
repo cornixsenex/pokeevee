@@ -6,7 +6,9 @@ script CityClara_School_EventScript_Karlye {
 	faceplayer
 	if (!defeated(TRAINER_KARLYE)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost)
+		msgbox (CityClara_School_Text_KarlyeIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_KARLYE, CityClara_School_Text_KarlyeLost)
 		msgbox (CityClara_School_Text_KarlyeWater, MSGBOX_DEFAULT)
 		closemessage
 		giveitem (ITEM_FRESH_WATER, 1)
@@ -23,7 +25,9 @@ script CityClara_School_EventScript_Ricky {
 	faceplayer
 	if (!defeated(TRAINER_RICKY)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_RICKY, CityClara_School_Text_RickyIntro, CityClara_School_Text_RickyLost)
+		msgbox (CityClara_School_Text_RickyIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_RICKY, CityClara_School_Text_RickyLost)
 	}
 	msgbox (CityClara_School_Text_RickyPost)	
 	release
@@ -34,7 +38,9 @@ script CityClara_School_EventScript_Peter {
 	faceplayer
 	if (!defeated(TRAINER_PETER)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_PETER, CityClara_School_Text_PeterIntro, CityClara_School_Text_PeterLost)
+		msgbox (CityClara_School_Text_PeterIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_PETER, CityClara_School_Text_PeterLost)
 	}
 	setvar (VAR_SYS_LEVEL_CAP, 9)
 	msgbox (CityClara_School_Text_PeterPost)	
@@ -46,9 +52,11 @@ script CityClara_School_Script_Emily {
 	faceplayer
 	if (!defeated(TRAINER_EMILY)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_EMILY, CityClara_School_Text_EmilyIntro, CityClara_School_Text_EmilyLost)
+		msgbox (CityClara_School_Text_EmilyIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_EMILY, CityClara_School_Text_EmilyLost)
 	}	
-	msgbox (CityClara_School_Text_DannyPost)
+	msgbox (CityClara_School_Text_EmilyPost)
 	closemessage
 	release
 	end
@@ -59,28 +67,38 @@ script CityClara_School_EventScript_Danny {
 	faceplayer
 	if (!defeated(TRAINER_DANNY)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_DANNY, CityClara_School_Text_DannyIntro, CityClara_School_Text_DannyLost)
+		msgbox (CityClara_School_Text_DannyIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_DANNY, CityClara_School_Text_DannyLost)
 	}
 	msgbox (CityClara_School_Text_DannyPost)	
 	release
 }
 
-script CityClara_School_EventScript_Ethan {	
+script CityClara_School_EventScript_Ethan {
+	lock
+	faceplayer
 	if (!defeated(TRAINER_ETHAN)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_ETHAN, CityClara_School_Text_EthanIntro, CityClara_School_Text_EthanLost)
+		msgbox (CityClara_School_Text_EthanIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_ETHAN, CityClara_School_Text_EthanLost)
 	}
 	msgbox (CityClara_School_Text_EthanPost)
 	closemessage	
 }
 
 script CityClara_School_EventScript_Sagis {
+	lock
+	faceplayer
 	if (var(VAR_SYS_LEVEL_CAP) < 11) {
 		setvar (VAR_SYS_LEVEL_CAP, 11)
 	}
 	if (!defeated(TRAINER_SAGIS)) {
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost)
+		msgbox (CityClara_School_Text_SagisIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_SAGIS, CityClara_School_Text_SagisLost)
 	}
 	msgbox (CityClara_School_Text_SagisPost)
 	closemessage	
@@ -91,14 +109,18 @@ script CityClara_School_EventScript_Mr_Glasman {
 	faceplayer
 	if (var(VAR_CITYCLARA_SCHOOL_STATE) < 4) {
 		msgbox (CityClara_School_Text_Mr_Glasman1)
-		closemessage
 	} elif (var(VAR_CITYCLARA_SCHOOL_STATE) == 4) {		
 		call (CityClara_School_EventScript_IncrementSchoolVar)
-		trainerbattle_single(TRAINER_MR_GLASMAN, CityClara_School_Text_Mr_GlasmanIntro, CityClara_School_Text_Mr_GlasmanLost)
+		msgbox (CityClara_School_Text_Mr_GlasmanIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_MR_GLASMAN, CityClara_School_Text_Mr_GlasmanLost)
+		msgbox (CityClara_School_Text_Mr_GlasmanPost)
 	} else {
 		msgbox (CityClara_School_Text_Mr_GlasmanPost)
 	}
+	closemessage
 	release
+	end
 }
 
 script CityClara_School_EventScript_Peeves {
@@ -128,6 +150,13 @@ script CityClara_School_EventScript_IncrementSchoolVar {
 			setvar(VAR_CITYCLARA_SCHOOL_STATE, 7)
 		case 7:
 			setvar(VAR_CITYCLARA_SCHOOL_STATE, 8)
+		case 8:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 9)
+		case 9:
+			setvar(VAR_CITYCLARA_SCHOOL_STATE, 10)
+		default:
+			msgbox(format("ERROR: CityClara_School_EventScript_IncrementSchoolVar OOB"))
+			closemessage
 	}
 }	
 
@@ -166,17 +195,6 @@ script CityClara_School_EventScript_GiveTrainerCard {
 	msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
 	closemessage
 	return
-}
-
-script CityClara_School_EventScript_GiveCut {
-	lock
-	setflag (FLAG_BADGE01_GET)
-	msgbox (CityClara_School_Text_Mrs_SullyDefeat)
-	giveitem (ITEM_HM01)	
-	msgbox (CityClara_School_Text_ExplainCut)	
-	setflag (FLAG_RECEIVED_CUT)
-	release
-	end
 }
 
 script CityClara_School_EventScript_GradeTrigger1 {
@@ -236,13 +254,27 @@ script CityClara_School_EventScript_PeevesFight2 {
 }
 
 script CityClara_School_EventScript_Tyler {
-	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerGabeIntro, CityClara_School_Text_TylerLost, Route104_Text_GinaNotEnoughMons)
+	lock
+	faceplayer
+	if (!defeated(TRAINER_TYLER_AND_GABE)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)	
+		msgbox (CityClara_School_Text_TylerGabeIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerLost)
+	}
 	msgbox (CityClara_School_Text_TylerPost)
 	closemessage
 }
 
 script CityClara_School_EventScript_Gabe {
-	trainerbattle_double (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerGabeIntro, CityClara_School_Text_GabeLost, Route104_Text_GinaNotEnoughMons)
+	lock
+	faceplayer
+	if (!defeated(TRAINER_TYLER_AND_GABE)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)	
+		msgbox (CityClara_School_Text_TylerGabeIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro (TRAINER_TYLER_AND_GABE, CityClara_School_Text_GabeLost)
+	}
 	msgbox (CityClara_School_Text_GabePost)
 	closemessage
 }

@@ -11,9 +11,9 @@ CityClara_School_EventScript_Karlye::
 	checktrainerflag TRAINER_KARLYE
 	goto_if 0, CityClara_School_EventScript_Karlye_2
 CityClara_School_EventScript_Karlye_1:
-# 17 "data/maps/CityClara_School/scripts.pory"
+# 19 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_KarlyePost
-# 18 "data/maps/CityClara_School/scripts.pory"
+# 20 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
@@ -21,515 +21,615 @@ CityClara_School_EventScript_Karlye_2:
 # 8 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
 # 9 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_KARLYE, CityClara_School_Text_KarlyeIntro, CityClara_School_Text_KarlyeLost
+	msgbox CityClara_School_Text_KarlyeIntro, MSGBOX_DEFAULT
 # 10 "data/maps/CityClara_School/scripts.pory"
-	msgbox CityClara_School_Text_KarlyeWater, MSGBOX_DEFAULT
-# 11 "data/maps/CityClara_School/scripts.pory"
 	closemessage
+# 11 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_KARLYE, CityClara_School_Text_KarlyeLost
 # 12 "data/maps/CityClara_School/scripts.pory"
-	giveitem ITEM_FRESH_WATER, 1
+	msgbox CityClara_School_Text_KarlyeWater, MSGBOX_DEFAULT
 # 13 "data/maps/CityClara_School/scripts.pory"
-	msgbox CityClara_School_Text_KarlyePost, MSGBOX_DEFAULT
+	closemessage
 # 14 "data/maps/CityClara_School/scripts.pory"
+	giveitem ITEM_FRESH_WATER, 1
+# 15 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_KarlyePost, MSGBOX_DEFAULT
+# 16 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	goto CityClara_School_EventScript_Karlye_1
 
 
 CityClara_School_EventScript_Ricky::
-# 22 "data/maps/CityClara_School/scripts.pory"
-	lock
-# 23 "data/maps/CityClara_School/scripts.pory"
-	faceplayer
 # 24 "data/maps/CityClara_School/scripts.pory"
+	lock
+# 25 "data/maps/CityClara_School/scripts.pory"
+	faceplayer
+# 26 "data/maps/CityClara_School/scripts.pory"
 	checktrainerflag TRAINER_RICKY
 	goto_if 0, CityClara_School_EventScript_Ricky_2
 CityClara_School_EventScript_Ricky_1:
-# 28 "data/maps/CityClara_School/scripts.pory"
+# 32 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_RickyPost
-# 29 "data/maps/CityClara_School/scripts.pory"
+# 33 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
 CityClara_School_EventScript_Ricky_2:
-# 25 "data/maps/CityClara_School/scripts.pory"
+# 27 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 26 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_RICKY, CityClara_School_Text_RickyIntro, CityClara_School_Text_RickyLost
+# 28 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_RickyIntro, MSGBOX_DEFAULT
+# 29 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 30 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_RICKY, CityClara_School_Text_RickyLost
 	goto CityClara_School_EventScript_Ricky_1
 
 
 CityClara_School_EventScript_Peter::
-# 33 "data/maps/CityClara_School/scripts.pory"
+# 37 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 34 "data/maps/CityClara_School/scripts.pory"
+# 38 "data/maps/CityClara_School/scripts.pory"
 	faceplayer
-# 35 "data/maps/CityClara_School/scripts.pory"
+# 39 "data/maps/CityClara_School/scripts.pory"
 	checktrainerflag TRAINER_PETER
 	goto_if 0, CityClara_School_EventScript_Peter_2
 CityClara_School_EventScript_Peter_1:
-# 39 "data/maps/CityClara_School/scripts.pory"
+# 45 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_SYS_LEVEL_CAP, 9
-# 40 "data/maps/CityClara_School/scripts.pory"
+# 46 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_PeterPost
-# 41 "data/maps/CityClara_School/scripts.pory"
+# 47 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
 CityClara_School_EventScript_Peter_2:
-# 36 "data/maps/CityClara_School/scripts.pory"
+# 40 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 37 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_PETER, CityClara_School_Text_PeterIntro, CityClara_School_Text_PeterLost
+# 41 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_PeterIntro, MSGBOX_DEFAULT
+# 42 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 43 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_PETER, CityClara_School_Text_PeterLost
 	goto CityClara_School_EventScript_Peter_1
 
 
 CityClara_School_Script_Emily::
-# 45 "data/maps/CityClara_School/scripts.pory"
+# 51 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 46 "data/maps/CityClara_School/scripts.pory"
+# 52 "data/maps/CityClara_School/scripts.pory"
 	faceplayer
-# 47 "data/maps/CityClara_School/scripts.pory"
+# 53 "data/maps/CityClara_School/scripts.pory"
 	checktrainerflag TRAINER_EMILY
 	goto_if 0, CityClara_School_Script_Emily_2
 CityClara_School_Script_Emily_1:
-# 52 "data/maps/CityClara_School/scripts.pory"
-	msgbox CityClara_School_Text_DannyPost
-# 53 "data/maps/CityClara_School/scripts.pory"
+# 59 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_EmilyPost
+# 60 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 54 "data/maps/CityClara_School/scripts.pory"
+# 61 "data/maps/CityClara_School/scripts.pory"
 	release
 	end
 
 CityClara_School_Script_Emily_2:
-# 48 "data/maps/CityClara_School/scripts.pory"
+# 54 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 49 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_EMILY, CityClara_School_Text_EmilyIntro, CityClara_School_Text_EmilyLost
+# 55 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_EmilyIntro, MSGBOX_DEFAULT
+# 56 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 57 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_EMILY, CityClara_School_Text_EmilyLost
 	goto CityClara_School_Script_Emily_1
 
 
 CityClara_School_EventScript_Danny::
-# 59 "data/maps/CityClara_School/scripts.pory"
+# 66 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 60 "data/maps/CityClara_School/scripts.pory"
+# 67 "data/maps/CityClara_School/scripts.pory"
 	faceplayer
-# 61 "data/maps/CityClara_School/scripts.pory"
+# 68 "data/maps/CityClara_School/scripts.pory"
 	checktrainerflag TRAINER_DANNY
 	goto_if 0, CityClara_School_EventScript_Danny_2
 CityClara_School_EventScript_Danny_1:
-# 65 "data/maps/CityClara_School/scripts.pory"
+# 74 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_DannyPost
-# 66 "data/maps/CityClara_School/scripts.pory"
+# 75 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
 CityClara_School_EventScript_Danny_2:
-# 62 "data/maps/CityClara_School/scripts.pory"
+# 69 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 63 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_DANNY, CityClara_School_Text_DannyIntro, CityClara_School_Text_DannyLost
+# 70 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_DannyIntro, MSGBOX_DEFAULT
+# 71 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 72 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_DANNY, CityClara_School_Text_DannyLost
 	goto CityClara_School_EventScript_Danny_1
 
 
 CityClara_School_EventScript_Ethan::
-# 70 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_ETHAN, CityClara_School_Text_EthanIntro, CityClara_School_Text_EthanLost
-# 71 "data/maps/CityClara_School/scripts.pory"
+# 79 "data/maps/CityClara_School/scripts.pory"
+	lock
+# 80 "data/maps/CityClara_School/scripts.pory"
+	faceplayer
+# 81 "data/maps/CityClara_School/scripts.pory"
+	checktrainerflag TRAINER_ETHAN
+	goto_if 0, CityClara_School_EventScript_Ethan_2
+CityClara_School_EventScript_Ethan_1:
+# 87 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_EthanPost
-# 72 "data/maps/CityClara_School/scripts.pory"
+# 88 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	return
 
+CityClara_School_EventScript_Ethan_2:
+# 82 "data/maps/CityClara_School/scripts.pory"
+	call CityClara_School_EventScript_IncrementSchoolVar
+# 83 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_EthanIntro, MSGBOX_DEFAULT
+# 84 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 85 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_ETHAN, CityClara_School_Text_EthanLost
+	goto CityClara_School_EventScript_Ethan_1
+
 
 CityClara_School_EventScript_Sagis::
-# 76 "data/maps/CityClara_School/scripts.pory"
+# 92 "data/maps/CityClara_School/scripts.pory"
+	lock
+# 93 "data/maps/CityClara_School/scripts.pory"
+	faceplayer
+# 94 "data/maps/CityClara_School/scripts.pory"
 	compare VAR_SYS_LEVEL_CAP, 11
 	goto_if_lt CityClara_School_EventScript_Sagis_2
 CityClara_School_EventScript_Sagis_1:
-# 79 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_SAGIS, CityClara_School_Text_SagisIntro, CityClara_School_Text_SagisLost
-# 80 "data/maps/CityClara_School/scripts.pory"
+# 97 "data/maps/CityClara_School/scripts.pory"
+	checktrainerflag TRAINER_SAGIS
+	goto_if 0, CityClara_School_EventScript_Sagis_5
+CityClara_School_EventScript_Sagis_4:
+# 103 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_SagisPost
-# 81 "data/maps/CityClara_School/scripts.pory"
+# 104 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	return
 
 CityClara_School_EventScript_Sagis_2:
-# 77 "data/maps/CityClara_School/scripts.pory"
+# 95 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_SYS_LEVEL_CAP, 11
 	goto CityClara_School_EventScript_Sagis_1
 
+CityClara_School_EventScript_Sagis_5:
+# 98 "data/maps/CityClara_School/scripts.pory"
+	call CityClara_School_EventScript_IncrementSchoolVar
+# 99 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_SagisIntro, MSGBOX_DEFAULT
+# 100 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 101 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_SAGIS, CityClara_School_Text_SagisLost
+	goto CityClara_School_EventScript_Sagis_4
+
 
 CityClara_School_EventScript_Mr_Glasman::
-# 85 "data/maps/CityClara_School/scripts.pory"
+# 108 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 86 "data/maps/CityClara_School/scripts.pory"
+# 109 "data/maps/CityClara_School/scripts.pory"
 	faceplayer
-# 87 "data/maps/CityClara_School/scripts.pory"
+# 110 "data/maps/CityClara_School/scripts.pory"
 	compare VAR_CITYCLARA_SCHOOL_STATE, 4
 	goto_if_lt CityClara_School_EventScript_Mr_Glasman_2
-# 90 "data/maps/CityClara_School/scripts.pory"
+# 112 "data/maps/CityClara_School/scripts.pory"
 	compare VAR_CITYCLARA_SCHOOL_STATE, 4
 	goto_if_eq CityClara_School_EventScript_Mr_Glasman_3
-# 94 "data/maps/CityClara_School/scripts.pory"
+# 119 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mr_GlasmanPost
 CityClara_School_EventScript_Mr_Glasman_1:
-# 96 "data/maps/CityClara_School/scripts.pory"
+# 121 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 122 "data/maps/CityClara_School/scripts.pory"
 	release
-	return
+	end
 
 CityClara_School_EventScript_Mr_Glasman_2:
-# 88 "data/maps/CityClara_School/scripts.pory"
+# 111 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mr_Glasman1
-# 89 "data/maps/CityClara_School/scripts.pory"
-	closemessage
 	goto CityClara_School_EventScript_Mr_Glasman_1
 
 CityClara_School_EventScript_Mr_Glasman_3:
-# 91 "data/maps/CityClara_School/scripts.pory"
+# 113 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 92 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_single TRAINER_MR_GLASMAN, CityClara_School_Text_Mr_GlasmanIntro, CityClara_School_Text_Mr_GlasmanLost
+# 114 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_Mr_GlasmanIntro, MSGBOX_DEFAULT
+# 115 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 116 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_MR_GLASMAN, CityClara_School_Text_Mr_GlasmanLost
+# 117 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_Mr_GlasmanPost
 	goto CityClara_School_EventScript_Mr_Glasman_1
 
 
 CityClara_School_EventScript_Peeves::
-# 100 "data/maps/CityClara_School/scripts.pory"
+# 127 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 101 "data/maps/CityClara_School/scripts.pory"
+# 128 "data/maps/CityClara_School/scripts.pory"
 	faceplayer
-# 102 "data/maps/CityClara_School/scripts.pory"
+# 129 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_PeevesPost
-# 103 "data/maps/CityClara_School/scripts.pory"
+# 130 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 104 "data/maps/CityClara_School/scripts.pory"
+# 131 "data/maps/CityClara_School/scripts.pory"
 	release
 	end
 
 
 CityClara_School_EventScript_IncrementSchoolVar::
-# 109 "data/maps/CityClara_School/scripts.pory"
+# 136 "data/maps/CityClara_School/scripts.pory"
 	switch VAR_CITYCLARA_SCHOOL_STATE
-# 110 "data/maps/CityClara_School/scripts.pory"
+# 137 "data/maps/CityClara_School/scripts.pory"
 	case 0, CityClara_School_EventScript_IncrementSchoolVar_2
-# 112 "data/maps/CityClara_School/scripts.pory"
+# 139 "data/maps/CityClara_School/scripts.pory"
 	case 1, CityClara_School_EventScript_IncrementSchoolVar_3
-# 114 "data/maps/CityClara_School/scripts.pory"
+# 141 "data/maps/CityClara_School/scripts.pory"
 	case 2, CityClara_School_EventScript_IncrementSchoolVar_4
-# 116 "data/maps/CityClara_School/scripts.pory"
+# 143 "data/maps/CityClara_School/scripts.pory"
 	case 3, CityClara_School_EventScript_IncrementSchoolVar_5
-# 118 "data/maps/CityClara_School/scripts.pory"
+# 145 "data/maps/CityClara_School/scripts.pory"
 	case 4, CityClara_School_EventScript_IncrementSchoolVar_6
-# 120 "data/maps/CityClara_School/scripts.pory"
+# 147 "data/maps/CityClara_School/scripts.pory"
 	case 5, CityClara_School_EventScript_IncrementSchoolVar_7
-# 122 "data/maps/CityClara_School/scripts.pory"
+# 149 "data/maps/CityClara_School/scripts.pory"
 	case 6, CityClara_School_EventScript_IncrementSchoolVar_8
-# 124 "data/maps/CityClara_School/scripts.pory"
+# 151 "data/maps/CityClara_School/scripts.pory"
 	case 7, CityClara_School_EventScript_IncrementSchoolVar_9
+# 153 "data/maps/CityClara_School/scripts.pory"
+	case 8, CityClara_School_EventScript_IncrementSchoolVar_10
+# 155 "data/maps/CityClara_School/scripts.pory"
+	case 9, CityClara_School_EventScript_IncrementSchoolVar_11
+# 158 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_EventScript_IncrementSchoolVar_Text_0
+# 159 "data/maps/CityClara_School/scripts.pory"
+	closemessage
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_2:
-# 111 "data/maps/CityClara_School/scripts.pory"
+# 138 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 1
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_3:
-# 113 "data/maps/CityClara_School/scripts.pory"
+# 140 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 2
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_4:
-# 115 "data/maps/CityClara_School/scripts.pory"
+# 142 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 3
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_5:
-# 117 "data/maps/CityClara_School/scripts.pory"
+# 144 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 4
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_6:
-# 119 "data/maps/CityClara_School/scripts.pory"
+# 146 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 5
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_7:
-# 121 "data/maps/CityClara_School/scripts.pory"
+# 148 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 6
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_8:
-# 123 "data/maps/CityClara_School/scripts.pory"
+# 150 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 7
 	return
 
 CityClara_School_EventScript_IncrementSchoolVar_9:
-# 125 "data/maps/CityClara_School/scripts.pory"
+# 152 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_CITYCLARA_SCHOOL_STATE, 8
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_10:
+# 154 "data/maps/CityClara_School/scripts.pory"
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 9
+	return
+
+CityClara_School_EventScript_IncrementSchoolVar_11:
+# 156 "data/maps/CityClara_School/scripts.pory"
+	setvar VAR_CITYCLARA_SCHOOL_STATE, 10
 	return
 
 
 CityClara_School_EventScript_Mrs_Sully::
-# 130 "data/maps/CityClara_School/scripts.pory"
+# 164 "data/maps/CityClara_School/scripts.pory"
 	lockall
-# 131 "data/maps/CityClara_School/scripts.pory"
+# 165 "data/maps/CityClara_School/scripts.pory"
 	faceplayer
-# 133 "data/maps/CityClara_School/scripts.pory"
+# 167 "data/maps/CityClara_School/scripts.pory"
 	compare VAR_CITYCLARA_SCHOOL_STATE, 9
 	goto_if_lt CityClara_School_EventScript_Mrs_Sully_2
-# 137 "data/maps/CityClara_School/scripts.pory"
+# 171 "data/maps/CityClara_School/scripts.pory"
 	checktrainerflag TRAINER_MRS_SULLY
 	goto_if 1, CityClara_School_EventScript_Mrs_Sully_5
-# 141 "data/maps/CityClara_School/scripts.pory"
+# 175 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 142 "data/maps/CityClara_School/scripts.pory"
+# 176 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyPre, MSGBOX_DEFAULT
-# 143 "data/maps/CityClara_School/scripts.pory"
+# 177 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 144 "data/maps/CityClara_School/scripts.pory"
+# 178 "data/maps/CityClara_School/scripts.pory"
 	trainerbattle_no_intro TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost
-# 145 "data/maps/CityClara_School/scripts.pory"
+# 179 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_GiveTrainerCard
-# 147 "data/maps/CityClara_School/scripts.pory"
+# 181 "data/maps/CityClara_School/scripts.pory"
 	setvar VAR_GRANNY_STATE, 9
 CityClara_School_EventScript_Mrs_Sully_1:
-# 150 "data/maps/CityClara_School/scripts.pory"
+# 184 "data/maps/CityClara_School/scripts.pory"
 	releaseall
 	end
 
 CityClara_School_EventScript_Mrs_Sully_2:
-# 134 "data/maps/CityClara_School/scripts.pory"
+# 168 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyIntroA
-# 135 "data/maps/CityClara_School/scripts.pory"
+# 169 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	goto CityClara_School_EventScript_Mrs_Sully_1
 
 CityClara_School_EventScript_Mrs_Sully_5:
-# 138 "data/maps/CityClara_School/scripts.pory"
+# 172 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT
-# 139 "data/maps/CityClara_School/scripts.pory"
+# 173 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	goto CityClara_School_EventScript_Mrs_Sully_1
 
 
 CityClara_School_EventScript_GiveTrainerCard::
-# 155 "data/maps/CityClara_School/scripts.pory"
+# 189 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyDefeat, MSGBOX_DEFAULT
-# 156 "data/maps/CityClara_School/scripts.pory"
+# 190 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 157 "data/maps/CityClara_School/scripts.pory"
+# 191 "data/maps/CityClara_School/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 158 "data/maps/CityClara_School/scripts.pory"
+# 192 "data/maps/CityClara_School/scripts.pory"
 	setflag FLAG_SYS_TRAINER_CARD_GET
-# 159 "data/maps/CityClara_School/scripts.pory"
+# 193 "data/maps/CityClara_School/scripts.pory"
 	giveitem ITEM_TRAINER_CARD, 1
-# 160 "data/maps/CityClara_School/scripts.pory"
+# 194 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyExplainCard, MSGBOX_DEFAULT
-# 161 "data/maps/CityClara_School/scripts.pory"
+# 195 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT
-# 162 "data/maps/CityClara_School/scripts.pory"
+# 196 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	return
 
 
-CityClara_School_EventScript_GiveCut::
-# 167 "data/maps/CityClara_School/scripts.pory"
-	lock
-# 168 "data/maps/CityClara_School/scripts.pory"
-	setflag FLAG_BADGE01_GET
-# 169 "data/maps/CityClara_School/scripts.pory"
-	msgbox CityClara_School_Text_Mrs_SullyDefeat
-# 170 "data/maps/CityClara_School/scripts.pory"
-	giveitem ITEM_HM01
-# 171 "data/maps/CityClara_School/scripts.pory"
-	msgbox CityClara_School_Text_ExplainCut
-# 172 "data/maps/CityClara_School/scripts.pory"
-	setflag FLAG_RECEIVED_CUT
-# 173 "data/maps/CityClara_School/scripts.pory"
-	release
-	end
-
-
 CityClara_School_EventScript_GradeTrigger1::
-# 178 "data/maps/CityClara_School/scripts.pory"
+# 201 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 179 "data/maps/CityClara_School/scripts.pory"
+# 202 "data/maps/CityClara_School/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 180 "data/maps/CityClara_School/scripts.pory"
+# 203 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_PeevesGrade1
-# 181 "data/maps/CityClara_School/scripts.pory"
+# 204 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 182 "data/maps/CityClara_School/scripts.pory"
+# 205 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 183 "data/maps/CityClara_School/scripts.pory"
+# 206 "data/maps/CityClara_School/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_PlayerGrade
-# 184 "data/maps/CityClara_School/scripts.pory"
+# 207 "data/maps/CityClara_School/scripts.pory"
 	applymovement 7, CityClara_School_Movement_PeevesGrade1
-# 185 "data/maps/CityClara_School/scripts.pory"
+# 208 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 186 "data/maps/CityClara_School/scripts.pory"
+# 209 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_PeevesGrade2
-# 187 "data/maps/CityClara_School/scripts.pory"
+# 210 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 188 "data/maps/CityClara_School/scripts.pory"
+# 211 "data/maps/CityClara_School/scripts.pory"
 	applymovement 7, CityClara_School_Movement_PeevesGrade1Return
-# 189 "data/maps/CityClara_School/scripts.pory"
+# 212 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 190 "data/maps/CityClara_School/scripts.pory"
+# 213 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
 
 CityClara_School_EventScript_GradeTrigger2::
-# 194 "data/maps/CityClara_School/scripts.pory"
+# 217 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 195 "data/maps/CityClara_School/scripts.pory"
+# 218 "data/maps/CityClara_School/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 196 "data/maps/CityClara_School/scripts.pory"
+# 219 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_PeevesGrade1
-# 197 "data/maps/CityClara_School/scripts.pory"
+# 220 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 198 "data/maps/CityClara_School/scripts.pory"
+# 221 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 199 "data/maps/CityClara_School/scripts.pory"
+# 222 "data/maps/CityClara_School/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_PlayerGrade
-# 200 "data/maps/CityClara_School/scripts.pory"
+# 223 "data/maps/CityClara_School/scripts.pory"
 	applymovement 7, CityClara_School_Movement_PeevesGrade2
-# 201 "data/maps/CityClara_School/scripts.pory"
+# 224 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 202 "data/maps/CityClara_School/scripts.pory"
+# 225 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_PeevesGrade2
-# 203 "data/maps/CityClara_School/scripts.pory"
+# 226 "data/maps/CityClara_School/scripts.pory"
 	closemessage
-# 204 "data/maps/CityClara_School/scripts.pory"
+# 227 "data/maps/CityClara_School/scripts.pory"
 	applymovement 7, CityClara_School_Movement_PeevesGrade2Return
-# 205 "data/maps/CityClara_School/scripts.pory"
+# 228 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 206 "data/maps/CityClara_School/scripts.pory"
+# 229 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
 
 CityClara_School_EventScript_PeevesFight1::
-# 210 "data/maps/CityClara_School/scripts.pory"
+# 233 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 211 "data/maps/CityClara_School/scripts.pory"
+# 234 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 212 "data/maps/CityClara_School/scripts.pory"
+# 235 "data/maps/CityClara_School/scripts.pory"
 	applymovement 7, Common_Movement_ExclamationMark
-# 213 "data/maps/CityClara_School/scripts.pory"
+# 236 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 216 "data/maps/CityClara_School/scripts.pory"
+# 239 "data/maps/CityClara_School/scripts.pory"
 	trainerbattle_single TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost
-# 217 "data/maps/CityClara_School/scripts.pory"
+# 240 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
 
 CityClara_School_EventScript_PeevesFight2::
-# 221 "data/maps/CityClara_School/scripts.pory"
+# 244 "data/maps/CityClara_School/scripts.pory"
 	lock
-# 222 "data/maps/CityClara_School/scripts.pory"
+# 245 "data/maps/CityClara_School/scripts.pory"
 	call CityClara_School_EventScript_IncrementSchoolVar
-# 223 "data/maps/CityClara_School/scripts.pory"
+# 246 "data/maps/CityClara_School/scripts.pory"
 	applymovement 7, Common_Movement_ExclamationMark
-# 224 "data/maps/CityClara_School/scripts.pory"
+# 247 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 227 "data/maps/CityClara_School/scripts.pory"
+# 250 "data/maps/CityClara_School/scripts.pory"
 	applymovement 7, CityClara_School_Movement_Peeves_WalkDown
-# 228 "data/maps/CityClara_School/scripts.pory"
+# 251 "data/maps/CityClara_School/scripts.pory"
 	waitmovement 0
-# 229 "data/maps/CityClara_School/scripts.pory"
+# 252 "data/maps/CityClara_School/scripts.pory"
 	trainerbattle_single TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost
-# 230 "data/maps/CityClara_School/scripts.pory"
+# 253 "data/maps/CityClara_School/scripts.pory"
 	release
 	return
 
 
 CityClara_School_EventScript_Tyler::
-# 234 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_double TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerGabeIntro, CityClara_School_Text_TylerLost, Route104_Text_GinaNotEnoughMons
-# 235 "data/maps/CityClara_School/scripts.pory"
+# 257 "data/maps/CityClara_School/scripts.pory"
+	lock
+# 258 "data/maps/CityClara_School/scripts.pory"
+	faceplayer
+# 259 "data/maps/CityClara_School/scripts.pory"
+	checktrainerflag TRAINER_TYLER_AND_GABE
+	goto_if 0, CityClara_School_EventScript_Tyler_2
+CityClara_School_EventScript_Tyler_1:
+# 265 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_TylerPost
-# 236 "data/maps/CityClara_School/scripts.pory"
+# 266 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	return
+
+CityClara_School_EventScript_Tyler_2:
+# 260 "data/maps/CityClara_School/scripts.pory"
+	call CityClara_School_EventScript_IncrementSchoolVar
+# 261 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_TylerGabeIntro, MSGBOX_DEFAULT
+# 262 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 263 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerLost
+	goto CityClara_School_EventScript_Tyler_1
 
 
 CityClara_School_EventScript_Gabe::
-# 240 "data/maps/CityClara_School/scripts.pory"
-	trainerbattle_double TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerGabeIntro, CityClara_School_Text_GabeLost, Route104_Text_GinaNotEnoughMons
-# 241 "data/maps/CityClara_School/scripts.pory"
+# 270 "data/maps/CityClara_School/scripts.pory"
+	lock
+# 271 "data/maps/CityClara_School/scripts.pory"
+	faceplayer
+# 272 "data/maps/CityClara_School/scripts.pory"
+	checktrainerflag TRAINER_TYLER_AND_GABE
+	goto_if 0, CityClara_School_EventScript_Gabe_2
+CityClara_School_EventScript_Gabe_1:
+# 278 "data/maps/CityClara_School/scripts.pory"
 	msgbox CityClara_School_Text_GabePost
-# 242 "data/maps/CityClara_School/scripts.pory"
+# 279 "data/maps/CityClara_School/scripts.pory"
 	closemessage
 	return
 
+CityClara_School_EventScript_Gabe_2:
+# 273 "data/maps/CityClara_School/scripts.pory"
+	call CityClara_School_EventScript_IncrementSchoolVar
+# 274 "data/maps/CityClara_School/scripts.pory"
+	msgbox CityClara_School_Text_TylerGabeIntro, MSGBOX_DEFAULT
+# 275 "data/maps/CityClara_School/scripts.pory"
+	closemessage
+# 276 "data/maps/CityClara_School/scripts.pory"
+	trainerbattle_no_intro TRAINER_TYLER_AND_GABE, CityClara_School_Text_GabeLost
+	goto CityClara_School_EventScript_Gabe_1
 
-# 245 "data/maps/CityClara_School/scripts.pory"
+
+# 282 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_PlayerGrade:
-# 246 "data/maps/CityClara_School/scripts.pory"
+# 283 "data/maps/CityClara_School/scripts.pory"
 	walk_left
-# 247 "data/maps/CityClara_School/scripts.pory"
+# 284 "data/maps/CityClara_School/scripts.pory"
 	face_right
 	step_end
 
-# 250 "data/maps/CityClara_School/scripts.pory"
+# 287 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_PeevesGrade1:
-# 251 "data/maps/CityClara_School/scripts.pory"
+# 288 "data/maps/CityClara_School/scripts.pory"
 	walk_down
-# 252 "data/maps/CityClara_School/scripts.pory"
+# 289 "data/maps/CityClara_School/scripts.pory"
 	face_left
 	step_end
 
-# 255 "data/maps/CityClara_School/scripts.pory"
+# 292 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_PeevesGrade2:
-# 256 "data/maps/CityClara_School/scripts.pory"
+# 293 "data/maps/CityClara_School/scripts.pory"
 	walk_down
-# 256 "data/maps/CityClara_School/scripts.pory"
+# 293 "data/maps/CityClara_School/scripts.pory"
 	walk_down
-# 257 "data/maps/CityClara_School/scripts.pory"
+# 294 "data/maps/CityClara_School/scripts.pory"
 	face_left
 	step_end
 
-# 260 "data/maps/CityClara_School/scripts.pory"
+# 297 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_PeevesGrade1Return:
-# 261 "data/maps/CityClara_School/scripts.pory"
+# 298 "data/maps/CityClara_School/scripts.pory"
 	walk_up
-# 262 "data/maps/CityClara_School/scripts.pory"
+# 299 "data/maps/CityClara_School/scripts.pory"
 	face_down
 	step_end
 
-# 265 "data/maps/CityClara_School/scripts.pory"
+# 302 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_PeevesGrade2Return:
-# 266 "data/maps/CityClara_School/scripts.pory"
+# 303 "data/maps/CityClara_School/scripts.pory"
 	walk_up
-# 266 "data/maps/CityClara_School/scripts.pory"
+# 303 "data/maps/CityClara_School/scripts.pory"
 	walk_up
-# 267 "data/maps/CityClara_School/scripts.pory"
+# 304 "data/maps/CityClara_School/scripts.pory"
 	face_down
 	step_end
 
-# 269 "data/maps/CityClara_School/scripts.pory"
+# 306 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_Peeves_FaceUp:
-# 270 "data/maps/CityClara_School/scripts.pory"
+# 307 "data/maps/CityClara_School/scripts.pory"
 	face_up
 	step_end
 
-# 273 "data/maps/CityClara_School/scripts.pory"
+# 310 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_Peeves_FaceDown:
-# 274 "data/maps/CityClara_School/scripts.pory"
+# 311 "data/maps/CityClara_School/scripts.pory"
 	face_down
 	step_end
 
-# 277 "data/maps/CityClara_School/scripts.pory"
+# 314 "data/maps/CityClara_School/scripts.pory"
 CityClara_School_Movement_Peeves_WalkDown:
-# 278 "data/maps/CityClara_School/scripts.pory"
+# 315 "data/maps/CityClara_School/scripts.pory"
 	walk_down
 	step_end
 
+CityClara_School_EventScript_IncrementSchoolVar_Text_0:
+# 158 "data/maps/CityClara_School/scripts.pory"
+	.string "ERROR:\n"
+	.string "CityClara_School_EventScript_IncrementSchoolVar\l"
+	.string "OOB$"
+
 CityClara_School_Text_KarlyeIntro::
-# 281 "data/maps/CityClara_School/scripts.pory"
+# 318 "data/maps/CityClara_School/scripts.pory"
 	.string "During battles your pokemon may become\n"
 	.string "tired or injured and need to rest. If\l"
 	.string "you're out in the field you can use\l"
@@ -545,23 +645,23 @@ CityClara_School_Text_KarlyeIntro::
 	.string "about items let's have a quick battle.$"
 
 CityClara_School_Text_KarlyeLost::
-# 285 "data/maps/CityClara_School/scripts.pory"
+# 322 "data/maps/CityClara_School/scripts.pory"
 	.string "Let me just give Cleffa some water...$"
 
 CityClara_School_Text_KarlyeWater::
-# 289 "data/maps/CityClara_School/scripts.pory"
+# 326 "data/maps/CityClara_School/scripts.pory"
 	.string "If you're Eevee is injured after that\n"
 	.string "battle then give this to him.$"
 
 CityClara_School_Text_KarlyePost::
-# 293 "data/maps/CityClara_School/scripts.pory"
+# 330 "data/maps/CityClara_School/scripts.pory"
 	.string "Fresh water can help injured Pokemon\n"
 	.string "recover HP. There are also items which\l"
 	.string "help tired Pokemon recover PP like\l"
 	.string "coffee.$"
 
 CityClara_School_Text_RickyIntro::
-# 297 "data/maps/CityClara_School/scripts.pory"
+# 334 "data/maps/CityClara_School/scripts.pory"
 	.string "There is a limit to how many pokemon you\n"
 	.string "can keep. You can only bring 6 Pokemon\l"
 	.string "with you into battle. If you want to\l"
@@ -587,17 +687,17 @@ CityClara_School_Text_RickyIntro::
 	.string "strength.$"
 
 CityClara_School_Text_RickyLost::
-# 301 "data/maps/CityClara_School/scripts.pory"
+# 338 "data/maps/CityClara_School/scripts.pory"
 	.string "I should haave trained more Pokemon...$"
 
 CityClara_School_Text_RickyPost::
-# 305 "data/maps/CityClara_School/scripts.pory"
+# 342 "data/maps/CityClara_School/scripts.pory"
 	.string "If you're looking for a computer to\n"
 	.string "access the Pokemon Box System the old\l"
 	.string "men next door always let me use theirs.$"
 
 CityClara_School_Text_PeterIntro::
-# 309 "data/maps/CityClara_School/scripts.pory"
+# 346 "data/maps/CityClara_School/scripts.pory"
 	.string "The most important job of a Pokemon\n"
 	.string "trainer is to make sure your Pokemon\l"
 	.string "obey you in battle. I can see that you\l"
@@ -621,13 +721,13 @@ CityClara_School_Text_PeterIntro::
 	.string "battle to see how strong you are.$"
 
 CityClara_School_Text_PeterLost::
-# 313 "data/maps/CityClara_School/scripts.pory"
+# 350 "data/maps/CityClara_School/scripts.pory"
 	.string "After beating me you should be able to\n"
 	.string "train and command Eevee up to level 9\l"
 	.string "now!$"
 
 CityClara_School_Text_PeterPost::
-# 317 "data/maps/CityClara_School/scripts.pory"
+# 354 "data/maps/CityClara_School/scripts.pory"
 	.string "Your ability as a trainer will increase\n"
 	.string "as you meet and battle more\l"
 	.string "experienced trainers. I wonder who the\l"
@@ -635,7 +735,7 @@ CityClara_School_Text_PeterPost::
 	.string "state is...$"
 
 CityClara_School_Text_DannyIntro::
-# 321 "data/maps/CityClara_School/scripts.pory"
+# 358 "data/maps/CityClara_School/scripts.pory"
 	.string "Pokemon can only battle for so long\n"
 	.string "before they must quit the field. Most\l"
 	.string "trainers form an emotional bond with\l"
@@ -650,18 +750,18 @@ CityClara_School_Text_DannyIntro::
 	.string "surrender until I've killed your Eevee.$"
 
 CityClara_School_Text_DannyLost::
-# 325 "data/maps/CityClara_School/scripts.pory"
+# 362 "data/maps/CityClara_School/scripts.pory"
 	.string "I yield! I yield!$"
 
 CityClara_School_Text_DannyPost::
-# 329 "data/maps/CityClara_School/scripts.pory"
+# 366 "data/maps/CityClara_School/scripts.pory"
 	.string "I'll need to let my Teddiursa rest\n"
 	.string "before having another battle, if you\l"
 	.string "let your Pokemon die then no power on\l"
 	.string "Earth can bring them back to life.$"
 
 CityClara_School_Text_EthanIntro::
-# 333 "data/maps/CityClara_School/scripts.pory"
+# 370 "data/maps/CityClara_School/scripts.pory"
 	.string "Weather conditions, like rain, can\n"
 	.string "affect your Pokemon battles. There are\l"
 	.string "also some Pokemon who can control\l"
@@ -671,18 +771,18 @@ CityClara_School_Text_EthanIntro::
 	.string "something to keep an eye out for.$"
 
 CityClara_School_Text_EthanLost::
-# 337 "data/maps/CityClara_School/scripts.pory"
+# 374 "data/maps/CityClara_School/scripts.pory"
 	.string "Even under perfecrt conditions I still\n"
 	.string "lost...$"
 
 CityClara_School_Text_EthanPost::
-# 341 "data/maps/CityClara_School/scripts.pory"
+# 378 "data/maps/CityClara_School/scripts.pory"
 	.string "It's important to always be aware of\n"
 	.string "field conditions during your battles\l"
 	.string "outside.$"
 
 CityClara_School_Text_SagisIntro::
-# 345 "data/maps/CityClara_School/scripts.pory"
+# 382 "data/maps/CityClara_School/scripts.pory"
 	.string "There are certain status conditions,\n"
 	.string "like poison, which persist even after a\l"
 	.string "bttle. You will need to let your Pokemon\l"
@@ -691,11 +791,11 @@ CityClara_School_Text_SagisIntro::
 	.string "Pokemon, watch out!$"
 
 CityClara_School_Text_SagisLost::
-# 349 "data/maps/CityClara_School/scripts.pory"
+# 386 "data/maps/CityClara_School/scripts.pory"
 	.string "You overpowerd my bugs!$"
 
 CityClara_School_Text_SagisPost::
-# 353 "data/maps/CityClara_School/scripts.pory"
+# 390 "data/maps/CityClara_School/scripts.pory"
 	.string "Be careful. If your pokemon is poisoned\n"
 	.string "it can die even out of battle. It's a\l"
 	.string "good idea to carry around some\l"
@@ -703,39 +803,39 @@ CityClara_School_Text_SagisPost::
 	.string "against poison.$"
 
 CityClara_School_Text_EmilyIntro::
-# 357 "data/maps/CityClara_School/scripts.pory"
+# 394 "data/maps/CityClara_School/scripts.pory"
 	.string "I think there are more than 420 types\n"
 	.string "of Pokemon.$"
 
 CityClara_School_Text_EmilyLost::
-# 361 "data/maps/CityClara_School/scripts.pory"
+# 398 "data/maps/CityClara_School/scripts.pory"
 	.string "That isn't fair! You're gonna make me\n"
 	.string "cry!$"
 
 CityClara_School_Text_EmilyPost::
-# 365 "data/maps/CityClara_School/scripts.pory"
+# 402 "data/maps/CityClara_School/scripts.pory"
 	.string "Some trainers will be ready to battle\n"
 	.string "you again after a while.$"
 
 CityClara_School_Text_Mr_Glasman1::
-# 369 "data/maps/CityClara_School/scripts.pory"
+# 406 "data/maps/CityClara_School/scripts.pory"
 	.string "Before we start why don't you all\n"
 	.string "review, among yourselves, in groups, for\l"
 	.string "five minutes$"
 
 CityClara_School_Text_Mr_GlasmanIntro::
-# 373 "data/maps/CityClara_School/scripts.pory"
+# 410 "data/maps/CityClara_School/scripts.pory"
 	.string "Sheket Bevakasha, that means shut up!\n"
 	.string "I need you to show me some more respect\l"
 	.string "and recognize my doctorate. Now time\l"
 	.string "for you to take a test...to pass or fail.$"
 
 CityClara_School_Text_Mr_GlasmanLost::
-# 377 "data/maps/CityClara_School/scripts.pory"
+# 414 "data/maps/CityClara_School/scripts.pory"
 	.string "I told you this before, it's DOCTOR G!$"
 
 CityClara_School_Text_Mr_GlasmanPost::
-# 381 "data/maps/CityClara_School/scripts.pory"
+# 418 "data/maps/CityClara_School/scripts.pory"
 	.string "You've proven yourself a brilliant pupil.\n"
 	.string "I have taught you everything that I\l"
 	.string "know and now your level cap is raised to\l"
@@ -743,36 +843,36 @@ CityClara_School_Text_Mr_GlasmanPost::
 	.string "education.$"
 
 CityClara_School_Text_PeevesGrade1::
-# 385 "data/maps/CityClara_School/scripts.pory"
+# 422 "data/maps/CityClara_School/scripts.pory"
 	.string "Hey you! Where do you think that you're\n"
 	.string "going?$"
 
 CityClara_School_Text_PeevesGrade2::
-# 389 "data/maps/CityClara_School/scripts.pory"
+# 426 "data/maps/CityClara_School/scripts.pory"
 	.string "This class is only for the older kids,\n"
 	.string "Come back when you've graduated first\l"
 	.string "grade.$"
 
 CityClara_School_Text_PeevesIntro::
-# 393 "data/maps/CityClara_School/scripts.pory"
+# 430 "data/maps/CityClara_School/scripts.pory"
 	.string "Well looky here looks like there's a new\n"
 	.string "kid. You think you're so grown up well\l"
 	.string "time to learn what guys like me do to\l"
 	.string "freshmeat like you.$"
 
 CityClara_School_Text_PeevesLost::
-# 397 "data/maps/CityClara_School/scripts.pory"
+# 434 "data/maps/CityClara_School/scripts.pory"
 	.string "I'll let you keep my lunch money this\n"
 	.string "time...$"
 
 CityClara_School_Text_PeevesPost::
-# 401 "data/maps/CityClara_School/scripts.pory"
+# 438 "data/maps/CityClara_School/scripts.pory"
 	.string "Sometimes you need to beat a strong\n"
 	.string "trainer to continue your journey in\l"
 	.string "this world.$"
 
 CityClara_School_Text_TylerGabeIntro::
-# 405 "data/maps/CityClara_School/scripts.pory"
+# 442 "data/maps/CityClara_School/scripts.pory"
 	.string "Sometimes two trainers will battle you\n"
 	.string "at once and you will send out two\l"
 	.string "Pokemon to face them both. If you do\l"
@@ -783,40 +883,40 @@ CityClara_School_Text_TylerGabeIntro::
 	.string "Good luck.$"
 
 CityClara_School_Text_TylerLost::
-# 409 "data/maps/CityClara_School/scripts.pory"
+# 446 "data/maps/CityClara_School/scripts.pory"
 	.string "Two vs one and we still lost!$"
 
 CityClara_School_Text_TylerPost::
-# 413 "data/maps/CityClara_School/scripts.pory"
+# 450 "data/maps/CityClara_School/scripts.pory"
 	.string "Sometimes you will even encounter\n"
 	.string "double wild Pokemon battles.$"
 
 CityClara_School_Text_GabeLost::
-# 417 "data/maps/CityClara_School/scripts.pory"
+# 454 "data/maps/CityClara_School/scripts.pory"
 	.string "We didn't have great team synergy...$"
 
 CityClara_School_Text_GabePost::
-# 421 "data/maps/CityClara_School/scripts.pory"
+# 458 "data/maps/CityClara_School/scripts.pory"
 	.string "Double battles sometimes require a\n"
 	.string "different strategy than normal\l"
 	.string "battles.$"
 
 CityClara_School_Text_Mrs_SullyIntroA::
-# 425 "data/maps/CityClara_School/scripts.pory"
+# 462 "data/maps/CityClara_School/scripts.pory"
 	.string "I've not seen you before you some\n"
 	.string "truant? Finish your studies before\l"
 	.string "your exam.$"
 
 CityClara_School_Text_Mrs_SullyPre::
-# 429 "data/maps/CityClara_School/scripts.pory"
+# 466 "data/maps/CityClara_School/scripts.pory"
 	.string "Win this battle and you will graduate.$"
 
 CityClara_School_Text_Mrs_SullyLost::
-# 433 "data/maps/CityClara_School/scripts.pory"
+# 470 "data/maps/CityClara_School/scripts.pory"
 	.string "Congratulations on your achievement!$"
 
 CityClara_School_Text_Mrs_SullyDefeat::
-# 437 "data/maps/CityClara_School/scripts.pory"
+# 474 "data/maps/CityClara_School/scripts.pory"
 	.string "That was a thrill! {PLAYER} you are so\n"
 	.string "advanced. I've never had a student\l"
 	.string "make me feel like they were the one who\l"
@@ -824,7 +924,7 @@ CityClara_School_Text_Mrs_SullyDefeat::
 	.string "school diploma.$"
 
 CityClara_School_Text_Mrs_SullyExplainCard::
-# 441 "data/maps/CityClara_School/scripts.pory"
+# 478 "data/maps/CityClara_School/scripts.pory"
 	.string "As a certified Pokemon Trainer wild\n"
 	.string "Pokemon will now follow you and obey\l"
 	.string "your commands while in battle as long as\l"
@@ -834,11 +934,11 @@ CityClara_School_Text_Mrs_SullyExplainCard::
 	.string "using the Trainer Card.$"
 
 CityClara_School_Text_Mrs_SullyPost::
-# 445 "data/maps/CityClara_School/scripts.pory"
+# 482 "data/maps/CityClara_School/scripts.pory"
 	.string "You can come back anytime to study.$"
 
 CityClara_School_Text_ExplainCut::
-# 449 "data/maps/CityClara_School/scripts.pory"
+# 486 "data/maps/CityClara_School/scripts.pory"
 	.string "This is a Hidden Move, HM for short,\n"
 	.string "which will allow you to cut down small\l"
 	.string "trees.$"
