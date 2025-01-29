@@ -123,7 +123,7 @@
 ///HERE BEGINS THE REPURPOSED VARS FROM EMERALD - ACTUALLY SEE ABOVE THERE ARE MANY MORE AVAILABLE
 
 
-#define VAR_ALDEON_SCHOOL_STATE                          0x405E // 0: Track progress inside School (increment var on each trainer defeated, glassman open at 4, peaves open at 5, Sully open at 9, complete at 10
+#define VAR_ALDEON_SCHOOL_STATE                          0x405E // 0: Track progress inside School (increment var on each trainer defeated, glassman open at 4, peaves open at 5, Sully open at 10, 11 is final 
 																// 1: 
 																// 2: 
 #define VAR_SYS_LEVEL_CAP                                0x405F // Hold the Level Cap
@@ -330,7 +330,7 @@
 //Literally all of those are up for grabs...U			 p Above
 #define VAR_ROUTE3_STATE                     			 0x40F7 // Leaf Trigger
 #define VAR_CITYCLARA_STATE                  			 0x40F8 // Leaf+Scott in CannaClub...
-#define VAR_CITYCLARA_SCHOOL_STATE           			 0x40F9 // Counts students defeated in the school
+#define VAR_UNUSED_40F9           			             0x40F9 // UNUSED
 #define VAR_ROUTE4_STATE                     			 0x40FA // Controls events on Route4 set to ONE (1) by the rocket event in Route4
 #define VAR_ROBUSTUS_STATE                   			 0x40FB // Controls events in Robustus namely the campers and leaf event; set to 7 on exeunt; triggers leaf before rock tunnel then set to 8; triggers rival ambush then set to 9;
 #define VAR_ROUTE6_STATE                     			 0x40FC // Triggers J&J event

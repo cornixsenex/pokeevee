@@ -143,11 +143,12 @@ script CityClara_EventScript_LeafBridge {
 	lock
 	faceplayer
 	load_field_pic (4, 190, 98)
-	if (var(VAR_CITYCLARA_SCHOOL_STATE) != 8) {
-		msgbox (CityClara_Text_LeafBridge)
-	} else {
-		msgbox (CityClara_Text_LeafBridge2)
-	}
+	//This was to remove that var...needs to be changed anyways
+	//if (var(VAR_CITYCLARA_SCHOOL_STATE) != 8) {
+	//	msgbox (CityClara_Text_LeafBridge)
+	//} else {
+	//	msgbox (CityClara_Text_LeafBridge2)
+	//}
 	closemessage
 	destroy_field_pic (4)
 	applymovement (22, Common_Movement_FaceDown)

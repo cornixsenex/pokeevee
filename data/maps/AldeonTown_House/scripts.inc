@@ -3,30 +3,34 @@ AldeonTown_House_MapScripts::
 
 
 AldeonTown_House_EventScript_OldMan::
-# 5 "data/maps/AldeonTown_House/scripts.pory"
-	lockall
-# 6 "data/maps/AldeonTown_House/scripts.pory"
-	faceplayer
 # 7 "data/maps/AldeonTown_House/scripts.pory"
-	msgbox AldeonTown_House_Text_OldMan1
+	lockall
 # 8 "data/maps/AldeonTown_House/scripts.pory"
-	closemessage
+	faceplayer
 # 9 "data/maps/AldeonTown_House/scripts.pory"
-	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox AldeonTown_House_Text_OldMan1
 # 10 "data/maps/AldeonTown_House/scripts.pory"
-	msgbox AldeonTown_House_Text_OldMan2, MSGBOX_DEFAULT
-# 11 "data/maps/AldeonTown_House/scripts.pory"
 	closemessage
+# 11 "data/maps/AldeonTown_House/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
 # 12 "data/maps/AldeonTown_House/scripts.pory"
+	msgbox AldeonTown_House_Text_OldMan2, MSGBOX_DEFAULT
+# 13 "data/maps/AldeonTown_House/scripts.pory"
+	closemessage
+# 14 "data/maps/AldeonTown_House/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 15 "data/maps/AldeonTown_House/scripts.pory"
+	waitmovement 0
+# 16 "data/maps/AldeonTown_House/scripts.pory"
 	releaseall
 	end
 
 
 AldeonTown_House_Text_OldMan1::
-# 16 "data/maps/AldeonTown_House/scripts.pory"
+# 20 "data/maps/AldeonTown_House/scripts.pory"
 	.string "If you feel tired why not take a nap?$"
 
 AldeonTown_House_Text_OldMan2::
-# 20 "data/maps/AldeonTown_House/scripts.pory"
+# 24 "data/maps/AldeonTown_House/scripts.pory"
 	.string "Now don't you look better. Come back\n"
 	.string "sometime.$"

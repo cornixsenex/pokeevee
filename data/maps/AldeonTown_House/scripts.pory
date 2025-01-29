@@ -1,3 +1,5 @@
+const OBJ_EVENT_OLDMAN = 1
+
 mapscripts AldeonTown_House_MapScripts {}
 
 
@@ -9,6 +11,8 @@ script AldeonTown_House_EventScript_OldMan {
 	call (Common_EventScript_OutOfCenterPartyHeal)
 	msgbox (AldeonTown_House_Text_OldMan2, MSGBOX_DEFAULT)
 	closemessage
+	applymovement (OBJ_EVENT_OLDMAN, Common_Movement_FaceDown)
+	waitmovement (0)
 	releaseall
 	end
 }

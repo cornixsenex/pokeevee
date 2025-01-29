@@ -12,9 +12,6 @@ script CityClara_School_EventScript_Karlye {
 		msgbox (CityClara_School_Text_KarlyeWater, MSGBOX_DEFAULT)
 		closemessage
 		giveitem (ITEM_FRESH_WATER, 1)
-		msgbox (CityClara_School_Text_KarlyePost, MSGBOX_DEFAULT)
-		closemessage
-
 	}
 	msgbox (CityClara_School_Text_KarlyePost)	
 	release
@@ -107,16 +104,16 @@ script CityClara_School_EventScript_Sagis {
 script CityClara_School_EventScript_Mr_Glasman {
 	lock
 	faceplayer
-	if (var(VAR_CITYCLARA_SCHOOL_STATE) < 4) {
+	if (var(VAR_ALDEON_SCHOOL_STATE) < 4) {
 		msgbox (CityClara_School_Text_Mr_Glasman1)
-	} elif (var(VAR_CITYCLARA_SCHOOL_STATE) == 4) {		
+	} elif (var(VAR_ALDEON_SCHOOL_STATE) == 4) {		
 		call (CityClara_School_EventScript_IncrementSchoolVar)
 		msgbox (CityClara_School_Text_Mr_GlasmanIntro, MSGBOX_DEFAULT)
 		closemessage
 		trainerbattle_no_intro(TRAINER_MR_GLASMAN, CityClara_School_Text_Mr_GlasmanLost)
-		msgbox (CityClara_School_Text_Mr_GlasmanPost)
+		msgbox (CityClara_School_Text_Mr_GlasmanPostA)
 	} else {
-		msgbox (CityClara_School_Text_Mr_GlasmanPost)
+		msgbox (CityClara_School_Text_Mr_GlasmanPostB)
 	}
 	closemessage
 	release
@@ -133,27 +130,27 @@ script CityClara_School_EventScript_Peeves {
 }
 
 script CityClara_School_EventScript_IncrementSchoolVar {
-	switch (var(VAR_CITYCLARA_SCHOOL_STATE)) {
+	switch (var(VAR_ALDEON_SCHOOL_STATE)) {
 		case 0:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 1)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 1)
 		case 1:	
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 2)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 2)
 		case 2:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 3)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 3)
 		case 3:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 4)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 4)
 		case 4:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 5)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 5)
 		case 5:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 6)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 6)
 		case 6:	
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 7)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 7)
 		case 7:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 8)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 8)
 		case 8:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 9)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 9)
 		case 9:
-			setvar(VAR_CITYCLARA_SCHOOL_STATE, 10)
+			setvar(VAR_ALDEON_SCHOOL_STATE, 10)
 		default:
 			msgbox(format("ERROR: CityClara_School_EventScript_IncrementSchoolVar OOB"))
 			closemessage
@@ -164,7 +161,7 @@ script CityClara_School_EventScript_Mrs_Sully {
 	lockall
 	faceplayer
 	//Finish your studies
-	if (var(VAR_CITYCLARA_SCHOOL_STATE) < 9) {
+	if (var(VAR_ALDEON_SCHOOL_STATE) < 10) {
 		msgbox (CityClara_School_Text_Mrs_SullyIntroA)
 		closemessage
 	} else {  //If done then post
@@ -172,7 +169,7 @@ script CityClara_School_EventScript_Mrs_Sully {
 			msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
 			closemessage
 		} else {
-			call (CityClara_School_EventScript_IncrementSchoolVar)
+			setvar (VAR_ALDEON_SCHOOL_STATE, 11)
 			msgbox (CityClara_School_Text_Mrs_SullyPre, MSGBOX_DEFAULT)
 			closemessage
 			trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
@@ -324,7 +321,7 @@ text CityClara_School_Text_KarlyeLost {
 }
 
 text CityClara_School_Text_KarlyeWater {
-	format("If you're Eevee is injured after that battle then give this to him.")
+	format("If your Eevee is injured after that battle then give this to him.")
 }
 
 text CityClara_School_Text_KarlyePost {
@@ -332,11 +329,11 @@ text CityClara_School_Text_KarlyePost {
 }
 
 text CityClara_School_Text_RickyIntro {
-	format("There is a limit to how many pokemon you can keep. You can only bring 6 Pokemon with you into battle. If you want to train more than 6 Pokemon at a time you will need to store them somewhere. The Pokemon Box Company has created the Pokemon Box System, a modern marvel, which allows you to digitize and store your pokemon electronically and then retrieve them at a later date. It's a marvellous convinience and the company offers many boxes for free to all trainers. In order to access the Pokemon Box System you will need an internet connection. You can find computers with access at homes, businesses, and pokemon centers across the state. There is also a wireless connector but you'll have to find that yourself. Now that you understand the Pokemon Box System let's have a battle to test your strength.")
+	format("There is a limit to how many pokemon you can keep. You can only bring 6 Pokemon with you into battle. If you want to train more than 6 Pokemon at a time you will need to store them somewhere. The Pokemon Box Company has created the Pokemon Box System, a modern marvel, which allows you to digitize and store your pokemon electronically and then retrieve them at a later date. It's a marvellous convenience and the company offers many boxes for free to all trainers. In order to access the Pokemon Box System you will need an internet connection. You can find computers with access at homes, businesses, and pokemon centers across the state. There is also a wireless connector but you'll have to find that yourself. Now that you understand the Pokemon Box System let's have a battle to test your strength.")
 }
 
 text CityClara_School_Text_RickyLost {
-	format("I should haave trained more Pokemon...")
+	format("I should have trained more Pokemon...")
 }
 
 text CityClara_School_Text_RickyPost {
@@ -415,8 +412,12 @@ text CityClara_School_Text_Mr_GlasmanLost {
 	format("I told you this before, it's DOCTOR G!")
 }
 
-text CityClara_School_Text_Mr_GlasmanPost {
+text CityClara_School_Text_Mr_GlasmanPostA {
 	format("You've proven yourself a brilliant pupil. I have taught you everything that I know and now your level cap is raised to ten. Good luck with your future education.")
+}
+
+text CityClara_School_Text_Mr_GlasmanPostB {
+	format("Good luck with your future education.")
 }
 
 text CityClara_School_Text_PeevesGrade1 {

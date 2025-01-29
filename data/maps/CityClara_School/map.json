@@ -193,7 +193,7 @@
       "x": 8,
       "y": 9,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "0",
       "script": "CityClara_School_EventScript_GradeTrigger1"
     },
@@ -202,7 +202,7 @@
       "x": 8,
       "y": 9,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "1",
       "script": "CityClara_School_EventScript_GradeTrigger1"
     },
@@ -211,7 +211,7 @@
       "x": 8,
       "y": 9,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "2",
       "script": "CityClara_School_EventScript_GradeTrigger1"
     },
@@ -220,7 +220,7 @@
       "x": 8,
       "y": 9,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "3",
       "script": "CityClara_School_EventScript_GradeTrigger1"
     },
@@ -229,7 +229,7 @@
       "x": 8,
       "y": 9,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "4",
       "script": "CityClara_School_EventScript_GradeTrigger1"
     },
@@ -238,7 +238,7 @@
       "x": 8,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "0",
       "script": "CityClara_School_EventScript_GradeTrigger2"
     },
@@ -247,7 +247,7 @@
       "x": 8,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "1",
       "script": "CityClara_School_EventScript_GradeTrigger2"
     },
@@ -256,7 +256,7 @@
       "x": 8,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "2",
       "script": "CityClara_School_EventScript_GradeTrigger2"
     },
@@ -265,7 +265,7 @@
       "x": 8,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "3",
       "script": "CityClara_School_EventScript_GradeTrigger2"
     },
@@ -274,7 +274,7 @@
       "x": 8,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "4",
       "script": "CityClara_School_EventScript_GradeTrigger2"
     },
@@ -283,7 +283,7 @@
       "x": 8,
       "y": 9,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "5",
       "script": "CityClara_School_EventScript_PeevesFight1"
     },
@@ -292,7 +292,7 @@
       "x": 8,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_CITYCLARA_SCHOOL_STATE",
+      "var": "VAR_ALDEON_SCHOOL_STATE",
       "var_value": "5",
       "script": "CityClara_School_EventScript_PeevesFight2"
     }
