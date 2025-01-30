@@ -16,9 +16,9 @@ mapscripts AldeonTown_MapScripts {
 		if (var(VAR_GRANNY_STATE) < 9) {
 			call (AldeonTown_Script_ShowSnorlaxBlock)
 		}
-		if (var(VAR_GRANNY_STATE) == 8) {
-			call (AldeonTown_Script_ShowBlueLeaf)
-		}
+		//if (var(VAR_GRANNY_STATE) == 8) {
+		//	call (AldeonTown_Script_ShowBlueLeaf)
+		//}
 		if (var(VAR_GRANNY_STATE) < 9) {
 			call (AldeonTown_Script_ShowScottBlock)
 		}
@@ -191,32 +191,49 @@ script AldeonTown_Script_TriggerLeafBattle {
 	destroy_field_pic (FIELD_PIC_BLUE)
 	closemessage
 	//Step 1
-	applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
-	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
-	applymovement (OBJ_EVENT_BLUE, Common_Movement_WalkRight)
-	applymovement (OBJ_EVENT_ZUBAT, Common_Movement_WalkDown)
-	waitmovement (0)
-	applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
-	applymovement (OBJ_EVENT_ZUBAT, Common_Movement_FaceRight)
-	waitmovement (0)
+	//applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+	//applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+	//applymovement (OBJ_EVENT_BLUE, Common_Movement_WalkRight)
+	//applymovement (OBJ_EVENT_ZUBAT, Common_Movement_WalkDown)
+	//waitmovement (0)
+	//applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
+	//applymovement (OBJ_EVENT_ZUBAT, Common_Movement_FaceRight)
+	//waitmovement (0)
 	//Blue: Girls only.	
+	applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
+	waitmovement (0)
 	load_field_pic (FIELD_PIC_BLUE, 190, 98)
 	msgbox (AldeonTown_Text_Blue6, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_BLUE)
 	closemessage
 	//Exeunt Leaf et Blue
-	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_BlueLeafExeunt)
-	applymovement (OBJ_EVENT_LEAF, AldeonTown_Movement_BlueLeafExeunt)
-	applymovement (OBJ_EVENT_BLUE, AldeonTown_Movement_BlueLeafExeunt)
-	applymovement (OBJ_EVENT_ZUBAT, AldeonTown_Movement_BlueLeafExeunt)
+	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_BlueLeafExeuntL)
+	applymovement (OBJ_EVENT_LEAF, AldeonTown_Movement_BlueLeafExeuntL)
+	applymovement (OBJ_EVENT_BLUE, AldeonTown_Movement_BlueLeafExeuntL)
+	applymovement (OBJ_EVENT_ZUBAT, AldeonTown_Movement_BlueLeafExeuntL)
 	waitmovement (0)
 	//Remove actors
+	hideobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
+	hideobjectat (OBJ_EVENT_BLUE, MAP_ALDEON_TOWN)
+	hideobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
+	hideobjectat (OBJ_EVENT_ZUBAT, MAP_ALDEON_TOWN)
+	
 	removeobject (OBJ_EVENT_LEAF)
 	removeobject (OBJ_EVENT_BLUE)
 	removeobject (OBJ_EVENT_IGGLYBUFF)
 	removeobject (OBJ_EVENT_ZUBAT)
+
+	setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 0, 0)
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 0, 0)
+	setobjectxyperm (OBJ_EVENT_BLUE, 0, 0)
+	
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_INVISIBLE)
 	//Show BlueLeafBlock
-	call (AldeonTown_Script_ShowBlueLeaf)
+	//call (AldeonTown_Script_ShowBlueLeaf)
 
 	releaseall
 	end
@@ -259,6 +276,20 @@ script AldeonTown_EventScript_FatMan {
 		msgbox (AldeonTown_Text_FatMan, MSGBOX_DEFAULT)
 		closemessage
 	}
+	release
+	end
+}
+
+script AldeonTown_Script_Lass {
+	lock
+	faceplayer
+	specialvar (VAR_RESULT, RandDigit)
+	if (var(VAR_RESULT) > 8) {
+		msgbox (AldeonTown_Text_Lass2, MSGBOX_DEFAULT)
+	} else {
+		msgbox (AldeonTown_Text_Lass1, MSGBOX_DEFAULT)
+	}
+	closemessage
 	release
 	end
 }
@@ -349,6 +380,11 @@ movement AldeonTown_Movement_Blue1 {
 movement AldeonTown_Movement_BlueLeafExeunt {
 	walk_right * 9
 }
+
+movement AldeonTown_Movement_BlueLeafExeuntL {
+	walk_left * 9
+}
+
 
 text AldeonTown_Text_FatManBlock {
 	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlaci, can be mighty dangerous. You don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")
@@ -442,5 +478,13 @@ text AldeonTown_Text_OldMan {
 
 text AldeonTown_Text_Scott {
 	format("My daughter left for her first day of school and I am overwhelmed by emotions. I'm fixing a hole in my doorway where the wind gets in. It helps to soothe my mind.")
+}
+
+text AldeonTown_Text_Lass1 {
+	format("This garden is where I come to relax.")
+}
+
+text AldeonTown_Text_Lass2 {
+	format("The Big House was here, before the fires.")
 }
 
