@@ -22,6 +22,8 @@ mapscripts GrandmasCabin_MapScripts {
 				call (GrandmasCabin_Script_ShowLeaf3) //Leaf attacked by Poochyenaa
 			case 5:
 				call (GrandmasCabin_Script_ShowGranny)
+			case 10:
+				call (GrandmasCabin_Script_ShowStorm)
 			default:
 				call (GrandmasCabin_Script_HideAll)
 		}
@@ -91,6 +93,12 @@ script GrandmasCabin_Script_ShowGranny {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 10, 14)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
 
+	return
+}
+
+script GrandmasCabin_Script_ShowStorm {
+	setweather (WEATHER_DOWNPOUR)
+	
 	return
 }
 

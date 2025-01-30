@@ -15,17 +15,20 @@ mapscripts AldeonTown_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		if (var(VAR_GRANNY_STATE) < 9) {
 			call (AldeonTown_Script_ShowSnorlaxBlock)
-		}
-		//if (var(VAR_GRANNY_STATE) == 8) {
-		//	call (AldeonTown_Script_ShowBlueLeaf)
-		//}
-		if (var(VAR_GRANNY_STATE) < 9) {
 			call (AldeonTown_Script_ShowScottBlock)
 		}
-		if (var(VAR_GRANNY_STATE) == 9) {
-			call (AldeonTown_Script_SetupStorm)
+		elif (var(VAR_GRANNY_STATE) == 9) {
+			call (AldeonTown_Script_SetupStorm1)
 		}
+		elif (var(VAR_GRANNY_STATE) == 10) {
+			call (AldeonTown_Script_SetupStorm2)
+		}
+
 	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GRANNY_STATE, 9: AldeonTown_Script_Storm
+	]
 
 }
 
@@ -76,7 +79,24 @@ script AldeonTown_Script_ShowBlueLeaf {
 	return
 }
 
-script AldeonTown_Script_SetupStorm {
+script AldeonTown_Script_SetupStorm1 {
+
+	setobjectxyperm (OBJ_EVENT_OLDMAN, 14, 8)
+	setobjectmovementtype (OBJ_EVENT_OLDMAN, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_OLDMAN)
+	showobjectat (OBJ_EVENT_OLDMAN, MAP_ALDEON_TOWN)
+
+	setweather (WEATHER_DOWNPOUR)
+
+	return
+}
+
+script AldeonTown_Script_SetupStorm2 {
+
+	setobjectxyperm (OBJ_EVENT_OLDMAN, 8, 8)
+	setobjectmovementtype (OBJ_EVENT_OLDMAN, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_OLDMAN)
+	showobjectat (OBJ_EVENT_OLDMAN, MAP_ALDEON_TOWN)
 
 	setweather (WEATHER_DOWNPOUR)
 
@@ -239,6 +259,29 @@ script AldeonTown_Script_TriggerLeafBattle {
 	end
 }
 
+script AldeonTown_Script_Storm {
+	lockall
+
+	//change var - stop iteration
+	setvar(VAR_GRANNY_STATE, 10)
+	//notify old man et player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//old man approach player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_OLDMAN, AldeonTown_Movement_StormBlock1)
+	waitmovement (0)
+	//Its bad storm go home Leaf missing
+	msgbox(AldeonTown_Text_StormBlock1, MSGBOX_DEFAULT)
+    // Player takes some steps
+	applymovement (OBJ_EVENT_OLDMAN, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+
+	release
+	end
+}
+
 script AldeonTown_Script_Leaf {
 	msgbox (AldeonTown_Text_Leaf6, MSGBOX_DEFAULT)
 	closemessage
@@ -344,6 +387,18 @@ script AldeonTown_Script_SnorlaxBlock {
 	end
 }
 
+script AldeonTown_Script_TriggerStormBlock {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (AldeonTown_Text_StormBlock2, MSGBOX_DEFAULT)
+	closemessage 
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	release
+	end
+}
+
 script AldeonTown_Script_Scott {
 	lock
 	faceplayer
@@ -385,9 +440,21 @@ movement AldeonTown_Movement_BlueLeafExeuntL {
 	walk_left * 9
 }
 
+movement AldeonTown_Movement_StormBlock1 {
+	walk_left * 6
+}
+
 
 text AldeonTown_Text_FatManBlock {
 	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlaci, can be mighty dangerous. You don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")
+}
+
+text AldeonTown_Text_StormBlock1 {
+	format("This is a very serious deluge, the likes of which I've not seen since my youth! You must go home! Seek shelter from this storm! Please don't get lost! We've already lost {LEAF}!")
+}
+ 
+text AldeonTown_Text_StormBlock2 {
+	format("Go home! It isn't safe out! {LEAF} is lost!")
 }
 
 text AldeonTown_Text_FatMan {

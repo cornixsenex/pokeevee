@@ -1,4 +1,14 @@
-mapscripts Route1_MapScripts {}
+
+
+mapscripts Route1_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_GRANNY_STATE) == 10) {
+			call (Route1_Script_SetupStorm)
+		}
+	}
+
+}
 
 
 script Route1_EventScript_RockTest {
@@ -6,6 +16,25 @@ script Route1_EventScript_RockTest {
 	call (Route1_EventScript_WarpToLeafHouse)	
 	release
 	end
+}
+
+script Route1_Script_SetupStorm  {
+	setobjectxyperm (5, 0, 0)
+	setobjectmovementtype (5, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (6, 0, 0)
+	setobjectmovementtype (6, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (7, 0, 0)
+	setobjectmovementtype (7, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (8, 0, 0)
+	setobjectmovementtype (8, MOVEMENT_TYPE_INVISIBLE)
+
+
+	setweather (WEATHER_DOWNPOUR)
+
+	return
 }
 
 
