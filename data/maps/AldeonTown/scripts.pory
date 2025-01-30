@@ -22,6 +22,9 @@ mapscripts AldeonTown_MapScripts {
 		if (var(VAR_GRANNY_STATE) < 9) {
 			call (AldeonTown_Script_ShowScottBlock)
 		}
+		if (var(VAR_GRANNY_STATE) == 9) {
+			call (AldeonTown_Script_SetupStorm)
+		}
 	}
 
 }
@@ -70,6 +73,13 @@ script AldeonTown_Script_ShowBlueLeaf {
 	addobject (OBJ_EVENT_LEAF)
 	showobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
 	
+	return
+}
+
+script AldeonTown_Script_SetupStorm {
+
+	setweather (WEATHER_DOWNPOUR)
+
 	return
 }
 

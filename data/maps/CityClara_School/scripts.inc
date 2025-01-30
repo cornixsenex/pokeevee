@@ -684,7 +684,7 @@ CityClara_School_Text_RickyIntro::
 
 CityClara_School_Text_RickyLost::
 # 335 "data/maps/CityClara_School/scripts.pory"
-	.string "I should haave trained more Pokemon...$"
+	.string "I should have trained more Pokemon...$"
 
 CityClara_School_Text_RickyPost::
 # 339 "data/maps/CityClara_School/scripts.pory"
