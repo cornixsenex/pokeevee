@@ -2,7 +2,7 @@
   "id": "MAP_ALDEON_TOWN_SERVANT_HOUSE",
   "name": "AldeonTown_ServantHouse",
   "layout": "LAYOUT_HOUSE1",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_OLDALE",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_ALDEON_LEAF_HOUSE",
   "name": "Aldeon_Leaf_House",
   "layout": "LAYOUT_ALDEON_LEAF_HOUSE",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_OLDALE",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
