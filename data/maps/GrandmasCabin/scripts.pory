@@ -234,7 +234,9 @@ script GrandmasCabin_Script_TryContinueHideAndSeekB {
 
 script GrandmasCabin_Script_ContinueHideAndSeek {
 	lock
-	playse (SE_EFFECTIVE)
+	playse (SE_PIN)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	msgbox (GrandmasCabin_Text_Leaf5, MSGBOX_DEFAULT)
 	closemessage
 
@@ -330,6 +332,8 @@ script GrandmasCabin_Script_SaveLeaf {
 	addobject (OBJ_EVENT_EEVEE)
 	showobjectat (OBJ_EVENT_EEVEE, MAP_GRANDMAS_CABIN)
 
+	delay (69)
+
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 	applymovement (OBJ_EVENT_EEVEE, GrandmasCabin_Movement_EeveeEnter)
 	waitmovement (0)
@@ -337,7 +341,7 @@ script GrandmasCabin_Script_SaveLeaf {
 	playmoncry (SPECIES_EEVEE, CRY_MODE_ENCOUNTER)
 	waitmoncry
 
-	givemon (SPECIES_EEVEE, 5, ITEM_NONE, gender=MON_MALE, move1=MOVE_TACKLE, move2=MOVE_TAIL_WHIP, move3=MOVE_HELPING_HAND, move4=MOVE_SAND_ATTACK)	
+	givemon (SPECIES_EEVEE, 5, ITEM_NONE, gender=MON_MALE, move1=MOVE_TACKLE, move2=MOVE_TAIL_WHIP, move3=MOVE_SAND_ATTACK, move4=MOVE_HELPING_HAND)	
 	setflag (FLAG_SYS_POKEMON_GET)
 
 	msgbox (GrandmasCabin_Text_Eevee, MSGBOX_DEFAULT)
@@ -351,6 +355,7 @@ script GrandmasCabin_Script_SaveLeaf {
 	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
 	//Intro battle
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
 	applymovement (OBJ_EVENT_RATTATA, Common_Movement_FaceDown)
 	waitmovement (0)
 
@@ -361,8 +366,9 @@ script GrandmasCabin_Script_SaveLeaf {
 	setwildbattle (SPECIES_RATTATA, 3)
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	setflag (FLAG_FORCE_EEVEE_SLIDE_IN)
-	dowildbattle
 	playbgm (MUS_LITTLEROOT, TRUE)
+	dowildbattle
+	//playbgm (MUS_LITTLEROOT, TRUE)
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	clearflag (FLAG_FORCE_EEVEE_SLIDE_IN)
 	//After battle - thanks lets go home
