@@ -15,6 +15,9 @@ AldeonTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 23 "data//maps/AldeonTown/scripts.pory"
 	compare VAR_GRANNY_STATE, 10
 	goto_if_eq AldeonTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+# 23 "data//maps/AldeonTown/scripts.pory"
+	compare VAR_GRANNY_STATE, 11
+	goto_if_eq AldeonTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
 	return
 
 AldeonTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:

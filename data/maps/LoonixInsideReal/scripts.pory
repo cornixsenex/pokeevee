@@ -19,10 +19,14 @@ mapscripts LoonixInsideReal_MapScripts {
 			case 6:
 				call (LoonixInsideReal_Script_ShowGrannyDoorway)
 		    case 7:
-				call (LoonixInsideReal_Script_ShowGrannyTable)
 			case 8:
-				call (LoonixInsideReal_Script_ShowGrannyTV)
 			case 9:
+			case 10:
+			case 11:
+				call (LoonixInsideReal_Script_ShowGrannyTable)
+			case 13:
+				call (LoonixInsideReal_Script_ShowGrannyTV)
+			case 14:
 				call (LoonixInsideReal_Script_ShowGrannyBed)
 			default:
 				call (LoonixInsideReal_Script_HideGranny)
@@ -37,6 +41,7 @@ mapscripts LoonixInsideReal_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_GRANNY_STATE, 0: LoonixInsideReal_Script_GrannyScene1
 		VAR_GRANNY_STATE, 6: LoonixInsideReal_Script_GrannyScene2
+		VAR_GRANNY_STATE, 10: LoonixInsideReal_Script_GrannyScene3
 	]
 
 }
@@ -47,7 +52,6 @@ script LoonixInsideReal_Script_HideGranny {
 
 	end
 }
-
 
 script LoonixInsideReal_Script_ShowGrannyKitchen {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 1, 3)
@@ -107,7 +111,7 @@ script LoonixInsideReal_Script_GrannyScene1 {
 
 	setvar (VAR_GRANNY_STATE, 1)
 	setflag (FLAG_RECEIVED_RUNNING_SHOES)
-	setflag (FLAG_SYS_B_DASH)
+setflag (FLAG_SYS_B_DASH)
 	setvar (VAR_SYS_LEVEL_CAP, 8)
 
 	//Player walks to position
@@ -236,6 +240,31 @@ script LoonixInsideReal_Script_GrannyScene2 {
 	end
 }
 
+script LoonixInsideReal_Script_GrannyScene3 {
+	lockall
+	setvar (VAR_GRANNY_STATE, 11)
+	//alert granny
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceDown)
+	waitmovement (0)
+	//G: OH player!
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyStorm1, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	//player go to granny
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny3_PlayerToTable)
+	waitmovement (0)
+	//G: The storm is so bad im glad you're here safe with me I know you're all grown up now but I promise that you're safe here just go to bed and the whole thing will be over when you wake up
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyStorm2, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	release
+	end
+}
+
 script LoonixInsideReal_Script_TV {
 	lock
 
@@ -345,7 +374,11 @@ script LoonixInsideReal_Script_Grandma {
 			call (LoonixInsideReal_Script_GrannyKitchen)
 		case 7:
 		case 8:
+		case 9:
 			call (LoonixInsideReal_Script_GrannyTable)
+		case 11:
+			call (LoonixInsideReal_Script_GrannyStorm)
+
 		default:
 			msgbox("DEFAULT", MSGBOX_DEFAULT)
 			closemessage
@@ -386,6 +419,18 @@ script LoonixInsideReal_Script_GrannyTable {
 	return
 }
 
+script LoonixInsideReal_Script_GrannyStorm {
+
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyStorm3, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	return
+}
 
 movement LoonixInsideReal_Movement_PreventExit {
 	face_up
@@ -457,6 +502,12 @@ movement LoonixInsideReal_Movement_Granny2_EeveeToTable {
 	walk_right * 3
 	walk_down
 	walk_right * 3
+}
+
+movement LoonixInsideReal_Movement_Granny3_PlayerToTable {
+	walk_up
+	walk_right * 5
+	walk_up
 }
 
 text LoonixInsideReal_Text_GrandmaTVSpeech {
@@ -546,4 +597,15 @@ text LoonixInsideReal_Text_Granny2E {
 	format("Just promise me you'll go to Trainer School and come back anytime to rest at home.")
 }
 
+text LoonixInsideReal_Text_GrannyStorm1 {
+	format("Oh {PLAYER}! I was so worried! Thank goodness that you're ok! Come here. Let me see you.")
+}
+
+text LoonixInsideReal_Text_GrannyStorm2 {
+	format("This storm feels almost supernatural, like it was sent from heaven with purpose. I'm overjoyed to see you back home safe. I know I had to let you go grow up but trust me one more time to keep you safe and sleep in your old bed through the tempest. I promise that when you wake up again the storm will have passed and all will be good.")
+}
+
+text LoonixInsideReal_Text_GrannyStorm3 {
+	format("You'll be ok as long as you're with me. Go up to bed and let the weather pass.")
+}
 

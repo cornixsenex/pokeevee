@@ -1,4 +1,13 @@
-mapscripts LoonixInsideReal_F2_MapScripts {}
+const FIELD_PIC_INTERVIEWER = 32
+
+mapscripts LoonixInsideReal_F2_MapScripts {
+
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GRANNY_STATE, 12: LoonixInsideReal_F2_Script_MewNews
+	]
+
+}
 
 
 
@@ -26,7 +35,11 @@ script LoonixInsideReal_F2_Script_Bed {
 	if (var(VAR_RESULT) == YES) {
 		closemessage
 		if (flag(FLAG_SYS_POKEMON_GET)) {
-			call (Common_EventScript_OutOfCenterPartyHeal)
+			if (var(VAR_GRANNY_STATE) != 11) {
+				call (Common_EventScript_OutOfCenterPartyHeal)
+			} else {
+				call (LoonixInsideReal_F2_Script_MewDream)
+			}
 		} else {
 			playfanfare (MUS_HEAL)
 			fadescreen (1)
@@ -46,11 +59,66 @@ script LoonixInsideReal_F2_Script_Book {
 	end
 }
 
+script LoonixInsideReal_F2_Script_TV {
+	lock
+	if (var(VAR_GRANNY_STATE) != 13 && var(VAR_GRANNY_STATE) != 14) {
+		msgbox (LoonixInsideReal_F2_Text_TV1, MSGBOX_DEFAULT)
+	} else {
+		msgbox (LoonixInsideReal_F2_Text_TV2, MSGBOX_DEFAULT)
+	}
+	closemessage
+	release
+	end
+}
+
+script LoonixInsideReal_F2_Script_MewDream {
+	warpsilent (MAP_LOONIX_SNOW, 10, 10)
+
+	waitstate
+	return
+}
+
+script LoonixInsideReal_F2_Script_MewNews {
+	lockall
+	setvar (VAR_GRANNY_STATE, 13)
+	//alertplayer
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//player walk to tv
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_F2_Movement_PlayerToTV)
+	waitmovement (0)
+	//news report
+	load_field_pic (FIELD_PIC_INTERVIEWER, 190, 98)
+	msgbox (LoonixInsideReal_F2_Text_MewNews)
+	destroy_field_pic (FIELD_PIC_INTERVIEWER)
+	closemessage
+	
+	release
+	end
+}
+
+movement LoonixInsideReal_F2_Movement_PlayerToTV {
+	walk_right * 3
+	walk_up * 3
+}
+
 text LoonixInsideReal_F2_Text_Bed {
 	format("It's your old bed!\pWould you like to take a rest?")
 }
 
 text LoonixInsideReal_F2_Text_Book {
 	format("ARMA VIRUMQUE CANO...\nWhat does this even mean?")
+}
+
+text LoonixInsideReal_F2_Text_TV1 {
+	format("There's never anything interesting on TV. Better go!")
+}
+
+text LoonixInsideReal_F2_Text_TV2 {
+	format("The news people are interviewing townspeople of Clara City about what they say they saw last night.")
+}
+
+text LoonixInsideReal_F2_Text_MewNews {
+	format("In an unusual turn of events several cities in the upstate region are reporting sightings of a strange being last night during a thunderstorm. The sightings, which began last night, have captured the attention of both residents and local authorities. Eyewitnesses in Clara reported seeing a small pink creature, possibly a Pokemon, appearing over the city, in the streets, and even inside their houses. The Rocket Party has issued a statement acknowledging the reports but refrained from speculation on the nature of the objects. 'We are monitoring the situation closely. Currently there is no threat to public safety, but we do advise the general public to avoid the area around the Church and City of Clara while the investigation remains open.' noted one party boss. Stay tuned for more updates as this story develops, and now a word from our sponsors...")
 }
 		

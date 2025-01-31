@@ -136,9 +136,16 @@
 																// 5: After Leaf ambush (Show eevee, leaf, granny outfront) 
 																// 6: After granny in front the house - trigger Granny Scene 2
 																// 7: After granny scene 2 - granny at the table - trigger Aldeon Leaf Battle
-																// 8: After Leaf Battle - show Leaf and Blue route block
+																// 8: After Leaf Battle - during school
 																// 9: After Graduate School - trigger Big Storm
 																//10: During BigStorm, trigger StormBlock et Granny storm scene
+																//11: After Granny Scene 3, setup bed trigger
+																//12: After bed mew scene, trigger TV on return
+																//13: After bed mew scene, trigger TV on return
+																//14: After granny scene 4, setup Blue Battle
+																//15: After Blue battle, setup see Mew cabin
+																//16: After seen Mew cabin, default final state Mew cannot be seen, Granny hidden maybe endgame changes something
+																//17: ? Maybe mew cabin encounter? Maybe 18 granny returns idk endgame stuff
 
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
 #define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 

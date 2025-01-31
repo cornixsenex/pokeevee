@@ -274,6 +274,24 @@
       "var": "VAR_GRANNY_STATE",
       "var_value": "10",
       "script": "AldeonTown_Script_TriggerStormBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_GRANNY_STATE",
+      "var_value": "11",
+      "script": "AldeonTown_Script_TriggerStormBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_GRANNY_STATE",
+      "var_value": "11",
+      "script": "AldeonTown_Script_TriggerStormBlock"
     }
   ],
   "bg_events": [

@@ -7,6 +7,9 @@ Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 6 "data//maps/Route1/scripts.pory"
 	compare VAR_GRANNY_STATE, 10
 	goto_if_eq Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+# 6 "data//maps/Route1/scripts.pory"
+	compare VAR_GRANNY_STATE, 11
+	goto_if_eq Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
 Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:

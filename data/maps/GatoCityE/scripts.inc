@@ -27,45 +27,47 @@ GatoCityE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 GatoCityE_EventScript_HidePlayer::
 # 16 "data//maps/GatoCityE/scripts.pory"
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_GATO_CITY_E
+# 17 "data//maps/GatoCityE/scripts.pory"
+	hideobjectat OBJ_EVENT_ID_FOLLOWER, MAP_GATO_CITY_E
 	end
 
 
 GatoCityE_EventScript_ShowSWHJ35::
-# 21 "data//maps/GatoCityE/scripts.pory"
-	setvar VAR_SALTYSPITOON_STATE, 25
 # 22 "data//maps/GatoCityE/scripts.pory"
-	msgbox GatoCityE_EventScript_ShowSWHJ35_Text_0
+	setvar VAR_SALTYSPITOON_STATE, 25
 # 23 "data//maps/GatoCityE/scripts.pory"
-	closemessage
+	msgbox GatoCityE_EventScript_ShowSWHJ35_Text_0
 # 24 "data//maps/GatoCityE/scripts.pory"
+	closemessage
+# 25 "data//maps/GatoCityE/scripts.pory"
 	warp MAP_GATO_CITY_S, 36, 8
 	return
 
 
 GatoCityE_EventScript_ShowSWHJ36::
-# 29 "data//maps/GatoCityE/scripts.pory"
-	setvar VAR_SALTYSPITOON_STATE, 26
 # 30 "data//maps/GatoCityE/scripts.pory"
-	msgbox GatoCityE_EventScript_ShowSWHJ35_Text_0
+	setvar VAR_SALTYSPITOON_STATE, 26
 # 31 "data//maps/GatoCityE/scripts.pory"
-	closemessage
+	msgbox GatoCityE_EventScript_ShowSWHJ35_Text_0
 # 32 "data//maps/GatoCityE/scripts.pory"
+	closemessage
+# 33 "data//maps/GatoCityE/scripts.pory"
 	warp MAP_GATO_CITY_S, 37, 9
 	return
 
 
 GatoCityE_EventScript_ShowSWHJ37::
-# 37 "data//maps/GatoCityE/scripts.pory"
-	setvar VAR_SALTYSPITOON_STATE, 27
 # 38 "data//maps/GatoCityE/scripts.pory"
-	msgbox GatoCityE_EventScript_ShowSWHJ35_Text_0
+	setvar VAR_SALTYSPITOON_STATE, 27
 # 39 "data//maps/GatoCityE/scripts.pory"
-	closemessage
+	msgbox GatoCityE_EventScript_ShowSWHJ35_Text_0
 # 40 "data//maps/GatoCityE/scripts.pory"
+	closemessage
+# 41 "data//maps/GatoCityE/scripts.pory"
 	warp MAP_GATO_CITY_S, 38, 8
 	return
 
 
 GatoCityE_EventScript_ShowSWHJ35_Text_0:
-# 22 "data//maps/GatoCityE/scripts.pory"
+# 23 "data//maps/GatoCityE/scripts.pory"
 	.string "---SUPER WEENIE HUT JR'S---$"

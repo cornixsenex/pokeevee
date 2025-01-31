@@ -28,15 +28,15 @@ static const union AnimCmd *const sAnims[] =
     sAnimCmdLoop
 };
 
-//Altaria Test Example
+//Altaria Test Example = 0
 static const u32 sPic1Gfx[] = INCBIN_U32("graphics/pokemon/altaria/anim_front.4bpp.lz");
 static const u16 sPic1Pal[] = INCBIN_U16("graphics/pokemon/altaria/normal.gbapal");
 
-//Duck Test Example
+//Duck Test Example = 1
 static const u32 sPic2Gfx[] = INCBIN_U32("graphics/battle_anims/sprites/duck.4bpp.lz");
 static const u16 sPic2Pal[] = INCBIN_U16("graphics/battle_anims/sprites/duck.gbapal");
 
-//Grandma - Bad OW Sprite shit
+//Grandma - Bad OW Sprite shit = 2
 static const u32 sPic3Gfx[] = INCBIN_U32("graphics/object_events/pics/people/grandma.4bpp.lz");
 static const u16 sPic3Pal[] = INCBIN_U16("graphics/object_events/palettes/grandma.gbapal");
 
@@ -152,6 +152,14 @@ static const u16 sPic30Pal[] = INCBIN_U16("graphics/trainers/front_pics/professo
 static const u32 sPic31Gfx[] = INCBIN_U32("graphics/trainers/front_pics/granny_front_pic.4bpp.lz");
 static const u16 sPic31Pal[] = INCBIN_U16("graphics/trainers/palettes/granny_front_pic.gbapal");
 
+//Mew = 31
+static const u32 sPic32Gfx[] = INCBIN_U32("graphics/pokemon/mew/anim_front.4bpp.lz");
+static const u16 sPic32Pal[] = INCBIN_U16("graphics/pokemon/mew/normal.gbapal");
+
+//News People / Interviewer = 32
+static const u32 sPic33Gfx[] = INCBIN_U32("graphics/trainers/front_pics/interviewer.4bpp.lz");
+static const u16 sPic33Pal[] = INCBIN_U16("graphics/trainers/front_pics/interviewer.gbapal");
+
 
 /* And this is an example script.
 
@@ -238,6 +246,10 @@ static const struct Pic sPics[] =
     {sPic30Gfx, sPic30Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Granny
     {sPic31Gfx, sPic31Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Mew
+    {sPic32Gfx, sPic32Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Interviewer 
+    {sPic33Gfx, sPic33Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

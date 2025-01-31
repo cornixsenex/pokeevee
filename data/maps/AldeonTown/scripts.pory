@@ -20,7 +20,7 @@ mapscripts AldeonTown_MapScripts {
 		elif (var(VAR_GRANNY_STATE) == 9) {
 			call (AldeonTown_Script_SetupStorm1)
 		}
-		elif (var(VAR_GRANNY_STATE) == 10) {
+		elif (var(VAR_GRANNY_STATE) == 10 || var(VAR_GRANNY_STATE) == 11) {
 			call (AldeonTown_Script_SetupStorm2)
 		}
 

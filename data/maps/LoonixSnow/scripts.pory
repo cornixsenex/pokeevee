@@ -1,1 +1,43 @@
-mapscripts LoonixSnow_MapScripts {}
+const FIELD_PIC_MEW = 31
+
+mapscripts LoonixSnow_MapScripts {
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_GRANNY_STATE, 11: LoonixSnow_EventScript_HidePlayer
+	]
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GRANNY_STATE, 11: LoonixSnow_Script_MewDream
+	]
+
+}
+
+script LoonixSnow_EventScript_HidePlayer {
+	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_LOONIX_SNOW)
+	hideobjectat (OBJ_EVENT_ID_FOLLOWER, MAP_LOONIX_SNOW)
+	end
+}
+
+script LoonixSnow_Script_MewDream {
+	lockall
+	setvar (VAR_GRANNY_STATE, 12)
+
+	playfanfare (MUS_HEAL)
+	waitfanfare
+	special (HealPlayerParty)
+	callnative (UpdateFollowingPokemon)
+
+	setobjectxyperm (1, 10, 10)
+	addobject (1)
+	showobjectat (1, MAP_LOONIX_SNOW)
+	
+	load_field_pic(FIELD_PIC_MEW, 120, 80)
+	playmoncry (SPECIES_MEW, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	destroy_field_pic(FIELD_PIC_MEW)
+	warpsilent (MAP_LOONIX_INSIDE_REAL_F2, 1, 5)
+
+	waitstate
+	releaseall
+	end
+}

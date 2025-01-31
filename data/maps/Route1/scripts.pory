@@ -3,7 +3,7 @@
 mapscripts Route1_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		if (var(VAR_GRANNY_STATE) == 10) {
+		if (var(VAR_GRANNY_STATE) == 10 || var(VAR_GRANNY_STATE) == 11) {
 			call (Route1_Script_SetupStorm)
 		}
 	}
