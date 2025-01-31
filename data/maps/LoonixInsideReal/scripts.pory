@@ -32,6 +32,10 @@ mapscripts LoonixInsideReal_MapScripts {
 				call (LoonixInsideReal_Script_HideGranny)
 		}
 
+		if (var(VAR_GRANNY_STATE) == 10 || var(VAR_GRANNY_STATE) == 11) {
+			playbgm (MUS_ABNORMAL_WEATHER, TRUE)
+		}
+
     }
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [

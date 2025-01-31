@@ -30,10 +30,14 @@ script LoonixSnow_Script_MewDream {
 	setobjectxyperm (1, 10, 10)
 	addobject (1)
 	showobjectat (1, MAP_LOONIX_SNOW)
+
+	delay (69)
 	
 	load_field_pic(FIELD_PIC_MEW, 120, 80)
+	delay (69)
 	playmoncry (SPECIES_MEW, CRY_MODE_ENCOUNTER)
 	waitmoncry
+	delay (69)
 	destroy_field_pic(FIELD_PIC_MEW)
 	warpsilent (MAP_LOONIX_INSIDE_REAL_F2, 1, 5)
 

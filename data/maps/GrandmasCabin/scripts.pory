@@ -99,6 +99,7 @@ script GrandmasCabin_Script_ShowGranny {
 
 script GrandmasCabin_Script_ShowStorm {
 	setweather (WEATHER_DOWNPOUR)
+	playbgm (MUS_ABNORMAL_WEATHER, TRUE)
 	
 	return
 }

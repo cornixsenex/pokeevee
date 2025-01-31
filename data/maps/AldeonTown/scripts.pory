@@ -87,6 +87,7 @@ script AldeonTown_Script_SetupStorm1 {
 	showobjectat (OBJ_EVENT_OLDMAN, MAP_ALDEON_TOWN)
 
 	setweather (WEATHER_DOWNPOUR)
+	playbgm(MUS_ABNORMAL_WEATHER, TRUE)
 
 	return
 }
@@ -99,6 +100,7 @@ script AldeonTown_Script_SetupStorm2 {
 	showobjectat (OBJ_EVENT_OLDMAN, MAP_ALDEON_TOWN)
 
 	setweather (WEATHER_DOWNPOUR)
+	playbgm(MUS_ABNORMAL_WEATHER, TRUE)
 
 	return
 }

@@ -33,6 +33,7 @@ script Route1_Script_SetupStorm  {
 
 
 	setweather (WEATHER_DOWNPOUR)
+	playbgm(MUS_ABNORMAL_WEATHER, TRUE)
 
 	return
 }
