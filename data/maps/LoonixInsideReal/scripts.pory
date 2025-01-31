@@ -54,14 +54,14 @@ script LoonixInsideReal_Script_HideGranny {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 12, 10)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_INVISIBLE)
 
-	end
+	return
 }
 
 script LoonixInsideReal_Script_ShowGrannyKitchen {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 1, 3)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_UP)
 
-	end
+	return
 }
 
 script LoonixInsideReal_Script_ShowGrannyDoorway {
@@ -71,43 +71,43 @@ script LoonixInsideReal_Script_ShowGrannyDoorway {
 	setobjectxyperm (OBJ_EVENT_EEVEE, 3, 8)
 	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_FACE_UP)
 	
-	end
+	return
 }
 
 script LoonixInsideReal_Script_ShowGrannyTable {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 9, 7)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_LEFT)
 
-	end
+	return
 }
 
 script LoonixInsideReal_Script_ShowGrannyTV {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 8, 6)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_UP)
 
-	end
+	return
 }
 script LoonixInsideReal_Script_ShowGrannyBed {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 11, 3)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
 
-	end
+	return
 }
 
 script LoonixInsideReal_Script_FacePlayerUp {
 	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
 
-	end
+	return
 }
 
 script LoonixInsideReal_Script_PrepareLeafGame {
 	setvar (VAR_GRANNY_STATE, 2)
-	end
+	return
 }
 
 script LoonixInsideReal_Script_ClearLeafGame {
 	setvar (VAR_GRANNY_STATE, 1)
-	end
+	return
 }
 
 script LoonixInsideReal_Script_GrannyScene1 {

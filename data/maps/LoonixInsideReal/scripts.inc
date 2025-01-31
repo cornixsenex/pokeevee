@@ -99,7 +99,7 @@ LoonixInsideReal_Script_HideGranny::
 	setobjectxyperm 1, 12, 10
 # 55 "data/maps/LoonixInsideReal/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_INVISIBLE
-	end
+	return
 
 
 LoonixInsideReal_Script_ShowGrannyKitchen::
@@ -107,7 +107,7 @@ LoonixInsideReal_Script_ShowGrannyKitchen::
 	setobjectxyperm 1, 1, 3
 # 62 "data/maps/LoonixInsideReal/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
-	end
+	return
 
 
 LoonixInsideReal_Script_ShowGrannyDoorway::
@@ -119,7 +119,7 @@ LoonixInsideReal_Script_ShowGrannyDoorway::
 	setobjectxyperm 2, 3, 8
 # 72 "data/maps/LoonixInsideReal/scripts.pory"
 	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_UP
-	end
+	return
 
 
 LoonixInsideReal_Script_ShowGrannyTable::
@@ -127,7 +127,7 @@ LoonixInsideReal_Script_ShowGrannyTable::
 	setobjectxyperm 1, 9, 7
 # 79 "data/maps/LoonixInsideReal/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
-	end
+	return
 
 
 LoonixInsideReal_Script_ShowGrannyTV::
@@ -135,7 +135,7 @@ LoonixInsideReal_Script_ShowGrannyTV::
 	setobjectxyperm 1, 8, 6
 # 86 "data/maps/LoonixInsideReal/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
-	end
+	return
 
 
 LoonixInsideReal_Script_ShowGrannyBed::
@@ -143,25 +143,25 @@ LoonixInsideReal_Script_ShowGrannyBed::
 	setobjectxyperm 1, 11, 3
 # 92 "data/maps/LoonixInsideReal/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
-	end
+	return
 
 
 LoonixInsideReal_Script_FacePlayerUp::
 # 98 "data/maps/LoonixInsideReal/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	end
+	return
 
 
 LoonixInsideReal_Script_PrepareLeafGame::
 # 104 "data/maps/LoonixInsideReal/scripts.pory"
 	setvar VAR_GRANNY_STATE, 2
-	end
+	return
 
 
 LoonixInsideReal_Script_ClearLeafGame::
 # 109 "data/maps/LoonixInsideReal/scripts.pory"
 	setvar VAR_GRANNY_STATE, 1
-	end
+	return
 
 
 LoonixInsideReal_Script_GrannyScene1::
