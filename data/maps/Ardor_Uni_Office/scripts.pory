@@ -1,0 +1,817 @@
+
+const OBJ_EVENT_CONSULL = 1
+const OBJ_EVENT_CONSULR = 2
+
+mapscripts Ardor_Uni_Office_MapScripts {
+
+}
+
+script Ardor_Uni_Office_EventScript_IncrementVar {
+	switch (var(VAR_UNI_STATE)) {
+		case 0:
+			setvar(VAR_UNI_STATE, 1)
+		case 1:
+			setvar(VAR_UNI_STATE, 2)
+		case 2:
+			setvar(VAR_UNI_STATE, 3)
+		case 3:
+			setvar(VAR_UNI_STATE, 4)
+		case 4:
+			setvar(VAR_UNI_STATE, 5)
+		case 5:
+			setvar(VAR_UNI_STATE, 6)
+		case 6:
+			setvar(VAR_UNI_STATE, 7)
+		case 7:
+			setvar(VAR_UNI_STATE, 8)
+		case 8:
+			setvar(VAR_UNI_STATE, 9)
+		case 9:
+			setvar(VAR_UNI_STATE, 10)
+		case 10:
+			setvar(VAR_UNI_STATE, 11)
+		default:
+			msgbox("VAR_UNI_STATE bad in IncVar")
+			closemessage
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_ConsulL {
+	lock
+	faceplayer
+	if (var(VAR_UNI_STATE) > 0) {
+		call (Ardor_Uni_Office_EventScript_Consul)
+	} else {
+		setvar (VAR_UNI_STATE, 1)
+		msgbox(Ardor_Uni_Office_Text_ConsulLIntro)
+		closemessage
+		call (Ardor_Uni_Office_EventScript_Consul)
+	}
+	applymovement (OBJ_EVENT_CONSULL, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_Office_EventScript_ConsulR {
+	lock
+	faceplayer
+	if (var(VAR_UNI_STATE) > 0) {
+		call (Ardor_Uni_Office_EventScript_Consul)
+	} else {
+		setvar (VAR_UNI_STATE, 1)
+		msgbox(Ardor_Uni_Office_Text_ConsulRIntro)
+		closemessage
+		call (Ardor_Uni_Office_EventScript_Consul)
+	}
+	applymovement (OBJ_EVENT_CONSULR, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_TermState_IncrementVar {
+	switch (var(VAR_UNI_TERM_STATE)) {
+		case 0:
+			setvar(VAR_UNI_TERM_STATE, 1)
+		case 1:
+			setvar(VAR_UNI_TERM_STATE, 2)
+		case 2:
+			setvar(VAR_UNI_TERM_STATE, 3)
+		case 3:
+			setvar(VAR_UNI_TERM_STATE, 4)
+		case 4:
+			setvar(VAR_UNI_TERM_STATE, 5)
+		case 5:
+			setvar(VAR_UNI_TERM_STATE, 6)
+		default:
+			msgbox("VAR_UNI_TERM_STATE BAD VALUE")
+			closemessage
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_Consul {
+	//if graduated ask donation
+	//if not enrolled ask enrollment
+	//if enrolled read off class list
+	checkitem (ITEM_DIPLOMA)
+	if (var(VAR_RESULT) == TRUE) {
+		call (Ardor_Uni_Office_EventScript_ConsulDonate)
+	} elif (var(VAR_UNI_TERM_STATE) > 4) {
+		call (Ardor_Uni_Office_EventScript_Graduate)
+	} else {
+		switch (var(VAR_UNI_STATE)) {
+			case 0:
+				msgbox("UNI_STATE is 0 in consul")
+				closemessage
+			case 1:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 2:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 3:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 4:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 5:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 6:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 7:
+				call (Ardor_Uni_Office_EventScript_ConsulRegister)
+			case 8:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			case 9:
+			case 10:
+				call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+			default:
+				msgbox("UNI_STATE problemo in consul")
+				closemessage
+		}	
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_Graduate {
+	setvar(VAR_UNI_TERM_STATE, 0)
+	call (Ardor_Uni_Office_EventScript_IncrementVar)
+	msgbox(Ardor_Uni_Office_Text_ConsulCongrats)
+	closemessage
+	if (var(VAR_UNI_STATE) == 9) {
+		setvar (VAR_UNI_STATE, 10)
+		msgbox(Ardor_Uni_Office_Text_ConsulGradutate)
+		closemessage
+		giveitem (ITEM_DIPLOMA)
+		call (Ardor_Uni_Office_EventScript_ConsulDonate)
+	} else {
+		call (Ardor_Uni_Office_EventScript_ConsulRegister)
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_ConsulDonate {
+	showmoneybox(0, 0)
+	msgbox(Ardor_Uni_Office_Text_ConsulDonate, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Ardor_Uni_Office_Text_ConsulDonateNo)
+		closemessage
+		hidemoneybox
+		return
+	} else {
+		switch (var(VAR_UNI_TERM_STATE)) {
+			case 0:
+			checkmoney (1000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (1000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 1)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				hidemoneybox
+				return
+			}
+			case 1:
+			//5000
+			checkmoney (5000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (5000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 2)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				hidemoneybox
+				return
+			}
+			case 2:
+			//10000
+			checkmoney (10000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (10000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 3)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				hidemoneybox
+				return
+			}
+			case 3:
+			//50000
+			checkmoney (50000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (50000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 4)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				hidemoneybox
+				return
+			}
+			case 4:
+			//100000
+			checkmoney (100000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (100000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 5)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				hidemoneybox
+				return
+			}
+			case 5:
+			//500000
+			checkmoney (500000)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (1000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				setvar (VAR_UNI_TERM_STATE, 6)
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				hidemoneybox
+				return
+			}
+			default:
+			//999999
+			checkmoney (999998)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+				closemessage
+				hidemoneybox
+				return
+			} else {
+				removemoney (999998)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				msgbox(Ardor_Uni_Office_Text_ConsulDonated)
+				closemessage
+				hidemoneybox
+				return
+			}
+		}
+	}
+}
+
+		
+
+script Ardor_Uni_Office_EventScript_ConsulRegister {
+	//Price is 1,000 will you pay YESNO
+	//increment var
+	//Welcome blurb
+	//switch on grade level (2, 4, 6, 8) for class intro blurb (open doors!)
+	//ask science, social, elective (open doors!)
+	//good luck with your studies
+	showmoneybox (0, 0)
+	msgbox(Ardor_Uni_Office_Text_ConsulRegister1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == NO) {
+		msgbox(Ardor_Uni_Office_EventScript_ConsulRegisterNo)
+		closemessage
+		hidemoneybox
+		return
+	} else {
+		checkmoney (1000)
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(Ardor_Uni_Office_Text_ConsulRegisterShort)
+			closemessage
+			hidemoneybox
+			return
+		} else {
+			removemoney (1000)
+			updatemoneybox
+			playse (SE_SHOP)
+			waitse
+			call (Ardor_Uni_Office_EventScript_IncrementVar)
+			msgbox(Ardor_Uni_Office_Text_ConsulRegisterWelcome)
+			closemessage
+			hidemoneybox
+			switch (var(VAR_UNI_STATE)) {
+				case 2:
+					setflag (FLAG_OPEN_CLASS_GRAMMAR)
+					setflag (FLAG_OPEN_CLASS_ARITHMETIC)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled1)
+				case 4:
+					setflag (FLAG_OPEN_CLASS_ALGEBRA)
+					setflag (FLAG_OPEN_CLASS_LITERATURE)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled2)
+				case 6:
+					setflag (FLAG_OPEN_CLASS_GEOMETRY)
+					setflag (FLAG_OPEN_CLASS_POETRY)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled3)
+				case 8:
+					setflag (FLAG_OPEN_CLASS_CALCULUS)
+					setflag (FLAG_OPEN_CLASS_RHETORIC)
+					msgbox(Ardor_Uni_Office_Text_ConsulEnrolled4)
+				default:
+					msgbox("PROBLEM IN UNI_STATE switch in ConsulRegister")
+			}
+			closemessage
+
+			//ask science  OPEN DOORS  
+			//ask social   OPEN DOORS
+			//ask elective OPEN DOORS
+			call (Ardor_Uni_Office_EventScript_EnrollScience)
+
+			//good luck
+			call (Ardor_Uni_Office_EventScript_ConsulEnrolled)
+
+			return
+		}
+	}
+	
+}
+
+script Ardor_Uni_Office_EventScript_EnrollSocial {
+	msgbox(Ardor_Uni_Office_Text_EnrollSocialIntro)
+	multichoice (0, 0, MULTI_ARDOR_CHOOSE_SOCIAL, TRUE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (flag(FLAG_OPEN_CLASS_HISTORY)) {
+				msgbox(Ardor_Uni_Office_Text_HistoryRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			} else {
+				setflag (FLAG_OPEN_CLASS_HISTORY)
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			}
+		case 1:
+			if (flag(FLAG_OPEN_CLASS_ARCHAEOLOGY)) {
+				msgbox(Ardor_Uni_Office_Text_ArchaeologyRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			} else {
+				setflag (FLAG_OPEN_CLASS_ARCHAEOLOGY)
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			}
+		case 2:
+			if (flag(FLAG_OPEN_CLASS_PSYCHOLOGY)) {
+				msgbox(Ardor_Uni_Office_Text_PsychologyRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			} else {
+				setflag (FLAG_OPEN_CLASS_PSYCHOLOGY)
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			}
+		case 3:
+			if (flag(FLAG_OPEN_CLASS_PHILOSOPHY)) {
+				msgbox(Ardor_Uni_Office_Text_PhilosophyRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			} else {
+				setflag (FLAG_OPEN_CLASS_PHILOSOPHY)
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			}
+		default:
+			msgbox("PROBLEMO in enroll social switcher")
+			closemessage
+			end
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_EnrollScience {
+	msgbox(Ardor_Uni_Office_Text_EnrollScienceIntro)
+	multichoice (0, 0, MULTI_ARDOR_CHOOSE_SCIENCE, TRUE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (flag(FLAG_OPEN_CLASS_GEOLOGY)) {
+				msgbox(Ardor_Uni_Office_Text_GeologyRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollScience)
+			} else {
+				setflag (FLAG_OPEN_CLASS_GEOLOGY)
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			}
+		case 1:
+			if (flag(FLAG_OPEN_CLASS_BIOLOGY)) {
+				msgbox(Ardor_Uni_Office_Text_BiologyRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollScience)
+			} else {
+				setflag (FLAG_OPEN_CLASS_BIOLOGY)
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			}
+		case 2:
+			if (flag(FLAG_OPEN_CLASS_CHEMISTRY)) {
+				msgbox(Ardor_Uni_Office_Text_ChemistryRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollScience)
+			} elif (!defeated(TRAINER_UNI_BIOLOGY) ) {
+				msgbox(Ardor_Uni_Office_Text_ChemistryPrereq)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollScience)
+			} else {
+				setflag (FLAG_OPEN_CLASS_CHEMISTRY)
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			}
+		case 3:
+			if (flag(FLAG_OPEN_CLASS_PHYSICS)) {
+				msgbox(Ardor_Uni_Office_Text_PhysicsRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollScience)
+			} elif (!defeated(TRAINER_UNI_CHEMISTRY) ) {
+				msgbox(Ardor_Uni_Office_Text_PhysicsPrereq)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollScience)
+			} else {
+				setflag (FLAG_OPEN_CLASS_PHYSICS)
+				setflag (FLAG_PHYSICS_HIDE_GEM)
+				call (Ardor_Uni_Office_EventScript_EnrollSocial)
+			}
+		default:
+			msgbox("PROBLEMO in enroll science switcher")
+			closemessage
+			end
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_EnrollElective {
+	msgbox(Ardor_Uni_Office_Text_EnrollElectiveIntro)
+	multichoice (0, 0, MULTI_ARDOR_CHOOSE_ELECTIVE, TRUE)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			if (flag(FLAG_OPEN_CLASS_ART)) {
+				msgbox(Ardor_Uni_Office_Text_ArtRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			} else {
+				setflag (FLAG_OPEN_CLASS_ART)
+			}
+		case 1:
+			if (flag(FLAG_OPEN_CLASS_MUSIC)) {
+				msgbox(Ardor_Uni_Office_Text_MusicRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			} else {
+				setflag (FLAG_OPEN_CLASS_MUSIC)
+			}
+		case 2:
+			if (flag(FLAG_OPEN_CLASS_GYM)) {
+				msgbox(Ardor_Uni_Office_Text_GymRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			} else {
+				setflag (FLAG_OPEN_CLASS_GYM)
+			}
+		case 3:
+			if (flag(FLAG_OPEN_CLASS_LOGIC)) {
+				msgbox(Ardor_Uni_Office_Text_LogicRepeat)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			} elif (!defeated(TRAINER_UNI_ALGEBRA) ) {
+				msgbox(Ardor_Uni_Office_Text_LogicPrereq)
+				closemessage
+				call (Ardor_Uni_Office_EventScript_EnrollElective)
+			} else {
+				setflag (FLAG_OPEN_CLASS_LOGIC)
+			}
+		default:
+			msgbox("PROBLEMO in enroll elective switcher")
+			closemessage
+			end
+	}
+	return
+}
+
+script Ardor_Uni_Office_EventScript_ConsulEnrolled {
+	//go down the list to see which classes are opened but unfinished
+	if (flag(FLAG_OPEN_CLASS_GRAMMAR) && (!defeated(TRAINER_UNI_GRAMMAR))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGrammar)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_LITERATURE) && (!defeated(TRAINER_UNI_LITERATURE))) {
+		msgbox(Ardor_Uni_Office_Text_FinishLiterature)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_POETRY) && (!defeated(TRAINER_UNI_POETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPoetry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_RHETORIC) && (!defeated(TRAINER_UNI_RHETORIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishRhetoric)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_ARITHMETIC) && (!defeated(TRAINER_UNI_ARITHMETIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishArithmetic)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_ALGEBRA) && (!defeated(TRAINER_UNI_ALGEBRA))) {
+		msgbox(Ardor_Uni_Office_Text_FinishAlgebra)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_GEOMETRY) && (!defeated(TRAINER_UNI_GEOMETRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGeometry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_CALCULUS) && (!defeated(TRAINER_UNI_CALCULUS))) {
+		msgbox(Ardor_Uni_Office_Text_FinishCalculus)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_BIOLOGY) && (!defeated(TRAINER_UNI_BIOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishBiology)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_GEOLOGY) && (!defeated(TRAINER_UNI_GEOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGeology)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_CHEMISTRY) && (!defeated(TRAINER_UNI_CHEMISTRY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishChemistry)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_PHYSICS) && (!defeated(TRAINER_UNI_PHYSICS))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPhysics)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_HISTORY) && (!defeated(TRAINER_UNI_HISTORY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishHistory)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_ARCHAEOLOGY) && (!defeated(TRAINER_UNI_ARCHAEOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishArchaeology)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_PSYCHOLOGY) && (!defeated(TRAINER_UNI_PSYCHOLOGY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPsychology)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_PHILOSOPHY) && (!defeated(TRAINER_UNI_PHILOSOPHY))) {
+		msgbox(Ardor_Uni_Office_Text_FinishPhilosophy)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_GYM) && (!defeated(TRAINER_UNI_GYM))) {
+		msgbox(Ardor_Uni_Office_Text_FinishGym)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_ART) && (!defeated(TRAINER_UNI_ART))) {
+		msgbox(Ardor_Uni_Office_Text_FinishArt)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_MUSIC) && (!defeated(TRAINER_UNI_MUSIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishMusic)
+		closemessage
+	}
+	if (flag(FLAG_OPEN_CLASS_LOGIC) && (!defeated(TRAINER_UNI_LOGIC))) {
+		msgbox(Ardor_Uni_Office_Text_FinishLogic)
+		closemessage
+	}
+
+	return
+}
+
+text Ardor_Uni_Office_Text_ConsulLIntro {
+	format("Te non cognosco. Sum Albinus consulque Collegi Ardentis.")
+}
+
+text Ardor_Uni_Office_Text_ConsulRIntro {
+	format("Te non cognosco. Sum Platonus consulque Collegi Ardentis.")
+}
+
+text Ardor_Uni_Office_Text_ConsulEnrolled1 {
+	format("In sessione prima necesse est studere artem gramatici et arithmeticam.")
+}
+
+text Ardor_Uni_Office_Text_ConsulEnrolled2 {
+	format("In sessione secunda necesse est studere literaturam at algebram.")
+}
+
+text Ardor_Uni_Office_Text_ConsulEnrolled3 {
+	format("In sessione tertia necesse est studere artes poematis et geometriae.")
+}
+
+text Ardor_Uni_Office_Text_ConsulEnrolled4 {
+	format("In sessione quarta necesse est studere oratum et calculum.")
+}
+
+text Ardor_Uni_Office_Text_FinishGrammar {
+	format("Stude grammaticam in cubiculo quinto in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishLiterature {
+	format("Stude litteraturam in cubiculo quarto in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishPoetry {
+	format("Stude poemata in cubiculo sexto in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishRhetoric {
+	format("Stude oratum in cubiculo quinto in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishArithmetic {
+	format("Stude arithmeticum in cubiculo quarto in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishAlgebra {
+	format("Stude algebram in cubiculo duo in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishGeometry {
+	format("Stude geometriam in cubiculo tertio in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishCalculus {
+	format("Stude calculum in cubiculo tertio in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishBiology {
+	format("Stude biologiam in cubiculo secundo in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishGeology {
+	format("Stude geologiam in cubiculo primo in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishChemistry {
+	format("Stude alchemiam in cubiculo tertio in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishPhysics {
+	format("Stude physicas in cubiculo secundo in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishHistory {
+	format("Stude historiam in cubiculo quarto in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishArchaeology {
+	format("Stude archaeologiam in cubiculo quinto in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishPsychology {
+	format("Stude psychologiam in cubiculo sexto in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_Text_FinishPhilosophy {
+	format("Stude philosophiam in cubiculo primo in tabulatione tertia.")
+}
+
+text Ardor_Uni_Office_Text_FinishGym {
+	format("Stude gymnasium in campo harpasti prope Collegium Ardentem in urbe.")
+}
+
+text Ardor_Uni_Office_Text_FinishArt {
+	format("Stude picturam in cubiculo sexto in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishMusic {
+	format("Stude musicam prope ascensionem in tabulatione prima.")
+}
+
+text Ardor_Uni_Office_Text_FinishLogic {
+	format("Stude logicam in cubiculo primo in tabulatione secunda.")
+}
+
+text Ardor_Uni_Office_EventScript_ConsulRegisterNo {
+	format("Reveni cum lubidine descere. Vale.")
+}
+
+text Ardor_Uni_Office_Text_ConsulRegisterShort {
+	format("Sacculus parvus est tuus. Reveni cum sacculo pleno.")
+}
+
+text Ardor_Uni_Office_Text_ConsulRegisterWelcome {
+	format("Satis est nummerus tributi tui. Congratulatio! Numerus quinque est scholas te studere necesse est. Latinam, scientiam, artes, homines, matematicasque studebis sessione. Sessiones quattor diplomam Ardentis accipies post.")
+}
+
+text Ardor_Uni_Office_Text_ConsulRegister1 {
+	format("Salve puer, dice sic venisti studere Ardente artes. Pretium sessionis sestertii mille est. Emesne mille?")
+}
+
+text Ardor_Uni_Office_Text_EnrollScienceIntro {
+	format("Quam scientiam studebis?")
+}
+
+text Ardor_Uni_Office_Text_EnrollSocialIntro {
+	format("Quam scientiam societatis studebis?")
+}
+
+text Ardor_Uni_Office_Text_EnrollElectiveIntro {
+	format("Quam artem otii studebis?")
+}
+
+text Ardor_Uni_Office_Text_GeologyRepeat {
+	format("Scientem geologiae iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_BiologyRepeat {
+	format("Scientem biologiae iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_ChemistryRepeat {
+	format("Scientem alchemiae iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_PhysicsRepeat {
+	format("Scientem physicarum iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_HistoryRepeat {
+	format("Historiam iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_ArchaeologyRepeat {
+	format("Archaeologiam iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_PsychologyRepeat {
+	format("Psychologiam iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_PhilosophyRepeat {
+	format("Philosophiam iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_GymRepeat {
+	format("Gymnasium iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_ArtRepeat {
+	format("Artem picturae iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_MusicRepeat {
+	format("Artem musicae iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_LogicRepeat {
+	format("Logicam iam studuisti! Necesse semper est artes scientiasque studere novas.")
+}
+
+text Ardor_Uni_Office_Text_ChemistryPrereq {
+	format("Necesse est studere scientiam biologiae ante alchemiam.")
+}
+
+text Ardor_Uni_Office_Text_PhysicsPrereq {
+	format("Necesse est studere scientiam alchemiae ante physicas.")
+}
+
+text Ardor_Uni_Office_Text_LogicPrereq {
+	format("Necesse est studere algebram ante logicam.")
+}
+
+text Ardor_Uni_Office_Text_ConsulCongrats {
+	format("Artes quinque iam studuisti. Congratulation! Sessionem perfecisti.")
+}
+
+text Ardor_Uni_Office_Text_ConsulGradutate {
+	format("Omnia artes iam studuisti. Congratulatio! Collegium Ardentem perfecisti! Accipe hoc diploma.")
+}
+
+text Ardor_Uni_Office_Text_ConsulDonated {
+	format("Gratias tibi ago.")
+}
+
+text Ardor_Uni_Office_Text_ConsulDonate {
+	format("Salve alumne. Venisti donare?")
+}
+
+text Ardor_Uni_Office_Text_ConsulDonateNo {
+	format("Reveni cum lubidine donare. Vale alumne.")
+}

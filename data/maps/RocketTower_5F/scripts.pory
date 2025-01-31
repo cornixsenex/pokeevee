@@ -1,0 +1,27 @@
+mapscripts RocketTower_5F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (RocketTower_5F_OnResume)
+	}
+
+}
+
+script RocketTower_5F_OnResume {
+	call (RocketTower_5F_EventScript_SetFloor5)
+	if (var(VAR_ROCKETTOWER_STATE) > 1) {
+		call (RocketTower_5F_EventScript_OpenElevator)
+	}
+	end
+}
+
+script RocketTower_5F_EventScript_SetFloor5 {
+	setvar (VAR_ROCKETTOWER_FLOOR, 5)
+	return
+}
+
+script RocketTower_5F_EventScript_OpenElevator {	
+	setmetatile (25, 3, METATILE_SilphCo_Elevator_Door_Open, 0)
+	return
+}
+
+

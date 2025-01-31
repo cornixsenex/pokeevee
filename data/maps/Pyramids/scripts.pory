@@ -1,0 +1,12 @@
+mapscripts Pyramids_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		pyramid_updatelight (200, PYRAMID_LIGHT_SET_RADIUS)
+		setvar (VAR_TEMP_F, 1)
+		if ( (var(VAR_INDY_STATE) != 3) && (!flag(FLAG_PYRAMIDS_HIDEMAXIE) )) {
+			removeobject (1)
+			setflag (FLAG_PYRAMIDS_HIDEMAXIE)
+		}
+		end
+	}
+
+}

@@ -1,0 +1,93 @@
+
+
+const OBJ_EVENT_TEACHER = 1
+
+
+
+mapscripts Ardor_Uni_PhilosophyClass_MapScripts {}
+
+
+script Ardor_Uni_PhilosophyClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_PHILOSOPHY)) {
+		msgbox(Ardor_Uni_PhilosophyClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_PHILOSOPHY_INTRO)) {
+		call (Ardor_Uni_PhilosophyClass_EventScript_DoPhilosophy)
+	} else {
+		setflag (FLAG_PHILOSOPHY_INTRO)
+		msgbox(Ardor_Uni_PhilosophyClass_Text_ClassIntro)
+		closemessage
+		call (Ardor_Uni_PhilosophyClass_EventScript_DoPhilosophy)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_PhilosophyClass_EventScript_DoPhilosophy {
+	msgbox(Ardor_Uni_PhilosophyClass_Text_PhilosophyIntro, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		special (NamePhilosophy)
+		waitstate
+		specialvar (VAR_RESULT, IsPhilosophyPhrase)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_PhilosophyClass_EventScript_Test)
+		} else {
+			msgbox(Ardor_Uni_PhilosophyClass_Text_PhilosophyFail)
+			closemessage
+			msgbox(Ardor_Uni_PhilosophyClass_Text_Return)
+			closemessage
+		}
+	} else {
+		msgbox(Ardor_Uni_PhilosophyClass_Text_Return)
+		closemessage
+	}
+	return
+}
+
+script Ardor_Uni_PhilosophyClass_EventScript_Test {
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(Ardor_Uni_PhilosophyClass_Text_TestBegin)
+	waitmessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_PHILOSOPHY, Ardor_Uni_PhilosophyClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_PhilosophyClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+text Ardor_Uni_PhilosophyClass_Text_ClassIntro {
+	format("Salve puer. Magister senex Hamlet sum. Quod est Philosophia? Non scio...")
+}
+
+text Ardor_Uni_PhilosophyClass_Text_PhilosophyIntro {
+	format("Venisti philosophiam disserere?")
+}
+
+text Ardor_Uni_PhilosophyClass_Text_PhilosophyFail {
+	format("{STR_VAR_1}? Quid est {STR_VAR_1}? Tenetne matrem {STR_VAR_1}? Ubi est {STR_VAR_1}? Estne senex ut iuvenis {STR_VAR_1}? Cur est {STR_VAR_1}? Non scio...Qui scit?...Non scio...")
+}
+
+text Ardor_Uni_PhilosophyClass_Text_Return {
+	format("Reveni cum amor philosophiae.")
+}
+
+text Ardor_Uni_PhilosophyClass_Text_ClassFinished {
+	format("Iam veritatem inquisivisti. Vale, non plus tibi docere possum.")
+}
+
+text Ardor_Uni_PhilosophyClass_Text_TestBegin {
+	format("Quid?")
+}
+
+text Ardor_Uni_PhilosophyClass_Text_TeacherBattleLost {
+	format("Esse an non esse, quaestio est.")
+}
+
+

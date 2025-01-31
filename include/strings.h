@@ -1140,6 +1140,88 @@ extern const u8 gText_TrainerHill2F[];
 extern const u8 gText_TrainerHill3F[];
 extern const u8 gText_TrainerHill4F[];
 
+//CityClara_Church choose stone
+extern const u8 gText_StoneChooseFire[];
+extern const u8 gText_StoneChooseWater[];
+extern const u8 gText_StoneChooseThunder[];
+extern const u8 gText_StoneChooseNone[];
+
+//RocketTower_Elevator_ChooseFloor
+
+extern const u8 gText_FloorChooseBF1[];
+extern const u8 gText_FloorChoose1[];
+extern const u8 gText_FloorChoose2[];
+extern const u8 gText_FloorChoose3[];
+extern const u8 gText_FloorChoose4[];
+extern const u8 gText_FloorChoose5[];
+extern const u8 gText_FloorChoose6[];
+extern const u8 gText_FloorChoose7[];
+extern const u8 gText_FloorChoose8[];
+extern const u8 gText_FloorChoose9[];
+extern const u8 gText_FloorChoose10[];
+extern const u8 gText_FloorChoose11[];
+extern const u8 gText_FloorChoose12[];
+extern const u8 gText_FloorChoose13[];
+
+//Tic Tac Toe Moves
+extern const u8 gText_TicTacToeChoose1[];
+extern const u8 gText_TicTacToeChoose2[];
+extern const u8 gText_TicTacToeChoose3[];
+extern const u8 gText_TicTacToeChoose4[];
+extern const u8 gText_TicTacToeChoose5[];
+extern const u8 gText_TicTacToeChoose6[];
+extern const u8 gText_TicTacToeChoose7[];
+extern const u8 gText_TicTacToeChoose8[];
+extern const u8 gText_TicTacToeChoose9[];
+
+//Salty Spitoon Get Wager - 1, 10, 100, 1000, 10000, 100000, NVM
+extern const u8 gText_SaltySpitoonWager1[];
+extern const u8 gText_SaltySpitoonWager2[];
+extern const u8 gText_SaltySpitoonWager3[];
+extern const u8 gText_SaltySpitoonWager4[];
+extern const u8 gText_SaltySpitoonWager5[];
+extern const u8 gText_SaltySpitoonWager6[];
+extern const u8 gText_SaltySpitoonWager7[];
+
+//Ardor Choose Science
+extern const u8 gText_ArdorChooseScience1[];
+extern const u8 gText_ArdorChooseScience2[];
+extern const u8 gText_ArdorChooseScience3[];
+extern const u8 gText_ArdorChooseScience4[];
+
+//Ardor Choose Social
+extern const u8 gText_ArdorChooseSocial1[];
+extern const u8 gText_ArdorChooseSocial2[];
+extern const u8 gText_ArdorChooseSocial3[];
+extern const u8 gText_ArdorChooseSocial4[];
+
+//Ardor Choose Elective
+extern const u8 gText_ArdorChooseElective1[];
+extern const u8 gText_ArdorChooseElective2[];
+extern const u8 gText_ArdorChooseElective3[];
+extern const u8 gText_ArdorChooseElective4[];
+
+//Choose Fossil (Geology)
+extern const u8 gText_ChooseFossil1[];
+extern const u8 gText_ChooseFossil2[];
+extern const u8 gText_ChooseFossil3[];
+extern const u8 gText_ChooseFossil4[];
+extern const u8 gText_ChooseFossil5[];
+extern const u8 gText_ChooseFossil6[];
+extern const u8 gText_ChooseFossil7[];
+
+//Choose Music Note (Ardor Music Class)
+extern const u8 gText_Ardor_MusicChooseNote1[];
+extern const u8 gText_Ardor_MusicChooseNote2[];
+extern const u8 gText_Ardor_MusicChooseNote3[];
+extern const u8 gText_Ardor_MusicChooseNote4[];
+extern const u8 gText_Ardor_MusicChooseNote5[];
+extern const u8 gText_Ardor_MusicChooseNote6[];
+extern const u8 gText_Ardor_MusicChooseNote7[];
+extern const u8 gText_Ardor_MusicChooseNote8[];
+
+
+
 // Cable Club multichoice text
 extern const u8 CableClub_Text_TradeUsingLinkCable[];
 extern const u8 CableClub_Text_BattleUsingLinkCable[];
@@ -2695,6 +2777,51 @@ extern const u8 gText_TellHimTheWords[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
+//Book Verse
+extern const u8 gText_BookVerse1[];
+extern const u8 gText_BookVerse2[];
+extern const u8 gText_BookVerse3[];
+extern const u8 gText_BookVerse4[];
+extern const u8 gText_BookVerse5[];
+extern const u8 gText_BookVerse6[];
+extern const u8 gText_BookVerse7[];
+extern const u8 gText_BookVerse8[];
+extern const u8 gText_BookVerse9[];
+extern const u8 gText_BookVerse10[];
+extern const u8 gText_BookVerse11[];
+extern const u8 gText_BookVerse12[];
+extern const u8 gText_BookVerse13[];
+extern const u8 gText_BookVerse14[];
+extern const u8 gText_BookVerse15[];
+extern const u8 gText_BookVerse16[];
+extern const u8 gText_BookVerse17[];
+extern const u8 gText_BookVerse18[];
+extern const u8 gText_BookVerse19[];
+extern const u8 gText_BookVerse20[];
+extern const u8 gText_BookVerse21[];
+extern const u8 gText_BookVerse22[];
+extern const u8 gText_BookVerse23[];
+extern const u8 gText_BookVerse24[];
+extern const u8 gText_BookVerse25[];
+extern const u8 gText_BookVerse26[];
+extern const u8 gText_BookVerse27[];
+extern const u8 gText_BookVerse28[];
+extern const u8 gText_BookVerse29[];
+extern const u8 gText_BookVerse30[];
+extern const u8 gText_BookVerse31[];
+extern const u8 gText_BookVerse32[];
+extern const u8 gText_BookVerse33[];
+extern const u8 gText_BookVerse34[];
+extern const u8 gText_BookVerse35[];
+extern const u8 gText_BookVerse36[];
+extern const u8 gText_BookVerse37[];
+extern const u8 gText_BookVerse38[];
+
+// Ostracon
+extern const u8 gText_Ostracon[];
+//Trainer Card
+extern const u8 gText_TrainerCard[];
+
 extern const u8 gText_BasePointsResetToZero[];
 
 extern const u8 gText_Fertilize[];
@@ -2712,3 +2839,4 @@ extern const u8 gText_Relearn[]; // move relearner from summary screen
 extern const u8 gText_Rename[]; // change nickname from summary screen
 
 #endif // GUARD_STRINGS_H
+

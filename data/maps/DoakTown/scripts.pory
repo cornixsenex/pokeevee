@@ -1,0 +1,279 @@
+mapscripts DoakTown_MapScripts {
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ROBUSTUS_STATE, 6: Robustus_OnFrame_ExeuntCampers
+	]
+
+}
+
+
+script Robustus_EventScript_LeafTrigger1 {
+	lock
+	call (Robustus_EventScript_Counter)
+	applymovement (2, Common_Movement_FaceLeft)
+	applymovement (2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (2, Robustus_Movement_LeafApproach1)
+	waitmovement (0)
+	msgbox (Robustus_Text_Leaf1)
+	closemessage
+	applymovement (2, Robustus_Movement_LeafExit)
+	waitmovement (0)
+	removeobject (2)
+	setflag (FLAG_ROBUSTUS_HIDELEAF)	
+	release
+	end
+}	
+
+script Robustus_EventScript_LeafTrigger2 {
+	lock	
+	call (Robustus_EventScript_Counter)
+	applymovement (2, Common_Movement_FaceLeft)
+	waitmovement (0)
+	applymovement (2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (2, Robustus_Movement_LeafApproach2)
+	waitmovement (0)
+	msgbox (Robustus_Text_Leaf1)
+	closemessage
+	applymovement (2, Robustus_Movement_LeafExit)
+	waitmovement (0)
+	removeobject (2)
+	setflag (FLAG_ROBUSTUS_HIDELEAF)	
+	release
+	end
+}	
+
+script Robustus_EventScript_Camper1 {	
+	if (!defeated(TRAINER_PIPPIN)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_PIPPIN, Robustus_Text_PippinIntro, Robustus_Text_PippinLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_PippinPost)
+		closemessage
+		release
+	}
+	end
+}
+
+script Robustus_EventScript_Camper2 {
+	if (!defeated(TRAINER_GRAYSON)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_GRAYSON, Robustus_Text_GraysonIntro, Robustus_Text_GraysonLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_GraysonPost)
+		closemessage
+		release
+	}
+}
+
+script Robustus_EventScript_Camper3 {
+	if (!defeated(TRAINER_SEAN)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_SEAN, Robustus_Text_SeanIntro, Robustus_Text_SeanLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_SeanPost)
+		closemessage
+		release
+	}
+}
+
+script Robustus_EventScript_Camper4 {
+	if (!defeated(TRAINER_MERRY)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_MERRY, Robustus_Text_MerryIntro, Robustus_Text_MerryLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_MerryPost)
+		closemessage
+		release
+	}
+}
+
+script Robustus_EventScript_Camper5 {
+	if (!defeated(TRAINER_PATRICK)) {
+		call (Robustus_EventScript_Counter)
+		trainerbattle_single(TRAINER_PATRICK, Robustus_Text_PatrickIntro, Robustus_Text_PatrickLost)
+	} else {
+		lock
+		faceplayer
+		msgbox (Robustus_Text_PatrickPost)
+		closemessage
+		release
+	}
+}
+
+script Robustus_EventScript_ResetCounter {
+	if (var(VAR_ROBUSTUS_STATE) > 1) {
+		setvar (VAR_ROBUSTUS_STATE, 1)
+		if (defeated(TRAINER_PIPPIN)) {
+			cleartrainerflag (TRAINER_PIPPIN)
+		}
+		if (defeated(TRAINER_GRAYSON)) {
+			cleartrainerflag (TRAINER_GRAYSON)
+		}
+		if (defeated(TRAINER_SEAN)) {
+			cleartrainerflag (TRAINER_SEAN)
+		}
+		if (defeated(TRAINER_MERRY)) {
+			cleartrainerflag (TRAINER_MERRY)
+		}
+		if (defeated(TRAINER_PATRICK)) {
+			cleartrainerflag (TRAINER_PATRICK)
+		}
+	} else {
+		release
+	}
+	end
+}
+
+script Robustus_EventScript_Counter {
+	addvar (VAR_ROBUSTUS_STATE, 1)
+	return
+}
+
+script Robustus_OnFrame_ExeuntCampers {
+	lock
+	call (Robustus_EventScript_Counter)
+	msgbox (Robustus_Text_Test)
+	closemessage
+	applymovement (4, Robustus_Movement_ExitCamper1)
+	applymovement (3, Robustus_Movement_ExitCamper2)
+	applymovement (5, Robustus_Movement_ExitCamper3)
+	applymovement (6, Robustus_Movement_ExitCamper4)
+	applymovement (7, Robustus_Movement_ExitCamper5)
+	waitmovement (0)
+	removeobject (3)
+	removeobject (4)
+	removeobject (5)
+	removeobject (6)
+	removeobject (7)
+	setflag (FLAG_ROBUSTUS_HIDECAMPERS)
+	release
+	end
+}
+
+movement Robustus_Movement_ExitCamper1 {	
+	walk_left 
+	walk_up * 2
+	walk_left * 7
+}
+
+movement Robustus_Movement_ExitCamper2 {	
+	walk_up * 5
+	walk_left * 11
+}
+
+movement Robustus_Movement_ExitCamper3 {	
+	walk_up * 2
+	walk_left * 15
+}
+
+movement Robustus_Movement_ExitCamper4 {
+	walk_left * 2
+	walk_up
+	walk_left * 17
+}	
+	
+movement Robustus_Movement_ExitCamper5 {
+	walk_left
+	walk_up * 5
+	walk_left * 18
+}
+
+movement Robustus_Movement_LeafApproach1 {
+	walk_left * 2
+}
+
+movement Robustus_Movement_LeafApproach2 {
+	walk_left
+	walk_diag_southwest
+	face_left
+}
+
+movement Robustus_Movement_LeafExit {
+	walk_right * 2
+	walk_up * 6
+	
+}
+
+text Robustus_Text_PippinIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_PippinLost {
+	format("TEST!")
+}
+
+text Robustus_Text_PippinPost {
+	format("TEST!")
+}	
+
+text Robustus_Text_GraysonIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_GraysonLost {
+	format("TEST!")
+}
+
+text Robustus_Text_GraysonPost {
+	format("TEST!")
+}
+
+text Robustus_Text_SeanIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_SeanLost {
+	format("TEST!")
+}
+
+text Robustus_Text_SeanPost {
+	format("TEST!")
+}		
+
+text Robustus_Text_MerryIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_MerryLost {
+	format("TEST!")
+}
+
+text Robustus_Text_MerryPost {
+	format("TEST!")
+}	
+
+text Robustus_Text_PatrickIntro {
+	format("TEST!")
+}
+
+text Robustus_Text_PatrickLost {
+	format("TEST!")
+}
+
+text Robustus_Text_PatrickPost {
+	format("TEST!")
+}	
+
+text Robustus_Text_Leaf1 {
+	format("My gosh! Look at you {PLAYER} I see you've grown more lovely in every possible way. Unfortunately I can't find a way to continue our trip north to Ardor. The bicycle highway is not a choice unless we can ground score ourselves a bike, and rock tunnel is blocked by hella rocks. I fear the passage south through the city but currently that seems our only choice. Please find a way to keep travelling north or brace yourself to go through the city.")
+}
+
+
+
+
+text Robustus_Text_Test {
+	format("TEST!")
+}
+
+
+

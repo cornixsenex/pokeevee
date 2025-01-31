@@ -14,6 +14,11 @@
 #include "item_use.h"
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
+#include "item_icon.h"
+#include "pokemon_summary_screen.h"
+#include "menu.h"
+#include "party_menu.h"
+#include "overworld.h"
 #include "graphics.h"
 #include "constants/battle.h"
 #include "constants/items.h"
@@ -93,6 +98,11 @@ const u8 sText_s[] =_("s");
 
 u8 *CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity)
 {
+//    u8 *end = StringCopy(dst, ItemId_GetName(itemId)) - 1;
+//    if (quantity < 2)
+//        return;
+//    if (DoesItemHavePluralName(itemId))
+//        StringCopy(dst, ItemId_GetPluralName(itemId));
     if (quantity == 1)
     {
         return StringCopy(dst, ItemId_GetName(itemId));
@@ -974,11 +984,38 @@ u32 ItemId_GetSecondaryId(u32 itemId)
     return gItemsInfo[SanitizeItemId(itemId)].secondaryId;
 }
 
+#define ITEM_ICON_X 26
+#define ITEM_ICON_Y 24
+
+#include "gpu_regs.h"
+
+bool32 IsPinchBerryItemEffect(u16 holdEffect)
+{
+    switch (holdEffect)
+    {
+    case HOLD_EFFECT_ATTACK_UP:
+    case HOLD_EFFECT_DEFENSE_UP:
+    case HOLD_EFFECT_SPEED_UP:
+    case HOLD_EFFECT_SP_ATTACK_UP:
+    case HOLD_EFFECT_SP_DEFENSE_UP:
+    case HOLD_EFFECT_CRITICAL_UP:
+    case HOLD_EFFECT_RANDOM_STAT_UP:
+    #ifdef HOLD_EFFECT_CUSTAP_BERRY
+    case HOLD_EFFECT_CUSTAP_BERRY:
+    #endif
+    #ifdef HOLD_EFFECT_MICLE_BERRY
+    case HOLD_EFFECT_MICLE_BERRY:
+    #endif
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 u32 ItemId_GetFlingPower(u32 itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].flingPower;
 }
-
 
 u32 GetItemStatus1Mask(u16 itemId)
 {

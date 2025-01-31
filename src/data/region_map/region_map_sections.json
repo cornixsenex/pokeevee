@@ -1704,6 +1704,14 @@
       "height": 1
     },
     {
+      "map_section": "MAPSEC_ELICIUS_BEACH",
+      "name": "BREEZEVALE TOWN",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
       "map_section": "MAPSEC_TRAINER_HILL",
       "name": "TRAINER HILL",
       "x": 8,

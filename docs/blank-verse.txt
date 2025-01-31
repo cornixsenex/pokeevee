@@ -1,0 +1,17 @@
+#NOTE#
+	>The idea here is to just have a place to write the actual verses for Sibylline Book III. I need a script to convert these raw text strings into the appropiate format for use in the project. IE add the declaration, the _("") shit and the {PAUSE_UNTIL_PRESS} and everything. Possibly I want an intro something like "The lines written in burning coal pour off the page" or whatever. Probably also want it to auto-format so have the script count characters if its 30 do \n if it's 60 do \p etc etc
+	>Max is ~34 characters but it needs to check spaces too because I don't want words broken up into separate lines
+
+-- START --
+When thou goest, thy steps shall not be straitened; and when thou runnest, thou shalt not stumble.
+Better to reign in Hell than serve in Heaven.
+Eritis sicut dii scientes bonum et malum.
+
+Upon four-legged forest clouds the cowboy angel rides.
+The lamppost stands with folded arms, its iron claws attached.
+
+All along the watchtower princes kept the view while all the women came and went barefoot servants, too.
+
+Excellent speech becometh not a fool: much less do lying lips a prince.
+	
+-- END --

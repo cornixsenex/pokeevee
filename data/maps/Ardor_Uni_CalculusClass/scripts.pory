@@ -1,0 +1,149 @@
+
+const OBJ_EVENT_TEACHER = 1
+const OBJ_EVENT_STUDENT1 = 2
+const OBJ_EVENT_STUDENT2 = 3
+const OBJ_EVENT_STUDENT3 = 4
+const OBJ_EVENT_STUDENT4 = 5
+const OBJ_EVENT_STUDENT5 = 6
+const OBJ_EVENT_STUDENT6 = 7
+const OBJ_EVENT_STUDENT7 = 8
+
+
+mapscripts Ardor_Uni_CalculusClass_MapScripts {}
+
+
+
+script Ardor_Uni_CalculusClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_CALCULUS)) {
+		msgbox(Ardor_Uni_CalculusClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_CALCULUS_INTRO)) {
+		call (Ardor_Uni_CalculusClass_EventScript_CheckLessons)
+	} else {
+		setflag (FLAG_CALCULUS_INTRO)
+		msgbox(Ardor_Uni_CalculusClass_Text_ClassIntro)
+		closemessage
+		call (Ardor_Uni_CalculusClass_EventScript_CheckLessons)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+
+script Ardor_Uni_CalculusClass_EventScript_CheckLessons {
+	setvar (VAR_TEMP_7, 0)
+	if (flag(FLAG_TEMP_1)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_CalculusClass_Text_StudyLesson1)
+	}
+	if (flag(FLAG_TEMP_2)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_CalculusClass_Text_StudyLesson2)
+	}
+	if (var(VAR_TEMP_7) == 2) {
+		call (Ardor_Uni_CalculusClass_EventScript_Test)
+	}
+	return
+}
+
+script Ardor_Uni_CalculusClass_EventScript_Test {
+	msgbox(Ardor_Uni_CalculusClass_Text_TestBegin)
+	waitmessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_CALCULUS, Ardor_Uni_CalculusClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_CalculusClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+//Derivative
+script Ardor_Uni_CalculusClass_EventScript_Student1 {
+	lock
+	faceplayer
+	if (flag(FLAG_CALCULUS_INTRO)) {
+		setflag (FLAG_TEMP_1)
+		msgbox(Ardor_Uni_CalculusClass_Text_Lesson1)
+	} else {
+		msgbox(Ardor_Uni_CalculusClass_Text_Student1)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT1, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Integral
+script Ardor_Uni_CalculusClass_EventScript_Student2 {
+	lock
+	faceplayer
+	if (flag(FLAG_CALCULUS_INTRO)) {
+		if (flag(FLAG_TEMP_1)) {
+			setflag (FLAG_TEMP_2)
+			msgbox(Ardor_Uni_CalculusClass_Text_Lesson2)
+		} else {
+			msgbox(Ardor_Uni_CalculusClass_Text_StudyLesson1)
+		}
+	} else {
+		msgbox(Ardor_Uni_CalculusClass_Text_Student2)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT2, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+text Ardor_Uni_CalculusClass_Text_ClassIntro {
+	format("Salve puer! Magister Hagus sum. Necesse est tibi docere calculum. Calculus duas partes, derivativa integraliaque, habet. Stude partes duas et reveni.")
+}
+
+text Ardor_Uni_CalculusClass_Text_Student1 {
+	format("")
+}
+
+text Ardor_Uni_CalculusClass_Text_Student2 {
+	format("")
+}
+
+text Ardor_Uni_CalculusClass_Text_StudyLesson1 {
+	format("Stude calculum derivativum.")
+}
+
+text Ardor_Uni_CalculusClass_Text_StudyLesson2 {
+	format("Stude calculum integralem.")
+}
+
+text Ardor_Uni_CalculusClass_Text_TeacherBattleLost {
+	format("Calculum scis.")
+}
+
+text Ardor_Uni_CalculusClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti calculum.")
+}
+
+text Ardor_Uni_CalculusClass_Text_TestBegin {
+	format("Iam studuisti partes duas calculi.")
+}
+
+text Ardor_Uni_CalculusClass_Text_Lesson1 {
+	format("Derivativi sunt devexum linamenti tangentis puncto dativo functioni.")
+}
+
+text Ardor_Uni_CalculusClass_Text_Lesson2 {
+	format("Integrale est area sub curvum fine puncto dativo functioni.")
+}
+
+
+
+
+
+

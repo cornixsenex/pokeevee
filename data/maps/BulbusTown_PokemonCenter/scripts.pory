@@ -1,0 +1,58 @@
+mapscripts BulbusTown_PokemonCenter_MapScripts {}
+
+script BulbusTown_PokemonCenter_EventScript_Nurse {
+	lock
+	if (flag(FLAG_HASINSURANCE)) {
+		call (Common_EventScript_PkmnCenterNurse)
+		waitmessage
+		waitbuttonpress
+	}
+	else {
+		msgbox (BulbusTown_PokemonCenter_Text_NoInsurance) 
+		closemessage
+		checkmoney (2500, 0)
+		if (var(VAR_RESULT) == 0) {
+			msgbox (BulbusTown_PokemonCenter_Text_TooPoor)
+			closemessage
+		}
+		else {
+			showmoneybox (0, 0, 0)
+			msgbox (BulbusTown_PokemonCenter_Text_OutOfPocket, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == 1) {
+				removemoney (2500, 0)
+				updatemoneybox
+				call (Common_EventScript_PkmnCenterNurse)
+				waitmessage
+				waitbuttonpress
+			}
+			else {
+				msgbox (BulbusTown_PokemonCenter_Text_Goodbye)
+				closemessage
+			}
+			hidemoneybox
+		}
+		
+	}
+	release
+	end
+}
+
+
+text BulbusTown_PokemonCenter_Text_NoInsurance {
+	format("Hello and welcome to our Pokemon Center. I'm sorry but it seems you don't have any Health Insurance.")
+}
+
+text BulbusTown_PokemonCenter_Text_TooPoor {
+	format("You look too poor to afford any help. It's time for you to go. Get out of here!")
+}
+
+
+text BulbusTown_PokemonCenter_Text_OutOfPocket{
+	format(" Our healthcare costs 2,500 dollars. Would you like to pay out of pocket?")
+}
+
+text BulbusTown_PokemonCenter_Text_Goodbye {
+	format("In that case you should go away. Goodbye!")
+}
+
+	

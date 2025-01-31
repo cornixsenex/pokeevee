@@ -1,0 +1,142 @@
+mapscripts RockTunnel_MapScripts {
+
+}
+
+
+script RockTunnel_EventScript_RivalTrigger1 {
+	lockall	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (2, Common_Movement_FaceRight)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (RockTunnel_Text_Leaf1)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	addobject (3)
+	showobjectat (3, MAP_ROCK_TUNNEL)
+	applymovement (3, RockTunnel_Movement_RivalEntrance1)
+	waitmovement (0)
+	load_field_pic (3, 190, 98)
+	msgbox (RockTunnel_Text_RivalIntro)
+	destroy_field_pic (3)
+	closemessage
+	trainerbattle_no_intro(TRAINER_RIVAL3, RockTunnel_Text_RivalLost)
+	load_field_pic (3, 190, 98)
+	msgbox (RockTunnel_Text_RivalPost)
+	destroy_field_pic (3)
+	closemessage
+	applymovement (3, RockTunnel_Movement_RivalExit)
+	waitmovement (0)
+	removeobject (3)
+	applymovement (2, RockTunnel_Movement_LeafApproach1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (RockTunnel_Text_Leaf2)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (2, RockTunnel_Movement_LeafExit)
+	waitmovement (0)
+	removeobject (2)
+	setflag (FLAG_ROCKTUNNEL_RIVALDEFEATED)
+	setvar (VAR_ROBUSTUS_STATE, 9)
+	releaseall
+	end
+}
+
+script RockTunnel_EventScript_RivalTrigger2 {
+	lockall	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (2, Common_Movement_FaceRight)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (RockTunnel_Text_Leaf1)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	addobject (3)
+	showobjectat (3, MAP_ROCK_TUNNEL)
+	applymovement (3, RockTunnel_Movement_RivalEntrance2)
+	waitmovement (0)
+	load_field_pic (3, 190, 98)
+	msgbox (RockTunnel_Text_RivalIntro)
+	destroy_field_pic (3)
+	closemessage
+	trainerbattle_no_intro(TRAINER_RIVAL3, RockTunnel_Text_RivalLost)
+	load_field_pic (3, 190, 98)
+	msgbox (RockTunnel_Text_RivalPost)
+	destroy_field_pic (3)
+	closemessage
+	applymovement (3, RockTunnel_Movement_RivalExit)
+	waitmovement (0)
+	removeobject (3)
+	applymovement (2, RockTunnel_Movement_LeafApproach2)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (RockTunnel_Text_Leaf2)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (2, RockTunnel_Movement_LeafExit)
+	waitmovement (0)
+	removeobject (2)
+	setflag (FLAG_ROCKTUNNEL_RIVALDEFEATED)
+	setvar (VAR_ROBUSTUS_STATE, 9)
+	releaseall
+	end
+}
+
+
+movement RockTunnel_Movement_RivalEntrance1 {
+	walk_left * 8
+}
+
+movement RockTunnel_Movement_RivalEntrance2 {
+	walk_diag_southwest
+	walk_left * 7
+}
+
+movement RockTunnel_Movement_RivalExit {
+	walk_right * 8
+}
+
+movement RockTunnel_Movement_LeafApproach1 {
+	walk_right * 3
+}
+
+movement RockTunnel_Movement_LeafApproach2 {
+	walk_diag_southeast
+	walk_right * 2
+}
+
+movement RockTunnel_Movement_LeafExit {
+	walk_left * 8
+}
+
+
+text RockTunnel_Text_Leaf1 {
+	format("Watch out! I think we fell into a trap!")
+}
+
+text RockTunnel_Text_RivalIntro {
+	format("I've been waiting for you some time now {PLAYER} while you were still too weak to break those rocks I was mastering the art of battle. I will destroy you here once and for all.")
+}
+
+text RockTunnel_Text_RivalLost {
+	format("It can't be so! I was superior!")
+}
+
+text RockTunnel_Text_RivalPost {
+	format("You are the very worst man on this earth. I curse you every day and won't forget the torment that you've brought into my life! Do not imagine that this is the end.")
+}
+
+text RockTunnel_Text_Leaf2 {
+	format("My hero {PLAYER} you saved me once again! C'mon! We need to push through to the end.")
+}
+
+

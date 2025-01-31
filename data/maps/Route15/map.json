@@ -1,0 +1,74 @@
+{
+  "id": "MAP_ROUTE15",
+  "name": "Route15",
+  "layout": "LAYOUT_ROUTE15",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_115",
+  "requires_flash": false,
+  "weather": "WEATHER_SANDSTORM",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_PHOENIX",
+      "offset": 2,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_VEGAS",
+      "offset": 14,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 43,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_TEMPLE_5F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 46,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE15_DESERT_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE15_DESERT_CAVE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 43,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE15_DESERT_CAVE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Route15_EventScript_DesertTempleWarp"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

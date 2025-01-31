@@ -1,0 +1,33 @@
+mapscripts Vegas_Hotel1F_MapScripts {}
+
+
+script Vegas_Hotel1F_EventScript_Owner {
+	lock 
+	faceplayer
+	if (flag(FLAG_RECEIVED_FLASH) ) {
+		msgbox (Vegas_Hotel1F_Text_OwnerPost)
+		closemessage
+	} else {
+		msgbox (Vegas_Hotel1F_Text_OwnerHelp)
+		giveitem (ITEM_HM05)
+		msgbox (Vegas_Hotel1F_Text_ExplainFlash)
+		setflag (FLAG_RECEIVED_FLASH)
+	}
+	release
+	end
+}
+
+
+//Owner is now Oedipus Rex
+
+text Vegas_Hotel1F_Text_OwnerPost {
+	format("That hidden move alone is not enough to have your pokemon light up dark spots. You'll need to know how to use it correct. I think someone at the old power plant can help you and maybe you'll help us back!")
+}
+
+text Vegas_Hotel1F_Text_OwnerHelp {
+	format("I've had enough of this power outage! Nobody thinks about how much money I'm loosing every hour without light. I've an idea. You boy! You look quite spry. Go take this HM and go see if you can do the work the government cannot.")
+}
+
+text Vegas_Hotel1F_Text_ExplainFlash {
+	format("That hidden move contains a blinding flash which can illuminate the dark places and should be able to turn on the lights. Go to the power plant and find a way to use that move to turn back on the lights!")
+}

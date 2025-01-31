@@ -1,0 +1,16 @@
+mapscripts Route17_MapScripts {}
+
+script Route17_EventScript_Block1 {
+	lock
+	faceplayer
+	msgbox (Route17_Text_Block1)
+	closemessage
+	release
+	end
+}
+
+
+text Route17_Text_Block1 {
+	format("This is the Via Fluvia which leads to Willow Spring but you cannot go through.The storm has destroyed two bridges ahead and it will be some time before they're fixed.")
+}
+

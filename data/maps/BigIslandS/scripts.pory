@@ -1,0 +1,332 @@
+
+
+const OBJ_EVENT_IGNIS_A = 4
+const OBJ_EVENT_IGNIS_B = 5
+const OBJ_EVENT_HOOH  = 3
+const OBJ_EVENT_PROMETHEUS = 1
+const OBJ_EVENT_INFERNAPE = 6
+const OBJ_EVENT_MONFERNO = 7
+const OBJ_EVENT_CHIMCHAR = 8
+
+
+mapscripts BigIslandS_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (BigIslandS_OnResume)
+	}
+
+}
+
+
+script BigIslandS_OnResume {
+	setstepcallback (STEP_CB_ASH)
+	if (flag(FLAG_SYS_CTRL_OBJ_DELETE) ){
+		call (BigIslandS_Script_TryRemoveHoOh)
+	}
+	if (var(VAR_TEMP_5) == 0) {
+		setobjectmovementtype (OBJ_EVENT_INFERNAPE, MOVEMENT_TYPE_WANDER_AROUND)
+		setobjectmovementtype (OBJ_EVENT_MONFERNO, MOVEMENT_TYPE_WANDER_AROUND)
+		setobjectmovementtype (OBJ_EVENT_CHIMCHAR, MOVEMENT_TYPE_WANDER_AROUND)
+	}
+	end
+}
+
+script BigIslandS_Script_TryRemoveHoOh {
+	removeobject (OBJ_EVENT_HOOH)
+	return
+}
+
+script BigIslandS_Script_IgnisGrunt {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) < 3) {
+		msgbox (BigIslandS_Text_IgnisGruntBlock, MSGBOX_DEFAULT)
+		closemessage
+	} else {
+		call (BigIslandS_Script_IgnisGruntFight)
+	}
+	end
+}
+
+script BigIslandS_Script_IgnisGruntFight {
+
+		msgbox (BigIslandS_Script_IgnisGrunt1Pre, MSGBOX_DEFAULT)
+		closemessage
+
+		trainerbattle_two_trainers (TRAINER_IGNIS_GRUNT_2, BigIslandS_Text_IgnisGrunt1Lost, TRAINER_IGNIS_GRUNT_3, BigIslandS_Text_IgnisGrunt2Lost)
+
+		applymovement (OBJ_EVENT_IGNIS_A, Common_Movement_FaceRight)
+		applymovement (OBJ_EVENT_IGNIS_B, Common_Movement_FaceLeft)
+		waitmovement (0)
+
+		msgbox (BigIslandS_Text_IgnisGruntPost, MSGBOX_DEFAULT)
+		closemessage
+
+		applymovement (OBJ_EVENT_IGNIS_A, BigIslandS_Movement_IgnisGruntClear)
+		applymovement (OBJ_EVENT_IGNIS_B, BigIslandS_Movement_IgnisGruntClear)
+		waitmovement (0)
+
+		call (BigIslandS_Script_HideIgnisGrunts)
+
+		setflag (FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS)
+
+		end
+}
+
+script BigIslandS_Script_HideIgnisGrunts {
+
+	msgbox("HIDE IGNIS GRUNTS")
+	closemessage
+
+
+	setobjectxyperm (OBJ_EVENT_IGNIS_A, 58, 36)
+	setobjectmovementtype (OBJ_EVENT_IGNIS_A, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (OBJ_EVENT_IGNIS_B, 59, 36)
+	setobjectmovementtype (OBJ_EVENT_IGNIS_B, MOVEMENT_TYPE_INVISIBLE)
+	
+	hideobjectat (OBJ_EVENT_IGNIS_A, MAP_BIG_ISLAND_S)
+	removeobject (OBJ_EVENT_IGNIS_A)
+
+	hideobjectat (OBJ_EVENT_IGNIS_B, MAP_BIG_ISLAND_S)
+	removeobject (OBJ_EVENT_IGNIS_B)
+
+	end
+}
+
+script BigIslandS_Script_ShowIgnisGrunts {
+	setobjectxyperm (OBJ_EVENT_IGNIS_A, 55, 37)
+	setobjectmovementtype (OBJ_EVENT_IGNIS_A, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_IGNIS_A)
+	showobjectat (OBJ_EVENT_IGNIS_A, MAP_BIG_ISLAND_S)
+
+	setobjectxyperm (OBJ_EVENT_IGNIS_B, 56, 37)
+	setobjectmovementtype (OBJ_EVENT_IGNIS_B, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_IGNIS_B)
+	showobjectat (OBJ_EVENT_IGNIS_B, MAP_BIG_ISLAND_S)
+
+	return
+}
+
+script BigIslandS_Script_TestGiveHammer {
+	lock
+	faceplayer
+	giveitem (ITEM_BIG_HAMMER)
+	release
+	end
+}
+
+script BigIslandS_Script_Prometheus {
+	lock
+	if (!flag(FLAG_PROMETHEUS_INTROD)) {
+		setflag (FLAG_PROMETHEUS_INTROD)
+		msgbox (BigIslandS_Text_Prometheus1, MSGBOX_DEFAULT)
+	} else {
+		msgbox (BigIslandS_Text_Prometheus1b, MSGBOX_DEFAULT)
+	}
+	closemessage
+	release
+	end
+}
+
+script BigIslandS_Script_BreakableRock {
+	lockall
+	checkitem (ITEM_BIG_HAMMER, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox (Text_WantToBreak, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			call (EventScript_CancelSmash)
+		} else {
+			call (EventScript_HammerRockSmashTrigger)
+			call (BigIslandS_Script_HoOh)
+		}
+	} else {
+		call (EventScript_CantBreakRock)
+	}
+	end
+}
+
+script BigIslandS_Script_HoOh {
+	//play sound
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitse
+	playmoncry (SPECIES_HO_OH, CRY_MODE_ENCOUNTER)
+	delay (40)
+	waitmovement (0)
+	waitmoncry
+
+	//prometheus says Oh No
+	msgbox (BigIslandS_Text_Prometheus2, MSGBOX_DEFAULT)
+	closemessage
+
+	//Player gets into position
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_WEST) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		waitmovement (0)
+	} 
+	if (var(VAR_RESULT) == DIR_EAST) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		waitmovement (0)
+	}
+	if (var(VAR_RESULT) != DIR_SOUTH) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	} else {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	}
+	waitmovement (0)
+
+	//HoOh aproaches
+	removeobject (OBJ_EVENT_HOOH)
+	setobjectxyperm (OBJ_EVENT_HOOH, 46, 9)
+	setobjectmovementtype (OBJ_EVENT_HOOH, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_HOOH)
+	showobjectat (OBJ_EVENT_HOOH, MAP_BIG_ISLAND_S)
+
+	applymovement (OBJ_EVENT_HOOH, BigIslandS_Movement_HoOhApproach)
+	waitmovement (0)
+
+	//Sound Battle
+	playmoncry (SPECIES_HO_OH, CRY_MODE_ENCOUNTER)
+	delay (40)
+	waitmoncry
+	setwildbattle (SPECIES_HO_OH, 13)
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	special (BattleSetup_StartLegendaryBattle)
+	waitstate
+
+	//Post battle HoOh should be gone
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+
+	//Player goes to Prometheus
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)
+
+	//Prometheus thanks you says The cave will open when you release a Spearow
+	//Says he must be going now, free at last, returning home
+
+	msgbox (BigIslandS_Text_Prometheus3, MSGBOX_DEFAULT)
+	closemessage
+
+	giveitem (ITEM_OSTRACON)
+
+	msgbox (BigIslandS_Text_Prometheus4, MSGBOX_DEFAULT)
+	closemessage
+
+
+	//set vars and flags and be off
+	fadescreen (1)
+	setvar (VAR_ARGO_STATE, 6)
+	setflag (FLAG_BIGISLAND_S_HIDE_PROMETHEUS)
+	removeobject (OBJ_EVENT_PROMETHEUS)
+	fadescreen (0)
+
+	releaseall
+
+	end
+}
+
+//Monkeys turn and face player then dissapear until map is re-loaded preventing player from interacting with monkeys. IF Phil stuff is ready then trigger Phil (assuming this is where he waits to be found by Player and Trojans)
+script BigIslandS_Script_HideMonkeys {
+	//Scene
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	playmoncry (SPECIES_INFERNAPE, CRY_MODE_NORMAL)
+	//face monkeys
+	applymovement (OBJ_EVENT_INFERNAPE, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_MONFERNO, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_CHIMCHAR, Common_Movement_FaceRight)
+	waitmovement (0)
+	//waitmovement (0)
+	////! MARK Monkeys
+	applymovement (OBJ_EVENT_INFERNAPE, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_MONFERNO, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_CHIMCHAR, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//play monkey sounds
+	waitmoncry 
+	//fadescreen
+	fadescreen (1)
+	//hide and remove monkeys
+	hideobjectat (OBJ_EVENT_INFERNAPE, MAP_BIG_ISLAND_S)
+	removeobject (OBJ_EVENT_INFERNAPE)
+	hideobjectat (OBJ_EVENT_MONFERNO, MAP_BIG_ISLAND_S)
+	removeobject (OBJ_EVENT_MONFERNO)
+	hideobjectat (OBJ_EVENT_CHIMCHAR, MAP_BIG_ISLAND_S)
+	removeobject (OBJ_EVENT_CHIMCHAR)
+	//unfade screen
+	fadescreen (0)
+	//Persist Hidden Monkeys
+	setobjectmovementtype (OBJ_EVENT_INFERNAPE, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_INFERNAPE, 64, 24)
+	setobjectmovementtype (OBJ_EVENT_MONFERNO, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_MONFERNO, 65, 24)
+	setobjectmovementtype (OBJ_EVENT_CHIMCHAR, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (OBJ_EVENT_CHIMCHAR, 65, 24)
+	return
+}
+
+script BigIslandS_Script_MonkeyTrigger {
+	//Set var so it doesn't loop
+	setvar (VAR_TEMP_5, 1)
+	call (BigIslandS_Script_HideMonkeys)
+	end
+}
+
+movement BigIslandS_Movement_IgnisGruntClear {
+	walk_up * 6
+}
+
+movement BigIslandS_Movement_HoOhApproach {
+	walk_down * 5
+}
+
+//Only native Ignis are welcome here.
+text BigIslandS_Text_IgnisGruntBlock {
+	format("Onlyay ativenay ignisay areay elcomeway erehay.")
+}
+
+//Who is this outsider  He must be here
+//To save his little friend
+//How dare you try to force your way inside
+//We will defend our sacred mountaintop
+text BigIslandS_Script_IgnisGrunt1Pre {
+	format("Owhay isay isthat outsideray? \N Ehay ustmay ebay erehay otay avesay ishay ittleay iendfray. \N Owhay areday ouyay ytray otay orcefay ouryay ayway insideay? \N Eway illway efendday ouray acredsay ountaintopmay.")
+}
+
+//We soon will be avenged
+text BigIslandS_Text_IgnisGrunt1Lost {
+	format("Eway oonsay illway ebay avengeday.")
+}
+
+//You won this one.
+text BigIslandS_Text_IgnisGrunt2Lost {
+	format("Ouyay onway isthay oneay.")
+}
+
+//We must tell Medea of this defeat
+text BigIslandS_Text_IgnisGruntPost {
+	format("Eway ustmay elltay Edeamay ofay isthay efeatday.")
+}
+
+text BigIslandS_Text_Prometheus1 {
+	format("What's this? You're not one of those savages who chained me to this rock to tortue me in retribution for my refusal to serve them as some fortune teller. No, you're just a boy. Have pity on this old poor tortured soul imprisoned on this rock and forced to serve the dark witch Medea. Alas! These wicked chains gnaw my skin raw and soon I fear the mighty bird will come to torture me again with burning breath. Young man I beg you free me from this rock and I will tell what lies in your future.")
+}
+
+text BigIslandS_Text_Prometheus1b {
+	format("Young man I beg you free me from this rock and I will tell what lies in your future.")
+}
+
+text BigIslandS_Text_Prometheus2 {
+	format("Beware young friend for we are not yet free. Prepare to meet a mighty foe. Defend us now or else surely perish.")
+}
+
+text BigIslandS_Text_Prometheus3 {
+	format("My lad! You've done it! You remind me of the mighty hero Heracles. I will reward your courage with a prophesy. Take this.")
+}
+
+text BigIslandS_Text_Prometheus4 {
+	format("You fate's carved on the Ostracon. I must be going now. I'm free at last to return home. May God above bless you.")
+}
+
+

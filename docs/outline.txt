@@ -1,0 +1,615 @@
+Story 
+Feature index
+	>essential
+	>very important
+	>polish
+	>cool
+	>meh
+Asset index
+	>overworld
+	>buildings / tiles
+	>trainers
+	>pokemon
+Feature complete
+Asset complete
+Assemble
+	>Maps
+	>Events / Scripts
+	>trainers
+	>text
+Bug Test
+Release
+
+>Story Essential Feature Index
+	*Alter Intro to include
+		Mew
+		New Text
+		Ideally new reporter image
+	*Change outfit (at least temporarily! ideally permanently!)
+	Rival Name
+		Fix it lol
+	Trainer Specific Balls
+	*Climbing Boots?
+	Sideways Stairs
+	Sideways Stair Warps
+	New Moves
+		Fix Evos
+		Fix Movesets		
+	Replace window tiles with shattered ones after MEWTWO betrayal
+	Place Bridge over river after Military Install fight (ala mirage tower I think)
+	Rock Climb
+		Add HM / Move Tutor
+	Fix Debug Menu
+	Surfboard
+		Add Image
+
+>??? Features
+	Day/Night
+	Follower Pokemon
+	
+
+
+>Overworlds to bring in and found
+  >FRLG
+	Biker
+	Hex Maniac
+	Erica
+	Giovanni
+	Green?
+	Nurse
+	Lorelei
+	Lt Surge
+	policeman
+	rocket female
+	rocket male
+	scientist
+	super nerd
+	>by me
+		Blaine
+	>other
+		White hat green guy
+	>Terraneck
+		nurse joy upgrade	
+		sidney
+		pheobe
+	>Aveontrainer
+		snowboarder
+	>
+		MewTwo
+	
+
+>Trainers to bring in and found
+	>FRLG
+		juggler
+		biker
+		bird keeper
+		burgler
+		champion blue
+		blue_1
+		channeler
+		Cue Ball
+		Lorelei
+		engineer
+		hex maniac
+		Blaine
+		Giovanni
+		koga
+		lt surge
+		wattson
+		rocket m
+		rocket f
+		ruin maniac
+		Scientist
+		Super nerd		
+		
+	>Other
+		>kyle_dove_dboanpx
+			Nurse Joy
+			Blue hair biker
+			lectric workers (1-3)
+		rave girl
+		rave boy	
+		snowboarder
+		bluehairbike
+		white hate green guy
+		
+		
+
+>Character Asset Index
+	Player + Player as Soldier i(And ideally Player in other costumes as well) = Stock
+		Full!
+			front
+			Back			
+			Overworld Complete
+	Rival = Gary
+		front - blue
+		overworld - blue
+	Babe = Green
+		overworld
+	Youngsters - stock	
+	Babe's Dad
+		overworld
+	Bug catchers - stock
+	Gym 1 - Teacher Lady
+		front - Lorelei
+		overworld
+	Church Lady
+		overowld
+	Breeders
+	Guitarist
+	Pokemaniacs
+	Hikers
+	Picknickers
+	Collector
+	?Roxanne 'normal filler'
+	psychics
+	breeders
+	*Gym 2 - Camp leader
+		front - kindler
+		overworld
+	Black Belts
+	Campers
+	Electric Workers
+		front - engineer
+		overworld	
+	!Gym 3 - Casino Owner
+		front - expert male, Juan, steven, gentleman, rs gentelman
+		overworld
+	Nerds
+		front - super nerd, rich boy, school kid, youngster
+		overwordl - 
+	Chads
+		exercise
+		rich kids	
+	Gym 4 - Latin Princeps
+		front - Maxie, magma, 
+		overworld
+	!!Ruin nutjobs - You have the front sprites already just put them in!
+		front male
+		front female
+		overworld male
+		overworld female
+	Archiologists
+		ruin_maniac	
+		Pyramid_king
+		hicker
+		camper
+	Indy	
+		Front - Factory Head Nolan
+		Overworld - Noland
+	Surfer?!
+		Front? - phoebe
+		Overworld
+	Burners
+		Front - 	
+	Gym 5 badass latex lady w/ umbreon
+		fronts - pike queen
+		overworld
+	Party Grunt
+		Front - Rocket shit, FR
+		Overworld
+	Lead Scientist
+		Front - Blaine
+		Overworld
+	Party Boss
+		Front - Giovanni
+		Overworld
+	!MEWTWO
+		Front - mewtwo
+		!Overworld - Armor? Nake? IDK
+	Druggies
+		front - tucker, guitarist, hex maniac, burgler, juggler, pokemaniac, rocker, supernerd, youngster, wally
+		overworld
+	Old Ghost town Hermit
+		overworld - literally just mr fugi or whatever is fine
+	Pirates
+		Aqua team
+	Gym 6 Water Captain
+		front - drake
+		overworld
+	Ninjas
+	Koga?
+		front - koga, dragontamer, lance, 
+		overworld
+	Soldiers
+		front - wattson, surge, ruin maniac, sailor, battle_girl, scientist, supernerd
+		overworld
+	Gardeners
+		front
+		overworld
+	Gym 7 Weed Grower
+		front - Erica
+		overworld - Erica
+	Gym 8 Sherpa
+		front -palace maven,
+		overworld - palace maven
+	Snowboarders
+		front - whitegreen, snowboarder, hiker, winona
+		overworld - whitegreen, boarder, hiker, winona
+	>Cool shit for the Tower climb
+		DragonTamer
+		red
+		anabel
+		steven
+		May
+		brandon
+		Leaf mayabe idk
+
+
+>Externals
+	Grandma's cabin
+	Rival's cabin
+	Grass routes
+	A Town
+	B Town
+		Docks
+	Forest
+	C Town
+		Church
+		School
+	Urban Routes
+	Safari Zone
+	OakTown
+		Movie Theater
+		Pool
+		Public Housing
+	Day Care
+	Mil Route
+	Rock Slide Route
+	Lake Camp
+	Rock Tunell
+	Beach City
+	Malibu Beach Route
+	Docks
+	Light House
+	LA
+		lamposts
+		ghetto
+		public housing
+		Salty Spatoon
+		Weenie hut Jr.
+		Weenie hut general
+			Pokecenter shit
+		News Buildiing
+		Dep Store
+		Party Building
+	Suburbs
+	Zoo
+	Park
+	Hot Springs
+	Slabs
+	
+	
+		
+	
+
+>Tileset Inded
+
+
+	Grandma's Cabin
+		Interior
+		Exterior
+	Route 1
+		Rival's House?
+	A-town
+		Interiors
+			Babe's house
+			Weed Center?
+			Shop
+			
+		Exterior
+	Grassy Routes
+	B Town	
+		Berry shit
+		center
+		shop
+		Dangerous street!
+	Forest
+	Church town
+		Church!
+		School
+		center
+		Shop
+	Urban Routes
+	O Town	
+		Movie Theater
+			Exterior
+				Mauville Game Cornermpt 
+			Interior
+				Chair - Battledome
+				Curtains - BattlePike
+		Center
+		Mart
+		Public Houseing
+	Vegas
+		Casino
+			GoldPalaceDomw
+			
+	LA
+		Fronteir outside tower?
+	Graveyard
+		Graves - Tileset_Facility
+
+	Ninja Hideout
+		Exterior
+			BattleFronteirOutsideWest (Snake!)
+
+	
+
+	Snow
+		gen3stylemustafa505
+		kylegen3style
+		seasonalgrasstreas
+		seasonalgrass
+		wildlandsphyromatical
+	Two Island
+		Cave
+	Mew's Tower
+		Exterior
+	
+		Interior
+			Battle Dome, E4, 
+							
+	
+	
+	
+	
+
+
+>Essential Add ons
+	New player overworld and backsprite
+	Nameable Rival
+	Running indoors
+	More PokeBalls
+	Trainer Custom poekballs (nicknames? - surskitty github)
+	In menu medicine stuff
+	AT LEEST One follower mon. I'm serous.
+	Physical / Special split (new gen4 moves as well plz)
+	Color natures
+	Custom trainer transitions for big bosses
+	Sideways stairs
+	Display item description on first obtain
+	Bonus Premier Ball
+	Remove Contests!
+	Auto switch to lower case in naming screen
+	Eliminate trade evos
+	Fast Surfing (Faster running too) Auto Run?
+	2 in 1 Bike
+	Default settings fix
+	Change the title screen and intro
+	Map intros
+	Dialog faces!
+	Multiple choice dialog options
+	CLimbing shoes flag for omnidirectional ledges
+	
+	
+	
+>SHOULD allow player to go to SF early and just fight OP trainers. Maybe they can't get into the tower.
+
+Rival is your neighbor who gets a personal vendetta against you after you kill his togepi. Starts nerdy gay ends angry mean. First encounter he brags about his togepi being the best but you kill it so he freaks out. Next he comes against you rashly with weak bug types. Next he ambushes you with stronger mons like growlithe in the tunell. He makes his way to Slab City via the coast (You can encounter him (garydos) in the rock slide if you go that way early ! You next encounter him in Slab City (tyrantar) where he's become street smart and acquired a bike. You beat him and take the bike. At this point he runs off to join some cult (PARTY? Graveyard cult?) He arrives after your Party Boss Fight 1 and is one of the three people MEWTWO grants a wish to.
+	
+
+>POSSIBLE Add ons
+	NugLock Rules
+	Follower Mons
+	Day/Night system
+	Drivers liscence
+
+	
+>Overview
+	catch em all up to gen4
+	Physical / Special Split
+	All new region(s)
+	Ultimate challenge == Arceus after
+	Legendary Team Ultimate Evil
+	Adult theme / funny but not Reddit
+	Ecourage NugLock
+	NO FAKEMON
+	NO HANDHOLDING
+	NO CHEAT bullshit
+	Should FEAL like a real game (love, nothing retarded)
+	Smoothe level curve, easy grind spots
+	LOTS of route / encouter spots 
+	No POSTGAME
+	No Trades
+	Latin?
+	Follower!
+	Double Battles
+	Puzzles
+	Time! Day/Night
+	Invisible dude walking around making footprints!
+	Beds / Sleeping instead of PokeCenters
+	Sages / Resistance instead of Gyms
+	Ultimate Evil / Story instead of Leeg
+	You can JOIN the evil Teem!
+
+Evil Team (nazis, politicians etc) 
+	>X Supporters / Trainers
+	>X Brownshirts
+	>7 Admin / Regions
+	>3 Party Bosses
+	>1 Party Leader
+	>1 Supreme Evil
+	>1 God
+
+Part1: Helping Mew Babe defeat Rival
+Part2: Saving the world
+Part3: Final Tower Showdown w/ God		
+
+Root - Groudon- (Party Grunts) - UnderGround
+Sex - Kyogre - Poison (Druggies) - Swamp
+Stomach - Lugia - Fighting (workout trainers)- Underwater Cave
+Heart - HoOh - Steel (scientists) - Ruins
+Mouth - Rayquaza - Flying - Shasta
+3rd Eye - Mew - Ghost - SF Church
+Crown - Arceus - Dragon - Le Tower / E4 
+
+normal - SF - Cut
+fire - Tahoe Camp - Rock Smash
+thunder - LV Movie Theater- Flash
+psychic - PX Academy - Fly
+dark - LA Poolhall @Night - Stength
+water - Swamp @night - Dive
+grass - Hum pot farm - Rock Climb
+ice - Shasta  - Waterfall
+
+
+LOCATION INDEX
+
+Grandma's Cabin: Standard
+1: Standard
+A Town: Standard
+Rival House
+2: Standard
+B Town: FLowery?
+Babe House: 
+3: Standard
+4: grassy, forest
+Forest: Petalburg woods
+Church City: (lotusking, singlegen4chapel, tilemapcity, )
+5: Standard
+6: Standard
+Sac Town:
+RedTown:
+Rock Tunell: Standard Underground
+Tahoe:
+Lake:
+11:
+LV: 
+12:
+Px:
+13:
+14:
+Slab: Tyranitar
+
+
+
+Academy: (marble column, 
+
+Ruins: hgsstilemap
+
+
+
+
+NEEDED TRAINERS
+>Player
+>Rival
+>Babe
+>Babe's Dad
+>Party Grunt
+>Party Boss
+>Firebreather 
+>
+
+CHARACTERS INDEX
+>Player
+>Rival
+>Babe
+>Townsfolk
+>Bug Catchers
+>school teacher lady gym
+>Party Boss
+>Party Grunts (m&f)
+>hikers
+>Indy
+>Lake people (NOT beach people!) ?
+>campers Gym
+>Electricians gym
+>Sewer people
+>lost desert tribe?
+>school kids academy or frat bro gym?
+>slabbers
+>bike riders
+>Beach people
+>City folk
+>Biker gang gym
+>Ship Pirates (optional)
+>Ground Sage
+>Graveyard creeps
+>druggies
+>ninja gym 
+
+
+>Locales
+Grandma's Cabin
+Route 1
+B Town
+Route 2
+Bug Forest
+Church City
+Route 
+grassland
+Above ground nice lake
+Electric City Lights!
+Desert
+Acadamy / University PH
+Slab City - Tyrantar
+Highway
+BigCity
+beach city
+ocean
+Big Boat
+Underground Labrynth:
+	1F:	Slabs <-> Pyramids : 126, 64
+		BR WEST <-> BR EAST : 128, 32
+		Route9 <-> BR West : 56 , 128
+
+	2F: The Labyrinth : MAX, MAX square
+
+	3F: Goblin Town
+		Gollum's Pond
+		Rocket Prison
+
+	
+
+
+
+Lava Lake
+Graveyard
+SF
+Swamp
+Ice Cave
+SW Ruins
+Snow city
+Snow peak
+cow town?
+pot farm
+deep ocean
+Safari Zone
+Science Lab / Evil Tower
+
+HMs
+	Cut
+	Rock Smash
+	Flash
+	Strength
+	Fly
+	Dive
+	Rock Climb
+	Waterfall
+	
+
+
+*normal - clara city
+*fire - CampLodge - Camp Elders
+*electric - power plant
+*water - surf babes - Misty
+*psychic - Uni nerds - Artist / Faculty
+*dark - salty spatoon - Bellatrix sadolady
+*grass - hippie tree - Erica
+*ice - sherpa outpost - Old Man Spenser
+
+#bug - woods; Blue Woods
+#flying - Gatos Aviary - Blue Weather Institue
+#ghost - graveyard; Blue Graveyard
+#ground - Underground; Blue Slabs
+#rock - Underground; Blue Rock Tunnel
+
+dragon - MewTwo Tower; 
+fighting - Beach Cave? Springs?; Hercules 
+	**Maybe have a cool side quest thing here involving different bands of 		warriors scattered about and then a central dojo with HERAKLES(Bruno)
+poison -Freeway;  Ninjas ; Koga
+
+steel - Pyramid; Nolan
+
+

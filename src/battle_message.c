@@ -2589,6 +2589,9 @@ STATIC_ASSERT(BERRY_NAME_LENGTH + ARRAY_COUNT(sText_BerrySuffix) <= ITEM_NAME_LE
 
 u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
 {
+	//added this variable to account for the incremental var introduced by RivalName - Cornix 1/2024
+	s32 i;
+
     u32 dstID = 0; // if they used dstID, why not use srcID as well?
     const u8 *toCpy = NULL;
     u8 text[max(max(max(32, TRAINER_NAME_LENGTH + 1), POKEMON_NAME_LENGTH + 1), ITEM_NAME_LENGTH)];
@@ -2801,6 +2804,46 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 break;
             case B_TXT_TRAINER1_NAME: // trainer1 name
                 toCpy = BattleStringGetOpponentNameByTrainerId(gTrainerBattleOpponent_A, text, multiplayerId, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
+                if (gBattleTypeFlags & BATTLE_TYPE_SECRET_BASE)
+                {
+                    for (i = 0; i < (s32) ARRAY_COUNT(gBattleResources->secretBase->trainerName); i++)
+                        text[i] = gBattleResources->secretBase->trainerName[i];
+                    text[i] = EOS;
+                    ConvertInternationalString(text, gBattleResources->secretBase->language);
+                    toCpy = text;
+                }
+                else if (gTrainerBattleOpponent_A == TRAINER_UNION_ROOM)
+                {
+                    toCpy = gLinkPlayers[multiplayerId ^ BIT_SIDE].name;
+                }
+                else if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
+                {
+                    CopyFrontierBrainTrainerName(text);
+                    toCpy = text;
+                }
+                else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+                {
+                    GetFrontierTrainerName(text, gTrainerBattleOpponent_A);
+                    toCpy = text;
+                }
+                else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
+                {
+                    GetTrainerHillTrainerName(text, gTrainerBattleOpponent_A);
+                    toCpy = text;
+                }
+                else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
+                {
+                    GetEreaderTrainerName(text);
+                    toCpy = text;
+                }
+                else
+                {
+                    toCpy = gTrainers[gTrainerBattleOpponent_A].trainerName;
+                    if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_RIVAL_NAME)
+                        toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
+                    if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_LEAF_NAME)
+                        toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_LEAF);
+                }
                 break;
             case B_TXT_TRAINER1_NAME_WITH_CLASS: // trainer1 name with trainer class
                 toCpy = textStart;
@@ -3106,6 +3149,10 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 else
                     toCpy = sText_Opposing2;
                 break;
+            case B_TXT_RIVAL_NAME:
+                toCpy = gSaveBlock2Ptr->rivalName;
+			case B_TXT_LEAF_NAME:
+				toCpy = gSaveBlock2Ptr->leafName;
             case B_TXT_ATK_NAME_WITH_PREFIX2:
                 HANDLE_NICKNAME_STRING_LOWERCASE(gBattlerAttacker)
                 break;

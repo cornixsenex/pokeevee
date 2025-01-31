@@ -1,0 +1,227 @@
+mapscripts Vegas_PowerPlant_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		call (Vegas_PowerPlant_OnResume)
+	}
+	MAP_SCRIPT_ON_TRANSITION {
+		call (Vegas_PowerPlant_OnTransition)
+	}
+}
+
+script Vegas_PowerPlant_OnResume {
+	if (var(VAR_TEMP_1) == 1) {
+		call (Vegas_PowerPlant_EventScript_SetBarrierStateBlueButton)
+	}
+	if (var(VAR_TEMP_2) == 1) {
+		call (Vegas_PowerPlant_EventScript_SetBarrierStateGreenButton)
+	}
+	end
+}
+
+script Vegas_PowerPlant_OnTransition {
+	setvar (VAR_TEMP_1, 0)
+	setvar (VAR_TEMP_2, 0)
+	end
+}
+
+script Vegas_PowerPlant_EventScript_SetBarrierStateBlueButton {
+
+	setmetatile (12, 26, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (12, 27, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (12, 28, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (12, 29, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (12, 30, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (12, 31, METATILE_BikeShop_Wall_Edge_Top, 0)
+	
+	setmetatile (15, 14, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (15, 15, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (15, 16, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (15, 17, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (18, 7, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (18, 8, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (18, 9, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (18, 10, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (18, 11, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (18, 12, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (30, 3, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (30, 4, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (30, 5, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (30, 6, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (30, 7, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (38, 39, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (38, 31, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (38, 32, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (38, 33, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (38, 34, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+
+	setmetatile (8, 7, METATILE_BikeShop_Barrier_Green_Top,1 )
+	setmetatile (8, 8, METATILE_BikeShop_Barrier_Green_TopMid, 1)
+	setmetatile (8, 9, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (8, 10, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (8, 11, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (8, 12, METATILE_BikeShop_Barrier_Green_Bottom, 1)
+	
+	setmetatile (9, 35, METATILE_BikeShop_Barrier_Green_Top, 1)
+	setmetatile (9, 36, METATILE_BikeShop_Barrier_Green_TopMid, 1)
+	setmetatile (9, 37, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (9, 38, METATILE_BikeShop_Barrier_Green_Bottom, 1)
+
+	setmetatile (26, 3, METATILE_BikeShop_Barrier_Green_Top, 1)
+	setmetatile (26, 4, METATILE_BikeShop_Barrier_Green_TopMid, 1)
+	setmetatile (26, 5, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (26, 6, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (26, 7, METATILE_BikeShop_Barrier_Green_Bottom, 1)
+
+	setmetatile (27, 19, METATILE_BikeShop_Barrier_Green_Top, 1)
+	setmetatile (27, 20, METATILE_BikeShop_Barrier_Green_TopMid, 1)
+	setmetatile (27, 21, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (27, 22, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (27, 23, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (27, 24, METATILE_BikeShop_Barrier_Green_Bottom, 1)
+
+	setmetatile (30, 10, METATILE_BikeShop_Barrier_Green_Top, 1)
+	setmetatile (30, 11, METATILE_BikeShop_Barrier_Green_TopMid, 1)
+	setmetatile (30, 12, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (30, 13, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (30, 14, METATILE_BikeShop_Barrier_Green_Bottom, 1)
+
+	setmetatile (32, 35, METATILE_BikeShop_Barrier_Green_Top, 1)
+	setmetatile (32, 36, METATILE_BikeShop_Barrier_Green_TopMid, 1)
+	setmetatile (32, 37, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (32, 38, METATILE_BikeShop_Barrier_Green_BottomMid, 1)
+	setmetatile (32, 39, METATILE_BikeShop_Barrier_Green_Bottom, 1)
+
+	setmetatile (6, 18, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (11, 2, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (16, 22, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (28, 13, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (35, 36, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (40, 21, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (34, 6, METATILE_BikeShop_Button_Pressed, 0)
+
+	setmetatile (4, 18, METATILE_BikeShop_Button_Green, 0)
+	setmetatile (11, 23, METATILE_BikeShop_Button_Green, 0)
+	setmetatile (21, 2, METATILE_BikeShop_Button_Green, 0)
+	setmetatile (28, 5, METATILE_BikeShop_Button_Green, 0)
+	setmetatile (38, 21, METATILE_BikeShop_Button_Green, 0)
+	setmetatile (40, 38, METATILE_BikeShop_Button_Green, 0)
+	return
+}
+
+script Vegas_PowerPlant_EventScript_SetBarrierStateGreenButton {
+
+	setmetatile (12, 26, METATILE_BikeShop_Barrier_Blue_Top, 1)
+	setmetatile (12, 27, METATILE_BikeShop_Barrier_Blue_TopMid, 1)
+	setmetatile (12, 28, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (12, 29, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (12, 30, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (12, 31, METATILE_BikeShop_Barrier_Blue_Bottom, 1)
+	
+	setmetatile (15, 14, METATILE_BikeShop_Barrier_Blue_Top, 1)
+	setmetatile (15, 15, METATILE_BikeShop_Barrier_Blue_TopMid, 1)
+	setmetatile (15, 16, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (15, 17, METATILE_BikeShop_Barrier_Blue_Bottom, 1)
+
+	setmetatile (18, 7, METATILE_BikeShop_Barrier_Blue_Top, 1)
+	setmetatile (18, 8, METATILE_BikeShop_Barrier_Blue_TopMid, 1)
+	setmetatile (18, 9, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (18, 10, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (18, 11, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (18, 12, METATILE_BikeShop_Barrier_Blue_Bottom, 1)
+
+	setmetatile (30, 3, METATILE_BikeShop_Barrier_Blue_Top, 1)
+	setmetatile (30, 4, METATILE_BikeShop_Barrier_Blue_TopMid, 1)
+	setmetatile (30, 5, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (30, 6, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (30, 7, METATILE_BikeShop_Barrier_Blue_Bottom, 1)
+
+	setmetatile (38, 39, METATILE_BikeShop_Barrier_Blue_Top, 1)
+	setmetatile (38, 31, METATILE_BikeShop_Barrier_Blue_TopMid, 1)
+	setmetatile (38, 32, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (38, 33, METATILE_BikeShop_Barrier_Blue_BottomMid, 1)
+	setmetatile (38, 34, METATILE_BikeShop_Barrier_Blue_Bottom, 1)
+
+
+	setmetatile (8, 7, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (8, 8, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (8, 9, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (8, 10, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (8, 11, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (8, 12, METATILE_BikeShop_Wall_Edge_Top, 0)
+	
+	setmetatile (9, 35, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (9, 36, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (9, 37, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (9, 38, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (26, 3, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (26, 4, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (26, 5, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (26, 6, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (26, 7, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (27, 19, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (27, 20, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (27, 21, METATILE_BikeShop_Floor_Shadow_Top, 1)
+	setmetatile (27, 22, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (27, 23, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (27, 24, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (30, 10, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (30, 11, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (30, 12, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (30, 13, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (30, 14, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (32, 35, METATILE_BikeShop_Barrier_Hidden_Top, 1)
+	setmetatile (32, 36, METATILE_BikeShop_Barrier_Hidden_Bottom, 1)
+	setmetatile (32, 37, METATILE_BikeShop_Floor_Shadow_Top, 0)
+	setmetatile (32, 38, METATILE_BikeShop_Floor_Normal, 0)
+	setmetatile (32, 39, METATILE_BikeShop_Wall_Edge_Top, 0)
+
+	setmetatile (6, 18, METATILE_BikeShop_Button_Blue, 0)
+	setmetatile (11, 2, METATILE_BikeShop_Button_Blue, 0)
+	setmetatile (16, 22, METATILE_BikeShop_Button_Blue, 0)
+	setmetatile (28, 13, METATILE_BikeShop_Button_Blue, 0)
+	setmetatile (35, 36, METATILE_BikeShop_Button_Blue, 0)
+	setmetatile (40, 21, METATILE_BikeShop_Button_Blue, 0)
+	setmetatile (34, 6, METATILE_BikeShop_Button_Blue, 0)
+
+	setmetatile (4, 18, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (11, 23, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (21, 2, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (28, 5, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (38, 21, METATILE_BikeShop_Button_Pressed, 0)
+	setmetatile (40, 38, METATILE_BikeShop_Button_Pressed, 0)
+	return
+}
+
+script Vegas_PowerPlant_EventScript_BlueButton {
+	lockall
+	setvar (VAR_TEMP_1, 1)
+	setvar (VAR_TEMP_2, 0)
+	playse (SE_PIN)
+	call (Vegas_PowerPlant_EventScript_SetBarrierStateBlueButton)
+	special (DrawWholeMapView)
+	releaseall
+	end
+} 
+
+script Vegas_PowerPlant_EventScript_GreenButton {
+	lockall
+	setvar (VAR_TEMP_1, 0)
+	setvar (VAR_TEMP_2, 1)
+	playse (SE_PIN)
+	call (Vegas_PowerPlant_EventScript_SetBarrierStateGreenButton)
+	special (DrawWholeMapView)
+	releaseall
+	end
+} 
+	
+
+
+
+

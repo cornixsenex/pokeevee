@@ -1,0 +1,959 @@
+mapscripts Route4_MapScripts {}
+
+//School to understand Latin
+//Nestor prompts you to gather the heroes
+//Convince the heroes to gather
+//Nestor summons Heracles
+//
+
+//Catalogue of Heroes
+//Achilleus
+//Hektor
+//Ulysses
+//Aeneis
+//Ajax
+//Diomedes
+//Menelaus
+//Alexandros
+//Agamamnon
+//Philoctetes
+//Troilus
+//Lesser Ajax
+//Calchas
+
+//Ulysses
+	//Feigning madness at home, then must be guided to Nestor after getting lost many times
+		//Odyssey:
+			//  1: Odysseus feigns madness. He has released his sheep and now keeps rocks in the pasture. He runs in circles muttering mumbo jumbo. His wife assures you he is quite insane. His son plays with the sheep but seems bored since his father won't play with him. He asks if you'd like to play hide and seek. When he's found he will either go to a new hiding spot, or return to the sheep. When he's in hiding if you speak with Penelope she will freak and go mad searching for her son, she will go to Ulysses who will then break character and agree to go to Nestor if you bring his boy back. Then when you find the boy when he returns to the sheep Ulysses will be with Penelope and will leave when you speak with him.
+			//  2: Lotus Eaters - Ulysses is in the Lotus Grove on Maui and won't leave until you bring him some Kind Bud
+			//  3: Cyclops - Bring Ulysses a sheeps skin while he's locked in the cave (take the back way since front way is blocked by Polyphemus) He will give you a Krater of wine, if you deliver that to Polyphemus he will drink it and then let the sheep out not noticing Ulysses imperfect disguise. Speak to Ulysses in the field with the Sheep in his disguise and he will depart. I think Polyphemus can play a part in another myth as well somewhere down the line.
+			//  4: Circe - When you meet her she offers you a drink. If you drink it KO otherwise she attacks. After being defeated she will heal you in bed. When Ulysses arrives there will be a new pig NPC who if you interact with it while holding "Moly" it will transform into Ulysses...in fact all the animals should be interactable with 'Moly' Moly is a berry, or flower or herb not mota...or maybe mota.
+			//  5: Shades - Sacrifice to the shades
+			//  6: Sirens - defeat the sirens so they stop singing - (Musical hut on Big Island?)
+			//  7: Scylla and Charybdis - Ulysses appears on the norther spit of Italia along with a Tentecruel patrolling the waters inbetween italia and Maui. After defeat / capture Scylla speak to him he will leave
+			//  8: Calypso - Within the sea cave south Big Island Ulysses has become Calypso's boy toy. She is enraged when you arrive to take him from her and does battle, after which speak to him he will leave. She will then rest / heal you in bed
+			//  9: Atlantis? - Ulysses arrives on the mainland where a group of people told him of the new play about the Trojan War where he was a hero. He insists you watch the performance before departing.
+			// 10: Swineherd - Ulysses is in a poor farmer's hut where he refuses to leave to join Nestor until you bring something for the poor man to eat.
+			// 11: Beggar - A new beggar appears in the city who asks for money. At this point Penelope whill lose her wedding ring. If you find it and return it to her she will just lose it again and again, if you give the ring to Ulysses instead he will become enraged and accuse you of cucking him
+			// 12: Battle - He uses tricky pokemon, trojan horse, big dog named (I forgot), prolly some psychic types. After he's defeated he FINALLY returns to Nestor
+//Achilleus
+	//His Myrmidon guard will tell you Lord Achilles refuses to leave his ship or accept guests as he mourns the departure of his lover Patrokles who has gone to buy things at the store in the city. 
+	//After this if you go to the store (Department store?) He will exit the door as you approach and accuse you of getting in his way. He attacks, after defeating him he...dies? And his herald shocked returns with news to Achilles. 
+	//When you return to the ships the guard tries to warn you but Achilles storms out enraged and attacks you. Defeated he will return to Nestor.
+//Agamemnon
+	//Under the spell of Clytemnestra, needs Oresetes help to recover. Orestes, pursued by the 3 ghosts runs madly through the forest. Once the furies are vanquished he will show you the secret way into Agamemnon's palace where you together battle Clytemnestra and Aegisthus. Once defeated the spell is broken and Agamemnon is freed from the spell. Orestes' ghost re-appear to torment him for his deed. They can be defeated again and he will return to be at peace in the house of Agamemnon.
+//Menelaus
+	//At home distraught he can't find and recover his lost helen
+//Ajax
+	//Has gone mad, butchered a flock of sheep and found somewhere contemplating suicide
+//Diomedes
+	//The greatest racer in the hippodrome must be defeated in a race
+//Teucer / Lesser Aias
+	//Failed at the GD concert, will leave after the music stops
+//Philoctetes
+	//Stranded on the Big island in the middle of the jungle, injured foot he needs medicine. He hides in a shack deep in the jungle of Big Island. He tells you to stay back, attacks when you get near, then tells his tale. Abandoned there to die and in desperate need of medicine. Bring him the medicine and he will depart
+//Tiresies / Calchas
+	//With Oedipus, will leave after odipus does his thing
+
+//Hektor
+	//In beach cave training to be stronger. Returns without a fight.
+//Alexandros
+	//In hiding with his beloved helen. A wild bull attacks which he yokes, the people exclaim that none but the great Alexandros, prince paris, could have done such a thing. When confronted he immediately goes to Nestor in fear. Helen attacks refusing to return to her husband but relents after defeat.
+//Aeneis
+	//On Lavinian shores! Arms and the boys of whom I cry!
+	//Aeneis recognizes the authority of Nestor and wishes to return but admits his obligation to the pythia who told him to found a city here, and to his family, is higher. On the shore Aeneis runs up and down saying his twin grandsons have gone missing for days. He and his son, Faustulus, don't have much hope but he refuses to rest until they are found. In the Lupercal Cave (deep?) you find the boys and the wolf. Upon approach the boys retread and mama approaches. She growls as you approach and if you get too close she attacks. After being defeated or captured Faustulus will enter and exclaim with joy at the discover of his boys and bring them home where you will find Aeneis ready to meet Nestory. Faustulus makes some joke about how the twins are constantly fighting with eachother but that the auspices are good, a great city will be built and his descendants shall inherit the earth.
+
+//Trojan War
+
+//Once the heros are assembles Nestor will conduct a headcount but find only 11 men present. At this point Menelaus will exclaim "He's stolen her!" Paris has stolen Helen. Menelaus insists the heros assemble to defeat Paris and win her back. Hektor and Aeneas say they will not fight their own brother, they give respect to Nestor and the heros but leave to defend their family. Nestor laments the breaking of the heros but suggests you join the heros to get Helen back so that the heros can re-assemble and summon heracles.
+	//Iphigenia
+		//The Heros assemble (somewhere not Troy) and realize they don't know where Paris has gone. Tiresias communes with the divine and declares that one of them must sacrifice their child. It goes around the horn that everyone is shocked but Agamemnon rises and says he will sacricfice his daughter Iphigenia after her mother had tried to kill him. He charges you to go retrieve her.
+		//Return to Orestes @ Agamemnon house
+		//Orestes says that Iphigenia has gone to Aulis (why?)
+		//When you two go to fetch her you are captured and brought to be sacrificed?
+		//When she realizes what's happened create plan to escape
+		//Sneak to lake, escape on the boat that brought you
+		//Back at palace of Agamemnon lie to her and say she's going to marry Achilles
+		//Bring her to the greek camp
+		//Sacrifice
+		//The way to Troy is made clear
+	//Arrival at Troy (Castle tiles available at Docs/Poke/art/castle...png - NOT in the sub directories)
+	//12 battles all together, final 3: Hektor, Aeneas, Paris
+	//After first X battles Achilles goes to get supplies
+	//Go with him to raid somewhere
+	//He returns with Briseis
+	//A great plague strikes the army
+	//Tiresias says Briseis must be returned
+	//Achilles throws a fit
+	//Pandaros fight
+	//Trojans push to the ships
+	//Patrokles fall (IDK)
+	//Achilles returns
+	//Hektor fight
+	//Ulysses trojan horse device to infiltrate Troy (Probably just a tunnel) - TROJAN WHORES!
+	//Aeneas
+	//Priam
+	//Paris
+	//Helen
+
+//12 trials
+//defeat nemean lion
+//defeat hydra
+//capture hind (stantler)
+//capture boar
+//clean stables
+//defeat stygian birds
+//capture bull
+//capture mare
+//defeat hippolyta
+//catpure cattle
+//steal 3 golden apples
+//capture ceberus
+
+
+// *Catalogue of other myths*
+//Theseus - something underground minotaur
+//Perseus - monster head turns victims to stone
+//Orpheus - flute to lull cerberus to sleep
+//Jason   - out on a boat - golden fleece
+//Atlas
+//Belerophon
+//Daedalus and Icarus
+//Minos
+//Narcissus
+//Proteus
+//Prometheus
+//Cadmus
+//Pyramus and Thisbe
+//Muses
+//Persephone / Proserpine
+//Pygmalion (statue lover)
+//Io and Zeus
+//Phaethon
+//Danaides / Amazonians
+//Calydonian Boar Hunt
+//Asclepius (Doctor who ressurected the dead)
+//Castor and Pollux - Dioscuri
+//Meleager and Althea (Son kills brothers, mother kills son)
+//Oedipus (Sphinx, tradgedy, blidning, 7 against thebes)
+//Sisyphus
+
+//UpdatePerDay
+//ClearDailyFlags
+
+//  --- This could help with re-setting the mythical pokemon on the timer
+//ChangeBoxPokemonName 
+//SetBoxMonData
+//GetBoxedMonPtr
+
+
+
+script Route4_EventScript_Delia {
+	trainerbattle_double (TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_DeliaPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Bonnie {
+	trainerbattle_double (TRAINER_DELIA_AND_BONNIE, Route4_Text_BonnieIntro, Route4_Text_BonnieLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_BonniePost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Charlie {
+	trainerbattle_single (TRAINER_CHARLIE, Route4_Text_CharlieIntro, Route4_Text_CharlieLost)
+	msgbox(Route4_Text_CharliePost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Andy {
+	trainerbattle_single (TRAINER_ANDY, Route4_Text_AndyIntro, Route4_Text_AndyLost)
+	msgbox(Route4_Text_AndyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Roy {
+	trainerbattle_single (TRAINER_ROY, Route4_Text_RoyIntro, Route4_Text_RoyLost)
+	msgbox(Route4_Text_RoyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Will {
+	trainerbattle_single (TRAINER_WILL, Route4_Text_WillIntro, Route4_Text_WillLost)
+	msgbox(Route4_Text_WillPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Walton {
+	trainerbattle_single (TRAINER_WALTON, Route4_Text_WaltonIntro, Route4_Text_WaltonLost)
+	msgbox(Route4_Text_WaltonPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Lewis {
+	trainerbattle_single (TRAINER_LEWIS, Route4_Text_LewisIntro, Route4_Text_LewisLost)
+	msgbox(Route4_Text_LewisPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Liz {
+	trainerbattle_single (TRAINER_LIZ, Route4_Text_LizIntro, Route4_Text_LizLost)
+	msgbox(Route4_Text_LizPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Lindsey {
+	trainerbattle_single (TRAINER_LINDSEY, Route4_Text_LindseyIntro, Route4_Text_LindseyLost)
+	msgbox(Route4_Text_LindseyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Lexy {
+	trainerbattle_single (TRAINER_LEXY, Route4_Text_LexyIntro, Route4_Text_LexyLost)
+	msgbox(Route4_Text_LexyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Jeremy {
+	trainerbattle_single (TRAINER_JEREMY, Route4_Text_JeremyIntro, Route4_Text_JeremyLost)
+	msgbox(Route4_Text_JeremyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Orion {
+	trainerbattle_single (TRAINER_ORION, Route4_Text_OrionIntro, Route4_Text_OrionLost)
+	msgbox(Route4_Text_OrionPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Kipland {
+	trainerbattle_single (TRAINER_KIPLAND, Route4_Text_KiplandIntro, Route4_Text_KiplandLost)
+	msgbox(Route4_Text_KiplandPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Mandy {
+	trainerbattle_single (TRAINER_MANDY, Route4_Text_MandyIntro, Route4_Text_MandyLost)
+	msgbox(Route4_Text_MandyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Hecuba {
+	trainerbattle_double (TRAINER_AIAS_AND_HECUBA, Route4_Text_HecubaIntro, Route4_Text_HecubaLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_HecubaPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Aias {
+	trainerbattle_double (TRAINER_AIAS_AND_HECUBA, Route4_Text_AiasIntro, Route4_Text_AiasLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_AiasPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Les {
+	trainerbattle_single (TRAINER_LES, Route4_Text_LesIntro, Route4_Text_LesLost)
+	msgbox(Route4_Text_LesPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Sanjay {
+	trainerbattle_single (TRAINER_SANJAY, Route4_Text_SanjayIntro, Route4_Text_SanjayLost)
+	msgbox(Route4_Text_SanjayPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Willie {
+	trainerbattle_single (TRAINER_WILLIE, Route4_Text_WillieIntro, Route4_Text_WillieLost)
+	msgbox(Route4_Text_WilliePost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Harry {
+	trainerbattle_single (TRAINER_HARRY, Route4_Text_HarryIntro, Route4_Text_HarryLost)
+	msgbox(Route4_Text_HarryPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Teucer {
+	trainerbattle_single (TRAINER_TEUCER, Route4_Text_TeucerIntro, Route4_Text_TeucerLost)
+	msgbox(Route4_Text_TeucerPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Syra {
+	trainerbattle_single (TRAINER_SYRA, Route4_Text_SyraIntro, Route4_Text_SyraLost)
+	msgbox(Route4_Text_SyraPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Sky {
+	trainerbattle_single (TRAINER_SKY, Route4_Text_SkyIntro, Route4_Text_SkyLost)
+	msgbox(Route4_Text_SkyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Rocky {
+	if (!defeated(TRAINER_ROCKY) ) {
+		msgbox (Route4_Text_RockyIntro)
+		closemessage
+		trainerbattle_no_intro(TRAINER_ROCKY, Route4_Text_RockyLost)
+		msgbox (Route4_Text_RockyDefeat)
+		closemessage
+		giveitem (ITEM_BLACK_BELT)		
+		msgbox(Route4_Text_RockyPost)
+		closemessage
+	} else {
+		msgbox(Route4_Text_RockyPost)
+		closemessage
+	}
+	closemessage
+	end
+}
+
+script Route4_EventScript_Nestor {
+	lock
+	faceplayer
+	checkitem (ITEM_DIPLOMA, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox("ENGLISH")
+	} else {
+		msgbox("LATINA")
+	}
+	closemessage
+}
+
+//script Route4_EventScript_Tyson {
+//	trainerbattle_single (TRAINER_TYSON, Route4_Text_TysonIntro, Route4_Text_TysonLost)
+//	msgbox(Route4_Text_TysonPost)
+//	closemessage
+//	end
+//}
+//
+//script Route4_EventScript_Stu {
+//	trainerbattle_single (TRAINER_STU, Route4_Text_StuIntro, Route4_Text_StuLost)
+//	msgbox(Route4_Text_StuPost)
+//	closemessage
+//	end
+//}
+//
+//script Route4_EventScript_Ali {
+//	trainerbattle_single (TRAINER_ALI, Route4_Text_AliIntro, Route4_Text_AliLost)
+//	msgbox(Route4_Text_AliPost)
+//	closemessage
+//	end
+//}
+//
+//script Route4_EventScript_Patroklos {
+//	trainerbattle_single (TRAINER_PATROKLOS, Route4_Text_PatroklosIntro, Route4_Text_PatroklosLost)
+//	msgbox(Route4_Text_PatroklosPost)
+//	closemessage
+//	end
+//}
+//
+//script Route4_EventScript_Epeus {
+//	trainerbattle_single (TRAINER_EPEUS, Route4_Text_EpeusIntro, Route4_Text_EpeusLost)
+//	msgbox(Route4_Text_EpeusPost)
+//	closemessage
+//	end
+//}
+
+script Route4_EventScript_Sandy {
+	trainerbattle_single (TRAINER_SANDY, Route4_Text_SandyIntro, Route4_Text_SandyLost)
+	msgbox(Route4_Text_SandyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Mago {
+	trainerbattle_single (TRAINER_MAGO, Route4_Text_MagoIntro, Route4_Text_MagoLost)
+	msgbox(Route4_Text_MagoPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Dido {
+	trainerbattle_single (TRAINER_DIDO, Route4_Text_DidoIntro, Route4_Text_DidoLost)
+	msgbox(Route4_Text_DidoPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Betty {
+	trainerbattle_single (TRAINER_BETTY, Route4_Text_BettyIntro, Route4_Text_BettyLost)
+	msgbox(Route4_Text_BettyPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Donovan {
+	trainerbattle_single (TRAINER_DONOVAN, Route4_Text_DonovanIntro, Route4_Text_DonovanLost)
+	msgbox(Route4_Text_DonovanPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Helen {
+	trainerbattle_double (TRAINER_HELEN_AND_PARIS, Route4_Text_HelenIntro, Route4_Text_HelenLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_HelenPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_Paris {
+	trainerbattle_double (TRAINER_HELEN_AND_PARIS, Route4_Text_ParisIntro, Route4_Text_ParisLost, Route124_Text_LilaNotEnoughMons)
+	msgbox(Route4_Text_ParisPost)
+	closemessage
+	end
+}
+
+script Route4_EventScript_FatMan {
+	lock
+	faceplayer
+	msgbox(Route4_Text_FatMan)
+	closemessage
+	release
+	end
+}
+
+script Route4_EventScript_RocketTrigger {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Route4_Text_Rocket1)
+	closemessage
+	msgbox (Route4_Text_Rocket2)
+	applymovement (14, Route4_Movement_RocketExit)
+	applymovement (15, Route4_Movement_RocketExit)
+	waitmovement (0)
+	removeobject (14)
+	removeobject (15)
+	setflag (FLAG_ROUTE4_HIDEROCKETS)
+	setvar (VAR_ROUTE4_STATE, 1)
+	release
+	end
+}
+	
+movement Route4_Movement_RocketExit {
+	walk_left * 9
+}
+
+text Route4_Text_DeliaIntro {
+	format("We just got out of school. We're here to play!")
+}
+
+text Route4_Text_DeliaLost {
+	format("Why don't you pick on someone your own size?")
+}
+
+text Route4_Text_DeliaPost {
+	format("We actually don't go to school no more.")
+}
+
+text Route4_Text_BonnieIntro {
+	format("Watch out Delia! This guy wants to fight.")
+}
+
+text Route4_Text_BonnieLost {
+	format("You sure showed us that you can beat us up.")
+}
+
+text Route4_Text_BonniePost {
+	format("I hope we never see your face again.")
+}
+
+text Route4_Text_CharlieIntro {
+	format("One day I'll practice law and smash those rats.")
+}
+
+text Route4_Text_CharlieLost {
+	format("Ok, you win.")
+}
+
+text Route4_Text_CharliePost {
+	format("Please don't tell the waitress!")
+}
+
+text Route4_Text_AndyIntro {
+	format("It seems like everyone out here is rude. You can't even say hi to anyone without them trying to start up a fight.")
+
+}
+
+text Route4_Text_AndyLost {
+	format("This only proves my point...")
+}
+
+text Route4_Text_AndyPost {
+	format("Get out of here! You've messed me up enough!")
+}
+
+text Route4_Text_RoyIntro {
+	format("I excersize, shower, and I dress well. It's not my fault that I was born like this.")
+
+}
+
+text Route4_Text_RoyLost {
+	format("I would have won if I had better teeth.")
+}
+
+text Route4_Text_RoyPost {
+	format("Just go away! Stop looking at my teeth!")
+}
+
+text Route4_Text_WillIntro {
+	format("Can you imagine our reality?")
+
+}
+
+text Route4_Text_WillLost {
+	format("A rectangle twenty by twenty one.")
+}
+
+text Route4_Text_WillPost {
+	format("We've come to the conclusion: COWS EAT GRASS")
+}
+
+text Route4_Text_WaltonIntro {
+	format("Some people call me Chill!")
+
+}
+
+text Route4_Text_WaltonLost {
+	format("My name is Bill!")
+}
+
+text Route4_Text_WaltonPost {
+	format("Everyone's playing in The Steel Drumm Band")
+}
+
+text Route4_Text_LewisIntro {
+	format("I spend all of my time playing out here and helping my Pokemon grow stronger!")
+
+}
+
+text Route4_Text_LewisLost {
+	format("You're something else!")
+}
+
+text Route4_Text_LewisPost {
+	format("I'm not as strong as you. I won't give up, come back in a few years.")
+}
+
+text Route4_Text_LizIntro {
+	format("Would you mind if I stand next to you dude?")
+
+}
+
+text Route4_Text_LizLost {
+	format("Is it okay if I sit on you too?")
+}
+
+text Route4_Text_LizPost {
+	format("I think I left my jacket at your house.")
+}
+
+text Route4_Text_LindseyIntro {
+	format("I must warn you my Pokemon are fetch.")
+
+}
+
+text Route4_Text_LindseyLost {
+	format("This is the worst day I have ever had!")
+}
+
+text Route4_Text_LindseyPost {
+	format("It's not that I don't like Lexi, I do, but why does she have to borrow my clothes?")
+}
+
+text Route4_Text_LexyIntro {
+	format("I must warn you my Pokemon are fetch.")
+
+}
+
+text Route4_Text_LexyLost {
+	format("This is the worst day I have ever had!")
+}
+
+text Route4_Text_LexyPost {
+	format("It's not that I don't like Lexi, I do, but why does she have to borrow my clothes?")
+}
+
+text Route4_Text_JeremyIntro {
+	format("I've been at study now for many nights. I've mastered painting and dentistry too.")
+
+}
+
+text Route4_Text_JeremyLost {
+	format("I feel like I'm a real nobody man!")
+}
+
+text Route4_Text_JeremyPost {
+	format("I made all of my nowhere plans for nobody.")
+}
+
+text Route4_Text_OrionIntro {
+	format("I like to stay hidden, unseen, and watch.")
+
+}
+
+text Route4_Text_OrionLost {
+	format("This is exactly why I try to hide.")
+}
+
+text Route4_Text_OrionPost {
+	format("Up here, I have too many eyes on me.")
+}
+
+text Route4_Text_KiplandIntro {
+	format("I'm training!")
+
+}
+
+text Route4_Text_KiplandLost {
+	format("One day I'll be a blackbelt!")
+}
+
+text Route4_Text_KiplandPost {
+	format("I totally have a hot girl friend dude!")
+}
+
+text Route4_Text_MandyIntro {
+	format("Out of my way! This lane's for bicycles.")
+
+}
+
+text Route4_Text_MandyLost {
+	format("I think my tire must have popped a flat.")
+}
+
+text Route4_Text_MandyPost {
+	format("I totally have a hot girl friend dude!")
+}
+
+
+text Route4_Text_HecubaIntro {
+	format("My great lord Aias will keep me from harm.")
+
+}
+
+text Route4_Text_HecubaLost {
+	format("Apollo has forgotten me again!")
+}
+
+text Route4_Text_HecubaPost {
+	format("My husband recently has been this way...I worry often that he's lost his mind.")
+}
+
+text Route4_Text_AiasIntro {
+	format("I rush to arms once more against this youth! No man will keep me from my victory!")
+
+}
+
+text Route4_Text_AiasLost {
+	format("My cursed enemy has brought me shame.")
+}
+
+text Route4_Text_AiasPost {
+	format("Defeated now I sit and await death.")
+}
+
+text Route4_Text_LesIntro {
+	format("When I was younger I had but one dream: To wield a rod, to be a fisherman.")
+
+}
+
+text Route4_Text_LesLost {
+	format("I lied to you, there was another dream.")
+}
+
+text Route4_Text_LesPost {
+	format("Developing pork chop flavored soda would be a better use of my time here.")
+}
+
+text Route4_Text_SanjayIntro {
+	format("The fighting men up there terrfy me!")
+}
+
+text Route4_Text_SanjayLost {
+	format("You are viscious, just like those fighting men!")
+}
+
+text Route4_Text_SanjayPost {
+	format("Be careful if you try to climb the hill, those fighting men are not to be fooled with.")
+}
+
+text Route4_Text_WillieIntro {
+	format("Nothing compares to those sweet purple pills!")
+}
+
+text Route4_Text_WillieLost {
+	format("Just so you know my left eye's made of glass.")
+}
+
+text Route4_Text_WilliePost {
+	format("Let me know when you want to share my girl.")
+}
+
+text Route4_Text_HarryIntro {
+	format("They said I had this scar when I was born!")
+}
+
+text Route4_Text_HarryLost {
+	format("This isn't fair! I was the chosen one!")
+}
+
+text Route4_Text_HarryPost {
+	format("I've walked further than you around this world and seen many things you would not believe. I've seen centaurs, giants, and dragons too.")
+}
+
+text Route4_Text_TeucerIntro {
+	format("I lost my dad and washed across the sea.")
+}
+
+text Route4_Text_TeucerLost {
+	format("I'm going under!")
+}
+
+text Route4_Text_TeucerPost {
+	format("Have you seen my dad?")
+}
+
+text Route4_Text_SyraIntro {
+	format("Excuse me, do you think my nose is big?")
+}
+
+text Route4_Text_SyraLost {
+	format("You wouldn't be laughing if I were rich.")
+}
+
+text Route4_Text_SyraPost {
+	format("My nose is way too big and ugly!")
+}
+
+text Route4_Text_SkyIntro {
+	format("Like I've been spending all my time with birds and it got me like thinking...are they real?")
+}
+
+text Route4_Text_SkyLost {
+	format("I know one thing for certain, that loss was real.")
+}
+
+text Route4_Text_SkyPost {
+	format("I don't think Earth is flat or anything, but maybe there's an Earth within The Earth.")
+}
+
+text Route4_Text_RockyIntro {
+	format("I've learned that in this life you have to fight to win glory as well as win the bread. No western man has bested me thus far. Prepare to be tested, look to your strength.")
+}
+
+text Route4_Text_RockyLost {
+	format("Congratulations {PLAYER} our new master.")
+}
+
+text Route4_Text_RockyDefeat {
+	format("I must accept defeat. I kneel to you and as our new leader you must accept this black belt and command over our gang.")
+}
+
+text Route4_Text_RockyPost {
+	format("Be safe and wear your new black belt with pride")
+}
+
+text Route4_Text_TysonIntro {
+	format("I'll fuck you up! I'll bite your ear off, bitch!")
+}
+
+text Route4_Text_TysonLost {
+	format("Hey! Take it easy man!")
+}
+
+text Route4_Text_TysonPost {
+	format("Wow! What a fight! Before you face our master here be warned. He weilds power that far exceeds my own. You should not face him unprepared to lose.")
+}
+
+text Route4_Text_StuIntro {
+	 format("I attend fighting class three times a week.")
+}
+
+text Route4_Text_StuLost {
+	format("Oh yeah? Can you break a wood board in half?")
+}
+
+text Route4_Text_StuPost {
+	format("You only won because you broke the rules, our master will not be bothered by you.")
+}
+
+text Route4_Text_AliIntro {
+	 format("I do not want to fight. This is my job.")
+}
+
+text Route4_Text_AliLost {
+	format("You defeated me, with tenacity.")
+}
+
+text Route4_Text_AliPost {
+	format("Take caution with you if you venture on, I am nothing compared with our master.")
+}
+
+text Route4_Text_PatroklosIntro {
+	 format("I've borrowed my tunic from my best friend.")
+}
+
+text Route4_Text_PatroklosLost {
+	format("It was fated that I would fall to you.")
+}
+
+text Route4_Text_PatroklosPost {
+	format("Be wary lest you fall to our master, he is the mightiest man that I know.")
+}
+
+text Route4_Text_EpeusIntro {
+	 format("I cannot lose in hand to hand combat!")
+}
+
+text Route4_Text_EpeusLost {
+	format("I must sit down, go on, you win this round.")
+}
+
+text Route4_Text_EpeusPost {
+	format("I am an architecht of great revenge, beware I may attempt to beat you yet.")
+}
+
+text Route4_Text_SandyIntro {
+	 format("I aint from round these parts, I'm from Texas!")
+}
+
+text Route4_Text_SandyLost {
+	format("I'm goin back to Texas any day.")
+}
+
+text Route4_Text_SandyPost {
+	format("I spent some time down there, under the sea, but now I reckon it's time to go home.")
+}
+
+text Route4_Text_MagoIntro {
+	 format("She's not my sister!")
+}
+
+text Route4_Text_MagoLost {
+	format("We're more like cousins...")
+}
+
+text Route4_Text_MagoPost {
+	format("A city once existed on this beach, at least that's what my grandfather told me...")
+}
+
+text Route4_Text_DidoIntro {
+	 format("A weary traveller must never be allowed to pass without recognition.") 
+}
+
+text Route4_Text_DidoLost {
+	format("Another heartbreak")
+}
+
+text Route4_Text_DidoPost {
+	format("My lover left me so now I have no reason left to live...")
+}
+
+text Route4_Text_BettyIntro {
+	 format("Well gee you're certainly a daring one.") 
+}
+
+text Route4_Text_BettyLost {
+	format("I've got to ask you. What is your secret?")
+}
+
+text Route4_Text_BettyPost {
+	format("To be beaten by you was something else!")
+}
+
+text Route4_Text_DonovanIntro {
+	 format("There are two rabbits running in that ditch.") 
+}
+
+text Route4_Text_DonovanLost {
+	format("This was not what I saw from my window!")
+}
+
+text Route4_Text_DonovanPost {
+	format("I spent so long at home staring outside wondering what the real world was about but just so fast as I come out to play someone like you comes by...ruins my day.")
+}
+
+text Route4_Text_HelenIntro {
+	 format("We ran away together. Isn't that the best story of romance ever told?") 
+}
+
+text Route4_Text_HelenLost {
+	format("This can't be happening! No! Not to me!")
+}
+
+text Route4_Text_HelenPost {
+	format("I curse the day I took him to be mine.")
+}
+
+text Route4_Text_ParisIntro {
+	 format("The love goddess brought us two here today.") 
+}
+
+text Route4_Text_ParisLost {
+	format("It was nothing but fate that led to this.")
+}
+
+text Route4_Text_ParisPost {
+	format("I still feel I was never in the wrong.")
+}
+
+text Route4_Text_FatMan {
+	format("I can't stop eating! It's all I enjoy.")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+text Route4_Text_Test {
+	format("Just a Test Message srry...")	
+}
+
+text Route4_Text_Rocket1 {
+	format("This is no good what will we tell the boss?")
+}
+
+text Route4_Text_Rocket2 {
+	format("Don't worry about that, leave it to me. There's no sign of her out here anyways...")
+}
+
+
+
+
+

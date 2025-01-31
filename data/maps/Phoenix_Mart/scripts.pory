@@ -1,0 +1,56 @@
+mapscripts Phoenix_Mart_MapScripts {}
+
+mart Phoenix_Mart_Mart_Shop {
+	ITEM_LEMONADE
+	ITEM_RARE_CANDY
+}
+
+script Phoenix_Mart_EventScript_Clerk {
+	lock
+	faceplayer
+	checkitem (ITEM_KEG)
+	if (var(VAR_RESULT) == FALSE && (!flag(FLAG_PLEDGE_HAS_KEG))) {
+		showmoneybox (0,0)
+		msgbox(Phoenix_Mart_Text_ClerkKeg, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE) {
+			checkmoney (69)
+			if (var(VAR_RESULT) == TRUE) {
+				removemoney (69)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				giveitem (ITEM_KEG)
+				hidemoneybox
+				msgbox(Phoenix_Mart_Text_ClerkKegSold)
+			} else {
+				msgbox(Phoenix_Mart_Text_ClerkKegShortMoney)
+			}
+		} else {
+			msgbox(Phoenix_Mart_Text_ClerkKegNo)
+		}
+		closemessage
+	}
+	message (gText_HowMayIServeYou)
+	waitmessage
+	pokemart (Phoenix_Mart_Mart_Shop)
+	msgbox (gText_PleaseComeAgain)
+	release
+	end
+}
+
+text Phoenix_Mart_Text_ClerkKeg {
+	format("Hey kid, you look like you like to party, you want to buy my last keg full of beer? I'll sell it to you for 69 bucks.")
+}
+
+text Phoenix_Mart_Text_ClerkKegSold {
+	format("It's yours! Don't drink it all at the same place haha!")
+}
+
+text Phoenix_Mart_Text_ClerkKegShortMoney {
+	format("Sorry, looks like you need some more money.")
+}
+
+text Phoenix_Mart_Text_ClerkKegNo {
+	format("That's fine, but these kegs are selling out fast...")
+}
+

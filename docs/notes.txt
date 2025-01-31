@@ -1,0 +1,47 @@
+#How large is the ROM
+	>Open the Makefile, REMOVE the -p argument in the line where gbafix is called, build a ROM and then check the properties of the file.
+
+
+#Want to skip the intro?
+	>src/intro.c
+	>include main_menu.h
+	>CB2_InitCopyrightScreenAfterBootup:
+    --	if (!SetUpCopyrightScreen())
+	++  if (gMain.state == 0)
+	>At end of same function add
+	++  CB2_InitMainMenu
+
+#How to import music (my method)
+	>Find or produce .midi
+	>Use Ardour to listen / preview / stage
+	>Use Muse to actually trim the song (count the beats)
+	>Export to Anvil / wangblows
+	>Use anvil to set instruments and loop points
+	>copy the new anvil midi into /sounds/songs/midi/mus_xxx.mid
+	>ld_script.txt
+	>songs.mk
+	>include/constants/songs.h
+	>sound/song_table.inc
+	>Create the new voicegroup (just copy sound/voicegroups/voicegroup191)
+	>Match the instruments from anvil into whatever you find in the repo)
+		>002 = drums (but idk how to use them)
+		>005 = piano
+		>006 = strings
+		>007 = trumpet
+		>008 = tuba
+		>009 = french horn
+		       bell
+		       harp
+		       timpani
+		       nylon guitar
+		       overdrive guitar
+		       bass
+		       glock
+		       xylophone
+		       accordion
+		       flute
+		       organ
+		       etc
+	>Add new voicegroup to sound/voice_groups.inc
+	>Add somewhere to test the music plays (script or porymap)
+	>Finangle with the audio to make it sound "good"

@@ -1,0 +1,1201 @@
+
+//Basically trigger pulls camera to middle cutscene, battle, exits and entrances, reverse ledge climb?
+
+//President sees player and is afraid
+
+//Gio mocks him
+
+
+const OBJ_EVENT_ID_CICERO = 3
+const OBJ_EVENT_ID_GIO = 1
+const OBJ_EVENT_ID_MEWTWO_ARMOR = 2
+const OBJ_EVENT_ID_MEWTWO = 32
+const OBJ_EVENT_ID_PERSIAN = 31
+const OBJ_EVENT_ID_SOLDIER1 = 4
+const OBJ_EVENT_ID_SOLDIER2 = 5
+const OBJ_EVENT_ID_SOLDIER3 = 6
+const OBJ_EVENT_ID_LT_SURGE = 30
+const OBJ_EVENT_ID_MAXIE = 20
+const OBJ_EVENT_ID_REBEL1 = 23
+const OBJ_EVENT_ID_REBEL2 = 19
+const OBJ_EVENT_ID_REBEL3 = 24
+const OBJ_EVENT_ID_REBEL4 = 21
+const OBJ_EVENT_ID_REBEL5 = 22
+
+
+const GIO_FIELD_PIC = 10
+const MEWTWO_ARMOR_FIELD_PIC = 11
+const MEWTWO_FIELD_PIC = 15
+const CICERO_FIELD_PIC = 12
+const SOLDIER_FIELD_PIC = 13
+const MAXIE_FIELD_PIC = 9
+
+
+const LT_SURGE_FIELD_PIC = 14
+
+mapscripts Capital_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		call (Capital_OnTransition)
+	}
+}
+
+//What I want it to do is
+//if 0 then battle
+//if 5 then maxiescene
+//if greater than 5 
+script Capital_OnTransition {
+	if (var(VAR_CAPITAL_STATE) == 0) {
+		call (Capital_EventScript_ShowBattle)
+	} else {
+		call (Capital_EventScript_ShowMaxie)
+	}
+}
+
+script Capital_EventScript_ShowBattle {
+	removeobject (OBJ_EVENT_ID_MEWTWO)
+	return
+}
+
+script Capital_EventScript_ShowMaxie {
+	removeobject (OBJ_EVENT_ID_CICERO)
+	removeobject (OBJ_EVENT_ID_GIO)
+	removeobject (OBJ_EVENT_ID_MEWTWO_ARMOR)
+	removeobject (OBJ_EVENT_ID_PERSIAN)
+	removeobject (OBJ_EVENT_ID_SOLDIER1)
+	removeobject (OBJ_EVENT_ID_SOLDIER2)
+	removeobject (OBJ_EVENT_ID_SOLDIER3)
+	removeobject (OBJ_EVENT_ID_LT_SURGE)
+	setobjectxy (OBJ_EVENT_ID_MAXIE, 21, 6)
+	setobjectmovementtype (OBJ_EVENT_ID_MAXIE, MOVEMENT_TYPE_FACE_DOWN)
+	showobjectat (OBJ_EVENT_ID_MAXIE, MAP_CAPITAL)
+	return
+}
+	
+script Capital_EventScript_DeskTest {
+	lock
+	msgbox (Capital_Text_DeskTestNo)
+	closemessage
+	release
+	end
+}
+
+script Capital_EventScript_RemoveRockets {
+	removeobject(1)
+	removeobject(2)
+	removeobject(3)
+	removeobject(31)
+	removeobject(32)
+	removeobject(4)
+	removeobject(5)
+	removeobject(6)
+	removeobject(25)
+	removeobject(29)
+	removeobject(26)
+	removeobject(27)
+	removeobject(30)
+	removeobject(28)
+	return
+}
+
+script Capital_EventScript_GioTrigger1 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 1)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioTrigger2 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 2)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioTrigger3 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 3)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioTrigger4 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 4)
+	call (Capital_EventScript_GioPresident)
+	release
+}
+
+script Capital_EventScript_GioPresident {
+	//Player faces the action
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+		case 2:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+		case 3:
+		case 4:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	}
+	waitmovement (0)
+	//Cicero faces player
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+		case 2:
+			applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+			waitmovement (0)
+		case 3:
+		case 4:
+			applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceRight)
+			waitmovement (0)
+	}
+	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	//Camera pan to center
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera1)
+		case 2:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera2)
+		case 3:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera3)
+		case 4:
+			applymovement (OBJ_EVENT_ID_CAMERA, Capital_Movement_PanCamera4)
+
+	}
+	waitmovement(0)
+	//Surprise
+	load_field_pic (CICERO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Cicero1)
+	closemessage
+	destroy_field_pic(CICERO_FIELD_PIC)
+	delay (5)
+	//fool
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio1)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	//Cicero face Gio
+	if (var(VAR_CAPITAL_STATE) > 2) {
+		applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+		waitmovement (0)
+	}
+	//Gio face Cicero
+	applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
+	waitmovement (0)
+	//gio gloat
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio2)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//cicero appeal
+	load_field_pic (CICERO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Cicero2)
+	closemessage
+	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceRight)
+	waitmovement (0)
+	msgbox(Capital_Text_Cicero3)
+	closemessage
+	destroy_field_pic(CICERO_FIELD_PIC)
+	delay (5)
+	//gloat
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio3)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	//soldiers approach
+	applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_Soldier2A)
+	applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_Soldier3A)
+    waitmovement (0)
+	//soldier reply
+	load_field_pic (SOLDIER_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Soldier1)
+	closemessage
+	destroy_field_pic(SOLDIER_FIELD_PIC)
+	delay (5)
+	//cicero warning
+	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	load_field_pic (CICERO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Cicero4)
+	closemessage
+	destroy_field_pic(CICERO_FIELD_PIC)
+	delay (5)
+	//Gio victory
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio4)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	//Yell
+	load_field_pic (CICERO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Cicero5)
+	closemessage
+	destroy_field_pic(CICERO_FIELD_PIC)
+	delay (5)
+	//lets go
+	load_field_pic (SOLDIER_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Soldier2)
+	closemessage
+	destroy_field_pic(SOLDIER_FIELD_PIC)
+	delay (5)
+	//turn to leave
+	applymovement (OBJ_EVENT_ID_CICERO, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_SOLDIER2, Common_Movement_FaceDown)
+	waitmovement (0)
+	//not okay+
+	load_field_pic (CICERO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Cicero6)
+	closemessage
+	destroy_field_pic(CICERO_FIELD_PIC)
+	delay (5)
+	//they walk halfway in one direction
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+		case 2:
+			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroR1)
+			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_Soldier2R1)
+			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_Soldier3R1)
+		case 3:
+		case 4:
+			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroL1)
+			applymovement (OBJ_EVENT_ID_SOLDIER1, Capital_Movement_Soldier1L1)
+			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_Soldier2L1)
+			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_Soldier3L1)
+	}
+	//Gio faces down
+	applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceDown)
+	waitmovement (0)
+	//Cicero final appeal to authority
+	load_field_pic (CICERO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Cicero7)
+	closemessage
+	destroy_field_pic(CICERO_FIELD_PIC)
+	delay (5)
+	//enough
+	if (var(VAR_CAPITAL_STATE) > 2) {
+		applymovement(OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+	} else {
+		applymovement(OBJ_EVENT_ID_CICERO, Common_Movement_FaceLeft)
+	}
+	load_field_pic (SOLDIER_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Soldier3)
+	closemessage
+	destroy_field_pic(SOLDIER_FIELD_PIC)
+	delay (5)
+	waitmovement (0)
+	//Cicero and soldiers exit
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+		case 2:
+			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroR2)
+			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_CiceroR2)
+			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_CiceroR2)
+			applymovement (OBJ_EVENT_ID_SOLDIER1, Capital_Movement_CiceroR2)
+		case 3:
+		case 4:
+			applymovement (OBJ_EVENT_ID_CICERO, Capital_Movement_CiceroL2)
+			applymovement (OBJ_EVENT_ID_SOLDIER2, Capital_Movement_CiceroL2)
+			applymovement (OBJ_EVENT_ID_SOLDIER3, Capital_Movement_CiceroL2)
+			applymovement (OBJ_EVENT_ID_SOLDIER1, Capital_Movement_CiceroL2)
+	}
+	load_field_pic (CICERO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Cicero8)
+	closemessage
+	destroy_field_pic(CICERO_FIELD_PIC)
+	delay (5)
+	waitmovement (0)
+	//Gio faces player	
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+		case 2:
+			applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
+		case 3:
+		case 4:
+			applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
+	}
+	waitmovement (0)
+	//Gio welcomes player to approach	
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio5)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+	//Gio tells Mewtwo to move if needed then faces up the player
+	//YES NEEDED
+	if (var(VAR_CAPITAL_STATE) < 3) {			
+		load_field_pic (GIO_FIELD_PIC, 190, 98)
+		msgbox(Capital_Text_GioMewtwoMove)
+		closemessage
+		destroy_field_pic(GIO_FIELD_PIC)
+		delay (5)
+		applymovement (OBJ_EVENT_ID_MEWTWO_ARMOR, Capital_Movement_MewtwoR1)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_GioR1)
+		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_PersianR1)
+		applymovement (OBJ_EVENT_ID_MEWTWO_ARMOR, Capital_Movement_MewtwoR2)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_GioR2)
+		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_PersianR2)
+		applymovement (OBJ_EVENT_ID_MEWTWO_ARMOR, Capital_Movement_MewtwoR3)
+	//NOT NEEDED
+	} else {
+		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_GioL1)
+		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_PersianL1)
+	}
+	waitmovement (0)
+	//The player approaches Gio
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 1:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera1)
+		case 2:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera2)
+		case 3:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera3)
+		case 4:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PanCamera4)
+	}
+	//Gio bean expectin	+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio6)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	waitmovement (0)
+	msgbox(Capital_Text_PlayerJoinGio, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		load_field_pic (GIO_FIELD_PIC, 190, 98)
+		msgbox(Capital_Text_Gio7No)
+		closemessage
+		destroy_field_pic(GIO_FIELD_PIC)
+		delay (5)
+	} else {
+		load_field_pic (GIO_FIELD_PIC, 190, 98)
+		msgbox(Capital_Text_Gio7Yes)
+		closemessage
+		destroy_field_pic(GIO_FIELD_PIC)
+		delay (5)
+	}
+	//Gio commands Mewtwo to attack player
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio8)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	//No
+	load_field_pic (MEWTWO_ARMOR_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Mewtwo1)
+	closemessage
+	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_GIO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Gio Faces Mewtwo
+	if (var(VAR_CAPITAL_STATE) < 3) {
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
+	} else {
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
+	}
+	waitmovement (0)
+
+	//thats an order
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio9)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (MEWTWO_ARMOR_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Mewtwo2)
+	closemessage
+	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio10)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+		
+	load_field_pic (MEWTWO_ARMOR_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Mewtwo3)
+	closemessage
+	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio11)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+		
+	load_field_pic (MEWTWO_ARMOR_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Mewtwo4)
+	closemessage
+	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
+	delay (5)
+	//Mewtwo unleashed
+	removeobject (OBJ_EVENT_ID_MEWTWO_ARMOR)
+	clearflag (FLAG_ROUTE4_HIDEROCKETS)
+	addobject (OBJ_EVENT_ID_MEWTWO)
+	//Set Mewtwo location
+	if (var(VAR_CAPITAL_STATE) > 2) {
+		setobjectxy (OBJ_EVENT_ID_MEWTWO, 17, 5)
+	}
+	showobjectat (OBJ_EVENT_ID_MEWTWO, MAP_CAPITAL)
+	load_field_pic (MEWTWO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Mewtwo5)
+	closemessage
+	destroy_field_pic(MEWTWO_FIELD_PIC)
+	delay (5)
+	//Mewtwo faces Gio
+	if (var(VAR_CAPITAL_STATE) < 3) {
+		applymovement (OBJ_EVENT_ID_MEWTWO, Common_Movement_FaceLeft)
+	} else {
+		applymovement (OBJ_EVENT_ID_MEWTWO, Common_Movement_FaceRight)
+	}
+	//says his piece
+	load_field_pic (MEWTWO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Mewtwo6)
+	closemessage
+	destroy_field_pic(MEWTWO_FIELD_PIC)
+	delay (5)
+	//Mewtwo farewell
+	applymovement (OBJ_EVENT_ID_MEWTWO, Common_Movement_FaceDown)
+	load_field_pic (MEWTWO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Mewtwo7)
+	closemessage
+	destroy_field_pic(MEWTWO_FIELD_PIC)
+	delay (5)
+	//Gio yells but Mewtwo dipps
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_Gio12)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	fadescreen (1)
+	setflag (FLAG_ROUTE4_HIDEROCKETS)
+	removeobject (OBJ_EVENT_ID_MEWTWO)
+	fadescreen (0)
+	//Gio faces player
+	if (var(VAR_CAPITAL_STATE) < 3) {
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
+	} else {
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
+	}
+	waitmovement (0)
+	//Gio battle	
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(Capital_Text_GioIntro)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	trainerbattle_no_intro(TRAINER_GIO1, Capital_Text_GioLost)
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_GioDefeat)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+	//ENTER LT SURGE N SHIT
+
+	//Enter LT Surge
+	if (var(VAR_CAPITAL_STATE) < 3) {
+		setobjectxy (OBJ_EVENT_ID_LT_SURGE, 28, 5)
+		showobjectat (OBJ_EVENT_ID_LT_SURGE, MAP_CAPITAL)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_SurgeR1)
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceRight)
+	} else {
+		setobjectxy (OBJ_EVENT_ID_LT_SURGE, 13, 5)
+		showobjectat (OBJ_EVENT_ID_LT_SURGE, MAP_CAPITAL)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_SurgeL1)
+		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)
+	}
+	load_field_pic (LT_SURGE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Surge1)
+	closemessage
+	waitmovement (0)
+
+	msgbox (Capital_Text_Surge2)
+	closemessage
+	destroy_field_pic(LT_SURGE_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Gio13)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+
+	load_field_pic (LT_SURGE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Surge3)
+	closemessage
+	applymovement (OBJ_EVENT_ID_GIO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Capital_Text_Surge4)
+	closemessage 
+	destroy_field_pic(LT_SURGE_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Gio14)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+
+	load_field_pic (LT_SURGE_FIELD_PIC, 190, 98)
+	applymovement (OBJ_EVENT_ID_LT_SURGE, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Capital_Text_Surge5)
+	closemessage
+	destroy_field_pic(LT_SURGE_FIELD_PIC)
+	delay (5)
+
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Gio15)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+
+	//Exit rockets
+	if (var(VAR_CAPITAL_STATE) > 3) {
+		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_LE)
+		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_LE)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_LE)
+	} else {
+		applymovement (OBJ_EVENT_ID_GIO, Capital_Movement_RE)
+		applymovement (OBJ_EVENT_ID_PERSIAN, Capital_Movement_RE)
+		applymovement (OBJ_EVENT_ID_LT_SURGE, Capital_Movement_RE)
+	}
+
+	setflag(FLAG_CAPITAL_HIDE_ROCKETS)
+	call (Capital_EventScript_RemoveRockets)
+	
+	special (RemoveCameraObject)
+	setvar (VAR_CAPITAL_STATE, 5)
+
+	return
+}
+
+script Capital_EventScript_GioSouth {
+	end
+}
+
+script Capital_EventScript_GioApproach {
+	end
+}
+
+script Capital_EventScript_MaxieTrigger1 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 6)
+	call (Capital_EventScript_MaxiePlaceR)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_MaxieTrigger2 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 7)
+	call (Capital_EventScript_MaxiePlaceR)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_MaxieTrigger3 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 8)
+	call (Capital_EventScript_MaxiePlaceL)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_MaxieTrigger4 {
+	lock
+	setvar (VAR_CAPITAL_STATE, 9)
+	call (Capital_EventScript_MaxiePlaceL)
+	call (Capital_EventScript_MaxieScene)
+	release
+}
+
+script Capital_EventScript_RebelsScenePlace {
+	removeobject (OBJ_EVENT_ID_REBEL5)
+	setobjectxy (OBJ_EVENT_ID_REBEL1, 18, 37)
+	setobjectxy (OBJ_EVENT_ID_REBEL2, 18, 36)
+	setobjectxy (OBJ_EVENT_ID_REBEL3, 23, 37)
+	setobjectxy (OBJ_EVENT_ID_REBEL4, 23, 36)
+	showobjectat (OBJ_EVENT_ID_REBEL1, MAP_CAPITAL)
+	showobjectat (OBJ_EVENT_ID_REBEL2, MAP_CAPITAL)
+	showobjectat (OBJ_EVENT_ID_REBEL3, MAP_CAPITAL)
+	showobjectat (OBJ_EVENT_ID_REBEL4, MAP_CAPITAL)
+	return
+}
+
+script Capital_EventScript_MaxiePlaceL {
+	setobjectxy (OBJ_EVENT_ID_MAXIE, 20, 35)
+	return
+}
+
+script Capital_EventScript_MaxiePlaceR {
+	setobjectxy (OBJ_EVENT_ID_MAXIE, 21, 35)
+	return
+}
+
+script Capital_EventScript_MaxieScene {
+	
+	//position rebels for maxiescene
+	call (Capital_EventScript_RebelsScenePlace)
+
+	showobjectat (OBJ_EVENT_ID_MAXIE, MAP_CAPITAL)
+	
+	//player auto-walks down a bit
+	applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxieIntro)
+	waitmovement (0)
+	
+	//player suprise
+	applymovement  (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	//Maxie Introduction
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie1)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	//Player moves to speak with Maxie - Maxie moves to speak with player
+	switch (var(VAR_CAPITAL_STATE)) {
+		case 6:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie1)
+		case 7:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie2)
+		case 8:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie3)
+		case 9:
+			applymovement (OBJ_EVENT_ID_PLAYER, Capital_Movement_PlayerMaxie4)
+	}
+	//Maxie moves to speak with player
+	if (var(VAR_CAPITAL_STATE) < 8) {
+		applymovement (OBJ_EVENT_ID_MAXIE, Capital_Movement_Maxie1R)
+	} else {
+		applymovement (OBJ_EVENT_ID_MAXIE, Capital_Movement_Maxie1L)
+	}
+	waitmovement (0)
+	//Maxie speaks thank you for your contribution alas we let the villian escape they still have control of fort montgomery but we have the city
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie2)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_MAXIE, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie3)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_MAXIE, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie4)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	applymovement (OBJ_EVENT_ID_MAXIE, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	load_field_pic (MAXIE_FIELD_PIC, 190, 98)
+	msgbox (Capital_Text_Maxie5)
+	closemessage
+	destroy_field_pic(MAXIE_FIELD_PIC)
+	delay (5)
+
+	//Maxie and rebels exit north
+	applymovement (OBJ_EVENT_ID_MAXIE, Capital_Movement_MaxieE)
+	applymovement (OBJ_EVENT_ID_REBEL1, Capital_Movement_Rebel1E)
+	applymovement (OBJ_EVENT_ID_REBEL2, Capital_Movement_Rebel2E)
+	applymovement (OBJ_EVENT_ID_REBEL3, Capital_Movement_Rebel3E)
+	applymovement (OBJ_EVENT_ID_REBEL4, Capital_Movement_Rebel4E)
+	waitmovement (0)
+
+	setvar (VAR_CAPITAL_STATE, 10)
+
+	return
+}
+
+script Capital_EventScript_SoldierBattle {
+	lock
+	msgbox (Capital_Text_SoldierBattle)
+	closemessage
+	release
+	end
+}
+
+script Capital_EventScript_RebelBattle {
+	lockall
+	msgbox (Capital_Text_RebelBattle)
+	closemessage
+	releaseall
+	end
+}
+
+script Capital_EventScript_SurgeBattle {
+	lockall
+	msgbox(Capital_Text_SurgeBattle)
+	closemessage
+	releaseall
+	end
+}
+
+movement Capital_Movement_PanCamera1 {
+	walk_right * 7
+}
+
+movement Capital_Movement_PanCamera2 {
+	walk_diag_northeast
+	walk_right * 6
+}
+
+movement Capital_Movement_PanCamera3 {
+	walk_left * 7
+}
+
+movement Capital_Movement_PanCamera4 {
+	walk_diag_northwest
+	walk_left * 6
+}
+
+movement Capital_Movement_Soldier2A {
+	walk_down * 3
+	walk_left * 2
+	face_up
+}
+
+movement Capital_Movement_Soldier3A {
+	walk_left * 4
+	walk_down
+}
+
+movement Capital_Movement_CiceroR1 {
+	walk_down
+	walk_right * 2
+	walk_up
+	walk_right
+	face_up
+}
+
+
+movement Capital_Movement_Soldier2R1 {
+	walk_right * 2
+	walk_up
+	walk_right * 2
+}
+
+movement Capital_Movement_Soldier3R1 {
+	walk_down * 2
+	walk_right * 2
+	walk_up
+	face_right
+}
+
+movement Capital_Movement_CiceroL1 { 
+	walk_down
+	walk_left * 3
+	walk_up
+	walk_left 
+	face_down
+}
+
+movement Capital_Movement_Soldier1L1 {
+	walk_down * 2
+	walk_left * 6
+	walk_up
+	face_left
+}
+
+movement Capital_Movement_Soldier2L1 {
+	walk_left * 3
+	walk_up
+	walk_left * 2
+}
+
+movement Capital_Movement_Soldier3L1 { 
+	walk_down * 2
+	walk_left * 2
+	walk_up
+	face_left
+}
+
+movement Capital_Movement_CiceroR2 {
+	walk_right * 7
+}
+
+movement Capital_Movement_CiceroL2 {
+	walk_left * 7
+}
+
+movement Capital_Movement_MewtwoR1 {
+	walk_right * 2
+}
+
+movement Capital_Movement_GioR1 {
+	walk_right
+	face_up
+}
+
+movement Capital_Movement_PersianR1 {
+	walk_down
+}
+
+movement Capital_Movement_MewtwoR2 {
+	walk_right * 2
+}
+
+movement Capital_Movement_GioR2 {
+	walk_up
+	face_left
+}
+
+movement Capital_Movement_PersianR2 {
+	walk_right
+	face_left
+}
+
+movement Capital_Movement_MewtwoR3 {
+	walk_right * 3
+	face_down
+}
+
+movement Capital_Movement_GioL1 {
+	walk_up
+	face_right
+}
+
+movement Capital_Movement_PersianL1 {
+	walk_down
+	face_right
+}
+
+movement Capital_Movement_Follower2A {
+	walk_up
+	walk_right * 7
+}
+
+movement Capital_Movement_Follower4A {
+	walk_up
+	walk_left * 7
+}
+
+movement Capital_Movement_SurgeR1 {
+	walk_left * 6
+}
+
+movement Capital_Movement_SurgeL1 {
+	walk_right * 6
+}
+
+movement Capital_Movement_RE {
+	walk_right * 7 
+}
+
+movement Capital_Movement_LE {
+	walk_left * 7
+}
+
+movement Capital_Movement_PlayerMaxieIntro {
+	walk_down * 3
+}
+
+movement Capital_Movement_PlayerMaxie1 {
+	walk_down * 2
+	walk_right 
+}
+
+movement Capital_Movement_PlayerMaxie2 {
+	walk_down * 2
+	face_right
+}
+
+movement Capital_Movement_PlayerMaxie3 {	
+	walk_down * 2
+	face_left
+}
+
+movement Capital_Movement_PlayerMaxie4 {
+	walk_down * 2
+	walk_left 
+}
+
+movement Capital_Movement_Maxie1R {
+	walk_up * 2
+	face_left
+}
+
+movement Capital_Movement_Maxie1L {
+	walk_up * 2
+	face_right
+}
+
+movement Capital_Movement_MaxieE {
+	walk_up * 6
+}
+
+movement Capital_Movement_Rebel1E {
+	walk_up * 5
+	walk_right
+	walk_up * 5
+}
+
+movement Capital_Movement_Rebel2E {
+	walk_up * 4
+	walk_right
+	walk_up * 5
+}
+
+movement Capital_Movement_Rebel3E {
+	walk_up * 5
+	walk_left
+	walk_up * 5
+}
+
+movement Capital_Movement_Rebel4E {
+	walk_up * 4
+	walk_left
+	walk_up * 5 
+}
+
+text Capital_Text_DeskTestYes {
+	format("Yup you have a follower rn")
+}
+
+text Capital_Text_DeskTestNo {
+	format("Nope you aint got a follwer rn")
+}
+
+text Capital_Text_Cicero1 {
+	format("My god! Giovanni! They're here!")
+}
+
+text Capital_Text_Gio1 {
+	format("You fool...")
+}
+
+text Capital_Text_Gio2 {
+	format("You call yourself a man, old Cicero, shaking and crying at merely the sight of this child? You're can't master your own emotions let alone this rebellion. Thererfore I relieve you of your duties and resume my title as head of state.")
+}
+
+text Capital_Text_Cicero2 {
+	format("You can't do that! It's treason!")
+}
+
+text Capital_Text_Cicero3 {
+	format("Guards! Treason!")
+}
+
+text Capital_Text_Gio3 {
+	format("You still don't understand there is a new power rising.")
+}
+
+text Capital_Text_Soldier1 {
+	format("We serve Giovanni.")
+}
+
+text Capital_Text_Cicero4 {
+	format("You traitor! Can't you see this is...")
+}
+
+text Capital_Text_Gio4 {
+	format("Enough! Old fool, can't you see this is my hour? Be gone and lament your failures in vain.")
+}
+
+text Capital_Text_Cicero5 {
+	format("You can't do this!")
+}
+
+text Capital_Text_Soldier2 {
+	format("Let's go.")
+}
+
+text Capital_Text_Cicero6 {
+	format("I'm still the president!")
+}
+
+text Capital_Text_Cicero7 {
+	format("I was elected by the senators")
+}
+
+text Capital_Text_Soldier3 {
+	format("We've heard enough of that.")
+}
+
+text Capital_Text_Cicero8 {
+	format("Democracy!")
+}
+
+text Capital_Text_Gio5 {
+	format("You've done well {PLAYER} now you may approach me.")
+}
+
+text Capital_Text_GioMewtwoMove {
+	format("and stand aside Mewtwo permit he pass")
+}
+
+text Capital_Text_Gio6 {
+	format("You must be powerful to destroy Blaine and find your way to our coronation. I've heard many rumours about you {PLAYER} and now I see you with my own two eyes. I am Giovanni your tyrant king. You may be great but Mewtwo far greater. I'm giving you the choice, you may join me or be destroyed. Now speak. What will we do?")
+}
+
+text Capital_Text_PlayerJoinGio {
+	format("Will you surrender to Giovanni?")
+}
+
+text Capital_Text_Gio7Yes {
+	format("You are more foolish than I had assumed if you believed that I would let you live.")
+}
+
+text Capital_Text_Gio7No {
+	format("Then your journey ends here you foolish boy.")
+}
+
+text Capital_Text_Gio8 {
+	format("Mewtwo the time has come. Destroy the boy and then put a swift end to this revolt.")
+}
+
+text Capital_Text_Mewtwo1 {
+	format("No.")
+}
+
+text Capital_Text_Gio9 {
+	format("Mewtwo! I command you!")
+}
+
+text Capital_Text_Mewtwo2 {
+	format("I won't obey. I am no slave of yours Giovanni.")
+}
+
+text Capital_Text_Gio10 {
+	format("Mewtwo even you cannot break those cuffs")
+}
+
+text Capital_Text_Mewtwo3 {
+	format("I am MEWTWO and I can break these cuffs.")
+}
+
+text Capital_Text_Gio11 {
+	format("Don't try it!")
+}
+
+text Capital_Text_Mewtwo4 {
+	format("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!")
+}
+
+text Capital_Text_Mewtwo5 {
+	format("At last I take a breath free from those chains. My strength is made ten fold now that I'm free!")
+}
+
+text Capital_Text_Mewtwo6 {
+	format("You're wrong if you think you can control me, you're nothing more than a worthless human. What's more I cannot foresee a future where you will rule anything as a king, for you only misery and defeat.")
+}
+
+text Capital_Text_Mewtwo7 {
+	format("I'm leaving now. Don't try and follow me.")
+}
+
+text Capital_Text_Gio12 {
+	format("Mewtwo!")
+}
+
+text Capital_Text_GioIntro {
+	format("You bastard! This is all your fault! Looks like I'll have to deal with you myself...")
+}
+
+text Capital_Text_GioLost {
+	format("Alas! Fortuna has abandoned me.")
+}
+
+text Capital_Text_GioDefeat {
+	format("Betrayed, forsaken, and surrounded I am sure to perish on this damned day...My coronation become funeral.")
+}
+
+text Capital_Text_Surge1 {
+	format("My lord!")
+}
+
+text Capital_Text_Surge2 {
+	format("We must evacuate at once! The rebels have...")
+}
+
+text Capital_Text_Gio13 {
+	format("Lieutenant Surge, be done, we're finished here, Mewtwo abandoned us the day is lost...")
+}
+
+text Capital_Text_Surge3 {
+	format("Yes sir, but hope remains.")
+}
+
+text Capital_Text_Surge4 {
+	format("The military remains faithfully obedient to you. If we retreat...if we regroup, return, counterattack, we might...")
+}
+
+text Capital_Text_Gio14 {
+	format("I see no hope in this retreat, only a cowardly delay of death. Mewtwo is gone, we must...")
+}
+
+text Capital_Text_Surge5 {
+	format("We need to leave! I'm going to bring you back to our fort or leave you here to die!")
+}
+
+text Capital_Text_Gio15 {
+	format("OK, lead on.")
+}
+
+text Capital_Text_Maxie1 {
+	format("To vicory and a better new world!")
+}
+
+text Capital_Text_Maxie2 {
+	format("With your help {PLAYER} we've won the capital but Giovanni managed to escape! They must be headed to Fort Montgomery. You've demonstrated your ability to infiltrate well defended spaces but without the ability to change your very face I doubt you will succeed to penetrate the armor walls of Fort Montgomery.")
+}
+
+text Capital_Text_Maxie3 {
+	format("And {PLAYER} I must repeat what I just said")
+}
+
+text Capital_Text_Maxie4 {
+	format("To your credit we owe our newborn state and I thank you on behalf of us all.")
+}
+
+text Capital_Text_Maxie5 {
+	format("Now forward to declare our intentions!")
+}
+
+text Capital_Text_SoldierBattle {
+	format("You must leave now! The senate's underway!")
+}
+
+text Capital_Text_RebelBattle {
+	format("You'll never win! Freedom will always win!")
+}
+
+text Capital_Text_SurgeBattle {
+	format("Resistance is futile just give up!")
+}
+
+
+
+
+

@@ -1,0 +1,148 @@
+
+const OBJ_EVENT_TEACHER = 1
+const OBJ_EVENT_GEM = 10
+
+
+mapscripts Ardor_Uni_PhysicsClass_MapScripts {}
+
+//intro
+//bring magnet
+//set magnet flag
+//begin gem - clear gem flag
+//on interact with gem begin test
+//after test = leave now and never come back
+
+script Ardor_Uni_PhysicsClass_EventScript_Teacher  {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_PHYSICS)) {
+		msgbox(Ardor_Uni_PhysicsClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_PHYSICS_INTRO)) {
+		if (!flag(FLAG_PHYSICS_MAGNETDONE)) {
+			specialvar (VAR_RESULT, IsMagnetTypeInParty)
+			if (var(VAR_RESULT) == TRUE) {
+				setflag (FLAG_PHYSICS_MAGNETDONE)
+				call (Ardor_Uni_PhysicsClass_EventScript_GemIntro)
+			} else {
+				msgbox(Ardor_Uni_PhysicsClass_Text_BringMagnetType)
+				closemessage
+			}
+		} else {
+			applymovement (OBJ_EVENT_TEACHER, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			msgbox(Ardor_Uni_PhysicsClass_Text_WhereIsMyGem)
+			closemessage
+		}
+	} else {
+		setflag (FLAG_PHYSICS_INTRO)
+		msgbox(Ardor_Uni_PhysicsClass_Text_ClassIntro)
+		closemessage
+		msgbox(Ardor_Uni_PhysicsClass_Text_BringMagnetType)
+		closemessage
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+
+//Now I will demonstrate how light works using my ruby gem 
+//Show gem 
+//Teacher Exclamation
+//Quid? Where is my gem?
+script Ardor_Uni_PhysicsClass_EventScript_GemIntro {
+	msgbox(Ardor_Uni_PhysicsClass_Text_GemIntro)
+	closemessage
+	clearflag (FLAG_PHYSICS_HIDE_GEM)
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_EAST) {
+		setobjectxyperm (OBJ_EVENT_GEM, 7, 3)
+	}
+	addobject (OBJ_EVENT_GEM)
+	showobjectat (OBJ_EVENT_GEM, MAP_ARDOR_UNI_PHYSICS_CLASS)
+	//special (DrawWholeMapView)
+	playse (SE_BALL_THROW)
+	waitse
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(Ardor_Uni_PhysicsClass_Text_WhereIsMyGem)
+	closemessage
+	return
+}
+
+
+//Take gem 
+//giveitem gem etc SE and all
+//Thief! You stole my gem give that back right now
+//Take item
+//I'll teach you to steal from me
+//Battle
+//Defeat talk = You dirty punk or something like that
+//Clear the Physics Class open flag
+//Leave now and never come back loop
+script Ardor_Uni_PhysicsClass_EventScript_Gem {
+	lock
+	finditem (ITEM_FIRE_GEM)
+	setflag (FLAG_PHYSICS_HIDE_GEM)
+	removeobject (OBJ_EVENT_GEM)
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_WEST) {
+		applymovement (OBJ_EVENT_TEACHER, Common_Movement_WalkRight)
+	} elif (var(VAR_RESULT) == DIR_NORTH) {
+		applymovement (OBJ_EVENT_TEACHER, Common_Movement_WalkRight)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	} else {
+		applymovement (OBJ_EVENT_TEACHER, Common_Movement_WalkLeft)
+	}
+	waitmovement (0)
+	msgbox(Ardor_Uni_PhysicsClass_Text_Thief)
+	closemessage
+	removeitem (ITEM_FIRE_GEM)
+	clearflag (FLAG_OPEN_CLASS_PHYSICS)
+	msgbox(Ardor_Uni_PhysicsClass_Text_BattleIntro)
+	closemessage
+	call (Ardor_Uni_TermState_IncrementVar)
+	trainerbattle_no_intro(TRAINER_UNI_PHYSICS, Ardor_Uni_PhysicsClass_Text_TeacherBattleLost)
+	msgbox(Ardor_Uni_PhysicsClass_Text_ClassFinished)
+	closemessage
+	warpsilent (MAP_ARDOR_UNI3F, 7, 10)
+	waitstate
+	return
+}
+
+text Ardor_Uni_PhysicsClass_Text_BringMagnetType {
+	format("Reveni cum monstro magnetis.")
+}
+
+text Ardor_Uni_PhysicsClass_Text_WhereIsMyGem {
+	format("Quid? Ubi est gemma mea?")
+}
+
+text Ardor_Uni_PhysicsClass_Text_ClassIntro {
+	format("Salve puer. Magister Clancius sum. Necesse est tibi docere scientiam physicae. Partes physicarum sum tres: electromagnetica, optica, et nuclearis. Primum electromagneticam tibi docere.")
+}
+
+text Ardor_Uni_PhysicsClass_Text_TeacherBattleLost {
+	format("Malum fuit victor")
+}
+
+text Ardor_Uni_PhysicsClass_Text_ClassFinished {
+	format("Discede numquamque reveni.")
+}
+
+text Ardor_Uni_PhysicsClass_Text_GemIntro {
+	format("Iam revenisti cum monstro magnetis! Ergo iam est tempus tibi docere physicam opticorum. Physicam opticorum demonstrabo cum gemma mea rubra.")
+}
+
+text Ardor_Uni_PhysicsClass_Text_Thief {
+	format("Praedo! Gemmam meam despoliavisti! Redde gemmam.")
+}
+
+text Ardor_Uni_PhysicsClass_Text_BattleIntro {
+	format("Iam tibi docere multas poenas.")
+}

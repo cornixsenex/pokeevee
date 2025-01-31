@@ -40,8 +40,10 @@ prefabs.json
 *.js
 /pokeemerald-*.png
 src/data/map_group_count.h
+tools/poryscript
 tools/trainerproc/trainerproc
 *.Identifier
 *.smol
 *.fastSmol
 *.smolTM
+porymap.user.cfg

@@ -1,0 +1,611 @@
+
+const OBJ_EVENT_GRANNY = 1
+const OBJ_EVENT_EEVEE = 2
+
+const FIELD_PIC_GRANNY = 30
+
+mapscripts LoonixInsideReal_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+
+		switch (var(VAR_GRANNY_STATE)) {
+			case 0:
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+		    case 5:
+				call (LoonixInsideReal_Script_ShowGrannyKitchen)
+			case 6:
+				call (LoonixInsideReal_Script_ShowGrannyDoorway)
+		    case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+				call (LoonixInsideReal_Script_ShowGrannyTable)
+			case 13:
+				call (LoonixInsideReal_Script_ShowGrannyTV)
+			case 14:
+				call (LoonixInsideReal_Script_ShowGrannyBed)
+			default:
+				call (LoonixInsideReal_Script_HideGranny)
+		}
+
+    }
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_GRANNY_STATE, 6: LoonixInsideReal_Script_FacePlayerUp
+	]
+	
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GRANNY_STATE, 0: LoonixInsideReal_Script_GrannyScene1
+		VAR_GRANNY_STATE, 6: LoonixInsideReal_Script_GrannyScene2
+		VAR_GRANNY_STATE, 10: LoonixInsideReal_Script_GrannyScene3
+	]
+
+}
+
+script LoonixInsideReal_Script_HideGranny {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 12, 10)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_INVISIBLE)
+
+	end
+}
+
+script LoonixInsideReal_Script_ShowGrannyKitchen {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 1, 3)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_UP)
+
+	end
+}
+
+script LoonixInsideReal_Script_ShowGrannyDoorway {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 4, 6)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_EEVEE, 3, 8)
+	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_FACE_UP)
+	
+	end
+}
+
+script LoonixInsideReal_Script_ShowGrannyTable {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 9, 7)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_LEFT)
+
+	end
+}
+
+script LoonixInsideReal_Script_ShowGrannyTV {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 8, 6)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_UP)
+
+	end
+}
+script LoonixInsideReal_Script_ShowGrannyBed {
+	setobjectxyperm (OBJ_EVENT_GRANNY, 11, 3)
+	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
+
+	end
+}
+
+script LoonixInsideReal_Script_FacePlayerUp {
+	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+
+	end
+}
+
+script LoonixInsideReal_Script_PrepareLeafGame {
+	setvar (VAR_GRANNY_STATE, 2)
+	end
+}
+
+script LoonixInsideReal_Script_ClearLeafGame {
+	setvar (VAR_GRANNY_STATE, 1)
+	end
+}
+
+script LoonixInsideReal_Script_GrannyScene1 {
+	lockall
+
+	setvar (VAR_GRANNY_STATE, 1)
+	setflag (FLAG_RECEIVED_RUNNING_SHOES)
+setflag (FLAG_SYS_B_DASH)
+	setvar (VAR_SYS_LEVEL_CAP, 8)
+
+	//Player walks to position
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)
+	//granny notices player come downstairs
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//face player
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceRight)
+	waitmovement (0)
+	//You're finally awake good to see you
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny1A, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	//Approach player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_Granny1_ApproachPlayer)
+	waitmovement (0)
+	//Stil working on breakfast, Your friend came by again, whats her name agai
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny1B, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	//Name Leaf
+	special (NameLeaf)
+	waitstate
+	//That's right she waiting outside for you. What a nice girl
+	//Be safe and remember to stay away from the tall grass
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny1C, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	//Return granny to the kitchen
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_Granny1_ReturnToKitchen)
+	waitmovement (0)
+	//Fin
+	releaseall
+	end
+}
+
+script LoonixInsideReal_Script_GrannyScene2 {
+	lockall
+
+	//prevent scene trigger
+	setvar (VAR_GRANNY_STATE, 7)
+	//Granny Lecture
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny2A, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	//Granny approach Player
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_Granny2_ApproachPlayer)
+	waitmovement (0)
+	//Your father would have wanted you to have
+	//his Pokedex when you were old enough.
+	//Give pokedex
+	playfanfare (MUS_OBTAIN_ITEM)
+	special (SetUnlockedPokedexFlags)
+	setflag (FLAG_SYS_POKEDEX_GET)
+	setflag (FLAG_SYS_NATIONAL_DEX)
+	special (EnableNationalPokedex)
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny2B, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	//Describe pokedex
+	//It helps keep track of different pokemon
+	//you meet in the wild. Also take this.
+	//Give 5 pokeballs
+	giveitem (ITEM_POKE_BALL, 6)
+	//Describe pokeballs
+	//I see Eevee really likes you I know he will keep you safe 
+
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny2C, MSGBOX_YESNO)
+	//Nickname Eevee?
+	if (var(VAR_RESULT) == YES) {
+		setvar (VAR_0x8004, 0)
+		call (Common_EventScript_NameReceivedPartyMon)
+	}
+	//Granny Talk to Table
+	msgbox (LoonixInsideReal_Text_Granny2D, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+
+	//Your bond will grow over time but to become a serious trainer you need to go to trainer school
+	//There's one in Aldeon Town near by
+	//Now take a seat come get something to eat
+
+	//remove extra ball (for Eevee)
+	removeitem (ITEM_POKE_BALL, 1)
+	
+	//granny and player go to tablea
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_Granny2_GrannyToTable)
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny2_PlayerToTable)
+	applymovement (OBJ_EVENT_EEVEE, LoonixInsideReal_Movement_Granny2_EeveeToTable)
+	waitmovement (0)
+	//Heal
+	fadescreen (FADE_TO_BLACK)
+	playfanfare (MUS_HEAL)
+	waitfanfare
+	removeobject (OBJ_EVENT_EEVEE)
+	setobjectxyperm (OBJ_EVENT_EEVEE, 11, 0)
+	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_INVISIBLE)
+	addobject (OBJ_EVENT_EEVEE)
+	showobjectat (OBJ_EVENT_EEVEE, MAP_LOONIX_INSIDE_REAL)
+	special (HealPlayerParty)
+	callnative (UpdateFollowingPokemon)
+	fadescreen (FADE_FROM_BLACK)
+	//Promise me you'll finish school
+	//And come back home to rest up any time
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny2E, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+
+	//Face granny to the table
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
+	waitmovement (0)	
+	//FIN
+	release
+	end
+}
+
+script LoonixInsideReal_Script_GrannyScene3 {
+	lockall
+	setvar (VAR_GRANNY_STATE, 11)
+	//alert granny
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceDown)
+	waitmovement (0)
+	//G: OH player!
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyStorm1, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	//player go to granny
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny3_PlayerToTable)
+	waitmovement (0)
+	//G: The storm is so bad im glad you're here safe with me I know you're all grown up now but I promise that you're safe here just go to bed and the whole thing will be over when you wake up
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyStorm2, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	release
+	end
+}
+
+script LoonixInsideReal_Script_TV {
+	lock
+
+	switch (var(VAR_GRANNY_STATE)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			msgbox(LoonixInsideReal_Text_TV1, MSGBOX_SIGN)
+		case 7:
+			msgbox(LoonixInsideReal_Text_TV2, MSGBOX_SIGN)
+		default:
+			msgbox(LoonixInsideReal_Text_TVX, MSGBOX_SIGN)
+	}
+	closemessage
+	
+	release
+	end
+}
+
+script LoonixInsideReal_Script_Statue {
+	lock
+	msgbox(format("This is the statue they sent us after Dad left...\pGrandma must have forgotten to polish it."))
+	release
+	end
+}
+
+script LoonixInsideReal_Script_Junk {
+	lock
+	msgbox(format("Here's another pile of junk grandma left lying around."))
+	release
+	end
+}
+
+script LoonixInsideReal_Script_Special {
+	lock
+	showmonpic (SPECIES_KRABBY, 10, 3)
+	msgbox(format("What's for dinner?"))
+	hidemonpic
+	release
+	end
+}
+
+script LoonixInsideReal_Script_GrandmaTV {
+	lockall
+	applymovement(1, LoonixInsideReal_Movement_GrandmaUp)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerToGma)
+	waitmovement (0)
+	msgbox (format("Oh {PLAYER}!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox ("Come here sweetie.")
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_GrandmaTV)
+	waitmovement (0)
+	applymovement (1, LoonixInsideReal_Movement_GrandmaLeft)
+	waitmovement (0)
+	msgbox (LoonixInsideReal_Text_GrandmaTVSpeech)
+	closemessage
+	applymovement (1, LoonixInsideReal_Movement_GrandmaMono)
+	waitmovement (0)
+	msgbox (LoonixInsideReal_Text_GrandmaMono)
+	closemessage
+	applymovement (1, LoonixInsideReal_Movement_GrandmaLeft)
+	waitmovement (0)
+	msgbox (LoonixInsideReal_Text_GrandmaToBed)
+	closemessage	
+	applymovement (1, LoonixInsideReal_Movement_GrandmaBed)
+	applymovement(OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerBed)
+	waitmovement (0)
+	addvar (VAR_GRANNY_STATE, 1)
+	msgbox (LoonixInsideReal_Text_GrandmaBed)
+	setrespawn (HEAL_LOCATION_GRANDMAS_CABIN)
+	setflag (FLAG_RECEIVED_RUNNING_SHOES)
+	setflag (FLAG_SYS_B_DASH)
+	releaseall
+	end
+}
+	
+
+script LoonixInsideReal_Script_PreventExit {
+	lockall
+	msgbox (format("You don't have a Pokemon yet!"))
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PreventExit)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script LoonixInsideReal_Script_Grandma {
+	lockall
+	faceplayer
+
+	switch (var(VAR_GRANNY_STATE)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			call (LoonixInsideReal_Script_GrannyKitchen)
+		case 7:
+		case 8:
+		case 9:
+			call (LoonixInsideReal_Script_GrannyTable)
+		case 11:
+			call (LoonixInsideReal_Script_GrannyStorm)
+
+		default:
+			msgbox("DEFAULT", MSGBOX_DEFAULT)
+			closemessage
+	}
+	releaseall
+	end
+}
+
+script LoonixInsideReal_Script_GrannyKitchen {
+
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyKitchen, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceUp)
+	waitmovement (0)
+
+	return
+}
+
+script LoonixInsideReal_Script_GrannyTable {
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyTable1, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+
+	call (Common_EventScript_OutOfCenterPartyHeal)
+
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyTable2, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	return
+}
+
+script LoonixInsideReal_Script_GrannyStorm {
+
+	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_GrannyStorm3, MSGBOX_DEFAULT)
+	destroy_field_pic(FIELD_PIC_GRANNY)
+	closemessage
+	
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
+	waitmovement (0)
+
+	return
+}
+
+movement LoonixInsideReal_Movement_PreventExit {
+	face_up
+	walk_up * 4
+	face_down
+}
+
+movement LoonixInsideReal_Movement_GrandmaTV {
+	walk_down
+	walk_right * 2
+}
+
+movement LoonixInsideReal_Movement_GrandmaBed {
+	walk_right * 2
+	walk_up * 3
+	walk_right
+	face_down
+}
+
+movement LoonixInsideReal_Movement_PlayerBed {
+	walk_right * 3
+	walk_up * 3
+	face_right
+}
+
+movement LoonixInsideReal_Movement_GrandmaUp {
+	face_up
+}
+
+movement LoonixInsideReal_Movement_GrandmaLeft {
+	face_left
+}
+
+movement LoonixInsideReal_Movement_GrandmaMono {
+	face_down
+}
+
+movement LoonixInsideReal_Movement_PlayerToGma {
+	walk_down * 3
+}
+
+movement LoonixInsideReal_Movement_Granny1_ApproachPlayer {
+	walk_right * 3
+}
+
+movement LoonixInsideReal_Movement_Granny1_ReturnToKitchen {
+	walk_left * 3
+	face_up
+}
+
+movement LoonixInsideReal_Movement_Granny2_ApproachPlayer {
+	walk_down * 1
+}
+
+movement LoonixInsideReal_Movement_Granny2_GrannyToTable {
+	walk_up
+	walk_right * 5
+	walk_down
+}
+
+movement LoonixInsideReal_Movement_Granny2_PlayerToTable {
+	walk_right * 2
+	walk_down
+	walk_right * 3
+	walk_up
+}
+
+movement LoonixInsideReal_Movement_Granny2_EeveeToTable {
+	walk_right * 3
+	walk_down
+	walk_right * 3
+}
+
+movement LoonixInsideReal_Movement_Granny3_PlayerToTable {
+	walk_up
+	walk_right * 5
+	walk_up
+}
+
+text LoonixInsideReal_Text_GrandmaTVSpeech {
+	format("It's all over the news that Mew's returned!\n My boy, this is a God sent mircale.\pJust once...to see the living shape of Mew...there's nothing more of life that I would ask.")
+}
+
+text LoonixInsideReal_Text_GrandmaMono {
+	format("But now the strength of life has left these bones, and I can hardly walk across the yard. Saeclara City is too far away for this old crow to fly.")
+}	
+
+text LoonixInsideReal_Text_GrandmaToBed {
+	format("I'll have to stay.\p {PLAYER} will you help me get into bed?")
+}
+
+text LoonixInsideReal_Text_GrandmaBed {
+	format("Thank you.")
+}
+
+text LoonixInsideReal_Text_Granny1A {
+	format("Good morning sleepyhead!")
+}
+
+text LoonixInsideReal_Text_Granny1B {
+	format("I'm still cooking breakfast but your friend came by earlier. What was her name again?")
+}
+
+//That's right {NOE}
+text LoonixInsideReal_Text_Granny1C {
+	format("That's right, {LEAF}! She's such a sweet and beautiful young girl. I think she's still waiting outside for you. Go out, have fun, but keep your distance from the tall grass where wild pokemon roam.")
+}
+
+text LoonixInsideReal_Text_GrannyKitchen {
+	format("Go have fun with {LEAF} but please stay safe.")
+}
+
+text LoonixInsideReal_Text_GrannyTable1 {
+	format("So nice to see you {PLAYER}! Sit down and rest.")
+}
+
+text LoonixInsideReal_Text_GrannyTable2 {
+	format("Come back anytime and good luck at school.")
+}
+
+text LoonixInsideReal_Text_TV1 {
+	format("Humans and aliens working together to explore new worlds, seek out strange new life, and boldly go where no one has ever gone before.")
+}
+
+text LoonixInsideReal_Text_TV2 {
+	format("Handsome men in suits discuss transportation infrastructure with a member of the Restoration Party.")
+}
+
+text LoonixInsideReal_Text_TVX {
+	format("Looks like the TV is switched off.")
+}
+
+//I told you to keep out of the tall grass! 
+//Oh {PLAYER}, what can I say? I'm worried sick,
+//so scared for you, for me. I still see you
+//as that rambunctious boy you used to be
+//but now you're growing up and I'm afraid
+//of losing you like I lost your father.
+//I long to keep you here forever safe
+//but as your strength flowers my own decays.
+//I often asked myself if what I did
+//was the right thing to do to raise you best
+//but now I see that choice is yours to make.
+//The time has come for me to set you free
+//for even though my heart betrays these words
+//I trust you and I know it's for the best.
+text LoonixInsideReal_Text_Granny2A {
+	format("I told you to keep out of the tall grass! Oh {PLAYER}, what can I say? I'm worried sick, so scared for you, for me. I still see you as that rambunctious boy you used to be but now you're growing up and I'm afraid of losing you like I lost your father. I long to keep you here forever safe but as your strength flowers my own decays. I often asked myself if what I did was the right thing to do to raise you best but now I see that choice is yours to make. The time has come for me to set you free for even though my heart betrays these words I trust you and I know it's for the best.")
+}
+
+text LoonixInsideReal_Text_Granny2B {
+	format("Your father would have wanted you to have his Pokedex when you were old enough. The Pokedex is an electronic tool to help record the Pokemon you find. And here, take these.")
+}
+
+text LoonixInsideReal_Text_Granny2C {
+	format("You can keep Pokemon in Pokeballs, but Eevee seems to prefer the fresh air. I see that you and him have a strong bond. Would you like to give Eevee a nickname?")
+}
+
+text LoonixInsideReal_Text_Granny2D {
+	format("Your father left when you were both infants and I raised you and him here together, so I know he will always be loyal, but if you want to be a strong trainer then you will need to train many different kinds of Pokemon who may not obey an untrained trainer so you ought to go to Trainer School and learn the right technique. There's one in Albion just down the road. Now come sit down and get something to eat.")
+}
+
+text LoonixInsideReal_Text_Granny2E {
+	format("Just promise me you'll go to Trainer School and come back anytime to rest at home.")
+}
+
+text LoonixInsideReal_Text_GrannyStorm1 {
+	format("Oh {PLAYER}! I was so worried! Thank goodness that you're ok! Come here. Let me see you.")
+}
+
+text LoonixInsideReal_Text_GrannyStorm2 {
+	format("This storm feels almost supernatural, like it was sent from heaven with purpose. I'm overjoyed to see you back home safe. I know I had to let you go grow up but trust me one more time to keep you safe and sleep in your old bed through the tempest. I promise that when you wake up again the storm will have passed and all will be good.")
+}
+
+text LoonixInsideReal_Text_GrannyStorm3 {
+	format("You'll be ok as long as you're with me. Go up to bed and let the weather pass.")
+}
+

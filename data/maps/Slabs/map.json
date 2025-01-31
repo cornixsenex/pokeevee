@@ -1,0 +1,74 @@
+{
+  "id": "MAP_SLABS",
+  "name": "Slabs",
+  "layout": "LAYOUT_SLABS",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_VERDANTURF_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE12",
+      "offset": -64,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE14",
+      "offset": -22,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "x": 34,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Slabs_EventScript_Rival",
+      "flag": "FLAG_SLABS_HIDE_RIVAL"
+    }
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_SLABS_STATE",
+      "var_value": "0",
+      "script": "Slabs_EventScript_RivalTrigger"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Slabs_EventScript_Bike"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Slabs_EventScript_Bike"
+    }
+  ]
+}

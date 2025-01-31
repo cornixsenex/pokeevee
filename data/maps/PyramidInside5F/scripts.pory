@@ -1,0 +1,26 @@
+mapscripts PyramidInside5F_MapScripts {}
+
+
+
+script PyramidInside5F_EventScript_Indy {
+	lock
+	msgbox (PyramidInside5F_Text_IndyIntro)
+	closemessage
+	//battle
+	//check if completed trials
+	//if not then trial talk
+	//if done then below
+	fadescreen (1)
+	removeobject (1)
+	setflag (FLAG_PYRAMIDS_INDY)
+	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
+	setvar (VAR_INDY_STATE, 1)
+	setflag (FLAG_FRAT_LEAF)
+	fadescreen (0)
+	release
+	end
+}
+
+text PyramidInside5F_Text_IndyIntro {
+	format("I knew you were coming...say not a word before we battle. I must test your strength.")
+}

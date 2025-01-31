@@ -1182,16 +1182,16 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
     case SUMMARY_MODE_RELEARNER_BATTLE:
     case SUMMARY_MODE_RELEARNER_CONTEST:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2; // was 1
         break;
     case SUMMARY_MODE_LOCK_MOVES:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2; //was 1
         sMonSummaryScreen->lockMovesFlag = TRUE;
         break;
     case SUMMARY_MODE_SELECT_MOVE:
         sMonSummaryScreen->minPageIndex = PSS_PAGE_BATTLE_MOVES;
-        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2; //1 for contest moves
         sMonSummaryScreen->lockMonFlag = TRUE;
         break;
     }
@@ -1850,28 +1850,23 @@ static void Task_ChangeSummaryMon(u8 taskId)
 static s8 AdvanceMonIndex(s8 delta)
 {
     struct Pokemon *mon = sMonSummaryScreen->monList.mons;
+	u8 index = sMonSummaryScreen->curMonIndex;
+	u8 numMons = sMonSummaryScreen->maxMonIndex + 1;
+	delta += numMons;
 
-    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
-    {
-        if (delta == -1 && sMonSummaryScreen->curMonIndex == 0)
-            return -1;
-        else if (delta == 1 && sMonSummaryScreen->curMonIndex >= sMonSummaryScreen->maxMonIndex)
-            return -1;
-        else
-            return sMonSummaryScreen->curMonIndex + delta;
-    }
-    else
-    {
-        s8 index = sMonSummaryScreen->curMonIndex;
+	index = (index + delta) % numMons;
 
-        do
-        {
-            index += delta;
-            if (index < 0 || index > sMonSummaryScreen->maxMonIndex)
-                return -1;
-        } while (GetMonData(&mon[index], MON_DATA_IS_EGG));
-        return index;
-    }
+	//skkip over any Eggs unles on Info Page
+
+	if (sMonSummaryScreen->currPageIndex != PSS_PAGE_INFO)
+		while (GetMonData(&mon[index], MON_DATA_IS_EGG))
+			index = (index + delta) % numMons;
+
+	//to avoid 'scrolling' to the same mons
+	if (index == sMonSummaryScreen->curMonIndex)
+		return -1;
+	else
+		return index;
 }
 
 static s8 AdvanceMultiBattleMonIndex(s8 delta)
@@ -4129,7 +4124,7 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
     default:
         return CreateMonSprite(mon);
     case 0:
-        if (gMain.inBattle)
+              if (gMain.inBattle)
         {
             HandleLoadSpecialPokePic(TRUE,
                                      gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_LEFT],

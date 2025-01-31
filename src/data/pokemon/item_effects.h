@@ -3,6 +3,11 @@ const u8 gItemEffect_Potion[7] = {
     [6] = 20, // Amount of HP to recover
 };
 
+const u8 gItemEffect_DeathStick[7] = {
+    [4] = ITEM4_HEAL_HP,
+    [6] = -20, // Amount of HP to recover
+};
+
 const u8 gItemEffect_Antidote[6] = {
     [3] = ITEM3_POISON,
 };
@@ -320,7 +325,9 @@ const u8 gItemEffect_RareCandy[10] = {
     [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
     [5] = ITEM5_FRIENDSHIP_ALL,
     [6] = ITEM6_HEAL_HP_LVL_UP,
-    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [7] = 5,
+    [8] = 3,
+    [9] = 2,
 };
 
 const u8 gItemEffect_PPUp[9] = {
@@ -331,9 +338,10 @@ const u8 gItemEffect_PPUp[9] = {
 
 const u8 gItemEffect_PPMax[9] = {
     [5] = ITEM5_PP_MAX | ITEM5_FRIENDSHIP_ALL,
-    VITAMIN_FRIENDSHIP_CHANGE(6),
+    [6] = 5,
+    [7] = 3,
+    [8] = 2,
 };
-
 #define STAT_BOOST_FRIENDSHIP_CHANGE      \
     [6] = 1, /* Friendship change, low */ \
     [7] = 1  /* Friendship change, mid */
@@ -459,3 +467,10 @@ const u8 gItemEffect_TamatoBerry[10] = {
     [6] = ITEM6_SUBTRACT_EV,
     EV_BERRY_FRIENDSHIP_CHANGE,
 };
+
+const u8 gItemEffect_KindBud[7] = {
+    [4] = ITEM4_HEAL_HP,
+    [6] = ITEM6_HEAL_HP_FULL,
+};
+
+

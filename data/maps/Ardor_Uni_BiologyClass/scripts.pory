@@ -1,0 +1,104 @@
+
+const OBJ_EVENT_TEACHER = 1
+
+
+mapscripts Ardor_Uni_BiologyClass_MapScripts {}
+
+
+
+script Ardor_Uni_BiologyClass_EventScript_Teacher  {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_BIOLOGY)) {
+		msgbox(Ardor_Uni_BiologyClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_BIOLOGY_INTRO)) {
+		specialvar (VAR_RESULT, IsAnimalTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag (FLAG_TEMP_1)
+		} else {
+			msgbox(Ardor_Uni_BiologyClass_Text_BringAnimalType)
+		}
+		specialvar (VAR_RESULT, IsPlantTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag (FLAG_TEMP_2)
+		} else {
+			msgbox(Ardor_Uni_BiologyClass_Text_BringPlantType)
+		}
+		specialvar (VAR_RESULT, IsFungusTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag (FLAG_TEMP_3)
+		} else {
+			msgbox(Ardor_Uni_BiologyClass_Text_BringFungusType)
+		}
+		if (flag(FLAG_TEMP_1) && (flag(FLAG_TEMP_2)) && (flag(FLAG_TEMP_3))) {
+			call (Ardor_Uni_BiologyClass_EventScript_Test)
+		}
+	} else {
+		call (Ardor_Uni_BiologyClass_EventScript_ClassIntro)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_BiologyClass_EventScript_ClassIntro {
+	setflag (FLAG_BIOLOGY_INTRO)
+	msgbox(Ardor_Uni_BiologyClass_Text_ClassIntro)
+	closemessage
+	msgbox(Ardor_Uni_BiologyClass_Text_BringAnimalType)
+	closemessage
+	msgbox(Ardor_Uni_BiologyClass_Text_BringPlantType)
+	closemessage
+	msgbox(Ardor_Uni_BiologyClass_Text_BringFungusType)
+	closemessage
+	return
+}
+
+script Ardor_Uni_BiologyClass_EventScript_Test {
+	//You have brought animal plant and fungus now time for test
+	msgbox(Ardor_Uni_BiologyClass_Text_LessonComplete)
+	closemessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	closemessage
+	trainerbattle_no_intro(TRAINER_UNI_BIOLOGY, Ardor_Uni_BiologyClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_BiologyClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+text Ardor_Uni_BiologyClass_Text_ClassIntro {
+	format("Salve puer. Magistra Philida sum. Necesse est tibi docere scientiam biologiae. Biologia studium est vitae. Vita est omnis divisa in partes tres: Animalia, Plantae, Fungique.")
+}
+
+text Ardor_Uni_BiologyClass_Text_BringAnimalType {
+	format("Reveni cum monstro animali")
+}
+
+text Ardor_Uni_BiologyClass_Text_BringPlantType {
+	format("Reveni cum monstro planta")
+}
+
+text Ardor_Uni_BiologyClass_Text_BringFungusType {
+	format("Reveni cum monstro fungo")
+}
+
+text Ardor_Uni_BiologyClass_Text_LessonComplete {
+	format("Revenisti cum monstra tribus: uno animali, uno planta, et uno fungo.")
+}
+
+text Ardor_Uni_BiologyClass_Text_TeacherBattleLost {
+	format("Vita tua magna est.")
+}
+
+text Ardor_Uni_BiologyClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti Biologiam.")
+}
+
+
+
+
+
+

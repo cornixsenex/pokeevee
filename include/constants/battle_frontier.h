@@ -32,7 +32,7 @@
 #define CHALLENGE_STATUS_WON      3
 #define CHALLENGE_STATUS_LOST     4
 
-// Special trainer battles.
+// Special trainer battles.		//CornixSenex adjusted this to account for scripted Pv2 trainer battles -_-
 #define SPECIAL_BATTLE_TOWER 0
 #define SPECIAL_BATTLE_SECRET_BASE 1
 #define SPECIAL_BATTLE_EREADER 2
@@ -44,6 +44,12 @@
 #define SPECIAL_BATTLE_PIKE_DOUBLE 8
 #define SPECIAL_BATTLE_PYRAMID 9
 #define SPECIAL_BATTLE_MULTI 10
+#define SPECIAL_BATTLE_CANTINA_BRAWL 11
+#define SPECIAL_BATTLE_HILOKABUTO 12
+#define SPECIAL_BATTLE_SS2F_BLUE 13
+#define SPECIAL_BATTLE_SS2F_YELLOW 14
+#define SPECIAL_BATTLE_SS2F_RED 15
+#define SPECIAL_BATTLE_SS2F_GREEN 16
 
 #define MAX_BATTLE_FRONTIER_POINTS 9999
 #define MAX_STREAK 9999

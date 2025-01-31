@@ -1,0 +1,77 @@
+mapscripts Route7_MapScripts {}
+
+
+
+script Route7_EventScript_RoadBlockA {
+	lock	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (13, Route7_Movement_RoadBlockA)
+	waitmovement (0)
+	msgbox (Route7_Text_RoadBlock)
+	closemessage
+	applymovement (13, Route7_Movement_RoadBlockA2)
+	waitmovement (0)
+	opendoor (15, 56)
+	waitdooranim
+	applymovement (13, Common_Movement_WalkUp)
+	waitmovement (0)
+	removeobject (13)
+	closedoor (15,56)
+	waitdooranim
+	setflag (FLAG_ROUTE7_HIDEOLDWOMAN)
+	setvar (VAR_ROUTE6_STATE, 2)
+	release
+	end
+}
+
+script Route7_EventScript_RoadBlockB {
+	lock	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (13, Route7_Movement_RoadBlockB)
+	waitmovement (0)
+	msgbox (Route7_Text_RoadBlock)
+	closemessage
+	applymovement (13, Route7_Movement_RoadBlockB2)
+	waitmovement (0)
+	opendoor (15, 56)
+	waitdooranim
+	removeobject (13)
+	setflag (FLAG_ROUTE7_HIDEOLDWOMAN)
+	setvar (VAR_ROUTE6_STATE, 2)
+	release
+	end
+}
+
+
+
+
+movement Route7_Movement_RoadBlockA {
+	walk_right * 5
+	face_up
+}
+
+movement Route7_Movement_RoadBlockB {
+	walk_right * 6
+	face_up
+}
+
+movement Route7_Movement_RoadBlockA2 {
+	walk_left * 6
+	face_up
+}
+
+movement Route7_Movement_RoadBlockB2 {
+	walk_left * 7
+	face_up
+}
+
+
+
+
+
+
+text Route7_Text_RoadBlock {
+	format("You poor little young thing! You look tired, come rest a while in grandma's cabin. We have a bed made specially for you!")
+}
+	
+	

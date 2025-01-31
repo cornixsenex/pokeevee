@@ -1,0 +1,226 @@
+mapscripts LoonixGiftHouse_MapScripts {}
+
+script LoonixGiftBall {
+	lockall
+	msgbox (LoonixGiftBallText, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox (LoonixGiftBallTextNo)
+		releaseall
+		end
+	}
+	else {
+		givemon (SPECIES_MEW, 5, ITEM_ORAN_BERRY)
+		if (var(VAR_RESULT) == 0) {
+			call (LoonixGiftHouse_MewFanfare)
+			msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call (Common_EventScript_GetGiftMonPartySlot)
+				call (Common_EventScript_NameReceivedPartyMon)
+			}
+			setflag (FLAG_UNUSED_0x020)
+		}
+		elif (var(VAR_RESULT) == 1) {
+			call (LoonixGiftHouse_MewFanfare)
+			msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call (Common_EventScript_NameReceivedBoxMon)
+			} else {
+				call (Common_EventScript_TransferredToPC)
+			}
+			setflag (FLAG_UNUSED_0x020)
+		} else {
+			goto (Common_EventScript_NoMoreRoomForPokemon)
+			}
+		releaseall
+		end	
+	}
+}
+
+script LoonixGiftEgg {
+	lock
+	faceplayer
+	if (flag(FLAG_UNUSED_0x021)) {
+		msgbox (LoonixGiftHouse_SomethingNice)
+		release
+		end
+	} else {
+		msgbox(LoonixGiftHouse_WantEggText, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox (LoonixGiftHouse_NoEggText)
+			release
+			end
+		} else {
+			getpartysize
+			if (var(VAR_RESULT) == PARTY_SIZE) {
+				msgbox (LoonixGiftHouse_NoRoomForEgg)
+				release
+				end
+			} else {
+				setflag (FLAG_UNUSED_0x021)
+				msgbox (LoonixGiftHouse_TakeCare)
+				playfanfare (MUS_OBTAIN_ITEM)
+				message (LoonixGiftHouse_EggText)
+				waitfanfare
+				giveegg (SPECIES_PICHU)
+				release
+				end
+			}
+		}
+	}
+}
+
+script LoonixGiftArbok {
+	lock
+	faceplayer
+	if (flag(FLAG_UNUSED_0x022)) {
+		msgbox (LoonixGiftHouse_HowsArbok)
+		release
+		end
+	} else {
+		msgbox(LoonixGiftHouse_WantArbok, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox (LoonixGiftHouse_NoArbok)
+			release
+			end
+		} else {
+			givemon (SPECIES_ARBOK, 5, ITEM_ORAN_BERRY)
+			if (var(VAR_RESULT) == 0) {
+				call (LoonixGiftHouse_ArbokFanfare)
+				msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call (Common_EventScript_GetGiftMonPartySlot)
+					call (Common_EventScript_NameReceivedPartyMon)
+				}
+				setflag (FLAG_UNUSED_0x022)
+				msgbox (LoonixGiftHouse_EnjoyArbok)
+			} 
+			elif (var(VAR_RESULT) == 1)  {
+				call (LoonixGiftHouse_ArbokFanfare)
+				msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					call (Common_EventScript_NameReceivedBoxMon)
+				} else {
+					call (Common_EventScript_TransferredToPC)
+				}
+				setflag (FLAG_UNUSED_0x022)
+				msgbox (LoonixGiftHouse_EnjoyArbok)
+			} else {		
+				goto (Common_EventScript_NoMoreRoomForPokemon)
+			}
+		}
+		release
+		end
+	}
+}
+
+script LoonixGiftHouse_ArbokFanfare {
+	bufferspeciesname (1, SPECIES_ARBOK)
+	playfanfare (MUS_OBTAIN_ITEM)
+	message (LoonixGiftHouse_ObtainedArbok)
+	waitmessage
+	waitfanfare
+	bufferspeciesname (0, SPECIES_ARBOK)
+	return
+}
+
+
+script LoonixGiftHouse_MewFanfare {
+	bufferspeciesname (1, SPECIES_MEW)
+	removeobject (1)
+	playfanfare (MUS_OBTAIN_ITEM)
+	setflag (FLAG_SYS_POKEMON_GET)
+	message (LoonixGiftBallText_ObtainedMew)
+	waitmessage
+	waitfanfare
+	bufferspeciesname (0, SPECIES_MEW)
+	return
+}
+
+script LoonixGiftHouse_Item_Kind_Bud {
+	lock
+	faceplayer
+	giveitem (ITEM_KIND_BUD, 1)
+	//checkitem (ITEM_KIND_BUD, 1)
+	//if (var(VAR_RESULT) == 0) {
+	//	msgbox (LoonixGiftHouse_Kind_Bud_Find)
+	//	checkitemspace (ITEM_KIND_BUD, 1)
+	//	if (var(VAR_RESULT) == 1) {
+	//		giveitem (ITEM_ANCIENT_LAMP)
+	//	} else {
+	//		goto (Common_EventScript_ShowBagIsFull)
+	//	}
+	//} else {
+	//	msgbox (LoonixGiftHouse_Item_Kind_Bud_Deny)
+	//}		
+	release
+	end	
+}
+
+text LoonixGiftHouse_Kind_Bud_Find {
+	format("GIVEITEM ITEM_POTION")
+}
+
+text LoonixGiftHouse_Item_Kind_Bud_Deny {
+	format("I've already got enough to smoke. Better come back later!")
+}
+
+text LoonixGiftBallTextNo {
+	"Best not to take that."
+}
+
+text LoonixGiftBallText {
+	"This PokeBall contains MEW.\p"
+	"Will you take it?"
+}
+
+text LoonixGiftBallText_ObtainedMew {
+	"{PLAYER} obtained Mew!"
+}
+
+text LoonixGiftHouse_SomethingNice {
+	format("I hope something nice hatches soon!")
+}
+
+text LoonixGiftHouse_WantEggText {
+	format("Hey, could you please watch this egg for me?")
+}
+
+text LoonixGiftHouse_NoRoomForEgg {
+	format("Sorry, looks like you don't have room. Come back later!")
+}
+
+text LoonixGiftHouse_TakeCare {
+	format("Make sure you take good care of it!")
+}
+
+text LoonixGiftHouse_EggText {
+	"{PLAYER} obtained an EGG"
+}
+
+text LoonixGiftHouse_NoEggText{
+	format("Okay, well let me know if you change your mind.")
+}
+
+
+text LoonixGiftHouse_HowsArbok {
+	format("Hey! How's ARBOK been doing?")
+}
+
+text LoonixGiftHouse_WantArbok {
+	format("Hey! I've got an ARBOK for you if you'd like.")
+}
+
+text LoonixGiftHouse_NoArbok {
+	format("That's allright, just come back if you change your mind!")
+}
+
+text LoonixGiftHouse_EnjoyArbok {
+	format("Right on, you take good care of ARBOK now you hear?")
+}
+
+text LoonixGiftHouse_ObtainedArbok {
+	format("{PLAYER} obtained ARBOK")
+}
+
+
+

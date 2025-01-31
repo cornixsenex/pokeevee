@@ -1,0 +1,142 @@
+{
+  "id": "MAP_ARDOR_UNI2F",
+  "name": "Ardor_Uni2F",
+  "layout": "LAYOUT_ARDOR_UNI2F",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_NONE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 17,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Ardor_Uni2F_EventScript_Leaf",
+      "flag": "FLAG_ARDOR_UNI2F_LEAF"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI1F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 17,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_LOGIC_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_ALGEBRA_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_GEOMETRY_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_HISTORY_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_ARCHAEOLOGY_CLASS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ARDOR_UNI_PSYCHOLOGY_CLASS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni2F_EventScript_ArchaeologyDoorSign"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni2F_EventScript_LogicDoorSign"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni2F_EventScript_AlgebraDoorSign"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni2F_EventScript_GeometryDoorSign"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni2F_EventScript_HistoryDoorSign"
+    },
+    {
+      "type": "sign",
+      "x": 36,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Ardor_Uni2F_EventScript_PsychologyDoorSign"
+    }
+  ]
+}

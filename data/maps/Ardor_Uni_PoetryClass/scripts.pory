@@ -1,0 +1,205 @@
+
+const OBJ_EVENT_TEACHER = 1
+const OBJ_EVENT_STUDENT1 = 2
+const OBJ_EVENT_STUDENT2 = 3
+const OBJ_EVENT_STUDENT3 = 4
+const OBJ_EVENT_STUDENT4 = 5
+const OBJ_EVENT_STUDENT5 = 6
+const OBJ_EVENT_STUDENT6 = 7
+
+
+mapscripts Ardor_Uni_PoetryClass_MapScripts {}
+
+
+script Ardor_Uni_PoetryClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_POETRY)) {
+		msgbox(Ardor_Uni_PoetryClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_POETRY_INTRO)) {
+		call (Ardor_Uni_PoetryClass_EventScript_CheckLessons)
+	} else {
+		setflag (FLAG_POETRY_INTRO)
+		msgbox(Ardor_Uni_PoetryClass_Text_ClassIntro)
+		closemessage
+		call (Ardor_Uni_PoetryClass_EventScript_CheckLessons)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_PoetryClass_EventScript_CheckLessons {
+	setvar (VAR_TEMP_7, 0)
+	if (flag(FLAG_TEMP_1)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_StudyLesson1)
+	}
+	if (flag(FLAG_TEMP_2)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_StudyLesson2)
+	}
+	if (flag(FLAG_TEMP_3)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_StudyLesson3)
+	}
+	if (flag(FLAG_TEMP_4)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_StudyLesson4)
+	}
+	if (var(VAR_TEMP_7) == 4) {
+		call (Ardor_Uni_PoetryClass_EventScript_Test)
+	}
+	return
+}
+
+script Ardor_Uni_PoetryClass_EventScript_Test {
+	msgbox(Ardor_Uni_PoetryClass_Text_TestBegin)
+	waitmessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_POETRY, Ardor_Uni_PoetryClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_PoetryClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+//Virgil
+script Ardor_Uni_PoetryClass_EventScript_Student1 {
+	lock
+	faceplayer
+	if (flag(FLAG_POETRY_INTRO)) {
+		setflag (FLAG_TEMP_1)
+		msgbox(Ardor_Uni_PoetryClass_Text_Lesson1)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_Student1)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT1, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Ovid
+script Ardor_Uni_PoetryClass_EventScript_Student2 {
+	lock
+	faceplayer
+	if (flag(FLAG_POETRY_INTRO)) {
+		setflag (FLAG_TEMP_2)
+		msgbox(Ardor_Uni_PoetryClass_Text_Lesson2)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_Student2)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT2, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Horace
+script Ardor_Uni_PoetryClass_EventScript_Student3 {
+	lock
+	faceplayer
+	if (flag(FLAG_POETRY_INTRO)) {
+		setflag (FLAG_TEMP_3)
+		msgbox(Ardor_Uni_PoetryClass_Text_Lesson3)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_Student3)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT3, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Lucian / Marshall
+script Ardor_Uni_PoetryClass_EventScript_Student4 {
+	lock
+	faceplayer
+	if (flag(FLAG_POETRY_INTRO)) {
+		setflag (FLAG_TEMP_4)
+		msgbox(Ardor_Uni_PoetryClass_Text_Lesson4)
+	} else {
+		msgbox(Ardor_Uni_PoetryClass_Text_Student4)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT4, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+
+text Ardor_Uni_PoetryClass_Text_ClassIntro {
+	format("Salve puer. Magistra Anna sum. Necesse est tibi docere poemata.")
+}
+
+text Ardor_Uni_PoetryClass_Text_Student1 {
+	format("")
+}
+
+text Ardor_Uni_PoetryClass_Text_Student2 {
+	format("")
+}
+
+text Ardor_Uni_PoetryClass_Text_Student3 {
+	format("")
+}
+
+text Ardor_Uni_PoetryClass_Text_Student4 {
+	format("")
+}
+
+text Ardor_Uni_PoetryClass_Text_StudyLesson1 {
+	format("Stude Virgilium.")
+}
+
+text Ardor_Uni_PoetryClass_Text_StudyLesson2 {
+	format("Stude Ovidium.")
+}
+
+text Ardor_Uni_PoetryClass_Text_StudyLesson3 {
+	format("Stude Horatium.")
+}
+
+text Ardor_Uni_PoetryClass_Text_StudyLesson4 {
+	format("Stude Martialem.")
+}
+
+text Ardor_Uni_PoetryClass_Text_TeacherBattleLost {
+	format("Lacrimae clademque cano!")
+}
+
+text Ardor_Uni_PoetryClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti poemata.")
+}
+
+text Ardor_Uni_PoetryClass_Text_TestBegin {
+	format("Iam studuisti poetas quattor.")
+}
+
+text Ardor_Uni_PoetryClass_Text_Lesson1 {
+	format("Virgilius cecinit, \n'Arma virumque cano, Troiae qui primus ab oris\pItaliam, fato profugus, Laviniaque venit\plitora, multum ille et terris iactatus et alto\pvi superum saevae memorem Iunonis ob iram;\pmulta quoque et bello passus, dum conderet urbem,\pinferretque deos Latio, genus unde Latinum,\pAlbanique patres, atque altae moenia Romae.'")
+}
+
+text Ardor_Uni_PoetryClass_Text_Lesson2 {
+	format("Cecinit Ovidius, 'In nova fert animus mutatas dicere formas\pcorpora; di, coeptis (nam vos mutastis et illas)\nadspirate meis primaque ab origine mundi\pad mea perpetuum deducite tempora carmen!'")
+}
+
+text Ardor_Uni_PoetryClass_Text_Lesson3 {
+	format("Cecinit,\n'Dulce et decorum est pro patria mori:\pmors et fugacem persequitur virum\nnec parcit in bellis iuventae\ppoplitibus timidove tergo.\n' Horatius.")
+}
+
+text Ardor_Uni_PoetryClass_Text_Lesson4 {
+	format("'Fetere multo Myrtale solet uino,\nsed fallat ut nos, folia deuorat lauri\pmerumque cauta fronde, non aqua, miscet.\nHanc tu rubentem prominentibus uenis\pquotiens uenire, Paule, uideris contra,\ndicas licebit Myrtale bibit laurum.'\pMartialis cecinit.")
+}

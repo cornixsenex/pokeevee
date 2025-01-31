@@ -1,0 +1,272 @@
+
+const OBJ_EVENT_TEACHER = 1
+const OBJ_EVENT_STUDENT1 = 2
+const OBJ_EVENT_STUDENT2 = 3
+const OBJ_EVENT_STUDENT3 = 4
+const OBJ_EVENT_STUDENT4 = 5
+const OBJ_EVENT_STUDENT5 = 6
+const OBJ_EVENT_STUDENT6 = 7
+
+mapscripts Ardor_Uni_ArithmeticClass_MapScripts {
+
+
+}
+
+script Ardor_Uni_ArithmeticClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_ARITHMETIC)) {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_ARITHMETIC_INTRO)) {
+		call (Ardor_Uni_ArithmeticClass_EventScript_CheckLessons)
+	} else {
+		setflag (FLAG_ARITHMETIC_INTRO)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_ClassIntro)
+		closemessage
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_ArithmeticClass_EventScript_CheckLessons {
+	setvar (VAR_TEMP_7, 0)
+	if (flag(FLAG_TEMP_1)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyAddition)
+	}
+	if (flag(FLAG_TEMP_2)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudySubtraction)
+	}
+	if (flag(FLAG_TEMP_3)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyMultiplication)
+	}
+	if (flag(FLAG_TEMP_4)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyDivision)
+	}
+	if (flag(FLAG_TEMP_5)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyExponents)
+	}
+	if (flag(FLAG_TEMP_6)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_StudyRadicals)
+	}
+	if (var(VAR_TEMP_7) == 6) {
+		call (Ardor_Uni_ArithmeticClass_EventScript_Test)
+	}
+	return
+}
+
+script Ardor_Uni_ArithmeticClass_EventScript_Test {
+	msgbox(Ardor_Uni_ArithmeticClass_Text_TestBegin)
+	waitmessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_ARITHMETIC, Ardor_Uni_ArithmeticClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_ArithmeticClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+//Addition
+script Ardor_Uni_ArithmeticClass_EventScript_Student1 {
+	lock
+	faceplayer
+	if (flag(FLAG_ARITHMETIC_INTRO)) {
+		setflag (FLAG_TEMP_1)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Lesson1)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Student1)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT1, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Subtracttion
+script Ardor_Uni_ArithmeticClass_EventScript_Student2 {
+	lock
+	faceplayer
+	if (flag(FLAG_ARITHMETIC_INTRO)) {
+		setflag (FLAG_TEMP_2)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Lesson2)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Student2)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT2, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Multiplication
+script Ardor_Uni_ArithmeticClass_EventScript_Student3 {
+	lock
+	faceplayer
+	if (flag(FLAG_ARITHMETIC_INTRO)) {
+		setflag (FLAG_TEMP_3)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Lesson3)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Student3)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT3, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Division
+script Ardor_Uni_ArithmeticClass_EventScript_Student4 {
+	lock
+	faceplayer
+	if (flag(FLAG_ARITHMETIC_INTRO)) {
+		setflag (FLAG_TEMP_4)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Lesson4)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Student4)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT4, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Exponent
+script Ardor_Uni_ArithmeticClass_EventScript_Student5 {
+	lock
+	faceplayer
+	if (flag(FLAG_ARITHMETIC_INTRO)) {
+		setflag (FLAG_TEMP_5)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Lesson5)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Student5)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT5, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Root
+script Ardor_Uni_ArithmeticClass_EventScript_Student6 {
+	lock
+	faceplayer
+	if (flag(FLAG_ARITHMETIC_INTRO)) {
+		setflag (FLAG_TEMP_6)
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Lesson6)
+	} else {
+		msgbox(Ardor_Uni_ArithmeticClass_Text_Student6)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT6, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+text Ardor_Uni_ArithmeticClass_Text_ClassIntro {
+	format("Salve puer. Magistra Sadia sum. Necesse est tibi docere arithmeticam. Partes arithmeticae sunt sex: additio, subtractio, multiplicatio, divisio, potentia, et radicis extractio. Stude partes sex et reveni.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Student1 {
+	format("")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Student2 {
+	format("")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Student3 {
+	format("")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Student4 {
+	format("")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Student5 {
+	format("")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Student6 {
+	format("")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Lesson1 {
+	format("Additio est operatio arithmetica qua summa numerorum quantitatumve quarundam describitur.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Lesson2 {
+	format("Subtractio est operatio arithmetica contraria additio. Subtractio est additio numeri negativi.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Lesson3 {
+	format("Multiplicatio operatio arithmetica est inversa divisio.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Lesson4 {
+	format("Divisio est operatio quae numerum in partes aequales dividit.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Lesson5 {
+	format("Potentia multiplicatio est repetita")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_Lesson6 {
+	format("Radicis extractio significat aequationem solvere cuius forma est (n)(n) = x.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_TeacherBattleLost {
+	format("Me subtraxisti.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_ClassFinished {
+	format("Iam studuisti arithmeticam.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_TestBegin {
+	format("Iam studuisti partes sex.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_StudyAddition {
+	format("Stude additionem.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_StudySubtraction {
+	format("Stude subtractionem.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_StudyMultiplication {
+	format("Stude multiplicationem.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_StudyDivision {
+	format("Stude divisionem.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_StudyExponents {
+	format("Stude potentias.")
+}
+
+text Ardor_Uni_ArithmeticClass_Text_StudyRadicals {
+	format("Stude radices.")
+}

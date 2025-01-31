@@ -1,0 +1,280 @@
+
+const OBJ_EVENT_TEACHER = 1
+const OBJ_EVENT_STUDENT1 = 2
+const OBJ_EVENT_STUDENT2 = 3
+const OBJ_EVENT_STUDENT3 = 4
+const OBJ_EVENT_STUDENT4 = 5
+const OBJ_EVENT_STUDENT5 = 6
+const OBJ_EVENT_STUDENT6 = 7
+
+
+mapscripts Ardor_Uni_LiteratureClass_MapScripts {}
+
+
+script Ardor_Uni_LiteratureClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_LITERATURE)) {
+		msgbox(Ardor_Uni_LiteratureClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_LITERATURE_INTRO)) {
+		call (Ardor_Uni_LiteratureClass_EventScript_CheckLessons)
+	} else {
+		setflag (FLAG_LITERATURE_INTRO)
+		msgbox(Ardor_Uni_LiteratureClass_Text_ClassIntro)
+		closemessage
+		call (Ardor_Uni_LiteratureClass_EventScript_CheckLessons)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_LiteratureClass_EventScript_CheckLessons {
+	setvar (VAR_TEMP_7, 0)
+	if (flag(FLAG_TEMP_1)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_StudyLesson1)
+	}
+	if (flag(FLAG_TEMP_2)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_StudyLesson2)
+	}
+	if (flag(FLAG_TEMP_3)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_StudyLesson3)
+	}
+	if (flag(FLAG_TEMP_4)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_StudyLesson4)
+	}
+	if (flag(FLAG_TEMP_5)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_StudyLesson5)
+	}
+	if (flag(FLAG_TEMP_6)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_StudyLesson6)
+	}
+	if (var(VAR_TEMP_7) == 6) {
+		call (Ardor_Uni_LiteratureClass_EventScript_Test)
+	}
+	return
+}
+
+script Ardor_Uni_LiteratureClass_EventScript_Test {
+	msgbox(Ardor_Uni_LiteratureClass_Text_TestBegin)
+	waitmessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_LITERATURE, Ardor_Uni_LiteratureClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_LiteratureClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+//Caesar
+script Ardor_Uni_LiteratureClass_EventScript_Student1 {
+	lock
+	faceplayer
+	if (flag(FLAG_LITERATURE_INTRO)) {
+		setflag (FLAG_TEMP_1)
+		msgbox(Ardor_Uni_LiteratureClass_Text_Lesson1)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_Student1)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT1, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Livy
+script Ardor_Uni_LiteratureClass_EventScript_Student2 {
+	lock
+	faceplayer
+	if (flag(FLAG_LITERATURE_INTRO)) {
+		setflag (FLAG_TEMP_2)
+		msgbox(Ardor_Uni_LiteratureClass_Text_Lesson2)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_Student2)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT2, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Ammianus
+script Ardor_Uni_LiteratureClass_EventScript_Student3 {
+	lock
+	faceplayer
+	if (flag(FLAG_LITERATURE_INTRO)) {
+		setflag (FLAG_TEMP_3)
+		msgbox(Ardor_Uni_LiteratureClass_Text_Lesson3)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_Student3)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT3, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Tacitus
+script Ardor_Uni_LiteratureClass_EventScript_Student4 {
+	lock
+	faceplayer
+	if (flag(FLAG_LITERATURE_INTRO)) {
+		setflag (FLAG_TEMP_4)
+		msgbox(Ardor_Uni_LiteratureClass_Text_Lesson4)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_Student4)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT4, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Vulgata
+script Ardor_Uni_LiteratureClass_EventScript_Student5 {
+	lock
+	faceplayer
+	if (flag(FLAG_LITERATURE_INTRO)) {
+		setflag (FLAG_TEMP_5)
+		msgbox(Ardor_Uni_LiteratureClass_Text_Lesson5)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_Student5)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT5, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Cicero
+script Ardor_Uni_LiteratureClass_EventScript_Student6 {
+	lock
+	faceplayer
+	if (flag(FLAG_LITERATURE_INTRO)) {
+		setflag (FLAG_TEMP_6)
+		msgbox(Ardor_Uni_LiteratureClass_Text_Lesson6)
+	} else {
+		msgbox(Ardor_Uni_LiteratureClass_Text_Student6)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT6, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+
+text Ardor_Uni_LiteratureClass_Text_ClassIntro {
+	format("Salve puer. Magistra Aemilia sum. Necesse est tibi docere litteraturam.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Student1 {
+	format("")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Student2 {
+	format("")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Student3 {
+	format("")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Student4 {
+	format("")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Student5 {
+	format("")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Student6 {
+	format("")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Student7 {
+	format("")
+}
+
+text Ardor_Uni_LiteratureClass_Text_StudyLesson1 {
+	format("Stude Caesarem.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_StudyLesson2 {
+	format("Stude Livium.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_StudyLesson3 {
+	format("Stude Ammianum Marcellinum.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_StudyLesson4 {
+	format("Stude Tacitum.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_StudyLesson5 {
+	format("Stude Bibliam Sacram.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_StudyLesson6 {
+	format("Stude Ciceronem.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_TeacherBattleLost {
+	format("Multos liberos legisti.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti litteraturam.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_TestBegin {
+	format("Iam studuisti scriptores sex!")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Lesson1 {
+	format("Caesar scripsit, 'Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.'")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Lesson2 {
+	format("Scripsit Livius, 'Iam primum omnium satis constat Troia capta in ceteros saevitum esse Troianos, duobus, Aeneae Antenorique, et vetusti iure hospitii et quia pacis reddendaeque Helenae semper auctores fuerant, omne ius belli Achivos abstinuisse; casibus deinde variis Antenorem cum multitudine Enetum, qui seditione ex Paphlagonia pulsi et sedes et ducem rege Pylaemene ad Troiam amisso quaerebant, venisse in intimum maris Hadriatici sinum, Euganeisque qui inter mare Alpesque incolebant pulsis Enetos Troianosque eas tenuisse terras.'")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Lesson3 {
+	format("Ammianus Marcellinus, 'Post incensum corpus ossaque in argenteam urnam conlecta, quae ad gentem humo mandanda portari statuerat pater, agitata summa consiliorum placuerat busto urbis subversae expiare perempti iuvenis manes; nec enim Grumbates inulta unici pignoris umbra ire ultra patiebatur' scripsit.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Lesson4 {
+	format("Scripsit, 'C. Pompeio Q. Veranio consulibus pactum inter Claudium et Agrippinam matrimonium iam fama, iam amore inlicito firmabatur; necdum celebrare sollemnia nuptiarum audebant, nullo exemplo deductae in domum patrui fratris filiae: quin et incestum ac, si sperneretur, ne in malum publicum erumperet metuebatur. nec ante omissa cunctatio quam Vitellius suis artibus id perpetrandum sumpsit' Tacitus.")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Lesson5 {
+	format("In Biblia Sacra serpens dixit, 'Cur praecepit vobis Deus ut non comederetis de omni ligno paradisi? Nequaquam morte moriemini. Scit enim Deus quod in quocumque die comederitis ex eo, aperientur oculi vestri, et eritis sicut dii, scientes bonum et malum.'")
+}
+
+text Ardor_Uni_LiteratureClass_Text_Lesson6 {
+	format("'Pauci viri veros amicos habent, et pauci sunt digni. Amicitia vera est praeclara, et omnia praeclara sunt rara. Multi viri stulti de pecunia semper cogitant, pauci de amicis; sed errant: possumus valere sine multa pecunia, sed sine amicitia non valemus et vita est nihil' scripsit Cicero.")
+}
+
+
+

@@ -1,0 +1,68 @@
+mapscripts BulbusTown_CannabisCenter_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		setweather (WEATHER_FOG_DIAGONAL)
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ROUTE1_STATE, 3: BulbusTown_CannabisCenter_OnFrame
+		VAR_ROUTE1_STATE, 4: BulbusTown_CannabisCenter_OnFrame 
+	]
+
+}
+
+script BulbusTown_CannabisCenter_OnFrame {
+	setvar (VAR_ROUTE1_STATE, 5)
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, BulbusTown_CannabisCenter_Movement_Player)
+	load_field_pic (5, 190, 98)
+	msgbox (BulbusTown_CannabisCenter_Text_Scott1)
+	waitmovement (0)
+	applymovement (2, Common_Movement_FaceLeft)
+	waitmovement (0)
+	closemessage
+	destroy_field_pic (5)
+	applymovement (2, BulbusTown_CannabisCenter_Movement_Scott)
+	waitmovement (0)
+	removeobject (2)
+	setflag (FLAG_HIDE_BULBUSSCOTT)
+	releaseall
+	end
+}
+
+
+script BulbusTown_CannabisCenter_Clerk {	
+	lock
+	faceplayer
+	msgbox (BulbusTown_CannabisCenter_Intro)
+	closemessage	
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	msgbox (BulbusTown_CannabisCenter_Outtro)
+	release
+	end
+}
+
+movement BulbusTown_CannabisCenter_Movement_Player {
+	walk_up * 4
+	face_right
+}
+
+movement BulbusTown_CannabisCenter_Movement_Scott {
+	walk_down * 3
+	walk_left
+	walk_down
+}
+
+
+text BulbusTown_CannabisCenter_Intro {
+	format("What's up dude? Scott told me you smoke for free, here hit this bong!")
+}
+
+text BulbusTown_CannabisCenter_Outtro {
+	format("Hows that feel? Just let me know if you need another one.")
+}
+
+text BulbusTown_CannabisCenter_Text_Scott1 {
+	format("Hey {PLAYER} I knew you'd come, so what you think? The finest cannabis shop in the state. As a reward for saving my daughter I've let the business know you smoke for free. Speaking of Leaf she's in the Silvan Woods training the Pokemon that she just caught. We better go catch up to her here soon...")
+}
+
+
+

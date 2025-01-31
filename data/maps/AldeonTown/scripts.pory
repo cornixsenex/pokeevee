@@ -1,0 +1,557 @@
+const OBJ_EVENT_LEAF = 5
+const OBJ_EVENT_BLUE = 6
+const OBJ_EVENT_IGGLYBUFF = 7
+const OBJ_EVENT_ZUBAT = 8
+const OBJ_EVENT_OLDMAN = 4
+const OBJ_EVENT_SNORLAX = 9
+const OBJ_EVENT_FATMAN = 1
+const OBJ_EVENT_SCOTT = 10
+
+const FIELD_PIC_LEAF = 4
+const FIELD_PIC_BLUE = 3
+
+mapscripts AldeonTown_MapScripts {
+	
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_GRANNY_STATE) < 9) {
+			call (AldeonTown_Script_ShowSnorlaxBlock)
+			call (AldeonTown_Script_ShowScottBlock)
+		}
+		elif (var(VAR_GRANNY_STATE) == 9) {
+			call (AldeonTown_Script_SetupStorm1)
+		}
+		elif (var(VAR_GRANNY_STATE) == 10 || var(VAR_GRANNY_STATE) == 11) {
+			call (AldeonTown_Script_SetupStorm2)
+		}
+
+	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GRANNY_STATE, 9: AldeonTown_Script_Storm
+	]
+
+}
+
+script AldeonTown_Script_ShowScottBlock {
+	setobjectxyperm (OBJ_EVENT_SCOTT, 22, 8)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_UP)
+	addobject (OBJ_EVENT_SCOTT)
+	showobjectat (OBJ_EVENT_SCOTT, MAP_ALDEON_TOWN)
+
+	return
+}
+
+script AldeonTown_Script_ShowSnorlaxBlock {
+	setobjectxyperm (OBJ_EVENT_SNORLAX, 27, 22)
+	setobjectmovementtype (OBJ_EVENT_SNORLAX, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (OBJ_EVENT_SNORLAX)
+	showobjectat (OBJ_EVENT_SNORLAX, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_FATMAN, 25, 21)
+	setobjectmovementtype (OBJ_EVENT_FATMAN, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_FATMAN)
+	showobjectat (OBJ_EVENT_FATMAN, MAP_ALDEON_TOWN)
+
+	return
+}
+
+script AldeonTown_Script_ShowBlueLeaf {
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 23, 15)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+	addobject (OBJ_EVENT_ZUBAT)
+	showobjectat (OBJ_EVENT_ZUBAT, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 24, 15)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+	addobject (OBJ_EVENT_IGGLYBUFF)
+	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_BLUE, 22, 15)
+	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_BLUE)
+	showobjectat (OBJ_EVENT_BLUE, MAP_ALDEON_TOWN)
+
+	setobjectxyperm (OBJ_EVENT_LEAF, 25, 15)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_LEAF)
+	showobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
+	
+	return
+}
+
+script AldeonTown_Script_SetupStorm1 {
+
+	setobjectxyperm (OBJ_EVENT_OLDMAN, 14, 8)
+	setobjectmovementtype (OBJ_EVENT_OLDMAN, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_OLDMAN)
+	showobjectat (OBJ_EVENT_OLDMAN, MAP_ALDEON_TOWN)
+
+	setweather (WEATHER_DOWNPOUR)
+
+	return
+}
+
+script AldeonTown_Script_SetupStorm2 {
+
+	setobjectxyperm (OBJ_EVENT_OLDMAN, 8, 8)
+	setobjectmovementtype (OBJ_EVENT_OLDMAN, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_OLDMAN)
+	showobjectat (OBJ_EVENT_OLDMAN, MAP_ALDEON_TOWN)
+
+	setweather (WEATHER_DOWNPOUR)
+
+	return
+}
+
+script AldeonTown_Script_TriggerLeafBattle {
+	lockall
+	//setvars
+	setvar (VAR_GRANNY_STATE, 8)
+	//Alert Player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//Greeting Leaf
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (format("Hey {PLAYER}!"), MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//Show Leaf
+	removeobject (OBJ_EVENT_LEAF)
+	setobjectxyperm (OBJ_EVENT_LEAF, 15, 9)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_LEAF)
+	showobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
+	//Show Igglybuff	
+	removeobject (OBJ_EVENT_IGGLYBUFF)
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 16, 9)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_IGGLYBUFF)
+	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
+	//Enter Leaf et Iggy
+	applymovement (OBJ_EVENT_LEAF, AldeonTown_Movement_Leaf1)
+	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_Leaf1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//Leaf: Daddy got me a mon lets battle
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf1, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//battle
+	trainerbattle_no_intro (TRAINER_LEAF1, AldeonTown_Text_LeafLost)
+	//Post battle talk
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf2, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//Alert player et Leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Speak Blue
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue1, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//Face player et Leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//Show Blue
+	removeobject (OBJ_EVENT_BLUE)
+	setobjectxyperm (OBJ_EVENT_BLUE, 0, 9)
+	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_BLUE)
+	showobjectat (OBJ_EVENT_BLUE, MAP_ALDEON_TOWN)
+	//Show Zubat
+	removeobject (OBJ_EVENT_ZUBAT)
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 0, 8)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_ZUBAT)
+	showobjectat (OBJ_EVENT_ZUBAT, MAP_ALDEON_TOWN)
+	//Enter Blue et Zubat	
+	applymovement (OBJ_EVENT_BLUE, AldeonTown_Movement_Blue1)
+	applymovement (OBJ_EVENT_ZUBAT, AldeonTown_Movement_Blue1)
+	waitmovement (0)
+	//Set Zubat movement flying
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+	//savage studies
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//Face player	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//Leaf: Pardon
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//B: School a waste
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//L: Not what adults told me
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf4, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//B: Be as gods
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue4, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	//L: Convinced
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (AldeonTown_Text_Leaf5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//B: let us go
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	closemessage
+	//Step 1
+	//applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+	//applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+	//applymovement (OBJ_EVENT_BLUE, Common_Movement_WalkRight)
+	//applymovement (OBJ_EVENT_ZUBAT, Common_Movement_WalkDown)
+	//waitmovement (0)
+	//applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
+	//applymovement (OBJ_EVENT_ZUBAT, Common_Movement_FaceRight)
+	//waitmovement (0)
+	//Blue: Girls only.	
+	applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
+	waitmovement (0)
+	load_field_pic (FIELD_PIC_BLUE, 190, 98)
+	msgbox (AldeonTown_Text_Blue6, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_BLUE)
+	closemessage
+	//Exeunt Leaf et Blue
+	applymovement (OBJ_EVENT_IGGLYBUFF, AldeonTown_Movement_BlueLeafExeuntL)
+	applymovement (OBJ_EVENT_LEAF, AldeonTown_Movement_BlueLeafExeuntL)
+	applymovement (OBJ_EVENT_BLUE, AldeonTown_Movement_BlueLeafExeuntL)
+	applymovement (OBJ_EVENT_ZUBAT, AldeonTown_Movement_BlueLeafExeuntL)
+	waitmovement (0)
+	//Remove actors
+	hideobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_TOWN)
+	hideobjectat (OBJ_EVENT_BLUE, MAP_ALDEON_TOWN)
+	hideobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ALDEON_TOWN)
+	hideobjectat (OBJ_EVENT_ZUBAT, MAP_ALDEON_TOWN)
+	
+	removeobject (OBJ_EVENT_LEAF)
+	removeobject (OBJ_EVENT_BLUE)
+	removeobject (OBJ_EVENT_IGGLYBUFF)
+	removeobject (OBJ_EVENT_ZUBAT)
+
+	setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 0, 0)
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 0, 0)
+	setobjectxyperm (OBJ_EVENT_BLUE, 0, 0)
+	
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_INVISIBLE)
+	//Show BlueLeafBlock
+	//call (AldeonTown_Script_ShowBlueLeaf)
+
+	releaseall
+	end
+}
+
+script AldeonTown_Script_Storm {
+	lockall
+
+	//change var - stop iteration
+	setvar(VAR_GRANNY_STATE, 10)
+	//notify old man et player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//old man approach player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_OLDMAN, AldeonTown_Movement_StormBlock1)
+	waitmovement (0)
+	//Its bad storm go home Leaf missing
+	msgbox(AldeonTown_Text_StormBlock1, MSGBOX_DEFAULT)
+    // Player takes some steps
+	applymovement (OBJ_EVENT_OLDMAN, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+
+	release
+	end
+}
+
+script AldeonTown_Script_Leaf {
+	msgbox (AldeonTown_Text_Leaf6, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script AldeonTown_Script_Blue {
+	msgbox (AldeonTown_Text_Blue7, MSGBOX_DEFAULT)
+	closemessage
+	end
+}
+
+script AldeonTown_Script_Zubat {
+	playmoncry (SPECIES_ZUBAT, CRY_MODE_NORMAL)
+	waitmoncry
+	end
+}
+
+script AldeonTown_Script_Igglybuff {
+	playmoncry (SPECIES_IGGLYBUFF, CRY_MODE_NORMAL)
+	waitmoncry
+	end
+}
+	
+script AldeonTown_EventScript_FatMan {
+	lock
+	faceplayer
+	if (var(VAR_GRANNY_STATE) < 9) {
+		msgbox (AldeonTown_Text_FatManBlock, MSGBOX_DEFAULT)
+		closemessage
+		applymovement (OBJ_EVENT_FATMAN, Common_Movement_FaceDown)
+		waitmovement (0)
+			
+	} else {
+		msgbox (AldeonTown_Text_FatMan, MSGBOX_DEFAULT)
+		closemessage
+	}
+	release
+	end
+}
+
+script AldeonTown_Script_Lass {
+	lock
+	faceplayer
+	specialvar (VAR_RESULT, RandDigit)
+	if (var(VAR_RESULT) > 8) {
+		msgbox (AldeonTown_Text_Lass2, MSGBOX_DEFAULT)
+	} else {
+		msgbox (AldeonTown_Text_Lass1, MSGBOX_DEFAULT)
+	}
+	closemessage
+	release
+	end
+}
+
+script AldeonTown_EventScript_DoorWoman {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_DoorWoman, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}	
+
+script AldeonTown_EventScript_TownSign {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_TownSign, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}	
+
+script AldeonTown_EventScript_HouseSign {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_HouseSign, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}	
+
+script AldeonTown_Script_OldMan {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_OldMan, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_OLDMAN, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script AldeonTown_Script_SnorlaxBlock {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (AldeonTown_Text_FatManBlock, MSGBOX_DEFAULT)
+	closemessage 
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	release
+	end
+}
+
+script AldeonTown_Script_TriggerStormBlock {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (AldeonTown_Text_StormBlock2, MSGBOX_DEFAULT)
+	closemessage 
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	release
+	end
+}
+
+script AldeonTown_Script_Scott {
+	lock
+	faceplayer
+	msgbox (AldeonTown_Text_Scott, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+movement AldeonTown_Movement_PlayerSnorlax1 {
+	walk_left
+	walk_up
+	face_right
+}
+
+movement AldeonTown_Movement_PlayerSnorlax2 {
+	walk_up
+	walk_left
+	walk_up
+	face_right
+}
+
+movement AldeonTown_Movement_Leaf1 {
+	walk_left * 8
+	face_up
+}
+
+movement AldeonTown_Movement_Blue1 {
+	walk_right * 6
+}
+
+movement AldeonTown_Movement_BlueLeafExeunt {
+	walk_right * 9
+}
+
+movement AldeonTown_Movement_BlueLeafExeuntL {
+	walk_left * 9
+}
+
+movement AldeonTown_Movement_StormBlock1 {
+	walk_left * 6
+}
+
+
+text AldeonTown_Text_FatManBlock {
+	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlaci, can be mighty dangerous. You don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")
+}
+
+text AldeonTown_Text_StormBlock1 {
+	format("This is a very serious deluge, the likes of which I've not seen since my youth! You must go home! Seek shelter from this storm! Please don't get lost! We've already lost {LEAF}!")
+}
+ 
+text AldeonTown_Text_StormBlock2 {
+	format("Go home! It isn't safe out! {LEAF} is lost!")
+}
+
+text AldeonTown_Text_FatMan {
+	format("Even after we were forced to join the Republic the government still mostly leaves us alone. Still, we miss the old days of the independant merchant guild running things around here. All those taxes we spend and what do we have to show for it? A whole lot of nothing!")
+}
+
+//I'm sorry but if you no business with Mr. Johnson then you need to leave.
+text AldeonTown_Text_DoorWoman {
+	format("Me sorry but if no business with Master you havin' then leavin' you needin'.")
+}
+
+text AldeonTown_Text_TownSign {
+	format("Aldeon Town - Where Snorlax has the Right of Way")
+}
+
+text AldeonTown_Text_HouseSign {
+	format("House of Atreus\n No Solicitors!")
+}
+
+//Hey player!
+text AldeonTown_Text_Leaf1 {
+	format("Look! I asked my daddy for a Pokemon to protect and keep me safe. Isn't she cute? Let's see how strong she is!")
+}
+
+text AldeonTown_Text_LeafLost {
+	format("Hey! That's enough! You're hurting her, please stop!")
+}
+
+text AldeonTown_Text_Leaf2 {
+	format("Looks like I need to learn better technique if I am going to keep myself safe.")
+}
+
+text AldeonTown_Text_Blue1 {
+	format("So sad...")
+}
+
+//savage studies
+text AldeonTown_Text_Blue2 {
+	format("Such savage studies of slaughter should supercede a more sound syllabus.")
+}
+
+//pardon
+text AldeonTown_Text_Leaf3 {
+	format("Well pardon me, handsome unknown stranger, but truly I do not understand you. I thought that by battling Pokemon I would grow stronger as a trainer and I was planning to attend trainer school to better learn and grow as one myself.")
+}
+
+//School waste
+text AldeonTown_Text_Blue3 {
+	format("Your Pokemon will grow from battles yes but practicing in such a wonton way will only yield you diminished results. Those stuffy fools wasting away in that archaic, tyrannical, place called school can only teach you mediocrity. To be truly great you must innovate and break out of their stifling system.")
+}
+
+//Not what adults told me
+text AldeonTown_Text_Leaf4 {
+	format("We may not learn as well unsupervised but of the Trainer School, here in our midst, many have said we must attend, study, and graduate or else never be great.")
+}
+
+//be as gods
+text AldeonTown_Text_Blue4 {
+	format("The many are not great for few are great. The teachers in their school have lied to them who lied to you. They jelously prevent their students from ever becoming great. If you will go with me you will be great, greater than all the students and teachers. You will become as gods among trainers with knowledge of both good and bad techniques.")
+}
+
+//convinced
+text AldeonTown_Text_Leaf5 {
+	format("Your flavored words and shapely form convince me there is truth in all of what you say. Therefore I will go with you. Please, teach me.")
+}
+
+//let us go
+text AldeonTown_Text_Blue5 {
+	format("Then let us go.")
+}
+
+//girls only
+text AldeonTown_Text_Blue6 {
+	format("Girls only, little bro.")
+}
+
+text AldeonTown_Text_Leaf6 {
+	format("You're so good at this! Wow! I'm learning lots!")
+}
+
+text AldeonTown_Text_Blue7 {
+	format("Yeah, just like that! You're doing so good girl.")
+}
+
+text AldeonTown_Text_OldMan {
+	format("Hello, young man, I don't recognize you. I live here, in this house, with my brother. Go in and see him if you need to rest.")
+}
+
+text AldeonTown_Text_Scott {
+	format("My daughter left for her first day of school and I am overwhelmed by emotions. I'm fixing a hole in my doorway where the wind gets in. It helps to soothe my mind.")
+}
+
+text AldeonTown_Text_Lass1 {
+	format("This garden is where I come to relax.")
+}
+
+text AldeonTown_Text_Lass2 {
+	format("The Big House was here, before the fires.")
+}
+

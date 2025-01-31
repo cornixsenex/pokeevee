@@ -427,6 +427,14 @@ u8 (*const gMovementTypeFuncs_CopyPlayerInGrass[])(struct ObjectEvent *, struct 
     MovementType_CopyPlayer_Step2,
 };
 
+u32 (*const gMovementTypeFuncs_ChasePlayer[])(struct ObjectEvent *, struct Sprite *) = {
+	MovementType_ChasePlayer_Step0,
+	MovementType_ChasePlayer_Step1,
+	MovementType_ChasePlayer_Step2,
+	MovementType_ChasePlayer_Step3,
+
+};
+
 u8 (*const gMovementTypeFuncs_Buried[])(struct ObjectEvent *, struct Sprite *) = {
     MovementType_Buried_Step0,
 };

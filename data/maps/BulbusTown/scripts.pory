@@ -1,0 +1,570 @@
+
+const OBJ_EVENT_JASON = 16
+const OBJ_EVENT_MEDEA = 17
+const OBJ_EVENT_MAREEP = 18
+
+
+const OBJ_EVENT_SAILOR1 = 6
+const OBJ_EVENT_SAILOR2 = 7
+const OBJ_EVENT_SAILOR3 = 15
+const OBJ_EVENT_SAILOR4 = 14
+const OBJ_EVENT_SAILOR5 = 8
+const OBJ_EVENT_SAILOR6 = 1
+
+mapscripts BulbusTown_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ARGO_STATE) < 20) {
+			call (BulbusTown_Script_ShowStrike)
+		} 
+		if (!flag(FLAG_JASON_HAS_SHINYMAREEP)) {
+			call (BulbusTown_Script_HideJason)
+		}
+	}
+
+}
+
+script BulbusTown_Script_ShowStrike {
+
+	setobjectxyperm (OBJ_EVENT_SAILOR1, 5, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR1, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR2, 6, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR2, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR3, 16, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR3, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR4, 17, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR4, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR5, 27, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR5, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_SAILOR6, 28, 18)
+	setobjectmovementtype (OBJ_EVENT_SAILOR6, MOVEMENT_TYPE_FACE_UP)
+
+	return
+}
+
+script BulbusTown_Script_HideJason {
+	setobjectxyperm (OBJ_EVENT_JASON, 26, 11)
+	setobjectmovementtype (OBJ_EVENT_JASON, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (OBJ_EVENT_MEDEA, 27, 11)
+	setobjectmovementtype (OBJ_EVENT_MEDEA, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (OBJ_EVENT_MAREEP, 28, 11)
+	setobjectmovementtype (OBJ_EVENT_MAREEP, MOVEMENT_TYPE_INVISIBLE)
+
+	return
+}
+
+script BulbusTown_EventScript_Fisherman {
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_Fisherman) 
+	release
+	end
+}
+
+script BulbusTown_EventScript_FightA{
+	lock
+	msgbox (BulbusTown_Text_FightA) 
+	release
+	end
+}
+
+script BulbusTown_EventScript_FightB {
+	lock
+	msgbox (BulbusTown_Text_FightB) 
+	release
+	end
+}
+
+script BulbusTown_EventScript_ClubSign {
+	lock
+	msgbox (BulbusTown_Text_ClubSign)
+	closemessage
+	release
+	end
+}
+
+script BulbusTown_EventScript_TownSign {
+	lock
+	msgbox (BulbusTown_Text_TownSign)
+	closemessage
+	release
+	end
+}
+
+script BulbusTown_Script_Jason {
+	lock
+	faceplayer
+	if (!flag(FLAG_BULBUS_SAILORSOPEN)) {
+		setflag (FLAG_BULBUS_SAILORSOPEN)
+		msgbox (BulbusTown_Text_Jason1, MSGBOX_DEFAULT)
+	} else {
+		msgbox (BulbusTown_Text_Jason2, MSGBOX_DEFAULT)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_JASON, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_Medea {
+	lock
+	faceplayer
+	if (flag(FLAG_COLCHIS_HIDE_LUGIA)) {
+		msgbox (BulbusTown_Text_MedeaMad, MSGBOX_DEFAULT)
+		closemessage
+	} else {
+		call (BulbusTown_Script_MedeaSage)
+	}
+	applymovement (OBJ_EVENT_MEDEA, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_MedeaSage {
+	//Placeholder, should do her sage function here
+	msgbox (format("I see the futureay"), MSGBOX_DEFAULT)
+	closemessage
+	return
+}
+
+script BulbusTown_Script_Mareep {
+	lock
+	faceplayer
+	playmoncry (SPECIES_MAREEP, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	release
+	end
+}
+
+script BulbusTown_Script_Sailor1 {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) < 20) {
+		call (BulbusTown_Script_SailorStrike)
+	} elif (flag(FLAG_BULBUS_SAILORSOPEN)) {
+		if (!flag(FLAG_BULBUS_SAILORS_INTROD)) {
+			setflag (FLAG_BULBUS_SAILORS_INTROD)
+			msgbox (BulbusTown_Text_SailorAvailable, MSGBOX_DEFAULT)
+		}
+		msgbox (BulbusTown_Text_SailForOahu, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BulbusTown_Script_SailForOahu)
+		} else {
+			msgbox (BulbusTown_Text_DeclineSail, MSGBOX_DEFAULT)
+			closemessage
+
+		}
+	} else {
+		call (BulbusTown_Script_SailorAfterStrike)
+	}
+	applymovement (OBJ_EVENT_SAILOR1, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_Sailor2 {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) < 20) {
+		call (BulbusTown_Script_SailorStrike)
+	} elif (flag(FLAG_BULBUS_SAILORSOPEN)) {
+		if (!flag(FLAG_BULBUS_SAILORS_INTROD)) {
+			setflag (FLAG_BULBUS_SAILORS_INTROD)
+			msgbox (BulbusTown_Text_SailorAvailable, MSGBOX_DEFAULT)
+		}
+		msgbox (BulbusTown_Text_SailForGato, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BulbusTown_Script_SailForGato)
+		} else {
+			msgbox (BulbusTown_Text_DeclineSail, MSGBOX_DEFAULT)
+			closemessage
+			applymovement (OBJ_EVENT_SAILOR2, Common_Movement_FaceDown)
+			waitmovement (0)
+		}
+	} else {
+		call (BulbusTown_Script_SailorAfterStrike)
+	}
+	applymovement (OBJ_EVENT_SAILOR2, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_Sailor3 {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) < 20) {
+		call (BulbusTown_Script_SailorStrike)
+	} elif (flag(FLAG_BULBUS_SAILORSOPEN)) {
+		if (!flag(FLAG_BULBUS_SAILORS_INTROD)) {
+			setflag (FLAG_BULBUS_SAILORS_INTROD)
+			msgbox (BulbusTown_Text_SailorAvailable, MSGBOX_DEFAULT)
+		}
+		msgbox (BulbusTown_Text_SailForMaui, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BulbusTown_Script_SailForMaui)
+		} else {
+			msgbox (BulbusTown_Text_DeclineSail, MSGBOX_DEFAULT)
+			closemessage
+			applymovement (OBJ_EVENT_SAILOR3, Common_Movement_FaceDown)
+			waitmovement (0)
+		}
+	} else {
+		call (BulbusTown_Script_SailorAfterStrike)
+	}
+	applymovement (OBJ_EVENT_SAILOR3, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_Sailor4 {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) < 20) {
+		call (BulbusTown_Script_SailorStrike)
+	} elif (flag(FLAG_BULBUS_SAILORSOPEN)) {
+		if (!flag(FLAG_BULBUS_SAILORS_INTROD)) {
+			setflag (FLAG_BULBUS_SAILORS_INTROD)
+			msgbox (BulbusTown_Text_SailorAvailable, MSGBOX_DEFAULT)
+		}
+		msgbox (BulbusTown_Text_SailForBayDepot, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BulbusTown_Script_SailForBayDepot)
+		} else {
+			msgbox (BulbusTown_Text_DeclineSail, MSGBOX_DEFAULT)
+			closemessage
+			applymovement (OBJ_EVENT_SAILOR4, Common_Movement_FaceDown)
+			waitmovement (0)
+		}
+	} else {
+		call (BulbusTown_Script_SailorAfterStrike)
+	}
+	applymovement (OBJ_EVENT_SAILOR4, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_Sailor5 {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) < 20) {
+		call (BulbusTown_Script_SailorStrike)
+	} elif (flag(FLAG_BULBUS_SAILORSOPEN)) {
+		if (!flag(FLAG_BULBUS_SAILORS_INTROD)) {
+			setflag (FLAG_BULBUS_SAILORS_INTROD)
+			msgbox (BulbusTown_Text_SailorAvailable, MSGBOX_DEFAULT)
+		}
+		msgbox (BulbusTown_Text_SailForBigIsland, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BulbusTown_Script_SailForBigIsland)
+		} else {
+			msgbox (BulbusTown_Text_DeclineSail, MSGBOX_DEFAULT)
+			closemessage
+			applymovement (OBJ_EVENT_SAILOR5, Common_Movement_FaceDown)
+			waitmovement (0)
+		}
+	} else {
+		call (BulbusTown_Script_SailorAfterStrike)
+	}
+	applymovement (OBJ_EVENT_SAILOR5, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_Sailor6 {
+	lock
+	faceplayer
+	if (var(VAR_ARGO_STATE) < 20) {
+		call (BulbusTown_Script_SailorStrike)
+	} elif (flag(FLAG_BULBUS_SAILORSOPEN)) {
+		if (!flag(FLAG_BULBUS_SAILORS_INTROD)) {
+			setflag (FLAG_BULBUS_SAILORS_INTROD)
+			msgbox (BulbusTown_Text_SailorAvailable, MSGBOX_DEFAULT)
+		}
+		msgbox (BulbusTown_Text_SailForKauai, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (BulbusTown_Script_SailForKauai)
+		} else {
+			msgbox (BulbusTown_Text_DeclineSail, MSGBOX_DEFAULT)
+			closemessage
+			applymovement (OBJ_EVENT_SAILOR6, Common_Movement_FaceDown)
+			waitmovement (0)
+		}
+	} else {
+		call (BulbusTown_Script_SailorAfterStrike)
+	}
+	applymovement (OBJ_EVENT_SAILOR6, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_Script_SailForOahu {
+		//Check wanna go to Clara instead
+		msgbox ("OAHU PLACE", MSGBOX_DEFAULT)
+		closemessage
+		return	
+}
+
+script BulbusTown_Script_SailForGato {
+		//Check wanna go to Elicius instead
+		msgbox ("GATO PLACE", MSGBOX_DEFAULT)
+		closemessage
+		return
+}
+
+script BulbusTown_Script_SailForMaui {
+		//Check wanna go to Oakland instead
+		msgbox ("MAUI PLACE", MSGBOX_DEFAULT)
+		closemessage
+		return
+}
+
+script BulbusTown_Script_SailForBayDepot {
+		//Check wanna go to Military instead
+		msgbox ("BAYHUB PLACE", MSGBOX_DEFAULT)
+		closemessage
+		return
+}
+
+script BulbusTown_Script_SailForBigIsland {
+		//Check wanna go to BayIsland instead
+		msgbox ("BIGISLAND PLACE", MSGBOX_DEFAULT)
+		closemessage
+		return
+}
+
+script BulbusTown_Script_SailForKauai {
+		//Check wanna go to Mewtwo tower instead
+		msgbox ("KAUAI PLACE", MSGBOX_DEFAULT)
+		closemessage
+		return
+}
+
+script BulbusTown_Script_SailorStrike {
+	specialvar (VAR_RESULT, RandDigit)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(BulbusTown_Text_SailorStrike0, MSGBOX_DEFAULT)
+		case 1:
+			msgbox(BulbusTown_Text_SailorStrike1, MSGBOX_DEFAULT)
+		case 2:
+			msgbox(BulbusTown_Text_SailorStrike2, MSGBOX_DEFAULT)
+		case 3:
+			msgbox(BulbusTown_Text_SailorStrike3, MSGBOX_DEFAULT)
+		case 4:
+			msgbox(BulbusTown_Text_SailorStrike4, MSGBOX_DEFAULT)
+		case 5:
+			msgbox(BulbusTown_Text_SailorStrike5, MSGBOX_DEFAULT)
+		case 6:
+			msgbox(BulbusTown_Text_SailorStrike6, MSGBOX_DEFAULT)
+		case 7:
+			msgbox(BulbusTown_Text_SailorStrike7, MSGBOX_DEFAULT)
+		case 8:
+			msgbox(BulbusTown_Text_SailorStrike8, MSGBOX_DEFAULT)
+		case 9:
+			msgbox(BulbusTown_Text_SailorStrike9, MSGBOX_DEFAULT)
+		default:
+			msgbox(BulbusTown_Text_SailorStrike0, MSGBOX_DEFAULT)
+	}
+	closemessage
+	return
+}
+
+script BulbusTown_Script_SailorAfterStrike {
+	if (flag(FLAG_JASON_HAS_SHINYMAREEP)) {
+		msgbox (BulbusTown_Text_SailorsWonStrike, MSGBOX_DEFAULT)
+	} else {
+		specialvar (VAR_RESULT, RandDigit)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				msgbox(BulbusTown_Text_SailorAfterStrike0, MSGBOX_DEFAULT)
+			case 1:
+				msgbox(BulbusTown_Text_SailorAfterStrike1, MSGBOX_DEFAULT)
+			case 2:
+				msgbox(BulbusTown_Text_SailorAfterStrike2, MSGBOX_DEFAULT)
+			case 3:
+				msgbox(BulbusTown_Text_SailorAfterStrike3, MSGBOX_DEFAULT)
+			case 4:
+				msgbox(BulbusTown_Text_SailorAfterStrike4, MSGBOX_DEFAULT)
+			case 5:
+				msgbox(BulbusTown_Text_SailorAfterStrike5, MSGBOX_DEFAULT)
+			case 6:
+				msgbox(BulbusTown_Text_SailorAfterStrike6, MSGBOX_DEFAULT)
+			case 7:
+				msgbox(BulbusTown_Text_SailorAfterStrike7, MSGBOX_DEFAULT)
+			case 8:
+				msgbox(BulbusTown_Text_SailorAfterStrike8, MSGBOX_DEFAULT)
+			case 9:
+				msgbox(BulbusTown_Text_SailorAfterStrike9, MSGBOX_DEFAULT)
+			default:
+				msgbox(BulbusTown_Text_SailorAfterStrike0, MSGBOX_DEFAULT)
+		}
+	}
+	closemessage
+	return
+}
+
+text BulbusTown_Text_Fisherman {
+	format("Hey watch your step, this town is sometimes rough.")
+}
+
+text BulbusTown_Text_FightA {
+	format("How dare you speak of my sweet mum that way?")
+}
+
+text BulbusTown_Text_FightB {
+	format("This town ain't big enough for both of us!")
+}
+
+text BulbusTown_Text_ClubSign {
+	format("The Chronic\nPremium Cannabis Club")
+}
+
+text BulbusTown_Text_TownSign {
+	format("Built on the bay, welcome to Bulbus Town!")
+}
+
+text BulbusTown_Text_SailorAvailable {
+	format("Hey! Jason told me everything you did. It's my honor to give a ride for free.")
+}
+
+text BulbusTown_Text_DeclineSail {
+	format("Let me know if, and when, you change your mind.")
+}
+
+text BulbusTown_Text_SailForOahu {
+	format("I'm headed to Oahu, wanna come?")
+}
+
+text BulbusTown_Text_SailForGato {
+	format("I sail for Gato City, you coming?")
+}
+
+text BulbusTown_Text_SailForMaui {
+	format("Have you come for a free ride to Maui?")
+}
+
+text BulbusTown_Text_SailForBayDepot {
+	format("I sail a route to the supply depot on Route 7 if you want to come with.")
+}
+
+text BulbusTown_Text_SailForBigIsland {
+	format("Will you sail with me to Ignis Island?")
+}
+
+text BulbusTown_Text_SailForKauai {
+	format("Are you coming with me to Kauai?")
+}
+
+text BulbusTown_Text_SailorStrike0 {
+	format("I'm not working, us sailors went on strike.")
+}
+
+text BulbusTown_Text_SailorStrike1 {
+	format("All day! All night!")
+}
+
+text BulbusTown_Text_SailorStrike2 {
+	format("What do we want?\pRecognition!\pWhen do we want it?\pNow!")
+}
+
+text BulbusTown_Text_SailorStrike3 {
+	format("No justice! No Peace! No entitled ass custies!")
+}
+
+text BulbusTown_Text_SailorStrike4 {
+	format("Hey hey! Ho ho! Pay us or we'll never go!")
+}
+
+text BulbusTown_Text_SailorStrike5 {
+	format("No how! No way! Pay us better today!")
+}
+
+text BulbusTown_Text_SailorStrike6 {
+	format("Custies, get out of our sight! No work, we strike tonight!")
+}
+
+text BulbusTown_Text_SailorStrike7 {
+	format("Solidarity forever!")
+}
+
+text BulbusTown_Text_SailorStrike8 {
+	format("Anchors aweigh! Fair wages and pay!")
+}
+
+text BulbusTown_Text_SailorStrike9 {
+	format("We need more money! We deserve more rights!")
+}
+
+text BulbusTown_Text_SailorAfterStrike0 {
+	format("Our strike is over.")
+}
+
+text BulbusTown_Text_SailorAfterStrike1 {
+	format("Boss man made us go back to work.")
+}
+
+text BulbusTown_Text_SailorAfterStrike2 {
+	format("I still think we need to be treated better.")
+}
+
+text BulbusTown_Text_SailorAfterStrike3 {
+	format("I guess boss man never really cared about us after all.")
+}
+
+text BulbusTown_Text_SailorAfterStrike4 {
+	format("Forcing us to go back to work is inhumane.")
+}
+
+text BulbusTown_Text_SailorAfterStrike5 {
+	format("I hate this job so much it's just unreal.")
+}
+
+text BulbusTown_Text_SailorAfterStrike6 {
+	format("That was excessive use of force for sure!")
+}
+
+text BulbusTown_Text_SailorAfterStrike7 {
+	format("I still get scared when boss man comes out for inspections.")
+}
+
+text BulbusTown_Text_SailorAfterStrike8 {
+	format("I'm never going on strike again. I learned my lesson!")
+}
+
+text BulbusTown_Text_SailorAfterStrike9 {
+	format("This is it? This is what I've always supposed to be doing?")
+}
+
+text BulbusTown_Text_Jason1 {
+	format("Well met {PLAYER}! It's good to see you again. I helped negotiate an end to the dock worker's strike. Bringing Shiny Mareep to live in the harbor has made the men and women agree to go back to work. As thanks for your assitance to this end your free passage aboard has been arranged on every boat. Speak to the sailors if you want to sail away, it's free of charge.")
+}
+
+text BulbusTown_Text_Jason2 {
+	format("Standing here on the docks next to the sea, Shiny Mareep, and my wife Medea make me feel that my life is quite alright.")
+}
+
+//I can never forgive you for what you did to Lugia in Colchis. Be gone!
+text BulbusTown_Text_MedeaMad {
+	format("Iay ancay evernay orgivefay ouyay orfay atwhay ouyay idday otay Ugialay in Olchiscay. Ebay onegay!")
+}
+
+text BulbusTown_Text_SailorsWonStrike {
+	format("Jason returned and brought Shiny Mareep to live with us sailors in the harbor. We finally felt appreciated and made the decision to end our strike.")
+}
+
+

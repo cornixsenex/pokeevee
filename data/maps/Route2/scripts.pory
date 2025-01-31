@@ -1,0 +1,120 @@
+mapscripts Route2_MapScripts {}
+
+
+script Route2_EventScript_Trainer_Adam {
+	trainerbattle_single(TRAINER_ADAM, Route2_Text_AdamFight, Route2_Text_AdamLost)
+	msgbox (Route2_Text_AdamPost)	
+	closemessage
+	end
+}
+
+script Route2_EventScript_Maddie {
+	trainerbattle_single(TRAINER_MADDIE, Route2_Text_MaddieFight, Route2_Text_MaddieLost)
+	msgbox (Route2_Text_MaddiePost)	
+	closemessage
+	end
+}
+
+script Route2_EventScript_Mia {
+	trainerbattle_single(TRAINER_MIA, Route2_Text_MiaFight, Route2_Text_MiaLost)
+	msgbox (Route2_Text_MiaPost)	
+	closemessage
+	end
+}
+
+script Route2_EventScript_Manny {
+	trainerbattle_single(TRAINER_MANNY, Route2_Text_MannyFight, Route2_Text_MiaLost)
+	msgbox (Route2_Text_MannyPost)	
+	closemessage
+	end
+}
+
+script Route2_EventScript_Abby {
+	trainerbattle_double (TRAINER_ABBY_AND_STORMY, Route2_Text_AbbyIntro, Route2_Text_AbbyLost, Route104_Text_GinaNotEnoughMons)
+	msgbox (Route2_Text_AbbyPost)	
+	closemessage
+	release
+	end
+}
+
+script Route2_EventScript_Stormy {
+	trainerbattle_double (TRAINER_ABBY_AND_STORMY, Route2_Text_StormyIntro, Route2_Text_StormyLost, Route104_Text_GinaNotEnoughMons)
+	msgbox (Route2_Text_StormyPost)	
+	closemessage
+	release
+	end
+}
+
+text Route2_Text_AdamFight {
+	format("I wear shorts and you look like a bitch.")
+}
+
+text Route2_Text_AdamLost {
+	format("Damn, I knew I should have worn jeans.")
+}
+
+text Route2_Text_AdamPost {
+	format("Come back in the summer time then I'll kick your ass!")
+}
+
+text Route2_Text_MaddieFight {
+	format("Come sit under this tree with me Moonbeam")
+}
+
+text Route2_Text_MaddieLost {
+	format("Okay that's rude!")
+}
+
+text Route2_Text_MaddiePost {
+	format("See you around I guess.")
+}
+
+text Route2_Text_MiaFight {
+	format("Sorry, but I doubt you can keep up.")
+}
+
+text Route2_Text_MiaLost {
+	format("Haha! Looks like you have been practising")
+}
+
+text Route2_Text_MiaPost {
+	format("Puff out your chest and do your best in school.")
+}
+
+text Route2_Text_MannyFight {
+	format("Uhh suh dude do you wanna do a dab?")
+}
+
+text Route2_Text_MannyLost {
+	format("Neighbor!")
+}
+
+text Route2_Text_MannyPost {
+	format("I can't believe you'd act like that!")
+}
+
+text Route2_Text_AbbyIntro{
+	format("We aren't quite lovers, but we're something close.")
+}
+
+text Route2_Text_AbbyLost {
+	format("My gosh Moldy")
+}
+
+text Route2_Text_AbbyPost {
+	format("I honestly don't think you're all that bad.")
+}
+
+text Route2_Text_StormyIntro {
+	format("I'll make you pay for what you did to me.")
+}
+
+text Route2_Text_StormyLost {
+	format("This isn't over yet")
+}
+
+text Route2_Text_StormyPost {
+	format("You're just like all the other men I hate.")
+}
+
+

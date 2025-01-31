@@ -1,0 +1,102 @@
+mapscripts Warehouse_Blue_MapScripts {}
+
+
+
+script Warehouse_Blue_EventScript_TrainerBlue5 {	
+	trainerbattle_single(TRAINER_BLUE5, Warehouse_Blue_Text_Blue5Intro, Warehouse_Blue_Text_Blue5Lost)
+	msgbox(Warehouse_Blue_Text_Blue5Post)
+	closemessage
+	end
+}
+script Warehouse_Blue_EventScript_TrainerBlue4 {	
+	trainerbattle_single(TRAINER_BLUE4, Warehouse_Blue_Text_Blue4Intro, Warehouse_Blue_Text_Blue4Lost)
+	msgbox(Warehouse_Blue_Text_Blue4Post)
+	closemessage
+	end
+}
+
+script Warehouse_Blue_EventScript_TrainerBlue3 {	
+	trainerbattle_single(TRAINER_BLUE3, Warehouse_Blue_Text_Blue3Intro, Warehouse_Blue_Text_Blue3Lost)
+	msgbox(Warehouse_Blue_Text_Blue3Post)
+	closemessage
+	end
+}
+
+script Warehouse_Blue_EventScript_TrainerBlue2 {	
+	trainerbattle_single(TRAINER_BLUE2, Warehouse_Blue_Text_Blue2Intro, Warehouse_Blue_Text_Blue2Lost)
+	msgbox(Warehouse_Blue_Text_Blue2Post)
+	closemessage
+	end
+}
+
+script Warehouse_Blue_EventScript_TrainerBlue1 {	
+	trainerbattle_single(TRAINER_BLUE1, Warehouse_Blue_Text_Blue1Intro, Warehouse_Blue_Text_Blue1Lost)
+	msgbox(Warehouse_Blue_Text_Blue1Post)
+	closemessage
+	end
+}
+
+text Warehouse_Blue_Text_Blue5Intro {
+	format("You're in the trenches! This the pit spot bro you already know.")
+}
+
+text Warehouse_Blue_Text_Blue5Lost {
+	format("But, like, we didn't come yesterday to lose.")
+}
+
+text Warehouse_Blue_Text_Blue5Post {
+	format("When you step out here we show love. We show mad love to everybody you understand?")
+}
+
+text Warehouse_Blue_Text_Blue4Intro {
+	format("I'm blessed! This my third fight in three years.")
+}
+
+text Warehouse_Blue_Text_Blue4Lost {
+	format("That's what happened. I'm keep my faith in God.")
+}
+
+text Warehouse_Blue_Text_Blue4Post {
+	format("Everyone else going crazy I'm more chill about those things man.")
+}
+
+text Warehouse_Blue_Text_Blue3Intro {
+	format("I'm very happy the public enjoys what I do.")
+}
+
+text Warehouse_Blue_Text_Blue3Lost {
+	format("I will continue to put a lot of pride in my work.")
+}
+
+text Warehouse_Blue_Text_Blue3Post {
+	format("Every time I take an L I never take it lightly.")
+}
+
+text Warehouse_Blue_Text_Blue2Intro {
+	format("Time to prove it again. Every time you step in the ring you gotta prove it.")
+}
+
+text Warehouse_Blue_Text_Blue2Lost {
+	format("They should do a lightweight tournement.")
+}
+
+text Warehouse_Blue_Text_Blue2Post {
+	format("Ahh you destroyed everybody!")
+}
+
+text Warehouse_Blue_Text_Blue1Intro {
+	format("We world champions! This our street!")
+}
+
+text Warehouse_Blue_Text_Blue1Lost {
+	format("We gonna do it again for the Blue tho.")
+}
+
+text Warehouse_Blue_Text_Blue1Post {
+	format("Dang we was flat. Just kind of let you go where you wanted to go. Damn.")
+}
+
+
+
+
+

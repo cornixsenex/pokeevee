@@ -43,155 +43,167 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
+#define FLAG_UNUSED_0x020    0x20 // Mew Flag also a placeholder flag in src/wild_encounter.c
+#define FLAG_UNUSED_0x021    0x21 // Gift Egg
+#define FLAG_UNUSED_0x022    0x22 // Arbok Dude
+#define FLAG_UNUSED_0x023    0x23 // Surfboard Flag
+#define FLAG_UNUSED_0x024    0x24 // Dialga Flag
+#define FLAG_UNUSED_0x025    0x25 // Not actually unused
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+
+#define FLAG_ROUTE1_RIVAL    0x28 // Used Flag - ...on Route1 yknow
+#define FLAG_MEW_NOTDONE     0x29 // Shows Pop+Leaf at home
+#define FLAG_HIDE_GRANDMASCABIN_MEW      0x2A // Hides Mew
+#define FLAG_HASINSURANCE    0x2B // Allows Pokecenter Use
+#define FLAG_HIDE_BULBUSSCOTT 0x2C // Hide Scott in Bulbus Canna Center
+#define FLAG_HIDE_RT17_BLOCK1 0x2D // Hides the first block
+#define FLAG_BULBUS_HIDE_STRIKE 0x2E // Hides strike (opens boat + shop)
+#define FLAG_SILVANWOODS_HIDEFIGHT1   0x2F // After Leaf1 fight hides Fight1
+#define FLAG_SILVANWOODS_HIDEFIGHT2    0x30 // After Mew sight / Stoney fight
+#define FLAG_HIDE_SILVANWOODS_LEAF1    0x31 // Hide Leaf near Silvan Woods exit (starts flagged!)
+#define FLAG_HIDE_SILVANWOODS_LEAF2    0x32 // Hide Leaf in Route3 after rival fight
+#define FLAG_HIDE_SILVANWOODS_SCOTT    0x33 // Hide Scott near Silvan Woods exit
+#define FLAG_CLARACLUB_HIDELEAF   0x34 // Hide Leaf After leaving the first time
+#define FLAG_CLARACITY_HIDELEAF   0x35 // Starts set, hides Leaf in Clara City
+#define FLAG_CLARACITY_AFTERMEW   0x36 // Hides Scott in the club, and the line outside the church
+#define FLAG_RECEIVED_CUT    0x37 // Have gotten cut from Mrs. Sully?
+
+#define FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES    0x38 // Hides Jessee and James in ClaraCity Church
+#define FLAG_CLARACITY_CHURCH_HIDELEAF    0x39 // Hides leaf for her intro
+#define FLAG_CLARACITY_CHURCH_HIDEDAD     0x3A // Hides Dad and Sage for intro
+#define FLAG_CLARACITY_CHURCH_HIDESAGE    0x3B // Hides Sage and the church people
+#define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4 - hides Mewtwo in Capital
+#define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
+#define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // after the flower game
+
+#define FLAG_ROUTE6_HIDEPIKACHU      0x3F // after J&J cutscen
+
+#define FLAG_ROUTE7_HIDEOLDWOMAN    0x40 // Hides the old lady after the roadblock trigger
+#define FLAG_ROCKTUNNEL_RIVALDEFEATED    0x41 // Hides Leaf on the bridge
+#define FLAG_VEGAS_POWERON   0x42 // Set after PowerPlant fixed, controls generator metatiles
+#define FLAG_FRAT_LEAF    0x43 // Set after Indy leaves pyramids 
+#define FLAG_PYRAMIDS_INDY    0x44 // Set after defeating at the Pyramids. Hides Indy at the pyramid AND Leaf on Uni2F
+#define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Spelling error lol; also does what it says
+#define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Does what it says
+#define FLAG_RECEIVED_FLASH    0x47 // Set after owner gives you hm05 in the hotel 1F
+#define FLAG_PYRAMIDS_HIDEMAXIE    0x48 // Should start set, clear when the battle begins in Archaeology class and then set again after Maxie enters the Dark Cave
+#define FLAG_RECEIVED_CARD_KEY    0x49 // Set after Card Key is taken in Rocket Tower, hides the pokeball as well
+#define FLAG_HIDE_ROCKETTOWER_13F_GIO    0x4A // Set by Gio cutscene
+#define FLAG_HIDE_CARDKEY    0x4B // Set after you grab the card key from 13F RocketTower
+#define FLAG_FOLLOWER_ACTIVE    0x4C // Set when you have follower active
+
+//DEBUG
+#define FLAG_SYS_NO_COLLISION    0x4D
+#define FLAG_SYS_NO_ENCOUNTER    0x4E 
+#define FLAG_SYS_NO_TRAINER_SEE  0x4F
 
 // Scripts
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
-#define FLAG_SET_WALL_CLOCK                      0x51
-#define FLAG_RESCUED_BIRCH                       0x52
-#define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
+#define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
+#define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
+#define FLAG_SLABS_HIDE_RIVAL                0x52
+#define FLAG_BEACHCAVE_HIDE_HECTOR           0x53  // Set after talk to hector W/ wedding invitation. Hides Hector in beach cave (and shows hector in Tuscon?) 
+#define FLAG_TUCSON_NESTOR_INTROD            0x54  // Set after speaking with Tucson Nestor one time
+#define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
+#define FLAG_WHJ_OPEN                        0x56  // Set when allowed into WHJ 					
+#define FLAG_GATOCITYS_HIDEM1             	 0x57  // Hides M1 in line...should be an easier way but this is expedient.
+#define FLAG_ROUTE10_HIDE_KRABBY             0x58
+#define FLAG_GATOCITYS_HIDEM2                0x59
+#define FLAG_GATOCITYS_HIDEM3                0x5A
+#define FLAG_SALTYSPITOON_BRAWL    	         0x5B
+#define FLAG_SALTYSPITOON_BIGGREEN           0x5C
+#define FLAG_GATOS_VAGRANTS                  0x5D //Set after speaking with Big Green in the warehouse
+#define FLAG_WAREHOUSE_GREEN_BIGGREEN        0x5E
+//4 flags hide actors in SS2F for ambush
+#define FLAG_SS2F_BLUE                       0x5F
+#define FLAG_SS2F_YELLOW                     0x60
+#define FLAG_SS2F_RED                        0x61
+#define FLAG_SS2F_GREEN                      0x62
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+//These are all UNUSED
+#define FLAG_MARES5_HIDE_ARGO                0x63
+#define FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS    0x64 
+#define FLAG_BIGISLAND_S_HIDE_PROMETHEUS     0x65 // Set after Hooh battle
+#define FLAG_BIGISLAND_N_JASONCOLCHIS_INTRO  0x66 
+#define FLAG_COLCHIS_FORCED_BATTLE           0x67 
+#define FLAG_PROMETHEUS_INTROD               0x68 //Set after initial talk with Prometheus to prevent repeat exposition
+#define FLAG_BIGISLANDN_DIOSCURIFOUND        0x69 //Set after talking to Dioscuri on beach. Cleared after talk again @ boat
+#define FLAG_BIGISLAND_N_JASON_OSTRACON      0x6A
+#define FLAG_COLCHIS_HIDE_LUGIA              0x6B
+#define FLAG_COLCHIS_HIDE_MAREEP             0x6C 
+#define FLAG_JASON_HAS_SHINYMAREEP           0x6D
+#define FLAG_COLCHIS_HIDERINGBARRIER         0x6E //Set after using Colchis Key to open Ring Block
+#define FLAG_COLCHIS_HIDERINGBALL            0x6F //Set after giveitem colchis ring
+#define FLAG_COLCHIS_RETURN_LOSTKID          0x70 //Supress move kid object event during Escape From Colchis after it's been returned 
 
-#define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
-#define FLAG_MET_RIVAL_MOM                   0x57
-#define FLAG_BIRCH_AIDE_MET                  0x58
-#define FLAG_DECLINED_BIKE                   0x59
-#define FLAG_RECEIVED_BIKE                   0x5A
-#define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
-#define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
-#define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
-#define FLAG_RECEIVED_WAILMER_PAIL           0x5E
-#define FLAG_RECEIVED_POKEBLOCK_CASE         0x5F
-#define FLAG_RECEIVED_SECRET_POWER           0x60
-#define FLAG_MET_TEAM_AQUA_HARBOR            0x61
-#define FLAG_TV_EXPLAINED                    0x62
-#define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63
-#define FLAG_MOSSDEEP_GYM_SWITCH_1           0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
-#define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
+#define FLAG_COLCHIS_MOVECHEF                0x71 
+#define FLAG_BULBUS_SAILORSOPEN              0x72  //Set after Jason returns to Bulbus and you talk to him and he will tell the sailors to give you free passage
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_BULBUS_SAILORS_INTROD           0x73  //Set after you speak with a sailor for the first time after Jason unlocks free boat rides
 
-#define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
-#define FLAG_RECEIVED_HM_STRENGTH            0x6A
-#define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
-#define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
-#define FLAG_RECEIVED_HM_FLASH               0x6D
-#define FLAG_RECEIVED_HM_FLY                 0x6E
-#define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
-#define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
-#define FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE 0x71 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
-#define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
-#define FLAG_RECEIVED_METEORITE              0x73
-#define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
-#define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define FLAG_MET_HIDDEN_POWER_GIVER          0x76
+#define FLAG_ALGEBRA_INTRO                       0x74  
+#define FLAG_RETURN_LOGIC_PUZZLE_LEFT            0x75  
+#define FLAG_HISTORY_INTRO                       0x76  
+#define FLAG_PSYCHOLOGY_INTRO                    0x77  
+#define FLAG_GEOMETRY_INTRO                      0x78  
+#define FLAG_CALCULUS_INTRO                      0x79  
+#define FLAG_PHYSICS_INTRO                       0x7A  
+#define FLAG_PHYSICS_HIDE_GEM                    0x7B  
+#define FLAG_PHYSICS_MAGNETDONE                  0x7C  
+#define FLAG_PHILOSOPHY_INTRO                    0x7D  
+#define FLAG_LITERATURE_INTRO                    0x7E  
 
-#define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
+#define FLAG_OPEN_CLASS_GEOLOGY              0x7F
+#define FLAG_OPEN_CLASS_BIOLOGY              0x80 
+#define FLAG_OPEN_CLASS_CHEMISTRY            0x81
+#define FLAG_OPEN_CLASS_MUSIC                0x82
+#define FLAG_OPEN_CLASS_ARITHMETIC           0x83
+#define FLAG_OPEN_CLASS_GRAMMAR              0x84
+#define FLAG_OPEN_CLASS_ART                  0x85
+#define FLAG_OPEN_CLASS_LOGIC                0x86
+#define FLAG_OPEN_CLASS_ALGEBRA              0x87
+#define FLAG_OPEN_CLASS_GEOMETRY             0x88 
+#define FLAG_OPEN_CLASS_HISTORY              0x89
+#define FLAG_OPEN_CLASS_ARCHAEOLOGY          0x8A 
+#define FLAG_OPEN_CLASS_PSYCHOLOGY           0x8B
+#define FLAG_OPEN_CLASS_PHILOSOPHY           0x8C
+#define FLAG_OPEN_CLASS_PHYSICS              0x8D
+#define FLAG_OPEN_CLASS_CALCULUS             0x8E
+#define FLAG_OPEN_CLASS_LITERATURE           0x8F
+#define FLAG_OPEN_CLASS_POETRY               0x90
+#define FLAG_OPEN_CLASS_RHETORIC             0x91
+#define FLAG_OPEN_CLASS_GYM                  0x92
 
-#define FLAG_LANDMARK_MIRAGE_TOWER           0x78
-#define FLAG_RECEIVED_TM_BRICK_BREAK         0x79
-#define FLAG_RECEIVED_HM_SURF                0x7A
-#define FLAG_RECEIVED_HM_DIVE                0x7B
-#define FLAG_REGISTER_RIVAL_POKENAV          0x7C
-#define FLAG_DEFEATED_RIVAL_ROUTE_104        0x7D
-#define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0x7E
-#define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
-#define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
-#define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
-#define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
-#define FLAG_RECEIVED_DOLL_LANETTE           0x83
-#define FLAG_RECEIVED_POTION_OLDALE          0x84
-#define FLAG_RECEIVED_AMULET_COIN            0x85
-#define FLAG_PENDING_DAYCARE_EGG             0x86
-#define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
-#define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
-#define FLAG_RECEIVED_HM_CUT                 0x89
-#define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
-#define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
-#define FLAG_RECEIVED_6_SODA_POP             0x8C
-#define FLAG_DEFEATED_SEASHORE_HOUSE         0x8D
-#define FLAG_DEVON_GOODS_STOLEN              0x8E
-#define FLAG_RECOVERED_DEVON_GOODS           0x8F
-#define FLAG_RETURNED_DEVON_GOODS            0x90
-#define FLAG_CAUGHT_LUGIA                    0x91
-#define FLAG_CAUGHT_HO_OH                    0x92
-#define FLAG_MR_BRINEY_SAILING_INTRO         0x93
-#define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
-#define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
-#define FLAG_RECEIVED_CASTFORM               0x97
-#define FLAG_RECEIVED_SUPER_ROD              0x98
-#define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
-#define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A
-#define FLAG_FORTREE_NPC_TRADE_COMPLETED     0x9B
-#define FLAG_BATTLE_FRONTIER_TRADE_DONE      0x9C
-#define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
-#define FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE   0x9E
-#define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0x9F
-#define FLAG_COOL_PAINTING_MADE              0xA0
-#define FLAG_BEAUTY_PAINTING_MADE            0xA1
-#define FLAG_CUTE_PAINTING_MADE              0xA2
-#define FLAG_SMART_PAINTING_MADE             0xA3
-#define FLAG_TOUGH_PAINTING_MADE             0xA4
-#define FLAG_RECEIVED_TM_ROCK_TOMB           0xA5
-#define FLAG_RECEIVED_TM_BULK_UP             0xA6
-#define FLAG_RECEIVED_TM_SHOCK_WAVE          0xA7
-#define FLAG_RECEIVED_TM_OVERHEAT            0xA8
-#define FLAG_RECEIVED_TM_FACADE              0xA9
-#define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
-#define FLAG_RECEIVED_TM_CALM_MIND           0xAB
-#define FLAG_RECEIVED_TM_WATER_PULSE         0xAC
+#define FLAG_PHOENIX_PARTY                   0x93
+#define FLAG_PLEDGE_HAS_KEG                  0x94
+#define FLAG_PHOENIX_LEAF                    0x95
+#define FLAG_CLASS_INDY                      0x96 // Hides Indy and Leaf in class. Set frat party, cleared indy pyramid
+#define FLAG_CLASS_LEAF                      0x97
+#define FLAG_ARDOR_ARCHAEOLOGY_INTRO         0x98
+#define FLAG_ROUTE15_DESERTCAVE_OPEN         0x99
+#define FLAG_DESERTTEMPLE_BF1_HIDELAMP       0x9A
+#define FLAG_GEOLOGY_INTRO                   0x9B
+#define FLAG_GRAMMAR_INTRO                   0x9C  
+#define FLAG_ARITHMETIC_INTRO                0x9D
+#define FLAG_BIOLOGY_INTRO                   0x9E
+#define FLAG_CHEMISTRY_INTRO                 0x9F
+#define FLAG_POETRY_INTRO                    0xA0
+#define FLAG_ARDOR_UNI2F_LEAF                0xA1
+#define FLAG_TUCSON_PARIS_DID_INVITE         0xA2
+#define FLAG_TUCSON_MENELAUS_DID_INVITE      0xA3
+#define FLAG_LEAF_HIDEANDSEEK_FOUND          0xA4
+#define FLAG_FORCE_EEVEE_SLIDE_IN            0xA5
+#define FLAG_GRANDMASCABIN_HIDE_RATTATA      0xA6
+#define FLAG_SYS_TRAINER_CARD_GET            0xA7
+#define FLAG_SYS_FORCE_OBEY                  0xA8
+
+
+// BREAK //
+
+#define FLAG_UNUSED_0xA9                     0xA9
+#define FLAG_UNUSED_0xAA                     0xAA
+#define FLAG_UNUSED_0xAB                     0xAB
+#define FLAG_RECEIVED_SECRET_POWER           0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
@@ -1314,7 +1326,7 @@
 #define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
 #define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
+#define FLAG_UNUSED_0x4EF                                           0x4EF // This was PENDING_DAYCARE IDK why it's somewhere else now - 10/23/23
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1

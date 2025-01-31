@@ -554,3 +554,36 @@ gSpecials::
 	def_special Script_GetChosenMonOffensiveIVs
 	def_special Script_GetChosenMonDefensiveIVs
 	def_special UseBlankMessageToCancelPokemonPic
+    def_special NameRival
+	def_special NameLeaf
+	def_special LobotomizePokemon
+	def_special ChangePersonality
+	def_special MakeShiny 
+	def_special ChangeGen
+	def_special CheckMonHasGen
+	def_special RandDigit
+	def_special DesertTemple_FalseFloor
+	def_special IsDesertTemple4FSolved
+	def_special ResetCamera
+	def_special IsRockTypeInParty
+	def_special IsGroundTypeInParty
+	def_special IsAnimalTypeInParty
+	def_special IsPlantTypeInParty
+	def_special IsFungusTypeInParty
+	def_special IsFireTypeInParty
+	def_special IsWaterTypeInParty
+	def_special IsFlyingTypeInParty
+	def_special IsPsychicTypeInParty
+	def_special IsMagnetTypeInParty
+	def_special NamePhilosophy
+	def_special IsPhilosophyPhrase
+	def_special DoRhetoric
+	def_special DoFalseFloorFall
+	def_special	FalseFloorMetatileUpdate 
+	def_special IsSpearowInParty
+	def_special ReleaseChosenMon
+	def_special SetupColchisForcedBattle
+	def_special SetObjectMovementTypeGhoul
+	def_special DoShinyMareepBattle
+	def_special IsShinyMareepInParty
+	def_special ScriptGetPartyMonIsShiny

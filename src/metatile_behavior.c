@@ -2,137 +2,162 @@
 #include "metatile_behavior.h"
 #include "constants/metatile_behaviors.h"
 
+//To check elevation for CyclingRoad_Bridge_Pull tiles
+#include "field_player_avatar.h"
+
 #define TILE_FLAG_HAS_ENCOUNTERS (1 << 0)
 #define TILE_FLAG_SURFABLE       (1 << 1)
 #define TILE_FLAG_UNUSED         (1 << 2) // Roughly all of the traversable metatiles. Set but never read
 
 static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
 {
-    [MB_NORMAL]                             = TILE_FLAG_UNUSED,
-    [MB_TALL_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_LONG_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_05]                          = TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_DEEP_SAND]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_SHORT_GRASS]                        = TILE_FLAG_UNUSED,
-    [MB_CAVE]                               = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_LONG_GRASS_SOUTH_EDGE]              = TILE_FLAG_UNUSED,
-    [MB_NO_RUNNING]                         = TILE_FLAG_UNUSED,
-    [MB_INDOOR_ENCOUNTER]                   = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_MOUNTAIN_TOP]                       = TILE_FLAG_UNUSED,
-    [MB_BATTLE_PYRAMID_WARP]                = TILE_FLAG_UNUSED,
-    [MB_MOSSDEEP_GYM_WARP]                  = TILE_FLAG_UNUSED,
-    [MB_MT_PYRE_HOLE]                       = TILE_FLAG_UNUSED,
-    [MB_POND_WATER]                         = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_INTERIOR_DEEP_WATER]                = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_DEEP_WATER]                         = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_WATERFALL]                          = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_SOOTOPOLIS_DEEP_WATER]              = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_OCEAN_WATER]                        = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_PUDDLE]                             = TILE_FLAG_UNUSED,
-    [MB_SHALLOW_WATER]                      = TILE_FLAG_UNUSED,
-    [MB_NO_SURFACING]                       = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_STAIRS_OUTSIDE_ABANDONED_SHIP]      = TILE_FLAG_UNUSED,
-    [MB_SHOAL_CAVE_ENTRANCE]                = TILE_FLAG_UNUSED,
-    [MB_ICE]                                = TILE_FLAG_UNUSED,
-    [MB_SAND]                               = TILE_FLAG_UNUSED,
-    [MB_SEAWEED]                            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_23]                          = TILE_FLAG_UNUSED,
-    [MB_ASHGRASS]                           = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_FOOTPRINTS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_THIN_ICE]                           = TILE_FLAG_UNUSED,
-    [MB_CRACKED_ICE]                        = TILE_FLAG_UNUSED,
-    [MB_HOT_SPRINGS]                        = TILE_FLAG_UNUSED,
-    [MB_LAVARIDGE_GYM_B1F_WARP]             = TILE_FLAG_UNUSED,
-    [MB_SEAWEED_NO_SURFACING]               = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_REFLECTION_UNDER_BRIDGE]            = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_EAST]                    = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_WEST]                    = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_NORTH]                   = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_SOUTH]                   = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_NORTHEAST]               = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_NORTHWEST]               = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_SOUTHEAST]               = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_SOUTHWEST]               = TILE_FLAG_UNUSED,
-    [MB_JUMP_NORTHEAST]                     = TILE_FLAG_UNUSED,
-    [MB_JUMP_NORTHWEST]                     = TILE_FLAG_UNUSED,
-    [MB_JUMP_SOUTHEAST]                     = TILE_FLAG_UNUSED,
-    [MB_JUMP_SOUTHWEST]                     = TILE_FLAG_UNUSED,
-    [MB_WALK_EAST]                          = TILE_FLAG_UNUSED,
-    [MB_WALK_WEST]                          = TILE_FLAG_UNUSED,
-    [MB_WALK_NORTH]                         = TILE_FLAG_UNUSED,
-    [MB_WALK_SOUTH]                         = TILE_FLAG_UNUSED,
-    [MB_SLIDE_EAST]                         = TILE_FLAG_UNUSED,
-    [MB_SLIDE_WEST]                         = TILE_FLAG_UNUSED,
-    [MB_SLIDE_NORTH]                        = TILE_FLAG_UNUSED,
-    [MB_SLIDE_SOUTH]                        = TILE_FLAG_UNUSED,
-    [MB_TRICK_HOUSE_PUZZLE_8_FLOOR]         = TILE_FLAG_UNUSED,
-    [MB_EASTWARD_CURRENT]                   = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_WESTWARD_CURRENT]                   = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_NORTHWARD_CURRENT]                  = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_SOUTHWARD_CURRENT]                  = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_NON_ANIMATED_DOOR]                  = TILE_FLAG_UNUSED,
-    [MB_LADDER]                             = TILE_FLAG_UNUSED,
-    [MB_EAST_ARROW_WARP]                    = TILE_FLAG_UNUSED,
-    [MB_WEST_ARROW_WARP]                    = TILE_FLAG_UNUSED,
-    [MB_NORTH_ARROW_WARP]                   = TILE_FLAG_UNUSED,
-    [MB_SOUTH_ARROW_WARP]                   = TILE_FLAG_UNUSED,
-    [MB_CRACKED_FLOOR_HOLE]                 = TILE_FLAG_UNUSED,
-    [MB_AQUA_HIDEOUT_WARP]                  = TILE_FLAG_UNUSED,
-    [MB_LAVARIDGE_GYM_1F_WARP]              = TILE_FLAG_UNUSED,
-    [MB_ANIMATED_DOOR]                      = TILE_FLAG_UNUSED,
-    [MB_UP_ESCALATOR]                       = TILE_FLAG_UNUSED,
-    [MB_DOWN_ESCALATOR]                     = TILE_FLAG_UNUSED,
-    [MB_WATER_DOOR]                         = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_WATER_SOUTH_ARROW_WARP]             = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_DEEP_SOUTH_WARP]                    = TILE_FLAG_UNUSED,
-    [MB_UNUSED_6F]                          = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
-    [MB_BRIDGE_OVER_POND_LOW]               = TILE_FLAG_UNUSED,
-    [MB_BRIDGE_OVER_POND_MED]               = TILE_FLAG_UNUSED,
-    [MB_BRIDGE_OVER_POND_HIGH]              = TILE_FLAG_UNUSED,
-    [MB_PACIFIDLOG_VERTICAL_LOG_TOP]        = TILE_FLAG_UNUSED,
-    [MB_PACIFIDLOG_VERTICAL_LOG_BOTTOM]     = TILE_FLAG_UNUSED,
-    [MB_PACIFIDLOG_HORIZONTAL_LOG_LEFT]     = TILE_FLAG_UNUSED,
-    [MB_PACIFIDLOG_HORIZONTAL_LOG_RIGHT]    = TILE_FLAG_UNUSED,
-    [MB_FORTREE_BRIDGE]                     = TILE_FLAG_UNUSED,
-    [MB_BRIDGE_OVER_POND_MED_EDGE_1]        = TILE_FLAG_UNUSED,
-    [MB_BRIDGE_OVER_POND_MED_EDGE_2]        = TILE_FLAG_UNUSED,
-    [MB_BRIDGE_OVER_POND_HIGH_EDGE_1]       = TILE_FLAG_UNUSED,
-    [MB_BRIDGE_OVER_POND_HIGH_EDGE_2]       = TILE_FLAG_UNUSED,
-    [MB_UNUSED_BRIDGE]                      = TILE_FLAG_UNUSED,
-    [MB_BIKE_BRIDGE_OVER_BARRIER]           = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_SCENERY]                = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_TRAINER_SPOT]           = TILE_FLAG_UNUSED,
-    [MB_HOLDS_SMALL_DECORATION]             = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_BALLOON]                = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_IMPASSABLE]             = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_GLITTER_MAT]            = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_JUMP_MAT]               = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_SPIN_MAT]               = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_SOUND_MAT]              = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_BREAKABLE_DOOR]         = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_SOUTH_AND_NORTH]         = TILE_FLAG_UNUSED,
-    [MB_IMPASSABLE_WEST_AND_EAST]           = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_HOLE]                   = TILE_FLAG_UNUSED,
-    [MB_HOLDS_LARGE_DECORATION]             = TILE_FLAG_UNUSED,
-    [MB_SECRET_BASE_TV_SHIELD]              = TILE_FLAG_UNUSED,
-    [MB_PLAYER_ROOM_PC_ON]                  = TILE_FLAG_UNUSED,
-    [MB_MUDDY_SLOPE]                        = TILE_FLAG_UNUSED,
-    [MB_BUMPY_SLOPE]                        = TILE_FLAG_UNUSED,
-    [MB_CRACKED_FLOOR]                      = TILE_FLAG_UNUSED,
-    [MB_ISOLATED_VERTICAL_RAIL]             = TILE_FLAG_UNUSED,
-    [MB_ISOLATED_HORIZONTAL_RAIL]           = TILE_FLAG_UNUSED,
-    [MB_VERTICAL_RAIL]                      = TILE_FLAG_UNUSED,
-    [MB_HORIZONTAL_RAIL]                    = TILE_FLAG_UNUSED,
-    [MB_SIGNPOST]                           = TILE_FLAG_UNUSED,
-    [MB_POKEMON_CENTER_SIGN]                = TILE_FLAG_UNUSED,
-    [MB_POKEMART_SIGN]                      = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE]         = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_LEFT_SIDE]          = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE_TOP]     = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_LEFT_SIDE_TOP]      = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE_BOTTOM]  = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM]   = TILE_FLAG_UNUSED,
-    [MB_ROCK_STAIRS]                        = TILE_FLAG_UNUSED,
+
+    [MB_NORMAL]                          = TILE_FLAG_UNUSED,
+    [MB_TALL_GRASS]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_LONG_GRASS]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_UNUSED_05]                       = TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_DEEP_SAND]                       = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_SHORT_GRASS]                     = TILE_FLAG_UNUSED,
+    [MB_CAVE]                            = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_LONG_GRASS_SOUTH_EDGE]           = TILE_FLAG_UNUSED,
+    [MB_NO_RUNNING]                      = TILE_FLAG_UNUSED,
+    [MB_INDOOR_ENCOUNTER]                = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_MOUNTAIN_TOP]                    = TILE_FLAG_UNUSED,
+    [MB_BATTLE_PYRAMID_WARP]             = TILE_FLAG_UNUSED,
+    [MB_MOSSDEEP_GYM_WARP]               = TILE_FLAG_UNUSED,
+    [MB_MT_PYRE_HOLE]                    = TILE_FLAG_UNUSED,
+    [MB_POND_WATER]                      = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_INTERIOR_DEEP_WATER]             = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_DEEP_WATER]                      = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_WATERFALL]                       = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_SOOTOPOLIS_DEEP_WATER]           = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_OCEAN_WATER]                     = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_PUDDLE]                          = TILE_FLAG_UNUSED,
+    [MB_SHALLOW_WATER]                   = TILE_FLAG_UNUSED,
+    [MB_NO_SURFACING]                    = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_STAIRS_OUTSIDE_ABANDONED_SHIP]   = TILE_FLAG_UNUSED,
+    [MB_SHOAL_CAVE_ENTRANCE]             = TILE_FLAG_UNUSED,
+    [MB_ICE]                             = TILE_FLAG_UNUSED,
+    [MB_SAND]                            = TILE_FLAG_UNUSED,
+    [MB_SEAWEED]                         = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_UNUSED_23]                       = TILE_FLAG_UNUSED,
+    [MB_ASHGRASS]                        = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_FOOTPRINTS]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_THIN_ICE]                        = TILE_FLAG_UNUSED,
+    [MB_CRACKED_ICE]                     = TILE_FLAG_UNUSED,
+    [MB_HOT_SPRINGS]                     = TILE_FLAG_UNUSED,
+    [MB_LAVARIDGE_GYM_B1F_WARP]          = TILE_FLAG_UNUSED,
+    [MB_SEAWEED_NO_SURFACING]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_REFLECTION_UNDER_BRIDGE]         = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_EAST]                 = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_WEST]                 = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_NORTH]                = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_SOUTH]                = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_NORTHEAST]            = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_NORTHWEST]            = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_SOUTHEAST]            = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_SOUTHWEST]            = TILE_FLAG_UNUSED,
+    [MB_JUMP_NORTHEAST]                  = TILE_FLAG_UNUSED,
+    [MB_JUMP_NORTHWEST]                  = TILE_FLAG_UNUSED,
+    [MB_JUMP_SOUTHEAST]                  = TILE_FLAG_UNUSED,
+    [MB_JUMP_SOUTHWEST]                  = TILE_FLAG_UNUSED,
+    [MB_WALK_EAST]                       = TILE_FLAG_UNUSED,
+    [MB_WALK_WEST]                       = TILE_FLAG_UNUSED,
+    [MB_WALK_NORTH]                      = TILE_FLAG_UNUSED,
+    [MB_WALK_SOUTH]                      = TILE_FLAG_UNUSED,
+    [MB_SLIDE_EAST]                      = TILE_FLAG_UNUSED,
+    [MB_SLIDE_WEST]                      = TILE_FLAG_UNUSED,
+    [MB_SLIDE_NORTH]                     = TILE_FLAG_UNUSED,
+    [MB_SLIDE_SOUTH]                     = TILE_FLAG_UNUSED,
+    [MB_TRICK_HOUSE_PUZZLE_8_FLOOR]      = TILE_FLAG_UNUSED,
+    [MB_EASTWARD_CURRENT]                = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_WESTWARD_CURRENT]                = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_NORTHWARD_CURRENT]               = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_SOUTHWARD_CURRENT]               = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_NON_ANIMATED_DOOR]               = TILE_FLAG_UNUSED,
+    [MB_LADDER]                          = TILE_FLAG_UNUSED,
+    [MB_EAST_ARROW_WARP]                 = TILE_FLAG_UNUSED,
+    [MB_WEST_ARROW_WARP]                 = TILE_FLAG_UNUSED,
+    [MB_NORTH_ARROW_WARP]                = TILE_FLAG_UNUSED,
+    [MB_SOUTH_ARROW_WARP]                = TILE_FLAG_UNUSED,
+    [MB_CRACKED_FLOOR_HOLE]              = TILE_FLAG_UNUSED,
+    [MB_AQUA_HIDEOUT_WARP]               = TILE_FLAG_UNUSED,
+    [MB_LAVARIDGE_GYM_1F_WARP]           = TILE_FLAG_UNUSED,
+    [MB_ANIMATED_DOOR]                   = TILE_FLAG_UNUSED,
+    [MB_UP_ESCALATOR]                    = TILE_FLAG_UNUSED,
+    [MB_DOWN_ESCALATOR]                  = TILE_FLAG_UNUSED,
+    [MB_WATER_DOOR]                      = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_WATER_SOUTH_ARROW_WARP]          = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_DEEP_SOUTH_WARP]                 = TILE_FLAG_UNUSED,
+    [MB_UNUSED_6F]                       = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_BRIDGE_OVER_POND_LOW]            = TILE_FLAG_UNUSED,
+    [MB_BRIDGE_OVER_POND_MED]            = TILE_FLAG_UNUSED,
+    [MB_BRIDGE_OVER_POND_HIGH]           = TILE_FLAG_UNUSED,
+    [MB_PACIFIDLOG_VERTICAL_LOG_TOP]     = TILE_FLAG_UNUSED,
+    [MB_PACIFIDLOG_VERTICAL_LOG_BOTTOM]  = TILE_FLAG_UNUSED,
+    [MB_PACIFIDLOG_HORIZONTAL_LOG_LEFT]  = TILE_FLAG_UNUSED,
+    [MB_PACIFIDLOG_HORIZONTAL_LOG_RIGHT] = TILE_FLAG_UNUSED,
+    [MB_FORTREE_BRIDGE]                  = TILE_FLAG_UNUSED,
+    [MB_BRIDGE_OVER_POND_MED_EDGE_1]     = TILE_FLAG_UNUSED,
+    [MB_BRIDGE_OVER_POND_MED_EDGE_2]     = TILE_FLAG_UNUSED,
+    [MB_BRIDGE_OVER_POND_HIGH_EDGE_1]    = TILE_FLAG_UNUSED,
+    [MB_BRIDGE_OVER_POND_HIGH_EDGE_2]    = TILE_FLAG_UNUSED,
+    [MB_UNUSED_BRIDGE]                   = TILE_FLAG_UNUSED,
+    [MB_BIKE_BRIDGE_OVER_BARRIER]        = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_SCENERY]             = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_TRAINER_SPOT]        = TILE_FLAG_UNUSED,
+    [MB_HOLDS_SMALL_DECORATION]          = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_BALLOON]             = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_IMPASSABLE]          = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_GLITTER_MAT]         = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_JUMP_MAT]            = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_SPIN_MAT]            = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_SOUND_MAT]           = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_BREAKABLE_DOOR]      = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_SOUTH_AND_NORTH]      = TILE_FLAG_UNUSED,
+    [MB_IMPASSABLE_WEST_AND_EAST]        = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_HOLE]                = TILE_FLAG_UNUSED,
+    [MB_HOLDS_LARGE_DECORATION]          = TILE_FLAG_UNUSED,
+    [MB_SECRET_BASE_TV_SHIELD]           = TILE_FLAG_UNUSED,
+    [MB_PLAYER_ROOM_PC_ON]               = TILE_FLAG_UNUSED,
+    [MB_MUDDY_SLOPE]                     = TILE_FLAG_UNUSED,
+    [MB_BUMPY_SLOPE]                     = TILE_FLAG_UNUSED,
+    [MB_CRACKED_FLOOR]                   = TILE_FLAG_UNUSED,
+    [MB_ISOLATED_VERTICAL_RAIL]          = TILE_FLAG_UNUSED,
+    [MB_ISOLATED_HORIZONTAL_RAIL]        = TILE_FLAG_UNUSED,
+    [MB_VERTICAL_RAIL]                   = TILE_FLAG_UNUSED,
+    [MB_HORIZONTAL_RAIL]                 = TILE_FLAG_UNUSED,
+    [MB_FALSE_FLOOR]                     = TILE_FLAG_UNUSED,
+    [MB_FALSE_FLOOR_HOLE]                = TILE_FLAG_UNUSED,
+	[MB_COLCHIS_BATTLE]                  = TILE_FLAG_UNUSED, 
+	//Sideways Stair Warps
+    [MB_UP_RIGHT_STAIR_WARP]               = TILE_FLAG_UNUSED,
+    [MB_UP_LEFT_STAIR_WARP]                = TILE_FLAG_UNUSED,
+    [MB_DOWN_RIGHT_STAIR_WARP]             = TILE_FLAG_UNUSED,
+    [MB_DOWN_LEFT_STAIR_WARP]              = TILE_FLAG_UNUSED,
+	//Sideways Stairs
+    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE]        = TILE_FLAG_UNUSED,
+    [MB_SIDEWAYS_STAIRS_LEFT_SIDE]         = TILE_FLAG_UNUSED,
+    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE_TOP]    = TILE_FLAG_UNUSED,
+    [MB_SIDEWAYS_STAIRS_LEFT_SIDE_TOP]     = TILE_FLAG_UNUSED,
+    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE_BOTTOM] = TILE_FLAG_UNUSED,
+    [MB_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM]  = TILE_FLAG_UNUSED,
+    [MB_ROCK_STAIRS]                       = TILE_FLAG_UNUSED,
+	//Rock Climb
+    [MB_ROCK_CLIMB]                        = TILE_FLAG_UNUSED,
+	//Spin Tiles
+    [MB_SPIN_RIGHT]                        = TILE_FLAG_UNUSED,
+    [MB_SPIN_LEFT]                         = TILE_FLAG_UNUSED,
+    [MB_SPIN_UP]                           = TILE_FLAG_UNUSED,
+    [MB_SPIN_DOWN]                         = TILE_FLAG_UNUSED,
+    [MB_STOP_SPINNING]                     = TILE_FLAG_UNUSED,
+	//Cycling Road Tiles
+	[MB_CYCLING_ROAD_PULL_DOWN]            = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_UP]              = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_LEFT]            = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_RIGHT]           = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_BRIDGE_PULL_RIGHT]    = TILE_FLAG_UNUSED,
+
 };
 
 bool8 MetatileBehavior_IsATile(u8 metatileBehavior)
@@ -227,7 +252,7 @@ bool8 MetatileBehavior_IsIce(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsWarpDoor(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_ANIMATED_DOOR)
+    if (metatileBehavior == MB_ANIMATED_DOOR) 
         return TRUE;
     else
         return FALSE;
@@ -251,9 +276,9 @@ bool8 MetatileBehavior_IsEscalator(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused04(u8 metatileBehavior)
+bool8 MetatileBehavior_IsCanvas(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_UNUSED_04)
+    if (metatileBehavior == MB_CANVAS)
         return TRUE;
     else
         return FALSE;
@@ -978,7 +1003,8 @@ bool8 MetatileBehavior_IsSouthBlocked(u8 metatileBehavior)
     if (metatileBehavior == MB_IMPASSABLE_SOUTH
      || metatileBehavior == MB_IMPASSABLE_SOUTHEAST
      || metatileBehavior == MB_IMPASSABLE_SOUTHWEST
-     || metatileBehavior == MB_IMPASSABLE_SOUTH_AND_NORTH)
+     || metatileBehavior == MB_IMPASSABLE_SOUTH_AND_NORTH
+     || metatileBehavior == MB_UP_RIGHT_STAIR_WARP)
         return TRUE;
     else
         return FALSE;
@@ -1202,6 +1228,30 @@ bool8 MetatileBehavior_IsCrackedFloorHole(u8 metatileBehavior)
 bool8 MetatileBehavior_IsCrackedFloor(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_CRACKED_FLOOR)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsFalseFloor(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_FALSE_FLOOR)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsColchisBattle(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_COLCHIS_BATTLE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsFalseFloorHole(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_FALSE_FLOOR_HOLE)
         return TRUE;
     else
         return FALSE;
@@ -1443,6 +1493,18 @@ bool8 MetatileBehavior_IsDirectionalDownLeftStairWarp(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsDirectionalStairWarp(u8 metatileBehavior)
 {
+    if (metatileBehavior >= MB_UP_RIGHT_STAIR_WARP && metatileBehavior <= MB_DOWN_LEFT_STAIR_WARP)
+		return TRUE;
+	else
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_ROCK_CLIMB)
+		return TRUE;
+	else
+		return FALSE;
     if (metatileBehavior == MB_UP_RIGHT_STAIR_WARP
      || metatileBehavior == MB_UP_LEFT_STAIR_WARP
      || metatileBehavior == MB_DOWN_RIGHT_STAIR_WARP
@@ -1467,6 +1529,7 @@ bool8 MetatileBehavior_IsPokeMartSign(u32 metatileBehavior)
     return (metatileBehavior == MB_POKEMART_SIGN);
 }
 
+//START SIDEWAYS STAIRS
 bool8 MetatileBehavior_IsSidewaysStairsRightSide(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SIDEWAYS_STAIRS_RIGHT_SIDE || metatileBehavior == MB_SIDEWAYS_STAIRS_RIGHT_SIDE_BOTTOM)
@@ -1527,7 +1590,7 @@ bool8 MetatileBehavior_IsSidewaysStairsRightSideAny(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_SIDEWAYS_STAIRS_LEFT_SIDE
+    if (metatileBehavior == MB_SIDEWAYS_STAIRS_LEFT_SIDE 
      || metatileBehavior == MB_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM
      || metatileBehavior == MB_SIDEWAYS_STAIRS_LEFT_SIDE_TOP)
         return TRUE;
@@ -1542,3 +1605,92 @@ bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+//EDN SIDEWAYS STAIRS
+
+//Spin Tiles
+bool8 MetatileBehavior_IsSpinRight(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_RIGHT;
+}
+
+bool8 MetatileBehavior_IsSpinLeft(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_LEFT;
+}
+
+bool8 MetatileBehavior_IsSpinUp(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_UP;
+}
+
+bool8 MetatileBehavior_IsSpinDown(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_SPIN_DOWN;
+}
+
+bool8 MetatileBehavior_IsStopSpinning(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_STOP_SPINNING;
+}
+
+bool8 MetatileBehavior_IsSpinTile(u8 metatileBehavior)
+{
+    return metatileBehavior >= MB_SPIN_RIGHT && metatileBehavior <= MB_SPIN_DOWN;
+}
+
+//Cycling Road Pull Tiles
+
+bool8 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadPullUpTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_UP) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadPullLeftTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_LEFT) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadPullRightTile(u8 metatileBehavior)
+{
+	if (metatileBehavior == MB_CYCLING_ROAD_PULL_RIGHT) 
+		return TRUE;
+	else 
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadBridgePullRightTile(u8 metatileBehavior)
+{
+	u8 elevation = PlayerGetElevation();
+	if (metatileBehavior == MB_CYCLING_ROAD_BRIDGE_PULL_RIGHT && elevation == 3)
+		return TRUE;
+	else
+		return FALSE;
+}
+
+bool8 MetatileBehavior_IsCyclingRoadBridgePullLeftTile(u8 metatileBehavior)
+{
+	u8 elevation = PlayerGetElevation();
+	if (metatileBehavior == MB_CYCLING_ROAD_BRIDGE_PULL_LEFT && elevation == 3)
+		return TRUE;
+	else
+		return FALSE;
+}
+
+
+
+

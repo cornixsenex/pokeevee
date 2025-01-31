@@ -73,6 +73,76 @@
 #include "constants/weather.h"
 #include "cable_club.h"
 
+
+//Pretty sure this is not being used anymore
+//const struct TrainerBall gTrainerBallTable[] = {
+//    {TRAINER_CLASS_TEAM_AQUA, ITEM_NET_BALL},
+//    {TRAINER_CLASS_AQUA_ADMIN, ITEM_NET_BALL},
+//    {TRAINER_CLASS_AQUA_LEADER, ITEM_MASTER_BALL},
+//    {TRAINER_CLASS_AROMA_LADY, ITEM_FRIEND_BALL},
+//    {TRAINER_CLASS_RUIN_MANIAC, ITEM_DUSK_BALL},
+//    {TRAINER_CLASS_INTERVIEWER, ITEM_REPEAT_BALL},
+//    {TRAINER_CLASS_TUBER_F, ITEM_DIVE_BALL},
+//    {TRAINER_CLASS_TUBER_M, ITEM_DIVE_BALL},
+//    {TRAINER_CLASS_SIS_AND_BRO, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_COOLTRAINER, ITEM_ULTRA_BALL},
+//    {TRAINER_CLASS_HEX_MANIAC, ITEM_DUSK_BALL},
+//    {TRAINER_CLASS_LADY, ITEM_LUXURY_BALL},
+//    {TRAINER_CLASS_BEAUTY, ITEM_LOVE_BALL},
+//    {TRAINER_CLASS_RICH_BOY, ITEM_LUXURY_BALL},
+//    {TRAINER_CLASS_POKEMANIAC, ITEM_MOON_BALL},
+//    {TRAINER_CLASS_SWIMMER_M, ITEM_DIVE_BALL},
+//    {TRAINER_CLASS_BLACK_BELT, ITEM_HEAVY_BALL},
+//    {TRAINER_CLASS_GUITARIST, ITEM_FAST_BALL},
+//    {TRAINER_CLASS_KINDLER, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_CAMPER, ITEM_NEST_BALL},
+//    {TRAINER_CLASS_OLD_COUPLE, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_BUG_MANIAC, ITEM_NET_BALL},
+//    {TRAINER_CLASS_PSYCHIC, ITEM_DREAM_BALL},
+//    {TRAINER_CLASS_GENTLEMAN, ITEM_LUXURY_BALL},
+//    {TRAINER_CLASS_ELITE_FOUR, ITEM_ULTRA_BALL},
+//    {TRAINER_CLASS_LEADER, ITEM_ULTRA_BALL},
+//    {TRAINER_CLASS_SCHOOL_KID, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_SR_AND_JR, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_POKEFAN, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_EXPERT, ITEM_ULTRA_BALL},
+//    {TRAINER_CLASS_YOUNGSTER, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_CHAMPION, ITEM_CHERISH_BALL},
+//    {TRAINER_CLASS_FISHERMAN, ITEM_LURE_BALL},
+//    {TRAINER_CLASS_TRIATHLETE, ITEM_FAST_BALL},
+//    {TRAINER_CLASS_DRAGON_TAMER, ITEM_ULTRA_BALL},
+//    {TRAINER_CLASS_BIRD_KEEPER, ITEM_QUICK_BALL},
+//    {TRAINER_CLASS_NINJA_BOY, ITEM_QUICK_BALL},
+//    {TRAINER_CLASS_BATTLE_GIRL, ITEM_HEAVY_BALL},
+//    {TRAINER_CLASS_PARASOL_LADY, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_SWIMMER_F, ITEM_DIVE_BALL},
+//    {TRAINER_CLASS_PICNICKER, ITEM_FRIEND_BALL},
+//    {TRAINER_CLASS_TWINS, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_SAILOR, ITEM_DIVE_BALL},
+//    {TRAINER_CLASS_COLLECTOR, ITEM_REPEAT_BALL},
+//    {TRAINER_CLASS_PKMN_BREEDER, ITEM_TIMER_BALL},
+//    {TRAINER_CLASS_PKMN_RANGER, ITEM_SAFARI_BALL},
+//    {TRAINER_CLASS_TEAM_MAGMA, ITEM_NEST_BALL},
+//    {TRAINER_CLASS_MAGMA_ADMIN, ITEM_NEST_BALL},
+//    {TRAINER_CLASS_MAGMA_LEADER, ITEM_MASTER_BALL},
+//    {TRAINER_CLASS_LASS, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_BUG_CATCHER, ITEM_NET_BALL},
+//    {TRAINER_CLASS_HIKER, ITEM_HEAVY_BALL},
+//    {TRAINER_CLASS_YOUNG_COUPLE, ITEM_LOVE_BALL},
+//    {TRAINER_CLASS_WINSTRATE, ITEM_GREAT_BALL},
+//    {TRAINER_CLASS_PKMN_TRAINER_2, ITEM_HEAVY_BALL},
+//    {TRAINER_CLASS_FUCKBOY, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_RIVAL, ITEM_POKE_BALL},
+//    {TRAINER_CLASS_PKMN_TEACHER, ITEM_PREMIER_BALL},
+//    {TRAINER_CLASS_PKMN_SCIENTIST, ITEM_POKE_BALL},
+//	{TRAINER_CLASS_ROCKET_BOSS, ITEM_POKE_BALL},
+//	{TRAINER_CLASS_JANITOR, ITEM_POKE_BALL},
+//	{TRAINER_CLASS_NURSE, ITEM_HEAL_BALL},
+//	{TRAINER_CLASS_DOCTOR, ITEM_ULTRA_BALL},
+//	//Make sure you add to the other TrainerBall spot that got included with rhh I think this one is no longer doing anything
+//    {0xFF, ITEM_POKE_BALL},
+//};
+
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
 
@@ -374,6 +444,16 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
+	//KUSTOM TRAINER CLASSES 
+	[TRAINER_CLASS_FUCKBOY] = { _("FUCKBOY") },
+    [TRAINER_CLASS_PKMN_TEACHER] = { _("{PKMN} TEACHER") },
+    [TRAINER_CLASS_PKMN_SCIENTIST] = { _("{PKMN} SCIENTIST") },
+    [TRAINER_CLASS_ROCKET_BOSS] = { _("ROCKET BOSS") },
+    [TRAINER_CLASS_JANITOR] = { _("JANITOR") },
+    [TRAINER_CLASS_NURSE]  = { _("NURSE") },
+    [TRAINER_CLASS_DOCTOR] = { _("{PKMN} DR.") },
+    [TRAINER_CLASS_CULTIST] = { _( "CULTIST"), },
+	//End Kustom Classes
 };
 
 static void (* const sTurnActionsFuncsTable[])(void) =
@@ -901,6 +981,7 @@ static void CB2_HandleStartBattle(void)
             gTasks[taskId].data[4] = gBlockRecvBuffer[enemyMultiplayerId][1];
             RecordedBattle_SetFrontierPassFlagFromHword(gBlockRecvBuffer[playerMultiplayerId][1]);
             RecordedBattle_SetFrontierPassFlagFromHword(gBlockRecvBuffer[enemyMultiplayerId][1]);
+            SetDeoxysStats();
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -2822,9 +2903,9 @@ static void SpriteCB_Idle(struct Sprite *sprite)
 {
 }
 
+
 #define sSpeedX data[1]
 #define sSpeedY data[2]
-
 void SpriteCB_FaintSlideAnim(struct Sprite *sprite)
 {
     if (!(gIntroSlideFlags & 1))
@@ -5762,6 +5843,7 @@ static void ReturnFromBattleToOverworld(void)
 
     m4aSongNumStop(SE_LOW_HEALTH);
     SetMainCallback2(gMain.savedCallback);
+
 }
 
 void RunBattleScriptCommands_PopCallbacksStack(void)

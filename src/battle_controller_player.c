@@ -161,6 +161,9 @@ static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
     [CONTROLLER_TERMINATOR_NOP]           = BtlController_TerminatorNop
 };
 
+//static EWRAM_DATA bool8 UNUSED sAckBallUseBtn = FALSE;
+//static EWRAM_DATA bool8 UNUSED sBallSwapped = FALSE;
+
 void SetControllerToPlayer(u32 battler)
 {
     gBattlerControllerEndFuncs[battler] = PlayerBufferExecCompleted;
@@ -202,7 +205,7 @@ static void CompleteOnBattlerSpritePosX_0(u32 battler)
         PlayerBufferExecCompleted(battler);
 }
 
-static u16 GetPrevBall(u16 ballId)
+static u16 UNUSED GetPrevBall(u16 ballId)
 {
     u16 ballPrev;
     s32 i, j;
@@ -227,7 +230,7 @@ static u16 GetPrevBall(u16 ballId)
     return gBagPockets[BALLS_POCKET].itemSlots[i].itemId;
 }
 
-static u32 GetNextBall(u32 ballId)
+static u32 UNUSED GetNextBall(u32 ballId)
 {
     u32 ballNext = ITEM_NONE;
     s32 i;

@@ -82,8 +82,9 @@
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP          0x4E
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT        0x4F
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT       0x50
-#define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x51
-#define NUM_MOVEMENT_TYPES                             0x52
+#define MOVEMENT_TYPE_CHASE_PLAYER                     0x51 // KUSTOM
+#define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x52 // RHH 1.9.0
+#define NUM_MOVEMENT_TYPES                             0x53
 
 #define MOVEMENT_ACTION_FACE_DOWN                       0x0
 #define MOVEMENT_ACTION_FACE_UP                         0x1
@@ -243,6 +244,7 @@
 #define MOVEMENT_ACTION_FIGURE_8                        0x9B
 #define MOVEMENT_ACTION_FLY_UP                          0x9C
 #define MOVEMENT_ACTION_FLY_DOWN                        0x9D
+//These are for VS SEEKER added by rhh
 #define MOVEMENT_ACTION_EMOTE_X                         0x9E
 #define MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK          0x9F
 #define MOVEMENT_ACTION_EXIT_POKEBALL                   0xA0
@@ -251,6 +253,21 @@
 #define MOVEMENT_ACTION_RUN_UP_SLOW                     0xA3
 #define MOVEMENT_ACTION_RUN_LEFT_SLOW                   0xA4
 #define MOVEMENT_ACTION_RUN_RIGHT_SLOW                  0xA5
+
+//KUSTOMS
+
+//fast diagonal movement (added for Rock Climb)
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT      0xA6
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT     0xA7
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT    0xA8
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT   0xA9
+//Spin Tiles (added for...spin tiles)
+#define MOVEMENT_ACTION_SPIN_DOWN                       0xAA
+#define MOVEMENT_ACTION_SPIN_UP                         0xAB
+#define MOVEMENT_ACTION_SPIN_LEFT                       0xAC
+#define MOVEMENT_ACTION_SPIN_RIGHT                      0xAD
+
+//END KUSTOMS
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -277,10 +294,14 @@
 #define ANIM_STD_GO_FASTEST_EAST  19
 #define ANIM_STD_COUNT            20
 
-#define ANIM_RUN_SOUTH (ANIM_STD_COUNT + 0)
-#define ANIM_RUN_NORTH (ANIM_STD_COUNT + 1)
-#define ANIM_RUN_WEST  (ANIM_STD_COUNT + 2)
-#define ANIM_RUN_EAST  (ANIM_STD_COUNT + 3)
+#define ANIM_RUN_SOUTH  (ANIM_STD_COUNT + 0)
+#define ANIM_RUN_NORTH  (ANIM_STD_COUNT + 1)
+#define ANIM_RUN_WEST   (ANIM_STD_COUNT + 2)
+#define ANIM_RUN_EAST   (ANIM_STD_COUNT + 3)
+#define ANIM_SPIN_SOUTH (ANIM_STD_COUNT + 4)
+#define ANIM_SPIN_NORTH (ANIM_STD_COUNT + 5)
+#define ANIM_SPIN_WEST  (ANIM_STD_COUNT + 6)
+#define ANIM_SPIN_EAST  (ANIM_STD_COUNT + 7)
 
 #define ANIM_EXIT_POKEBALL_FAST_SOUTH (ANIM_STD_COUNT + 0)
 #define ANIM_EXIT_POKEBALL_FAST_NORTH (ANIM_STD_COUNT + 1)

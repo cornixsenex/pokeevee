@@ -1,0 +1,61 @@
+Fortune Tellers (7)
+	X: Delphi
+	X: Sibyll
+	X: Tiresias
+	X: Morpheus
+	X: 
+	X:
+	X:
+
+Leaf Eeveelution parallel:
+	Fire
+	Water
+	Electric
+	Dark
+	Psychic
+	Grass
+	Ice
+
+Blue others parallel:
+	Fighting
+	Flying
+	Bug
+	Poison
+	Rock
+	Ground
+	Steel
+	Dragon
+
+Legendaries:
+
+
+
+Dreams (7):
+	Intro dream
+	Before Mew
+	Before Mythology
+	After Capital
+	After Fortress
+	After Summit
+
+
+
+
+Teams:
+
+	Leaf: - Eevee types
+		Jigglypuff - School
+		Meganium   - Garden
+		Jynx	   - School
+		Milotic    - Surf / odyssey
+		Raichu     - Siege
+		Houndoom   - Military base
+	
+	Blue: - Non Eevee types
+		Crowbat    - Intro
+		Lucario    - Rock Tunnel Ambush
+		Hippodon   - Slabs
+		Armaldo    - Lotus Eaters / beggars / relate to propaganda arc
+		Dusclops   - Graveyard
+		Haxorus    - Dragon Cave
+		

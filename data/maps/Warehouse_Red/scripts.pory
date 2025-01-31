@@ -1,0 +1,100 @@
+mapscripts Warehouse_Red_MapScripts {}
+
+
+
+script Warehouse_Red_EventScript_TrainerRed5 {	
+	trainerbattle_single(TRAINER_RED5, Warehouse_Red_Text_Red5Intro, Warehouse_Red_Text_Red5Lost)
+	msgbox(Warehouse_Red_Text_Red5Post)
+	closemessage
+	end
+}
+script Warehouse_Red_EventScript_TrainerRed4 {	
+	trainerbattle_single(TRAINER_RED4, Warehouse_Red_Text_Red4Intro, Warehouse_Red_Text_Red4Lost)
+	msgbox(Warehouse_Red_Text_Red4Post)
+	closemessage
+	end
+}
+
+script Warehouse_Red_EventScript_TrainerRed3 {	
+	trainerbattle_single(TRAINER_RED3, Warehouse_Red_Text_Red3Intro, Warehouse_Red_Text_Red3Lost)
+	msgbox(Warehouse_Red_Text_Red3Post)
+	closemessage
+	end
+}
+
+script Warehouse_Red_EventScript_TrainerRed2 {	
+	trainerbattle_single(TRAINER_RED2, Warehouse_Red_Text_Red2Intro, Warehouse_Red_Text_Red2Lost)
+	msgbox(Warehouse_Red_Text_Red2Post)
+	closemessage
+	end
+}
+
+script Warehouse_Red_EventScript_TrainerRed1 {	
+	trainerbattle_single(TRAINER_RED1, Warehouse_Red_Text_Red1Intro, Warehouse_Red_Text_Red1Lost)
+	msgbox(Warehouse_Red_Text_Red1Post)
+	closemessage
+	end
+}
+
+text Warehouse_Red_Text_Red5Intro {
+	format("Hello my enemy and how are you?")
+}
+
+text Warehouse_Red_Text_Red5Lost {
+	format("OK!")
+}
+
+text Warehouse_Red_Text_Red5Post {
+	format("It's good! We're good! I'm feeling good.")
+}
+
+text Warehouse_Red_Text_Red4Intro {
+	format("I may be blind but I am not stupid.")
+}
+
+text Warehouse_Red_Text_Red4Lost {
+	format("Something is not right here.")
+}
+
+text Warehouse_Red_Text_Red4Post {
+	format("Good job young man.")
+}
+
+text Warehouse_Red_Text_Red3Intro {
+	format("No wasting time let's get down to business.")
+}
+
+text Warehouse_Red_Text_Red3Lost {
+	format("I fought as a daughter born as a son.")
+}
+
+text Warehouse_Red_Text_Red3Post {
+	format("Once I find my center, I'm sure to win.")
+}
+
+text Warehouse_Red_Text_Red2Intro {
+	format("On the main land we call this drug Da Ma.")
+}
+
+text Warehouse_Red_Text_Red2Lost {
+	format("I think I might need to smoke some Da Ma.")
+}
+
+text Warehouse_Red_Text_Red2Post {
+	format("Have you tried the tea egg? It's rather good.")
+}
+
+text Warehouse_Red_Text_Red1Intro {
+	format("Intruder! Did you come here for dinner?")
+}
+
+text Warehouse_Red_Text_Red1Lost {
+	format("Your food will be poisoned!")
+}
+
+text Warehouse_Red_Text_Red1Post {
+	format("Please come back soone!")
+}
+
+
+

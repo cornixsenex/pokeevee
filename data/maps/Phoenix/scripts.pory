@@ -1,0 +1,249 @@
+
+const OBJ_EVENT_FRATBOY = 5
+const OBJ_EVENT_FRATBOY1 = 1
+const OBJ_EVENT_FRATBOY2 = 2
+const OBJ_EVENT_FRATBOY3 = 8
+const OBJ_EVENT_FRATGIRL1 = 3
+const OBJ_EVENT_FRATGIRL2 = 7
+const OBJ_EVENT_LEAF = 9
+const OBJ_EVENT_FRATFIGHTL = 4
+const OBJ_EVENT_FRATFIGHTR = 6
+
+mapscripts Phoenix_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		call (Phoenix_EventScript_TryPrimePartyTrigger)
+	}
+}
+
+script Phoenix_EventScript_TryPrimePartyTrigger {
+	if (!flag(FLAG_PHOENIX_PARTY) ) {
+		setvar (VAR_UNI_STATE, 69)
+	} 
+}
+
+script Phoenix_EventScript_PartyTrigger {
+	if (flag(FLAG_PHOENIX_PARTY)) {
+		end
+	} else {
+		lock
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+		applymovement(OBJ_EVENT_FRATBOY, Common_Movement_FaceLeft)
+		waitmovement (0)
+		msgbox(Phoenix_Text_FratBoyBlockA)
+		closemessage
+		if (flag(FLAG_PLEDGE_HAS_KEG) ) {
+			call (Phoenix_EventScript_ClearParty)
+		} else {
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+			applymovement(OBJ_EVENT_FRATBOY, Common_Movement_FaceDown)
+			waitmovement (0)
+		}
+		release
+		end
+	}
+}
+
+script Phoenix_EventScript_FratBoy1 {
+	lock
+	msgbox(Phoenix_Text_FratBoy1)
+	closemessage
+	release
+	end
+}
+
+script Phoenix_EventScript_FratBoy2 {
+	lock
+	faceplayer
+	msgbox(Phoenix_Text_FratBoy2)
+	closemessage
+	release
+	end
+}
+
+script Phoenix_EventScript_FratBoy3 {
+	lock
+	msgbox(Phoenix_Text_FratBoy3)
+	closemessage
+	release
+	end
+}
+
+script Phoenix_EventScript_FratGirl1 {
+	lock
+	faceplayer
+	msgbox(Phoenix_Text_FratGirl1)
+	closemessage
+	release
+	end
+}
+
+script Phoenix_EventScript_FratGirl2 {
+	lock
+	msgbox(Phoenix_Text_FratGirl2)
+	closemessage
+	release
+	end
+}
+
+script Phoenix_EventScript_Leaf {
+	lock
+	msgbox(Phoenix_Text_Leaf)
+	closemessage
+	release
+	end
+}
+
+
+script Phoenix_EventScript_FratBoy {
+	lock
+	faceplayer
+	msgbox(Phoenix_Text_FratBoyBlockA)
+	closemessage
+	if (flag(FLAG_PLEDGE_HAS_KEG) ) {
+		call (Phoenix_EventScript_ClearParty)
+	} 
+	applymovement (OBJ_EVENT_FRATBOY, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Phoenix_EventScript_ClearParty {
+	applymovement (OBJ_EVENT_FRATBOY, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(Phoenix_Text_FratPartyClear)
+	closemessage
+	fadescreen (1)
+	setflag (FLAG_PHOENIX_PARTY)
+	setvar (VAR_UNI_STATE, 0)
+	removeobject (OBJ_EVENT_FRATBOY)
+	removeobject (OBJ_EVENT_FRATBOY)
+	removeobject (OBJ_EVENT_FRATBOY1)
+	removeobject (OBJ_EVENT_FRATBOY2)
+	removeobject (OBJ_EVENT_FRATBOY3)
+	removeobject (OBJ_EVENT_FRATGIRL1)
+	removeobject (OBJ_EVENT_FRATGIRL2)
+	removeobject (OBJ_EVENT_FRATFIGHTL)
+    removeobject (OBJ_EVENT_FRATFIGHTR)
+	playse (SE_WARP_OUT)
+	waitse
+	call (Phoenix_EventScript_LeafApproach)
+	return
+}
+
+script Phoenix_EventScript_LeafApproach {
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_EAST) {
+		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafApproach1)
+	} else {
+		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafApproach2)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	}
+	fadescreen (0)
+	waitmovement (0)
+	msgbox(Phoenix_Text_LeafExit)
+	closemessage
+	applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafExit)
+	waitmovement (0)
+	setflag (FLAG_PHOENIX_LEAF)
+	removeobject (OBJ_EVENT_LEAF)
+	return
+}
+
+script Phoenix_EventScript_Pledge {
+	lock
+	faceplayer
+	if (flag(FLAG_PLEDGE_HAS_KEG) ) {
+		msgbox(Phoenix_Text_Pledge3)
+		closemessage
+	} else {
+		msgbox(Phoenix_Text_Pledge1)
+		closemessage
+		checkitem (ITEM_KEG)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox(Phoenix_Text_Pledge2, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				removeitem (ITEM_KEG)
+				setflag (FLAG_PLEDGE_HAS_KEG)
+				msgbox(Phoenix_Text_Pledge3)
+				closemessage
+			} else {
+				msgbox(Phoenix_Text_Pledge2No)
+				closemessage
+			}
+		}
+	}
+	release
+	end
+}
+
+movement Phoenix_Movement_LeafApproach1 {
+	walk_right * 4
+	walk_up
+	face_left
+}
+
+movement Phoenix_Movement_LeafApproach2 {
+	walk_right * 3 
+}
+
+movement Phoenix_Movement_LeafExit {
+	walk_up * 6
+}
+
+
+text Phoenix_Text_Pledge1 {
+	format("This is no good! I want to join the frat but they won't let me join their big party. Maybe if I threw a big party here They'd think I'm cool and let me join there frat but I don't have a Keg... What can I do?")
+}
+
+text Phoenix_Text_Pledge2 {
+	format("No way! You have a keg? Is that for me?")
+}
+
+text Phoenix_Text_Pledge2No {
+	format("Whatever can I do to join the frat?")
+}
+
+text Phoenix_Text_Pledge3 {
+	format("Thank you so much! This is gonna be sweet! Go tell the boys party at the frat house. I'll prepare everything for the party.")
+}
+
+text Phoenix_Text_FratBoyBlockA {
+	format("Hey watch out bro! We're mud wrestling here!")
+}
+
+text Phoenix_Text_LeafExit {
+	format("I had such a good time at the party. Cmon let's head inside and find Indy.")
+}
+
+text Phoenix_Text_FratBoy1 {
+	format("I'm Andre. Can I blaze chronic with you?")
+}
+
+text Phoenix_Text_FratBoy2 {
+	format("Lets go! Lets fucking go! Who took my beer?")
+}
+
+text Phoenix_Text_FratBoy3 {
+	format("That's right. I party with Dre all the time.")
+}
+
+text Phoenix_Text_FratGirl1 {
+	format("This one time at band camp I shoved a flute all the way up my pussy. LOL!")
+}
+
+text Phoenix_Text_FratGirl2 {
+	format("How big is your account? You have a car?")
+}
+
+text Phoenix_Text_Leaf {
+	format("Hey Andre so you know you are awesome. I rarely feel this kind of connection, only to someone as special as you.")
+}
+
+text Phoenix_Text_FratPartyClear {
+	format("What's that? A party? With an open keg!? Dear friends lets go! Follow me! \pHouse party!")
+}
+
+

@@ -1,0 +1,67 @@
+
+const OBJ_EVENT_TEACHER = 1
+
+mapscripts Ardor_Uni_PsychologyClass_MapScripts {}
+
+script Ardor_Uni_PsychologyClass_EventScript_Teacher  {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_PSYCHOLOGY)) {
+		msgbox(Ardor_Uni_PsychologyClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_PSYCHOLOGY_INTRO)) {
+		specialvar (VAR_RESULT, IsPsychicTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Ardor_Uni_PsychologyClass_EventScript_Test)
+		} else {
+			msgbox(Ardor_Uni_PsychologyClass_Text_BringPsychicType)
+			closemessage
+		}
+	} else {
+		setflag (FLAG_PSYCHOLOGY_INTRO)
+		msgbox(Ardor_Uni_PsychologyClass_Text_Intro)
+		closemessage
+		msgbox(Ardor_Uni_PsychologyClass_Text_BringPsychicType)
+		closemessage
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_PsychologyClass_EventScript_Test {
+	//You have brought animal plant and fungus now time for test
+	msgbox(Ardor_Uni_PsychologyClass_Text_LessonComplete)
+	closemessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	closemessage
+	trainerbattle_no_intro(TRAINER_UNI_PSYCHOLOGY, Ardor_Uni_PsychologyClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_PsychologyClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+text Ardor_Uni_PsychologyClass_Text_Intro {
+	format("Salve puer. Magistra Linda sum. Necesse est tibi docere psychologiam. Necesse est portare mihi quod me delectat.")
+}
+
+text Ardor_Uni_PsychologyClass_Text_BringPsychicType {
+	format("Reveni cum monstro psychologiae.")
+}
+
+text Ardor_Uni_PsychologyClass_Text_LessonComplete {
+	format("Revenisti cum monstro psychologiae.")
+}
+
+text Ardor_Uni_PsychologyClass_Text_TeacherBattleLost {
+	format("Melinda sum! Melinda!")
+}
+
+text Ardor_Uni_PsychologyClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti psychologiam.")
+}
+
+
+

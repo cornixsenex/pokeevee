@@ -1,0 +1,59 @@
+{
+  "id": "MAP_GATO_CITY_N",
+  "name": "GatoCityN",
+  "layout": "LAYOUT_GATO_CITY_N",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_INSIDE_OF_TRUCK",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_GATO_CITY",
+      "offset": -18,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_GATO_CITY_DT",
+      "offset": 38,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_BIKE_ROUTE_GATO_N",
+      "offset": 28,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_TROY_E",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_TROY_S",
+      "offset": 19,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_TROY",
+      "offset": -27,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

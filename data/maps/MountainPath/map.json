@@ -1,0 +1,371 @@
+{
+  "id": "MAP_MOUNTAIN_PATH",
+  "name": "MountainPath",
+  "layout": "LAYOUT_MOUNTAIN_PATH",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE14",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_TUCSON",
+      "offset": 0,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 136,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 135,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 134,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 133,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 132,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 135,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 136,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 137,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 143,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 142,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 141,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 140,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 133,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 134,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 135,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 136,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 137,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 138,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 141,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 142,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 143,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 127,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 126,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 124,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "MountainPath_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 138,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 139,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 140,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 141,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 142,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 143,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "MountainPath_EventScript_SunTrigger"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

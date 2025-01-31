@@ -1,0 +1,135 @@
+
+const OBJ_JASON = 1
+
+mapscripts Argo_MapScripts {}
+
+
+script Argo_EventScript_ExitWarp {
+	lock
+	warpsilent (MAP_MARE_S5, 45, 45)
+	waitstate
+	release
+	end
+}
+
+script Argo_Script_Castor {
+	//I am castor son of nestor. Though Pollux and I are twins I was born first and I was the first off the boat to do battle with the Doliones and defeated Cyzicus himself. 
+	msgbox (Argo_Text_Castor, MSGBOX_NPC)
+	msgbox (Argo_Text_Dioscuri, MSGBOX_NPC)
+	end
+}
+
+//I am pollux son of Nestor. Though Castor and I are twins it was I who first did battle with Pokemon and I alone defeated the savage Amycus when our voyage was wrecked in Bythania.
+script Argo_Script_Pollux {
+	msgbox (Argo_Text_Pollux, MSGBOX_NPC)
+	end
+}
+
+script Argo_Script_Theseus {
+	msgbox (Argo_Text_Theseus, MSGBOX_NPC)
+	end
+}
+
+script Argo_Script_Orpheus {
+	msgbox (Argo_Text_Orpheus, MSGBOX_NPC)
+	end
+}
+
+script Argo_Script_Philoctetes {
+	msgbox (Argo_Text_Philoctetes, MSGBOX_NPC)
+	end
+}
+
+script Argo_Script_Jason {
+	//A long journey now we're lost at sea though we seem without hope I cannot turn back, for pride, and for fear of how Medea will look at me in defeat
+	msgbox (Argo_Text_Jason1, MSGBOX_NPC)
+	checkitem (ITEM_COLCHIS_MAP, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		//Whats this? You've found an ancient / secret / sacred map of the islands showing where colchis is. Will you join with our quest for journey? Once succesful I will surely ever be your servant
+		msgbox(Argo_Text_Jason2, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Argo_Script_BeginAdventure)
+		} else {
+			//very well your choice is your own i cannot / will not force you one way or another return if you change your mind
+			msgbox(Argo_Text_Jason3, MSGBOX_NPC)
+		}
+	}
+	end
+}
+
+//thanks
+//swear the Argo oath
+//Briney travel to Big Island
+//Disembark
+//Jason's orders (Dioscuri guard ship, Orpheus looks for food / water, Theseus finds shelter among the locals, Philoctetes, Player, and himself set out to find the entrance to Colchis)
+//end this part set flags & vars and setup next step (Philoctetes poisoned, Promethues etc)
+
+script Argo_Script_BeginAdventure {
+	msgbox (Argo_Text_BeginAdventure, MSGBOX_NPC)
+	setvar (VAR_ARGO_STATE, 1)
+	warp (MAP_MARE_S5, 45, 45)
+	waitstate
+	end
+}
+
+script Argo_Script_TestBeginAdventure {
+	msgbox ("TEST BEGIN", MSGBOX_NPC)
+	setvar (VAR_ARGO_STATE, 1)
+	warp (MAP_MARE_S5, 45, 45)
+	waitstate
+	end
+}
+
+script Argo_Script_TestSign {
+	msgbox (Argo_Text_TestSign)
+	closemessage
+	end
+}
+
+text Argo_Text_Castor {
+	format("Though Pollux is my twin I was born first and it was I who first leaped off the boat when we were brought back to the Doliones. They had recieved us earlier as friends, but in the dark under the hidden moon mistook us for a band of vagabonds. We broke them where they stood, and I broke their king.")
+}
+
+text Argo_Text_Pollux {
+	format("Truly Castor and I are twin brothers but it was I who first raised pokemon. When Argo wrecked among the Bebryces and all our crew taken to Amycus I was the one who won our liberty by defeating Amycus in combat.")
+}
+
+//Though I miss home, my father and sister dearly I am sworne to journey with Jason until we arrive at Colchis and retrieve the shiny Mareep.
+text Argo_Text_Dioscuri {
+	format("I often think of home. I miss Helen, my lovely sister, and Nestor, my dad but both of us swore an most sacred oath to journey with Jason on the Argo until we reach Colchis and win the fleece.")
+}
+
+text Argo_Text_Theseus {
+	format("This wretched boat is such a sausage fest! Five days of joy we spent on that Island Lemnos where each of us enjoyed many women before mighty Hercules bid us leave. Why couldn't Jason let us bring a handful of women to have some fun?")
+}
+
+text Argo_Text_Orpheus {
+	format("Lost at sea the compass spins\nEurydice where have you been\nI travel with The Argo's quest\n but your're the beating in my chest\nLost aboard windswept and free\n'Eurydice' my only plea\nThat by the sun, the moon, and stars\nYou love me everywhere you are.")
+}
+
+
+//We weren't lost until we lost Heracles who went chasing after Hylas who wandered too far while fetching water. He's likely dead but knowing Heracles he'll swim the entire length of the ocean 10 times over before he abandoned his beloved Hylas.
+text Argo_Text_Philoctetes {
+	format("We're lost and have been lost since Heracles went off in search of his beloved youth Hylas. That naive boy wandered too far in search of water and more than likely cracked his head on a rock and drowed at sea but knowing Heracles he won't quit the seach until hes swam 6 laps around Ocean.")
+}
+
+text Argo_Text_Jason1 {
+	format("Though we be lost at sea we travel on until we reach Colchis. We started out swearing an oath on the docks of Bulbus to never quit until we have retrieved SHINY MAREEP for my wife Medea. We'll find the way forward, or die trying.")
+}
+
+text Argo_Text_Jason2 {
+	format("What's this? You've found an ancient island map showing our position and Colchis too? Most noble friend, will you give me the map and join our quest to find SHINY MAREEP?")
+}
+
+text Argo_Text_Jason3 {
+	format("We'll find our way without you in that case. Return if you decide to join the quest.")
+}
+
+text Argo_Text_BeginAdventure {
+	format("Many thanks friend with this map we will reach Colchis and win our prize: SHINY MAREEP. In order to become an Argonaut you first must swear the oath. Repeat these words: I swear to sail under Jason's command and serve the Argo even to my death until we have attained SHINY MAREEP. That being done let us set off at once. Assemble Argonauts! We sail at once!")
+}
+
+text Argo_Text_TestSign {
+	format("abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz")
+}
+

@@ -44,6 +44,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "random.h"
 #include "constants/map_types.h"
 
 static void SetUpItemUseCallback(u8);
@@ -686,6 +687,91 @@ static void Task_OpenRegisteredPokeblockCase(u8 taskId)
         OpenPokeblockCase(PBLOCK_CASE_FIELD, CB2_ReturnToField);
         DestroyTask(taskId);
     }
+}
+
+static const u8 *const gBookVerseCollection[] =
+{
+	gText_BookVerse1,
+	gText_BookVerse2,
+	gText_BookVerse3,
+	gText_BookVerse4,
+	gText_BookVerse5,
+	gText_BookVerse6,
+	gText_BookVerse7,
+	gText_BookVerse8,
+	gText_BookVerse9,
+	gText_BookVerse10,
+	gText_BookVerse11,
+	gText_BookVerse12,
+	gText_BookVerse13,
+	gText_BookVerse14,
+	gText_BookVerse15,
+	gText_BookVerse16,
+	gText_BookVerse17,
+	gText_BookVerse18,
+	gText_BookVerse19,
+	gText_BookVerse20,
+	gText_BookVerse21,
+	gText_BookVerse22,
+	gText_BookVerse23,
+	gText_BookVerse24,
+	gText_BookVerse25,
+	gText_BookVerse26,
+	gText_BookVerse27,
+	gText_BookVerse28,
+	gText_BookVerse29,
+	gText_BookVerse30,
+	gText_BookVerse31,
+	gText_BookVerse32,
+	gText_BookVerse33,
+	gText_BookVerse34,
+	gText_BookVerse35,
+	gText_BookVerse36,
+	gText_BookVerse37,
+	gText_BookVerse38
+};
+
+//Test Book
+void ItemUseOutOfBattle_TestBook(u8 taskId)
+{
+	//create a container for the chosen verse
+	const u8 *thisVerse;
+	//thisVerse = gText_BookVerse1;
+	thisVerse = gBookVerseCollection[Random() % NELEMS(gBookVerseCollection)];
+	//print the verse out
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        DisplayItemMessage(taskId, FONT_NORMAL, thisVerse, CloseItemMessage);
+    }
+    else
+    {
+        DisplayItemMessageOnField(taskId, thisVerse, Task_CloseCantUseKeyItemMessage);
+    }
+}
+
+//Ostracon
+void ItemUseOutOfBattle_Ostracon(u8 taskId)
+{
+	if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_Ostracon, CloseItemMessage);
+    }
+    else
+    {
+        DisplayItemMessageOnField(taskId, gText_Ostracon, Task_CloseCantUseKeyItemMessage);
+    }
+}
+
+//Trainer Card
+void ItemUseOutOfBattle_TrainerCard(u8 taskId)
+{
+	const u32 levelCap = VarGet(VAR_SYS_LEVEL_CAP);
+	ConvertIntToDecimalStringN(gStringVar1, levelCap, STR_CONV_MODE_LEFT_ALIGN, 4);
+	StringExpandPlaceholders(gStringVar4, gText_TrainerCard);
+	if (!gTasks[taskId].tUsingRegisteredKeyItem)
+        DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
+    else
+        DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
 }
 
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)

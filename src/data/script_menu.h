@@ -778,6 +778,115 @@ static const struct MenuAction MultichoiceList_BerryPlot[] =
     {gText_Exit},
 };
 
+//KUSTOM
+
+static const struct MenuAction MultichoiceList_CityClara_Church_Stone[] =
+{
+    {gText_StoneChooseFire},
+    {gText_StoneChooseWater},
+    {gText_StoneChooseThunder},
+    {gText_StoneChooseNone},
+};
+
+static const struct MenuAction MultichoiceList_RocketTower_Elevator_Floor[] =
+{
+	{gText_FloorChooseBF1},
+	{gText_FloorChoose1},
+	{gText_FloorChoose2},
+	{gText_FloorChoose3},
+	{gText_FloorChoose4},
+	{gText_FloorChoose5},
+	{gText_FloorChoose6},
+	{gText_FloorChoose7},
+	{gText_FloorChoose8},
+	{gText_FloorChoose9},
+	{gText_FloorChoose10},
+	{gText_FloorChoose11},
+	{gText_FloorChoose12},
+	{gText_FloorChoose13},
+};
+
+static const struct MenuAction MultichoiceList_Hospital_Elevator_Floor[] =
+{
+	{gText_FloorChoose1},
+	{gText_FloorChoose2},
+	{gText_FloorChoose3},
+	{gText_FloorChoose4},
+	{gText_FloorChoose5},
+	{gText_FloorChoose6},
+	{gText_FloorChoose7},
+};
+
+static const struct MenuAction MultichoiceList_TicTacToe_Choose_Move[] =
+{
+	{gText_TicTacToeChoose1},
+	{gText_TicTacToeChoose2},
+	{gText_TicTacToeChoose3},
+	{gText_TicTacToeChoose4},
+	{gText_TicTacToeChoose5},
+	{gText_TicTacToeChoose6},
+	{gText_TicTacToeChoose7},
+	{gText_TicTacToeChoose8},
+	{gText_TicTacToeChoose9},
+};
+
+static const struct MenuAction MultichoiceList_SaltySpitoon_Get_Wager[] =
+{
+	{gText_SaltySpitoonWager1},
+	{gText_SaltySpitoonWager2},
+	{gText_SaltySpitoonWager3},
+	{gText_SaltySpitoonWager4},
+	{gText_SaltySpitoonWager5},
+	{gText_SaltySpitoonWager6},
+	{gText_SaltySpitoonWager7},
+};
+
+static const struct MenuAction MultichoiceList_Ardor_ChooseScience[] =
+{
+	{gText_ArdorChooseScience1},
+	{gText_ArdorChooseScience2},
+	{gText_ArdorChooseScience3},
+	{gText_ArdorChooseScience4},
+};
+
+static const struct MenuAction MultichoiceList_Ardor_ChooseSocial[] =
+{
+	{gText_ArdorChooseSocial1},
+	{gText_ArdorChooseSocial2},
+	{gText_ArdorChooseSocial3},
+	{gText_ArdorChooseSocial4},
+};
+
+static const struct MenuAction MultichoiceList_Ardor_ChooseElective[] =
+{
+	{gText_ArdorChooseElective1},
+	{gText_ArdorChooseElective2},
+	{gText_ArdorChooseElective3},
+	{gText_ArdorChooseElective4},
+};
+
+static const struct MenuAction MultichoiceList_ChooseFossil[] =
+{
+	{gText_ChooseFossil1},
+	{gText_ChooseFossil2},
+	{gText_ChooseFossil3},
+	{gText_ChooseFossil4},
+	{gText_ChooseFossil5},
+	{gText_ChooseFossil6},
+	{gText_ChooseFossil7},
+};
+
+static const struct MenuAction MultichoiceList_Ardor_MusicChooseNote[] =
+{
+	{gText_Ardor_MusicChooseNote1},
+	{gText_Ardor_MusicChooseNote2},
+	{gText_Ardor_MusicChooseNote3},
+	{gText_Ardor_MusicChooseNote4},
+	{gText_Ardor_MusicChooseNote5},
+	{gText_Ardor_MusicChooseNote6},
+	{gText_Ardor_MusicChooseNote7},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -906,6 +1015,17 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
+	//KUSTOM
+    [MULTI_CITYCLARA_CHURCH_STONE]     = MULTICHOICE(MultichoiceList_CityClara_Church_Stone),
+    [MULTI_ROCKETTOWER_ELEVATOR_FLOOR] = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
+    [MULTI_HOSPITAL_ELEVATOR_FLOOR]    = MULTICHOICE(MultichoiceList_Hospital_Elevator_Floor),
+    [MULTI_TICTACTOE_CHOOSE_MOVE]      = MULTICHOICE(MultichoiceList_TicTacToe_Choose_Move),
+    [MULTI_SALTYSPITOON_GET_WAGER]     = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
+    [MULTI_ARDOR_CHOOSE_SCIENCE]       = MULTICHOICE(MultichoiceList_Ardor_ChooseScience),
+    [MULTI_ARDOR_CHOOSE_SOCIAL]        = MULTICHOICE(MultichoiceList_Ardor_ChooseSocial),
+    [MULTI_ARDOR_CHOOSE_ELECTIVE]      = MULTICHOICE(MultichoiceList_Ardor_ChooseElective),
+    [MULTI_CHOOSE_FOSSIL]              = MULTICHOICE(MultichoiceList_ChooseFossil),
+    [MULTI_ARDOR_MUSIC_CHOOSE_NOTE]    = MULTICHOICE(MultichoiceList_Ardor_MusicChooseNote),
 };
 
 const u8 *const gStdStrings[] =

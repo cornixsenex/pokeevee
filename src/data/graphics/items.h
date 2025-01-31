@@ -1970,6 +1970,7 @@ const u32 gItemIconPalette_PunchingGlove[] = INCBIN_U32("graphics/items/icon_pal
 const u32 gItemIcon_CovertCloak[] = INCBIN_U32("graphics/items/icons/covert_cloak.4bpp.lz");
 const u32 gItemIconPalette_CovertCloak[] = INCBIN_U32("graphics/items/icon_palettes/covert_cloak.gbapal.lz");
 
+
 const u32 gItemIcon_LoadedDice[] = INCBIN_U32("graphics/items/icons/loaded_dice.4bpp.lz");
 const u32 gItemIconPalette_LoadedDice[] = INCBIN_U32("graphics/items/icon_palettes/loaded_dice.gbapal.lz");
 
@@ -2099,3 +2100,15 @@ const u32 gItemIconPalette_SwapSnack[] = INCBIN_U32("graphics/items/icon_palette
 
 const u32 gItemIcon_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icons/twice_spiced_radish.4bpp.lz");
 const u32 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icon_palettes/twice_spiced_radish.gbapal.lz");
+
+// KUSTOM ITEM ICONS
+
+const u32 gItemIcon_KindBud[] = INCBIN_U32("graphics/items/icons/kind_bud.4bpp.lz");
+const u32 gItemIconPalette_KindBud[] = INCBIN_U32("graphics/items/icon_palettes/kind_bud.gbapal.lz");
+
+const u32 gItemIcon_Book[] = INCBIN_U32("graphics/items/icons/book.4bpp.lz");
+const u32 gItemIconPalette_Book[] = INCBIN_U32("graphics/items/icon_palettes/book.gbapal.lz");
+
+const u32 gItemIcon_BigHammer[] = INCBIN_U32("graphics/items/icons/big_hammer.4bpp.lz");
+const u32 gItemIconPalette_BigHammer[] = INCBIN_U32("graphics/items/icon_palettes/big_hammer.gbapal.lz");
+

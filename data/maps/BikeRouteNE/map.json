@@ -1,0 +1,49 @@
+{
+  "id": "MAP_BIKE_ROUTE_NE",
+  "name": "BikeRouteNE",
+  "layout": "LAYOUT_BIKE_ROUTE_NE",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_BIKE_ROUTE_GATO_N",
+      "offset": -64,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_BIKE_MAP_E",
+      "offset": -102,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_TROY",
+      "offset": 31,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_TROY_E",
+      "offset": 68,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

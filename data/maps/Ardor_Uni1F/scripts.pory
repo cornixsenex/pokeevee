@@ -1,0 +1,122 @@
+mapscripts Ardor_Uni1F_MapScripts {
+
+	MAP_SCRIPT_ON_LOAD {
+		call (Ardor_Uni1F_EventScript_OpenDoors)
+	}
+
+}
+
+script Ardor_Uni1F_EventScript_OpenDoors {
+	if (!flag(FLAG_OPEN_CLASS_GEOLOGY) ){
+		setmetatile (2, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_BIOLOGY) ){
+		setmetatile (7, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_CHEMISTRY) ){
+		setmetatile (12, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_MUSIC) ) {
+		setmetatile (17, 1, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_ARITHMETIC) ){
+		setmetatile (26, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_GRAMMAR) ){
+		setmetatile (31, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_ART) ){
+		setmetatile (36, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	end
+}
+
+script Ardor_Uni1F_EventScript_GeologyDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_GeologyDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_BiologyDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_BiologyDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_ChemistryDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_ChemistryDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_MusicDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_MusicDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_ArtDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_ArtDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni1F_EventScript_GrammarDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_GrammarDoorSign)
+	closemessage
+	release
+	end
+}
+
+
+
+script Ardor_Uni1F_EventScript_ArithmeticDoorSign {
+	lock
+	msgbox (Ardor_Uni1F_Text_ArithmeticDoorSign)
+	closemessage
+	release
+	end
+}
+
+text Ardor_Uni1F_Text_GeologyDoorSign {
+	format("GEOLOGIA\nMAGISTER PATRICIUS") 
+}
+
+text Ardor_Uni1F_Text_BiologyDoorSign {
+	format("BIOLOGIA\nMAGISTRA PHILIDA") 
+}
+
+text Ardor_Uni1F_Text_ChemistryDoorSign {
+	format("ALCHEMIA\nMAGISTER SEVERUS") 
+}
+
+text Ardor_Uni1F_Text_MusicDoorSign {
+	format("MUSICA\nMAGISTER GERARDUS") 
+}
+
+text Ardor_Uni1F_Text_ArtDoorSign {
+	format("ARS\nMAGISTRA GINA") 
+}
+
+text Ardor_Uni1F_Text_GrammarDoorSign {
+	format("GRAMMATICA\nMAGISTRA SMYTHA") 
+}
+
+text Ardor_Uni1F_Text_ArithmeticDoorSign {
+	format("ARITHMETICA\nMAGISTRA SADIA") 
+}
+
+
+
+

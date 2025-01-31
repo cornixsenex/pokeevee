@@ -2,7 +2,7 @@ Route132_MapScripts::
 	.byte 0
 
 Route132_EventScript_Gilbert::
-	trainerbattle_single TRAINER_GILBERT, Route132_Text_GilbertIntro, Route132_Text_GilbertDefeat
+//	trainerbattle_single TRAINER_GILBERT, Route132_Text_GilbertIntro, Route132_Text_GilbertDefeat
 	msgbox Route132_Text_GilbertPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -16,10 +16,10 @@ Route132_EventScript_Ronald::
 	msgbox Route132_Text_RonaldPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route132_EventScript_Kiyo::
-	trainerbattle_single TRAINER_KIYO, Route132_Text_KiyoIntro, Route132_Text_KiyoDefeat
-	msgbox Route132_Text_KiyoPostBattle, MSGBOX_AUTOCLOSE
-	end
+//Route132_EventScript_Kiyo::
+//	trainerbattle_single TRAINER_KIYO, Route132_Text_KiyoIntro, Route132_Text_KiyoDefeat
+//	msgbox Route132_Text_KiyoPostBattle, MSGBOX_AUTOCLOSE
+//	end
 
 Route132_EventScript_Paxton::
 	trainerbattle_single TRAINER_PAXTON, Route132_Text_PaxtonIntro, Route132_Text_PaxtonDefeat

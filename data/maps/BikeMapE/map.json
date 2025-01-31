@@ -1,0 +1,54 @@
+{
+  "id": "MAP_BIKE_MAP_E",
+  "name": "BikeMapE",
+  "layout": "LAYOUT_BIKE_MAP_E",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_120",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_BIKE_MAP_W",
+      "offset": 2,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_BIKE_ROUTE_NE",
+      "offset": 102,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_BIKE_ROUTE_FARM",
+      "offset": -46,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_TROY",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_HIPPODROME",
+      "offset": 118,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

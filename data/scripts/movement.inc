@@ -100,6 +100,35 @@ Common_Movement_WalkUp:
 	walk_up
 	step_end
 
+Common_Movement_WalkDown:
+	walk_down
+	step_end
+
+Common_Movement_WalkRight:
+	walk_right
+	step_end
+
+Common_Movement_WalkLeft:
+	walk_left
+	step_end
+
+@ Cornix Customs
+Common_Movement_WalkNorthEast::
+	walk_diag_northeast
+	step_end
+
+Common_Movement_WalkNorthWest::
+	walk_diag_northwest
+	step_end
+
+Common_Movement_WalkSouthWest::
+	walk_diag_southwest
+	step_end
+
+Common_Movement_WalkSouthEast::
+	walk_diag_southeast
+	step_end
+
 @ Unused
 Common_Movement_WalkUp2::
 	walk_up

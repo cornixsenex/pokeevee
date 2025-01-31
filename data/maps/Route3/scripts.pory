@@ -1,0 +1,456 @@
+mapscripts Route3_MapScripts {}
+
+
+script Route3_EventScript_LeafTrigger1 {
+	lockall
+	addobject (13)
+	showobjectat (13, MAP_ROUTE3)	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (13, Route3_Movement_LeafIntro1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route3_EventScript_Leaf1)
+	releaseall
+	end
+}
+
+script Route3_EventScript_LeafTrigger2 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)	
+	addobject (13)
+	showobjectat (13, MAP_ROUTE3)
+	applymovement (13, Route3_Movement_LeafIntro2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	call (Route3_EventScript_Leaf1)
+	releaseall
+	end
+}
+
+script Route3_EventScript_MewTrigger1 {
+	lockall	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)	
+	waitmovement (0)
+	playmoncry (SPECIES_MEW, 0)
+	fadescreen (1)
+	waitmoncry
+	removeobject (15)
+	setflag (FLAG_SILVANWOODS_HIDEFIGHT2)
+	setvar (VAR_ROUTE3_STATE, 3)
+	fadescreen (0)
+	releaseall
+	end
+}
+
+script Route3_EventScript_RivalTrigger1 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)	
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Route3_Movement_RivalPlayer1)
+	applymovement (16, Common_Movement_FaceLeft)
+	waitmovement (0)
+	call (Route3_EventScript_Rival)
+	releaseall 
+	end
+}
+
+script Route3_EventScript_RivalTrigger2 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)	
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Route3_Movement_RivalPlayer1B)
+	applymovement (16, Common_Movement_FaceLeft)
+	waitmovement (0)
+	call (Route3_EventScript_Rival)
+	releaseall 
+	end
+}
+
+script Route3_EventScript_Rival {
+	load_field_pic (4, 190, 98)
+	msgbox (Route3_Text_Leaf2)
+	waitmovement (0)
+	applymovement (16, Common_Movement_FaceLeft)
+	waitmovement (0)
+	closemessage
+	destroy_field_pic (4)
+	addobject (17)
+	showobjectat (17, MAP_ROUTE3)
+	applymovement (17, Route3_Movement_Rival1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)	
+	waitmovement (0)
+	load_field_pic (3, 190, 98)
+	msgbox (Route3_Text_RivalIntro)
+	destroy_field_pic (3)
+	closemessage
+	trainerbattle_no_intro(TRAINER_RIVAL2, Route3_Text_RivalLost)
+	load_field_pic(3, 190, 98)
+	msgbox (Route3_Text_RivalPost)
+	destroy_field_pic (3)
+	closemessage
+	applymovement (17, Route3_Movement_Rival2)
+	waitmovement (0)
+	removeobject (17)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	load_field_pic (4, 190, 98)
+	msgbox (Route3_Text_Leaf3)
+	destroy_field_pic (4)
+	closemessage	
+	applymovement (16, Route3_Movement_RivalLeafExit)		
+	waitmovement (0)
+	removeobject (16)
+	setvar (VAR_ROUTE3_STATE, 4)
+	setflag (FLAG_HIDE_SILVANWOODS_LEAF2)
+	clearflag (FLAG_HIDE_SILVANWOODS_LEAF1)
+	return
+}
+
+script Route3_EventScript_Leaf1 {
+	load_field_pic(4, 190, 98)
+	msgbox (Route3_Text_Leaf1)
+	destroy_field_pic (4)
+	closemessage
+	trainerbattle_no_intro(TRAINER_LEAF1, Route3_Text_LeafLost)
+	load_field_pic(4, 190, 98)
+	msgbox (Route3_Text_Leaf1Post)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (13, Route3_Movement_LeafExit)
+	waitmovement (0)
+	removeobject (13)
+	setvar (VAR_ROUTE3_STATE, 1)
+	setflag (FLAG_SILVANWOODS_HIDEFIGHT1)
+	return
+}
+
+script Route3_EventScript_Ross {
+	trainerbattle_single(TRAINER_ROSS, Route3_Text_RossIntro, Route3_Text_RossLost)
+	msgbox (Route3_Text_RossPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Izzy {
+	trainerbattle_single(TRAINER_IZZY, Route3_Text_IzzyIntro, Route3_Text_IzzyLost)
+	msgbox (Route3_Text_IzzyPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Ricardo {
+	trainerbattle_single(TRAINER_RICARDO, Route3_Text_RicardoIntro, Route3_Text_RicardoLost)
+	msgbox (Route3_Text_RicardoPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Pedro {
+	trainerbattle_single(TRAINER_PEDRO, Route3_Text_PedroIntro, Route3_Text_PedroLost)
+	msgbox (Route3_Text_PedroPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Monica {
+	trainerbattle_single(TRAINER_MONICA, Route3_Text_MonicaIntro, Route3_Text_MonicaLost)
+	msgbox (Route3_Text_MonicaPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Amber {
+	trainerbattle_single(TRAINER_AMBER, Route3_Text_AmberIntro, Route3_Text_AmberLost)
+	msgbox (Route3_Text_AmberPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Dustin {
+	trainerbattle_single(TRAINER_DUSTIN, Route3_Text_DustinIntro, Route3_Text_DustinLost)
+	msgbox (Route3_Text_DustinPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Jon {
+	trainerbattle_single(TRAINER_JON, Route3_Text_JonIntro, Route3_Text_JonLost)
+	msgbox (Route3_Text_JonPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Joe {
+	trainerbattle_single(TRAINER_JOE, Route3_Text_JoeIntro, Route3_Text_JoeLost)
+	msgbox (Route3_Text_JoePost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Ryan {
+	trainerbattle_single(TRAINER_RYAN, Route3_Text_RyanIntro, Route3_Text_RyanLost)
+	msgbox (Route3_Text_RyanPost)	
+	closemessage
+	end
+}
+script Route3_EventScript_Megan {
+	trainerbattle_single(TRAINER_MEGAN, Route3_Text_MeganIntro, Route3_Text_MeganLost)
+	msgbox (Route3_Text_MeganPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_Devon {
+	trainerbattle_single(TRAINER_DEVON, Route3_Text_DevonIntro, Route3_Text_DevonLost)
+	msgbox (Route3_Text_DevonPost)	
+	closemessage
+	end
+}
+
+script Route3_EventScript_OldMan {
+	lock
+	faceplayer
+	msgbox (Route3_Text_OldMan)
+	closemessage
+	release
+	end
+}
+
+script Route3_EventScript_SaeclaraSign {
+	lock
+	msgbox (Route3_Text_SaeclaraSign)
+	closemessage
+	release
+	end
+}
+
+movement Route3_Movement_LeafIntro1 {
+	walk_down
+	walk_right
+	walk_down
+	face_left
+}
+
+movement Route3_Movement_LeafIntro2 {
+	walk_down * 2
+	face_right
+}
+
+movement Route3_Movement_LeafExit {
+	walk_up * 2
+}
+
+movement Route3_Movement_RivalPlayer1 {
+	walk_right
+	walk_down
+	walk_right
+}
+
+movement Route3_Movement_RivalPlayer1B {
+	walk_right * 2
+}
+
+movement Route3_Movement_Rival1 {
+	walk_up * 2
+	walk_right * 3
+}
+
+movement Route3_Movement_Rival2 {
+	walk_left * 2
+	walk_down * 2
+}
+
+movement Route3_Movement_RivalLeafExit {
+	walk_up
+	walk_left * 4
+	walk_down * 3
+}
+	
+
+text Route3_Text_RossIntro {
+	format("I'm learning how to swim! Here check this out!")
+}
+
+text Route3_Text_RossLost {
+	format("Help mom I'm gonna drown!")
+}
+
+text Route3_Text_RossPost {
+	format("Wow you showed me! Looks like I need to practice dog paddling.")
+}
+
+
+text Route3_Text_IzzyIntro {
+	format("Eww gross get away from me you weirdo!")
+}
+
+text Route3_Text_IzzyLost {
+	format("Please help please help!")
+}
+
+text Route3_Text_IzzyPost {
+	format("I think you made me wet.")
+}
+
+text Route3_Text_RicardoIntro {
+	format("I brought my son here to play on the beach.")
+}
+
+text Route3_Text_RicardoLost {
+	format("You're making me look weak...")
+}
+
+text Route3_Text_RicardoPost {
+	format("Have you explored the cave carved in the rock down by the sea?")
+}
+
+text Route3_Text_PedroIntro {
+	format("Me and my dad are gonna kick your ass!")
+}
+
+text Route3_Text_PedroLost {
+	format("Dad how did we just loose?")
+}
+
+text Route3_Text_PedroPost {
+	format("Okay, you're good.")
+}
+
+text Route3_Text_MonicaIntro {
+	format("Hey! Stay away from my children.")
+}
+
+text Route3_Text_MonicaLost {
+	format("You know, I'm still available.")
+}
+
+text Route3_Text_MonicaPost {
+	format("Nice to see you!")
+}
+
+text Route3_Text_AmberIntro {
+	format("My mommy took me and Ross to the beach!")
+}
+
+text Route3_Text_AmberLost {
+	format("No, Mom!")
+}
+
+text Route3_Text_AmberPost {
+	format("You hurt my feelings, go awawy.")
+}
+
+text Route3_Text_DustinIntro {
+	format("Hey man do you ever want to race birds?")
+}
+
+text Route3_Text_DustinLost {
+	format("That's not correct.")
+}
+
+text Route3_Text_DustinPost {
+	format("Did you go thrugh the woods?")
+}
+
+text Route3_Text_JonIntro {
+	format("Today I thought I'd be a fisherman.")
+}
+
+text Route3_Text_JonLost {
+	format("I've lost my fish...")
+}
+
+text Route3_Text_JonPost {
+	format("Let's drink a few more beers!")
+}
+
+text Route3_Text_JoeIntro {
+	format("My friend Jon ain't great at outdoorsy stuff.")
+}
+
+text Route3_Text_JoeLost {
+	format("So much for that.")
+}
+
+text Route3_Text_JoePost {
+	format("Think I'll try a new bait.")
+}
+
+text Route3_Text_RyanIntro {
+	format("The Bugs!\nTHE BUGS!!!")
+}
+
+text Route3_Text_RyanLost {
+	format("You helped me scratch the bugs.")
+}
+
+text Route3_Text_RyanPost {
+	format("Thank you a lot, these bugs are dangerous.")
+}
+
+text Route3_Text_MeganIntro {
+	format("Hey, didn't you use to make fun of me.")
+}
+
+text Route3_Text_MeganLost {
+	format("Looks like you're still laughing.")
+}
+
+text Route3_Text_MeganPost {
+	format("Hey haven't you heard anything about a new freeway the party was planning to build through here?")
+}
+
+text Route3_Text_DevonIntro {
+	format("You're not headed into the woods are you?")
+}
+
+text Route3_Text_DevonLost {
+	format("You're pretty tough.")
+}
+
+text Route3_Text_DevonPost {
+	format("You should be safe enough, but be careful that you do not get lost.")
+}
+
+text Route3_Text_Leaf1 {
+	format("Hey {PLAYER} long time no see how have you been? While you slowpokes were getting stoned in town I was training my fresh caught Pokemon. Look {PLAYER} they're almost as cute as I am.")
+}
+
+text Route3_Text_LeafLost {
+	format("Wow {PLAYER} looks like I have a lot to learn")
+}
+
+text Route3_Text_Leaf1Post {
+	format("Haha you're way too good for me.\p But wait weren't you supposed to meet me with my dad?\p We need to find him! Where could he be?\p DAD?!")
+}
+
+text Route3_Text_OldMan {
+	format("Caverna Ilium was this cave's name before The Party changed it to Beach Cave.\p You should only go in if you're prepared.")
+}
+
+text Route3_Text_Leaf2 {
+	format("Look out {PLAYER} it's {RIVAL} this is a trap!")
+}
+
+text Route3_Text_RivalIntro {
+	format ("It's {PLAYER} is it? What a disgusting name though fitting for an animal like you. I spent six hours saving Humpty's life after the hospital turned me away but in the end I could not bring him back. You killed my only friend and now you're trapped the both of you like flies caught in my net.")
+}
+
+text Route3_Text_RivalLost {
+	format ("These pathetic insects all let me down!!")
+}
+
+text Route3_Text_RivalPost {
+	format ("You anal sniffing worm, you piece of filth! I will not have you make a fool of me. Already you have stolen my whole life from me. There's nothing to go back, nothing to return to. I'm all alone with nothing, and therefore nothing to loose. I swear to you now {PLAYER} on my own heart and by the mighty power of the sun, in recognition of the River Styx, and under penalty of doom and death you will be met with Justice by my hand. Never know rest for I will never sleep until that day when I have made you pay.")
+}
+
+text Route3_Text_Leaf3 {
+	format ("Wow {PLAYER} I'm glad you're here all big and strong to protect me from creeps like that {RIVAL}. It's getting late and I want to see Mew! C'mon silly we need to find my dad!")
+}
+
+text Route3_Text_SaeclaraSign {
+	format("City Saeclara ->\n<- Silvan Woods\n <- Bulbus Town")
+}
+

@@ -246,6 +246,12 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush                   @ 0xe4
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
+
+
+@@@	 IF THIS TABLE ABOVE CHANGES
+@@@	 DOUBLE CHECK THE HEX CODES DONT SKIP
+@@@	 THE HEX CODES NEED TO MATCH IN /asm/macros/event.inc as well
+
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
 	.endif

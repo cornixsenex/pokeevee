@@ -97,7 +97,11 @@
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
 #define VAR_UNUSED_0x404E                                0x404E // Unused Var
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
+
+//ACTUALLY HERE BEGINS THE USABLE VARS
+
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
+#define VAR_ROUTE1_STATE           			             0x4050
 #define VAR_OLDALE_TOWN_STATE                            0x4051
 #define VAR_DEWFORD_TOWN_STATE                           0x4052 // Unused Var
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
@@ -111,168 +115,237 @@
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
 #define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
-#define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var
-#define VAR_ROUTE101_STATE                               0x4060
-#define VAR_ROUTE102_STATE                               0x4061 // Unused Var
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
-#define VAR_ROUTE104_STATE                               0x4063
-#define VAR_ROUTE105_STATE                               0x4064 // Unused Var
-#define VAR_ROUTE106_STATE                               0x4065 // Unused Var
-#define VAR_ROUTE107_STATE                               0x4066 // Unused Var
-#define VAR_ROUTE108_STATE                               0x4067 // Unused Var
-#define VAR_ROUTE109_STATE                               0x4068 // Unused Var
-#define VAR_ROUTE110_STATE                               0x4069
-#define VAR_ROUTE111_STATE                               0x406A // Unused Var
-#define VAR_ROUTE112_STATE                               0x406B // Unused Var
-#define VAR_ROUTE113_STATE                               0x406C // Unused Var
-#define VAR_ROUTE114_STATE                               0x406D // Unused Var
-#define VAR_ROUTE115_STATE                               0x406E // Unused Var
-#define VAR_ROUTE116_STATE                               0x406F
-#define VAR_ROUTE117_STATE                               0x4070 // Unused Var
-#define VAR_ROUTE118_STATE                               0x4071
-#define VAR_ROUTE119_STATE                               0x4072
-#define VAR_ROUTE120_STATE                               0x4073 // Unused Var
-#define VAR_ROUTE121_STATE                               0x4074
-#define VAR_ROUTE122_STATE                               0x4075 // Unused Var
-#define VAR_ROUTE123_STATE                               0x4076 // Unused Var
-#define VAR_ROUTE124_STATE                               0x4077 // Unused Var
+
+
+
+
+
+///HERE BEGINS THE REPURPOSED VARS FROM EMERALD - ACTUALLY SEE ABOVE THERE ARE MANY MORE AVAILABLE
+
+
+#define VAR_ALDEON_SCHOOL_STATE                          0x405E // 0: Track progress inside School (increment var on each trainer defeated, glassman open at 4, peaves open at 5, Sully open at 10, 11 is final 
+																// 1: 
+																// 2: 
+#define VAR_SYS_LEVEL_CAP                                0x405F // Hold the Level Cap
+#define VAR_GRANNY_STATE                                 0x4060 // Prologue and trigger Blue1 fight.
+																// 0: New Game - trigger Granny1 scene
+																// 1: After Grandma 1 scene - granny in kitchen cooking, leaf waits outside, Eevee in backyard chillin, TV has boring news on. NO Trigger on from GrannyCabin
+																// 2: Trigger Leaf game 
+																// 3: During Leaf game (She's in her spot)
+																// 4: During Leaf ambush (Trigger  and show Ambush)
+																// 5: After Leaf ambush (Show eevee, leaf, granny outfront) 
+																// 6: After granny in front the house - trigger Granny Scene 2
+																// 7: After granny scene 2 - granny at the table - trigger Aldeon Leaf Battle
+																// 8: After Leaf Battle - during school
+																// 9: After Graduate School - trigger Big Storm
+																//10: During BigStorm, trigger StormBlock et Granny storm scene
+																//11: After Granny Scene 3, setup bed trigger
+																//12: After bed mew scene, trigger TV on return
+																//13: After bed mew scene, trigger TV on return
+																//14: After granny scene 4, setup Blue Battle
+																//15: After Blue battle, setup see Mew cabin
+																//16: After seen Mew cabin, default final state Mew cannot be seen, Granny hidden maybe endgame changes something
+																//17: ? Maybe mew cabin encounter? Maybe 18 granny returns idk endgame stuff
+
+#define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
+#define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 
+#define VAR_CAPITAL_STATE                                0x4063 // Gio trigger
+#define VAR_ROUTE9_STATE                                 0x4064 // Triggers route9 block
+#define VAR_SLABS_STATE                                  0x4065 // Hides bikes after the rival battle
+#define VAR_WHJ_STATE                                    0x4066 // Changed in SWHJ; door trigger at WHJ
+#define VAR_SWHJ_STATE                                   0x4067 // Changed with insurance; door trigger at SWHJ
+#define VAR_HOSPITAL_FLOOR                               0x4068 // Hospital elevator floor control
+#define VAR_HOSPITAL_STATE                               0x4069 // Man on 2nd floor state
+#define VAR_SALTYSPITOON_STATE                           0x406B // Controls line and door to the salty spitoon
+#define VAR_GANG_STATE                                   0x406C // Controls SS and warehouse quest
+#define VAR_UNI_STATE                                    0x406D // Set by Uni Consul
+#define VAR_UNI_TERM_STATE                               0x406E // Counts completed classes per term 
+#define VAR_CANVAS_STEP_COUNTER                          0x406F // Counts steps player takes on the canvas
+#define VAR_LOGIC_CLASS_STATE                            0x4070 // Controls the Logic Puzzle and triggers test on return to class
+#define VAR_ARGO_STATE                                   0x4071 //Controls Argo Quest
+																//0: Argo at sea 
+																//1: Argo in transit to Colchis 
+																//2: Argo at Big Island 
+																//3: Jason at cave entrance, Philoctetes Abducted 
+																//4: Philoctetes found mad in the cave
+																//5: Philoctetes freed from Medea's spell
+																//6: After Prometheus unchained and battle (Cave ready for Spearow release)
+																//7: Cave opened; Spearow released; Setup colchis intro script; Jason in Colchis 
+																//8: Colchis introd
+																//9: Trigger Prison Script
+																//10: Prison Script triggered
+																//11: In sanctum (Sanctum Trigger)
+																//12: Sanctum done Trigger deactivated
+																//13: Unlucky, skipped? // EMPTY
+																//14: Trigger happy Argo ending in BigIslandN
+																//15: Argo has sailed to  Bulbus, Strike cleared, Argo Boat is fully open @ Bulbus, Medea Post script is setup)
+																//16: Escape from Colchis! Hide door metatiles
+																//17: Nanny w/ Guard. Guard ready to open the door
+																//18: Colchis Door Open. Trigger intro script on BigIslandN
+																//19: Argo sailed into the wilds (Jason had no Mareep) incremet to prevent BigIslandN loop OnFrame
+																//20: ITS OVER
+#define VAR_IGNISMONS_STATE                              0x4072 // Controls Ignis Mons Color Puzzle
+																// 0: Blank
+																// 1: Red
+																// 2: Blue
+																// 3: Green
+
+#define VAR_FALSEFLOOR_WAIT                              0x4073 // Default 0, set to 1 when continuously falling
+																
+#define VAR_NESTOR_STATE                                 0x4074 //0: BEGIN
+																//1: Talk to Nestor after Dioscuri return home, Triggers NestorGather1 On Tucson Frame Table
+																//2: After NestorGather1. Nestor check for guests arrived. Suitors ready to give invitations. Party members ready to be invited.
+																//3: Talk to Nestor after all guests have arrived. Trigger NestorGather2 on Tucson Frame Table
+																//4: After NestorGather2 - Nestor house empty. Church ready for NestorChurch script
+#define VAR_ULYSSES_STATE                                0x4075 // - Tracks Odyssey and updates maps associated
+																//0: BEGIN
+																//1: END
+#define VAR_AGAMEMNON_STATE                              0x4076 // - Tracks Orestreia and updates maps associated
+#define VAR_AENEAS_STATE                                 0x4077 // - Tracks Aeneid and updates maps associated
+																
+						// BREAK
+
+
+
+
 #define VAR_ROUTE125_STATE                               0x4078 // Unused Var
 #define VAR_ROUTE126_STATE                               0x4079 // Unused Var
 #define VAR_ROUTE127_STATE                               0x407A // Unused Var
-#define VAR_ROUTE128_STATE                               0x407B
-#define VAR_ROUTE129_STATE                               0x407C // Unused Var
-#define VAR_ROUTE130_STATE                               0x407D // Unused Var
-#define VAR_ROUTE131_STATE                               0x407E // Unused Var
-#define VAR_ROUTE132_STATE                               0x407F // Unused Var
-#define VAR_ROUTE133_STATE                               0x4080 // Unused Var
-#define VAR_ROUTE134_STATE                               0x4081 // Unused Var
-#define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
-#define VAR_UNUSED_0x4083                                0x4083 // Unused Var
-#define VAR_BIRCH_LAB_STATE                              0x4084
-#define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
-#define VAR_CONTEST_HALL_STATE                           0x4086
-#define VAR_CABLE_CLUB_STATE                             0x4087
-#define VAR_CONTEST_TYPE                                 0x4088
-#define VAR_SECRET_BASE_INITIALIZED                      0x4089
-#define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
-#define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
-#define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
-#define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
-#define VAR_DEVON_CORP_3F_STATE                          0x408F
-#define VAR_BRINEY_HOUSE_STATE                           0x4090
-#define VAR_UNUSED_0x4091                                0x4091 // Unused Var
-#define VAR_LITTLEROOT_INTRO_STATE                       0x4092
-#define VAR_MAUVILLE_GYM_STATE                           0x4093
-#define VAR_LILYCOVE_MUSEUM_2F_STATE                     0x4094
-#define VAR_LILYCOVE_FAN_CLUB_STATE                      0x4095
-#define VAR_BRINEY_LOCATION                              0x4096
-#define VAR_INIT_SECRET_BASE                             0x4097
-#define VAR_PETALBURG_WOODS_STATE                        0x4098
-#define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
-#define VAR_RUSTURF_TUNNEL_STATE                         0x409A
-#define VAR_UNUSED_0x409B                                0x409B // Unused Var
-#define VAR_ELITE_4_STATE                                0x409C
-#define VAR_UNUSED_0x409D                                0x409D // Unused Var
+#define VAR_ROUTE128_STATE                   		     0x407B
+#define VAR_ROUTE129_STATE                   		     0x407C // Unused Var
+#define VAR_ROUTE130_STATE                   		     0x407D // Unused Var
+#define VAR_ROUTE131_STATE                   		     0x407E // Unused Var
+#define VAR_ROUTE132_STATE                   		     0x407F // Unused Var
+#define VAR_ROUTE133_STATE                   		     0x4080 // Unused Var
+#define VAR_ROUTE134_STATE                   		     0x4081 // Unused Var
+#define VAR_LITTLEROOT_HOUSES_STATE_MAY      		     0x4082
+#define VAR_UNUSED_0x4083                    		     0x4083 // Unused Var
+#define VAR_BIRCH_LAB_STATE                  		     0x4084
+#define VAR_PETALBURG_GYM_STATE              		     0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
+#define VAR_CONTEST_HALL_STATE               		     0x4086
+#define VAR_CABLE_CLUB_STATE                 		     0x4087
+#define VAR_CONTEST_TYPE                     		     0x4088
+#define VAR_SECRET_BASE_INITIALIZED          		     0x4089
+#define VAR_CONTEST_PRIZE_PICKUP             		     0x408A
+#define VAR_UNUSED_0x408B                    		     0x408B // Unused Var
+#define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN  		     0x408C
+#define VAR_LITTLEROOT_RIVAL_STATE           		     0x408D
+#define VAR_BOARD_BRINEY_BOAT_STATE          		     0x408E
+#define VAR_DEVON_CORP_3F_STATE              		     0x408F
+#define VAR_BRINEY_HOUSE_STATE               		     0x4090
+#define VAR_UNUSED_0x4091                    		     0x4091 // Unused Var
+#define VAR_LITTLEROOT_INTRO_STATE           		     0x4092
+#define VAR_MAUVILLE_GYM_STATE               		     0x4093
+#define VAR_LILYCOVE_MUSEUM_2F_STATE         		     0x4094
+#define VAR_LILYCOVE_FAN_CLUB_STATE          		     0x4095
+#define VAR_BRINEY_LOCATION                  		     0x4096
+#define VAR_INIT_SECRET_BASE                 		     0x4097
+#define VAR_PETALBURG_WOODS_STATE            		     0x4098
+#define VAR_LILYCOVE_CONTEST_LOBBY_STATE     		     0x4099
+#define VAR_RUSTURF_TUNNEL_STATE             		     0x409A
+#define VAR_UNUSED_0x409B                    		     0x409B // Unused Var
+#define VAR_ELITE_4_STATE                    		     0x409C
+#define VAR_UNUSED_0x409D                    		     0x409D // Unused Var
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
-#define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
-#define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
-#define VAR_UNUSED_0x40A1                                0x40A1 // Unused var
-#define VAR_SEAFLOOR_CAVERN_STATE                        0x40A2
-#define VAR_CABLE_CAR_STATION_STATE                      0x40A3
-#define VAR_SAFARI_ZONE_STATE                            0x40A4  // 0: In or out of SZ, 1: Player exiting SZ, 2: Player entering SZ
-#define VAR_TRICK_HOUSE_BEING_WATCHED_STATE              0x40A5
-#define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER               0x40A6
-#define VAR_TRICK_HOUSE_ENTRANCE_STATE                   0x40A7
-#define VAR_UNUSED_0x40A8                                0x40A8 // Unused Var
-#define VAR_CYCLING_CHALLENGE_STATE                      0x40A9
-#define VAR_SLATEPORT_MUSEUM_1F_STATE                    0x40AA
-#define VAR_TRICK_HOUSE_PUZZLE_1_STATE                   0x40AB
-#define VAR_TRICK_HOUSE_PUZZLE_2_STATE                   0x40AC
-#define VAR_TRICK_HOUSE_PUZZLE_3_STATE                   0x40AD
-#define VAR_TRICK_HOUSE_PUZZLE_4_STATE                   0x40AE
-#define VAR_TRICK_HOUSE_PUZZLE_5_STATE                   0x40AF
-#define VAR_TRICK_HOUSE_PUZZLE_6_STATE                   0x40B0
-#define VAR_TRICK_HOUSE_PUZZLE_7_STATE                   0x40B1
-#define VAR_TRICK_HOUSE_PUZZLE_8_STATE                   0x40B2
-#define VAR_WEATHER_INSTITUTE_STATE                      0x40B3
-#define VAR_SS_TIDAL_STATE                               0x40B4
-#define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
-#define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
-#define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
-#define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
-#define VAR_MT_PYRE_STATE                                0x40B9
-#define VAR_NEW_MAUVILLE_STATE                           0x40BA
-#define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
-#define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON                0x40BC
-#define VAR_JAGGED_PASS_ASH_WEATHER                      0x40BD
-#define VAR_GLASS_WORKSHOP_STATE                         0x40BE
-#define VAR_METEOR_FALLS_STATE                           0x40BF
-#define VAR_SOOTOPOLIS_MYSTERY_EVENTS_STATE              0x40C0
-#define VAR_TRICK_HOUSE_PRIZE_PICKUP                     0x40C1
-#define VAR_PACIFIDLOG_TM_RECEIVED_DAY                   0x40C2
-#define VAR_VICTORY_ROAD_1F_STATE                        0x40C3
-#define VAR_FOSSIL_RESURRECTION_STATE                    0x40C4
-#define VAR_WHICH_FOSSIL_REVIVED                         0x40C5
-#define VAR_STEVENS_HOUSE_STATE                          0x40C6
-#define VAR_OLDALE_RIVAL_STATE                           0x40C7
-#define VAR_JAGGED_PASS_STATE                            0x40C8
-#define VAR_SCOTT_PETALBURG_ENCOUNTER                    0x40C9
-#define VAR_SKY_PILLAR_STATE                             0x40CA
-#define VAR_MIRAGE_TOWER_STATE                           0x40CB
-#define VAR_FOSSIL_MANIAC_STATE                          0x40CC
-#define VAR_CABLE_CLUB_TUTORIAL_STATE                    0x40CD
-#define VAR_FRONTIER_BATTLE_MODE                         0x40CE
-#define VAR_FRONTIER_FACILITY                            0x40CF
-#define VAR_HAS_ENTERED_BATTLE_FRONTIER                  0x40D0 // Var is used like a flag.
-#define VAR_SCOTT_STATE                                  0x40D1
-#define VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE               0x40D2
-#define VAR_DEX_UPGRADE_JOHTO_STARTER_STATE              0x40D3
-#define VAR_SS_TIDAL_SCOTT_STATE                         0x40D4 // Always equal to FLAG_MET_SCOTT_ON_SS_TIDAL
-#define VAR_ROAMER_POKEMON                               0x40D5 // 0 = Latias, 1 = Latios
-#define VAR_TRAINER_HILL_IS_ACTIVE                       0x40D6
-#define VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE                 0x40D7
-#define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
+#define VAR_MOSSDEEP_SPACE_CENTER_STATE      		     0x409F
+#define VAR_SLATEPORT_HARBOR_STATE           		     0x40A0
+#define VAR_UNUSED_0x40A1                    		     0x40A1 // Unused var
+#define VAR_SEAFLOOR_CAVERN_STATE            		     0x40A2
+#define VAR_CABLE_CAR_STATION_STATE          		     0x40A3
+#define VAR_SAFARI_ZONE_STATE                		     0x40A4  // 0: In or out of SZ, 1: Player exiting SZ, 2: Player entering SZ
+#define VAR_TRICK_HOUSE_BEING_WATCHED_STATE  		     0x40A5
+#define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER   		     0x40A6
+#define VAR_TRICK_HOUSE_ENTRANCE_STATE       		     0x40A7
+#define VAR_UNUSED_0x40A8                    		     0x40A8 // Unused Var
+#define VAR_CYCLING_CHALLENGE_STATE          		     0x40A9
+#define VAR_SLATEPORT_MUSEUM_1F_STATE        		     0x40AA
+#define VAR_TRICK_HOUSE_PUZZLE_1_STATE       		     0x40AB
+#define VAR_TRICK_HOUSE_PUZZLE_2_STATE       		     0x40AC
+#define VAR_TRICK_HOUSE_PUZZLE_3_STATE       		     0x40AD
+#define VAR_TRICK_HOUSE_PUZZLE_4_STATE       		     0x40AE
+#define VAR_TRICK_HOUSE_PUZZLE_5_STATE       		     0x40AF
+#define VAR_TRICK_HOUSE_PUZZLE_6_STATE       		     0x40B0
+#define VAR_TRICK_HOUSE_PUZZLE_7_STATE       		     0x40B1
+#define VAR_TRICK_HOUSE_PUZZLE_8_STATE       		     0x40B2
+#define VAR_WEATHER_INSTITUTE_STATE          		     0x40B3
+#define VAR_SS_TIDAL_STATE                   		     0x40B4
+#define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR  		     0x40B5
+#define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2     		     0x40B6 // Leftover from RS, never set
+#define VAR_SLATEPORT_FAN_CLUB_STATE         		     0x40B7
+#define VAR_UNUSED_0x40B8                    		     0x40B8 // Unused Var
+#define VAR_MT_PYRE_STATE                    		     0x40B9
+#define VAR_NEW_MAUVILLE_STATE               		     0x40BA
+#define VAR_UNUSED_0x40BB                    		     0x40BB // Unused Var
+#define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON    		     0x40BC
+#define VAR_JAGGED_PASS_ASH_WEATHER          		     0x40BD
+#define VAR_GLASS_WORKSHOP_STATE             		     0x40BE
+#define VAR_METEOR_FALLS_STATE               		     0x40BF
+#define VAR_SOOTOPOLIS_MYSTERY_EVENTS_STATE  		     0x40C0
+#define VAR_TRICK_HOUSE_PRIZE_PICKUP         		     0x40C1
+#define VAR_PACIFIDLOG_TM_RECEIVED_DAY       		     0x40C2
+#define VAR_VICTORY_ROAD_1F_STATE            		     0x40C3
+#define VAR_FOSSIL_RESURRECTION_STATE        		     0x40C4
+#define VAR_WHICH_FOSSIL_REVIVED             		     0x40C5
+#define VAR_STEVENS_HOUSE_STATE              		     0x40C6
+#define VAR_OLDALE_RIVAL_STATE               		     0x40C7
+#define VAR_JAGGED_PASS_STATE                		     0x40C8
+#define VAR_SCOTT_PETALBURG_ENCOUNTER        		     0x40C9
+#define VAR_SKY_PILLAR_STATE                 		     0x40CA
+#define VAR_MIRAGE_TOWER_STATE               		     0x40CB
+#define VAR_FOSSIL_MANIAC_STATE              		     0x40CC
+#define VAR_CABLE_CLUB_TUTORIAL_STATE        		     0x40CD
+#define VAR_FRONTIER_BATTLE_MODE             		     0x40CE
+#define VAR_FRONTIER_FACILITY                		     0x40CF
+#define VAR_HAS_ENTERED_BATTLE_FRONTIER      		     0x40D0 // Var is used like a flag.
+#define VAR_SCOTT_STATE                      		     0x40D1
+#define VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE   		     0x40D2
+#define VAR_DEX_UPGRADE_JOHTO_STARTER_STATE  		     0x40D3
+#define VAR_SS_TIDAL_SCOTT_STATE             		     0x40D4 // Always equal to FLAG_MET_SCOTT_ON_SS_TIDAL
+#define VAR_ROAMER_POKEMON                   		     0x40D5 // 0 = Latias, 1 = Latios
+#define VAR_TRAINER_HILL_IS_ACTIVE           		     0x40D6
+#define VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE     		     0x40D7
+#define VAR_SOOTOPOLIS_WALLACE_STATE         		     0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
-#define VAR_REGISTER_BIRCH_STATE                         0x40DA
-#define VAR_UNUSED_0x40DB                                0x40DB // Unused Var
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
-#define VAR_GIFT_PICHU_SLOT                              0x40DD
-#define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
-#define VAR_GIFT_UNUSED_2                                0x40DF // Var is written to, but never read
-#define VAR_GIFT_UNUSED_3                                0x40E0 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_4                                0x40E1 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
-#define VAR_DAILY_SLOTS                                  0x40E6
-#define VAR_DAILY_WILDS                                  0x40E7
-#define VAR_DAILY_BLENDER                                0x40E8
-#define VAR_DAILY_PLANTED_BERRIES                        0x40E9
-#define VAR_DAILY_PICKED_BERRIES                         0x40EA
-#define VAR_DAILY_ROULETTE                               0x40EB
-#define VAR_SECRET_BASE_STEP_COUNTER                     0x40EC // Used by Secret Base TV programs
-#define VAR_SECRET_BASE_LAST_ITEM_USED                   0x40ED // Used by Secret Base TV programs
-#define VAR_SECRET_BASE_LOW_TV_FLAGS                     0x40EE // Used by Secret Base TV programs
-#define VAR_SECRET_BASE_HIGH_TV_FLAGS                    0x40EF // Used by Secret Base TV programs
-#define VAR_SECRET_BASE_IS_NOT_LOCAL                     0x40F0 // Set to TRUE while in another player's secret base.
-#define VAR_DAILY_BP                                     0x40F1
-#define VAR_WALLY_CALL_STEP_COUNTER                      0x40F2
-#define VAR_SCOTT_FORTREE_CALL_STEP_COUNTER              0x40F3
-#define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
-#define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
-#define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_REGISTER_BIRCH_STATE             			 0x40DA
+#define VAR_UNUSED_0x40DB                    			 0x40DB // Unused Var
+#define VAR_UNUSED_0x40DC                    			 0x40DC // Unused Var
+#define VAR_GIFT_PICHU_SLOT                  			 0x40DD
+#define VAR_GIFT_UNUSED_1                    			 0x40DE // Var is written to, but never read
+#define VAR_GIFT_UNUSED_2                    			 0x40DF // Var is written to, but never read
+#define VAR_GIFT_UNUSED_3                    			 0x40E0 // Var is written to, but never read
+#define VAR_GIFT_UNUSED_4                    			 0x40E1 // Var is written to, but never read
+#define VAR_GIFT_UNUSED_5                    			 0x40E2 // Var is written to, but never read
+#define VAR_GIFT_UNUSED_6                    			 0x40E3 // Var is written to, but never read
+#define VAR_GIFT_UNUSED_7                    			 0x40E4 // var is written to, but never read
+#define VAR_UNUSED_FORMERLY_MUGSHOT                      0x40E5 // (formerly) the mugshot thingy...
+#define VAR_DAILY_SLOTS                      			 0x40E6
+#define VAR_DAILY_WILDS                      			 0x40E7
+#define VAR_DAILY_BLENDER                    			 0x40E8
+#define VAR_DAILY_PLANTED_BERRIES            			 0x40E9
+#define VAR_DAILY_PICKED_BERRIES             			 0x40EA
+#define VAR_DAILY_ROULETTE                   			 0x40EB
+#define VAR_SECRET_BASE_STEP_COUNTER         			 0x40EC // Used by Secret Base TV programs
+#define VAR_SECRET_BASE_LAST_ITEM_USED       			 0x40ED // Used by Secret Base TV programs
+#define VAR_SECRET_BASE_LOW_TV_FLAGS         			 0x40EE // Used by Secret Base TV programs
+#define VAR_SECRET_BASE_HIGH_TV_FLAGS        			 0x40EF // Used by Secret Base TV programs
+#define VAR_SECRET_BASE_IS_NOT_LOCAL         			 0x40F0 // Set to TRUE while in another player's secret base.
+#define VAR_DAILY_BP                         			 0x40F1
+#define VAR_WALLY_CALL_STEP_COUNTER          			 0x40F2
+#define VAR_SCOTT_FORTREE_CALL_STEP_COUNTER  			 0x40F3
+#define VAR_ROXANNE_CALL_STEP_COUNTER        			 0x40F4
+#define VAR_SCOTT_BF_CALL_STEP_COUNTER       			 0x40F5
+#define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 			 0x40F6
+
+//Literally all of those are up for grabs...U			 p Above
+#define VAR_ROUTE3_STATE                     			 0x40F7 // Leaf Trigger
+#define VAR_CITYCLARA_STATE                  			 0x40F8 // Leaf+Scott in CannaClub...
+#define VAR_UNUSED_40F9           			             0x40F9 // UNUSED
+#define VAR_ROUTE4_STATE                     			 0x40FA // Controls events on Route4 set to ONE (1) by the rocket event in Route4
+#define VAR_ROBUSTUS_STATE                   			 0x40FB // Controls events in Robustus namely the campers and leaf event; set to 7 on exeunt; triggers leaf before rock tunnel then set to 8; triggers rival ambush then set to 9;
+#define VAR_ROUTE6_STATE                     			 0x40FC // Triggers J&J event
+#define VAR_CAMPLODGE                        			 0x40FD // Controls camper / rocks
+#define VAR_INDY_STATE                    	 			 0x40FE // 1 after Indy leaves pyramids, 2 after rebel reveal, 3 after attack starts  
+#define VAR_UNUSED_0x40FF                    			 0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

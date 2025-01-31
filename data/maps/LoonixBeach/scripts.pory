@@ -1,0 +1,29 @@
+mapscripts LoonixBeach_MapScripts {}
+
+
+script LoonixBeach_EventScript_Trainer_Blue {
+	lockall
+	faceplayer
+	message (LoonixBeach_Text_BlueFight)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_RIVAL1, LoonixBeach_Text_BlueLost)
+	setflag (FLAG_UNUSED_0x025)
+	releaseall
+	end
+}
+
+script LoonixBeach_EventScript_Item_Surfboard {
+	lock
+	finditem (ITEM_SURFBOARD)
+	setflag (FLAG_UNUSED_0x023)
+	release
+	end
+}
+
+text LoonixBeach_Text_BlueFight {
+	format("My first Pokeball is a BEAST BALL")
+}
+
+text LoonixBeach_Text_BlueLost {
+	format("I wonder why my face looks like that.")
+}

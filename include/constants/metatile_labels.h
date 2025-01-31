@@ -71,8 +71,14 @@
 #define METATILE_BattlePike_Curtain_Stage3_Tile6  0x2BC
 
 // gTileset_BattlePyramid
-#define METATILE_BattlePyramid_Exit   0x28E
-#define METATILE_BattlePyramid_Floor  0x28D
+#define METATILE_BattlePyramid_BlueTrigger     0x2AB
+#define METATILE_BattlePyramid_Exit            0x28E
+#define METATILE_BattlePyramid_FalseFloor      0x2A7
+#define METATILE_BattlePyramid_FalseFloorFire  0x2A6
+#define METATILE_BattlePyramid_Floor           0x28D
+#define METATILE_BattlePyramid_FloorPit        0x2A9
+#define METATILE_BattlePyramid_FloorPitBorder  0x2A8
+#define METATILE_BattlePyramid_NormalFloor     0x2AA
 
 // gTileset_BattleTent
 #define METATILE_BattleTent_Door  0x26B
@@ -82,6 +88,7 @@
 #define METATILE_BikeShop_Barrier_Blue_BottomMid   0x2C7
 #define METATILE_BikeShop_Barrier_Blue_Top         0x2B7
 #define METATILE_BikeShop_Barrier_Blue_TopMid      0x2BF
+#define METATILE_BikeShop_Barrier_Blue_Top_Grey    0x2AF
 #define METATILE_BikeShop_Barrier_Green_Bottom     0x2CE
 #define METATILE_BikeShop_Barrier_Green_BottomMid  0x2C6
 #define METATILE_BikeShop_Barrier_Green_Top        0x2B6
@@ -91,6 +98,7 @@
 #define METATILE_BikeShop_Button_Blue              0x236
 #define METATILE_BikeShop_Button_Green             0x22E
 #define METATILE_BikeShop_Button_Pressed           0x24F
+#define METATILE_BikeShop_Floor_Normal             0x242
 #define METATILE_BikeShop_Floor_Shadow_Top         0x26D
 #define METATILE_BikeShop_Generator_Off_Tile0      0x2F0
 #define METATILE_BikeShop_Generator_Off_Tile1      0x2F1
@@ -110,6 +118,7 @@
 #define METATILE_BrendansMaysHouse_MayPC_On          0x27E
 #define METATILE_BrendansMaysHouse_MovingBox_Closed  0x268
 #define METATILE_BrendansMaysHouse_MovingBox_Open    0x270
+#define METATILE_BrendansMaysHouse_StairsDown        0x214
 
 // gTileset_Building
 #define METATILE_Building_PC_Off  0x004
@@ -118,6 +127,10 @@
 #define METATILE_Building_TV_On   0x003
 
 // gTileset_Cave
+#define METATILE_Cave_CaveType3BottomHole                0x2E6
+#define METATILE_Cave_CaveType3BottomHoleLeft            0x2E5
+#define METATILE_Cave_CaveType3BottomHoleRight           0x2E7
+#define METATILE_Cave_CaveType3TopWall                   0x2E9
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
@@ -132,6 +145,12 @@
 #define METATILE_Cave_ShoalCave_BlueStone_Small          0x35B
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
+
+// gTileset_Colchis
+#define METATILE_Colchis_DoorOpen_Left        0x200
+#define METATILE_Colchis_DoorOpen_Right       0x201
+#define METATILE_Colchis_JailDoorOpen_Bottom  0x313
+#define METATILE_Colchis_JailDoorOpen_Top     0x30B
 
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
@@ -158,6 +177,7 @@
 
 // gTileset_Facility
 #define METATILE_Facility_DataPad                       0x3E4
+#define METATILE_Facility_DoorBlock                     0x3F7
 #define METATILE_Facility_NewMauvilleDoor_Closed_Tile0  0x314
 #define METATILE_Facility_NewMauvilleDoor_Closed_Tile1  0x315
 #define METATILE_Facility_NewMauvilleDoor_Closed_Tile2  0x316
@@ -186,6 +206,7 @@
 #define METATILE_Fallarbor_RedCaveEntrance_Bottom    0x34F
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
+#define METATILE_Fallarbor_Slabs_GroundDefault       0x279
 
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
@@ -248,6 +269,32 @@
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
+
+// gTileset_Hospital
+#define METATILE_Hospital_PC_Off  0x000
+#define METATILE_Hospital_PC_On   0x001
+
+// gTileset_IgnisMons
+#define METATILE_IgnisMons_Barrier_Blue            0x238
+#define METATILE_IgnisMons_Barrier_Blue_Shadow     0x239
+#define METATILE_IgnisMons_Barrier_Green           0x230
+#define METATILE_IgnisMons_Barrier_Green_Shadow    0x231
+#define METATILE_IgnisMons_Barrier_Red             0x228
+#define METATILE_IgnisMons_Barrier_Red_Shadow      0x229
+#define METATILE_IgnisMons_Button_Blue             0x250
+#define METATILE_IgnisMons_Button_Blue_Shadow      0x251
+#define METATILE_IgnisMons_Button_Green            0x248
+#define METATILE_IgnisMons_Button_Green_Shadow     0x249
+#define METATILE_IgnisMons_Button_Red              0x240
+#define METATILE_IgnisMons_Button_Red_Shadow       0x241
+#define METATILE_IgnisMons_Button_White            0x258
+#define METATILE_IgnisMons_Button_White_Shadow     0x259
+#define METATILE_IgnisMons_FalseFloor              0x220
+#define METATILE_IgnisMons_FalseFloor_Hole         0x260
+#define METATILE_IgnisMons_FalseFloor_Hole_Shadow  0x261
+#define METATILE_IgnisMons_FalseFloor_Shadow       0x221
+#define METATILE_IgnisMons_Floor                   0x208
+#define METATILE_IgnisMons_Floor_Shadow            0x209
 
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
@@ -451,7 +498,9 @@
 #define METATILE_SecretBase_BigPlant_BaseRight1         0x2ED
 #define METATILE_SecretBase_BigPlant_BaseRight2         0x2EF
 #define METATILE_SecretBase_BigPlant_TopLeft            0x2E4
+#define METATILE_SecretBase_BigPlant_TopLeftWall        0x2E5
 #define METATILE_SecretBase_BigPlant_TopRight           0x2E6
+#define METATILE_SecretBase_BigPlant_TopRightWall       0x2E6
 #define METATILE_SecretBase_BlueBalloon                 0x33C
 #define METATILE_SecretBase_BlueBrick_Bottom            0x22F
 #define METATILE_SecretBase_BlueBrick_Top               0x227
@@ -714,7 +763,24 @@
 #define METATILE_Shop_Laptop2_Flash   0x260
 #define METATILE_Shop_Laptop2_Normal  0x2A5
 
+// gTileset_SilphCo
+#define METATILE_SilphCo_Arrow_Down            0x25F
+#define METATILE_SilphCo_Arrow_Left            0x25E
+#define METATILE_SilphCo_Arrow_Right           0x257
+#define METATILE_SilphCo_Arrow_Up              0x256
+#define METATILE_SilphCo_Elevator_Door_Closed  0x2FC
+#define METATILE_SilphCo_Elevator_Door_Open    0x239
+#define METATILE_SilphCo_FloorLight            0x218
+#define METATILE_SilphCo_FloorShade            0x219
+#define METATILE_SilphCo_PC_Off                0x303
+#define METATILE_SilphCo_PC_On                 0x304
+
+// gTileset_SilphLab
+#define METATILE_SilphLab_Elevator_Door_Closed  0x23D
+#define METATILE_SilphLab_Elevator_Door_Open    0x234
+
 // gTileset_Slateport
+#define METATILE_Slateport_CalmWater_False  0x338
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
 
@@ -778,6 +844,26 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
+
+// gTileset_desert
+#define METATILE_desert_DeepSand_Center  0x219
+
+// gTileset_downtown
+#define METATILE_downtown_CanvasBlank   0x3A0
+#define METATILE_downtown_CanvasFilled  0x398
+
+// gTileset_pyramids
+#define METATILE_pyramids_DeepSand_Center  0x251
+
+// gTileset_weeniehutjr
+#define METATILE_weeniehutjr_TicTacToe_BlueO    0x256
+#define METATILE_weeniehutjr_TicTacToe_BlueX    0x255
+#define METATILE_weeniehutjr_TicTacToe_OrangeO  0x276
+#define METATILE_weeniehutjr_TicTacToe_OrangeX  0x275
+#define METATILE_weeniehutjr_TicTacToe_PinkO    0x254
+#define METATILE_weeniehutjr_TicTacToe_PinkX    0x253
+#define METATILE_weeniehutjr_TicTacToe_PurpleO  0x236
+#define METATILE_weeniehutjr_TicTacToe_PurpleX  0x235
 
 // Other
 #define METATILE_RSMossdeepGym_RedArrow_Down   0x205

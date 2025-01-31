@@ -9,5 +9,7 @@
 #define STEP_CB_TRUCK               5
 #define STEP_CB_SECRET_BASE         6
 #define STEP_CB_CRACKED_FLOOR       7
+#define STEP_CB_CANVAS              8
+#define STEP_CB_FALSE_FLOOR         9
 
 #endif // GUARD_CONSTANTS_FIELD_TASKS_H

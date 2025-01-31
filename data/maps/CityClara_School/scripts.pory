@@ -1,0 +1,491 @@
+mapscripts CityClara_School_MapScripts {}
+
+
+script CityClara_School_EventScript_Karlye {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_KARLYE)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_KarlyeIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_KARLYE, CityClara_School_Text_KarlyeLost)
+		msgbox (CityClara_School_Text_KarlyeWater, MSGBOX_DEFAULT)
+		closemessage
+		giveitem (ITEM_FRESH_WATER, 1)
+	}
+	msgbox (CityClara_School_Text_KarlyePost)	
+	release
+}
+
+script CityClara_School_EventScript_Ricky {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_RICKY)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_RickyIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_RICKY, CityClara_School_Text_RickyLost)
+	}
+	msgbox (CityClara_School_Text_RickyPost)	
+	release
+}
+
+script CityClara_School_EventScript_Peter {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_PETER)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_PeterIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_PETER, CityClara_School_Text_PeterLost)
+	}
+	setvar (VAR_SYS_LEVEL_CAP, 9)
+	msgbox (CityClara_School_Text_PeterPost)	
+	release
+}
+
+script CityClara_School_Script_Emily {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_EMILY)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_EmilyIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_EMILY, CityClara_School_Text_EmilyLost)
+	}	
+	msgbox (CityClara_School_Text_EmilyPost)
+	closemessage
+	release
+	end
+}
+
+script CityClara_School_EventScript_Danny {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_DANNY)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_DannyIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_DANNY, CityClara_School_Text_DannyLost)
+	}
+	msgbox (CityClara_School_Text_DannyPost)	
+	release
+}
+
+script CityClara_School_EventScript_Ethan {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_ETHAN)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_EthanIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_ETHAN, CityClara_School_Text_EthanLost)
+	}
+	msgbox (CityClara_School_Text_EthanPost)
+	closemessage	
+}
+
+script CityClara_School_EventScript_Sagis {
+	lock
+	faceplayer
+	if (var(VAR_SYS_LEVEL_CAP) < 11) {
+		setvar (VAR_SYS_LEVEL_CAP, 11)
+	}
+	if (!defeated(TRAINER_SAGIS)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_SagisIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_SAGIS, CityClara_School_Text_SagisLost)
+	}
+	msgbox (CityClara_School_Text_SagisPost)
+	closemessage	
+}
+
+script CityClara_School_EventScript_Mr_Glasman {
+	lock
+	faceplayer
+	if (var(VAR_ALDEON_SCHOOL_STATE) < 4) {
+		msgbox (CityClara_School_Text_Mr_Glasman1)
+	} elif (var(VAR_ALDEON_SCHOOL_STATE) == 4) {		
+		call (CityClara_School_EventScript_IncrementSchoolVar)
+		msgbox (CityClara_School_Text_Mr_GlasmanIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro(TRAINER_MR_GLASMAN, CityClara_School_Text_Mr_GlasmanLost)
+		msgbox (CityClara_School_Text_Mr_GlasmanPostA)
+	} else {
+		msgbox (CityClara_School_Text_Mr_GlasmanPostB)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_School_EventScript_Peeves {
+	lock
+	faceplayer
+	msgbox (CityClara_School_Text_PeevesPost)
+	closemessage
+	release
+	end
+}
+
+script CityClara_School_EventScript_IncrementSchoolVar {
+	switch (var(VAR_ALDEON_SCHOOL_STATE)) {
+		case 0:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 1)
+		case 1:	
+			setvar(VAR_ALDEON_SCHOOL_STATE, 2)
+		case 2:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 3)
+		case 3:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 4)
+		case 4:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 5)
+		case 5:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 6)
+		case 6:	
+			setvar(VAR_ALDEON_SCHOOL_STATE, 7)
+		case 7:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 8)
+		case 8:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 9)
+		case 9:
+			setvar(VAR_ALDEON_SCHOOL_STATE, 10)
+		default:
+			msgbox(format("ERROR: CityClara_School_EventScript_IncrementSchoolVar OOB"))
+			closemessage
+	}
+}	
+
+script CityClara_School_EventScript_Mrs_Sully {
+	lockall
+	faceplayer
+	//Finish your studies
+	if (var(VAR_ALDEON_SCHOOL_STATE) < 10) {
+		msgbox (CityClara_School_Text_Mrs_SullyIntroA)
+		closemessage
+	} else {  //If done then post
+		if (defeated(TRAINER_MRS_SULLY)) {
+			msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
+			closemessage
+		} else {
+			setvar (VAR_ALDEON_SCHOOL_STATE, 11)
+			msgbox (CityClara_School_Text_Mrs_SullyPre, MSGBOX_DEFAULT)
+			closemessage
+			trainerbattle_no_intro(TRAINER_MRS_SULLY, CityClara_School_Text_Mrs_SullyLost)
+			call (CityClara_School_EventScript_GiveTrainerCard)
+			//Set vars to setup outside rain triggers
+			setvar (VAR_GRANNY_STATE, 9)
+		}
+	}
+	releaseall
+	end
+}
+
+script CityClara_School_EventScript_GiveTrainerCard {
+	msgbox (CityClara_School_Text_Mrs_SullyDefeat, MSGBOX_DEFAULT)
+	closemessage
+	playfanfare (MUS_OBTAIN_ITEM)
+	setflag (FLAG_SYS_TRAINER_CARD_GET)
+	giveitem (ITEM_TRAINER_CARD, 1)
+	msgbox (CityClara_School_Text_Mrs_SullyExplainCard, MSGBOX_DEFAULT)
+	msgbox (CityClara_School_Text_Mrs_SullyPost, MSGBOX_DEFAULT)
+	closemessage
+	return
+}
+
+script CityClara_School_EventScript_GradeTrigger1 {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	msgbox (CityClara_School_Text_PeevesGrade1)
+	closemessage
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_PlayerGrade)
+	applymovement (7, CityClara_School_Movement_PeevesGrade1)
+	waitmovement (0)
+	msgbox (CityClara_School_Text_PeevesGrade2)
+	closemessage
+	applymovement (7, CityClara_School_Movement_PeevesGrade1Return)
+	waitmovement (0)
+	release
+} 
+
+script CityClara_School_EventScript_GradeTrigger2 {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	msgbox (CityClara_School_Text_PeevesGrade1)
+	waitmovement (0)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_PlayerGrade)
+	applymovement (7, CityClara_School_Movement_PeevesGrade2)
+	waitmovement (0)
+	msgbox (CityClara_School_Text_PeevesGrade2)
+	closemessage
+	applymovement (7, CityClara_School_Movement_PeevesGrade2Return)
+	waitmovement (0)
+	release
+} 
+
+script CityClara_School_EventScript_PeevesFight1 {
+	lock
+	call (CityClara_School_EventScript_IncrementSchoolVar)	
+	applymovement(7, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//applymovement(OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_Peeves_FaceUp)
+	//waitmovement (0)
+	trainerbattle_single(TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost)
+	release
+} 
+
+script CityClara_School_EventScript_PeevesFight2 {
+	lock
+	call (CityClara_School_EventScript_IncrementSchoolVar)	
+	applymovement(7, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//applymovement(OBJ_EVENT_ID_PLAYER, CityClara_School_Movement_Peeves_FaceUp)
+	//#waitmovement (0)
+	applymovement(7, CityClara_School_Movement_Peeves_WalkDown)
+	waitmovement (0)
+	trainerbattle_single(TRAINER_PEEVES, CityClara_School_Text_PeevesIntro, CityClara_School_Text_PeevesLost)
+	release
+}
+
+script CityClara_School_EventScript_Tyler {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_TYLER_AND_GABE)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)	
+		msgbox (CityClara_School_Text_TylerGabeIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro (TRAINER_TYLER_AND_GABE, CityClara_School_Text_TylerLost)
+	}
+	msgbox (CityClara_School_Text_TylerPost)
+	closemessage
+}
+
+script CityClara_School_EventScript_Gabe {
+	lock
+	faceplayer
+	if (!defeated(TRAINER_TYLER_AND_GABE)) {
+		call (CityClara_School_EventScript_IncrementSchoolVar)	
+		msgbox (CityClara_School_Text_TylerGabeIntro, MSGBOX_DEFAULT)
+		closemessage
+		trainerbattle_no_intro (TRAINER_TYLER_AND_GABE, CityClara_School_Text_GabeLost)
+	}
+	msgbox (CityClara_School_Text_GabePost)
+	closemessage
+}
+
+movement CityClara_School_Movement_PlayerGrade {
+	walk_left
+	face_right
+}
+
+movement CityClara_School_Movement_PeevesGrade1 {
+	walk_down
+	face_left
+}
+
+movement CityClara_School_Movement_PeevesGrade2 {
+	walk_down * 2
+	face_left
+}
+
+movement CityClara_School_Movement_PeevesGrade1Return {
+	walk_up
+	face_down
+}
+
+movement CityClara_School_Movement_PeevesGrade2Return {
+	walk_up * 2
+	face_down
+}
+movement CityClara_School_Movement_Peeves_FaceUp {
+	face_up
+}
+
+movement CityClara_School_Movement_Peeves_FaceDown {
+	face_down
+}
+
+movement CityClara_School_Movement_Peeves_WalkDown {
+	walk_down
+}
+
+text CityClara_School_Text_KarlyeIntro {
+	format("During battles your pokemon may become tired or injured and need to rest. If you're out in the field you can use items to help your pokemon rest and recover strength. There are many items like food, drinks, and potinos which you can give your pokemon but be careful as some things might have adverse effects. You will need to give them time to consume and digest items as well so you can't use them during battles or while on the move. Now that you know about items let's have a quick battle.")
+}
+
+text CityClara_School_Text_KarlyeLost {
+	format("Let me just give Cleffa some water...")
+}
+
+text CityClara_School_Text_KarlyeWater {
+	format("If your Eevee is injured after that battle then give this to him.")
+}
+
+text CityClara_School_Text_KarlyePost {
+	format("Fresh water can help injured Pokemon recover HP. There are also items which help tired Pokemon recover PP like coffee.")
+}
+
+text CityClara_School_Text_RickyIntro {
+	format("There is a limit to how many pokemon you can keep. You can only bring 6 Pokemon with you into battle. If you want to train more than 6 Pokemon at a time you will need to store them somewhere. The Pokemon Box Company has created the Pokemon Box System, a modern marvel, which allows you to digitize and store your pokemon electronically and then retrieve them at a later date. It's a marvellous convenience and the company offers many boxes for free to all trainers. In order to access the Pokemon Box System you will need an internet connection. You can find computers with access at homes, businesses, and pokemon centers across the state. There is also a wireless connector but you'll have to find that yourself. Now that you understand the Pokemon Box System let's have a battle to test your strength.")
+}
+
+text CityClara_School_Text_RickyLost {
+	format("I should have trained more Pokemon...")
+}
+
+text CityClara_School_Text_RickyPost {
+	format("If you're looking for a computer to access the Pokemon Box System the old men next door always let me use theirs.")
+}
+
+text CityClara_School_Text_PeterIntro {
+	format("The most important job of a Pokemon trainer is to make sure your Pokemon obey you in battle. I can see that you have a special bond with your Eevee but in order to command wild Pokemon you will need to become a more skilled trainer by finishing school. As you grow as a trainer you will become capabble of controlling more powerful Pokemon. If an inexperienced trainer tries to command a powerful Pokemon the Pokemon may decide to disobey orders completely. All Pokemon Trainer School graduates recieve a Pokemon Trainer Card which will help you keep track of your skill as a trainer and determine the capacity of the strength of the Pokemon you will be able to command. I'm still a studen trainer so I can only command pokemon level 9. Let's have a battle to see how strong you are.")
+}
+
+text CityClara_School_Text_PeterLost {
+	format("After beating me you should be able to train and command Eevee up to level 9 now!")
+}
+
+text CityClara_School_Text_PeterPost {
+	format(" Your ability as a trainer will increase as you meet and battle more experienced trainers. I wonder who the most powerful trainer in the entire state is...")
+}
+
+text CityClara_School_Text_DannyIntro {
+	format("Pokemon can only battle for so long before they must quit the field. Most trainers form an emotional bond with their Pokemon and will surrender the battle when all of their pokemon faint. Other trainers push their Pokemon over the edge and they die. A dead Pokemon cannot be revived. Let me demonstrate with a battle. I will surrender if you can knock my Teddiursa unconscious but I can tell you're the type to never surrender until I've killed your Eevee.")
+}
+
+text CityClara_School_Text_DannyLost {
+	format("I yield! I yield!")
+}
+
+text CityClara_School_Text_DannyPost {
+	format("I'll need to let my Teddiursa rest before having another battle, if you let your Pokemon die then no power on Earth can bring them back to life.")
+}
+
+text CityClara_School_Text_EthanIntro {
+	format("Weather conditions, like rain, can affect your Pokemon battles. There are also some Pokemon who can control battle conditions with moves. Since we're inside there won't be any special conditions during our battle but it's something to keep an eye out for.")
+}
+
+text CityClara_School_Text_EthanLost {
+	format("Even under perfecrt conditions I still lost...")
+}
+
+text CityClara_School_Text_EthanPost {
+	format("It's important to always be aware of field conditions during your battles outside.")
+}
+
+text CityClara_School_Text_SagisIntro {
+	format("There are certain status conditions, like poison, which persist even after a bttle. You will need to let your Pokemon rest to recover from those. My bug type pokemon specialize in poisoning your Pokemon, watch out!")
+}
+
+text CityClara_School_Text_SagisLost {
+	format("You overpowerd my bugs!")
+}
+
+text CityClara_School_Text_SagisPost {
+	format("Be careful. If your pokemon is poisoned it can die even out of battle. It's a good idea to carry around some antivenom or extra water to help guard against poison.")
+}
+
+text CityClara_School_Text_EmilyIntro {
+	format("I think there are more than 420 types of Pokemon.")
+}
+
+text CityClara_School_Text_EmilyLost {
+	format("That isn't fair! You're gonna make me cry!")
+}
+
+text CityClara_School_Text_EmilyPost {
+	format("Some trainers will be ready to battle you again after a while.")
+}
+
+text CityClara_School_Text_Mr_Glasman1 {
+	format("Before we start why don't you all review, among yourselves, in groups, for five minutes")
+}
+
+text CityClara_School_Text_Mr_GlasmanIntro {
+	format("Sheket Bevakasha, that means shut up! I need you to show me some more respect and recognize my doctorate. Now time for you to take a test...to pass or fail.")
+}
+
+text CityClara_School_Text_Mr_GlasmanLost {
+	format("I told you this before, it's DOCTOR G!")
+}
+
+text CityClara_School_Text_Mr_GlasmanPostA {
+	format("You've proven yourself a brilliant pupil. I have taught you everything that I know and now your level cap is raised to ten. Good luck with your future education.")
+}
+
+text CityClara_School_Text_Mr_GlasmanPostB {
+	format("Good luck with your future education.")
+}
+
+text CityClara_School_Text_PeevesGrade1 {
+	format("Hey you! Where do you think that you're going?")
+}
+
+text CityClara_School_Text_PeevesGrade2 {
+	format("This class is only for the older kids, Come back when you've graduated first grade.")
+}
+
+text CityClara_School_Text_PeevesIntro {
+	format("Well looky here looks like there's a new kid. You think you're so grown up well time to learn what guys like me do to freshmeat like you.")
+}
+
+text CityClara_School_Text_PeevesLost {
+	format("I'll let you keep my lunch money this time...")
+}
+
+text CityClara_School_Text_PeevesPost {
+	format("Sometimes you need to beat a strong trainer to continue your journey in this world.")
+}
+
+text CityClara_School_Text_TylerGabeIntro {
+	format("Sometimes two trainers will battle you at once and you will send out two Pokemon to face them both. If you do not have two Pokemon then you will have to face them while outnumbered. Since you're not a certified Pokemon Trainer then only Eevee will obey you for now. Good luck.")
+}
+
+text CityClara_School_Text_TylerLost {
+	format("Two vs one and we still lost!")
+}
+
+text CityClara_School_Text_TylerPost {
+	format("Sometimes you will even encounter double wild Pokemon battles.")
+}
+
+text CityClara_School_Text_GabeLost {
+	format("We didn't have great team synergy...")
+}
+
+text CityClara_School_Text_GabePost {
+	format("Double battles sometimes require a different strategy than normal battles.")
+}
+
+text CityClara_School_Text_Mrs_SullyIntroA{
+	format("I've not seen you before you some truant? Finish your studies before your exam.")
+}
+
+text CityClara_School_Text_Mrs_SullyPre {
+	format("Win this battle and you will graduate.")
+}
+
+text CityClara_School_Text_Mrs_SullyLost {
+	format("Congratulations on your achievement!")
+}
+
+text CityClara_School_Text_Mrs_SullyDefeat {
+	format("That was a thrill! {PLAYER} you are so advanced. I've never had a student make me feel like they were the one who was in control. This Trainer Card is your school diploma.")
+}
+
+text CityClara_School_Text_Mrs_SullyExplainCard {
+	format("As a certified Pokemon Trainer wild Pokemon will now follow you and obey your commands while in battle as long as your capacity to train Pokemon is enough to handle them. You can keep track of your capacity as a trainer using the Trainer Card.")
+}
+
+text CityClara_School_Text_Mrs_SullyPost {
+	format("You can come back anytime to study.")
+}
+
+text CityClara_School_Text_ExplainCut {
+	format("This is a Hidden Move, HM for short, which will allow you to cut down small trees.")
+}
+
+

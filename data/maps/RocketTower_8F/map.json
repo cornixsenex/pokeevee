@@ -1,0 +1,48 @@
+{
+  "id": "MAP_ROCKET_TOWER_8F",
+  "name": "RocketTower_8F",
+  "layout": "LAYOUT_ROCKET_TOWER_8F",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_AQUA_HIDEOUT_OLD",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_7F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_9F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_ELEVATOR",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

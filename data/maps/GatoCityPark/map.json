@@ -1,0 +1,44 @@
+{
+  "id": "MAP_GATO_CITY_PARK",
+  "name": "GatoCityPark",
+  "layout": "LAYOUT_GATO_CITY_PARK",
+  "music": "MUS_XXPLOSIVE",
+  "region_map_section": "MAPSEC_GREEN_PATH",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_GATO_CITY_ZOO",
+      "offset": 32,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_GATO_CITY_E",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_GATO_CITY_PARK_N",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

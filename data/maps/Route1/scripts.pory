@@ -1,0 +1,431 @@
+
+
+mapscripts Route1_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_GRANNY_STATE) == 10 || var(VAR_GRANNY_STATE) == 11) {
+			call (Route1_Script_SetupStorm)
+		}
+	}
+
+}
+
+
+script Route1_EventScript_RockTest {
+	lock
+	call (Route1_EventScript_WarpToLeafHouse)	
+	release
+	end
+}
+
+script Route1_Script_SetupStorm  {
+	setobjectxyperm (5, 0, 0)
+	setobjectmovementtype (5, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (6, 0, 0)
+	setobjectmovementtype (6, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (7, 0, 0)
+	setobjectmovementtype (7, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (8, 0, 0)
+	setobjectmovementtype (8, MOVEMENT_TYPE_INVISIBLE)
+
+
+	setweather (WEATHER_DOWNPOUR)
+
+	return
+}
+
+
+script Route1_EventScript_RivalTrigger1 {
+	lock
+	applymovement (3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_Player1)
+	waitmovement (0)
+	call (Route1_EventScript_Rival1)
+	applymovement (4, Route1_Movement_LeafWalk1)
+	waitmovement (0)
+	call (Route1_EventScript_Rival2)
+	applymovement (4, Route1_Movement_LeafStepLU)
+	applymovement (3, Route1_Movement_RivalStep1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route1_EventScript_Rival3)
+	call (Route1_EventScript_RockTest)	
+	release
+	end
+}
+
+script Route1_EventScript_RivalTrigger2 {
+	lock
+	applymovement (3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Route1_Movement_Player2)
+	waitmovement (0)
+	call (Route1_EventScript_Rival1)
+	applymovement (4, Route1_Movement_LeafWalk1)
+	waitmovement (0)
+	call (Route1_EventScript_Rival2)
+	applymovement (4, Route1_Movement_LeafStepLU)
+	applymovement (3, Route1_Movement_RivalStep1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route1_EventScript_Rival3)
+	call (Route1_EventScript_RockTest)	
+	release
+	end
+}
+
+script Route1_EventScript_RivalTrigger3 {
+	lock
+	applymovement (3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	call (Route1_EventScript_Rival1)
+	applymovement (4, Route1_Movement_LeafWalk1)
+	waitmovement (0)
+	call (Route1_EventScript_Rival2)
+	applymovement (4, Route1_Movement_LeafStepLU)
+	applymovement (3, Route1_Movement_RivalStep1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route1_EventScript_Rival3)
+	call (Route1_EventScript_RockTest)	
+	release
+	end
+}
+
+script Route1_EventScript_RivalTrigger4 {
+	lock
+	applymovement (3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route1_EventScript_Rival1)
+	applymovement (4, Route1_Movement_LeafWalk2)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	call (Route1_EventScript_Rival2)
+	applymovement (4, Route1_Movement_LeafStepLU)
+	applymovement (3, Route1_Movement_RivalStep2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route1_EventScript_Rival3)
+	call (Route1_EventScript_RockTest)	
+	release
+	end
+}
+
+script Route1_EventScript_RivalTrigger5 {
+	lock
+	applymovement (3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (Route1_EventScript_Rival1)
+	applymovement (4, Route1_Movement_LeafWalk3)
+	waitmovement (0)
+	call (Route1_EventScript_Rival2)
+	applymovement (4, Route1_Movement_LeafStepUL)
+	applymovement (3, Route1_Movement_RivalStep3)
+	waitmovement (0)
+	call (Route1_EventScript_Rival3B)
+	call (Route1_EventScript_RockTest)	
+	release
+	end
+}
+
+
+script Route1_EventScript_WarpToLeafHouse {
+	setvar (VAR_ROUTE1_STATE, 1)
+	warp (MAP_ALDEON_LEAF_HOUSE_2F, 255, 6, 5)
+	waitstate
+	return
+}
+
+
+script Route1_EventScript_Rival1 {
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival1)
+	destroy_field_pic (3)
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf1)
+	destroy_field_pic (4)
+	applymovement (4, Route1_Movement_FaceLeft)
+	waitmovement (0)
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival2)
+	closemessage
+	destroy_field_pic (3)
+	applymovement (3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	return	
+}
+
+script Route1_EventScript_Rival2 {
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival3)
+	destroy_field_pic (3)
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf2)
+	destroy_field_pic (4)
+	closemessage
+	return
+}
+
+script Route1_EventScript_Rival3 {
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival4)
+	destroy_field_pic(3)
+	closemessage
+	trainerbattle_no_intro(TRAINER_RIVAL1, Route1_Text_RivalLost)
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival5)
+	destroy_field_pic (3)
+	closemessage
+	applymovement (3, Route1_Movement_RivalExit)
+	waitmovement (0)
+	removeobject (3)
+	applymovement (4, Common_Movement_FaceRight)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)	
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf3)
+	closemessage
+	destroy_field_pic (4)
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf4)
+	closemessage
+	destroy_field_pic (4)
+	return
+}
+
+script Route1_EventScript_Rival3B {
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival4)
+	destroy_field_pic(3)
+	closemessage
+	trainerbattle_no_intro(TRAINER_RIVAL1, Route1_Text_RivalLost)
+	load_field_pic (3, 190, 98)
+	msgbox (Route1_Text_Rival5)
+	destroy_field_pic (3)
+	closemessage
+	applymovement (3, Route1_Movement_RivalExit)
+	waitmovement (0)
+	removeobject (3)
+	applymovement (4, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)	
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf3)
+	closemessage
+	destroy_field_pic (4)
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	load_field_pic (4, 190, 98)
+	msgbox (Route1_Text_Leaf4)
+	closemessage
+	destroy_field_pic (4)
+	return
+}
+
+script Route1_EventScript_Boy {
+	lockall
+	faceplayer
+	msgbox (Route1_Text_Boy1)
+	closemessage
+	releaseall
+	end
+}
+script Route1_EventScript_BugCatcher {
+	trainerbattle_single(TRAINER_ETIENNE, Route1_Text_BugCatcherFight, Route1_Text_BugCatcherLost)
+	msgbox (Route1_Text_BugCatcherPost)
+	closemessage
+	end
+}
+
+script Route1_EventScript_Lass {
+	trainerbattle_single(TRAINER_KIM, Route1_Text_LassFight, Route1_Text_LassLost)
+	msgbox (Route1_Text_LassPost)
+	closemessage
+	end
+}
+
+script Route1_EventScript_LittleBoy {
+	trainerbattle_single(TRAINER_LOGAN, Route1_Text_LittleBoyFight, Route1_Text_LittleBoyLost)
+	msgbox (Route1_Text_LittleBoyPost)
+	closemessage
+	end
+}
+	
+movement Route1_Movement_FaceDown {
+	face_down
+}
+
+movement Route1_Movement_FaceLeft {
+	face_left
+}
+
+movement Route1_Movement_LeafWalk1 {
+	walk_left * 2
+	walk_up
+}
+
+movement Route1_Movement_LeafWalk2 {
+	walk_left * 2
+	face_up
+}
+
+movement Route1_Movement_LeafWalk3 {
+	walk_left
+}
+
+
+movement Route1_Movement_LeafStepLU {
+	walk_left
+	walk_up
+	face_down
+}
+
+movement Route1_Movement_LeafStepUL {
+	walk_up
+	walk_left
+	face_right
+}
+
+movement Route1_Movement_RivalStep1 {
+	walk_left * 2
+	walk_up * 2
+	face_left
+}
+
+movement Route1_Movement_RivalStep2 {
+	walk_left * 2
+	walk_up
+	face_left
+}
+
+movement Route1_Movement_RivalStep3 {
+	walk_left * 2
+}
+
+movement Route1_Movement_Player1 {
+	walk_down * 2
+}
+
+movement Route1_Movement_Player2 {
+	walk_down
+}
+
+movement Route1_Movement_PlayerStep1 {
+	walk_down
+}
+
+movement Route1_Movement_RivalExit {
+	walk_right * 2
+	walk_down * 8
+}
+	
+text Route1_Text_RockWarp {
+	format("Wanna warp - test?")
+}
+
+text Route1_Text_Rival1 {
+	format("Come with me babe, today's your lucky day.")
+}
+
+text Route1_Text_Rival2 {
+	format("You stop right there, we're doing things my way!")
+}
+
+text Route1_Text_Rival3 {
+	format("Now where are you...\pand who are YOU?")
+}
+
+text Route1_Text_Rival4 {
+	format("You think that you can steal my girl from me? I'll show you which one of us is the man.")
+}
+
+text Route1_Text_RivalLost {
+	format("Humpty?\pHumpty!??\p Noooo!")
+}
+
+text Route1_Text_Rival5 {
+	format("My God!\p Humpty it's Daddy can you hear my broken voice or feel my stinging tears? Oh Humpty!\pIt's all your fault you monster\pMurderer!\pYou will not get away, violence won't win, I'll make sure in the end that freedom wins.")
+}
+
+text Route1_Text_Leaf1 {
+	format("Hold on! I thought you just wanted to smoke. I think that I should maybe head home soon.")
+}
+
+text Route1_Text_Leaf2 {
+	format("Hey there stranger, think you could lend a hand? This creepy dude will not leave me alone and if you kick his ass we'll hella smoke")
+}
+
+text Route1_Text_Leaf3 {
+	format("Hey look at you, you're like a real hero all big and strong, and chivalrous to boot. Do you smoke weed? Here take a puff on this.")
+}
+
+text Route1_Text_Leaf4 {
+	format("You're pretty cool, c'mon back to my place.")
+}
+
+text Route1_Text_Boy1 {
+	format("Be careful friend the roads are dangerous and filled with wild beasts and criminals.")
+}
+
+text Route1_Text_BugCatcherFight {
+	format("Hey, check out my bugs!")
+}
+
+text Route1_Text_BugCatcherLost {
+	format("Dude, what did you do to my bugs?")
+}
+
+text Route1_Text_BugCatcherPost {
+	format("I don't think we should talk anymore.")
+}
+
+text Route1_Text_LassFight {
+	format("Wow! {PLAYER} you came back for me.")
+}
+
+text Route1_Text_LassLost {
+	format("Heartbroken again.")
+}
+
+text Route1_Text_LassPost {
+	format("Get out of here! I'll never love again...")
+}
+
+text Route1_Text_LittleBoyFight {
+	format("Dude, weed!")
+}
+
+text Route1_Text_LittleBoyLost {
+	format("Dang, I got smoked.")
+}
+
+text Route1_Text_LittleBoyPost {
+	format("Maybe we can smoke sometime?")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

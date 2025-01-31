@@ -1,0 +1,30 @@
+const OBJ_EVENT_OLDMAN = 1
+
+mapscripts AldeonTown_House_MapScripts {}
+
+
+script AldeonTown_House_EventScript_OldMan {
+	lockall
+	faceplayer
+	msgbox (AldeonTown_House_Text_OldMan1)
+	closemessage
+	call (Common_EventScript_OutOfCenterPartyHeal)
+	msgbox (AldeonTown_House_Text_OldMan2, MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_OLDMAN, Common_Movement_FaceDown)
+	waitmovement (0)
+	releaseall
+	end
+}
+
+text AldeonTown_House_Text_OldMan1 {
+	format("If you feel tired why not take a nap?")
+}
+
+text AldeonTown_House_Text_OldMan2 {
+	format("Now don't you look better. Come back sometime.")
+}
+
+
+
+

@@ -1,0 +1,59 @@
+
+const OBJ_EVENT_TEACHER = 1
+
+mapscripts Ardor_Uni_RhetoricClass_MapScripts {}
+
+script Ardor_Uni_RhetoricClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_RHETORIC)) {
+		msgbox(Ardor_Uni_RhetoricClass_Text_ClassFinished)
+		closemessage
+	} else {
+		call (Ardor_Uni_RhetoricClass_EventScript_DoRhetoric)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+
+script Ardor_Uni_RhetoricClass_EventScript_DoRhetoric {
+	msgbox(Ardor_Uni_RhetoricClass_Text_Intro)
+	closemessage
+	special (DoRhetoric)
+	waitstate
+	msgbox(Ardor_Uni_RhetoricClass_Text_RepeatRhetoric)
+	closemessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_RHETORIC, Ardor_Uni_RhetoricClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_RhetoricClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+
+text Ardor_Uni_RhetoricClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti oratum.")
+}
+
+text Ardor_Uni_RhetoricClass_Text_Intro {
+	format("Salve puer. Magister Stephanus sum. Necesse est tibi docere oratum.")
+}
+
+text Ardor_Uni_RhetoricClass_Text_RepeatRhetoric {
+	format("{STR_VAR_1}! Bene dixisti {STR_VAR_1}. Veritas est, {STR_VAR_1}.")
+}
+
+text Ardor_Uni_RhetoricClass_Text_TeacherBattleLost {
+	format("Verba mea me defecerunt.")
+}
+
+
+
+
+
+

@@ -739,6 +739,15 @@ const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2] =
     {35, 10}, // +5
     {40, 10}, // +6, MAX_STAT_STAGE
 };
+static const u16 sDeoxysBaseStats[] =
+{
+    [STAT_HP]    = 50,
+    [STAT_ATK]   = 95,
+    [STAT_DEF]   = 90,
+    [STAT_SPEED] = 180,
+    [STAT_SPATK] = 95,
+    [STAT_SPDEF] = 90,
+};
 
 // The classes used by other players in the Union Room.
 // These should correspond with the overworld graphics in sUnionRoomObjGfxIds
@@ -762,6 +771,27 @@ const u16 gUnionRoomFacilityClasses[NUM_UNION_ROOM_CLASSES * GENDER_COUNT] =
     FACILITY_CLASS_BATTLE_GIRL,
     FACILITY_CLASS_PKMN_BREEDER_F,
     FACILITY_CLASS_BEAUTY
+};
+
+static const u8 sHoldEffectToType[][2] =
+{
+    {HOLD_EFFECT_BUG_POWER, TYPE_BUG},
+    {HOLD_EFFECT_STEEL_POWER, TYPE_STEEL},
+    {HOLD_EFFECT_GROUND_POWER, TYPE_GROUND},
+    {HOLD_EFFECT_ROCK_POWER, TYPE_ROCK},
+    {HOLD_EFFECT_GRASS_POWER, TYPE_GRASS},
+    {HOLD_EFFECT_DARK_POWER, TYPE_DARK},
+    {HOLD_EFFECT_FIGHTING_POWER, TYPE_FIGHTING},
+    {HOLD_EFFECT_ELECTRIC_POWER, TYPE_ELECTRIC},
+    {HOLD_EFFECT_WATER_POWER, TYPE_WATER},
+    {HOLD_EFFECT_FLYING_POWER, TYPE_FLYING},
+    {HOLD_EFFECT_POISON_POWER, TYPE_POISON},
+    {HOLD_EFFECT_ICE_POWER, TYPE_ICE},
+    {HOLD_EFFECT_GHOST_POWER, TYPE_GHOST},
+    {HOLD_EFFECT_PSYCHIC_POWER, TYPE_PSYCHIC},
+    {HOLD_EFFECT_FIRE_POWER, TYPE_FIRE},
+    {HOLD_EFFECT_DRAGON_POWER, TYPE_DRAGON},
+    {HOLD_EFFECT_NORMAL_POWER, TYPE_NORMAL},
 };
 
 const struct SpriteTemplate gBattlerSpriteTemplates[MAX_BATTLERS_COUNT] =
@@ -1278,6 +1308,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     GiveBoxMonInitialMoveset(boxMon);
 }
 
+
 void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
 {
     u32 personality;
@@ -1669,6 +1700,51 @@ bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId)
     }
 
     return TRUE;
+}
+
+//static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
+//{
+//    s32 ivVal, evVal;
+//    u16 statValue = 0;
+//    u8 nature;
+//
+//    if (gBattleTypeFlags & BATTLE_TYPE_LINK_IN_BATTLE || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+//        return 0;
+//
+//    ivVal = GetMonData(mon, MON_DATA_HP_IV + statId, NULL);
+//    evVal = GetMonData(mon, MON_DATA_HP_EV + statId, NULL);
+//    statValue = ((sDeoxysBaseStats[statId] * 2 + ivVal + evVal / 4) * mon->level) / 100 + 5;
+//    nature = GetNature(mon);
+//    statValue = ModifyStatByNature(nature, statValue, (u8)statId);
+//    return statValue;
+//}
+
+void SetDeoxysStats(void)
+{
+    s32 i, value;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+
+        if (GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+            continue;
+
+        value = GetMonData(mon, MON_DATA_ATK, NULL);
+        SetMonData(mon, MON_DATA_ATK, &value);
+
+        value = GetMonData(mon, MON_DATA_DEF, NULL);
+        SetMonData(mon, MON_DATA_DEF, &value);
+
+        value = GetMonData(mon, MON_DATA_SPEED, NULL);
+        SetMonData(mon, MON_DATA_SPEED, &value);
+
+        value = GetMonData(mon, MON_DATA_SPATK, NULL);
+        SetMonData(mon, MON_DATA_SPATK, &value);
+
+        value = GetMonData(mon, MON_DATA_SPDEF, NULL);
+        SetMonData(mon, MON_DATA_SPDEF, &value);
+    }
 }
 
 u16 GetUnionRoomTrainerPic(void)
@@ -3794,7 +3870,6 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         // Now handled in item battle scripts.
         case 0:
             break;
-
         // Handle ITEM1 effects (in-battle stat boosting effects)
         // Now handled in item battle scripts.
         case 1:
@@ -5768,6 +5843,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+		case TRAINER_CLASS_CULTIST:
+			return MUS_RG_VS_TRAINER;
         default:
             return MUS_VS_TRAINER;
         }

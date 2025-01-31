@@ -1,0 +1,437 @@
+mapscripts CityClara_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		call (CityClara_OnTransition)
+	}
+}
+
+script CityClara_OnTransition {
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		setobjectxyperm (4, 39, 34)
+		setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_AROUND)
+		setobjectxyperm (5, 30, 32)
+		setobjectmovementtype (5, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (6, 58, 12)
+		setobjectmovementtype (6, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (8, 18, 40)
+		setobjectmovementtype (8, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (9, 55, 25)
+		setobjectmovementtype (9, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (12, 30, 38)
+		setobjectmovementtype (12, MOVEMENT_TYPE_WANDER_AROUND)	
+		setobjectxyperm (13, 39, 40)
+		setobjectmovementtype (13, MOVEMENT_TYPE_WANDER_AROUND)	
+	}
+	end
+}
+
+script CityClara_EventScript_ClubSign {	
+	lock
+	msgbox (CityClara_Text_ClubSign)
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_CannaWoman {
+	lockall
+	faceplayer
+	msgbox (CityClara_Text_CannaWoman)
+	closemessage
+	releaseall
+	end
+}
+
+script CityClara_EventScript_GreenSuit {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_GreenSuit2)
+	} 
+	else {
+		msgbox (CityClara_Text_GreenSuit)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_FatMan {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_FatMan2)
+	} 
+	else {
+		msgbox (CityClara_Text_FatMan)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_WomanA {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_WomanA2)
+	} 
+	else {
+		msgbox (CityClara_Text_WomanA)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_RedWoman {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_RedWoman2)
+	} 
+	else {
+		msgbox (CityClara_Text_RedWoman)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_OldMan {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_OldMan2)
+	} 
+	else {
+		msgbox (CityClara_Text_OldMan)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_OldWoman {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_OldWoman2)
+	} 
+	else {
+		msgbox (CityClara_Text_OldWoman)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_Lass {
+	lock
+	faceplayer
+	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+		msgbox (CityClara_Text_Lass2)
+	} 
+	else {
+		msgbox (CityClara_Text_Lass)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_LeafBridge {
+	lock
+	faceplayer
+	load_field_pic (4, 190, 98)
+	//This was to remove that var...needs to be changed anyways
+	//if (var(VAR_CITYCLARA_SCHOOL_STATE) != 8) {
+	//	msgbox (CityClara_Text_LeafBridge)
+	//} else {
+	//	msgbox (CityClara_Text_LeafBridge2)
+	//}
+	closemessage
+	destroy_field_pic (4)
+	applymovement (22, Common_Movement_FaceDown)
+	waitmovement (0)
+	releaseall
+	end
+}
+
+script CityClara_EventScript_TownSign {	
+	lock
+	msgbox (CityClara_Text_TownSign)
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_Senex {
+	lockall
+	faceplayer
+	msgbox (CityClara_Text_Senex1, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		msgbox (CityClara_Text_Senex2)
+	}
+	else {
+		msgbox (CityClara_Text_Senex3)
+	}
+	closemessage
+	releaseall
+	end
+}
+
+script CityClara_EventScript_Jessie {
+	lockall
+	faceplayer
+	msgbox (CityClara_Text_Jessie)
+	closemessage	
+	applymovement (14, Common_Movement_FaceDown)
+	waitmovement (0)
+	releaseall
+	end
+}
+
+script CityClara_EventScript_James {
+	lockall
+	faceplayer
+	msgbox (CityClara_Text_James)
+	closemessage	
+	applymovement (15, Common_Movement_FaceDown)
+	waitmovement (0)
+	releaseall
+	end
+}
+
+script CityClara_EventScript_RocketBlockA {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	msgbox (CityClara_Text_RocketBlock1)
+	closemessage
+	waitmovement (0)
+	applymovement (1, CityClara_Movement_RocketBlock1A)
+	applymovement (3, CityClara_Movement_RocketBlock2A)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft)
+	waitmovement (0)
+	msgbox (CityClara_Text_RocketBlock2)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight)
+	waitmovement (0)
+	msgbox (CityClara_Text_RocketBlock3)
+	closemessage
+	applymovement (1, CityClara_Movement_RocketReturn1A)
+	applymovement (3, CityClara_Movement_RocketReturn2A)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn)
+	waitmovement (0)
+	release
+}
+
+script CityClara_EventScript_RocketBlockB {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	msgbox (CityClara_Text_RocketBlock1)
+	closemessage
+	waitmovement (0)
+	applymovement (1, CityClara_Movement_RocketBlock1B)
+	applymovement (3, CityClara_Movement_RocketBlock2B)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight)
+	waitmovement (0)
+	msgbox (CityClara_Text_RocketBlock2)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft)
+	waitmovement (0)
+	msgbox (CityClara_Text_RocketBlock3)
+	closemessage
+	applymovement (1, CityClara_Movement_RocketReturn1B)
+	applymovement (3, CityClara_Movement_RocketReturn2B)
+	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn)
+	waitmovement (0)
+	release
+}
+
+script CityClara_EventScript_Rocket1 {
+	lock
+	faceplayer
+	msgbox(CityClara_Text_Rocket1)
+	closemessage
+	release
+}
+
+script CityClara_EventScript_Rocket2 {
+	lock
+	faceplayer
+	msgbox(CityClara_Text_Rocket2)
+	closemessage
+	release
+}	
+
+movement CityClara_Movement_RocketBlock1A {
+	walk_down
+	face_right
+}
+
+movement CityClara_Movement_RocketBlock2A {
+	walk_down
+	walk_left
+}
+
+movement CityClara_Movement_PlayerFaceLeft {
+	face_left
+}
+
+movement CityClara_Movement_PlayerFaceRight {
+	face_right
+}
+
+movement CityClara_Movement_RocketReturn1A {
+	walk_up
+	face_down
+}
+
+movement CityClara_Movement_RocketReturn2A {
+	walk_right
+	walk_up
+	face_down
+}
+
+movement CityClara_Movement_PlayerReturn {
+	walk_down * 2
+}
+
+movement CityClara_Movement_RocketBlock1B {
+	walk_down
+	walk_right
+}
+
+movement CityClara_Movement_RocketBlock2B {
+	walk_down
+	face_left
+}
+
+movement CityClara_Movement_RocketReturn1B {
+	walk_left
+	walk_up
+	face_down
+}
+
+movement CityClara_Movement_RocketReturn2B {
+	walk_up
+	face_down
+}
+
+text CityClara_Text_ClubSign {
+	format("The Chronic\nPremium Cannabis Club")
+}
+
+text CityClara_Text_TownSign {
+	format("City Saeclara built upon the lake")
+}
+
+text CityClara_Text_CannaWoman {
+	format("You see this building here? The Chronic Club? They got me so high I can barely walk!")
+}
+
+text CityClara_Text_LeafBridge {
+	format("I can't believe how long this line appears! We'll wait all day and night to move halfway up to the top. Oh {PLAYER} I bet you could find another way we could sneak around. Maybe you could learn how to cut down trees and we could sneak in, go around the back! I bet they teach you how to cut down trees and things like that if you go to the school! I've never been myself but you should go! The school is that orange building over there on the corner of the south eastern street.")
+}
+
+text CityClara_Text_LeafBridge2 {
+	format("Oh my gosh {PLAYER}! Is that the HM CUT? You are the best! Let's sneak into the church!")
+}
+
+text CityClara_Text_GreenSuit {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_GreenSuit2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_FatMan {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_FatMan2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_WomanA {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_WomanA2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_RedWoman {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_RedWoman2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_OldMan {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_OldMan2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_OldWoman {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_OldWoman2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_Lass {
+	format("I'm first in line because I payed for it.")
+}
+
+text CityClara_Text_Lass2 {
+	format("I trust the Party to take care of Mew.")
+}
+
+text CityClara_Text_Senex1 {
+	format("My boy come here, or no, are you a girl? Forgive me for my eyes are old as I have grown. Tell me would you ask me to speak and tell to you the tale of this city?")
+}
+
+text CityClara_Text_Senex2 {
+	format("This place is ancient, older than I am. They say that people first lived on the lake thousands of years ago. Escpaing drought the elder race escaped across the sea and here observed a certain sign of fate. Upon the crystal clear basin surface a Charizard devoured it's own tail. The elders knew their fate: To build a town upon the lake in reverence of their god. And now thousands of years in the future is it coincedance that Mew is here?")
+}
+
+text CityClara_Text_Senex3 {
+	format("No one has time for history these days...")
+}
+
+text CityClara_Text_RocketBlock1 {
+	format("Hey You!")
+}
+
+text CityClara_Text_RocketBlock2 {
+	format("Stop right there! Take not one more stop. This road is closed, we shall let no one pass.")
+}
+
+text CityClara_Text_RocketBlock3 {
+	format("By order of the Rocket High Command only party business will be allowed until our mission has been completed. Now get thee gone, noone wants more trouble")
+}
+
+text CityClara_Text_Rocket1 {
+	format("The Rocket Party helped me buy a home! Standing watch on the road's the very least I can do to pay back our dear leader.")
+}
+
+text CityClara_Text_Rocket2 {
+	format("The party only wants the very best people to represent their interests. Perhaps with time, and practice, and some luck, you could one day wear our great uniform. Never forget the party's here for you.")
+}
+
+text CityClara_Text_Jessie {
+	format("This church is being occupied by the Rocket Party and we're watching the door. You'll have to get in line and wait your turn then pay the entrance fee to step inside.")
+}
+
+text CityClara_Text_James {
+	format("This town is so antique it's comical. Look at all these people waiting in line just for a glimpse of some old pokemon. The city is a better place to live and party people are superior.")
+}
+
+

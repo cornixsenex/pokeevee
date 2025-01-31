@@ -1,0 +1,147 @@
+
+const OBJ_HECTOR = 7
+
+
+mapscripts BeachCave_MapScripts {}
+
+
+script BeachCave_EventScript_Nick {
+	trainerbattle_single(TRAINER_NICK, Route3_Text_NickIntro, Route3_Text_NickLost)
+	msgbox (Route3_Text_NickPost)
+	closemessage
+	end
+}
+
+script BeachCave_EventScript_Kyle {
+	trainerbattle_single(TRAINER_KYLE, Route3_Text_KyleIntro, Route3_Text_KyleLost)
+	msgbox (Route3_Text_KylePost)
+	closemessage
+	end
+}
+
+script BeachCave_EventScript_Jed {
+	trainerbattle_single(TRAINER_JED, Route3_Text_JedIntro, Route3_Text_JedLost)
+	msgbox (Route3_Text_JedPost)
+	closemessage
+	end
+}
+
+script BeachCave_EventScript_Rex {
+	trainerbattle_single(TRAINER_REX, Route3_Text_RexIntro, Route3_Text_RexLost)
+	msgbox (Route3_Text_RexPost)
+	closemessage
+	end
+}
+
+script BeachCave_EventScript_Morgan {
+	trainerbattle_single(TRAINER_MORGAN, Route3_Text_MorganIntro, Route3_Text_MorganLost)
+	msgbox (Route3_Text_MorganPost)
+	closemessage
+	end
+}
+
+script BeachCave_EventScript_Trevor {
+	trainerbattle_single(TRAINER_TREVOR, Route3_Text_TrevorIntro, Route3_Text_TrevorLost)
+	msgbox (Route3_Text_TrevorPost)
+	closemessage
+	end
+}
+
+script BeachCave_EventScript_Hector {
+	lock
+	faceplayer
+	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		removeitem (ITEM_WEDDING_INVITATION_HECTOR)
+		msgbox(BeachCave_Text_Hector2)
+		closemessage
+		fadescreen (1)
+		removeobject (OBJ_HECTOR)
+		setflag (FLAG_BEACHCAVE_HIDE_HECTOR)
+		fadescreen (0)
+	} else {
+		msgbox(BeachCave_Text_Hector1)
+		closemessage
+	}
+	release
+}
+
+text Route3_Text_NickIntro {
+	format("We come here to train! Yodaleeahooh!")
+}
+
+text Route3_Text_NickLost {
+	format("Not too bad kid")
+}
+
+text Route3_Text_NickPost {
+	format("This cave has gotten rather popular lately.")
+}
+
+text Route3_Text_KyleIntro {
+	format("I'm running first, then getting stoned lated.")
+}
+
+text Route3_Text_KyleLost {
+	format("Guess I was wrong, should have smoked a bowl first.")
+}
+
+text Route3_Text_KylePost {
+	format("Come let me know if you get a surfboard!")
+}
+
+text Route3_Text_JedIntro {
+	format("Hey kid have you ever talked to your dog?")
+}
+
+text Route3_Text_JedLost {
+	format("Looks like I head back home again.")
+}
+
+text Route3_Text_JedPost {
+	format("I moved out here last year from Tennessee!")
+}
+
+text Route3_Text_RexIntro {
+	format("Are you ready to build muscle and gain power over your life and in your core?")
+}
+
+text Route3_Text_RexLost {
+	format("I love the flag. I love my body too!")
+}
+
+text Route3_Text_RexPost {
+	format("You've got spunk kid, but you're still no black belt.")
+}
+
+text Route3_Text_MorganIntro {
+	format("Hey cutie do you want to dance with me?")
+}
+
+text Route3_Text_MorganLost {
+	format("Okay, that was awkward...")
+}
+
+text Route3_Text_MorganPost {
+	format("Leave me alone!")
+}
+
+text Route3_Text_TrevorIntro {
+	format("Oh dude watch out we're skoobin in the cave!")
+}
+
+text Route3_Text_TrevorLost {
+	format("Oh shit I think you just fucked up my hand.")
+}
+
+text Route3_Text_TrevorPost {
+	format("There's no way I'm going to pay for this...")
+}
+
+text BeachCave_Text_Hector1 {
+	format("Hello. My name is Hector, I'm from Troy. I dedicate every waking moment to self improvement, pious discipline, and rightous action. Go with God stranger.")
+}
+
+text BeachCave_Text_Hector2 {
+	format("What's this invitation that you've brought me? My brother Paris will marry Helen? I must travel to Nestor's house at once!")
+}

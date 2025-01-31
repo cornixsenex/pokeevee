@@ -40,6 +40,29 @@
 #include "constants/event_objects.h"
 #include "constants/moves.h"
 
+//CUSTOMS to handle Pv2 battles (IDK about the first one it's vanilla but the other ones for sure)
+extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer[];
+extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer[];
+
+extern const u8 SaltySpitoon_EventScript_EvazanTrainer[];
+extern const u8 SaltySpitoon_EventScript_PondaBabuTrainer[];
+
+extern const u8 SaltySpitoon_EventScript_ReeseTrainer[];
+extern const u8 SaltySpitoon_EventScript_JohnTrainer[];
+
+extern const u8 SaltySpitoon_2F_EventScript_Blue1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Blue2Trainer[];
+
+extern const u8 SaltySpitoon_2F_EventScript_Yellow1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Yellow2Trainer[];
+
+extern const u8 SaltySpitoon_2F_EventScript_Red1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Red2Trainer[];
+
+extern const u8 SaltySpitoon_2F_EventScript_Green1Trainer[];
+extern const u8 SaltySpitoon_2F_EventScript_Green2Trainer[];
+
+
 // EWRAM vars.
 EWRAM_DATA const struct BattleFrontierTrainer *gFacilityTrainers = NULL;
 EWRAM_DATA const struct TrainerMon *gFacilityTrainerMons = NULL;
@@ -2137,6 +2160,67 @@ void DoSpecialTrainerBattle(void)
         if (gSpecialVar_0x8005 & MULTI_BATTLE_CHOOSE_MONS) // Skip mons restoring(done in the script)
             gBattleScripting.specialTrainerBattleType = 0xFF;
         break;
+		//I just want to be able to battle two trainers at once :(
+	case SPECIAL_BATTLE_CANTINA_BRAWL:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_EvazanTrainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_PondaBabuTrainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_HILOKABUTO:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_JohnTrainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_EventScript_ReeseTrainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_BLUE:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Blue1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Blue2Trainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_YELLOW:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Yellow1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Yellow2Trainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_RED:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Red1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Red2Trainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
+	case SPECIAL_BATTLE_SS2F_GREEN:            
+		gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Green1Trainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(SaltySpitoon_2F_EventScript_Green2Trainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(GetTrainerBattleTransition());
+		break;
     }
 }
 
@@ -2980,11 +3064,13 @@ void TryHideBattleTowerReporter(void)
 {
     if (gSaveBlock2Ptr->frontier.challengeStatus == CHALLENGE_STATUS_SAVING)
         HideBattleTowerReporter();
-    if (FlagGet(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE) == TRUE)
-    {
-        HideBattleTowerReporter();
-        FlagClear(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE);
-    }
+	//DO NOTE I REMOVED THIS FOR HERO FLAGS :D
+	//
+    //if (FlagGet(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE) == TRUE)
+    //{
+    //    HideBattleTowerReporter();
+    //    FlagClear(FLAG_CANCEL_BATTLE_ROOM_CHALLENGE);
+    //}
 }
 
 #define STEVEN_OTID 61226
@@ -3144,6 +3230,7 @@ static void FillPartnerParty(u16 trainerId)
         }
     }
 }
+
 
 bool32 RubyBattleTowerRecordToEmerald(struct RSBattleTowerRecord *src, struct EmeraldBattleTowerRecord *dst)
 {

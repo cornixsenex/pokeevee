@@ -1,0 +1,148 @@
+mapscripts Hospital2F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Hospital2F_OnResume)
+	}
+
+}
+
+
+
+
+script Hospital2F_OnResume {
+	call (Hospital2F_EventScript_SetFloor2)
+}
+
+script Hospital2F_EventScript_SetFloor2 {
+	setvar (VAR_HOSPITAL_FLOOR, 2)
+	return
+}
+
+
+script Hospital2F_EventScript_Stoner {
+	faceplayer
+	lock
+	if (var(VAR_HOSPITAL_STATE) == 0) {
+		setvar (VAR_HOSPITAL_STATE, 1)
+		msgbox (Hospital2F_Text_Stoner1)
+		closemessage
+	}
+	if (var(VAR_HOSPITAL_STATE) == 1) {
+		setvar (VAR_HOSPITAL_STATE, 2)
+		msgbox (Hospital2F_Text_Stoner2)
+		closemessage
+	}
+	if (var(VAR_HOSPITAL_STATE) == 2) {
+		msgbox (Hospital2F_Text_Stoner3)
+		closemessage		
+		checkitem (ITEM_LEMONADE)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox (Hospital2F_Text_Stoner4, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				removeitem (ITEM_LEMONADE)
+				setvar (VAR_HOSPITAL_STATE, 3)
+				msgbox (Hospital2F_Text_Stoner6)
+				closemessage
+			} else {
+				msgbox (Hospital2F_Text_Stoner5)
+				closemessage
+			}
+		}
+	}
+	if (var(VAR_HOSPITAL_STATE) == 3) {
+		msgbox (Hospital2F_Text_Stoner7)
+		closemessage
+		checkitem (ITEM_INSURANCE_FORM_A)
+		if (var(VAR_RESULT) == TRUE) {
+			setvar (VAR_HOSPITAL_STATE, 4)
+			msgbox (Hospital2F_Text_Stoner8)
+			closemessage
+		}
+	}
+	if (var(VAR_HOSPITAL_STATE) == 4) {
+		msgbox (Hospital2F_Text_Stoner9)
+		closemessage
+		checkitem (ITEM_KIND_BUD)
+		if (var(VAR_RESULT) == TRUE) {
+			msgbox (Hospital2F_Text_Stoner10, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				removeitem (ITEM_KIND_BUD)
+				removeitem (ITEM_INSURANCE_FORM_A)
+				setvar (VAR_HOSPITAL_STATE, 5)
+				msgbox (Hospital2F_Text_Stoner11)
+				closemessage
+				giveitem (ITEM_INSURANCE_FORM_B)
+			} else {
+				msgbox (Hospital2F_Text_Stoner5)
+				closemessage
+			}
+		}
+	}
+	if (var(VAR_HOSPITAL_STATE) == 5) {
+		msgbox (Hospital2F_Text_Stoner12)
+		closemessage
+	}
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+text Hospital2F_Text_Stoner1 {
+	format("Man...what the FUCK? I been sitting here waitin God damn nearly 45 minutes and this bitch ass doctors and nurses aint gave me shit yet! Fucking bullshit, outrageous bullshit. This why I ain't never pay.")
+}
+
+text Hospital2F_Text_Stoner2 {
+	format("Man...what the FUCK? All this sittin round smokin in the Hospital and shit make a man THIRSTY! Hey you! You know what I mean young family, can you help a brother out? I'm thirty as a motherfucker but I ain't walking all the way over the bar. Hell nah! Not me. I got a powerful thirst, I think I need me some LEMONADE! Yes sir yes sir yes sir...")
+}
+
+text Hospital2F_Text_Stoner3 {
+	format("Man...what the FUCK? My lips chapped as hell, tongue feel dry as fuck. I need me some LEMONADE and fast...")
+}
+
+text Hospital2F_Text_Stoner4 {
+	format("Man..what the FUCK? Is you bring me that LEMONADE I asked for?")
+}
+
+text Hospital2F_Text_Stoner5 {
+	format("Man...what the FUCK?")
+}
+
+text Hospital2F_Text_Stoner6 {
+	format("Man..what the FUCK? Give me that shit! -SLURP- -BURP- -SLURP- Ahhhhh that's some good shit and you know it!")
+}
+
+text Hospital2F_Text_Stoner7 {
+	format("Man..what the FUCK? You know you ain't half bad young family. You helped a brother out. Respect. Holler if you in the hood homie.")
+}
+
+text Hospital2F_Text_Stoner8 {
+	format("Man..what the FUCK? You want me to like forge these documents and shit for you? Damn man what you think I know about that? Well check it out if you bring me some KIND BUD I can probably help you fill out those forms. Scratch my back and I'll scratch your huh?")
+}
+
+text Hospital2F_Text_Stoner9 {
+	format("Man..what the FUCK? Just bring me some KIND BUD and I'll get those papers filled out for you.")
+}
+
+text Hospital2F_Text_Stoner10 {
+	format("Man..what the FUCK? Is that KIND BUD? My man did you bring that for me?")
+}
+
+text Hospital2F_Text_Stoner11 {
+	format("Man..what the FUCK? Yeah, this some good shit man! Fuck yeah can't wait to spark this shit up...Here lemme see those forms...Let's see uhh name...{PLAYER}...uhh birthday...uhh Four Twenty Sixty Nine hehe...uhh income Fat Zeros hahaha uhh...sign and date. There ya go kid!")
+}
+
+text Hospital2F_Text_Stoner12 {
+	format("Man..what the FUCK? How long I gotta be waiting for? Least now I got me some KIND BUD to puff on hehehe...")
+}

@@ -351,3 +351,4 @@ bool8 LoadCompressedSpritePaletteUsingHeap(const struct CompressedSpritePalette 
     Free(buffer);
     return FALSE;
 }
+

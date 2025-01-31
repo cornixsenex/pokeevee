@@ -1,0 +1,372 @@
+
+const OBJ_EVENT_TEACHER = 1
+
+const OBJ_EVENT_STUDENT1 = 2
+const OBJ_EVENT_STUDENT2 = 3
+const OBJ_EVENT_STUDENT3 = 4
+const OBJ_EVENT_STUDENT4 = 5
+const OBJ_EVENT_STUDENT5 = 6
+const OBJ_EVENT_STUDENT6 = 7
+const OBJ_EVENT_STUDENT7 = 8
+const OBJ_EVENT_STUDENT8 = 9
+
+
+mapscripts Ardor_Uni_GrammarClass_MapScripts {
+
+}
+
+script Ardor_Uni_GrammarClass_EventScript_IncrementVar {
+	switch (var(VAR_TEMP_7)) {
+		case 0:
+			setvar (VAR_TEMP_7, 1)
+		case 1:
+			setvar (VAR_TEMP_7, 2)
+		case 2:
+			setvar (VAR_TEMP_7, 3)
+		case 3:
+			setvar (VAR_TEMP_7, 4)
+		case 4:
+			setvar (VAR_TEMP_7, 5)
+		case 5:
+			setvar (VAR_TEMP_7, 6)
+		case 6:
+			setvar (VAR_TEMP_7, 7)
+		case 7:
+			setvar (VAR_TEMP_7, 8)
+		case 8:
+			setvar (VAR_TEMP_7, 8)
+		default:
+			setvar (VAR_TEMP_7, 8)
+	}
+	return
+}
+
+script Ardor_Uni_GrammarClass_EventScript_CheckLessons {
+	setvar (VAR_TEMP_7, 0)
+	if (flag(FLAG_TEMP_1)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyNouns)
+	}
+	if (flag(FLAG_TEMP_2)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyPronouns)
+	}
+	if (flag(FLAG_TEMP_3)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyVerbs)
+	}
+	if (flag(FLAG_TEMP_4)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyAdverbs)
+	}
+	if (flag(FLAG_TEMP_5)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyParticiples)
+	}
+	if (flag(FLAG_TEMP_6)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyConjunctions)
+	}
+	if (flag(FLAG_TEMP_7)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyPrepositions)
+	}
+	if (flag(FLAG_TEMP_8)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_StudyInterjections)
+	}
+	if (var(VAR_TEMP_7) == 8) {
+		call (Ardor_Uni_GrammarClass_EventScript_Test)
+	}
+	return
+}
+
+script Ardor_Uni_GrammarClass_EventScript_Test {
+	msgbox(Ardor_Uni_GrammarClass_Text_TestBegin)
+	waitmessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_GRAMMAR, Ardor_Uni_GrammarClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_GrammarClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+script Ardor_Uni_GrammarClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_GRAMMAR)) {
+		msgbox(Ardor_Uni_GrammarClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_GRAMMAR_INTRO)) {
+		call (Ardor_Uni_GrammarClass_EventScript_CheckLessons)
+	} else {
+		setflag (FLAG_GRAMMAR_INTRO)
+		msgbox(Ardor_Uni_GrammarClass_Text_ClassIntro)
+		closemessage
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+//Nomina
+script Ardor_Uni_GrammarClass_EventScript_Student1 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_1)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson1)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student1)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT1, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Pronomina
+script Ardor_Uni_GrammarClass_EventScript_Student2 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_2)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson2)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student2)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT2, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//verba
+script Ardor_Uni_GrammarClass_EventScript_Student3 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_3)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson3)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student3)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT3, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//adverbia
+script Ardor_Uni_GrammarClass_EventScript_Student4 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_4)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson4)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student4)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT4, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Participia
+script Ardor_Uni_GrammarClass_EventScript_Student5 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_5)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson5)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student5)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT5, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Conjunctiones
+script Ardor_Uni_GrammarClass_EventScript_Student6 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_6)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson6)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student6)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT6, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Praepositiones
+script Ardor_Uni_GrammarClass_EventScript_Student7 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_7)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson7)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student7)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT7, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Interjectiones
+script Ardor_Uni_GrammarClass_EventScript_Student8 {
+	lock
+	faceplayer
+	if (flag(FLAG_GRAMMAR_INTRO)) {
+		setflag (FLAG_TEMP_8)
+		msgbox(Ardor_Uni_GrammarClass_Text_Lesson8)
+	} else {
+		msgbox(Ardor_Uni_GrammarClass_Text_Student8)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT8, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyNouns {
+	format("Stude nomina")
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyPronouns {
+	format("Stude pronomina")
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyVerbs {
+	format("Stude verba")
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyAdverbs {
+	format("Stude adverba")
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyParticiples {
+	format("Stude participia")
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyConjunctions {
+	format("Stude conjunctiones")
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyPrepositions {
+	format("Stude praepositiones")
+}
+
+text Ardor_Uni_GrammarClass_Text_StudyInterjections {
+	format("Stude interjectiones")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson1 {
+	format("Nomen pars orationis est cum casu.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson2 {
+	format("Pronomen pars orationis est quae pro nomine posita tantundem paene significat personamque terdum recipit.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson3 {
+	format("Verbum pars orationis est cum tempore et persona.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson4 {
+	format("Adverbium pars orationis est quae adjecta verbum.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson5 {
+	format("Participium est pars orationis partem capiens nominis, partem verbi.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson6 {
+	format("Conjunctio est pars orationis adnectens ordinasque sententiam.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson7 {
+	format("Praepositio pars orationis est quae praeposita aliis partes orationis.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Lesson8 {
+	format("Mea Hercule! Interjectiones sunt partes orationis significans mentis affectum voce incondita.")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student1 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student2 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student3 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student4 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student5 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student6 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student7 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_Student8 {
+	format("")
+}
+
+text Ardor_Uni_GrammarClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti grammaticam.")
+}
+
+text Ardor_Uni_GrammarClass_Text_ClassIntro {
+	format("Salve puer. Magistra Smytha sum. Necesse est tibi docere grammaticam. Partes orationis sunt octo: nomina, pronomina, verba, adverbia, participia, conjunctiones, praepositiones, et interjectiones. Stude partes octo et reveni.")
+}
+
+text Ardor_Uni_GrammarClass_Text_TestBegin {
+	format("Iam studuisti partes octo orationis!")
+}
+
+text Ardor_Uni_GrammarClass_Text_TeacherBattleLost {
+	format("Speciosus es.")
+}
+
+
+

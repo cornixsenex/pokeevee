@@ -35,10 +35,30 @@ Distributions with instructions:
 
 Other distributions have to infer what to do from [general instructions](docs/install/linux/OTHERS.md).
 
+## CORNIX LINUX INSTRUCTIONS
+Ok you just need this sutff
+```sudo pacman -S base-devel arm-none-eabi-binutils arm-none-eabi-gcc arm-none-eabi-newlib git libpng python```
+Then setup poryscript the way it says how to - setup porymap to handle triple layer metatiles too
+
 ## Mac
 Some extra considerations exist to get the testing system working.
 
 [Mac instructions](docs/install/mac/MAC_OS.md)
+
+## CORNIX MACOS INSTRUCTIONS
+OK so
+1. Check Xcode exists otherwise install it
+```xcode-select --version```
+2. Check git exists otherwise install it
+```git --version```
+3. Install python
+```python3 --version```
+4. Install homebrew - make sure to get the PATH in .zshrc
+5. brew install libpng, pkg-config(?)
+6. install toolchain
+```brew install --cask gcc-arm-embedded```
+
+Pretty sure that's it but IDK not gonna wipe my system to find out (Feel free to lmk tho!)
 
 ## ChromeOS
 Only tested on x86_64 based systems.

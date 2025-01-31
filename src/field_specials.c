@@ -2,6 +2,7 @@
 #include "debug.h"
 #include "malloc.h"
 #include "battle.h"
+#include "battle_setup.h"
 #include "battle_tower.h"
 #include "cable_club.h"
 #include "data.h"
@@ -142,11 +143,16 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
+
+void CheckIgnisMons3FFalseFloorFallWait(s16, s16);
+void CheckIgnisMons2FFalseFloorFallWait(s16, s16);
+
 #if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
 static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
 #endif //FREE_LINK_BATTLE_RECORDS
+
 
 void Special_ShowDiploma(void)
 {
@@ -362,82 +368,91 @@ u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
 
 bool32 ShouldDoWallyCall(void)
 {
-    if (FlagGet(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_WALLY_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
 
-    return TRUE;
+	return FALSE;
+    //if (FlagGet(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL))
+    //{
+    //    switch (gMapHeader.mapType)
+    //    {
+    //    case MAP_TYPE_TOWN:
+    //    case MAP_TYPE_CITY:
+    //    case MAP_TYPE_ROUTE:
+    //    case MAP_TYPE_OCEAN_ROUTE:
+    //        if (++(*GetVarPointer(VAR_WALLY_CALL_STEP_COUNTER)) < 250)
+    //            return FALSE;
+    //        break;
+    //    default:
+    //        return FALSE;
+    //    }
+    //}
+    //else
+    //{
+    //    return FALSE;
+    //}
+
+    //return TRUE;
 }
 
 bool32 ShouldDoScottFortreeCall(void)
 {
-    if (FlagGet(FLAG_SCOTT_CALL_FORTREE_GYM))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
 
-    return TRUE;
+	return FALSE;
+    //if (FlagGet(FLAG_SCOTT_CALL_FORTREE_GYM))
+    //{
+    //    switch (gMapHeader.mapType)
+    //    {
+    //    case MAP_TYPE_TOWN:
+    //    case MAP_TYPE_CITY:
+    //    case MAP_TYPE_ROUTE:
+    //    case MAP_TYPE_OCEAN_ROUTE:
+    //        if (++(*GetVarPointer(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER)) < 10)
+    //            return FALSE;
+    //        break;
+    //    default:
+    //        return FALSE;
+    //    }
+    //}
+    //else
+    //{
+    //    return FALSE;
+    //}
+
+    //return TRUE;
 }
 
+//Function has been NUKED
 bool32 ShouldDoScottBattleFrontierCall(void)
 {
-    if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+	return FALSE;
+//	if (FlagGet(FLAG_HOME_ACHILLES))
+//    {
+//        switch (gMapHeader.mapType)
+//        {
+//        case MAP_TYPE_TOWN:
+//        case MAP_TYPE_CITY:
+//        case MAP_TYPE_ROUTE:
+//        case MAP_TYPE_OCEAN_ROUTE:
+//            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
+//                return FALSE;
+//            break;
+//        default:
+//            return FALSE;
+//        }
+//    }
+//    else
+//    {
+//        return FALSE;
+//    }
+//
+//    return TRUE;
 
-    return TRUE;
 }
 
 bool32 ShouldDoRoxanneCall(void)
 {
-    if (FlagGet(FLAG_ENABLE_ROXANNE_FIRST_CALL))
+	//Probably wont ever use this function but preserved here
+    //if (FlagGet(FLAG_ENABLE_ROXANNE_FIRST_CALL))
+	if (5 > 6)
     {
         switch (gMapHeader.mapType)
         {
@@ -462,27 +477,28 @@ bool32 ShouldDoRoxanneCall(void)
 
 bool32 ShouldDoRivalRayquazaCall(void)
 {
-    if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
+    //if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
+    //{
+    //    switch (gMapHeader.mapType)
+    //    {
+    //    case MAP_TYPE_TOWN:
+    //    case MAP_TYPE_CITY:
+    //    case MAP_TYPE_ROUTE:
+    //    case MAP_TYPE_OCEAN_ROUTE:
+    //        if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
+    //            return FALSE;
+    //        break;
+    //    default:
+    //        return FALSE;
+    //    }
+    //}
+    //else
+    //{
+    //    return FALSE;
+    //}
 
-    return TRUE;
+    //return TRUE;
+	return FALSE;
 }
 
 u8 GetLinkPartnerNames(void)
@@ -521,7 +537,7 @@ void SpawnLinkPartnerObjectEvent(void)
     };
     u8 myLinkPlayerNumber;
     u8 playerFacingDirection;
-    u8 linkSpriteId;
+    u16 linkSpriteId;
     u8 i;
 
     myLinkPlayerNumber = GetMultiplayerId();
@@ -971,19 +987,21 @@ void FieldShowRegionMap(void)
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
-static bool32 IsBuildingPCTile(u32 tileId)
-{
-    return gMapHeader.mapLayout->primaryTileset == &gTileset_Building && (tileId == METATILE_Building_PC_On || tileId == METATILE_Building_PC_Off);
-}
+//NOTE: CORNIX SENEX REMOVED THESE FUNCTIONS
+//static bool32 IsBuildingPCTile(u32 tileId)
+//{
+//    return gMapHeader.mapLayout->primaryTileset == &gTileset_Building && (tileId == METATILE_Building_PC_On || tileId == METATILE_Building_PC_Off);
+//}
 
-static bool32 IsPlayerHousePCTile(u32 tileId)
-{
-    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse
-        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
-            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
-            || tileId == METATILE_BrendansMaysHouse_MayPC_On
-            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
-}
+//NOTE: CORNIX SENEX REMOVED THESE FUNCTIONS
+//static bool32 IsPlayerHousePCTile(u32 tileId)
+//{
+//    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse
+//        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
+//            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
+//            || tileId == METATILE_BrendansMaysHouse_MayPC_On
+//            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
+//}
 
 static bool8 IsPlayerInFrontOfPC(void)
 {
@@ -993,7 +1011,18 @@ static bool8 IsPlayerInFrontOfPC(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     tileInFront = MapGridGetMetatileIdAt(x, y);
 
-    return IsBuildingPCTile(tileInFront) || IsPlayerHousePCTile(tileInFront);
+    return (tileInFront == METATILE_BrendansMaysHouse_BrendanPC_On
+         || tileInFront == METATILE_BrendansMaysHouse_BrendanPC_Off
+         || tileInFront == METATILE_BrendansMaysHouse_MayPC_On
+         || tileInFront == METATILE_BrendansMaysHouse_MayPC_Off
+         || tileInFront == METATILE_Building_PC_On
+         || tileInFront == METATILE_Building_PC_Off
+		 || tileInFront == METATILE_SilphCo_PC_On
+		 || tileInFront == METATILE_SilphCo_PC_Off
+		 || tileInFront == METATILE_Hospital_PC_On
+		 || tileInFront == METATILE_Hospital_PC_Off);
+	//CornixSenex removed to maintain custom PC tiles - better to modify the actual function 1.9.1 240820
+    //return IsBuildingPCTile(tileInFront) || IsPlayerHousePCTile(tileInFront);
 }
 
 // Task data for Task_PCTurnOnEffect and Task_LotteryCornerComputerEffect
@@ -1076,6 +1105,10 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
             metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
+		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
+			metatileId = METATILE_SilphCo_PC_Off;
+		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
+			metatileId = METATILE_Hospital_PC_Off;
     }
     else
     {
@@ -1086,6 +1119,10 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
             metatileId = METATILE_BrendansMaysHouse_BrendanPC_On;
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_MayPC_On;
+		else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
+			metatileId = METATILE_SilphCo_PC_On;
+		else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
+			metatileId = METATILE_Hospital_PC_On;
     }
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
 }
@@ -1129,7 +1166,10 @@ static void PCTurnOffEffect(void)
         metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
     else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
         metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
-
+    else if (gSpecialVar_0x8004 == PC_LOCATION_ROCKET_TOWER)
+			metatileId = METATILE_SilphCo_PC_Off;
+    else if (gSpecialVar_0x8004 == PC_LOCATION_HOSPITAL)
+			metatileId = METATILE_Hospital_PC_Off;
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
     DrawWholeMapView();
 }
@@ -1568,6 +1608,11 @@ u8 GetLeadMonIndex(void)
 u16 ScriptGetPartyMonSpecies(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
+}
+
+u16 ScriptGetPartyMonIsShiny(void)
+{
+    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, NULL);
 }
 
 // Removed for Emerald
@@ -2406,6 +2451,96 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR:	
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 14;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_HOSPITAL_ELEVATOR_FLOOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_TICTACTOE_CHOOSE_MOVE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 9;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_SALTYSPITOON_GET_WAGER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_ARDOR_CHOOSE_SCIENCE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 4;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_ARDOR_CHOOSE_SOCIAL:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 4;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_ARDOR_CHOOSE_ELECTIVE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 4;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_CHOOSE_FOSSIL:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case MULTI_ARDOR_MUSIC_CHOOSE_NOTE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 8;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2566,7 +2701,98 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
-    }
+    },
+    [SCROLL_MULTI_ROCKETTOWER_ELEVATOR_FLOOR] =
+	{
+		gText_FloorChooseBF1,
+		gText_FloorChoose1,
+		gText_FloorChoose2,
+		gText_FloorChoose3,
+		gText_FloorChoose4,
+		gText_FloorChoose5,
+		gText_FloorChoose6,
+		gText_FloorChoose7,
+		gText_FloorChoose8,
+		gText_FloorChoose9,
+		gText_FloorChoose10,
+		gText_FloorChoose11,
+		gText_FloorChoose12,
+		gText_FloorChoose13,
+    },
+    [SCROLL_MULTI_HOSPITAL_ELEVATOR_FLOOR] =
+	{
+		gText_FloorChoose1,
+		gText_FloorChoose2,
+		gText_FloorChoose3,
+		gText_FloorChoose4,
+		gText_FloorChoose5,
+		gText_FloorChoose6,
+		gText_FloorChoose7,
+    },
+	[SCROLL_MULTI_TICTACTOE_CHOOSE_MOVE] =
+	{
+		gText_TicTacToeChoose1,
+		gText_TicTacToeChoose2,
+		gText_TicTacToeChoose3,
+		gText_TicTacToeChoose4,
+		gText_TicTacToeChoose5,
+		gText_TicTacToeChoose6,
+		gText_TicTacToeChoose7,
+		gText_TicTacToeChoose8,
+		gText_TicTacToeChoose9,
+	},
+	[SCROLL_MULTI_SALTYSPITOON_GET_WAGER] =
+	{
+		gText_SaltySpitoonWager1,
+		gText_SaltySpitoonWager2,
+		gText_SaltySpitoonWager3,
+		gText_SaltySpitoonWager4,
+		gText_SaltySpitoonWager5,
+		gText_SaltySpitoonWager6,
+		gText_SaltySpitoonWager7,
+	},
+	[SCROLL_MULTI_ARDOR_CHOOSE_SCIENCE] =
+	{
+		gText_ArdorChooseScience1,
+		gText_ArdorChooseScience2,
+		gText_ArdorChooseScience3,
+		gText_ArdorChooseScience4,
+	},
+	[SCROLL_MULTI_ARDOR_CHOOSE_SOCIAL] =
+	{
+		gText_ArdorChooseSocial1,
+		gText_ArdorChooseSocial2,
+		gText_ArdorChooseSocial3,
+		gText_ArdorChooseSocial4,
+	},
+	[SCROLL_MULTI_ARDOR_CHOOSE_ELECTIVE] =
+	{
+		gText_ArdorChooseElective1,
+		gText_ArdorChooseElective2,
+		gText_ArdorChooseElective3,
+		gText_ArdorChooseElective4,
+	},
+	[SCROLL_MULTI_CHOOSE_FOSSIL] =
+	{
+		gText_ChooseFossil1,
+		gText_ChooseFossil2,
+		gText_ChooseFossil3,
+		gText_ChooseFossil4,
+		gText_ChooseFossil5,
+		gText_ChooseFossil6,
+		gText_ChooseFossil7,
+	},
+	[MULTI_ARDOR_MUSIC_CHOOSE_NOTE] =
+	{
+		gText_Ardor_MusicChooseNote1,
+		gText_Ardor_MusicChooseNote2,
+		gText_Ardor_MusicChooseNote3,
+		gText_Ardor_MusicChooseNote4,
+		gText_Ardor_MusicChooseNote5,
+		gText_Ardor_MusicChooseNote6,
+		gText_Ardor_MusicChooseNote7,
+		gText_Ardor_MusicChooseNote8,
+	},
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
@@ -4334,4 +4560,1248 @@ void UseBlankMessageToCancelPokemonPic(void)
     u8 t = EOS;
     AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
     ScriptMenu_HidePokemonPic();
+}
+
+//CUSTOMS
+// - DO NOTE: VARIABLES MUST BE DECLARED AT THE TOP OF FUNCTION C89 BS OR SMTHN
+
+void ChangePersonality (void)
+{
+	struct Pokemon *mon;
+	u32 personality;
+	u8 gender;
+	u16 species;
+	int levelone = 1, HP, MAX_HP, ATK, DEF, SPEED, SPATK, SPDEF, HP_IV, ATK_IV, DEF_IV, SPEED_IV, SPATK_IV, SPDEF_IV;
+
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+
+	HP        = GetMonData(mon, MON_DATA_HP);
+	MAX_HP    = GetMonData(mon, MON_DATA_MAX_HP);
+	ATK       = GetMonData(mon, MON_DATA_ATK);
+	DEF       = GetMonData(mon, MON_DATA_DEF);
+	SPEED     = GetMonData(mon, MON_DATA_SPEED);
+	SPATK     = GetMonData(mon, MON_DATA_SPATK);
+	SPDEF     = GetMonData(mon, MON_DATA_SPDEF);
+	HP_IV     = GetMonData(mon, MON_DATA_HP_IV);
+	ATK_IV    = GetMonData(mon, MON_DATA_ATK_IV);
+	DEF_IV    = GetMonData(mon, MON_DATA_DEF_IV);
+	SPEED_IV  = GetMonData(mon, MON_DATA_SPEED_IV);
+	SPATK_IV  = GetMonData(mon, MON_DATA_SPATK_IV);
+	SPDEF_IV  = GetMonData(mon, MON_DATA_SPDEF_IV);
+
+
+
+	if (HP > 5)
+		HP -= 5;
+	else
+		HP = 1;
+
+	if (MAX_HP > 5)
+		MAX_HP -= 5;
+	else
+		MAX_HP = 1;
+
+	if (ATK > 5)
+		ATK -= 5;
+	else
+		ATK = 1;
+
+	if (DEF > 5)
+		DEF -= 5;
+	else
+		DEF = 1;
+
+	if (SPEED > 5)
+		SPEED -= 5;
+	else
+		SPEED = 1;
+
+	if (SPATK > 5)
+		SPATK -= 5;
+	else
+		SPATK = 1;
+
+	if (SPDEF > 5)
+		SPDEF -= 5;
+	else
+		SPDEF = 1;
+
+	if (HP_IV > 5)
+		HP_IV -= 5;
+	else
+		HP_IV = 1;
+
+	if (ATK_IV > 5)
+		ATK_IV -= 5;
+	else
+		ATK_IV = 1;
+
+	if (DEF_IV > 5)
+		DEF_IV -= 5;
+	else
+		DEF_IV = 1;
+
+	if (SPEED_IV > 5)
+		SPEED_IV -= 5;
+	else
+		SPEED_IV = 1;
+
+	if (SPATK_IV > 5)
+		SPATK_IV -= 5;
+	else
+		SPATK_IV = 1;
+
+	if (SPDEF_IV > 5)
+		SPDEF_IV -= 5;
+	else
+		SPDEF_IV = 1;
+
+	gender = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+
+	do
+	{
+		personality = Random32();
+	} while (gender != GetGenderFromSpeciesAndPersonality(species, personality));
+
+	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+
+	SetMonData(mon, MON_DATA_FRIENDSHIP,    &levelone);
+	SetMonData(mon, MON_DATA_HP,            &HP);
+	SetMonData(mon, MON_DATA_MAX_HP,        &MAX_HP);
+	SetMonData(mon, MON_DATA_ATK,           &ATK);
+	SetMonData(mon, MON_DATA_DEF,           &DEF);
+	SetMonData(mon, MON_DATA_SPEED,         &SPEED);
+	SetMonData(mon, MON_DATA_SPATK,         &SPATK);
+	SetMonData(mon, MON_DATA_SPDEF,         &SPDEF);
+	SetMonData(mon, MON_DATA_HP_IV,         &HP_IV);
+	SetMonData(mon, MON_DATA_ATK_IV,        &ATK_IV);
+	SetMonData(mon, MON_DATA_DEF_IV,        &DEF_IV);
+	SetMonData(mon, MON_DATA_SPEED_IV,      &SPEED_IV);
+	SetMonData(mon, MON_DATA_SPATK_IV,      &SPATK_IV);
+	SetMonData(mon, MON_DATA_SPDEF_IV,      &SPDEF_IV);
+}
+
+void MakeShiny (void)
+{
+	struct Pokemon *mon;
+	bool32 makeShiny = TRUE;
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+
+}
+
+bool8 CheckMonHasGen (void)
+{
+	u8 Gen;
+	Gen = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	if (Gen == MON_FEMALE || Gen == MON_MALE) 
+		return TRUE;
+	else
+		return FALSE;
+}
+
+void ChangeGen (void)
+{
+	struct Pokemon *mon;
+	u32 personality;
+	u8 OGen;
+	u8 NGen;
+	u16 species; 
+	u8 nature;
+	int levelone = 1, MAX_HP, ATK, DEF, SPEED, SPATK, SPDEF;
+
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+	nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
+	species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+	OGen = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+	if (OGen == MON_FEMALE)
+		NGen = MON_MALE;
+	else
+		NGen = MON_FEMALE;
+
+	MAX_HP = GetMonData(mon, MON_DATA_MAX_HP);
+	ATK    = GetMonData(mon, MON_DATA_ATK);
+	DEF    = GetMonData(mon, MON_DATA_DEF);
+	SPEED  = GetMonData(mon, MON_DATA_SPEED);
+	SPATK  = GetMonData(mon, MON_DATA_SPATK);
+	SPDEF  = GetMonData(mon, MON_DATA_SPDEF);
+
+	if (MAX_HP > 2)
+		MAX_HP /= 2;
+	else
+		MAX_HP = 1;
+
+	if (ATK > 2)
+		ATK /= 2;
+	else
+		ATK = 1;
+
+	if (DEF > 2)
+		DEF /= 2;
+	else
+		DEF = 1;
+
+	if (SPEED > 2)
+		SPEED /= 2;
+	else
+		SPEED = 1;
+
+	if (SPATK > 2)
+		SPATK /= 2;
+	else//
+		SPATK = 1;
+
+	if (SPDEF > 2)
+		SPDEF /= 2;
+	else
+		SPDEF = 1;
+
+	do
+	{
+		personality = Random32();
+	} while (nature != GetNatureFromPersonality(personality) || NGen != GetGenderFromSpeciesAndPersonality(species, personality));
+
+	UpdateMonPersonality(&(&gPlayerParty[gSpecialVar_0x8004])->box, personality);
+
+	SetMonData(mon, MON_DATA_HP_IV,      &levelone);
+	SetMonData(mon, MON_DATA_ATK_IV,     &levelone);
+	SetMonData(mon, MON_DATA_DEF_IV,     &levelone);
+	SetMonData(mon, MON_DATA_SPEED_IV,   &levelone);
+	SetMonData(mon, MON_DATA_SPATK_IV,   &levelone);
+	SetMonData(mon, MON_DATA_SPDEF_IV,   &levelone);
+	SetMonData(mon, MON_DATA_FRIENDSHIP, &levelone);
+	SetMonData(mon, MON_DATA_HP,         &levelone);
+	SetMonData(mon, MON_DATA_MAX_HP,     &MAX_HP);
+	SetMonData(mon, MON_DATA_ATK,        &ATK);
+	SetMonData(mon, MON_DATA_DEF,        &DEF);
+	SetMonData(mon, MON_DATA_SPEED,      &SPEED);
+	SetMonData(mon, MON_DATA_SPATK,      &SPATK);
+	SetMonData(mon, MON_DATA_SPDEF,      &SPDEF);
+}
+	
+
+
+void LobotomizePokemon(void)
+{
+	struct Pokemon *mon;
+	int levelone = 1;
+	u16 struggle;
+	struggle = MOVE_STRUGGLE;
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+	SetMonData(mon, MON_DATA_LEVEL, &levelone);
+	SetMonData(mon, MON_DATA_EXP, &levelone);
+	SetMonData(mon, MON_DATA_FRIENDSHIP, &levelone);
+	SetMonData(mon, MON_DATA_HP,    &levelone);
+	SetMonData(mon, MON_DATA_MAX_HP, &levelone);
+	SetMonData(mon, MON_DATA_ATK,   &levelone);
+	SetMonData(mon, MON_DATA_DEF,   &levelone);
+	SetMonData(mon, MON_DATA_SPEED, &levelone);
+	SetMonData(mon, MON_DATA_SPATK, &levelone);
+	SetMonData(mon, MON_DATA_SPDEF, &levelone);
+	SetMonData(mon, MON_DATA_MOVE1, &struggle);
+	SetMonData(mon, MON_DATA_MOVE2, &struggle);
+	SetMonData(mon, MON_DATA_MOVE3, &struggle);
+	SetMonData(mon, MON_DATA_MOVE4, &struggle);
+	SetMonData(mon, MON_DATA_PP1, &levelone);
+	SetMonData(mon, MON_DATA_PP2, &levelone);
+	SetMonData(mon, MON_DATA_PP3, &levelone);
+	SetMonData(mon, MON_DATA_PP4, &levelone);
+	SetMonData(mon, MON_DATA_HP_EV,    &levelone);
+	SetMonData(mon, MON_DATA_ATK_EV,   &levelone);
+	SetMonData(mon, MON_DATA_DEF_EV,   &levelone);
+	SetMonData(mon, MON_DATA_SPEED_EV, &levelone);
+	SetMonData(mon, MON_DATA_SPATK_EV, &levelone);
+	SetMonData(mon, MON_DATA_SPDEF_EV, &levelone);
+	SetMonData(mon, MON_DATA_HP_IV,    &levelone);
+	SetMonData(mon, MON_DATA_ATK_IV,   &levelone);
+	SetMonData(mon, MON_DATA_DEF_IV,   &levelone);
+	SetMonData(mon, MON_DATA_SPEED_IV, &levelone);
+	SetMonData(mon, MON_DATA_SPATK_IV, &levelone);
+	SetMonData(mon, MON_DATA_SPDEF_IV, &levelone);
+}
+
+u16 RandDigit(void)
+{
+	int RandomValue;
+    RandomValue = Random();
+	RandomValue %= 10;
+	return RandomValue;
+}
+
+void DesertTemple_FalseFloor(void)
+{
+	int x, y;
+	//Get player X and Y
+    x = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+    y = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	//Set Fire if correct Coords, else set regular
+	if (y == 17 || y == 20 || y == 23 || y == 26)
+	{
+		if ( (x == 0)  ||
+			 (x == 6)  ||
+			 (x == 9)  ||
+			 (x == 13) ||
+			 (x == 16) ||
+			 (x == 19)  )
+			MapGridSetMetatileIdAt(x, y, METATILE_BattlePyramid_FalseFloorFire);
+	}
+	else 
+	{
+		MapGridSetMetatileIdAt(x, y, METATILE_BattlePyramid_FalseFloor);
+	}
+}
+
+bool16 IsDesertTemple4FSolved(void)
+{
+	 u32 objectEventId1, objectEventId2, objectEventId3, objectEventId4, objectEventId5, i, j;
+	 s32 x1, x2, x3, x4, x5, y1, y2, y3, y4, y5;
+
+	 //Variable Initialization
+	 objectEventId1 = objectEventId2 = objectEventId3 = objectEventId4 = objectEventId5 = i = j = 0;
+
+	 for (i = 0; i< OBJECT_EVENTS_COUNT; i++)
+	 {
+		if (gObjectEvents[i].active && gObjectEvents[i].graphicsId == OBJ_EVENT_GFX_TRICK_HOUSE_STATUE) 
+		{
+			switch (j)
+			{
+				case 0:
+					objectEventId1 = i;
+					break;
+				case 1:
+					objectEventId2 = i;
+					break;
+				case 2:
+					objectEventId3 = i;
+					break;
+				case 3:
+					objectEventId4 = i;
+					break;
+				case 4:
+					objectEventId5 = i;
+					break;
+			}
+			j++;
+		}
+	 }
+	 x1 = gObjectEvents[objectEventId1].currentCoords.x;
+	 x2 = gObjectEvents[objectEventId2].currentCoords.x;
+	 x3 = gObjectEvents[objectEventId3].currentCoords.x;
+	 x4 = gObjectEvents[objectEventId4].currentCoords.x;
+	 x5 = gObjectEvents[objectEventId5].currentCoords.x;
+	 y1 = gObjectEvents[objectEventId1].currentCoords.y;
+	 y2 = gObjectEvents[objectEventId2].currentCoords.y;
+	 y3 = gObjectEvents[objectEventId3].currentCoords.y;
+	 y4 = gObjectEvents[objectEventId4].currentCoords.y;
+	 y5 = gObjectEvents[objectEventId5].currentCoords.y;
+	 //Real Coords are offset
+	 x1 -= MAP_OFFSET;
+	 x2 -= MAP_OFFSET;
+	 x3 -= MAP_OFFSET;
+	 x4 -= MAP_OFFSET;
+	 x5 -= MAP_OFFSET;
+	 y1 -= MAP_OFFSET;
+	 y2 -= MAP_OFFSET;
+	 y3 -= MAP_OFFSET;
+	 y4 -= MAP_OFFSET;
+	 y5 -= MAP_OFFSET;
+
+	 //If ANY of the statues on 1...and 2....and 3...and 4 then yes else nah
+	 if ( (x1 == 2 && y1 == 12) || (x2 == 2 && y2 == 12) || (x3 == 2 && y3 == 12) || (x4 == 2 && y4 == 12) || (x5 == 2 && y5 == 12) ) 
+	 {
+		 if ( (x1 == 2 && y1 == 14) || (x2 == 2 && y2 == 14) || (x3 == 2 && y3 == 14) || (x4 == 2 && y4 == 14) || (x5 == 2 && y5 == 14) )
+		 {
+			 if ( (x1 == 8 && y1 == 12) || (x2 == 8 && y2 == 12) || (x3 == 8 && y3 == 12) || (x4 == 8 && y4 == 12) || (x5 == 8 && y5 == 12) )
+			 {
+				 if ( (x1 == 8 && y1 == 14) || (x2 == 8 && y2 == 14) || (x3 == 8 && y3 == 14) || (x4 == 8 && y4 == 14) || (x5 == 8 && y5 == 14) )
+				 {
+					 return TRUE;
+				 }
+			 }
+		 }
+	 }
+	 return FALSE;
+}
+
+bool32 IsRockTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_ROCK || gSpeciesInfo[species].types[1] == TYPE_ROCK)
+                return TRUE;
+        }
+	}
+	return FALSE;
+}
+
+bool32 IsGroundTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_GROUND || gSpeciesInfo[species].types[1] == TYPE_GROUND)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsFireTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_FIRE || gSpeciesInfo[species].types[1] == TYPE_FIRE)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsWaterTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_WATER || gSpeciesInfo[species].types[1] == TYPE_WATER)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsFlyingTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_FLYING || gSpeciesInfo[species].types[1] == TYPE_FLYING)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsAnimalTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_BULBASAUR 
+			  || species == SPECIES_IVYSAUR 
+			  || species == SPECIES_VENUSAUR
+			  || species == SPECIES_CHARMANDER
+			  || species == SPECIES_CHARMELEON
+			  || species == SPECIES_CHARIZARD
+			  || species == SPECIES_SQUIRTLE 
+			  || species == SPECIES_WARTORTLE
+			  || species == SPECIES_BLASTOISE
+			  || species == SPECIES_CATERPIE 
+			  || species == SPECIES_METAPOD 
+			  || species == SPECIES_BUTTERFREE 
+			  || species == SPECIES_WEEDLE 
+			  || species == SPECIES_KAKUNA 
+			  || species == SPECIES_BEEDRILL 
+			  || species == SPECIES_PIDGEY 
+			  || species == SPECIES_PIDGEOTTO 
+			  || species == SPECIES_PIDGEOT 
+			  || species == SPECIES_RATTATA 
+			  || species == SPECIES_RATICATE 
+			  || species == SPECIES_SPEAROW 
+			  || species == SPECIES_FEAROW 
+			  || species == SPECIES_EKANS 
+			  || species == SPECIES_ARBOK 
+			  || species == SPECIES_PIKACHU 
+			  || species == SPECIES_RAICHU 
+			  || species == SPECIES_SANDSHREW 
+			  || species == SPECIES_SANDSLASH 
+			  || species == SPECIES_NIDORAN_F 
+			  || species == SPECIES_NIDORINA 
+			  || species == SPECIES_NIDOQUEEN 
+			  || species == SPECIES_NIDORAN_M 
+			  || species == SPECIES_NIDORINO 
+			  || species == SPECIES_NIDOKING 
+			  || species == SPECIES_CLEFAIRY 
+			  || species == SPECIES_CLEFABLE 
+			  || species == SPECIES_VULPIX 
+			  || species == SPECIES_NINETALES 
+			  || species == SPECIES_JIGGLYPUFF  
+			  || species == SPECIES_WIGGLYTUFF
+			  || species == SPECIES_ZUBAT 
+			  || species == SPECIES_GOLBAT 
+			  || species == SPECIES_VENONAT 
+			  || species == SPECIES_VENOMOTH 
+			  || species == SPECIES_DIGLETT 
+			  || species == SPECIES_DUGTRIO 
+			  || species == SPECIES_MEOWTH 
+			  || species == SPECIES_PERSIAN 
+			  || species == SPECIES_PSYDUCK 
+			  || species == SPECIES_GOLDUCK 
+			  || species == SPECIES_MANKEY 
+			  || species == SPECIES_PRIMEAPE 
+			  || species == SPECIES_GROWLITHE 
+			  || species == SPECIES_ARCANINE 
+			  || species == SPECIES_POLIWAG 
+			  || species == SPECIES_POLIWHIRL 
+			  || species == SPECIES_POLIWRATH 
+			  || species == SPECIES_ABRA 
+			  || species == SPECIES_KADABRA 
+			  || species == SPECIES_ALAKAZAM 
+			  || species == SPECIES_MACHOP 
+			  || species == SPECIES_MACHOKE 
+			  || species == SPECIES_MACHAMP 
+			  || species == SPECIES_TENTACOOL 
+			  || species == SPECIES_TENTACRUEL
+			  || species == SPECIES_PONYTA 
+			  || species == SPECIES_RAPIDASH
+			  || species == SPECIES_SLOWPOKE
+			  || species == SPECIES_SLOWBRO 
+			  || species == SPECIES_FARFETCHD
+			  || species == SPECIES_DODUO 
+			  || species == SPECIES_DODRIO 
+			  || species == SPECIES_SEEL 
+			  || species == SPECIES_DEWGONG 
+			  || species == SPECIES_SHELLDER
+			  || species == SPECIES_CLOYSTER
+			  || species == SPECIES_DROWZEE
+			  || species == SPECIES_HYPNO 
+			  || species == SPECIES_KRABBY 
+			  || species == SPECIES_KINGLER
+			  || species == SPECIES_CUBONE 
+			  || species == SPECIES_MAROWAK 
+			  || species == SPECIES_HITMONLEE 
+			  || species == SPECIES_HITMONCHAN
+			  || species == SPECIES_LICKITUNG 
+			  || species == SPECIES_KOFFING 
+			  || species == SPECIES_WEEZING 
+			  || species == SPECIES_RHYHORN 
+			  || species == SPECIES_RHYDON 
+			  || species == SPECIES_CHANSEY 
+			  || species == SPECIES_KANGASKHAN
+			  || species == SPECIES_HORSEA 
+			  || species == SPECIES_SEADRA 
+			  || species == SPECIES_GOLDEEN 
+			  || species == SPECIES_SEAKING 
+			  || species == SPECIES_STARYU 
+			  || species == SPECIES_STARMIE 
+			  || species == SPECIES_MR_MIME 
+			  || species == SPECIES_SCYTHER 
+			  || species == SPECIES_JYNX 
+			  || species == SPECIES_ELECTABUZZ
+			  || species == SPECIES_MAGMAR 
+			  || species == SPECIES_PINSIR 
+			  || species == SPECIES_TAUROS 
+			  || species == SPECIES_MAGIKARP 
+			  || species == SPECIES_GYARADOS 
+			  || species == SPECIES_LAPRAS 
+			  || species == SPECIES_VAPOREON 
+			  || species == SPECIES_JOLTEON 
+			  || species == SPECIES_FLAREON  
+			  || species == SPECIES_PORYGON  
+			  || species == SPECIES_OMANYTE 
+			  || species == SPECIES_OMASTAR 
+			  || species == SPECIES_KABUTO 
+			  || species == SPECIES_KABUTOPS  
+			  || species == SPECIES_AERODACTYL
+			  || species == SPECIES_SNORLAX 
+			  || species == SPECIES_ARTICUNO 
+			  || species == SPECIES_ZAPDOS 
+			  || species == SPECIES_MOLTRES  
+			  || species == SPECIES_DRATINI  
+			  || species == SPECIES_DRAGONAIR
+			  || species == SPECIES_DRAGONITE
+			  || species == SPECIES_MEWTWO 
+			  || species == SPECIES_MEW    
+			  || species == SPECIES_CHIKORITA 
+			  || species == SPECIES_BAYLEEF 
+			  || species == SPECIES_MEGANIUM 
+			  || species == SPECIES_CYNDAQUIL
+			  || species == SPECIES_QUILAVA  
+			  || species == SPECIES_TYPHLOSION
+			  || species == SPECIES_TOTODILE 
+			  || species == SPECIES_CROCONAW 
+			  || species == SPECIES_FERALIGATR
+			  || species == SPECIES_SENTRET 
+			  || species == SPECIES_FURRET  
+			  || species == SPECIES_HOOTHOOT 
+			  || species == SPECIES_NOCTOWL
+			  || species == SPECIES_LEDYBA 
+			  || species == SPECIES_LEDIAN  
+			  || species == SPECIES_SPINARAK  
+			  || species == SPECIES_ARIADOS 
+			  || species == SPECIES_CROBAT 
+			  || species == SPECIES_CHINCHOU 
+			  || species == SPECIES_LANTURN  
+			  || species == SPECIES_PICHU  
+			  || species == SPECIES_CLEFFA 
+			  || species == SPECIES_IGGLYBUFF
+			  || species == SPECIES_TOGEPI 
+			  || species == SPECIES_TOGETIC  
+			  || species == SPECIES_NATU  
+			  || species == SPECIES_XATU 
+			  || species == SPECIES_MAREEP 
+			  || species == SPECIES_FLAAFFY
+			  || species == SPECIES_AMPHAROS  
+			  || species == SPECIES_MARILL 
+			  || species == SPECIES_AZUMARILL
+			  || species == SPECIES_POLITOED 
+			  || species == SPECIES_AIPOM 
+			  || species == SPECIES_YANMA 
+			  || species == SPECIES_WOOPER 
+			  || species == SPECIES_QUAGSIRE
+			  || species == SPECIES_ESPEON 
+			  || species == SPECIES_UMBREON 
+			  || species == SPECIES_MURKROW 
+			  || species == SPECIES_SLOWKING
+			  || species == SPECIES_WOBBUFFET
+			  || species == SPECIES_GIRAFARIG
+			  || species == SPECIES_DUNSPARCE
+			  || species == SPECIES_GLIGAR 
+			  || species == SPECIES_SNUBBULL 
+			  || species == SPECIES_GRANBULL 
+			  || species == SPECIES_QWILFISH 
+			  || species == SPECIES_SCIZOR 
+			  || species == SPECIES_SHUCKLE
+			  || species == SPECIES_HERACROSS
+			  || species == SPECIES_SNEASEL 
+			  || species == SPECIES_TEDDIURSA
+			  || species == SPECIES_URSARING 
+			  || species == SPECIES_SLUGMA 
+			  || species == SPECIES_MAGCARGO 
+			  || species == SPECIES_SWINUB 
+			  || species == SPECIES_PILOSWINE 
+			  || species == SPECIES_CORSOLA 
+			  || species == SPECIES_REMORAID 
+			  || species == SPECIES_OCTILLERY
+			  || species == SPECIES_DELIBIRD 
+			  || species == SPECIES_MANTINE 
+			  || species == SPECIES_SKARMORY 
+			  || species == SPECIES_HOUNDOUR 
+			  || species == SPECIES_HOUNDOOM 
+			  || species == SPECIES_KINGDRA
+			  || species == SPECIES_PHANPY 
+			  || species == SPECIES_DONPHAN
+			  || species == SPECIES_STANTLER 
+			  || species == SPECIES_SMEARGLE
+			  || species == SPECIES_TYROGUE 
+			  || species == SPECIES_HITMONTOP
+			  || species == SPECIES_SMOOCHUM 
+			  || species == SPECIES_ELEKID
+			  || species == SPECIES_MAGBY 
+			  || species == SPECIES_MILTANK 
+			  || species == SPECIES_BLISSEY  
+			  || species == SPECIES_RAIKOU
+			  || species == SPECIES_ENTEI 
+			  || species == SPECIES_SUICUNE 
+			  || species == SPECIES_LARVITAR 
+			  || species == SPECIES_PUPITAR 
+			  || species == SPECIES_TYRANITAR
+			  || species == SPECIES_LUGIA 
+			  || species == SPECIES_HO_OH  
+			  || species == SPECIES_CELEBI
+			  || species == SPECIES_TREECKO 
+			  || species == SPECIES_GROVYLE 
+			  || species == SPECIES_SCEPTILE 
+			  || species == SPECIES_TORCHIC 
+			  || species == SPECIES_COMBUSKEN
+			  || species == SPECIES_BLAZIKEN
+			  || species == SPECIES_MUDKIP  
+			  || species == SPECIES_MARSHTOMP
+			  || species == SPECIES_SWAMPERT
+			  || species == SPECIES_POOCHYENA
+			  || species == SPECIES_MIGHTYENA
+			  || species == SPECIES_ZIGZAGOON
+			  || species == SPECIES_LINOONE 
+			  || species == SPECIES_WURMPLE 
+			  || species == SPECIES_SILCOON  
+			  || species == SPECIES_BEAUTIFLY
+			  || species == SPECIES_CASCOON 
+			  || species == SPECIES_DUSTOX
+			  || species == SPECIES_LOTAD  
+			  || species == SPECIES_LOMBRE
+			  || species == SPECIES_LUDICOLO
+			  || species == SPECIES_TAILLOW 
+			  || species == SPECIES_SWELLOW 
+			  || species == SPECIES_WINGULL 
+			  || species == SPECIES_PELIPPER 
+			  || species == SPECIES_RALTS 
+			  || species == SPECIES_KIRLIA 
+			  || species == SPECIES_GARDEVOIR 
+			  || species == SPECIES_SURSKIT 
+			  || species == SPECIES_MASQUERAIN
+			  || species == SPECIES_SLAKOTH 
+			  || species == SPECIES_VIGOROTH
+			  || species == SPECIES_SLAKING 
+			  || species == SPECIES_NINCADA 
+			  || species == SPECIES_NINJASK 
+			  || species == SPECIES_SHEDINJA
+			  || species == SPECIES_WHISMUR 
+			  || species == SPECIES_LOUDRED 
+			  || species == SPECIES_EXPLOUD 
+			  || species == SPECIES_MAKUHITA
+			  || species == SPECIES_HARIYAMA
+			  || species == SPECIES_AZURILL 
+			  || species == SPECIES_SKITTY 
+			  || species == SPECIES_DELCATTY
+			  || species == SPECIES_MAWILE
+			  || species == SPECIES_ARON 
+			  || species == SPECIES_LAIRON 
+			  || species == SPECIES_AGGRON 
+			  || species == SPECIES_MEDITITE 
+			  || species == SPECIES_MEDICHAM 
+			  || species == SPECIES_ELECTRIKE
+			  || species == SPECIES_MANECTRIC
+			  || species == SPECIES_PLUSLE 
+			  || species == SPECIES_MINUN 
+			  || species == SPECIES_VOLBEAT 
+			  || species == SPECIES_ILLUMISE 
+			  || species == SPECIES_GULPIN 
+			  || species == SPECIES_SWALOT 
+			  || species == SPECIES_CARVANHA
+			  || species == SPECIES_SHARPEDO
+			  || species == SPECIES_WAILMER 
+			  || species == SPECIES_WAILORD 
+			  || species == SPECIES_NUMEL 
+			  || species == SPECIES_CAMERUPT
+			  || species == SPECIES_TORKOAL 
+			  || species == SPECIES_SPOINK 
+			  || species == SPECIES_GRUMPIG 
+			  || species == SPECIES_SPINDA 
+			  || species == SPECIES_TRAPINCH
+			  || species == SPECIES_VIBRAVA 
+			  || species == SPECIES_FLYGON 
+			  || species == SPECIES_SWABLU 
+			  || species == SPECIES_ALTARIA 
+			  || species == SPECIES_ZANGOOSE
+			  || species == SPECIES_SEVIPER 
+			  || species == SPECIES_BARBOACH 
+			  || species == SPECIES_WHISCASH 
+			  || species == SPECIES_CORPHISH 
+			  || species == SPECIES_CRAWDAUNT
+			  || species == SPECIES_ANORITH
+			  || species == SPECIES_ARMALDO
+			  || species == SPECIES_FEEBAS 
+			  || species == SPECIES_MILOTIC
+			  || species == SPECIES_KECLEON
+			  || species == SPECIES_TROPIUS
+			  || species == SPECIES_WYNAUT 
+			  || species == SPECIES_SNORUNT
+			  || species == SPECIES_SPHEAL 
+			  || species == SPECIES_SEALEO 
+			  || species == SPECIES_WALREIN
+			  || species == SPECIES_CLAMPERL 
+			  || species == SPECIES_HUNTAIL 
+			  || species == SPECIES_GOREBYSS 
+			  || species == SPECIES_RELICANTH
+			  || species == SPECIES_BAGON 
+			  || species == SPECIES_SHELGON 
+			  || species == SPECIES_SALAMENCE
+			  || species == SPECIES_CHIMCHAR 
+			  || species == SPECIES_MONFERNO 
+			  || species == SPECIES_INFERNAPE 
+			  || species == SPECIES_PIPLUP 
+			  || species == SPECIES_PRINPLUP 
+			  || species == SPECIES_EMPOLEON 
+			  || species == SPECIES_STARLY 
+			  || species == SPECIES_STARAVIA 
+			  || species == SPECIES_STARAPTOR 
+			  || species == SPECIES_BIDOOF 
+			  || species == SPECIES_BIBAREL
+			  || species == SPECIES_KRICKETOT 
+			  || species == SPECIES_KRICKETUNE
+			  || species == SPECIES_SHINX 
+			  || species == SPECIES_LUXIO 
+			  || species == SPECIES_LUXRAY
+			  || species == SPECIES_CRANIDOS 
+			  || species == SPECIES_RAMPARDOS
+			  || species == SPECIES_SHIELDON 
+			  || species == SPECIES_BASTIODON
+			  || species == SPECIES_BURMY 
+			  || species == SPECIES_WORMADAM 
+			  || species == SPECIES_MOTHIM 
+			  || species == SPECIES_COMBEE 
+			  || species == SPECIES_VESPIQUEN
+			  || species == SPECIES_PACHIRISU
+			  || species == SPECIES_BUIZEL 
+			  || species == SPECIES_FLOATZEL 
+			  || species == SPECIES_SHELLOS 
+			  || species == SPECIES_GASTRODON
+			  || species == SPECIES_AMBIPOM 
+			  || species == SPECIES_BUNEARY
+			  || species == SPECIES_LOPUNNY
+			  || species == SPECIES_HONCHKROW
+			  || species == SPECIES_GLAMEOW 
+			  || species == SPECIES_PURUGLY 
+			  || species == SPECIES_STUNKY 
+			  || species == SPECIES_SKUNTANK
+			  || species == SPECIES_MIME_JR
+			  || species == SPECIES_HAPPINY
+			  || species == SPECIES_CHATOT 
+			  || species == SPECIES_GIBLE 
+			  || species == SPECIES_GABITE
+			  || species == SPECIES_GARCHOMP 
+			  || species == SPECIES_MUNCHLAX 
+			  || species == SPECIES_RIOLU 
+			  || species == SPECIES_LUCARIO 
+			  || species == SPECIES_HIPPOPOTAS
+			  || species == SPECIES_HIPPOWDON 
+			  || species == SPECIES_SKORUPI
+			  || species == SPECIES_DRAPION
+			  || species == SPECIES_CROAGUNK 
+			  || species == SPECIES_TOXICROAK 
+			  || species == SPECIES_FINNEON 
+			  || species == SPECIES_LUMINEON
+			  || species == SPECIES_MANTYKE 
+			  || species == SPECIES_SNOVER 
+			  || species == SPECIES_ABOMASNOW 
+			  || species == SPECIES_WEAVILE 
+			  || species == SPECIES_LICKILICKY
+			  || species == SPECIES_ELECTIVIRE
+			  || species == SPECIES_MAGMORTAR 
+			  || species == SPECIES_TOGEKISS 
+			  || species == SPECIES_YANMEGA 
+			  || species == SPECIES_LEAFEON 
+			  || species == SPECIES_GLACEON 
+			  || species == SPECIES_GLISCOR 
+			  || species == SPECIES_MAMOSWINE 
+			  || species == SPECIES_GALLADE 
+			  )  
+            {    
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsPlantTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_ODDISH 
+			  || species == SPECIES_GLOOM 
+			  || species == SPECIES_VILEPLUME 
+			  || species == SPECIES_BELLSPROUT
+			  || species == SPECIES_WEEPINBELL
+			  || species == SPECIES_VICTREEBEL
+			  || species == SPECIES_EXEGGCUTE
+			  || species == SPECIES_EXEGGUTOR
+			  || species == SPECIES_TANGELA
+			  || species == SPECIES_BELLOSSOM 
+			  || species == SPECIES_HOPPIP 
+			  || species == SPECIES_SKIPLOOM
+			  || species == SPECIES_JUMPLUFF
+			  || species == SPECIES_SUNKERN 
+			  || species == SPECIES_SUNFLORA
+			  || species == SPECIES_PINECO 
+			  || species == SPECIES_FORRETRESS
+			  || species == SPECIES_SEEDOT 
+			  || species == SPECIES_NUZLEAF
+			  || species == SPECIES_SHIFTRY
+			  || species == SPECIES_ROSELIA
+			  || species == SPECIES_CACNEA 
+			  || species == SPECIES_CACTURNE
+			  || species == SPECIES_LILEEP 
+			  || species == SPECIES_CRADILY
+			  || species == SPECIES_BUDEW 
+			  || species == SPECIES_ROSERADE
+			  || species == SPECIES_CHERUBI
+			  || species == SPECIES_CHERRIM
+			  || species == SPECIES_CARNIVINE 
+			  || species == SPECIES_TANGROWTH 
+
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsFungusTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_PARAS 
+			  || species == SPECIES_PARASECT 
+			  || species == SPECIES_SHROOMISH 
+			  || species == SPECIES_BRELOOM 
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+
+bool32 IsPsychicTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_PSYCHIC || gSpeciesInfo[species].types[1] == TYPE_PSYCHIC)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsMagnetTypeInParty(void)
+{
+    u32 i;
+    u32 species;
+    struct Pokemon *pokemon;
+    for (i = 0;i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_MAGNEMITE 
+			  || species == SPECIES_MAGNETON 
+			  || species == SPECIES_PLUSLE 
+			  || species == SPECIES_MINUN 
+			  || species == SPECIES_MAGNEZONE 
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+//Philosphy Answers
+static const u8 sText_Philosophy1[]  = _("Why");
+static const u8 sText_Philosophy2[]  = _("Why?");
+static const u8 sText_Philosophy3[]  = _("WHY");
+static const u8 sText_Philosophy4[]  = _("WHY?");
+static const u8 sText_Philosophy5[]  = _("why");
+static const u8 sText_Philosophy6[]  = _("why?");
+static const u8 sText_Philosophy7[]  = _("?");
+static const u8 sText_Philosophy8[]  = _("???");
+static const u8 sText_Philosophy9[]  = _("y");
+static const u8 sText_Philosophy10[] = _("Y");
+static const u8 sText_Philosophy11[] = _("Cur");
+static const u8 sText_Philosophy12[] = _("Cur?");
+static const u8 sText_Philosophy13[] = _("CUR");
+static const u8 sText_Philosophy14[] = _("CUR?");
+static const u8 sText_Philosophy15[] = _("cur");
+static const u8 sText_Philosophy16[] = _("cur?");
+static const u8 sText_Philosophy17[] = _("Quod");
+static const u8 sText_Philosophy18[] = _("Quod?");
+static const u8 sText_Philosophy19[] = _("QUOD");
+static const u8 sText_Philosophy20[] = _("QUOD?");
+static const u8 sText_Philosophy21[] = _("quod");
+static const u8 sText_Philosophy22[] = _("quod?");
+
+static const u8 *const sPhilosophyTextOptions[] =
+{
+	sText_Philosophy1,
+	sText_Philosophy2,
+	sText_Philosophy3,
+    sText_Philosophy4,
+    sText_Philosophy5,
+    sText_Philosophy6,
+    sText_Philosophy7,
+    sText_Philosophy8,
+    sText_Philosophy9,
+    sText_Philosophy10,
+    sText_Philosophy11,
+    sText_Philosophy12,
+    sText_Philosophy13,
+    sText_Philosophy14,
+    sText_Philosophy15,
+    sText_Philosophy16,
+    sText_Philosophy17,
+    sText_Philosophy18,
+    sText_Philosophy19,
+    sText_Philosophy20,
+    sText_Philosophy21,
+    sText_Philosophy22
+};
+
+bool32 IsPhilosophyPhrase(void)
+{
+	u32 i;
+	for (i=0; i<NELEMS(sPhilosophyTextOptions); i++) {
+		if (!StringCompare(gStringVar1, sPhilosophyTextOptions[i]))
+			return TRUE;
+	}
+	return FALSE;
+};
+
+void DoFalseFloorFall(struct ScriptContext *ctx)
+{
+    u8 mapGroup = ScriptReadByte(ctx);
+    u8 mapNum = ScriptReadByte(ctx);
+    s16 x;
+    s16 y;
+
+    PlayerGetDestCoords(&x, &y);
+
+	//Get current map group and number
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum = gSaveBlock1Ptr->location.mapNum;
+
+	//IgnisMons 1F
+	if (mapGroup == 32 && mapNum == 1) {
+        SetWarpDestination(mapGroup, mapNum+1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+	}
+
+	//IgnisMons 2F
+	if (mapGroup == 32 && mapNum == 3)	{
+		CheckIgnisMons2FFalseFloorFallWait(x, y);
+        SetWarpDestination(mapGroup, mapNum-2, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+	}
+	
+	//Ignis Mons 3F
+	if (mapGroup == 32 && mapNum == 4) {
+		CheckIgnisMons3FFalseFloorFallWait(x, y);
+        SetWarpDestination(mapGroup, mapNum-1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+	}
+
+	DoFallWarp();
+	ResetInitialPlayerAvatarState();
+}
+
+void CheckIgnisMons3FFalseFloorFallWait(s16 x, s16 y)
+{
+	x = x - MAP_OFFSET;
+	y = y - MAP_OFFSET;
+	if (
+			(x == 3  && y == 11) ||
+			(x == 6  && y == 3 ) ||
+			(x == 1  && y == 8 ) ||
+			(x == 2  && y == 7 ) ||
+			(x == 6  && y == 9 ) ||
+			(x == 17 && y == 16) ||
+			(x == 18 && y == 6 ) ||
+			(x == 17 && y == 7 ) ||
+			(x == 18 && y == 7 ) ||
+			(x == 3  && y == 18) ||
+			(x == 4  && y == 16) ||
+			(x == 5  && y == 17) ||
+			(x == 15 && y == 16) ||
+			(x == 15 && y == 17) ||
+			(x == 18 && y == 18) ||
+			(x == 2  && y == 24) ||
+			(x == 8  && y == 24) 
+	   ) 
+		VarSet(VAR_FALSEFLOOR_WAIT, 1);
+	else
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+}
+
+void CheckIgnisMons2FFalseFloorFallWait(s16 x, s16 y)
+{
+	x = x - MAP_OFFSET;
+	y = y - MAP_OFFSET;
+	if (
+			(x == 3   && y == 11 ) ||
+			(x == 7   && y == 7  ) ||
+			(x == 8   && y == 7  ) ||
+			(x == 8   && y == 8  ) ||
+			(x == 8   && y == 9  ) ||
+			(x == 17  && y == 7  ) ||
+			(x == 18  && y == 6  ) ||
+			(x == 4   && y == 16 ) ||
+			(x == 17  && y == 18 ) ||
+			(x == 18  && y == 18 ) ||
+			(x == 18  && y == 17 ) ||
+			(x == 2   && y == 24 ) 
+	   ) 
+		VarSet(VAR_FALSEFLOOR_WAIT, 1);
+	else
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+}
+
+void FalseFloorMetatileUpdate(void)
+{
+	s16 x, y;
+	u16 metatileId;
+
+	PlayerGetDestCoords(&x, &y);
+
+	metatileId = MapGridGetMetatileIdAt(x, y);
+	if (metatileId == METATILE_IgnisMons_FalseFloor) 
+		MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole);
+	if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
+		MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
+	CurrentMapDrawMetatileAt(x, y);
+}
+
+bool32 IsSpearowInParty(void)
+{
+	u32 i;
+	u32 species;
+	struct Pokemon *pokemon;
+	
+	for (i = 0;i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if ( species == SPECIES_SPEAROW
+			  )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+bool32 IsShinyMareepInParty(void)
+{
+	u32 i;
+	u32 species;
+	bool32 isShiny;
+	struct Pokemon *pokemon;
+	
+	for (i = 0;i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+			isShiny = GetMonData(pokemon, MON_DATA_IS_SHINY);
+            if ( species == SPECIES_MAREEP && isShiny == TRUE )
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+void ReleaseChosenMon(void)
+{
+	struct Pokemon *mon;
+	mon = &gPlayerParty[gSpecialVar_0x8004];
+	ZeroMonData(mon);
+	CompactPartySlots();
+	//CompactPartySprites();
+	CalculatePlayerPartyCount();
+}
+
+void SetupColchisForcedBattle(void)
+{
+	s16 x;
+	s16 y;
+	
+	//Get player X Y	
+	PlayerGetDestCoords(&x, &y);
+
+	//Set Colchis 1 (OBJ Event 23) to 6 tiles above player
+	SetObjEventTemplateCoords(23, x-7, y-13);
+	
+	//Set Colchis 2 (OBJ Event 24) to 6 tiles below player
+	SetObjEventTemplateCoords(24, x-7, y-1);
+}
+
+void DoShinyMareepBattle(void)
+{
+	//SetWildBattle
+	u16 species = SPECIES_MAREEP;
+	u8 level = 18;
+	struct Pokemon *mon;
+	u16 thunder = MOVE_THUNDER;
+	u16 thunderbolt = MOVE_THUNDERBOLT;
+	u16 thunderwave = MOVE_THUNDER_WAVE;
+	u16 recover = MOVE_RECOVER;
+	bool32 makeShiny = TRUE;
+
+
+	mon = &gEnemyParty[0];
+	//Create ScriptedWildMon
+
+    ZeroEnemyPartyMons();
+
+	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	
+	//Make Shiny Mareep
+	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+	SetMonData(mon, MON_DATA_MOVE1, &thunder);
+	SetMonData(mon, MON_DATA_MOVE2, &thunderbolt);
+	SetMonData(mon, MON_DATA_MOVE3, &thunderwave);
+	SetMonData(mon, MON_DATA_MOVE4, &recover);
+	
+	//DoWildBattle
+    BattleSetup_StartScriptedWildBattle();
+    ScriptContext_Stop();
 }

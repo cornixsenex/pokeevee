@@ -1,0 +1,44 @@
+mapscripts GatoCityE_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_SALTYSPITOON_STATE, 35: GatoCityE_EventScript_HidePlayer
+		VAR_SALTYSPITOON_STATE, 36: GatoCityE_EventScript_HidePlayer
+		VAR_SALTYSPITOON_STATE, 37: GatoCityE_EventScript_HidePlayer
+	]
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SALTYSPITOON_STATE, 35: GatoCityE_EventScript_ShowSWHJ35
+		VAR_SALTYSPITOON_STATE, 36: GatoCityE_EventScript_ShowSWHJ36
+		VAR_SALTYSPITOON_STATE, 37: GatoCityE_EventScript_ShowSWHJ37
+	]
+}
+
+script GatoCityE_EventScript_HidePlayer {
+	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_GATO_CITY_E)
+	hideobjectat (OBJ_EVENT_ID_FOLLOWER, MAP_GATO_CITY_E)
+	end
+}
+
+script GatoCityE_EventScript_ShowSWHJ35 {
+	setvar (VAR_SALTYSPITOON_STATE, 25)
+	msgbox("---SUPER WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 36, 8)
+	return
+}
+
+script GatoCityE_EventScript_ShowSWHJ36 {
+	setvar (VAR_SALTYSPITOON_STATE, 26)
+	msgbox("---SUPER WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 37, 9)
+	return
+}
+
+script GatoCityE_EventScript_ShowSWHJ37 {
+	setvar (VAR_SALTYSPITOON_STATE, 27)
+	msgbox("---SUPER WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 38, 8)
+	return
+}
+

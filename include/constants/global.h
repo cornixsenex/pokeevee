@@ -120,7 +120,7 @@
 #define WONDER_NEWS_BODY_TEXT_LINES 10
 #define TYPE_NAME_LENGTH 8
 #define ABILITY_NAME_LENGTH 16
-#define TRAINER_NAME_LENGTH 10
+#define TRAINER_NAME_LENGTH 11
 
 #define MAX_STAMP_CARD_STAMPS 7
 
@@ -162,6 +162,10 @@
 #define AXIS_X     0
 #define AXIS_Y     1
 #define AXIS_COUNT 2
+
+//Pretty sure I don't need either of these - 12-24
+#define FOLLOW_ME_IMPLEMENTED           FALSE    //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
+#define DYNAMIC_OW_PALS         TRUE
 
 #define CONNECTION_INVALID -1
 #define CONNECTION_NONE     0

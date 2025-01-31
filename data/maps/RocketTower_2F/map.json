@@ -1,0 +1,62 @@
+{
+  "id": "MAP_ROCKET_TOWER_2F",
+  "name": "RocketTower_2F",
+  "layout": "LAYOUT_ROCKET_TOWER_2F",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_AQUA_HIDEOUT",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_5F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 25,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ROCKET_TOWER_ELEVATOR",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "RocketTower_2F_EventScript_StairSign"
+    }
+  ]
+}

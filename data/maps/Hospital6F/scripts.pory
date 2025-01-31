@@ -1,0 +1,343 @@
+mapscripts Hospital6F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Hospital6F_OnResume)
+	}
+
+}
+
+
+
+
+script Hospital6F_OnResume {
+	call (Hospital6F_EventScript_SetFloor6)
+}
+
+script Hospital6F_EventScript_SetFloor6 {
+	setvar (VAR_HOSPITAL_FLOOR, 6)
+	return
+}
+
+
+
+//gen, shiny, nature, lobo
+
+//From .pory script:
+	//special ChoosePartyMon
+	//waitstate
+	//if nothing then nill, else goto another script
+
+//check if it's an egg
+//specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+//if EGG then cant do it, else
+//special MakeShiny
+//debug.c pokemon.h verdanturf/friendshipratershouse src/field_specials src/tv.c data/eventscripts slateportnamerater pokemon.c
+
+
+// SetMonShiny(struct Pokemon *pokemon)
+	//u32 current personality = GetMonData(pokemon, MON_DATA_PERSONALITY, NULL);
+
+
+
+//lobo
+
+script Hospital6F_EventScript_DocLobo {
+	lock
+	faceplayer
+	msgbox (Hospital6F_Text_DocLobo_1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		call (Hospital6F_EventScript_DocLobo_ChooseMon)	
+	}
+	msgbox (Hospital6F_Text_DocLobo_ComeBack)
+	closemessage
+	release
+	end
+}
+
+script Hospital6F_EventScript_DocLobo_ChooseMon {
+	msgbox (Hospital6F_Text_DocLobo_WhichMon)
+	special (ChoosePartyMon)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		call (Hospital6F_EventScript_DocLobo_DeclineLobo)
+	}
+	else {
+		call (Hospital6F_EventScript_DocLobo_DoLobo)
+	}
+	return
+}
+
+script Hospital6F_EventScript_DocLobo_CantLobo {
+	msgbox (Hospital6F_Text_DocLobo_CantLobo)
+	release
+	return
+}
+
+
+script Hospital6F_EventScript_DocLobo_DeclineLobo {
+	msgbox (Hospital6F_Text_DocLobo_DeclineLobo)
+	release
+	return
+}
+
+script Hospital6F_EventScript_DocLobo_DoLobo {
+	specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+	if (var(VAR_RESULT) == SPECIES_EGG) {
+		call (Hospital6F_EventScript_DocLobo_CantLobo)
+	}
+	else {
+		//Set the selected mon's level to 1 and replace all it's moves
+		special (LobotomizePokemon)
+	}
+	return	
+}
+
+// Plastic Surgeon
+
+script Hospital6F_EventScript_DocPS {
+	lock
+	faceplayer
+	msgbox (Hospital6F_Text_DocPS_1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		call (Hospital6F_EventScript_DocPS_ChooseMon)
+	}
+	msgbox (Hospital6F_Text_DocLobo_ComeBack)
+	closemessage
+	release
+	end
+}
+
+script Hospital6F_EventScript_DocPS_ChooseMon {
+	msgbox (Hospital6F_Text_DocPS_WhichMon)
+	special (ChoosePartyMon)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		call (Hospital6F_EventScript_DocPS_DeclinePS)
+	}
+	else {
+		call (Hospital6F_EventScript_DocPS_DoPS)
+	}
+	return
+}
+
+script Hospital6F_EventScript_DocPS_CantPS {
+	msgbox (Hospital6F_Text_DocPS_CantPS)
+	release
+	return
+}
+
+
+script Hospital6F_EventScript_DocPS_DeclinePS {
+	msgbox (Hospital6F_Text_DocPS_DeclinePS)
+	release
+	return
+}
+
+script Hospital6F_EventScript_DocPS_DoPS {
+	specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+	if (var(VAR_RESULT) == SPECIES_EGG) {
+		call (Hospital6F_EventScript_DocPS_CantPS)
+	}
+	else {
+		
+		special (MakeShiny)
+	}
+	return	
+}
+
+// Gen
+
+script Hospital6F_EventScript_DocG {
+	lock
+	faceplayer
+	msgbox (Hospital6F_Text_DocG_1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		call (Hospital6F_EventScript_DocG_ChooseMon)
+	}
+	msgbox (Hospital6F_Text_DocLobo_ComeBack)
+	closemessage
+	release
+	end
+}
+
+script Hospital6F_EventScript_DocG_ChooseMon {
+	msgbox (Hospital6F_Text_DocG_WhichMon)
+	special (ChoosePartyMon)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		call (Hospital6F_EventScript_DocG_DeclineG)
+	}
+	else {
+		call (Hospital6F_EventScript_DocG_DoG)
+	}
+	return
+}
+
+script Hospital6F_EventScript_DocG_CantG {
+	msgbox (Hospital6F_Text_DocG_CantG)
+	release
+	return
+}
+
+
+script Hospital6F_EventScript_DocG_DeclineG {
+	msgbox (Hospital6F_Text_DocG_DeclineG)
+	release
+	return
+}
+
+script Hospital6F_EventScript_DocG_DoG {
+	specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+	if (var(VAR_RESULT) == SPECIES_EGG) {
+		call (Hospital6F_EventScript_DocG_CantG)
+	}
+	else {
+		specialvar (VAR_RESULT, CheckMonHasGen)
+		if (var(VAR_RESULT) == TRUE) {
+			special (ChangeGen)
+		}
+		else {
+			call (Hospital6F_EventScript_DocG_CantG)
+		}
+	}
+	return	
+}
+
+// Personality
+
+script Hospital6F_EventScript_DocP {
+	lock
+	faceplayer
+	msgbox (Hospital6F_Text_DocP_1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		call (Hospital6F_EventScript_DocP_ChooseMon)
+	}
+	msgbox (Hospital6F_Text_DocLobo_ComeBack)
+	closemessage
+	release
+	end
+}
+
+script Hospital6F_EventScript_DocP_ChooseMon {
+	msgbox (Hospital6F_Text_DocP_WhichMon)
+	special (ChoosePartyMon)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		call (Hospital6F_EventScript_DocP_DeclineP)
+	}
+	else {
+		call (Hospital6F_EventScript_DocP_DoP)
+	}
+	return
+}
+
+script Hospital6F_EventScript_DocP_CantP {
+	msgbox (Hospital6F_Text_DocP_CantP)
+	release
+	return
+}
+
+
+script Hospital6F_EventScript_DocP_DeclineP {
+	msgbox (Hospital6F_Text_DocP_DeclineP)
+	release
+	return
+}
+
+script Hospital6F_EventScript_DocP_DoP {
+	specialvar (VAR_RESULT, ScriptGetPartyMonSpecies)
+	if (var(VAR_RESULT) == SPECIES_EGG) {
+		call (Hospital6F_EventScript_DocP_CantP)
+	}
+	else {
+		special(ChangePersonality)
+	}
+	return	
+}
+
+
+text Hospital6F_Text_DocLobo_ComeBack {
+	format("Please don't forget I'm here and do come back.")
+}
+
+text Hospital6F_Text_DocLobo_1 {
+	format("I am a doctor of lobotomy. Would you be interested in my services?")
+}
+
+text Hospital6F_Text_DocLobo_WhichMon {
+	format("Which {PKMN} should I lobotomize?")
+}
+
+text Hospital6F_Text_DocLobo_DeclineLobo {
+	format("Oh. I guess that means you must have changed your mind.")
+}
+
+text Hospital6F_Text_DocLobo_CantLobo {
+	format("I am afraid I can't alter this egg.")
+}
+
+text Hospital6F_Text_DocPS_ComeBack {
+	format("Please don't forget I'm here and do come back.")
+}
+
+text Hospital6F_Text_DocPS_1 {
+	format("Hello. I perform plastic surgery. Would you be interested in my services?")
+}
+
+text Hospital6F_Text_DocPS_WhichMon {
+	format("Which {PKMN} should I make beautiful?")
+}
+
+text Hospital6F_Text_DocPS_DeclinePS {
+	format("Oh. I guess that means you must have changed your mind.")
+}
+
+text Hospital6F_Text_DocPS_CantPS {
+	format("I am afraid I can't alter this egg.")
+}
+
+text Hospital6F_Text_DocG_ComeBack {
+	format("Please don't forget I'm here and do come back.")
+}
+
+text Hospital6F_Text_DocG_1 {
+	format("Would you like to tranform your pokemon?")
+}
+
+text Hospital6F_Text_DocG_WhichMon {
+	format("Which {PKMN} should I make beautiful?")
+}
+
+text Hospital6F_Text_DocG_DeclineG {
+	format("Oh. I guess that means you must have changed your mind.")
+}
+
+text Hospital6F_Text_DocG_CantG {
+	format("I am afraid I can't alter this egg.")
+}
+
+text Hospital6F_Text_DocP_ComeBack {
+	format("Please don't forget I'm here and do come back.")
+}
+
+text Hospital6F_Text_DocP_1 {
+	format("Greetings. I'm a {PKMN} therapist. Are you interested in therapy?")
+}
+
+text Hospital6F_Text_DocP_WhichMon {
+	format("Which {PKMN} needs professional help?")
+}
+
+text Hospital6F_Text_DocP_DeclineP {
+	format("Oh. I guess that means you must have changed your mind.")
+}
+
+text Hospital6F_Text_DocP_CantP {
+	format("I am afraid I can't alter this egg.")
+}
+
+

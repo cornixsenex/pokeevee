@@ -678,6 +678,42 @@ static const union AnimCmd sAnim_RunEast[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_SpinSouth[] = {
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_LOOP(1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SpinNorth[] = {
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_LOOP(1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SpinWest[] = {
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_LOOP(1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SpinEast[] = {
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_LOOP(1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_FieldMove[] =
 {
     ANIMCMD_FRAME(0, 4),
@@ -1356,6 +1392,10 @@ static const union AnimCmd *const sAnimTable_BrendanMayNormal[] = {
     [ANIM_RUN_NORTH] = sAnim_RunNorth,
     [ANIM_RUN_WEST] = sAnim_RunWest,
     [ANIM_RUN_EAST] = sAnim_RunEast,
+    [ANIM_SPIN_SOUTH] = sAnim_SpinSouth,
+    [ANIM_SPIN_NORTH] = sAnim_SpinNorth,
+    [ANIM_SPIN_WEST] = sAnim_SpinWest,
+    [ANIM_SPIN_EAST] = sAnim_SpinEast,
 };
 
 static const union AnimCmd *const sAnimTable_AcroBike[] = {
@@ -1500,6 +1540,199 @@ static const union AffineAnimCmd *const sAffineAnimTable_KyogreGroudon[] = {
     sAffineAnim_KyogreGroudon_DipEast,      // Unused
 };
 
+//Pokemon species overworlds
+static const union AnimCmd sAnim_Pokemon_FaceSouth[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_FaceNorth[] =
+{
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_FaceWest[] =
+{
+    ANIMCMD_FRAME(2, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_FaceEast[] =
+{
+    ANIMCMD_FRAME(2, 16, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoSouth[] =
+{
+    ANIMCMD_FRAME(3, 8),
+    //ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(4, 8),
+    //ANIMCMD_FRAME(0, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoNorth[] =
+{
+    ANIMCMD_FRAME(5, 8),
+    //ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(6, 8),
+    //ANIMCMD_FRAME(1, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoWest[] =
+{
+    ANIMCMD_FRAME(7, 8),
+    //ANIMCMD_FRAME(2, 8),
+    ANIMCMD_FRAME(8, 8),
+    //ANIMCMD_FRAME(2, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoEast[] =
+{
+    ANIMCMD_FRAME(7, 8, .hFlip = TRUE),
+    //ANIMCMD_FRAME(2, 8, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 8, .hFlip = TRUE),
+    //ANIMCMD_FRAME(2, 8, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastSouth[] =
+{
+    ANIMCMD_FRAME(3, 4),
+    //ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(4, 4),
+    //ANIMCMD_FRAME(0, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastNorth[] =
+{
+    ANIMCMD_FRAME(5, 4),
+    //ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(6, 4),
+    //ANIMCMD_FRAME(1, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastWest[] =
+{
+    ANIMCMD_FRAME(7, 4),
+    //ANIMCMD_FRAME(2, 4),
+    ANIMCMD_FRAME(8, 4),
+    //ANIMCMD_FRAME(2, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastEast[] =
+{
+    ANIMCMD_FRAME(7, 4, .hFlip = TRUE),
+    //ANIMCMD_FRAME(2, 4, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 4, .hFlip = TRUE),
+    //ANIMCMD_FRAME(2, 4, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFasterSouth[] =
+{
+    ANIMCMD_FRAME(3, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(4, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFasterNorth[] =
+{
+    ANIMCMD_FRAME(5, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(6, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFasterWest[] =
+{
+    ANIMCMD_FRAME(7, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_FRAME(8, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFasterEast[] =
+{
+    ANIMCMD_FRAME(7, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastestSouth[] =
+{
+    ANIMCMD_FRAME(3, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(4, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastestNorth[] =
+{
+    ANIMCMD_FRAME(5, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(6, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastestWest[] =
+{
+    ANIMCMD_FRAME(7, 1),
+    ANIMCMD_FRAME(2, 1),
+    ANIMCMD_FRAME(8, 1),
+    ANIMCMD_FRAME(2, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_Pokemon_GoFastestEast[] =
+{
+    ANIMCMD_FRAME(7, 1, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 1, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 1, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 1, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+//Pokemon overworlds
+static const union AnimCmd *const sAnimTable_PokemonSpecies[] = {
+    sAnim_Pokemon_FaceSouth,
+    sAnim_Pokemon_FaceNorth,
+    sAnim_Pokemon_FaceWest,
+    sAnim_Pokemon_FaceEast,
+    sAnim_Pokemon_GoSouth,
+    sAnim_Pokemon_GoNorth,
+    sAnim_Pokemon_GoWest,
+    sAnim_Pokemon_GoEast,
+    sAnim_Pokemon_GoFastSouth,
+    sAnim_Pokemon_GoFastNorth,
+    sAnim_Pokemon_GoFastWest,
+    sAnim_Pokemon_GoFastEast,
+    sAnim_Pokemon_GoFasterSouth,
+    sAnim_Pokemon_GoFasterNorth,
+    sAnim_Pokemon_GoFasterWest,
+    sAnim_Pokemon_GoFasterEast,
+    sAnim_Pokemon_GoFastestSouth,
+    sAnim_Pokemon_GoFastestNorth,
+    sAnim_Pokemon_GoFastestWest,
+    sAnim_Pokemon_GoFastestEast,
+};
+
 // For animations with alternating steps
 static const struct StepAnimTable sStepAnimTables[] = {
     {
@@ -1534,5 +1767,10 @@ static const struct StepAnimTable sStepAnimTables[] = {
         .anims = sAnimTable_Fishing,
         .animPos = {1, 3, 0, 2},
     },
+    {
+        .anims = sAnimTable_PokemonSpecies,
+        .animPos = {1, 3, 0, 2},
+    },
     {},
 };
+

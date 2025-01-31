@@ -242,11 +242,55 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
-
+//KUSTOMS
+#define OBJ_EVENT_GFX_BLUE						 241
+#define OBJ_EVENT_GFX_GRANDMA				     242
+#define OBJ_EVENT_GFX_EEVEE				         243
+#define OBJ_EVENT_GFX_FLAREON				     244
+#define OBJ_EVENT_GFX_JOLTEON				     245
+#define OBJ_EVENT_GFX_VAPOREON				     246
+#define OBJ_EVENT_GFX_ESPEON				     247
+#define OBJ_EVENT_GFX_UMBREON				     248
+#define OBJ_EVENT_GFX_LEAFEON				     249
+#define OBJ_EVENT_GFX_GLACEON				     250
+#define OBJ_EVENT_GFX_ROCKET_M				     251
+#define OBJ_EVENT_GFX_ROCKET_F				     252
+#define OBJ_EVENT_GFX_GIOVANNI				     253
+#define OBJ_EVENT_GFX_LORELEI				     254
+#define OBJ_EVENT_GFX_BLAINE				     255
+#define OBJ_EVENT_GFX_JESSIE				     256
+#define OBJ_EVENT_GFX_JAMES				         257
+#define OBJ_EVENT_GFX_MEOWTH			         258
+#define OBJ_EVENT_GFX_SOLDIER			         259
+#define OBJ_EVENT_GFX_BIKER				         260
+#define OBJ_EVENT_GFX_CHANNELER				     261
+#define OBJ_EVENT_GFX_CHEF  				     262
+#define OBJ_EVENT_GFX_POLICEMAN 				 263
+#define OBJ_EVENT_GFX_PROF_OAK 				 	 264
+#define OBJ_EVENT_GFX_ROCKER 				 	 265
+#define OBJ_EVENT_GFX_YOUNGSTER2				 266
+#define OBJ_EVENT_GFX_WORKER					 267
+#define OBJ_EVENT_GFX_MEWTWO_ARMOR			     268
+#define OBJ_EVENT_GFX_LT_SURGE			         269
+#define OBJ_EVENT_GFX_MISTY						 270
+#define OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2		 271
+#define OBJ_EVENT_GFX_NURSE_JOY		             272
+#define OBJ_EVENT_GFX_BIG_GREEN  	             273
+#define OBJ_EVENT_GFX_YOUNGSTER_RED              274
+#define OBJ_EVENT_GFX_GREEN                      275
+#define OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN         276
+#define OBJ_EVENT_GFX_BIG_RED                    277
+#define OBJ_EVENT_GFX_BIG_YELLOW                 278
+#define OBJ_EVENT_GFX_BRUNO                      279
+#define OBJ_EVENT_GFX_COLLISION_RATTATA          280
+#define OBJ_EVENT_GFX_COLLISION_EKANS            281
+#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER        282
+#define OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2      283
+#define OBJ_EVENT_GFX_COLLISION_DRIFBLIM         284
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        241
+#define NUM_OBJ_EVENT_GFX                        285
 
 
 // These are dynamic object gfx ids.
@@ -379,6 +423,53 @@
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
+
+//KUSTOMS
+#define OBJ_EVENT_PAL_TAG_GRANDMA		          0x1125
+#define OBJ_EVENT_PAL_TAG_BLUE		          	  0x1126
+#define OBJ_EVENT_PAL_TAG_FLAREON		          0x1127 //UNUSED
+#define OBJ_EVENT_PAL_TAG_JOLTEON		          0x1128 //UNUSED
+#define OBJ_EVENT_PAL_TAG_VAPOREON		          0x1129 //UNUSED
+#define OBJ_EVENT_PAL_TAG_ESPEON		          0x112A //UNUSED
+#define OBJ_EVENT_PAL_TAG_UMBREON		          0x112B //UNUSED
+#define OBJ_EVENT_PAL_TAG_LEAFEON		          0x112C //UNUSED
+#define OBJ_EVENT_PAL_TAG_GLACEON		          0x112D //UNUSED
+#define OBJ_EVENT_PAL_TAG_ROCKET_M		          0x112E
+#define OBJ_EVENT_PAL_TAG_ROCKET_F		          0x112F
+#define OBJ_EVENT_PAL_TAG_GIOVANNI		          0x1130
+#define OBJ_EVENT_PAL_TAG_LORELEI		          0x1131
+#define OBJ_EVENT_PAL_TAG_BLAINE		          0x1132
+#define OBJ_EVENT_PAL_TAG_JESSIE		          0x1133
+#define OBJ_EVENT_PAL_TAG_JAMES		              0x1134
+#define OBJ_EVENT_PAL_TAG_MEOWTH	              0x1135
+#define OBJ_EVENT_PAL_TAG_SOLDIER	              0x1136
+#define OBJ_EVENT_PAL_TAG_BIKER		              0x1137
+#define OBJ_EVENT_PAL_TAG_CHANNELER	              0x1138
+#define OBJ_EVENT_PAL_TAG_CHEF  	              0x1139
+#define OBJ_EVENT_PAL_TAG_POLICEMAN  	          0x113A
+#define OBJ_EVENT_PAL_TAG_PROF_OAK  	          0x113B
+#define OBJ_EVENT_PAL_TAG_ROCKER	  	          0x113C
+#define OBJ_EVENT_PAL_TAG_YOUNGSTER2	  	      0x113D
+#define OBJ_EVENT_PAL_TAG_WORKER  		  	      0x113E
+#define OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR		  	  0x113F
+#define OBJ_EVENT_PAL_TAG_LT_SURGE		  	      0x1140
+#define OBJ_EVENT_PAL_TAG_MISTY		  	          0x1141
+#define OBJ_EVENT_PAL_TAG_MAUVILLE_OLD_MAN_2	  0x1142
+#define OBJ_EVENT_PAL_TAG_NURSE_JOY          	  0x1143
+#define OBJ_EVENT_PAL_TAG_BIG_GREEN          	  0x1144
+#define OBJ_EVENT_PAL_TAG_YOUNGSTER_RED       	  0x1145
+#define OBJ_EVENT_PAL_TAG_GREEN              	  0x1146
+#define OBJ_EVENT_PAL_TAG_OLD_MAN_LYING_DOWN      0x1147
+#define OBJ_EVENT_PAL_TAG_BIG_RED                 0x1148
+#define OBJ_EVENT_PAL_TAG_BIG_YELLOW              0x1149
+#define OBJ_EVENT_PAL_TAG_BRUNO                   0x114A
+#define OBJ_EVENT_PAL_TAG_COLLISIONRATTATA        0x114B
+#define OBJ_EVENT_PAL_TAG_COLLISIONEKANS          0x114C
+#define OBJ_EVENT_PAL_TAG_COLLISIONDRIFBLIM       0x114D
+
+#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
+
+//END KUSTOMS
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -1,0 +1,123 @@
+
+const OBJ_EVENT_ID_RIVAL = 1
+const RIVAL_FIELD_PIC = 16
+
+
+
+
+
+mapscripts Slabs_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Slabs_OnResume)
+	}
+
+}
+
+
+
+
+
+
+
+script Slabs_OnResume {
+	if (var(VAR_SLABS_STATE) == 1 ) {
+		call (Slabs_EventScript_HideBike1)
+	}
+	if (var(VAR_SLABS_STATE) == 2 ) {
+		call (Slabs_EventScript_HideBike1)
+		call (Slabs_EventScript_HideBike2)
+	}
+	end
+}
+
+script Slabs_EventScript_HideBike1 {
+	setmetatile (32, 33, METATILE_Fallarbor_Slabs_GroundDefault, 0)
+	setmetatile (33, 33, METATILE_Fallarbor_Slabs_GroundDefault, 0)
+	return
+}
+
+script Slabs_EventScript_HideBike2 {
+	setmetatile (32, 34, METATILE_Fallarbor_Slabs_GroundDefault, 0)
+	setmetatile (33, 34, METATILE_Fallarbor_Slabs_GroundDefault, 0)
+	return
+}
+
+script Slabs_EventScript_RivalTrigger {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	call (Slabs_EventScript_RivalBattle)
+	release
+	end
+}
+
+
+script Slabs_EventScript_Rival {
+	lock
+	faceplayer
+	call (Slabs_EventScript_RivalBattle)
+	release
+	end
+}
+
+script Slabs_EventScript_RivalBattle {
+	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
+	msgbox (Slabs_Text_Rival1)
+	closemessage
+	destroy_field_pic (RIVAL_FIELD_PIC)
+	trainerbattle_no_intro(TRAINER_RIVAL5, Slabs_Text_RivalLost)	
+	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
+	msgbox (Slabs_Text_RivalPost)
+	closemessage
+	destroy_field_pic (RIVAL_FIELD_PIC)
+// remove rival
+	fadescreen (1)
+	setflag (FLAG_SLABS_HIDE_RIVAL)
+	removeobject (OBJ_EVENT_ID_RIVAL)
+//set var to hide one of the bikes
+	setvar (VAR_SLABS_STATE, 1)
+//remove one of the bikes
+	call (Slabs_EventScript_HideBike1)
+	special (DrawWholeMapView)
+	fadescreen (0)
+	return
+}
+
+script Slabs_EventScript_Bike {
+	lockall
+	finditem (ITEM_ACRO_BIKE)
+	setvar (VAR_SLABS_STATE, 2)
+	call (Slabs_EventScript_HideBike2)
+	special (DrawWholeMapView)
+	releaseall
+	end 
+}
+
+
+
+text Slabs_Text_Rival1 {
+	format("What are you doing here? You pushed me to the outer fringes of society where I've started a succesful renegade bicycle repair shop I'll never let you take this from me too!")
+}
+
+text Slabs_Text_RivalLost {
+	format("I can't even live my life here in peace")
+}
+
+text Slabs_Text_RivalPost {
+	format("You've destroyed everything I ever had, taken everything I've ever loved away from me where can I turn")
+}
+
+
+
+
+
+
+
+
+
+
+
+

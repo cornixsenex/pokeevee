@@ -138,6 +138,106 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+//CUSTOMS
+
+static const u8 sKindBudDesc[] = _(
+    "Hanc herbam fuma et\n"
+    "cum gaudio tussi.\n"
+    "Se deosque ride.");
+
+static const u8 sDeathStickDesc[] = _(
+    "This paper tube \n"
+    "is stuffed with a\n"
+    "smelly brown herb.");
+
+static const u8 sSurfboardDesc[] = _(
+	"This flat board\n"
+    "is shaped for\n"
+    "riding waves.");
+
+static const u8 sInsuranceFormADesc[] = _(
+	"Insurance forms\n"
+	"1099 and 420\n"
+	"Both blank.\n");
+
+static const u8 sInsuranceFormBDesc[] = _(
+	"Insurance forms\n"
+	"1099 and 420\n"
+	"Both filled in.\n");
+
+static const u8 sInsuranceCardDesc[] = _(
+	"Weenie Hut General\n"
+	"Preferred Member\n"
+	"Fully Insured\n");
+
+static const u8 sTattooDesc[] = _(
+	"A tough tattoo it\n"
+	"Says MOM or WOW\n");
+
+static const u8 sDiplomaDesc[] = _(
+	"VNIVERSITAS ARDENS\n"
+	"PRAESES ET SOCII\n"
+	"IN CVIVS REI\n"
+	"TESTIMONIVM HIS...\n");
+
+static const u8 sKegDesc[] = _(
+	"A large and heavy\n"
+	"tank filled with\n"
+	"beer.\n");
+
+static const u8 sAncientLampDesc[] = _(
+	"A strange energy\n"
+	"radiates from\n"
+	"this gold lamp.\n");
+
+static const u8 sTestBookDesc[] = _(
+	"An ancient book\n"
+	"with many pages\n"
+	"missing TEST.\n");
+
+static const u8 sWeddingInvitationDesc_Hector[] = _(
+		"For Hector,\n"
+		"An invitation to the\n"
+		"wedding of Helen\n");
+
+static const u8 sWeddingInvitationDesc_Aeneas[] = _(
+		"For Hector,\n"
+		"An invitation to the\n"
+		"wedding of Helen\n");
+
+static const u8 sWeddingInvitationDesc_Agamemnon[] = _(
+		"For Agamemnon,\n"
+		"An invitation to the\n"
+		"wedding of Helen\n");
+
+static const u8 sWeddingInvitationDesc_Ulysses[] = _(
+		"For Ulysses,\n"
+		"An invitation to the\n"
+		"wedding of Helen\n");
+
+static const u8 sColchisMapDesc[] = _(
+		"An ancient map showing"
+		"locations sacred to"
+		"the native islanders");
+
+static const u8 sBigHammerDesc[] = _( 
+		"A large hammer that\n"
+		"smashes rocks with\n"
+		"a single blow");
+
+static const u8 sOstraconDesc[] = _( 
+		"A worn pottery \n"
+		"shard bearing a\n"
+		"prophecy");
+
+static const u8 sTrainerCardDesc[] = _(
+		"An official \n"
+		"Pokemon Trainer \n"
+		"Card");
+		
+
+//END KUSTOMS
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -11885,7 +11985,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_DIVE,
+        .secondaryId = MOVE_ROCK_CLIMB,
     },
 
 
@@ -12166,7 +12266,7 @@ const struct Item gItemsInfo[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Bike,
         .iconPic = gItemIcon_Bicycle,
         .iconPalette = gItemIconPalette_Bicycle,
     },
@@ -13901,7 +14001,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_Remedy,
         .flingPower = 30,
         .iconPic = gItemIcon_Remedy,
         .iconPalette = gItemIconPalette_Remedy,
@@ -13929,7 +14028,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_FineRemedy,
     },
 
-    [ITEM_SUPERB_REMEDY] =
+	[ITEM_SUPERB_REMEDY] =
     {
         .name = _("Superb Remedy"),
         .price = 750,
@@ -14093,4 +14192,345 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+///	KUSTOM ITEMS START ///
+    
+    [ITEM_SURFBOARD] =
+    {
+        .name = _("Surfboard"),
+        .price = 0,
+        .description = sSurfboardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+	
+	[ITEM_KIND_BUD] =
+	{
+		.name = _("Kind Bud"),
+		.price = 420,
+        .holdEffectParam = 255,
+		.description = sKindBudDesc,
+		.pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_Potion,
+        .flingPower = 30,
+        .iconPic = gItemIcon_KindBud,
+        .iconPalette = gItemIconPalette_KindBud,
+    },
+
+	[ITEM_INSURANCE_FORM_A] =
+	{
+		.name = _("Forms"),
+        .price = 0,
+        .description = sInsuranceFormADesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_BlunderPolicy,
+        .iconPalette = gItemIconPalette_BlunderPolicy,
+	},
+
+	[ITEM_INSURANCE_FORM_B] =
+	{
+		.name = _("Forms"),
+        .price = 0,
+        .description = sInsuranceFormBDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_WeaknessPolicy,
+        .iconPalette = gItemIconPalette_WeaknessPolicy,
+	},
+
+	[ITEM_INSURANCE_CARD] =
+	{
+		.name = _("Isurance Card"),
+        .price = 0,
+        .description = sInsuranceCardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_RainbowPass,
+        .iconPalette = gItemIconPalette_RainbowPass,
+	},
+	
+	[ITEM_DEATH_STICK] =
+	{
+		.name = _("Death Stick"),
+		.price = 420,
+        .holdEffectParam = 255,
+		.description = sDeathStickDesc,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_PARTY_MENU,
+		.fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .flingPower = 30,
+        .iconPic = gItemIcon_DragonFang,
+        .iconPalette = gItemIconPalette_DragonFang,
+	},
+
+
+	[ITEM_TATTOO] =
+	{
+		.name = _("Tough Tattoo"),
+        .price = 0,
+        .description = sTattooDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_ShalourSable,
+        .iconPalette = gItemIconPalette_ShalourSable,
+	},
+
+	[ITEM_DIPLOMA] =
+	{
+		.name = _("Diploma"),
+        .price = 0,
+		.description = sDiplomaDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_BlunderPolicy,
+        .iconPalette = gItemIconPalette_BlunderPolicy,
+	},
+
+	[ITEM_KEG] =
+	{
+		.name = _("Keg"),
+        .price = 0,
+		.description = sKegDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_TerrainExtender,
+        .iconPalette = gItemIconPalette_TerrainExtender,
+	},
+
+	[ITEM_ANCIENT_LAMP] =
+	{
+		.name = _("Ancient Lamp"),
+        .price = 0,
+		.description = sAncientLampDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_CrackedPot,
+        .iconPalette = gItemIconPalette_Pot,
+	},
+
+	[ITEM_BOOK] =
+	{
+		.name = _("Test Book"),
+        .price = 0,
+		.description = sTestBookDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_TestBook,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_Book,
+        .iconPalette = gItemIconPalette_Book,
+	},
+
+	[ITEM_WEDDING_INVITATION_HECTOR] =
+	{
+		.name = _("Invitation"),
+        .price = 0,
+		.description = sWeddingInvitationDesc_Hector,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
+	},
+
+	[ITEM_WEDDING_INVITATION_AENEAS] =
+	{
+		.name = _("Invitation"),
+        .price = 0,
+		.description = sWeddingInvitationDesc_Aeneas,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
+	},
+
+	[ITEM_WEDDING_INVITATION_AGAMEMNON] =
+	{
+		.name = _("Invitation"),
+        .price = 0,
+		.description = sWeddingInvitationDesc_Agamemnon,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
+	},
+
+	[ITEM_WEDDING_INVITATION_ULYSSES] =
+	{
+		.name = _("Invitation"),
+        .price = 0,
+		.description = sWeddingInvitationDesc_Ulysses,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
+	},
+
+	[ITEM_COLCHIS_MAP] =
+	{
+		.name = _("Old Map"),
+        .price = 0,
+		.description = sColchisMapDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_OldSeaMap,
+        .iconPalette = gItemIconPalette_OldSeaMap,
+	},
+
+	[ITEM_BIG_HAMMER] =
+	{
+		.name = _("Big Hammer"),
+        .price = 0,
+		.description = sBigHammerDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        //.fieldUseFunc = ItemUseOutOfBattle_Hammer,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_BigHammer,
+        .iconPalette = gItemIconPalette_BigHammer,
+	},
+
+	[ITEM_OSTRACON] =
+	{
+		.name = _("Ostracon"),
+        .price = 0,
+		.description = sOstraconDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_Ostracon,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_EarthPlate,
+        .iconPalette = gItemIconPalette_EarthPlate,
+	},
+
+    [ITEM_COLCHIS_KEY] =
+    {
+        .name = _("Colchis Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A rusty key from\n"
+            "the pockets of\n"
+            "King Aeetes."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_BasementKey,
+        .iconPalette = gItemIconPalette_OldKey,
+    },
+
+    [ITEM_COLCHIS_RING] =
+    {
+        .name = _("Colchis Ring"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A pretty ring\n"
+            "with a huge\n"
+            "gemstone."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_ZRing,
+        .iconPalette = gItemIconPalette_ZRing,
+    },
+
+    [ITEM_COLCHIS_APPLE] =
+    {
+        .name = _("Colchis Apple"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A very old apple\n"
+            "that makes certain\n"
+            "people happy."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SweetApple,
+        .iconPalette = gItemIconPalette_SweetApple,
+    },
+    
+	[ITEM_COLCHIS_JAIL_KEY] =
+    {
+        .name = _("Colchis Jail Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A rusty key from\n"
+            "the pockets of\n"
+            "Colchis' jailer."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_BasementKey,
+        .iconPalette = gItemIconPalette_OldKey,
+    },
+	
+	[ITEM_TRAINER_CARD] =
+	{
+		.name = _("Trainer Card"),
+        .price = 0,
+		.description = sTrainerCardDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_TrainerCard,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_RedCard,
+        .iconPalette = gItemIconPalette_RedCard,
+	},
+
+///	KUSTOM ITEMS END ///
+
 };
+

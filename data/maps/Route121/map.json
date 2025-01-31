@@ -356,19 +356,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 65,
-      "y": 9,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "6",
-      "script": "Route121_EventScript_Marcel",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
       "x": 72,
       "y": 9,
@@ -421,18 +408,9 @@
     {
       "type": "trigger",
       "x": 25,
-      "y": 5,
-      "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
-      "var_value": "0",
-      "script": "Route121_EventScript_AquaGruntsMoveOut"
-    },
-    {
-      "type": "trigger",
-      "x": 25,
       "y": 6,
       "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -441,7 +419,7 @@
       "x": 25,
       "y": 7,
       "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -450,7 +428,16 @@
       "x": 25,
       "y": 8,
       "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Route121_EventScript_AquaGruntsMoveOut"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     }

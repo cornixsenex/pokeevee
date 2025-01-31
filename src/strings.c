@@ -39,7 +39,8 @@ ALIGNED(4) const u8 gText_NextBack[] = _("{A_BUTTON}NEXT {B_BUTTON}BACK"); // Un
 ALIGNED(4) const u8 gText_PickNextCancel[] = _("{DPAD_UPDOWN}PICK {A_BUTTON}NEXT {B_BUTTON}CANCEL");
 ALIGNED(4) const u8 gText_PickCancel[] = _("{DPAD_UPDOWN}PICK {A_BUTTON}{B_BUTTON}CANCEL");
 ALIGNED(4) const u8 gText_AButtonExit[] = _("{A_BUTTON}EXIT");
-const u8 gText_ThisIsAPokemon[] = _("This is what we call a “POKéMON.”{PAUSE 96}\p");
+//const u8 gText_ThisIsAPokemon[] = _("This is what we call a “POKéMON.”{PAUSE 96}\p");
+const u8 gText_ThisIsAPokemon[] =   _("Please dont sue me for “POKéMON.”{PAUSE 96}\p");
 const u8 gText_5MarksPokemon[] = _("????? POKéMON");
 const u8 gText_UnkHeight[] = _("{CLEAR_TO 0x0C}??'??”");
 const u8 gText_UnkHeightMetric[] = _("???.? m");
@@ -199,6 +200,56 @@ const u8 gText_ThePC[] = _("the PC");
 const u8 gText_PlayedPokeFluteCatchy[] = _("Played the POKé FLUTE.\pNow, that's a catchy tune!{PAUSE_UNTIL_PRESS}");
 const u8 gText_PlayedPokeFlute[] = _("Played the POKé FLUTE.");
 const u8 gText_PokeFluteAwakenedMon[] = _("The POKé FLUTE awakened sleeping\nPOKéMON.{PAUSE_UNTIL_PRESS}");
+
+const u8 gText_BookVerse1[]  = _("Like glowing coals the words\nfall off the page:\pIn principio creavit Deus caelum\net terram.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse2[]  = _("Like glowing coals the words\nfall off the page:\pSitting on a cornflake waiting for\nthe van to come.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse3[]  = _("Like glowing coals the words\nfall off the page:\pThere is a fountain that was not\nmade by the hands of man.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse4[]  = _("Like glowing coals the words\nfall off the page:\pYou will hear birds.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse5[]  = _("Like glowing coals the words\nfall off the page:\pTonight: The return of the outlaw.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse6[]  = _("Like glowing coals the words\nfall off the page:\pDo or do not. There is no try.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse7[]  = _("Like glowing coals the words\nfall off the page:\pYou must learn the ways of the force.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse8[]  = _("Like glowing coals the words\nfall off the page:\pOld fool! This is my hour. Do you\nnot know death when you see it?\pDie now and curse in vain!{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse9[]  = _("Like glowing coals the words\nfall off the page:\pYou cannot enter here. Go back to\nthe abyss prepared for you! Go\pback! Fall into the nothingness\nthat awaits you and your Master.\pGo!{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse10[] = _("Like glowing coals the words\nfall off the page:\pDon't trust no one!{PAUSE_UNTIL_PRESS}");
+//Bobby Dylan
+//Tamberine Man
+const u8 gText_BookVerse11[] = _("Like glowing coals the words\nfall off the page:\pKnow that evenings empire has\nreturned into sand.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse12[] = _("Like glowing coals the words\nfall off the page:\pThe ancient empty street's too\ndead for dreaming.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse13[] = _("Like glowing coals the words\nfall off the page:\pThough you might hear laughing,\nspinning, swinging madly across\pthe sun it's not aimed at anyone\nit's just escaping on the run and\pbut for the sky there are no fences\nfacing.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse14[] = _("Like glowing coals the words\nfall off the page:\pDance beneath the diamond sky with\none hand waving free silhouetted\pby the sea circled by the circus\nsands.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse15[] = _("Like glowing coals the words\nfall off the page:\pForget about today until tomorrow.{PAUSE_UNTIL_PRESS}");
+//Times they are a changing
+const u8 gText_BookVerse16[] = _("Like glowing coals the words\nfall off the page:\pAdmit that the waters around you\nhave grown.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse17[] = _("Like glowing coals the words\nfall off the page:\pAccept it that soon youll be\ndrenched to the bone.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse18[] = _("Like glowing coals the words\nfall off the page:\pIf your time to you is worth\nsavin' you better start swimmin'\por you'll sink like a stone.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse19[] = _("Like glowing coals the words\nfall off the page:\pKeep your eyes wide the chance\nwon't come again.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse20[] = _("Like glowing coals the words\nfall off the page:\pDon't speak too soon for the\nwheel's still in spin.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse21[] = _("Like glowing coals the words\nfall off the page:\pThe loser now will be later to win.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse22[] = _("Like glowing coals the words\nfall off the page:\pDon't stand in the doorway don't\nblock up the hall for he that\pgets hurt will be he who has\nstalled.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse23[] = _("Like glowing coals the words\nfall off the page:\pThe battle outside ragin will soon\nshake your windows and rattle\pyour walls.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse24[] = _("Like glowing coals the words\nfall off the page:\pDon't criticize What you can't\nunderstand.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse25[] = _("Like glowing coals the words\nfall off the page:\pYour old road is rapidly agin'\nplease get out of the new one\pif you can't lend your hand.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse26[] = _("Like glowing coals the words\nfall off the page:\pThe slow one now will later be\nfast.{PAUSE_UNTIL_PRESS}");
+//Its alright ma
+const u8 gText_BookVerse27[] =_("Like glowing coals the words\nfall off the page:\pThe handmade blade, the child's\nballoon, eclipses both the sun\pand moon.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse28[] =_("Like glowing coals the words\nfall off the page:\pThe fool's gold mouthpiece, the\nhollow horn, plays wasted words.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse29[] =_("Like glowing coals the words\nfall off the page:\pHe not busy being born is busy\ndying.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse30[] =_("Like glowing coals the words\nfall off the page:\pHuman gods aim for their mark make\neverything from toy guns that spark\pto flesh-colored Christs\nthat glow in the dark.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse31[] =_("Like glowing coals the words\nfall off the page:\pPreachers preach of evil fates.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse32[] =_("Like glowing coals the words\nfall off the page:\pEven the president of the United\nStates sometimes must have to\pstand naked.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse33[] =_("Like glowing coals the words\nfall off the page:\pIt's only people's games that you\ngot to dodge.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse34[] =_("Like glowing coals the words\nfall off the page:\pAdvertising signs they con you\ninto thinking you're the one\pthat can do what's never been done\nthat can win what's never been won\pmeantime life outside goes on\nall around you.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse35[] =_("Like glowing coals the words\nfall off the page:\pIt is not he or she or them or it\nthat you belong to.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse36[] =_("Like glowing coals the words\nfall off the page:\pThe masters make the rules for\nthe wise men and the fools.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse37[] =_("Like glowing coals the words\nfall off the page:\pOne who sings with his tongue on\nfire gargles in the rat race choir.{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse38[] =_("Like glowing coals the words\nfall off the page:\pNo woman\nNo cry{PAUSE_UNTIL_PRESS}");
+
+//End Book Verses
+
+//Ostracon
+//const u8 gText_Ostracon[] =_("In search of Colchis' cave a hidden path\nEluding their keen sight Shiny Mareep\nSo far away lost in shadowy night\nA SPEAROW released took off graceful flight\nRevealing secrets kept by cavern walls\nThus by the SPEAROW's flight the truth was shown\nHow Jason and his crew found paths unknown.");
+const u8 gText_Ostracon[] =_("In search of secret cave and sacred wool\nBy SPEAROW free to show by gentle flight\pThe hidden path you seek is truely shown\nThus Argo and her crew find paths unkown{PAUSE_UNTIL_PRESS}");
+const u8 gText_TrainerCard[] = _("Your LEVEL CAP:\n{STR_VAR_1}{PAUSE_UNTIL_PRESS}");
 
 const u8 *const gBagMenu_ReturnToStrings[] =
 {
@@ -570,6 +621,80 @@ const u8 gText_Satisfied[] = _("Satisfied");
 const u8 gText_Dissatisfied[] = _("Dissatisfied");
 const u8 gText_DeepSeaTooth[] = _("DEEPSEATOOTH");
 const u8 gText_DeepSeaScale[] = _("DEEPSEASCALE");
+
+//CITYCLARA_CHURCH_CHOOSE_STONE
+const u8 gText_StoneChooseFire[] = _("FIRE STONE");
+const u8 gText_StoneChooseWater[] = _("WATER STONE");
+const u8 gText_StoneChooseThunder[] = _("THUNDER STONE");
+const u8 gText_StoneChooseNone[] = _("NONE STONE");
+
+
+const u8 gText_FloorChooseBF1[] = _("BASEMENT");
+const u8 gText_FloorChoose1[]   = _("FLOOR 1");
+const u8 gText_FloorChoose2[]   = _("FLOOR 2");
+const u8 gText_FloorChoose3[]   = _("FLOOR 3");
+const u8 gText_FloorChoose4[]   = _("FLOOR 4");
+const u8 gText_FloorChoose5[]   = _("FLOOR 5");
+const u8 gText_FloorChoose6[]   = _("FLOOR 6");
+const u8 gText_FloorChoose7[]   = _("FLOOR 7");
+const u8 gText_FloorChoose8[]   = _("FLOOR 8");
+const u8 gText_FloorChoose9[]   = _("FLOOR 9");
+const u8 gText_FloorChoose10[]  = _("FLOOR 10");
+const u8 gText_FloorChoose11[]  = _("FLOOR 11");
+const u8 gText_FloorChoose12[]  = _("FLOOR 12");
+const u8 gText_FloorChoose13[]  = _("FLOOR 13");
+
+const u8 gText_TicTacToeChoose1[]   = _("1");
+const u8 gText_TicTacToeChoose2[]   = _("2");
+const u8 gText_TicTacToeChoose3[]   = _("3");
+const u8 gText_TicTacToeChoose4[]   = _("4");
+const u8 gText_TicTacToeChoose5[]   = _("5");
+const u8 gText_TicTacToeChoose6[]   = _("6");
+const u8 gText_TicTacToeChoose7[]   = _("7");
+const u8 gText_TicTacToeChoose8[]   = _("8");
+const u8 gText_TicTacToeChoose9[]   = _("9");
+
+const u8 gText_SaltySpitoonWager1[]   = _("1");
+const u8 gText_SaltySpitoonWager2[]   = _("10");
+const u8 gText_SaltySpitoonWager3[]   = _("100");
+const u8 gText_SaltySpitoonWager4[]   = _("1,000");
+const u8 gText_SaltySpitoonWager5[]   = _("10,000");
+const u8 gText_SaltySpitoonWager6[]   = _("100,000");
+const u8 gText_SaltySpitoonWager7[]   = _("NEVER MIND");
+
+const u8 gText_ArdorChooseScience1[]    = _("GEOLOGIAM");
+const u8 gText_ArdorChooseScience2[]    = _("BIOLOGIAM");
+const u8 gText_ArdorChooseScience3[]    = _("ALCHEMIAM");
+const u8 gText_ArdorChooseScience4[]    = _("PHYSICAS");
+
+const u8 gText_ArdorChooseSocial1[]     = _("HISTORIAM");
+const u8 gText_ArdorChooseSocial2[]     = _("ARCHAEOLOGIAM");
+const u8 gText_ArdorChooseSocial3[]     = _("PSYCHOLOGIAM");
+const u8 gText_ArdorChooseSocial4[]     = _("PHILOSOPHIAM");
+
+const u8 gText_ArdorChooseElective1[]   = _("PICTURAM");
+const u8 gText_ArdorChooseElective2[]   = _("MUSICAM");
+const u8 gText_ArdorChooseElective3[]   = _("GYMNASIUM");
+const u8 gText_ArdorChooseElective4[]   = _("LOGICAM");
+
+const u8 gText_ChooseFossil1[]   = _("HELIX FOSSIL");
+const u8 gText_ChooseFossil2[]   = _("DOME FOSSIL");
+const u8 gText_ChooseFossil3[]   = _("OLD AMBER");
+const u8 gText_ChooseFossil4[]   = _("ROOT FOSSIL");
+const u8 gText_ChooseFossil5[]   = _("CLAW FOSSIL");
+const u8 gText_ChooseFossil6[]   = _("SKULL FOSSIL");
+const u8 gText_ChooseFossil7[]   = _("ARMOR FOSSIL");
+
+const u8 gText_Ardor_MusicChooseNote1[]   = _("C");
+const u8 gText_Ardor_MusicChooseNote2[]   = _("B");
+const u8 gText_Ardor_MusicChooseNote3[]   = _("A");
+const u8 gText_Ardor_MusicChooseNote4[]   = _("F");
+const u8 gText_Ardor_MusicChooseNote5[]   = _("E");
+const u8 gText_Ardor_MusicChooseNote6[]   = _("G");
+const u8 gText_Ardor_MusicChooseNote7[]   = _("D");
+const u8 gText_Ardor_MusicChooseNote8[]   = _("C");
+
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");

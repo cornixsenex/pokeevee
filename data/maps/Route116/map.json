@@ -428,15 +428,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 47,
-      "y": 9,
-      "elevation": 3,
-      "var": "VAR_ROUTE116_STATE",
-      "var_value": "1",
-      "script": "Route116_EventScript_BrineyTrigger"
-    }
+
   ],
   "bg_events": [
     {

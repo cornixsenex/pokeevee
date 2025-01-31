@@ -1,0 +1,22 @@
+mapscripts BikeMapNNE_MapScripts {}
+
+
+
+script BikeMapNNE_EventScript_TallGrassTest {
+	lock
+	setfieldeffectargument (0, 15)
+	setfieldeffectargument (1, 20)
+	setfieldeffectargument (2, 3)
+	setfieldeffectargument (3, 2)
+	setfieldeffectargument (4, MAP_NUM(BIKE_MAP_NNE) )
+	setfieldeffectargument (5, MAP_GROUP(BIKE_MAP_NNE) )
+	setfieldeffectargument (6, MAP_BIKE_MAP_NNE)
+	setfieldeffectargument (7, 0)
+	dofieldeffect (FLDEFF_TALL_GRASS)
+	waitfieldeffect (FLDEFF_TALL_GRASS)
+	delay (10)
+	release
+	end
+}
+
+

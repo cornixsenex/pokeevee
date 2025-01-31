@@ -1,0 +1,17 @@
+mapscripts Loonix_MapScripts {
+}
+
+script Loonix_Sign {
+	lock
+	msgbox("Loonix Rules!", MSGBOX_SIGN)
+	release
+	end
+}
+
+script Small_Loonix_Sign {
+	lock
+	msgbox("Wood sign eh?", MSGBOX_SIGN)
+	release
+	end
+}
+

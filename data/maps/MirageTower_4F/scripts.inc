@@ -12,11 +12,8 @@ MirageTower_4F_EventScript_RootFossil::
 	giveitem ITEM_ROOT_FOSSIL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
-	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
-	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
 	removeobject LOCALID_ROOT_FOSSIL
 	delay 30
-	setflag FLAG_CHOSE_ROOT_FOSSIL
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
@@ -33,11 +30,8 @@ MirageTower_4F_EventScript_ClawFossil::
 	giveitem ITEM_CLAW_FOSSIL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
-	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
-	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
 	removeobject LOCALID_CLAW_FOSSIL
 	delay 30
-	setflag FLAG_CHOSE_CLAW_FOSSIL
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
@@ -56,7 +50,6 @@ MirageTower_4F_EventScript_CollapseMirageTower::
 	special DoMirageTowerCeilingCrumble
 	waitstate
 	setvar VAR_MIRAGE_TOWER_STATE, 1
-	clearflag FLAG_LANDMARK_MIRAGE_TOWER
 	warp MAP_ROUTE111, 19, 59
 	waitstate
 	release

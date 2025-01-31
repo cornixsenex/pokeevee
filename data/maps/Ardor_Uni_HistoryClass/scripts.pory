@@ -1,0 +1,332 @@
+
+const OBJ_EVENT_TEACHER = 1
+const OBJ_EVENT_STUDENT1 = 2
+const OBJ_EVENT_STUDENT2 = 3
+const OBJ_EVENT_STUDENT3 = 4
+const OBJ_EVENT_STUDENT4 = 5
+const OBJ_EVENT_STUDENT5 = 6
+const OBJ_EVENT_STUDENT6 = 7
+const OBJ_EVENT_STUDENT7 = 8
+
+
+mapscripts Ardor_Uni_HistoryClass_MapScripts {}
+
+
+
+script Ardor_Uni_HistoryClass_EventScript_Teacher {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_HISTORY)) {
+		msgbox(Ardor_Uni_HistoryClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_HISTORY_INTRO)) {
+		call (Ardor_Uni_HistoryClass_EventScript_CheckLessons)
+	} else {
+		setflag (FLAG_HISTORY_INTRO)
+		msgbox(Ardor_Uni_HistoryClass_Text_ClassIntro)
+		closemessage
+		call (Ardor_Uni_HistoryClass_EventScript_CheckLessons)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_HistoryClass_EventScript_CheckLessons {
+	setvar (VAR_TEMP_7, 0)
+	if (flag(FLAG_TEMP_1)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson1)
+	}
+	if (flag(FLAG_TEMP_2)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson2)
+	}
+	if (flag(FLAG_TEMP_3)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson3)
+	}
+	if (flag(FLAG_TEMP_4)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson4)
+	}
+	if (flag(FLAG_TEMP_5)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson5)
+	}
+	if (flag(FLAG_TEMP_6)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson6)
+	}
+	if (flag(FLAG_TEMP_7)) {
+		call (Ardor_Uni_GrammarClass_EventScript_IncrementVar)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson7)
+	}
+	if (var(VAR_TEMP_7) == 7) {
+		call (Ardor_Uni_HistoryClass_EventScript_Test)
+	}
+	return
+}
+
+script Ardor_Uni_HistoryClass_EventScript_Test {
+	msgbox(Ardor_Uni_HistoryClass_Text_TestBegin)
+	waitmessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	waitmessage
+	trainerbattle_no_intro(TRAINER_UNI_HISTORY, Ardor_Uni_HistoryClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_HistoryClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+//Ancient
+script Ardor_Uni_HistoryClass_EventScript_Student1 {
+	lock
+	faceplayer
+	if (flag(FLAG_HISTORY_INTRO)) {
+		setflag (FLAG_TEMP_1)
+		msgbox(Ardor_Uni_HistoryClass_Text_Lesson1)
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_Student1)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT1, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Classic
+script Ardor_Uni_HistoryClass_EventScript_Student2 {
+	lock
+	faceplayer
+	if (flag(FLAG_HISTORY_INTRO)) {
+		if (flag(FLAG_TEMP_1)) {
+			setflag (FLAG_TEMP_2)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson2)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson1)
+		}
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_Student2)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT2, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Medieval
+script Ardor_Uni_HistoryClass_EventScript_Student3 {
+	lock
+	faceplayer
+	if (flag(FLAG_HISTORY_INTRO)) {
+		if (flag(FLAG_TEMP_2)) {
+			setflag (FLAG_TEMP_3)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson3)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson2)
+		}
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_Student3)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT3, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Colonial
+script Ardor_Uni_HistoryClass_EventScript_Student4 {
+	lock
+	faceplayer
+	if (flag(FLAG_HISTORY_INTRO)) {
+		if (flag(FLAG_TEMP_3)) {
+			setflag (FLAG_TEMP_4)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson4)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson3)
+		}
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_Student4)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT4, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Industry
+script Ardor_Uni_HistoryClass_EventScript_Student5 {
+	lock
+	faceplayer
+	if (flag(FLAG_HISTORY_INTRO)) {
+		if (flag(FLAG_TEMP_4)) {
+			setflag (FLAG_TEMP_5)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson5)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson4)
+		}
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_Student5)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT5, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Great War
+script Ardor_Uni_HistoryClass_EventScript_Student6 {
+	lock
+	faceplayer
+	if (flag(FLAG_HISTORY_INTRO)) {
+		if (flag(FLAG_TEMP_5)) {
+			setflag (FLAG_TEMP_6)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson6)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson5)
+		}
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_Student6)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT6, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+//Modern
+script Ardor_Uni_HistoryClass_EventScript_Student7 {
+	lock
+	faceplayer
+	if (flag(FLAG_HISTORY_INTRO)) {
+		if (flag(FLAG_TEMP_6)) {
+			setflag (FLAG_TEMP_7)
+			msgbox(Ardor_Uni_HistoryClass_Text_Lesson7)
+		} else {
+			msgbox(Ardor_Uni_HistoryClass_Text_StudyLesson6)
+		}
+	} else {
+		msgbox(Ardor_Uni_HistoryClass_Text_Student7)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_STUDENT7, Common_Movement_FaceUp)
+	waitmovement (0)
+	release
+	end
+}
+
+text Ardor_Uni_HistoryClass_Text_ClassIntro {
+	format("Tace puer! Doctor, non magister tantum, Virtreus sum. Necesse est tibi docere historiam. Epochae historiae sunt septem: Historia Antiqua, Historia Classica, Historia Aevorum Mediorum, Historia Colonia, Historia Industria, Historia Belli, et Historia Nova.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Student1 {
+	format("")
+}
+
+text Ardor_Uni_HistoryClass_Text_Student2 {
+	format("")
+}
+
+text Ardor_Uni_HistoryClass_Text_Student3 {
+	format("")
+}
+
+text Ardor_Uni_HistoryClass_Text_Student4 {
+	format("")
+}
+
+text Ardor_Uni_HistoryClass_Text_Student5 {
+	format("")
+}
+
+text Ardor_Uni_HistoryClass_Text_Student6 {
+	format("")
+}
+
+text Ardor_Uni_HistoryClass_Text_Student7 {
+	format("")
+}
+
+text Ardor_Uni_HistoryClass_Text_StudyLesson1 {
+	format("Stude historiam antiquam.")
+}
+
+text Ardor_Uni_HistoryClass_Text_StudyLesson2 {
+	format("Stude historiam classicam.")
+}
+
+text Ardor_Uni_HistoryClass_Text_StudyLesson3 {
+	format("Stude historiam aevorum mediorum.")
+}
+
+text Ardor_Uni_HistoryClass_Text_StudyLesson4 {
+	format("Stude historiam coloniam.")
+}
+
+text Ardor_Uni_HistoryClass_Text_StudyLesson5 {
+	format("Stude historiam industriam")
+}
+
+text Ardor_Uni_HistoryClass_Text_StudyLesson6 {
+	format("Stude historiam bellum")
+}
+
+text Ardor_Uni_HistoryClass_Text_StudyLesson7 {
+	format("Stude historiam novum")
+}
+
+text Ardor_Uni_HistoryClass_Text_TeacherBattleLost {
+	format("Tempus meus iam cessit.")
+}
+
+text Ardor_Uni_HistoryClass_Text_ClassFinished {
+	format("Iam studuisti historiam.")
+}
+
+text Ardor_Uni_HistoryClass_Text_TestBegin {
+	format("Iam studuisti partes septem.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson1 {
+	format("In temporibus antiquis viri in cavernis vixerunt.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson2 {
+	format("In temporibus classicis viri prope mare oppidum erexerunt.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson3 {
+	format("In temporibus aevorum mediorum magnus fuit numerus regum, equorum, et castellorum.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson4 {
+	format("In temporibus colonicis viri oppidorum montes transierunt et viros feroces caperunt")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson5 {
+	format("In temporibus industriis viri invenerunt motrum et creaverunt vehicula multa.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson6 {
+	format("In temporibus belli magni multi viri occiderunt.")
+}
+
+text Ardor_Uni_HistoryClass_Text_Lesson7 {
+	format("Post bellum magnum factio Rocheta republicam virorum cepit.")
+}

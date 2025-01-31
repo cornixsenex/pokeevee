@@ -1,0 +1,44 @@
+{
+  "id": "MAP_MARE_S10",
+  "name": "MareS10",
+  "layout": "LAYOUT_MARE_S10",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_MARE_S9",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_S5",
+      "offset": 86,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S6",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

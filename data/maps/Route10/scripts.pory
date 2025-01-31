@@ -1,0 +1,74 @@
+
+
+const OBJ_EVENT_ID_RIVAL = 1
+const RIVAL_FIELD_PIC = 16
+
+
+
+mapscripts Route10_MapScripts {}
+
+
+
+
+
+script Route10_EventScript_Krabby {
+	lock
+	playmoncry (SPECIES_KRABBY, 0)
+	setflag (FLAG_ROUTE10_HIDE_KRABBY)
+	waitmoncry
+	setwildbattle (SPECIES_KRABBY, 25)
+	dowildbattle
+	fadescreen (1)
+	removeobject (17)
+	fadescreen (0)
+	release
+}
+
+
+
+script Route10_EventScript_Rival {
+	lock
+	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
+	msgbox (Route10_Text_Rival1)
+	closemessage
+	destroy_field_pic (RIVAL_FIELD_PIC)
+	applymovement (OBJ_EVENT_ID_RIVAL, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	faceplayer
+	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
+	msgbox (Route10_Text_Rival2)
+	closemessage
+	destroy_field_pic (RIVAL_FIELD_PIC)
+	trainerbattle_no_intro(TRAINER_RIVAL4, Route10_Text_RivalLost)	
+	load_field_pic (RIVAL_FIELD_PIC, 190, 98)
+	msgbox (Route10_Text_Rival3)
+	closemessage
+	destroy_field_pic (RIVAL_FIELD_PIC)
+	fadescreen (1)
+	setflag (FLAG_ROUTE10_HIDE_RIVAL)
+	removeobject (OBJ_EVENT_ID_RIVAL)
+	fadescreen (0)
+	release
+}
+
+
+
+
+
+text Route10_Text_Rival1 {
+	format("I love the beach")
+}
+
+text Route10_Text_Rival2 {
+	format("What are you doing here? So what I stole the keys?")
+} 
+
+text Route10_Text_RivalLost {
+	format("How do you always win?")
+}
+
+text Route10_Text_Rival3 {
+	format("Take the stupid keys and screw off")
+}
+
+

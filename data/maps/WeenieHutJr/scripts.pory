@@ -1,0 +1,731 @@
+
+const OBJ_EVENT_ID_LADYL = 3
+const OBJ_EVENT_ID_LADYR = 4
+
+const VAR_WINS = VAR_TEMP_F
+const VAR_BOARD = VAR_TEMP_E
+const PURPLE = 1
+const BLUE = 2
+const ORANGE = 3
+const PINK = 4
+const PTOKEN = VAR_TEMP_D
+const XTOKEN = 1
+const OTOKEN = 2
+const TTT1 = var(VAR_TEMP_1)
+const TTT2 = var(VAR_TEMP_2)
+const TTT3 = var(VAR_TEMP_3)
+const TTT4 = var(VAR_TEMP_4)
+const TTT5 = var(VAR_TEMP_5)
+const TTT6 = var(VAR_TEMP_6)
+const TTT7 = var(VAR_TEMP_7)
+const TTT8 = var(VAR_TEMP_8)
+const TTT9 = var(VAR_TEMP_9)
+const TTTURN = VAR_TEMP_C
+const TTTMOVE = VAR_TEMP_B
+
+mapscripts WeenieHutJr_MapScripts {}
+
+
+script WeenieHutJr_EventScript_DoorTriggerL {
+	if (!(flag(FLAG_TEMP_8))){
+		setflag(FLAG_TEMP_8)
+		lock
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+		waitmovement (0)
+		call (WeenieHutJr_EventScript_DoorBlock)
+	}
+	release
+}
+
+script WeenieHutJr_EventScript_DoorTriggerR {
+	if (!(flag(FLAG_TEMP_8))){
+		setflag(FLAG_TEMP_8)
+		lock
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+		waitmovement (0)
+		call (WeenieHutJr_EventScript_DoorBlock)
+	}
+	release
+}
+
+script WeenieHutJr_EventScript_DoorBlock {
+	msgbox (WeenieHutJr_Text_DoorBlockA)
+	closemessage
+	if (var(VAR_SWHJ_STATE) == 3) {
+		msgbox (WeenieHutJr_Text_DoorOpens)
+		closemessage
+	} elif (var(VAR_SWHJ_STATE) == 4) {
+		applymovement (OBJ_EVENT_ID_LADYL, Common_Movement_ExclamationMark)
+		applymovement (OBJ_EVENT_ID_LADYR, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		msgbox (WeenieHutJr_Text_DoorBlockD)
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement (0)
+		clearflag (FLAG_TEMP_8)
+	} else {
+		msgbox (WeenieHutJr_Text_DoorBlockB)
+		closemessage
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		waitmovement (0)
+		clearflag (FLAG_TEMP_8)
+	}
+	return
+}
+script WeenieHutJr_EventScript_KickOutR {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	call (WeenieHutJr_EventScript_KickOut)
+	release
+}
+
+script WeenieHutJr_EventScript_KickOutL {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	call (WeenieHutJr_EventScript_KickOut)
+	release
+}
+
+script WeenieHutJr_EventScript_KickOut {
+	clearflag (FLAG_TEMP_8)
+	setvar (VAR_SWHJ_STATE, 4)
+	msgbox (WeenieHutJr_Text_KickOut)
+	closemessage
+	return
+}
+
+script WeenieHutJr_EventScript_TicTacToe_Blue {
+	lock
+	setvar (VAR_BOARD, 1)
+	faceplayer
+	if (flag(FLAG_TEMP_1)) {
+		if (defeated(TRAINER_MEI_AND_LISA) ) {
+			msgbox (WeenieHutJr_Text_MeiAndLisaPost)
+		} else {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_Post)
+		}
+	} else {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetToken)
+		}
+		else {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_Decline)
+		}
+	}
+	release
+}
+
+script WeenieHutJr_EventScript_TicTacToe_Orange {
+	lock
+	setvar (VAR_BOARD, 2)
+	faceplayer
+	if (flag(FLAG_TEMP_2)) {
+		if (defeated(TRAINER_MEI_AND_LISA) ) {
+			msgbox (WeenieHutJr_Text_MeiAndLisaPost)
+		} else {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_Post)
+		}
+	} else {
+		msgbox (SuperWeenieHutJr_Text_TicTacToe_YesNo, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetToken)
+		}
+		else {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_Decline)
+		}
+	}
+	release
+}
+
+script WeenieHutJr_EventScript_TicTacToe_ClearGame {
+	setvar (VAR_TEMP_C, 0)
+	setvar (VAR_TEMP_D, 0)
+	setvar (VAR_TEMP_1, 0)
+	setvar (VAR_TEMP_2, 0)
+	setvar (VAR_TEMP_3, 0)
+	setvar (VAR_TEMP_4, 0)
+	setvar (VAR_TEMP_5, 0)
+	setvar (VAR_TEMP_6, 0)
+	setvar (VAR_TEMP_7, 0)
+	setvar (VAR_TEMP_8, 0)
+	setvar (VAR_TEMP_9, 0)
+	return
+}
+
+script WeenieHutJr_EventScript_TicTacToe_Brain {
+		
+
+	// Draw the new Map
+	special (DrawWholeMapView)
+	//Check For Win
+
+	//check top row
+	if (var(VAR_TEMP_1) == 1 && (var(VAR_TEMP_2) == 1) && (var(VAR_TEMP_3) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_1) == 2 && (var(VAR_TEMP_2) == 2) && (var(VAR_TEMP_3) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+
+	// mid row
+	} elif (var(VAR_TEMP_4) == 1 && (var(VAR_TEMP_5) == 1) && (var(VAR_TEMP_6) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_4) == 2 && (var(VAR_TEMP_5) == 2) && (var(VAR_TEMP_6) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+
+	// low row
+	} elif (var(VAR_TEMP_7) == 1 && (var(VAR_TEMP_8) == 1) && (var(VAR_TEMP_9) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_7) == 2 && (var(VAR_TEMP_8) == 2) && (var(VAR_TEMP_9) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+
+	// col left
+	} elif (var(VAR_TEMP_1) == 1 && (var(VAR_TEMP_4) == 1) && (var(VAR_TEMP_7) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_1) == 2 && (var(VAR_TEMP_4) == 2) && (var(VAR_TEMP_7) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+
+	//col cent
+	} elif (var(VAR_TEMP_2) == 1 && (var(VAR_TEMP_5) == 1) && (var(VAR_TEMP_8) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_2) == 2 && (var(VAR_TEMP_5) == 2) && (var(VAR_TEMP_8) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+
+	//col right
+	} elif (var(VAR_TEMP_3) == 1 && (var(VAR_TEMP_6) == 1) && (var(VAR_TEMP_9) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_3) == 2 && (var(VAR_TEMP_6) == 2) && (var(VAR_TEMP_9) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+
+	//diag 1
+	} elif (var(VAR_TEMP_1) == 1 && (var(VAR_TEMP_5) == 1) && (var(VAR_TEMP_9) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_1) == 2 && (var(VAR_TEMP_5) == 2) && (var(VAR_TEMP_9) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	
+	//diag 2
+	} elif (var(VAR_TEMP_3) == 1 && (var(VAR_TEMP_5) == 1) && (var(VAR_TEMP_7) == 1) ) {
+		if (var(VAR_TEMP_D) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} elif (var(VAR_TEMP_3) == 2 && (var(VAR_TEMP_5) == 2) && (var(VAR_TEMP_7) == 2) ) {
+		if (var(VAR_TEMP_D) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_Win)
+		} else {
+			call (WeenieHutJr_EventScript_TicTacToe_Lose)
+		}
+	} else {
+		//Increase Turn
+
+
+		if (var(VAR_TEMP_C) == 10) {
+			call (WeenieHutJr_EventScript_TicTacToe_Tie)
+		} elif (var(VAR_TEMP_C) == 9) {
+			msgbox ("TURN 9 INTO 10")
+			closemessage
+			setvar (VAR_TEMP_C, 10)
+			call (WeenieHutJr_EventScript_TicTacToe_Tie)
+		} elif (var(VAR_TEMP_C) == 8) {
+			setvar (VAR_TEMP_C, 9)
+		} elif (var(VAR_TEMP_C) == 7) {
+			setvar (VAR_TEMP_C, 8)
+		} elif (var(VAR_TEMP_C) == 6) {
+			setvar (VAR_TEMP_C, 7)
+		} elif (var(VAR_TEMP_C) == 5) {
+			setvar (VAR_TEMP_C, 6)
+		} elif (var(VAR_TEMP_C) == 4) {
+			setvar (VAR_TEMP_C, 5)
+		} elif (var(VAR_TEMP_C) == 3) {
+			setvar (VAR_TEMP_C, 4)
+		} elif (var(VAR_TEMP_C) == 2) {
+			setvar (VAR_TEMP_C, 3)
+		} elif (var(VAR_TEMP_C) == 1) {
+			setvar (VAR_TEMP_C, 2)
+		} else {
+			setvar (VAR_TEMP_C, 1)
+		}
+
+		//Whos turn is it anyways
+		if (var(VAR_TEMP_C) == 1) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 2) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 3) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 4) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 5) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 6) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 7) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetX)
+		} elif (var(VAR_TEMP_C) == 8) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetO)
+		} elif (var(VAR_TEMP_C) == 9) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetX)
+		} else {
+			msgbox ("TOO MANY TURNS IDK BOTTOM OF BRAIN")
+		}
+	}
+}
+
+script WeenieHutJr_EventScript_TicTacToe_GetX {
+	if (var(VAR_TEMP_D) == 1) {
+		call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+	} else {
+		call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+	}
+	//Paint a X somewhere
+
+//Blue
+	if (var(VAR_BOARD) == 1) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 1)
+			setmetatile (6, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 1)
+			setmetatile (7, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 1)
+			setmetatile (8, 10, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 1)
+			setmetatile (6, 11, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 1)
+			setmetatile (7, 11, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 1)
+			setmetatile (8, 11, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 1)
+			setmetatile (6, 12, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 1)
+			setmetatile (7, 12, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 1)
+			setmetatile (8, 12, METATILE_weeniehutjr_TicTacToe_BlueX, 1)
+		}
+	}
+
+	//Orange
+	if (var(VAR_BOARD) == 2) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 1)
+			setmetatile (11, 10, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 1)
+			setmetatile (12, 10, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 1)
+			setmetatile (13, 10, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 1)
+			setmetatile (11, 11, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 1)
+			setmetatile (12, 11, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 1)
+			setmetatile (13, 11, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 1)
+			setmetatile (11, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 1)
+			setmetatile (12, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 1)
+			setmetatile (13, 12, METATILE_weeniehutjr_TicTacToe_OrangeX, 1)
+		}
+
+	}
+
+	call (WeenieHutJr_EventScript_TicTacToe_Brain)
+}
+
+script WeenieHutJr_EventScript_TicTacToe_GetO {
+	if (var(VAR_TEMP_D) == 2) {
+		call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+	} else {
+		call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+	}
+	//Paint a X somewhere
+
+//Blue
+	if (var(VAR_BOARD) == 1) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 2)
+			setmetatile (6, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 2)
+			setmetatile (7, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 2)
+			setmetatile (8, 10, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 2)
+			setmetatile (6, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 2)
+			setmetatile (7, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 2)
+			setmetatile (8, 11, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 2)
+			setmetatile (6, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 2)
+			setmetatile (7, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 2)
+			setmetatile (8, 12, METATILE_weeniehutjr_TicTacToe_BlueO, 1)
+		}
+	}
+
+	//Orange
+	if (var(VAR_BOARD) == 2) {
+		if (var(VAR_TEMP_B) == 1) {
+			setvar (VAR_TEMP_1, 2)
+			setmetatile (11, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 2) {
+			setvar (VAR_TEMP_2, 2)
+			setmetatile (12, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 3) {
+			setvar (VAR_TEMP_3, 2)
+			setmetatile (13, 10, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 4) {
+			setvar (VAR_TEMP_4, 2)
+			setmetatile (11, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 5) {
+			setvar (VAR_TEMP_5, 2)
+			setmetatile (12, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 6) {
+			setvar (VAR_TEMP_6, 2)
+			setmetatile (13, 11, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 7) {
+			setvar (VAR_TEMP_7, 2)
+			setmetatile (11, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 8) {
+			setvar (VAR_TEMP_8, 2)
+			setmetatile (12, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		} elif (var(VAR_TEMP_B) == 9) {
+			setvar (VAR_TEMP_9, 2)
+			setmetatile (13, 12, METATILE_weeniehutjr_TicTacToe_OrangeO, 1)
+		}
+
+	}
+
+	call (WeenieHutJr_EventScript_TicTacToe_Brain)
+}
+
+script WeenieHutJr_EventScript_TicTacToe_GetPlayerMove {
+	multichoicegrid (0, 0, MULTI_TICTACTOE_CHOOSE_MOVE, 3 TRUE)
+	//make sure move is ok
+	
+	if (var(VAR_RESULT) == 0) {
+		if (var(VAR_TEMP_1) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 1)
+		}
+	} elif (var(VAR_RESULT) == 1) {
+		if (var(VAR_TEMP_2) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 2)
+		}
+	} elif (var(VAR_RESULT) == 2) {
+		if (var(VAR_TEMP_3) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 3)
+		}
+	} elif (var(VAR_RESULT) == 3) {
+		if (var(VAR_TEMP_4) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 4)
+		}
+	} elif (var(VAR_RESULT) == 4) {
+		if (var(VAR_TEMP_5) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 5)
+		}
+	} elif (var(VAR_RESULT) == 5) {
+		if (var(VAR_TEMP_6) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 6)
+		}
+	} elif (var(VAR_RESULT) == 6) {
+		if (var(VAR_TEMP_7) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 7)
+		}
+	} elif (var(VAR_RESULT) == 7) {
+		if (var(VAR_TEMP_8) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 8)
+		}
+	} elif (var(VAR_RESULT) == 8) {
+		if (var(VAR_TEMP_9) > 0) {
+			msgbox (SuperWeenieHutJr_Text_TicTacToe_BadMove)
+			closemessage
+			call (WeenieHutJr_EventScript_TicTacToe_GetPlayerMove)
+		} else {
+			setvar (VAR_TEMP_B, 9)
+		}
+	} else {
+		msgbox (SuperWeenieHutJr_Text_BottomOfGetPlayerMove)
+		closemessage
+	}
+	//msgbox ("BOTTOM OF GETPLAYERMOVE")
+	//closemessage
+	return
+}
+
+script WeenieHutJr_EventScript_TicTacToe_GetCPUMove {
+
+	specialvar (VAR_RESULT, RandDigit)
+	//make sure move is ok
+
+	if (var(VAR_RESULT) == 0) {
+		if (var(VAR_TEMP_1) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 1)
+		}
+	} elif (var(VAR_RESULT) == 1) {
+		if (var(VAR_TEMP_2) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 2)
+		}
+	} elif (var(VAR_RESULT) == 2) {
+		if (var(VAR_TEMP_3) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 3)
+		}
+	} elif (var(VAR_RESULT) == 3) {
+		if (var(VAR_TEMP_4) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 4)
+		}
+	} elif (var(VAR_RESULT) == 4) {
+		if (var(VAR_TEMP_5) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 5)
+		}
+	} elif (var(VAR_RESULT) == 5) {
+		if (var(VAR_TEMP_6) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 6)
+		}
+	} elif (var(VAR_RESULT) == 6) {
+		if (var(VAR_TEMP_7) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 7)
+		}
+	} elif (var(VAR_RESULT) == 7) {
+		if (var(VAR_TEMP_8) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 8)
+		}
+	} elif (var(VAR_RESULT) == 8) {
+		if (var(VAR_TEMP_9) > 0) {
+			call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+		} else {
+			setvar (VAR_TEMP_B, 9)
+		}
+	} else {
+		call (WeenieHutJr_EventScript_TicTacToe_GetCPUMove)
+	}
+	return
+}
+
+script WeenieHutJr_EventScript_TicTacToe_Win {
+	if (var(VAR_BOARD) == 1) {
+		setflag (FLAG_TEMP_1)
+		setflag (FLAG_TEMP_3)
+	} else {
+		setflag (FLAG_TEMP_2)
+		setflag (FLAG_TEMP_4)
+	}
+	msgbox (SuperWeenieHutJr_Text_TicTacToe_Lost)
+	closemessage
+	if (flag(FLAG_TEMP_3) && (flag(FLAG_TEMP_4) ) ) {
+		setvar (VAR_TEMP_A, 7)
+		applymovement (1, Common_Movement_FaceRight)
+		applymovement (2, Common_Movement_FaceLeft)
+		waitmovement (0)
+		msgbox (WeenieHutJr_Text_MeiandLisaIntro)
+		closemessage
+		applymovement (1, Common_Movement_FaceDown)
+		applymovement (2, Common_Movement_FaceDown)
+		waitmovement (0)
+		trainerbattle_no_intro(TRAINER_MEI_AND_LISA, WeenieHutJr_Text_MeiAndLisaLost)
+	}
+	end
+}
+
+script WeenieHutJr_EventScript_TicTacToe_Lose {
+	if (var(VAR_BOARD) == 1) {
+		setflag (FLAG_TEMP_1)
+	} else {
+		setflag (FLAG_TEMP_2)
+	}
+	msgbox (SuperWeenieHutJr_Text_TicTacToe_Lost)
+	closemessage
+	end
+}
+
+script WeenieHutJr_EventScript_TicTacToe_Tie {
+	if (var(VAR_BOARD) == 1) {
+		setflag (FLAG_TEMP_1)
+	} else {
+		setflag (FLAG_TEMP_2)
+	}
+	msgbox (SuperWeenieHutJr_Text_TicTacToe_Tied)
+	closemessage
+	end
+}
+
+
+script WeenieHutJr_EventScript_TicTacToe_GetToken {
+	call (WeenieHutJr_EventScript_TicTacToe_ClearGame)	
+	msgbox (SuperWeenieHutJr_Text_TicTacToe_XYes, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		setvar (VAR_TEMP_D, 1)
+	} else {
+		setvar (VAR_TEMP_D, 2)
+	}
+	closemessage
+	call (WeenieHutJr_EventScript_TicTacToe_Brain)
+}
+
+
+text WeenieHutJr_Text_DoorBlockA {
+	format("Hello. Welcome to Weenie Hut Junior's.")
+}
+
+text WeenieHutJr_Text_DoorBlockB {
+	format("This lounge is only for those few elite who graduate from Super Weenie Hut Junior's. I think that might be more your speed.")
+}
+
+text WeenieHutJr_Text_DoorOpens {
+	format("Congratulations on your achievement! Enjoy your time at Weenie Hut Juniors!")
+}
+
+text WeenieHutJr_Text_DoorBlockD {
+	format("You wicked monster! Leave! Never come back.")
+}
+
+text WeenieHutJr_Text_KickOut {
+	format("Fighting is strictly forbidden I must tell you to leave. You are forever banned as punishment for your disgusting deeds.")
+}
+
+text WeenieHutJr_Text_MeiandLisaIntro {
+	format("I can't believe this guy beat you too sis! No icky boy will make us be loosers, C'mon Lisa let's show him what we've got!")
+}
+
+text WeenieHutJr_Text_MeiAndLisaLost {
+	format("You're such a bully! Look you made Mei cry!")
+}
+
+text WeenieHutJr_Text_MeiAndLisaPost {
+	format("Get out of here! I wish you'd never lived!")
+}
+
+

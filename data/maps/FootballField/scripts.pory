@@ -1,0 +1,387 @@
+const OBJ_EVENT_ID_FOOTBALLCOACH = 1
+const OBJ_EVENT_ID_BLUE1 = 7
+const OBJ_EVENT_ID_BLUE2 = 8
+const OBJ_EVENT_ID_BLUE3 = 9
+const OBJ_EVENT_ID_BLUE4 = 10
+const OBJ_EVENT_ID_BLUE5 = 11
+const OBJ_EVENT_ID_YELLOW1 = 2
+const OBJ_EVENT_ID_YELLOW2 = 3
+const OBJ_EVENT_ID_YELLOW3 = 4
+const OBJ_EVENT_ID_YELLOW4 = 5
+const OBJ_EVENT_ID_YELLOW5 = 6
+
+
+
+mapscripts FootballField_MapScripts {
+
+
+	//Set Object Position and Movement Types
+//	MAP_SCRIPT_ON_TRANSITION {
+//
+//		switch (var(VAR_TEMP_1)) {
+//			case 1:
+//				call (FootballField_EventScript_SetupRunningTest)
+//		}
+//	}
+//
+//	//Lock, explain the current situation, then increment var to end the lock
+//	MAP_SCRIPT_ON_FRAME_TABLE [
+//		VAR_TEMP_1, 1: FootballField_EventScript_StartRunningTest
+//	]
+
+}
+
+script FootballField_EventScript_RunningTest {
+	//set positions
+	call (FootballField_EventScript_SetupRunningTest)
+	call (FootballField_EventScript_StartRunningTest)
+	return
+}
+
+script FootballField_EventScript_FinishClass {
+	msgbox(FootballField_Text_ClassFinished)
+	closemessage
+	fadescreen (1)
+	//Player
+	setobjectxy (OBJ_EVENT_ID_PLAYER, 14, 36)
+	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 14, 36)
+	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+	//Coach
+	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 14, 35)
+	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 14, 35)
+	setobjectmovementtype (OBJ_EVENT_ID_FOOTBALLCOACH, MOVEMENT_TYPE_FACE_DOWN)
+	turnobject (OBJ_EVENT_ID_FOOTBALLCOACH, DIR_SOUTH)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE1, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE2, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE3, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE4, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE5, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW1, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW2, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW3, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW4, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW5, MOVEMENT_TYPE_FACE_DOWN)
+
+	special(ResetCamera)
+	fadescreen (0)
+
+	msgbox(FootballField_Text_CoachIntro)
+	closemessage
+	trainerbattle_no_intro(TRAINER_UNI_GYM, FootballField_Text_CoachLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(FootballField_Text_CoachPost)
+	closemessage
+	
+	//This will reset the map
+	clearflag (FLAG_OPEN_CLASS_GYM)
+	warpsilent (MAP_FOOTBALL_FIELD, 14, 36)
+
+	end
+}
+
+script FootballField_EventScript_CatchingTest {
+	
+	//For now I'm just gonna skip this stuff. The running is probably enough
+	call (FootballField_EventScript_FinishClass)	
+	//call (FootballField_EventScript_SetupCatchingTest)
+	//call (FootballField_EventScript_StartCatchingTest)
+	//return
+}
+
+script FootballField_EventScript_SetupRunningTest {
+	fadescreen (1)
+	//Setup all Object position and movmement types
+	lockall
+	//Player
+	setobjectxy (OBJ_EVENT_ID_PLAYER, 13, 33)
+	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 13, 33)
+	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+	
+	//Coach
+	setobjectxy (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
+	setobjectxyperm (OBJ_EVENT_ID_FOOTBALLCOACH, 13, 7)
+	setobjectmovementtype (OBJ_EVENT_ID_FOOTBALLCOACH, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	//Blue Team
+	setobjectxy (OBJ_EVENT_ID_BLUE1, 10, 9)
+	setobjectxyperm (OBJ_EVENT_ID_BLUE1, 10, 9)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE1, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	setobjectxy (OBJ_EVENT_ID_BLUE2, 17, 9)
+	setobjectxyperm (OBJ_EVENT_ID_BLUE2, 17, 9)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE2, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	setobjectxy (OBJ_EVENT_ID_BLUE3, 13, 29)
+	setobjectxyperm (OBJ_EVENT_ID_BLUE3, 13, 29)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE3, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	setobjectxy (OBJ_EVENT_ID_BLUE4, 8, 25)
+	setobjectxyperm (OBJ_EVENT_ID_BLUE4, 8, 25)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE4, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	removeobject (OBJ_EVENT_ID_BLUE5)
+	setobjectxy (OBJ_EVENT_ID_BLUE5, 7, 27)
+	setobjectxyperm (OBJ_EVENT_ID_BLUE5, 7, 27)
+	setobjectmovementtype (OBJ_EVENT_ID_BLUE5, MOVEMENT_TYPE_CHASE_PLAYER)
+	addobject (OBJ_EVENT_ID_BLUE5)
+
+	//Yellow Team
+	setobjectxy (OBJ_EVENT_ID_YELLOW1, 17, 26)
+	setobjectxyperm (OBJ_EVENT_ID_YELLOW1, 17, 26)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW1, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	setobjectxy (OBJ_EVENT_ID_YELLOW2, 13, 21)
+	setobjectxyperm (OBJ_EVENT_ID_YELLOW2, 13, 21)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW2, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	setobjectxy (OBJ_EVENT_ID_YELLOW3, 9, 17)
+	setobjectxyperm (OBJ_EVENT_ID_YELLOW3, 9, 17)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW3, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	setobjectxy (OBJ_EVENT_ID_YELLOW4, 17, 17)
+	setobjectxyperm (OBJ_EVENT_ID_YELLOW4, 17, 17)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW4, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	setobjectxy (OBJ_EVENT_ID_YELLOW5, 17, 12)
+	setobjectxyperm (OBJ_EVENT_ID_YELLOW5, 17, 12)
+	setobjectmovementtype (OBJ_EVENT_ID_YELLOW5, MOVEMENT_TYPE_CHASE_PLAYER)
+
+	turnobject (OBJ_EVENT_ID_BLUE1, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_BLUE2, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_BLUE3, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_BLUE4, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_BLUE5, DIR_SOUTH)
+
+	turnobject (OBJ_EVENT_ID_YELLOW1, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_YELLOW2, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_YELLOW3, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_YELLOW4, DIR_SOUTH)
+	turnobject (OBJ_EVENT_ID_YELLOW5, DIR_SOUTH)
+
+	//Camera, fade from black, and return
+	special (ResetCamera)
+	fadescreen (0)
+
+	return
+}
+
+script FootballField_EventScript_StartRunningTest {
+	lockall
+	msgbox(FootballField_Text_BeginRunningTest)
+	closemessage
+	setvar (VAR_TEMP_1, 1)
+	releaseall
+	return
+}
+
+script FootballField_EventScript_DoNotLeaveField {
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(FootballField_Text_DoNotLeaveField)
+	closemessage
+	switch (var(VAR_TEMP_1)) {
+	case 1:
+		call (FootballField_EventScript_RunningTest)
+	}
+}
+
+
+script FootballField_EventScript_FieldTrigger1 {
+	lockall
+	if (var(VAR_TEMP_1) == 0) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
+		waitmovement (0)
+		if (defeated(TRAINER_UNI_GYM)) {
+			call (FootballField_EventScript_ClassFinished)
+		} elif (!flag(FLAG_OPEN_CLASS_GYM)) {
+			call (FootballField_EventScript_FieldClosed)
+		} else {
+			call (FootballField_EventScript_FootballCoach)
+		}
+	} else {
+		call (FootballField_EventScript_DoNotLeaveField)
+	}
+	releaseall
+	end
+}
+
+script FootballField_EventScript_FieldTrigger2 {
+	lockall
+	if (var(VAR_TEMP_1) == 0) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)	
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
+		waitmovement (0)
+		if (defeated(TRAINER_UNI_GYM)) {
+			call (FootballField_EventScript_ClassFinished)
+		} elif (!flag(FLAG_OPEN_CLASS_GYM)) {
+			call (FootballField_EventScript_FieldClosed)
+		} else {
+			call (FootballField_EventScript_FootballCoach)
+		}
+	} else {
+		call (FootballField_EventScript_DoNotLeaveField)
+	}
+	releaseall
+	end
+}
+
+script FootballField_EventScript_FieldTrigger3 {
+	lockall
+	if (var(VAR_TEMP_1) == 0) {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)	
+		waitmovement (0)
+		applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceLeft)
+		waitmovement (0)
+		if (!flag(FLAG_OPEN_CLASS_GYM)) {
+			call (FootballField_EventScript_FieldClosed)
+		} else {
+			call (FootballField_EventScript_FootballCoach)
+		}
+	} else {
+		call (FootballField_EventScript_DoNotLeaveField)
+	}
+	releaseall
+	end
+}
+
+script FootballField_EventScript_EndZoneTrigger {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	call (FootballField_EventScript_EndZone)
+	releaseall
+	end
+}
+
+script FootballField_EventScript_EndZone {
+	switch (var(VAR_TEMP_1)) {
+		//if 1 then finish running and start catching
+		case 0:
+			msgbox("EndZone Trigger Var 0")
+			closemessage
+		case 1:
+			setvar (VAR_TEMP_1, 2)
+			call (FootballField_EventScript_CatchingTest)
+	}
+}
+
+script FootballField_EventScript_FootballCoach {
+	lockall
+	faceplayer
+	if (defeated(TRAINER_UNI_GYM)) {
+		call (FootballField_EventScript_ClassFinished)
+	} elif (!flag(FLAG_OPEN_CLASS_GYM)) {
+		call (FootballField_EventScript_FieldClosed)
+	} else {
+		call (FootballField_EventScript_GymClass)
+	}
+	applymovement(OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script FootballField_EventScript_ClassFinished {
+	msgbox(FootballField_Text_CoachComplete)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0) 
+	return
+}
+
+script FootballField_EventScript_GymClass {
+	//intro	//Check no PokemonFollower
+	msgbox(FootballField_Text_FieldClosed)
+	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(FootballField_Text_GymIntro)
+	closemessage
+	delay (30)
+	//running test
+	call (FootballField_EventScript_RunningTest)
+	//catching test
+	//throwing test
+	//game
+	//pass the class
+	//championship
+
+	return
+}
+
+script FootballField_EventScript_CollisionYoungster {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(FootballField_Text_RunningTestFail)
+	closemessage
+	call (FootballField_EventScript_SetupRunningTest)
+	call (FootballField_EventScript_StartRunningTest)
+	releaseall
+	return
+}
+
+script FootballField_EventScript_FieldClosed {
+	applymovement (OBJ_EVENT_ID_FOOTBALLCOACH, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(FootballField_Text_FieldClosed)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+	waitmovement (0) 
+	return
+}
+
+
+text FootballField_Text_FieldClosed {
+	format("Hey you! Field's closed! We only want student atheletes touching this grass.")
+}
+
+text FootballField_Text_GymIntro {
+	format("Wait. Whats that? You're here from the college? Oh shit! Uhh... Ellohey.... uhh... elcomeway... to... uhhh... assclay.. uhhh. Oh fuck it! Look, here's the thing. Out here we don't speak that fancy academic talk we only speak championships. If you mention this to those stuffy bearded academics we'll beat the pulp out of you. Anyway I need to win this championship and if you're enrolled in Gym class I need you to help me.")
+}
+
+text FootballField_Text_NoFollowersAllowed {
+	format("Hey! We don't let those filthy animals on our grass. Your Pokemon, it has to wait outside we don't want it here.")
+}
+
+text FootballField_Text_BeginRunningTest {
+	format("First things first let's see if you can run. Try to make it to the other side of the field without letting any of my boys hit you first.")
+}
+
+text  FootballField_Text_DoNotLeaveField {
+	format("Hey! Where do you think you're going? Get your lazy ass back on the field and finish the drill!")
+}
+
+text FootballField_Text_ClassFinished {
+	format("Hey what do you think you're doing? You just made my boys look like total loosers! Get off my field!")
+}
+
+text FootballField_Text_CoachIntro {
+	format("We can't have some game changer like you running around making us feel bad. We got a championship to win!")
+}
+
+text FootballField_Text_CoachLost {
+	format("I think I broke something...")
+}
+
+text FootballField_Text_CoachPost {
+	format("We don't need your fucking help to win. Get out of here kid you passed the class.")
+}
+
+text FootballField_Text_CoachComplete {
+	format("I told you already, you passed the class, now get out of here.")
+}
+
+text FootballField_Text_RunningTestFail {
+	format("Hey! One of my boys got ya! You're too slow out there do it again!")
+}
+
+

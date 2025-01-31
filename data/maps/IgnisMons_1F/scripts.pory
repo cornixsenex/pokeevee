@@ -1,0 +1,255 @@
+
+//Enter, intro puzzle
+//1st Oak Encounter. Warns you not to venture deeper. That many have perished here only Magmas know the way.
+//Attacked by two (mons)
+//Fall Through Puzzle
+//2nd Oak Encounter. Double battle with Oak and Madea. Careful only defeat Madea.
+//Oak goes mad -> Stalks the bottom floor in that corner. Wont leave until you return with Ulysses, Achilles, Patrokles?
+//Not totally broken / mad yet but very depressed stays in bottom floor corner and insists he won't come out. Same story until that part of the Trojan War
+
+
+
+mapscripts IgnisMons_1F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (IgnisMons_1F_Script_OnResume)
+	}
+
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_FALSEFLOOR_WAIT, 1: IgnisMons_1F_FalseFloorContinue
+	]
+
+
+
+}
+
+script IgnisMons_1F_Script_OnResume {
+	setstepcallback (STEP_CB_FALSE_FLOOR)
+	switch (var(VAR_IGNISMONS_STATE)) {
+		case 0:
+			call (IgnisMons_1F_Script_SetBarriers_Init)
+		case 1:
+			call (IgnisMons_1F_Script_SetBarriers_Red)
+		case 2:
+			call (IgnisMons_1F_Script_SetBarriers_Blue)
+		case 3:
+			call (IgnisMons_1F_Script_SetBarriers_Green)
+		default:
+			call (IgnisMons_1F_Script_SetBarriers_Init)
+	}
+	end
+}
+
+script IgnisMons_1F_Script_SetBarriers_Init {
+	call (IgnisMons_1F_Script_ShowRed)
+	call (IgnisMons_1F_Script_ShowBlue)
+	call (IgnisMons_1F_Script_ShowGreen)
+
+	return
+}
+
+script IgnisMons_1F_Script_RedButton {
+	lockall
+	if (var(VAR_IGNISMONS_STATE) != 1) {	
+		setvar (VAR_IGNISMONS_STATE, 1)
+		playse (SE_FU_ZAKU)
+		call (IgnisMons_1F_Script_SetBarriers_Red)
+		special (DrawWholeMapView)
+	}	
+    releaseall
+	end
+}
+
+script IgnisMons_1F_Script_BlueButton {
+	lockall
+	if (var(VAR_IGNISMONS_STATE) != 2) {	
+		setvar (VAR_IGNISMONS_STATE, 2)
+		playse (SE_FU_ZAKU)
+		call (IgnisMons_1F_Script_SetBarriers_Blue)
+		special (DrawWholeMapView)
+	}
+	releaseall
+	end
+}
+
+script IgnisMons_1F_Script_GreenButton {
+	lockall
+	if (var(VAR_IGNISMONS_STATE) != 3) {	
+		setvar (VAR_IGNISMONS_STATE, 3)
+		playse (SE_FU_ZAKU)
+		call (IgnisMons_1F_Script_SetBarriers_Green)
+		special (DrawWholeMapView)
+	}
+	releaseall
+	end
+}
+
+script IgnisMons_1F_Script_SetBarriers_Red {
+	call (IgnisMons_1F_Script_ShowBlue)
+	call (IgnisMons_1F_Script_ShowGreen)
+
+	call (IgnisMons_1F_Script_HideRed)
+
+	return
+}
+
+
+script IgnisMons_1F_Script_SetBarriers_Blue {
+	call (IgnisMons_1F_Script_ShowRed)
+	call (IgnisMons_1F_Script_ShowGreen)
+
+	call (IgnisMons_1F_Script_HideBlue)
+
+	return
+}
+
+
+script IgnisMons_1F_Script_SetBarriers_Green {
+	call (IgnisMons_1F_Script_ShowRed)
+	call (IgnisMons_1F_Script_ShowBlue)
+
+	call (IgnisMons_1F_Script_HideGreen)
+
+	return
+}
+
+script IgnisMons_1F_Script_ShowRed {
+
+	setmetatile (1, 31, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
+	setmetatile (2, 32, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (4, 31, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
+	setmetatile (5, 32, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (4, 24, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
+	setmetatile (5, 25, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (6, 14, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
+	setmetatile (6, 15, METATILE_IgnisMons_Barrier_Red_Shadow, TRUE)
+	setmetatile (6, 16, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (6, 17, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (7, 13, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (7, 18, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (8, 14, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (8, 15, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (8, 16, METATILE_IgnisMons_Barrier_Red, TRUE)
+	setmetatile (8, 17, METATILE_IgnisMons_Barrier_Red, TRUE)
+
+	setmetatile (1, 25, METATILE_IgnisMons_Button_Red_Shadow, FALSE)
+
+	return
+}
+
+script IgnisMons_1F_Script_ShowBlue {
+	setmetatile (11, 14, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE)
+	setmetatile (11, 15, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE)
+	setmetatile (11, 16, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (11, 17, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (12, 13, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (12, 18, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (13, 14, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (13, 15, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (13, 16, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (13, 17, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (14, 25, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (15, 24, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE)
+	setmetatile (16, 25, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (15, 31, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE)
+	setmetatile (16, 32, METATILE_IgnisMons_Barrier_Blue, TRUE)
+	setmetatile (17, 31, METATILE_IgnisMons_Barrier_Blue_Shadow, TRUE)
+
+	setmetatile (18, 25, METATILE_IgnisMons_Button_Blue, FALSE)
+
+	return
+}
+
+script IgnisMons_1F_Script_ShowGreen {
+	setmetatile (9, 24, METATILE_IgnisMons_Barrier_Green_Shadow, TRUE)
+	setmetatile (9, 25, METATILE_IgnisMons_Barrier_Green, TRUE)
+	setmetatile (10, 24, METATILE_IgnisMons_Barrier_Green, TRUE)
+	setmetatile (10, 25, METATILE_IgnisMons_Barrier_Green, TRUE)
+
+	return
+}
+
+script IgnisMons_1F_Script_HideRed {
+
+	setmetatile (1, 31, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (2, 32, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (4, 31, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (5, 32, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (4, 24, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (5, 25, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (6, 14, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (6, 15, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (6, 16, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (6, 17, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (7, 13, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (7, 18, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (8, 14, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (8, 15, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (8, 16, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (8, 17, METATILE_IgnisMons_Floor, FALSE)
+
+	setmetatile (1, 25, METATILE_IgnisMons_Button_White_Shadow, FALSE)
+
+	return
+}
+
+script IgnisMons_1F_Script_HideBlue {
+
+	setmetatile (11, 14, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (11, 15, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (11, 16, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (11, 17, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (12, 13, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (12, 18, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (13, 14, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (13, 15, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (13, 16, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (13, 17, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (14, 25, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (15, 24, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (16, 25, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (15, 31, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (16, 32, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (17, 31, METATILE_IgnisMons_Floor_Shadow, FALSE)
+
+	setmetatile (18, 25, METATILE_IgnisMons_Button_White, FALSE)
+
+	return
+}
+
+script IgnisMons_1F_Script_HideGreen {
+	setmetatile (9, 24, METATILE_IgnisMons_Floor_Shadow, FALSE)
+	setmetatile (9, 25, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (10, 24, METATILE_IgnisMons_Floor, FALSE)
+	setmetatile (10, 25, METATILE_IgnisMons_Floor, FALSE)
+
+	return
+}
+
+script IgnisMons_1F_FalseFloorContinue {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	special (FalseFloorMetatileUpdate)
+	call (EventScript_FallDownFalseFloor)
+	releaseall
+	end
+}
+
+script IgnisMons_1F_CollisionDrifblim {
+	lock
+	delay (20)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	playmoncry (SPECIES_DRIFBLIM, CRY_MODE_NORMAL)
+	waitmoncry
+	delay (20)
+	setvar (VAR_IGNISMONS_STATE, 0)
+	warpsilent (MAP_IGNIS_MONS_1F, 10, 41)
+	waitstate
+	end
+}
+
+
+

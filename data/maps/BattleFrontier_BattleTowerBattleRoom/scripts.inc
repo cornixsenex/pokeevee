@@ -433,7 +433,6 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_WarpToLobbyLinkMultis::
 	end
 
 BattleFrontier_BattleTowerBattleRoom_EventScript_RetireChallenge::
-	setflag FLAG_CANCEL_BATTLE_ROOM_CHALLENGE
 	goto BattleFrontier_BattleTower_EventScript_WarpToLobbyLost
 	end
 

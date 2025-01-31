@@ -1,0 +1,220 @@
+mapscripts Route6_MapScripts {}
+
+
+
+script Route6_EventScript_GirafarigSign {
+	msgbox (Route6_Text_GirafarigSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_UrsaringSign {
+	msgbox (Route6_Text_UrsaringSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_MonfernoSign {
+	msgbox (Route6_Text_MonfernoSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_PiplupSign {
+	msgbox (Route6_Text_PiplupSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_SavannaSign {
+	msgbox (Route6_Text_SavannaSign)
+	closemessage
+	end
+}
+
+script Route6_EventScript_JesseAndJames {
+	lock
+	setvar (VAR_ROUTE6_STATE, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement (17, Common_Movement_FaceLeft)
+	waitmovement (0)
+	msgbox (Route6_Text_Jesse1)
+	closemessage
+	applymovement (17, Common_Movement_FaceRight)
+	waitmovement (0)
+	msgbox (Route6_Text_Meowth1)
+	closemessage
+	applymovement (15, Route6_Movement_JesseApproachPikachu)
+	applymovement (18, Route6_Movement_JamesApproachPikachu)
+	applymovement (16, Route6_Movement_MeowthApproachPikachu)
+	waitmovement (0)
+	applymovement (17, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (15, Route6_Movement_JesseTakePikachu)
+	applymovement (18, Route6_Movement_JamesTakePikachu)
+	applymovement (16, Route6_Movement_MeowthTakePikachu)
+	waitmovement(0)
+	playmoncry (SPECIES_PIKACHU, 0)
+	fadescreen (1)
+	waitmoncry
+	removeobject (17)
+	fadescreen (0)
+	msgbox (Route6_Text_Jesse2)
+	closemessage
+	msgbox (Route6_Text_Meowth2)
+	closemessage
+	msgbox (Route6_Text_Jesse3)
+	closemessage
+	applymovement (15, Route6_Movement_JesseExit)
+	applymovement (18, Route6_Movement_JesseExit)
+	waitmovement (0)
+	msgbox (Route6_Text_Meowth3)
+	closemessage
+	applymovement (16, Route6_Movement_JesseExit)
+	waitmovement (0)
+	removeobject (15)
+	removeobject (16)
+	removeobject (18)
+	setflag (FLAG_ROUTE6_HIDEPIKACHU)
+	release
+	end
+}
+
+script Route6_EventScript_SafariManTrigger {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (Route6_Text_SafariMan1)
+	closemessage
+	applymovement (25, Common_Movement_FaceLeft)
+	waitmovement (0)	
+	msgbox (Route6_Text_SafariMan2)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Route6_Movement_SafariBlock)
+	waitmovement (0)
+	release
+	end
+}
+
+script Route6_EventScript_SafariMan {
+	lock
+	faceplayer
+	msgbox (Route6_Text_SafariMan1)
+	closemessage
+	msgbox (Route6_Text_SafariMan2)
+	closemessage
+	release
+	end
+}
+
+movement Route6_Movement_JesseApproachPikachu {
+	walk_diag_southeast
+	face_right
+}
+
+movement Route6_Movement_JamesApproachPikachu {
+	walk_right
+}
+
+movement Route6_Movement_MeowthApproachPikachu {
+	walk_left
+}
+
+movement Route6_Movement_JesseTakePikachu {
+	walk_up
+	face_right
+}
+
+movement Route6_Movement_JamesTakePikachu {
+	walk_diag_northeast
+	face_up
+}
+
+movement Route6_Movement_MeowthTakePikachu {
+	walk_up
+	face_left
+}
+
+movement Route6_Movement_JesseExit {
+	walk_right * 5
+}
+
+movement Route6_Movement_SafariBlock {
+	walk_down
+	walk_fast_left * 4
+}
+	
+
+
+text Route6_Text_GirafarigSign {
+	format("Girafarig the psychic giraffe pokemon")
+}
+
+text Route6_Text_UrsaringSign {
+	format("Ursaring the grateful bear pokemon")
+}
+
+text Route6_Text_MonfernoSign {
+	format("Monferno the monkey fire pokemon")
+}
+
+text Route6_Text_PiplupSign {
+	format("Piplup the baby penguin pokemon")
+}
+
+text Route6_Text_SavannaSign {
+	format("Scenes from the savanna! Rhyhorn, Hippopotas, and Luxray")
+}
+
+text Route6_Text_Jesse1 {
+	format("We've got you now you god damned pikachu! After we've captured you you'll help us find and then destroy that boy who snuck into the church and embarressed us with the boss!")
+}
+
+text Route6_Text_Meowth1 {
+	format("Hey! Not so fast! We've got you surrounded!")
+}
+
+text Route6_Text_Jesse2 {
+	format("Next time we see that twerp his ass is toast! With this here pikachu we'll rough him up and win our favor back with our good boss1")
+}
+
+text Route6_Text_Meowth2 {
+	format("Hey guys! Isn't that the same twerp right there?")
+}
+
+text Route6_Text_Jesse3 {
+	format("Be quiet you don't know what you're saying! Lets all move out! He must be off this way")
+}
+
+text Route6_Text_Meowth3 {
+	format("They think of me as the comic relief!")
+}
+
+text Route6_Text_SafariMan1 {
+	format("I can't believe you're gone oh PIKACHU!")
+}	
+
+text Route6_Text_SafariMan2 {
+	format("You've got to help me find my PIKACHU! About this tall! Yellowish! Sparky thing that was just stolen by two wicked things!")
+}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+text Route6_Text_Test {
+	format("Just a Test Message srry")
+}
+
+

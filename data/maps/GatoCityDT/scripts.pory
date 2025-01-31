@@ -1,0 +1,73 @@
+
+
+mapscripts GatoCityDT_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_SALTYSPITOON_STATE, 5: GatoCityDT_EventScript_HidePlayer
+		VAR_SALTYSPITOON_STATE, 6: GatoCityDT_EventScript_HidePlayer
+		VAR_SALTYSPITOON_STATE, 7: GatoCityDT_EventScript_HidePlayer
+		VAR_SALTYSPITOON_STATE, 15: GatoCityDT_EventScript_HidePlayer
+		VAR_SALTYSPITOON_STATE, 16: GatoCityDT_EventScript_HidePlayer
+		VAR_SALTYSPITOON_STATE, 17: GatoCityDT_EventScript_HidePlayer
+	]
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SALTYSPITOON_STATE, 5: GatoCityDT_EventScript_ShowWHJ5
+		VAR_SALTYSPITOON_STATE, 6: GatoCityDT_EventScript_ShowWHJ6
+		VAR_SALTYSPITOON_STATE, 7: GatoCityDT_EventScript_ShowWHJ7
+		VAR_SALTYSPITOON_STATE, 15: GatoCityDT_EventScript_ShowWHJ15
+		VAR_SALTYSPITOON_STATE, 16: GatoCityDT_EventScript_ShowWHJ16
+		VAR_SALTYSPITOON_STATE, 17: GatoCityDT_EventScript_ShowWHJ17
+	]
+}
+
+script GatoCityDT_EventScript_HidePlayer {
+	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_GATO_CITY_DT)
+	end
+}
+
+script GatoCityDT_EventScript_ShowWHJ5 {
+	setvar (VAR_SALTYSPITOON_STATE, 25)
+	msgbox("---WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 36, 8)
+	return
+}
+
+script GatoCityDT_EventScript_ShowWHJ6 {
+	setvar (VAR_SALTYSPITOON_STATE, 26)
+	msgbox("---WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 37, 9)
+	return
+}
+
+script GatoCityDT_EventScript_ShowWHJ7 {
+	setvar (VAR_SALTYSPITOON_STATE, 27)
+	msgbox("---WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 38, 8)
+	return
+}
+
+script GatoCityDT_EventScript_ShowWHJ15 {
+	setvar (VAR_SALTYSPITOON_STATE, 35)
+	msgbox("---WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 36, 8)
+	return
+}
+
+script GatoCityDT_EventScript_ShowWHJ16 {
+	setvar (VAR_SALTYSPITOON_STATE, 36)
+	msgbox("---WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 37, 9)
+	return
+}
+
+script GatoCityDT_EventScript_ShowWHJ17 {
+	setvar (VAR_SALTYSPITOON_STATE, 37)
+	msgbox("---WEENIE HUT JR'S---")
+	closemessage
+	warp (MAP_GATO_CITY_S, 38, 8)
+	return
+}

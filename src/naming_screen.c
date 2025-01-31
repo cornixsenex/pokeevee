@@ -29,6 +29,7 @@
 #include "main.h"
 #include "constants/event_objects.h"
 #include "constants/rgb.h"
+#include "random.h"
 
 enum {
     INPUT_NONE,
@@ -309,6 +310,7 @@ static const u8 sPageColumnXPos[KBPAGE_COUNT][KBCOL_COUNT] = {
     [KEYBOARD_SYMBOLS]       = {0, 22, 44, 66, 88, 110}
 };
 
+// forward declarations
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[];
 static const struct SubspriteTable sSubspriteTable_PageSwapFrame[];
 static const struct SubspriteTable sSubspriteTable_PageSwapText[];
@@ -1373,6 +1375,9 @@ static void NamingScreen_CreatePlayerIcon(void);
 static void NamingScreen_CreatePCIcon(void);
 static void NamingScreen_CreateMonIcon(void);
 static void NamingScreen_CreateWaldaDadIcon(void);
+static void NamingScreen_CreateRivalIcon(void);
+static void NamingScreen_CreateQmarkIcon(void);
+static void NamingScreen_CreateLeafIcon(void);
 
 static void (*const sIconFunctions[])(void) =
 {
@@ -1381,6 +1386,9 @@ static void (*const sIconFunctions[])(void) =
     NamingScreen_CreatePCIcon,
     NamingScreen_CreateMonIcon,
     NamingScreen_CreateWaldaDadIcon,
+    NamingScreen_CreateRivalIcon,
+    NamingScreen_CreateQmarkIcon,
+	NamingScreen_CreateLeafIcon,
 };
 
 static void CreateInputTargetIcon(void)
@@ -1431,6 +1439,38 @@ static void NamingScreen_CreateWaldaDadIcon(void)
     StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
 }
 
+static void NamingScreen_CreateRivalIcon(void)
+{
+   // u8 rivalGfxId;
+    u8 spriteId;
+    
+    //rivalGfxId = GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender ^ 1);
+    //spriteId = AddPseudoObjectEvent(rivalGfxId, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BLUE, SpriteCallbackDummy, 56, 37, 0);
+    gSprites[spriteId].oam.priority = 3;
+    StartSpriteAnim(&gSprites[spriteId], 4);
+}
+
+static void NamingScreen_CreateLeafIcon(void)
+{
+    u8 spriteId;
+
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_LEAF, SpriteCallbackDummy, 56, 37, 0);
+    gSprites[spriteId].oam.priority = 3;
+    StartSpriteAnim(&gSprites[spriteId], 4);
+}
+
+static void NamingScreen_CreateQmarkIcon(void)
+{
+	//This just does a regular A Unown from overworld branch :/
+    u8 spriteId;
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_SPECIES(UNOWN_QUESTION), SpriteCallbackDummy, 56, 37, 0);
+    gSprites[spriteId].oam.priority = 3;
+    StartSpriteAnim(&gSprites[spriteId], 4);
+}
+
+
+
 //--------------------------------------------------
 // Keyboard handling
 //--------------------------------------------------
@@ -1480,6 +1520,8 @@ static bool8 KeyboardKeyHandler_Character(u8 input)
     if (input == INPUT_A_BUTTON)
     {
         bool8 textFull = AddTextCharacter();
+        if (sNamingScreen->currentPage == KBPAGE_LETTERS_UPPER && GetTextEntryPosition() == 1)
+            MainState_StartPageSwap();
 
         SwapKeyboardToLowerAfterFirstCapitalLetter();
 
@@ -1744,6 +1786,10 @@ static void (*const sDrawTextEntryBoxFuncs[])(void) =
     [NAMING_SCREEN_CAUGHT_MON] = DrawMonTextEntryBox,
     [NAMING_SCREEN_NICKNAME]   = DrawMonTextEntryBox,
     [NAMING_SCREEN_WALDA]      = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_RIVAL]      = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_PHILOSOPHY] = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_RHETORIC]   = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_LEAF]       = DrawNormalTextEntryBox,
 };
 
 static void DrawTextEntryBox(void)
@@ -2097,6 +2143,35 @@ static void UNUSED Debug_NamingScreenNickname(void)
     DoNamingScreen(NAMING_SCREEN_NICKNAME, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu);
 }
 
+void NameRival(void)
+{
+
+	//Set default Rival Name
+	StringCopy(gSaveBlock2Ptr->rivalName, gText_ExpandedPlaceholder_Brendan); // choose a random name from gMalePresetNames for a female player's rival
+    DoNamingScreen(NAMING_SCREEN_RIVAL, gSaveBlock2Ptr->rivalName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
+void NamePhilosophy(void)
+{
+    DoNamingScreen(NAMING_SCREEN_PHILOSOPHY, gStringVar1, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
+void DoRhetoric(void)
+{
+    DoNamingScreen(NAMING_SCREEN_RHETORIC, gStringVar1, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
+void NameLeaf(void)
+{
+
+	//Default Noe name
+	StringCopy(gSaveBlock2Ptr->leafName, gText_ExpandedPlaceholder_May); // choose a random name from gFemalePresetNames for a male player's rival
+    DoNamingScreen(NAMING_SCREEN_LEAF, gSaveBlock2Ptr->leafName, 0, 0, 0, CB2_ReturnToFieldContinueScript);
+}
+
+
+
+
 //--------------------------------------------------
 // Forward-declared variables
 //--------------------------------------------------
@@ -2146,6 +2221,58 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = gText_TellHimTheWords,
 };
 
+static const u8 sText_RivalsName[] = _("Fuckboy's Name?");
+static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
+{
+    .copyExistingString = FALSE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 5,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = sText_RivalsName,
+};
+
+static const u8 sText_Philosophy[] = _("Quod disseremus?");
+static const struct NamingScreenTemplate sPhilosophyNamingScreenTemplate =
+{
+    .copyExistingString = FALSE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 6,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = sText_Philosophy,
+};
+
+static const u8 sText_Rhetoric[] = _("Quod loqueris?");
+static const struct NamingScreenTemplate sRhetoricNamingScreenTemplate =
+{
+    .copyExistingString = FALSE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 6,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = sText_Rhetoric,
+};
+
+static const u8 sText_LeafsName[] = _("Friend's Name?");
+static const struct NamingScreenTemplate sLeafNamingScreenTemplate =
+{
+    .copyExistingString = FALSE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 7,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = sText_LeafsName,
+};
+
+
+
+
+
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 {
     [NAMING_SCREEN_PLAYER]     = &sPlayerNamingScreenTemplate,
@@ -2153,6 +2280,10 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_CAUGHT_MON] = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_NICKNAME]   = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_WALDA]      = &sWaldaWordsScreenTemplate,
+    [NAMING_SCREEN_RIVAL]      = &sRivalNamingScreenTemplate,
+    [NAMING_SCREEN_PHILOSOPHY] = &sPhilosophyNamingScreenTemplate,
+    [NAMING_SCREEN_RHETORIC]   = &sRhetoricNamingScreenTemplate,
+    [NAMING_SCREEN_LEAF]       = &sLeafNamingScreenTemplate,
 };
 
 static const struct OamData sOam_8x8 =

@@ -1,0 +1,41 @@
+mapscripts DesertTemple_3F_MapScripts {
+	
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_0, 0: DesertTemple_3F_EventScript_FaceSnakes
+	]
+
+}
+
+
+script DesertTemple_3F_EventScript_FaceSnakes {
+	turnobject (1, DIR_SOUTH)
+	turnobject (2, DIR_SOUTH)
+	turnobject (3, DIR_WEST)
+	turnobject (4, DIR_SOUTH)
+	turnobject (5, DIR_SOUTH)
+	turnobject (6, DIR_NORTH)
+	turnobject (7, DIR_EAST)
+	turnobject (8, DIR_WEST)
+	turnobject (9, DIR_NORTH)
+	turnobject (10, DIR_WEST)
+	turnobject (11, DIR_EAST)
+	turnobject (12, DIR_SOUTH)
+	turnobject (13, DIR_NORTH)
+	turnobject (14, DIR_NORTH)
+	end
+}
+
+script DesertTemple_3F_EventScript_CollisionEkans {
+	lock
+	delay (20)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	playmoncry (SPECIES_EKANS, CRY_MODE_NORMAL)
+	waitmoncry
+	delay (20)
+	warpsilent (MAP_DESERT_TEMPLE_1F, 11, 27)
+	waitstate
+	end
+}
+
+

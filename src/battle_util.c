@@ -8504,73 +8504,100 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
 
 u8 GetAttackerObedienceForAction()
 {
+
+//    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
+//        return OBEYS;
+
+//
+//    if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_RIGHT)
+//        return OBEYS;
+//    if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+//        return OBEYS;
+//    if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
+//        return OBEYS;
+//    if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
+//        return OBEYS;
+//    if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
+//        return OBEYS;
+//
+//    obedienceLevel = 10;
+//
+//    if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
+//        obedienceLevel = 20;
+//    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
+//        obedienceLevel = 30;
+//    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
+//        obedienceLevel = 40;
+//    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
+//        obedienceLevel = 50;
+//    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
+//        obedienceLevel = 60;
+//    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
+//        obedienceLevel = 70;
+//    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
+//        obedienceLevel = 80;
+//
+//    if (B_OBEDIENCE_MECHANICS >= GEN_8
+//     && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
+//        levelReferenced = gBattleMons[gBattlerAttacker].metLevel;
+//    else
+//        levelReferenced = gBattleMons[gBattlerAttacker].level;
+//
+//    if (levelReferenced <= obedienceLevel)
+//        return OBEYS;
+//
+//    rnd = Random();
+//    calc = (levelReferenced + obedienceLevel) * (rnd & 255) >> 8;
+//    if (calc < obedienceLevel)
+//        return OBEYS;
+//
+//    //  Clear the Z-Move flags if the battler is disobedient as to not waste the Z-Move
+//    if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE)
+//    {
+//        gBattleStruct->gimmick.activated[gBattlerAttacker][GIMMICK_Z_MOVE] = FALSE;
+//        gBattleStruct->gimmick.activeGimmick[GetBattlerSide(gBattlerAttacker)][gBattlerPartyIndexes[gBattlerAttacker]] = GIMMICK_NONE;
+//    }
+//
+
     s32 rnd;
     s32 calc;
-    u8 obedienceLevel = 0;
-    u8 levelReferenced;
-
-    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
-        return OBEYS;
+	u32 levelCap = VarGet(VAR_SYS_LEVEL_CAP);
+	//Only Player mons can disobey
     if (BattlerHasAi(gBattlerAttacker))
         return OBEYS;
+	//if Eevee and under level cap + 10 then objey
+	if (gBattleMons[gBattlerAttacker].species == SPECIES_EEVEE ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_FLAREON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_VAPOREON ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_JOLTEON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_UMBREON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_ESPEON   ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_LEAFEON  ||
+			gBattleMons[gBattlerAttacker].species == SPECIES_GLACEON ) 
+	{
+		//if (gBattleMons[gBattlerAttacker].level <= levelCap + 1 + (levelCap / 10))
+			return OBEYS;
+	}
 
-    if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_RIGHT)
-        return OBEYS;
-    if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-        return OBEYS;
-    if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
-        return OBEYS;
-    if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
-        return OBEYS;
-    if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
-        return OBEYS;
-
-    obedienceLevel = 10;
-
-    if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-        obedienceLevel = 20;
-    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
-        obedienceLevel = 30;
-    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
-        obedienceLevel = 40;
-    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
-        obedienceLevel = 50;
-    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
-        obedienceLevel = 60;
-    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
-        obedienceLevel = 70;
-    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-        obedienceLevel = 80;
-
-    if (B_OBEDIENCE_MECHANICS >= GEN_8
-     && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
-        levelReferenced = gBattleMons[gBattlerAttacker].metLevel;
-    else
-        levelReferenced = gBattleMons[gBattlerAttacker].level;
-
-    if (levelReferenced <= obedienceLevel)
-        return OBEYS;
-
+	//if have trainer card and under or == level cap then obey
+	if (FlagGet(FLAG_SYS_TRAINER_CARD_GET) && gBattleMons[gBattlerAttacker].level <= levelCap)
+		return OBEYS;
+	//if flag (AUTO-OBEY) then obey
+	if (FlagGet(FLAG_SYS_FORCE_OBEY))
+		return
+			OBEYS;
+   
+	//Below here Mon is NOT Obedient	
+	
+	// is not obedient
     rnd = Random();
-    calc = (levelReferenced + obedienceLevel) * (rnd & 255) >> 8;
-    if (calc < obedienceLevel)
-        return OBEYS;
-
-    //  Clear the Z-Move flags if the battler is disobedient as to not waste the Z-Move
-    if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE)
-    {
-        gBattleStruct->gimmick.activated[gBattlerAttacker][GIMMICK_Z_MOVE] = FALSE;
-        gBattleStruct->gimmick.activeGimmick[GetBattlerSide(gBattlerAttacker)][gBattlerPartyIndexes[gBattlerAttacker]] = GIMMICK_NONE;
-    }
-
-    // is not obedient
     if (gCurrentMove == MOVE_RAGE)
         gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_RAGE;
     if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP && (gMovesInfo[gCurrentMove].effect == EFFECT_SNORE || gMovesInfo[gCurrentMove].effect == EFFECT_SLEEP_TALK))
         return DISOBEYS_WHILE_ASLEEP;
 
-    calc = (levelReferenced + obedienceLevel) * ((rnd >> 8) & 255) >> 8;
-    if (calc < obedienceLevel)
+    calc = (gBattleMons[gBattlerAttacker].level + levelCap) * ((rnd >> 8) & 255) >> 8;
+    if (calc < levelCap)
     {
         calc = CheckMoveLimitations(gBattlerAttacker, 1u << gCurrMovePos, MOVE_LIMITATIONS_ALL);
         if (calc == ALL_MOVES_MASK) // all moves cannot be used
@@ -8583,21 +8610,17 @@ u8 GetAttackerObedienceForAction()
     }
     else
     {
-        obedienceLevel = levelReferenced - obedienceLevel;
+        levelCap = gBattleMons[gBattlerAttacker].level - levelCap;
 
         calc = ((rnd >> 16) & 255);
-        if (calc < obedienceLevel && CanBeSlept(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
+        if (calc < levelCap && CanBeSlept(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
         {
             // try putting asleep
-            int i;
-            for (i = 0; i < gBattlersCount; i++)
-                if (gBattleMons[i].status2 & STATUS2_UPROAR)
-                    break;
-            if (i == gBattlersCount)
+			if (!(gBattleMons[gBattlerAttacker].status2 & STATUS2_UPROAR))
                 return DISOBEYS_FALL_ASLEEP;
         }
-        calc -= obedienceLevel;
-        if (calc < obedienceLevel)
+        calc -= levelCap;
+        if (calc < levelCap)
             return DISOBEYS_HITS_SELF;
         else
             return DISOBEYS_LOAFS;

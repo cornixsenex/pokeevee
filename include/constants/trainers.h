@@ -108,7 +108,66 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
-#define TRAINER_PIC_COUNT                 93
+//CUSTOMS
+#define TRAINER_PIC_BLUE1                 93
+#define TRAINER_PIC_LORELEI               94
+#define TRAINER_PIC_BLAINE                95
+#define TRAINER_PIC_JESSEANDJAMES         96
+#define TRAINER_PIC_SUPER_NERD			  97
+#define TRAINER_PIC_AROMA_LADY2	    	  98
+#define TRAINER_PIC_BIKER				  99
+#define TRAINER_PIC_BIRD_KEEPER2		  100
+#define TRAINER_PIC_BEAUTY2				  101
+#define TRAINER_PIC_BLACK_BELT2			  102
+#define TRAINER_PIC_BURGLAR				  103
+#define TRAINER_PIC_CAMPER2				  104
+#define TRAINER_PIC_BLUE2				  105
+#define TRAINER_PIC_BLUE3				  106
+#define TRAINER_PIC_CHANNELER			  107
+#define TRAINER_PIC_CUE_BALL			  108
+#define TRAINER_PIC_AGATHA				  109
+#define TRAINER_PIC_BRUNO				  110
+#define TRAINER_PIC_LANCE				  111
+#define TRAINER_PIC_ENGINEER			  112
+#define TRAINER_PIC_GAMER			      113
+#define TRAINER_PIC_GENTLEMAN2			  114
+#define TRAINER_PIC_HIKER2			  	  115
+#define TRAINER_PIC_JUGGLER			  	  116
+#define TRAINER_PIC_LADY2			  	  117
+#define TRAINER_PIC_LASS2			  	  118
+#define TRAINER_PIC_BROCK			  	  119
+#define TRAINER_PIC_ERIKA			  	  120
+#define TRAINER_PIC_GIOVANNI			  121
+#define TRAINER_PIC_KOGA			  	  122
+#define TRAINER_PIC_LT_SURGE			  123
+#define TRAINER_PIC_MISTY			      124
+#define TRAINER_PIC_SABRINA			      125
+#define TRAINER_PIC_PAINTER		      	  126
+#define TRAINER_PIC_PICNICKER2	      	  127
+#define TRAINER_PIC_POKEMANIAC2	      	  128
+#define TRAINER_PIC_POKEMON_BREEDER_F2	  129
+#define TRAINER_PIC_PROFESSOR_OAK	  	  130
+#define TRAINER_PIC_PSYCHIC_M2	  	  	  131
+#define TRAINER_PIC_PSYCHIC_F2	  	  	  132
+#define TRAINER_PIC_ROCKER	  	    	  133
+#define TRAINER_PIC_RUIN_MANIAC2  	      134
+#define TRAINER_PIC_SAILOR2  	          135
+#define TRAINER_PIC_SCIENTIST	          136
+#define TRAINER_PIC_TAMER	         	  137
+#define TRAINER_PIC_YOUNGSTER2	          138
+#define TRAINER_PIC_MEWTWOARMOR	          139
+#define TRAINER_PIC_SOLDIER  	          140
+#define TRAINER_PIC_MISTY2                141
+#define TRAINER_PIC_JANITOR               142
+#define TRAINER_PIC_NURSE_JOY             143
+#define TRAINER_PIC_CUE_BALL_NO_BIKE	  144
+#define TRAINER_PIC_GREEN            	  145
+#define TRAINER_PIC_BIG_BLUE              146
+#define TRAINER_PIC_BIG_YELLOW            147
+#define TRAINER_PIC_BIG_GREEN             148
+#define TRAINER_PIC_BIG_RED               149
+
+#define TRAINER_PIC_COUNT                 150
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -351,7 +410,19 @@
 #define TRAINER_CLASS_PIKE_QUEEN     0x3f
 #define TRAINER_CLASS_PYRAMID_KING   0x40
 #define TRAINER_CLASS_RS_PROTAG      0x41
-#define TRAINER_CLASS_COUNT          0x42
+
+//CUSTOMS
+#define TRAINER_CLASS_FUCKBOY		 0x42
+#define TRAINER_CLASS_PKMN_TEACHER   0x43
+#define TRAINER_CLASS_PKMN_SCIENTIST 0x44
+#define TRAINER_CLASS_ROCKET_BOSS    0x45
+#define TRAINER_CLASS_JANITOR        0x46
+#define TRAINER_CLASS_NURSE          0x47
+#define TRAINER_CLASS_DOCTOR         0x48
+#define TRAINER_CLASS_CULTIST		 0x49
+
+//CHANGE THIS ONE IF YOU ADD MORE
+#define TRAINER_CLASS_COUNT          0x4a
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

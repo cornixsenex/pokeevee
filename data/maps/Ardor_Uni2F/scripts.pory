@@ -1,0 +1,138 @@
+
+const OBJ_EVENT_LEAF = 1
+
+mapscripts Ardor_Uni2F_MapScripts {
+
+	MAP_SCRIPT_ON_LOAD {
+		call (Ardor_Uni2F_EventScript_OpenDoors)
+	}
+
+}
+
+script Ardor_Uni2F_EventScript_OpenDoors {
+	if (!flag(FLAG_OPEN_CLASS_LOGIC) ){
+		setmetatile (2, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_ALGEBRA) ){
+		setmetatile (7, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_GEOMETRY) ){
+		setmetatile (12, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_HISTORY) ){
+		setmetatile (26, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_ARCHAEOLOGY) ){
+		setmetatile (31, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_PSYCHOLOGY) ){
+		setmetatile (36, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	end
+}
+
+
+
+script Ardor_Uni2F_EventScript_Leaf {
+	lock
+	faceplayer
+	msgbox(Ardor_Uni2F_Text_Leaf1)
+	closemessage
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) != DIR_SOUTH) {
+		applymovement (OBJ_EVENT_LEAF, Ardor_Uni2F_Movement_LeafExitN)
+	} else {
+		applymovement (OBJ_EVENT_LEAF, Ardor_Uni2F_Movement_LeafExitS)
+	}
+	waitmovement (0)
+	setflag (FLAG_ARDOR_UNI2F_LEAF)
+	removeobject (OBJ_EVENT_LEAF)
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_ArchaeologyDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_ArchaeologyDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_LogicDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_LogicDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_AlgebraDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_AlgebraDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_GeometryDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_GeometryDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_HistoryDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_HistoryDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni2F_EventScript_PsychologyDoorSign {
+	lock
+	msgbox (Ardor_Uni2F_Text_PsychologyDoorSign)
+	closemessage
+	release
+	end
+}
+
+movement Ardor_Uni2F_Movement_LeafExitS {
+	walk_down * 2
+	walk_right * 3
+	walk_up * 10
+}
+
+movement Ardor_Uni2F_Movement_LeafExitN {
+	walk_up * 6
+}
+
+text Ardor_Uni2F_Text_ArchaeologyDoorSign {
+	format("MAGISTER INDIANUS ARCHAEOLOGIAE EX ACADEMIA IN PYRAMIDE EST. REVERTETUR IN ANNO PROXIMO")
+}
+
+text Ardor_Uni2F_Text_Leaf1 {
+	format("My gosh! This cafeteria's not bad! Oh hey {PLAYER} I found an Indianus. His door is halfway down the eastern hall but it won't open. I can't understand anything anybody even says so I don't know where Indianus is. I think I'm going back to the party, that boy told me to meet him at his frat, but don't give up! We need to find Indy and rescue Mew!")
+}
+
+text Ardor_Uni2F_Text_LogicDoorSign {
+	format("LOGICA\nMAGISTER JOANNES")
+}
+
+text Ardor_Uni2F_Text_AlgebraDoorSign {
+	format("ALGEBRA\nMAGISTRA CAMILLA")
+}
+
+text Ardor_Uni2F_Text_GeometryDoorSign {
+	format("GEOMETRIA\nMAGISTER JEFFERSON")
+}
+
+text Ardor_Uni2F_Text_HistoryDoorSign {
+	format("HISTORIA\nDOCTOR VIRTREUS")
+}
+
+text Ardor_Uni2F_Text_PsychologyDoorSign {
+	format("PSYCHOLOGIA\nMAGISTRA LINDA")
+}

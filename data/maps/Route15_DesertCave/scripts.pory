@@ -1,0 +1,65 @@
+mapscripts Route15_DesertCave_MapScripts {
+
+	MAP_SCRIPT_ON_LOAD {
+		if (flag(FLAG_ROUTE15_DESERTCAVE_OPEN)) {
+			call (Route15_DesertCave_EventScript_OpenDoor)
+		}
+		end
+	}
+}
+
+
+
+
+script  Route15_DesertCave_EventScript_DoorTrigger {
+	setvar (VAR_TEMP_0, 1)
+	checkitem (ITEM_ANCIENT_LAMP)
+	if (var(VAR_RESULT) == TRUE && (!flag(FLAG_ROUTE15_DESERTCAVE_OPEN))) {
+		call (Route15_DesertCave_EventScript_ShowOpenDoor)
+	}
+	end
+}
+
+script Route15_DesertCave_EventScript_ShowOpenDoor {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	setvar (VAR_0x8004, 1)
+	setvar (VAR_0x8005, 1)
+	setvar (VAR_0x8006, 8)
+	setvar (VAR_0x8007, 5)
+	special (ShakeCamera)
+	waitstate
+	msgbox(Route15_DesertCave_Text_ShowOpenDoor)
+	closemessage
+	setvar (VAR_0x8004, 1)
+	setvar (VAR_0x8005, 1)
+	setvar (VAR_0x8006, 16)
+	setvar (VAR_0x8007, 3)
+	special (ShakeCamera)
+	waitstate
+	playse (SE_EFFECTIVE)
+	waitse
+	call (Route15_DesertCave_EventScript_OpenDoor)
+	special (DrawWholeMapView)
+	delay (30)
+	setflag (FLAG_ROUTE15_DESERTCAVE_OPEN)
+	releaseall
+	end
+}
+
+script Route15_DesertCave_EventScript_OpenDoor {
+	setmetatile (14, 19, METATILE_Cave_CaveType3BottomHole, 0)
+	setmetatile (13, 19, METATILE_Cave_CaveType3BottomHoleLeft, 1)
+	setmetatile (15, 19, METATILE_Cave_CaveType3BottomHoleRight, 1)
+	return
+}
+
+
+
+text Route15_DesertCave_Text_ShowOpenDoor {
+	format("Oh! The ANCIENT LAMP begins to shake and glow!")
+}
+
+
+

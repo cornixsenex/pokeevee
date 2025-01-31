@@ -1,0 +1,97 @@
+mapscripts Warehouse_Yellow_MapScripts {}
+
+
+
+script Warehouse_Yellow_EventScript_TrainerYellow5 {	
+	trainerbattle_single(TRAINER_YELLOW5, Warehouse_Yellow_Text_Yellow5Intro, Warehouse_Yellow_Text_Yellow5Lost)
+	msgbox(Warehouse_Yellow_Text_Yellow5Post)
+	closemessage
+	end
+}
+script Warehouse_Yellow_EventScript_TrainerYellow4 {	
+	trainerbattle_single(TRAINER_YELLOW4, Warehouse_Yellow_Text_Yellow4Intro, Warehouse_Yellow_Text_Yellow4Lost)
+	msgbox(Warehouse_Yellow_Text_Yellow4Post)
+	closemessage
+	end
+}
+
+script Warehouse_Yellow_EventScript_TrainerYellow3 {	
+	trainerbattle_single(TRAINER_YELLOW3, Warehouse_Yellow_Text_Yellow3Intro, Warehouse_Yellow_Text_Yellow3Lost)
+	msgbox(Warehouse_Yellow_Text_Yellow3Post)
+	closemessage
+	end
+}
+
+script Warehouse_Yellow_EventScript_TrainerYellow2 {	
+	trainerbattle_single(TRAINER_YELLOW2, Warehouse_Yellow_Text_Yellow2Intro, Warehouse_Yellow_Text_Yellow2Lost)
+	msgbox(Warehouse_Yellow_Text_Yellow2Post)
+	closemessage
+	end
+}
+
+script Warehouse_Yellow_EventScript_TrainerYellow1 {	
+	trainerbattle_single(TRAINER_YELLOW1, Warehouse_Yellow_Text_Yellow1Intro, Warehouse_Yellow_Text_Yellow1Lost)
+	msgbox(Warehouse_Yellow_Text_Yellow1Post)
+	closemessage
+	end
+}
+
+text Warehouse_Yellow_Text_Yellow5Intro {
+	format("What you want skinny? Where's your girl?")
+}
+
+text Warehouse_Yellow_Text_Yellow5Lost {
+	format("You fucking crazy skinny guy!")
+}
+
+text Warehouse_Yellow_Text_Yellow5Post {
+	format("Why do you always look so sad?")
+}
+
+text Warehouse_Yellow_Text_Yellow4Intro {
+	format("I fucked your mom's unshaved pussy!")
+}
+
+text Warehouse_Yellow_Text_Yellow4Lost {
+	format("Fucking A!")
+}
+
+text Warehouse_Yellow_Text_Yellow4Post {
+	format("You smoke weed green boy?")
+}
+
+text Warehouse_Yellow_Text_Yellow3Intro {
+	format("What's up man are you from round here?")
+}
+
+text Warehouse_Yellow_Text_Yellow3Lost {
+	format("I don't think that's OK. No way!")
+}
+
+text Warehouse_Yellow_Text_Yellow3Post {
+	format("Quit fucking around. Back to work!")
+}
+
+text Warehouse_Yellow_Text_Yellow2Intro {
+	format("What's happenin man? You work fast?")
+}
+
+text Warehouse_Yellow_Text_Yellow2Lost {
+	format("Alright holmes.")
+}
+
+text Warehouse_Yellow_Text_Yellow2Post {
+	format("I need to get my wisdom tooth pulled out. It hurts bad!")
+}
+
+text Warehouse_Yellow_Text_Yellow1Intro {
+	format("You came from sidewalks. We're from streets.")
+}
+
+text Warehouse_Yellow_Text_Yellow1Lost {
+	format("Alright, by bad.")
+}
+
+text Warehouse_Yellow_Text_Yellow1Post {
+	format("You are too strong.")
+}

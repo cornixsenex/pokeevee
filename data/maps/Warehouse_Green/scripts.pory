@@ -1,0 +1,223 @@
+const OBJ_EVENT_BIGGREEN = 5
+
+
+
+mapscripts Warehouse_Green_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (defeated(TRAINER_YELLOW1) 
+			&& defeated(TRAINER_YELLOW2) 
+			&& defeated(TRAINER_YELLOW3)
+			&& defeated(TRAINER_YELLOW4)
+			&& defeated(TRAINER_YELLOW5)
+			&& defeated(TRAINER_BLUE1)
+			&& defeated(TRAINER_BLUE2) 
+			&& defeated(TRAINER_BLUE3)
+			&& defeated(TRAINER_BLUE4)
+			&& defeated(TRAINER_BLUE5)
+			&& defeated(TRAINER_RED1)
+			&& defeated(TRAINER_RED2) 
+			&& defeated(TRAINER_RED3)
+			&& defeated(TRAINER_RED4)
+			&& defeated(TRAINER_RED5)
+			&& var(VAR_GANG_STATE) == 2) {
+			setvar(VAR_GANG_STATE, 3)
+		}
+	}
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		//BG still in SS
+		VAR_GANG_STATE, 0: Warehouse_Green_EventScript_HideBigGreen
+		//BG waiting to do warehouse Intro
+		VAR_GANG_STATE, 1: Warehouse_Green_EventScript_ShowBigGreen
+		//BG waiting for warehouse clear
+		VAR_GANG_STATE, 2: Warehouse_Green_EventScript_ShowBigGreen
+		//BG captured but need intro
+		VAR_GANG_STATE, 3: Warehouse_Green_EventScript_HideBigGreen
+		//BG in SS_2F and intro given
+		VAR_GANG_STATE, 4: Warehouse_Green_EventScript_HideBigGreen
+		//BG defeated, color allies
+		VAR_GANG_STATE, 5: Warehouse_Green_EventScript_HideBigGreen
+		]
+}
+
+script Warehouse_Green_EventScript_ShowBigGreen {
+	clearflag (FLAG_WAREHOUSE_GREEN_BIGGREEN)
+	return
+}
+
+script Warehouse_Green_EventScript_HideBigGreen {
+	removeobject (OBJ_EVENT_BIGGREEN)
+	setflag (FLAG_WAREHOUSE_GREEN_BIGGREEN)
+	return
+}
+
+script Warehouse_Green_EventScript_BigGreen {
+	lock
+	faceplayer
+	switch (var(VAR_GANG_STATE)) {
+		case 0:
+			msgbox("VAR is 0")
+		closemessage
+		case 1:
+			call (Warehouse_Green_EventScript_BigGreenA)
+		case 2:
+			call (Warehouse_Green_EventScript_BigGreenB)
+		case 3:
+			msgbox("VAR is 3")
+			closemessage
+		case 4:
+			msgbox("VAR is 4")
+			closemessage
+	default:
+		msgbox("VAR OUT OF SCOPE")
+		closemessage
+	}
+	applymovement(OBJ_EVENT_BIGGREEN, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Warehouse_Green_EventScript_BigGreenA {
+	setvar (VAR_GANG_STATE, 2)
+	setflag(FLAG_GATOS_VAGRANTS)
+	msgbox(Warehouse_Green_Text_BigGreenA)
+	closemessage
+	return
+}
+
+script Warehouse_Green_EventScript_Green1 {
+	lock
+	faceplayer
+	if (var(VAR_GANG_STATE) < 5) {
+		//early
+		msgbox(Warehouse_Green_Text_Green1A)
+	} else {
+		//late
+		msgbox(Warehouse_Green_Text_Green1B)
+	}
+	closemessage
+	release
+	end
+}
+
+script Warehouse_Green_EventScript_Green2 {
+	lock
+	faceplayer
+	if (var(VAR_GANG_STATE) < 5) {
+		//early
+		msgbox(Warehouse_Green_Text_Green2A)
+	} else {
+		//late
+		msgbox(Warehouse_Green_Text_Green2B)
+	}
+	closemessage
+	release
+	end
+}
+
+script Warehouse_Green_EventScript_Green3 {
+	lock
+	faceplayer
+	if (var(VAR_GANG_STATE) < 5) {
+		//early
+		msgbox(Warehouse_Green_Text_Green3A)
+	} else {
+		//late
+		msgbox(Warehouse_Green_Text_Green3B)
+	}
+	closemessage
+	release
+	end
+}
+
+script Warehouse_Green_EventScript_Green4 {
+	lock
+	faceplayer
+	if (var(VAR_GANG_STATE) < 5) {
+		//early
+		msgbox(Warehouse_Green_Text_Green4A)
+	} else {
+		//late
+		msgbox(Warehouse_Green_Text_Green4B)
+	}
+	closemessage
+	release
+	end
+}
+
+script Warehouse_Green_EventScript_Green5 {
+	lock
+	faceplayer
+	if (var(VAR_GANG_STATE) < 5) {
+		//early
+		msgbox(Warehouse_Green_Text_Green5A)
+	} else {
+		//late
+		msgbox(Warehouse_Green_Text_Green5B)
+	}
+	closemessage
+	release
+	end
+}
+
+script Warehouse_Green_EventScript_BigGreenB {
+	msgbox(Warehouse_Green_Text_BigGreenB)
+	closemessage
+	return
+}
+
+text Warehouse_Green_Text_BigGreenA {
+	format("Ahh {PLAYER} so wise to join us here. Welcome, please make yourself at home. I understand you're here to help us. You've come just in time. The neighborhood is not as it once was, ever since The Great War, the reds and blues have sold drugs on our streets and stole our turf. We must strike back or soon we'll be destroyed! I need you to stop their operations. Go to their warehouses. Don't hesitate! Do not show mercy. Do what must be done! Only then can you join our merry gang.")
+}
+
+text Warehouse_Green_Text_BigGreenB {
+	format("You've agreed to perform a great favor and win renoun amoung our merry band. You must destroy the three colored warehouses: the Red the Blue and the Yellow one too. When you return I'll let you in our gang.")
+}
+
+text Warehouse_Green_Text_Green1A {
+	format("Like zoinks dude I think I might see a ghost.")
+}
+
+text Warehouse_Green_Text_Green1B {
+	format("Like zoinks dude I think you're alright man.")
+}
+
+text Warehouse_Green_Text_Green2A {
+	format("West side, we call that the Orange Street cuz The Reds were the first to put their flag down out there, but they was more orange back when we has hipper and chipper.")
+}
+
+text Warehouse_Green_Text_Green2B {
+	format("Man I tell you we had a blast putting it together, yknow being in the bar with our people, yeah that shit felt good.")
+}
+
+text Warehouse_Green_Text_Green3A {
+	format("This leaf is a cheap ticket to the most beautiful place on earth.")
+}
+
+text Warehouse_Green_Text_Green3B {
+	format("Now I mostly stick to eating the herbs now in my old age.")
+}
+
+text Warehouse_Green_Text_Green4A {
+	format("Well, hey man! Quit staring at it man that's like my only hat.")
+}
+
+text Warehouse_Green_Text_Green4B {
+	format("Well, hey man! They told me all about that stuff at the bar man! Far out dude.")
+}
+
+text Warehouse_Green_Text_Green5A {
+	format("The prophet speaks in all of us! Jah Rastafari!")
+}
+
+text Warehouse_Green_Text_Green5B {
+	format("Jah Rastafari! The Lion of Zion has returned")
+}
+
+
+
+
+
+

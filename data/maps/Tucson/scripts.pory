@@ -1,0 +1,439 @@
+
+const OBJ_EVENT_NESTOR    = 1
+const OBJ_EVENT_PARIS     = 2
+const OBJ_EVENT_HELEN     = 3
+const OBJ_EVENT_MENELAUS  = 4
+const OBJ_EVENT_CASTOR    = 5
+const OBJ_EVENT_POLLUX    = 6
+const OBJ_EVENT_ULYSSES   = 14
+const OBJ_EVENT_AGAMEMNON = 15
+const OBJ_EVENT_AENEAS	  = 16
+const OBJ_EVENT_HECTOR    = 17
+
+const FIELD_PIC_NESTOR = 25
+const FIELD_PIC_MENELAUS = 26
+const FIELD_PIC_PARIS = 27
+
+
+mapscripts Tucson_MapScripts {
+	//Set Object position and movement
+	MAP_SCRIPT_ON_TRANSITION {
+		
+		if (var(VAR_NESTOR_STATE) == 0 || var(VAR_NESTOR_STATE) == 2) {
+			call (Tucson_Script_ShowNestorHousePreWedding)
+		} elif (var(VAR_NESTOR_STATE) == 1) {
+			call (Tucson_Script_ShowNestorGather1)
+		} elif (var(VAR_NESTOR_STATE) == 3) {
+			call (Tucson_Script_ShowNestorGather2)
+		} else {
+			call (Tucson_Script_HideNestor)
+		}
+
+	}
+
+	//Set player visibility / facing direction
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_NESTOR_STATE, 1: Tucson_Script_FacePlayerNorth
+	]
+
+	//Run script on every frame - Trigger an event
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_NESTOR_STATE, 1: Tucson_Script_NestorGather1
+	]
+
+}
+
+script Tucson_Script_ShowNestorHousePreWedding {
+	//Show the always visible: Nestor, Helen, Paris, Menelaus
+
+	//Check if the conditions are satisfied for the characters to appear
+
+	//Dioscuri
+	if (var(VAR_ARGO_STATE > 19)) {
+		call (Tucson_Script_ShowDioscuri)
+	}
+
+	// Hector
+	if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
+		setobjectxyperm (OBJ_EVENT_HECTOR, 23, 10)
+		setobjectmovementtype (OBJ_EVENT_HECTOR, MOVEMENT_TYPE_FACE_DOWN)
+	}
+
+	//Aeneis
+	
+	//Agamemnon
+
+	//Ulysses
+
+	return
+}
+
+script Tucson_Script_FacePlayerNorth {
+	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+	end
+}
+
+script Tucson_Script_ShowDioscuri {
+	setobjectxyperm (OBJ_EVENT_CASTOR, 62, 10)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_POLLUX, 63, 10)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_DOWN)
+
+	return
+}
+
+script Tucson_Script_ShowNestorGather1 {
+	setobjectxyperm (OBJ_EVENT_HELEN, 36, 17)
+	setobjectmovementtype (OBJ_EVENT_HELEN, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_MENELAUS, 32, 15)
+	setobjectmovementtype (OBJ_EVENT_MENELAUS, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_PARIS, 40, 15)
+	setobjectmovementtype (OBJ_EVENT_PARIS, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_CASTOR, 32, 17)
+	setobjectmovementtype (OBJ_EVENT_CASTOR, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (OBJ_EVENT_POLLUX, 40, 17)
+	setobjectmovementtype (OBJ_EVENT_POLLUX, MOVEMENT_TYPE_FACE_UP)
+
+	return
+}
+
+script Tucson_Script_ShowNestorGather2 {
+	call (Tucson_Script_ShowNestorGather1)
+
+	setobjectxyperm (OBJ_EVENT_ULYSSES, 30, 15)
+	setobjectmovementtype (OBJ_EVENT_ULYSSES, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_AGAMEMNON, 34, 15)
+	setobjectmovementtype (OBJ_EVENT_AGAMEMNON, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_AENEAS, 38, 15)
+	setobjectmovementtype (OBJ_EVENT_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_HECTOR, 42, 15)
+	setobjectmovementtype (OBJ_EVENT_HECTOR MOVEMENT_TYPE_FACE_DOWN)
+
+	return
+}
+
+script Tucson_Script_HideNestor {
+	removeobject (OBJ_EVENT_NESTOR)
+	removeobject (OBJ_EVENT_HELEN)
+	removeobject (OBJ_EVENT_PARIS)
+	removeobject (OBJ_EVENT_MENELAUS)
+	return
+}
+
+script Tucson_Script_Nestor {
+	//I think this script should re-position the guests
+	lock
+	faceplayer	
+	//Preamble
+	if (!flag(FLAG_TUCSON_NESTOR_INTROD)) {
+		msgbox (Tucson_Text_Nestor_Intro, MSGBOX_DEFAULT)
+		setflag (FLAG_TUCSON_NESTOR_INTROD)
+	}
+	//Dioscuri
+	if (var(VAR_ARGO_STATE) < 20) {
+		//Go find Dioscuri
+		msgbox (Tucson_Text_Nestor1, MSGBOX_DEFAULT)
+		closemessage
+	} else {
+		if (var(VAR_NESTOR_STATE) < 1) {
+			//Thank you for bringing the Dioscuri back
+			msgbox (Tucson_Text_Nestor2, MSGBOX_DEFAULT)
+			closemessage 
+			//Do Nestor Gather 1
+			setvar (VAR_NESTOR_STATE, 1)
+			release
+			warpsilent (MAP_TUCSON, 36, 19)
+			waitstate
+		}
+		//Could you invite the best man and brother of the suitors here
+		//Headcount - With Castor and Pollux back we have no reason to delay the wedding each of you (Men&Par) summon your closest brother, and your best man and I will announce my decision when the party is gathered. (For tho only one will wed Helen I would you were both as brothers as I hold your both families in the highest regard)
+		//Check A, B, C, D
+		msgbox (Tucson_Text_Nestor5, MSGBOX_DEFAULT)
+		closemessage
+	}
+	release
+	end
+}
+
+			
+//Summon the suitors scene - Nestor gathers helen, the suitors and dioscuri to him to declare that the time has come to declare the groom for his daughter. He asks both suitors to swear their loyalty to whoever he decies they swear and then he asks they both summon their brother and best man. Once the pary is assembled he will announce his decision and the wedding will take place. Summon A, B, C, D and then break
+script Tucson_Script_NestorGather1 {
+
+	//Set var to prevent continuous trigger
+	setvar (VAR_NESTOR_STATE, 2)
+
+	//Nestor Speech - Welcome dioscuri, now to business, Between you I will choose Helen's groom and heir to my estate but know I hold you both worthy gentleman and want no fighting between you therefore I ask before I announce my decision that you both swear this oath. Swear by the sun and moon and stars and Olympus Mons and the River Styx and by the air and the sea that you will respect my will, that you will hold eachother as brothers, and that while only one can be married we all shall be joined as family. That if you break this oath may you and your kin face ruin and destruction
+	load_field_pic(FIELD_PIC_NESTOR, 190, 98)
+	msgbox (Tucson_Text_Nestor3A, MSGBOX_DEFAULT)
+	msgbox (Tucson_Text_Nestor3B, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_NESTOR)
+
+	//They both swears it
+	load_field_pic(FIELD_PIC_MENELAUS, 190, 98)
+	msgbox (Tucson_Text_NestorGather1_Menelaus1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_MENELAUS)
+
+	load_field_pic(FIELD_PIC_PARIS, 190, 98)
+	msgbox (Tucson_Text_NestorGather1_Paris1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_PARIS)
+
+	//Let it be so. Therefore both the chosen and the runner up shall be party to the wedding and it will be a joyous celebration around. Let both the brother and the best man of both suitors be brought and together we shall make the wedding party. Player since you've proven so useful bringing us the elusive Dioscuri back I think it only fitting that you deliver the invitations to the (expected guests) Suitors I know you both have many men to choose from so make your decisions wisely. One brother and one best man. Player speak with the suitors once they have made up their minds, recieve their invitations, deliver them to their chosen guests, and then meet me back here once the party is all assembled. Helen, Paris, and Menelaus I release you to your own whims until our party is assembled and may the passing of time be gentle and swift on us all.
+	load_field_pic(FIELD_PIC_NESTOR, 190, 98)
+	msgbox (Tucson_Text_Nestor4A, MSGBOX_DEFAULT)
+	msgbox (Tucson_Text_Nestor4B, MSGBOX_DEFAULT)
+	closemessage
+	destroy_field_pic (FIELD_PIC_NESTOR)
+
+	warpsilent (MAP_TUCSON, 36, 19)
+	waitstate
+
+	//return / end
+	return
+}
+
+//FIX I don't want Helen to face the player unless Helen2 text
+script Tucson_Script_Helen {
+	//By pool with Paris
+	lock
+	//Helen loves Paris and wants her brothers back
+	if (var(VAR_ARGO_STATE) < 20) {
+		msgbox (Tucson_Text_Helen1, MSGBOX_DEFAULT)
+		applymovement (OBJ_EVENT_HELEN, Common_Movement_FaceRight)
+		waitmovement (0)
+		msgbox (Tucson_Text_Helen2, MSGBOX_NPC)
+		closemessage	
+	} elif (var(VAR_NESTOR_STATE) == 0) {
+		//Helen hopes her father will let her marry Paris Spoken directly to Paris ignores player
+		msgbox (Tucson_Text_Helen3, MSGBOX_DEFAULT)
+		closemessage
+	} elif (var(VAR_NESTOR_STATE) == 2) {
+		//I secretly hope that your mission fails and the invited guests never arrive so my Paris and I can remain here as I fear my father will speak the words as hideous as that face: Menelaus.
+		faceplayer
+		msgbox (Tucson_Text_Helen4, MSGBOX_DEFAULT)
+		closemessage
+	} else {
+		msgbox (format("After Wedding Return to House Denumount"), MSGBOX_DEFAULT)
+		closemessage
+	}
+	release
+	end
+}
+	
+script Tucson_Script_Paris {
+	lock
+	//Before NestorGather1
+	if (var(VAR_NESTOR_STATE) == 0) {
+		msgbox (Tucson_Text_Paris1, MSGBOX_DEFAULT)
+		closemessage
+	//After NestorGather1
+	} elif (var(VAR_NESTOR_STATE) == 2) {
+		faceplayer
+		//Before given invitation
+		if (!flag(FLAG_TUCSON_PARIS_DID_INVITE)) {
+			//I've decided who to invite
+			setflag (FLAG_TUCSON_PARIS_DID_INVITE)
+			msgbox (Tucson_Text_Paris_GiveInvites, MSGBOX_DEFAULT)
+			closemessage
+			giveitem (ITEM_WEDDING_INVITATION_HECTOR)
+			msgbox (Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT)
+			closemessage
+			giveitem (ITEM_WEDDING_INVITATION_AENEAS)
+			msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
+			msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
+			closemessage
+		}
+		//He's given out his invitations
+		else {
+			//Check if guests have arrived, if so say like ready for the wedding
+			//Check if Hector is here:
+			if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
+				//check if Aeneas not here
+				if (var(VAR_AENEAS_STATE) < 1) {
+					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
+					msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
+					closemessage
+				} else {
+					//His guests are here he waits excited for Nestor to gather the wedding party and announce his choice
+					msgbox (Tucson_Text_Paris2, MSGBOX_DEFAULT)
+					closemessage
+				}
+			//Hector not here
+			} else {
+				msgbox (Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT)
+				//Check if Aeneis not here
+				if (var(VAR_AENEAS_STATE) < 1) {
+					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
+				}
+				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
+				closemessage
+			}
+		}
+		//Paris looks to Helen
+		applymovement (OBJ_EVENT_PARIS, Common_Movement_FaceLeft)
+		waitmovement (0)
+	//He won't come back after Nestor Gather 2 so dont expect that
+	} else {
+		msgbox (format("VAR_NESTOR_STATE OOB - Tucson_Script_Paris"), MSGBOX_DEFAULT)
+		closemessage
+	}
+
+	release
+	end
+}
+
+script Tucson_Script_Menelaus {
+	lock
+	faceplayer
+	switch (var(VAR_NESTOR_STATE)) {
+		case 0:
+			msgbox (Tucson_Text_Menelaus1, MSGBOX_DEFAULT)
+		case 1:
+			msgbox ("NESTOR STATE 1", MSGBOX_DEFAULT)
+		case 2:
+			//msgbox(format("Check if ivitations are sent, if so then check if guests are returned and say either hels over there or good to see him again"), MSGBOX_DEFAULT)
+			if (!flag(FLAG_TUCSON_MENELAUS_DID_INVITE)) {
+				setflag (FLAG_TUCSON_MENELAUS_DID_INVITE)
+				msgbox (Tucson_Text_Menelaus_GiveInvites, MSGBOX_DEFAULT)
+				closemessage
+				giveitem (ITEM_WEDDING_INVITATION_AGAMEMNON)
+				msgbox (Tucson_Text_Menelaus_OnAgamemnon, MSGBOX_DEFAULT)
+				closemessage
+				giveitem (ITEM_WEDDING_INVITATION_AENEAS)
+				msgbox (Tucson_Text_Menelaus_OnUlysses, MSGBOX_DEFAULT)
+				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
+			} else {
+				//Check is Agamemnon Here
+				if (var(VAR_AGAMEMNON_STATE) > 0) {
+					msgbox (format("Agamemnon is here"), MSGBOX_DEFAULT)
+				} else {
+					msgbox (format("Agamemnon is NOT here"), MSGBOX_DEFAULT)
+				}
+			}
+		case 3:
+			msgbox ("NESTOR STATE 3", MSGBOX_DEFAULT)
+		case 4:
+			msgbox ("NESTOR STATE 4", MSGBOX_DEFAULT)
+		default:
+			msgbox ("NESTOR STATE OOB", MSGBOX_DEFAULT)
+
+	}
+	closemessage
+	release
+	end
+}
+
+script Tucson_Script_Hector {
+	lock
+	faceplayer
+	msgbox (Tucson_Text_Hector, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text Tucson_Text_Nestor_Intro {
+	format("I've lived a happy and eventful life but now I see my end approaching fast. Without a son to inherit my wealth I must rely on Helen, my daughter, to give birth to a legitimate heir and to that end I've arranged a marriage between her and one of the two suitors: Menelaus, that brilliant business man, and the absent minded pretty Paris.")
+}
+
+text Tucson_Text_Nestor1 {
+	format("My daughter Helen, much to my dismay, refuses to marry until Castor and Pollux her twin brothers return home. Tell Castor and Pollux to hurry home.")
+}
+
+text Tucson_Text_Nestor2 {
+	format("Thank you for helping to bring my sons home. Without delay the preparations for Helen's wedding must begin. Call them in!")
+}
+
+text Tucson_Text_Nestor3A {
+	format("With great rejoicing we welcome back the Dioscuri. Champion Castor and the proud Pollux were gone for far too long and only when they return to our house do we reflect on their great importance to the fortune and cheer of our estate. The beneficial {PLAYER} is deeply thanked for his assistance in bringing you back. You both were sorely missed. Now to address the reason we are gathered here today. It's my intention that Helen shall wed the one among us most suited to wed. Just as I did when I was just a youth, before the works of war had left me thus, I searched the whole country to discover someone in who to trust care of my house. Before, however, it was the lovely Leda I sought to wed whereas this time I sought the man whom my Helen will wed. Once I had interviewed hundreds of men, then spent hundreds of hours in debate over inherent traits, accomplishments, and astrologic signs I narrowed it to Paris of Troy, and Menelaus, the self made tycoon of commerce and trade.")
+}
+
+text Tucson_Text_Nestor3B {
+	format("One of these two is my hand chosen heir and groom to my only daughter, Helen. This decision has kept me up at night, and more often than when I was in war has my heart been beset by doubt. Therefore know you be worthy gentleman and both distinguised men of quality despite the fact that only one of you will win. Necessity mandates someone must lose. I will not tolerate a fight or feud between two young princes, above all men, over mere things like women or money therefore I will ask before we proceed that you both swear upon the sun and moon, upon the countless orbs who light heaven, upon the mighty earth, upon the sea, upon the air we breath and by the stream of death that separates our Earth from Hell, that you will both hold the other as kin and not only refrain from complaining, let alone threatening violence, or force, but celebrate to see you brother wed when he has won, and you have lost, Helen. Do both you swear to hold our contract thus?")
+}
+
+text Tucson_Text_NestorGather1_Menelaus1 {
+	format("I swear, Nestor the wise, to hold Paris as my brother if he, by your consent, marries Helen and takes all your estate.")
+}
+
+text Tucson_Text_NestorGather1_Paris1 {
+	format("Though it is most unlike myself to swear an oath, for often oathes are lightly made and quickly forgotten by those who swear, to win the hand of this unique beauty even the Prince Paris is ready to humble himself and contradict his rules. Therefore I swear by all those things and more that I shall hold Menelaus as kin after you declare who Helen shall wed.")
+}
+
+text Tucson_Text_Nestor4A {
+	format("It has been sworn. Now that we have agreed that we shall hold eachother as brothers before, during, and after the wedding, it's only right that we should act as such. Therefore I tell you both, our family will be hosting a joyous reception, ceremony, and legendary feast to celebrate the marriage of Helen to the distinguished groom, your own brother. You both are invited and, by the bonds of kin which now unite our fate as one, under sworn obligation to attend. You both are expected to bring a guest to serve as your best man and a brother from your own families to celebrate this great occasion. Helen's wedding will be told as legend for generations and the desire of men to attend will likewise be extraordinary.")
+}
+
+text Tucson_Text_Nestor4B {
+	format("I know the both of you have many men under consideration to invite. Think carefully and choose your men wisely, as I too carefully selected you. Write down your invitations on letters and then, since he was so effective at bringing my boys, once lost at sea, back home, I'm entrusting to {PLAYER} the keep, care, and, delivery of your invitations to your own chosen best man and brother. Once they've made up their mind talk to them {PLAYER}, deliver their invitations and then, bring back their guests to gather in my house. Once re-convened I will announce which one will marry Helen and take my estate. Until that time, when all of us are met, I release you to your own whims and wants. May time pass over us gentle and swift.")
+}
+
+text Tucson_Text_Nestor5 {
+	format("Bring the suitors text")
+}
+
+text Tucson_Text_Hector {
+	format("It is a great honor and true privaledge to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
+}
+
+text Tucson_Text_Helen1 {
+	format ("Despite the radiant glow of your face my heart still shivers cold, I'm trembling. Dear Paris, know these tears that wet my cheecks are shed out of longing for Castor and Pollux. My dear brothers have been away for far too long and I now fear the worst.")
+}
+
+text Tucson_Text_Helen2 {
+	format ("Please leave us be unless you bring us news that Castor and Pollux have returned home.")
+}
+
+text Tucson_Text_Helen3 {
+	format ("Dear Paris I must not have slept last night between my dreams of you and those nightmares which filled my fragile heart up with despair. I pray my father says I'll marry you or never will I be merry again.")
+}
+
+text Tucson_Text_Helen4 {
+	format("I secretly hope that your mission fails and the invited guests never arrive so my Paris and I can remain here as I fear my father will speak the words as hideous as that face: Menelaus.")
+}
+
+text Tucson_Text_Paris1 {
+	format("Do not defraud the world of your beauty by desecrating your radiant glow with worried looks, anxious breathes, or tears. Take comfort in the comfort you give me.")
+}
+
+text Tucson_Text_Paris_GiveInvites { 
+	format("Out of many brothers, and many friends, I have decided who I shall invite. The mighty Hector, my eldest brother, and wise Aeneas my long time mentor.")
+}
+
+text Tucson_Text_Paris_OnHector {
+	format("Hector is a man of great discipline who trains his body daily without rest. He loves the cave beside the Bulbus Beach.")
+}
+
+text Tucson_Text_Paris_OnAeneas {
+	format("Old Aeneas departed these lands to seek out Lavinian Shores across the sea. He purposed to found a city upon some savage uninhabited island. Exactly where that is, I do not know.")
+}
+
+text Tucson_Text_BringGuests {
+	format("Deliver my invitations swiftly, gather my guests so we can be married.")
+}
+
+text Tucson_Text_Paris2 {
+	format("Thank you. It is a blessing to see my brother, Hector, and dear old Aeneas, gathered together with me in this house. I hope that Nestor does not long delay the beginning of Helen's great wedding, and more I hope he gives me his consent to marry his daughter, my love, Helen.")
+}
+
+text Tucson_Text_Menelaus1 {
+	format("The thought of conquering Helen is more exciting than all of the wealth I stand to inherit from her father, Nestor.")
+}
+
+text Tucson_Text_Menelaus_GiveInvites {
+   format("I know exactly who I will invite to be in attendance when I marry the luscious Helen. My eldest brother Agamemnon and my friend Ulysses.")
+}	   
+
+text Tucson_Text_Menelaus_OnAgamemnon {
+	format("My dear older brother Agamemnon lives with his family in Aldeon.")
+}
+
+text Tucson_Text_Menelaus_OnUlysses {
+	format("Cunning Ulysses, who made great riches with me in the business industry, lives with wife and son on his private island.")
+}

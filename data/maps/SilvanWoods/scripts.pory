@@ -1,0 +1,705 @@
+mapscripts SilvanWoods_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_ROUTE3_STATE, 0: SilvanWoods_OnWarp_ShowFight1			
+		VAR_ROUTE3_STATE, 1: SilvanWoods_OnWarp_ShowFight2
+	]
+
+}
+
+script SilvanWoods_OnWarp_ShowFight1 {
+	addobject (35)
+	showobjectat (35, MAP_SILVAN_WOODS)
+	addobject (36)
+	showobjectat (36, MAP_SILVAN_WOODS)
+	addobject (37)
+	showobjectat (37, MAP_SILVAN_WOODS)
+	addobject (38)
+	showobjectat (38, MAP_SILVAN_WOODS)
+	end
+}
+
+script SilvanWoods_OnWarp_ShowFight2 {
+	addobject (25)
+	showobjectat (25, MAP_SILVAN_WOODS)
+	addobject (26)
+	showobjectat (26, MAP_SILVAN_WOODS)
+	addobject (27)
+	showobjectat (27, MAP_SILVAN_WOODS)
+	addobject (28)
+	showobjectat (28, MAP_SILVAN_WOODS)
+	end
+}
+
+script SilvanWoods_RivalTrigger1 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	addobject (34)
+	showobjectat (34, MAP_ROUTE3)	
+	applymovement (34, SilvanWoods_Movement_RivalWalk)
+	waitmovement (0)
+	removeobject (34)
+	setvar (VAR_ROUTE3_STATE, 2)
+	releaseall
+	end
+}
+
+script SilvanWoods_RivalTrigger2 {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerRival)	
+	addobject (34)
+	showobjectat (34, MAP_ROUTE3)	
+	applymovement (34, SilvanWoods_Movement_RivalWalk)
+	waitmovement (0)
+	removeobject (34)
+	setvar (VAR_ROUTE3_STATE, 2)
+	releaseall
+	end
+}
+
+script SilvanWoods_EventScript_ScottTrigger {
+	lockall	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (9, SilvanWoods_Movement_Scott1)
+	load_field_pic (5, 190, 98)
+	msgbox (SilvanWoods_Text_ScottBlock)
+	waitmovement (0)
+	closemessage
+	destroy_field_pic (5)
+	applymovement (9, SilvanWoods_Movement_Scott2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepBack)
+	waitmovement (0)
+	releaseall 
+	end
+}
+
+script SilvanWoods_EventScript_ScottTriggerB {
+	lockall	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (9, SilvanWoods_Movement_Scott1B)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	load_field_pic (5, 190, 98)
+	msgbox (SilvanWoods_Text_ScottBlock)
+	waitmovement (0)
+	closemessage
+	destroy_field_pic (5)
+	applymovement (9, SilvanWoods_Movement_Scott2B)	
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepBack)
+	waitmovement (0)
+	releaseall 
+	end
+}
+
+script SilvanWoods_EventScript_Scott2Trigger {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepUp)
+	load_field_pic (4, 190, 98)
+	msgbox (SilvanWoods_Text_Leaf1)
+	waitmovement (0)
+	destroy_field_pic (4)
+	load_field_pic (5, 190, 98)
+	msgbox (SilvanWoods_Text_ScottPass)
+	destroy_field_pic (5)
+	load_field_pic (4, 190, 98)
+	msgbox (SilvanWoods_Text_Leaf2)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (9, SilvanWoods_Movement_ScottExit)
+	applymovement (40, SilvanWoods_Movement_ScottExit)
+	waitmovement (0)
+	removeobject (9)
+	removeobject (40)
+	setflag (FLAG_HIDE_SILVANWOODS_LEAF1)
+	setflag (FLAG_HIDE_SILVANWOODS_SCOTT)
+	setvar (VAR_ROUTE3_STATE, 5)
+	releaseall 
+	end
+}
+
+script SilvanWoods_EventScript_Crystal {
+	trainerbattle_single(TRAINER_CRYSTAL, SilvanWoods_Text_CrystalIntro, SilvanWoods_Text_CrystalLost)
+	msgbox (SilvanWoods_Text_CrystalPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Noah {
+	trainerbattle_single(TRAINER_NOAH, SilvanWoods_Text_NoahIntro, SilvanWoods_Text_NoahLost)
+	msgbox (SilvanWoods_Text_NoahPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Fredrick {
+	trainerbattle_single(TRAINER_FREDRICK, SilvanWoods_Text_FredrickIntro, SilvanWoods_Text_FredrickLost)
+	msgbox (SilvanWoods_Text_FredrickPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Matt {
+	trainerbattle_single(TRAINER_MATT, SilvanWoods_Text_MattIntro, SilvanWoods_Text_MattLost)
+	msgbox (SilvanWoods_Text_MattPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Zander {
+	trainerbattle_single(TRAINER_ZANDER, SilvanWoods_Text_ZanderIntro, SilvanWoods_Text_MattLost)
+	msgbox (SilvanWoods_Text_ZanderPost)
+	closemessage
+	end
+}
+
+
+script SilvanWoods_EventScript_Julia {
+	trainerbattle_single(TRAINER_JULIA, SilvanWoods_Text_JuliaIntro, SilvanWoods_Text_JuliaLost)
+	msgbox (SilvanWoods_Text_JuliaPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Rosa {
+	trainerbattle_single(TRAINER_ROSA, SilvanWoods_Text_RosaIntro, SilvanWoods_Text_RosaLost)
+	msgbox (SilvanWoods_Text_RosaPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Mary {
+	trainerbattle_single(TRAINER_MARY_AND_MOLLY, SilvanWoods_Text_MaryIntro, SilvanWoods_Text_MaryLost)
+	msgbox (SilvanWoods_Text_MaryPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Molly {
+	trainerbattle_single(TRAINER_MARY_AND_MOLLY, SilvanWoods_Text_MollyIntro, SilvanWoods_Text_MollyLost)
+	msgbox (SilvanWoods_Text_MollyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Leah {
+	trainerbattle_single(TRAINER_LEAH, SilvanWoods_Text_LeahIntro, SilvanWoods_Text_LeahLost)
+	msgbox (SilvanWoods_Text_LeahPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Daisy {
+	trainerbattle_single(TRAINER_DAISY, SilvanWoods_Text_DaisyIntro, SilvanWoods_Text_DaisyLost)
+	msgbox (SilvanWoods_Text_DaisyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Kelsey {
+	trainerbattle_single(TRAINER_KELSEY, SilvanWoods_Text_KelseyIntro, SilvanWoods_Text_KelseyLost)
+	msgbox (SilvanWoods_Text_KelseyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Felix {
+	trainerbattle_single(TRAINER_FELIX, SilvanWoods_Text_FelixIntro, SilvanWoods_Text_FelixLost)
+	msgbox (SilvanWoods_Text_FelixPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Violet {
+	trainerbattle_single(TRAINER_VIOLET, SilvanWoods_Text_VioletIntro, SilvanWoods_Text_VioletLost)
+	msgbox (SilvanWoods_Text_VioletPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Ruby {
+	trainerbattle_single(TRAINER_RUBY_AND_JACK, SilvanWoods_Text_RubyIntro, SilvanWoods_Text_RubyLost)
+	msgbox (SilvanWoods_Text_RubyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Jack {
+	trainerbattle_single(TRAINER_RUBY_AND_JACK, SilvanWoods_Text_JackIntro, SilvanWoods_Text_JackLost)
+	msgbox (SilvanWoods_Text_JackPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Lester {
+	trainerbattle_single(TRAINER_LESTER, SilvanWoods_Text_LesterIntro, SilvanWoods_Text_LesterLost)
+	msgbox (SilvanWoods_Text_LesterPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Neville {
+	trainerbattle_single(TRAINER_NEVILLE, SilvanWoods_Text_NevilleIntro, SilvanWoods_Text_NevilleLost)
+	msgbox (SilvanWoods_Text_NevillePost)
+	closemessage
+	end
+}
+
+
+script SilvanWoods_EventScript_Wang {
+	trainerbattle_single(TRAINER_WANG, SilvanWoods_Text_WangIntro, SilvanWoods_Text_WangLost)
+	msgbox (SilvanWoods_Text_WangPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Sally {
+	trainerbattle_single(TRAINER_SALLY_AND_ED, SilvanWoods_Text_SallyIntro, SilvanWoods_Text_SallyLost)
+	msgbox (SilvanWoods_Text_SallyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Ed {
+	trainerbattle_single(TRAINER_SALLY_AND_ED, SilvanWoods_Text_EdIntro, SilvanWoods_Text_EdLost)
+	msgbox (SilvanWoods_Text_EdPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Jay {
+	trainerbattle_single(TRAINER_JAY, SilvanWoods_Text_JayIntro, SilvanWoods_Text_JayLost)
+	msgbox (SilvanWoods_Text_JayPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Foster {
+	trainerbattle_single(TRAINER_FOSTER, SilvanWoods_Text_FosterIntro, SilvanWoods_Text_FosterLost)
+	msgbox (SilvanWoods_Text_FosterPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Douggie {
+	trainerbattle_single(TRAINER_DOUGGIE, SilvanWoods_Text_DouggieIntro, SilvanWoods_Text_DouggieLost)
+	msgbox (SilvanWoods_Text_DouggiePost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Smokey {
+	trainerbattle_single(TRAINER_SMOKEY, SilvanWoods_Text_SmokeyIntro, SilvanWoods_Text_SmokeyLost)
+	msgbox (SilvanWoods_Text_SmokeyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Stoney {
+	trainerbattle_single(TRAINER_STONEY, SilvanWoods_Text_StoneyIntro, SilvanWoods_Text_StoneyLost)
+	msgbox (SilvanWoods_Text_StoneyPost)
+	closemessage
+	end
+}
+
+script SilvanWoods_EventScript_Gary {
+	trainerbattle_single(TRAINER_GARY, SilvanWoods_Text_GaryIntro, SilvanWoods_Text_GaryLost)
+	msgbox (SilvanWoods_Text_GaryPost)
+	setvar (VAR_ROUTE3_STATE, 3)
+	closemessage
+	end
+}
+
+movement SilvanWoods_Movement_PlayerRival {
+	walk_left
+}
+
+movement SilvanWoods_Movement_RivalWalk {
+	walk_up * 3
+	walk_left *4
+	walk_up * 4
+	walk_left * 2
+}
+
+movement SilvanWoods_Movement_Scott1 {
+	walk_down * 2
+}
+
+movement SilvanWoods_Movement_Scott2 {
+	walk_up * 2
+	face_down
+}
+
+movement SilvanWoods_Movement_PlayerStepBack {
+	walk_down
+}
+
+movement SilvanWoods_Movement_Scott1B {
+	walk_down * 3
+	face_right
+}
+
+movement SilvanWoods_Movement_Scott2B {
+	walk_up * 3
+	face_down
+}
+
+movement SilvanWoods_Movement_PlayerStepUp {
+	walk_up * 2
+}
+
+movement SilvanWoods_Movement_ScottExit {
+	walk_left
+	walk_up * 5
+}
+
+text SilvanWoods_Text_CrystalIntro {
+	format("What is the boiling point of semen?")
+}
+
+text SilvanWoods_Text_CrystalLost {
+	format("Your eyes are the same color as my shit!")
+}
+
+text SilvanWoods_Text_CrystalPost {
+	format("I lost my boyfriend somewhere in the woods.")
+}
+
+text SilvanWoods_Text_NoahIntro {
+	format("I don't do drugs, I'm just playing with bugs.")
+}
+
+text SilvanWoods_Text_NoahLost {
+	format("Are you on pot?")
+}
+
+text SilvanWoods_Text_NoahPost {
+	format("Mommy said 'Don't do drugs'")
+}
+
+text SilvanWoods_Text_FredrickIntro {
+	format("I'm teaching my boy how to hunt for bugs!")
+}
+
+text SilvanWoods_Text_FredrickLost {
+	format("You watching son?")
+}
+
+text SilvanWoods_Text_FredrickPost {
+	format("Be careful in the woods.")
+}
+
+text SilvanWoods_Text_MattIntro {
+	format("Hey dad watch me beat up this wimpy kid.")
+}
+
+text SilvanWoods_Text_MattLost {
+	format("You win, you win!")
+}
+
+text SilvanWoods_Text_MattPost {
+	format("My bug was not stronger.")
+}
+
+text SilvanWoods_Text_ZanderIntro {
+	format("Hey dad watch me beat up this wimpy kid.")
+}
+
+text SilvanWoods_Text_ZanderLost {
+	format("You win, you win!")
+}
+
+text SilvanWoods_Text_ZanderPost {
+	format("My bug was not stronger.")
+}
+
+text SilvanWoods_Text_JuliaIntro {
+	format("Haha I'm getting lit in the forest.")
+}
+
+text SilvanWoods_Text_JuliaLost {
+	format("You have no chill.")
+}
+
+text SilvanWoods_Text_JuliaPost {
+	format("Bro are you seeling weed?")
+}
+
+text SilvanWoods_Text_RosaIntro {
+	format("Let's see how you perform.")
+}
+
+text SilvanWoods_Text_RosaLost {
+	format("I can't keep up.")
+}
+
+text SilvanWoods_Text_RosaPost {
+	format("I'd like to fall in love beneath the trees.")
+}
+
+text SilvanWoods_Text_MaryIntro {
+	format("Hey watch it! This is where we like to play.")
+}
+
+text SilvanWoods_Text_MaryLost {
+	format("Oh nevermind")
+}
+
+text SilvanWoods_Text_MaryPost {
+	format("You're free to walk this way.")
+}
+
+text SilvanWoods_Text_MollyIntro {
+	format("Who let you out of bed looking like that?")
+}
+
+text SilvanWoods_Text_MollyLost {
+	format("I was no match.")
+}
+
+text SilvanWoods_Text_MollyPost {
+	format("I'm far too weak for you.")
+}
+
+text SilvanWoods_Text_LeahIntro {
+	format("I think you'll find I'm not like other girls.")
+}
+
+text SilvanWoods_Text_LeahLost {
+	format("Looks like I still have a lot left to learn.")
+}
+
+text SilvanWoods_Text_LeahPost {
+	format("I love it here and feel at complete peace whenever I can walk among these trees.")
+}
+
+text SilvanWoods_Text_DaisyIntro {
+	format("Men don't like me. They say I'm too forward.")
+}
+
+text SilvanWoods_Text_DaisyLost {
+	format("I can't believe I'm such a dumb lolcow!")
+}
+
+text SilvanWoods_Text_DaisyPost {
+	format("I hear men like it when you squish your face. Maybe I'll share a pic with Agatha.")
+}
+
+text SilvanWoods_Text_KelseyIntro {
+	format("I'm searching for a four leafed clover.")
+}
+
+text SilvanWoods_Text_KelseyLost {
+	format("Looks like I am in need of better luck.")
+}
+
+text SilvanWoods_Text_KelseyPost {
+	format("They say the four leaf clover is lucky.")
+}
+
+text SilvanWoods_Text_FelixIntro {
+	format("You will eat bugs and you will be happy.")
+}
+
+text SilvanWoods_Text_FelixLost {
+	format("Uhh dude now what will I have for dinner?")
+}
+
+text SilvanWoods_Text_FelixPost {
+	format("Crickets and worms are sources of protein.")
+}
+
+text SilvanWoods_Text_VioletIntro {
+	format("Each flower grows unique from all the rest.")
+}
+
+text SilvanWoods_Text_VioletLost {
+	format("No two roses are ever quite the same.")
+}
+
+text SilvanWoods_Text_VioletPost {
+	format("How many are the blooms that we call rose? ")
+}
+
+text SilvanWoods_Text_RubyIntro {
+	format("I had suggested we go to the book depository but Jack insisted...")
+}
+
+text SilvanWoods_Text_RubyLost {
+	format("You can't say Silvan Woods has no welcome.")
+}
+
+text SilvanWoods_Text_RubyPost {
+	format("What do you mean? There was but one of us!")
+}
+
+text SilvanWoods_Text_JackIntro {
+	format("Are you aware of the Zapruder film?")
+}
+
+text SilvanWoods_Text_JackLost {
+	format("What's that? You say Mr. Oswald did it?")
+}
+
+text SilvanWoods_Text_JackPost {
+	format("Who was the man with the black umbrella?")
+}
+
+text SilvanWoods_Text_LesterIntro {
+	format("I had to take a rest after walking so far but there is nowhere great to sit.")
+}
+
+text SilvanWoods_Text_LesterLost {
+	format("Just goes to show the importance of health.")
+}
+
+text SilvanWoods_Text_LesterPost {
+	format("Oh man I'm not sure I can make it out...")
+}
+
+text SilvanWoods_Text_NevilleIntro {
+	format("No insect has ever broken my heart.")
+}
+
+text SilvanWoods_Text_NevilleLost {
+	format("My bugs! They let me down!")
+}
+
+text SilvanWoods_Text_NevillePost {
+	format("Dissapointing is the only thing I have to say.")
+}
+
+text SilvanWoods_Text_WangIntro {
+	format("Hey kid would you like to see my big worm?")
+}
+
+text SilvanWoods_Text_WangLost {
+	format("No need to cause a scene")
+}
+
+text SilvanWoods_Text_WangPost {
+	format("C'mon calm down. Besides it really was a monster worm!")
+}
+
+
+text SilvanWoods_Text_SallyIntro {
+	format("We walk out here as often as we can.")
+}
+
+text SilvanWoods_Text_SallyLost {
+	format("Video games are ruining the youth!")
+}
+
+text SilvanWoods_Text_SallyPost {
+	format("Back in my day we had no Pokemon and I don't like the way you kids trust them!")
+}
+
+text SilvanWoods_Text_EdIntro {
+	format("When I was young we stormed Normandy!")
+}
+
+text SilvanWoods_Text_EdLost {
+	format("Get off my lawn!")
+}
+
+text SilvanWoods_Text_EdPost {
+	format("I'm sorry, who are you?")
+}
+
+text SilvanWoods_Text_JayIntro {
+	format("We aren't here to enjoy the woods instead we came out here to fight and get fucked up.")
+}
+
+text SilvanWoods_Text_JayLost {
+	format("Hey bitch don't kill my vibe!")
+}
+
+text SilvanWoods_Text_JayPost {
+	format("Dude schools so hard, these teachers think that I should understand this complicated shit like traingles.")
+}
+
+text SilvanWoods_Text_FosterIntro {
+	format("Man have you ever just looked at your hands?")
+}
+
+text SilvanWoods_Text_FosterLost {
+	format("Did you steal my lighter?")
+}
+
+text SilvanWoods_Text_FosterPost {
+	format("I met this guy who told me that pig tastes just like human.")
+}
+
+text SilvanWoods_Text_DouggieIntro {
+	format("Haha! Dude, RIZZLAM! We're all RIZZLAMIC!")
+}
+
+text SilvanWoods_Text_DouggieLost {
+	format("You're honestly acting just like a bitch.")
+}
+
+text SilvanWoods_Text_DouggiePost {
+	format("I stole that kid's lighter wanna buy it?")
+}
+
+text SilvanWoods_Text_SmokeyIntro {
+	format("Oh dude I just picked up some fire weed!")
+}
+
+text SilvanWoods_Text_SmokeyLost {
+	format("I was thinking about some crazy shit.")
+}
+
+text SilvanWoods_Text_SmokeyPost {
+	format("Just sitting here all day and smoking weed sometimes I worry I may have fucked up.")
+}
+
+text SilvanWoods_Text_StoneyIntro {
+	format("Uhh bro we're taking dabs under the trees.")
+}
+
+text SilvanWoods_Text_StoneyLost {
+	format("Dabbed out! I need to go eat a hot dog...")
+}
+
+text SilvanWoods_Text_StoneyPost {
+	format("It's pretty cool up here in the forest the weed's better but I still miss the beach.")
+}
+
+text SilvanWoods_Text_GaryIntro {
+	format("There is no man alive who outsmokes me.")
+}
+
+text SilvanWoods_Text_GaryLost {
+	format("I'm smoked out man, I can't take one more hit.")
+}
+
+text SilvanWoods_Text_GaryPost {
+	format("Ok ok you've proved you aren't a bitch and we spent so long standing here fighting I might need to take another hit soon.")
+}
+
+text SilvanWoods_Text_ScottBlock {
+	format("Oh no this is not good I can't find Leaf! You haven't seen her recently have you? I know she must be somewhere in these woods. Will you please go find her and bring her here?")
+}
+
+text SilvanWoods_Text_Leaf1 {
+	format("Hey {PLAYER}! There you are! Thanks for saving me again.")
+}
+
+text SilvanWoods_Text_ScottPass {
+	format("This {RIVAL} who is stalking you sounds dangerous we should stay as a group. Anyways {PLAYER} we're quite near Saeclara. This path should lead us directly to Mew. I cannot speak for either of you but all this excitement makes me want a bowl. So once your safe in town you can find me poking some smot in my local weed shop. Come with me Leaf we'll smoke some Indica.")
+}
+
+text SilvanWoods_Text_Leaf2 {
+	format("Ok that's fine but I want to see Mew. Well {PLAYER} don't spend all day lollygagging here in the woods. We'll wait for you in town down at my dad's Chronic Cannabis store.")
+}
+
+
+
+
+
+

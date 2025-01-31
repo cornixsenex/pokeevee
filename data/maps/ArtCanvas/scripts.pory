@@ -1,0 +1,57 @@
+mapscripts ArtCanvas_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (ArtCanvas_EventScript_OnResume)
+	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_CANVAS_STEP_COUNTER,   0: ArtCanvas_EventScript_Intro
+		VAR_CANVAS_STEP_COUNTER, 100: ArtCanvas_EventScript_Intro
+
+		VAR_CANVAS_STEP_COUNTER,  17: ArtCanvas_EventScript_Outro
+		VAR_CANVAS_STEP_COUNTER, 117: ArtCanvas_EventScript_Outro
+		]
+
+}
+
+script ArtCanvas_EventScript_OnResume {
+	setstepcallback (STEP_CB_CANVAS)
+	end
+}
+
+script ArtCanvas_EventScript_Intro {
+	lock
+	msgbox(ArtCanvas_Text_Intro)
+	closemessage
+	if (var(VAR_CANVAS_STEP_COUNTER) == 0) {
+		setvar (VAR_CANVAS_STEP_COUNTER, 1)
+	} else {
+		setvar (VAR_CANVAS_STEP_COUNTER, 101)
+	}
+	release
+	end
+}
+
+script ArtCanvas_EventScript_Outro {
+	lock
+	msgbox(ArtCanvas_Text_Outro)
+	closemessage
+	if (var(VAR_CANVAS_STEP_COUNTER) == 17) {
+		warpsilent(MAP_ARDOR_UNI_ART_CLASS, 7, 3)
+	} else {
+		warpsilent(MAP_ARDOR_UNI_ART_CLASS, 5, 3)
+	}
+	waitstate
+	release
+	end
+}
+
+text ArtCanvas_Text_Intro {
+	format("Iam est tempus pingere. Fiat ars!")
+}
+
+
+text ArtCanvas_Text_Outro {
+	format("Pictura tua pulchra est.")
+}
+

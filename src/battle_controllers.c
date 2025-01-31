@@ -11,6 +11,7 @@
 #include "battle_setup.h"
 #include "battle_tv.h"
 #include "cable_club.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "link.h"
 #include "link_rfu.h"
@@ -2100,6 +2101,8 @@ static void SetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId)
 static bool8 ShouldDoSlideInAnim(void)
 {
     struct ObjectEvent *followerObj = GetFollowerObject();
+	if (FlagGet(FLAG_FORCE_EEVEE_SLIDE_IN)) 
+		return TRUE;
     if (!followerObj || followerObj->invisible)
         return FALSE;
     if (gBattleTypeFlags & (

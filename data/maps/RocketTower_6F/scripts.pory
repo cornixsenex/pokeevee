@@ -1,0 +1,62 @@
+mapscripts RocketTower_6F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (RocketTower_6F_OnResume)
+	}
+
+}
+
+script RocketTower_6F_OnResume {
+	call (RocketTower_6F_EventScript_SetFloor6)
+	if (var(VAR_ROCKETTOWER_STATE) > 1) {
+		call (RocketTower_6F_EventScript_OpenElevator)
+	}
+	end
+}
+
+script RocketTower_6F_EventScript_SetFloor6 {
+	setvar (VAR_ROCKETTOWER_FLOOR, 6)
+	return
+}
+
+script RocketTower_6F_EventScript_OpenElevator {	
+	setmetatile (25, 3, METATILE_SilphCo_Elevator_Door_Open, 0)
+	return
+}
+
+script RocketTower_6F_EventScript_Door1 {
+	lock
+	if (flag(FLAG_RECEIVED_CARD_KEY) ) {
+		msgbox (RocketTower_6F_Text_OpenDoor)
+		closemessage
+		setmetatile (4, 9, METATILE_SilphCo_FloorShade, 0)	
+		setmetatile (4, 10, METATILE_SilphCo_FloorShade, 0)		
+		setmetatile (5, 9, METATILE_SilphCo_FloorLight, 0)
+		setmetatile (5, 10, METATILE_SilphCo_FloorLight, 0)
+		playfanfare (MUS_LEVEL_UP)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (RocketTower_6F_Text_DoorIsLocked)
+		closemessage
+	}
+	release
+	end
+}
+	
+
+text RocketTower_6F_Text_OpenDoor {
+	format("Bingo!\nThe CARD KEY opened the door!")
+}
+
+text RocketTower_6F_Text_DoorIsLocked {
+	format("You need a CARD KEY to open this door!")
+}
+
+
+
+
+
+
+
+
+

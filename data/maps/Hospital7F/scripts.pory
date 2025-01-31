@@ -1,0 +1,27 @@
+mapscripts Hospital7F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Hospital7F_OnResume)
+	}
+
+}
+
+
+
+
+script Hospital7F_OnResume {
+	call (Hospital7F_EventScript_SetFloor7)
+}
+
+script Hospital7F_EventScript_SetFloor7 {
+	setvar (VAR_HOSPITAL_FLOOR, 7)
+	return
+}
+
+
+
+
+
+
+
+

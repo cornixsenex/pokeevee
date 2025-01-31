@@ -1,0 +1,314 @@
+const GIO_FIELD_PIC = 10
+const BLAINE_FIELD_PIC = 7
+const MEWTWO_ARMOR_FIELD_PIC = 11
+const OBJ_EVENT_ID_GIO = 1
+const OBJ_EVENT_ID_BLAINE = 3
+const OBJ_EVENT_ID_PORYGON = 5
+const OBJ_EVENT_ID_PERSIAN = 4
+const OBJ_EVENT_ID_MEWTWO = 2
+
+mapscripts RocketTower_13F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (RocketTower_13F_OnResume)
+	}
+
+}
+
+script RocketTower_13F_OnResume {
+	call (RocketTower_13F_EventScript_SetFloor13)
+	if (flag(FLAG_HIDE_CARDKEY)) {
+//	if (var(VAR_ROCKETTOWER_STATE) > 1) {
+		call (RocketTower_13F_EventScript_OpenElevator)
+	}
+	end
+}
+
+script RocketTower_13F_EventScript_SetFloor13 {
+	setvar (VAR_ROCKETTOWER_FLOOR, 13)
+	return
+}
+
+script RocketTower_13F_EventScript_OpenElevator {	
+	setmetatile (25, 3, METATILE_SilphCo_Elevator_Door_Open, 0)
+	return
+}
+
+script RocketTower_13F_EventScript_CheckPC {
+	lockall
+	setvar (VAR_0x8004, PC_LOCATION_ROCKET_TOWER)
+	special (DoPCTurnOnEffect)
+	playse (SE_PC_ON)
+	goto (EventScript_PCMainMenu)
+	waitstate	
+	releaseall
+	end
+}
+
+script RocketTower_13F_EventScript_GioTrigger1 {
+	lock
+	setvar(VAR_ROCKETTOWER_STATE, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	call (RocketTower_13F_EventScript_GioCutscene)
+	applymovement (OBJ_EVENT_ID_BLAINE, RocketTower_13F_Movement_Blaine1)
+	applymovement (OBJ_EVENT_ID_PORYGON, RocketTower_13F_Movement_Porygon1)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera1B)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	call (RocketTower_13F_EventScript_Blaine)
+	release
+	end
+}
+
+script RocketTower_13F_EventScript_GioTrigger2 {
+	lock
+	setvar(VAR_ROCKETTOWER_STATE, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	call (RocketTower_13F_EventScript_GioCutscene)
+	applymovement (OBJ_EVENT_ID_BLAINE, RocketTower_13F_Movement_Blaine2)
+	applymovement (OBJ_EVENT_ID_PORYGON, RocketTower_13F_Movement_Porygon2)
+	waitmovement (0)
+	special (SpawnCameraObject)
+	applymovement (OBJ_EVENT_ID_CAMERA, RocketTower_13F_Movement_PanCamera2B)
+	waitmovement (0)
+	special (RemoveCameraObject)
+	call (RocketTower_13F_EventScript_Blaine)
+	release
+	end
+}
+
+script RocketTower_13F_EventScript_GioCutscene {
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Gio1)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	load_field_pic(BLAINE_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Blaine1)
+	closemessage
+	destroy_field_pic(BLAINE_FIELD_PIC)
+	delay (5)
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Gio2)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	load_field_pic(MEWTWO_ARMOR_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Mewtwo1)
+	closemessage
+	destroy_field_pic(MEWTWO_ARMOR_FIELD_PIC)
+	delay (5)
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Gio3)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	applymovement (OBJ_EVENT_ID_BLAINE, Common_Movement_FaceLeft)
+	waitmovement (0)
+	delay (25)
+	applymovement (OBJ_EVENT_ID_BLAINE, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	delay (25)
+	applymovement (OBJ_EVENT_ID_BLAINE, Common_Movement_FaceUp)
+	waitmovement (0)
+	delay (25)
+	load_field_pic(BLAINE_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Blaine2)
+	closemessage
+	destroy_field_pic(BLAINE_FIELD_PIC)
+	delay (5)
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Gio4)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	applymovement (OBJ_EVENT_ID_GIO, RocketTower_13F_Movement_Gio1)
+	applymovement (OBJ_EVENT_ID_PERSIAN, RocketTower_13F_Movement_Persian1)
+	applymovement (OBJ_EVENT_ID_BLAINE, Common_Movement_FaceDown)
+	load_field_pic(BLAINE_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Blaine3)
+	closemessage
+	destroy_field_pic(BLAINE_FIELD_PIC)
+	delay (5)
+	waitmovement (0)
+	load_field_pic (GIO_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Gio5)
+	closemessage
+	destroy_field_pic(GIO_FIELD_PIC)
+	delay (5)
+	applymovement (OBJ_EVENT_ID_GIO, RocketTower_13F_Movement_Gio2)
+	applymovement (OBJ_EVENT_ID_MEWTWO, RocketTower_13F_Movement_Mewtwo)
+	applymovement (OBJ_EVENT_ID_PERSIAN, RocketTower_13F_Movement_Persian2)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_ID_GIO)
+	removeobject (OBJ_EVENT_ID_PERSIAN)
+	removeobject (OBJ_EVENT_ID_MEWTWO)
+	return
+}
+
+script RocketTower_13F_EventScript_Blaine {
+	load_field_pic (BLAINE_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_Blaine4)
+	closemessage
+	destroy_field_pic(BLAINE_FIELD_PIC)
+	delay (5)
+	trainerbattle_no_intro(TRAINER_BLAINE, RocketTower_13F_Text_BlaineLost)
+	call (RocketTower_13F_EventScript_BlaineDefeated)
+	return
+}
+
+script RocketTower_13F_EventScript_BlaineDefeated {
+	load_field_pic(BLAINE_FIELD_PIC, 190, 98)
+	msgbox(RocketTower_13F_Text_BlainePost)
+	closemessage
+	destroy_field_pic(BLAINE_FIELD_PIC)
+	delay (5)
+	fadescreen (1)
+	removeobject(OBJ_EVENT_ID_BLAINE)
+	removeobject(OBJ_EVENT_ID_PORYGON)
+	setflag (FLAG_HIDE_ROCKETTOWER_13F_GIO)
+	setvar (VAR_CAPITAL_STATE, 0)
+	fadescreen (0)
+	return
+}
+
+script RocketTower_13F_EventScript_CardKey {
+	lockall
+	finditem (ITEM_CARD_KEY)
+	setvar (VAR_ROCKETTOWER_STATE, 2)
+	setflag (FLAG_HIDE_CARDKEY)
+	call (RocketTower_13F_EventScript_OpenElevator)
+	special (DrawWholeMapView)
+	end
+}
+
+	
+movement RocketTower_13F_Movement_PanCamera1 {
+	walk_slow_right * 6
+	walk_slow_diag_northeast
+}
+
+movement RocketTower_13F_Movement_PanCamera2 {
+	walk_slow_right * 4
+	walk_slow_diag_northeast * 2
+}
+
+movement RocketTower_13F_Movement_PanCamera1B {
+	walk_slow_diag_southwest
+	walk_slow_left * 6
+}
+
+movement RocketTower_13F_Movement_PanCamera2B {
+	walk_slow_diag_southwest * 2
+	walk_slow_left * 4
+}
+
+movement RocketTower_13F_Movement_Blaine1 {
+	walk_left * 5
+}
+
+movement RocketTower_13F_Movement_Blaine2 {
+	walk_left * 2
+	walk_diag_southwest
+	walk_left
+}
+
+movement RocketTower_13F_Movement_Porygon1 {
+	walk_left * 4
+	walk_diag_northwest
+	walk_left 
+}
+
+movement RocketTower_13F_Movement_Porygon2 {
+	walk_left * 5
+}
+
+movement RocketTower_13F_Movement_Gio1 {
+	walk_right * 5
+	face_down
+}
+
+movement RocketTower_13F_Movement_Persian1 {
+	walk_right * 5
+}
+
+movement RocketTower_13F_Movement_Gio2 {
+	walk_right * 2
+	walk_up * 5
+}
+
+movement RocketTower_13F_Movement_Persian2 {
+	walk_right * 3
+	walk_up * 5
+}
+
+movement RocketTower_13F_Movement_Mewtwo {
+	walk_up * 2
+	walk_right * 4
+	walk_up * 5
+}
+
+text RocketTower_13F_Text_Gio1 {
+	format("We stand upon the brink of destruction all of our plans will fail if we don't act")
+}
+
+text RocketTower_13F_Text_Blaine1 
+{
+	format("But sir Mewtwo has not proven himself in any battle")
+}
+
+text RocketTower_13F_Text_Gio2 {
+	format("Blaine we have no choice. The city guard has already fallen, the capital itself is under siege, and this report suggests our own tower has been penetrated by rebel spies. I must be off! MEWTWO will you obey?")
+}
+
+text RocketTower_13F_Text_Mewtwo1 {
+	format("My lord I must obey every command")
+}
+
+text RocketTower_13F_Text_Gio3 {
+		format("The die is cast...")
+}
+
+text RocketTower_13F_Text_Blaine2 {
+	format("My lord! The spy is here!")
+}
+
+text RocketTower_13F_Text_Gio4 {
+	format("I must be off to reach the capital before the rebel horde destroys our plans and renders our great creation useless. Destroy this spy and join me right away to celebrate our new empire's birth.")
+}
+
+text RocketTower_13F_Text_Blaine3 {
+	format("May God favor the bold!")
+}
+
+text RocketTower_13F_Text_Gio5 {
+	format("Come now Mewtwo.")
+}
+
+text RocketTower_13F_Text_Blaine4 {
+	format("My eyes would not decieve you're that same boy who wittnessed me take possesion of Mew. My servants may have failed but I shall not allow you to obstruct our grand design. To hinder our master is futile, his will be done all opposition crushed. You'll suffer now because you disobey.")
+}
+
+text RocketTower_13F_Text_BlaineLost {
+	format("Master! I've failed!")
+}
+
+text RocketTower_13F_Text_BlainePost {
+	format("I now must hide away. Exile in my case is preferable to the sheer pain my creation would make when my master learns of my great defeat.")
+}
+
+

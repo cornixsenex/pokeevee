@@ -1,0 +1,87 @@
+mapscripts LoonixHills_MapScripts {}
+
+script LoonixHills_Script_GiftBall {
+	lockall
+	msgbox (LoonixHills_Text_GiftBall, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox (LoonixHillsGiftBallTextNo)
+		releaseall
+		end
+	} else {
+		givemon (SPECIES_DIALGA, 4, ITEM_MASTER_BALL)
+		if (var(VAR_RESULT) == 0) {
+			call (LoonixHills_Script_DialgaFanfare)
+			msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call (Common_EventScript_GetGiftMonPartySlot)
+				call (Common_EventScript_NameReceivedPartyMon)
+			}
+			setflag (FLAG_UNUSED_0x024)
+		}	
+		elif (var(VAR_RESULT) == 1) {
+			call (LoonixHills_Script_DialgaFanfare)
+			msgbox (gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				call (Common_EventScript_NameReceivedBoxMon)
+			} else {
+				call (Common_EventScript_TransferredToPC)
+			}
+			setflag (FLAG_UNUSED_0x024)
+		} else {
+			goto (Common_EventScript_NoMoreRoomForPokemon)
+		}
+		releaseall
+		end
+	}
+}
+
+script LoonixHills_Script_RockClimb {
+	lock
+	giveitem (ITEM_HM08)
+	release
+	end
+}
+
+script LoonixHills_Script_DialgaFanfare {
+	bufferspeciesname (1, SPECIES_DIALGA)
+	playfanfare (MUS_OBTAIN_ITEM)
+	message (LoonixHills_Text_ObtainedDialga)
+	waitmessage
+	waitfanfare
+	bufferspeciesname (0, SPECIES_DIALGA)
+	return
+}
+
+script LoonixHills_Script_CheckRivalName {
+	lock
+	msgbox(format("Your rival's name is {RIVAL}"))
+	release
+	end
+}
+
+script LoonixHills_Script_SetRivalName {
+	lock
+	msgbox (LoonixHills_Text_SetRivalName, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		special (NameRival)
+		waitstate
+	}
+	release
+	end
+}
+
+text LoonixHills_Text_SetRivalName {
+	format("Would you like to change your rival's name?")
+}
+
+text LoonixHills_Text_GiftBall {
+	format("This ball contains Dialga.\n Will you take it?")
+}
+
+text LoonixHills_Text_ObtainedDialga {
+	format("{PLAYER} obtained Dialga!")
+}
+
+text LoonixHillsGiftBallTextNo {
+	"Best not to take that."
+}

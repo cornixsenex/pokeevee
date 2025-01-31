@@ -1,0 +1,113 @@
+
+const OBJ_EVENT_TEACHER = 1
+
+mapscripts Ardor_Uni_ChemistryClass_MapScripts {}
+
+script Ardor_Uni_ChemistryClass_EventScript_Teacher  {
+	lock
+	faceplayer
+	if (defeated(TRAINER_UNI_CHEMISTRY)) {
+		msgbox(Ardor_Uni_ChemistryClass_Text_ClassFinished)
+		closemessage
+	} elif (flag(FLAG_CHEMISTRY_INTRO)) {
+		specialvar (VAR_RESULT, IsFireTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag (FLAG_TEMP_1)
+		} else {
+			msgbox(Ardor_Uni_ChemistryClass_Text_BringFireType)
+		}
+		specialvar (VAR_RESULT, IsWaterTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag (FLAG_TEMP_2)
+		} else {
+			msgbox(Ardor_Uni_ChemistryClass_Text_BringWaterType)
+		}
+		specialvar (VAR_RESULT, IsGroundTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag (FLAG_TEMP_3)
+		} else {
+			msgbox(Ardor_Uni_ChemistryClass_Text_BringGroundType)
+		}
+		specialvar (VAR_RESULT, IsFlyingTypeInParty)
+		if (var(VAR_RESULT) == TRUE) {
+			setflag (FLAG_TEMP_4)
+		} else {
+			msgbox(Ardor_Uni_ChemistryClass_Text_BringFlyingType)
+		}
+		if (flag(FLAG_TEMP_1) && (flag(FLAG_TEMP_2)) && (flag(FLAG_TEMP_3)) && (flag(FLAG_TEMP_4))) {
+			call (Ardor_Uni_ChemistryClass_EventScript_Test)
+		}
+	} else {
+		call (Ardor_Uni_ChemistryClass_EventScript_ClassIntro)
+	}
+	applymovement (OBJ_EVENT_TEACHER, Common_Movement_FaceDown)
+	waitmovement (0)
+	release
+	end
+}
+
+script Ardor_Uni_ChemistryClass_EventScript_ClassIntro {
+	setflag (FLAG_CHEMISTRY_INTRO)
+	msgbox(Ardor_Uni_ChemistryClass_Text_ClassIntro)
+	closemessage
+	msgbox(Ardor_Uni_ChemistryClass_Text_BringFireType)
+	closemessage
+	msgbox(Ardor_Uni_ChemistryClass_Text_BringWaterType)
+	closemessage
+	msgbox(Ardor_Uni_ChemistryClass_Text_BringGroundType)
+	closemessage
+	msgbox(Ardor_Uni_ChemistryClass_Text_BringFlyingType)
+	closemessage
+	return
+}
+
+script Ardor_Uni_ChemistryClass_EventScript_Test {
+	//You have brought animal plant and fungus now time for test
+	msgbox(Ardor_Uni_ChemistryClass_Text_LessonComplete)
+	closemessage
+	msgbox(Ardor_Uni_Text_TestIntro)
+	closemessage
+	trainerbattle_no_intro(TRAINER_UNI_CHEMISTRY, Ardor_Uni_ChemistryClass_Text_TeacherBattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_ChemistryClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+text Ardor_Uni_ChemistryClass_Text_ClassIntro {
+	format("Salve puer. Magister Severus sum. Necesse est tibi docere scientiam alchemiae. Alchemia studium elementorum est. Numerus elementorum est quattor: ignis, aqua, tellus, et aer.")
+}
+
+text Ardor_Uni_ChemistryClass_Text_BringFireType {
+	format("Reveni cum monstro ignis.")
+}
+
+text Ardor_Uni_ChemistryClass_Text_BringWaterType {
+	format("Reveni cum monstro aquae.")
+}
+
+text Ardor_Uni_ChemistryClass_Text_BringGroundType {
+	format("Reveni cum monstro telluris.")
+}
+
+text Ardor_Uni_ChemistryClass_Text_BringFlyingType {
+	format("Reveni cum monstro aeris.")
+}
+
+text Ardor_Uni_ChemistryClass_Text_LessonComplete {
+	format("Revenisti cum monstra quattor: uno ignis, uno aquae, uno telluris, et uno aeris.")
+}
+
+text Ardor_Uni_ChemistryClass_Text_TeacherBattleLost {
+	format("Sic aurum es plumbum sum.")
+}
+
+text Ardor_Uni_ChemistryClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti alchemiam. Usa machinam quando volas.")
+}
+
+
+
+
+
+

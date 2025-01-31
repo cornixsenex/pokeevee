@@ -158,7 +158,6 @@ bool8 TrySetTrendyPhrase(u16 *phrase)
         if (!FlagGet(FLAG_SYS_CHANGED_DEWFORD_TREND))
         {
             FlagSet(FLAG_SYS_CHANGED_DEWFORD_TREND);
-
             // Make sure player couldn't have received this phrase by mixing records
             if (!FlagGet(FLAG_SYS_MIX_RECORD))
             {

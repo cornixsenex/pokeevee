@@ -63,6 +63,7 @@ struct BackupMapLayout
     u16 *map;
 };
 
+
 struct __attribute__((packed, aligned(4))) ObjectEventTemplate
 {
     /*0x00*/ u8 localId;
@@ -289,6 +290,7 @@ enum
     COLLISION_IMPASSABLE,
     COLLISION_ELEVATION_MISMATCH,
     COLLISION_OBJECT_EVENT,
+    COLLISION_START_SURFING,    // Surfboard
     COLLISION_STOP_SURFING,
     COLLISION_LEDGE_JUMP,
     COLLISION_PUSHED_BOULDER,
@@ -300,7 +302,9 @@ enum
     COLLISION_HORIZONTAL_RAIL,
     COLLISION_STAIR_WARP,
     COLLISION_SIDEWAYS_STAIRS_TO_RIGHT,
-    COLLISION_SIDEWAYS_STAIRS_TO_LEFT
+    COLLISION_SIDEWAYS_STAIRS_TO_LEFT,
+	//Kustoms
+	COLLISION_SPECIAL_OBJECT,
 };
 
 // player running states
@@ -338,7 +342,8 @@ struct PlayerAvatar
     /*0x10*/ u32 abStartSelectHistory; // same as above but for A + B + start + select only
     // these two are timer history arrays which [0] is the active timer for acro bike. every element is backed up to the next element upon update.
     /*0x14*/ u8 dirTimerHistory[8];
-    /*0x1C*/ u8 abStartSelectTimerHistory[8];
+    /*0x1C*/ u8 abStartSelectTimerHistory[8];   
+  	/*0x24*/ u16 lastSpinTile;
 };
 
 struct Camera

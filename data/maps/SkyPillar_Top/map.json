@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA",
@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA_STILL",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SkyPillar_Top_EventScript_Rayquaza",
-      "flag": "FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL"
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -61,5 +61,7 @@
       "script": "SkyPillar_Top_EventScript_AwakenRayquaza"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+
+  ]
 }

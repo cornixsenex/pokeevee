@@ -4,6 +4,7 @@
 #include "battle_transition_frontier.h"
 #include "bg.h"
 #include "decompress.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
 #include "field_effect.h"
@@ -88,6 +89,7 @@ struct RectangularSpiralLine
 
 typedef bool8 (*TransitionStateFunc)(struct Task *task);
 typedef bool8 (*TransitionSpriteCallback)(struct Sprite *sprite);
+
 
 static bool8 Transition_StartIntro(struct Task *);
 static bool8 Transition_WaitForIntro(struct Task *);
@@ -2201,6 +2203,7 @@ static void VBlankCB_Wave(void)
     REG_WIN0V = sTransitionData->WIN0V;
     DmaSet(0, gScanlineEffectRegBuffers[1], &REG_WIN0H, B_TRANS_DMA_FLAGS);
 }
+
 
 #undef tX
 #undef tSinIndex

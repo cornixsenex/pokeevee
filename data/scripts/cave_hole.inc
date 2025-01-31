@@ -17,6 +17,17 @@ EventScript_FallDownHole::
 	waitstate
 	end
 
+EventScript_FallDownFalseFloor::
+	lockall
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_SetInvisible
+	waitmovement 0
+	playse SE_FALL
+	delay 60
+	special DoFalseFloorFall
+	waitstate
+	end
+
 EventScript_FallDownHoleMtPyre::
 	lockall
 	delay 20

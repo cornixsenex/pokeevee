@@ -1,0 +1,36 @@
+SELF INSTALL GUIDE ONLY REALLY WORKS ON ARCH BTW, I WILL TRY TO GENERALIZE IT OVER TIME BUT I ALSO NEVER TOUCHED IT AFTER MY FIRST INSTASLL LMFAO
+
+>Packages
+base-devel
+git
+libpng
+arm-none-eabi-binutils
+
+(???) arm-none-eabi-gcc 
+
+>From here you should be able to build pokeemerald (dont forget agbcc)
+
+>Poryscript
+install go
+clone poryscript and install it
+
+>From here you should be able to build pokeevee
+
+>Porymap
+install qt5-base and qt5-declarative
+qmake
+make
+
+>Configure triple layer metatiles
+Run porymap one time
+point it at your pokeevee directory 
+observe the chaos
+close porymap
+open pokeevee/porymap.project.cfg
+>enable_triple_layer_metatiles=1
+
+>From here you should be able to use porymap as normal
+
+
+-cornixsenex :D
+

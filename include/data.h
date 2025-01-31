@@ -76,7 +76,9 @@ struct TrainerMon
     u8 padding2:4;
 };
 
+
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
+
 
 struct Trainer
 {

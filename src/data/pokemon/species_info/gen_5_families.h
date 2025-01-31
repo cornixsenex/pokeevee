@@ -1,4 +1,10 @@
+
+
 #ifdef __INTELLISENSE__
+const u32 gOverworldPalette_BasculinRedStriped[] = INCBIN_U32("graphics/pokemon/basculin/overworld_normal.gbapal.lz");
+const u32 gOverworldPalette_BasculinBlueStriped[] = INCBIN_U32("graphics/pokemon/basculin/blue_striped/overworld_normal.gbapal.lz");
+const u32 gShinyOverworldPalette_BasculinRedStriped[] = INCBIN_U32("graphics/pokemon/basculin/overworld_shiny.gbapal.lz");
+const u32 gShinyOverworldPalette_BasculinBlueStriped[] = INCBIN_U32("graphics/pokemon/basculin/blue_striped/overworld_shiny.gbapal.lz");
 const struct SpeciesInfo gSpeciesInfoGen5[] =
 {
 #endif

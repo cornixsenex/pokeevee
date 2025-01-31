@@ -533,7 +533,7 @@ void DoDoorWarp(void)
 {
     LockPlayerFieldControls();
     gFieldCallback = FieldCB_DefaultWarpExit;
-    CreateTask(Task_DoDoorWarp, 10);
+	CreateTask(Task_DoDoorWarp, 10);
 }
 
 void DoFallWarp(void)

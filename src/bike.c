@@ -52,6 +52,20 @@ static u8 CanBikeFaceDirOnMetatile(u8, u8);
 static bool8 WillPlayerCollideWithCollision(u8, u8);
 static void Bike_SetBikeStill(void);
 
+//Cycling Road Pull functions
+static u8 AcroBikeHandleInputPullDown(u8 *, u16, u16);
+static u8 AcroBikeHandleInputPullUp(u8 *, u16, u16);
+static u8 AcroBikeHandleInputPullLeft(u8 *, u16, u16);
+static u8 AcroBikeHandleInputPullRight(u8 *, u16, u16);
+static void AcroBikeTransition_DownPro(u8);
+static void AcroBikeTransition_DownCon(u8);
+static void AcroBikeTransition_UpPro(u8);
+static void AcroBikeTransition_UpCon(u8);
+static void AcroBikeTransition_LeftPro(u8);
+static void AcroBikeTransition_LeftCon(u8);
+static void AcroBikeTransition_RightPro(u8);
+static void AcroBikeTransition_RightCon(u8);
+
 // const rom data
 
 /*
@@ -94,6 +108,14 @@ static void (*const sAcroBikeTransitions[])(u8) =
     AcroBikeTransition_WheelieMoving,
     AcroBikeTransition_WheelieRisingMoving,
     AcroBikeTransition_WheelieLoweringMoving,
+	AcroBikeTransition_DownPro,
+	AcroBikeTransition_DownCon,
+	AcroBikeTransition_UpPro,
+	AcroBikeTransition_UpCon,
+	AcroBikeTransition_LeftPro,
+	AcroBikeTransition_LeftCon,
+	AcroBikeTransition_RightPro,
+	AcroBikeTransition_RightCon,
 };
 
 static u8 (*const sAcroBikeInputHandlers[])(u8 *, u16, u16) =
@@ -105,6 +127,10 @@ static u8 (*const sAcroBikeInputHandlers[])(u8 *, u16, u16) =
     AcroBikeHandleInputWheelieMoving,
     AcroBikeHandleInputSidewaysJump,
     AcroBikeHandleInputTurnJump,
+	AcroBikeHandleInputPullDown,
+	AcroBikeHandleInputPullUp,
+	AcroBikeHandleInputPullLeft,
+	AcroBikeHandleInputPullRight,
 };
 
 // used with bikeFrameCounter from mach bike
@@ -142,6 +168,19 @@ static u8 GetMachBikeTransition(u8 *dirTraveling)
 {
     // if the dir updated before this function, get the relevent new direction to check later.
     u8 direction = GetPlayerMovementDirection();
+    
+    // fix direction when moving on sideways stairs
+    switch (direction)
+    {
+    case DIR_SOUTHWEST:
+    case DIR_NORTHWEST:
+        direction = DIR_WEST;
+        break;
+    case DIR_SOUTHEAST:
+    case DIR_NORTHEAST:
+        direction = DIR_EAST;
+        break;
+    }
 
     // fix direction when moving on sideways stairs
     switch (direction)
@@ -206,7 +245,7 @@ static void MachBikeTransition_TurnDirection(u8 direction)
         Bike_SetBikeStill();
     }
     else
-    {
+    {        
         MachBikeTransition_FaceDirection(playerObjEvent->facingDirection);
     }
 }
@@ -299,83 +338,212 @@ static u8 CheckMovementInputAcroBike(u8 *newDirection, u16 newKeys, u16 heldKeys
     return sAcroBikeInputHandlers[gPlayerAvatar.acroBikeState](newDirection, newKeys, heldKeys);
 }
 
+
+//DO NOTE: I ripped out the wheelie functionality because I dislike it, to revert just uncomment the lines and...
 static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
-    u8 direction = GetPlayerMovementDirection();
+	//Needed for pull tiles
+	
+	u8 direction;
+    struct ObjectEvent *playerObjEvent;
+    playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    direction = GetPlayerMovementDirection();
+
 
     gPlayerAvatar.bikeFrameCounter = 0;
-    if (*newDirection == DIR_NONE)
+
+	//Needed for pull tiles - DOWN
+    if (MetatileBehavior_IsCyclingRoadPullDownTile(playerObjEvent->currentMetatileBehavior) == TRUE)
     {
-        if (newKeys & B_BUTTON)
+    	if (!(heldKeys & B_BUTTON))
         {
-            //We're standing still with the B button held.
-            //Do a wheelie.
-            *newDirection = direction;
-            gPlayerAvatar.runningState = NOT_MOVING;
-            gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_STANDING;
-            return ACRO_TRANS_NORMAL_TO_WHEELIE;
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_DOWN;
+            gPlayerAvatar.runningState = MOVING;
+            if (*newDirection == DIR_NONE || *newDirection == DIR_SOUTH)
+                return ACRO_TRANS_DOWN_PRO;
+            else
+                return ACRO_TRANS_DOWN_CON;
         }
         else
         {
+            if (*newDirection != DIR_NONE)
+            {
+                gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_DOWN;
+                gPlayerAvatar.runningState = MOVING;
+                return ACRO_TRANS_DOWN_CON;
+            }
+        }
+    }
+	//Needed for pull tiles - UP
+    if (MetatileBehavior_IsCyclingRoadPullUpTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    {
+    	if (!(heldKeys & B_BUTTON))
+        {
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_UP;
+            gPlayerAvatar.runningState = MOVING;
+            if (*newDirection == DIR_NONE || *newDirection == DIR_NORTH)
+                return ACRO_TRANS_UP_PRO;
+            else
+                return ACRO_TRANS_UP_CON;
+        }
+        else
+        {
+            if (*newDirection != DIR_NONE)
+            {
+                gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_UP;
+                gPlayerAvatar.runningState = MOVING;
+                return ACRO_TRANS_UP_CON;
+            }
+        }
+    }
+	//Needed for pull tiles - LEFT
+    if (MetatileBehavior_IsCyclingRoadPullLeftTile(playerObjEvent->currentMetatileBehavior) == TRUE || MetatileBehavior_IsCyclingRoadBridgePullLeftTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    {
+    	if (!(heldKeys & B_BUTTON))
+        {
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_LEFT;
+            gPlayerAvatar.runningState = MOVING;
+            if (*newDirection == DIR_NONE || *newDirection == DIR_WEST)
+                return ACRO_TRANS_LEFT_PRO;
+            else
+                return ACRO_TRANS_LEFT_CON;
+        }
+        else
+        {
+            if (*newDirection != DIR_NONE)
+            {
+                gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_LEFT;
+                gPlayerAvatar.runningState = MOVING;
+                return ACRO_TRANS_LEFT_CON;
+            }
+        }
+    }
+	//Needed for pull tiles - RIGHT
+    if (MetatileBehavior_IsCyclingRoadPullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE || MetatileBehavior_IsCyclingRoadBridgePullRightTile(playerObjEvent->currentMetatileBehavior) == TRUE)
+    {
+    	if (!(heldKeys & B_BUTTON))
+        {
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_RIGHT;
+            gPlayerAvatar.runningState = MOVING;
+            if (*newDirection == DIR_NONE || *newDirection == DIR_EAST)
+                return ACRO_TRANS_RIGHT_PRO;
+            else
+                return ACRO_TRANS_RIGHT_CON;
+        }
+        else
+        {
+            if (*newDirection != DIR_NONE)
+            {
+                gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_RIGHT;
+                gPlayerAvatar.runningState = MOVING;
+                return ACRO_TRANS_RIGHT_CON;
+            }
+        }
+    }
+
+    if (*newDirection == DIR_NONE)
+    {
+     //   if (newKeys & B_BUTTON)
+     //   {
+     //       //We're standing still with the B button held.
+     //       //Do a wheelie.
+     //       *newDirection = direction;
+     //       gPlayerAvatar.runningState = NOT_MOVING;
+     //       gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_STANDING;
+     //       return ACRO_TRANS_NORMAL_TO_WHEELIE;
+     //   }
+     //   else
+     //   {
             *newDirection = direction;
             gPlayerAvatar.runningState = NOT_MOVING;
             return ACRO_TRANS_FACE_DIRECTION;
-        }
+      //  }
     }
-    if (*newDirection == direction && (heldKeys & B_BUTTON) && gPlayerAvatar.bikeSpeed == PLAYER_SPEED_STANDING)
-    {
-        gPlayerAvatar.bikeSpeed++;
-        gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_MOVING;
-        return ACRO_TRANS_WHEELIE_RISING_MOVING;
-    }
-    if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
-    {
-        gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
-        gPlayerAvatar.newDirBackup = *newDirection;
-        gPlayerAvatar.runningState = NOT_MOVING;
-        return CheckMovementInputAcroBike(newDirection, newKeys, heldKeys);
-    }
-    gPlayerAvatar.runningState = MOVING;
-    return ACRO_TRANS_MOVING;
+
+
+	//
+	//
+	//REMOVE THIS SECTION AS WELL TO REVERT
+	else
+	{
+		if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
+		{
+			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+			gPlayerAvatar.newDirBackup = *newDirection;
+			gPlayerAvatar.runningState = NOT_MOVING;
+			return CheckMovementInputAcroBike(newDirection, newKeys, heldKeys);
+		}
+		else 
+		{
+			gPlayerAvatar.runningState = MOVING;
+			return ACRO_TRANS_MOVING;
+		}
+	}
+
+
+
+    //if (*newDirection == direction && (heldKeys & B_BUTTON) && gPlayerAvatar.bikeSpeed == PLAYER_SPEED_STANDING)
+    //{
+    //    gPlayerAvatar.bikeSpeed++;
+    //    gPlayerAvatar.acroBikeState = ACRO_STATE_WHEELIE_MOVING;
+    //    return ACRO_TRANS_WHEELIE_RISING_MOVING;
+    //}
+    //if (*newDirection != direction && gPlayerAvatar.runningState != MOVING)
+    //{
+    //    gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+    //    gPlayerAvatar.newDirBackup = *newDirection;
+    //    gPlayerAvatar.runningState = NOT_MOVING;
+    //    return CheckMovementInputAcroBike(newDirection, newKeys, heldKeys);
+    //}
+    //gPlayerAvatar.runningState = MOVING;
+    //return ACRO_TRANS_MOVING;
 }
 
+
+//DO NOTE: I stripped this function down...idk what I did tbh but it just werks now so :idk
 static u8 AcroBikeHandleInputTurning(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
-    u8 direction;
+
+    u8 UNUSED direction;
 
     *newDirection = gPlayerAvatar.newDirBackup;
-    gPlayerAvatar.bikeFrameCounter++;
+	gPlayerAvatar.runningState = TURN_DIRECTION;
+	gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+	Bike_SetBikeStill();
+	return ACRO_TRANS_TURN_DIRECTION;
+   // gPlayerAvatar.bikeFrameCounter++;
 
     // Wait 6 frames before actually changing direction
-    if (gPlayerAvatar.bikeFrameCounter > 6) // ... because it takes 6 frames to advance 1 tile.
-    {
-        gPlayerAvatar.runningState = TURN_DIRECTION;
-        gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
-        Bike_SetBikeStill();
-        return ACRO_TRANS_TURN_DIRECTION;
-    }
-    direction = GetPlayerMovementDirection();
-    if (*newDirection == AcroBike_GetJumpDirection())
-    {
-        Bike_SetBikeStill(); // Bike_SetBikeStill sets speed to standing, but the next line immediately overrides it. could have just reset acroBikeState to 0 here instead of wasting a jump.
-        gPlayerAvatar.bikeSpeed = PLAYER_SPEED_NORMAL;
-        if (*newDirection == GetOppositeDirection(direction))
-        {
-            // do a turn jump.
-            // no need to update runningState, didnt move.
-            gPlayerAvatar.acroBikeState = ACRO_STATE_TURN_JUMP;
-            return ACRO_TRANS_TURN_JUMP;
-        }
-        else
-        {
-            // do a sideways jump.
-            gPlayerAvatar.runningState = MOVING; // we need to move, set state to moving.
-            gPlayerAvatar.acroBikeState = ACRO_STATE_SIDE_JUMP;
-            return ACRO_TRANS_SIDE_JUMP;
-        }
-    }
-    *newDirection = direction;
-    return ACRO_TRANS_FACE_DIRECTION;
+    //if (gPlayerAvatar.bikeFrameCounter > 6) // ... because it takes 6 frames to advance 1 tile.
+    //{
+    //    gPlayerAvatar.runningState = TURN_DIRECTION;
+    //    gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+    //    Bike_SetBikeStill();
+    //    return ACRO_TRANS_TURN_DIRECTION;
+    //}
+    //direction = GetPlayerMovementDirection();
+    //if (*newDirection == AcroBike_GetJumpDirection())
+    //{
+    //    Bike_SetBikeStill(); // Bike_SetBikeStill sets speed to standing, but the next line immediately overrides it. could have just reset acroBikeState to 0 here instead of wasting a jump.
+    //    gPlayerAvatar.bikeSpeed = PLAYER_SPEED_NORMAL;
+    //    if (*newDirection == GetOppositeDirection(direction))
+    //    {
+    //        // do a turn jump.
+    //        // no need to update runningState, didnt move.
+    //        gPlayerAvatar.acroBikeState = ACRO_STATE_TURN_JUMP;
+    //        return ACRO_TRANS_TURN_JUMP;
+    //    }
+    //    else
+    //    {
+    //        // do a sideways jump.
+    //        gPlayerAvatar.runningState = MOVING; // we need to move, set state to moving.
+    //        gPlayerAvatar.acroBikeState = ACRO_STATE_SIDE_JUMP;
+    //        return ACRO_TRANS_SIDE_JUMP;
+    //    }
+    //}
+    //*newDirection = direction;
+    //return ACRO_TRANS_FACE_DIRECTION;
 }
 
 static u8 AcroBikeHandleInputWheelieStanding(u8 *newDirection, u16 newKeys, u16 heldKeys)
@@ -546,6 +714,152 @@ static u8 AcroBikeHandleInputTurnJump(u8 *ptr, u16 newKeys, u16 heldKeys)
     return CheckMovementInputAcroBike(ptr, newKeys, heldKeys);
 }
 
+static u8 AcroBikeHandleInputPullDown(u8 *direction_p, u16 newKeys, u16 heldKeys)
+{
+	u8 direction = GetPlayerMovementDirection();
+
+    if (MetatileBehavior_IsCyclingRoadPullDownTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+	{
+		if (*direction_p != direction && *direction_p != DIR_NONE)
+		{
+			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+			gPlayerAvatar.newDirBackup = *direction_p;
+			gPlayerAvatar.runningState = NOT_MOVING;
+			return CheckMovementInputAcroBike(direction_p, newKeys, heldKeys);
+		}
+		else 
+		{
+            gPlayerAvatar.runningState = MOVING;
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_DOWN;
+            if (*direction_p < DIR_NORTH)
+				return ACRO_TRANS_DOWN_PRO;
+			else
+				return ACRO_TRANS_DOWN_CON;
+		}
+	}
+    gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+    if (*direction_p == DIR_NONE)
+    {
+        *direction_p = direction;
+        gPlayerAvatar.runningState = NOT_MOVING;
+        return ACRO_TRANS_FACE_DIRECTION;
+    }
+    else
+    {
+        gPlayerAvatar.runningState = MOVING;
+        return ACRO_TRANS_MOVING;
+	}
+}
+
+static u8 AcroBikeHandleInputPullUp(u8 *direction_p, u16 newKeys, u16 heldKeys)
+{
+	u8 direction = GetPlayerMovementDirection();
+    if (MetatileBehavior_IsCyclingRoadPullUpTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
+	{
+		if (*direction_p != direction && *direction_p != DIR_NONE)
+		{
+			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+			gPlayerAvatar.newDirBackup = *direction_p;
+			gPlayerAvatar.runningState = NOT_MOVING;
+			return CheckMovementInputAcroBike(direction_p, newKeys, heldKeys);
+		}
+		else 
+		{
+            gPlayerAvatar.runningState = MOVING;
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_UP;
+            if (*direction_p == DIR_NONE || *direction_p == DIR_NORTH)
+				return ACRO_TRANS_UP_PRO;
+			else
+				return ACRO_TRANS_UP_CON;
+		}
+	}
+    gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+    if (*direction_p == DIR_NONE)
+    {
+        *direction_p = direction;
+        gPlayerAvatar.runningState = NOT_MOVING;
+        return ACRO_TRANS_FACE_DIRECTION;
+    }
+    else
+    {
+        gPlayerAvatar.runningState = MOVING;
+        return ACRO_TRANS_MOVING;
+	}
+}
+
+static u8 AcroBikeHandleInputPullLeft(u8 *direction_p, u16 newKeys, u16 heldKeys)
+{
+	u8 direction = GetPlayerMovementDirection();
+    if (MetatileBehavior_IsCyclingRoadPullLeftTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) || MetatileBehavior_IsCyclingRoadBridgePullLeftTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) )
+	{
+		if (*direction_p != direction && *direction_p != DIR_NONE)
+		{
+			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+			gPlayerAvatar.newDirBackup = *direction_p;
+			gPlayerAvatar.runningState = NOT_MOVING;
+			return CheckMovementInputAcroBike(direction_p, newKeys, heldKeys);
+		}
+		else 
+		{
+            gPlayerAvatar.runningState = MOVING;
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_LEFT;
+            if (*direction_p == DIR_NONE || *direction_p == DIR_WEST)
+				return ACRO_TRANS_LEFT_PRO;
+			else
+				return ACRO_TRANS_LEFT_CON;
+		}
+	}
+    gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+    if (*direction_p == DIR_NONE)
+    {
+        *direction_p = direction;
+        gPlayerAvatar.runningState = NOT_MOVING;
+        return ACRO_TRANS_FACE_DIRECTION;
+    }
+    else
+    {
+        gPlayerAvatar.runningState = MOVING;
+        return ACRO_TRANS_MOVING;
+	}
+}
+
+static u8 AcroBikeHandleInputPullRight(u8 *direction_p, u16 newKeys, u16 heldKeys)
+{
+	u8 direction = GetPlayerMovementDirection();
+    if (MetatileBehavior_IsCyclingRoadPullRightTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) || MetatileBehavior_IsCyclingRoadBridgePullRightTile(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) )
+	{
+		if (*direction_p != direction && *direction_p != DIR_NONE)
+		{
+			gPlayerAvatar.acroBikeState = ACRO_STATE_TURNING;
+			gPlayerAvatar.newDirBackup = *direction_p;
+			gPlayerAvatar.runningState = NOT_MOVING;
+			return CheckMovementInputAcroBike(direction_p, newKeys, heldKeys);
+		}
+		else 
+		{
+            gPlayerAvatar.runningState = MOVING;
+            gPlayerAvatar.acroBikeState = ACRO_STATE_PULL_RIGHT;
+            if (*direction_p == DIR_NONE || *direction_p == DIR_EAST)
+				return ACRO_TRANS_RIGHT_PRO;
+			else
+				return ACRO_TRANS_RIGHT_CON;
+		}
+	}
+    gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
+    if (*direction_p == DIR_NONE)
+    {
+        *direction_p = direction;
+        gPlayerAvatar.runningState = NOT_MOVING;
+        return ACRO_TRANS_FACE_DIRECTION;
+    }
+    else
+    {
+        gPlayerAvatar.runningState = MOVING;
+        return ACRO_TRANS_MOVING;
+	}
+}
+	
+
 static void AcroBikeTransition_FaceDirection(u8 direction)
 {
     PlayerFaceDirection(direction);
@@ -563,6 +877,7 @@ static void AcroBikeTransition_TurnDirection(u8 direction)
 static void AcroBikeTransition_Moving(u8 direction)
 {
     u8 collision;
+
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
     if (CanBikeFaceDirOnMetatile(direction, playerObjEvent->currentMetatileBehavior) == 0)
@@ -833,7 +1148,7 @@ static bool8 HasPlayerInputTakenLongerThanList(const u8 *dirTimerList, const u8 
     return TRUE;
 }
 
-static u8 AcroBike_GetJumpDirection(void)
+static UNUSED u8 AcroBike_GetJumpDirection(void)
 {
     u32 i;
 
@@ -884,6 +1199,70 @@ static u8 Bike_DPadToDirection(u16 heldKeys)
     if (heldKeys & DPAD_RIGHT)
         return DIR_EAST;
     return DIR_NONE;
+}
+
+static void AcroBikeTransition_DownPro (u8 v)
+{
+	u8 collision = GetBikeCollision(DIR_SOUTH);
+
+	if (collision == COLLISION_NONE)
+		PlayerWalkFaster(DIR_SOUTH);
+	else if (collision == COLLISION_LEDGE_JUMP)
+		PlayerJumpLedge(DIR_SOUTH);
+}
+
+static void AcroBikeTransition_DownCon (u8 direction)
+{
+	if (GetBikeCollision(direction) == COLLISION_NONE)
+		PlayerWalkNormal(direction);
+}
+
+static void AcroBikeTransition_UpPro (u8 v)
+{
+	u8 collision = GetBikeCollision(DIR_NORTH);
+
+	if (collision == COLLISION_NONE)
+		PlayerWalkFaster(DIR_NORTH);
+	else if (collision == COLLISION_LEDGE_JUMP)
+		PlayerJumpLedge(DIR_NORTH);
+}
+
+static void AcroBikeTransition_UpCon (u8 direction)
+{
+	if (GetBikeCollision(direction) == COLLISION_NONE)
+		PlayerWalkNormal(direction);
+}
+
+static void AcroBikeTransition_LeftPro (u8 v)
+{
+	u8 collision = GetBikeCollision(DIR_WEST);
+
+	if (collision == COLLISION_NONE)
+		PlayerWalkFaster(DIR_WEST);
+	else if (collision == COLLISION_LEDGE_JUMP)
+		PlayerJumpLedge(DIR_WEST);
+}
+
+static void AcroBikeTransition_LeftCon (u8 direction)
+{
+	if (GetBikeCollision(direction) == COLLISION_NONE)
+		PlayerWalkNormal(direction);
+}
+
+static void AcroBikeTransition_RightPro (u8 v)
+{
+	u8 collision = GetBikeCollision(DIR_EAST);
+
+	if (collision == COLLISION_NONE)
+		PlayerWalkFaster(DIR_EAST);
+	else if (collision == COLLISION_LEDGE_JUMP)
+		PlayerJumpLedge(DIR_EAST);
+}
+
+static void AcroBikeTransition_RightCon (u8 direction)
+{
+	if (GetBikeCollision(direction) == COLLISION_NONE)
+		PlayerWalkNormal(direction);
 }
 
 static u8 GetBikeCollision(u8 direction)
@@ -1021,7 +1400,8 @@ void BikeClearState(int newDirHistory, int newAbStartHistory)
     gPlayerAvatar.bikeFrameCounter = 0;
     gPlayerAvatar.bikeSpeed = PLAYER_SPEED_STANDING;
     gPlayerAvatar.directionHistory = newDirHistory;
-    gPlayerAvatar.abStartSelectHistory = newAbStartHistory;
+    gPlayerAvatar.abStartSelectHistory = newAbStartHistory;     
+	gPlayerAvatar.lastSpinTile = 0;
 
     for (i = 0; i < ARRAY_COUNT(gPlayerAvatar.dirTimerHistory); i++)
         gPlayerAvatar.dirTimerHistory[i] = 0;

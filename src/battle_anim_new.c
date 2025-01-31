@@ -100,6 +100,47 @@ static void SpriteCB_GlacialLance_Step2(struct Sprite* sprite);
 static void SpriteCB_GlacialLance(struct Sprite* sprite);
 static void SpriteCB_TripleArrowKick(struct Sprite* sprite);
 
+
+static const union AnimCmd sAnim_Fist[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FootWide[] =
+{
+    ANIMCMD_FRAME(16, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FootTall[] =
+{
+    ANIMCMD_FRAME(32, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_HandLeft[] =
+{
+    ANIMCMD_FRAME(48, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_HandRight[] =
+{
+    ANIMCMD_FRAME(48, 1, .hFlip = TRUE),
+    ANIMCMD_END,
+};
+
+
+static const union AnimCmd *const sAnims_HandsAndFeet[] =
+{
+    sAnim_Fist,
+    sAnim_FootWide,
+    sAnim_FootTall,
+    sAnim_HandLeft,
+    sAnim_HandRight,
+};
+
 // const data
 // general
 static const union AffineAnimCmd sSquishTargetAffineAnimCmds[] =

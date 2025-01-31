@@ -1,0 +1,450 @@
+
+const OBJ_EVENT_TA = 6
+
+
+
+mapscripts Ardor_Uni_ArchaeologyClass_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		//get this to do the indy scene on correct var
+		call (Ardor_Uni_ArchaeologyClass_OnTransition)
+	}
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_INDY_STATE, 0: Ardor_Uni_ArchaeologyClass_EventScript_FaceTA
+		VAR_INDY_STATE, 1: Ardor_Uni_ArchaeologyClass_EventScript_DoIndyReveal
+	]
+}
+
+script Ardor_Uni_ArchaeologyClass_OnTransition {
+	//0 = TA in charge
+	//1 = Indy has returned
+	//2 = Rebels are revealed
+	//3 = Rebels are gone
+	switch (var(VAR_INDY_STATE)) {
+		case 0:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			call (Ardor_Uni_ArchaeologyClass_EventScript_SetupTA)
+		case 1:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			clearflag (FLAG_CLASS_LEAF)
+		case 2:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+		case 3:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+		default:
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels)
+			call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+	}
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_FaceTA {
+	turnobject (OBJ_EVENT_TA, DIR_SOUTH)
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_TA {
+	lock
+	faceplayer
+	switch (var(VAR_INDY_STATE) ) {
+		case 0:
+			//is the TA
+			if (defeated(TRAINER_UNI_ARCHAEOLOGY) ) {
+				msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassFinished)
+				closemessage
+			} else {
+				checkitem (ITEM_ANCIENT_LAMP)
+				if (var(VAR_RESULT) == TRUE && (flag(FLAG_ARDOR_ARCHAEOLOGY_INTRO))) {
+					call (Ardor_Uni_ArchaeologyClass_EventScript_TATest)
+				} else {
+					if (flag(FLAG_ARDOR_ARCHAEOLOGY_INTRO) ) {
+						//Reminder what to do
+						msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassBegun)
+						closemessage
+					} else {
+						//intro to what to do
+						msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassBegin)
+						closemessage
+						msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassBegun)
+						closemessage
+						setflag (FLAG_ARDOR_ARCHAEOLOGY_INTRO)
+					}
+				}
+			}
+			applymovement (OBJ_EVENT_TA, Common_Movement_FaceDown)
+			waitmovement (0)
+		case 1:
+			//is a student in Indy class
+			msgbox(Ardor_Uni_ArchaeologyClass_Text_TAInDesk)
+			closemessage
+		case 2:
+			//is a rebel in indy class
+			msgbox(Ardor_Uni_ArchaeologyClass_Text_TARebel)
+			closemessage
+		case 3:
+			//is in attack position
+			msgbox("VAR_INDY_STATE is 3 rn")
+			closemessage
+		default:
+			msgbox("VAR_INDY_STATE is over 3 in TA switcheroo")
+			closemessage
+	}
+	release
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_TATest {
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_FoundLamp)
+	closemessage
+	removeitem (ITEM_ANCIENT_LAMP)
+	msgbox(Ardor_Uni_ArchaeologyClass_Text_TABattleIntro)
+	closemessage
+	trainerbattle_no_intro(TRAINER_UNI_ARCHAEOLOGY, Ardor_Uni_ArchaeologyClass_Text_TABattleLost)
+	call (Ardor_Uni_TermState_IncrementVar)
+	msgbox(Ardor_Uni_ArchaeologyClass_Text_ClassFinished)
+	closemessage
+	return
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_SetupTA {
+	setobjectxyperm (OBJ_EVENT_TA, 6, 3)
+	setflag (FLAG_CLASS_LEAF)
+	setflag (FLAG_CLASS_INDY)
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents {
+	setflag (FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS)
+	removeobject (1)
+	removeobject (2)
+	removeobject (3)
+	removeobject (4)
+	removeobject (5)
+	removeobject (6)
+	removeobject (7)
+	removeobject (8)
+	removeobject (9)
+	return
+}	
+
+script Ardor_Uni_ArchaeologyClass_EventScript_RemoveRebels {
+	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
+	removeobject (11)
+	removeobject (12)
+	return
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_AddRebels {
+	setvar (VAR_INDY_STATE, 3)
+	clearflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
+	addobject (11)
+	showobjectat (11, MAP_ARDOR_UNI_ARCHAEOLOGY_CLASS)
+	addobject (12)
+	showobjectat (12, MAP_ARDOR_UNI_ARCHAEOLOGY_CLASS)
+	return
+}
+	
+script Ardor_Uni_ArchaeologyClass_EventScript_DoIndyReveal {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene)
+	waitmovement  (0)
+	call (Ardor_Uni_ArchaeologyClass_EventScript_Cutscene)
+	releaseall
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_Cutscene {	
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	load_field_pic (8, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy1)
+	destroy_field_pic (8)
+	closemessage
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf1)
+	closemessage
+	destroy_field_pic (4)
+	load_field_pic (8, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy2)
+	destroy_field_pic (8)
+	closemessage
+
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf2)
+	closemessage
+	destroy_field_pic (4)
+	applymovement (2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (2, Ardor_Uni_ArchaeologyClass_Movement_StudentApproach1)
+	waitmovement (0)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Student1)
+	applymovement (4, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (4, Ardor_Uni_ArchaeologyClass_Movement_StudentApproach2)
+	waitmovement (0)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Student2)
+	load_field_pic (8, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy3)
+	destroy_field_pic (8)
+	closemessage
+	applymovement (2, Ardor_Uni_ArchaeologyClass_Movement_StudentReturn)
+	applymovement (4, Ardor_Uni_ArchaeologyClass_Movement_StudentReturn)
+	waitmovement (0)
+	load_field_pic (8, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy4)
+	destroy_field_pic (8)
+	closemessage
+
+	call (Ardor_Uni_ArchaeologyClass_EventScript_RebelReveal)
+	load_field_pic (9, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy5)
+	destroy_field_pic (9)
+	closemessage
+
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf3)
+	closemessage
+	destroy_field_pic (4)
+
+	load_field_pic (9, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy6)
+	destroy_field_pic (9)
+	closemessage
+
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf4)
+	closemessage
+	destroy_field_pic (4)
+
+	applymovement (1, Common_Movement_ExclamationMark)
+	waitmovement (0)
+
+	load_field_pic (9, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy7)
+	closemessage
+	destroy_field_pic (9)
+
+	load_field_pic (4, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Leaf5)
+	closemessage
+	destroy_field_pic (4)
+
+	load_field_pic (9, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_Indy8)
+	closemessage
+	destroy_field_pic (9)
+
+	return
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_RebelReveal {
+	applymovement (2, Ardor_Uni_ArchaeologyClass_Movement_Spin)
+	applymovement (1, Ardor_Uni_ArchaeologyClass_Movement_Spin)
+	waitmovement (0)
+	call (Ardor_Uni_ArchaeologyClass_EventScript_RemoveStudents)
+	call (Ardor_Uni_ArchaeologyClass_EventScript_AddRebels)
+	applymovement (12, Ardor_Uni_ArchaeologyClass_Movement_Spin)
+	applymovement (11, Ardor_Uni_ArchaeologyClass_Movement_Spin)
+	waitmovement (0)
+	applymovement (12, Common_Movement_FaceDown)
+	return 
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_Maxie {
+	lock
+	faceplayer
+	load_field_pic (9, 190, 98)
+	if (flag(FLAG_BADGE02_GET) ) {
+		msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieAsk, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call (Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack)
+		} else {
+			msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieWait)
+			closemessage
+			destroy_field_pic (9)
+		}
+	} else {
+		msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash)
+		closemessage
+		destroy_field_pic (9)
+	}
+	release
+	end
+}
+
+script Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack {	
+	setvar (VAR_INDY_STATE, 4)
+	clearflag (FLAG_PYRAMIDS_HIDEMAXIE)	
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack)
+	closemessage
+	destroy_field_pic (9)
+	applymovement (11, Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit)
+	waitmovement (0)
+	removeobject (11)
+	load_field_pic (9, 190, 98)
+	msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieExit)
+	closemessage
+	destroy_field_pic  (9)
+	fadescreen (1)
+	removeobject (12)
+	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
+	fadescreen (0)
+	return 
+}
+
+movement Ardor_Uni_ArchaeologyClass_Movement_Spin {
+	face_left
+	face_up
+	face_right
+	face_down
+	face_left
+	face_up
+	face_down
+	face_left
+	face_up
+}
+
+movement Ardor_Uni_ArchaeologyClass_Movement_StudentApproach1 {
+	walk_right
+	walk_up * 2
+	face_right
+}
+
+movement Ardor_Uni_ArchaeologyClass_Movement_StudentApproach2 {
+	walk_diag_northeast
+	walk_up
+	face_left
+}
+
+movement Ardor_Uni_ArchaeologyClass_Movement_StudentReturn {
+	walk_down * 2
+	walk_left
+	face_up
+}
+
+movement Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit {
+	walk_right * 4
+	walk_down * 4
+}
+
+movement Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene {
+	walk_up * 3
+	walk_diag_northwest
+	walk_up
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy1 {
+	format("Now please sit down so our class may begin")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Leaf1 {
+	format("I've just told you, we're not here for the class. We need your help to...")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy2 {
+	format("Now is not the time! My patience is grown thin. This is a school! If you will not obey I'll get the dean.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Leaf2 {
+	format("I'll not sit down, we need you general. Some years ago you fought with my father and now he begs your help to fight again. The Rockets have...")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Student1 {
+	format("She knows not what she says!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Student2 {
+	format ("Just say the word and we'll take care of her!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy3 {
+	format("Be quiet and both of you go sit down.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy4 {
+	format("Our time has come now we must show ourselves.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy5 {
+	format("I hope you will forgive us our disguise and please allow us an introduction. My name truly is Magnus Maximus, I am the leader of this rebel band. When we were forced to hide from the Rockets I took up that disguise to lie in wait. As fate would have it I had asked for {PLAYER} to meet me here with the intention of recruiting him into our rebel band but he was here for me.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Leaf3 {
+	format("So you'll do it!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy6 {
+	format("It is our only purpose to destroy the Rocket Party and retake our land. Now tell me girl who is your father and what is our need of urgent action now?")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Leaf4 {
+	format("My father served with you in the great war and we have travelled far, from Clara's Church to bring you the most tragic horrid news. The Rockets have imprisoned Mew itself")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy7 {
+	format("Impossible!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Leaf5 {
+	format("{PLAYER} saw it for himself")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_Indy8 {
+	format("That certainly explains the urgency. We must make our attack quickly before they end the universe with this evil. But still attacking now would be foolish. We need many allies if we shall win. Many of our best men are being held in a Rocket prison deep underground. With your help {PLAYER} we'll need to free those men. The prison is inside the labyrinth which only heroes can exit alive. Many foul creatures and a wicked maze mean certain death to most who travel there. I knew one day I'd need to free those men and in my disguise as the professor I made many daring trips to the cave. I know the way to their filthy prison and I will guide you through the labyrinth. However once we commonece the attack there will be no chance for us to turn back. When you are ready {PLAYER} we shall depart.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieAsk {
+	format("Are you ready to start the battle {PLAYER}?")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieWait {
+	format("We'll wait for you to be fully prepared.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash {
+	format("I'm sorry {PLAYER} you're not ready to go. Before we travel to the depths of hell you must learn how to use the HM FLASH.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack {
+	format("The die is cast. ALEA IACTA EST. Arise arise rebels of the desert! Your time is now rise up and sieze the school!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_MaxieExit {
+	format("Now hurry {PLAYER} and meet me at the cave entrance on the far south side of the sand.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_ClassBegin {
+	format("Salve puer. Magister Indianus in pyramide est. Marcus adjustor Indiani sum. Sine magistro archaeologiam doceo.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_ClassBegun {
+	format("In eremis circum Ardentem multae sunt reliquiae. Reperi thesaurum anteanum et reveni cum eam.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TAInDesk {
+	format("Revenit magister Indianus.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TARebel {
+	format("Iam scis, rebelles sumus.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_FoundLamp {
+	format("Mea Hercule! Reperisti lampadem anticam!")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TABattleIntro {
+	format("Tempus iam est examinis.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_TABattleLost {
+	format("Omnia quod scio tibi docui.")
+}
+
+text Ardor_Uni_ArchaeologyClass_Text_ClassFinished {
+	format("Congratulatio! Iam studuisti Archaeologiam.")
+}
+
+

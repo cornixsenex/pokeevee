@@ -1,0 +1,429 @@
+{
+  "id": "MAP_ROUTE3",
+  "name": "Route3",
+  "layout": "LAYOUT_ROUTE3",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_103",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_BULBUS_TOWN",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_CITY_CLARA",
+      "offset": -45,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_SILVAN_WOODS",
+      "offset": 20,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_WW",
+      "offset": 30,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_WWW",
+      "offset": -36,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_BULBUS_SILVAN_FILLER",
+      "offset": -4,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
+      "x": 23,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_LEFT_UP_DOWN",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Ross",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 19,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route3_EventScript_Ricardo",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 26,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route3_EventScript_Pedro",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 42,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route3_EventScript_Jon",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 46,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route3_EventScript_Joe",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TUBER_F",
+      "x": 33,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+      "movement_range_x": 5,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Amber",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 49,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Ryan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 53,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Megan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 28,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Monica",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 68,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "Route3_EventScript_Devon",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 35,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route3_EventScript_Izzy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "x": 38,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route3_EventScript_Dustin",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 65,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ROUTE1_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 14,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route3_EventScript_OldMan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEW",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_SILVANWOODS_HIDEFIGHT2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 34,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SILVANWOODS_LEAF2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "x": 65,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_ROUTE1_RIVAL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 65,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 66,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 68,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 69,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 71,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 72,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_BEACH_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 55,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 56,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 65,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 66,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 74,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 75,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SILVAN_WOODS",
+      "dest_warp_id": "11"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "0",
+      "script": "Route3_EventScript_LeafTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "0",
+      "script": "Route3_EventScript_LeafTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "2",
+      "script": "Route3_EventScript_MewTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "2",
+      "script": "Route3_EventScript_MewTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "3",
+      "script": "Route3_EventScript_RivalTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_ROUTE3_STATE",
+      "var_value": "3",
+      "script": "Route3_EventScript_RivalTrigger2"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 80,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route3_EventScript_SaeclaraSign"
+    }
+  ]
+}

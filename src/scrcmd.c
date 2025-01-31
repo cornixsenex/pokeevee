@@ -499,6 +499,7 @@ bool8 ScrCmd_additem(struct ScriptContext *ctx)
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
     gSpecialVar_Result = AddBagItem(itemId, quantity);
+
     return FALSE;
 }
 
@@ -684,6 +685,7 @@ bool8 ScrCmd_delay(struct ScriptContext *ctx)
 {
     sPauseCounter = ScriptReadHalfword(ctx);
     SetupNativeScript(ctx, RunPauseTimer);
+
     return TRUE;
 }
 
@@ -1207,7 +1209,7 @@ bool8 ScrCmd_turnobject(struct ScriptContext *ctx)
 }
 
 bool8 ScrCmd_setobjectmovementtype(struct ScriptContext *ctx)
-{
+{    
     u16 localId = VarGet(ScriptReadHalfword(ctx));
     u8 movementType = ScriptReadByte(ctx);
 
@@ -1750,7 +1752,6 @@ bool8 ScrCmd_bufferitemnameplural(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u16 quantity = VarGet(ScriptReadHalfword(ctx));
-
     CopyItemNameHandlePlural(itemId, sScriptStringVars[stringVarIndex], quantity);
     return FALSE;
 }

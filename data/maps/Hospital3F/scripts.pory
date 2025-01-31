@@ -1,0 +1,63 @@
+mapscripts Hospital3F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+		call (Hospital3F_OnResume)
+	}
+
+}
+
+
+
+
+script Hospital3F_OnResume {
+	call (Hospital3F_EventScript_SetFloor3)
+}
+
+script Hospital3F_EventScript_SetFloor3 {
+	setvar (VAR_HOSPITAL_FLOOR, 3)
+	return
+}
+
+script Hospital3F_EventScript_Tobogan {
+	trainerbattle_single(TRAINER_TOBOGAN, Hospital3F_Text_ToboganPre, Hospital3F_Text_ToboganLost)
+	msgbox (Hospital3F_Text_ToboganPost)
+	closemessage
+	release
+	end
+}
+
+script Hospital3F_EventScript_Judy {
+	trainerbattle_single(TRAINER_JUDY, Hospital3F_Text_JudyPre, Hospital3F_Text_JudyLost)
+	msgbox (Hospital3F_Text_JudyPost)
+	closemessage
+	release
+	end
+}
+
+
+
+text Hospital3F_Text_ToboganPre {
+	format("Bad news! Your test results are positive for HIV. That's right you got the AIDS!")
+}
+
+text Hospital3F_Text_ToboganLost {
+	format("Even my magnum dong could not save me...")
+}
+
+text Hospital3F_Text_ToboganPost {
+	format("Yeah, I'm a real doctor with a degree.")
+}
+
+text Hospital3F_Text_JudyPre {
+	format("Uh-Oh! Looks like you don't have all your shots. Hold still! This will only take one minute.")
+}
+
+text Hospital3F_Text_JudyLost {
+	format("It was for your own good...")
+}
+
+text Hospital3F_Text_JudyPost {
+	format("Do not come back to this hospital floor when you get sick.")
+}
+
+

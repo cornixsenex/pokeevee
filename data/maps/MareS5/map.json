@@ -1,0 +1,81 @@
+{
+  "id": "MAP_MARE_S5",
+  "name": "MareS5",
+  "layout": "LAYOUT_MARE_S5",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_MARE_S4",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_S6",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_MARE_S8",
+      "offset": 86,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S9",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_S10",
+      "offset": -86,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MARE_W",
+      "offset": 40,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_WW",
+      "offset": 1,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_WWW",
+      "offset": -119,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+      "x": 45,
+      "y": 45,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 10,
+      "movement_range_y": 10,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS5_EventScript_Argo",
+      "flag": "FLAG_MARES5_HIDE_ARGO"
+    }
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

@@ -1,3 +1,15 @@
+# POKE EVE 
+
+## What is Poke Eve?
+
+Poke Eve is a collection of feature branches and scripts which will one day become a full fledged standalone FOSS gameboi game.
+
+NOTE: The following document is NOT specific to Poke Eve, it's specific to the RHH expansion project which Poke Eve is based on. I (cornixsenex) am not going to write my own readme because I am lazy. Do NOT confuse Poke Eve with the RHH expansion. If you have a question, comment, concern etc specific to this repo (poke eve) contact me directly or submit a pull request here. PLEASE do not bother the rhh team with questions about this specific repo. Please DO feel free to browse their repo, play around with their project, and engage with their community (which I am lucky to be a part of)
+Again
+THIS IS NOT RHH pokeemerald-expansion 
+THIS IS POKE EVE BY CORNIXSENEX
+thank you for reading :D
+
 # pokeemerald-expansion
 
 pokeemerald-expansion is ***a romhack base*** based off pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. ***It is NOT a playable romhack,*** but it has multiple features available to romhackers so that they can create their own games, so it's not meant to be played on its own.
@@ -198,3 +210,46 @@ Also, *please follow the Pull Request template and feel free to discuss how the 
     - Fixed overworld snow effect.
 
 There are some mechanics, moves and abilities that are missing and being developed. Check [the project's milestones](https://github.com/rh-hideout/pokeemerald-expansion/milestones) and our [issues page](https://github.com/rh-hideout/pokeemerald-expansion/issues) to see which ones.
+
+### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
+
+## If I already have a project based on regular pokeemerald, can I use pokeemerald-expansion?
+Yes! Keep in mind that we keep up with pret's documentation of pokeemerald, which means that if your project a bit old, you might get merge conflicts that you need to solve manually.
+- If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
+- Once you have your remote set up, run the command `git pull RHH master`.
+
+With this, you'll get the latest version of pokeemerald-expansion, plus a couple of bugfixes that haven't been released into the next patch version :)
+
+## **How do I update my version of pokeemerald-expansion?**
+- If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
+- Check your current version.
+    - You can check in the debug menu's `Utilities -> Expansion Version` option.
+    - If the option is not available, you possibly have version 1.6.2 or older. In that case, please check the [changelogs](CHANGELOG.md) to determine your version based on the features available on your repository.
+- Once you have your remote set up, run the command `git pull RHH expansion/X.Y.Z`, replacing X, Y and Z with the digits of the respective version you want to update to (eg, to update to 1.10.0, use `git pull RHH expansion/1.10.0`).
+    - ***Important:*** If you are several versions behind, we recommend updating one minor version at a time, skipping directly to the latest patch version (eg, 1.5.3 -> 1.6.2 -> 1.7.4 and so on)
+- Alternatively, you can update to unreleased versions of the expansion.
+    - ***master (stable):*** It contains unreleased **bugfixes** that will come in the next patch version. To merge, use `git pull RHH master`.
+    - ***upcoming (unstable, with potential bugs):*** It contains unreleased **features** that will come in the next minor version. To merge, use `git pull RHH upcoming`.
+
+### Please consider crediting the entire [list of contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits) in your project, as they have all worked hard to develop this project :)
+
+## There's a bug in the project. How do I let you guys know?
+Please submit any issues with the project [here](https://github.com/rh-hideout/pokeemerald-expansion/issues). Make sure that the issue wasn't reported by someone else by searching using the filters.
+
+## Can I contribute even if I'm not a member of ROM Hacking Hideout?
+
+Yes! Contributions are welcome via Pull Requests and they will be reviewed by maintainers. Don't feel discouraged if we take a bit to review your PR, we'll get to it.
+
+## Who maintains the project?
+This project is maintained by cornixsenex
+
+The project was originally started by DizzyEgg alongside other contributors.
+
+The project has now gotten larger and DizzyEgg is now maintaining the project as part of the ROM Hacking Hideout community. Some members of this community are taking on larger roles to help maintain the project.
+
+## What is the ROM Hacking Hideout?
+
+A Discord-based ROM hacking community that has many members who hack using the disassembly and decompilation projects for Pokémon. Quite a few contributors to the original feature branches by DizzyEgg were members of ROM Hacking Hideout. You can call it RHH for short!
+
+[Click here to join the RHH Discord Server! NOTE: THIS DISCORD IS NOT SPECIFIC TO THIS REPO DO NOT ASK REPO SPECIFIC QUESTION HERE ASK CORNIXSENEX INSTEAD](https://discord.gg/6CzjAG6GZk)
+

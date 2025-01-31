@@ -571,6 +571,7 @@ extern const u8 EventScript_UseWaterfall[];
 extern const u8 EventScript_CannotUseWaterfall[];
 extern const u8 EventScript_UseDive[];
 extern const u8 EventScript_UseDiveUnderwater[];
+extern const u8 EventScript_UseRockClimb[];
 extern const u8 EventScript_FallDownHole[];
 extern const u8 EventScript_FieldPoison[];
 extern const u8 EventScript_EggHatch[];
@@ -648,11 +649,22 @@ extern const u8 VSSeeker_Text_NoTrainersWithinRange[];
 extern const u8 VSSeeker_Text_TrainersNotReady[];
 extern const u8 EventScript_VsSeekerChargingDone[];
 
+
 extern const u8 Common_Movement_FollowerSafeStart[];
 extern const u8 Common_Movement_FollowerSafeEnd[];
 
 extern const u8 EventScript_CancelMessageBox[];
 extern const u8 Common_EventScript_ShowPokemonCenterSign[];
 extern const u8 Common_EventScript_ShowPokemartSign[];
+
+//		BEGIN 	KUSTOMS		///
+
+
+//Ignis Monte (added to cave_hole.inc
+extern const u8 EventScript_FallDownFalseFloor[];
+extern const u8 Colchis_Script_CheckForcedBattle[];
+
+
+//		END		KUSTOMS		///
 
 #endif // GUARD_EVENT_SCRIPTS_H

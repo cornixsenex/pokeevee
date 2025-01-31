@@ -1,0 +1,112 @@
+mapscripts Ardor_Uni3F_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		call (Ardor_Uni3F_EventScript_OpenDoors)
+	}
+
+}
+
+script Ardor_Uni3F_EventScript_OpenDoors {
+	if (!flag(FLAG_OPEN_CLASS_PHILOSOPHY) ){
+		setmetatile (2, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_PHYSICS) ){
+		setmetatile (7, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_CALCULUS) ){
+		setmetatile (12, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_LITERATURE) ){
+		setmetatile (26, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_RHETORIC) ){
+		setmetatile (31, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	if (!flag(FLAG_OPEN_CLASS_POETRY) ){
+		setmetatile (36, 9, METATILE_Facility_DoorBlock, 1)
+	}
+	end
+}
+
+script Ardor_Uni3F_EventScript_CalculusDoorSign {
+	lock
+	msgbox (Ardor_Uni3F_Text_CalculusDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni3F_EventScript_PhysicsDoorSign {
+	lock
+	msgbox (Ardor_Uni3F_Text_PhysicsDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni3F_EventScript_PhilosophyDoorSign {
+	lock
+	msgbox (Ardor_Uni3F_Text_PhilosophyDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni3F_EventScript_OfficeDoorSign {
+	lock
+	msgbox (Ardor_Uni3F_Text_OfficeDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni3F_EventScript_RhetoricDoorSign {
+	lock
+	msgbox (Ardor_Uni3F_Text_RhetoricDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni3F_EventScript_LiteratureDoorSign {
+	lock
+	msgbox (Ardor_Uni3F_Text_LiteratureDoorSign)
+	closemessage
+	release
+	end
+}
+
+script Ardor_Uni3F_EventScript_PoetryDoorSign {
+	lock
+	msgbox (Ardor_Uni3F_Text_PoetryDoorSign)
+	closemessage
+	release
+	end
+}
+
+text Ardor_Uni3F_Text_CalculusDoorSign {
+	format("CALCULUS\nMAGISTER HAGUS")
+}
+
+text Ardor_Uni3F_Text_PhysicsDoorSign {
+	format("PHYSICA\nMAGISTER CLANCIUS")
+}
+
+text Ardor_Uni3F_Text_PhilosophyDoorSign {
+	format("PHILOSOPHIA\nMAGISTER HAMLET")
+}
+
+text Ardor_Uni3F_Text_OfficeDoorSign {
+	format("CONSULES ARDENTIS\nALBINUS ET PLATONUS")
+}
+
+text Ardor_Uni3F_Text_RhetoricDoorSign {
+	format("ORATUS\nMAGISTER STEPHANUS")
+}
+
+text Ardor_Uni3F_Text_LiteratureDoorSign {
+	format("LITERATURA\nMAGISTRA AEMILIA")
+}
+
+text Ardor_Uni3F_Text_PoetryDoorSign {
+	format("POEMATA\nMAGISTRA ANNA")
+}

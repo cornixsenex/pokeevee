@@ -93,7 +93,7 @@ EventScript_SmashRock:: @ fallthrough
 	waitstate
 	releaseall
 	end
-
+	
 EventScript_FollowerFieldMove:
 	getdirectiontoface VAR_0x8005, OBJ_EVENT_ID_FOLLOWER, OBJ_EVENT_ID_PLAYER
 	specialvar VAR_0x8006, GetPlayerFacingDirection
@@ -167,6 +167,13 @@ EventScript_FollowerJumpSouth:
 EventScript_FollowerJumpWest:
 	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_JumpLeft
 	waitmovement 0
+	return
+
+@Kustom Special just continues to return to script so it can trigger something
+EventScript_HammerRockSmashTrigger::
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
 	return
 
 EventScript_EndSmash::
@@ -422,3 +429,79 @@ EventScript_FailSweetScent::
 
 Text_FailSweetScent:
 	.string "Looks like there's nothing here…$"
+
+EventScript_UseRockClimb::
+	lockall
+	checkpartymove MOVE_ROCK_CLIMB
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq EventScript_CantRockClimb
+	bufferpartymonnick 0, VAR_RESULT
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToRockClimb, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_EndRockClimb
+	msgbox Text_MonUsedRockClimb, MSGBOX_DEFAULT
+	closemessage
+	dofieldeffect FLDEFF_USE_ROCK_CLIMB
+	waitstate
+	goto EventScript_EndRockClimb
+	
+EventScript_CantRockClimb::
+	msgbox Text_CantRockClimb, MSGBOX_DEFAULT
+	
+EventScript_EndRockClimb::
+	releaseall
+	end
+	
+Text_WantToRockClimb:
+    .string "The cliff is steep.\n"
+    .string "Would you like to use Rock Climb?$"
+    
+Text_MonUsedRockClimb:
+    .string "{STR_VAR_1} used Rock Climb!$"
+    
+Text_CantRockClimb:
+    .string "The cliff is steep.\n"
+    .string "A Pokémon may be able to climb it.$"
+    
+EventScript_DisableAutoRun::
+    msgbox AutoRunDisabled MSGBOX_SIGN
+    end
+AutoRunDisabled:
+    .string "Auto Run {COLOR RED}Disabled{COLOR DARK_GRAY}.$"
+    
+EventScript_EnableAutoRun::
+    msgbox AutoRunEnabled MSGBOX_SIGN
+    end
+AutoRunEnabled:
+    .string "Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}.$"
+
+EventScript_BreakableRock::
+	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	checkitem ITEM_BIG_HAMMER
+	goto_if_eq VAR_RESULT, NO, EventScript_CantBreakRock
+	msgbox Text_WantToBreak, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	closemessage
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	releaseall
+	end
+
+EventScript_CantBreakRock::
+	msgbox Text_CantBreakRock, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Text_WantToBreak:
+	.string "This rock appears to be breakable.\n"
+	.string "Would you like use the Big Hammer?$"
+
+Text_CantBreakRock:
+	.string "It's a rugged rock, but something\n"
+	.string "may be able to smash it.$"
+	
+
