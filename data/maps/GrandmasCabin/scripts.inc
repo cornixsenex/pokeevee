@@ -510,7 +510,7 @@ GrandmasCabin_Script_SaveLeaf_1:
 # 338 "data/maps/GrandmasCabin/scripts.pory"
 	waitmoncry
 # 340 "data/maps/GrandmasCabin/scripts.pory"
-	givemon SPECIES_EEVEE, 5, ITEM_NONE
+	givemon SPECIES_EEVEE, 5, ITEM_NONE, gender = MON_MALE, move1 = MOVE_TACKLE, move2 = MOVE_TAIL_WHIP, move3 = MOVE_HELPING_HAND
 # 341 "data/maps/GrandmasCabin/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 343 "data/maps/GrandmasCabin/scripts.pory"

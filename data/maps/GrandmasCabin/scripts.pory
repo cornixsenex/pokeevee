@@ -337,7 +337,7 @@ script GrandmasCabin_Script_SaveLeaf {
 	playmoncry (SPECIES_EEVEE, CRY_MODE_ENCOUNTER)
 	waitmoncry
 
-	givemon (SPECIES_EEVEE, 5, ITEM_NONE)	
+	givemon (SPECIES_EEVEE, 5, ITEM_NONE, gender=MON_MALE, move1=MOVE_TACKLE, move2=MOVE_TAIL_WHIP, move3=MOVE_HELPING_HAND, move4=MOVE_SAND_ATTACK)	
 	setflag (FLAG_SYS_POKEMON_GET)
 
 	msgbox (GrandmasCabin_Text_Eevee, MSGBOX_DEFAULT)
