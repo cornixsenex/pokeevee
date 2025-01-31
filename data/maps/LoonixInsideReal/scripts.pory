@@ -46,6 +46,7 @@ mapscripts LoonixInsideReal_MapScripts {
 		VAR_GRANNY_STATE, 0: LoonixInsideReal_Script_GrannyScene1
 		VAR_GRANNY_STATE, 6: LoonixInsideReal_Script_GrannyScene2
 		VAR_GRANNY_STATE, 10: LoonixInsideReal_Script_GrannyScene3
+		VAR_GRANNY_STATE, 13: LoonixInsideReal_Script_GrannyScene4
 	]
 
 }
@@ -115,8 +116,9 @@ script LoonixInsideReal_Script_GrannyScene1 {
 
 	setvar (VAR_GRANNY_STATE, 1)
 	setflag (FLAG_RECEIVED_RUNNING_SHOES)
-setflag (FLAG_SYS_B_DASH)
+	setflag (FLAG_SYS_B_DASH)
 	setvar (VAR_SYS_LEVEL_CAP, 8)
+	setrespawn (HEAL_LOCATION_GRANDMAS_CABIN)
 
 	//Player walks to position
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
@@ -294,14 +296,14 @@ script LoonixInsideReal_Script_TV {
 
 script LoonixInsideReal_Script_Statue {
 	lock
-	msgbox(format("This is the statue they sent us after Dad left...\pGrandma must have forgotten to polish it."))
+	msgbox(format("This is the statue they sent us after Dad left..."))
 	release
 	end
 }
 
 script LoonixInsideReal_Script_Junk {
 	lock
-	msgbox(format("Here's another pile of junk grandma left lying around."))
+	msgbox(format("Here's another pile of junk left lying around..."))
 	release
 	end
 }
@@ -315,40 +317,41 @@ script LoonixInsideReal_Script_Special {
 	end
 }
 
-script LoonixInsideReal_Script_GrandmaTV {
+script LoonixInsideReal_Script_GrannyScene4 {
 	lockall
-	applymovement(1, LoonixInsideReal_Movement_GrandmaUp)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
-	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerToGma)
-	waitmovement (0)
-	msgbox (format("Oh {PLAYER}!"))
+	setvar (VAR_GRANNY_STATE, 14)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	msgbox ("Come here sweetie.")
+	load_field_pic (FIELD_PIC_GRANNY, 190, 98)
+	msgbox (LoonixInsideReal_Text_Granny4A, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_GRANNY)
 	closemessage
-	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_GrandmaTV)
+	applymovement (OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerToGma)
 	waitmovement (0)
-	applymovement (1, LoonixInsideReal_Movement_GrandmaLeft)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
 	waitmovement (0)
+	load_field_pic (FIELD_PIC_GRANNY, 190, 98)
 	msgbox (LoonixInsideReal_Text_GrandmaTVSpeech)
-	closemessage
-	applymovement (1, LoonixInsideReal_Movement_GrandmaMono)
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_GrandmaMono)
 	waitmovement (0)
 	msgbox (LoonixInsideReal_Text_GrandmaMono)
-	closemessage
-	applymovement (1, LoonixInsideReal_Movement_GrandmaLeft)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
 	waitmovement (0)
 	msgbox (LoonixInsideReal_Text_GrandmaToBed)
+	destroy_field_pic (FIELD_PIC_GRANNY)
 	closemessage	
-	applymovement (1, LoonixInsideReal_Movement_GrandmaBed)
+	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_GrandmaBed)
 	applymovement(OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerBed)
 	waitmovement (0)
-	addvar (VAR_GRANNY_STATE, 1)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceLeft)
+	waitmovement (0)
+	load_field_pic (FIELD_PIC_GRANNY, 190, 98)
 	msgbox (LoonixInsideReal_Text_GrandmaBed)
-	setrespawn (HEAL_LOCATION_GRANDMAS_CABIN)
-	setflag (FLAG_RECEIVED_RUNNING_SHOES)
-	setflag (FLAG_SYS_B_DASH)
+	destroy_field_pic (FIELD_PIC_GRANNY)
+	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceDown)
+	waitmovement (0)
+	closemessage
 	releaseall
 	end
 }
@@ -365,7 +368,10 @@ script LoonixInsideReal_Script_PreventExit {
 
 script LoonixInsideReal_Script_Grandma {
 	lockall
-	faceplayer
+
+	if (var(VAR_GRANNY_STATE) != 14) {
+		faceplayer
+	}
 
 	switch (var(VAR_GRANNY_STATE)) {
 		case 0:
@@ -382,7 +388,8 @@ script LoonixInsideReal_Script_Grandma {
 			call (LoonixInsideReal_Script_GrannyTable)
 		case 11:
 			call (LoonixInsideReal_Script_GrannyStorm)
-
+		case 14:
+			call (LoonixInsideReal_Script_GrannyBed)
 		default:
 			msgbox("DEFAULT", MSGBOX_DEFAULT)
 			closemessage
@@ -436,6 +443,14 @@ script LoonixInsideReal_Script_GrannyStorm {
 	return
 }
 
+script LoonixInsideReal_Script_GrannyBed {
+	lock
+	msgbox (LoonixInsideReal_Text_GrannyBed, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
 movement LoonixInsideReal_Movement_PreventExit {
 	face_up
 	walk_up * 4
@@ -464,16 +479,14 @@ movement LoonixInsideReal_Movement_GrandmaUp {
 	face_up
 }
 
-movement LoonixInsideReal_Movement_GrandmaLeft {
-	face_left
-}
-
 movement LoonixInsideReal_Movement_GrandmaMono {
 	face_down
 }
 
 movement LoonixInsideReal_Movement_PlayerToGma {
-	walk_down * 3
+	walk_left
+	walk_down * 4
+	walk_right * 2
 }
 
 movement LoonixInsideReal_Movement_Granny1_ApproachPlayer {
@@ -611,5 +624,13 @@ text LoonixInsideReal_Text_GrannyStorm2 {
 
 text LoonixInsideReal_Text_GrannyStorm3 {
 	format("You'll be ok as long as you're with me. Go up to bed and let the weather pass.")
+}
+
+text LoonixInsideReal_Text_Granny4A {
+	format("Oh {PLAYER}! Come here sweetie.")
+}
+
+text LoonixInsideReal_Text_GrannyBed {
+	format("She must be sleeping...")
 }
 

@@ -145,7 +145,7 @@
       "y": 12,
       "elevation": 0,
       "var": "VAR_GRANNY_STATE",
-      "var_value": "0",
+      "var_value": "14",
       "script": "Route1_EventScript_RivalTrigger1"
     },
     {
@@ -154,7 +154,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_GRANNY_STATE",
-      "var_value": "0",
+      "var_value": "14",
       "script": "Route1_EventScript_RivalTrigger2"
     },
     {
@@ -163,7 +163,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_GRANNY_STATE",
-      "var_value": "0",
+      "var_value": "14",
       "script": "Route1_EventScript_RivalTrigger3"
     },
     {
@@ -172,7 +172,7 @@
       "y": 15,
       "elevation": 0,
       "var": "VAR_GRANNY_STATE",
-      "var_value": "0",
+      "var_value": "14",
       "script": "Route1_EventScript_RivalTrigger4"
     },
     {
@@ -181,7 +181,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_GRANNY_STATE",
-      "var_value": "0",
+      "var_value": "14",
       "script": "Route1_EventScript_RivalTrigger5"
     }
   ],

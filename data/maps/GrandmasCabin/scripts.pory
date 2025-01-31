@@ -453,6 +453,14 @@ script GrandmasCabin_Script_SaveLeaf {
 	end
 }
 
+script GrandmasCabin_Script_GameOver {
+	lock
+	msgbox ("GAME OVER", MSGBOX_DEFAULT)
+	
+	release
+	end
+}
+
 movement GrandmasCabin_Movement_BeginHideAndSeek {
 	walk_down * 2
 	walk_left * 4
