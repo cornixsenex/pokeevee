@@ -2299,7 +2299,7 @@
 		.doubleBattle = FALSE,
 		.mugshotEnabled = TRUE,
 		.mugshotColor = MUGSHOT_COLOR_BLUE,
-		.aiFlags = AI_FLAG_BASIC_TRAINER,
+		.aiFlags = AI_FLAG_SMART_TRAINER,
 		.party = TRAINER_PARTY(sParty_Rival1),
 	},
 

@@ -2430,19 +2430,16 @@ static const struct TrainerMon sParty_Hitoshi[] = {
 
 static const struct TrainerMon sParty_Rival1[] = {
 	{
-		.species = SPECIES_TOGEPI,
+		.species = SPECIES_ZUBAT,
 		.ball = ITEM_POKE_BALL,
-		.ability = ABILITY_SERENE_GRACE,
 		.friendship = 255,
 		.gender = TRAINER_MON_MALE,
 		.heldItem = ITEM_KIND_BUD,
-		.isShiny = TRUE,
         .iv = TRAINER_PARTY_IVS(25,26,27,28,29,30),
         .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
-		.lvl = 5,
-		.moves = {MOVE_METRONOME, MOVE_NONE, MOVE_NONE, MOVE_NONE},
-		.nature = NATURE_LAX,
-		.nickname = COMPOUND_STRING("HUMPTY"),
+		.lvl = 15,
+		.moves = {MOVE_BITE, MOVE_SUPERSONIC, MOVE_LEECH_LIFE, MOVE_ASTONISH},
+		.nature = NATURE_TIMID,
 	},
 	
 	/*	{

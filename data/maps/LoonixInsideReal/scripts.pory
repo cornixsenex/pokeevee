@@ -320,7 +320,6 @@ script LoonixInsideReal_Script_Special {
 script LoonixInsideReal_Script_GrannyScene4 {
 	lockall
 	setvar (VAR_GRANNY_STATE, 14)
-	applymovement (OBJ_EVENT_GRANNY, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	load_field_pic (FIELD_PIC_GRANNY, 190, 98)

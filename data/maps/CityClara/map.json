@@ -2,7 +2,7 @@
   "id": "MAP_CITY_CLARA",
   "name": "CityClara",
   "layout": "LAYOUT_CITY_CLARA",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_BIRCH_LAB",
   "region_map_section": "MAPSEC_LAVARIDGE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

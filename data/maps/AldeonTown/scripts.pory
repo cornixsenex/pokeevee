@@ -150,6 +150,7 @@ script AldeonTown_Script_TriggerLeafBattle {
 	closemessage
 	destroy_field_pic (FIELD_PIC_LEAF)
 	//Alert player et Leaf
+	playbgm (MUS_RG_ENCOUNTER_RIVAL, TRUE)
 	applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
@@ -254,6 +255,8 @@ script AldeonTown_Script_TriggerLeafBattle {
 	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_INVISIBLE)
 	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
 	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_INVISIBLE)
+
+	playbgm(MUS_OLDALE, TRUE)
 	//Show BlueLeafBlock
 	//call (AldeonTown_Script_ShowBlueLeaf)
 
