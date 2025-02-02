@@ -3,14 +3,11 @@ mapscripts BulbusTown_CannabisCenter_MapScripts {
 		setweather (WEATHER_FOG_DIAGONAL)
 	}
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ROUTE1_STATE, 3: BulbusTown_CannabisCenter_OnFrame
-		VAR_ROUTE1_STATE, 4: BulbusTown_CannabisCenter_OnFrame 
 	]
 
 }
 
 script BulbusTown_CannabisCenter_OnFrame {
-	setvar (VAR_ROUTE1_STATE, 5)
 	lockall
 	applymovement (OBJ_EVENT_ID_PLAYER, BulbusTown_CannabisCenter_Movement_Player)
 	load_field_pic (5, 190, 98)

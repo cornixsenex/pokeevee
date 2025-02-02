@@ -108,8 +108,8 @@
       "x": 12,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_ROUTE1_STATE",
-      "var_value": "3",
+      "var": "VAR_GRANNY_STATE",
+      "var_value": "16",
       "script": "GrandmasCabin_Script_Mew"
     },
     {

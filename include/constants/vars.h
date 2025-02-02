@@ -101,7 +101,7 @@
 //ACTUALLY HERE BEGINS THE USABLE VARS
 
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
-#define VAR_ROUTE1_STATE           			             0x4050
+#define VAR_UNUSED_4050           			             0x4050 // Unused Var
 #define VAR_OLDALE_TOWN_STATE                            0x4051
 #define VAR_DEWFORD_TOWN_STATE                           0x4052 // Unused Var
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
@@ -143,9 +143,9 @@
 																//12: After bed mew scene, trigger TV on return
 																//13: After bed mew scene, trigger TV on return
 																//14: After granny scene 4, setup Blue Battle
-																//15: After Blue battle, setup see Mew cabin
-																//16: After seen Mew cabin, default final state Mew cannot be seen, Granny hidden maybe endgame changes something
-																//17: ? Maybe mew cabin encounter? Maybe 18 granny returns idk endgame stuff
+																//15: After Blue battle, trigger LeafHouseScene
+																//16: After LeafHouseScene, setup Mew at cabin
+																//17: After seen Mew cabin OR Clara Church default final state Mew cannot be seen, Granny hidden maybe endgame changes something
 
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
 #define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 

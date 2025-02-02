@@ -1,115 +1,18 @@
 mapscripts Aldeon_Leaf_House_2F_MapScripts {
-	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_ROUTE1_STATE, 1: Aldeon_Leaf_House_2F_OnWarp
-	]
-	MAP_SCRIPT_ON_TRANSITION {
-		call (Aldeon_Leaf_House_2F_OnTransition)
-	}
-    MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ROUTE1_STATE, 1: Aldeon_Leaf_House_2F_OnFrame
-	]
-}
-script Aldeon_Leaf_House_2F_OnTransition {
-	if (var(VAR_ROUTE1_STATE) == 1) {
-		addobject (1)
-		setobjectxyperm (1, 6, 5)
-	}
-	end
-}
 
-script Aldeon_Leaf_House_2F_OnWarp {	
-	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-	call (Aldeon_Leaf_House_2F_OnTransition)
-	end
-}
-
-script Aldeon_Leaf_House_2F_OnFrame {
-	setvar (VAR_ROUTE1_STATE, 2)
-	setflag (FLAG_ROUTE1_RIVAL)
-	lockall
-	setobjectxyperm (1, 6, 5)
-	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_2F_PlayerHump)	
-	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_2F_WalkLeft)
-	waitmovement (0)	
-	load_field_pic (4, 190, 98)
-	msgbox (Aldeon_Leaf_House_2F_Text_Leaf1, MSGBOX_YESNO)
-	special (NameRival)		
-	waitstate
-	msgbox (Aldeon_Leaf_House_2F_Text_Leaf2)
-	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_2F_WalkLeft)
-	applymovement (1, Aldeon_Leaf_House_2F_Movement_Leaf1)
-	waitmovement (0)
-	closemessage
-	destroy_field_pic (4)
-	applymovement (1, Aldeon_Leaf_House_2F_Movement_Leaf2)
-	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_2F_Movement_Player2)
-	waitmovement (0)
-	removeobject (1)
-	releaseall
-	end
 }
 
 script Aldeon_Leaf_House_2F_EventScript_Bed {
 	lockall
 	msgbox(Aldeon_Leaf_House_2F_Text_Bed, MSGBOX_YESNO)
+	closemessage
 	if (var(VAR_RESULT) == YES) {
-		closemessage
-		if (flag(FLAG_SYS_POKEMON_GET)) {
-			call (Common_EventScript_OutOfCenterPartyHeal)
-		} else {
-			playfanfare (MUS_HEAL)
-			fadescreen (1)
-			waitfanfare
-			fadescreen (0)
-		}
+		call (Common_EventScript_OutOfCenterPartyHeal)
 	}
 	releaseall
 	end
 }
-movement Aldeon_Leaf_House_2F_PlayerHump {
-	walk_in_place_up * 13
-	emote_exclamation_mark
-}
-
-movement Aldeon_Leaf_House_2F_LeafDownStairs {
-	walk_left
-	walk_up * 2
-	walk_left * 2
-	walk_up
-	walk_left *2
-}
-
-movement Aldeon_Leaf_House_2F_WalkLeft {
-	walk_left
-	face_right
-}
-
-movement Aldeon_Leaf_House_2F_Movement_Player2 {
-	walk_up * 3
-	walk_left * 2
-}
-
-movement Aldeon_Leaf_House_2F_Movement_Leaf1 {
-	walk_left
-	walk_up
-	walk_left
-	face_down
-}
-
-movement Aldeon_Leaf_House_2F_Movement_Leaf2 {
-	walk_up * 2
-	walk_left * 4
-}
 	
-text Aldeon_Leaf_House_2F_Text_Leaf1 {
-	format("Oh {PLAYER} I just had such a lovey time. I'm so happy you kicked that looser's ass. I wonder who that guy was anyways?\p Do you know his name?")
-}
-
-text Aldeon_Leaf_House_2F_Text_Leaf2 {
-	format("So his name must be {RIVAL} that makes sense. C'mon downstairs and you can meet my dad.")
-}
-
 text Aldeon_Leaf_House_2F_Text_Bed {
 	format("It's Leaf's bed!\p Would you like to take a rest?")
 }

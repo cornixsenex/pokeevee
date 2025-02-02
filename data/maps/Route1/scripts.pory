@@ -1,5 +1,6 @@
 const OBJ_EVENT_BLUE = 3
 const OBJ_EVENT_LEAF = 4
+const OBJ_EVENT_ZUBAT = 10
 
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_BLUE = 3
@@ -89,6 +90,7 @@ script Route1_EventScript_RivalTrigger5 {
 
 script Route1_EventScript_BlueScene {
 	//move player to position
+	setvar (VAR_GRANNY_STATE, 15)
 	playbgm (MUS_RG_ENCOUNTER_RIVAL, TRUE)
 	switch (var(VAR_TEMP_A)) {
 		case 0:
@@ -114,7 +116,7 @@ script Route1_EventScript_BlueScene {
 	//alert player
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	//setup leaf and blue
+	//setup leaf and blue et zubat
 	setobjectxyperm (OBJ_EVENT_BLUE, 19, 7)
 	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_BLUE)
@@ -124,9 +126,15 @@ script Route1_EventScript_BlueScene {
 	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
 	addobject (OBJ_EVENT_LEAF)
 	showobjectat (OBJ_EVENT_LEAF, MAP_ROUTE1)
+
+	setobjectxyperm (OBJ_EVENT_ZUBAT, 19, 6)
+	setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (OBJ_EVENT_ZUBAT)
+	showobjectat (OBJ_EVENT_ZUBAT, MAP_ROUTE1)
 	//leaf and blue enter from north as blue yells 1
 	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueLeafEnter)
 	applymovement (OBJ_EVENT_LEAF, Route1_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_BlueLeafEnter)
 	load_field_pic (FIELD_PIC_BLUE, 190, 98)
 	//Get back here!
 	msgbox (Route1_Text_Blue1, MSGBOX_DEFAULT)
@@ -142,6 +150,7 @@ script Route1_EventScript_BlueScene {
 	//they walk down a bit more and blue continues
 	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueLeafEnter)
 	applymovement (OBJ_EVENT_LEAF, Route1_Movement_BlueLeafEnter)
+	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_BlueLeafEnter)
 	load_field_pic (FIELD_PIC_BLUE, 190, 98)
 	//No my way
 	msgbox (Route1_Text_Blue2, MSGBOX_DEFAULT)
@@ -165,6 +174,7 @@ script Route1_EventScript_BlueScene {
 	applymovement (OBJ_EVENT_LEAF, Route1_Movement_LeafBehindPlayer)
 	//Blue move to above player
 	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueToPlayer)
+	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_ZubatToPlayer)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
 	waitmovement (0)
@@ -182,6 +192,7 @@ script Route1_EventScript_BlueScene {
 	closemessage
 	//blue exit north
 	applymovement (OBJ_EVENT_BLUE, Route1_Movement_BlueExit)
+	applymovement (OBJ_EVENT_ZUBAT, Route1_Movement_BlueExit)
 	waitmovement (0)
 	fadedefaultbgm
 	//Player face leaf
@@ -206,7 +217,6 @@ script Route1_EventScript_BlueScene {
 }
 
 script Route1_EventScript_WarpToLeafHouse {
-	setvar (VAR_ROUTE1_STATE, 1)
 	warp (MAP_ALDEON_LEAF_HOUSE_2F, 255, 6, 5)
 	waitstate
 	return
@@ -435,6 +445,12 @@ movement Route1_Movement_LeafBehindPlayer {
 
 movement Route1_Movement_BlueToPlayer {
 	walk_left * 3
+	face_down
+}
+
+movement Route1_Movement_ZubatToPlayer {
+	walk_down
+	walk_left * 2
 	face_down
 }
 

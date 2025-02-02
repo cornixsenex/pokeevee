@@ -1,14 +1,23 @@
+
+
 mapscripts Aldeon_Leaf_House_MapScripts {	
 	MAP_SCRIPT_ON_TRANSITION {
-		call (Aldeon_Leaf_House_OnTransition)
+		if (var(VAR_GRANNY_STATE) == 15) {
+			call (Aldeon_Leaf_House_Script_ShowLeafScene)
+		}
 	}
+
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ROUTE1_STATE, 2: Aldeon_Leaf_House_IntroScene
+		VAR_GRANNY_STATE, 15: Aldeon_Leaf_House_IntroScene
 	]
 }
 
+script Aldeon_Leaf_House_Script_ShowLeafScene {
+
+	return
+}
+
 script Aldeon_Leaf_House_IntroScene {
-	setvar (VAR_ROUTE1_STATE, 3)
 	lockall
 	applymovement (1, Common_Movement_FaceRight)
 	applymovement (2, Common_Movement_FaceLeft)
@@ -77,14 +86,6 @@ script Aldeon_Leaf_House_IntroScene {
 	releaseall
 	end
 }	
-
-script Aldeon_Leaf_House_OnTransition {
-	if (var(VAR_ROUTE1_STATE) == 2) {	
-		setobjectxyperm (1, 11, 6)
-		setobjectxyperm (2, 5, 2)
-	}
-	end
-}
 
 script Aldeon_Leaf_House_EventScript_ScottBed {
 	lockall
