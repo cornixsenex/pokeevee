@@ -286,7 +286,9 @@ Route1_EventScript_BlueScene_1:
 	destroy_field_pic 4
 # 212 "data/maps/Route1/scripts.pory"
 	closemessage
-# 215 "data/maps/Route1/scripts.pory"
+# 214 "data/maps/Route1/scripts.pory"
+	warpsilent MAP_ALDEON_LEAF_HOUSE, 8, 12
+# 216 "data/maps/Route1/scripts.pory"
 	release
 	end
 
@@ -326,456 +328,456 @@ Route1_EventScript_BlueScene_8:
 
 
 Route1_EventScript_WarpToLeafHouse::
-# 220 "data/maps/Route1/scripts.pory"
-	warp MAP_ALDEON_LEAF_HOUSE_2F, 255, 6, 5
 # 221 "data/maps/Route1/scripts.pory"
+	warp MAP_ALDEON_LEAF_HOUSE_2F, 255, 6, 5
+# 222 "data/maps/Route1/scripts.pory"
 	waitstate
 	return
 
 
 Route1_EventScript_Rival1::
-# 227 "data/maps/Route1/scripts.pory"
-	load_field_pic 3, 190, 98
 # 228 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Rival1
-# 229 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 3
-# 230 "data/maps/Route1/scripts.pory"
-	load_field_pic 4, 190, 98
-# 231 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Leaf1
-# 232 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 4
-# 233 "data/maps/Route1/scripts.pory"
-	applymovement 4, Route1_Movement_FaceLeft
-# 234 "data/maps/Route1/scripts.pory"
-	waitmovement 0
-# 235 "data/maps/Route1/scripts.pory"
 	load_field_pic 3, 190, 98
-# 236 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Rival2
-# 237 "data/maps/Route1/scripts.pory"
-	closemessage
-# 238 "data/maps/Route1/scripts.pory"
+# 229 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Rival1
+# 230 "data/maps/Route1/scripts.pory"
 	destroy_field_pic 3
+# 231 "data/maps/Route1/scripts.pory"
+	load_field_pic 4, 190, 98
+# 232 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Leaf1
+# 233 "data/maps/Route1/scripts.pory"
+	destroy_field_pic 4
+# 234 "data/maps/Route1/scripts.pory"
+	applymovement 4, Route1_Movement_FaceLeft
+# 235 "data/maps/Route1/scripts.pory"
+	waitmovement 0
+# 236 "data/maps/Route1/scripts.pory"
+	load_field_pic 3, 190, 98
+# 237 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Rival2
+# 238 "data/maps/Route1/scripts.pory"
+	closemessage
 # 239 "data/maps/Route1/scripts.pory"
-	applymovement 3, Common_Movement_ExclamationMark
+	destroy_field_pic 3
 # 240 "data/maps/Route1/scripts.pory"
+	applymovement 3, Common_Movement_ExclamationMark
+# 241 "data/maps/Route1/scripts.pory"
 	waitmovement 0
 	return
 
 
 Route1_EventScript_Rival2::
-# 245 "data/maps/Route1/scripts.pory"
-	load_field_pic 3, 190, 98
 # 246 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Rival3
+	load_field_pic 3, 190, 98
 # 247 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 3
+	msgbox Route1_Text_Rival3
 # 248 "data/maps/Route1/scripts.pory"
-	load_field_pic 4, 190, 98
+	destroy_field_pic 3
 # 249 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Leaf2
+	load_field_pic 4, 190, 98
 # 250 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 4
+	msgbox Route1_Text_Leaf2
 # 251 "data/maps/Route1/scripts.pory"
+	destroy_field_pic 4
+# 252 "data/maps/Route1/scripts.pory"
 	closemessage
 	return
 
 
 Route1_EventScript_Rival3::
-# 256 "data/maps/Route1/scripts.pory"
-	load_field_pic 3, 190, 98
 # 257 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Rival4
-# 258 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 3
-# 259 "data/maps/Route1/scripts.pory"
-	closemessage
-# 260 "data/maps/Route1/scripts.pory"
-	trainerbattle_no_intro TRAINER_RIVAL1, Route1_Text_RivalLost
-# 261 "data/maps/Route1/scripts.pory"
 	load_field_pic 3, 190, 98
-# 262 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Rival5
-# 263 "data/maps/Route1/scripts.pory"
+# 258 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Rival4
+# 259 "data/maps/Route1/scripts.pory"
 	destroy_field_pic 3
+# 260 "data/maps/Route1/scripts.pory"
+	closemessage
+# 261 "data/maps/Route1/scripts.pory"
+	trainerbattle_no_intro TRAINER_RIVAL1, Route1_Text_RivalLost
+# 262 "data/maps/Route1/scripts.pory"
+	load_field_pic 3, 190, 98
+# 263 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Rival5
 # 264 "data/maps/Route1/scripts.pory"
-	closemessage
+	destroy_field_pic 3
 # 265 "data/maps/Route1/scripts.pory"
-	applymovement 3, Route1_Movement_RivalExit
+	closemessage
 # 266 "data/maps/Route1/scripts.pory"
-	waitmovement 0
+	applymovement 3, Route1_Movement_RivalExit
 # 267 "data/maps/Route1/scripts.pory"
-	removeobject 3
-# 268 "data/maps/Route1/scripts.pory"
-	applymovement 4, Common_Movement_FaceRight
-# 269 "data/maps/Route1/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
-# 270 "data/maps/Route1/scripts.pory"
 	waitmovement 0
+# 268 "data/maps/Route1/scripts.pory"
+	removeobject 3
+# 269 "data/maps/Route1/scripts.pory"
+	applymovement 4, Common_Movement_FaceRight
+# 270 "data/maps/Route1/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 # 271 "data/maps/Route1/scripts.pory"
-	load_field_pic 4, 190, 98
+	waitmovement 0
 # 272 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Leaf3
-# 273 "data/maps/Route1/scripts.pory"
-	closemessage
-# 274 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 4
-# 275 "data/maps/Route1/scripts.pory"
-	call Common_EventScript_OutOfCenterPartyHeal
-# 276 "data/maps/Route1/scripts.pory"
 	load_field_pic 4, 190, 98
-# 277 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Leaf4
-# 278 "data/maps/Route1/scripts.pory"
+# 273 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Leaf3
+# 274 "data/maps/Route1/scripts.pory"
 	closemessage
+# 275 "data/maps/Route1/scripts.pory"
+	destroy_field_pic 4
+# 276 "data/maps/Route1/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
+# 277 "data/maps/Route1/scripts.pory"
+	load_field_pic 4, 190, 98
+# 278 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Leaf4
 # 279 "data/maps/Route1/scripts.pory"
+	closemessage
+# 280 "data/maps/Route1/scripts.pory"
 	destroy_field_pic 4
 	return
 
 
 Route1_EventScript_Rival3B::
-# 284 "data/maps/Route1/scripts.pory"
-	load_field_pic 3, 190, 98
 # 285 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Rival4
-# 286 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 3
-# 287 "data/maps/Route1/scripts.pory"
-	closemessage
-# 288 "data/maps/Route1/scripts.pory"
-	trainerbattle_no_intro TRAINER_RIVAL1, Route1_Text_RivalLost
-# 289 "data/maps/Route1/scripts.pory"
 	load_field_pic 3, 190, 98
-# 290 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Rival5
-# 291 "data/maps/Route1/scripts.pory"
+# 286 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Rival4
+# 287 "data/maps/Route1/scripts.pory"
 	destroy_field_pic 3
+# 288 "data/maps/Route1/scripts.pory"
+	closemessage
+# 289 "data/maps/Route1/scripts.pory"
+	trainerbattle_no_intro TRAINER_RIVAL1, Route1_Text_RivalLost
+# 290 "data/maps/Route1/scripts.pory"
+	load_field_pic 3, 190, 98
+# 291 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Rival5
 # 292 "data/maps/Route1/scripts.pory"
-	closemessage
+	destroy_field_pic 3
 # 293 "data/maps/Route1/scripts.pory"
-	applymovement 3, Route1_Movement_RivalExit
+	closemessage
 # 294 "data/maps/Route1/scripts.pory"
-	waitmovement 0
+	applymovement 3, Route1_Movement_RivalExit
 # 295 "data/maps/Route1/scripts.pory"
-	removeobject 3
-# 296 "data/maps/Route1/scripts.pory"
-	applymovement 4, Common_Movement_FaceDown
-# 297 "data/maps/Route1/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 298 "data/maps/Route1/scripts.pory"
 	waitmovement 0
+# 296 "data/maps/Route1/scripts.pory"
+	removeobject 3
+# 297 "data/maps/Route1/scripts.pory"
+	applymovement 4, Common_Movement_FaceDown
+# 298 "data/maps/Route1/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 299 "data/maps/Route1/scripts.pory"
-	load_field_pic 4, 190, 98
+	waitmovement 0
 # 300 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Leaf3
-# 301 "data/maps/Route1/scripts.pory"
-	closemessage
-# 302 "data/maps/Route1/scripts.pory"
-	destroy_field_pic 4
-# 303 "data/maps/Route1/scripts.pory"
-	call Common_EventScript_OutOfCenterPartyHeal
-# 304 "data/maps/Route1/scripts.pory"
 	load_field_pic 4, 190, 98
-# 305 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Leaf4
-# 306 "data/maps/Route1/scripts.pory"
+# 301 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Leaf3
+# 302 "data/maps/Route1/scripts.pory"
 	closemessage
+# 303 "data/maps/Route1/scripts.pory"
+	destroy_field_pic 4
+# 304 "data/maps/Route1/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
+# 305 "data/maps/Route1/scripts.pory"
+	load_field_pic 4, 190, 98
+# 306 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_Leaf4
 # 307 "data/maps/Route1/scripts.pory"
+	closemessage
+# 308 "data/maps/Route1/scripts.pory"
 	destroy_field_pic 4
 	return
 
 
 Route1_EventScript_Boy::
-# 312 "data/maps/Route1/scripts.pory"
-	lockall
 # 313 "data/maps/Route1/scripts.pory"
-	faceplayer
+	lockall
 # 314 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_Boy1
+	faceplayer
 # 315 "data/maps/Route1/scripts.pory"
-	closemessage
+	msgbox Route1_Text_Boy1
 # 316 "data/maps/Route1/scripts.pory"
+	closemessage
+# 317 "data/maps/Route1/scripts.pory"
 	releaseall
 	end
 
 
 Route1_EventScript_BugCatcher::
-# 320 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_ETIENNE, Route1_Text_BugCatcherFight, Route1_Text_BugCatcherLost
 # 321 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_BugCatcherPost
+	trainerbattle_single TRAINER_ETIENNE, Route1_Text_BugCatcherFight, Route1_Text_BugCatcherLost
 # 322 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_BugCatcherPost
+# 323 "data/maps/Route1/scripts.pory"
 	closemessage
 	end
 
 
 Route1_EventScript_Lass::
-# 327 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_KIM, Route1_Text_LassFight, Route1_Text_LassLost
 # 328 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_LassPost
+	trainerbattle_single TRAINER_KIM, Route1_Text_LassFight, Route1_Text_LassLost
 # 329 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_LassPost
+# 330 "data/maps/Route1/scripts.pory"
 	closemessage
 	end
 
 
 Route1_EventScript_LittleBoy::
-# 334 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_LOGAN, Route1_Text_LittleBoyFight, Route1_Text_LittleBoyLost
 # 335 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Text_LittleBoyPost
+	trainerbattle_single TRAINER_LOGAN, Route1_Text_LittleBoyFight, Route1_Text_LittleBoyLost
 # 336 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Text_LittleBoyPost
+# 337 "data/maps/Route1/scripts.pory"
 	closemessage
 	end
 
 
-# 340 "data/maps/Route1/scripts.pory"
-Route1_Movement_FaceDown:
 # 341 "data/maps/Route1/scripts.pory"
+Route1_Movement_FaceDown:
+# 342 "data/maps/Route1/scripts.pory"
 	face_down
 	step_end
 
-# 344 "data/maps/Route1/scripts.pory"
-Route1_Movement_FaceLeft:
 # 345 "data/maps/Route1/scripts.pory"
+Route1_Movement_FaceLeft:
+# 346 "data/maps/Route1/scripts.pory"
 	face_left
 	step_end
 
-# 348 "data/maps/Route1/scripts.pory"
+# 349 "data/maps/Route1/scripts.pory"
 Route1_Movement_LeafWalk1:
-# 349 "data/maps/Route1/scripts.pory"
-	walk_left
-# 349 "data/maps/Route1/scripts.pory"
+# 350 "data/maps/Route1/scripts.pory"
 	walk_left
 # 350 "data/maps/Route1/scripts.pory"
+	walk_left
+# 351 "data/maps/Route1/scripts.pory"
 	walk_up
 	step_end
 
-# 353 "data/maps/Route1/scripts.pory"
+# 354 "data/maps/Route1/scripts.pory"
 Route1_Movement_LeafWalk2:
-# 354 "data/maps/Route1/scripts.pory"
-	walk_left
-# 354 "data/maps/Route1/scripts.pory"
+# 355 "data/maps/Route1/scripts.pory"
 	walk_left
 # 355 "data/maps/Route1/scripts.pory"
+	walk_left
+# 356 "data/maps/Route1/scripts.pory"
 	face_up
 	step_end
 
-# 358 "data/maps/Route1/scripts.pory"
-Route1_Movement_LeafWalk3:
 # 359 "data/maps/Route1/scripts.pory"
+Route1_Movement_LeafWalk3:
+# 360 "data/maps/Route1/scripts.pory"
 	walk_left
 	step_end
 
-# 363 "data/maps/Route1/scripts.pory"
-Route1_Movement_LeafStepLU:
 # 364 "data/maps/Route1/scripts.pory"
-	walk_left
+Route1_Movement_LeafStepLU:
 # 365 "data/maps/Route1/scripts.pory"
-	walk_up
+	walk_left
 # 366 "data/maps/Route1/scripts.pory"
+	walk_up
+# 367 "data/maps/Route1/scripts.pory"
 	face_down
 	step_end
 
-# 369 "data/maps/Route1/scripts.pory"
-Route1_Movement_LeafStepUL:
 # 370 "data/maps/Route1/scripts.pory"
-	walk_up
+Route1_Movement_LeafStepUL:
 # 371 "data/maps/Route1/scripts.pory"
-	walk_left
+	walk_up
 # 372 "data/maps/Route1/scripts.pory"
+	walk_left
+# 373 "data/maps/Route1/scripts.pory"
 	face_right
 	step_end
 
-# 375 "data/maps/Route1/scripts.pory"
+# 376 "data/maps/Route1/scripts.pory"
 Route1_Movement_RivalStep1:
-# 376 "data/maps/Route1/scripts.pory"
-	walk_left
-# 376 "data/maps/Route1/scripts.pory"
+# 377 "data/maps/Route1/scripts.pory"
 	walk_left
 # 377 "data/maps/Route1/scripts.pory"
-	walk_up
-# 377 "data/maps/Route1/scripts.pory"
+	walk_left
+# 378 "data/maps/Route1/scripts.pory"
 	walk_up
 # 378 "data/maps/Route1/scripts.pory"
+	walk_up
+# 379 "data/maps/Route1/scripts.pory"
 	face_left
 	step_end
 
-# 381 "data/maps/Route1/scripts.pory"
+# 382 "data/maps/Route1/scripts.pory"
 Route1_Movement_RivalStep2:
-# 382 "data/maps/Route1/scripts.pory"
-	walk_left
-# 382 "data/maps/Route1/scripts.pory"
+# 383 "data/maps/Route1/scripts.pory"
 	walk_left
 # 383 "data/maps/Route1/scripts.pory"
-	walk_up
+	walk_left
 # 384 "data/maps/Route1/scripts.pory"
+	walk_up
+# 385 "data/maps/Route1/scripts.pory"
 	face_left
 	step_end
 
-# 387 "data/maps/Route1/scripts.pory"
+# 388 "data/maps/Route1/scripts.pory"
 Route1_Movement_RivalStep3:
-# 388 "data/maps/Route1/scripts.pory"
+# 389 "data/maps/Route1/scripts.pory"
 	walk_left
-# 388 "data/maps/Route1/scripts.pory"
+# 389 "data/maps/Route1/scripts.pory"
 	walk_left
 	step_end
 
-# 391 "data/maps/Route1/scripts.pory"
+# 392 "data/maps/Route1/scripts.pory"
 Route1_Movement_Player1:
-# 392 "data/maps/Route1/scripts.pory"
+# 393 "data/maps/Route1/scripts.pory"
 	walk_down
-# 392 "data/maps/Route1/scripts.pory"
+# 393 "data/maps/Route1/scripts.pory"
 	walk_down
 	step_end
 
-# 395 "data/maps/Route1/scripts.pory"
-Route1_Movement_Player2:
 # 396 "data/maps/Route1/scripts.pory"
+Route1_Movement_Player2:
+# 397 "data/maps/Route1/scripts.pory"
 	walk_down
 	step_end
 
-# 399 "data/maps/Route1/scripts.pory"
-Route1_Movement_PlayerStep1:
 # 400 "data/maps/Route1/scripts.pory"
+Route1_Movement_PlayerStep1:
+# 401 "data/maps/Route1/scripts.pory"
 	walk_down
 	step_end
 
-# 403 "data/maps/Route1/scripts.pory"
+# 404 "data/maps/Route1/scripts.pory"
 Route1_Movement_RivalExit:
-# 404 "data/maps/Route1/scripts.pory"
-	walk_right
-# 404 "data/maps/Route1/scripts.pory"
+# 405 "data/maps/Route1/scripts.pory"
 	walk_right
 # 405 "data/maps/Route1/scripts.pory"
+	walk_right
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
-# 405 "data/maps/Route1/scripts.pory"
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
-# 405 "data/maps/Route1/scripts.pory"
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
-# 405 "data/maps/Route1/scripts.pory"
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
-# 405 "data/maps/Route1/scripts.pory"
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
-# 405 "data/maps/Route1/scripts.pory"
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
-# 405 "data/maps/Route1/scripts.pory"
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
-# 405 "data/maps/Route1/scripts.pory"
+# 406 "data/maps/Route1/scripts.pory"
 	walk_down
 	step_end
 
-# 408 "data/maps/Route1/scripts.pory"
+# 409 "data/maps/Route1/scripts.pory"
 Route1_Movement_BlueScene_Player1:
-# 409 "data/maps/Route1/scripts.pory"
-	walk_down
-# 409 "data/maps/Route1/scripts.pory"
+# 410 "data/maps/Route1/scripts.pory"
 	walk_down
 # 410 "data/maps/Route1/scripts.pory"
-	face_right
-	step_end
-
-# 413 "data/maps/Route1/scripts.pory"
-Route1_Movement_BlueScene_Player2:
-# 414 "data/maps/Route1/scripts.pory"
 	walk_down
+# 411 "data/maps/Route1/scripts.pory"
+	face_right
+	step_end
+
+# 414 "data/maps/Route1/scripts.pory"
+Route1_Movement_BlueScene_Player2:
 # 415 "data/maps/Route1/scripts.pory"
+	walk_down
+# 416 "data/maps/Route1/scripts.pory"
 	face_right
 	step_end
 
-# 418 "data/maps/Route1/scripts.pory"
-Route1_Movement_BlueScene_Player3:
 # 419 "data/maps/Route1/scripts.pory"
+Route1_Movement_BlueScene_Player3:
+# 420 "data/maps/Route1/scripts.pory"
 	face_right
 	step_end
 
-# 422 "data/maps/Route1/scripts.pory"
-Route1_Movement_BlueScene_Player4:
 # 423 "data/maps/Route1/scripts.pory"
-	walk_up
+Route1_Movement_BlueScene_Player4:
 # 424 "data/maps/Route1/scripts.pory"
+	walk_up
+# 425 "data/maps/Route1/scripts.pory"
 	face_right
 	step_end
 
-# 427 "data/maps/Route1/scripts.pory"
+# 428 "data/maps/Route1/scripts.pory"
 Route1_Movement_BlueScene_Player5:
-# 428 "data/maps/Route1/scripts.pory"
-	walk_up
-# 428 "data/maps/Route1/scripts.pory"
+# 429 "data/maps/Route1/scripts.pory"
 	walk_up
 # 429 "data/maps/Route1/scripts.pory"
+	walk_up
+# 430 "data/maps/Route1/scripts.pory"
 	face_right
 	step_end
 
-# 432 "data/maps/Route1/scripts.pory"
+# 433 "data/maps/Route1/scripts.pory"
 Route1_Movement_BlueLeafEnter:
-# 433 "data/maps/Route1/scripts.pory"
+# 434 "data/maps/Route1/scripts.pory"
 	walk_down
-# 433 "data/maps/Route1/scripts.pory"
+# 434 "data/maps/Route1/scripts.pory"
 	walk_down
-# 433 "data/maps/Route1/scripts.pory"
+# 434 "data/maps/Route1/scripts.pory"
 	walk_down
 	step_end
 
-# 436 "data/maps/Route1/scripts.pory"
+# 437 "data/maps/Route1/scripts.pory"
 Route1_Movement_LeafToPlayer:
-# 437 "data/maps/Route1/scripts.pory"
+# 438 "data/maps/Route1/scripts.pory"
 	walk_left
-# 437 "data/maps/Route1/scripts.pory"
+# 438 "data/maps/Route1/scripts.pory"
 	walk_left
 	step_end
 
-# 440 "data/maps/Route1/scripts.pory"
-Route1_Movement_LeafBehindPlayer:
 # 441 "data/maps/Route1/scripts.pory"
-	walk_down
+Route1_Movement_LeafBehindPlayer:
 # 442 "data/maps/Route1/scripts.pory"
-	walk_left
+	walk_down
 # 443 "data/maps/Route1/scripts.pory"
+	walk_left
+# 444 "data/maps/Route1/scripts.pory"
 	face_up
 	step_end
 
-# 446 "data/maps/Route1/scripts.pory"
+# 447 "data/maps/Route1/scripts.pory"
 Route1_Movement_BlueToPlayer:
-# 447 "data/maps/Route1/scripts.pory"
-	walk_left
-# 447 "data/maps/Route1/scripts.pory"
-	walk_left
-# 447 "data/maps/Route1/scripts.pory"
+# 448 "data/maps/Route1/scripts.pory"
 	walk_left
 # 448 "data/maps/Route1/scripts.pory"
+	walk_left
+# 448 "data/maps/Route1/scripts.pory"
+	walk_left
+# 449 "data/maps/Route1/scripts.pory"
 	face_down
 	step_end
 
-# 451 "data/maps/Route1/scripts.pory"
-Route1_Movement_ZubatToPlayer:
 # 452 "data/maps/Route1/scripts.pory"
+Route1_Movement_ZubatToPlayer:
+# 453 "data/maps/Route1/scripts.pory"
 	walk_down
-# 453 "data/maps/Route1/scripts.pory"
-	walk_left
-# 453 "data/maps/Route1/scripts.pory"
+# 454 "data/maps/Route1/scripts.pory"
 	walk_left
 # 454 "data/maps/Route1/scripts.pory"
+	walk_left
+# 455 "data/maps/Route1/scripts.pory"
 	face_down
 	step_end
 
-# 457 "data/maps/Route1/scripts.pory"
+# 458 "data/maps/Route1/scripts.pory"
 Route1_Movement_BlueExit:
-# 458 "data/maps/Route1/scripts.pory"
-	walk_right
-# 458 "data/maps/Route1/scripts.pory"
+# 459 "data/maps/Route1/scripts.pory"
 	walk_right
 # 459 "data/maps/Route1/scripts.pory"
+	walk_right
+# 460 "data/maps/Route1/scripts.pory"
 	walk_up
-# 459 "data/maps/Route1/scripts.pory"
+# 460 "data/maps/Route1/scripts.pory"
 	walk_up
-# 459 "data/maps/Route1/scripts.pory"
+# 460 "data/maps/Route1/scripts.pory"
 	walk_up
-# 459 "data/maps/Route1/scripts.pory"
+# 460 "data/maps/Route1/scripts.pory"
 	walk_up
-# 459 "data/maps/Route1/scripts.pory"
+# 460 "data/maps/Route1/scripts.pory"
 	walk_up
 	step_end
 
@@ -788,38 +790,38 @@ Route1_EventScript_BlueScene_Text_1:
 	.string "VAR_TEMP_A OOB$"
 
 Route1_Text_RockWarp::
-# 463 "data/maps/Route1/scripts.pory"
+# 464 "data/maps/Route1/scripts.pory"
 	.string "Wanna warp - test?$"
 
 Route1_Text_Rival1::
-# 467 "data/maps/Route1/scripts.pory"
+# 468 "data/maps/Route1/scripts.pory"
 	.string "Come with me babe, today's your lucky\n"
 	.string "day.$"
 
 Route1_Text_Rival2::
-# 471 "data/maps/Route1/scripts.pory"
+# 472 "data/maps/Route1/scripts.pory"
 	.string "You stop right there, we're doing things\n"
 	.string "my way!$"
 
 Route1_Text_Rival3::
-# 475 "data/maps/Route1/scripts.pory"
+# 476 "data/maps/Route1/scripts.pory"
 	.string "Now where are you...\p"
 	.string "and who are YOU?$"
 
 Route1_Text_Rival4::
-# 479 "data/maps/Route1/scripts.pory"
+# 480 "data/maps/Route1/scripts.pory"
 	.string "You think that you can steal my girl\n"
 	.string "from me? I'll show you which one of us is\l"
 	.string "the man.$"
 
 Route1_Text_RivalLost::
-# 483 "data/maps/Route1/scripts.pory"
+# 484 "data/maps/Route1/scripts.pory"
 	.string "Humpty?\p"
 	.string "Humpty!??\p"
 	.string "Noooo!$"
 
 Route1_Text_Rival5::
-# 487 "data/maps/Route1/scripts.pory"
+# 488 "data/maps/Route1/scripts.pory"
 	.string "My God!\p"
 	.string "Humpty it's Daddy can you hear my\n"
 	.string "broken voice or feel my stinging tears?\l"
@@ -831,17 +833,17 @@ Route1_Text_Rival5::
 	.string "freedom wins.$"
 
 Route1_Text_Leaf1::
-# 491 "data/maps/Route1/scripts.pory"
+# 492 "data/maps/Route1/scripts.pory"
 	.string "The storm has passed! I want to go back\n"
 	.string "home!$"
 
 Route1_Text_Leaf2::
-# 495 "data/maps/Route1/scripts.pory"
+# 496 "data/maps/Route1/scripts.pory"
 	.string "Oh {PLAYER}! Thank God you're here!\n"
 	.string "Please help me out!$"
 
 Route1_Text_Leaf3::
-# 499 "data/maps/Route1/scripts.pory"
+# 500 "data/maps/Route1/scripts.pory"
 	.string "That monster kidnapped me and kept me\n"
 	.string "locked away all night doing unspeakable\l"
 	.string "things to me while the storm raged on\l"
@@ -853,23 +855,23 @@ Route1_Text_Leaf3::
 	.string "your Pokemon.$"
 
 Route1_Text_Leaf4::
-# 503 "data/maps/Route1/scripts.pory"
+# 504 "data/maps/Route1/scripts.pory"
 	.string "Thank you so much {PLAYER}! Now come\n"
 	.string "with me, I want you to meet my father\l"
 	.string "who must be worried sick 'bout me.$"
 
 Route1_Text_Blue1::
-# 507 "data/maps/Route1/scripts.pory"
+# 508 "data/maps/Route1/scripts.pory"
 	.string "Get back here this instant! Don't\n"
 	.string "ignore me!$"
 
 Route1_Text_Blue2::
-# 511 "data/maps/Route1/scripts.pory"
+# 512 "data/maps/Route1/scripts.pory"
 	.string "You stop right there! We're doing things\n"
 	.string "my way!$"
 
 Route1_Text_Blue3::
-# 515 "data/maps/Route1/scripts.pory"
+# 516 "data/maps/Route1/scripts.pory"
 	.string "I'll warn you, step aside or face the\n"
 	.string "wrath of the great terror who lives in\l"
 	.string "the trees. I walk under the shadow of\l"
@@ -884,11 +886,11 @@ Route1_Text_Blue3::
 	.string "So be it.$"
 
 Route1_Text_BlueLost::
-# 519 "data/maps/Route1/scripts.pory"
+# 520 "data/maps/Route1/scripts.pory"
 	.string "Impossible! I've never lost before!$"
 
 Route1_Text_Blue4::
-# 523 "data/maps/Route1/scripts.pory"
+# 524 "data/maps/Route1/scripts.pory"
 	.string "Though beaten, my destiny is assured...\n"
 	.string "Enjoy this rotten rag you've won from\l"
 	.string "me. I squeezed every ounce of worth\l"
@@ -901,43 +903,43 @@ Route1_Text_Blue4::
 	.string "strike you down to revenge this defeat.$"
 
 Route1_Text_Boy1::
-# 527 "data/maps/Route1/scripts.pory"
+# 528 "data/maps/Route1/scripts.pory"
 	.string "Be careful friend the roads are\n"
 	.string "dangerous and filled with wild beasts\l"
 	.string "and criminals.$"
 
 Route1_Text_BugCatcherFight::
-# 531 "data/maps/Route1/scripts.pory"
+# 532 "data/maps/Route1/scripts.pory"
 	.string "Hey, check out my bugs!$"
 
 Route1_Text_BugCatcherLost::
-# 535 "data/maps/Route1/scripts.pory"
+# 536 "data/maps/Route1/scripts.pory"
 	.string "Dude, what did you do to my bugs?$"
 
 Route1_Text_BugCatcherPost::
-# 539 "data/maps/Route1/scripts.pory"
+# 540 "data/maps/Route1/scripts.pory"
 	.string "I don't think we should talk anymore.$"
 
 Route1_Text_LassFight::
-# 543 "data/maps/Route1/scripts.pory"
+# 544 "data/maps/Route1/scripts.pory"
 	.string "Wow! {PLAYER} you came back for me.$"
 
 Route1_Text_LassLost::
-# 547 "data/maps/Route1/scripts.pory"
+# 548 "data/maps/Route1/scripts.pory"
 	.string "Heartbroken again.$"
 
 Route1_Text_LassPost::
-# 551 "data/maps/Route1/scripts.pory"
+# 552 "data/maps/Route1/scripts.pory"
 	.string "Get out of here! I'll never love again...$"
 
 Route1_Text_LittleBoyFight::
-# 555 "data/maps/Route1/scripts.pory"
+# 556 "data/maps/Route1/scripts.pory"
 	.string "Dude, weed!$"
 
 Route1_Text_LittleBoyLost::
-# 559 "data/maps/Route1/scripts.pory"
+# 560 "data/maps/Route1/scripts.pory"
 	.string "Dang, I got smoked.$"
 
 Route1_Text_LittleBoyPost::
-# 563 "data/maps/Route1/scripts.pory"
+# 564 "data/maps/Route1/scripts.pory"
 	.string "Maybe we can smoke sometime?$"

@@ -155,7 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_SILVANWOODS_SCOTT"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
@@ -363,7 +363,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_SILVANWOODS_HIDEFIGHT2"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
@@ -376,7 +376,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_SILVANWOODS_HIDEFIGHT2"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KIRLIA",
@@ -389,7 +389,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_SILVANWOODS_HIDEFIGHT2"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FLANNERY",
@@ -480,7 +480,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ROUTE1_RIVAL"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",

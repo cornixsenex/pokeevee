@@ -1,4 +1,8 @@
+const FIELD_PIC_LEAF = 4
+const FIELD_PIC_SCOTT = 33
 
+const OBJ_EVENT_LEAF = 2
+const OBJ_EVENT_SCOTT = 1
 
 mapscripts Aldeon_Leaf_House_MapScripts {	
 	MAP_SCRIPT_ON_TRANSITION {
@@ -7,86 +11,163 @@ mapscripts Aldeon_Leaf_House_MapScripts {
 		}
 	}
 
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_GRANNY_STATE, 15: Tucson_Script_FacePlayerNorth
+	]
+
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_GRANNY_STATE, 15: Aldeon_Leaf_House_IntroScene
 	]
 }
 
 script Aldeon_Leaf_House_Script_ShowLeafScene {
+	setobjectxyperm (OBJ_EVENT_SCOTT, 8, 8)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_LEAF, 7, 12)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
 
 	return
 }
 
 script Aldeon_Leaf_House_IntroScene {
 	lockall
-	applymovement (1, Common_Movement_FaceRight)
-	applymovement (2, Common_Movement_FaceLeft)
+	//stop frame table, setup Mew at cabin
+	setvar (VAR_GRANNY_STATE, 16)
+	//Alert Scott
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	applymovement (2, Aldeon_Leaf_House_Movement_Leaf1)
-	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_Movement_Player1)
-	load_field_pic (4, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Leaf1)
-	waitmovement (0)
-	destroy_field_pic (4)	
-	load_field_pic (5, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Dad1)
+	//S: Leaf...
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Scott1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	//L: Daddy I'm home	
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf1, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
-	destroy_field_pic (5)
-	applymovement (2, Aldeon_Leaf_House_Movement_Leaf2)	
-	applymovement (OBJ_EVENT_ID_PLAYER, Aldeon_Leaf_House_Movement_Player2)
+	//They walk to each other
+	applymovement (OBJ_EVENT_LEAF, Aldeon_Leaf_House_Movement_LeafToScott)
+	applymovement (OBJ_EVENT_SCOTT, Aldeon_Leaf_House_Movement_ScottToLeaf)
 	waitmovement (0)
-	load_field_pic (5, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Dad2)
-	destroy_field_pic (5)
-	load_field_pic (4, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Leaf2)
+	//S: I thought you were dead - mention Mew, where's Igglybuff?
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Scott2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	//L: Nah I was kidnapped but player saved me	
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf2, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//S: Someone tried to hurt you...who
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Scott3, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	//L:I'm Ok...finish story all thanks to one brave boy
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf3A, MSGBOX_DEFAULT)
+	//Turn leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
 	waitmovement (0)
-	destroy_field_pic (4)	
-	load_field_pic (5, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Dad3)
-	destroy_field_pic (5)
-	load_field_pic (4, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Leaf3)
+	//L: Come here player
+	msgbox (Aldeon_Leaf_House_Text_Leaf3B, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	closemessage
+	//player approach
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
 	waitmovement (0)
-	destroy_field_pic (4)
-	load_field_pic (5, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Dad4)
-	destroy_field_pic (5)
-	load_field_pic (4, 190, 98)
-	applymovement (2, Common_Movement_ExclamationMark)
+	//Turn leaf back to Scott
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
 	waitmovement (0)
-	msgbox (Aldeon_Leaf_House_Text_Leaf4)
-	destroy_field_pic (4)
-	load_field_pic (5, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Dad5)
-	destroy_field_pic (5)
-	load_field_pic (4, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Leaf5)
-	destroy_field_pic (4)
-	load_field_pic (5, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Dad6)
-	destroy_field_pic (5)
-	additem (ITEM_POKE_BALL, 5)
-	playfanfare (MUS_OBTAIN_ITEM)
-	msgbox (Aldeon_Leaf_House_Text_DexBallGet)
-	load_field_pic (5, 190, 98)
-	msgbox (Aldeon_Leaf_House_Text_Dad7)
-	destroy_field_pic (5)
-	closemessage	
-	applymovement (1, Aldeon_Movement_DadStepDown)
-	applymovement (2, Aldeon_Movement_LeafStepDown)
+	//L: This is player who has always kept me safe and single handedly delivered me back from peril
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf3C, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//Scott turn down
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceDown)
 	waitmovement (0)
-	applymovement (1, Aldeon_Movement_DadExit)
-	applymovement (2, Aldeon_Movement_DadExit)
+	//S: Thank you, very nice man
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Scott4A, MSGBOX_DEFAULT)
+	//Scott turn back to leaf
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceLeft)
 	waitmovement (0)
-	removeobject (1)
-	removeobject (2)
-	setflag (FLAG_MEW_NOTDONE)
-	clearflag (FLAG_HIDE_GRANDMASCABIN_MEW)
+	//S: But who would do this to you?
+	msgbox (Aldeon_Leaf_House_Text_Scott4B, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	//L: IDK his name (some monster)
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf4A, MSGBOX_DEFAULT)
+	//Turn leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
+	waitmovement (0)
+	//L: Do you know his name, player?
+	msgbox (Aldeon_Leaf_House_Text_Leaf4B, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//Name Rival
+	special (NameRival)
+	waitstate
+	//L: aknowlege name
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf4C, MSGBOX_DEFAULT)
+	//leaf turn back to scott
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
+	waitmovement (0)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//S: He's lucky I wasn't there you're capable man player it's an unusual time mew has returned
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Scott5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	//L: You mean that vision we're all having is the real deal / legendary Mew
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf5, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//S: Yes I didn't believe it at first either but it must be true
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Scott6, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	//L: We must go to Clara City and visit the church of Mew
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf6, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//S: Address Leaf: Not a girl anymore but must protect Igglybuff better
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Scott7A, MSGBOX_DEFAULT)
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceDown)
+	waitmovement (0)
+	//S: Addres Player: You have done this (save leaf, graduate) but the road is long and it is unknown to anyone what could await us in Saeclara. I would say goodbye to your family before goin and meet be in my Lotus Shop in Bulbus before we cross the river into Saeclara
+	msgbox (Aldeon_Leaf_House_Text_Scott7B, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	closemessage
+	//Scott exit
+	applymovement (OBJ_EVENT_SCOTT, Aldeon_Leaf_House_Movement_ScottExit)
+	waitmovement (0)
+	hideobjectat (OBJ_EVENT_SCOTT, MAP_ALDEON_LEAF_HOUSE)
+	removeobject (OBJ_EVENT_SCOTT)
+	//Leaf approach Player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_LEAF, Aldeon_Leaf_House_Movement_LeafToPlayer)
+	waitmovement (0)
+	//L: Sleep in my bed if you must. Dont delay!
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Aldeon_Leaf_House_Text_Leaf7, MSGBOX_DEFAULT)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	closemessage
+	//exit leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkDown)
+	waitmovement (0)
+	hideobjectat (OBJ_EVENT_LEAF, MAP_ALDEON_LEAF_HOUSE)
+	removeobject (OBJ_EVENT_LEAF)
+	//persist hidden Leaf et Scott
+	setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+	
+	setobjectxyperm (OBJ_EVENT_SCOTT, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
+	
 	releaseall
 	end
-}	
-
+}
+	
 script Aldeon_Leaf_House_EventScript_ScottBed {
 	lockall
 	msgbox(Aldeon_Leaf_House_Text_ScottBed, MSGBOX_YESNO)
@@ -149,8 +230,30 @@ movement Aldeon_Movement_DadExit {
 	walk_down * 7
 }	
 
-text Aldeon_Leaf_House_Text_Leaf1 {
-	format("Daddy there's someone I want you to meet.")
+movement Aldeon_Leaf_House_Movement_LeafToScott {
+	walk_up * 2
+	face_right
+}
+
+movement Aldeon_Leaf_House_Movement_ScottToLeaf {
+	walk_down * 2
+	face_left
+}
+
+movement Aldeon_Leaf_House_Movement_LeafToPlayer {
+	walk_down
+	face_right
+}
+
+movement Aldeon_Leaf_House_Movement_LeafExit {
+	walk_down * 2
+}
+
+movement Aldeon_Leaf_House_Movement_ScottExit {
+	walk_right
+	walk_down * 2
+	walk_left
+	face_down
 }
 
 text Aldeon_Leaf_House_Text_Dad1 {
@@ -161,32 +264,16 @@ text Aldeon_Leaf_House_Text_Dad2 {
 	format("You seem allright\nWhat's up? My name is Scott.\p So, what is he your boyfriend or...?")
 }
 
-text Aldeon_Leaf_House_Text_Leaf2 {
-	format("A friend. Young master {PLAYER} here rescued me from a viscious incel who tried to assualt me.")
-}
-
 text Aldeon_Leaf_House_Text_Dad3 {
 	format ("Some shithead tried to hurt...")
-}
-
-text Aldeon_Leaf_House_Text_Leaf3 {
-	format("Daddy, I'm fine. All thanks to {PLAYER} here {RIVAL} ran away.")
 }
 
 text Aldeon_Leaf_House_Text_Dad4 {
 	format("My God.. well {PLAYER} you have proven yourself a noble man and worthy in my eyes. You've come however at a special time. Have you two heard that Mew has come again?")
 }
 
-text Aldeon_Leaf_House_Text_Leaf4 {
-	format("The legendary Mew?")
-}
-
 text Aldeon_Leaf_House_Text_Dad5 {
 	format("The very same. At first I hardly thought the news was true, and I assumed it was propaganda to celebrate the party's victory but earlier as I was walking home I saw her flying south with my own eyes.")
-}
-
-text Aldeon_Leaf_House_Text_Leaf5 {
-	format("If this is true, then we should go at once!")
 }
 
 text Aldeon_Leaf_House_Text_Dad6 {
@@ -204,4 +291,86 @@ text Aldeon_Leaf_House_Text_Dad7 {
 text Aldeon_Leaf_House_Text_ScottBed {
 	format("It's Scott's Bed. Would you like to take a rest?")
 }
+
+
+text Aldeon_Leaf_House_Text_Scott1 {
+	format("Oh {LEAF}!")
+}
+
+text Aldeon_Leaf_House_Text_Scott2 {
+	format("Where have you been? When you didn't come home I feared the worst and thought that Mew herself appeared to me as comfort for losing my sweet daughter. I'm lost for words...I thought that you had died! What happened to you? Where's Igglybuff?")
+}
+
+text Aldeon_Leaf_House_Text_Scott3 {
+	format("Some shithead tried to hurt...!")
+}
+
+text Aldeon_Leaf_House_Text_Scott4A {
+	format("My name is Scott. It's nice to meet you, son. Thank you for saving {LEAF}.")
+}
+
+text Aldeon_Leaf_House_Text_Scott4B {
+	format("Now tell me who this bastard is who tried to take my daughter from me.")
+}
+
+text Aldeon_Leaf_House_Text_Scott5 {
+	format("Well {RIVAL} was lucky I wasn't there and he better hope that we never meet. I thank the stars themselves that {PLAYER} was there but these events coinciding with the mighty downpour and appearance of Mew convince me that there's something going on. Perhaps the end times, or a new age dawn, a pestilence, or a new government. One can't be sure but these recent events can mean only one thing: Mew has returned.")
+}
+
+text Aldeon_Leaf_House_Text_Scott6 {
+	format("The very same. Though I may not be a church going man, I recognize divine when I see it.")
+}
+
+text Aldeon_Leaf_House_Text_Scott7A {
+	format("I see the girl I sent to school is gone replaced by a woman matured by grief, emancipated by innocence lost, and ready to embark on adventure. We shall go together to Saeclara but you must learn from your recent mistakes. Do not fall victim to devious men, protect your Pokemon, keep yourself safe, and above all keep faith in your sucess.")
+}
+
+text Aldeon_Leaf_House_Text_Scott7B {
+	format("You are invited to join us, of course. The journey to see Mew is a long one, across rugged terrain, and far away. Since you have demonstrated your great strength, and graduated from the Trainer School, I invite you as my friend, and equal, to join me on the road to Saeclara. You probably should say goodbye to your family before you meet me at my Lotus Market by the Port of Bulbus.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf1 {
+	format("Daddy, I'm home.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf2 {
+	format("I was kidnapped! Igglybuff fainted...")
+}
+
+text Aldeon_Leaf_House_Text_Leaf3A {
+	format("Daddy! I'm fine! For just as Mew appeared to you last night she helped me to escape once the storm passed then Mr. {PLAYER} the brave defended me and thanks to him I have returned home safe.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf3B {
+	format("Please come here {PLAYER}, I want you to meet dad.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf3C {
+	format("Daddy, meet {PLAYER}.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf4A {
+	format("I don't know... I met him yesterday outside the school and followed him to his house in the trees.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf4B {
+	format("Did you happen to catch that monster's name?")
+}
+
+text Aldeon_Leaf_House_Text_Leaf4C {
+	format("That's right! That evil man's name was {RIVAL}.")
+}
+
+text Aldeon_Leaf_House_Text_Leaf5 {
+	format("The legendary Mew?")
+}
+
+text Aldeon_Leaf_House_Text_Leaf6 {
+	format("If this is true, we must journey to the ancient church on the lake in Saeclara where prophesy foretold Mew would appear!")
+}
+
+text Aldeon_Leaf_House_Text_Leaf7 {
+	format("Do not delay. We are setting off on a great journey to see the mythic Mew. If you grow wearey of the road you can go to my bed upstairs and take your rest. I'll meet you at my father's Lotus Shop.")
+}
+
 

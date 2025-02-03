@@ -52,9 +52,9 @@
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 
-#define FLAG_ROUTE1_RIVAL    0x28 // Used Flag - ...on Route1 yknow
-#define FLAG_MEW_NOTDONE     0x29 // Shows Pop+Leaf at home
-#define FLAG_HIDE_GRANDMASCABIN_MEW      0x2A // Hides Mew
+#define FLAG_UNUSED_0x028       0x28 // Unused Flag 
+#define FLAG_UNUSED_0x029       0x29 // UNUSED
+#define FLAG_UNUSED_0x02A       0x2A // UNUSED 
 #define FLAG_HASINSURANCE    0x2B // Allows Pokecenter Use
 #define FLAG_HIDE_BULBUSSCOTT 0x2C // Hide Scott in Bulbus Canna Center
 #define FLAG_HIDE_RT17_BLOCK1 0x2D // Hides the first block

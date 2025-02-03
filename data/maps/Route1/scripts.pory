@@ -211,6 +211,7 @@ script Route1_EventScript_BlueScene {
 	destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
 	//warp to leaf -> leaf house scene
+	warpsilent (MAP_ALDEON_LEAF_HOUSE, 8, 12)
 
 	release
 	end
