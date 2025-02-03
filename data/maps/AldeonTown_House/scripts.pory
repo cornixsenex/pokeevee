@@ -6,10 +6,14 @@ mapscripts AldeonTown_House_MapScripts {}
 script AldeonTown_House_EventScript_OldMan {
 	lockall
 	faceplayer
-	msgbox (AldeonTown_House_Text_OldMan1)
-	closemessage
-	call (Common_EventScript_OutOfCenterPartyHeal)
-	msgbox (AldeonTown_House_Text_OldMan2, MSGBOX_DEFAULT)
+	if (var(VAR_GRANNY_STATE) < 15) {
+		msgbox (AldeonTown_House_Text_OldMan1)
+		closemessage
+		call (Common_EventScript_OutOfCenterPartyHeal)
+		msgbox (AldeonTown_House_Text_OldMan2, MSGBOX_DEFAULT)
+	} else {
+		msgbox (AldeonTown_House_Text_OldMan3, MSGBOX_DEFAULT)
+	}
 	closemessage
 	applymovement (OBJ_EVENT_OLDMAN, Common_Movement_FaceDown)
 	waitmovement (0)
@@ -23,6 +27,10 @@ text AldeonTown_House_Text_OldMan1 {
 
 text AldeonTown_House_Text_OldMan2 {
 	format("Now don't you look better. Come back sometime.")
+}
+
+text AldeonTown_House_Text_OldMan3 {
+	format("I'm glad to see you survived the tempest unlike my brother, lately departed. He was ill when I returned and I held his hand as he took his final breath. As the sun rose I left to dig his grave when Mew herself appeared to pay respects. Though I am old, and know my time is near, the loss of one you love is still so sad...")
 }
 
 

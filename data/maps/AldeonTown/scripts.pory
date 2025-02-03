@@ -24,6 +24,10 @@ mapscripts AldeonTown_MapScripts {
 			call (AldeonTown_Script_SetupStorm2)
 		}
 
+		if (var(VAR_GRANNY_STATE) > 15) {
+			call (AldeonTown_Script_HideOldMan)
+		}
+
 	}
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -54,6 +58,14 @@ script AldeonTown_Script_ShowSnorlaxBlock {
 
 	return
 }
+
+script AldeonTown_Script_HideOldMan {
+	setobjectxyperm (OBJ_EVENT_OLDMAN, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_OLDMAN, MOVEMENT_TYPE_INVISIBLE)
+
+	return
+}
+
 
 script AldeonTown_Script_ShowBlueLeaf {
 	setobjectxyperm (OBJ_EVENT_ZUBAT, 23, 15)
@@ -213,15 +225,6 @@ script AldeonTown_Script_TriggerLeafBattle {
 	msgbox (AldeonTown_Text_Blue5, MSGBOX_DEFAULT)
 	destroy_field_pic (FIELD_PIC_BLUE)
 	closemessage
-	//Step 1
-	//applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
-	//applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
-	//applymovement (OBJ_EVENT_BLUE, Common_Movement_WalkRight)
-	//applymovement (OBJ_EVENT_ZUBAT, Common_Movement_WalkDown)
-	//waitmovement (0)
-	//applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
-	//applymovement (OBJ_EVENT_ZUBAT, Common_Movement_FaceRight)
-	//waitmovement (0)
 	//Blue: Girls only.	
 	applymovement (OBJ_EVENT_BLUE, Common_Movement_FaceUp)
 	waitmovement (0)
@@ -257,8 +260,6 @@ script AldeonTown_Script_TriggerLeafBattle {
 	setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_INVISIBLE)
 
 	playbgm(MUS_OLDALE, TRUE)
-	//Show BlueLeafBlock
-	//call (AldeonTown_Script_ShowBlueLeaf)
 
 	releaseall
 	end
@@ -321,7 +322,12 @@ script AldeonTown_EventScript_FatMan {
 		waitmovement (0)
 			
 	} else {
-		msgbox (AldeonTown_Text_FatMan, MSGBOX_DEFAULT)
+		specialvar (VAR_RESULT, RandDigit)
+		if (var(VAR_RESULT) > 8) {
+			msgbox (AldeonTown_Text_FatMan1, MSGBOX_DEFAULT)
+		} else {
+			msgbox (AldeonTown_Text_FatMan2, MSGBOX_DEFAULT)
+		}
 		closemessage
 	}
 	release
@@ -462,8 +468,12 @@ text AldeonTown_Text_StormBlock2 {
 	format("Go home! It isn't safe out! {LEAF} is lost!")
 }
 
-text AldeonTown_Text_FatMan {
+text AldeonTown_Text_FatMan1 {
 	format("Even after we were forced to join the Republic the government still mostly leaves us alone. Still, we miss the old days of the independant merchant guild running things around here. All those taxes we spend and what do we have to show for it? A whole lot of nothing!")
+}
+
+text AldeonTown_Text_FatMan2 {
+	format("Snorlax wandered off...told you he would leave!")
 }
 
 //I'm sorry but if you no business with Mr. Johnson then you need to leave.

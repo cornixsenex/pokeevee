@@ -20,11 +20,15 @@ mapscripts LoonixInsideReal_F2_MapScripts {
 
 
 script LoonixInsideReal_F2_Script_PC {
-	lockall
-	//special (DoPCTurnOnEffect)
+	lock
 	playse (SE_PC_ON)
-	msgbox (gText_PlayerHouseBootPC, MSGBOX_DEFAULT)
-	special (BedroomPC)
+	if (var(VAR_GRANNY_STATE) < 5) {
+		msgbox (gText_PlayerHouseBootPC, MSGBOX_DEFAULT)
+		special (BedroomPC)
+	} else {
+		setvar (VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE)
+		goto (EventScript_PCMainMenu)
+	}
 	waitstate
 	releaseall
 	end

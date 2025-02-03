@@ -689,8 +689,9 @@ CityClara_School_Text_RickyLost::
 CityClara_School_Text_RickyPost::
 # 339 "data/maps/CityClara_School/scripts.pory"
 	.string "If you're looking for a computer to\n"
-	.string "access the Pokemon Box System the old\l"
-	.string "men next door always let me use theirs.$"
+	.string "access the Pokemon Box System Pokemon\l"
+	.string "Centers will allow to use theirs free of\l"
+	.string "charge.$"
 
 CityClara_School_Text_PeterIntro::
 # 343 "data/maps/CityClara_School/scripts.pory"

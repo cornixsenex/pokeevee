@@ -12,6 +12,16 @@ script Aldeon_Leaf_House_2F_EventScript_Bed {
 	releaseall
 	end
 }
+
+script Aldeon_Leaf_House_2F_EventScript_PC {
+	lock
+	playse (SE_PC_ON)
+	setvar (VAR_0x8004, PC_LOCATION_MAYS_HOUSE)
+	goto (EventScript_PCMainMenu)
+	waitstate
+	releaseall
+	end
+}
 	
 text Aldeon_Leaf_House_2F_Text_Bed {
 	format("It's Leaf's bed!\p Would you like to take a rest?")

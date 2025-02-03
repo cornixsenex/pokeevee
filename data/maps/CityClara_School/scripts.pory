@@ -337,7 +337,7 @@ text CityClara_School_Text_RickyLost {
 }
 
 text CityClara_School_Text_RickyPost {
-	format("If you're looking for a computer to access the Pokemon Box System the old men next door always let me use theirs.")
+	format("If you're looking for a computer to access the Pokemon Box System Pokemon Centers will allow to use theirs free of charge.")
 }
 
 text CityClara_School_Text_PeterIntro {

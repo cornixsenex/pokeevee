@@ -498,7 +498,7 @@ text Route1_Text_Leaf2 {
 }
 
 text Route1_Text_Leaf3 {
-	format("That monster kidnapped me and kept me locked away all night doing unspeakable things to me while the storm raged on outside. I broke free and escaped as the sun rose and thought that Mew was showing me the way but if you were not here he would have caught me and brought me back to his lair. Let me heal your Pokemon.")
+	format("That monster kidnapped me and kept me locked away all night doing unspeakable things to me while the storm raged on outside. I broke free and escaped as the sun rose and thought that Mew was showing me the way but if you were not here he would have caught me and brought me back to his lair. Let me show my affection.")
 }
 
 text Route1_Text_Leaf4 {

@@ -851,8 +851,8 @@ Route1_Text_Leaf3::
 	.string "the sun rose and thought that Mew was\l"
 	.string "showing me the way but if you were not\l"
 	.string "here he would have caught me and\l"
-	.string "brought me back to his lair. Let me heal\l"
-	.string "your Pokemon.$"
+	.string "brought me back to his lair. Let me show\l"
+	.string "my affection.$"
 
 Route1_Text_Leaf4::
 # 504 "data/maps/Route1/scripts.pory"

@@ -2,7 +2,7 @@
   "id": "MAP_ALDEON_LEAF_HOUSE_2F",
   "name": "Aldeon_Leaf_House_2F",
   "layout": "LAYOUT_ALDEON_LEAF_HOUSE_2F",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_OLDALE",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -56,6 +56,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Aldeon_Leaf_House_2F_EventScript_Bed"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Aldeon_Leaf_House_2F_EventScript_PC"
     }
   ]
 }

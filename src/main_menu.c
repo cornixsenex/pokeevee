@@ -1309,7 +1309,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
-    PlayBGM(MUS_GYM);
+    PlayBGM(MUS_RG_ROUTE24);
     ShowBg(0);
     ShowBg(1);
 }
