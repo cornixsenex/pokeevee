@@ -644,6 +644,6 @@ Aldeon_Leaf_House_Text_Leaf7::
 # 372 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Do not delay. We are setting off on a\n"
 	.string "great journey to see the mythic Mew. If\l"
-	.string "you grow wearey of the road you can go\l"
+	.string "you grow weary of the road you can go\l"
 	.string "to my bed upstairs and take your rest.\l"
 	.string "I'll meet you at my father's Lotus Shop.$"
