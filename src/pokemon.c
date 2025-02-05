@@ -1218,7 +1218,22 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
     SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gSpeciesInfo[species].friendship);
     value = GetCurrentRegionMapSectionId();
-    SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
+	
+	//CornixSenex Custom to accomodate custom dynamic maps 
+	//Determine which map 
+	//then determine which "map" to return 
+	if (value == MAPSEC_DYNAMIC) {
+		//Route3 - Cove, Delta, River
+		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
+			if (gSaveBlock1Ptr->pos.x > 50) {
+				value = MAPSEC_RIVER_DELTA;
+			} else {
+				value = MAPSEC_CANELOS_COVE;
+			}
+		}
+	}
+    
+	SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
     SetBoxMonData(boxMon, MON_DATA_MET_GAME, &gGameVersion);
     value = ITEM_POKE_BALL;

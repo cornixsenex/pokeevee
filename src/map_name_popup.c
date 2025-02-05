@@ -193,7 +193,8 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_ALDEON - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_WOOD,
     [MAPSEC_VIA_ARBORUM - KANTO_MAPSEC_COUNT]   = MAPPOPUP_THEME_WOOD,
     [MAPSEC_PORTA_PILO - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_CAMELOS_COVE - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_STONE
+    [MAPSEC_CANELOS_COVE - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_STONE,
+    [MAPSEC_RIVER_DELTA - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_WOOD
 	
 };
 
@@ -531,6 +532,11 @@ static void ShowMapNamePopUpWindow(void)
         }
         StringCopy(withoutPrefixPtr, mapDisplayHeaderSource);
     }
+	else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
+	{
+        withoutPrefixPtr = &(mapDisplayHeader[3]);
+        GetMapNameGeneric(withoutPrefixPtr, gMapHeader.regionMapSectionId);
+	}
     else
     {
         withoutPrefixPtr = &(mapDisplayHeader[3]);

@@ -1597,13 +1597,28 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
     return str;
 }
 
-// TODO: probably needs a better name
+// CORNIX SENEX Touched this function to accomodate MAPSEC_DYNAMIC changes
+// Goal: Figure out which actual map we're on then determine which shown "map" 
+// to return depending on that map's specifications ( metatile type or x,y coords or whatever
+// CornixSenex 2.4.25
 u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 {
     switch (mapSecId)
     {
     case MAPSEC_DYNAMIC:
-        return StringCopy(dest, gText_Ferry);
+		//Route3 - Cove, Delta, River
+		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
+			DebugPrintf("TEST, X: %d", gSaveBlock1Ptr->pos.x);
+			//Check if RiverDelta
+			if (gSaveBlock1Ptr->pos.x > 50) {
+				return StringCopy(dest, gText_RiverDelta);
+			} else { // Default part of map => Cove
+				return StringCopy(dest, gText_CanelosCove);
+			}
+		}
+		//Default Map - Should never be reached
+		else
+			return StringCopy(dest, gText_Ferry);
     case MAPSEC_SECRET_BASE:
         return StringCopy(dest, gText_SecretBase);
     default:

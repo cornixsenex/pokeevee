@@ -1,12 +1,5 @@
 Route3_MapScripts::
-# 3 "data/maps/Route3/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, Route3_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
-
-Route3_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 4 "data/maps/Route3/scripts.pory"
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	return
 
 
 Route3_EventScript_LeafTrigger1::
@@ -383,263 +376,257 @@ Route3_Script_PortaTransition::
 	end
 
 
-Route3_Script_CamelosCoveTransition::
-# 245 "data/maps/Route3/scripts.pory"
-	special ShowMapNamePopup
-	end
-
-
-# 251 "data/maps/Route3/scripts.pory"
+# 243 "data/maps/Route3/scripts.pory"
 Route3_Movement_LeafIntro1:
-# 252 "data/maps/Route3/scripts.pory"
+# 244 "data/maps/Route3/scripts.pory"
 	walk_down
-# 253 "data/maps/Route3/scripts.pory"
+# 245 "data/maps/Route3/scripts.pory"
 	walk_right
-# 254 "data/maps/Route3/scripts.pory"
+# 246 "data/maps/Route3/scripts.pory"
 	walk_down
-# 255 "data/maps/Route3/scripts.pory"
+# 247 "data/maps/Route3/scripts.pory"
 	face_left
 	step_end
 
-# 258 "data/maps/Route3/scripts.pory"
+# 250 "data/maps/Route3/scripts.pory"
 Route3_Movement_LeafIntro2:
-# 259 "data/maps/Route3/scripts.pory"
+# 251 "data/maps/Route3/scripts.pory"
 	walk_down
-# 259 "data/maps/Route3/scripts.pory"
+# 251 "data/maps/Route3/scripts.pory"
 	walk_down
-# 260 "data/maps/Route3/scripts.pory"
+# 252 "data/maps/Route3/scripts.pory"
 	face_right
 	step_end
 
-# 263 "data/maps/Route3/scripts.pory"
+# 255 "data/maps/Route3/scripts.pory"
 Route3_Movement_LeafExit:
-# 264 "data/maps/Route3/scripts.pory"
+# 256 "data/maps/Route3/scripts.pory"
 	walk_up
-# 264 "data/maps/Route3/scripts.pory"
+# 256 "data/maps/Route3/scripts.pory"
 	walk_up
 	step_end
 
-# 267 "data/maps/Route3/scripts.pory"
+# 259 "data/maps/Route3/scripts.pory"
 Route3_Movement_RivalPlayer1:
-# 268 "data/maps/Route3/scripts.pory"
+# 260 "data/maps/Route3/scripts.pory"
 	walk_right
-# 269 "data/maps/Route3/scripts.pory"
+# 261 "data/maps/Route3/scripts.pory"
 	walk_down
-# 270 "data/maps/Route3/scripts.pory"
+# 262 "data/maps/Route3/scripts.pory"
 	walk_right
 	step_end
 
-# 273 "data/maps/Route3/scripts.pory"
+# 265 "data/maps/Route3/scripts.pory"
 Route3_Movement_RivalPlayer1B:
-# 274 "data/maps/Route3/scripts.pory"
+# 266 "data/maps/Route3/scripts.pory"
 	walk_right
-# 274 "data/maps/Route3/scripts.pory"
+# 266 "data/maps/Route3/scripts.pory"
 	walk_right
 	step_end
 
-# 277 "data/maps/Route3/scripts.pory"
+# 269 "data/maps/Route3/scripts.pory"
 Route3_Movement_Rival1:
-# 278 "data/maps/Route3/scripts.pory"
+# 270 "data/maps/Route3/scripts.pory"
 	walk_up
-# 278 "data/maps/Route3/scripts.pory"
+# 270 "data/maps/Route3/scripts.pory"
 	walk_up
-# 279 "data/maps/Route3/scripts.pory"
+# 271 "data/maps/Route3/scripts.pory"
 	walk_right
-# 279 "data/maps/Route3/scripts.pory"
+# 271 "data/maps/Route3/scripts.pory"
 	walk_right
-# 279 "data/maps/Route3/scripts.pory"
+# 271 "data/maps/Route3/scripts.pory"
 	walk_right
 	step_end
 
-# 282 "data/maps/Route3/scripts.pory"
+# 274 "data/maps/Route3/scripts.pory"
 Route3_Movement_Rival2:
-# 283 "data/maps/Route3/scripts.pory"
+# 275 "data/maps/Route3/scripts.pory"
 	walk_left
-# 283 "data/maps/Route3/scripts.pory"
+# 275 "data/maps/Route3/scripts.pory"
 	walk_left
-# 284 "data/maps/Route3/scripts.pory"
+# 276 "data/maps/Route3/scripts.pory"
 	walk_down
-# 284 "data/maps/Route3/scripts.pory"
+# 276 "data/maps/Route3/scripts.pory"
 	walk_down
 	step_end
 
-# 287 "data/maps/Route3/scripts.pory"
+# 279 "data/maps/Route3/scripts.pory"
 Route3_Movement_RivalLeafExit:
-# 288 "data/maps/Route3/scripts.pory"
+# 280 "data/maps/Route3/scripts.pory"
 	walk_up
-# 289 "data/maps/Route3/scripts.pory"
+# 281 "data/maps/Route3/scripts.pory"
 	walk_left
-# 289 "data/maps/Route3/scripts.pory"
+# 281 "data/maps/Route3/scripts.pory"
 	walk_left
-# 289 "data/maps/Route3/scripts.pory"
+# 281 "data/maps/Route3/scripts.pory"
 	walk_left
-# 289 "data/maps/Route3/scripts.pory"
+# 281 "data/maps/Route3/scripts.pory"
 	walk_left
-# 290 "data/maps/Route3/scripts.pory"
+# 282 "data/maps/Route3/scripts.pory"
 	walk_down
-# 290 "data/maps/Route3/scripts.pory"
+# 282 "data/maps/Route3/scripts.pory"
 	walk_down
-# 290 "data/maps/Route3/scripts.pory"
+# 282 "data/maps/Route3/scripts.pory"
 	walk_down
 	step_end
 
 Route3_Text_RossIntro::
-# 294 "data/maps/Route3/scripts.pory"
+# 286 "data/maps/Route3/scripts.pory"
 	.string "I'm learning how to swim! Here check\n"
 	.string "this out!$"
 
 Route3_Text_RossLost::
-# 298 "data/maps/Route3/scripts.pory"
+# 290 "data/maps/Route3/scripts.pory"
 	.string "Help mom I'm gonna drown!$"
 
 Route3_Text_RossPost::
-# 302 "data/maps/Route3/scripts.pory"
+# 294 "data/maps/Route3/scripts.pory"
 	.string "Wow you showed me! Looks like I need to\n"
 	.string "practice dog paddling.$"
 
 Route3_Text_IzzyIntro::
-# 307 "data/maps/Route3/scripts.pory"
+# 299 "data/maps/Route3/scripts.pory"
 	.string "Eww gross get away from me you weirdo!$"
 
 Route3_Text_IzzyLost::
-# 311 "data/maps/Route3/scripts.pory"
+# 303 "data/maps/Route3/scripts.pory"
 	.string "Please help please help!$"
 
 Route3_Text_IzzyPost::
-# 315 "data/maps/Route3/scripts.pory"
+# 307 "data/maps/Route3/scripts.pory"
 	.string "I think you made me wet.$"
 
 Route3_Text_RicardoIntro::
-# 319 "data/maps/Route3/scripts.pory"
+# 311 "data/maps/Route3/scripts.pory"
 	.string "I brought my son here to play on the\n"
 	.string "beach.$"
 
 Route3_Text_RicardoLost::
-# 323 "data/maps/Route3/scripts.pory"
+# 315 "data/maps/Route3/scripts.pory"
 	.string "You're making me look weak...$"
 
 Route3_Text_RicardoPost::
-# 327 "data/maps/Route3/scripts.pory"
+# 319 "data/maps/Route3/scripts.pory"
 	.string "Have you explored the cave carved in\n"
 	.string "the rock down by the sea?$"
 
 Route3_Text_PedroIntro::
-# 331 "data/maps/Route3/scripts.pory"
+# 323 "data/maps/Route3/scripts.pory"
 	.string "Me and my dad are gonna kick your ass!$"
 
 Route3_Text_PedroLost::
-# 335 "data/maps/Route3/scripts.pory"
+# 327 "data/maps/Route3/scripts.pory"
 	.string "Dad how did we just loose?$"
 
 Route3_Text_PedroPost::
-# 339 "data/maps/Route3/scripts.pory"
+# 331 "data/maps/Route3/scripts.pory"
 	.string "Okay, you're good.$"
 
 Route3_Text_MonicaIntro::
-# 343 "data/maps/Route3/scripts.pory"
+# 335 "data/maps/Route3/scripts.pory"
 	.string "Hey! Stay away from my children.$"
 
 Route3_Text_MonicaLost::
-# 347 "data/maps/Route3/scripts.pory"
+# 339 "data/maps/Route3/scripts.pory"
 	.string "You know, I'm still available.$"
 
 Route3_Text_MonicaPost::
-# 351 "data/maps/Route3/scripts.pory"
+# 343 "data/maps/Route3/scripts.pory"
 	.string "Nice to see you!$"
 
 Route3_Text_AmberIntro::
-# 355 "data/maps/Route3/scripts.pory"
+# 347 "data/maps/Route3/scripts.pory"
 	.string "My mommy took me and Ross to the beach!$"
 
 Route3_Text_AmberLost::
-# 359 "data/maps/Route3/scripts.pory"
+# 351 "data/maps/Route3/scripts.pory"
 	.string "No, Mom!$"
 
 Route3_Text_AmberPost::
-# 363 "data/maps/Route3/scripts.pory"
+# 355 "data/maps/Route3/scripts.pory"
 	.string "You hurt my feelings, go awawy.$"
 
 Route3_Text_DustinIntro::
-# 367 "data/maps/Route3/scripts.pory"
+# 359 "data/maps/Route3/scripts.pory"
 	.string "Hey man do you ever want to race birds?$"
 
 Route3_Text_DustinLost::
-# 371 "data/maps/Route3/scripts.pory"
+# 363 "data/maps/Route3/scripts.pory"
 	.string "That's not correct.$"
 
 Route3_Text_DustinPost::
-# 375 "data/maps/Route3/scripts.pory"
+# 367 "data/maps/Route3/scripts.pory"
 	.string "Did you go thrugh the woods?$"
 
 Route3_Text_JonIntro::
-# 379 "data/maps/Route3/scripts.pory"
+# 371 "data/maps/Route3/scripts.pory"
 	.string "Today I thought I'd be a fisherman.$"
 
 Route3_Text_JonLost::
-# 383 "data/maps/Route3/scripts.pory"
+# 375 "data/maps/Route3/scripts.pory"
 	.string "I've lost my fish...$"
 
 Route3_Text_JonPost::
-# 387 "data/maps/Route3/scripts.pory"
+# 379 "data/maps/Route3/scripts.pory"
 	.string "Let's drink a few more beers!$"
 
 Route3_Text_JoeIntro::
-# 391 "data/maps/Route3/scripts.pory"
+# 383 "data/maps/Route3/scripts.pory"
 	.string "My friend Jon ain't great at outdoorsy\n"
 	.string "stuff.$"
 
 Route3_Text_JoeLost::
-# 395 "data/maps/Route3/scripts.pory"
+# 387 "data/maps/Route3/scripts.pory"
 	.string "So much for that.$"
 
 Route3_Text_JoePost::
-# 399 "data/maps/Route3/scripts.pory"
+# 391 "data/maps/Route3/scripts.pory"
 	.string "Think I'll try a new bait.$"
 
 Route3_Text_RyanIntro::
-# 403 "data/maps/Route3/scripts.pory"
+# 395 "data/maps/Route3/scripts.pory"
 	.string "The Bugs!\n"
 	.string "THE BUGS!!!$"
 
 Route3_Text_RyanLost::
-# 407 "data/maps/Route3/scripts.pory"
+# 399 "data/maps/Route3/scripts.pory"
 	.string "You helped me scratch the bugs.$"
 
 Route3_Text_RyanPost::
-# 411 "data/maps/Route3/scripts.pory"
+# 403 "data/maps/Route3/scripts.pory"
 	.string "Thank you a lot, these bugs are\n"
 	.string "dangerous.$"
 
 Route3_Text_MeganIntro::
-# 415 "data/maps/Route3/scripts.pory"
+# 407 "data/maps/Route3/scripts.pory"
 	.string "Hey, didn't you use to make fun of me.$"
 
 Route3_Text_MeganLost::
-# 419 "data/maps/Route3/scripts.pory"
+# 411 "data/maps/Route3/scripts.pory"
 	.string "Looks like you're still laughing.$"
 
 Route3_Text_MeganPost::
-# 423 "data/maps/Route3/scripts.pory"
+# 415 "data/maps/Route3/scripts.pory"
 	.string "Hey haven't you heard anything about a\n"
 	.string "new freeway the party was planning to\l"
 	.string "build through here?$"
 
 Route3_Text_DevonIntro::
-# 427 "data/maps/Route3/scripts.pory"
+# 419 "data/maps/Route3/scripts.pory"
 	.string "You're not headed into the woods are\n"
 	.string "you?$"
 
 Route3_Text_DevonLost::
-# 431 "data/maps/Route3/scripts.pory"
+# 423 "data/maps/Route3/scripts.pory"
 	.string "You're pretty tough.$"
 
 Route3_Text_DevonPost::
-# 435 "data/maps/Route3/scripts.pory"
+# 427 "data/maps/Route3/scripts.pory"
 	.string "You should be safe enough, but be\n"
 	.string "careful that you do not get lost.$"
 
 Route3_Text_Leaf1::
-# 439 "data/maps/Route3/scripts.pory"
+# 431 "data/maps/Route3/scripts.pory"
 	.string "Hey {PLAYER} long time no see how\n"
 	.string "have you been? While you slowpokes\l"
 	.string "were getting stoned in town I was\l"
@@ -648,12 +635,12 @@ Route3_Text_Leaf1::
 	.string "am.$"
 
 Route3_Text_LeafLost::
-# 443 "data/maps/Route3/scripts.pory"
+# 435 "data/maps/Route3/scripts.pory"
 	.string "Wow {PLAYER} looks like I have a lot\n"
 	.string "to learn$"
 
 Route3_Text_Leaf1Post::
-# 447 "data/maps/Route3/scripts.pory"
+# 439 "data/maps/Route3/scripts.pory"
 	.string "Haha you're way too good for me.\p"
 	.string "But wait weren't you supposed to meet\n"
 	.string "me with my dad?\p"
@@ -661,19 +648,19 @@ Route3_Text_Leaf1Post::
 	.string "DAD?!$"
 
 Route3_Text_OldMan::
-# 451 "data/maps/Route3/scripts.pory"
+# 443 "data/maps/Route3/scripts.pory"
 	.string "Caverna Ilium was this cave's name\n"
 	.string "before The Party changed it to Beach\l"
 	.string "Cave.\p"
 	.string "You should only go in if you're prepared.$"
 
 Route3_Text_Leaf2::
-# 455 "data/maps/Route3/scripts.pory"
+# 447 "data/maps/Route3/scripts.pory"
 	.string "Look out {PLAYER} it's {RIVAL}\n"
 	.string "this is a trap!$"
 
 Route3_Text_RivalIntro::
-# 459 "data/maps/Route3/scripts.pory"
+# 451 "data/maps/Route3/scripts.pory"
 	.string "It's {PLAYER} is it? What a disgusting\n"
 	.string "name though fitting for an animal like\l"
 	.string "you. I spent six hours saving Humpty's\l"
@@ -684,11 +671,11 @@ Route3_Text_RivalIntro::
 	.string "flies caught in my net.$"
 
 Route3_Text_RivalLost::
-# 463 "data/maps/Route3/scripts.pory"
+# 455 "data/maps/Route3/scripts.pory"
 	.string "These pathetic insects all let me down!!$"
 
 Route3_Text_RivalPost::
-# 467 "data/maps/Route3/scripts.pory"
+# 459 "data/maps/Route3/scripts.pory"
 	.string "You anal sniffing worm, you piece of\n"
 	.string "filth! I will not have you make a fool of\l"
 	.string "me. Already you have stolen my whole\l"
@@ -705,7 +692,7 @@ Route3_Text_RivalPost::
 	.string "you pay.$"
 
 Route3_Text_Leaf3::
-# 471 "data/maps/Route3/scripts.pory"
+# 463 "data/maps/Route3/scripts.pory"
 	.string "Wow {PLAYER} I'm glad you're here all\n"
 	.string "big and strong to protect me from\l"
 	.string "creeps like that {RIVAL}. It's\l"
@@ -713,7 +700,7 @@ Route3_Text_Leaf3::
 	.string "C'mon silly we need to find my dad!$"
 
 Route3_Text_SaeclaraSign::
-# 475 "data/maps/Route3/scripts.pory"
+# 467 "data/maps/Route3/scripts.pory"
 	.string "City Saeclara ->\n"
 	.string "<- Silvan Woods\n"
 	.string "<- Bulbus Town$"

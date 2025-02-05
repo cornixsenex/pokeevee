@@ -221,7 +221,8 @@
 #define MAPSEC_ALDEON                       0xD8
 #define MAPSEC_VIA_ARBORUM                  0xD9
 #define MAPSEC_PORTA_PILO                   0xDA
-#define MAPSEC_CAMELOS_COVE                 0xDB
+#define MAPSEC_CANELOS_COVE                 0xDB
+#define MAPSEC_RIVER_DELTA                  0xDC
 
 #define MAPSEC_NONE                         0xFC
 

@@ -2822,6 +2822,10 @@ extern const u8 gText_Ostracon[];
 //Trainer Card
 extern const u8 gText_TrainerCard[];
 
+//Cornix Custom Dynamic Location Names
+extern const u8 gText_CanelosCove[];
+extern const u8 gText_RiverDelta[];
+
 extern const u8 gText_BasePointsResetToZero[];
 
 extern const u8 gText_Fertilize[];

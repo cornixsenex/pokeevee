@@ -210,7 +210,9 @@ static const u8 sMapName_VIA_FLORAE[]    = _("VIA FLORAE");
 static const u8 sMapName_ALDEON[]        = _("ALDEON");
 static const u8 sMapName_VIA_ARBORUM[]   = _("VIA ARBORUM");
 static const u8 sMapName_PORTA_PILO[]    = _("PORTA PILO");
-static const u8 sMapName_CAMELOS_COVE[]  = _("CAMELOS COVE");
+static const u8 sMapName_CANELOS_COVE[]  = _("CANELOS COVE");
+static const u8 sMapName_RIVER_DELTA[]   = _("RIVER DELTA");
+//End Customs
 static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
 
 
@@ -434,7 +436,8 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ALDEON] = { 0, 0, 1, 1, sMapName_ALDEON},
     [MAPSEC_VIA_ARBORUM] = { 0, 0, 1, 1, sMapName_VIA_ARBORUM},
     [MAPSEC_PORTA_PILO] = { 0, 0, 1, 1, sMapName_PORTA_PILO},
-    [MAPSEC_CAMELOS_COVE] = { 0, 0, 1, 1, sMapName_CAMELOS_COVE},
+    [MAPSEC_CANELOS_COVE] = { 0, 0, 1, 1, sMapName_CANELOS_COVE},
+    [MAPSEC_RIVER_DELTA] = { 0, 0, 1, 1, sMapName_RIVER_DELTA},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };

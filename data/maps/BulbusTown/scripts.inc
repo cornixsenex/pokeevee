@@ -9,10 +9,7 @@ BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_lt BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 20 "data/maps/BulbusTown/scripts.pory"
-	goto_if_unset FLAG_JASON_HAS_SHINYMAREEP, BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
-BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-# 24 "data/maps/BulbusTown/scripts.pory"
-	goto_if_set FLAG_HIDE_MAP_NAME_POPUP, BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	goto_if_unset FLAG_JASON_HAS_SHINYMAREEP, BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 	return
 
 BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -20,14 +17,9 @@ BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	call BulbusTown_Script_ShowStrike
 	goto BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
-BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
+BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 21 "data/maps/BulbusTown/scripts.pory"
 	call BulbusTown_Script_HideJason
-	goto BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
-
-BulbusTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
-# 25 "data/maps/BulbusTown/scripts.pory"
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 

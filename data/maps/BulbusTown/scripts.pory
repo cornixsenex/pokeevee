@@ -21,9 +21,9 @@ mapscripts BulbusTown_MapScripts {
 			call (BulbusTown_Script_HideJason)
 		}
 
-		if (flag(FLAG_HIDE_MAP_NAME_POPUP)) {
-			clearflag (FLAG_HIDE_MAP_NAME_POPUP)
-		}
+		//if (flag(FLAG_HIDE_MAP_NAME_POPUP)) {
+		//	clearflag (FLAG_HIDE_MAP_NAME_POPUP)
+		//}
 	}
 
 }
