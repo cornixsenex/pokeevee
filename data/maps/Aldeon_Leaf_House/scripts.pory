@@ -172,16 +172,10 @@ script Aldeon_Leaf_House_EventScript_ScottBed {
 	lockall
 	msgbox(Aldeon_Leaf_House_Text_ScottBed, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
-		closemessage
-		if (flag(FLAG_SYS_POKEMON_GET)) {
-			call (Common_EventScript_OutOfCenterPartyHeal)
-		} else {
-			playfanfare (MUS_HEAL)
-			fadescreen (1)
-			waitfanfare
-			fadescreen (0)
-		}
+		call (Common_EventScript_OutOfCenterPartyHeal)
+
 	}
+	closemessage
 	releaseall
 	end
 }

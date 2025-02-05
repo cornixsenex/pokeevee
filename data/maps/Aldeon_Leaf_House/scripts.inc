@@ -248,103 +248,104 @@ Aldeon_Leaf_House_EventScript_ScottBed::
 	compare VAR_RESULT, YES
 	goto_if_eq Aldeon_Leaf_House_EventScript_ScottBed_2
 Aldeon_Leaf_House_EventScript_ScottBed_1:
-# 185 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 178 "data/maps/Aldeon_Leaf_House/scripts.pory"
+	closemessage
+# 179 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	releaseall
 	end
 
 Aldeon_Leaf_House_EventScript_ScottBed_2:
 # 175 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	closemessage
-# 176 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, Aldeon_Leaf_House_EventScript_ScottBed_4
-# 179 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	playfanfare MUS_HEAL
-# 180 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	fadescreen 1
-# 181 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	waitfanfare
-# 182 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	fadescreen 0
-	goto Aldeon_Leaf_House_EventScript_ScottBed_1
-
-Aldeon_Leaf_House_EventScript_ScottBed_4:
-# 177 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	call Common_EventScript_OutOfCenterPartyHeal
 	goto Aldeon_Leaf_House_EventScript_ScottBed_1
 
 
-# 190 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 184 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Leaf_House_Movement_Leaf1:
-# 191 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 185 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 191 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 185 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 191 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 185 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 191 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 185 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 192 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 186 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 192 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 186 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 192 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 186 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 192 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 186 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 192 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 186 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 193 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 187 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_up
-# 193 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 187 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_up
-# 194 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 188 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 194 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 188 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 195 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 189 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	face_down
 	step_end
 
-# 198 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 192 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Leaf_House_Movement_Player1:
-# 199 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 193 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_left
-# 200 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 194 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 200 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 194 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 200 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 194 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 200 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 194 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 201 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 195 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 201 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 195 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 201 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 195 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 201 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 195 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 201 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 195 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 202 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 196 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_up
-# 202 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 196 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_up
-# 203 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 197 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 204 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 198 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	face_down
+	step_end
+
+# 201 "data/maps/Aldeon_Leaf_House/scripts.pory"
+Aldeon_Leaf_House_Movement_Leaf2:
+# 202 "data/maps/Aldeon_Leaf_House/scripts.pory"
+	walk_right
+# 202 "data/maps/Aldeon_Leaf_House/scripts.pory"
+	walk_right
+# 203 "data/maps/Aldeon_Leaf_House/scripts.pory"
+	walk_down
+# 203 "data/maps/Aldeon_Leaf_House/scripts.pory"
+	walk_down
+# 204 "data/maps/Aldeon_Leaf_House/scripts.pory"
+	face_left
 	step_end
 
 # 207 "data/maps/Aldeon_Leaf_House/scripts.pory"
-Aldeon_Leaf_House_Movement_Leaf2:
+Aldeon_Leaf_House_Movement_Player2:
 # 208 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
 # 208 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 209 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	walk_down
+# 208 "data/maps/Aldeon_Leaf_House/scripts.pory"
+	walk_right
 # 209 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
 # 210 "data/maps/Aldeon_Leaf_House/scripts.pory"
@@ -352,122 +353,108 @@ Aldeon_Leaf_House_Movement_Leaf2:
 	step_end
 
 # 213 "data/maps/Aldeon_Leaf_House/scripts.pory"
-Aldeon_Leaf_House_Movement_Player2:
-# 214 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	walk_right
-# 214 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	walk_right
-# 214 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	walk_right
-# 215 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	walk_down
-# 216 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	face_left
-	step_end
-
-# 219 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Movement_DadStepDown:
-# 220 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 214 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 221 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 215 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	face_right
 	step_end
 
-# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 218 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Movement_LeafStepDown:
-# 225 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 219 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 226 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 220 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_left
-# 226 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 220 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_left
 	step_end
 
-# 229 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 223 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Movement_DadExit:
-# 230 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 230 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 230 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 230 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 230 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 230 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 230 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 224 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
 	step_end
 
-# 233 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 227 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Leaf_House_Movement_LeafToScott:
-# 234 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 228 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_up
-# 234 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 228 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_up
-# 235 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 229 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	face_right
 	step_end
 
-# 238 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 232 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Leaf_House_Movement_ScottToLeaf:
-# 239 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 233 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 239 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 233 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 240 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 234 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	face_left
 	step_end
 
-# 243 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 237 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Leaf_House_Movement_LeafToPlayer:
-# 244 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 238 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 245 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 239 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	face_right
 	step_end
 
-# 248 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 242 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Leaf_House_Movement_LeafExit:
-# 249 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 243 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 249 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 243 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
 	step_end
 
-# 252 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 246 "data/maps/Aldeon_Leaf_House/scripts.pory"
 Aldeon_Leaf_House_Movement_ScottExit:
-# 253 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 247 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_right
-# 254 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 248 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 254 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 248 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_down
-# 255 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 249 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	walk_left
-# 256 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 250 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	face_down
 	step_end
 
 Aldeon_Leaf_House_Text_Dad1::
-# 259 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 253 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "He's come at a most unexpected time. I\n"
 	.string "think you two had better take a seat.$"
 
 Aldeon_Leaf_House_Text_Dad2::
-# 263 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 257 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "You seem allright\n"
 	.string "What's up? My name is Scott.\p"
 	.string "So, what is he your boyfriend or...?$"
 
 Aldeon_Leaf_House_Text_Dad3::
-# 267 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 261 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Some shithead tried to hurt...$"
 
 Aldeon_Leaf_House_Text_Dad4::
-# 271 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 265 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "My God.. well {PLAYER} you have proven\n"
 	.string "yourself a noble man and worthy in my\l"
 	.string "eyes. You've come however at a special\l"
@@ -475,7 +462,7 @@ Aldeon_Leaf_House_Text_Dad4::
 	.string "come again?$"
 
 Aldeon_Leaf_House_Text_Dad5::
-# 275 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 269 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "The very same. At first I hardly\n"
 	.string "thought the news was true, and I\l"
 	.string "assumed it was propaganda to celebrate\l"
@@ -484,7 +471,7 @@ Aldeon_Leaf_House_Text_Dad5::
 	.string "my own eyes.$"
 
 Aldeon_Leaf_House_Text_Dad6::
-# 279 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 273 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Of course we must! To think such things\n"
 	.string "were only myths last week. Not in two\l"
 	.string "thousand years has this happened. So\l"
@@ -495,11 +482,11 @@ Aldeon_Leaf_House_Text_Dad6::
 	.string "saving my daughter.$"
 
 Aldeon_Leaf_House_Text_DexBallGet::
-# 283 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 277 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "{PLAYER} recieved 5 PokeBalls!$"
 
 Aldeon_Leaf_House_Text_Dad7::
-# 287 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 281 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Those Pokeballs belonged to my father.\n"
 	.string "The road to Bulbus Town should not be\l"
 	.string "hard. We'll wait for you down at my Club\l"
@@ -508,16 +495,16 @@ Aldeon_Leaf_House_Text_Dad7::
 	.string "catch Pokemon.$"
 
 Aldeon_Leaf_House_Text_ScottBed::
-# 291 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 285 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "It's Scott's Bed. Would you like to take\n"
 	.string "a rest?$"
 
 Aldeon_Leaf_House_Text_Scott1::
-# 296 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 290 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Oh {LEAF}!$"
 
 Aldeon_Leaf_House_Text_Scott2::
-# 300 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 294 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Where have you been? When you didn't\n"
 	.string "come home I feared the worst and\l"
 	.string "thought that Mew herself appeared to\l"
@@ -527,21 +514,21 @@ Aldeon_Leaf_House_Text_Scott2::
 	.string "you? Where's Igglybuff?$"
 
 Aldeon_Leaf_House_Text_Scott3::
-# 304 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 298 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Some shithead tried to hurt...!$"
 
 Aldeon_Leaf_House_Text_Scott4A::
-# 308 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 302 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "My name is Scott. It's nice to meet you,\n"
 	.string "son. Thank you for saving {LEAF}.$"
 
 Aldeon_Leaf_House_Text_Scott4B::
-# 312 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 306 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Now tell me who this bastard is who\n"
 	.string "tried to take my daughter from me.$"
 
 Aldeon_Leaf_House_Text_Scott5::
-# 316 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 310 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Well {RIVAL} was lucky I wasn't there\n"
 	.string "and he better hope that we never meet.\l"
 	.string "I thank the stars themselves that\l"
@@ -556,13 +543,13 @@ Aldeon_Leaf_House_Text_Scott5::
 	.string "returned.$"
 
 Aldeon_Leaf_House_Text_Scott6::
-# 320 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 314 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "The very same. Though I may not be a\n"
 	.string "church going man, I recognize divine\l"
 	.string "when I see it.$"
 
 Aldeon_Leaf_House_Text_Scott7A::
-# 324 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 318 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "I see the girl I sent to school is gone\n"
 	.string "replaced by a woman matured by grief,\l"
 	.string "emancipated by innocence lost, and\l"
@@ -574,7 +561,7 @@ Aldeon_Leaf_House_Text_Scott7A::
 	.string "all keep faith in your sucess.$"
 
 Aldeon_Leaf_House_Text_Scott7B::
-# 328 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 322 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "You are invited to join us, of course.\n"
 	.string "The journey to see Mew is a long one,\l"
 	.string "across rugged terrain, and far away.\l"
@@ -588,15 +575,15 @@ Aldeon_Leaf_House_Text_Scott7B::
 	.string "Bulbus.$"
 
 Aldeon_Leaf_House_Text_Leaf1::
-# 332 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 326 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Daddy, I'm home.$"
 
 Aldeon_Leaf_House_Text_Leaf2::
-# 336 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 330 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "I was kidnapped! Igglybuff fainted...$"
 
 Aldeon_Leaf_House_Text_Leaf3A::
-# 340 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 334 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Daddy! I'm fine! For just as Mew\n"
 	.string "appeared to you last night she helped\l"
 	.string "me to escape once the storm passed\l"
@@ -605,43 +592,43 @@ Aldeon_Leaf_House_Text_Leaf3A::
 	.string "home safe.$"
 
 Aldeon_Leaf_House_Text_Leaf3B::
-# 344 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 338 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Please come here {PLAYER}, I want you\n"
 	.string "to meet dad.$"
 
 Aldeon_Leaf_House_Text_Leaf3C::
-# 348 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 342 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Daddy, meet {PLAYER}.$"
 
 Aldeon_Leaf_House_Text_Leaf4A::
-# 352 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 346 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "I don't know... I met him yesterday\n"
 	.string "outside the school and followed him to\l"
 	.string "his house in the trees.$"
 
 Aldeon_Leaf_House_Text_Leaf4B::
-# 356 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 350 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Did you happen to catch that monster's\n"
 	.string "name?$"
 
 Aldeon_Leaf_House_Text_Leaf4C::
-# 360 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 354 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "That's right! That evil man's name was\n"
 	.string "{RIVAL}.$"
 
 Aldeon_Leaf_House_Text_Leaf5::
-# 364 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 358 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "The legendary Mew?$"
 
 Aldeon_Leaf_House_Text_Leaf6::
-# 368 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 362 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "If this is true, we must journey to the\n"
 	.string "ancient church on the lake in Saeclara\l"
 	.string "where prophesy foretold Mew would\l"
 	.string "appear!$"
 
 Aldeon_Leaf_House_Text_Leaf7::
-# 372 "data/maps/Aldeon_Leaf_House/scripts.pory"
+# 366 "data/maps/Aldeon_Leaf_House/scripts.pory"
 	.string "Do not delay. We are setting off on a\n"
 	.string "great journey to see the mythic Mew. If\l"
 	.string "you grow weary of the road you can go\l"

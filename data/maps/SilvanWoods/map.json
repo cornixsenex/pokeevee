@@ -146,8 +146,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
-      "x": 55,
-      "y": 12,
+      "x": 0,
+      "y": 0,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -328,8 +328,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 42,
-      "y": 9,
+      "x": 55,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -341,8 +341,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 43,
-      "y": 9,
+      "x": 56,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -549,8 +549,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
-      "x": 56,
-      "y": 12,
+      "x": 1,
+      "y": 0,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -582,96 +582,6 @@
       "var": "VAR_ROUTE3_STATE",
       "var_value": "1",
       "script": "SilvanWoods_RivalTrigger2"
-    },
-    {
-      "type": "trigger",
-      "x": 55,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "0",
-      "script": "SilvanWoods_EventScript_ScottTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 56,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "0",
-      "script": "SilvanWoods_EventScript_ScottTriggerB"
-    },
-    {
-      "type": "trigger",
-      "x": 55,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "1",
-      "script": "SilvanWoods_EventScript_ScottTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 56,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "1",
-      "script": "SilvanWoods_EventScript_ScottTriggerB"
-    },
-    {
-      "type": "trigger",
-      "x": 55,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "2",
-      "script": "SilvanWoods_EventScript_ScottTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 56,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "2",
-      "script": "SilvanWoods_EventScript_ScottTriggerB"
-    },
-    {
-      "type": "trigger",
-      "x": 55,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "3",
-      "script": "SilvanWoods_EventScript_ScottTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 56,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "3",
-      "script": "SilvanWoods_EventScript_ScottTriggerB"
-    },
-    {
-      "type": "trigger",
-      "x": 55,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "4",
-      "script": "SilvanWoods_EventScript_Scott2Trigger"
-    },
-    {
-      "type": "trigger",
-      "x": 56,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "4",
-      "script": "SilvanWoods_EventScript_Scott2Trigger"
     }
   ],
   "bg_events": [

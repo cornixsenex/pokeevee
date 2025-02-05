@@ -1,4 +1,11 @@
-mapscripts Route3_MapScripts {}
+mapscripts Route3_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		setflag (FLAG_HIDE_MAP_NAME_POPUP)
+
+	}
+
+}
 
 
 script Route3_EventScript_LeafTrigger1 {
@@ -225,6 +232,21 @@ script Route3_EventScript_SaeclaraSign {
 	release
 	end
 }
+
+script  Route3_Script_PortaTransition {
+
+	special (ShowMapNamePopup)
+
+	end
+}
+
+script Route3_Script_CamelosCoveTransition {
+	
+	special (ShowMapNamePopup)
+
+	end
+}
+
 
 movement Route3_Movement_LeafIntro1 {
 	walk_down

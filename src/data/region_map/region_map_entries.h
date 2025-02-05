@@ -203,7 +203,16 @@ static const u8 sMapName_MARINE_CAVE[] = _("MARINE CAVE");
 static const u8 sMapName_TERRA_CAVE[] = _("TERRA CAVE");
 static const u8 sMapName_DESERT_UNDERPASS[] = _("DESERT UNDERPASS");
 static const u8 sMapName_BREEZEVALE_TOWN[] = _("BREEZEVALE TOWN");
-static const u8 sMapName_TRAINER_HILL[] = _("TRAINER HILL");
+//Cornix Customs
+static const u8 sMapName_ELICIUS_BEACH[] = _("ELICIUS BEACH");
+static const u8 sMapName_VILLA_FLORA[]   = _("VILLA FLORA");
+static const u8 sMapName_VIA_FLORAE[]    = _("VIA FLORAE");
+static const u8 sMapName_ALDEON[]        = _("ALDEON");
+static const u8 sMapName_VIA_ARBORUM[]   = _("VIA ARBORUM");
+static const u8 sMapName_PORTA_PILO[]    = _("PORTA PILO");
+static const u8 sMapName_CAMELOS_COVE[]  = _("CAMELOS COVE");
+static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
+
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN] = { 4, 11, 1, 1, sMapName_LITTLEROOT_TOWN},
@@ -418,7 +427,15 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_DESERT_UNDERPASS] = { 2, 0, 1, 1, sMapName_DESERT_UNDERPASS},
     [MAPSEC_ALTERING_CAVE] = { 6, 8, 1, 1, sMapName_ALTERING_CAVE},
     [MAPSEC_NAVEL_ROCK] = { 0, 0, 1, 1, sMapName_NAVEL_ROCK},
-    [MAPSEC_ELICIUS_BEACH] = { 0, 0, 1, 1, sMapName_BREEZEVALE_TOWN},
+	//Begin Cornix Customs
+    [MAPSEC_ELICIUS_BEACH] = { 0, 0, 1, 1, sMapName_ELICIUS_BEACH},
+    [MAPSEC_VILLA_FLORA] = { 0, 0, 1, 1, sMapName_VILLA_FLORA},
+    [MAPSEC_VIA_FLORAE] = { 0, 0, 1, 1, sMapName_VIA_FLORAE},
+    [MAPSEC_ALDEON] = { 0, 0, 1, 1, sMapName_ALDEON},
+    [MAPSEC_VIA_ARBORUM] = { 0, 0, 1, 1, sMapName_VIA_ARBORUM},
+    [MAPSEC_PORTA_PILO] = { 0, 0, 1, 1, sMapName_PORTA_PILO},
+    [MAPSEC_CAMELOS_COVE] = { 0, 0, 1, 1, sMapName_CAMELOS_COVE},
+	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };
 

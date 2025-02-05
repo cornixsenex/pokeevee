@@ -20,6 +20,10 @@ mapscripts BulbusTown_MapScripts {
 		if (!flag(FLAG_JASON_HAS_SHINYMAREEP)) {
 			call (BulbusTown_Script_HideJason)
 		}
+
+		if (flag(FLAG_HIDE_MAP_NAME_POPUP)) {
+			clearflag (FLAG_HIDE_MAP_NAME_POPUP)
+		}
 	}
 
 }
@@ -165,9 +169,9 @@ script BulbusTown_Script_Sailor1 {
 		}
 	} else {
 		call (BulbusTown_Script_SailorAfterStrike)
+		applymovement (OBJ_EVENT_SAILOR1, Common_Movement_FaceDown)
+		waitmovement (0)
 	}
-	applymovement (OBJ_EVENT_SAILOR1, Common_Movement_FaceDown)
-	waitmovement (0)
 	release
 	end
 }
@@ -193,9 +197,9 @@ script BulbusTown_Script_Sailor2 {
 		}
 	} else {
 		call (BulbusTown_Script_SailorAfterStrike)
+		applymovement (OBJ_EVENT_SAILOR2, Common_Movement_FaceDown)
+		waitmovement (0)
 	}
-	applymovement (OBJ_EVENT_SAILOR2, Common_Movement_FaceDown)
-	waitmovement (0)
 	release
 	end
 }
@@ -221,9 +225,9 @@ script BulbusTown_Script_Sailor3 {
 		}
 	} else {
 		call (BulbusTown_Script_SailorAfterStrike)
+		applymovement (OBJ_EVENT_SAILOR3, Common_Movement_FaceDown)
+		waitmovement (0)
 	}
-	applymovement (OBJ_EVENT_SAILOR3, Common_Movement_FaceDown)
-	waitmovement (0)
 	release
 	end
 }
@@ -249,9 +253,10 @@ script BulbusTown_Script_Sailor4 {
 		}
 	} else {
 		call (BulbusTown_Script_SailorAfterStrike)
+		applymovement (OBJ_EVENT_SAILOR4, Common_Movement_FaceDown)
+		waitmovement (0)
 	}
-	applymovement (OBJ_EVENT_SAILOR4, Common_Movement_FaceDown)
-	waitmovement (0)
+
 	release
 	end
 }
@@ -277,9 +282,9 @@ script BulbusTown_Script_Sailor5 {
 		}
 	} else {
 		call (BulbusTown_Script_SailorAfterStrike)
+		applymovement (OBJ_EVENT_SAILOR5, Common_Movement_FaceDown)
+		waitmovement (0)
 	}
-	applymovement (OBJ_EVENT_SAILOR5, Common_Movement_FaceDown)
-	waitmovement (0)
 	release
 	end
 }
@@ -305,9 +310,19 @@ script BulbusTown_Script_Sailor6 {
 		}
 	} else {
 		call (BulbusTown_Script_SailorAfterStrike)
+		applymovement (OBJ_EVENT_SAILOR6, Common_Movement_FaceDown)
+		waitmovement (0)
 	}
-	applymovement (OBJ_EVENT_SAILOR6, Common_Movement_FaceDown)
-	waitmovement (0)
+	release
+	end
+}
+
+script BulbusTown_EventScript_BusinessMan { 
+	lock
+	faceplayer
+	msgbox (BulbusTown_Text_BusinessMan, MSGBOX_DEFAULT)
+	closemessage
+	
 	release
 	end
 }
@@ -567,4 +582,6 @@ text BulbusTown_Text_SailorsWonStrike {
 	format("Jason returned and brought Shiny Mareep to live with us sailors in the harbor. We finally felt appreciated and made the decision to end our strike.")
 }
 
-
+text BulbusTown_Text_BusinessMan {
+	format("This strike is terrible for my business!")
+}
