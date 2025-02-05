@@ -15,6 +15,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "evolution_scene.h"
+#include "fieldmap.h" //CornixSenex
 #include "field_specials.h"
 #include "field_weather.h"
 #include "graphics.h"
@@ -22,6 +23,7 @@
 #include "caps.h"
 #include "link.h"
 #include "main.h"
+#include "metatile_behavior.h" //CornixSenex
 #include "overworld.h"
 #include "m4a.h"
 #include "party_menu.h"
@@ -56,6 +58,7 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/moves.h"
+#include "constants/metatile_behaviors.h" //CornixSenex
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/union_room.h"
@@ -1224,15 +1227,32 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 	//then determine which "map" to return 
 	if (value == MAPSEC_DYNAMIC) {
 		//Route3 - Cove, Delta, River
-		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
-			//Bottom Delta area
-			if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
+		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) 
+		{
+			//First Exclude river surf tiles
+			if (MetatileBehavior_IsDeepOrOceanWater(MapGridGetMetatileBehaviorAt(gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y))) 
+			{
+				if (gSaveBlock1Ptr->pos.x > 52)
+					value = MAPSEC_RIVER_DELTA;
+				else if (gSaveBlock1Ptr->pos.y < 23)
+					value = MAPSEC_RIVER_DELTA;
+				else 
+					value = MAPSEC_CANELOS_COVE;
+			}
+			//Check Bottom Delta area
+			else if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
 			     (gSaveBlock1Ptr->pos.y == 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 55) ||
 			     (gSaveBlock1Ptr->pos.y == 36 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 56) ||
 			     (gSaveBlock1Ptr->pos.y == 37 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 57) ||
 			     (gSaveBlock1Ptr->pos.y  > 37 && gSaveBlock1Ptr->pos.y < 40 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 59) )
 			{
 				value = MAPSEC_RIVER_DELTA;
+			}
+			//Check Eastern River Delta Area - NOTE UNFINISHED AS OF NOW
+			else if (gSaveBlock1Ptr->pos.x > 61) 
+			{
+				value = MAPSEC_RIVER_DELTA;
+			//Else, just Canelos Cove
 			} else {
 				value = MAPSEC_CANELOS_COVE;
 			}

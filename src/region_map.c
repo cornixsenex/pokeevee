@@ -1,8 +1,10 @@
 #include "global.h"
+#include "fieldmap.h" //CornixSenex
 #include "main.h"
 #include "text.h"
 #include "menu.h"
 #include "malloc.h"
+#include "metatile_behavior.h" //CornixSenex
 #include "gpu_regs.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -25,6 +27,7 @@
 #include "constants/field_specials.h"
 #include "constants/heal_locations.h"
 #include "constants/map_types.h"
+#include "constants/metatile_behaviors.h" //CornixSenex
 #include "constants/rgb.h"
 #include "constants/weather.h"
 
@@ -1608,13 +1611,27 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
     case MAPSEC_DYNAMIC:
 		//Route3 - Cove, Delta, River
 		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
-			DebugPrintf("TEST, X: %d", gSaveBlock1Ptr->pos.x);
+			DebugPrintf("DYNAMIC\nX: %d\nY: %d\n", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y);
+			//First Exclude river surf tiles
+			if (MetatileBehavior_IsDeepOrOceanWater(MapGridGetMetatileBehaviorAt(gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y))) 
+			{
+				DebugPrintf("Dynamic on Water");
+				if (gSaveBlock1Ptr->pos.x > 52)
+					return StringCopy(dest, gText_RiverDelta);
+				else if (gSaveBlock1Ptr->pos.y < 23)
+					return StringCopy(dest, gText_RiverDelta);
+			}
 			//Check if Bottom RiverDelta
 			if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
 			     (gSaveBlock1Ptr->pos.y == 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 55) ||
 			     (gSaveBlock1Ptr->pos.y == 36 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 56) ||
 			     (gSaveBlock1Ptr->pos.y == 37 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 57) ||
 			     (gSaveBlock1Ptr->pos.y  > 37 && gSaveBlock1Ptr->pos.y < 40 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 59) )
+			{
+				return StringCopy(dest, gText_RiverDelta);
+			}
+			//Check Eastern River Delta Area - NOTE UNIFINISHED ATM
+			else if (gSaveBlock1Ptr->pos.x > 61) 
 			{
 				return StringCopy(dest, gText_RiverDelta);
 			} else { // Default part of map => Cove
