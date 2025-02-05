@@ -1609,8 +1609,13 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route3 - Cove, Delta, River
 		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
 			DebugPrintf("TEST, X: %d", gSaveBlock1Ptr->pos.x);
-			//Check if RiverDelta
-			if (gSaveBlock1Ptr->pos.x > 50) {
+			//Check if Bottom RiverDelta
+			if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
+			     (gSaveBlock1Ptr->pos.y == 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 55) ||
+			     (gSaveBlock1Ptr->pos.y == 36 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 56) ||
+			     (gSaveBlock1Ptr->pos.y == 37 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 57) ||
+			     (gSaveBlock1Ptr->pos.y  > 37 && gSaveBlock1Ptr->pos.y < 40 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 59) )
+			{
 				return StringCopy(dest, gText_RiverDelta);
 			} else { // Default part of map => Cove
 				return StringCopy(dest, gText_CanelosCove);

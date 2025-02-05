@@ -1225,14 +1225,22 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 	if (value == MAPSEC_DYNAMIC) {
 		//Route3 - Cove, Delta, River
 		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
-			if (gSaveBlock1Ptr->pos.x > 50) {
+			//Bottom Delta area
+			if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
+			     (gSaveBlock1Ptr->pos.y == 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 55) ||
+			     (gSaveBlock1Ptr->pos.y == 36 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 56) ||
+			     (gSaveBlock1Ptr->pos.y == 37 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 57) ||
+			     (gSaveBlock1Ptr->pos.y  > 37 && gSaveBlock1Ptr->pos.y < 40 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 59) )
+			{
 				value = MAPSEC_RIVER_DELTA;
 			} else {
 				value = MAPSEC_CANELOS_COVE;
 			}
 		}
+		else 
+			value = MAPSEC_DYNAMIC;
 	}
-    
+    //END Cornix Custom 
 	SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
     SetBoxMonData(boxMon, MON_DATA_MET_GAME, &gGameVersion);
