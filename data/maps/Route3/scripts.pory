@@ -1,9 +1,19 @@
+
+//NOTE VAR_TEMP_5: 1 == Canelo Cove
+				// 2 == River Delta
+				// 0 OOB should always be one or the other
+
 mapscripts Route3_MapScripts {
 
-//	MAP_SCRIPT_ON_TRANSITION {
-//		setflag (FLAG_HIDE_MAP_NAME_POPUP)
-//
-//	}
+	MAP_SCRIPT_ON_TRANSITION {
+
+		specialvar (VAR_RESULT, IsRoute3RiverDelta)
+		if (var(VAR_RESULT) == TRUE) {
+			setvar (VAR_TEMP_5, 2)
+		} else  {
+			setvar (VAR_TEMP_5, 1)
+		}
+	}
 
 }
 
@@ -235,14 +245,34 @@ script Route3_EventScript_SaeclaraSign {
 
 script Route3_Script_Sign {
 	lock
-	if (flag(FLAG_TEMP_5)) {
-		msgbox ("SET!", MSGBOX_DEFAULT)
-	} else {
-		 msgbox("CLEAR!", MSGBOX_DEFAULT)
+	switch (var(VAR_TEMP_5)) {
+		case 0:
+			msgbox("0", MSGBOX_DEFAULT)
+		case 1:
+			msgbox("1", MSGBOX_DEFAULT)
+		case 2:
+			msgbox("2", MSGBOX_DEFAULT)
+		default:
+			msgbox("OOB", MSGBOX_DEFAULT)
 	}
 	closemessage
+	special (ShowMapNamePopup)
 	release
 	end
+}
+
+//Triggered on transit tiles by temp var == 1 (we're transitioning into River Delta)
+script Route3_Script_RiverDeltaTransition {
+	//setvar to stop infinite trigger
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+//Triggered on transit tiles by temp var == 2 (we're transitioning into Canelo Cove)
+script Route3_Script_CanelosCoveTransition {
+	//setvar to stop infinite trigger
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
 }
 
 movement Route3_Movement_LeafIntro1 {
