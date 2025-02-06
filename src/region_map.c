@@ -1614,7 +1614,6 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		y = gSaveBlock1Ptr->pos.y;
 		//Route3 - Cove, Delta, River
 		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
-			DebugPrintf("DYNAMIC\nX: %d\nY: %d\n", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y);
 			if (
 					(x > 61) || //Furtest East
 					( (x == 61) && (y < 25 || y > 32) ) || //Delta area above and below Cove penninsula
@@ -1626,7 +1625,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					( (x == 55) && (y < 19 || y > 35) ) ||
 					( (x == 54) && (y < 18 || y > 34) ) ||
 					( (x == 53) && (y < 17 || y > 30) ) ||
-					( (x == 52) && (y < 15 || y > 32) ) ||
+					( (x == 52) && (y < 15 || y > 31) ) ||
 					( (x == 51) && (y < 14 || y > 32) ) ||
 					( (x == 50) && (y < 13 || y > 32) ) ||
 					( (x == 49) && (y < 12 || y > 32) ) ||

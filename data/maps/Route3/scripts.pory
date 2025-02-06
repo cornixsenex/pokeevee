@@ -233,10 +233,15 @@ script Route3_EventScript_SaeclaraSign {
 	end
 }
 
-script  Route3_Script_PortaTransition {
-
-	special (ShowMapNamePopup)
-
+script Route3_Script_Sign {
+	lock
+	if (flag(FLAG_TEMP_5)) {
+		msgbox ("SET!", MSGBOX_DEFAULT)
+	} else {
+		 msgbox("CLEAR!", MSGBOX_DEFAULT)
+	}
+	closemessage
+	release
 	end
 }
 
