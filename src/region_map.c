@@ -1606,38 +1606,41 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
 // CornixSenex 2.4.25
 u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 {
+	s16 x, y;
     switch (mapSecId)
     {
     case MAPSEC_DYNAMIC:
+		x = gSaveBlock1Ptr->pos.x;
+		y = gSaveBlock1Ptr->pos.y;
 		//Route3 - Cove, Delta, River
 		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
 			DebugPrintf("DYNAMIC\nX: %d\nY: %d\n", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y);
-			//First Exclude river surf tiles
-			if (MetatileBehavior_IsDeepOrOceanWater(MapGridGetMetatileBehaviorAt(gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y))) 
-			{
-				DebugPrintf("Dynamic on Water");
-				if (gSaveBlock1Ptr->pos.x > 52)
-					return StringCopy(dest, gText_RiverDelta);
-				else if (gSaveBlock1Ptr->pos.y < 23)
-					return StringCopy(dest, gText_RiverDelta);
-			}
-			//Check if Bottom RiverDelta
-			if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
-			     (gSaveBlock1Ptr->pos.y == 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 55) ||
-			     (gSaveBlock1Ptr->pos.y == 36 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 56) ||
-			     (gSaveBlock1Ptr->pos.y == 37 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 57) ||
-			     (gSaveBlock1Ptr->pos.y  > 37 && gSaveBlock1Ptr->pos.y < 40 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 59) )
-			{
+			if (
+					(x > 61) || //Furtest East
+					( (x == 61) && (y < 25 || y > 32) ) || //Delta area above and below Cove penninsula
+					( (x == 60) && (y < 24 || y > 35) ) ||
+					( (x == 59) && (y < 23 || y > 35) ) ||
+					( (x == 58) && (y < 22 || y > 36) ) ||
+					( (x == 57) && (y < 21 || y > 37) ) ||
+					( (x == 56) && (y < 20 || y > 36) ) ||
+					( (x == 55) && (y < 19 || y > 35) ) ||
+					( (x == 54) && (y < 18 || y > 34) ) ||
+					( (x == 53) && (y < 17 || y > 30) ) ||
+					( (x == 52) && (y < 15 || y > 32) ) ||
+					( (x == 51) && (y < 14 || y > 32) ) ||
+					( (x == 50) && (y < 13 || y > 32) ) ||
+					( (x == 49) && (y < 12 || y > 32) ) ||
+					( (x == 48) && (y < 11 || y > 32) ) ||
+					( (x == 47) && (y <  8 || y > 32) )
+			   )
 				return StringCopy(dest, gText_RiverDelta);
-			}
-			//Check Eastern River Delta Area - NOTE UNIFINISHED ATM
-			else if (gSaveBlock1Ptr->pos.x > 61) 
-			{
+			else if ( (x > 42) && (y < 12) ) //Top of River area
 				return StringCopy(dest, gText_RiverDelta);
-			} else { // Default part of map => Cove
+			else  // Default part of map => Cove
 				return StringCopy(dest, gText_CanelosCove);
-			}
 		}
+		//Check Other Maps here...
+
 		//Default Map - Should never be reached
 		else
 			return StringCopy(dest, gText_Ferry);

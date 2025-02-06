@@ -1225,41 +1225,44 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 	//CornixSenex Custom to accomodate custom dynamic maps 
 	//Determine which map 
 	//then determine which "map" to return 
-	if (value == MAPSEC_DYNAMIC) {
-		//Route3 - Cove, Delta, River
-		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) 
-		{
-			//First Exclude river surf tiles
-			if (MetatileBehavior_IsDeepOrOceanWater(MapGridGetMetatileBehaviorAt(gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y))) 
-			{
-				if (gSaveBlock1Ptr->pos.x > 52)
-					value = MAPSEC_RIVER_DELTA;
-				else if (gSaveBlock1Ptr->pos.y < 23)
-					value = MAPSEC_RIVER_DELTA;
-				else 
-					value = MAPSEC_CANELOS_COVE;
-			}
-			//Check Bottom Delta area
-			else if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
-			     (gSaveBlock1Ptr->pos.y == 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 55) ||
-			     (gSaveBlock1Ptr->pos.y == 36 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 56) ||
-			     (gSaveBlock1Ptr->pos.y == 37 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 57) ||
-			     (gSaveBlock1Ptr->pos.y  > 37 && gSaveBlock1Ptr->pos.y < 40 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 59) )
-			{
-				value = MAPSEC_RIVER_DELTA;
-			}
-			//Check Eastern River Delta Area - NOTE UNFINISHED AS OF NOW
-			else if (gSaveBlock1Ptr->pos.x > 61) 
-			{
-				value = MAPSEC_RIVER_DELTA;
-			//Else, just Canelos Cove
-			} else {
-				value = MAPSEC_CANELOS_COVE;
-			}
-		}
-		else 
-			value = MAPSEC_DYNAMIC;
-	}
+	if (value == MAPSEC_DYNAMIC)
+		value = DetermineDynamicMapsecValue();
+	else
+	   value = MAPSEC_DYNAMIC;	
+	//	//Route3 - Cove, Delta, River
+	//	if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) 
+	//	{
+	//		//First Exclude river surf tiles
+	//		if (MetatileBehavior_IsDeepOrOceanWater(MapGridGetMetatileBehaviorAt(gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y))) 
+	//		{
+	//			if (gSaveBlock1Ptr->pos.x > 52)
+	//				value = MAPSEC_RIVER_DELTA;
+	//			else if (gSaveBlock1Ptr->pos.y < 23)
+	//				value = MAPSEC_RIVER_DELTA;
+	//			else 
+	//				value = MAPSEC_CANELOS_COVE;
+	//		}
+	//		//Check Bottom Delta area
+	//		else if ( (gSaveBlock1Ptr->pos.y  > 32 && gSaveBlock1Ptr->pos.y < 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 54) ||
+	//		     (gSaveBlock1Ptr->pos.y == 35 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 55) ||
+	//		     (gSaveBlock1Ptr->pos.y == 36 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 56) ||
+	//		     (gSaveBlock1Ptr->pos.y == 37 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 57) ||
+	//		     (gSaveBlock1Ptr->pos.y  > 37 && gSaveBlock1Ptr->pos.y < 40 && gSaveBlock1Ptr->pos.x > 46 && gSaveBlock1Ptr->pos.x < 59) )
+	//		{
+	//			value = MAPSEC_RIVER_DELTA;
+	//		}
+	//		//Check Eastern River Delta Area - NOTE UNFINISHED AS OF NOW
+	//		else if (gSaveBlock1Ptr->pos.x > 61) 
+	//		{
+	//			value = MAPSEC_RIVER_DELTA;
+	//		//Else, just Canelos Cove
+	//		} else {
+	//			value = MAPSEC_CANELOS_COVE;
+	//		}
+	//	}
+	//	else 
+	//		value = MAPSEC_DYNAMIC;
+	//}
     //END Cornix Custom 
 	SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
@@ -7105,3 +7108,52 @@ uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier)
         return UQ_4_12(1.0/(1.5 + 0.05 * dynamaxLevel));
     return UQ_4_12(1.5 + 0.05 * dynamaxLevel);
 }
+
+u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom dynamic maps 
+
+{
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+	DebugPrintf("DetermineDynamicMapsecValue");
+	//Determine which map 
+	//then determine which "map" to return 
+	
+	//Route3 - Cove, Delta, River
+	if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) 
+	{
+		DebugPrintf("Route 3");
+		DebugPrintf("X: %d\nY: %d\n", x, y); 
+		if (
+				(x > 61) || //Furtest East
+				( (x == 61) && (y < 25 || y > 32) ) || //Delta area above and below Cove penninsula
+				( (x == 60) && (y < 24 || y > 35) ) ||
+				( (x == 59) && (y < 23 || y > 35) ) ||
+				( (x == 58) && (y < 22 || y > 36) ) ||
+				( (x == 57) && (y < 21 || y > 37) ) ||
+				( (x == 56) && (y < 20 || y > 36) ) ||
+				( (x == 55) && (y < 19 || y > 35) ) ||
+				( (x == 54) && (y < 18 || y > 34) ) ||
+				( (x == 53) && (y < 17 || y > 30) ) ||
+				( (x == 52) && (y < 15 || y > 32) ) ||
+				( (x == 51) && (y < 14 || y > 32) ) ||
+				( (x == 50) && (y < 13 || y > 32) ) ||
+				( (x == 49) && (y < 12 || y > 32) ) ||
+				( (x == 48) && (y < 11 || y > 32) ) ||
+				( (x == 47) && (y <  8 || y > 32) )
+		   )
+			return MAPSEC_RIVER_DELTA;
+		else if ( (x > 42) && (y > 12) ) //Top of River area
+			return MAPSEC_RIVER_DELTA;
+		else //Everywhere else
+			return MAPSEC_CANELOS_COVE;
+	}
+	
+	else 
+		return MAPSEC_DYNAMIC;
+
+}
+
+
+	
+

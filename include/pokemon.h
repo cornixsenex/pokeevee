@@ -917,4 +917,7 @@ void TrySetDayLimitToFormChange(struct Pokemon *mon);
 u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler);
 uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier);
 
+//CornixSenex Custom Dynamic Map support
+u32 DetermineDynamicMapsecValue (void);
+
 #endif // GUARD_POKEMON_H
