@@ -213,195 +213,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route3_EventScript_OldMan",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MEW",
-      "x": 52,
-      "y": 4,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_LEAF",
-      "x": 34,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLUE",
-      "x": 62,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
     }
   ],
   "warp_events": [
-    {
-      "x": 65,
-      "y": 24,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 66,
-      "y": 24,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 68,
-      "y": 24,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 69,
-      "y": 24,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 71,
-      "y": 25,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "4"
-    },
-    {
-      "x": 72,
-      "y": 25,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "5"
-    },
     {
       "x": 11,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_BEACH_CAVE",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 55,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "6"
-    },
-    {
-      "x": 56,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "7"
-    },
-    {
-      "x": 65,
-      "y": 10,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "8"
-    },
-    {
-      "x": 66,
-      "y": 10,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "9"
-    },
-    {
-      "x": 74,
-      "y": 10,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "10"
-    },
-    {
-      "x": 75,
-      "y": 10,
-      "elevation": 0,
-      "dest_map": "MAP_SILVAN_WOODS",
-      "dest_warp_id": "11"
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 65,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "0",
-      "script": "Route3_EventScript_LeafTrigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 66,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "0",
-      "script": "Route3_EventScript_LeafTrigger2"
-    },
-    {
-      "type": "trigger",
-      "x": 55,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "2",
-      "script": "Route3_EventScript_MewTrigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 56,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "2",
-      "script": "Route3_EventScript_MewTrigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 67,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "3",
-      "script": "Route3_EventScript_RivalTrigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 67,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_ROUTE3_STATE",
-      "var_value": "3",
-      "script": "Route3_EventScript_RivalTrigger2"
-    }
+
   ],
   "bg_events": [
     {

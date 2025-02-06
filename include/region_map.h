@@ -115,6 +115,8 @@ void TrySetPlayerIconBlink(void);
 void BlendRegionMap(u16 color, u32 coeff);
 void SetRegionMapDataForZoom(void);
 
+bool32 IsRoute3RiverDelta(void); //Cornix Custom
+
 extern const struct RegionMapLocation gRegionMapEntries[];
 
 #endif //GUARD_REGION_MAP_H

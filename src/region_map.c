@@ -1606,34 +1606,12 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
 // CornixSenex 2.4.25
 u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 {
-	s16 x, y;
     switch (mapSecId)
     {
     case MAPSEC_DYNAMIC:
-		x = gSaveBlock1Ptr->pos.x;
-		y = gSaveBlock1Ptr->pos.y;
 		//Route3 - Cove, Delta, River
 		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
-			if (
-					(x > 61) || //Furtest East
-					( (x == 61) && (y < 25 || y > 32) ) || //Delta area above and below Cove penninsula
-					( (x == 60) && (y < 24 || y > 35) ) ||
-					( (x == 59) && (y < 23 || y > 35) ) ||
-					( (x == 58) && (y < 22 || y > 36) ) ||
-					( (x == 57) && (y < 21 || y > 37) ) ||
-					( (x == 56) && (y < 20 || y > 36) ) ||
-					( (x == 55) && (y < 19 || y > 35) ) ||
-					( (x == 54) && (y < 18 || y > 34) ) ||
-					( (x == 53) && (y < 17 || y > 30) ) ||
-					( (x == 52) && (y < 15 || y > 31) ) ||
-					( (x == 51) && (y < 14 || y > 32) ) ||
-					( (x == 50) && (y < 13 || y > 32) ) ||
-					( (x == 49) && (y < 12 || y > 32) ) ||
-					( (x == 48) && (y < 11 || y > 32) ) ||
-					( (x == 47) && (y <  8 || y > 32) )
-			   )
-				return StringCopy(dest, gText_RiverDelta);
-			else if ( (x > 42) && (y < 12) ) //Top of River area
+			if (IsRoute3RiverDelta())
 				return StringCopy(dest, gText_RiverDelta);
 			else  // Default part of map => Cove
 				return StringCopy(dest, gText_CanelosCove);
@@ -2064,3 +2042,36 @@ static void CB_ExitFlyMap(void)
         break;
     }
 }
+
+//Cornix Custom - Part of a series to determine which part of a map ur on. In this case is Route3 Canelo's Cave or River Delta
+bool32 IsRoute3RiverDelta(void)
+{
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+	if (
+			(x > 61) || //Furthest East
+			( (x == 61) && (y < 25 || y > 32) ) || //Delta area above and below Cove penninsula
+			( (x == 60) && (y < 24 || y > 35) ) ||
+			( (x == 59) && (y < 23 || y > 35) ) ||
+			( (x == 58) && (y < 22 || y > 36) ) ||
+			( (x == 57) && (y < 21 || y > 37) ) ||
+			( (x == 56) && (y < 20 || y > 36) ) ||
+			( (x == 55) && (y < 19 || y > 35) ) ||
+			( (x == 54) && (y < 18 || y > 34) ) ||
+			( (x == 53) && (y < 17 || y > 30) ) ||
+			( (x == 52) && (y < 15 || y > 31) ) ||
+			( (x == 51) && (y < 14 || y > 32) ) ||
+			( (x == 50) && (y < 13 || y > 32) ) ||
+			( (x == 49) && (y < 12 || y > 32) ) ||
+			( (x == 48) && (y < 11 || y > 32) ) ||
+			( (x == 47) && (y <  8 || y > 32) )
+	   )
+		return TRUE;
+	else if ( (x > 42) && (y < 12) ) //Top of River area
+		return TRUE;
+	else  // Default part of map => Cove
+		return FALSE;
+}
+
+
