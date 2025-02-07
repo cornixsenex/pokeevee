@@ -37,6 +37,16 @@
       "map": "MAP_BULBUS_TOWN",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BULBUS_WEST",
+      "offset": -38,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_WESTERN_OCEAN_FILLER",
+      "offset": -20,
+      "direction": "down"
     }
   ],
   "object_events": [

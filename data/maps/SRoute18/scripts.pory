@@ -1,1 +1,33 @@
 mapscripts SRoute18_MapScripts {}
+
+
+script SRoute18_Script_TestTriggerOn2 {
+	lock
+	setvar (VAR_TEMP_7, 1)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox("TRIGGER 2!", MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script SRoute18_Script_TestTriggerOn1 {
+	lock
+	setvar (VAR_TEMP_7, 2)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox("TRIGGER 1", MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Sroute18_Script_TestPorygon {
+	lock
+	setvar (VAR_TEMP_7, 1)
+	msgbox ("VAR_TEMP_7 set to 1", MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}

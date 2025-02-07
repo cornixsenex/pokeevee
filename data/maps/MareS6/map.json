@@ -37,6 +37,11 @@
       "map": "MAP_MARE_WWW",
       "offset": -33,
       "direction": "up"
+    },
+    {
+      "map": "MAP_WESTERN_OCEAN_FILLER",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

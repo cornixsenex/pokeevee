@@ -841,7 +841,9 @@
     "LakeIraSouth",
     "Sanjo",
     "SanjoRockFiller",
-    "BikeMapVegas"
+    "BikeMapVegas",
+    "BulbusWest",
+    "WesternOceanFiller"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

@@ -45,13 +45,60 @@
     }
   ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
+      "x": 28,
+      "y": 113,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sroute18_Script_TestPorygon",
+      "flag": "0"
+    }
   ],
   "warp_events": [
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 109,
+      "elevation": 0,
+      "var": "VAR_TEMP_7",
+      "var_value": "1",
+      "script": "SRoute18_Script_TestTriggerOn1"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 109,
+      "elevation": 0,
+      "var": "VAR_TEMP_7",
+      "var_value": "1",
+      "script": "SRoute18_Script_TestTriggerOn1"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 110,
+      "elevation": 0,
+      "var": "VAR_TEMP_7",
+      "var_value": "2",
+      "script": "SRoute18_Script_TestTriggerOn2"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 110,
+      "elevation": 0,
+      "var": "VAR_TEMP_7",
+      "var_value": "2",
+      "script": "SRoute18_Script_TestTriggerOn2"
+    }
   ],
   "bg_events": [
 

@@ -32,6 +32,11 @@
       "map": "MAP_BULBUS_SILVAN_FILLER",
       "offset": 32,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BULBUS_WEST",
+      "offset": 2,
+      "direction": "left"
     }
   ],
   "object_events": [

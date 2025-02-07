@@ -6190,6 +6190,26 @@
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/BikeMapVegas/border.bin",
       "blockdata_filepath": "data/layouts/BikeMapVegas/map.bin"
+    },
+    {
+      "id": "LAYOUT_BULBUS_WEST",
+      "name": "BulbusWest_Layout",
+      "width": 20,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/BulbusWest/border.bin",
+      "blockdata_filepath": "data/layouts/BulbusWest/map.bin"
+    },
+    {
+      "id": "LAYOUT_WESTERN_OCEAN_FILLER",
+      "name": "WesternOceanFiller_Layout",
+      "width": 53,
+      "height": 136,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/WesternOceanFiller/border.bin",
+      "blockdata_filepath": "data/layouts/WesternOceanFiller/map.bin"
     }
   ]
 }

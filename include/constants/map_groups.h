@@ -809,6 +809,8 @@
 #define MAP_SANJO                 (93 | (35 << 8))
 #define MAP_SANJO_ROCK_FILLER     (94 | (35 << 8))
 #define MAP_BIKE_MAP_VEGAS        (95 | (35 << 8))
+#define MAP_BULBUS_WEST           (96 | (35 << 8))
+#define MAP_WESTERN_OCEAN_FILLER  (97 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))
