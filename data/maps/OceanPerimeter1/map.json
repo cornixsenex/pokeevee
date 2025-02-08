@@ -1,0 +1,64 @@
+{
+  "id": "MAP_OCEAN_PERIMETER1",
+  "name": "OceanPerimeter1",
+  "layout": "LAYOUT_OCEAN_PERIMETER1",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_OCEAN_PERIMETER_BIG_ISALND_S",
+      "offset": 17,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_BIG_ISLAND_FILLER_W",
+      "offset": -43,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MARE_S7",
+      "offset": 0,
+      "direction": "emerge"
+    },
+    {
+      "map": "MAP_MARE_S7",
+      "offset": 99,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S8",
+      "offset": 13,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MARE_S9",
+      "offset": -73,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_OCEAN_PERIMETER2",
+      "offset": 0,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

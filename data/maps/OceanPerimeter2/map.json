@@ -1,46 +1,36 @@
 {
-  "id": "MAP_MARE_S10",
-  "name": "MareS10",
-  "layout": "LAYOUT_MARE_S10",
+  "id": "MAP_OCEAN_PERIMETER2",
+  "name": "OceanPerimeter2",
+  "layout": "LAYOUT_OCEAN_PERIMETER2",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": false,
+  "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_MARE_S9",
+      "map": "MAP_OCEAN_PERIMETER1",
       "offset": 0,
       "direction": "right"
     },
     {
-      "map": "MAP_MARE_S5",
+      "map": "MAP_MARE_S9",
       "offset": 86,
       "direction": "up"
     },
     {
-      "map": "MAP_MARE_S6",
+      "map": "MAP_MARE_S10",
       "offset": 0,
       "direction": "up"
     },
     {
-      "map": "MAP_WESTERN_OCEAN_FILLER",
-      "offset": -86,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_OCEAN_PERIMETER2",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
       "map": "MAP_OCEAN_PERIMETER3",
-      "offset": 50,
+      "offset": -36,
       "direction": "left"
     }
   ],

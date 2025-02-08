@@ -843,7 +843,12 @@
     "SanjoRockFiller",
     "BikeMapVegas",
     "BulbusWest",
-    "WesternOceanFiller"
+    "WesternOceanFiller",
+    "OceanPerimeterBigIsalndS",
+    "OceanPerimeter1",
+    "OceanPerimeter2",
+    "OceanPerimeter3",
+    "OceanPerimeter4"
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"

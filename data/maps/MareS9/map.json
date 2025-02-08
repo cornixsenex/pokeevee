@@ -37,6 +37,16 @@
       "map": "MAP_MARE_S6",
       "offset": -86,
       "direction": "up"
+    },
+    {
+      "map": "MAP_OCEAN_PERIMETER1",
+      "offset": 73,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_OCEAN_PERIMETER2",
+      "offset": -86,
+      "direction": "down"
     }
   ],
   "object_events": [

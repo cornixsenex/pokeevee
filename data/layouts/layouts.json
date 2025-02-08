@@ -6207,9 +6207,59 @@
       "width": 53,
       "height": 136,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/WesternOceanFiller/border.bin",
       "blockdata_filepath": "data/layouts/WesternOceanFiller/map.bin"
+    },
+    {
+      "id": "LAYOUT_OCEAN_PERIMETER_BIG_ISALND_S",
+      "name": "OceanPerimeterBigIsalndS_Layout",
+      "width": 164,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/OceanPerimeterBigIsalndS/border.bin",
+      "blockdata_filepath": "data/layouts/OceanPerimeterBigIsalndS/map.bin"
+    },
+    {
+      "id": "LAYOUT_OCEAN_PERIMETER1",
+      "name": "OceanPerimeter1_Layout",
+      "width": 185,
+      "height": 37,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/OceanPerimeter1/border.bin",
+      "blockdata_filepath": "data/layouts/OceanPerimeter1/map.bin"
+    },
+    {
+      "id": "LAYOUT_OCEAN_PERIMETER2",
+      "name": "OceanPerimeter2_Layout",
+      "width": 159,
+      "height": 37,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/OceanPerimeter2/border.bin",
+      "blockdata_filepath": "data/layouts/OceanPerimeter2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OCEAN_PERIMETER3",
+      "name": "OceanPerimeter3_Layout",
+      "width": 53,
+      "height": 73,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/OceanPerimeter3/border.bin",
+      "blockdata_filepath": "data/layouts/OceanPerimeter3/map.bin"
+    },
+    {
+      "id": "LAYOUT_OCEAN_PERIMETER4",
+      "name": "OceanPerimeter4_Layout",
+      "width": 59,
+      "height": 123,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/OceanPerimeter4/border.bin",
+      "blockdata_filepath": "data/layouts/OceanPerimeter4/map.bin"
     }
   ]
 }

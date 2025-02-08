@@ -1592,3 +1592,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BulbusWest/scripts.inc"
 
 	.include "data/maps/WesternOceanFiller/scripts.inc"
+
+	.include "data/maps/OceanPerimeterBigIsalndS/scripts.inc"
+
+	.include "data/maps/OceanPerimeter1/scripts.inc"
+
+	.include "data/maps/OceanPerimeter2/scripts.inc"
+
+	.include "data/maps/OceanPerimeter3/scripts.inc"
+
+	.include "data/maps/OceanPerimeter4/scripts.inc"

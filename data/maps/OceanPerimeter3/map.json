@@ -1,7 +1,7 @@
 {
-  "id": "MAP_WESTERN_OCEAN_FILLER",
-  "name": "WesternOceanFiller",
-  "layout": "LAYOUT_WESTERN_OCEAN_FILLER",
+  "id": "MAP_OCEAN_PERIMETER3",
+  "name": "OceanPerimeter3",
+  "layout": "LAYOUT_OCEAN_PERIMETER3",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
@@ -14,29 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_BULBUS_WEST",
-      "offset": 0,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_MARE_WWW",
-      "offset": 20,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_MARE_S6",
-      "offset": 0,
+      "map": "MAP_OCEAN_PERIMETER2",
+      "offset": 36,
       "direction": "right"
     },
     {
       "map": "MAP_MARE_S10",
-      "offset": 86,
+      "offset": -50,
       "direction": "right"
     },
     {
-      "map": "MAP_OCEAN_PERIMETER3",
+      "map": "MAP_WESTERN_OCEAN_FILLER",
       "offset": 0,
-      "direction": "down"
+      "direction": "up"
     }
   ],
   "object_events": [
