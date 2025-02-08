@@ -4,7 +4,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
-#include "field_control_avatar.h"
+#include "field_control_avatar.h" //Cornix surf transition triggers
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_screen_effect.h"
@@ -822,9 +822,6 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
 
-	//For Kustom Special Collisions
-    //u8 currentBehavior = MapGridGetMetatileBehaviorAt(objectEvent->currentCoords.x, objectEvent->currentCoords.y);
-    
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
         
@@ -1851,6 +1848,7 @@ static void Task_StopSurfingInit(u8 taskId)
     gTasks[taskId].func = Task_WaitStopSurfing;
 }
 
+//Cornix support surf transition triggers
 static void Task_WaitStopSurfing(u8 taskId)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -2734,7 +2732,7 @@ static void Task_StartSurfingInit(u8 taskId)
     gTasks[taskId].func = Task_WaitStartSurfing;
 }
 
-//Cornix Hacking 
+//Cornix support surf transition triggers
 static void Task_WaitStartSurfing(u8 taskId)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
