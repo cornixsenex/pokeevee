@@ -23,7 +23,7 @@ script BigIslandS_OnResume {
 	if (flag(FLAG_SYS_CTRL_OBJ_DELETE) ){
 		call (BigIslandS_Script_TryRemoveHoOh)
 	}
-	if (var(VAR_TEMP_5) == 0) {
+	if (var(VAR_TEMP_2) == 0) {
 		setobjectmovementtype (OBJ_EVENT_INFERNAPE, MOVEMENT_TYPE_WANDER_AROUND)
 		setobjectmovementtype (OBJ_EVENT_MONFERNO, MOVEMENT_TYPE_WANDER_AROUND)
 		setobjectmovementtype (OBJ_EVENT_CHIMCHAR, MOVEMENT_TYPE_WANDER_AROUND)
@@ -268,7 +268,7 @@ script BigIslandS_Script_HideMonkeys {
 
 script BigIslandS_Script_MonkeyTrigger {
 	//Set var so it doesn't loop
-	setvar (VAR_TEMP_5, 1)
+	setvar (VAR_TEMP_2, 1)
 	call (BigIslandS_Script_HideMonkeys)
 	end
 }

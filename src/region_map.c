@@ -1613,15 +1613,15 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 
 		{
 			if (IsRoute3RiverDelta())
-				return StringCopy(dest, gText_RiverDelta);
+				return StringCopy(dest, sMapName_RIVER_DELTA);
 			else  // Default part of map => Cove
-				return StringCopy(dest, gText_CanelosCove);
+				return StringCopy(dest, sMapName_CANELOS_COVE);
 		}
 		//MareWWW - Mare Occidens or River Delta
 		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW))
 		{
 			if (IsMareWWWRiverDelta())
-				return StringCopy(dest, gText_RiverDelta);
+				return StringCopy(dest, sMapName_RIVER_DELTA);
 			else
 				return StringCopy(dest, sMapName_MARE_OCCIDENS);
 		}

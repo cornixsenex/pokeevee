@@ -251,10 +251,6 @@ const u8 gText_BookVerse38[] =_("Like glowing coals the words\nfall off the page
 const u8 gText_Ostracon[] =_("In search of secret cave and sacred wool\nBy SPEAROW free to show by gentle flight\pThe hidden path you seek is truely shown\nThus Argo and her crew find paths unkown{PAUSE_UNTIL_PRESS}");
 const u8 gText_TrainerCard[] = _("Your LEVEL CAP:\n{STR_VAR_1}{PAUSE_UNTIL_PRESS}");
 
-//Cornix Custom Dynamic Mapsec Locations
-const u8 gText_CanelosCove[] = _("CANELO'S COVE");
-const u8 gText_RiverDelta[] = _("RIVER DELTA");
-
 const u8 *const gBagMenu_ReturnToStrings[] =
 {
     [ITEMMENULOCATION_FIELD]               = gText_TheField,

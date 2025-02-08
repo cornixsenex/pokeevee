@@ -16,7 +16,7 @@ BigIslandS_OnResume::
 	goto_if_set FLAG_SYS_CTRL_OBJ_DELETE, BigIslandS_OnResume_2
 BigIslandS_OnResume_1:
 # 26 "data/maps/BigIslandS/scripts.pory"
-	compare VAR_TEMP_5, 0
+	compare VAR_TEMP_2, 0
 	goto_if_eq BigIslandS_OnResume_5
 BigIslandS_OnResume_4:
 	end
@@ -373,7 +373,7 @@ BigIslandS_Script_HideMonkeys::
 
 BigIslandS_Script_MonkeyTrigger::
 # 271 "data/maps/BigIslandS/scripts.pory"
-	setvar VAR_TEMP_5, 1
+	setvar VAR_TEMP_2, 1
 # 272 "data/maps/BigIslandS/scripts.pory"
 	call BigIslandS_Script_HideMonkeys
 	end

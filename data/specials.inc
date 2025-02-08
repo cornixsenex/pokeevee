@@ -588,3 +588,4 @@ gSpecials::
 	def_special IsShinyMareepInParty
 	def_special ScriptGetPartyMonIsShiny
 	def_special IsRoute3RiverDelta
+	def_special IsMareWWWRiverDelta
