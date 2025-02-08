@@ -212,6 +212,21 @@ static const u8 sMapName_VIA_ARBORUM[]   = _("VIA ARBORUM");
 static const u8 sMapName_PORTA_PILO[]    = _("PORTA PILO");
 static const u8 sMapName_CANELOS_COVE[]  = _("CANELOS COVE");
 static const u8 sMapName_RIVER_DELTA[]   = _("RIVER DELTA");
+static const u8 sMapName_MARE_OCCIDENS[]       = _("MARE OCCIDENS");
+static const u8 sMapName_MARE_ORIENS[]         = _("MARE ORIENS");
+static const u8 sMapName_MARE_INTERNUM[]       = _("MARE INTERNUM");
+static const u8 sMapName_MARE_TRANQUILLUS[]    = _("MARE TRANQUILLUS");
+static const u8 sMapName_MARE_TROPICUS[]       = _("MARE TROPICUS");
+static const u8 sMapName_MARE_SUBTROPICUS[]    = _("MARE SUBTROPICUS");
+static const u8 sMapName_MARE_MALUS[]          = _("MARE MALUS");
+static const u8 sMapName_ISLA_IGNIFERA[]       = _("ISLA IGNIFERA");
+static const u8 sMapName_ISLA_YERBA_BUENA[]    = _("ISLA YERBA BUENA");
+static const u8 sMapName_ISLA_TROPICANA[]      = _("ISLA TROPICAN");
+static const u8 sMapName_ISLA_PINA[]           = _("ISLA PIÑA");
+static const u8 sMapName_ISLA_LAVINIA[]        = _("ISLA LAVINIA");
+static const u8 sMapName_ISLA_ITHACA[]         = _("ISLA ITHACA");
+static const u8 sMapName_ISLA_WAKA[]           = _("ISLA WAKA");
+static const u8 sMapName_ISLA_ARIDA[]          = _("ISLA ARIDA");
 //End Customs
 static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
 
@@ -438,6 +453,21 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_PORTA_PILO] = { 0, 0, 1, 1, sMapName_PORTA_PILO},
     [MAPSEC_CANELOS_COVE] = { 0, 0, 1, 1, sMapName_CANELOS_COVE},
     [MAPSEC_RIVER_DELTA] = { 0, 0, 1, 1, sMapName_RIVER_DELTA},
+    [MAPSEC_MARE_OCCIDENS] = { 0, 0, 1, 1, sMapName_MARE_OCCIDENS},
+    [MAPSEC_MARE_ORIENS] = { 0, 0, 1, 1, sMapName_MARE_ORIENS},
+    [MAPSEC_MARE_INTERNUM] = { 0, 0, 1, 1, sMapName_MARE_INTERNUM},
+    [MAPSEC_MARE_TRANQUILLUS] = { 0, 0, 1, 1, sMapName_MARE_TRANQUILLUS},
+    [MAPSEC_MARE_TROPICUS] = { 0, 0, 1, 1, sMapName_MARE_TROPICUS},
+    [MAPSEC_MARE_SUBTROPICUS] = { 0, 0, 1, 1, sMapName_MARE_SUBTROPICUS},
+    [MAPSEC_MARE_MALUS] = { 0, 0, 1, 1, sMapName_MARE_MALUS},
+    [MAPSEC_ISLA_IGNIFERA] = { 0, 0, 1, 1, sMapName_ISLA_IGNIFERA},
+    [MAPSEC_ISLA_YERBA_BUENA] = { 0, 0, 1, 1, sMapName_ISLA_YERBA_BUENA},
+    [MAPSEC_ISLA_TROPICANA] = { 0, 0, 1, 1, sMapName_ISLA_TROPICANA},
+    [MAPSEC_ISLA_PINA] = { 0, 0, 1, 1, sMapName_ISLA_PINA},
+    [MAPSEC_ISLA_LAVINIA] = { 0, 0, 1, 1, sMapName_ISLA_LAVINIA},
+    [MAPSEC_ISLA_ITHACA] = { 0, 0, 1, 1, sMapName_ISLA_ITHACA},
+    [MAPSEC_ISLA_WAKA] = { 0, 0, 1, 1, sMapName_ISLA_WAKA},
+    [MAPSEC_ISLA_ARIDA] = { 0, 0, 1, 1, sMapName_ISLA_ARIDA},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };
