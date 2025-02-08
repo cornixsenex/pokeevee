@@ -18,3 +18,18 @@ mapscripts MareWWW_MapScripts {
 
 
 }
+
+//Triggered on transit tiles by temp var == 1 (we're transitioning into River Delta)
+script MareWWW_Script_RiverDeltaTransition {
+	//setvar to stop infinite trigger
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+
+//Triggered on transit tiles by temp var == 2 (we're transitioning into Mare Occidens)
+script MareWWW_Script_MareOccidensTransition {
+	//setvar to stop infinite trigger
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
+}

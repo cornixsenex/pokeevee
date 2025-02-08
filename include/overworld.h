@@ -156,6 +156,9 @@ bool32 Overworld_SendKeysToLinkIsRunning(void);
 bool32 IsSendingKeysOverCable(void);
 void ClearLinkPlayerObjectEvents(void);
 
+//CornixSenex Custom Dynamic Map support
+u32 DetermineDynamicMapsecValue (void);
+
 // Item Description Headers
 enum ItemObtainFlags
 {

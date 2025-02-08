@@ -42,6 +42,7 @@
 #include "palette.h"
 #include "play_time.h"
 #include "random.h"
+#include "region_map.h"
 #include "roamer.h"
 #include "rotating_gate.h"
 #include "rtc.h"
@@ -618,9 +619,11 @@ struct MapHeader const *const GetDestinationWarpMapHeader(void)
     return Overworld_GetMapHeaderByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum);
 }
 
-static void LoadCurrentMapData(void)
+static void LoadCurrentMapData(void) //NOTE: Cornix Custom Dynamic Map Support
 {
     sLastMapSectionId = gMapHeader.regionMapSectionId;
+	if (sLastMapSectionId == MAPSEC_DYNAMIC) //Dynamic Maps Check
+		sLastMapSectionId = DetermineDynamicMapsecValue(); //Dynamic Maps Support
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
@@ -823,9 +826,11 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
     return SetDiveWarp(CONNECTION_DIVE, x, y);
 }
 
+//NOTE: Changed to support Dynamic Maps
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
     s32 paletteIndex;
+	u16 newMapSec; //Cornix Dynamic Maps
 
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
@@ -867,17 +872,30 @@ if (I_VS_SEEKER_CHARGING != 0)
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
+	DebugPrintf("\nXXXXXXX\nTOP\nLastMap: %d\ngMapHead: %d", sLastMapSectionId, gMapHeader.regionMapSectionId);
+	//Note: newMapSec used to support Dynamic Maps
+	newMapSec = gMapHeader.regionMapSectionId;
+	if (newMapSec == MAPSEC_DYNAMIC)
+	{
+		DebugPrintf("newMapSec YES Dynamic!\n");
+		newMapSec = DetermineDynamicMapsecValue();
+	}
+	else
+		DebugPrintf("newMapSec NOT Dynamic\ngHeader: %d\n",gMapHeader.regionMapSectionId); 
+	DebugPrintf("MID\nLastMap: %d\nnewMapSec: %d", sLastMapSectionId, newMapSec);
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
-        if (gMapHeader.regionMapSectionId != sLastMapSectionId)
+		DebugPrintf("HERE");
+        if (newMapSec != sLastMapSectionId)
             ShowMapNamePopup();
     }
     else
     {
-        if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
-         || gMapHeader.regionMapSectionId != sLastMapSectionId)
+        if (newMapSec != MAPSEC_BATTLE_FRONTIER
+         || newMapSec != sLastMapSectionId)
             ShowMapNamePopup();
     }
+	DebugPrintf("BOT\nLastMap: %d\nnewMapSec: %d\nXXXXXXX\n", sLastMapSectionId, newMapSec);
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -3505,4 +3523,36 @@ void ScriptHideItemDescription(struct ScriptContext *ctx)
 }
 #endif // OW_SHOW_ITEM_DESCRIPTIONS
 
+u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom dynamic maps 
+{
+	//Determine which map 
+	//then determine which "map" to return 
+	
+	DebugPrintf("DDMV:\nmapNum: %d\n", gSaveBlock1Ptr->location.mapNum);
+	
+	//Route3 - Cove, Delta, River
+	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 
+	{
+		if (IsRoute3RiverDelta())
+			return MAPSEC_RIVER_DELTA;
+		else //Everywhere else
+			return MAPSEC_CANELOS_COVE;
+	}
+	//MareWWW - Mare Occidens or River Delta
+	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW)) 
+	{
+		if (IsMareWWWRiverDelta())
+			return MAPSEC_RIVER_DELTA;
+		else
+			return
+				MAPSEC_MARE_OCCIDENS;
+	}
+	//Default - Should never be reached
+	else 
+	{
+		DebugPrintf("DetermineDynamicMapsecValue returning DEFAULT");
+		return MAPSEC_DYNAMIC;
+	}
+
+}
 

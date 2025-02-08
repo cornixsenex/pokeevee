@@ -18,3 +18,19 @@ MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	setvar VAR_TEMP_5, 2
 	return
 
+
+MareWWW_Script_RiverDeltaTransition::
+# 25 "data/maps/MareWWW/scripts.pory"
+	setvar VAR_TEMP_5, 2
+# 26 "data/maps/MareWWW/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+MareWWW_Script_MareOccidensTransition::
+# 33 "data/maps/MareWWW/scripts.pory"
+	setvar VAR_TEMP_5, 1
+# 34 "data/maps/MareWWW/scripts.pory"
+	special ShowMapNamePopup
+	return
+
