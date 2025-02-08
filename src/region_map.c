@@ -1610,14 +1610,22 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
     {
     case MAPSEC_DYNAMIC:
 		//Route3 - Cove, Delta, River
-		if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) {
+		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 
+		{
 			if (IsRoute3RiverDelta())
 				return StringCopy(dest, gText_RiverDelta);
 			else  // Default part of map => Cove
 				return StringCopy(dest, gText_CanelosCove);
 		}
-		//Check Other Maps here...
-
+		//MareWWW - Mare Occidens or River Delta
+		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW))
+		{
+			if (IsMareWWWRiverDelta())
+				return StringCopy(dest, gText_RiverDelta);
+			else
+				return StringCopy(dest, sMapName_MARE_OCCIDENS);
+		}
+		
 		//Default Map - Should never be reached
 		else
 			return StringCopy(dest, gText_Ferry);
@@ -2073,5 +2081,17 @@ bool32 IsRoute3RiverDelta(void)
 	else  // Default part of map => Cove
 		return FALSE;
 }
+
+bool32 IsMareWWWRiverDelta(void)
+{
+	s16 x;
+	x = gSaveBlock1Ptr->pos.x;
+	if ( x < 79 )
+		return FALSE;
+	else
+		return TRUE;
+}
+
+
 
 

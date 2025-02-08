@@ -115,7 +115,9 @@ void TrySetPlayerIconBlink(void);
 void BlendRegionMap(u16 color, u32 coeff);
 void SetRegionMapDataForZoom(void);
 
-bool32 IsRoute3RiverDelta(void); //Cornix Custom
+//Cornix Custom - Dynamic Maps
+bool32 IsRoute3RiverDelta(void);
+bool32 IsMareWWWRiverDelta(void);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 

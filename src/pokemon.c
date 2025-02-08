@@ -7079,16 +7079,23 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 	//then determine which "map" to return 
 	
 	//Route3 - Cove, Delta, River
-	if (gSaveBlock1Ptr->location.mapGroup == 35 && gSaveBlock1Ptr->location.mapNum == 14) 
+	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 
 	{
 		if (IsRoute3RiverDelta())
 			return MAPSEC_RIVER_DELTA;
 		else //Everywhere else
 			return MAPSEC_CANELOS_COVE;
 	}
-
-	//Other maps go Here
-	
+	//MareWWW - Mare Occidens or River Delta
+	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW)) 
+	{
+		if (IsMareWWWRiverDelta())
+			return MAPSEC_RIVER_DELTA;
+		else
+			return
+				MAPSEC_MARE_OCCIDENS;
+	}
+	//Default - Should never be reached
 	else 
 		return MAPSEC_DYNAMIC;
 
