@@ -636,6 +636,7 @@ static void LoadMapNamePopUpWindowBg(void)
 {
 
 	s32 mapGroup, mapNum;
+	u32 n;
     u8 popUpThemeId;
     u8 popupWindowId = GetMapNamePopUpWindowId();
     u16 regionMapSectionId = gMapHeader.regionMapSectionId;
@@ -657,10 +658,15 @@ static void LoadMapNamePopUpWindowBg(void)
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
 		{
-			if (IsMareWWWRiverDelta())
+			n = IsMareWWWRiverDelta();
+			if (n == 2) 
 				regionMapSectionId = MAPSEC_RIVER_DELTA;
-			else
+			else if (n == 1)
 				regionMapSectionId = MAPSEC_MARE_OCCIDENS;
+			else if (n == 3)
+				regionMapSectionId = MAPSEC_LITUS_FALX;
+			else
+				regionMapSectionId = MAPSEC_DYNAMIC;
 		}
 	}
 

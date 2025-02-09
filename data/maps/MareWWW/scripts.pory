@@ -37,3 +37,8 @@ script MareWWW_Script_MareOccidensTransition {
 	setvar (VAR_TEMP_5, 1)
 	special (ShowMapNamePopup)
 }
+
+script MareWWW_Script_LitusFalxTransition {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
+}

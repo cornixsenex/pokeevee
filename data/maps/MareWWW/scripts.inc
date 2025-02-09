@@ -42,3 +42,11 @@ MareWWW_Script_MareOccidensTransition::
 	special ShowMapNamePopup
 	return
 
+
+MareWWW_Script_LitusFalxTransition::
+# 42 "data/maps/MareWWW/scripts.pory"
+	setvar VAR_TEMP_5, 3
+# 43 "data/maps/MareWWW/scripts.pory"
+	special ShowMapNamePopup
+	return
+
