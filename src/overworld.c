@@ -619,11 +619,9 @@ struct MapHeader const *const GetDestinationWarpMapHeader(void)
     return Overworld_GetMapHeaderByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum);
 }
 
-static void LoadCurrentMapData(void) //NOTE: Cornix Custom Dynamic Map Support
+static void LoadCurrentMapData(void)
 {
     sLastMapSectionId = gMapHeader.regionMapSectionId;
-	if (sLastMapSectionId == MAPSEC_DYNAMIC) //Dynamic Maps Check
-		sLastMapSectionId = DetermineDynamicMapsecValue(); //Dynamic Maps Support
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
@@ -830,7 +828,7 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
     s32 paletteIndex;
-	u16 newMapSec; //Cornix Dynamic Maps
+	s32 destMapNum, x, y;
 
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
@@ -839,7 +837,9 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
         TransitionMapMusic();
 
     ApplyCurrentWarp();
+	DebugPrintf("\nBefore LoadCurrentMapData\nX: %d\nY: %d\nMAPSEC: %d\nMAPGROUP: %d\nMAPNUM: %d", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y, gMapHeader.regionMapSectionId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     LoadCurrentMapData();
+	DebugPrintf("\nAfter LoadCurrentMapData\nX: %d\nY: %d\nMAPSEC: %d\nMAPGROUP: %d\nMAPNUM: %d", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y, gMapHeader.regionMapSectionId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     LoadObjEventTemplatesFromHeader();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
@@ -872,30 +872,47 @@ if (I_VS_SEEKER_CHARGING != 0)
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
-	DebugPrintf("\nXXXXXXX\nTOP\nLastMap: %d\ngMapHead: %d", sLastMapSectionId, gMapHeader.regionMapSectionId);
-	//Note: newMapSec used to support Dynamic Maps
-	newMapSec = gMapHeader.regionMapSectionId;
-	if (newMapSec == MAPSEC_DYNAMIC)
-	{
-		DebugPrintf("newMapSec YES Dynamic!\n");
-		newMapSec = DetermineDynamicMapsecValue();
-	}
-	else
-		DebugPrintf("newMapSec NOT Dynamic\ngHeader: %d\n",gMapHeader.regionMapSectionId); 
-	DebugPrintf("MID\nLastMap: %d\nnewMapSec: %d", sLastMapSectionId, newMapSec);
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
-		DebugPrintf("HERE");
-        if (newMapSec != sLastMapSectionId)
+
+		if (gMapHeader.regionMapSectionId != sLastMapSectionId)
             ShowMapNamePopup();
+		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && sLastMapSectionId == MAPSEC_DYNAMIC)
+		{
+			destMapNum = gSaveBlock1Ptr->location.mapNum;
+			x = gSaveBlock1Ptr->pos.x;
+			y = gSaveBlock1Ptr->pos.y;
+			DebugPrintf("\nXXXXXXX\nSPECIAL DYNAMIC CASE\nXXXXXXX");
+			//mapNum = Destination MapNum
+			//XY     = Coords on Destination Map
+
+			//Switch on Destination Maps
+		
+			//Route3 - Handle MareWWW Transition
+			if (destMapNum == MAP_NUM(ROUTE3) &&
+					x > 18 &&
+					x < 47
+			   )
+				ShowMapNamePopup();
+
+			//MareWWW - Handle Canelos Cove Transition
+			if (destMapNum == MAP_NUM(MARE_WWW) &&
+					x > 54 &&
+					x < 83 &&
+					y < 0
+			   )
+				ShowMapNamePopup();
+
+			//Other Maps with special case dynamic transitions (Places where I specifically want the Map Popup to appear automatically when transitioning from one dynamic map to another)
+		}
     }
     else
     {
-        if (newMapSec != MAPSEC_BATTLE_FRONTIER
-         || newMapSec != sLastMapSectionId)
+        if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
+         || gMapHeader.regionMapSectionId != sLastMapSectionId)
             ShowMapNamePopup();
     }
-	DebugPrintf("BOT\nLastMap: %d\nnewMapSec: %d\nXXXXXXX\n", sLastMapSectionId, newMapSec);
+	DebugPrintf("\nEND LoadCurrentMapData\nX: %d\nY: %d\nMAPSEC: %d\nMAPGROUP: %d\nMAPNUM: %d", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y, gMapHeader.regionMapSectionId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -3528,7 +3545,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 	//Determine which map 
 	//then determine which "map" to return 
 	
-	DebugPrintf("DDMV:\nmapNum: %d\n", gSaveBlock1Ptr->location.mapNum);
+	//DebugPrintf("\n=======\nDDMV:\nmapNum: %d\nX: %d\nY: %d\n=======\n", gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y);
 	
 	//Route3 - Cove, Delta, River
 	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 

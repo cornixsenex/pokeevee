@@ -58,7 +58,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 79,
+      "x": 81,
       "y": 0,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -67,197 +67,8 @@
     },
     {
       "type": "trigger",
-      "x": 78,
+      "x": 80,
       "y": 0,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 1,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 9,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 12,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 14,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 18,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 21,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
@@ -269,12 +80,201 @@
       "y": 1,
       "elevation": 0,
       "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 81,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 81,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 81,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 81,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 82,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 83,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 85,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
       "var_value": "1",
       "script": "MareWWW_Script_RiverDeltaTransition"
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 80,
       "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -283,7 +283,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 80,
       "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -292,7 +292,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 80,
       "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -301,7 +301,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 81,
       "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -310,7 +310,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 82,
       "y": 6,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -319,7 +319,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 82,
       "y": 7,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -328,7 +328,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 82,
       "y": 8,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -337,7 +337,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 81,
       "y": 9,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -346,7 +346,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 81,
       "y": 10,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -355,7 +355,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 81,
       "y": 11,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -364,7 +364,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 81,
       "y": 12,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -373,7 +373,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 80,
       "y": 13,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -382,7 +382,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 80,
       "y": 14,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -391,7 +391,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 81,
       "y": 15,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -400,7 +400,34 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 82,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 83,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 85,
       "y": 16,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -409,7 +436,34 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 86,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 89,
       "y": 17,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -418,7 +472,52 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 90,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 91,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 92,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 95,
       "y": 18,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -427,7 +526,7 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 96,
       "y": 19,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -436,7 +535,106 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 97,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 98,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 99,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 100,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 101,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 102,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 103,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 107,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 108,
       "y": 20,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -445,12 +643,210 @@
     },
     {
       "type": "trigger",
-      "x": 79,
+      "x": 109,
       "y": 21,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
       "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 89,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 90,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 91,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 92,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 95,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 96,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 97,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 98,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 99,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 100,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 101,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 102,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 103,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 107,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 108,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
     }
   ],
   "bg_events": [

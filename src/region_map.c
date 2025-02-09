@@ -1606,11 +1606,15 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
 // CornixSenex 2.4.25
 u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 {
+	s32 mapGroup, mapNum;
+
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum   = gSaveBlock1Ptr->location.mapNum;
     switch (mapSecId)
     {
     case MAPSEC_DYNAMIC:
 		//Route3 - Cove, Delta, River
-		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 
+		if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 		{
 			if (IsRoute3RiverDelta())
 				return StringCopy(dest, sMapName_RIVER_DELTA);
@@ -1618,7 +1622,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				return StringCopy(dest, sMapName_CANELOS_COVE);
 		}
 		//MareWWW - Mare Occidens or River Delta
-		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW))
+		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
 		{
 			if (IsMareWWWRiverDelta())
 				return StringCopy(dest, sMapName_RIVER_DELTA);
