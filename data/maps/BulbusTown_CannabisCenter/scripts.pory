@@ -1,26 +1,44 @@
+const OBJ_EVENT_SCOTT = 2
+
+const FIELD_PIC_SCOTT = 33
+
 mapscripts BulbusTown_CannabisCenter_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		setweather (WEATHER_FOG_DIAGONAL)
+		if (var(VAR_SILVANWOODS_STATE) == 0) {
+			call (BulbusTown_CannabisCenter_Script_ShowScott)
+		}
 	}
 	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SILVANWOODS_STATE, 0: BulbusTown_CannabisCenter_Script_ScottScene
 	]
 
 }
 
-script BulbusTown_CannabisCenter_OnFrame {
+script BulbusTown_CannabisCenter_Script_ShowScott {
+	setobjectxyperm (OBJ_EVENT_SCOTT, 8,4)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_DOWN)
+
+	return
+}
+
+script BulbusTown_CannabisCenter_Script_ScottScene {
 	lockall
+	setvar (VAR_SILVANWOODS_STATE, 1)
 	applymovement (OBJ_EVENT_ID_PLAYER, BulbusTown_CannabisCenter_Movement_Player)
-	load_field_pic (5, 190, 98)
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
 	msgbox (BulbusTown_CannabisCenter_Text_Scott1)
 	waitmovement (0)
-	applymovement (2, Common_Movement_FaceLeft)
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceLeft)
 	waitmovement (0)
+	msgbox (BulbusTown_CannabisCenter_Text_Scott2)
 	closemessage
-	destroy_field_pic (5)
+	destroy_field_pic (FIELD_PIC_SCOTT)
 	applymovement (2, BulbusTown_CannabisCenter_Movement_Scott)
 	waitmovement (0)
-	removeobject (2)
-	setflag (FLAG_HIDE_BULBUSSCOTT)
+	setobjectxyperm (OBJ_EVENT_SCOTT, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
+	removeobject (OBJ_EVENT_SCOTT)
 	releaseall
 	end
 }
@@ -54,12 +72,15 @@ text BulbusTown_CannabisCenter_Intro {
 }
 
 text BulbusTown_CannabisCenter_Outtro {
-	format("Hows that feel? Just let me know if you need another one.")
+	format("Hows that feel? Just let me know if you need another one. Bye bye!")
 }
 
 text BulbusTown_CannabisCenter_Text_Scott1 {
-	format("Hey {PLAYER} I knew you'd come, so what you think? The finest cannabis shop in the state. As a reward for saving my daughter I've let the business know you smoke for free. Speaking of Leaf she's in the Silvan Woods training the Pokemon that she just caught. We better go catch up to her here soon...")
+	format("Hey {PLAYER}! What took so long? So what you think?")
 }
 
+text BulbusTown_CannabisCenter_Text_Scott2 {
+	format("I own the finest Lotus shop in state. If you're a Lotus head please, be my guest, and smoke here free of charge to your content. Once satisfied we must continue on the road to Saeclara. While you delayed my most impatient daughter's already grown tired of waiting and hit the road against my own orders to stick with me. We must find her and then together cross the mighty river and reach Saeclara.")
+}
 
 

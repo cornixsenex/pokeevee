@@ -1,115 +1,146 @@
 BulbusTown_CannabisCenter_MapScripts::
-# 2 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 6 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION
-# 5 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 12 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 3 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 7 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	setweather WEATHER_FOG_DIAGONAL
+# 8 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	compare VAR_SILVANWOODS_STATE, 0
+	goto_if_eq BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 9 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	call BulbusTown_CannabisCenter_Script_ShowScott
 	return
 
 BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 13 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	map_script_2 VAR_SILVANWOODS_STATE, 0, BulbusTown_CannabisCenter_Script_ScottScene
 	.2byte 0
 
 
-BulbusTown_CannabisCenter_OnFrame::
-# 11 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+BulbusTown_CannabisCenter_Script_ShowScott::
+# 19 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	setobjectxyperm 2, 8, 4
+# 20 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+
+BulbusTown_CannabisCenter_Script_ScottScene::
+# 26 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	lockall
-# 12 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 27 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	setvar VAR_SILVANWOODS_STATE, 1
+# 28 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, BulbusTown_CannabisCenter_Movement_Player
-# 13 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
-	load_field_pic 5, 190, 98
-# 14 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 29 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	load_field_pic 33, 190, 98
+# 30 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	msgbox BulbusTown_CannabisCenter_Text_Scott1
-# 15 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 31 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	waitmovement 0
-# 16 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 32 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	applymovement 2, Common_Movement_FaceLeft
-# 17 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 33 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	waitmovement 0
-# 18 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 34 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	msgbox BulbusTown_CannabisCenter_Text_Scott2
+# 35 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	closemessage
-# 19 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
-	destroy_field_pic 5
-# 20 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 36 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	destroy_field_pic 33
+# 37 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	applymovement 2, BulbusTown_CannabisCenter_Movement_Scott
-# 21 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 38 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	waitmovement 0
-# 22 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 39 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	setobjectxyperm 2, 0, 0
+# 40 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	setobjectmovementtype 2, MOVEMENT_TYPE_INVISIBLE
+# 41 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	removeobject 2
-# 23 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
-	setflag FLAG_HIDE_BULBUSSCOTT
-# 24 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 42 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	releaseall
 	end
 
 
 BulbusTown_CannabisCenter_Clerk::
-# 30 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 48 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	lock
-# 31 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 49 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	faceplayer
-# 32 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 50 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	msgbox BulbusTown_CannabisCenter_Intro
-# 33 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 51 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	closemessage
-# 34 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 52 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	call Common_EventScript_OutOfCenterPartyHeal
-# 35 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 53 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	msgbox BulbusTown_CannabisCenter_Outtro
-# 36 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 54 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	release
 	end
 
 
-# 40 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 58 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 BulbusTown_CannabisCenter_Movement_Player:
-# 41 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 59 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_up
-# 41 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 59 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_up
-# 41 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 59 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_up
-# 41 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 59 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_up
-# 42 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 60 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	face_right
 	step_end
 
-# 45 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 63 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 BulbusTown_CannabisCenter_Movement_Scott:
-# 46 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 64 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_down
-# 46 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 64 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_down
-# 46 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 64 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_down
-# 47 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 65 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_left
-# 48 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 66 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	walk_down
 	step_end
 
 BulbusTown_CannabisCenter_Intro::
-# 52 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 70 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	.string "What's up dude? Scott told me you smoke\n"
 	.string "for free, here hit this bong!$"
 
 BulbusTown_CannabisCenter_Outtro::
-# 56 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
+# 74 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
 	.string "Hows that feel? Just let me know if you\n"
-	.string "need another one.$"
+	.string "need another one. Bye bye!$"
 
 BulbusTown_CannabisCenter_Text_Scott1::
-# 60 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
-	.string "Hey {PLAYER} I knew you'd come, so\n"
-	.string "what you think? The finest cannabis\l"
-	.string "shop in the state. As a reward for\l"
-	.string "saving my daughter I've let the\l"
-	.string "business know you smoke for free.\l"
-	.string "Speaking of Leaf she's in the Silvan\l"
-	.string "Woods training the Pokemon that she\l"
-	.string "just caught. We better go catch up to\l"
-	.string "her here soon...$"
+# 78 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	.string "Hey {PLAYER}! What took so long? So\n"
+	.string "what you think?$"
+
+BulbusTown_CannabisCenter_Text_Scott2::
+# 82 "data//maps/BulbusTown_CannabisCenter/scripts.pory"
+	.string "I own the finest Lotus shop in state.\n"
+	.string "If you're a Lotus head please, be my\l"
+	.string "guest, and smoke here free of charge to\l"
+	.string "your content. Once satisfied we must\l"
+	.string "continue on the road to Saeclara. While\l"
+	.string "you delayed my most impatient\l"
+	.string "daughter's already grown tired of\l"
+	.string "waiting and hit the road against my own\l"
+	.string "orders to stick with me. We must find\l"
+	.string "her and then together cross the mighty\l"
+	.string "river and reach Saeclara.$"

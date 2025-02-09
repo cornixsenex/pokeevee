@@ -1,61 +1,9 @@
 mapscripts SilvanWoods_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_ROUTE3_STATE, 0: SilvanWoods_OnWarp_ShowFight1			
-		VAR_ROUTE3_STATE, 1: SilvanWoods_OnWarp_ShowFight2
 	]
 
 }
 
-script SilvanWoods_OnWarp_ShowFight1 {
-	addobject (35)
-	showobjectat (35, MAP_SILVAN_WOODS)
-	addobject (36)
-	showobjectat (36, MAP_SILVAN_WOODS)
-	addobject (37)
-	showobjectat (37, MAP_SILVAN_WOODS)
-	addobject (38)
-	showobjectat (38, MAP_SILVAN_WOODS)
-	end
-}
-
-script SilvanWoods_OnWarp_ShowFight2 {
-	addobject (25)
-	showobjectat (25, MAP_SILVAN_WOODS)
-	addobject (26)
-	showobjectat (26, MAP_SILVAN_WOODS)
-	addobject (27)
-	showobjectat (27, MAP_SILVAN_WOODS)
-	addobject (28)
-	showobjectat (28, MAP_SILVAN_WOODS)
-	end
-}
-
-script SilvanWoods_RivalTrigger1 {
-	lockall
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	addobject (34)
-	showobjectat (34, MAP_ROUTE3)	
-	applymovement (34, SilvanWoods_Movement_RivalWalk)
-	waitmovement (0)
-	removeobject (34)
-	setvar (VAR_ROUTE3_STATE, 2)
-	releaseall
-	end
-}
-
-script SilvanWoods_RivalTrigger2 {
-	lockall
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerRival)	
-	addobject (34)
-	showobjectat (34, MAP_ROUTE3)	
-	applymovement (34, SilvanWoods_Movement_RivalWalk)
-	waitmovement (0)
-	removeobject (34)
-	setvar (VAR_ROUTE3_STATE, 2)
-	releaseall
-	end
-}
 
 script SilvanWoods_EventScript_ScottTrigger {
 	lockall	
@@ -117,7 +65,6 @@ script SilvanWoods_EventScript_Scott2Trigger {
 	removeobject (40)
 	setflag (FLAG_HIDE_SILVANWOODS_LEAF1)
 	setflag (FLAG_HIDE_SILVANWOODS_SCOTT)
-	setvar (VAR_ROUTE3_STATE, 5)
 	releaseall 
 	end
 }
@@ -309,7 +256,6 @@ script SilvanWoods_EventScript_Stoney {
 script SilvanWoods_EventScript_Gary {
 	trainerbattle_single(TRAINER_GARY, SilvanWoods_Text_GaryIntro, SilvanWoods_Text_GaryLost)
 	msgbox (SilvanWoods_Text_GaryPost)
-	setvar (VAR_ROUTE3_STATE, 3)
 	closemessage
 	end
 }

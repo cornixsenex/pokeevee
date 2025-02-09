@@ -55,8 +55,8 @@
 #define FLAG_UNUSED_0x028       0x28 // Unused Flag 
 #define FLAG_UNUSED_0x029       0x29 // UNUSED
 #define FLAG_UNUSED_0x02A       0x2A // UNUSED 
-#define FLAG_HASINSURANCE    0x2B // Allows Pokecenter Use
-#define FLAG_HIDE_BULBUSSCOTT 0x2C // Hide Scott in Bulbus Canna Center
+#define FLAG_HASINSURANCE       0x2B // Allows Pokecenter Use (Should be checkitem?)
+#define FLAG_UNUSED_0x02C       0x2C // UNUSED 
 #define FLAG_HIDE_RT17_BLOCK1 0x2D // Hides the first block
 #define FLAG_BULBUS_HIDE_STRIKE 0x2E // Hides strike (opens boat + shop)
 #define FLAG_SILVANWOODS_HIDEFIGHT1   0x2F // After Leaf1 fight hides Fight1

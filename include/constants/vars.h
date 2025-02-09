@@ -336,8 +336,18 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER       			 0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 			 0x40F6
 
-//Literally all of those are up for grabs...U			 p Above
-#define VAR_ROUTE3_STATE                     			 0x40F7 // Leaf Trigger
+//Literally all of those are up for grabs...Up Above
+
+#define VAR_SILVANWOODS_STATE                     	     0x40F7 // 0: Start, trigger Club Scott, Show brawl block
+																// 1: After Club Scott, clear block, show Leaf et Scott before woods
+																// 2: After Leaf and Scott before woods scene, Show boat but NOT Scott et Leaf, trigger show Scott et Leaf
+																// 3: Set only when near the boat approaching shows scott et leaf with the boat and triggers scott et leaf boat scene
+																// 4: After Scott et Leaf Boat scene trigger LeafChik scene 1
+																// 5: After LeafChik scene 2. - Show Scott Block - Setup LeafChik2 - Leaf chases Chik thru woods and see it from afar
+																// 6: After LeafChik2 - ShowScottBlock - ShowLeaf3 (Leaf before Spider Den)
+																// 7: During Leaf Spider Den - Do Leaf Block -Alert Music - Show ChikSpider thing
+																// 8: After ChickLeaf - Trigger Scott et Leaf leave woods
+																// 9: After Scott et Leaf leave woods. 
 #define VAR_CITYCLARA_STATE                  			 0x40F8 // Leaf+Scott in CannaClub...
 #define VAR_UNUSED_40F9           			             0x40F9 // UNUSED
 #define VAR_ROUTE4_STATE                     			 0x40FA // Controls events on Route4 set to ONE (1) by the rocket event in Route4

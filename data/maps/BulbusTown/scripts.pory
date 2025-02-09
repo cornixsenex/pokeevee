@@ -11,6 +11,9 @@ const OBJ_EVENT_SAILOR4 = 14
 const OBJ_EVENT_SAILOR5 = 8
 const OBJ_EVENT_SAILOR6 = 1
 
+const OBJ_EVENT_BRAWL1 = 3
+const OBJ_EVENT_BRAWL2 = 4
+
 mapscripts BulbusTown_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
@@ -20,13 +23,27 @@ mapscripts BulbusTown_MapScripts {
 		if (!flag(FLAG_JASON_HAS_SHINYMAREEP)) {
 			call (BulbusTown_Script_HideJason)
 		}
-
+		if (var(VAR_SILVANWOODS_STATE) == 0) {
+			call (BulbusTown_Script_ShowBrawl)
+		}
 		//if (flag(FLAG_HIDE_MAP_NAME_POPUP)) {
 		//	clearflag (FLAG_HIDE_MAP_NAME_POPUP)
 		//}
 	}
 
 }
+
+script BulbusTown_Script_ShowBrawl {
+	setobjectxyperm (OBJ_EVENT_BRAWL1, 27, 6)
+	setobjectmovementtype (OBJ_EVENT_BRAWL1, MOVEMENT_TYPE_RUN_IN_PLACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_BRAWL2, 27, 7)
+	setobjectmovementtype (OBJ_EVENT_BRAWL2, MOVEMENT_TYPE_RUN_IN_PLACE_UP)
+
+	return
+}
+
+
 
 script BulbusTown_Script_ShowStrike {
 
