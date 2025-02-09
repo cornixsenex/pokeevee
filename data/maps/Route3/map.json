@@ -494,6 +494,24 @@
       "var": "VAR_TEMP_5",
       "var_value": "2",
       "script": "Route3_Script_CanelosCoveTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_CanelosCoveTransition"
     }
   ],
   "bg_events": [

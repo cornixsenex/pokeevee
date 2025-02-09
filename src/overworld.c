@@ -872,17 +872,21 @@ if (I_VS_SEEKER_CHARGING != 0)
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
+	destMapNum = gSaveBlock1Ptr->location.mapNum;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
-
-		if (gMapHeader.regionMapSectionId != sLastMapSectionId)
+		//Last and Dest Maps are both not == and neither are Dynamic
+		if (gMapHeader.regionMapSectionId != sLastMapSectionId &&
+				gMapHeader.regionMapSectionId != MAPSEC_DYNAMIC &&
+				sLastMapSectionId != MAPSEC_DYNAMIC
+		   )
             ShowMapNamePopup();
+		//Both Last and Dest Maps are Dynamic
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
-			destMapNum = gSaveBlock1Ptr->location.mapNum;
-			x = gSaveBlock1Ptr->pos.x;
-			y = gSaveBlock1Ptr->pos.y;
-			DebugPrintf("\nXXXXXXX\nSPECIAL DYNAMIC CASE\nXXXXXXX");
 			//mapNum = Destination MapNum
 			//XY     = Coords on Destination Map
 
@@ -904,7 +908,29 @@ if (I_VS_SEEKER_CHARGING != 0)
 				ShowMapNamePopup();
 
 			//Other Maps with special case dynamic transitions (Places where I specifically want the Map Popup to appear automatically when transitioning from one dynamic map to another)
+			//
+			//
 		}
+
+		//Here handle Special Cases of one map being Dynamic and the other being normal
+
+		//Note they should be exclusive like if NOT the edge case then ShowMapNamePopup
+
+		//Only Dest Map is Dynamic
+		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
+		{
+			//MareWWW - Suppress BulbusWest, 
+			if (! (destMapNum == MAP_NUM(MARE_WWW) && x < 0 ) )
+				ShowMapNamePopup();
+		}
+		//Only Last Map is Dynamic
+		else if (sLastMapSectionId == MAPSEC_DYNAMIC)
+		{
+			//BulbusWest - Suppress from MareWWW 
+			if (! (destMapNum == MAP_NUM(BULBUS_WEST) && y > 39) )
+				ShowMapNamePopup();
+		}
+
     }
     else
     {
