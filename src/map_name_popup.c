@@ -193,7 +193,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_ALDEON - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_WOOD,
     [MAPSEC_VIA_ARBORUM - KANTO_MAPSEC_COUNT]   = MAPPOPUP_THEME_WOOD,
     [MAPSEC_PORTA_PILO - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_CANELOS_COVE - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_STONE,
+    [MAPSEC_CANELOS_COVE - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_RIVER_DELTA - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_WOOD,
     [MAPSEC_MARE_OCCIDENS - KANTO_MAPSEC_COUNT]       = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_ORIENS - KANTO_MAPSEC_COUNT]         = MAPPOPUP_THEME_UNDERWATER,
@@ -633,10 +633,35 @@ static void DrawMapNamePopUpFrame(u8 bg, u8 x, u8 y, u8 deltaX, u8 deltaY, u8 un
 
 static void LoadMapNamePopUpWindowBg(void)
 {
+
+	s32 mapGroup, mapNum;
     u8 popUpThemeId;
     u8 popupWindowId = GetMapNamePopUpWindowId();
     u16 regionMapSectionId = gMapHeader.regionMapSectionId;
     u8 secondaryPopUpWindowId;
+
+	//Handle Dyanmic Map Popup Themes
+	if (regionMapSectionId == MAPSEC_DYNAMIC)
+	{
+		mapGroup = gSaveBlock1Ptr->location.mapGroup;
+		mapNum   = gSaveBlock1Ptr->location.mapNum;
+		//Route 3 - Canelos Cove(Marble), River Delta (Wood)
+		if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3))
+		{
+			if (IsRoute3RiverDelta())
+				regionMapSectionId = MAPSEC_RIVER_DELTA;
+			else
+				regionMapSectionId = MAPSEC_CANELOS_COVE;
+		} 
+		//MareWWW - Mare Occidens or River Delta
+		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
+		{
+			if (IsMareWWWRiverDelta())
+				regionMapSectionId = MAPSEC_RIVER_DELTA;
+			else
+				regionMapSectionId = MAPSEC_MARE_OCCIDENS;
+		}
+	}
 
     if (OW_POPUP_GENERATION == GEN_5)
         secondaryPopUpWindowId = GetSecondaryPopUpWindowId();
