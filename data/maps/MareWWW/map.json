@@ -635,7 +635,7 @@
     {
       "type": "trigger",
       "x": 108,
-      "y": 20,
+      "y": 19,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
@@ -644,7 +644,7 @@
     {
       "type": "trigger",
       "x": 109,
-      "y": 21,
+      "y": 19,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
@@ -842,6 +842,69 @@
     {
       "type": "trigger",
       "x": 108,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 109,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 110,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 111,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 112,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 112,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 113,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_MareOccidensTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 114,
       "y": 21,
       "elevation": 0,
       "var": "VAR_TEMP_5",

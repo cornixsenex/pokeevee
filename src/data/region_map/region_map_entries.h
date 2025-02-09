@@ -227,6 +227,7 @@ static const u8 sMapName_ISLA_LAVINIA[]        = _("ISLA LAVINIA");
 static const u8 sMapName_ISLA_ITHACA[]         = _("ISLA ITHACA");
 static const u8 sMapName_ISLA_WAKA[]           = _("ISLA WAKA");
 static const u8 sMapName_ISLA_ARIDA[]          = _("ISLA ARIDA");
+static const u8 sMapName_LITUS_FALX[]          = _("LITUS FALX");
 //End Customs
 static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
 
@@ -468,6 +469,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ISLA_ITHACA] = { 0, 0, 1, 1, sMapName_ISLA_ITHACA},
     [MAPSEC_ISLA_WAKA] = { 0, 0, 1, 1, sMapName_ISLA_WAKA},
     [MAPSEC_ISLA_ARIDA] = { 0, 0, 1, 1, sMapName_ISLA_ARIDA},
+    [MAPSEC_LITUS_FALX] = { 0, 0, 1, 1, sMapName_LITUS_FALX},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };

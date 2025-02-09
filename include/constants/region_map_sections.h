@@ -238,6 +238,7 @@
 #define MAPSEC_ISLA_ITHACA                  0xE9
 #define MAPSEC_ISLA_WAKA                    0xEA
 #define MAPSEC_ISLA_ARIDA                   0xEB
+#define MAPSEC_LITUS_FALX                   0xEC
 
 #define MAPSEC_NONE                         0xFC
 

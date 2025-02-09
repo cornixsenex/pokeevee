@@ -4,33 +4,41 @@ MareWWW_MapScripts::
 	.byte 0
 
 MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 11 "data/maps/MareWWW/scripts.pory"
-	specialvar VAR_RESULT, IsMareWWWRiverDelta
 # 12 "data/maps/MareWWW/scripts.pory"
-	compare VAR_RESULT, TRUE
+	specialvar VAR_RESULT, IsMareWWWRiverDelta
+# 13 "data/maps/MareWWW/scripts.pory"
+	compare VAR_RESULT, 2
 	goto_if_eq MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 # 15 "data/maps/MareWWW/scripts.pory"
-	setvar VAR_TEMP_5, 1
+	compare VAR_RESULT, 1
+	goto_if_eq MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+# 19 "data/maps/MareWWW/scripts.pory"
+	setvar VAR_TEMP_5, 3
 	return
 
 MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-# 13 "data/maps/MareWWW/scripts.pory"
+# 14 "data/maps/MareWWW/scripts.pory"
 	setvar VAR_TEMP_5, 2
+	return
+
+MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 16 "data/maps/MareWWW/scripts.pory"
+	setvar VAR_TEMP_5, 1
 	return
 
 
 MareWWW_Script_RiverDeltaTransition::
-# 25 "data/maps/MareWWW/scripts.pory"
+# 29 "data/maps/MareWWW/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 26 "data/maps/MareWWW/scripts.pory"
+# 30 "data/maps/MareWWW/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareWWW_Script_MareOccidensTransition::
-# 33 "data/maps/MareWWW/scripts.pory"
+# 37 "data/maps/MareWWW/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 34 "data/maps/MareWWW/scripts.pory"
+# 38 "data/maps/MareWWW/scripts.pory"
 	special ShowMapNamePopup
 	return
 

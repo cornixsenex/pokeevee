@@ -5,14 +5,18 @@ mapscripts MareWWW_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 	
 		//NOTE TEMP_VAR_5	
+		//3 == Litus Falx
 		//2 == River Delta
 		//1 == Mare Occidens
 		//0 OOB
 		specialvar (VAR_RESULT, IsMareWWWRiverDelta)
-		if (var(VAR_RESULT) == TRUE) {
+		if (var(VAR_RESULT) == 2) {
 			setvar (VAR_TEMP_5, 2)
-		} else  {
+		} elif (var(VAR_RESULT) == 1){
 			setvar (VAR_TEMP_5, 1)
+		}
+		else {
+			setvar (VAR_TEMP_5, 3)
 		}
 	}
 

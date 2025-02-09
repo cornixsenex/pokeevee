@@ -3568,10 +3568,9 @@ void ScriptHideItemDescription(struct ScriptContext *ctx)
 
 u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom dynamic maps 
 {
+	u32 n;
 	//Determine which map 
 	//then determine which "map" to return 
-	
-	//DebugPrintf("\n=======\nDDMV:\nmapNum: %d\nX: %d\nY: %d\n=======\n", gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y);
 	
 	//Route3 - Cove, Delta, River
 	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 
@@ -3584,11 +3583,20 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 	//MareWWW - Mare Occidens or River Delta
 	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW)) 
 	{
-		if (IsMareWWWRiverDelta())
-			return MAPSEC_RIVER_DELTA;
-		else
-			return
-				MAPSEC_MARE_OCCIDENS;
+		n = IsMareWWWRiverDelta();
+		DebugPrintf("\nn: %d\n", n);
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_MARE_OCCIDENS;
+			case 2:
+				return MAPSEC_RIVER_DELTA;
+			case 3:
+				return MAPSEC_LITUS_FALX;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
 	}
 	//Default - Should never be reached
 	else 

@@ -1607,6 +1607,7 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
 u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 {
 	s32 mapGroup, mapNum;
+	u32 n;
 
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
@@ -1624,10 +1625,22 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
 		{
-			if (IsMareWWWRiverDelta())
-				return StringCopy(dest, sMapName_RIVER_DELTA);
-			else
-				return StringCopy(dest, sMapName_MARE_OCCIDENS);
+			n = IsMareWWWRiverDelta();
+			DebugPrintf("\nn: %d", n);
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_MARE_OCCIDENS);
+				case 2:
+					return StringCopy(dest, sMapName_RIVER_DELTA);
+				case 3:
+					return StringCopy(dest, sMapName_LITUS_FALX);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+
 		}
 		
 		//Default Map - Should never be reached
@@ -2086,14 +2099,65 @@ bool32 IsRoute3RiverDelta(void)
 		return FALSE;
 }
 
-bool32 IsMareWWWRiverDelta(void)
+u32 IsMareWWWRiverDelta(void) //Obviously not cormplete atm
 {
-	s16 x;
+	//0: OOB
+	//1: Mare Occidens
+	//2: River Delta
+	//3: Litus Falx
+	s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
-	if ( x < 79 )
-		return FALSE;
+	y = gSaveBlock1Ptr->pos.y;
+	DebugPrintf("IsMareWWWRiverDelta\nX: %d\nY: %d\n", x, y);
+
+	//Mare Occidens region
+	if ( 
+			( (y <= 0)  && (x < 81)  ) ||
+			( (y == 1)  && (x < 80)  ) ||
+			( (y == 2)  && (x < 80)  ) ||
+			( (y == 3)  && (x < 80)  ) ||
+			( (y == 4)  && (x < 80)  ) ||
+			( (y == 5)  && (x < 81)  ) ||
+			( (y == 6)  && (x < 82)  ) ||
+			( (y == 7)  && (x < 82)  ) ||
+			( (y == 8)  && (x < 82)  ) ||
+			( (y == 9)  && (x < 81)  ) ||
+			( (y == 10) && (x < 81)  ) ||
+			( (y == 11) && (x < 81)  ) ||
+			( (y == 12) && (x < 81)  ) ||
+			( (y == 13) && (x < 80)  ) ||
+			( (y == 14) && (x < 80)  ) ||
+			( (y == 15) && (x < 81)  ) ||
+			( (y == 16) && (x < 85)  ) ||
+			( (y == 17) && (x < 89)  ) ||
+			( (y == 18) && (x < 95)  ) ||
+			( (y == 19) && (x < 96)  ) ||
+			( (y == 20) && (x < 113) ) ||
+			( (y == 21) && (x < 115) )
+
+	   )
+		return 1;
+	//River Delta
+	else if (
+			( (y < 9) ) ||
+			( (y == 9)  && (x < 119) ) ||
+			( (y == 10) && (x < 119) ) ||
+			( (y == 11) && (x < 117) ) ||
+			( (y == 12) && (x < 115) ) ||
+			( (y == 13) && (x < 113) ) ||
+			( (y == 14) && (x < 112) ) ||
+			( (y == 15) && (x < 111) ) ||
+			( (y == 16) && (x < 110) ) ||
+			( (y == 17) && (x < 110) ) ||
+			( (y == 18) && (x < 110) ) ||
+			( (y == 19) && (x < 110) ) ||
+			( (y == 20) && (x < 113) ) ||
+			( (y == 21) && (x < 115) ) 
+			)
+		return 2;
+	//Litus Falx
 	else
-		return TRUE;
+		return 3;
 }
 
 
