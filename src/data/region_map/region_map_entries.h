@@ -210,7 +210,7 @@ static const u8 sMapName_VIA_FLORAE[]    = _("VIA FLORAE");
 static const u8 sMapName_ALDEON[]        = _("ALDEON");
 static const u8 sMapName_VIA_ARBORUM[]   = _("VIA ARBORUM");
 static const u8 sMapName_PORTA_PILO[]    = _("PORTA PILO");
-static const u8 sMapName_CANELOS_COVE[]  = _("CANELOS COVE");
+static const u8 sMapName_SINUS_CAMELUS[]  = _("SINUS CAMELUS");
 static const u8 sMapName_RIVER_DELTA[]   = _("RIVER DELTA");
 static const u8 sMapName_MARE_OCCIDENS[]       = _("MARE OCCIDENS");
 static const u8 sMapName_MARE_ORIENS[]         = _("MARE ORIENS");
@@ -228,6 +228,8 @@ static const u8 sMapName_ISLA_ITHACA[]         = _("ISLA ITHACA");
 static const u8 sMapName_ISLA_WAKA[]           = _("ISLA WAKA");
 static const u8 sMapName_ISLA_ARIDA[]          = _("ISLA ARIDA");
 static const u8 sMapName_LITUS_FALX[]          = _("LITUS FALX");
+static const u8 sMapName_SILVAN_WOODS[]          = _("SILVAN WOODS");
+static const u8 sMapName_DIM_SILVAN_WOODS[]          = _("DIM SILVAN WOODS");
 //End Customs
 static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
 
@@ -452,7 +454,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ALDEON] = { 0, 0, 1, 1, sMapName_ALDEON},
     [MAPSEC_VIA_ARBORUM] = { 0, 0, 1, 1, sMapName_VIA_ARBORUM},
     [MAPSEC_PORTA_PILO] = { 0, 0, 1, 1, sMapName_PORTA_PILO},
-    [MAPSEC_CANELOS_COVE] = { 0, 0, 1, 1, sMapName_CANELOS_COVE},
+    [MAPSEC_SINUS_CAMELUS] = { 0, 0, 1, 1, sMapName_SINUS_CAMELUS},
     [MAPSEC_RIVER_DELTA] = { 0, 0, 1, 1, sMapName_RIVER_DELTA},
     [MAPSEC_MARE_OCCIDENS] = { 0, 0, 1, 1, sMapName_MARE_OCCIDENS},
     [MAPSEC_MARE_ORIENS] = { 0, 0, 1, 1, sMapName_MARE_ORIENS},
@@ -470,6 +472,8 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ISLA_WAKA] = { 0, 0, 1, 1, sMapName_ISLA_WAKA},
     [MAPSEC_ISLA_ARIDA] = { 0, 0, 1, 1, sMapName_ISLA_ARIDA},
     [MAPSEC_LITUS_FALX] = { 0, 0, 1, 1, sMapName_LITUS_FALX},
+    [MAPSEC_SILVAN_WOODS] = { 0, 0, 1, 1, sMapName_SILVAN_WOODS},
+    [MAPSEC_DIM_SILVAN_WOODS] = { 0, 0, 1, 1, sMapName_DIM_SILVAN_WOODS},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };

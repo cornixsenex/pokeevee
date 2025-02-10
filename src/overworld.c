@@ -3578,7 +3578,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 		if (IsRoute3RiverDelta())
 			return MAPSEC_RIVER_DELTA;
 		else //Everywhere else
-			return MAPSEC_CANELOS_COVE;
+			return MAPSEC_SINUS_CAMELUS;
 	}
 	//MareWWW - Mare Occidens or River Delta
 	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW)) 
