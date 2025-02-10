@@ -491,7 +491,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_UPPER_DRACO_EAST] = { 0, 0, 1, 1, sMapName_UPPER_DRACO_EAST},
     [MAPSEC_LOWER_DRACO_EAST] = { 0, 0, 1, 1, sMapName_LOWER_DRACO_EAST},
     [MAPSEC_UPPER_DRACO_WEST] = { 0, 0, 1, 1, sMapName_UPPER_DRACO_WEST},
-    [MAPSEC_LOWER_DRACO_WEST] = { 0, 0, 1, 1, sMapName_UPPER_DRACO_EAST},
+    [MAPSEC_LOWER_DRACO_WEST] = { 0, 0, 1, 1, sMapName_LOWER_DRACO_WEST},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };

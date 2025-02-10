@@ -118,7 +118,7 @@ void SetRegionMapDataForZoom(void);
 //Cornix Custom - Dynamic Maps
 bool32 IsRoute3RiverDelta(void);
 u32 IsMareWWWRiverDelta(void);
-u32 ReturnDynamicMapSec_Route17(void);
+u32 GetDynamicMapSec_Route17(void);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 

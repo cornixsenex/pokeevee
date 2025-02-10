@@ -1642,6 +1642,35 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 			}
 
 		}
+		//Route17
+
+		if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
+		{
+			n = GetDynamicMapSec_Route17();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_LAGO_DRACO);
+				case 2:
+					return StringCopy(dest, sMapName_LAGO_DRACO_SHORE);
+				case 3:
+					return StringCopy(dest, sMapName_UPPER_RIO_DRACO);
+				case 4:
+					return StringCopy(dest, sMapName_LOWER_RIO_DRACO);
+				case 5:
+					return StringCopy(dest, sMapName_UPPER_DRACO_EAST);
+				case 6:
+					return StringCopy(dest, sMapName_LOWER_DRACO_EAST);
+				case 7:
+					return StringCopy(dest, sMapName_UPPER_DRACO_WEST);
+				case 8:
+					return StringCopy(dest, sMapName_LOWER_DRACO_WEST);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
 		
 		//Default Map - Should never be reached
 		else
@@ -2160,7 +2189,7 @@ u32 IsMareWWWRiverDelta(void) //Obviously not cormplete atm
 		return 3;
 }
 
-u32 ReturnDynamicMapSec_Route17(void)
+u32 GetDynamicMapSec_Route17(void)
 {
 	//0: OOB
 	//1: Lago Draco
@@ -2390,27 +2419,27 @@ u32 ReturnDynamicMapSec_Route17(void)
 	//Lower Draco East = 6
 	else if (
 			( (x == 18) && ( (y > 106) && (y < 118) ) ) ||
-			( (x == 19) && ( (y > 95)  && (y < 119) ) ) ||
-			( (x == 20) && ( (y > 95)  && (y < 120) ) ) ||
-			( (x == 21) && ( (y > 95)  && (y < 120) ) ) ||
-			( (x == 22) && ( (y > 95)  && (y < 128) ) ) ||
-			( (x == 23) && ( (y > 95)  && (y < 128) ) ) ||
-			( (x == 24) && ( (y > 95)  && (y < 130) ) ) ||
-			( (x == 25) && ( (y > 95)  && (y < 132) ) ) ||
-			( (x == 26) && ( (y > 95)  && (y < 134) ) ) ||
-			( (x == 27) && ( (y > 95)  && (y < 135) ) ) ||
-			( (x == 28) && ( (y > 95)  && (y < 136) ) ) ||
-			( (x == 29) && ( (y > 95)  && (y < 136) ) ) ||
-			( (x == 30) && ( (y > 95)  && (y < 141) ) ) ||
-			( (x == 31) && ( (y > 95)  && (y < 142) ) ) ||
-			( (x == 32) && ( (y > 95)  && (y < 146) ) ) ||
-			( (x == 33) && ( (y > 95)  && (y < 153) ) ) ||
-			( (x == 34) && ( (y > 95)  && (y < 155) ) ) ||
-			( (x == 35) && ( (y > 95)  && (y < 158) ) ) ||
-			( (x == 36) && ( (y > 95)  && (y < 161) ) ) ||
-			( (x == 37) && ( (y > 95)  && (y < 162) ) ) ||
+			( (x == 19) && ( (y > 94)  && (y < 119) ) ) ||
+			( (x == 20) && ( (y > 94)  && (y < 120) ) ) ||
+			( (x == 21) && ( (y > 94)  && (y < 120) ) ) ||
+			( (x == 22) && ( (y > 94)  && (y < 128) ) ) ||
+			( (x == 23) && ( (y > 94)  && (y < 128) ) ) ||
+			( (x == 24) && ( (y > 94)  && (y < 130) ) ) ||
+			( (x == 25) && ( (y > 94)  && (y < 132) ) ) ||
+			( (x == 26) && ( (y > 94)  && (y < 134) ) ) ||
+			( (x == 27) && ( (y > 94)  && (y < 135) ) ) ||
+			( (x == 28) && ( (y > 94)  && (y < 136) ) ) ||
+			( (x == 29) && ( (y > 94)  && (y < 136) ) ) ||
+			( (x == 30) && ( (y > 94)  && (y < 141) ) ) ||
+			( (x == 31) && ( (y > 94)  && (y < 142) ) ) ||
+			( (x == 32) && ( (y > 94)  && (y < 146) ) ) ||
+			( (x == 33) && ( (y > 94)  && (y < 153) ) ) ||
+			( (x == 34) && ( (y > 94)  && (y < 155) ) ) ||
+			( (x == 35) && ( (y > 94)  && (y < 158) ) ) ||
+			( (x == 36) && ( (y > 94)  && (y < 161) ) ) ||
+			( (x == 37) && ( (y > 94)  && (y < 162) ) ) ||
 			( (x == 38) && ( (y > 94)  && (y < 162) ) ) ||
-			( (x == 39) && ( (y > 94)  && (y < 162) ) )
+			( (x >= 39) && ( (y > 94)  && (y < 162) ) )
 			)
 			return 6;
 	//Upper Draco West = 7

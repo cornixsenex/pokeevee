@@ -1,4 +1,41 @@
-mapscripts Route17_MapScripts {}
+
+//DYNAMIC MAP
+//VAR_TEMP_5:
+//0: OOB
+//1: Lago Draco
+//2: Lago Draco Shore
+//3: Upper Rio Draco
+//4: Lower Rio Draco
+//5: Upper Draco East
+//6: Lower Draco East
+//7: Upper Draco West
+//8: Lower Draco West
+
+
+mapscripts Route17_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route17)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+			case 4:
+				setvar (VAR_TEMP_5, 4)
+			case 5:
+				setvar (VAR_TEMP_5, 4)
+			case 6:
+				setvar (VAR_TEMP_5, 6)
+			case 7:
+				setvar (VAR_TEMP_5, 7)
+			case 8:
+				setvar (VAR_TEMP_5, 8)
+		}
+	}
+}
 
 script Route17_EventScript_Block1 {
 	lock
@@ -8,6 +45,48 @@ script Route17_EventScript_Block1 {
 	release
 	end
 }
+
+script Route17_Script_Transition_LagoDraco {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
+}
+
+script Route17_Script_Transition_LagoDracoShore {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+script Route17_Script_Transition_UpperRioDraco {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
+}
+
+script Route17_Script_Transition_LowerRioDraco {
+	setvar (VAR_TEMP_5, 4)
+	special (ShowMapNamePopup)
+}
+
+script Route17_Script_Transition_UpperDracoEast {
+	setvar (VAR_TEMP_5, 5)
+	special (ShowMapNamePopup)
+}
+
+script Route17_Script_Transition_LowerDracoEast {
+	setvar (VAR_TEMP_5, 6)
+	special (ShowMapNamePopup)
+}
+
+script Route17_Script_Transition_UpperDracoWest {
+	setvar (VAR_TEMP_5, 7)
+	special (ShowMapNamePopup)
+}
+
+script Route17_Script_Transition_LowerDracoWest {
+	setvar (VAR_TEMP_5, 8)
+	special (ShowMapNamePopup)
+}
+
+
 
 
 text Route17_Text_Block1 {

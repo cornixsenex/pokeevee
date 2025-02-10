@@ -1,3 +1,11 @@
+//DYNAMIC MAP
+//VAR_TEMP_5 returns "map"
+//0: OOB
+//1: Silvan Woods
+//2: Dim Silvan Woods
+//3: 
+
+
 mapscripts SilvanWoods_MapScripts {
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 	]

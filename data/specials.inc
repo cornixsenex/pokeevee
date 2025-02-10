@@ -589,3 +589,4 @@ gSpecials::
 	def_special ScriptGetPartyMonIsShiny
 	def_special IsRoute3RiverDelta
 	def_special IsMareWWWRiverDelta
+	def_special GetDynamicMapSec_Route17

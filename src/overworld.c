@@ -3568,12 +3568,16 @@ void ScriptHideItemDescription(struct ScriptContext *ctx)
 
 u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom dynamic maps 
 {
+	s32 mapGroup, mapNum;
 	u32 n;
 	//Determine which map 
 	//then determine which "map" to return 
 	
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum   = gSaveBlock1Ptr->location.mapNum;
+	
 	//Route3 - Cove, Delta, River
-	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3)) 
+	if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 	{
 		if (IsRoute3RiverDelta())
 			return MAPSEC_RIVER_DELTA;
@@ -3581,7 +3585,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			return MAPSEC_SINUS_CAMELUS;
 	}
 	//MareWWW - Mare Occidens or River Delta
-	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MARE_WWW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MARE_WWW)) 
+	if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW)) 
 	{
 		n = IsMareWWWRiverDelta();
 		DebugPrintf("\nn: %d\n", n);
@@ -3598,6 +3602,34 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//Route17 - 8 different locations :/
+	if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
+	{
+		n = GetDynamicMapSec_Route17();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_LAGO_DRACO;
+			case 2:
+				return MAPSEC_LAGO_DRACO_SHORE;
+			case 3:
+				return MAPSEC_UPPER_RIO_DRACO;
+			case 4:
+				return MAPSEC_LOWER_RIO_DRACO;
+			case 5:
+				return MAPSEC_UPPER_DRACO_EAST;
+			case 6:
+				return MAPSEC_LOWER_DRACO_EAST;
+			case 7:
+				return MAPSEC_UPPER_DRACO_WEST;
+			case 8:
+				return MAPSEC_LOWER_DRACO_WEST;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+
 	//Default - Should never be reached
 	else 
 	{
