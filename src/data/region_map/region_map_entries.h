@@ -228,8 +228,9 @@ static const u8 sMapName_ISLA_ITHACA[]         = _("ISLA ITHACA");
 static const u8 sMapName_ISLA_WAKA[]           = _("ISLA WAKA");
 static const u8 sMapName_ISLA_ARIDA[]          = _("ISLA ARIDA");
 static const u8 sMapName_LITUS_FALX[]          = _("LITUS FALX");
-static const u8 sMapName_SILVAN_WOODS[]          = _("SILVAN WOODS");
-static const u8 sMapName_DIM_SILVAN_WOODS[]          = _("DIM SILVAN WOODS");
+static const u8 sMapName_SILVAN_WOODS[]        = _("SILVAN WOODS");
+static const u8 sMapName_DIM_SILVAN_WOODS[]    = _("DIM SILVAN WOODS");
+static const u8 sMapName_SALIX[]               = _("SALIX");
 //End Customs
 static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
 
@@ -474,6 +475,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITUS_FALX] = { 0, 0, 1, 1, sMapName_LITUS_FALX},
     [MAPSEC_SILVAN_WOODS] = { 0, 0, 1, 1, sMapName_SILVAN_WOODS},
     [MAPSEC_DIM_SILVAN_WOODS] = { 0, 0, 1, 1, sMapName_DIM_SILVAN_WOODS},
+    [MAPSEC_SALIX] = { 0, 0, 1, 1, sMapName_SALIX},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };

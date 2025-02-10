@@ -243,6 +243,7 @@
 #define MAPSEC_SILVAN_WOODS                 0xED
 #define MAPSEC_DIM_SILVAN_WOODS             0xEE
 #define MAPSEC_RIO_DRACO                    0xEF
+#define MAPSEC_SALIX                        0xF0
 
 #define MAPSEC_NONE                         0xFC
 
