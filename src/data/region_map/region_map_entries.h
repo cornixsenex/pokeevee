@@ -231,6 +231,14 @@ static const u8 sMapName_LITUS_FALX[]          = _("LITUS FALX");
 static const u8 sMapName_SILVAN_WOODS[]        = _("SILVAN WOODS");
 static const u8 sMapName_DIM_SILVAN_WOODS[]    = _("DIM SILVAN WOODS");
 static const u8 sMapName_SALIX[]               = _("SALIX");
+static const u8 sMapName_LAGO_DRACO[]          = _("LAGO DRACO");
+static const u8 sMapName_LAGO_DRACO_SHORE[]    = _("LAGO DRACO SHORE");
+static const u8 sMapName_UPPER_RIO_DRACO[]     = _("UPPER RIO DRACO");
+static const u8 sMapName_LOWER_RIO_DRACO[]     = _("LOWER RIO DRACO");
+static const u8 sMapName_UPPER_DRACO_EAST[]    = _("UPPER DRACO EAST");
+static const u8 sMapName_LOWER_DRACO_EAST[]    = _("LOWER DRACO EAST");
+static const u8 sMapName_UPPER_DRACO_WEST[]    = _("UPPER DRACO WEST");
+static const u8 sMapName_LOWER_DRACO_WEST[]    = _("LOWER DRACO WEST");
 //End Customs
 static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
 
@@ -476,6 +484,14 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_SILVAN_WOODS] = { 0, 0, 1, 1, sMapName_SILVAN_WOODS},
     [MAPSEC_DIM_SILVAN_WOODS] = { 0, 0, 1, 1, sMapName_DIM_SILVAN_WOODS},
     [MAPSEC_SALIX] = { 0, 0, 1, 1, sMapName_SALIX},
+    [MAPSEC_LAGO_DRACO] = { 0, 0, 1, 1, sMapName_LAGO_DRACO},
+    [MAPSEC_LAGO_DRACO_SHORE] = { 0, 0, 1, 1, sMapName_LAGO_DRACO_SHORE},
+    [MAPSEC_UPPER_RIO_DRACO] = { 0, 0, 1, 1, sMapName_UPPER_RIO_DRACO},
+    [MAPSEC_LOWER_RIO_DRACO] = { 0, 0, 1, 1, sMapName_LOWER_RIO_DRACO},
+    [MAPSEC_UPPER_DRACO_EAST] = { 0, 0, 1, 1, sMapName_UPPER_DRACO_EAST},
+    [MAPSEC_LOWER_DRACO_EAST] = { 0, 0, 1, 1, sMapName_LOWER_DRACO_EAST},
+    [MAPSEC_UPPER_DRACO_WEST] = { 0, 0, 1, 1, sMapName_UPPER_DRACO_WEST},
+    [MAPSEC_LOWER_DRACO_WEST] = { 0, 0, 1, 1, sMapName_UPPER_DRACO_EAST},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };

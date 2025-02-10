@@ -244,6 +244,14 @@
 #define MAPSEC_DIM_SILVAN_WOODS             0xEE
 #define MAPSEC_RIO_DRACO                    0xEF
 #define MAPSEC_SALIX                        0xF0
+#define MAPSEC_LAGO_DRACO                   0xF1
+#define MAPSEC_LAGO_DRACO_SHORE             0xF2
+#define MAPSEC_UPPER_RIO_DRACO              0xF3
+#define MAPSEC_LOWER_RIO_DRACO              0xF4
+#define MAPSEC_UPPER_DRACO_EAST             0xF5
+#define MAPSEC_LOWER_DRACO_EAST             0xF6
+#define MAPSEC_UPPER_DRACO_WEST             0xF7
+#define MAPSEC_LOWER_DRACO_WEST             0xF8
 
 #define MAPSEC_NONE                         0xFC
 
