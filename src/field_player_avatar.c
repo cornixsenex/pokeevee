@@ -11,6 +11,7 @@
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "item.h"
+#include "map_name_popup.h" //Cornix
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -1848,11 +1849,14 @@ static void Task_StopSurfingInit(u8 taskId)
     gTasks[taskId].func = Task_WaitStopSurfing;
 }
 
-//Cornix support surf transition triggers
+//Cornix support surf transition triggers and auto-map popup on specific maps (Lake Ira et cetera)
 static void Task_WaitStopSurfing(u8 taskId)
 {
+	u32 mapGroup, mapNum;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    struct MapPosition position; //Cornix
+    struct MapPosition position;
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum   = gSaveBlock1Ptr->location.mapNum;
 
     if (ObjectEventClearHeldMovementIfFinished(playerObjEvent))
     {
@@ -1867,8 +1871,12 @@ static void Task_WaitStopSurfing(u8 taskId)
 #endif
         DestroyTask(taskId);
 
-		GetPlayerPosition(&position); //Cornix
-		TryStartCoordEventScript(&position); //Cornix
+		//Check Should Fire Trigger on Stop Surfing	
+		GetPlayerPosition(&position); 
+		TryStartCoordEventScript(&position); 
+		//Automatically show map popup on Stop Surfing 
+		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA) )
+			ShowMapNamePopup();
     }
 }
 
@@ -2732,11 +2740,14 @@ static void Task_StartSurfingInit(u8 taskId)
     gTasks[taskId].func = Task_WaitStartSurfing;
 }
 
-//Cornix support surf transition triggers
+//Cornix support surf transition triggers and auto-map popup on specific maps (Lake Ira et cetera)
 static void Task_WaitStartSurfing(u8 taskId)
 {
+	u32 mapGroup, mapNum;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    struct MapPosition position; //Cornix
+    struct MapPosition position; 
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum   = gSaveBlock1Ptr->location.mapNum;
 
     if (ObjectEventClearHeldMovementIfFinished(playerObjEvent))
     {
@@ -2746,8 +2757,12 @@ static void Task_WaitStartSurfing(u8 taskId)
         UnlockPlayerFieldControls();
         DestroyTask(taskId);
 		
-		GetPlayerPosition(&position); //Cornix
-		TryStartCoordEventScript(&position); //Cornix
+		//Check Should Fire Trigger on Start Surfing	
+		GetPlayerPosition(&position); 
+		TryStartCoordEventScript(&position); 
+		//Automatically show map popup on Start Surfing 
+		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA) )
+			ShowMapNamePopup();
     }
 
 }
