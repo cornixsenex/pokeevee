@@ -919,18 +919,28 @@ if (I_VS_SEEKER_CHARGING != 0)
 		//Only Dest Map is Dynamic
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
 		{
-			//MareWWW - Suppress BulbusWest, 
-			if (! (destMapNum == MAP_NUM(MARE_WWW) && x < 0 ) )
-				ShowMapNamePopup();
+			if 
+				(
+				//Dest: MareWWW - Suppress from BulbusWest, 
+				(! (destMapNum == MAP_NUM(MARE_WWW) && x < 0 ) ) &&
+				//Dest: Lake Ira - Suppress from Willow, 
+				(! (destMapNum == MAP_NUM(LAKE_IRA) && y < 28 ) )
+				)
+					ShowMapNamePopup();
+			
 		}
 		//Only Last Map is Dynamic
 		else if (sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
-			//BulbusWest - Suppress from MareWWW 
-			if (! (destMapNum == MAP_NUM(BULBUS_WEST) && y > 39) )
-				ShowMapNamePopup();
+			if 
+				(
+				//Dest: BulbusWest - Suppress from MareWWW 
+				(! (destMapNum == MAP_NUM(BULBUS_WEST) && y > 39) ) &&
+				//Dest: Willow - Suprres from Lake Ira
+				(! (destMapNum == MAP_NUM(WILLOW) && x < 0) )
+				)
+					ShowMapNamePopup();
 		}
-
     }
     else
     {
@@ -3629,6 +3639,24 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//Lake Ira - Laco, Shore, Salix
+	if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
+	{
+		n = GetDynamicMapSec_LakeIra();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_LAGO_DRACO;
+			case 2:
+				return MAPSEC_LAGO_DRACO_SHORE;
+			case 3:
+				return MAPSEC_SALIX;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//Other Maps Go Here
 
 	//Default - Should never be reached
 	else 

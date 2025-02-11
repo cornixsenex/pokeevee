@@ -683,7 +683,6 @@ static void LoadMapNamePopUpWindowBg(void)
 		if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
 		{
 			n = GetDynamicMapSec_Route17();
-			DebugPrintf("HERE: n: %d\n", n);
 			switch (n)
 			{
 				case 0:
@@ -716,9 +715,29 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+		//Lake Ira
+		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
+		{
+			n = GetDynamicMapSec_LakeIra();
+			switch (n)
+			{
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+				case 1:
+					regionMapSectionId = MAPSEC_LAGO_DRACO;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_LAGO_DRACO_SHORE;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_SALIX;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+	DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
-
-	DebugPrintf("regionMapSectionId: %d", regionMapSectionId);
 
     if (OW_POPUP_GENERATION == GEN_5)
         secondaryPopUpWindowId = GetSecondaryPopUpWindowId();

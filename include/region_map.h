@@ -119,6 +119,7 @@ void SetRegionMapDataForZoom(void);
 bool32 IsRoute3RiverDelta(void);
 u32 IsMareWWWRiverDelta(void);
 u32 GetDynamicMapSec_Route17(void);
+u32 GetDynamicMapSec_LakeIra(void);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 

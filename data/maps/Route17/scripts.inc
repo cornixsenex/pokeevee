@@ -48,7 +48,7 @@ Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 
 Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
 # 29 "data/maps/Route17/scripts.pory"
-	setvar VAR_TEMP_5, 4
+	setvar VAR_TEMP_5, 5
 	return
 
 Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:

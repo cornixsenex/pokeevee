@@ -26,7 +26,7 @@ mapscripts Route17_MapScripts {
 			case 4:
 				setvar (VAR_TEMP_5, 4)
 			case 5:
-				setvar (VAR_TEMP_5, 4)
+				setvar (VAR_TEMP_5, 5)
 			case 6:
 				setvar (VAR_TEMP_5, 6)
 			case 7:
