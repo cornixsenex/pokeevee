@@ -590,3 +590,4 @@ gSpecials::
 	def_special IsRoute3RiverDelta
 	def_special IsMareWWWRiverDelta
 	def_special GetDynamicMapSec_Route17
+	def_special GetDynamicMapSec_LakeIra

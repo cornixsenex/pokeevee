@@ -1,1 +1,33 @@
-mapscripts LakeIra_MapScripts {}
+
+//DYNAMIC MAP
+//VAR_TEMP_5
+//0: OOB
+//1: Lake Ira
+//2: Lake Ira Shore
+//3: Salix
+
+mapscripts LakeIra_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_RESULT, GetDynamicMapSec_LakeIra)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+		}
+	}
+}
+
+
+script LakeIra_Script_Transition_LagoDraco {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
+}
+
+script LakeIra_Script_Transition_LagoDracoShore {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
