@@ -1853,10 +1853,13 @@ static void Task_StopSurfingInit(u8 taskId)
 static void Task_WaitStopSurfing(u8 taskId)
 {
 	u32 mapGroup, mapNum;
+	s32 x, y;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     struct MapPosition position;
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
 
     if (ObjectEventClearHeldMovementIfFinished(playerObjEvent))
     {
@@ -1875,7 +1878,14 @@ static void Task_WaitStopSurfing(u8 taskId)
 		GetPlayerPosition(&position); 
 		TryStartCoordEventScript(&position); 
 		//Automatically show map popup on Stop Surfing 
-		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA) )
+		if (
+				 (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA) ) && ( 
+				 (x < 27) || 
+				 (y < 28) || 
+				 ( (x > 62) && (y < 34) ) ||
+				 (x > 74) ||
+				 ( (x > 51) && (y > 45) ) )
+			)
 			ShowMapNamePopup();
     }
 }
@@ -2744,10 +2754,13 @@ static void Task_StartSurfingInit(u8 taskId)
 static void Task_WaitStartSurfing(u8 taskId)
 {
 	u32 mapGroup, mapNum;
+	s32 x, y;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     struct MapPosition position; 
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
 
     if (ObjectEventClearHeldMovementIfFinished(playerObjEvent))
     {
@@ -2761,7 +2774,14 @@ static void Task_WaitStartSurfing(u8 taskId)
 		GetPlayerPosition(&position); 
 		TryStartCoordEventScript(&position); 
 		//Automatically show map popup on Start Surfing 
-		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA) )
+		if (
+				 (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA) ) && ( 
+				 (x < 27) || 
+				 (y < 28) || 
+				 ( (x > 62) && (y < 34) ) ||
+				 (x > 74) ||
+				 ( (x > 51) && (y > 45) ) )
+			)
 			ShowMapNamePopup();
     }
 
