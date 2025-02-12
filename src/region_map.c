@@ -1690,6 +1690,23 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
+		//Lake Ira South
+		if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH)) 	
+		{
+			if (IsLakeIraSouthUpperDracoWest())
+				return StringCopy(dest, sMapName_UPPER_DRACO_WEST);
+			else  // Default part of map => Cove
+				return StringCopy(dest, sMapName_LOWER_DRACO_WEST);
+		}
+
+		//Silvan Woods N
+		if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N)) 	
+		{		
+			if (IsSilvanWoodsNUpperDracoEast())
+				return StringCopy(dest, sMapName_UPPER_DRACO_EAST);
+			else  // Default part of map => Cove
+				return StringCopy(dest, sMapName_LOWER_DRACO_EAST);
+		}
 		
 		//Default Map - Should never be reached
 		else
@@ -2685,6 +2702,52 @@ u32 GetDynamicMapSec_LakeIra(void)
 		return 1;
 }
 
+bool32 IsLakeIraSouthUpperDracoWest(void) 
+{
+	s16 y;
+	y = gSaveBlock1Ptr->pos.y;
+
+	if (y < 53)
+		return TRUE;
+	else
+		return FALSE;
+}
+
+bool32 IsSilvanWoodsNUpperDracoEast(void) 
+{
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+	if 
+		(
+		( y > 64) ||
+		( (x == 6)  && (y < 63) ) ||
+		( (x == 7)  && (y < 63) ) ||
+		( (x == 8)  && (y < 63) ) ||
+		( (x == 9)  && (y < 62) ) ||
+		( (x == 10) && (y < 62) ) ||
+		( (x == 11) && (y < 62) ) ||
+		( (x == 12) && (y < 62) ) ||
+		( (x == 13) && (y < 62) ) ||
+		( (x == 14) && (y < 61) ) ||
+		( (x == 15) && (y < 61) ) ||
+		( (x == 16) && (y < 60) ) ||
+		( (x == 17) && (y < 59) ) ||
+		( (x == 18) && (y < 58) ) ||
+		( (x == 19) && (y < 58) ) ||
+		( (x == 20) && (y < 57) ) ||
+		( (x == 21) && (y < 57) ) ||
+		( (x == 22) && (y < 56) ) ||
+		( (x == 23) && (y < 56) ) ||
+		( (x == 24) && (y < 55) ) ||
+		( (x == 25) && (y < 55) ) ||
+		( (x == 26) && (y < 54) ) ||
+		( (x == 27) && (y < 53) ) 
+		)
+		return TRUE;
+	else
+		return FALSE;
+}
 
 
 

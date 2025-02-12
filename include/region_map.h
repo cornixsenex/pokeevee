@@ -120,6 +120,8 @@ bool32 IsRoute3RiverDelta(void);
 u32 IsMareWWWRiverDelta(void);
 u32 GetDynamicMapSec_Route17(void);
 u32 GetDynamicMapSec_LakeIra(void);
+bool32 IsLakeIraSouthUpperDracoWest(void);
+bool32 IsSilvanWoodsNUpperDracoEast(void);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 
