@@ -176,8 +176,8 @@
     },
     {
       "type": "trigger",
-      "x": 13,
-      "y": 100,
+      "x": 17,
+      "y": 127,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
@@ -185,8 +185,8 @@
     },
     {
       "type": "trigger",
-      "x": 14,
-      "y": 100,
+      "x": 18,
+      "y": 127,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
@@ -194,8 +194,8 @@
     },
     {
       "type": "trigger",
-      "x": 15,
-      "y": 100,
+      "x": 19,
+      "y": 127,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
@@ -203,8 +203,8 @@
     },
     {
       "type": "trigger",
-      "x": 16,
-      "y": 100,
+      "x": 20,
+      "y": 127,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
@@ -2306,6 +2306,33 @@
       "var": "VAR_TEMP_5",
       "var_value": "3",
       "script": "Route17_Script_Transition_LagoDraco"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 127,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route17_Script_Transition_LowerRioDraco"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 127,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route17_Script_Transition_LowerRioDraco"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 127,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route17_Script_Transition_LowerRioDraco"
     }
   ],
   "bg_events": [

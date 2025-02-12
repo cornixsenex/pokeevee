@@ -9,7 +9,7 @@ mapscripts MareWWW_MapScripts {
 		//2 == River Delta
 		//1 == Mare Occidens
 		//0 OOB
-		specialvar (VAR_RESULT, IsMareWWWRiverDelta)
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareWWW)
 		if (var(VAR_RESULT) == 2) {
 			setvar (VAR_TEMP_5, 2)
 		} elif (var(VAR_RESULT) == 1){

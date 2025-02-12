@@ -887,18 +887,25 @@ if (I_VS_SEEKER_CHARGING != 0)
 		//Both Last and Dest Maps are Dynamic
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
+			//Force MapNamePopup on Transition from TWO DYNAMIC MAPS 
+			
 			//mapNum = Destination MapNum
 			//XY     = Coords on Destination Map
 
 			//Switch on Destination Maps
 		
 			//Route3 - Handle MareWWW Transition
-			if (destMapNum == MAP_NUM(ROUTE3) &&
-					x > 18 &&
-					x < 47
-			   )
-				ShowMapNamePopup();
-
+			if (destMapNum == MAP_NUM(ROUTE3)) //From MareWWW AND from Silvan Woods
+			{
+				if
+					(
+					//From MareWWW
+					(x > 18 && x < 47 && y > 25) ||
+					//FromSilvanWoods
+					(x > 42 && x < 59 && y < 2)
+					)
+						ShowMapNamePopup();
+			}
 			//MareWWW - Handle Canelos Cove Transition
 			if (destMapNum == MAP_NUM(MARE_WWW) &&
 					x > 54 &&
@@ -906,7 +913,22 @@ if (I_VS_SEEKER_CHARGING != 0)
 					y < 0
 			   )
 				ShowMapNamePopup();
-
+			//SilvanWoods - From Route3 OR 1 square from Route17
+			if (destMapNum == MAP_NUM(SILVAN_WOODS))
+			{
+				if
+					(
+					//From Route3
+					(x > 22 && x < 36 && y > 66) ||
+					//ONE SQUARE from Route17 :/
+					(x < 1 && y == 17)
+					)
+						ShowMapNamePopup();
+			}
+			//Route17 - Handle ONE SQUARE from Silvan Woods :/
+			if (destMapNum == MAP_NUM(ROUTE17) && y == 163)
+				ShowMapNamePopup();
+			
 			//Other Maps with special case dynamic transitions (Places where I specifically want the Map Popup to appear automatically when transitioning from one dynamic map to another)
 			//
 			//
@@ -3597,7 +3619,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 	//MareWWW - Mare Occidens or River Delta
 	if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW)) 
 	{
-		n = IsMareWWWRiverDelta();
+		n = GetDynamicMapSec_MareWWW();
 		DebugPrintf("\nn: %d\n", n);
 		switch (n) {
 			case 0:
@@ -3656,6 +3678,40 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//LakeIraSouth - Upper Draco West, Lower Draco West
+	if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH))
+	{
+		if (IsLakeIraSouthUpperDracoWest())
+			return MAPSEC_UPPER_DRACO_WEST;
+		else
+			return MAPSEC_LOWER_DRACO_WEST;
+	}
+	//SilvanWoodsN
+	if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N))
+	{
+		if (IsSilvanWoodsNUpperDracoEast())
+			return MAPSEC_UPPER_DRACO_EAST;
+		else 
+			return MAPSEC_LOWER_DRACO_EAST;
+	}
+	//Silvan Woods
+	if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
+	{
+		n = GetDynamicMapSec_SilvanWoods();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_SILVAN_WOODS;
+			case 2:
+				return MAPSEC_LOWER_RIO_DRACO;
+			case 3:
+				return MAPSEC_DIM_SILVAN_WOODS;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	
 	//Other Maps Go Here
 
 	//Default - Should never be reached

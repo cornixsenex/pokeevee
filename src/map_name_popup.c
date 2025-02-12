@@ -669,7 +669,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
 		{
-			n = IsMareWWWRiverDelta();
+			n = GetDynamicMapSec_MareWWW();
 			if (n == 2) 
 				regionMapSectionId = MAPSEC_RIVER_DELTA;
 			else if (n == 1)
@@ -736,7 +736,40 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
-	DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
+		//LakeIraSouth
+		if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH)) 	
+		{
+			if (IsLakeIraSouthUpperDracoWest())
+					regionMapSectionId = MAPSEC_UPPER_DRACO_WEST;
+			else  // Default part of map => Cove
+					regionMapSectionId = MAPSEC_LOWER_DRACO_WEST;
+		}
+		//SilvanWoodsN
+		if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N)) 	
+		{		
+			if (IsSilvanWoodsNUpperDracoEast())
+					regionMapSectionId = MAPSEC_UPPER_DRACO_EAST;
+			else  // Default part of map => Cove
+					regionMapSectionId = MAPSEC_LOWER_DRACO_EAST;
+		}
+		//Silvan Woods
+		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
+		{
+			n = GetDynamicMapSec_SilvanWoods();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+				case 1:
+					regionMapSectionId = MAPSEC_SILVAN_WOODS;
+				case 2:
+					regionMapSectionId = MAPSEC_LOWER_RIO_DRACO;
+				case 3:
+					regionMapSectionId = MAPSEC_DIM_SILVAN_WOODS;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
 
     if (OW_POPUP_GENERATION == GEN_5)

@@ -5,7 +5,7 @@
   "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
-  "weather": "WEATHER_SHADE",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,
@@ -108,7 +108,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 11,
-      "y": 46,
+      "y": 47,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -565,7 +565,537 @@
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 44,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_DimSilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 44,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 43,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route3_Script_SilvanWoodsTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_LowerRioDracoTransition"
+    }
   ],
   "bg_events": [
 

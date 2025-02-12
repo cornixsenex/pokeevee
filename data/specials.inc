@@ -588,6 +588,7 @@ gSpecials::
 	def_special IsShinyMareepInParty
 	def_special ScriptGetPartyMonIsShiny
 	def_special IsRoute3RiverDelta
-	def_special IsMareWWWRiverDelta
+	def_special GetDynamicMapSec_MareWWW
 	def_special GetDynamicMapSec_Route17
 	def_special GetDynamicMapSec_LakeIra
+	def_special GetDynamicMapSec_SilvanWoods

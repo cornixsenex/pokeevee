@@ -2,80 +2,41 @@
 //VAR_TEMP_5 returns "map"
 //0: OOB
 //1: Silvan Woods
-//2: Dim Silvan Woods
-//3: 
+//2: Lower Rio Draco
+//3: Dim Silvan Woods
 
 
 mapscripts SilvanWoods_MapScripts {
-	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-	]
 
+	MAP_SCRIPT_ON_TRANSITION {
+		//Handle Dynamic Map
+		specialvar (VAR_RESULT, GetDynamicMapSec_SilvanWoods)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+		}
+	}
 }
 
-
-script SilvanWoods_EventScript_ScottTrigger {
-	lockall	
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	applymovement (9, SilvanWoods_Movement_Scott1)
-	load_field_pic (5, 190, 98)
-	msgbox (SilvanWoods_Text_ScottBlock)
-	waitmovement (0)
-	closemessage
-	destroy_field_pic (5)
-	applymovement (9, SilvanWoods_Movement_Scott2)
-	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepBack)
-	waitmovement (0)
-	releaseall 
-	end
+script Route3_Script_SilvanWoodsTransition {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
 }
 
-script SilvanWoods_EventScript_ScottTriggerB {
-	lockall	
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	applymovement (9, SilvanWoods_Movement_Scott1B)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
-	load_field_pic (5, 190, 98)
-	msgbox (SilvanWoods_Text_ScottBlock)
-	waitmovement (0)
-	closemessage
-	destroy_field_pic (5)
-	applymovement (9, SilvanWoods_Movement_Scott2B)	
-	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepBack)
-	waitmovement (0)
-	releaseall 
-	end
+script Route3_Script_LowerRioDracoTransition {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
 }
 
-script SilvanWoods_EventScript_Scott2Trigger {
-	lockall
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerStepUp)
-	load_field_pic (4, 190, 98)
-	msgbox (SilvanWoods_Text_Leaf1)
-	waitmovement (0)
-	destroy_field_pic (4)
-	load_field_pic (5, 190, 98)
-	msgbox (SilvanWoods_Text_ScottPass)
-	destroy_field_pic (5)
-	load_field_pic (4, 190, 98)
-	msgbox (SilvanWoods_Text_Leaf2)
-	closemessage
-	destroy_field_pic (4)
-	applymovement (9, SilvanWoods_Movement_ScottExit)
-	applymovement (40, SilvanWoods_Movement_ScottExit)
-	waitmovement (0)
-	removeobject (9)
-	removeobject (40)
-	setflag (FLAG_HIDE_SILVANWOODS_LEAF1)
-	setflag (FLAG_HIDE_SILVANWOODS_SCOTT)
-	releaseall 
-	end
+script Route3_Script_DimSilvanWoodsTransition {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
 }
+
 
 script SilvanWoods_EventScript_Crystal {
 	trainerbattle_single(TRAINER_CRYSTAL, SilvanWoods_Text_CrystalIntro, SilvanWoods_Text_CrystalLost)
@@ -266,49 +227,6 @@ script SilvanWoods_EventScript_Gary {
 	msgbox (SilvanWoods_Text_GaryPost)
 	closemessage
 	end
-}
-
-movement SilvanWoods_Movement_PlayerRival {
-	walk_left
-}
-
-movement SilvanWoods_Movement_RivalWalk {
-	walk_up * 3
-	walk_left *4
-	walk_up * 4
-	walk_left * 2
-}
-
-movement SilvanWoods_Movement_Scott1 {
-	walk_down * 2
-}
-
-movement SilvanWoods_Movement_Scott2 {
-	walk_up * 2
-	face_down
-}
-
-movement SilvanWoods_Movement_PlayerStepBack {
-	walk_down
-}
-
-movement SilvanWoods_Movement_Scott1B {
-	walk_down * 3
-	face_right
-}
-
-movement SilvanWoods_Movement_Scott2B {
-	walk_up * 3
-	face_down
-}
-
-movement SilvanWoods_Movement_PlayerStepUp {
-	walk_up * 2
-}
-
-movement SilvanWoods_Movement_ScottExit {
-	walk_left
-	walk_up * 5
 }
 
 text SilvanWoods_Text_CrystalIntro {

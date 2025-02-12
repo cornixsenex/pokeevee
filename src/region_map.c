@@ -1625,8 +1625,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
 		{
-			n = IsMareWWWRiverDelta();
-			DebugPrintf("\nn: %d", n);
+			n = GetDynamicMapSec_MareWWW();
 			switch (n)
 			{
 				case 0:
@@ -1646,7 +1645,6 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
 		{
 			n = GetDynamicMapSec_Route17();
-			DebugPrintf("R17 n: %d\n", n);
 			switch (n)
 			{
 				case 0:
@@ -1675,7 +1673,6 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
 		{
 			n = GetDynamicMapSec_LakeIra();
-			DebugPrintf("Ira n: %d\n", n);
 			switch (n)
 			{
 				case 0:
@@ -1707,7 +1704,24 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 			else  // Default part of map => Cove
 				return StringCopy(dest, sMapName_LOWER_DRACO_EAST);
 		}
-		
+		//Silvan Woods
+		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
+		{
+			n = GetDynamicMapSec_SilvanWoods();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_SILVAN_WOODS);
+				case 2:
+					return StringCopy(dest, sMapName_LOWER_RIO_DRACO);
+				case 3:
+					return StringCopy(dest, sMapName_DIM_SILVAN_WOODS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
 		//Default Map - Should never be reached
 		else
 			return StringCopy(dest, gText_Ferry);
@@ -2164,7 +2178,7 @@ bool32 IsRoute3RiverDelta(void)
 		return FALSE;
 }
 
-u32 IsMareWWWRiverDelta(void) //Obviously not cormplete atm
+u32 GetDynamicMapSec_MareWWW(void) //Obviously not cormplete atm
 {
 	//0: OOB
 	//1: Mare Occidens
@@ -2173,7 +2187,6 @@ u32 IsMareWWWRiverDelta(void) //Obviously not cormplete atm
 	s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
-	DebugPrintf("IsMareWWWRiverDelta\nX: %d\nY: %d\n", x, y);
 
 	//Mare Occidens region
 	if ( 
@@ -2348,11 +2361,13 @@ u32 GetDynamicMapSec_Route17(void)
 			( (y == 91) && ( (x > 12) && ( x < 20) ) ) ||
 			( (y == 92) && ( (x > 12) && ( x < 19) ) ) ||
 			( (y == 93) && ( (x > 12) && ( x < 17) ) ) ||
-			( (y == 94) && ( (x > 12) && ( x < 17) ) ) 
-			)
-			return 3;
-	//Lower Rio Draco = 4
-	else if (
+			( (y == 94) && ( (x > 12) && ( x < 17) ) ) ||
+			( (y == 95) && ( (x > 12) && ( x < 17) ) ) ||
+			( (y == 96) && ( (x > 12) && ( x < 17) ) ) ||
+			( (y == 97) && ( (x > 12) && ( x < 17) ) ) ||
+			( (y == 98) && ( (x > 12) && ( x < 17) ) ) ||
+			( (y == 99) && ( (x > 12) && ( x < 17) ) ) ||
+			//Below Tall Falls - Only reachable by sailing down stream
 			( (y == 100) && ( (x > 11) && (x < 18) ) ) ||
 			( (y == 101) && ( (x > 11) && (x < 18) ) ) ||
 			( (y == 102) && ( (x > 10) && (x < 18) ) ) ||
@@ -2376,11 +2391,17 @@ u32 GetDynamicMapSec_Route17(void)
 			( (y == 120) && ( (x > 10) && (x < 20) ) ) ||
 			( (y == 121) && ( (x > 13) && (x < 21) ) ) ||
 			( (y == 122) && ( (x > 13) && (x < 21) ) ) ||
-			( (y == 123) && ( (x > 13) && (x < 21) ) ) ||
+			( (y == 123) && ( (x > 13) && (x < 21) ) ) || //Top of Waterfall
 			( (y == 124) && ( (x > 13) && (x < 21) ) ) ||
 			( (y == 125) && ( (x > 13) && (x < 21) ) ) ||
-			( (y == 126) && ( (x > 13) && (x < 21) ) ) ||
-			( (y == 127) && ( (x > 12) && (x < 22) ) ) ||
+			( (y == 126) && ( (x > 13) && (x < 21) ) ) //Last Waterfall Tile
+			)
+			return 3;
+	//Lower Rio Draco = 4
+	else if (
+
+
+			( (y == 127) && ( (x > 12) && (x < 22) ) ) || //Last before Waterfall
 			( (y == 128) && ( (x > 12) && (x < 22) ) ) ||
 			( (y == 129) && ( (x > 12) && (x < 24) ) ) ||
 			( (y == 130) && ( (x > 15) && (x < 24) ) ) ||
@@ -2748,6 +2769,90 @@ bool32 IsSilvanWoodsNUpperDracoEast(void)
 	else
 		return FALSE;
 }
+
+u32 GetDynamicMapSec_SilvanWoods(void)
+{
+	//0: OOB
+	//1: Silvan Woods
+	//2: Lower Rio Draco
+	//3: Dim Silvan Woods
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	DebugPrintf("Silvan Woods\nX %d\nY %d", x, y);
+
+	//Lower Left == Silvan Woods
+	if 
+		(
+		( (x <= 0)  && (y > 28) ) || 
+		( (x == 1)  && (y > 29) ) || 
+		( (x == 2)  && (y > 30) ) || 
+		( (x == 3)  && (y > 31) ) || 
+		( (x == 4)  && (y > 33) ) || 
+		( (x == 5)  && (y > 35) ) || 
+		( (x == 6)  && (y > 38) ) || 
+		( (x == 7)  && (y > 40) ) || 
+		( (x == 8)  && (y > 41) ) || 
+		( (x == 9)  && (y > 42) ) || 
+		( (x == 10) && (y > 43) ) || 
+		( (x == 11) && (y > 44) ) || 
+		( (x == 12) && (y > 46) ) || 
+		( (x == 13) && (y > 47) ) || 
+		( (x == 14) && (y > 49) ) || 
+		( (x == 15) && (y > 51) ) || 
+		( (x == 16) && (y > 52) ) || 
+		( (x == 17) && (y > 53) ) || 
+		( (x == 18) && (y > 54) ) 
+			)
+		return 1;
+	//River
+	else if 
+		(
+ 		( (x <= 0)  && (y > 17) ) || 
+		( (x == 1)  && (y > 18) ) || 
+		( (x == 2)  && (y > 19) ) || 
+		( (x == 3)  && (y > 20) ) || 
+		( (x == 4)  && (y > 21) ) || 
+		( (x == 5)  && (y > 22) ) || 
+		( (x == 6)  && (y > 23) ) || 
+		( (x == 7)  && (y > 25) ) || 
+		( (x == 8)  && (y > 26) ) || 
+		( (x == 9)  && (y > 26) ) || 
+		( (x == 10) && (y > 27) ) || 
+		( (x == 11) && (y > 28) ) || 
+		( (x == 12) && (y > 29) ) || 
+		( (x == 13) && (y > 31) ) || 
+		( (x == 14) && (y > 34) ) || 
+		( (x == 15) && (y > 36) ) || 
+		( (x == 16) && (y > 37) ) || 
+		( (x == 17) && (y > 38) ) || 
+		( (x == 18) && (y > 39) ) ||
+		( (x == 19) && (y > 40) ) || 
+		( (x == 20) && (y > 41) ) || 
+		( (x == 21) && (y > 44) ) || 
+		( (x == 22) && (y > 45) ) || 
+		( (x == 23) && (y > 47) ) || 
+		( (x == 24) && (y > 48) ) || 
+		( (x == 25) && (y > 49) ) || 
+		( (x == 26) && (y > 50) ) || 
+		( (x == 27) && (y > 51) ) || 
+		( (x == 28) && (y > 52) ) ||
+		( (x == 29) && (y > 53) ) || 
+		( (x == 30) && (y > 56) ) || 
+		( (x == 31) && (y > 58) ) || 
+		( (x == 32) && (y > 61) ) || 
+		( (x == 33) && (y > 64) ) || 
+		( (x == 34) && (y > 65) ) || 
+		( (x == 35) && (y > 66) ) 
+			)
+		return 2;
+	//Default => Dim Silvan Woods
+	else 
+		return 3;
+}
+	
+
 
 
 

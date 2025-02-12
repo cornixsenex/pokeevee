@@ -5,7 +5,7 @@ MareWWW_MapScripts::
 
 MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 12 "data/maps/MareWWW/scripts.pory"
-	specialvar VAR_RESULT, IsMareWWWRiverDelta
+	specialvar VAR_RESULT, GetDynamicMapSec_MareWWW
 # 13 "data/maps/MareWWW/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq MareWWW_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
