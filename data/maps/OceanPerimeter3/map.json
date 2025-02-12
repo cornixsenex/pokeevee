@@ -3,7 +3,7 @@
   "name": "OceanPerimeter3",
   "layout": "LAYOUT_OCEAN_PERIMETER3",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_MARE_OCCIDENS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",

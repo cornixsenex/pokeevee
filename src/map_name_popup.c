@@ -210,7 +210,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_ISLA_ITHACA - KANTO_MAPSEC_COUNT]         = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_WAKA - KANTO_MAPSEC_COUNT]           = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_ARIDA - KANTO_MAPSEC_COUNT]          = MAPPOPUP_THEME_STONE,
-    [MAPSEC_LITUS_FALX - KANTO_MAPSEC_COUNT]          = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_PLAYA_ECHONA - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_SILVAN_WOODS - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_WOOD,
     [MAPSEC_DIM_SILVAN_WOODS - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_SALIX - KANTO_MAPSEC_COUNT]               = MAPPOPUP_THEME_WOOD,
@@ -675,7 +675,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			else if (n == 1)
 				regionMapSectionId = MAPSEC_MARE_OCCIDENS;
 			else if (n == 3)
-				regionMapSectionId = MAPSEC_LITUS_FALX;
+				regionMapSectionId = MAPSEC_PLAYA_ECHONA;
 			else
 				regionMapSectionId = MAPSEC_DYNAMIC;
 		}

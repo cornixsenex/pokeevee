@@ -238,7 +238,7 @@
 #define MAPSEC_ISLA_ITHACA                  0xE9
 #define MAPSEC_ISLA_WAKA                    0xEA
 #define MAPSEC_ISLA_ARIDA                   0xEB
-#define MAPSEC_LITUS_FALX                   0xEC
+#define MAPSEC_PLAYA_ECHONA                 0xEC
 #define MAPSEC_SILVAN_WOODS                 0xED
 #define MAPSEC_SILVAN_WOODS                 0xED
 #define MAPSEC_DIM_SILVAN_WOODS             0xEE

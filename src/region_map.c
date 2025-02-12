@@ -1635,7 +1635,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_RIVER_DELTA);
 				case 3:
-					return StringCopy(dest, sMapName_LITUS_FALX);
+					return StringCopy(dest, sMapName_PLAYA_ECHONA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
