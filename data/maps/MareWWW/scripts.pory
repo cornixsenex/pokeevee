@@ -14,10 +14,13 @@ mapscripts MareWWW_MapScripts {
 			setvar (VAR_TEMP_5, 2)
 		} elif (var(VAR_RESULT) == 1){
 			setvar (VAR_TEMP_5, 1)
-		}
-		else {
+		} elif (var(VAR_TEMP_5 == 3)) {
 			setvar (VAR_TEMP_5, 3)
+		} else {
+			msgbox("ERROR: VAR 5 OOB!")
+			closemessage
 		}
+			
 	}
 
 

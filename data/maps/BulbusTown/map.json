@@ -3,7 +3,7 @@
   "name": "BulbusTown",
   "layout": "LAYOUT_BULBUS_TOWN",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_PORTA_PILO",
+  "region_map_section": "MAPSEC_PORTO_PRIMO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

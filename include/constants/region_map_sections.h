@@ -220,7 +220,7 @@
 #define MAPSEC_VIA_FLORAE                   0xD7
 #define MAPSEC_ALDEON                       0xD8
 #define MAPSEC_VIA_ARBORUM                  0xD9
-#define MAPSEC_PORTA_PILO                   0xDA
+#define MAPSEC_PORTO_PRIMO                  0xDA
 #define MAPSEC_SINUS_CAMELUS                0xDB
 #define MAPSEC_RIVER_DELTA                  0xDC
 #define MAPSEC_MARE_OCCIDENS                0xDD

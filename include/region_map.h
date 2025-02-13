@@ -123,6 +123,7 @@ u32 GetDynamicMapSec_LakeIra(void);
 bool32 IsLakeIraSouthUpperDracoWest(void);
 bool32 IsSilvanWoodsNUpperDracoEast(void);
 u32 GetDynamicMapSec_SilvanWoods(void);
+u32 GetDynamicMapSec_MareS6(void);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 
