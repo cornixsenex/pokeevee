@@ -4,7 +4,11 @@
 //0: OOB
 //1: ISLA PINA
 //2: MARE OCCIDENS
-//3: MARE TROPICUS
+//3: MARE TROPICUM
+
+//ISLAND TRANSITIONS HANDLED BY START STOP SURF TASK
+
+//Transitions work a bit different on this map. Only show triggers  are for between Occidens and Tropicum
 
 mapscripts MareS6_MapScripts {
 
@@ -18,26 +22,40 @@ mapscripts MareS6_MapScripts {
 				setvar (VAR_TEMP_5, 2)
 			case 3:
 				setvar (VAR_TEMP_5, 3)
-            default:
-                msgbox("ERROR VAR5 OOB")
-                closemessage
-		}
+			case 4:
+				setvar (VAR_TEMP_5, 4)
+        }
 	}
 }
 
-script Route3_Script_IslaPinaTransition {
+//Silent in this case as island transitions are handled by Start Stop surf task
+script MareS6_Script_IslaPinaTransition {
 	setvar (VAR_TEMP_5, 1)
-	special (ShowMapNamePopup)
 }
 
-script Route3_Script_MareOccidensTransition {
+script MareS6_Script_MareOccidensTransition {
 	setvar (VAR_TEMP_5, 2)
 	special (ShowMapNamePopup)
 }
 
-script Route3_Script_MareTropicanumTransition {
+script MareS6_Script_MareTropicumTransition {
 	setvar (VAR_TEMP_5, 3)
 	special (ShowMapNamePopup)
+}
+
+//Playa Echona
+script MareS6_Script_PlayaEchonaTransition {
+	setvar (VAR_TEMP_5, 4)
+	special (ShowMapNamePopup)
+}
+
+//Note: Silent. Only to keep track of Var between island and ocean - popup done by start / stop surf task
+script MareS6_Script_MareOccidensTransitionSilent {
+	setvar (VAR_TEMP_5, 2)
+}
+
+script MareS6_Script_MareTropicumTransitionSilent {
+	setvar (VAR_TEMP_5, 3)
 }
 
 

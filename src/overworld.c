@@ -3723,7 +3723,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 2:
 				return MAPSEC_MARE_OCCIDENS;
 			case 3:
-				return MAPSEC_MARE_TROPICUS;
+				return MAPSEC_MARE_TROPICUM;
 			default:
 				return MAPSEC_DYNAMIC;
 		}

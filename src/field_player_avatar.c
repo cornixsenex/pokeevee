@@ -1878,6 +1878,7 @@ static void Task_WaitStopSurfing(u8 taskId)
 		GetPlayerPosition(&position); 
 		TryStartCoordEventScript(&position); 
 		//Automatically show map popup on Stop Surfing 
+        //Lake Ira
 		if (
 				 (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA) ) && ( 
 				 (x < 27) || 
@@ -1887,6 +1888,10 @@ static void Task_WaitStopSurfing(u8 taskId)
 				 ( (x > 51) && (y > 45) ) )
 			)
 			ShowMapNamePopup();
+        //MareS6 (Isla Pina save some transitions)
+		if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
+			ShowMapNamePopup();
+
     }
 }
 
@@ -2782,6 +2787,9 @@ static void Task_WaitStartSurfing(u8 taskId)
 				 (x > 74) ||
 				 ( (x > 51) && (y > 45) ) )
 			)
+			ShowMapNamePopup();
+        //MareS6 (Isla Pina save some transitions)
+		if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
 			ShowMapNamePopup();
     }
 

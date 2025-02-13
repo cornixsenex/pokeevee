@@ -1735,7 +1735,9 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_MARE_OCCIDENS);
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TROPICUS);
+					return StringCopy(dest, sMapName_MARE_TROPICUM);
+				case 4:
+					return StringCopy(dest, sMapName_PLAYA_ECHONA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2879,6 +2881,7 @@ u32 GetDynamicMapSec_MareS6(void)
 	//1: Isla Pina
 	//2: Mare Occidens
 	//3: Mare Tropicanum
+    //4: Playa Echona
 
 	s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
@@ -2962,6 +2965,15 @@ u32 GetDynamicMapSec_MareS6(void)
 		( (x == 82) && ( (y > 41) && (y < 45) ) ) 
 		)
 		return 1;
+    //Playa Echona
+    else if (
+            ( (y <= 0) && (x > 68) ) ||
+            ( (y == 1)  && (x > 68) ) ||
+            ( (y == 2)  && (x > 68) ) ||
+            ( (y == 3)  && (x > 73) ) ||
+            ( (y == 4)  && (x > 74) ) 
+            )
+            return 4;
 	//Mare Occidens
 	else if (x < 78)
 		return 2;
@@ -2969,6 +2981,19 @@ u32 GetDynamicMapSec_MareS6(void)
 	else
 		return 3;
 }
+
+bool32 IsPlayerEnterFromWest(void)
+{
+
+	s16 x;
+	x = gSaveBlock1Ptr->pos.x;
+
+    if (x < 1)
+        return TRUE;
+    else 
+        return FALSE;
+}
+
 
 
 

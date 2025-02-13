@@ -227,12 +227,12 @@
 #define MAPSEC_MARE_ORIENS                  0xDE
 #define MAPSEC_MARE_INTERNUM                0xDF
 #define MAPSEC_MARE_TRANQUILLUS             0xE0
-#define MAPSEC_MARE_TROPICUS                0xE1
-#define MAPSEC_MARE_SUBTROPICUS             0xE2
+#define MAPSEC_MARE_TROPICUM                0xE1
+#define MAPSEC_MARE_SUBTROPICUM             0xE2
 #define MAPSEC_MARE_MALUS                   0xE3
 #define MAPSEC_ISLA_IGNIFERA                0xE4
 #define MAPSEC_ISLA_YERBA_BUENA             0xE5
-#define MAPSEC_ISLA_TROPICANA               0xE6
+#define MAPSEC_ISLA_TROPICA                 0xE6
 #define MAPSEC_ISLA_PINA                    0xE7
 #define MAPSEC_ISLA_LAVINIA                 0xE8
 #define MAPSEC_ISLA_ITHACA                  0xE9
