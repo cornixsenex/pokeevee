@@ -3728,6 +3728,23 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareWW
+	if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
+	{
+		n = GetDynamicMapSec_MareWW();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_RIVER_DELTA;
+			case 2:
+				return MAPSEC_MARE_TROPICUM;
+			case 3:
+				return MAPSEC_PLAYA_ECHONA;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 	
 	//Other Maps Go Here
 

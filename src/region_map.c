@@ -1742,6 +1742,24 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
+		//MareWW
+		if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
+		{
+			n = GetDynamicMapSec_MareWW();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_RIVER_DELTA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_TROPICUM);
+				case 3:
+					return StringCopy(dest, sMapName_PLAYA_ECHONA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
 
 		//Default Map - Should never be reached
 		else
@@ -2249,9 +2267,7 @@ u32 GetDynamicMapSec_MareWWW(void) //Obviously not cormplete atm
 			( (y == 16) && (x < 110) ) ||
 			( (y == 17) && (x < 110) ) ||
 			( (y == 18) && (x < 110) ) ||
-			( (y == 19) && (x < 110) ) ||
-			( (y == 20) && (x < 113) ) ||
-			( (y == 21) && (x < 115) ) 
+			( (y == 19) && (x < 110) ) 
 			)
 		return 2;
 	//Playa Echona
@@ -2880,7 +2896,7 @@ u32 GetDynamicMapSec_MareS6(void)
 
 	//1: Isla Pina
 	//2: Mare Occidens
-	//3: Mare Tropicanum
+	//3: Mare Tropicum
     //4: Playa Echona
 
 	s16 x, y;
@@ -2977,7 +2993,65 @@ u32 GetDynamicMapSec_MareS6(void)
 	//Mare Occidens
 	else if (x < 78)
 		return 2;
-	//Mare Tropicanum
+	//Mare Tropicum
+	else
+		return 3;
+}
+
+u32 GetDynamicMapSec_MareWW(void)
+{
+	//0: OOB
+	//1: River Delta
+	//2: Mare Tropicum
+	//3: Playa Echona
+
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	//River Delta
+	if 
+		(
+		 ( (x <= 1) && (y < 19) ) ||
+		 ( (x == 2) && (y < 17) ) ||
+		 ( (x == 3) && (y < 14) ) ||
+		 ( (x == 4) && (y > 5 && y < 12) ) 
+		)
+		return 1;
+	//Mare Tropicum
+	else if 
+		(
+		( (x == 11) && (y > 30) ) ||
+		( (x == 12) && (y > 29) ) ||
+		( (x == 13) && (y > 28) ) ||
+		( (x == 14) && (y > 28) ) ||
+		( (x == 15) && (y > 27) ) ||
+		( (x == 16) && (y > 26) ) ||
+		( (x == 17) && (y > 25) ) ||
+		( (x == 18) && (y > 25) ) ||
+		( (x == 19) && (y > 24) ) ||
+		( (x == 20) && (y > 22) ) ||
+		( (x == 21) && (y > 18) ) ||
+		( (x == 22) && (y > 17) ) ||
+		( (x == 23) && (y > 17) ) ||
+		( (x == 24) && (y > 16) ) ||
+		( (x == 25) && (y > 15) ) ||
+		( (x == 26) && (y > 14) ) ||
+		( (x == 27) && (y > 13) ) ||
+		( (x == 28) && (y > 12) ) ||
+		( (x == 29) && (y > 11) ) ||
+		( (x == 30) && (y > 11) ) ||
+		( (x == 31) && (y >  9) ) ||
+		( (x == 32) && (y >  8) ) ||
+		( (x == 33) && (y >  8) ) ||
+		( (x == 34) && (y >  8) ) ||
+		( (x == 35) && (y >  8) ) ||
+		( (x == 36) && (y >  8) ) ||
+		( (x == 37) && (y >  8) ) ||
+		( (x >= 38) && (y >  8) )
+		)
+		return 2;
+	//Playa Echona
 	else
 		return 3;
 }

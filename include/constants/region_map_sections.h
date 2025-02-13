@@ -252,6 +252,7 @@
 #define MAPSEC_LOWER_DRACO_EAST             0xF6
 #define MAPSEC_UPPER_DRACO_WEST             0xF7
 #define MAPSEC_LOWER_DRACO_WEST             0xF8
+#define MAPSEC_SAECLARA                     0xF9
 
 #define MAPSEC_NONE                         0xFC
 

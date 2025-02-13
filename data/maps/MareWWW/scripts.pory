@@ -5,10 +5,10 @@ mapscripts MareWWW_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 	
 		//NOTE TEMP_VAR_5	
-		//3 == Litus Falx
-		//2 == River Delta
-		//1 == Mare Occidens
 		//0 OOB
+		//1 == Mare Occidens
+		//2 == River Delta
+		//3 == Playa Echona
 		specialvar (VAR_RESULT, GetDynamicMapSec_MareWWW)
 		if (var(VAR_RESULT) == 2) {
 			setvar (VAR_TEMP_5, 2)

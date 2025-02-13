@@ -1,1 +1,38 @@
-mapscripts MareWW_MapScripts {}
+
+//DYNAMIC MAP
+
+//0: OOB
+//1: River Delta
+//2: Mare Tropicum
+//3: Playa Echona
+
+mapscripts MareWW_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareWW)
+		if (var(VAR_RESULT) == 1) {
+			setvar (VAR_TEMP_5, 1)
+		} elif (var(VAR_RESULT) == 2) {
+			setvar (VAR_TEMP_5, 2)
+		} elif (var(VAR_RESULT) == 3) {
+			setvar (VAR_TEMP_5, 3)
+		}
+	}
+
+}
+
+
+script MareWW_Script_RiverDeltaTransition {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
+}
+
+script MareWW_Script_MareTropicumTransition {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+script MareWW_Script_PlayaEchonaTransition {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
+}

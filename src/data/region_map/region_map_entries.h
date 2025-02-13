@@ -239,6 +239,7 @@ static const u8 sMapName_UPPER_DRACO_EAST[]    = _("UPPER DRACO EAST");
 static const u8 sMapName_LOWER_DRACO_EAST[]    = _("LOWER DRACO EAST");
 static const u8 sMapName_UPPER_DRACO_WEST[]    = _("UPPER DRACO WEST");
 static const u8 sMapName_LOWER_DRACO_WEST[]    = _("LOWER DRACO WEST");
+static const u8 sMapName_SAECLARA[]            = _("SAECLARA");
 //End Customs
 static const u8 sMapName_TRAINER_HILL[]  = _("TRAINER HILL");
 
@@ -492,6 +493,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LOWER_DRACO_EAST] = { 0, 0, 1, 1, sMapName_LOWER_DRACO_EAST},
     [MAPSEC_UPPER_DRACO_WEST] = { 0, 0, 1, 1, sMapName_UPPER_DRACO_WEST},
     [MAPSEC_LOWER_DRACO_WEST] = { 0, 0, 1, 1, sMapName_LOWER_DRACO_WEST},
+    [MAPSEC_SAECLARA] = { 0, 0, 1, 1, sMapName_SAECLARA},
 	//End Cornix Customs
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
 };

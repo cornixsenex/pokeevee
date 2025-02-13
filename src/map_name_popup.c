@@ -221,7 +221,8 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_UPPER_DRACO_EAST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_LOWER_DRACO_EAST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_UPPER_DRACO_WEST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_LOWER_DRACO_WEST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD
+    [MAPSEC_LOWER_DRACO_WEST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_SAECLARA - KANTO_MAPSEC_COUNT]            = MAPPOPUP_THEME_MARBLE
 	
 };
 
@@ -784,6 +785,23 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_MARE_TROPICUM;
                 case 4:
                     regionMapSectionId = MAPSEC_PLAYA_ECHONA;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//MareWW 
+		if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
+		{
+			n = GetDynamicMapSec_MareWW();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+				case 1:
+					regionMapSectionId = MAPSEC_RIVER_DELTA;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+				case 3:
+					regionMapSectionId = MAPSEC_PLAYA_ECHONA;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}

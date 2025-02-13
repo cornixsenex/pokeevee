@@ -580,69 +580,6 @@
     },
     {
       "type": "trigger",
-      "x": 102,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareWWW_Script_RiverDeltaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 103,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareWWW_Script_RiverDeltaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 104,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareWWW_Script_RiverDeltaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 105,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareWWW_Script_RiverDeltaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 106,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareWWW_Script_RiverDeltaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 107,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "1",
-      "script": "MareWWW_Script_RiverDeltaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 108,
-      "y": 19,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "1",
-      "script": "MareWWW_Script_RiverDeltaTransition"
-    },
-    {
-      "type": "trigger",
       "x": 109,
       "y": 19,
       "elevation": 0,
@@ -784,78 +721,6 @@
       "var": "VAR_TEMP_5",
       "var_value": "2",
       "script": "MareWWW_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 102,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 103,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 104,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 105,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 106,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 107,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 108,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 109,
-      "y": 20,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareWWW_Script_LitusFalxTransition"
     },
     {
       "type": "trigger",
@@ -1117,6 +982,159 @@
       "var": "VAR_TEMP_5",
       "var_value": "3",
       "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 108,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 107,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 103,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 102,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "MareWWW_Script_RiverDeltaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 109,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 108,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 107,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 103,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 102,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 102,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_LitusFalxTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 102,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareWWW_Script_LitusFalxTransition"
     }
   ],
   "bg_events": [
