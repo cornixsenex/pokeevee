@@ -115,7 +115,15 @@
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route3_Script_IslaPinaTransition"
+    }
   ],
   "bg_events": [
 

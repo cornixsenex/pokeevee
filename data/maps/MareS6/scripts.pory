@@ -1,1 +1,46 @@
-mapscripts MareS6_MapScripts {}
+
+//DYNAMIC MAP
+//VAR_TEMP_5
+//0: OOB
+//1: ISLA PINA
+//2: MARE OCCIDENS
+//3: MARE TROPICUS
+
+mapscripts MareS6_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		//Handle Dynamic Map
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareS6)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+            default:
+                msgbox("ERROR VAR5 OOB")
+                closemessage
+		}
+	}
+}
+
+script Route3_Script_IslaPinaTransition {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
+}
+
+script Route3_Script_MareOccidensTransition {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+script Route3_Script_MareTropicanumTransition {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
+}
+
+
+
+
+

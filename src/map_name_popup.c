@@ -769,6 +769,23 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+		//MareS6
+		if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
+		{
+			n = GetDynamicMapSec_MareS6();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+				case 1:
+					regionMapSectionId = MAPSEC_ISLA_PINA;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_OCCIDENS;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_TROPICUS;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
 

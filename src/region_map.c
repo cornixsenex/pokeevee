@@ -1722,6 +1722,25 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
+		//MareS6
+		if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
+		{
+			n = GetDynamicMapSec_MareS6();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_ISLA_PINA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_OCCIDENS);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_TROPICUS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+
 		//Default Map - Should never be reached
 		else
 			return StringCopy(dest, gText_Ferry);
@@ -2944,7 +2963,7 @@ u32 GetDynamicMapSec_MareS6(void)
 		)
 		return 1;
 	//Mare Occidens
-	if (x < 78)
+	else if (x < 78)
 		return 2;
 	//Mare Tropicanum
 	else

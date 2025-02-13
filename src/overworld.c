@@ -3711,6 +3711,23 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareS6
+	if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
+	{
+		n = GetDynamicMapSec_SilvanWoods();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_ISLA_PINA;
+			case 2:
+				return MAPSEC_MARE_OCCIDENS;
+			case 3:
+				return MAPSEC_MARE_TROPICUS;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 	
 	//Other Maps Go Here
 
