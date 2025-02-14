@@ -3629,7 +3629,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 2:
 				return MAPSEC_RIVER_DELTA;
 			case 3:
-				return MAPSEC_PLAYA_ECHONA;
+				return MAPSEC_ACTA_ECHONA;
 			default:
 				return MAPSEC_DYNAMIC;
 		}
@@ -3706,7 +3706,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 2:
 				return MAPSEC_LOWER_RIO_DRACO;
 			case 3:
-				return MAPSEC_DIM_SILVAN_WOODS;
+				return MAPSEC_SILVA_PROFUNDA;
 			default:
 				return MAPSEC_DYNAMIC;
 		}
@@ -3740,7 +3740,28 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 2:
 				return MAPSEC_MARE_TROPICUM;
 			case 3:
-				return MAPSEC_PLAYA_ECHONA;
+				return MAPSEC_ACTA_ECHONA;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//CityClara
+	if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
+	{
+		n = GetDynamicMapSec_CityClara();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_ACTA_ECHONA;
+			case 2:
+				return MAPSEC_SILVA_PROFUNDA;
+			case 3:
+				return MAPSEC_VIA_FIDELIUM;
+			case 4:
+				return MAPSEC_SINUS_CLARUS;
+			case 5:
+				return MAPSEC_CASTALIA;
 			default:
 				return MAPSEC_DYNAMIC;
 		}

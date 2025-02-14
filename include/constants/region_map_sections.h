@@ -238,10 +238,10 @@
 #define MAPSEC_ISLA_ITHACA                  0xE9
 #define MAPSEC_ISLA_WAKA                    0xEA
 #define MAPSEC_ISLA_ARIDA                   0xEB
-#define MAPSEC_PLAYA_ECHONA                 0xEC
+#define MAPSEC_ACTA_ECHONA                  0xEC
 #define MAPSEC_SILVAN_WOODS                 0xED
 #define MAPSEC_SILVAN_WOODS                 0xED
-#define MAPSEC_DIM_SILVAN_WOODS             0xEE
+#define MAPSEC_SILVA_PROFUNDA               0xEE
 #define MAPSEC_RIO_DRACO                    0xEF
 #define MAPSEC_SALIX                        0xF0
 #define MAPSEC_LAGO_DRACO                   0xF1
@@ -252,8 +252,10 @@
 #define MAPSEC_LOWER_DRACO_EAST             0xF6
 #define MAPSEC_UPPER_DRACO_WEST             0xF7
 #define MAPSEC_LOWER_DRACO_WEST             0xF8
-#define MAPSEC_SAECLARA                     0xF9
-
+#define MAPSEC_CASTALIA                     0xF9
+#define MAPSEC_SINUS_CLARUS                 0xFA
+#define MAPSEC_VIA_FIDELIUM                 0xFB
+//FINALE - NO MORE AFTER
 #define MAPSEC_NONE                         0xFC
 
 #define METLOC_SPECIAL_EGG                  0xFD

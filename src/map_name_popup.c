@@ -210,9 +210,9 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_ISLA_ITHACA - KANTO_MAPSEC_COUNT]         = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_WAKA - KANTO_MAPSEC_COUNT]           = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_ARIDA - KANTO_MAPSEC_COUNT]          = MAPPOPUP_THEME_STONE,
-    [MAPSEC_PLAYA_ECHONA - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_ACTA_ECHONA - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_SILVAN_WOODS - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_DIM_SILVAN_WOODS - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_SILVA_PROFUNDA - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_SALIX - KANTO_MAPSEC_COUNT]               = MAPPOPUP_THEME_WOOD,
     [MAPSEC_LAGO_DRACO - KANTO_MAPSEC_COUNT]          = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_LAGO_DRACO_SHORE - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
@@ -222,7 +222,9 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_LOWER_DRACO_EAST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_UPPER_DRACO_WEST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_LOWER_DRACO_WEST - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_SAECLARA - KANTO_MAPSEC_COUNT]            = MAPPOPUP_THEME_MARBLE
+    [MAPSEC_CASTALIA - KANTO_MAPSEC_COUNT]            = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_SINUS_CLARUS - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_VIA_FIDELIUM - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_WOOD
 	
 };
 
@@ -676,7 +678,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			else if (n == 1)
 				regionMapSectionId = MAPSEC_MARE_OCCIDENS;
 			else if (n == 3)
-				regionMapSectionId = MAPSEC_PLAYA_ECHONA;
+				regionMapSectionId = MAPSEC_ACTA_ECHONA;
 			else
 				regionMapSectionId = MAPSEC_DYNAMIC;
 		}
@@ -765,7 +767,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				case 2:
 					regionMapSectionId = MAPSEC_LOWER_RIO_DRACO;
 				case 3:
-					regionMapSectionId = MAPSEC_DIM_SILVAN_WOODS;
+					regionMapSectionId = MAPSEC_SILVA_PROFUNDA;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
@@ -784,7 +786,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				case 3:
 					regionMapSectionId = MAPSEC_MARE_TROPICUM;
                 case 4:
-                    regionMapSectionId = MAPSEC_PLAYA_ECHONA;
+                    regionMapSectionId = MAPSEC_ACTA_ECHONA;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
@@ -801,7 +803,28 @@ static void LoadMapNamePopUpWindowBg(void)
 				case 2:
 					regionMapSectionId = MAPSEC_MARE_TROPICUM;
 				case 3:
-					regionMapSectionId = MAPSEC_PLAYA_ECHONA;
+					regionMapSectionId = MAPSEC_ACTA_ECHONA;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//CityClara 
+		if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
+		{
+			n = GetDynamicMapSec_CityClara();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+				case 1:
+					regionMapSectionId = MAPSEC_ACTA_ECHONA;
+				case 2:
+					regionMapSectionId = MAPSEC_SILVA_PROFUNDA;
+				case 3:
+					regionMapSectionId = MAPSEC_VIA_FIDELIUM;
+				case 4:
+					regionMapSectionId = MAPSEC_SINUS_CLARUS;
+				case 5:
+					regionMapSectionId = MAPSEC_CASTALIA;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
@@ -816,8 +839,8 @@ static void LoadMapNamePopUpWindowBg(void)
     {
         if (regionMapSectionId > KANTO_MAPSEC_END)
             regionMapSectionId -= KANTO_MAPSEC_COUNT;
-        else
-            regionMapSectionId = 0; // Discard kanto region sections;
+        //else
+        //    regionMapSectionId = 0; // Discard kanto region sections;
     }
 
     if (OW_POPUP_GENERATION == GEN_5)

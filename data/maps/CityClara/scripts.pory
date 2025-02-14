@@ -1,3 +1,13 @@
+
+//DYNMAMIC MAP
+
+//1: Acta Echona
+//2: Silva Profunda
+//3: Via Fidelium
+//4: Sinus Clarus
+//5: Castalia
+
+
 mapscripts CityClara_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		call (CityClara_OnTransition)

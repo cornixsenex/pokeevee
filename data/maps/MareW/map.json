@@ -3,7 +3,7 @@
   "name": "MareW",
   "layout": "LAYOUT_MARE_W",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_AQUA_HIDEOUT_OLD",
+  "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

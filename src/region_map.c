@@ -1635,7 +1635,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_RIVER_DELTA);
 				case 3:
-					return StringCopy(dest, sMapName_PLAYA_ECHONA);
+					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1717,7 +1717,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_LOWER_RIO_DRACO);
 				case 3:
-					return StringCopy(dest, sMapName_DIM_SILVAN_WOODS);
+					return StringCopy(dest, sMapName_SILVA_PROFUNDA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1737,7 +1737,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 3:
 					return StringCopy(dest, sMapName_MARE_TROPICUM);
 				case 4:
-					return StringCopy(dest, sMapName_PLAYA_ECHONA);
+					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1755,7 +1755,28 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_MARE_TROPICUM);
 				case 3:
-					return StringCopy(dest, sMapName_PLAYA_ECHONA);
+					return StringCopy(dest, sMapName_ACTA_ECHONA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+		if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
+		{
+			n = GetDynamicMapSec_CityClara();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_ACTA_ECHONA);
+				case 2:
+					return StringCopy(dest, sMapName_SILVA_PROFUNDA);
+				case 3:
+					return StringCopy(dest, sMapName_VIA_FIDELIUM);
+				case 4:
+					return StringCopy(dest, sMapName_SINUS_CLARUS);
+				case 6:
+					return StringCopy(dest, sMapName_CASTALIA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -3066,6 +3087,31 @@ bool32 IsPlayerEnterFromWest(void)
         return TRUE;
     else 
         return FALSE;
+}
+
+u32 GetDynamicMapSec_CityClara(void)
+{
+	//0: OOB
+	//1: Acta Echona
+	//2: Silva Profunda
+	//3: Via Fidelium
+	//4: Sinus Clarus
+	//5: Castalia
+	
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	if (y > 60)
+		return 1;
+	else if (x < 8)
+		return 2;
+	else if ( (y < 9) && (x > 60))
+		return 3;
+	else if (x > 72)
+		return 4;
+	else 
+		return 5;
 }
 
 

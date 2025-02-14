@@ -125,6 +125,7 @@ bool32 IsSilvanWoodsNUpperDracoEast(void);
 u32 GetDynamicMapSec_SilvanWoods(void);
 u32 GetDynamicMapSec_MareS6(void);
 u32 GetDynamicMapSec_MareWW(void);
+u32 GetDynamicMapSec_CityClara(void);
 bool32 IsPlayerEnterFromWest(void);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
