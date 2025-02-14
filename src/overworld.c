@@ -3702,7 +3702,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 0:
 				return MAPSEC_DYNAMIC;
 			case 1:
-				return MAPSEC_SILVAN_WOODS;
+				return MAPSEC_SILVA;
 			case 2:
 				return MAPSEC_LOWER_RIO_DRACO;
 			case 3:
@@ -3755,7 +3755,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 1:
 				return MAPSEC_ACTA_ECHONA;
 			case 2:
-				return MAPSEC_SILVA_PROFUNDA;
+				return MAPSEC_SILVA;
 			case 3:
 				return MAPSEC_VIA_FIDELIUM;
 			case 4:
@@ -3766,7 +3766,44 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	
+	//MareW
+	if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
+	{
+		n = GetDynamicMapSec_MareW();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_ACTA_ECHONA;
+			case 2:
+				return MAPSEC_MARE_INTERNUM;
+			case 3:
+				return MAPSEC_MARE_TRANQUILLUM;
+			case 4:
+				return MAPSEC_MARE_TROPICUM;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//SRoute18
+	if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
+	{
+		n = GetDynamicMapSec_SRoute18();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_SINUS_PACIFICUS;
+			case 2:
+				return MAPSEC_CASTRUM;
+			case 3:
+				return MAPSEC_SINUS_CLARUS;
+			case 4:
+				return MAPSEC_MARE_INTERNUM;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 	//Other Maps Go Here
 
 	//Default - Should never be reached

@@ -10,8 +10,8 @@
 
 
 mapscripts CityClara_MapScripts {
+
 	MAP_SCRIPT_ON_TRANSITION {
-		
 		//Handle Dynamic Map Triggers
 		specialvar (VAR_RESULT, GetDynamicMapSec_CityClara)
 		if (var(VAR_RESULT) == 1) {
@@ -24,6 +24,8 @@ mapscripts CityClara_MapScripts {
 			setvar (VAR_TEMP_5, 4)
 		} elif (var(VAR_RESULT) == 5) {
 			setvar (VAR_TEMP_5, 5)
+		} elif (var(VAR_RESULT) == 6) {
+			setvar (VAR_TEMP_5, 6)
 		}
 	}
 

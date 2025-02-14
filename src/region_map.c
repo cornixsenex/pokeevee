@@ -1713,7 +1713,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_SILVAN_WOODS);
+					return StringCopy(dest, sMapName_SILVA);
 				case 2:
 					return StringCopy(dest, sMapName_LOWER_RIO_DRACO);
 				case 3:
@@ -1760,6 +1760,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
+		//City Clara
 		if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
 		{
 			n = GetDynamicMapSec_CityClara();
@@ -1770,7 +1771,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 1:
 					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				case 2:
-					return StringCopy(dest, sMapName_SILVA_PROFUNDA);
+					return StringCopy(dest, sMapName_SILVA);
 				case 3:
 					return StringCopy(dest, sMapName_VIA_FIDELIUM);
 				case 4:
@@ -1779,6 +1780,46 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, sMapName_CASTALIA);
 				case 6:
 					return StringCopy(dest, sMapName_DELTA_DRACI);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+		//MareW
+		if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
+		{
+			n = GetDynamicMapSec_MareW();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_ACTA_ECHONA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_INTERNUM);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_TRANQUILLUM);
+				case 4:
+					return StringCopy(dest, sMapName_MARE_TROPICUM);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+		//City Clara
+		if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
+		{
+			n = GetDynamicMapSec_SRoute18();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
+				case 2:
+					return StringCopy(dest, sMapName_CASTRUM);
+				case 3:
+					return StringCopy(dest, sMapName_SINUS_CLARUS);
+				case 4:
+					return StringCopy(dest, sMapName_MARE_INTERNUM);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2497,15 +2538,15 @@ u32 GetDynamicMapSec_Route17(void)
 			( (y == 160) && ( (x > 27) && (x < 36) ) ) ||
 			( (y == 161) && ( (x > 27) && (x < 36) ) ) ||
 			( (y == 162) && ( (x > 28) && (x < 37) ) ) ||
-			( (y == 163) && ( (x > 28) && (x < 40) ) ) ||
-			( (y == 164) && ( (x > 29) && (x < 40) ) ) ||
-			( (y == 165) && ( (x > 29) && (x < 40) ) ) ||
-			( (y == 166) && ( (x > 30) && (x < 40) ) ) ||
-			( (y == 167) && ( (x > 31) && (x < 40) ) ) ||
-			( (y == 168) && ( (x > 33) && (x < 40) ) ) ||
-			( (y == 169) && ( (x > 34) && (x < 40) ) ) ||
-			( (y == 170) && ( (x > 35) && (x < 40) ) ) ||
-			( (y == 171) && ( (x > 36) && (x < 40) ) )
+			( (y == 163) && (x > 28) ) ||
+			( (y == 164) &&  (x > 29)  ) ||
+			( (y == 165) &&  (x > 29)  ) ||
+			( (y == 166) &&  (x > 30)  ) ||
+			( (y == 167) &&  (x > 31)  ) ||
+			( (y == 168) &&  (x > 33)  ) ||
+			( (y == 169) &&  (x > 34)  ) ||
+			( (y == 170) &&  (x > 35)  ) ||
+			( (y == 171) &&  (x > 36)  )
 			)
 			return 4;
 	//Upper Draco East = 5
@@ -2833,16 +2874,16 @@ bool32 IsSilvanWoodsNUpperDracoEast(void)
 u32 GetDynamicMapSec_SilvanWoods(void)
 {
 	//0: OOB
-	//1: Silvan Woods
-	//2: Lower Rio Draco
-	//3: Dim Silvan Woods
+	//1: Silva
+	//2: Dracus Inferior
+	//3: Silva Profuga
 	s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
 
 	DebugPrintf("Silvan Woods\nX %d\nY %d", x, y);
 
-	//Lower Left == Silvan Woods
+	//Lower Left == Silva
 	if 
 		(
 		( (x <= 0)  && (y > 28) ) || 
@@ -2866,7 +2907,7 @@ u32 GetDynamicMapSec_SilvanWoods(void)
 		( (x == 18) && (y > 54) ) 
 			)
 		return 1;
-	//River
+	//Dracus Inferior
 	else if 
 		(
  		( (x <= 0)  && (y > 17) ) || 
@@ -2907,9 +2948,61 @@ u32 GetDynamicMapSec_SilvanWoods(void)
 		( (x == 35) && (y > 66) ) 
 		)
 		return 2;
-	//Default => Dim Silvan Woods
-	else 
+	//Silva Profuga
+	else if
+		(
+		( (x == 10) && (y < 22) ) || 
+		( (x == 11) && (y < 24) ) || 
+		( (x == 12) && (y < 24) ) || 
+		( (x == 13) && (y < 24) ) || 
+		( (x == 14) && (y < 24) ) || 
+		( (x == 15) && (y < 24) ) || 
+		( (x == 16) && (y < 24) ) || 
+		( (x == 17) && (y < 24) ) || 
+		( (x == 18) && (y < 24) ) ||
+		( (x == 19) && (y < 24) ) || 
+		( (x == 20) && (y < 24) ) || 
+		( (x == 21) && (y < 27) ) || 
+		( (x == 22) && (y < 27) ) || 
+		( (x == 23) && (y < 30) ) || 
+		( (x == 24) && (y < 31) ) || 
+		( (x == 25) && (y < 32) ) || 
+		( (x == 26) && (y < 29) ) || 
+		( (x == 27) && (y < 29) ) || 
+		( (x == 28) && (y < 29) ) ||
+		( (x == 29) && (y < 29) ) || 
+		( (x == 30) && (y < 30) ) || 
+		( (x == 31) && (y < 30) ) || 
+		( (x == 32) && (y < 30) ) || 
+		( (x == 33) && (y < 30) ) || 
+		( (x == 34) && (y < 29) ) || 
+		( (x == 35) && (y < 29) ) || 
+		( (x == 36) && (y < 29) ) || 
+		( (x == 37) && (y < 29) ) || 
+		( (x == 38) && (y < 31) ) ||
+		( (x == 39) && (y < 31) ) || 
+		( (x == 40) && (y < 31) ) || 
+		( (x == 41) && (y < 29) ) || 
+		( (x == 42) && (y < 29) ) || 
+		( (x == 43) && (y < 47) ) || 
+		( (x == 44) && (y < 47) ) || 
+		( (x == 45) && (y < 47) ) || 
+		( (x == 46) && (y < 47) ) || 
+		( (x == 47) && (y < 47) ) || 
+		( (x == 48) && (y < 47) ) ||
+		( (x == 49) && (y < 47) ) || 
+		( (x == 50) && (y < 29) ) || 
+		( (x == 51) && (y < 29) ) || 
+		( (x == 52) && (y < 25) ) || 
+		( (x == 53) && (y < 25) ) || 
+		( (x == 54) && (y < 27) ) || 
+		( (x == 55) && (y < 25) ) || 
+		( (x == 56) && (y < 25) ) 
+		)
 		return 3;
+	//Default: Silva
+	else 
+		return 1;
 }
 	
 
@@ -3105,10 +3198,13 @@ u32 GetDynamicMapSec_CityClara(void)
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
 
+	//Deltus Draci
+	if (y > 51 &&  x < 2)
+		return 6;
 	//Acta Echona
-	if (y > 60)
+	else if (y > 60)
 		return 1;
-	//Silva Profunda
+	//Silva 
 	else if (x < 8 && y < 52)
 		return 2;
 	//Via Fidelium
@@ -3123,6 +3219,122 @@ u32 GetDynamicMapSec_CityClara(void)
 	else 
 		return 5;
 }
+
+u32 GetDynamicMapSec_MareW(void)
+{
+	//0: OOB
+	//1: Acta Echona
+	//2: Mare Internum
+	//3: Mare Tranquillum
+	//4: Mare Tropicum
+	
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	//Acta Echona
+	if 
+		(
+		( (y <= 3) && (x < 39) ) ||
+		( (y == 4) && (x < 34) ) ||
+		( (y == 5) && (x < 27) ) ||
+		( (y == 6) && (x < 22) ) ||
+		( (y == 7) && (x < 16) ) ||
+		( (y == 8) && (x < 5) )
+		)
+			return 1;
+	//Mare Internum
+	else if
+		(
+		( (y <= 0) && ( (x < 88) && (x > 51) ) ) ||
+		( (y == 1) && ( (x < 87) && (x > 51) ) ) ||
+		( (y == 2) && ( (x < 86) && (x > 51) ) ) ||
+		( (y == 3) && ( (x < 84) && (x > 52) ) )
+		)
+			return 2;
+	//Mare Tranquillum
+	else if
+		(
+		( (x >= 120) ) ||
+		( (x ==  95) && (y < 2) ) ||
+		( (x ==  96) && (y < 3) ) ||
+		( (x ==  97) && (y < 4) ) ||
+		( (x ==  98) && (y < 5) ) ||
+		( (x ==  99) && (y < 7) ) ||
+		( (x == 100) && (y < 9) ) ||
+		( (x == 101) && (y < 10) ) ||
+		( (x == 102) && (y < 11) ) ||
+		( (x == 103) && (y < 12) ) ||
+		( (x == 104) && (y < 14) ) ||
+		( (x == 105) && (y < 15) ) ||
+		( (x == 106) && (y < 15) ) ||
+		( (x == 107) && (y < 16) ) ||
+		( (x == 108) && (y < 17) ) ||
+		( (x == 109) && (y < 19) ) ||
+		( (x == 111) && (y < 20) ) ||
+		( (x == 112) && (y < 21) ) ||
+		( (x == 113) && (y < 22) ) ||
+		( (x == 114) && (y < 24) ) ||
+		( (x == 115) && (y < 25) ) ||
+		( (x == 116) && (y < 26) ) ||
+		( (x == 117) && (y < 27) ) ||
+		( (x == 118) && (y < 29) ) ||
+		( (x == 119) && (y < 31) ) 
+		)
+			return 3;
+	//Mare Tropica is Default
+	else
+		return 4;
+}
+
+u32 GetDynamicMapSec_SRoute18(void)
+{
+	//0: OOB
+	//1: Sinus Pacificus
+	//2: Castrum
+	//3: Sinus Clarus
+	//4: Mare Internum
+	
+	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	//Sinus Pacificus (Top Left)
+	if 
+		(
+		(y <= 6) ||
+		( (y == 7)  && (x < 41) ) ||
+		( (y == 8)  && (x < 40) ) ||
+		( (y == 9)  && (x < 39) ) ||
+		( (y == 10) && (x < 38) ) ||
+		( (y == 11) && (x < 37) ) ||
+		( (y == 12) && (x < 36) ) ||
+		( (y == 13) && (x < 35) ) ||
+		( (y == 14) && (x < 34) ) ||
+		( (y == 15) && (x < 33) ) ||
+		( (y == 16) && (x < 32) ) ||
+		( (y == 17) && (x < 31) ) ||
+		( (y == 18) && (x < 30) ) ||
+		( (y == 19) && (x < 29) ) ||
+		( (y == 20) && (x < 28) ) ||
+		( (y == 21) && (x < 25) ) ||
+		( (y == 22) && (x < 23) )
+		)
+		return 1;
+	//Castrum (Bottom Right)
+	else if 
+		( (x > 47) && (y > 109) )
+		return 2;
+	//Sinus Clarus (Down Left)
+	else if
+		( (x < 10) && ( (y > 79) && (y < 117) ) )
+		return 3;
+	//Mare Internum (Default)
+	else 
+		return 4;
+}
+	
+
 
 
 

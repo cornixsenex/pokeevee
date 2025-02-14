@@ -22,17 +22,17 @@ mapscripts SilvanWoods_MapScripts {
 	}
 }
 
-script Route3_Script_SilvanWoodsTransition {
+script SilvanWoods_Script_SilvanWoodsTransition {
 	setvar (VAR_TEMP_5, 1)
 	special (ShowMapNamePopup)
 }
 
-script Route3_Script_LowerRioDracoTransition {
+script SilvanWoods_Script_LowerRioDracoTransition {
 	setvar (VAR_TEMP_5, 2)
 	special (ShowMapNamePopup)
 }
 
-script Route3_Script_DimSilvanWoodsTransition {
+script SilvanWoods_Script_SilvaProfundaTransition {
 	setvar (VAR_TEMP_5, 3)
 	special (ShowMapNamePopup)
 }

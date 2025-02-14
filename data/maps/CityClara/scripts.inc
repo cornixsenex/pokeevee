@@ -1,5 +1,5 @@
 CityClara_MapScripts::
-# 13 "data/maps/CityClara/scripts.pory"
+# 14 "data/maps/CityClara/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
@@ -21,6 +21,9 @@ CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 25 "data/maps/CityClara/scripts.pory"
 	compare VAR_RESULT, 5
 	goto_if_eq CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+# 27 "data/maps/CityClara/scripts.pory"
+	compare VAR_RESULT, 6
+	goto_if_eq CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 	return
 
 CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
@@ -48,549 +51,554 @@ CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 	setvar VAR_TEMP_5, 5
 	return
 
+CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
+# 28 "data/maps/CityClara/scripts.pory"
+	setvar VAR_TEMP_5, 6
+	return
+
 
 CityClara_Script_ActaEchonaTransition::
-# 34 "data/maps/CityClara/scripts.pory"
+# 36 "data/maps/CityClara/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 35 "data/maps/CityClara/scripts.pory"
+# 37 "data/maps/CityClara/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 CityClara_Script_SilvaProfundaTransition::
-# 39 "data/maps/CityClara/scripts.pory"
+# 41 "data/maps/CityClara/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 40 "data/maps/CityClara/scripts.pory"
+# 42 "data/maps/CityClara/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 CityClara_Script_ViaFideliumTransition::
-# 44 "data/maps/CityClara/scripts.pory"
+# 46 "data/maps/CityClara/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 45 "data/maps/CityClara/scripts.pory"
+# 47 "data/maps/CityClara/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 CityClara_Script_SinusClarusTransition::
-# 49 "data/maps/CityClara/scripts.pory"
+# 51 "data/maps/CityClara/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 50 "data/maps/CityClara/scripts.pory"
+# 52 "data/maps/CityClara/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 CityClara_Script_CastaliaTransition::
-# 54 "data/maps/CityClara/scripts.pory"
+# 56 "data/maps/CityClara/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 55 "data/maps/CityClara/scripts.pory"
+# 57 "data/maps/CityClara/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 CityClara_Script_DeltaDraciTransition::
-# 59 "data/maps/CityClara/scripts.pory"
+# 61 "data/maps/CityClara/scripts.pory"
 	setvar VAR_TEMP_5, 6
-# 60 "data/maps/CityClara/scripts.pory"
+# 62 "data/maps/CityClara/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 CityClara_EventScript_ClubSign::
-# 65 "data/maps/CityClara/scripts.pory"
-	lock
-# 66 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_ClubSign
 # 67 "data/maps/CityClara/scripts.pory"
-	closemessage
+	lock
 # 68 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_ClubSign
+# 69 "data/maps/CityClara/scripts.pory"
+	closemessage
+# 70 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 
 CityClara_EventScript_CannaWoman::
-# 73 "data/maps/CityClara/scripts.pory"
-	lockall
-# 74 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 75 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_CannaWoman
+	lockall
 # 76 "data/maps/CityClara/scripts.pory"
-	closemessage
+	faceplayer
 # 77 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_CannaWoman
+# 78 "data/maps/CityClara/scripts.pory"
+	closemessage
+# 79 "data/maps/CityClara/scripts.pory"
 	releaseall
 	end
 
 
 CityClara_EventScript_GreenSuit::
-# 82 "data/maps/CityClara/scripts.pory"
-	lock
-# 83 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 84 "data/maps/CityClara/scripts.pory"
+	lock
+# 85 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 86 "data/maps/CityClara/scripts.pory"
 	goto_if_set FLAG_CLARACITY_AFTERMEW, CityClara_EventScript_GreenSuit_2
-# 88 "data/maps/CityClara/scripts.pory"
+# 90 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_GreenSuit
 CityClara_EventScript_GreenSuit_1:
-# 90 "data/maps/CityClara/scripts.pory"
+# 92 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 91 "data/maps/CityClara/scripts.pory"
+# 93 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 CityClara_EventScript_GreenSuit_2:
-# 85 "data/maps/CityClara/scripts.pory"
+# 87 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_GreenSuit2
 	goto CityClara_EventScript_GreenSuit_1
 
 
 CityClara_EventScript_FatMan::
-# 96 "data/maps/CityClara/scripts.pory"
-	lock
-# 97 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 98 "data/maps/CityClara/scripts.pory"
+	lock
+# 99 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 100 "data/maps/CityClara/scripts.pory"
 	goto_if_set FLAG_CLARACITY_AFTERMEW, CityClara_EventScript_FatMan_2
-# 102 "data/maps/CityClara/scripts.pory"
+# 104 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_FatMan
 CityClara_EventScript_FatMan_1:
-# 104 "data/maps/CityClara/scripts.pory"
+# 106 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 105 "data/maps/CityClara/scripts.pory"
+# 107 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 CityClara_EventScript_FatMan_2:
-# 99 "data/maps/CityClara/scripts.pory"
+# 101 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_FatMan2
 	goto CityClara_EventScript_FatMan_1
 
 
 CityClara_EventScript_WomanA::
-# 110 "data/maps/CityClara/scripts.pory"
-	lock
-# 111 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 112 "data/maps/CityClara/scripts.pory"
+	lock
+# 113 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 114 "data/maps/CityClara/scripts.pory"
 	goto_if_set FLAG_CLARACITY_AFTERMEW, CityClara_EventScript_WomanA_2
-# 116 "data/maps/CityClara/scripts.pory"
+# 118 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_WomanA
 CityClara_EventScript_WomanA_1:
-# 118 "data/maps/CityClara/scripts.pory"
+# 120 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 119 "data/maps/CityClara/scripts.pory"
+# 121 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 CityClara_EventScript_WomanA_2:
-# 113 "data/maps/CityClara/scripts.pory"
+# 115 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_WomanA2
 	goto CityClara_EventScript_WomanA_1
 
 
 CityClara_EventScript_RedWoman::
-# 124 "data/maps/CityClara/scripts.pory"
-	lock
-# 125 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 126 "data/maps/CityClara/scripts.pory"
+	lock
+# 127 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 128 "data/maps/CityClara/scripts.pory"
 	goto_if_set FLAG_CLARACITY_AFTERMEW, CityClara_EventScript_RedWoman_2
-# 130 "data/maps/CityClara/scripts.pory"
+# 132 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_RedWoman
 CityClara_EventScript_RedWoman_1:
-# 132 "data/maps/CityClara/scripts.pory"
+# 134 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 133 "data/maps/CityClara/scripts.pory"
+# 135 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 CityClara_EventScript_RedWoman_2:
-# 127 "data/maps/CityClara/scripts.pory"
+# 129 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_RedWoman2
 	goto CityClara_EventScript_RedWoman_1
 
 
 CityClara_EventScript_OldMan::
-# 138 "data/maps/CityClara/scripts.pory"
-	lock
-# 139 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 140 "data/maps/CityClara/scripts.pory"
+	lock
+# 141 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 142 "data/maps/CityClara/scripts.pory"
 	goto_if_set FLAG_CLARACITY_AFTERMEW, CityClara_EventScript_OldMan_2
-# 144 "data/maps/CityClara/scripts.pory"
+# 146 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_OldMan
 CityClara_EventScript_OldMan_1:
-# 146 "data/maps/CityClara/scripts.pory"
+# 148 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 147 "data/maps/CityClara/scripts.pory"
+# 149 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 CityClara_EventScript_OldMan_2:
-# 141 "data/maps/CityClara/scripts.pory"
+# 143 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_OldMan2
 	goto CityClara_EventScript_OldMan_1
 
 
 CityClara_EventScript_OldWoman::
-# 152 "data/maps/CityClara/scripts.pory"
-	lock
-# 153 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 154 "data/maps/CityClara/scripts.pory"
+	lock
+# 155 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 156 "data/maps/CityClara/scripts.pory"
 	goto_if_set FLAG_CLARACITY_AFTERMEW, CityClara_EventScript_OldWoman_2
-# 158 "data/maps/CityClara/scripts.pory"
+# 160 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_OldWoman
 CityClara_EventScript_OldWoman_1:
-# 160 "data/maps/CityClara/scripts.pory"
+# 162 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 161 "data/maps/CityClara/scripts.pory"
+# 163 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 CityClara_EventScript_OldWoman_2:
-# 155 "data/maps/CityClara/scripts.pory"
+# 157 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_OldWoman2
 	goto CityClara_EventScript_OldWoman_1
 
 
 CityClara_EventScript_Lass::
-# 166 "data/maps/CityClara/scripts.pory"
-	lock
-# 167 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 168 "data/maps/CityClara/scripts.pory"
+	lock
+# 169 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 170 "data/maps/CityClara/scripts.pory"
 	goto_if_set FLAG_CLARACITY_AFTERMEW, CityClara_EventScript_Lass_2
-# 172 "data/maps/CityClara/scripts.pory"
+# 174 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_Lass
 CityClara_EventScript_Lass_1:
-# 174 "data/maps/CityClara/scripts.pory"
+# 176 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 175 "data/maps/CityClara/scripts.pory"
+# 177 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 CityClara_EventScript_Lass_2:
-# 169 "data/maps/CityClara/scripts.pory"
+# 171 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_Lass2
 	goto CityClara_EventScript_Lass_1
 
 
 CityClara_EventScript_LeafBridge::
-# 180 "data/maps/CityClara/scripts.pory"
-	lock
-# 181 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 182 "data/maps/CityClara/scripts.pory"
+	lock
+# 183 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 184 "data/maps/CityClara/scripts.pory"
 	load_field_pic 4, 190, 98
-# 189 "data/maps/CityClara/scripts.pory"
-	closemessage
-# 190 "data/maps/CityClara/scripts.pory"
-	destroy_field_pic 4
 # 191 "data/maps/CityClara/scripts.pory"
-	applymovement 22, Common_Movement_FaceDown
+	closemessage
 # 192 "data/maps/CityClara/scripts.pory"
-	waitmovement 0
+	destroy_field_pic 4
 # 193 "data/maps/CityClara/scripts.pory"
+	applymovement 22, Common_Movement_FaceDown
+# 194 "data/maps/CityClara/scripts.pory"
+	waitmovement 0
+# 195 "data/maps/CityClara/scripts.pory"
 	releaseall
 	end
 
 
 CityClara_EventScript_TownSign::
-# 198 "data/maps/CityClara/scripts.pory"
-	lock
-# 199 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_TownSign
 # 200 "data/maps/CityClara/scripts.pory"
-	closemessage
+	lock
 # 201 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_TownSign
+# 202 "data/maps/CityClara/scripts.pory"
+	closemessage
+# 203 "data/maps/CityClara/scripts.pory"
 	release
 	end
 
 
 CityClara_EventScript_Senex::
-# 206 "data/maps/CityClara/scripts.pory"
-	lockall
-# 207 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 208 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_Senex1, MSGBOX_YESNO
+	lockall
 # 209 "data/maps/CityClara/scripts.pory"
+	faceplayer
+# 210 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_Senex1, MSGBOX_YESNO
+# 211 "data/maps/CityClara/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq CityClara_EventScript_Senex_2
-# 213 "data/maps/CityClara/scripts.pory"
+# 215 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_Senex3
 CityClara_EventScript_Senex_1:
-# 215 "data/maps/CityClara/scripts.pory"
+# 217 "data/maps/CityClara/scripts.pory"
 	closemessage
-# 216 "data/maps/CityClara/scripts.pory"
+# 218 "data/maps/CityClara/scripts.pory"
 	releaseall
 	end
 
 CityClara_EventScript_Senex_2:
-# 210 "data/maps/CityClara/scripts.pory"
+# 212 "data/maps/CityClara/scripts.pory"
 	msgbox CityClara_Text_Senex2
 	goto CityClara_EventScript_Senex_1
 
 
 CityClara_EventScript_Jessie::
-# 221 "data/maps/CityClara/scripts.pory"
-	lockall
-# 222 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 223 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_Jessie
+	lockall
 # 224 "data/maps/CityClara/scripts.pory"
-	closemessage
+	faceplayer
 # 225 "data/maps/CityClara/scripts.pory"
-	applymovement 14, Common_Movement_FaceDown
+	msgbox CityClara_Text_Jessie
 # 226 "data/maps/CityClara/scripts.pory"
-	waitmovement 0
+	closemessage
 # 227 "data/maps/CityClara/scripts.pory"
+	applymovement 14, Common_Movement_FaceDown
+# 228 "data/maps/CityClara/scripts.pory"
+	waitmovement 0
+# 229 "data/maps/CityClara/scripts.pory"
 	releaseall
 	end
 
 
 CityClara_EventScript_James::
-# 232 "data/maps/CityClara/scripts.pory"
-	lockall
-# 233 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 234 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_James
+	lockall
 # 235 "data/maps/CityClara/scripts.pory"
-	closemessage
+	faceplayer
 # 236 "data/maps/CityClara/scripts.pory"
-	applymovement 15, Common_Movement_FaceDown
+	msgbox CityClara_Text_James
 # 237 "data/maps/CityClara/scripts.pory"
-	waitmovement 0
+	closemessage
 # 238 "data/maps/CityClara/scripts.pory"
+	applymovement 15, Common_Movement_FaceDown
+# 239 "data/maps/CityClara/scripts.pory"
+	waitmovement 0
+# 240 "data/maps/CityClara/scripts.pory"
 	releaseall
 	end
 
 
 CityClara_EventScript_RocketBlockA::
-# 243 "data/maps/CityClara/scripts.pory"
-	lock
-# 244 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 245 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_RocketBlock1
+	lock
 # 246 "data/maps/CityClara/scripts.pory"
-	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 247 "data/maps/CityClara/scripts.pory"
-	waitmovement 0
+	msgbox CityClara_Text_RocketBlock1
 # 248 "data/maps/CityClara/scripts.pory"
-	applymovement 1, CityClara_Movement_RocketBlock1A
+	closemessage
 # 249 "data/maps/CityClara/scripts.pory"
-	applymovement 3, CityClara_Movement_RocketBlock2A
-# 250 "data/maps/CityClara/scripts.pory"
 	waitmovement 0
+# 250 "data/maps/CityClara/scripts.pory"
+	applymovement 1, CityClara_Movement_RocketBlock1A
 # 251 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft
+	applymovement 3, CityClara_Movement_RocketBlock2A
 # 252 "data/maps/CityClara/scripts.pory"
 	waitmovement 0
 # 253 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_RocketBlock2
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft
 # 254 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight
+	waitmovement 0
 # 255 "data/maps/CityClara/scripts.pory"
-	waitmovement 0
+	msgbox CityClara_Text_RocketBlock2
 # 256 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_RocketBlock3
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight
 # 257 "data/maps/CityClara/scripts.pory"
-	closemessage
-# 258 "data/maps/CityClara/scripts.pory"
-	applymovement 1, CityClara_Movement_RocketReturn1A
-# 259 "data/maps/CityClara/scripts.pory"
-	applymovement 3, CityClara_Movement_RocketReturn2A
-# 260 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn
-# 261 "data/maps/CityClara/scripts.pory"
 	waitmovement 0
+# 258 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_RocketBlock3
+# 259 "data/maps/CityClara/scripts.pory"
+	closemessage
+# 260 "data/maps/CityClara/scripts.pory"
+	applymovement 1, CityClara_Movement_RocketReturn1A
+# 261 "data/maps/CityClara/scripts.pory"
+	applymovement 3, CityClara_Movement_RocketReturn2A
 # 262 "data/maps/CityClara/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn
+# 263 "data/maps/CityClara/scripts.pory"
+	waitmovement 0
+# 264 "data/maps/CityClara/scripts.pory"
 	release
 	return
 
 
 CityClara_EventScript_RocketBlockB::
-# 266 "data/maps/CityClara/scripts.pory"
-	lock
-# 267 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 268 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_RocketBlock1
+	lock
 # 269 "data/maps/CityClara/scripts.pory"
-	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 270 "data/maps/CityClara/scripts.pory"
-	waitmovement 0
+	msgbox CityClara_Text_RocketBlock1
 # 271 "data/maps/CityClara/scripts.pory"
-	applymovement 1, CityClara_Movement_RocketBlock1B
+	closemessage
 # 272 "data/maps/CityClara/scripts.pory"
-	applymovement 3, CityClara_Movement_RocketBlock2B
-# 273 "data/maps/CityClara/scripts.pory"
 	waitmovement 0
+# 273 "data/maps/CityClara/scripts.pory"
+	applymovement 1, CityClara_Movement_RocketBlock1B
 # 274 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight
+	applymovement 3, CityClara_Movement_RocketBlock2B
 # 275 "data/maps/CityClara/scripts.pory"
 	waitmovement 0
 # 276 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_RocketBlock2
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceRight
 # 277 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft
+	waitmovement 0
 # 278 "data/maps/CityClara/scripts.pory"
-	waitmovement 0
+	msgbox CityClara_Text_RocketBlock2
 # 279 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_RocketBlock3
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerFaceLeft
 # 280 "data/maps/CityClara/scripts.pory"
-	closemessage
-# 281 "data/maps/CityClara/scripts.pory"
-	applymovement 1, CityClara_Movement_RocketReturn1B
-# 282 "data/maps/CityClara/scripts.pory"
-	applymovement 3, CityClara_Movement_RocketReturn2B
-# 283 "data/maps/CityClara/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn
-# 284 "data/maps/CityClara/scripts.pory"
 	waitmovement 0
+# 281 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_RocketBlock3
+# 282 "data/maps/CityClara/scripts.pory"
+	closemessage
+# 283 "data/maps/CityClara/scripts.pory"
+	applymovement 1, CityClara_Movement_RocketReturn1B
+# 284 "data/maps/CityClara/scripts.pory"
+	applymovement 3, CityClara_Movement_RocketReturn2B
 # 285 "data/maps/CityClara/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerReturn
+# 286 "data/maps/CityClara/scripts.pory"
+	waitmovement 0
+# 287 "data/maps/CityClara/scripts.pory"
 	release
 	return
 
 
 CityClara_EventScript_Rocket1::
-# 289 "data/maps/CityClara/scripts.pory"
-	lock
-# 290 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 291 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_Rocket1
+	lock
 # 292 "data/maps/CityClara/scripts.pory"
-	closemessage
+	faceplayer
 # 293 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_Rocket1
+# 294 "data/maps/CityClara/scripts.pory"
+	closemessage
+# 295 "data/maps/CityClara/scripts.pory"
 	release
 	return
 
 
 CityClara_EventScript_Rocket2::
-# 297 "data/maps/CityClara/scripts.pory"
-	lock
-# 298 "data/maps/CityClara/scripts.pory"
-	faceplayer
 # 299 "data/maps/CityClara/scripts.pory"
-	msgbox CityClara_Text_Rocket2
+	lock
 # 300 "data/maps/CityClara/scripts.pory"
-	closemessage
+	faceplayer
 # 301 "data/maps/CityClara/scripts.pory"
+	msgbox CityClara_Text_Rocket2
+# 302 "data/maps/CityClara/scripts.pory"
+	closemessage
+# 303 "data/maps/CityClara/scripts.pory"
 	release
 	return
 
 
-# 304 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketBlock1A:
-# 305 "data/maps/CityClara/scripts.pory"
-	walk_down
 # 306 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketBlock1A:
+# 307 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 308 "data/maps/CityClara/scripts.pory"
 	face_right
 	step_end
 
-# 309 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketBlock2A:
-# 310 "data/maps/CityClara/scripts.pory"
-	walk_down
 # 311 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketBlock2A:
+# 312 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 313 "data/maps/CityClara/scripts.pory"
 	walk_left
 	step_end
 
-# 314 "data/maps/CityClara/scripts.pory"
+# 316 "data/maps/CityClara/scripts.pory"
 CityClara_Movement_PlayerFaceLeft:
-# 315 "data/maps/CityClara/scripts.pory"
+# 317 "data/maps/CityClara/scripts.pory"
 	face_left
 	step_end
 
-# 318 "data/maps/CityClara/scripts.pory"
+# 320 "data/maps/CityClara/scripts.pory"
 CityClara_Movement_PlayerFaceRight:
-# 319 "data/maps/CityClara/scripts.pory"
+# 321 "data/maps/CityClara/scripts.pory"
 	face_right
 	step_end
 
-# 322 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn1A:
-# 323 "data/maps/CityClara/scripts.pory"
-	walk_up
 # 324 "data/maps/CityClara/scripts.pory"
-	face_down
-	step_end
-
-# 327 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn2A:
-# 328 "data/maps/CityClara/scripts.pory"
-	walk_right
-# 329 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketReturn1A:
+# 325 "data/maps/CityClara/scripts.pory"
 	walk_up
-# 330 "data/maps/CityClara/scripts.pory"
+# 326 "data/maps/CityClara/scripts.pory"
 	face_down
 	step_end
 
-# 333 "data/maps/CityClara/scripts.pory"
+# 329 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketReturn2A:
+# 330 "data/maps/CityClara/scripts.pory"
+	walk_right
+# 331 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 332 "data/maps/CityClara/scripts.pory"
+	face_down
+	step_end
+
+# 335 "data/maps/CityClara/scripts.pory"
 CityClara_Movement_PlayerReturn:
-# 334 "data/maps/CityClara/scripts.pory"
+# 336 "data/maps/CityClara/scripts.pory"
 	walk_down
-# 334 "data/maps/CityClara/scripts.pory"
+# 336 "data/maps/CityClara/scripts.pory"
 	walk_down
 	step_end
 
-# 337 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketBlock1B:
-# 338 "data/maps/CityClara/scripts.pory"
-	walk_down
 # 339 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketBlock1B:
+# 340 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 341 "data/maps/CityClara/scripts.pory"
 	walk_right
 	step_end
 
-# 342 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketBlock2B:
-# 343 "data/maps/CityClara/scripts.pory"
-	walk_down
 # 344 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketBlock2B:
+# 345 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 346 "data/maps/CityClara/scripts.pory"
 	face_left
 	step_end
 
-# 347 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn1B:
-# 348 "data/maps/CityClara/scripts.pory"
-	walk_left
 # 349 "data/maps/CityClara/scripts.pory"
-	walk_up
+CityClara_Movement_RocketReturn1B:
 # 350 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 351 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 352 "data/maps/CityClara/scripts.pory"
 	face_down
 	step_end
 
-# 353 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn2B:
-# 354 "data/maps/CityClara/scripts.pory"
-	walk_up
 # 355 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketReturn2B:
+# 356 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 357 "data/maps/CityClara/scripts.pory"
 	face_down
 	step_end
 
 CityClara_Text_ClubSign::
-# 358 "data/maps/CityClara/scripts.pory"
+# 360 "data/maps/CityClara/scripts.pory"
 	.string "The Chronic\n"
 	.string "Premium Cannabis Club$"
 
 CityClara_Text_TownSign::
-# 362 "data/maps/CityClara/scripts.pory"
+# 364 "data/maps/CityClara/scripts.pory"
 	.string "City Saeclara built upon the lake$"
 
 CityClara_Text_CannaWoman::
-# 366 "data/maps/CityClara/scripts.pory"
+# 368 "data/maps/CityClara/scripts.pory"
 	.string "You see this building here? The Chronic\n"
 	.string "Club? They got me so high I can barely\l"
 	.string "walk!$"
 
 CityClara_Text_LeafBridge::
-# 370 "data/maps/CityClara/scripts.pory"
+# 372 "data/maps/CityClara/scripts.pory"
 	.string "I can't believe how long this line\n"
 	.string "appears! We'll wait all day and night to\l"
 	.string "move halfway up to the top. Oh\l"
@@ -606,76 +614,76 @@ CityClara_Text_LeafBridge::
 	.string "corner of the south eastern street.$"
 
 CityClara_Text_LeafBridge2::
-# 374 "data/maps/CityClara/scripts.pory"
+# 376 "data/maps/CityClara/scripts.pory"
 	.string "Oh my gosh {PLAYER}! Is that the HM\n"
 	.string "CUT? You are the best! Let's sneak into\l"
 	.string "the church!$"
 
 CityClara_Text_GreenSuit::
-# 378 "data/maps/CityClara/scripts.pory"
+# 380 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_GreenSuit2::
-# 382 "data/maps/CityClara/scripts.pory"
+# 384 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_FatMan::
-# 386 "data/maps/CityClara/scripts.pory"
+# 388 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_FatMan2::
-# 390 "data/maps/CityClara/scripts.pory"
+# 392 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_WomanA::
-# 394 "data/maps/CityClara/scripts.pory"
+# 396 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_WomanA2::
-# 398 "data/maps/CityClara/scripts.pory"
+# 400 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_RedWoman::
-# 402 "data/maps/CityClara/scripts.pory"
+# 404 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_RedWoman2::
-# 406 "data/maps/CityClara/scripts.pory"
+# 408 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_OldMan::
-# 410 "data/maps/CityClara/scripts.pory"
+# 412 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_OldMan2::
-# 414 "data/maps/CityClara/scripts.pory"
+# 416 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_OldWoman::
-# 418 "data/maps/CityClara/scripts.pory"
+# 420 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_OldWoman2::
-# 422 "data/maps/CityClara/scripts.pory"
+# 424 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_Lass::
-# 426 "data/maps/CityClara/scripts.pory"
+# 428 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_Lass2::
-# 430 "data/maps/CityClara/scripts.pory"
+# 432 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_Senex1::
-# 434 "data/maps/CityClara/scripts.pory"
+# 436 "data/maps/CityClara/scripts.pory"
 	.string "My boy come here, or no, are you a girl?\n"
 	.string "Forgive me for my eyes are old as I have\l"
 	.string "grown. Tell me would you ask me to speak\l"
 	.string "and tell to you the tale of this city?$"
 
 CityClara_Text_Senex2::
-# 438 "data/maps/CityClara/scripts.pory"
+# 440 "data/maps/CityClara/scripts.pory"
 	.string "This place is ancient, older than I am.\n"
 	.string "They say that people first lived on the\l"
 	.string "lake thousands of years ago. Escpaing\l"
@@ -690,22 +698,22 @@ CityClara_Text_Senex2::
 	.string "that Mew is here?$"
 
 CityClara_Text_Senex3::
-# 442 "data/maps/CityClara/scripts.pory"
+# 444 "data/maps/CityClara/scripts.pory"
 	.string "No one has time for history these\n"
 	.string "days...$"
 
 CityClara_Text_RocketBlock1::
-# 446 "data/maps/CityClara/scripts.pory"
+# 448 "data/maps/CityClara/scripts.pory"
 	.string "Hey You!$"
 
 CityClara_Text_RocketBlock2::
-# 450 "data/maps/CityClara/scripts.pory"
+# 452 "data/maps/CityClara/scripts.pory"
 	.string "Stop right there! Take not one more\n"
 	.string "stop. This road is closed, we shall let\l"
 	.string "no one pass.$"
 
 CityClara_Text_RocketBlock3::
-# 454 "data/maps/CityClara/scripts.pory"
+# 456 "data/maps/CityClara/scripts.pory"
 	.string "By order of the Rocket High Command\n"
 	.string "only party business will be allowed\l"
 	.string "until our mission has been completed.\l"
@@ -713,14 +721,14 @@ CityClara_Text_RocketBlock3::
 	.string "trouble$"
 
 CityClara_Text_Rocket1::
-# 458 "data/maps/CityClara/scripts.pory"
+# 460 "data/maps/CityClara/scripts.pory"
 	.string "The Rocket Party helped me buy a home!\n"
 	.string "Standing watch on the road's the very\l"
 	.string "least I can do to pay back our dear\l"
 	.string "leader.$"
 
 CityClara_Text_Rocket2::
-# 462 "data/maps/CityClara/scripts.pory"
+# 464 "data/maps/CityClara/scripts.pory"
 	.string "The party only wants the very best\n"
 	.string "people to represent their interests.\l"
 	.string "Perhaps with time, and practice, and\l"
@@ -729,7 +737,7 @@ CityClara_Text_Rocket2::
 	.string "here for you.$"
 
 CityClara_Text_Jessie::
-# 466 "data/maps/CityClara/scripts.pory"
+# 468 "data/maps/CityClara/scripts.pory"
 	.string "This church is being occupied by the\n"
 	.string "Rocket Party and we're watching the\l"
 	.string "door. You'll have to get in line and wait\l"
@@ -737,7 +745,7 @@ CityClara_Text_Jessie::
 	.string "step inside.$"
 
 CityClara_Text_James::
-# 470 "data/maps/CityClara/scripts.pory"
+# 472 "data/maps/CityClara/scripts.pory"
 	.string "This town is so antique it's comical.\n"
 	.string "Look at all these people waiting in line\l"
 	.string "just for a glimpse of some old pokemon.\l"

@@ -126,6 +126,10 @@ u32 GetDynamicMapSec_SilvanWoods(void);
 u32 GetDynamicMapSec_MareS6(void);
 u32 GetDynamicMapSec_MareWW(void);
 u32 GetDynamicMapSec_CityClara(void);
+u32 GetDynamicMapSec_MareW(void);
+u32 GetDynamicMapSec_SRoute18(void);
+
+//Not used yet but seems useful to me idk
 bool32 IsPlayerEnterFromWest(void);
 
 extern const struct RegionMapLocation gRegionMapEntries[];

@@ -32,7 +32,7 @@ SilvanWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 	return
 
 
-Route3_Script_SilvanWoodsTransition::
+SilvanWoods_Script_SilvanWoodsTransition::
 # 26 "data/maps/SilvanWoods/scripts.pory"
 	setvar VAR_TEMP_5, 1
 # 27 "data/maps/SilvanWoods/scripts.pory"
@@ -40,7 +40,7 @@ Route3_Script_SilvanWoodsTransition::
 	return
 
 
-Route3_Script_LowerRioDracoTransition::
+SilvanWoods_Script_LowerRioDracoTransition::
 # 31 "data/maps/SilvanWoods/scripts.pory"
 	setvar VAR_TEMP_5, 2
 # 32 "data/maps/SilvanWoods/scripts.pory"
@@ -48,7 +48,7 @@ Route3_Script_LowerRioDracoTransition::
 	return
 
 
-Route3_Script_DimSilvanWoodsTransition::
+SilvanWoods_Script_SilvaProfundaTransition::
 # 36 "data/maps/SilvanWoods/scripts.pory"
 	setvar VAR_TEMP_5, 3
 # 37 "data/maps/SilvanWoods/scripts.pory"

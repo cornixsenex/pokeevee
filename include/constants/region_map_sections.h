@@ -89,6 +89,7 @@
 #define MAPSEC_SKY_PILLAR                   0x55
 #define MAPSEC_SECRET_BASE                  0x56
 #define MAPSEC_DYNAMIC                      0x57
+//Here begins / Began Kanto Mapsecs. I am removing them for Kashmir - CS250213
 #define MAPSEC_PALLET_TOWN                  0x58
 #define MAPSEC_VIRIDIAN_CITY                0x59
 #define MAPSEC_PEWTER_CITY                  0x5A
@@ -195,8 +196,10 @@
 #define MAPSEC_DILFORD_CHAMBER              0xBF
 #define MAPSEC_SCUFIB_CHAMBER               0xC0
 #define MAPSEC_RIXY_CHAMBER                 0xC1
-#define MAPSEC_VIAPOIS_CHAMBER              0xC2
-#define MAPSEC_EMBER_SPA                    0xC3
+//Below have been altered, above are vanilla
+#define MAPSEC_CASTRUM                      0xC2
+#define MAPSEC_SINUS_PACIFICUS              0xC3
+//Here end Kanto Map Areas and begin idk Emerald Mapsecs?
 #define MAPSEC_SPECIAL_AREA                 0xC4
 #define MAPSEC_AQUA_HIDEOUT                 0xC5
 #define MAPSEC_MAGMA_HIDEOUT                0xC6
@@ -226,7 +229,7 @@
 #define MAPSEC_MARE_OCCIDENS                0xDD
 #define MAPSEC_MARE_ORIENS                  0xDE
 #define MAPSEC_MARE_INTERNUM                0xDF
-#define MAPSEC_MARE_TRANQUILLUS             0xE0
+#define MAPSEC_MARE_TRANQUILLUM             0xE0
 #define MAPSEC_MARE_TROPICUM                0xE1
 #define MAPSEC_MARE_SUBTROPICUM             0xE2
 #define MAPSEC_MARE_MALUS                   0xE3
@@ -239,8 +242,7 @@
 #define MAPSEC_ISLA_WAKA                    0xEA
 #define MAPSEC_ISLA_ARIDA                   0xEB
 #define MAPSEC_ACTA_ECHONA                  0xEC
-#define MAPSEC_SILVAN_WOODS                 0xED
-#define MAPSEC_SILVAN_WOODS                 0xED
+#define MAPSEC_SILVA                        0xED
 #define MAPSEC_SILVA_PROFUNDA               0xEE
 #define MAPSEC_RIO_DRACO                    0xEF
 #define MAPSEC_SALIX                        0xF0

@@ -198,7 +198,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_MARE_OCCIDENS - KANTO_MAPSEC_COUNT]       = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_ORIENS - KANTO_MAPSEC_COUNT]         = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_INTERNUM - KANTO_MAPSEC_COUNT]       = MAPPOPUP_THEME_UNDERWATER,
-    [MAPSEC_MARE_TRANQUILLUS - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_UNDERWATER,
+    [MAPSEC_MARE_TRANQUILLUM - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_TROPICUM - KANTO_MAPSEC_COUNT]       = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_SUBTROPICUM - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_MALUS - KANTO_MAPSEC_COUNT]          = MAPPOPUP_THEME_UNDERWATER,
@@ -211,7 +211,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_ISLA_WAKA - KANTO_MAPSEC_COUNT]           = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_ARIDA - KANTO_MAPSEC_COUNT]          = MAPPOPUP_THEME_STONE,
     [MAPSEC_ACTA_ECHONA - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_SILVAN_WOODS - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_SILVA - KANTO_MAPSEC_COUNT]        = MAPPOPUP_THEME_WOOD,
     [MAPSEC_SILVA_PROFUNDA - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_SALIX - KANTO_MAPSEC_COUNT]               = MAPPOPUP_THEME_WOOD,
     [MAPSEC_LAGO_DRACO - KANTO_MAPSEC_COUNT]          = MAPPOPUP_THEME_MARBLE,
@@ -690,6 +690,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			{
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
 				case 1:
 					regionMapSectionId = MAPSEC_LAGO_DRACO;
 					break;
@@ -726,6 +727,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			{
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
 				case 1:
 					regionMapSectionId = MAPSEC_LAGO_DRACO;
 					break;
@@ -759,15 +761,20 @@ static void LoadMapNamePopUpWindowBg(void)
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
 		{
 			n = GetDynamicMapSec_SilvanWoods();
+			DebugPrintf ("Dynamic BG Theme, Silvan Woods\nn: %d", n);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
 				case 1:
-					regionMapSectionId = MAPSEC_SILVAN_WOODS;
+					regionMapSectionId = MAPSEC_SILVA;
+					break;
 				case 2:
 					regionMapSectionId = MAPSEC_LOWER_RIO_DRACO;
+					break;
 				case 3:
 					regionMapSectionId = MAPSEC_SILVA_PROFUNDA;
+					break;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
@@ -779,14 +786,19 @@ static void LoadMapNamePopUpWindowBg(void)
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
 				case 1:
 					regionMapSectionId = MAPSEC_ISLA_PINA;
+					break;
 				case 2:
 					regionMapSectionId = MAPSEC_MARE_OCCIDENS;
+					break;
 				case 3:
 					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+					break;
                 case 4:
                     regionMapSectionId = MAPSEC_ACTA_ECHONA;
+					break;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
@@ -798,12 +810,16 @@ static void LoadMapNamePopUpWindowBg(void)
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
 				case 1:
 					regionMapSectionId = MAPSEC_DELTA_DRACI;
+					break;
 				case 2:
 					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+					break;
 				case 3:
 					regionMapSectionId = MAPSEC_ACTA_ECHONA;
+					break;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
@@ -815,16 +831,70 @@ static void LoadMapNamePopUpWindowBg(void)
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
 				case 1:
 					regionMapSectionId = MAPSEC_ACTA_ECHONA;
+					break;
 				case 2:
-					regionMapSectionId = MAPSEC_SILVA_PROFUNDA;
+					regionMapSectionId = MAPSEC_SILVA;
+					break;
 				case 3:
 					regionMapSectionId = MAPSEC_VIA_FIDELIUM;
+					break;
 				case 4:
 					regionMapSectionId = MAPSEC_SINUS_CLARUS;
+					break;
 				case 5:
 					regionMapSectionId = MAPSEC_CASTALIA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//MareW
+		if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
+		{
+			n = GetDynamicMapSec_MareW();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
+				case 1:
+					regionMapSectionId = MAPSEC_ACTA_ECHONA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_INTERNUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//SRoute18
+		if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
+		{
+			n = GetDynamicMapSec_SRoute18();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
+				case 1:
+					regionMapSectionId = MAPSEC_SINUS_PACIFICUS;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_CASTRUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_SINUS_CLARUS;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_MARE_INTERNUM;
+					break;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
@@ -839,8 +909,8 @@ static void LoadMapNamePopUpWindowBg(void)
     {
         if (regionMapSectionId > KANTO_MAPSEC_END)
             regionMapSectionId -= KANTO_MAPSEC_COUNT;
-        //else
-        //    regionMapSectionId = 0; // Discard kanto region sections;
+        else
+            regionMapSectionId = 0; // Discard kanto region sections;
     }
 
     if (OW_POPUP_GENERATION == GEN_5)
