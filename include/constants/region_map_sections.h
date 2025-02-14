@@ -222,7 +222,7 @@
 #define MAPSEC_VIA_ARBORUM                  0xD9
 #define MAPSEC_PORTO_PRIMO                  0xDA
 #define MAPSEC_SINUS_CAMELUS                0xDB
-#define MAPSEC_RIVER_DELTA                  0xDC
+#define MAPSEC_DELTA_DRACI                  0xDC
 #define MAPSEC_MARE_OCCIDENS                0xDD
 #define MAPSEC_MARE_ORIENS                  0xDE
 #define MAPSEC_MARE_INTERNUM                0xDF

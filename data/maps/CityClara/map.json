@@ -3,7 +3,7 @@
   "name": "CityClara",
   "layout": "LAYOUT_CITY_CLARA",
   "music": "MUS_BIRCH_LAB",
-  "region_map_section": "MAPSEC_SAECLARA",
+  "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",
@@ -458,6 +458,24 @@
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
       "script": "CityClara_EventScript_RocketBlockB"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 72,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
     }
   ],
   "bg_events": [

@@ -194,7 +194,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_VIA_ARBORUM - KANTO_MAPSEC_COUNT]   = MAPPOPUP_THEME_WOOD,
     [MAPSEC_PORTO_PRIMO - KANTO_MAPSEC_COUNT]    = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_SINUS_CAMELUS - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_RIVER_DELTA - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_DELTA_DRACI - KANTO_MAPSEC_COUNT]  = MAPPOPUP_THEME_WOOD,
     [MAPSEC_MARE_OCCIDENS - KANTO_MAPSEC_COUNT]       = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_ORIENS - KANTO_MAPSEC_COUNT]         = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_INTERNUM - KANTO_MAPSEC_COUNT]       = MAPPOPUP_THEME_UNDERWATER,
@@ -665,7 +665,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3))
 		{
 			if (IsRoute3RiverDelta())
-				regionMapSectionId = MAPSEC_RIVER_DELTA;
+				regionMapSectionId = MAPSEC_DELTA_DRACI;
 			else
 				regionMapSectionId = MAPSEC_SINUS_CAMELUS;
 		} 
@@ -674,7 +674,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		{
 			n = GetDynamicMapSec_MareWWW();
 			if (n == 2) 
-				regionMapSectionId = MAPSEC_RIVER_DELTA;
+				regionMapSectionId = MAPSEC_DELTA_DRACI;
 			else if (n == 1)
 				regionMapSectionId = MAPSEC_MARE_OCCIDENS;
 			else if (n == 3)
@@ -799,7 +799,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 				case 1:
-					regionMapSectionId = MAPSEC_RIVER_DELTA;
+					regionMapSectionId = MAPSEC_DELTA_DRACI;
 				case 2:
 					regionMapSectionId = MAPSEC_MARE_TROPICUM;
 				case 3:

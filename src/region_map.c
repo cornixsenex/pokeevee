@@ -1618,7 +1618,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 		{
 			if (IsRoute3RiverDelta())
-				return StringCopy(dest, sMapName_RIVER_DELTA);
+				return StringCopy(dest, sMapName_DELTA_DRACI);
 			else  // Default part of map => Cove
 				return StringCopy(dest, sMapName_SINUS_CAMELUS);
 		}
@@ -1633,7 +1633,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 1:
 					return StringCopy(dest, sMapName_MARE_OCCIDENS);
 				case 2:
-					return StringCopy(dest, sMapName_RIVER_DELTA);
+					return StringCopy(dest, sMapName_DELTA_DRACI);
 				case 3:
 					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				default:
@@ -1751,7 +1751,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_RIVER_DELTA);
+					return StringCopy(dest, sMapName_DELTA_DRACI);
 				case 2:
 					return StringCopy(dest, sMapName_MARE_TROPICUM);
 				case 3:
@@ -1775,8 +1775,10 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, sMapName_VIA_FIDELIUM);
 				case 4:
 					return StringCopy(dest, sMapName_SINUS_CLARUS);
-				case 6:
+				case 5:
 					return StringCopy(dest, sMapName_CASTALIA);
+				case 6:
+					return StringCopy(dest, sMapName_DELTA_DRACI);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -3097,19 +3099,27 @@ u32 GetDynamicMapSec_CityClara(void)
 	//3: Via Fidelium
 	//4: Sinus Clarus
 	//5: Castalia
+	//6: Delta Draci
 	
 	s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
 
+	//Acta Echona
 	if (y > 60)
 		return 1;
-	else if (x < 8)
+	//Silva Profunda
+	else if (x < 8 && y < 52)
 		return 2;
+	//Via Fidelium
 	else if ( (y < 9) && (x > 60))
 		return 3;
+	//Sinus Clarus
 	else if (x > 72)
 		return 4;
+	//Delta Draci
+	else if (x < 2 && y > 51)
+		return 6;
 	else 
 		return 5;
 }

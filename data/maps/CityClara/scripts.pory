@@ -6,33 +6,60 @@
 //3: Via Fidelium
 //4: Sinus Clarus
 //5: Castalia
+//6: Delta Draci
 
 
 mapscripts CityClara_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
-		call (CityClara_OnTransition)
+		
+		//Handle Dynamic Map Triggers
+		specialvar (VAR_RESULT, GetDynamicMapSec_CityClara)
+		if (var(VAR_RESULT) == 1) {
+			setvar (VAR_TEMP_5, 1)
+		} elif (var(VAR_RESULT) == 2) {
+			setvar (VAR_TEMP_5, 2)
+		} elif (var(VAR_RESULT) == 3) {
+			setvar (VAR_TEMP_5, 3)
+		} elif (var(VAR_RESULT) == 4) {
+			setvar (VAR_TEMP_5, 4)
+		} elif (var(VAR_RESULT) == 5) {
+			setvar (VAR_TEMP_5, 5)
+		}
 	}
+
 }
 
-script CityClara_OnTransition {
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
-		setobjectxyperm (4, 39, 34)
-		setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_AROUND)
-		setobjectxyperm (5, 30, 32)
-		setobjectmovementtype (5, MOVEMENT_TYPE_WANDER_AROUND)	
-		setobjectxyperm (6, 58, 12)
-		setobjectmovementtype (6, MOVEMENT_TYPE_WANDER_AROUND)	
-		setobjectxyperm (8, 18, 40)
-		setobjectmovementtype (8, MOVEMENT_TYPE_WANDER_AROUND)	
-		setobjectxyperm (9, 55, 25)
-		setobjectmovementtype (9, MOVEMENT_TYPE_WANDER_AROUND)	
-		setobjectxyperm (12, 30, 38)
-		setobjectmovementtype (12, MOVEMENT_TYPE_WANDER_AROUND)	
-		setobjectxyperm (13, 39, 40)
-		setobjectmovementtype (13, MOVEMENT_TYPE_WANDER_AROUND)	
-	}
-	end
+
+script CityClara_Script_ActaEchonaTransition {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
 }
+
+script CityClara_Script_SilvaProfundaTransition {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+script CityClara_Script_ViaFideliumTransition {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
+}
+
+script CityClara_Script_SinusClarusTransition {
+	setvar (VAR_TEMP_5, 4)
+	special (ShowMapNamePopup)
+}
+
+script CityClara_Script_CastaliaTransition {
+	setvar (VAR_TEMP_5, 5)
+	special (ShowMapNamePopup)
+}
+
+script CityClara_Script_DeltaDraciTransition {
+	setvar (VAR_TEMP_5, 6)
+	special (ShowMapNamePopup)
+}
+
 
 script CityClara_EventScript_ClubSign {	
 	lock

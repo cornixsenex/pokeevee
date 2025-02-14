@@ -3612,7 +3612,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 	if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 	{
 		if (IsRoute3RiverDelta())
-			return MAPSEC_RIVER_DELTA;
+			return MAPSEC_DELTA_DRACI;
 		else //Everywhere else
 			return MAPSEC_SINUS_CAMELUS;
 	}
@@ -3627,7 +3627,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 1:
 				return MAPSEC_MARE_OCCIDENS;
 			case 2:
-				return MAPSEC_RIVER_DELTA;
+				return MAPSEC_DELTA_DRACI;
 			case 3:
 				return MAPSEC_ACTA_ECHONA;
 			default:
@@ -3736,7 +3736,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 			case 0:
 				return MAPSEC_DYNAMIC;
 			case 1:
-				return MAPSEC_RIVER_DELTA;
+				return MAPSEC_DELTA_DRACI;
 			case 2:
 				return MAPSEC_MARE_TROPICUM;
 			case 3:
