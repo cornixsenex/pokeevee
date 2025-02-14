@@ -596,3 +596,5 @@ gSpecials::
     def_special IsPlayerEnterFromWest
 	def_special GetDynamicMapSec_MareWW
 	def_special GetDynamicMapSec_CityClara
+	def_special GetDynamicMapSec_MareW
+	def_special GetDynamicMapSec_SRoute18

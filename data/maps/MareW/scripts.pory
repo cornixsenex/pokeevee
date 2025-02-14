@@ -1,1 +1,46 @@
-mapscripts MareW_MapScripts {}
+
+//DYNAMIC MAP - TEMP VAR 5
+//1: Acta Echona Top Left
+//2: Mare Internum Top Middle
+//3: Mare Tranquillum Right
+//4: Mare Tropicum    Default
+
+mapscripts MareW_MapScripts {
+        
+    MAP_SCRIPT_ON_TRANSITION {
+		//Handle Dynamic Map Triggers
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareW)
+		if (var(VAR_RESULT) == 1) {
+			setvar (VAR_TEMP_5, 1)
+		} elif (var(VAR_RESULT) == 2) {
+			setvar (VAR_TEMP_5, 2)
+		} elif (var(VAR_RESULT) == 3) {
+			setvar (VAR_TEMP_5, 3)
+		} elif (var(VAR_RESULT) == 4) {
+			setvar (VAR_TEMP_5, 4)
+        }
+    }
+}
+
+script MareW_Script_ActaEchonaTransition {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
+}
+
+script MareW_Script_MareInternumTransition {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+script MareW_Script_MareTranquillumTransition {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
+}
+
+script MareW_Script_MareTropicumTransition {
+	setvar (VAR_TEMP_5, 4)
+	special (ShowMapNamePopup)
+}
+
+
+
