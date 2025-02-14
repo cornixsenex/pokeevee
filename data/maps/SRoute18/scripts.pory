@@ -1,4 +1,47 @@
-mapscripts SRoute18_MapScripts {}
+
+//DYNAMIC MAP VAR_TEMP_5
+//1: Sinus Pacificus Top Left
+//2: Castrum Bottom Right
+//3: Sinus Clarus Bottom Left
+//4: Mare Internum Default
+
+mapscripts SRoute18_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+		//Handle Dynamic Map Triggers
+		specialvar (VAR_RESULT, GetDynamicMapSec_SRoute18)
+		if (var(VAR_RESULT) == 1) {
+			setvar (VAR_TEMP_5, 1)
+		} elif (var(VAR_RESULT) == 2) {
+			setvar (VAR_TEMP_5, 2)
+		} elif (var(VAR_RESULT) == 3) {
+			setvar (VAR_TEMP_5, 3)
+		} elif (var(VAR_RESULT) == 4) {
+			setvar (VAR_TEMP_5, 4)
+		}
+	}
+
+}
+
+script SRoute18_Script_SinusPacificusTransition {
+	setvar (VAR_TEMP_5, 1)
+	special (ShowMapNamePopup)
+}
+
+script SRoute18_Script_CastrumTransition {
+	setvar (VAR_TEMP_5, 2)
+	special (ShowMapNamePopup)
+}
+
+script SRoute18_Script_SinusClarusTransition {
+	setvar (VAR_TEMP_5, 3)
+	special (ShowMapNamePopup)
+}
+
+script SRoute18_Script_MareInternumTransition {
+	setvar (VAR_TEMP_5, 4)
+	special (ShowMapNamePopup)
+}
 
 
 script SRoute18_Script_TestTriggerOn2 {

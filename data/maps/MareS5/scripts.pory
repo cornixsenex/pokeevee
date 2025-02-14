@@ -1,7 +1,23 @@
 
+//DYNAMIC MAP TEMP_VAR_5
+
+//1 = TRUE = Mare Tropicum
+//2 = FALSE = Acta Echona
+
 const OBJ_EVENT_ARGO = 1
 
 mapscripts MareS5_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+
+        //Handle Dynamic Map Trigger Setup
+        specialvar (VAR_RESULT, IsMareS5MareTropicum)
+        if (var(VAR_RESULT) == TRUE) {
+            setvar (VAR_TEMP_5, 1)
+        } else {
+            setvar (VAR_TEMP_5, 2)
+        }
+    }
 
 	MAP_SCRIPT_ON_LOAD {
 		if (var(VAR_ARGO_STATE) == 1) {
@@ -17,6 +33,16 @@ mapscripts MareS5_MapScripts {
 		VAR_ARGO_STATE, 1: MareS5_OnFrame_SailToColchis
 	]
 
+}
+
+script MareS5_Script_MareTropicumTransition {
+    setvar (VAR_TEMP_5, 1)
+    special (ShowMapNamePopup)
+}
+
+script MareS5_Script_ActaEchonaTransition {
+    setvar (VAR_TEMP_5, 2)
+    special (ShowMapNamePopup)
 }
 
 script MareS5_Script_SupressSurf {

@@ -1,65 +1,136 @@
 SRoute18_MapScripts::
+# 10 "data//maps/SRoute18/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 12 "data//maps/SRoute18/scripts.pory"
+	specialvar VAR_RESULT, GetDynamicMapSec_SRoute18
+# 13 "data//maps/SRoute18/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+# 15 "data//maps/SRoute18/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+# 17 "data//maps/SRoute18/scripts.pory"
+	compare VAR_RESULT, 3
+	goto_if_eq SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+# 19 "data//maps/SRoute18/scripts.pory"
+	compare VAR_RESULT, 4
+	goto_if_eq SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	return
+
+SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 14 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 1
+	return
+
+SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 16 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 2
+	return
+
+SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
+# 18 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 3
+	return
+
+SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+# 20 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 4
+	return
+
+
+SRoute18_Script_SinusPacificusTransition::
+# 27 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 1
+# 28 "data//maps/SRoute18/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+SRoute18_Script_CastrumTransition::
+# 32 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 2
+# 33 "data//maps/SRoute18/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+SRoute18_Script_SinusClarusTransition::
+# 37 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 3
+# 38 "data//maps/SRoute18/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+SRoute18_Script_MareInternumTransition::
+# 42 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 4
+# 43 "data//maps/SRoute18/scripts.pory"
+	special ShowMapNamePopup
+	return
 
 
 SRoute18_Script_TestTriggerOn2::
-# 5 "data/maps/SRoute18/scripts.pory"
+# 48 "data//maps/SRoute18/scripts.pory"
 	lock
-# 6 "data/maps/SRoute18/scripts.pory"
+# 49 "data//maps/SRoute18/scripts.pory"
 	setvar VAR_TEMP_7, 1
-# 7 "data/maps/SRoute18/scripts.pory"
+# 50 "data//maps/SRoute18/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 8 "data/maps/SRoute18/scripts.pory"
+# 51 "data//maps/SRoute18/scripts.pory"
 	waitmovement 0
-# 9 "data/maps/SRoute18/scripts.pory"
+# 52 "data//maps/SRoute18/scripts.pory"
 	msgbox SRoute18_Script_TestTriggerOn2_Text_0, MSGBOX_DEFAULT
-# 10 "data/maps/SRoute18/scripts.pory"
+# 53 "data//maps/SRoute18/scripts.pory"
 	closemessage
-# 11 "data/maps/SRoute18/scripts.pory"
+# 54 "data//maps/SRoute18/scripts.pory"
 	release
 	end
 
 
 SRoute18_Script_TestTriggerOn1::
-# 16 "data/maps/SRoute18/scripts.pory"
+# 59 "data//maps/SRoute18/scripts.pory"
 	lock
-# 17 "data/maps/SRoute18/scripts.pory"
+# 60 "data//maps/SRoute18/scripts.pory"
 	setvar VAR_TEMP_7, 2
-# 18 "data/maps/SRoute18/scripts.pory"
+# 61 "data//maps/SRoute18/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 19 "data/maps/SRoute18/scripts.pory"
+# 62 "data//maps/SRoute18/scripts.pory"
 	waitmovement 0
-# 20 "data/maps/SRoute18/scripts.pory"
+# 63 "data//maps/SRoute18/scripts.pory"
 	msgbox SRoute18_Script_TestTriggerOn1_Text_0, MSGBOX_DEFAULT
-# 21 "data/maps/SRoute18/scripts.pory"
+# 64 "data//maps/SRoute18/scripts.pory"
 	closemessage
-# 22 "data/maps/SRoute18/scripts.pory"
+# 65 "data//maps/SRoute18/scripts.pory"
 	release
 	end
 
 
 Sroute18_Script_TestPorygon::
-# 27 "data/maps/SRoute18/scripts.pory"
+# 70 "data//maps/SRoute18/scripts.pory"
 	lock
-# 28 "data/maps/SRoute18/scripts.pory"
+# 71 "data//maps/SRoute18/scripts.pory"
 	setvar VAR_TEMP_7, 1
-# 29 "data/maps/SRoute18/scripts.pory"
+# 72 "data//maps/SRoute18/scripts.pory"
 	msgbox Sroute18_Script_TestPorygon_Text_0, MSGBOX_DEFAULT
-# 30 "data/maps/SRoute18/scripts.pory"
+# 73 "data//maps/SRoute18/scripts.pory"
 	closemessage
-# 31 "data/maps/SRoute18/scripts.pory"
+# 74 "data//maps/SRoute18/scripts.pory"
 	release
 	end
 
 
 SRoute18_Script_TestTriggerOn2_Text_0:
-# 9 "data/maps/SRoute18/scripts.pory"
+# 52 "data//maps/SRoute18/scripts.pory"
 	.string "TRIGGER 2!$"
 
 SRoute18_Script_TestTriggerOn1_Text_0:
-# 20 "data/maps/SRoute18/scripts.pory"
+# 63 "data//maps/SRoute18/scripts.pory"
 	.string "TRIGGER 1$"
 
 Sroute18_Script_TestPorygon_Text_0:
-# 29 "data/maps/SRoute18/scripts.pory"
+# 72 "data//maps/SRoute18/scripts.pory"
 	.string "VAR_TEMP_7 set to 1$"

@@ -3331,7 +3331,17 @@ u32 GetDynamicMapSec_SRoute18(void)
 		return 1;
 	//Castrum (Bottom Right)
 	else if 
-		( (x > 47) && (y > 109) )
+		( 
+        ( (x > 47) && (y > 109) ) || //East of the wall bottom area
+        ( (x > 40) && (y > 113) ) || // East of the Rock bottom area
+        ( (x == 40) && (y > 120) ) || //Begin step by step of the rocky penninsula below port
+        ( (x == 39) && (y > 120) ) ||
+        ( (x ==38) && ( (y < 134) && (y > 120) ) ) ||
+        ( (x ==37) && ( (y < 134) && (y > 121) ) ) ||
+        ( (x ==36) && ( (y < 133) && (y > 121) ) ) ||
+        ( (x ==35) && ( (y < 131) && (y > 121) ) ) ||
+        ( (x ==34) && ( (y < 130) && (y > 121) ) ) 
+        )
 		return 2;
 	//Sinus Clarus (Down Left)
 	else if
