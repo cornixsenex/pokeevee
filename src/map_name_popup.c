@@ -899,6 +899,14 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+        //MareS5
+		if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5))
+		{
+			if (IsMareS5MareTropicum())
+				regionMapSectionId = MAPSEC_MARE_TROPICUM;
+			else
+				regionMapSectionId = MAPSEC_ACTA_ECHONA;
+		} 
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
 

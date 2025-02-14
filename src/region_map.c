@@ -1824,6 +1824,14 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
+        //MareS5
+		if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5))
+		{
+			if (IsMareS5MareTropicum())
+                return StringCopy(dest, sMapName_MARE_TROPICUM);
+            else
+                return StringCopy(dest, sMapName_ACTA_ECHONA);
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -3334,10 +3342,14 @@ u32 GetDynamicMapSec_SRoute18(void)
 		return 4;
 }
 
-u32 GetDynamicMapSec_MareS5(void)
+bool32 IsMareS5MareTropicum(void)
 {
 	//1: Acta Echona
 	//2: Mare Tropicum
+	
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
 	
 	//Acta Echona - Top Left
 	if
@@ -3347,9 +3359,9 @@ u32 GetDynamicMapSec_MareS5(void)
 		(y == 3 && x < 7) ||
 		(y == 4 && x < 6)
 		)
-		return 1;
+		return FALSE;
 	else 
-		return 2;
+		return TRUE;
 }
 	
 

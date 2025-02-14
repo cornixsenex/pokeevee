@@ -3804,6 +3804,14 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 				return MAPSEC_DYNAMIC;
 		}
 	}
+    //MareS5 - Mare Tropicum or Acta Echona
+	if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5)) 
+	{
+		if (IsMareS5MareTropicum())
+			return MAPSEC_MARE_TROPICUM;
+		else //Everywhere else
+			return MAPSEC_ACTA_ECHONA;
+	}
 	//Other Maps Go Here
 
 	//Default - Should never be reached
