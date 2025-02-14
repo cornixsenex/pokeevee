@@ -46,4 +46,5 @@ tools/trainerproc/trainerproc
 *.smol
 *.fastSmol
 *.smolTM
+*.swp
 porymap.user.cfg
