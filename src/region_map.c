@@ -3333,6 +3333,24 @@ u32 GetDynamicMapSec_SRoute18(void)
 	else 
 		return 4;
 }
+
+u32 GetDynamicMapSec_MareS5(void)
+{
+	//1: Acta Echona
+	//2: Mare Tropicum
+	
+	//Acta Echona - Top Left
+	if
+		(
+		(y <= 1 && x < 11) ||
+		(y == 2 && x < 9) ||
+		(y == 3 && x < 7) ||
+		(y == 4 && x < 6)
+		)
+		return 1;
+	else 
+		return 2;
+}
 	
 
 
