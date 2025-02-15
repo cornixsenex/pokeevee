@@ -195,8 +195,8 @@
 #define MAPSEC_WEEPTH_CHAMBER               0xBE
 #define MAPSEC_DILFORD_CHAMBER              0xBF
 #define MAPSEC_SCUFIB_CHAMBER               0xC0
-#define MAPSEC_RIXY_CHAMBER                 0xC1
 //Below have been altered, above are vanilla
+#define MAPSEC_VIA_LITORALIS                0xC1
 #define MAPSEC_CASTRUM                      0xC2
 #define MAPSEC_SINUS_PACIFICUS              0xC3
 //Here end Kanto Map Areas and begin idk Emerald Mapsecs?

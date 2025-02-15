@@ -190,8 +190,8 @@ static const u8 sMapName_LIPTOO_CHAMBER[] = _("LIPTOO CHAMBER");
 static const u8 sMapName_WEEPTH_CHAMBER[] = _("WEEPTH CHAMBER");
 static const u8 sMapName_DILFORD_CHAMBER[] = _("DILFORD CHAMBER");
 static const u8 sMapName_SCUFIB_CHAMBER[] = _("SCUFIB CHAMBER");
-static const u8 sMapName_RIXY_CHAMBER[] = _("RIXY CHAMBER");
 //BREAK - BELOW ARE ALTERED
+static const u8 sMapName_VIA_LITORALIS[] = _("VIA LITORALIS");
 static const u8 sMapName_CASTRUM[] = _("CASTRUM");
 static const u8 sMapName_SINUS_PACIFICUS[] = _("SINUS PACIFICUS");
 //BREAK - ABOVE ARE ALTERED
@@ -442,8 +442,8 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_WEEPTH_CHAMBER] = { 0, 0, 1, 1, sMapName_WEEPTH_CHAMBER},
     [MAPSEC_DILFORD_CHAMBER] = { 0, 0, 1, 1, sMapName_DILFORD_CHAMBER},
     [MAPSEC_SCUFIB_CHAMBER] = { 0, 0, 1, 1, sMapName_SCUFIB_CHAMBER},
-    [MAPSEC_RIXY_CHAMBER] = { 0, 0, 1, 1, sMapName_RIXY_CHAMBER},
 	//BELOW ARE ALTERED
+    [MAPSEC_VIA_LITORALIS] = { 0, 0, 1, 1, sMapName_VIA_LITORALIS},
     [MAPSEC_CASTRUM] = { 0, 0, 1, 1, sMapName_CASTRUM},
     [MAPSEC_SINUS_PACIFICUS] = { 0, 0, 1, 1, sMapName_SINUS_PACIFICUS},
 	//ABOVE ARE ALTERED

@@ -3374,6 +3374,21 @@ bool32 IsMareS5MareTropicum(void)
 		return TRUE;
 }
 	
+u32 GetDynamicMapSec_Route4(void)
+{	
+
+	//1: Via Litoralis - Include grass patch top left and top road area
+	//2: Sinus Pacificus - Include most of mount and top and bottom bay beach
+	//3: Via Fidelium - South of Mountain and Bay
+
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+}
+
+
+
 
 
 

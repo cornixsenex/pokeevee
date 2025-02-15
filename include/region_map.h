@@ -129,6 +129,7 @@ u32 GetDynamicMapSec_CityClara(void);
 u32 GetDynamicMapSec_MareW(void);
 u32 GetDynamicMapSec_SRoute18(void);
 u32 IsMareS5MareTropicum(void);
+u32 GetDynamicMapSec_Route4(void);
 
 //Not used yet but seems useful to me idk
 bool32 IsPlayerEnterFromWest(void);

@@ -4595,7 +4595,7 @@
       "id": "LAYOUT_DOAK_TOWN",
       "name": "DoakTown_Layout",
       "width": 50,
-      "height": 40,
+      "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/DoakTown/border.bin",
