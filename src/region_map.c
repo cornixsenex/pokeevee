@@ -3378,12 +3378,37 @@ u32 GetDynamicMapSec_Route4(void)
 {	
 
 	//1: Via Litoralis - Include grass patch top left and top road area
-	//2: Sinus Pacificus - Include most of mount and top and bottom bay beach
-	//3: Via Fidelium - South of Mountain and Bay
+	//2: Via Fidelium - South of Mountain and Bay
+	//3: Sinus Pacificus - Include most of mount and top and bottom bay beach
 
     s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
+
+    //Via Litoralis - Bottom
+    if (y > 41)
+        return 1;
+    //Via Fidelium - Top and top left grassy area
+    else if 
+        (
+        (y < 11)  ||
+        ( (x <= 8)  && (y < 21) ) ||
+        ( (x == 9)  && (y < 21) ) ||
+        ( (x == 10) && (y < 21) ) ||
+        ( (x == 11) && (y < 20) ) ||
+        ( (x == 12) && (y < 19) ) ||
+        ( (x == 13) && (y < 18) ) ||
+        ( (x == 14) && (y < 17) ) ||
+        ( (x == 15) && (y < 16) ) ||
+        ( (x == 16) && (y < 15) ) ||
+        ( (x == 17) && (y < 14) ) ||
+        ( (x == 18) && (y < 13) ) ||
+        ( (x == 19) && (y < 12) ) 
+        )
+        return 2;
+    //Sinus Pacificus = Default
+     else
+         return 3;
 
 }
 
