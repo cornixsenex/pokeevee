@@ -3413,6 +3413,28 @@ u32 GetDynamicMapSec_Route4(void)
 }
 
 
+u32 GetDynamicMapSec_Route6(void)
+{
+
+    //1: Via Litoralis
+    //2: Villa Safari
+    //3: Sinus Pacificus
+    
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+
+    //1: Via Litoralis - Top Left maybe bottom Right
+    if (y < 11 && x < 43)
+        return 1;
+    //2: Villa Safari - Top Right
+    else if (x > 43 || (x == 43 && y < 8) )
+        return 2;
+    //3: Sinus Pacificus - Default
+    else
+        return 3;
+}
 
 
 
