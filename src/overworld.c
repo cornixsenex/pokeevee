@@ -3812,6 +3812,40 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 		else //Everywhere else
 			return MAPSEC_ACTA_ECHONA;
 	}
+	//Route4
+	if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
+	{
+		n = GetDynamicMapSec_Route4();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_VIA_LITORALIS;
+			case 2:
+				return MAPSEC_VIA_FIDELIUM;
+			case 3:
+				return MAPSEC_SINUS_PACIFICUS;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//Route6
+	if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
+	{
+		n = GetDynamicMapSec_Route6();
+		switch (n) {
+			case 0:
+				return MAPSEC_DYNAMIC;
+			case 1:
+				return MAPSEC_VIA_LITORALIS;
+			case 2:
+				return MAPSEC_VILLA_VIVARIA;
+			case 3:
+				return MAPSEC_SINUS_PACIFICUS;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 	//Other Maps Go Here
 
 	//Default - Should never be reached

@@ -276,9 +276,9 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_LIPTOO_CHAMBER] =               MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_WEEPTH_CHAMBER] =               MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_DILFORD_CHAMBER] =              MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_SCUFIB_CHAMBER] =               MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
+	[MAPSEC_VILLA_VIVARIA] =                MAPPOPUP_THEME_WOOD, 
 	[MAPSEC_VIA_LITORALIS] =                MAPPOPUP_THEME_MARBLE, 
 	[MAPSEC_CASTRUM] =  					MAPPOPUP_THEME_BRICK,                      
 	[MAPSEC_SINUS_PACIFICUS] =              MAPPOPUP_THEME_MARBLE,
@@ -1055,7 +1055,7 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_VIA_LITORALIS;
 					break;
 				case 2:
-					regionMapSectionId = MAPSEC_VIA_FIDELIUM;
+					regionMapSectionId = MAPSEC_VILLA_VIVARIA;
 					break;
 				case 3:
 					regionMapSectionId = MAPSEC_SINUS_PACIFICUS;

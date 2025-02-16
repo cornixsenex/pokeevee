@@ -195,7 +195,7 @@
 #define MAPSEC_WEEPTH_CHAMBER               0xBE
 #define MAPSEC_DILFORD_CHAMBER              0xBF
 //Below have been altered, above are vanilla BREAK break Break
-#define MAPSEC_VILLA_EXHIBITA               0xC0
+#define MAPSEC_VILLA_VIVARIA                0xC0
 #define MAPSEC_VIA_LITORALIS                0xC1
 #define MAPSEC_CASTRUM                      0xC2
 #define MAPSEC_SINUS_PACIFICUS              0xC3

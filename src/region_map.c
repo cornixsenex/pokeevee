@@ -1804,7 +1804,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
-		//City Clara
+		//SRoute18
 		if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
 		{
 			n = GetDynamicMapSec_SRoute18();
@@ -1832,6 +1832,42 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_ACTA_ECHONA);
         }
+		//Route4
+		if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
+		{
+			n = GetDynamicMapSec_Route4();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_VIA_LITORALIS);
+				case 2:
+					return StringCopy(dest, sMapName_VIA_FIDELIUM);
+				case 3:
+					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+		//Route6
+		if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
+		{
+			n = GetDynamicMapSec_Route6();
+			switch (n)
+			{
+				case 0:
+					return StringCopy(dest, gText_Ferry);
+				case 1:
+					return StringCopy(dest, sMapName_VIA_LITORALIS);
+				case 2:
+					return StringCopy(dest, sMapName_VILLA_VIVARIA);
+				case 3:
+					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
 
 		//Default Map - Should never be reached
 		else
@@ -3417,7 +3453,7 @@ u32 GetDynamicMapSec_Route6(void)
 {
 
     //1: Via Litoralis
-    //2: Villa Safari
+    //2: Villa Vivaria
     //3: Sinus Pacificus
     
     s16 x, y;
