@@ -1022,6 +1022,48 @@ static void LoadMapNamePopUpWindowBg(void)
 			else
 				regionMapSectionId = MAPSEC_ACTA_ECHONA;
 		} 
+		//Route4
+		if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
+		{
+			n = GetDynamicMapSec_Route4();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
+				case 1:
+					regionMapSectionId = MAPSEC_VIA_LITORALIS;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_VIA_FIDELIUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_SINUS_PACIFICUS;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//Route6
+		if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
+		{
+			n = GetDynamicMapSec_Route6();
+			switch (n) {
+				case 0:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+					break;
+				case 1:
+					regionMapSectionId = MAPSEC_VIA_LITORALIS;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_VIA_FIDELIUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_SINUS_PACIFICUS;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
 
