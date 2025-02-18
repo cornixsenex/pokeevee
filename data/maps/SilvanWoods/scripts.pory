@@ -103,6 +103,7 @@ script SilvanWoods_Script_DoFerryWest {
 	applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkRight)
 	waitmovement (0)
 	removeobject (OBJ_EVENT_FERRYMAN)
+	hideobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
 	//Move player and hide 
 	//movement depends on face dir
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
@@ -154,6 +155,7 @@ script SilvanWoods_Script_DoFerryEast {
 	applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkLeft)
 	waitmovement (0)
 	removeobject (OBJ_EVENT_FERRYMAN)
+	hideobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
 	//Move player and hide 
 	//movement depends on face dir
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
@@ -165,7 +167,7 @@ script SilvanWoods_Script_DoFerryEast {
 			end
 		case DIR_SOUTH:
 			applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry1ES)
-		case DIR_EAST:
+		case DIR_WEST:
 			applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry1EW)
 		default:
 			msgbox("ERROR PLAYER FACE DIR")
@@ -174,8 +176,8 @@ script SilvanWoods_Script_DoFerryEast {
 	waitmovement (0)
 	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
 	//Ferry Sails to West
-	applymovement (OBJ_EVENT_FERRY, SilvanWoods_Movement_FerryW)
-	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_FerryW)
+	applymovement (OBJ_EVENT_FERRY, SilvanWoods_Movement_FerryE)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_FerryE)
 	waitmovement (0)
 	//Player disembarks and waits for Ferryman
 	showobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
