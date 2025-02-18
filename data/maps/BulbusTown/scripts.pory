@@ -90,16 +90,14 @@ script BulbusTown_EventScript_Fisherman {
 }
 
 script BulbusTown_EventScript_FightA{
-	lock
 	msgbox (BulbusTown_Text_FightA) 
-	release
+    closemessage
 	end
 }
 
 script BulbusTown_EventScript_FightB {
-	lock
 	msgbox (BulbusTown_Text_FightB) 
-	release
+    closemessage
 	end
 }
 
