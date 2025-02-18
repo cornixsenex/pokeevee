@@ -900,9 +900,9 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if
 					(
 					//From MareWWW
-					(x > 18 && x < 47 && y > 25) ||
+-                   (x > 18 && x < 47 && y > 25) ||
 					//FromSilvanWoods
-					(x > 42 && x < 59 && y < 2)
+					(y < 2)
 					)
 						ShowMapNamePopup();
 			}
@@ -919,7 +919,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if
 					(
 					//From Route3
-					(x > 22 && x < 36 && y > 66) ||
+					(y > 66) ||
 					//ONE SQUARE from Route17 :/
 					(x < 1 && y == 17)
 					)

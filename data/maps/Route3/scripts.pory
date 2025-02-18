@@ -5,6 +5,13 @@
 
 //After ClaraChurch you should 'fix' the Delta Bridge
 
+const OBJ_EVENT_SCOTT = 15
+const OBJ_EVENT_LEAF = 16
+const OBJ_EVENT_IGGLYBUFF = 17
+
+const FIELD_PIC_LEAF = 4
+const FIELD_PIC_SCOTT = 33
+
 const OBJ_EVENT_BRIDGEWORKER = 14
 
 mapscripts Route3_MapScripts {
@@ -184,48 +191,65 @@ script Route3_Script_CanelosCoveTransition {
 	special (ShowMapNamePopup)
 }
 
-movement Route3_Movement_LeafIntro1 {
-	walk_down
-	walk_right
-	walk_down
-	face_left
+script Route3_Script_Scene_SilvanLeaf1 {
+    setvar (VAR_SILVANWOODS_STATE, 2)
+    lock
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Show Leaf
+    setobjectxyperm (OBJ_EVENT_SCOTT, 8, 6)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_SCOTT)
+	showobjectat (OBJ_EVENT_SCOTT, MAP_ROUTE3)
+    //Show Scott
+    setobjectxyperm (OBJ_EVENT_LEAF, 8, 7)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_LEAF)
+	showobjectat (OBJ_EVENT_LEAF, MAP_ROUTE3)
+    //Show Puff
+    setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 8, 8)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_IGGLYBUFF)
+	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ROUTE3)
+    //Move Scott et Leaf to player
+    applymovement (OBJ_EVENT_SCOTT, Route3_Movement_SilvanLeaf1)
+    applymovement (OBJ_EVENT_LEAF, Route3_Movement_SilvanLeaf1)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Route3_Movement_SilvanLeaf1)
+    waitmovement (0)
+    //S: Bad news. Bridges came down in the storm
+    //L: we're going on ahead to find another way across
+    //S: Be careful the silvan woods
+    //Exit Scott et Leaf
+    applymovement (OBJ_EVENT_SCOTT, Route3_Movement_SilvanLeaf2)
+    applymovement (OBJ_EVENT_LEAF, Route3_Movement_SilvanLeaf2)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Route3_Movement_SilvanLeaf2)
+    waitmovement (0)
+    //Remove Scott et Leaf
+    hideobjectat (OBJ_EVENT_SCOTT, MAP_ROUTE3)
+    hideobjectat (OBJ_EVENT_LEAF, MAP_ROUTE3)
+    hideobjectat (OBJ_EVENT_IGGLYBUFF, MAP_ROUTE3)
+    removeobject (OBJ_EVENT_SCOTT)
+    removeobject (OBJ_EVENT_LEAF)
+    removeobject (OBJ_EVENT_IGGLYBUFF)
+    setobjectxyperm (OBJ_EVENT_SCOTT, 0, 0)
+    setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+    setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
+    //fin 
+    release
+    end
 }
 
-movement Route3_Movement_LeafIntro2 {
-	walk_down * 2
-	face_right
+movement Route3_Movement_SilvanLeaf1 {
+    walk_left * 7
 }
 
-movement Route3_Movement_LeafExit {
-	walk_up * 2
+movement Route3_Movement_SilvanLeaf2 {
+    walk_right * 7
 }
 
-movement Route3_Movement_RivalPlayer1 {
-	walk_right
-	walk_down
-	walk_right
-}
-
-movement Route3_Movement_RivalPlayer1B {
-	walk_right * 2
-}
-
-movement Route3_Movement_Rival1 {
-	walk_up * 2
-	walk_right * 3
-}
-
-movement Route3_Movement_Rival2 {
-	walk_left * 2
-	walk_down * 2
-}
-
-movement Route3_Movement_RivalLeafExit {
-	walk_up
-	walk_left * 4
-	walk_down * 3
-}
-	
 
 text Route3_Text_RossIntro {
 	format("I'm learning how to swim! Here check this out!")

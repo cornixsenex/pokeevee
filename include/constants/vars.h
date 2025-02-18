@@ -124,8 +124,6 @@
 
 
 #define VAR_ALDEON_SCHOOL_STATE                          0x405E // 0: Track progress inside School (increment var on each trainer defeated, glassman open at 4, peaves open at 5, Sully open at 10, 11 is final 
-																// 1: 
-																// 2: 
 #define VAR_SYS_LEVEL_CAP                                0x405F // Hold the Level Cap
 #define VAR_GRANNY_STATE                                 0x4060 // Prologue and trigger Blue1 fight.
 																// 0: New Game - trigger Granny1 scene
@@ -208,7 +206,6 @@
 
 
 
-#define VAR_ROUTE125_STATE                               0x4078 // Unused Var
 #define VAR_ROUTE126_STATE                               0x4079 // Unused Var
 #define VAR_ROUTE127_STATE                               0x407A // Unused Var
 #define VAR_ROUTE128_STATE                   		     0x407B
