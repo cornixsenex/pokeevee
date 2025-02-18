@@ -884,16 +884,19 @@ if (I_VS_SEEKER_CHARGING != 0)
 				sLastMapSectionId != MAPSEC_DYNAMIC
 		   )
             ShowMapNamePopup();
-		//Both Last and Dest Maps are Dynamic
+
+		//Both Last and Dest Maps are Dynamicwith special case dynamic transitions 
+		//specifically want the Map Popup to appear when transitioning from one dynamic map to another
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
 			//Force MapNamePopup on Transition from TWO DYNAMIC MAPS 
-			
 			//mapNum = Destination MapNum
-			//XY     = Coords on Destination Map
+			//xy     = Coords on Destination Map
 
 			//Switch on Destination Maps
-		
+			
+			//HEY! Just a note this should check they're the same map group too otherwise...could lead to issues
+
 			//Route3 - Handle MareWWW Transition
 			if (destMapNum == MAP_NUM(ROUTE3)) //From MareWWW AND from Silvan Woods
 			{
@@ -918,7 +921,8 @@ if (I_VS_SEEKER_CHARGING != 0)
 			{
 				if
 					(
-					//From Route3
+					//From Route3 - EXCLUDE WESTERN TRANSITION
+					//(y > 66 && x > 11 && x < 19) ||
 					(y > 66) ||
 					//ONE SQUARE from Route17 :/
 					(x < 1 && y == 17)
@@ -929,7 +933,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 			if (destMapNum == MAP_NUM(ROUTE17) && y == 163)
 				ShowMapNamePopup();
 			
-			//Other Maps with special case dynamic transitions (Places where I specifically want the Map Popup to appear automatically when transitioning from one dynamic map to another)
+			//Other Maps 
 			//
 			//
 		}
@@ -937,6 +941,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 		//Here handle Special Cases of one map being Dynamic and the other being normal
 
 		//Note they should be exclusive like if NOT the edge case then ShowMapNamePopup
+		
 
 		//Only Dest Map is Dynamic
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
@@ -946,7 +951,10 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: MareWWW - Suppress from BulbusWest, 
 				(! (destMapNum == MAP_NUM(MARE_WWW) && x < 0 ) ) &&
 				//Dest: Lake Ira - Suppress from Willow, 
-				(! (destMapNum == MAP_NUM(LAKE_IRA) && y < 28 ) )
+				(! (destMapNum == MAP_NUM(LAKE_IRA) && y < 28 ) ) &&
+				//Dest: Silvan Woods - Suppres from SilvanFiller
+				(! (destMapNum == MAP_NUM(SILVAN_WOODS) && x < 1 && y > 29 ) ) 
+
 				)
 					ShowMapNamePopup();
 			
@@ -959,7 +967,9 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: BulbusWest - Suppress from MareWWW 
 				(! (destMapNum == MAP_NUM(BULBUS_WEST) && y > 39) ) &&
 				//Dest: Willow - Suprres from Lake Ira
-				(! (destMapNum == MAP_NUM(WILLOW) && x < 0) )
+				(! (destMapNum == MAP_NUM(WILLOW) && x < 0) ) &&
+				//Dest: Silvan Filler - Suppress from SilvanWoods
+				(! (destMapNum == MAP_NUM(BULBUS_SILVAN_FILLER) && x > 22 ) ) 
 				)
 					ShowMapNamePopup();
 		}

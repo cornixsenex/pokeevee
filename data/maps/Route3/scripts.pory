@@ -250,6 +250,8 @@ script Route3_Script_Scene_SilvanLeaf1 {
 	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
 	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
 	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
+	//Ensure Boat is on the left side of the river
+	setflag (FLAG_SILVAN_FERRY_ISWEST)
     //fin 
     release
     end
@@ -458,6 +460,6 @@ text Route3_Text_Leaf1 {
 //We will journey into the Silvan Woods and seek a crossing
 //Be careful inside the woods there are many pokemon and criminals
 text Route3_Text_Scott2 {
-	format("We'll have to journey into glum Silva in hopes of finding some sure way across. Be careful {PLAYER}. In Silva many men pushed out of town, criminals, and wild {PKMN} lurk in shadows and tall graas.")
+	format("We'll have to journey into glum Silva in hopes of finding some sure way across. Be careful {PLAYER}. In Silva many folk pushed out of town, criminals, and wild {PKMN} lurk in shadows and tall graas. Tread carefully, and carry a big stick!")
 }
 

@@ -196,11 +196,11 @@
 #define FLAG_GRANDMASCABIN_HIDE_RATTATA      0xA6
 #define FLAG_SYS_TRAINER_CARD_GET            0xA7
 #define FLAG_SYS_FORCE_OBEY                  0xA8
+#define FLAG_SILVAN_FERRY_ISWEST             0xA9
 
 
 // BREAK //
 
-#define FLAG_UNUSED_0xA9                     0xA9
 #define FLAG_UNUSED_0xAA                     0xAA
 #define FLAG_UNUSED_0xAB                     0xAB
 #define FLAG_RECEIVED_SECRET_POWER           0xAC

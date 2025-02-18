@@ -5,6 +5,16 @@
 //2: Lower Rio Draco
 //3: Dim Silvan Woods
 
+const FIELD_PIC_LEAF = 4
+const FIELD_PIC_SCOTT = 33
+
+
+const OBJ_EVENT_SCOTT = 9
+const OBJ_EVENT_LEAF = 30
+const OBJ_EVENT_IGGLYBUFF = 33
+
+const OBJ_EVENT_FERRY = 31
+const OBJ_EVENT_FERRYMAN = 32
 
 mapscripts SilvanWoods_MapScripts {
 
@@ -19,8 +29,16 @@ mapscripts SilvanWoods_MapScripts {
 			case 3:
 				setvar (VAR_TEMP_5, 3)
 		}
+
+		if (flag(FLAG_SILVAN_FERRY_ISWEST)) {
+			call (SilvanWoods_Script_ShowFerryWest)
+		} else {
+			call (SilvanWoods_Script_ShowFerryEast)
+		}
+			
 	}
 }
+
 
 script SilvanWoods_Script_SilvanWoodsTransition {
 	setvar (VAR_TEMP_5, 1)
@@ -35,6 +53,150 @@ script SilvanWoods_Script_LowerRioDracoTransition {
 script SilvanWoods_Script_SilvaProfundaTransition {
 	setvar (VAR_TEMP_5, 3)
 	special (ShowMapNamePopup)
+}
+
+script SilvanWoods_Script_ShowFerryEast {
+    setobjectxyperm (OBJ_EVENT_FERRY, 29, 56)
+	setobjectmovementtype (OBJ_EVENT_FERRY, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (OBJ_EVENT_FERRYMAN, 30, 56)
+	setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_FACE_RIGHT)
+
+	return
+}
+
+script SilvanWoods_Script_ShowFerryWest {
+    setobjectxyperm (OBJ_EVENT_FERRY, 19, 56)
+	setobjectmovementtype (OBJ_EVENT_FERRY, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (OBJ_EVENT_FERRYMAN, 18, 56)
+	setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_FACE_LEFT)
+
+	return
+}
+
+script SilvanWoods_Script_Ferryman {
+	msgbox (SilvanWoods_Text_Ferryman1, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (SilvanWoods_Script_DoFerry)
+	} else {
+		msgbox (SilvanWoods_Text_Ferryman2, MSGBOX_DEFAULT)
+		closemessage
+	}
+}
+
+script SilvanWoods_Script_DoFerry {
+	//If we're charging that goes here
+	msgbox (SilvanWoods_Text_Ferryman3, MSGBOX_DEFAULT)
+	closemessage
+	if (flag(FLAG_SILVAN_FERRY_ISWEST)) {
+		call (SilvanWoods_Script_DoFerryWest)
+	} else {
+		call (SilvanWoods_Script_DoFerryEast)
+	}
+}
+
+script SilvanWoods_Script_DoFerryWest {
+	clearflag (FLAG_SILVAN_FERRY_ISWEST)
+	//From Dewford script idk exactly
+	setobjectsubpriority (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS, 0 )
+	setobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS, 0 )
+	//Move ferryman and hide 
+	applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkRight)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_FERRYMAN)
+	//Move player and hide 
+	//movement depends on face dir
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry1WN)
+		case DIR_SOUTH:
+			applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry1WS)
+		case DIR_EAST:
+			applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry1WE)
+		default:
+			msgbox("ERROR PLAYER FACE DIR")
+			closemessage
+	}
+	waitmovement (0)
+	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+	//Ferry Sails to East
+	applymovement (OBJ_EVENT_FERRY, SilvanWoods_Movement_FerryW)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_FerryW)
+	waitmovement (0)
+	//Player disembarks and waits for Ferryman
+	showobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry2W) //arrive at east
+	waitmovement (0)
+	//Feryman departs	
+	setobjectxyperm (OBJ_EVENT_FERRYMAN, 29, 56)
+	setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_FERRYMAN)
+	showobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkRight)
+	waitmovement (0)
+	//says thanks see ya
+	msgbox (SilvanWoods_Text_Ferryman4)
+	closemessage
+	//reset
+	resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+	resetobjectsubpriority (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+	//fin
+	release
+	end
+}
+
+script SilvanWoods_Script_DoFerryEast {
+	setflag (FLAG_SILVAN_FERRY_ISWEST)
+	//From Dewford script idk exactly
+	setobjectsubpriority (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS, 0 )
+	setobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS, 0 )
+	//Move ferryman and hide 
+	applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkLeft)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_FERRYMAN)
+	//Move player and hide 
+	//movement depends on face dir
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			msgbox("Surfin?")
+			closemessage
+			release
+			end
+		case DIR_SOUTH:
+			applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry1ES)
+		case DIR_EAST:
+			applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry1EW)
+		default:
+			msgbox("ERROR PLAYER FACE DIR")
+			closemessage
+	}
+	waitmovement (0)
+	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+	//Ferry Sails to West
+	applymovement (OBJ_EVENT_FERRY, SilvanWoods_Movement_FerryW)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_FerryW)
+	waitmovement (0)
+	//Player disembarks and waits for Ferryman
+	showobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_PlayerFerry2E) //arrive at west
+	waitmovement (0)
+	//Feryman departs	
+	setobjectxyperm (OBJ_EVENT_FERRYMAN, 19, 56)
+	setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_FACE_LEFT)
+	addobject (OBJ_EVENT_FERRYMAN)
+	showobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkLeft)
+	waitmovement (0)
+	//says thanks see ya
+	msgbox (SilvanWoods_Text_Ferryman4)
+	closemessage
+	//reset
+	resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+	resetobjectsubpriority (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+	//fin
+	release
+	end
 }
 
 
@@ -227,6 +389,49 @@ script SilvanWoods_EventScript_Gary {
 	msgbox (SilvanWoods_Text_GaryPost)
 	closemessage
 	end
+}
+
+movement SilvanWoods_Movement_PlayerFerry1WN {
+	walk_up
+	walk_right
+}
+
+movement SilvanWoods_Movement_PlayerFerry1WS {
+	walk_down
+	walk_right
+}
+
+movement SilvanWoods_Movement_PlayerFerry1WE {
+	walk_right * 2
+}
+
+movement SilvanWoods_Movement_PlayerFerry1EW {
+	walk_left * 2
+}
+
+movement SilvanWoods_Movement_PlayerFerry1ES {
+	walk_down
+	walk_left
+}
+
+movement SilvanWoods_Movement_FerryW {
+	walk_right * 10
+	face_down
+}
+
+movement SilvanWoods_Movement_FerryE {
+	walk_left * 10
+	face_down
+}
+
+movement SilvanWoods_Movement_PlayerFerry2W {
+	walk_right * 2
+	face_left
+}
+
+movement SilvanWoods_Movement_PlayerFerry2E {
+	walk_left * 2
+	face_right
 }
 
 text SilvanWoods_Text_CrystalIntro {
@@ -570,7 +775,21 @@ text SilvanWoods_Text_Leaf2 {
 	format("Ok that's fine but I want to see Mew. Well {PLAYER} don't spend all day lollygagging here in the woods. We'll wait for you in town down at my dad's Chronic Cannabis store.")
 }
 
+text SilvanWoods_Text_Ferryman1 {
+	format("Have you come to sail across the river?")
+}
 
+text SilvanWoods_Text_Ferryman2 {
+	format("I see. Enjoy your walk in Silva then.")
+}
+
+text SilvanWoods_Text_Ferryman3 {
+	format("Perfect! Let us set out across at once!")
+}
+
+text SilvanWoods_Text_Ferryman4 {
+	format("Come back anytime and have a nice day!")
+}
 
 
 
