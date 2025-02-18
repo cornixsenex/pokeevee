@@ -192,21 +192,24 @@ script Route3_Script_CanelosCoveTransition {
 }
 
 script Route3_Script_Scene_SilvanLeaf1 {
-    setvar (VAR_SILVANWOODS_STATE, 2)
     lock
+    setvar (VAR_SILVANWOODS_STATE, 2)
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement (0)
-    //Show Leaf
+    //Show Scott
+	removeobject (OBJ_EVENT_SCOTT)
     setobjectxyperm (OBJ_EVENT_SCOTT, 8, 6)
 	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_SCOTT)
 	showobjectat (OBJ_EVENT_SCOTT, MAP_ROUTE3)
-    //Show Scott
+    //Show Leaf
+	removeobject (OBJ_EVENT_LEAF)
     setobjectxyperm (OBJ_EVENT_LEAF, 8, 7)
 	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_LEAF)
 	showobjectat (OBJ_EVENT_LEAF, MAP_ROUTE3)
     //Show Puff
+	removeobject (OBJ_EVENT_IGGLYBUFF)
     setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 8, 8)
 	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_LEFT)
 	addobject (OBJ_EVENT_IGGLYBUFF)
@@ -217,9 +220,19 @@ script Route3_Script_Scene_SilvanLeaf1 {
     applymovement (OBJ_EVENT_IGGLYBUFF, Route3_Movement_SilvanLeaf1)
     waitmovement (0)
     //S: Bad news. Bridges came down in the storm
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Route3_Text_Scott1)
+	destroy_field_pic (FIELD_PIC_SCOTT)
     //L: we're going on ahead to find another way across
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Route3_Text_Leaf1)
+	destroy_field_pic (FIELD_PIC_LEAF)
     //S: Be careful the silvan woods
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (Route3_Text_Scott2)
+	destroy_field_pic (FIELD_PIC_SCOTT)
     //Exit Scott et Leaf
+	closemessage
     applymovement (OBJ_EVENT_SCOTT, Route3_Movement_SilvanLeaf2)
     applymovement (OBJ_EVENT_LEAF, Route3_Movement_SilvanLeaf2)
     applymovement (OBJ_EVENT_IGGLYBUFF, Route3_Movement_SilvanLeaf2)
@@ -396,18 +409,6 @@ text Route3_Text_DevonPost {
 	format("You should be safe enough, but be careful that you do not get lost.")
 }
 
-text Route3_Text_Leaf1 {
-	format("Hey {PLAYER} long time no see how have you been? While you slowpokes were getting stoned in town I was training my fresh caught Pokemon. Look {PLAYER} they're almost as cute as I am.")
-}
-
-text Route3_Text_LeafLost {
-	format("Wow {PLAYER} looks like I have a lot to learn")
-}
-
-text Route3_Text_Leaf1Post {
-	format("Haha you're way too good for me.\p But wait weren't you supposed to meet me with my dad?\p We need to find him! Where could he be?\p DAD?!")
-}
-
 text Route3_Text_OldMan {
 	format("Caverna Ilium was this cave's name before The Party changed it to Beach Cave.\p You should only go in if you're prepared.")
 }
@@ -438,5 +439,25 @@ text Route3_Text_SaeclaraSign {
 
 text Route3_Text_BridgeBlock {
 	format("Hey! Watch it! The bridge came down in the storm! We're working hard to fix it but for now you'll have to find another way across.")
+}
+
+//Bad news
+//both bridges that cross the river (the only way)
+//both bridges destroyed
+//
+text Route3_Text_Scott1 {
+	format("Bad news! The old pontes, across Draco, were beaten down by that most mighty storm.")
+}
+
+//We wont give up
+//There must be a way around
+text Route3_Text_Leaf1 {
+	format("We won't give up our quest! There must be some expedient way across the river.")
+}
+
+//We will journey into the Silvan Woods and seek a crossing
+//Be careful inside the woods there are many pokemon and criminals
+text Route3_Text_Scott2 {
+	format("We'll have to journey into glum Silva in hopes of finding some sure way across. Be careful {PLAYER}. In Silva many men pushed out of town, criminals, and wild {PKMN} lurk in shadows and tall graas.")
 }
 
