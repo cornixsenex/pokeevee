@@ -5,16 +5,23 @@
 //2: Lower Rio Draco
 //3: Dim Silvan Woods
 
+//VAR_TEMP_6 handles SetupSilvanLeafScene2 (show Leaf et co by ferry)
+
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_SCOTT = 33
-
 
 const OBJ_EVENT_SCOTT = 9
 const OBJ_EVENT_LEAF = 30
 const OBJ_EVENT_IGGLYBUFF = 33
 
+const OBJ_EVENT_CHIKORITA = 35
+const OBJ_EVENT_ARIADOS = 34
+
 const OBJ_EVENT_FERRY = 31
 const OBJ_EVENT_FERRYMAN = 32
+
+const OBJ_EVENT_BLUE = 36
+const OBJ_EVENT_ZUBAT = 37
 
 mapscripts SilvanWoods_MapScripts {
 
@@ -74,12 +81,20 @@ script SilvanWoods_Script_ShowFerryWest {
 }
 
 script SilvanWoods_Script_Ferryman {
+    faceplayer
 	msgbox (SilvanWoods_Text_Ferryman1, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		call (SilvanWoods_Script_DoFerry)
 	} else {
 		msgbox (SilvanWoods_Text_Ferryman2, MSGBOX_DEFAULT)
 		closemessage
+        if (flag(FLAG_SILVAN_FERRY_ISWEST) ) {
+            applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_FaceLeft)
+            waitmovement (0)
+        } else {
+            applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_FaceRight)
+            waitmovement (0)
+        }
 	}
 }
 
@@ -104,6 +119,8 @@ script SilvanWoods_Script_DoFerryWest {
 	waitmovement (0)
 	removeobject (OBJ_EVENT_FERRYMAN)
 	hideobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+    setobjectxyperm (OBJ_EVENT_FERRYMAN, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_INVISIBLE)
 	//Move player and hide 
 	//movement depends on face dir
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
@@ -138,6 +155,8 @@ script SilvanWoods_Script_DoFerryWest {
 	//says thanks see ya
 	msgbox (SilvanWoods_Text_Ferryman4)
 	closemessage
+    //save ferry location
+    call (SilvanWoods_Script_ShowFerryEast)
 	//reset
 	resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
 	resetobjectsubpriority (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
@@ -156,6 +175,8 @@ script SilvanWoods_Script_DoFerryEast {
 	waitmovement (0)
 	removeobject (OBJ_EVENT_FERRYMAN)
 	hideobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+    setobjectxyperm (OBJ_EVENT_FERRYMAN, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_INVISIBLE)
 	//Move player and hide 
 	//movement depends on face dir
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
@@ -193,6 +214,8 @@ script SilvanWoods_Script_DoFerryEast {
 	//says thanks see ya
 	msgbox (SilvanWoods_Text_Ferryman4)
 	closemessage
+    //save ferry location
+    call (SilvanWoods_Script_ShowFerryWest)
 	//reset
 	resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
 	resetobjectsubpriority (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
@@ -201,6 +224,340 @@ script SilvanWoods_Script_DoFerryEast {
 	end
 }
 
+script SilvanWoods_Script_SetupSilvanLeafeScene2 {
+    //stop recursion
+    setvar (VAR_TEMP_6, 1)
+    //if during scene show leafco
+    if (var(VAR_SILVANWOODS_STATE) == 2) {
+        setobjectxyperm (OBJ_EVENT_SCOTT, 14, 52)
+        setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_LEFT)
+
+        setobjectxyperm (OBJ_EVENT_LEAF, 14, 53)
+        setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
+
+        setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 14, 54)
+        setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_LEFT)
+    }
+
+    return
+}
+
+script SilvanWoods_Script_SilvanLeafScene2A {
+    lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    call (SilvanWoods_Script_SilvanLeafScene2)
+
+}
+
+script SilvanWoods_Script_SilvanLeafScene2B {
+    lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+    waitmovement (0)
+    call (SilvanWoods_Script_SilvanLeafScene2)
+
+}
+
+script SilvanWoods_Script_SilvanLeafScene2 {
+    setvar (VAR_SILVANWOODS_STATE, 3)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Scott greeting
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (SilvanWoods_Text_Scott1)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+    closemessage
+    //Move player to position
+    applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_SilvanLaefScene2_Player1)
+    waitmovement (0)
+    //S: Mr Buckleberry has agreed to carry us over the river for a small fee
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (SilvanWoods_Text_Scott2)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+    //L: Let's hurry across
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (SilvanWoods_Text_Leaf1)
+	destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
+    //Do group boat scene
+    //Move entire group down two
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown2)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkDown2)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkDown2)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkDown2)
+    waitmovement (0)
+    //move scott right 2
+    //move leaf right 1
+    //move player down 2
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+    //move leaf down 1
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkDown)
+    waitmovement (0)
+    //move scott down 2
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkDown2)
+    waitmovement (0)
+    //move group right1
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+    waitmovement (0)
+    //5 steps: Move group right and remove boarded object
+    //ferryman
+    applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+    waitmovement (0)
+	removeobject (OBJ_EVENT_FERRYMAN)
+	hideobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+    setobjectxyperm (OBJ_EVENT_FERRYMAN, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_INVISIBLE)
+    //scott
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+    waitmovement (0)
+	removeobject (OBJ_EVENT_SCOTT)
+	hideobjectat (OBJ_EVENT_SCOTT, MAP_SILVAN_WOODS)
+    setobjectxyperm (OBJ_EVENT_SCOTT, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
+    //leaf
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+    waitmovement (0)
+	removeobject (OBJ_EVENT_LEAF)
+	hideobjectat (OBJ_EVENT_LEAF, MAP_SILVAN_WOODS)
+    setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+    //igglybuff
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+    waitmovement (0)
+	removeobject (OBJ_EVENT_IGGLYBUFF)
+	hideobjectat (OBJ_EVENT_IGGLYBUFF, MAP_SILVAN_WOODS)
+    setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
+    //player
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+    //sail ferry
+	applymovement (OBJ_EVENT_FERRY, SilvanWoods_Movement_FerryW)
+	applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_FerryW)
+	waitmovement (0)
+    //save ferry side
+    clearflag (FLAG_SILVAN_FERRY_ISWEST)
+    //disembark 5 steps
+    //scott
+	setobjectxyperm (OBJ_EVENT_SCOTT, 29, 56)
+	setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_SCOTT)
+	showobjectat (OBJ_EVENT_SCOTT, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+	waitmovement (0)
+    //leaf
+	setobjectxyperm (OBJ_EVENT_LEAF, 29, 56)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_LEAF)
+	showobjectat (OBJ_EVENT_LEAF, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+	waitmovement (0)
+    //iggy
+	setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 29, 56)
+	setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_IGGLYBUFF)
+	showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+	waitmovement (0)
+    //player
+    showobjectat (OBJ_EVENT_ID_PLAYER, MAP_SILVAN_WOODS)
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
+    //ferryman
+	setobjectxyperm (OBJ_EVENT_FERRYMAN, 29, 56)
+	setobjectmovementtype (OBJ_EVENT_FERRYMAN, MOVEMENT_TYPE_FACE_RIGHT)
+	addobject (OBJ_EVENT_FERRYMAN)
+	showobjectat (OBJ_EVENT_FERRYMAN, MAP_SILVAN_WOODS)
+    applymovement (OBJ_EVENT_FERRYMAN, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    //Setup formation
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    //Move entire group right 2 (setup position under trees I-L \\ P-S 
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_WalkRight2)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight2)
+	applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkRight2)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight2)
+	waitmovement (0)
+    //face group
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_FaceDown)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    //S: Be careful
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (SilvanWoods_Text_Scott3)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+    closemessage 
+    //group face right
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceRight)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Enter Chikorita
+    removeobject (OBJ_EVENT_CHIKORITA)
+    setobjectxyperm (OBJ_EVENT_CHIKORITA, 37, 50)
+    setobjectmovementtype (OBJ_EVENT_CHIKORITA,  MOVEMENT_TYPE_FACE_DOWN)
+    addobject (OBJ_EVENT_CHIKORITA)
+    applymovement (OBJ_EVENT_CHIKORITA, SilvanWoods_Movement_Chik1)
+    waitmovement (0)
+    //Chik looks about and cries
+    setobjectmovementtype (OBJ_EVENT_CHIKORITA, MOVEMENT_TYPE_LOOK_AROUND)
+    playmoncry (SPECIES_CHIKORITA, CRY_MODE_ENCOUNTER)
+    delay (40)
+    waitmoncry
+    //L: Look how beautiful I'm going to capture it
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (SilvanWoods_Text_Leaf2)
+	destroy_field_pic (FIELD_PIC_LEAF)
+    applymovement (OBJ_EVENT_CHIKORITA, SilvanWoods_Movement_ChikFleeLeaf1)
+    applymovement (OBJ_EVENT_LEAF, SilvanWoods_Movement_LeafChaseChik1)
+    applymovement (OBJ_EVENT_IGGLYBUFF, SilvanWoods_Movement_LeafChaseChik1)
+    //S: Stop its dangerous 
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (SilvanWoods_Text_Scott4)
+    waitmovement (0)
+    //(while Leaf exits following chik)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceLeft)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    //S: And to think she's the one who was in this hurry
+    //It's dangerous to go alone in the forest
+    //Go get her I'll scout the way ahead
+	msgbox (SilvanWoods_Text_Scott5)
+    destroy_field_pic (FIELD_PIC_SCOTT)
+    closemessage
+    //Exit scott
+    applymovement (OBJ_EVENT_SCOTT, SilvanWoods_Movement_ScottExit1)
+    waitmovement (0)
+    //setup silvan state
+    setvar (VAR_SILVANWOODS_STATE, 3)
+
+    removeobject (OBJ_EVENT_LEAF)
+    setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+
+    removeobject (OBJ_EVENT_IGGLYBUFF)
+    setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
+   
+    removeobject (OBJ_EVENT_CHIKORITA)
+    setobjectxyperm (OBJ_EVENT_CHIKORITA, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_CHIKORITA, MOVEMENT_TYPE_INVISIBLE)
+
+    removeobject (OBJ_EVENT_SCOTT)
+    setobjectxyperm (OBJ_EVENT_SCOTT, 62, 60)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_UP)
+    addobject (OBJ_EVENT_SCOTT)
+
+    releaseall
+    end
+}
+
+script SilvanWoods_EventScript_Scott {
+    if (var(VAR_SILVANWOODS_STATE) == 3) {
+        msgbox (SilvanWoods_Text_ScottBlock)
+        closemessage
+    }
+}
+
+script SilvanWoods_EventScript_ScottBlock {
+    lock
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceLeft)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    msgbox (SilvanWoods_Text_ScottBlock)
+    closemessage 
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceUp)
+    waitmovement (0)
+    release
+    end
+}
+
+script SilvanWoods_Script_TryShowBlue {
+    setvar (VAR_TEMP_4, 1)
+    if (var(VAR_SILVANWOODS_STATE) == 3 && !flag(FLAG_SILVANWOODS_BLUESHOWN) ) {
+        call (SilvanWoods_Script_ShowBlue)
+    }
+    end
+}
+
+script SilvanWoods_Script_ShowBlue {
+    //Only once
+    setflag (FLAG_SILVANWOODS_BLUESHOWN)
+    lock
+    //alert player
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Show Blue
+    removeobject (OBJ_EVENT_BLUE)
+    setobjectxyperm (OBJ_EVENT_BLUE, 8, 12)
+    setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_FACE_RIGHT)
+    addobject (OBJ_EVENT_BLUE)
+    showobjectat (OBJ_EVENT_BLUE, MAP_SILVAN_WOODS)
+    //Show Zubat
+    removeobject (OBJ_EVENT_ZUBAT)
+    setobjectxyperm (OBJ_EVENT_ZUBAT, 7, 12)
+    setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_FACE_RIGHT)
+    addobject (OBJ_EVENT_ZUBAT)
+    showobjectat (OBJ_EVENT_ZUBAT, MAP_SILVAN_WOODS)
+    //They walk by
+    applymovement (OBJ_EVENT_BLUE, SilvanWoods_Movement_BlueWalkBy)
+    applymovement (OBJ_EVENT_ZUBAT, SilvanWoods_Movement_BlueWalkBy)
+    waitmovement (0)
+    //remove them
+    removeobject (OBJ_EVENT_BLUE)
+    setobjectxyperm (OBJ_EVENT_BLUE, 0 , 0)
+    setobjectmovementtype (OBJ_EVENT_BLUE, MOVEMENT_TYPE_INVISIBLE)
+
+    removeobject (OBJ_EVENT_ZUBAT)
+    setobjectxyperm (OBJ_EVENT_ZUBAT, 0 , 0)
+    setobjectmovementtype (OBJ_EVENT_ZUBAT, MOVEMENT_TYPE_INVISIBLE)
+
+    release
+    return
+}
 
 script SilvanWoods_EventScript_Crystal {
 	trainerbattle_single(TRAINER_CRYSTAL, SilvanWoods_Text_CrystalIntro, SilvanWoods_Text_CrystalLost)
@@ -434,6 +791,38 @@ movement SilvanWoods_Movement_PlayerFerry2W {
 movement SilvanWoods_Movement_PlayerFerry2E {
 	walk_left * 2
 	face_right
+}
+
+movement SilvanWoods_Movement_SilvanLaefScene2_Player1 {
+    walk_down
+    walk_right 
+}
+
+movement SilvanWoods_Movement_Chik1 {
+    walk_down * 5
+}
+
+movement SilvanWoods_Movement_ChikFleeLeaf1 {
+    walk_up * 6
+}
+
+movement SilvanWoods_Movement_LeafChaseChik1 {
+    walk_right * 2
+    walk_up * 6
+}
+
+movement SilvanWoods_Movement_ScottExit1 {
+    walk_right * 2
+    walk_down * 7
+}
+
+movement SilvanWoods_Movement_BlueWalkBy {
+    walk_right
+    walk_up
+    walk_right * 4
+    walk_up * 2
+    walk_right * 2
+    walk_up * 2
 }
 
 text SilvanWoods_Text_CrystalIntro {
@@ -762,19 +1151,11 @@ text SilvanWoods_Text_GaryPost {
 }
 
 text SilvanWoods_Text_ScottBlock {
-	format("Oh no this is not good I can't find Leaf! You haven't seen her recently have you? I know she must be somewhere in these woods. Will you please go find her and bring her here?")
-}
-
-text SilvanWoods_Text_Leaf1 {
-	format("Hey {PLAYER}! There you are! Thanks for saving me again.")
+	format("This road leads to Castalia. Go find {LEAF}!")
 }
 
 text SilvanWoods_Text_ScottPass {
 	format("This {RIVAL} who is stalking you sounds dangerous we should stay as a group. Anyways {PLAYER} we're quite near Saeclara. This path should lead us directly to Mew. I cannot speak for either of you but all this excitement makes me want a bowl. So once your safe in town you can find me poking some smot in my local weed shop. Come with me Leaf we'll smoke some Indica.")
-}
-
-text SilvanWoods_Text_Leaf2 {
-	format("Ok that's fine but I want to see Mew. Well {PLAYER} don't spend all day lollygagging here in the woods. We'll wait for you in town down at my dad's Chronic Cannabis store.")
 }
 
 text SilvanWoods_Text_Ferryman1 {
@@ -793,6 +1174,31 @@ text SilvanWoods_Text_Ferryman4 {
 	format("Come back anytime and have a nice day!")
 }
 
+text SilvanWoods_Text_Scott1 {
+    format("Hey {PLAYER}!")
+}
 
+text SilvanWoods_Text_Scott2 {
+    format("This man has agreed to ferry people across the river for a fee!")
+}
 
+text SilvanWoods_Text_Leaf1 {
+    format("Let's not delay! Let us depart at once.")
+}
+
+text SilvanWoods_Text_Scott3 {
+    format("It's of great importance we stay as one as we travel through perilous Silva...")
+}
+
+text SilvanWoods_Text_Leaf2 {
+    format("Oh my! Look what majestic {PKMN} frolic and play among the Silvan woods. My heart is captured instantly by her...I must have you! Come here! Dont be afraid!")
+}
+
+text SilvanWoods_Text_Scott4 {
+    format("Come back! Stop {LEAF}! Don't go! It's dangerous!")
+}
+
+text SilvanWoods_Text_Scott5 {
+    format("Now wasn't she the one in the hurry to reach Castalia and behold Mew? The hearts and fancies of young girls are quick to turn too suddenly. Our job, as men, is to direct them towards a better path, but defend and support them when they err. It's dangerous beneath the trees alone for anyone, let alone my daughter. Go find her {PLAYER}, keep her safe in Silva, and bring her back to more sensible ways. I'll go ahead and find Castalian paths.")
+}
 
