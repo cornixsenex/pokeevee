@@ -668,5 +668,5 @@ Route3_Text_Scott2::
 	.string "hopes of finding some sure way across.\l"
 	.string "Be careful {PLAYER}. In Silva many\l"
 	.string "folk pushed out of town, criminals, and\l"
-	.string "wild {PKMN} lurk in shadows and tall graas.\l"
+	.string "wild {PKMN} lurk in shadows and tall grass.\l"
 	.string "Tread carefully, and carry a big stick!$"

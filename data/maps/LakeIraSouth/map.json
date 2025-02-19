@@ -2,7 +2,7 @@
   "id": "MAP_LAKE_IRA_SOUTH",
   "name": "LakeIraSouth",
   "layout": "LAYOUT_LAKE_IRA_SOUTH",
-  "music": "MUS_FALLARBOR",
+  "music": "MUS_FOTM",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

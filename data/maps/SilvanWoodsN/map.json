@@ -2,7 +2,7 @@
   "id": "MAP_SILVAN_WOODS_N",
   "name": "SilvanWoodsN",
   "layout": "LAYOUT_SILVAN_WOODS_N",
-  "music": "MUS_RG_VIRIDIAN_FOREST",
+  "music": "MUS_FOTM",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

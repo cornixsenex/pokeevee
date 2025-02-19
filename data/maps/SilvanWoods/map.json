@@ -2,7 +2,7 @@
   "id": "MAP_SILVAN_WOODS",
   "name": "SilvanWoods",
   "layout": "LAYOUT_SILVAN_WOODS",
-  "music": "MUS_PETALBURG_WOODS",
+  "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

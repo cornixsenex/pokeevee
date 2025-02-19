@@ -2,7 +2,7 @@
   "id": "MAP_WILLOW",
   "name": "Willow",
   "layout": "LAYOUT_WILLOW",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_VERDANTURF",
   "region_map_section": "MAPSEC_SALIX",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

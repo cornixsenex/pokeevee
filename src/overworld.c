@@ -1353,13 +1353,14 @@ static void TransitionMapMusic(void)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
-        if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
-        {
-            if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_SURF)
-                return;
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-                newMusic = MUS_SURF;
-        }
+		//Removing the auto surf music
+        //if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
+        //{
+        //    if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_SURF)
+        //        return;
+        //    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        //        newMusic = MUS_SURF;
+        //}
         if (newMusic != currentMusic)
         {
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
@@ -3881,7 +3882,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 u16 GetDynamicMusic(void) 
 {
 	s32 mapGroup, mapNum;
-	//u32 n;
+	u32 n;
 	//Determine which map 
 	//then determine which "map" to return 
 	
@@ -3897,9 +3898,66 @@ u16 GetDynamicMusic(void)
 		else //Sinus Camelus
 			return MUS_ROUTE104;
 	}
+	//MareWWW - Mare Occidens or River Delta
+	if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW)) 
+	{
+		n = GetDynamicMapSec_MareWWW();
+		switch (n) {
+			case 0:
+				return MUS_XXPLOSIVE;
+			//Mare Occidens
+			case 1:
+				return MUS_LILYCOVE;
+			//Delta Draci
+			case 2:
+				return MUS_RG_ROUTE1;
+			//Acta Echona
+			case 3:
+				return MUS_RG_SS_ANNE;
+			default:
+				return MUS_XXPLOSIVE;
+		}
+	}
+	//Route17 - 8 different locations :/
+	if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
+	{
+		n = GetDynamicMapSec_Route17();
+		switch (n) {
+			//fallback
+			case 0:
+				return MAPSEC_DYNAMIC;
+			//Lacus Dracus
+			case 1:
+				return MUS_RG_SEVII_ROUTE;
+			//Lake Shore
+			case 2:
+				return MUS_RG_SEVII_ROUTE;
+			//River Superior
+			case 3:
+				return MUS_RG_SEVII_ROUTE;
+			//River Inferior
+			case 4:
+				return MUS_RG_SEVII_ROUTE;
+			//Drake
+			case 5:
+				return MUS_FOTM;
+			//Drake
+			case 6:
+				return MUS_FOTM;
+			//Drake
+			case 7:
+				return MUS_FOTM;
+			//Drake
+			case 8:
+				return MUS_FOTM;
+			//fallback
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 	//Default SHOULD NEVER BE REACHED
 	else 
-		return MUS_RG_ROUTE24;
+		return MUS_XXPLOSIVE;
 }
 	
 

@@ -2,7 +2,7 @@
   "id": "MAP_LAKE_IRA",
   "name": "LakeIra",
   "layout": "LAYOUT_LAKE_IRA",
-  "music": "MUS_B_PALACE",
+  "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_BULBUS_SILVAN_FILLER",
   "name": "BulbusSilvanFiller",
   "layout": "LAYOUT_BULBUS_SILVAN_FILLER",
-  "music": "MUS_GSC_ROUTE38",
+  "music": "MUS_RG_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_SILVA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
