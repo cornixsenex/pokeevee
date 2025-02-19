@@ -3,7 +3,7 @@
   "name": "EliciusBeach",
   "layout": "LAYOUT_ELICIUS_BEACH",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ELICIUS_BEACH",
+  "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",

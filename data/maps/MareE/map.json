@@ -3,7 +3,7 @@
   "name": "MareE",
   "layout": "LAYOUT_MARE_E",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_SIX_ISLAND",
+  "region_map_section": "MAPSEC_MARE_TRANQUILLUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
