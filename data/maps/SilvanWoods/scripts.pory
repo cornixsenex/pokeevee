@@ -773,6 +773,11 @@ script SilvanWoods_Script_SilvanLeafScene4 {
     //facep player down
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
     waitmovement (0)
+    //alert all
+    applymovement (OBJ_EVENT_SCOTT, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
     //S:What took you so long?
 	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
 	msgbox (SilvanWoods_Text_Scott6)
@@ -785,8 +790,33 @@ script SilvanWoods_Script_SilvanLeafScene4 {
 	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
 	msgbox (SilvanWoods_Text_Scott7)
 	destroy_field_pic (FIELD_PIC_SCOTT)
+    closemessage
     //Exeunt
+    applymovement (OBJ_EVENT_SCOTT, SilvanWoods_Movement_SilvanLeafScene4_Exeunt)
+    applymovement (OBJ_EVENT_LEAF, SilvanWoods_Movement_SilvanLeafScene4_Exeunt)
+    applymovement (OBJ_EVENT_IGGLYBUFF, SilvanWoods_Movement_SilvanLeafScene4_Exeunt)
+    waitmovement (0)
+    //remove leafcop
+    removeobject (OBJ_EVENT_LEAF)
+    setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_LEAF)
+    showobjectat (OBJ_EVENT_LEAF, MAP_SILVAN_WOODS)
+
+    removeobject (OBJ_EVENT_SCOTT)
+    setobjectxyperm (OBJ_EVENT_SCOTT, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_SCOTT)
+    showobjectat (OBJ_EVENT_SCOTT, MAP_SILVAN_WOODS)
+
+    removeobject (OBJ_EVENT_IGGLYBUFF)
+    setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_IGGLYBUFF)
+    showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_SILVAN_WOODS)
+
     //setvars
+    setvar (VAR_SILVANWOODS_STATE, 5)
     releaseall
     end
 }
@@ -1069,6 +1099,12 @@ movement SilvanWoods_Movement_SilvanLeafScene3_LeafExit {
 
 movement SilvanWoods_Movement_ChikFleeLeaf2 {
     walk_right * 4
+}
+
+movement SilvanWoods_Movement_SilvanLeafScene4_Exeunt {
+    walk_down * 4
+    walk_right * 5
+    walk_down * 3
 }
 
 text SilvanWoods_Text_CrystalIntro {
@@ -1476,7 +1512,7 @@ text SilvanWoods_Text_Leaf7 {
 
 //What took so long
 text SilvanWoods_Text_Scott6 {
-    format("What you so long?")
+    format("What took you so long?")
 }
 
 //I'm ready to go

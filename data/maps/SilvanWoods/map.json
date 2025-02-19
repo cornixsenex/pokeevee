@@ -1262,7 +1262,7 @@
       "elevation": 0,
       "var": "VAR_SILVANWOODS_STATE",
       "var_value": "4",
-      "script": "NULL"
+      "script": "SilvanWoods_Script_SilvanLeafScene4"
     },
     {
       "type": "weather",
@@ -1333,6 +1333,15 @@
       "y": 20,
       "elevation": 0,
       "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_SILVANWOODS_STATE",
+      "var_value": "4",
+      "script": "SilvanWoods_Script_SilvanLeafScene4"
     }
   ],
   "bg_events": [
