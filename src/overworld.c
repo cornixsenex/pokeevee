@@ -3736,7 +3736,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//MareS6
 	if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
 	{
-		n = GetDynamicMapSec_SilvanWoods();
+		n = GetDynamicMapSec_MareS6();
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3904,7 +3904,7 @@ u16 GetDynamicMusic(void)
 		n = GetDynamicMapSec_MareWWW();
 		switch (n) {
 			case 0:
-				return MUS_XXPLOSIVE;
+				return MUS_CANTINA;
 			//Mare Occidens
 			case 1:
 				return MUS_LILYCOVE;
@@ -3915,7 +3915,7 @@ u16 GetDynamicMusic(void)
 			case 3:
 				return MUS_RG_SS_ANNE;
 			default:
-				return MUS_XXPLOSIVE;
+				return MUS_CANTINA;
 		}
 	}
 	//Route17 - 8 different locations :/
@@ -3925,7 +3925,7 @@ u16 GetDynamicMusic(void)
 		switch (n) {
 			//fallback
 			case 0:
-				return MAPSEC_DYNAMIC;
+				return MUS_CANTINA;
 			//Lacus Dracus
 			case 1:
 				return MUS_RG_SEVII_ROUTE;
@@ -3952,12 +3952,107 @@ u16 GetDynamicMusic(void)
 				return MUS_FOTM;
 			//fallback
 			default:
+				return MUS_CANTINA;
+		}
+	}
+	//Lake Ira - Laco, Shore, Salix
+	if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
+	{
+		n = GetDynamicMapSec_LakeIra();
+		switch (n) {
+			//fallback
+			case 0:
+				return MUS_CANTINA;
+			//Lake
+			case 1:
+				return MUS_RG_SEVII_ROUTE;
+			//Lake Shore
+			case 2:
+				return MUS_RG_SEVII_ROUTE;
+			//Salix
+			case 3:
+				return MUS_VERDANTURF;
+			//fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//Lake Ira South - Always just kashmir
+	if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH))
+		return MUS_FOTM;
+	//SilvanWoodsN always just Kashmir
+	if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N))
+		return MUS_FOTM;
+	//Silvan Woods
+	if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
+	{
+		n = GetDynamicMapSec_SilvanWoods();
+		switch (n) {
+			//fallback
+			case 0:
+				return MUS_CANTINA;
+			//Silva
+			case 1:
+				return MUS_RG_VIRIDIAN_FOREST;
+			//Draco Inferior
+			case 2:
+				return MUS_RG_SEVII_ROUTE;
+			//Silva Profunda
+			case 3:
+				return MUS_RG_VIRIDIAN_FOREST;
+			//fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//MareS6
+	if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
+	{
+		n = GetDynamicMapSec_MareS6();
+		switch (n) {
+			//fallback
+			case 0:
+				return MUS_CANTINA;
+			//Isla Pina
+			case 1:
+				return MUS_PETALBURG;
+			//Mare Occidens
+			case 2:
+				return MUS_LILYCOVE;
+			//Mare Tropicum
+			case 3:
+				return MUS_SURF;
+			//fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//MareWW
+	if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
+	{
+		n = GetDynamicMapSec_MareWW();
+		switch (n) {
+			//fallback
+			case 0:
+				return MAPSEC_DYNAMIC;
+			//Delta Draci
+			case 1:
+				return MAPSEC_DELTA_DRACI;
+			//Mare Tropicum
+			case 2:
+				return MAPSEC_MARE_TROPICUM;
+			//Acta Echona
+			case 3:
+				return MAPSEC_ACTA_ECHONA;
+			//fallback
+			default:
 				return MAPSEC_DYNAMIC;
 		}
 	}
+
 	//Default SHOULD NEVER BE REACHED
 	else 
-		return MUS_XXPLOSIVE;
+		return MUS_CANTINA;
 }
 	
 
