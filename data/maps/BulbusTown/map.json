@@ -2,7 +2,7 @@
   "id": "MAP_BULBUS_TOWN",
   "name": "BulbusTown",
   "layout": "LAYOUT_BULBUS_TOWN",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_OAK_LAB",
   "region_map_section": "MAPSEC_PORTO_PRIMO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

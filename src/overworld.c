@@ -833,8 +833,21 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
-    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
-        TransitionMapMusic();
+   // if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
+   //     TransitionMapMusic();
+
+	//Cornix Custom Transition Map Music Check
+	//Format should be to do it automatically except in certain cases:
+	//Ignore if during storm or during siege or other similar flag is set
+	//Most dynamic to dynamic should be ignored (same as map name popup)
+	//Only dest is dynamic check
+	//Only prev is dynamic check
+	//else...default TransitionMapMusic();
+	
+//	if 
+//		(
+//		(FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE) &&
+
 
     ApplyCurrentWarp();
 	DebugPrintf("\nBefore LoadCurrentMapData\nX: %d\nY: %d\nMAPSEC: %d\nMAPGROUP: %d\nMAPNUM: %d", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y, gMapHeader.regionMapSectionId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
@@ -875,6 +888,11 @@ if (I_VS_SEEKER_CHARGING != 0)
 	destMapNum = gSaveBlock1Ptr->location.mapNum;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
+
+	 if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
+       TransitionMapMusic();
+
+
 
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
@@ -1286,21 +1304,14 @@ u16 GetCurrLocationDefaultMusic(void)
     }
 }
 
+//Cornix touched to hack dynamic music system
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if (music != MUS_ROUTE118)
-    {
-        return music;
-    }
-    else
-    {
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAUVILLE_CITY)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAUVILLE_CITY))
-            return MUS_ROUTE110;
-        else
-            return MUS_ROUTE119;
-    }
+	//Handle Dynamic Map Music
+	if (music == MUS_DYNAMIC) 
+		music = GetDynamicMusic();
+	return music;
 }
 
 void Overworld_ResetMapMusic(void)
@@ -3608,7 +3619,7 @@ void ScriptHideItemDescription(struct ScriptContext *ctx)
 }
 #endif // OW_SHOW_ITEM_DESCRIPTIONS
 
-u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom dynamic maps 
+u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom dynamic maps 
 {
 	s32 mapGroup, mapNum;
 	u32 n;
@@ -3617,7 +3628,7 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 	
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
-	
+
 	//Route3 - Cove, Delta, River
 	if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 	{
@@ -3866,4 +3877,29 @@ u32 DetermineDynamicMapsecValue (void) //CornixSenex Custom to accomodate custom
 	}
 
 }
+
+u16 GetDynamicMusic(void) 
+{
+	s32 mapGroup, mapNum;
+	//u32 n;
+	//Determine which map 
+	//then determine which "map" to return 
+	
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum   = gSaveBlock1Ptr->location.mapNum;	
+
+	//Route3 - Cove, Delta, River
+	if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
+	{
+		//Delta Draci
+		if (IsRoute3RiverDelta())
+			return MUS_RG_ROUTE1;
+		else //Sinus Camelus
+			return MUS_ROUTE104;
+	}
+	//Default SHOULD NEVER BE REACHED
+	else 
+		return MUS_RG_ROUTE24;
+}
+	
 

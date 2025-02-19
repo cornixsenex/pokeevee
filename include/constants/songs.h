@@ -552,6 +552,7 @@
 #define MUS_XXPLOSIVE               611
 #define MUS_FOTM                    612
 #define MUS_CANTINA                 613
+#define MUS_DYNAMIC                 614 //Hoping to emulate the sucess I found with MAPSEC_DYNAMIC
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

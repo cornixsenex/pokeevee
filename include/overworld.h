@@ -159,6 +159,9 @@ void ClearLinkPlayerObjectEvents(void);
 //CornixSenex Custom Dynamic Map support
 u32 DetermineDynamicMapsecValue (void);
 
+//Cornix Custom Dynamic Music system
+u16 GetDynamicMusic(void);
+
 // Item Description Headers
 enum ItemObtainFlags
 {

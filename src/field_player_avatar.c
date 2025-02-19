@@ -1825,8 +1825,8 @@ static void CreateStopSurfingTask(u8 direction)
     u8 taskId;
 
     LockPlayerFieldControls();
-    Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicToDefault();
+    //Overworld_ClearSavedMusic();
+    //Overworld_ChangeMusicToDefault();
     gPlayerAvatar.flags ^= PLAYER_AVATAR_FLAG_SURFING;
     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_ON_FOOT;
     gPlayerAvatar.preventStep = TRUE;
@@ -2729,8 +2729,8 @@ static void CreateStartSurfingTask(u8 direction)
     u8 taskId;
 
     LockPlayerFieldControls();
-    Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(MUS_SURF);
+    //Overworld_ClearSavedMusic();
+    //Overworld_ChangeMusicTo(MUS_SURF);
     gPlayerAvatar.flags ^= PLAYER_AVATAR_FLAG_ON_FOOT;
     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_SURFING;
     gPlayerAvatar.preventStep = TRUE;
