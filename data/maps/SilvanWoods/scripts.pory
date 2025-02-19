@@ -37,15 +37,35 @@ mapscripts SilvanWoods_MapScripts {
 				setvar (VAR_TEMP_5, 3)
 		}
 
+        //Setup Ferry Location
 		if (flag(FLAG_SILVAN_FERRY_ISWEST)) {
 			call (SilvanWoods_Script_ShowFerryWest)
 		} else {
 			call (SilvanWoods_Script_ShowFerryEast)
 		}
+
+        //Show Scott Block or Scott et Leaf ready to go
+        if (var(VAR_SILVANWOODS_STATE) == 3) {
+            call (SilvanWoods_Script_SetupScottBlock)
+        }
+        if (var(VAR_SILVANWOODS_STATE) == 4) {
+            call (SilvanWoods_Script_SetupSilvanLeafExit)
+        }
 			
 	}
+
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			call (SilvanWoods_Script_TryRemoveAriados)
+		}
+	}
+
 }
 
+script SilvanWoods_Script_TryRemoveAriados {
+    removeobject (OBJ_EVENT_ARIADOS)
+    return
+}
 
 script SilvanWoods_Script_SilvanWoodsTransition {
 	setvar (VAR_TEMP_5, 1)
@@ -559,6 +579,218 @@ script SilvanWoods_Script_ShowBlue {
     return
 }
 
+script SilvanWoods_Script_TrySetupSilvanLeaf3 {
+    setvar (VAR_TEMP_7, 1)
+    if (var(VAR_SILVANWOODS_STATE) == 3) {
+
+        removeobject (OBJ_EVENT_LEAF)
+        setobjectxyperm (OBJ_EVENT_LEAF, 20, 19)
+        setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_RIGHT)
+        addobject (OBJ_EVENT_LEAF)
+        showobjectat (OBJ_EVENT_LEAF, MAP_SILVAN_WOODS)
+        
+        removeobject (OBJ_EVENT_IGGLYBUFF)
+        setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 20, 20)
+        setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_RIGHT)
+        addobject (OBJ_EVENT_IGGLYBUFF)
+        showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_SILVAN_WOODS)
+
+        removeobject (OBJ_EVENT_CHIKORITA)
+        setobjectxyperm (OBJ_EVENT_CHIKORITA, 23, 19)
+        setobjectmovementtype (OBJ_EVENT_CHIKORITA, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (OBJ_EVENT_CHIKORITA)
+        showobjectat (OBJ_EVENT_CHIKORITA, MAP_SILVAN_WOODS)
+    }
+    return
+}
+
+script SilvanWoods_Script_SilvanLeafScene3A {
+    lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight2)
+    waitmovement (0)
+    call (SilvanWoods_Script_SilvanLeafScene3)
+
+    releaseall
+    end
+}
+
+script SilvanWoods_Script_SilvanLeafScene3B {
+    lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp2)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    call (SilvanWoods_Script_SilvanLeafScene3)
+
+    releaseall
+    end
+}
+
+script SilvanWoods_Script_SilvanLeafScene3 {
+    //L: Come here I wont hurt you as Chik runs
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (SilvanWoods_Text_Leaf3)
+    applymovement (OBJ_EVENT_CHIKORITA, SilvanWoods_Movement_ChikFleeLeaf2)
+    waitmovement (0)
+    //L: Stop!
+    msgbox(format("No! Wait!"))
+    //L turns to Player
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //L: I'm not going back until I capture that magnificent pokemon; she is my one desire; come with me I've almost got her cornered
+	msgbox (SilvanWoods_Text_Leaf4)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
+    //Setup Chik et Spider scene
+    removeobject (OBJ_EVENT_CHIKORITA)
+    setobjectxyperm (OBJ_EVENT_CHIKORITA, 28, 14)
+    setobjectmovementtype (OBJ_EVENT_CHIKORITA, MOVEMENT_TYPE_FACE_LEFT)
+    addobject (OBJ_EVENT_CHIKORITA)
+    showobjectat (OBJ_EVENT_CHIKORITA, MAP_SILVAN_WOODS)
+
+    removeobject (OBJ_EVENT_ARIADOS)
+    setobjectxyperm (OBJ_EVENT_ARIADOS, 27, 14)
+    setobjectmovementtype (OBJ_EVENT_ARIADOS, MOVEMENT_TYPE_FACE_RIGHT)
+    addobject (OBJ_EVENT_ARIADOS)
+    showobjectat (OBJ_EVENT_ARIADOS, MAP_SILVAN_WOODS)
+    //Leaf et player goto Chik et Spider scene
+    applymovement (OBJ_EVENT_LEAF, SilvanWoods_Movement_SilvanLeafScene3_GoToSpiderScene)
+    applymovement (OBJ_EVENT_IGGLYBUFF, SilvanWoods_Movement_SilvanLeafScene3_GoToSpiderScene)
+    applymovement (OBJ_EVENT_ID_PLAYER, SilvanWoods_Movement_SilvanLeafScene3_GoToSpiderScene)
+    waitmovement (0)
+    //Alert Leaf et Player
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Ambush Music!
+    playbgm (MUS_HELP, TRUE)
+    //Face eachother
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    //L: OMG she's in danger help her please
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (SilvanWoods_Text_Leaf5)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    //Player go to spider
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp2)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ARIADOS, Common_Movement_FaceDown)
+    waitmovement (0)
+    //spider battle
+    playmoncry (SPECIES_ARIADOS, CRY_MODE_ENCOUNTER)
+    waitmoncry
+	setwildbattle (SPECIES_ARIADOS, 23)
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	playbgm (MUS_PETALBURG_WOODS, TRUE)
+	dowildbattle
+    //Post spider battle move all into position
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp2)
+    applymovement (OBJ_EVENT_IGGLYBUFF, Common_Movement_WalkUp2)
+    waitmovement (0)
+    //L: Looks like she trusts me finally come on
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (SilvanWoods_Text_Leaf6)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
+    //Prob blank screen to "catch" Chik by leaf
+    playmoncry (SPECIES_CHIKORITA, CRY_MODE_ENCOUNTER)
+    waitmoncry 
+    fadescreen (FADE_TO_BLACK)
+    removeobject (OBJ_EVENT_CHIKORITA)
+    fadescreen (FADE_FROM_BLACK)
+    //They face each other
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    //L: Aknowlege capturing her past one desire; lets get back soon we need to see mew
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (SilvanWoods_Text_Leaf7)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
+    //Leaf exit
+    applymovement (OBJ_EVENT_LEAF, SilvanWoods_Movement_SilvanLeafScene3_LeafExit)
+    applymovement (OBJ_EVENT_IGGLYBUFF, SilvanWoods_Movement_SilvanLeafScene3_LeafExit)
+    waitmovement (0)
+    //update location of everyone
+    //LEAF
+    removeobject (OBJ_EVENT_LEAF)
+    setobjectxyperm (OBJ_EVENT_LEAF, 61, 60)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
+    addobject (OBJ_EVENT_LEAF)
+    showobjectat (OBJ_EVENT_LEAF, MAP_SILVAN_WOODS)
+    //IGGY 
+    removeobject (OBJ_EVENT_IGGLYBUFF)
+    setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 61, 61)
+    setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_UP)
+    addobject (OBJ_EVENT_IGGLYBUFF)
+    showobjectat (OBJ_EVENT_IGGLYBUFF, MAP_SILVAN_WOODS)
+    //Chik
+    removeobject (OBJ_EVENT_CHIKORITA)
+    setobjectxyperm (OBJ_EVENT_CHIKORITA, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_CHIKORITA, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_CHIKORITA)
+    showobjectat (OBJ_EVENT_CHIKORITA, MAP_SILVAN_WOODS)
+    //Ariados
+    removeobject (OBJ_EVENT_ARIADOS)
+    setobjectxyperm (OBJ_EVENT_ARIADOS, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_ARIADOS, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_ARIADOS)
+    showobjectat (OBJ_EVENT_ARIADOS, MAP_SILVAN_WOODS)
+    //setvars; setup for LeafScott Exit
+    setvar (VAR_SILVANWOODS_STATE, 4)
+    
+
+    releaseall
+    end
+}
+
+script SilvanWoods_Script_SetupScottBlock {
+    setobjectxyperm (OBJ_EVENT_SCOTT, 62, 60)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_UP)
+    return
+}
+
+script SilvanWoods_Script_SetupSilvanLeafExit {
+    setobjectxyperm (OBJ_EVENT_SCOTT, 62, 60)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_UP)
+    
+    setobjectxyperm (OBJ_EVENT_LEAF, 61, 60)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm (OBJ_EVENT_IGGLYBUFF, 61, 61)
+    setobjectmovementtype (OBJ_EVENT_IGGLYBUFF, MOVEMENT_TYPE_FACE_UP)
+
+
+    return
+}
+
+script SilvanWoods_Script_SilvanLeafScene4 {
+    lockall
+    //facep player down
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    //S:What took you so long?
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (SilvanWoods_Text_Scott6)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+    //L:I'm ready to go!
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (SilvanWoods_Text_Leaf8)
+	destroy_field_pic (FIELD_PIC_LEAF)
+    //S:Lets not delay; we're going into Castalia
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (SilvanWoods_Text_Scott7)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+    //Exeunt
+    //setvars
+    releaseall
+    end
+}
+
 script SilvanWoods_EventScript_Crystal {
 	trainerbattle_single(TRAINER_CRYSTAL, SilvanWoods_Text_CrystalIntro, SilvanWoods_Text_CrystalLost)
 	msgbox (SilvanWoods_Text_CrystalPost)
@@ -823,6 +1055,20 @@ movement SilvanWoods_Movement_BlueWalkBy {
     walk_up * 2
     walk_right * 2
     walk_up * 2
+}
+
+movement SilvanWoods_Movement_SilvanLeafScene3_GoToSpiderScene {
+    walk_right * 8
+    walk_up * 2
+}
+
+movement SilvanWoods_Movement_SilvanLeafScene3_LeafExit {
+    walk_down * 4
+    walk_left * 10
+}
+
+movement SilvanWoods_Movement_ChikFleeLeaf2 {
+    walk_right * 4
 }
 
 text SilvanWoods_Text_CrystalIntro {
@@ -1200,5 +1446,45 @@ text SilvanWoods_Text_Scott4 {
 
 text SilvanWoods_Text_Scott5 {
     format("Now wasn't she the one in the hurry to reach Castalia and behold Mew? The hearts and fancies of young girls are quick to turn too suddenly. Our job, as men, is to direct them towards a better path, but defend and support them when they err. It's dangerous beneath the trees alone for anyone, let alone my daughter. Go find her {PLAYER}, keep her safe in Silva, and bring her back to more sensible ways. I'll go ahead and find Castalian paths.")
+}
+
+//I wont hurt you (as Chik runs)
+text SilvanWoods_Text_Leaf3 {
+    format("Please have no fear! I will never hurt you.")
+}
+
+//NO WAIT!
+//L: I'm not going back until I capture that magnificent pokemon; she is my one desire; come with me I've almost got her cornered
+text SilvanWoods_Text_Leaf4 {
+    format("I won't go back until I have captured that delicate nymph of Silva. Come on! I've nearly gotten her cornered!")
+}
+
+//L: OMG she's in danger help her please
+text SilvanWoods_Text_Leaf5 {
+    format("Oh no! She's in danger! {PLAYER} do something!")
+}
+
+//L: Looks like she trusts me finally come on
+text SilvanWoods_Text_Leaf6 {
+    format("Now that she's safe I'll catch her with a ball.")
+}
+
+//L: Aknowlege capturing her past one desire; lets get back soon we need to see mew
+text SilvanWoods_Text_Leaf7 {
+    format("Chikorita finally trusts me back. It's strange she was once my one desire but having her now I'm drawn back to Mew. We must make haste to reach Castalia in order to catch a glimpse of great Mew!")
+}
+
+//What took so long
+text SilvanWoods_Text_Scott6 {
+    format("What you so long?")
+}
+
+//I'm ready to go
+text SilvanWoods_Text_Leaf8 {
+    format("I'm ready to go!")
+}
+
+text SilvanWoods_Text_Scott7 {
+    format("Come on! Castalia is right this way!")
 }
 
