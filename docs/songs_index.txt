@@ -1,0 +1,284 @@
+
+
+
+#Location Index
+
+Villa Florea
+Via Florea
+Albion
+Via Arbustus
+Portus Priums
+Sinus Camelus
+Silva
+Castalia
+Sinus Clara
+Via Fidelium
+Sinus Pacificus
+Via Litoralis
+Villa Lodge
+Robustica
+Sabina Nova
+Villa Lactea
+Via Saxosa
+Via Obscura
+Mons Arrival
+Cacnorum
+Peccadum
+Great Highway
+Metropolis
+Agri
+Deseret
+Palms
+Ardor
+Quarry
+Pyramids
+Via Saxona
+Tranquillitas
+Acta Tranquilla
+Mare Tranquilum
+Isla Yerba Buena
+Isla Ignifera
+Mare Internum
+Drake / Kashmir
+Isla Tropica / Tropicana
+It
+
+
+
+
+#define MUS_GSC_ROUTE38            ##### 
+#define MUS_C_COMM_CENTER          ##### 
+#define MUS_GSC_PEWTER             ##### 
+#define MUS_ROUTE101               ##### 
+#define MUS_ROUTE110               ##### 
+#define MUS_ROUTE120               ##### 
+#define MUS_PETALBURG              ##### 
+#define MUS_OLDALE                 ##### 
+#define MUS_GYM                    ##### 
+#define MUS_SURF                   ##### Mare Tropicum
+#define MUS_PETALBURG_WOODS        ##### 
+#define MUS_LILYCOVE_MUSEUM        ##### 
+#define MUS_ROUTE122               ##### 
+#define MUS_OCEANIC_MUSEUM         ##### 
+#define MUS_ABANDONED_SHIP         ##### 
+#define MUS_FORTREE                ##### 
+#define MUS_BIRCH_LAB              ##### 
+#define MUS_B_TOWER_RS             ##### 
+#define MUS_CAVE_OF_ORIGIN         ##### 
+#define MUS_ROULETTE               ##### 
+#define MUS_VERDANTURF             ##### 
+#define MUS_RUSTBORO               ##### 
+#define MUS_POKE_CENTER            ##### 
+#define MUS_ROUTE104               ##### 
+#define MUS_ROUTE119               ##### 
+#define MUS_CYCLING                ##### 
+#define MUS_POKE_MART              ##### 
+#define MUS_LITTLEROOT             ##### 
+#define MUS_MT_CHIMNEY             ##### 
+#define MUS_LILYCOVE               ##### 
+#define MUS_DESERT                 ##### 
+#define MUS_HELP                   ##### 
+#define MUS_UNDERWATER             ##### 
+#define MUS_TITLE                  ##### 
+#define MUS_INTRO                  ##### 
+#define MUS_ROUTE113               ##### 
+#define MUS_EVER_GRANDE            ##### 
+#define MUS_GAME_CORNER            ##### 
+#define MUS_DEWFORD                ##### 
+#define MUS_SAFARI_ZONE            ##### 
+#define MUS_VICTORY_ROAD           ##### 
+#define MUS_AQUA_MAGMA_HIDEOUT     ##### 
+#define MUS_SAILING                ##### 
+#define MUS_MT_PYRE                ##### 
+#define MUS_SLATEPORT              ##### 
+#define MUS_MT_PYRE_EXTERIOR       ##### 
+#define MUS_SCHOOL                 ##### 
+#define MUS_HALL_OF_FAME           ##### 
+#define MUS_FALLARBOR              ##### 
+#define MUS_SEALED_CHAMBER         ##### 
+#define MUS_CONTEST_WINNER         ##### 
+#define MUS_CONTEST                ##### 
+#define MUS_ABNORMAL_WEATHER       ##### 
+#define MUS_WEATHER_GROUDON        ##### 
+#define MUS_SOOTOPOLIS             ##### 
+#define MUS_CONTEST_RESULTS        ##### 
+#define MUS_HALL_OF_FAME_ROOM      ##### 
+#define MUS_TRICK_HOUSE            ##### 
+#define MUS_CONTEST_LOBBY          ##### 
+#define MUS_CREDITS                ##### 
+#define MUS_END                    ##### 
+#define MUS_B_FRONTIER             ##### 
+#define MUS_B_ARENA                ##### 
+#define MUS_B_PYRAMID              ##### 
+#define MUS_B_PYRAMID_TOP          ##### 
+#define MUS_B_PALACE               ##### 
+#define MUS_RAYQUAZA_APPEARS       ##### 
+#define MUS_B_TOWER                ##### 
+#define MUS_B_DOME                 ##### 
+#define MUS_B_PIKE                 ##### 
+#define MUS_B_FACTORY              ##### 
+#define MUS_B_DOME_LOBBY           ##### 
+// FRLG Music
+#define MUS_RG_GAME_CORNER         ##### 
+#define MUS_RG_ROCKET_HIDEOUT      ##### 
+#define MUS_RG_GYM                 ##### 
+#define MUS_RG_INTRO_FIGHT         ##### 
+#define MUS_RG_TITLE               ##### 
+#define MUS_RG_CINNABAR            ##### 
+#define MUS_RG_LAVENDER            ##### 
+#define MUS_RG_HEAL                ##### 
+#define MUS_RG_CYCLING             ##### 
+#define MUS_RG_VIRIDIAN_FOREST     ##### 
+#define MUS_RG_MT_MOON             ##### 
+#define MUS_RG_POKE_MANSION        ##### 
+#define MUS_RG_CREDITS             ##### 
+#define MUS_RG_ROUTE1              ##### 
+#define MUS_RG_ROUTE24             ##### 
+#define MUS_RG_ROUTE3              ##### 
+#define MUS_RG_ROUTE11             ##### 
+#define MUS_RG_VICTORY_ROAD        ##### 
+#define MUS_RG_PALLET              ##### 
+#define MUS_RG_OAK_LAB             ##### 
+#define MUS_RG_OAK                 ##### 
+#define MUS_RG_POKE_CENTER         ##### 
+#define MUS_RG_SS_ANNE             ##### 
+#define MUS_RG_SURF                ##### 
+#define MUS_RG_POKE_TOWER          ##### 
+#define MUS_RG_SILPH               ##### 
+#define MUS_RG_FUCHSIA             ##### 
+#define MUS_RG_CELADON             ##### 
+#define MUS_RG_VERMILLION          ##### 
+#define MUS_RG_PEWTER              ##### 
+#define MUS_RG_UNION_ROOM          ##### 
+#define MUS_RG_NET_CENTER          ##### 
+#define MUS_RG_BERRY_PICK          ##### 
+#define MUS_RG_SEVII_ROUTE         ##### 
+#define MUS_RG_SEVII_45            ##### 
+#define MUS_RG_SEVII_67            ##### 
+#define MUS_RG_SLOW_PALLET         ##### 
+#define END_MUS                    ##### 
+#define MUS_CALIFORNIA_LOVE        ##### 
+#define MUS_XXPLOSIVE              ##### 
+#define MUS_FOTM                   ##### 
+#define MUS_CANTINA                ##### 
+
+
+
+#Song Index
+#define START_MUS                   ABOUT    LOCATION
+#define MUS_LITTLEROOT_TEST         ##### Littleroot
+#define MUS_GSC_ROUTE38             ##### Hype trumpets epic cool
+#define MUS_C_COMM_CENTER           ##### Pokecenter with strings
+#define MUS_GSC_PEWTER              ##### Pewter jazzy piano
+#define MUS_ROUTE101                ##### Flutes, hobbiton
+#define MUS_ROUTE110                ##### Trumpets, on the road
+#define MUS_ROUTE120                ##### Trumpets, soaring bit extra
+#define MUS_PETALBURG               ##### Upbeat happy synth
+#define MUS_OLDALE                  ##### Oldale
+#define MUS_GYM                     ##### So formal omg marching
+#define MUS_SURF                    #####  
+#define MUS_PETALBURG_WOODS         ##### Spooky jiji iii iijn
+#define MUS_LILYCOVE_MUSEUM         ##### Horns formal dance stiff
+#define MUS_ROUTE122                ##### Emerald Intro build up trumpet
+#define MUS_OCEANIC_MUSEUM          ##### Piano background peace
+#define MUS_ABANDONED_SHIP          ##### Yeah
+#define MUS_FORTREE                 ##### Woodwind chill melody
+#define MUS_BIRCH_LAB               ##### Squeeky nostalgic
+#define MUS_B_TOWER_RS              ##### Trumpet formal challenge
+#define MUS_CAVE_OF_ORIGIN          ##### Sailing Song for sure or something epic underworldy
+#define MUS_ROULETTE                ##### Running Spinning roulette literally
+#define MUS_VERDANTURF              ##### Piano monologue sad slow soft flue duet sad
+#define MUS_RUSTBORO                ##### Modern, Rustboro
+#define MUS_POKE_CENTER             ##### Nice song refreshing
+#define MUS_ROUTE104                ##### Out on the road good happy 
+#define MUS_ROUTE119                ##### Tough road, kinda not serious tho
+#define MUS_CYCLING                 ##### upbeat quick
+#define MUS_POKE_MART               ##### 
+#define MUS_LITTLEROOT              ##### littleroot
+#define MUS_MT_CHIMNEY              ##### should be intro to battle music 
+#define MUS_LILYCOVE                ##### sailing bouncing whale with seashore lead
+#define MUS_DESERT                  ##### kinda arabic - desert
+#define MUS_HELP                    ##### going down!
+#define MUS_UNDERWATER              ##### 
+#define MUS_TITLE                   ##### loud annoying trumpets
+#define MUS_INTRO                   ##### super weak flute intro
+#define MUS_ROUTE113                ##### chill, surfing music
+#define MUS_EVER_GRANDE             ##### laid back route
+#define MUS_GAME_CORNER             ##### vegas
+#define MUS_DEWFORD                 ##### sailing organ chill
+#define MUS_SAFARI_ZONE             ##### techno, upbeat, kinda hollow tinny
+#define MUS_VICTORY_ROAD            ##### Crescendo, climax, high stakes
+#define MUS_AQUA_MAGMA_HIDEOUT      ##### Bass, techno, funky, suspicious, dark
+#define MUS_SAILING                 ##### sailing, wheeling fast
+#define MUS_MT_PYRE                 ##### awesome dungeon theme
+#define MUS_SLATEPORT               ##### Bells!
+#define MUS_MT_PYRE_EXTERIOR        ##### final fantasy intrigue, mystery, eastern flair techno, not great
+#define MUS_SCHOOL                  ##### piano, jumpin, formal
+#define MUS_HALL_OF_FAME            ##### annoying victory?
+#define MUS_FALLARBOR               ##### slow drops beauty calm nostalgia
+#define MUS_SEALED_CHAMBER          ##### Lost Sea, dangerous, dark, depths
+#define MUS_CONTEST_WINNER          ##### 
+#define MUS_CONTEST                 ##### 
+#define MUS_ABNORMAL_WEATHER        ##### Big Storm theme
+#define MUS_WEATHER_GROUDON         ##### space, scortched earth, otherworldly, cosmic
+#define MUS_SOOTOPOLIS              ##### swing strings fun
+#define MUS_CONTEST_RESULTS         ##### fair music
+#define MUS_HALL_OF_FAME_ROOM       ##### horns steady high level
+#define MUS_TRICK_HOUSE             ##### carnival, games, race
+#define MUS_CONTEST_LOBBY           ##### march, drums et trumpet
+#define MUS_CREDITS                 ##### just slow piano
+#define MUS_END                     ##### just slow chimes
+#define MUS_B_FRONTIER              ##### high pitch trumpets, into LOTR march
+#define MUS_B_ARENA                 ##### spooky flute very johto very oriental
+#define MUS_B_PYRAMID               ##### mysterious high energy aribic theme
+#define MUS_B_PYRAMID_TOP           ##### spacey soft, short choral
+#define MUS_B_PALACE                ##### uber eastern china dolls et cats gongs
+#define MUS_RAYQUAZA_APPEARS        ##### just horn shit organ vamp idk church lame loud excess
+#define MUS_B_TOWER                 ##### horns hype march
+#define MUS_B_DOME                  ##### drums, chants, kinda techno tho - Compare DOME_LOBBY
+#define MUS_B_PIKE                  ##### squidward, kinda ugly, kinda evil or odd
+#define MUS_B_FACTORY               ##### clicks, techno, darude
+#define MUS_B_DOME_LOBBY            ##### drums, without the chant - Compare DOME
+// FRLG Music
+#define MUS_RG_GAME_CORNER          ##### vegas, game time, decent length
+#define MUS_RG_ROCKET_HIDEOUT       ##### silph, tower, good one
+#define MUS_RG_GYM                  ##### 
+#define MUS_RG_INTRO_FIGHT          ##### title screen intro 
+#define MUS_RG_TITLE                ##### title screen tbh
+#define MUS_RG_CINNABAR             ##### organ busy
+#define MUS_RG_LAVENDER             ##### haunted lavender
+#define MUS_RG_HEAL                 ##### 
+#define MUS_RG_CYCLING              ##### cycling
+#define MUS_RG_VIRIDIAN_FOREST      ##### sneaky, spooky, dark, dddd eeee dddd 3333
+#define MUS_RG_MT_MOON              ##### underground spooky moony
+#define MUS_RG_POKE_MANSION         ##### very techno spacy
+#define MUS_RG_CREDITS              ##### slow nostalgic
+#define MUS_RG_ROUTE1               ##### banjo lets go
+#define MUS_RG_ROUTE24              ##### oak intro, welcome, horns cool
+#define MUS_RG_ROUTE3               ##### organ on the road lets go
+#define MUS_RG_ROUTE11              ##### trumpets on the go jkj nmn
+#define MUS_RG_VICTORY_ROAD         ##### bells, epic, final
+#define MUS_RG_PALLET               ##### so sweet, cute
+#define MUS_RG_OAK_LAB              ##### relaxing, welcoming, chill
+#define MUS_RG_OAK                  ##### fresh, quick, repetitive, has a motif
+#define MUS_RG_POKE_CENTER          ##### 
+#define MUS_RG_SS_ANNE              ##### piano soft
+#define MUS_RG_SURF                 ##### surf bouncing chilling
+#define MUS_RG_POKE_TOWER           ##### haunted great flute song
+#define MUS_RG_SILPH                ##### tension, organ, hype
+#define MUS_RG_FUCHSIA              ##### Ceruleun
+#define MUS_RG_CELADON              ##### whistle while you work
+#define MUS_RG_VERMILLION           ##### flute high feeling confident
+#define MUS_RG_PEWTER               ##### slide in door 
+#define MUS_RG_UNION_ROOM           ##### short jingle
+#define MUS_RG_NET_CENTER           ##### poke center with strings
+#define MUS_RG_BERRY_PICK           ##### same jingle
+#define MUS_RG_SEVII_ROUTE          ##### exploration
+#define MUS_RG_SEVII_45             ##### chill nice song relax with drums
+#define MUS_RG_SEVII_67             ##### recognize this one very johto wistle wile you work
+#define MUS_RG_SLOW_PALLET          ##### slow pallet not as good
+#define END_MUS                     
+#define MUS_CALIFORNIA_LOVE         610
+#define MUS_XXPLOSIVE               611
+#define MUS_FOTM                    612
+#define MUS_CANTINA                 613

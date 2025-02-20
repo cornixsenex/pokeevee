@@ -4034,16 +4034,88 @@ u16 GetDynamicMusic(void)
 		switch (n) {
 			//fallback
 			case 0:
-				return MAPSEC_DYNAMIC;
+				return MUS_CANTINA;
 			//Delta Draci
 			case 1:
-				return MAPSEC_DELTA_DRACI;
+				return MUS_RG_ROUTE1;
 			//Mare Tropicum
 			case 2:
-				return MAPSEC_MARE_TROPICUM;
+				return MUS_SURF;
 			//Acta Echona
 			case 3:
-				return MAPSEC_ACTA_ECHONA;
+				return MUS_RG_SS_ANNE;
+			//fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//CityClara
+	if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
+	{
+		n = GetDynamicMapSec_CityClara();
+		switch (n) {
+			//fallback
+			case 0:
+				return MUS_CANTINA;
+			//Acta Echona	
+			case 1:
+				return MUS_RG_SS_ANNE;
+			//Silva
+			case 2:
+				return MUS_RG_VIRIDIAN_FOREST;
+			//Via Fidelium
+			case 3:
+				return MUS_RG_ROUTE3;
+			//Sinus Clarus
+			case 4:
+				return MUS_LILYCOVE_MUSEUM;
+			//Castalia
+			case 5:
+				return MUS_BIRCH_LAB;
+			//fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//MareW
+	if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
+	{
+		n = GetDynamicMapSec_MareW();
+		switch (n) {
+			//Acta Echona
+			case 1:
+				return MUS_RG_SS_ANNE;
+			//Mare Internum
+			case 2:
+				return MUS_ABANDONED_SHIP;
+			//Mare Tranquillum
+			case 3:
+				return MUS_RG_SURF;
+			//Mare Tropicum
+			case 4:
+				return MUS_SURF;
+			//fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//SRoute18
+	if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
+	{
+		n = GetDynamicMapSec_SRoute18();
+		switch (n) {
+			//Sinus Pacificus
+			case 1:
+				return MAPSEC_SINUS_PACIFICUS;
+			//Castrum
+			case 2:
+				return MAPSEC_CASTRUM;
+			//Sinus Clarus
+			case 3:
+				return MAPSEC_SINUS_CLARUS;
+			//Mare Internum
+			case 4:
+				return MAPSEC_MARE_INTERNUM;
 			//fallback
 			default:
 				return MAPSEC_DYNAMIC;
