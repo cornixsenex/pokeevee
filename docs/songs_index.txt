@@ -30,18 +30,45 @@ Agri
 Deseret
 Palms
 Ardor
+Desert Temple
 Quarry
 Pyramids
 Via Saxona
 Tranquillitas
 Acta Tranquilla
 Mare Tranquilum
+Mare Internum
+Mare Tropicum
+Mare Subtropicum
+Mare Occidens
+Mare Oriens
+Mare Mortuorum
 Isla Yerba Buena
 Isla Ignifera
-Mare Internum
-Drake / Kashmir
 Isla Tropica / Tropicana
-It
+Isla Italia / Latium / Lavinia / Arcadiaa
+Isla Ithaca
+Isla Arida
+Isla Pina
+Isla Vaca
+Drake / Kashmir
+Aulis
+Illios
+Troy
+Labyrinth / Dark Cave
+Paradisium
+Underworld
+Prison
+Tower
+Capital
+Castrum
+Drake Cave
+Snow Route
+Snow Town
+Mountain Top
+Final Tower
+
+
 
 
 

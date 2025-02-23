@@ -1559,3 +1559,263 @@ $$ BOAR $$
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25.2.20
+Revise to not overload desert, oceans
+1234567890123456
+Start
+Villa Florea
+eevee
+Via Florea
+Albion
+leaf
+Ludus
+blue
+Portus Primus
+Via Arbusta
+sinus camelus
+Silva
+Silva Profunda
+Castalia
+Garden
+Leaf2
+Templum
+(Cut stuff in intro area)
+Via Fidelium
+(Via Litoralis)
+Robustica
+Villa Venatorum
+Via Secreta
+Blue2
+Desertum Cacnorum
+Peccadum 
+Highway Travel
+Urbia
+Villae Rusticae
+Sabina Nova
+Deseret
+Palmae
+Ardens
+Desert Shrine
+Big Hammer postgrad
+(smash stuff in mid game stuff)
+(Pyramid)
+Saxona
+Tranquility
+Surf School
+Beach
+Sea
+(Yerba Buena)
+Argo
+Ignifera
+Ignis Mons
+Colchis
+Mare Internum
+Hector
+Agamemnon
+Drake
+Triforce Temples
+Clytemnestra
+Aeneas
+Mare Tropicum
+Tropicana
+Dido Tower
+Italia
+Lupercal Cave
+Mare Subtropicum
+Odysseus
+Ithaca
+Lotus Grove
+Isla Arida
+Isla Pina
+Siren Islands / Beach
+Scylla
+Calypso Cave
+Phaeacia
+Swineherd
+Beggar
+Achilles
+Ajax
+Ajax Inferior
+Diomedes
+Teucer
+Tiresias
+Oedipus
+Iphigenia
+Aulis
+Illium
+Philoctetes
+Ida Mons
+Heracles
+Lion
+Hydra
+Hind
+Boar
+Stables
+Birds
+Minotaur
+Mare
+Amazons
+Helios Cattle (Mare Occidens)
+Golden Apples (Mare Oriens)
+Ceberus       (Mare Mortuorum, Tartarus, Pluto / Dis)
+Prison
+Siege
+Tower
+Caput  
+M2 Flees
+Castrum
+Race to M2
+Route to mountain
+Mountain Town
+Mountain
+Mountain Top
+Tower Fin
+
+
+
+25.2.20
+Revise to not overload desert, oceans
+1234567890123456
+Start
+Villa Florea
+eevee
+Via Florea
+Albion
+leaf                                             *L1
+Ludus
+blue                                             *B2
+Portus Primus
+Via Arbusta
+sinus camelus
+Silva
+Silva Profunda
+Castalia
+Garden
+Leaf2                                            *L2
+Templum
+(Cut stuff in intro area)
+Via Fidelium
+(Via Litoralis)
+Robustica
+Villa Venatorum
+Via Secreta
+Blue2                                           *B2
+Desertum Cacnorum
+Peccadum 
+Highway Travel
+Urbia
+Villae Rusticae
+Sabina Nova
+Deseret
+Palmae
+Ardens                                          *L3
+Desert Shrine
+Big Hammer postgrad
+(smash stuff in mid game stuff)
+(Pyramid)
+Yakuza
+Saxona
+Tranquility                                     *B3
+Surf School
+Beach
+Sea
+(Yerba Buena)
+Argo
+Ignifera
+Ignis Mons
+Colchis
+Mare Internum
+Hector
+Agamemnon
+Drake                                           *B4
+Triforce Temples
+Clytemnestra
+Aeneas
+Mare Tropicum                                   *L4
+Tropicana
+Dido Tower
+Italia
+Lupercal Cave
+Mare Subtropicum
+Odysseus, Ithaca, Lotus Grove                        
+Isla Arida
+Isla Pina, Siren Islands / Beach
+Scylla, underwater?
+Calypso Cave, Phaeacia, Swineherd, Beggar
+Achilles
+Ajax, Ajax Inferior, Diomedes, Teucer
+Tiresias, Oedipus
+Iphigenia, Aulis                              *L5
+Illium, Philoctetes, Ida Mons
+Heracles, Lion, Hydra, Hind, Boar, Stables, Birds
+Minotaur, Labyrinth
+Mare
+Amazons
+Helios Cattle (Mare Occidens)
+Golden Apples (Mare Oriens)
+Ceberus       (Mare Mortuorum, Tartarus, Pluto / Dis)
+Propaganda                                 *B5
+Prison
+Siege                                      *L6
+Tower
+Caput  
+M2 Flees
+Castrum                                    
+Race to M2                                 *B6
+Route to mountain
+Mountain Town
+Mountain
+Mountain Top
+Tower Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
