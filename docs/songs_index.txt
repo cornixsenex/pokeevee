@@ -94,113 +94,115 @@ Final Tower
 
 
 ****CITY - Melodic relaxing
-Villa Florea
-Albion
-Portus Priums
-Castalia
-Robustica
-Sabina Nova
-Peccadum
-Urbia
-South Central
-Deseret
-Palms
-Tranquillitas
-Isla Yerba Buena
-Isla Ignifera
-Isla Tropica / Tropicana
-Isla Italia / Latium / Lavinia / Arcadiaa
-Isla Ithaca
-Isla Pina
-Salix
-Isla Vaca
-Slab City
-Snow Town
+Villa Florea													  # MUS_RG_PALLET
+Albion                                                            # MUS_OLDALE
+Portus Priums                                                     # MUS_RG_OAK_LAB
+Castalia                                                          # MUS_BIRCH_LAB
+Robustica                                                         # MUS_RG_PEWTER
+Sabina Nova                                                       # MUS_RG_SEVII_67
+Peccadum                                                          # MUS_RG_GAME_CORNER
+Urbia                                                             # CALI LOVE I THINK
+South Central                                                     # CALI OR IDK
+Deseret                                                           # MUS_RUSTBORO - MEH
+Palms                                                             # DESERT OR IDK
+Tranquillitas                                                     # MUS_RG_CELADON
+Isla Yerba Buena                                                  # MUS_FALLARBOR
+Isla Ignifera                                                     # FOTM
+Isla Tropica / Tropicana                                          # MUS_RG_FUCHSIA
+Isla Italia / Latium / Lavinia / Arcadiaa                         # MUS_SOOTOPOLIS
+Isla Ithaca                                                       # MUS_FORTREE
+Isla Pina                                                         # MUS_PETALBURG
+Salix                                                             # MUS_VERDANTURF #Double see SnowTown
+Isla Vaca                                                         # IDK tbh
+Slab City                                                         # MUS_RG_SEVII_45
+Snow Town                                                         # MUS_VERDANTURF #Double see Salix
 
-****Route - adventure march etc
-Via Florea
-Via Arbustus
-Sinus Camelus
-Via Fidelium
-Via Litoralis
-Villa Lodge
-Via Saxosa
-Via Obscura (Dungeony - Cave idk)
-Mons Arrival
-Agri
-Ignis Mons
-Isla Arida
-Drake / Kashmir
-Lake Drake
-Spicelands
-Salt Lake
-Illios
-Snow Route
+****Route - adventure march etc                                   
+Via Florea                                                        # MUS_LITTLEROOT
+Via Arbustus                                                      # MUS_ROUTE101
+Sinus Camelus                                                     # MUS_ROUTE104
+Delta Draci                                                       #MUS_RG_ROUTE1
+Via Fidelium                                                      # MUS_RG_ROUTE3
+Via Litoralis                                                     # MUS_RG_ROUTE11
+Villa Lodge                                                       # MUS_RG_VERMILLION
+Via Saxosa                                                        # MUS_ROUTE119
+Via Obscura (Dungeony - Cave idk)                                 # 
+Mons Arrival                                                      # MUS_ROUTE110
+Agri                                                              # MUS_RG_ROUTE1
+Ignis Mons                                                        # 
+Isla Arida                                                        # 
+Drake / Kashmir                                                   # KASHMIR
+Lake Drake                                                        # MUS_RG_SEVII_ROUTE
+Spicelands                                                        # MUS_ROUTE113
+Salt Lake                                                         # 
+Illios                                                            # MUS_GSC_ROUTE38
+Snow Route                                                        # 
 
-****Relaxing Chill places - Piano 'boring' stuff
-School
-Sinus Clara
-Sinus Pacificus
-Villa Vivaria
-Villa Vallis
-Park
-Thermae
-Oasis / Desert Church
-Ardor
-Acta Tranquilla
-Lotus Grove
-Paradisium
+****Relaxing Chill places - Piano 'boring' stuff                   
+School                                                            # MUS_SCHOOL
+Sinus Clara                                                       # MUS_LILYCOVE_MUSEUM
+Sinus Pacificus                                                   # MUS_RG_SS_ANNE
+Villa Vivaria                                                     # MUS_SLATEPORT #IDK
+Villa Vallis                                                      # MUS_RG_CINNABAR #IDK
+Park                                                              #something dead
+Thermae                                                           # 
+Oasis / Desert Church                                             # 
+Ardor                                                             # MUS_OCEANIC_MUSEUM
+Acta Tranquilla                                                   # 
+Lotus Grove                                                       #something heady
+Paradisium                                                        # 
 
-****Dungeons - spooky, intrigue, special hype etc
-Cava Cameli
-Silva & Silva Profunda
-Desert Temple
-Pyramids
-Dark Cave / Labyrinth
-Silva Ignifera
-Ignis Mons Temple
-Colchis
-Lupercal
-Triforce Temple
-Triforce Dungeons
-Villa Circes
-Calypsos' Cave
-Moria
-Troy
-Underworld
-Prison
-Tower
-Capital
-Castrum
-Drake Cave
+****Dungeons - spooky, intrigue, special hype etc                 ###DEFAULT PETALBURG_WOODS
+Cava Cameli                                                       # 
+Silva & Silva Profunda                                            # MUS_RG_VIRIDIAN_FOREST
+Desert Temple                                                     # 
+Pyramids                                                          # MUS_B_PYRAMID
+Dark Cave / Labyrinth                                             # 
+Silva Ignifera                                                    # 
+Ignis Mons Temple                                                 # 
+Colchis                                                           # 
+Lupercal                                                          # 
+Triforce Temple                                                   # 
+Triforce Dungeons                                                 # 
+Villa Circes                                                      # 
+Calypsos' Cave                                                    # 
+Moria                                                             # 
+Troy                                                              # 
+Underworld                                                        # 
+Prison                                                            # 
+Tower                                                             # MUS_RG_ROCKET_HIDEOUT
+Capital                                                           # 
+Castrum                                                           # 
+Drake Cave                                                        # 
 
-****Deserts - arabic, hot, cumbias etc
-Cacnorum
-Desert Sandstorm place
-Desert Quarry
-East Desert
+****Deserts - arabic, hot, cumbias etc                            # MUS_DESERT
+Cacnorum                                                          # MUS_DESERT
+Desert Sandstorm place                                            # MUS_DESERT
+Desert Quarry                                                     # MUS_DESERT
+East Desert                                                       # MUS_DESERT
 
-****Surf Routes - chill surfin rolling etc
-Mare Tranquilum
-Mare Internum
-Mare Tropicum
-Mare Subtropicum
-Mare Occidens
-Mare Oriens
-Mare Mortuorum
-River Drake
+****Surf Routes - chill surfin rolling etc                        # 
+Mare Tranquilum                                                   # MUS_RG_SURF
+Mare Internum                                                     # MUS_DEWFORD
+Mare Tropicum                                                     # MUS_SURF
+Mare Subtropicum                                                  # MUS_LILYCOVE
+Mare Occidens                                                     # MUS_ABANDONED_SHIP
+Mare Oriens                                                       # MUS_CAVE_OF_ORIGIN
+Mare Mortuorum                                                    #MUS_SEALED_CHAMBER
+River Drake  / Lake Drake                                         # MUS_RG_SEVII_ROUTE
 
-****OTHER - specials
-Mart
-Poke Center
-Great Highway
-Hospital
-Salty Spitoon
-Circus
-Campus
-Sirenum Scopuli
-Mountain Top
-Final Tower
+****OTHER - specials                                              
+Mart                                                              # MUS_POKE_MART
+Poke Center                                                       # MUS_RG_POKE_CENTER
+Great Highway                                                     # MUS_CYCLING
+Hospital                                                          # MUS_C_COMM_CENTER
+Salty Spitoon                                                     #Cantina
+Circus                                                            # MUS_TRICK_HOUSE
+Campus                                                            # 
+Sirenum Scopuli                                                   # jiggly or other beauty
+Mountain Top                                                      # 
+Final Tower                                                       # MUS_GYM
+UNDERWORLD - GROUDON maybe idk
 
 
 
@@ -569,5 +571,60 @@ Final Tower
 #define MUS_RG_NET_CENTER           ##### poke center with strings
 #define MUS_RG_POKE_CENTER          ##### 
 #define MUS_TRICK_HOUSE             ##### carnival, games, race
+
+//DOUBLE FOR SORTING
+
+
+****MELODIC - City
+#define MUS_GAME_CORNER             ##### more swinging like ny sorta sinatra yknow
+#define                ##### Bells!
+#define MUS_CONTEST_RESULTS         ##### fair music
+#define MUS_SAILING                 ##### sailing, wheeling fast
+
+****CALM SLOW - SINUS Garden etc
+#define MUS_RG_CREDITS              ##### slow nostalgic
+
+****Adventure / Route
+#define MUS_ROUTE120                ##### Trumpets, soaring bit extra
+#define MUS_ROUTE122                ##### Emerald Intro build up trumpet
+#define MUS_B_TOWER_RS              ##### Trumpet formal challenge
+#define                 ##### Tough road, kinda not serious tho
+#define MUS_EVER_GRANDE             ##### laid back route
+#define MUS_VICTORY_ROAD            ##### Crescendo, climax, high stakes
+#define MUS_B_FRONTIER              ##### high pitch trumpets, into LOTR march
+#define MUS_RG_ROUTE24              ##### oak intro, welcome, horns cool
+#define MUS_B_TOWER                 ##### horns hype march
+#define MUS_B_DOME                  ##### drums, chants, kinda techno tho - Compare DOME_LOBBY
+#define MUS_B_DOME_LOBBY            ##### drums, without the chant - Compare DOME
+#define MUS_CONTEST_LOBBY           ##### march, drums et trumpet
+#define MUS_CONTEST                 ##### trumpets march then chills out bounces
+
+****SPOOKY - DUNGEON
+#define MUS_PETALBURG_WOODS         ##### Spooky jiji iii iijn
+#define MUS_MT_CHIMNEY              ##### should be intro to battle music 
+#define MUS_AQUA_MAGMA_HIDEOUT      ##### Bass, techno, funky, suspicious, dark
+#define MUS_MT_PYRE                 ##### awesome dungeon theme
+#define MUS_MT_PYRE_EXTERIOR        ##### final fantasy intrigue, mystery, eastern flair techno, not great
+#define MUS_WEATHER_GROUDON         ##### space, scortched earth, otherworldly, cosmic
+#define MUS_RG_MT_MOON              ##### underground spooky moony
+#define MUS_RG_SILPH                ##### tension, organ, hype
+#define MUS_RG_LAVENDER             ##### haunted lavender
+#define MUS_RG_VICTORY_ROAD         ##### bells, epic, final
+#define MUS_B_PIKE                  ##### squidward, kinda ugly, kinda evil or odd
+#define MUS_B_ARENA                 ##### spooky flute very johto very oriental
+#define MUS_B_PALACE                ##### uber eastern china dolls et cats gongs
+#define MUS_B_FACTORY               ##### clicks, techno, darude
+#define MUS_RG_POKE_MANSION         ##### very techno spacy
+#define MUS_RG_POKE_TOWER           ##### haunted great flute song
+#define MUS_HALL_OF_FAME_ROOM       ##### horns steady high level
+
+***SPECIAL - 
+#define MUS_RG_GYM                  ##### 
+#define MUS_POKE_CENTER             ##### Nice song refreshing
+#define MUS_UNDERWATER              ##### 
+#define MUS_ABNORMAL_WEATHER        ##### Big Storm theme
+#define MUS_RG_CYCLING              ##### cycling
+#define MUS_RG_NET_CENTER           ##### poke center with strings
+
 
 
