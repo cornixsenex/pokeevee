@@ -4106,17 +4106,64 @@ u16 GetDynamicMusic(void)
 		switch (n) {
 			//Sinus Pacificus
 			case 1:
-				return MAPSEC_SINUS_PACIFICUS;
+				return MUS_RG_SS_ANNE;
 			//Castrum
 			case 2:
-				return MAPSEC_CASTRUM;
+				return MUS_B_DOME_LOBBY;
 			//Sinus Clarus
 			case 3:
-				return MAPSEC_SINUS_CLARUS;
+				return MUS_LILYCOVE_MUSEUM;
 			//Mare Internum
 			case 4:
-				return MAPSEC_MARE_INTERNUM;
+				return MUS_DEWFORD;
 			//fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+    //MareS5 - Mare Tropicum or Acta Echona
+	if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5)) 
+	{
+        //Mare Tropicum
+		if (IsMareS5MareTropicum())
+			return MUS_SURF;
+		else //Everywhere else = Acta Echona
+			return MUS_RG_SS_ANNE;
+	}
+	//Route4
+	if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
+	{
+		n = GetDynamicMapSec_Route4();
+		switch (n) {
+            //Via Litoralis
+			case 1:
+				return MUS_RG_ROUTE11;
+            //Via Fidelium
+			case 2:
+				return MUS_RG_ROUTE3;
+            //Sinus Pacificus
+			case 3:
+				return MUS_RG_SS_ANNE;
+            //Fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//Route6
+	if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
+	{
+		n = GetDynamicMapSec_Route6();
+		switch (n) {
+            //Via Litoralis
+			case 1:
+				return MUS_RG_ROUTE11;
+            //Villa Vivaria
+			case 2:
+				return MUS_CONTEST_WINNER;
+            //Sinus Pacificus
+			case 3:
+				return MUS_RG_SS_ANNE;
+            //Fallback
 			default:
 				return MAPSEC_DYNAMIC;
 		}

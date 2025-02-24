@@ -142,13 +142,14 @@ Snow Route                                                        #
 School                                                            # MUS_SCHOOL
 Sinus Clara                                                       # MUS_LILYCOVE_MUSEUM
 Sinus Pacificus                                                   # MUS_RG_SS_ANNE
-Villa Vivaria                                                     # MUS_SLATEPORT #IDK
+Villa Vivaria                                                     # MUS_RG_ROUTE3 #IDK
 Villa Vallis                                                      # MUS_RG_CINNABAR #IDK
 Park                                                              #something dead
 Thermae                                                           # 
 Oasis / Desert Church                                             # 
 Ardor                                                             # MUS_OCEANIC_MUSEUM
 Acta Tranquilla                                                   # 
+Acta Echona                                                       #SS_ANNE #DOUBLE
 Lotus Grove                                                       #something heady
 Paradisium                                                        # 
 
@@ -172,7 +173,7 @@ Underworld                                                        #
 Prison                                                            # 
 Tower                                                             # MUS_RG_ROCKET_HIDEOUT
 Capital                                                           # 
-Castrum                                                           # 
+Castrum                                                           # MUS_B_DOME_LOBBY
 Drake Cave                                                        # 
 
 ****Deserts - arabic, hot, cumbias etc                            # MUS_DESERT
@@ -577,9 +578,8 @@ UNDERWORLD - GROUDON maybe idk
 
 ****MELODIC - City
 #define MUS_GAME_CORNER             ##### more swinging like ny sorta sinatra yknow
-#define                ##### Bells!
-#define MUS_CONTEST_RESULTS         ##### fair music
 #define MUS_SAILING                 ##### sailing, wheeling fast
+#define MUS_SLATEPORT
 
 ****CALM SLOW - SINUS Garden etc
 #define MUS_RG_CREDITS              ##### slow nostalgic
