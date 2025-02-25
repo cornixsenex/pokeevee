@@ -3842,9 +3842,9 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 			case 0:
 				return MAPSEC_DYNAMIC;
 			case 1:
-				return MAPSEC_VIA_LITORALIS;
-			case 2:
 				return MAPSEC_VIA_FIDELIUM;
+			case 2:
+				return MAPSEC_VIA_LITORALIS;
 			case 3:
 				return MAPSEC_SINUS_PACIFICUS;
 			default:
@@ -3864,6 +3864,25 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_VILLA_VIVARIA;
 			case 3:
 				return MAPSEC_SINUS_PACIFICUS;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//Route7
+	if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
+	{
+		n = GetDynamicMapSec_Route7();
+		switch (n) {
+			case 1:
+				return MAPSEC_VIA_LITORALIS;
+			case 2:
+				return MAPSEC_MARE_INTERNUM;
+			case 3:
+				return MAPSEC_MONTES_VIGILIAE; 
+			case 4:
+				return MAPSEC_VILLA_VALLIS;
+			case 5:
+				return MAPSEC_SABINA_NOVA;
 			default:
 				return MAPSEC_DYNAMIC;
 		}
@@ -4135,12 +4154,12 @@ u16 GetDynamicMusic(void)
 	{
 		n = GetDynamicMapSec_Route4();
 		switch (n) {
-            //Via Litoralis
-			case 1:
-				return MUS_RG_ROUTE11;
             //Via Fidelium
-			case 2:
+			case 1:
 				return MUS_RG_ROUTE3;
+            //Via Litoralis
+			case 2:
+				return MUS_RG_ROUTE11;
             //Sinus Pacificus
 			case 3:
 				return MUS_RG_SS_ANNE;
@@ -4164,6 +4183,30 @@ u16 GetDynamicMusic(void)
 			case 3:
 				return MUS_RG_SS_ANNE;
             //Fallback
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//Route7
+	if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
+	{
+		n = GetDynamicMapSec_Route7();
+		switch (n) {
+            //Via Litoralis
+			case 1:
+				return MUS_RG_ROUTE11;
+            //Mare Internum
+			case 2:
+				return MUS_DEWFORD;
+		    //Montes Vigiliae
+            case 3:
+				return MUS_B_FRONTIER; 
+            //Villla Vallis
+			case 4:
+				return MUS_RG_CINNABAR;
+            //Sabina Nova
+			case 5:
+				return MUS_RG_SEVII_67;
 			default:
 				return MAPSEC_DYNAMIC;
 		}

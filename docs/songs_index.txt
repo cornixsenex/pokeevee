@@ -136,6 +136,7 @@ Lake Drake                                                        # MUS_RG_SEVII
 Spicelands                                                        # MUS_ROUTE113
 Salt Lake                                                         # 
 Illios                                                            # MUS_GSC_ROUTE38
+Montes Vigiliae                                                   # MUS_B_FRONTIER
 Snow Route                                                        # 
 
 ****Relaxing Chill places - Piano 'boring' stuff                   

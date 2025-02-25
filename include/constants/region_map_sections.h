@@ -191,10 +191,10 @@
 #define MAPSEC_TANOBY_KEY                   0xBA
 #define MAPSEC_BIRTH_ISLAND_FRLG            0xBB
 #define MAPSEC_MONEAN_CHAMBER               0xBC
-#define MAPSEC_LIPTOO_CHAMBER               0xBD
-#define MAPSEC_WEEPTH_CHAMBER               0xBE
-#define MAPSEC_DILFORD_CHAMBER              0xBF
 //Below have been altered, above are vanilla BREAK break Break
+#define MAPSEC_SABINA_NOVA                  0xBD
+#define MAPSEC_VILLA_VALLIS                 0xBE
+#define MAPSEC_MONTES_VIGILIAE              0xBF
 #define MAPSEC_VILLA_VIVARIA                0xC0
 #define MAPSEC_VIA_LITORALIS                0xC1
 #define MAPSEC_CASTRUM                      0xC2

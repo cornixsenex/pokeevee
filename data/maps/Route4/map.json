@@ -499,6 +499,294 @@
       "var": "VAR_ROUTE4_STATE",
       "var_value": "0",
       "script": "Route4_EventScript_RocketTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 42,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaFidelium"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Route4_Script_Transition_SinusPacificus"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Route4_Script_Transition_ViaLitoralis"
     }
   ],
   "bg_events": [

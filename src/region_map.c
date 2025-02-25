@@ -1841,9 +1841,9 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_VIA_LITORALIS);
-				case 2:
 					return StringCopy(dest, sMapName_VIA_FIDELIUM);
+				case 2:
+					return StringCopy(dest, sMapName_VIA_LITORALIS);
 				case 3:
 					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
 				default:
@@ -1864,6 +1864,26 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, sMapName_VILLA_VIVARIA);
 				case 3:
 					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+		//Route7
+		if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
+		{
+			n = GetDynamicMapSec_Route7();
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_VIA_LITORALIS);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_INTERNUM);
+				case 3:
+					return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+				case 4:
+					return StringCopy(dest, sMapName_VILLA_VALLIS);
+				case 5:
+					return StringCopy(dest, sMapName_SABINA_NOVA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -3413,18 +3433,18 @@ bool32 IsMareS5MareTropicum(void)
 u32 GetDynamicMapSec_Route4(void)
 {	
 
-	//1: Via Litoralis - Include grass patch top left and top road area
-	//2: Via Fidelium - South of Mountain and Bay
+	//1: Via Fidelium - South of Mountain and Bay
+	//2: Via Litoralis - Include grass patch top left and top road area
 	//3: Sinus Pacificus - Include most of mount and top and bottom bay beach
 
     s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
 
-    //Via Litoralis - Bottom
+    //Via Fidelium - Bottom
     if (y > 41)
         return 1;
-    //Via Fidelium - Top and top left grassy area
+    //Via Litoralis - Top and top left grassy area
     else if 
         (
         (y < 11)  ||
@@ -3472,6 +3492,46 @@ u32 GetDynamicMapSec_Route6(void)
         return 3;
 }
 
+u32 GetDynamicMapSec_Route7(void)
+{
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+    //1: Via Litoralis
+    //2: Mare Internum
+    //3: Montes Vigiliae
+    //4: Villa Vallis
+    //5: Sabina Nova
+
+
+    //Via Litoralis
+    if (y < 28)
+        return 1;
+    //Mare Internum
+    else if (x < 4 && y > 45)
+        return 2;
+    //Montes Vigiliae
+    else if 
+        (
+        (y > 74) ||
+        ( (y == 74) && (x > 7) ) ||
+        ( (y == 73) && (x > 9) ) ||
+        ( (y == 72) && (x > 10) ) ||
+        ( (y == 71) && (x > 10) ) ||
+        ( (y == 70) && (x > 10) ) ||
+        ( (y == 69) && (x > 10) ) ||
+        ( (y == 68) && (x > 10) ) ||
+        ( (y == 67) && (x > 25) ) 
+        )
+        return 3;
+    //Villa Vallis
+    else if (y > 46)
+        return 4;
+    //Sabina Nova
+    else
+        return 5;
+}
 
 
 

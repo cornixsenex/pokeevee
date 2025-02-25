@@ -600,3 +600,5 @@ gSpecials::
 	def_special GetDynamicMapSec_SRoute18
 	def_special IsMareS5MareTropicum
 	def_special GetDynamicMapSec_Route4
+	def_special GetDynamicMapSec_Route6
+	def_special GetDynamicMapSec_Route7

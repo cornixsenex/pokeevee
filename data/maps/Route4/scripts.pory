@@ -1,152 +1,41 @@
-mapscripts Route4_MapScripts {}
 
-//School to understand Latin
-//Nestor prompts you to gather the heroes
-//Convince the heroes to gather
-//Nestor summons Heracles
-//
+//DYNAMIC MAP
+//VAR_TEMP_5:
 
-//Catalogue of Heroes
-//Achilleus
-//Hektor
-//Ulysses
-//Aeneis
-//Ajax
-//Diomedes
-//Menelaus
-//Alexandros
-//Agamamnon
-//Philoctetes
-//Troilus
-//Lesser Ajax
-//Calchas
+//1:Via Fidelium
+//2:Via Litoralis
+//3:Sinus Pacificus
 
-//Ulysses
-	//Feigning madness at home, then must be guided to Nestor after getting lost many times
-		//Odyssey:
-			//  1: Odysseus feigns madness. He has released his sheep and now keeps rocks in the pasture. He runs in circles muttering mumbo jumbo. His wife assures you he is quite insane. His son plays with the sheep but seems bored since his father won't play with him. He asks if you'd like to play hide and seek. When he's found he will either go to a new hiding spot, or return to the sheep. When he's in hiding if you speak with Penelope she will freak and go mad searching for her son, she will go to Ulysses who will then break character and agree to go to Nestor if you bring his boy back. Then when you find the boy when he returns to the sheep Ulysses will be with Penelope and will leave when you speak with him.
-			//  2: Lotus Eaters - Ulysses is in the Lotus Grove on Maui and won't leave until you bring him some Kind Bud
-			//  3: Cyclops - Bring Ulysses a sheeps skin while he's locked in the cave (take the back way since front way is blocked by Polyphemus) He will give you a Krater of wine, if you deliver that to Polyphemus he will drink it and then let the sheep out not noticing Ulysses imperfect disguise. Speak to Ulysses in the field with the Sheep in his disguise and he will depart. I think Polyphemus can play a part in another myth as well somewhere down the line.
-			//  4: Circe - When you meet her she offers you a drink. If you drink it KO otherwise she attacks. After being defeated she will heal you in bed. When Ulysses arrives there will be a new pig NPC who if you interact with it while holding "Moly" it will transform into Ulysses...in fact all the animals should be interactable with 'Moly' Moly is a berry, or flower or herb not mota...or maybe mota.
-			//  5: Shades - Sacrifice to the shades
-			//  6: Sirens - defeat the sirens so they stop singing - (Musical hut on Big Island?)
-			//  7: Scylla and Charybdis - Ulysses appears on the norther spit of Italia along with a Tentecruel patrolling the waters inbetween italia and Maui. After defeat / capture Scylla speak to him he will leave
-			//  8: Calypso - Within the sea cave south Big Island Ulysses has become Calypso's boy toy. She is enraged when you arrive to take him from her and does battle, after which speak to him he will leave. She will then rest / heal you in bed
-			//  9: Atlantis? - Ulysses arrives on the mainland where a group of people told him of the new play about the Trojan War where he was a hero. He insists you watch the performance before departing.
-			// 10: Swineherd - Ulysses is in a poor farmer's hut where he refuses to leave to join Nestor until you bring something for the poor man to eat.
-			// 11: Beggar - A new beggar appears in the city who asks for money. At this point Penelope whill lose her wedding ring. If you find it and return it to her she will just lose it again and again, if you give the ring to Ulysses instead he will become enraged and accuse you of cucking him
-			// 12: Battle - He uses tricky pokemon, trojan horse, big dog named (I forgot), prolly some psychic types. After he's defeated he FINALLY returns to Nestor
-//Achilleus
-	//His Myrmidon guard will tell you Lord Achilles refuses to leave his ship or accept guests as he mourns the departure of his lover Patrokles who has gone to buy things at the store in the city. 
-	//After this if you go to the store (Department store?) He will exit the door as you approach and accuse you of getting in his way. He attacks, after defeating him he...dies? And his herald shocked returns with news to Achilles. 
-	//When you return to the ships the guard tries to warn you but Achilles storms out enraged and attacks you. Defeated he will return to Nestor.
-//Agamemnon
-	//Under the spell of Clytemnestra, needs Oresetes help to recover. Orestes, pursued by the 3 ghosts runs madly through the forest. Once the furies are vanquished he will show you the secret way into Agamemnon's palace where you together battle Clytemnestra and Aegisthus. Once defeated the spell is broken and Agamemnon is freed from the spell. Orestes' ghost re-appear to torment him for his deed. They can be defeated again and he will return to be at peace in the house of Agamemnon.
-//Menelaus
-	//At home distraught he can't find and recover his lost helen
-//Ajax
-	//Has gone mad, butchered a flock of sheep and found somewhere contemplating suicide
-//Diomedes
-	//The greatest racer in the hippodrome must be defeated in a race
-//Teucer / Lesser Aias
-	//Failed at the GD concert, will leave after the music stops
-//Philoctetes
-	//Stranded on the Big island in the middle of the jungle, injured foot he needs medicine. He hides in a shack deep in the jungle of Big Island. He tells you to stay back, attacks when you get near, then tells his tale. Abandoned there to die and in desperate need of medicine. Bring him the medicine and he will depart
-//Tiresies / Calchas
-	//With Oedipus, will leave after odipus does his thing
+mapscripts Route4_MapScripts {
 
-//Hektor
-	//In beach cave training to be stronger. Returns without a fight.
-//Alexandros
-	//In hiding with his beloved helen. A wild bull attacks which he yokes, the people exclaim that none but the great Alexandros, prince paris, could have done such a thing. When confronted he immediately goes to Nestor in fear. Helen attacks refusing to return to her husband but relents after defeat.
-//Aeneis
-	//On Lavinian shores! Arms and the boys of whom I cry!
-	//Aeneis recognizes the authority of Nestor and wishes to return but admits his obligation to the pythia who told him to found a city here, and to his family, is higher. On the shore Aeneis runs up and down saying his twin grandsons have gone missing for days. He and his son, Faustulus, don't have much hope but he refuses to rest until they are found. In the Lupercal Cave (deep?) you find the boys and the wolf. Upon approach the boys retread and mama approaches. She growls as you approach and if you get too close she attacks. After being defeated or captured Faustulus will enter and exclaim with joy at the discover of his boys and bring them home where you will find Aeneis ready to meet Nestory. Faustulus makes some joke about how the twins are constantly fighting with eachother but that the auspices are good, a great city will be built and his descendants shall inherit the earth.
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route4)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+		}
+	}
 
-//Trojan War
+}
 
-//Once the heros are assembles Nestor will conduct a headcount but find only 11 men present. At this point Menelaus will exclaim "He's stolen her!" Paris has stolen Helen. Menelaus insists the heros assemble to defeat Paris and win her back. Hektor and Aeneas say they will not fight their own brother, they give respect to Nestor and the heros but leave to defend their family. Nestor laments the breaking of the heros but suggests you join the heros to get Helen back so that the heros can re-assemble and summon heracles.
-	//Iphigenia
-		//The Heros assemble (somewhere not Troy) and realize they don't know where Paris has gone. Tiresias communes with the divine and declares that one of them must sacrifice their child. It goes around the horn that everyone is shocked but Agamemnon rises and says he will sacricfice his daughter Iphigenia after her mother had tried to kill him. He charges you to go retrieve her.
-		//Return to Orestes @ Agamemnon house
-		//Orestes says that Iphigenia has gone to Aulis (why?)
-		//When you two go to fetch her you are captured and brought to be sacrificed?
-		//When she realizes what's happened create plan to escape
-		//Sneak to lake, escape on the boat that brought you
-		//Back at palace of Agamemnon lie to her and say she's going to marry Achilles
-		//Bring her to the greek camp
-		//Sacrifice
-		//The way to Troy is made clear
-	//Arrival at Troy (Castle tiles available at Docs/Poke/art/castle...png - NOT in the sub directories)
-	//12 battles all together, final 3: Hektor, Aeneas, Paris
-	//After first X battles Achilles goes to get supplies
-	//Go with him to raid somewhere
-	//He returns with Briseis
-	//A great plague strikes the army
-	//Tiresias says Briseis must be returned
-	//Achilles throws a fit
-	//Pandaros fight
-	//Trojans push to the ships
-	//Patrokles fall (IDK)
-	//Achilles returns
-	//Hektor fight
-	//Ulysses trojan horse device to infiltrate Troy (Probably just a tunnel) - TROJAN WHORES!
-	//Aeneas
-	//Priam
-	//Paris
-	//Helen
+script Route4_Script_Transition_ViaLitoralis {
+    setvar (VAR_TEMP_5, 2)
+    special (ShowMapNamePopup)
+}
 
-//12 trials
-//defeat nemean lion
-//defeat hydra
-//capture hind (stantler)
-//capture boar
-//clean stables
-//defeat stygian birds
-//capture bull
-//capture mare
-//defeat hippolyta
-//catpure cattle
-//steal 3 golden apples
-//capture ceberus
+script Route4_Script_Transition_ViaFidelium {
+    setvar (VAR_TEMP_5, 1)
+    special (ShowMapNamePopup)
+}
 
-
-// *Catalogue of other myths*
-//Theseus - something underground minotaur
-//Perseus - monster head turns victims to stone
-//Orpheus - flute to lull cerberus to sleep
-//Jason   - out on a boat - golden fleece
-//Atlas
-//Belerophon
-//Daedalus and Icarus
-//Minos
-//Narcissus
-//Proteus
-//Prometheus
-//Cadmus
-//Pyramus and Thisbe
-//Muses
-//Persephone / Proserpine
-//Pygmalion (statue lover)
-//Io and Zeus
-//Phaethon
-//Danaides / Amazonians
-//Calydonian Boar Hunt
-//Asclepius (Doctor who ressurected the dead)
-//Castor and Pollux - Dioscuri
-//Meleager and Althea (Son kills brothers, mother kills son)
-//Oedipus (Sphinx, tradgedy, blidning, 7 against thebes)
-//Sisyphus
-
-//UpdatePerDay
-//ClearDailyFlags
-
-//  --- This could help with re-setting the mythical pokemon on the timer
-//ChangeBoxPokemonName 
-//SetBoxMonData
-//GetBoxedMonPtr
-
-
+script Route4_Script_Transition_SinusPacificus {
+    setvar (VAR_TEMP_5, 3)
+    special (ShowMapNamePopup)
+}
 
 script Route4_EventScript_Delia {
 	trainerbattle_double (TRAINER_DELIA_AND_BONNIE, Route4_Text_DeliaIntro, Route4_Text_DeliaLost, Route124_Text_LilaNotEnoughMons)

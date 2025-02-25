@@ -186,10 +186,10 @@ static const u8 sMapName_THREE_ISLE_PATH[] = _("THREE ISLE PATH");
 static const u8 sMapName_TANOBY_KEY[] = _("TANOBY KEY");
 static const u8 sMapName_BIRTH_ISLAND[] = _("BIRTH ISLAND");
 static const u8 sMapName_MONEAN_CHAMBER[] = _("MONEAN CHAMBER");
-static const u8 sMapName_LIPTOO_CHAMBER[] = _("LIPTOO CHAMBER");
-static const u8 sMapName_WEEPTH_CHAMBER[] = _("WEEPTH CHAMBER");
-static const u8 sMapName_DILFORD_CHAMBER[] = _("DILFORD CHAMBER");
 //BREAK - BELOW ARE ALTERED
+static const u8 sMapName_SABINA_NOVA[] = _("SABINA NOVA");
+static const u8 sMapName_VILLA_VALLIS[] = _("VILLA VALLIS");
+static const u8 sMapName_MONTES_VIGILIAE[] = _("MONTES VIGILIAE");
 static const u8 sMapName_VILLA_VIVARIA[] = _("VILLA VIVARIA");
 static const u8 sMapName_VIA_LITORALIS[] = _("VIA LITORALIS");
 static const u8 sMapName_CASTRUM[] = _("CASTRUM");
@@ -438,10 +438,10 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_TANOBY_KEY] = { 0, 0, 1, 1, sMapName_TANOBY_KEY},
     [MAPSEC_BIRTH_ISLAND_FRLG] = { 0, 0, 1, 1, sMapName_BIRTH_ISLAND},
     [MAPSEC_MONEAN_CHAMBER] = { 0, 0, 1, 1, sMapName_MONEAN_CHAMBER},
-    [MAPSEC_LIPTOO_CHAMBER] = { 0, 0, 1, 1, sMapName_LIPTOO_CHAMBER},
-    [MAPSEC_WEEPTH_CHAMBER] = { 0, 0, 1, 1, sMapName_WEEPTH_CHAMBER},
-    [MAPSEC_DILFORD_CHAMBER] = { 0, 0, 1, 1, sMapName_DILFORD_CHAMBER},
 	//BELOW ARE ALTERED
+    [MAPSEC_SABINA_NOVA] = { 0, 0, 1, 1, sMapName_SABINA_NOVA},
+    [MAPSEC_VILLA_VALLIS] = { 0, 0, 1, 1, sMapName_VILLA_VALLIS},
+    [MAPSEC_MONTES_VIGILIAE] = { 0, 0, 1, 1, sMapName_MONTES_VIGILIAE},
     [MAPSEC_VILLA_VIVARIA] = { 0, 0, 1, 1, sMapName_VILLA_VIVARIA},
     [MAPSEC_VIA_LITORALIS] = { 0, 0, 1, 1, sMapName_VIA_LITORALIS},
     [MAPSEC_CASTRUM] = { 0, 0, 1, 1, sMapName_CASTRUM},
