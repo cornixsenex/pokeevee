@@ -1,35 +1,22 @@
+
+const OBJ_EVENT_SCOTT = 2
+const FIELD_PIC_SCOTT = 33
+
 mapscripts CityClara_CannabisClub_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
+        //Show smokey interior
 		setweather (WEATHER_FOG_DIAGONAL)
+        if (var(VAR_CITYCLARA_STATE) != 0) {
+            call (CityClara_CannabisCenter_Script_ShowScott)
+        }
 	}
-	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_CITYCLARA_STATE, 0: CityClar_CannabisCenter_ScottTrigger
-	]
 }
 
-script CityClar_CannabisCenter_ScottTrigger {
-	setvar (VAR_CITYCLARA_STATE, 1)
-	lockall
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	load_field_pic (4, 190, 98)
-	msgbox (CityClara_CannabisCenter_Text_Leaf1) 
-	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_CannabisCenter_Movement_PlayerToScott)
-	waitmovement (0)
-	destroy_field_pic (4)	
-	load_field_pic (5, 190, 98)
-	msgbox (CityClara_CannabisCenter_Text_Scott1)	
-	destroy_field_pic (5)	
-	load_field_pic (4, 190, 98)
-	msgbox (CityClara_CannabisCenter_Text_Leaf2) 
-	destroy_field_pic (4)
-	applymovement (OBJ_EVENT_ID_PLAYER, CityClara_CannabisCenter_Movement_PlayerDown) 
-	waitmovement (0)	
-	applymovement (3, CityClara_CannabisCenter_Movement_LeafExit)
-	waitmovement (0)
-	removeobject (3)
-	releaseall
-	end
+script CityClara_CannabisCenter_Script_ShowScott {
+    setobjectxyperm (OBJ_EVENT_SCOTT, 8, 4)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_DOWN)
+
+    return
 }
 
 script CityClara_CannabisCenter_Clerk {
@@ -46,11 +33,12 @@ script CityClara_CannabisCenter_Clerk {
 script CityClara_CannabisCenter_Scott {
 	lock
 	faceplayer
-	load_field_pic (5, 190, 98)
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
 	msgbox (CityClara_CannabisCenter_Text_Scott)
 	closemessage
-	destroy_field_pic (5)
-	applymovement (2, Common_Movement_FaceRight)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+	applymovement (OBJ_EVENT_SCOTT, Common_Movement_FaceDown)
+    waitmovement (0)
 	release
 	end
 }

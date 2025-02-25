@@ -1,6 +1,30 @@
 
-//DYNMAMIC MAP
+const FIELD_PIC_LEAF = 4
+const FIELD_PIC_SCOTT = 33
 
+const OBJ_EVENT_JESSIE = 14
+const OBJ_EVENT_JAMES = 15
+const OBJ_EVENT_MEOWTH = 16
+const OBJ_EVENT_MAN2 = 4
+const OBJ_EVENT_FATMAN = 5
+const OBJ_EVENT_WOMAN1 = 6
+const OBJ_EVENT_GENTLEMAN = 9
+const OBJ_EVENT_WOMAN5 = 8
+const OBJ_EVENT_WOMAN3 = 10
+const OBJ_EVENT_MANIAC = 11
+const OBJ_EVENT_OLDWOMAN = 12
+const OBJ_EVENT_LASS = 13
+
+
+const OBJ_EVENT_ROCKETGRUNTM = 1
+const OBJ_EVENT_ROCKETGRUNTF = 3
+
+const OBJ_EVENT_SCOTT = 26
+const OBJ_EVENT_LEAF = 18
+const OBJ_EVENT_JIGGLYPUFF = 27
+
+//DYNMAMIC MAP
+//VAR_TEMP_5
 //1: Acta Echona
 //2: Silva Profunda
 //3: Via Fidelium
@@ -27,10 +51,23 @@ mapscripts CityClara_MapScripts {
 		} elif (var(VAR_RESULT) == 6) {
 			setvar (VAR_TEMP_5, 6)
 		}
+
+        //Show Mewscene
+        if (var(VAR_CITYCLARA_STATE) < 3) {
+            call (CityClara_Script_ShowMewScene)
+        }
+   
+        //Show Leaf et Scott
+        if (var(VAR_CITYCLARA_STATE) == 0) {
+            call (CityClara_Script_ShowLeafEtScott)
+        } elif (var(VAR_CITYCLARA_STATE) == 1) {
+            call (CityClara_Script_ShowLeaf)
+        }
+
+        //Show Gardener
 	}
 
 }
-
 
 script CityClara_Script_ActaEchonaTransition {
 	setvar (VAR_TEMP_5, 1)
@@ -68,6 +105,148 @@ script CityClara_Script_DeltaDraciTransition {
 	special (ShowMapNamePopup)
 }
 
+script  CityClara_Script_ShowMewScene {
+
+    //Rockets
+    setobjectxyperm (OBJ_EVENT_ROCKETGRUNTM, 62, 10)
+    setobjectmovementtype (OBJ_EVENT_ROCKETGRUNTM, MOVEMENT_TYPE_FACE_DOWN)
+
+    setobjectxyperm (OBJ_EVENT_ROCKETGRUNTF, 65, 10)
+    setobjectmovementtype (OBJ_EVENT_ROCKETGRUNTF, MOVEMENT_TYPE_FACE_DOWN)
+    //Jesse et James
+    setobjectxyperm (OBJ_EVENT_JESSIE, 34, 22)
+    setobjectmovementtype (OBJ_EVENT_JESSIE, MOVEMENT_TYPE_FACE_DOWN)
+
+    setobjectxyperm (OBJ_EVENT_JAMES, 36, 22)
+    setobjectmovementtype (OBJ_EVENT_JAMES, MOVEMENT_TYPE_FACE_DOWN)
+
+    setobjectxyperm (OBJ_EVENT_MEOWTH, 35, 22)
+    setobjectmovementtype (OBJ_EVENT_MEOWTH, MOVEMENT_TYPE_FACE_DOWN)
+    //City Line
+    setobjectxyperm (OBJ_EVENT_MAN2, 35, 23)
+    setobjectmovementtype (OBJ_EVENT_MAN2, MOVEMENT_TYPE_FACE_UP)
+    
+    setobjectxyperm (OBJ_EVENT_FATMAN, 35, 24)
+    setobjectmovementtype (OBJ_EVENT_FATMAN, MOVEMENT_TYPE_FACE_UP)
+    
+    setobjectxyperm (OBJ_EVENT_WOMAN1, 35, 25)
+    setobjectmovementtype (OBJ_EVENT_WOMAN1, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm (OBJ_EVENT_GENTLEMAN, 35, 26)
+    setobjectmovementtype (OBJ_EVENT_GENTLEMAN, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm (OBJ_EVENT_WOMAN5, 35, 27)
+    setobjectmovementtype (OBJ_EVENT_WOMAN5, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm (OBJ_EVENT_WOMAN3, 35, 28)
+    setobjectmovementtype (OBJ_EVENT_WOMAN3, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm (OBJ_EVENT_MANIAC, 35, 29)
+    setobjectmovementtype (OBJ_EVENT_MANIAC, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm (OBJ_EVENT_OLDWOMAN, 35, 30)
+    setobjectmovementtype (OBJ_EVENT_OLDWOMAN, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm (OBJ_EVENT_LASS, 35, 31)
+    setobjectmovementtype (OBJ_EVENT_LASS, MOVEMENT_TYPE_FACE_UP)
+
+    return
+}
+
+script CityClara_Script_ShowLeafEtScott {
+    setobjectxyperm (OBJ_EVENT_SCOTT, 30, 37)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_DOWN)
+
+    setobjectxyperm (OBJ_EVENT_LEAF, 31, 37)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+
+    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 32, 37)
+    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+
+    return
+}
+
+script CityClara_Script_ShowLeaf {
+    setobjectxyperm (OBJ_EVENT_LEAF, 32, 31)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+
+    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 31, 31)
+    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+
+    return
+}
+
+script CityClara_Script_LeafEtScottSceneA {
+    lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    call (CityClara_Script_LeafEtScottScene)
+
+    releaseall
+    end
+}
+
+script CityClara_Script_LeafEtScottSceneB {
+    lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+    waitmovement (0)
+    call (CityClara_Script_LeafEtScottScene)
+
+    releaseall
+    end
+}
+
+script CityClara_Script_LeafEtScottScene {
+    //Move player to position
+    applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_LeafEtScottScene_Player)
+    waitmovement (0)
+    //Leaf: Long lines
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (CityClara_Text_Leaf1)
+	destroy_field_pic (FIELD_PIC_LEAF)
+    //Scott: No use waiting around all day come find me at the bar I'll buy you a drink and we'll wait this out in comfort
+	load_field_pic (FIELD_PIC_SCOTT, 190, 98)
+	msgbox (CityClara_Text_Scott1)
+	destroy_field_pic (FIELD_PIC_SCOTT)
+    closemessage
+    //Exit Scott
+    applymovement (OBJ_EVENT_SCOTT, CityClara_Movement_LeafEtScottScene_ScottExit)
+    waitmovement (0) 
+    //remove scott
+    removeobject (OBJ_EVENT_SCOTT)
+    setobjectxyperm (OBJ_EVENT_SCOTT, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_SCOTT)
+    //L: I won't wait we need to find a way inside the church to see Mew
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (CityClara_Text_Leaf2)
+	destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
+    //Exit Leaf
+    applymovement (OBJ_EVENT_LEAF, CityClara_Movement_LeafEtScottScene_LeafExit)
+    applymovement (OBJ_EVENT_JIGGLYPUFF, CityClara_Movement_LeafEtScottScene_LeafExit)
+    waitmovement (0) 
+    //reset Leaf et Jig location
+    removeobject (OBJ_EVENT_LEAF)
+    setobjectxyperm (OBJ_EVENT_LEAF, 32, 31)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (OBJ_EVENT_LEAF)
+    showobjectat (OBJ_EVENT_LEAF, MAP_CITY_CLARA)
+
+    removeobject (OBJ_EVENT_JIGGLYPUFF)
+    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 31, 31)
+    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (OBJ_EVENT_JIGGLYPUFF)
+    showobjectat (OBJ_EVENT_JIGGLYPUFF, MAP_CITY_CLARA)
+    //setup vars
+    setvar (VAR_CITYCLARA_STATE, 1)
+
+    releaseall
+    end
+}
+
 
 script CityClara_EventScript_ClubSign {	
 	lock
@@ -86,10 +265,10 @@ script CityClara_EventScript_CannaWoman {
 	end
 }
 
-script CityClara_EventScript_GreenSuit {
+script CityClara_EventScript_Man2 {
 	lock
 	faceplayer
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+	if (var(VAR_CITYCLARA_STATE) > 2) {
 		msgbox (CityClara_Text_GreenSuit2)
 	} 
 	else {
@@ -103,7 +282,7 @@ script CityClara_EventScript_GreenSuit {
 script CityClara_EventScript_FatMan {
 	lock
 	faceplayer
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+	if (var(VAR_CITYCLARA_STATE) > 2) {
 		msgbox (CityClara_Text_FatMan2)
 	} 
 	else {
@@ -114,10 +293,10 @@ script CityClara_EventScript_FatMan {
 	end
 }
 
-script CityClara_EventScript_WomanA {
+script CityClara_EventScript_Woman1 {
 	lock
 	faceplayer
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+	if (var(VAR_CITYCLARA_STATE) > 2) {
 		msgbox (CityClara_Text_WomanA2)
 	} 
 	else {
@@ -128,10 +307,10 @@ script CityClara_EventScript_WomanA {
 	end
 }
 
-script CityClara_EventScript_RedWoman {
+script CityClara_EventScript_Woman5 {
 	lock
 	faceplayer
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+	if (var(VAR_CITYCLARA_STATE) > 2) {
 		msgbox (CityClara_Text_RedWoman2)
 	} 
 	else {
@@ -142,10 +321,25 @@ script CityClara_EventScript_RedWoman {
 	end
 }
 
-script CityClara_EventScript_OldMan {
+//NOTE: Copy of Woman5
+script CityClara_EventScript_Woman3 {
 	lock
 	faceplayer
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+	if (var(VAR_CITYCLARA_STATE) > 2) {
+		msgbox (CityClara_Text_RedWoman2)
+	} 
+	else {
+		msgbox (CityClara_Text_RedWoman)
+	}
+	closemessage
+	release
+	end
+}
+
+script CityClara_EventScript_Gentleman {
+	lock
+	faceplayer
+	if (var(VAR_CITYCLARA_STATE) > 2) {
 		msgbox (CityClara_Text_OldMan2)
 	} 
 	else {
@@ -159,7 +353,7 @@ script CityClara_EventScript_OldMan {
 script CityClara_EventScript_OldWoman {
 	lock
 	faceplayer
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+	if (var(VAR_CITYCLARA_STATE) > 2) {
 		msgbox (CityClara_Text_OldWoman2)
 	} 
 	else {
@@ -173,7 +367,7 @@ script CityClara_EventScript_OldWoman {
 script CityClara_EventScript_Lass {
 	lock
 	faceplayer
-	if (flag(FLAG_CLARACITY_AFTERMEW)) {
+	if (var(VAR_CITYCLARA_STATE) > 2) {
 		msgbox (CityClara_Text_Lass2)
 	} 
 	else {
@@ -363,6 +557,20 @@ movement CityClara_Movement_RocketReturn2B {
 	face_down
 }
 
+movement CityClara_Movement_LeafEtScottScene_Player {
+    walk_right * 3
+    walk_up
+}
+
+movement CityClara_Movement_LeafEtScottScene_ScottExit {
+    walk_down * 3
+    walk_left * 7
+}
+
+movement CityClara_Movement_LeafEtScottScene_LeafExit {
+    walk_up * 5
+}
+
 text CityClara_Text_ClubSign {
 	format("The Chronic\nPremium Cannabis Club")
 }
@@ -479,4 +687,14 @@ text CityClara_Text_James {
 	format("This town is so antique it's comical. Look at all these people waiting in line just for a glimpse of some old pokemon. The city is a better place to live and party people are superior.")
 }
 
+text CityClara_Text_Leaf1 {
+    format("Looks like we weren't the only ones who came to Castalia to catch a glimpse of Mew. The line to enter church is super long!")
+}
 
+text CityClara_Text_Scott1 {
+    format("It's not moving either. If you ask me it's no use waiting in that line right now. We're better off sitting in comfort at the Lotus Club until the line dies down. That's where I'm going! Why don't you join me? I'll buy us all Lotus and let time pass.")
+}
+
+text CityClara_Text_Leaf2 {
+    format("There's no way after travelling out here that we're going to go sit in a club while Mew herself awaits us in that Church! Come with me {PLAYER} we need to find a way to get into that Church ASAP!")
+}

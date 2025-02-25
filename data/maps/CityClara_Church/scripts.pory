@@ -394,8 +394,6 @@ script CityClara_Church_EventScript_JesseAndJamesDefeated {
 	removeobject (8) 
 	removeobject (9) 
 	removeobject (10) 
-	setflag (FLAG_CLARACITY_AFTERMEW)
-	setflag (FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES)
 	fadescreen (0)
 	if (var(VAR_CITYCLARA_STATE) == 1) {		
 		applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenter1)

@@ -5,7 +5,7 @@ const FIELD_PIC_SCOTT = 33
 mapscripts BulbusTown_CannabisCenter_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		setweather (WEATHER_FOG_DIAGONAL)
-		if (var(VAR_SILVANWOODS_STATE) == 0) {
+		if (var(VAR_SILVANWOODS_STATE) != 0) {
 			call (BulbusTown_CannabisCenter_Script_ShowScott)
 		}
 	}
