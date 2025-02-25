@@ -15,6 +15,8 @@ const OBJ_EVENT_MANIAC = 11
 const OBJ_EVENT_OLDWOMAN = 12
 const OBJ_EVENT_LASS = 13
 
+const OBJ_EVENT_GARDENER = 21
+
 
 const OBJ_EVENT_ROCKETGRUNTM = 1
 const OBJ_EVENT_ROCKETGRUNTF = 3
@@ -143,12 +145,6 @@ script  CityClara_Script_ShowMewScene {
 
     setobjectxyperm (OBJ_EVENT_MANIAC, 35, 29)
     setobjectmovementtype (OBJ_EVENT_MANIAC, MOVEMENT_TYPE_FACE_UP)
-
-    setobjectxyperm (OBJ_EVENT_OLDWOMAN, 35, 30)
-    setobjectmovementtype (OBJ_EVENT_OLDWOMAN, MOVEMENT_TYPE_FACE_UP)
-
-    setobjectxyperm (OBJ_EVENT_LASS, 35, 31)
-    setobjectmovementtype (OBJ_EVENT_LASS, MOVEMENT_TYPE_FACE_UP)
 
     return
 }
@@ -321,15 +317,14 @@ script CityClara_EventScript_Woman5 {
 	end
 }
 
-//NOTE: Copy of Woman5
 script CityClara_EventScript_Woman3 {
 	lock
 	faceplayer
 	if (var(VAR_CITYCLARA_STATE) > 2) {
-		msgbox (CityClara_Text_RedWoman2)
+		msgbox (CityClara_Text_Woman3_2)
 	} 
 	else {
-		msgbox (CityClara_Text_RedWoman)
+		msgbox (CityClara_Text_Woman3_1)
 	}
 	closemessage
 	release
@@ -364,6 +359,7 @@ script CityClara_EventScript_OldWoman {
 	end
 }
 
+//NOTE: Fix to accomodate the garden thing
 script CityClara_EventScript_Lass {
 	lock
 	faceplayer
@@ -376,6 +372,61 @@ script CityClara_EventScript_Lass {
 	closemessage
 	release
 	end
+}
+
+//TEMP_FLAG_B = Inside the garden / during garden scene
+script CityClara_Script_Gardener {
+    lock
+    faceplayer
+    //during garden scene
+    if (flag(FLAG_TEMP_B)) {
+        //Check if prerequisites complete -> finish garden scene
+        msgbox (CityClara_Text_Gardener_DuringGarden)
+        closemessage 
+        applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceUp)
+        waitmovement (0)
+    //After garden scene
+    } elif (flag(FLAG_RECEIVED_SCYTHE)) {
+        msgbox (CityClara_Text_Gardener_AfterGarden)
+        closemessage
+    //Before Garden Scene
+    } else {
+        msgbox (CityClara_Text_Gardener_BeforeGardenIntro)
+        applymovement (OBJ_EVENT_GARDENER, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        msgbox (CityClara_Text_Gardener_BeforeGardenBeginYN, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            msgbox (CityClara_Text_Gardener_BeforeGardenDecline)
+            closemessage
+        } else {
+            //setflag to show during garden
+            setflag (FLAG_TEMP_B)
+            //Begin Garden scene - G: Come with me
+            msgbox (CityClara_Text_Gardener_BeforeGardenBegin)
+            //Move into position: Player facing left at gardener in garden
+            applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerBeginGarden1)
+            applymovement (OBJ_EVENT_GARDENER, CityClara_Movement_GardenerBeginGarden1)
+            waitmovement (0)
+            //G: Here take this to cut down the trees and be careful of the bugs
+            msgbox (CityClara_Text_Gardener_BeginGarden1)
+            closemessage
+            //Give player scythe
+            //Set flag has scythe
+            setflag (FLAG_RECEIVED_SCYTHE)
+            //G: I know you can do it
+            msgbox (CityClara_Text_Gardener_BeginGarden2)
+            closemessage
+            //Move into block
+            applymovement (OBJ_EVENT_GARDENER, Common_Movement_WalkRight)
+            applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Movement_PlayerBeginGarden2)
+            waitmovement (0)
+            applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceUp)
+            waitmovement (0)
+            //release
+        }
+    }
+    release
+    end
 }
 
 script CityClara_EventScript_LeafBridge {
@@ -571,6 +622,22 @@ movement CityClara_Movement_LeafEtScottScene_LeafExit {
     walk_up * 5
 }
 
+movement CityClara_Movement_PlayerBeginGarden1 {
+    walk_up * 2
+    face_left
+}
+
+movement CityClara_Movement_GardenerBeginGarden1 {
+    walk_up
+    walk_left
+    face_right
+}
+
+movement CityClara_Movement_PlayerBeginGarden2 {
+    walk_right
+    face_left
+}
+
 text CityClara_Text_ClubSign {
 	format("The Chronic\nPremium Cannabis Club")
 }
@@ -632,15 +699,15 @@ text CityClara_Text_OldMan2 {
 }
 
 text CityClara_Text_OldWoman {
-	format("I'm first in line because I payed for it.")
+	format("Is Mew really here? Am I really here? This life feels like reflections on water...")
 }
 
 text CityClara_Text_OldWoman2 {
-	format("I trust the Party to take care of Mew.")
+	format("Am I still here, or am I an echo?")
 }
 
 text CityClara_Text_Lass {
-	format("I'm first in line because I payed for it.")
+	format("I want to go play in the garden but the gardener says it's dangerous now.")
 }
 
 text CityClara_Text_Lass2 {
@@ -697,4 +764,44 @@ text CityClara_Text_Scott1 {
 
 text CityClara_Text_Leaf2 {
     format("There's no way after travelling out here that we're going to go sit in a club while Mew herself awaits us in that Church! Come with me {PLAYER} we need to find a way to get into that Church ASAP!")
+}
+
+text CityClara_Text_Woman3_1 {
+    format("The line is long, but the wait is worth it.")
+}
+
+text CityClara_Text_Woman3_2 {
+    format("I can't believe how fast time's flying by! I still feel like that same little school girl...")
+}
+
+text CityClara_Text_Gardener_BeforeGardenIntro {
+    format("Oh no! My garden has been overrun by pests and weeds! I don't know what to do!")
+}
+
+text CityClara_Text_Gardener_BeforeGardenBeginYN {
+    format("Oh hey! You're a young, fit, capable boy. Will you help me clean up the garden? Please?")
+}
+
+text CityClara_Text_Gardener_BeforeGardenDecline {
+    format("I understand. It's not your job. Take care.")
+}
+
+text CityClara_Text_Gardener_BeforeGardenBegin {
+    format("Thank you so much! Let me show you inside.")
+}
+
+text CityClara_Text_Gardener_BeginGarden1 {
+    format("Welcome to the Castalia Garden! In better times we grow beautiful things but now the garden looks like such a mess. Please get rid of the pests that have moved in and use this Scythe to cut down the small trees.")
+}
+
+text CityClara_Text_Gardener_BeginGarden2 {
+    format("Now get to work! Good luck! You can do it!")
+}
+
+text CityClara_Text_Gardener_DuringGarden {
+    format("You're not done yet. The garden's still a mess!")
+}
+
+text CityClara_Text_Gardener_AfterGarden {
+    format("Thank you again for cleaining the garden.")
 }

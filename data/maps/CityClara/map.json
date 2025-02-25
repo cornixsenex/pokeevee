@@ -284,7 +284,7 @@
       "x": 79,
       "y": 33,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -297,7 +297,7 @@
       "x": 78,
       "y": 32,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -315,7 +315,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CityClara_Script_Gardener",
       "flag": "0"
     },
     {
@@ -451,8 +451,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 57,
-      "y": 12,
+      "x": 63,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "0",
@@ -460,8 +460,8 @@
     },
     {
       "type": "trigger",
-      "x": 58,
-      "y": 12,
+      "x": 64,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "0",
@@ -469,8 +469,8 @@
     },
     {
       "type": "trigger",
-      "x": 57,
-      "y": 12,
+      "x": 63,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
@@ -478,8 +478,8 @@
     },
     {
       "type": "trigger",
-      "x": 58,
-      "y": 12,
+      "x": 64,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
