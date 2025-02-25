@@ -181,6 +181,7 @@ script Route3_Script_Sign {
 script Route3_Script_RiverDeltaTransition {
 	//setvar to stop infinite trigger
 	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
@@ -188,6 +189,7 @@ script Route3_Script_RiverDeltaTransition {
 script Route3_Script_CanelosCoveTransition {
 	//setvar to stop infinite trigger
 	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 

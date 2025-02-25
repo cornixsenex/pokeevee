@@ -339,10 +339,11 @@
 																// 1: After Club Scott, clear block, show Leaf et Scott before woods
 																// 2: After Leaf and Scott before woods scene, Show boat but NOT Scott et Leaf, trigger show Scott et Leaf
 																// 3: After SilvanLeafScene2. - Show Scott Block - Trigger SilvanLeafScene3 (LeafChik)
-																// 4: During Leaf Spider Den - Do Leaf Block -Alert Music - Show ChikSpider thing
-																// 5: After ChickLeaf - Trigger Scott et Leaf leave woods
-																// 6: Finale, After Scott et Leaf leave woods. 
-#define VAR_CITYCLARA_STATE                  			 0x40F8 // Leaf+Scott in CannaClub...
+																// 4: After Leaf Spider Den  After ChickLeaf - Trigger Scott et Leaf leave woods
+																// 5: Finale, After Scott et Leaf leave woods. 
+#define VAR_CITYCLARA_STATE                  			 0x40F8 // 0: Start, Show / trigger Scott et Leaf in town
+                                                                // 1: After initial scene. Show Leaf by bridge, show scott in club
+                                                                // 2: After Church, reset townspeople locations
 #define VAR_UNUSED_40F9           			             0x40F9 // UNUSED
 #define VAR_ROUTE4_STATE                     			 0x40FA // Controls events on Route4 set to ONE (1) by the rocket event in Route4
 #define VAR_ROBUSTUS_STATE                   			 0x40FB // Controls events in Robustus namely the campers and leaf event; set to 7 on exeunt; triggers leaf before rock tunnel then set to 8; triggers rival ambush then set to 9;

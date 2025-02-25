@@ -62,12 +62,12 @@
 #define FLAG_SILVANWOODS_HIDEFIGHT1   0x2F // After Leaf1 fight hides Fight1
 #define FLAG_SILVANWOODS_HIDEFIGHT2    0x30 // After Mew sight / Stoney fight
 #define FLAG_UNUSED_0x31      0x31 //UNUSED 
-#define FLAG_UNUSED_0x32    0x32 //UNUSED
-#define FLAG_UNUSED_0x33    0x33 //UNUSED 
-#define FLAG_CLARACLUB_HIDELEAF   0x34 // Hide Leaf After leaving the first time
-#define FLAG_CLARACITY_HIDELEAF   0x35 // Starts set, hides Leaf in Clara City
-#define FLAG_CLARACITY_AFTERMEW   0x36 // Hides Scott in the club, and the line outside the church
-#define FLAG_RECEIVED_CUT    0x37 // Have gotten cut from Mrs. Sully?
+#define FLAG_UNUSED_0x32      0x32 //UNUSED
+#define FLAG_UNUSED_0x33      0x33 //UNUSED 
+#define FLAG_UNUSED_0x34      0x34 //UNUSED 
+#define FLAG_UNUSED_0x35      0x35 //UNUSED 
+#define FLAG_UNUSED_0x36      0x36 //UNUSED 
+#define FLAG_RECEIVED_CUT     0x37 // Have gotten cut from Mrs. Sully?
 
 #define FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES    0x38 // Hides Jessee and James in ClaraCity Church
 #define FLAG_CLARACITY_CHURCH_HIDELEAF    0x39 // Hides leaf for her intro

@@ -45,92 +45,100 @@ SRoute18_Script_SinusPacificusTransition::
 # 27 "data//maps/SRoute18/scripts.pory"
 	setvar VAR_TEMP_5, 1
 # 28 "data//maps/SRoute18/scripts.pory"
+	special TransitionMapMusic
+# 29 "data//maps/SRoute18/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 SRoute18_Script_CastrumTransition::
-# 32 "data//maps/SRoute18/scripts.pory"
-	setvar VAR_TEMP_5, 2
 # 33 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_5, 2
+# 34 "data//maps/SRoute18/scripts.pory"
+	special TransitionMapMusic
+# 35 "data//maps/SRoute18/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 SRoute18_Script_SinusClarusTransition::
-# 37 "data//maps/SRoute18/scripts.pory"
+# 39 "data//maps/SRoute18/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 38 "data//maps/SRoute18/scripts.pory"
+# 40 "data//maps/SRoute18/scripts.pory"
+	special TransitionMapMusic
+# 41 "data//maps/SRoute18/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 SRoute18_Script_MareInternumTransition::
-# 42 "data//maps/SRoute18/scripts.pory"
+# 45 "data//maps/SRoute18/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 43 "data//maps/SRoute18/scripts.pory"
+# 46 "data//maps/SRoute18/scripts.pory"
+	special TransitionMapMusic
+# 47 "data//maps/SRoute18/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 SRoute18_Script_TestTriggerOn2::
-# 48 "data//maps/SRoute18/scripts.pory"
-	lock
-# 49 "data//maps/SRoute18/scripts.pory"
-	setvar VAR_TEMP_7, 1
-# 50 "data//maps/SRoute18/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 51 "data//maps/SRoute18/scripts.pory"
-	waitmovement 0
 # 52 "data//maps/SRoute18/scripts.pory"
-	msgbox SRoute18_Script_TestTriggerOn2_Text_0, MSGBOX_DEFAULT
+	lock
 # 53 "data//maps/SRoute18/scripts.pory"
-	closemessage
+	setvar VAR_TEMP_7, 1
 # 54 "data//maps/SRoute18/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 55 "data//maps/SRoute18/scripts.pory"
+	waitmovement 0
+# 56 "data//maps/SRoute18/scripts.pory"
+	msgbox SRoute18_Script_TestTriggerOn2_Text_0, MSGBOX_DEFAULT
+# 57 "data//maps/SRoute18/scripts.pory"
+	closemessage
+# 58 "data//maps/SRoute18/scripts.pory"
 	release
 	end
 
 
 SRoute18_Script_TestTriggerOn1::
-# 59 "data//maps/SRoute18/scripts.pory"
-	lock
-# 60 "data//maps/SRoute18/scripts.pory"
-	setvar VAR_TEMP_7, 2
-# 61 "data//maps/SRoute18/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 62 "data//maps/SRoute18/scripts.pory"
-	waitmovement 0
 # 63 "data//maps/SRoute18/scripts.pory"
-	msgbox SRoute18_Script_TestTriggerOn1_Text_0, MSGBOX_DEFAULT
+	lock
 # 64 "data//maps/SRoute18/scripts.pory"
-	closemessage
+	setvar VAR_TEMP_7, 2
 # 65 "data//maps/SRoute18/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 66 "data//maps/SRoute18/scripts.pory"
+	waitmovement 0
+# 67 "data//maps/SRoute18/scripts.pory"
+	msgbox SRoute18_Script_TestTriggerOn1_Text_0, MSGBOX_DEFAULT
+# 68 "data//maps/SRoute18/scripts.pory"
+	closemessage
+# 69 "data//maps/SRoute18/scripts.pory"
 	release
 	end
 
 
 Sroute18_Script_TestPorygon::
-# 70 "data//maps/SRoute18/scripts.pory"
-	lock
-# 71 "data//maps/SRoute18/scripts.pory"
-	setvar VAR_TEMP_7, 1
-# 72 "data//maps/SRoute18/scripts.pory"
-	msgbox Sroute18_Script_TestPorygon_Text_0, MSGBOX_DEFAULT
-# 73 "data//maps/SRoute18/scripts.pory"
-	closemessage
 # 74 "data//maps/SRoute18/scripts.pory"
+	lock
+# 75 "data//maps/SRoute18/scripts.pory"
+	setvar VAR_TEMP_7, 1
+# 76 "data//maps/SRoute18/scripts.pory"
+	msgbox Sroute18_Script_TestPorygon_Text_0, MSGBOX_DEFAULT
+# 77 "data//maps/SRoute18/scripts.pory"
+	closemessage
+# 78 "data//maps/SRoute18/scripts.pory"
 	release
 	end
 
 
 SRoute18_Script_TestTriggerOn2_Text_0:
-# 52 "data//maps/SRoute18/scripts.pory"
+# 56 "data//maps/SRoute18/scripts.pory"
 	.string "TRIGGER 2!$"
 
 SRoute18_Script_TestTriggerOn1_Text_0:
-# 63 "data//maps/SRoute18/scripts.pory"
+# 67 "data//maps/SRoute18/scripts.pory"
 	.string "TRIGGER 1$"
 
 Sroute18_Script_TestPorygon_Text_0:
-# 72 "data//maps/SRoute18/scripts.pory"
+# 76 "data//maps/SRoute18/scripts.pory"
 	.string "VAR_TEMP_7 set to 1$"

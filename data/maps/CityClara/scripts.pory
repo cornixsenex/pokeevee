@@ -34,31 +34,37 @@ mapscripts CityClara_MapScripts {
 
 script CityClara_Script_ActaEchonaTransition {
 	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script CityClara_Script_SilvaProfundaTransition {
+script CityClara_Script_SilvaTransition {
 	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script CityClara_Script_ViaFideliumTransition {
 	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script CityClara_Script_SinusClarusTransition {
 	setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script CityClara_Script_CastaliaTransition {
 	setvar (VAR_TEMP_5, 5)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script CityClara_Script_DeltaDraciTransition {
 	setvar (VAR_TEMP_5, 6)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 

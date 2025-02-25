@@ -24,21 +24,25 @@ mapscripts MareW_MapScripts {
 
 script MareW_Script_ActaEchonaTransition {
 	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script MareW_Script_MareInternumTransition {
 	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script MareW_Script_MareTranquillumTransition {
 	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script MareW_Script_MareTropicumTransition {
 	setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 

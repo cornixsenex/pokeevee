@@ -48,41 +48,49 @@ script Route17_EventScript_Block1 {
 
 script Route17_Script_Transition_LagoDraco {
 	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script Route17_Script_Transition_LagoDracoShore {
 	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script Route17_Script_Transition_UpperRioDraco {
 	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script Route17_Script_Transition_LowerRioDraco {
 	setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script Route17_Script_Transition_UpperDracoEast {
 	setvar (VAR_TEMP_5, 5)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script Route17_Script_Transition_LowerDracoEast {
 	setvar (VAR_TEMP_5, 6)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script Route17_Script_Transition_UpperDracoWest {
 	setvar (VAR_TEMP_5, 7)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script Route17_Script_Transition_LowerDracoWest {
 	setvar (VAR_TEMP_5, 8)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 

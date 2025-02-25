@@ -25,21 +25,25 @@ mapscripts SRoute18_MapScripts {
 
 script SRoute18_Script_SinusPacificusTransition {
 	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script SRoute18_Script_CastrumTransition {
 	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script SRoute18_Script_SinusClarusTransition {
 	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script SRoute18_Script_MareInternumTransition {
 	setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 

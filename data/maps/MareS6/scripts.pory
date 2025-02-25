@@ -31,15 +31,19 @@ mapscripts MareS6_MapScripts {
 //Silent in this case as island transitions are handled by Start Stop surf task
 script MareS6_Script_IslaPinaTransition {
 	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
 }
 
 script MareS6_Script_MareOccidensTransition {
 	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
 script MareS6_Script_MareTropicumTransition {
 	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 

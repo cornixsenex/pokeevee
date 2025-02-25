@@ -28,21 +28,25 @@ mapscripts Route7_MapScripts {
 
 script Route7_Script_Transition_ViaLitoralis {
     setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
 script Route7_Script_Transition_MareInternum {
     setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
 script Route7_Script_Transition_VillaVallis {
     setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
 script Route7_Script_Transition_SabinaNova {
     setvar (VAR_TEMP_5, 5)
+	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 

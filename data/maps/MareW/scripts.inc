@@ -45,30 +45,38 @@ MareW_Script_ActaEchonaTransition::
 # 26 "data//maps/MareW/scripts.pory"
 	setvar VAR_TEMP_5, 1
 # 27 "data//maps/MareW/scripts.pory"
+	special TransitionMapMusic
+# 28 "data//maps/MareW/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareW_Script_MareInternumTransition::
-# 31 "data//maps/MareW/scripts.pory"
-	setvar VAR_TEMP_5, 2
 # 32 "data//maps/MareW/scripts.pory"
+	setvar VAR_TEMP_5, 2
+# 33 "data//maps/MareW/scripts.pory"
+	special TransitionMapMusic
+# 34 "data//maps/MareW/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareW_Script_MareTranquillumTransition::
-# 36 "data//maps/MareW/scripts.pory"
+# 38 "data//maps/MareW/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 37 "data//maps/MareW/scripts.pory"
+# 39 "data//maps/MareW/scripts.pory"
+	special TransitionMapMusic
+# 40 "data//maps/MareW/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareW_Script_MareTropicumTransition::
-# 41 "data//maps/MareW/scripts.pory"
+# 44 "data//maps/MareW/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 42 "data//maps/MareW/scripts.pory"
+# 45 "data//maps/MareW/scripts.pory"
+	special TransitionMapMusic
+# 46 "data//maps/MareW/scripts.pory"
 	special ShowMapNamePopup
 	return
 

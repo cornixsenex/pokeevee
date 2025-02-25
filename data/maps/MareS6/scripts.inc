@@ -42,41 +42,49 @@ MareS6_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 MareS6_Script_IslaPinaTransition::
 # 33 "data//maps/MareS6/scripts.pory"
 	setvar VAR_TEMP_5, 1
+# 34 "data//maps/MareS6/scripts.pory"
+	special TransitionMapMusic
+# 35 "data//maps/MareS6/scripts.pory"
+	special ShowMapNamePopup
 	return
 
 
 MareS6_Script_MareOccidensTransition::
-# 37 "data//maps/MareS6/scripts.pory"
+# 39 "data//maps/MareS6/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 38 "data//maps/MareS6/scripts.pory"
+# 40 "data//maps/MareS6/scripts.pory"
+	special TransitionMapMusic
+# 41 "data//maps/MareS6/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS6_Script_MareTropicumTransition::
-# 42 "data//maps/MareS6/scripts.pory"
+# 45 "data//maps/MareS6/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 43 "data//maps/MareS6/scripts.pory"
+# 46 "data//maps/MareS6/scripts.pory"
+	special TransitionMapMusic
+# 47 "data//maps/MareS6/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS6_Script_PlayaEchonaTransition::
-# 48 "data//maps/MareS6/scripts.pory"
+# 52 "data//maps/MareS6/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 49 "data//maps/MareS6/scripts.pory"
+# 53 "data//maps/MareS6/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS6_Script_MareOccidensTransitionSilent::
-# 54 "data//maps/MareS6/scripts.pory"
+# 58 "data//maps/MareS6/scripts.pory"
 	setvar VAR_TEMP_5, 2
 	return
 
 
 MareS6_Script_MareTropicumTransitionSilent::
-# 58 "data//maps/MareS6/scripts.pory"
+# 62 "data//maps/MareS6/scripts.pory"
 	setvar VAR_TEMP_5, 3
 	return
 

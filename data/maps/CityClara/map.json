@@ -56,7 +56,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CityClara_EventScript_Rocket1",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -82,7 +82,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CityClara_EventScript_Rocket2",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
@@ -173,7 +173,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
@@ -186,7 +186,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
@@ -225,7 +225,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CityClara_EventScript_Jessie",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JAMES",
@@ -238,7 +238,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CityClara_EventScript_James",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH)",
@@ -251,7 +251,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
@@ -277,7 +277,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CityClara_EventScript_LeafBridge",
-      "flag": "FLAG_CLARACITY_AFTERMEW"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -511,7 +511,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "5",
-      "script": "CityClara_Script_SilvaProfundaTransition"
+      "script": "CityClara_Script_SilvaTransition"
     },
     {
       "type": "trigger",
@@ -520,7 +520,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "5",
-      "script": "CityClara_Script_SilvaProfundaTransition"
+      "script": "CityClara_Script_SilvaTransition"
     },
     {
       "type": "trigger",
@@ -529,7 +529,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "5",
-      "script": "CityClara_Script_SilvaProfundaTransition"
+      "script": "CityClara_Script_SilvaTransition"
     },
     {
       "type": "trigger",
