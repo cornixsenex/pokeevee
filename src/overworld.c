@@ -1019,6 +1019,8 @@ static void LoadMapFromWarp(bool32 a1)
     bool8 isOutdoors;
     bool8 isIndoors;
 
+	DebugPrintf("LoadMapFromWarp\n");
+
     LoadCurrentMapData();
     if (!(sObjectEventLoadFlag & SKIP_OBJECT_EVENT_LOAD))
     {
@@ -1289,6 +1291,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
+	else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
+		return GetDynamicMusic();
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
@@ -1322,6 +1326,7 @@ u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
 	//Handle Dynamic Map Music
+	DebugPrintf("GetWarpDestinationMusic()\n");
 	if (music == MUS_DYNAMIC) 
 		music = GetDynamicMusic();
 	return music;

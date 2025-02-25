@@ -1889,7 +1889,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 			}
 		}
 		//Route5
-		if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE6))
+		if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
 		{
 			n = GetDynamicMapSec_Route5();
 			switch (n)
@@ -3583,6 +3583,8 @@ u32 GetDynamicMapSec_Route5(void)
     s16 x, y;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
+
+	DebugPrintf("Route5\nx: %d\ny: %d\n", x, y);
 
 	//Venator Mons
 	if 

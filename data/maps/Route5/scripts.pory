@@ -1,5 +1,40 @@
+
+//DYNAMIC MAP
+//VAR_TEMP_5
+//1: Venator Mons
+//2: Via Litoralis
+//3: Villa Venatorum
+
+
 mapscripts Route5_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route4)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+		}
+	}
+
+}
+
+script Route5_Script_Transition_VenatorMons {
+	setvar (VAR_TEMP_5, 1)
+    special (ShowMapNamePopup)
+}
+
+script Route5_Script_Transition_ViaLitoralis {
+	setvar (VAR_TEMP_5, 2)
+    special (ShowMapNamePopup)
+}
+
+script Route5_Script_Transition_VillaVenatorum {
+	setvar (VAR_TEMP_5, 3)
+    special (ShowMapNamePopup)
 }
 
 
