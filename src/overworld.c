@@ -905,15 +905,13 @@ if (I_VS_SEEKER_CHARGING != 0)
 
 		//Both Last and Dest Maps are Dynamicwith special case dynamic transitions 
 		//specifically want the Map Popup to appear when transitioning from one dynamic map to another
+	    //HEY! Just a note this should check they're the same map group too otherwise...could lead to issues
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
 			//Force MapNamePopup on Transition from TWO DYNAMIC MAPS 
 			//mapNum = Destination MapNum
 			//xy     = Coords on Destination Map
 
-			//Switch on Destination Maps
-			
-			//HEY! Just a note this should check they're the same map group too otherwise...could lead to issues
 
 			//Route3 - Handle MareWWW Transition
 			if (destMapNum == MAP_NUM(ROUTE3)) //From MareWWW AND from Silvan Woods
@@ -921,7 +919,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if
 					(
 					//From MareWWW
--                   (x > 18 && x < 47 && y > 25) ||
+                    (x > 18 && x < 47 && y > 25) ||
 					//FromSilvanWoods
 					(y < 2)
 					)
@@ -934,6 +932,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 					y < 0
 			   )
 				ShowMapNamePopup();
+
 			//SilvanWoods - From Route3 OR 1 square from Route17
 			if (destMapNum == MAP_NUM(SILVAN_WOODS))
 			{
@@ -949,6 +948,20 @@ if (I_VS_SEEKER_CHARGING != 0)
 			}
 			//Route17 - Handle ONE SQUARE from Silvan Woods :/
 			if (destMapNum == MAP_NUM(ROUTE17) && y == 163)
+				ShowMapNamePopup();
+
+			//Route6 - Handle from Route7
+			if (destMapNum == MAP_NUM(ROUTE6) && x > 70)
+				ShowMapNamePopup();
+			//Route7 - Handle from Route6
+			if (destMapNum == MAP_NUM(ROUTE7) && y < 15)
+				ShowMapNamePopup();
+
+			//Route5 - Handle from DoakTown
+			if (destMapNum == MAP_NUM(ROUTE5) && x > 54)
+				ShowMapNamePopup();
+			//DoakTown - Handle from 
+			if (destMapNum == MAP_NUM(DOAK_TOWN) && x < 2)
 				ShowMapNamePopup();
 			
 			//Other Maps 
@@ -3887,6 +3900,45 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//Route5
+	if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
+	{
+		n = GetDynamicMapSec_Route5();
+		switch (n) {
+			case 1:
+				return MAPSEC_VENATOR_MONS;
+			case 2:
+				return MAPSEC_VIA_LITORALIS;
+			case 3:
+				return MAPSEC_VILLA_VENATORUM; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//Sanjo - Sabina Nova or Via Magna
+	if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO)) 
+	{
+		if (IsSanjoSabinaNova())
+			return MAPSEC_SABINA_NOVA;
+		else 
+			return MAPSEC_VIA_MAGNA;
+	}
+	//DoakTown - Robustica or Via Magna
+	if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
+	{
+		if (IsDoakTownRobustica())
+			return MAPSEC_ROBUSTICA;
+		else 
+			return MAPSEC_VIA_MAGNA;
+	}
+	//SRoute19 - Mare Internum or Montes Vigiliae
+	if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
+	{
+		if (IsSRoute19MareInternum())
+			return MAPSEC_MARE_INTERNUM;
+		else 
+			return MAPSEC_MONTES_VIGILIAE;
+	}
 	//Other Maps Go Here
 
 	//Default - Should never be reached
@@ -4208,9 +4260,58 @@ u16 GetDynamicMusic(void)
 			case 5:
 				return MUS_RG_SEVII_67;
 			default:
-				return MAPSEC_DYNAMIC;
+				return MUS_CANTINA;
 		}
 	}
+	//Route5
+	if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
+	{
+		n = GetDynamicMapSec_Route5();
+		switch (n) {
+			//Venator Mons
+			case 1:
+				return MUS_ROUTE110;
+		    //Via Litoralis
+			case 2:
+				return MUS_RG_ROUTE11;
+		    //Villa Venatorum
+			case 3:
+				return MUS_RG_VERMILLION; 
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//Sanjo - Sabina Nova or Via Magna
+	if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO)) 
+	{
+		//Sabina Nova or Via Magna
+		if (IsSanjoSabinaNova())
+			return MUS_RG_SEVII_67;
+		else 
+			return MUS_CYCLING;
+	}
+	//DoakTown - Robustica or Via Magna
+	if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
+	{
+		//Robustica or Via Magna
+		if (IsDoakTownRobustica())
+			return MUS_RG_PEWTER;
+		else 
+			return MUS_CYCLING;
+	}
+	//SRoute19 - Mare Internum or Montes Vigiliae
+	if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
+	{
+		//Mare Internum or Montes Vigiliae
+		if (IsSRoute19MareInternum())
+			return MUS_DEWFORD;
+		else 
+			return MUS_B_FRONTIER;
+	}
+
+
+
+
 
 	//Default SHOULD NEVER BE REACHED
 	else 

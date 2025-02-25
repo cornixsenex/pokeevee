@@ -1,4 +1,54 @@
-mapscripts Route7_MapScripts {}
+//DYNAMIC MAP
+//VAR_TEMP_5
+//1: Via Litoralis
+//2: Mare Internum
+//3: Montes Vigiliae
+//4: Villa Vallis
+//5: Sabina Nova
+
+mapscripts Route7_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route7)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+			case 4:
+				setvar (VAR_TEMP_5, 4)
+			case 5:
+				setvar (VAR_TEMP_5, 5)
+		}
+	}
+
+}
+
+script Route7_Script_Transition_ViaLitoralis {
+    setvar (VAR_TEMP_5, 1)
+    special (ShowMapNamePopup)
+}
+
+script Route7_Script_Transition_MareInternum {
+    setvar (VAR_TEMP_5, 2)
+    special (ShowMapNamePopup)
+}
+
+script Route7_Script_Transition_VillaVallis {
+    setvar (VAR_TEMP_5, 4)
+    special (ShowMapNamePopup)
+}
+
+script Route7_Script_Transition_SabinaNova {
+    setvar (VAR_TEMP_5, 5)
+    special (ShowMapNamePopup)
+}
+
+
+
+
 
 
 

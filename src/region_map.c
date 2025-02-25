@@ -1888,6 +1888,46 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
+		//Route5
+		if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE6))
+		{
+			n = GetDynamicMapSec_Route5();
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_VENATOR_MONS);
+				case 2:
+					return StringCopy(dest, sMapName_VIA_LITORALIS);
+				case 3:
+					return StringCopy(dest, sMapName_VILLA_VENATORUM);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+	  	//Sanjo
+		if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO))
+		{
+			if (IsSanjoSabinaNova())
+                return StringCopy(dest, sMapName_SABINA_NOVA);
+            else
+                return StringCopy(dest, sMapName_VIA_MAGNA);
+        }
+		//Doak Town
+		if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN))
+		{
+			if (IsDoakTownRobustica())
+                return StringCopy(dest, sMapName_ROBUSTICA);
+            else
+                return StringCopy(dest, sMapName_VIA_MAGNA);
+        }
+		//SRoute19 - Mare Internum or Montes Vigiliae
+		if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19))
+		{
+			if (IsSRoute19MareInternum())
+                return StringCopy(dest, sMapName_MARE_INTERNUM);
+            else
+                return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -3509,7 +3549,7 @@ u32 GetDynamicMapSec_Route7(void)
     if (y < 28)
         return 1;
     //Mare Internum
-    else if (x < 4 && y > 45)
+    else if (x < 4 && y < 45)
         return 2;
     //Montes Vigiliae
     else if 
@@ -3533,6 +3573,89 @@ u32 GetDynamicMapSec_Route7(void)
         return 5;
 }
 
+u32 GetDynamicMapSec_Route5(void)
+{
+
+	//1: Venator Mons
+	//2: Via Litoralis
+	//3: Villa Venatorum
+
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	//Venator Mons
+	if 
+		(
+		(x < 18) ||
+		(x == 18 && ( (y > 14) && (y < 18) ) ) ||
+		(x == 19 && ( y == 16 || y == 17) )
+		)
+			return 1;
+	//Via Litoralis
+	else if (x > 44)
+		return 2;
+	//Villa Venatorum is default
+	else 
+		return 3;
+}
+
+bool32 IsSanjoSabinaNova(void) 
+{
+
+   	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	if (x > 26 && y < 17)
+		return FALSE;
+	else
+		return TRUE;
+}
+
+bool32 IsDoakTownRobustica(void) 
+{
+
+   	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	if ( (y > 15 && y < 25) && (x > 24) )
+		return FALSE;
+	else
+		return TRUE;
+}
+
+bool32 IsSRoute19MareInternum(void) 
+{
+
+   	s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	if 
+		(
+		( (x == 16) && (y > 83) ) ||
+		( (x == 17) && (y > 82) ) ||
+		( (x == 18) && (y > 82) ) ||
+		( (x == 19) && (y > 82) ) ||
+		( (x == 20) && (y > 81) ) ||
+		( (x == 21) && (y > 81) ) ||
+		( (x == 22) && (y > 81) ) ||
+		( (x == 23) && (y > 80) ) ||
+		( (x == 24) && (y > 79) ) ||
+		( (x == 25) && (y > 78) ) ||
+		( (x == 26) && (y > 74) )
+		)
+		return FALSE;
+	else
+		return TRUE;
+}
+	
+	
+
+
+	
 
 
 

@@ -2,7 +2,7 @@
   "id": "MAP_SROUTE19",
   "name": "SRoute19",
   "layout": "LAYOUT_SROUTE19",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

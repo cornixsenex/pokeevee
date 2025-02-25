@@ -1,5 +1,42 @@
-mapscripts Route6_MapScripts {}
 
+//DYNAMIC MAP
+//VAR_TEMP_5
+//1: Via Litoralis
+//2: Villa Vivaria
+//3: Sinus Pacificus
+
+mapscripts Route6_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route6)
+		switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+		}
+	}
+
+
+}
+
+
+script Route6_Script_Transition_ViaLitoralis {
+    setvar (VAR_TEMP_5, 1)
+    special (ShowMapNamePopup)
+}
+
+script Route6_Script_Transition_VillaVivaria {
+    setvar (VAR_TEMP_5, 2)
+    special (ShowMapNamePopup)
+}
+
+script Route6_Script_Transition_SinusPacificus {
+    setvar (VAR_TEMP_5, 3)
+    special (ShowMapNamePopup)
+}
 
 
 script Route6_EventScript_GirafarigSign {

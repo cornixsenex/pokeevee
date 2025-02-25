@@ -187,11 +187,11 @@
 #define MAPSEC_PATTERN_BUSH                 0xB6
 #define MAPSEC_ALTERING_CAVE_FRLG           0xB7
 #define MAPSEC_TANOBY_CHAMBERS              0xB8
-#define MAPSEC_THREE_ISLE_PATH              0xB9
-#define MAPSEC_TANOBY_KEY                   0xBA
-#define MAPSEC_BIRTH_ISLAND_FRLG            0xBB
-#define MAPSEC_MONEAN_CHAMBER               0xBC
 //Below have been altered, above are vanilla BREAK break Break
+#define MAPSEC_VIA_MAGNA                    0xB9
+#define MAPSEC_ROBUSTICA                    0xBA
+#define MAPSEC_VENATOR_MONS                 0xBB
+#define MAPSEC_VILLA_VENATORUM              0xBC
 #define MAPSEC_SABINA_NOVA                  0xBD
 #define MAPSEC_VILLA_VALLIS                 0xBE
 #define MAPSEC_MONTES_VIGILIAE              0xBF

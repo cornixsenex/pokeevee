@@ -2,8 +2,8 @@
   "id": "MAP_ROUTE5",
   "name": "Route5",
   "layout": "LAYOUT_ROUTE5",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ROUTE_105",
+  "music": "MUS_DYNAMIC",
+  "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -27,8 +27,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 14,
-      "y": 15,
+      "x": 15,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -40,8 +40,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 14,
-      "y": 17,
+      "x": 13,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -54,7 +54,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 9,
-      "y": 17,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -66,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 11,
+      "x": 12,
       "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -79,8 +79,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 12,
-      "y": 17,
+      "x": 11,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -92,8 +92,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 9,
-      "y": 20,
+      "x": 8,
+      "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -131,8 +131,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": 39,
-      "y": 16,
+      "x": 41,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -196,8 +196,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 34,
-      "y": 21,
+      "x": 12,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 2,
@@ -209,8 +209,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 42,
-      "y": 18,
+      "x": 15,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -235,10 +235,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 39,
-      "y": 20,
+      "x": 27,
+      "y": 18,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -248,8 +248,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 36,
-      "y": 16,
+      "x": 37,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -287,8 +287,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
-      "x": 10,
-      "y": 15,
+      "x": 0,
+      "y": 0,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -300,8 +300,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 12,
-      "y": 14,
+      "x": 13,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -329,24 +329,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_ROBUSTUS_STATE",
-      "var_value": "7",
-      "script": "Route5_EventScript_LeafTrigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_ROBUSTUS_STATE",
-      "var_value": "7",
-      "script": "Route5_EventScript_LeafTrigger2"
-    }
+
   ],
   "bg_events": [
 
