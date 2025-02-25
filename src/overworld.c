@@ -172,7 +172,6 @@ static void CB1_OverworldLink(void);
 static void SetKeyInterceptCallback(u16 (*func)(u32));
 static void SetFieldVBlankCallback(void);
 static void FieldClearVBlankHBlankCallbacks(void);
-static void TransitionMapMusic(void);
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *, u16, u8);
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *, u8, u16, u8);
 static u16 GetCenterScreenMetatileBehavior(void);
@@ -1365,7 +1364,7 @@ void Overworld_ClearSavedMusic(void)
     gSaveBlock1Ptr->savedMusic = MUS_DUMMY;
 }
 
-static void TransitionMapMusic(void)
+void TransitionMapMusic(void)
 {
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE)
     {
@@ -4322,5 +4321,4 @@ u16 GetDynamicMusic(void)
 	else 
 		return MUS_CANTINA;
 }
-	
 

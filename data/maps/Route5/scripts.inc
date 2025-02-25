@@ -36,180 +36,186 @@ Route5_Script_Transition_VenatorMons::
 # 26 "data/maps/Route5/scripts.pory"
 	setvar VAR_TEMP_5, 1
 # 27 "data/maps/Route5/scripts.pory"
+	special TransitionMapMusic
+# 28 "data/maps/Route5/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route5_Script_Transition_ViaLitoralis::
-# 31 "data/maps/Route5/scripts.pory"
-	setvar VAR_TEMP_5, 2
 # 32 "data/maps/Route5/scripts.pory"
+	setvar VAR_TEMP_5, 2
+# 33 "data/maps/Route5/scripts.pory"
+	special TransitionMapMusic
+# 34 "data/maps/Route5/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route5_Script_Transition_VillaVenatorum::
-# 36 "data/maps/Route5/scripts.pory"
+# 38 "data/maps/Route5/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 37 "data/maps/Route5/scripts.pory"
+# 39 "data/maps/Route5/scripts.pory"
+	special TransitionMapMusic
+# 40 "data/maps/Route5/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route5_EventScript_LeafTrigger1::
-# 42 "data/maps/Route5/scripts.pory"
-	lock
-# 43 "data/maps/Route5/scripts.pory"
-	setvar VAR_ROBUSTUS_STATE, 8
-# 44 "data/maps/Route5/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 45 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	lock
 # 46 "data/maps/Route5/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	setvar VAR_ROBUSTUS_STATE, 8
 # 47 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 48 "data/maps/Route5/scripts.pory"
-	addobject 21
+	waitmovement 0
 # 49 "data/maps/Route5/scripts.pory"
-	showobjectat 21, MAP_ROUTE5
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 50 "data/maps/Route5/scripts.pory"
-	applymovement 21, Route5_Movement_LeafEnter1
+	waitmovement 0
 # 51 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	addobject 21
 # 52 "data/maps/Route5/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	showobjectat 21, MAP_ROUTE5
 # 53 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	applymovement 21, Route5_Movement_LeafEnter1
 # 54 "data/maps/Route5/scripts.pory"
-	load_field_pic 4, 190, 98
-# 55 "data/maps/Route5/scripts.pory"
-	msgbox Route5_Text_Leaf
-# 56 "data/maps/Route5/scripts.pory"
-	closemessage
-# 57 "data/maps/Route5/scripts.pory"
-	destroy_field_pic 4
-# 58 "data/maps/Route5/scripts.pory"
-	applymovement 21, Route5_Movement_LeafExit1
-# 59 "data/maps/Route5/scripts.pory"
 	waitmovement 0
+# 55 "data/maps/Route5/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 56 "data/maps/Route5/scripts.pory"
+	waitmovement 0
+# 57 "data/maps/Route5/scripts.pory"
+	load_field_pic 4, 190, 98
+# 58 "data/maps/Route5/scripts.pory"
+	msgbox Route5_Text_Leaf
+# 59 "data/maps/Route5/scripts.pory"
+	closemessage
 # 60 "data/maps/Route5/scripts.pory"
-	removeobject 21
+	destroy_field_pic 4
 # 61 "data/maps/Route5/scripts.pory"
+	applymovement 21, Route5_Movement_LeafExit1
+# 62 "data/maps/Route5/scripts.pory"
+	waitmovement 0
+# 63 "data/maps/Route5/scripts.pory"
+	removeobject 21
+# 64 "data/maps/Route5/scripts.pory"
 	release
 	end
 
 
 Route5_EventScript_LeafTrigger2::
-# 66 "data/maps/Route5/scripts.pory"
-	lock
-# 67 "data/maps/Route5/scripts.pory"
-	setvar VAR_ROBUSTUS_STATE, 8
-# 68 "data/maps/Route5/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 69 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	lock
 # 70 "data/maps/Route5/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	setvar VAR_ROBUSTUS_STATE, 8
 # 71 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 72 "data/maps/Route5/scripts.pory"
-	addobject 21
+	waitmovement 0
 # 73 "data/maps/Route5/scripts.pory"
-	showobjectat 21, MAP_ROUTE5
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 74 "data/maps/Route5/scripts.pory"
-	applymovement 21, Route5_Movement_LeafEnter2
+	waitmovement 0
 # 75 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	addobject 21
 # 76 "data/maps/Route5/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	showobjectat 21, MAP_ROUTE5
 # 77 "data/maps/Route5/scripts.pory"
-	waitmovement 0
+	applymovement 21, Route5_Movement_LeafEnter2
 # 78 "data/maps/Route5/scripts.pory"
-	load_field_pic 4, 190, 98
-# 79 "data/maps/Route5/scripts.pory"
-	msgbox Route5_Text_Leaf
-# 80 "data/maps/Route5/scripts.pory"
-	closemessage
-# 81 "data/maps/Route5/scripts.pory"
-	destroy_field_pic 4
-# 82 "data/maps/Route5/scripts.pory"
-	applymovement 21, Route5_Movement_LeafExit2
-# 83 "data/maps/Route5/scripts.pory"
 	waitmovement 0
+# 79 "data/maps/Route5/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+# 80 "data/maps/Route5/scripts.pory"
+	waitmovement 0
+# 81 "data/maps/Route5/scripts.pory"
+	load_field_pic 4, 190, 98
+# 82 "data/maps/Route5/scripts.pory"
+	msgbox Route5_Text_Leaf
+# 83 "data/maps/Route5/scripts.pory"
+	closemessage
 # 84 "data/maps/Route5/scripts.pory"
-	removeobject 21
+	destroy_field_pic 4
 # 85 "data/maps/Route5/scripts.pory"
+	applymovement 21, Route5_Movement_LeafExit2
+# 86 "data/maps/Route5/scripts.pory"
+	waitmovement 0
+# 87 "data/maps/Route5/scripts.pory"
+	removeobject 21
+# 88 "data/maps/Route5/scripts.pory"
 	release
 	end
 
 
-# 90 "data/maps/Route5/scripts.pory"
+# 93 "data/maps/Route5/scripts.pory"
 Route5_Movement_LeafEnter1:
-# 91 "data/maps/Route5/scripts.pory"
-	walk_up
-# 91 "data/maps/Route5/scripts.pory"
-	walk_up
-# 91 "data/maps/Route5/scripts.pory"
-	walk_up
-# 91 "data/maps/Route5/scripts.pory"
-	walk_up
-# 92 "data/maps/Route5/scripts.pory"
-	walk_right
-# 93 "data/maps/Route5/scripts.pory"
-	walk_up
-# 93 "data/maps/Route5/scripts.pory"
-	walk_up
-# 93 "data/maps/Route5/scripts.pory"
+# 94 "data/maps/Route5/scripts.pory"
 	walk_up
 # 94 "data/maps/Route5/scripts.pory"
+	walk_up
+# 94 "data/maps/Route5/scripts.pory"
+	walk_up
+# 94 "data/maps/Route5/scripts.pory"
+	walk_up
+# 95 "data/maps/Route5/scripts.pory"
+	walk_right
+# 96 "data/maps/Route5/scripts.pory"
+	walk_up
+# 96 "data/maps/Route5/scripts.pory"
+	walk_up
+# 96 "data/maps/Route5/scripts.pory"
+	walk_up
+# 97 "data/maps/Route5/scripts.pory"
 	face_left
 	step_end
 
-# 97 "data/maps/Route5/scripts.pory"
+# 100 "data/maps/Route5/scripts.pory"
 Route5_Movement_LeafEnter2:
-# 98 "data/maps/Route5/scripts.pory"
+# 101 "data/maps/Route5/scripts.pory"
 	walk_up
-# 98 "data/maps/Route5/scripts.pory"
+# 101 "data/maps/Route5/scripts.pory"
 	walk_up
-# 98 "data/maps/Route5/scripts.pory"
+# 101 "data/maps/Route5/scripts.pory"
 	walk_up
-# 98 "data/maps/Route5/scripts.pory"
+# 101 "data/maps/Route5/scripts.pory"
 	walk_up
-# 98 "data/maps/Route5/scripts.pory"
+# 101 "data/maps/Route5/scripts.pory"
 	walk_up
-# 98 "data/maps/Route5/scripts.pory"
+# 101 "data/maps/Route5/scripts.pory"
 	walk_up
-# 98 "data/maps/Route5/scripts.pory"
+# 101 "data/maps/Route5/scripts.pory"
 	walk_up
-# 99 "data/maps/Route5/scripts.pory"
+# 102 "data/maps/Route5/scripts.pory"
 	face_right
 	step_end
 
-# 102 "data/maps/Route5/scripts.pory"
+# 105 "data/maps/Route5/scripts.pory"
 Route5_Movement_LeafExit1:
-# 103 "data/maps/Route5/scripts.pory"
+# 106 "data/maps/Route5/scripts.pory"
 	walk_up
-# 104 "data/maps/Route5/scripts.pory"
+# 107 "data/maps/Route5/scripts.pory"
 	walk_left
-# 105 "data/maps/Route5/scripts.pory"
+# 108 "data/maps/Route5/scripts.pory"
 	walk_up
-# 105 "data/maps/Route5/scripts.pory"
+# 108 "data/maps/Route5/scripts.pory"
 	walk_up
 	step_end
 
-# 108 "data/maps/Route5/scripts.pory"
+# 111 "data/maps/Route5/scripts.pory"
 Route5_Movement_LeafExit2:
-# 109 "data/maps/Route5/scripts.pory"
+# 112 "data/maps/Route5/scripts.pory"
 	walk_up
-# 109 "data/maps/Route5/scripts.pory"
+# 112 "data/maps/Route5/scripts.pory"
 	walk_up
-# 109 "data/maps/Route5/scripts.pory"
+# 112 "data/maps/Route5/scripts.pory"
 	walk_up
 	step_end
 
 Route5_Text_Leaf::
-# 113 "data/maps/Route5/scripts.pory"
+# 116 "data/maps/Route5/scripts.pory"
 	.string "Good job! You found a way to break the\n"
 	.string "rocks now we can travel north and find\l"
 	.string "Indy. This tunnel takes us all the way\l"

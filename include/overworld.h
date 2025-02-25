@@ -161,6 +161,7 @@ u32 DetermineDynamicMapsecValue (void);
 
 //Cornix Custom Dynamic Music system
 u16 GetDynamicMusic(void);
+void TransitionMapMusic(void);
 
 // Item Description Headers
 enum ItemObtainFlags

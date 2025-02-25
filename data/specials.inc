@@ -602,3 +602,4 @@ gSpecials::
 	def_special GetDynamicMapSec_Route4
 	def_special GetDynamicMapSec_Route6
 	def_special GetDynamicMapSec_Route7
+	def_special TransitionMapMusic
