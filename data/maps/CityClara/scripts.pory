@@ -142,10 +142,7 @@ script  CityClara_Script_ShowMewScene {
 
     setobjectxyperm (OBJ_EVENT_WOMAN3, 35, 28)
     setobjectmovementtype (OBJ_EVENT_WOMAN3, MOVEMENT_TYPE_FACE_UP)
-
-    setobjectxyperm (OBJ_EVENT_MANIAC, 35, 29)
-    setobjectmovementtype (OBJ_EVENT_MANIAC, MOVEMENT_TYPE_FACE_UP)
-
+    
     return
 }
 
@@ -759,11 +756,11 @@ text CityClara_Text_Leaf1 {
 }
 
 text CityClara_Text_Scott1 {
-    format("It's not moving either. If you ask me it's no use waiting in that line right now. We're better off sitting in comfort at the Lotus Club until the line dies down. That's where I'm going! Why don't you join me? I'll buy us all Lotus and let time pass.")
+    format("It's not moving either. Those government stooges have it blocked up! If you ask me it's no use waiting in that line right now. We're better off sitting in comfort at the Lotus Club until the line dies down. That's where I'm going! Why don't you join me? I'll buy us all Lotus and let time pass.")
 }
 
 text CityClara_Text_Leaf2 {
-    format("There's no way after travelling out here that we're going to go sit in a club while Mew herself awaits us in that Church! Come with me {PLAYER} we need to find a way to get into that Church ASAP!")
+    format("There's no way after traveling out here that we're going to go sit in a club while Mew herself awaits us in that Church! Come with me {PLAYER} we need to find a way to get into that Church ASAP!")
 }
 
 text CityClara_Text_Woman3_1 {
