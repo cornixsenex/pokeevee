@@ -225,6 +225,12 @@ static const u8 sBigHammerDesc[] = _(
 		"smashes rocks with\n"
 		"a single blow");
 
+static const u8 sScytheDesc[] = _( 
+		"A curved blade made\n"
+		"from a Scyther for\n"
+		"harvesting shrubs.");
+
+
 static const u8 sOstraconDesc[] = _( 
 		"A worn pottery \n"
 		"shard bearing a\n"
@@ -14529,6 +14535,23 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_RedCard,
         .iconPalette = gItemIconPalette_RedCard,
 	},
+
+	[ITEM_SCYTHE] =
+	{
+		.name = _("Scythe"),
+        .price = 0,
+		.description = sScytheDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        //.fieldUseFunc = ItemUseOutOfBattle_Hammer,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_Scythe,
+        .iconPalette = gItemIconPalette_Scythe,
+	},
+
+
 
 ///	KUSTOM ITEMS END ///
 

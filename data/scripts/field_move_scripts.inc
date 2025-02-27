@@ -491,6 +491,22 @@ EventScript_BreakableRock::
 	releaseall
 	end
 
+EventScript_ScytheTree::
+	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	checkitem ITEM_SCYTHE
+	goto_if_eq VAR_RESULT, NO, EventScript_CheckTreeCantCut
+	msgbox Text_WantToCut, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
+	closemessage
+	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	releaseall
+	end
+
+
 EventScript_CantBreakRock::
 	msgbox Text_CantBreakRock, MSGBOX_DEFAULT
 	releaseall

@@ -2025,6 +2025,10 @@ extern const u32 gItemIconPalette_Book[];
 
 extern const u32 gItemIcon_BigHammer[];
 extern const u32 gItemIconPalette_BigHammer[];
+
+
+extern const u32 gItemIcon_Scythe[];
+extern const u32 gItemIconPalette_Scythe[];
 //End Kustom Items
 
 extern const u32 gItemIcon_FairyFeather[];

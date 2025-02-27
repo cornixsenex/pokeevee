@@ -2112,3 +2112,5 @@ const u32 gItemIconPalette_Book[] = INCBIN_U32("graphics/items/icon_palettes/boo
 const u32 gItemIcon_BigHammer[] = INCBIN_U32("graphics/items/icons/big_hammer.4bpp.lz");
 const u32 gItemIconPalette_BigHammer[] = INCBIN_U32("graphics/items/icon_palettes/big_hammer.gbapal.lz");
 
+const u32 gItemIcon_Scythe[] = INCBIN_U32("graphics/items/icons/scythe.4bpp.lz");
+const u32 gItemIconPalette_Scythe[] = INCBIN_U32("graphics/items/icon_palettes/scythe.gbapal.lz");
