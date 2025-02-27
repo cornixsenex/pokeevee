@@ -774,6 +774,13 @@ void ItemUseOutOfBattle_TrainerCard(u8 taskId)
         DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
 }
 
+//Scythe try cut
+void ItemUseOutOfBattle_Scythe(u8 taskId)
+{
+	//IDK how to do it :/
+}
+
+
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
 {
     sItemUseOnFieldCB = Task_AccessPokemonBoxLink;

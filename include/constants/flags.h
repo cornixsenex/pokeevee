@@ -197,11 +197,11 @@
 #define FLAG_SYS_TRAINER_CARD_GET            0xA7
 #define FLAG_SYS_FORCE_OBEY                  0xA8
 #define FLAG_SILVAN_FERRY_ISWEST             0xA9
+#define FLAG_CASTALIA_GARDEN_COMPLETE        0xAA
 
 
 // BREAK //
 
-#define FLAG_UNUSED_0xAA                     0xAA
 #define FLAG_UNUSED_0xAB                     0xAB
 #define FLAG_RECEIVED_SECRET_POWER           0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD

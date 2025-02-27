@@ -66,7 +66,38 @@ mapscripts CityClara_MapScripts {
             call (CityClara_Script_ShowLeaf)
         }
 
-        //Show Gardener
+
+		//Open Garden
+		if (flag(FLAG_CASTALIA_GARDEN_COMPLETE)) {
+			call (CityClara_Script_OpenGarden)
+		}
+		if (flag(FLAG_TEMP_B)) {
+			call (CityClara_Script_DuringGarden)
+		}
+
+	}
+
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_TEMP_9)) {
+			removeobject (31)
+		}
+		if (flag(FLAG_TEMP_3)) {
+			removeobject (32)
+		}
+		if (flag(FLAG_TEMP_A)) {
+			removeobject (33)
+		}
+		if (flag(FLAG_TEMP_E)) {
+			removeobject (34)
+		}
+		if (flag(FLAG_TEMP_D)) {
+			removeobject (35)
+		}
+		if (flag(FLAG_TEMP_C)) {
+			removeobject (36)
+		}
+
+
 	}
 
 }
@@ -167,6 +198,49 @@ script CityClara_Script_ShowLeaf {
     setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
 
     return
+}
+
+script CityClara_Script_OpenGarden {	
+	//move gardener
+	setobjectxyperm (OBJ_EVENT_GARDENER, 47, 40)
+	setobjectmovementtype (OBJ_EVENT_GARDENER, MOVEMENT_TYPE_FACE_UP)
+
+	//remove pests
+	setobjectxyperm (28, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (29, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (30, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (31, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (32, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (33, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (34, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (35, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	setobjectxyperm (36, 0, 0)
+	setobjectmovementtype (28, MOVEMENT_TYPE_INVISIBLE)
+
+	return
+}
+
+script CityClara_Script_DuringGarden {
+	setobjectxyperm (OBJ_EVENT_GARDENER, 48, 40)
+	setobjectmovementtype (OBJ_EVENT_GARDENER, MOVEMENT_TYPE_FACE_UP)
+	
+	return
 }
 
 script CityClara_Script_LeafEtScottSceneA {
@@ -378,12 +452,17 @@ script CityClara_Script_Gardener {
     //during garden scene
     if (flag(FLAG_TEMP_B)) {
         //Check if prerequisites complete -> finish garden scene
-        msgbox (CityClara_Text_Gardener_DuringGarden)
-        closemessage 
-        applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceUp)
-        waitmovement (0)
+		if (var(VAR_TEMP_9) == 9) {
+			call (CityClara_Script_FinishGarden)
+		} else {
+			msgbox (CityClara_Text_Gardener_DuringGarden)
+			closemessage 
+			applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceUp)
+			waitmovement (0)
+		}
+	}
     //After garden scene
-    } elif (flag(FLAG_RECEIVED_SCYTHE)) {
+    elif (flag(FLAG_RECEIVED_SCYTHE)) {
         msgbox (CityClara_Text_Gardener_AfterGarden)
         closemessage
     //Before Garden Scene
@@ -408,6 +487,8 @@ script CityClara_Script_Gardener {
             msgbox (CityClara_Text_Gardener_BeginGarden1)
             closemessage
             //Give player scythe
+			playfanfare (MUS_OBTAIN_ITEM)
+			giveitem (ITEM_SCYTHE, 1)
             //Set flag has scythe
             setflag (FLAG_RECEIVED_SCYTHE)
             //G: I know you can do it
@@ -419,11 +500,75 @@ script CityClara_Script_Gardener {
             waitmovement (0)
             applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceUp)
             waitmovement (0)
-            //release
+			//persist block	
+			call (CityClara_Script_DuringGarden)
         }
     }
     release
     end
+}
+
+script CityClara_Script_FinishGarden {
+	//Set gardener to not during garden state temp flag
+	clearflag (FLAG_TEMP_B)
+	//She reacts
+	applymovement (OBJ_EVENT_GARDENER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//G: You did it thank you as a reward please have my Scythe
+	msgbox (CityClara_Text_Gardener_FinishGarden1)
+	closemessage
+	//Switch on player direction to exit player
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			msgbox("VAR_RESULT DIR_NORTH")
+			closemessage
+		case DIR_WEST:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceDown)
+			waitmovement (0)
+		case DIR_SOUTH:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceDown)
+			waitmovement (0)
+		case DIR_EAST:
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_WalkLeft)
+			waitmovement (0)
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+		    applymovement (OBJ_EVENT_GARDENER, Common_Movement_FaceDown)
+			waitmovement (0)
+		default:
+			msgbox("VAR_RESULT OOB")
+			closemessage
+	}
+	//She blocking facing down: Come back any time
+	msgbox (CityClara_Text_Gardener_FinishGarden2)
+	closemessage
+	//She move into position
+	applymovement (OBJ_EVENT_GARDENER, CityClara_Movement_GardenerFinishGarden)
+	waitmovement (0)
+	//set clear garden flag
+	setflag (FLAG_CASTALIA_GARDEN_COMPLETE)
+	//Persist new location
+	call (CityClara_Script_OpenGarden)
+	release
+	end
 }
 
 script CityClara_EventScript_LeafBridge {
@@ -549,7 +694,120 @@ script CityClara_EventScript_Rocket2 {
 	msgbox(CityClara_Text_Rocket2)
 	closemessage
 	release
+}
+
+script CityClara_Script_GardenTree {
+	call (CityClara_Script_IncrementGardenVar)
+    call (EventScript_ScytheTree)
+	end
+}
+
+script CityClara_Script_Nincada {
+	lock
+	faceplayer
+	call (CityClara_Script_IncrementGardenVar)
+	playmoncry (SPECIES_NINCADA, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setwildbattle (SPECIES_NINCADA, 23)
+	setflag (FLAG_TEMP_9)
+	dowildbattle
+	release
+	end
+}
+
+script CityClara_Script_Weedle {
+	lock
+	faceplayer
+	call (CityClara_Script_IncrementGardenVar)
+	playmoncry (SPECIES_WEEDLE, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setwildbattle (SPECIES_WEEDLE, 23)
+	setflag (FLAG_TEMP_C)
+	dowildbattle
+	release
+	end
+}
+
+script CityClara_Script_Wurmple{
+	lock
+	faceplayer
+	call (CityClara_Script_IncrementGardenVar)
+	playmoncry (SPECIES_WURMPLE, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setwildbattle (SPECIES_WURMPLE, 23)
+	setflag (FLAG_TEMP_3)
+	dowildbattle
+	release
+	end
+}
+
+script CityClara_Script_Caterpie {
+	lock
+	faceplayer
+	call (CityClara_Script_IncrementGardenVar)
+	playmoncry (SPECIES_CATERPIE, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setwildbattle (SPECIES_CATERPIE, 23)
+	setflag (FLAG_TEMP_E)
+	dowildbattle
+	release
+	end
+}
+
+script CityClara_Script_Paras {
+	lock
+	faceplayer
+	call (CityClara_Script_IncrementGardenVar)
+	playmoncry (SPECIES_PARAS, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setwildbattle (SPECIES_PARAS, 23)
+	setflag (FLAG_TEMP_A)
+	dowildbattle
+	release
+	end
+}
+
+script CityClara_Script_Venonat {
+	lock
+	faceplayer
+	call (CityClara_Script_IncrementGardenVar)
+	playmoncry (SPECIES_VENONAT, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setwildbattle (SPECIES_VENONAT, 23)
+	setflag (FLAG_TEMP_D)
+	dowildbattle
+	release
+	end
+}
+
+//Track Garden Progress - VAR_TEMP_9
+script CityClara_Script_IncrementGardenVar {
+	switch (var(VAR_TEMP_9)) {
+		case 0:
+			setvar (VAR_TEMP_9, 1)
+		case 1:
+			setvar (VAR_TEMP_9, 2)
+		case 2:
+			setvar (VAR_TEMP_9, 3)
+		case 3:
+			setvar (VAR_TEMP_9, 4)
+		case 4:
+			setvar (VAR_TEMP_9, 5)
+		case 5:
+			setvar (VAR_TEMP_9, 6)
+		case 6:
+			setvar (VAR_TEMP_9, 7)
+		case 7:
+			setvar (VAR_TEMP_9, 8)
+		case 8:
+			setvar (VAR_TEMP_9, 9)
+		default:
+			msgbox("VAR_TEMP_9 OOB")
+			closemessage
+	}
+	return
 }	
+
 
 movement CityClara_Movement_RocketBlock1A {
 	walk_down
@@ -633,6 +891,11 @@ movement CityClara_Movement_GardenerBeginGarden1 {
 movement CityClara_Movement_PlayerBeginGarden2 {
     walk_right
     face_left
+}
+
+movement CityClara_Movement_GardenerFinishGarden {
+	walk_left
+	face_up
 }
 
 text CityClara_Text_ClubSign {
@@ -801,4 +1064,12 @@ text CityClara_Text_Gardener_DuringGarden {
 
 text CityClara_Text_Gardener_AfterGarden {
     format("Thank you again for cleaining the garden.")
+}
+
+text CityClara_Text_Gardener_FinishGarden1 {
+	format("You did it! You cut down every weed and fully resolved the infestation! As thanks I want you to keep that Sharp Scythe.")
+}
+
+text CityClara_Text_Gardener_FinishGarden2 {
+	format("Come back and visit the garden later.")
 }

@@ -132,7 +132,7 @@
       "flag": "FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEOWTH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH)",
       "x": 18,
       "y": 23,
       "elevation": 3,

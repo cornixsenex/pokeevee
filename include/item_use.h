@@ -53,6 +53,7 @@ void ItemUseOutOfBattle_TownMap(u8 taskId);
 void ItemUseOutOfBattle_TestBook(u8);
 void ItemUseOutOfBattle_Ostracon(u8);
 void ItemUseOutOfBattle_TrainerCard(u8);
+void ItemUseOutOfBattle_Scythe(u8);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
