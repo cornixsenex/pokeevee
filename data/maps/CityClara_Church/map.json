@@ -203,7 +203,7 @@
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
-      "script": "CityClara_Church_EventScript_BlainTrigger1"
+      "script": "CityClara_Church_EventScript_BlaineTrigger1"
     },
     {
       "type": "trigger",
@@ -212,7 +212,7 @@
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
-      "script": "CityClara_Church_EventScript_BlainTrigger2"
+      "script": "CityClara_Church_EventScript_BlaineTrigger2"
     },
     {
       "type": "trigger",
@@ -221,7 +221,7 @@
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
-      "script": "CityClara_Church_EventScript_BlainTrigger3"
+      "script": "CityClara_Church_EventScript_BlaineTrigger3"
     },
     {
       "type": "trigger",
@@ -230,7 +230,7 @@
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
-      "script": "CityClara_Church_EventScript_BlainTrigger4"
+      "script": "CityClara_Church_EventScript_BlaineTrigger4"
     },
     {
       "type": "trigger",
@@ -239,7 +239,7 @@
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
-      "script": "CityClara_Church_EventScript_BlainTrigger5"
+      "script": "CityClara_Church_EventScript_BlaineTrigger5"
     },
     {
       "type": "trigger",
@@ -248,7 +248,7 @@
       "elevation": 0,
       "var": "VAR_CITYCLARA_STATE",
       "var_value": "1",
-      "script": "CityClara_Church_EventScript_BlainTrigger6"
+      "script": "CityClara_Church_EventScript_BlaineTrigger6"
     }
   ],
   "bg_events": [

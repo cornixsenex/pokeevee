@@ -25,6 +25,7 @@ mapscripts CityClara_Church_MapScripts {
 		if (var(VAR_CITYCLARA_STATE) > 1) {
 			call (CityClara_Church_Script_ShowAfterCutscene)
 		}
+	}
 
 }
 
@@ -48,7 +49,8 @@ script CityClara_Church_Script_ShowAfterCutscene {
 	setobjectxyperm (OBJ_EVENT_MEW, 0, 0)
 	setobjectmovementtype (OBJ_EVENT_MEW, MOVEMENT_TYPE_INVISIBLE)
 
-	setobjectxyperm (OBJ_EVENT_ID_PLAYER`
+	setobjectxyperm (OBJ_EVENT_PYTHIA, 20, 15)
+	setobjectmovementtype (OBJ_EVENT_MEW, MOVEMENT_TYPE_FACE_DOWN)
 }
 	
 
@@ -356,6 +358,10 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	return
 }
 
+script CityClara_Church_Script_JesseAndJames {
+	//placeholder
+}
+
 script CityClara_Church_EventScript_JesseAndJamesDefeated {
 	
 	msgbox(CityClara_Church_Text_JesseAndJamesPost)
@@ -381,7 +387,6 @@ script CityClara_Church_EventScript_JesseAndJamesDefeated {
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)	
 ///Enter Leaf
 
-	clearflag (FLAG_CLARACITY_CHURCH_HIDELEAF)
 	addobject (11)
 	showobjectat (11, MAP_CITY_CLARA_CHURCH)
 	applymovement (11, CityClara_Church_Movement_LeafEnter)
@@ -398,7 +403,6 @@ script CityClara_Church_EventScript_JesseAndJamesDefeated {
 	applymovement (11, Common_Movement_ExclamationMark)	
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	clearflag (FLAG_CLARACITY_CHURCH_HIDEDAD)
 	addobject (12)
 	showobjectat (12, MAP_CITY_CLARA_CHURCH)
 	addobject (13)
@@ -546,7 +550,6 @@ script CityClara_Church_EventScript_JesseAndJamesDefeated {
 
 	//DONZO!!!
 
-	setflag (FLAG_CLARACITY_CHURCH_HIDELEAF)
 	setvar (VAR_CITYCLARA_STATE, 10)
 	return
 }
@@ -1038,6 +1041,116 @@ movement CityClara_Church_Movement_SageCenter {
 	walk_right
 	face_down
 }
+
+movement CityClara_Church_Movement_PlayerEnterL {
+	walk_down * 11
+	walk_right * 8
+}
+
+movement CityClara_Church_Movement_PlayerEnterR {
+	walk_down * 11
+	walk_left * 8
+}
+
+movement CityClara_Church_Movement_PanCameraL1 {
+	walk_slow_right * 6
+}
+
+movement CityClara_Church_Movement_PanCameraL2 {
+	walk_slow_left * 6
+}
+
+movement CityClara_Church_Movement_PanCameraR1 {
+	walk_slow_left * 6
+}
+
+movement CityClara_Church_Movement_PanCameraR2 {
+	walk_slow_right * 6
+}
+
+movement CityClara_Church_Movement_Rocket1PlayerGrabL {	
+	walk_left * 4
+	walk_diag_northwest * 2
+	face_right
+}
+
+movement CityClara_Church_Movement_Rocket2PlayerGrabL {
+	walk_left * 4
+	walk_diag_northwest * 2
+	face_left
+}
+
+movement CityClara_Church_Movement_Rocket1PlayerGrabR {
+	walk_right * 4
+	walk_diag_northeast * 2
+	face_right
+}
+
+movement CityClara_Church_Movement_Rocket2PlayerGrabR {
+	walk_right * 4
+	walk_diag_northeast * 2
+	face_left
+}
+
+movement CityClara_Church_Movement_Rocket1ExitL {
+	walk_diag_southeast * 4
+	walk_down
+}
+
+movement CityClara_Church_Movement_Rocket2ExitL {
+	walk_diag_southeast * 3
+	walk_down * 2
+}
+
+movement CityClara_Church_Movement_Rocket1ExitR {	
+	walk_diag_southwest * 3
+	walk_down * 2
+}
+
+movement CityClara_Church_Movement_Rocket2ExitR {
+	walk_diag_southwest * 4
+	walk_down
+}
+
+movement CityClara_Church_Movement_JesseEngageL {
+	walk_left * 2
+	walk_diag_northwest * 2
+	face_left
+}
+
+movement CityClara_Church_Movement_JamesEngageL {
+	walk_left * 3
+	walk_diag_northwest * 3
+	face_left
+}
+
+movement CityClara_Church_Movement_MeowthEngageL {
+	walk_left
+	walk_diag_northwest * 3
+	face_left
+}
+
+movement CityClara_Church_Movement_JesseEngageR {
+	walk_right * 3
+	walk_diag_northeast * 3
+	face_right
+}
+
+movement CityClara_Church_Movement_JamesEngageR	{
+	walk_right * 2
+	walk_diag_northeast * 2
+	face_right
+}
+
+movement CityClara_Church_Movement_MeowthEngageR {
+	walk_right
+	walk_diag_northeast * 3
+	face_right
+}
+
+
+
+
 
 text CityClara_Church_Text_Sage1 {
 	format("I beg of you, please, stop what you're doing.")
