@@ -67,12 +67,12 @@
 #define FLAG_UNUSED_0x34      0x34 //UNUSED 
 #define FLAG_UNUSED_0x35      0x35 //UNUSED 
 #define FLAG_UNUSED_0x36      0x36 //UNUSED 
-#define FLAG_RECEIVED_CUT     0x37 // Have gotten cut from Mrs. Sully?
+#define FLAG_UNUSED_0x37      0x37 //UNUSED 
 
-#define FLAG_CLARACITY_CHURCH_HIDEJESSEJAMES    0x38 // Hides Jessee and James in ClaraCity Church
-#define FLAG_CLARACITY_CHURCH_HIDELEAF    0x39 // Hides leaf for her intro
-#define FLAG_CLARACITY_CHURCH_HIDEDAD     0x3A // Hides Dad and Sage for intro
-#define FLAG_CLARACITY_CHURCH_HIDESAGE    0x3B // Hides Sage and the church people
+#define FLAG_UNUSED_0x38      0x38 //UNUSED
+#define FLAG_UNUSED_0x39      0x39 //UNUSED
+#define FLAG_UNUSED_0x3A      0x3A //UNUSED 
+#define FLAG_UNUSED_0x3B      0x3B //UNUSED 
 #define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4 - hides Mewtwo in Capital
 #define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
 #define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // after the flower game
