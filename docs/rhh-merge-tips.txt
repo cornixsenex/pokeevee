@@ -1,0 +1,3 @@
+> Read the Changelog
+
+>Do NOT rebase on rhh sync just do ` git pull rhh expansion/x.y.z --no-rebase ` or whatever it is
