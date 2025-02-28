@@ -522,20 +522,11 @@ script SaltySpitoon_EventScript_HiLoKabuto_Fight {
 	msgbox (SaltySpitoon_Text_HiLoKabuto_Fight)
 	//No way someone wins that many times lets get him!
 	closemessage
-	setvar (VAR_0x8004, SPECIAL_BATTLE_HILOKABUTO)
-	special (DoSpecialTrainerBattle)
+	//setvar (VAR_0x8004, SPECIAL_BATTLE_HILOKABUTO)
+	//special (DoSpecialTrainerBattle)
+	trainerbattle_two_trainers(TRAINER_REESE, SaltySpitoon_Text_ReeseLost, TRAINER_JOHN, SaltySpitoon_Text_JohnLost)
 	waitstate
 	release
-	end
-}
-
-script SaltySpitoon_EventScript_ReeseTrainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_REESE, 0, SaltySpitoon_Text_ReeseLost, SaltySpitoon_Text_ReeseLost)
-	end
-}
-
-script SaltySpitoon_EventScript_JohnTrainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_JOHN, 0, SaltySpitoon_Text_JohnLost, SaltySpitoon_Text_JohnLost)
 	end
 }
 
@@ -623,21 +614,12 @@ script SaltySpitoon_EventScript_CantinaBrawl {
 	waitmovement (0)
 	msgbox (SaltySpitoon_Text_PondaBabuIntro)
 	closemessage
-	setvar (VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL)
-	special (DoSpecialTrainerBattle)
+	//setvar (VAR_0x8004, SPECIAL_BATTLE_CANTINA_BRAWL)
+	//special (DoSpecialTrainerBattle)
+	trainerbattle_two_trainers(TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABU, SaltySpitoon_Text_PondaBabuLost)
 	waitstate
 	setflag (FLAG_SALTYSPITOON_BRAWL)
 	return
-}
-
-script SaltySpitoon_EventScript_EvazanTrainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_EVAZAN, 0, SaltySpitoon_Text_EvazanLost, SaltySpitoon_Text_EvazanLost)
-	end
-}
-
-script SaltySpitoon_EventScript_PondaBabuTrainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_PONDA_BABU, 0, SaltySpitoon_Text_PondaBabuLost, SaltySpitoon_Text_PondaBabuLost)
-	end
 }
 
 script SaltySpitoon_EventScript_PondaBabu {

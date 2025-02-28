@@ -422,7 +422,7 @@
 #define TRAINER_CLASS_CULTIST		 0x49
 
 //CHANGE THIS ONE IF YOU ADD MORE
-#define TRAINER_CLASS_COUNT          0x4a
+#define TRAINER_CLASS_COUNT          0x4A
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

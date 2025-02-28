@@ -303,11 +303,11 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_TRAINER_HILL] = MAPPOPUP_THEME_MARBLE,
 	//Cornix Customs
     [MAPSEC_ELICIUS_BEACH] = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_VILLA_FLORA  ] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_VIA_FLORAE]    = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_ALDEON]        = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_VIA_ARBORUM]   = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_PORTO_PRIMO]    = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_VILLA_FLOREA  ] = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_VIA_FLOREA]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_ALBION]        = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_VIA_ARBUSTA]   = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_PORTUS_PRIMUS]    = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_SINUS_CAMELUS]  = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_DELTA_DRACI]  = MAPPOPUP_THEME_WOOD,
     [MAPSEC_MARE_OCCIDENS]       = MAPPOPUP_THEME_UNDERWATER,
@@ -316,27 +316,27 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_MARE_TRANQUILLUM]    = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_TROPICUM]       = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_MARE_SUBTROPICUM]    = MAPPOPUP_THEME_UNDERWATER,
-    [MAPSEC_MARE_MALUS]          = MAPPOPUP_THEME_UNDERWATER,
+    [MAPSEC_MARE_MORTUORUM]          = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_ISLA_IGNIFERA]       = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_YERBA_BUENA]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_TROPICA]      = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_ISLA_PINA]           = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_ISLA_PINEA]           = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_LAVINIA]        = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_ITHACA]         = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_ISLA_WAKA]           = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_ISLA_SOLATA]           = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ISLA_ARIDA]          = MAPPOPUP_THEME_STONE,
     [MAPSEC_ACTA_ECHONA]        = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_SILVA]        = MAPPOPUP_THEME_WOOD,
     [MAPSEC_SILVA_PROFUNDA]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_SALIX]               = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_LAGO_DRACO]          = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_LAGO_DRACO_SHORE]    = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_UPPER_RIO_DRACO]     = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_LOWER_RIO_DRACO]     = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_UPPER_DRACO_EAST]    = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_LOWER_DRACO_EAST]    = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_UPPER_DRACO_WEST]    = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_LOWER_DRACO_WEST]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_LACUS_DRACUS]          = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_LITUS_LACUS]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_DRACUS_SUPERIOR]     = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_DRACUS_INFERIOR]     = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_UPPER_EAST_DRAKE]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_LOWER_EAST_DRAKE]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_UPPER_WEST_DRAKE]    = MAPPOPUP_THEME_WOOD,
+    [MAPSEC_LOWER_WEST_DRAKE]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_CASTALIA]            = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_SINUS_CLARUS]        = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_VIA_FIDELIUM]        = MAPPOPUP_THEME_WOOD
@@ -807,28 +807,28 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 					break;
 				case 1:
-					regionMapSectionId = MAPSEC_LAGO_DRACO;
+					regionMapSectionId = MAPSEC_LACUS_DRACUS;
 					break;
 				case 2:
-					regionMapSectionId = MAPSEC_LAGO_DRACO_SHORE;
+					regionMapSectionId = MAPSEC_LITUS_LACUS;
 					break;
 				case 3:
-					regionMapSectionId = MAPSEC_UPPER_RIO_DRACO;
+					regionMapSectionId = MAPSEC_DRACUS_SUPERIOR;
 					break;
 				case 4:
-					regionMapSectionId = MAPSEC_LOWER_RIO_DRACO;
+					regionMapSectionId = MAPSEC_DRACUS_INFERIOR;
 					break;
 				case 5:
-					regionMapSectionId = MAPSEC_UPPER_DRACO_EAST;
+					regionMapSectionId = MAPSEC_UPPER_EAST_DRAKE;
 					break;
 				case 6:
-					regionMapSectionId = MAPSEC_LOWER_DRACO_EAST;
+					regionMapSectionId = MAPSEC_LOWER_EAST_DRAKE;
 					break;
 				case 7:
-					regionMapSectionId = MAPSEC_UPPER_DRACO_WEST;
+					regionMapSectionId = MAPSEC_UPPER_WEST_DRAKE;
 					break;
 				case 8:
-					regionMapSectionId = MAPSEC_LOWER_DRACO_WEST;
+					regionMapSectionId = MAPSEC_LOWER_WEST_DRAKE;
 					break;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -844,10 +844,10 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 					break;
 				case 1:
-					regionMapSectionId = MAPSEC_LAGO_DRACO;
+					regionMapSectionId = MAPSEC_LACUS_DRACUS;
 					break;
 				case 2:
-					regionMapSectionId = MAPSEC_LAGO_DRACO_SHORE;
+					regionMapSectionId = MAPSEC_LITUS_LACUS;
 					break;
 				case 3:
 					regionMapSectionId = MAPSEC_SALIX;
@@ -860,17 +860,17 @@ static void LoadMapNamePopUpWindowBg(void)
 		if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH)) 	
 		{
 			if (IsLakeIraSouthUpperDracoWest())
-					regionMapSectionId = MAPSEC_UPPER_DRACO_WEST;
+					regionMapSectionId = MAPSEC_UPPER_WEST_DRAKE;
 			else  // Default part of map => Cove
-					regionMapSectionId = MAPSEC_LOWER_DRACO_WEST;
+					regionMapSectionId = MAPSEC_LOWER_WEST_DRAKE;
 		}
 		//SilvanWoodsN
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N)) 	
 		{		
 			if (IsSilvanWoodsNUpperDracoEast())
-					regionMapSectionId = MAPSEC_UPPER_DRACO_EAST;
+					regionMapSectionId = MAPSEC_UPPER_EAST_DRAKE;
 			else  // Default part of map => Cove
-					regionMapSectionId = MAPSEC_LOWER_DRACO_EAST;
+					regionMapSectionId = MAPSEC_LOWER_EAST_DRAKE;
 		}
 		//Silvan Woods
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
@@ -885,7 +885,7 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_SILVA;
 					break;
 				case 2:
-					regionMapSectionId = MAPSEC_LOWER_RIO_DRACO;
+					regionMapSectionId = MAPSEC_DRACUS_INFERIOR;
 					break;
 				case 3:
 					regionMapSectionId = MAPSEC_SILVA_PROFUNDA;
@@ -903,7 +903,7 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 					break;
 				case 1:
-					regionMapSectionId = MAPSEC_ISLA_PINA;
+					regionMapSectionId = MAPSEC_ISLA_PINEA;
 					break;
 				case 2:
 					regionMapSectionId = MAPSEC_MARE_OCCIDENS;

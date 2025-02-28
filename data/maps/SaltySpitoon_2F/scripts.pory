@@ -460,8 +460,7 @@ script SaltySpitoon_2F_EventScript_AmbushBlue {
 	applymovement (OBJ_EVENT_BLUE2, Common_Movement_WalkUp)
 	waitmovement(0)
 	//duo battle
-	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_BLUE)
-	special (DoSpecialTrainerBattle)
+	trainerbattle_two_trainers (TRAINER_BLUE6, SaltySpitoon_2F_Text_Blue1Lost, TRAINER_BLUE7, SaltySpitoon_2F_Text_Blue2Lost)
 	waitstate
 	//duo complain then dip
 	//biggie approaches, speal, battle
@@ -502,8 +501,7 @@ script SaltySpitoon_2F_EventScript_AmbushYellow {
 	applymovement (OBJ_EVENT_YELLOW2, Common_Movement_WalkUp)
 	waitmovement(0)
 	//duo battle
-	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_YELLOW)
-	special (DoSpecialTrainerBattle)
+	trainerbattle_two_trainers (TRAINER_YELLOW6, SaltySpitoon_2F_Text_Yellow1Lost, TRAINER_YELLOW7, SaltySpitoon_2F_Text_Yellow2Lost)
 	waitstate
 	//duo complain then dip
 	//biggie approaches, speal, battle
@@ -544,9 +542,7 @@ script SaltySpitoon_2F_EventScript_AmbushRed {
 	applymovement (OBJ_EVENT_RED2, Common_Movement_WalkUp)
 	waitmovement(0)
 	//duo battle
-	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_RED)
-	special (DoSpecialTrainerBattle)
-	waitstate
+	trainerbattle_two_trainers (TRAINER_RED6, SaltySpitoon_2F_Text_Red1Lost, TRAINER_RED7, SaltySpitoon_2F_Text_Red2Lost)
 	//duo complain then dip
 	//biggie approaches, speal, battle
 	msgbox(SaltySpitoon_2F_Text_Ambush2)
@@ -586,9 +582,7 @@ script SaltySpitoon_2F_EventScript_AmbushGreen {
 	applymovement (OBJ_EVENT_GREEN2, Common_Movement_WalkUp)
 	waitmovement(0)
 	//duo battle
-	setvar (VAR_0x8004, SPECIAL_BATTLE_SS2F_GREEN)
-	special (DoSpecialTrainerBattle)
-	waitstate
+	trainerbattle_two_trainers (TRAINER_GREEN6, SaltySpitoon_2F_Text_Green1Lost, TRAINER_GREEN7, SaltySpitoon_2F_Text_Green2Lost)
 	//duo complain then dip
 	//biggie approaches, speal, battle
 	msgbox(SaltySpitoon_2F_Text_Ambush2)
@@ -627,42 +621,6 @@ script SaltySpitoon_2F_EventScript_AmbushPositionPlayer {
 	waitmovement (0)
 	return
 }
-
-script SaltySpitoon_2F_EventScript_Blue1Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_BLUE6, 0, SaltySpitoon_2F_Text_Blue1Lost, SaltySpitoon_2F_Text_Blue1Lost)
-}
-
-script SaltySpitoon_2F_EventScript_Blue2Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_BLUE7, 0, SaltySpitoon_2F_Text_Blue2Lost, SaltySpitoon_2F_Text_Blue2Lost)
-}
-
-script SaltySpitoon_2F_EventScript_Yellow1Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_YELLOW6, 0, SaltySpitoon_2F_Text_Yellow1Lost, SaltySpitoon_2F_Text_Yellow1Lost)
-}
-
-script SaltySpitoon_2F_EventScript_Yellow2Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_YELLOW7, 0, SaltySpitoon_2F_Text_Yellow2Lost, SaltySpitoon_2F_Text_Yellow2Lost)
-}
- 
-
-script SaltySpitoon_2F_EventScript_Red1Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_RED6, 0, SaltySpitoon_2F_Text_Red1Lost, SaltySpitoon_2F_Text_Red1Lost)
-}
-
-script SaltySpitoon_2F_EventScript_Red2Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_RED7, 0, SaltySpitoon_2F_Text_Red2Lost, SaltySpitoon_2F_Text_Red2Lost)
-}
- 
-
-script SaltySpitoon_2F_EventScript_Green1Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_A, TRAINER_GREEN6, 0, SaltySpitoon_2F_Text_Green1Lost, SaltySpitoon_2F_Text_Green1Lost)
-}
-
-script SaltySpitoon_2F_EventScript_Green2Trainer {
-	trainerbattle (TRAINER_BATTLE_SET_TRAINER_B, TRAINER_GREEN7, 0, SaltySpitoon_2F_Text_Green2Lost, SaltySpitoon_2F_Text_Green2Lost)
-}
- 
- 
 
 //placeholder
 movement SaltySpitoon_2F_Movement_PlayerAmbush {

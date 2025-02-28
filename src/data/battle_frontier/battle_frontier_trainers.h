@@ -1,3 +1,6 @@
+
+//Whole file has been removed for some time now. Cornix 2.25
+
 const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_COUNT] =
 {
 //    [FRONTIER_TRAINER_BRADY] = {
@@ -2392,12 +2395,12 @@ const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_COU
 //        .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
 //        .monSet = gBattleFrontierTrainerMons_Abby
 //    },
-    [FRONTIER_TRAINER_GRETEL] = {
-        .facilityClass = FACILITY_CLASS_AROMA_LADY,
-        .trainerName = _("GRETEL"),
-        .speechBefore = {EC_WORD_I, EC_WORD_CAUSE, EC_MOVE(OUTRAGE), EC_WORD_AS, EC_WORD_A, EC_WORD_TRAINER},
-        .speechWin = {EC_WORD_IT_S, EC_WORD_ONLY, EC_WORD_NATURAL, EC_WORD_SEE_YA, EC_WORD_BYE_BYE, EC_WORD_EXCL},
-        .speechLose = {EC_WORD_IT_S, EC_WORD_HARD, EC_WORD_TO, EC_WORD_BELIEVE, EC_WORD_BUT, EC_WORD_CONGRATS},
-        .monSet = gBattleFrontierTrainerMons_Gretel
-    }
+//    [FRONTIER_TRAINER_GRETEL] = {
+//        .facilityClass = FACILITY_CLASS_AROMA_LADY,
+//        .trainerName = _("GRETEL"),
+//        .speechBefore = {EC_WORD_I, EC_WORD_CAUSE, EC_MOVE(OUTRAGE), EC_WORD_AS, EC_WORD_A, EC_WORD_TRAINER},
+//        .speechWin = {EC_WORD_IT_S, EC_WORD_ONLY, EC_WORD_NATURAL, EC_WORD_SEE_YA, EC_WORD_BYE_BYE, EC_WORD_EXCL},
+//        .speechLose = {EC_WORD_IT_S, EC_WORD_HARD, EC_WORD_TO, EC_WORD_BELIEVE, EC_WORD_BUT, EC_WORD_CONGRATS},
+//        .monSet = (const u16[]){FRONTIER_MONS_AROMA_LADY_3}
+//    }
 };

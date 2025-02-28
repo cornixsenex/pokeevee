@@ -6,6 +6,7 @@
 #include "bg.h"
 #include "cable_club.h"
 #include "clock.h"
+#include "dexnav.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
@@ -72,6 +73,8 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+
+STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
 struct CableClubPlayer
 {
@@ -855,6 +858,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     LoadObjEventTemplatesFromHeader();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
+    ResetDexNavSearch();
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
 #if FREE_MATCH_CALL == FALSE
@@ -1037,6 +1041,7 @@ static void LoadMapFromWarp(bool32 a1)
     CheckLeftFriendsSecretBase();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
+    ResetDexNavSearch();
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
 #if FREE_MATCH_CALL == FALSE
@@ -3515,6 +3520,9 @@ static u8 ReformatItemDescription(u16 item, u8 *dest)
 void ScriptShowItemDescription(struct ScriptContext *ctx)
 {
     u8 headerType = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
     struct WindowTemplate template;
     u16 item = gSpecialVar_0x8006;
     u8 textY;
@@ -3554,6 +3562,8 @@ void ScriptShowItemDescription(struct ScriptContext *ctx)
 
 void ScriptHideItemDescription(struct ScriptContext *ctx)
 {
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
     DestroyItemIconSprite();
 
     if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_ITEM_OBTAINED))
@@ -3681,21 +3691,21 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 			case 0:
 				return MAPSEC_DYNAMIC;
 			case 1:
-				return MAPSEC_LAGO_DRACO;
+				return MAPSEC_LACUS_DRACUS;
 			case 2:
-				return MAPSEC_LAGO_DRACO_SHORE;
+				return MAPSEC_LITUS_LACUS;
 			case 3:
-				return MAPSEC_UPPER_RIO_DRACO;
+				return MAPSEC_DRACUS_SUPERIOR;
 			case 4:
-				return MAPSEC_LOWER_RIO_DRACO;
+				return MAPSEC_DRACUS_INFERIOR;
 			case 5:
-				return MAPSEC_UPPER_DRACO_EAST;
+				return MAPSEC_UPPER_EAST_DRAKE;
 			case 6:
-				return MAPSEC_LOWER_DRACO_EAST;
+				return MAPSEC_LOWER_EAST_DRAKE;
 			case 7:
-				return MAPSEC_UPPER_DRACO_WEST;
+				return MAPSEC_UPPER_WEST_DRAKE;
 			case 8:
-				return MAPSEC_LOWER_DRACO_WEST;
+				return MAPSEC_LOWER_WEST_DRAKE;
 			default:
 				return MAPSEC_DYNAMIC;
 		}
@@ -3708,9 +3718,9 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 			case 0:
 				return MAPSEC_DYNAMIC;
 			case 1:
-				return MAPSEC_LAGO_DRACO;
+				return MAPSEC_LACUS_DRACUS;
 			case 2:
-				return MAPSEC_LAGO_DRACO_SHORE;
+				return MAPSEC_LITUS_LACUS;
 			case 3:
 				return MAPSEC_SALIX;
 			default:
@@ -3721,17 +3731,17 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH))
 	{
 		if (IsLakeIraSouthUpperDracoWest())
-			return MAPSEC_UPPER_DRACO_WEST;
+			return MAPSEC_UPPER_WEST_DRAKE;
 		else
-			return MAPSEC_LOWER_DRACO_WEST;
+			return MAPSEC_LOWER_WEST_DRAKE;
 	}
 	//SilvanWoodsN
 	if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N))
 	{
 		if (IsSilvanWoodsNUpperDracoEast())
-			return MAPSEC_UPPER_DRACO_EAST;
+			return MAPSEC_UPPER_EAST_DRAKE;
 		else 
-			return MAPSEC_LOWER_DRACO_EAST;
+			return MAPSEC_LOWER_EAST_DRAKE;
 	}
 	//Silvan Woods
 	if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
@@ -3743,7 +3753,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 			case 1:
 				return MAPSEC_SILVA;
 			case 2:
-				return MAPSEC_LOWER_RIO_DRACO;
+				return MAPSEC_DRACUS_INFERIOR;
 			case 3:
 				return MAPSEC_SILVA_PROFUNDA;
 			default:
@@ -3758,7 +3768,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 			case 0:
 				return MAPSEC_DYNAMIC;
 			case 1:
-				return MAPSEC_ISLA_PINA;
+				return MAPSEC_ISLA_PINEA;
 			case 2:
 				return MAPSEC_MARE_OCCIDENS;
 			case 3:

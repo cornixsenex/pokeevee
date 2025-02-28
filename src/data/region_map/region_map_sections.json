@@ -1487,94 +1487,94 @@
       "width": 1,
       "height": 1
     },
-    {
-      "map_section": "MAPSEC_THREE_ISLE_PATH",
-      "name": "THREE ISLE PATH",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_TANOBY_KEY",
-      "name": "TANOBY KEY",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_BIRTH_ISLAND_FRLG",
-      "name": "BIRTH ISLAND",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_MONEAN_CHAMBER",
-      "name": "MONEAN CHAMBER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_LIPTOO_CHAMBER",
-      "name": "LIPTOO CHAMBER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_WEEPTH_CHAMBER",
-      "name": "WEEPTH CHAMBER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_DILFORD_CHAMBER",
-      "name": "DILFORD CHAMBER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_SCUFIB_CHAMBER",
-      "name": "SCUFIB CHAMBER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_RIXY_CHAMBER",
-      "name": "RIXY CHAMBER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_VIAPOIS_CHAMBER",
-      "name": "VIAPOIS CHAMBER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_EMBER_SPA",
-      "name": "EMBER SPA",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
+	{
+	  "map_section": "MAPSEC_VIA_MAGNA",
+	  "name": "VIA MAGNA",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_ROBUSTICA",
+	  "name": "ROBVSTICA",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_VENATOR_MONS",
+	  "name": "VENATOR MONS",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_VILLA_VENATORUM",
+	  "name": "VILLA VENATORVM",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_SABINA_NOVA",
+	  "name": "SABINA NOVA",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_VILLA_VALLIS",
+	  "name": "VILLA VALLIS",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_MONTES_VIGILIAE",
+	  "name": "MONTES VIGILIAE",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_VILLA_VIVARIA",
+	  "name": "VILLA VIVARIA",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_VIA_LITORALIS",
+	  "name": "VIA LITORALIS",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_CASTRUM",
+	  "name": "CASTRVM",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
+	{
+	  "map_section": "MAPSEC_SINUS_PACIFICUS",
+	  "name": "SINVS PACIFICVS",
+	  "x": 0,
+	  "y": 0,
+	  "width": 1,
+	  "height": 1
+	},
     {
       "map_section": "MAPSEC_SPECIAL_AREA",
       "name": "SPECIAL AREA",
@@ -1704,20 +1704,329 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ELICIUS_BEACH",
-      "name": "BREEZEVALE TOWN",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
       "map_section": "MAPSEC_TRAINER_HILL",
       "name": "TRAINER HILL",
       "x": 8,
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ELICIUS_BEACH",
+      "name": "ELICIUS BEACH",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VILLA_FLOREA",
+      "name": "VILLA FLOREA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VIA_FLOREA",
+      "name": "VIA FLOREA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ALBION",
+      "name": "ALBION",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VIA_ARBUSTA",
+      "name": "VIA ARBVSTA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_PORTUS_PRIMUS",
+      "name": "PORTVS PRIMVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SINUS_CAMELUS",
+      "name": "SINVS CAMELVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DELTA_DRACI",
+      "name": "DELTA DRACI",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MARE_OCCIDENS",
+      "name": "MARE OCCIDENS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MARE_ORIENS",
+      "name": "MARE ORIENS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MARE_INTERNUM",
+      "name": "MARE INTERNVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MARE_TRANQUILLUM",
+      "name": "MARE TRANQVILLVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MARE_TROPICUM",
+      "name": "MARE TROPICVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MARE_SUBTROPICUM",
+      "name": "MARE SVBTROPICVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MARE_MORTUORUM",
+      "name": "MARE MORTVORVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_IGNIFERA",
+      "name": "ISLA IGNIFERA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_YERBA_BUENA",
+      "name": "ISLA YERBA BVENA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_TROPICA",
+      "name": "ISLA TROPICA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_PINEA",
+      "name": "ISLA PINEA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_LAVINIA",
+      "name": "ISLA LAVINIA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_ITHACA",
+      "name": "ISLA ITHAKA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_SOLATA",
+      "name": "ISLA SOLATA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ISLA_ARIDA",
+      "name": "ISLA ARIDA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ACTA_ECHONA",
+      "name": "ACTA ECHONA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SILVA",
+      "name": "SILVA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SILVA_PROFUNDA",
+      "name": "SILVA PROFVNDA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_RIO_DRACO",
+      "name": "DRACVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SALIX",
+      "name": "SALIX",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LACUS_DRACUS",
+      "name": "LACVS DRACVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LITUS_LACUS",
+      "name": "LITVS LACVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DRACUS_SUPERIOR",
+      "name": "DRACVS SVPERIOR",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DRACUS_INFERIOR",
+      "name": "DRACVS INFERIOR",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_UPPER_EAST_DRAKE",
+      "name": "UPPER EAST DRAKE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LOWER_EAST_DRAKE",
+      "name": "LOWER EAST DRAKE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_UPPER_WEST_DRAKE",
+      "name": "UPPER WEST DRAKE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LOWER_WEST_DRAKE",
+      "name": "LOWER WEST DRAKE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_CASTALIA",
+      "name": "CASTALIA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SINUS_CLARUS",
+      "name": "SINVS CLARVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VIA_FIDELIUM",
+      "name": "VIA FIDELIVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     }
+
+
+
+
+
   ]
 }

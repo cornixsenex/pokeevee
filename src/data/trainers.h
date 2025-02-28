@@ -1,7 +1,7 @@
     
 // NOTE THIS FILE RE-FORMATTED 1.9.0 240801
 
-	[TRAINER_NONE] =
+	[DIFFICULTY_NORMAL][TRAINER_NONE] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -13,7 +13,7 @@
         .party = NULL,
     },
 
-	[TRAINER_ADAM] =
+	[DIFFICULTY_NORMAL][TRAINER_ADAM] =
 	{
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -25,7 +25,7 @@
         .party = TRAINER_PARTY(sParty_Adam),
     }
 	,
-	[TRAINER_ETIENNE] =
+	[DIFFICULTY_NORMAL][TRAINER_ETIENNE] =
 	{
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -37,7 +37,7 @@
         .party = TRAINER_PARTY(sParty_Etienne),
     },
 
-	[TRAINER_KIM] =
+	[DIFFICULTY_NORMAL][TRAINER_KIM] =
 	{
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -49,7 +49,7 @@
         .party = TRAINER_PARTY(sParty_Kim),
     },
 
-	[TRAINER_LOGAN] =
+	[DIFFICULTY_NORMAL][TRAINER_LOGAN] =
 	{
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -61,7 +61,7 @@
         .party = TRAINER_PARTY(sParty_Logan),
     },
 
-	[TRAINER_MADDIE] =
+	[DIFFICULTY_NORMAL][TRAINER_MADDIE] =
 	{
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -73,7 +73,7 @@
         .party = TRAINER_PARTY(sParty_Maddie),
     },
 
-	[TRAINER_MIA] =
+	[DIFFICULTY_NORMAL][TRAINER_MIA] =
 	{
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -85,7 +85,7 @@
         .party = TRAINER_PARTY(sParty_Mia),
     },
 
-	[TRAINER_MANNY] =
+	[DIFFICULTY_NORMAL][TRAINER_MANNY] =
 	{
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -98,7 +98,7 @@
     },
 
 
-    [TRAINER_ROSS] =
+    [DIFFICULTY_NORMAL][TRAINER_ROSS] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -110,7 +110,7 @@
         .party = TRAINER_PARTY(sParty_Ross),
     },
 
-	[TRAINER_IZZY] =
+	[DIFFICULTY_NORMAL][TRAINER_IZZY] =
     {
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -122,7 +122,7 @@
         .party = TRAINER_PARTY(sParty_Izzy),
     },
 
-    [TRAINER_RICARDO] =
+    [DIFFICULTY_NORMAL][TRAINER_RICARDO] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -134,7 +134,7 @@
         .party = TRAINER_PARTY(sParty_Ricardo),
     },
 
-    [TRAINER_PEDRO] =
+    [DIFFICULTY_NORMAL][TRAINER_PEDRO] =
       {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -146,7 +146,7 @@
         .party = TRAINER_PARTY(sParty_Pedro),
     },
 
-    [TRAINER_MONICA] =
+    [DIFFICULTY_NORMAL][TRAINER_MONICA] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -158,7 +158,7 @@
         .party = TRAINER_PARTY(sParty_Monica),
     },
 
-    [TRAINER_AMBER] =
+    [DIFFICULTY_NORMAL][TRAINER_AMBER] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -170,7 +170,7 @@
         .party = TRAINER_PARTY(sParty_Amber),
     },
 
-    [TRAINER_DUSTIN] =
+    [DIFFICULTY_NORMAL][TRAINER_DUSTIN] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -182,7 +182,7 @@
         .party = TRAINER_PARTY(sParty_Dustin),
     },
 
-    [TRAINER_JON] =
+    [DIFFICULTY_NORMAL][TRAINER_JON] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -194,7 +194,7 @@
         .party = TRAINER_PARTY(sParty_Jon),
     },
 
-    [TRAINER_JOE] =
+    [DIFFICULTY_NORMAL][TRAINER_JOE] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -206,7 +206,7 @@
         .party = TRAINER_PARTY(sParty_Jon),
     },
 
-    [TRAINER_RYAN] =
+    [DIFFICULTY_NORMAL][TRAINER_RYAN] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -218,7 +218,7 @@
         .party = TRAINER_PARTY(sParty_Ryan),
     },
 
-    [TRAINER_MEGAN] =
+    [DIFFICULTY_NORMAL][TRAINER_MEGAN] =
     {
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -230,7 +230,7 @@
         .party = TRAINER_PARTY(sParty_Megan),
     },
 
-    [TRAINER_DEVON] =
+    [DIFFICULTY_NORMAL][TRAINER_DEVON] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -242,7 +242,7 @@
         .party = TRAINER_PARTY(sParty_Devon),
     },
 
-    [TRAINER_LEAF1] =
+    [DIFFICULTY_NORMAL][TRAINER_LEAF1] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -250,13 +250,12 @@
         .trainerName = _("LEAF"),
         .items = {},
         .doubleBattle = FALSE,
-		.mugshotEnabled = TRUE,
 		.mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Leaf1),
     },
 
-    [TRAINER_NICK] =
+    [DIFFICULTY_NORMAL][TRAINER_NICK] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -268,7 +267,7 @@
         .party = TRAINER_PARTY(sParty_Nick),
     },
 
-    [TRAINER_KYLE] =
+    [DIFFICULTY_NORMAL][TRAINER_KYLE] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -280,7 +279,7 @@
         .party = TRAINER_PARTY(sParty_Kyle),
     },
 
-    [TRAINER_JED] =
+    [DIFFICULTY_NORMAL][TRAINER_JED] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -292,7 +291,7 @@
         .party = TRAINER_PARTY(sParty_Jed),
     },
 
-    [TRAINER_REX] =
+    [DIFFICULTY_NORMAL][TRAINER_REX] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -304,7 +303,7 @@
         .party = TRAINER_PARTY(sParty_Rex),
     },
 
-    [TRAINER_MORGAN] =
+    [DIFFICULTY_NORMAL][TRAINER_MORGAN] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -316,7 +315,7 @@
         .party = TRAINER_PARTY(sParty_Morgan),
     },
 
-    [TRAINER_TREVOR] =
+    [DIFFICULTY_NORMAL][TRAINER_TREVOR] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -328,7 +327,7 @@
         .party = TRAINER_PARTY(sParty_Trevor),
     },
 
-    [TRAINER_CRYSTAL] =
+    [DIFFICULTY_NORMAL][TRAINER_CRYSTAL] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -340,7 +339,7 @@
         .party = TRAINER_PARTY(sParty_Crystal),
     },
 
-    [TRAINER_KARLYE] =
+    [DIFFICULTY_NORMAL][TRAINER_KARLYE] =
     {
          .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -352,7 +351,7 @@
         .party = TRAINER_PARTY(sParty_Karlye),
     },
 
-    //[TRAINER_MATT] =
+    //[DIFFICULTY_NORMAL][TRAINER_MATT] =
     //{
     //    .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
     //    .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -364,7 +363,7 @@
     //    .party = {.NoItemDefaultMoves = sParty_Matt),
     //},
 
-    [TRAINER_RICKY] =
+    [DIFFICULTY_NORMAL][TRAINER_RICKY] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -376,7 +375,7 @@
         .party = TRAINER_PARTY(sParty_Ricky),
     }, 
  
-	[TRAINER_PETER] =
+	[DIFFICULTY_NORMAL][TRAINER_PETER] =
     {
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -388,7 +387,7 @@
         .party = TRAINER_PARTY(sParty_Peter),
     },
 
-    [TRAINER_DANNY] =
+    [DIFFICULTY_NORMAL][TRAINER_DANNY] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -400,7 +399,7 @@
         .party = TRAINER_PARTY(sParty_Danny),
     }, 
 
-    //[TRAINER_ARCHIE] =
+    //[DIFFICULTY_NORMAL][TRAINER_ARCHIE] =
     //{
     //    .trainerClass = TRAINER_CLASS_AQUA_LEADER,
     //    .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -412,7 +411,7 @@
     //    .party = {.NoItemDefaultMoves = sParty_Archie),
     //},
 
-	[TRAINER_MR_GLASMAN] =
+	[DIFFICULTY_NORMAL][TRAINER_MR_GLASMAN] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -424,7 +423,7 @@
         .party = TRAINER_PARTY(sParty_Mr_Glasman),
     },
 
-    [TRAINER_PEEVES] =
+    [DIFFICULTY_NORMAL][TRAINER_PEEVES] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -436,7 +435,7 @@
         .party = TRAINER_PARTY(sParty_Peeves),
     },
 
-	[TRAINER_ETHAN] =
+	[DIFFICULTY_NORMAL][TRAINER_ETHAN] =
     {
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -448,7 +447,7 @@
         .party = TRAINER_PARTY(sParty_Ethan),
     },
 
-    [TRAINER_EMILY] =
+    [DIFFICULTY_NORMAL][TRAINER_EMILY] =
     {
          .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -460,7 +459,7 @@
         .party = TRAINER_PARTY(sParty_Emily),
     },
 
-    [TRAINER_SAGIS] =
+    [DIFFICULTY_NORMAL][TRAINER_SAGIS] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -472,7 +471,7 @@
         .party = TRAINER_PARTY(sParty_Sagis),
     },  
 
-    [TRAINER_NOAH] =
+    [DIFFICULTY_NORMAL][TRAINER_NOAH] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -484,7 +483,7 @@
         .party = TRAINER_PARTY(sParty_Noah),
     },
 
-    [TRAINER_FREDRICK] =
+    [DIFFICULTY_NORMAL][TRAINER_FREDRICK] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -496,7 +495,7 @@
         .party = TRAINER_PARTY(sParty_Fredrick),
     },
 
-    [TRAINER_MATT] =
+    [DIFFICULTY_NORMAL][TRAINER_MATT] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -508,7 +507,7 @@
         .party = TRAINER_PARTY(sParty_Matt),
     },
 
-    [TRAINER_ZANDER] =
+    [DIFFICULTY_NORMAL][TRAINER_ZANDER] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -520,7 +519,7 @@
         .party = TRAINER_PARTY(sParty_Zander),
     },
 
-    [TRAINER_JULIA] =
+    [DIFFICULTY_NORMAL][TRAINER_JULIA] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -532,7 +531,7 @@
         .party = TRAINER_PARTY(sParty_Julia),
     },
 
-    [TRAINER_ROSA] =
+    [DIFFICULTY_NORMAL][TRAINER_ROSA] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -544,7 +543,7 @@
         .party = TRAINER_PARTY(sParty_Rosa),
     },
 
-    [TRAINER_MARY_AND_MOLLY] =
+    [DIFFICULTY_NORMAL][TRAINER_MARY_AND_MOLLY] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -556,7 +555,7 @@
         .party = TRAINER_PARTY(sParty_MaryAndMolly),
     },
 
-    [TRAINER_LEAH] =
+    [DIFFICULTY_NORMAL][TRAINER_LEAH] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -568,7 +567,7 @@
         .party = TRAINER_PARTY(sParty_Leah),
     },
 
-    [TRAINER_DAISY] =
+    [DIFFICULTY_NORMAL][TRAINER_DAISY] =
     {
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -580,7 +579,7 @@
         .party = TRAINER_PARTY(sParty_Daisy),
     },
 
-    [TRAINER_KELSEY]=
+    [DIFFICULTY_NORMAL][TRAINER_KELSEY]=
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -592,7 +591,7 @@
         .party = TRAINER_PARTY(sParty_Kelsey),
     },
 
-    [TRAINER_FELIX] =
+    [DIFFICULTY_NORMAL][TRAINER_FELIX] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -604,7 +603,7 @@
         .party = TRAINER_PARTY(sParty_Felix),
     },
 
-    [TRAINER_VIOLET] =
+    [DIFFICULTY_NORMAL][TRAINER_VIOLET] =
     {
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -616,7 +615,7 @@
         .party = TRAINER_PARTY(sParty_Violet),
     },
 
-    [TRAINER_RUBY_AND_JACK] =
+    [DIFFICULTY_NORMAL][TRAINER_RUBY_AND_JACK] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -628,7 +627,7 @@
         .party = TRAINER_PARTY(sParty_RubyAndJack),
     },
 
-    [TRAINER_LESTER] =
+    [DIFFICULTY_NORMAL][TRAINER_LESTER] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -640,7 +639,7 @@
         .party = TRAINER_PARTY(sParty_Lester),
     },
 
-    [TRAINER_NEVILLE] =
+    [DIFFICULTY_NORMAL][TRAINER_NEVILLE] =
     {
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
@@ -651,7 +650,7 @@
         .party = TRAINER_PARTY(sParty_Neville),
     },
 
-    [TRAINER_WANG] =
+    [DIFFICULTY_NORMAL][TRAINER_WANG] =
     {
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -663,7 +662,7 @@
         .party = TRAINER_PARTY(sParty_Wang),
     },
 
-    [TRAINER_SALLY_AND_ED] =
+    [DIFFICULTY_NORMAL][TRAINER_SALLY_AND_ED] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -675,7 +674,7 @@
         .party = TRAINER_PARTY(sParty_SallyAndEd),
     },
 
-    [TRAINER_JAY] =
+    [DIFFICULTY_NORMAL][TRAINER_JAY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -687,7 +686,7 @@
         .party = TRAINER_PARTY(sParty_Jay),
     },
 
-    [TRAINER_FOSTER] =
+    [DIFFICULTY_NORMAL][TRAINER_FOSTER] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -699,7 +698,7 @@
         .party = TRAINER_PARTY(sParty_Foster),
     },
 
-    [TRAINER_DOUGGIE] =
+    [DIFFICULTY_NORMAL][TRAINER_DOUGGIE] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -711,7 +710,7 @@
         .party = TRAINER_PARTY(sParty_Douggie),
     },
 
-    [TRAINER_SMOKEY] =
+    [DIFFICULTY_NORMAL][TRAINER_SMOKEY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -723,7 +722,7 @@
         .party = TRAINER_PARTY(sParty_Smokey),
     },
 
-    [TRAINER_STONEY] =
+    [DIFFICULTY_NORMAL][TRAINER_STONEY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -735,7 +734,7 @@
         .party = TRAINER_PARTY(sParty_Stoney),
     },
 
-    [TRAINER_GARY] =
+    [DIFFICULTY_NORMAL][TRAINER_GARY] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -747,7 +746,7 @@
         .party = TRAINER_PARTY(sParty_Gary),
     },
 
-    [TRAINER_RIVAL2] =
+    [DIFFICULTY_NORMAL][TRAINER_RIVAL2] =
     {
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -755,13 +754,12 @@
 		.trainerName = _("{B_RIVAL_NAME}"),
 		.items = {},
 		.doubleBattle = FALSE,
-		.mugshotEnabled = TRUE,
 		.mugshotColor = MUGSHOT_COLOR_BLUE,
 		.aiFlags = AI_FLAG_BASIC_TRAINER,
 		.party = TRAINER_PARTY(sParty_Rival2),
     },
 
-    [TRAINER_MRS_SULLY] =
+    [DIFFICULTY_NORMAL][TRAINER_MRS_SULLY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -773,7 +771,7 @@
         .party = TRAINER_PARTY(sParty_Mrs_Sully),
     },
 
-    [TRAINER_TYLER_AND_GABE] =
+    [DIFFICULTY_NORMAL][TRAINER_TYLER_AND_GABE] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -785,7 +783,7 @@
         .party = TRAINER_PARTY(sParty_TylerAndGabe),
     },
 	
-	[TRAINER_BLAINE] =
+	[DIFFICULTY_NORMAL][TRAINER_BLAINE] =
 	{
 		.trainerClass = TRAINER_CLASS_PKMN_SCIENTIST,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -797,7 +795,7 @@
         .party = TRAINER_PARTY(sParty_Blaine),
 	},
 
-    [TRAINER_JESSE_AND_JAMES_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JESSE_AND_JAMES_1] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -809,7 +807,7 @@
         .party = TRAINER_PARTY(sParty_JesseAndJames),
     },
 
-    [TRAINER_DELIA_AND_BONNIE] =
+    [DIFFICULTY_NORMAL][TRAINER_DELIA_AND_BONNIE] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -821,7 +819,7 @@
         .party = TRAINER_PARTY(sParty_DeliaAndBonnie),
     },
 
-    [TRAINER_CHARLIE] =
+    [DIFFICULTY_NORMAL][TRAINER_CHARLIE] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -833,7 +831,7 @@
         .party = TRAINER_PARTY(sParty_Charlie),
     }, 
    
-	[TRAINER_ANDY] =
+	[DIFFICULTY_NORMAL][TRAINER_ANDY] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -845,7 +843,7 @@
         .party = TRAINER_PARTY(sParty_Andy),
     },  
 
-    [TRAINER_ROY] =
+    [DIFFICULTY_NORMAL][TRAINER_ROY] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -857,7 +855,7 @@
         .party = TRAINER_PARTY(sParty_Roy),
     },
 
-    [TRAINER_WILL] =
+    [DIFFICULTY_NORMAL][TRAINER_WILL] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -869,7 +867,7 @@
         .party = TRAINER_PARTY(sParty_Will),
     },
 
-    [TRAINER_WALTON] =
+    [DIFFICULTY_NORMAL][TRAINER_WALTON] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -881,7 +879,7 @@
         .party = TRAINER_PARTY(sParty_Walton),
     },
 
-    [TRAINER_LEWIS] =
+    [DIFFICULTY_NORMAL][TRAINER_LEWIS] =
     {
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -893,7 +891,7 @@
         .party = TRAINER_PARTY(sParty_Lewis),
     },
 
-    [TRAINER_LIZ] =
+    [DIFFICULTY_NORMAL][TRAINER_LIZ] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -905,7 +903,7 @@
         .party = TRAINER_PARTY(sParty_Liz),
     },
 
-    [TRAINER_LINDSEY] =
+    [DIFFICULTY_NORMAL][TRAINER_LINDSEY] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -917,7 +915,7 @@
         .party = TRAINER_PARTY(sParty_Lindsey),
     },
 
-    [TRAINER_LEXY] =
+    [DIFFICULTY_NORMAL][TRAINER_LEXY] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -929,7 +927,7 @@
         .party = TRAINER_PARTY(sParty_Lexy),
     },
 
-    [TRAINER_JEREMY] =
+    [DIFFICULTY_NORMAL][TRAINER_JEREMY] =
     {
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -941,7 +939,7 @@
         .party = TRAINER_PARTY(sParty_Jeremy),
     },
 
-    [TRAINER_ORION] =
+    [DIFFICULTY_NORMAL][TRAINER_ORION] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -953,7 +951,7 @@
         .party = TRAINER_PARTY(sParty_Orion),
     },
 
-    [TRAINER_KIPLAND] =
+    [DIFFICULTY_NORMAL][TRAINER_KIPLAND] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -965,7 +963,7 @@
         .party = TRAINER_PARTY(sParty_Kipland),
     },
 
-   [TRAINER_MANDY] =
+   [DIFFICULTY_NORMAL][TRAINER_MANDY] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -977,7 +975,7 @@
         .party = TRAINER_PARTY(sParty_Mandy),
     },
 
-	[TRAINER_AIAS_AND_HECUBA] =
+	[DIFFICULTY_NORMAL][TRAINER_AIAS_AND_HECUBA] =
     {
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -989,7 +987,7 @@
         .party = TRAINER_PARTY(sParty_AiasAndHecuba),
     },
 
-      [TRAINER_LES] =
+      [DIFFICULTY_NORMAL][TRAINER_LES] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -1001,7 +999,7 @@
         .party = TRAINER_PARTY(sParty_Les),
     },
 
-    [TRAINER_SANJAY] =
+    [DIFFICULTY_NORMAL][TRAINER_SANJAY] =
     { 
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -1013,7 +1011,7 @@
         .party = TRAINER_PARTY(sParty_Sanjay),
     },
     
-    [TRAINER_WILLIE] =
+    [DIFFICULTY_NORMAL][TRAINER_WILLIE] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -1025,7 +1023,7 @@
         .party = TRAINER_PARTY(sParty_Willie),
     },
 
-    [TRAINER_HARRY] =
+    [DIFFICULTY_NORMAL][TRAINER_HARRY] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -1037,7 +1035,7 @@
         .party = TRAINER_PARTY(sParty_Harry),
     },
 
-    [TRAINER_TEUCER] =
+    [DIFFICULTY_NORMAL][TRAINER_TEUCER] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -1049,7 +1047,7 @@
         .party = TRAINER_PARTY(sParty_Teucer),
     },
 
-    [TRAINER_SYRA] =
+    [DIFFICULTY_NORMAL][TRAINER_SYRA] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -1061,7 +1059,7 @@
         .party = TRAINER_PARTY(sParty_Syra),
     },
 
-    [TRAINER_SKY] =
+    [DIFFICULTY_NORMAL][TRAINER_SKY] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -1073,7 +1071,7 @@
         .party = TRAINER_PARTY(sParty_Sky),
     },
 
-    [TRAINER_ROCKY] =
+    [DIFFICULTY_NORMAL][TRAINER_ROCKY] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1085,7 +1083,7 @@
         .party = TRAINER_PARTY(sParty_Rocky),
     },
 
-    [TRAINER_SANDY] =
+    [DIFFICULTY_NORMAL][TRAINER_SANDY] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -1097,7 +1095,7 @@
         .party = TRAINER_PARTY(sParty_Sandy),
     },
 
-    [TRAINER_MAGO] =
+    [DIFFICULTY_NORMAL][TRAINER_MAGO] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -1109,7 +1107,7 @@
         .party = TRAINER_PARTY(sParty_Mago),
     },
 
-    [TRAINER_DIDO] =
+    [DIFFICULTY_NORMAL][TRAINER_DIDO] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -1121,7 +1119,7 @@
         .party = TRAINER_PARTY(sParty_Dido),
     },
 
-    [TRAINER_BETTY] =
+    [DIFFICULTY_NORMAL][TRAINER_BETTY] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1133,7 +1131,7 @@
         .party = TRAINER_PARTY(sParty_Betty),
     },
 
-    [TRAINER_DONOVAN] =
+    [DIFFICULTY_NORMAL][TRAINER_DONOVAN] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1145,7 +1143,7 @@
         .party = TRAINER_PARTY(sParty_Donovan),
     },
 
-    [TRAINER_HELEN_AND_PARIS] =
+    [DIFFICULTY_NORMAL][TRAINER_HELEN_AND_PARIS] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -1157,7 +1155,7 @@
         .party = TRAINER_PARTY(sParty_HelenAndParis),
     },
 
-    [TRAINER_PIPPIN] =
+    [DIFFICULTY_NORMAL][TRAINER_PIPPIN] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1169,7 +1167,7 @@
         .party = TRAINER_PARTY(sParty_Pippin),
     },
 
-    [TRAINER_GRAYSON] =
+    [DIFFICULTY_NORMAL][TRAINER_GRAYSON] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1181,7 +1179,7 @@
         .party = TRAINER_PARTY(sParty_Grayson),
     },
 
-    [TRAINER_SEAN] =
+    [DIFFICULTY_NORMAL][TRAINER_SEAN] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1193,7 +1191,7 @@
         .party = TRAINER_PARTY(sParty_Sean),
     },
 
-    [TRAINER_MERRY] =
+    [DIFFICULTY_NORMAL][TRAINER_MERRY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1205,7 +1203,7 @@
         .party = TRAINER_PARTY(sParty_Merry),
     },
 
-    [TRAINER_PATRICK] =
+    [DIFFICULTY_NORMAL][TRAINER_PATRICK] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1217,7 +1215,7 @@
         .party = TRAINER_PARTY(sParty_Patrick),
     },
 
-    [TRAINER_EURYKLEIA] =
+    [DIFFICULTY_NORMAL][TRAINER_EURYKLEIA] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -1229,7 +1227,7 @@
         .party = TRAINER_PARTY(sParty_Eurykleia),
     },
 
-    [TRAINER_ANTIKLEIA] =
+    [DIFFICULTY_NORMAL][TRAINER_ANTIKLEIA] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -1241,7 +1239,7 @@
         .party = TRAINER_PARTY(sParty_Antikleia),
     },
 
-    [TRAINER_EUMAEUS] =
+    [DIFFICULTY_NORMAL][TRAINER_EUMAEUS] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1253,7 +1251,7 @@
         .party = TRAINER_PARTY(sParty_Eumaeus),
     },
 
-    [TRAINER_LAERTES] =
+    [DIFFICULTY_NORMAL][TRAINER_LAERTES] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -1265,7 +1263,7 @@
         .party = TRAINER_PARTY(sParty_Laertes),
     },
 
-    [TRAINER_RIVAL3] =
+    [DIFFICULTY_NORMAL][TRAINER_RIVAL3] =
     {
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -1273,13 +1271,12 @@
 		.trainerName = _("{B_RIVAL_NAME}"),
 		.items = {},
 		.doubleBattle = FALSE,
-		.mugshotEnabled = TRUE,
 		.mugshotColor = MUGSHOT_COLOR_BLUE,
 		.aiFlags = AI_FLAG_BASIC_TRAINER,
 		.party = TRAINER_PARTY(sParty_Rival3),
     },
 
-    [TRAINER_TASHA] =
+    [DIFFICULTY_NORMAL][TRAINER_TASHA] =
     {
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -1291,7 +1288,7 @@
         .party = TRAINER_PARTY(sParty_Tasha),
     },
 
-    [TRAINER_GIO1] =
+    [DIFFICULTY_NORMAL][TRAINER_GIO1] =
     {
         .trainerClass = TRAINER_CLASS_ROCKET_BOSS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1303,7 +1300,7 @@
         .party = TRAINER_PARTY(sParty_Gio1),
     },
 
-    [TRAINER_MISTY] =
+    [DIFFICULTY_NORMAL][TRAINER_MISTY] =
     {
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -1316,7 +1313,7 @@
     },
 
 
-    [TRAINER_RIVAL4] =
+    [DIFFICULTY_NORMAL][TRAINER_RIVAL4] =
     {
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -1328,7 +1325,7 @@
 		.party = TRAINER_PARTY(sParty_Rival4),
     },
 
-    [TRAINER_RIVAL5] =
+    [DIFFICULTY_NORMAL][TRAINER_RIVAL5] =
     {
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -1341,7 +1338,7 @@
     },
 
 
-    [TRAINER_GLENN] =
+    [DIFFICULTY_NORMAL][TRAINER_GLENN] =
     {
         .trainerClass = TRAINER_CLASS_JANITOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1353,7 +1350,7 @@
         .party = TRAINER_PARTY(sParty_Glenn),
     },
 
-    [TRAINER_TOBOGAN] =
+    [DIFFICULTY_NORMAL][TRAINER_TOBOGAN] =
     {
         .trainerClass = TRAINER_CLASS_DOCTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1365,7 +1362,7 @@
         .party = TRAINER_PARTY(sParty_Tobogan),
     },
 
-    [TRAINER_JUDY] =
+    [DIFFICULTY_NORMAL][TRAINER_JUDY] =
     {
         .trainerClass = TRAINER_CLASS_NURSE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1377,7 +1374,7 @@
         .party = TRAINER_PARTY(sParty_Judy),
     },
 
-    [TRAINER_MEI_AND_LISA] =
+    [DIFFICULTY_NORMAL][TRAINER_MEI_AND_LISA] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1389,7 +1386,7 @@
         .party = TRAINER_PARTY(sParty_MeiAndLisa),
     },
 
-    [TRAINER_EVAZAN] =
+    [DIFFICULTY_NORMAL][TRAINER_EVAZAN] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1401,7 +1398,7 @@
         .party = TRAINER_PARTY(sParty_Brianna),
     },
 
-    [TRAINER_PONDA_BABU] =
+    [DIFFICULTY_NORMAL][TRAINER_PONDA_BABU] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1413,7 +1410,7 @@
         .party = TRAINER_PARTY(sParty_Naomi),
     },
 
-    [TRAINER_REESE] =
+    [DIFFICULTY_NORMAL][TRAINER_REESE] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1425,7 +1422,7 @@
         .party = TRAINER_PARTY(sParty_Reese),
     },
 
-    [TRAINER_JOHN] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHN] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -1437,7 +1434,7 @@
         .party = TRAINER_PARTY(sParty_John),
     },
 
-    [TRAINER_YELLOW5] =
+    [DIFFICULTY_NORMAL][TRAINER_YELLOW5] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -1449,7 +1446,7 @@
         .party = TRAINER_PARTY(sParty_Yellow5),
 	},
 
-	[TRAINER_YELLOW4] =
+	[DIFFICULTY_NORMAL][TRAINER_YELLOW4] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -1461,7 +1458,7 @@
         .party = TRAINER_PARTY(sParty_Yellow4),
     },
 
-    [TRAINER_YELLOW3] =
+    [DIFFICULTY_NORMAL][TRAINER_YELLOW3] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -1473,7 +1470,7 @@
         .party = TRAINER_PARTY(sParty_Yellow3),
     },
 
-    [TRAINER_YELLOW2] =
+    [DIFFICULTY_NORMAL][TRAINER_YELLOW2] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -1485,7 +1482,7 @@
         .party = TRAINER_PARTY(sParty_Yellow2),
     },
 
-    [TRAINER_YELLOW1] =
+    [DIFFICULTY_NORMAL][TRAINER_YELLOW1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1497,7 +1494,7 @@
         .party = TRAINER_PARTY(sParty_Yellow1),
     },
 
-    [TRAINER_BLUE1] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1509,7 +1506,7 @@
         .party = TRAINER_PARTY(sParty_Blue1),
     },
 
-    [TRAINER_BLUE2] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE2] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1521,7 +1518,7 @@
         .party = TRAINER_PARTY(sParty_Blue2),
     },
 
-    [TRAINER_BLUE3] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE3] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1533,7 +1530,7 @@
         .party = TRAINER_PARTY(sParty_Blue3),
     },
 
-    [TRAINER_BLUE4] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE4] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1545,7 +1542,7 @@
         .party = TRAINER_PARTY(sParty_Blue4),
     },
 
-    [TRAINER_BLUE5] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE5] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1557,7 +1554,7 @@
         .party = TRAINER_PARTY(sParty_Blue5),
     },
 
-    [TRAINER_RED1] =
+    [DIFFICULTY_NORMAL][TRAINER_RED1] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1569,7 +1566,7 @@
         .party = TRAINER_PARTY(sParty_Red1),
     },
 
-    [TRAINER_RED2] =
+    [DIFFICULTY_NORMAL][TRAINER_RED2] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1581,7 +1578,7 @@
         .party = TRAINER_PARTY(sParty_Red2),
     },
 
-    [TRAINER_RED3] =
+    [DIFFICULTY_NORMAL][TRAINER_RED3] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1593,7 +1590,7 @@
         .party = TRAINER_PARTY(sParty_Red3),
     },
 
-    [TRAINER_RED4] =
+    [DIFFICULTY_NORMAL][TRAINER_RED4] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1605,7 +1602,7 @@
         .party = TRAINER_PARTY(sParty_Red4),
     },
 
-    [TRAINER_RED5] =
+    [DIFFICULTY_NORMAL][TRAINER_RED5] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1617,7 +1614,7 @@
         .party = TRAINER_PARTY(sParty_Red5),
     },
 
-    [TRAINER_BLUE6] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE6] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1629,7 +1626,7 @@
         .party = TRAINER_PARTY(sParty_Blue6),
     },
 
-    [TRAINER_BLUE7] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE7] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1641,7 +1638,7 @@
         .party = TRAINER_PARTY(sParty_Blue7),
     },
 
-    [TRAINER_YELLOW6] =
+    [DIFFICULTY_NORMAL][TRAINER_YELLOW6] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1653,7 +1650,7 @@
         .party = TRAINER_PARTY(sParty_Yellow6),
     },
 
-    [TRAINER_YELLOW7] =
+    [DIFFICULTY_NORMAL][TRAINER_YELLOW7] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1665,7 +1662,7 @@
         .party = TRAINER_PARTY(sParty_Yellow7),
     },
 
-    [TRAINER_RED6] =
+    [DIFFICULTY_NORMAL][TRAINER_RED6] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1677,7 +1674,7 @@
         .party = TRAINER_PARTY(sParty_Red6),
     },
 
-    [TRAINER_RED7] =
+    [DIFFICULTY_NORMAL][TRAINER_RED7] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1689,7 +1686,7 @@
         .party = TRAINER_PARTY(sParty_Red7),
     },
 
-    [TRAINER_GREEN6] =
+    [DIFFICULTY_NORMAL][TRAINER_GREEN6] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1701,7 +1698,7 @@
         .party = TRAINER_PARTY(sParty_Green6),
     },
 
-    [TRAINER_GREEN7] =
+    [DIFFICULTY_NORMAL][TRAINER_GREEN7] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1713,7 +1710,7 @@
         .party = TRAINER_PARTY(sParty_Green7),
     },
 
-    [TRAINER_BIGBLUE] =
+    [DIFFICULTY_NORMAL][TRAINER_BIGBLUE] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1725,7 +1722,7 @@
         .party = TRAINER_PARTY(sParty_BigBlue),
     },
 
-    [TRAINER_BIGYELLOW] =
+    [DIFFICULTY_NORMAL][TRAINER_BIGYELLOW] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1737,7 +1734,7 @@
         .party = TRAINER_PARTY(sParty_BigYellow),
     },
 
-    [TRAINER_BIGRED] =
+    [DIFFICULTY_NORMAL][TRAINER_BIGRED] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1749,7 +1746,7 @@
         .party = TRAINER_PARTY(sParty_BigRed),
     },
 
-    [TRAINER_BIGGREEN] =
+    [DIFFICULTY_NORMAL][TRAINER_BIGGREEN] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -1761,7 +1758,7 @@
         .party = TRAINER_PARTY(sParty_BigGreen),
     },
 
-    [TRAINER_UNI_GRAMMAR] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_GRAMMAR] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -1773,7 +1770,7 @@
         .party = TRAINER_PARTY(sParty_UniGrammar),
     },
 
-    [TRAINER_UNI_LITERATURE] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_LITERATURE] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -1785,7 +1782,7 @@
         .party = TRAINER_PARTY(sParty_UniLiterature),
     },
 
-    [TRAINER_UNI_POETRY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_POETRY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1797,7 +1794,7 @@
         .party = TRAINER_PARTY(sParty_UniPoetry),
     },
 
-    [TRAINER_UNI_RHETORIC] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_RHETORIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1809,7 +1806,7 @@
         .party = TRAINER_PARTY(sParty_UniOration),
     },
 
-    [TRAINER_UNI_ARITHMETIC] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_ARITHMETIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1821,7 +1818,7 @@
         .party = TRAINER_PARTY(sParty_UniArithmetic),
     },
 
-    [TRAINER_UNI_ALGEBRA] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_ALGEBRA] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1833,7 +1830,7 @@
         .party = TRAINER_PARTY(sParty_UniAlgebra),
     },
 
-    [TRAINER_UNI_GEOMETRY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_GEOMETRY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1845,7 +1842,7 @@
         .party = TRAINER_PARTY(sParty_UniGeometry),
     },
 
-    [TRAINER_UNI_CALCULUS] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_CALCULUS] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1857,7 +1854,7 @@
         .party = TRAINER_PARTY(sParty_UniCalculus),
     },
 
-    [TRAINER_UNI_BIOLOGY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_BIOLOGY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1869,7 +1866,7 @@
         .party = TRAINER_PARTY(sParty_UniBiology),
     },
 
-    [TRAINER_UNI_CHEMISTRY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_CHEMISTRY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1881,7 +1878,7 @@
         .party = TRAINER_PARTY(sParty_UniChemistry),
     },
 
-    [TRAINER_UNI_PHYSICS] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_PHYSICS] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1893,7 +1890,7 @@
         .party = TRAINER_PARTY(sParty_UniPhysics),
     },
 
-    [TRAINER_UNI_GEOLOGY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_GEOLOGY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1905,7 +1902,7 @@
         .party = TRAINER_PARTY(sParty_UniGeology),
     },
 
-    [TRAINER_UNI_HISTORY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_HISTORY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1917,7 +1914,7 @@
         .party = TRAINER_PARTY(sParty_UniHistory),
     },
 
-    [TRAINER_UNI_ARCHAEOLOGY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_ARCHAEOLOGY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1929,7 +1926,7 @@
         .party = TRAINER_PARTY(sParty_UniArchaeology),
     },
 
-    [TRAINER_UNI_PSYCHOLOGY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_PSYCHOLOGY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1941,7 +1938,7 @@
         .party = TRAINER_PARTY(sParty_UniPsychology),
     },
 
-    [TRAINER_UNI_PHILOSOPHY] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_PHILOSOPHY] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1953,7 +1950,7 @@
         .party = TRAINER_PARTY(sParty_UniPhilosophy),
     },
 
-    [TRAINER_UNI_ART] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_ART] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1965,7 +1962,7 @@
         .party = TRAINER_PARTY(sParty_UniArt),
     },
 
-    [TRAINER_UNI_MUSIC] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_MUSIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1977,7 +1974,7 @@
         .party = TRAINER_PARTY(sParty_UniMusic),
     },
 
-    [TRAINER_UNI_LOGIC] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_LOGIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -1989,7 +1986,7 @@
         .party = TRAINER_PARTY(sParty_UniLogic),
     },
 
-    [TRAINER_UNI_GYM] =
+    [DIFFICULTY_NORMAL][TRAINER_UNI_GYM] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TEACHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -2001,7 +1998,7 @@
         .party = TRAINER_PARTY(sParty_UniGym),
     },
 
-    [TRAINER_IGNIS_GRUNT_1] =
+    [DIFFICULTY_NORMAL][TRAINER_IGNIS_GRUNT_1] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2013,7 +2010,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt1),
     },
 
-    [TRAINER_IGNIS_GRUNT_2] =
+    [DIFFICULTY_NORMAL][TRAINER_IGNIS_GRUNT_2] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2025,7 +2022,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-    [TRAINER_IGNIS_GRUNT_3] =
+    [DIFFICULTY_NORMAL][TRAINER_IGNIS_GRUNT_3] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2037,7 +2034,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
-    [TRAINER_IGNIS_GRUNT_4] =
+    [DIFFICULTY_NORMAL][TRAINER_IGNIS_GRUNT_4] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2049,7 +2046,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt4),
     },
 
-    [TRAINER_IGNIS_GRUNT_5] =
+    [DIFFICULTY_NORMAL][TRAINER_IGNIS_GRUNT_5] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2061,7 +2058,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt5),
     },
 
-    [TRAINER_IGNIS_GRUNT_6] =
+    [DIFFICULTY_NORMAL][TRAINER_IGNIS_GRUNT_6] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2073,7 +2070,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt6),
     },
 
-    [TRAINER_MEDEA] =
+    [DIFFICULTY_NORMAL][TRAINER_MEDEA] =
     {
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2085,7 +2082,7 @@
         .party = TRAINER_PARTY(sParty_Medea),
     },
 
-    [TRAINER_PHILOCTETES] =
+    [DIFFICULTY_NORMAL][TRAINER_PHILOCTETES] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2097,7 +2094,7 @@
         .party = TRAINER_PARTY(sParty_Philoctetes),
     },
 
-    [TRAINER_JASON] =
+    [DIFFICULTY_NORMAL][TRAINER_JASON] =
     {
         .trainerClass = TRAINER_CLASS_AQUA_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -2109,7 +2106,7 @@
         .party = TRAINER_PARTY(sParty_Jason),
     },
 
-	[TRAINER_AEETES] =
+	[DIFFICULTY_NORMAL][TRAINER_AEETES] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2121,7 +2118,7 @@
         .party = TRAINER_PARTY(sParty_Aeetes),
     },
 
-    [TRAINER_COLCHIS_GRUNTDOOR_M] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNTDOOR_M] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2133,7 +2130,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-    [TRAINER_COLCHIS_GRUNTDOOR_F] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNTDOOR_F] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2145,7 +2142,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
-	[TRAINER_COLCHIS_GRUNT_THRONEM1] =
+	[DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEM1] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2157,7 +2154,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-	[TRAINER_COLCHIS_GRUNT_THRONEM2] =
+	[DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEM2] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2169,7 +2166,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-	[TRAINER_COLCHIS_GRUNT_THRONEM3] =
+	[DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEM3] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2181,7 +2178,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-	[TRAINER_COLCHIS_GRUNT_THRONEM4] =
+	[DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEM4] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2193,7 +2190,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-	[TRAINER_COLCHIS_GRUNT_THRONEM5] =
+	[DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEM5] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2205,7 +2202,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-	[TRAINER_COLCHIS_GRUNT_THRONEM6] =
+	[DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEM6] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2217,7 +2214,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt2),
     },
 
-    [TRAINER_COLCHIS_GRUNT_THRONEF1] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEF1] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2229,7 +2226,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
-    [TRAINER_COLCHIS_GRUNT_THRONEF2] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEF2] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2241,7 +2238,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
-    [TRAINER_COLCHIS_GRUNT_THRONEF3] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEF3] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2253,7 +2250,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
-    [TRAINER_COLCHIS_GRUNT_THRONEF4] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEF4] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2265,7 +2262,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
-    [TRAINER_COLCHIS_GRUNT_THRONEF5] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEF5] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2277,7 +2274,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },
 
-    [TRAINER_COLCHIS_GRUNT_THRONEF6] =
+    [DIFFICULTY_NORMAL][TRAINER_COLCHIS_GRUNT_THRONEF6] =
     {
         .trainerClass = TRAINER_CLASS_CULTIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -2289,7 +2286,7 @@
         .party = TRAINER_PARTY(sParty_IgnisGrunt3),
     },	
 	
-	[TRAINER_RIVAL1] =
+	[DIFFICULTY_NORMAL][TRAINER_RIVAL1] =
 	{
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -2297,13 +2294,12 @@
 		.trainerName = _("???"),
 		.items = {},
 		.doubleBattle = FALSE,
-		.mugshotEnabled = TRUE,
 		.mugshotColor = MUGSHOT_COLOR_BLUE,
 		.aiFlags = AI_FLAG_SMART_TRAINER,
 		.party = TRAINER_PARTY(sParty_Rival1),
 	},
 
-    //[TRAINER_KIYO] =
+    //[DIFFICULTY_NORMAL][TRAINER_KIYO] =
     //{
     //    .trainerClass = TRAINER_CLASS_BLACK_BELT,
     //    .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2315,7 +2311,7 @@
     //    .party = {.NoItemDefaultMoves = sParty_Kiyo),
     //},
 
-//    [TRAINER_YUJI] =
+//    [DIFFICULTY_NORMAL][TRAINER_YUJI] =
 //    {
 //        .trainerClass = TRAINER_CLASS_BLACK_BELT,
 //        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2334,7 +2330,7 @@
 
 
 
-    [TRAINER_DAISUKE] =
+    [DIFFICULTY_NORMAL][TRAINER_DAISUKE] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2346,7 +2342,7 @@
         .party = TRAINER_PARTY(sParty_Daisuke),
     },
 
-    [TRAINER_ATSUSHI] =
+    [DIFFICULTY_NORMAL][TRAINER_ATSUSHI] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2358,7 +2354,7 @@
         .party = TRAINER_PARTY(sParty_Atsushi),
     },
 
-    [TRAINER_KIRK] =
+    [DIFFICULTY_NORMAL][TRAINER_KIRK] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2370,7 +2366,7 @@
         .party = TRAINER_PARTY(sParty_Kirk),
     },
 
-    [TRAINER_GRUNT_AQUA_HIDEOUT_7] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_AQUA_HIDEOUT_7] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -2382,7 +2378,7 @@
         .party = TRAINER_PARTY(sParty_GruntAquaHideout7),
     },
 
-    [TRAINER_GRUNT_AQUA_HIDEOUT_8] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_AQUA_HIDEOUT_8] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -2394,7 +2390,7 @@
         .party = TRAINER_PARTY(sParty_GruntAquaHideout8),
     },
 
-    [TRAINER_SHAWN] =
+    [DIFFICULTY_NORMAL][TRAINER_SHAWN] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2406,7 +2402,7 @@
         .party = TRAINER_PARTY(sParty_Shawn),
     },
 
-    [TRAINER_FERNANDO_1] =
+    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_1] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2418,7 +2414,7 @@
         .party = TRAINER_PARTY(sParty_Fernando1),
     },
 
-    [TRAINER_DALTON_1] =
+    [DIFFICULTY_NORMAL][TRAINER_DALTON_1] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2430,7 +2426,7 @@
         .party = TRAINER_PARTY(sParty_Dalton1),
     },
 
-    [TRAINER_DALTON_2] =
+    [DIFFICULTY_NORMAL][TRAINER_DALTON_2] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2442,7 +2438,7 @@
         .party = TRAINER_PARTY(sParty_Dalton2),
     },
 
-    [TRAINER_DALTON_3] =
+    [DIFFICULTY_NORMAL][TRAINER_DALTON_3] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2454,7 +2450,7 @@
         .party = TRAINER_PARTY(sParty_Dalton3),
     },
 
-    [TRAINER_DALTON_4] =
+    [DIFFICULTY_NORMAL][TRAINER_DALTON_4] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2466,7 +2462,7 @@
         .party = TRAINER_PARTY(sParty_Dalton4),
     },
 
-    [TRAINER_DALTON_5] =
+    [DIFFICULTY_NORMAL][TRAINER_DALTON_5] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2478,7 +2474,7 @@
         .party = TRAINER_PARTY(sParty_Dalton5),
     },
 
-    [TRAINER_COLE] =
+    [DIFFICULTY_NORMAL][TRAINER_COLE] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2490,7 +2486,7 @@
         .party = TRAINER_PARTY(sParty_Cole),
     },
 
-    [TRAINER_JEFF] =
+    [DIFFICULTY_NORMAL][TRAINER_JEFF] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2502,7 +2498,7 @@
         .party = TRAINER_PARTY(sParty_Jeff),
     },
 
-    [TRAINER_AXLE] =
+    [DIFFICULTY_NORMAL][TRAINER_AXLE] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2514,7 +2510,7 @@
         .party = TRAINER_PARTY(sParty_Axle),
     },
 
-    [TRAINER_JACE] =
+    [DIFFICULTY_NORMAL][TRAINER_JACE] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2526,7 +2522,7 @@
         .party = TRAINER_PARTY(sParty_Jace),
     },
 
-    [TRAINER_KEEGAN] =
+    [DIFFICULTY_NORMAL][TRAINER_KEEGAN] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2538,7 +2534,7 @@
         .party = TRAINER_PARTY(sParty_Keegan),
     },
 
-    [TRAINER_BERNIE_1] =
+    [DIFFICULTY_NORMAL][TRAINER_BERNIE_1] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2550,7 +2546,7 @@
         .party = TRAINER_PARTY(sParty_Bernie1),
     },
 
-    [TRAINER_BERNIE_2] =
+    [DIFFICULTY_NORMAL][TRAINER_BERNIE_2] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2562,7 +2558,7 @@
         .party = TRAINER_PARTY(sParty_Bernie2),
     },
 
-    [TRAINER_BERNIE_3] =
+    [DIFFICULTY_NORMAL][TRAINER_BERNIE_3] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2574,7 +2570,7 @@
         .party = TRAINER_PARTY(sParty_Bernie3),
     },
 
-    [TRAINER_BERNIE_4] =
+    [DIFFICULTY_NORMAL][TRAINER_BERNIE_4] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2586,7 +2582,7 @@
         .party = TRAINER_PARTY(sParty_Bernie4),
     },
 
-    [TRAINER_BERNIE_5] =
+    [DIFFICULTY_NORMAL][TRAINER_BERNIE_5] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -2598,7 +2594,7 @@
         .party = TRAINER_PARTY(sParty_Bernie5),
     },
 
-    [TRAINER_DREW] =
+    [DIFFICULTY_NORMAL][TRAINER_DREW] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2610,7 +2606,7 @@
         .party = TRAINER_PARTY(sParty_Drew),
     },
 
-    [TRAINER_BEAU] =
+    [DIFFICULTY_NORMAL][TRAINER_BEAU] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2622,7 +2618,7 @@
         .party = TRAINER_PARTY(sParty_Beau),
     },
 
-    [TRAINER_LARRY] =
+    [DIFFICULTY_NORMAL][TRAINER_LARRY] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2634,7 +2630,7 @@
         .party = TRAINER_PARTY(sParty_Larry),
     },
 
-    [TRAINER_SHANE] =
+    [DIFFICULTY_NORMAL][TRAINER_SHANE] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2646,7 +2642,7 @@
         .party = TRAINER_PARTY(sParty_Shane),
     },
 
-    [TRAINER_JUSTIN] =
+    [DIFFICULTY_NORMAL][TRAINER_JUSTIN] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2658,7 +2654,7 @@
         .party = TRAINER_PARTY(sParty_Justin),
     },
 
-    [TRAINER_ETHAN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ETHAN_1] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2670,7 +2666,7 @@
         .party = TRAINER_PARTY(sParty_Ethan1),
     },
 
-    [TRAINER_AUTUMN] =
+    [DIFFICULTY_NORMAL][TRAINER_AUTUMN] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -2682,7 +2678,7 @@
         .party = TRAINER_PARTY(sParty_Autumn),
     },
 
-    [TRAINER_TRAVIS] =
+    [DIFFICULTY_NORMAL][TRAINER_TRAVIS] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2694,7 +2690,7 @@
         .party = TRAINER_PARTY(sParty_Travis),
     },
 
-    [TRAINER_ETHAN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ETHAN_2] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2706,7 +2702,7 @@
         .party = TRAINER_PARTY(sParty_Ethan2),
     },
 
-    [TRAINER_ETHAN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ETHAN_3] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2718,7 +2714,7 @@
         .party = TRAINER_PARTY(sParty_Ethan3),
     },
 
-    [TRAINER_ETHAN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ETHAN_4] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2730,7 +2726,7 @@
         .party = TRAINER_PARTY(sParty_Ethan4),
     },
 
-    [TRAINER_ETHAN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ETHAN_5] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2742,7 +2738,7 @@
         .party = TRAINER_PARTY(sParty_Ethan5),
     },
 
-    [TRAINER_BRENT] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENT] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2754,7 +2750,7 @@
         .party = TRAINER_PARTY(sParty_Brent),
     },
 
-    [TRAINER_DONALD] =
+    [DIFFICULTY_NORMAL][TRAINER_DONALD] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2766,7 +2762,7 @@
         .party = TRAINER_PARTY(sParty_Donald),
     },
 
-    [TRAINER_TAYLOR] =
+    [DIFFICULTY_NORMAL][TRAINER_TAYLOR] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2778,7 +2774,7 @@
         .party = TRAINER_PARTY(sParty_Taylor),
     },
 
-    [TRAINER_JEFFREY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JEFFREY_1] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2790,7 +2786,7 @@
         .party = TRAINER_PARTY(sParty_Jeffrey1),
     },
 
-    [TRAINER_DEREK] =
+    [DIFFICULTY_NORMAL][TRAINER_DEREK] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2802,7 +2798,7 @@
         .party = TRAINER_PARTY(sParty_Derek),
     },
 
-    [TRAINER_JEFFREY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JEFFREY_2] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2814,7 +2810,7 @@
         .party = TRAINER_PARTY(sParty_Jeffrey2),
     },
 
-    [TRAINER_JEFFREY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JEFFREY_3] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2826,7 +2822,7 @@
         .party = TRAINER_PARTY(sParty_Jeffrey3),
     },
 
-    [TRAINER_JEFFREY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JEFFREY_4] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2838,7 +2834,7 @@
         .party = TRAINER_PARTY(sParty_Jeffrey4),
     },
 
-    [TRAINER_JEFFREY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JEFFREY_5] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -2850,7 +2846,7 @@
         .party = TRAINER_PARTY(sParty_Jeffrey5),
     },
 
-    [TRAINER_EDWARD] =
+    [DIFFICULTY_NORMAL][TRAINER_EDWARD] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2862,7 +2858,7 @@
         .party = TRAINER_PARTY(sParty_Edward),
     },
 
-    [TRAINER_PRESTON] =
+    [DIFFICULTY_NORMAL][TRAINER_PRESTON] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2874,7 +2870,7 @@
         .party = TRAINER_PARTY(sParty_Preston),
     },
 
-    [TRAINER_VIRGIL] =
+    [DIFFICULTY_NORMAL][TRAINER_VIRGIL] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2886,7 +2882,7 @@
         .party = TRAINER_PARTY(sParty_Virgil),
     },
 
-    [TRAINER_BLAKE] =
+    [DIFFICULTY_NORMAL][TRAINER_BLAKE] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2898,7 +2894,7 @@
         .party = TRAINER_PARTY(sParty_Blake),
     },
 
-    [TRAINER_WILLIAM] =
+    [DIFFICULTY_NORMAL][TRAINER_WILLIAM] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2910,7 +2906,7 @@
         .party = TRAINER_PARTY(sParty_William),
     },
 
-    [TRAINER_JOSHUA] =
+    [DIFFICULTY_NORMAL][TRAINER_JOSHUA] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2922,7 +2918,7 @@
         .party = TRAINER_PARTY(sParty_Joshua),
     },
 
-    [TRAINER_CAMERON_1] =
+    [DIFFICULTY_NORMAL][TRAINER_CAMERON_1] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2934,7 +2930,7 @@
         .party = TRAINER_PARTY(sParty_Cameron1),
     },
 
-    [TRAINER_CAMERON_2] =
+    [DIFFICULTY_NORMAL][TRAINER_CAMERON_2] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2946,7 +2942,7 @@
         .party = TRAINER_PARTY(sParty_Cameron2),
     },
 
-    [TRAINER_CAMERON_3] =
+    [DIFFICULTY_NORMAL][TRAINER_CAMERON_3] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2958,7 +2954,7 @@
         .party = TRAINER_PARTY(sParty_Cameron3),
     },
 
-    [TRAINER_CAMERON_4] =
+    [DIFFICULTY_NORMAL][TRAINER_CAMERON_4] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2970,7 +2966,7 @@
         .party = TRAINER_PARTY(sParty_Cameron4),
     },
 
-    [TRAINER_CAMERON_5] =
+    [DIFFICULTY_NORMAL][TRAINER_CAMERON_5] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2982,7 +2978,7 @@
         .party = TRAINER_PARTY(sParty_Cameron5),
     },
 
-    [TRAINER_JACLYN] =
+    [DIFFICULTY_NORMAL][TRAINER_JACLYN] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2994,7 +2990,7 @@
         .party = TRAINER_PARTY(sParty_Jaclyn),
     },
 
-    [TRAINER_HANNAH] =
+    [DIFFICULTY_NORMAL][TRAINER_HANNAH] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3006,7 +3002,7 @@
         .party = TRAINER_PARTY(sParty_Hannah),
     },
 
-    [TRAINER_SAMANTHA] =
+    [DIFFICULTY_NORMAL][TRAINER_SAMANTHA] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3018,7 +3014,7 @@
         .party = TRAINER_PARTY(sParty_Samantha),
     },
 
-    [TRAINER_MAURA] =
+    [DIFFICULTY_NORMAL][TRAINER_MAURA] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3030,7 +3026,7 @@
         .party = TRAINER_PARTY(sParty_Maura),
     },
 
-    [TRAINER_KAYLA] =
+    [DIFFICULTY_NORMAL][TRAINER_KAYLA] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3042,7 +3038,7 @@
         .party = TRAINER_PARTY(sParty_Kayla),
     },
 
-    [TRAINER_ALEXIS] =
+    [DIFFICULTY_NORMAL][TRAINER_ALEXIS] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3054,7 +3050,7 @@
         .party = TRAINER_PARTY(sParty_Alexis),
     },
 
-    [TRAINER_JACKI_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKI_1] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3066,7 +3062,7 @@
         .party = TRAINER_PARTY(sParty_Jacki1),
     },
 
-    [TRAINER_JACKI_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKI_2] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3078,7 +3074,7 @@
         .party = TRAINER_PARTY(sParty_Jacki2),
     },
 
-    [TRAINER_JACKI_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKI_3] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3090,7 +3086,7 @@
         .party = TRAINER_PARTY(sParty_Jacki3),
     },
 
-    [TRAINER_JACKI_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKI_4] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3102,7 +3098,7 @@
         .party = TRAINER_PARTY(sParty_Jacki4),
     },
 
-    [TRAINER_JACKI_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKI_5] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3114,7 +3110,7 @@
         .party = TRAINER_PARTY(sParty_Jacki5),
     },
 
-    [TRAINER_WALTER_1] =
+    [DIFFICULTY_NORMAL][TRAINER_WALTER_1] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -3126,7 +3122,7 @@
         .party = TRAINER_PARTY(sParty_Walter1),
     },
 
-    [TRAINER_MICAH] =
+    [DIFFICULTY_NORMAL][TRAINER_MICAH] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -3138,7 +3134,7 @@
         .party = TRAINER_PARTY(sParty_Micah),
     },
 
-    [TRAINER_THOMAS] =
+    [DIFFICULTY_NORMAL][TRAINER_THOMAS] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -3150,7 +3146,7 @@
         .party = TRAINER_PARTY(sParty_Thomas),
     },
 
-    [TRAINER_WALTER_2] =
+    [DIFFICULTY_NORMAL][TRAINER_WALTER_2] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -3162,7 +3158,7 @@
         .party = TRAINER_PARTY(sParty_Walter2),
     },
 
-    [TRAINER_WALTER_3] =
+    [DIFFICULTY_NORMAL][TRAINER_WALTER_3] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -3174,7 +3170,7 @@
         .party = TRAINER_PARTY(sParty_Walter3),
     },
 
-    [TRAINER_WALTER_4] =
+    [DIFFICULTY_NORMAL][TRAINER_WALTER_4] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -3186,7 +3182,7 @@
         .party = TRAINER_PARTY(sParty_Walter4),
     },
 
-    [TRAINER_WALTER_5] =
+    [DIFFICULTY_NORMAL][TRAINER_WALTER_5] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -3198,7 +3194,7 @@
         .party = TRAINER_PARTY(sParty_Walter5),
     },
 
-    [TRAINER_SIDNEY] =
+    [DIFFICULTY_NORMAL][TRAINER_SIDNEY] =
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
@@ -3206,13 +3202,12 @@
         .trainerName = _("SIDNEY"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .party = TRAINER_PARTY(sParty_Sidney),
     },
 
-    [TRAINER_PHOEBE] =
+    [DIFFICULTY_NORMAL][TRAINER_PHOEBE] =
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
@@ -3220,13 +3215,12 @@
         .trainerName = _("PHOEBE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Phoebe),
     },
 
-    [TRAINER_GLACIA] =
+    [DIFFICULTY_NORMAL][TRAINER_GLACIA] =
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
@@ -3234,13 +3228,12 @@
         .trainerName = _("GLACIA"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_PINK,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Glacia),
     },
 
-    [TRAINER_DRAKE] =
+    [DIFFICULTY_NORMAL][TRAINER_DRAKE] =
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
@@ -3248,13 +3241,12 @@
         .trainerName = _("DRAKE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_BLUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Drake),
     },
 
-    [TRAINER_ROXANNE_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ROXANNE_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -3266,7 +3258,7 @@
         .party = TRAINER_PARTY(sParty_Roxanne1),
     },
 
-    [TRAINER_BRAWLY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_BRAWLY_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3278,7 +3270,7 @@
         .party = TRAINER_PARTY(sParty_Brawly1),
     },
 
-    [TRAINER_WATTSON_1] =
+    [DIFFICULTY_NORMAL][TRAINER_WATTSON_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3290,7 +3282,7 @@
         .party = TRAINER_PARTY(sParty_Wattson1),
     },
 
-    [TRAINER_FLANNERY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_FLANNERY_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -3302,7 +3294,7 @@
         .party = TRAINER_PARTY(sParty_Flannery1),
     },
 
-    [TRAINER_NORMAN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_NORMAN_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3314,7 +3306,7 @@
         .party = TRAINER_PARTY(sParty_Norman1),
     },
 
-    [TRAINER_WINONA_1] =
+    [DIFFICULTY_NORMAL][TRAINER_WINONA_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -3326,7 +3318,7 @@
         .party = TRAINER_PARTY(sParty_Winona1),
     },
 
-    [TRAINER_TATE_AND_LIZA_1] =
+    [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -3338,7 +3330,7 @@
         .party = TRAINER_PARTY(sParty_TateAndLiza1),
     },
 
-    [TRAINER_JUAN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JUAN_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3350,7 +3342,7 @@
         .party = TRAINER_PARTY(sParty_Juan1),
     },
 
-    [TRAINER_JERRY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JERRY_1] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3362,7 +3354,7 @@
         .party = TRAINER_PARTY(sParty_Jerry1),
     },
 
-    [TRAINER_TED] =
+    [DIFFICULTY_NORMAL][TRAINER_TED] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3374,7 +3366,7 @@
         .party = TRAINER_PARTY(sParty_Ted),
     },
 
-    [TRAINER_PAUL] =
+    [DIFFICULTY_NORMAL][TRAINER_PAUL] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3386,7 +3378,7 @@
         .party = TRAINER_PARTY(sParty_Paul),
     },
 
-    [TRAINER_JERRY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JERRY_2] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3398,7 +3390,7 @@
         .party = TRAINER_PARTY(sParty_Jerry2),
     },
 
-    [TRAINER_JERRY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JERRY_3] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3410,7 +3402,7 @@
         .party = TRAINER_PARTY(sParty_Jerry3),
     },
 
-    [TRAINER_JERRY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JERRY_4] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3422,7 +3414,7 @@
         .party = TRAINER_PARTY(sParty_Jerry4),
     },
 
-    [TRAINER_JERRY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JERRY_5] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3434,7 +3426,7 @@
         .party = TRAINER_PARTY(sParty_Jerry5),
     },
 
-    [TRAINER_KAREN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_KAREN_1] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -3446,7 +3438,7 @@
         .party = TRAINER_PARTY(sParty_Karen1),
     },
 
-    [TRAINER_GEORGIA] =
+    [DIFFICULTY_NORMAL][TRAINER_GEORGIA] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -3458,7 +3450,7 @@
         .party = TRAINER_PARTY(sParty_Georgia),
     },
 
-    [TRAINER_KAREN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_KAREN_2] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -3470,7 +3462,7 @@
         .party = TRAINER_PARTY(sParty_Karen2),
     },
 
-    [TRAINER_KAREN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_KAREN_3] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -3482,7 +3474,7 @@
         .party = TRAINER_PARTY(sParty_Karen3),
     },
 
-    [TRAINER_KAREN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_KAREN_4] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -3494,7 +3486,7 @@
         .party = TRAINER_PARTY(sParty_Karen4),
     },
 
-    [TRAINER_KAREN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_KAREN_5] =
     {
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -3506,7 +3498,7 @@
         .party = TRAINER_PARTY(sParty_Karen5),
     },
 
-    [TRAINER_KATE_AND_JOY] =
+    [DIFFICULTY_NORMAL][TRAINER_KATE_AND_JOY] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3518,7 +3510,7 @@
         .party = TRAINER_PARTY(sParty_KateAndJoy),
     },
 
-    [TRAINER_ANNA_AND_MEG_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ANNA_AND_MEG_1] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3530,7 +3522,7 @@
         .party = TRAINER_PARTY(sParty_AnnaAndMeg1),
     },
 
-    [TRAINER_ANNA_AND_MEG_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ANNA_AND_MEG_2] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3542,7 +3534,7 @@
         .party = TRAINER_PARTY(sParty_AnnaAndMeg2),
     },
 
-    [TRAINER_ANNA_AND_MEG_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ANNA_AND_MEG_3] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3554,7 +3546,7 @@
         .party = TRAINER_PARTY(sParty_AnnaAndMeg3),
     },
 
-    [TRAINER_ANNA_AND_MEG_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ANNA_AND_MEG_4] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3566,7 +3558,7 @@
         .party = TRAINER_PARTY(sParty_AnnaAndMeg4),
     },
 
-    [TRAINER_ANNA_AND_MEG_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ANNA_AND_MEG_5] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3578,7 +3570,7 @@
         .party = TRAINER_PARTY(sParty_AnnaAndMeg5),
     },
 
-    [TRAINER_VICTOR] =
+    [DIFFICULTY_NORMAL][TRAINER_VICTOR] =
     {
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3590,7 +3582,7 @@
         .party = TRAINER_PARTY(sParty_Victor),
     },
 
-    [TRAINER_MIGUEL_1] =
+    [DIFFICULTY_NORMAL][TRAINER_MIGUEL_1] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3602,7 +3594,7 @@
         .party = TRAINER_PARTY(sParty_Miguel1),
     },
 
-    [TRAINER_COLTON] =
+    [DIFFICULTY_NORMAL][TRAINER_COLTON] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3614,7 +3606,7 @@
         .party = TRAINER_PARTY(sParty_Colton),
     },
 
-    [TRAINER_MIGUEL_2] =
+    [DIFFICULTY_NORMAL][TRAINER_MIGUEL_2] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3626,7 +3618,7 @@
         .party = TRAINER_PARTY(sParty_Miguel2),
     },
 
-    [TRAINER_MIGUEL_3] =
+    [DIFFICULTY_NORMAL][TRAINER_MIGUEL_3] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3638,7 +3630,7 @@
         .party = TRAINER_PARTY(sParty_Miguel3),
     },
 
-    [TRAINER_MIGUEL_4] =
+    [DIFFICULTY_NORMAL][TRAINER_MIGUEL_4] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3650,7 +3642,7 @@
         .party = TRAINER_PARTY(sParty_Miguel4),
     },
 
-    [TRAINER_MIGUEL_5] =
+    [DIFFICULTY_NORMAL][TRAINER_MIGUEL_5] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3662,7 +3654,7 @@
         .party = TRAINER_PARTY(sParty_Miguel5),
     },
 
-    [TRAINER_VICTORIA] =
+    [DIFFICULTY_NORMAL][TRAINER_VICTORIA] =
     {
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3674,7 +3666,7 @@
         .party = TRAINER_PARTY(sParty_Victoria),
     },
 
-    [TRAINER_VANESSA] =
+    [DIFFICULTY_NORMAL][TRAINER_VANESSA] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3686,7 +3678,7 @@
         .party = TRAINER_PARTY(sParty_Vanessa),
     },
 
-    [TRAINER_BETHANY] =
+    [DIFFICULTY_NORMAL][TRAINER_BETHANY] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3698,7 +3690,7 @@
         .party = TRAINER_PARTY(sParty_Bethany),
     },
 
-    [TRAINER_ISABEL_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ISABEL_1] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3710,7 +3702,7 @@
         .party = TRAINER_PARTY(sParty_Isabel1),
     },
 
-    [TRAINER_ISABEL_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ISABEL_2] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3722,7 +3714,7 @@
         .party = TRAINER_PARTY(sParty_Isabel2),
     },
 
-    [TRAINER_ISABEL_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ISABEL_3] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3734,7 +3726,7 @@
         .party = TRAINER_PARTY(sParty_Isabel3),
     },
 
-    [TRAINER_ISABEL_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ISABEL_4] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3746,7 +3738,7 @@
         .party = TRAINER_PARTY(sParty_Isabel4),
     },
 
-    [TRAINER_ISABEL_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ISABEL_5] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -3758,7 +3750,7 @@
         .party = TRAINER_PARTY(sParty_Isabel5),
     },
 
-    [TRAINER_TIMOTHY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_TIMOTHY_1] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3770,7 +3762,7 @@
         .party = TRAINER_PARTY(sParty_Timothy1),
     },
 
-    [TRAINER_TIMOTHY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_TIMOTHY_2] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3782,7 +3774,7 @@
         .party = TRAINER_PARTY(sParty_Timothy2),
     },
 
-    [TRAINER_TIMOTHY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_TIMOTHY_3] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3794,7 +3786,7 @@
         .party = TRAINER_PARTY(sParty_Timothy3),
     },
 
-    [TRAINER_TIMOTHY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_TIMOTHY_4] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3806,7 +3798,7 @@
         .party = TRAINER_PARTY(sParty_Timothy4),
     },
 
-    [TRAINER_TIMOTHY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_TIMOTHY_5] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3818,7 +3810,7 @@
         .party = TRAINER_PARTY(sParty_Timothy5),
     },
 
-    [TRAINER_VICKY] =
+    [DIFFICULTY_NORMAL][TRAINER_VICKY] =
     {
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3830,7 +3822,7 @@
         .party = TRAINER_PARTY(sParty_Vicky),
     },
 
-    [TRAINER_SHELBY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_SHELBY_1] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3842,7 +3834,7 @@
         .party = TRAINER_PARTY(sParty_Shelby1),
     },
 
-    [TRAINER_SHELBY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_SHELBY_2] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3854,7 +3846,7 @@
         .party = TRAINER_PARTY(sParty_Shelby2),
     },
 
-    [TRAINER_SHELBY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_SHELBY_3] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3866,7 +3858,7 @@
         .party = TRAINER_PARTY(sParty_Shelby3),
     },
 
-    [TRAINER_SHELBY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_SHELBY_4] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3878,7 +3870,7 @@
         .party = TRAINER_PARTY(sParty_Shelby4),
     },
 
-    [TRAINER_SHELBY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_SHELBY_5] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -3890,7 +3882,7 @@
         .party = TRAINER_PARTY(sParty_Shelby5),
     },
 
-    [TRAINER_CALVIN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_CALVIN_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3902,7 +3894,7 @@
         .party = TRAINER_PARTY(sParty_Calvin1),
     },
 
-    [TRAINER_BILLY] =
+    [DIFFICULTY_NORMAL][TRAINER_BILLY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3914,7 +3906,7 @@
         .party = TRAINER_PARTY(sParty_Billy),
     },
 
-    [TRAINER_JOSH] =
+    [DIFFICULTY_NORMAL][TRAINER_JOSH] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3926,7 +3918,7 @@
         .party = TRAINER_PARTY(sParty_Josh),
     },
 
-    [TRAINER_TOMMY] =
+    [DIFFICULTY_NORMAL][TRAINER_TOMMY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3938,7 +3930,7 @@
         .party = TRAINER_PARTY(sParty_Tommy),
     },
 
-    [TRAINER_JOEY] =
+    [DIFFICULTY_NORMAL][TRAINER_JOEY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3950,7 +3942,7 @@
         .party = TRAINER_PARTY(sParty_Joey),
     },
 
-    [TRAINER_BEN] =
+    [DIFFICULTY_NORMAL][TRAINER_BEN] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3962,7 +3954,7 @@
         .party = TRAINER_PARTY(sParty_Ben),
     },
 
-    [TRAINER_QUINCY] =
+    [DIFFICULTY_NORMAL][TRAINER_QUINCY] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -3974,7 +3966,7 @@
         .party = TRAINER_PARTY(sParty_Quincy),
     },
 
-    [TRAINER_KATELYNN] =
+    [DIFFICULTY_NORMAL][TRAINER_KATELYNN] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -3986,7 +3978,7 @@
         .party = TRAINER_PARTY(sParty_Katelynn),
     },
 
-    [TRAINER_JAYLEN] =
+    [DIFFICULTY_NORMAL][TRAINER_JAYLEN] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -3998,7 +3990,7 @@
         .party = TRAINER_PARTY(sParty_Jaylen),
     },
 
-    [TRAINER_DILLON] =
+    [DIFFICULTY_NORMAL][TRAINER_DILLON] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4010,7 +4002,7 @@
         .party = TRAINER_PARTY(sParty_Dillon),
     },
 
-    [TRAINER_CALVIN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_CALVIN_2] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4022,7 +4014,7 @@
         .party = TRAINER_PARTY(sParty_Calvin2),
     },
 
-    [TRAINER_CALVIN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_CALVIN_3] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4034,7 +4026,7 @@
         .party = TRAINER_PARTY(sParty_Calvin3),
     },
 
-    [TRAINER_CALVIN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_CALVIN_4] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4046,7 +4038,7 @@
         .party = TRAINER_PARTY(sParty_Calvin4),
     },
 
-    [TRAINER_CALVIN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_CALVIN_5] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4058,7 +4050,7 @@
         .party = TRAINER_PARTY(sParty_Calvin5),
     },
 
-    [TRAINER_EDDIE] =
+    [DIFFICULTY_NORMAL][TRAINER_EDDIE] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4070,7 +4062,7 @@
         .party = TRAINER_PARTY(sParty_Eddie),
     },
 
-    [TRAINER_ALLEN] =
+    [DIFFICULTY_NORMAL][TRAINER_ALLEN] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4082,7 +4074,7 @@
         .party = TRAINER_PARTY(sParty_Allen),
     },
 
-    [TRAINER_TIMMY] =
+    [DIFFICULTY_NORMAL][TRAINER_TIMMY] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4094,7 +4086,7 @@
         .party = TRAINER_PARTY(sParty_Timmy),
     },
 
-    [TRAINER_WALLACE] =
+    [DIFFICULTY_NORMAL][TRAINER_WALLACE] =
     {
         .trainerClass = TRAINER_CLASS_CHAMPION,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4102,13 +4094,12 @@
         .trainerName = _("WALLACE"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
-        .mugshotEnabled = TRUE,
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_Wallace),
     },
 
-    [TRAINER_ANDREW] =
+    [DIFFICULTY_NORMAL][TRAINER_ANDREW] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4120,7 +4111,7 @@
         .party = TRAINER_PARTY(sParty_Andrew),
     },
 
-    [TRAINER_IVAN] =
+    [DIFFICULTY_NORMAL][TRAINER_IVAN] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4132,7 +4123,7 @@
         .party = TRAINER_PARTY(sParty_Ivan),
     },
 
-    [TRAINER_CLAUDE] =
+    [DIFFICULTY_NORMAL][TRAINER_CLAUDE] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4144,7 +4135,7 @@
         .party = TRAINER_PARTY(sParty_Claude),
     },
 
-    [TRAINER_ELLIOT_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ELLIOT_1] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4156,7 +4147,7 @@
         .party = TRAINER_PARTY(sParty_Elliot1),
     },
 
-    [TRAINER_NED] =
+    [DIFFICULTY_NORMAL][TRAINER_NED] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4168,7 +4159,7 @@
         .party = TRAINER_PARTY(sParty_Ned),
     },
 
-    [TRAINER_DALE] =
+    [DIFFICULTY_NORMAL][TRAINER_DALE] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4180,7 +4171,7 @@
         .party = TRAINER_PARTY(sParty_Dale),
     },
 
-    [TRAINER_NOLAN] =
+    [DIFFICULTY_NORMAL][TRAINER_NOLAN] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4192,7 +4183,7 @@
         .party = TRAINER_PARTY(sParty_Nolan),
     },
 
-    [TRAINER_BARNY] =
+    [DIFFICULTY_NORMAL][TRAINER_BARNY] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4204,7 +4195,7 @@
         .party = TRAINER_PARTY(sParty_Barny),
     },
 
-    [TRAINER_WADE] =
+    [DIFFICULTY_NORMAL][TRAINER_WADE] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4216,7 +4207,7 @@
         .party = TRAINER_PARTY(sParty_Wade),
     },
 
-    [TRAINER_CARTER] =
+    [DIFFICULTY_NORMAL][TRAINER_CARTER] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4228,7 +4219,7 @@
         .party = TRAINER_PARTY(sParty_Carter),
     },
 
-    [TRAINER_ELLIOT_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ELLIOT_2] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4240,7 +4231,7 @@
         .party = TRAINER_PARTY(sParty_Elliot2),
     },
 
-    [TRAINER_ELLIOT_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ELLIOT_3] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4252,7 +4243,7 @@
         .party = TRAINER_PARTY(sParty_Elliot3),
     },
 
-    [TRAINER_ELLIOT_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ELLIOT_4] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4264,7 +4255,7 @@
         .party = TRAINER_PARTY(sParty_Elliot4),
     },
 
-    [TRAINER_ELLIOT_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ELLIOT_5] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4276,7 +4267,7 @@
         .party = TRAINER_PARTY(sParty_Elliot5),
     },
 
-    [TRAINER_RONALD] =
+    [DIFFICULTY_NORMAL][TRAINER_RONALD] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -4288,7 +4279,7 @@
         .party = TRAINER_PARTY(sParty_Ronald),
     },
 
-    [TRAINER_JACOB] =
+    [DIFFICULTY_NORMAL][TRAINER_JACOB] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4300,7 +4291,7 @@
         .party = TRAINER_PARTY(sParty_Jacob),
     },
 
-    [TRAINER_ANTHONY] =
+    [DIFFICULTY_NORMAL][TRAINER_ANTHONY] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4312,7 +4303,7 @@
         .party = TRAINER_PARTY(sParty_Anthony),
     },
 
-    [TRAINER_BENJAMIN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_BENJAMIN_1] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4324,7 +4315,7 @@
         .party = TRAINER_PARTY(sParty_Benjamin1),
     },
 
-    [TRAINER_BENJAMIN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_BENJAMIN_2] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4336,7 +4327,7 @@
         .party = TRAINER_PARTY(sParty_Benjamin2),
     },
 
-    [TRAINER_BENJAMIN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_BENJAMIN_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4348,7 +4339,7 @@
         .party = TRAINER_PARTY(sParty_Benjamin3),
     },
 
-    [TRAINER_BENJAMIN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_BENJAMIN_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4360,7 +4351,7 @@
         .party = TRAINER_PARTY(sParty_Benjamin4),
     },
 
-    [TRAINER_BENJAMIN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_BENJAMIN_5] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4372,7 +4363,7 @@
         .party = TRAINER_PARTY(sParty_Benjamin5),
     },
 
-    [TRAINER_ABIGAIL_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ABIGAIL_1] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4384,7 +4375,7 @@
         .party = TRAINER_PARTY(sParty_Abigail1),
     },
 
-    [TRAINER_JASMINE] =
+    [DIFFICULTY_NORMAL][TRAINER_JASMINE] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4396,7 +4387,7 @@
         .party = TRAINER_PARTY(sParty_Jasmine),
     },
 
-    [TRAINER_ABIGAIL_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ABIGAIL_2] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4408,7 +4399,7 @@
         .party = TRAINER_PARTY(sParty_Abigail2),
     },
 
-    [TRAINER_ABIGAIL_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ABIGAIL_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4420,7 +4411,7 @@
         .party = TRAINER_PARTY(sParty_Abigail3),
     },
 
-    [TRAINER_ABIGAIL_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ABIGAIL_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4432,7 +4423,7 @@
         .party = TRAINER_PARTY(sParty_Abigail4),
     },
 
-    [TRAINER_ABIGAIL_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ABIGAIL_5] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4444,7 +4435,7 @@
         .party = TRAINER_PARTY(sParty_Abigail5),
     },
 
-    [TRAINER_DYLAN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_DYLAN_1] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4456,7 +4447,7 @@
         .party = TRAINER_PARTY(sParty_Dylan1),
     },
 
-    [TRAINER_DYLAN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_DYLAN_2] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4468,7 +4459,7 @@
         .party = TRAINER_PARTY(sParty_Dylan2),
     },
 
-    [TRAINER_DYLAN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_DYLAN_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4480,7 +4471,7 @@
         .party = TRAINER_PARTY(sParty_Dylan3),
     },
 
-    [TRAINER_DYLAN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_DYLAN_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4492,7 +4483,7 @@
         .party = TRAINER_PARTY(sParty_Dylan4),
     },
 
-    [TRAINER_DYLAN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_DYLAN_5] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4504,7 +4495,7 @@
         .party = TRAINER_PARTY(sParty_Dylan5),
     },
 
-    [TRAINER_MARIA_1] =
+    [DIFFICULTY_NORMAL][TRAINER_MARIA_1] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4516,7 +4507,7 @@
         .party = TRAINER_PARTY(sParty_Maria1),
     },
 
-    [TRAINER_MARIA_2] =
+    [DIFFICULTY_NORMAL][TRAINER_MARIA_2] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4528,7 +4519,7 @@
         .party = TRAINER_PARTY(sParty_Maria2),
     },
 
-    [TRAINER_MARIA_3] =
+    [DIFFICULTY_NORMAL][TRAINER_MARIA_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4540,7 +4531,7 @@
         .party = TRAINER_PARTY(sParty_Maria3),
     },
 
-    [TRAINER_MARIA_4] =
+    [DIFFICULTY_NORMAL][TRAINER_MARIA_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4552,7 +4543,7 @@
         .party = TRAINER_PARTY(sParty_Maria4),
     },
 
-    [TRAINER_MARIA_5] =
+    [DIFFICULTY_NORMAL][TRAINER_MARIA_5] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -4564,7 +4555,7 @@
         .party = TRAINER_PARTY(sParty_Maria5),
     },
 
-    [TRAINER_CAMDEN] =
+    [DIFFICULTY_NORMAL][TRAINER_CAMDEN] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4576,7 +4567,7 @@
         .party = TRAINER_PARTY(sParty_Camden),
     },
 
-    [TRAINER_DEMETRIUS] =
+    [DIFFICULTY_NORMAL][TRAINER_DEMETRIUS] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4588,7 +4579,7 @@
         .party = TRAINER_PARTY(sParty_Demetrius),
     },
 
-    [TRAINER_ISAIAH_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAIAH_1] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4600,7 +4591,7 @@
         .party = TRAINER_PARTY(sParty_Isaiah1),
     },
 
-    [TRAINER_PABLO_1] =
+    [DIFFICULTY_NORMAL][TRAINER_PABLO_1] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4612,7 +4603,7 @@
         .party = TRAINER_PARTY(sParty_Pablo1),
     },
 
-    [TRAINER_CHASE] =
+    [DIFFICULTY_NORMAL][TRAINER_CHASE] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4624,7 +4615,7 @@
         .party = TRAINER_PARTY(sParty_Chase),
     },
 
-    [TRAINER_ISAIAH_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAIAH_2] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4636,7 +4627,7 @@
         .party = TRAINER_PARTY(sParty_Isaiah2),
     },
 
-    [TRAINER_ISAIAH_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAIAH_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4648,7 +4639,7 @@
         .party = TRAINER_PARTY(sParty_Isaiah3),
     },
 
-    [TRAINER_ISAIAH_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAIAH_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4660,7 +4651,7 @@
         .party = TRAINER_PARTY(sParty_Isaiah4),
     },
 
-    [TRAINER_ISAIAH_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAIAH_5] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4672,7 +4663,7 @@
         .party = TRAINER_PARTY(sParty_Isaiah5),
     },
 
-    [TRAINER_ISOBEL] =
+    [DIFFICULTY_NORMAL][TRAINER_ISOBEL] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4684,7 +4675,7 @@
         .party = TRAINER_PARTY(sParty_Isobel),
     },
 
-    [TRAINER_DONNY] =
+    [DIFFICULTY_NORMAL][TRAINER_DONNY] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4696,7 +4687,7 @@
         .party = TRAINER_PARTY(sParty_Donny),
     },
 
-    [TRAINER_TALIA] =
+    [DIFFICULTY_NORMAL][TRAINER_TALIA] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4708,7 +4699,7 @@
         .party = TRAINER_PARTY(sParty_Talia),
     },
 
-    [TRAINER_KATELYN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_KATELYN_1] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4720,7 +4711,7 @@
         .party = TRAINER_PARTY(sParty_Katelyn1),
     },
 
-    [TRAINER_ALLISON] =
+    [DIFFICULTY_NORMAL][TRAINER_ALLISON] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4732,7 +4723,7 @@
         .party = TRAINER_PARTY(sParty_Allison),
     },
 
-    [TRAINER_KATELYN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_KATELYN_2] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4744,7 +4735,7 @@
         .party = TRAINER_PARTY(sParty_Katelyn2),
     },
 
-    [TRAINER_KATELYN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_KATELYN_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4756,7 +4747,7 @@
         .party = TRAINER_PARTY(sParty_Katelyn3),
     },
 
-    [TRAINER_KATELYN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_KATELYN_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4768,7 +4759,7 @@
         .party = TRAINER_PARTY(sParty_Katelyn4),
     },
 
-    [TRAINER_KATELYN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_KATELYN_5] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -4780,7 +4771,7 @@
         .party = TRAINER_PARTY(sParty_Katelyn5),
     },
 
-    [TRAINER_NICOLAS_1] =
+    [DIFFICULTY_NORMAL][TRAINER_NICOLAS_1] =
     {
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -4792,7 +4783,7 @@
         .party = TRAINER_PARTY(sParty_Nicolas1),
     },
 
-    [TRAINER_NICOLAS_2] =
+    [DIFFICULTY_NORMAL][TRAINER_NICOLAS_2] =
     {
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -4804,7 +4795,7 @@
         .party = TRAINER_PARTY(sParty_Nicolas2),
     },
 
-    [TRAINER_NICOLAS_3] =
+    [DIFFICULTY_NORMAL][TRAINER_NICOLAS_3] =
     {
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -4816,7 +4807,7 @@
         .party = TRAINER_PARTY(sParty_Nicolas3),
     },
 
-    [TRAINER_NICOLAS_4] =
+    [DIFFICULTY_NORMAL][TRAINER_NICOLAS_4] =
     {
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -4828,7 +4819,7 @@
         .party = TRAINER_PARTY(sParty_Nicolas4),
     },
 
-    [TRAINER_NICOLAS_5] =
+    [DIFFICULTY_NORMAL][TRAINER_NICOLAS_5] =
     {
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -4840,7 +4831,7 @@
         .party = TRAINER_PARTY(sParty_Nicolas5),
     },
 
-    [TRAINER_AARON] =
+    [DIFFICULTY_NORMAL][TRAINER_AARON] =
     {
         .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -4852,7 +4843,7 @@
         .party = TRAINER_PARTY(sParty_Aaron),
     },
 
-    [TRAINER_PERRY] =
+    [DIFFICULTY_NORMAL][TRAINER_PERRY] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4864,7 +4855,7 @@
         .party = TRAINER_PARTY(sParty_Perry),
     },
 
-    [TRAINER_HUGH] =
+    [DIFFICULTY_NORMAL][TRAINER_HUGH] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4876,7 +4867,7 @@
         .party = TRAINER_PARTY(sParty_Hugh),
     },
 
-    [TRAINER_PHIL] =
+    [DIFFICULTY_NORMAL][TRAINER_PHIL] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4888,7 +4879,7 @@
         .party = TRAINER_PARTY(sParty_Phil),
     },
 
-    [TRAINER_JARED] =
+    [DIFFICULTY_NORMAL][TRAINER_JARED] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4900,7 +4891,7 @@
         .party = TRAINER_PARTY(sParty_Jared),
     },
 
-    [TRAINER_HUMBERTO] =
+    [DIFFICULTY_NORMAL][TRAINER_HUMBERTO] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4912,7 +4903,7 @@
         .party = TRAINER_PARTY(sParty_Humberto),
     },
 
-    [TRAINER_PRESLEY] =
+    [DIFFICULTY_NORMAL][TRAINER_PRESLEY] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4924,7 +4915,7 @@
         .party = TRAINER_PARTY(sParty_Presley),
     },
 
-    [TRAINER_EDWARDO] =
+    [DIFFICULTY_NORMAL][TRAINER_EDWARDO] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4936,7 +4927,7 @@
         .party = TRAINER_PARTY(sParty_Edwardo),
     },
 
-    [TRAINER_COLIN] =
+    [DIFFICULTY_NORMAL][TRAINER_COLIN] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4948,7 +4939,7 @@
         .party = TRAINER_PARTY(sParty_Colin),
     },
 
-    [TRAINER_ROBERT_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ROBERT_1] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4960,7 +4951,7 @@
         .party = TRAINER_PARTY(sParty_Robert1),
     },
 
-    [TRAINER_BENNY] =
+    [DIFFICULTY_NORMAL][TRAINER_BENNY] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4972,7 +4963,7 @@
         .party = TRAINER_PARTY(sParty_Benny),
     },
 
-    [TRAINER_CHESTER] =
+    [DIFFICULTY_NORMAL][TRAINER_CHESTER] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4984,7 +4975,7 @@
         .party = TRAINER_PARTY(sParty_Chester),
     },
 
-    [TRAINER_ROBERT_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ROBERT_2] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -4996,7 +4987,7 @@
         .party = TRAINER_PARTY(sParty_Robert2),
     },
 
-    [TRAINER_ROBERT_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ROBERT_3] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -5008,7 +4999,7 @@
         .party = TRAINER_PARTY(sParty_Robert3),
     },
 
-    [TRAINER_ROBERT_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ROBERT_4] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -5020,7 +5011,7 @@
         .party = TRAINER_PARTY(sParty_Robert4),
     },
 
-    [TRAINER_ROBERT_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ROBERT_5] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -5032,7 +5023,7 @@
         .party = TRAINER_PARTY(sParty_Robert5),
     },
 
-    [TRAINER_ALEX] =
+    [DIFFICULTY_NORMAL][TRAINER_ALEX] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -5044,7 +5035,7 @@
         .party = TRAINER_PARTY(sParty_Alex),
     },
 
-    [TRAINER_BECK] =
+    [DIFFICULTY_NORMAL][TRAINER_BECK] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -5056,7 +5047,7 @@
         .party = TRAINER_PARTY(sParty_Beck),
     },
 
-    [TRAINER_YASU] =
+    [DIFFICULTY_NORMAL][TRAINER_YASU] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5068,7 +5059,7 @@
         .party = TRAINER_PARTY(sParty_Yasu),
     },
 
-    [TRAINER_TAKASHI] =
+    [DIFFICULTY_NORMAL][TRAINER_TAKASHI] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5080,7 +5071,7 @@
         .party = TRAINER_PARTY(sParty_Takashi),
     },
 
-    [TRAINER_DIANNE] =
+    [DIFFICULTY_NORMAL][TRAINER_DIANNE] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -5092,7 +5083,7 @@
         .party = TRAINER_PARTY(sParty_Dianne),
     },
 
-    [TRAINER_JANI] =
+    [DIFFICULTY_NORMAL][TRAINER_JANI] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5104,7 +5095,7 @@
         .party = TRAINER_PARTY(sParty_Jani),
     },
 
-    [TRAINER_LAO_1] =
+    [DIFFICULTY_NORMAL][TRAINER_LAO_1] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5116,7 +5107,7 @@
         .party = TRAINER_PARTY(sParty_Lao1),
     },
 
-    [TRAINER_LUNG] =
+    [DIFFICULTY_NORMAL][TRAINER_LUNG] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5128,7 +5119,7 @@
         .party = TRAINER_PARTY(sParty_Lung),
     },
 
-    [TRAINER_LAO_2] =
+    [DIFFICULTY_NORMAL][TRAINER_LAO_2] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5140,7 +5131,7 @@
         .party = TRAINER_PARTY(sParty_Lao2),
     },
 
-    [TRAINER_LAO_3] =
+    [DIFFICULTY_NORMAL][TRAINER_LAO_3] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5152,7 +5143,7 @@
         .party = TRAINER_PARTY(sParty_Lao3),
     },
 
-    [TRAINER_LAO_4] =
+    [DIFFICULTY_NORMAL][TRAINER_LAO_4] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5164,7 +5155,7 @@
         .party = TRAINER_PARTY(sParty_Lao4),
     },
 
-    [TRAINER_LAO_5] =
+    [DIFFICULTY_NORMAL][TRAINER_LAO_5] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -5176,7 +5167,7 @@
         .party = TRAINER_PARTY(sParty_Lao5),
     },
 
-    [TRAINER_JOCELYN] =
+    [DIFFICULTY_NORMAL][TRAINER_JOCELYN] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5188,7 +5179,7 @@
         .party = TRAINER_PARTY(sParty_Jocelyn),
     },
 
-    [TRAINER_LAURA] =
+    [DIFFICULTY_NORMAL][TRAINER_LAURA] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5200,7 +5191,7 @@
         .party = TRAINER_PARTY(sParty_Laura),
     },
 
-    [TRAINER_CYNDY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_CYNDY_1] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5212,7 +5203,7 @@
         .party = TRAINER_PARTY(sParty_Cyndy1),
     },
 
-    [TRAINER_CORA] =
+    [DIFFICULTY_NORMAL][TRAINER_CORA] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5224,7 +5215,7 @@
         .party = TRAINER_PARTY(sParty_Cora),
     },
 
-    [TRAINER_PAULA] =
+    [DIFFICULTY_NORMAL][TRAINER_PAULA] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5236,7 +5227,7 @@
         .party = TRAINER_PARTY(sParty_Paula),
     },
 
-    [TRAINER_CYNDY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_CYNDY_2] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5248,7 +5239,7 @@
         .party = TRAINER_PARTY(sParty_Cyndy2),
     },
 
-    [TRAINER_CYNDY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_CYNDY_3] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5260,7 +5251,7 @@
         .party = TRAINER_PARTY(sParty_Cyndy3),
     },
 
-    [TRAINER_CYNDY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_CYNDY_4] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5272,7 +5263,7 @@
         .party = TRAINER_PARTY(sParty_Cyndy4),
     },
 
-    [TRAINER_CYNDY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_CYNDY_5] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5284,7 +5275,7 @@
         .party = TRAINER_PARTY(sParty_Cyndy5),
     },
 
-    [TRAINER_MADELINE_1] =
+    [DIFFICULTY_NORMAL][TRAINER_MADELINE_1] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -5296,7 +5287,7 @@
         .party = TRAINER_PARTY(sParty_Madeline1),
     },
 
-    [TRAINER_CLARISSA] =
+    [DIFFICULTY_NORMAL][TRAINER_CLARISSA] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -5308,7 +5299,7 @@
         .party = TRAINER_PARTY(sParty_Clarissa),
     },
 
-    [TRAINER_ANGELICA] =
+    [DIFFICULTY_NORMAL][TRAINER_ANGELICA] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -5320,7 +5311,7 @@
         .party = TRAINER_PARTY(sParty_Angelica),
     },
 
-    [TRAINER_MADELINE_2] =
+    [DIFFICULTY_NORMAL][TRAINER_MADELINE_2] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -5332,7 +5323,7 @@
         .party = TRAINER_PARTY(sParty_Madeline2),
     },
 
-    [TRAINER_MADELINE_3] =
+    [DIFFICULTY_NORMAL][TRAINER_MADELINE_3] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -5344,7 +5335,7 @@
         .party = TRAINER_PARTY(sParty_Madeline3),
     },
 
-    [TRAINER_MADELINE_4] =
+    [DIFFICULTY_NORMAL][TRAINER_MADELINE_4] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -5356,7 +5347,7 @@
         .party = TRAINER_PARTY(sParty_Madeline4),
     },
 
-    [TRAINER_MADELINE_5] =
+    [DIFFICULTY_NORMAL][TRAINER_MADELINE_5] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -5368,7 +5359,7 @@
         .party = TRAINER_PARTY(sParty_Madeline5),
     },
 
-    [TRAINER_BEVERLY] =
+    [DIFFICULTY_NORMAL][TRAINER_BEVERLY] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5380,7 +5371,7 @@
         .party = TRAINER_PARTY(sParty_Beverly),
     },
 
-    [TRAINER_IMANI] =
+    [DIFFICULTY_NORMAL][TRAINER_IMANI] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5392,7 +5383,7 @@
         .party = TRAINER_PARTY(sParty_Imani),
     },
 
-    [TRAINER_KYLA] =
+    [DIFFICULTY_NORMAL][TRAINER_KYLA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5404,7 +5395,7 @@
         .party = TRAINER_PARTY(sParty_Kyla),
     },
 
-    [TRAINER_DENISE] =
+    [DIFFICULTY_NORMAL][TRAINER_DENISE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5416,7 +5407,7 @@
         .party = TRAINER_PARTY(sParty_Denise),
     },
 
-    [TRAINER_BETH] =
+    [DIFFICULTY_NORMAL][TRAINER_BETH] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5428,7 +5419,7 @@
         .party = TRAINER_PARTY(sParty_Beth),
     },
 
-    [TRAINER_TARA] =
+    [DIFFICULTY_NORMAL][TRAINER_TARA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5440,7 +5431,7 @@
         .party = TRAINER_PARTY(sParty_Tara),
     },
 
-    [TRAINER_MISSY] =
+    [DIFFICULTY_NORMAL][TRAINER_MISSY] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5452,7 +5443,7 @@
         .party = TRAINER_PARTY(sParty_Missy),
     },
 
-    [TRAINER_ALICE] =
+    [DIFFICULTY_NORMAL][TRAINER_ALICE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5464,7 +5455,7 @@
         .party = TRAINER_PARTY(sParty_Alice),
     },
 
-    [TRAINER_JENNY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JENNY_1] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5476,7 +5467,7 @@
         .party = TRAINER_PARTY(sParty_Jenny1),
     },
 
-    [TRAINER_GRACE] =
+    [DIFFICULTY_NORMAL][TRAINER_GRACE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5488,7 +5479,7 @@
         .party = TRAINER_PARTY(sParty_Grace),
     },
 
-    [TRAINER_TANYA] =
+    [DIFFICULTY_NORMAL][TRAINER_TANYA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5500,7 +5491,7 @@
         .party = TRAINER_PARTY(sParty_Tanya),
     },
 
-    [TRAINER_SHARON] =
+    [DIFFICULTY_NORMAL][TRAINER_SHARON] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5512,7 +5503,7 @@
         .party = TRAINER_PARTY(sParty_Sharon),
     },
 
-    [TRAINER_NIKKI] =
+    [DIFFICULTY_NORMAL][TRAINER_NIKKI] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5524,7 +5515,7 @@
         .party = TRAINER_PARTY(sParty_Nikki),
     },
 
-    [TRAINER_BRENDA] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5536,7 +5527,7 @@
         .party = TRAINER_PARTY(sParty_Brenda),
     },
 
-    [TRAINER_KATIE] =
+    [DIFFICULTY_NORMAL][TRAINER_KATIE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5548,7 +5539,7 @@
         .party = TRAINER_PARTY(sParty_Katie),
     },
 
-    [TRAINER_SUSIE] =
+    [DIFFICULTY_NORMAL][TRAINER_SUSIE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5560,7 +5551,7 @@
         .party = TRAINER_PARTY(sParty_Susie),
     },
 
-    [TRAINER_KARA] =
+    [DIFFICULTY_NORMAL][TRAINER_KARA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5572,7 +5563,7 @@
         .party = TRAINER_PARTY(sParty_Kara),
     },
 
-    [TRAINER_DANA] =
+    [DIFFICULTY_NORMAL][TRAINER_DANA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5584,7 +5575,7 @@
         .party = TRAINER_PARTY(sParty_Dana),
     },
 
-    [TRAINER_SIENNA] =
+    [DIFFICULTY_NORMAL][TRAINER_SIENNA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5596,7 +5587,7 @@
         .party = TRAINER_PARTY(sParty_Sienna),
     },
 
-    [TRAINER_DEBRA] =
+    [DIFFICULTY_NORMAL][TRAINER_DEBRA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5608,7 +5599,7 @@
         .party = TRAINER_PARTY(sParty_Debra),
     },
 
-    [TRAINER_LINDA] =
+    [DIFFICULTY_NORMAL][TRAINER_LINDA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5620,7 +5611,7 @@
         .party = TRAINER_PARTY(sParty_Linda),
     },
 
-    [TRAINER_KAYLEE] =
+    [DIFFICULTY_NORMAL][TRAINER_KAYLEE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5632,7 +5623,7 @@
         .party = TRAINER_PARTY(sParty_Kaylee),
     },
 
-    [TRAINER_LAUREL] =
+    [DIFFICULTY_NORMAL][TRAINER_LAUREL] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5644,7 +5635,7 @@
         .party = TRAINER_PARTY(sParty_Laurel),
     },
 
-    [TRAINER_CARLEE] =
+    [DIFFICULTY_NORMAL][TRAINER_CARLEE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5656,7 +5647,7 @@
         .party = TRAINER_PARTY(sParty_Carlee),
     },
 
-    [TRAINER_JENNY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JENNY_2] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5668,7 +5659,7 @@
         .party = TRAINER_PARTY(sParty_Jenny2),
     },
 
-    [TRAINER_JENNY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JENNY_3] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5680,7 +5671,7 @@
         .party = TRAINER_PARTY(sParty_Jenny3),
     },
 
-    [TRAINER_JENNY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JENNY_4] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5692,7 +5683,7 @@
         .party = TRAINER_PARTY(sParty_Jenny4),
     },
 
-    [TRAINER_JENNY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JENNY_5] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -5704,7 +5695,7 @@
         .party = TRAINER_PARTY(sParty_Jenny5),
     },
 
-    [TRAINER_HEIDI] =
+    [DIFFICULTY_NORMAL][TRAINER_HEIDI] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5716,7 +5707,7 @@
         .party = TRAINER_PARTY(sParty_Heidi),
     },
 
-    [TRAINER_BECKY] =
+    [DIFFICULTY_NORMAL][TRAINER_BECKY] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5728,7 +5719,7 @@
         .party = TRAINER_PARTY(sParty_Becky),
     },
 
-    [TRAINER_CAROL] =
+    [DIFFICULTY_NORMAL][TRAINER_CAROL] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5740,7 +5731,7 @@
         .party = TRAINER_PARTY(sParty_Carol),
     },
 
-    [TRAINER_NANCY] =
+    [DIFFICULTY_NORMAL][TRAINER_NANCY] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5752,7 +5743,7 @@
         .party = TRAINER_PARTY(sParty_Nancy),
     },
 
-    [TRAINER_MARTHA] =
+    [DIFFICULTY_NORMAL][TRAINER_MARTHA] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5764,7 +5755,7 @@
         .party = TRAINER_PARTY(sParty_Martha),
     },
 
-    [TRAINER_DIANA_1] =
+    [DIFFICULTY_NORMAL][TRAINER_DIANA_1] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5776,7 +5767,7 @@
         .party = TRAINER_PARTY(sParty_Diana1),
     },
 
-    [TRAINER_CEDRIC] =
+    [DIFFICULTY_NORMAL][TRAINER_CEDRIC] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5788,7 +5779,7 @@
         .party = TRAINER_PARTY(sParty_Cedric),
     },
 
-    [TRAINER_IRENE] =
+    [DIFFICULTY_NORMAL][TRAINER_IRENE] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5800,7 +5791,7 @@
         .party = TRAINER_PARTY(sParty_Irene),
     },
 
-    [TRAINER_DIANA_2] =
+    [DIFFICULTY_NORMAL][TRAINER_DIANA_2] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5812,7 +5803,7 @@
         .party = TRAINER_PARTY(sParty_Diana2),
     },
 
-    [TRAINER_DIANA_3] =
+    [DIFFICULTY_NORMAL][TRAINER_DIANA_3] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5824,7 +5815,7 @@
         .party = TRAINER_PARTY(sParty_Diana3),
     },
 
-    [TRAINER_DIANA_4] =
+    [DIFFICULTY_NORMAL][TRAINER_DIANA_4] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5836,7 +5827,7 @@
         .party = TRAINER_PARTY(sParty_Diana4),
     },
 
-    [TRAINER_DIANA_5] =
+    [DIFFICULTY_NORMAL][TRAINER_DIANA_5] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -5848,7 +5839,7 @@
         .party = TRAINER_PARTY(sParty_Diana5),
     },
 
-    [TRAINER_AMY_AND_LIV_1] =
+    [DIFFICULTY_NORMAL][TRAINER_AMY_AND_LIV_1] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5860,7 +5851,7 @@
         .party = TRAINER_PARTY(sParty_AmyAndLiv1),
     },
 
-    [TRAINER_AMY_AND_LIV_2] =
+    [DIFFICULTY_NORMAL][TRAINER_AMY_AND_LIV_2] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5872,7 +5863,7 @@
         .party = TRAINER_PARTY(sParty_AmyAndLiv2),
     },
 
-    [TRAINER_ABBY_AND_STORMY] =
+    [DIFFICULTY_NORMAL][TRAINER_ABBY_AND_STORMY] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5884,7 +5875,7 @@
         .party = TRAINER_PARTY(sParty_AbbyAndStormy),
     },
 
-    [TRAINER_MIU_AND_YUKI] =
+    [DIFFICULTY_NORMAL][TRAINER_MIU_AND_YUKI] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5896,7 +5887,7 @@
         .party = TRAINER_PARTY(sParty_MiuAndYuki),
     },
 
-    [TRAINER_AMY_AND_LIV_3] =
+    [DIFFICULTY_NORMAL][TRAINER_AMY_AND_LIV_3] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5908,7 +5899,7 @@
         .party = TRAINER_PARTY(sParty_AmyAndLiv3),
     },
 
-    [TRAINER_GINA_AND_MIA_2] =
+    [DIFFICULTY_NORMAL][TRAINER_GINA_AND_MIA_2] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5920,7 +5911,7 @@
         .party = TRAINER_PARTY(sParty_GinaAndMia2),
     },
 
-    [TRAINER_AMY_AND_LIV_4] =
+    [DIFFICULTY_NORMAL][TRAINER_AMY_AND_LIV_4] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5932,7 +5923,7 @@
         .party = TRAINER_PARTY(sParty_AmyAndLiv4),
     },
 
-    [TRAINER_AMY_AND_LIV_5] =
+    [DIFFICULTY_NORMAL][TRAINER_AMY_AND_LIV_5] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5944,7 +5935,7 @@
         .party = TRAINER_PARTY(sParty_AmyAndLiv5),
     },
 
-    [TRAINER_AMY_AND_LIV_6] =
+    [DIFFICULTY_NORMAL][TRAINER_AMY_AND_LIV_6] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5956,7 +5947,7 @@
         .party = TRAINER_PARTY(sParty_AmyAndLiv6),
     },
 
-    [TRAINER_HUEY] =
+    [DIFFICULTY_NORMAL][TRAINER_HUEY] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -5968,7 +5959,7 @@
         .party = TRAINER_PARTY(sParty_Huey),
     },
 
-    [TRAINER_EDMOND] =
+    [DIFFICULTY_NORMAL][TRAINER_EDMOND] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -5980,7 +5971,7 @@
         .party = TRAINER_PARTY(sParty_Edmond),
     },
 
-    [TRAINER_ERNEST_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ERNEST_1] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -5992,7 +5983,7 @@
         .party = TRAINER_PARTY(sParty_Ernest1),
     },
 
-    [TRAINER_DWAYNE] =
+    [DIFFICULTY_NORMAL][TRAINER_DWAYNE] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6004,7 +5995,7 @@
         .party = TRAINER_PARTY(sParty_Dwayne),
     },
 
-    [TRAINER_PHILLIP] =
+    [DIFFICULTY_NORMAL][TRAINER_PHILLIP] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6016,7 +6007,7 @@
         .party = TRAINER_PARTY(sParty_Phillip),
     },
 
-    [TRAINER_LEONARD] =
+    [DIFFICULTY_NORMAL][TRAINER_LEONARD] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6028,7 +6019,7 @@
         .party = TRAINER_PARTY(sParty_Leonard),
     },
 
-    [TRAINER_DUNCAN] =
+    [DIFFICULTY_NORMAL][TRAINER_DUNCAN] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6040,7 +6031,7 @@
         .party = TRAINER_PARTY(sParty_Duncan),
     },
 
-    [TRAINER_ERNEST_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ERNEST_2] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6052,7 +6043,7 @@
         .party = TRAINER_PARTY(sParty_Ernest2),
     },
 
-    [TRAINER_ERNEST_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ERNEST_3] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6064,7 +6055,7 @@
         .party = TRAINER_PARTY(sParty_Ernest3),
     },
 
-    [TRAINER_ERNEST_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ERNEST_4] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6076,7 +6067,7 @@
         .party = TRAINER_PARTY(sParty_Ernest4),
     },
 
-    [TRAINER_ERNEST_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ERNEST_5] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6088,7 +6079,7 @@
         .party = TRAINER_PARTY(sParty_Ernest5),
     },
 
-    [TRAINER_ELI] =
+    [DIFFICULTY_NORMAL][TRAINER_ELI] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -6100,7 +6091,7 @@
         .party = TRAINER_PARTY(sParty_Eli),
     },
 
-    [TRAINER_ANNIKA] =
+    [DIFFICULTY_NORMAL][TRAINER_ANNIKA] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -6112,7 +6103,7 @@
         .party = TRAINER_PARTY(sParty_Annika),
     },
 
-    [TRAINER_JAZMYN] =
+    [DIFFICULTY_NORMAL][TRAINER_JAZMYN] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER_2,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6124,7 +6115,7 @@
         .party = TRAINER_PARTY(sParty_Jazmyn),
     },
 
-    [TRAINER_JONAS] =
+    [DIFFICULTY_NORMAL][TRAINER_JONAS] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6136,7 +6127,7 @@
         .party = TRAINER_PARTY(sParty_Jonas),
     },
 
-    [TRAINER_KAYLEY] =
+    [DIFFICULTY_NORMAL][TRAINER_KAYLEY] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6148,7 +6139,7 @@
         .party = TRAINER_PARTY(sParty_Kayley),
     },
 
-    [TRAINER_AURON] =
+    [DIFFICULTY_NORMAL][TRAINER_AURON] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -6160,7 +6151,7 @@
         .party = TRAINER_PARTY(sParty_Auron),
     },
 
-    [TRAINER_KELVIN] =
+    [DIFFICULTY_NORMAL][TRAINER_KELVIN] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6172,7 +6163,7 @@
         .party = TRAINER_PARTY(sParty_Kelvin),
     },
 
-    [TRAINER_MARLEY] =
+    [DIFFICULTY_NORMAL][TRAINER_MARLEY] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6184,7 +6175,7 @@
         .party = TRAINER_PARTY(sParty_Marley),
     },
 
-    [TRAINER_REYNA] =
+    [DIFFICULTY_NORMAL][TRAINER_REYNA] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -6196,7 +6187,7 @@
         .party = TRAINER_PARTY(sParty_Reyna),
     },
 
-    [TRAINER_HUDSON] =
+    [DIFFICULTY_NORMAL][TRAINER_HUDSON] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6208,7 +6199,7 @@
         .party = TRAINER_PARTY(sParty_Hudson),
     },
 
-    [TRAINER_CONOR] =
+    [DIFFICULTY_NORMAL][TRAINER_CONOR] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -6220,7 +6211,7 @@
         .party = TRAINER_PARTY(sParty_Conor),
     },
 
-    [TRAINER_EDWIN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_EDWIN_1] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6232,7 +6223,7 @@
         .party = TRAINER_PARTY(sParty_Edwin1),
     },
 
-    [TRAINER_HECTOR] =
+    [DIFFICULTY_NORMAL][TRAINER_HECTOR] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6244,7 +6235,7 @@
         .party = TRAINER_PARTY(sParty_Hector),
     },
 
-    [TRAINER_TABITHA_MOSSDEEP] =
+    [DIFFICULTY_NORMAL][TRAINER_TABITHA_MOSSDEEP] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -6256,7 +6247,7 @@
         .party = TRAINER_PARTY(sParty_TabithaMossdeep),
     },
 
-    [TRAINER_EDWIN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_EDWIN_2] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6268,7 +6259,7 @@
         .party = TRAINER_PARTY(sParty_Edwin2),
     },
 
-    [TRAINER_EDWIN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_EDWIN_3] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6280,7 +6271,7 @@
         .party = TRAINER_PARTY(sParty_Edwin3),
     },
 
-    [TRAINER_EDWIN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_EDWIN_4] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6292,7 +6283,7 @@
         .party = TRAINER_PARTY(sParty_Edwin4),
     },
 
-    [TRAINER_EDWIN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_EDWIN_5] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6304,7 +6295,7 @@
         .party = TRAINER_PARTY(sParty_Edwin5),
     },
 
-    [TRAINER_WALLY_VR_1] =
+    [DIFFICULTY_NORMAL][TRAINER_WALLY_VR_1] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6316,7 +6307,7 @@
         .party = TRAINER_PARTY(sParty_WallyVR1),
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6328,7 +6319,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute103Mudkip),
     },
 
-    [TRAINER_BRENDAN_ROUTE_110_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_110_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6340,7 +6331,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute110Mudkip),
     },
 
-    [TRAINER_BRENDAN_ROUTE_119_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_119_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6352,7 +6343,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute119Mudkip),
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_103_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6364,7 +6355,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute103Treecko),
     },
 
-    [TRAINER_BRENDAN_ROUTE_110_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_110_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6376,7 +6367,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute110Treecko),
     },
 
-    [TRAINER_BRENDAN_ROUTE_119_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_119_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6388,7 +6379,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute119Treecko),
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6400,7 +6391,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute103Torchic),
     },
 
-    [TRAINER_BRENDAN_ROUTE_110_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_110_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6412,7 +6403,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute110Torchic),
     },
 
-    [TRAINER_BRENDAN_ROUTE_119_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_ROUTE_119_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6424,7 +6415,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRoute119Torchic),
     },
 
-    [TRAINER_MAY_ROUTE_103_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_103_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6436,7 +6427,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute103Mudkip),
     },
 
-    [TRAINER_MAY_ROUTE_110_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_110_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6448,7 +6439,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute110Mudkip),
     },
 
-    [TRAINER_MAY_ROUTE_119_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_119_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6460,7 +6451,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute119Mudkip),
     },
 
-    [TRAINER_MAY_ROUTE_103_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_103_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6472,7 +6463,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute103Treecko),
     },
 
-    [TRAINER_MAY_ROUTE_110_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_110_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6484,7 +6475,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute110Treecko),
     },
 
-    [TRAINER_MAY_ROUTE_119_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_119_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6496,7 +6487,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute119Treecko),
     },
 
-    [TRAINER_MAY_ROUTE_103_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_103_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6508,7 +6499,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute103Torchic),
     },
 
-    [TRAINER_MAY_ROUTE_110_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_110_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6520,7 +6511,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute110Torchic),
     },
 
-    [TRAINER_MAY_ROUTE_119_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_ROUTE_119_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6532,7 +6523,7 @@
         .party = TRAINER_PARTY(sParty_MayRoute119Torchic),
     },
 
-    [TRAINER_ISAAC_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAAC_1] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6544,7 +6535,7 @@
         .party = TRAINER_PARTY(sParty_Isaac1),
     },
 
-    [TRAINER_DAVIS] =
+    [DIFFICULTY_NORMAL][TRAINER_DAVIS] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6556,7 +6547,7 @@
         .party = TRAINER_PARTY(sParty_Davis),
     },
 
-    [TRAINER_MITCHELL] =
+    [DIFFICULTY_NORMAL][TRAINER_MITCHELL] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6568,7 +6559,7 @@
         .party = TRAINER_PARTY(sParty_Mitchell),
     },
 
-    [TRAINER_ISAAC_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAAC_2] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6580,7 +6571,7 @@
         .party = TRAINER_PARTY(sParty_Isaac2),
     },
 
-    [TRAINER_ISAAC_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAAC_3] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6592,7 +6583,7 @@
         .party = TRAINER_PARTY(sParty_Isaac3),
     },
 
-    [TRAINER_ISAAC_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAAC_4] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6604,7 +6595,7 @@
         .party = TRAINER_PARTY(sParty_Isaac4),
     },
 
-    [TRAINER_ISAAC_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ISAAC_5] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6616,7 +6607,7 @@
         .party = TRAINER_PARTY(sParty_Isaac5),
     },
 
-    [TRAINER_LYDIA_1] =
+    [DIFFICULTY_NORMAL][TRAINER_LYDIA_1] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6628,7 +6619,7 @@
         .party = TRAINER_PARTY(sParty_Lydia1),
     },
 
-    [TRAINER_HALLE] =
+    [DIFFICULTY_NORMAL][TRAINER_HALLE] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6640,7 +6631,7 @@
         .party = TRAINER_PARTY(sParty_Halle),
     },
 
-    [TRAINER_GARRISON] =
+    [DIFFICULTY_NORMAL][TRAINER_GARRISON] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -6652,7 +6643,7 @@
         .party = TRAINER_PARTY(sParty_Garrison),
     },
 
-    [TRAINER_LYDIA_2] =
+    [DIFFICULTY_NORMAL][TRAINER_LYDIA_2] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6664,7 +6655,7 @@
         .party = TRAINER_PARTY(sParty_Lydia2),
     },
 
-    [TRAINER_LYDIA_3] =
+    [DIFFICULTY_NORMAL][TRAINER_LYDIA_3] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6676,7 +6667,7 @@
         .party = TRAINER_PARTY(sParty_Lydia3),
     },
 
-    [TRAINER_LYDIA_4] =
+    [DIFFICULTY_NORMAL][TRAINER_LYDIA_4] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6688,7 +6679,7 @@
         .party = TRAINER_PARTY(sParty_Lydia4),
     },
 
-    [TRAINER_LYDIA_5] =
+    [DIFFICULTY_NORMAL][TRAINER_LYDIA_5] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6700,7 +6691,7 @@
         .party = TRAINER_PARTY(sParty_Lydia5),
     },
 
-    [TRAINER_JACKSON_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKSON_1] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6712,7 +6703,7 @@
         .party = TRAINER_PARTY(sParty_Jackson1),
     },
 
-    [TRAINER_LORENZO] =
+    [DIFFICULTY_NORMAL][TRAINER_LORENZO] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6724,7 +6715,7 @@
         .party = TRAINER_PARTY(sParty_Lorenzo),
     },
 
-    [TRAINER_SEBASTIAN] =
+    [DIFFICULTY_NORMAL][TRAINER_SEBASTIAN] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6736,7 +6727,7 @@
         .party = TRAINER_PARTY(sParty_Sebastian),
     },
 
-    [TRAINER_JACKSON_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKSON_2] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6748,7 +6739,7 @@
         .party = TRAINER_PARTY(sParty_Jackson2),
     },
 
-    [TRAINER_JACKSON_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKSON_3] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6760,7 +6751,7 @@
         .party = TRAINER_PARTY(sParty_Jackson3),
     },
 
-    [TRAINER_JACKSON_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKSON_4] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6772,7 +6763,7 @@
         .party = TRAINER_PARTY(sParty_Jackson4),
     },
 
-    [TRAINER_JACKSON_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JACKSON_5] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6784,7 +6775,7 @@
         .party = TRAINER_PARTY(sParty_Jackson5),
     },
 
-    [TRAINER_CATHERINE_1] =
+    [DIFFICULTY_NORMAL][TRAINER_CATHERINE_1] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6796,7 +6787,7 @@
         .party = TRAINER_PARTY(sParty_Catherine1),
     },
 
-    [TRAINER_JENNA] =
+    [DIFFICULTY_NORMAL][TRAINER_JENNA] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6808,7 +6799,7 @@
         .party = TRAINER_PARTY(sParty_Jenna),
     },
 
-    [TRAINER_SOPHIA] =
+    [DIFFICULTY_NORMAL][TRAINER_SOPHIA] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6820,7 +6811,7 @@
         .party = TRAINER_PARTY(sParty_Sophia),
     },
 
-    [TRAINER_CATHERINE_2] =
+    [DIFFICULTY_NORMAL][TRAINER_CATHERINE_2] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6832,7 +6823,7 @@
         .party = TRAINER_PARTY(sParty_Catherine2),
     },
 
-    [TRAINER_CATHERINE_3] =
+    [DIFFICULTY_NORMAL][TRAINER_CATHERINE_3] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6844,7 +6835,7 @@
         .party = TRAINER_PARTY(sParty_Catherine3),
     },
 
-    [TRAINER_CATHERINE_4] =
+    [DIFFICULTY_NORMAL][TRAINER_CATHERINE_4] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6856,7 +6847,7 @@
         .party = TRAINER_PARTY(sParty_Catherine4),
     },
 
-    [TRAINER_CATHERINE_5] =
+    [DIFFICULTY_NORMAL][TRAINER_CATHERINE_5] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_RANGER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -6868,7 +6859,7 @@
         .party = TRAINER_PARTY(sParty_Catherine5),
     },
 
-    [TRAINER_JULIO] =
+    [DIFFICULTY_NORMAL][TRAINER_JULIO] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6880,7 +6871,7 @@
         .party = TRAINER_PARTY(sParty_Julio),
     },
 
-    [TRAINER_GRUNT_SEAFLOOR_CAVERN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_SEAFLOOR_CAVERN_5] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -6892,7 +6883,7 @@
         .party = TRAINER_PARTY(sParty_GruntSeafloorCavern5),
     },
 
-    [TRAINER_GRUNT_UNUSED] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_UNUSED] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -6904,7 +6895,7 @@
         .party = TRAINER_PARTY(sParty_GruntUnused),
     },
 
-    [TRAINER_GRUNT_MT_PYRE_4] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MT_PYRE_4] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -6916,7 +6907,7 @@
         .party = TRAINER_PARTY(sParty_GruntMtPyre4),
     },
 
-    [TRAINER_GRUNT_JAGGED_PASS] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_JAGGED_PASS] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -6928,7 +6919,7 @@
         .party = TRAINER_PARTY(sParty_GruntJaggedPass),
     },
 
-    [TRAINER_MARC] =
+    [DIFFICULTY_NORMAL][TRAINER_MARC] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -6940,7 +6931,7 @@
         .party = TRAINER_PARTY(sParty_Marc),
     },
 
-    [TRAINER_BRENDEN] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDEN] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6952,7 +6943,7 @@
         .party = TRAINER_PARTY(sParty_Brenden),
     },
 
-    [TRAINER_LILITH] =
+    [DIFFICULTY_NORMAL][TRAINER_LILITH] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -6964,7 +6955,7 @@
         .party = TRAINER_PARTY(sParty_Lilith),
     },
 
-    [TRAINER_CRISTIAN] =
+    [DIFFICULTY_NORMAL][TRAINER_CRISTIAN] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -6976,7 +6967,7 @@
         .party = TRAINER_PARTY(sParty_Cristian),
     },
 
-    [TRAINER_SYLVIA] =
+    [DIFFICULTY_NORMAL][TRAINER_SYLVIA] =
     {
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -6988,7 +6979,7 @@
         .party = TRAINER_PARTY(sParty_Sylvia),
     },
 
-    [TRAINER_LEONARDO] =
+    [DIFFICULTY_NORMAL][TRAINER_LEONARDO] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -7000,7 +6991,7 @@
         .party = TRAINER_PARTY(sParty_Leonardo),
     },
 
-    [TRAINER_ATHENA] =
+    [DIFFICULTY_NORMAL][TRAINER_ATHENA] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -7012,7 +7003,7 @@
         .party = TRAINER_PARTY(sParty_Athena),
     },
 
-    [TRAINER_HARRISON] =
+    [DIFFICULTY_NORMAL][TRAINER_HARRISON] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -7024,7 +7015,7 @@
         .party = TRAINER_PARTY(sParty_Harrison),
     },
 
-    [TRAINER_GRUNT_MT_CHIMNEY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MT_CHIMNEY_2] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7036,7 +7027,7 @@
         .party = TRAINER_PARTY(sParty_GruntMtChimney2),
     },
 
-    [TRAINER_CLARENCE] =
+    [DIFFICULTY_NORMAL][TRAINER_CLARENCE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -7048,7 +7039,7 @@
         .party = TRAINER_PARTY(sParty_Clarence),
     },
 
-    [TRAINER_TERRY] =
+    [DIFFICULTY_NORMAL][TRAINER_TERRY] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -7060,7 +7051,7 @@
         .party = TRAINER_PARTY(sParty_Terry),
     },
 
-    [TRAINER_NATE] =
+    [DIFFICULTY_NORMAL][TRAINER_NATE] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -7072,7 +7063,7 @@
         .party = TRAINER_PARTY(sParty_Nate),
     },
 
-    [TRAINER_KATHLEEN] =
+    [DIFFICULTY_NORMAL][TRAINER_KATHLEEN] =
     {
         .trainerClass = TRAINER_CLASS_HEX_MANIAC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -7084,7 +7075,7 @@
         .party = TRAINER_PARTY(sParty_Kathleen),
     },
 
-    [TRAINER_CLIFFORD] =
+    [DIFFICULTY_NORMAL][TRAINER_CLIFFORD] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -7096,7 +7087,7 @@
         .party = TRAINER_PARTY(sParty_Clifford),
     },
 
-    [TRAINER_NICHOLAS] =
+    [DIFFICULTY_NORMAL][TRAINER_NICHOLAS] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -7108,7 +7099,7 @@
         .party = TRAINER_PARTY(sParty_Nicholas),
     },
 
-    [TRAINER_GRUNT_SPACE_CENTER_3] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_SPACE_CENTER_3] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7120,7 +7111,7 @@
         .party = TRAINER_PARTY(sParty_GruntSpaceCenter3),
     },
 
-    [TRAINER_GRUNT_SPACE_CENTER_4] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_SPACE_CENTER_4] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7132,7 +7123,7 @@
         .party = TRAINER_PARTY(sParty_GruntSpaceCenter4),
     },
 
-    [TRAINER_GRUNT_SPACE_CENTER_5] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_SPACE_CENTER_5] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7144,7 +7135,7 @@
         .party = TRAINER_PARTY(sParty_GruntSpaceCenter5),
     },
 
-    [TRAINER_GRUNT_SPACE_CENTER_6] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_SPACE_CENTER_6] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7156,7 +7147,7 @@
         .party = TRAINER_PARTY(sParty_GruntSpaceCenter6),
     },
 
-    [TRAINER_GRUNT_SPACE_CENTER_7] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_SPACE_CENTER_7] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7168,7 +7159,7 @@
         .party = TRAINER_PARTY(sParty_GruntSpaceCenter7),
     },
 
-    [TRAINER_MACEY] =
+    [DIFFICULTY_NORMAL][TRAINER_MACEY] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -7180,7 +7171,7 @@
         .party = TRAINER_PARTY(sParty_Macey),
     },
 
-    [TRAINER_BRENDAN_RUSTBORO_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_RUSTBORO_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7192,7 +7183,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRustboroTreecko),
     },
 
-    [TRAINER_BRENDAN_RUSTBORO_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_RUSTBORO_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7204,7 +7195,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRustboroMudkip),
     },
 
-    [TRAINER_PAXTON] =
+    [DIFFICULTY_NORMAL][TRAINER_PAXTON] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -7216,7 +7207,7 @@
         .party = TRAINER_PARTY(sParty_Paxton),
     },
 
-    [TRAINER_ISABELLA] =
+    [DIFFICULTY_NORMAL][TRAINER_ISABELLA] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -7228,7 +7219,7 @@
         .party = TRAINER_PARTY(sParty_Isabella),
     },
 
-    [TRAINER_GRUNT_WEATHER_INST_5] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_WEATHER_INST_5] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -7240,7 +7231,7 @@
         .party = TRAINER_PARTY(sParty_GruntWeatherInst5),
 	},
 
-    [TRAINER_TABITHA_MT_CHIMNEY] =
+    [DIFFICULTY_NORMAL][TRAINER_TABITHA_MT_CHIMNEY] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7252,7 +7243,7 @@
         .party = TRAINER_PARTY(sParty_TabithaMtChimney),
     },
 
-    [TRAINER_JONATHAN] =
+    [DIFFICULTY_NORMAL][TRAINER_JONATHAN] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -7264,7 +7255,7 @@
         .party = TRAINER_PARTY(sParty_Jonathan),
     },
 
-    [TRAINER_BRENDAN_RUSTBORO_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_RUSTBORO_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7276,7 +7267,7 @@
         .party = TRAINER_PARTY(sParty_BrendanRustboroTorchic),
     },
 
-    [TRAINER_MAY_RUSTBORO_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_RUSTBORO_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7288,7 +7279,7 @@
         .party = TRAINER_PARTY(sParty_MayRustboroMudkip),
     },
 
-    [TRAINER_MAXIE_MAGMA_HIDEOUT] =
+    [DIFFICULTY_NORMAL][TRAINER_MAXIE_MAGMA_HIDEOUT] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7300,7 +7291,7 @@
         .party = TRAINER_PARTY(sParty_MaxieMagmaHideout),
     },
 
-    [TRAINER_MAXIE_MT_CHIMNEY] =
+    [DIFFICULTY_NORMAL][TRAINER_MAXIE_MT_CHIMNEY] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -7312,7 +7303,7 @@
         .party = TRAINER_PARTY(sParty_MaxieMtChimney),
     },
 
-    [TRAINER_TIANA] =
+    [DIFFICULTY_NORMAL][TRAINER_TIANA] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7324,7 +7315,7 @@
         .party = TRAINER_PARTY(sParty_Tiana),
     },
 
-    [TRAINER_HALEY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_HALEY_1] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7336,7 +7327,7 @@
         .party = TRAINER_PARTY(sParty_Haley1),
     },
 
-    [TRAINER_JANICE] =
+    [DIFFICULTY_NORMAL][TRAINER_JANICE] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7348,7 +7339,7 @@
         .party = TRAINER_PARTY(sParty_Janice),
     },
 
-    [TRAINER_VIVI] =
+    [DIFFICULTY_NORMAL][TRAINER_VIVI] =
     {
         .trainerClass = TRAINER_CLASS_WINSTRATE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7360,7 +7351,7 @@
         .party = TRAINER_PARTY(sParty_Vivi),
     },
 
-    [TRAINER_HALEY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_HALEY_2] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7372,7 +7363,7 @@
         .party = TRAINER_PARTY(sParty_Haley2),
     },
 
-    [TRAINER_HALEY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_HALEY_3] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7384,7 +7375,7 @@
         .party = TRAINER_PARTY(sParty_Haley3),
     },
 
-    [TRAINER_HALEY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_HALEY_4] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7396,7 +7387,7 @@
         .party = TRAINER_PARTY(sParty_Haley4),
     },
 
-    [TRAINER_HALEY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_HALEY_5] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7408,7 +7399,7 @@
         .party = TRAINER_PARTY(sParty_Haley5),
     },
 
-    [TRAINER_SALLY] =
+    [DIFFICULTY_NORMAL][TRAINER_SALLY] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7420,7 +7411,7 @@
         .party = TRAINER_PARTY(sParty_Sally),
     },
 
-    [TRAINER_ROBIN] =
+    [DIFFICULTY_NORMAL][TRAINER_ROBIN] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7432,7 +7423,7 @@
         .party = TRAINER_PARTY(sParty_Robin),
     },
 
-    [TRAINER_ANDREA] =
+    [DIFFICULTY_NORMAL][TRAINER_ANDREA] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7444,7 +7435,7 @@
         .party = TRAINER_PARTY(sParty_Andrea),
     },
 
-    [TRAINER_CRISSY] =
+    [DIFFICULTY_NORMAL][TRAINER_CRISSY] =
     {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7456,7 +7447,7 @@
         .party = TRAINER_PARTY(sParty_Crissy),
     },
 
-    [TRAINER_RICK] =
+    [DIFFICULTY_NORMAL][TRAINER_RICK] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7468,7 +7459,7 @@
         .party = TRAINER_PARTY(sParty_Rick),
     },
 
-    [TRAINER_LYLE] =
+    [DIFFICULTY_NORMAL][TRAINER_LYLE] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7480,7 +7471,7 @@
         .party = TRAINER_PARTY(sParty_Lyle),
     },
 
-    [TRAINER_JOSE] =
+    [DIFFICULTY_NORMAL][TRAINER_JOSE] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7492,7 +7483,7 @@
         .party = TRAINER_PARTY(sParty_Jose),
     },
 
-    [TRAINER_DOUG] =
+    [DIFFICULTY_NORMAL][TRAINER_DOUG] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7504,7 +7495,7 @@
         .party = TRAINER_PARTY(sParty_Doug),
     },
 
-    [TRAINER_GREG] =
+    [DIFFICULTY_NORMAL][TRAINER_GREG] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7516,7 +7507,7 @@
         .party = TRAINER_PARTY(sParty_Greg),
     },
 
-    [TRAINER_KENT] =
+    [DIFFICULTY_NORMAL][TRAINER_KENT] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7528,7 +7519,7 @@
         .party = TRAINER_PARTY(sParty_Kent),
     },
 
-    [TRAINER_JAMES_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JAMES_1] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7540,7 +7531,7 @@
         .party = TRAINER_PARTY(sParty_James1),
     },
 
-    [TRAINER_JAMES_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JAMES_2] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7552,7 +7543,7 @@
         .party = TRAINER_PARTY(sParty_James2),
     },
 
-    [TRAINER_JAMES_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JAMES_3] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7564,7 +7555,7 @@
         .party = TRAINER_PARTY(sParty_James3),
     },
 
-    [TRAINER_JAMES_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JAMES_4] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7576,7 +7567,7 @@
         .party = TRAINER_PARTY(sParty_James4),
     },
 
-    [TRAINER_JAMES_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JAMES_5] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7588,7 +7579,7 @@
         .party = TRAINER_PARTY(sParty_James5),
     },
 
-    [TRAINER_BRICE] =
+    [DIFFICULTY_NORMAL][TRAINER_BRICE] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7600,7 +7591,7 @@
         .party = TRAINER_PARTY(sParty_Brice),
     },
 
-    [TRAINER_TRENT_1] =
+    [DIFFICULTY_NORMAL][TRAINER_TRENT_1] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7612,7 +7603,7 @@
         .party = TRAINER_PARTY(sParty_Trent1),
     },
 
-    [TRAINER_LENNY] =
+    [DIFFICULTY_NORMAL][TRAINER_LENNY] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7624,7 +7615,7 @@
         .party = TRAINER_PARTY(sParty_Lenny),
     },
 
-    [TRAINER_LUCAS_1] =
+    [DIFFICULTY_NORMAL][TRAINER_LUCAS_1] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7636,7 +7627,7 @@
         .party = TRAINER_PARTY(sParty_Lucas1),
     },
 
-    [TRAINER_ALAN] =
+    [DIFFICULTY_NORMAL][TRAINER_ALAN] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7648,7 +7639,7 @@
         .party = TRAINER_PARTY(sParty_Alan),
     },
 
-    [TRAINER_CLARK] =
+    [DIFFICULTY_NORMAL][TRAINER_CLARK] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7660,7 +7651,7 @@
         .party = TRAINER_PARTY(sParty_Clark),
     },
 
-    [TRAINER_ERIC] =
+    [DIFFICULTY_NORMAL][TRAINER_ERIC] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7672,7 +7663,7 @@
         .party = TRAINER_PARTY(sParty_Eric),
     },
 
-    [TRAINER_LUCAS_2] =
+    [DIFFICULTY_NORMAL][TRAINER_LUCAS_2] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7684,7 +7675,7 @@
         .party = TRAINER_PARTY(sParty_Lucas2),
     },
 
-    [TRAINER_MIKE_1] =
+    [DIFFICULTY_NORMAL][TRAINER_MIKE_1] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7696,7 +7687,7 @@
         .party = TRAINER_PARTY(sParty_Mike1),
     },
 
-    [TRAINER_MIKE_2] =
+    [DIFFICULTY_NORMAL][TRAINER_MIKE_2] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7708,7 +7699,7 @@
         .party = TRAINER_PARTY(sParty_Mike2),
     },
 
-    [TRAINER_TRENT_2] =
+    [DIFFICULTY_NORMAL][TRAINER_TRENT_2] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7720,7 +7711,7 @@
         .party = TRAINER_PARTY(sParty_Trent2),
     },
 
-    [TRAINER_TRENT_3] =
+    [DIFFICULTY_NORMAL][TRAINER_TRENT_3] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7732,7 +7723,7 @@
         .party = TRAINER_PARTY(sParty_Trent3),
     },
 
-    [TRAINER_TRENT_4] =
+    [DIFFICULTY_NORMAL][TRAINER_TRENT_4] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7744,7 +7735,7 @@
         .party = TRAINER_PARTY(sParty_Trent4),
     },
 
-    [TRAINER_TRENT_5] =
+    [DIFFICULTY_NORMAL][TRAINER_TRENT_5] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -7756,7 +7747,7 @@
         .party = TRAINER_PARTY(sParty_Trent5),
     },
 
-    [TRAINER_DEZ_AND_LUKE] =
+    [DIFFICULTY_NORMAL][TRAINER_DEZ_AND_LUKE] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7768,7 +7759,7 @@
         .party = TRAINER_PARTY(sParty_DezAndLuke),
     },
 
-    [TRAINER_LEA_AND_JED] =
+    [DIFFICULTY_NORMAL][TRAINER_LEA_AND_JED] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7780,7 +7771,7 @@
         .party = TRAINER_PARTY(sParty_LeaAndJed),
     },
 
-    [TRAINER_KIRA_AND_DAN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_KIRA_AND_DAN_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7792,7 +7783,7 @@
         .party = TRAINER_PARTY(sParty_KiraAndDan1),
     },
 
-    [TRAINER_KIRA_AND_DAN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_KIRA_AND_DAN_2] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7804,7 +7795,7 @@
         .party = TRAINER_PARTY(sParty_KiraAndDan2),
     },
 
-    [TRAINER_KIRA_AND_DAN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_KIRA_AND_DAN_3] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7816,7 +7807,7 @@
         .party = TRAINER_PARTY(sParty_KiraAndDan3),
     },
 
-    [TRAINER_KIRA_AND_DAN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_KIRA_AND_DAN_4] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7828,7 +7819,7 @@
         .party = TRAINER_PARTY(sParty_KiraAndDan4),
     },
 
-    [TRAINER_KIRA_AND_DAN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_KIRA_AND_DAN_5] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7840,7 +7831,7 @@
         .party = TRAINER_PARTY(sParty_KiraAndDan5),
     },
 
-    [TRAINER_JOHANNA] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHANNA] =
     {
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -7852,7 +7843,7 @@
         .party = TRAINER_PARTY(sParty_Johanna),
     },
 
-    [TRAINER_GERALD] =
+    [DIFFICULTY_NORMAL][TRAINER_GERALD] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -7864,7 +7855,7 @@
         .party = TRAINER_PARTY(sParty_Gerald),
     },
 
-    [TRAINER_VIVIAN] =
+    [DIFFICULTY_NORMAL][TRAINER_VIVIAN] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -7876,7 +7867,7 @@
         .party = TRAINER_PARTY(sParty_Vivian),
     },
 
-    [TRAINER_DANIELLE] =
+    [DIFFICULTY_NORMAL][TRAINER_DANIELLE] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -7888,7 +7879,7 @@
         .party = TRAINER_PARTY(sParty_Danielle),
     },
 
-    [TRAINER_HIDEO] =
+    [DIFFICULTY_NORMAL][TRAINER_HIDEO] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -7900,7 +7891,7 @@
         .party = TRAINER_PARTY(sParty_Hideo),
     },
 
-    [TRAINER_KEIGO] =
+    [DIFFICULTY_NORMAL][TRAINER_KEIGO] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -7912,7 +7903,7 @@
         .party = TRAINER_PARTY(sParty_Keigo),
     },
 
-    [TRAINER_RILEY] =
+    [DIFFICULTY_NORMAL][TRAINER_RILEY] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -7924,7 +7915,7 @@
         .party = TRAINER_PARTY(sParty_Riley),
     },
 
-    [TRAINER_FLINT] =
+    [DIFFICULTY_NORMAL][TRAINER_FLINT] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7936,7 +7927,7 @@
         .party = TRAINER_PARTY(sParty_Flint),
     },
 
-    [TRAINER_ASHLEY] =
+    [DIFFICULTY_NORMAL][TRAINER_ASHLEY] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -7948,7 +7939,7 @@
         .party = TRAINER_PARTY(sParty_Ashley),
     },
 
-    [TRAINER_WALLY_MAUVILLE] =
+    [DIFFICULTY_NORMAL][TRAINER_WALLY_MAUVILLE] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7960,7 +7951,7 @@
         .party = TRAINER_PARTY(sParty_WallyMauville),
     },
 
-    [TRAINER_WALLY_VR_2] =
+    [DIFFICULTY_NORMAL][TRAINER_WALLY_VR_2] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7972,7 +7963,7 @@
         .party = TRAINER_PARTY(sParty_WallyVR2),
     },
 
-    [TRAINER_WALLY_VR_3] =
+    [DIFFICULTY_NORMAL][TRAINER_WALLY_VR_3] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7984,7 +7975,7 @@
         .party = TRAINER_PARTY(sParty_WallyVR3),
     },
 
-    [TRAINER_WALLY_VR_4] =
+    [DIFFICULTY_NORMAL][TRAINER_WALLY_VR_4] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7996,7 +7987,7 @@
         .party = TRAINER_PARTY(sParty_WallyVR4),
     },
 
-    [TRAINER_WALLY_VR_5] =
+    [DIFFICULTY_NORMAL][TRAINER_WALLY_VR_5] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8008,7 +7999,7 @@
         .party = TRAINER_PARTY(sParty_WallyVR5),
     },
 
-    [TRAINER_BRENDAN_LILYCOVE_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_LILYCOVE_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8020,7 +8011,7 @@
         .party = TRAINER_PARTY(sParty_BrendanLilycoveMudkip),
     },
 
-    [TRAINER_BRENDAN_LILYCOVE_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_LILYCOVE_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8032,7 +8023,7 @@
         .party = TRAINER_PARTY(sParty_BrendanLilycoveTreecko),
     },
 
-    [TRAINER_BRENDAN_LILYCOVE_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_LILYCOVE_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8044,7 +8035,7 @@
         .party = TRAINER_PARTY(sParty_BrendanLilycoveTorchic),
     },
 
-    [TRAINER_MAY_LILYCOVE_MUDKIP] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_LILYCOVE_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -8056,7 +8047,7 @@
         .party = TRAINER_PARTY(sParty_MayLilycoveMudkip),
     },
 
-    [TRAINER_MAY_LILYCOVE_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_LILYCOVE_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -8068,7 +8059,7 @@
         .party = TRAINER_PARTY(sParty_MayLilycoveTreecko),
     },
 
-    [TRAINER_MAY_LILYCOVE_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_LILYCOVE_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -8080,7 +8071,7 @@
         .party = TRAINER_PARTY(sParty_MayLilycoveTorchic),
     },
 
-    [TRAINER_JONAH] =
+    [DIFFICULTY_NORMAL][TRAINER_JONAH] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8092,7 +8083,7 @@
         .party = TRAINER_PARTY(sParty_Jonah),
     },
 
-    [TRAINER_HENRY] =
+    [DIFFICULTY_NORMAL][TRAINER_HENRY] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8104,7 +8095,7 @@
         .party = TRAINER_PARTY(sParty_Henry),
     },
 
-    [TRAINER_ROGER] =
+    [DIFFICULTY_NORMAL][TRAINER_ROGER] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8116,7 +8107,7 @@
         .party = TRAINER_PARTY(sParty_Roger),
     },
 
-    [TRAINER_ALEXA] =
+    [DIFFICULTY_NORMAL][TRAINER_ALEXA] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8128,7 +8119,7 @@
         .party = TRAINER_PARTY(sParty_Alexa),
     },
 
-    [TRAINER_RUBEN] =
+    [DIFFICULTY_NORMAL][TRAINER_RUBEN] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8140,7 +8131,7 @@
         .party = TRAINER_PARTY(sParty_Ruben),
     },
 
-    [TRAINER_KOJI_1] =
+    [DIFFICULTY_NORMAL][TRAINER_KOJI_1] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8152,7 +8143,7 @@
         .party = TRAINER_PARTY(sParty_Koji1),
     },
 
-    [TRAINER_WAYNE] =
+    [DIFFICULTY_NORMAL][TRAINER_WAYNE] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8164,7 +8155,7 @@
         .party = TRAINER_PARTY(sParty_Wayne),
     },
 
-    [TRAINER_AIDAN] =
+    [DIFFICULTY_NORMAL][TRAINER_AIDAN] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8176,7 +8167,7 @@
         .party = TRAINER_PARTY(sParty_Aidan),
     },
 
-    [TRAINER_REED] =
+    [DIFFICULTY_NORMAL][TRAINER_REED] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8188,7 +8179,7 @@
         .party = TRAINER_PARTY(sParty_Reed),
     },
 
-    [TRAINER_TISHA] =
+    [DIFFICULTY_NORMAL][TRAINER_TISHA] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8200,7 +8191,7 @@
         .party = TRAINER_PARTY(sParty_Tisha),
     },
 
-    [TRAINER_TORI_AND_TIA] =
+    [DIFFICULTY_NORMAL][TRAINER_TORI_AND_TIA] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -8212,7 +8203,7 @@
         .party = TRAINER_PARTY(sParty_ToriAndTia),
     },
 
-    [TRAINER_KIM_AND_IRIS] =
+    [DIFFICULTY_NORMAL][TRAINER_KIM_AND_IRIS] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -8224,7 +8215,7 @@
         .party = TRAINER_PARTY(sParty_KimAndIris),
     },
 
-    [TRAINER_TYRA_AND_IVY] =
+    [DIFFICULTY_NORMAL][TRAINER_TYRA_AND_IVY] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -8236,7 +8227,7 @@
         .party = TRAINER_PARTY(sParty_TyraAndIvy),
     },
 
-    [TRAINER_MEL_AND_PAUL] =
+    [DIFFICULTY_NORMAL][TRAINER_MEL_AND_PAUL] =
     {
         .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -8248,7 +8239,7 @@
         .party = TRAINER_PARTY(sParty_MelAndPaul),
     },
 
-    [TRAINER_JOHN_AND_JAY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHN_AND_JAY_1] =
     {
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8260,7 +8251,7 @@
         .party = TRAINER_PARTY(sParty_JohnAndJay1),
     },
 
-    [TRAINER_JOHN_AND_JAY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHN_AND_JAY_2] =
     {
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8272,7 +8263,7 @@
         .party = TRAINER_PARTY(sParty_JohnAndJay2),
     },
 
-    [TRAINER_JOHN_AND_JAY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHN_AND_JAY_3] =
     {
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8284,7 +8275,7 @@
         .party = TRAINER_PARTY(sParty_JohnAndJay3),
     },
 
-    [TRAINER_JOHN_AND_JAY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHN_AND_JAY_4] =
     {
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8296,7 +8287,7 @@
         .party = TRAINER_PARTY(sParty_JohnAndJay4),
     },
 
-    [TRAINER_JOHN_AND_JAY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHN_AND_JAY_5] =
     {
         .trainerClass = TRAINER_CLASS_OLD_COUPLE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8308,7 +8299,7 @@
         .party = TRAINER_PARTY(sParty_JohnAndJay5),
     },
 
-    [TRAINER_RELI_AND_IAN] =
+    [DIFFICULTY_NORMAL][TRAINER_RELI_AND_IAN] =
     {
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8320,7 +8311,7 @@
         .party = TRAINER_PARTY(sParty_ReliAndIan),
     },
 
-    [TRAINER_LILA_AND_ROY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_LILA_AND_ROY_1] =
     {
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8332,7 +8323,7 @@
         .party = TRAINER_PARTY(sParty_LilaAndRoy1),
     },
 
-    [TRAINER_LILA_AND_ROY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_LILA_AND_ROY_2] =
     {
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8344,7 +8335,7 @@
         .party = TRAINER_PARTY(sParty_LilaAndRoy2),
     },
 
-    [TRAINER_LILA_AND_ROY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_LILA_AND_ROY_3] =
     {
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8356,7 +8347,7 @@
         .party = TRAINER_PARTY(sParty_LilaAndRoy3),
     },
 
-    [TRAINER_LILA_AND_ROY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_LILA_AND_ROY_4] =
     {
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8368,7 +8359,7 @@
         .party = TRAINER_PARTY(sParty_LilaAndRoy4),
     },
 
-    [TRAINER_LILA_AND_ROY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_LILA_AND_ROY_5] =
     {
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8380,7 +8371,7 @@
         .party = TRAINER_PARTY(sParty_LilaAndRoy5),
     },
 
-    [TRAINER_LISA_AND_RAY] =
+    [DIFFICULTY_NORMAL][TRAINER_LISA_AND_RAY] =
     {
         .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8392,7 +8383,7 @@
         .party = TRAINER_PARTY(sParty_LisaAndRay),
     },
 
-    [TRAINER_CHRIS] =
+    [DIFFICULTY_NORMAL][TRAINER_CHRIS] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8404,7 +8395,7 @@
         .party = TRAINER_PARTY(sParty_Chris),
     },
 
-    [TRAINER_DAWSON] =
+    [DIFFICULTY_NORMAL][TRAINER_DAWSON] =
     {
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -8416,7 +8407,7 @@
         .party = TRAINER_PARTY(sParty_Dawson),
     },
 
-    [TRAINER_SARAH] =
+    [DIFFICULTY_NORMAL][TRAINER_SARAH] =
     {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -8428,7 +8419,7 @@
         .party = TRAINER_PARTY(sParty_Sarah),
     },
 
-    [TRAINER_DARIAN] =
+    [DIFFICULTY_NORMAL][TRAINER_DARIAN] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8440,7 +8431,7 @@
         .party = TRAINER_PARTY(sParty_Darian),
     },
 
-    [TRAINER_HAILEY] =
+    [DIFFICULTY_NORMAL][TRAINER_HAILEY] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -8452,7 +8443,7 @@
         .party = TRAINER_PARTY(sParty_Hailey),
     },
 
-    [TRAINER_CHANDLER] =
+    [DIFFICULTY_NORMAL][TRAINER_CHANDLER] =
     {
         .trainerClass = TRAINER_CLASS_TUBER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -8464,7 +8455,7 @@
         .party = TRAINER_PARTY(sParty_Chandler),
     },
 
-    [TRAINER_KALEB] =
+    [DIFFICULTY_NORMAL][TRAINER_KALEB] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -8476,7 +8467,7 @@
         .party = TRAINER_PARTY(sParty_Kaleb),
     },
 
-    [TRAINER_JOSEPH] =
+    [DIFFICULTY_NORMAL][TRAINER_JOSEPH] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8488,7 +8479,7 @@
         .party = TRAINER_PARTY(sParty_Joseph),
     },
 
-    [TRAINER_ALYSSA] =
+    [DIFFICULTY_NORMAL][TRAINER_ALYSSA] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -8500,7 +8491,7 @@
         .party = TRAINER_PARTY(sParty_Alyssa),
     },
 
-    [TRAINER_MARCOS] =
+    [DIFFICULTY_NORMAL][TRAINER_MARCOS] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8512,7 +8503,7 @@
         .party = TRAINER_PARTY(sParty_Marcos),
     },
 
-    [TRAINER_RHETT] =
+    [DIFFICULTY_NORMAL][TRAINER_RHETT] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8524,7 +8515,7 @@
         .party = TRAINER_PARTY(sParty_Rhett),
     },
 
-    [TRAINER_TYRON] =
+    [DIFFICULTY_NORMAL][TRAINER_TYRON] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8536,7 +8527,7 @@
         .party = TRAINER_PARTY(sParty_Tyron),
     },
 
-    [TRAINER_CELINA] =
+    [DIFFICULTY_NORMAL][TRAINER_CELINA] =
     {
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -8548,7 +8539,7 @@
         .party = TRAINER_PARTY(sParty_Celina),
     },
 
-    [TRAINER_BIANCA] =
+    [DIFFICULTY_NORMAL][TRAINER_BIANCA] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -8560,7 +8551,7 @@
         .party = TRAINER_PARTY(sParty_Bianca),
     },
 
-    [TRAINER_HAYDEN] =
+    [DIFFICULTY_NORMAL][TRAINER_HAYDEN] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8572,7 +8563,7 @@
         .party = TRAINER_PARTY(sParty_Hayden),
     },
 
-    [TRAINER_SOPHIE] =
+    [DIFFICULTY_NORMAL][TRAINER_SOPHIE] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -8584,7 +8575,7 @@
         .party = TRAINER_PARTY(sParty_Sophie),
     },
 
-    [TRAINER_COBY] =
+    [DIFFICULTY_NORMAL][TRAINER_COBY] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8596,7 +8587,7 @@
         .party = TRAINER_PARTY(sParty_Coby),
     },
 
-    [TRAINER_LAWRENCE] =
+    [DIFFICULTY_NORMAL][TRAINER_LAWRENCE] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8608,7 +8599,7 @@
         .party = TRAINER_PARTY(sParty_Lawrence),
     },
 
-    [TRAINER_WYATT] =
+    [DIFFICULTY_NORMAL][TRAINER_WYATT] =
     {
         .trainerClass = TRAINER_CLASS_POKEMANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -8620,7 +8611,7 @@
         .party = TRAINER_PARTY(sParty_Wyatt),
     },
 
-    [TRAINER_ANGELINA] =
+    [DIFFICULTY_NORMAL][TRAINER_ANGELINA] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -8632,7 +8623,7 @@
         .party = TRAINER_PARTY(sParty_Angelina),
     },
 
-    [TRAINER_KAI] =
+    [DIFFICULTY_NORMAL][TRAINER_KAI] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8644,7 +8635,7 @@
         .party = TRAINER_PARTY(sParty_Kai),
     },
 
-    [TRAINER_CHARLOTTE] =
+    [DIFFICULTY_NORMAL][TRAINER_CHARLOTTE] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -8656,7 +8647,7 @@
         .party = TRAINER_PARTY(sParty_Charlotte),
     },
 
-    [TRAINER_DEANDRE] =
+    [DIFFICULTY_NORMAL][TRAINER_DEANDRE] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8668,7 +8659,7 @@
         .party = TRAINER_PARTY(sParty_Deandre),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_1] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_1] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8680,7 +8671,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout1),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_2] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_2] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8692,7 +8683,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout2),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_3] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_3] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8704,7 +8695,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout3),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_4] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_4] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8716,7 +8707,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout4),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_5] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_5] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8728,7 +8719,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout5),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_6] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_6] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8740,7 +8731,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout6),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_7] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_7] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8752,7 +8743,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout7),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_8] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_8] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8764,7 +8755,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout8),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_9] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_9] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8776,7 +8767,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout9),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_10] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_10] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8788,7 +8779,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout10),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_11] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_11] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8800,7 +8791,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout11),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_12] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_12] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8812,7 +8803,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout12),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_13] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_13] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8824,7 +8815,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout13),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_14] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_14] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8836,7 +8827,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout14),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_15] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_15] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8848,7 +8839,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout15),
     },
 
-    [TRAINER_GRUNT_MAGMA_HIDEOUT_16] =
+    [DIFFICULTY_NORMAL][TRAINER_GRUNT_MAGMA_HIDEOUT_16] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8860,7 +8851,7 @@
         .party = TRAINER_PARTY(sParty_GruntMagmaHideout16),
     },
 
-    [TRAINER_TABITHA_MAGMA_HIDEOUT] =
+    [DIFFICULTY_NORMAL][TRAINER_TABITHA_MAGMA_HIDEOUT] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8872,7 +8863,7 @@
         .party = TRAINER_PARTY(sParty_TabithaMagmaHideout),
     },
 
-    [TRAINER_DARCY] =
+    [DIFFICULTY_NORMAL][TRAINER_DARCY] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8884,7 +8875,7 @@
         .party = TRAINER_PARTY(sParty_Darcy),
     },
 
-    [TRAINER_MAXIE_MOSSDEEP] =
+    [DIFFICULTY_NORMAL][TRAINER_MAXIE_MOSSDEEP] =
     {
         .trainerClass = TRAINER_CLASS_MAGMA_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
@@ -8896,7 +8887,7 @@
         .party = TRAINER_PARTY(sParty_MaxieMossdeep),
     },
 
-    [TRAINER_PETE] =
+    [DIFFICULTY_NORMAL][TRAINER_PETE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8908,7 +8899,7 @@
         .party = TRAINER_PARTY(sParty_Pete),
     },
 
-    [TRAINER_ISABELLE] =
+    [DIFFICULTY_NORMAL][TRAINER_ISABELLE] =
     {
         .trainerClass = TRAINER_CLASS_SWIMMER_F,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8920,7 +8911,7 @@
         .party = TRAINER_PARTY(sParty_Isabelle),
     },
 
-    [TRAINER_ANDRES_1] =
+    [DIFFICULTY_NORMAL][TRAINER_ANDRES_1] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -8932,7 +8923,7 @@
         .party = TRAINER_PARTY(sParty_Andres1),
     },
 
-    [TRAINER_JOSUE] =
+    [DIFFICULTY_NORMAL][TRAINER_JOSUE] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8944,7 +8935,7 @@
         .party = TRAINER_PARTY(sParty_Josue),
     },
 
-    [TRAINER_CAMRON] =
+    [DIFFICULTY_NORMAL][TRAINER_CAMRON] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -8956,7 +8947,7 @@
         .party = TRAINER_PARTY(sParty_Camron),
     },
 
-    [TRAINER_CORY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_CORY_1] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -8968,7 +8959,7 @@
         .party = TRAINER_PARTY(sParty_Cory1),
     },
 
-    [TRAINER_CAROLINA] =
+    [DIFFICULTY_NORMAL][TRAINER_CAROLINA] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8980,7 +8971,7 @@
         .party = TRAINER_PARTY(sParty_Carolina),
     },
 
-    [TRAINER_ELIJAH] =
+    [DIFFICULTY_NORMAL][TRAINER_ELIJAH] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -8992,7 +8983,7 @@
         .party = TRAINER_PARTY(sParty_Elijah),
     },
 
-    [TRAINER_CELIA] =
+    [DIFFICULTY_NORMAL][TRAINER_CELIA] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
@@ -9004,7 +8995,7 @@
         .party = TRAINER_PARTY(sParty_Celia),
     },
 
-    [TRAINER_BRYAN] =
+    [DIFFICULTY_NORMAL][TRAINER_BRYAN] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9016,7 +9007,7 @@
         .party = TRAINER_PARTY(sParty_Bryan),
     },
 
-    [TRAINER_BRANDEN] =
+    [DIFFICULTY_NORMAL][TRAINER_BRANDEN] =
     {
         .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9028,7 +9019,7 @@
         .party = TRAINER_PARTY(sParty_Branden),
     },
 
-    [TRAINER_BRYANT] =
+    [DIFFICULTY_NORMAL][TRAINER_BRYANT] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9040,7 +9031,7 @@
         .party = TRAINER_PARTY(sParty_Bryant),
     },
 
-    [TRAINER_SHAYLA] =
+    [DIFFICULTY_NORMAL][TRAINER_SHAYLA] =
     {
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9052,7 +9043,7 @@
         .party = TRAINER_PARTY(sParty_Shayla),
     },
 
-    [TRAINER_KYRA] =
+    [DIFFICULTY_NORMAL][TRAINER_KYRA] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9064,7 +9055,7 @@
         .party = TRAINER_PARTY(sParty_Kyra),
     },
 
-    [TRAINER_JAIDEN] =
+    [DIFFICULTY_NORMAL][TRAINER_JAIDEN] =
     {
         .trainerClass = TRAINER_CLASS_NINJA_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -9076,7 +9067,7 @@
         .party = TRAINER_PARTY(sParty_Jaiden),
     },
 
-    [TRAINER_ALIX] =
+    [DIFFICULTY_NORMAL][TRAINER_ALIX] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9088,7 +9079,7 @@
         .party = TRAINER_PARTY(sParty_Alix),
     },
 
-    [TRAINER_HELENE] =
+    [DIFFICULTY_NORMAL][TRAINER_HELENE] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9100,7 +9091,7 @@
         .party = TRAINER_PARTY(sParty_Helene),
     },
 
-    [TRAINER_MARLENE] =
+    [DIFFICULTY_NORMAL][TRAINER_MARLENE] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9112,7 +9103,7 @@
         .party = TRAINER_PARTY(sParty_Marlene),
     },
 
-    [TRAINER_DEVAN] =
+    [DIFFICULTY_NORMAL][TRAINER_DEVAN] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9124,7 +9115,7 @@
         .party = TRAINER_PARTY(sParty_Devan),
     },
 
-    [TRAINER_JOHNSON] =
+    [DIFFICULTY_NORMAL][TRAINER_JOHNSON] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9136,7 +9127,7 @@
         .party = TRAINER_PARTY(sParty_Johnson),
     },
 
-    [TRAINER_MELINA] =
+    [DIFFICULTY_NORMAL][TRAINER_MELINA] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9148,7 +9139,7 @@
         .party = TRAINER_PARTY(sParty_Melina),
     },
 
-    [TRAINER_BRANDI] =
+    [DIFFICULTY_NORMAL][TRAINER_BRANDI] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9160,7 +9151,7 @@
         .party = TRAINER_PARTY(sParty_Brandi),
     },
 
-    [TRAINER_AISHA] =
+    [DIFFICULTY_NORMAL][TRAINER_AISHA] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9172,7 +9163,7 @@
         .party = TRAINER_PARTY(sParty_Aisha),
     },
 
-    [TRAINER_MAKAYLA] =
+    [DIFFICULTY_NORMAL][TRAINER_MAKAYLA] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9184,7 +9175,7 @@
         .party = TRAINER_PARTY(sParty_Makayla),
     },
 
-    [TRAINER_FABIAN] =
+    [DIFFICULTY_NORMAL][TRAINER_FABIAN] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9196,7 +9187,7 @@
         .party = TRAINER_PARTY(sParty_Fabian),
     },
 
-    [TRAINER_DAYTON] =
+    [DIFFICULTY_NORMAL][TRAINER_DAYTON] =
     {
         .trainerClass = TRAINER_CLASS_KINDLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9208,7 +9199,7 @@
         .party = TRAINER_PARTY(sParty_Dayton),
     },
 
-    [TRAINER_RACHEL] =
+    [DIFFICULTY_NORMAL][TRAINER_RACHEL] =
     {
         .trainerClass = TRAINER_CLASS_PARASOL_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9220,7 +9211,7 @@
         .party = TRAINER_PARTY(sParty_Rachel),
     },
 
-    [TRAINER_LEONEL] =
+    [DIFFICULTY_NORMAL][TRAINER_LEONEL] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -9232,7 +9223,7 @@
         .party = TRAINER_PARTY(sParty_Leonel),
     },
 
-    [TRAINER_CALLIE] =
+    [DIFFICULTY_NORMAL][TRAINER_CALLIE] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9244,7 +9235,7 @@
         .party = TRAINER_PARTY(sParty_Callie),
     },
 
-    [TRAINER_CALE] =
+    [DIFFICULTY_NORMAL][TRAINER_CALE] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -9256,7 +9247,7 @@
         .party = TRAINER_PARTY(sParty_Cale),
     },
 
-    [TRAINER_MYLES] =
+    [DIFFICULTY_NORMAL][TRAINER_MYLES] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9268,7 +9259,7 @@
         .party = TRAINER_PARTY(sParty_Myles),
     },
 
-    [TRAINER_PAT] =
+    [DIFFICULTY_NORMAL][TRAINER_PAT] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9280,7 +9271,7 @@
         .party = TRAINER_PARTY(sParty_Pat),
     },
 
-    [TRAINER_CRISTIN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_CRISTIN_1] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -9292,7 +9283,7 @@
         .party = TRAINER_PARTY(sParty_Cristin1),
     },
 
-    [TRAINER_MAY_RUSTBORO_TREECKO] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_RUSTBORO_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9304,7 +9295,7 @@
         .party = TRAINER_PARTY(sParty_MayRustboroTreecko),
     },
 
-    [TRAINER_MAY_RUSTBORO_TORCHIC] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_RUSTBORO_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9316,7 +9307,7 @@
         .party = TRAINER_PARTY(sParty_MayRustboroTorchic),
     },
 
-    [TRAINER_ROXANNE_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ROXANNE_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9328,7 +9319,7 @@
         .party = TRAINER_PARTY(sParty_Roxanne2),
     },
 
-    [TRAINER_ROXANNE_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ROXANNE_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9340,7 +9331,7 @@
         .party = TRAINER_PARTY(sParty_Roxanne3),
     },
 
-    [TRAINER_ROXANNE_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ROXANNE_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9352,7 +9343,7 @@
         .party = TRAINER_PARTY(sParty_Roxanne4),
     },
 
-    [TRAINER_ROXANNE_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ROXANNE_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9364,7 +9355,7 @@
         .party = TRAINER_PARTY(sParty_Roxanne5),
     },
 
-    [TRAINER_BRAWLY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_BRAWLY_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9376,7 +9367,7 @@
         .party = TRAINER_PARTY(sParty_Brawly2),
     },
 
-    [TRAINER_BRAWLY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_BRAWLY_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9388,7 +9379,7 @@
         .party = TRAINER_PARTY(sParty_Brawly3),
     },
 
-    [TRAINER_BRAWLY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_BRAWLY_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9400,7 +9391,7 @@
         .party = TRAINER_PARTY(sParty_Brawly4),
     },
 
-    [TRAINER_BRAWLY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_BRAWLY_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9412,7 +9403,7 @@
         .party = TRAINER_PARTY(sParty_Brawly5),
     },
 
-    [TRAINER_WATTSON_2] =
+    [DIFFICULTY_NORMAL][TRAINER_WATTSON_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9424,7 +9415,7 @@
         .party = TRAINER_PARTY(sParty_Wattson2),
     },
 
-    [TRAINER_WATTSON_3] =
+    [DIFFICULTY_NORMAL][TRAINER_WATTSON_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9436,7 +9427,7 @@
         .party = TRAINER_PARTY(sParty_Wattson3),
     },
 
-    [TRAINER_WATTSON_4] =
+    [DIFFICULTY_NORMAL][TRAINER_WATTSON_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9448,7 +9439,7 @@
         .party = TRAINER_PARTY(sParty_Wattson4),
     },
 
-    [TRAINER_WATTSON_5] =
+    [DIFFICULTY_NORMAL][TRAINER_WATTSON_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9460,7 +9451,7 @@
         .party = TRAINER_PARTY(sParty_Wattson5),
     },
 
-    [TRAINER_FLANNERY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_FLANNERY_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9472,7 +9463,7 @@
         .party = TRAINER_PARTY(sParty_Flannery2),
     },
 
-    [TRAINER_FLANNERY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_FLANNERY_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9484,7 +9475,7 @@
         .party = TRAINER_PARTY(sParty_Flannery3),
     },
 
-    [TRAINER_FLANNERY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_FLANNERY_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9496,7 +9487,7 @@
         .party = TRAINER_PARTY(sParty_Flannery4),
     },
 
-    [TRAINER_FLANNERY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_FLANNERY_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9508,7 +9499,7 @@
         .party = TRAINER_PARTY(sParty_Flannery5),
     },
 
-    [TRAINER_NORMAN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_NORMAN_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9520,7 +9511,7 @@
         .party = TRAINER_PARTY(sParty_Norman2),
     },
 
-    [TRAINER_NORMAN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_NORMAN_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9532,7 +9523,7 @@
         .party = TRAINER_PARTY(sParty_Norman3),
     },
 
-    [TRAINER_NORMAN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_NORMAN_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9544,7 +9535,7 @@
         .party = TRAINER_PARTY(sParty_Norman4),
     },
 
-    [TRAINER_NORMAN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_NORMAN_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9556,7 +9547,7 @@
         .party = TRAINER_PARTY(sParty_Norman5),
     },
 
-    [TRAINER_WINONA_2] =
+    [DIFFICULTY_NORMAL][TRAINER_WINONA_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9568,7 +9559,7 @@
         .party = TRAINER_PARTY(sParty_Winona2),
     },
 
-    [TRAINER_WINONA_3] =
+    [DIFFICULTY_NORMAL][TRAINER_WINONA_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9580,7 +9571,7 @@
         .party = TRAINER_PARTY(sParty_Winona3),
     },
 
-    [TRAINER_WINONA_4] =
+    [DIFFICULTY_NORMAL][TRAINER_WINONA_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9592,7 +9583,7 @@
         .party = TRAINER_PARTY(sParty_Winona4),
     },
 
-    [TRAINER_WINONA_5] =
+    [DIFFICULTY_NORMAL][TRAINER_WINONA_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9604,7 +9595,7 @@
         .party = TRAINER_PARTY(sParty_Winona5),
     },
 
-    [TRAINER_TATE_AND_LIZA_2] =
+    [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9616,7 +9607,7 @@
         .party = TRAINER_PARTY(sParty_TateAndLiza2),
     },
 
-    [TRAINER_TATE_AND_LIZA_3] =
+    [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9628,7 +9619,7 @@
         .party = TRAINER_PARTY(sParty_TateAndLiza3),
     },
 
-    [TRAINER_TATE_AND_LIZA_4] =
+    [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9640,7 +9631,7 @@
         .party = TRAINER_PARTY(sParty_TateAndLiza4),
     },
 
-    [TRAINER_TATE_AND_LIZA_5] =
+    [DIFFICULTY_NORMAL][TRAINER_TATE_AND_LIZA_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -9652,7 +9643,7 @@
         .party = TRAINER_PARTY(sParty_TateAndLiza5),
     },
 
-    [TRAINER_JUAN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_JUAN_2] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9664,7 +9655,7 @@
         .party = TRAINER_PARTY(sParty_Juan2),
     },
 
-    [TRAINER_JUAN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_JUAN_3] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9676,7 +9667,7 @@
         .party = TRAINER_PARTY(sParty_Juan3),
     },
 
-    [TRAINER_JUAN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_JUAN_4] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9688,7 +9679,7 @@
         .party = TRAINER_PARTY(sParty_Juan4),
     },
 
-    [TRAINER_JUAN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_JUAN_5] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9700,7 +9691,7 @@
         .party = TRAINER_PARTY(sParty_Juan5),
     },
 
-    [TRAINER_ANGELO] =
+    [DIFFICULTY_NORMAL][TRAINER_ANGELO] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -9712,7 +9703,7 @@
         .party = TRAINER_PARTY(sParty_Angelo),
     },
 
-    [TRAINER_DARIUS] =
+    [DIFFICULTY_NORMAL][TRAINER_DARIUS] =
     {
         .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -9724,7 +9715,7 @@
         .party = TRAINER_PARTY(sParty_Darius),
     },
 
-    [TRAINER_STEVEN] =
+    [DIFFICULTY_NORMAL][TRAINER_STEVEN] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9736,7 +9727,7 @@
         .party = TRAINER_PARTY(sParty_Steven),
     },
 
-    [TRAINER_ANABEL] =
+    [DIFFICULTY_NORMAL][TRAINER_ANABEL] =
     {
         .trainerClass = TRAINER_CLASS_SALON_MAIDEN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9748,7 +9739,7 @@
         .party = TRAINER_PARTY(sParty_Anabel),
     },
 
-    [TRAINER_TUCKER] =
+    [DIFFICULTY_NORMAL][TRAINER_TUCKER] =
     {
         .trainerClass = TRAINER_CLASS_DOME_ACE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9760,7 +9751,7 @@
         .party = TRAINER_PARTY(sParty_Tucker),
     },
 
-    [TRAINER_SPENSER] =
+    [DIFFICULTY_NORMAL][TRAINER_SPENSER] =
     {
         .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9772,7 +9763,7 @@
         .party = TRAINER_PARTY(sParty_Spenser),
     },
 
-    [TRAINER_GRETA] =
+    [DIFFICULTY_NORMAL][TRAINER_GRETA] =
     {
         .trainerClass = TRAINER_CLASS_ARENA_TYCOON,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9784,7 +9775,7 @@
         .party = TRAINER_PARTY(sParty_Greta),
     },
 
-    [TRAINER_NOLAND] =
+    [DIFFICULTY_NORMAL][TRAINER_NOLAND] =
     {
         .trainerClass = TRAINER_CLASS_FACTORY_HEAD,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9796,7 +9787,7 @@
         .party = TRAINER_PARTY(sParty_Noland),
     },
 
-    [TRAINER_LUCY] =
+    [DIFFICULTY_NORMAL][TRAINER_LUCY] =
     {
         .trainerClass = TRAINER_CLASS_PIKE_QUEEN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9808,7 +9799,7 @@
         .party = TRAINER_PARTY(sParty_Lucy),
     },
 
-    [TRAINER_BRANDON] =
+    [DIFFICULTY_NORMAL][TRAINER_BRANDON] =
     {
         .trainerClass = TRAINER_CLASS_PYRAMID_KING,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9820,7 +9811,7 @@
         .party = TRAINER_PARTY(sParty_Brandon),
     },
 
-    [TRAINER_ANDRES_2] =
+    [DIFFICULTY_NORMAL][TRAINER_ANDRES_2] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9832,7 +9823,7 @@
         .party = TRAINER_PARTY(sParty_Andres2),
     },
 
-    [TRAINER_ANDRES_3] =
+    [DIFFICULTY_NORMAL][TRAINER_ANDRES_3] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9844,7 +9835,7 @@
         .party = TRAINER_PARTY(sParty_Andres3),
     },
 
-    [TRAINER_ANDRES_4] =
+    [DIFFICULTY_NORMAL][TRAINER_ANDRES_4] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9856,7 +9847,7 @@
         .party = TRAINER_PARTY(sParty_Andres4),
     },
 
-    [TRAINER_ANDRES_5] =
+    [DIFFICULTY_NORMAL][TRAINER_ANDRES_5] =
     {
         .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9868,7 +9859,7 @@
         .party = TRAINER_PARTY(sParty_Andres5),
     },
 
-    [TRAINER_CORY_2] =
+    [DIFFICULTY_NORMAL][TRAINER_CORY_2] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9880,7 +9871,7 @@
         .party = TRAINER_PARTY(sParty_Cory2),
     },
 
-    [TRAINER_CORY_3] =
+    [DIFFICULTY_NORMAL][TRAINER_CORY_3] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9892,7 +9883,7 @@
         .party = TRAINER_PARTY(sParty_Cory3),
     },
 
-    [TRAINER_CORY_4] =
+    [DIFFICULTY_NORMAL][TRAINER_CORY_4] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9904,7 +9895,7 @@
         .party = TRAINER_PARTY(sParty_Cory4),
     },
 
-    [TRAINER_CORY_5] =
+    [DIFFICULTY_NORMAL][TRAINER_CORY_5] =
     {
         .trainerClass = TRAINER_CLASS_SAILOR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -9916,7 +9907,7 @@
         .party = TRAINER_PARTY(sParty_Cory5),
     },
 
-    [TRAINER_PABLO_2] =
+    [DIFFICULTY_NORMAL][TRAINER_PABLO_2] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -9928,7 +9919,7 @@
         .party = TRAINER_PARTY(sParty_Pablo2),
     },
 
-    [TRAINER_PABLO_3] =
+    [DIFFICULTY_NORMAL][TRAINER_PABLO_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -9940,7 +9931,7 @@
         .party = TRAINER_PARTY(sParty_Pablo3),
     },
 
-    [TRAINER_PABLO_4] =
+    [DIFFICULTY_NORMAL][TRAINER_PABLO_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -9952,7 +9943,7 @@
         .party = TRAINER_PARTY(sParty_Pablo4),
     },
 
-    [TRAINER_PABLO_5] =
+    [DIFFICULTY_NORMAL][TRAINER_PABLO_5] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
@@ -9964,7 +9955,7 @@
         .party = TRAINER_PARTY(sParty_Pablo5),
     },
 
-    [TRAINER_KOJI_2] =
+    [DIFFICULTY_NORMAL][TRAINER_KOJI_2] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9976,7 +9967,7 @@
         .party = TRAINER_PARTY(sParty_Koji2),
     },
 
-    [TRAINER_KOJI_3] =
+    [DIFFICULTY_NORMAL][TRAINER_KOJI_3] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -9988,7 +9979,7 @@
         .party = TRAINER_PARTY(sParty_Koji3),
     },
 
-    [TRAINER_KOJI_4] =
+    [DIFFICULTY_NORMAL][TRAINER_KOJI_4] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10000,7 +9991,7 @@
         .party = TRAINER_PARTY(sParty_Koji4),
     },
 
-    [TRAINER_KOJI_5] =
+    [DIFFICULTY_NORMAL][TRAINER_KOJI_5] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10012,7 +10003,7 @@
         .party = TRAINER_PARTY(sParty_Koji5),
     },
 
-    [TRAINER_CRISTIN_2] =
+    [DIFFICULTY_NORMAL][TRAINER_CRISTIN_2] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -10024,7 +10015,7 @@
         .party = TRAINER_PARTY(sParty_Cristin2),
     },
 
-    [TRAINER_CRISTIN_3] =
+    [DIFFICULTY_NORMAL][TRAINER_CRISTIN_3] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -10036,7 +10027,7 @@
         .party = TRAINER_PARTY(sParty_Cristin3),
     },
 
-    [TRAINER_CRISTIN_4] =
+    [DIFFICULTY_NORMAL][TRAINER_CRISTIN_4] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -10048,7 +10039,7 @@
         .party = TRAINER_PARTY(sParty_Cristin4),
     },
 
-    [TRAINER_CRISTIN_5] =
+    [DIFFICULTY_NORMAL][TRAINER_CRISTIN_5] =
     {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -10060,7 +10051,7 @@
         .party = TRAINER_PARTY(sParty_Cristin5),
     },
 
-    [TRAINER_FERNANDO_2] =
+    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_2] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10072,7 +10063,7 @@
         .party = TRAINER_PARTY(sParty_Fernando2),
     },
 
-    [TRAINER_FERNANDO_3] =
+    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_3] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10084,7 +10075,7 @@
         .party = TRAINER_PARTY(sParty_Fernando3),
     },
 
-    [TRAINER_FERNANDO_4] =
+    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_4] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10096,7 +10087,7 @@
         .party = TRAINER_PARTY(sParty_Fernando4),
     },
 
-    [TRAINER_FERNANDO_5] =
+    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_5] =
     {
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10108,7 +10099,7 @@
         .party = TRAINER_PARTY(sParty_Fernando5),
     },
 
-    [TRAINER_SAWYER_2] =
+    [DIFFICULTY_NORMAL][TRAINER_SAWYER_2] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -10120,7 +10111,7 @@
         .party = TRAINER_PARTY(sParty_Sawyer2),
     },
 
-    [TRAINER_SAWYER_3] =
+    [DIFFICULTY_NORMAL][TRAINER_SAWYER_3] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -10132,7 +10123,7 @@
         .party = TRAINER_PARTY(sParty_Sawyer3),
     },
 
-    [TRAINER_SAWYER_4] =
+    [DIFFICULTY_NORMAL][TRAINER_SAWYER_4] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -10144,7 +10135,7 @@
         .party = TRAINER_PARTY(sParty_Sawyer4),
     },
 
-    [TRAINER_SAWYER_5] =
+    [DIFFICULTY_NORMAL][TRAINER_SAWYER_5] =
     {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -10156,7 +10147,7 @@
         .party = TRAINER_PARTY(sParty_Sawyer5),
     },
 
-    [TRAINER_GABRIELLE_2] =
+    [DIFFICULTY_NORMAL][TRAINER_GABRIELLE_2] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10168,7 +10159,7 @@
         .party = TRAINER_PARTY(sParty_Gabrielle2),
     },
 
-    [TRAINER_GABRIELLE_3] =
+    [DIFFICULTY_NORMAL][TRAINER_GABRIELLE_3] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10180,7 +10171,7 @@
         .party = TRAINER_PARTY(sParty_Gabrielle3),
     },
 
-    [TRAINER_GABRIELLE_4] =
+    [DIFFICULTY_NORMAL][TRAINER_GABRIELLE_4] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10192,7 +10183,7 @@
         .party = TRAINER_PARTY(sParty_Gabrielle4),
     },
 
-    [TRAINER_GABRIELLE_5] =
+    [DIFFICULTY_NORMAL][TRAINER_GABRIELLE_5] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10204,7 +10195,7 @@
         .party = TRAINER_PARTY(sParty_Gabrielle5),
     },
 
-    [TRAINER_THALIA_2] =
+    [DIFFICULTY_NORMAL][TRAINER_THALIA_2] =
     {
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10216,7 +10207,7 @@
         .party = TRAINER_PARTY(sParty_Thalia2),
     },
 
-    [TRAINER_THALIA_3] =
+    [DIFFICULTY_NORMAL][TRAINER_THALIA_3] =
     {
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10228,7 +10219,7 @@
         .party = TRAINER_PARTY(sParty_Thalia3),
     },
 
-    [TRAINER_THALIA_4] =
+    [DIFFICULTY_NORMAL][TRAINER_THALIA_4] =
     {
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10240,7 +10231,7 @@
         .party = TRAINER_PARTY(sParty_Thalia4),
     },
 
-    [TRAINER_THALIA_5] =
+    [DIFFICULTY_NORMAL][TRAINER_THALIA_5] =
     {
         .trainerClass = TRAINER_CLASS_BEAUTY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -10252,7 +10243,7 @@
         .party = TRAINER_PARTY(sParty_Thalia5),
     },
 
-    [TRAINER_MARIELA] =
+    [DIFFICULTY_NORMAL][TRAINER_MARIELA] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10264,7 +10255,7 @@
         .party = TRAINER_PARTY(sParty_Mariela),
     },
 
-    [TRAINER_ALVARO] =
+    [DIFFICULTY_NORMAL][TRAINER_ALVARO] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -10276,7 +10267,7 @@
         .party = TRAINER_PARTY(sParty_Alvaro),
     },
 
-    [TRAINER_EVERETT] =
+    [DIFFICULTY_NORMAL][TRAINER_EVERETT] =
     {
         .trainerClass = TRAINER_CLASS_GENTLEMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -10288,7 +10279,7 @@
         .party = TRAINER_PARTY(sParty_Everett),
     },
 
-    [TRAINER_RED] =
+    [DIFFICULTY_NORMAL][TRAINER_RED] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -10300,7 +10291,7 @@
         .party = TRAINER_PARTY(sParty_Red),
     },
 
-//    [TRAINER_LEAF] =
+//    [DIFFICULTY_NORMAL][TRAINER_LEAF] =
 //    {
 //        .trainerClass = TRAINER_CLASS_RIVAL,
 //        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -10312,7 +10303,7 @@
 //        .party = TRAINER_PARTY(sParty_Leaf),
 //    },
 
-    [TRAINER_BRENDAN_PLACEHOLDER] =
+    [DIFFICULTY_NORMAL][TRAINER_BRENDAN_PLACEHOLDER] =
     {
         .trainerClass = TRAINER_CLASS_RS_PROTAG,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -10324,7 +10315,7 @@
         .party = TRAINER_PARTY(sParty_BrendanLinkPlaceholder),
     },
 
-    [TRAINER_MAY_PLACEHOLDER] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_PLACEHOLDER] =
     {
         .trainerClass = TRAINER_CLASS_RS_PROTAG,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,

@@ -683,6 +683,10 @@ static u8 ProcessRegionMapInput_Full(void)
     {
         input = MAP_INPUT_B_BUTTON;
     }
+    else if (JOY_NEW(R_BUTTON))
+    {
+        input = MAP_INPUT_R_BUTTON;
+    }
     if (input == MAP_INPUT_MOVE_START)
     {
         sRegionMap->cursorMovementFrameCounter = 4;
@@ -761,6 +765,10 @@ static u8 ProcessRegionMapInput_Zoomed(void)
     if (JOY_NEW(B_BUTTON))
     {
         input = MAP_INPUT_B_BUTTON;
+    }
+    else if (JOY_NEW(R_BUTTON))
+    {
+        input = MAP_INPUT_R_BUTTON;
     }
     if (input == MAP_INPUT_MOVE_START)
     {
@@ -1620,7 +1628,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 			if (IsRoute3RiverDelta())
 				return StringCopy(dest, sMapName_DELTA_DRACI);
 			else  // Default part of map => Cove
-				return StringCopy(dest, sMapName_SINUS_CAMELUS);
+				return StringCopy(dest, sMapName_SINVS_CAMELVS);
 		}
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
@@ -1650,21 +1658,21 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_LAGO_DRACO);
+					return StringCopy(dest, sMapName_LACVS_DRACVS);
 				case 2:
-					return StringCopy(dest, sMapName_LAGO_DRACO_SHORE);
+					return StringCopy(dest, sMapName_LITVS_LACVS);
 				case 3:
-					return StringCopy(dest, sMapName_UPPER_RIO_DRACO);
+					return StringCopy(dest, sMapName_DRACVS_SVPERIOR);
 				case 4:
-					return StringCopy(dest, sMapName_LOWER_RIO_DRACO);
+					return StringCopy(dest, sMapName_DRACVS_INFERIOR);
 				case 5:
-					return StringCopy(dest, sMapName_UPPER_DRACO_EAST);
+					return StringCopy(dest, sMapName_UPPER_EAST_DRAKE);
 				case 6:
-					return StringCopy(dest, sMapName_LOWER_DRACO_EAST);
+					return StringCopy(dest, sMapName_LOWER_EAST_DRAKE);
 				case 7:
-					return StringCopy(dest, sMapName_UPPER_DRACO_WEST);
+					return StringCopy(dest, sMapName_UPPER_WEST_DRAKE);
 				case 8:
-					return StringCopy(dest, sMapName_LOWER_DRACO_WEST);
+					return StringCopy(dest, sMapName_LOWER_WEST_DRAKE);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1678,9 +1686,9 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_LAGO_DRACO);
+					return StringCopy(dest, sMapName_LACVS_DRACVS);
 				case 2:
-					return StringCopy(dest, sMapName_LAGO_DRACO_SHORE);
+					return StringCopy(dest, sMapName_LITVS_LACVS);
 				case 3:
 					return StringCopy(dest, sMapName_SALIX);
 				default:
@@ -1691,18 +1699,18 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH)) 	
 		{
 			if (IsLakeIraSouthUpperDracoWest())
-				return StringCopy(dest, sMapName_UPPER_DRACO_WEST);
+				return StringCopy(dest, sMapName_UPPER_WEST_DRAKE);
 			else  // Default part of map => Cove
-				return StringCopy(dest, sMapName_LOWER_DRACO_WEST);
+				return StringCopy(dest, sMapName_LOWER_WEST_DRAKE);
 		}
 
 		//Silvan Woods N
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N)) 	
 		{		
 			if (IsSilvanWoodsNUpperDracoEast())
-				return StringCopy(dest, sMapName_UPPER_DRACO_EAST);
+				return StringCopy(dest, sMapName_UPPER_EAST_DRAKE);
 			else  // Default part of map => Cove
-				return StringCopy(dest, sMapName_LOWER_DRACO_EAST);
+				return StringCopy(dest, sMapName_LOWER_EAST_DRAKE);
 		}
 		//Silvan Woods
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
@@ -1715,9 +1723,9 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 1:
 					return StringCopy(dest, sMapName_SILVA);
 				case 2:
-					return StringCopy(dest, sMapName_LOWER_RIO_DRACO);
+					return StringCopy(dest, sMapName_DRACVS_INFERIOR);
 				case 3:
-					return StringCopy(dest, sMapName_SILVA_PROFUNDA);
+					return StringCopy(dest, sMapName_SILVA_PROFVNDA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1731,11 +1739,11 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_PINA);
+					return StringCopy(dest, sMapName_ISLA_PINEA);
 				case 2:
 					return StringCopy(dest, sMapName_MARE_OCCIDENS);
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TROPICUM);
+					return StringCopy(dest, sMapName_MARE_TROPICVM);
 				case 4:
 					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				default:
@@ -1753,7 +1761,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 1:
 					return StringCopy(dest, sMapName_DELTA_DRACI);
 				case 2:
-					return StringCopy(dest, sMapName_MARE_TROPICUM);
+					return StringCopy(dest, sMapName_MARE_TROPICVM);
 				case 3:
 					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				default:
@@ -1773,9 +1781,9 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_SILVA);
 				case 3:
-					return StringCopy(dest, sMapName_VIA_FIDELIUM);
+					return StringCopy(dest, sMapName_VIA_FIDELIVM);
 				case 4:
-					return StringCopy(dest, sMapName_SINUS_CLARUS);
+					return StringCopy(dest, sMapName_SINVS_CLARVS);
 				case 5:
 					return StringCopy(dest, sMapName_CASTALIA);
 				case 6:
@@ -1795,11 +1803,11 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 1:
 					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				case 2:
-					return StringCopy(dest, sMapName_MARE_INTERNUM);
+					return StringCopy(dest, sMapName_MARE_INTERNVM);
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TRANQUILLUM);
+					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
 				case 4:
-					return StringCopy(dest, sMapName_MARE_TROPICUM);
+					return StringCopy(dest, sMapName_MARE_TROPICVM);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1813,13 +1821,13 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
+					return StringCopy(dest, sMapName_SINVS_PACIFICVS);
 				case 2:
-					return StringCopy(dest, sMapName_CASTRUM);
+					return StringCopy(dest, sMapName_CASTRVM);
 				case 3:
-					return StringCopy(dest, sMapName_SINUS_CLARUS);
+					return StringCopy(dest, sMapName_SINVS_CLARVS);
 				case 4:
-					return StringCopy(dest, sMapName_MARE_INTERNUM);
+					return StringCopy(dest, sMapName_MARE_INTERNVM);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1828,7 +1836,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5))
 		{
 			if (IsMareS5MareTropicum())
-                return StringCopy(dest, sMapName_MARE_TROPICUM);
+                return StringCopy(dest, sMapName_MARE_TROPICVM);
             else
                 return StringCopy(dest, sMapName_ACTA_ECHONA);
         }
@@ -1841,11 +1849,11 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_VIA_FIDELIUM);
+					return StringCopy(dest, sMapName_VIA_FIDELIVM);
 				case 2:
 					return StringCopy(dest, sMapName_VIA_LITORALIS);
 				case 3:
-					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
+					return StringCopy(dest, sMapName_SINVS_PACIFICVS);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1863,7 +1871,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_VILLA_VIVARIA);
 				case 3:
-					return StringCopy(dest, sMapName_SINUS_PACIFICUS);
+					return StringCopy(dest, sMapName_SINVS_PACIFICVS);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1877,7 +1885,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 1:
 					return StringCopy(dest, sMapName_VIA_LITORALIS);
 				case 2:
-					return StringCopy(dest, sMapName_MARE_INTERNUM);
+					return StringCopy(dest, sMapName_MARE_INTERNVM);
 				case 3:
 					return StringCopy(dest, sMapName_MONTES_VIGILIAE);
 				case 4:
@@ -1899,7 +1907,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				case 2:
 					return StringCopy(dest, sMapName_VIA_LITORALIS);
 				case 3:
-					return StringCopy(dest, sMapName_VILLA_VENATORUM);
+					return StringCopy(dest, sMapName_VILLA_VENATORVM);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1916,7 +1924,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN))
 		{
 			if (IsDoakTownRobustica())
-                return StringCopy(dest, sMapName_ROBUSTICA);
+                return StringCopy(dest, sMapName_ROBVSTICA);
             else
                 return StringCopy(dest, sMapName_VIA_MAGNA);
         }
@@ -1924,7 +1932,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19))
 		{
 			if (IsSRoute19MareInternum())
-                return StringCopy(dest, sMapName_MARE_INTERNUM);
+                return StringCopy(dest, sMapName_MARE_INTERNVM);
             else
                 return StringCopy(dest, sMapName_MONTES_VIGILIAE);
         }
@@ -2320,27 +2328,9 @@ static void CB_ExitFlyMap(void)
             FreeRegionMapIconResources();
             if (sFlyMap->choseFlyLocation)
             {
-                switch (sFlyMap->regionMap.mapSecId)
-                {
-                case MAPSEC_SOUTHERN_ISLAND:
-                    SetWarpDestinationToHealLocation(HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR);
-                    break;
-                case MAPSEC_BATTLE_FRONTIER:
-                    SetWarpDestinationToHealLocation(HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST);
-                    break;
-                case MAPSEC_LITTLEROOT_TOWN:
-                    SetWarpDestinationToHealLocation(gSaveBlock2Ptr->playerGender == MALE ? HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE : HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE);
-                    break;
-                case MAPSEC_EVER_GRANDE_CITY:
-                    SetWarpDestinationToHealLocation(FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) && sFlyMap->regionMap.posWithinMapSec == 0 ? HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE : HEAL_LOCATION_EVER_GRANDE_CITY);
-                    break;
-                default:
-                    if (sMapHealLocations[sFlyMap->regionMap.mapSecId][2] != HEAL_LOCATION_NONE)
-                        SetWarpDestinationToHealLocation(sMapHealLocations[sFlyMap->regionMap.mapSecId][2]);
-                    else
-                        SetWarpDestinationToMapWarp(sMapHealLocations[sFlyMap->regionMap.mapSecId][0], sMapHealLocations[sFlyMap->regionMap.mapSecId][1], WARP_ID_NONE);
-                    break;
-                }
+                struct RegionMap* tempRegionMap = &sFlyMap->regionMap;
+
+                SetFlyDestination(tempRegionMap);
                 ReturnToFieldFromFlyMapSelect();
             }
             else
@@ -2352,6 +2342,36 @@ static void CB_ExitFlyMap(void)
         }
         break;
     }
+}
+
+u32 FilterFlyDestination(struct RegionMap* regionMap)
+{
+    switch (regionMap->mapSecId)
+    {
+    case MAPSEC_SOUTHERN_ISLAND:
+        return HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR;
+    case MAPSEC_BATTLE_FRONTIER:
+        return HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST;
+    case MAPSEC_LITTLEROOT_TOWN:
+        return (gSaveBlock2Ptr->playerGender == MALE ? HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE : HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE);
+    case MAPSEC_EVER_GRANDE_CITY:
+        return (FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) && regionMap->posWithinMapSec == 0 ? HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE : HEAL_LOCATION_EVER_GRANDE_CITY);
+    default:
+        if (sMapHealLocations[regionMap->mapSecId][2] != HEAL_LOCATION_NONE)
+            return sMapHealLocations[regionMap->mapSecId][2];
+        else
+            return WARP_ID_NONE;
+    }
+}
+
+void SetFlyDestination(struct RegionMap* regionMap)
+{
+    u32 flyDestination = FilterFlyDestination(regionMap);
+
+    if (flyDestination != WARP_ID_NONE)
+        SetWarpDestinationToHealLocation(flyDestination);
+    else
+        SetWarpDestinationToMapWarp(sMapHealLocations[regionMap->mapSecId][0], sMapHealLocations[regionMap->mapSecId][1], WARP_ID_NONE);
 }
 
 //Cornix Custom - Part of a series to determine which part of a map ur on. In this case is Route3 Canelo's Cave or River Delta
@@ -3654,12 +3674,3 @@ bool32 IsSRoute19MareInternum(void)
 		return TRUE;
 }
 	
-	
-
-
-	
-
-
-
-
-

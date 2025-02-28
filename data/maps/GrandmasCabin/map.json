@@ -3,7 +3,7 @@
   "name": "GrandmasCabin",
   "layout": "LAYOUT_GRANDMAS_CABIN",
   "music": "MUS_RG_PALLET",
-  "region_map_section": "MAPSEC_VILLA_FLORA",
+  "region_map_section": "MAPSEC_VILLA_FLOREA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_TOWN",
