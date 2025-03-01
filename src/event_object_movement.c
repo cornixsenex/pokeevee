@@ -2906,41 +2906,6 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
     objectEvent->graphicsId = graphicsId;
 }
 
-//NOTE: This function removed / heavily scaled by in rhh master branch. Expanded in dynamic palettes. Currently have both, only really need one. But the way it is now there's two :D -1.9.0 240802
-//void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
-//{
-//    const struct ObjectEventGraphicsInfo *graphicsInfo;
-//    struct Sprite *sprite;
-//    u8 paletteSlot;
-//    graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
-//    sprite = &gSprites[objectEvent->spriteId];
-//    paletteSlot = graphicsInfo->paletteSlot;
-//    if (paletteSlot == PALSLOT_PLAYER)
-//    {
-//        PatchObjectPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-//    }
-//    else if (paletteSlot >= 16)
-//    {
-//        paletteSlot -= 16;
-//        _PatchObjectPalette(graphicsInfo->paletteTag, paletteSlot);
-//    }
-//    sprite->oam.shape = graphicsInfo->oam->shape;
-//    sprite->oam.size = graphicsInfo->oam->size;
-//    sprite->images = graphicsInfo->images;
-//    sprite->anims = graphicsInfo->anims;
-//    sprite->subspriteTables = graphicsInfo->subspriteTables;
-//    objectEvent->inanimate = graphicsInfo->inanimate;
-//    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
-//    sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
-//    sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-//    sprite->x += 8;
-//    sprite->y += 16 + sprite->centerToCornerVecY;
-//    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(graphicsInfo->paletteTag)); //not paletteSlot in case of dynamic ow pals
-//
-//    if (objectEvent->trackedByCamera)
-//        CameraObjectReset();
-//}
-
 void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
 {
     u8 objectEventId;
@@ -7662,16 +7627,21 @@ static void ObjectEventSetPokeballGfx(struct ObjectEvent *objEvent)
             ball = GetMonData(mon, MON_DATA_POKEBALL);
     }
 
-  if (ball != BALL_POKE && ball < POKEBALL_COUNT)
-  {
-      const struct ObjectEventGraphicsInfo *info = &gPokeballGraphics[ball];
-      if (info->tileTag == TAG_NONE)
-      {
-          ObjectEventSetGraphics(objEvent, info);
-          return;
-      }
-  }
-  #endif //OW_FOLLOWERS_POKEBALLS
+	//Added to support Mew scene (and other times I want  this to work) - CS 3.1.25
+    if (ball != BALL_POKE && ball < POKEBALL_COUNT)
+    {
+		if (FlagGet(FLAG_FORCE_ENTER_MASTERBALL_GFX))
+			ball = BALL_MASTER;
+		else 
+			ball = BALL_POKE; //fallback / default
+        const struct ObjectEventGraphicsInfo *info = &gPokeballGraphics[ball];
+        if (info->tileTag == TAG_NONE)
+        {
+            ObjectEventSetGraphics(objEvent, info);
+            return;
+        }
+    }
+    #endif //OW_FOLLOWERS_POKEBALLS
     ObjectEventSetGraphicsId(objEvent, OBJ_EVENT_GFX_POKE_BALL);
 }
 

@@ -225,11 +225,18 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	closemessage
 //Rockets take her away
 
+	//P: Noooo!
+	load_field_pic (6, 190, 98)
+	msgbox("Noooooo!")
+
 	applymovement(4, CityClara_Church_Movement_Rocket1SageExit)
 	applymovement(5, CityClara_Church_Movement_Rocket2SageExit)
 	applymovement(2, CityClara_Church_Movement_SageExit)
 
 	waitmovement (0)
+	destroy_field_pic (6)
+	closemessage
+
 	hideobjectat (5, MAP_CITY_CLARA_CHURCH)
 	setobjectxy (4, 18, 23)
 	removeobject (2)
@@ -254,12 +261,14 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	applymovement (3, CityClara_Church_Movement_BlaineChase3)
 	waitmovement (0)
 	playmoncry (SPECIES_MEW, 0)
-	fadescreen (1)
 	waitmoncry
+	//setflag (FLAG_FORCE_ENTER_MASTERBALL_GFX)
+	applymovement (OBJ_EVENT_MEW, EnterPokeballMovement)
+	waitmovement (0)
+	//clearflag (FLAG_FORCE_ENTER_MASTERBALL_GFX)
 	removeobject (1)
 	showobjectat (4, MAP_CITY_CLARA_CHURCH)
 	showobjectat (5, MAP_CITY_CLARA_CHURCH)
-	fadescreen (0)	
 	applymovement (3, CityClara_Church_Movement_BlaineChase4)
 	applymovement (4, CityClara_Church_Movement_Rocket1Enter)
 	applymovement (5, CityClara_Church_Movement_Rocket2Enter)
@@ -1171,18 +1180,18 @@ text CityClara_Church_Text_Blaine2 {
 //Rockets move forward and grab her
 
 text CityClara_Church_Text_Sage3 {
-	format("Unhand me I am Mew's true suppliant! The foundations of this city were built on solid rock of our worship of Mew. One thousand years we cultivated art, sharing discoveries with even you, we must thank Mew for all our modern world. Your foolish pride is threatening to end this thousand years of joy which Mew exclusively made possible for us!")
+	format("Unhand me! I am Mew's true suppliant! The foundations of this city were built on solid rock of our worship of Mew. One thousand years we cultivated art, sharing discoveries with even you, we must thank Mew for all our modern world. Your foolish pride is threatening to end this thousand years of human life which Mew exclusively made possible for us!")
 }
 
 text CityClara_Church_Text_Blaine3 {
-	format("You speak of foolish pride most narrowly your sad devotion to this religion has not helped you amass a massive worth nor given you the clairvoyance to see your fated destruction. Social progress has overcome your myth. No simple spoken prayer will stop the launch of Rocket Party's sailing in the stars. Now faithful Rocket grunts, take her away!")
+	format("You speak of foolish pride most narrowly. Your sad devotion to this religion has not helped you amass a massive worth nor given you the clairvoyance to see the inevitable triumph of man. Human progress has overcome your myth. No whispered prayer can stop the forward march of progress. Now, guardsmen, take her away!")
 }
 
 //Blaine approches mew, Mew walks back but has not where to vanish
 //Blaine goes left mew runs right
 
 text CityClara_Church_Text_Blaine4 {
-	format("No where to run now Mew we have you trapped. I now will demonstrate our victory. The party truly has suprassed the gods.")
+	format("No where to run now Mew we have you trapped. I now will demonstrate our victory. That man has truly suprassed the old gods.")
 }
 
 text CityClara_Church_Text_Blaine5 {
