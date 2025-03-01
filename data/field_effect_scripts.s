@@ -389,4 +389,5 @@ gFieldEffectScript_UseRockClimb:: @ 82DBC3F
 
 gFieldEffectScript_RockClimbDust:: @ 82DBB28
 	field_eff_loadfadedpal_callnative gSpritePalette_BigDust, FldEff_RockClimbDust
+	field_eff_end
 

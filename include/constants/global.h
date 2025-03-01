@@ -168,7 +168,7 @@
 #define AXIS_COUNT 2
 
 //Pretty sure I don't need either of these - 12-24
-#define FOLLOW_ME_IMPLEMENTED           FALSE    //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
+#define FOLLOW_ME_IMPLEMENTED   TRUE            //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
 #define DYNAMIC_OW_PALS         TRUE
 
 #define CONNECTION_INVALID -1

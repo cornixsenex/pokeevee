@@ -29,3 +29,6 @@
 >Check all custom map names work, check transitions etc
 >Remove SPECIAL_BATTLE_HILOKABUTO et others -> trainerbattle_two_trainers
 >Check Salted Spitoon doubles work
+
+
+

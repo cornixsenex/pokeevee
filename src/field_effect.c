@@ -723,9 +723,12 @@ u32 FieldEffectStart(u8 id)
     u8 *script;
     u32 val;
 
+
     FieldEffectActiveListAdd(id);
 
+
     script = gFieldEffectScriptPointers[id];
+
 
     while (gFieldEffectScriptFuncs[*script](&script, &val))
         ;
@@ -4147,6 +4150,7 @@ static void RockClimbDust(struct ObjectEvent *objectEvent, u8 direction)
 {
     s8 dx = sRockClimbMovement[direction].dx;
     s8 dy = sRockClimbMovement[direction].dy;
+
     
     gFieldEffectArguments[0] = objectEvent->currentCoords.x + dx;
     gFieldEffectArguments[1] = objectEvent->currentCoords.y + dy;

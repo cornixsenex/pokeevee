@@ -1149,6 +1149,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 
     ZeroBoxMonData(boxMon);
 
+	DebugPrintf("CreateBoxMon");
+
     if (hasFixedPersonality)
         personality = fixedPersonality;
     else
@@ -1229,7 +1231,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 	if (value == MAPSEC_DYNAMIC)
 		value = DetermineDynamicMapsecValue();
 	else
-	   value = MAPSEC_DYNAMIC;	
+		value = GetCurrentRegionMapSectionId();	
 	//End Cornix Customs
 	SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
