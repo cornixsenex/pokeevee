@@ -268,30 +268,30 @@ CityClara_Church_EventScript_BlaineCutscene::
 	destroy_field_pic 7
 # 225 "data/maps/CityClara_Church/scripts.pory"
 	closemessage
-# 229 "data/maps/CityClara_Church/scripts.pory"
-	load_field_pic 6, 190, 98
-# 230 "data/maps/CityClara_Church/scripts.pory"
-	msgbox CityClara_Church_EventScript_BlaineCutscene_Text_0
-# 232 "data/maps/CityClara_Church/scripts.pory"
+# 228 "data/maps/CityClara_Church/scripts.pory"
 	applymovement 4, CityClara_Church_Movement_Rocket1SageExit
-# 233 "data/maps/CityClara_Church/scripts.pory"
+# 229 "data/maps/CityClara_Church/scripts.pory"
 	applymovement 5, CityClara_Church_Movement_Rocket2SageExit
-# 234 "data/maps/CityClara_Church/scripts.pory"
+# 230 "data/maps/CityClara_Church/scripts.pory"
 	applymovement 2, CityClara_Church_Movement_SageExit
+# 233 "data/maps/CityClara_Church/scripts.pory"
+	load_field_pic 6, 190, 98
+# 234 "data/maps/CityClara_Church/scripts.pory"
+	msgbox CityClara_Church_EventScript_BlaineCutscene_Text_0
 # 236 "data/maps/CityClara_Church/scripts.pory"
 	waitmovement 0
 # 237 "data/maps/CityClara_Church/scripts.pory"
-	destroy_field_pic 6
-# 238 "data/maps/CityClara_Church/scripts.pory"
-	closemessage
-# 240 "data/maps/CityClara_Church/scripts.pory"
 	hideobjectat 5, MAP_CITY_CLARA_CHURCH
-# 241 "data/maps/CityClara_Church/scripts.pory"
+# 238 "data/maps/CityClara_Church/scripts.pory"
 	setobjectxy 4, 18, 23
-# 242 "data/maps/CityClara_Church/scripts.pory"
+# 239 "data/maps/CityClara_Church/scripts.pory"
 	removeobject 2
-# 243 "data/maps/CityClara_Church/scripts.pory"
+# 240 "data/maps/CityClara_Church/scripts.pory"
 	hideobjectat 4, MAP_CITY_CLARA_CHURCH
+# 241 "data/maps/CityClara_Church/scripts.pory"
+	destroy_field_pic 6
+# 242 "data/maps/CityClara_Church/scripts.pory"
+	closemessage
 # 247 "data/maps/CityClara_Church/scripts.pory"
 	applymovement 3, CityClara_Church_Movement_BlaineChase1
 # 248 "data/maps/CityClara_Church/scripts.pory"
@@ -2409,7 +2409,7 @@ CityClara_Church_Movement_MeowthEngageR:
 	step_end
 
 CityClara_Church_EventScript_BlaineCutscene_Text_0:
-# 230 "data/maps/CityClara_Church/scripts.pory"
+# 234 "data/maps/CityClara_Church/scripts.pory"
 	.string "Noooooo!$"
 
 CityClara_Church_Text_Sage1::
@@ -2428,10 +2428,10 @@ CityClara_Church_Text_Sage2::
 
 CityClara_Church_Text_Blaine2::
 # 1176 "data/maps/CityClara_Church/scripts.pory"
-	.string "I know exactly what I have achieved,\n"
-	.string "with this new power we will not be\l"
+	.string "I know exactly what I came to do and,\n"
+	.string "with our great power, we can't be\l"
 	.string "stopped. If foolishly you will never\l"
-	.string "submit to the authority of our party\l"
+	.string "submit to the authority of government\l"
 	.string "you and your people will vaish to dust$"
 
 CityClara_Church_Text_Sage3::
@@ -2455,7 +2455,7 @@ CityClara_Church_Text_Blaine3::
 	.string "massive worth nor given you the\l"
 	.string "clairvoyance to see the inevitable\l"
 	.string "triumph of man. Human progress has\l"
-	.string "overcome your myth. No whispered\l"
+	.string "overcome your myth! No whispered\l"
 	.string "prayer can stop the forward march of\l"
 	.string "progress. Now, guardsmen, take her\l"
 	.string "away!$"

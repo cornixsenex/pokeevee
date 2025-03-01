@@ -225,22 +225,22 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	closemessage
 //Rockets take her away
 
-	//P: Noooo!
-	load_field_pic (6, 190, 98)
-	msgbox("Noooooo!")
-
 	applymovement(4, CityClara_Church_Movement_Rocket1SageExit)
 	applymovement(5, CityClara_Church_Movement_Rocket2SageExit)
 	applymovement(2, CityClara_Church_Movement_SageExit)
 
-	waitmovement (0)
-	destroy_field_pic (6)
-	closemessage
+	//P: Noooo!
+	load_field_pic (6, 190, 98)
+	msgbox("Noooooo!")
 
+	waitmovement (0)
 	hideobjectat (5, MAP_CITY_CLARA_CHURCH)
 	setobjectxy (4, 18, 23)
 	removeobject (2)
 	hideobjectat (4, MAP_CITY_CLARA_CHURCH)
+	destroy_field_pic (6)
+	closemessage
+
 
 //Blaine chases Mew
 	
@@ -1174,7 +1174,7 @@ text CityClara_Church_Text_Sage2 {
 }
 
 text CityClara_Church_Text_Blaine2 {
-	format("I know exactly what I have achieved, with this new power we will not be stopped. If foolishly you will never submit to the authority of our party you and your people will vaish to dust")
+	format("I know exactly what I came to do and, with our great power, we can't be stopped. If foolishly you will never submit to the authority of government you and your people will vaish to dust")
 }
 
 //Rockets move forward and grab her
@@ -1184,18 +1184,18 @@ text CityClara_Church_Text_Sage3 {
 }
 
 text CityClara_Church_Text_Blaine3 {
-	format("You speak of foolish pride most narrowly. Your sad devotion to this religion has not helped you amass a massive worth nor given you the clairvoyance to see the inevitable triumph of man. Human progress has overcome your myth. No whispered prayer can stop the forward march of progress. Now, guardsmen, take her away!")
+	format("You speak of foolish pride most narrowly. Your sad devotion to this religion has not helped you amass a massive worth nor given you the clairvoyance to see the inevitable triumph of man. Human progress has overcome your myth! No whispered prayer can stop the forward march of progress. Now, guardsmen, take her away!")
 }
 
 //Blaine approches mew, Mew walks back but has not where to vanish
 //Blaine goes left mew runs right
 
 text CityClara_Church_Text_Blaine4 {
-	format("No where to run now Mew we have you trapped. I now will demonstrate our victory. That man has truly suprassed the old gods.")
+	format("Nowhere to run now Mew we have you trapped. I now will demonstrate our victory. That man has truly suprassed the old gods.")
 }
 
 text CityClara_Church_Text_Blaine5 {
-	format("Today we defeated superstition and proudly declare this the age of man! Throwing a yoke on this defeated god shall empower us to design our fate. Under the leadership of us Rockets humanity will live to touch the stars, to take the place of Jove in Illion, and shake the universe as we see fit... Enough of this, we leave now for Gato.")
+	format("Today we defeated superstition and proudly declare this the age of man! Throwing a yoke on this defeated god shall empower us to design our fate. Under the leadership of Giovon humanity will live to touch the stars, to take the place of Jove in Illion, and shake the universe as we see fit... We're finished here, back to Sabine Nova.")
 }
 
 text CityClara_Church_Text_Blaine6 {
@@ -1211,7 +1211,7 @@ text CityClara_Church_Text_Meowth {
 }
 
 text CityClara_Church_Text_Blaine8 { 
-	format("You have both failed me look what you let in! We must away, you two clean up this mess. Rockets forward! March onward to the stars!")
+	format("You have both failed me look what you let in! We must away, you two clean up this mess. Gardsmen forward! March onward to the stars!")
 } 
 
 text CityClara_Church_Text_JesseAndJamesIntro {
