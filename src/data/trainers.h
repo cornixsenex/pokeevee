@@ -247,7 +247,7 @@
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEAF,
-        .trainerName = _("LEAF"),
+        .trainerName = _("{B_LEAF_NAME}"),
         .items = {},
         .doubleBattle = FALSE,
 		.mugshotColor = MUGSHOT_COLOR_GREEN,

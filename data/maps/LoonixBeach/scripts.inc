@@ -12,7 +12,7 @@ LoonixBeach_EventScript_Trainer_Blue::
 # 8 "data/maps/LoonixBeach/scripts.pory"
 	waitmessage
 # 9 "data/maps/LoonixBeach/scripts.pory"
-	trainerbattle_no_intro TRAINER_RIVAL1, LoonixBeach_Text_BlueLost
+	trainerbattle_no_intro TRAINER_RIVAL2, LoonixBeach_Text_BlueLost
 # 10 "data/maps/LoonixBeach/scripts.pory"
 	setflag FLAG_UNUSED_0x025
 # 11 "data/maps/LoonixBeach/scripts.pory"

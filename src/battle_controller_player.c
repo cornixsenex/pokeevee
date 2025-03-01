@@ -857,25 +857,25 @@ void HandleInputChooseMove(u32 battler)
             gBattlerControllerFuncs[battler] = HandleMoveSwitching;
         }
     }
-    else if (gBattleStruct->descriptionSubmenu)
-    {
-        if (JOY_NEW(B_MOVE_DESCRIPTION_BUTTON) || JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
-        {
-            gBattleStruct->descriptionSubmenu = FALSE;
-            if (gCategoryIconSpriteId != 0xFF)
-            {
-                DestroySprite(&gSprites[gCategoryIconSpriteId]);
-                gCategoryIconSpriteId = 0xFF;
-            }
-
-            FillWindowPixelBuffer(B_WIN_MOVE_DESCRIPTION, PIXEL_FILL(0));
-            ClearStdWindowAndFrame(B_WIN_MOVE_DESCRIPTION, FALSE);
-            CopyWindowToVram(B_WIN_MOVE_DESCRIPTION, COPYWIN_GFX);
-            PlaySE(SE_SELECT);
-            MoveSelectionDisplayPpNumber(battler);
-            MoveSelectionDisplayMoveType(battler);
-        }
-    }
+//    else if (gBattleStruct->descriptionSubmenu)
+//    {
+//        //if (JOY_NEW(B_MOVE_DESCRIPTION_BUTTON) || JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
+//        //{
+//        //    gBattleStruct->descriptionSubmenu = FALSE;
+//        //    if (gCategoryIconSpriteId != 0xFF)
+//        //    {
+//        //        DestroySprite(&gSprites[gCategoryIconSpriteId]);
+//        //        gCategoryIconSpriteId = 0xFF;
+//        //    }
+//
+//        //    FillWindowPixelBuffer(B_WIN_MOVE_DESCRIPTION, PIXEL_FILL(0));
+//        //    ClearStdWindowAndFrame(B_WIN_MOVE_DESCRIPTION, FALSE);
+//        //    CopyWindowToVram(B_WIN_MOVE_DESCRIPTION, COPYWIN_GFX);
+//        //    PlaySE(SE_SELECT);
+//        //    MoveSelectionDisplayPpNumber(battler);
+//        //    MoveSelectionDisplayMoveType(battler);
+//        //}
+//    }
     else if (JOY_NEW(B_MOVE_DESCRIPTION_BUTTON))
     {
         gBattleStruct->descriptionSubmenu = TRUE;

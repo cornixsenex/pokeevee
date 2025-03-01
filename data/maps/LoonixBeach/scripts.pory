@@ -6,7 +6,7 @@ script LoonixBeach_EventScript_Trainer_Blue {
 	faceplayer
 	message (LoonixBeach_Text_BlueFight)
 	waitmessage
-	trainerbattle_no_intro(TRAINER_RIVAL1, LoonixBeach_Text_BlueLost)
+	trainerbattle_no_intro(TRAINER_RIVAL2, LoonixBeach_Text_BlueLost)
 	setflag (FLAG_UNUSED_0x025)
 	releaseall
 	end

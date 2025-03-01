@@ -2493,6 +2493,11 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
     else
     {
         toCpy = GetTrainerNameFromId(trainerId);
+		//Here modified to support Rival and Leaf names
+		if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_RIVAL_NAME)
+			toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
+		if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_LEAF_NAME)
+			toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_LEAF);
     }
 
     return toCpy;
@@ -2591,8 +2596,6 @@ STATIC_ASSERT(BERRY_NAME_LENGTH + ARRAY_COUNT(sText_BerrySuffix) <= ITEM_NAME_LE
 
 u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
 {
-	//added this variable to account for the incremental var introduced by RivalName - Cornix 1/2024
-	s32 i;
 
     u32 dstID = 0; // if they used dstID, why not use srcID as well?
     const u8 *toCpy = NULL;
