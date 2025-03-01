@@ -324,10 +324,14 @@ CityClara_Church_EventScript_BlaineCutscene::
 	playmoncry SPECIES_MEW, 0
 # 264 "data/maps/CityClara_Church/scripts.pory"
 	waitmoncry
+# 265 "data/maps/CityClara_Church/scripts.pory"
+	setflag FLAG_FORCE_ENTER_MASTERBALL_GFX
 # 266 "data/maps/CityClara_Church/scripts.pory"
 	applymovement 1, EnterPokeballMovement
 # 267 "data/maps/CityClara_Church/scripts.pory"
 	waitmovement 0
+# 268 "data/maps/CityClara_Church/scripts.pory"
+	clearflag FLAG_FORCE_ENTER_MASTERBALL_GFX
 # 269 "data/maps/CityClara_Church/scripts.pory"
 	removeobject 1
 # 270 "data/maps/CityClara_Church/scripts.pory"

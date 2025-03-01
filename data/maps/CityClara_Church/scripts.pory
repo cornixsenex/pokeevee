@@ -262,10 +262,10 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	waitmovement (0)
 	playmoncry (SPECIES_MEW, 0)
 	waitmoncry
-	//setflag (FLAG_FORCE_ENTER_MASTERBALL_GFX)
+	setflag (FLAG_FORCE_ENTER_MASTERBALL_GFX)
 	applymovement (OBJ_EVENT_MEW, EnterPokeballMovement)
 	waitmovement (0)
-	//clearflag (FLAG_FORCE_ENTER_MASTERBALL_GFX)
+	clearflag (FLAG_FORCE_ENTER_MASTERBALL_GFX)
 	removeobject (1)
 	showobjectat (4, MAP_CITY_CLARA_CHURCH)
 	showobjectat (5, MAP_CITY_CLARA_CHURCH)

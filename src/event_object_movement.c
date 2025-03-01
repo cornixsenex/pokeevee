@@ -7632,8 +7632,8 @@ static void ObjectEventSetPokeballGfx(struct ObjectEvent *objEvent)
     {
 		if (FlagGet(FLAG_FORCE_ENTER_MASTERBALL_GFX))
 			ball = BALL_MASTER;
-		else 
-			ball = BALL_POKE; //fallback / default
+		if (ball == BALL_STRANGE) //Instead of strange default to POKEBALL
+			ball = BALL_POKE; 
         const struct ObjectEventGraphicsInfo *info = &gPokeballGraphics[ball];
         if (info->tileTag == TAG_NONE)
         {
