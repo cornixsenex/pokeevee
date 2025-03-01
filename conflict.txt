@@ -16,12 +16,6 @@
 !CONFLICT (content): Merge conflict in src/strings.c
 	>probably some re-defined stuff
 
->Check levelCap works
->Check auto-run works (might conflict with some dexnav thing)
->Check palletes are all good overworld reflections etc
->Check surfing works
->Check audio works...
->Check Mugshots work (Trainer struct mugshotEnabled removed)
 >Check arrow warp sprites
 >Check Spin Tiles
 >Check all custom map names work, check transitions etc
