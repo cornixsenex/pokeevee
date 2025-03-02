@@ -194,15 +194,12 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	load_field_pic (6, 190, 98)
 	msgbox(CityClara_Church_Text_Sage1)
 	destroy_field_pic (6)
-	closemessage
 	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine1)
 	destroy_field_pic (7)
-	closemessage
 	load_field_pic (6, 190, 98)
 	msgbox(CityClara_Church_Text_Sage2)
 	destroy_field_pic (6)
-	closemessage
 	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine2)
 	destroy_field_pic (7)
@@ -217,7 +214,6 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	load_field_pic (6, 190, 98)
 	msgbox(CityClara_Church_Text_Sage3)
 	destroy_field_pic (6)
-	closemessage
 
 	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine3)
@@ -301,7 +297,6 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	waitmovement (0)
 	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine6)
-	closemessage
 	applymovement (3, CityClara_Church_Movement_FaceDown)
 	waitmovement (0)
 	msgbox (CityClara_Church_Text_Blaine7)
@@ -1162,7 +1157,7 @@ movement CityClara_Church_Movement_MeowthEngageR {
 
 
 text CityClara_Church_Text_Sage1 {
-	format("I beg of you, please, stop what you're doing.")
+	format("I beg of you, please, stop what you're doing!")
 }
 
 text CityClara_Church_Text_Blaine1 {
@@ -1170,11 +1165,11 @@ text CityClara_Church_Text_Blaine1 {
 }
 
 text CityClara_Church_Text_Sage2 {
-	format("You must be stopped, you know not what you do.")
+	format("You must be stopped! You know not what you do!")
 }
 
 text CityClara_Church_Text_Blaine2 {
-	format("I know exactly what I came to do and, with our great power, we can't be stopped. If foolishly you will never submit to the authority of government you and your people will vaish to dust")
+	format("I know exactly what I came to do and, with our great power, we can't be stopped. If foolishly you will never submit to the authority of government you and your people will vaish to dust!")
 }
 
 //Rockets move forward and grab her

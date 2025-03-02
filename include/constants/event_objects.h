@@ -260,7 +260,7 @@
 #define OBJ_EVENT_GFX_BLAINE				     255
 #define OBJ_EVENT_GFX_JESSIE				     256
 #define OBJ_EVENT_GFX_JAMES				         257
-#define OBJ_EVENT_GFX_MEOWTH			         258
+#define OBJ_EVENT_GFX_ROCKETMEOWTH			     258
 #define OBJ_EVENT_GFX_SOLDIER			         259
 #define OBJ_EVENT_GFX_BIKER				         260
 #define OBJ_EVENT_GFX_CHANNELER				     261
@@ -445,7 +445,7 @@
 #define OBJ_EVENT_PAL_TAG_BLAINE		          0x1132
 #define OBJ_EVENT_PAL_TAG_JESSIE		          0x1133
 #define OBJ_EVENT_PAL_TAG_JAMES		              0x1134
-#define OBJ_EVENT_PAL_TAG_MEOWTH	              0x1135
+#define OBJ_EVENT_PAL_TAG_ROCKETMEOWTH	          0x1135
 #define OBJ_EVENT_PAL_TAG_SOLDIER	              0x1136
 #define OBJ_EVENT_PAL_TAG_BIKER		              0x1137
 #define OBJ_EVENT_PAL_TAG_CHANNELER	              0x1138

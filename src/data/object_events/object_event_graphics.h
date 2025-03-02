@@ -402,9 +402,8 @@ const u32 gObjectEventPic_Jessie[] = INCBIN_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Jessie[] = INCBIN_U16("graphics/object_events/palettes/jessie.gbapal");
 const u32 gObjectEventPic_James[] = INCBIN_U32("graphics/object_events/pics/people/james.4bpp");
 const u16 gObjectEventPal_James[] = INCBIN_U16("graphics/object_events/palettes/james.gbapal");
-//Removed rhh 1.9.0
-//const u32 gObjectEventPic_Meowth[] = INCBIN_U32("graphics/object_events/pics/people/meowth.4bpp");
-//const u16 gObjectEventPal_Meowth[] = INCBIN_U16("graphics/object_events/palettes/meowth.gbapal");
+const u32 gObjectEventPic_RocketMeowth[] = INCBIN_U32("graphics/object_events/pics/people/meowth.4bpp");
+const u16 gObjectEventPal_RocketMeowth[] = INCBIN_U16("graphics/object_events/palettes/meowth.gbapal");
 const u32 gObjectEventPic_Soldier[] = INCBIN_U32("graphics/object_events/pics/people/soldier.4bpp");
 const u16 gObjectEventPal_Soldier[] = INCBIN_U16("graphics/object_events/palettes/soldier.gbapal");
 const u32 gObjectEventPic_Biker[] = INCBIN_U32("graphics/object_events/pics/people/biker.4bpp");

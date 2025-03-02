@@ -270,7 +270,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lorelei;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jessie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James;
-//extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meowth;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketMeowth;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Soldier;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Channeler;
@@ -539,7 +539,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BLAINE] =                   &gObjectEventGraphicsInfo_Blaine,
     [OBJ_EVENT_GFX_JESSIE] =                   &gObjectEventGraphicsInfo_Jessie,
     [OBJ_EVENT_GFX_JAMES] =                    &gObjectEventGraphicsInfo_James,    
-//	[OBJ_EVENT_GFX_MEOWTH] =                   &gObjectEventGraphicsInfo_Meowth,
+	[OBJ_EVENT_GFX_ROCKETMEOWTH] =             &gObjectEventGraphicsInfo_RocketMeowth,
 	[OBJ_EVENT_GFX_SOLDIER] =                  &gObjectEventGraphicsInfo_Soldier,
 	[OBJ_EVENT_GFX_BIKER] =                    &gObjectEventGraphicsInfo_Biker,
 	[OBJ_EVENT_GFX_CHANNELER] =                &gObjectEventGraphicsInfo_Channeler,

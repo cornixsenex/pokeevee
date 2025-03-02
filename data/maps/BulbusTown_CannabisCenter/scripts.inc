@@ -10,7 +10,7 @@ BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setweather WEATHER_FOG_DIAGONAL
 # 8 "data/maps/BulbusTown_CannabisCenter/scripts.pory"
 	compare VAR_SILVANWOODS_STATE, 0
-	goto_if_ne BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_eq BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
 BulbusTown_CannabisCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
