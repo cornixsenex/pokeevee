@@ -3,15 +3,15 @@ const OBJ_EVENT_MEW = 1
 
 const OBJ_EVENT_PYTHIA = 2
 
-const OBJ_EVENT_LEAF = 11
-const OBJ_EVENT_JESSE = 8
-const OBJ_EVENT_JAMES = 9
-const OBJ_EVENT_MEOWTH = 10
+const OBJ_EVENT_LEAF = 9
+const OBJ_EVENT_JESSE = 6
+const OBJ_EVENT_JAMES = 7
+const OBJ_EVENT_MEOWTH = 8
 
-const OBJ_EVENT_ROCKET1 = 6
+const OBJ_EVENT_ROCKET1 = 11
 const OBJ_EVENT_ROCKET2 = 4
 const OBJ_EVENT_ROCKET3 = 5
-const OBJ_EVENT_ROCKET4 = 7
+const OBJ_EVENT_ROCKET4 = 10
 
 const OBJ_EVENT_BLAINE = 3
 
@@ -55,13 +55,43 @@ script CityClara_Church_Script_ShowAfterCutscene {
 	
 
 script CityClara_Church_OnWarp_HidePreChurchCutscene {	
-	removeobject (8)
-	removeobject (9)
-	removeobject (10)
-	removeobject (11)
-	removeobject (12)
-	removeobject (13)
+	removeobject (OBJ_EVENT_BLAINE)
+	removeobject (OBJ_EVENT_ROCKET1)
+	removeobject (OBJ_EVENT_ROCKET2)
+	removeobject (OBJ_EVENT_MEW)
 	end
+}
+
+script CityClara_Church_Script_RemoveRockets {
+	removeobject (OBJ_EVENT_ROCKET1)
+	setobjectxyperm (OBJ_EVENT_ROCKET1, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_ROCKET1, MOVEMENT_TYPE_INVISIBLE)
+	
+	removeobject (OBJ_EVENT_ROCKET2)
+	setobjectxyperm (OBJ_EVENT_ROCKET2, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_ROCKET2, MOVEMENT_TYPE_INVISIBLE)
+
+	removeobject (OBJ_EVENT_ROCKET3)
+	setobjectxyperm (OBJ_EVENT_ROCKET3, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_ROCKET3, MOVEMENT_TYPE_INVISIBLE)
+	
+	removeobject (OBJ_EVENT_ROCKET4)
+	setobjectxyperm (OBJ_EVENT_ROCKET4, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_ROCKET4, MOVEMENT_TYPE_INVISIBLE)
+	
+	removeobject (OBJ_EVENT_BLAINE)
+	setobjectxyperm (OBJ_EVENT_BLAINE, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_BLAINE, MOVEMENT_TYPE_INVISIBLE)
+	
+	removeobject (OBJ_EVENT_MEW)
+	setobjectxyperm (OBJ_EVENT_MEW, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_MEW, MOVEMENT_TYPE_INVISIBLE)
+	
+	removeobject (OBJ_EVENT_PYTHIA)
+	setobjectxyperm (OBJ_EVENT_PYTHIA, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_PYTHIA, MOVEMENT_TYPE_INVISIBLE)
+
+	return
 }
 
 script CicyClara_Church_OnWarp_ShowAfterChurchCutscene {
@@ -302,23 +332,21 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	setobjectmovementtype (OBJ_EVENT_MEOWTH, MOVEMENT_TYPE_FACE_UP)
 
 	
-	addobject (8)
-	addobject (9)
-	showobjectat (8, MAP_CITY_CLARA_CHURCH)
-	showobjectat (9, MAP_CITY_CLARA_CHURCH)
-	applymovement (8, CityClara_Church_Movement_Rocket1Enter)
-	applymovement (9, CityClara_Church_Movement_Rocket2Enter)
+	addobject (OBJ_EVENT_JESSE)
+	addobject (OBJ_EVENT_JAMES)
+	showobjectat (OBJ_EVENT_JESSE, MAP_CITY_CLARA_CHURCH)
+	showobjectat (OBJ_EVENT_JAMES, MAP_CITY_CLARA_CHURCH)
+	applymovement (OBJ_EVENT_JESSE, CityClara_Church_Movement_Rocket1Enter)
+	applymovement (OBJ_EVENT_JAMES, CityClara_Church_Movement_Rocket2Enter)
 	waitmovement (0)
 	msgbox (CityClara_Church_Text_Meowth)
-	addobject (10)
-	showobjectat (10, MAP_CITY_CLARA_CHURCH)
-	applymovement (10, CityClara_Church_Movement_MeowthEnter)
+	addobject (OBJ_EVENT_MEOWTH)
+	showobjectat (OBJ_EVENT_MEOWTH, MAP_CITY_CLARA_CHURCH)
+	applymovement (OBJ_EVENT_MEOWTH, CityClara_Church_Movement_MeowthEnter)
 	waitmovement (0)
 	load_field_pic (7, 190, 98)
 	msgbox(CityClara_Church_Text_Blaine8)
 	destroy_field_pic (7)
-	closemessage
-	msgbox("TEST TIME")
 	closemessage
 //Grunts and Blaine Exit
 
@@ -326,28 +354,39 @@ script CityClara_Church_EventScript_BlaineCutscene {
 	if (flag(FLAG_TEMP_2)) {
 		applymovement (4, CityClara_Church_Movement_Rocket1ExitL)
 		applymovement (5, CityClara_Church_Movement_Rocket2ExitL)
+		applymovement (OBJ_EVENT_BLAINE, CityClara_Church_Movement_BlaineExit)
 		waitmovement (0)
-		removeobject (3) 
-		removeobject (4) 
-		removeobject (5) 
-		removeobject (6) 
-		removeobject (7) 
-		applymovement (8, CityClara_Church_Movement_JesseEngageL)
-		applymovement (9, CityClara_Church_Movement_JamesEngageL)
-		applymovement (10, CityClara_Church_Movement_MeowthEngageL)
+		call (CityClara_Church_Script_RemoveRockets)
+		applymovement (OBJ_EVENT_JESSE, CityClara_Church_Movement_TeamRocketEngageL)
+		applymovement (OBJ_EVENT_JAMES, CityClara_Church_Movement_TeamRocketEngageL)
+		applymovement (OBJ_EVENT_MEOWTH, CityClara_Church_Movement_TeamRocketEngageL)
 		waitmovement (0)	
+		applymovement (OBJ_EVENT_JESSE, Common_Movement_WalkUp)
+		applymovement (OBJ_EVENT_MEOWTH, Common_Movement_WalkLeft)
+		applymovement (OBJ_EVENT_JAMES, Common_Movement_WalkLeft)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_JESSE, Common_Movement_WalkLeft)
+		applymovement (OBJ_EVENT_MEOWTH, Common_Movement_WalkUp)
+		applymovement (OBJ_EVENT_JAMES, Common_Movement_WalkLeft)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_JESSE, Common_Movement_WalkLeft)
+		applymovement (OBJ_EVENT_MEOWTH, Common_Movement_WalkLeft)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_JESSE, Common_Movement_WalkDown)
+		applymovement (OBJ_EVENT_MEOWTH, Common_Movement_FaceDown)
+		waitmovement (0)
+		applymovement (OBJ_EVENT_JESSE, Common_Movement_FaceRight)
+		waitmovement (0)
+		turnobject (OBJ_EVENT_JESSE, DIR_EAST)
 		applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCameraL2)
 		waitmovement (0)
 		special (RemoveCameraObject)
 	} else {
 		applymovement (4, CityClara_Church_Movement_Rocket1ExitR)
 		applymovement (5, CityClara_Church_Movement_Rocket2ExitR)
+		applymovement (OBJ_EVENT_BLAINE, CityClara_Church_Movement_BlaineExit)
 		waitmovement (0)
-		removeobject (3) 
-		removeobject (4) 
-		removeobject (5) 
-		removeobject (6) 
-		removeobject (7) 
+		call (CityClara_Church_Script_RemoveRockets)
 		applymovement (OBJ_EVENT_JESSE, CityClara_Church_Movement_TeamRocketEngageR)
 		applymovement (OBJ_EVENT_JAMES, CityClara_Church_Movement_TeamRocketEngageR)
 		applymovement (OBJ_EVENT_MEOWTH, CityClara_Church_Movement_TeamRocketEngageR)
@@ -368,6 +407,7 @@ script CityClara_Church_EventScript_BlaineCutscene {
 		waitmovement (0)	
 		applymovement (OBJ_EVENT_JAMES, Common_Movement_FaceLeft)
 		waitmovement (0)
+		turnobject (OBJ_EVENT_JESSE, DIR_WEST)
 		applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCameraR2)
 		waitmovement (0)
 		special (RemoveCameraObject)
@@ -376,7 +416,11 @@ script CityClara_Church_EventScript_BlaineCutscene {
 }
 
 script CityClara_Church_Script_JesseAndJames {
-	applymovement (OBJ_EVENT_JAMES, Common_Movement_FaceLeft)
+	if (flag(FLAG_TEMP_2)) {
+		applymovement (OBJ_EVENT_JESSE, Common_Movement_FaceRight)
+	} else {
+		applymovement (OBJ_EVENT_JAMES, Common_Movement_FaceLeft)
+	}
 	waitmovement (0)
 	trainerbattle_double (TRAINER_JESSE_AND_JAMES_1, CityClara_Church_Text_JesseAndJamesIntro, CityClara_Text_JesseAndJamesLost, Route104_Text_GinaNotEnoughMons, CityClara_Church_Script_JesseAndJamesDefeated, NO_MUSIC)
 }
@@ -1112,6 +1156,12 @@ movement CityClara_Church_Movement_TeamRocketEngageR {
 	walk_right * 4
 	walk_up * 2
 }
+
+movement CityClara_Church_Movement_TeamRocketEngageL {
+	walk_left * 4
+	walk_up * 2
+}
+
 
 
 text CityClara_Church_Text_Sage1 {
