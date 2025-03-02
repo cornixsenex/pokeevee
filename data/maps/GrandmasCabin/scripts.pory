@@ -32,7 +32,7 @@ mapscripts GrandmasCabin_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_RESUME {
-		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+		if (flag(FLAG_FORCE_EEVEE_SLIDE_IN)) {
 			call (GrandmasCabin_Script_TryRemoveRattata)
 		}
 	}
@@ -364,24 +364,17 @@ script GrandmasCabin_Script_SaveLeaf {
 	
 	//battle
 	setwildbattle (SPECIES_RATTATA, 3)
-	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	//setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	setflag (FLAG_FORCE_EEVEE_SLIDE_IN)
 	playbgm (MUS_LITTLEROOT, TRUE)
 	dowildbattle
 	//playbgm (MUS_LITTLEROOT, TRUE)
-	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	//clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	clearflag (FLAG_FORCE_EEVEE_SLIDE_IN)
 	//After battle - thanks lets go home
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
 	applymovement (OBJ_EVENT_EEVEE, Common_Movement_WalkRight)
 	waitmovement (0)
-
-	//Hide Eevee OBJ event (it's the FOLLOWER now)
-	removeobject (OBJ_EVENT_EEVEE)
-	setobjectxyperm (OBJ_EVENT_EEVEE, 15, 0)
-	setobjectmovementtype (OBJ_EVENT_EEVEE, MOVEMENT_TYPE_INVISIBLE)
-	addobject (OBJ_EVENT_EEVEE)
-	showobjectat (OBJ_EVENT_EEVEE, MAP_GRANDMAS_CABIN)
 
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
@@ -399,15 +392,18 @@ script GrandmasCabin_Script_SaveLeaf {
 	showobjectat (OBJ_EVENT_LEAF, MAP_GRANDMAS_CABIN)
 
 	//Walk home
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+
 	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_EndHideAndSeekA)
 	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_EndHideAndSeekA)
+	applymovement (OBJ_EVENT_EEVEE, GrandmasCabin_Movement_EndHideAndSeekA)
 	waitmovement (0)
 
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+	applymovement (OBJ_EVENT_EEVEE, Common_Movement_WalkUp)
 	waitmovement (0)
 
 	applymovement (OBJ_EVENT_LEAF, GrandmasCabin_Movement_EndHideAndSeekB)
+	applymovement (OBJ_EVENT_EEVEE, GrandmasCabin_Movement_EndHideAndSeekB)
 	applymovement (OBJ_EVENT_ID_PLAYER, GrandmasCabin_Movement_EndHideAndSeekB)
 	waitmovement (0)
 

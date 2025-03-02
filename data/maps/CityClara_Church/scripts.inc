@@ -2462,7 +2462,7 @@ CityClara_Church_Text_Blaine3::
 
 CityClara_Church_Text_Blaine4::
 # 1193 "data/maps/CityClara_Church/scripts.pory"
-	.string "No where to run now Mew we have you\n"
+	.string "Nowhere to run now Mew we have you\n"
 	.string "trapped. I now will demonstrate our\l"
 	.string "victory. That man has truly suprassed\l"
 	.string "the old gods.$"
@@ -2473,11 +2473,11 @@ CityClara_Church_Text_Blaine5::
 	.string "proudly declare this the age of man!\l"
 	.string "Throwing a yoke on this defeated god\l"
 	.string "shall empower us to design our fate.\l"
-	.string "Under the leadership of us Rockets\l"
+	.string "Under the leadership of Giovon\l"
 	.string "humanity will live to touch the stars,\l"
 	.string "to take the place of Jove in Illion, and\l"
-	.string "shake the universe as we see fit...\l"
-	.string "Enough of this, we leave now for Gato.$"
+	.string "shake the universe as we see fit... We're\l"
+	.string "finished here, back to Sabine Nova.$"
 
 CityClara_Church_Text_Blaine6::
 # 1201 "data/maps/CityClara_Church/scripts.pory"
@@ -2497,7 +2497,7 @@ CityClara_Church_Text_Blaine8::
 # 1213 "data/maps/CityClara_Church/scripts.pory"
 	.string "You have both failed me look what you\n"
 	.string "let in! We must away, you two clean up\l"
-	.string "this mess. Rockets forward! March\l"
+	.string "this mess. Gardsmen forward! March\l"
 	.string "onward to the stars!$"
 
 CityClara_Church_Text_JesseAndJamesIntro::
