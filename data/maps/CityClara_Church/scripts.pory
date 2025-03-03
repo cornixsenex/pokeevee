@@ -574,13 +574,15 @@ script CityClara_Church_Script_LeafScene {
     addobject (OBJ_EVENT_JIGGLYPUFF)
     //setvars
     setvar (VAR_CITYCLARA_STATE, 2)
+	setvar (VAR_LEAF_ROAD_TO_ARDOR, 1)
     //finish
     releaseall
     end
 }
 
 script CityClara_Church_EventScript_ChooseStone {
-    closemessage
+	//destroy_field_pic (FIELD_PIC_PYTHIA)
+    //closemessage
 	multichoice (0, 0, MULTI_CITYCLARA_CHURCH_STONE, TRUE)
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -596,6 +598,7 @@ script CityClara_Church_EventScript_ChooseStone {
 }
 
 script CityClara_Church_EventScript_GiveFireStone {
+
 	msgbox (CityClara_Church_Text_GiveFireStone, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {		
 		giveitem (ITEM_FIRE_STONE)

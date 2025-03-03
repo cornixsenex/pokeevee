@@ -66,13 +66,17 @@ mapscripts CityClara_MapScripts {
             call (CityClara_Script_ShowLeaf)
         }
 
-
 		//Open Garden
 		if (flag(FLAG_CASTALIA_GARDEN_COMPLETE)) {
 			call (CityClara_Script_OpenGarden)
 		}
 		if (flag(FLAG_TEMP_B)) {
 			call (CityClara_Script_DuringGarden)
+		}
+
+		//Show Leaf after Church
+		if (var(VAR_LEAF_ROAD_TO_ARDOR) == 1) {
+			call (CityClara_Script_ShowLeafOnTheRoad)
 		}
 
 	}
@@ -235,6 +239,18 @@ script CityClara_Script_OpenGarden {
 
 	return
 }
+
+script CityClara_Script_ShowLeafOnTheRoad {
+	setobjectxyperm (OBJ_EVENT_LEAF, 64, 13)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 63, 13)
+	setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+
+	return
+}
+
+
 
 script CityClara_Script_DuringGarden {
 	setobjectxyperm (OBJ_EVENT_GARDENER, 48, 40)
@@ -571,20 +587,49 @@ script CityClara_Script_FinishGarden {
 	end
 }
 
-script CityClara_EventScript_LeafBridge {
+script CityClara_EventScript_Leaf {
 	lock
 	faceplayer
+	if (var(VAR_LEAF_ROAD_TO_ARDOR) < 1) {
+		call (CityClara_EventScript_LeafBridge)
+	} else {
+		call (CityClara_EventScript_LeafOnTheRoad)
+	}
+	release
+	end
+}
+
+script CityClara_EventScript_LeafBridge {
 	load_field_pic (4, 190, 98)
-	//This was to remove that var...needs to be changed anyways
-	//if (var(VAR_CITYCLARA_SCHOOL_STATE) != 8) {
-	//	msgbox (CityClara_Text_LeafBridge)
-	//} else {
-	//	msgbox (CityClara_Text_LeafBridge2)
-	//}
-	closemessage
+	msgbox (CityClara_Text_LeafBridge)
 	destroy_field_pic (4)
-	applymovement (22, Common_Movement_FaceDown)
+	closemessage
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
 	waitmovement (0)
+	releaseall
+	end
+}
+
+script CityClara_EventScript_LeafOnTheRoad {
+	setvar (VAR_LEAF_ROAD_TO_ARDOR, 2)
+	load_field_pic (4, 190, 98)
+	msgbox (CityClara_Text_LeafOnTheRoad)
+	destroy_field_pic (4)
+	closemessage
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp6)
+	applymovement (OBJ_EVENT_JIGGLYPUFF, Common_Movement_WalkUp6)
+	waitmovement (0)
+	//remove Leaf et Jig
+	removeobject (OBJ_EVENT_LEAF)
+	setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+	addobject (OBJ_EVENT_LEAF)
+	showobjectat (OBJ_EVENT_LEAF, MAP_CITY_CLARA)
+	removeobject (OBJ_EVENT_JIGGLYPUFF)
+	setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 0, 0)
+	setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_INVISIBLE)
+	addobject (OBJ_EVENT_JIGGLYPUFF)
+	showobjectat (OBJ_EVENT_JIGGLYPUFF, MAP_CITY_CLARA)
 	releaseall
 	end
 }
@@ -911,11 +956,7 @@ text CityClara_Text_CannaWoman {
 }
 
 text CityClara_Text_LeafBridge {
-	format("I can't believe how long this line appears! We'll wait all day and night to move halfway up to the top. Oh {PLAYER} I bet you could find another way we could sneak around. Maybe you could learn how to cut down trees and we could sneak in, go around the back! I bet they teach you how to cut down trees and things like that if you go to the school! I've never been myself but you should go! The school is that orange building over there on the corner of the south eastern street.")
-}
-
-text CityClara_Text_LeafBridge2 {
-	format("Oh my gosh {PLAYER}! Is that the HM CUT? You are the best! Let's sneak into the church!")
+	format("This line is so long and it's not moving! We need to find a way inside, and fast.")
 }
 
 text CityClara_Text_GreenSuit {
@@ -1072,4 +1113,8 @@ text CityClara_Text_Gardener_FinishGarden1 {
 
 text CityClara_Text_Gardener_FinishGarden2 {
 	format("Come back and visit the garden later.")
+}
+
+text CityClara_Text_LeafOnTheRoad {
+	format("The way to Deseret is not direct. The fastest was is north: Fidelium up to Robustica. The road curves around the Pacific Sine and then diverges at Litoralis. Take the western path and stay to the right and you should arrive in Robustica. Once there we will arrange transportation along Via Magna to Deseret. There is no time to lose. C'mon. Let's go!")
 }
