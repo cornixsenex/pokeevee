@@ -14551,6 +14551,24 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Scythe,
 	},
 
+	[ITEM_MEWRA_SIGIL] =
+	{
+		.name = _("Mewra Sigil"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "An ancient symbol\n"
+            "of the Castalian\n"
+            "Mewra."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+        .iconPic = gItemIcon_ChoiceDumpling,
+        .iconPalette = gItemIconPalette_ChoiceDumpling,
+	},
+
+
 
 
 ///	KUSTOM ITEMS END ///

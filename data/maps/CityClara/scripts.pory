@@ -55,7 +55,7 @@ mapscripts CityClara_MapScripts {
 		}
 
         //Show Mewscene
-        if (var(VAR_CITYCLARA_STATE) < 3) {
+        if (var(VAR_CITYCLARA_STATE) < 2) {
             call (CityClara_Script_ShowMewScene)
         }
    

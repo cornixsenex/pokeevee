@@ -877,7 +877,7 @@ extern const u8 gText_TrainerHill4F[];
 //CityClara_Church choose stone
 extern const u8 gText_StoneChooseFire[];
 extern const u8 gText_StoneChooseWater[];
-extern const u8 gText_StoneChooseThunder[];
+extern const u8 gText_StoneChooseLeaf[];
 extern const u8 gText_StoneChooseNone[];
 
 //RocketTower_Elevator_ChooseFloor

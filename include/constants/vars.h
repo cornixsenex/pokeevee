@@ -343,9 +343,8 @@
 																// 5: Finale, After Scott et Leaf leave woods. 
 
 #define VAR_CITYCLARA_STATE                  			 0x40F8 // 0: Start, Show / trigger Scott et Leaf in town
-                                                                // 1: After initial scene. Show Leaf by bridge, show scott in club
-                                                                // 2: During Church scene
-                                                                // 3: After Church, reset townspeople locations
+                                                                // 1: Show Leaf by bridge, show scott in club trigger Church scene inside
+                                                                // 2: After Church
 #define VAR_UNUSED_40F9           			             0x40F9 // UNUSED
 #define VAR_ROUTE4_STATE                     			 0x40FA // Controls events on Route4 set to ONE (1) by the rocket event in Route4
 #define VAR_ROBUSTUS_STATE                   			 0x40FB // Controls events in Robustus namely the campers and leaf event; set to 7 on exeunt; triggers leaf before rock tunnel then set to 8; triggers rival ambush then set to 9;

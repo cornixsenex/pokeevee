@@ -91,6 +91,12 @@ Common_Movement_WalkUp4:
 	walk_up
 	step_end
 
+Common_Movement_WalkUp3:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 Common_Movement_Delay32:
 	delay_16
 	delay_16

@@ -784,7 +784,7 @@ static const struct MenuAction MultichoiceList_CityClara_Church_Stone[] =
 {
     {gText_StoneChooseFire},
     {gText_StoneChooseWater},
-    {gText_StoneChooseThunder},
+    {gText_StoneChooseLeaf},
     {gText_StoneChooseNone},
 };
 

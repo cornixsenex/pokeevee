@@ -18,7 +18,7 @@ const OBJ_EVENT_BLAINE = 3
 const FIELD_PIC_LEAF = 4
 const FIELD_PIC_PYTHIA = 6
 
-
+const OBJ_EVENT_JIGGLYPUFF = 12
 
 //FLAG_TEMP_2 will hold 0: Not started yet 1: BlaineSceneL or 2: BlaineSceneR
 
@@ -410,7 +410,7 @@ script CityClara_Church_EventScript_BlaineCutscene {
 		waitmovement (0)	
 		applymovement (OBJ_EVENT_JAMES, Common_Movement_FaceLeft)
 		waitmovement (0)
-		turnobject (OBJ_EVENT_JESSE, DIR_WEST)
+		turnobject (OBJ_EVENT_JAMES, DIR_WEST)
 		applymovement (OBJ_EVENT_ID_CAMERA, CityClara_Church_Movement_PanCameraR2)
 		waitmovement (0)
 		special (RemoveCameraObject)
@@ -444,7 +444,7 @@ script CityClara_Church_Script_JesseAndJamesDefeated {
 	removeobject (OBJ_EVENT_MEOWTH) 
 	setobjectxyperm (OBJ_EVENT_MEOWTH, 0, 0)
 	setobjectmovementtype (OBJ_EVENT_MEOWTH, MOVEMENT_TYPE_INVISIBLE)
-	fadescreen FADE_FROM_BLACK)
+	fadescreen (FADE_FROM_BLACK)
     //Center Player
     if (flag(FLAG_TEMP_2)) {
         applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenterL)
@@ -483,9 +483,6 @@ script CityClara_Church_Script_LeafScene {
     closemessage
     destroy_field_pic (FIELD_PIC_LEAF)
     //Alert player et leaf
-    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
-    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
-    waitmovement (0)
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
     waitmovement (0)
@@ -504,29 +501,86 @@ script CityClara_Church_Script_LeafScene {
     waitmovement (0)
     destroy_field_pic (FIELD_PIC_PYTHIA)
     //L: Who are you? Who are they
-    load_field_pic 
     load_field_pic (FIELD_PIC_LEAF, 190, 98)
     msgbox (CityClara_Church_Text_Leaf2)
+    destroy_field_pic (FIELD_PIC_LEAF)
     //P: Pythia, Rocket exposition
+    load_field_pic (FIELD_PIC_PYTHIA, 190, 98)
+    msgbox (CityClara_Church_Text_Pythia2)
+    destroy_field_pic (FIELD_PIC_PYTHIA)
     //L: So bad!
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (CityClara_Church_Text_Leaf3)
     //leaf turn to player :we do something 
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement (0)
     //turn leaf back
+    msgbox (CityClara_Church_Text_Leaf4)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
     //L: What can we do to help
+    msgbox (CityClara_Church_Text_Leaf5)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    load_field_pic (FIELD_PIC_PYTHIA, 190, 98)
+    msgbox (CityClara_Church_Text_Pythia3A)
+    destroy_field_pic (FIELD_PIC_PYTHIA)
     //Pythia Into position
+    applymovement (OBJ_EVENT_PYTHIA, Common_Movement_WalkUp3)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_PYTHIA, Common_Movement_FaceDown)
+    waitmovement (0)
     //P: History, Reges, Restore old world defeat newbs rescue Mew
-    //give item SIGIL
+    load_field_pic (FIELD_PIC_PYTHIA, 190, 98)
+    msgbox (CityClara_Church_Text_Pythia3B)
+    destroy_field_pic (FIELD_PIC_PYTHIA)
     //leaf face player
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceRight)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement (0)
     //L: Cmon tough road but we're ready together we can do anything
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (CityClara_Church_Text_Leaf6)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
     //L exit
+    applymovement (OBJ_EVENT_LEAF, CityClara_Church_Movement_LeafExit)
+    applymovement (OBJ_EVENT_JIGGLYPUFF, CityClara_Church_Movement_LeafExit)
+    waitmovement (0)
     //Player to Pythia
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp3)
+    waitmovement (0)
     //P: You're special take one of these guiding stones
+    load_field_pic (FIELD_PIC_PYTHIA, 190, 98)
+    msgbox (CityClara_Church_Text_Pythia4)
     //give stone
+    call (CityClara_Church_EventScript_ChooseStone)
+    msgbox (CityClara_Church_Text_Pythia5)
+    //give item SIGIL
+    giveitem (ITEM_MEWRA_SIGIL)
     //P: return if you need direcrtion
+    msgbox (CityClara_Church_Text_Pythia6)
+    destroy_field_pic (FIELD_PIC_PYTHIA)
+    closemessage
+    //remove leaf et jig
+    removeobject (OBJ_EVENT_LEAF)
+    setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_LEAF)
+    removeobject (OBJ_EVENT_JIGGLYPUFF)
+    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_JIGGLYPUFF)
+    //setvars
+    setvar (VAR_CITYCLARA_STATE, 2)
     //finish
+    releaseall
     end
 }
 
 script CityClara_Church_EventScript_ChooseStone {
+    closemessage
 	multichoice (0, 0, MULTI_CITYCLARA_CHURCH_STONE, TRUE)
 	switch (var(VAR_RESULT)) {
 		case 0:
@@ -563,10 +617,10 @@ script CityClara_Church_EventScript_GiveWaterStone {
 	return
 }
 
-script CityClara_Church_EventScript_GiveThunderStone {
-	msgbox (CityClara_Church_Text_GiveThunderStone, MSGBOX_YESNO)
+script CityClara_Church_EventScript_GiveLeafStone {
+	msgbox (CityClara_Church_Text_GiveLeafStone, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {		
-		giveitem (ITEM_THUNDER_STONE)
+		giveitem (ITEM_LEAF_STONE)
 		msgbox (CityClara_Church_Text_TakeStone)
 	} else {
 		call (CityClara_Church_EventScript_ChooseStone)
@@ -583,14 +637,17 @@ script CityClara_Church_EventScript_GiveNoneStone {
 	}
 }
 
-script CityClara_Church_EventScript_Sage {
+script CityClara_Church_EventScript_Mewra {
 	faceplayer
+    load_field_pic (FIELD_PIC_PYTHIA, 190, 98)
 	msgbox (CityClara_Church_Text_SageAfterMew)
+    destroy_field_pic (FIELD_PIC_LEAF)
 	closemessage
+    applymovement (OBJ_EVENT_PYTHIA, Common_Movement_FaceDown)
+    waitmovement (0)
 	end
 }
 	
-
 script CityClara_Church_EventScript_BlaineTest{
 	trainerbattle_single(TRAINER_BLAINE, CityClara_Church_Text_BlaineIntro, CityClara_Church_Text_BlaineLost)
 	msgbox (CityClara_Church_Text_BlainePost)
@@ -920,7 +977,7 @@ movement CityClara_Church_Movement_PlayerCenter4 {
 	walk_left * 2
 	face_down
 }
-g
+
 movement CityClara_Church_Movement_PlayerCenter5 {
 	walk_left * 6
 	face_down
@@ -946,8 +1003,8 @@ movement CityClara_Church_Movement_DadExit {
 
 movement CityClara_Church_Movement_LeafExit {
 	walk_down * 3
-	walk_diag_southwest
-	walk_down
+	walk_left
+	walk_down 
 }
 
 movement CityClara_Church_Movement_SageCenter {
@@ -1139,11 +1196,11 @@ text CityClara_Church_Text_Meowth {
 }
 
 text CityClara_Church_Text_Blaine8 { 
-	format("You have both failed me look what you let in! We must away, you two clean up this mess. Gardsmen forward! March onward to the stars!")
+	format("You have both failed me. Look what you let in! We must away, you two clean up this mess. Gardsmen forward! March onward to the stars!")
 } 
 
 text CityClara_Church_Text_JesseAndJamesIntro {
-	format("Prepare for trouble. And make it double")
+	format("Prepare for trouble and make it double")
 }
 
 text CityClara_Text_JesseAndJamesLost {
@@ -1169,10 +1226,6 @@ text CityClara_Church_Text_BlainePost {
 
 text CityClara_Church_Text_Dad1 {
 	format("Thank Mew you're both alright! The Rockets have...")
-}
-
-text CityClara_Church_Text_Leaf2 {
-	format("What's going on? Where's Mew? And who is this?")
 }
 
 text CityClara_Church_Text_Dad2 {	
@@ -1219,16 +1272,8 @@ text CityClara_Church_Text_Dad7 {
 	format("That's right {PLAYER} you know I believe in you. So Leaf what say you we be on our way back to the club in order to protect in case any Rockets should come around?")
 }
 
-text CityClara_Church_Text_Leaf3 {
-	format("I'm sorry father, I cannot obey. I'm going to Ardor along with {PLAYER}. Someone needs to make sure that he stays safe, and we can have some fun along the way!")
-}
-
 text CityClara_Church_Text_Dad8 {
 	format("That's fine with me, you know I love you Leaf. If anyone needs me, go to the club.")
-}
-
-text CityClara_Church_Text_Leaf4 {
-	format("Let's do it {PLAYER} we'll have eachother's backs! I think we should start by taking Route 4. I'll meet you somewhere up in Robustus.")
 }
 
 text CityClara_Church_Text_Sage9 {
@@ -1247,6 +1292,10 @@ text CityClara_Church_Text_GiveThunderStone {
 	format("This Thunder Stone shall bring you victory. Neither reckless, nor too cautionary, you must remain to harness thunderbolts. Are you prepared to hold the Thunder Stone?")
 }
 
+text CityClara_Church_Text_GiveLeafStone {
+    format("This Leaf Stone will protect you on the raod. Never reckless but calm, cautionary, and wise you wish to be, just like the trees. Will you bring the green Leaf Stone on your quest?")
+}
+
 text CityClara_Church_Text_GiveNoneStone {
 	format("You are most noble for your age young {PLAYER}. The stone could have given you great power but if you don't want it, I'll keep them safe. Are you certain that you will take no stone?")
 }
@@ -1260,7 +1309,7 @@ text CityClara_Church_Text_DenyStone {
 }
 
 text CityClara_Church_Text_SageAfterMew {
-	format("Be on your way {PLAYER} you must rescue Mew.")
+	format("Go to the University Ardor and speak with professor Indianus. Give him my sigil and prepare for war.")
 }
 
 text CityClara_Church_Text_ERROR {
@@ -1301,14 +1350,31 @@ text CityClara_Church_Text_Leaf5 {
     format("Is there any way we can help, Mewra?")
 }
 
+text CityClara_Church_Text_Pythia3A {
+    format("The truth is, I'm not sure.")
+}
+
 //History Reges restore old world rescue mew
-text CityClara_Church_Text_Pythia3 {
-    format("The truth is, I'm not sure. This is unlike anything that has come to pass for Mew has not returned to us since ancient times. The fallen kings were crowned long after her, and even when we built upon the Lake this mighty church, generations ago, the myth of Mew was a very old tale. Her appearance can only mean one thing, that this is a time of great importance. The power of the city, Urbia, has finally polluted even here. For half an age we were ruled by the Kings, who sometimes brought even war to our lake, but even they respected this temple. The Urbians have gone too far this time with this accuresed abduction of Mew. They must be stopped or else the soul of man will be forever doomed to black darkness. Though grievously my memory recalls the bitter fruits of the revolution, when so many young men died needlessly, I recognize that we must once again commit ourselves to battle on the field in order to preserve the soul of man. We must inspire people to rise up, to overthrow the Urbian Tyrants, and restore coexistence with nature. I am Mewra, not a leader in war. A descendant, of the great kings of old, must return to reclaim his ancient throne, throw down the pretenders, and restore peace. You two, though young, are here for a reason. I see in you the knack for adventure. Therefore I'm asking, pleading, tasking you with finding the elusive Maximus, who once commanded armies in the war, and would have been King if not for defeat. He is the heir to the Urbian throne and can rally the people to our cause. After the war he went into hiding but as his ally we have kept in touch. At the University of Ardor speak with the profesor, Indianus, and tell him you're a friend of the Mewra. Give him this sacred sigil, he will know, the time has come for more revolution.")
+text CityClara_Church_Text_Pythia3B {
+    format("This is unlike anything that has come to pass for Mew has not returned to us since ancient times. The fallen kings were crowned long after her, and even when we built upon the Lake this mighty church, generations ago, the myth of Mew was a very old tale. Her appearance can only mean one thing, that this is a time of great importance. The power of the city, Urbia, has finally polluted even here. For half an age we were ruled by the Kings, who sometimes brought even war to our lake, but even they respected this temple. The Urbians have gone too far this time with this accuresed abduction of Mew. They must be stopped or else the soul of man will be forever doomed to black darkness. Though grievously my memory recalls the bitter fruits of the revolution, when so many young men died needlessly, I recognize that we must once again commit ourselves to battle on the field in order to preserve the soul of man. We must inspire people to rise up, to overthrow the Urbian Tyrants, and restore coexistence with nature. I am Mewra, not a leader in war. A descendant, of the great kings of old, must return to reclaim his ancient throne, throw down the pretenders, and restore peace. You two, though young, are here for a reason. I see in you the knack for adventure. Therefore I'm asking, pleading, tasking you with finding the elusive Maximus, who once commanded armies in the war, and would have been King if not for defeat. He is the heir to the Urbian throne and can rally the people to our cause. After the war he went into hiding but as his ally we have kept in touch. At the University of Ardor speak with the profesor, Indianus, and tell him you're a friend of the Mewra. ")
 }
 
 //cmon tough road together anything
-
+text CityClara_Church_Text_Leaf6 {
+    format("C'mon {PLAYER} this is what we're meant to do. Ardor University is far north over the mountains in the great desert and the road there will be both long and hard but you and I will get there in the end. Let's go! Mewra, and Mew, and the entire world, are counting on us to find Maximus, restore the old kingdom, and rescue Mew. There is no time to wait! We depart now.")
+}
 //you special take stone
+text CityClara_Church_Text_Pythia4 {
+    format("I can tell you are a special young man put in this situation with purpose. I cannot guarrantee you will succeed but I will offer you my assistance. The Mewra have kept these three stones with us to protect us and the church from danger. Even during the War of Sudden Flame we kept them to ourselves but at this time I see now that our hope travels with you. I will give you whichever you ask for.")
+}
 
-//return if you need direction
+//Maximus has been in hiding since war, give him this Sigil and help him prepare for war. 
+text CityClara_Church_Text_Pythia5 {
+    format("Maximus has spent decades in hiding after being defeated in the war. Give him this sacred sigil, he will know, the time has come for more revolution.")
+}
+
+//I'm sorry this had to happen but I know you're the guy. Come back if you need direction
+text CityClara_Church_Text_Pythia6 {
+    format("I'm sorry that this must fall onto you but we do not control circumstances like destiny, or fate. Our only choice is what we choose to do with the time given to us by our fate. I pray that you can find Maximus and help the forces of good triumph in war. Good luck. Return if you need direction.")
+}
 

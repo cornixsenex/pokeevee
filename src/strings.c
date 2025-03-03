@@ -540,7 +540,7 @@ const u8 gText_DeepSeaScale[] = _("DEEPSEASCALE");
 //CITYCLARA_CHURCH_CHOOSE_STONE
 const u8 gText_StoneChooseFire[] = _("FIRE STONE");
 const u8 gText_StoneChooseWater[] = _("WATER STONE");
-const u8 gText_StoneChooseThunder[] = _("THUNDER STONE");
+const u8 gText_StoneChooseLeaf[] = _("LEAF STONE");
 const u8 gText_StoneChooseNone[] = _("NONE STONE");
 
 
