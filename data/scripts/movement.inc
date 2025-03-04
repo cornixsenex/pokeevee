@@ -139,6 +139,16 @@ Common_Movement_WalkLeft2:
 	walk_left
 	step_end
 
+Common_Movement_WalkLeft8:
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    step_end
 
 @ Cornix Customs
 Common_Movement_WalkNorthEast::

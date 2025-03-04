@@ -105,10 +105,11 @@
 #define VAR_LEAF_ROAD_TO_ARDOR           			     0x4052 // Track Leaf to Ardor story - Multiple Maps
 																// 0: Start
 																// 1: After Church scene - trigger on the road
-																// 2: After on the road - trigger BOTH Rubsustica and Sabina Nova AND Ambush
-																// 3:After Ambush setup Peccadum
-																// 4: After Peccadum setup et trigger Uni
-																// 5:After Uni show studying or whatever
+																// 2: After on the road - trigger Rubsustica 
+                                                                // 3: After Robustica trigger Ambush, SN is applicable
+																// 4:After Ambush setup Peccadum
+																// 5: After Peccadum setup et trigger Uni
+																// 6:After Uni show studying or whatever
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var

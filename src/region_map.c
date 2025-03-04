@@ -1936,6 +1936,14 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_MONTES_VIGILIAE);
         }
+        //Route9 - Via Saxosa or Montes Vigiliae
+		if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9))
+        {
+            if (IsRoute9ViaSaxosa())
+                return StringCopy(dest, sMapName_VIA_SAXOSA);
+            else
+                return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -3672,5 +3680,22 @@ bool32 IsSRoute19MareInternum(void)
 		return FALSE;
 	else
 		return TRUE;
+}
+
+bool32 IsRoute9ViaSaxosa(void)
+{
+   	
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+    if 
+        (
+        (y > 32) ||
+        (x < 6 && y > 26)
+        )
+        return FALSE;
+    else
+        return TRUE;
 }
 	

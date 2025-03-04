@@ -1,4 +1,17 @@
+
+const FIELD_PIC_LEAF = 4
+
+const OBJ_EVENT_LEAF = 1
+const OBJ_EVENT_JIGGLYPUFF = 25
+
 mapscripts DoakTown_MapScripts {
+
+
+	MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_LEAF_ROAD_TO_ARDOR) == 2) {
+            call (Robustica_Script_ShowLeaf)
+        }
+    }
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_ROBUSTUS_STATE, 6: Robustus_OnFrame_ExeuntCampers
@@ -6,43 +19,66 @@ mapscripts DoakTown_MapScripts {
 
 }
 
+script Robustica_Script_ShowLeaf {
+    setobjectxyperm (OBJ_EVENT_LEAF, 14, 34)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_LOOK_AROUND)
 
-script Robustus_EventScript_LeafTrigger1 {
-	lock
-	call (Robustus_EventScript_Counter)
-	applymovement (2, Common_Movement_FaceLeft)
-	applymovement (2, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	applymovement (2, Robustus_Movement_LeafApproach1)
-	waitmovement (0)
-	msgbox (Robustus_Text_Leaf1)
-	closemessage
-	applymovement (2, Robustus_Movement_LeafExit)
-	waitmovement (0)
-	removeobject (2)
-	setflag (FLAG_ROBUSTUS_HIDELEAF)	
-	release
-	end
-}	
+    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 15, 34)
+    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
 
-script Robustus_EventScript_LeafTrigger2 {
-	lock	
-	call (Robustus_EventScript_Counter)
-	applymovement (2, Common_Movement_FaceLeft)
-	waitmovement (0)
-	applymovement (2, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	applymovement (2, Robustus_Movement_LeafApproach2)
-	waitmovement (0)
-	msgbox (Robustus_Text_Leaf1)
-	closemessage
-	applymovement (2, Robustus_Movement_LeafExit)
-	waitmovement (0)
-	removeobject (2)
-	setflag (FLAG_ROBUSTUS_HIDELEAF)	
-	release
-	end
-}	
+    return
+}
+
+script Robustica_Script_LeafTrigger1 {
+    lock
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_LEAF, Robustica_Movement_LeafEnter1)
+    applymovement (OBJ_EVENT_JIGGLYPUFF, Robustica_Movement_LeafEnter1)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    call (Robustica_Script_LeafScene)
+}
+
+script Robustica_Script_LeafTrigger2 {
+    lock
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_LEAF, Robustica_Movement_LeafEnter2)
+    applymovement (OBJ_EVENT_JIGGLYPUFF, Robustica_Movement_LeafEnter2)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    call (Robustica_Script_LeafScene)
+}
+
+script Robustica_Script_LeafScene {
+    //setvars
+    setvar (VAR_LEAF_ROAD_TO_ARDOR, 3)
+    //l: Bad news they wont let us onto the Via Magna without a bicycle, convienience vs freedom, either abandoned Via Posterior or Sabina Nova, cant give up
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (Robustica_Text_Leaf)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
+    //leaf exit
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkLeft8)
+    applymovement (OBJ_EVENT_JIGGLYPUFF, Common_Movement_WalkLeft8)
+    waitmovement (0)
+    //remove leaf
+    removeobject (OBJ_EVENT_LEAF)
+    setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
+    
+    removeobject (OBJ_EVENT_JIGGLYPUFF)
+    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_INVISIBLE)
+
+    release
+    end
+}
 
 script Robustus_EventScript_Camper1 {	
 	if (!defeated(TRAINER_PIPPIN)) {
@@ -204,6 +240,18 @@ movement Robustus_Movement_LeafExit {
 	
 }
 
+movement Robustica_Movement_LeafEnter1 {
+    walk_down * 2
+    walk_left * 3
+    face_up
+}
+
+movement Robustica_Movement_LeafEnter2 {
+    walk_down
+    walk_left * 3
+    face_down
+}
+
 text Robustus_Text_PippinIntro {
 	format("TEST!")
 }
@@ -264,16 +312,15 @@ text Robustus_Text_PatrickPost {
 	format("TEST!")
 }	
 
-text Robustus_Text_Leaf1 {
+text Robustus_Text_Leaf {
 	format("My gosh! Look at you {PLAYER} I see you've grown more lovely in every possible way. Unfortunately I can't find a way to continue our trip north to Ardor. The bicycle highway is not a choice unless we can ground score ourselves a bike, and rock tunnel is blocked by hella rocks. I fear the passage south through the city but currently that seems our only choice. Please find a way to keep travelling north or brace yourself to go through the city.")
 }
-
-
-
 
 text Robustus_Text_Test {
 	format("TEST!")
 }
 
-
+text Robustica_Text_Leaf {
+    format("There you are {PLAYER}! I've been waiting for you. Unfortunately I have some bad news, I was unable to convince the men who operate Via Magna to let us use the road without a bicycle. We have to find a way to Deseret. That means that we need to somehow find a bike or else travel along some other road. Sabina Nova is the least distant terminal for Via Magna from here. We could attempt to bribe our way across or maybe find us someone to sell us bikes. Another option is to go around and enter Urbia from the southwest and from the city find a desert path...or we could take Via Posterior. During the old ages of Watchful Peace my father's family helped to dig that road but it has been abandoned for some time becoming dark, and cold, and dangerous. Whichever path we choose, we must choose soon for Mewra, Mew, and all free loving folk depend on us to rally Maximus. Let's get started! There is no time to loose!")
+}
 

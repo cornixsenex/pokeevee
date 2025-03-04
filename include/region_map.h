@@ -141,6 +141,7 @@ u32 GetDynamicMapSec_Route5(void);
 bool32 IsSanjoSabinaNova(void);
 bool32 IsDoakTownRobustica(void);
 bool32 IsSRoute19MareInternum(void);
+bool32 IsRoute9ViaSaxosa(void);
 
 //Not used yet but seems useful to me idk
 bool32 IsPlayerEnterFromWest(void);

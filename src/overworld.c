@@ -966,6 +966,13 @@ if (I_VS_SEEKER_CHARGING != 0)
 			//DoakTown - Handle from 
 			if (destMapNum == MAP_NUM(DOAK_TOWN) && x < 2)
 				ShowMapNamePopup();
+
+            //Route9 - Handle from Route7
+            if (destMapNum == MAP_NUM(ROUTE9) && x < 2 && y < 27)
+                ShowMapNamePopup();
+            //Route7 - Handle from Route9
+            if (destMapNum == MAP_NUM(ROUTE7) && x > 27 && y > 62 && y < 67)
+                ShowMapNamePopup();
 			
 			//Other Maps 
 			//
@@ -3953,7 +3960,17 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		else 
 			return MAPSEC_MONTES_VIGILIAE;
 	}
+    //Route9 - Via Saxosa or Montes Vigiliae
+	if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9)) 
+	{
+		if (IsRoute9ViaSaxosa())
+			return MAPSEC_VIA_SAXOSA;
+		else 
+			return MAPSEC_MONTES_VIGILIAE;
+	}
+
 	//Other Maps Go Here
+    
 
 	//Default - Should never be reached
 	else 
@@ -4322,10 +4339,14 @@ u16 GetDynamicMusic(void)
 		else 
 			return MUS_B_FRONTIER;
 	}
-
-
-
-
+    //Route9 - Via Saxosa or Montes Vigiliae
+	if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9)) 
+	{
+		if (IsRoute9ViaSaxosa())
+			return MUS_ROUTE119;
+		else 
+			return MUS_B_FRONTIER;
+	}
 
 	//Default SHOULD NEVER BE REACHED
 	else 

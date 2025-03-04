@@ -186,8 +186,8 @@
 #define MAPSEC_LOST_CAVE                    0xB5
 #define MAPSEC_PATTERN_BUSH                 0xB6
 #define MAPSEC_ALTERING_CAVE_FRLG           0xB7
-#define MAPSEC_TANOBY_CHAMBERS              0xB8
 //Below have been altered, above are vanilla BREAK break Break
+#define MAPSEC_VIA_SAXOSA                   0xB8
 #define MAPSEC_VIA_MAGNA                    0xB9
 #define MAPSEC_ROBUSTICA                    0xBA
 #define MAPSEC_VENATOR_MONS                 0xBB
