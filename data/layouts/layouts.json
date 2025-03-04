@@ -5727,7 +5727,7 @@
       "width": 86,
       "height": 86,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_gatosouth",
+      "secondary_tileset": "gTileset_downtown",
       "border_filepath": "data/layouts/GatoCityAvenues/border.bin",
       "blockdata_filepath": "data/layouts/GatoCityAvenues/map.bin"
     },
