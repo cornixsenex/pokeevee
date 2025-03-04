@@ -4744,8 +4744,8 @@
     {
       "id": "LAYOUT_GATO_CITY_E",
       "name": "GatoCityE_Layout",
-      "width": 56,
-      "height": 32,
+      "width": 24,
+      "height": 62,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_swhj",
       "border_filepath": "data/layouts/GatoCityE/border.bin",

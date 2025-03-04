@@ -27,6 +27,11 @@
       "map": "MAP_GATO_CITY_S",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_GATO_CITY_E",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
