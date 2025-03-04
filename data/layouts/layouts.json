@@ -4694,7 +4694,7 @@
     {
       "id": "LAYOUT_MARE_E",
       "name": "MareE_Layout",
-      "width": 115,
+      "width": 120,
       "height": 58,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
@@ -4724,8 +4724,8 @@
     {
       "id": "LAYOUT_GATO_CITY",
       "name": "GatoCity_Layout",
-      "width": 56,
-      "height": 52,
+      "width": 31,
+      "height": 76,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BigCity",
       "border_filepath": "data/layouts/GatoCity/border.bin",
@@ -4734,8 +4734,8 @@
     {
       "id": "LAYOUT_GATO_CITY_DT",
       "name": "GatoCityDT_Layout",
-      "width": 64,
-      "height": 52,
+      "width": 40,
+      "height": 62,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_downtown",
       "border_filepath": "data/layouts/GatoCityDT/border.bin",
@@ -4754,8 +4754,8 @@
     {
       "id": "LAYOUT_GATO_CITY_N",
       "name": "GatoCityN_Layout",
-      "width": 96,
-      "height": 38,
+      "width": 31,
+      "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CityNorth",
       "border_filepath": "data/layouts/GatoCityN/border.bin",

@@ -12,13 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_GATO_CITY_S",
-      "offset": -35,
-      "direction": "up"
-    }
-  ],
+  "connections": 0,
   "object_events": [
 
   ],

@@ -19,19 +19,9 @@
       "direction": "left"
     },
     {
-      "map": "MAP_GATO_CITY",
-      "offset": -17,
-      "direction": "right"
-    },
-    {
       "map": "MAP_MARE_E",
       "offset": -80,
       "direction": "down"
-    },
-    {
-      "map": "MAP_HIPPODROME",
-      "offset": 6,
-      "direction": "up"
     },
     {
       "map": "MAP_HIPPODROME_W",
@@ -42,6 +32,21 @@
       "map": "MAP_FARM",
       "offset": -16,
       "direction": "left"
+    },
+    {
+      "map": "MAP_HIPPODROME",
+      "offset": 6,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_GATO_CITY",
+      "offset": -4,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_GATO_CITY_N",
+      "offset": -36,
+      "direction": "right"
     }
   ],
   "object_events": [

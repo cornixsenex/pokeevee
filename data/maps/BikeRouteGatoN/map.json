@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_GATO_CITY_N",
-      "offset": -28,
-      "direction": "down"
-    },
-    {
       "map": "MAP_BIKE_ROUTE_NE",
       "offset": 64,
       "direction": "left"

@@ -24,11 +24,6 @@
       "direction": "up"
     },
     {
-      "map": "MAP_GATO_CITY_N",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
       "map": "MAP_BIKE_ROUTE_GATO_N",
       "offset": -101,
       "direction": "right"

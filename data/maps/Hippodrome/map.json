@@ -19,11 +19,6 @@
       "direction": "left"
     },
     {
-      "map": "MAP_TROY_S",
-      "offset": 0,
-      "direction": "right"
-    },
-    {
       "map": "MAP_HIPPODROME_W",
       "offset": 20,
       "direction": "left"
@@ -39,14 +34,19 @@
       "direction": "up"
     },
     {
-      "map": "MAP_GATO_CITY",
-      "offset": 19,
-      "direction": "right"
-    },
-    {
       "map": "MAP_ROUTE11",
       "offset": -6,
       "direction": "down"
+    },
+    {
+      "map": "MAP_GATO_CITY_N",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_GATO_CITY",
+      "offset": 32,
+      "direction": "right"
     }
   ],
   "object_events": [

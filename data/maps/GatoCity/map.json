@@ -14,34 +14,29 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_GATO_CITY_N",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_HIPPODROME",
+      "offset": -32,
+      "direction": "left"
+    },
+    {
       "map": "MAP_ROUTE11",
-      "offset": 17,
+      "offset": 4,
       "direction": "left"
     },
     {
       "map": "MAP_GATO_CITY_DT",
-      "offset": 0,
+      "offset": -32,
       "direction": "right"
     },
     {
-      "map": "MAP_GATO_CITY_N",
-      "offset": 18,
-      "direction": "up"
-    },
-    {
       "map": "MAP_GATO_CITY_S",
-      "offset": 3,
-      "direction": "down"
-    },
-    {
-      "map": "MAP_HIPPODROME",
-      "offset": -19,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_TROY_S",
-      "offset": 0,
-      "direction": "up"
+      "offset": 30,
+      "direction": "right"
     }
   ],
   "object_events": [
