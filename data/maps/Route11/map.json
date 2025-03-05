@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE10",
-      "offset": 40,
+      "offset": 10,
       "direction": "left"
     },
     {
@@ -24,28 +24,13 @@
       "direction": "down"
     },
     {
-      "map": "MAP_HIPPODROME_W",
-      "offset": 0,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_FARM",
-      "offset": -16,
-      "direction": "left"
-    },
-    {
       "map": "MAP_HIPPODROME",
       "offset": 6,
       "direction": "up"
     },
     {
       "map": "MAP_GATO_CITY",
-      "offset": -4,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_GATO_CITY_N",
-      "offset": -36,
+      "offset": -34,
       "direction": "right"
     }
   ],

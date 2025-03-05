@@ -34,11 +34,6 @@
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE11",
-      "offset": -6,
-      "direction": "down"
-    },
-    {
       "map": "MAP_GATO_CITY_N",
       "offset": 0,
       "direction": "right"
@@ -47,6 +42,11 @@
       "map": "MAP_GATO_CITY",
       "offset": 32,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE11",
+      "offset": -6,
+      "direction": "down"
     }
   ],
   "object_events": [

@@ -19,11 +19,6 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE11",
-      "offset": 16,
-      "direction": "right"
-    },
-    {
       "map": "MAP_BIKE_ROUTE_FARM",
       "offset": -36,
       "direction": "up"
