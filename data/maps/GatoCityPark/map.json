@@ -20,7 +20,12 @@
     },
     {
       "map": "MAP_GATO_CITY_E",
-      "offset": 22,
+      "offset": 12,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_TROY_SE",
+      "offset": -7,
       "direction": "left"
     }
   ],

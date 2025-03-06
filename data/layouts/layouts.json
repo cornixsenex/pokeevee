@@ -6260,6 +6260,16 @@
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/OceanPerimeter4/border.bin",
       "blockdata_filepath": "data/layouts/OceanPerimeter4/map.bin"
+    },
+    {
+      "id": "LAYOUT_TROY_SE",
+      "name": "TroySE_Layout",
+      "width": 77,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Troy",
+      "border_filepath": "data/layouts/TroySE/border.bin",
+      "blockdata_filepath": "data/layouts/TroySE/map.bin"
     }
   ]
 }

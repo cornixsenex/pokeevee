@@ -1604,3 +1604,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/OceanPerimeter3/scripts.inc"
 
 	.include "data/maps/OceanPerimeter4/scripts.inc"
+
+	.include "data/maps/TroySE/scripts.inc"

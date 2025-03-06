@@ -816,6 +816,7 @@
 #define MAP_OCEAN_PERIMETER2             (100 | (35 << 8))
 #define MAP_OCEAN_PERIMETER3             (101 | (35 << 8))
 #define MAP_OCEAN_PERIMETER4             (102 | (35 << 8))
+#define MAP_TROY_SE                      (103 | (35 << 8))
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (36 << 8))

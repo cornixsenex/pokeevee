@@ -27,6 +27,11 @@
       "map": "MAP_BIKE_ROUTE_GATO_N",
       "offset": -101,
       "direction": "right"
+    },
+    {
+      "map": "MAP_TROY_SE",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [

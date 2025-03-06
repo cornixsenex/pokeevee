@@ -37,6 +37,11 @@
       "map": "MAP_GATO_CITY_N",
       "offset": 19,
       "direction": "down"
+    },
+    {
+      "map": "MAP_TROY_SE",
+      "offset": 27,
+      "direction": "right"
     }
   ],
   "object_events": [

@@ -17,6 +17,11 @@
       "map": "MAP_GATO_CITY_PARK",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_TROY_SE",
+      "offset": 89,
+      "direction": "left"
     }
   ],
   "object_events": [

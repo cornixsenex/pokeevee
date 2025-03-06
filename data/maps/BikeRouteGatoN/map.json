@@ -32,6 +32,11 @@
       "map": "MAP_TROY_E",
       "offset": 101,
       "direction": "left"
+    },
+    {
+      "map": "MAP_TROY_SE",
+      "offset": -28,
+      "direction": "down"
     }
   ],
   "object_events": [
