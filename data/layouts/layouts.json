@@ -5927,7 +5927,7 @@
       "width": 164,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/BikeRouteFarm/border.bin",
       "blockdata_filepath": "data/layouts/BikeRouteFarm/map.bin"
     },
@@ -6270,6 +6270,16 @@
       "secondary_tileset": "gTileset_Troy",
       "border_filepath": "data/layouts/TroySE/border.bin",
       "blockdata_filepath": "data/layouts/TroySE/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_MAGNA_TERMINAL_URBIA",
+      "name": "ViaMagnaTerminal_Urbia_Layout",
+      "width": 18,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/ViaMagnaTerminal_Urbia/border.bin",
+      "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Urbia/map.bin"
     }
   ]
 }
