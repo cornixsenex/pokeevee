@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 37,
+      "x": 36,
       "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 34,
+      "x": 33,
       "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
@@ -79,7 +79,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 45,
+      "x": 44,
       "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -92,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
-      "x": 45,
+      "x": 44,
       "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -375,16 +375,7 @@
     },
     {
       "type": "trigger",
-      "x": 33,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 34,
+      "x": 32,
       "y": 11,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -394,6 +385,15 @@
     {
       "type": "trigger",
       "x": 33,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
       "y": 15,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -402,7 +402,7 @@
     },
     {
       "type": "trigger",
-      "x": 34,
+      "x": 33,
       "y": 13,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -411,7 +411,7 @@
     },
     {
       "type": "trigger",
-      "x": 35,
+      "x": 34,
       "y": 11,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -420,7 +420,7 @@
     },
     {
       "type": "trigger",
-      "x": 34,
+      "x": 33,
       "y": 12,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -429,7 +429,7 @@
     },
     {
       "type": "trigger",
-      "x": 35,
+      "x": 34,
       "y": 15,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -438,7 +438,7 @@
     },
     {
       "type": "trigger",
-      "x": 34,
+      "x": 33,
       "y": 14,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -447,7 +447,7 @@
     },
     {
       "type": "trigger",
-      "x": 34,
+      "x": 33,
       "y": 15,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -456,7 +456,7 @@
     },
     {
       "type": "trigger",
-      "x": 37,
+      "x": 36,
       "y": 11,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -465,7 +465,7 @@
     },
     {
       "type": "trigger",
-      "x": 37,
+      "x": 36,
       "y": 12,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -474,7 +474,7 @@
     },
     {
       "type": "trigger",
-      "x": 37,
+      "x": 36,
       "y": 13,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -483,7 +483,7 @@
     },
     {
       "type": "trigger",
-      "x": 39,
+      "x": 38,
       "y": 11,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -492,7 +492,25 @@
     },
     {
       "type": "trigger",
-      "x": 39,
+      "x": 38,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
       "y": 12,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -502,6 +520,69 @@
     {
       "type": "trigger",
       "x": 41,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
       "y": 11,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -510,7 +591,7 @@
     },
     {
       "type": "trigger",
-      "x": 41,
+      "x": 42,
       "y": 12,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -520,33 +601,6 @@
     {
       "type": "trigger",
       "x": 42,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 39,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 37,
-      "y": 14,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 38,
       "y": 15,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -555,7 +609,7 @@
     },
     {
       "type": "trigger",
-      "x": 39,
+      "x": 42,
       "y": 14,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -564,80 +618,8 @@
     },
     {
       "type": "trigger",
-      "x": 41,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 41,
-      "y": 14,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 43,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 43,
+      "x": 44,
       "y": 12,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 43,
-      "y": 15,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 43,
-      "y": 14,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 45,
-      "y": 12,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 47,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 47,
-      "y": 15,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
       "var_value": "1",
@@ -646,33 +628,6 @@
     {
       "type": "trigger",
       "x": 46,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 47,
-      "y": 14,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 47,
-      "y": 12,
-      "elevation": 0,
-      "var": "VAR_ROUTE4_STATE",
-      "var_value": "1",
-      "script": "Robustus_EventScript_ResetCounter"
-    },
-    {
-      "type": "trigger",
-      "x": 45,
       "y": 11,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -681,7 +636,7 @@
     },
     {
       "type": "trigger",
-      "x": 45,
+      "x": 46,
       "y": 15,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
@@ -691,6 +646,51 @@
     {
       "type": "trigger",
       "x": 45,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_ROUTE4_STATE",
+      "var_value": "1",
+      "script": "Robustus_EventScript_ResetCounter"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
       "y": 14,
       "elevation": 0,
       "var": "VAR_ROUTE4_STATE",
