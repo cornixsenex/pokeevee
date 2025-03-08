@@ -44,8 +44,8 @@
   ],
   "warp_events": [
     {
-      "x": 38,
-      "y": 22,
+      "x": 14,
+      "y": 28,
       "elevation": 0,
       "dest_map": "MAP_HOSPITAL1F",
       "dest_warp_id": "0"

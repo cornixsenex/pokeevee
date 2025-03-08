@@ -49,6 +49,13 @@
       "elevation": 0,
       "dest_map": "MAP_VIA_MAGNA_TERMINAL_URBIA",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 130,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_VIA_MAGNA_TERMINAL_URBIA",
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

@@ -6275,11 +6275,21 @@
       "id": "LAYOUT_VIA_MAGNA_TERMINAL_URBIA",
       "name": "ViaMagnaTerminal_Urbia_Layout",
       "width": 18,
-      "height": 20,
+      "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ViaMagnaTerminal_Urbia/border.bin",
       "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Urbia/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_MAGNA_TERMINAL_SABINA_NOVA",
+      "name": "ViaMagnaTerminal_SabinaNova_Layout",
+      "width": 18,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/ViaMagnaTerminal_SabinaNova/border.bin",
+      "blockdata_filepath": "data/layouts/ViaMagnaTerminal_SabinaNova/map.bin"
     }
   ]
 }

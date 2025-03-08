@@ -1,1 +1,39 @@
 mapscripts ViaMagnaTerminal_Urbia_MapScripts {}
+
+
+
+script ViaMagnaTerminal_Urbia_Script_BikeCheck {
+	lockall
+	specialvar (VAR_RESULT, GetPlayerAvatarBike)
+	if (var(VAR_RESULT) == 0) {
+		call (ViaMagnaTerminal_Urbia_Script_NoBike)
+	} else {
+		setflag (FLAG_SYS_CYCLING_ROAD)
+		setvar (VAR_TEMP_0, 1)
+	}
+	end
+}
+
+script ViaMagnaTerminal_Urbia_Script_BikeClear {
+	lockall
+	clearflag (FLAG_SYS_CYCLING_ROAD)
+	setvar (VAR_TEMP_0, 0)
+	releaseall
+	end
+}
+
+script ViaMagnaTerminal_Urbia_Script_NoBike {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (ViaMagnaTerminal_Text_NoBike)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown2)
+	waitmovement (0)
+	releaseall
+	end
+}
+
+text ViaMagnaTerminal_Text_NoBike {
+	format("Stop right there! Via Magna is only for bicycles. Pedestrians aren't allowed.")
+}
