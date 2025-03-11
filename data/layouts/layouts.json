@@ -6290,6 +6290,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ViaMagnaTerminal_SabinaNova/border.bin",
       "blockdata_filepath": "data/layouts/ViaMagnaTerminal_SabinaNova/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_MAGNA_TERMINAL_ROBUSTICA",
+      "name": "ViaMagnaTerminal_Robustica_Layout",
+      "width": 30,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/ViaMagnaTerminal_Robustica/border.bin",
+      "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Robustica/map.bin"
     }
   ]
 }
