@@ -6177,7 +6177,7 @@
       "width": 36,
       "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_sanjo",
       "border_filepath": "data/layouts/SanjoRockFiller/border.bin",
       "blockdata_filepath": "data/layouts/SanjoRockFiller/map.bin"
     },
@@ -6300,6 +6300,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ViaMagnaTerminal_Robustica/border.bin",
       "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Robustica/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_MAGNA_TERMINAL_DESERET",
+      "name": "ViaMagnaTerminal_Deseret_Layout",
+      "width": 30,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/ViaMagnaTerminal_Deseret/border.bin",
+      "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Deseret/map.bin"
     }
   ]
 }

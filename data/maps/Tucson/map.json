@@ -280,18 +280,25 @@
   ],
   "warp_events": [
     {
-      "x": 13,
-      "y": 19,
+      "x": 114,
+      "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_TUCSON",
+      "dest_map": "MAP_VIA_MAGNA_TERMINAL_DESERET",
       "dest_warp_id": "1"
     },
     {
-      "x": 7,
-      "y": 19,
+      "x": 119,
+      "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_TUCSON",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_VIA_MAGNA_TERMINAL_DESERET",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 124,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_VIA_MAGNA_TERMINAL_DESERET",
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

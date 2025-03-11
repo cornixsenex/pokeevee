@@ -1612,3 +1612,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ViaMagnaTerminal_SabinaNova/scripts.inc"
 
 	.include "data/maps/ViaMagnaTerminal_Robustica/scripts.inc"
+
+	.include "data/maps/ViaMagnaTerminal_Deseret/scripts.inc"
