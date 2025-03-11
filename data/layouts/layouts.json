@@ -6310,6 +6310,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ViaMagnaTerminal_Deseret/border.bin",
       "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Deseret/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_MAGNA_TERMINAL_PECCADUM",
+      "name": "ViaMagnaTerminal_Peccadum_Layout",
+      "width": 30,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/ViaMagnaTerminal_Peccadum/border.bin",
+      "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Peccadum/map.bin"
     }
   ]
 }

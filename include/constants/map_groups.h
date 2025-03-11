@@ -699,6 +699,7 @@
 #define MAP_VIA_MAGNA_TERMINAL_SABINA_NOVA (19 | (31 << 8))
 #define MAP_VIA_MAGNA_TERMINAL_ROBUSTICA   (20 | (31 << 8))
 #define MAP_VIA_MAGNA_TERMINAL_DESERET     (21 | (31 << 8))
+#define MAP_VIA_MAGNA_TERMINAL_PECCADUM    (22 | (31 << 8))
 
 // gMapGroup_Myth
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (32 << 8))

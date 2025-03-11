@@ -731,7 +731,8 @@
     "ViaMagnaTerminal_Urbia",
     "ViaMagnaTerminal_SabinaNova",
     "ViaMagnaTerminal_Robustica",
-    "ViaMagnaTerminal_Deseret"
+    "ViaMagnaTerminal_Deseret",
+    "ViaMagnaTerminal_Peccadum"
   ],
   "gMapGroup_Myth": [
     "Route113_GlassWorkshop",

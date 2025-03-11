@@ -162,6 +162,27 @@
       "elevation": 0,
       "dest_map": "MAP_VEGAS_POWER_PLANT",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_VIA_MAGNA_TERMINAL_PECCADUM",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 25,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_VIA_MAGNA_TERMINAL_PECCADUM",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 30,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_VIA_MAGNA_TERMINAL_PECCADUM",
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

@@ -1,0 +1,27 @@
+mapscripts ViaMagnaTerminal_Peccadum_MapScripts {}
+
+
+script ViaMagnaTerminal_Peccadum_Script_BikeCheck {
+	lockall
+	specialvar (VAR_RESULT, GetPlayerAvatarBike)
+	if (var(VAR_RESULT) == 0) {
+		call (ViaMagnaTerminal_Peccadum_Script_NoBike)
+	} else {
+		setflag (FLAG_SYS_CYCLING_ROAD)
+		setvar (VAR_TEMP_0, 1)
+	}
+	end
+}
+
+script ViaMagnaTerminal_Peccadum_Script_NoBike {
+	lockall
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (ViaMagnaTerminal_Text_NoBike)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight2)
+	waitmovement (0)
+	releaseall
+	end
+}
+
