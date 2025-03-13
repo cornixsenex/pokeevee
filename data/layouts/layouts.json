@@ -5065,7 +5065,7 @@
       "id": "LAYOUT_CAMP_LODGE",
       "name": "CampLodge_Layout",
       "width": 20,
-      "height": 10,
+      "height": 6,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/CampLodge/border.bin",
