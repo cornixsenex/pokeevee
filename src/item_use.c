@@ -62,6 +62,7 @@ static void Task_OpenRegisteredPokeblockCase(u8);
 static void Task_AccessPokemonBoxLink(u8);
 static void ItemUseOnFieldCB_Bike(u8);
 static void ItemUseOnFieldCB_Rod(u8);
+static void ItemUseOnFieldCB_Flashlight(u8);
 static void ItemUseOnFieldCB_Itemfinder(u8);
 static void ItemUseOnFieldCB_Berry(u8);
 static void ItemUseOnFieldCB_WailmerPailBerry(u8);
@@ -329,6 +330,41 @@ void ItemUseOutOfBattle_Rod(u8 taskId)
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
     }
 }
+
+static bool32 CanFlashlight(void)
+{
+    u16 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    u16 mapNum = gSaveBlock1Ptr->location.mapNum;
+
+    //Should have every map it's possible to use on here (also could check like the maps flash set level or whatever idk)
+    if (mapGroup == MAP_GROUP(ROCK_TUNNEL) && mapNum == MAP_NUM(ROCK_TUNNEL) )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void ItemUseOutOfBattle_Flashlight(u8 taskId)
+{
+    if (CanFlashlight() == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_Flashlight;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
+}
+
+static void ItemUseOnFieldCB_Flashlight(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_UseFlash);
+    DestroyTask(taskId);
+}
+    
 
 static void ItemUseOnFieldCB_Rod(u8 taskId)
 {
