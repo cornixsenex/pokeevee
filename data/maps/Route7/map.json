@@ -299,24 +299,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 21,
-      "y": 64,
-      "elevation": 0,
-      "var": "VAR_ROUTE6_STATE",
-      "var_value": "1",
-      "script": "Route7_EventScript_RoadBlockA"
-    },
-    {
-      "type": "trigger",
-      "x": 22,
-      "y": 64,
-      "elevation": 0,
-      "var": "VAR_ROUTE6_STATE",
-      "var_value": "1",
-      "script": "Route7_EventScript_RoadBlockB"
-    },
-    {
-      "type": "trigger",
       "x": 3,
       "y": 36,
       "elevation": 0,

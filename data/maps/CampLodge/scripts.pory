@@ -1,199 +1,53 @@
 mapscripts CampLodge_MapScripts {
 
-	MAP_SCRIPT_ON_TRANSITION {
-		call (CampLodge_OnTransition)
-	}
-
 }
-
-
-script CampLodge_OnTransition {
-	if (var(VAR_CAMPLODGE) == 1 || (var(VAR_CAMPLODGE) == 3) ) {
-		setobjectxyperm (3, 9, 2)
-		setobjectmovementtype (3, MOVEMENT_TYPE_FACE_LEFT)
-	}
-	if (var(VAR_CAMPLODGE) == 2 || (var(VAR_CAMPLODGE) == 3) ) {
-		setobjectxyperm (4, 10, 2)
-		setobjectmovementtype (4, MOVEMENT_TYPE_FACE_RIGHT)
-	}
-	end
-}
-
 
 script CampLodge_EventScript_Eurykleia {
 	faceplayer
-	if (!defeated(TRAINER_EURYKLEIA) ) {
-		msgbox (CampLodge_Text_EurykleiaIntro)
-		closemessage
-		trainerbattle_no_intro(TRAINER_EURYKLEIA, CampLodge_Text_EurykleiaLost)
-		msgbox (CampLodge_Text_EurykleiaPost)
-		closemessage
-		applymovement (3, CampLodge_Movement_EurykleiaRetreat)
-		waitmovement (0)
-		setobjectxyperm (3, 9, 2)
-		setobjectmovementtype (3, MOVEMENT_TYPE_FACE_LEFT)
-		if (var(VAR_CAMPLODGE) == 0) {
-			setvar(VAR_CAMPLODGE, 1)
-		} elif (var(VAR_CAMPLODGE) == 2) {
-			setvar(VAR_CAMPLODGE, 3)
-		} else {
-			msgbox (CampLodge_Text_Error)
-			closemessage
-		}
-	} else {
-		msgbox (CampLodge_Text_Eurykleia)
-		closemessage
-	}
+	msgbox (CampLodge_Text_Eurykleia)
+	closemessage
 	end
 }
 
 script CampLodge_EventScript_Eumaeus {
 	faceplayer
-	if (!defeated(TRAINER_EUMAEUS) ) {
-		msgbox (CampLodge_Text_EumaeusIntro)
-		closemessage
-		trainerbattle_no_intro(TRAINER_EUMAEUS, CampLodge_Text_EumaeusLost)
-		msgbox (CampLodge_Text_EumaeusPost)
-		closemessage
-		applymovement (4, CampLodge_Movement_EumaeusRetreat)
-		waitmovement (0)
-		setobjectxyperm (4, 10, 2)
-		setobjectmovementtype (4, MOVEMENT_TYPE_FACE_RIGHT)
-		if (var(VAR_CAMPLODGE) == 0) {
-			setvar(VAR_CAMPLODGE, 2)
-		} elif (var(VAR_CAMPLODGE) == 1) {
-			setvar(VAR_CAMPLODGE, 3)
-		} else {
-			msgbox (CampLodge_Text_Error)
-			closemessage
-		}
-	} else {
-		msgbox (CampLodge_Text_Eumaeus)
-		closemessage
-	}
+	msgbox (CampLodge_Text_Eumaeus)
+	closemessage
 	end
 }
 
-script CampLodge_EventScript_Antikleia {
-	faceplayer 
-	if (!defeated(TRAINER_ANTIKLEIA) ) {
-		msgbox (CampLodge_Text_AntikleiaIntro)
-		closemessage
-		trainerbattle_no_intro(TRAINER_ANTIKLEIA, CampLodge_Text_AntikleiaLost)
-		setflag (FLAG_BADGE03_GET)
-		msgbox (CampLodge_Text_AntikleiaPost)
-		closemessage
+script CampLodge_Script_CampLeader {
+	faceplayer
+	checkitem (ITEM_FLASHLIGHT, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox (CampLodge_Text_CampLeader3)
 	} else {
-		msgbox (CampLodge_Text_Antikleia)
+		msgbox (CampLodge_Text_CampLeader1)
 		closemessage
+		giveitem (ITEM_FLASHLIGHT)
+		msgbox (CampLodge_Text_CampLeader2)
 	}
+	closemessage
 	end
-}
-
-script CampLodge_EventScript_Laertes {
-	faceplayer 
-	if (!defeated(TRAINER_LAERTES) ) {
-		msgbox (CampLodge_Text_LaertesIntro)
-		closemessage
-		trainerbattle_no_intro(TRAINER_LAERTES, CampLodge_Text_LaertesLost)
-		msgbox (CampLodge_Text_LaertesPost)
-		closemessage
-		giveitem (ITEM_BIG_HAMMER)
-		msgbox (CampLodge_Text_ExplainBigHammer)
-		closemessage
-	} else {
-		msgbox (CampLodge_Text_Laertes)
-		closemessage
-	}
-	end
-}
-
-
-movement CampLodge_Movement_EurykleiaRetreat {
-	walk_up * 4
-	walk_right * 6
-	face_left
-}
-
-movement CampLodge_Movement_EumaeusRetreat {
-	walk_up * 4
-	walk_left * 6
-	face_right 
-}
-
-
-text CampLodge_Text_EurykleiaIntro {
-	format("I'm the troop leader of these lady scouts. Teaching the wisdom passed down from grandma. To learn from her, first you must battle me!")
-}	
-
-text CampLodge_Text_EurykleiaLost {
-	format("You impress me.")
-}
-
-text CampLodge_Text_EurykleiaPost {
-	format("Our elder is waiting.")
 }
 
 text CampLodge_Text_Eurykleia {
-	format("I only wait here to watch you battle.")
-}
-
-text CampLodge_Text_EumaeusIntro {
-	format("I'm the leader in here! I've learned the most and I posses the strength to beat you now!")
+	format("I'm the troop leader of these lady scouts. Teaching the wisdom passed down from grandma. To learn from her, first you must battle me!")
 }	
 
-text CampLodge_Text_EumaeusLost {
-	format("I've been one upped.")
-}
-
-text CampLodge_Text_EumaeusPost {
-	format("Our elder is waiting.")
-}
-
 text CampLodge_Text_Eumaeus {
-	format("I only wait here to watch you battle.")
+	format("I'm the leader of this young troop of boys. They obey me, and I eat first at lunch.")
+}	
+
+text CampLodge_Text_CampLeader1 {
+	format("I don't know what you did to bring them back, or why they smell like that, but I don't care! As my way of thanking you I'm making you an honorary camp graduate. Here is a badge of merit, and take this.")
 }
 
-text CampLodge_Text_AntikleiaIntro {
-	format("For twenty years I've watched over this house as our headmistress, now answer me straight. What gives you any right to come to me?")
+text CampLodge_Text_CampLeader2 {
+	format("Since most of our graduates go to work in the mines, or Via Posterior, it's customary we give them flashlights. Feel free to come back to camp anytime!")
 }
 
-text CampLodge_Text_AntikleiaLost {
-	format("Your skill surpasses mine even with age")
+text CampLodge_Text_CampLeader3 {
+	format("Does coming back to camp feel nostalgic?")
 }
 
-text CampLodge_Text_AntikleiaPost {
-	format("Accept this hug and my message of love. Women may not beat men in strength at arms but armies fight and die before our breasts. To tame the world indeed you need their strength but theirs is nothing without our support.")
-}
-
-text CampLodge_Text_Antikleia {
-	format("You have the wisdom, and the strength at heart to smash every stone that blocks your path but without the technique taught by our men you'll find that will alone cannot break through.")
-}
-
-text CampLodge_Text_LaertesIntro {
-	format("While in my youth I shattered many rocks and now in my old age I teach the boys to break them just as I was taught myself. Now let's find out if you have what it takes to be my disciple. Prepare yourself!")
-}
-
-text CampLodge_Text_LaertesLost {
-	format("If I were in my youth I would have won")
-}
-
-text CampLodge_Text_LaertesPost {
-	format("You've shown you are ready to learn from me.")
-}
-
-text CampLodge_Text_ExplainRockSmash {
-	format("This Hidden Move contains the move Rock Smash. You can use it to break rocks in your path. Be sure to use the move responsibly and know without the girls you can't succeed.")
-}
-
-text CampLodge_Text_ExplainBigHammer {
-	format("This Big Hammer will help you in the field. You can use it to break rocks in your path.")
-}
-
-text CampLodge_Text_Laertes {
-	format("Without the knowledge and love of women you'll find that smashing rocks becomes quite dull.")
-}
-
-text CampLodge_Text_Error {
-	format("Big TIME error - Please Report to CornixSenex")
-}

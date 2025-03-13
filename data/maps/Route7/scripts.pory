@@ -73,7 +73,6 @@ script Route7_EventScript_RoadBlockA {
 	closedoor (15,56)
 	waitdooranim
 	setflag (FLAG_ROUTE7_HIDEOLDWOMAN)
-	setvar (VAR_ROUTE6_STATE, 2)
 	release
 	end
 }
@@ -91,7 +90,6 @@ script Route7_EventScript_RoadBlockB {
 	waitdooranim
 	removeobject (13)
 	setflag (FLAG_ROUTE7_HIDEOLDWOMAN)
-	setvar (VAR_ROUTE6_STATE, 2)
 	release
 	end
 }

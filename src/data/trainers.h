@@ -1215,53 +1215,55 @@
         .party = TRAINER_PARTY(sParty_Patrick),
     },
 
-    [DIFFICULTY_NORMAL][TRAINER_EURYKLEIA] =
-    {
-        .trainerClass = TRAINER_CLASS_PICNICKER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_PICNICKER2,
-        .trainerName = _("EURYKLEIA"),
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Eurykleia),
-    },
+	//ALL UNUSED so removed
 
-    [DIFFICULTY_NORMAL][TRAINER_ANTIKLEIA] =
-    {
-        .trainerClass = TRAINER_CLASS_EXPERT,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_EXPERT_F,
-        .trainerName = _("ANTIKLEIA"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Antikleia),
-    },
+  //  [DIFFICULTY_NORMAL][TRAINER_EURYKLEIA] =
+  //  {
+  //      .trainerClass = TRAINER_CLASS_PICNICKER,
+  //      .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
+  //      .trainerPic = TRAINER_PIC_PICNICKER2,
+  //      .trainerName = _("EURYKLEIA"),
+  //      .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+  //      .doubleBattle = FALSE,
+  //      .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+  //      .party = TRAINER_PARTY(sParty_Eurykleia),
+  //  },
 
-    [DIFFICULTY_NORMAL][TRAINER_EUMAEUS] =
-    {
-        .trainerClass = TRAINER_CLASS_CAMPER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CAMPER2,
-        .trainerName = _("EUMAEUS"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Eumaeus),
-    },
+  //  [DIFFICULTY_NORMAL][TRAINER_ANTIKLEIA] =
+  //  {
+  //      .trainerClass = TRAINER_CLASS_EXPERT,
+  //      .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
+  //      .trainerPic = TRAINER_PIC_EXPERT_F,
+  //      .trainerName = _("ANTIKLEIA"),
+  //      .items = {},
+  //      .doubleBattle = FALSE,
+  //      .aiFlags = AI_FLAG_BASIC_TRAINER,
+  //      .party = TRAINER_PARTY(sParty_Antikleia),
+  //  },
 
-    [DIFFICULTY_NORMAL][TRAINER_LAERTES] =
-    {
-        .trainerClass = TRAINER_CLASS_EXPERT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_EXPERT_M,
-        .trainerName = _("LAERTES"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Laertes),
-    },
+  //  [DIFFICULTY_NORMAL][TRAINER_EUMAEUS] =
+  //  {
+  //      .trainerClass = TRAINER_CLASS_CAMPER,
+  //      .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+  //      .trainerPic = TRAINER_PIC_CAMPER2,
+  //      .trainerName = _("EUMAEUS"),
+  //      .items = {},
+  //      .doubleBattle = FALSE,
+  //      .aiFlags = AI_FLAG_BASIC_TRAINER,
+  //      .party = TRAINER_PARTY(sParty_Eumaeus),
+  //  },
+
+  //  [DIFFICULTY_NORMAL][TRAINER_LAERTES] =
+  //  {
+  //      .trainerClass = TRAINER_CLASS_EXPERT,
+  //      .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+  //      .trainerPic = TRAINER_PIC_EXPERT_M,
+  //      .trainerName = _("LAERTES"),
+  //      .items = {},
+  //      .doubleBattle = FALSE,
+  //      .aiFlags = AI_FLAG_BASIC_TRAINER,
+  //      .party = TRAINER_PARTY(sParty_Laertes),
+  //  },
 
     [DIFFICULTY_NORMAL][TRAINER_RIVAL3] =
     {

@@ -107,10 +107,10 @@
 #define TRAINER_SEAN                        101
 #define TRAINER_MERRY                       102
 #define TRAINER_PATRICK                     103
-#define TRAINER_EURYKLEIA                   104
-#define TRAINER_ANTIKLEIA                   105
-#define TRAINER_EUMAEUS                     106
-#define TRAINER_LAERTES                     107
+#define TRAINER_UNUSED_104                  104 //UNUSED
+#define TRAINER_UNUSED_105                  105 //UNUSED
+#define TRAINER_UNUSED_106                  106 //UNUSED
+#define TRAINER_UNUSED_107                  107 //UNUSED
 #define TRAINER_RIVAL3	                    108
 #define TRAINER_TASHA                       109
 #define TRAINER_GIO1                        110

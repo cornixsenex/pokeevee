@@ -1017,11 +1017,12 @@
 #define ITEM_TRAINER_CARD 851
 #define ITEM_SCYTHE 852
 #define ITEM_MEWRA_SIGIL 853
+#define ITEM_FLASHLIGHT 854
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 854
+#define ITEMS_COUNT 855
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

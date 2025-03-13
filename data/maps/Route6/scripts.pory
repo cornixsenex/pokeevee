@@ -74,7 +74,6 @@ script Route6_EventScript_SavannaSign {
 
 script Route6_EventScript_JesseAndJames {
 	lock
-	setvar (VAR_ROUTE6_STATE, 1)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement(0)
 	applymovement (17, Common_Movement_FaceLeft)

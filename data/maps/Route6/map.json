@@ -282,42 +282,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 44,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_ROUTE6_STATE",
-      "var_value": "0",
-      "script": "Route6_EventScript_JesseAndJames"
-    },
-    {
-      "type": "trigger",
-      "x": 44,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_ROUTE6_STATE",
-      "var_value": "0",
-      "script": "Route6_EventScript_JesseAndJames"
-    },
-    {
-      "type": "trigger",
-      "x": 74,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_ROUTE6_STATE",
-      "var_value": "1",
-      "script": "Route6_EventScript_SafariManTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 75,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_ROUTE6_STATE",
-      "var_value": "2",
-      "script": "Route6_EventScript_SafariManTrigger"
-    },
-    {
-      "type": "trigger",
       "x": 43,
       "y": 7,
       "elevation": 0,

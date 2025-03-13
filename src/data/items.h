@@ -14568,6 +14568,23 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_ChoiceDumpling,
 	},
 
+	[ITEM_FLASHLIGHT] =
+	{
+		.name = _(""),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A durable plastic\n"
+            "flashlight with a\n"
+            "bright LED light."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, //Need to change
+        .secondaryId = 0,
+        .iconPic = gItemIcon_TMCase,
+        .iconPalette = gItemIconPalette_TMCase,
+	},
+
 
 
 

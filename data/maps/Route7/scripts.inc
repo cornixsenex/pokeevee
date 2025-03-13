@@ -120,118 +120,114 @@ Route7_EventScript_RoadBlockA::
 # 75 "data/maps/Route7/scripts.pory"
 	setflag FLAG_ROUTE7_HIDEOLDWOMAN
 # 76 "data/maps/Route7/scripts.pory"
-	setvar VAR_ROUTE6_STATE, 2
-# 77 "data/maps/Route7/scripts.pory"
 	release
 	end
 
 
 Route7_EventScript_RoadBlockB::
-# 82 "data/maps/Route7/scripts.pory"
+# 81 "data/maps/Route7/scripts.pory"
 	lock
-# 83 "data/maps/Route7/scripts.pory"
+# 82 "data/maps/Route7/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 84 "data/maps/Route7/scripts.pory"
+# 83 "data/maps/Route7/scripts.pory"
 	applymovement 13, Route7_Movement_RoadBlockB
+# 84 "data/maps/Route7/scripts.pory"
+	waitmovement 0
 # 85 "data/maps/Route7/scripts.pory"
-	waitmovement 0
-# 86 "data/maps/Route7/scripts.pory"
 	msgbox Route7_Text_RoadBlock
-# 87 "data/maps/Route7/scripts.pory"
+# 86 "data/maps/Route7/scripts.pory"
 	closemessage
-# 88 "data/maps/Route7/scripts.pory"
+# 87 "data/maps/Route7/scripts.pory"
 	applymovement 13, Route7_Movement_RoadBlockB2
-# 89 "data/maps/Route7/scripts.pory"
+# 88 "data/maps/Route7/scripts.pory"
 	waitmovement 0
-# 90 "data/maps/Route7/scripts.pory"
+# 89 "data/maps/Route7/scripts.pory"
 	opendoor 15, 56
-# 91 "data/maps/Route7/scripts.pory"
+# 90 "data/maps/Route7/scripts.pory"
 	waitdooranim
-# 92 "data/maps/Route7/scripts.pory"
+# 91 "data/maps/Route7/scripts.pory"
 	removeobject 13
-# 93 "data/maps/Route7/scripts.pory"
+# 92 "data/maps/Route7/scripts.pory"
 	setflag FLAG_ROUTE7_HIDEOLDWOMAN
-# 94 "data/maps/Route7/scripts.pory"
-	setvar VAR_ROUTE6_STATE, 2
-# 95 "data/maps/Route7/scripts.pory"
+# 93 "data/maps/Route7/scripts.pory"
 	release
 	end
 
 
-# 102 "data/maps/Route7/scripts.pory"
+# 100 "data/maps/Route7/scripts.pory"
 Route7_Movement_RoadBlockA:
-# 103 "data/maps/Route7/scripts.pory"
+# 101 "data/maps/Route7/scripts.pory"
 	walk_right
-# 103 "data/maps/Route7/scripts.pory"
+# 101 "data/maps/Route7/scripts.pory"
 	walk_right
-# 103 "data/maps/Route7/scripts.pory"
+# 101 "data/maps/Route7/scripts.pory"
 	walk_right
-# 103 "data/maps/Route7/scripts.pory"
+# 101 "data/maps/Route7/scripts.pory"
 	walk_right
-# 103 "data/maps/Route7/scripts.pory"
+# 101 "data/maps/Route7/scripts.pory"
 	walk_right
-# 104 "data/maps/Route7/scripts.pory"
+# 102 "data/maps/Route7/scripts.pory"
 	face_up
 	step_end
 
-# 107 "data/maps/Route7/scripts.pory"
+# 105 "data/maps/Route7/scripts.pory"
 Route7_Movement_RoadBlockB:
-# 108 "data/maps/Route7/scripts.pory"
+# 106 "data/maps/Route7/scripts.pory"
 	walk_right
-# 108 "data/maps/Route7/scripts.pory"
+# 106 "data/maps/Route7/scripts.pory"
 	walk_right
-# 108 "data/maps/Route7/scripts.pory"
+# 106 "data/maps/Route7/scripts.pory"
 	walk_right
-# 108 "data/maps/Route7/scripts.pory"
+# 106 "data/maps/Route7/scripts.pory"
 	walk_right
-# 108 "data/maps/Route7/scripts.pory"
+# 106 "data/maps/Route7/scripts.pory"
 	walk_right
-# 108 "data/maps/Route7/scripts.pory"
+# 106 "data/maps/Route7/scripts.pory"
 	walk_right
-# 109 "data/maps/Route7/scripts.pory"
+# 107 "data/maps/Route7/scripts.pory"
 	face_up
 	step_end
 
-# 112 "data/maps/Route7/scripts.pory"
+# 110 "data/maps/Route7/scripts.pory"
 Route7_Movement_RoadBlockA2:
-# 113 "data/maps/Route7/scripts.pory"
+# 111 "data/maps/Route7/scripts.pory"
 	walk_left
-# 113 "data/maps/Route7/scripts.pory"
+# 111 "data/maps/Route7/scripts.pory"
 	walk_left
-# 113 "data/maps/Route7/scripts.pory"
+# 111 "data/maps/Route7/scripts.pory"
 	walk_left
-# 113 "data/maps/Route7/scripts.pory"
+# 111 "data/maps/Route7/scripts.pory"
 	walk_left
-# 113 "data/maps/Route7/scripts.pory"
+# 111 "data/maps/Route7/scripts.pory"
 	walk_left
-# 113 "data/maps/Route7/scripts.pory"
+# 111 "data/maps/Route7/scripts.pory"
 	walk_left
-# 114 "data/maps/Route7/scripts.pory"
+# 112 "data/maps/Route7/scripts.pory"
 	face_up
 	step_end
 
-# 117 "data/maps/Route7/scripts.pory"
+# 115 "data/maps/Route7/scripts.pory"
 Route7_Movement_RoadBlockB2:
-# 118 "data/maps/Route7/scripts.pory"
+# 116 "data/maps/Route7/scripts.pory"
 	walk_left
-# 118 "data/maps/Route7/scripts.pory"
+# 116 "data/maps/Route7/scripts.pory"
 	walk_left
-# 118 "data/maps/Route7/scripts.pory"
+# 116 "data/maps/Route7/scripts.pory"
 	walk_left
-# 118 "data/maps/Route7/scripts.pory"
+# 116 "data/maps/Route7/scripts.pory"
 	walk_left
-# 118 "data/maps/Route7/scripts.pory"
+# 116 "data/maps/Route7/scripts.pory"
 	walk_left
-# 118 "data/maps/Route7/scripts.pory"
+# 116 "data/maps/Route7/scripts.pory"
 	walk_left
-# 118 "data/maps/Route7/scripts.pory"
+# 116 "data/maps/Route7/scripts.pory"
 	walk_left
-# 119 "data/maps/Route7/scripts.pory"
+# 117 "data/maps/Route7/scripts.pory"
 	face_up
 	step_end
 
 Route7_Text_RoadBlock::
-# 127 "data/maps/Route7/scripts.pory"
+# 125 "data/maps/Route7/scripts.pory"
 	.string "You poor little young thing! You look\n"
 	.string "tired, come rest a while in grandma's\l"
 	.string "cabin. We have a bed made specially for\l"
