@@ -14570,7 +14570,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_FLASHLIGHT] =
 	{
-		.name = _(""),
+		.name = _("FLASHLIGHT"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A durable plastic\n"
