@@ -361,6 +361,7 @@ void ItemUseOutOfBattle_Flashlight(u8 taskId)
 static void ItemUseOnFieldCB_Flashlight(u8 taskId)
 {
     LockPlayerFieldControls();
+	PlaySE(SE_M_REFLECT);
     ScriptContext_SetupScript(EventScript_UseFlash);
     DestroyTask(taskId);
 }
