@@ -5985,7 +5985,7 @@
       "id": "LAYOUT_HIPPODROME_W",
       "name": "HippodromeW_Layout",
       "width": 6,
-      "height": 16,
+      "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/HippodromeW/border.bin",
@@ -6320,6 +6320,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ViaMagnaTerminal_Peccadum/border.bin",
       "blockdata_filepath": "data/layouts/ViaMagnaTerminal_Peccadum/map.bin"
+    },
+    {
+      "id": "LAYOUT_FARM_S",
+      "name": "FarmS_Layout",
+      "width": 80,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/FarmS/border.bin",
+      "blockdata_filepath": "data/layouts/FarmS/map.bin"
     }
   ]
 }

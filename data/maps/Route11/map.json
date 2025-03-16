@@ -32,6 +32,16 @@
       "map": "MAP_GATO_CITY",
       "offset": -34,
       "direction": "right"
+    },
+    {
+      "map": "MAP_HIPPODROME_W",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_FARM_S",
+      "offset": -6,
+      "direction": "left"
     }
   ],
   "object_events": [
