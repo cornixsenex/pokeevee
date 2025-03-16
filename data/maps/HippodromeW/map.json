@@ -12,33 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_HIPPODROME",
-      "offset": -20,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_BIKE_ROUTE_FARM",
-      "offset": -158,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_FARM",
-      "offset": 0,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_ROUTE11",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
-      "map": "MAP_FARM_S",
-      "offset": 40,
-      "direction": "left"
-    }
-  ],
+  "connections": 0,
   "object_events": [
 
   ],

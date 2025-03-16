@@ -5934,7 +5934,7 @@
     {
       "id": "LAYOUT_FARM",
       "name": "Farm_Layout",
-      "width": 122,
+      "width": 128,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_LavaridgeGym",

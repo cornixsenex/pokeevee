@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_HIPPODROME_W",
-      "offset": 0,
-      "direction": "right"
-    },
-    {
       "map": "MAP_BIKE_ROUTE_FARM",
       "offset": -36,
       "direction": "up"
@@ -42,6 +37,11 @@
       "map": "MAP_FARM_S",
       "offset": 42,
       "direction": "down"
+    },
+    {
+      "map": "MAP_HIPPODROME",
+      "offset": -20,
+      "direction": "right"
     }
   ],
   "object_events": [

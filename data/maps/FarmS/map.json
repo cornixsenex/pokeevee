@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_HIPPODROME_W",
-      "offset": -40,
-      "direction": "right"
-    },
-    {
       "map": "MAP_ROUTE11",
       "offset": 6,
       "direction": "right"

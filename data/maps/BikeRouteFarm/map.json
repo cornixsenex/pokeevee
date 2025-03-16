@@ -34,11 +34,6 @@
       "direction": "right"
     },
     {
-      "map": "MAP_HIPPODROME_W",
-      "offset": 158,
-      "direction": "down"
-    },
-    {
       "map": "MAP_SANJO",
       "offset": 6,
       "direction": "left"

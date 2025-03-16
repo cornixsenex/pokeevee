@@ -19,11 +19,6 @@
       "direction": "left"
     },
     {
-      "map": "MAP_HIPPODROME_W",
-      "offset": 20,
-      "direction": "left"
-    },
-    {
       "map": "MAP_TROY",
       "offset": 15,
       "direction": "up"
@@ -47,6 +42,11 @@
       "map": "MAP_ROUTE11",
       "offset": -6,
       "direction": "down"
+    },
+    {
+      "map": "MAP_FARM",
+      "offset": 20,
+      "direction": "left"
     }
   ],
   "object_events": [
