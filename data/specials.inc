@@ -613,3 +613,4 @@ gSpecials::
 	def_special GetDynamicMapSec_Route7
 	def_special TransitionMapMusic
     def_special DoPeccadumTruckScene
+	def_special IsRoute16VenatorMons

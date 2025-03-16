@@ -1,1 +1,34 @@
-mapscripts Route16_MapScripts {}
+
+//DYNAMIC MAP VAR_TEMP_5
+//0 OOB
+//1 Venator Mons
+//2 Cacnorum
+
+
+mapscripts Route16_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		
+		//Handle Dynamic Map
+		specialvar (VAR_RESULT, IsRoute16VenatorMons)
+		if (var(VAR_RESULT) == TRUE) {
+			setvar (VAR_TEMP_5, 1)
+		} else  {
+			setvar (VAR_TEMP_5, 2)
+		}
+	}
+
+}
+
+script Route16_Script_VenatorMonsTransition {
+	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script Route16_Script_CacnorumTransition {
+	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
