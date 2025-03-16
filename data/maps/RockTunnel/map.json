@@ -36,6 +36,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 155,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "RockTunnel_Script_TestRock"
+    }
   ]
 }

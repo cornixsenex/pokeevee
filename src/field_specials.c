@@ -5828,3 +5828,10 @@ void DoShinyMareepBattle(void)
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
 }
+
+//Beginner stuff fix it later - just do a standard warp setup the truck sequence do the shaking then open the door and release let it warp to Urbia and then have them take the truck away in another fade screen (that should all be handled ON_FRAME_TABLE)
+void DoPeccadumTruckScene(void)
+{
+    SetMainCallback2(CB2_PeccadumTruckScene);
+}
+

@@ -2,6 +2,9 @@ mapscripts RockTunnel_MapScripts {
 
 }
 
+script RockTunnel_Script_TestRock {
+    special (DoPeccadumTruckScene)
+}
 
 script RockTunnel_EventScript_RivalTrigger1 {
 	lockall	

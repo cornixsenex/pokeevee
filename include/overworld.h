@@ -164,6 +164,9 @@ u32 DetermineDynamicMapsecValue (void);
 u16 GetDynamicMusic(void);
 void TransitionMapMusic(void);
 
+//Cornix Custom Truck Scene
+void CB2_PeccadumTruckScene(void);
+
 // Item Description Headers
 enum ItemObtainFlags
 {

@@ -1762,6 +1762,22 @@ void CB2_NewGame(void)
     SetMainCallback2(CB2_Overworld);
 }
 
+void CB2_PeccadumTruckScene(void)
+{
+    //Warp To Truck
+    SetWarpDestination(MAP_GROUP(INSIDE_OF_TRUCK), MAP_NUM(INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    WarpIntoMap();
+    //Copied from CB2_NewGame - Just setup the truck thing
+    ScriptContext_Init();
+    gFieldCallback = ExecuteTruckSequence;
+    gFieldCallback2 = NULL;
+    DoMapLoadLoop(&gMain.state);
+    SetFieldVBlankCallback();
+    SetMainCallback1(CB1_Overworld);
+    SetMainCallback2(CB2_Overworld);
+}
+    
+
 void CB2_WhiteOut(void)
 {
     u8 state;
