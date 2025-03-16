@@ -5924,7 +5924,7 @@
     {
       "id": "LAYOUT_BIKE_ROUTE_FARM",
       "name": "BikeRouteFarm_Layout",
-      "width": 164,
+      "width": 158,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
@@ -5934,7 +5934,7 @@
     {
       "id": "LAYOUT_FARM",
       "name": "Farm_Layout",
-      "width": 128,
+      "width": 122,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_LavaridgeGym",
@@ -5944,7 +5944,7 @@
     {
       "id": "LAYOUT_HIPPODROME",
       "name": "Hippodrome_Layout",
-      "width": 34,
+      "width": 40,
       "height": 66,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CityNorth",

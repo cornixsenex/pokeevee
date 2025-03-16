@@ -20,12 +20,12 @@
     },
     {
       "map": "MAP_TROY",
-      "offset": 15,
+      "offset": 21,
       "direction": "up"
     },
     {
       "map": "MAP_BIKE_MAP_E",
-      "offset": -118,
+      "offset": -112,
       "direction": "up"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "map": "MAP_ROUTE11",
-      "offset": -6,
+      "offset": 0,
       "direction": "down"
     },
     {
