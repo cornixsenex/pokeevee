@@ -184,9 +184,9 @@
 #define MAPSEC_TRAINER_TOWER_2              0xB3
 #define MAPSEC_DOTTED_HOLE                  0xB4
 #define MAPSEC_LOST_CAVE                    0xB5
-#define MAPSEC_PATTERN_BUSH                 0xB6
-#define MAPSEC_ALTERING_CAVE_FRLG           0xB7
 //Below have been altered, above are vanilla BREAK break Break
+#define MAPSEC_VIA_POSTERIOR                0xB6
+#define MAPSEC_CACNORUM                     0xB7
 #define MAPSEC_VIA_SAXOSA                   0xB8
 #define MAPSEC_VIA_MAGNA                    0xB9
 #define MAPSEC_ROBUSTICA                    0xBA

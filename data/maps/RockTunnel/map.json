@@ -2,8 +2,8 @@
   "id": "MAP_ROCK_TUNNEL",
   "name": "RockTunnel",
   "layout": "LAYOUT_ROCK_TUNNEL",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_FIERY_PATH",
+  "music": "MUS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_VIA_POSTERIOR",
   "requires_flash": true,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -36,13 +36,6 @@
 
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 31,
-      "y": 155,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "RockTunnel_Script_TestRock"
-    }
+
   ]
 }

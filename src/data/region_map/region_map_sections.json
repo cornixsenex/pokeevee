@@ -1464,16 +1464,16 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_PATTERN_BUSH",
-      "name": "PATTERN BUSH",
+      "map_section": "MAPSEC_VIA_POSTERIOR",
+      "name": "VIA POSTERIOR",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ALTERING_CAVE_FRLG",
-      "name": "ALTERING CAVE",
+      "map_section": "MAPSEC_CACNORUM",
+      "name": "CACNORUM",
       "x": 0,
       "y": 0,
       "width": 1,

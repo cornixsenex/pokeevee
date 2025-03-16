@@ -3984,6 +3984,14 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		else 
 			return MAPSEC_MONTES_VIGILIAE;
 	}
+	//Route16 - Venator Mons or Cacnorum
+	if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16)) 
+	{
+		if (IsRoute16VenatorMons())
+			return MAPSEC_VENATOR_MONS;
+		else 
+			return MAPSEC_CACNORUM;
+	}
 
 	//Other Maps Go Here
     
@@ -4362,6 +4370,14 @@ u16 GetDynamicMusic(void)
 			return MUS_ROUTE119;
 		else 
 			return MUS_B_FRONTIER;
+	}
+	//Route16 - Venator Mons or Cacnorum 
+	if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16)) 
+	{
+		if (IsRoute16VenatorMons())
+			return MUS_ROUTE119;
+		else 
+			return MUS_DESERT;
 	}
 
 	//Default SHOULD NEVER BE REACHED

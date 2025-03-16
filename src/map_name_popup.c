@@ -266,10 +266,10 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_TRAINER_TOWER_2] =              MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_DOTTED_HOLE] =                  MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_LOST_CAVE] =                    MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_PATTERN_BUSH] =                 MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_ALTERING_CAVE_FRLG] =           MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
+	[MAPSEC_VIA_POSTERIOR] =                MAPPOPUP_THEME_STONE, 
+	[MAPSEC_CACNORUM] =                     MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_VIA_SAXOSA] =                   MAPPOPUP_THEME_STONE, 
 	[MAPSEC_VIA_MAGNA] =                    MAPPOPUP_THEME_STONE2, 
 	[MAPSEC_ROBUSTICA] =                    MAPPOPUP_THEME_MARBLE, 
@@ -1063,6 +1063,99 @@ static void LoadMapNamePopUpWindowBg(void)
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
+		}
+		//Route7
+		if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
+		{
+			n = GetDynamicMapSec_Route7();
+			switch (n) {
+				//Via Litoralis
+				case 1:
+					regionMapSectionId = MAPSEC_VIA_LITORALIS;
+					break;
+				//Mare Internum
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_INTERNUM;
+					break;
+				//Montes Vigiliae
+				case 3:
+					regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
+					break;
+				//Villla Vallis
+				case 4:
+					regionMapSectionId = MAPSEC_VILLA_VALLIS;
+					break;
+				//Sabina Nova
+				case 5:
+					regionMapSectionId = MAPSEC_SABINA_NOVA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//Route5
+		if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
+		{
+			n = GetDynamicMapSec_Route5();
+			switch (n) {
+				//Venator Mons
+				case 1:
+					regionMapSectionId = MAPSEC_VENATOR_MONS;
+					break;
+				//Via Litoralis
+				case 2:
+					regionMapSectionId = MAPSEC_VIA_LITORALIS;
+					break;
+				//Villa Venatorum
+				case 3:
+					regionMapSectionId = MAPSEC_VILLA_VENATORUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//Sanjo - Sabina Nova or Via Magna
+		if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO)) 
+		{
+			//Sabina Nova or Via Magna
+			if (IsSanjoSabinaNova())
+				regionMapSectionId = MAPSEC_SABINA_NOVA;
+			else 
+				regionMapSectionId = MAPSEC_VIA_MAGNA;
+		}
+		//DoakTown - Robustica or Via Magna
+		if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
+		{
+			//Robustica or Via Magna
+			if (IsDoakTownRobustica())
+				regionMapSectionId = MAPSEC_ROBUSTICA;
+			else 
+				regionMapSectionId = MAPSEC_VIA_MAGNA;
+		}
+		//SRoute19 - Mare Internum or Montes Vigiliae
+		if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
+		{
+			//Mare Internum or Montes Vigiliae
+			if (IsSRoute19MareInternum())
+				regionMapSectionId = MAPSEC_MARE_INTERNUM;
+			else 
+				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
+		}
+		//Route9 - Via Saxosa or Montes Vigiliae
+		if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9)) 
+		{
+			if (IsRoute9ViaSaxosa())
+				regionMapSectionId = MAPSEC_VIA_SAXOSA;
+			else 
+				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
+		}
+		//Route16 - Venator Mons or Cacnorum 
+		if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16)) 
+		{
+			if (IsRoute16VenatorMons())
+				regionMapSectionId = MAPSEC_VENATOR_MONS;
+			else 
+				regionMapSectionId = MAPSEC_CACNORUM;
 		}
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}

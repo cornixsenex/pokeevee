@@ -1944,6 +1944,14 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_MONTES_VIGILIAE);
         }
+		//Route16 - Venator Mons or Cacnorum 
+		if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16))
+        {
+            if (IsRoute16VenatorMons())
+                return StringCopy(dest, sMapName_VENATOR_MONS);
+            else
+                return StringCopy(dest, sMapName_CACNORUM);
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -3698,4 +3706,53 @@ bool32 IsRoute9ViaSaxosa(void)
     else
         return TRUE;
 }
+
+bool32 IsRoute16VenatorMons(void)
+{
+   	
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	if 
+		(
+		( (y == 11) && (x > 28) ) ||
+		( (y == 12) && (x > 23) ) ||
+		( (y == 13) && (x > 13) ) ||
+		( (y == 14) && (x > 13) ) ||
+		( (y == 15) && (x > 13) ) ||
+		( (y == 16) && (x > 13) ) ||
+		( (y == 17) && (x > 13) ) ||
+		( (y == 18) && (x > 13) ) ||
+		( (y == 19) && (x > 13) ) ||
+		( (y == 20) && (x > 13) ) ||
+		( (y == 21) && (x > 13) ) ||
+		( (y == 22) && (x > 13) ) ||
+		( (y == 23) && (x > 14) ) ||
+		( (y == 24) && (x > 14) ) ||
+		( (y == 25) && (x > 14) ) ||
+		( (y == 26) && (x > 14) ) ||
+		( (y == 27) && (x > 14) ) ||
+		( (y == 28) && (x > 14) ) ||
+		( (y == 29) && (x > 14) ) ||
+		( (y == 30) && (x > 14) ) ||
+		( (y == 31) && (x > 14) ) ||
+		( (y == 32) && (x > 14) ) ||
+		( (y == 33) && (x > 14) ) ||
+		( (y == 34) && (x > 15) ) ||
+		( (y == 35) && ( (x > 15) && (x < 41) ) ) ||
+		( (y == 36) && ( (x > 15) && (x < 40) ) ) ||
+		( (y == 37) && ( (x > 15) && (x < 39) ) ) ||
+		( (y == 38) && ( (x > 15) && (x < 37) ) ) ||
+		( (y == 39) && ( (x > 16) && (x < 35) ) ) ||
+		( (y == 40) && ( (x > 16) && (x < 34) ) ) ||
+		( (y == 41) && ( (x > 16) && (x < 31) ) ) ||
+		( (y == 42) && ( (x > 17) && (x < 29) ) ) ||
+		( (y == 43) && ( (x > 18) && (x < 26) ) )
+		)
+		return FALSE;
+	else
+		return TRUE;
+}
+
 	
