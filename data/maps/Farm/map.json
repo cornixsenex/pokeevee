@@ -37,6 +37,11 @@
       "map": "MAP_SANJO_ROCK_FILLER",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_FARM_S",
+      "offset": 42,
+      "direction": "down"
     }
   ],
   "object_events": [

@@ -32,6 +32,11 @@
       "map": "MAP_MARE_C",
       "offset": -124,
       "direction": "down"
+    },
+    {
+      "map": "MAP_FARM_S",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [

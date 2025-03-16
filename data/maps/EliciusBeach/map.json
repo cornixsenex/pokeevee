@@ -42,6 +42,11 @@
       "map": "MAP_FARM",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_FARM_S",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
