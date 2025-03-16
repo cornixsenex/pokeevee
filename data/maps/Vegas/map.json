@@ -135,11 +135,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEWTWO_ARMOR",
-      "x": 19,
-      "y": 7,
+      "graphics_id": "OBJ_EVENT_GFX_TRUCK",
+      "x": 17,
+      "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 10,
       "movement_range_y": 10,
       "trainer_type": "TRAINER_TYPE_NONE",
