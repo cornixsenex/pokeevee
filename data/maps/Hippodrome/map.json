@@ -105,14 +105,14 @@
   ],
   "warp_events": [
     {
-      "x": 7,
+      "x": 13,
       "y": 0,
       "elevation": 0,
       "dest_map": "MAP_VIA_MAGNA_TERMINAL_URBIA",
       "dest_warp_id": "1"
     },
     {
-      "x": 12,
+      "x": 18,
       "y": 0,
       "elevation": 0,
       "dest_map": "MAP_VIA_MAGNA_TERMINAL_URBIA",
