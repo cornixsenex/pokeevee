@@ -109,7 +109,7 @@ Tranquillitas                                                     # MUS_RG_CELAD
 Isla Yerba Buena                                                  # MUS_FALLARBOR
 Isla Ignifera                                                     # FOTM
 Isla Tropica / Tropicana                                          # MUS_RG_FUCHSIA
-Isla Italia / Latium / Lavinia / Arcadiaa                         # MUS_SOOTOPOLIS
+Isla Italia / Latium / Lavinia / Arcadia / Hesperia               # MUS_SOOTOPOLIS
 Isla Ithaca                                                       # MUS_FORTREE
 Isla Pina                                                         # MUS_PETALBURG
 Salix                                                             # MUS_VERDANTURF #Double see SnowTown

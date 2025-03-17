@@ -1,0 +1,5 @@
+mapscripts Peccadum_TruckDepot_MapScripts {}
+
+script Peccadum_TruckDepot_Script_TestTruck {
+    special (DoPeccadumTruckScene)
+}

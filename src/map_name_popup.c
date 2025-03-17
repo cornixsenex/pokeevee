@@ -265,9 +265,9 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_ROCKET_WAREHOUSE] =             MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_TRAINER_TOWER_2] =              MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_DOTTED_HOLE] =                  MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_LOST_CAVE] =                    MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
+	[MAPSEC_PECCADUM] =                     MAPPOPUP_THEME_STONE, 
 	[MAPSEC_VIA_POSTERIOR] =                MAPPOPUP_THEME_STONE, 
 	[MAPSEC_CACNORUM] =                     MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_VIA_SAXOSA] =                   MAPPOPUP_THEME_STONE, 

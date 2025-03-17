@@ -2,8 +2,8 @@
   "id": "MAP_VEGAS",
   "name": "Vegas",
   "layout": "LAYOUT_VEGAS",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_MAUVILLE_CITY",
+  "music": "MUS_RG_GAME_CORNER",
+  "region_map_section": "MAPSEC_PECCADUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_TOWN",
@@ -183,6 +183,13 @@
       "elevation": 0,
       "dest_map": "MAP_VIA_MAGNA_TERMINAL_PECCADUM",
       "dest_warp_id": "5"
+    },
+    {
+      "x": 20,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_PECCADUM_TRUCK_DEPOT",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

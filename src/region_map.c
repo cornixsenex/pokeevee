@@ -1950,7 +1950,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             if (IsRoute16VenatorMons())
                 return StringCopy(dest, sMapName_VENATOR_MONS);
             else
-                return StringCopy(dest, sMapName_CACNORUM);
+                return StringCopy(dest, sMapName_CACNORVM);
         }
 
 		//Default Map - Should never be reached

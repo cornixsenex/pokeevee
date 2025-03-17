@@ -6330,6 +6330,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/FarmS/border.bin",
       "blockdata_filepath": "data/layouts/FarmS/map.bin"
+    },
+    {
+      "id": "LAYOUT_PECCADUM_TRUCK_DEPOT",
+      "name": "Peccadum_TruckDepot_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/Peccadum_TruckDepot/border.bin",
+      "blockdata_filepath": "data/layouts/Peccadum_TruckDepot/map.bin"
     }
   ]
 }

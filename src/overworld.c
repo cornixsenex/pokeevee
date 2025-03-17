@@ -994,7 +994,9 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Lake Ira - Suppress from Willow, 
 				(! (destMapNum == MAP_NUM(LAKE_IRA) && y < 28 ) ) &&
 				//Dest: Silvan Woods - Suppres from SilvanFiller
-				(! (destMapNum == MAP_NUM(SILVAN_WOODS) && x < 1 && y > 29 ) ) 
+				(! (destMapNum == MAP_NUM(SILVAN_WOODS) && x < 1 && y > 29 ) ) &&
+                //Dest: Route16 - Suppres from Vegas in desert
+                (! (destMapNum == MAP_NUM(ROUTE16) && y > 16) )
 
 				)
 					ShowMapNamePopup();
@@ -1010,7 +1012,11 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Willow - Suprres from Lake Ira
 				(! (destMapNum == MAP_NUM(WILLOW) && x < 0) ) &&
 				//Dest: Silvan Filler - Suppress from SilvanWoods
-				(! (destMapNum == MAP_NUM(BULBUS_SILVAN_FILLER) && x > 22 ) ) 
+				(! (destMapNum == MAP_NUM(BULBUS_SILVAN_FILLER) && x > 22 ) ) &&
+                //Dest: Vegas - Supress from Route16 in desert
+                (! (destMapNum == MAP_NUM(VEGAS) && y > 16 && x < 2) )
+
+
 				)
 					ShowMapNamePopup();
 		}

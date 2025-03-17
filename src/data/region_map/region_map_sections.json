@@ -1456,8 +1456,8 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_LOST_CAVE",
-      "name": "LOST CAVE",
+      "map_section": "MAPSEC_PECCADUM",
+      "name": "PECCADVM",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1473,7 +1473,7 @@
     },
     {
       "map_section": "MAPSEC_CACNORUM",
-      "name": "CACNORUM",
+      "name": "CACNORVM",
       "x": 0,
       "y": 0,
       "width": 1,
