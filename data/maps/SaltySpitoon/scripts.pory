@@ -727,7 +727,7 @@ text SaltySpitoon_Text_Deathsticks1 {
 }
 
 text SaltySpitoon_Text_Deathsticks2 {
-	format("I don't wanna sell you any deathsticks. I wanna go home and rea think my life...")
+	format("I don't wanna sell you any deathsticks. I wanna go home and rethink my life...")
 }
 
 text SaltySpitoon_Text_Bartender1 {
