@@ -1,19 +1,20 @@
+const OBJ_EVENT_DANCER = 1
+
 mapscripts Peccadum_HarenaeAureae_MapScripts {}
 
 
 
-script Peccadum_HarenaeAureae_Script_Stripper 
-{
+script Peccadum_HarenaeAureae_Script_Dancer {
     lock
     faceplayer
-    msgbox (Peccadum_HarenaAureae_Text_Stripper1)
-    showmoneybox (0, 0)
-    msgbox (Peccadum_HarenaAureae_Text_TipStripper, MSGBOX_YESNO)
+    msgbox (Peccadum_HarenaAureae_Text_Dancer1)
+    showmoneybox (17, 0)
+    msgbox (Peccadum_HarenaAureae_Text_TipDancer, MSGBOX_YESNO)
     if (var(VAR_RESULT) == TRUE) {
+		closemessage
         multichoice (0, 0, MULTI_SALTYSPITOON_GET_WAGER, TRUE)
         switch (var(VAR_RESULT)) {
             case 0:
-                //checkmoney (1, 0)
                 checkmoney (1)
                 if (var(VAR_RESULT) == TRUE) {
                     removemoney (1)
@@ -21,9 +22,13 @@ script Peccadum_HarenaeAureae_Script_Stripper
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
+					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					closemessage
+					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
+					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 1:
@@ -34,9 +39,13 @@ script Peccadum_HarenaeAureae_Script_Stripper
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
+					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					closemessage
+					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
+					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 2:
@@ -47,9 +56,13 @@ script Peccadum_HarenaeAureae_Script_Stripper
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
+					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					closemessage
+					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
+					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 3:
@@ -60,9 +73,13 @@ script Peccadum_HarenaeAureae_Script_Stripper
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
+					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					closemessage
+					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
+					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 4:
@@ -73,9 +90,13 @@ script Peccadum_HarenaeAureae_Script_Stripper
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
+					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					closemessage
+					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
+					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 5:
@@ -86,15 +107,38 @@ script Peccadum_HarenaeAureae_Script_Stripper
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
+					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					closemessage
+					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
+					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 6:
                 hidemoneybox
         }
-        return
+		closemessage
     }
+	release
+	end
+}
+
+text Peccadum_HarenaAureae_Text_Dancer1 {
+	format("Hey baby! How you doin?")
+}
+
+text Peccadum_HarenaAureae_Text_TipDancer {
+	format("Would you like to leave a tip?")
+}
+
+text Peccadum_HarenaAureae_Text_TipDancerNoMoney {
+	format("Guess I don't have enough! Better get going!")
+}
+
+text Peccadum_HarenaAureae_Text_TipDancer2 {
+	format("Thanks baby!")
+}
 
 
