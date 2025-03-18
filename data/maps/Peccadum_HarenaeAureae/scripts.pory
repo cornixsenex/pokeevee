@@ -1,15 +1,17 @@
 const OBJ_EVENT_DANCER = 1
+const OBJ_EVENT_CRASHOUT = 3
+const OBJ_EVENT_DEALER1 = 13
+const OBJ_EVENT_DEALER2 = 5
+const OBJ_EVENT_DEALER3 = 12
 
 mapscripts Peccadum_HarenaeAureae_MapScripts {}
-
-
 
 script Peccadum_HarenaeAureae_Script_Dancer {
     lock
     faceplayer
-    msgbox (Peccadum_HarenaAureae_Text_Dancer1)
+    msgbox (Peccadum_HarenaeAureae_Text_Dancer1)
     showmoneybox (17, 0)
-    msgbox (Peccadum_HarenaAureae_Text_TipDancer, MSGBOX_YESNO)
+    msgbox (Peccadum_HarenaeAureae_Text_TipDancer, MSGBOX_YESNO)
     if (var(VAR_RESULT) == TRUE) {
 		closemessage
         multichoice (0, 0, MULTI_SALTYSPITOON_GET_WAGER, TRUE)
@@ -22,13 +24,13 @@ script Peccadum_HarenaeAureae_Script_Dancer {
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
-					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					msgbox (Peccadum_HarenaeAureae_Text_TipDancer2)
 					closemessage
 					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
 					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
+                    msgbox (Peccadum_HarenaeAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 1:
@@ -39,13 +41,13 @@ script Peccadum_HarenaeAureae_Script_Dancer {
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
-					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					msgbox (Peccadum_HarenaeAureae_Text_TipDancer2)
 					closemessage
 					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
 					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
+                    msgbox (Peccadum_HarenaeAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 2:
@@ -56,13 +58,13 @@ script Peccadum_HarenaeAureae_Script_Dancer {
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
-					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					msgbox (Peccadum_HarenaeAureae_Text_TipDancer2)
 					closemessage
 					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
 					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
+                    msgbox (Peccadum_HarenaeAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 3:
@@ -73,13 +75,13 @@ script Peccadum_HarenaeAureae_Script_Dancer {
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
-					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					msgbox (Peccadum_HarenaeAureae_Text_TipDancer2)
 					closemessage
 					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
 					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
+                    msgbox (Peccadum_HarenaeAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 4:
@@ -90,13 +92,13 @@ script Peccadum_HarenaeAureae_Script_Dancer {
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
-					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					msgbox (Peccadum_HarenaeAureae_Text_TipDancer2)
 					closemessage
 					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
 					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
+                    msgbox (Peccadum_HarenaeAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 5:
@@ -107,38 +109,128 @@ script Peccadum_HarenaeAureae_Script_Dancer {
                     playse (SE_SHOP)
                     waitse
                     hidemoneybox
-					msgbox (Peccadum_HarenaAureae_Text_TipDancer2)
+					msgbox (Peccadum_HarenaeAureae_Text_TipDancer2)
 					closemessage
 					applymovement (OBJ_EVENT_DANCER, Colchis_Movement_MedeaDance_SpinInPlace)
 					waitmovement (0)
                 } else {
                     hidemoneybox
-                    msgbox (Peccadum_HarenaAureae_Text_TipDancerNoMoney)
+                    msgbox (Peccadum_HarenaeAureae_Text_TipDancerNoMoney)
                     closemessage
                 }
             case 6:
                 hidemoneybox
         }
-		closemessage
     }
+	else {
+		hidemoneybox
+		closemessage
+	}
 	release
 	end
 }
 
-text Peccadum_HarenaAureae_Text_Dancer1 {
+script Peccadum_HarenaeAureae_Script_CrashOutMan {
+	lock
+	faceplayer
+	checkitem (ITEM_COIN_CASE, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox (Peccadum_HarenaeAureae_Text_CrashOut1)
+		closemessage
+		giveitem (ITEM_COIN_CASE)
+	}
+	msgbox (Peccadum_HarenaeAureae_Text_CrashOut2)
+	applymovement (OBJ_EVENT_CRASHOUT, Common_Movement_FaceUp)
+	waitmovement (0)
+	closemessage
+	release
+	end
+}
+
+//Open table but you need to be in your seat
+script Peccadum_HarenaeAureae_Script_Dealer1 {
+	lock
+	faceplayer
+	msgbox (Peccadum_HarenaeAureae_Text_DealerOpen)
+	applymovement (OBJ_EVENT_DEALER1, Common_Movement_FaceRight)
+	waitmovement (0)
+	closemessage
+	release
+	end
+}
+
+script Peccadum_HarenaeAureae_Script_Dealer2 {
+	lock
+	faceplayer
+	msgbox (Peccadum_HarenaeAureae_Text_DealerOpen)
+	applymovement (OBJ_EVENT_DEALER2, Common_Movement_FaceLeft)
+	waitmovement (0)
+	closemessage
+	release
+	end
+}
+
+script Peccadum_HarenaeAureae_Script_Dealer3 {
+	lock
+	faceplayer
+	msgbox (Peccadum_HarenaeAureae_Text_DealerBusy)
+	applymovement (OBJ_EVENT_DEALER3, Common_Movement_FaceLeft)
+	waitmovement (0)
+	closemessage
+	release
+	end
+}
+
+script Peccadum_HarenaeAureae_Script_DealerHiLoKabuto {
+	lock
+	//welcome - explain game
+	//will you play yes no
+	//no: Come again
+	//yes: get wager
+	//good luck
+	//do game
+	//announce results
+	//if player win pay player
+	//play again yes no
+	//yes: repeat
+	//no: come again
+	
+	release
+	end
+
+}
+
+text Peccadum_HarenaeAureae_Text_Dancer1 {
 	format("Hey baby! How you doin?")
 }
 
-text Peccadum_HarenaAureae_Text_TipDancer {
+text Peccadum_HarenaeAureae_Text_TipDancer {
 	format("Would you like to leave a tip?")
 }
 
-text Peccadum_HarenaAureae_Text_TipDancerNoMoney {
+text Peccadum_HarenaeAureae_Text_TipDancerNoMoney {
 	format("Guess I don't have enough! Better get going!")
 }
 
-text Peccadum_HarenaAureae_Text_TipDancer2 {
+text Peccadum_HarenaeAureae_Text_TipDancer2 {
 	format("Thanks baby!")
 }
 
+//Crash out 1 - I lost it all Im never doing it again here take this
+text Peccadum_HarenaeAureae_Text_CrashOut1 {
+	format("I can't believe it! I lost everything! I will never gamble again. Take this!")
+}
+
+//2 - that little box cost me my family everything its your problem now
+text Peccadum_HarenaeAureae_Text_CrashOut2 {
+	format("That stupid little box ruined my life! I lost my job, my house, my family, and more gambling. It's your problem now!")
+}
+
+text Peccadum_HarenaeAureae_Text_DealerOpen {
+	format("Hello. I am the High Low Kabuto table dealer. If you would like to play please have a seat and enter your wager.")
+}
+
+text Peccadum_HarenaeAureae_Text_DealerBusy {
+	format("Please do not interrupt the current game.")
+}
 
