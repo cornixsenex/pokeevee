@@ -4,6 +4,23 @@ const OBJ_EVENT_DEALER1 = 13
 const OBJ_EVENT_DEALER2 = 5
 const OBJ_EVENT_DEALER3 = 12
 
+//HI LO KABUTO STUFF
+const DEALER_CARD = VAR_TEMP_D
+const PLAYER_CARD = VAR_TEMP_E
+const WAGER       = VAR_TEMP_F
+const CARD1       = FLAG_TEMP_1
+const CARD2       = FLAG_TEMP_2
+const CARD3       = FLAG_TEMP_3
+const CARD4       = FLAG_TEMP_4
+const CARD5       = FLAG_TEMP_5
+const CARD6       = FLAG_TEMP_6
+const CARD7       = FLAG_TEMP_7
+const CARD8       = FLAG_TEMP_8
+const CARD9       = FLAG_TEMP_9
+const CARD0       = FLAG_TEMP_A
+const KABUTOHI    = FLAG_TEMP_B
+
+
 mapscripts Peccadum_HarenaeAureae_MapScripts {}
 
 script Peccadum_HarenaeAureae_Script_Dancer {
@@ -151,7 +168,8 @@ script Peccadum_HarenaeAureae_Script_CrashOutMan {
 script Peccadum_HarenaeAureae_Script_Dealer1 {
 	lock
 	faceplayer
-	msgbox (Peccadum_HarenaeAureae_Text_DealerOpen)
+	msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Intro)
+	msgbox (Peccadum_HarenaeAureae_Text_DealerOpen_TakeSeat)
 	applymovement (OBJ_EVENT_DEALER1, Common_Movement_FaceRight)
 	waitmovement (0)
 	closemessage
@@ -162,6 +180,7 @@ script Peccadum_HarenaeAureae_Script_Dealer1 {
 script Peccadum_HarenaeAureae_Script_Dealer2 {
 	lock
 	faceplayer
+	msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Intro)
 	msgbox (Peccadum_HarenaeAureae_Text_DealerOpen)
 	applymovement (OBJ_EVENT_DEALER2, Common_Movement_FaceLeft)
 	waitmovement (0)
@@ -184,9 +203,25 @@ script Peccadum_HarenaeAureae_Script_Dealer3 {
 script Peccadum_HarenaeAureae_Script_DealerHiLoKabuto {
 	lock
 	//welcome - explain game
+	msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Intro)
 	//will you play yes no
+	msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Start, MSGBOX_YESNO)
 	//no: Come again
-	//yes: get wager
+	if (var(VAR_RESULT) == FALSE) {
+		call (DealerHiLoKabuto_Script_End)
+	//yes: Do Game
+	} else {
+		call (Peccadum_HarenaeAureae_Script_DealerHiLoKabuto_Game)
+	}
+	
+	release
+	end
+
+}
+
+script Peccadum_HarenaeAureae_Script_DealerHiLoKabuto_Game {
+	//get wager
+	call (DealerHiLoKabuto_Script_GetWager)
 	//good luck
 	//do game
 	//announce results
@@ -194,10 +229,129 @@ script Peccadum_HarenaeAureae_Script_DealerHiLoKabuto {
 	//play again yes no
 	//yes: repeat
 	//no: come again
-	
+}
+
+script DealerHiLoKabuto_Script_GetWager {
+	setvar (WAGER, 0)
+	showmoneybox (17, 0)
+	msgbox (SaltySpitoon_Text_HiLoKabuto_GetWager)
+	closemessage
+	multichoice (0, 0, MULTI_SALTYSPITOON_GET_WAGER, TRUE)
+	copyvar (WAGER, VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			checkmoney (1)
+			if (var(VAR_RESULT) == TRUE) {
+				removemoney (1)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				hidemoneybox
+				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+			} else {
+				hidemoneybox
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				call (DealerHiLoKabuto_Script_End)
+			}
+		case 1:
+			checkmoney (10)
+			if (var(VAR_RESULT) == TRUE) {
+				removemoney (10)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				hidemoneybox
+				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+			} else {
+				hidemoneybox
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				closemessage
+				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+			}
+		case 2:
+			checkmoney (100)
+			if (var(VAR_RESULT) == TRUE) {
+				removemoney (100)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				hidemoneybox
+				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+			} else {
+				hidemoneybox
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				closemessage
+				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+			}
+		case 3:
+			checkmoney (1000)
+			if (var(VAR_RESULT) == TRUE) {
+				removemoney (1000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				hidemoneybox
+				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+			} else {
+				hidemoneybox
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				closemessage
+				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+			}
+		case 4:
+			checkmoney (10000)
+			if (var(VAR_RESULT) == TRUE) {
+				removemoney (10000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				hidemoneybox
+				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+			} else {
+				hidemoneybox
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				closemessage
+				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+			}
+		case 5:
+			checkmoney (100000)
+			if (var(VAR_RESULT) == TRUE) {
+				removemoney (100000)
+				updatemoneybox
+				playse (SE_SHOP)
+				waitse
+				hidemoneybox
+				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+			} else {
+				hidemoneybox
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				closemessage
+				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+			}
+		case 6:
+			hidemoneybox
+			call (DealerHiLoKabuto_Script_End)
+	}
+}
+
+script DealerHiLoKabuto_Script_GameBrain {
+	//good luck
+	//reset game
+	//determine Hi or Lo Kabuto
+	//Announce Hi or Lo Kabuto
+	//draw and assign cards
+	//handle kabuto high or low
+	//announce results in order from low to high
+	//check did player win
+	//do playerwin or playerlost
+	//play again?
+}
+
+script DealerHiLoKabuto_Script_End {
+	msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Bye)
+	closemessage
 	release
 	end
-
 }
 
 text Peccadum_HarenaeAureae_Text_Dancer1 {
@@ -226,11 +380,24 @@ text Peccadum_HarenaeAureae_Text_CrashOut2 {
 	format("That stupid little box ruined my life! I lost my job, my house, my family, and more gambling. It's your problem now!")
 }
 
-text Peccadum_HarenaeAureae_Text_DealerOpen {
-	format("Hello. I am the High Low Kabuto table dealer. If you would like to play please have a seat and enter your wager.")
+text Peccadum_HarenaeAureae_Text_DealerOpen_TakeSeat {
+	format("If you would like to play please have a seat and enter your wager.")
 }
 
 text Peccadum_HarenaeAureae_Text_DealerBusy {
 	format("Please do not interrupt the current game.")
 }
+
+text Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Intro {
+	format("Hello. I am the High Low Kabuto table dealer.")
+}
+
+text Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Start {
+	format("Are you here to gamble?")
+}
+
+text Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Bye {
+	format("Have a nice day. Hope to see you again!")
+}
+
 
