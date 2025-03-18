@@ -733,7 +733,8 @@
     "ViaMagnaTerminal_Robustica",
     "ViaMagnaTerminal_Deseret",
     "ViaMagnaTerminal_Peccadum",
-    "Peccadum_TruckDepot"
+    "Peccadum_TruckDepot",
+    "Peccadum_HarenaeAureae"
   ],
   "gMapGroup_Myth": [
     "Route113_GlassWorkshop",

@@ -6340,6 +6340,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/Peccadum_TruckDepot/border.bin",
       "blockdata_filepath": "data/layouts/Peccadum_TruckDepot/map.bin"
+    },
+    {
+      "id": "LAYOUT_PECCADUM_HARENAE_AUREAE",
+      "name": "Peccadum_HarenaeAureae_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SaltySpitoon",
+      "border_filepath": "data/layouts/Peccadum_HarenaeAureae/border.bin",
+      "blockdata_filepath": "data/layouts/Peccadum_HarenaeAureae/map.bin"
     }
   ]
 }

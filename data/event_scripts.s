@@ -1620,3 +1620,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/FarmS/scripts.inc"
 
 	.include "data/maps/Peccadum_TruckDepot/scripts.inc"
+
+	.include "data/maps/Peccadum_HarenaeAureae/scripts.inc"
