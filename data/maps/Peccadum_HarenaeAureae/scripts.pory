@@ -1,1 +1,100 @@
 mapscripts Peccadum_HarenaeAureae_MapScripts {}
+
+
+
+script Peccadum_HarenaeAureae_Script_Stripper 
+{
+    lock
+    faceplayer
+    msgbox (Peccadum_HarenaAureae_Text_Stripper1)
+    showmoneybox (0, 0)
+    msgbox (Peccadum_HarenaAureae_Text_TipStripper, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == TRUE) {
+        multichoice (0, 0, MULTI_SALTYSPITOON_GET_WAGER, TRUE)
+        switch (var(VAR_RESULT)) {
+            case 0:
+                //checkmoney (1, 0)
+                checkmoney (1)
+                if (var(VAR_RESULT) == TRUE) {
+                    removemoney (1)
+                    updatemoneybox
+                    playse (SE_SHOP)
+                    waitse
+                    hidemoneybox
+                } else {
+                    hidemoneybox
+                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    closemessage
+                }
+            case 1:
+                checkmoney (10)
+                if (var(VAR_RESULT) == TRUE) {
+                    removemoney (10)
+                    updatemoneybox
+                    playse (SE_SHOP)
+                    waitse
+                    hidemoneybox
+                } else {
+                    hidemoneybox
+                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    closemessage
+                }
+            case 2:
+                checkmoney (100)
+                if (var(VAR_RESULT) == TRUE) {
+                    removemoney (100)
+                    updatemoneybox
+                    playse (SE_SHOP)
+                    waitse
+                    hidemoneybox
+                } else {
+                    hidemoneybox
+                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    closemessage
+                }
+            case 3:
+                checkmoney (1000)
+                if (var(VAR_RESULT) == TRUE) {
+                    removemoney (1000)
+                    updatemoneybox
+                    playse (SE_SHOP)
+                    waitse
+                    hidemoneybox
+                } else {
+                    hidemoneybox
+                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    closemessage
+                }
+            case 4:
+                checkmoney (10000)
+                if (var(VAR_RESULT) == TRUE) {
+                    removemoney (10000)
+                    updatemoneybox
+                    playse (SE_SHOP)
+                    waitse
+                    hidemoneybox
+                } else {
+                    hidemoneybox
+                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    closemessage
+                }
+            case 5:
+                checkmoney (100000)
+                if (var(VAR_RESULT) == TRUE) {
+                    removemoney (100000)
+                    updatemoneybox
+                    playse (SE_SHOP)
+                    waitse
+                    hidemoneybox
+                } else {
+                    hidemoneybox
+                    msgbox (Peccadum_HarenaAureae_Text_TipStripperNoMoney)
+                    closemessage
+                }
+            case 6:
+                hidemoneybox
+        }
+        return
+    }
+
+
