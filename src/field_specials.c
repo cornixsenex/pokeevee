@@ -4844,9 +4844,10 @@ void LobotomizePokemon(void)
 	SetMonData(mon, MON_DATA_SPDEF_IV, &levelone);
 }
 
+//Yes I tested this is returns INCLUSIVE (0 and 9 are possible)
 u16 RandDigit(void)
 {
-	int RandomValue;
+	u16 RandomValue;
     RandomValue = Random();
 	RandomValue %= 10;
 	return RandomValue;

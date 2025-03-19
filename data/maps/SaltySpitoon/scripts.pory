@@ -217,35 +217,35 @@ script SaltySpitoon_EventScript_HiLoKabuto_Brain {
 	//John - pick random number, dont need to check, set johns number and take out the card
 	specialvar (VAR_RESULT, RandDigit)
 	copyvar (JOHN_CARD, VAR_RESULT)
-	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
+	call (HiLoKabuto_Script_RemoveCard)
 
 	//Bobby - pick random number, check against john, set bobby number ,take out card	
 	do {
 		specialvar (VAR_RESULT, RandDigit)
 	} while (var(VAR_RESULT) == JOHN_CARD)
 	copyvar (BOBBY_CARD, VAR_RESULT)
-	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
+	call (HiLoKabuto_Script_RemoveCard)
 
 	//Bill - pick random number, check against john AND BOBBY, set bobby number ,take out card	
 	do {
 		specialvar (VAR_RESULT, RandDigit)
 	} while (var(VAR_RESULT) == JOHN_CARD || (var(VAR_RESULT) == BOBBY_CARD))
 	copyvar (BILL_CARD, VAR_RESULT)
-	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
+	call (HiLoKabuto_Script_RemoveCard)
 
 	//Reese - pick random number, check against john AND BOBBY AND BILL, set bobby number ,take out card	
 	do {
 		specialvar (VAR_RESULT, RandDigit)
 	} while (var(VAR_RESULT) == JOHN_CARD || (var(VAR_RESULT) == BOBBY_CARD) || (var(VAR_RESULT) == BILL_CARD))
 	copyvar (REESE_CARD, VAR_RESULT)
-	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
+	call (HiLoKabuto_Script_RemoveCard)
 
 	//Player - pick random number, check against john AND BOBBY AND BILL, set bobby number ,take out card	
 	do {
 		specialvar (VAR_RESULT, RandDigit)
 	} while (var(VAR_RESULT) == JOHN_CARD || (var(VAR_RESULT) == BOBBY_CARD) || (var(VAR_RESULT) == BILL_CARD) || (var(VAR_RESULT) == REESE_CARD))
 	copyvar (PLAYER_CARD, VAR_RESULT)
-	call (SaltySpitoon_EventScript_HiLoKabuto_TakeCard)
+	call (HiLoKabuto_Script_RemoveCard)
 
 	// Hanlde Kabuto high or low
 	if (var(JOHN_CARD) == 0 && flag(KABUTOHI)) {
@@ -557,32 +557,6 @@ script SaltySpitoon_EventScript_HiLoKabuto_Reset {
 	setvar (BILL_CARD, 0)
 	setvar (REESE_CARD, 0)
 	setvar (PLAYER_CARD, 0)
-	return
-}
-
-script SaltySpitoon_EventScript_HiLoKabuto_TakeCard {
-	switch (var(VAR_RESULT) ) {
-		case 0:
-			setflag (CARD0)
-		case 1:
-			setflag (CARD1)
-		case 2:
-			setflag (CARD2)
-		case 3:
-			setflag (CARD3)
-		case 4:
-			setflag (CARD4)
-		case 5:
-			setflag (CARD5)
-		case 6:
-			setflag (CARD6)
-		case 7:
-			setflag (CARD7)
-		case 8:
-			setflag (CARD8)
-		case 9:
-			setflag (CARD9)
-	}
 	return
 }
 

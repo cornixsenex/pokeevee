@@ -7,7 +7,7 @@ const OBJ_EVENT_DEALER3 = 12
 //HI LO KABUTO STUFF
 const DEALER_CARD = VAR_TEMP_D
 const PLAYER_CARD = VAR_TEMP_E
-const WAGER       = VAR_TEMP_F
+const WAGER       = VAR_TEMP_B
 const CARD1       = FLAG_TEMP_1
 const CARD2       = FLAG_TEMP_2
 const CARD3       = FLAG_TEMP_3
@@ -181,7 +181,7 @@ script Peccadum_HarenaeAureae_Script_Dealer2 {
 	lock
 	faceplayer
 	msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Intro)
-	msgbox (Peccadum_HarenaeAureae_Text_DealerOpen)
+	msgbox (Peccadum_HarenaeAureae_Text_DealerOpen_TakeSeat)
 	applymovement (OBJ_EVENT_DEALER2, Common_Movement_FaceLeft)
 	waitmovement (0)
 	closemessage
@@ -232,13 +232,14 @@ script Peccadum_HarenaeAureae_Script_DealerHiLoKabuto_Game {
 }
 
 script DealerHiLoKabuto_Script_GetWager {
+    //reset wager here not in reset game
 	setvar (WAGER, 0)
 	showmoneybox (17, 0)
 	msgbox (SaltySpitoon_Text_HiLoKabuto_GetWager)
 	closemessage
 	multichoice (0, 0, MULTI_SALTYSPITOON_GET_WAGER, TRUE)
 	copyvar (WAGER, VAR_RESULT)
-	switch (var(VAR_RESULT)) {
+	switch (var(WAGER)) {
 		case 0:
 			checkmoney (1)
 			if (var(VAR_RESULT) == TRUE) {
@@ -247,7 +248,7 @@ script DealerHiLoKabuto_Script_GetWager {
 				playse (SE_SHOP)
 				waitse
 				hidemoneybox
-				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+				call (DealerHiLoKabuto_Script_GameBrain)
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
@@ -261,12 +262,11 @@ script DealerHiLoKabuto_Script_GetWager {
 				playse (SE_SHOP)
 				waitse
 				hidemoneybox
-				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+				call (DealerHiLoKabuto_Script_GameBrain)
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-				closemessage
-				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+				call (DealerHiLoKabuto_Script_GetWager)
 			}
 		case 2:
 			checkmoney (100)
@@ -276,12 +276,11 @@ script DealerHiLoKabuto_Script_GetWager {
 				playse (SE_SHOP)
 				waitse
 				hidemoneybox
-				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+				call (DealerHiLoKabuto_Script_GameBrain)
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-				closemessage
-				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+				call (DealerHiLoKabuto_Script_GetWager)
 			}
 		case 3:
 			checkmoney (1000)
@@ -291,12 +290,11 @@ script DealerHiLoKabuto_Script_GetWager {
 				playse (SE_SHOP)
 				waitse
 				hidemoneybox
-				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+				call (DealerHiLoKabuto_Script_GameBrain)
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-				closemessage
-				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+				call (DealerHiLoKabuto_Script_GetWager)
 			}
 		case 4:
 			checkmoney (10000)
@@ -306,12 +304,11 @@ script DealerHiLoKabuto_Script_GetWager {
 				playse (SE_SHOP)
 				waitse
 				hidemoneybox
-				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+				call (DealerHiLoKabuto_Script_GameBrain)
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-				closemessage
-				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+				call (DealerHiLoKabuto_Script_GetWager)
 			}
 		case 5:
 			checkmoney (100000)
@@ -321,12 +318,11 @@ script DealerHiLoKabuto_Script_GetWager {
 				playse (SE_SHOP)
 				waitse
 				hidemoneybox
-				call (SaltySpitoon_EventScript_HiLoKabuto_Brain)
+				call (DealerHiLoKabuto_Script_GameBrain)
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-				closemessage
-				call (SaltySpitoon_EventScript_HiLoKabuto_GetWager)
+				call (DealerHiLoKabuto_Script_GetWager)
 			}
 		case 6:
 			hidemoneybox
@@ -335,16 +331,142 @@ script DealerHiLoKabuto_Script_GetWager {
 }
 
 script DealerHiLoKabuto_Script_GameBrain {
-	//good luck
 	//reset game
+    call (DealerHiLoKabuto_Script_ResetGame)
 	//determine Hi or Lo Kabuto
+	specialvar (VAR_RESULT, RandDigit)
+	if (var(VAR_RESULT) < 5) {
+		setflag (KABUTOHI)
+	}
 	//Announce Hi or Lo Kabuto
+	if (flag(KABUTOHI)) {
+		msgbox (DealerHiLoKabuto_Text_KabutoHi)
+	} else {
+		msgbox (DealerHiLoKabuto_Text_KabutoLo)
+	}
 	//draw and assign cards
+    //assign player card
+    specialvar (VAR_RESULT, RandDigit)
+    copyvar (PLAYER_CARD, VAR_RESULT)
+    //remove card from pool
+    call (HiLoKabuto_Script_RemoveCard)
+    //assign dealer card
+    do {
+        specialvar (VAR_RESULT, RandDigit)
+    } while (var(VAR_RESULT) == PLAYER_CARD)
+    copyvar (DEALER_CARD, VAR_RESULT)
+    //In non dealer games you would need to remove their card too but here it doesn't matter
 	//handle kabuto high or low
+    if (flag(KABUTOHI)) {
+        if (var(PLAYER_CARD) == 0) {
+            setvar (PLAYER_CARD, 10)
+        }
+        if (var(DEALER_CARD) == 0) {
+            setvar (DEALER_CARD, 10)
+        }
+    }
 	//announce results in order from low to high
-	//check did player win
+    buffernumberstring (STR_VAR_1, PLAYER_CARD)
+    buffernumberstring (STR_VAR_2, DEALER_CARD)
+	//compare cards et announce winner
+    if (var(PLAYER_CARD) == 10 || var(PLAYER_CARD) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerKabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerCard)
+    }
+    if (var(DEALER_CARD) == 10 || var(DEALER_CARD) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceDealerKabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceDealerCard)
+    }
 	//do playerwin or playerlost
+    if (var(PLAYER_CARD) > DEALER_CARD) {
+        call (DealerHiLoKabuto_Script_PlayerWin)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_DealerWin)
+    }
 	//play again?
+    call (DealerHiLoKabuto_Script_PlayAgain)
+}
+
+script DealerHiLoKabuto_Script_ResetGame {
+    //DO NOT RESET WAGER HERE! - Do it in GetWager
+    setvar (DEALER_CARD, 0)
+    setvar (PLAYER_CARD, 0)
+    clearflag (CARD1)
+    clearflag (CARD2)
+    clearflag (CARD3)
+    clearflag (CARD4)
+    clearflag (CARD5)
+    clearflag (CARD6)
+    clearflag (CARD7)
+    clearflag (CARD8)
+    clearflag (CARD9)
+    clearflag (CARD0)
+    clearflag (KABUTOHI)
+    return
+}
+
+script HiLoKabuto_Script_RemoveCard {
+	switch (var(VAR_RESULT) ) {
+		case 0:
+			setflag (CARD0)
+		case 1:
+			setflag (CARD1)
+		case 2:
+			setflag (CARD2)
+		case 3:
+			setflag (CARD3)
+		case 4:
+			setflag (CARD4)
+		case 5:
+			setflag (CARD5)
+		case 6:
+			setflag (CARD6)
+		case 7:
+			setflag (CARD7)
+		case 8:
+			setflag (CARD8)
+		case 9:
+			setflag (CARD9)
+	}
+	return
+}
+
+script DealerHiLoKabuto_Script_PlayerWin {
+    showmoneybox (17, 0)
+    msgbox (DealerHiLoKabuto_Text_PlayerWin)
+	switch (var(WAGER) ){
+		case 0:
+			addmoney (2)
+		case 1:
+			addmoney (20)
+		case 2:
+			addmoney (200)
+		case 3:
+			addmoney (2000)
+		case 4:
+			addmoney (20000)
+		case 5:
+			addmoney (200000)
+		default:
+			msgbox ("ERROR:\n Bottom of PlayerWin switch")
+			closemessage
+	}
+	updatemoneybox
+	playse (SE_SHOP)
+	waitse
+	hidemoneybox
+    return
+}
+
+script DealerHiLoKabuto_Script_PlayAgain {
+    msgbox (DealerHiLoKabuto_Text_PlayAgain, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == TRUE) {
+        call (DealerHiLoKabuto_Script_GetWager)
+    } else {
+		call (DealerHiLoKabuto_Script_End)
+    }
 }
 
 script DealerHiLoKabuto_Script_End {
@@ -400,4 +522,39 @@ text Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Bye {
 	format("Have a nice day. Hope to see you again!")
 }
 
+text DealerHiLoKabuto_Text_KabutoHi {
+    format("Kabuto will be a high card this game.")
+}
+
+text DealerHiLoKabuto_Text_KabutoLo {
+    format("Kabuto will be a low card this game.")
+}
+
+text DealerHiLoKabuto_Text_AnnouncePlayerCard {
+    format("{PLAYER} got {STR_VAR_1}!")
+}
+
+text DealerHiLoKabuto_Text_AnnouncePlayerKabuto {
+    format("{PLAYER} got Kabuto!")
+}
+
+text DealerHiLoKabuto_Text_AnnounceDealerCard {
+    format("Dealer got {STR_VAR_2}!")
+}
+
+text DealerHiLoKabuto_Text_AnnounceDealerKabuto {
+    format("Dealer got Kabuto!")
+}
+
+text DealerHiLoKabuto_Text_PlayerWin {
+    format("Congratulations! You win your wager!")
+}
+
+text DealerHiLoKabuto_Text_DealerWin {
+    format("So sorry but looks like you've lost this hand.")
+}
+
+text DealerHiLoKabuto_Text_PlayAgain {
+    format("Would you like me to deal you in again?")
+}
 
