@@ -921,679 +921,1267 @@ Peccadum_HarenaeAureae_Script_5HiLoKabuto_1:
 	return
 
 
-HiLoKabuto_Group5_Script_Brain::
+Peccadum_HarenaeAureae_Script_4HiLoKabuto::
+# 497 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	lock
 # 498 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
-	call HiLoKabuto_Group_Script_GetWager
-# 500 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
-	call HiLoKabuto_Group_Script_ResetGame
+	msgbox HiLoKabuto_Group_Text_Intro, MSGBOX_YESNO
+# 499 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Peccadum_HarenaeAureae_Script_4HiLoKabuto_1
 # 502 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group4_Script_Brain
+	return
+
+Peccadum_HarenaeAureae_Script_4HiLoKabuto_1:
+# 500 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_End
+	return
+
+
+Peccadum_HarenaeAureae_Script_3HiLoKabuto::
+# 507 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	lock
+# 508 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group_Text_Intro, MSGBOX_YESNO
+# 509 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Peccadum_HarenaeAureae_Script_3HiLoKabuto_1
+# 512 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group3_Script_Brain
+	return
+
+Peccadum_HarenaeAureae_Script_3HiLoKabuto_1:
+# 510 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_End
+	return
+
+
+HiLoKabuto_Group3_Script_Brain::
+# 518 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_GetWager
+# 520 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_ResetGame
+# 522 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Script_DetermineHiOrLoKabuto
-# 505 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 525 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	specialvar VAR_TEMP_9, RandDigit
+HiLoKabuto_Group3_Script_Brain_3:
+# 528 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	specialvar VAR_TEMP_8, RandDigit
+# 529 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, VAR_TEMP_9
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_3
+HiLoKabuto_Group3_Script_Brain_7:
+# 532 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	specialvar VAR_TEMP_E, RandDigit
+# 533 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_9
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_7
+# 533 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_8
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_7
+# 535 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	goto_if_set FLAG_TEMP_B, HiLoKabuto_Group3_Script_Brain_12
+HiLoKabuto_Group3_Script_Brain_11:
+# 548 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_TEMP_E
+# 549 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, 10
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_15
+# 549 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, 0
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_15
+# 552 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnouncePlayerCard
+HiLoKabuto_Group3_Script_Brain_14:
+# 555 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_TEMP_9
+# 556 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, 10
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_24
+# 556 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, 0
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_24
+# 559 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp1Card
+HiLoKabuto_Group3_Script_Brain_23:
+# 561 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	buffernumberstring STR_VAR_2, VAR_TEMP_8
+# 562 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, 10
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_33
+# 562 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, 0
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_33
+# 565 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp2Card
+HiLoKabuto_Group3_Script_Brain_32:
+# 568 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_9
+	goto_if_gt HiLoKabuto_Group3_Script_Brain_43
+HiLoKabuto_Group3_Script_Brain_42:
+# 572 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, VAR_TEMP_E
+	goto_if_gt HiLoKabuto_Group3_Script_Brain_52
+HiLoKabuto_Group3_Script_Brain_50:
+# 574 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, VAR_TEMP_E
+	goto_if_gt HiLoKabuto_Group3_Script_Brain_49
+HiLoKabuto_Group3_Script_Brain_48:
+# 577 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group3_Script_Brain_Text_0
+HiLoKabuto_Group3_Script_Brain_40:
+# 581 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group3_Script_PlayAgain
+	return
+
+HiLoKabuto_Group3_Script_Brain_12:
+# 536 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, 0
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_21
+HiLoKabuto_Group3_Script_Brain_20:
+# 539 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, 0
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_30
+HiLoKabuto_Group3_Script_Brain_29:
+# 542 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, 0
+	goto_if_eq HiLoKabuto_Group3_Script_Brain_38
+	goto HiLoKabuto_Group3_Script_Brain_11
+
+HiLoKabuto_Group3_Script_Brain_15:
+# 550 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnouncePlayerKabuto
+	goto HiLoKabuto_Group3_Script_Brain_14
+
+HiLoKabuto_Group3_Script_Brain_21:
+# 537 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	setvar VAR_TEMP_E, 10
+	goto HiLoKabuto_Group3_Script_Brain_20
+
+HiLoKabuto_Group3_Script_Brain_24:
+# 557 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp1Kabuto
+	goto HiLoKabuto_Group3_Script_Brain_23
+
+HiLoKabuto_Group3_Script_Brain_30:
+# 540 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	setvar VAR_TEMP_9, 10
+	goto HiLoKabuto_Group3_Script_Brain_29
+
+HiLoKabuto_Group3_Script_Brain_33:
+# 563 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp2Kabuto
+	goto HiLoKabuto_Group3_Script_Brain_32
+
+HiLoKabuto_Group3_Script_Brain_38:
+# 543 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	setvar VAR_TEMP_8, 10
+	goto HiLoKabuto_Group3_Script_Brain_11
+
+HiLoKabuto_Group3_Script_Brain_41:
+# 569 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group4_Script_PlayerWin
+	goto HiLoKabuto_Group3_Script_Brain_40
+
+HiLoKabuto_Group3_Script_Brain_43:
+# 568 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_8
+	goto_if_gt HiLoKabuto_Group3_Script_Brain_41
+	goto HiLoKabuto_Group3_Script_Brain_42
+
+HiLoKabuto_Group3_Script_Brain_46:
+# 573 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Text_Gambler1Won
+	goto HiLoKabuto_Group3_Script_Brain_40
+
+HiLoKabuto_Group3_Script_Brain_47:
+# 575 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Text_Gambler2Won
+	goto HiLoKabuto_Group3_Script_Brain_40
+
+HiLoKabuto_Group3_Script_Brain_49:
+# 574 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, VAR_TEMP_9
+	goto_if_gt HiLoKabuto_Group3_Script_Brain_47
+	goto HiLoKabuto_Group3_Script_Brain_48
+
+HiLoKabuto_Group3_Script_Brain_52:
+# 572 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, VAR_TEMP_8
+	goto_if_gt HiLoKabuto_Group3_Script_Brain_46
+	goto HiLoKabuto_Group3_Script_Brain_50
+
+
+HiLoKabuto_Group4_Script_Brain::
+# 587 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_GetWager
+# 589 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_ResetGame
+# 591 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Script_DetermineHiOrLoKabuto
+# 594 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	specialvar VAR_TEMP_9, RandDigit
+HiLoKabuto_Group4_Script_Brain_3:
+# 597 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	specialvar VAR_TEMP_8, RandDigit
+# 598 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, VAR_TEMP_9
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_3
+HiLoKabuto_Group4_Script_Brain_7:
+# 601 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	specialvar VAR_TEMP_7, RandDigit
+# 602 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, VAR_TEMP_9
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_7
+# 602 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, VAR_TEMP_8
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_7
+HiLoKabuto_Group4_Script_Brain_13:
+# 605 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	specialvar VAR_TEMP_E, RandDigit
+# 606 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_9
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_13
+# 606 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_8
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_13
+# 606 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_7
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_13
+# 608 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	goto_if_set FLAG_TEMP_B, HiLoKabuto_Group4_Script_Brain_20
+HiLoKabuto_Group4_Script_Brain_19:
+# 624 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_TEMP_E
+# 625 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, 10
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_23
+# 625 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_23
+# 628 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnouncePlayerCard
+HiLoKabuto_Group4_Script_Brain_22:
+# 631 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_TEMP_9
+# 632 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, 10
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_32
+# 632 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_32
+# 635 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp1Card
+HiLoKabuto_Group4_Script_Brain_31:
+# 637 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	buffernumberstring STR_VAR_2, VAR_TEMP_8
+# 638 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, 10
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_41
+# 638 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_41
+# 641 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp2Card
+HiLoKabuto_Group4_Script_Brain_40:
+# 643 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	buffernumberstring STR_VAR_3, VAR_TEMP_7
+# 644 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, 10
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_50
+# 644 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_50
+# 647 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp3Card
+HiLoKabuto_Group4_Script_Brain_49:
+# 650 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_9
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_61
+HiLoKabuto_Group4_Script_Brain_59:
+# 654 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, VAR_TEMP_E
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_80
+HiLoKabuto_Group4_Script_Brain_76:
+# 656 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, VAR_TEMP_E
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_75
+HiLoKabuto_Group4_Script_Brain_71:
+# 658 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, VAR_TEMP_E
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_70
+HiLoKabuto_Group4_Script_Brain_68:
+# 661 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group3_Script_Brain_Text_0
+HiLoKabuto_Group4_Script_Brain_57:
+# 665 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group4_Script_PlayAgain
+	return
+
+HiLoKabuto_Group4_Script_Brain_20:
+# 609 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_29
+HiLoKabuto_Group4_Script_Brain_28:
+# 612 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_38
+HiLoKabuto_Group4_Script_Brain_37:
+# 615 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_47
+HiLoKabuto_Group4_Script_Brain_46:
+# 618 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, 0
+	goto_if_eq HiLoKabuto_Group4_Script_Brain_55
+	goto HiLoKabuto_Group4_Script_Brain_19
+
+HiLoKabuto_Group4_Script_Brain_23:
+# 626 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnouncePlayerKabuto
+	goto HiLoKabuto_Group4_Script_Brain_22
+
+HiLoKabuto_Group4_Script_Brain_29:
+# 610 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	setvar VAR_TEMP_E, 10
+	goto HiLoKabuto_Group4_Script_Brain_28
+
+HiLoKabuto_Group4_Script_Brain_32:
+# 633 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp1Kabuto
+	goto HiLoKabuto_Group4_Script_Brain_31
+
+HiLoKabuto_Group4_Script_Brain_38:
+# 613 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	setvar VAR_TEMP_9, 10
+	goto HiLoKabuto_Group4_Script_Brain_37
+
+HiLoKabuto_Group4_Script_Brain_41:
+# 639 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp2Kabuto
+	goto HiLoKabuto_Group4_Script_Brain_40
+
+HiLoKabuto_Group4_Script_Brain_47:
+# 616 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	setvar VAR_TEMP_8, 10
+	goto HiLoKabuto_Group4_Script_Brain_46
+
+HiLoKabuto_Group4_Script_Brain_50:
+# 645 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Text_AnnounceOp3Kabuto
+	goto HiLoKabuto_Group4_Script_Brain_49
+
+HiLoKabuto_Group4_Script_Brain_55:
+# 619 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	setvar VAR_TEMP_7, 10
+	goto HiLoKabuto_Group4_Script_Brain_19
+
+HiLoKabuto_Group4_Script_Brain_58:
+# 651 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group4_Script_PlayerWin
+	goto HiLoKabuto_Group4_Script_Brain_57
+
+HiLoKabuto_Group4_Script_Brain_60:
+# 650 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_7
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_58
+	goto HiLoKabuto_Group4_Script_Brain_59
+
+HiLoKabuto_Group4_Script_Brain_61:
+# 650 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_E, VAR_TEMP_8
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_60
+	goto HiLoKabuto_Group4_Script_Brain_59
+
+HiLoKabuto_Group4_Script_Brain_65:
+# 655 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Text_Gambler1Won
+	goto HiLoKabuto_Group4_Script_Brain_57
+
+HiLoKabuto_Group4_Script_Brain_66:
+# 657 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Text_Gambler2Won
+	goto HiLoKabuto_Group4_Script_Brain_57
+
+HiLoKabuto_Group4_Script_Brain_67:
+# 659 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Text_Gambler3Won
+	goto HiLoKabuto_Group4_Script_Brain_57
+
+HiLoKabuto_Group4_Script_Brain_69:
+# 658 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, VAR_TEMP_8
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_67
+	goto HiLoKabuto_Group4_Script_Brain_68
+
+HiLoKabuto_Group4_Script_Brain_70:
+# 658 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_7, VAR_TEMP_9
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_69
+	goto HiLoKabuto_Group4_Script_Brain_68
+
+HiLoKabuto_Group4_Script_Brain_74:
+# 656 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, VAR_TEMP_7
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_66
+	goto HiLoKabuto_Group4_Script_Brain_71
+
+HiLoKabuto_Group4_Script_Brain_75:
+# 656 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_8, VAR_TEMP_9
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_74
+	goto HiLoKabuto_Group4_Script_Brain_71
+
+HiLoKabuto_Group4_Script_Brain_79:
+# 654 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, VAR_TEMP_7
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_65
+	goto HiLoKabuto_Group4_Script_Brain_76
+
+HiLoKabuto_Group4_Script_Brain_80:
+# 654 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_TEMP_9, VAR_TEMP_8
+	goto_if_gt HiLoKabuto_Group4_Script_Brain_79
+	goto HiLoKabuto_Group4_Script_Brain_76
+
+
+HiLoKabuto_Group5_Script_Brain::
+# 671 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_GetWager
+# 673 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_ResetGame
+# 675 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Script_DetermineHiOrLoKabuto
+# 678 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	specialvar VAR_TEMP_9, RandDigit
 HiLoKabuto_Group5_Script_Brain_3:
-# 508 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 681 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	specialvar VAR_TEMP_8, RandDigit
-# 509 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 682 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, VAR_TEMP_9
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_3
 HiLoKabuto_Group5_Script_Brain_7:
-# 512 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 685 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	specialvar VAR_TEMP_7, RandDigit
-# 513 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 686 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, VAR_TEMP_9
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_7
-# 513 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 686 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, VAR_TEMP_8
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_7
 HiLoKabuto_Group5_Script_Brain_13:
-# 516 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 689 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	specialvar VAR_TEMP_6, RandDigit
-# 517 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 690 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, VAR_TEMP_9
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_13
-# 517 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 690 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, VAR_TEMP_8
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_13
-# 517 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 690 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, VAR_TEMP_7
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_13
 HiLoKabuto_Group5_Script_Brain_21:
-# 520 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 693 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	specialvar VAR_TEMP_E, RandDigit
-# 521 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 694 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_9
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_21
-# 521 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 694 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_8
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_21
-# 521 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 694 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_7
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_21
-# 521 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 694 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_6
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_21
-# 523 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 696 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	goto_if_set FLAG_TEMP_B, HiLoKabuto_Group5_Script_Brain_30
 HiLoKabuto_Group5_Script_Brain_29:
-# 542 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 715 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	buffernumberstring STR_VAR_1, VAR_TEMP_E
-# 543 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 716 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, 10
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_33
-# 543 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 716 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_33
-# 546 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 719 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnouncePlayerCard
 HiLoKabuto_Group5_Script_Brain_32:
-# 549 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 722 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	buffernumberstring STR_VAR_1, VAR_TEMP_9
-# 550 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 723 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_9, 10
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_42
-# 550 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 723 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_9, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_42
-# 553 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 726 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp1Card
 HiLoKabuto_Group5_Script_Brain_41:
-# 555 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 728 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	buffernumberstring STR_VAR_2, VAR_TEMP_8
-# 556 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 729 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, 10
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_51
-# 556 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 729 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_51
-# 559 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 732 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp2Card
 HiLoKabuto_Group5_Script_Brain_50:
-# 561 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 734 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	buffernumberstring STR_VAR_3, VAR_TEMP_7
-# 562 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 735 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, 10
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_60
-# 562 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 735 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_60
-# 565 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 738 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp3Card
 HiLoKabuto_Group5_Script_Brain_59:
-# 568 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 741 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	buffernumberstring STR_VAR_1, VAR_TEMP_6
-# 569 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 742 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, 10
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_69
-# 569 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 742 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_69
-# 572 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 745 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp4Card
 HiLoKabuto_Group5_Script_Brain_68:
-# 575 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 748 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_9
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_80
 HiLoKabuto_Group5_Script_Brain_78:
-# 579 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 752 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_9, VAR_TEMP_E
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_113
 HiLoKabuto_Group5_Script_Brain_107:
-# 581 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 754 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, VAR_TEMP_E
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_106
 HiLoKabuto_Group5_Script_Brain_100:
-# 583 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 756 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, VAR_TEMP_E
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_99
 HiLoKabuto_Group5_Script_Brain_93:
-# 585 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 758 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, VAR_TEMP_E
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_92
 HiLoKabuto_Group5_Script_Brain_90:
-# 588 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
-	msgbox HiLoKabuto_Group5_Script_Brain_Text_0
+# 761 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group3_Script_Brain_Text_0
 HiLoKabuto_Group5_Script_Brain_76:
-# 592 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 765 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group5_Script_PlayAgain
 	return
 
 HiLoKabuto_Group5_Script_Brain_30:
-# 524 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 697 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_39
 HiLoKabuto_Group5_Script_Brain_38:
-# 527 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 700 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_9, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_48
 HiLoKabuto_Group5_Script_Brain_47:
-# 530 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 703 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_57
 HiLoKabuto_Group5_Script_Brain_56:
-# 533 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 706 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_66
 HiLoKabuto_Group5_Script_Brain_65:
-# 536 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 709 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, 0
 	goto_if_eq HiLoKabuto_Group5_Script_Brain_74
 	goto HiLoKabuto_Group5_Script_Brain_29
 
 HiLoKabuto_Group5_Script_Brain_33:
-# 544 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 717 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnouncePlayerKabuto
 	goto HiLoKabuto_Group5_Script_Brain_32
 
 HiLoKabuto_Group5_Script_Brain_39:
-# 525 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 698 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_E, 10
 	goto HiLoKabuto_Group5_Script_Brain_38
 
 HiLoKabuto_Group5_Script_Brain_42:
-# 551 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 724 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp1Kabuto
 	goto HiLoKabuto_Group5_Script_Brain_41
 
 HiLoKabuto_Group5_Script_Brain_48:
-# 528 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 701 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_9, 10
 	goto HiLoKabuto_Group5_Script_Brain_47
 
 HiLoKabuto_Group5_Script_Brain_51:
-# 557 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 730 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp2Kabuto
 	goto HiLoKabuto_Group5_Script_Brain_50
 
 HiLoKabuto_Group5_Script_Brain_57:
-# 531 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 704 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_8, 10
 	goto HiLoKabuto_Group5_Script_Brain_56
 
 HiLoKabuto_Group5_Script_Brain_60:
-# 563 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 736 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp3Kabuto
 	goto HiLoKabuto_Group5_Script_Brain_59
 
 HiLoKabuto_Group5_Script_Brain_66:
-# 534 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 707 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_7, 10
 	goto HiLoKabuto_Group5_Script_Brain_65
 
 HiLoKabuto_Group5_Script_Brain_69:
-# 570 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 743 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Text_AnnounceOp4Kabuto
 	goto HiLoKabuto_Group5_Script_Brain_68
 
 HiLoKabuto_Group5_Script_Brain_74:
-# 537 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 710 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_6, 10
 	goto HiLoKabuto_Group5_Script_Brain_29
 
 HiLoKabuto_Group5_Script_Brain_77:
-# 576 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 749 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group5_Script_PlayerWin
 	goto HiLoKabuto_Group5_Script_Brain_76
 
 HiLoKabuto_Group5_Script_Brain_79:
-# 575 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 748 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_7
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_83
 	goto HiLoKabuto_Group5_Script_Brain_78
 
 HiLoKabuto_Group5_Script_Brain_80:
-# 575 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 748 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_8
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_79
 	goto HiLoKabuto_Group5_Script_Brain_78
 
 HiLoKabuto_Group5_Script_Brain_83:
-# 575 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 748 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_E, VAR_TEMP_6
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_77
 	goto HiLoKabuto_Group5_Script_Brain_78
 
 HiLoKabuto_Group5_Script_Brain_86:
-# 580 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 753 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Text_Gambler1Won
 	goto HiLoKabuto_Group5_Script_Brain_76
 
 HiLoKabuto_Group5_Script_Brain_87:
-# 582 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 755 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Text_Gambler2Won
 	goto HiLoKabuto_Group5_Script_Brain_76
 
 HiLoKabuto_Group5_Script_Brain_88:
-# 584 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 757 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Text_Gambler3Won
 	goto HiLoKabuto_Group5_Script_Brain_76
 
 HiLoKabuto_Group5_Script_Brain_89:
-# 586 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 759 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Text_Gambler4Won
 	goto HiLoKabuto_Group5_Script_Brain_76
 
 HiLoKabuto_Group5_Script_Brain_91:
-# 585 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 758 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, VAR_TEMP_7
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_95
 	goto HiLoKabuto_Group5_Script_Brain_90
 
 HiLoKabuto_Group5_Script_Brain_92:
-# 585 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 758 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, VAR_TEMP_9
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_91
 	goto HiLoKabuto_Group5_Script_Brain_90
 
 HiLoKabuto_Group5_Script_Brain_95:
-# 585 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 758 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_6, VAR_TEMP_8
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_89
 	goto HiLoKabuto_Group5_Script_Brain_90
 
 HiLoKabuto_Group5_Script_Brain_98:
-# 583 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 756 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, VAR_TEMP_8
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_102
 	goto HiLoKabuto_Group5_Script_Brain_93
 
 HiLoKabuto_Group5_Script_Brain_99:
-# 583 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 756 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, VAR_TEMP_9
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_98
 	goto HiLoKabuto_Group5_Script_Brain_93
 
 HiLoKabuto_Group5_Script_Brain_102:
-# 583 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 756 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_7, VAR_TEMP_6
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_88
 	goto HiLoKabuto_Group5_Script_Brain_93
 
 HiLoKabuto_Group5_Script_Brain_105:
-# 581 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 754 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, VAR_TEMP_7
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_109
 	goto HiLoKabuto_Group5_Script_Brain_100
 
 HiLoKabuto_Group5_Script_Brain_106:
-# 581 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 754 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, VAR_TEMP_9
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_105
 	goto HiLoKabuto_Group5_Script_Brain_100
 
 HiLoKabuto_Group5_Script_Brain_109:
-# 581 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 754 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_8, VAR_TEMP_6
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_87
 	goto HiLoKabuto_Group5_Script_Brain_100
 
 HiLoKabuto_Group5_Script_Brain_112:
-# 579 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 752 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_9, VAR_TEMP_7
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_116
 	goto HiLoKabuto_Group5_Script_Brain_107
 
 HiLoKabuto_Group5_Script_Brain_113:
-# 579 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 752 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_9, VAR_TEMP_8
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_112
 	goto HiLoKabuto_Group5_Script_Brain_107
 
 HiLoKabuto_Group5_Script_Brain_116:
-# 579 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 752 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_TEMP_9, VAR_TEMP_6
 	goto_if_gt HiLoKabuto_Group5_Script_Brain_86
 	goto HiLoKabuto_Group5_Script_Brain_107
 
 
 HiLoKabuto_Group_Script_GetWager::
-# 596 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 769 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_B, 0
-# 597 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 770 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	showmoneybox 17, 0
-# 598 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 771 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_GetWager
-# 599 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 772 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	closemessage
-# 600 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 773 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	multichoice 0, 0, MULTI_SALTYSPITOON_GET_WAGER, TRUE
-# 601 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 774 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	copyvar VAR_TEMP_B, VAR_RESULT
-# 602 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 775 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	switch VAR_TEMP_B
-# 603 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 776 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 0, HiLoKabuto_Group_Script_GetWager_2
-# 617 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 790 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 1, HiLoKabuto_Group_Script_GetWager_3
-# 631 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 804 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 2, HiLoKabuto_Group_Script_GetWager_4
-# 645 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 818 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 3, HiLoKabuto_Group_Script_GetWager_5
-# 659 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 832 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 4, HiLoKabuto_Group_Script_GetWager_6
-# 673 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 846 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 5, HiLoKabuto_Group_Script_GetWager_7
-# 687 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 860 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 6, HiLoKabuto_Group_Script_GetWager_8
 	return
 
 HiLoKabuto_Group_Script_GetWager_2:
-# 604 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 777 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	checkmoney 1
-# 605 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 778 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq HiLoKabuto_Group_Script_GetWager_9
-# 613 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 786 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
-# 614 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 787 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 615 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 788 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_GetWager
 	return
 
 HiLoKabuto_Group_Script_GetWager_3:
-# 618 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 791 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	checkmoney 10
-# 619 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 792 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq HiLoKabuto_Group_Script_GetWager_12
-# 627 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 800 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
-# 628 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 801 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 629 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 802 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	return
 
 HiLoKabuto_Group_Script_GetWager_4:
-# 632 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 805 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	checkmoney 100
-# 633 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 806 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq HiLoKabuto_Group_Script_GetWager_15
-# 641 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 814 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
-# 642 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 815 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 643 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 816 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_GetWager
 	return
 
 HiLoKabuto_Group_Script_GetWager_5:
-# 646 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 819 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	checkmoney 1000
-# 647 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 820 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq HiLoKabuto_Group_Script_GetWager_18
-# 655 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 828 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
-# 656 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 829 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 657 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 830 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_GetWager
 	return
 
 HiLoKabuto_Group_Script_GetWager_6:
-# 660 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 833 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	checkmoney 10000
-# 661 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 834 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq HiLoKabuto_Group_Script_GetWager_21
-# 669 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 842 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
-# 670 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 843 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 671 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 844 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_GetWager
 	return
 
 HiLoKabuto_Group_Script_GetWager_7:
-# 674 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 847 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	checkmoney 100000
-# 675 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 848 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq HiLoKabuto_Group_Script_GetWager_24
-# 683 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 856 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
-# 684 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 857 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 685 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 858 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_GetWager
 	return
 
 HiLoKabuto_Group_Script_GetWager_8:
-# 688 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 861 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
-# 689 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 862 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	return
 
 HiLoKabuto_Group_Script_GetWager_9:
-# 606 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 779 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	removemoney 1
-# 607 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 780 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	updatemoneybox
-# 608 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 781 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	playse SE_SHOP
-# 609 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 782 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	waitse
-# 610 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 783 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
 	return
 
 HiLoKabuto_Group_Script_GetWager_12:
-# 620 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 793 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	removemoney 10
-# 621 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 794 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	updatemoneybox
-# 622 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 795 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	playse SE_SHOP
-# 623 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 796 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	waitse
-# 624 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 797 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
 	return
 
 HiLoKabuto_Group_Script_GetWager_15:
-# 634 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 807 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	removemoney 100
-# 635 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 808 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	updatemoneybox
-# 636 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 809 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	playse SE_SHOP
-# 637 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 810 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	waitse
-# 638 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 811 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
 	return
 
 HiLoKabuto_Group_Script_GetWager_18:
-# 648 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 821 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	removemoney 1000
-# 649 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 822 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	updatemoneybox
-# 650 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 823 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	playse SE_SHOP
-# 651 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 824 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	waitse
-# 652 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 825 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
 	return
 
 HiLoKabuto_Group_Script_GetWager_21:
-# 662 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 835 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	removemoney 10000
-# 663 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 836 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	updatemoneybox
-# 664 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 837 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	playse SE_SHOP
-# 665 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 838 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	waitse
-# 666 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 839 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
 	return
 
 HiLoKabuto_Group_Script_GetWager_24:
-# 676 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 849 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	removemoney 100000
-# 677 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 850 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	updatemoneybox
-# 678 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 851 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	playse SE_SHOP
-# 679 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 852 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	waitse
-# 680 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 853 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
 	return
 
 
 HiLoKabuto_Group_Script_ResetGame::
-# 694 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 867 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_E, 0
-# 695 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 868 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_9, 0
-# 696 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 869 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_8, 0
-# 697 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 870 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_7, 0
-# 698 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 871 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setvar VAR_TEMP_6, 0
-# 699 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 872 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_1
-# 700 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 873 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_2
-# 701 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 874 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_3
-# 702 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 875 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_4
-# 703 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 876 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_5
-# 704 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 877 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_6
-# 705 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 878 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_7
-# 706 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 879 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_8
-# 707 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 880 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_9
-# 708 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 881 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_A
-# 709 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 882 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	clearflag FLAG_TEMP_B
 	return
 
 
 HiLoKabuto_Script_DetermineHiOrLoKabuto::
-# 714 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 887 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	specialvar VAR_RESULT, RandDigit
-# 715 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 888 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, 5
 	goto_if_lt HiLoKabuto_Script_DetermineHiOrLoKabuto_2
 HiLoKabuto_Script_DetermineHiOrLoKabuto_1:
-# 719 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 892 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	goto_if_set FLAG_TEMP_B, HiLoKabuto_Script_DetermineHiOrLoKabuto_5
-# 722 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 895 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Text_KabutoLo
 HiLoKabuto_Script_DetermineHiOrLoKabuto_4:
 	return
 
 HiLoKabuto_Script_DetermineHiOrLoKabuto_2:
-# 716 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 889 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	setflag FLAG_TEMP_B
 	goto HiLoKabuto_Script_DetermineHiOrLoKabuto_1
 
 HiLoKabuto_Script_DetermineHiOrLoKabuto_5:
-# 720 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 893 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Text_KabutoHi
 	goto HiLoKabuto_Script_DetermineHiOrLoKabuto_4
 
 
 HiLoKabuto_Group5_Script_PlayerWin::
-# 728 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 901 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	showmoneybox 17, 0
-# 729 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 902 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Group_Text_PlayerWin
-# 730 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 903 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	switch VAR_TEMP_B
-# 731 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 904 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 0, HiLoKabuto_Group5_Script_PlayerWin_3
-# 733 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 906 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 1, HiLoKabuto_Group5_Script_PlayerWin_4
-# 735 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 908 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 2, HiLoKabuto_Group5_Script_PlayerWin_5
-# 737 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 910 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 3, HiLoKabuto_Group5_Script_PlayerWin_6
-# 739 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 912 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 4, HiLoKabuto_Group5_Script_PlayerWin_7
-# 741 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 914 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	case 5, HiLoKabuto_Group5_Script_PlayerWin_8
-# 744 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 917 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox DealerHiLoKabuto_Script_PlayerWin_Text_0
-# 745 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 918 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	closemessage
 HiLoKabuto_Group5_Script_PlayerWin_1:
-# 747 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 920 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	updatemoneybox
-# 748 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 921 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	playse SE_SHOP
-# 749 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 922 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	waitse
-# 750 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 923 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	hidemoneybox
 	return
 
 HiLoKabuto_Group5_Script_PlayerWin_3:
-# 732 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 905 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	addmoney 5
 	goto HiLoKabuto_Group5_Script_PlayerWin_1
 
 HiLoKabuto_Group5_Script_PlayerWin_4:
-# 734 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 907 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	addmoney 50
 	goto HiLoKabuto_Group5_Script_PlayerWin_1
 
 HiLoKabuto_Group5_Script_PlayerWin_5:
-# 736 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 909 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	addmoney 500
 	goto HiLoKabuto_Group5_Script_PlayerWin_1
 
 HiLoKabuto_Group5_Script_PlayerWin_6:
-# 738 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 911 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	addmoney 5000
 	goto HiLoKabuto_Group5_Script_PlayerWin_1
 
 HiLoKabuto_Group5_Script_PlayerWin_7:
-# 740 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 913 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	addmoney 50000
 	goto HiLoKabuto_Group5_Script_PlayerWin_1
 
 HiLoKabuto_Group5_Script_PlayerWin_8:
-# 742 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 915 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	addmoney 500000
 	goto HiLoKabuto_Group5_Script_PlayerWin_1
 
 
-HiLoKabuto_Group5_Script_PlayAgain::
-# 755 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+HiLoKabuto_Group4_Script_PlayerWin::
+# 928 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	showmoneybox 17, 0
+# 929 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group_Text_PlayerWin
+# 930 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	switch VAR_TEMP_B
+# 931 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 0, HiLoKabuto_Group4_Script_PlayerWin_3
+# 933 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 1, HiLoKabuto_Group4_Script_PlayerWin_4
+# 935 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 2, HiLoKabuto_Group4_Script_PlayerWin_5
+# 937 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 3, HiLoKabuto_Group4_Script_PlayerWin_6
+# 939 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 4, HiLoKabuto_Group4_Script_PlayerWin_7
+# 941 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 5, HiLoKabuto_Group4_Script_PlayerWin_8
+# 944 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Script_PlayerWin_Text_0
+# 945 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	closemessage
+HiLoKabuto_Group4_Script_PlayerWin_1:
+# 947 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	updatemoneybox
+# 948 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	playse SE_SHOP
+# 949 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	waitse
+# 950 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	hidemoneybox
+	return
+
+HiLoKabuto_Group4_Script_PlayerWin_3:
+# 932 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 4
+	goto HiLoKabuto_Group4_Script_PlayerWin_1
+
+HiLoKabuto_Group4_Script_PlayerWin_4:
+# 934 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 40
+	goto HiLoKabuto_Group4_Script_PlayerWin_1
+
+HiLoKabuto_Group4_Script_PlayerWin_5:
+# 936 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 400
+	goto HiLoKabuto_Group4_Script_PlayerWin_1
+
+HiLoKabuto_Group4_Script_PlayerWin_6:
+# 938 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 4000
+	goto HiLoKabuto_Group4_Script_PlayerWin_1
+
+HiLoKabuto_Group4_Script_PlayerWin_7:
+# 940 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 40000
+	goto HiLoKabuto_Group4_Script_PlayerWin_1
+
+HiLoKabuto_Group4_Script_PlayerWin_8:
+# 942 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 400000
+	goto HiLoKabuto_Group4_Script_PlayerWin_1
+
+
+HiLoKabuto_Group3_Script_PlayerWin::
+# 955 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	showmoneybox 17, 0
+# 956 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group_Text_PlayerWin
+# 957 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	switch VAR_TEMP_B
+# 958 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 0, HiLoKabuto_Group3_Script_PlayerWin_3
+# 960 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 1, HiLoKabuto_Group3_Script_PlayerWin_4
+# 962 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 2, HiLoKabuto_Group3_Script_PlayerWin_5
+# 964 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 3, HiLoKabuto_Group3_Script_PlayerWin_6
+# 966 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 4, HiLoKabuto_Group3_Script_PlayerWin_7
+# 968 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	case 5, HiLoKabuto_Group3_Script_PlayerWin_8
+# 971 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox DealerHiLoKabuto_Script_PlayerWin_Text_0
+# 972 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	closemessage
+HiLoKabuto_Group3_Script_PlayerWin_1:
+# 974 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	updatemoneybox
+# 975 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	playse SE_SHOP
+# 976 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	waitse
+# 977 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	hidemoneybox
+	return
+
+HiLoKabuto_Group3_Script_PlayerWin_3:
+# 959 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 3
+	goto HiLoKabuto_Group3_Script_PlayerWin_1
+
+HiLoKabuto_Group3_Script_PlayerWin_4:
+# 961 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 30
+	goto HiLoKabuto_Group3_Script_PlayerWin_1
+
+HiLoKabuto_Group3_Script_PlayerWin_5:
+# 963 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 300
+	goto HiLoKabuto_Group3_Script_PlayerWin_1
+
+HiLoKabuto_Group3_Script_PlayerWin_6:
+# 965 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 3000
+	goto HiLoKabuto_Group3_Script_PlayerWin_1
+
+HiLoKabuto_Group3_Script_PlayerWin_7:
+# 967 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 30000
+	goto HiLoKabuto_Group3_Script_PlayerWin_1
+
+HiLoKabuto_Group3_Script_PlayerWin_8:
+# 969 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	addmoney 300000
+	goto HiLoKabuto_Group3_Script_PlayerWin_1
+
+
+HiLoKabuto_Group3_Script_PlayAgain::
+# 982 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Group_Text_PlayAgain, MSGBOX_YESNO
-# 756 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 983 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq HiLoKabuto_Group3_Script_PlayAgain_1
+# 986 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_End
+	return
+
+HiLoKabuto_Group3_Script_PlayAgain_1:
+# 984 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group3_Script_Brain
+	return
+
+
+HiLoKabuto_Group4_Script_PlayAgain::
+# 991 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group_Text_PlayAgain, MSGBOX_YESNO
+# 992 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq HiLoKabuto_Group4_Script_PlayAgain_1
+# 995 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group_Script_End
+	return
+
+HiLoKabuto_Group4_Script_PlayAgain_1:
+# 993 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	call HiLoKabuto_Group4_Script_Brain
+	return
+
+
+HiLoKabuto_Group5_Script_PlayAgain::
+# 1000 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+	msgbox HiLoKabuto_Group_Text_PlayAgain, MSGBOX_YESNO
+# 1001 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq HiLoKabuto_Group5_Script_PlayAgain_1
-# 759 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1004 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group_Script_End
 	return
 
 HiLoKabuto_Group5_Script_PlayAgain_1:
-# 757 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1002 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	call HiLoKabuto_Group5_Script_Brain
 	return
 
 
 HiLoKabuto_Group_Script_End::
-# 764 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1011 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	msgbox HiLoKabuto_Group_Text_End
-# 765 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1012 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	closemessage
-# 766 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1013 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	release
 	end
 
@@ -1602,165 +2190,165 @@ DealerHiLoKabuto_Script_PlayerWin_Text_0:
 # 449 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "ERROR:\n Bottom of PlayerWin switch$"
 
-HiLoKabuto_Group5_Script_Brain_Text_0:
-# 588 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+HiLoKabuto_Group3_Script_Brain_Text_0:
+# 577 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "ERROR\nDeclare gambler winner\nOOB$"
 
 Peccadum_HarenaeAureae_Text_Dancer1::
-# 772 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1019 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Hey baby! How you doin?$"
 
 Peccadum_HarenaeAureae_Text_TipDancer::
-# 776 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1023 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Would you like to leave a tip?$"
 
 Peccadum_HarenaeAureae_Text_TipDancerNoMoney::
-# 780 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1027 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Guess I don't have enough! Better get\n"
 	.string "going!$"
 
 Peccadum_HarenaeAureae_Text_TipDancer2::
-# 784 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1031 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Thanks baby!$"
 
 Peccadum_HarenaeAureae_Text_CrashOut1::
-# 789 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1036 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "I can't believe it! I lost everything!\n"
 	.string "May I never again game... take this!$"
 
 Peccadum_HarenaeAureae_Text_CrashOut2::
-# 794 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1041 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "That stupid little box ruined my life! I\n"
 	.string "lost my job, my house, my family, and\l"
-	.string "more gambling. It's your problem now!$"
+	.string "everything, but it's your problem now!$"
 
 Peccadum_HarenaeAureae_Text_Gambler::
-# 798 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1045 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "There is no greater thrill than winning\n"
 	.string "big!$"
 
 Peccadum_HarenaeAureae_Text_DealerOpen_TakeSeat::
-# 802 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1049 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "If you would like to play please have a\n"
 	.string "seat and enter your wager.$"
 
 Peccadum_HarenaeAureae_Text_DealerBusy::
-# 806 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1053 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Please do not interrupt our current\n"
 	.string "game$"
 
 Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Intro::
-# 810 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1057 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Hello. I am the High Low Kabuto table\n"
 	.string "dealer.$"
 
 Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Start::
-# 814 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1061 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Are you here to gamble?$"
 
 Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Bye::
-# 818 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1065 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Have a nice day. Hope to see you again!$"
 
 HiLoKabuto_Text_KabutoHi::
-# 822 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1069 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "The high card for this hand is Kabuto.$"
 
 HiLoKabuto_Text_KabutoLo::
-# 826 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1073 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "The low card for this hand is Kabuto.$"
 
 DealerHiLoKabuto_Text_AnnouncePlayerCard::
-# 830 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1077 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "{PLAYER} got {STR_VAR_1}!$"
 
 DealerHiLoKabuto_Text_AnnouncePlayerKabuto::
-# 834 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1081 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "{PLAYER} got Kabuto!$"
 
 DealerHiLoKabuto_Text_AnnounceDealerCard::
-# 838 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1085 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Dealer got {STR_VAR_2}!$"
 
 DealerHiLoKabuto_Text_AnnounceDealerKabuto::
-# 842 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1089 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Dealer got Kabuto!$"
 
 DealerHiLoKabuto_Text_PlayerWin::
-# 846 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1093 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Congratulations! You win your wager!$"
 
 DealerHiLoKabuto_Text_DealerWin::
-# 850 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1097 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "So sorry but looks like you've lost this\n"
 	.string "hand.$"
 
 DealerHiLoKabuto_Text_PlayAgain::
-# 854 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1101 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Would you like me to deal you in again?$"
 
 HiLoKabuto_Group_Text_Intro::
-# 858 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1105 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Joining our game of High Low Kabuto?$"
 
 DealerHiLoKabuto_Text_AnnounceOp1Card::
-# 862 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1109 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 1 got {STR_VAR_1}.$"
 
 DealerHiLoKabuto_Text_AnnounceOp1Kabuto::
-# 866 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1113 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 1 got Kabuto.$"
 
 DealerHiLoKabuto_Text_AnnounceOp2Card::
-# 870 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1117 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 2 got {STR_VAR_2}.$"
 
 DealerHiLoKabuto_Text_AnnounceOp2Kabuto::
-# 874 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1121 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 2 got Kabuto.$"
 
 DealerHiLoKabuto_Text_AnnounceOp3Card::
-# 878 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1125 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 3 got {STR_VAR_3}.$"
 
 DealerHiLoKabuto_Text_AnnounceOp3Kabuto::
-# 882 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1129 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 3 got Kabuto.$"
 
 DealerHiLoKabuto_Text_AnnounceOp4Card::
-# 886 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1133 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 4 got {STR_VAR_1}.$"
 
 DealerHiLoKabuto_Text_AnnounceOp4Kabuto::
-# 890 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1137 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 4 got Kabuto.$"
 
 HiLoKabuto_Group_Text_PlayerWin::
-# 894 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1141 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Congratulations {PLAYER}! You win\n"
 	.string "this hand!$"
 
 HiLoKabuto_Text_Gambler1Won::
-# 898 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1145 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 1 won this hand.$"
 
 HiLoKabuto_Text_Gambler2Won::
-# 902 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1149 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 2 won this hand.$"
 
 HiLoKabuto_Text_Gambler3Won::
-# 906 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1153 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 3 won this hand.$"
 
 HiLoKabuto_Text_Gambler4Won::
-# 910 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1157 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Opponent gambler 4 won this hand.$"
 
 HiLoKabuto_Group_Text_PlayAgain::
-# 914 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1161 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Would you like to wager another hand?$"
 
 HiLoKabuto_Group_Text_End::
-# 918 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
+# 1165 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
 	.string "Once you're ready to gamble, we'll be\n"
 	.string "here.$"
