@@ -4,8 +4,6 @@ const OBJ_EVENT_DEALER1 = 13
 const OBJ_EVENT_DEALER2 = 5
 const OBJ_EVENT_DEALER3 = 12
 
-const OBJ_EVENT_GAMBLER = 14 //guy at dealer table
-
 //HI LO KABUTO STUFF
 const DEALER_CARD = VAR_TEMP_D
 const PLAYER_CARD = VAR_TEMP_E
@@ -25,6 +23,7 @@ const CARD8       = FLAG_TEMP_8
 const CARD9       = FLAG_TEMP_9
 const CARD0       = FLAG_TEMP_A
 const KABUTOHI    = FLAG_TEMP_B
+
 
 
 mapscripts Peccadum_HarenaeAureae_MapScripts {}
@@ -473,10 +472,10 @@ msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Bye)
 }
 
 script Peccadum_HarenaeAureae_Script_Gambler {
-	lock
-	faceplayer
-	msgbox (Peccadum_HarenaeAureae_Text_Gambler)
-	applymovement (OBJ_EVENT_GAMBLER, Common_Movement_FaceRight)
+    faceplayer
+    //random gambler message
+	msgbox (Peccadum_HarenaeAureae_Text_Gambler1)
+	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
 	waitmovement (0)
 	closemessage
 	release
