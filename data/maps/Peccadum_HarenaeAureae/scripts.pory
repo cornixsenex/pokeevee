@@ -1014,8 +1014,6 @@ script HiLoKabuto_Group_Script_End {
 	end
 }
 
-	
-
 text Peccadum_HarenaeAureae_Text_Dancer1 {
 	format("Hey baby! How you doin?")
 }
@@ -1042,7 +1040,23 @@ text Peccadum_HarenaeAureae_Text_CrashOut2 {
 	format("That stupid little box ruined my life! I lost my job, my house, my family, and everything, but it's your problem now!")
 }
 
-text Peccadum_HarenaeAureae_Text_Gambler {
+text Peccadum_HarenaeAureae_Text_Gambler1 {
+	format("There is no greater thrill than winning big!")
+}
+
+text Peccadum_HarenaeAureae_Text_Gambler2 {
+	format("Let Lady Luck lie with me on the draw!")
+}
+
+text Peccadum_HarenaeAureae_Text_Gambler3 {
+	format("I'm down a bit but I'll soon win it back!")
+}
+
+text Peccadum_HarenaeAureae_Text_Gambler4 {
+	format("There is no greater thrill than winning big!")
+}
+
+text Peccadum_HarenaeAureae_Text_Gambler5 {
 	format("There is no greater thrill than winning big!")
 }
 
