@@ -969,6 +969,13 @@ extern const u8 gText_BlueRouletteWagerType2[];
 extern const u8 gText_BlueRouletteWagerType3[];
 extern const u8 gText_BlueRouletteWagerType4[];
 
+//BlueRoulette Wager Range - Zeros, 1-10, 11-20, 21-30, NVM
+extern const u8 gText_BlueRouletteWagerRange1[];
+extern const u8 gText_BlueRouletteWagerRange2[];
+extern const u8 gText_BlueRouletteWagerRange3[];
+extern const u8 gText_BlueRouletteWagerRange4[];
+extern const u8 gText_BlueRouletteWagerRange5[];
+
 // Cable Club multichoice text
 extern const u8 CableClub_Text_TradeUsingLinkCable[];
 extern const u8 CableClub_Text_BattleUsingLinkCable[];

@@ -3,296 +3,416 @@ Peccadum_PalatiumFelix_MapScripts::
 
 
 Peccadum_PalatiumFelix_Script_BlueRouletteDealer::
-# 16 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	lock
 # 17 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	lock
+# 18 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	faceplayer
-# 19 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 20 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro
-# 21 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	checkcoins VAR_TEMP_1
 # 22 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	checkcoins VAR_TEMP_1
+# 23 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_TEMP_1, 5
 	goto_if_lt Peccadum_PalatiumFelix_Script_BlueRouletteDealer_2
 Peccadum_PalatiumFelix_Script_BlueRouletteDealer_1:
-# 27 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteDealerBegin, MSGBOX_YESNO
 # 28 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteDealerBegin, MSGBOX_YESNO
+# 29 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Peccadum_PalatiumFelix_Script_BlueRouletteDealer_4
-# 31 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 32 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRouletteBrain
 	return
 
 Peccadum_PalatiumFelix_Script_BlueRouletteDealer_2:
-# 23 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	msgbox Peccadum_PalatiumFelix_Text_NoCoins
 # 24 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_NoCoins
+# 25 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRouletteEnd
 	goto Peccadum_PalatiumFelix_Script_BlueRouletteDealer_1
 
 Peccadum_PalatiumFelix_Script_BlueRouletteDealer_4:
-# 29 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 30 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRouletteEnd
 	return
 
 
 Peccadum_PalatiumFelix_Script_BlueRouletteBrain::
-# 37 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 38 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_GetCoinWager
-# 39 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 40 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType
+# 42 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	switch VAR_TEMP_1
+# 43 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 0, Peccadum_PalatiumFelix_Script_BlueRouletteBrain_2
+# 45 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 1, Peccadum_PalatiumFelix_Script_BlueRouletteBrain_3
+# 47 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 2, Peccadum_PalatiumFelix_Script_BlueRouletteBrain_4
+# 49 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 3, Peccadum_PalatiumFelix_Script_BlueRouletteBrain_5
+# 52 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Script_BlueRouletteBrain_Text_0
+# 53 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	closemessage
+# 54 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	release
+	end
+
+Peccadum_PalatiumFelix_Script_BlueRouletteBrain_2:
+# 44 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	call Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager
+	return
+
+Peccadum_PalatiumFelix_Script_BlueRouletteBrain_3:
+# 46 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	call Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager
+	return
+
+Peccadum_PalatiumFelix_Script_BlueRouletteBrain_4:
+# 48 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	call Peccadum_PalatiumFelix_Script_BlueRouletteGetRangeWager
+	return
+
+Peccadum_PalatiumFelix_Script_BlueRouletteBrain_5:
+# 50 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	call Peccadum_PalatiumFelix_Script_BlueRouletteEnd
 	return
 
 
 Peccadum_PalatiumFelix_Script_GetCoinWager::
-# 52 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 68 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_0, 0
-# 54 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 70 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	showcoinsbox 21, 1
-# 56 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 72 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_GetWager
-# 57 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 73 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	closemessage
-# 58 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 74 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	multichoice 0, 0, MULTI_GET_COIN_WAGER, TRUE
-# 59 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 75 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	copyvar VAR_TEMP_0, VAR_RESULT
-# 60 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 76 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	checkcoins VAR_RESULT
-# 61 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	switch VAR_TEMP_0
-# 63 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	case 0, Peccadum_PalatiumFelix_Script_GetCoinWager_3
 # 77 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	switch VAR_TEMP_0
+# 79 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 0, Peccadum_PalatiumFelix_Script_GetCoinWager_3
+# 93 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 1, Peccadum_PalatiumFelix_Script_GetCoinWager_4
-# 91 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 107 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 2, Peccadum_PalatiumFelix_Script_GetCoinWager_5
-# 105 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 121 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 3, Peccadum_PalatiumFelix_Script_GetCoinWager_6
-# 119 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 135 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 4, Peccadum_PalatiumFelix_Script_GetCoinWager_7
-# 133 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 149 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 5, Peccadum_PalatiumFelix_Script_GetCoinWager_8
-# 146 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 162 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 6, Peccadum_PalatiumFelix_Script_GetCoinWager_9
 Peccadum_PalatiumFelix_Script_GetCoinWager_1:
-# 150 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 166 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Script_GetCoinWager_Text_0
-# 151 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 167 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	closemessage
-# 152 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 168 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	release
 	end
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_3:
-# 64 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 80 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_RESULT, 5
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_10
-# 72 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 88 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
-# 73 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 89 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 74 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 90 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRouletteEnd
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_1
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_4:
-# 78 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 94 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_RESULT, 25
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_13
-# 86 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 102 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
-# 87 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 103 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 88 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 104 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_GetCoinWager
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_1
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_5:
-# 92 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 108 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_RESULT, 100
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_16
-# 100 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 116 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
-# 101 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 117 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 102 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 118 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_GetCoinWager
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_1
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_6:
-# 106 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 122 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_RESULT, 500
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_19
-# 114 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 130 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
-# 115 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 131 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 116 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 132 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_GetCoinWager
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_1
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_7:
-# 120 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 136 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_RESULT, 1000
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_22
-# 128 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 144 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
-# 129 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 145 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 130 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 146 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_GetCoinWager
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_1
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_8:
-# 134 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 150 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	compare VAR_RESULT, 2500
 	goto_if_ge Peccadum_PalatiumFelix_Script_GetCoinWager_25
-# 142 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 158 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
-# 143 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 159 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_WagerPoor
-# 144 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 160 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_GetCoinWager
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_1
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_9:
-# 147 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 163 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
-# 148 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 164 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	call Peccadum_PalatiumFelix_Script_BlueRouletteEnd
 	goto Peccadum_PalatiumFelix_Script_GetCoinWager_1
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_10:
-# 65 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 81 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 5
-# 66 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 82 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	updatecoinsbox 21, 1
-# 67 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 83 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
-# 68 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 84 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
-# 69 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 85 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
 	return
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_13:
-# 79 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 95 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 25
-# 80 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 96 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	updatecoinsbox 21, 1
-# 81 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 97 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
-# 82 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 98 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
-# 83 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 99 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
 	return
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_16:
-# 93 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 109 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 100
-# 94 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 110 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	updatecoinsbox 21, 1
-# 95 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 111 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
-# 96 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 112 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
-# 97 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 113 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
 	return
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_19:
-# 107 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 123 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 500
-# 108 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 124 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	updatecoinsbox 21, 1
-# 109 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 125 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
-# 110 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 126 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
-# 111 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 127 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
 	return
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_22:
-# 121 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 137 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 1000
-# 122 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 138 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	updatecoinsbox 21, 1
-# 123 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 139 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
-# 124 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 140 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
-# 125 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 141 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
 	return
 
 Peccadum_PalatiumFelix_Script_GetCoinWager_25:
-# 135 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 151 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	removecoins 2500
-# 136 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 152 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	updatecoinsbox 21, 1
-# 137 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 153 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	playse SE_SHOP
-# 138 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 154 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitse
-# 139 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 155 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	hidecoinsbox 21, 1
 	return
 
 
 Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType::
-# 158 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 174 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	setvar VAR_TEMP_1, 0
-# 160 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 176 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteGetWagerType
-# 161 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 177 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	closemessage
-# 162 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 178 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	multichoice 0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_TYPE, TRUE
-# 163 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 179 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
+# 181 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	switch VAR_TEMP_1
+# 183 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 0, Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_3
+# 186 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 1, Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_4
+# 189 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 2, Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_5
+# 192 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 3, Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_6
+Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_1:
+# 195 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_7
+# 198 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	call Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType
+	return
+
+Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_3:
+# 184 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteConfirmNumberWager, MSGBOX_YESNO
+	goto Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_1
+
+Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_4:
+# 187 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager, MSGBOX_YESNO
+	goto Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_1
+
+Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_5:
+# 190 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager, MSGBOX_YESNO
+	goto Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_1
+
+Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_6:
+# 193 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	call Peccadum_PalatiumFelix_Script_BlueRouletteEnd
+	goto Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_1
+
+Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType_7:
+	return
+
+
+Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager::
+# 204 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	setvar VAR_TEMP_2, 0
+# 206 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWager
+# 207 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	closemessage
+# 209 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	multichoice 0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_RANGE, TRUE
 	return
 
 
 Peccadum_PalatiumFelix_Script_BlueRouletteEnd::
-# 169 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 219 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox CasinoDealer_Text_Bye
-# 171 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 221 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 4, Common_Movement_FaceDown
-# 172 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 222 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 3, Common_Movement_FaceDown
-# 173 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 223 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitmovement 0
-# 174 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 224 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	closemessage
-# 175 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 225 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	release
 	end
 
 
+Peccadum_PalatiumFelix_Script_BlueRouletteBrain_Text_0:
+# 52 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "ERROR\nWAGER_TYPE OOB$"
+
 Peccadum_PalatiumFelix_Script_GetCoinWager_Text_0:
-# 150 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 166 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "ERROR\nBottom of GetCoinWager$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro::
-# 181 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 229 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "I am the Blue Roulette table dealer.$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteDealerBegin::
-# 185 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 233 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Would you like to play a game of\n"
 	.string "roulette?$"
 
 Peccadum_PalatiumFelix_Text_NoCoins::
-# 189 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 237 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Excuse me sir, but coins are required to\n"
 	.string "play games at Palatium Felix. Please\l"
 	.string "speak with the cashier to purchase\l"
 	.string "more.$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteGetWagerType::
-# 193 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 241 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "What kind of wager will you be placing?$"
+
+Peccadum_PalatiumFelix_Text_BlueRouletteConfirmNumberWager::
+# 245 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "A wager on a winning number pays thirty\n"
+	.string "to one. Are you sure that you will place\l"
+	.string "a wager on a single number?$"
+
+Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager::
+# 249 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "The payout for a wager on color depends\n"
+	.string "on which color you wager on. Both red\l"
+	.string "and blue pay out at two to one while\l"
+	.string "green pays out higher, fifteen to one.\l"
+	.string "Are you sure that you will bet on color?$"
+
+Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager::
+# 253 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "A winning bet on range pays three to\n"
+	.string "one, except for zero and double zero\l"
+	.string "which pays the same as green, fifteen\l"
+	.string "to one. Are you sure you want to wager\l"
+	.string "on range?$"
+
+Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWager::
+# 257 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "There are thirty two individual spaces\n"
+	.string "on the roulette wheel: numbers from one\l"
+	.string "to thirty, single, and double nil. Which\l"
+	.string "number will you be wagering on?$"

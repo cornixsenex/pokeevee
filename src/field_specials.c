@@ -2570,6 +2570,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_RANGE:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 5;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2838,6 +2848,14 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_BlueRouletteWagerType2,
 		gText_BlueRouletteWagerType3,
 		gText_BlueRouletteWagerType4,
+	},
+	[SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_RANGE] =
+	{
+		gText_BlueRouletteWagerRange1,
+		gText_BlueRouletteWagerRange2,
+		gText_BlueRouletteWagerRange3,
+		gText_BlueRouletteWagerRange4,
+		gText_BlueRouletteWagerRange5,
 	},
 };
 

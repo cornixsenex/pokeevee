@@ -906,6 +906,15 @@ static const struct MenuAction MultichoiceList_Get_BlueRoulette_WagerType[] =
 	{gText_BlueRouletteWagerType4},
 };
 
+static const struct MenuAction MultichoiceList_Get_BlueRoulette_WagerRange[] =
+{
+	{gText_BlueRouletteWagerRange1},
+	{gText_BlueRouletteWagerRange2},
+	{gText_BlueRouletteWagerRange3},
+	{gText_BlueRouletteWagerRange4},
+	{gText_BlueRouletteWagerRange5},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1035,18 +1044,19 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
 	//KUSTOM
-    [MULTI_CITYCLARA_CHURCH_STONE]       = MULTICHOICE(MultichoiceList_CityClara_Church_Stone),
-    [MULTI_ROCKETTOWER_ELEVATOR_FLOOR]   = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
-    [MULTI_HOSPITAL_ELEVATOR_FLOOR]      = MULTICHOICE(MultichoiceList_Hospital_Elevator_Floor),
-    [MULTI_TICTACTOE_CHOOSE_MOVE]        = MULTICHOICE(MultichoiceList_TicTacToe_Choose_Move),
-    [MULTI_SALTYSPITOON_GET_WAGER]       = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
-    [MULTI_ARDOR_CHOOSE_SCIENCE]         = MULTICHOICE(MultichoiceList_Ardor_ChooseScience),
-    [MULTI_ARDOR_CHOOSE_SOCIAL]          = MULTICHOICE(MultichoiceList_Ardor_ChooseSocial),
-    [MULTI_ARDOR_CHOOSE_ELECTIVE]        = MULTICHOICE(MultichoiceList_Ardor_ChooseElective),
-    [MULTI_CHOOSE_FOSSIL]                = MULTICHOICE(MultichoiceList_ChooseFossil),
-    [MULTI_ARDOR_MUSIC_CHOOSE_NOTE]      = MULTICHOICE(MultichoiceList_Ardor_MusicChooseNote),
-    [MULTI_GET_COIN_WAGER]               = MULTICHOICE(MultichoiceList_Get_Coin_Wager),
-    [MULTI_GET_BLUE_ROULETTE_WAGER_TYPE] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerType),
+    [MULTI_CITYCLARA_CHURCH_STONE]        = MULTICHOICE(MultichoiceList_CityClara_Church_Stone),
+    [MULTI_ROCKETTOWER_ELEVATOR_FLOOR]    = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
+    [MULTI_HOSPITAL_ELEVATOR_FLOOR]       = MULTICHOICE(MultichoiceList_Hospital_Elevator_Floor),
+    [MULTI_TICTACTOE_CHOOSE_MOVE]         = MULTICHOICE(MultichoiceList_TicTacToe_Choose_Move),
+    [MULTI_SALTYSPITOON_GET_WAGER]        = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
+    [MULTI_ARDOR_CHOOSE_SCIENCE]          = MULTICHOICE(MultichoiceList_Ardor_ChooseScience),
+    [MULTI_ARDOR_CHOOSE_SOCIAL]           = MULTICHOICE(MultichoiceList_Ardor_ChooseSocial),
+    [MULTI_ARDOR_CHOOSE_ELECTIVE]         = MULTICHOICE(MultichoiceList_Ardor_ChooseElective),
+    [MULTI_CHOOSE_FOSSIL]                 = MULTICHOICE(MultichoiceList_ChooseFossil),
+    [MULTI_ARDOR_MUSIC_CHOOSE_NOTE]       = MULTICHOICE(MultichoiceList_Ardor_MusicChooseNote),
+    [MULTI_GET_COIN_WAGER]                = MULTICHOICE(MultichoiceList_Get_Coin_Wager),
+    [MULTI_GET_BLUE_ROULETTE_WAGER_TYPE]  = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerType),
+    [MULTI_GET_BLUE_ROULETTE_WAGER_RANGE] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerRange),
 };
 
 const u8 *const gStdStrings[] =

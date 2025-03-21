@@ -203,9 +203,29 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
 	//reset number wager
 	setvar (WAGER_NUMBER, 0)
 	//what number will you bet - Tell us where 0 and 00 are plsa
-	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWagerA)
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWager)
 	closemessage
-	//choice 1: High or Low number (because 16 max list length)
+	//Determine Range (0-00), (1-10), (11-20), (21-31), NVM
+	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_RANGE, TRUE)
+	//Then secondary multi (selection within the range you just selected)
+//	switch (var(VAR_RESULT)
+	//confirm selection
+	//store selection in WAGER_NUMBER
+	//return
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager {
+	//reset color wager
+	setvar (WAGER_COLOR, 0)
+	//what color will you bet 
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGetColorWager)
+	closemessage
+	//Determine color, NVM
+	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_COLOR, TRUE)
+	//confirm selection
+	//store selection in WAGER_COLOR
+	//return
+}
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
     //see you again
@@ -244,9 +264,9 @@ text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager {
 }
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager {
-	format("A winning bet on range pays three to one. Are you sure you want to wager on range?")
+	format("A winning bet on range pays three to one, except for zero and double zero which pays the same as green, fifteen to one. Are you sure you want to wager on range?")
 }
 
-text Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWagerA {
-	format("")
+text Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWager {
+	format("There are thirty two individual spaces on the roulette wheel: numbers from one to thirty, single, and double nil. Which number will you be wagering on?")
 }

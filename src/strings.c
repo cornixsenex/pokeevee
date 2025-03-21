@@ -624,6 +624,13 @@ const u8 gText_BlueRouletteWagerType2[]   = _("COLOR");
 const u8 gText_BlueRouletteWagerType3[]   = _("RANGE");
 const u8 gText_BlueRouletteWagerType4[]   = _("NEVER MIND");
 
+//BlueRoulette Wager Range 
+const u8 gText_BlueRouletteWagerRange1[]   = _("0 & 00");
+const u8 gText_BlueRouletteWagerRange2[]   = _("1 - 10");
+const u8 gText_BlueRouletteWagerRange3[]   = _("11 - 20");
+const u8 gText_BlueRouletteWagerRange4[]   = _("21 - 30");
+const u8 gText_BlueRouletteWagerRange5[]   = _("NEVER MIND");
+
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
 const u8 gText_RedFlute2[] = _("RED FLUTE");
