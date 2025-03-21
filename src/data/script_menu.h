@@ -887,6 +887,18 @@ static const struct MenuAction MultichoiceList_Ardor_MusicChooseNote[] =
 	{gText_Ardor_MusicChooseNote7},
 };
 
+static const struct MenuAction MultichoiceList_Get_Coin_Wager[] =
+{
+	{gText_CoinWager1},
+	{gText_CoinWager2},
+	{gText_CoinWager3},
+	{gText_CoinWager4},
+	{gText_CoinWager5},
+	{gText_CoinWager6},
+	{gText_CoinWager7},
+};
+
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1026,6 +1038,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_ARDOR_CHOOSE_ELECTIVE]      = MULTICHOICE(MultichoiceList_Ardor_ChooseElective),
     [MULTI_CHOOSE_FOSSIL]              = MULTICHOICE(MultichoiceList_ChooseFossil),
     [MULTI_ARDOR_MUSIC_CHOOSE_NOTE]    = MULTICHOICE(MultichoiceList_Ardor_MusicChooseNote),
+    [MULTI_GET_COIN_WAGER]             = MULTICHOICE(MultichoiceList_Get_Coin_Wager),
 };
 
 const u8 *const gStdStrings[] =

@@ -333,6 +333,7 @@ script DealerHiLoKabuto_Script_GetWager {
 			hidemoneybox
 			call (DealerHiLoKabuto_Script_End)
 	}
+    return
 }
 
 script DealerHiLoKabuto_Script_GameBrain {
@@ -465,7 +466,7 @@ script DealerHiLoKabuto_Script_PlayAgain {
 }
 
 script DealerHiLoKabuto_Script_End {
-msgbox (Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Bye)
+    msgbox (CasinoDealer_Text_Bye)
 	closemessage
 	release
 	end
@@ -1075,7 +1076,7 @@ text Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Start {
 	format("Are you here to gamble?")
 }
 
-text Peccadum_HarenaeAureae_Text_DealerHiLoKabuto_Bye {
+text CasinoDealer_Text_Bye {
 	format("Have a nice day. Hope to see you again!")
 }
 

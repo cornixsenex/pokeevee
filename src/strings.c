@@ -609,6 +609,15 @@ const u8 gText_Ardor_MusicChooseNote6[]   = _("G");
 const u8 gText_Ardor_MusicChooseNote7[]   = _("D");
 const u8 gText_Ardor_MusicChooseNote8[]   = _("C");
 
+//Get Coin Wager
+const u8 gText_CoinWager1[]   = _("5");
+const u8 gText_CoinWager2[]   = _("25");
+const u8 gText_CoinWager3[]   = _("100");
+const u8 gText_CoinWager4[]   = _("500");
+const u8 gText_CoinWager5[]   = _("1,000");
+const u8 gText_CoinWager6[]   = _("2,500");
+const u8 gText_CoinWager7[]   = _("NEVER MIND");
+
 
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");

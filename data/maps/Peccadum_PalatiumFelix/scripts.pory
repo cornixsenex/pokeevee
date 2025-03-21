@@ -1,19 +1,81 @@
+
+//used in all games
+const WAGER = VAR_TEMP_0
+
+const OBJ_EVENT_BRDEALER1 = 4
+const OBJ_EVENT_BRDEALER2 = 3
+
 mapscripts Peccadum_PalatiumFelix_MapScripts {}
 
 
 
-script Peccadum_PalatiumFelix_Script_RouletteDealer {
+script Peccadum_PalatiumFelix_Script_BlueRouletteDealer {
     lock
     faceplayer
     //Hello I am the roulette dealer
-    msgbox (Peccadum_PalatiumFelix_Text_RouletteDealerIntro)
-    //check coin case
-    //play game?
-
-
+    msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro)
+    //if broke tell you to get coins
+    checkcoins (VAR_TEMP_1)
+    if (var(VAR_TEMP_1) == 0) {
+        msgbox (Peccadum_PalatiumFelix_Text_NoCoins)
+        call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+    }
+    //wanna play?
+    msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteDealerBegin, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == FALSE) {
+        call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+    } else {
+        call (Peccadum_PalatiumFelix_Script_BlueRouletteBrain)
+    }
 }
 
+script Peccadum_PalatiumFelix_Script_BlueRouletteBrain {
+    //How much will you wager
+    call (Peccadum_PalatiumFelix_Script_GetCoinWager)
+    //What type of wager (Num, color, range)
+    //What specific wager (which num, which color, what range)
+    //good luck
+    //spin
+    //announce spin
+    //check if win or lose
+    //announce win or lose
+    //payout if win
+    //play again?
+}
 
-text Peccadum_PalatiumFelix_Text_RouletteDealerIntro {
-    format("I am the Blue Roulette table dealer. Would you like to play a game of roulette?")
+script Peccadum_PalatiumFelix_Script_GetCoinWager {
+    //reset wager
+    //show coin box
+    //msgbox What is your wager?
+    closemessage
+    multichoice (0, 0, MULTI_GET_COIN_WAGER, TRUE)
+    copyvar (WAGER, VAR_RESULT)
+    //switch
+    return
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
+    //see you again
+    msgbox (CasinoDealer_Text_Bye)
+    //face dealer(s) down
+    applymovement (OBJ_EVENT_BRDEALER1, Common_Movement_FaceDown)
+    applymovement (OBJ_EVENT_BRDEALER2, Common_Movement_FaceDown)
+    waitmovement (0)
+    closemessage
+    release
+    end
+}
+    
+
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro {
+    format("I am the Blue Roulette table dealer.")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteDealerBegin {
+    format("Would you like to play a game of roulette?")
+}
+
+text Peccadum_PalatiumFelix_Text_NoCoins {
+    format("Excuse me sir, but coins are required to play games at Palatium Felix. Please speak with the cashier to purchase more.")
 }

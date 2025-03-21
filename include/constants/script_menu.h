@@ -134,6 +134,8 @@
 #define MULTI_CHOOSE_FOSSIL                122
 #define MULTI_ARDOR_MUSIC_CHOOSE_NOTE      123
 #define MULTI_CITYCLARA_CHURCH_STONE	   124
+#define MULTI_GET_COIN_WAGER	           125
+
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

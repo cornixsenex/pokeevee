@@ -2550,6 +2550,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_GET_COIN_WAGER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2801,6 +2811,16 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_Ardor_MusicChooseNote6,
 		gText_Ardor_MusicChooseNote7,
 		gText_Ardor_MusicChooseNote8,
+	},
+	[SCROLL_MULTI_GET_COIN_WAGER] =
+	{
+		gText_CoinWager1,
+		gText_CoinWager2,
+		gText_CoinWager3,
+		gText_CoinWager4,
+		gText_CoinWager5,
+		gText_CoinWager6,
+		gText_CoinWager7,
 	},
 };
 

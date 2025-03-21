@@ -954,6 +954,15 @@ extern const u8 gText_Ardor_MusicChooseNote6[];
 extern const u8 gText_Ardor_MusicChooseNote7[];
 extern const u8 gText_Ardor_MusicChooseNote8[];
 
+//Get Coin Wager - 5, 25, 100, 500, 1000, 2500 NVM
+extern const u8 gText_CoinWager1[];
+extern const u8 gText_CoinWager2[];
+extern const u8 gText_CoinWager3[];
+extern const u8 gText_CoinWager4[];
+extern const u8 gText_CoinWager5[];
+extern const u8 gText_CoinWager6[];
+extern const u8 gText_CoinWager7[];
+
 
 
 // Cable Club multichoice text
