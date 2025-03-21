@@ -1,4 +1,68 @@
-mapscripts Vegas_Hotel1F_MapScripts {}
+
+//VAR_TEMP_6 == 0 triggers the casino doorman
+
+const OBJ_EVENT_DOORMAN = 4
+
+mapscripts Vegas_Hotel1F_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+
+        //Clear Casino entrance after initial opening
+        if (flag(FLAG_PALATIUMFELIX_OPEN)) {
+            setvar (VAR_TEMP_6, 1)
+        }
+    }
+}
+
+script Vegas_Hotel1F_Script_DoorMan {
+    lock
+    faceplayer
+    if (flag(FLAG_PALATIUMFELIX_OPEN)) {
+        msgbox (Vegas_Hotel1F_Text_DoorManOpen)
+    } else {
+        call (Vegas_Hotel1F_Script_DoorMan_Closed)
+    }
+    applymovement (OBJ_EVENT_DOORMAN, Common_Movement_FaceDown)
+    waitmovement (0)
+    closemessage
+}
+
+script Vegas_Hotel1F_Script_DoorBlock {
+    lock
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement (OBJ_EVENT_DOORMAN, Common_Movement_FaceLeft)
+    waitmovement (0)
+    call (Vegas_Hotel1F_Script_DoorMan_Closed)
+    applymovement (OBJ_EVENT_DOORMAN, Common_Movement_FaceDown)
+    if (!flag(FLAG_PALATIUMFELIX_OPEN)) {
+        applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+    }
+    waitmovement (0)
+    closemessage
+    release
+    end
+}
+
+script Vegas_Hotel1F_Script_DoorMan_Closed {
+    msgbox (Vegas_Hotel1F_Text_DoorManClose)
+    checkitem (ITEM_COIN_CASE, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        call (Vegas_Hotel1F_Script_DoorMan_Open)
+    }
+    return
+}
+
+script Vegas_Hotel1F_Script_DoorMan_Open {
+    applymovement (OBJ_EVENT_DOORMAN, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    msgbox (Vegas_Hotel1F_Text_DoorManCoinCase)
+    setflag (FLAG_PALATIUMFELIX_OPEN)
+    setvar (VAR_TEMP_6, 1)
+    msgbox (Vegas_Hotel1F_Text_DoorManOpen)
+    return
+}
 
 
 script Vegas_Hotel1F_EventScript_Owner {
@@ -9,9 +73,9 @@ script Vegas_Hotel1F_EventScript_Owner {
 		closemessage
 	} else {
 		msgbox (Vegas_Hotel1F_Text_OwnerHelp)
-		giveitem (ITEM_HM05)
+	//	giveitem (ITEM_HM05)
 		msgbox (Vegas_Hotel1F_Text_ExplainFlash)
-		setflag (FLAG_RECEIVED_FLASH)
+	//	setflag (FLAG_RECEIVED_FLASH)
 	}
 	release
 	end
@@ -30,4 +94,16 @@ text Vegas_Hotel1F_Text_OwnerHelp {
 
 text Vegas_Hotel1F_Text_ExplainFlash {
 	format("That hidden move contains a blinding flash which can illuminate the dark places and should be able to turn on the lights. Go to the power plant and find a way to use that move to turn back on the lights!")
+}
+
+text Vegas_Hotel1F_Text_DoorManOpen {
+    format("Welcome to the Palatium Felix! Enjoy your time playing with us. Good luck!")
+}
+
+text Vegas_Hotel1F_Text_DoorManClose {
+    format("Excuse me sir, Palatium Felix is only for high rolling gamblers. We only welcome guests with a coin case. I do apologize. Have a nice day.")
+}
+
+text Vegas_Hotel1F_Text_DoorManCoinCase {
+    format("Whats that? You have got with you a coin case? Very sorry! It was just a mistake!")
 }

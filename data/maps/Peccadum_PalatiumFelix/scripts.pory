@@ -1,1 +1,19 @@
 mapscripts Peccadum_PalatiumFelix_MapScripts {}
+
+
+
+script Peccadum_PalatiumFelix_Script_RouletteDealer {
+    lock
+    faceplayer
+    //Hello I am the roulette dealer
+    msgbox (Peccadum_PalatiumFelix_Text_RouletteDealerIntro)
+    //check coin case
+    //play game?
+
+
+}
+
+
+text Peccadum_PalatiumFelix_Text_RouletteDealerIntro {
+    format("I am the Blue Roulette table dealer. Would you like to play a game of roulette?")
+}

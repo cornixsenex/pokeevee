@@ -61,7 +61,7 @@
 #define FLAG_SILVANWOODS_HIDEFIGHT1   0x2F // After Leaf1 fight hides Fight1
 #define FLAG_SILVANWOODS_HIDEFIGHT2    0x30 // After Mew sight / Stoney fight
 #define FLAG_RECEIVED_SCYTHE      0x31 //Set after Castalian Garden, allows cut (should be an item too or instead idk)
-#define FLAG_UNUSED_0x32      0x32 //UNUSED
+#define FLAG_PALATIUMFELIX_OPEN      0x32 //Set after initial opening of Palatium Felix
 #define FLAG_UNUSED_0x33      0x33 //UNUSED 
 #define FLAG_UNUSED_0x34      0x34 //UNUSED 
 #define FLAG_UNUSED_0x35      0x35 //UNUSED 
