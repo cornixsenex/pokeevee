@@ -2580,6 +2580,56 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_0_NUMBER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 3;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_COLOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 4;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2856,6 +2906,61 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_BlueRouletteWagerRange3,
 		gText_BlueRouletteWagerRange4,
 		gText_BlueRouletteWagerRange5,
+	},
+	[SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_0_NUMBER] =
+	{
+        COMPOUND_STRING("{COLOR GREEN}0"),
+        COMPOUND_STRING("{COLOR GREEN}00"),
+        COMPOUND_STRING("NEVER MIND"),
+	},
+	[SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER] =
+	{
+        COMPOUND_STRING("{COLOR BLUE}1"),
+        COMPOUND_STRING("{COLOR RED}2"),
+        COMPOUND_STRING("{COLOR BLUE}3"),
+        COMPOUND_STRING("{COLOR RED}4"),
+        COMPOUND_STRING("{COLOR BLUE}5"),
+        COMPOUND_STRING("{COLOR RED}6"),
+        COMPOUND_STRING("{COLOR BLUE}7"),
+        COMPOUND_STRING("{COLOR RED}8"),
+        COMPOUND_STRING("{COLOR BLUE}9"),
+        COMPOUND_STRING("{COLOR RED}10"),
+        COMPOUND_STRING("NEVER MIND"),
+	},
+	[SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER] =
+	{
+        COMPOUND_STRING("{COLOR BLUE}11"),
+        COMPOUND_STRING("{COLOR RED}12"),
+        COMPOUND_STRING("{COLOR BLUE}13"),
+        COMPOUND_STRING("{COLOR RED}14"),
+        COMPOUND_STRING("{COLOR BLUE}15"),
+        COMPOUND_STRING("{COLOR RED}16"),
+        COMPOUND_STRING("{COLOR BLUE}17"),
+        COMPOUND_STRING("{COLOR RED}18"),
+        COMPOUND_STRING("{COLOR BLUE}19"),
+        COMPOUND_STRING("{COLOR RED}20"),
+        COMPOUND_STRING("NEVER MIND"),
+	},
+	[SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER] =
+	{
+        COMPOUND_STRING("{COLOR BLUE}21"),
+        COMPOUND_STRING("{COLOR RED}22"),
+        COMPOUND_STRING("{COLOR BLUE}23"),
+        COMPOUND_STRING("{COLOR RED}24"),
+        COMPOUND_STRING("{COLOR BLUE}25"),
+        COMPOUND_STRING("{COLOR RED}26"),
+        COMPOUND_STRING("{COLOR BLUE}27"),
+        COMPOUND_STRING("{COLOR RED}28"),
+        COMPOUND_STRING("{COLOR BLUE}29"),
+        COMPOUND_STRING("{COLOR RED}30"),
+        COMPOUND_STRING("NEVER MIND"),
+	},
+	[SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_COLOR] =
+	{
+        COMPOUND_STRING("{COLOR RED}RED"),
+        COMPOUND_STRING("{COLOR BLUE}BLUE"),
+        COMPOUND_STRING("{COLOR GREEN}GREEN"),
+        COMPOUND_STRING("NEVER MIND"),
 	},
 };
 

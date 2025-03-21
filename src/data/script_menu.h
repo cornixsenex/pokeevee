@@ -915,6 +915,66 @@ static const struct MenuAction MultichoiceList_Get_BlueRoulette_WagerRange[] =
 	{gText_BlueRouletteWagerRange5},
 };
 
+static const struct MenuAction MultichoiceList_Get_BlueRoulette_Range0Number[] =
+{
+    {COMPOUND_STRING("{COLOR GREEN}0")},
+    {COMPOUND_STRING("{COLOR GREEN}00")},
+    {COMPOUND_STRING("NEVER MIND")},
+};
+
+static const struct MenuAction MultichoiceList_Get_BlueRoulette_Range1Number[] =
+{
+    {COMPOUND_STRING("1")},
+    {COMPOUND_STRING("2")},
+    {COMPOUND_STRING("3")},
+    {COMPOUND_STRING("4")},
+    {COMPOUND_STRING("5")},
+    {COMPOUND_STRING("6")},
+    {COMPOUND_STRING("7")},
+    {COMPOUND_STRING("8")},
+    {COMPOUND_STRING("9")},
+    {COMPOUND_STRING("10")},
+    {COMPOUND_STRING("NEVER MIND")},
+};
+
+static const struct MenuAction MultichoiceList_Get_BlueRoulette_Range2Number[] =
+{
+    {COMPOUND_STRING("11")},
+    {COMPOUND_STRING("12")},
+    {COMPOUND_STRING("13")},
+    {COMPOUND_STRING("14")},
+    {COMPOUND_STRING("15")},
+    {COMPOUND_STRING("16")},
+    {COMPOUND_STRING("17")},
+    {COMPOUND_STRING("18")},
+    {COMPOUND_STRING("19")},
+    {COMPOUND_STRING("20")},
+    {COMPOUND_STRING("NEVER MIND")},
+};
+
+static const struct MenuAction MultichoiceList_Get_BlueRoulette_Range3Number[] =
+{
+    {COMPOUND_STRING("21")},
+    {COMPOUND_STRING("22")},
+    {COMPOUND_STRING("23")},
+    {COMPOUND_STRING("24")},
+    {COMPOUND_STRING("25")},
+    {COMPOUND_STRING("26")},
+    {COMPOUND_STRING("27")},
+    {COMPOUND_STRING("28")},
+    {COMPOUND_STRING("29")},
+    {COMPOUND_STRING("30")},
+    {COMPOUND_STRING("NEVER MIND")},
+};
+
+static const struct MenuAction MultichoiceList_Get_BlueRoulette_WagerColor[] =
+{
+    {COMPOUND_STRING("{COLOR RED}RED")},
+    {COMPOUND_STRING("{COLOR BLUE}BLUE")},
+    {COMPOUND_STRING("{COLOR GREEN}GREEN")},
+    {COMPOUND_STRING("NEVER MIND")},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1044,19 +1104,24 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
 	//KUSTOM
-    [MULTI_CITYCLARA_CHURCH_STONE]        = MULTICHOICE(MultichoiceList_CityClara_Church_Stone),
-    [MULTI_ROCKETTOWER_ELEVATOR_FLOOR]    = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
-    [MULTI_HOSPITAL_ELEVATOR_FLOOR]       = MULTICHOICE(MultichoiceList_Hospital_Elevator_Floor),
-    [MULTI_TICTACTOE_CHOOSE_MOVE]         = MULTICHOICE(MultichoiceList_TicTacToe_Choose_Move),
-    [MULTI_SALTYSPITOON_GET_WAGER]        = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
-    [MULTI_ARDOR_CHOOSE_SCIENCE]          = MULTICHOICE(MultichoiceList_Ardor_ChooseScience),
-    [MULTI_ARDOR_CHOOSE_SOCIAL]           = MULTICHOICE(MultichoiceList_Ardor_ChooseSocial),
-    [MULTI_ARDOR_CHOOSE_ELECTIVE]         = MULTICHOICE(MultichoiceList_Ardor_ChooseElective),
-    [MULTI_CHOOSE_FOSSIL]                 = MULTICHOICE(MultichoiceList_ChooseFossil),
-    [MULTI_ARDOR_MUSIC_CHOOSE_NOTE]       = MULTICHOICE(MultichoiceList_Ardor_MusicChooseNote),
-    [MULTI_GET_COIN_WAGER]                = MULTICHOICE(MultichoiceList_Get_Coin_Wager),
-    [MULTI_GET_BLUE_ROULETTE_WAGER_TYPE]  = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerType),
-    [MULTI_GET_BLUE_ROULETTE_WAGER_RANGE] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerRange),
+    [MULTI_CITYCLARA_CHURCH_STONE]           = MULTICHOICE(MultichoiceList_CityClara_Church_Stone),
+    [MULTI_ROCKETTOWER_ELEVATOR_FLOOR]       = MULTICHOICE(MultichoiceList_RocketTower_Elevator_Floor),
+    [MULTI_HOSPITAL_ELEVATOR_FLOOR]          = MULTICHOICE(MultichoiceList_Hospital_Elevator_Floor),
+    [MULTI_TICTACTOE_CHOOSE_MOVE]            = MULTICHOICE(MultichoiceList_TicTacToe_Choose_Move),
+    [MULTI_SALTYSPITOON_GET_WAGER]           = MULTICHOICE(MultichoiceList_SaltySpitoon_Get_Wager),
+    [MULTI_ARDOR_CHOOSE_SCIENCE]             = MULTICHOICE(MultichoiceList_Ardor_ChooseScience),
+    [MULTI_ARDOR_CHOOSE_SOCIAL]              = MULTICHOICE(MultichoiceList_Ardor_ChooseSocial),
+    [MULTI_ARDOR_CHOOSE_ELECTIVE]            = MULTICHOICE(MultichoiceList_Ardor_ChooseElective),
+    [MULTI_CHOOSE_FOSSIL]                    = MULTICHOICE(MultichoiceList_ChooseFossil),
+    [MULTI_ARDOR_MUSIC_CHOOSE_NOTE]          = MULTICHOICE(MultichoiceList_Ardor_MusicChooseNote),
+    [MULTI_GET_COIN_WAGER]                   = MULTICHOICE(MultichoiceList_Get_Coin_Wager),
+    [MULTI_GET_BLUE_ROULETTE_WAGER_TYPE]     = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerType),
+    [MULTI_GET_BLUE_ROULETTE_WAGER_RANGE]    = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerRange),
+    [MULTI_GET_BLUE_ROULETTE_RANGE_0_NUMBER] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_Range0Number),
+    [MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_Range1Number),
+    [MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_Range2Number),
+    [MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_Range3Number),
+    [MULTI_GET_BLUE_ROULETTE_WAGER_COLOR]    = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerColor),
 };
 
 const u8 *const gStdStrings[] =

@@ -5,6 +5,8 @@ const WAGER = VAR_TEMP_0
 //Blue Roulette vars
 const WAGER_TYPE = VAR_TEMP_1
 const WAGER_NUMBER = VAR_TEMP_2 //Specific number chosen to wager on 0-30 all match. 31 is 00
+const WAGER_RANGE = VAR_TEMP_3 //Specific Range on a range wager
+const WAGER_COLOR = VAR_TEMP_4 //Specific color on a color wager
 
 const OBJ_EVENT_BRDEALER1 = 4
 const OBJ_EVENT_BRDEALER2 = 3
@@ -200,6 +202,8 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType {
 }
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
+	//reset range wager
+	setvar (WAGER_RANGE, 0)
 	//reset number wager
 	setvar (WAGER_NUMBER, 0)
 	//what number will you bet - Tell us where 0 and 00 are plsa
@@ -208,7 +212,24 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
 	//Determine Range (0-00), (1-10), (11-20), (21-31), NVM
 	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_RANGE, TRUE)
 	//Then secondary multi (selection within the range you just selected)
-//	switch (var(VAR_RESULT)
+	switch (var(VAR_RESULT)) {
+		//0 et 00
+		case 0:
+			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_0_NUMBER, TRUE)
+		//1 - 10
+		case 1:
+			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER, TRUE)
+		//11 - 20
+		case 2:
+			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER, TRUE)
+		//21 - 30
+		case 3:
+			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER, TRUE)
+		//nvm
+		case 4:
+		default:
+	}
+
 	//confirm selection
 	//store selection in WAGER_NUMBER
 	//return
@@ -225,6 +246,31 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager {
 	//confirm selection
 	//store selection in WAGER_COLOR
 	//return
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRouletteGetRangeWager {
+	//reset range wager
+	setvar (WAGER_RANGE, 0)
+	//msg what range will you bet
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGetRangeWager)
+	closemessage
+	//multi determine range
+	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_RANGE, TRUE)
+	//confirm range
+	copyvar (WAGER_RANGE, VAR_RESULT)
+	switch (var(WAGER_RANGE)) {
+		//0 et 00
+		case 0:
+		//1 - 10
+		case 1:
+		//11 - 20
+		case 2:
+		//21 - 30
+		case 3:
+		//nvm
+		case 4:
+		default:
+	}
 }
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
@@ -260,13 +306,21 @@ text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmNumberWager {
 }
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager {
-	format("The payout for a wager on color depends on which color you wager on. Both red and blue pay out at two to one while green pays out higher, fifteen to one. Are you sure that you will bet on color?")
+	format("The payout for a wager on color depends on which color you wager on. Both {COLOR RED}red {COLOR DARK_GRAY}and {COLOR BLUE}blue {COLOR DARK_GRAY}pay out at two to one while {COLOR GREEN}green {COLOR DARK_GRAY}pays out higher, fifteen to one. Are you sure that you will bet on color?")
 }
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager {
-	format("A winning bet on range pays three to one, except for zero and double zero which pays the same as green, fifteen to one. Are you sure you want to wager on range?")
+	format("A winning bet on range pays three to one, except for zero and double zero which pays the same as {COLOR GREEN}green{COLOR DARK_GRAY}, fifteen to one. Are you sure you want to wager on range?")
 }
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWager {
 	format("There are thirty two individual spaces on the roulette wheel: numbers from one to thirty, single, and double nil. Which number will you be wagering on?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteGetRangeWager {
+	format("Which range of numbers will you wager on?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteGetColorWager {
+	format("Which color will you be wagering on?")
 }
