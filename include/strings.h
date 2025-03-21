@@ -963,7 +963,11 @@ extern const u8 gText_CoinWager5[];
 extern const u8 gText_CoinWager6[];
 extern const u8 gText_CoinWager7[];
 
-
+//BlueRoulette Wager Type: Number, Color, Range, NMV
+extern const u8 gText_BlueRouletteWagerType1[];
+extern const u8 gText_BlueRouletteWagerType2[];
+extern const u8 gText_BlueRouletteWagerType3[];
+extern const u8 gText_BlueRouletteWagerType4[];
 
 // Cable Club multichoice text
 extern const u8 CableClub_Text_TradeUsingLinkCable[];

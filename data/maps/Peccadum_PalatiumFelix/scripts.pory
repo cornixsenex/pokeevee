@@ -2,6 +2,10 @@
 //used in all games
 const WAGER = VAR_TEMP_0
 
+//Blue Roulette vars
+const WAGER_TYPE = VAR_TEMP_1
+const WAGER_NUMBER = VAR_TEMP_2 //Specific number chosen to wager on 0-30 all match. 31 is 00
+
 const OBJ_EVENT_BRDEALER1 = 4
 const OBJ_EVENT_BRDEALER2 = 3
 
@@ -16,7 +20,7 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteDealer {
     msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro)
     //if broke tell you to get coins
     checkcoins (VAR_TEMP_1)
-    if (var(VAR_TEMP_1) == 0) {
+    if (var(VAR_TEMP_1) < 5) {
         msgbox (Peccadum_PalatiumFelix_Text_NoCoins)
         call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
     }
@@ -33,7 +37,23 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteBrain {
     //How much will you wager
     call (Peccadum_PalatiumFelix_Script_GetCoinWager)
     //What type of wager (Num, color, range)
-    //What specific wager (which num, which color, what range)
+	call (Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType)
+    //Confirm type and select specific wager (which num, which color, what range)
+	switch (var(WAGER_TYPE)) {
+		case 0:
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager)
+		case 1:
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager)
+		case 2:
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteGetRangeWager)
+		case 3:
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+		default:
+			msgbox ("ERROR\nWAGER_TYPE OOB")
+			closemessage
+			release
+			end
+	}
     //good luck
     //spin
     //announce spin
@@ -45,14 +65,147 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteBrain {
 
 script Peccadum_PalatiumFelix_Script_GetCoinWager {
     //reset wager
+	setvar (WAGER, 0)
     //show coin box
+	showcoinsbox (21, 1)
     //msgbox What is your wager?
+	msgbox (SaltySpitoon_Text_HiLoKabuto_GetWager)
     closemessage
     multichoice (0, 0, MULTI_GET_COIN_WAGER, TRUE)
     copyvar (WAGER, VAR_RESULT)
-    //switch
-    return
+	checkcoins (VAR_RESULT)
+    switch (var(WAGER)) {
+		//0: 5
+		case 0:
+			if (var(VAR_RESULT) >= 5) {
+				removecoins (5)
+				updatecoinsbox (21, 1)
+				playse (SE_SHOP)
+				waitse
+				hidecoinsbox (21, 1)
+				return
+			} else {
+				hidecoinsbox (21, 1)
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+			}
+		//1: 25
+		case 1:
+			if (var(VAR_RESULT) >= 25) {
+				removecoins (25)
+				updatecoinsbox (21, 1)
+				playse (SE_SHOP)
+				waitse
+				hidecoinsbox (21, 1)
+				return
+			} else {
+				hidecoinsbox (21, 1)
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
+			}
+		//2: 100
+		case 2:
+			if (var(VAR_RESULT) >= 100) {
+				removecoins (100)
+				updatecoinsbox (21, 1)
+				playse (SE_SHOP)
+				waitse
+				hidecoinsbox (21, 1)
+				return
+			} else {
+				hidecoinsbox (21, 1)
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
+			}
+		//3: 500
+		case 3:
+			if (var(VAR_RESULT) >= 500) {
+				removecoins (500)
+				updatecoinsbox (21, 1)
+				playse (SE_SHOP)
+				waitse
+				hidecoinsbox (21, 1)
+				return
+			} else {
+				hidecoinsbox (21, 1)
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
+			}
+		//4: 1000
+		case 4:
+			if (var(VAR_RESULT) >= 1000) {
+				removecoins (1000)
+				updatecoinsbox (21, 1)
+				playse (SE_SHOP)
+				waitse
+				hidecoinsbox (21, 1)
+				return
+			} else {
+				hidecoinsbox (21, 1)
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
+			}
+		//5: 2500
+		case 5:
+			if (var(VAR_RESULT) >= 2500) {
+				removecoins (2500)
+				updatecoinsbox (21, 1)
+				playse (SE_SHOP)
+				waitse
+				hidecoinsbox (21, 1)
+				return
+			} else {
+				hidecoinsbox (21, 1)
+				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+				call (Peccadum_PalatiumFelix_Script_GetCoinWager)
+			}
+		case 6:
+			hidecoinsbox (21, 1)
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+	}
+	msgbox("ERROR\nBottom of GetCoinWager")
+	closemessage
+	release
+	end
 }
+
+script Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType {
+	//reset wager type
+	setvar (WAGER_TYPE, 0)
+	//msgbox What type of wager will you be making
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGetWagerType)
+	closemessage
+	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_TYPE, TRUE)
+	copyvar (WAGER_TYPE, VAR_RESULT)
+	//confirm wager type or exit on NVM
+	switch (var(WAGER_TYPE)) {
+		//Num
+		case 0:
+			msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmNumberWager, MSGBOX_YESNO)
+		//Color
+		case 1:
+			msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager, MSGBOX_YESNO)
+		//Range
+		case 2:	
+			msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager, MSGBOX_YESNO)
+		//NVM
+		case 3:
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+	}
+	if (var(VAR_RESULT) == YES) {
+			return
+		} else {
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteGetWagerType)
+		}
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
+	//reset number wager
+	setvar (WAGER_NUMBER, 0)
+	//what number will you bet - Tell us where 0 and 00 are plsa
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWagerA)
+	closemessage
+	//choice 1: High or Low number (because 16 max list length)
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
     //see you again
@@ -66,8 +219,6 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
     end
 }
     
-
-
 text Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro {
     format("I am the Blue Roulette table dealer.")
 }
@@ -78,4 +229,24 @@ text Peccadum_PalatiumFelix_Text_BlueRouletteDealerBegin {
 
 text Peccadum_PalatiumFelix_Text_NoCoins {
     format("Excuse me sir, but coins are required to play games at Palatium Felix. Please speak with the cashier to purchase more.")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteGetWagerType {
+	format("What kind of wager will you be placing?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmNumberWager {
+	format("A wager on a winning number pays thirty to one. Are you sure that you will place a wager on a single number?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager {
+	format("The payout for a wager on color depends on which color you wager on. Both red and blue pay out at two to one while green pays out higher, fifteen to one. Are you sure that you will bet on color?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager {
+	format("A winning bet on range pays three to one. Are you sure you want to wager on range?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWagerA {
+	format("")
 }

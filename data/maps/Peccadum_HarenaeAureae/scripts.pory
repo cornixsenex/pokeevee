@@ -785,7 +785,7 @@ script HiLoKabuto_Group_Script_GetWager {
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-				call (HiLoKabuto_Group_Script_GetWager)
+				call (HiLoKabuto_Group_Script_End)
 			}
 		case 1:
 			checkmoney (10)
@@ -799,7 +799,7 @@ script HiLoKabuto_Group_Script_GetWager {
 			} else {
 				hidemoneybox
 				msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
-				call (HiLoKabuto_Group_Script_End)
+				call (HiLoKabuto_Group_Script_GetWager)
 			}
 		case 2:
 			checkmoney (100)

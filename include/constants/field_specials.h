@@ -52,6 +52,7 @@
 #define SCROLL_MULTI_CHOOSE_FOSSIL             			  20
 #define SCROLL_MULTI_ARDOR_MUSIC_CHOOSE_NOTE              21
 #define SCROLL_MULTI_GET_COIN_WAGER                       22
+#define SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_TYPE         23
 
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6

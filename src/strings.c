@@ -618,6 +618,11 @@ const u8 gText_CoinWager5[]   = _("1,000");
 const u8 gText_CoinWager6[]   = _("2,500");
 const u8 gText_CoinWager7[]   = _("NEVER MIND");
 
+//BlueRoulette Wager Type
+const u8 gText_BlueRouletteWagerType1[]   = _("NUMBER");
+const u8 gText_BlueRouletteWagerType2[]   = _("COLOR");
+const u8 gText_BlueRouletteWagerType3[]   = _("RANGE");
+const u8 gText_BlueRouletteWagerType4[]   = _("NEVER MIND");
 
 const u8 gText_BlueFlute2[] = _("BLUE FLUTE");
 const u8 gText_YellowFlute2[] = _("YELLOW FLUTE");
