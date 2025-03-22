@@ -238,7 +238,6 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
 		case 4:
 		default:
 	}
-
 	//confirm selection
 	//store selection in WAGER_NUMBER
 	//return
@@ -253,8 +252,40 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager {
 	//Determine color, NVM
 	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_COLOR, TRUE)
 	//confirm selection
-	//store selection in WAGER_COLOR
-	//return
+	switch (var(WAGER_COLOR)) {
+		//red
+		case 0:
+			msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorRed, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				return
+			} else {
+				call (Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager)
+			}
+		//blue
+		case 1:
+			msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorBlue, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				return
+			} else {
+				call (Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager)
+			}
+		//green
+		case 2:
+			msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorGreen, MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				return
+			} else {
+				call (Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager)
+			}
+		//nvm
+		case 3:
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+		default:
+			msgbox("ERROR\nWAGER_COLOR OOB")
+			closemessage
+			release
+			end
+	}
 }
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteGetRangeWager {
@@ -408,6 +439,18 @@ text Peccadum_PalatiumFelix_Text_BlueRouletteGetRangeWager {
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteGetColorWager {
 	format("Which color will you be wagering on?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorRed {
+	format("You have chosen to wager color {COLOR RED}red{COLOR DARK_GRAY}. This wager will payout at two to one. Are you certain you want to place this bet?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorBlue {
+	format("You have chosen to wager color {COLOR BLUE}blue{COLOR DARK_GRAY}. This wager will payout at two to one. Are you certain you want to place this bet?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorGreen {
+	format("You have chosen to wager color {COLOR GREEN}green{COLOR DARK_GRAY}. This wager will payout fifteen to one. Are you certain you want to place this bet?")
 }
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange0 {
