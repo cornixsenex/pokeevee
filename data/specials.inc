@@ -614,3 +614,4 @@ gSpecials::
 	def_special TransitionMapMusic
     def_special DoPeccadumTruckScene
 	def_special IsRoute16VenatorMons
+	def_special BlueRouletteSpin

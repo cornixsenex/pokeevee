@@ -2337,6 +2337,8 @@ void ShowScrollableMultichoice(void)
     struct Task *task = &gTasks[taskId];
     task->tScrollMultiId = gSpecialVar_0x8004;
 
+	DebugPrintf("ShowScrollableMultichoice()\n8004: %d\n", gSpecialVar_0x8004);
+
     switch (gSpecialVar_0x8004)
     {
     case SCROLL_MULTI_NONE:
@@ -2550,47 +2552,8 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-	case SCROLL_MULTI_GET_COIN_WAGER:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 7;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 7;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-	case SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_TYPE:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 4;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 7;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-	case SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_RANGE:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 5;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 7;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-	case SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_0_NUMBER:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 3;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 7;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
 	case SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER:
+		DebugPrintf("Range 1");
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
         task->tLeft = 1;
@@ -2613,16 +2576,6 @@ void ShowScrollableMultichoice(void)
 	case SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
-        task->tLeft = 1;
-        task->tTop = 1;
-        task->tWidth = 7;
-        task->tHeight = 12;
-        task->tKeepOpenAfterSelect = FALSE;
-        task->tTaskId = taskId;
-        break;
-	case SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_COLOR:
-        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 4;
         task->tLeft = 1;
         task->tTop = 1;
         task->tWidth = 7;
@@ -2882,37 +2835,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_Ardor_MusicChooseNote7,
 		gText_Ardor_MusicChooseNote8,
 	},
-	[SCROLL_MULTI_GET_COIN_WAGER] =
-	{
-		gText_CoinWager1,
-		gText_CoinWager2,
-		gText_CoinWager3,
-		gText_CoinWager4,
-		gText_CoinWager5,
-		gText_CoinWager6,
-		gText_CoinWager7,
-	},
-	[SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_TYPE] =
-	{
-		gText_BlueRouletteWagerType1,
-		gText_BlueRouletteWagerType2,
-		gText_BlueRouletteWagerType3,
-		gText_BlueRouletteWagerType4,
-	},
-	[SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_RANGE] =
-	{
-		gText_BlueRouletteWagerRange1,
-		gText_BlueRouletteWagerRange2,
-		gText_BlueRouletteWagerRange3,
-		gText_BlueRouletteWagerRange4,
-		gText_BlueRouletteWagerRange5,
-	},
-	[SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_0_NUMBER] =
-	{
-        COMPOUND_STRING("{COLOR GREEN}0"),
-        COMPOUND_STRING("{COLOR GREEN}00"),
-        COMPOUND_STRING("NEVER MIND"),
-	},
 	[SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER] =
 	{
         COMPOUND_STRING("{COLOR BLUE}1"),
@@ -2953,13 +2875,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("{COLOR RED}28"),
         COMPOUND_STRING("{COLOR BLUE}29"),
         COMPOUND_STRING("{COLOR RED}30"),
-        COMPOUND_STRING("NEVER MIND"),
-	},
-	[SCROLL_MULTI_GET_BLUE_ROULETTE_WAGER_COLOR] =
-	{
-        COMPOUND_STRING("{COLOR RED}RED"),
-        COMPOUND_STRING("{COLOR BLUE}BLUE"),
-        COMPOUND_STRING("{COLOR GREEN}GREEN"),
         COMPOUND_STRING("NEVER MIND"),
 	},
 };
@@ -5011,6 +4926,14 @@ u16 RandDigit(void)
     RandomValue = Random();
 	RandomValue %= 10;
 	return RandomValue;
+}
+
+u16 BlueRouletteSpin(void)
+{
+	u16 spin;
+	spin = Random();
+	spin %= 32;
+	return spin;
 }
 
 void DesertTemple_FalseFloor(void)

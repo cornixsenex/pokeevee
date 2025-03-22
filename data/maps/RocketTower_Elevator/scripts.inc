@@ -219,114 +219,114 @@ RocketTower_Elevlator_EventScript_ChooseFloor::
 	special ShowScrollableMultichoice
 # 123 "data/maps/RocketTower_Elevator/scripts.pory"
 	waitstate
-# 125 "data/maps/RocketTower_Elevator/scripts.pory"
+# 124 "data/maps/RocketTower_Elevator/scripts.pory"
 	switch VAR_RESULT
-# 126 "data/maps/RocketTower_Elevator/scripts.pory"
+# 125 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 0, RocketTower_Elevlator_EventScript_ChooseFloor_3
-# 128 "data/maps/RocketTower_Elevator/scripts.pory"
+# 127 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 1, RocketTower_Elevlator_EventScript_ChooseFloor_4
-# 130 "data/maps/RocketTower_Elevator/scripts.pory"
+# 129 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 2, RocketTower_Elevlator_EventScript_ChooseFloor_5
-# 132 "data/maps/RocketTower_Elevator/scripts.pory"
+# 131 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 3, RocketTower_Elevlator_EventScript_ChooseFloor_6
-# 134 "data/maps/RocketTower_Elevator/scripts.pory"
+# 133 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 4, RocketTower_Elevlator_EventScript_ChooseFloor_7
-# 136 "data/maps/RocketTower_Elevator/scripts.pory"
+# 135 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 5, RocketTower_Elevlator_EventScript_ChooseFloor_8
-# 138 "data/maps/RocketTower_Elevator/scripts.pory"
+# 137 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 6, RocketTower_Elevlator_EventScript_ChooseFloor_9
-# 140 "data/maps/RocketTower_Elevator/scripts.pory"
+# 139 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 7, RocketTower_Elevlator_EventScript_ChooseFloor_10
-# 142 "data/maps/RocketTower_Elevator/scripts.pory"
+# 141 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 8, RocketTower_Elevlator_EventScript_ChooseFloor_11
-# 144 "data/maps/RocketTower_Elevator/scripts.pory"
+# 143 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 9, RocketTower_Elevlator_EventScript_ChooseFloor_12
-# 146 "data/maps/RocketTower_Elevator/scripts.pory"
+# 145 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 10, RocketTower_Elevlator_EventScript_ChooseFloor_13
-# 148 "data/maps/RocketTower_Elevator/scripts.pory"
+# 147 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 11, RocketTower_Elevlator_EventScript_ChooseFloor_14
-# 150 "data/maps/RocketTower_Elevator/scripts.pory"
+# 149 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 12, RocketTower_Elevlator_EventScript_ChooseFloor_15
-# 152 "data/maps/RocketTower_Elevator/scripts.pory"
+# 151 "data/maps/RocketTower_Elevator/scripts.pory"
 	case 13, RocketTower_Elevlator_EventScript_ChooseFloor_16
 RocketTower_Elevlator_EventScript_ChooseFloor_1:
-# 155 "data/maps/RocketTower_Elevator/scripts.pory"
+# 154 "data/maps/RocketTower_Elevator/scripts.pory"
 	call RocketTower_Elevator_EventScript_SetFloorWarp
-# 156 "data/maps/RocketTower_Elevator/scripts.pory"
+# 155 "data/maps/RocketTower_Elevator/scripts.pory"
 	release
 	end
 
 RocketTower_Elevlator_EventScript_ChooseFloor_3:
-# 127 "data/maps/RocketTower_Elevator/scripts.pory"
+# 126 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 14
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_4:
-# 129 "data/maps/RocketTower_Elevator/scripts.pory"
+# 128 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 1
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_5:
-# 131 "data/maps/RocketTower_Elevator/scripts.pory"
+# 130 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 2
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_6:
-# 133 "data/maps/RocketTower_Elevator/scripts.pory"
+# 132 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 3
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_7:
-# 135 "data/maps/RocketTower_Elevator/scripts.pory"
+# 134 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 4
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_8:
-# 137 "data/maps/RocketTower_Elevator/scripts.pory"
+# 136 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 5
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_9:
-# 139 "data/maps/RocketTower_Elevator/scripts.pory"
+# 138 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 6
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_10:
-# 141 "data/maps/RocketTower_Elevator/scripts.pory"
+# 140 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 7
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_11:
-# 143 "data/maps/RocketTower_Elevator/scripts.pory"
+# 142 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 8
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_12:
-# 145 "data/maps/RocketTower_Elevator/scripts.pory"
+# 144 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 9
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_13:
-# 147 "data/maps/RocketTower_Elevator/scripts.pory"
+# 146 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 10
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_14:
-# 149 "data/maps/RocketTower_Elevator/scripts.pory"
+# 148 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 11
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_15:
-# 151 "data/maps/RocketTower_Elevator/scripts.pory"
+# 150 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 12
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 RocketTower_Elevlator_EventScript_ChooseFloor_16:
-# 153 "data/maps/RocketTower_Elevator/scripts.pory"
+# 152 "data/maps/RocketTower_Elevator/scripts.pory"
 	setvar VAR_ROCKETTOWER_FLOOR, 13
 	goto RocketTower_Elevlator_EventScript_ChooseFloor_1
 
 
 RocketTower_Elevator_Text_ChooseFloor::
-# 160 "data/maps/RocketTower_Elevator/scripts.pory"
+# 159 "data/maps/RocketTower_Elevator/scripts.pory"
 	.string "Which floor would you like to go to?$"

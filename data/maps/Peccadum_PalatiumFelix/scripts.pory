@@ -8,6 +8,7 @@ const WAGER_TYPE = VAR_TEMP_1
 const WAGER_NUMBER = VAR_TEMP_2 //Specific number chosen to wager on 0-30 all match. 31 is 00
 const WAGER_RANGE = VAR_TEMP_3 //Specific Range on a range wager
 const WAGER_COLOR = VAR_TEMP_4 //Specific color on a color wager
+const SPIN_RESULT = VAR_TEMP_5
 
 const OBJ_EVENT_BRDEALER1 = 4
 const OBJ_EVENT_BRDEALER2 = 3
@@ -58,14 +59,21 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteBrain {
 			end
 	}
     //good luck
-	//clear wager refund
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGoodLuck)
+	//clear wager refund - wager is commited
 	clearflag (WAGER_REFUND)
-    //spin
+    //spin - should have something fun happen here, SE, a nice graphic idk
+	specialvar (SPIN_RESULT, BlueRouletteSpin)
     //announce spin
+	buffernumberstring (STR_VAR_1, SPIN_RESULT)
+	if (var(SPIN_RESULT) < 31) {
+		msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteAnnounceSpin)
+	} else {
+		msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteAnnounce00)
+	}
     //check if win or lose
-    //announce win or lose
-    //payout if win
-    //play again?
+	call (Peccadum_PalatiumFelix_Script_BlueRouletteCheckWin)
+	//rest handled from Win or Lose 
 }
 
 script Peccadum_PalatiumFelix_Script_GetCoinWager {
@@ -220,27 +228,157 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager {
 	closemessage
 	//Determine Range (0-00), (1-10), (11-20), (21-31), NVM
 	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_RANGE, TRUE)
-	//Then secondary multi (selection within the range you just selected)
-	switch (var(VAR_RESULT)) {
+	copyvar (WAGER_RANGE, VAR_RESULT)
+	msgbox ("SPECIFIC NUM")
+	closemessage
+	//Then secondary multi (selection within the range you just selected) - assign WAGER_NUMBER based on selection and range
+	switch (var(WAGER_RANGE)) {
 		//0 et 00
 		case 0:
 			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_0_NUMBER, TRUE)
+			switch (var(VAR_RESULT)) {
+				case 0 :
+					setvar (WAGER_NUMBER, 0)
+				case 1:
+					setvar (WAGER_NUMBER, 31)
+				case 2:
+					call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+				default:
+					msgbox ("ERROR\nOOB return from\nROULETTE_RANGE_0_NUMBER")
+					closemessage
+					release
+					end
+			}
 		//1 - 10
 		case 1:
-			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER, TRUE)
+			msgbox ("CASE 1")
+			closemessage
+			setvar (VAR_0x8004, SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_1_NUMBER)
+			special (ShowScrollableMultichoice)
+			waitstate
+			switch (var(VAR_RESULT)) {
+				case 0 :
+					setvar (WAGER_NUMBER, 1)
+				case 1:
+					setvar (WAGER_NUMBER, 2)
+				case 2:
+					setvar (WAGER_NUMBER, 3)
+				case 3:
+					setvar (WAGER_NUMBER, 4)
+				case 4:
+					setvar (WAGER_NUMBER, 5)
+				case 5:
+					setvar (WAGER_NUMBER, 6)
+				case 6:
+					setvar (WAGER_NUMBER, 7)
+				case 7:
+					setvar (WAGER_NUMBER, 8)
+				case 8:
+					setvar (WAGER_NUMBER, 9)
+				case 9:
+					setvar (WAGER_NUMBER, 10)
+				case 10:
+					call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+				default:
+					msgbox ("ERROR\nOOB return from\nROULETTE_RANGE_1_NUMBER")
+					closemessage
+					release
+					end
+			}
 		//11 - 20
 		case 2:
-			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER, TRUE)
+			setvar (VAR_0x8004, SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER)
+			special (ShowScrollableMultichoice)
+			waitstate
+			switch (var(VAR_RESULT)) {
+				case 0 :
+					setvar (WAGER_NUMBER, 11)
+				case 1:
+					setvar (WAGER_NUMBER, 12)
+				case 2:
+					setvar (WAGER_NUMBER, 13)
+				case 3:
+					setvar (WAGER_NUMBER, 14)
+				case 4:
+					setvar (WAGER_NUMBER, 15)
+				case 5:
+					setvar (WAGER_NUMBER, 16)
+				case 6:
+					setvar (WAGER_NUMBER, 17)
+				case 7:
+					setvar (WAGER_NUMBER, 18)
+				case 8:
+					setvar (WAGER_NUMBER, 19)
+				case 9:
+					setvar (WAGER_NUMBER, 20)
+				case 10:
+					call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+				default:
+					msgbox ("ERROR\nOOB return from\nROULETTE_RANGE_2_NUMBER")
+					closemessage
+					release
+					end
+			}
 		//21 - 30
 		case 3:
-			multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER, TRUE)
+			setvar (VAR_0x8004, SCROLL_MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER)
+			special (ShowScrollableMultichoice)
+			waitstate
+			switch (var(VAR_RESULT)) {
+				case 0 :
+					setvar (WAGER_NUMBER, 21)
+				case 1:
+					setvar (WAGER_NUMBER, 22)
+				case 2:
+					setvar (WAGER_NUMBER, 23)
+				case 3:
+					setvar (WAGER_NUMBER, 24)
+				case 4:
+					setvar (WAGER_NUMBER, 25)
+				case 5:
+					setvar (WAGER_NUMBER, 26)
+				case 6:
+					setvar (WAGER_NUMBER, 27)
+				case 7:
+					setvar (WAGER_NUMBER, 28)
+				case 8:
+					setvar (WAGER_NUMBER, 29)
+				case 9:
+					setvar (WAGER_NUMBER, 30)
+				case 10:
+					call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+				default:
+					msgbox ("ERROR\nOOB return from\nROULETTE_RANGE_2_NUMBER")
+					closemessage
+					release
+					end
+			}
 		//nvm
 		case 4:
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
 		default:
+			msgbox ("ERROR\nWAGER_RANGE OOB in\nGetNumberWager")
+			closemessage
+			release
+			end
 	}
 	//confirm selection
-	//store selection in WAGER_NUMBER
-	//return
+	buffernumberstring (STR_VAR_1, WAGER_NUMBER)
+	if (var(WAGER_NUMBER) < 31) {
+		msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmWagerNumber, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			return
+		} else {
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager)
+		}
+	} else {
+		msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteConfirmWager00, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			return
+		} else {
+			call (Peccadum_PalatiumFelix_Script_BlueRouletteGetNumberWager)
+		}
+	}
 }
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager {
@@ -251,6 +389,7 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetColorWager {
 	closemessage
 	//Determine color, NVM
 	multichoice (0, 0, MULTI_GET_BLUE_ROULETTE_WAGER_COLOR, TRUE)
+	copyvar (WAGER_COLOR, VAR_RESULT)
 	//confirm selection
 	switch (var(WAGER_COLOR)) {
 		//red
@@ -340,6 +479,117 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteGetRangeWager {
 			release
 			end
 	}
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRouletteCheckWin {
+	//switch on wager type
+	switch (var(WAGER_TYPE)) {
+		//number
+		case 0:
+			if (var(SPIN_RESULT) == WAGER_NUMBER) {
+				call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+			} else {
+				call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+			}
+		//color
+		case 1:
+			switch (var(WAGER_COLOR)) {
+				//red
+				case 0:
+					if     (var(SPIN_RESULT) == 2 || var(SPIN_RESULT) == 4 || var(SPIN_RESULT) == 6 || var(SPIN_RESULT) == 8 ||
+							var(SPIN_RESULT) == 10 || var(SPIN_RESULT) == 12 || var(SPIN_RESULT) == 14 || var(SPIN_RESULT) == 16 || var(SPIN_RESULT) == 18 ||
+							var(SPIN_RESULT) == 20 || var(SPIN_RESULT) == 22 || var(SPIN_RESULT) == 24 || var(SPIN_RESULT) == 26 || var(SPIN_RESULT) == 28 ||
+							var(SPIN_RESULT) == 30) {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+					} else {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+					}
+				//blue
+				case 1:
+					if     (var(SPIN_RESULT) == 1 || var(SPIN_RESULT) == 3 || var(SPIN_RESULT) == 5 || var(SPIN_RESULT) == 7 ||
+							var(SPIN_RESULT) == 9 || var(SPIN_RESULT) == 11 || var(SPIN_RESULT) == 13 || var(SPIN_RESULT) == 15 || var(SPIN_RESULT) == 17 ||
+							var(SPIN_RESULT) == 19 || var(SPIN_RESULT) == 21 || var(SPIN_RESULT) == 23 || var(SPIN_RESULT) == 25 || var(SPIN_RESULT) == 27 ||
+							var(SPIN_RESULT) == 29) {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+					} else {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+					}
+				//green
+				case 2:
+					if (var(SPIN_RESULT) == 0 || var(SPIN_RESULT) == 31) {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+					} else {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+					}
+				default:
+					msgbox ("ERROR\nWAGER_COLOR OOB in CheckWin")
+					closemessage
+					release
+					end
+			}
+		//range
+		case 2:
+			switch (var(WAGER_RANGE)) {
+				//0 et 00
+				case 0:
+					if (var(SPIN_RESULT) == 0 || var(SPIN_RESULT) == 31) {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+					} else {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+					}
+				//1 - 10
+				case 1:
+					if (var(SPIN_RESULT) > 0 && var(SPIN_RESULT) < 11) {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+					} else {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+					}
+				//11 - 20
+				case 2:
+					if (var(SPIN_RESULT) > 10 && var(SPIN_RESULT) < 11) {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+					} else {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+					}
+				//21 - 30
+				case 3:
+					if (var(SPIN_RESULT) > 20 && var(SPIN_RESULT) < 31) {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin)
+					} else {
+						call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose)
+					}
+				default:
+					msgbox ("ERROR\nWAGER_RANGE OOB in CheckWin")
+					closemessage
+					release
+					end
+			}
+		default:
+			msgbox ("ERROR\nWAGER_TYPE OOB in CheckWin")
+			closemessage
+			release
+			end
+	}
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin {
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRoulettePlayerWin)
+	//do payout stuff
+	call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain)
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRoulettePlayerLose {
+	msgbox (Peccadum_PalatiumFelix_Text_BlueRoulettePlayerLose)
+	call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain)
+}
+
+script Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain {
+	msgbox(Peccadum_PalatiumFelix_Text_BlueRoulettePlayAgain, MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+        call (Peccadum_PalatiumFelix_Script_BlueRouletteBrain)
+    } else {
+		call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
+    }
 }
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
@@ -471,4 +721,36 @@ text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange3 {
 
 text CasinoDealer_Text_Refund {
 	format("Here are the unwagered coins back for you.")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmWagerNumber {
+	format("You have chosen to wager on {STR_VAR_1}. The payout will be at thirty to one. Are you certain you want to place this bet?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmWager00 {
+	format("You have chosen to bet double zero. The payout will be at thirty to one. Are you certain you want to place this bet?")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteGoodLuck {
+	format("Rien ne va plus! No more bets! Sir, good luck!")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteAnnounceSpin {
+	format("The result of this spin is {STR_VAR_1}!")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRouletteAnnounce00 {
+	format("The result of the spin: double zero!")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRoulettePlayerWin {
+	format("Congratulations {PLAYER}! You won your bet!")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRoulettePlayerLose {
+	format("I'm sorry but you did not win your bet.")
+}
+
+text Peccadum_PalatiumFelix_Text_BlueRoulettePlayAgain {
+	format("Would you like to bet on roulette again?")
 }
