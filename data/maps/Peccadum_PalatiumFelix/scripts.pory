@@ -18,7 +18,24 @@ mapscripts Peccadum_PalatiumFelix_MapScripts {}
 script Peccadum_PalatiumFelix_Script_Cashier {
 	lock
 	faceplayer
+	showcoinsbox (21, 1)
 	msgbox (Peccadum_PalatiumFelix_Text_Cashier)
+	closemessage
+	multichoice (0, 0, MULTI_PALATIUM_FELIX_CASHIER, TRUE)
+	switch (var(VAR_RESULT)) {
+		//Buy Coins
+		case 0:
+			call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+		//Sell Coins
+		case 1:
+			call (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+		//Exit
+		default:
+			msgbox ("ERROR\n VAR_RESULT OOB Cashier")
+			closemessage
+			release
+			end
+	}
 	release
 	end
 }
@@ -90,7 +107,7 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteBrain {
 	faceplayer
     //check if win or lose
 	call (Peccadum_PalatiumFelix_Script_BlueRouletteCheckWin)
-	//rest handled from Win or Lose 
+	//rest handled from Win or Lose
 }
 
 script Peccadum_PalatiumFelix_Script_GetCoinWager {
