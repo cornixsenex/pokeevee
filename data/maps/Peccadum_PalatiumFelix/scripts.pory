@@ -15,6 +15,13 @@ const OBJ_EVENT_BRDEALER2 = 3
 
 mapscripts Peccadum_PalatiumFelix_MapScripts {}
 
+script Peccadum_PalatiumFelix_Script_Cashier {
+	lock
+	faceplayer
+	msgbox (Peccadum_PalatiumFelix_Text_Cashier)
+	release
+	end
+}
 
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteDealer {
@@ -817,4 +824,8 @@ text Peccadum_PalatiumFelix_Text_BlueRoulettePlayerLose {
 
 text Peccadum_PalatiumFelix_Text_BlueRoulettePlayAgain {
 	format("Would you like to bet on roulette again?")
+}
+
+text Peccadum_PalatiumFelix_Text_Cashier {
+	format("Hello! Welcome to the Palatium Felix! Would you like to trade coins for cash?")
 }
