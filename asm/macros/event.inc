@@ -1871,6 +1871,13 @@
 	.byte SCR_OP_DYNMULTIPUSH
 	.4byte \name
 	.2byte \id
+	.endm	
+
+	@ CORNIX CUSTOM - Changes the value of destination by multiplying value to it. Overflow is not prevented (0x0000 - 1 = 0xFFFF).
+	.macro multvar destination:req, value:req
+	.byte SCR_OP_MULTVAR
+	.2byte \destination
+	.2byte \value
 	.endm
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req

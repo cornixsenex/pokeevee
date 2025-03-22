@@ -60,17 +60,27 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteBrain {
 	}
     //good luck
 	msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteGoodLuck)
+	closemessage
 	//clear wager refund - wager is commited
 	clearflag (WAGER_REFUND)
+	applymovement (VAR_LAST_TALKED, Common_Movement_FaceDown)
+	waitmovement (0)
+	playse (SE_ROULETTE_BALL)
+	waitse
     //spin - should have something fun happen here, SE, a nice graphic idk
 	specialvar (SPIN_RESULT, BlueRouletteSpin)
+	playse (SE_ROULETTE_BALL2)
+	waitse
     //announce spin
+	applymovement (VAR_LAST_TALKED, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	buffernumberstring (STR_VAR_1, SPIN_RESULT)
 	if (var(SPIN_RESULT) < 31) {
 		msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteAnnounceSpin)
 	} else {
 		msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteAnnounce00)
 	}
+	faceplayer
     //check if win or lose
 	call (Peccadum_PalatiumFelix_Script_BlueRouletteCheckWin)
 	//rest handled from Win or Lose 
@@ -100,6 +110,7 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
+				setvar (WAGER, 5)
 				return
 			} else {
 				clearflag (WAGER_REFUND)
@@ -115,6 +126,7 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
+				setvar (WAGER, 25)
 				return
 			} else {
 				hidecoinsbox (21, 1)
@@ -129,6 +141,7 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
+				setvar (WAGER, 100)
 				return
 			} else {
 				hidecoinsbox (21, 1)
@@ -143,6 +156,7 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
+				setvar (WAGER, 500)
 				return
 			} else {
 				hidecoinsbox (21, 1)
@@ -157,6 +171,7 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
+				setvar (WAGER, 1000)
 				return
 			} else {
 				hidecoinsbox (21, 1)
@@ -171,6 +186,7 @@ script Peccadum_PalatiumFelix_Script_GetCoinWager {
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
+				setvar (WAGER, 2500)
 				return
 			} else {
 				hidecoinsbox (21, 1)
@@ -573,8 +589,56 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteCheckWin {
 }
 
 script Peccadum_PalatiumFelix_Script_BlueRoulettePlayerWin {
+	showcoinsbox (21, 1)
 	msgbox (Peccadum_PalatiumFelix_Text_BlueRoulettePlayerWin)
+	closemessage
 	//do payout stuff
+	switch (var(WAGER_TYPE)) {
+		//number
+		case 0:
+			if (var(WAGER) <  500) {
+				multvar (WAGER, 30)
+			} else {
+				setvar (WAGER, 9999)
+			}
+		//color
+		case 1:
+			//red or blue
+			if (var(WAGER) !=  2) {
+				multvar (WAGER, 2)
+			//green
+			} else {
+				if (var(WAGER) <  100) {
+					multvar (WAGER, 15)
+				} else {
+					setvar (WAGER, 9999)
+				}
+			}
+		//range
+		case 2:
+			//normal ranges
+			if (var(WAGER) !=  0) {
+				multvar (WAGER, 3)
+			//green
+			} else {
+				if (var(WAGER) <  100) {
+					multvar (WAGER, 15)
+				} else {
+					setvar (WAGER, 9999)
+				}
+			}
+		default:
+			hidecoinsbox (21, 1)
+			msgbox ("ERROR\nWAGER_TYPE OOB in PlayerWin")
+			closemessage
+			release
+			end
+	}
+	addcoins (WAGER)
+	updatecoinsbox (21, 1)
+	playse (SE_SHOP)
+	waitse
+	hidecoinsbox (21,1)
 	call (Peccadum_PalatiumFelix_Script_BlueRoulettePlayAgain)
 }
 
@@ -597,37 +661,37 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteEnd  {
 		showcoinsbox (21, 1)
 		msgbox (CasinoDealer_Text_Refund)
 		switch (var(WAGER)) {
-			case 0:	
+			case 5:	
 				addcoins (5)
 				updatecoinsbox (21, 1)
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
-			case 1:	
+			case 25:	
 				addcoins (25)
 				updatecoinsbox (21, 1)
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
-			case 2:	
+			case 100:	
 				addcoins (100)
 				updatecoinsbox (21, 1)
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
-			case 3:	
+			case 500:	
 				addcoins (500)
 				updatecoinsbox (21, 1)
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
-			case 4:	
+			case 1000:	
 				addcoins (1000)
 				updatecoinsbox (21, 1)
 				playse (SE_SHOP)
 				waitse
 				hidecoinsbox (21, 1)
-			case 5:
+			case 2500:
 				addcoins (2500)
 				updatecoinsbox (21, 1)
 				playse (SE_SHOP)
@@ -704,7 +768,7 @@ text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorGreen {
 }
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange0 {
-	format("You have chosen to wager on the range of zero and double zero. This will payout at three to one. Are you certain?")
+	format("You have chosen to wager on the range of zero and double zero. This will payout fifteen to one. Are you certain?")
 }
 
 text Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange1 {

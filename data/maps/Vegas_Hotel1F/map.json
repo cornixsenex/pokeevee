@@ -2,7 +2,7 @@
   "id": "MAP_VEGAS_HOTEL1F",
   "name": "Vegas_Hotel1F",
   "layout": "LAYOUT_VEGAS_HOTEL1F",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_GAME_CORNER",
   "region_map_section": "MAPSEC_NONE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

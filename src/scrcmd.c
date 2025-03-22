@@ -602,6 +602,17 @@ bool8 ScrCmd_subvar(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_multvar(struct ScriptContext *ctx){
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+    *ptr *= VarGet(ScriptReadHalfword(ctx));
+    return FALSE;
+}
+
 bool8 ScrCmd_random(struct ScriptContext *ctx)
 {
     u16 max = VarGet(ScriptReadHalfword(ctx));
