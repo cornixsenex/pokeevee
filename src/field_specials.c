@@ -2583,6 +2583,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	case SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 12;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 7;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2875,6 +2885,21 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("{COLOR RED}28"),
         COMPOUND_STRING("{COLOR BLUE}29"),
         COMPOUND_STRING("{COLOR RED}30"),
+        COMPOUND_STRING("NEVER MIND"),
+	},
+	[SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER] =
+	{
+        COMPOUND_STRING("1"),
+        COMPOUND_STRING("5"),
+        COMPOUND_STRING("10"),
+        COMPOUND_STRING("25"),
+        COMPOUND_STRING("50"),
+        COMPOUND_STRING("100"),
+        COMPOUND_STRING("250"),
+        COMPOUND_STRING("500"),
+        COMPOUND_STRING("1,000"),
+        COMPOUND_STRING("2,500"),
+        COMPOUND_STRING("5,000"),
         COMPOUND_STRING("NEVER MIND"),
 	},
 };

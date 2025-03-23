@@ -1,4 +1,6 @@
 
+const CHECK_COINS = VAR_TEMP_6
+
 //used in all games
 const WAGER = VAR_TEMP_0
 const WAGER_REFUND = FLAG_TEMP_2 //when set give refund in End script
@@ -18,7 +20,10 @@ mapscripts Peccadum_PalatiumFelix_MapScripts {}
 script Peccadum_PalatiumFelix_Script_Cashier {
 	lock
 	faceplayer
-	showcoinsbox (21, 1)
+	//reset CHECK_COINS just in case idk
+	setvar (CHECK_COINS, 0)
+	showmoneybox (18, 0)
+	showcoinsbox (21, 6)
 	msgbox (Peccadum_PalatiumFelix_Text_Cashier)
 	closemessage
 	multichoice (0, 0, MULTI_PALATIUM_FELIX_CASHIER, TRUE)
@@ -29,6 +34,8 @@ script Peccadum_PalatiumFelix_Script_Cashier {
 		//Sell Coins
 		case 1:
 			call (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+		case 2:
+			call (Peccadum_PalatiumFelix_Script_CashierBye)
 		//Exit
 		default:
 			msgbox ("ERROR\n VAR_RESULT OOB Cashier")
@@ -36,10 +43,441 @@ script Peccadum_PalatiumFelix_Script_Cashier {
 			release
 			end
 	}
+	call (Peccadum_PalatiumFelix_Script_CashierBye)
+}
+
+script Peccadum_PalatiumFelix_Script_CashierBye {
+	//thank you come againa
+	hidemoneybox
+	hidecoinsbox (21, 6)
+	msgbox (Peccadum_PalatiumFelix_Text_CashierBye)
+	closemessage
 	release
 	end
 }
 
+script Peccadum_PalatiumFelix_Script_CashierBuyCoins {
+	//explain coins - price etc
+	//how many would you like to purchase
+	msgbox (Peccadum_PalatiumFelix_Text_CashierPurchase)
+	closemessage
+	checkcoins (CHECK_COINS)
+	//multichoice
+	setvar (VAR_0x8004, SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER)
+	special (ShowScrollableMultichoice)
+	waitstate
+	//prevent coin_case overflow
+	switch (var(VAR_RESULT)) {
+		//1
+		case 0:
+			if (var(CHECK_COINS) < 9999) {
+				checkmoney (100)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (100)
+					addcoins (1)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					return
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				return
+			}
+		//5
+		case 1:
+			if (var(CHECK_COINS) < 9995) {
+				checkmoney (500)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (500)
+					addcoins (5)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//10
+		case 2:
+			if (var(CHECK_COINS) < 9990) {
+				checkmoney (1000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (1000)
+					addcoins (10)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//25
+		case 3:
+			if (var(CHECK_COINS) < 9975) {
+				checkmoney (2500)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (2500)
+					addcoins (25)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//50
+		case 4:
+			if (var(CHECK_COINS) < 9950) {
+				checkmoney (5000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (5000)
+					addcoins (50)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//100
+		case 5:
+			if (var(CHECK_COINS) < 9900) {
+				checkmoney (10000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (10000)
+					addcoins (100)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//250
+		case 6:
+			if (var(CHECK_COINS) < 9750) {
+				checkmoney (25000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (25000)
+					addcoins (250)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//500
+		case 7:
+			if (var(CHECK_COINS) < 9500) {
+				checkmoney (50000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (50000)
+					addcoins (500)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//1000
+		case 8:
+			if (var(CHECK_COINS) < 9000) {
+				checkmoney (100000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (100000)
+					addcoins (1000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//2500
+		case 9:
+			if (var(CHECK_COINS) < 7500) {
+				checkmoney (250000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (250000)
+					addcoins (2500)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//5000
+		case 10:
+			if (var(CHECK_COINS) < 5000) {
+				checkmoney (500000)
+				if (var(VAR_RESULT) == TRUE) {
+					removemoney (500000)
+					addcoins (5000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				} else {
+					msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney)
+					call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+				}
+			} else {
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins)
+				call (Peccadum_PalatiumFelix_Script_CashierBuyCoins)
+			}
+		//nvm
+		case 11:
+			return
+		default:
+			msgbox("ERROR\nVARRESULT OOB BuyCoins")
+			closemessage
+			release
+			end
+	}
+	//Here are you coins
+	msgbox (Peccadum_PalatiumFelix_Text_CashierTakeCoins)
+	call (Peccadum_PalatiumFelix_Script_CashierBye)
+}
+
+script Peccadum_PalatiumFelix_Script_CashierSellCoins {
+	//explain coins - price etc - how many you want to sell?
+	msgbox (Peccadum_PalatiumFelix_Text_CashierSell)
+	closemessage
+	checkcoins (CHECK_COINS)
+	//multichoice
+	setvar (VAR_0x8004, SCROLL_MULTI_PALATIUM_FELIX_COIN_CASHIER)
+	special (ShowScrollableMultichoice)
+	waitstate
+	//prevent money overflow
+	switch (var(VAR_RESULT)) {
+		//1
+		case 0:
+			//check coins
+			if (var(CHECK_COINS) > 0) { //YES enough coins
+				checkmoney (999900)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					return
+				} else { //YES Room for money
+					removecoins (1)
+					addmoney (100)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				return
+			}
+		//5
+		case 1:
+			//check coins
+			if (var(CHECK_COINS) > 4) { //YES enough coins
+				checkmoney (999500)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (5)
+					addmoney (500)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//10
+		case 2:
+			//check coins
+			if (var(CHECK_COINS) > 9) { //YES enough coins
+				checkmoney (998000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (10)
+					addmoney (1000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//25
+		case 3:
+			//check coins
+			if (var(CHECK_COINS) > 24) { //YES enough coins
+				checkmoney (997500)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (25)
+					addmoney (2500)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//50
+		case 4:
+			//check coins
+			if (var(CHECK_COINS) > 49) { //YES enough coins
+				checkmoney (995000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (50)
+					addmoney (5000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//100
+		case 5:
+			//check coins
+			if (var(CHECK_COINS) > 99) { //YES enough coins
+				checkmoney (990000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (100)
+					addmoney (10000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//250
+		case 6:
+			//check coins
+			if (var(CHECK_COINS) > 249) { //YES enough coins
+				checkmoney (975000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (250)
+					addmoney (25000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//500
+		case 7:
+			//check coins
+			if (var(CHECK_COINS) > 499) { //YES enough coins
+				checkmoney (950000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (500)
+					addmoney (50000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//1000
+		case 8:
+			//check coins
+			if (var(CHECK_COINS) > 999) { //YES enough coins
+				checkmoney (900000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (1000)
+					addmoney (100000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//2500
+		case 9:
+			//check coins
+			if (var(CHECK_COINS) > 2499) { //YES enough coins
+				checkmoney (750000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (2500)
+					addmoney (250000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//5000
+		case 10:
+			//check coins
+			if (var(CHECK_COINS) > 4999) { //YES enough coins
+				checkmoney (500000)
+				if (var(VAR_RESULT) == TRUE) { //NO Room for money
+					msgbox (Peccadum_PalatiumFelix_Text_CashierTooMuchMoney)
+					call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+				} else { //YES Room for money
+					removecoins (5000)
+					addmoney (500000)
+					call (Peccadum_PalatiumFelix_Script_CashierUpdateTransaction)
+				}
+			} else { //NOT enough coins
+				msgbox (Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins)
+				call  (Peccadum_PalatiumFelix_Script_CashierSellCoins)
+			}
+		//nvm
+		case 11:
+			return
+		default:
+			msgbox("ERROR, VAR_RESULT OOB SellCoins")
+			closemessage
+			release
+			end
+	}
+	//There is your money
+	msgbox (Peccadum_PalatiumFelix_Text_CashierTakeMoney)
+	call (Peccadum_PalatiumFelix_Script_CashierBye)
+}
+
+script Peccadum_PalatiumFelix_Script_CashierUpdateTransaction {
+
+	updatemoneybox
+	updatecoinsbox (1, 6)
+	playse (SE_SHOP)
+	waitse
+	return
+}
 
 script Peccadum_PalatiumFelix_Script_BlueRouletteDealer {
     lock
@@ -47,8 +485,8 @@ script Peccadum_PalatiumFelix_Script_BlueRouletteDealer {
     //Hello I am the roulette dealer
     msgbox (Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro)
     //if broke tell you to get coins
-    checkcoins (VAR_TEMP_1)
-    if (var(VAR_TEMP_1) < 5) {
+    checkcoins (CHECK_COINS)
+    if (var(CHECK_COINS) < 5) {
         msgbox (Peccadum_PalatiumFelix_Text_NoCoins)
         call (Peccadum_PalatiumFelix_Script_BlueRouletteEnd)
     }
@@ -846,3 +1284,47 @@ text Peccadum_PalatiumFelix_Text_BlueRoulettePlayAgain {
 text Peccadum_PalatiumFelix_Text_Cashier {
 	format("Hello! Welcome to the Palatium Felix! Would you like to trade coins for cash?")
 }
+
+text Peccadum_PalatiumFelix_Text_CashierPurchase {
+	format("We're happy to sell you as many coins as you would like. They're one hundred bucks each. How many coins would you like to purchase?")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierSell {
+	format("We're happy to exchange as many coins as you would like for one hundred bucks each. How many coins would you like to exchange?")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney {
+	format("You don't have enough money for those coins.")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins {
+	format("I'm sorry but you don't have enough room in your coin case to carry that many.")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierTooMuchMoney {
+	format("I'm sorry but you don't have enough room to carry that much money in your purse.")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins {
+	format("You don't have enough coins for that exchange.")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierBye {
+	format("We hope to see you again soon! Good luck!")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierTakeCoins {
+	format("Here are the coins you asked for sir. Thank you.")
+}
+
+text Peccadum_PalatiumFelix_Text_CashierTakeMoney {
+	format("There is the money exchanged for you coins.")
+}
+
+
+
+
+
+
+
+

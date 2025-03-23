@@ -975,6 +975,13 @@ static const struct MenuAction MultichoiceList_Get_BlueRoulette_WagerColor[] =
     {COMPOUND_STRING("NEVER MIND")},
 };
 
+static const struct MenuAction MultichoiceList_Get_BlueRoulette_PalatiumFelixCashier[] =
+{
+    {COMPOUND_STRING("BUY COINS")},
+    {COMPOUND_STRING("SELL COINS")},
+    {COMPOUND_STRING("NEVER MIND")},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1122,6 +1129,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_GET_BLUE_ROULETTE_RANGE_2_NUMBER] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_Range2Number),
     [MULTI_GET_BLUE_ROULETTE_RANGE_3_NUMBER] = MULTICHOICE(MultichoiceList_Get_BlueRoulette_Range3Number),
     [MULTI_GET_BLUE_ROULETTE_WAGER_COLOR]    = MULTICHOICE(MultichoiceList_Get_BlueRoulette_WagerColor),
+    [MULTI_PALATIUM_FELIX_CASHIER]           = MULTICHOICE(MultichoiceList_Get_BlueRoulette_PalatiumFelixCashier),
 };
 
 const u8 *const gStdStrings[] =
