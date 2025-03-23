@@ -1508,6 +1508,17 @@ script Peccadum_PalatiumFelix_Script_BusyDealer {
 	release
 	end
 }
+
+//1,000 coin buy in. High rollers. After playing at least once do the logistics boss script
+script Peccadum_PalatiumFelix_Script_4HiLoKabuto {
+
+
+}
+
+//150 coin buy in
+script Peccadum_PalatiumFelix_Script_5HiLoKabuto {
+
+}
     
 text Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro {
     format("I am the Blue Roulette table dealer.")
