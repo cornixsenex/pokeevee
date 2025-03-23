@@ -1212,6 +1212,7 @@ script Peccadum_PalatiumFelix_Script_DealerHiLoKabuto {
 		} else {
         msgbox (Peccadum_PalatiumFelix_Text_NoCoins)
 		call (DealerHiLoKabuto_Script_End)
+		}
 	}
 	release
 	end
@@ -1221,14 +1222,49 @@ script Peccadum_PalatiumFelix_Script_DealerHiLoKabuto_Brain {
 	//Get Wager
 	call (DealerHiLoKabuto_Script_GetCoinWager)
 	//reset game
+    call (DealerHiLoKabuto_Script_ResetGame)
 	//determine Hi or Lo Kabuto
+	call (HiLoKabuto_Script_DetermineHiOrLoKabuto)
 	//assign cards - remove card from pool after drawing
 	//player
+    call (HiLoKabuto_Script_RemoveCard)
+    specialvar (VAR_RESULT, RandDigit)
+    copyvar (PLAYER_CARD, VAR_RESULT)
 	//dealer
+    do {
+        specialvar (VAR_RESULT, RandDigit)
+    } while (var(VAR_RESULT) == PLAYER_CARD)
+    copyvar (DEALER_CARD, VAR_RESULT)
 	//handle Hi or Lo Kabuto
+    if (flag(KABUTOHI)) {
+        if (var(PLAYER_CARD) == 0) {
+            setvar (PLAYER_CARD, 10)
+        }
+        if (var(DEALER_CARD) == 0) {
+            setvar (DEALER_CARD, 10)
+        }
+    }
 	//announce results
+    buffernumberstring (STR_VAR_1, PLAYER_CARD)
+    buffernumberstring (STR_VAR_2, DEALER_CARD)
+    if (var(PLAYER_CARD) == 10 || var(PLAYER_CARD) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerKabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerCard)
+    }
+    if (var(DEALER_CARD) == 10 || var(DEALER_CARD) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceDealerKabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceDealerCard)
+    }
 	//do payout if win - NOTE: WAGER is set to 1,5,10,25,50,100,250...
+	if (var(PLAYER_CARD) > DEALER_CARD) {
+        call (DealerHiLoKabuto_Script_PlayerWinCoins)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_DealerWin)
+    }
 	//play again?
+    call (DealerHiLoKabuto_Script_PlayAgainCoins)
 }
 
 script DealerHiLoKabuto_Script_GetCoinWager {
@@ -1429,6 +1465,26 @@ script DealerHiLoKabuto_Script_GetCoinWager {
 	}
 }
 
+script DealerHiLoKabuto_Script_PlayerWinCoins {
+	showcoinsbox (21, 1)
+    msgbox (DealerHiLoKabuto_Text_PlayerWin)
+	multvar (WAGER, 2)
+	addcoins (WAGER)
+	updatecoinsbox (21, 1)
+	playse (SE_SHOP)
+	waitse
+	hidecoinsbox (21,1)
+	return
+}
+
+script DealerHiLoKabuto_Script_PlayAgainCoins {
+    msgbox (DealerHiLoKabuto_Text_PlayAgain, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        call (Peccadum_PalatiumFelix_Script_DealerHiLoKabuto_Brain)
+    } else {
+		call (DealerHiLoKabuto_Script_End)
+    }
+}
 
 script Peccadum_PalatiumFelix_Script_TableDealer {
 	lock
