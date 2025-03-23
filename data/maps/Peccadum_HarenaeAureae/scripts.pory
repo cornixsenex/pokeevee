@@ -1177,7 +1177,7 @@ text HiLoKabuto_Group_Text_PlayAgain {
 }
 
 text HiLoKabuto_Group_Text_End {
-	format("Once you're ready to gamble, we'll be here.")
+	format("When you're ready to play come see us here.")
 }
 
 

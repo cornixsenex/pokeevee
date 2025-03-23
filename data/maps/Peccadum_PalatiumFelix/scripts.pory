@@ -32,6 +32,9 @@ const CARD9       = FLAG_TEMP_9
 const CARD0       = FLAG_TEMP_A
 const KABUTOHI    = FLAG_TEMP_B
 
+//Trigger Logistics Boss script
+const TRIGGER_LOGISTICS = FLAG_TEMP_D
+
 
 mapscripts Peccadum_PalatiumFelix_MapScripts {}
 
@@ -1511,13 +1514,280 @@ script Peccadum_PalatiumFelix_Script_BusyDealer {
 
 //1,000 coin buy in. High rollers. After playing at least once do the logistics boss script
 script Peccadum_PalatiumFelix_Script_4HiLoKabuto {
-
-
+    lock
+    showcoinsbox (21, 1)
+    msgbox (Peccadum_PalatiumFelix_Text_4HiLoKabuto, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+        hidecoinsbox (21, 1)
+		call (HiLoKabuto_Group_Script_End)
+	} else {
+		call (HiLoKabuto_Group4_Script_CoinBrain)
+	}
 }
 
 //150 coin buy in
 script Peccadum_PalatiumFelix_Script_5HiLoKabuto {
+    lock
+    showcoinsbox (21, 1)
+    msgbox (Peccadum_PalatiumFelix_Text_5HiLoKabuto, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+        hidecoinsbox (21, 1)
+		call (HiLoKabuto_Group_Script_End)
+	} else {
+		call (HiLoKabuto_Group5_Script_CoinBrain)
+	}
+}
 
+script HiLoKabuto_Group4_Script_CoinBrain {
+    //remove coins (check to ensure you have the coin) 1,000 buy in
+    checkcoins (CHECK_COINS)
+    if (var(CHECK_COINS) < 1000) {
+        msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+        hidecoinsbox (21, 1)
+        call (HiLoKabuto_Group_Script_End)
+    } else {
+       removecoins (1000)
+       updatecoinsbox (21, 1)
+       playse (SE_SHOP)
+       waitse
+       hidecoinsbox (21, 1)
+    }
+    //reset game
+    call  (HiLoKabuto_Group_Script_ResetGame)
+    //Determine Hi Lo Kabuto
+	call (HiLoKabuto_Script_DetermineHiOrLoKabuto)
+    //assign cards et remove from pool
+	//Opo1
+	specialvar (OPPONENT_CARD_1, RandDigit)
+	//Opo2
+	do {
+		specialvar (OPPONENT_CARD_2, RandDigit)
+	} while (var(OPPONENT_CARD_2) == OPPONENT_CARD_1)
+	//Opo3	
+	do {
+		specialvar (OPPONENT_CARD_3, RandDigit)
+	} while (var(OPPONENT_CARD_3) == OPPONENT_CARD_1 || (var(OPPONENT_CARD_3) == OPPONENT_CARD_2))
+	//PlayerCard
+	do {
+		specialvar (PLAYER_CARD, RandDigit)
+	} while (var(PLAYER_CARD) == OPPONENT_CARD_1 || (var(PLAYER_CARD) == OPPONENT_CARD_2) || (var(PLAYER_CARD) == OPPONENT_CARD_3))
+	//handle kabuto hi: 0 -> 10
+	if (flag(KABUTOHI)) {
+        if (var(PLAYER_CARD) == 0) {
+            setvar (PLAYER_CARD, 10)
+        }
+        if (var(OPPONENT_CARD_1) == 0) {
+            setvar (OPPONENT_CARD_1, 10)
+        }
+        if (var(OPPONENT_CARD_2) == 0) {
+            setvar (OPPONENT_CARD_2, 10)
+        }
+        if (var(OPPONENT_CARD_3) == 0) {
+            setvar (OPPONENT_CARD_3, 10)
+        }
+	}
+    //announce results
+	//player first
+    buffernumberstring (STR_VAR_1, PLAYER_CARD)
+	if (var(PLAYER_CARD) == 10 || var(PLAYER_CARD) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerKabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerCard)
+    }
+	//Opponents 1 - 3
+	buffernumberstring (STR_VAR_1, OPPONENT_CARD_1)
+	if (var(OPPONENT_CARD_1) == 10 || var(OPPONENT_CARD_1) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp1Kabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp1Card)
+    }
+	buffernumberstring (STR_VAR_2, OPPONENT_CARD_2)
+	if (var(OPPONENT_CARD_2) == 10 || var(OPPONENT_CARD_2) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp2Kabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp2Card)
+    }
+	buffernumberstring (STR_VAR_3, OPPONENT_CARD_3)
+	if (var(OPPONENT_CARD_3) == 10 || var(OPPONENT_CARD_3) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp3Kabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp3Card)
+    }
+    //declare winner - handle play pay out if winner
+	if (var(PLAYER_CARD) > OPPONENT_CARD_1 && var(PLAYER_CARD) > OPPONENT_CARD_2 && var(PLAYER_CARD) > OPPONENT_CARD_3) {
+		call (HiLoKabuto_Group4_Script_PlayerWinCoins)
+	} else {
+		//declare which gambler won
+		if (var(OPPONENT_CARD_1) > PLAYER_CARD && var(OPPONENT_CARD_1) > OPPONENT_CARD_2 && var(OPPONENT_CARD_1) > OPPONENT_CARD_3) {
+			msgbox (HiLoKabuto_Text_Gambler1Won)
+		} elif (var(OPPONENT_CARD_2) > PLAYER_CARD && var(OPPONENT_CARD_2) > OPPONENT_CARD_1 && var(OPPONENT_CARD_2) > OPPONENT_CARD_3) {
+			msgbox (HiLoKabuto_Text_Gambler2Won)
+		} elif (var(OPPONENT_CARD_3) > PLAYER_CARD && var(OPPONENT_CARD_3) > OPPONENT_CARD_1 && var(OPPONENT_CARD_3) > OPPONENT_CARD_2) {
+			msgbox (HiLoKabuto_Text_Gambler3Won)
+		} else {
+			msgbox ("ERROR\nDeclare gambler winner\nOOB")
+		}
+	}
+    //play again
+    showcoinsbox (21, 1)
+	msgbox (HiLoKabuto_Group4Coins_Text_PlayAgain, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (HiLoKabuto_Group4_Script_CoinBrain)
+	} else {
+        hidecoinsbox (21, 1)
+		call (HiLoKabuto_Group_Script_End)
+	}
+
+}
+
+script HiLoKabuto_Group5_Script_CoinBrain {
+    //remove coins (check to ensure you have the coin) 150 buy in
+    checkcoins (CHECK_COINS)
+    if (var(CHECK_COINS) < 150) {
+        msgbox (SaltySpitoon_Text_HiLoKabuto_WagerPoor)
+        hidecoinsbox (21, 1)
+        call (HiLoKabuto_Group_Script_End)
+    } else {
+       removecoins (150)
+       updatecoinsbox (21, 1)
+       playse (SE_SHOP)
+       waitse
+       hidecoinsbox (21, 1)
+    }
+    //reset game
+    call  (HiLoKabuto_Group_Script_ResetGame)
+    //Determine Hi Lo Kabuto
+	call (HiLoKabuto_Script_DetermineHiOrLoKabuto)
+    //assign cards et remove from pool
+	//Opo1
+	specialvar (OPPONENT_CARD_1, RandDigit)
+	//Opo2
+	do {
+		specialvar (OPPONENT_CARD_2, RandDigit)
+	} while (var(OPPONENT_CARD_2) == OPPONENT_CARD_1)
+	//Opo3	
+	do {
+		specialvar (OPPONENT_CARD_3, RandDigit)
+	} while (var(OPPONENT_CARD_3) == OPPONENT_CARD_1 || (var(OPPONENT_CARD_3) == OPPONENT_CARD_2))
+	//Opo4
+	do {
+		specialvar (OPPONENT_CARD_4, RandDigit)
+	} while (var(OPPONENT_CARD_4) == OPPONENT_CARD_1 || (var(OPPONENT_CARD_4) == OPPONENT_CARD_2) || (var(OPPONENT_CARD_4) == OPPONENT_CARD_3))
+	//PlayerCard
+	do {
+		specialvar (PLAYER_CARD, RandDigit)
+	} while (var(PLAYER_CARD) == OPPONENT_CARD_1 || (var(PLAYER_CARD) == OPPONENT_CARD_2) || (var(PLAYER_CARD) == OPPONENT_CARD_3) || (var(PLAYER_CARD) == OPPONENT_CARD_4))
+    //handle Kabuto Hi
+	if (flag(KABUTOHI)) {
+        if (var(PLAYER_CARD) == 0) {
+            setvar (PLAYER_CARD, 10)
+        }
+        if (var(OPPONENT_CARD_1) == 0) {
+            setvar (OPPONENT_CARD_1, 10)
+        }
+        if (var(OPPONENT_CARD_2) == 0) {
+            setvar (OPPONENT_CARD_2, 10)
+        }
+        if (var(OPPONENT_CARD_3) == 0) {
+            setvar (OPPONENT_CARD_3, 10)
+        }
+        if (var(OPPONENT_CARD_4) == 0) {
+            setvar (OPPONENT_CARD_4, 10)
+        }
+	}
+    //announce results
+	//player first
+    buffernumberstring (STR_VAR_1, PLAYER_CARD)
+	if (var(PLAYER_CARD) == 10 || var(PLAYER_CARD) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerKabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnouncePlayerCard)
+    }
+	//Opponents 1 - 3
+	buffernumberstring (STR_VAR_1, OPPONENT_CARD_1)
+	if (var(OPPONENT_CARD_1) == 10 || var(OPPONENT_CARD_1) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp1Kabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp1Card)
+    }
+	buffernumberstring (STR_VAR_2, OPPONENT_CARD_2)
+	if (var(OPPONENT_CARD_2) == 10 || var(OPPONENT_CARD_2) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp2Kabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp2Card)
+    }
+	buffernumberstring (STR_VAR_3, OPPONENT_CARD_3)
+	if (var(OPPONENT_CARD_3) == 10 || var(OPPONENT_CARD_3) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp3Kabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp3Card)
+    }
+	//Opponent 4 
+	buffernumberstring (STR_VAR_1, OPPONENT_CARD_4)
+	if (var(OPPONENT_CARD_4) == 10 || var(OPPONENT_CARD_4) == 0) {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp4Kabuto)
+    } else {
+        msgbox (DealerHiLoKabuto_Text_AnnounceOp4Card)
+    }
+    //declare winner - handle play pay out if winner
+	if (var(PLAYER_CARD) > OPPONENT_CARD_1 && var(PLAYER_CARD) > OPPONENT_CARD_2 && var(PLAYER_CARD) > OPPONENT_CARD_3 && var(PLAYER_CARD) > OPPONENT_CARD_4) {
+		call (HiLoKabuto_Group5_Script_PlayerWinCoins)
+	} else {
+		//declare which gambler won
+		if (var(OPPONENT_CARD_1) > PLAYER_CARD && var(OPPONENT_CARD_1) > OPPONENT_CARD_2 && var(OPPONENT_CARD_1) > OPPONENT_CARD_3 && var(OPPONENT_CARD_1) > OPPONENT_CARD_4) {
+			msgbox (HiLoKabuto_Text_Gambler1Won)
+		} elif (var(OPPONENT_CARD_2) > PLAYER_CARD && var(OPPONENT_CARD_2) > OPPONENT_CARD_1 && var(OPPONENT_CARD_2) > OPPONENT_CARD_3 && var(OPPONENT_CARD_2) > OPPONENT_CARD_4) {
+			msgbox (HiLoKabuto_Text_Gambler2Won)
+		} elif (var(OPPONENT_CARD_3) > PLAYER_CARD && var(OPPONENT_CARD_3) > OPPONENT_CARD_1 && var(OPPONENT_CARD_3) > OPPONENT_CARD_2 && var(OPPONENT_CARD_3) > OPPONENT_CARD_4) {
+			msgbox (HiLoKabuto_Text_Gambler3Won)
+		} elif (var(OPPONENT_CARD_4) > PLAYER_CARD && var(OPPONENT_CARD_4) > OPPONENT_CARD_1 && var(OPPONENT_CARD_4) > OPPONENT_CARD_3 && var(OPPONENT_CARD_4) > OPPONENT_CARD_2) {
+			msgbox (HiLoKabuto_Text_Gambler4Won)
+		} else {
+			msgbox ("ERROR\nDeclare gambler winner\nOOB")
+		}
+	}
+    //play again
+    showcoinsbox (21, 1)
+	msgbox (HiLoKabuto_Group5Coins_Text_PlayAgain, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (HiLoKabuto_Group5_Script_CoinBrain)
+	} else {
+        hidecoinsbox (21, 1)
+		call (HiLoKabuto_Group_Script_End)
+	}
+
+}
+
+script HiLoKabuto_Group4_Script_PlayerWinCoins {
+    showcoinsbox (21, 1)
+    msgbox (HiLoKabuto_Group_Text_PlayerWin)
+    addcoins (4000)
+    updatecoinsbox (21, 1)
+    playse (SE_SHOP)
+    waitse
+	msgbox (HiLoKabuto_Group4Coins_Text_PlayAgain, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (HiLoKabuto_Group4_Script_CoinBrain)
+	} else {
+        hidecoinsbox (21, 1)
+		call (HiLoKabuto_Group_Script_End)
+	}
+}
+
+script HiLoKabuto_Group5_Script_PlayerWinCoins {
+    showcoinsbox (21, 1)
+    msgbox (HiLoKabuto_Group_Text_PlayerWin)
+    addcoins (750)
+    updatecoinsbox (21, 1)
+    playse (SE_SHOP)
+    waitse
+	msgbox (HiLoKabuto_Group5Coins_Text_PlayAgain, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (HiLoKabuto_Group5_Script_CoinBrain)
+	} else {
+        hidecoinsbox (21, 1)
+		call (HiLoKabuto_Group_Script_End)
+	}
 }
     
 text Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro {
@@ -1664,6 +1934,23 @@ text Peccadum_PalatiumFelix_Text_CashierTakeMoney {
 	format("There is the money exchanged for you coins.")
 }
 
+text Peccadum_PalatiumFelix_Text_4HiLoKabuto {
+    format("This is the high roller table. Buy in is one thousand coins. Do you want to play?")
+}
+
+//Buy in for our table is one hundred
+//and fifty coins. Would you like to join in?
+text Peccadum_PalatiumFelix_Text_5HiLoKabuto {
+    format("Buy in for our table is one hundred and fifty coins. Would you like to join in?")
+}
+
+text HiLoKabuto_Group4Coins_Text_PlayAgain {
+    format("Would you like to wager another hand? Buy in will stay the same: one thousand coins.")
+}
+
+text HiLoKabuto_Group5Coins_Text_PlayAgain {
+    format("Would you like to wager another hand? Buy in will be one hundred fifty coins.")
+}
 
 
 
