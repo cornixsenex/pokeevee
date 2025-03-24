@@ -520,7 +520,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Peccadum_PalatiumFelix_Script_4HiLoKabutoA"
+      "script": "Peccadum_PalatiumFelix_Script_4HiLoKabuto"
     },
     {
       "type": "sign",
@@ -528,7 +528,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Peccadum_PalatiumFelix_Script_4HiLoKabutoB"
+      "script": "Peccadum_PalatiumFelix_Script_4HiLoKabuto"
     }
   ]
 }

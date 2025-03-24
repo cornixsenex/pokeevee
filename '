@@ -1860,12 +1860,9 @@ script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
 			end
 	}
 	waitmovement (0)
-    //Good game, may I have a word in private?
-	msgbox (Peccadum_PalatiumFelix_Text_Cornelius1, MSGBOX_YESNO) 
+	msgbox (Peccadum_PalatiumFelix_Text_Cornelius1, MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
-        //Scene has been done
         setflag (FLAG_PALATIUMFELIX_LOGISTICS_DONE)
-        //Lets head that way away from any 
         msgbox (Peccadum_PalatiumFelix_Text_Cornelius2)
         closemessage
         //They walk to privacy
@@ -1876,36 +1873,17 @@ script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
                 end
             case 1:
                 applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius1C)
-                applymovement (OBJ_EVENT_ID_PLAYER, Peccadum_PalatiumFelix_Movement_Cornelius1C)
             case 2:
                 applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius2C)
-                applymovement (OBJ_EVENT_ID_PLAYER, Peccadum_PalatiumFelix_Movement_Cornelius2C)
             case 3:
                 applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius3C)
-                applymovement (OBJ_EVENT_ID_PLAYER, Peccadum_PalatiumFelix_Movement_Cornelius3C)
             default:
                 msgbox("ERROR\n TRIGGER_LOGISTICS_SCENE OOB")
                 release
                 end
 
         }
-        waitmovement
-        applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
-        applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_FaceLeft)
-        waitmovement (0)
-        //Cornelius speech
-        msgbox (Peccadum_PalatiumFelix_Text_Cornelius3)
-        closemessage
-        giveitem (ITEM_LETTER)
-        msgbox (Peccadum_PalatiumFelix_Text_Cornelius4)
-        closemessage
-        applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_WalkRight8)a
-        waitmovement (0)
-        removeobject (OBJ_EVENT_CORNELIUS)
-        setobjectxy (OBJ_EVENT_CORNELIUS, 22, 4)
-        setobjectmovementtype (OBJ_EVENT_CORNELIUS, MOVEMENT_TYPE_FACE_LEFT)
-        addobject (OBJ_EVENT_CORNELIUS)
-        showobjectat (OBJ_EVENT_CORNELIUS, MAP_PECCADUM_PALATIUM_FELIX)
+        //cont
     } else {
         msgbox (Peccadum_PalatiumFelix_Text_CorneliusDeny)
         closemessage
@@ -1932,7 +1910,6 @@ script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
 	end
 }
 
-//A: Cornelius approach player after game
 movement Peccadum_PalatiumFelix_Movement_Cornelius1A {
 	walk_up
 	walk_left
@@ -1964,22 +1941,7 @@ movement Peccadum_PalatiumFelix_Movement_Cornelius3B {
 	walk_up
 	face_left
 }
-
-//C: Player et Cornelius go to privacy
-movement Peccadum_PalatiumFelix_Movement_Cornelius1C {
-    walk_left * 10
-}
-
-movement Peccadum_PalatiumFelix_Movement_Cornelius2C {
-    walk_left * 11
-}
-
-movement Peccadum_PalatiumFelix_Movement_Cornelius3C {
-    walk_down
-    walk_left * 11
-    walk_up * 3
-    face_left
-}
+    
     
 text Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro {
     format("I am the Blue Roulette table dealer.")
@@ -2143,40 +2105,9 @@ text HiLoKabuto_Group5Coins_Text_PlayAgain {
     format("Would you like to wager another hand? Buy in will be one hundred fifty coins.")
 }
 
-text Peccadum_PalatiumFelix_Text_Cornelius1 {
-    format("Hey kid, can I have a quick word with you?")
-}
 
-text Peccadum_PalatiumFelix_Text_Cornelius2 {
-    format("Let's step away from inquisitive ears, back there in the corner by the cashier.")
-}
 
-Now that we have secured our privacy
-allow me to make an introduction.
-I am Cornelius Filisigni,
-owner and chief executive of the
-United Kashmir Trucking Company.
-I have lived a sucessful and long life
-but now I spend the days of my old age
-wasting away on this casino floor.
-After the passing of my dearest wife
-I found my life empty, void of purpose,
-and now the only semblence of meaning
-is whether Kabuto is high or low
-and if my wagered card comes out on top.
-Please trust me when I say this hollow life
-is all that waits for you if you remain
-in this accursed place for much longer.
-Thanks to my
 
-text Peccadum_PalatiumFelix_Text_Cornelius3 {
-    format("Now that we have secured our privacy")
-}
 
-text Peccadum_PalatiumFelix_Text_Cornelius4 {
-    format("")
-}
 
-text Peccadum_PalatiumFelix_Text_CorneliusDeny {
-    format("I understand. Good luck. Have a nice day.")
-}
+
