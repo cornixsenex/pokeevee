@@ -32,6 +32,11 @@
       "map": "MAP_ELICIUS_BEACH",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_HIPPODROME",
+      "offset": -60,
+      "direction": "right"
     }
   ],
   "object_events": [
