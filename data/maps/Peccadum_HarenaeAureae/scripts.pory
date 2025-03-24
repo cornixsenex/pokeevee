@@ -1005,8 +1005,6 @@ script HiLoKabuto_Group5_Script_PlayAgain {
 	}
 }
 
-
-
 script HiLoKabuto_Group_Script_End {
 	msgbox (HiLoKabuto_Group_Text_End)
 	closemessage

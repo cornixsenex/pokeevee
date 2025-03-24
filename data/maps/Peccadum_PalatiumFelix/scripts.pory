@@ -32,11 +32,19 @@ const CARD9       = FLAG_TEMP_9
 const CARD0       = FLAG_TEMP_A
 const KABUTOHI    = FLAG_TEMP_B
 
-//Trigger Logistics Boss script
-const TRIGGER_LOGISTICS = FLAG_TEMP_D
+//Trigger Cornelius script
+const TRIGGER_LOGISTICS_SCENE = VAR_TEMP_D //0: Nah
+                                           //1: Top L
+                                           //2: Top R
+                                           //3: Bot R
+const OBJ_EVENT_CORNELIUS = 7
 
 
-mapscripts Peccadum_PalatiumFelix_MapScripts {}
+mapscripts Peccadum_PalatiumFelix_MapScripts {
+
+
+
+}
 
 script Peccadum_PalatiumFelix_Script_Cashier {
 	lock
@@ -1512,9 +1520,35 @@ script Peccadum_PalatiumFelix_Script_BusyDealer {
 	end
 }
 
+script Peccadum_PalatiumFelix_Script_4HiLoKabutoA {
+    lock
+	if (!flag(FLAG_PALATIUMFELIX_LOGISTICS_DONE)) {
+		setvar (TRIGGER_LOGISTICS_SCENE, 1)
+	}
+	call (Peccadum_PalatiumFelix_Script_4HiLoKabuto)
+}
+
+script Peccadum_PalatiumFelix_Script_4HiLoKabutoB {
+    lock
+	if (!flag(FLAG_PALATIUMFELIX_LOGISTICS_DONE)) {
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_NORTH) {
+			setvar (TRIGGER_LOGISTICS_SCENE, 3)
+		} elif (var(VAR_RESULT) == DIR_SOUTH) {
+			setvar (TRIGGER_LOGISTICS_SCENE, 2)
+		} else {
+			msgbox("ERROR\nPlayerFacingDirection OOB")
+			closemessage
+			release
+			end
+		}
+	}
+	call (Peccadum_PalatiumFelix_Script_4HiLoKabuto)
+}
+		
+
 //1,000 coin buy in. High rollers. After playing at least once do the logistics boss script
 script Peccadum_PalatiumFelix_Script_4HiLoKabuto {
-    lock
     showcoinsbox (21, 1)
     msgbox (Peccadum_PalatiumFelix_Text_4HiLoKabuto, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == FALSE) {
@@ -1635,7 +1669,11 @@ script HiLoKabuto_Group4_Script_CoinBrain {
 		call (HiLoKabuto_Group4_Script_CoinBrain)
 	} else {
         hidecoinsbox (21, 1)
-		call (HiLoKabuto_Group_Script_End)
+		if (!flag(FLAG_PALATIUMFELIX_LOGISTICS_DONE)) {
+			call (Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics)
+		} else {
+			call (HiLoKabuto_Group_Script_End)
+		}
 	}
 
 }
@@ -1770,7 +1808,11 @@ script HiLoKabuto_Group4_Script_PlayerWinCoins {
 		call (HiLoKabuto_Group4_Script_CoinBrain)
 	} else {
         hidecoinsbox (21, 1)
-		call (HiLoKabuto_Group_Script_End)
+		if (!flag(FLAG_PALATIUMFELIX_LOGISTICS_DONE)) {
+			call (Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics)
+		} else {
+			call (HiLoKabuto_Group_Script_End)
+		}
 	}
 }
 
@@ -1789,6 +1831,94 @@ script HiLoKabuto_Group5_Script_PlayerWinCoins {
 		call (HiLoKabuto_Group_Script_End)
 	}
 }
+
+//special case of Group_End to handle the Logistics scene
+script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
+	setflag (FLAG_PALATIUMFELIX_LOGISTICS_DONE)
+	msgbox (HiLoKabuto_Group_Text_End)
+	closemessage
+	//Logistics scene
+	//Alert Player et Cornelius (Vanderbilt)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//player face Cornelius et Cornelius approach player
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	switch (var(TRIGGER_LOGISTICS_SCENE)) {
+		case 0:
+			msgbox("ERROR\n TRIGGER_LOGISTICS_SCENE = 0")
+			release
+			end
+		case 1:
+			applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius1A)
+		case 2:
+			applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius2A)
+		case 3:
+			applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius3A)
+		default:
+			msgbox("ERROR\n TRIGGER_LOGISTICS_SCENE OOB")
+			release
+			end
+	}
+	waitmovement (0)
+	msgbox (Peccadum_PalatiumFelix_Text_Cornelius1)
+	closemessage
+	//C: Hey kid don't ruin your life no bike let me help you I got a company we can get you back to the city hush take this talk to my secretary at the Logistics Depot good luck
+	//give item?
+	//another talk? idk - remember I can't mention this keep it quiet I got a reputation to protect
+	// return Cornelius to og location
+	switch (var(TRIGGER_LOGISTICS_SCENE)) {
+		case 0:
+			msgbox("ERROR\n TRIGGER_LOGISTICS_SCENE = 0")
+			release
+			end
+		case 1:
+			applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius1B)
+		case 2:
+			applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius2B)
+		case 3:
+			applymovement (OBJ_EVENT_CORNELIUS, Peccadum_PalatiumFelix_Movement_Cornelius3B)
+		default:
+			msgbox("ERROR\n TRIGGER_LOGISTICS_SCENE OOB")
+			release
+			end
+	}
+	waitmovement (0)
+	release
+	end
+}
+
+movement Peccadum_PalatiumFelix_Movement_Cornelius1A {
+	walk_up
+	walk_left
+}
+
+movement Peccadum_PalatiumFelix_Movement_Cornelius2A {
+	walk_up
+	face_left
+}
+
+movement Peccadum_PalatiumFelix_Movement_Cornelius3A {
+	walk_down
+	face_left
+}
+
+movement Peccadum_PalatiumFelix_Movement_Cornelius1B {
+	walk_right
+	walk_down
+	face_left
+}
+
+movement Peccadum_PalatiumFelix_Movement_Cornelius2B {
+	walk_down
+	face_left
+}
+
+movement Peccadum_PalatiumFelix_Movement_Cornelius3B {
+	walk_up
+	face_left
+}
+    
     
 text Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro {
     format("I am the Blue Roulette table dealer.")
