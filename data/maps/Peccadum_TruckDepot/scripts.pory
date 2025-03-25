@@ -1,5 +1,43 @@
 mapscripts Peccadum_TruckDepot_MapScripts {}
 
-script Peccadum_TruckDepot_Script_TestTruck {
-    special (DoPeccadumTruckScene)
+script Peccadum_TruckDepot_Script_Secretary {
+	lock
+	if (flag(FLAG_PECCADUM_TRUCK_READY)) {
+		call (Peccadum_TruckDepot_Script_StartTruckScene)
+	}
+	//Welcome
+	msgbox (Peccadum_TruckDepot_Text_Welcome)
+	//check letter:
+	checkitem (ITEM_CORNELIUS_LETTER, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		//huh? Whats that
+		msgbox (Peccadum_TruckDepot_Text_Letter1)
+		closemessage
+		//give letter
+		removeitem (ITEM_CORNELIUS_LETTER)
+		playse (SE_EFFECTIVE)
+		waitse
+		//cornelius wrote this? I understand
+		msgbox (Peccadum_TruckDepot_Text_Letter2)
+		setflag (FLAG_PECCADUM_TRUCK_READY)
+		call (Peccadum_TruckDepot_Script_StartTruckScene)
+	}
+	closemessage
+	release
+	end
+}
+
+script Peccadum_TruckDepot_Script_StartTruckScene {
+	//Ready to ride?
+	msgbox (Peccadum_TruckDepot_Text_Ready, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		//Y: Ok get in the truck hold on it's a bumpy ride -> DoTruckScene
+		special (DoPeccadumTruckScene)
+	} else {
+		//N: Ok come back when you're ready we've got trucks leaving every day
+		msgbox (Peccadum_TruckDepot_Text_NotReady)
+		closemessage
+		release
+		end
+	}
 }

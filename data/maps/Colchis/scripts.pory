@@ -1482,6 +1482,7 @@ script Colchis_Script_SetupSanctum {
 	
 	//Open the gate
 	playse (SE_EFFECTIVE)
+	waitse
 	hideobjectat (OBJ_EVENT_SANCTUM1, MAP_COLCHIS)
 	hideobjectat (OBJ_EVENT_SANCTUM2, MAP_COLCHIS)
 	removeobject (OBJ_EVENT_SANCTUM1)
@@ -2061,6 +2062,7 @@ script Colchis_Script_RingBlocker {
 			closemessage
 			removeitem (ITEM_COLCHIS_KEY)
 			playse (SE_EFFECTIVE)
+			waitse
 			//The barriers dissapear
 			hideobjectat (OBJ_EVENT_RINGBARRIER1, MAP_COLCHIS)
 			removeobject (OBJ_EVENT_RINGBARRIER1)
