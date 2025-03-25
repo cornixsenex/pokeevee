@@ -1838,11 +1838,13 @@ script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
 	closemessage
 	//Logistics scene
 	//Alert Player et Cornelius (Vanderbilt)
+	hidefollower
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_ExclamationMark)
 	waitmovement (0)
+	//delay (40)
 	//player face Cornelius et Cornelius approach player
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	switch (var(TRIGGER_LOGISTICS_SCENE)) {
 		case 0:
 			msgbox("ERROR\n TRIGGER_LOGISTICS_SCENE = 0")
@@ -1889,7 +1891,7 @@ script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
                 end
 
         }
-        waitmovement
+        waitmovement (0)
         applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
         applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_FaceLeft)
         waitmovement (0)
@@ -1899,7 +1901,7 @@ script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
         giveitem (ITEM_LETTER)
         msgbox (Peccadum_PalatiumFelix_Text_Cornelius4)
         closemessage
-        applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_WalkRight8)a
+        applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_WalkRight8)
         waitmovement (0)
         removeobject (OBJ_EVENT_CORNELIUS)
         setobjectxy (OBJ_EVENT_CORNELIUS, 22, 4)
@@ -2151,6 +2153,8 @@ text Peccadum_PalatiumFelix_Text_Cornelius2 {
     format("Let's step away from inquisitive ears, back there in the corner by the cashier.")
 }
 
+text Peccadum_PalatiumFelix_Text_Cornelius3 {
+    format("
 Now that we have ensured our privacy
 allow me to make an introduction.
 I am Cornelius Filisigni,
@@ -2167,7 +2171,7 @@ and if my wagered card comes out on top.
 Please trust me when I say this hollow life
 is all that waits for you if you remain
 in this accursed place for much longer.
-Thanks to my truck business I have enough
+Thanks to my truck business, I have enough
 resources to absorb endless losses
 but look around and tell me what you see.
 An ocean of despair surrounding this
@@ -2177,7 +2181,7 @@ are lures to catch their prey: gamblers like us.
 The exhausted corpses of gamblers
 lie littered about town like cherry pits
 spat out without a care by the sticky
-lips of the casino stained red by flesh
+lips of casino stained red by the flesh
 they tore. Poor men are ground down by the games
 believing they've found the path of success
 oblivious to their own destruction.
@@ -2192,38 +2196,39 @@ I want to offer you what help I may
 and pray my unsolicited advice
 can help to steer you towards a better path.
 Take this envelope to the truck depot
-and speak to the front desk. Mention my name.
-
-Officially we only transport rocks
-but there are other things, from time to time,
-which may have been misplaced by accident,
-incompetance, or willful misconduct,
-that find their way, one way or another,
-onto our trucks, and their destinations.
-Officially this is prohibited
-but detection let alone enforcement
-is sparse to say the least. That letter will
-inform the drivers you shall stow away
-and find yourself in Urbia with haste.
-Of course I can't force you, you have free will,
-to follow my advice but I believe
-that if you're worth saving, you'll save yourself.
-Therefore good luck! Godspeed! Oh, one more thing.
-My reputation and business depend
-on my ignorance of this hushed design.
-Therefore I will speak of it not again.
-Turning from you I must forget your face,
-regard you as another nameless boy,
-and know nothing of contraband letters.
-Farewell! May your life path lead you to peace.
-
-
-text Peccadum_PalatiumFelix_Text_Cornelius3 {
-    format("Now that we have secured our privacy")
+and speak to the front desk. Mention my name.")
 }
 
 text Peccadum_PalatiumFelix_Text_Cornelius4 {
-    format("")
+    format("
+Officially, we only transport rocks,
+but there are other things, from time to time,
+which may have been misplaced by accident,
+incompetance, or willful misconduct,
+and find their way, one way or another,
+onto our trucks, then their destinations.
+So naturally this is prohibited
+but detection, let alone enforcement,
+is sparse to say the least. That letter will
+inform the drivers to stow you away
+and transport you to Urbia with haste.
+A land of opprotunity awaits
+where you can find a job, purchase a bike,
+and even start your own business one day.
+A place where all men, regardless of birth,
+can pursue life, liberty, hapiness,
+and escape this city of certain doom.
+Of course I can't force you, you have free will,
+to follow my advice but I believe
+that if you're worth saving, you'll save yourself.
+Therefore good luck! Godspeed! Oh! One more thing!
+My reputation and business depend
+on my ignorance of this hushed design.
+Therefore I will not speak of it again.
+Turning from you I must forget your face,
+regard you as another nameless boy,
+and know nothing of contraband letters.
+Farewell! May your life path lead you to peace.")
 }
 
 text Peccadum_PalatiumFelix_Text_CorneliusDeny {

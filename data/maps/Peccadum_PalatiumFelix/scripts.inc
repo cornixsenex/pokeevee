@@ -3720,153 +3720,337 @@ HiLoKabuto_Group5_Script_PlayerWinCoins_1:
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics::
 # 1837 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	setflag FLAG_PALATIUMFELIX_LOGISTICS_DONE
-# 1838 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox HiLoKabuto_Group_Text_End
-# 1839 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1838 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	closemessage
+# 1841 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	hidefollower
 # 1842 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 1843 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 7, Common_Movement_ExclamationMark
 # 1844 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitmovement 0
-# 1846 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 1847 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	switch VAR_TEMP_D
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 1848 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	switch VAR_TEMP_D
+# 1849 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 0, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_3
-# 1852 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1853 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 1, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_4
-# 1854 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1855 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 2, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_5
-# 1856 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1857 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	case 3, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_6
-# 1859 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_1
 # 1860 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_1
+# 1861 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	release
 	end
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_1:
-# 1863 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1864 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitmovement 0
-# 1868 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1866 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_Cornelius1, MSGBOX_YESNO
+# 1867 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_9
+# 1912 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_CorneliusDeny
+# 1913 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	closemessage
+# 1915 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	switch VAR_TEMP_D
-# 1869 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	case 0, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_10
-# 1873 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	case 1, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_11
-# 1875 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	case 2, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_12
-# 1877 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	case 3, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_13
-# 1880 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1916 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 0, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_21
+# 1920 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 1, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_22
+# 1922 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 2, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_23
+# 1924 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 3, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_24
+# 1927 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_1
-# 1881 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1928 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	release
 	end
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_3:
-# 1849 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_0
 # 1850 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_0
+# 1851 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	release
 	end
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_4:
-# 1853 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1854 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius1A
 	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_1
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_5:
-# 1855 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1856 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius2A
 	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_1
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_6:
-# 1857 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1858 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius3A
 	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_1
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_8:
-# 1884 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	waitmovement 0
-# 1885 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1933 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	release
 	end
 
-Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_10:
-# 1870 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_0
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_9:
+# 1869 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	setflag FLAG_PALATIUMFELIX_LOGISTICS_DONE
 # 1871 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_Cornelius2
+# 1872 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	closemessage
+# 1874 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	switch VAR_TEMP_D
+# 1875 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 0, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_14
+# 1879 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 1, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_15
+# 1882 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 2, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_16
+# 1885 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	case 3, Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_17
+# 1889 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_1
+# 1890 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	release
 	end
-
-Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_11:
-# 1874 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius1B
-	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_8
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_12:
+# 1894 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	waitmovement 0
+# 1895 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 1896 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement 7, Common_Movement_FaceLeft
+# 1897 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	waitmovement 0
+# 1899 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_Cornelius3
+# 1900 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	closemessage
+# 1901 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	giveitem ITEM_LETTER
+# 1902 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Text_Cornelius4
+# 1903 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	closemessage
+# 1904 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement 7, Common_Movement_WalkRight8
+# 1905 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	waitmovement 0
+# 1906 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	removeobject 7
+# 1907 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	setobjectxy 7, 22, 4
+# 1908 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	setobjectmovementtype 7, MOVEMENT_TYPE_FACE_LEFT
+# 1909 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	addobject 7
+# 1910 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	showobjectat 7, MAP_PECCADUM_PALATIUM_FELIX
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_8
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_14:
 # 1876 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_0
+# 1877 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	release
+	end
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_15:
+# 1880 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius1C
+# 1881 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Peccadum_PalatiumFelix_Movement_Cornelius1C
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_12
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_16:
+# 1883 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius2C
+# 1884 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Peccadum_PalatiumFelix_Movement_Cornelius2C
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_12
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_17:
+# 1886 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius3C
+# 1887 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Peccadum_PalatiumFelix_Movement_Cornelius3C
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_12
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_19:
+# 1931 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	waitmovement 0
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_8
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_21:
+# 1917 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	msgbox Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_0
+# 1918 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	release
+	end
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_22:
+# 1921 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius1B
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_19
+
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_23:
+# 1923 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius2B
-	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_8
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_19
 
-Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_13:
-# 1878 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_24:
+# 1925 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 7, Peccadum_PalatiumFelix_Movement_Cornelius3B
-	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_8
+	goto Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_19
 
 
-# 1889 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1938 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 Peccadum_PalatiumFelix_Movement_Cornelius1A:
-# 1890 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1939 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_up
-# 1891 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1940 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_left
 	step_end
 
-# 1894 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1943 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 Peccadum_PalatiumFelix_Movement_Cornelius2A:
-# 1895 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1944 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_up
-# 1896 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1945 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	face_left
 	step_end
 
-# 1899 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1948 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 Peccadum_PalatiumFelix_Movement_Cornelius3A:
-# 1900 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1949 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_down
-# 1901 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1950 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	face_left
 	step_end
 
-# 1904 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1954 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 Peccadum_PalatiumFelix_Movement_Cornelius1B:
-# 1905 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1955 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_right
-# 1906 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1956 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_down
-# 1907 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1957 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	face_left
 	step_end
 
-# 1910 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1960 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 Peccadum_PalatiumFelix_Movement_Cornelius2B:
-# 1911 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1961 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_down
-# 1912 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1962 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	face_left
 	step_end
 
-# 1915 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1965 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 Peccadum_PalatiumFelix_Movement_Cornelius3B:
-# 1916 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1966 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	walk_up
-# 1917 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1967 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	face_left
+	step_end
+
+# 1971 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+Peccadum_PalatiumFelix_Movement_Cornelius1C:
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1972 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+	step_end
+
+# 1975 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+Peccadum_PalatiumFelix_Movement_Cornelius2C:
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1976 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+	step_end
+
+# 1979 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+Peccadum_PalatiumFelix_Movement_Cornelius3C:
+# 1980 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_down
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_left
+# 1982 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_up
+# 1982 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_up
+# 1982 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	walk_up
+# 1983 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	face_left
 	step_end
 
@@ -3955,41 +4139,41 @@ HiLoKabuto_Group4_Script_CoinBrain_Text_0:
 	.string "ERROR\nDeclare gambler winner\nOOB$"
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_0:
-# 1849 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1850 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "ERROR\n TRIGGER_LOGISTICS_SCENE = 0$"
 
 Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_Text_1:
-# 1859 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1860 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "ERROR\n TRIGGER_LOGISTICS_SCENE OOB$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteDealerIntro::
-# 1921 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1986 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "I am the Blue Roulette table dealer.$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteDealerBegin::
-# 1925 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1990 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Would you like to play a game of\n"
 	.string "roulette?$"
 
 Peccadum_PalatiumFelix_Text_NoCoins::
-# 1929 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1994 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Excuse me sir, but coins are required to\n"
 	.string "play games at Palatium Felix. Please\l"
 	.string "speak with the cashier to purchase\l"
 	.string "more.$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteGetWagerType::
-# 1933 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 1998 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "What kind of wager will you be placing?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmNumberWager::
-# 1937 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2002 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "A wager on a winning number pays thirty\n"
 	.string "to one. Are you sure that you will place\l"
 	.string "a wager on a single number?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager::
-# 1941 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2006 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "The payout for a wager on color depends\n"
 	.string "on which color you wager on. Both {COLOR RED}red\l"
 	.string "{COLOR DARK_GRAY}and {COLOR BLUE}blue {COLOR DARK_GRAY}pay out at two to one while\l"
@@ -3997,7 +4181,7 @@ Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorWager::
 	.string "Are you sure that you will bet on color?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager::
-# 1945 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2010 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "A winning bet on range pays three to\n"
 	.string "one, except for zero and double zero\l"
 	.string "which pays the same as {COLOR GREEN}green{COLOR DARK_GRAY}, fifteen\l"
@@ -4005,64 +4189,64 @@ Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRangeWager::
 	.string "on range?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteGetNumberWager::
-# 1949 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2014 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "There are thirty two individual spaces\n"
 	.string "on the roulette wheel: numbers from one\l"
 	.string "to thirty, single, and double nil. Which\l"
 	.string "number will you be wagering on?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteGetRangeWager::
-# 1953 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2018 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Which range of numbers will you wager\n"
 	.string "on?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteGetColorWager::
-# 1957 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2022 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Which color will you be wagering on?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorRed::
-# 1961 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2026 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager color {COLOR RED}red{COLOR DARK_GRAY}.\n"
 	.string "This wager will payout at two to one.\l"
 	.string "Are you certain you want to place this\l"
 	.string "bet?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorBlue::
-# 1965 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2030 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager color {COLOR BLUE}blue{COLOR DARK_GRAY}.\n"
 	.string "This wager will payout at two to one.\l"
 	.string "Are you certain you want to place this\l"
 	.string "bet?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmColorGreen::
-# 1969 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2034 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager color {COLOR GREEN}green{COLOR DARK_GRAY}.\n"
 	.string "This wager will payout fifteen to one.\l"
 	.string "Are you certain you want to place this\l"
 	.string "bet?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange0::
-# 1973 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2038 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager on the range\n"
 	.string "of zero and double zero. This will\l"
 	.string "payout fifteen to one. Are you certain?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange1::
-# 1977 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2042 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager on the range\n"
 	.string "of numbers one through ten. This will\l"
 	.string "payout at three to one. Will you confirm\l"
 	.string "this bet?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange2::
-# 1981 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2046 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager on the range\n"
 	.string "eleven through twenty. This will payout\l"
 	.string "at three to one. Will you confirm this\l"
 	.string "bet?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange3::
-# 1985 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2050 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager on the range\n"
 	.string "of numbers from twenty one through\l"
 	.string "thirty. The payout for this bet is three\l"
@@ -4070,124 +4254,214 @@ Peccadum_PalatiumFelix_Text_BlueRouletteConfirmRange3::
 	.string "place this bet?$"
 
 CasinoDealer_Text_Refund::
-# 1989 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2054 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Here are the unwagered coins back for\n"
 	.string "you.$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmWagerNumber::
-# 1993 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2058 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to wager on\n"
 	.string "{STR_VAR_1}. The payout will be at\l"
 	.string "thirty to one. Are you certain you want\l"
 	.string "to place this bet?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteConfirmWager00::
-# 1997 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2062 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You have chosen to bet double zero. The\n"
 	.string "payout will be at thirty to one. Are you\l"
 	.string "certain you want to place this bet?$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteGoodLuck::
-# 2001 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2066 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Rien ne va plus! No more bets! Sir, good\n"
 	.string "luck!$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteAnnounceSpin::
-# 2005 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2070 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "The result of this spin is\n"
 	.string "{STR_VAR_1}!$"
 
 Peccadum_PalatiumFelix_Text_BlueRouletteAnnounce00::
-# 2009 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2074 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "The result of the spin: double zero!$"
 
 Peccadum_PalatiumFelix_Text_BlueRoulettePlayerWin::
-# 2013 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2078 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Congratulations {PLAYER}! You won\n"
 	.string "your bet!$"
 
 Peccadum_PalatiumFelix_Text_BlueRoulettePlayerLose::
-# 2017 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2082 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "I'm sorry but you did not win your bet.$"
 
 Peccadum_PalatiumFelix_Text_BlueRoulettePlayAgain::
-# 2021 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2086 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Would you like to bet on roulette again?$"
 
 Peccadum_PalatiumFelix_Text_Cashier::
-# 2025 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2090 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Hello! Welcome to the Palatium Felix!\n"
 	.string "Would you like to trade coins for cash?$"
 
 Peccadum_PalatiumFelix_Text_CashierPurchase::
-# 2029 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2094 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "We're happy to sell you as many coins as\n"
 	.string "you would like. They're one hundred\l"
 	.string "bucks each. How many coins would you\l"
 	.string "like to purchase?$"
 
 Peccadum_PalatiumFelix_Text_CashierSell::
-# 2033 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2098 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "We're happy to exchange as many coins\n"
 	.string "as you would like for one hundred bucks\l"
 	.string "each. How many coins would you like to\l"
 	.string "exchange?$"
 
 Peccadum_PalatiumFelix_Text_CashierNotEnoughMoney::
-# 2037 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2102 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You don't have enough money for those\n"
 	.string "coins.$"
 
 Peccadum_PalatiumFelix_Text_CashierNoRoomForCoins::
-# 2041 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2106 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "I'm sorry but you don't have enough\n"
 	.string "room in your coin case to carry that\l"
 	.string "many.$"
 
 Peccadum_PalatiumFelix_Text_CashierTooMuchMoney::
-# 2045 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2110 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "I'm sorry but you don't have enough\n"
 	.string "room to carry that much money in your\l"
 	.string "purse.$"
 
 Peccadum_PalatiumFelix_Text_CashierNotEnoughCoins::
-# 2049 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2114 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "You don't have enough coins for that\n"
 	.string "exchange.$"
 
 Peccadum_PalatiumFelix_Text_CashierBye::
-# 2053 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2118 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "We hope to see you again soon! Good\n"
 	.string "luck!$"
 
 Peccadum_PalatiumFelix_Text_CashierTakeCoins::
-# 2057 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2122 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Here are the coins you asked for sir.\n"
 	.string "Thank you.$"
 
 Peccadum_PalatiumFelix_Text_CashierTakeMoney::
-# 2061 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2126 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "There is the money exchanged for you\n"
 	.string "coins.$"
 
 Peccadum_PalatiumFelix_Text_4HiLoKabuto::
-# 2065 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2130 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "This is the high roller table. Buy in is\n"
 	.string "one thousand coins. Do you want to\l"
 	.string "play?$"
 
 Peccadum_PalatiumFelix_Text_5HiLoKabuto::
-# 2071 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2136 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Buy in for our table is one hundred and\n"
 	.string "fifty coins. Would you like to join in?$"
 
 HiLoKabuto_Group4Coins_Text_PlayAgain::
-# 2075 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2140 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Would you like to wager another hand?\n"
 	.string "Buy in will stay the same: one thousand\l"
 	.string "coins.$"
 
 HiLoKabuto_Group5Coins_Text_PlayAgain::
-# 2079 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2144 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Would you like to wager another hand?\n"
 	.string "Buy in will be one hundred fifty coins.$"
+
+Peccadum_PalatiumFelix_Text_Cornelius1::
+# 2148 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "Hey kid, can I have a quick word with\n"
+	.string "you?$"
+
+Peccadum_PalatiumFelix_Text_Cornelius2::
+# 2152 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "Let's step away from inquisitive ears,\n"
+	.string "back there in the corner by the cashier.$"
+
+Peccadum_PalatiumFelix_Text_Cornelius3::
+# 2225 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "Now that we have ensured our privacy\n"
+	.string "allow me to make an introduction. I am\l"
+	.string "Cornelius Filisigni, owner and chief\l"
+	.string "executive of the United Kashmir\l"
+	.string "Trucking Company. I have lived a\l"
+	.string "successful and long life but now I\l"
+	.string "spend the days of my old age wasting\l"
+	.string "away on this casino floor. After the\l"
+	.string "passing of my dearest wife I found my\l"
+	.string "life empty, void of purpose, and now the\l"
+	.string "only semblance of meaning is whether\l"
+	.string "Kabuto is high or low and if my wagered\l"
+	.string "card comes out on top. Please trust me\l"
+	.string "when I say this hollow life is all that\l"
+	.string "waits for you if you remain in this\l"
+	.string "accursed place for much longer. Thanks\l"
+	.string "to my truck business I have enough\l"
+	.string "resources to absorb endless losses but\l"
+	.string "look around and tell me what you see. An\l"
+	.string "ocean of despair surrounding this\l"
+	.string "island of misery disguised as wealth.\l"
+	.string "The flashy lights and exquisite\l"
+	.string "facades are lures to catch their prey:\l"
+	.string "gamblers like us. The exhausted corpses\l"
+	.string "of gamblers lie littered about town like\l"
+	.string "cherry pits spat out without a care by\l"
+	.string "the sticky lips of the casino stained\l"
+	.string "red by flesh they tore. Poor men are\l"
+	.string "ground down by the games believing\l"
+	.string "they've found the path of success\l"
+	.string "oblivious to their own destruction. I\l"
+	.string "truly pity them. I see myself reflected\l"
+	.string "in those scenes of poverty and wish\l"
+	.string "that my business was medicine for\l"
+	.string "broken souls instead of logistics.\l"
+	.string "That's why I've asked to speak with you\l"
+	.string "alone. You're far too young, too pure,\l"
+	.string "too full of hope to waste away with us\l"
+	.string "in Peccadum. I want to offer you what\l"
+	.string "help I may and pray my unsolicited\l"
+	.string "advice can help to steer you towards a\l"
+	.string "better path. Take this envelope to the\l"
+	.string "truck depot and speak to the front\l"
+	.string "desk. Mention my name.$"
+
+Peccadum_PalatiumFelix_Text_Cornelius4::
+# 2271 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "Officially, we only transport rocks, but\n"
+	.string "there are other things, from time to\l"
+	.string "time, which may have been misplaced by\l"
+	.string "accident, incompetance, or willful\l"
+	.string "misconduct, and find their way, one way\l"
+	.string "or another, onto our trucks, then their\l"
+	.string "destinations. So naturally this is\l"
+	.string "prohibited but detection, let alone\l"
+	.string "enforcement, is sparse to say the\l"
+	.string "least. That letter will inform the\l"
+	.string "drivers you shall stow away and find\l"
+	.string "yourself in Urbia with haste. Of course\l"
+	.string "I can't force you, you have free will, to\l"
+	.string "follow my advice but I believe that if\l"
+	.string "you're worth saving, you'll save\l"
+	.string "yourself. Therefore good luck!\l"
+	.string "Godspeed! Oh, one more thing. My\l"
+	.string "reputation and business depend on my\l"
+	.string "ignorance of this hushed design.\l"
+	.string "Therefore I will speak of it not again.\l"
+	.string "Turning from you I must forget your\l"
+	.string "face, regard you as another nameless\l"
+	.string "boy, and know nothing of contraband\l"
+	.string "letters. Farewell! May your life path\l"
+	.string "lead you to peace.$"
+
+Peccadum_PalatiumFelix_Text_CorneliusDeny::
+# 2297 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+	.string "I understand. Good luck. Have a nice\n"
+	.string "day.$"
