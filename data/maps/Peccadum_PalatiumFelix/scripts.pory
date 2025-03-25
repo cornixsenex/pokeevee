@@ -1896,11 +1896,11 @@ script Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics {
         applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_FaceLeft)
         waitmovement (0)
         //Cornelius speech
-        msgbox (Peccadum_PalatiumFelix_Text_Cornelius3)
-        closemessage
-        giveitem (ITEM_LETTER)
-        msgbox (Peccadum_PalatiumFelix_Text_Cornelius4)
-        closemessage
+        //msgbox (Peccadum_PalatiumFelix_Text_Cornelius3)
+        //closemessage
+        giveitem (ITEM_CORNELIUS_LETTER)
+        //msgbox (Peccadum_PalatiumFelix_Text_Cornelius4)
+        //closemessage
         applymovement (OBJ_EVENT_CORNELIUS, Common_Movement_WalkRight8)
         waitmovement (0)
         removeobject (OBJ_EVENT_CORNELIUS)

@@ -3836,16 +3836,8 @@ Peccadum_PalatiumFelix_Script_Group4_End_TriggerLogistics_12:
 	applymovement 7, Common_Movement_FaceLeft
 # 1897 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	waitmovement 0
-# 1899 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	msgbox Peccadum_PalatiumFelix_Text_Cornelius3
-# 1900 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	closemessage
 # 1901 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	giveitem ITEM_LETTER
-# 1902 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	msgbox Peccadum_PalatiumFelix_Text_Cornelius4
-# 1903 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
-	closemessage
+	giveitem ITEM_CORNELIUS_LETTER
 # 1904 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	applymovement 7, Common_Movement_WalkRight8
 # 1905 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
@@ -4387,7 +4379,7 @@ Peccadum_PalatiumFelix_Text_Cornelius2::
 	.string "back there in the corner by the cashier.$"
 
 Peccadum_PalatiumFelix_Text_Cornelius3::
-# 2225 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2156 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Now that we have ensured our privacy\n"
 	.string "allow me to make an introduction. I am\l"
 	.string "Cornelius Filisigni, owner and chief\l"
@@ -4404,7 +4396,7 @@ Peccadum_PalatiumFelix_Text_Cornelius3::
 	.string "when I say this hollow life is all that\l"
 	.string "waits for you if you remain in this\l"
 	.string "accursed place for much longer. Thanks\l"
-	.string "to my truck business I have enough\l"
+	.string "to my truck business, I have enough\l"
 	.string "resources to absorb endless losses but\l"
 	.string "look around and tell me what you see. An\l"
 	.string "ocean of despair surrounding this\l"
@@ -4414,8 +4406,8 @@ Peccadum_PalatiumFelix_Text_Cornelius3::
 	.string "gamblers like us. The exhausted corpses\l"
 	.string "of gamblers lie littered about town like\l"
 	.string "cherry pits spat out without a care by\l"
-	.string "the sticky lips of the casino stained\l"
-	.string "red by flesh they tore. Poor men are\l"
+	.string "the sticky lips of casino stained red by\l"
+	.string "the flesh they tore. Poor men are\l"
 	.string "ground down by the games believing\l"
 	.string "they've found the path of success\l"
 	.string "oblivious to their own destruction. I\l"
@@ -4434,7 +4426,7 @@ Peccadum_PalatiumFelix_Text_Cornelius3::
 	.string "desk. Mention my name.$"
 
 Peccadum_PalatiumFelix_Text_Cornelius4::
-# 2271 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2202 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Officially, we only transport rocks, but\n"
 	.string "there are other things, from time to\l"
 	.string "time, which may have been misplaced by\l"
@@ -4445,16 +4437,22 @@ Peccadum_PalatiumFelix_Text_Cornelius4::
 	.string "prohibited but detection, let alone\l"
 	.string "enforcement, is sparse to say the\l"
 	.string "least. That letter will inform the\l"
-	.string "drivers you shall stow away and find\l"
-	.string "yourself in Urbia with haste. Of course\l"
-	.string "I can't force you, you have free will, to\l"
-	.string "follow my advice but I believe that if\l"
-	.string "you're worth saving, you'll save\l"
+	.string "drivers to stow you away and transport\l"
+	.string "you to Urbia with haste. A land of\l"
+	.string "opprotunity awaits where you can find a\l"
+	.string "job, purchase a bike, and even start\l"
+	.string "your own business one day. A place\l"
+	.string "where all men, regardless of birth, can\l"
+	.string "pursue life, liberty, hapiness, and\l"
+	.string "escape this city of certain doom. Of\l"
+	.string "course I can't force you, you have free\l"
+	.string "will, to follow my advice but I believe\l"
+	.string "that if you're worth saving, you'll save\l"
 	.string "yourself. Therefore good luck!\l"
-	.string "Godspeed! Oh, one more thing. My\l"
+	.string "Godspeed! Oh! One more thing! My\l"
 	.string "reputation and business depend on my\l"
 	.string "ignorance of this hushed design.\l"
-	.string "Therefore I will speak of it not again.\l"
+	.string "Therefore I will not speak of it again.\l"
 	.string "Turning from you I must forget your\l"
 	.string "face, regard you as another nameless\l"
 	.string "boy, and know nothing of contraband\l"
@@ -4462,6 +4460,6 @@ Peccadum_PalatiumFelix_Text_Cornelius4::
 	.string "lead you to peace.$"
 
 Peccadum_PalatiumFelix_Text_CorneliusDeny::
-# 2297 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2234 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "I understand. Good luck. Have a nice\n"
 	.string "day.$"

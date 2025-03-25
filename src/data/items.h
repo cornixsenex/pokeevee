@@ -14584,6 +14584,22 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_TMCase,
         .iconPalette = gItemIconPalette_TMCase,
 	},
+    
+	[ITEM_CORNELIUS_LETTER] =
+    {
+        .name = _("Sealed Envelope"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A sealed envelope\n"
+            "from Cornelius. It\n"
+            "appears blank."),
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Letter,
+        .iconPalette = gItemIconPalette_LavaCookieAndLetter,
+    },
 
 
 
