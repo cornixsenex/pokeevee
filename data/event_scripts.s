@@ -1624,3 +1624,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Peccadum_HarenaeAureae/scripts.inc"
 
 	.include "data/maps/Peccadum_PalatiumFelix/scripts.inc"
+
+	.include "data/maps/Urbia_TruckDepot/scripts.inc"

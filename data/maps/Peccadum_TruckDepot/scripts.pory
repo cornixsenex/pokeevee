@@ -32,6 +32,8 @@ script Peccadum_TruckDepot_Script_StartTruckScene {
 	msgbox (Peccadum_TruckDepot_Text_Ready, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		//Y: Ok get in the truck hold on it's a bumpy ride -> DoTruckScene
+        msgbox (Peccadum_TruckDepot_Text_TruckScene)
+        closemessage
 		special (DoPeccadumTruckScene)
 	} else {
 		//N: Ok come back when you're ready we've got trucks leaving every day
@@ -40,4 +42,28 @@ script Peccadum_TruckDepot_Script_StartTruckScene {
 		release
 		end
 	}
+}
+
+text Peccadum_TruckDepot_Text_Welcome {
+    format("Hello! Welcome to United Kashmir Truck Company, UKTC for short.")
+}
+
+text Peccadum_TruckDepot_Text_Letter1 {
+    format("What's that? You have a letter there for me?")
+}
+
+text Peccadum_TruckDepot_Text_Letter2 {
+    format("Cornelius wrote this? I understand. No words need to be said I'll see it done.")
+}
+
+text Peccadum_TruckDepot_Text_Ready {
+    format("Are you ready to depart Peccadum?")
+}
+
+text Peccadum_TruckDepot_Text_NotReady {
+    format("That's fine. Return when you're ready to go. We have many trucks leaving every day.")
+}
+
+text Peccadum_TruckDepot_Text_TruckScene {
+    format("We'll leave at once, I'll stow you in the back with all the cargo bound for Urbia. The ride can be a bit bumpy at times so please take care you don't break anything. And finally, while inspection are rare, it goes without saying we don't know you and had no idea you had stown away. That being said, lets go, no time to waste!")
 }

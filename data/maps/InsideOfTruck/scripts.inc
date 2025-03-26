@@ -22,27 +22,11 @@ InsideOfTruck_EventScript_SetIntroFlags::
 	end
 
 InsideOfTruck_EventScript_SetIntroFlagsMale::
-	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
-	setvar VAR_LITTLEROOT_INTRO_STATE, 1
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1
-	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
+	setdynamicwarp MAP_URBIA_TRUCK_DEPOT, 5, 4
 	releaseall
 	end
 
 InsideOfTruck_EventScript_SetIntroFlagsFemale::
-	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F
-	setvar VAR_LITTLEROOT_INTRO_STATE, 2
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
-	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 1
 	setdynamicwarp MAP_LITTLEROOT_TOWN, 12, 10
 	releaseall
 	end
@@ -52,7 +36,7 @@ InsideOfTruck_EventScript_MovingBox::
 	end
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
-	.string "The box is printed with a POKéMON logo.\p"
-	.string "It's a POKéMON brand moving and\n"
-	.string "delivery service.$"
+	.string "The box is printed with UKTC\p"
+	.string "It must belong to the United\n"
+	.string "Kashmir Truck Company.$"
 

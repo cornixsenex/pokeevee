@@ -703,6 +703,7 @@
 #define MAP_PECCADUM_TRUCK_DEPOT           (23 | (31 << 8))
 #define MAP_PECCADUM_HARENAE_AUREAE        (24 | (31 << 8))
 #define MAP_PECCADUM_PALATIUM_FELIX        (25 | (31 << 8))
+#define MAP_URBIA_TRUCK_DEPOT              (26 | (31 << 8))
 
 // gMapGroup_Myth
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (32 << 8))
