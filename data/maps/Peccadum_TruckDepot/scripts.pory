@@ -10,6 +10,8 @@ script Peccadum_TruckDepot_Script_Secretary {
 	//check letter:
 	checkitem (ITEM_CORNELIUS_LETTER, 1)
 	if (var(VAR_RESULT) == TRUE) {
+        applymovement (1, Common_Movement_ExclamationMark)
+        waitmovement (0)
 		//huh? Whats that
 		msgbox (Peccadum_TruckDepot_Text_Letter1)
 		closemessage
@@ -34,6 +36,7 @@ script Peccadum_TruckDepot_Script_StartTruckScene {
 		//Y: Ok get in the truck hold on it's a bumpy ride -> DoTruckScene
         msgbox (Peccadum_TruckDepot_Text_TruckScene)
         closemessage
+        fadescreen (FADE_TO_BLACK)
 		special (DoPeccadumTruckScene)
 	} else {
 		//N: Ok come back when you're ready we've got trucks leaving every day
@@ -65,5 +68,5 @@ text Peccadum_TruckDepot_Text_NotReady {
 }
 
 text Peccadum_TruckDepot_Text_TruckScene {
-    format("We'll leave at once, I'll stow you in the back with all the cargo bound for Urbia. The ride can be a bit bumpy at times so please take care you don't break anything. And finally, while inspection are rare, it goes without saying we don't know you and had no idea you had stown away. That being said, lets go, no time to waste!")
+    format("We'll leave at once, I'll stow you in the back with all the cargo bound for Urbia. The ride can be a bit bumpy at times so please take care you don't break anything. And finally, while inspections are rare, it goes without saying we don't know you and had no idea you had stown away. That being said, lets go, no time to waste!")
 }

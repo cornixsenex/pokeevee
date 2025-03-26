@@ -61,6 +61,13 @@
       "elevation": 0,
       "dest_map": "MAP_HOSPITAL1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_URBIA_TRUCK_DEPOT",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

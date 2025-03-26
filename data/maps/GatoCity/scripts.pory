@@ -1,1 +1,12 @@
-mapscripts GatoCity_MapScripts {}
+mapscripts GatoCity_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        
+        //Clear Truck Scene
+        if (flag(FLAG_PECCADUM_TRUCK_READY)) {
+            clearflag (FLAG_PECCADUM_TRUCK_READY)
+        }
+
+    }
+
+}

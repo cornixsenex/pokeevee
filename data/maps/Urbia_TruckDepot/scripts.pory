@@ -1,1 +1,49 @@
-mapscripts Urbia_TruckDepot_MapScripts {}
+//TEMP_VAR_1 controls the arrival stuff
+
+mapscripts Urbia_TruckDepot_MapScripts {
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0: Urbia_TruckDepot_Script_TryTurnPlayer
+    ]
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 1: Urbia_TruckDepot_Script_ArrivalScene
+    ]
+}
+
+script Urbia_TruckDepot_Script_TryTurnPlayer {
+    if (flag(FLAG_PECCADUM_TRUCK_READY)) {
+        turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    } setvar (VAR_TEMP_1, 1)
+    end
+}
+
+script Urbia_TruckDepot_Script_ArrivalScene {
+    setvar (VAR_TEMP_1, 2)
+    if (flag(FLAG_PECCADUM_TRUCK_READY)) {
+        msgbox (Urbia_TruckDepot_Text_Arrival1)
+        msgbox (Urbia_TruckDepot_Text_Arrival2)
+        closemessage
+    }
+}
+
+script Urbia_TruckDepot_Script_Secretary {
+    lock
+    if (flag(FLAG_PECCADUM_TRUCK_READY)) {
+        msgbox (Urbia_TruckDepot_Text_Arrival2)
+    } else {
+        msgbox (Peccadum_TruckDepot_Text_Welcome)
+    }
+    closemessage
+    release
+    end
+}
+
+text Urbia_TruckDepot_Text_Arrival1 {
+    format("Welcome to Urbia. I am afraid there's nothing more that we can do for you. Tell nobody how you arrived in town or how you departed from Peccadum. I hope you find success and happiness.")
+}
+
+text Urbia_TruckDepot_Text_Arrival2 {
+    format("Now get out of here! Quick! We don't know you!")
+}
+
