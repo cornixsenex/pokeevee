@@ -262,11 +262,12 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_MT_EMBER] =                     MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_BERRY_FOREST] =                 MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_ICEFALL_CAVE] =                 MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_ROCKET_WAREHOUSE] =             MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_TRAINER_TOWER_2] =              MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_DOTTED_HOLE] =                  MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
+	
+	[MAPSEC_URBIA] =                        MAPPOPUP_THEME_MARBLE, 
+	[MAPSEC_HARENAE_AUREAE] =               MAPPOPUP_THEME_WOOD, 
+	[MAPSEC_PALATIUM_FELIX] =               MAPPOPUP_THEME_MARBLE, 
 	[MAPSEC_PECCADUM] =                     MAPPOPUP_THEME_STONE, 
 	[MAPSEC_VIA_POSTERIOR] =                MAPPOPUP_THEME_STONE, 
 	[MAPSEC_CACNORUM] =                     MAPPOPUP_THEME_BRICK, 
@@ -282,6 +283,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_VIA_LITORALIS] =                MAPPOPUP_THEME_MARBLE, 
 	[MAPSEC_CASTRUM] =  					MAPPOPUP_THEME_BRICK,                      
 	[MAPSEC_SINUS_PACIFICUS] =              MAPPOPUP_THEME_MARBLE,
+
 	//BREAK ABOVE ALTERED
 	
 	//End kanto mapsecs
@@ -301,6 +303,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_ALTERING_CAVE] = MAPPOPUP_THEME_STONE,
     [MAPSEC_NAVEL_ROCK] = MAPPOPUP_THEME_STONE,
     [MAPSEC_TRAINER_HILL] = MAPPOPUP_THEME_MARBLE,
+
 	//Cornix Customs
     [MAPSEC_ELICIUS_BEACH] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_VILLA_FLOREA  ] = MAPPOPUP_THEME_WOOD,

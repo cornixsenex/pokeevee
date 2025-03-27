@@ -3,7 +3,7 @@
   "name": "Peccadum_PalatiumFelix",
   "layout": "LAYOUT_PECCADUM_PALATIUM_FELIX",
   "music": "MUS_RG_GAME_CORNER",
-  "region_map_section": "MAPSEC_PECCADUM",
+  "region_map_section": "MAPSEC_PALATIUM_FELIX",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

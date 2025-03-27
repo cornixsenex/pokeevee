@@ -180,10 +180,10 @@
 #define MAPSEC_MT_EMBER                     0xAF
 #define MAPSEC_BERRY_FOREST                 0xB0
 #define MAPSEC_ICEFALL_CAVE                 0xB1
-#define MAPSEC_ROCKET_WAREHOUSE             0xB2
-#define MAPSEC_TRAINER_TOWER_2              0xB3
-#define MAPSEC_DOTTED_HOLE                  0xB4
 //Below have been altered, above are vanilla BREAK break Break
+#define MAPSEC_URBIA                        0xB2
+#define MAPSEC_HARENAE_AUREAE               0xB3
+#define MAPSEC_PALATIUM_FELIX               0xB4
 #define MAPSEC_PECCADUM                     0xB5
 #define MAPSEC_VIA_POSTERIOR                0xB6
 #define MAPSEC_CACNORUM                     0xB7

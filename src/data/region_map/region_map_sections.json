@@ -1431,16 +1431,16 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ROCKET_WAREHOUSE",
-      "name": "ROCKET WAREHOUSE",
+      "map_section": "MAPSEC_URBIA",
+      "name": "VRBIA",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_TRAINER_TOWER_2",
-      "name": "TRAINER TOWER",
+      "map_section": "MAPSEC_HARENAE_AUREAE",
+      "name": "HARENAE AVREAE",
       "name_clone": true,
       "x": 0,
       "y": 0,
@@ -1448,8 +1448,8 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_DOTTED_HOLE",
-      "name": "DOTTED HOLE",
+      "map_section": "MAPSEC_PALATIUM_FELIX",
+      "name": "PALATIVM FELIX",
       "x": 0,
       "y": 0,
       "width": 1,

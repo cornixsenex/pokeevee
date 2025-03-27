@@ -3,7 +3,7 @@
   "name": "Warehouse_Blue",
   "layout": "LAYOUT_WAREHOUSE_GREEN",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ROCKET_WAREHOUSE",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
