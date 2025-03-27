@@ -176,11 +176,11 @@
 #define MAPSEC_SEVII_ISLE_22                0xAB
 #define MAPSEC_SEVII_ISLE_23                0xAC
 #define MAPSEC_SEVII_ISLE_24                0xAD
-#define MAPSEC_NAVEL_ROCK_FRLG              0xAE
-#define MAPSEC_MT_EMBER                     0xAF
-#define MAPSEC_BERRY_FOREST                 0xB0
-#define MAPSEC_ICEFALL_CAVE                 0xB1
 //Below have been altered, above are vanilla BREAK break Break
+#define MAPSEC_SCHOLA                       0xAE
+#define MAPSEC_ARDENS                       0xAF
+#define MAPSEC_IGNIS_MONS                   0xB0
+#define MAPSEC_DESERET                      0xB1
 #define MAPSEC_URBIA                        0xB2
 #define MAPSEC_HARENAE_AUREAE               0xB3
 #define MAPSEC_PALATIUM_FELIX               0xB4

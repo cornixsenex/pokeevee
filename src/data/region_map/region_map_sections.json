@@ -1399,32 +1399,32 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_NAVEL_ROCK_FRLG",
-      "name": "NAVEL ROCK",
+      "map_section": "MAPSEC_SCHOLA",
+      "name": "SCHOLA",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_MT_EMBER",
-      "name": "MT. EMBER",
+      "map_section": "MAPSEC_ARDENS",
+      "name": "ARDENS",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_BERRY_FOREST",
-      "name": "BERRY FOREST",
+      "map_section": "MAPSEC_IGNIS_MONS",
+      "name": "IGNIS MONS",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_ICEFALL_CAVE",
-      "name": "ICEFALL CAVE",
+      "map_section": "MAPSEC_DESERET",
+      "name": "DESERET",
       "x": 0,
       "y": 0,
       "width": 1,
