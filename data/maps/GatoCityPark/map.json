@@ -27,6 +27,11 @@
       "map": "MAP_TROY_SE",
       "offset": -7,
       "direction": "left"
+    },
+    {
+      "map": "MAP_GATO_CITY_ZOO",
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [
