@@ -12267,12 +12267,13 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A folding bicycle\n"
-            "that is faster than\n"
-            "the Running Shoes."),
+            "with a single speed\n"
+            "painted racing red."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_Bike,
+        .secondaryId = ACRO_BIKE, //Cornix hacky make pull tiles work w/ normal bike
         .iconPic = gItemIcon_Bicycle,
         .iconPalette = gItemIconPalette_Bicycle,
     },

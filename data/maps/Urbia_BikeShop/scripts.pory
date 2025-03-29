@@ -1,1 +1,122 @@
+
+const OBJ_EVENT_SALESMAN = 1
+const BIKE_PRICE = 5000
+
 mapscripts Urbia_BikeShop_MapScripts {}
+
+script Urbia_BikeShop_Script_Salesman {
+    lock
+    checkitem (ITEM_BICYCLE, 1)
+    if (var(VAR_RESULT) == FALSE) {
+        //Don't have bike yet
+        if (!flag(FLAG_URBIA_BIKESHOP_INTROD)) { //First time?
+            //boy business sure has been slow - our bikes are too good everyone already bought one
+            setflag (FLAG_URBIA_BIKESHOP_INTROD)
+            msgbox (Urbia_BikeShop_Text_Salesman1)
+            applymovement (OBJ_EVENT_SALESMAN, Common_Movement_ExclamationMark)
+            waitmovement (0)
+            //Whats that? You don't have a bike! You came to the right place - sales pitch
+            msgbox (Urbia_BikeShop_Text_Salesman2)
+        } else {
+            //Not First time here
+            //See you again, tired walking, back for a bike I'm sure
+            msgbox (Urbia_BikeShop_Text_Salesman3)
+        }
+        call (Urbia_BikeShop_Script_SellBike)
+    } else {
+        //Already has bike
+        msgbox (Urbia_BikeShop_Text_Salesman4)
+        closemessage
+        release
+        end
+    }
+}
+
+script Urbia_BikeShop_Script_SellBike {
+    //Buy one (YN)
+    showmoneybox (17, 0)
+    msgbox (Urbia_BikeShop_Text_BuyBike, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        //try sell bike
+        checkmoney (BIKE_PRICE)
+        if (var(VAR_RESULT) == TRUE) {
+            removemoney (BIKE_PRICE)
+            updatemoneybox
+            playse (SE_SHOP)
+            waitse
+            hidemoneybox
+            giveitem (ITEM_BICYCLE)
+            msgbox (Urbia_BikeShop_Text_SoldBike)
+        } else {
+            //Not enough money
+            msgbox (Urbia_BikeShop_Text_NotEnoughMoney)
+            hidemoneybox
+            msgbox (Urbia_BikeShop_Text_SalesmanComeBack)
+        }
+    } else {
+        msgbox (Urbia_BikeShop_Text_SalesmanComeBack)
+    }
+    closemessage
+    release
+    end
+}
+
+script Urbia_BikeShop_Script_Worker {
+    lock
+    faceplayer
+    msgbox (Urbia_BikeShop_Text_Worker)
+    closemessage
+    release
+    end
+}
+
+script Urbia_BikeShop_Script_Book {
+    lock
+    msgbox (Urbia_BikeShop_Text_Book)
+    closemessage
+    release
+    end
+}
+
+text Urbia_BikeShop_Text_Book {
+    format("It's a technical manual for maintenance and repairing bicycles. Seems complicated...better get going!")
+}
+
+text Urbia_BikeShop_Text_Worker {
+    format("I am a certified bike technician but since those bicycles are made so well I hardly ever get to work on them. Maybe one day the factory will start to purposely lower the quality of their bicycles so they'll finally start to break down and I can get some work!")
+}
+
+text Urbia_BikeShop_Text_Salesman1 {
+    format("I can't believe how slow business has been. These bikes were selling faster than hotcakes back when the Via Magna was first built but now that everyone has their own bike no one comes in to buy them anymore. I think the factory makes them too well! They never break down...never need repair...")
+}
+
+text Urbia_BikeShop_Text_Salesman2 {
+    format("What's that? You say you do not own a bike? My friend, welcome! You've come to the right place! You'll find we sell the finest bicycles at a fair price, enjoyment guaranteed!")
+}
+
+text Urbia_BikeShop_Text_Salesman3 {
+    format("My friend, welcome back to our cycle shop. Are you ready to buy one of our bikes?")
+}
+
+text  Urbia_BikeShop_Text_BuyBike {
+    format("Our starter model comes in racing red and is on sale for five thousand dollars. Would you like to purchase this bicycle?")
+}
+
+text Urbia_BikeShop_Text_SoldBike {
+    format("Congratulations, sir, on your new bike. Be sure to come back here if it breaks down!")
+}
+
+text Urbia_BikeShop_Text_SalesmanComeBack {
+    format("Come back whenever you're ready to buy one of our bikes. Have a nice day, goodbye.")
+}
+
+text Urbia_BikeShop_Text_Salesman4 {
+    format("Hello again, my friend. How is that bike been treating you? OK? I'm sure you feel like a real stud riding along the road on that magnificent racing red bike.")
+}
+
+text Urbia_BikeShop_Text_NotEnoughMoney {
+    format("My friend, it seems you lack sufficient funds to purchase our racing red bicycle.")
+}
+
+
+
