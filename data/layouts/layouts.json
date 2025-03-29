@@ -6370,6 +6370,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/Urbia_TruckDepot/border.bin",
       "blockdata_filepath": "data/layouts/Urbia_TruckDepot/map.bin"
+    },
+    {
+      "id": "LAYOUT_URBIA_BIKE_SHOP",
+      "name": "Urbia_BikeShop_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/Urbia_BikeShop/border.bin",
+      "blockdata_filepath": "data/layouts/Urbia_BikeShop/map.bin"
     }
   ]
 }

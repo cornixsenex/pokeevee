@@ -1626,3 +1626,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Peccadum_PalatiumFelix/scripts.inc"
 
 	.include "data/maps/Urbia_TruckDepot/scripts.inc"
+
+	.include "data/maps/Urbia_BikeShop/scripts.inc"
