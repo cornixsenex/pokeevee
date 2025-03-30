@@ -5937,7 +5937,7 @@
       "width": 122,
       "height": 40,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_LavaridgeGym",
+      "secondary_tileset": "gTileset_Colchis",
       "border_filepath": "data/layouts/Farm/border.bin",
       "blockdata_filepath": "data/layouts/Farm/map.bin"
     },

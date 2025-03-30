@@ -2179,7 +2179,6 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 11: //CORNIX DID THIS - DISABLE REPEATING MAP POPUPS ON DOOR WARPS
-        DebugPrintf ("CASE 11\n");
         if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
         {
             //Last and Dest Maps are not equal
