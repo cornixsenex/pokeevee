@@ -623,6 +623,7 @@ struct MapHeader const *const GetDestinationWarpMapHeader(void)
 
 static void LoadCurrentMapData(void)
 {
+    DebugPrintf("LoadCurrentMapData\n sLastMapSectionId: %d", gMapHeader.regionMapSectionId);
     sLastMapSectionId = gMapHeader.regionMapSectionId;
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
@@ -661,6 +662,7 @@ static void SetPlayerCoordsFromWarp(void)
 void WarpIntoMap(void)
 {
     ApplyCurrentWarp();
+    DebugPrintf("WarpIntoMap LoadCurrentMapData()");
     LoadCurrentMapData();
     SetPlayerCoordsFromWarp();
 }
@@ -846,15 +848,11 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 	//Only prev is dynamic check
 	//else...default TransitionMapMusic();
 	
-//	if 
-//		(
-//		(FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE) &&
 
 
     ApplyCurrentWarp();
-	DebugPrintf("\nBefore LoadCurrentMapData\nX: %d\nY: %d\nMAPSEC: %d\nMAPGROUP: %d\nMAPNUM: %d", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y, gMapHeader.regionMapSectionId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+    DebugPrintf("Camera Transition LoadCurrentMapData()");
     LoadCurrentMapData();
-	DebugPrintf("\nAfter LoadCurrentMapData\nX: %d\nY: %d\nMAPSEC: %d\nMAPGROUP: %d\nMAPNUM: %d", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y, gMapHeader.regionMapSectionId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     LoadObjEventTemplatesFromHeader();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
@@ -1027,7 +1025,6 @@ if (I_VS_SEEKER_CHARGING != 0)
          || gMapHeader.regionMapSectionId != sLastMapSectionId)
             ShowMapNamePopup();
     }
-	DebugPrintf("\nEND LoadCurrentMapData\nX: %d\nY: %d\nMAPSEC: %d\nMAPGROUP: %d\nMAPNUM: %d", gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y, gMapHeader.regionMapSectionId, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -1035,8 +1032,7 @@ static void LoadMapFromWarp(bool32 a1)
     bool8 isOutdoors;
     bool8 isIndoors;
 
-	DebugPrintf("LoadMapFromWarp\n");
-
+    DebugPrintf("LoadMapFromWarp LoadCurrentMapData()");
     LoadCurrentMapData();
     if (!(sObjectEventLoadFlag & SKIP_OBJECT_EVENT_LOAD))
     {
@@ -2184,9 +2180,22 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         InitTilesetAnimations();
         (*state)++;
         break;
-    case 11:
+    case 11: //CORNIX DID THIS - DISABLE REPEATING MAP POPUPS ON DOOR WARPS
+        DebugPrintf ("CASE 11\n");
         if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
-            ShowMapNamePopup();
+        {
+            DebugPrintf("HERE Top\nregionMapSeciont: %d\nsLastMapSectionId: %d\nDYNAMIC: %d", gMapHeader.regionMapSectionId, sLastMapSectionId, MAPSEC_DYNAMIC);
+            //Last and Dest Maps are both not == and neither are Dynamic
+            if (gMapHeader.regionMapSectionId != sLastMapSectionId &&
+                    gMapHeader.regionMapSectionId != MAPSEC_DYNAMIC &&
+                    sLastMapSectionId != MAPSEC_DYNAMIC
+               )
+            {
+                DebugPrintf("HERE 2");
+                ShowMapNamePopup();
+            }
+            //You will need to adjust this for dynamic warp maps
+        }
         (*state)++;
         break;
     case 12:
