@@ -621,10 +621,11 @@ struct MapHeader const *const GetDestinationWarpMapHeader(void)
     return Overworld_GetMapHeaderByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum);
 }
 
-static void LoadCurrentMapData(void)
+//NOTE: Cornix Custom hack warp map name popup touched  this function - added the bool32 check
+static void LoadCurrentMapData(bool32 updateLastMapSec)
 {
-    DebugPrintf("LoadCurrentMapData\n sLastMapSectionId: %d", gMapHeader.regionMapSectionId);
-    sLastMapSectionId = gMapHeader.regionMapSectionId;
+	if (updateLastMapSec)
+		sLastMapSectionId = gMapHeader.regionMapSectionId;
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
@@ -662,8 +663,7 @@ static void SetPlayerCoordsFromWarp(void)
 void WarpIntoMap(void)
 {
     ApplyCurrentWarp();
-    DebugPrintf("WarpIntoMap LoadCurrentMapData()");
-    LoadCurrentMapData();
+    LoadCurrentMapData(TRUE); //CornixCustom
     SetPlayerCoordsFromWarp();
 }
 
@@ -851,8 +851,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 
 
     ApplyCurrentWarp();
-    DebugPrintf("Camera Transition LoadCurrentMapData()");
-    LoadCurrentMapData();
+    LoadCurrentMapData(TRUE); //Cornix Custom
     LoadObjEventTemplatesFromHeader();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
@@ -1032,8 +1031,7 @@ static void LoadMapFromWarp(bool32 a1)
     bool8 isOutdoors;
     bool8 isIndoors;
 
-    DebugPrintf("LoadMapFromWarp LoadCurrentMapData()");
-    LoadCurrentMapData();
+    LoadCurrentMapData(FALSE); //Cornix Custom
     if (!(sObjectEventLoadFlag & SKIP_OBJECT_EVENT_LOAD))
     {
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
@@ -2184,17 +2182,12 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         DebugPrintf ("CASE 11\n");
         if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
         {
-            DebugPrintf("HERE Top\nregionMapSeciont: %d\nsLastMapSectionId: %d\nDYNAMIC: %d", gMapHeader.regionMapSectionId, sLastMapSectionId, MAPSEC_DYNAMIC);
-            //Last and Dest Maps are both not == and neither are Dynamic
-            if (gMapHeader.regionMapSectionId != sLastMapSectionId &&
-                    gMapHeader.regionMapSectionId != MAPSEC_DYNAMIC &&
-                    sLastMapSectionId != MAPSEC_DYNAMIC
-               )
+            //Last and Dest Maps are not equal
+            if (gMapHeader.regionMapSectionId != sLastMapSectionId)
             {
-                DebugPrintf("HERE 2");
                 ShowMapNamePopup();
             }
-            //You will need to adjust this for dynamic warp maps
+            //You will need to adjust this for dynamic warp maps - like between two dynamic maps and such
         }
         (*state)++;
         break;
