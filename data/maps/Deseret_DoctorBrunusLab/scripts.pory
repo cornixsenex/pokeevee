@@ -38,15 +38,15 @@ script Deseret_DoctorBrunusLab_Script_DoctorBrunus1 {
 }
 
 text Deseret_DoctorBrunusLab_Text_DoctorBrunus1 {
-    format("")
+    format("They called me crazy! All those stuffy men locked up inside their university afraid to dream, to break those rules they learned. Obsessed with maintaining the status quo! But I am the clever Doctor Brunus! I have invented something of my own! Something brand new! Something they'll never have! Young lad, come here. I want to give to you the fruits my ten year's labor finally bore.")
 }
 
 text Deseret_DoctorBrunusLab_Text_DoctorBrunus2 {
-    format("")
+    format("For too long have our eyes been buffeted by puny grains of sand in the desert. No more! With those goggles you can traverse the desert wastes without blinding yourself. Wear them with pride. Wear them with distinction among those short sighted fools at Ardens.")
 }
 
 text Deseret_DoctorBrunusLab_Text_DoctorBrunus3 {
-    format("")
+    format("Well, look at that! Those goggles do look sharp. Be sure to mention they were invented by Doctor Brunus when those college fools inevitably ask where they are from. Doctor Brunus must now get back to work creating new inventions for mankind. Come back sometime and I will share with you the fruits of my pioneering labor.")
 }
 
 

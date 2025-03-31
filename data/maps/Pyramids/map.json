@@ -2,8 +2,8 @@
   "id": "MAP_PYRAMIDS",
   "name": "Pyramids",
   "layout": "LAYOUT_PYRAMIDS",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_JAGGED_PASS",
+  "music": "MUS_DYNAMIC",
+  "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_SANDSTORM",
   "map_type": "MAP_TYPE_ROUTE",
@@ -61,7 +61,60 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 1,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 1,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    }
   ],
   "bg_events": [
 
