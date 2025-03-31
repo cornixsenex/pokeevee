@@ -253,19 +253,23 @@
 #define MOVEMENT_ACTION_RUN_UP_SLOW                     0xA3
 #define MOVEMENT_ACTION_RUN_LEFT_SLOW                   0xA4
 #define MOVEMENT_ACTION_RUN_RIGHT_SLOW                  0xA5
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN           0xA6
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP             0xA7
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT           0xA8
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT          0xA9
 
 //KUSTOMS
 
 //fast diagonal movement (added for Rock Climb)
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT      0xA6
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT     0xA7
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT    0xA8
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT   0xA9
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT      0xAA
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT     0xAB
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT    0xAC
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT   0xAD
 //Spin Tiles (added for...spin tiles)
-#define MOVEMENT_ACTION_SPIN_DOWN                       0xAA
-#define MOVEMENT_ACTION_SPIN_UP                         0xAB
-#define MOVEMENT_ACTION_SPIN_LEFT                       0xAC
-#define MOVEMENT_ACTION_SPIN_RIGHT                      0xAD
+#define MOVEMENT_ACTION_SPIN_DOWN                       0xAE
+#define MOVEMENT_ACTION_SPIN_UP                         0xAF
+#define MOVEMENT_ACTION_SPIN_LEFT                       0xB0
+#define MOVEMENT_ACTION_SPIN_RIGHT                      0xB1
 
 //END KUSTOMS
 

@@ -110,9 +110,10 @@ static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 //Spin Tiles
 static void PlayerGoSpin(u8 direction);
 static void PlayerApplyTileForcedMovement(u8 metatileBehavior);
+static void PlayerWalkSlow(u8 direction); // UNUSED in Expansion 1.11.1 BUT used by GHOUL SIDEWAYS STAIRS
 
+static void PlayerWalkSlowStairs(u8 direction);
 
-static void PlayerWalkSlow(u8 direction);
 static void PlayerRunSlow(u8 direction);
 static void PlayerRun(u8);
 static void PlayerNotOnBikeCollide(u8);
@@ -803,7 +804,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     else
     {
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
-            PlayerWalkSlow(direction);
+            PlayerWalkSlowStairs(direction);
         else
             PlayerWalkNormal(direction);
     }
@@ -1151,7 +1152,13 @@ void PlayerSetAnimId(u8 movementActionId, u8 copyableMovement)
     }
 }
 
-// slow
+// slow stairs (from FRLG--faster than slow)
+static void PlayerWalkSlowStairs(u8 direction)
+{
+    PlayerSetAnimId(GetWalkSlowStairsMovementAction(direction), 2);
+}
+
+// slow - UNUSED in expansion but used in CORNIX for Ghoul Sideways Stairs (I THINK)
 static void PlayerWalkSlow(u8 direction)
 {
     PlayerSetAnimId(GetWalkSlowMovementAction(direction), 2);
