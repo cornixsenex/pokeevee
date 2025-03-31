@@ -2,55 +2,73 @@ Deseret_DoctorBrunusLab_MapScripts::
 	.byte 0
 
 
-Deseret_DoctorBrunusLab_Script_DoctorBrunus::
-# 8 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+Deseret_DoctorBrunusLab_Script_Girafarig::
+# 6 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	lock
-# 9 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 7 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	faceplayer
+# 8 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	playmoncry SPECIES_GIRAFARIG, CRY_MODE_ENCOUNTER
+# 9 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	waitmoncry
 # 10 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
-	checkitem ITEM_GO_GOGGLES, 1
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 # 11 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	waitmovement 0
+# 12 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	release
+	end
+
+
+Deseret_DoctorBrunusLab_Script_DoctorBrunus::
+# 17 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	lock
+# 18 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	faceplayer
+# 19 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	checkitem ITEM_GO_GOGGLES, 1
+# 20 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Deseret_DoctorBrunusLab_Script_DoctorBrunus_2
-# 14 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 23 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	call Deseret_DoctorBrunusLab_Script_DoctorBrunus1
 Deseret_DoctorBrunusLab_Script_DoctorBrunus_1:
-# 16 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 17 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 25 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+# 26 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	waitmovement 0
-# 18 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 27 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	closemessage
-# 19 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 28 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	release
 	end
 
 Deseret_DoctorBrunusLab_Script_DoctorBrunus_2:
-# 12 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 21 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	call Deseret_DoctorBrunusLab_Script_DoctorBrunus2
 	goto Deseret_DoctorBrunusLab_Script_DoctorBrunus_1
 
 
 Deseret_DoctorBrunusLab_Script_DoctorBrunus2::
-# 25 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 34 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	msgbox Deseret_DoctorBrunusLab_Text_DoctorBrunus3
 	return
 
 
 Deseret_DoctorBrunusLab_Script_DoctorBrunus1::
-# 32 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 41 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	msgbox Deseret_DoctorBrunusLab_Text_DoctorBrunus1
-# 33 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 42 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	closemessage
-# 34 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 43 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	giveitem ITEM_GO_GOGGLES
-# 36 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 45 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	msgbox Deseret_DoctorBrunusLab_Text_DoctorBrunus2
 	return
 
 
 Deseret_DoctorBrunusLab_Text_DoctorBrunus1::
-# 40 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 49 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	.string "They called me crazy! All those stuffy\n"
 	.string "men locked up inside their university\l"
 	.string "afraid to dream, to break those rules\l"
@@ -64,7 +82,7 @@ Deseret_DoctorBrunusLab_Text_DoctorBrunus1::
 	.string "finally bore.$"
 
 Deseret_DoctorBrunusLab_Text_DoctorBrunus2::
-# 44 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 53 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	.string "For too long have our eyes been\n"
 	.string "buffeted by puny grains of sand in the\l"
 	.string "desert. No more! With those goggles you\l"
@@ -74,7 +92,7 @@ Deseret_DoctorBrunusLab_Text_DoctorBrunus2::
 	.string "short sighted fools at Ardens.$"
 
 Deseret_DoctorBrunusLab_Text_DoctorBrunus3::
-# 48 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
+# 57 "data//maps/Deseret_DoctorBrunusLab/scripts.pory"
 	.string "Well, look at that! Those goggles do\n"
 	.string "look sharp. Be sure to mention they\l"
 	.string "were invented by Doctor Brunus when\l"
