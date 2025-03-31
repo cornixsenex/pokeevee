@@ -6380,6 +6380,16 @@
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/Urbia_BikeShop/border.bin",
       "blockdata_filepath": "data/layouts/Urbia_BikeShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERET_DOCTOR_BRUNUS_LAB",
+      "name": "Deseret_DoctorBrunusLab_Layout",
+      "width": 16,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Deseret_DoctorBrunusLab/border.bin",
+      "blockdata_filepath": "data/layouts/Deseret_DoctorBrunusLab/map.bin"
     }
   ]
 }

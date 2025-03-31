@@ -1628,3 +1628,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Urbia_TruckDepot/scripts.inc"
 
 	.include "data/maps/Urbia_BikeShop/scripts.inc"
+
+	.include "data/maps/Deseret_DoctorBrunusLab/scripts.inc"

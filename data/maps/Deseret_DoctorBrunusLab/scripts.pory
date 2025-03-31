@@ -1,0 +1,52 @@
+
+const OBJ_EVENT_DR_BRUNUS = 1
+
+mapscripts Deseret_DoctorBrunusLab_MapScripts {}
+
+
+script Deseret_DoctorBrunusLab_Script_DoctorBrunus {
+    lock
+    faceplayer
+    checkitem (ITEM_GO_GOGGLES, 1)
+    if (var(VAR_RESULT) == YES) {
+        call (Deseret_DoctorBrunusLab_Script_DoctorBrunus2)
+    } else {
+        call (Deseret_DoctorBrunusLab_Script_DoctorBrunus1)
+    }
+    applymovement (OBJ_EVENT_DR_BRUNUS, Common_Movement_FaceDown)
+    waitmovement (0)
+    closemessage
+    release
+    end
+}
+
+script Deseret_DoctorBrunusLab_Script_DoctorBrunus2 {
+    //How those goggles working out for you? Look just like me ha show em all
+    msgbox (Deseret_DoctorBrunusLab_Text_DoctorBrunus3)
+    return
+}
+
+script Deseret_DoctorBrunusLab_Script_DoctorBrunus1 {
+    //I'm Doctor Brunus they (academia) call me crazy but I invented something great
+    //Here take them and show everyone but if anyone asks no they'll never be able to get them
+    msgbox (Deseret_DoctorBrunusLab_Text_DoctorBrunus1)
+    closemessage
+    giveitem (ITEM_GO_GOGGLES)
+    //there you go now you're off show everyone and laugh when they ask they never should have spurned me!
+    msgbox (Deseret_DoctorBrunusLab_Text_DoctorBrunus2)
+    return
+}
+
+text Deseret_DoctorBrunusLab_Text_DoctorBrunus1 {
+    format("")
+}
+
+text Deseret_DoctorBrunusLab_Text_DoctorBrunus2 {
+    format("")
+}
+
+text Deseret_DoctorBrunusLab_Text_DoctorBrunus3 {
+    format("")
+}
+
+

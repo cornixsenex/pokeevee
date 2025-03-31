@@ -299,6 +299,13 @@
       "elevation": 0,
       "dest_map": "MAP_VIA_MAGNA_TERMINAL_DESERET",
       "dest_warp_id": "5"
+    },
+    {
+      "x": 79,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_DESERET_DOCTOR_BRUNUS_LAB",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

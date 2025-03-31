@@ -705,6 +705,7 @@
 #define MAP_PECCADUM_PALATIUM_FELIX        (25 | (31 << 8))
 #define MAP_URBIA_TRUCK_DEPOT              (26 | (31 << 8))
 #define MAP_URBIA_BIKE_SHOP                (27 | (31 << 8))
+#define MAP_DESERET_DOCTOR_BRUNUS_LAB      (28 | (31 << 8))
 
 // gMapGroup_Myth
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (32 << 8))

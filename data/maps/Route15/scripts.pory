@@ -1,3 +1,8 @@
+
+//VAR_TEMP_3: Check sandstorm block
+//VAR_TEMP_4: Which direction to move during block
+//VAR_TEMP_5: DYNAMIC MAP
+
 mapscripts Route15_MapScripts {
 
 	MAP_SCRIPT_ON_LOAD {
@@ -26,4 +31,41 @@ script Route15_EventScript_DesertTempleWarp {
 	warpsilent (MAP_DESERT_TEMPLE_B1F, 9, 9)
 	waitstate
 	end
+}
+
+script Route15_Script_SunTrigger {
+    setweather (WEATHER_SUNNY)
+    doweather
+    end
+}
+
+script Route15_Script_SandstormTriggerUp {
+    setvar (VAR_TEMP_4, 2)
+    call (Route15_Script_SandstormTrigger)
+}
+
+script Route15_Script_SandstormTriggerLeft {
+    setvar (VAR_TEMP_4, 1)
+    call (Route15_Script_SandstormTrigger)
+}
+
+script Route15_Script_SandstormTrigger {
+    setweather (WEATHER_SANDSTORM)
+    doweather
+    checkitem (ITEM_GO_GOGGLES)
+    if (var(VAR_RESULT) == NO) {
+        applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        msgbox (gText_SandstormIsVicious)
+        closemessage
+        if (var(VAR_TEMP_4) == 1) {
+            applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft2)
+        } else {
+            applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp2)
+        }
+        waitmovement (0)
+    } else {
+        setvar (VAR_TEMP_3, 1)
+    }
+    end
 }

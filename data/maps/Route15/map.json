@@ -5,7 +5,7 @@
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_ROUTE_115",
   "requires_flash": false,
-  "weather": "WEATHER_SANDSTORM",
+  "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -66,6 +66,114 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "Route15_EventScript_DesertTempleWarp"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 35,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 36,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 36,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 37,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 21,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 76,
+      "y": 21,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 74,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 76,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
     }
   ],
   "bg_events": [
