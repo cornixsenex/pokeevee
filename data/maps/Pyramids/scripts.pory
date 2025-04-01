@@ -1,12 +1,84 @@
+
+//VAR_TEMP_F: Pyramid Light - IDK
+//VAR_TEMP_3: Pyramid Block
+//VAR_TEMP_5: Dynamic Map
+
 mapscripts Pyramids_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
+
+		//Set pyramid light (IDK why)
 		pyramid_updatelight (200, PYRAMID_LIGHT_SET_RADIUS)
 		setvar (VAR_TEMP_F, 1)
-		if ( (var(VAR_INDY_STATE) != 3) && (!flag(FLAG_PYRAMIDS_HIDEMAXIE) )) {
-			removeobject (1)
-			setflag (FLAG_PYRAMIDS_HIDEMAXIE)
+
+		//Clear Pyramid Block if passed it once
+		checkitem (ITEM_BIG_HAMMER)
+		if (var(VAR_RESULT) == YES) {
+			setvar (VAR_TEMP_3, 1)
 		}
+
 		end
 	}
+}
 
+script Pyramids_Script_PyramidBlockA {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	call (Pyramids_Script_PyramidBlock)
+}
+
+script Pyramids_Script_PyramidBlockB {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	call (Pyramids_Script_PyramidBlock)
+}
+
+script Pyramids_Script_PyramidBlockC {
+	lock
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp2)
+	waitmovement (0)
+	call (Pyramids_Script_PyramidBlock)
+}
+
+script Pyramids_Script_PyramidBlock {
+	//sorry this area is closed for a survey
+	msgbox (Pyramids_Text_PyramidBlock)
+	//check if graduated
+	checkitem (ITEM_DIPLOMA)
+	if (var(VAR_RESULT) == YES) {
+		//clear block var
+		setvar (VAR_TEMP_3, 1)
+		//Oh you're a graduate here to help? Welcome (doctor?) - Take this hammer 
+		msgbox(Pyramids_Text_PyramidClearBlock1)
+		closemessage
+		giveitem (ITEM_BIG_HAMMER)
+		//and report to Indianus inside be careful
+		msgbox(Pyramids_Text_PyramidClearBlock2)
+		closemessage
+	} else {
+		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft2)
+		waitmovement (0)
+	}
+	release
+	end
+}
+
+
+text Pyramids_Text_PyramidBlock {
+	format("Excuse me, sir, this area is closed by order of the Deseret Antique Department of Ancient Historic sites in conjunction with the Ardens School of Archaeology. You'll have to turn back.")
+}
+
+text Pyramids_Text_PyramidClearBlock1 {
+	format("What's that? You have a degree from Ardens? Well now...\nScientia scientiam scit, verum dico?\nSalve, learned friend, I see you've come to help the excavation of the Pyramid. You'll need the right equipment for the job. Take this hammer to smash obstructive rocks.")
+}
+
+text Pyramids_Text_PyramidClearBlock2 {
+	format("That Big Hammer will help you get inside. Report to Professor Indianus, who is in charge of this excavation. I'm sure he'll find something for you to do. Be careful, there are many dangerous pitfalls and ancient traps inside as well as deadly creatures lurking in the dark.")
 }

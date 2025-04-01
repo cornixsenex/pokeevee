@@ -31,17 +31,17 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
-      "x": 62,
-      "y": 60,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 52,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_PYRAMIDS_HIDEMAXIE"
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -114,6 +114,33 @@
       "var": "VAR_TEMP_3",
       "var_value": "0",
       "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Pyramids_Script_PyramidBlockA"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Pyramids_Script_PyramidBlockB"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Pyramids_Script_PyramidBlockC"
     }
   ],
   "bg_events": [

@@ -478,125 +478,123 @@ Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack::
 # 278 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	setvar VAR_INDY_STATE, 4
 # 279 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	clearflag FLAG_PYRAMIDS_HIDEMAXIE
-# 280 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack
+# 280 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	closemessage
 # 281 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	closemessage
+	destroy_field_pic 9
 # 282 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	destroy_field_pic 9
-# 283 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	applymovement 11, Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit
-# 284 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 283 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	waitmovement 0
-# 285 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 284 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	removeobject 11
-# 286 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 285 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	load_field_pic 9, 190, 98
-# 287 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 286 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	msgbox Ardor_Uni_ArchaeologyClass_Text_MaxieExit
-# 288 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 287 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	closemessage
-# 289 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 288 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	destroy_field_pic 9
-# 290 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 289 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	fadescreen 1
-# 291 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 290 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	removeobject 12
-# 292 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 291 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	setflag FLAG_ARCHAELOGY_CLASS_HIDEREBELS
-# 293 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 292 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	fadescreen 0
 	return
 
 
-# 297 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 296 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 Ardor_Uni_ArchaeologyClass_Movement_Spin:
+# 297 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	face_left
 # 298 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	face_left
+	face_up
 # 299 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	face_up
+	face_right
 # 300 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	face_right
+	face_down
 # 301 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	face_down
+	face_left
 # 302 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	face_left
-# 303 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	face_up
-# 304 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 303 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	face_down
-# 305 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 304 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	face_left
-# 306 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 305 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	face_up
 	step_end
 
-# 309 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 308 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 Ardor_Uni_ArchaeologyClass_Movement_StudentApproach1:
-# 310 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 309 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_right
-# 311 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 310 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	walk_up
+# 310 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_up
 # 311 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	walk_up
-# 312 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	face_right
 	step_end
 
-# 315 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 314 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 Ardor_Uni_ArchaeologyClass_Movement_StudentApproach2:
-# 316 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 315 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_diag_northeast
-# 317 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 316 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_up
-# 318 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 317 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	face_left
 	step_end
 
-# 321 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 320 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 Ardor_Uni_ArchaeologyClass_Movement_StudentReturn:
-# 322 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 321 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	walk_down
+# 321 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_down
 # 322 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	walk_down
-# 323 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_left
-# 324 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 323 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	face_up
 	step_end
 
-# 327 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 326 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 Ardor_Uni_ArchaeologyClass_Movement_Rebel1Exit:
-# 328 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 327 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	walk_right
+# 327 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	walk_right
+# 327 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	walk_right
+# 327 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_right
 # 328 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	walk_right
-# 328 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	walk_right
-# 328 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	walk_right
-# 329 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_down
-# 329 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 328 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_down
-# 329 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 328 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_down
-# 329 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 328 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_down
 	step_end
 
-# 332 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 331 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene:
-# 333 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 332 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	walk_up
+# 332 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+	walk_up
+# 332 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_up
 # 333 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	walk_up
-# 333 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	walk_up
-# 334 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_diag_northwest
-# 335 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 334 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	walk_up
 	step_end
 
@@ -609,48 +607,48 @@ Ardor_Uni_ArchaeologyClass_EventScript_TA_Text_1:
 	.string "VAR_INDY_STATE is over 3 in TA switcheroo$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy1::
-# 338 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 337 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Now please sit down so our class may\n"
 	.string "begin$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf1::
-# 342 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 341 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "I've just told you, we're not here for\n"
 	.string "the class. We need your help to...$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy2::
-# 346 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 345 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Now is not the time! My patience is\n"
 	.string "grown thin. This is a school! If you will\l"
 	.string "not obey I'll get the dean.$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf2::
-# 350 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 349 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "I'll not sit down, we need you general.\n"
 	.string "Some years ago you fought with my\l"
 	.string "father and now he begs your help to\l"
 	.string "fight again. The Rockets have...$"
 
 Ardor_Uni_ArchaeologyClass_Text_Student1::
-# 354 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 353 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "She knows not what she says!$"
 
 Ardor_Uni_ArchaeologyClass_Text_Student2::
-# 358 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 357 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Just say the word and we'll take care of\n"
 	.string "her!$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy3::
-# 362 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 361 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Be quiet and both of you go sit down.$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy4::
-# 366 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 365 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Our time has come now we must show\n"
 	.string "ourselves.$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy5::
-# 370 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 369 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "I hope you will forgive us our disguise\n"
 	.string "and please allow us an introduction. My\l"
 	.string "name truly is Magnus Maximus, I am the\l"
@@ -663,18 +661,18 @@ Ardor_Uni_ArchaeologyClass_Text_Indy5::
 	.string "rebel band but he was here for me.$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf3::
-# 374 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 373 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "So you'll do it!$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy6::
-# 378 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 377 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "It is our only purpose to destroy the\n"
 	.string "Rocket Party and retake our land. Now\l"
 	.string "tell me girl who is your father and what\l"
 	.string "is our need of urgent action now?$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf4::
-# 382 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 381 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "My father served with you in the great\n"
 	.string "war and we have travelled far, from\l"
 	.string "Clara's Church to bring you the most\l"
@@ -682,15 +680,15 @@ Ardor_Uni_ArchaeologyClass_Text_Leaf4::
 	.string "imprisoned Mew itself$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy7::
-# 386 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 385 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Impossible!$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf5::
-# 390 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 389 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "{PLAYER} saw it for himself$"
 
 Ardor_Uni_ArchaeologyClass_Text_Indy8::
-# 394 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 393 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "That certainly explains the urgency. We\n"
 	.string "must make our attack quickly before\l"
 	.string "they end the universe with this evil.\l"
@@ -714,67 +712,67 @@ Ardor_Uni_ArchaeologyClass_Text_Indy8::
 	.string "are ready {PLAYER} we shall depart.$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieAsk::
-# 398 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 397 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Are you ready to start the battle\n"
 	.string "{PLAYER}?$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieWait::
-# 402 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 401 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "We'll wait for you to be fully prepared.$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieNeedFlash::
-# 406 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 405 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "I'm sorry {PLAYER} you're not ready to\n"
 	.string "go. Before we travel to the depths of\l"
 	.string "hell you must learn how to use the HM\l"
 	.string "FLASH.$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack::
-# 410 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 409 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "The die is cast. ALEA IACTA EST. Arise\n"
 	.string "arise rebels of the desert! Your time is\l"
 	.string "now rise up and sieze the school!$"
 
 Ardor_Uni_ArchaeologyClass_Text_MaxieExit::
-# 414 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 413 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Now hurry {PLAYER} and meet me at the\n"
 	.string "cave entrance on the far south side of\l"
 	.string "the sand.$"
 
 Ardor_Uni_ArchaeologyClass_Text_ClassBegin::
-# 418 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 417 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Salve puer. Magister Indianus in\n"
 	.string "pyramide est. Marcus adjustor Indiani\l"
 	.string "sum. Sine magistro archaeologiam doceo.$"
 
 Ardor_Uni_ArchaeologyClass_Text_ClassBegun::
-# 422 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 421 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "In eremis circum Ardentem multae sunt\n"
 	.string "reliquiae. Reperi thesaurum anteanum et\l"
 	.string "reveni cum eam.$"
 
 Ardor_Uni_ArchaeologyClass_Text_TAInDesk::
-# 426 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 425 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Revenit magister Indianus.$"
 
 Ardor_Uni_ArchaeologyClass_Text_TARebel::
-# 430 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 429 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Iam scis, rebelles sumus.$"
 
 Ardor_Uni_ArchaeologyClass_Text_FoundLamp::
-# 434 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 433 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Mea Hercule! Reperisti lampadem\n"
 	.string "anticam!$"
 
 Ardor_Uni_ArchaeologyClass_Text_TABattleIntro::
-# 438 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 437 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Tempus iam est examinis.$"
 
 Ardor_Uni_ArchaeologyClass_Text_TABattleLost::
-# 442 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 441 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Omnia quod scio tibi docui.$"
 
 Ardor_Uni_ArchaeologyClass_Text_ClassFinished::
-# 446 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
+# 445 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	.string "Congratulatio! Iam studuisti\n"
 	.string "Archaeologiam.$"

@@ -86,7 +86,7 @@
 #define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Spelling error lol; also does what it says
 #define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Does what it says
 #define FLAG_RECEIVED_FLASH    0x47 // Set after owner gives you hm05 in the hotel 1F
-#define FLAG_PYRAMIDS_HIDEMAXIE    0x48 // Should start set, clear when the battle begins in Archaeology class and then set again after Maxie enters the Dark Cave
+#define FLAG_UNUSED_0x48    0x48 //  UNUSED
 #define FLAG_RECEIVED_CARD_KEY    0x49 // Set after Card Key is taken in Rocket Tower, hides the pokeball as well
 #define FLAG_HIDE_ROCKETTOWER_13F_GIO    0x4A // Set by Gio cutscene
 #define FLAG_HIDE_CARDKEY    0x4B // Set after you grab the card key from 13F RocketTower

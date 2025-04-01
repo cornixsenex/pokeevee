@@ -276,7 +276,6 @@ script Ardor_Uni_ArchaeologyClass_EventScript_Maxie {
 
 script Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack {	
 	setvar (VAR_INDY_STATE, 4)
-	clearflag (FLAG_PYRAMIDS_HIDEMAXIE)	
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieBeginAttack)
 	closemessage
 	destroy_field_pic (9)
