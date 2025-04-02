@@ -42,6 +42,20 @@
       "elevation": 0,
       "dest_map": "MAP_PYRAMID_INSIDE2F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_PYRAMID_INSIDE_PUZZLE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_PYRAMID_INSIDE_PUZZLE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

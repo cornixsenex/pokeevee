@@ -403,6 +403,7 @@ extern const u8 SecretBase_Text_Trainer9Defeated[];
 extern const u8 EventScript_UseStrength[];
 extern const u8 EventScript_FailSweetScent[];
 extern const u8 EventScript_UseFlash[];
+extern const u8 EventScript_UseFlash_Vanilla[];
 extern const u8 EventScript_UseCut[];
 extern const u8 EventScript_UseRockSmash[];
 extern const u8 EventScript_UseDig[];

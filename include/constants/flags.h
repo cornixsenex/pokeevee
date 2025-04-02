@@ -43,12 +43,12 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Mew Flag also a placeholder flag in src/wild_encounter.c
-#define FLAG_UNUSED_0x021    0x21 // Gift Egg
-#define FLAG_UNUSED_0x022    0x22 // Arbok Dude
-#define FLAG_UNUSED_0x023    0x23 // Surfboard Flag
-#define FLAG_UNUSED_0x024    0x24 // Dialga Flag
-#define FLAG_UNUSED_0x025    0x25 // Not actually unused
+#define FLAG_LOONIXGIFTHOUSE_HIDEBALL    0x20 // Mew Flag also a placeholder flag in src/wild_encounter.c
+#define FLAG_LOONIXGIFTHOUSE_GAVEEG    0x21 // Gift Egg
+#define FLAG_LOONIXGIFTHOUSE_GAVEARBOK    0x22 // Arbok Dude
+#define FLAG_LOONIXBEACH_GAVESURFBOARD    0x23 // Surfboard Flag
+#define FLAG_LOONIXHILLS_GAVEDIALGA    0x24 // Dialga Flag
+#define FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS    0x25 // Clear Dusclops block after pyramids puzzle completion
 #define FLAG_FORCE_ENTER_MASTERBALL_GFX    0x26 // Set during CityClara Church scene to force Mew ball to be Master Ball gfx
 #define FLAG_SABINANOVA_LEAFSCENE    0x27 // Set after Ambush OR SN Leaf Scene (disables SN Leaf scene while RoadToArdor Var == 3
 #define FLAG_PALATIUMFELIX_LOGISTICS_DONE       0x28 // Set after the logistics scene 

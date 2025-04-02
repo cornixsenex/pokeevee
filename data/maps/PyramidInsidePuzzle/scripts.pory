@@ -1,1 +1,208 @@
+
+//VAR_TEMP_6 = Duskull puzzle sequence step
+//0: Puzzle begin, duskull in top left
+//1: Duskull middle
+//2: Duskull Left
+//3: Duskull Top Right
+//4: Duskull Bottom Left
+//5: Duskull puzzle cleared
+//NOTE: Actual clearing of the puzzle handled by flag: FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS
+
+//FLAG_TEMP_3 - Whether or not Duskull steps up before walk right on Dusknull3
+const VAR_PUZZLE_STATE = VAR_TEMP_6
+const OBJ_EVENT_DUSKULL = 7
+
+const OBJ_EVENT_DUSCLOPS1 = 1
+const OBJ_EVENT_DUSCLOPS2 = 2
+const OBJ_EVENT_DUSCLOPS3 = 3
+const OBJ_EVENT_DUSCLOPS4 = 4
+const OBJ_EVENT_DUSCLOPS5 = 5
+const OBJ_EVENT_DUSCLOPS6 = 6
+
+
 mapscripts PyramidInsidePuzzle_MapScripts {}
+
+
+//Top Left to Center
+script PyramidsInsidePuzzle_Script_Duskull1 {
+    lock
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_FaceDown)
+     waitmovement (0)
+    call (PyramidsInsidePuzzle_Script_Duskull)
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkRight8)
+    waitmovement (0)
+    setvar (VAR_PUZZLE_STATE, 1)
+    hideobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    removeobject (OBJ_EVENT_DUSKULL)
+	setobjectxyperm (OBJ_EVENT_DUSKULL, 19, 18)
+    clearflag (FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS)
+    addobject (OBJ_EVENT_DUSKULL)
+    showobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    release
+    end
+}
+
+//Center to Left
+script PyramidsInsidePuzzle_Script_Duskull2 {
+    lock
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_FaceUp)
+     waitmovement (0)
+    call (PyramidsInsidePuzzle_Script_Duskull)
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkLeft8)
+    waitmovement (0)
+    setvar (VAR_PUZZLE_STATE, 2)
+    hideobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    removeobject (OBJ_EVENT_DUSKULL)
+	setobjectxyperm (OBJ_EVENT_DUSKULL, 1, 13)
+    clearflag (FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS)
+    addobject (OBJ_EVENT_DUSKULL)
+    showobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    release
+    end
+}
+
+//Left to Top Right
+
+script PyramidsInsidePuzzle_Script_Duskull3A {
+    setflag (FLAG_TEMP_3)
+    call (PyramidsInsidePuzzle_Script_Duskull3)
+}
+
+script PyramidsInsidePuzzle_Script_Duskull3 {
+    lock
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_FaceRight)
+     waitmovement (0)
+    call (PyramidsInsidePuzzle_Script_Duskull)
+    if (flag(FLAG_TEMP_3)) {
+        applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkUp)
+        waitmovement (0)
+    }
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkRight10)
+    waitmovement (0)
+    setvar (VAR_PUZZLE_STATE, 3)
+    hideobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    removeobject (OBJ_EVENT_DUSKULL)
+	setobjectxyperm (OBJ_EVENT_DUSKULL, 30, 9)
+    clearflag (FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS)
+    addobject (OBJ_EVENT_DUSKULL)
+    showobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    release
+    end
+}
+
+//Top Right to Bottom Left
+script PyramidsInsidePuzzle_Script_Duskull4 {
+    lock
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_FaceLeft)
+     waitmovement (0)
+    call (PyramidsInsidePuzzle_Script_Duskull)
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkLeft10)
+    waitmovement (0)
+    setvar (VAR_PUZZLE_STATE, 4)
+    hideobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    removeobject (OBJ_EVENT_DUSKULL)
+	setobjectxyperm (OBJ_EVENT_DUSKULL, 14, 22)
+    clearflag (FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS)
+    addobject (OBJ_EVENT_DUSKULL)
+    showobjectat (OBJ_EVENT_DUSKULL, MAP_PYRAMID_INSIDE_PUZZLE)
+    release
+    end
+}
+
+script PyramidsInsidePuzzle_Script_Duskull5 {
+    lock
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_FaceUp)
+     waitmovement (0)
+    call (PyramidsInsidePuzzle_Script_Duskull)
+    //Do Clear Dusclops Block Scene:
+    //DN to group
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkLeft3)
+    waitmovement (0)
+    //Group face up
+    applymovement (OBJ_EVENT_DUSCLOPS1, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_DUSCLOPS2, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_DUSCLOPS3, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_DUSCLOPS4, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_DUSCLOPS5, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_DUSCLOPS6, Common_Movement_FaceUp)
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkDown)
+    waitmovement (0)
+    //DN interact Right
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_DUSCLOPS2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	playmoncry (SPECIES_DUSKULL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	playmoncry (SPECIES_DUSCLOPS, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    //DN interact Left
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkLeft)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_FaceDown)
+    waitmovement (0)
+    //DC react
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_DUSCLOPS1, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	playmoncry (SPECIES_DUSKULL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	playmoncry (SPECIES_DUSCLOPS, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    //Exeunt
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_WalkDown3)
+    applymovement (OBJ_EVENT_DUSCLOPS1, Common_Movement_WalkDown3)
+    applymovement (OBJ_EVENT_DUSCLOPS2, Common_Movement_WalkDown3)
+    applymovement (OBJ_EVENT_DUSCLOPS3, Common_Movement_WalkDown3)
+    applymovement (OBJ_EVENT_DUSCLOPS4, Common_Movement_WalkDown3)
+    applymovement (OBJ_EVENT_DUSCLOPS5, Common_Movement_WalkDown3)
+    applymovement (OBJ_EVENT_DUSCLOPS6, Common_Movement_WalkDown3)
+    waitmovement (0)
+    //remove them all
+    removeobject (OBJ_EVENT_DUSKULL)
+    removeobject (OBJ_EVENT_DUSCLOPS1)
+    removeobject (OBJ_EVENT_DUSCLOPS2)
+    removeobject (OBJ_EVENT_DUSCLOPS3)
+    removeobject (OBJ_EVENT_DUSCLOPS4)
+    removeobject (OBJ_EVENT_DUSCLOPS5)
+    removeobject (OBJ_EVENT_DUSCLOPS6)
+    setobjectxyperm (OBJ_EVENT_DUSKULL, 0, 0)
+    setobjectxyperm (OBJ_EVENT_DUSCLOPS1, 0, 0)
+    setobjectxyperm (OBJ_EVENT_DUSCLOPS2, 0, 0)
+    setobjectxyperm (OBJ_EVENT_DUSCLOPS3, 0, 0)
+    setobjectxyperm (OBJ_EVENT_DUSCLOPS4, 0, 0)
+    setobjectxyperm (OBJ_EVENT_DUSCLOPS5, 0, 0)
+    setobjectxyperm (OBJ_EVENT_DUSCLOPS6, 0, 0)
+    setobjectmovementtype (OBJ_EVENT_DUSKULL, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (OBJ_EVENT_DUSCLOPS1, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (OBJ_EVENT_DUSCLOPS2, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (OBJ_EVENT_DUSCLOPS3, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (OBJ_EVENT_DUSCLOPS4, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (OBJ_EVENT_DUSCLOPS5, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (OBJ_EVENT_DUSCLOPS6, MOVEMENT_TYPE_INVISIBLE)
+    addobject (OBJ_EVENT_DUSKULL)
+    addobject (OBJ_EVENT_DUSCLOPS1)
+    addobject (OBJ_EVENT_DUSCLOPS2)
+    addobject (OBJ_EVENT_DUSCLOPS3)
+    addobject (OBJ_EVENT_DUSCLOPS4)
+    addobject (OBJ_EVENT_DUSCLOPS5)
+    addobject (OBJ_EVENT_DUSCLOPS6)
+    //Clear Block
+    setvar (VAR_PUZZLE_STATE, 5)
+    setflag (FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS)
+    removeobject (OBJ_EVENT_DUSKULL)
+    //fin
+    release
+    end
+}
+
+script PyramidsInsidePuzzle_Script_Duskull {
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement (OBJ_EVENT_DUSKULL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	playmoncry (SPECIES_DUSKULL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    return
+}
+
+
+

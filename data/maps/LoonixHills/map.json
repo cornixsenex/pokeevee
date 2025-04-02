@@ -31,7 +31,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LoonixHills_Script_GiftBall",
-      "flag": "FLAG_UNUSED_0x024"
+      "flag": "FLAG_LOONIXHILLS_GAVEDIALGA"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",

@@ -16,7 +16,7 @@ script LoonixHills_Script_GiftBall {
 				call (Common_EventScript_GetGiftMonPartySlot)
 				call (Common_EventScript_NameReceivedPartyMon)
 			}
-			setflag (FLAG_UNUSED_0x024)
+			setflag (FLAG_LOONIXHILLS_GAVEDIALGA)
 		}	
 		elif (var(VAR_RESULT) == 1) {
 			call (LoonixHills_Script_DialgaFanfare)
@@ -26,7 +26,7 @@ script LoonixHills_Script_GiftBall {
 			} else {
 				call (Common_EventScript_TransferredToPC)
 			}
-			setflag (FLAG_UNUSED_0x024)
+			setflag (FLAG_LOONIXHILLS_GAVEDIALGA)
 		} else {
 			goto (Common_EventScript_NoMoreRoomForPokemon)
 		}

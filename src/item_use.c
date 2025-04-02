@@ -333,11 +333,7 @@ void ItemUseOutOfBattle_Rod(u8 taskId)
 
 static bool32 CanFlashlight(void)
 {
-    u16 mapGroup = gSaveBlock1Ptr->location.mapGroup;
-    u16 mapNum = gSaveBlock1Ptr->location.mapNum;
-
-    //Should have every map it's possible to use on here (also could check like the maps flash set level or whatever idk)
-    if (mapGroup == MAP_GROUP(ROCK_TUNNEL) && mapNum == MAP_NUM(ROCK_TUNNEL) )
+    if (gMapHeader.cave)
         return TRUE;
     else
         return FALSE;
@@ -362,7 +358,7 @@ static void ItemUseOnFieldCB_Flashlight(u8 taskId)
 {
     LockPlayerFieldControls();
 	PlaySE(SE_M_REFLECT);
-    ScriptContext_SetupScript(EventScript_UseFlash);
+    ScriptContext_SetupScript(EventScript_UseFlash_Vanilla);
     DestroyTask(taskId);
 }
     

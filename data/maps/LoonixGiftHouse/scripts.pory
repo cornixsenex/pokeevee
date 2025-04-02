@@ -17,7 +17,7 @@ script LoonixGiftBall {
 				call (Common_EventScript_GetGiftMonPartySlot)
 				call (Common_EventScript_NameReceivedPartyMon)
 			}
-			setflag (FLAG_UNUSED_0x020)
+			setflag (FLAG_LOONIXGIFTHOUSE_HIDEBALL)
 		}
 		elif (var(VAR_RESULT) == 1) {
 			call (LoonixGiftHouse_MewFanfare)
@@ -27,7 +27,7 @@ script LoonixGiftBall {
 			} else {
 				call (Common_EventScript_TransferredToPC)
 			}
-			setflag (FLAG_UNUSED_0x020)
+			setflag (FLAG_LOONIXGIFTHOUSE_HIDEBALL)
 		} else {
 			goto (Common_EventScript_NoMoreRoomForPokemon)
 			}
@@ -39,7 +39,7 @@ script LoonixGiftBall {
 script LoonixGiftEgg {
 	lock
 	faceplayer
-	if (flag(FLAG_UNUSED_0x021)) {
+	if (flag(FLAG_LOONIXGIFTHOUSE_GAVEEG)) {
 		msgbox (LoonixGiftHouse_SomethingNice)
 		release
 		end
@@ -56,7 +56,7 @@ script LoonixGiftEgg {
 				release
 				end
 			} else {
-				setflag (FLAG_UNUSED_0x021)
+				setflag (FLAG_LOONIXGIFTHOUSE_GAVEEG)
 				msgbox (LoonixGiftHouse_TakeCare)
 				playfanfare (MUS_OBTAIN_ITEM)
 				message (LoonixGiftHouse_EggText)
@@ -72,7 +72,7 @@ script LoonixGiftEgg {
 script LoonixGiftArbok {
 	lock
 	faceplayer
-	if (flag(FLAG_UNUSED_0x022)) {
+	if (flag(FLAG_LOONIXGIFTHOUSE_GAVEARBOK)) {
 		msgbox (LoonixGiftHouse_HowsArbok)
 		release
 		end
@@ -91,7 +91,7 @@ script LoonixGiftArbok {
 					call (Common_EventScript_GetGiftMonPartySlot)
 					call (Common_EventScript_NameReceivedPartyMon)
 				}
-				setflag (FLAG_UNUSED_0x022)
+				setflag (FLAG_LOONIXGIFTHOUSE_GAVEARBOK)
 				msgbox (LoonixGiftHouse_EnjoyArbok)
 			} 
 			elif (var(VAR_RESULT) == 1)  {
@@ -102,7 +102,7 @@ script LoonixGiftArbok {
 				} else {
 					call (Common_EventScript_TransferredToPC)
 				}
-				setflag (FLAG_UNUSED_0x022)
+				setflag (FLAG_LOONIXGIFTHOUSE_GAVEARBOK)
 				msgbox (LoonixGiftHouse_EnjoyArbok)
 			} else {		
 				goto (Common_EventScript_NoMoreRoomForPokemon)

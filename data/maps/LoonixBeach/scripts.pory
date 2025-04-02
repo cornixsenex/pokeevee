@@ -7,7 +7,6 @@ script LoonixBeach_EventScript_Trainer_Blue {
 	message (LoonixBeach_Text_BlueFight)
 	waitmessage
 	trainerbattle_no_intro(TRAINER_RIVAL2, LoonixBeach_Text_BlueLost)
-	setflag (FLAG_UNUSED_0x025)
 	releaseall
 	end
 }
@@ -15,7 +14,7 @@ script LoonixBeach_EventScript_Trainer_Blue {
 script LoonixBeach_EventScript_Item_Surfboard {
 	lock
 	finditem (ITEM_SURFBOARD)
-	setflag (FLAG_UNUSED_0x023)
+	setflag (FLAG_LOONIXBEACH_GAVESURFBOARD)
 	release
 	end
 }

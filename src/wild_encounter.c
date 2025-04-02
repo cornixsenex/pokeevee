@@ -608,18 +608,10 @@ static bool8 AllowWildCheckOnNewMetatile(void)
         return TRUE;
 }
 
+//Cornix is making this function useless - 250402
 static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(SOOTOPOLIS_CITY)
-     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(SOOTOPOLIS_CITY))
-    {
-        return FALSE;
-    }
-
-   // return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
-
-   // Obviously I removed the flag above, just put this placeholder incase something happens in the future
-      return FlagGet(FLAG_UNUSED_0x020);
+    return FALSE;
 }
 
 bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)

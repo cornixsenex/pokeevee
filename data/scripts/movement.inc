@@ -120,6 +120,13 @@ Common_Movement_WalkDown2:
     walk_down
 	step_end
 
+Common_Movement_WalkDown3:
+	walk_down
+	walk_down
+    walk_down
+	step_end
+
+
 Common_Movement_WalkRight:
 	walk_right
 	step_end
@@ -140,12 +147,32 @@ Common_Movement_WalkRight8:
 	walk_right
 	step_end
 
+Common_Movement_WalkRight10:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+
 
 Common_Movement_WalkLeft:
 	walk_left
 	step_end
 
 Common_Movement_WalkLeft2:
+	walk_left
+	walk_left
+	step_end
+
+Common_Movement_WalkLeft3:
+	walk_left
 	walk_left
 	walk_left
 	step_end
@@ -160,6 +187,20 @@ Common_Movement_WalkLeft8:
     walk_left
     walk_left
     step_end
+
+Common_Movement_WalkLeft10:
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    step_end
+
 
 @ Cornix Customs
 Common_Movement_WalkNorthEast::
