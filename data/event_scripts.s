@@ -1630,3 +1630,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Urbia_BikeShop/scripts.inc"
 
 	.include "data/maps/Deseret_DoctorBrunusLab/scripts.inc"
+
+	.include "data/maps/PyramidInsidePuzzle/scripts.inc"

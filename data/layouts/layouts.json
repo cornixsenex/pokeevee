@@ -6390,6 +6390,16 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/Deseret_DoctorBrunusLab/border.bin",
       "blockdata_filepath": "data/layouts/Deseret_DoctorBrunusLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYRAMID_INSIDE_PUZZLE",
+      "name": "PyramidInsidePuzzle_Layout",
+      "width": 36,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/PyramidInsidePuzzle/border.bin",
+      "blockdata_filepath": "data/layouts/PyramidInsidePuzzle/map.bin"
     }
   ]
 }
