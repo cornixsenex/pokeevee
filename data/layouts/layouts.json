@@ -6394,8 +6394,8 @@
     {
       "id": "LAYOUT_PYRAMID_INSIDE_PUZZLE",
       "name": "PyramidInsidePuzzle_Layout",
-      "width": 36,
-      "height": 28,
+      "width": 38,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/PyramidInsidePuzzle/border.bin",
