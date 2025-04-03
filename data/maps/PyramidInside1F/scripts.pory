@@ -1,1 +1,45 @@
+const OBJ_EVENT_INDY = 1
+
 mapscripts PyramidInside1F_MapScripts {}
+
+script PyramidInside1F_Script_Indy {
+	lock
+	//faceplayer
+	//check if 1st interaction or not
+	checkitem (ITEM_MEWRA_SIGIL)
+	//1st interaction: react to sigil, give speech then set flag so one and done
+	if (var(VAR_RESULT) == YES) {
+		//Intro as professor
+		msgbox (PyramidInside1F_Text_Indy1)
+		//react to mewra sigil
+		applymovement (OBJ_EVENT_INDY, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//What is that
+		msgbox (PyramidInside1F_Text_Indy2)
+		//give mewra sigil
+		//Where did you get this. How did you know... background on bellum civile but you're just some kid who doesn't even have a girl friend this is way over your head you cant help
+	}
+	//Check if GF
+	//yes
+		//react to news
+		//oh you have a gf, ok but I still don't think you're strong enough for this fight. Meet me at the top of the pyramid to prove me wrong
+		//exit indy - set flag / var to hide him
+	//no
+		//come back when you have a gf kid
+	release
+	end
+}
+
+
+text PyramidInside1F_Text_Indy1 {
+	format("Hello, you must be new. I'm Professor
+			Indianus, head of the Department
+			of Archaeology at Ardens' school.
+			I'm glad to see another pair of hands
+			arrive to help with the excavation
+			after we lost someone in the basement.")
+}
+
+text PyramidInside1F_Text_Indy2 {
+	format("What's that? You brought something to give to me?")
+}
