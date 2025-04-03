@@ -1,1 +1,24 @@
-mapscripts PyramidInside2F_MapScripts {}
+mapscripts PyramidInside2F_MapScripts {
+
+
+	MAP_SCRIPT_ON_TRANSITION {
+		call (CaveHole_FixCrackedGround)
+	}
+
+	MAP_SCRIPT_ON_RESUME {
+		call (PyramidInside2F_Script_SetHoleWarp)
+	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ICE_STEP_COUNT, 0: EventScript_FallDownHole
+	]
+
+
+
+}
+
+script PyramidInside2F_Script_SetHoleWarp {
+	setstepcallback (STEP_CB_CRACKED_FLOOR)
+	setholewarp (MAP_PYRAMID_INSIDE1F)
+	end
+}
