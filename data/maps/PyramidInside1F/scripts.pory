@@ -17,7 +17,13 @@ script PyramidInside1F_Script_Indy {
 		//What is that
 		msgbox (PyramidInside1F_Text_Indy2)
 		//give mewra sigil
+		removeitem (ITEM_MEWRA_SIGIL)
+		msgbox (PyramidInside1F_Text_GaveMewraSigil)
+		//react to mewra sigil
+		applymovement (OBJ_EVENT_INDY, Common_Movement_ExclamationMark)
+		waitmovement (0)
 		//Where did you get this. How did you know... background on bellum civile but you're just some kid who doesn't even have a girl friend this is way over your head you cant help
+		msgbox (PyramidInside1F_Text_Indy3)
 	}
 	//Check if GF
 	//yes
@@ -42,4 +48,70 @@ text PyramidInside1F_Text_Indy1 {
 
 text PyramidInside1F_Text_Indy2 {
 	format("What's that? You brought something to give to me?")
+}
+
+text PyramidInside1F_Text_GaveMewraSigil {
+	format("{PLAYER} gave Professor Indianus the Mewra Sigil.")
+}
+
+text PyramidInside1F_Text_Indy3 {
+	format("Where did you get this? Who sent you here? How
+			did you know how to find me? My disguise
+			has fooled the entire Ardens College
+			for years! No one even suspected my
+			notorious past life. I'd given up
+			all hope of reclaiming my lost titles
+			long years ago, my lad, since ere you walked.
+			This sigil is a desperate call to arms
+			to one who's already surrendered them.
+			The pull to serve Mewra in me is strong,
+			perhaps enough to pull me back to war,
+			but long has our movement been extinguished.
+			The Grand Army of old has declined to
+			eleusive rebel cells in the shadows
+			who's numbers have diminished under the
+			oppresive yoke of the new government.
+			Even if I decided to resume
+			the bloody struggle to restore my crown
+			decisive victory's impossible
+			fighting alone, without the Grand Army.
+			The infrastructure no longer exists
+			to coordinate, let alone call to arms,
+			the disparate and unorganized cells.
+			To try this without aid is great folly,
+			but you are young, my lad, not yet a man
+			and asking you to help is negligent.
+			A boy who still has never had a girl
+			is not ready to risk his life in war.
+			Perhaps in time you will find a girlfriend.
+			and taste that sweet liquor we men call love.
+			Until that time I will never embark
+			upon this perilous journey with you.")
+}
+
+text PyramidInside1F_Text_Indy4 {
+	format("Return after you have found a girlfriend
+			if your heart is dead set on bitter war.")
+}
+
+text PyramidInside1F_Text_Indy5 {
+	format("What's that? You say you now have a girlfriend?
+			My lad, what lovely news! You are become
+			a man who's cheeks display that first blossom
+			of manly facial hair, but a girlfriend
+			is not enough to prove you are ready
+			to fight alongside me with my army.
+			To prove yourself you must climb to the top
+			of this ancient wonder. You'll need the strength
+			of Heracles to cast aside boulders
+			and great prowess in battle to defeat
+			the challenger who waits to test your skill.
+			The Pyramid is old, and tall, and strong.
+			I will wait for you at the very top.
+			Meet me up there, and pass your final test,
+			then truly you'll have proved that you're the one
+			to help me restore my fallen kingdom.
+			If your own destiny is intertwined
+			with mine, and all the people of Kashmir,
+			then I'll soon see you atop this Pyramid.")
 }
