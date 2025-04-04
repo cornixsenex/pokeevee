@@ -5,13 +5,26 @@ PyramidInside1F_MapScripts::
 PyramidInside1F_Script_Indy::
 # 6 "data/maps/PyramidInside1F/scripts.pory"
 	lock
+# 7 "data/maps/PyramidInside1F/scripts.pory"
+	faceplayer
 # 9 "data/maps/PyramidInside1F/scripts.pory"
 	checkitem ITEM_MEWRA_SIGIL
 # 11 "data/maps/PyramidInside1F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq PyramidInside1F_Script_Indy_2
 PyramidInside1F_Script_Indy_1:
-# 35 "data/maps/PyramidInside1F/scripts.pory"
+# 29 "data/maps/PyramidInside1F/scripts.pory"
+	goto_if_set FLAG_LEAF_ISGF, PyramidInside1F_Script_Indy_5
+# 43 "data/maps/PyramidInside1F/scripts.pory"
+	msgbox PyramidInside1F_Text_Indy4
+# 44 "data/maps/PyramidInside1F/scripts.pory"
+	closemessage
+# 45 "data/maps/PyramidInside1F/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+# 46 "data/maps/PyramidInside1F/scripts.pory"
+	waitmovement 0
+PyramidInside1F_Script_Indy_4:
+# 49 "data/maps/PyramidInside1F/scripts.pory"
 	release
 	end
 
@@ -36,9 +49,26 @@ PyramidInside1F_Script_Indy_2:
 	msgbox PyramidInside1F_Text_Indy3
 	goto PyramidInside1F_Script_Indy_1
 
+PyramidInside1F_Script_Indy_5:
+# 32 "data/maps/PyramidInside1F/scripts.pory"
+	applymovement 1, Common_Movement_ExclamationMark
+# 33 "data/maps/PyramidInside1F/scripts.pory"
+	waitmovement 0
+# 35 "data/maps/PyramidInside1F/scripts.pory"
+	msgbox PyramidInside1F_Text_Indy5
+# 36 "data/maps/PyramidInside1F/scripts.pory"
+	closemessage
+# 38 "data/maps/PyramidInside1F/scripts.pory"
+	applymovement 1, Common_Movement_WalkUp3
+# 39 "data/maps/PyramidInside1F/scripts.pory"
+	waitmovement 0
+# 40 "data/maps/PyramidInside1F/scripts.pory"
+	removeobject 1
+	goto PyramidInside1F_Script_Indy_4
+
 
 PyramidInside1F_Text_Indy1::
-# 40 "data/maps/PyramidInside1F/scripts.pory"
+# 54 "data/maps/PyramidInside1F/scripts.pory"
 	.string "Hello, you must be new. I'm Professor\n"
 	.string "Indianus, head of the Department of\l"
 	.string "Archaeology at Ardens' school. I'm glad\l"
@@ -47,17 +77,17 @@ PyramidInside1F_Text_Indy1::
 	.string "someone in the basement.$"
 
 PyramidInside1F_Text_Indy2::
-# 49 "data/maps/PyramidInside1F/scripts.pory"
+# 63 "data/maps/PyramidInside1F/scripts.pory"
 	.string "What's that? You brought something to\n"
 	.string "give to me?$"
 
 PyramidInside1F_Text_GaveMewraSigil::
-# 53 "data/maps/PyramidInside1F/scripts.pory"
+# 67 "data/maps/PyramidInside1F/scripts.pory"
 	.string "{PLAYER} gave Professor Indianus the\n"
 	.string "Mewra Sigil.$"
 
 PyramidInside1F_Text_Indy3::
-# 57 "data/maps/PyramidInside1F/scripts.pory"
+# 71 "data/maps/PyramidInside1F/scripts.pory"
 	.string "Where did you get this? Who sent you\n"
 	.string "here? How did you know how to find me?\l"
 	.string "My disguise has fooled the entire\l"
@@ -93,13 +123,13 @@ PyramidInside1F_Text_Indy3::
 	.string "upon this perilous journey with you.$"
 
 PyramidInside1F_Text_Indy4::
-# 92 "data/maps/PyramidInside1F/scripts.pory"
+# 106 "data/maps/PyramidInside1F/scripts.pory"
 	.string "Return after you have found a\n"
 	.string "girlfriend if your heart is dead set on\l"
 	.string "bitter war.$"
 
 PyramidInside1F_Text_Indy5::
-# 97 "data/maps/PyramidInside1F/scripts.pory"
+# 111 "data/maps/PyramidInside1F/scripts.pory"
 	.string "What's that? You say you now have a\n"
 	.string "girlfriend? My lad, what lovely news!\l"
 	.string "You are become a man who's cheeks\l"

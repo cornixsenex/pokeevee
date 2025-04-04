@@ -53,7 +53,7 @@
 #define FLAG_SABINANOVA_LEAFSCENE    0x27 // Set after Ambush OR SN Leaf Scene (disables SN Leaf scene while RoadToArdor Var == 3
 #define FLAG_PALATIUMFELIX_LOGISTICS_DONE       0x28 // Set after the logistics scene 
 #define FLAG_PECCADUM_TRUCK_READY       0x29 // Set after giving Cornelius Letter. Clear after Truck Scene. Allow player return to truck scene if leave after giving letter 
-#define FLAG_UNUSED_0x02A       0x2A // UNUSED 
+#define FLAG_PYRAMIDINSIDE1F_HIDEINDY       0x2A // Set after Indy goes to top of pyramid 
 #define FLAG_HASINSURANCE       0x2B // Allows Pokecenter Use (Should be checkitem?)
 #define FLAG_SILVANWOODS_BLUESHOWN  0x2C // Set after Blue shown walking by
 #define FLAG_HIDE_RT17_BLOCK1 0x2D // Hides the first block
@@ -63,7 +63,7 @@
 #define FLAG_RECEIVED_SCYTHE      0x31 //Set after Castalian Garden, allows cut (should be an item too or instead idk)
 #define FLAG_PALATIUMFELIX_OPEN      0x32 //Set after initial opening of Palatium Felix
 #define FLAG_URBIA_BIKESHOP_INTROD      0x33 //Set after initial sales pitch
-#define FLAG_UNUSED_0x34      0x34 //UNUSED 
+#define FLAG_LEAF_ISGF     0x34 // Set after Leaf agrees to be your GF
 #define FLAG_UNUSED_0x35      0x35 //UNUSED 
 #define FLAG_UNUSED_0x36      0x36 //UNUSED 
 #define FLAG_UNUSED_0x37      0x37 //UNUSED 
