@@ -1,1 +1,34 @@
-mapscripts Palmae_RentalHouse_MapScripts {}
+
+const OBJ_EVENT_LEAF = 1
+const OBJ_EVENT_LANDLADY = 2
+const OBJ_EVENT_JIG = 3
+
+mapscripts Palmae_RentalHouse_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+
+		//setup leaf or landlady depending on state
+		if(var(VAR_UNI_STATE) < 10) {
+			call (Palmae_RentalHouse_Script_ShowLandlady)
+		} else { //should check if after leave for Tranquilitas
+			call (Palmae_RentalHouse_Script_ShowLeaf)
+		}
+
+	}
+
+}
+
+script Palmae_RentalHouse_Script_ShowLandlady {
+	setobjectxyperm (OBJ_EVENT_LANDLADY, 11, 4)
+	setobjectmovementtype (OBJ_EVENT_LANDLADY, MOVEMENT_TYPE_FACE_RIGHT)
+	end
+}
+
+script  Palmae_RentalHouse_Script_ShowLeaf {
+	setobjectxyperm (OBJ_EVENT_LEAF, 5, 5)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_LEFT)
+
+	setobjectxyperm (OBJ_EVENT_JIG, 5, 4)
+	setobjectmovementtype (OBJ_EVENT_JIG, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+	end
+}
