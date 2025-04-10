@@ -3,7 +3,7 @@
   "name": "Phoenix_Mart",
   "layout": "LAYOUT_MART",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_BATTLE_FRONTIER",
+  "region_map_section": "MAPSEC_PALMAE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",

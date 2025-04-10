@@ -531,11 +531,11 @@ text LoonixInsideReal_Text_GrandmaTVSpeech {
 }
 
 text LoonixInsideReal_Text_GrandmaMono {
-	format("But now the strength of life has left these bones, and I can hardly walk across the yard. Saeclara City is too far away for this old crow to fly.")
+	format("But now the strength of life has left these bones, and I can hardly walk across the yard. Castalia is just too far away for this old crow to fly.")
 }	
 
 text LoonixInsideReal_Text_GrandmaToBed {
-	format("I'll have to stay.\p {PLAYER} will you help me get into bed?")
+	format("I'll have to stay.\p {PLAYER}, will you help me into bed?")
 }
 
 text LoonixInsideReal_Text_GrandmaBed {

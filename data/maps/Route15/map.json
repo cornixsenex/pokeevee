@@ -44,17 +44,10 @@
     },
     {
       "x": 43,
-      "y": 35,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE15_DESERT_CAVE",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 43,
       "y": 38,
       "elevation": 0,
       "dest_map": "MAP_ROUTE15_DESERT_CAVE",
-      "dest_warp_id": "2"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

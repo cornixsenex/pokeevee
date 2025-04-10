@@ -130,6 +130,8 @@
 #define METATILE_Cave_CaveType3BottomHole                0x2E6
 #define METATILE_Cave_CaveType3BottomHoleLeft            0x2E5
 #define METATILE_Cave_CaveType3BottomHoleRight           0x2E7
+#define METATILE_Cave_CaveType3EntranceBottom            0x306
+#define METATILE_Cave_CaveType3EntranceTop               0x2FE
 #define METATILE_Cave_CaveType3TopWall                   0x2E9
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206

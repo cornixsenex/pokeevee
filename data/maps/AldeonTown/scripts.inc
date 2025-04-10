@@ -581,173 +581,177 @@ AldeonTown_Script_SnorlaxBlock::
 # 392 "data//maps/AldeonTown/scripts.pory"
 	waitmovement 0
 # 393 "data//maps/AldeonTown/scripts.pory"
-	msgbox AldeonTown_Text_FatManBlock, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 394 "data//maps/AldeonTown/scripts.pory"
-	closemessage
-# 395 "data//maps/AldeonTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 396 "data//maps/AldeonTown/scripts.pory"
 	waitmovement 0
+# 395 "data//maps/AldeonTown/scripts.pory"
+	msgbox AldeonTown_Text_FatManBlock, MSGBOX_DEFAULT
+# 396 "data//maps/AldeonTown/scripts.pory"
+	closemessage
 # 397 "data//maps/AldeonTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+# 398 "data//maps/AldeonTown/scripts.pory"
+	waitmovement 0
+# 399 "data//maps/AldeonTown/scripts.pory"
 	release
 	end
 
 
 AldeonTown_Script_TriggerStormBlock::
-# 402 "data//maps/AldeonTown/scripts.pory"
-	lock
-# 403 "data//maps/AldeonTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 404 "data//maps/AldeonTown/scripts.pory"
-	waitmovement 0
+	lock
 # 405 "data//maps/AldeonTown/scripts.pory"
-	msgbox AldeonTown_Text_StormBlock2, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 406 "data//maps/AldeonTown/scripts.pory"
-	closemessage
-# 407 "data//maps/AldeonTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 408 "data//maps/AldeonTown/scripts.pory"
 	waitmovement 0
+# 407 "data//maps/AldeonTown/scripts.pory"
+	msgbox AldeonTown_Text_StormBlock2, MSGBOX_DEFAULT
+# 408 "data//maps/AldeonTown/scripts.pory"
+	closemessage
 # 409 "data//maps/AldeonTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+# 410 "data//maps/AldeonTown/scripts.pory"
+	waitmovement 0
+# 411 "data//maps/AldeonTown/scripts.pory"
 	release
 	end
 
 
 AldeonTown_Script_Scott::
-# 414 "data//maps/AldeonTown/scripts.pory"
-	lock
-# 415 "data//maps/AldeonTown/scripts.pory"
-	faceplayer
 # 416 "data//maps/AldeonTown/scripts.pory"
-	msgbox AldeonTown_Text_Scott, MSGBOX_DEFAULT
+	lock
 # 417 "data//maps/AldeonTown/scripts.pory"
-	closemessage
+	faceplayer
 # 418 "data//maps/AldeonTown/scripts.pory"
-	applymovement 10, Common_Movement_FaceUp
+	msgbox AldeonTown_Text_Scott, MSGBOX_DEFAULT
 # 419 "data//maps/AldeonTown/scripts.pory"
-	waitmovement 0
+	closemessage
 # 420 "data//maps/AldeonTown/scripts.pory"
+	applymovement 10, Common_Movement_FaceUp
+# 421 "data//maps/AldeonTown/scripts.pory"
+	waitmovement 0
+# 422 "data//maps/AldeonTown/scripts.pory"
 	release
 	end
 
 
-# 424 "data//maps/AldeonTown/scripts.pory"
-AldeonTown_Movement_PlayerSnorlax1:
-# 425 "data//maps/AldeonTown/scripts.pory"
-	walk_left
 # 426 "data//maps/AldeonTown/scripts.pory"
-	walk_up
+AldeonTown_Movement_PlayerSnorlax1:
 # 427 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 428 "data//maps/AldeonTown/scripts.pory"
+	walk_up
+# 429 "data//maps/AldeonTown/scripts.pory"
 	face_right
 	step_end
 
-# 430 "data//maps/AldeonTown/scripts.pory"
-AldeonTown_Movement_PlayerSnorlax2:
-# 431 "data//maps/AldeonTown/scripts.pory"
-	walk_up
 # 432 "data//maps/AldeonTown/scripts.pory"
-	walk_left
+AldeonTown_Movement_PlayerSnorlax2:
 # 433 "data//maps/AldeonTown/scripts.pory"
 	walk_up
 # 434 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 435 "data//maps/AldeonTown/scripts.pory"
+	walk_up
+# 436 "data//maps/AldeonTown/scripts.pory"
 	face_right
 	step_end
 
-# 437 "data//maps/AldeonTown/scripts.pory"
-AldeonTown_Movement_Leaf1:
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
-# 438 "data//maps/AldeonTown/scripts.pory"
-	walk_left
 # 439 "data//maps/AldeonTown/scripts.pory"
+AldeonTown_Movement_Leaf1:
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 440 "data//maps/AldeonTown/scripts.pory"
+	walk_left
+# 441 "data//maps/AldeonTown/scripts.pory"
 	face_up
 	step_end
 
-# 442 "data//maps/AldeonTown/scripts.pory"
+# 444 "data//maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_Blue1:
-# 443 "data//maps/AldeonTown/scripts.pory"
+# 445 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 443 "data//maps/AldeonTown/scripts.pory"
+# 445 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 443 "data//maps/AldeonTown/scripts.pory"
+# 445 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 443 "data//maps/AldeonTown/scripts.pory"
+# 445 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 443 "data//maps/AldeonTown/scripts.pory"
+# 445 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 443 "data//maps/AldeonTown/scripts.pory"
+# 445 "data//maps/AldeonTown/scripts.pory"
 	walk_right
 	step_end
 
-# 446 "data//maps/AldeonTown/scripts.pory"
+# 448 "data//maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_BlueLeafExeunt:
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
-# 447 "data//maps/AldeonTown/scripts.pory"
+# 449 "data//maps/AldeonTown/scripts.pory"
 	walk_right
 	step_end
 
-# 450 "data//maps/AldeonTown/scripts.pory"
+# 452 "data//maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_BlueLeafExeuntL:
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 451 "data//maps/AldeonTown/scripts.pory"
+# 453 "data//maps/AldeonTown/scripts.pory"
 	walk_left
 	step_end
 
-# 454 "data//maps/AldeonTown/scripts.pory"
+# 456 "data//maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_StormBlock1:
-# 455 "data//maps/AldeonTown/scripts.pory"
+# 457 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 455 "data//maps/AldeonTown/scripts.pory"
+# 457 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 455 "data//maps/AldeonTown/scripts.pory"
+# 457 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 455 "data//maps/AldeonTown/scripts.pory"
+# 457 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 455 "data//maps/AldeonTown/scripts.pory"
+# 457 "data//maps/AldeonTown/scripts.pory"
 	walk_left
-# 455 "data//maps/AldeonTown/scripts.pory"
+# 457 "data//maps/AldeonTown/scripts.pory"
 	walk_left
 	step_end
 
@@ -756,7 +760,7 @@ AldeonTown_Script_TriggerLeafBattle_Text_0:
 	.string "Hey {PLAYER}!$"
 
 AldeonTown_Text_FatManBlock::
-# 459 "data//maps/AldeonTown/scripts.pory"
+# 461 "data//maps/AldeonTown/scripts.pory"
 	.string "Woah, hold your horses there young man!\n"
 	.string "Be careful these here snorlaxes..or uh\l"
 	.string "snorlaci, can be mighty dangerous. You\l"
@@ -765,7 +769,7 @@ AldeonTown_Text_FatManBlock::
 	.string "don't you go off and play?$"
 
 AldeonTown_Text_StormBlock1::
-# 463 "data//maps/AldeonTown/scripts.pory"
+# 465 "data//maps/AldeonTown/scripts.pory"
 	.string "This is a very serious deluge, the likes\n"
 	.string "of which I've not seen since my youth!\l"
 	.string "You must go home! Seek shelter from\l"
@@ -773,11 +777,11 @@ AldeonTown_Text_StormBlock1::
 	.string "already lost {LEAF}!$"
 
 AldeonTown_Text_StormBlock2::
-# 467 "data//maps/AldeonTown/scripts.pory"
+# 469 "data//maps/AldeonTown/scripts.pory"
 	.string "Go home! It isn't safe out! {LEAF} is lost!$"
 
 AldeonTown_Text_FatMan1::
-# 471 "data//maps/AldeonTown/scripts.pory"
+# 473 "data//maps/AldeonTown/scripts.pory"
 	.string "Even after we were forced to join the\n"
 	.string "Republic the government still mostly\l"
 	.string "leaves us alone. Still, we miss the old\l"
@@ -787,53 +791,53 @@ AldeonTown_Text_FatMan1::
 	.string "show for it? A whole lot of nothing!$"
 
 AldeonTown_Text_FatMan2::
-# 475 "data//maps/AldeonTown/scripts.pory"
+# 477 "data//maps/AldeonTown/scripts.pory"
 	.string "Snorlax wandered off...told you he would\n"
 	.string "leave!$"
 
 AldeonTown_Text_DoorWoman::
-# 480 "data//maps/AldeonTown/scripts.pory"
+# 482 "data//maps/AldeonTown/scripts.pory"
 	.string "Me sorry but if no business with Master\n"
 	.string "you havin' then leavin' you needin'.$"
 
 AldeonTown_Text_TownSign::
-# 484 "data//maps/AldeonTown/scripts.pory"
+# 486 "data//maps/AldeonTown/scripts.pory"
 	.string "Aldeon Town - Where Snorlax has the\n"
 	.string "Right of Way$"
 
 AldeonTown_Text_HouseSign::
-# 488 "data//maps/AldeonTown/scripts.pory"
+# 490 "data//maps/AldeonTown/scripts.pory"
 	.string "House of Atreus\n"
 	.string "No Solicitors!$"
 
 AldeonTown_Text_Leaf1::
-# 493 "data//maps/AldeonTown/scripts.pory"
+# 495 "data//maps/AldeonTown/scripts.pory"
 	.string "Look! I asked my daddy for a Pokemon to\n"
 	.string "protect and keep me safe. Isn't she\l"
 	.string "cute? Let's see how strong she is!$"
 
 AldeonTown_Text_LeafLost::
-# 497 "data//maps/AldeonTown/scripts.pory"
+# 499 "data//maps/AldeonTown/scripts.pory"
 	.string "Hey! That's enough! You're hurting her,\n"
 	.string "please stop!$"
 
 AldeonTown_Text_Leaf2::
-# 501 "data//maps/AldeonTown/scripts.pory"
+# 503 "data//maps/AldeonTown/scripts.pory"
 	.string "Looks like I need to learn better\n"
 	.string "technique if I am going to keep myself\l"
 	.string "safe.$"
 
 AldeonTown_Text_Blue1::
-# 505 "data//maps/AldeonTown/scripts.pory"
+# 507 "data//maps/AldeonTown/scripts.pory"
 	.string "So sad...$"
 
 AldeonTown_Text_Blue2::
-# 510 "data//maps/AldeonTown/scripts.pory"
+# 512 "data//maps/AldeonTown/scripts.pory"
 	.string "Such savage studies of slaughter\n"
 	.string "should supercede a more sound syllabus.$"
 
 AldeonTown_Text_Leaf3::
-# 515 "data//maps/AldeonTown/scripts.pory"
+# 517 "data//maps/AldeonTown/scripts.pory"
 	.string "Well pardon me, handsome unknown\n"
 	.string "stranger, but truly I do not understand\l"
 	.string "you. I thought that by battling\l"
@@ -843,7 +847,7 @@ AldeonTown_Text_Leaf3::
 	.string "as one myself.$"
 
 AldeonTown_Text_Blue3::
-# 520 "data//maps/AldeonTown/scripts.pory"
+# 522 "data//maps/AldeonTown/scripts.pory"
 	.string "Your Pokemon will grow from battles yes\n"
 	.string "but practicing in such a wonton way will\l"
 	.string "only yield you diminished results. Those\l"
@@ -854,7 +858,7 @@ AldeonTown_Text_Blue3::
 	.string "break out of their stifling system.$"
 
 AldeonTown_Text_Leaf4::
-# 525 "data//maps/AldeonTown/scripts.pory"
+# 527 "data//maps/AldeonTown/scripts.pory"
 	.string "We may not learn as well unsupervised\n"
 	.string "but of the Trainer School, here in our\l"
 	.string "midst, many have said we must attend,\l"
@@ -862,7 +866,7 @@ AldeonTown_Text_Leaf4::
 	.string "great.$"
 
 AldeonTown_Text_Blue4::
-# 530 "data//maps/AldeonTown/scripts.pory"
+# 532 "data//maps/AldeonTown/scripts.pory"
 	.string "The many are not great for few are\n"
 	.string "great. The teachers in their school\l"
 	.string "have lied to them who lied to you. They\l"
@@ -875,39 +879,39 @@ AldeonTown_Text_Blue4::
 	.string "techniques.$"
 
 AldeonTown_Text_Leaf5::
-# 535 "data//maps/AldeonTown/scripts.pory"
+# 537 "data//maps/AldeonTown/scripts.pory"
 	.string "Your flavored words and shapely form\n"
 	.string "convince me there is truth in all of\l"
 	.string "what you say. Therefore I will go with\l"
 	.string "you. Please, teach me.$"
 
 AldeonTown_Text_Blue5::
-# 540 "data//maps/AldeonTown/scripts.pory"
+# 542 "data//maps/AldeonTown/scripts.pory"
 	.string "Then let us go.$"
 
 AldeonTown_Text_Blue6::
-# 545 "data//maps/AldeonTown/scripts.pory"
+# 547 "data//maps/AldeonTown/scripts.pory"
 	.string "Girls only, little bro.$"
 
 AldeonTown_Text_Leaf6::
-# 549 "data//maps/AldeonTown/scripts.pory"
+# 551 "data//maps/AldeonTown/scripts.pory"
 	.string "You're so good at this! Wow! I'm learning\n"
 	.string "lots!$"
 
 AldeonTown_Text_Blue7::
-# 553 "data//maps/AldeonTown/scripts.pory"
+# 555 "data//maps/AldeonTown/scripts.pory"
 	.string "Yeah, just like that! You're doing so\n"
 	.string "good girl.$"
 
 AldeonTown_Text_OldMan::
-# 557 "data//maps/AldeonTown/scripts.pory"
+# 559 "data//maps/AldeonTown/scripts.pory"
 	.string "Hello, young man, I don't recognize you.\n"
 	.string "I live here, in this house, with my\l"
 	.string "brother. Go in and see him if you need to\l"
 	.string "rest.$"
 
 AldeonTown_Text_Scott::
-# 561 "data//maps/AldeonTown/scripts.pory"
+# 563 "data//maps/AldeonTown/scripts.pory"
 	.string "My daughter left for her first day of\n"
 	.string "school and I am overwhelmed by\l"
 	.string "emotions. I'm fixing a hole in my doorway\l"
@@ -915,10 +919,10 @@ AldeonTown_Text_Scott::
 	.string "soothe my mind.$"
 
 AldeonTown_Text_Lass1::
-# 565 "data//maps/AldeonTown/scripts.pory"
+# 567 "data//maps/AldeonTown/scripts.pory"
 	.string "This garden is where I come to relax.$"
 
 AldeonTown_Text_Lass2::
-# 569 "data//maps/AldeonTown/scripts.pory"
+# 571 "data//maps/AldeonTown/scripts.pory"
 	.string "The Big House was here, before the\n"
 	.string "fires.$"

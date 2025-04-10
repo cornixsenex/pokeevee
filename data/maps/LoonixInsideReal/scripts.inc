@@ -909,14 +909,13 @@ LoonixInsideReal_Text_GrandmaMono::
 # 533 "data//maps/LoonixInsideReal/scripts.pory"
 	.string "But now the strength of life has left\n"
 	.string "these bones, and I can hardly walk\l"
-	.string "across the yard. Saeclara City is too\l"
+	.string "across the yard. Castalia is just too\l"
 	.string "far away for this old crow to fly.$"
 
 LoonixInsideReal_Text_GrandmaToBed::
 # 537 "data//maps/LoonixInsideReal/scripts.pory"
 	.string "I'll have to stay.\p"
-	.string "{PLAYER} will you help me get into\n"
-	.string "bed?$"
+	.string "{PLAYER}, will you help me into bed?$"
 
 LoonixInsideReal_Text_GrandmaBed::
 # 541 "data//maps/LoonixInsideReal/scripts.pory"

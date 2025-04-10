@@ -3,7 +3,7 @@
   "name": "Phoenix",
   "layout": "LAYOUT_PHOENIX",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_PETALBURG_CITY",
+  "region_map_section": "MAPSEC_PALMAE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",
@@ -170,8 +170,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Phoenix_Script_Jigglypuff",
-      "flag": "0"
+      "script": "OverworldPokemon_Script_Jigglypuff",
+      "flag": "FLAG_PHOENIX_LEAF"
     }
   ],
   "warp_events": [

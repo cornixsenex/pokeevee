@@ -49,9 +49,14 @@ script Route15_DesertCave_EventScript_ShowOpenDoor {
 }
 
 script Route15_DesertCave_EventScript_OpenDoor {
-	setmetatile (14, 19, METATILE_Cave_CaveType3BottomHole, 0)
+	//Bottom exit: Return to Route15
+    setmetatile (14, 19, METATILE_Cave_CaveType3BottomHole, 0)
 	setmetatile (13, 19, METATILE_Cave_CaveType3BottomHoleLeft, 1)
 	setmetatile (15, 19, METATILE_Cave_CaveType3BottomHoleRight, 1)
+
+    //Trick exit back to the desert cave
+    setmetatile (14, 15, METATILE_Cave_CaveType3EntranceTop, 1)
+    setmetatile (14, 16, METATILE_Cave_CaveType3EntranceBottom, 0)
 	return
 }
 

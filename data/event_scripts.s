@@ -1156,6 +1156,8 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 
+    .include "data/scripts/overworld_pokemon.inc" @Custom for interact with pokemon in overworld
+
 	.include "data/maps/Loonix/scripts.inc"
 
 	.include "data/maps/LoonixInsideReal/scripts.inc"

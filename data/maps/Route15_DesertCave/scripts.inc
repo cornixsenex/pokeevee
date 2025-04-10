@@ -90,16 +90,20 @@ Route15_DesertCave_EventScript_ShowOpenDoor::
 
 
 Route15_DesertCave_EventScript_OpenDoor::
-# 52 "data//maps/Route15_DesertCave/scripts.pory"
-	setmetatile 14, 19, METATILE_Cave_CaveType3BottomHole, 0
 # 53 "data//maps/Route15_DesertCave/scripts.pory"
-	setmetatile 13, 19, METATILE_Cave_CaveType3BottomHoleLeft, 1
+	setmetatile 14, 19, METATILE_Cave_CaveType3BottomHole, 0
 # 54 "data//maps/Route15_DesertCave/scripts.pory"
+	setmetatile 13, 19, METATILE_Cave_CaveType3BottomHoleLeft, 1
+# 55 "data//maps/Route15_DesertCave/scripts.pory"
 	setmetatile 15, 19, METATILE_Cave_CaveType3BottomHoleRight, 1
+# 58 "data//maps/Route15_DesertCave/scripts.pory"
+	setmetatile 14, 15, METATILE_Cave_CaveType3EntranceTop, 1
+# 59 "data//maps/Route15_DesertCave/scripts.pory"
+	setmetatile 14, 16, METATILE_Cave_CaveType3EntranceBottom, 0
 	return
 
 
 Route15_DesertCave_Text_ShowOpenDoor::
-# 60 "data//maps/Route15_DesertCave/scripts.pory"
+# 65 "data//maps/Route15_DesertCave/scripts.pory"
 	.string "Oh! The ANCIENT LAMP begins to shake\n"
 	.string "and glow!$"

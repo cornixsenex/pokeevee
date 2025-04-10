@@ -16,11 +16,15 @@ mapscripts Palmae_RentalHouse_MapScripts {
 
 	}
 
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_0, 0: Palmae_RentalHouse_Script_FaceLandlady
+	]
+
 }
 
 script Palmae_RentalHouse_Script_ShowLandlady {
 	setobjectxyperm (OBJ_EVENT_LANDLADY, 11, 4)
-	setobjectmovementtype (OBJ_EVENT_LANDLADY, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (OBJ_EVENT_LANDLADY, MOVEMENT_TYPE_WANDER_AROUND)
 	end
 }
 
@@ -32,3 +36,40 @@ script  Palmae_RentalHouse_Script_ShowLeaf {
 	setobjectmovementtype (OBJ_EVENT_JIG, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
 	end
 }
+
+script Palmae_RentalHouse_Script_FaceLandlady {
+    turnobject (OBJ_EVENT_LANDLADY, DIR_EAST)
+    end
+}
+
+script Palmae_RentalHouse_Script_Leaf {
+    lock
+    faceplayer
+
+    //Before talk to indy - It's so hard to get a job and be responsible - woman without a man etc
+    checkitem (ITEM_MEWRA_SIGIL) //Sigil is the check for whether Indy introd or not
+    if (var(VAR_RESULT) == YES) {
+        msgbox (Palmae_RentalHouse_Text_Leaf1)
+        closemessage
+    } else { //No sigil means Indy introd
+        //After Indy - GF talk, intro, Rich, Tattoo, my ring
+
+        //If satisfied OMG thanks, give her the ring, you're official, lets go on a honeymoon, exit her and jig, set flags and vars to persist state
+    }
+
+    applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement (0)
+
+    release
+    end
+}
+
+text Palmae_RentalHouse_Text_Leaf1 {
+    format("This house may not be much, but still I'm proud
+            to have a place to call my home. It's not
+            easy for a single woman in this
+            economy to become sucessful.
+            Please go find Indianus! Let's save Mew!")
+}
+
+

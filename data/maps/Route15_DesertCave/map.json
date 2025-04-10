@@ -26,17 +26,17 @@
     },
     {
       "x": 14,
-      "y": 16,
+      "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ROUTE15",
       "dest_warp_id": "2"
     },
     {
       "x": 14,
-      "y": 19,
+      "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE15",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_DESERT_TEMPLE_B1F",
+      "dest_warp_id": "13"
     }
   ],
   "coord_events": [

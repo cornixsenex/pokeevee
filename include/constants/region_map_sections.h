@@ -175,8 +175,10 @@
 #define MAPSEC_TANOBY_RUINS                 0xAA
 #define MAPSEC_SEVII_ISLE_22                0xAB
 #define MAPSEC_SEVII_ISLE_23                0xAC
-#define MAPSEC_SEVII_ISLE_24                0xAD
+
 //Below have been altered, above are vanilla BREAK break Break
+
+#define MAPSEC_PALMAE                       0xAD
 #define MAPSEC_SCHOLA                       0xAE
 #define MAPSEC_ARDENS                       0xAF
 #define MAPSEC_IGNIS_MONS                   0xB0

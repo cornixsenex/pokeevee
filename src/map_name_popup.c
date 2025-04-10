@@ -257,11 +257,11 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_TANOBY_RUINS] =                 MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_SEVII_ISLE_22] =                MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_SEVII_ISLE_23] =                MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_SEVII_ISLE_24] =                MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
 	
-	[MAPSEC_SCHOLA] =                        MAPPOPUP_THEME_WOOD, 
+	[MAPSEC_PALMAE] =                       MAPPOPUP_THEME_STONE, 
+	[MAPSEC_SCHOLA] =                       MAPPOPUP_THEME_WOOD, 
 	[MAPSEC_ARDENS] =                       MAPPOPUP_THEME_MARBLE, 
 	[MAPSEC_IGNIS_MONS] =                   MAPPOPUP_THEME_STONE2, 
 	[MAPSEC_DESERET] =                      MAPPOPUP_THEME_STONE, 
