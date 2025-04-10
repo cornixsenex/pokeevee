@@ -797,7 +797,7 @@ text Ardor_Uni_Office_Text_LogicPrereq {
 }
 
 text Ardor_Uni_Office_Text_ConsulCongrats {
-	format("Artes quinque iam studuisti. Congratulation! Sessionem perfecisti.")
+	format("Artes quinque iam studuisti. Congratulatio! Sessionem perfecisti.")
 }
 
 text Ardor_Uni_Office_Text_ConsulGradutate {

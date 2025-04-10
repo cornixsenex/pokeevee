@@ -162,7 +162,19 @@
 #define VAR_HOSPITAL_STATE                               0x4069 // Man on 2nd floor state
 #define VAR_SALTYSPITOON_STATE                           0x406B // Controls line and door to the salty spitoon
 #define VAR_GANG_STATE                                   0x406C // Controls SS and warehouse quest
-#define VAR_UNI_STATE                                    0x406D // Set by Uni Consul
+#define VAR_UNI_STATE                                    0x406D // Set by Uni Consul - Also triggers Leaf graduation scene & frat party scene before college
+                                                                //0: Not introd consul
+                                                                //1: Consul introd - Term 1 Not registered
+                                                                //2: T2 registered = Term 1
+                                                                //3: T1 finished - T2 not registered
+                                                                //4: t2 registered = Term 2
+                                                                //5: t2 finished - t3 not registered
+                                                                //6: t3 registered = Term 3
+                                                                //7: t3 finished - t4 not registered
+                                                                //8: t4 registered = Term 4
+                                                                //9: trigger graduation
+                                                                //10: after graduation - setup Leaf Graduation scene
+                                                                //11: After leaf graduation scene
 #define VAR_UNI_TERM_STATE                               0x406E // Counts completed classes per term 
 #define VAR_CANVAS_STEP_COUNTER                          0x406F // Counts steps player takes on the canvas
 #define VAR_LOGIC_CLASS_STATE                            0x4070 // Controls the Logic Puzzle and triggers test on return to class

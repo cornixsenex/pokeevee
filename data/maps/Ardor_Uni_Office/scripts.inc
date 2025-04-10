@@ -1640,7 +1640,7 @@ Ardor_Uni_Office_Text_LogicPrereq::
 Ardor_Uni_Office_Text_ConsulCongrats::
 # 799 "data//maps/Ardor_Uni_Office/scripts.pory"
 	.string "Artes quinque iam studuisti.\n"
-	.string "Congratulation! Sessionem perfecisti.$"
+	.string "Congratulatio! Sessionem perfecisti.$"
 
 Ardor_Uni_Office_Text_ConsulGradutate::
 # 803 "data//maps/Ardor_Uni_Office/scripts.pory"

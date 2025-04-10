@@ -149,7 +149,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GREEN",
-      "x": 30,
+      "x": 33,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
@@ -182,6 +182,13 @@
       "elevation": 0,
       "dest_map": "MAP_PHOENIX_MART",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_PALMAE_RENTAL_HOUSE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -190,8 +197,8 @@
       "x": 35,
       "y": 18,
       "elevation": 0,
-      "var": "VAR_UNI_STATE",
-      "var_value": "69",
+      "var": "VAR_TEMP_6",
+      "var_value": "1",
       "script": "Phoenix_EventScript_PartyTrigger"
     }
   ],

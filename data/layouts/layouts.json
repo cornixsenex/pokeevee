@@ -6400,6 +6400,16 @@
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/PyramidInsidePuzzle/border.bin",
       "blockdata_filepath": "data/layouts/PyramidInsidePuzzle/map.bin"
+    },
+    {
+      "id": "LAYOUT_PALMAE_RENTAL_HOUSE",
+      "name": "Palmae_RentalHouse_Layout",
+      "width": 17,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Palmae_RentalHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Palmae_RentalHouse/map.bin"
     }
   ]
 }

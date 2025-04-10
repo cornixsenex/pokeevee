@@ -1,152 +1,177 @@
 Ardor_Uni2F_MapScripts::
 # 6 "data//maps/Ardor_Uni2F/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 16 "data//maps/Ardor_Uni2F/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_LOAD
+# 20 "data//maps/Ardor_Uni2F/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
+Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 9 "data//maps/Ardor_Uni2F/scripts.pory"
+	compare VAR_UNI_STATE, 10
+	goto_if_eq Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 10 "data//maps/Ardor_Uni2F/scripts.pory"
+	setobjectxy 1, 19, 4
+# 11 "data//maps/Ardor_Uni2F/scripts.pory"
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	return
+
 Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_LOAD:
-# 7 "data//maps/Ardor_Uni2F/scripts.pory"
+# 17 "data//maps/Ardor_Uni2F/scripts.pory"
 	call Ardor_Uni2F_EventScript_OpenDoors
 	return
 
+Ardor_Uni2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 21 "data//maps/Ardor_Uni2F/scripts.pory"
+	map_script_2 VAR_UNI_STATE, 10, Ardor_Uni2F_Script_LeafGraduationScene
+	.2byte 0
+
 
 Ardor_Uni2F_EventScript_OpenDoors::
-# 13 "data//maps/Ardor_Uni2F/scripts.pory"
+# 27 "data//maps/Ardor_Uni2F/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_LOGIC, Ardor_Uni2F_EventScript_OpenDoors_2
 Ardor_Uni2F_EventScript_OpenDoors_1:
-# 16 "data//maps/Ardor_Uni2F/scripts.pory"
+# 30 "data//maps/Ardor_Uni2F/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_ALGEBRA, Ardor_Uni2F_EventScript_OpenDoors_5
 Ardor_Uni2F_EventScript_OpenDoors_4:
-# 19 "data//maps/Ardor_Uni2F/scripts.pory"
+# 33 "data//maps/Ardor_Uni2F/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_GEOMETRY, Ardor_Uni2F_EventScript_OpenDoors_8
 Ardor_Uni2F_EventScript_OpenDoors_7:
-# 22 "data//maps/Ardor_Uni2F/scripts.pory"
+# 36 "data//maps/Ardor_Uni2F/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_HISTORY, Ardor_Uni2F_EventScript_OpenDoors_11
 Ardor_Uni2F_EventScript_OpenDoors_10:
-# 25 "data//maps/Ardor_Uni2F/scripts.pory"
+# 39 "data//maps/Ardor_Uni2F/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_ARCHAEOLOGY, Ardor_Uni2F_EventScript_OpenDoors_14
 Ardor_Uni2F_EventScript_OpenDoors_13:
-# 28 "data//maps/Ardor_Uni2F/scripts.pory"
+# 42 "data//maps/Ardor_Uni2F/scripts.pory"
 	goto_if_unset FLAG_OPEN_CLASS_PSYCHOLOGY, Ardor_Uni2F_EventScript_OpenDoors_17
 Ardor_Uni2F_EventScript_OpenDoors_16:
 	end
 
 Ardor_Uni2F_EventScript_OpenDoors_2:
-# 14 "data//maps/Ardor_Uni2F/scripts.pory"
+# 28 "data//maps/Ardor_Uni2F/scripts.pory"
 	setmetatile 2, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni2F_EventScript_OpenDoors_1
 
 Ardor_Uni2F_EventScript_OpenDoors_5:
-# 17 "data//maps/Ardor_Uni2F/scripts.pory"
+# 31 "data//maps/Ardor_Uni2F/scripts.pory"
 	setmetatile 7, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni2F_EventScript_OpenDoors_4
 
 Ardor_Uni2F_EventScript_OpenDoors_8:
-# 20 "data//maps/Ardor_Uni2F/scripts.pory"
+# 34 "data//maps/Ardor_Uni2F/scripts.pory"
 	setmetatile 12, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni2F_EventScript_OpenDoors_7
 
 Ardor_Uni2F_EventScript_OpenDoors_11:
-# 23 "data//maps/Ardor_Uni2F/scripts.pory"
+# 37 "data//maps/Ardor_Uni2F/scripts.pory"
 	setmetatile 26, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni2F_EventScript_OpenDoors_10
 
 Ardor_Uni2F_EventScript_OpenDoors_14:
-# 26 "data//maps/Ardor_Uni2F/scripts.pory"
+# 40 "data//maps/Ardor_Uni2F/scripts.pory"
 	setmetatile 31, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni2F_EventScript_OpenDoors_13
 
 Ardor_Uni2F_EventScript_OpenDoors_17:
-# 29 "data//maps/Ardor_Uni2F/scripts.pory"
+# 43 "data//maps/Ardor_Uni2F/scripts.pory"
 	setmetatile 36, 9, METATILE_Facility_DoorBlock, 1
 	goto Ardor_Uni2F_EventScript_OpenDoors_16
 
 
 Ardor_Uni2F_EventScript_Leaf::
-# 37 "data//maps/Ardor_Uni2F/scripts.pory"
+# 51 "data//maps/Ardor_Uni2F/scripts.pory"
 	lock
-# 38 "data//maps/Ardor_Uni2F/scripts.pory"
+# 52 "data//maps/Ardor_Uni2F/scripts.pory"
 	faceplayer
-# 39 "data//maps/Ardor_Uni2F/scripts.pory"
-	msgbox Ardor_Uni2F_Text_Leaf1
-# 40 "data//maps/Ardor_Uni2F/scripts.pory"
-	closemessage
-# 41 "data//maps/Ardor_Uni2F/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 42 "data//maps/Ardor_Uni2F/scripts.pory"
-	compare VAR_RESULT, DIR_SOUTH
-	goto_if_ne Ardor_Uni2F_EventScript_Leaf_2
-# 45 "data//maps/Ardor_Uni2F/scripts.pory"
-	applymovement 1, Ardor_Uni2F_Movement_LeafExitS
-Ardor_Uni2F_EventScript_Leaf_1:
-# 47 "data//maps/Ardor_Uni2F/scripts.pory"
-	waitmovement 0
-# 48 "data//maps/Ardor_Uni2F/scripts.pory"
-	setflag FLAG_ARDOR_UNI2F_LEAF
-# 49 "data//maps/Ardor_Uni2F/scripts.pory"
-	removeobject 1
-# 50 "data//maps/Ardor_Uni2F/scripts.pory"
-	release
-	end
-
-Ardor_Uni2F_EventScript_Leaf_2:
-# 43 "data//maps/Ardor_Uni2F/scripts.pory"
-	applymovement 1, Ardor_Uni2F_Movement_LeafExitN
-	goto Ardor_Uni2F_EventScript_Leaf_1
-
-
-Ardor_Uni2F_EventScript_ArchaeologyDoorSign::
+# 54 "data//maps/Ardor_Uni2F/scripts.pory"
+	switch VAR_UNI_STATE
 # 55 "data//maps/Ardor_Uni2F/scripts.pory"
-	lock
-# 56 "data//maps/Ardor_Uni2F/scripts.pory"
-	msgbox Ardor_Uni2F_Text_ArchaeologyDoorSign
+	case 0, Ardor_Uni2F_EventScript_Leaf_3
 # 57 "data//maps/Ardor_Uni2F/scripts.pory"
-	closemessage
-# 58 "data//maps/Ardor_Uni2F/scripts.pory"
-	release
-	end
-
-
-Ardor_Uni2F_EventScript_LogicDoorSign::
+	case 1, Ardor_Uni2F_EventScript_Leaf_4
+# 59 "data//maps/Ardor_Uni2F/scripts.pory"
+	case 2, Ardor_Uni2F_EventScript_Leaf_5
+# 61 "data//maps/Ardor_Uni2F/scripts.pory"
+	case 3, Ardor_Uni2F_EventScript_Leaf_6
 # 63 "data//maps/Ardor_Uni2F/scripts.pory"
-	lock
-# 64 "data//maps/Ardor_Uni2F/scripts.pory"
-	msgbox Ardor_Uni2F_Text_LogicDoorSign
+	case 4, Ardor_Uni2F_EventScript_Leaf_7
 # 65 "data//maps/Ardor_Uni2F/scripts.pory"
-	closemessage
-# 66 "data//maps/Ardor_Uni2F/scripts.pory"
-	release
-	end
-
-
-Ardor_Uni2F_EventScript_AlgebraDoorSign::
+	case 5, Ardor_Uni2F_EventScript_Leaf_8
+# 67 "data//maps/Ardor_Uni2F/scripts.pory"
+	case 6, Ardor_Uni2F_EventScript_Leaf_9
+# 69 "data//maps/Ardor_Uni2F/scripts.pory"
+	case 7, Ardor_Uni2F_EventScript_Leaf_10
 # 71 "data//maps/Ardor_Uni2F/scripts.pory"
-	lock
-# 72 "data//maps/Ardor_Uni2F/scripts.pory"
-	msgbox Ardor_Uni2F_Text_AlgebraDoorSign
-# 73 "data//maps/Ardor_Uni2F/scripts.pory"
-	closemessage
+	case 8, Ardor_Uni2F_EventScript_Leaf_11
 # 74 "data//maps/Ardor_Uni2F/scripts.pory"
-	release
-	end
-
-
-Ardor_Uni2F_EventScript_GeometryDoorSign::
-# 79 "data//maps/Ardor_Uni2F/scripts.pory"
-	lock
-# 80 "data//maps/Ardor_Uni2F/scripts.pory"
-	msgbox Ardor_Uni2F_Text_GeometryDoorSign
-# 81 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_EventScript_Leaf_Text_0
+Ardor_Uni2F_EventScript_Leaf_1:
+# 76 "data//maps/Ardor_Uni2F/scripts.pory"
 	closemessage
+# 78 "data//maps/Ardor_Uni2F/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+# 79 "data//maps/Ardor_Uni2F/scripts.pory"
+	waitmovement 0
 # 82 "data//maps/Ardor_Uni2F/scripts.pory"
 	release
 	end
 
+Ardor_Uni2F_EventScript_Leaf_3:
+# 56 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_Leaf0
+	goto Ardor_Uni2F_EventScript_Leaf_1
 
-Ardor_Uni2F_EventScript_HistoryDoorSign::
+Ardor_Uni2F_EventScript_Leaf_4:
+# 58 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_Leaf1
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+Ardor_Uni2F_EventScript_Leaf_5:
+# 60 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_Leaf2
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+Ardor_Uni2F_EventScript_Leaf_6:
+# 62 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_LeafSummer
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+Ardor_Uni2F_EventScript_Leaf_7:
+# 64 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_Leaf3
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+Ardor_Uni2F_EventScript_Leaf_8:
+# 66 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_LeafSummer
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+Ardor_Uni2F_EventScript_Leaf_9:
+# 68 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_Leaf4
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+Ardor_Uni2F_EventScript_Leaf_10:
+# 70 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_LeafSummer
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+Ardor_Uni2F_EventScript_Leaf_11:
+# 72 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_Leaf5
+	goto Ardor_Uni2F_EventScript_Leaf_1
+
+
+Ardor_Uni2F_EventScript_ArchaeologyDoorSign::
 # 87 "data//maps/Ardor_Uni2F/scripts.pory"
 	lock
 # 88 "data//maps/Ardor_Uni2F/scripts.pory"
-	msgbox Ardor_Uni2F_Text_HistoryDoorSign
+	msgbox Ardor_Uni2F_Text_ArchaeologyDoorSign
 # 89 "data//maps/Ardor_Uni2F/scripts.pory"
 	closemessage
 # 90 "data//maps/Ardor_Uni2F/scripts.pory"
@@ -154,11 +179,11 @@ Ardor_Uni2F_EventScript_HistoryDoorSign::
 	end
 
 
-Ardor_Uni2F_EventScript_PsychologyDoorSign::
+Ardor_Uni2F_EventScript_LogicDoorSign::
 # 95 "data//maps/Ardor_Uni2F/scripts.pory"
 	lock
 # 96 "data//maps/Ardor_Uni2F/scripts.pory"
-	msgbox Ardor_Uni2F_Text_PsychologyDoorSign
+	msgbox Ardor_Uni2F_Text_LogicDoorSign
 # 97 "data//maps/Ardor_Uni2F/scripts.pory"
 	closemessage
 # 98 "data//maps/Ardor_Uni2F/scripts.pory"
@@ -166,96 +191,222 @@ Ardor_Uni2F_EventScript_PsychologyDoorSign::
 	end
 
 
-# 102 "data//maps/Ardor_Uni2F/scripts.pory"
+Ardor_Uni2F_EventScript_AlgebraDoorSign::
+# 103 "data//maps/Ardor_Uni2F/scripts.pory"
+	lock
+# 104 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_AlgebraDoorSign
+# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+	closemessage
+# 106 "data//maps/Ardor_Uni2F/scripts.pory"
+	release
+	end
+
+
+Ardor_Uni2F_EventScript_GeometryDoorSign::
+# 111 "data//maps/Ardor_Uni2F/scripts.pory"
+	lock
+# 112 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_GeometryDoorSign
+# 113 "data//maps/Ardor_Uni2F/scripts.pory"
+	closemessage
+# 114 "data//maps/Ardor_Uni2F/scripts.pory"
+	release
+	end
+
+
+Ardor_Uni2F_EventScript_HistoryDoorSign::
+# 119 "data//maps/Ardor_Uni2F/scripts.pory"
+	lock
+# 120 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_HistoryDoorSign
+# 121 "data//maps/Ardor_Uni2F/scripts.pory"
+	closemessage
+# 122 "data//maps/Ardor_Uni2F/scripts.pory"
+	release
+	end
+
+
+Ardor_Uni2F_EventScript_PsychologyDoorSign::
+# 127 "data//maps/Ardor_Uni2F/scripts.pory"
+	lock
+# 128 "data//maps/Ardor_Uni2F/scripts.pory"
+	msgbox Ardor_Uni2F_Text_PsychologyDoorSign
+# 129 "data//maps/Ardor_Uni2F/scripts.pory"
+	closemessage
+# 130 "data//maps/Ardor_Uni2F/scripts.pory"
+	release
+	end
+
+
+Ardor_Uni2F_Script_LeafGraduationScene::
+# 135 "data//maps/Ardor_Uni2F/scripts.pory"
+	lock
+# 137 "data//maps/Ardor_Uni2F/scripts.pory"
+	setvar VAR_UNI_STATE, 11
+# 139 "data//maps/Ardor_Uni2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 140 "data//maps/Ardor_Uni2F/scripts.pory"
+	waitmovement 0
+# 142 "data//maps/Ardor_Uni2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown3
+# 143 "data//maps/Ardor_Uni2F/scripts.pory"
+	waitmovement 0
+# 144 "data//maps/Ardor_Uni2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+# 145 "data//maps/Ardor_Uni2F/scripts.pory"
+	waitmovement 0
+# 147 "data//maps/Ardor_Uni2F/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 148 "data//maps/Ardor_Uni2F/scripts.pory"
+	waitmovement 0
+# 151 "data//maps/Ardor_Uni2F/scripts.pory"
+	applymovement 1, Common_Movement_WalkRight2
+# 152 "data//maps/Ardor_Uni2F/scripts.pory"
+	waitmovement 0
+# 153 "data//maps/Ardor_Uni2F/scripts.pory"
+	applymovement 1, Common_Movement_WalkUp3
+# 154 "data//maps/Ardor_Uni2F/scripts.pory"
+	waitmovement 0
+# 156 "data//maps/Ardor_Uni2F/scripts.pory"
+	removeobject 1
+# 158 "data//maps/Ardor_Uni2F/scripts.pory"
+	release
+	end
+
+
+# 163 "data//maps/Ardor_Uni2F/scripts.pory"
 Ardor_Uni2F_Movement_LeafExitS:
-# 103 "data//maps/Ardor_Uni2F/scripts.pory"
+# 164 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_down
-# 103 "data//maps/Ardor_Uni2F/scripts.pory"
+# 164 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_down
-# 104 "data//maps/Ardor_Uni2F/scripts.pory"
+# 165 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_right
-# 104 "data//maps/Ardor_Uni2F/scripts.pory"
+# 165 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_right
-# 104 "data//maps/Ardor_Uni2F/scripts.pory"
+# 165 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_right
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 105 "data//maps/Ardor_Uni2F/scripts.pory"
+# 166 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
 	step_end
 
-# 108 "data//maps/Ardor_Uni2F/scripts.pory"
+# 169 "data//maps/Ardor_Uni2F/scripts.pory"
 Ardor_Uni2F_Movement_LeafExitN:
-# 109 "data//maps/Ardor_Uni2F/scripts.pory"
+# 170 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 109 "data//maps/Ardor_Uni2F/scripts.pory"
+# 170 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 109 "data//maps/Ardor_Uni2F/scripts.pory"
+# 170 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 109 "data//maps/Ardor_Uni2F/scripts.pory"
+# 170 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 109 "data//maps/Ardor_Uni2F/scripts.pory"
+# 170 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
-# 109 "data//maps/Ardor_Uni2F/scripts.pory"
+# 170 "data//maps/Ardor_Uni2F/scripts.pory"
 	walk_up
 	step_end
+
+Ardor_Uni2F_EventScript_Leaf_Text_0:
+# 74 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "ERROR\nVAR_UNI_STATE OOB$"
 
 Ardor_Uni2F_Text_ArchaeologyDoorSign::
-# 112 "data//maps/Ardor_Uni2F/scripts.pory"
+# 173 "data//maps/Ardor_Uni2F/scripts.pory"
 	.string "MAGISTER INDIANUS ARCHAEOLOGIAE EX\n"
 	.string "ACADEMIA IN PYRAMIDE EST. REVERTETUR\l"
 	.string "IN ANNO PROXIMO$"
 
+Ardor_Uni2F_Text_Leaf0::
+# 178 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "Oh hey {PLAYER} I found an Indianus.\n"
+	.string "His door is halfway down the eastern\l"
+	.string "hall but it won't open. I can't\l"
+	.string "understand anything anybody even says\l"
+	.string "so I don't know where Indianus is.$"
+
 Ardor_Uni2F_Text_Leaf1::
-# 116 "data//maps/Ardor_Uni2F/scripts.pory"
-	.string "My gosh! This cafeteria's not bad! Oh\n"
-	.string "hey {PLAYER} I found an Indianus. His\l"
-	.string "door is halfway down the eastern hall\l"
-	.string "but it won't open. I can't understand\l"
-	.string "anything anybody even says so I don't\l"
-	.string "know where Indianus is. I think I'm\l"
-	.string "going back to the party, that boy told\l"
-	.string "me to meet him at his frat, but don't\l"
-	.string "give up! We need to find Indy and\l"
-	.string "rescue Mew!$"
+# 183 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "My gosh! This cafeteria's not bad! I\n"
+	.string "think I'm gonna register for class. Why\l"
+	.string "don't you sign up too? It could be fun!\l"
+	.string "We might even learn something while we\l"
+	.string "look for Indianus and, of course, save\l"
+	.string "Mew.$"
+
+Ardor_Uni2F_Text_Leaf2::
+# 188 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "So many classes... so much studying.\n"
+	.string "This is a lot harder than Trainer\l"
+	.string "School!$"
+
+Ardor_Uni2F_Text_Leaf3::
+# 193 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "I'm starting to get the hang of learning\n"
+	.string "and it's not half as hard as I once\l"
+	.string "thought.$"
+
+Ardor_Uni2F_Text_Leaf4::
+# 198 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "I need to do well on all my exams\n"
+	.string "because a passing grade is not enough.\l"
+	.string "If I want to impress with my\l"
+	.string "transcripts I'll need to graduate top\l"
+	.string "of my class.$"
+
+Ardor_Uni2F_Text_Leaf5::
+# 203 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "To be honest with you, I do not care\n"
+	.string "about my grades or how I do in school or\l"
+	.string "what happens to me next anymore. I'm\l"
+	.string "quite burned out, just want to\l"
+	.string "graduate, and find Indianus and then\l"
+	.string "save Mew.$"
+
+Ardor_Uni2F_Text_LeafSummer::
+# 208 "data//maps/Ardor_Uni2F/scripts.pory"
+	.string "I'm still deciding which classes to take\n"
+	.string "before I register for the next term.$"
 
 Ardor_Uni2F_Text_LogicDoorSign::
-# 120 "data//maps/Ardor_Uni2F/scripts.pory"
+# 212 "data//maps/Ardor_Uni2F/scripts.pory"
 	.string "LOGICA\n"
 	.string "MAGISTER JOANNES$"
 
 Ardor_Uni2F_Text_AlgebraDoorSign::
-# 124 "data//maps/Ardor_Uni2F/scripts.pory"
+# 216 "data//maps/Ardor_Uni2F/scripts.pory"
 	.string "ALGEBRA\n"
 	.string "MAGISTRA CAMILLA$"
 
 Ardor_Uni2F_Text_GeometryDoorSign::
-# 128 "data//maps/Ardor_Uni2F/scripts.pory"
+# 220 "data//maps/Ardor_Uni2F/scripts.pory"
 	.string "GEOMETRIA\n"
 	.string "MAGISTER JEFFERSON$"
 
 Ardor_Uni2F_Text_HistoryDoorSign::
-# 132 "data//maps/Ardor_Uni2F/scripts.pory"
+# 224 "data//maps/Ardor_Uni2F/scripts.pory"
 	.string "HISTORIA\n"
 	.string "DOCTOR VIRTREUS$"
 
 Ardor_Uni2F_Text_PsychologyDoorSign::
-# 136 "data//maps/Ardor_Uni2F/scripts.pory"
+# 228 "data//maps/Ardor_Uni2F/scripts.pory"
 	.string "PSYCHOLOGIA\n"
 	.string "MAGISTRA LINDA$"

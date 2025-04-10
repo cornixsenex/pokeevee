@@ -3,9 +3,23 @@ const OBJ_EVENT_LEAF = 1
 
 mapscripts Ardor_Uni2F_MapScripts {
 
+    MAP_SCRIPT_ON_TRANSITION {
+       
+        //Setup Leaf Graduation Scene
+        if (var(VAR_UNI_STATE) == 10) {
+            setobjectxy (OBJ_EVENT_LEAF, 19, 4)
+            setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
+        }
+
+    }
+
 	MAP_SCRIPT_ON_LOAD {
 		call (Ardor_Uni2F_EventScript_OpenDoors)
 	}
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_UNI_STATE, 10: Ardor_Uni2F_Script_LeafGraduationScene
+    ]
 
 }
 
@@ -36,17 +50,35 @@ script Ardor_Uni2F_EventScript_OpenDoors {
 script Ardor_Uni2F_EventScript_Leaf {
 	lock
 	faceplayer
-	msgbox(Ardor_Uni2F_Text_Leaf1)
-	closemessage
-	specialvar (VAR_RESULT, GetPlayerFacingDirection)
-	if (var(VAR_RESULT) != DIR_SOUTH) {
-		applymovement (OBJ_EVENT_LEAF, Ardor_Uni2F_Movement_LeafExitN)
-	} else {
-		applymovement (OBJ_EVENT_LEAF, Ardor_Uni2F_Movement_LeafExitS)
-	}
+    //Specific text for specific point in school (grade, summer)
+    switch (var(VAR_UNI_STATE)) {
+        case 0:
+            msgbox (Ardor_Uni2F_Text_Leaf0)
+        case 1:
+            msgbox (Ardor_Uni2F_Text_Leaf1)
+        case 2:
+            msgbox (Ardor_Uni2F_Text_Leaf2)
+        case 3:
+            msgbox (Ardor_Uni2F_Text_LeafSummer)
+        case 4:
+            msgbox (Ardor_Uni2F_Text_Leaf3)
+        case 5:
+            msgbox (Ardor_Uni2F_Text_LeafSummer)
+        case 6:
+            msgbox (Ardor_Uni2F_Text_Leaf4)
+        case 7:
+            msgbox (Ardor_Uni2F_Text_LeafSummer)
+        case 8:
+            msgbox (Ardor_Uni2F_Text_Leaf5)
+        default:
+            msgbox("ERROR\nVAR_UNI_STATE OOB")
+    }
+    closemessage
+    //Face Leaf back
+	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
 	waitmovement (0)
-	setflag (FLAG_ARDOR_UNI2F_LEAF)
-	removeobject (OBJ_EVENT_LEAF)
+
+    //fin
 	release
 	end
 }
@@ -99,6 +131,35 @@ script Ardor_Uni2F_EventScript_PsychologyDoorSign {
 	end
 }
 
+script Ardor_Uni2F_Script_LeafGraduationScene {
+    lock
+    //set vars
+    setvar (VAR_UNI_STATE, 11)
+    //alert player
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //move player to position
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown3)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    //face leaf to player
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //Leaf: Graduation Speech
+    //Leaf exit
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight2)
+    waitmovement (0)
+    applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp3)
+    waitmovement (0)
+    //remove leaf
+	removeobject (OBJ_EVENT_LEAF)
+    //fin
+    release
+    end
+}
+    
+
 movement Ardor_Uni2F_Movement_LeafExitS {
 	walk_down * 2
 	walk_right * 3
@@ -113,8 +174,39 @@ text Ardor_Uni2F_Text_ArchaeologyDoorSign {
 	format("MAGISTER INDIANUS ARCHAEOLOGIAE EX ACADEMIA IN PYRAMIDE EST. REVERTETUR IN ANNO PROXIMO")
 }
 
+//Before Consul intro
+text Ardor_Uni2F_Text_Leaf0 {
+    format("Oh hey {PLAYER} I found an Indianus. His door is halfway down the eastern hall but it won't open. I can't understand anything anybody even says so I don't know where Indianus is.")
+}
+
+//After consul intro but not registered  for classes
 text Ardor_Uni2F_Text_Leaf1 {
-	format("My gosh! This cafeteria's not bad! Oh hey {PLAYER} I found an Indianus. His door is halfway down the eastern hall but it won't open. I can't understand anything anybody even says so I don't know where Indianus is. I think I'm going back to the party, that boy told me to meet him at his frat, but don't give up! We need to find Indy and rescue Mew!")
+	format("My gosh! This cafeteria's not bad! I think I'm gonna register for class. Why don't you sign up too? It could be fun! We might even learn something while we look for Indianus and, of course, save Mew.")
+}
+
+//Term 1
+text Ardor_Uni2F_Text_Leaf2 {
+    format("So many classes... so much studying. This is a lot harder than Trainer School!")
+}
+
+//Term 2
+text Ardor_Uni2F_Text_Leaf3 {
+    format("I'm starting to get the hang of learning and it's not half as hard as I once thought.")
+}
+
+//Term 3
+text Ardor_Uni2F_Text_Leaf4 {
+    format("I need to do well on all my exams because a passing grade is not enough. If I want to impress with my transcripts I'll need to graduate top of my class.")
+}
+
+//Term 4
+text Ardor_Uni2F_Text_Leaf5 {
+    format("To be honest with you, I do not care about my grades or how I do in school or what happens to me next anymore. I'm quite burned out, just want to graduate, and find Indianus and then save Mew.")
+}
+
+//In between terms - Last term finished, next term not registered
+text Ardor_Uni2F_Text_LeafSummer {
+    format("I'm still deciding which classes to take before I register for the next term.")
 }
 
 text Ardor_Uni2F_Text_LogicDoorSign {

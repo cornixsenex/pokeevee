@@ -1,4 +1,6 @@
 
+//VAR_TEMP_6 - Triggers Party Scene
+
 const OBJ_EVENT_FRATBOY = 5
 const OBJ_EVENT_FRATBOY1 = 1
 const OBJ_EVENT_FRATBOY2 = 2
@@ -11,13 +13,19 @@ const OBJ_EVENT_FRATFIGHTR = 6
 
 mapscripts Phoenix_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
+
+        //Guard against Leaf Graduation trigger if Player somehow skipped it
+        if (var(VAR_UNI_STATE) == 10) {
+            setvar (VAR_UNI_STATE, 11)
+        }
+
 		call (Phoenix_EventScript_TryPrimePartyTrigger)
 	}
 }
 
 script Phoenix_EventScript_TryPrimePartyTrigger {
 	if (!flag(FLAG_PHOENIX_PARTY) ) {
-		setvar (VAR_UNI_STATE, 69)
+		setvar (VAR_TEMP_6, 1)
 	} 
 }
 
@@ -117,7 +125,7 @@ script Phoenix_EventScript_ClearParty {
 	closemessage
 	fadescreen (1)
 	setflag (FLAG_PHOENIX_PARTY)
-	setvar (VAR_UNI_STATE, 0)
+	setvar (VAR_TEMP_6, 0)
 	removeobject (OBJ_EVENT_FRATBOY)
 	removeobject (OBJ_EVENT_FRATBOY)
 	removeobject (OBJ_EVENT_FRATBOY1)

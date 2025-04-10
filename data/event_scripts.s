@@ -1632,3 +1632,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Deseret_DoctorBrunusLab/scripts.inc"
 
 	.include "data/maps/PyramidInsidePuzzle/scripts.inc"
+
+	.include "data/maps/Palmae_RentalHouse/scripts.inc"
