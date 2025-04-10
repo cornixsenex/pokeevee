@@ -160,6 +160,15 @@ script Phoenix_EventScript_LeafApproach {
 	return
 }
 
+script Phoenix_Script_Jigglypuff {
+	lock
+	faceplayer
+	playmoncry (SPECIES_JIGGLYPUFF, CRY_MODE_NORMAL)
+	waitmoncry
+	release
+	end
+}
+
 script Phoenix_EventScript_Pledge {
 	lock
 	faceplayer

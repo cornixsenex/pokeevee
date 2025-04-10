@@ -147,6 +147,8 @@ script Ardor_Uni2F_Script_LeafGraduationScene {
     applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
     waitmovement (0)
     //Leaf: Graduation Speech
+	msgbox (Ardor_Uni2F_Text_LeafGraduate)
+	closemessage
     //Leaf exit
     applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight2)
     waitmovement (0)
@@ -227,4 +229,35 @@ text Ardor_Uni2F_Text_HistoryDoorSign {
 
 text Ardor_Uni2F_Text_PsychologyDoorSign {
 	format("PSYCHOLOGIA\nMAGISTRA LINDA")
+}
+
+text Ardor_Uni2F_Text_LeafGraduate {
+	format("Congratulations {PLAYER}! We finished school
+			but have only begun our long journey
+			of self improvement and education.
+			While many see this as the end, I see
+			the beginning of something even more
+			rewarding than what we have just finished.
+			For us, being still brand new to the world,
+			these past four terms have seemed like all our lives
+			but the truth is, mathematically speaking,
+			four terms is a small fraction of the whole
+			decades of existence waiting for us.
+			The lessons that we learned, moreso habits
+			that we picked up will stay with us until
+			the very last day of our lengthy lives.
+			It's worthwhile to take pause and reflect
+			on our accomplishment but we're only
+			getting started. There's so much more to do.
+			We must save Mew! Where is Indianus?
+			These past four terms he still has not returned
+			from Pyramid, wherever that may be.
+			Now that we've graduated I suppose
+			we'll have to find a job and rent a place
+			and wait until he comes back so we can
+			enlist him to help us save captured Mew.
+			I'll head to town and find a room to rent
+			While you set out to find the Pyramid
+			Where Indianus has journeyed to dig.
+			Do not give up {PLAYER}, you're our only hope.")
 }
