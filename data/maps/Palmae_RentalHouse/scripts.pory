@@ -132,9 +132,17 @@ script Palmae_RentalHouse_Script_LeafGF {
 	applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	//omg you've really grown I see it now
+	msgbox (Palmae_RentalHouse_Text_Leaf6)
 	//give heart scale
+	removeitem (ITEM_HEART_SCALE)
+	msgbox (Palmae_RentalHouse_Text_GaveHeartScale)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//wow I guess we're official - kiss (fade black)
+	msgbox (Palmae_RentalHouse_Text_Leaf7)
+	call (Common_EventScript_OutOfCenterPartyHeal)
 	//we should go on a honeymoon Indianus and Mew can wait this is way more imprortant. Take me surfing in Tranquilitas. Meet me there bye babe
+	msgbox (Palmae_RentalHouse_Text_Leaf8)
 	//exit leaf
 	//set vars and flags to persist state
 
@@ -220,6 +228,18 @@ text Palmae_RentalHouse_Text_LeafTokenSatisfy {
 }
 
 text Palmae_RentalHouse_Text_LeafFriendZone {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_Leaf6 {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_Leaf7 {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_Leaf8 {
 	format("")
 }
 
