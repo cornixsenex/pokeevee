@@ -204,39 +204,77 @@ text Palmae_RentalHouse_Text_Leaf5 {
 }
 
 text Palmae_RentalHouse_Text_LeafTattooDesire {
-	format("")
+	format("I want a man who's tall, dark, and handsome,
+            a rugged badboy who does what he wants,
+            someone I'm scared to bring around my dad.")
 }
 
 text Palmae_RentalHouse_Text_LeafRichDesire {
-	format("")
+	format("I need a man who has enough money
+            to fully support my lavish lifestyle,
+            his bank account needs to have six figures.")
 }
 
 text Palmae_RentalHouse_Text_LeafTokenDesire {
-	format("")
+	format("Of course my man needs to show me he cares
+            by bringing me the most extravagent
+            tokens of love, even when I don't ask.")
 }
 
 text Palmae_RentalHouse_Text_LeafTattooSatisfy {
-	format("")
+	format("Oh my! Is that a tattoo you have {PLAYER}?
+            I never knew you were such a badboy!")
 }
 
 text Palmae_RentalHouse_Text_LeafRichSatisfy {
-	format("")
+	format("Oh {PLAYER}! I see your bank account has six
+            figures! I never knew you were so rich!")
 }
 
 text Palmae_RentalHouse_Text_LeafTokenSatisfy {
-	format("")
+	format("Is that a real heart scale? That's a lovely
+            token of honest love. Wow! How sweet {PLAYER}!")
 }
 
 text Palmae_RentalHouse_Text_LeafFriendZone {
-	format("")
+	format("Apologies, but {PLAYER} you're more like my
+            little brother, not my unfound lover.
+            I know Indianus told you to find
+            a girlfriend before he would help save Mew
+            but I must not betray my virgin heart
+            and feign love for one I don't truly love.
+            Both from respect for you and faith to my
+            honest proclivity for certain types
+            of men. I'm sure you'll find a girlfriend soon!
+            She's out there! Go find her and let's save Mew!")
 }
 
 text Palmae_RentalHouse_Text_Leaf6 {
-	format("")
+	format("My {PLAYER}... how much you have grown in my eye!
+            No longer do I see that little boy
+            picking boogers and playing hide and seek
+            but a handsome, wealthy, and full grown man
+            equipped with all necessary virtues
+            to satisfy, provide for, and obtain
+            the willful love of woman such as I.
+            Desire has ignited in my heart
+            to hold you, and be held, to know I am
+            the only one for you, that I'm enough
+            to fulfill and complete your bachelor's life.
+            My cheeks are burned with blush, a trmble siezed
+            my fragile, dainty hands, my breath is choked
+            and nervousness erupts as I admit
+            both to myself and to the one I love
+            that you're the one I want, {PLAYER}. You're the one...")
 }
 
 text Palmae_RentalHouse_Text_Leaf7 {
-	format("")
+	format("I accept this heart scale as token of
+            your precious love promised only to me
+            and in return I promise to wear it
+            around my neck as a collar, or yoke
+            and swear ever to honor and respect
+            you as my lord and man")
 }
 
 text Palmae_RentalHouse_Text_Leaf8 {
