@@ -990,8 +990,9 @@
 #define ITEM_TWICE_SPICED_RADISH 826
 #define ITEM_POKESHI_DOLL 827
 
-// Unique to this project items
 #define ITEM_STRANGE_BALL 828
+
+// Unique to this project items
 #define ITEM_KIND_BUD 829
 #define ITEM_INSURANCE_FORM_A 830
 #define ITEM_INSURANCE_FORM_B 831

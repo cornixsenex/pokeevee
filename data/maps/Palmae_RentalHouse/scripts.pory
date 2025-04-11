@@ -3,6 +3,8 @@ const OBJ_EVENT_LEAF = 1
 const OBJ_EVENT_LANDLADY = 2
 const OBJ_EVENT_JIG = 3
 
+const VAR_GF_CRITERIA = VAR_TEMP_4 //if hits 3 then pass gf check
+
 mapscripts Palmae_RentalHouse_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
@@ -52,9 +54,26 @@ script Palmae_RentalHouse_Script_Leaf {
         msgbox (Palmae_RentalHouse_Text_Leaf1)
         closemessage
     } else { //No sigil means Indy introd
-        //After Indy - GF talk, intro, Rich, Tattoo, my ring
+		if (!flag(FLAG_PALMAE_RENTALHOUSE_LEAFGFINTROD)) { //first time talk to leaf after indy intro
+			//setflag to prevent repeat leaf gf intro
+			setflag (FLAG_PALMAE_RENTALHOUSE_LEAFGFINTROD)
+			//leaf gf intro1 - tough for a single woman, ready to settle down, takin to long to find indy
+			msgbox (Palmae_RentalHouse_Text_Leaf2)
+			closemessage
+			//alert leaf
+			applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			//leaf gf intro2: You found indy? Great! He wants you to find a gf, idk anon I need abc
+			msgbox (Palmae_RentalHouse_Text_Leaf3)
+			closemessage
+			//check if satisfy if so proceed if not release
+			call (Palmae_RentalHouse_Script_LeafCheckGF)
+		} else {
+			//You're back - I'm sure you'll find a gf somewhere I'm looking for a man in finance...
+			msgbox (Palmae_RentalHouse_Text_Leaf5)
+			call (Palmae_RentalHouse_Script_LeafCheckGF)
+		}
 
-        //If satisfied OMG thanks, give her the ring, you're official, lets go on a honeymoon, exit her and jig, set flags and vars to persist state
     }
 
     applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
@@ -64,12 +83,144 @@ script Palmae_RentalHouse_Script_Leaf {
     end
 }
 
+script Palmae_RentalHouse_Script_LeafCheckGF {
+	//reset GF_CRITERIA
+	setvar (VAR_GF_CRITERIA, 0)
+	//leaf needs introa - ready to settle down bio clock is ticking
+	msgbox (Palmae_RentalHouse_Text_Leaf4)
+	//tattoo - hot bad boys
+	msgbox (Palmae_RentalHouse_Text_LeafTattooDesire)
+	checkitem (ITEM_TATTOO) 
+	if (var(VAR_RESULT) == YES) {
+		addvar (VAR_GF_CRITERIA, 1)
+		applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		msgbox (Palmae_RentalHouse_Text_LeafTattooSatisfy)
+	}
+	//rich - six figures
+	msgbox (Palmae_RentalHouse_Text_LeafRichDesire)
+	checkmoney (100000) //six figures
+	if (var(VAR_RESULT) == TRUE) {
+		addvar (VAR_GF_CRITERIA, 1)
+		applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		msgbox (Palmae_RentalHouse_Text_LeafRichSatisfy)
+	}
+	//engagement / love token 
+	msgbox (Palmae_RentalHouse_Text_LeafTokenDesire)
+	checkitem (ITEM_HEART_SCALE) 
+	if (var(VAR_RESULT) == YES) {
+		addvar (VAR_GF_CRITERIA, 1)
+		applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		msgbox (Palmae_RentalHouse_Text_LeafTokenSatisfy)
+	}
+	if (var(VAR_GF_CRITERIA) == 3) {
+		call (Palmae_RentalHouse_Script_LeafGF)
+	} else {
+		msgbox (Palmae_RentalHouse_Text_LeafFriendZone)
+		closemessage
+		return
+	}
+}
+
+//If satisfied OMG thanks, give her the ring, you're official, lets go on a honeymoon, exit her and jig, set flags and vars to persist state
+script Palmae_RentalHouse_Script_LeafGF {
+	//set flag for Indy script
+	setflag (FLAG_LEAF_ISGF)
+	//alert leaf
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//omg you've really grown I see it now
+	//give heart scale
+	//wow I guess we're official - kiss (fade black)
+	//we should go on a honeymoon Indianus and Mew can wait this is way more imprortant. Take me surfing in Tranquilitas. Meet me there bye babe
+	//exit leaf
+	//set vars and flags to persist state
+
+	release
+	end
+}
+
+
 text Palmae_RentalHouse_Text_Leaf1 {
     format("This house may not be much, but still I'm proud
             to have a place to call my home. It's not
             easy for a single woman in this
             economy to become sucessful.
             Please go find Indianus! Let's save Mew!")
+}
+
+text Palmae_RentalHouse_Text_Leaf2 {
+	format("Oh {PLAYER}! It seems like so much time has passed
+			since we set out together on the road.
+			Across the land, beneath the hills, in caves
+			across the bitter deserted wasteland,
+			and now out on our own as graduates
+			from Ardens School. Now I begin to feel
+			the constant click of time grinding the gears
+			of my youthful beauty approaching it's
+			inevitable end. I think it's time
+			to settle down and find a good husband.
+			Though not to say we must give up our quest
+			but that it's taken up much of our lives
+			blindly searching for Indianus and
+			we still have nothing to show for our search.
+			It would be folly to ignore the great
+			diversity of experiences
+			available to us in mortal life.
+			So while you bravely continue your search
+			I will being an amorous search o'my own.")
+}
+
+text Palmae_RentalHouse_Text_Leaf3 {
+	format("What's that? You say you've found Indianus!
+			My goodness, {PLAYER}, that's just spectacular.
+			Tell me, has he agreed to help save Mew?
+			...You must be joking. He never said that!")
+}
+
+text Palmae_RentalHouse_Text_Leaf4 {
+	format("I'm sorry {PLAYER} but you're like my brother!
+			I've known you since we both were little kids
+			and loving you like that would just feel wrong.
+			Besides, you're not my type, I only like
+			the hot bad boys with six figure wallets
+			who shower me with tokens of their love.")
+}
+
+text Palmae_RentalHouse_Text_Leaf5 {
+	format("Hello again there, {PLAYER}, how goes your search
+			for a girlfriend. I know you'll find the one!
+			What's that? No dude I don't like you like that!")
+}
+
+text Palmae_RentalHouse_Text_LeafTattooDesire {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_LeafRichDesire {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_LeafTokenDesire {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_LeafTattooSatisfy {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_LeafRichSatisfy {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_LeafTokenSatisfy {
+	format("")
+}
+
+text Palmae_RentalHouse_Text_LeafFriendZone {
+	format("")
 }
 
 

@@ -64,7 +64,7 @@
 #define FLAG_PALATIUMFELIX_OPEN      0x32 //Set after initial opening of Palatium Felix
 #define FLAG_URBIA_BIKESHOP_INTROD      0x33 //Set after initial sales pitch
 #define FLAG_LEAF_ISGF     0x34 // Set after Leaf agrees to be your GF
-#define FLAG_UNUSED_0x35      0x35 //UNUSED 
+#define FLAG_PALMAE_RENTALHOUSE_LEAFGFINTROD      0x35 //Set after first talk to leaf after Indy Introd 
 #define FLAG_UNUSED_0x36      0x36 //UNUSED 
 #define FLAG_UNUSED_0x37      0x37 //UNUSED 
 
