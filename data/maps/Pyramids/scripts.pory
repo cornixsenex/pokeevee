@@ -3,6 +3,8 @@
 //VAR_TEMP_3: Pyramid Block
 //VAR_TEMP_5: Dynamic Map
 
+const OBJ_EVENT_SCIENTIST = 1
+
 mapscripts Pyramids_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 
@@ -55,6 +57,8 @@ script Pyramids_Script_PyramidBlock {
 	if (var(VAR_RESULT) == YES) {
 		//clear block var
 		setvar (VAR_TEMP_2, 1)
+		applymovement (OBJ_EVENT_SCIENTIST, Common_Movement_ExclamationMark)
+		waitmovement (0)
 		//Oh you're a graduate here to help? Welcome (doctor?) - Take this hammer 
 		msgbox(Pyramids_Text_PyramidClearBlock1)
 		closemessage
@@ -76,7 +80,7 @@ text Pyramids_Text_PyramidBlock {
 }
 
 text Pyramids_Text_PyramidClearBlock1 {
-	format("What's that? You have a degree from Ardens? Well now...\nScientia scientiam agnoscit, verumne dico?\nSalve, learned friend. I see you've come to help the excavation of the Pyramid. You'll need the right equipment for the job. Take this hammer to smash obstructive rocks.")
+	format("What's that? You have a degree from Ardens? Well now...\pScientia scientiam agnoscit, verumne dico?\pSalve, learned friend. I see you've come to help the excavation of the Pyramid. You'll need the right equipment for the job. Take this hammer to smash obstructive rocks.")
 }
 
 text Pyramids_Text_PyramidClearBlock2 {

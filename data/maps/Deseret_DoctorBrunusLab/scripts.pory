@@ -2,17 +2,6 @@
 
 mapscripts Deseret_DoctorBrunusLab_MapScripts {}
 
-script Deseret_DoctorBrunusLab_Script_Girafarig {
-    lock
-    faceplayer
-	playmoncry (SPECIES_GIRAFARIG, CRY_MODE_ENCOUNTER)
-	waitmoncry
-	applymovement (VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
-	waitmovement (0)
-    release
-    end
-}
-
 script Deseret_DoctorBrunusLab_Script_DoctorBrunus {
     lock
     faceplayer
