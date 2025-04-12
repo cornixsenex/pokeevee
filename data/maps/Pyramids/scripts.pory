@@ -74,6 +74,13 @@ script Pyramids_Script_PyramidBlock {
 	end
 }
 
+script Pyramids_Script_Scientist {
+	faceplayer
+	msgbox (Pyramids_Text_Scientist)
+	closemessage
+	call (Common_Script_Unfaceplayer)
+	end
+}
 
 text Pyramids_Text_PyramidBlock {
 	format("Excuse me, sir, this area is closed by order of the Deseret Antique Department of Ancient Historic sites in conjunction with the Ardens School of Archaeology. You'll have to turn back.")
@@ -85,4 +92,11 @@ text Pyramids_Text_PyramidClearBlock1 {
 
 text Pyramids_Text_PyramidClearBlock2 {
 	format("That Big Hammer will help you get inside. Report to Professor Indianus, who is in charge of this excavation. I'm sure he'll find something for you to do. Be careful, there are many dangerous pitfalls and ancient traps inside as well as deadly creatures lurking in the dark.")
+}
+
+text Pyramids_Text_Scientist {
+	format("Dedicating my life to the pursuit
+			of archaelogical discovery
+			for the general benefit of mankind
+			has been a most rewarding decision.")
 }

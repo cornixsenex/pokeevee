@@ -107,8 +107,20 @@ Pyramids_Script_PyramidBlock_2:
 	goto Pyramids_Script_PyramidBlock_1
 
 
-Pyramids_Text_PyramidBlock::
+Pyramids_Script_Scientist::
 # 78 "data/maps/Pyramids/scripts.pory"
+	faceplayer
+# 79 "data/maps/Pyramids/scripts.pory"
+	msgbox Pyramids_Text_Scientist
+# 80 "data/maps/Pyramids/scripts.pory"
+	closemessage
+# 81 "data/maps/Pyramids/scripts.pory"
+	call Common_Script_Unfaceplayer
+	end
+
+
+Pyramids_Text_PyramidBlock::
+# 85 "data/maps/Pyramids/scripts.pory"
 	.string "Excuse me, sir, this area is closed by\n"
 	.string "order of the Deseret Antique\l"
 	.string "Department of Ancient Historic sites in\l"
@@ -116,7 +128,7 @@ Pyramids_Text_PyramidBlock::
 	.string "Archaeology. You'll have to turn back.$"
 
 Pyramids_Text_PyramidClearBlock1::
-# 82 "data/maps/Pyramids/scripts.pory"
+# 89 "data/maps/Pyramids/scripts.pory"
 	.string "What's that? You have a degree from\n"
 	.string "Ardens? Well now...\p"
 	.string "Scientia scientiam agnoscit, verumne\n"
@@ -128,7 +140,7 @@ Pyramids_Text_PyramidClearBlock1::
 	.string "obstructive rocks.$"
 
 Pyramids_Text_PyramidClearBlock2::
-# 86 "data/maps/Pyramids/scripts.pory"
+# 93 "data/maps/Pyramids/scripts.pory"
 	.string "That Big Hammer will help you get inside.\n"
 	.string "Report to Professor Indianus, who is in\l"
 	.string "charge of this excavation. I'm sure\l"
@@ -137,3 +149,10 @@ Pyramids_Text_PyramidClearBlock2::
 	.string "pitfalls and ancient traps inside as\l"
 	.string "well as deadly creatures lurking in the\l"
 	.string "dark.$"
+
+Pyramids_Text_Scientist::
+# 97 "data/maps/Pyramids/scripts.pory"
+	.string "Dedicating my life to the pursuit of\n"
+	.string "archaelogical discovery for the general\l"
+	.string "benefit of mankind has been a most\l"
+	.string "rewarding decision.$"

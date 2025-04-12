@@ -54,58 +54,45 @@ script Phoenix_EventScript_PartyTrigger {
 }
 
 script Phoenix_EventScript_FratBoy1 {
-	lock
 	msgbox(Phoenix_Text_FratBoy1)
 	closemessage
-	release
 	end
 }
 
 script Phoenix_EventScript_FratBoy2 {
-	lock
 	faceplayer
 	msgbox(Phoenix_Text_FratBoy2)
 	closemessage
-	release
 	end
 }
 
 script Phoenix_EventScript_FratBoy3 {
-	lock
 	msgbox(Phoenix_Text_FratBoy3)
 	closemessage
-	release
 	end
 }
 
 script Phoenix_EventScript_FratGirl1 {
-	lock
 	faceplayer
 	msgbox(Phoenix_Text_FratGirl1)
 	closemessage
-	release
 	end
 }
 
 script Phoenix_EventScript_FratGirl2 {
-	lock
 	msgbox(Phoenix_Text_FratGirl2)
 	closemessage
-	release
 	end
 }
 
 script Phoenix_EventScript_Leaf {
-	lock
 	msgbox(Phoenix_Text_Leaf)
 	closemessage
-	release
 	end
 }
 
 
 script Phoenix_EventScript_FratBoy {
-	lock
 	faceplayer
 	msgbox(Phoenix_Text_FratBoyBlockA)
 	closemessage
@@ -114,7 +101,6 @@ script Phoenix_EventScript_FratBoy {
 	} 
 	applymovement (OBJ_EVENT_FRATBOY, Common_Movement_FaceDown)
 	waitmovement (0)
-	release
 	end
 }
 
@@ -161,7 +147,6 @@ script Phoenix_EventScript_LeafApproach {
 }
 
 script Phoenix_EventScript_Pledge {
-	lock
 	faceplayer
 	if (flag(FLAG_PLEDGE_HAS_KEG) ) {
 		msgbox(Phoenix_Text_Pledge3)
@@ -183,7 +168,6 @@ script Phoenix_EventScript_Pledge {
 			}
 		}
 	}
-	release
 	end
 }
 
