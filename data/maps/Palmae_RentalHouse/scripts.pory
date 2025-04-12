@@ -13,7 +13,9 @@ mapscripts Palmae_RentalHouse_MapScripts {
 		if(var(VAR_UNI_STATE) < 10) {
 			call (Palmae_RentalHouse_Script_ShowLandlady)
 		} else { //should check if after leave for Tranquilitas
-			call (Palmae_RentalHouse_Script_ShowLeaf)
+			if (!flag(FLAG_LEAF_ISGF)) { 
+				call (Palmae_RentalHouse_Script_ShowLeaf)
+			}
 		}
 
 	}
@@ -144,15 +146,53 @@ script Palmae_RentalHouse_Script_LeafGF {
 	//we should go on a honeymoon Indianus and Mew can wait this is way more imprortant. Take me surfing in Tranquilitas. Meet me there bye babe
 	msgbox (Palmae_RentalHouse_Text_Leaf8)
 	//exit leaf
-	//set vars and flags to persist state
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_NORTH) {
+		call (Palmae_RentalHouse_Script_LeafExitNorth)
+	} else {
+		call (Palmae_RentalHouse_Script_LeafExit)
+	}
 
 	release
 	end
 }
 
+script Palmae_RentalHouse_Script_LeafExit {
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkDown2)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkDown2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight2)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_LEAF)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkDown)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_JIG)
+	return
+}
+
+script Palmae_RentalHouse_Script_LeafExitNorth {
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight2)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkDown3)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkDown3)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_LEAF)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkDown)
+	waitmovement (0)
+	removeobject (OBJ_EVENT_JIG)
+	return
+}
+
 
 text Palmae_RentalHouse_Text_Leaf1 {
-    format("This house may not be much, but still I'm proud
+    format("This house may not be much, but still, I'm proud
             to have a place to call my home. It's not
             easy for a single woman in this
             economy to become sucessful.
@@ -272,13 +312,30 @@ text Palmae_RentalHouse_Text_Leaf7 {
 	format("I accept this heart scale as token of
             your precious love promised only to me
             and in return I promise to wear it
-            around my neck as a collar, or yoke
+            around my neck as a collar, or yoke,
             and swear ever to honor and respect
-            you as my lord and man")
+            you as my lord and man. I will cherish
+			you and love you and think of you
+			only in sickness, health, in life, in death,
+			forever. You and I are joined as one.
+			Allow me to consumate our union.
+			Close your eyes, {PLAYER}, relax. {LEAF} loves you.")
 }
 
 text Palmae_RentalHouse_Text_Leaf8 {
-	format("")
+	format("Teehee!
+			Now that we're official I think we should
+			enjoy a honeymoon. Indianus
+			and Mew can wait. We ought to celebrate
+			our new relationship the proper way.
+			I know! Let's go take suring lessons in
+			Tranquilitas! The beach is romantic
+			and there's a surfing school with a special
+			for new couples. Let's go! I'll meet you there!")
+}
+
+text Palmae_RentalHouse_Text_GaveHeartScale {
+	format("{PLAYER} gave {LEAF} the heart scale.")
 }
 
 
