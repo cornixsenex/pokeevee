@@ -2,7 +2,7 @@
   "id": "MAP_ARDOR_UNI_GEOLOGY_CLASS",
   "name": "Ardor_Uni_GeologyClass",
   "layout": "LAYOUT_ARDOR_UNI_ARCHAEOLOGY_CLASS",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_OCEANIC_MUSEUM",
   "region_map_section": "MAPSEC_ARDENS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

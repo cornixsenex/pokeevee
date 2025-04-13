@@ -19,16 +19,21 @@ script Phoenix_Mart_EventScript_Clerk {
 				updatemoneybox
 				playse (SE_SHOP)
 				waitse
-				giveitem (ITEM_KEG)
 				hidemoneybox
+				giveitem (ITEM_KEG)
 				msgbox(Phoenix_Mart_Text_ClerkKegSold)
+				release
+				end
 			} else {
 				msgbox(Phoenix_Mart_Text_ClerkKegShortMoney)
+				hidemoneybox
+				release
+				end
 			}
 		} else {
 			msgbox(Phoenix_Mart_Text_ClerkKegNo)
+			hidemoneybox
 		}
-		closemessage
 	}
 	message (gText_HowMayIServeYou)
 	waitmessage

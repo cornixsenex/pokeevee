@@ -1636,3 +1636,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PyramidInsidePuzzle/scripts.inc"
 
 	.include "data/maps/Palmae_RentalHouse/scripts.inc"
+
+	.include "data/maps/Palmae_FratHouse/scripts.inc"

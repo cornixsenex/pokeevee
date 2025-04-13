@@ -2,7 +2,7 @@
   "id": "MAP_TUCSON",
   "name": "Tucson",
   "layout": "LAYOUT_TUCSON",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

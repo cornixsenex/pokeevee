@@ -6410,6 +6410,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Palmae_RentalHouse/border.bin",
       "blockdata_filepath": "data/layouts/Palmae_RentalHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PALMAE_FRAT_HOUSE",
+      "name": "Palmae_FratHouse_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Palmae_FratHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Palmae_FratHouse/map.bin"
     }
   ]
 }

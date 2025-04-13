@@ -10,6 +10,7 @@ const OBJ_EVENT_FRATGIRL2 = 7
 const OBJ_EVENT_LEAF = 9
 const OBJ_EVENT_FRATFIGHTL = 4
 const OBJ_EVENT_FRATFIGHTR = 6
+const OBJ_EVENT_JIG = 11
 
 mapscripts Phoenix_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
@@ -128,21 +129,35 @@ script Phoenix_EventScript_ClearParty {
 }
 
 script Phoenix_EventScript_LeafApproach {
+	setobjectxy (OBJ_EVENT_LEAF, 35, 19)
+	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_UP)
+	setobjectxy (OBJ_EVENT_JIG, 34, 19)
+	setobjectmovementtype (OBJ_EVENT_JIG, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
 	if (var(VAR_RESULT) == DIR_EAST) {
-		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafApproach1)
+		turnobject (OBJ_EVENT_ID_PLAYER, DIR_SOUTH)
+		turnobject (OBJ_EVENT_LEAF, DIR_NORTH)
 	} else {
-		applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafApproach2)
-		applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+		turnobject (OBJ_EVENT_ID_PLAYER, DIR_WEST)
+		turnobject (OBJ_EVENT_LEAF, DIR_EAST)
 	}
 	fadescreen (0)
-	waitmovement (0)
 	msgbox(Phoenix_Text_LeafExit)
 	closemessage
-	applymovement (OBJ_EVENT_LEAF, Phoenix_Movement_LeafExit)
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_SOUTH) {
+		applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkRight)
+		applymovement (OBJ_EVENT_JIG, Common_Movement_WalkRight)
+		waitmovement (0)
+	}
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkRight)
 	waitmovement (0)
-	setflag (FLAG_PHOENIX_LEAF)
+	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp6)
+	applymovement (OBJ_EVENT_JIG, Common_Movement_WalkUp6)
+	waitmovement (0)
 	removeobject (OBJ_EVENT_LEAF)
+	removeobject (OBJ_EVENT_JIG)
 	return
 }
 
@@ -153,12 +168,12 @@ script Phoenix_EventScript_Pledge {
 		closemessage
 	} else {
 		msgbox(Phoenix_Text_Pledge1)
-		closemessage
 		checkitem (ITEM_KEG)
 		if (var(VAR_RESULT) == TRUE) {
 			msgbox(Phoenix_Text_Pledge2, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
 				removeitem (ITEM_KEG)
+				msgbox (Palmae_Text_GaveKeg)
 				setflag (FLAG_PLEDGE_HAS_KEG)
 				msgbox(Phoenix_Text_Pledge3)
 				closemessage
@@ -166,6 +181,8 @@ script Phoenix_EventScript_Pledge {
 				msgbox(Phoenix_Text_Pledge2No)
 				closemessage
 			}
+		} else {
+			closemessage
 		}
 	}
 	end
@@ -181,9 +198,6 @@ movement Phoenix_Movement_LeafApproach2 {
 	walk_right * 3 
 }
 
-movement Phoenix_Movement_LeafExit {
-	walk_up * 6
-}
 
 
 text Phoenix_Text_Pledge1 {
@@ -236,6 +250,10 @@ text Phoenix_Text_Leaf {
 
 text Phoenix_Text_FratPartyClear {
 	format("What's that? A party? With an open keg!? Dear friends lets go! Follow me! \pHouse party!")
+}
+
+text Palmae_Text_GaveKeg {
+	format("{PLAYER} gave the frat bro the keg.")
 }
 
 

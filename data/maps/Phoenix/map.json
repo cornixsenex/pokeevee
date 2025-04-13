@@ -149,8 +149,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GREEN",
-      "x": 33,
-      "y": 28,
+      "x": 32,
+      "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -201,6 +201,13 @@
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_PALMAE_RENTAL_HOUSE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 33,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_PALMAE_FRAT_HOUSE",
       "dest_warp_id": "1"
     }
   ],
