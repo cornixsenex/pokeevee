@@ -832,7 +832,7 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
     s32 paletteIndex;
-	s32 destMapNum, x, y;
+	s32 destMapNum,destMapGroup, x, y;
 
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
@@ -885,7 +885,9 @@ if (I_VS_SEEKER_CHARGING != 0)
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
+    //Cornix added to support Dynamic Maps
 	destMapNum = gSaveBlock1Ptr->location.mapNum;
+    destMapGroup = gSaveBlock1Ptr->location.mapGroup;
 	x = gSaveBlock1Ptr->pos.x;
 	y = gSaveBlock1Ptr->pos.y;
 
@@ -896,18 +898,23 @@ if (I_VS_SEEKER_CHARGING != 0)
 
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
+        DebugPrintf("Top of determine ShopMapNamePopup");
 		//Last and Dest Maps are both not == and neither are Dynamic
 		if (gMapHeader.regionMapSectionId != sLastMapSectionId &&
 				gMapHeader.regionMapSectionId != MAPSEC_DYNAMIC &&
 				sLastMapSectionId != MAPSEC_DYNAMIC
 		   )
+        {
+            DebugPrintf("Last & Dest != && neither are DYNAMIC");
             ShowMapNamePopup();
+        }
 
 		//Both Last and Dest Maps are Dynamicwith special case dynamic transitions 
 		//specifically want the Map Popup to appear when transitioning from one dynamic map to another
 	    //HEY! Just a note this should check they're the same map group too otherwise...could lead to issues
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
+            DebugPrintf("Both Prev & Dest are DYNAMIC");
 			//Force MapNamePopup on Transition from TWO DYNAMIC MAPS 
 			//mapNum = Destination MapNum
 			//xy     = Coords on Destination Map
@@ -984,16 +991,17 @@ if (I_VS_SEEKER_CHARGING != 0)
 		//Only Dest Map is Dynamic
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
 		{
+            DebugPrintf("Only Dest is DYNAMIC");
 			if 
 				(
 				//Dest: MareWWW - Suppress from BulbusWest, 
-				(! (destMapNum == MAP_NUM(MARE_WWW) && x < 0 ) ) &&
+				(! (destMapGroup == MAP_GROUP(MARE_WWW) && destMapNum == MAP_NUM(MARE_WWW) && x < 0 ) ) &&
 				//Dest: Lake Ira - Suppress from Willow, 
-				(! (destMapNum == MAP_NUM(LAKE_IRA) && y < 28 ) ) &&
+				(! (destMapGroup == MAP_GROUP(LAKE_IRA) && destMapNum == MAP_NUM(LAKE_IRA) && y < 28 ) ) &&
 				//Dest: Silvan Woods - Suppres from SilvanFiller
-				(! (destMapNum == MAP_NUM(SILVAN_WOODS) && x < 1 && y > 29 ) ) &&
+				(! (destMapGroup == MAP_GROUP(SILVAN_WOODS) && destMapNum == MAP_NUM(SILVAN_WOODS) && x < 1 && y > 29 ) ) &&
                 //Dest: Route16 - Suppres from Vegas in desert
-                (! (destMapNum == MAP_NUM(ROUTE16) && y > 16) )
+                (! (destMapGroup == MAP_GROUP(ROUTE16) && destMapNum == MAP_NUM(ROUTE16) && y > 16) )
 
 				)
 					ShowMapNamePopup();
@@ -1002,16 +1010,17 @@ if (I_VS_SEEKER_CHARGING != 0)
 		//Only Last Map is Dynamic
 		else if (sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
+            DebugPrintf("Only Last is DYNAMIC");
 			if 
 				(
 				//Dest: BulbusWest - Suppress from MareWWW 
-				(! (destMapNum == MAP_NUM(BULBUS_WEST) && y > 39) ) &&
+				(! (destMapGroup == MAP_GROUP(BULBUS_WEST) && destMapNum == MAP_NUM(BULBUS_WEST) && y > 39) ) &&
 				//Dest: Willow - Suprres from Lake Ira
-				(! (destMapNum == MAP_NUM(WILLOW) && x < 0) ) &&
+				(! (destMapGroup == MAP_GROUP(WILLOW) && destMapNum == MAP_NUM(WILLOW) && x < 0) ) &&
 				//Dest: Silvan Filler - Suppress from SilvanWoods
-				(! (destMapNum == MAP_NUM(BULBUS_SILVAN_FILLER) && x > 22 ) ) &&
+				(! (destMapGroup == MAP_GROUP(BULBUS_SILVAN_FILLER) && destMapNum == MAP_NUM(BULBUS_SILVAN_FILLER) && x > 22 ) ) &&
                 //Dest: Vegas - Supress from Route16 in desert
-                (! (destMapNum == MAP_NUM(VEGAS) && y > 16 && x < 2) )
+                (! (destMapGroup == MAP_GROUP(VEGAS) && destMapNum == MAP_NUM(VEGAS) && y > 16 && x < 2) )
 
 
 				)
