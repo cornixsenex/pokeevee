@@ -3999,6 +3999,21 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		else 
 			return MAPSEC_CACNORUM;
 	}
+	//Tucson - Deseret, Oasis, Via Magna
+	if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
+	{
+		n = GetDynamicMapSec_Tucson();
+		switch (n) {
+			case 1:
+				return MAPSEC_VIA_MAGNA;
+			case 2:
+				return MAPSEC_OASIS;
+			case 3:
+				return MAPSEC_DESERET; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 
 	//Other Maps Go Here
     
@@ -4385,6 +4400,24 @@ u16 GetDynamicMusic(void)
 			return MUS_ROUTE119;
 		else 
 			return MUS_DESERT;
+	}
+	//Route5
+	if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
+	{
+		n = GetDynamicMapSec_Tucson();
+		switch (n) {
+			//Via Magna
+			case 1:
+				return MUS_CYCLING;
+		    //Oasis
+			case 2:
+				return MUS_LILYCOVE_MUSEUM;
+		    //Deseret
+			case 3:
+				return MUS_RUSTBORO; 
+			default:
+				return MUS_CANTINA;
+		}
 	}
 
 	//Default SHOULD NEVER BE REACHED

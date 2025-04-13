@@ -1952,6 +1952,23 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_CACNORVM);
         }
+		//Tucson - Via Magna, Oasis, Deseret
+		if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
+		{
+			n = GetDynamicMapSec_Tucson();
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_VIA_MAGNA);
+				case 2:
+					return StringCopy(dest, sMapName_OASIS);
+				case 3:
+					return StringCopy(dest, sMapName_DESERET);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+		}
+
 
 		//Default Map - Should never be reached
 		else
@@ -3754,5 +3771,31 @@ bool32 IsRoute16VenatorMons(void)
 	else
 		return TRUE;
 }
+
+u32 GetDynamicMapSec_Tucson(void)
+{
+	//1: Via Magna
+	//2: Oasis
+	//3: Deseret
+
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	//Via Magna
+	if 
+		(
+		(x > 117) && (y > 26)
+		)
+			return 1;
+	//Oasis
+	else if ( x > 93 && y < 27)
+		return 2;
+	//Default return Deseret
+	else 
+		return 3;
+}
+
+	
 
 	

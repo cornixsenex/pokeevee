@@ -1375,16 +1375,16 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SEVII_ISLE_22",
-      "name": "SEVII ISLE 22",
+      "map_section": "MAPSEC_CAMPUS_HARPASTI",
+      "name": "CAMPVS HARPASTI",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SEVII_ISLE_23",
-      "name": "SEVII ISLE 23",
+      "map_section": "MAPSEC_OASIS",
+      "name": "OASIS",
       "x": 0,
       "y": 0,
       "width": 1,

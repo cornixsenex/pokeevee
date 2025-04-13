@@ -173,11 +173,11 @@
 #define MAPSEC_CANYON_ENTRANCE              0xA8
 #define MAPSEC_SEVAULT_CANYON               0xA9
 #define MAPSEC_TANOBY_RUINS                 0xAA
-#define MAPSEC_SEVII_ISLE_22                0xAB
-#define MAPSEC_SEVII_ISLE_23                0xAC
 
 //Below have been altered, above are vanilla BREAK break Break
 
+#define MAPSEC_CAMPUS_HARPASTI              0xAB
+#define MAPSEC_OASIS                        0xAC
 #define MAPSEC_PALMAE                       0xAD
 #define MAPSEC_SCHOLA                       0xAE
 #define MAPSEC_ARDENS                       0xAF

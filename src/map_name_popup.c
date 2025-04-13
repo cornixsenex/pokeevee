@@ -255,11 +255,11 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_CANYON_ENTRANCE] =              MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_SEVAULT_CANYON] =               MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_TANOBY_RUINS] =                 MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_SEVII_ISLE_22] =                MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_SEVII_ISLE_23] =                MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
 	
+	[MAPSEC_CAMPUS_HARPASTI] =              MAPPOPUP_THEME_WOOD, 
+	[MAPSEC_OASIS] =                        MAPPOPUP_THEME_STONE, 
 	[MAPSEC_PALMAE] =                       MAPPOPUP_THEME_STONE, 
 	[MAPSEC_SCHOLA] =                       MAPPOPUP_THEME_WOOD, 
 	[MAPSEC_ARDENS] =                       MAPPOPUP_THEME_MARBLE, 
@@ -1159,6 +1159,27 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_VENATOR_MONS;
 			else 
 				regionMapSectionId = MAPSEC_CACNORUM;
+		}
+		//Tucson
+		if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
+		{
+			n = GetDynamicMapSec_Tucson();
+			switch (n) {
+				//Via Magan
+				case 1:
+					regionMapSectionId = MAPSEC_VIA_MAGNA;
+					break;
+				//Oasis
+				case 2:
+					regionMapSectionId = MAPSEC_OASIS;
+					break;
+				//Deseret
+				case 3:
+					regionMapSectionId = MAPSEC_DESERET;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
 		}
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
