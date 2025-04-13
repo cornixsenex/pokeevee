@@ -615,3 +615,4 @@ gSpecials::
     def_special DoPeccadumTruckScene
 	def_special IsRoute16VenatorMons
 	def_special BlueRouletteSpin
+	def_special GetDynamicMapSec_Tucson

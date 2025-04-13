@@ -14,11 +14,28 @@ const FIELD_PIC_NESTOR = 25
 const FIELD_PIC_MENELAUS = 26
 const FIELD_PIC_PARIS = 27
 
+//VAR_TEMP_5 DYNAMIC MAP:
+//	1: Via Magna
+//	2: Oasis
+//	3: Deseret
+
 
 mapscripts Tucson_MapScripts {
 	//Set Object position and movement
 	MAP_SCRIPT_ON_TRANSITION {
-		
+
+		//Handle Dynamic Map
+		specialvar (VAR_RESULT, GetDynamicMapSec_Tucson)
+			switch (var(VAR_RESULT)) {
+			case 1:
+				setvar (VAR_TEMP_5, 1)
+			case 2:
+				setvar (VAR_TEMP_5, 2)
+			case 3:
+				setvar (VAR_TEMP_5, 3)
+		}
+
+		//Setup Nestor Scene - depend on Nestor State	
 		if (var(VAR_NESTOR_STATE) == 0 || var(VAR_NESTOR_STATE) == 2) {
 			call (Tucson_Script_ShowNestorHousePreWedding)
 		} elif (var(VAR_NESTOR_STATE) == 1) {
@@ -41,6 +58,18 @@ mapscripts Tucson_MapScripts {
 		VAR_NESTOR_STATE, 1: Tucson_Script_NestorGather1
 	]
 
+}
+
+script Tucson_Script_Transition_Oasis {
+	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script Tucson_Script_Transition_Deseret {
+	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
 }
 
 script Tucson_Script_ShowNestorHousePreWedding {

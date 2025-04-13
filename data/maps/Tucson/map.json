@@ -309,7 +309,114 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Tucson_Script_Transition_Oasis"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Tucson_Script_Transition_Oasis"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Tucson_Script_Transition_Oasis"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Tucson_Script_Transition_Oasis"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Tucson_Script_Transition_Oasis"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "3",
+      "script": "Tucson_Script_Transition_Oasis"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Tucson_Script_Transition_Deseret"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Tucson_Script_Transition_Deseret"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Tucson_Script_Transition_Deseret"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Tucson_Script_Transition_Deseret"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Tucson_Script_Transition_Deseret"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Tucson_Script_Transition_Deseret"
+    }
   ],
   "bg_events": [
 
