@@ -141,6 +141,15 @@
       "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "Pyramids_Script_PyramidBlockC"
+    },
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "NULL"
     }
   ],
   "bg_events": [
