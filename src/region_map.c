@@ -1944,13 +1944,13 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_MONTES_VIGILIAE);
         }
-		//Route16 - Venator Mons or Cacnorum 
+		//Route16 - Venator Mons or D. Columnaris 
 		if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16))
         {
             if (IsRoute16VenatorMons())
                 return StringCopy(dest, sMapName_VENATOR_MONS);
             else
-                return StringCopy(dest, sMapName_CACNORVM);
+                return StringCopy(dest, sMapName_D__COLVMNARIS);
         }
 		//Tucson - Via Magna, Oasis, Deseret
 		if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))

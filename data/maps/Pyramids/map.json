@@ -109,7 +109,7 @@
     {
       "type": "trigger",
       "x": 17,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",

@@ -1343,32 +1343,32 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_TRAINER_TOWER",
-      "name": "TRAINER TOWER",
+      "map_section": "MAPSEC_D_SOLITARIUM",
+      "name": "D. SOLITARIVM",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_CANYON_ENTRANCE",
-      "name": "CANYON ENTRANCE",
+      "map_section": "MAPSEC_D_CACTORUM",
+      "name": "D. CACTORVM",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_SEVAULT_CANYON",
-      "name": "SEVAULT CANYON",
+      "map_section": "MAPSEC_DESERTUM_CALIDUM",
+      "name": "DESERTVM CALIDVM",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_TANOBY_RUINS",
-      "name": "TANOBY RUINS",
+      "map_section": "MAPSEC_COLUMNAR",
+      "name": "COLVMNAR",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1472,8 +1472,8 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_CACNORUM",
-      "name": "CACNORVM",
+      "map_section": "MAPSEC_D_COLUMNARIS",
+      "name": "D. COLVMNARIS",
       "x": 0,
       "y": 0,
       "width": 1,

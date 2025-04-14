@@ -3,7 +3,7 @@
   "name": "Peccadum_TruckDepot",
   "layout": "LAYOUT_PECCADUM_TRUCK_DEPOT",
   "music": "MUS_RG_GAME_CORNER",
-  "region_map_section": "MAPSEC_PECCADUM",
+  "region_map_section": "MAPSEC_PECCATUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

@@ -4006,7 +4006,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		if (IsRoute16VenatorMons())
 			return MAPSEC_VENATOR_MONS;
 		else 
-			return MAPSEC_CACNORUM;
+			return MAPSEC_D_COLUMNARIS;
 	}
 	//Tucson - Deseret, Oasis, Via Magna
 	if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))

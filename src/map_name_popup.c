@@ -251,13 +251,13 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_GREEN_PATH] =                   MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_WATER_PATH] =                   MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_RUIN_VALLEY] =                  MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_TRAINER_TOWER] =                MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_CANYON_ENTRANCE] =              MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_SEVAULT_CANYON] =               MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_TANOBY_RUINS] =                 MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
 	
+	[MAPSEC_D_SOLITARIUM] =                  MAPPOPUP_THEME_BRICK, 
+	[MAPSEC_D_CACTORUM] =                   MAPPOPUP_THEME_BRICK, 
+	[MAPSEC_DESERTUM_CALIDUM] =             MAPPOPUP_THEME_BRICK, 
+	[MAPSEC_COLUMNAR] =                     MAPPOPUP_THEME_STONE, 
 	[MAPSEC_CAMPUS_HARPASTI] =              MAPPOPUP_THEME_WOOD, 
 	[MAPSEC_OASIS] =                        MAPPOPUP_THEME_STONE, 
 	[MAPSEC_PALMAE] =                       MAPPOPUP_THEME_STONE, 
@@ -270,7 +270,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_PALATIUM_FELIX] =               MAPPOPUP_THEME_MARBLE, 
 	[MAPSEC_PECCATUM] =                     MAPPOPUP_THEME_STONE, 
 	[MAPSEC_VIA_POSTERIOR] =                MAPPOPUP_THEME_STONE, 
-	[MAPSEC_CACNORUM] =                     MAPPOPUP_THEME_BRICK, 
+	[MAPSEC_D_COLUMNARIS] =                 MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_VIA_SAXOSA] =                   MAPPOPUP_THEME_STONE, 
 	[MAPSEC_VIA_MAGNA] =                    MAPPOPUP_THEME_STONE2, 
 	[MAPSEC_ROBUSTICA] =                    MAPPOPUP_THEME_MARBLE, 
@@ -1158,7 +1158,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			if (IsRoute16VenatorMons())
 				regionMapSectionId = MAPSEC_VENATOR_MONS;
 			else 
-				regionMapSectionId = MAPSEC_CACNORUM;
+				regionMapSectionId = MAPSEC_D_COLUMNARIS;
 		}
 		//Tucson
 		if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))

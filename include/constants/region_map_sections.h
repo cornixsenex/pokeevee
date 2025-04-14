@@ -169,13 +169,13 @@
 #define MAPSEC_GREEN_PATH                   0xA4
 #define MAPSEC_WATER_PATH                   0xA5
 #define MAPSEC_RUIN_VALLEY                  0xA6
-#define MAPSEC_TRAINER_TOWER                0xA7
-#define MAPSEC_CANYON_ENTRANCE              0xA8
-#define MAPSEC_SEVAULT_CANYON               0xA9
-#define MAPSEC_TANOBY_RUINS                 0xAA
 
 //Below have been altered, above are vanilla BREAK break Break
 
+#define MAPSEC_D_SOLITARIUM                 0xA7
+#define MAPSEC_D_CACTORUM                   0xA8
+#define MAPSEC_DESERTUM_CALIDUM             0xA9
+#define MAPSEC_COLUMNAR                     0xAA
 #define MAPSEC_CAMPUS_HARPASTI              0xAB
 #define MAPSEC_OASIS                        0xAC
 #define MAPSEC_PALMAE                       0xAD
@@ -188,7 +188,7 @@
 #define MAPSEC_PALATIUM_FELIX               0xB4
 #define MAPSEC_PECCATUM                     0xB5
 #define MAPSEC_VIA_POSTERIOR                0xB6
-#define MAPSEC_CACNORUM                     0xB7
+#define MAPSEC_D_COLUMNARIS                 0xB7
 #define MAPSEC_VIA_SAXOSA                   0xB8
 #define MAPSEC_VIA_MAGNA                    0xB9
 #define MAPSEC_ROBUSTICA                    0xBA
