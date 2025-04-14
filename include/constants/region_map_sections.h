@@ -186,7 +186,7 @@
 #define MAPSEC_URBIA                        0xB2
 #define MAPSEC_HARENAE_AUREAE               0xB3
 #define MAPSEC_PALATIUM_FELIX               0xB4
-#define MAPSEC_PECCADUM                     0xB5
+#define MAPSEC_PECCATUM                     0xB5
 #define MAPSEC_VIA_POSTERIOR                0xB6
 #define MAPSEC_CACNORUM                     0xB7
 #define MAPSEC_VIA_SAXOSA                   0xB8
