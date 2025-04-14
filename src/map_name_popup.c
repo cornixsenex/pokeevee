@@ -249,12 +249,12 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 	[MAPSEC_MEMORIAL_PILLAR] =              MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_OUTCAST_ISLAND] =               MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_GREEN_PATH] =                   MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_WATER_PATH] =                   MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_RUIN_VALLEY] =                  MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
 	
-	[MAPSEC_D_SOLITARIUM] =                  MAPPOPUP_THEME_BRICK, 
+	[MAPSEC_PYRAMIS] =                      MAPPOPUP_THEME_STONE2, 
+	[MAPSEC_VALLIS_PYRAMIDIS] =             MAPPOPUP_THEME_MARBLE, 
+	[MAPSEC_D_SOLITARIUM] =                 MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_D_CACTORUM] =                   MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_DESERTUM_CALIDUM] =             MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_COLUMNAR] =                     MAPPOPUP_THEME_STONE, 
@@ -1181,6 +1181,16 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+        //Pyramids - D Cactorum or Vallis Pyramidis
+        if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS)) 
+		{
+			if (IsPyramidsDCactorum())
+				regionMapSectionId = MAPSEC_D_CACTORUM;
+			else 
+				regionMapSectionId = MAPSEC_VALLIS_PYRAMIDIS;
+		}
+
+        //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
 

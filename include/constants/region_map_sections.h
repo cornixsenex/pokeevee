@@ -167,11 +167,11 @@
 #define MAPSEC_MEMORIAL_PILLAR              0xA2
 #define MAPSEC_OUTCAST_ISLAND               0xA3
 #define MAPSEC_GREEN_PATH                   0xA4
-#define MAPSEC_WATER_PATH                   0xA5
-#define MAPSEC_RUIN_VALLEY                  0xA6
 
 //Below have been altered, above are vanilla BREAK break Break
 
+#define MAPSEC_PYRAMIS                      0xA5
+#define MAPSEC_VALLIS_PYRAMIDIS             0xA6
 #define MAPSEC_D_SOLITARIUM                 0xA7
 #define MAPSEC_D_CACTORUM                   0xA8
 #define MAPSEC_DESERTUM_CALIDUM             0xA9

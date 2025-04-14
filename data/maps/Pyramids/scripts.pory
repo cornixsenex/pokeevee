@@ -1,12 +1,23 @@
 
 //VAR_TEMP_F: Pyramid Light - IDK
 //VAR_TEMP_3: Pyramid Block
+
 //VAR_TEMP_5: Dynamic Map
+    //1: Cactorum
+    //2: D. Pyramidis
 
 const OBJ_EVENT_SCIENTIST = 1
 
 mapscripts Pyramids_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
+
+        //Handle Dynamic Map
+        specialvar (VAR_RESULT, IsPyramidsDCactorum)
+        if (var(VAR_RESULT) == TRUE) {
+            setvar (VAR_TEMP_5, 1)
+        } else {
+            setvar (VAR_TEMP_5, 2)
+        }
 
 		//Set pyramid light (IDK why)
 		pyramid_updatelight (200, PYRAMID_LIGHT_SET_RADIUS)
@@ -21,6 +32,23 @@ mapscripts Pyramids_MapScripts {
 		end
 	}
 }
+
+script Pyramids_Script_VallisPyramidisTransition {
+    setvar (VAR_TEMP_5, 2)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+    setweather (WEATHER_SUNNY)
+    doweather
+}
+
+script Pyramids_Script_DCactorumTransition {
+    setvar (VAR_TEMP_5, 1)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+    setweather (WEATHER_SANDSTORM)
+    doweather
+}
+
 
 script Pyramids_Script_PyramidBlockA {
 	lock

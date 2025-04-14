@@ -67,6 +67,6 @@ script Route15_Script_SandstormTrigger {
     } else {
         setvar (VAR_TEMP_3, 1)
     }
-	release
-    end
+	//release
+    //end
 }

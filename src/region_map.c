@@ -1968,6 +1968,14 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
 		}
+		//Pyramids - D Cactorum or Vallis Pyramidis 
+		if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS))
+        {
+            if (IsPyramidsDCactorum())
+                return StringCopy(dest, sMapName_D__CACTORVM);
+            else
+                return StringCopy(dest, sMapName_VALLIS_PYRAMIDIS);
+        }
 
 
 		//Default Map - Should never be reached
@@ -3796,6 +3804,29 @@ u32 GetDynamicMapSec_Tucson(void)
 		return 3;
 }
 
+bool32 IsPyramidsDCactorum(void)
+{
+   	
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	if 
+		(
+        (x > 52 && y < 58) ||
+        (x == 52 && y < 47) ||
+        (x == 51 && y < 37) ||
+        (x == 50 && y < 35) ||
+        (x == 49 && y < 35) ||
+        (x == 48 && y < 32) ||
+        (x == 47 && y < 30) ||
+        (x == 46 && y < 27) ||
+        (x == 45 && y < 16)
+        )
+        return FALSE;
+    else
+        return TRUE;
+}
 	
 
 	

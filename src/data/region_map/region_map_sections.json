@@ -1327,16 +1327,16 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_WATER_PATH",
-      "name": "WATER PATH",
+      "map_section": "MAPSEC_PYRAMIS",
+      "name": "PYRAMIS",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_RUIN_VALLEY",
-      "name": "RUIN VALLEY",
+      "map_section": "MAPSEC_VALLIS_PYRAMIDIS",
+      "name": "VALLIS PYRAMIDIS",
       "x": 0,
       "y": 0,
       "width": 1,

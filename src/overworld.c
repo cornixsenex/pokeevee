@@ -4023,6 +4023,14 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//Pyramids - DCactorum or Vallis Pyramids
+	if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS)) 
+	{
+		if (IsPyramidsDCactorum())
+			return MAPSEC_D_CACTORUM;
+		else 
+			return MAPSEC_VALLIS_PYRAMIDIS;
+	}
 
 	//Other Maps Go Here
     
@@ -4427,6 +4435,14 @@ u16 GetDynamicMusic(void)
 			default:
 				return MUS_CANTINA;
 		}
+	}
+    //Pyramids - DCactorum or Vallis Pyramidis
+	if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS)) 
+	{
+		if (IsPyramidsDCactorum())
+			return MUS_DESERT;
+		else 
+			return MUS_B_PYRAMID;
 	}
 
 	//Default SHOULD NEVER BE REACHED

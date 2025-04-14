@@ -144,6 +144,7 @@ bool32 IsSRoute19MareInternum(void);
 bool32 IsRoute9ViaSaxosa(void);
 bool32 IsRoute16VenatorMons(void);
 u32 GetDynamicMapSec_Tucson(void);
+bool32 IsPyramidsDCactorum(void);
 
 //Not used yet but seems useful to me idk
 bool32 IsPlayerEnterFromWest(void);
