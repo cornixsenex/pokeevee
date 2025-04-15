@@ -1976,6 +1976,22 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_VALLIS_PYRAMIDIS);
         }
+		//Vegas - Peccatum or Via Magna
+		if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS))
+        {
+			n = GetDynamicMapSec_Vegas();
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_PECCATVM);
+				case 2:
+					return StringCopy(dest, sMapName_VIA_MAGNA);
+				case 3:
+					return StringCopy(dest, sMapName_D__COLVMNARIS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 
 		//Default Map - Should never be reached
@@ -3337,18 +3353,6 @@ u32 GetDynamicMapSec_MareWW(void)
 		return 3;
 }
 
-bool32 IsPlayerEnterFromWest(void)
-{
-
-	s16 x;
-	x = gSaveBlock1Ptr->pos.x;
-
-    if (x < 1)
-        return TRUE;
-    else 
-        return FALSE;
-}
-
 u32 GetDynamicMapSec_CityClara(void)
 {
 	//0: OOB
@@ -3826,6 +3830,26 @@ bool32 IsPyramidsDCactorum(void)
         return FALSE;
     else
         return TRUE;
+}
+
+bool32 GetDynamicMapSec_Vegas(void)
+{
+
+	//1: Peccatum
+	//2: Via Magna
+	//3: D. Columnaris
+    s16 x, y;
+	x = gSaveBlock1Ptr->pos.x;
+	y = gSaveBlock1Ptr->pos.y;
+
+	//Via Magna
+	if (x > 18 && x < 27 && y > 26)
+		return 2;
+	//D. Columnaris
+	else if (x < 7 && y > 17)
+		return 3;
+	else
+		return 1;
 }
 	
 

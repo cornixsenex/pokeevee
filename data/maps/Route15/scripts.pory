@@ -49,6 +49,11 @@ script Route15_Script_SandstormTriggerLeft {
     call (Route15_Script_SandstormTrigger)
 }
 
+script Route15_Script_SandstormTriggerRight {
+    setvar (VAR_TEMP_4, 3)
+    call (Route15_Script_SandstormTrigger)
+}
+
 script Route15_Script_SandstormTrigger {
     setweather (WEATHER_SANDSTORM)
     doweather
@@ -60,13 +65,20 @@ script Route15_Script_SandstormTrigger {
         closemessage
         if (var(VAR_TEMP_4) == 1) {
             applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft2)
-        } else {
+        } elif (var(VAR_TEMP_4) == 2) {
             applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp2)
-        }
-        waitmovement (0)
+        } elif (var(VAR_TEMP_4) == 3) {
+			applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight2)
+		} else {
+			msgbox("ERROR: SandstormTrigger\nVAR_TEMP_4 OOB")
+			closemessage
+			release
+			end
+		}
+   			waitmovement (0)
     } else {
         setvar (VAR_TEMP_3, 1)
     }
-	//release
-    //end
+	release
+    end
 }

@@ -63,60 +63,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 14,
-      "y": 1,
-      "elevation": 0,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route15_Script_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 1,
-      "elevation": 0,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "Route15_Script_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_3",
-      "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_3",
-      "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_3",
-      "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
-    },
-    {
-      "type": "trigger",
-      "x": 17,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_TEMP_3",
-      "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
-    },
-    {
-      "type": "trigger",
       "x": 52,
       "y": 47,
       "elevation": 0,
@@ -195,6 +141,141 @@
       "var": "VAR_TEMP_5",
       "var_value": "1",
       "script": "Pyramids_Script_VallisPyramidisTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerRight"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerRight"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 11,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 11,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 11,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 11,
+      "elevation": 0,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route15_Script_SunTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route15_Script_SandstormTriggerUp"
     }
   ],
   "bg_events": [

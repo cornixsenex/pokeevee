@@ -17,6 +17,7 @@ mapscripts Pyramids_MapScripts {
             setvar (VAR_TEMP_5, 1)
         } else {
             setvar (VAR_TEMP_5, 2)
+			setweather (WEATHER_SUNNY)
         }
 
 		//Set pyramid light (IDK why)
@@ -29,7 +30,6 @@ mapscripts Pyramids_MapScripts {
 			setvar (VAR_TEMP_3, 1)
 		}
 
-		end
 	}
 }
 
@@ -48,7 +48,6 @@ script Pyramids_Script_DCactorumTransition {
     setweather (WEATHER_SANDSTORM)
     doweather
 }
-
 
 script Pyramids_Script_PyramidBlockA {
 	lock

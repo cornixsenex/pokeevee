@@ -909,9 +909,9 @@ if (I_VS_SEEKER_CHARGING != 0)
             ShowMapNamePopup();
         }
 
-		//Both Last and Dest Maps are Dynamicwith special case dynamic transitions 
+		//Both Last and Dest Maps are Dynamicwith special case dynamic transitions  INCLUSIVE
 		//specifically want the Map Popup to appear when transitioning from one dynamic map to another
-	    //HEY! Just a note this should check they're the same map group too otherwise...could lead to issues
+		//THIS LIST IS INCLUSIVE SO LIST ALL TIMES YOU WANT MAP NAME POPUP BETWEEN 2 DYNAMIC MAPS
 		else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && sLastMapSectionId == MAPSEC_DYNAMIC)
 		{
             DebugPrintf("Both Prev & Dest are DYNAMIC");
@@ -919,9 +919,8 @@ if (I_VS_SEEKER_CHARGING != 0)
 			//mapNum = Destination MapNum
 			//xy     = Coords on Destination Map
 
-
 			//Route3 - Handle MareWWW Transition
-			if (destMapNum == MAP_NUM(ROUTE3)) //From MareWWW AND from Silvan Woods
+			if (destMapNum == MAP_NUM(ROUTE3) && destMapGroup == MAP_GROUP(ROUTE3)) //From MareWWW AND from Silvan Woods
 			{
 				if
 					(
@@ -933,15 +932,13 @@ if (I_VS_SEEKER_CHARGING != 0)
 						ShowMapNamePopup();
 			}
 			//MareWWW - Handle Canelos Cove Transition
-			if (destMapNum == MAP_NUM(MARE_WWW) &&
-					x > 54 &&
-					x < 83 &&
-					y < 0
-			   )
-				ShowMapNamePopup();
-
+			if (destMapNum == MAP_NUM(MARE_WWW) && destMapGroup == MAP_GROUP(MARE_WWW))
+			{
+				if ( x > 54 && x < 83 && y < 0)
+					ShowMapNamePopup();
+			}
 			//SilvanWoods - From Route3 OR 1 square from Route17
-			if (destMapNum == MAP_NUM(SILVAN_WOODS))
+			if (destMapNum == MAP_NUM(SILVAN_WOODS) && destMapGroup == MAP_GROUP(SILVAN_WOODS))
 			{
 				if
 					(
@@ -954,29 +951,38 @@ if (I_VS_SEEKER_CHARGING != 0)
 						ShowMapNamePopup();
 			}
 			//Route17 - Handle ONE SQUARE from Silvan Woods :/
-			if (destMapNum == MAP_NUM(ROUTE17) && y == 163)
+			if (destMapNum == MAP_NUM(ROUTE17) && destMapGroup == MAP_GROUP(ROUTE17) && y == 163)
 				ShowMapNamePopup();
-
 			//Route6 - Handle from Route7
-			if (destMapNum == MAP_NUM(ROUTE6) && x > 70)
+			if (destMapNum == MAP_NUM(ROUTE6) && destMapGroup == MAP_GROUP(ROUTE6) && x > 70)
 				ShowMapNamePopup();
-			//Route7 - Handle from Route6
-			if (destMapNum == MAP_NUM(ROUTE7) && y < 15)
-				ShowMapNamePopup();
-
+			//Route7 - Handle from Route6 AND from Route 9
+			if (destMapNum == MAP_NUM(ROUTE7) && destMapGroup == MAP_GROUP(ROUTE7))
+			{
+				if (y < 15 || (x > 27 && y > 62 && y < 67) )
+					ShowMapNamePopup();
+			}
 			//Route5 - Handle from DoakTown
-			if (destMapNum == MAP_NUM(ROUTE5) && x > 54)
+			if (destMapNum == MAP_NUM(ROUTE5) && destMapGroup == MAP_GROUP(ROUTE5) && x > 54)
 				ShowMapNamePopup();
 			//DoakTown - Handle from 
-			if (destMapNum == MAP_NUM(DOAK_TOWN) && x < 2)
+			if (destMapNum == MAP_NUM(DOAK_TOWN) && destMapGroup == MAP_GROUP(DOAK_TOWN) && x < 2)
 				ShowMapNamePopup();
-
             //Route9 - Handle from Route7
-            if (destMapNum == MAP_NUM(ROUTE9) && x < 2 && y < 27)
+            if (destMapNum == MAP_NUM(ROUTE9) && destMapGroup == MAP_GROUP(ROUTE9) && x < 2 && y < 27)
                 ShowMapNamePopup();
-            //Route7 - Handle from Route9
-            if (destMapNum == MAP_NUM(ROUTE7) && x > 27 && y > 62 && y < 67)
-                ShowMapNamePopup();
+			//Vegas - Handle from Columnaris
+			if (destMapNum == MAP_NUM(VEGAS) && destMapGroup == MAP_GROUP(VEGAS))
+			{
+				if (x < 2 && y < 17)
+					ShowMapNamePopup();
+			}
+			//Route16 - Handle from Peccatum
+			if (destMapNum == MAP_NUM(ROUTE16) && destMapGroup == MAP_GROUP(ROUTE16))
+			{
+				if (x > 45 && y < 17)
+					ShowMapNamePopup();
+			}
 			
 			//Other Maps 
 			//
@@ -999,10 +1005,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Lake Ira - Suppress from Willow, 
 				(! (destMapGroup == MAP_GROUP(LAKE_IRA) && destMapNum == MAP_NUM(LAKE_IRA) && y < 28 ) ) &&
 				//Dest: Silvan Woods - Suppres from SilvanFiller
-				(! (destMapGroup == MAP_GROUP(SILVAN_WOODS) && destMapNum == MAP_NUM(SILVAN_WOODS) && x < 1 && y > 29 ) ) &&
-                //Dest: Route16 - Suppres from Vegas in desert
-                (! (destMapGroup == MAP_GROUP(ROUTE16) && destMapNum == MAP_NUM(ROUTE16) && y > 16) )
-
+				(! (destMapGroup == MAP_GROUP(SILVAN_WOODS) && destMapNum == MAP_NUM(SILVAN_WOODS) && x < 1 && y > 29 ) )
 				)
 					ShowMapNamePopup();
 			
@@ -1018,11 +1021,7 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Willow - Suprres from Lake Ira
 				(! (destMapGroup == MAP_GROUP(WILLOW) && destMapNum == MAP_NUM(WILLOW) && x < 0) ) &&
 				//Dest: Silvan Filler - Suppress from SilvanWoods
-				(! (destMapGroup == MAP_GROUP(BULBUS_SILVAN_FILLER) && destMapNum == MAP_NUM(BULBUS_SILVAN_FILLER) && x > 22 ) ) &&
-                //Dest: Vegas - Supress from Route16 in desert
-                (! (destMapGroup == MAP_GROUP(VEGAS) && destMapNum == MAP_NUM(VEGAS) && y > 16 && x < 2) )
-
-
+				(! (destMapGroup == MAP_GROUP(BULBUS_SILVAN_FILLER) && destMapNum == MAP_NUM(BULBUS_SILVAN_FILLER) && x > 22 ) )
 				)
 					ShowMapNamePopup();
 		}
@@ -4030,6 +4029,21 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 			return MAPSEC_D_CACTORUM;
 		else 
 			return MAPSEC_VALLIS_PYRAMIDIS;
+	}	
+	//Vegas - Peccatum or Via Magna
+	if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
+	{
+		n = GetDynamicMapSec_Vegas();
+		switch (n) {
+			case 1:
+				return MAPSEC_PECCATUM;
+			case 2:
+				return MAPSEC_VIA_MAGNA;
+			case 3:
+				return MAPSEC_D_COLUMNARIS; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
 	}
 
 	//Other Maps Go Here
@@ -4443,6 +4457,24 @@ u16 GetDynamicMusic(void)
 			return MUS_DESERT;
 		else 
 			return MUS_B_PYRAMID;
+	}
+	//Vegas - Peccatum or Via Magna
+	if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
+	{
+		n = GetDynamicMapSec_Vegas();
+		switch (n) {
+			//Peccatum
+			case 1:
+				return MUS_RG_GAME_CORNER;
+		    //Via Magna
+			case 2:
+				return MUS_CYCLING;
+		    //D Columnaris
+			case 3:
+				return MUS_RUSTBORO; 
+			default:
+				return MUS_DESERT;
+		}
 	}
 
 	//Default SHOULD NEVER BE REACHED

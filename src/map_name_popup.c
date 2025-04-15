@@ -1189,7 +1189,24 @@ static void LoadMapNamePopUpWindowBg(void)
 			else 
 				regionMapSectionId = MAPSEC_VALLIS_PYRAMIDIS;
 		}
-
+        //Vegas - Peccatum or Via Magna
+        if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
+		{
+			n = GetDynamicMapSec_Vegas();
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_PECCATUM;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_VIA_MAGNA;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_D_COLUMNARIS;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
