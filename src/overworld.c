@@ -848,6 +848,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 	//Only prev is dynamic check
 	//else...default TransitionMapMusic();
 	
+	DebugPrintf("LoadMapFromCameraTransition");
+	
 
 
     ApplyCurrentWarp();
@@ -1939,6 +1941,7 @@ void CB2_ReturnToFieldFadeFromBlack(void)
 
 static void FieldCB_FadeTryShowMapPopup(void)
 {
+	DebugPrintf("FieldCB_FadeTryShowMapPopup");
     if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
         ShowMapNamePopup();
     FieldCB_WarpExitFadeFromBlack();
@@ -2132,6 +2135,7 @@ static bool32 LoadMapInStepsLink(u8 *state)
 
 static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
 {
+	//DebugPrintf("LoadMapInStepsLocal");
     switch (*state)
     {
     case 0:
@@ -2187,14 +2191,32 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 11: //CORNIX DID THIS - DISABLE REPEATING MAP POPUPS ON DOOR WARPS
+		DebugPrintf("LoadMapInStepsLocal - Step 11\nLast: %d\nDest: %d", gMapHeader.regionMapSectionId, sLastMapSectionId);
         if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
         {
-            //Last and Dest Maps are not equal
+			//Last and Dest Maps are not equal
             if (gMapHeader.regionMapSectionId != sLastMapSectionId)
             {
-                ShowMapNamePopup();
+				
+				//WIP - Right now it just doesn't show when either are DYNAMIC
+				//What I want: Show popup when entering a truly new map section (IE Palatium Felix) NOT when entering a 'subsection' of the origion map (like a mart or house or terminal - in fact terminals shouldn't show popups at all. Popup should be entering the via magna or the city)
+					
+				//Dest Map is dynamic
+				if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
+				{
+					DebugPrintf("DEST IS DYNAMIC");
+				}
+				//Prev map is Dynamic 
+				else if (sLastMapSectionId == MAPSEC_DYNAMIC)
+				{
+					DebugPrintf("LAST IS DYNAMIC");
+				}
+				//Neither dest nor prev are DYNAMIC
+				else 
+					ShowMapNamePopup();
             }
-            //You will need to adjust this for dynamic warp maps - like between two dynamic maps and such
+			
+			//IDK That it will come up but handle both last and dest are dynamic as well
         }
         (*state)++;
         break;
