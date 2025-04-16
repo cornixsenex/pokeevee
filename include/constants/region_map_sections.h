@@ -163,13 +163,13 @@
 #define MAPSEC_SEVII_ISLE_9                 0x9E
 #define MAPSEC_RESORT_GORGEOUS              0x9F
 #define MAPSEC_WATER_LABYRINTH              0xA0
-#define MAPSEC_FIVE_ISLE_MEADOW             0xA1
-#define MAPSEC_MEMORIAL_PILLAR              0xA2
-#define MAPSEC_OUTCAST_ISLAND               0xA3
-#define MAPSEC_GREEN_PATH                   0xA4
 
 //Below have been altered, above are vanilla BREAK break Break
 
+#define MAPSEC_CAVERNA_CAMELA               0xA1
+#define MAPSEC_ECCLESIA                     0xA2
+#define MAPSEC_PUTEUS_OBSCURUS              0xA3
+#define MAPSEC_ELECTRIFICINA                0xA4
 #define MAPSEC_PYRAMIS                      0xA5
 #define MAPSEC_VALLIS_PYRAMIDIS             0xA6
 #define MAPSEC_D_SOLITARIUM                 0xA7

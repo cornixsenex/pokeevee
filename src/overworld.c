@@ -2198,18 +2198,11 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
             if (gMapHeader.regionMapSectionId != sLastMapSectionId)
             {
 				
-				//WIP - Right now it just doesn't show when either are DYNAMIC
-				//What I want: Show popup when entering a truly new map section (IE Palatium Felix) NOT when entering a 'subsection' of the origion map (like a mart or house or terminal - in fact terminals shouldn't show popups at all. Popup should be entering the via magna or the city)
-					
-				//Dest Map is dynamic
-				if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
+				//A dynamic map is involver - Check for whether or not to display popup
+				if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC || sLastMapSectionId == MAPSEC_DYNAMIC)
 				{
-					DebugPrintf("DEST IS DYNAMIC");
-				}
-				//Prev map is Dynamic 
-				else if (sLastMapSectionId == MAPSEC_DYNAMIC)
-				{
-					DebugPrintf("LAST IS DYNAMIC");
+					if (DoMapPopupOnDynamicWarp(gMapHeader.regionMapSectionId, sLastMapSectionId))
+						ShowMapNamePopup();
 				}
 				//Neither dest nor prev are DYNAMIC
 				else 
@@ -4502,5 +4495,38 @@ u16 GetDynamicMusic(void)
 	//Default SHOULD NEVER BE REACHED
 	else 
 		return MUS_CANTINA;
+}
+
+bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
+{
+	//List is INCLUSIVE as in default is don't show the popup ONLY show in these specific cases
+
+
+	//Dest Map is Dynamic - Handle exit to Dynamic
+	if (destMapSection == MAPSEC_DYNAMIC)
+	{
+		if (lastMapSection == MAPSEC_PALATIUM_FELIX ||    // Exit Palatium Felix to dynamic Peccatum
+			lastMapSection == MAPSEC_HARENAE_AUREAE ||    // Exit Harenae Aureae to dynamic peccatum
+			lastMapSection == MAPSEC_VIA_MAGNA            // Exit Terminal (only place with header == VM & warp) 
+		   )
+			return TRUE;
+		else
+			return FALSE;
+	}
+	//Last Map is Dynamic - Handle exit from Dynamic
+	else if (lastMapSection == MAPSEC_DYNAMIC)
+	{
+		if (destMapSection == MAPSEC_PALATIUM_FELIX || //Enter Palatium Felix from dynamic Peccatum
+			destMapSection == MAPSEC_HARENAE_AUREAE    //Enter Harenae Aurea from dynamic Peccatum
+		   )
+			return TRUE;
+		else
+			return FALSE;
+	}
+	//fallback - should never be reached
+	else {
+		DebugPrintf("BIG ERROR dest and last not DYNAMIC in DoMapPopupOnDynamicWarp");
+		return FALSE;
+	}
 }
 

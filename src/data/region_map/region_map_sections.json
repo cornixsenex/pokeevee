@@ -1295,32 +1295,32 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_FIVE_ISLE_MEADOW",
-      "name": "FIVE ISLE MEADOW",
+      "map_section": "MAPSEC_CAVERNA_CAMELA",
+      "name": "CAVERNA CAMELA",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_MEMORIAL_PILLAR",
-      "name": "MEMORIAL PILLAR",
+      "map_section": "MAPSEC_ECCLESIA",
+      "name": "ECCLESIA",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_OUTCAST_ISLAND",
-      "name": "OUTCAST ISLAND",
+      "map_section": "MAPSEC_PUTEUS_OBSCURUS",
+      "name": "PVTEVS OBSCVRVS",
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_GREEN_PATH",
-      "name": "GREEN PATH",
+      "map_section": "MAPSEC_ELECTRIFICINA",
+      "name": "ELECTRIFICINA",
       "x": 0,
       "y": 0,
       "width": 1,

@@ -159,6 +159,7 @@ void ClearLinkPlayerObjectEvents(void);
 
 //CornixSenex Custom Dynamic Map support
 u32 DetermineDynamicMapsecValue (void);
+bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection);
 
 //Cornix Custom Dynamic Music system
 u16 GetDynamicMusic(void);

@@ -3,7 +3,7 @@
   "name": "GatoCityPark",
   "layout": "LAYOUT_GATO_CITY_PARK",
   "music": "MUS_XXPLOSIVE",
-  "region_map_section": "MAPSEC_GREEN_PATH",
+  "region_map_section": "MAPSEC_VIA_FLOREA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_TOWN",
