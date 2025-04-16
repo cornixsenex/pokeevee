@@ -2,7 +2,7 @@
   "id": "MAP_VIA_MAGNA_TERMINAL_URBIA",
   "name": "ViaMagnaTerminal_Urbia",
   "layout": "LAYOUT_VIA_MAGNA_TERMINAL_URBIA",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_CYCLING",
   "region_map_section": "MAPSEC_VIA_MAGNA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

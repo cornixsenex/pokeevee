@@ -2,7 +2,7 @@
   "id": "MAP_VIA_MAGNA_TERMINAL_ROBUSTICA",
   "name": "ViaMagnaTerminal_Robustica",
   "layout": "LAYOUT_VIA_MAGNA_TERMINAL_ROBUSTICA",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_CYCLING",
   "region_map_section": "MAPSEC_VIA_MAGNA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

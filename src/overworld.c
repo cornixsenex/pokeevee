@@ -4411,7 +4411,7 @@ u16 GetDynamicMusic(void)
 		if (IsSanjoSabinaNova())
 			return MUS_RG_SEVII_67;
 		else 
-			return MUS_CYCLING;
+			return MUS_RG_CYCLING;
 	}
 	//DoakTown - Robustica or Via Magna
 	if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
@@ -4420,7 +4420,7 @@ u16 GetDynamicMusic(void)
 		if (IsDoakTownRobustica())
 			return MUS_RG_PEWTER;
 		else 
-			return MUS_CYCLING;
+			return MUS_RG_CYCLING;
 	}
 	//SRoute19 - Mare Internum or Montes Vigiliae
 	if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
@@ -4454,7 +4454,7 @@ u16 GetDynamicMusic(void)
 		switch (n) {
 			//Via Magna
 			case 1:
-				return MUS_CYCLING;
+				return MUS_RG_CYCLING;
 		    //Oasis
 			case 2:
 				return MUS_LILYCOVE_MUSEUM;
@@ -4483,7 +4483,7 @@ u16 GetDynamicMusic(void)
 				return MUS_RG_GAME_CORNER;
 		    //Via Magna
 			case 2:
-				return MUS_CYCLING;
+				return MUS_RG_CYCLING;
 		    //D Columnaris
 			case 3:
 				return MUS_RUSTBORO; 

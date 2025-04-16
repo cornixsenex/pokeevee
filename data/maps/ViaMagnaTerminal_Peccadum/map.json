@@ -2,7 +2,7 @@
   "id": "MAP_VIA_MAGNA_TERMINAL_PECCADUM",
   "name": "ViaMagnaTerminal_Peccadum",
   "layout": "LAYOUT_VIA_MAGNA_TERMINAL_PECCADUM",
-  "music": "MUS_RG_GAME_CORNER",
+  "music": "MUS_RG_CYCLING",
   "region_map_section": "MAPSEC_VIA_MAGNA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
