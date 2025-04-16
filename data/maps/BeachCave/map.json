@@ -3,7 +3,7 @@
   "name": "BeachCave",
   "layout": "LAYOUT_BEACH_CAVE",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_GRANITE_CAVE",
+  "region_map_section": "MAPSEC_CAVERNA_CAMELA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

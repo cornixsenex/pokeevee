@@ -3,7 +3,7 @@
   "name": "ViaMagnaTerminal_SabinaNova",
   "layout": "LAYOUT_VIA_MAGNA_TERMINAL_SABINA_NOVA",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_VIA_MAGNA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
