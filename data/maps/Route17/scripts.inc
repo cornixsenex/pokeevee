@@ -5,7 +5,7 @@ Route17_MapScripts::
 
 Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 18 "data//maps/Route17/scripts.pory"
-	specialvar VAR_RESULT, GetDynamicMapSec_Route17
+	specialvar VAR_RESULT, GetDynamicMapSec_Route17_F
 # 19 "data//maps/Route17/scripts.pory"
 	switch VAR_RESULT
 # 20 "data//maps/Route17/scripts.pory"

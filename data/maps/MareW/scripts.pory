@@ -9,7 +9,7 @@ mapscripts MareW_MapScripts {
         
     MAP_SCRIPT_ON_TRANSITION {
 		//Handle Dynamic Map Triggers
-		specialvar (VAR_RESULT, GetDynamicMapSec_MareW)
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareW_F)
 		if (var(VAR_RESULT) == 1) {
 			setvar (VAR_TEMP_5, 1)
 		} elif (var(VAR_RESULT) == 2) {

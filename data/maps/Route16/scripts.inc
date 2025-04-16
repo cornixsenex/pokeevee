@@ -5,7 +5,7 @@ Route16_MapScripts::
 
 Route16_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 13 "data//maps/Route16/scripts.pory"
-	specialvar VAR_RESULT, IsRoute16VenatorMons
+	specialvar VAR_RESULT, IsRoute16VenatorMons_F
 # 14 "data//maps/Route16/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route16_MapScripts_MAP_SCRIPT_ON_TRANSITION_1

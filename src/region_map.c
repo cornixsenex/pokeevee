@@ -1625,7 +1625,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route3 - Cove, Delta, River
 		if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 		{
-			if (IsRoute3RiverDelta())
+			if (IsRoute3RiverDelta(FALSE))
 				return StringCopy(dest, sMapName_DELTA_DRACI);
 			else  // Default part of map => Cove
 				return StringCopy(dest, sMapName_SINVS_CAMELVS);
@@ -1633,7 +1633,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
 		{
-			n = GetDynamicMapSec_MareWWW();
+			n = GetDynamicMapSec_MareWWW(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1652,7 +1652,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route17
 		if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
 		{
-			n = GetDynamicMapSec_Route17();
+			n = GetDynamicMapSec_Route17(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1680,7 +1680,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Lake Ira
 		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
 		{
-			n = GetDynamicMapSec_LakeIra();
+			n = GetDynamicMapSec_LakeIra(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1698,7 +1698,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Lake Ira South
 		if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH)) 	
 		{
-			if (IsLakeIraSouthUpperDracoWest())
+			if (IsLakeIraSouthUpperDracoWest(FALSE))
 				return StringCopy(dest, sMapName_UPPER_WEST_DRAKE);
 			else  // Default part of map => Cove
 				return StringCopy(dest, sMapName_LOWER_WEST_DRAKE);
@@ -1707,7 +1707,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Silvan Woods N
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N)) 	
 		{		
-			if (IsSilvanWoodsNUpperDracoEast())
+			if (IsSilvanWoodsNUpperDracoEast(FALSE))
 				return StringCopy(dest, sMapName_UPPER_EAST_DRAKE);
 			else  // Default part of map => Cove
 				return StringCopy(dest, sMapName_LOWER_EAST_DRAKE);
@@ -1715,7 +1715,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Silvan Woods
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
 		{
-			n = GetDynamicMapSec_SilvanWoods();
+			n = GetDynamicMapSec_SilvanWoods(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1733,7 +1733,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//MareS6
 		if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
 		{
-			n = GetDynamicMapSec_MareS6();
+			n = GetDynamicMapSec_MareS6(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1753,7 +1753,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//MareWW
 		if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
 		{
-			n = GetDynamicMapSec_MareWW();
+			n = GetDynamicMapSec_MareWW(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1771,7 +1771,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//City Clara
 		if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
 		{
-			n = GetDynamicMapSec_CityClara();
+			n = GetDynamicMapSec_CityClara(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1795,7 +1795,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//MareW
 		if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
 		{
-			n = GetDynamicMapSec_MareW();
+			n = GetDynamicMapSec_MareW(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1815,7 +1815,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//SRoute18
 		if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
 		{
-			n = GetDynamicMapSec_SRoute18();
+			n = GetDynamicMapSec_SRoute18(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1835,7 +1835,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
         //MareS5
 		if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5))
 		{
-			if (IsMareS5MareTropicum())
+			if (IsMareS5MareTropicum(FALSE))
                 return StringCopy(dest, sMapName_MARE_TROPICVM);
             else
                 return StringCopy(dest, sMapName_ACTA_ECHONA);
@@ -1843,7 +1843,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route4
 		if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
 		{
-			n = GetDynamicMapSec_Route4();
+			n = GetDynamicMapSec_Route4(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1861,7 +1861,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route6
 		if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
 		{
-			n = GetDynamicMapSec_Route6();
+			n = GetDynamicMapSec_Route6(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -1879,7 +1879,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route7
 		if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
 		{
-			n = GetDynamicMapSec_Route7();
+			n = GetDynamicMapSec_Route7(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -1899,7 +1899,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route5
 		if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
 		{
-			n = GetDynamicMapSec_Route5();
+			n = GetDynamicMapSec_Route5(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -1915,7 +1915,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 	  	//Sanjo
 		if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO))
 		{
-			if (IsSanjoSabinaNova())
+			if (IsSanjoSabinaNova(FALSE))
                 return StringCopy(dest, sMapName_SABINA_NOVA);
             else
                 return StringCopy(dest, sMapName_VIA_MAGNA);
@@ -1923,7 +1923,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Doak Town
 		if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN))
 		{
-			if (IsDoakTownRobustica())
+			if (IsDoakTownRobustica(FALSE))
                 return StringCopy(dest, sMapName_ROBVSTICA);
             else
                 return StringCopy(dest, sMapName_VIA_MAGNA);
@@ -1931,7 +1931,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//SRoute19 - Mare Internum or Montes Vigiliae
 		if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19))
 		{
-			if (IsSRoute19MareInternum())
+			if (IsSRoute19MareInternum(FALSE))
                 return StringCopy(dest, sMapName_MARE_INTERNVM);
             else
                 return StringCopy(dest, sMapName_MONTES_VIGILIAE);
@@ -1939,7 +1939,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
         //Route9 - Via Saxosa or Montes Vigiliae
 		if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9))
         {
-            if (IsRoute9ViaSaxosa())
+            if (IsRoute9ViaSaxosa(FALSE))
                 return StringCopy(dest, sMapName_VIA_SAXOSA);
             else
                 return StringCopy(dest, sMapName_MONTES_VIGILIAE);
@@ -1947,7 +1947,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Route16 - Venator Mons or D. Columnaris 
 		if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16))
         {
-            if (IsRoute16VenatorMons())
+            if (IsRoute16VenatorMons(FALSE))
                 return StringCopy(dest, sMapName_VENATOR_MONS);
             else
                 return StringCopy(dest, sMapName_D__COLVMNARIS);
@@ -1955,7 +1955,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Tucson - Via Magna, Oasis, Deseret
 		if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
 		{
-			n = GetDynamicMapSec_Tucson();
+			n = GetDynamicMapSec_Tucson(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -1971,7 +1971,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Pyramids - D Cactorum or Vallis Pyramidis 
 		if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS))
         {
-            if (IsPyramidsDCactorum())
+            if (IsPyramidsDCactorum(FALSE))
                 return StringCopy(dest, sMapName_D__CACTORVM);
             else
                 return StringCopy(dest, sMapName_VALLIS_PYRAMIDIS);
@@ -1979,7 +1979,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 		//Vegas - Peccatum or Via Magna
 		if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS))
         {
-			n = GetDynamicMapSec_Vegas();
+			n = GetDynamicMapSec_Vegas(FALSE);
 			switch (n)
 			{
 				case 1:
@@ -2432,11 +2432,18 @@ void SetFlyDestination(struct RegionMap* regionMap)
 }
 
 //Cornix Custom - Part of a series to determine which part of a map ur on. In this case is Route3 Canelo's Cave or River Delta
-bool32 IsRoute3RiverDelta(void)
+bool32 IsRoute3RiverDelta(bool32 useWarpInfo)
 {
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 	if (
 			(x > 61) || //Furthest East
 			( (x == 61) && (y < 25 || y > 32) ) || //Delta area above and below Cove penninsula
@@ -2462,15 +2469,22 @@ bool32 IsRoute3RiverDelta(void)
 		return FALSE;
 }
 
-u32 GetDynamicMapSec_MareWWW(void) //Obviously not cormplete atm
+u32 GetDynamicMapSec_MareWWW(bool32 useWarpInfo) //Obviously not cormplete atm
 {
 	//0: OOB
 	//1: Mare Occidens
 	//2: River Delta
 	//3: Playa Echona
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//Mare Occidens region
 	if ( 
@@ -2520,7 +2534,7 @@ u32 GetDynamicMapSec_MareWWW(void) //Obviously not cormplete atm
 		return 3;
 }
 
-u32 GetDynamicMapSec_Route17(void)
+u32 GetDynamicMapSec_Route17(bool32 useWarpInfo)
 {
 	//0: OOB
 	//1: Lago Draco
@@ -2533,8 +2547,15 @@ u32 GetDynamicMapSec_Route17(void)
 	//8: Lower Draco West
 	
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//Lago Draco = 1
 	if (
@@ -2835,7 +2856,7 @@ u32 GetDynamicMapSec_Route17(void)
 		return 0;
 }
 
-u32 GetDynamicMapSec_LakeIra(void) 
+u32 GetDynamicMapSec_LakeIra(bool32 useWarpInfo) 
 {
 	//0: OOB
 	//1: Laco Draco
@@ -2843,8 +2864,15 @@ u32 GetDynamicMapSec_LakeIra(void)
 	//3: Salix
 
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 	//Salix
 	if 
 		(
@@ -3005,10 +3033,13 @@ u32 GetDynamicMapSec_LakeIra(void)
 		return 1;
 }
 
-bool32 IsLakeIraSouthUpperDracoWest(void) 
+bool32 IsLakeIraSouthUpperDracoWest(bool32 useWarpInfo) 
 {
 	s16 y;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+        y = sWarpDestination.y;
+    else
+        y = gSaveBlock1Ptr->pos.y;
 
 	if (y < 53)
 		return TRUE;
@@ -3016,11 +3047,18 @@ bool32 IsLakeIraSouthUpperDracoWest(void)
 		return FALSE;
 }
 
-bool32 IsSilvanWoodsNUpperDracoEast(void) 
+bool32 IsSilvanWoodsNUpperDracoEast(bool32 useWarpInfo) 
 {
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 	if 
 		(
 		( y > 64) ||
@@ -3052,15 +3090,22 @@ bool32 IsSilvanWoodsNUpperDracoEast(void)
 		return FALSE;
 }
 
-u32 GetDynamicMapSec_SilvanWoods(void)
+u32 GetDynamicMapSec_SilvanWoods(bool32 useWarpInfo)
 {
 	//0: OOB
 	//1: Silva
 	//2: Dracus Inferior
 	//3: Silva Profuga
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	DebugPrintf("Silvan Woods\nX %d\nY %d", x, y);
 
@@ -3187,7 +3232,7 @@ u32 GetDynamicMapSec_SilvanWoods(void)
 }
 	
 
-u32 GetDynamicMapSec_MareS6(void)
+u32 GetDynamicMapSec_MareS6(bool32 useWarpInfo)
 {
 	//0: OOB
 
@@ -3197,8 +3242,15 @@ u32 GetDynamicMapSec_MareS6(void)
     //4: Playa Echona
 
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	DebugPrintf("MareS6\nX %d\nY %d", x, y);
 
@@ -3295,7 +3347,7 @@ u32 GetDynamicMapSec_MareS6(void)
 		return 3;
 }
 
-u32 GetDynamicMapSec_MareWW(void)
+u32 GetDynamicMapSec_MareWW(bool32 useWarpInfo)
 {
 	//0: OOB
 	//1: River Delta
@@ -3303,8 +3355,15 @@ u32 GetDynamicMapSec_MareWW(void)
 	//3: Playa Echona
 
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//River Delta
 	if 
@@ -3353,7 +3412,7 @@ u32 GetDynamicMapSec_MareWW(void)
 		return 3;
 }
 
-u32 GetDynamicMapSec_CityClara(void)
+u32 GetDynamicMapSec_CityClara(bool32 useWarpInfo)
 {
 	//0: OOB
 	//1: Acta Echona
@@ -3364,8 +3423,15 @@ u32 GetDynamicMapSec_CityClara(void)
 	//6: Delta Draci
 	
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//Deltus Draci
 	if (y > 51 &&  x < 2)
@@ -3389,7 +3455,7 @@ u32 GetDynamicMapSec_CityClara(void)
 		return 5;
 }
 
-u32 GetDynamicMapSec_MareW(void)
+u32 GetDynamicMapSec_MareW(bool32 useWarpInfo)
 {
 	//0: OOB
 	//1: Acta Echona
@@ -3398,8 +3464,15 @@ u32 GetDynamicMapSec_MareW(void)
 	//4: Mare Tropicum
 	
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//Acta Echona
 	if 
@@ -3456,7 +3529,7 @@ u32 GetDynamicMapSec_MareW(void)
 		return 4;
 }
 
-u32 GetDynamicMapSec_SRoute18(void)
+u32 GetDynamicMapSec_SRoute18(bool32 useWarpInfo)
 {
 	//0: OOB
 	//1: Sinus Pacificus
@@ -3465,8 +3538,15 @@ u32 GetDynamicMapSec_SRoute18(void)
 	//4: Mare Internum
 	
 	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//Sinus Pacificus (Top Left)
 	if 
@@ -3513,14 +3593,21 @@ u32 GetDynamicMapSec_SRoute18(void)
 		return 4;
 }
 
-bool32 IsMareS5MareTropicum(void)
+bool32 IsMareS5MareTropicum(bool32 useWarpInfo)
 {
 	//1: Acta Echona
 	//2: Mare Tropicum
 	
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 	
 	//Acta Echona - Top Left
 	if
@@ -3535,7 +3622,7 @@ bool32 IsMareS5MareTropicum(void)
 		return TRUE;
 }
 	
-u32 GetDynamicMapSec_Route4(void)
+u32 GetDynamicMapSec_Route4(bool32 useWarpInfo)
 {	
 
 	//1: Via Fidelium - South of Mountain and Bay
@@ -3543,8 +3630,15 @@ u32 GetDynamicMapSec_Route4(void)
 	//3: Sinus Pacificus - Include most of mount and top and bottom bay beach
 
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
     //Via Fidelium - Bottom
     if (y > 41)
@@ -3574,7 +3668,7 @@ u32 GetDynamicMapSec_Route4(void)
 }
 
 
-u32 GetDynamicMapSec_Route6(void)
+u32 GetDynamicMapSec_Route6(bool32 useWarpInfo)
 {
 
     //1: Via Litoralis
@@ -3582,8 +3676,15 @@ u32 GetDynamicMapSec_Route6(void)
     //3: Sinus Pacificus
     
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 
     //1: Via Litoralis - Top Left maybe bottom Right
@@ -3597,11 +3698,18 @@ u32 GetDynamicMapSec_Route6(void)
         return 3;
 }
 
-u32 GetDynamicMapSec_Route7(void)
+u32 GetDynamicMapSec_Route7(bool32 useWarpInfo)
 {
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
     //1: Via Litoralis
     //2: Mare Internum
@@ -3638,7 +3746,7 @@ u32 GetDynamicMapSec_Route7(void)
         return 5;
 }
 
-u32 GetDynamicMapSec_Route5(void)
+u32 GetDynamicMapSec_Route5(bool32 useWarpInfo)
 {
 
 	//1: Venator Mons
@@ -3646,8 +3754,15 @@ u32 GetDynamicMapSec_Route5(void)
 	//3: Villa Venatorum
 
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	DebugPrintf("Route5\nx: %d\ny: %d\n", x, y);
 
@@ -3667,12 +3782,19 @@ u32 GetDynamicMapSec_Route5(void)
 		return 3;
 }
 
-bool32 IsSanjoSabinaNova(void) 
+bool32 IsSanjoSabinaNova(bool32 useWarpInfo) 
 {
 
    	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	if (x > 26 && y < 17)
 		return FALSE;
@@ -3680,12 +3802,19 @@ bool32 IsSanjoSabinaNova(void)
 		return TRUE;
 }
 
-bool32 IsDoakTownRobustica(void) 
+bool32 IsDoakTownRobustica(bool32 useWarpInfo) 
 {
 
    	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	if ( (y > 15 && y < 25) && (x > 24) )
 		return FALSE;
@@ -3693,12 +3822,19 @@ bool32 IsDoakTownRobustica(void)
 		return TRUE;
 }
 
-bool32 IsSRoute19MareInternum(void) 
+bool32 IsSRoute19MareInternum(bool32 useWarpInfo) 
 {
 
    	s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	if 
 		(
@@ -3719,12 +3855,19 @@ bool32 IsSRoute19MareInternum(void)
 		return TRUE;
 }
 
-bool32 IsRoute9ViaSaxosa(void)
+bool32 IsRoute9ViaSaxosa(bool32 useWarpInfo)
 {
    	
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
     if 
         (
@@ -3736,12 +3879,19 @@ bool32 IsRoute9ViaSaxosa(void)
         return TRUE;
 }
 
-bool32 IsRoute16VenatorMons(void)
+bool32 IsRoute16VenatorMons(bool32 useWarpInfo)
 {
    	
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	if 
 		(
@@ -3784,15 +3934,22 @@ bool32 IsRoute16VenatorMons(void)
 		return TRUE;
 }
 
-u32 GetDynamicMapSec_Tucson(void)
+u32 GetDynamicMapSec_Tucson(bool32 useWarpInfo)
 {
 	//1: Via Magna
 	//2: Oasis
 	//3: Deseret
 
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//Via Magna
 	if 
@@ -3808,12 +3965,19 @@ u32 GetDynamicMapSec_Tucson(void)
 		return 3;
 }
 
-bool32 IsPyramidsDCactorum(void)
+bool32 IsPyramidsDCactorum(bool32 useWarpInfo)
 {
    	
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	if 
 		(
@@ -3832,15 +3996,22 @@ bool32 IsPyramidsDCactorum(void)
         return TRUE;
 }
 
-bool32 GetDynamicMapSec_Vegas(void)
+bool32 GetDynamicMapSec_Vegas(bool32 useWarpInfo)
 {
 
 	//1: Peccatum
 	//2: Via Magna
 	//3: D. Columnaris
     s16 x, y;
-	x = gSaveBlock1Ptr->pos.x;
-	y = gSaveBlock1Ptr->pos.y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
 	//Via Magna
 	if (x > 18 && x < 27 && y > 26)

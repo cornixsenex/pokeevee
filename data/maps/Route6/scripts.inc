@@ -5,7 +5,7 @@ Route6_MapScripts::
 
 Route6_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 11 "data//maps/Route6/scripts.pory"
-	specialvar VAR_RESULT, GetDynamicMapSec_Route6
+	specialvar VAR_RESULT, GetDynamicMapSec_Route6_F
 # 12 "data//maps/Route6/scripts.pory"
 	switch VAR_RESULT
 # 13 "data//maps/Route6/scripts.pory"

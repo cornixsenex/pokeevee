@@ -43,6 +43,8 @@ struct LinkPlayerObjectEvent
 extern struct WarpData gLastUsedWarp;
 extern struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4];
 
+extern struct WarpData sWarpDestination;
+
 extern u16 *gOverworldTilemapBuffer_Bg2;
 extern u16 *gOverworldTilemapBuffer_Bg1;
 extern u16 *gOverworldTilemapBuffer_Bg3;
@@ -102,7 +104,7 @@ void SetFlashLevel(s32 flashLevel);
 u8 GetFlashLevel(void);
 void SetCurrentMapLayout(u16 mapLayoutId);
 void SetObjectEventLoadFlag(u8 var);
-u16 GetLocationMusic(struct WarpData *warp);
+u16 GetLocationMusic(struct WarpData *warp, bool32 isWarp);
 u16 GetCurrLocationDefaultMusic(void);
 u16 GetWarpDestinationMusic(void);
 void Overworld_ResetMapMusic(void);
@@ -162,7 +164,7 @@ u32 DetermineDynamicMapsecValue (void);
 bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection);
 
 //Cornix Custom Dynamic Music system
-u16 GetDynamicMusic(void);
+u16 GetDynamicMusic(bool32 useWarpInfo);
 void TransitionMapMusic(void);
 
 //Cornix Custom Truck Scene

@@ -782,7 +782,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route 3 - Canelos Cove(Marble), River Delta (Wood)
 		if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3))
 		{
-			if (IsRoute3RiverDelta())
+			if (IsRoute3RiverDelta(FALSE))
 				regionMapSectionId = MAPSEC_DELTA_DRACI;
 			else
 				regionMapSectionId = MAPSEC_SINUS_CAMELUS;
@@ -790,7 +790,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
 		{
-			n = GetDynamicMapSec_MareWWW();
+			n = GetDynamicMapSec_MareWWW(FALSE);
 			if (n == 2) 
 				regionMapSectionId = MAPSEC_DELTA_DRACI;
 			else if (n == 1)
@@ -803,7 +803,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route 17
 		if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
 		{
-			n = GetDynamicMapSec_Route17();
+			n = GetDynamicMapSec_Route17(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -840,7 +840,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Lake Ira
 		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
 		{
-			n = GetDynamicMapSec_LakeIra();
+			n = GetDynamicMapSec_LakeIra(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -862,7 +862,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//LakeIraSouth
 		if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH)) 	
 		{
-			if (IsLakeIraSouthUpperDracoWest())
+			if (IsLakeIraSouthUpperDracoWest(FALSE))
 					regionMapSectionId = MAPSEC_UPPER_WEST_DRAKE;
 			else  // Default part of map => Cove
 					regionMapSectionId = MAPSEC_LOWER_WEST_DRAKE;
@@ -870,7 +870,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//SilvanWoodsN
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N)) 	
 		{		
-			if (IsSilvanWoodsNUpperDracoEast())
+			if (IsSilvanWoodsNUpperDracoEast(FALSE))
 					regionMapSectionId = MAPSEC_UPPER_EAST_DRAKE;
 			else  // Default part of map => Cove
 					regionMapSectionId = MAPSEC_LOWER_EAST_DRAKE;
@@ -878,7 +878,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Silvan Woods
 		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
 		{
-			n = GetDynamicMapSec_SilvanWoods();
+			n = GetDynamicMapSec_SilvanWoods(FALSE);
 			DebugPrintf ("Dynamic BG Theme, Silvan Woods\nn: %d", n);
 			switch (n) {
 				case 0:
@@ -900,7 +900,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//MareS6
 		if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
 		{
-			n = GetDynamicMapSec_MareS6();
+			n = GetDynamicMapSec_MareS6(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -924,7 +924,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//MareWW 
 		if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
 		{
-			n = GetDynamicMapSec_MareWW();
+			n = GetDynamicMapSec_MareWW(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -945,7 +945,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//CityClara 
 		if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
 		{
-			n = GetDynamicMapSec_CityClara();
+			n = GetDynamicMapSec_CityClara(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -972,7 +972,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//MareW
 		if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
 		{
-			n = GetDynamicMapSec_MareW();
+			n = GetDynamicMapSec_MareW(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -996,7 +996,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//SRoute18
 		if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
 		{
-			n = GetDynamicMapSec_SRoute18();
+			n = GetDynamicMapSec_SRoute18(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -1020,7 +1020,7 @@ static void LoadMapNamePopUpWindowBg(void)
         //MareS5
 		if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5))
 		{
-			if (IsMareS5MareTropicum())
+			if (IsMareS5MareTropicum(FALSE))
 				regionMapSectionId = MAPSEC_MARE_TROPICUM;
 			else
 				regionMapSectionId = MAPSEC_ACTA_ECHONA;
@@ -1028,7 +1028,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route4
 		if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
 		{
-			n = GetDynamicMapSec_Route4();
+			n = GetDynamicMapSec_Route4(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -1049,7 +1049,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route6
 		if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
 		{
-			n = GetDynamicMapSec_Route6();
+			n = GetDynamicMapSec_Route6(FALSE);
 			switch (n) {
 				case 0:
 					regionMapSectionId = MAPSEC_DYNAMIC;
@@ -1070,7 +1070,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route7
 		if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
 		{
-			n = GetDynamicMapSec_Route7();
+			n = GetDynamicMapSec_Route7(FALSE);
 			switch (n) {
 				//Via Litoralis
 				case 1:
@@ -1099,7 +1099,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route5
 		if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
 		{
-			n = GetDynamicMapSec_Route5();
+			n = GetDynamicMapSec_Route5(FALSE);
 			switch (n) {
 				//Venator Mons
 				case 1:
@@ -1121,7 +1121,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO)) 
 		{
 			//Sabina Nova or Via Magna
-			if (IsSanjoSabinaNova())
+			if (IsSanjoSabinaNova(FALSE))
 				regionMapSectionId = MAPSEC_SABINA_NOVA;
 			else 
 				regionMapSectionId = MAPSEC_VIA_MAGNA;
@@ -1130,7 +1130,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
 		{
 			//Robustica or Via Magna
-			if (IsDoakTownRobustica())
+			if (IsDoakTownRobustica(FALSE))
 				regionMapSectionId = MAPSEC_ROBUSTICA;
 			else 
 				regionMapSectionId = MAPSEC_VIA_MAGNA;
@@ -1139,7 +1139,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
 		{
 			//Mare Internum or Montes Vigiliae
-			if (IsSRoute19MareInternum())
+			if (IsSRoute19MareInternum(FALSE))
 				regionMapSectionId = MAPSEC_MARE_INTERNUM;
 			else 
 				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
@@ -1147,7 +1147,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route9 - Via Saxosa or Montes Vigiliae
 		if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9)) 
 		{
-			if (IsRoute9ViaSaxosa())
+			if (IsRoute9ViaSaxosa(FALSE))
 				regionMapSectionId = MAPSEC_VIA_SAXOSA;
 			else 
 				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
@@ -1155,7 +1155,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route16 - Venator Mons or Cacnorum 
 		if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16)) 
 		{
-			if (IsRoute16VenatorMons())
+			if (IsRoute16VenatorMons(FALSE))
 				regionMapSectionId = MAPSEC_VENATOR_MONS;
 			else 
 				regionMapSectionId = MAPSEC_D_COLUMNARIS;
@@ -1163,7 +1163,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Tucson
 		if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
 		{
-			n = GetDynamicMapSec_Tucson();
+			n = GetDynamicMapSec_Tucson(FALSE);
 			switch (n) {
 				//Via Magan
 				case 1:
@@ -1184,7 +1184,7 @@ static void LoadMapNamePopUpWindowBg(void)
         //Pyramids - D Cactorum or Vallis Pyramidis
         if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS)) 
 		{
-			if (IsPyramidsDCactorum())
+			if (IsPyramidsDCactorum(FALSE))
 				regionMapSectionId = MAPSEC_D_CACTORUM;
 			else 
 				regionMapSectionId = MAPSEC_VALLIS_PYRAMIDIS;
@@ -1192,7 +1192,7 @@ static void LoadMapNamePopUpWindowBg(void)
         //Vegas - Peccatum or Via Magna
         if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
 		{
-			n = GetDynamicMapSec_Vegas();
+			n = GetDynamicMapSec_Vegas(FALSE);
 			switch (n) {
 				case 1:
 					regionMapSectionId = MAPSEC_PECCATUM;

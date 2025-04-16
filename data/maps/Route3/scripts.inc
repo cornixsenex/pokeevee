@@ -5,7 +5,7 @@ Route3_MapScripts::
 
 Route3_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 22 "data//maps/Route3/scripts.pory"
-	specialvar VAR_RESULT, IsRoute3RiverDelta
+	specialvar VAR_RESULT, IsRoute3RiverDelta_F
 # 23 "data//maps/Route3/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route3_MapScripts_MAP_SCRIPT_ON_TRANSITION_2

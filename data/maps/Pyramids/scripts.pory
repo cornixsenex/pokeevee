@@ -12,7 +12,7 @@ mapscripts Pyramids_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 
         //Handle Dynamic Map
-        specialvar (VAR_RESULT, IsPyramidsDCactorum)
+        specialvar (VAR_RESULT, IsPyramidsDCactorum_F)
         if (var(VAR_RESULT) == TRUE) {
             setvar (VAR_TEMP_5, 1)
         } else {

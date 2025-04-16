@@ -5,7 +5,7 @@ Route4_MapScripts::
 
 Route4_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 12 "data//maps/Route4/scripts.pory"
-	specialvar VAR_RESULT, GetDynamicMapSec_Route4
+	specialvar VAR_RESULT, GetDynamicMapSec_Route4_F
 # 13 "data//maps/Route4/scripts.pory"
 	switch VAR_RESULT
 # 14 "data//maps/Route4/scripts.pory"

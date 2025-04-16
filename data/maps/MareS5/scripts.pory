@@ -11,7 +11,7 @@ mapscripts MareS5_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 
         //Handle Dynamic Map Trigger Setup
-        specialvar (VAR_RESULT, IsMareS5MareTropicum)
+        specialvar (VAR_RESULT, IsMareS5MareTropicum_F)
         if (var(VAR_RESULT) == TRUE) {
             setvar (VAR_TEMP_5, 1)
         } else {

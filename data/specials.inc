@@ -596,23 +596,23 @@ gSpecials::
 	def_special DoShinyMareepBattle
 	def_special IsShinyMareepInParty
 	def_special ScriptGetPartyMonIsShiny
-	def_special IsRoute3RiverDelta
-	def_special GetDynamicMapSec_MareWWW
-	def_special GetDynamicMapSec_Route17
-	def_special GetDynamicMapSec_LakeIra
-	def_special GetDynamicMapSec_SilvanWoods
-	def_special GetDynamicMapSec_MareS6
-	def_special GetDynamicMapSec_MareWW
-	def_special GetDynamicMapSec_CityClara
-	def_special GetDynamicMapSec_MareW
-	def_special GetDynamicMapSec_SRoute18
-	def_special IsMareS5MareTropicum
-	def_special GetDynamicMapSec_Route4
-	def_special GetDynamicMapSec_Route6
-	def_special GetDynamicMapSec_Route7
+	def_special IsRoute3RiverDelta_F
+	def_special GetDynamicMapSec_MareWWW_F
+	def_special GetDynamicMapSec_Route17_F
+	def_special GetDynamicMapSec_LakeIra_F
+	def_special GetDynamicMapSec_SilvanWoods_F
+	def_special GetDynamicMapSec_MareS6_F
+	def_special GetDynamicMapSec_MareWW_F
+	def_special GetDynamicMapSec_CityClara_F
+	def_special GetDynamicMapSec_MareW_F
+	def_special GetDynamicMapSec_SRoute18_F
+	def_special IsMareS5MareTropicum_F
+	def_special GetDynamicMapSec_Route4_F
+	def_special GetDynamicMapSec_Route6_F
+	def_special GetDynamicMapSec_Route7_F
 	def_special TransitionMapMusic
     def_special DoPeccadumTruckScene
-	def_special IsRoute16VenatorMons
+	def_special IsRoute16VenatorMons_F
 	def_special BlueRouletteSpin
-	def_special GetDynamicMapSec_Tucson
-    def_special IsPyramidsDCactorum
+	def_special GetDynamicMapSec_Tucson_F
+    def_special IsPyramidsDCactorum_F

@@ -5,7 +5,7 @@ MareWW_MapScripts::
 
 MareWW_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 12 "data//maps/MareWW/scripts.pory"
-	specialvar VAR_RESULT, GetDynamicMapSec_MareWW
+	specialvar VAR_RESULT, GetDynamicMapSec_MareWW_F
 # 13 "data//maps/MareWW/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq MareWW_MapScripts_MAP_SCRIPT_ON_TRANSITION_1

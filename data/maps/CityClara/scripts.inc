@@ -7,7 +7,7 @@ CityClara_MapScripts::
 
 CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 42 "data//maps/CityClara/scripts.pory"
-	specialvar VAR_RESULT, GetDynamicMapSec_CityClara
+	specialvar VAR_RESULT, GetDynamicMapSec_CityClara_F
 # 43 "data//maps/CityClara/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq CityClara_MapScripts_MAP_SCRIPT_ON_TRANSITION_2

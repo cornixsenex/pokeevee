@@ -10,7 +10,7 @@ mapscripts Route16_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		
 		//Handle Dynamic Map
-		specialvar (VAR_RESULT, IsRoute16VenatorMons)
+		specialvar (VAR_RESULT, IsRoute16VenatorMons_F)
 		if (var(VAR_RESULT) == TRUE) {
 			setvar (VAR_TEMP_5, 1)
 		} else  {

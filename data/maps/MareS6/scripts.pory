@@ -14,7 +14,7 @@ mapscripts MareS6_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
 		//Handle Dynamic Map
-		specialvar (VAR_RESULT, GetDynamicMapSec_MareS6)
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareS6_F)
 		switch (var(VAR_RESULT)) {
 			case 1:
 				setvar (VAR_TEMP_5, 1)

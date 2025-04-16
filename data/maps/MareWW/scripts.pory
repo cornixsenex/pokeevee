@@ -9,7 +9,7 @@
 mapscripts MareWW_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		specialvar (VAR_RESULT, GetDynamicMapSec_MareWW)
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareWW_F)
 		if (var(VAR_RESULT) == 1) {
 			setvar (VAR_TEMP_5, 1)
 		} elif (var(VAR_RESULT) == 2) {

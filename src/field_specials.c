@@ -5944,3 +5944,92 @@ void DoPeccadumTruckScene(void)
     SetMainCallback2(CB2_PeccadumTruckScene);
 }
 
+//Field Specials for Dynamic Maps - just pass FALSE to the actual functions because from field special will always NOT be a warp destination
+
+bool32 IsRoute3RiverDelta_F(void)
+{
+    return IsRoute3RiverDelta(FALSE);
+}
+
+u32 GetDynamicMapSec_MareWWW_F(void)
+{
+    return GetDynamicMapSec_MareWWW(FALSE);
+}
+
+u32 GetDynamicMapSec_Route17_F(void)
+{
+    return GetDynamicMapSec_Route17(FALSE);
+}
+
+u32 GetDynamicMapSec_LakeIra_F(void)
+{
+    return GetDynamicMapSec_LakeIra(FALSE);
+}
+
+u32 GetDynamicMapSec_SilvanWoods_F(void)
+{
+    return GetDynamicMapSec_SilvanWoods(FALSE);
+}
+
+u32 GetDynamicMapSec_MareS6_F(void)
+{
+    return GetDynamicMapSec_MareS6(FALSE);
+}
+
+u32 GetDynamicMapSec_MareWW_F(void)
+{
+    return GetDynamicMapSec_MareWW(FALSE);
+}
+
+u32 GetDynamicMapSec_CityClara_F(void)
+{
+    return GetDynamicMapSec_CityClara(FALSE);
+}
+
+u32 GetDynamicMapSec_MareW_F(void)
+{
+    return GetDynamicMapSec_MareW(FALSE);
+}
+
+u32 GetDynamicMapSec_SRoute18_F(void)
+{
+    return GetDynamicMapSec_SRoute18(FALSE);
+}
+
+bool32 IsMareS5MareTropicum_F(void)
+{
+    return IsMareS5MareTropicum(FALSE);
+}
+
+u32 GetDynamicMapSec_Route4_F(void)
+{
+    return GetDynamicMapSec_Route4(FALSE);
+}
+
+u32 GetDynamicMapSec_Route6_F(void)
+{
+    return GetDynamicMapSec_Route6(FALSE);
+}
+
+u32 GetDynamicMapSec_Route7_F(void)
+{
+    return GetDynamicMapSec_Route7(FALSE);
+}
+
+bool32 IsRoute16VenatorMons_F(void)
+{
+    return IsRoute16VenatorMons(FALSE);
+}
+
+u32 GetDynamicMapSec_Tucson_F(void)
+{
+    return GetDynamicMapSec_Tucson(FALSE);
+}
+
+bool32 IsPyramidsDCactorum_F(void)
+{
+    return IsPyramidsDCactorum(FALSE);
+}
+
+
+

@@ -9,7 +9,7 @@ mapscripts MareWWW_MapScripts {
 		//1 == Mare Occidens
 		//2 == River Delta
 		//3 == Playa Echona
-		specialvar (VAR_RESULT, GetDynamicMapSec_MareWWW)
+		specialvar (VAR_RESULT, GetDynamicMapSec_MareWWW_F)
 		if (var(VAR_RESULT) == 2) {
 			setvar (VAR_TEMP_5, 2)
 		} elif (var(VAR_RESULT) == 1){

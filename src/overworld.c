@@ -199,7 +199,6 @@ COMMON_DATA u8 gFieldLinkPlayerCount = 0;
 
 EWRAM_DATA static u8 sObjectEventLoadFlag = 0;
 EWRAM_DATA struct WarpData gLastUsedWarp = {0};
-EWRAM_DATA static struct WarpData sWarpDestination = {0};  // new warp position
 EWRAM_DATA static struct WarpData sFixedDiveWarp = {0};
 EWRAM_DATA static struct WarpData sFixedHoleWarp = {0};
 EWRAM_DATA static u16 sLastMapSectionId = 0;
@@ -362,6 +361,9 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
     // TRUE:
     MovementStatusHandler_TryAdvanceScript,
 };
+
+//Note cornix did this to access sWarpDestination from dynamic region_map.c funcs
+struct WarpData sWarpDestination = {0};  // init new warp position
 
 // code
 void DoWhiteOut(void)
@@ -1302,7 +1304,7 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
-u16 GetLocationMusic(struct WarpData *warp)
+u16 GetLocationMusic(struct WarpData *warp, bool32 isWarp)
 {
     if (NoMusicInSotopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
@@ -1312,8 +1314,14 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
-	else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC)
-		return GetDynamicMusic();
+	else if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC && (!isWarp))
+    {
+        DebugPrintf("GetLocationMusic is DYNAMIC");
+        if (isWarp)
+            return GetDynamicMusic(TRUE);
+        else 
+            return GetDynamicMusic(FALSE);
+    }
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
@@ -1322,13 +1330,15 @@ u16 GetCurrLocationDefaultMusic(void)
 {
     u16 music;
 
+    DebugPrintf("GetCurrLocationDefaultMusic()");
+
     // Play the desert music only when the sandstorm is active on Route 111.
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)
      && GetSavedWeather() == WEATHER_SANDSTORM)
         return MUS_DESERT;
 
-    music = GetLocationMusic(&gSaveBlock1Ptr->location);
+    music = GetLocationMusic(&gSaveBlock1Ptr->location, FALSE);
     if (music != MUS_ROUTE118)
     {
         return music;
@@ -1345,11 +1355,12 @@ u16 GetCurrLocationDefaultMusic(void)
 //Cornix touched to hack dynamic music system
 u16 GetWarpDestinationMusic(void)
 {
-    u16 music = GetLocationMusic(&sWarpDestination);
+    u16 music = GetLocationMusic(&sWarpDestination, TRUE);
 	//Handle Dynamic Map Music
 	DebugPrintf("GetWarpDestinationMusic()\n");
 	if (music == MUS_DYNAMIC) 
-		music = GetDynamicMusic();
+		music = GetDynamicMusic(TRUE);
+	DebugPrintf("Warp Dest Music: %d", music);
 	return music;
 }
 
@@ -1388,6 +1399,7 @@ void Overworld_ClearSavedMusic(void)
 
 void TransitionMapMusic(void)
 {
+    DebugPrintf("TransitionMapMusic()");
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE)
     {
         u16 newMusic = GetWarpDestinationMusic();
@@ -1400,6 +1412,7 @@ void TransitionMapMusic(void)
         //    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         //        newMusic = MUS_SURF;
         //}
+        DebugPrintf("TransitionMapMusic\nnewMusic: %d\ncurrentMusic: %d", newMusic, currentMusic);
         if (newMusic != currentMusic)
         {
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
@@ -1435,8 +1448,10 @@ u8 GetMapMusicFadeoutSpeed(void)
 
 void TryFadeOutOldMapMusic(void)
 {
+    DebugPrintf("TryFadeOutOldMapMusic()");
     u16 currentMusic = GetCurrentMapMusic();
     u16 warpMusic = GetWarpDestinationMusic();
+    DebugPrintf("TryFadeOutOldMapMusic - \ncurrentMusic: %d\nwarpMusic: %d\n", currentMusic, warpMusic);
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
         if (currentMusic == MUS_SURF
@@ -3713,7 +3728,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Route3 - Cove, Delta, River
 	if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 	{
-		if (IsRoute3RiverDelta())
+		if (IsRoute3RiverDelta(FALSE))
 			return MAPSEC_DELTA_DRACI;
 		else //Everywhere else
 			return MAPSEC_SINUS_CAMELUS;
@@ -3721,7 +3736,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//MareWWW - Mare Occidens or River Delta
 	if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW)) 
 	{
-		n = GetDynamicMapSec_MareWWW();
+		n = GetDynamicMapSec_MareWWW(FALSE);
 		DebugPrintf("\nn: %d\n", n);
 		switch (n) {
 			case 0:
@@ -3739,7 +3754,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Route17 - 8 different locations :/
 	if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
 	{
-		n = GetDynamicMapSec_Route17();
+		n = GetDynamicMapSec_Route17(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3766,7 +3781,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Lake Ira - Laco, Shore, Salix
 	if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
 	{
-		n = GetDynamicMapSec_LakeIra();
+		n = GetDynamicMapSec_LakeIra(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3783,7 +3798,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//LakeIraSouth - Upper Draco West, Lower Draco West
 	if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH))
 	{
-		if (IsLakeIraSouthUpperDracoWest())
+		if (IsLakeIraSouthUpperDracoWest(FALSE))
 			return MAPSEC_UPPER_WEST_DRAKE;
 		else
 			return MAPSEC_LOWER_WEST_DRAKE;
@@ -3791,7 +3806,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//SilvanWoodsN
 	if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N))
 	{
-		if (IsSilvanWoodsNUpperDracoEast())
+		if (IsSilvanWoodsNUpperDracoEast(FALSE))
 			return MAPSEC_UPPER_EAST_DRAKE;
 		else 
 			return MAPSEC_LOWER_EAST_DRAKE;
@@ -3799,7 +3814,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Silvan Woods
 	if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
 	{
-		n = GetDynamicMapSec_SilvanWoods();
+		n = GetDynamicMapSec_SilvanWoods(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3816,7 +3831,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//MareS6
 	if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
 	{
-		n = GetDynamicMapSec_MareS6();
+		n = GetDynamicMapSec_MareS6(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3833,7 +3848,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//MareWW
 	if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
 	{
-		n = GetDynamicMapSec_MareWW();
+		n = GetDynamicMapSec_MareWW(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3850,7 +3865,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//CityClara
 	if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
 	{
-		n = GetDynamicMapSec_CityClara();
+		n = GetDynamicMapSec_CityClara(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3871,7 +3886,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//MareW
 	if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
 	{
-		n = GetDynamicMapSec_MareW();
+		n = GetDynamicMapSec_MareW(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3890,7 +3905,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//SRoute18
 	if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
 	{
-		n = GetDynamicMapSec_SRoute18();
+		n = GetDynamicMapSec_SRoute18(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3909,7 +3924,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
     //MareS5 - Mare Tropicum or Acta Echona
 	if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5)) 
 	{
-		if (IsMareS5MareTropicum())
+		if (IsMareS5MareTropicum(FALSE))
 			return MAPSEC_MARE_TROPICUM;
 		else //Everywhere else
 			return MAPSEC_ACTA_ECHONA;
@@ -3917,7 +3932,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Route4
 	if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
 	{
-		n = GetDynamicMapSec_Route4();
+		n = GetDynamicMapSec_Route4(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3934,7 +3949,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Route6
 	if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
 	{
-		n = GetDynamicMapSec_Route6();
+		n = GetDynamicMapSec_Route6(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -3951,7 +3966,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Route7
 	if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
 	{
-		n = GetDynamicMapSec_Route7();
+		n = GetDynamicMapSec_Route7(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_VIA_LITORALIS;
@@ -3970,7 +3985,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Route5
 	if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
 	{
-		n = GetDynamicMapSec_Route5();
+		n = GetDynamicMapSec_Route5(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_VENATOR_MONS;
@@ -3985,7 +4000,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Sanjo - Sabina Nova or Via Magna
 	if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO)) 
 	{
-		if (IsSanjoSabinaNova())
+		if (IsSanjoSabinaNova(FALSE))
 			return MAPSEC_SABINA_NOVA;
 		else 
 			return MAPSEC_VIA_MAGNA;
@@ -3993,7 +4008,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//DoakTown - Robustica or Via Magna
 	if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
 	{
-		if (IsDoakTownRobustica())
+		if (IsDoakTownRobustica(FALSE))
 			return MAPSEC_ROBUSTICA;
 		else 
 			return MAPSEC_VIA_MAGNA;
@@ -4001,7 +4016,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//SRoute19 - Mare Internum or Montes Vigiliae
 	if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
 	{
-		if (IsSRoute19MareInternum())
+		if (IsSRoute19MareInternum(FALSE))
 			return MAPSEC_MARE_INTERNUM;
 		else 
 			return MAPSEC_MONTES_VIGILIAE;
@@ -4009,7 +4024,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
     //Route9 - Via Saxosa or Montes Vigiliae
 	if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9)) 
 	{
-		if (IsRoute9ViaSaxosa())
+		if (IsRoute9ViaSaxosa(FALSE))
 			return MAPSEC_VIA_SAXOSA;
 		else 
 			return MAPSEC_MONTES_VIGILIAE;
@@ -4017,7 +4032,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Route16 - Venator Mons or Cacnorum
 	if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16)) 
 	{
-		if (IsRoute16VenatorMons())
+		if (IsRoute16VenatorMons(FALSE))
 			return MAPSEC_VENATOR_MONS;
 		else 
 			return MAPSEC_D_COLUMNARIS;
@@ -4025,7 +4040,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Tucson - Deseret, Oasis, Via Magna
 	if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
 	{
-		n = GetDynamicMapSec_Tucson();
+		n = GetDynamicMapSec_Tucson(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_VIA_MAGNA;
@@ -4040,7 +4055,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Pyramids - DCactorum or Vallis Pyramids
 	if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS)) 
 	{
-		if (IsPyramidsDCactorum())
+		if (IsPyramidsDCactorum(FALSE))
 			return MAPSEC_D_CACTORUM;
 		else 
 			return MAPSEC_VALLIS_PYRAMIDIS;
@@ -4048,7 +4063,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//Vegas - Peccatum or Via Magna
 	if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
 	{
-		n = GetDynamicMapSec_Vegas();
+		n = GetDynamicMapSec_Vegas(FALSE);
 		switch (n) {
 			case 1:
 				return MAPSEC_PECCATUM;
@@ -4073,21 +4088,30 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 
 }
 
-u16 GetDynamicMusic(void) 
+u16 GetDynamicMusic(bool32 useWarpInfo) 
 {
 	s32 mapGroup, mapNum;
 	u32 n;
 	//Determine which map 
 	//then determine which "map" to return 
-	
-	mapGroup = gSaveBlock1Ptr->location.mapGroup;
-	mapNum   = gSaveBlock1Ptr->location.mapNum;	
 
-	//Route3 - Cove, Delta, River
+    if (useWarpInfo)
+    {
+        mapGroup = sWarpDestination.mapGroup;
+        mapNum = sWarpDestination.mapNum;
+    }
+    else {
+        mapGroup = gSaveBlock1Ptr->location.mapGroup;
+        mapNum   = gSaveBlock1Ptr->location.mapNum;	
+    }
+
+    DebugPrintf("GetDynamicMusic()");
+	
+    //Route3 - Cove, Delta, River
 	if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3)) 
 	{
 		//Delta Draci
-		if (IsRoute3RiverDelta())
+		if (IsRoute3RiverDelta(useWarpInfo))
 			return MUS_RG_ROUTE1;
 		else //Sinus Camelus
 			return MUS_ROUTE104;
@@ -4095,7 +4119,7 @@ u16 GetDynamicMusic(void)
 	//MareWWW - Mare Occidens or River Delta
 	if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW)) 
 	{
-		n = GetDynamicMapSec_MareWWW();
+		n = GetDynamicMapSec_MareWWW(useWarpInfo);
 		switch (n) {
 			case 0:
 				return MUS_CANTINA;
@@ -4115,7 +4139,7 @@ u16 GetDynamicMusic(void)
 	//Route17 - 8 different locations :/
 	if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
 	{
-		n = GetDynamicMapSec_Route17();
+		n = GetDynamicMapSec_Route17(useWarpInfo);
 		switch (n) {
 			//fallback
 			case 0:
@@ -4152,7 +4176,7 @@ u16 GetDynamicMusic(void)
 	//Lake Ira - Laco, Shore, Salix
 	if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
 	{
-		n = GetDynamicMapSec_LakeIra();
+		n = GetDynamicMapSec_LakeIra(useWarpInfo);
 		switch (n) {
 			//fallback
 			case 0:
@@ -4180,7 +4204,7 @@ u16 GetDynamicMusic(void)
 	//Silvan Woods
 	if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
 	{
-		n = GetDynamicMapSec_SilvanWoods();
+		n = GetDynamicMapSec_SilvanWoods(useWarpInfo);
 		switch (n) {
 			//fallback
 			case 0:
@@ -4202,7 +4226,7 @@ u16 GetDynamicMusic(void)
 	//MareS6
 	if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
 	{
-		n = GetDynamicMapSec_MareS6();
+		n = GetDynamicMapSec_MareS6(useWarpInfo);
 		switch (n) {
 			//fallback
 			case 0:
@@ -4224,7 +4248,7 @@ u16 GetDynamicMusic(void)
 	//MareWW
 	if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
 	{
-		n = GetDynamicMapSec_MareWW();
+		n = GetDynamicMapSec_MareWW(useWarpInfo);
 		switch (n) {
 			//fallback
 			case 0:
@@ -4246,7 +4270,7 @@ u16 GetDynamicMusic(void)
 	//CityClara
 	if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
 	{
-		n = GetDynamicMapSec_CityClara();
+		n = GetDynamicMapSec_CityClara(useWarpInfo);
 		switch (n) {
 			//fallback
 			case 0:
@@ -4274,7 +4298,7 @@ u16 GetDynamicMusic(void)
 	//MareW
 	if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
 	{
-		n = GetDynamicMapSec_MareW();
+		n = GetDynamicMapSec_MareW(useWarpInfo);
 		switch (n) {
 			//Acta Echona
 			case 1:
@@ -4296,7 +4320,7 @@ u16 GetDynamicMusic(void)
 	//SRoute18
 	if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
 	{
-		n = GetDynamicMapSec_SRoute18();
+		n = GetDynamicMapSec_SRoute18(useWarpInfo);
 		switch (n) {
 			//Sinus Pacificus
 			case 1:
@@ -4319,7 +4343,7 @@ u16 GetDynamicMusic(void)
 	if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5)) 
 	{
         //Mare Tropicum
-		if (IsMareS5MareTropicum())
+		if (IsMareS5MareTropicum(useWarpInfo))
 			return MUS_SURF;
 		else //Everywhere else = Acta Echona
 			return MUS_RG_SS_ANNE;
@@ -4327,7 +4351,7 @@ u16 GetDynamicMusic(void)
 	//Route4
 	if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
 	{
-		n = GetDynamicMapSec_Route4();
+		n = GetDynamicMapSec_Route4(useWarpInfo);
 		switch (n) {
             //Via Fidelium
 			case 1:
@@ -4346,7 +4370,7 @@ u16 GetDynamicMusic(void)
 	//Route6
 	if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
 	{
-		n = GetDynamicMapSec_Route6();
+		n = GetDynamicMapSec_Route6(useWarpInfo);
 		switch (n) {
             //Via Litoralis
 			case 1:
@@ -4365,7 +4389,7 @@ u16 GetDynamicMusic(void)
 	//Route7
 	if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
 	{
-		n = GetDynamicMapSec_Route7();
+		n = GetDynamicMapSec_Route7(useWarpInfo);
 		switch (n) {
             //Via Litoralis
 			case 1:
@@ -4389,7 +4413,7 @@ u16 GetDynamicMusic(void)
 	//Route5
 	if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
 	{
-		n = GetDynamicMapSec_Route5();
+		n = GetDynamicMapSec_Route5(useWarpInfo);
 		switch (n) {
 			//Venator Mons
 			case 1:
@@ -4408,7 +4432,7 @@ u16 GetDynamicMusic(void)
 	if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO)) 
 	{
 		//Sabina Nova or Via Magna
-		if (IsSanjoSabinaNova())
+		if (IsSanjoSabinaNova(useWarpInfo))
 			return MUS_RG_SEVII_67;
 		else 
 			return MUS_RG_CYCLING;
@@ -4417,7 +4441,7 @@ u16 GetDynamicMusic(void)
 	if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
 	{
 		//Robustica or Via Magna
-		if (IsDoakTownRobustica())
+		if (IsDoakTownRobustica(useWarpInfo))
 			return MUS_RG_PEWTER;
 		else 
 			return MUS_RG_CYCLING;
@@ -4426,7 +4450,7 @@ u16 GetDynamicMusic(void)
 	if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
 	{
 		//Mare Internum or Montes Vigiliae
-		if (IsSRoute19MareInternum())
+		if (IsSRoute19MareInternum(useWarpInfo))
 			return MUS_DEWFORD;
 		else 
 			return MUS_B_FRONTIER;
@@ -4434,7 +4458,7 @@ u16 GetDynamicMusic(void)
     //Route9 - Via Saxosa or Montes Vigiliae
 	if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9)) 
 	{
-		if (IsRoute9ViaSaxosa())
+		if (IsRoute9ViaSaxosa(useWarpInfo))
 			return MUS_ROUTE119;
 		else 
 			return MUS_B_FRONTIER;
@@ -4442,7 +4466,7 @@ u16 GetDynamicMusic(void)
 	//Route16 - Venator Mons or Cacnorum 
 	if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16)) 
 	{
-		if (IsRoute16VenatorMons())
+		if (IsRoute16VenatorMons(useWarpInfo))
 			return MUS_ROUTE119;
 		else 
 			return MUS_DESERT;
@@ -4450,7 +4474,7 @@ u16 GetDynamicMusic(void)
 	//Route5
 	if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
 	{
-		n = GetDynamicMapSec_Tucson();
+		n = GetDynamicMapSec_Tucson(useWarpInfo);
 		switch (n) {
 			//Via Magna
 			case 1:
@@ -4468,7 +4492,7 @@ u16 GetDynamicMusic(void)
     //Pyramids - DCactorum or Vallis Pyramidis
 	if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS)) 
 	{
-		if (IsPyramidsDCactorum())
+		if (IsPyramidsDCactorum(useWarpInfo))
 			return MUS_DESERT;
 		else 
 			return MUS_B_PYRAMID;
@@ -4476,7 +4500,7 @@ u16 GetDynamicMusic(void)
 	//Vegas - Peccatum or Via Magna
 	if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
 	{
-		n = GetDynamicMapSec_Vegas();
+		n = GetDynamicMapSec_Vegas(useWarpInfo);
 		switch (n) {
 			//Peccatum
 			case 1:
@@ -4494,7 +4518,10 @@ u16 GetDynamicMusic(void)
 
 	//Default SHOULD NEVER BE REACHED
 	else 
+    {
+        DebugPrintf("Dynamic Music returning DEFAULT!");
 		return MUS_CANTINA;
+    }
 }
 
 bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)

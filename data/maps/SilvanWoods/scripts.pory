@@ -27,7 +27,8 @@ mapscripts SilvanWoods_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
 		//Handle Dynamic Map
-		specialvar (VAR_RESULT, GetDynamicMapSec_SilvanWoods)
+		specialvar (VAR_RESULT, GetDynamicMapSec_SilvanWoods_F)
+
 		switch (var(VAR_RESULT)) {
 			case 1:
 				setvar (VAR_TEMP_5, 1)

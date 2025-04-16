@@ -5,7 +5,7 @@ SRoute18_MapScripts::
 
 SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 12 "data//maps/SRoute18/scripts.pory"
-	specialvar VAR_RESULT, GetDynamicMapSec_SRoute18
+	specialvar VAR_RESULT, GetDynamicMapSec_SRoute18_F
 # 13 "data//maps/SRoute18/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq SRoute18_MapScripts_MAP_SCRIPT_ON_TRANSITION_1

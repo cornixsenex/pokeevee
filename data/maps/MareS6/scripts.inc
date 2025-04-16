@@ -5,7 +5,7 @@ MareS6_MapScripts::
 
 MareS6_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 17 "data//maps/MareS6/scripts.pory"
-	specialvar VAR_RESULT, GetDynamicMapSec_MareS6
+	specialvar VAR_RESULT, GetDynamicMapSec_MareS6_F
 # 18 "data//maps/MareS6/scripts.pory"
 	switch VAR_RESULT
 # 19 "data//maps/MareS6/scripts.pory"

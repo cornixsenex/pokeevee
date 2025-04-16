@@ -15,7 +15,7 @@
 mapscripts Route17_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		specialvar (VAR_RESULT, GetDynamicMapSec_Route17)
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route17_F)
 		switch (var(VAR_RESULT)) {
 			case 1:
 				setvar (VAR_TEMP_5, 1)

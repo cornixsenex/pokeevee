@@ -11,7 +11,7 @@ MareS5_MapScripts::
 
 MareS5_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 14 "data//maps/MareS5/scripts.pory"
-	specialvar VAR_RESULT, IsMareS5MareTropicum
+	specialvar VAR_RESULT, IsMareS5MareTropicum_F
 # 15 "data//maps/MareS5/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MareS5_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
