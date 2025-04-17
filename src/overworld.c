@@ -4501,6 +4501,7 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 	if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
 	{
 		n = GetDynamicMapSec_Vegas(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_Vegas returned: %d\n", n);
 		switch (n) {
 			//Peccatum
 			case 1:
@@ -4510,7 +4511,7 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_RG_CYCLING;
 		    //D Columnaris
 			case 3:
-				return MUS_RUSTBORO; 
+				return MUS_DESERT; 
 			default:
 				return MUS_DESERT;
 		}

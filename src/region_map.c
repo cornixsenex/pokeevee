@@ -4013,6 +4013,8 @@ bool32 GetDynamicMapSec_Vegas(bool32 useWarpInfo)
         y = gSaveBlock1Ptr->pos.y;
     }
 
+	DebugPrintf("GetDynamicMapSecVegas\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+
 	//Via Magna
 	if (x > 18 && x < 27 && y > 26)
 		return 2;
