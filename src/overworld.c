@@ -674,6 +674,7 @@ void SetWarpDestination(s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y)
     SetWarpData(&sWarpDestination, mapGroup, mapNum, warpId, x, y);
 }
 
+//Cornix customized to maintaint x and y for dest warp - vanilla was setting it to -1, -1 for some reason - maybe important IDK 250418
 void SetWarpDestinationToMapWarp(s8 mapGroup, s8 mapNum, s8 warpId)
 {
     const struct MapHeader *destMapHeader;
