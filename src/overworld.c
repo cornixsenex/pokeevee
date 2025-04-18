@@ -1358,13 +1358,18 @@ u16 GetCurrLocationDefaultMusic(void)
 }
 
 //Cornix touched to hack dynamic music system
-u16 GetWarpDestinationMusic(void)
+u16 GetWarpDestinationMusic(bool32 useWarpData)
 {
     u16 music = GetLocationMusic(&sWarpDestination, TRUE);
 	//Handle Dynamic Map Music
 	DebugPrintf("GetWarpDestinationMusic()\n sWarpDestination Data XXX\nmapGroup: %d\nmapNum: %d\nwarpId: %d\nx: %d\ny: %d\n", sWarpDestination.mapGroup, sWarpDestination.mapNum, sWarpDestination.warpId, sWarpDestination.x, sWarpDestination.y);
 	if (music == MUS_DYNAMIC) 
-		music = GetDynamicMusic(TRUE);
+	{
+		if (useWarpData)
+			music = GetDynamicMusic(TRUE);
+		else
+			music = GetDynamicMusic(FALSE);
+	}
 	DebugPrintf("Warp Dest Music: %d", music);
 	return music;
 }
@@ -1407,7 +1412,7 @@ void TransitionMapMusic(void)
     DebugPrintf("Top TransitionMapMusic()");
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE)
     {
-        u16 newMusic = GetWarpDestinationMusic();
+        u16 newMusic = GetWarpDestinationMusic(FALSE);
         u16 currentMusic = GetCurrentMapMusic();
         //Here was Auto-Surf Music 
         DebugPrintf("Assigned TransitionMapMusic\nnewMusic: %d\ncurrentMusic: %d", newMusic, currentMusic);
@@ -1448,7 +1453,7 @@ void TryFadeOutOldMapMusic(void)
 {
     DebugPrintf("TryFadeOutOldMapMusic()");
     u16 currentMusic = GetCurrentMapMusic();
-    u16 warpMusic = GetWarpDestinationMusic();
+    u16 warpMusic = GetWarpDestinationMusic(TRUE);
     DebugPrintf("TryFadeOutOldMapMusic - \ncurrentMusic: %d\nwarpMusic: %d\n", currentMusic, warpMusic);
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {

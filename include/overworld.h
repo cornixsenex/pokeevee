@@ -106,7 +106,7 @@ void SetCurrentMapLayout(u16 mapLayoutId);
 void SetObjectEventLoadFlag(u8 var);
 u16 GetLocationMusic(struct WarpData *warp, bool32 isWarp);
 u16 GetCurrLocationDefaultMusic(void);
-u16 GetWarpDestinationMusic(void);
+u16 GetWarpDestinationMusic(bool32 useWarpData); //Cornix changed for dynamic music support
 void Overworld_ResetMapMusic(void);
 void Overworld_PlaySpecialMapMusic(void);
 void Overworld_SetSavedMusic(u16 songNum);
