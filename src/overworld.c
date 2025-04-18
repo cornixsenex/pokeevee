@@ -676,7 +676,15 @@ void SetWarpDestination(s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y)
 
 void SetWarpDestinationToMapWarp(s8 mapGroup, s8 mapNum, s8 warpId)
 {
-    SetWarpDestination(mapGroup, mapNum, warpId, -1, -1);
+    const struct MapHeader *destMapHeader;
+    s8 x, y;
+
+    DebugPrintf("SetWarpDestinationToMapWarp()");
+
+    destMapHeader = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
+    x = destMapHeader->events->warps[warpId].x;
+    y = destMapHeader->events->warps[warpId].y;
+    SetWarpDestination(mapGroup, mapNum, warpId, x, y);
 }
 
 void SetDynamicWarp(s32 unused, s8 mapGroup, s8 mapNum, s8 warpId)
@@ -1357,7 +1365,7 @@ u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination, TRUE);
 	//Handle Dynamic Map Music
-	DebugPrintf("GetWarpDestinationMusic()\n");
+	DebugPrintf("GetWarpDestinationMusic()\n sWarpDestination Data XXX\nmapGroup: %d\nmapNum: %d\nwarpId: %d\nx: %d\ny: %d\n", sWarpDestination.mapGroup, sWarpDestination.mapNum, sWarpDestination.warpId, sWarpDestination.x, sWarpDestination.y);
 	if (music == MUS_DYNAMIC) 
 		music = GetDynamicMusic(TRUE);
 	DebugPrintf("Warp Dest Music: %d", music);

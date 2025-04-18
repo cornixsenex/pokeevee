@@ -500,6 +500,7 @@ static bool32 WaitForWeatherFadeIn(void)
 
 void DoWarp(void)
 {
+    DebugPrintf("DoWarp()");
     LockPlayerFieldControls();
     TryFadeOutOldMapMusic();
     WarpFadeOutScreen();
@@ -742,6 +743,7 @@ static void Task_DoDoorWarp(u8 taskId)
         }
         break;
     case 4:
+        DebugPrintf("Task DoorWarp 4");
         TryFadeOutOldMapMusic();
         WarpFadeOutScreen();
         PlayRainStoppingSoundEffect();

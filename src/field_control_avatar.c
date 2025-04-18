@@ -964,6 +964,7 @@ static void SetupWarp(struct MapHeader *unused, s8 warpEventId, struct MapPositi
     const struct WarpEvent *warpEvent;
 
     u8 trainerHillMapId = GetCurrentTrainerHillMapId();
+    DebugPrintf("SetupWarp()");
 
     if (trainerHillMapId)
     {
@@ -990,11 +991,13 @@ static void SetupWarp(struct MapHeader *unused, s8 warpEventId, struct MapPositi
 
     if (warpEvent->mapNum == MAP_NUM(DYNAMIC))
     {
+        DebugPrintf("warpEvent->mapNum == MAP_NUM(DYNAMIC)");
         SetWarpDestinationToDynamicWarp(warpEvent->warpId);
     }
     else
     {
         const struct MapHeader *mapHeader;
+        DebugPrintf("warpEvent->mapNum != MAP_NUM(DYNAMIC)");
 
         SetWarpDestinationToMapWarp(warpEvent->mapGroup, warpEvent->mapNum, warpEvent->warpId);
         UpdateEscapeWarp(position->x, position->y);
