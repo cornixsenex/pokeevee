@@ -847,10 +847,6 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
-    // Dont transition map music between BF Outside West/East
-   // if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
-   //     TransitionMapMusic();
-
 	//Cornix Custom Transition Map Music Check
 	//Format should be to do it automatically except in certain cases:
 	//Ignore if during storm or during siege or other similar flag is set
@@ -1408,20 +1404,13 @@ void Overworld_ClearSavedMusic(void)
 
 void TransitionMapMusic(void)
 {
-    DebugPrintf("TransitionMapMusic()");
+    DebugPrintf("Top TransitionMapMusic()");
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
-		//Removing the auto surf music
-        //if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
-        //{
-        //    if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_SURF)
-        //        return;
-        //    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-        //        newMusic = MUS_SURF;
-        //}
-        DebugPrintf("TransitionMapMusic\nnewMusic: %d\ncurrentMusic: %d", newMusic, currentMusic);
+        //Here was Auto-Surf Music 
+        DebugPrintf("Assigned TransitionMapMusic\nnewMusic: %d\ncurrentMusic: %d", newMusic, currentMusic);
         if (newMusic != currentMusic)
         {
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
