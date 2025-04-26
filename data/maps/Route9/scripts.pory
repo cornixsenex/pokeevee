@@ -1,6 +1,11 @@
 
 //VAR_TEMP_4 handles the rock slide block
 
+const OBJ_EVENT_ROADBLOCKER1 = 12
+const OBJ_EVENT_ROADBLOCKER2 = 13
+const OBJ_EVENT_ROADBLOCKER3 = 14
+const OBJ_EVENT_ROADBLOCKER4 = 15
+
 mapscripts Route9_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
@@ -9,26 +14,36 @@ mapscripts Route9_MapScripts {
 		if (flag(FLAG_ROUTE9_CLEARBLOCK)) {
 			call (Route9_Script_ClearRoadBlock)
 		}
+    }
 
 }
 
 script Route9_Script_ClearRoadBlock {
 	//clear trigger var
 	setvar (VAR_TEMP_4, 1)
-	//
-
-script Route9_EventScript_RoadBlocker1 {
-	lock
-	msgbox (Route9_Text_RoadBlocker)
-	closemessage
-	release
-	end
+	//move road blockers 1 & 2 into new positions (3 & 4 are removed via flag)
+    //Blocker 1 - West Side
+    setobjectxy (OBJ_EVENT_ROADBLOCKER1, 28, 23)
+    setobjectmovementtype (OBJ_EVENT_ROADBLOCKER1, MOVEMENT_TYPE_FACE_DOWN)
+    //Blocker 2 - East Side 
+    setobjectxy (OBJ_EVENT_ROADBLOCKER2, 56, 17)
+    setobjectmovementtype (OBJ_EVENT_ROADBLOCKER2, MOVEMENT_TYPE_FACE_DOWN)
+    //fin
+    return
 }
 
-script Route9_EventScript_RoadBlocker2 {
+script Route9_EventScript_RoadBlocker {
 	lock
-	msgbox (Route9_Text_RoadBlocker)
-	closemessage
+    if (!flag(FLAG_ROUTE9_CLEARBLOCK)) {
+        msgbox (Route9_Text_RoadBlocker)
+    } else {
+        msgbox (Route9_Text_RoadBlockCleared)
+    }
+    closemessage
+    if (flag(FLAG_ROUTE9_CLEARBLOCK)) {
+        applymovement (VAR_LAST_TALKED, Common_Movement_FaceDown)
+        waitmovement (0)
+    }
 	release
 	end
 }
@@ -38,7 +53,7 @@ script Route9_EventScript_RoadBlocker3 {
 	faceplayer
 	msgbox (Route9_Text_RoadBlocker)
 	closemessage
-	applymovement (15, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ROADBLOCKER3, Common_Movement_FaceDown)
 	waitmovement (0)
 	release
 	end
@@ -49,34 +64,38 @@ script Route9_EventScript_RoadBlocker4 {
 	faceplayer
 	msgbox (Route9_Text_RoadBlocker)
 	closemessage
-	applymovement (16, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ROADBLOCKER4, Common_Movement_FaceDown)
 	waitmovement (0)
 	release
 	end
 }
 
-script Route9_EventScript_RoadBlock1 {
+script Route9_EventScript_RoadBlockA {
 	lock
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
-	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    applymovement (OBJ_EVENT_ROADBLOCKER3, Common_Movement_FaceRight)
 	waitmovement (0)
 	msgbox (Route9_Text_RoadBlocker)
 	closemessage
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+    applymovement (OBJ_EVENT_ROADBLOCKER3, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
 	waitmovement (0)
 	release
 }
 
-script Route9_EventScript_RoadBlock2 {
+script Route9_EventScript_RoadBlockB {
 	lock
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
-	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement (OBJ_EVENT_ROADBLOCKER4, Common_Movement_FaceLeft)
 	waitmovement (0)
 	msgbox (Route9_Text_RoadBlocker)
 	closemessage
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+    applymovement (OBJ_EVENT_ROADBLOCKER4, Common_Movement_FaceDown)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
 	waitmovement (0)
 	release
 }
@@ -84,6 +103,10 @@ script Route9_EventScript_RoadBlock2 {
 
 text Route9_Text_RoadBlocker {
 	format("You must turn back! The hill has fallen down and men are hard at work to clear the road.")
+}
+
+text Route9_Text_RoadBlockCleared {
+    format("We've finally finished! The road is now re-opened but be careful. There are still many rocks laying along the roadside and there's a chance the hill could slide again.")
 }
 
 

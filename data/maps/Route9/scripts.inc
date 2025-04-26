@@ -1,245 +1,165 @@
 Route9_MapScripts::
+# 11 "data//maps/Route9/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, Route9_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-
-Route9_EventScript_RoadBlocker1::
-# 9 "data//maps/Route9/scripts.pory"
-	lock
-# 10 "data//maps/Route9/scripts.pory"
-	faceplayer
-# 11 "data//maps/Route9/scripts.pory"
-	msgbox Route9_Text_RoadBlocker
-# 12 "data//maps/Route9/scripts.pory"
-	closemessage
-# 13 "data//maps/Route9/scripts.pory"
-	applymovement 13, Common_Movement_FaceDown
+Route9_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 14 "data//maps/Route9/scripts.pory"
-	waitmovement 0
+	goto_if_set FLAG_ROUTE9_CLEARBLOCK, Route9_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+Route9_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 15 "data//maps/Route9/scripts.pory"
-	release
-	end
+	call Route9_Script_ClearRoadBlock
+	return
 
 
-Route9_EventScript_RoadBlocker2::
-# 20 "data//maps/Route9/scripts.pory"
-	lock
-# 21 "data//maps/Route9/scripts.pory"
-	faceplayer
-# 22 "data//maps/Route9/scripts.pory"
-	msgbox Route9_Text_RoadBlocker
+Route9_Script_ClearRoadBlock::
 # 23 "data//maps/Route9/scripts.pory"
-	closemessage
-# 24 "data//maps/Route9/scripts.pory"
-	applymovement 14, Common_Movement_FaceUp
-# 25 "data//maps/Route9/scripts.pory"
-	waitmovement 0
+	setvar VAR_TEMP_4, 1
 # 26 "data//maps/Route9/scripts.pory"
+	setobjectxy 12, 28, 23
+# 27 "data//maps/Route9/scripts.pory"
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_DOWN
+# 29 "data//maps/Route9/scripts.pory"
+	setobjectxy 13, 56, 17
+# 30 "data//maps/Route9/scripts.pory"
+	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+
+Route9_EventScript_RoadBlocker::
+# 36 "data//maps/Route9/scripts.pory"
+	lock
+# 37 "data//maps/Route9/scripts.pory"
+	goto_if_unset FLAG_ROUTE9_CLEARBLOCK, Route9_EventScript_RoadBlocker_2
+# 40 "data//maps/Route9/scripts.pory"
+	msgbox Route9_Text_RoadBlockCleared
+Route9_EventScript_RoadBlocker_1:
+# 42 "data//maps/Route9/scripts.pory"
+	closemessage
+# 43 "data//maps/Route9/scripts.pory"
+	goto_if_set FLAG_ROUTE9_CLEARBLOCK, Route9_EventScript_RoadBlocker_6
+Route9_EventScript_RoadBlocker_5:
+# 47 "data//maps/Route9/scripts.pory"
 	release
 	end
+
+Route9_EventScript_RoadBlocker_2:
+# 38 "data//maps/Route9/scripts.pory"
+	msgbox Route9_Text_RoadBlocker
+	goto Route9_EventScript_RoadBlocker_1
+
+Route9_EventScript_RoadBlocker_6:
+# 44 "data//maps/Route9/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceDown
+# 45 "data//maps/Route9/scripts.pory"
+	waitmovement 0
+	goto Route9_EventScript_RoadBlocker_5
 
 
 Route9_EventScript_RoadBlocker3::
-# 31 "data//maps/Route9/scripts.pory"
+# 52 "data//maps/Route9/scripts.pory"
 	lock
-# 32 "data//maps/Route9/scripts.pory"
+# 53 "data//maps/Route9/scripts.pory"
 	faceplayer
-# 33 "data//maps/Route9/scripts.pory"
+# 54 "data//maps/Route9/scripts.pory"
 	msgbox Route9_Text_RoadBlocker
-# 34 "data//maps/Route9/scripts.pory"
+# 55 "data//maps/Route9/scripts.pory"
 	closemessage
-# 35 "data//maps/Route9/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
-# 36 "data//maps/Route9/scripts.pory"
+# 56 "data//maps/Route9/scripts.pory"
+	applymovement 14, Common_Movement_FaceDown
+# 57 "data//maps/Route9/scripts.pory"
 	waitmovement 0
-# 37 "data//maps/Route9/scripts.pory"
+# 58 "data//maps/Route9/scripts.pory"
 	release
 	end
 
 
 Route9_EventScript_RoadBlocker4::
-# 42 "data//maps/Route9/scripts.pory"
+# 63 "data//maps/Route9/scripts.pory"
 	lock
-# 43 "data//maps/Route9/scripts.pory"
+# 64 "data//maps/Route9/scripts.pory"
 	faceplayer
-# 44 "data//maps/Route9/scripts.pory"
+# 65 "data//maps/Route9/scripts.pory"
 	msgbox Route9_Text_RoadBlocker
-# 45 "data//maps/Route9/scripts.pory"
+# 66 "data//maps/Route9/scripts.pory"
 	closemessage
-# 46 "data//maps/Route9/scripts.pory"
-	applymovement 16, Common_Movement_FaceLeft
-# 47 "data//maps/Route9/scripts.pory"
+# 67 "data//maps/Route9/scripts.pory"
+	applymovement 15, Common_Movement_FaceDown
+# 68 "data//maps/Route9/scripts.pory"
 	waitmovement 0
-# 48 "data//maps/Route9/scripts.pory"
+# 69 "data//maps/Route9/scripts.pory"
 	release
 	end
 
 
-Route9_EventScript_RoadBlock1::
-# 53 "data//maps/Route9/scripts.pory"
-	lock
-# 54 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 55 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 56 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 57 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 58 "data//maps/Route9/scripts.pory"
-	msgbox Route9_Text_RoadBlocker
-# 59 "data//maps/Route9/scripts.pory"
-	closemessage
-# 60 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 61 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 62 "data//maps/Route9/scripts.pory"
-	release
-	return
-
-
-Route9_EventScript_RoadBlock2::
-# 66 "data//maps/Route9/scripts.pory"
-	lock
-# 67 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
-# 68 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 69 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 70 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 71 "data//maps/Route9/scripts.pory"
-	msgbox Route9_Text_RoadBlocker
-# 72 "data//maps/Route9/scripts.pory"
-	closemessage
-# 73 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+Route9_EventScript_RoadBlockA::
 # 74 "data//maps/Route9/scripts.pory"
-	waitmovement 0
+	lock
 # 75 "data//maps/Route9/scripts.pory"
-	release
-	return
-
-
-Route9_EventScript_RoadBlock3::
-# 79 "data//maps/Route9/scripts.pory"
-	lock
-# 80 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
-# 81 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 82 "data//maps/Route9/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 83 "data//maps/Route9/scripts.pory"
+# 76 "data//maps/Route9/scripts.pory"
 	waitmovement 0
-# 84 "data//maps/Route9/scripts.pory"
+# 77 "data//maps/Route9/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+# 78 "data//maps/Route9/scripts.pory"
+	applymovement 14, Common_Movement_FaceRight
+# 79 "data//maps/Route9/scripts.pory"
+	waitmovement 0
+# 80 "data//maps/Route9/scripts.pory"
 	msgbox Route9_Text_RoadBlocker
-# 85 "data//maps/Route9/scripts.pory"
+# 81 "data//maps/Route9/scripts.pory"
 	closemessage
-# 86 "data//maps/Route9/scripts.pory"
+# 82 "data//maps/Route9/scripts.pory"
+	applymovement 14, Common_Movement_FaceDown
+# 83 "data//maps/Route9/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 87 "data//maps/Route9/scripts.pory"
+# 84 "data//maps/Route9/scripts.pory"
 	waitmovement 0
-# 88 "data//maps/Route9/scripts.pory"
+# 85 "data//maps/Route9/scripts.pory"
 	release
 	return
 
 
-Route9_EventScript_RoadBlock4::
-# 92 "data//maps/Route9/scripts.pory"
+Route9_EventScript_RoadBlockB::
+# 89 "data//maps/Route9/scripts.pory"
 	lock
+# 90 "data//maps/Route9/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 91 "data//maps/Route9/scripts.pory"
+	waitmovement 0
+# 92 "data//maps/Route9/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 93 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	applymovement 15, Common_Movement_FaceLeft
 # 94 "data//maps/Route9/scripts.pory"
 	waitmovement 0
 # 95 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	msgbox Route9_Text_RoadBlocker
 # 96 "data//maps/Route9/scripts.pory"
-	waitmovement 0
+	closemessage
 # 97 "data//maps/Route9/scripts.pory"
-	applymovement 15, Common_Movement_WalkRight
+	applymovement 15, Common_Movement_FaceDown
 # 98 "data//maps/Route9/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
 # 99 "data//maps/Route9/scripts.pory"
-	msgbox Route9_Text_RoadBlocker
+	waitmovement 0
 # 100 "data//maps/Route9/scripts.pory"
-	closemessage
-# 101 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 102 "data//maps/Route9/scripts.pory"
-	applymovement 15, Common_Movement_WalkLeft
-# 103 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 104 "data//maps/Route9/scripts.pory"
-	applymovement 15, Common_Movement_FaceRight
-# 105 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 106 "data//maps/Route9/scripts.pory"
-	release
-	return
-
-
-Route9_EventScript_RoadBlock5::
-# 110 "data//maps/Route9/scripts.pory"
-	lock
-# 111 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 112 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 113 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 114 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 115 "data//maps/Route9/scripts.pory"
-	applymovement 16, Common_Movement_WalkLeft
-# 116 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 117 "data//maps/Route9/scripts.pory"
-	msgbox Route9_Text_RoadBlocker
-# 118 "data//maps/Route9/scripts.pory"
-	closemessage
-# 119 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 120 "data//maps/Route9/scripts.pory"
-	applymovement 16, Common_Movement_WalkRight
-# 121 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 122 "data//maps/Route9/scripts.pory"
-	applymovement 16, Common_Movement_FaceLeft
-# 123 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 124 "data//maps/Route9/scripts.pory"
-	release
-	return
-
-
-Route9_EventScript_RoadBlock6::
-# 128 "data//maps/Route9/scripts.pory"
-	lock
-# 129 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 130 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 131 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 132 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 133 "data//maps/Route9/scripts.pory"
-	msgbox Route9_Text_RoadBlocker
-# 134 "data//maps/Route9/scripts.pory"
-	closemessage
-# 135 "data//maps/Route9/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-# 136 "data//maps/Route9/scripts.pory"
-	waitmovement 0
-# 137 "data//maps/Route9/scripts.pory"
 	release
 	return
 
 
 Route9_Text_RoadBlocker::
-# 140 "data//maps/Route9/scripts.pory"
+# 104 "data//maps/Route9/scripts.pory"
 	.string "You must turn back! The hill has fallen\n"
 	.string "down and men are hard at work to clear\l"
 	.string "the road.$"
+
+Route9_Text_RoadBlockCleared::
+# 108 "data//maps/Route9/scripts.pory"
+	.string "We've finally finished! The road is now\n"
+	.string "re-opened but be careful. There are\l"
+	.string "still many rocks laying along the\l"
+	.string "roadside and there's a chance the hill\l"
+	.string "could slide again.$"
