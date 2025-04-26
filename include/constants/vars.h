@@ -154,7 +154,7 @@
 #define VAR_ROCKETTOWER_STATE				             0x4061 // Removes Gio and Blaine after fight
 #define VAR_ROCKETTOWER_FLOOR				             0x4062 // Rocket tower elevator floor 
 #define VAR_CAPITAL_STATE                                0x4063 // Gio trigger
-#define VAR_ROUTE9_STATE                                 0x4064 // Triggers route9 block
+#define VAR_UNUSED_4064                                  0x4064 // UNUSED
 #define VAR_SLABS_STATE                                  0x4065 // Hides bikes after the rival battle
 #define VAR_WHJ_STATE                                    0x4066 // Changed in SWHJ; door trigger at WHJ
 #define VAR_SWHJ_STATE                                   0x4067 // Changed with insurance; door trigger at SWHJ

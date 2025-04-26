@@ -65,7 +65,7 @@
 #define FLAG_URBIA_BIKESHOP_INTROD      0x33 //Set after initial sales pitch
 #define FLAG_LEAF_ISGF     0x34 // Set after Leaf agrees to be your GF
 #define FLAG_PALMAE_RENTALHOUSE_LEAFGFINTROD      0x35 //Set after first talk to leaf after Indy Introd 
-#define FLAG_UNUSED_0x36      0x36 //UNUSED 
+#define FLAG_ROUTE9_CLEARBLOCK      0x36 //Set after enter Tranquilitas - Clears the "rock slide" block 
 #define FLAG_UNUSED_0x37      0x37 //UNUSED 
 
 #define FLAG_UNUSED_0x38      0x38 //UNUSED
