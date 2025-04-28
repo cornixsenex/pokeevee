@@ -1,10 +1,10 @@
 
 //VAR_TEMP_4 handles the rock slide block
 
-const OBJ_EVENT_ROADBLOCKER1 = 12
-const OBJ_EVENT_ROADBLOCKER2 = 13
-const OBJ_EVENT_ROADBLOCKER3 = 14
-const OBJ_EVENT_ROADBLOCKER4 = 15
+const OBJ_EVENT_ROADBLOCKER1 = 9
+const OBJ_EVENT_ROADBLOCKER2 = 10
+const OBJ_EVENT_ROADBLOCKER3 = 11
+const OBJ_EVENT_ROADBLOCKER4 = 12
 
 mapscripts Route9_MapScripts {
 
@@ -23,17 +23,22 @@ script Route9_Script_ClearRoadBlock {
 	setvar (VAR_TEMP_4, 1)
 	//move road blockers 1 & 2 into new positions (3 & 4 are removed via flag)
     //Blocker 1 - West Side
-    setobjectxy (OBJ_EVENT_ROADBLOCKER1, 28, 23)
+    setobjectxyperm (OBJ_EVENT_ROADBLOCKER1, 28, 23)
     setobjectmovementtype (OBJ_EVENT_ROADBLOCKER1, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (OBJ_EVENT_ROADBLOCKER1)
+    showobjectat (OBJ_EVENT_ROADBLOCKER1, MAP_ROUTE9)
     //Blocker 2 - East Side 
-    setobjectxy (OBJ_EVENT_ROADBLOCKER2, 56, 17)
+    setobjectxyperm (OBJ_EVENT_ROADBLOCKER2, 56, 17)
     setobjectmovementtype (OBJ_EVENT_ROADBLOCKER2, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (OBJ_EVENT_ROADBLOCKER2)
+    showobjectat (OBJ_EVENT_ROADBLOCKER2, MAP_ROUTE9)
     //fin
     return
 }
 
 script Route9_EventScript_RoadBlocker {
 	lock
+    faceplayer
     if (!flag(FLAG_ROUTE9_CLEARBLOCK)) {
         msgbox (Route9_Text_RoadBlocker)
     } else {

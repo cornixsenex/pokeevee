@@ -120,7 +120,7 @@ CityClara_MapScripts_MAP_SCRIPT_ON_RESUME_4:
 	goto_if_set FLAG_TEMP_A, CityClara_MapScripts_MAP_SCRIPT_ON_RESUME_8
 CityClara_MapScripts_MAP_SCRIPT_ON_RESUME_7:
 # 94 "data//maps/CityClara/scripts.pory"
-	goto_if_set FLAG_TEMP_E, CityClara_MapScripts_MAP_SCRIPT_ON_RESUME_11
+	goto_if_set FLAG_TEMP_12, CityClara_MapScripts_MAP_SCRIPT_ON_RESUME_11
 CityClara_MapScripts_MAP_SCRIPT_ON_RESUME_10:
 # 97 "data//maps/CityClara/scripts.pory"
 	goto_if_set FLAG_TEMP_D, CityClara_MapScripts_MAP_SCRIPT_ON_RESUME_14
@@ -1242,7 +1242,7 @@ CityClara_Script_Caterpie::
 # 795 "data//maps/CityClara/scripts.pory"
 	setwildbattle SPECIES_CATERPIE, 23
 # 796 "data//maps/CityClara/scripts.pory"
-	setflag FLAG_TEMP_E
+	setflag FLAG_TEMP_12
 # 797 "data//maps/CityClara/scripts.pory"
 	dowildbattle
 # 798 "data//maps/CityClara/scripts.pory"

@@ -91,7 +91,7 @@ mapscripts CityClara_MapScripts {
 		if (flag(FLAG_TEMP_A)) {
 			removeobject (33)
 		}
-		if (flag(FLAG_TEMP_E)) {
+		if (flag(FLAG_TEMP_12)) {
 			removeobject (34)
 		}
 		if (flag(FLAG_TEMP_D)) {
@@ -793,7 +793,7 @@ script CityClara_Script_Caterpie {
 	playmoncry (SPECIES_CATERPIE, CRY_MODE_ENCOUNTER)
 	waitmoncry
 	setwildbattle (SPECIES_CATERPIE, 23)
-	setflag (FLAG_TEMP_E)
+	setflag (FLAG_TEMP_12)
 	dowildbattle
 	release
 	end
