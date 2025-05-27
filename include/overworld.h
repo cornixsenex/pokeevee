@@ -80,7 +80,7 @@ void SetWarpDestination(s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y);
 void SetWarpDestinationToMapWarp(s8 mapGroup, s8 mapNum, s8 warpId);
 void SetDynamicWarp(s32 unused, s8 mapGroup, s8 mapNum, s8 warpId);
 void SetDynamicWarpWithCoords(s32 unused, s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y);
-void SetWarpDestinationToDynamicWarp(u8 unused);
+void SetWarpDestinationToDynamicWarp(u8 unusedWarpId);
 void SetWarpDestinationToHealLocation(u8 healLocationId);
 void SetWarpDestinationToLastHealLocation(void);
 void SetLastHealLocationWarp(u8 healLocationId);
@@ -103,8 +103,8 @@ void SetDefaultFlashLevel(void);
 void SetFlashLevel(s32 flashLevel);
 u8 GetFlashLevel(void);
 void SetCurrentMapLayout(u16 mapLayoutId);
-void SetObjectEventLoadFlag(u8 var);
-u16 GetLocationMusic(struct WarpData *warp, bool32 isWarp);
+void SetObjectEventLoadFlag(u8 flag);
+u16 GetLocationMusic(struct WarpData *warp, bool32 isWarp); //Cornix changed for dynamic map / music support
 u16 GetCurrLocationDefaultMusic(void);
 u16 GetWarpDestinationMusic(bool32 useWarpData); //Cornix changed for dynamic music support
 void Overworld_ResetMapMusic(void);

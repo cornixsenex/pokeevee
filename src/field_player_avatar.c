@@ -44,18 +44,16 @@ EWRAM_DATA struct ObjectEvent gObjectEvents[OBJECT_EVENTS_COUNT] = {};
 EWRAM_DATA struct PlayerAvatar gPlayerAvatar = {};
 
 // static declarations
-
-static u8 ObjectEventCB2_NoMovement2(); 
-static bool8 TryUpdatePlayerSpinDirection(void);
+static u8 ObjectEventCB2_NoMovement2(void);
 static bool8 TryInterruptObjectEventSpecialAnim(struct ObjectEvent *, u8);
 static void npc_clear_strange_bits(struct ObjectEvent *);
 static void MovePlayerAvatarUsingKeypadInput(u8, u16, u16);
-static void PlayerAllowForcedMovementIfMovingSameDirection();
-static bool8 TryDoMetatileBehaviorForcedMovement();
-static u8 GetForcedMovementByMetatileBehavior();
-//NOTE 1/4/24 : I think I may have made a mistake. These should probably be used / defined but compiler says...
-//static bool8 IsSidewaysStairToRight(s16, s16, u8);
-//static bool8 IsSidewaysStairToLeft(s16, s16, u8);
+static void PlayerAllowForcedMovementIfMovingSameDirection(void);
+static bool8 TryDoMetatileBehaviorForcedMovement(void);
+static u8 GetForcedMovementByMetatileBehavior(void);
+
+//KUSTOM Spin Tiles
+static bool8 TryUpdatePlayerSpinDirection(void);
 
 static bool8 ForcedMovement_None(void);
 static bool8 ForcedMovement_Slip(void);
@@ -379,7 +377,7 @@ static bool8 (*const sPlayerAvatarSecretBaseMatSpin[])(struct Task *, struct Obj
 
 void MovementType_Player(struct Sprite *sprite)
 {
-    UpdateObjectEventCurrentMovement(&gObjectEvents[sprite->data[0]], sprite, ObjectEventCB2_NoMovement2);
+    UpdateObjectEventCurrentMovement(&gObjectEvents[sprite->data[0]], sprite, (bool8 (*)(struct ObjectEvent *, struct Sprite *))ObjectEventCB2_NoMovement2);
 }
 
 static u8 ObjectEventCB2_NoMovement2(void)
