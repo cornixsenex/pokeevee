@@ -60,7 +60,7 @@
 #define TRAINER_DANNY             			 54
 #define TRAINER_MR_GLASMAN               	 55
 #define TRAINER_PEEVES               		 56
-#define TRAINER_RIVAL2                       57
+#define TRAINER_TEST_BATTLE                  57
 #define TRAINER_MRS_SULLY                    58
 #define TRAINER_ETHAN                        59
 #define TRAINER_SAGIS                        60

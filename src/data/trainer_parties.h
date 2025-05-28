@@ -725,27 +725,27 @@ static const struct TrainerMon sParty_Gary[] = {
     }, 		
 };
 
-static const struct TrainerMon sParty_Rival2[] = {
+static const struct TrainerMon sParty_TestBattle[] = {
     {
     .iv = 100,
     .lvl = 16,
-    .species = SPECIES_PINSIR,
+    .species = SPECIES_DEOXYS,
     },
 	{
     .iv = 100,
     .lvl = 16,
-    .species = SPECIES_BEEDRILL,
+    .species = SPECIES_DEOXYS_ATTACK,
     },
 
     {
     .iv = 100,
     .lvl = 16,
-    .species = SPECIES_SHUCKLE,
+    .species = SPECIES_DEOXYS_DEFENSE,
     },
 	{
 		.iv = 250,
 		.lvl = 18,
-		.species = SPECIES_HERACROSS,
+		.species = SPECIES_DEOXYS_SPEED,
 	}
 };
 

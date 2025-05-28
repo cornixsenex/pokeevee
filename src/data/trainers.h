@@ -746,7 +746,7 @@
         .party = TRAINER_PARTY(sParty_Gary),
     },
 
-    [DIFFICULTY_NORMAL][TRAINER_RIVAL2] =
+    [DIFFICULTY_NORMAL][TRAINER_TEST_BATTLE] =
     {
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
@@ -756,7 +756,7 @@
 		.doubleBattle = FALSE,
 		.mugshotColor = MUGSHOT_COLOR_BLUE,
 		.aiFlags = AI_FLAG_BASIC_TRAINER,
-		.party = TRAINER_PARTY(sParty_Rival2),
+		.party = TRAINER_PARTY(sParty_TestBattle),
     },
 
     [DIFFICULTY_NORMAL][TRAINER_MRS_SULLY] =
