@@ -6,6 +6,7 @@
 #include "field_effect.h"
 #include "field_player_avatar.h"
 #include "field_weather.h"
+#include "follower_npc.h"
 #include "pokemon.h"
 #include "script.h"
 #include "script_movement.h"
@@ -634,6 +635,9 @@ static void StartTrainerApproach(TaskFunc followupFunc)
     else
         taskId = gApproachingTrainers[1].taskId;
 
+    if (PlayerHasFollowerNPC() && (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT))
+        ObjectEventForceSetHeldMovement(&gObjectEvents[GetFollowerNPCObjectId()], GetFaceDirectionAnimNum(gObjectEvents[GetFollowerNPCObjectId()].facingDirection));
+
     taskFunc = Task_RunTrainerSeeFuncList;
     SetTaskFuncWithFollowupFunc(taskId, taskFunc, followupFunc);
     gTasks[taskId].tFuncId = TRSEE_EXCLAMATION;
@@ -900,12 +904,7 @@ void TryPrepareSecondApproachingTrainer(void)
 
 u8 FldEff_ExclamationMarkIcon(void)
 {
-    u8 spriteId;
-
-    LoadObjectEventPalette(0x1100); //LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_BRENDAN)
-    UpdatePaletteGammaType(IndexOfSpritePaletteTag(0x1100), GAMMA_ALT);
-    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(0x1100));
-    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x52);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
 
     if (spriteId != MAX_SPRITES)
     {
@@ -946,12 +945,7 @@ u8 FldEff_QuestionMarkIcon(void)
 
 u8 FldEff_HeartIcon(void)
 {
-    u8 spriteId;
-
-    LoadSpritePalette(&gObjectEventPal_Npc1);
-    UpdatePaletteGammaType(IndexOfSpritePaletteTag(0x1004), GAMMA_ALT);
-    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(0x1004));
-    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_HeartIcon, 0, 0, 0x52);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_HeartIcon, 0, 0, 0x52);
 
     if (spriteId != MAX_SPRITES)
     {

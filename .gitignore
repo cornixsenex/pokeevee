@@ -48,3 +48,4 @@ tools/trainerproc/trainerproc
 *.smolTM
 *.swp
 porymap.user.cfg
+__pycache__
