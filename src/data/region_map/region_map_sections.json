@@ -531,7 +531,6 @@
     {
       "id": "MAPSEC_AQUA_HIDEOUT_OLD",
       "name": "{AQUA} HIDEOUT",
-      "name_clone": true,
       "x": 19,
       "y": 3,
       "width": 1,
@@ -699,7 +698,6 @@
     },
     {
       "id": "MAPSEC_DYNAMIC",
-      "name": "",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -796,7 +794,6 @@
     {
       "id": "MAPSEC_ROUTE_4_POKECENTER",
       "name": "ROUTE 4",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -805,7 +802,6 @@
     {
       "id": "MAPSEC_ROUTE_10_POKECENTER",
       "name": "ROUTE 10",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1046,7 +1042,6 @@
     {
       "id": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1063,7 +1058,6 @@
     {
       "id": "MAPSEC_KANTO_VICTORY_ROAD",
       "name": "VICTORY ROAD",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1096,7 +1090,6 @@
     {
       "id": "MAPSEC_KANTO_SAFARI_ZONE",
       "name": "SAFARI ZONE",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1441,7 +1434,6 @@
     {
       "id": "MAPSEC_HARENAE_AUREAE",
       "name": "HARENAE AVREAE",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1487,94 +1479,94 @@
       "width": 1,
       "height": 1
     },
-	{
-	  "id": "MAPSEC_VIA_MAGNA",
-	  "name": "VIA MAGNA",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_ROBUSTICA",
-	  "name": "ROBVSTICA",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_VENATOR_MONS",
-	  "name": "VENATOR MONS",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_VILLA_VENATORUM",
-	  "name": "VILLA VENATORVM",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_SABINA_NOVA",
-	  "name": "SABINA NOVA",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_VILLA_VALLIS",
-	  "name": "VILLA VALLIS",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_MONTES_VIGILIAE",
-	  "name": "MONTES VIGILIAE",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_VILLA_VIVARIA",
-	  "name": "VILLA VIVARIA",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_VIA_LITORALIS",
-	  "name": "VIA LITORALIS",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_CASTRUM",
-	  "name": "CASTRVM",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
-	{
-	  "id": "MAPSEC_SINUS_PACIFICUS",
-	  "name": "SINVS PACIFICVS",
-	  "x": 0,
-	  "y": 0,
-	  "width": 1,
-	  "height": 1
-	},
+    {
+      "id": "MAPSEC_VIA_MAGNA",
+      "name": "VIA MAGNA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROBUSTICA",
+      "name": "ROBVSTICA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VENATOR_MONS",
+      "name": "VENATOR MONS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VILLA_VENATORUM",
+      "name": "VILLA VENATORVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SABINA_NOVA",
+      "name": "SABINA NOVA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VILLA_VALLIS",
+      "name": "VILLA VALLIS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MONTES_VIGILIAE",
+      "name": "MONTES VIGILIAE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VILLA_VIVARIA",
+      "name": "VILLA VIVARIA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VIA_LITORALIS",
+      "name": "VIA LITORALIS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_CASTRUM",
+      "name": "CASTRVM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SINUS_PACIFICUS",
+      "name": "SINVS PACIFICVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
     {
       "id": "MAPSEC_SPECIAL_AREA",
       "name": "SPECIAL AREA",
@@ -2023,10 +2015,5 @@
       "width": 1,
       "height": 1
     }
-
-
-
-
-
   ]
 }
