@@ -605,7 +605,7 @@ CityClara_Church_Script_JesseAndJamesDefeated::
 # 435 "data/maps/CityClara_Church/scripts.pory"
 	closemessage
 # 437 "data/maps/CityClara_Church/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 438 "data/maps/CityClara_Church/scripts.pory"
 	removeobject 6
 # 439 "data/maps/CityClara_Church/scripts.pory"
@@ -625,7 +625,7 @@ CityClara_Church_Script_JesseAndJamesDefeated::
 # 446 "data/maps/CityClara_Church/scripts.pory"
 	setobjectmovementtype 8, MOVEMENT_TYPE_INVISIBLE
 # 447 "data/maps/CityClara_Church/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 449 "data/maps/CityClara_Church/scripts.pory"
 	goto_if_set FLAG_TEMP_2, CityClara_Church_Script_JesseAndJamesDefeated_2
 # 452 "data/maps/CityClara_Church/scripts.pory"

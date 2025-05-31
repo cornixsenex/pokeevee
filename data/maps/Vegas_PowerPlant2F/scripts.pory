@@ -8,10 +8,10 @@ script Vegas_PowerPlant2F_EventScript_RocketAdmin {
 	closemessage
 	msgbox (Vegas_PowerPlant2F_Text_RocketAdminPost)
 	closemessage
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	setflag (FLAG_BADGE02_GET)
 	removeobject (1)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	release
 	end
 }

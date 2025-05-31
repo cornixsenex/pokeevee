@@ -18,9 +18,9 @@ script Route10_EventScript_Krabby {
 	waitmoncry
 	setwildbattle (SPECIES_KRABBY, 25)
 	dowildbattle
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	removeobject (17)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	release
 }
 
@@ -44,10 +44,10 @@ script Route10_EventScript_Rival {
 	msgbox (Route10_Text_Rival3)
 	closemessage
 	destroy_field_pic (RIVAL_FIELD_PIC)
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	setflag (FLAG_ROUTE10_HIDE_RIVAL)
 	removeobject (OBJ_EVENT_ID_RIVAL)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	release
 }
 

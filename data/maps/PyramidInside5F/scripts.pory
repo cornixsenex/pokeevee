@@ -10,13 +10,13 @@ script PyramidInside5F_EventScript_Indy {
 	//check if completed trials
 	//if not then trial talk
 	//if done then below
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	removeobject (1)
 	setflag (FLAG_PYRAMIDS_INDY)
 	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
 	setvar (VAR_INDY_STATE, 1)
 	setflag (FLAG_FRAT_LEAF)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	release
 	end
 }

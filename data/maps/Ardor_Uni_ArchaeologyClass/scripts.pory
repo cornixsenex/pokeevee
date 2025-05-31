@@ -286,10 +286,10 @@ script Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack {
 	msgbox (Ardor_Uni_ArchaeologyClass_Text_MaxieExit)
 	closemessage
 	destroy_field_pic  (9)
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	removeobject (12)
 	setflag (FLAG_ARCHAELOGY_CLASS_HIDEREBELS)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	return 
 }
 

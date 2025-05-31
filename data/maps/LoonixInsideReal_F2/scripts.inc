@@ -88,11 +88,11 @@ LoonixInsideReal_F2_Script_Bed_2:
 # 56 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	playfanfare MUS_HEAL
 # 57 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 58 "data/maps/LoonixInsideReal_F2/scripts.pory"
 	waitfanfare
 # 59 "data/maps/LoonixInsideReal_F2/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 	goto LoonixInsideReal_F2_Script_Bed_1
 
 LoonixInsideReal_F2_Script_Bed_4:

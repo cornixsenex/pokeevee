@@ -41,7 +41,7 @@ script FootballField_EventScript_RunningTest {
 script FootballField_EventScript_FinishClass {
 	msgbox(FootballField_Text_ClassFinished)
 	closemessage
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	//Player
 	setobjectxy (OBJ_EVENT_ID_PLAYER, 14, 36)
 	setobjectxyperm (OBJ_EVENT_ID_PLAYER, 14, 36)
@@ -64,7 +64,7 @@ script FootballField_EventScript_FinishClass {
 	setobjectmovementtype (OBJ_EVENT_ID_YELLOW5, MOVEMENT_TYPE_FACE_DOWN)
 
 	special(ResetCamera)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 
 	msgbox(FootballField_Text_CoachIntro)
 	closemessage
@@ -90,7 +90,7 @@ script FootballField_EventScript_CatchingTest {
 }
 
 script FootballField_EventScript_SetupRunningTest {
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	//Setup all Object position and movmement types
 	lockall
 	//Player
@@ -161,7 +161,7 @@ script FootballField_EventScript_SetupRunningTest {
 
 	//Camera, fade from black, and return
 	special (ResetCamera)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 
 	return
 }

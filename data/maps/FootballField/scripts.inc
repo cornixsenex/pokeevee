@@ -16,7 +16,7 @@ FootballField_EventScript_FinishClass::
 # 43 "data/maps/FootballField/scripts.pory"
 	closemessage
 # 44 "data/maps/FootballField/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 46 "data/maps/FootballField/scripts.pory"
 	setobjectxy OBJ_EVENT_ID_PLAYER, 14, 36
 # 47 "data/maps/FootballField/scripts.pory"
@@ -54,7 +54,7 @@ FootballField_EventScript_FinishClass::
 # 66 "data/maps/FootballField/scripts.pory"
 	special ResetCamera
 # 67 "data/maps/FootballField/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 69 "data/maps/FootballField/scripts.pory"
 	msgbox FootballField_Text_CoachIntro
 # 70 "data/maps/FootballField/scripts.pory"
@@ -82,7 +82,7 @@ FootballField_EventScript_CatchingTest::
 
 FootballField_EventScript_SetupRunningTest::
 # 93 "data/maps/FootballField/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 95 "data/maps/FootballField/scripts.pory"
 	lockall
 # 97 "data/maps/FootballField/scripts.pory"
@@ -184,7 +184,7 @@ FootballField_EventScript_SetupRunningTest::
 # 163 "data/maps/FootballField/scripts.pory"
 	special ResetCamera
 # 164 "data/maps/FootballField/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 	return
 
 

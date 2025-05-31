@@ -71,7 +71,7 @@ Peccadum_TruckDepot_Script_StartTruckScene_1:
 # 38 "data/maps/Peccadum_TruckDepot/scripts.pory"
 	closemessage
 # 39 "data/maps/Peccadum_TruckDepot/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 40 "data/maps/Peccadum_TruckDepot/scripts.pory"
 	special DoPeccadumTruckScene
 	return

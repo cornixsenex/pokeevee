@@ -154,7 +154,7 @@ Phoenix_EventScript_ClearParty::
 # 112 "data/maps/Phoenix/scripts.pory"
 	closemessage
 # 113 "data/maps/Phoenix/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 114 "data/maps/Phoenix/scripts.pory"
 	setflag FLAG_PHOENIX_PARTY
 # 115 "data/maps/Phoenix/scripts.pory"
@@ -206,7 +206,7 @@ Phoenix_EventScript_LeafApproach::
 	turnobject 9, DIR_EAST
 Phoenix_EventScript_LeafApproach_1:
 # 144 "data/maps/Phoenix/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 145 "data/maps/Phoenix/scripts.pory"
 	msgbox Phoenix_Text_LeafExit
 # 146 "data/maps/Phoenix/scripts.pory"

@@ -159,10 +159,10 @@ script GrandmasCabin_Script_LeafGame1 {
 	msgbox (GrandmasCabin_Text_Leaf2, MSGBOX_DEFAULT)
 	closemessage
 
-	fadescreen (FADE_TO_BLACK)
+	fadescreenswapbuffers (FADE_TO_BLACK)
 	removeobject (OBJ_EVENT_LEAF)
 	call (GrandmasCabin_Script_ShowLeaf2)
-	fadescreen (FADE_FROM_BLACK)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
 	
 	releaseall
 	end
@@ -240,7 +240,7 @@ script GrandmasCabin_Script_ContinueHideAndSeek {
 	msgbox (GrandmasCabin_Text_Leaf5, MSGBOX_DEFAULT)
 	closemessage
 
-	fadescreen (FADE_TO_BLACK)
+	fadescreenswapbuffers (FADE_TO_BLACK)
 	removeobject (OBJ_EVENT_LEAF)
 	if (flag(FLAG_TEMP_5)) { //Top
 		setobjectxyperm (OBJ_EVENT_LEAF, 7, 39)
@@ -257,15 +257,15 @@ script GrandmasCabin_Script_ContinueHideAndSeek {
 	}
 	addobject (OBJ_EVENT_LEAF)
 	showobjectat (OBJ_EVENT_LEAF, MAP_GRANDMAS_CABIN)
-	fadescreen (FADE_FROM_BLACK)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
 
 	msgbox (GrandmasCabin_Text_Leaf6, MSGBOX_DEFAULT)
 	closemessage
 
-	fadescreen (FADE_TO_BLACK)
+	fadescreenswapbuffers (FADE_TO_BLACK)
 	removeobject (OBJ_EVENT_LEAF)
 	call (GrandmasCabin_Script_ShowLeaf3)
-	fadescreen (FADE_FROM_BLACK)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
 
 	setvar (VAR_GRANNY_STATE, 4)
 	release

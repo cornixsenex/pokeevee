@@ -301,7 +301,7 @@ RocketTower_13F_EventScript_BlaineDefeated::
 # 179 "data/maps/RocketTower_13F/scripts.pory"
 	delay 5
 # 180 "data/maps/RocketTower_13F/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 181 "data/maps/RocketTower_13F/scripts.pory"
 	removeobject 3
 # 182 "data/maps/RocketTower_13F/scripts.pory"
@@ -311,7 +311,7 @@ RocketTower_13F_EventScript_BlaineDefeated::
 # 184 "data/maps/RocketTower_13F/scripts.pory"
 	setvar VAR_CAPITAL_STATE, 0
 # 185 "data/maps/RocketTower_13F/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 	return
 
 

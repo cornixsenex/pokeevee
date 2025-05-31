@@ -148,13 +148,13 @@ Route6_EventScript_JesseAndJames::
 # 97 "data/maps/Route6/scripts.pory"
 	playmoncry SPECIES_PIKACHU, 0
 # 98 "data/maps/Route6/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 99 "data/maps/Route6/scripts.pory"
 	waitmoncry
 # 100 "data/maps/Route6/scripts.pory"
 	removeobject 17
 # 101 "data/maps/Route6/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 102 "data/maps/Route6/scripts.pory"
 	msgbox Route6_Text_Jesse2
 # 103 "data/maps/Route6/scripts.pory"

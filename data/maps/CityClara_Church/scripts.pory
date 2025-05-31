@@ -434,7 +434,7 @@ script CityClara_Church_Script_JesseAndJamesDefeated {
 	msgbox(CityClara_Church_Text_JesseAndJamesPost)
 	closemessage
     //Exeunt Trio
-	fadescreen (FADE_TO_BLACK)
+	fadescreenswapbuffers (FADE_TO_BLACK)
 	removeobject (OBJ_EVENT_JESSE) 
 	setobjectxyperm (OBJ_EVENT_JESSE, 0, 0)
 	setobjectmovementtype (OBJ_EVENT_JESSE, MOVEMENT_TYPE_INVISIBLE)
@@ -444,7 +444,7 @@ script CityClara_Church_Script_JesseAndJamesDefeated {
 	removeobject (OBJ_EVENT_MEOWTH) 
 	setobjectxyperm (OBJ_EVENT_MEOWTH, 0, 0)
 	setobjectmovementtype (OBJ_EVENT_MEOWTH, MOVEMENT_TYPE_INVISIBLE)
-	fadescreen (FADE_FROM_BLACK)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
     //Center Player
     if (flag(FLAG_TEMP_2)) {
         applymovement (OBJ_EVENT_ID_PLAYER, CityClara_Church_Movement_PlayerCenterL)

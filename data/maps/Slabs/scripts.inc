@@ -99,7 +99,7 @@ Slabs_EventScript_RivalBattle::
 # 75 "data/maps/Slabs/scripts.pory"
 	destroy_field_pic 16
 # 77 "data/maps/Slabs/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 78 "data/maps/Slabs/scripts.pory"
 	setflag FLAG_SLABS_HIDE_RIVAL
 # 79 "data/maps/Slabs/scripts.pory"
@@ -111,7 +111,7 @@ Slabs_EventScript_RivalBattle::
 # 84 "data/maps/Slabs/scripts.pory"
 	special DrawWholeMapView
 # 85 "data/maps/Slabs/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 	return
 
 

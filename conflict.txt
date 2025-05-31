@@ -19,15 +19,12 @@
 CONFLICT (content): Merge conflict in src/trainer_see.c
 
 TEST:
-	DNS
-	Rock Climb
-	Defog / Fog
+	DNS - Disabled for now will require some work to make it work
 	Fade Screen : fadescreen -> fadescreenswapbuffers
 	Config Battles
 	custom item icons : Compressed Palettes were REMOVED
 	level cap / obedience
 	double battles, twin battles (Panda Bazu or whatever for exampl) (custom battles in general)
-	auto-run (Config button conflicts with DexNavSearch)
 	check custom map name popups are correct\
 	spin tiles
 	exclamation marks (src/trainer_see.c)

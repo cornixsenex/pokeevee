@@ -89,13 +89,13 @@ BeachCave_EventScript_Hector_2:
 # 57 "data/maps/BeachCave/scripts.pory"
 	closemessage
 # 58 "data/maps/BeachCave/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 59 "data/maps/BeachCave/scripts.pory"
 	removeobject 7
 # 60 "data/maps/BeachCave/scripts.pory"
 	setflag FLAG_BEACHCAVE_HIDE_HECTOR
 # 61 "data/maps/BeachCave/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 	goto BeachCave_EventScript_Hector_1
 
 

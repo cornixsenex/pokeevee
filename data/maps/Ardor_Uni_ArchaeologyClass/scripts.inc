@@ -498,13 +498,13 @@ Ardor_Uni_ArchaeologyClass_EventScript_BeginAttack::
 # 288 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	destroy_field_pic 9
 # 289 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 290 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	removeobject 12
 # 291 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
 	setflag FLAG_ARCHAELOGY_CLASS_HIDEREBELS
 # 292 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 	return
 
 

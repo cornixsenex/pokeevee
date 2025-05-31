@@ -221,13 +221,13 @@ GrandmasCabin_Script_LeafGame1::
 # 160 "data/maps/GrandmasCabin/scripts.pory"
 	closemessage
 # 162 "data/maps/GrandmasCabin/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 163 "data/maps/GrandmasCabin/scripts.pory"
 	removeobject 3
 # 164 "data/maps/GrandmasCabin/scripts.pory"
 	call GrandmasCabin_Script_ShowLeaf2
 # 165 "data/maps/GrandmasCabin/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 167 "data/maps/GrandmasCabin/scripts.pory"
 	releaseall
 	end
@@ -366,7 +366,7 @@ GrandmasCabin_Script_ContinueHideAndSeek::
 # 241 "data/maps/GrandmasCabin/scripts.pory"
 	closemessage
 # 243 "data/maps/GrandmasCabin/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 244 "data/maps/GrandmasCabin/scripts.pory"
 	removeobject 3
 # 245 "data/maps/GrandmasCabin/scripts.pory"
@@ -385,19 +385,19 @@ GrandmasCabin_Script_ContinueHideAndSeek_1:
 # 259 "data/maps/GrandmasCabin/scripts.pory"
 	showobjectat 3, MAP_GRANDMAS_CABIN
 # 260 "data/maps/GrandmasCabin/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 262 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_Text_Leaf6, MSGBOX_DEFAULT
 # 263 "data/maps/GrandmasCabin/scripts.pory"
 	closemessage
 # 265 "data/maps/GrandmasCabin/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 266 "data/maps/GrandmasCabin/scripts.pory"
 	removeobject 3
 # 267 "data/maps/GrandmasCabin/scripts.pory"
 	call GrandmasCabin_Script_ShowLeaf3
 # 268 "data/maps/GrandmasCabin/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 270 "data/maps/GrandmasCabin/scripts.pory"
 	setvar VAR_GRANNY_STATE, 4
 # 271 "data/maps/GrandmasCabin/scripts.pory"

@@ -298,7 +298,7 @@ LoonixInsideReal_Script_GrannyScene2_1:
 # 222 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
 # 224 "data/maps/LoonixInsideReal/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 225 "data/maps/LoonixInsideReal/scripts.pory"
 	playfanfare MUS_HEAL
 # 226 "data/maps/LoonixInsideReal/scripts.pory"
@@ -318,7 +318,7 @@ LoonixInsideReal_Script_GrannyScene2_1:
 # 233 "data/maps/LoonixInsideReal/scripts.pory"
 	callnative UpdateFollowingPokemon
 # 234 "data/maps/LoonixInsideReal/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 237 "data/maps/LoonixInsideReal/scripts.pory"
 	load_field_pic 30, 190, 98
 # 238 "data/maps/LoonixInsideReal/scripts.pory"

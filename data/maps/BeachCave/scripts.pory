@@ -55,10 +55,10 @@ script BeachCave_EventScript_Hector {
 		removeitem (ITEM_WEDDING_INVITATION_HECTOR)
 		msgbox(BeachCave_Text_Hector2)
 		closemessage
-		fadescreen (1)
+		fadescreenswapbuffers (1)
 		removeobject (OBJ_HECTOR)
 		setflag (FLAG_BEACHCAVE_HIDE_HECTOR)
-		fadescreen (0)
+		fadescreenswapbuffers (0)
 	} else {
 		msgbox(BeachCave_Text_Hector1)
 		closemessage

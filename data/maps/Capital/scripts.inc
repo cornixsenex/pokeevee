@@ -628,13 +628,13 @@ Capital_EventScript_GioPresident_55:
 # 483 "data/maps/Capital/scripts.pory"
 	delay 5
 # 484 "data/maps/Capital/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 485 "data/maps/Capital/scripts.pory"
 	setflag FLAG_ROUTE4_HIDEROCKETS
 # 486 "data/maps/Capital/scripts.pory"
 	removeobject 32
 # 487 "data/maps/Capital/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 489 "data/maps/Capital/scripts.pory"
 	compare VAR_CAPITAL_STATE, 3
 	goto_if_lt Capital_EventScript_GioPresident_60

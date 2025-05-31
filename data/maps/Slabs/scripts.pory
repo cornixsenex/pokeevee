@@ -74,7 +74,7 @@ script Slabs_EventScript_RivalBattle {
 	closemessage
 	destroy_field_pic (RIVAL_FIELD_PIC)
 // remove rival
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	setflag (FLAG_SLABS_HIDE_RIVAL)
 	removeobject (OBJ_EVENT_ID_RIVAL)
 //set var to hide one of the bikes
@@ -82,7 +82,7 @@ script Slabs_EventScript_RivalBattle {
 //remove one of the bikes
 	call (Slabs_EventScript_HideBike1)
 	special (DrawWholeMapView)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	return
 }
 

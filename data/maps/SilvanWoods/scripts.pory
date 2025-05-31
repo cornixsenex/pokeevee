@@ -703,9 +703,9 @@ script SilvanWoods_Script_SilvanLeafScene3 {
     //Prob blank screen to "catch" Chik by leaf
     playmoncry (SPECIES_CHIKORITA, CRY_MODE_ENCOUNTER)
     waitmoncry 
-    fadescreen (FADE_TO_BLACK)
+    fadescreenswapbuffers (FADE_TO_BLACK)
     removeobject (OBJ_EVENT_CHIKORITA)
-    fadescreen (FADE_FROM_BLACK)
+    fadescreenswapbuffers (FADE_FROM_BLACK)
     //They face each other
     applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceLeft)
     applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)

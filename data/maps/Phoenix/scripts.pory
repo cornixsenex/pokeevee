@@ -110,7 +110,7 @@ script Phoenix_EventScript_ClearParty {
 	waitmovement (0)
 	msgbox(Phoenix_Text_FratPartyClear)
 	closemessage
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	setflag (FLAG_PHOENIX_PARTY)
 	setvar (VAR_TEMP_6, 0)
 	removeobject (OBJ_EVENT_FRATBOY)
@@ -141,7 +141,7 @@ script Phoenix_EventScript_LeafApproach {
 		turnobject (OBJ_EVENT_ID_PLAYER, DIR_WEST)
 		turnobject (OBJ_EVENT_LEAF, DIR_EAST)
 	}
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	msgbox(Phoenix_Text_LeafExit)
 	closemessage
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)

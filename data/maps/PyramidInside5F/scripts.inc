@@ -10,7 +10,7 @@ PyramidInside5F_EventScript_Indy::
 # 8 "data/maps/PyramidInside5F/scripts.pory"
 	closemessage
 # 13 "data/maps/PyramidInside5F/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 14 "data/maps/PyramidInside5F/scripts.pory"
 	removeobject 1
 # 15 "data/maps/PyramidInside5F/scripts.pory"
@@ -22,7 +22,7 @@ PyramidInside5F_EventScript_Indy::
 # 18 "data/maps/PyramidInside5F/scripts.pory"
 	setflag FLAG_FRAT_LEAF
 # 19 "data/maps/PyramidInside5F/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 20 "data/maps/PyramidInside5F/scripts.pory"
 	release
 	end

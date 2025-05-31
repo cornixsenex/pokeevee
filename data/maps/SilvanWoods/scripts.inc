@@ -1094,11 +1094,11 @@ SilvanWoods_Script_SilvanLeafScene3::
 # 705 "data/maps/SilvanWoods/scripts.pory"
 	waitmoncry
 # 706 "data/maps/SilvanWoods/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 707 "data/maps/SilvanWoods/scripts.pory"
 	removeobject 35
 # 708 "data/maps/SilvanWoods/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 710 "data/maps/SilvanWoods/scripts.pory"
 	applymovement 30, Common_Movement_FaceLeft
 # 711 "data/maps/SilvanWoods/scripts.pory"

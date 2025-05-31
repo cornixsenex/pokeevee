@@ -481,10 +481,10 @@ script Capital_EventScript_GioPresident {
 	closemessage
 	destroy_field_pic(GIO_FIELD_PIC)
 	delay (5)
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	setflag (FLAG_ROUTE4_HIDEROCKETS)
 	removeobject (OBJ_EVENT_ID_MEWTWO)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	//Gio faces player
 	if (var(VAR_CAPITAL_STATE) < 3) {
 		applymovement (OBJ_EVENT_ID_GIO, Common_Movement_FaceLeft)

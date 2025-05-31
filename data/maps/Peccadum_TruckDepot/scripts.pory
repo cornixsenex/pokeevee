@@ -36,7 +36,7 @@ script Peccadum_TruckDepot_Script_StartTruckScene {
 		//Y: Ok get in the truck hold on it's a bumpy ride -> DoTruckScene
         msgbox (Peccadum_TruckDepot_Text_TruckScene)
         closemessage
-        fadescreen (FADE_TO_BLACK)
+        fadescreenswapbuffers (FADE_TO_BLACK)
 		special (DoPeccadumTruckScene)
 	} else {
 		//N: Ok come back when you're ready we've got trucks leaving every day

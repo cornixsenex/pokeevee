@@ -4199,7 +4199,7 @@ static u8 CreateRockClimbBlob(void)
     {
         sprite = &gSprites[spriteId];
         sprite->coordOffsetEnabled = TRUE;
-        sprite->oam.paletteNum = 0;
+        sprite->oam.paletteNum = LoadPlayerObjectEventPalette(gSaveBlock2Ptr->playerGender);
         sprite->data[2] = gFieldEffectArguments[2];
         sprite->data[3] = -1;
         sprite->data[6] = -1;

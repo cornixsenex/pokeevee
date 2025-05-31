@@ -282,7 +282,7 @@ BigIslandS_Script_HoOh_7:
 # 214 "data/maps/BigIslandS/scripts.pory"
 	closemessage
 # 218 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 219 "data/maps/BigIslandS/scripts.pory"
 	setvar VAR_ARGO_STATE, 6
 # 220 "data/maps/BigIslandS/scripts.pory"
@@ -290,7 +290,7 @@ BigIslandS_Script_HoOh_7:
 # 221 "data/maps/BigIslandS/scripts.pory"
 	removeobject 1
 # 222 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 224 "data/maps/BigIslandS/scripts.pory"
 	releaseall
 	end
@@ -341,7 +341,7 @@ BigIslandS_Script_HideMonkeys::
 # 247 "data/maps/BigIslandS/scripts.pory"
 	waitmoncry
 # 249 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 251 "data/maps/BigIslandS/scripts.pory"
 	hideobjectat 6, MAP_BIG_ISLAND_S
 # 252 "data/maps/BigIslandS/scripts.pory"
@@ -355,7 +355,7 @@ BigIslandS_Script_HideMonkeys::
 # 256 "data/maps/BigIslandS/scripts.pory"
 	removeobject 8
 # 258 "data/maps/BigIslandS/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 260 "data/maps/BigIslandS/scripts.pory"
 	setobjectmovementtype 6, MOVEMENT_TYPE_INVISIBLE
 # 261 "data/maps/BigIslandS/scripts.pory"

@@ -16,13 +16,13 @@ Vegas_PowerPlant2F_EventScript_RocketAdmin::
 # 10 "data/maps/Vegas_PowerPlant2F/scripts.pory"
 	closemessage
 # 11 "data/maps/Vegas_PowerPlant2F/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 12 "data/maps/Vegas_PowerPlant2F/scripts.pory"
 	setflag FLAG_BADGE02_GET
 # 13 "data/maps/Vegas_PowerPlant2F/scripts.pory"
 	removeobject 1
 # 14 "data/maps/Vegas_PowerPlant2F/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 15 "data/maps/Vegas_PowerPlant2F/scripts.pory"
 	release
 	end

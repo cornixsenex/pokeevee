@@ -95,10 +95,10 @@ script Route6_EventScript_JesseAndJames {
 	applymovement (16, Route6_Movement_MeowthTakePikachu)
 	waitmovement(0)
 	playmoncry (SPECIES_PIKACHU, 0)
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	waitmoncry
 	removeobject (17)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	msgbox (Route6_Text_Jesse2)
 	closemessage
 	msgbox (Route6_Text_Meowth2)

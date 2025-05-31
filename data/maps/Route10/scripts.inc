@@ -16,11 +16,11 @@ Route10_EventScript_Krabby::
 # 20 "data/maps/Route10/scripts.pory"
 	dowildbattle
 # 21 "data/maps/Route10/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 22 "data/maps/Route10/scripts.pory"
 	removeobject 17
 # 23 "data/maps/Route10/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 24 "data/maps/Route10/scripts.pory"
 	release
 	return
@@ -62,13 +62,13 @@ Route10_EventScript_Rival::
 # 46 "data/maps/Route10/scripts.pory"
 	destroy_field_pic 16
 # 47 "data/maps/Route10/scripts.pory"
-	fadescreen 1
+	fadescreenswapbuffers 1
 # 48 "data/maps/Route10/scripts.pory"
 	setflag FLAG_ROUTE10_HIDE_RIVAL
 # 49 "data/maps/Route10/scripts.pory"
 	removeobject 1
 # 50 "data/maps/Route10/scripts.pory"
-	fadescreen 0
+	fadescreenswapbuffers 0
 # 51 "data/maps/Route10/scripts.pory"
 	release
 	return

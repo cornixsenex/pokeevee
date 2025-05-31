@@ -54,9 +54,9 @@ script LoonixInsideReal_F2_Script_Bed {
 			}
 		} else {
 			playfanfare (MUS_HEAL)
-			fadescreen (1)
+			fadescreenswapbuffers (1)
 			waitfanfare
-			fadescreen (0)
+			fadescreenswapbuffers (0)
 		}
 	}
 	releaseall

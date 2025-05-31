@@ -215,11 +215,11 @@ script BigIslandS_Script_HoOh {
 
 
 	//set vars and flags and be off
-	fadescreen (1)
+	fadescreenswapbuffers (1)
 	setvar (VAR_ARGO_STATE, 6)
 	setflag (FLAG_BIGISLAND_S_HIDE_PROMETHEUS)
 	removeobject (OBJ_EVENT_PROMETHEUS)
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 
 	releaseall
 
@@ -245,8 +245,8 @@ script BigIslandS_Script_HideMonkeys {
 	waitmovement (0)
 	//play monkey sounds
 	waitmoncry 
-	//fadescreen
-	fadescreen (1)
+	//fadescreenswapbuffers
+	fadescreenswapbuffers (1)
 	//hide and remove monkeys
 	hideobjectat (OBJ_EVENT_INFERNAPE, MAP_BIG_ISLAND_S)
 	removeobject (OBJ_EVENT_INFERNAPE)
@@ -255,7 +255,7 @@ script BigIslandS_Script_HideMonkeys {
 	hideobjectat (OBJ_EVENT_CHIMCHAR, MAP_BIG_ISLAND_S)
 	removeobject (OBJ_EVENT_CHIMCHAR)
 	//unfade screen
-	fadescreen (0)
+	fadescreenswapbuffers (0)
 	//Persist Hidden Monkeys
 	setobjectmovementtype (OBJ_EVENT_INFERNAPE, MOVEMENT_TYPE_INVISIBLE)
 	setobjectxyperm (OBJ_EVENT_INFERNAPE, 64, 24)
