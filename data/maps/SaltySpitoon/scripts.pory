@@ -484,7 +484,7 @@ script SaltySpitoon_EventScript_HiLoKabuto_PlayerLost {
 }
 
 script SaltySpitoon_EventScript_HiLoKabuto_PlayerWon {
-	setvar (WINSTREAK, WINSTREAK+1)
+	addvar (WINSTREAK, 1)
 	showmoneybox (0, 0)
 	msgbox (SaltySpitoon_Text_HiLoKabuto_YouWon)
 	closemessage

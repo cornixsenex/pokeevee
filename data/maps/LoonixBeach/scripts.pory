@@ -20,18 +20,19 @@ script LoonixBeach_EventScript_Item_Surfboard {
 }
 
 script LoonixBeach_Script_Sign1 {
-	trainerbattle_no_intro(TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost)
+	giveitem (ITEM_BOOK, 1)
+	closemessage
 	end
 }
 
 script LoonixBeach_Script_Sign2 {
-	giveitem (ITEM_ORAN_BERRY, 5)
+	giveitem (ITEM_BIG_HAMMER, 1)
 	closemessage
 	end
 }
 
 script LoonixBeach_Script_Sign3 {
-	giveitem (ITEM_MASTER_BALL, 1)
+	giveitem (ITEM_SCYTHE, 1)
 	closemessage
 	end
 }

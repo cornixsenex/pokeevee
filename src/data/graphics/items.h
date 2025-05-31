@@ -2104,13 +2104,13 @@ const u16 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U16("graphics/items/icon
 // KUSTOM ITEM ICONS
 
 const u32 gItemIcon_KindBud[] = INCBIN_U32("graphics/items/icons/kind_bud.4bpp.lz");
-const u16 gItemIconPalette_KindBud[] = INCBIN_U16("graphics/items/icon_palettes/kind_bud.gbapal.lz");
+const u16 gItemIconPalette_KindBud[] = INCBIN_U16("graphics/items/icon_palettes/kind_bud.gbapal");
 
 const u32 gItemIcon_Book[] = INCBIN_U32("graphics/items/icons/book.4bpp.lz");
-const u16 gItemIconPalette_Book[] = INCBIN_U16("graphics/items/icon_palettes/book.gbapal.lz");
+const u16 gItemIconPalette_Book[] = INCBIN_U16("graphics/items/icon_palettes/book.gbapal");
 
 const u32 gItemIcon_BigHammer[] = INCBIN_U32("graphics/items/icons/big_hammer.4bpp.lz");
-const u16 gItemIconPalette_BigHammer[] = INCBIN_U16("graphics/items/icon_palettes/big_hammer.gbapal.lz");
+const u16 gItemIconPalette_BigHammer[] = INCBIN_U16("graphics/items/icon_palettes/big_hammer.gbapal");
 
 const u32 gItemIcon_Scythe[] = INCBIN_U32("graphics/items/icons/scythe.4bpp.lz");
-const u16 gItemIconPalette_Scythe[] = INCBIN_U16("graphics/items/icon_palettes/scythe.gbapal.lz");
+const u16 gItemIconPalette_Scythe[] = INCBIN_U16("graphics/items/icon_palettes/scythe.gbapal");

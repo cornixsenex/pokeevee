@@ -32,30 +32,32 @@ LoonixBeach_EventScript_Item_Surfboard::
 
 LoonixBeach_Script_Sign1::
 # 23 "data/maps/LoonixBeach/scripts.pory"
-	trainerbattle_no_intro TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost
+	giveitem ITEM_BOOK, 1
+# 24 "data/maps/LoonixBeach/scripts.pory"
+	closemessage
 	end
 
 
 LoonixBeach_Script_Sign2::
-# 28 "data/maps/LoonixBeach/scripts.pory"
-	giveitem ITEM_ORAN_BERRY, 5
 # 29 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_BIG_HAMMER, 1
+# 30 "data/maps/LoonixBeach/scripts.pory"
 	closemessage
 	end
 
 
 LoonixBeach_Script_Sign3::
-# 34 "data/maps/LoonixBeach/scripts.pory"
-	giveitem ITEM_MASTER_BALL, 1
 # 35 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_SCYTHE, 1
+# 36 "data/maps/LoonixBeach/scripts.pory"
 	closemessage
 	end
 
 
 LoonixBeach_Text_BlueFight::
-# 39 "data/maps/LoonixBeach/scripts.pory"
+# 40 "data/maps/LoonixBeach/scripts.pory"
 	.string "My first Pokeball is a BEAST BALL$"
 
 LoonixBeach_Text_BlueLost::
-# 43 "data/maps/LoonixBeach/scripts.pory"
+# 44 "data/maps/LoonixBeach/scripts.pory"
 	.string "I wonder why my face looks like that.$"

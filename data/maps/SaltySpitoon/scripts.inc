@@ -1174,7 +1174,7 @@ SaltySpitoon_EventScript_HiLoKabuto_PlayerLost::
 
 SaltySpitoon_EventScript_HiLoKabuto_PlayerWon::
 # 487 "data/maps/SaltySpitoon/scripts.pory"
-	setvar VAR_TEMP_9, VAR_TEMP_9 + 1
+	addvar VAR_TEMP_9, 1
 # 488 "data/maps/SaltySpitoon/scripts.pory"
 	showmoneybox 0, 0
 # 489 "data/maps/SaltySpitoon/scripts.pory"
