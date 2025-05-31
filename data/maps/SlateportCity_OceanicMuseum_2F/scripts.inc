@@ -1,6 +1,3 @@
-.set LOCALID_CAPT_STERN, 1
-.set LOCALID_ARCHIE, 2
-
 SlateportCity_OceanicMuseum_2F_MapScripts::
 	.byte 0
 
@@ -10,43 +7,78 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_ENCOUNTER_AQUA, TRUE
+@@	addobject LOCALID_OCEANIC_MUSEUM_2F_GRUNT_1
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_1, SlateportCity_OceanicMuseum_2F_Movement_FirstGruntEnter
 	waitmovement 0
+@@	addobject LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2, SlateportCity_OceanicMuseum_2F_Movement_SecondGruntEnter
 	waitmovement 0
-	waitmovement 0
-	call_if_eq VAR_FACING, DIR_SOUTH, SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts
-	call_if_eq VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts
-	msgbox SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts, MSGBOX_DEFAULT
-	call_if_ne VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_2F_EventScript_SternFaceGrunts
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou, MSGBOX_DEFAULT
-	msgbox SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua, MSGBOX_DEFAULT
-	closemessage
-	waitmovement 0
-	call_if_eq VAR_FACING, DIR_SOUTH, SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntSouth
-	msgbox SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious, MSGBOX_DEFAULT
-	closemessage
-	waitmovement 0
-	waitmovement 0
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_1, SlateportCity_OceanicMuseum_2F_Movement_FirstGruntApproach
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2, SlateportCity_OceanicMuseum_2F_Movement_SecondGruntApproach
+@@	waitmovement 0
+@@	call_if_eq VAR_FACING, DIR_SOUTH, SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts
+@@	call_if_eq VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts, MSGBOX_DEFAULT
+@@	call_if_ne VAR_FACING, DIR_EAST, SlateportCity_OceanicMuseum_2F_EventScript_SternFaceGrunts
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou, MSGBOX_DEFAULT
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua, MSGBOX_DEFAULT
+@@	closemessage
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2, SlateportCity_OceanicMuseum_2F_Movement_GruntApproachToBattle
+@@	waitmovement 0
+@@	call_if_eq VAR_FACING, DIR_SOUTH, SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntSouth
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious, MSGBOX_DEFAULT
+@@	closemessage
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2, SlateportCity_OceanicMuseum_2F_Movement_GruntDefeated
+@@	waitmovement 0
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_1, SlateportCity_OceanicMuseum_2F_Movement_GruntApproachToBattle
+@@	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis, MSGBOX_DEFAULT
-	waitmovement 0
-	fadescreen FADE_FROM_BLACK
-	delay 30
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs, MSGBOX_DEFAULT
-	setvar VAR_0x8004, ITEM_DEVON_PARTS
-	call Common_EventScript_PlayerHandedOverTheItem
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo, MSGBOX_DEFAULT
-	closemessage
-	fadescreen FADE_TO_BLACK
-	playfanfare MUS_HEAL
-	waitfanfare
-	special HealPlayerParty
-	callnative UpdateFollowingPokemon
-	removeobject LOCALID_CAPT_STERN
-	call_if_eq VAR_REGISTER_BIRCH_STATE, 0, SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch
-	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
-	fadescreen FADE_FROM_BLACK
-	release
+@@	trainerbattle_no_intro TRAINER_GRUNT_MUSEUM_2, SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_1, SlateportCity_OceanicMuseum_2F_Movement_GruntDefeated
+@@	waitmovement 0
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_1, Common_Movement_WalkInPlaceFasterDown
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2, Common_Movement_WalkInPlaceFasterUp
+@@	waitmovement 0
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_MeddlingKid, MSGBOX_DEFAULT
+@@	closemessage
+@@	delay 35
+@@	addobject LOCALID_OCEANIC_MUSEUM_2F_ARCHIE
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_ARCHIE, SlateportCity_OceanicMuseum_2F_Movement_ArchieEnter
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2, SlateportCity_OceanicMuseum_2F_Movement_GruntMoveForArchie
+@@	waitmovement 0
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong, MSGBOX_DEFAULT
+@@	closemessage
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_ARCHIE, SlateportCity_OceanicMuseum_2F_Movement_ArchieApproachPlayer
+@@	waitmovement 0
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
+@@	closemessage
+@@	savebgm MUS_DUMMY
+@@	fadedefaultbgm
+@@	fadescreen FADE_TO_BLACK
+@@	removeobject LOCALID_OCEANIC_MUSEUM_2F_ARCHIE
+@@	removeobject LOCALID_OCEANIC_MUSEUM_2F_GRUNT_1
+@@	removeobject LOCALID_OCEANIC_MUSEUM_2F_GRUNT_2
+@@	fadescreen FADE_FROM_BLACK
+@@	delay 30
+@@	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS
+@@	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+@@	waitmovement 0
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs, MSGBOX_DEFAULT
+@@	setvar VAR_0x8004, ITEM_DEVON_PARTS
+@@	call Common_EventScript_PlayerHandedOverTheItem
+@@	msgbox SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo, MSGBOX_DEFAULT
+@@	closemessage
+@@	fadescreen FADE_TO_BLACK
+@@	playfanfare MUS_HEAL
+@@	waitfanfare
+@@	special HealPlayerParty
+@@	callnative UpdateFollowingPokemon
+@@	removeobject LOCALID_OCEANIC_MUSEUM_2F_CAPT_STERN
+@@	setflag FLAG_HIDE_ROUTE_110_TEAM_AQUA
+@@	call_if_eq VAR_REGISTER_BIRCH_STATE, 0, SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch
+@@	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
+@@	fadescreen FADE_FROM_BLACK
+@@	release
 	end
 
 SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch::
@@ -54,22 +86,22 @@ SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch::
 	return
 
 SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts::
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+@@	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
 SlateportCity_OceanicMuseum_2F_EventScript_SternFaceGrunts::
-	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFasterLeft
+@@	applymovement LOCALID_OCEANIC_MUSEUM_2F_CAPT_STERN, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
 
 SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntSouth::
-	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntSouth
+@@	applymovement LOCALID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntSouth
 	waitmovement 0
 	return
 
 SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntWest::
-	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntWest
+@@	applymovement LOCALID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntWest
 	waitmovement 0
 	return
 

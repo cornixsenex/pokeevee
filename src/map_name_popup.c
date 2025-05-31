@@ -80,7 +80,12 @@ static const u16 sMapPopUp_PaletteTable[][16] =
 
 static const u16 sMapPopUp_Palette_Underwater[16] = INCBIN_U16("graphics/map_popup/underwater.gbapal");
 
-static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
+// -1 in the size excludes MAPSEC_NONE.
+// The MAPSEC values for Kanto (between MAPSEC_DYNAMIC and MAPSEC_AQUA_HIDEOUT) are also excluded,
+// and this is then handled by subtracting KANTO_MAPSEC_COUNT here and in LoadMapNamePopUpWindowBg.
+//
+// NOTE: Cornix removed the - KANTO_MAPSEC_COUNT because I am using those 
+static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
 {
     [MAPSEC_LITTLEROOT_TOWN] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_OLDALE_TOWN] = MAPPOPUP_THEME_WOOD,
@@ -342,7 +347,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
     [MAPSEC_LOWER_WEST_DRAKE]    = MAPPOPUP_THEME_WOOD,
     [MAPSEC_CASTALIA]            = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_SINUS_CLARUS]        = MAPPOPUP_THEME_MARBLE,
-    [MAPSEC_VIA_FIDELIUM]        = MAPPOPUP_THEME_WOOD
+    [MAPSEC_VIA_FIDELIUM]        = MAPPOPUP_THEME_WOOD,
 	
 };
 
@@ -780,7 +785,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		mapGroup = gSaveBlock1Ptr->location.mapGroup;
 		mapNum   = gSaveBlock1Ptr->location.mapNum;
 		//Route 3 - Canelos Cove(Marble), River Delta (Wood)
-		if (mapGroup == MAP_GROUP(ROUTE3) && mapNum == MAP_NUM(ROUTE3))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE3) && mapNum == MAP_NUM(MAP_ROUTE3))
 		{
 			if (IsRoute3RiverDelta(FALSE))
 				regionMapSectionId = MAPSEC_DELTA_DRACI;
@@ -788,7 +793,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_SINUS_CAMELUS;
 		} 
 		//MareWWW - Mare Occidens or River Delta
-		if (mapGroup == MAP_GROUP(MARE_WWW) && mapNum == MAP_NUM(MARE_WWW))
+		if (mapGroup == MAP_GROUP(MAP_MARE_WWW) && mapNum == MAP_NUM(MAP_MARE_WWW))
 		{
 			n = GetDynamicMapSec_MareWWW(FALSE);
 			if (n == 2) 
@@ -801,7 +806,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_DYNAMIC;
 		}
 		//Route 17
-		if (mapGroup == MAP_GROUP(ROUTE17) && mapNum == MAP_NUM(ROUTE17))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
 		{
 			n = GetDynamicMapSec_Route17(FALSE);
 			switch (n)
@@ -838,7 +843,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//Lake Ira
-		if (mapGroup == MAP_GROUP(LAKE_IRA) && mapNum == MAP_NUM(LAKE_IRA))
+		if (mapGroup == MAP_GROUP(MAP_LAKE_IRA) && mapNum == MAP_NUM(MAP_LAKE_IRA))
 		{
 			n = GetDynamicMapSec_LakeIra(FALSE);
 			switch (n)
@@ -860,7 +865,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//LakeIraSouth
-		if (mapGroup == MAP_GROUP(LAKE_IRA_SOUTH) && mapNum == MAP_NUM(LAKE_IRA_SOUTH)) 	
+		if (mapGroup == MAP_GROUP(MAP_LAKE_IRA_SOUTH) && mapNum == MAP_NUM(MAP_LAKE_IRA_SOUTH)) 	
 		{
 			if (IsLakeIraSouthUpperDracoWest(FALSE))
 					regionMapSectionId = MAPSEC_UPPER_WEST_DRAKE;
@@ -868,7 +873,7 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_LOWER_WEST_DRAKE;
 		}
 		//SilvanWoodsN
-		if (mapGroup == MAP_GROUP(SILVAN_WOODS_N) && mapNum == MAP_NUM(SILVAN_WOODS_N)) 	
+		if (mapGroup == MAP_GROUP(MAP_SILVAN_WOODS_N) && mapNum == MAP_NUM(MAP_SILVAN_WOODS_N)) 	
 		{		
 			if (IsSilvanWoodsNUpperDracoEast(FALSE))
 					regionMapSectionId = MAPSEC_UPPER_EAST_DRAKE;
@@ -876,7 +881,7 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_LOWER_EAST_DRAKE;
 		}
 		//Silvan Woods
-		if (mapGroup == MAP_GROUP(SILVAN_WOODS) && mapNum == MAP_NUM(SILVAN_WOODS))
+		if (mapGroup == MAP_GROUP(MAP_SILVAN_WOODS) && mapNum == MAP_NUM(MAP_SILVAN_WOODS))
 		{
 			n = GetDynamicMapSec_SilvanWoods(FALSE);
 			DebugPrintf ("Dynamic BG Theme, Silvan Woods\nn: %d", n);
@@ -898,7 +903,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//MareS6
-		if (mapGroup == MAP_GROUP(MARE_S6) && mapNum == MAP_NUM(MARE_S6))
+		if (mapGroup == MAP_GROUP(MAP_MARE_S6) && mapNum == MAP_NUM(MAP_MARE_S6))
 		{
 			n = GetDynamicMapSec_MareS6(FALSE);
 			switch (n) {
@@ -922,7 +927,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//MareWW 
-		if (mapGroup == MAP_GROUP(MARE_WW) && mapNum == MAP_NUM(MARE_WW))
+		if (mapGroup == MAP_GROUP(MAP_MARE_WW) && mapNum == MAP_NUM(MAP_MARE_WW))
 		{
 			n = GetDynamicMapSec_MareWW(FALSE);
 			switch (n) {
@@ -943,7 +948,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//CityClara 
-		if (mapGroup == MAP_GROUP(CITY_CLARA) && mapNum == MAP_NUM(CITY_CLARA))
+		if (mapGroup == MAP_GROUP(MAP_CITY_CLARA) && mapNum == MAP_NUM(MAP_CITY_CLARA))
 		{
 			n = GetDynamicMapSec_CityClara(FALSE);
 			switch (n) {
@@ -970,7 +975,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//MareW
-		if (mapGroup == MAP_GROUP(MARE_W) && mapNum == MAP_NUM(MARE_W))
+		if (mapGroup == MAP_GROUP(MAP_MARE_W) && mapNum == MAP_NUM(MAP_MARE_W))
 		{
 			n = GetDynamicMapSec_MareW(FALSE);
 			switch (n) {
@@ -994,7 +999,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//SRoute18
-		if (mapGroup == MAP_GROUP(SROUTE18) && mapNum == MAP_NUM(SROUTE18))
+		if (mapGroup == MAP_GROUP(MAP_SROUTE18) && mapNum == MAP_NUM(MAP_SROUTE18))
 		{
 			n = GetDynamicMapSec_SRoute18(FALSE);
 			switch (n) {
@@ -1018,7 +1023,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
         //MareS5
-		if (mapGroup == MAP_GROUP(MARE_S5) && mapNum == MAP_NUM(MARE_S5))
+		if (mapGroup == MAP_GROUP(MAP_MARE_S5) && mapNum == MAP_NUM(MAP_MARE_S5))
 		{
 			if (IsMareS5MareTropicum(FALSE))
 				regionMapSectionId = MAPSEC_MARE_TROPICUM;
@@ -1026,7 +1031,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_ACTA_ECHONA;
 		} 
 		//Route4
-		if (mapGroup == MAP_GROUP(ROUTE4) && mapNum == MAP_NUM(ROUTE4))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))
 		{
 			n = GetDynamicMapSec_Route4(FALSE);
 			switch (n) {
@@ -1047,7 +1052,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//Route6
-		if (mapGroup == MAP_GROUP(ROUTE6) && mapNum == MAP_NUM(ROUTE6))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE6) && mapNum == MAP_NUM(MAP_ROUTE6))
 		{
 			n = GetDynamicMapSec_Route6(FALSE);
 			switch (n) {
@@ -1068,7 +1073,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//Route7
-		if (mapGroup == MAP_GROUP(ROUTE7) && mapNum == MAP_NUM(ROUTE7))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE7) && mapNum == MAP_NUM(MAP_ROUTE7))
 		{
 			n = GetDynamicMapSec_Route7(FALSE);
 			switch (n) {
@@ -1097,7 +1102,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//Route5
-		if (mapGroup == MAP_GROUP(ROUTE5) && mapNum == MAP_NUM(ROUTE5))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE5) && mapNum == MAP_NUM(MAP_ROUTE5))
 		{
 			n = GetDynamicMapSec_Route5(FALSE);
 			switch (n) {
@@ -1118,7 +1123,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
 		//Sanjo - Sabina Nova or Via Magna
-		if (mapGroup == MAP_GROUP(SANJO) && mapNum == MAP_NUM(SANJO)) 
+		if (mapGroup == MAP_GROUP(MAP_SANJO) && mapNum == MAP_NUM(MAP_SANJO)) 
 		{
 			//Sabina Nova or Via Magna
 			if (IsSanjoSabinaNova(FALSE))
@@ -1127,7 +1132,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_VIA_MAGNA;
 		}
 		//DoakTown - Robustica or Via Magna
-		if (mapGroup == MAP_GROUP(DOAK_TOWN) && mapNum == MAP_NUM(DOAK_TOWN)) 
+		if (mapGroup == MAP_GROUP(MAP_DOAK_TOWN) && mapNum == MAP_NUM(MAP_DOAK_TOWN)) 
 		{
 			//Robustica or Via Magna
 			if (IsDoakTownRobustica(FALSE))
@@ -1136,7 +1141,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_VIA_MAGNA;
 		}
 		//SRoute19 - Mare Internum or Montes Vigiliae
-		if (mapGroup == MAP_GROUP(SROUTE19) && mapNum == MAP_NUM(SROUTE19)) 
+		if (mapGroup == MAP_GROUP(MAP_SROUTE19) && mapNum == MAP_NUM(MAP_SROUTE19)) 
 		{
 			//Mare Internum or Montes Vigiliae
 			if (IsSRoute19MareInternum(FALSE))
@@ -1145,7 +1150,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
 		}
 		//Route9 - Via Saxosa or Montes Vigiliae
-		if (mapGroup == MAP_GROUP(ROUTE9) && mapNum == MAP_NUM(ROUTE9)) 
+		if (mapGroup == MAP_GROUP(MAP_ROUTE9) && mapNum == MAP_NUM(MAP_ROUTE9)) 
 		{
 			if (IsRoute9ViaSaxosa(FALSE))
 				regionMapSectionId = MAPSEC_VIA_SAXOSA;
@@ -1153,7 +1158,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
 		}
 		//Route16 - Venator Mons or Cacnorum 
-		if (mapGroup == MAP_GROUP(ROUTE16) && mapNum == MAP_NUM(ROUTE16)) 
+		if (mapGroup == MAP_GROUP(MAP_ROUTE16) && mapNum == MAP_NUM(MAP_ROUTE16)) 
 		{
 			if (IsRoute16VenatorMons(FALSE))
 				regionMapSectionId = MAPSEC_VENATOR_MONS;
@@ -1161,7 +1166,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_D_COLUMNARIS;
 		}
 		//Tucson
-		if (mapGroup == MAP_GROUP(TUCSON) && mapNum == MAP_NUM(TUCSON))
+		if (mapGroup == MAP_GROUP(MAP_TUCSON) && mapNum == MAP_NUM(MAP_TUCSON))
 		{
 			n = GetDynamicMapSec_Tucson(FALSE);
 			switch (n) {
@@ -1182,7 +1187,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			}
 		}
         //Pyramids - D Cactorum or Vallis Pyramidis
-        if (mapGroup == MAP_GROUP(PYRAMIDS) && mapNum == MAP_NUM(PYRAMIDS)) 
+        if (mapGroup == MAP_GROUP(MAP_PYRAMIDS) && mapNum == MAP_NUM(MAP_PYRAMIDS)) 
 		{
 			if (IsPyramidsDCactorum(FALSE))
 				regionMapSectionId = MAPSEC_D_CACTORUM;
@@ -1190,7 +1195,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_VALLIS_PYRAMIDIS;
 		}
         //Vegas - Peccatum or Via Magna
-        if (mapGroup == MAP_GROUP(VEGAS) && mapNum == MAP_NUM(VEGAS)) 
+        if (mapGroup == MAP_GROUP(MAP_VEGAS) && mapNum == MAP_NUM(MAP_VEGAS)) 
 		{
 			n = GetDynamicMapSec_Vegas(FALSE);
 			switch (n) {
@@ -1244,7 +1249,7 @@ static void LoadMapNamePopUpWindowBg(void)
     }
     else
     {
-        popUpThemeId = sRegionMapSectionId_To_PopUpThemeIdMapping[regionMapSectionId];
+        popUpThemeId = sMapSectionToThemeId[regionMapSectionId];
         LoadBgTiles(GetWindowAttribute(popupWindowId, WINDOW_BG), sMapPopUp_OutlineTable[popUpThemeId], 0x400, 0x21D);
         CallWindowFunction(popupWindowId, DrawMapNamePopUpFrame);
         PutWindowTilemap(popupWindowId);

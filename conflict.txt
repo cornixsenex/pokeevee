@@ -1,0 +1,14 @@
+#CONFLICT (content): Merge conflict in include/constants/heal_locations.h
+	>Heal Locations - Check source files - Porymap thing desu
+#CONFLICT (content): Merge conflict in include/constants/metatile_behaviors.h
+	>Metatile Behaviors moved into enum
+?CONFLICT (modify/delete): include/constants/region_map_sections.h deleted in acb4a9cf6266ffad7b52ae33f18cfb09c490c555 and modified in HEAD.  Version HEAD of include/constants/region_map_sections.h left in tree.
+	>Obviously related to porymap 6. idk how all my custom maps will be handled. I'll just delete the file for now I guess...
+?CONFLICT (modify/delete): src/data/heal_locations.h deleted in acb4a9cf6266ffad7b52ae33f18cfb09c490c555 and modified in HEAD.  Version HEAD of src/data/heal_locations.h left in tree.
+	>Another porymap 6 just gonna delete for now
+#CONFLICT (content): Merge conflict in src/data/region_map/region_map_sections.json
+	>map_section -> id
+#CONFLICT (content): Merge conflict in src/new_game.c
+	>Add MAP_ to MAP constants I think probably other places need to be fixed
+#CONFLICT (content): Merge conflict in src/overworld.c
+	>Add MAP_ to MAP constants
