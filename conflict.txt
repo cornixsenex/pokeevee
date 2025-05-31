@@ -24,7 +24,6 @@ TEST:
 	Defog / Fog
 	Fade Screen : fadescreen -> fadescreenswapbuffers
 	Config Battles
-	snow, rain, fog, sandstorm WEATHER etc
 	custom item icons : Compressed Palettes were REMOVED
 	level cap / obedience
 	double battles, twin battles (Panda Bazu or whatever for exampl) (custom battles in general)
@@ -32,4 +31,5 @@ TEST:
 	check custom map name popups are correct\
 	spin tiles
 	exclamation marks (src/trainer_see.c)
+	berry trees
 

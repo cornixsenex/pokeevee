@@ -920,7 +920,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     }
 
 	//Extremely ugly line I apologize the compiler kept complaining and this is what gets it to stfu  250530
-    if (!(((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) ) || ((gSaveBlock2Ptr->autoRun) && FlagGet(FLAG_SYS_B_DASH)))
+    if (((!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) ) || ((gSaveBlock2Ptr->autoRun) && FlagGet(FLAG_SYS_B_DASH)))
      && (IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !FollowerNPCComingThroughDoor()))
 
     {

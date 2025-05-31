@@ -154,7 +154,7 @@ void (*const gWeatherPalStateFuncs[])(void) =
 // This table specifies which of the color maps should be
 // applied to each of the background and sprite palettes.
 
-EWRAM_INIT u8 ALIGNED(2) sBasePaletteColorMapTypes[32] =
+static const u8 ALIGNED(2) sBasePaletteColorMapTypes[32] =
 {
     // background palettes
     COLOR_MAP_DARK_CONTRAST,
@@ -198,9 +198,7 @@ void StartWeather(void)
 {
     if (!FuncIsActiveTask(Task_WeatherMain))
     {
-		u8 index = 15;
-		//Dynamic Palletes says delete this line and add 'index = 15' so yeah
-        //u8 index = AllocSpritePalette(PALTAG_WEATHER);
+		u8 index = AllocSpritePalette(PALTAG_WEATHER);
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[OBJ_PLTT_ID(index)], PLTT_SIZE_4BPP);
 
         sPaletteColorMapTypes = sBasePaletteColorMapTypes;
@@ -242,21 +240,6 @@ void SetNextWeather(u8 weather)
     gWeatherPtr->weatherChangeComplete = FALSE;
     gWeatherPtr->nextWeather = weather;
     gWeatherPtr->finishStep = 0;
-
-    if (gWeatherPtr->nextWeather != gWeatherPtr->currWeather)
-    {
-        #if DYNAMIC_OW_PALS
-            if (gWeatherPtr->nextWeather == WEATHER_FOG_HORIZONTAL)
-                BlendPalettesGradually(0x7FFFFFFF, 12, 3, 8, RGB_WHITEALPHA, 0, 0);  //all but last sprite pal
-            else if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
-                BlendPalettesGradually(0x7FFFFFFF, 12, 8, 0, RGB_WHITEALPHA, 0, 0);  //undo fog pal blend
-        #else
-            if (gWeatherPtr->nextWeather == WEATHER_FOG_HORIZONTAL)
-                BlendPalettesGradually(0x3FF0000, 12, 3, 8, RGB_WHITEALPHA, 0, 0);  //blend first 10 sprite palette slots
-            else if (gWeatherPtr->nextWeather != gWeatherPtr->currWeather && gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
-                BlendPalettesGradually(0x3FF0000, 12, 8, 0, RGB_WHITEALPHA, 0, 0);  //undo fog pal blend
-        #endif
-    }
 }
 
 static void UpdateWeatherForms(void)
@@ -720,9 +703,6 @@ static bool8 LightenSpritePaletteInFog(u8 paletteIndex)
         if (gWeatherPtr->lightenedFogSpritePals[i] == paletteIndex)
             return TRUE;
     }
-    
-    if (IsObjectEventPaletteIndex(paletteIndex))
-        return TRUE;
 
     return FALSE;
 }
@@ -1200,14 +1180,6 @@ void ResetPreservedPalettesInWeather(void)
     sPaletteColorMapTypes = sBasePaletteColorMapTypes;
 }
 
-//Its possible I don't need this function
-void UpdatePaletteGammaType(u8 index, u8 gammaType)
-{
-    if (index != 0xFF)
-        sBasePaletteColorMapTypes[index + 16] = gammaType;
-}
-
-//Its also possible I don't need this function IDK something about dynamic palettes
 bool32 IsWeatherAlphaBlend(void)
 {
     return (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL
