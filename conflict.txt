@@ -20,8 +20,3 @@ CONFLICT (content): Merge conflict in src/trainer_see.c
 
 TEST:
 	DNS - Disabled for now will require some work to make it work
-	level cap / obedience
-	check custom map name popups are correct\
-	berry trees
-	reflections
-
