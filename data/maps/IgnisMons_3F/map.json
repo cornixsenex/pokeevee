@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
@@ -300,7 +300,5 @@
       "script": "IgnisMons_3F_Script_MedeaTriggerB"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

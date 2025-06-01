@@ -222,7 +222,5 @@
       "script": "Phoenix_EventScript_PartyTrigger"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

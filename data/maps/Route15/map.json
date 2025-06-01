@@ -24,9 +24,7 @@
       "direction": "left"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 43,
@@ -169,7 +167,5 @@
       "script": "Route15_Script_SandstormTriggerUp"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

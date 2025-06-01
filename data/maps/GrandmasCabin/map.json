@@ -320,7 +320,5 @@
       "script": "GrandmasCabin_Script_GameOver"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

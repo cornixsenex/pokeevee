@@ -69,9 +69,7 @@
       "flag": "FLAG_MARES5_HIDE_ARGO"
     }
   ],
-  "warp_events": [
-
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
@@ -299,7 +297,5 @@
       "script": "MareS5_Script_ActaEchonaTransition"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

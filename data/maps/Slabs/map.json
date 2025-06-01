@@ -39,9 +39,7 @@
       "flag": "FLAG_SLABS_HIDE_RIVAL"
     }
   ],
-  "warp_events": [
-
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",

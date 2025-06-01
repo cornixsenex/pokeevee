@@ -278,7 +278,5 @@
       "script": "Route15_Script_SandstormTriggerUp"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

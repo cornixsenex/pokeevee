@@ -24,12 +24,8 @@
       "direction": "left"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
+  "object_events": [],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
@@ -365,7 +361,5 @@
       "script": "MountainPath_EventScript_SunTrigger"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

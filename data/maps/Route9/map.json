@@ -485,7 +485,5 @@
       "script": "Route9_EventScript_RoadBlockA"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

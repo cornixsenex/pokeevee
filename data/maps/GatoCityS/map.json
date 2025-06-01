@@ -88,13 +88,7 @@
       "flag": "FLAG_GATOCITYS_HIDEM3"
     }
   ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

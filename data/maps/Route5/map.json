@@ -546,7 +546,5 @@
       "script": "Route5_Script_Transition_VenatorMons"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

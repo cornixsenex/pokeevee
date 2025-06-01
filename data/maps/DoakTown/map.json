@@ -666,7 +666,5 @@
       "script": "Robustus_EventScript_ResetCounter"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

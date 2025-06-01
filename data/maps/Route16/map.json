@@ -19,9 +19,7 @@
       "direction": "right"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 10,
@@ -69,7 +67,5 @@
       "script": "Route16_Script_CacnorumTransition"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

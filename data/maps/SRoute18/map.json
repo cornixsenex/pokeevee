@@ -44,12 +44,8 @@
       "direction": "down"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
+  "object_events": [],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
@@ -1168,7 +1164,5 @@
       "script": "SRoute18_Script_SinusPacificusTransition"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

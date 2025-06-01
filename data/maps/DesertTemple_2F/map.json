@@ -12,10 +12,8 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
-  "object_events": [
-
-  ],
+  "connections": null,
+  "object_events": [],
   "warp_events": [
     {
       "x": 10,
@@ -146,7 +144,5 @@
       "script": "DesertTemple_2F_EventScript_Trigger7"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

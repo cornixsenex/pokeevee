@@ -49,12 +49,8 @@
       "direction": "down"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
+  "object_events": [],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
@@ -1137,7 +1133,5 @@
       "script": "MareWWW_Script_LitusFalxTransition"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }
