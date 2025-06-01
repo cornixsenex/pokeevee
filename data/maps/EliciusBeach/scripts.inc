@@ -1,77 +1,94 @@
 EliciusBeach_MapScripts::
-# 8 "data/maps/EliciusBeach/scripts.pory"
+# 4 "data/maps/EliciusBeach/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 10 "data/maps/EliciusBeach/scripts.pory"
-	goto_if_unset FLAG_ROUTE9_CLEARBLOCK, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-	return
-
+# 6 "data/maps/EliciusBeach/scripts.pory"
+	goto_if_unset FLAG_ROUTE9_CLEARBLOCK, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-# 11 "data/maps/EliciusBeach/scripts.pory"
+# 10 "data/maps/EliciusBeach/scripts.pory"
+	goto_if_unset FLAG_TRANQUILITAS_SURFSCHOOL_OPEN, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+# 14 "data/maps/EliciusBeach/scripts.pory"
+	goto_if_set FLAG_LEAF_ISGF, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
+	return
+
+EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 7 "data/maps/EliciusBeach/scripts.pory"
 	setflag FLAG_ROUTE9_CLEARBLOCK
+	goto EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
+# 11 "data/maps/EliciusBeach/scripts.pory"
+	call Tranquilitas_Script_ShowMisty
+	goto EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+
+EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+# 15 "data/maps/EliciusBeach/scripts.pory"
+	call Tranquilitas_Script_ShowLeaf
+	return
+
+EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
+# 14 "data/maps/EliciusBeach/scripts.pory"
+	goto_if_unset FLAG_TRANQUILITAS_SURFSCHOOL_OPEN, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 	return
 
 
-EliciusBeach_EventScript_Misty::
-# 18 "data/maps/EliciusBeach/scripts.pory"
-	lock
-# 19 "data/maps/EliciusBeach/scripts.pory"
-	faceplayer
-# 20 "data/maps/EliciusBeach/scripts.pory"
-	checktrainerflag TRAINER_RIVAL4
-	goto_if 0, EliciusBeach_EventScript_Misty_2
-# 31 "data/maps/EliciusBeach/scripts.pory"
-	msgbox EliciusBeach_Text_Misty3
-# 32 "data/maps/EliciusBeach/scripts.pory"
-	applymovement 1, Common_Movement_WalkUp
-# 33 "data/maps/EliciusBeach/scripts.pory"
-	waitmovement 0
-# 34 "data/maps/EliciusBeach/scripts.pory"
-	removeobject 1
-# 35 "data/maps/EliciusBeach/scripts.pory"
-	setflag FLAG_ELICIUS_BEACH_HIDE_MISTY
-EliciusBeach_EventScript_Misty_1:
-# 38 "data/maps/EliciusBeach/scripts.pory"
-	release
-	return
-
-EliciusBeach_EventScript_Misty_2:
+Tranquilitas_Script_ShowLeaf::
 # 22 "data/maps/EliciusBeach/scripts.pory"
-	goto_if_set FLAG_ROUTE10_HIDE_RIVAL, EliciusBeach_EventScript_Misty_5
-# 27 "data/maps/EliciusBeach/scripts.pory"
-	msgbox EliciusBeach_Text_Misty2
-	goto EliciusBeach_EventScript_Misty_1
-
-EliciusBeach_EventScript_Misty_5:
+	setobjectxyperm LOCALID_LEAF, 4, 19
 # 23 "data/maps/EliciusBeach/scripts.pory"
-	msgbox EliciusBeach_Text_Misty1
-# 24 "data/maps/EliciusBeach/scripts.pory"
-	clearflag FLAG_ROUTE10_HIDE_RIVAL
-	goto EliciusBeach_EventScript_Misty_1
+	setobjectmovementtype LOCALID_LEAF, MOVEMENT_TYPE_LOOK_AROUND
+	return
 
 
-EliciusBeach_Text_Misty1::
-# 42 "data/maps/EliciusBeach/scripts.pory"
-	.string "Please help some weirdo stole our keys!$"
+Tranquilitas_Script_ShowMisty::
+# 28 "data/maps/EliciusBeach/scripts.pory"
+	setobjectxyperm LOCALID_MISTY, 24, 27
+# 29 "data/maps/EliciusBeach/scripts.pory"
+	setobjectmovementtype LOCALID_MISTY, MOVEMENT_TYPE_FACE_DOWN
+	return
 
-EliciusBeach_Text_Misty2::
-# 46 "data/maps/EliciusBeach/scripts.pory"
-	.string "I think he went down the beach$"
 
-EliciusBeach_Text_Misty3::
+Tranquilitas_Script_Misty::
+# 34 "data/maps/EliciusBeach/scripts.pory"
+	faceplayer
+# 35 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_MistyBlock
+# 36 "data/maps/EliciusBeach/scripts.pory"
+	closemessage
+# 37 "data/maps/EliciusBeach/scripts.pory"
+	applymovement LOCALID_MISTY, MOVEMENT_TYPE_FACE_DOWN
+# 38 "data/maps/EliciusBeach/scripts.pory"
+	waitmovement 0
+	end
+
+
+Tranquilitas_Script_Leaf::
+	end
+
+
+Tranquilitas_Script_TouristF::
+# 48 "data/maps/EliciusBeach/scripts.pory"
+	faceplayer
+# 49 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_TouristF
 # 50 "data/maps/EliciusBeach/scripts.pory"
-	.string "Thanks!$"
+	closemessage
+	end
 
-EliciusBeach_Text_MistyIntro::
+
+Tranquilitas_Text_TouristF::
 # 54 "data/maps/EliciusBeach/scripts.pory"
-	.string "Lets battle$"
+	.string "I quit my job to go on vacation.$"
 
-EliciusBeach_Text_MistyLost::
-# 60 "data/maps/EliciusBeach/scripts.pory"
-	.string "I've lost$"
-
-EliciusBeach_Text_MistyPost::
-# 65 "data/maps/EliciusBeach/scripts.pory"
-	.string "You've already beaten me$"
+Tranquilitas_Text_MistyBlock::
+# 58 "data/maps/EliciusBeach/scripts.pory"
+	.string "I'm sorry sir, but the Surf School is\n"
+	.string "booked all season long. I haven't any\l"
+	.string "room for single registration, but I\l"
+	.string "might be able to accomodate a pair. If\l"
+	.string "you find someone to sign up with you\l"
+	.string "come speak with me. I'll try to fit you\l"
+	.string "in!$"

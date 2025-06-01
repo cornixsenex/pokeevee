@@ -1,8 +1,4 @@
 
-
-const OBJ_EVENT_ID_MISTY = 1
-
-
 mapscripts EliciusBeach_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
@@ -10,64 +6,65 @@ mapscripts EliciusBeach_MapScripts {
         if (!flag(FLAG_ROUTE9_CLEARBLOCK)) {
             setflag (FLAG_ROUTE9_CLEARBLOCK)
         }
+		//Show misty if applicable
+		if (!flag(FLAG_TRANQUILITAS_SURFSCHOOL_OPEN)) {
+			call (Tranquilitas_Script_ShowMisty)
+		}
+		//Show Leaf if applicablea
+		if (flag(FLAG_LEAF_ISGF) && !flag(FLAG_TRANQUILITAS_SURFSCHOOL_OPEN)) {
+			call (Tranquilitas_Script_ShowLeaf)
+		}
     }
 
 }
 
-script EliciusBeach_EventScript_Misty {
-	lock
+script Tranquilitas_Script_ShowLeaf {
+	setobjectxyperm (LOCALID_LEAF, 4, 19)
+	setobjectmovementtype (LOCALID_LEAF, MOVEMENT_TYPE_LOOK_AROUND)
+	return
+}
+
+script Tranquilitas_Script_ShowMisty {
+	setobjectxyperm (LOCALID_MISTY, 24, 27)
+	setobjectmovementtype (LOCALID_MISTY, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script Tranquilitas_Script_Misty {
 	faceplayer
-	if (!defeated(TRAINER_RIVAL4)) {
-
-		if (flag (FLAG_ROUTE10_HIDE_RIVAL)) {
-			msgbox (EliciusBeach_Text_Misty1)
-			clearflag (FLAG_ROUTE10_HIDE_RIVAL)
-			} 
-		else {
-			msgbox (EliciusBeach_Text_Misty2)
-		}
-	}
-	else {
-		msgbox (EliciusBeach_Text_Misty3)
-		applymovement (OBJ_EVENT_ID_MISTY, Common_Movement_WalkUp)
-		waitmovement (0)
-		removeobject (OBJ_EVENT_ID_MISTY)
-		setflag (FLAG_ELICIUS_BEACH_HIDE_MISTY)
-
-	}
-	release
+	msgbox (Tranquilitas_Text_MistyBlock)
+	closemessage
+	applymovement (LOCALID_MISTY, MOVEMENT_TYPE_FACE_DOWN)
+	waitmovement (0)
+	end
 }
 
 
-text EliciusBeach_Text_Misty1 {
-	format("Please help some weirdo stole our keys!")
+script Tranquilitas_Script_Leaf {
+	//find her in Tranquilitas
+	//L: Oh finally there you are ready for Surf School Y / N
+	//N: Well get ready I can't wait long
+	//Y: This is so romantic lets go -> Begin surf school
+	//Speak with Misty
+	//Misty Exit
+	//L: Can't wait; exits
+	//Set flags and prep surf school
+
+	end
 }
 
-text EliciusBeach_Text_Misty2 {
-	format("I think he went down the beach")
+script Tranquilitas_Script_TouristF {
+	faceplayer
+	msgbox (Tranquilitas_Text_TouristF)
+	closemessage
+	end
 }
 
-text EliciusBeach_Text_Misty3 {
-	format("Thanks!")
+text Tranquilitas_Text_TouristF {
+	format("I quit my job to go on vacation.")
 }
 
-text EliciusBeach_Text_MistyIntro {
-	format("Lets battle")
+text Tranquilitas_Text_MistyBlock {
+	format("I'm sorry sir, but the Surf School is booked all season long. I haven't any room for single registration, but I might be able to accomodate a pair. If you find someone to sign up with you come speak with me. I'll try to fit you in!")
 }
-
-
-
-text EliciusBeach_Text_MistyLost {
-	format("I've lost")
-}
-
-
-text EliciusBeach_Text_MistyPost {
-	format("You've already beaten me")
-}
-
-
-// I quit my job to go on vacation
-
-
 

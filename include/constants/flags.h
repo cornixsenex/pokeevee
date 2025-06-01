@@ -66,7 +66,7 @@
 #define FLAG_LEAF_ISGF     0x34 // Set after Leaf agrees to be your GF
 #define FLAG_PALMAE_RENTALHOUSE_LEAFGFINTROD      0x35 //Set after first talk to leaf after Indy Introd 
 #define FLAG_ROUTE9_CLEARBLOCK      0x36 //Set after enter Tranquilitas - Clears the "rock slide" block 
-#define FLAG_UNUSED_0x37      0x37 //UNUSED 
+#define FLAG_TRANQUILITAS_SURFSCHOOL_OPEN      0x37 //Set after Leaf opens Surf School - Hides Misty in Tranquilitas 
 
 #define FLAG_UNUSED_0x38      0x38 //UNUSED
 #define FLAG_UNUSED_0x39      0x39 //UNUSED
@@ -96,10 +96,11 @@
 #define FLAG_SYS_NO_COLLISION    0x4D
 #define FLAG_SYS_NO_ENCOUNTER    0x4E 
 #define FLAG_SYS_NO_TRAINER_SEE  0x4F
+//END DEBUG
 
 // Scripts
 #define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
-#define FLAG_ELICIUS_BEACH_HIDE_MISTY        0x51
+#define FLAG_UNUSED_0x51                     0x51 //UNUSED
 #define FLAG_SLABS_HIDE_RIVAL                0x52
 #define FLAG_BEACHCAVE_HIDE_HECTOR           0x53  // Set after talk to hector W/ wedding invitation. Hides Hector in beach cave (and shows hector in Tuscon?) 
 #define FLAG_TUCSON_NESTOR_INTROD            0x54  // Set after speaking with Tucson Nestor one time
