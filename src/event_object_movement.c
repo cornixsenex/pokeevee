@@ -121,8 +121,9 @@ static u8 setup##_callback(struct ObjectEvent *objectEvent, struct Sprite *sprit
     return 0;\
 }
 
+static EWRAM_DATA u8 sCurrentReflectionType = 0;
+static EWRAM_DATA u16 sCurrentSpecialObjectPaletteTag = 0;
 
-//static EWRAM_DATA u16 sCurrentSpecialObjectPaletteTag = 0;
 static EWRAM_DATA struct LockedAnimObjectEvents *sLockedAnimObjectEvents = {0};
 
 static void MoveCoordsInDirection(u32, s16 *, s16 *, s16, s16);
@@ -189,7 +190,6 @@ static u8 UpdateSpritePalette(const struct SpritePalette *spritePalette, struct 
 static void ResetObjectEventFldEffData(struct ObjectEvent *);
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *);
 static u16 FindObjectEventPaletteIndexByTag(u16);
-void _PatchObjectPalette(u16, u8);
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *, u8);
 static void SpriteCB_CameraObject(struct Sprite *);
 static void CameraObject_Init(struct Sprite *);
@@ -3117,14 +3117,13 @@ void PlayerObjectTurn(struct PlayerAvatar *playerAvatar, u8 direction)
 }
 
 //CornixSenex disabled this function / removed it because it broke berry pals - 1.9.0 240806
-UNUSED static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId, u8 berryStage)
+static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId, u8 berryStage)
 {
     const u16 graphicsId = gBerryTreeObjectEventGraphicsIdTable[berryStage];
     const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     struct Sprite *sprite = &gSprites[objectEvent->spriteId];
-    //UpdateSpritePalette(&sObjectEventSpritePalettes[gBerryTreePaletteSlotTablePointers[berryId][berryStage]-2], sprite);
-    UpdateSpritePalette(&sObjectEventSpritePalettes[gBerryTreePaletteTagTablePointers[berryId][berryStage]-2], sprite);
-    sprite->oam.shape = graphicsInfo->oam->shape;
+    UpdateSpritePalette(&sObjectEventSpritePalettes[gBerryTreePaletteSlotTablePointers[berryId][berryStage]-2], sprite);
+	sprite->oam.shape = graphicsInfo->oam->shape;
     sprite->oam.size = graphicsInfo->oam->size;
     sprite->images = gBerryTreePicTablePointers[berryId];
     sprite->anims = graphicsInfo->anims;
@@ -3306,7 +3305,8 @@ static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette
 
 void PatchObjectPalette(u16 paletteTag, u8 paletteSlot)
 {
-    u16 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
+    // paletteTag is assumed to exist in sObjectEventSpritePalettes
+    u8 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
 
     LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
 }
@@ -3333,22 +3333,7 @@ static u16 FindObjectEventPaletteIndexByTag(u16 tag)
     return 0xFF;
 }
 
-bool8 IsObjectEventPaletteIndex(u8 paletteIndex)
-{
-    #if DYNAMIC_OW_PALS
-        if (FindObjectEventPaletteIndexByTag(GetSpritePaletteTagByPaletteNum(paletteIndex - 16)) != 0xFF)
-            return TRUE;
-    #else
-        if ((paletteIndex - 16) > 10)
-            return FALSE;   //don't mess with the weather pal itself
-        else if (FindObjectEventPaletteIndexByTag(GetSpritePaletteTagByPaletteNum(paletteIndex)) != 0xFF)
-            return TRUE;
-    #endif
-    
-    return FALSE;
-}
-
-/*void LoadPlayerObjectReflectionPalette(u16 tag, u8 slot)
+void LoadPlayerObjectReflectionPalette(u16 tag, u8 slot)
 {
     u8 i;
 
@@ -3377,9 +3362,7 @@ void LoadSpecialObjectReflectionPalette(u16 tag, u8 slot)
             return;
         }
     }
-
 }
-*/
 
 static void UNUSED IncrementObjectEventCoords(struct ObjectEvent *objectEvent, s16 x, s16 y)
 {
@@ -3804,6 +3787,37 @@ void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup
             break;
         }
     }
+}
+
+void InitObjectEventPalettes(u8 reflectionType)
+{
+    FreeAndReserveObjectSpritePalettes();
+    sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
+    sCurrentReflectionType = reflectionType;
+    if (reflectionType == 1)
+    {
+        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], PALSLOT_PLAYER, PALSLOT_NPC_4 + 1);
+        gReservedSpritePaletteCount = 8;
+    }
+    else
+    {
+        PatchObjectPaletteRange(sObjectPaletteTagSets[sCurrentReflectionType], PALSLOT_PLAYER, PALSLOT_NPC_4_REFLECTION + 1);
+    }
+}
+
+u16 GetObjectPaletteTag(u8 palSlot)
+{
+    u8 i;
+
+    if (palSlot < PALSLOT_NPC_SPECIAL)
+        return sObjectPaletteTagSets[sCurrentReflectionType][palSlot];
+
+    for (i = 0; sSpecialObjectReflectionPaletteSets[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
+    {
+        if (sSpecialObjectReflectionPaletteSets[i].tag == sCurrentSpecialObjectPaletteTag)
+            return sSpecialObjectReflectionPaletteSets[i].data[sCurrentReflectionType];
+    }
+    return OBJ_EVENT_PAL_TAG_NONE;
 }
 
 movement_type_empty_callback(MovementType_None)

@@ -118,7 +118,7 @@ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
 //These two for Dynamic Palettes
 extern const u16 *const gBerryTreeObjectEventGraphicsIdTablePointers[];
-extern const u16 *const gBerryTreePaletteTagTablePointers[];
+extern const u8 *const gBerryTreePaletteSlotTablePointers[];
 
 extern const struct SpriteFrameImage *const gBerryTreePicTablePointers[];
 
@@ -525,8 +525,6 @@ u8 GetPlayerRunSlowMovementAction(u32);
 u8 GetSidewaysStairsToRightDirection(s16, s16, u8);
 u8 GetSidewaysStairsToLeftDirection(s16, s16, u8);
 u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 currentBehavior, u8 nextBehavior, u8 collision);
-
-bool8 IsObjectEventPaletteIndex(u8 paletteIndex);
 
 u16 GetMiniStepCount(u8 speed);
 void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);

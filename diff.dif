@@ -1,0 +1,540 @@
+125a126
+> 
+133d133
+< static u8 GetCollisionInDirection(struct ObjectEvent *, u8);
+192c192
+< static u8 FindObjectEventPaletteIndexByTag(u16);
+---
+> static u16 FindObjectEventPaletteIndexByTag(u16);
+220a221,222
+> //Kustom Collisions
+> static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *, s16, s16);
+351a354,355
+> 	//KUSTOM DESERT TEMPLE
+>     [MOVEMENT_TYPE_CHASE_PLAYER] = MovementType_ChasePlayer,
+395a400,401
+> 	//Uncomment below to set XY limits on Chase range
+>     //[MOVEMENT_TYPE_CHASE_PLAYER] = TRUE,
+479a486
+>     [MOVEMENT_TYPE_CHASE_PLAYER] = DIR_SOUTH,
+482a490
+> 
+527a536,572
+> 
+>    //CUSTOMS 
+> 	{gObjectEventPal_Blue,       			OBJ_EVENT_PAL_TAG_BLUE},
+>     {gObjectEventPal_Grandma,       		OBJ_EVENT_PAL_TAG_GRANDMA},
+>     {gObjectEventPal_Rocket_M,       		OBJ_EVENT_PAL_TAG_ROCKET_M},
+>     {gObjectEventPal_Rocket_F,       		OBJ_EVENT_PAL_TAG_ROCKET_F},
+>     {gObjectEventPal_Giovanni,       		OBJ_EVENT_PAL_TAG_GIOVANNI},
+>     {gObjectEventPal_Lorelei,       		OBJ_EVENT_PAL_TAG_LORELEI},
+>     {gObjectEventPal_Blaine,       	    	OBJ_EVENT_PAL_TAG_BLAINE},
+>     {gObjectEventPal_Jessie,       	    	OBJ_EVENT_PAL_TAG_JESSIE},
+>     {gObjectEventPal_James,       	    	OBJ_EVENT_PAL_TAG_JAMES},
+>     {gObjectEventPal_RocketMeowth,       	OBJ_EVENT_PAL_TAG_ROCKETMEOWTH},
+> 	{gObjectEventPal_Soldier,       	    OBJ_EVENT_PAL_TAG_SOLDIER},
+> 	{gObjectEventPal_Biker,       	   	    OBJ_EVENT_PAL_TAG_BIKER},
+> 	{gObjectEventPal_Channeler,       	   	OBJ_EVENT_PAL_TAG_CHANNELER},
+> 	{gObjectEventPal_Chef,       	   	    OBJ_EVENT_PAL_TAG_CHEF},
+> 	{gObjectEventPal_Policeman,       	   	OBJ_EVENT_PAL_TAG_POLICEMAN},
+> 	{gObjectEventPal_ProfOak,       	   	OBJ_EVENT_PAL_TAG_PROF_OAK},
+> 	{gObjectEventPal_Rocker,       	   	    OBJ_EVENT_PAL_TAG_ROCKER},
+> 	{gObjectEventPal_Youngster2,       	   	OBJ_EVENT_PAL_TAG_YOUNGSTER2},
+> 	{gObjectEventPal_Worker,       	   		OBJ_EVENT_PAL_TAG_WORKER},
+> 	{gObjectEventPal_MewtwoArmor,       	OBJ_EVENT_PAL_TAG_MEWTWO_ARMOR},
+> 	{gObjectEventPal_Lt_Surge,       	    OBJ_EVENT_PAL_TAG_LT_SURGE},
+> 	{gObjectEventPal_Misty,       	        OBJ_EVENT_PAL_TAG_MISTY},
+> 	{gObjectEventPal_Mauville_Old_Man_2,    OBJ_EVENT_PAL_TAG_MAUVILLE_OLD_MAN_2},
+> 	{gObjectEventPal_Nurse_Joy,             OBJ_EVENT_PAL_TAG_NURSE_JOY},
+> 	{gObjectEventPal_Big_Green,             OBJ_EVENT_PAL_TAG_BIG_GREEN},
+> 	{gObjectEventPal_Youngster_Red,         OBJ_EVENT_PAL_TAG_YOUNGSTER_RED},
+> 	{gObjectEventPal_Green,                 OBJ_EVENT_PAL_TAG_GREEN},
+> 	{gObjectEventPal_OldManLyingDown,       OBJ_EVENT_PAL_TAG_OLD_MAN_LYING_DOWN},
+> 	{gObjectEventPal_BigRed,                OBJ_EVENT_PAL_TAG_BIG_RED},
+> 	{gObjectEventPal_BigYellow,             OBJ_EVENT_PAL_TAG_BIG_YELLOW},
+> 	{gObjectEventPal_Bruno,                 OBJ_EVENT_PAL_TAG_BRUNO},
+> 	{gObjectEventPal_CollisionRattata,      OBJ_EVENT_PAL_TAG_COLLISIONRATTATA},
+> 	{gObjectEventPal_CollisionEkans,        OBJ_EVENT_PAL_TAG_COLLISIONEKANS},
+> 	{gObjectEventPal_CollisionDrifblim,     OBJ_EVENT_PAL_TAG_COLLISIONDRIFBLIM},
+>     
+824,827c869,872
+<     [DIR_SOUTHWEST] = ANIM_GET_ON_OFF_POKEMON_SOUTH,
+<     [DIR_SOUTHEAST] = ANIM_GET_ON_OFF_POKEMON_SOUTH,
+<     [DIR_NORTHWEST] = ANIM_GET_ON_OFF_POKEMON_NORTH,
+<     [DIR_NORTHEAST] = ANIM_GET_ON_OFF_POKEMON_NORTH,
+---
+>     [DIR_SOUTHWEST] = ANIM_GET_ON_OFF_POKEMON_WEST,
+>     [DIR_SOUTHEAST] = ANIM_GET_ON_OFF_POKEMON_EAST,
+>     [DIR_NORTHWEST] = ANIM_GET_ON_OFF_POKEMON_WEST,
+>     [DIR_NORTHEAST] = ANIM_GET_ON_OFF_POKEMON_EAST,
+846,849c891,894
+<     [DIR_SOUTHWEST] = ANIM_BUNNY_HOP_FRONT_WHEEL_SOUTH,
+<     [DIR_SOUTHEAST] = ANIM_BUNNY_HOP_FRONT_WHEEL_SOUTH,
+<     [DIR_NORTHWEST] = ANIM_BUNNY_HOP_FRONT_WHEEL_NORTH,
+<     [DIR_NORTHEAST] = ANIM_BUNNY_HOP_FRONT_WHEEL_NORTH,
+---
+>     [DIR_SOUTHWEST] = ANIM_BUNNY_HOP_FRONT_WHEEL_WEST,
+>     [DIR_SOUTHEAST] = ANIM_BUNNY_HOP_FRONT_WHEEL_EAST,
+>     [DIR_NORTHWEST] = ANIM_BUNNY_HOP_FRONT_WHEEL_WEST,
+>     [DIR_NORTHEAST] = ANIM_BUNNY_HOP_FRONT_WHEEL_EAST,
+868,871c913,916
+<     [DIR_SOUTHWEST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_SOUTH,
+<     [DIR_SOUTHEAST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_SOUTH,
+<     [DIR_NORTHWEST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_NORTH,
+<     [DIR_NORTHEAST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_NORTH,
+---
+>     [DIR_SOUTHWEST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_WEST,
+>     [DIR_SOUTHEAST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_EAST,
+>     [DIR_NORTHWEST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_WEST,
+>     [DIR_NORTHEAST] = ANIM_STANDING_WHEELIE_FRONT_WHEEL_EAST,
+890,893c935,938
+<     [DIR_SOUTHWEST] = ANIM_TAKE_OUT_ROD_SOUTH,
+<     [DIR_SOUTHEAST] = ANIM_TAKE_OUT_ROD_SOUTH,
+<     [DIR_NORTHWEST] = ANIM_TAKE_OUT_ROD_NORTH,
+<     [DIR_NORTHEAST] = ANIM_TAKE_OUT_ROD_NORTH,
+---
+>     [DIR_SOUTHWEST] = ANIM_TAKE_OUT_ROD_WEST,
+>     [DIR_SOUTHEAST] = ANIM_TAKE_OUT_ROD_EAST,
+>     [DIR_NORTHWEST] = ANIM_TAKE_OUT_ROD_WEST,
+>     [DIR_NORTHEAST] = ANIM_TAKE_OUT_ROD_EAST,
+901,904c946,949
+<     [DIR_SOUTHWEST] = ANIM_PUT_AWAY_ROD_SOUTH,
+<     [DIR_SOUTHEAST] = ANIM_PUT_AWAY_ROD_SOUTH,
+<     [DIR_NORTHWEST] = ANIM_PUT_AWAY_ROD_NORTH,
+<     [DIR_NORTHEAST] = ANIM_PUT_AWAY_ROD_NORTH,
+---
+>     [DIR_SOUTHWEST] = ANIM_PUT_AWAY_ROD_WEST,
+>     [DIR_SOUTHEAST] = ANIM_PUT_AWAY_ROD_EAST,
+>     [DIR_NORTHWEST] = ANIM_PUT_AWAY_ROD_WEST,
+>     [DIR_NORTHEAST] = ANIM_PUT_AWAY_ROD_EAST,
+912,915c957,960
+<     [DIR_SOUTHWEST] = ANIM_HOOKED_POKEMON_SOUTH,
+<     [DIR_SOUTHEAST] = ANIM_HOOKED_POKEMON_SOUTH,
+<     [DIR_NORTHWEST] = ANIM_HOOKED_POKEMON_NORTH,
+<     [DIR_NORTHEAST] = ANIM_HOOKED_POKEMON_NORTH,
+---
+>     [DIR_SOUTHWEST] = ANIM_HOOKED_POKEMON_WEST,
+>     [DIR_SOUTHEAST] = ANIM_HOOKED_POKEMON_EAST,
+>     [DIR_NORTHWEST] = ANIM_HOOKED_POKEMON_WEST,
+>     [DIR_NORTHEAST] = ANIM_HOOKED_POKEMON_EAST,
+928a974,986
+> //Custom Spin Tiles
+> static const u8 sSpinDirectionAnimNums[] = {
+>     [DIR_NONE] = ANIM_SPIN_SOUTH,
+>     [DIR_SOUTH] = ANIM_SPIN_SOUTH,
+>     [DIR_NORTH] = ANIM_SPIN_NORTH,
+>     [DIR_WEST] = ANIM_SPIN_WEST,
+>     [DIR_EAST] = ANIM_SPIN_EAST,
+>     [DIR_SOUTHWEST] = ANIM_SPIN_WEST,
+>     [DIR_SOUTHEAST] = ANIM_SPIN_EAST,
+>     [DIR_NORTHWEST] = ANIM_SPIN_WEST,
+>     [DIR_NORTHEAST] = ANIM_SPIN_EAST,
+> };
+> 
+935,938c993,996
+<     [DIR_SOUTHWEST] = MOVEMENT_TYPE_FACE_DOWN,
+<     [DIR_SOUTHEAST] = MOVEMENT_TYPE_FACE_DOWN,
+<     [DIR_NORTHWEST] = MOVEMENT_TYPE_FACE_UP,
+<     [DIR_NORTHEAST] = MOVEMENT_TYPE_FACE_UP,
+---
+>     [DIR_SOUTHWEST] = MOVEMENT_TYPE_FACE_LEFT,
+>     [DIR_SOUTHEAST] = MOVEMENT_TYPE_FACE_RIGHT,
+>     [DIR_NORTHWEST] = MOVEMENT_TYPE_FACE_LEFT,
+>     [DIR_NORTHEAST] = MOVEMENT_TYPE_FACE_RIGHT,
+1016a1075,1082
+> //Not in base
+> const u8 gWalkFastestMovementActions[] = {
+>     [DIR_NONE] = MOVEMENT_ACTION_WALK_FASTER_DOWN,
+>     [DIR_SOUTH] = MOVEMENT_ACTION_WALK_FASTER_DOWN,
+>     [DIR_NORTH] = MOVEMENT_ACTION_WALK_FASTER_UP,
+>     [DIR_WEST] = MOVEMENT_ACTION_WALK_FASTER_LEFT,
+>     [DIR_EAST] = MOVEMENT_ACTION_WALK_FASTER_RIGHT,
+> };
+1037a1104,1111
+> //Spin tiles
+> const u8 gSpinMovementActions[] = {
+>     MOVEMENT_ACTION_SPIN_DOWN,
+>     MOVEMENT_ACTION_SPIN_DOWN,
+>     MOVEMENT_ACTION_SPIN_UP,
+>     MOVEMENT_ACTION_SPIN_LEFT,
+>     MOVEMENT_ACTION_SPIN_RIGHT,
+> };
+1071a1146,1149
+>     MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
+>     MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
+>     MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
+>     MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
+1105a1184,1195
+> //Not in base
+> const u8 gWalkInPlaceFastestMovementActions[] = {
+>     [DIR_NONE] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN,
+>     [DIR_SOUTH] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN,
+>     [DIR_NORTH] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_UP,
+>     [DIR_WEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT,
+>     [DIR_EAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT,
+>     [DIR_SOUTHWEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT,
+>     [DIR_NORTHWEST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT,
+>     [DIR_NORTHEAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT,
+>     [DIR_SOUTHEAST] = MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT
+> };
+1545a1636
+> 
+1788c1879,1880
+<     objectEventTemplate.kind = OBJ_KIND_NORMAL;
+---
+> 	//DO NOTE REMOVED FOR OVERWORLD EXPANSION
+>     //objectEventTemplate.kind = OBJ_KIND_NORMAL;
+1799a1892,1893
+> //DID YOU NOTE ABOVE??
+> 
+1801a1896
+> 
+2035c2130
+<         if ((paletteNum = IndexOfSpritePaletteTag(palTag)) < 16)
+---
+>         if ((paletteNum = IndexOfSpritePaletteTag(palTag)) < 16) {
+2036a2132
+> 		}
+2076c2172
+<         if ((paletteNum = IndexOfSpritePaletteTag(species)) < 16)
+---
+>         if ((paletteNum = IndexOfSpritePaletteTag(species)) < 16) {
+2077a2174
+> 		}
+2228c2325
+< 
+---
+> 	
+2832a2930
+> 
+2981a3080
+> 
+3019a3119
+> //CornixSenex disabled this function / removed it because it broke berry pals - 1.9.0 240806
+3026c3126
+<     sprite->oam.shape = graphicsInfo->oam->shape;
+---
+> 	sprite->oam.shape = graphicsInfo->oam->shape;
+3224c3324
+< static u8 FindObjectEventPaletteIndexByTag(u16 tag)
+---
+> static u16 FindObjectEventPaletteIndexByTag(u16 tag)
+3226c3326
+<     u8 i;
+---
+>     u16 i;
+5744c5844
+<     {
+---
+> 	{
+5880a5981,6088
+> movement_type_def(MovementType_ChasePlayer, gMovementTypeFuncs_ChasePlayer)
+> 
+> bool32 MovementType_ChasePlayer_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     ClearObjectEventMovement(objectEvent, sprite);
+>     sprite->sTypeFuncId = 1;
+>     return TRUE;
+> }
+> 
+> bool32 MovementType_ChasePlayer_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+> 	bool32 collision;
+> 	u32 direction;
+>     s32 x = objectEvent->currentCoords.x;
+>     s32 y = objectEvent->currentCoords.y;
+>     s32 playerX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+>     s32 playerY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+> 	s32 dX, dY;
+> 	//Compare player xy to object event xy and determine a direction
+> 	//
+> 	dX = x - playerX;
+> 	dY = y - playerY;
+> 
+> 	if (dX == 0 && dY == 0)
+> 		return FALSE;
+> 	else if ( abs(dY) >= abs(dX) )
+> 	{
+> 		if (dY > 0)
+> 			direction = DIR_NORTH;
+> 		else
+> 			direction = DIR_SOUTH;
+> 	} 
+> 	else
+> 	{
+> 		if (dX > 0)
+> 			direction = DIR_WEST;
+> 		else
+> 			direction = DIR_EAST;
+> 	}
+> 	
+>     SetObjectEventDirection(objectEvent, direction);
+>     collision = GetCollisionInDirection(objectEvent, objectEvent->movementDirection);
+> 	if (collision)
+> 	{
+> 		if (direction == DIR_NORTH || direction == DIR_SOUTH) 
+> 		{
+> 			if (abs(dX) > 0)
+> 			{
+> 				if (dX > 0)
+> 				{
+> 					direction = DIR_WEST;
+> 				} 
+> 				else
+> 				{
+> 					direction = DIR_EAST;
+> 				}
+> 				SetObjectEventDirection(objectEvent, direction);
+> 			}
+> 		}
+> 		else
+> 		{
+> 			if (abs(dY) > 0)
+> 			{
+> 				if (dY > 0)
+> 				{
+> 					direction = DIR_NORTH;
+> 				} 
+> 				else
+> 				{
+> 					direction = DIR_SOUTH;
+> 				}
+> 				SetObjectEventDirection(objectEvent, direction);
+> 			}
+> 		}
+> 
+> 	}
+> 
+>     sprite->sTypeFuncId = 2;
+>     return TRUE;
+> }
+> 
+> bool32 MovementType_ChasePlayer_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+> 	bool32 collision;
+> 	u32 movementActionId;
+> 
+>     collision = GetCollisionInDirection(objectEvent, objectEvent->movementDirection);
+>     movementActionId = GetWalkNormalMovementAction(objectEvent->movementDirection);
+> 
+>     if (collision)
+>         movementActionId = GetWalkInPlaceNormalMovementAction(objectEvent->facingDirection);
+> 
+>     ObjectEventSetSingleMovement(objectEvent, sprite, movementActionId);
+>     objectEvent->singleMovementActive = TRUE;
+>     sprite->sTypeFuncId = 3;
+>     return TRUE;
+> }
+> 
+> bool32 MovementType_ChasePlayer_Step3(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+>     {
+>         objectEvent->singleMovementActive = FALSE;
+>         sprite->sTypeFuncId = 1;
+>     }
+>     return FALSE;
+> }
+> 
+6103a6312,6316
+> u8 GetSpinDirectionAnimNum(u8 direction)
+> {
+>     return sSpinDirectionAnimNums[direction];
+> }
+> 
+6292a6506,6507
+> 	else if (IsSpecialCollisionWithPlayer(objectEvent, x, y))
+> 		return COLLISION_SPECIAL_OBJECT;
+6379d6593
+< 
+6432a6647,6678
+> static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x, s16 y)
+> {
+> 	struct ObjectEvent *playerObject;
+>     s16 playerX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+>     s16 playerY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+> 	const u8 *script;
+> 	playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];
+> 
+> 	//Check if there is an object colliding with player
+> 	if (playerX == x && playerY == y)
+> 	{
+> 		if (AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation))
+> 		{
+> 			//Check if it's a special Object Event and call correct script
+> 			if    (objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_RATTATA
+> 				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_EKANS
+>                 || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
+>                 || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
+> 				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM
+> 				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && objectEvent->mapNum == MAP_NUM(MAP_COLCHIS) && objectEvent->mapGroup == MAP_GROUP(MAP_COLCHIS) ) //Lugia different cuz no special COLLISION sprite
+> 				)
+> 			{
+> 				//Yes, it's a special collision with player do script
+> 				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);
+> 				ScriptContext_SetupScript(script);
+> 				return TRUE;
+> 			}
+> 		}
+> 	}
+> 	return FALSE;
+> }
+> 
+6635a6882,6883
+>     
+>     movementActionId = TryUpdateMovementActionOnStairs(objectEvent, movementActionId);
+6751c6999,7000
+< dirn_to_anim(GetPlayerRunMovementAction, gPlayerRunMovementActions);
+---
+> dirn_to_anim(GetPlayerRunMovementAction, gPlayerRunMovementActions); 
+> dirn_to_anim(GetSpinMovementAction, gSpinMovementActions);
+7579a7829
+> 	//Added to support Mew scene (and other times I want  this to work) - CS 3.1.25
+7581a7832,7835
+> 		if (FlagGet(FLAG_FORCE_ENTER_MASTERBALL_GFX))
+> 			ball = BALL_MASTER;
+> 		if (ball == BALL_STRANGE) //Instead of strange default to POKEBALL
+> 			ball = BALL_POKE; 
+9580a9835
+> 
+9583c9838
+<         *flags |= GROUND_EFFECT_FLAG_SAND;
+---
+> 		*flags |= GROUND_EFFECT_FLAG_SAND;
+11229a11485,11531
+> // CUSTOM
+> 
+> // fast diagonal
+> bool8 MovementAction_WalkFastDiagonalUpLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitMovementNormal(objectEvent, sprite, DIR_NORTHWEST, 1);
+>     return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
+> }
+> 
+> bool8 MovementAction_WalkFastDiagonalUpRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitMovementNormal(objectEvent, sprite, DIR_NORTHEAST, 1);
+>     return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
+> }
+> 
+> bool8 MovementAction_WalkFastDiagonalDownLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitMovementNormal(objectEvent, sprite, DIR_SOUTHWEST, 1);
+>     return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
+> }
+> 
+> bool8 MovementAction_WalkFastDiagonalDownRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitMovementNormal(objectEvent, sprite, DIR_SOUTHEAST, 1);
+>     return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
+> }
+> 
+> bool8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     if (UpdateMovementNormal(objectEvent, sprite))
+>     {
+>         sprite->data[2] = 2;
+>         return TRUE;
+>     }
+>     return FALSE;
+> }
+> 
+> u16 GetMiniStepCount(u8 speed)
+> {
+>     return (u16)sStepTimes[speed];
+> }
+> 
+> void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame)
+> {
+>     sNpcStepFuncTables[speed][currentFrame](sprite, sprite->data[3]);
+> }
+> 
+11239a11542,11543
+>     return FALSE;
+> }
+11240a11545,11565
+> //Spin Tiles
+> static void InitSpin(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction, u8 speed)
+> {
+>     InitNpcForMovement(objectEvent, sprite, direction, speed);
+>     SetStepAnimHandleAlternation(objectEvent, sprite, GetSpinDirectionAnimNum(objectEvent->facingDirection));
+>     SeekSpriteAnim(sprite, 0);
+> }
+> 
+> u8 MovementAction_SpinDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitSpin(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_FAST_1);
+>     return MovementAction_SpinDown_Step1(objectEvent, sprite);
+> }
+> 
+> u8 MovementAction_SpinDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     if (UpdateMovementNormal(objectEvent, sprite))
+>     {
+>         sprite->sActionFuncId = 2;
+>         return TRUE;
+>     }
+11242a11568,11630
+> 
+> u8 MovementAction_SpinUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitSpin(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_FAST_1);
+>     return MovementAction_SpinUp_Step1(objectEvent, sprite);
+> }
+> 
+> u8 MovementAction_SpinUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     if (UpdateMovementNormal(objectEvent, sprite))
+>     {
+>         sprite->sActionFuncId = 2;
+>         return TRUE;
+>     }
+>     return FALSE;
+> }
+> 
+> u8 MovementAction_SpinLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitSpin(objectEvent, sprite, DIR_WEST, MOVE_SPEED_FAST_1);
+>     return MovementAction_SpinLeft_Step1(objectEvent, sprite);
+> }
+> 
+> u8 MovementAction_SpinLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     if (UpdateMovementNormal(objectEvent, sprite))
+>     {
+>         sprite->sActionFuncId = 2;
+>         return TRUE;
+>     }
+>     return FALSE;
+> }
+> 
+> u8 MovementAction_SpinRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     InitSpin(objectEvent, sprite, DIR_EAST, MOVE_SPEED_FAST_1);
+>     return MovementAction_SpinRight_Step1(objectEvent, sprite);
+> }
+> 
+> u8 MovementAction_SpinRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+> {
+>     if (UpdateMovementNormal(objectEvent, sprite))
+>     {
+>         sprite->sActionFuncId = 2;
+>         return TRUE;
+>     }
+>     return FALSE;
+> }
+> 
+> //KUSTOM GHOUL SET MOVEMENT TYPE ON THE FLY INSTEAD OF IN TRANSITION
+> void SetObjectMovementTypeGhoul(void)
+> {
+> 	struct ObjectEvent *objectEvent = &gObjectEvents[GetObjectEventIdByLocalIdAndMap(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)];
+> 	u8 movementType = gSpecialVar_0x8006;
+> 	
+> 	objectEvent->movementType = movementType;
+> 	objectEvent->directionSequenceIndex = 0;
+> 	objectEvent->playerCopyableMovement = 0;
+> 	gSprites[objectEvent->spriteId].callback = sMovementTypeCallbacks[movementType];
+> 	gSprites[objectEvent->spriteId].data[1] = 0;
+> }
+> 
+> // END KUSTOM GHOUL SET MOVEMENT TYPE ON THE FLY INSTEAD OF IN TRANSITION
