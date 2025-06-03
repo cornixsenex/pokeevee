@@ -8,7 +8,6 @@
 //VAR_TEMP_6 handles SetupSilvanLeafScene2 (show Leaf et co by ferry)
 
 const FIELD_PIC_LEAF = 4
-const FIELD_PIC_SCOTT = 33
 
 const OBJ_EVENT_SCOTT = 9
 const OBJ_EVENT_LEAF = 30

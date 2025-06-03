@@ -1,6 +1,5 @@
 
 const FIELD_PIC_LEAF = 4
-const FIELD_PIC_SCOTT = 33
 
 const OBJ_EVENT_JESSIE = 14
 const OBJ_EVENT_JAMES = 15

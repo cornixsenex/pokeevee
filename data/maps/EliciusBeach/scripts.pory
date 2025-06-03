@@ -31,25 +31,94 @@ script Tranquilitas_Script_ShowMisty {
 }
 
 script Tranquilitas_Script_Misty {
+	lock
 	faceplayer
+	load_field_pic (FIELD_PIC_MISTY, 190, 98)
 	msgbox (Tranquilitas_Text_MistyBlock)
+	destroy_field_pic (FIELD_PIC_MISTY)
 	closemessage
-	applymovement (LOCALID_MISTY, MOVEMENT_TYPE_FACE_DOWN)
+	applymovement (LOCALID_MISTY, Common_Movement_FaceDown)
 	waitmovement (0)
+	release
 	end
 }
 
 
 script Tranquilitas_Script_Leaf {
-	//find her in Tranquilitas
+	faceplayer
 	//L: Oh finally there you are ready for Surf School Y / N
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Tranquilitas_Text_Leaf1, MSGBOX_YESNO)
 	//N: Well get ready I can't wait long
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(Tranquilitas_Text_LeafNotReady)
+		destroy_field_pic (FIELD_PIC_LEAF)
+		closemessage
+		end
 	//Y: This is so romantic lets go -> Begin surf school
-	//Speak with Misty
-	//Misty Exit
-	//L: Can't wait; exits
-	//Set flags and prep surf school
+	} else {
+		msgbox (Tranquilitas_Text_Leaf2)
+		destroy_field_pic (FIELD_PIC_LEAF)
+		closemessage
+		call (Tranquilitas_Script_MistyScene)
+	}
 
+}
+
+script Tranquilitas_Script_MistyScene {
+	//put player and leaf in correct position
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			waitmovement (0)
+		case DIR_SOUTH:
+			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement (0)
+		case DIR_EAST:
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			waitmovement (0)
+		case DIR_WEST:
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement (0)
+		default:
+			msgbox("ERROR: GetPlayer\nFacingDirection OOB")
+			closemessage
+			end
+	}
+	//goto misty
+	applymovement (LOCALID_LEAF, Tranquilitas_Movement_ApproachMisty)
+	applymovement (LOCALID_PLAYER, Tranquilitas_Movement_ApproachMisty)
+	waitmovement (0)
+	//M: Hello, we're full	
+	load_field_pic (FIELD_PIC_MISTY, 190, 98)
+	msgbox (Tranquilitas_Text_Misty1)
+	destroy_field_pic (FIELD_PIC_MISTY)
+	//L: It's leaf and player we have reservation
+	load_field_pic (FIELD_PIC_LEAF, 190, 98)
+	msgbox (Tranquilitas_Text_Leaf3)
+	destroy_field_pic (FIELD_PIC_LEAF)
+	//M: Forgive me, just pay the reg fee and we can proceed
+	//make player pay X money lol
+	//M: Follow me your lessons begin inside
+	//M exit
+	//L: Lets go so excited and romantic love you blah
+	//L exit	
+	//Set flags and prep surf school
 	end
 }
 
@@ -60,11 +129,46 @@ script Tranquilitas_Script_TouristF {
 	end
 }
 
+movement Tranquilitas_Movement_ApproachMisty {
+	walk_right * 4
+	walk_down * 8
+	walk_right * 15
+	face_up
+}
+
 text Tranquilitas_Text_TouristF {
 	format("I quit my job to go on vacation.")
 }
 
 text Tranquilitas_Text_MistyBlock {
-	format("I'm sorry sir, but the Surf School is booked all season long. I haven't any room for single registration, but I might be able to accomodate a pair. If you find someone to sign up with you come speak with me. I'll try to fit you in!")
+	format("I'm sorry sir, but the Surf School is booked 
+			all season long. I haven't any room
+			for single registration, but I might
+			be able to accomodate a pair.
+			If you find someone to sign up with you 
+			come speak with me. I'll try to fit you in!")
+}
+
+text Tranquilitas_Text_Leaf1 {
+	format("Where have you been {PLAYER}? You kept me waiting 
+			for so long! Are you ready for Surf School?")
+}
+
+text Tranquilitas_Text_LeafNotReady {
+	format("Ok, but hurry up! I hate waiting.")
+}
+
+text Tranquilitas_Text_Leaf2 {
+	format("This is so romantic! I cannot wait
+			to learn to surf the seas with you, my love.
+			C'mon! Let's go meet our surf instructor.")
+}
+
+text Tranquilitas_Text_Misty1 {
+	format("Hello and welcome to Tranquilitas
+			Surf School. I'm Misty, the surf instructor.
+			Unfortunately we are fully booked,
+			I couldn't possibly allow you two
+			to join...")
 }
 

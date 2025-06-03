@@ -1,6 +1,5 @@
 
 const OBJ_EVENT_SCOTT = 2
-const FIELD_PIC_SCOTT = 33
 
 mapscripts CityClara_CannabisClub_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {

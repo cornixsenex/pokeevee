@@ -1,5 +1,4 @@
 const FIELD_PIC_LEAF = 4
-const FIELD_PIC_SCOTT = 33
 
 const OBJ_EVENT_LEAF = 2
 const OBJ_EVENT_SCOTT = 1

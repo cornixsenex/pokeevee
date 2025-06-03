@@ -6,7 +6,6 @@ const OBJ_EVENT_GRANNY = 4
 const OBJ_EVENT_RATTATA = 5
 
 const FIELD_PIC_LEAF = 4
-const FIELD_PIC_GRANNY = 30
 
 mapscripts GrandmasCabin_MapScripts {
 

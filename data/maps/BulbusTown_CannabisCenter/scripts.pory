@@ -1,7 +1,5 @@
 const OBJ_EVENT_SCOTT = 2
 
-const FIELD_PIC_SCOTT = 33
-
 mapscripts BulbusTown_CannabisCenter_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		setweather (WEATHER_FOG_DIAGONAL)
