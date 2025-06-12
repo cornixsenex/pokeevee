@@ -134,8 +134,18 @@ Tranquilitas_Script_MistyScene_1:
 # 109 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_Misty1
 # 110 "data/maps/EliciusBeach/scripts.pory"
-	closemessage
-# 111 "data/maps/EliciusBeach/scripts.pory"
+	destroy_field_pic FIELD_PIC_MISTY
+# 112 "data/maps/EliciusBeach/scripts.pory"
+	load_field_pic FIELD_PIC_LEAF, 190, 98
+# 113 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_Leaf3
+# 114 "data/maps/EliciusBeach/scripts.pory"
+	destroy_field_pic FIELD_PIC_LEAF
+# 116 "data/maps/EliciusBeach/scripts.pory"
+	load_field_pic FIELD_PIC_MISTY, 190, 98
+# 117 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_Misty2
+# 118 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_MISTY
 	end
 
@@ -197,72 +207,72 @@ Tranquilitas_Script_MistyScene_6:
 
 
 Tranquilitas_Script_TouristF::
-# 119 "data/maps/EliciusBeach/scripts.pory"
+# 129 "data/maps/EliciusBeach/scripts.pory"
 	faceplayer
-# 120 "data/maps/EliciusBeach/scripts.pory"
+# 130 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_TouristF
-# 121 "data/maps/EliciusBeach/scripts.pory"
+# 131 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
 	end
 
 
-# 125 "data/maps/EliciusBeach/scripts.pory"
+# 135 "data/maps/EliciusBeach/scripts.pory"
 Tranquilitas_Movement_ApproachMisty:
-# 126 "data/maps/EliciusBeach/scripts.pory"
+# 136 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 126 "data/maps/EliciusBeach/scripts.pory"
+# 136 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 126 "data/maps/EliciusBeach/scripts.pory"
+# 136 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 126 "data/maps/EliciusBeach/scripts.pory"
+# 136 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 127 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 138 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 129 "data/maps/EliciusBeach/scripts.pory"
+# 139 "data/maps/EliciusBeach/scripts.pory"
 	face_up
 	step_end
 
@@ -271,11 +281,11 @@ Tranquilitas_Script_MistyScene_Text_0:
 	.string "ERROR: GetPlayer\nFacingDirection OOB$"
 
 Tranquilitas_Text_TouristF::
-# 132 "data/maps/EliciusBeach/scripts.pory"
+# 142 "data/maps/EliciusBeach/scripts.pory"
 	.string "I quit my job to go on vacation.$"
 
 Tranquilitas_Text_MistyBlock::
-# 136 "data/maps/EliciusBeach/scripts.pory"
+# 146 "data/maps/EliciusBeach/scripts.pory"
 	.string "I'm sorry sir, but the Surf School is\n"
 	.string "booked all season long. I haven't any\l"
 	.string "room for single registration, but I\l"
@@ -285,23 +295,31 @@ Tranquilitas_Text_MistyBlock::
 	.string "in!$"
 
 Tranquilitas_Text_Leaf1::
-# 145 "data/maps/EliciusBeach/scripts.pory"
+# 155 "data/maps/EliciusBeach/scripts.pory"
 	.string "Where have you been {PLAYER}? You\n"
 	.string "kept me waiting for so long! Are you\l"
 	.string "ready for Surf School?$"
 
 Tranquilitas_Text_LeafNotReady::
-# 150 "data/maps/EliciusBeach/scripts.pory"
+# 160 "data/maps/EliciusBeach/scripts.pory"
 	.string "Ok, but hurry up! I hate waiting.$"
 
 Tranquilitas_Text_Leaf2::
-# 154 "data/maps/EliciusBeach/scripts.pory"
+# 164 "data/maps/EliciusBeach/scripts.pory"
 	.string "This is so romantic! I cannot wait to\n"
 	.string "learn to surf the seas with you, my love.\l"
 	.string "C'mon! Let's go meet our surf\l"
 	.string "instructor.$"
 
 Tranquilitas_Text_Misty1::
-# 160 "data/maps/EliciusBeach/scripts.pory"
+# 170 "data/maps/EliciusBeach/scripts.pory"
 	.string "Hello and welcome to Tranquilitas Surf\n"
-	.string "School. I'm Misty, the surf instructor.$"
+	.string "School. I'm Misty, the surf instructor.\l"
+	.string "Unfortunately we are fully booked, I\l"
+	.string "couldn't possibly allow you two to\l"
+	.string "join...$"
+
+Tranquilitas_Text_Leaf3::
+# 178 "data/maps/EliciusBeach/scripts.pory"
+	.string "But we have a reservation! It should be\n"
+	.string "under my boyfriend's name, {PLAYER}.$"

@@ -113,6 +113,9 @@ script Tranquilitas_Script_MistyScene {
 	msgbox (Tranquilitas_Text_Leaf3)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	//M: Forgive me, just pay the reg fee and we can proceed
+	load_field_pic (FIELD_PIC_MISTY, 190, 98)
+	msgbox (Tranquilitas_Text_Misty2)
+	destroy_field_pic (FIELD_PIC_MISTY)
 	//make player pay X money lol
 	//M: Follow me your lessons begin inside
 	//M exit
@@ -171,4 +174,18 @@ text Tranquilitas_Text_Misty1 {
 			I couldn't possibly allow you two
 			to join...")
 }
+
+text Tranquilitas_Text_Leaf3 {
+    format("But we have a reservation!
+            It should be under my boyfriend's name, {PLAYER}.")
+}
+
+text Tranquilitas_Text_Misty2 {
+    format("Of course, forgive me, I remember now.
+            You made a reservation earlier
+            for a couple's package at the Surf School.
+            We've been expecting you, but first thing's first,
+            you'll need to pay the registration fee.")
+}
+
 
