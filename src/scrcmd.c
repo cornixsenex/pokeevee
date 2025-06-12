@@ -617,6 +617,17 @@ bool8 ScrCmd_multvar(struct ScriptContext *ctx){
     return FALSE;
 }
 
+bool8 ScrCmd_divvar(struct ScriptContext *ctx){
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+    *ptr /= VarGet(ScriptReadHalfword(ctx));
+    return FALSE;
+}
+
 bool8 ScrCmd_random(struct ScriptContext *ctx)
 {
     u16 max = VarGet(ScriptReadHalfword(ctx));
@@ -3254,4 +3265,17 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         StopScript(ctx);
+}
+
+//Cornix Custom
+bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
+{
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+    *ptr = GetMoneyForCopyMoney();
+    return FALSE;
 }

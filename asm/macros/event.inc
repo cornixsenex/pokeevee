@@ -1892,6 +1892,21 @@
 	.2byte \value
 	.endm
 
+	@ CORNIX CUSTOM - Copied from multvar
+	.macro divvar destination:req, value:req
+	.byte SCR_OP_DIVVAR
+	.2byte \destination
+	.2byte \value
+	.endm
+
+	@ CORNIX CUSTOM - like checkcoins but for money
+	@ Gets the number of money the player has and stores it in the variable 'out'.
+	.macro copymoney out:req
+	.byte SCR_OP_COPYMONEY
+	.2byte \out
+	.endm
+
+
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
