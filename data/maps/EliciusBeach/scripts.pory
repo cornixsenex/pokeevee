@@ -122,6 +122,11 @@ script Tranquilitas_Script_MistyScene {
 	load_field_pic (FIELD_PIC_MISTY, 190, 98)
 	waitmovement (0)
 	//get reg fee = player gold / 3
+    //Handle Broke player
+    checkmoney (5000)
+    if (var(VAR_RESULT) == FALSE) {
+        call (Tranquilitas_Script_NoMoney)
+    }
 	copymoney (REGISTRATION_FEE)
 	divvar (REGISTRATION_FEE, 3)
 	//copy fee into string var
@@ -137,6 +142,38 @@ script Tranquilitas_Script_MistyScene {
 	closemessage
 	release
 	end
+}
+
+//If Player and Leaf goto Misty but Player is broke
+script Tranquilitas_Script_NoMoney {
+    //Alert Misty
+    applymovement (LOCALID_MISTY, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Sorry but youre broke
+    msgbox (Tranquilitas_Text_MistyNoMoney)
+    closemessage 
+	destroy_field_pic (FIELD_PIC_MISTY)
+    //Alert Leaf
+    applymovement (LOCALID_LEAF, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //face player leaf
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    applymovement (LOCALID_MISTY, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //L: this is so embarrising how could you do this dont come back until you have more money
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (Tranquilitas_Text_LeafNoMoney)
+    closemessage
+    destroy_field_pic (FIELD_PIC_LEAF)
+    //exit leaf
+    applymovement (LOCALID_LEAF, Tranquilitas_Movement_LeafExitNoMoney)
+    waitmovement (0)
+    //reset everything
+    call (Tranquilitas_Script_ShowLeaf)
+    call (Tranquilitas_Script_ShowMisty)
+
+    release
+    end
 }
 
 script Tranquilitas_Script_Registration {
@@ -181,6 +218,12 @@ movement Tranquilitas_Movement_ApproachMisty {
 	walk_down * 8
 	walk_right * 15
 	face_up
+}
+
+//WIP
+movement Tranquilitas_Movement_LeafExitNoMoney {
+    walk_down
+    walk_left * 10
 }
 
 text Tranquilitas_Text_TouristF {
@@ -237,7 +280,25 @@ text Tranquilitas_Text_Registration {
 }
 
 text Tranquilitas_Text_LeafNoRegistration {
-	format("")
+	format("But {PLAYER} you promised for our honeymooon
+            that you would take us to learn how to surf!
+            You still want me, don't you? This will be fun!
+            Just pay the fee, and let's learn how to surf!")
 }
 
+text Tranquilitas_Text_MistyNoMoney {
+    format("I'm sorry sir, but it seems you do not
+            have enough cash to cover the small fee
+            required to register at Surf School.
+            You will have to return with more money.")
+}
+
+text Tranquilitas_Text_LeafNoMoney {
+    format("This can't be real! It's so embarrising!
+            How could you do something like this to me?
+            You need to make more money if you want
+            me to be your girlfriend. {PLAYER}, I have needs!
+            Don't talk to me until you can afford
+            to pay for our Surf School registration.")
+}
 
