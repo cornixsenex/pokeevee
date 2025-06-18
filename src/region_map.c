@@ -4024,6 +4024,47 @@ bool32 GetDynamicMapSec_Vegas(bool32 useWarpInfo)
 	else
 		return 1;
 }
-	
+
+bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
+{
+	//1: Via Saxosa
+	//2: Tranquilitas
+    //3: Montes  Vigilliae
+	//4: Acta Tranquilla
+    //5: Mare Tranquiluma
+    s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("GetDynamicMapSecEliciusBeach\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+
+    if (y < 14)
+        return 1;
+    else if (y < 31)
+        return 2;
+    //Venator Mons
+    else if 
+        (
+        (x < 1 && y < 57) ||
+        (x == 1 && y < 57) ||
+        (x == 2 && y < 57) ||
+        (x == 3 && y < 57) ||
+        (x == 4 && y < 57) ||
+        (x == 5 && y < 57) ||
+        (x == 6 && y < 57) ||
+        (x == 7 && y < 56) ||
+        (x == 8 && y < 56 && y > 50)
+        )
+        return 3;
+    //WIP
+
+}
 
 	

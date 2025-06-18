@@ -135,11 +135,32 @@ script Tranquilitas_Script_MistyScene {
 	//make player pay X money lol - X is 1/3 of player total cash I think that's funny
 	call (Tranquilitas_Script_Registration)
 	//M: Follow me your lessons begin inside
+    load_field_pic (FIELD_PIC_MISTY, 190, 98)
+	msgbox (Tranquilitas_Text_Misty3)
+    destroy_field_pic (FIELD_PIC_MISTY)
+    closemessage
 	//M exit
+    applymovement (LOCALID_MISTY, Common_Movement_WalkUp)
+    waitmovement (0)
+    hideobjectat (LOCALID_MISTY, MAP_BIG_ISLAND_N)
+    removeobject (LOCALID_MISTY)
+    //Player et Leaf face
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    applymovement (LOCALID_MISTY, Common_Movement_FaceLeft)
+    waitmovement (0)
 	//L: Lets go so excited and romantic love you blah
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (Tranquilitas_Text_Leaf4)
+    destroy_field_pic (FIELD_PIC_LEAF)
+    closemessage
 	//L exit	
+    applymovement (LOCALID_LEAF, Common_Movement_WalkUp2)
+    waitmovement (0)
+    hideobjectat (LOCALID_LEAF, MAP_BIG_ISLAND_N)
+    removeobject (LOCALID_LEAF)
 	//Set flags and prep surf school
-	closemessage
+    setflag (FLAG_TRANQUILITAS_SURFSCHOOL_OPEN)
+    //fin
 	release
 	end
 }
@@ -201,7 +222,13 @@ script Tranquilitas_Script_Registration {
 		call (Tranquilitas_Script_Registration)
 	} else { //YES
 		//pay money
+        removemoney(REGISTRATION_FEE)
+        updatemoneybox
+        playse (SE_SHOP)
+        waitse
 		//hide coin box
+        hidemoneybox
+        //rest of scene continues in MistyScene
 		return
 	}
 }
@@ -300,5 +327,21 @@ text Tranquilitas_Text_LeafNoMoney {
             me to be your girlfriend. {PLAYER}, I have needs!
             Don't talk to me until you can afford
             to pay for our Surf School registration.")
+}
+
+text Tranquilitas_Text_Misty3 {
+    format("Thank you. I'm sure you're excited to start
+            learning to surf, so let's not waste more time.
+            Follow me in, we'll begin the lesson.")
+}
+
+text Tranquilitas_Text_Leaf4 {
+    format("Oh {PLAYER}, isn't this like a dream come true?
+            Just you, and me, and a group of strangers,
+            surrounded by a team of teenage girls
+            learning how to surf in an indoor pool...
+            I can't imagine any better way
+            to celebrate our new relationship.
+            C'mon, let's go inside and get started!")
 }
 

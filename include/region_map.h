@@ -146,6 +146,7 @@ bool32 IsRoute16VenatorMons(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Tucson(bool32 useWarpInfo);
 bool32 IsPyramidsDCactorum(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Vegas(bool32 useWarpInfo);
+u32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 
