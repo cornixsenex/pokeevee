@@ -4064,6 +4064,8 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
         )
         return 3;
     //WIP
+     else
+         return 69;
 
 }
 
