@@ -4258,6 +4258,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//Elicius Beach - Via Saxosa, Tranquilitas, Montes Vigilliae, Acta Tranquilla, Mare Tranquilum
 
 	//Other Maps Go Here
     

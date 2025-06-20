@@ -157,7 +157,7 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_MT_PYRE,                    MAPSEC_ROUTE_122},
     {MAPSEC_SKY_PILLAR,                 MAPSEC_ROUTE_131},
     {MAPSEC_MIRAGE_TOWER,               MAPSEC_ROUTE_111},
-    {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
+   // {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
     {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
@@ -280,7 +280,7 @@ static const u8 sMapSecIdsOffMap[] =
 {
     MAPSEC_BIRTH_ISLAND,
     MAPSEC_FARAWAY_ISLAND,
-    MAPSEC_NAVEL_ROCK
+//    MAPSEC_NAVEL_ROCK
 };
 
 static const u16 sRegionMapFramePal[] = INCBIN_U16("graphics/pokenav/region_map/frame.gbapal");
@@ -4045,8 +4045,10 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
 
 	DebugPrintf("GetDynamicMapSecEliciusBeach\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
 
+	//Via Saxosa
     if (y < 14)
         return 1;
+	//Tranquilitas
     else if (y < 31)
         return 2;
     //Venator Mons
@@ -4063,10 +4065,50 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
         (x == 8 && y < 56 && y > 50)
         )
         return 3;
-    //WIP
-     else
-         return 69;
-
+    //Acta Tranquilla
+     else if
+		 (
+		  (x == 6  && y == 57) ||
+		  (x == 7  && y < 58) ||
+		  (x == 8  && y < 58) ||
+		  (x == 9  && y < 58) ||
+		  (x == 10 && y < 58) ||
+		  (x == 11 && y < 58) ||
+		  (x == 12 && y < 58) ||
+		  (x == 13 && y < 58) ||
+		  (x == 14 && y < 58) ||
+		  (x == 15 && y < 58) ||
+		  (x == 16 && y < 58) ||
+		  (x == 17 && y < 58) ||
+		  (x == 18 && y < 56) ||
+		  (x == 19 && y < 55) ||
+		  (x == 20 && y < 54) ||
+		  (x == 21 && y < 53) ||
+		  (x == 22 && y < 52) ||
+		  (x == 23 && y < 52) ||
+		  (x == 24 && y < 51) ||
+		  (x == 25 && y < 50) ||
+		  (x == 26 && y < 50) ||
+		  (x == 27 && y < 49) ||
+		  (x == 28 && y < 49) ||
+		  (x == 29 && y < 48) ||
+		  (x == 30 && y < 48) ||
+		  (x == 31 && y < 48) ||
+		  (x == 32 && y < 47) ||
+		  (x == 33 && y < 47) ||
+		  (x == 34 && y < 47) ||
+		  (x == 35 && y < 47) ||
+		  (x == 36 && y < 47) ||
+		  (x == 37 && y < 46) ||
+		  (x == 38 && y < 46) ||
+		  (x == 39 && y < 46) ||
+		  (x == 40 && y < 46) ||
+		  (x == 41 && y < 46) 
+		  )
+		  return 4;
+	//Default Mare Tranquilum
+	else
+		return 5;
 }
 
 	
