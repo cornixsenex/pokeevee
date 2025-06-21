@@ -1,11 +1,25 @@
 
+//Dynamic Map - VAR_TEMP_5
+    //1: Tranquillitas
+    //2: Acta Tranquilla
+    //3: Mare Tranquillum
 
 const OBJ_EVENT_ID_RIVAL = 1
 const RIVAL_FIELD_PIC = 16
 
 
 
-mapscripts Route10_MapScripts {}
+mapscripts Route10_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        
+        //Set var for DynamicMap
+        specialvar (VAR_TEMP_5, GetDynamicMapSec_EliciusBeach_F)
+    }
+
+
+
+}
 
 
 

@@ -2012,7 +2012,22 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
-
+        //Route10 - Tranquillitas, Acta Tranquilla, Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10))
+        {
+			n = GetDynamicMapSec_Route10(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_TRANQVILLITAS);
+				case 2:
+					return StringCopy(dest, sMapName_ACTA_TRANQVILLA);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -4033,7 +4048,7 @@ bool32 GetDynamicMapSec_Vegas(bool32 useWarpInfo)
         y = gSaveBlock1Ptr->pos.y;
     }
 
-	DebugPrintf("GetDynamicMapSecVegas\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+	DebugPrintf("GetDynamicMapSec_Vegas\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
 
 	//Via Magna
 	if (x > 18 && x < 27 && y > 26)
@@ -4063,7 +4078,7 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
         y = gSaveBlock1Ptr->pos.y;
     }
 
-	DebugPrintf("GetDynamicMapSecEliciusBeach\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+	DebugPrintf("GetDynamicMapSec_EliciusBeach\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
 
 	//Via Saxosa
     if (x < 5 && y < 14)
@@ -4074,8 +4089,7 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
     //Montes Vigiliae
     else if 
         (
-        (x < 1 && y < 57) ||
-        (x == 1 && y < 57) ||
+        (x <= 1 && y < 57) ||
         (x == 2 && y < 57) ||
         (x == 3 && y < 57) ||
         (x == 4 && y < 57) ||
@@ -4130,5 +4144,50 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
 	else
 		return 5;
 }
+
+bool32 GetDynamicMapSec_Route10(bool32 useWarpInfo)
+{
+	//1: Tranquillitas
+	//2: Acta Tranquilla
+    //3: Mare Tranquiluma
+    s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("GetDynamicMapSec_Route10\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+
+    //Tranquillitas
+    if 
+        (
+        (x < 4 && y < 15) ||
+        (x < 9 && y < 20)
+        )
+        return 1;
+    //Acta Tranquilla
+    else if 
+        (
+        (x < 13 && y < 30) ||
+        (x < 17 && y < 29) ||
+        (x < 25 && y < 28) ||
+        (x < 37 && y < 29) ||
+        (x < 45 && y < 28) ||
+        (x < 61 && y < 29) ||
+        (x < 68 && y < 28) ||
+        (x < 72 && y < 29) ||
+        (x > 71 && y < 30)
+        )
+        return 2;
+    //Default is Mare Tranquillum
+    else 
+        return 3;
+}
+
 
 	

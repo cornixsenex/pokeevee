@@ -1241,6 +1241,24 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+        //Route10 - Tranquilitas, Acta Tranquilla, Mare Tranquilum
+        if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) 
+		{
+			n = GetDynamicMapSec_Route10(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_TRANQUILLITAS;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_ACTA_TRANQUILLA;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
