@@ -1,11 +1,22 @@
 
-//Dynamic Map is  VAR_TEMP_5
+//Dynamic Map is  VAR_TEMP_5 :
+    //1: Via Saxosa
+    //2: Tranquillitas
+    //3: Montes Vigiliae
+    //4: Acta Tranquilla
+    //5: Mare Tranquillum
 
 const REGISTRATION_FEE = VAR_TEMP_1
 
 mapscripts EliciusBeach_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
+
+        //Handle Dynamic Map
+        specialvar (VAR_RESULT, GetDynamicMapSec_EliciusBeach)
+        copyvar (VAR_TEMP_5, VAR_RESULT)
+
+
         //clear Via Saxosa
         if (!flag(FLAG_ROUTE9_CLEARBLOCK)) {
             setflag (FLAG_ROUTE9_CLEARBLOCK)
@@ -20,6 +31,30 @@ mapscripts EliciusBeach_MapScripts {
 		}
     }
 
+}
+
+script EliciusBeach_Script_Transition_ViaSaxosa {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script EliciusBeach_Script_Transition_Tranquillitas{
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script EliciusBeach_Script_Transition_ActaTranquilla {
+    setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script EliciusBeach_Script_Transition_MareTranquillum {
+    setvar (VAR_TEMP_5, 5)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
 }
 
 script Tranquilitas_Script_ShowLeaf {

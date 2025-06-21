@@ -616,3 +616,4 @@ gSpecials::
 	def_special BlueRouletteSpin
 	def_special GetDynamicMapSec_Tucson_F
     def_special IsPyramidsDCactorum_F
+    def_special GetDynamicMapSec_EliciusBeach

@@ -1992,6 +1992,26 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+        //Elicius Beach - Via Saxosa, Tranquillitas, Montes Vigilliae, Acta Tranquilla, Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_ELICIUS_BEACH) && mapNum == MAP_NUM(MAP_ELICIUS_BEACH))
+        {
+			n = GetDynamicMapSec_EliciusBeach(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_VIA_SAXOSA);
+				case 2:
+					return StringCopy(dest, sMapName_TRANQVILLITAS);
+				case 3:
+					return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+				case 4:
+					return StringCopy(dest, sMapName_ACTA_TRANQVILLA);
+				case 5:
+					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 
 		//Default Map - Should never be reached
@@ -4028,7 +4048,7 @@ bool32 GetDynamicMapSec_Vegas(bool32 useWarpInfo)
 bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
 {
 	//1: Via Saxosa
-	//2: Tranquilitas
+	//2: Tranquillitas
     //3: Montes  Vigilliae
 	//4: Acta Tranquilla
     //5: Mare Tranquiluma
@@ -4051,7 +4071,7 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
 	//Tranquilitas
     else if (y < 31)
         return 2;
-    //Venator Mons
+    //Montes Vigiliae
     else if 
         (
         (x < 1 && y < 57) ||

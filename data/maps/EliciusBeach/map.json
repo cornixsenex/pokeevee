@@ -249,6 +249,151 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ViaSaxosa"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ViaSaxosa"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_Tranquillitas"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    }
+  ],
   "bg_events": []
 }

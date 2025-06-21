@@ -4259,6 +4259,24 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		}
 	}
 	//Elicius Beach - Via Saxosa, Tranquilitas, Montes Vigilliae, Acta Tranquilla, Mare Tranquilum
+	if (mapGroup == MAP_GROUP(MAP_ELICIUS_BEACH) && mapNum == MAP_NUM(MAP_ELICIUS_BEACH)) 
+	{
+		n = GetDynamicMapSec_EliciusBeach(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_VIA_SAXOSA;
+			case 2:
+				return MAPSEC_TRANQUILLITAS;
+			case 3:
+				return MAPSEC_MONTES_VIGILIAE; 
+			case 4:
+				return MAPSEC_ACTA_TRANQUILLA; 
+			case 5:
+				return MAPSEC_MARE_TRANQUILLUM; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 
 	//Other Maps Go Here
     
@@ -4697,7 +4715,32 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 			case 3:
 				return MUS_DESERT; 
 			default:
-				return MUS_DESERT;
+				return MUS_CANTINA;
+		}
+	}
+	//Elicius Beach - Via Saxosa, Tranquillitas, Montes Vigilliae, Acta Tranquilla, Mare Tranquillum
+	if (mapGroup == MAP_GROUP(MAP_ELICIUS_BEACH) && mapNum == MAP_NUM(MAP_ELICIUS_BEACH)) 
+	{
+		n = GetDynamicMapSec_EliciusBeach(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_EliciusBeach returned: %d\n", n);
+		switch (n) {
+			//Via Saxosa
+			case 1:
+				return MUS_ROUTE119;
+		    //Tranquillitas
+			case 2:
+				return MUS_RG_CELADON;
+		    //Montes Vigilliae
+			case 3:
+				return MUS_B_FRONTIER; 
+		    //Acta Tranquilla
+			case 4:
+				return MUS_OCEANIC_MUSEUM; 
+		    //Mare Tranquillum
+			case 5:
+				return MUS_RG_SURF; 
+			default:
+				return MUS_CANTINA;
 		}
 	}
 
@@ -4717,9 +4760,11 @@ bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	//Dest Map is Dynamic - Handle exit to Dynamic
 	if (destMapSection == MAPSEC_DYNAMIC)
 	{
-		if (lastMapSection == MAPSEC_PALATIUM_FELIX ||    // Exit Palatium Felix to dynamic Peccatum
-			lastMapSection == MAPSEC_HARENAE_AUREAE ||    // Exit Harenae Aureae to dynamic peccatum
-			lastMapSection == MAPSEC_VIA_MAGNA            // Exit Terminal (only place with header == VM & warp) 
+		if (lastMapSection == MAPSEC_PALATIUM_FELIX  ||    // Exit Palatium Felix to dynamic Peccatum
+			lastMapSection == MAPSEC_HARENAE_AUREAE  ||    // Exit Harenae Aureae to dynamic peccatum
+            lastMapSection == MAPSEC_PUTEUS_OBSCURUS ||    // Exit Dark Cave onto Via Saxosa = dynamic Route9
+            lastMapSection == MAPSEC_POWER_PLANT     ||    // Exit Power Plant to dynamic Vegas
+			lastMapSection == MAPSEC_VIA_MAGNA             // Exit Terminal (only place with header == VM & warp) 
 		   )
 			return TRUE;
 		else
@@ -4728,7 +4773,9 @@ bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	//Last Map is Dynamic - Handle exit from Dynamic
 	else if (lastMapSection == MAPSEC_DYNAMIC)
 	{
-		if (destMapSection == MAPSEC_PALATIUM_FELIX || //Enter Palatium Felix from dynamic Peccatum
+		if (destMapSection == MAPSEC_PALATIUM_FELIX  || //Enter Palatium Felix from dynamic Peccatuma
+            destMapSection == MAPSEC_PUTEUS_OBSCURUS || // Enter Dark Cave from dynamic Via Saxosa
+            destMapSection == MAPSEC_POWER_PLANT     || //Enter Power plant from dynamic vegas
 			destMapSection == MAPSEC_HARENAE_AUREAE    //Enter Harenae Aurea from dynamic Peccatum
 		   )
 			return TRUE;

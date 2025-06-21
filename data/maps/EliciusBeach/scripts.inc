@@ -1,474 +1,518 @@
 EliciusBeach_MapScripts::
-# 8 "data/maps/EliciusBeach/scripts.pory"
+# 13 "data/maps/EliciusBeach/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 10 "data/maps/EliciusBeach/scripts.pory"
+# 16 "data/maps/EliciusBeach/scripts.pory"
+	specialvar VAR_RESULT, GetDynamicMapSec_EliciusBeach
+# 17 "data/maps/EliciusBeach/scripts.pory"
+	copyvar VAR_TEMP_5, VAR_RESULT
+# 21 "data/maps/EliciusBeach/scripts.pory"
 	goto_if_unset FLAG_ROUTE9_CLEARBLOCK, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-# 14 "data/maps/EliciusBeach/scripts.pory"
+# 25 "data/maps/EliciusBeach/scripts.pory"
 	goto_if_unset FLAG_TRANQUILITAS_SURFSCHOOL_OPEN, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-# 18 "data/maps/EliciusBeach/scripts.pory"
+# 29 "data/maps/EliciusBeach/scripts.pory"
 	goto_if_set FLAG_LEAF_ISGF, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 	return
 
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-# 11 "data/maps/EliciusBeach/scripts.pory"
+# 22 "data/maps/EliciusBeach/scripts.pory"
 	setflag FLAG_ROUTE9_CLEARBLOCK
 	goto EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
-# 15 "data/maps/EliciusBeach/scripts.pory"
+# 26 "data/maps/EliciusBeach/scripts.pory"
 	call Tranquilitas_Script_ShowMisty
 	goto EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
-# 19 "data/maps/EliciusBeach/scripts.pory"
+# 30 "data/maps/EliciusBeach/scripts.pory"
 	call Tranquilitas_Script_ShowLeaf
 	return
 
 EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
-# 18 "data/maps/EliciusBeach/scripts.pory"
+# 29 "data/maps/EliciusBeach/scripts.pory"
 	goto_if_unset FLAG_TRANQUILITAS_SURFSCHOOL_OPEN, EliciusBeach_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 	return
 
 
+EliciusBeach_Script_Transition_ViaSaxosa::
+# 37 "data/maps/EliciusBeach/scripts.pory"
+	setvar VAR_TEMP_5, 1
+# 38 "data/maps/EliciusBeach/scripts.pory"
+	special TransitionMapMusic
+# 39 "data/maps/EliciusBeach/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+EliciusBeach_Script_Transition_Tranquillitas::
+# 43 "data/maps/EliciusBeach/scripts.pory"
+	setvar VAR_TEMP_5, 2
+# 44 "data/maps/EliciusBeach/scripts.pory"
+	special TransitionMapMusic
+# 45 "data/maps/EliciusBeach/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+EliciusBeach_Script_Transition_ActaTranquilla::
+# 49 "data/maps/EliciusBeach/scripts.pory"
+	setvar VAR_TEMP_5, 4
+# 50 "data/maps/EliciusBeach/scripts.pory"
+	special TransitionMapMusic
+# 51 "data/maps/EliciusBeach/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+EliciusBeach_Script_Transition_MareTranquillum::
+# 55 "data/maps/EliciusBeach/scripts.pory"
+	setvar VAR_TEMP_5, 5
+# 56 "data/maps/EliciusBeach/scripts.pory"
+	special TransitionMapMusic
+# 57 "data/maps/EliciusBeach/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
 Tranquilitas_Script_ShowLeaf::
-# 26 "data/maps/EliciusBeach/scripts.pory"
+# 61 "data/maps/EliciusBeach/scripts.pory"
 	setobjectxyperm LOCALID_LEAF, 4, 19
-# 27 "data/maps/EliciusBeach/scripts.pory"
+# 62 "data/maps/EliciusBeach/scripts.pory"
 	setobjectmovementtype LOCALID_LEAF, MOVEMENT_TYPE_LOOK_AROUND
 	return
 
 
 Tranquilitas_Script_ShowMisty::
-# 32 "data/maps/EliciusBeach/scripts.pory"
+# 67 "data/maps/EliciusBeach/scripts.pory"
 	setobjectxyperm LOCALID_MISTY, 24, 27
-# 33 "data/maps/EliciusBeach/scripts.pory"
+# 68 "data/maps/EliciusBeach/scripts.pory"
 	setobjectmovementtype LOCALID_MISTY, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 
 Tranquilitas_Script_Misty::
-# 38 "data/maps/EliciusBeach/scripts.pory"
+# 73 "data/maps/EliciusBeach/scripts.pory"
 	lock
-# 39 "data/maps/EliciusBeach/scripts.pory"
+# 74 "data/maps/EliciusBeach/scripts.pory"
 	faceplayer
-# 40 "data/maps/EliciusBeach/scripts.pory"
+# 75 "data/maps/EliciusBeach/scripts.pory"
 	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 41 "data/maps/EliciusBeach/scripts.pory"
+# 76 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_MistyBlock
-# 42 "data/maps/EliciusBeach/scripts.pory"
+# 77 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_MISTY
-# 43 "data/maps/EliciusBeach/scripts.pory"
+# 78 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
-# 44 "data/maps/EliciusBeach/scripts.pory"
+# 79 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_MISTY, Common_Movement_FaceDown
-# 45 "data/maps/EliciusBeach/scripts.pory"
+# 80 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 46 "data/maps/EliciusBeach/scripts.pory"
+# 81 "data/maps/EliciusBeach/scripts.pory"
 	release
 	end
 
 
 Tranquilitas_Script_Leaf::
-# 52 "data/maps/EliciusBeach/scripts.pory"
+# 87 "data/maps/EliciusBeach/scripts.pory"
 	lock
-# 53 "data/maps/EliciusBeach/scripts.pory"
+# 88 "data/maps/EliciusBeach/scripts.pory"
 	faceplayer
-# 55 "data/maps/EliciusBeach/scripts.pory"
+# 90 "data/maps/EliciusBeach/scripts.pory"
 	load_field_pic FIELD_PIC_LEAF, 190, 98
-# 56 "data/maps/EliciusBeach/scripts.pory"
+# 91 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_Leaf1, MSGBOX_YESNO
-# 58 "data/maps/EliciusBeach/scripts.pory"
+# 93 "data/maps/EliciusBeach/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Tranquilitas_Script_Leaf_1
-# 65 "data/maps/EliciusBeach/scripts.pory"
+# 100 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_Leaf2
-# 66 "data/maps/EliciusBeach/scripts.pory"
+# 101 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_LEAF
-# 67 "data/maps/EliciusBeach/scripts.pory"
+# 102 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
-# 68 "data/maps/EliciusBeach/scripts.pory"
+# 103 "data/maps/EliciusBeach/scripts.pory"
 	call Tranquilitas_Script_MistyScene
 	return
 
 Tranquilitas_Script_Leaf_1:
-# 59 "data/maps/EliciusBeach/scripts.pory"
+# 94 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_LeafNotReady
-# 60 "data/maps/EliciusBeach/scripts.pory"
+# 95 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_LEAF
-# 61 "data/maps/EliciusBeach/scripts.pory"
+# 96 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
 	end
 
 
 Tranquilitas_Script_MistyScene::
-# 75 "data/maps/EliciusBeach/scripts.pory"
+# 110 "data/maps/EliciusBeach/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 76 "data/maps/EliciusBeach/scripts.pory"
+# 111 "data/maps/EliciusBeach/scripts.pory"
 	switch VAR_RESULT
-# 77 "data/maps/EliciusBeach/scripts.pory"
+# 112 "data/maps/EliciusBeach/scripts.pory"
 	case DIR_NORTH, Tranquilitas_Script_MistyScene_3
-# 82 "data/maps/EliciusBeach/scripts.pory"
+# 117 "data/maps/EliciusBeach/scripts.pory"
 	case DIR_SOUTH, Tranquilitas_Script_MistyScene_4
-# 89 "data/maps/EliciusBeach/scripts.pory"
+# 124 "data/maps/EliciusBeach/scripts.pory"
 	case DIR_EAST, Tranquilitas_Script_MistyScene_5
-# 96 "data/maps/EliciusBeach/scripts.pory"
+# 131 "data/maps/EliciusBeach/scripts.pory"
 	case DIR_WEST, Tranquilitas_Script_MistyScene_6
-# 104 "data/maps/EliciusBeach/scripts.pory"
+# 139 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Script_MistyScene_Text_0
-# 105 "data/maps/EliciusBeach/scripts.pory"
+# 140 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
 	end
 
 Tranquilitas_Script_MistyScene_1:
-# 109 "data/maps/EliciusBeach/scripts.pory"
-	applymovement LOCALID_LEAF, Tranquilitas_Movement_ApproachMisty
-# 110 "data/maps/EliciusBeach/scripts.pory"
-	applymovement LOCALID_PLAYER, Tranquilitas_Movement_ApproachMisty
-# 111 "data/maps/EliciusBeach/scripts.pory"
-	waitmovement 0
-# 113 "data/maps/EliciusBeach/scripts.pory"
-	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 114 "data/maps/EliciusBeach/scripts.pory"
-	msgbox Tranquilitas_Text_Misty1
-# 115 "data/maps/EliciusBeach/scripts.pory"
-	destroy_field_pic FIELD_PIC_MISTY
-# 117 "data/maps/EliciusBeach/scripts.pory"
-	load_field_pic FIELD_PIC_LEAF, 190, 98
-# 118 "data/maps/EliciusBeach/scripts.pory"
-	msgbox Tranquilitas_Text_Leaf3
-# 119 "data/maps/EliciusBeach/scripts.pory"
-	destroy_field_pic FIELD_PIC_LEAF
-# 121 "data/maps/EliciusBeach/scripts.pory"
-	applymovement LOCALID_MISTY, Common_Movement_ExclamationMark
-# 122 "data/maps/EliciusBeach/scripts.pory"
-	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 123 "data/maps/EliciusBeach/scripts.pory"
-	waitmovement 0
-# 126 "data/maps/EliciusBeach/scripts.pory"
-	checkmoney 5000
-# 127 "data/maps/EliciusBeach/scripts.pory"
-	compare VAR_RESULT, FALSE
-	goto_if_eq Tranquilitas_Script_MistyScene_9
-Tranquilitas_Script_MistyScene_8:
-# 130 "data/maps/EliciusBeach/scripts.pory"
-	copymoney VAR_TEMP_1
-# 131 "data/maps/EliciusBeach/scripts.pory"
-	divvar VAR_TEMP_1, 3
-# 133 "data/maps/EliciusBeach/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_TEMP_1
-# 134 "data/maps/EliciusBeach/scripts.pory"
-	msgbox Tranquilitas_Text_Misty2
-# 136 "data/maps/EliciusBeach/scripts.pory"
-	call Tranquilitas_Script_Registration
-# 138 "data/maps/EliciusBeach/scripts.pory"
-	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 139 "data/maps/EliciusBeach/scripts.pory"
-	msgbox Tranquilitas_Text_Misty3
-# 140 "data/maps/EliciusBeach/scripts.pory"
-	destroy_field_pic FIELD_PIC_MISTY
-# 141 "data/maps/EliciusBeach/scripts.pory"
-	closemessage
-# 143 "data/maps/EliciusBeach/scripts.pory"
-	applymovement LOCALID_MISTY, Common_Movement_WalkUp
 # 144 "data/maps/EliciusBeach/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_LEAF, Tranquilitas_Movement_ApproachMisty
 # 145 "data/maps/EliciusBeach/scripts.pory"
-	hideobjectat LOCALID_MISTY, MAP_BIG_ISLAND_N
+	applymovement LOCALID_PLAYER, Tranquilitas_Movement_ApproachMisty
 # 146 "data/maps/EliciusBeach/scripts.pory"
-	removeobject LOCALID_MISTY
-# 148 "data/maps/EliciusBeach/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 149 "data/maps/EliciusBeach/scripts.pory"
-	applymovement LOCALID_MISTY, Common_Movement_FaceLeft
-# 150 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
+# 148 "data/maps/EliciusBeach/scripts.pory"
+	load_field_pic FIELD_PIC_MISTY, 190, 98
+# 149 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_Misty1
+# 150 "data/maps/EliciusBeach/scripts.pory"
+	destroy_field_pic FIELD_PIC_MISTY
 # 152 "data/maps/EliciusBeach/scripts.pory"
 	load_field_pic FIELD_PIC_LEAF, 190, 98
 # 153 "data/maps/EliciusBeach/scripts.pory"
-	msgbox Tranquilitas_Text_Leaf4
+	msgbox Tranquilitas_Text_Leaf3
 # 154 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_LEAF
-# 155 "data/maps/EliciusBeach/scripts.pory"
-	closemessage
+# 156 "data/maps/EliciusBeach/scripts.pory"
+	applymovement LOCALID_MISTY, Common_Movement_ExclamationMark
 # 157 "data/maps/EliciusBeach/scripts.pory"
-	applymovement LOCALID_LEAF, Common_Movement_WalkUp2
+	load_field_pic FIELD_PIC_MISTY, 190, 98
 # 158 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 159 "data/maps/EliciusBeach/scripts.pory"
-	hideobjectat LOCALID_LEAF, MAP_BIG_ISLAND_N
-# 160 "data/maps/EliciusBeach/scripts.pory"
-	removeobject LOCALID_LEAF
+# 161 "data/maps/EliciusBeach/scripts.pory"
+	checkmoney 5000
 # 162 "data/maps/EliciusBeach/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Tranquilitas_Script_MistyScene_9
+Tranquilitas_Script_MistyScene_8:
+# 165 "data/maps/EliciusBeach/scripts.pory"
+	copymoney VAR_TEMP_1
+# 166 "data/maps/EliciusBeach/scripts.pory"
+	divvar VAR_TEMP_1, 3
+# 168 "data/maps/EliciusBeach/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_TEMP_1
+# 169 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_Misty2
+# 171 "data/maps/EliciusBeach/scripts.pory"
+	call Tranquilitas_Script_Registration
+# 173 "data/maps/EliciusBeach/scripts.pory"
+	load_field_pic FIELD_PIC_MISTY, 190, 98
+# 174 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_Misty3
+# 175 "data/maps/EliciusBeach/scripts.pory"
+	destroy_field_pic FIELD_PIC_MISTY
+# 176 "data/maps/EliciusBeach/scripts.pory"
+	closemessage
+# 178 "data/maps/EliciusBeach/scripts.pory"
+	applymovement LOCALID_MISTY, Common_Movement_WalkUp
+# 179 "data/maps/EliciusBeach/scripts.pory"
+	waitmovement 0
+# 180 "data/maps/EliciusBeach/scripts.pory"
+	hideobjectat LOCALID_MISTY, MAP_BIG_ISLAND_N
+# 181 "data/maps/EliciusBeach/scripts.pory"
+	removeobject LOCALID_MISTY
+# 183 "data/maps/EliciusBeach/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 184 "data/maps/EliciusBeach/scripts.pory"
+	applymovement LOCALID_MISTY, Common_Movement_FaceLeft
+# 185 "data/maps/EliciusBeach/scripts.pory"
+	waitmovement 0
+# 187 "data/maps/EliciusBeach/scripts.pory"
+	load_field_pic FIELD_PIC_LEAF, 190, 98
+# 188 "data/maps/EliciusBeach/scripts.pory"
+	msgbox Tranquilitas_Text_Leaf4
+# 189 "data/maps/EliciusBeach/scripts.pory"
+	destroy_field_pic FIELD_PIC_LEAF
+# 190 "data/maps/EliciusBeach/scripts.pory"
+	closemessage
+# 192 "data/maps/EliciusBeach/scripts.pory"
+	applymovement LOCALID_LEAF, Common_Movement_WalkUp2
+# 193 "data/maps/EliciusBeach/scripts.pory"
+	waitmovement 0
+# 194 "data/maps/EliciusBeach/scripts.pory"
+	hideobjectat LOCALID_LEAF, MAP_BIG_ISLAND_N
+# 195 "data/maps/EliciusBeach/scripts.pory"
+	removeobject LOCALID_LEAF
+# 197 "data/maps/EliciusBeach/scripts.pory"
 	setflag FLAG_TRANQUILITAS_SURFSCHOOL_OPEN
-# 164 "data/maps/EliciusBeach/scripts.pory"
+# 199 "data/maps/EliciusBeach/scripts.pory"
 	release
 	end
 
 Tranquilitas_Script_MistyScene_3:
-# 78 "data/maps/EliciusBeach/scripts.pory"
+# 113 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkRight
-# 79 "data/maps/EliciusBeach/scripts.pory"
+# 114 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 80 "data/maps/EliciusBeach/scripts.pory"
+# 115 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkDown
-# 81 "data/maps/EliciusBeach/scripts.pory"
+# 116 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
 	goto Tranquilitas_Script_MistyScene_1
 
 Tranquilitas_Script_MistyScene_4:
-# 83 "data/maps/EliciusBeach/scripts.pory"
+# 118 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkDown
-# 84 "data/maps/EliciusBeach/scripts.pory"
+# 119 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 85 "data/maps/EliciusBeach/scripts.pory"
+# 120 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 86 "data/maps/EliciusBeach/scripts.pory"
+# 121 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkRight
-# 87 "data/maps/EliciusBeach/scripts.pory"
+# 122 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 88 "data/maps/EliciusBeach/scripts.pory"
+# 123 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
 	goto Tranquilitas_Script_MistyScene_1
 
 Tranquilitas_Script_MistyScene_5:
-# 90 "data/maps/EliciusBeach/scripts.pory"
+# 125 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 91 "data/maps/EliciusBeach/scripts.pory"
+# 126 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkDown
-# 92 "data/maps/EliciusBeach/scripts.pory"
+# 127 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 93 "data/maps/EliciusBeach/scripts.pory"
+# 128 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 94 "data/maps/EliciusBeach/scripts.pory"
+# 129 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkRight
-# 95 "data/maps/EliciusBeach/scripts.pory"
+# 130 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
 	goto Tranquilitas_Script_MistyScene_1
 
 Tranquilitas_Script_MistyScene_6:
-# 97 "data/maps/EliciusBeach/scripts.pory"
+# 132 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
-# 98 "data/maps/EliciusBeach/scripts.pory"
+# 133 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkDown
-# 99 "data/maps/EliciusBeach/scripts.pory"
+# 134 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 100 "data/maps/EliciusBeach/scripts.pory"
+# 135 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_WalkRight
-# 101 "data/maps/EliciusBeach/scripts.pory"
+# 136 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 102 "data/maps/EliciusBeach/scripts.pory"
+# 137 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
 	goto Tranquilitas_Script_MistyScene_1
 
 Tranquilitas_Script_MistyScene_9:
-# 128 "data/maps/EliciusBeach/scripts.pory"
+# 163 "data/maps/EliciusBeach/scripts.pory"
 	call Tranquilitas_Script_NoMoney
 	goto Tranquilitas_Script_MistyScene_8
 
 
 Tranquilitas_Script_NoMoney::
-# 171 "data/maps/EliciusBeach/scripts.pory"
+# 206 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_MISTY, Common_Movement_ExclamationMark
-# 172 "data/maps/EliciusBeach/scripts.pory"
+# 207 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 174 "data/maps/EliciusBeach/scripts.pory"
+# 209 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_MistyNoMoney
-# 175 "data/maps/EliciusBeach/scripts.pory"
+# 210 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
-# 176 "data/maps/EliciusBeach/scripts.pory"
+# 211 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_MISTY
-# 178 "data/maps/EliciusBeach/scripts.pory"
+# 213 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_ExclamationMark
-# 179 "data/maps/EliciusBeach/scripts.pory"
+# 214 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 181 "data/maps/EliciusBeach/scripts.pory"
+# 216 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 182 "data/maps/EliciusBeach/scripts.pory"
+# 217 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_MISTY, Common_Movement_FaceLeft
-# 183 "data/maps/EliciusBeach/scripts.pory"
+# 218 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 185 "data/maps/EliciusBeach/scripts.pory"
+# 220 "data/maps/EliciusBeach/scripts.pory"
 	load_field_pic FIELD_PIC_LEAF, 190, 98
-# 186 "data/maps/EliciusBeach/scripts.pory"
+# 221 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_LeafNoMoney
-# 187 "data/maps/EliciusBeach/scripts.pory"
+# 222 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
-# 188 "data/maps/EliciusBeach/scripts.pory"
+# 223 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_LEAF
-# 190 "data/maps/EliciusBeach/scripts.pory"
+# 225 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Tranquilitas_Movement_LeafExitNoMoney
-# 191 "data/maps/EliciusBeach/scripts.pory"
+# 226 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 193 "data/maps/EliciusBeach/scripts.pory"
+# 228 "data/maps/EliciusBeach/scripts.pory"
 	call Tranquilitas_Script_ShowLeaf
-# 194 "data/maps/EliciusBeach/scripts.pory"
+# 229 "data/maps/EliciusBeach/scripts.pory"
 	call Tranquilitas_Script_ShowMisty
-# 196 "data/maps/EliciusBeach/scripts.pory"
+# 231 "data/maps/EliciusBeach/scripts.pory"
 	release
 	end
 
 
 Tranquilitas_Script_Registration::
-# 202 "data/maps/EliciusBeach/scripts.pory"
+# 237 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_Registration, MSGBOX_YESNO
-# 204 "data/maps/EliciusBeach/scripts.pory"
+# 239 "data/maps/EliciusBeach/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Tranquilitas_Script_Registration_1
-# 225 "data/maps/EliciusBeach/scripts.pory"
+# 260 "data/maps/EliciusBeach/scripts.pory"
 	removemoney VAR_TEMP_1
-# 226 "data/maps/EliciusBeach/scripts.pory"
+# 261 "data/maps/EliciusBeach/scripts.pory"
 	updatemoneybox
-# 227 "data/maps/EliciusBeach/scripts.pory"
+# 262 "data/maps/EliciusBeach/scripts.pory"
 	playse SE_SHOP
-# 228 "data/maps/EliciusBeach/scripts.pory"
+# 263 "data/maps/EliciusBeach/scripts.pory"
 	waitse
-# 230 "data/maps/EliciusBeach/scripts.pory"
+# 265 "data/maps/EliciusBeach/scripts.pory"
 	hidemoneybox
 	return
 
 Tranquilitas_Script_Registration_1:
-# 206 "data/maps/EliciusBeach/scripts.pory"
+# 241 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_LEAF, Common_Movement_ExclamationMark
-# 207 "data/maps/EliciusBeach/scripts.pory"
+# 242 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 209 "data/maps/EliciusBeach/scripts.pory"
+# 244 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_MISTY
-# 210 "data/maps/EliciusBeach/scripts.pory"
+# 245 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 211 "data/maps/EliciusBeach/scripts.pory"
+# 246 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_MISTY, Common_Movement_FaceLeft
-# 212 "data/maps/EliciusBeach/scripts.pory"
+# 247 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 214 "data/maps/EliciusBeach/scripts.pory"
+# 249 "data/maps/EliciusBeach/scripts.pory"
 	load_field_pic FIELD_PIC_LEAF, 190, 98
-# 215 "data/maps/EliciusBeach/scripts.pory"
+# 250 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_LeafNoRegistration
-# 216 "data/maps/EliciusBeach/scripts.pory"
+# 251 "data/maps/EliciusBeach/scripts.pory"
 	destroy_field_pic FIELD_PIC_LEAF
-# 217 "data/maps/EliciusBeach/scripts.pory"
+# 252 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 218 "data/maps/EliciusBeach/scripts.pory"
+# 253 "data/maps/EliciusBeach/scripts.pory"
 	applymovement LOCALID_MISTY, Common_Movement_FaceUp
-# 219 "data/maps/EliciusBeach/scripts.pory"
+# 254 "data/maps/EliciusBeach/scripts.pory"
 	waitmovement 0
-# 221 "data/maps/EliciusBeach/scripts.pory"
+# 256 "data/maps/EliciusBeach/scripts.pory"
 	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 222 "data/maps/EliciusBeach/scripts.pory"
+# 257 "data/maps/EliciusBeach/scripts.pory"
 	call Tranquilitas_Script_Registration
 	return
 
 
 Tranquilitas_Script_TouristF::
-# 237 "data/maps/EliciusBeach/scripts.pory"
+# 272 "data/maps/EliciusBeach/scripts.pory"
 	faceplayer
-# 238 "data/maps/EliciusBeach/scripts.pory"
+# 273 "data/maps/EliciusBeach/scripts.pory"
 	msgbox Tranquilitas_Text_TouristF
-# 239 "data/maps/EliciusBeach/scripts.pory"
+# 274 "data/maps/EliciusBeach/scripts.pory"
 	closemessage
 	end
 
 
-# 243 "data/maps/EliciusBeach/scripts.pory"
+# 278 "data/maps/EliciusBeach/scripts.pory"
 Tranquilitas_Movement_ApproachMisty:
-# 244 "data/maps/EliciusBeach/scripts.pory"
+# 279 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 244 "data/maps/EliciusBeach/scripts.pory"
+# 279 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 244 "data/maps/EliciusBeach/scripts.pory"
+# 279 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 244 "data/maps/EliciusBeach/scripts.pory"
+# 279 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 245 "data/maps/EliciusBeach/scripts.pory"
+# 280 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 246 "data/maps/EliciusBeach/scripts.pory"
+# 281 "data/maps/EliciusBeach/scripts.pory"
 	walk_right
-# 247 "data/maps/EliciusBeach/scripts.pory"
+# 282 "data/maps/EliciusBeach/scripts.pory"
 	face_up
 	step_end
 
-# 251 "data/maps/EliciusBeach/scripts.pory"
+# 286 "data/maps/EliciusBeach/scripts.pory"
 Tranquilitas_Movement_LeafExitNoMoney:
-# 252 "data/maps/EliciusBeach/scripts.pory"
+# 287 "data/maps/EliciusBeach/scripts.pory"
 	walk_down
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
-# 253 "data/maps/EliciusBeach/scripts.pory"
+# 288 "data/maps/EliciusBeach/scripts.pory"
 	walk_left
 	step_end
 
 Tranquilitas_Script_MistyScene_Text_0:
-# 104 "data/maps/EliciusBeach/scripts.pory"
+# 139 "data/maps/EliciusBeach/scripts.pory"
 	.string "ERROR: GetPlayer\nFacingDirection OOB$"
 
 Tranquilitas_Text_TouristF::
-# 256 "data/maps/EliciusBeach/scripts.pory"
+# 291 "data/maps/EliciusBeach/scripts.pory"
 	.string "I quit my job to go on vacation.$"
 
 Tranquilitas_Text_MistyBlock::
-# 260 "data/maps/EliciusBeach/scripts.pory"
+# 295 "data/maps/EliciusBeach/scripts.pory"
 	.string "I'm sorry sir, but the Surf School is\n"
 	.string "booked all season long. I haven't any\l"
 	.string "room for single registration, but I\l"
@@ -478,24 +522,24 @@ Tranquilitas_Text_MistyBlock::
 	.string "in!$"
 
 Tranquilitas_Text_Leaf1::
-# 269 "data/maps/EliciusBeach/scripts.pory"
+# 304 "data/maps/EliciusBeach/scripts.pory"
 	.string "Where have you been {PLAYER}? You\n"
 	.string "kept me waiting for so long! Are you\l"
 	.string "ready for Surf School?$"
 
 Tranquilitas_Text_LeafNotReady::
-# 274 "data/maps/EliciusBeach/scripts.pory"
+# 309 "data/maps/EliciusBeach/scripts.pory"
 	.string "Ok, but hurry up! I hate waiting.$"
 
 Tranquilitas_Text_Leaf2::
-# 278 "data/maps/EliciusBeach/scripts.pory"
+# 313 "data/maps/EliciusBeach/scripts.pory"
 	.string "This is so romantic! I cannot wait to\n"
 	.string "learn to surf the seas with you, my love.\l"
 	.string "C'mon! Let's go meet our surf\l"
 	.string "instructor.$"
 
 Tranquilitas_Text_Misty1::
-# 284 "data/maps/EliciusBeach/scripts.pory"
+# 319 "data/maps/EliciusBeach/scripts.pory"
 	.string "Hello and welcome to Tranquilitas Surf\n"
 	.string "School. I'm Misty, the surf instructor.\l"
 	.string "Unfortunately we are fully booked, I\l"
@@ -503,12 +547,12 @@ Tranquilitas_Text_Misty1::
 	.string "join...$"
 
 Tranquilitas_Text_Leaf3::
-# 292 "data/maps/EliciusBeach/scripts.pory"
+# 327 "data/maps/EliciusBeach/scripts.pory"
 	.string "But we have a reservation! It should be\n"
 	.string "under my boyfriend's name, {PLAYER}.$"
 
 Tranquilitas_Text_Misty2::
-# 297 "data/maps/EliciusBeach/scripts.pory"
+# 332 "data/maps/EliciusBeach/scripts.pory"
 	.string "Of course, forgive me, I remember now.\n"
 	.string "You made a reservation earlier for a\l"
 	.string "couple's package at the Surf School.\l"
@@ -517,14 +561,14 @@ Tranquilitas_Text_Misty2::
 	.string "registration fee.$"
 
 Tranquilitas_Text_Registration::
-# 305 "data/maps/EliciusBeach/scripts.pory"
+# 340 "data/maps/EliciusBeach/scripts.pory"
 	.string "The registration fee for Surf School is\n"
 	.string "a one time low payment of just\l"
 	.string "{STR_VAR_1}. Will you pay the\l"
 	.string "registration fee?$"
 
 Tranquilitas_Text_LeafNoRegistration::
-# 309 "data/maps/EliciusBeach/scripts.pory"
+# 344 "data/maps/EliciusBeach/scripts.pory"
 	.string "But {PLAYER} you promised for our\n"
 	.string "honeymooon that you would take us to\l"
 	.string "learn how to surf! You still want me,\l"
@@ -532,14 +576,14 @@ Tranquilitas_Text_LeafNoRegistration::
 	.string "the fee, and let's learn how to surf!$"
 
 Tranquilitas_Text_MistyNoMoney::
-# 316 "data/maps/EliciusBeach/scripts.pory"
+# 351 "data/maps/EliciusBeach/scripts.pory"
 	.string "I'm sorry sir, but it seems you do not\n"
 	.string "have enough cash to cover the small fee\l"
 	.string "required to register at Surf School. You\l"
 	.string "will have to return with more money.$"
 
 Tranquilitas_Text_LeafNoMoney::
-# 323 "data/maps/EliciusBeach/scripts.pory"
+# 358 "data/maps/EliciusBeach/scripts.pory"
 	.string "This can't be real! It's so embarrising!\n"
 	.string "How could you do something like this to\l"
 	.string "me? You need to make more money if you\l"
@@ -549,14 +593,14 @@ Tranquilitas_Text_LeafNoMoney::
 	.string "Surf School registration.$"
 
 Tranquilitas_Text_Misty3::
-# 332 "data/maps/EliciusBeach/scripts.pory"
+# 367 "data/maps/EliciusBeach/scripts.pory"
 	.string "Thank you. I'm sure you're excited to\n"
 	.string "start learning to surf, so let's not\l"
 	.string "waste more time. Follow me in, we'll begin\l"
 	.string "the lesson.$"
 
 Tranquilitas_Text_Leaf4::
-# 338 "data/maps/EliciusBeach/scripts.pory"
+# 373 "data/maps/EliciusBeach/scripts.pory"
 	.string "Oh {PLAYER}, isn't this like a dream\n"
 	.string "come true? Just you, and me, and a group\l"
 	.string "of strangers, surrounded by a team of\l"

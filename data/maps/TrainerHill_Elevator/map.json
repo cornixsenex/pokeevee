@@ -3,7 +3,7 @@
   "name": "TrainerHill_Elevator",
   "layout": "LAYOUT_BATTLE_ELEVATOR",
   "music": "MUS_B_TOWER_RS",
-  "region_map_section": "MAPSEC_TRAINER_HILL",
+  "region_map_section": "MAPSEC_INSIDE_OF_TRUCK",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_TRAINER_HILL_ELEVATOR_ATTENDANT",
@@ -45,10 +45,6 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

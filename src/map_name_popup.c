@@ -1217,6 +1217,30 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+        //Elicius Beach - Via Saxosa, Tranquilitas, Montes Vigilliae, Acta Tranquilla, Mare Tranquilum
+        if (mapGroup == MAP_GROUP(MAP_ELICIUS_BEACH) && mapNum == MAP_NUM(MAP_ELICIUS_BEACH)) 
+		{
+			n = GetDynamicMapSec_EliciusBeach(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_VIA_SAXOSA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_TRANQUILLITAS;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MONTES_VIGILIAE;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_ACTA_TRANQUILLA;
+					break;
+				case 5:
+					regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
