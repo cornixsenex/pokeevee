@@ -13,9 +13,7 @@ mapscripts EliciusBeach_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 
         //Handle Dynamic Map
-        specialvar (VAR_RESULT, GetDynamicMapSec_EliciusBeach)
-        copyvar (VAR_TEMP_5, VAR_RESULT)
-
+        specialvar (VAR_TEMP_5, GetDynamicMapSec_EliciusBeach_F)
 
         //clear Via Saxosa
         if (!flag(FLAG_ROUTE9_CLEARBLOCK)) {

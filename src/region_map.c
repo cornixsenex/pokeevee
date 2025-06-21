@@ -4066,7 +4066,7 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
 	DebugPrintf("GetDynamicMapSecEliciusBeach\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
 
 	//Via Saxosa
-    if (y < 14)
+    if (x < 5 && y < 14)
         return 1;
 	//Tranquilitas
     else if (y < 31)
@@ -4123,7 +4123,7 @@ bool32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo)
 		  (x == 38 && y < 46) ||
 		  (x == 39 && y < 46) ||
 		  (x == 40 && y < 46) ||
-		  (x == 41 && y < 46) 
+		  (x >= 41 && y < 46) 
 		  )
 		  return 4;
 	//Default Mare Tranquilum

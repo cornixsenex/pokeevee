@@ -393,6 +393,672 @@
       "var": "VAR_TEMP_5",
       "var_value": "2",
       "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "5",
+      "script": "EliciusBeach_Script_Transition_ActaTranquilla"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 54,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "EliciusBeach_Script_Transition_MareTranquillum"
     }
   ],
   "bg_events": []

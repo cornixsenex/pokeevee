@@ -6033,5 +6033,10 @@ bool32 IsPyramidsDCactorum_F(void)
     return IsPyramidsDCactorum(FALSE);
 }
 
+bool32 GetDynamicMapSec_EliciusBeach_F(void)
+{
+    return GetDynamicMapSec_EliciusBeach(FALSE);
+}
+
 
 
