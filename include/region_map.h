@@ -148,6 +148,7 @@ bool32 IsPyramidsDCactorum(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Vegas(bool32 useWarpInfo);
 u32 GetDynamicMapSec_EliciusBeach(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route10(bool32 useWarpInfo);
+u32 GetDynamicMapSec_Route11(bool32 useWarpInfo);
 
 
 extern const struct RegionMapLocation gRegionMapEntries[];
