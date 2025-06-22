@@ -217,8 +217,8 @@ enum {
     MB_ISOLATED_HORIZONTAL_RAIL,
     MB_VERTICAL_RAIL,
     MB_HORIZONTAL_RAIL,
-    MB_UNUSED_D7,
-    MB_UNUSED_D8,
+    MB_OCEAN_MAP_TRANSITION_A, //Ocean Water that triggers a map transition - Rout10, BigIslandN etc
+    MB_OCEAN_MAP_TRANSITION_B, //Ocean Water that triggers a map transition - Rout10, BigIslandN etc
     MB_UNUSED_D9,
     MB_UNUSED_DA,
     MB_UNUSED_DB,

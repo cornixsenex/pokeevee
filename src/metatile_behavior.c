@@ -157,6 +157,9 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
 	[MB_CYCLING_ROAD_PULL_LEFT]            = TILE_FLAG_UNUSED,
 	[MB_CYCLING_ROAD_PULL_RIGHT]           = TILE_FLAG_UNUSED,
 	[MB_CYCLING_ROAD_BRIDGE_PULL_RIGHT]    = TILE_FLAG_UNUSED,
+	//Ocean Map Transition Tiles
+	[MB_OCEAN_MAP_TRANSITION_A]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_OCEAN_MAP_TRANSITION_B]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 
 };
 
@@ -935,10 +938,13 @@ bool8 MetatileBehavior_IsCrackedIce(u8 metatileBehavior)
         return FALSE;
 }
 
+//Cornix Custom Support Ocean Map Transition Tiles
 bool8 MetatileBehavior_IsDeepOrOceanWater(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_OCEAN_WATER
      || metatileBehavior == MB_INTERIOR_DEEP_WATER
+	 || metatileBehavior == MB_OCEAN_MAP_TRANSITION_A //Ocean Map Transition
+	 || metatileBehavior == MB_OCEAN_MAP_TRANSITION_B //Ocean Map Transition
      || metatileBehavior == MB_DEEP_WATER)
         return TRUE;
     else
@@ -1192,7 +1198,7 @@ bool8 MetatileBehavior_IsMossdeepGymWarp(u8 metatileBehavior)
         return FALSE;
 }
 
-
+//Cornix Custom Ocean Map Transitions
 bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_POND_WATER
@@ -1203,6 +1209,8 @@ bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
      || (metatileBehavior == MB_EASTWARD_CURRENT
       || metatileBehavior == MB_WESTWARD_CURRENT
       || metatileBehavior == MB_NORTHWARD_CURRENT
+	  || metatileBehavior == MB_OCEAN_MAP_TRANSITION_A //Ocean Map Transitions
+	  || metatileBehavior == MB_OCEAN_MAP_TRANSITION_B //Ocean Map Transitions
       || metatileBehavior == MB_SOUTHWARD_CURRENT))
         return TRUE;
     else
@@ -1252,6 +1260,22 @@ bool8 MetatileBehavior_IsColchisBattle(u8 metatileBehavior)
 bool8 MetatileBehavior_IsFalseFloorHole(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_FALSE_FLOOR_HOLE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsOceanMapTransitionA(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_OCEAN_MAP_TRANSITION_A)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsOceanMapTransitionB(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_OCEAN_MAP_TRANSITION_B)
         return TRUE;
     else
         return FALSE;

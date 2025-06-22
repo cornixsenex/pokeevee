@@ -649,6 +649,9 @@ bool8 TryStartCoordEventScript(struct MapPosition *position)
 static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 {
     s16 x, y;
+	s32 mapGroup, mapNum;
+
+	DebugPrintf("TryStartMiscWalkingScripts");
 
     if (MetatileBehavior_IsCrackedFloorHole(metatileBehavior))
     {
@@ -665,6 +668,32 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 		if (FlagGet(FLAG_COLCHIS_FORCED_BATTLE)) {
 			ScriptContext_SetupScript(Colchis_Script_CheckForcedBattle);
 			return TRUE;
+		}
+    }
+	else if (MetatileBehavior_IsOceanMapTransitionA(metatileBehavior))
+    {
+		DebugPrintf ("IsOceanMapTransitionA!");
+		mapGroup = gSaveBlock1Ptr->location.mapGroup;
+		mapNum   = gSaveBlock1Ptr->location.mapNum;
+		//Route10 - Check From Mare Tranquillum to Acta Tranquilla
+		if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) {
+			if (VarGet(VAR_TEMP_5) == 3) {
+				ScriptContext_SetupScript(Route10_Script_Transition_ActaTranquilla);
+				return TRUE;
+			}
+		}
+    }
+	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
+    {
+		DebugPrintf ("IsOceanMapTransitionB!");
+		mapGroup = gSaveBlock1Ptr->location.mapGroup;
+		mapNum   = gSaveBlock1Ptr->location.mapNum;
+		//Route10 - Check From Acta Tranquilla to Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) {
+			if (VarGet(VAR_TEMP_5) == 2) {
+				ScriptContext_SetupScript(Route10_Script_Transition_MareTranquillum);
+				return TRUE;
+			}
 		}
     }
     else if (MetatileBehavior_IsBattlePyramidWarp(metatileBehavior))

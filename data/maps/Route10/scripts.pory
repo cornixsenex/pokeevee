@@ -4,6 +4,9 @@
     //2: Acta Tranquilla
     //3: Mare Tranquillum
 
+//Ocean Map Transition A: From Mare to Acta
+//Ocean Map Transition B: From Acta to Mare
+
 const OBJ_EVENT_ID_RIVAL = 1
 const RIVAL_FIELD_PIC = 16
 
@@ -17,13 +20,19 @@ mapscripts Route10_MapScripts {
         specialvar (VAR_TEMP_5, GetDynamicMapSec_EliciusBeach_F)
     }
 
-
-
 }
 
+script Route10_Script_Transition_ActaTranquilla {
+	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
 
-
-
+script Route10_Script_Transition_MareTranquillum {
+	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
 
 script Route10_EventScript_Krabby {
 	lock

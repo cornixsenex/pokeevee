@@ -198,4 +198,8 @@ bool8 MetatileBehavior_IsFalseFloorHole(u8); // Ignis Mons False Floor
 //Colchis Forced Battle (Can prolly be generalized)
 bool8 MetatileBehavior_IsColchisBattle(u8);
 
+//Ocean Map Transition
+bool8 MetatileBehavior_IsOceanMapTransitionA(u8);
+bool8 MetatileBehavior_IsOceanMapTransitionB(u8);
+
 #endif // GUARD_METATILE_BEHAVIOR_H
