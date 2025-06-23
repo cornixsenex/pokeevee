@@ -158,8 +158,8 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_SKY_PILLAR,                 MAPSEC_ROUTE_131},
     {MAPSEC_MIRAGE_TOWER,               MAPSEC_ROUTE_111},
    // {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
-    {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
-    {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
+   // {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
+   // {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
     {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
     {MAPSEC_NONE,                       MAPSEC_NONE}
@@ -2020,6 +2020,22 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 			{
 				case 1:
 					return StringCopy(dest, sMapName_TRANQVILLITAS);
+				case 2:
+					return StringCopy(dest, sMapName_ACTA_TRANQVILLA);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
+		//Route11 - Portus Urbis, Acta Tranquilla, Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_ROUTE11) && mapNum == MAP_NUM(MAP_ROUTE11))
+        {
+			n = GetDynamicMapSec_Route11(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_PORTVS_VRBIS);
 				case 2:
 					return StringCopy(dest, sMapName_ACTA_TRANQVILLA);
 				case 3:
@@ -4189,5 +4205,38 @@ bool32 GetDynamicMapSec_Route10(bool32 useWarpInfo)
         return 3;
 }
 
+bool32 GetDynamicMapSec_Route11(bool32 useWarpInfo)
+{
+	//1: Portus Urbis
+	//2: Acta Tranquilla
+    //3: Mare Tranquiluma
+    s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
-	
+	DebugPrintf("GetDynamicMapSec_Route11\nuseWarpInfo: %d\nx: %d\ny: %d\nsWarpDestination.x: %d\nsWarpDestination.y: %d", useWarpInfo, x, y,sWarpDestination.x, sWarpDestination.x);
+
+
+	//Left side - Top is all Acta, bottom all Mare
+	if (x < 10) {
+		if (y < 41)
+			return 2;
+		else
+			return 3;
+	}
+	//Right / most the map - top is Portus bottom is Mare
+	else {
+		if (y < 46)
+			return 1;
+		else
+			return 3;
+	}
+
+}	

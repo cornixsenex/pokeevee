@@ -5,7 +5,7 @@ Route10_MapScripts::
 
 Route10_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 20 "data/maps/Route10/scripts.pory"
-	specialvar VAR_TEMP_5, GetDynamicMapSec_EliciusBeach_F
+	specialvar VAR_TEMP_5, GetDynamicMapSec_Route10_F
 	return
 
 
@@ -54,66 +54,66 @@ Route10_EventScript_Krabby::
 
 
 Route10_EventScript_Rival::
-# 53 "data/maps/Route10/scripts.pory"
+# 51 "data/maps/Route10/scripts.pory"
 	lock
-# 54 "data/maps/Route10/scripts.pory"
+# 52 "data/maps/Route10/scripts.pory"
 	load_field_pic 16, 190, 98
-# 55 "data/maps/Route10/scripts.pory"
+# 53 "data/maps/Route10/scripts.pory"
 	msgbox Route10_Text_Rival1
+# 54 "data/maps/Route10/scripts.pory"
+	closemessage
+# 55 "data/maps/Route10/scripts.pory"
+	destroy_field_pic 16
 # 56 "data/maps/Route10/scripts.pory"
-	closemessage
-# 57 "data/maps/Route10/scripts.pory"
-	destroy_field_pic 16
-# 58 "data/maps/Route10/scripts.pory"
 	applymovement 1, Common_Movement_ExclamationMark
-# 59 "data/maps/Route10/scripts.pory"
+# 57 "data/maps/Route10/scripts.pory"
 	waitmovement 0
-# 60 "data/maps/Route10/scripts.pory"
+# 58 "data/maps/Route10/scripts.pory"
 	faceplayer
-# 61 "data/maps/Route10/scripts.pory"
+# 59 "data/maps/Route10/scripts.pory"
 	load_field_pic 16, 190, 98
-# 62 "data/maps/Route10/scripts.pory"
+# 60 "data/maps/Route10/scripts.pory"
 	msgbox Route10_Text_Rival2
+# 61 "data/maps/Route10/scripts.pory"
+	closemessage
+# 62 "data/maps/Route10/scripts.pory"
+	destroy_field_pic 16
 # 63 "data/maps/Route10/scripts.pory"
-	closemessage
-# 64 "data/maps/Route10/scripts.pory"
-	destroy_field_pic 16
-# 65 "data/maps/Route10/scripts.pory"
 	trainerbattle_no_intro TRAINER_RIVAL4, Route10_Text_RivalLost
-# 66 "data/maps/Route10/scripts.pory"
+# 64 "data/maps/Route10/scripts.pory"
 	load_field_pic 16, 190, 98
-# 67 "data/maps/Route10/scripts.pory"
+# 65 "data/maps/Route10/scripts.pory"
 	msgbox Route10_Text_Rival3
-# 68 "data/maps/Route10/scripts.pory"
+# 66 "data/maps/Route10/scripts.pory"
 	closemessage
-# 69 "data/maps/Route10/scripts.pory"
+# 67 "data/maps/Route10/scripts.pory"
 	destroy_field_pic 16
-# 70 "data/maps/Route10/scripts.pory"
+# 68 "data/maps/Route10/scripts.pory"
 	fadescreenswapbuffers 1
-# 71 "data/maps/Route10/scripts.pory"
+# 69 "data/maps/Route10/scripts.pory"
 	setflag FLAG_ROUTE10_HIDE_RIVAL
-# 72 "data/maps/Route10/scripts.pory"
+# 70 "data/maps/Route10/scripts.pory"
 	removeobject 1
-# 73 "data/maps/Route10/scripts.pory"
+# 71 "data/maps/Route10/scripts.pory"
 	fadescreenswapbuffers 0
-# 74 "data/maps/Route10/scripts.pory"
+# 72 "data/maps/Route10/scripts.pory"
 	release
 	return
 
 
 Route10_Text_Rival1::
-# 81 "data/maps/Route10/scripts.pory"
+# 79 "data/maps/Route10/scripts.pory"
 	.string "I love the beach$"
 
 Route10_Text_Rival2::
-# 85 "data/maps/Route10/scripts.pory"
+# 83 "data/maps/Route10/scripts.pory"
 	.string "What are you doing here? So what I\n"
 	.string "stole the keys?$"
 
 Route10_Text_RivalLost::
-# 89 "data/maps/Route10/scripts.pory"
+# 87 "data/maps/Route10/scripts.pory"
 	.string "How do you always win?$"
 
 Route10_Text_Rival3::
-# 93 "data/maps/Route10/scripts.pory"
+# 91 "data/maps/Route10/scripts.pory"
 	.string "Take the stupid keys and screw off$"

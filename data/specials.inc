@@ -617,3 +617,5 @@ gSpecials::
 	def_special GetDynamicMapSec_Tucson_F
     def_special IsPyramidsDCactorum_F
     def_special GetDynamicMapSec_EliciusBeach_F
+    def_special GetDynamicMapSec_Route10_F
+    def_special GetDynamicMapSec_Route11_F

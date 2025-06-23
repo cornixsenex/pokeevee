@@ -6043,5 +6043,10 @@ bool32 GetDynamicMapSec_Route10_F(void)
     return GetDynamicMapSec_Route10(FALSE);
 }
 
+bool32 GetDynamicMapSec_Route11_F(void)
+{
+    return GetDynamicMapSec_Route11(FALSE);
+}
+
 
 

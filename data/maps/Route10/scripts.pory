@@ -17,7 +17,7 @@ mapscripts Route10_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         
         //Set var for DynamicMap
-        specialvar (VAR_TEMP_5, GetDynamicMapSec_EliciusBeach_F)
+        specialvar (VAR_TEMP_5, GetDynamicMapSec_Route10_F)
     }
 
 }
@@ -46,8 +46,6 @@ script Route10_EventScript_Krabby {
 	fadescreenswapbuffers (0)
 	release
 }
-
-
 
 script Route10_EventScript_Rival {
 	lock

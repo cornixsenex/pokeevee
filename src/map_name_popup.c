@@ -306,9 +306,9 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
     [MAPSEC_UNDERWATER_125] = MAPPOPUP_THEME_STONE2,
     [MAPSEC_UNDERWATER_129] = MAPPOPUP_THEME_STONE2,
     [MAPSEC_DESERT_UNDERPASS] = MAPPOPUP_THEME_STONE,
-    [MAPSEC_ALTERING_CAVE] = MAPPOPUP_THEME_STONE,
 
 	//Cornix Customs
+    [MAPSEC_PORTUS_URBIS] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_TRANQUILLITAS] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_ACTA_TRANQUILLA] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_ELICIUS_BEACH] = MAPPOPUP_THEME_MARBLE,
@@ -468,7 +468,6 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_UNDERWATER_125 - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_UNDERWATER_129 - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_DESERT_UNDERPASS - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_ALTERING_CAVE - KANTO_MAPSEC_COUNT] = MAPPOPUP_THEME_BW_DEFAULT,
 };
 
 static const u8 sText_PyramidFloor1[] = _("PYRAMID FLOOR 1");
@@ -1248,6 +1247,24 @@ static void LoadMapNamePopUpWindowBg(void)
 			switch (n) {
 				case 1:
 					regionMapSectionId = MAPSEC_TRANQUILLITAS;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_ACTA_TRANQUILLA;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//Route11 - Portus Urbis, Acta Tranquilla, Mare Tranquilum
+        if (mapGroup == MAP_GROUP(MAP_ROUTE11) && mapNum == MAP_NUM(MAP_ROUTE11)) 
+		{
+			n = GetDynamicMapSec_Route11(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_PORTUS_URBIS;
 					break;
 				case 2:
 					regionMapSectionId = MAPSEC_ACTA_TRANQUILLA;

@@ -6420,6 +6420,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Palmae_FratHouse/border.bin",
       "blockdata_filepath": "data/layouts/Palmae_FratHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_TRANQUILLITAS_SURF_SCHOOL",
+      "name": "Tranquillitas_SurfSchool_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Tranquillitas_SurfSchool/border.bin",
+      "blockdata_filepath": "data/layouts/Tranquillitas_SurfSchool/map.bin"
     }
   ]
 }

@@ -1,5 +1,36 @@
-mapscripts Route11_MapScripts {}
+
+//Dynamic Map - VAR_TEMP_5
+    //1: Portus Urbis
+    //2: Acta Tranquilla
+    //3: Mare Tranquillum
 
 
+mapscripts Route11_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        
+        //Set var for DynamicMap
+        specialvar (VAR_TEMP_5, GetDynamicMapSec_Route11_F)
+    }
+
+}
+
+script Route11_Script_Transition_PortusUrbis {
+	setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script Route11_Script_Transition_ActaTranquilla {
+	setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script Route11_Script_Transition_MareTranquillum {
+	setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
 
 //Laius
