@@ -2253,3 +2253,22 @@ const u16 gTilesetPalettes_sanjo[][16] =
 };
 
 const u32 gTilesetTiles_sanjo[] = INCBIN_U32("data/tilesets/secondary/sanjo/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_SurfSchool[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/surf_school/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_SurfSchool[] = INCBIN_U32("data/tilesets/secondary/surf_school/tiles.4bpp.lz");

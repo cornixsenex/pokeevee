@@ -6427,7 +6427,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_SurfSchool",
       "border_filepath": "data/layouts/Tranquillitas_SurfSchool/border.bin",
       "blockdata_filepath": "data/layouts/Tranquillitas_SurfSchool/map.bin"
     }

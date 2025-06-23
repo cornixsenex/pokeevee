@@ -346,3 +346,6 @@ const u16 gMetatileAttributes_Montgomery[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_sanjo[] = INCBIN_U16("data/tilesets/secondary/sanjo/metatiles.bin");
 const u16 gMetatileAttributes_sanjo[] = INCBIN_U16("data/tilesets/secondary/sanjo/metatile_attributes.bin");
+
+const u16 gMetatiles_SurfSchool[] = INCBIN_U16("data/tilesets/secondary/surf_school/metatiles.bin");
+const u16 gMetatileAttributes_SurfSchool[] = INCBIN_U16("data/tilesets/secondary/surf_school/metatile_attributes.bin");

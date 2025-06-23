@@ -1181,3 +1181,14 @@ const struct Tileset gTileset_sanjo =
     .metatileAttributes = gMetatileAttributes_sanjo,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SurfSchool =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SurfSchool,
+    .palettes = gTilesetPalettes_SurfSchool,
+    .metatiles = gMetatiles_SurfSchool,
+    .metatileAttributes = gMetatileAttributes_SurfSchool,
+    .callback = NULL,
+};
