@@ -713,6 +713,7 @@
 #define MAP_DESERET_DOCTOR_BRUNUS_LAB      (28 | (31 << 8))
 #define MAP_PALMAE_RENTAL_HOUSE            (29 | (31 << 8))
 #define MAP_PALMAE_FRAT_HOUSE              (30 | (31 << 8))
+#define MAP_TRANQUILLITAS_SURF_SCHOOL      (31 | (31 << 8))
 
 // gMapGroup_Myth
 #define MAP_ROUTE113_GLASS_WORKSHOP (0 | (32 << 8))
