@@ -2300,49 +2300,26 @@
 		.aiFlags = AI_FLAG_SMART_TRAINER,
 		.party = TRAINER_PARTY(sParty_Rival1),
 	},
-
-    //[DIFFICULTY_NORMAL][TRAINER_KIYO] =
-    //{
-    //    .trainerClass = TRAINER_CLASS_BLACK_BELT,
-    //    .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-    //    .trainerPic = TRAINER_PIC_BLACK_BELT,
-    //    .trainerName = _("KIYO"),
-    //    .items = {},
-    //    .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-    //    .aiFlags = AI_FLAG_BASIC_TRAINER,
-    //    .party = {.NoItemDefaultMoves = sParty_Kiyo),
-    //},
-
-//    [DIFFICULTY_NORMAL][TRAINER_YUJI] =
-//    {
-//        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-//        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-//        .trainerPic = TRAINER_PIC_BLACK_BELT,
-//        .trainerName = _("YUJI"),
-//        .items = {},
-//        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-//        .aiFlags = AI_FLAG_BASIC_TRAINER,
-//        .party = TRAINER_PARTY(sParty_Yuji),
-//    },
+    
+    [DIFFICULTY_NORMAL][TRAINER_SURFINSTRUCTOR] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_BELT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
+        .trainerName = _("INSTRUCTOR"),
+        .items = {},
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .party = TRAINER_PARTY(sParty_SurfInstructor),
+        //.poolSize = 1;
+    },
 
 
-
-///	====BREAK====   
+///	====BREAK====    NOTE! UNUSED ABOVE 61 in INCLUDE
 ///
 
 
 
-    [DIFFICULTY_NORMAL][TRAINER_DAISUKE] =
-    {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("DAISUKE"),
-        .items = {},
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Daisuke),
-    },
 
     [DIFFICULTY_NORMAL][TRAINER_ATSUSHI] =
     {

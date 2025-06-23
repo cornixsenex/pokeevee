@@ -6424,9 +6424,9 @@
     {
       "id": "LAYOUT_TRANQUILLITAS_SURF_SCHOOL",
       "name": "Tranquillitas_SurfSchool_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
+      "width": 19,
+      "height": 19,
+      "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_SurfSchool",
       "border_filepath": "data/layouts/Tranquillitas_SurfSchool/border.bin",
       "blockdata_filepath": "data/layouts/Tranquillitas_SurfSchool/map.bin"

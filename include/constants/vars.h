@@ -218,13 +218,19 @@
 																//1: END
 #define VAR_AGAMEMNON_STATE                              0x4076 // - Tracks Orestreia and updates maps associated
 #define VAR_AENEAS_STATE                                 0x4077 // - Tracks Aeneid and updates maps associated
+#define VAR_SURFSCHOOL_STATE                             0x4079 // - Tracks progress in surf school and triggers battles, misty scene
+                                                                //0: Begin
+                                                                //1: After 1st instructor
+                                                                //2: After 2nd instructor
+                                                                //3: After 3rd instructor
+                                                                //4: After 4th instructor trigger Misty Scene
+                                                                //5: After Misty Scene - Finish
 																
 						// BREAK
 
 
 
 
-#define VAR_ROUTE126_STATE                               0x4079 // Unused Var
 #define VAR_ROUTE127_STATE                               0x407A // Unused Var
 #define VAR_ROUTE128_STATE                   		     0x407B
 #define VAR_ROUTE129_STATE                   		     0x407C // Unused Var

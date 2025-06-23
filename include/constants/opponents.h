@@ -192,10 +192,10 @@
 #define TRAINER_COLCHIS_GRUNT_THRONEF5      186
 #define TRAINER_COLCHIS_GRUNT_THRONEF6      187
 #define TRAINER_IGNIS_GRUNT_6               188
+#define TRAINER_SURFINSTRUCTOR                  189
 
 //BREAK// - 61 UNUSED OPEN ABOVE PLZ
 
-#define TRAINER_DAISUKE                     189
 #define TRAINER_ATSUSHI                     190
 #define TRAINER_KIRK                        191
 #define TRAINER_GRUNT_AQUA_HIDEOUT_7        192

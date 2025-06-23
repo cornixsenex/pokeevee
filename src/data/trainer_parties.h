@@ -2584,11 +2584,21 @@ static const struct TrainerMon sParty_Yuji[] = {
     }
 };
 
-static const struct TrainerMon sParty_Daisuke[] = {
+static const struct TrainerMon sParty_SurfInstructor[] = {
     {
     .iv = 100,
     .lvl = 19,
     .species = SPECIES_MACHOP,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_CHIMCHAR,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_MANKEY,
     }
 };
 

@@ -1,1 +1,222 @@
 mapscripts Tranquillitas_SurfSchool_MapScripts {}
+
+
+script SurfSchool_Script_TriggerSurfer1 {
+    lockall
+    setvar (VAR_SURFSCHOOL_STATE, 1)
+    playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+    applymovement (LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    msgbox (SurfSchool_Text_Surfer1Intro)
+    closemessage
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost)
+    msgbox (SurfSchool_Text_Surfer1Post)
+    closemessage
+    releaseall
+    end
+}
+
+script SurfSchool_Script_Surfer1 {
+    faceplayer
+    if (var(VAR_SURFSCHOOL_STATE) < 1) {
+        msgbox (SurfSchool_Text_Surfer1Post)
+        closemessage
+    } else {
+        setvar (VAR_SURFSCHOOL_STATE, 1)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        msgbox (SurfSchool_Text_Surfer1Intro)
+        closemessage
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost)
+        msgbox (SurfSchool_Text_Surfer1Post)
+        closemessage
+    }
+    applymovement (LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_FaceLeft)
+    waitmovement (0)
+    end
+}
+
+
+script SurfSchool_Script_TriggerSurfer2 {
+    lockall
+    setvar (VAR_SURFSCHOOL_STATE, 2)
+    playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+    applymovement (LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    msgbox (SurfSchool_Text_Surfer2Intro)
+    closemessage
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost)
+    msgbox (SurfSchool_Text_Surfer2Post)
+    closemessage
+    releaseall
+    end
+}
+
+script SurfSchool_Script_Surfer2 {
+    faceplayer
+    if (var(VAR_SURFSCHOOL_STATE) < 2) {
+        msgbox (SurfSchool_Text_Surfer2Post)
+        closemessage
+    } else {
+        setvar (VAR_SURFSCHOOL_STATE, 2)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        msgbox (SurfSchool_Text_Surfer2Intro)
+        closemessage
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost)
+        msgbox (SurfSchool_Text_Surfer2Post)
+        closemessage
+    }
+    applymovement (LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_FaceDown)
+    waitmovement (0)
+    end
+}
+
+script SurfSchool_Script_TriggerSurfer3 {
+    lockall
+    setvar (VAR_SURFSCHOOL_STATE, 3)
+    playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+    applymovement (LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    msgbox (SurfSchool_Text_Surfer3Intro)
+    closemessage
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost)
+    msgbox (SurfSchool_Text_Surfer3Post)
+    closemessage
+    releaseall
+    end
+}
+
+script SurfSchool_Script_Surfer3 {
+    faceplayer
+    if (var(VAR_SURFSCHOOL_STATE) < 3) {
+        msgbox (SurfSchool_Text_Surfer3Post)
+        closemessage
+    } else {
+        setvar (VAR_SURFSCHOOL_STATE, 3)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        msgbox (SurfSchool_Text_Surfer3Intro)
+        closemessage
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost)
+        msgbox (SurfSchool_Text_Surfer3Post)
+        closemessage
+    }
+    applymovement (LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_FaceUp)
+    waitmovement (0)
+    end
+}
+
+script SurfSchool_Script_TriggerSurfer4 {
+    lockall
+    setvar (VAR_SURFSCHOOL_STATE, 4)
+    playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+    applymovement (LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    msgbox (SurfSchool_Text_Surfer4Intro)
+    closemessage
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost)
+    msgbox (SurfSchool_Text_Surfer4Post)
+    closemessage
+    releaseall
+    end
+}
+
+script SurfSchool_Script_Surfer4 {
+    faceplayer
+    if (var(VAR_SURFSCHOOL_STATE) < 4) {
+        msgbox (SurfSchool_Text_Surfer4Post)
+        closemessage
+    } else {
+        setvar (VAR_SURFSCHOOL_STATE, 4)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        msgbox (SurfSchool_Text_Surfer4Intro)
+        closemessage
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost)
+        msgbox (SurfSchool_Text_Surfer4Post)
+        closemessage
+    }
+    applymovement (LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_FaceRight)
+    waitmovement (0)
+    end
+}
+
+//Leaf et Player vs Misty -> Get surfboard -> Leaf Exit
+script SurfSchool_Script_LeafScene {
+    lockall
+
+    releaseall
+    end
+}
+
+script SurfSchool_Script_Misty {
+    lockall
+
+    releaseall
+    end
+}
+
+text SurfSchool_Text_Surfer1Intro {
+    format("")
+}
+
+text SurfSchool_Text_Surfer1Lost {
+    format("")
+}
+
+text SurfSchool_Text_Surfer1Post {
+    format("")
+}
+
+
+text SurfSchool_Text_Surfer2Intro {
+    format("")
+}
+
+text SurfSchool_Text_Surfer2Lost {
+    format("")
+}
+
+text SurfSchool_Text_Surfer2Post {
+    format("")
+}
+
+
+text SurfSchool_Text_Surfer3Intro {
+    format("")
+}
+
+text SurfSchool_Text_Surfer3Lost {
+    format("")
+}
+
+text SurfSchool_Text_Surfer3Post {
+    format("")
+}
+
+
+text SurfSchool_Text_Surfer4Intro {
+    format("")
+}
+
+text SurfSchool_Text_Surfer4Lost {
+    format("")
+}
+
+text SurfSchool_Text_Surfer4Post {
+    format("")
+}
+

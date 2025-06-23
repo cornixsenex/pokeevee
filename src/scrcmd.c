@@ -621,10 +621,13 @@ bool8 ScrCmd_divvar(struct ScriptContext *ctx){
     u32 varId = ScriptReadHalfword(ctx);
     u16 *ptr = GetVarPointer(varId);
 
+    DebugPrintf("divvar: %d", *ptr);
+
     Script_RequestEffects(SCREFF_V1);
     Script_RequestWriteVar(varId);
 
     *ptr /= VarGet(ScriptReadHalfword(ctx));
+    DebugPrintf("divvar DOS: %d", *ptr);
     return FALSE;
 }
 
@@ -2346,6 +2349,8 @@ bool8 ScrCmd_removemoney(struct ScriptContext *ctx)
 {
     u32 amount = ScriptReadWord(ctx);
     u8 ignore = ScriptReadByte(ctx);
+
+    DebugPrintf("removemoney: %d", amount);
 
     if (!ignore)
     {

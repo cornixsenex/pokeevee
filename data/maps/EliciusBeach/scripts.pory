@@ -6,8 +6,6 @@
     //4: Acta Tranquilla
     //5: Mare Tranquillum
 
-const REGISTRATION_FEE = VAR_TEMP_1
-
 mapscripts EliciusBeach_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
@@ -56,14 +54,14 @@ script EliciusBeach_Script_Transition_MareTranquillum {
 }
 
 script Tranquilitas_Script_ShowLeaf {
-	setobjectxyperm (LOCALID_LEAF, 4, 19)
-	setobjectmovementtype (LOCALID_LEAF, MOVEMENT_TYPE_LOOK_AROUND)
+	setobjectxyperm (LOCALID_TRANQUILLITAS_LEAF, 4, 19)
+	setobjectmovementtype (LOCALID_TRANQUILLITAS_LEAF, MOVEMENT_TYPE_LOOK_AROUND)
 	return
 }
 
 script Tranquilitas_Script_ShowMisty {
-	setobjectxyperm (LOCALID_MISTY, 24, 27)
-	setobjectmovementtype (LOCALID_MISTY, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_TRANQUILLITAS_MISTY, 24, 27)
+	setobjectmovementtype (LOCALID_TRANQUILLITAS_MISTY, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
 
@@ -74,7 +72,7 @@ script Tranquilitas_Script_Misty {
 	msgbox (Tranquilitas_Text_MistyBlock)
 	destroy_field_pic (FIELD_PIC_MISTY)
 	closemessage
-	applymovement (LOCALID_MISTY, Common_Movement_FaceDown)
+	applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_FaceDown)
 	waitmovement (0)
 	release
 	end
@@ -108,29 +106,29 @@ script Tranquilitas_Script_MistyScene {
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
 	switch (var(VAR_RESULT)) {
 		case DIR_NORTH:
-			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkRight)
 			waitmovement (0)
-			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkDown)
 			waitmovement (0)
 		case DIR_SOUTH:
-			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkDown)
 			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
 			waitmovement (0)
-			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkRight)
 			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
 			waitmovement (0)
 		case DIR_EAST:
 			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
-			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkDown)
 			waitmovement (0)
 			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
-			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkRight)
 			waitmovement (0)
 		case DIR_WEST:
 			applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
-			applymovement (LOCALID_LEAF, Common_Movement_WalkDown)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkDown)
 			waitmovement (0)
-			applymovement (LOCALID_LEAF, Common_Movement_WalkRight)
+			applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkRight)
 			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
 			waitmovement (0)
 		default:
@@ -139,7 +137,7 @@ script Tranquilitas_Script_MistyScene {
 			end
 	}
 	//goto misty
-	applymovement (LOCALID_LEAF, Tranquilitas_Movement_ApproachMisty)
+	applymovement (LOCALID_TRANQUILLITAS_LEAF, Tranquilitas_Movement_ApproachMisty)
 	applymovement (LOCALID_PLAYER, Tranquilitas_Movement_ApproachMisty)
 	waitmovement (0)
 	//M: Hello, we're full	
@@ -151,20 +149,21 @@ script Tranquilitas_Script_MistyScene {
 	msgbox (Tranquilitas_Text_Leaf3)
 	destroy_field_pic (FIELD_PIC_LEAF)
 	//M: Forgive me, just pay the reg fee and we can proceed
-	applymovement (LOCALID_MISTY, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_ExclamationMark)
 	load_field_pic (FIELD_PIC_MISTY, 190, 98)
 	waitmovement (0)
 	//get reg fee = player gold / 3
     //Handle Broke player
+	msgbox (Tranquilitas_Text_Misty2)
+    showmoneybox (18, 0, 0)
     checkmoney (5000)
     if (var(VAR_RESULT) == FALSE) {
         call (Tranquilitas_Script_NoMoney)
     }
-	copymoney (REGISTRATION_FEE)
-	divvar (REGISTRATION_FEE, 3)
+	copymoney (VAR_TEMP_B)
+	divvar (VAR_TEMP_B, 3)
 	//copy fee into string var
-	buffernumberstring (STR_VAR_1, REGISTRATION_FEE)
-	msgbox (Tranquilitas_Text_Misty2)
+	buffernumberstring (STR_VAR_1, VAR_TEMP_B)
 	//make player pay X money lol - X is 1/3 of player total cash I think that's funny
 	call (Tranquilitas_Script_Registration)
 	//M: Follow me your lessons begin inside
@@ -173,13 +172,13 @@ script Tranquilitas_Script_MistyScene {
     destroy_field_pic (FIELD_PIC_MISTY)
     closemessage
 	//M exit
-    applymovement (LOCALID_MISTY, Common_Movement_WalkUp)
+    applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_WalkUp)
     waitmovement (0)
-    hideobjectat (LOCALID_MISTY, MAP_BIG_ISLAND_N)
-    removeobject (LOCALID_MISTY)
+    hideobjectat (LOCALID_TRANQUILLITAS_MISTY, MAP_BIG_ISLAND_N)
+    removeobject (LOCALID_TRANQUILLITAS_MISTY)
     //Player et Leaf face
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
-    applymovement (LOCALID_MISTY, Common_Movement_FaceLeft)
+    applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_FaceLeft)
     waitmovement (0)
 	//L: Lets go so excited and romantic love you blah
     load_field_pic (FIELD_PIC_LEAF, 190, 98)
@@ -187,10 +186,10 @@ script Tranquilitas_Script_MistyScene {
     destroy_field_pic (FIELD_PIC_LEAF)
     closemessage
 	//L exit	
-    applymovement (LOCALID_LEAF, Common_Movement_WalkUp2)
+    applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_WalkUp2)
     waitmovement (0)
-    hideobjectat (LOCALID_LEAF, MAP_BIG_ISLAND_N)
-    removeobject (LOCALID_LEAF)
+    hideobjectat (LOCALID_TRANQUILLITAS_LEAF, MAP_BIG_ISLAND_N)
+    removeobject (LOCALID_TRANQUILLITAS_LEAF)
 	//Set flags and prep surf school
     setflag (FLAG_TRANQUILITAS_SURFSCHOOL_OPEN)
     //fin
@@ -201,18 +200,18 @@ script Tranquilitas_Script_MistyScene {
 //If Player and Leaf goto Misty but Player is broke
 script Tranquilitas_Script_NoMoney {
     //Alert Misty
-    applymovement (LOCALID_MISTY, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_ExclamationMark)
     waitmovement (0)
     //Sorry but youre broke
     msgbox (Tranquilitas_Text_MistyNoMoney)
     closemessage 
 	destroy_field_pic (FIELD_PIC_MISTY)
     //Alert Leaf
-    applymovement (LOCALID_LEAF, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_ExclamationMark)
     waitmovement (0)
     //face player leaf
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
-    applymovement (LOCALID_MISTY, Common_Movement_FaceLeft)
+    applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_FaceLeft)
     waitmovement (0)
     //L: this is so embarrising how could you do this dont come back until you have more money
     load_field_pic (FIELD_PIC_LEAF, 190, 98)
@@ -220,7 +219,7 @@ script Tranquilitas_Script_NoMoney {
     closemessage
     destroy_field_pic (FIELD_PIC_LEAF)
     //exit leaf
-    applymovement (LOCALID_LEAF, Tranquilitas_Movement_LeafExitNoMoney)
+    applymovement (LOCALID_TRANQUILLITAS_LEAF, Tranquilitas_Movement_LeafExitNoMoney)
     waitmovement (0)
     //reset everything
     call (Tranquilitas_Script_ShowLeaf)
@@ -235,27 +234,29 @@ script Tranquilitas_Script_Registration {
 	msgbox (Tranquilitas_Text_Registration, MSGBOX_YESNO)
 	//do you agreen yn
 	if (var(VAR_RESULT) == NO) {
+        hidemoneybox
 		//alert leaf
-		applymovement (LOCALID_LEAF, Common_Movement_ExclamationMark)
+		applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_ExclamationMark)
 		waitmovement (0)
 		//turn player to leaf: , show misty pic, redo
 		destroy_field_pic (FIELD_PIC_MISTY)
 		applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
-		applymovement (LOCALID_MISTY, Common_Movement_FaceLeft)
+		applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_FaceLeft)
 		waitmovement (0)
 		//Leaf says smth
 		load_field_pic (FIELD_PIC_LEAF, 190, 98)
 		msgbox (Tranquilitas_Text_LeafNoRegistration)
 		destroy_field_pic (FIELD_PIC_LEAF)
 		applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
-		applymovement (LOCALID_MISTY, Common_Movement_FaceUp)
+		applymovement (LOCALID_TRANQUILLITAS_MISTY, Common_Movement_FaceUp)
 		waitmovement (0)
+        showmoneybox (18, 0)
 		//switch back to misty pic
 		load_field_pic (FIELD_PIC_MISTY, 190, 98)
 		call (Tranquilitas_Script_Registration)
 	} else { //YES
 		//pay money
-        removemoney(REGISTRATION_FEE)
+        removemoney(var(VAR_TEMP_B))
         updatemoneybox
         playse (SE_SHOP)
         waitse

@@ -650,9 +650,7 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 {
     s16 x, y;
 	s32 mapGroup, mapNum;
-
-	DebugPrintf("TryStartMiscWalkingScripts");
-
+    
     if (MetatileBehavior_IsCrackedFloorHole(metatileBehavior))
     {
         ScriptContext_SetupScript(EventScript_FallDownHole);
@@ -672,7 +670,6 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
     }
 	else if (MetatileBehavior_IsOceanMapTransitionA(metatileBehavior))
     {
-		DebugPrintf ("IsOceanMapTransitionA!");
 		mapGroup = gSaveBlock1Ptr->location.mapGroup;
 		mapNum   = gSaveBlock1Ptr->location.mapNum;
 		//Route10 - Check From Mare Tranquillum to Acta Tranquilla
@@ -685,7 +682,6 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
     }
 	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
     {
-		DebugPrintf ("IsOceanMapTransitionB!");
 		mapGroup = gSaveBlock1Ptr->location.mapGroup;
 		mapNum   = gSaveBlock1Ptr->location.mapNum;
 		//Route10 - Check From Acta Tranquilla to Mare Tranquillum
