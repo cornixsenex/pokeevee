@@ -2301,17 +2301,18 @@
 		.party = TRAINER_PARTY(sParty_Rival1),
 	},
     
-    [DIFFICULTY_NORMAL][TRAINER_SURFINSTRUCTOR] =
+    [DIFFICULTY_NORMAL][TRAINER_INSTRUCTOR] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
         .trainerName = _("INSTRUCTOR"),
         .items = {},
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_SurfInstructor),
-        //.poolSize = 1;
+        .poolSize = 3,
+        .party = TRAINER_PARTY(sParty_Instructor),
+		.partySize = 1,
     },
 
 
