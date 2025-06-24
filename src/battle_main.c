@@ -380,6 +380,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_NURSE]  = { _("NURSE") },
     [TRAINER_CLASS_DOCTOR] = { _("{PKMN} DR.") },
     [TRAINER_CLASS_CULTIST] = { _( "CULTIST"), },
+	[TRAINER_CLASS_SURF_SCHOOL] = { _("SURF SCHOOL") },
 	//End Kustom Classes
 };
 

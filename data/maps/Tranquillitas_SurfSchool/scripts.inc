@@ -22,7 +22,7 @@ SurfSchool_Script_TriggerSurfer1::
 # 13 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 14 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer1Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost
 # 15 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer1Post
 # 16 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -51,7 +51,7 @@ SurfSchool_Script_Surfer1::
 # 32 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 33 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer1Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost
 # 34 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer1Post
 # 35 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -91,7 +91,7 @@ SurfSchool_Script_TriggerSurfer2::
 # 52 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 53 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer2Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost
 # 54 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer2Post
 # 55 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -120,7 +120,7 @@ SurfSchool_Script_Surfer2::
 # 71 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 72 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer2Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost
 # 73 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer2Post
 # 74 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -160,7 +160,7 @@ SurfSchool_Script_TriggerSurfer3::
 # 90 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 91 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer3Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost
 # 92 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer3Post
 # 93 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -189,7 +189,7 @@ SurfSchool_Script_Surfer3::
 # 109 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 110 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer3Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost
 # 111 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer3Post
 # 112 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -229,7 +229,7 @@ SurfSchool_Script_TriggerSurfer4::
 # 128 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 129 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer4Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost
 # 130 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer4Post
 # 131 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -258,7 +258,7 @@ SurfSchool_Script_Surfer4::
 # 147 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 # 148 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer4Lost
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost
 # 149 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer4Post
 # 150 "data/maps/Tranquillitas_SurfSchool/scripts.pory"

@@ -11,7 +11,7 @@ script SurfSchool_Script_TriggerSurfer1 {
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer1Intro)
     closemessage
-    trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer1Lost)
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost)
     msgbox (SurfSchool_Text_Surfer1Post)
     closemessage
     releaseall
@@ -30,7 +30,7 @@ script SurfSchool_Script_Surfer1 {
         waitmovement (0)
         msgbox (SurfSchool_Text_Surfer1Intro)
         closemessage
-        trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer1Lost)
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost)
         msgbox (SurfSchool_Text_Surfer1Post)
         closemessage
     }
@@ -50,7 +50,7 @@ script SurfSchool_Script_TriggerSurfer2 {
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer2Intro)
     closemessage
-    trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer2Lost)
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost)
     msgbox (SurfSchool_Text_Surfer2Post)
     closemessage
     releaseall
@@ -69,7 +69,7 @@ script SurfSchool_Script_Surfer2 {
         waitmovement (0)
         msgbox (SurfSchool_Text_Surfer2Intro)
         closemessage
-        trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer2Lost)
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost)
         msgbox (SurfSchool_Text_Surfer2Post)
         closemessage
     }
@@ -88,7 +88,7 @@ script SurfSchool_Script_TriggerSurfer3 {
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer3Intro)
     closemessage
-    trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer3Lost)
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost)
     msgbox (SurfSchool_Text_Surfer3Post)
     closemessage
     releaseall
@@ -107,7 +107,7 @@ script SurfSchool_Script_Surfer3 {
         waitmovement (0)
         msgbox (SurfSchool_Text_Surfer3Intro)
         closemessage
-        trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer3Lost)
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost)
         msgbox (SurfSchool_Text_Surfer3Post)
         closemessage
     }
@@ -126,7 +126,7 @@ script SurfSchool_Script_TriggerSurfer4 {
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer4Intro)
     closemessage
-    trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer4Lost)
+    trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost)
     msgbox (SurfSchool_Text_Surfer4Post)
     closemessage
     releaseall
@@ -145,7 +145,7 @@ script SurfSchool_Script_Surfer4 {
         waitmovement (0)
         msgbox (SurfSchool_Text_Surfer4Intro)
         closemessage
-        trainerbattle_no_intro (TRAINER_INSTRUCTOR, SurfSchool_Text_Surfer4Lost)
+        trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost)
         msgbox (SurfSchool_Text_Surfer4Post)
         closemessage
     }

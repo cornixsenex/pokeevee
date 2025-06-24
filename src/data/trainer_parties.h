@@ -2584,7 +2584,7 @@ static const struct TrainerMon sParty_Yuji[] = {
     }
 };
 
-static const struct TrainerMon sParty_Instructor[] = {
+static const struct TrainerMon sParty_SurfInstructor[] = {
     {
     .iv = 100,
     .lvl = 19,
