@@ -254,6 +254,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_MULTVAR                       ScrCmd_multvar,                     requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_DIVVAR                        ScrCmd_divvar,                      requests_effects=1  @ 0xe6
 	script_cmd_table_entry SCR_OP_COPYMONEY                     ScrCmd_copymoney,                   requests_effects=1  @ 0xe7
+	script_cmd_table_entry SCR_OP_REMOVEVARMONEY                ScrCmd_removevarmoney,              requests_effects=1  @ 0xe8
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 

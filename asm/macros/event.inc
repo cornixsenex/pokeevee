@@ -1906,6 +1906,15 @@
 	.2byte \out
 	.endm
 
+	@CORNIX CUSTOM - copied from removemoney but will remove the value of the var passed rather than the var
+	@ Subtracts value from the player's money. If the player has less than 'value' money, their money is set to 0.
+	@ If 'disable' is set to anything but 0 then this command does nothing.
+	.macro removevarmoney value:req, disable=0
+	.byte SCR_OP_REMOVEVARMONEY
+	.4byte \value
+	.byte \disable
+	.endm
+
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL

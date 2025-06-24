@@ -3284,3 +3284,21 @@ bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
     *ptr = GetMoneyForCopyMoney();
     return FALSE;
 }
+
+//Cornix Custom
+bool8 ScrCmd_removevarmoney(struct ScriptContext *ctx)
+{
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+    u8 ignore = ScriptReadByte(ctx);
+
+    DebugPrintf("removevarmoney: %d", *ptr);
+
+    if (!ignore)
+    {
+        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+        RemoveMoney(&gSaveBlock1Ptr->money, *ptr);
+    }
+    return FALSE;
+}

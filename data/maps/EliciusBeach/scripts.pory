@@ -1,4 +1,6 @@
 
+//VAR_TEMP_B is REGISTRATION_FEE
+
 //Dynamic Map is  VAR_TEMP_5 :
     //1: Via Saxosa
     //2: Tranquillitas
@@ -156,7 +158,7 @@ script Tranquilitas_Script_MistyScene {
     //Handle Broke player
 	msgbox (Tranquilitas_Text_Misty2)
     showmoneybox (18, 0, 0)
-    checkmoney (5000)
+    checkmoney (500)
     if (var(VAR_RESULT) == FALSE) {
         call (Tranquilitas_Script_NoMoney)
     }
@@ -206,6 +208,7 @@ script Tranquilitas_Script_NoMoney {
     msgbox (Tranquilitas_Text_MistyNoMoney)
     closemessage 
 	destroy_field_pic (FIELD_PIC_MISTY)
+	hidemoneybox
     //Alert Leaf
     applymovement (LOCALID_TRANQUILLITAS_LEAF, Common_Movement_ExclamationMark)
     waitmovement (0)
@@ -256,7 +259,7 @@ script Tranquilitas_Script_Registration {
 		call (Tranquilitas_Script_Registration)
 	} else { //YES
 		//pay money
-        removemoney(var(VAR_TEMP_B))
+        removevarmoney(VAR_TEMP_B)
         updatemoneybox
         playse (SE_SHOP)
         waitse
