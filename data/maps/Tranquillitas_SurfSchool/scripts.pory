@@ -1,5 +1,19 @@
-mapscripts Tranquillitas_SurfSchool_MapScripts {}
+mapscripts Tranquillitas_SurfSchool_MapScripts {
 
+    MAP_SCRIPT_ON_TRANSITION {
+
+        if (var(VAR_SURFSCHOOL_STATE) < 5) {
+            call (Tranquillitas_SurfSchool_Script_ShowLeaf)
+        }
+    }
+
+}
+
+script Tranquillitas_SurfSchool_Script_ShowLeaf {
+    setobjectxyperm (LOCALID_SURF_SCHOOL_LEAF, 8, 9)
+    setobjectmovementtype (LOCALID_SURF_SCHOOL_LEAF, MOVEMENT_TYPE_FACE_UP)
+    return
+}
 
 script SurfSchool_Script_TriggerSurfer1 {
     lockall
@@ -20,7 +34,7 @@ script SurfSchool_Script_TriggerSurfer1 {
 
 script SurfSchool_Script_Surfer1 {
     faceplayer
-    if (var(VAR_SURFSCHOOL_STATE) < 1) {
+    if (var(VAR_SURFSCHOOL_STATE) > 0) {
         msgbox (SurfSchool_Text_Surfer1Post)
         closemessage
     } else {
@@ -59,7 +73,7 @@ script SurfSchool_Script_TriggerSurfer2 {
 
 script SurfSchool_Script_Surfer2 {
     faceplayer
-    if (var(VAR_SURFSCHOOL_STATE) < 2) {
+    if (var(VAR_SURFSCHOOL_STATE) > 1) {
         msgbox (SurfSchool_Text_Surfer2Post)
         closemessage
     } else {
@@ -84,7 +98,7 @@ script SurfSchool_Script_TriggerSurfer3 {
     playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
     applymovement (LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_ExclamationMark)
     waitmovement (0)
-    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer3Intro)
     closemessage
@@ -97,7 +111,7 @@ script SurfSchool_Script_TriggerSurfer3 {
 
 script SurfSchool_Script_Surfer3 {
     faceplayer
-    if (var(VAR_SURFSCHOOL_STATE) < 3) {
+    if (var(VAR_SURFSCHOOL_STATE) > 2) {
         msgbox (SurfSchool_Text_Surfer3Post)
         closemessage
     } else {
@@ -122,7 +136,7 @@ script SurfSchool_Script_TriggerSurfer4 {
     playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
     applymovement (LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_ExclamationMark)
     waitmovement (0)
-    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer4Intro)
     closemessage
@@ -135,7 +149,7 @@ script SurfSchool_Script_TriggerSurfer4 {
 
 script SurfSchool_Script_Surfer4 {
     faceplayer
-    if (var(VAR_SURFSCHOOL_STATE) < 4) {
+    if (var(VAR_SURFSCHOOL_STATE) > 3) {
         msgbox (SurfSchool_Text_Surfer4Post)
         closemessage
     } else {
@@ -154,12 +168,111 @@ script SurfSchool_Script_Surfer4 {
     end
 }
 
+script SurfSchool_Script_Trigger_LeafSceneA {
+    lockall
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement (0)
+    call (SurfSchool_Script_LeafScene)
+}
+
+script SurfSchool_Script_Trigger_LeafSceneB {
+    lockall
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    call (SurfSchool_Script_LeafScene)
+}
+
 //Leaf et Player vs Misty -> Get surfboard -> Leaf Exit
 script SurfSchool_Script_LeafScene {
-    lockall
-
+    //setvar
+    setvar (VAR_SURFSCHOOL_STATE, 5)
+    //Move player to position
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft2)
+    waitmovement (0)
+    //L: Lets do this
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (SurfSchool_Text_Leaf1)
+    closemessage
+    destroy_field_pic (FIELD_PIC_LEAF)
+    //They approach misty
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_WalkUp)
+    waitmovement (0)
+    //M: You will battle me together
+    load_field_pic (FIELD_PIC_MISTY, 190, 98)
+    msgbox (SurfSchool_Text_Misty1)
+    destroy_field_pic (FIELD_PIC_MISTY)
+    //L face player -> choose your mons
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight)
+    waitmovement (0)
+    //L: Final intro before battle
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (SurfSchool_Text_Leaf2)
+    closemessage
+    destroy_field_pic (FIELD_PIC_LEAF)
+    call (SurfSchool_Script_SetupMultiBattle)
+    //they face up
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceUp)
+    waitmovement (0)
+    //M: Lets see if you're ready to surf
+    load_field_pic (FIELD_PIC_MISTY, 190, 98)
+    msgbox (SurfSchool_Text_Misty2)
+    closemessage
+    destroy_field_pic (FIELD_PIC_MISTY)
+    //The Battle
+    multi_2_vs_1 (TRAINER_MISTY, SurfSchool_Text_MistyLost, PARTNER_LEAF)
+    //M: Imprssed
+    load_field_pic (FIELD_PIC_MISTY, 190, 98)
+    msgbox (SurfSchool_Text_Misty3)
+    closemessage
+    destroy_field_pic (FIELD_PIC_MISTY)
+    //give surfboard
+    giveitem (ITEM_SURFBOARD)
+    //brief explainer & reminder to surf in safe areas
+    load_field_pic (FIELD_PIC_MISTY, 190, 98)
+    msgbox (SurfSchool_Text_Misty4)
+    destroy_field_pic (FIELD_PIC_MISTY)
+    //L player face 
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight)
+    waitmovement (0)
+    //L: I can't wait catch you on the waves
+    load_field_pic (FIELD_PIC_LEAF, 190, 98)
+    msgbox (SurfSchool_Text_Leaf3)
+    closemessage
+    destroy_field_pic (FIELD_PIC_LEAF)
+    //L exit
+    applymovement (LOCALID_SURF_SCHOOL_LEAF, SurfSchool_Movement_LeafExit)
+    waitmovement (0)
+    //remove leaf
+    hideobjectat (LOCALID_SURF_SCHOOL_LEAF, MAP_TRANQUILLITAS_SURF_SCHOOL)
+    removeobject (LOCALID_SURF_SCHOOL_LEAF)
+    setobjectxyperm (LOCALID_SURF_SCHOOL_LEAF, 0, 0)
+    setobjectmovementtype (LOCALID_SURF_SCHOOL_LEAF, MOVEMENT_TYPE_INVISIBLE)
+    //fin
     releaseall
     end
+}
+
+script SurfSchool_Script_SetupMultiBattle {
+    special (SavePlayerParty)
+    special (ChooseHalfPartyForBattle)
+    waitstate
+    if (var(VAR_RESULT) == 0) {
+        call (SurfSchool_Script_SetupMultiBattle)
+    } else {
+        return
+    }
 }
 
 script SurfSchool_Script_Misty {
@@ -169,54 +282,143 @@ script SurfSchool_Script_Misty {
     end
 }
 
+movement SurfSchool_Movement_LeafExit {
+    walk_down
+    walk_right * 3
+    walk_up * 2
+    walk_right * 5
+    walk_down * 4
+    walk_left * 12
+    walk_down
+    walk_left
+    walk_down * 2
+}
+
+//Surf Mons
 text SurfSchool_Text_Surfer1Intro {
-    format("")
+    format("You don't look tough enough to handle the
+            open water where pokemon attack
+            at any moment. Let me test your skill.")
 }
 
 text SurfSchool_Text_Surfer1Lost {
-    format("")
+    format("You catch on fast.")
 }
 
 text SurfSchool_Text_Surfer1Post {
-    format("")
+    format("While surfing the oceans
+            a wild pokemon could suddenly
+            attack so you must always be alert.")
 }
 
-
+//Currents
 text SurfSchool_Text_Surfer2Intro {
-    format("")
+    format("So, you think you can tame the mighty waves?")
 }
 
 text SurfSchool_Text_Surfer2Lost {
-    format("")
+    format("You're stronger than you look.")
 }
 
 text SurfSchool_Text_Surfer2Post {
-    format("")
+    format("While you're surfing
+            be careful not to wander into a 
+            deep sea current which could whisk you away.
+            There's no way of stopping once you're caught up!")
 }
 
-
+//Stay close to shore
 text SurfSchool_Text_Surfer3Intro {
-    format("")
+    format("It's time for me to test your aptitude.")
 }
 
 text SurfSchool_Text_Surfer3Lost {
-    format("")
+    format("You've satisfied my examination.")
 }
 
 text SurfSchool_Text_Surfer3Post {
-    format("")
+    format("Stay close to shore if you're not strong enough
+            to surf the ocean. The shallow waters
+            are home to much weaker pokemon than
+            the monsters lurking in the deep ocean.")
 }
 
-
+//The Seven Seas
 text SurfSchool_Text_Surfer4Intro {
-    format("")
+    format("If you get past me you may face Misty
+            and demonstrate your worthiness to surf.")
 }
 
 text SurfSchool_Text_Surfer4Lost {
-    format("")
+    format("Impressive.")
 }
 
 text SurfSchool_Text_Surfer4Post {
+    format("The ocean is divided
+            into seven seas: Mare Tranquillum,
+            Mares Tropicum and Subtropicum,
+            Mare Internum, Mare Occidens,
+            Mare Oriens, and the haunted sea,
+            that cursed place: Mare Mortuorum.
+            A begginer surfer, such as yourself,
+            should stick the shallow waters before
+            trying to surf across the sea alone.
+            Beware, for some are much more dangerous
+            than others. I myself would only surf
+            Tranquillum, Tropicum, and Internum.
+            Subtropicum's a bit more dangerous.
+            Occidens and Oriens are too much
+            for even an experienced surfer,
+            and Mare Mortuorum is a cursed
+            and evil place where surfers go to die.
+            Beware that sea, it belongs to the dead
+            and the dead keep it. Now be on your way.
+            Our teacher, Misty, is your final test.
+            Good luck, and be safe while surfing the seas.")
+}
+
+text SurfSchool_Text_Leaf1 {
+    format("Ok, let's do this, let's leran how to surf.")
+}
+
+text SurfSchool_Text_Misty1 {
+    format("You've both demonstrated prerequisite
+            ability you need to learn to surf
+            but before I can give you your surfboards
+            you must pass one last examination.
+            Since you enrolled in Surf School as a pair
+            I will assess your capabilities
+            as one. You will need to work together
+            to defeat me and pass my Surfing School.")
+}
+
+text SurfSchool_Text_Leaf2 {
+    format("Here we go {PLAYER}, time to earn our surfboards
+            and demonstrate the power of our love.
+            We'll take down Misty together. Let's both
+            choose 3 pokemon to use in battle.
+            I'll be bringing Jigglypuff, Bayleef,
+            and Jynx. What three pokemon will you choose?")
+}
+
+text SurfSchool_Text_Misty2 {
+    format("Now I will test the strength of your union
+            and see if you're ready to surf the seas.")
+}
+
+text SurfSchool_Text_MistyLost {
+    format("Your strength as a couple's unquestionable.")
+}
+
+text SurfSchool_Text_Misty3 {
+    format("Impressive, you have both demonstrated
+            your readiness to surf, so please take these.")
+}
+
+text SurfSchool_Text_Misty4 {
     format("")
 }
 
+text SurfSchool_Text_Leaf3 {
+    format("")
+}

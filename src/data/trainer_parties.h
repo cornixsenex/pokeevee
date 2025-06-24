@@ -1514,16 +1514,36 @@ static const struct TrainerMon sParty_Gio1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Valerie3[] = {
+static const struct TrainerMon sParty_Misty[] = {
     {
     .iv = 20,
     .lvl = 35,
-    .species = SPECIES_SPOINK,
+    .species = SPECIES_STARMIE,
     },
     {
     .iv = 20,
     .lvl = 35,
-    .species = SPECIES_SABLEYE,
+    .species = SPECIES_CORSOLA,
+    },
+    {
+    .iv = 20,
+    .lvl = 35,
+    .species = SPECIES_GOLDUCK,
+    },
+    {
+    .iv = 20,
+    .lvl = 35,
+    .species = SPECIES_LANTURN,
+    },
+    {
+    .iv = 20,
+    .lvl = 35,
+    .species = SPECIES_TOGEPI,
+    },
+    {
+    .iv = 20,
+    .lvl = 35,
+    .species = SPECIES_DEWGONG,
     }
 };
 
@@ -2588,17 +2608,67 @@ static const struct TrainerMon sParty_SurfInstructor[] = {
     {
     .iv = 100,
     .lvl = 19,
-    .species = SPECIES_MACHOP,
+    .species = SPECIES_WARTORTLE,
     },
     {
     .iv = 100,
     .lvl = 19,
-    .species = SPECIES_CHIMCHAR,
+    .species = SPECIES_POLIWHIRL,
     },
     {
     .iv = 100,
     .lvl = 19,
-    .species = SPECIES_MANKEY,
+    .species = SPECIES_SEADRA,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_WAILMER,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_FLOATZEL,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_LAPRAS,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_LANTURN,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_MANTINE,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_SHARPEDO,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_GASTRODON,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_WHISCASH,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_CORSOLA,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_SEEL,
     }
 };
 

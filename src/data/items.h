@@ -14260,8 +14260,8 @@ const struct Item gItemsInfo[] =
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = 0,
-        .iconPic = gItemIcon_QuestionMark,
-        .iconPalette = gItemIconPalette_QuestionMark,
+        .iconPic = gItemIcon_ResistFeather,
+        .iconPalette = gItemIconPalette_ResistFeather,
     },
 	
 	[ITEM_KIND_BUD] =

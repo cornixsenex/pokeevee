@@ -1304,14 +1304,14 @@
 
     [DIFFICULTY_NORMAL][TRAINER_MISTY] =
     {
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerClass = TRAINER_CLASS_SURFER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_MISTY2,
-        .trainerName = _("VALERIE"),
+        .trainerName = _("MISTY"),
         .items = {},
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Valerie3),
+        .party = TRAINER_PARTY(sParty_Misty),
     },
 
 
@@ -2310,9 +2310,9 @@
         .items = {},
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .poolSize = 3,
+        .poolSize = 13,
         .party = sParty_SurfInstructor,
-		.partySize = 1,
+		.partySize = 2,
     },
 
 
