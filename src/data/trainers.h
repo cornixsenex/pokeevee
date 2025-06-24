@@ -2311,7 +2311,7 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .poolSize = 3,
-        .party = TRAINER_PARTY(sParty_Instructor),
+        .party = sParty_Instructor,
 		.partySize = 1,
     },
 
