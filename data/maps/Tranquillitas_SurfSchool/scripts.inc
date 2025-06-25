@@ -465,120 +465,128 @@ SurfSchool_Script_SetupMultiBattle_1:
 
 SurfSchool_Script_Misty::
 # 279 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	lockall
+	faceplayer
+# 280 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	load_field_pic FIELD_PIC_MISTY, 190, 98
 # 281 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	releaseall
+	msgbox SurfSchool_Text_Misty5
+# 282 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	destroy_field_pic FIELD_PIC_MISTY
+# 283 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 284 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	call Common_Script_Unfaceplayer
 	end
 
 
-# 285 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 289 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 SurfSchool_Movement_LeafExit:
-# 286 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_down
-# 287 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 287 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 287 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 288 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_up
-# 288 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_up
-# 289 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 289 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 289 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 289 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 289 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_right
-# 290 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_down
-# 290 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_down
-# 290 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_down
 # 290 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
 # 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
+	walk_right
 # 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
+	walk_right
 # 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
+	walk_right
 # 292 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_down
+	walk_up
+# 292 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_up
 # 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	walk_left
+	walk_right
+# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_right
+# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_right
+# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_right
+# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_right
 # 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
 # 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_down
+# 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_down
+# 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_down
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 296 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_down
+# 297 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_left
+# 298 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	walk_down
+# 298 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
 	step_end
 
 SurfSchool_Text_Surfer1Intro::
-# 298 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 302 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You don't look tough enough to handle\n"
 	.string "the open water where pokemon attack at\l"
 	.string "any moment. Let me test your skill.$"
 
 SurfSchool_Text_Surfer1Lost::
-# 304 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 308 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You catch on fast.$"
 
 SurfSchool_Text_Surfer1Post::
-# 308 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 312 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "While surfing the oceans a wild pokemon\n"
 	.string "could suddenly attack so you must\l"
 	.string "always be alert.$"
 
 SurfSchool_Text_Surfer2Intro::
-# 315 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 319 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "So, you think you can tame the mighty\n"
 	.string "waves?$"
 
 SurfSchool_Text_Surfer2Lost::
-# 319 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 323 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You're stronger than you look.$"
 
 SurfSchool_Text_Surfer2Post::
-# 323 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 327 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "While you're surfing be careful not to\n"
 	.string "wander into a deep sea current which\l"
 	.string "could whisk you away. There's no way of\l"
 	.string "stopping once you're caught up!$"
 
 SurfSchool_Text_Surfer3Intro::
-# 331 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 335 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "It's time for me to test your aptitude.$"
 
 SurfSchool_Text_Surfer3Lost::
-# 335 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 339 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You've satisfied my examination.$"
 
 SurfSchool_Text_Surfer3Post::
-# 339 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 343 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Stay close to shore if you're not\n"
 	.string "strong enough to surf the ocean. The\l"
 	.string "shallow waters are home to much weaker\l"
@@ -586,17 +594,17 @@ SurfSchool_Text_Surfer3Post::
 	.string "the deep ocean.$"
 
 SurfSchool_Text_Surfer4Intro::
-# 347 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 351 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "If you get past me you may face Misty\n"
 	.string "and demonstrate your worthiness to\l"
 	.string "surf.$"
 
 SurfSchool_Text_Surfer4Lost::
-# 352 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 356 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Impressive.$"
 
 SurfSchool_Text_Surfer4Post::
-# 356 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 360 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "The ocean is divided into seven seas:\n"
 	.string "Mare Tranquillum, Mares Tropicum and\l"
 	.string "Subtropicum, Mare Internum, Mare\l"
@@ -620,12 +628,12 @@ SurfSchool_Text_Surfer4Post::
 	.string "seas.$"
 
 SurfSchool_Text_Leaf1::
-# 380 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 384 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Ok, let's do this, let's leran how to\n"
 	.string "surf.$"
 
 SurfSchool_Text_Misty1::
-# 384 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 388 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You've both demonstrated prerequisite\n"
 	.string "ability you need to learn to surf but\l"
 	.string "before I can give you your surfboards\l"
@@ -636,7 +644,7 @@ SurfSchool_Text_Misty1::
 	.string "defeat me and pass my Surfing School.$"
 
 SurfSchool_Text_Leaf2::
-# 395 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 399 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Here we go {PLAYER}, time to earn our\n"
 	.string "surfboards and demonstrate the power\l"
 	.string "of our love. We'll take down Misty\l"
@@ -646,26 +654,78 @@ SurfSchool_Text_Leaf2::
 	.string "three pokemon will you choose?$"
 
 SurfSchool_Text_Misty2::
-# 404 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 408 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Now I will test the strength of your\n"
 	.string "union and see if you're ready to surf\l"
 	.string "the seas.$"
 
 SurfSchool_Text_MistyLost::
-# 409 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 413 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Your strength as a couple's\n"
 	.string "unquestionable.$"
 
 SurfSchool_Text_Misty3::
-# 413 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 417 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Impressive, you have both\n"
 	.string "demonstrated your readiness to surf,\l"
 	.string "so please take these.$"
 
 SurfSchool_Text_Misty4::
-# 418 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	.string "$"
+# 422 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	.string "With those surfboards you'll be able to\n"
+	.string "surf over the seven seas and explore\l"
+	.string "the surface of rivers, lakes, and indoor\l"
+	.string "pools. While I'm sure you're excited to\l"
+	.string "set out I must again warn you of the\l"
+	.string "dangers of travelling across open\l"
+	.string "water. There are many dangerous\l"
+	.string "pokemon who lurk in the deep waters of\l"
+	.string "the sea. Even Mare Tranquillum, just to\l"
+	.string "the south, often considered by most to\l"
+	.string "be safe, is home to dangerous creatures\l"
+	.string "beneath the waves. These dangers are\l"
+	.string "only increased as you explore the other\l"
+	.string "seven seas. Mare Tropicum, west of\l"
+	.string "Tranquillum, is similar in that it's\l"
+	.string "mostly safe, and Mare Internum is not\l"
+	.string "as deep as the outer oceans but the\l"
+	.string "deep seas of Occidens, Oriens, and even\l"
+	.string "Subtropicum will pose a serious risk to\l"
+	.string "any surfer who's unprepared, but the\l"
+	.string "wicked Mare Mortuorum, located\l"
+	.string "southeast of Mare Tranquillum, is a\l"
+	.string "place of death and evil where few have\l"
+	.string "ever returned from to tell the tale. I\l"
+	.string "cannot stress enough you must not go\l"
+	.string "into that deadly sea bounded by the\l"
+	.string "Isla Ignifera, Yerba Buena, and the\l"
+	.string "narrow southern penninsula that\l"
+	.string "divides the peaceful Mare Tranquillum\l"
+	.string "from the evil Mare Mortuorum. Turn back\l"
+	.string "if you ever go near that place. Now that\l"
+	.string "I have told you of the dangers of\l"
+	.string "surfing the ocean I release you\l"
+	.string "t'experience the thrill of true freedom\l"
+	.string "sufing the seven seas. Have fun. Be\l"
+	.string "safe.$"
 
 SurfSchool_Text_Leaf3::
-# 422 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	.string "$"
+# 460 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	.string "I'm so excited {PLAYER} I can't\n"
+	.string "believe we finally have surfboards of\l"
+	.string "our own. I can't wait to go out and ride\l"
+	.string "the waves. C'mon! I'll catch you on the\l"
+	.string "seven seas, and don't worry you know\l"
+	.string "I'll stay away from the deep oceans of\l"
+	.string "the east and west and south and the\l"
+	.string "Mare Mortuorum.$"
+
+SurfSchool_Text_Misty5::
+# 470 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	.string "Have fun surfing, but do not surf too\n"
+	.string "far. With great freedom comes great\l"
+	.string "chance peril, you must be cautions and\l"
+	.string "please stay away from oceans too deep\l"
+	.string "for your skill level and don't enter Mare\l"
+	.string "Mortuorum unless you tire of your\l"
+	.string "mortal life.$"

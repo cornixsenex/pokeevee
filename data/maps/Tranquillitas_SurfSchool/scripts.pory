@@ -276,9 +276,13 @@ script SurfSchool_Script_SetupMultiBattle {
 }
 
 script SurfSchool_Script_Misty {
-    lockall
+	faceplayer
+    load_field_pic (FIELD_PIC_MISTY, 190, 98)
+	msgbox (SurfSchool_Text_Misty5)
+    destroy_field_pic (FIELD_PIC_MISTY)
+	closemessage
+	call (Common_Script_Unfaceplayer)
 
-    releaseall
     end
 }
 
@@ -416,9 +420,58 @@ text SurfSchool_Text_Misty3 {
 }
 
 text SurfSchool_Text_Misty4 {
-    format("")
+    format("With those surfboards you'll be able to surf
+			over the seven seas and explore the
+			surface of rivers, lakes, and indoor pools.
+			While I'm sure you're excited to set out
+			I must again warn you of the dangers
+			of travelling across open water.
+			There are many dangerous pokemon
+			who lurk in the deep waters of the sea.
+			Even Mare Tranquillum, just to the south,
+			often considered by most to be safe,
+			is home to dangerous creatures beneath
+			the waves. These dangers are only increased
+			as you explore the other seven seas.
+			Mare Tropicum, west of Tranquillum,
+			is similar in that it's mostly safe,
+			and Mare Internum is not as deep
+			as the outer oceans but the deep seas
+			of Occidens, Oriens, and even
+			Subtropicum will pose a serious
+			risk to any surfer who's unprepared,
+			but the wicked Mare Mortuorum,
+			located southeast of Mare Tranquillum,
+			is a place of death and evil where few
+			have ever returned from to tell the tale.
+			I cannot stress enough you must not go
+			into that deadly sea bounded by the
+			Isla Ignifera, Yerba Buena,
+			and the narrow southern penninsula
+			that divides the peaceful Mare Tranquillum
+			from the evil Mare Mortuorum.
+			Turn back if you ever go near that place.
+			Now that I have told you of the dangers
+			of surfing the ocean I release you
+			t'experience the thrill of true freedom
+			sufing the seven seas. Have fun. Be safe.")
 }
 
 text SurfSchool_Text_Leaf3 {
-    format("")
+    format("I'm so excited {PLAYER} I can't believe
+			we finally have surfboards of our own.
+			I can't wait to go out and ride the waves.
+			C'mon! I'll catch you on the seven seas,
+			and don't worry you know I'll stay away
+			from the deep oceans of the east and west
+			and south and the Mare Mortuorum.")
+}
+
+text SurfSchool_Text_Misty5 {
+    format("Have fun surfing, but do not surf too far.
+			With great freedom comes great chance peril,
+			you must be cautions and please stay away
+			from oceans too deep for your skill level
+			and don't enter Mare Mortuorum
+			unless you tire of your mortal life.")
 }

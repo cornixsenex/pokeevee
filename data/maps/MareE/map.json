@@ -2,7 +2,7 @@
   "id": "MAP_MARE_E",
   "name": "MareE",
   "layout": "LAYOUT_MARE_E",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_SURF",
   "region_map_section": "MAPSEC_MARE_TRANQUILLUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

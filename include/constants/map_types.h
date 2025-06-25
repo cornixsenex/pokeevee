@@ -1,6 +1,8 @@
 #ifndef GUARD_CONSTANTS_MAP_TYPES_H
 #define GUARD_CONSTANTS_MAP_TYPES_H
 
+//CORNIX NOTE: These don't really matter so no need for a DYNAMIC one. Basically just make sure you select an "outdoor" one to ensure the DNS works and you're gucci
+
 #define MAP_TYPE_NONE        0
 #define MAP_TYPE_TOWN        1
 #define MAP_TYPE_CITY        2
