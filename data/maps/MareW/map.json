@@ -2,7 +2,7 @@
   "id": "MAP_MARE_W",
   "name": "MareW",
   "layout": "LAYOUT_MARE_W",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

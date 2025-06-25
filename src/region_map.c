@@ -4239,4 +4239,24 @@ bool32 GetDynamicMapSec_Route11(bool32 useWarpInfo)
 			return 3;
 	}
 
-}	
+}
+
+bool32 IsPenninsulaECastrum(bool32 useWarpInfo)
+{
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	//WIP
+	return FALSE;
+}
+
+	
+
