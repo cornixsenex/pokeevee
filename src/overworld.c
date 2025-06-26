@@ -4336,7 +4336,38 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	
+    //BikeMapE - Via Magna or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_E) && mapNum == MAP_NUM(MAP_BIKE_MAP_E)) 
+	{
+        if (IsBikeMapEViaMagna(FALSE)) 
+            return MAPSEC_VIA_MAGNA;
+        else
+            return MAPSEC_VILLAE_RUSTICAE;
+	}
+    //BikeMapW - Via Magna or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_W) && mapNum == MAP_NUM(MAP_BIKE_MAP_W)) 
+	{
+        if (IsBikeMapWViaMagna(FALSE)) 
+            return MAPSEC_VIA_MAGNA;
+        else
+            return MAPSEC_VILLAE_RUSTICAE;
+	}
+    //BikeRouteFarm - Via Magna or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_BIKE_ROUTE_FARM) && mapNum == MAP_NUM(MAP_BIKE_ROUTE_FARM)) 
+	{
+        if (IsBikeRouteFarmViaMagna(FALSE)) 
+            return MAPSEC_VIA_MAGNA;
+        else
+            return MAPSEC_VILLAE_RUSTICAE;
+	}
+    //SanjoRockFiller - Sabina Nova or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_SANJO_ROCK_FILLER) && mapNum == MAP_NUM(MAP_SANJO_ROCK_FILLER)) 
+	{
+        if (IsSanjoRockFillerSabinaNova(FALSE)) 
+            return MAPSEC_SABINA_NOVA;
+        else
+            return MAPSEC_VILLAE_RUSTICAE;
+	}
 
    
    //Other Maps Go Here
@@ -4876,6 +4907,38 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 			default:
 				return MUS_CANTINA;
 		}
+	}
+    //BikeMapE - Via Magna or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_E) && mapNum == MAP_NUM(MAP_BIKE_MAP_E)) 
+	{
+        if (IsBikeMapEViaMagna(FALSE)) 
+            return MUS_RG_CYCLING;
+        else
+            return MUS_RG_ROUTE1;
+	}
+    //BikeMapW - Via Magna or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_W) && mapNum == MAP_NUM(MAP_BIKE_MAP_W)) 
+	{
+        if (IsBikeMapWViaMagna(FALSE)) 
+            return MUS_RG_CYCLING;
+        else
+            return MUS_RG_ROUTE1;
+	}
+    //BikeRouteFarm - Via Magna or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_BIKE_ROUTE_FARM) && mapNum == MAP_NUM(MAP_BIKE_ROUTE_FARM)) 
+	{
+        if (IsBikeRouteFarmViaMagna(FALSE)) 
+            return MUS_RG_CYCLING;
+        else
+            return MUS_RG_ROUTE1;
+	}
+    //SanjoRockFiller - Sabina Nova or Villae Rusticae
+	if (mapGroup == MAP_GROUP(MAP_SANJO_ROCK_FILLER) && mapNum == MAP_NUM(MAP_SANJO_ROCK_FILLER)) 
+	{
+        if (IsSanjoRockFillerSabinaNova(FALSE)) 
+            return MUS_RG_SEVII_67;
+        else
+            return MUS_RG_ROUTE1;
 	}
 
 	//Default SHOULD NEVER BE REACHED

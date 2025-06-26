@@ -1296,7 +1296,38 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
-
+		//BikeMapE - Via Magna or Villae Rusticae 
+		if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_E) && mapNum == MAP_NUM(MAP_BIKE_MAP_E))
+		{
+            if (IsBikeMapEViaMagna(FALSE))
+				regionMapSectionId = MAPSEC_VIA_MAGNA;
+			else 
+				regionMapSectionId = MAPSEC_VILLAE_RUSTICAE;
+		}
+		//BikeMapW - Via Magna or Villae Rusticae 
+		if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_W) && mapNum == MAP_NUM(MAP_BIKE_MAP_W))
+		{
+            if (IsBikeMapWViaMagna(FALSE))
+				regionMapSectionId = MAPSEC_VIA_MAGNA;
+			else 
+				regionMapSectionId = MAPSEC_VILLAE_RUSTICAE;
+		}
+		//BikeRouteFarm - Via Magna or Villae Rusticae 
+		if (mapGroup == MAP_GROUP(MAP_BIKE_ROUTE_FARM) && mapNum == MAP_NUM(MAP_BIKE_ROUTE_FARM))
+		{
+            if (IsBikeRouteFarmViaMagna(FALSE))
+				regionMapSectionId = MAPSEC_VIA_MAGNA;
+			else 
+				regionMapSectionId = MAPSEC_VILLAE_RUSTICAE;
+		}
+		//SanjoRockFiller - Sabina Nova or Villae Rusticae 
+		if (mapGroup == MAP_GROUP(MAP_SANJO_ROCK_FILLER) && mapNum == MAP_NUM(MAP_SANJO_ROCK_FILLER))
+		{
+            if (IsSanjoRockFillerSabinaNova(FALSE))
+				regionMapSectionId = MAPSEC_SABINA_NOVA;
+			else 
+				regionMapSectionId = MAPSEC_VILLAE_RUSTICAE;
+		}
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}

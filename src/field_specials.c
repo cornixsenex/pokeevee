@@ -6053,5 +6053,10 @@ bool32 GetDynamicMapSec_Hippodrome_F(void)
     return GetDynamicMapSec_Hippodrome(FALSE);
 }
 
+bool32 IsSanjoRockFillerSabinaNova_F(void)
+{
+    return IsSanjoRockFillerSabinaNova(FALSE);
+}
+
 
 

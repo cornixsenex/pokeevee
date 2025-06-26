@@ -1,1 +1,25 @@
-mapscripts SanjoRockFiller_MapScripts {}
+//Dynamic Map is  VAR_TEMP_5 :
+	//1: Sabina Nova
+	//2: Villae Rusticae
+
+mapscripts SanjoRockFiller_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+
+        //Handle Dynamic Map
+        specialvar (VAR_RESULT, IsSanjoRockFillerSabinaNova_F)
+        if (var(VAR_RESULT) == TRUE) {
+            setvar (VAR_TEMP_5, 1)
+        } else {
+            setvar (VAR_TEMP_5, 2)
+        }
+	}
+
+}
+
+script SanjoRockFiller_Script_Transition_SabinaNova {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+    

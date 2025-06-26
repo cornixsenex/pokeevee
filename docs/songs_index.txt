@@ -196,7 +196,7 @@ River Drake  / Lake Drake                                         # MUS_RG_SEVII
 ****OTHER - specials                                              
 Mart                                                              # MUS_POKE_MART
 Poke Center                                                       # MUS_RG_POKE_CENTER
-Via Magna                                                         # MUS_CYCLING
+Via Magna                                                         # MUS_RG_CYCLING
 Hospital                                                          # MUS_C_COMM_CENTER
 Salty Spitoon                                                     #Cantina
 Circus                                                            # MUS_TRICK_HOUSE

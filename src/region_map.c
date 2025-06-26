@@ -2074,6 +2074,38 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+        //BikeMapE - Via Magna or Villae Rusticae
+		if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_E) && mapNum == MAP_NUM(MAP_BIKE_MAP_E))
+        {
+            if (IsBikeMapEViaMagna(FALSE))
+                return StringCopy(dest, sMapName_VIA_MAGNA);
+            else
+                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+        }
+        //BikeMapW - Via Magna or Villae Rusticae
+		if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_W) && mapNum == MAP_NUM(MAP_BIKE_MAP_W))
+        {
+            if (IsBikeMapWViaMagna(FALSE))
+                return StringCopy(dest, sMapName_VIA_MAGNA);
+            else
+                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+        }
+        //BikeRouteFarm - Via Magna or Villae Rusticae
+		if (mapGroup == MAP_GROUP(MAP_BIKE_ROUTE_FARM) && mapNum == MAP_NUM(MAP_BIKE_ROUTE_FARM))
+        {
+            if (IsBikeRouteFarmViaMagna(FALSE))
+                return StringCopy(dest, sMapName_VIA_MAGNA);
+            else
+                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+        }
+        //SanjoRockFiller - Sabina Nova or Villae Rusticae 
+		if (mapGroup == MAP_GROUP(MAP_SANJO_ROCK_FILLER) && mapNum == MAP_NUM(MAP_SANJO_ROCK_FILLER))
+        {
+            if (IsSanjoRockFillerSabinaNova(FALSE))
+                return StringCopy(dest, sMapName_SABINA_NOVA);
+            else
+                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+        }
 
 
 		//Default Map - Should never be reached
@@ -4328,6 +4360,76 @@ bool32 GetDynamicMapSec_Hippodrome(bool32 useWarpInfo)
 		return 4;
 }
 
+bool32 IsBikeMapEViaMagna(bool32 useWarpInfo)
+{
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
 
+    if (y > 29 && x < 123)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+bool32 IsBikeMapWViaMagna(bool32 useWarpInfo)
+{
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+    if (y > 27 && x > 135)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+bool32 IsBikeRouteFarmViaMagna(bool32 useWarpInfo)
+{
+	s16 x;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+    }
+
+    if (x > 20)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+bool32 IsSanjoRockFillerSabinaNova(bool32 useWarpInfo)
+{
+	s16 y;
+    if (useWarpInfo) 
+    {
+        y = sWarpDestination.y;
+    } else
+    {
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+    if (y > 4)
+        return TRUE;
+    else
+        return FALSE;
+}
 	
 
