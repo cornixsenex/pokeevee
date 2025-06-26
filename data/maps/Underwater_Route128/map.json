@@ -3,7 +3,7 @@
   "name": "Underwater_Route128",
   "layout": "LAYOUT_UNDERWATER_ROUTE128",
   "music": "MUS_UNDERWATER",
-  "region_map_section": "MAPSEC_UNDERWATER_128",
+  "region_map_section": "MAPSEC_INSIDE_OF_TRUCK",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",
   "map_type": "MAP_TYPE_UNDERWATER",
@@ -24,9 +24,7 @@
       "direction": "emerge"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 38,
@@ -36,9 +34,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",

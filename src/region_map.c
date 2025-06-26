@@ -135,17 +135,17 @@ static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/regi
 
 static const u16 sRegionMap_SpecialPlaceLocations[][2] =
 {
-    {MAPSEC_UNDERWATER_105,             MAPSEC_ROUTE_105},
-    {MAPSEC_UNDERWATER_124,             MAPSEC_ROUTE_124},
+    //{MAPSEC_UNDERWATER_105,             MAPSEC_ROUTE_105},
+    //{MAPSEC_UNDERWATER_124,             MAPSEC_ROUTE_124},
     #ifdef BUGFIX
-    {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_125},
+    //{MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_125},
     #else
-    {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_129}, // BUG: Map will incorrectly display the name of Route 129 when diving on Route 125 (for Marine Cave only)
+    //{MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_129}, // BUG: Map will incorrectly display the name of Route 129 when diving on Route 125 (for Marine Cave only)
     #endif
-    {MAPSEC_UNDERWATER_126,             MAPSEC_ROUTE_126},
-    {MAPSEC_UNDERWATER_127,             MAPSEC_ROUTE_127},
-    {MAPSEC_UNDERWATER_128,             MAPSEC_ROUTE_128},
-    {MAPSEC_UNDERWATER_129,             MAPSEC_ROUTE_129},
+    //{MAPSEC_UNDERWATER_126,             MAPSEC_ROUTE_126},
+    //{MAPSEC_UNDERWATER_127,             MAPSEC_ROUTE_127},
+    //{MAPSEC_UNDERWATER_128,             MAPSEC_ROUTE_128},
+    //{MAPSEC_UNDERWATER_129,             MAPSEC_ROUTE_129},
     {MAPSEC_UNDERWATER_SOOTOPOLIS,      MAPSEC_SOOTOPOLIS_CITY},
     {MAPSEC_UNDERWATER_SEAFLOOR_CAVERN, MAPSEC_ROUTE_128},
     {MAPSEC_AQUA_HIDEOUT,               MAPSEC_LILYCOVE_CITY},
@@ -2043,6 +2043,14 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
+        }
+		//PenninsulaE - Castrum or Mare Tranquillum 
+		if (mapGroup == MAP_GROUP(MAP_PENNINSULA_E) && mapNum == MAP_NUM(MAP_PENNINSULA_E))
+        {
+            if (IsPenninsulaECastrum(FALSE))
+                return StringCopy(dest, sMapName_CASTRVM);
+            else
+                return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
         }
 
 		//Default Map - Should never be reached
@@ -4183,26 +4191,22 @@ bool32 GetDynamicMapSec_Route10(bool32 useWarpInfo)
     if 
         (
         (x < 4 && y < 15) ||
-        (x < 9 && y < 20)
+        (x < 9 && y < 11)
         )
         return 1;
-    //Acta Tranquilla
+    //Mare Tranquillum
     else if 
         (
-        (x < 13 && y < 30) ||
-        (x < 17 && y < 29) ||
-        (x < 25 && y < 28) ||
-        (x < 37 && y < 29) ||
-        (x < 45 && y < 28) ||
-        (x < 61 && y < 29) ||
-        (x < 68 && y < 28) ||
-        (x < 72 && y < 29) ||
-        (x > 71 && y < 30)
+        (y > 29) ||
+        (y == 29 && x > 12 && x < 72) ||
+        (y == 28 && x > 16 && x < 25) ||
+        (y == 28 && x > 36 && x < 45) ||
+        (y == 28 && x > 60 && x < 68) 
         )
-        return 2;
-    //Default is Mare Tranquillum
-    else 
         return 3;
+    //Default is Acta Tranquilla
+    else 
+        return 2;
 }
 
 bool32 GetDynamicMapSec_Route11(bool32 useWarpInfo)
@@ -4254,8 +4258,24 @@ bool32 IsPenninsulaECastrum(bool32 useWarpInfo)
         y = gSaveBlock1Ptr->pos.y;
     }
 
-	//WIP
-	return FALSE;
+    if (
+       (y == 21 && x > 72) ||
+       (y == 22 && x > 43 && x < 58) ||
+       (y == 22 && x > 72) ||
+       (y == 23 && x > 35) ||
+       (y == 24 && x > 34) ||
+       (y == 25 && x > 25) ||
+       (y == 26 && x > 21) ||
+       (y == 27 && x > 21) ||
+       (y == 28 && x > 21) ||
+       (y == 29 && x > 11) ||
+       (y == 30 && x > 11) ||
+       (y > 30)
+       )
+        return FALSE;
+    else
+        return TRUE;
+
 }
 
 	

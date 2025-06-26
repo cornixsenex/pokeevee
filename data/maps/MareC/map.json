@@ -2,7 +2,7 @@
   "id": "MAP_MARE_C",
   "name": "MareC",
   "layout": "LAYOUT_MARE_C",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_SURF",
   "region_map_section": "MAPSEC_MARE_TRANQUILLUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

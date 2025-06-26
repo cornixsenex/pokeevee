@@ -2,7 +2,7 @@
   "id": "MAP_GATO_CITY_N",
   "name": "GatoCityN",
   "layout": "LAYOUT_GATO_CITY_N",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_CALIFORNIA_LOVE",
   "region_map_section": "MAPSEC_URBIA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

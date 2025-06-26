@@ -4307,10 +4307,18 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+    //PenninsulaE - Castrum or Mare Tranquillum
+	if (mapGroup == MAP_GROUP(MAP_PENNINSULA_E) && mapNum == MAP_NUM(MAP_PENNINSULA_E)) 
+	{
+        if (IsPenninsulaECastrum(FALSE)) 
+            return MAPSEC_CASTRUM;
+        else
+            return MAPSEC_MARE_TRANQUILLUM;
+	}
+	
 
-
-
-	//Other Maps Go Here
+   
+   //Other Maps Go Here
     
 
 	//Default - Should never be reached
@@ -4812,6 +4820,15 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 			default:
 				return MUS_CANTINA;
 		}
+	}
+    //PenninsulaE - Castrum or Mare Tranquillum
+	if (mapGroup == MAP_GROUP(MAP_PENNINSULA_E) && mapNum == MAP_NUM(MAP_PENNINSULA_E)) 
+	{
+        if (IsPenninsulaECastrum(FALSE)) 
+            return MUS_B_DOME_LOBBY;
+        else
+            return MUS_RG_SURF;
+        
 	}
 
 	//Default SHOULD NEVER BE REACHED
