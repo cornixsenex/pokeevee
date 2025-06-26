@@ -1271,6 +1271,32 @@ static void LoadMapNamePopUpWindowBg(void)
 			else 
 				regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
 		}
+		//Hippodrome 
+        if (mapGroup == MAP_GROUP(MAP_HIPPODROME) && mapNum == MAP_NUM(MAP_HIPPODROME)) 
+		{
+			//1: Villae Rusticae
+			//2: Circus
+			//3: Ilium
+			//4: Urbia
+			n = GetDynamicMapSec_Hippodrome(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_VILLAE_RUSTICAE;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_CIRCUS;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_ILIUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_URBIA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}

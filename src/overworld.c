@@ -4315,6 +4315,27 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
         else
             return MAPSEC_MARE_TRANQUILLUM;
 	}
+	//Hippodrome
+	if (mapGroup == MAP_GROUP(MAP_HIPPODROME) && mapNum == MAP_NUM(MAP_HIPPODROME)) 
+	{
+		//1: Villae Rusticae
+		//2: Circus
+		//3: Ilium
+		//4: Urbia
+		n = GetDynamicMapSec_Hippodrome(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_VILLAE_RUSTICAE;
+			case 2:
+				return MAPSEC_CIRCUS; 
+			case 3:
+				return MAPSEC_ILIUM; 
+			case 4:
+				return MAPSEC_URBIA; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
 	
 
    
@@ -4829,6 +4850,32 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
         else
             return MUS_RG_SURF;
         
+	}
+	//Hippodrome
+	if (mapGroup == MAP_GROUP(MAP_HIPPODROME) && mapNum == MAP_NUM(MAP_HIPPODROME)) 
+	{
+		//1: Villae Rusticae
+		//2: Circus
+		//3: Ilium
+		//4: Urbia
+		n = GetDynamicMapSec_Hippodrome(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_Hippodrome returned: %d\n", n);
+		switch (n) {
+		    //Villae Rusticae
+			case 1:
+				return MUS_RG_ROUTE1;
+		    //Circus
+			case 2:
+				return MUS_TRICK_HOUSE;
+		    //Ilium
+			case 3:
+				return MUS_GSC_ROUTE38; 
+			//Urbia
+			case 4:
+				return MUS_CALIFORNIA_LOVE; 
+			default:
+				return MUS_CANTINA;
+		}
 	}
 
 	//Default SHOULD NEVER BE REACHED

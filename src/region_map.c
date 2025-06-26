@@ -2052,6 +2052,29 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
         }
+		//Hippodrome 
+		if (mapGroup == MAP_GROUP(MAP_HIPPODROME) && mapNum == MAP_NUM(MAP_HIPPODROME))
+        {
+			//1: Villae Rusticae
+			//2: Circus
+			//3: Ilium
+			//4: Urbia
+			n = GetDynamicMapSec_Hippodrome(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+				case 2:
+					return StringCopy(dest, sMapName_CIRCVS);
+				case 3:
+					return StringCopy(dest, sMapName_ILIVM);
+				case 4:
+					return StringCopy(dest, sMapName_VRBIA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
+
 
 		//Default Map - Should never be reached
 		else
@@ -4277,6 +4300,34 @@ bool32 IsPenninsulaECastrum(bool32 useWarpInfo)
         return TRUE;
 
 }
+
+bool32 GetDynamicMapSec_Hippodrome(bool32 useWarpInfo)
+{
+	//1: Villae Rusticae
+	//2: Circus
+	//3: Ilium
+	//4: Urbia
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	if (x < 10)
+		return 1;
+	else if (x > 14 && y > 5 && y < 61)
+		return 2;
+	else if (y < 1 && x > 20)
+		return 3;
+	else
+		return 4;
+}
+
 
 	
 
