@@ -124,6 +124,439 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_VillaeRusticae"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_VillaeRusticae"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_VillaeRusticae"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "Hippodrome_Script_Transition_Circus"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "Hippodrome_Script_Transition_Urbia"
+    }
+  ],
   "bg_events": []
 }

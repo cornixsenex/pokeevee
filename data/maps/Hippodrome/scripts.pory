@@ -1,1 +1,35 @@
-mapscripts Hippodrome_MapScripts {}
+
+
+//Dynamic Map is  VAR_TEMP_5 :
+	//1: Villae Rusticae
+	//2: Circus
+	//3: Ilium
+	//4: Urbia
+
+mapscripts Hippodrome_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+
+        //Handle Dynamic Map
+        specialvar (VAR_TEMP_5, GetDynamicMapSec_Hippodrome_F)
+	}
+
+}
+
+script Hippodrome_Script_Transition_VillaeRusticae {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script Hippodrome_Script_Transition_Circus {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}
+
+script Hippodrome_Script_Transition_Urbia {
+    setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
+	special (ShowMapNamePopup)
+}

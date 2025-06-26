@@ -2,7 +2,7 @@
   "id": "MAP_TROY_E",
   "name": "TroyE",
   "layout": "LAYOUT_TROY_E",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_GSC_ROUTE38",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

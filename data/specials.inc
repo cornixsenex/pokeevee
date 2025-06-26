@@ -619,3 +619,4 @@ gSpecials::
     def_special GetDynamicMapSec_EliciusBeach_F
     def_special GetDynamicMapSec_Route10_F
     def_special GetDynamicMapSec_Route11_F
+    def_special GetDynamicMapSec_Hippodrome_F
