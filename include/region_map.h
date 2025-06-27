@@ -155,6 +155,7 @@ u32 IsBikeMapEViaMagna(bool32 useWarpInfo);
 u32 IsBikeMapWViaMagna(bool32 useWarpInfo);
 u32 IsBikeRouteFarmViaMagna(bool32 useWarpInfo);
 u32 IsSanjoRockFillerSabinaNova(bool32 useWarpInfo);
+u32 IsGatoCityParkNThermae(bool32 useWarpInfo);
 
 
 extern const struct RegionMapLocation gRegionMapEntries[];

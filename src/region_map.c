@@ -96,7 +96,7 @@ static void RegionMap_InitializeStateBasedOnSSTidalLocation(void);
 static u8 GetMapsecType(u16 mapSecId);
 static u16 CorrectSpecialMapSecId_Internal(u16 mapSecId);
 static u16 GetTerraOrMarineCaveMapSecId(void);
-static void GetMarineCaveCoords(u16 *x, u16 *y);
+//static void GetMarineCaveCoords(u16 *x, u16 *y);
 static bool32 IsPlayerInAquaHideout(u8 mapSecId);
 static void GetPositionOfCursorWithinMapSec(void);
 static bool8 RegionMap_IsMapSecIdInNextRow(u16 y);
@@ -167,9 +167,9 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
 
 static const u16 sMarineCaveMapSecIds[] =
 {
-    MAPSEC_MARINE_CAVE,
-    MAPSEC_UNDERWATER_MARINE_CAVE,
-    MAPSEC_UNDERWATER_MARINE_CAVE
+    //MAPSEC_MARINE_CAVE,
+    //MAPSEC_UNDERWATER_MARINE_CAVE,
+    //MAPSEC_UNDERWATER_MARINE_CAVE
 };
 
 static const u16 sTerraOrMarineCaveMapSecIds[ABNORMAL_WEATHER_LOCATIONS] =
@@ -1010,8 +1010,8 @@ static void InitMapBasedOnPlayerLocation(void)
         mapHeight = gMapHeader.mapLayout->height;
         x = gSaveBlock1Ptr->pos.x;
         y = gSaveBlock1Ptr->pos.y;
-        if (sRegionMap->mapSecId == MAPSEC_UNDERWATER_SEAFLOOR_CAVERN || sRegionMap->mapSecId == MAPSEC_UNDERWATER_MARINE_CAVE)
-            sRegionMap->playerIsInCave = TRUE;
+        //if (sRegionMap->mapSecId == MAPSEC_UNDERWATER_SEAFLOOR_CAVERN || sRegionMap->mapSecId == MAPSEC_UNDERWATER_MARINE_CAVE)
+        //    sRegionMap->playerIsInCave = TRUE;
         break;
     case MAP_TYPE_UNDERGROUND:
     case MAP_TYPE_UNKNOWN:
@@ -1123,9 +1123,9 @@ static void InitMapBasedOnPlayerLocation(void)
         if (xOnMap > 54)
             x++;
         break;
-    case MAPSEC_UNDERWATER_MARINE_CAVE:
-        GetMarineCaveCoords(&sRegionMap->cursorPosX, &sRegionMap->cursorPosY);
-        return;
+//    case MAPSEC_UNDERWATER_MARINE_CAVE:
+//        GetMarineCaveCoords(&sRegionMap->cursorPosX, &sRegionMap->cursorPosY);
+//        return;
     }
     sRegionMap->cursorPosX = gRegionMapEntries[sRegionMap->mapSecId].x + x + MAPCURSOR_X_MIN;
     sRegionMap->cursorPosY = gRegionMapEntries[sRegionMap->mapSecId].y + y + MAPCURSOR_Y_MIN;
@@ -1268,20 +1268,20 @@ static u16 GetTerraOrMarineCaveMapSecId(void)
     return sTerraOrMarineCaveMapSecIds[idx];
 }
 
-static void GetMarineCaveCoords(u16 *x, u16 *y)
-{
-    u16 idx;
-
-    idx = VarGet(VAR_ABNORMAL_WEATHER_LOCATION);
-    if (idx < MARINE_CAVE_LOCATIONS_START || idx > ABNORMAL_WEATHER_LOCATIONS)
-    {
-        idx = MARINE_CAVE_LOCATIONS_START;
-    }
-    idx -= MARINE_CAVE_LOCATIONS_START;
-
-    *x = sMarineCaveLocationCoords[idx].x + MAPCURSOR_X_MIN;
-    *y = sMarineCaveLocationCoords[idx].y + MAPCURSOR_Y_MIN;
-}
+//static void GetMarineCaveCoords(u16 *x, u16 *y)
+//{
+//    u16 idx;
+//
+//    idx = VarGet(VAR_ABNORMAL_WEATHER_LOCATION);
+//    if (idx < MARINE_CAVE_LOCATIONS_START || idx > ABNORMAL_WEATHER_LOCATIONS)
+//    {
+//        idx = MARINE_CAVE_LOCATIONS_START;
+//    }
+//    idx -= MARINE_CAVE_LOCATIONS_START;
+//
+//    *x = sMarineCaveLocationCoords[idx].x + MAPCURSOR_X_MIN;
+//    *y = sMarineCaveLocationCoords[idx].y + MAPCURSOR_Y_MIN;
+//}
 
 // Probably meant to be an "IsPlayerInIndoorDungeon" function, but in practice it only has the one mapsec
 // Additionally, because the mapsec doesnt exist in Emerald, this function always returns FALSE
@@ -4427,6 +4427,34 @@ bool32 IsSanjoRockFillerSabinaNova(bool32 useWarpInfo)
     }
 
     if (y > 4)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool32 IsGatoCityParkNThermae(bool32 useWarpInfo)
+{
+	s16 y, x;
+    if (useWarpInfo) 
+    {
+        y = sWarpDestination.y;
+        x = sWarpDestination.x;
+    } else
+    {
+        y = gSaveBlock1Ptr->pos.y;
+        x = gSaveBlock1Ptr->pos.x;
+    }
+
+    if 
+		(
+		(x == 18 && y < 17) ||
+		(x == 19 && y < 23) ||
+		(x == 20 && y < 25) ||
+		(x == 21 && y < 25) ||
+		(x == 22 && y < 27) ||
+		(x == 23 && y < 27) ||
+		(x > 23 && y < 28)
+		)
         return TRUE;
     else
         return FALSE;
