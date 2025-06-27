@@ -8,7 +8,7 @@
 
 //ISLAND TRANSITIONS HANDLED BY START STOP SURF TASK
 
-//Transitions work a bit different on this map. Only show triggers  are for between Occidens and Tropicum
+//Transitions work a bit different on this map. Only show triggers are for between Occidens and Tropicum
 
 mapscripts MareS6_MapScripts {
 
