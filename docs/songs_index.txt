@@ -146,7 +146,7 @@ Sinus Pacificus                                                   # MUS_RG_SS_AN
 Villa Vivaria                                                     # MUS_RG_ROUTE3 #IDK
 Villa Vallis                                                      # MUS_RG_CINNABAR #IDK
 Hortus Publicus                                                   #something dead
-Thermae                                                           # 
+Thermae                                                           # FOTM placeholder i guess
 Oasis / Desert Church                                             # 
 Ardor                                                             # MUS_OCEANIC_MUSEUM
 Acta Tranquilla                                                   # 

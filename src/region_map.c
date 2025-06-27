@@ -2106,6 +2106,14 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
             else
                 return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
         }
+		//GatoCityParkN - Thermae or Hortus Publicus 
+		if (mapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && mapNum == MAP_NUM(MAP_GATO_CITY_PARK_N))
+        {
+            if (IsGatoCityParkNThermae(FALSE))
+                return StringCopy(dest, sMapName_THERMAE);
+            else
+                return StringCopy(dest, sMapName_HORTVS_PVBLICVS);
+        }
 
 
 		//Default Map - Should never be reached

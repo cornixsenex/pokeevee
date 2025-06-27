@@ -4368,6 +4368,14 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
         else
             return MAPSEC_VILLAE_RUSTICAE;
 	}
+	//GatoCityParkN - Thermae or Hortus Publicus 
+	if (mapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && mapNum == MAP_NUM(MAP_GATO_CITY_PARK_N))
+	{
+        if (IsGatoCityParkNThermae(FALSE)) 
+            return MAPSEC_THERMAE;
+        else
+            return MAPSEC_HORTUS_PUBLICUS;
+	}
 
    
    //Other Maps Go Here
@@ -4939,6 +4947,14 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
             return MUS_RG_SEVII_67;
         else
             return MUS_RG_ROUTE1;
+	}
+	//GatoCityParkN - Thermae or Hortus Publicus
+	if (mapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && mapNum == MAP_NUM(MAP_GATO_CITY_PARK_N))
+	{
+        if (IsGatoCityParkNThermae(FALSE)) 
+            return MUS_FOTM;
+        else
+            return MUS_XXPLOSIVE;
 	}
 
 	//Default SHOULD NEVER BE REACHED

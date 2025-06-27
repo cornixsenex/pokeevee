@@ -2,7 +2,7 @@
   "id": "MAP_TROY_SE",
   "name": "TroySE",
   "layout": "LAYOUT_TROY_SE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_GSC_ROUTE38",
   "region_map_section": "MAPSEC_ILIUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

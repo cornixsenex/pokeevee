@@ -1328,6 +1328,14 @@ static void LoadMapNamePopUpWindowBg(void)
 			else 
 				regionMapSectionId = MAPSEC_VILLAE_RUSTICAE;
 		}
+		//GatoCityParkN - Thermae or Hortus Publicus 
+		if (mapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && mapNum == MAP_NUM(MAP_GATO_CITY_PARK_N))
+		{
+            if (IsGatoCityParkNThermae(FALSE))
+				regionMapSectionId = MAPSEC_THERMAE;
+			else 
+				regionMapSectionId = MAPSEC_HORTUS_PUBLICUS;
+		}
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}

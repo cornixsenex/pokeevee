@@ -6058,5 +6058,11 @@ bool32 IsSanjoRockFillerSabinaNova_F(void)
     return IsSanjoRockFillerSabinaNova(FALSE);
 }
 
+bool32 IsGatoCityParkNThermae_F(void)
+{
+    return IsGatoCityParkNThermae(FALSE);
+}
+
+
 
 

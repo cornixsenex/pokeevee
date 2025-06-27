@@ -48,6 +48,79 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "GatoCityParkN_Script_Transition_Thermae"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "GatoCityParkN_Script_Transition_Thermae"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "GatoCityParkN_Script_Transition_Thermae"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "GatoCityParkN_Script_Transition_Thermae"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "GatoCityParkN_Script_Transition_HortusPublicus"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "GatoCityParkN_Script_Transition_HortusPublicus"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "GatoCityParkN_Script_Transition_HortusPublicus"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "GatoCityParkN_Script_Transition_HortusPublicus"
+    }
+  ],
   "bg_events": []
 }
