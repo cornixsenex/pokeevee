@@ -1023,8 +1023,10 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Lake Ira - Suppress from Willow, 
 				(! (destMapGroup == MAP_GROUP(MAP_LAKE_IRA) && destMapNum == MAP_NUM(MAP_LAKE_IRA) && y < 28 ) ) &&
 				//Dest: Silvan Woods - Suppres from SilvanFiller
-				(! (destMapGroup == MAP_GROUP(MAP_SILVAN_WOODS) && destMapNum == MAP_NUM(MAP_SILVAN_WOODS) && x < 1 && y > 29 ) )
-				)
+				(! (destMapGroup == MAP_GROUP(MAP_SILVAN_WOODS) && destMapNum == MAP_NUM(MAP_SILVAN_WOODS) && x < 1 && y > 29 ) ) &&
+                //Dest: GatoParkN - Suppress from GatoPark as Hortus Publicus continues
+                (! (destMapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && destMapNum == MAP_NUM(MAP_GATO_CITY_PARK_N) ) )
+                )
 					ShowMapNamePopup();
 			
 		}
@@ -1039,7 +1041,9 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Willow - Suprres from Lake Ira
 				(! (destMapGroup == MAP_GROUP(MAP_WILLOW) && destMapNum == MAP_NUM(MAP_WILLOW) && x < 0) ) &&
 				//Dest: Silvan Filler - Suppress from SilvanWoods
-				(! (destMapGroup == MAP_GROUP(MAP_BULBUS_SILVAN_FILLER) && destMapNum == MAP_NUM(MAP_BULBUS_SILVAN_FILLER) && x > 22 ) )
+				(! (destMapGroup == MAP_GROUP(MAP_BULBUS_SILVAN_FILLER) && destMapNum == MAP_NUM(MAP_BULBUS_SILVAN_FILLER) && x > 22 ) ) &&
+                //Dest: GatoCityPark - Suppress from GatoCityParkN
+				(! (destMapGroup == MAP_GROUP(MAP_GATO_CITY_PARK) && destMapNum == MAP_NUM(MAP_GATO_CITY_PARK) && y < 3 ) )
 				)
 					ShowMapNamePopup();
 		}

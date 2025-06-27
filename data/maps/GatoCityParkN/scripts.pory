@@ -16,6 +16,15 @@ mapscripts GatoCityParkN_MapScripts {
 		}
 	}
 
+    MAP_SCRIPT_ON_RESUME {
+        call (GatoCityParkN_Script_SetupAshGrass)
+    }
+
+}
+
+script GatoCityParkN_Script_SetupAshGrass {
+    setstepcallback (STEP_CB_ASH)
+    return
 }
 
 script GatoCityParkN_Script_Transition_Thermae {

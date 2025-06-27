@@ -1,6 +1,8 @@
 GatoCityParkN_MapScripts::
 # 8 "data/maps/GatoCityParkN/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, GatoCityParkN_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 19 "data/maps/GatoCityParkN/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, GatoCityParkN_MapScripts_MAP_SCRIPT_ON_RESUME
 	.byte 0
 
 GatoCityParkN_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -18,23 +20,34 @@ GatoCityParkN_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	setvar VAR_TEMP_5, 1
 	return
 
+GatoCityParkN_MapScripts_MAP_SCRIPT_ON_RESUME:
+# 20 "data/maps/GatoCityParkN/scripts.pory"
+	call GatoCityParkN_Script_SetupAshGrass
+	return
+
+
+GatoCityParkN_Script_SetupAshGrass::
+# 26 "data/maps/GatoCityParkN/scripts.pory"
+	setstepcallback STEP_CB_ASH
+	return
+
 
 GatoCityParkN_Script_Transition_Thermae::
-# 22 "data/maps/GatoCityParkN/scripts.pory"
+# 31 "data/maps/GatoCityParkN/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 23 "data/maps/GatoCityParkN/scripts.pory"
+# 32 "data/maps/GatoCityParkN/scripts.pory"
 	special TransitionMapMusic
-# 24 "data/maps/GatoCityParkN/scripts.pory"
+# 33 "data/maps/GatoCityParkN/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 GatoCityParkN_Script_Transition_HortusPublicus::
-# 28 "data/maps/GatoCityParkN/scripts.pory"
+# 37 "data/maps/GatoCityParkN/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 29 "data/maps/GatoCityParkN/scripts.pory"
+# 38 "data/maps/GatoCityParkN/scripts.pory"
 	special TransitionMapMusic
-# 30 "data/maps/GatoCityParkN/scripts.pory"
+# 39 "data/maps/GatoCityParkN/scripts.pory"
 	special ShowMapNamePopup
 	return
 
