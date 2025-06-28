@@ -133,7 +133,7 @@ u32 GetDynamicMapSec_MareWW(bool32 useWarpInfo);
 u32 GetDynamicMapSec_CityClara(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareW(bool32 useWarpInfo);
 u32 GetDynamicMapSec_SRoute18(bool32 useWarpInfo);
-bool32 IsMareS5MareTropicum(bool32 useWarpInfo);
+bool32 GetDynamicMapSec_MareS5(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route4(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route6(bool32 useWarpInfo);
 u32 GetDynamicMapSec_Route7(bool32 useWarpInfo);

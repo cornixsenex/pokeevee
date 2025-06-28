@@ -606,7 +606,7 @@ gSpecials::
 	def_special GetDynamicMapSec_CityClara_F
 	def_special GetDynamicMapSec_MareW_F
 	def_special GetDynamicMapSec_SRoute18_F
-	def_special IsMareS5MareTropicum_F
+	def_special GetDynamicMapSec_MareS5_F
 	def_special GetDynamicMapSec_Route4_F
 	def_special GetDynamicMapSec_Route6_F
 	def_special GetDynamicMapSec_Route7_F

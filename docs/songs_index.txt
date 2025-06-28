@@ -15,7 +15,7 @@ Sinus Camelus
 Cava Cameli
 Silva & Silva Profunda
 Castalia
-Sinus Clara
+Sinus Clarus
 Via Fidelium
 Sinus Pacificus
 Via Litoralis
@@ -141,7 +141,7 @@ Snow Route                                                        #
 
 ****Relaxing Chill places - Piano 'boring' stuff                   
 School                                                            # MUS_SCHOOL
-Sinus Clara                                                       # MUS_LILYCOVE_MUSEUM
+Sinus Clarus                                                       # MUS_LILYCOVE_MUSEUM
 Sinus Pacificus                                                   # MUS_RG_SS_ANNE
 Villa Vivaria                                                     # MUS_RG_ROUTE3 #IDK
 Villa Vallis                                                      # MUS_RG_CINNABAR #IDK

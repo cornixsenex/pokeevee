@@ -1835,10 +1835,18 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
         //MareS5
 		if (mapGroup == MAP_GROUP(MAP_MARE_S5) && mapNum == MAP_NUM(MAP_MARE_S5))
 		{
-			if (IsMareS5MareTropicum(FALSE))
-                return StringCopy(dest, sMapName_MARE_TROPICVM);
-            else
-                return StringCopy(dest, sMapName_ACTA_ECHONA);
+			n = GetDynamicMapSec_MareS5(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_ACTA_ECHONA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_TROPICVM);
+				case 3:
+					return StringCopy(dest, sMapName_ISLA_PINEA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+            }
         }
 		//Route4
 		if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))
@@ -3715,10 +3723,11 @@ u32 GetDynamicMapSec_SRoute18(bool32 useWarpInfo)
 		return 4;
 }
 
-bool32 IsMareS5MareTropicum(bool32 useWarpInfo)
+bool32 GetDynamicMapSec_MareS5(bool32 useWarpInfo)
 {
 	//1: Acta Echona
 	//2: Mare Tropicum
+    //3: Isla Pina
 	
     s16 x, y;
     if (useWarpInfo) 
@@ -3739,9 +3748,19 @@ bool32 IsMareS5MareTropicum(bool32 useWarpInfo)
 		(y == 3 && x < 7) ||
 		(y == 4 && x < 6)
 		)
-		return FALSE;
+		return 1;
+    //Isla Pina - 3
+    else if
+        (
+        (x < 1 && y > 30 && y < 57) ||
+        (x == 1 && y > 32 && y < 54) ||
+        (x == 1 && y > 35 && y < 51) ||
+        (x == 1 && y > 37 && y < 49) 
+        )
+        return 3;
+    //Mare Tropicum is Default
 	else 
-		return TRUE;
+		return 2;
 }
 	
 u32 GetDynamicMapSec_Route4(bool32 useWarpInfo)

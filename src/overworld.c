@@ -4108,13 +4108,20 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-    //MareS5 - Mare Tropicum or Acta Echona
+    //MareS5 - Mare Tropicum or Acta Echona or Isla Pina
 	if (mapGroup == MAP_GROUP(MAP_MARE_S5) && mapNum == MAP_NUM(MAP_MARE_S5)) 
 	{
-		if (IsMareS5MareTropicum(FALSE))
-			return MAPSEC_MARE_TROPICUM;
-		else //Everywhere else
-			return MAPSEC_ACTA_ECHONA;
+		n = GetDynamicMapSec_MareS5(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_ACTA_ECHONA;
+			case 2:
+				return MAPSEC_MARE_TROPICUM;
+			case 3:
+				return MAPSEC_ISLA_PINEA;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
 	}
 	//Route4
 	if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))
@@ -4626,33 +4633,40 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 	//SRoute18
 	if (mapGroup == MAP_GROUP(MAP_SROUTE18) && mapNum == MAP_NUM(MAP_SROUTE18))
 	{
-		n = GetDynamicMapSec_SRoute18(useWarpInfo);
+		n = GetDynamicMapSec_MareS5(useWarpInfo);
 		switch (n) {
-			//Sinus Pacificus
-			case 1:
-				return MUS_RG_SS_ANNE;
-			//Castrum
-			case 2:
-				return MUS_B_DOME_LOBBY;
-			//Sinus Clarus
-			case 3:
-				return MUS_LILYCOVE_MUSEUM;
-			//Mare Internum
-			case 4:
-				return MUS_DEWFORD;
-			//fallback
-			default:
-				return MUS_CANTINA;
-		}
+            //1: Sinus Pacificus
+            case 1:
+                return MUS_RG_SS_ANNE;
+            //2: Castrum
+            case 2:
+                return MUS_B_DOME_LOBBY;
+            //3: Sinus Clarus
+            case 3:
+                return MUS_LILYCOVE_MUSEUM;
+            //4: Mare Internum
+            case 4:
+                return MUS_DEWFORD;
+        }
 	}
     //MareS5 - Mare Tropicum or Acta Echona
 	if (mapGroup == MAP_GROUP(MAP_MARE_S5) && mapNum == MAP_NUM(MAP_MARE_S5)) 
 	{
-        //Mare Tropicum
-		if (IsMareS5MareTropicum(useWarpInfo))
-			return MUS_SURF;
-		else //Everywhere else = Acta Echona
-			return MUS_RG_SS_ANNE;
+		n = GetDynamicMapSec_MareS5(useWarpInfo);
+		switch (n) {
+			//Acta Echona
+			case 1:
+				return MUS_RG_SS_ANNE;
+			//Mare Tropicum
+			case 2:
+				return MUS_SURF;
+			//Isla Pina
+			case 3:
+				return MUS_PETALBURG;
+			//fallback
+			default:
+				return MUS_CANTINA;
+		}
 	}
 	//Route4
 	if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))

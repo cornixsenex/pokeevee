@@ -1016,10 +1016,20 @@ static void LoadMapNamePopUpWindowBg(void)
         //MareS5
 		if (mapGroup == MAP_GROUP(MAP_MARE_S5) && mapNum == MAP_NUM(MAP_MARE_S5))
 		{
-			if (IsMareS5MareTropicum(FALSE))
-				regionMapSectionId = MAPSEC_MARE_TROPICUM;
-			else
-				regionMapSectionId = MAPSEC_ACTA_ECHONA;
+			n = GetDynamicMapSec_MareS5(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_ACTA_ECHONA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_ISLA_PINEA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
 		} 
 		//Route4
 		if (mapGroup == MAP_GROUP(MAP_ROUTE4) && mapNum == MAP_NUM(MAP_ROUTE4))

@@ -5998,9 +5998,9 @@ u32 GetDynamicMapSec_SRoute18_F(void)
     return GetDynamicMapSec_SRoute18(FALSE);
 }
 
-bool32 IsMareS5MareTropicum_F(void)
+bool32 GetDynamicMapSec_MareS5_F(void)
 {
-    return IsMareS5MareTropicum(FALSE);
+    return GetDynamicMapSec_MareS5(FALSE);
 }
 
 u32 GetDynamicMapSec_Route4_F(void)
