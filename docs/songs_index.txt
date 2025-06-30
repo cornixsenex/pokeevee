@@ -188,7 +188,7 @@ Mare Tropicum                                                     # MUS_SURF
 Mare Subtropicum                                                  # MUS_LILYCOVE
 Mare Occidens                                                     # MUS_ABANDONED_SHIP
 Mare Oriens                                                       # MUS_CAVE_OF_ORIGIN
-Mare Mortuorum                                                    #MUS_SEALED_CHAMBER
+Mare Mortuorum                                                    #MUS_SEALED_CHAMBER, POKE_TOWER
 River Drake  / Lake Drake                                         # MUS_RG_SEVII_ROUTE
 
 ****OTHER - specials                                              
