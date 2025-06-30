@@ -5827,7 +5827,7 @@
       "width": 86,
       "height": 86,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Pacifidlog",
+      "secondary_tileset": "gTileset_BigIsland",
       "border_filepath": "data/layouts/MareS3/border.bin",
       "blockdata_filepath": "data/layouts/MareS3/map.bin"
     },
@@ -6047,7 +6047,7 @@
       "width": 16,
       "height": 60,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_BigIsland",
       "border_filepath": "data/layouts/BigIslandFillerW/border.bin",
       "blockdata_filepath": "data/layouts/BigIslandFillerW/map.bin"
     },
