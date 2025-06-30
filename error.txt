@@ -1,0 +1,911 @@
+/usr/lib/gcc/arm-none-eabi/14.2.0/cc1 -quiet <flags> -o build/modern/src/graphics.o src/graphics.c
+In file included from src/graphics.c:1299:
+src/data/graphics/trainers.h:5:11: error: conflicting types for 'gTrainerPalette_Hiker'; have 'const u16[]' {aka 'const short unsigned int[]'}
+    5 | const u16 gTrainerPalette_Hiker[] = INCBIN_U16("graphics/trainers/front_pics/hiker.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+In file included from src/graphics.c:2:
+include/graphics.h:223:18: note: previous declaration of 'gTrainerPalette_Hiker' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  223 | extern const u32 gTrainerPalette_Hiker[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:8:11: error: conflicting types for 'gTrainerPalette_AquaGruntM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+    8 | const u16 gTrainerPalette_AquaGruntM[] = INCBIN_U16("graphics/trainers/front_pics/aqua_grunt_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:224:18: note: previous declaration of 'gTrainerPalette_AquaGruntM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  224 | extern const u32 gTrainerPalette_AquaGruntM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:11:11: error: conflicting types for 'gTrainerPalette_PokemonBreederF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   11 | const u16 gTrainerPalette_PokemonBreederF[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_breeder_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:225:18: note: previous declaration of 'gTrainerPalette_PokemonBreederF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  225 | extern const u32 gTrainerPalette_PokemonBreederF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:14:11: error: conflicting types for 'gTrainerPalette_CoolTrainerM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   14 | const u16 gTrainerPalette_CoolTrainerM[] = INCBIN_U16("graphics/trainers/front_pics/cooltrainer_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:226:18: note: previous declaration of 'gTrainerPalette_CoolTrainerM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  226 | extern const u32 gTrainerPalette_CoolTrainerM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:17:11: error: conflicting types for 'gTrainerPalette_BirdKeeper'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   17 | const u16 gTrainerPalette_BirdKeeper[] = INCBIN_U16("graphics/trainers/front_pics/bird_keeper.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:227:18: note: previous declaration of 'gTrainerPalette_BirdKeeper' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  227 | extern const u32 gTrainerPalette_BirdKeeper[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:20:11: error: conflicting types for 'gTrainerPalette_Collector'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   20 | const u16 gTrainerPalette_Collector[] = INCBIN_U16("graphics/trainers/front_pics/collector.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:228:18: note: previous declaration of 'gTrainerPalette_Collector' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  228 | extern const u32 gTrainerPalette_Collector[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:23:11: error: conflicting types for 'gTrainerPalette_AquaGruntF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   23 | const u16 gTrainerPalette_AquaGruntF[] = INCBIN_U16("graphics/trainers/front_pics/aqua_grunt_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:229:18: note: previous declaration of 'gTrainerPalette_AquaGruntF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  229 | extern const u32 gTrainerPalette_AquaGruntF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:26:11: error: conflicting types for 'gTrainerPalette_SwimmerM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   26 | const u16 gTrainerPalette_SwimmerM[] = INCBIN_U16("graphics/trainers/front_pics/swimmer_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:230:18: note: previous declaration of 'gTrainerPalette_SwimmerM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  230 | extern const u32 gTrainerPalette_SwimmerM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:29:11: error: conflicting types for 'gTrainerPalette_MagmaGruntM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   29 | const u16 gTrainerPalette_MagmaGruntM[] = INCBIN_U16("graphics/trainers/front_pics/magma_grunt_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:231:18: note: previous declaration of 'gTrainerPalette_MagmaGruntM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  231 | extern const u32 gTrainerPalette_MagmaGruntM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:32:11: error: conflicting types for 'gTrainerPalette_ExpertM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   32 | const u16 gTrainerPalette_ExpertM[] = INCBIN_U16("graphics/trainers/front_pics/expert_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:232:18: note: previous declaration of 'gTrainerPalette_ExpertM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  232 | extern const u32 gTrainerPalette_ExpertM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:35:11: error: conflicting types for 'gTrainerPalette_AquaAdminM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   35 | const u16 gTrainerPalette_AquaAdminM[] = INCBIN_U16("graphics/trainers/front_pics/aqua_admin_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:233:18: note: previous declaration of 'gTrainerPalette_AquaAdminM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  233 | extern const u32 gTrainerPalette_AquaAdminM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:38:11: error: conflicting types for 'gTrainerPalette_BlackBelt'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   38 | const u16 gTrainerPalette_BlackBelt[] = INCBIN_U16("graphics/trainers/front_pics/black_belt.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:234:18: note: previous declaration of 'gTrainerPalette_BlackBelt' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  234 | extern const u32 gTrainerPalette_BlackBelt[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:41:11: error: conflicting types for 'gTrainerPalette_AquaAdminF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   41 | const u16 gTrainerPalette_AquaAdminF[] = INCBIN_U16("graphics/trainers/front_pics/aqua_admin_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:235:18: note: previous declaration of 'gTrainerPalette_AquaAdminF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  235 | extern const u32 gTrainerPalette_AquaAdminF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:44:11: error: conflicting types for 'gTrainerPalette_AquaLeaderArchie'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   44 | const u16 gTrainerPalette_AquaLeaderArchie[] = INCBIN_U16("graphics/trainers/front_pics/aqua_leader_archie.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:236:18: note: previous declaration of 'gTrainerPalette_AquaLeaderArchie' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  236 | extern const u32 gTrainerPalette_AquaLeaderArchie[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:47:11: error: conflicting types for 'gTrainerPalette_HexManiac'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   47 | const u16 gTrainerPalette_HexManiac[] = INCBIN_U16("graphics/trainers/front_pics/hex_maniac.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:237:18: note: previous declaration of 'gTrainerPalette_HexManiac' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  237 | extern const u32 gTrainerPalette_HexManiac[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:50:11: error: conflicting types for 'gTrainerPalette_AromaLady'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   50 | const u16 gTrainerPalette_AromaLady[] = INCBIN_U16("graphics/trainers/front_pics/aroma_lady.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:238:18: note: previous declaration of 'gTrainerPalette_AromaLady' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  238 | extern const u32 gTrainerPalette_AromaLady[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:53:11: error: conflicting types for 'gTrainerPalette_RuinManiac'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   53 | const u16 gTrainerPalette_RuinManiac[] = INCBIN_U16("graphics/trainers/front_pics/ruin_maniac.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:239:18: note: previous declaration of 'gTrainerPalette_RuinManiac' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  239 | extern const u32 gTrainerPalette_RuinManiac[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:56:11: error: conflicting types for 'gTrainerPalette_Interviewer'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   56 | const u16 gTrainerPalette_Interviewer[] = INCBIN_U16("graphics/trainers/front_pics/interviewer.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:240:18: note: previous declaration of 'gTrainerPalette_Interviewer' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  240 | extern const u32 gTrainerPalette_Interviewer[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:59:11: error: conflicting types for 'gTrainerPalette_TuberF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   59 | const u16 gTrainerPalette_TuberF[] = INCBIN_U16("graphics/trainers/front_pics/tuber_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:241:18: note: previous declaration of 'gTrainerPalette_TuberF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  241 | extern const u32 gTrainerPalette_TuberF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:62:11: error: conflicting types for 'gTrainerPalette_TuberM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   62 | const u16 gTrainerPalette_TuberM[] = INCBIN_U16("graphics/trainers/front_pics/tuber_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:242:18: note: previous declaration of 'gTrainerPalette_TuberM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  242 | extern const u32 gTrainerPalette_TuberM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:65:11: error: conflicting types for 'gTrainerPalette_CoolTrainerF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   65 | const u16 gTrainerPalette_CoolTrainerF[] = INCBIN_U16("graphics/trainers/front_pics/cooltrainer_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:243:18: note: previous declaration of 'gTrainerPalette_CoolTrainerF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  243 | extern const u32 gTrainerPalette_CoolTrainerF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:68:11: error: conflicting types for 'gTrainerPalette_Lady'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   68 | const u16 gTrainerPalette_Lady[] = INCBIN_U16("graphics/trainers/front_pics/lady.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~
+include/graphics.h:244:18: note: previous declaration of 'gTrainerPalette_Lady' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  244 | extern const u32 gTrainerPalette_Lady[];
+      |                  ^~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:71:11: error: conflicting types for 'gTrainerPalette_Beauty'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   71 | const u16 gTrainerPalette_Beauty[] = INCBIN_U16("graphics/trainers/front_pics/beauty.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:245:18: note: previous declaration of 'gTrainerPalette_Beauty' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  245 | extern const u32 gTrainerPalette_Beauty[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:74:11: error: conflicting types for 'gTrainerPalette_RichBoy'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   74 | const u16 gTrainerPalette_RichBoy[] = INCBIN_U16("graphics/trainers/front_pics/rich_boy.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:246:18: note: previous declaration of 'gTrainerPalette_RichBoy' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  246 | extern const u32 gTrainerPalette_RichBoy[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:77:11: error: conflicting types for 'gTrainerPalette_ExpertF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   77 | const u16 gTrainerPalette_ExpertF[] = INCBIN_U16("graphics/trainers/front_pics/expert_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:247:18: note: previous declaration of 'gTrainerPalette_ExpertF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  247 | extern const u32 gTrainerPalette_ExpertF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:80:11: error: conflicting types for 'gTrainerPalette_Pokemaniac'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   80 | const u16 gTrainerPalette_Pokemaniac[] = INCBIN_U16("graphics/trainers/front_pics/pokemaniac.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:248:18: note: previous declaration of 'gTrainerPalette_Pokemaniac' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  248 | extern const u32 gTrainerPalette_Pokemaniac[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:83:11: error: conflicting types for 'gTrainerPalette_MagmaGruntF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   83 | const u16 gTrainerPalette_MagmaGruntF[] = INCBIN_U16("graphics/trainers/front_pics/magma_grunt_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:249:18: note: previous declaration of 'gTrainerPalette_MagmaGruntF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  249 | extern const u32 gTrainerPalette_MagmaGruntF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:86:11: error: conflicting types for 'gTrainerPalette_Guitarist'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   86 | const u16 gTrainerPalette_Guitarist[] = INCBIN_U16("graphics/trainers/front_pics/guitarist.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:250:18: note: previous declaration of 'gTrainerPalette_Guitarist' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  250 | extern const u32 gTrainerPalette_Guitarist[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:89:11: error: conflicting types for 'gTrainerPalette_Kindler'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   89 | const u16 gTrainerPalette_Kindler[] = INCBIN_U16("graphics/trainers/front_pics/kindler.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:251:18: note: previous declaration of 'gTrainerPalette_Kindler' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  251 | extern const u32 gTrainerPalette_Kindler[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:92:11: error: conflicting types for 'gTrainerPalette_Camper'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   92 | const u16 gTrainerPalette_Camper[] = INCBIN_U16("graphics/trainers/front_pics/camper.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:252:18: note: previous declaration of 'gTrainerPalette_Camper' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  252 | extern const u32 gTrainerPalette_Camper[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:95:11: error: conflicting types for 'gTrainerPalette_Picnicker'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   95 | const u16 gTrainerPalette_Picnicker[] = INCBIN_U16("graphics/trainers/front_pics/picnicker.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:253:18: note: previous declaration of 'gTrainerPalette_Picnicker' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  253 | extern const u32 gTrainerPalette_Picnicker[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:98:11: error: conflicting types for 'gTrainerPalette_BugManiac'; have 'const u16[]' {aka 'const short unsigned int[]'}
+   98 | const u16 gTrainerPalette_BugManiac[] = INCBIN_U16("graphics/trainers/front_pics/bug_maniac.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:254:18: note: previous declaration of 'gTrainerPalette_BugManiac' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  254 | extern const u32 gTrainerPalette_BugManiac[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:101:11: error: conflicting types for 'gTrainerPalette_PokemonBreederM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  101 | const u16 gTrainerPalette_PokemonBreederM[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_breeder_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:255:18: note: previous declaration of 'gTrainerPalette_PokemonBreederM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  255 | extern const u32 gTrainerPalette_PokemonBreederM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:104:11: error: conflicting types for 'gTrainerPalette_PsychicM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  104 | const u16 gTrainerPalette_PsychicM[] = INCBIN_U16("graphics/trainers/front_pics/psychic_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:256:18: note: previous declaration of 'gTrainerPalette_PsychicM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  256 | extern const u32 gTrainerPalette_PsychicM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:107:11: error: conflicting types for 'gTrainerPalette_PsychicF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  107 | const u16 gTrainerPalette_PsychicF[] = INCBIN_U16("graphics/trainers/front_pics/psychic_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:257:18: note: previous declaration of 'gTrainerPalette_PsychicF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  257 | extern const u32 gTrainerPalette_PsychicF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:110:11: error: conflicting types for 'gTrainerPalette_Gentleman'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  110 | const u16 gTrainerPalette_Gentleman[] = INCBIN_U16("graphics/trainers/front_pics/gentleman.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:258:18: note: previous declaration of 'gTrainerPalette_Gentleman' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  258 | extern const u32 gTrainerPalette_Gentleman[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:113:11: error: conflicting types for 'gTrainerPalette_EliteFourSidney'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  113 | const u16 gTrainerPalette_EliteFourSidney[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_sidney.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:259:18: note: previous declaration of 'gTrainerPalette_EliteFourSidney' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  259 | extern const u32 gTrainerPalette_EliteFourSidney[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:116:11: error: conflicting types for 'gTrainerPalette_EliteFourPhoebe'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  116 | const u16 gTrainerPalette_EliteFourPhoebe[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_phoebe.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:260:18: note: previous declaration of 'gTrainerPalette_EliteFourPhoebe' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  260 | extern const u32 gTrainerPalette_EliteFourPhoebe[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:119:11: error: conflicting types for 'gTrainerPalette_EliteFourGlacia'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  119 | const u16 gTrainerPalette_EliteFourGlacia[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_glacia.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:261:18: note: previous declaration of 'gTrainerPalette_EliteFourGlacia' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  261 | extern const u32 gTrainerPalette_EliteFourGlacia[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:122:11: error: conflicting types for 'gTrainerPalette_EliteFourDrake'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  122 | const u16 gTrainerPalette_EliteFourDrake[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_drake.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:262:18: note: previous declaration of 'gTrainerPalette_EliteFourDrake' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  262 | extern const u32 gTrainerPalette_EliteFourDrake[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:125:11: error: conflicting types for 'gTrainerPalette_LeaderRoxanne'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  125 | const u16 gTrainerPalette_LeaderRoxanne[] = INCBIN_U16("graphics/trainers/front_pics/leader_roxanne.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:263:18: note: previous declaration of 'gTrainerPalette_LeaderRoxanne' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  263 | extern const u32 gTrainerPalette_LeaderRoxanne[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:128:11: error: conflicting types for 'gTrainerPalette_LeaderBrawly'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  128 | const u16 gTrainerPalette_LeaderBrawly[] = INCBIN_U16("graphics/trainers/front_pics/leader_brawly.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:264:18: note: previous declaration of 'gTrainerPalette_LeaderBrawly' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  264 | extern const u32 gTrainerPalette_LeaderBrawly[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:131:11: error: conflicting types for 'gTrainerPalette_LeaderWattson'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  131 | const u16 gTrainerPalette_LeaderWattson[] = INCBIN_U16("graphics/trainers/front_pics/leader_wattson.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:265:18: note: previous declaration of 'gTrainerPalette_LeaderWattson' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  265 | extern const u32 gTrainerPalette_LeaderWattson[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:134:11: error: conflicting types for 'gTrainerPalette_LeaderFlannery'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  134 | const u16 gTrainerPalette_LeaderFlannery[] = INCBIN_U16("graphics/trainers/front_pics/leader_flannery.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:266:18: note: previous declaration of 'gTrainerPalette_LeaderFlannery' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  266 | extern const u32 gTrainerPalette_LeaderFlannery[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:137:11: error: conflicting types for 'gTrainerPalette_LeaderNorman'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  137 | const u16 gTrainerPalette_LeaderNorman[] = INCBIN_U16("graphics/trainers/front_pics/leader_norman.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:267:18: note: previous declaration of 'gTrainerPalette_LeaderNorman' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  267 | extern const u32 gTrainerPalette_LeaderNorman[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:140:11: error: conflicting types for 'gTrainerPalette_LeaderWinona'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  140 | const u16 gTrainerPalette_LeaderWinona[] = INCBIN_U16("graphics/trainers/front_pics/leader_winona.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:268:18: note: previous declaration of 'gTrainerPalette_LeaderWinona' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  268 | extern const u32 gTrainerPalette_LeaderWinona[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:143:11: error: conflicting types for 'gTrainerPalette_LeaderTateAndLiza'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  143 | const u16 gTrainerPalette_LeaderTateAndLiza[] = INCBIN_U16("graphics/trainers/front_pics/leader_tate_and_liza.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:269:18: note: previous declaration of 'gTrainerPalette_LeaderTateAndLiza' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  269 | extern const u32 gTrainerPalette_LeaderTateAndLiza[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:146:11: error: conflicting types for 'gTrainerPalette_LeaderJuan'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  146 | const u16 gTrainerPalette_LeaderJuan[] = INCBIN_U16("graphics/trainers/front_pics/leader_juan.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:270:18: note: previous declaration of 'gTrainerPalette_LeaderJuan' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  270 | extern const u32 gTrainerPalette_LeaderJuan[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:149:11: error: conflicting types for 'gTrainerPalette_SchoolKidM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  149 | const u16 gTrainerPalette_SchoolKidM[] = INCBIN_U16("graphics/trainers/front_pics/school_kid_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:271:18: note: previous declaration of 'gTrainerPalette_SchoolKidM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  271 | extern const u32 gTrainerPalette_SchoolKidM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:152:11: error: conflicting types for 'gTrainerPalette_SchoolKidF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  152 | const u16 gTrainerPalette_SchoolKidF[] = INCBIN_U16("graphics/trainers/front_pics/school_kid_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:272:18: note: previous declaration of 'gTrainerPalette_SchoolKidF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  272 | extern const u32 gTrainerPalette_SchoolKidF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:155:11: error: conflicting types for 'gTrainerPalette_SrAndJr'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  155 | const u16 gTrainerPalette_SrAndJr[] = INCBIN_U16("graphics/trainers/front_pics/sr_and_jr.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:273:18: note: previous declaration of 'gTrainerPalette_SrAndJr' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  273 | extern const u32 gTrainerPalette_SrAndJr[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:158:11: error: conflicting types for 'gTrainerPalette_PokefanM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  158 | const u16 gTrainerPalette_PokefanM[] = INCBIN_U16("graphics/trainers/front_pics/pokefan_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:274:18: note: previous declaration of 'gTrainerPalette_PokefanM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  274 | extern const u32 gTrainerPalette_PokefanM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:161:11: error: conflicting types for 'gTrainerPalette_PokefanF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  161 | const u16 gTrainerPalette_PokefanF[] = INCBIN_U16("graphics/trainers/front_pics/pokefan_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:275:18: note: previous declaration of 'gTrainerPalette_PokefanF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  275 | extern const u32 gTrainerPalette_PokefanF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:164:11: error: conflicting types for 'gTrainerPalette_Youngster'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  164 | const u16 gTrainerPalette_Youngster[] = INCBIN_U16("graphics/trainers/front_pics/youngster.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:276:18: note: previous declaration of 'gTrainerPalette_Youngster' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  276 | extern const u32 gTrainerPalette_Youngster[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:167:11: error: conflicting types for 'gTrainerPalette_ChampionWallace'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  167 | const u16 gTrainerPalette_ChampionWallace[] = INCBIN_U16("graphics/trainers/front_pics/champion_wallace.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:277:18: note: previous declaration of 'gTrainerPalette_ChampionWallace' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  277 | extern const u32 gTrainerPalette_ChampionWallace[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:170:11: error: conflicting types for 'gTrainerPalette_Fisherman'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  170 | const u16 gTrainerPalette_Fisherman[] = INCBIN_U16("graphics/trainers/front_pics/fisherman.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:278:18: note: previous declaration of 'gTrainerPalette_Fisherman' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  278 | extern const u32 gTrainerPalette_Fisherman[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:173:11: error: conflicting types for 'gTrainerPalette_CyclingTriathleteM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  173 | const u16 gTrainerPalette_CyclingTriathleteM[] = INCBIN_U16("graphics/trainers/front_pics/cycling_triathlete_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:279:18: note: previous declaration of 'gTrainerPalette_CyclingTriathleteM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  279 | extern const u32 gTrainerPalette_CyclingTriathleteM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:176:11: error: conflicting types for 'gTrainerPalette_CyclingTriathleteF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  176 | const u16 gTrainerPalette_CyclingTriathleteF[] = INCBIN_U16("graphics/trainers/front_pics/cycling_triathlete_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:280:18: note: previous declaration of 'gTrainerPalette_CyclingTriathleteF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  280 | extern const u32 gTrainerPalette_CyclingTriathleteF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:179:11: error: conflicting types for 'gTrainerPalette_RunningTriathleteM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  179 | const u16 gTrainerPalette_RunningTriathleteM[] = INCBIN_U16("graphics/trainers/front_pics/running_triathlete_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:281:18: note: previous declaration of 'gTrainerPalette_RunningTriathleteM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  281 | extern const u32 gTrainerPalette_RunningTriathleteM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:182:11: error: conflicting types for 'gTrainerPalette_RunningTriathleteF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  182 | const u16 gTrainerPalette_RunningTriathleteF[] = INCBIN_U16("graphics/trainers/front_pics/running_triathlete_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:282:18: note: previous declaration of 'gTrainerPalette_RunningTriathleteF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  282 | extern const u32 gTrainerPalette_RunningTriathleteF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:185:11: error: conflicting types for 'gTrainerPalette_SwimmingTriathleteM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  185 | const u16 gTrainerPalette_SwimmingTriathleteM[] = INCBIN_U16("graphics/trainers/front_pics/swimming_triathlete_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:283:18: note: previous declaration of 'gTrainerPalette_SwimmingTriathleteM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  283 | extern const u32 gTrainerPalette_SwimmingTriathleteM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:188:11: error: conflicting types for 'gTrainerPalette_SwimmingTriathleteF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  188 | const u16 gTrainerPalette_SwimmingTriathleteF[] = INCBIN_U16("graphics/trainers/front_pics/swimming_triathlete_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:284:18: note: previous declaration of 'gTrainerPalette_SwimmingTriathleteF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  284 | extern const u32 gTrainerPalette_SwimmingTriathleteF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:191:11: error: conflicting types for 'gTrainerPalette_DragonTamer'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  191 | const u16 gTrainerPalette_DragonTamer[] = INCBIN_U16("graphics/trainers/front_pics/dragon_tamer.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:285:18: note: previous declaration of 'gTrainerPalette_DragonTamer' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  285 | extern const u32 gTrainerPalette_DragonTamer[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:194:11: error: conflicting types for 'gTrainerPalette_NinjaBoy'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  194 | const u16 gTrainerPalette_NinjaBoy[] = INCBIN_U16("graphics/trainers/front_pics/ninja_boy.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:286:18: note: previous declaration of 'gTrainerPalette_NinjaBoy' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  286 | extern const u32 gTrainerPalette_NinjaBoy[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:197:11: error: conflicting types for 'gTrainerPalette_BattleGirl'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  197 | const u16 gTrainerPalette_BattleGirl[] = INCBIN_U16("graphics/trainers/front_pics/battle_girl.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:287:18: note: previous declaration of 'gTrainerPalette_BattleGirl' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  287 | extern const u32 gTrainerPalette_BattleGirl[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:200:11: error: conflicting types for 'gTrainerPalette_ParasolLady'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  200 | const u16 gTrainerPalette_ParasolLady[] = INCBIN_U16("graphics/trainers/front_pics/parasol_lady.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:288:18: note: previous declaration of 'gTrainerPalette_ParasolLady' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  288 | extern const u32 gTrainerPalette_ParasolLady[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:203:11: error: conflicting types for 'gTrainerPalette_SwimmerF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  203 | const u16 gTrainerPalette_SwimmerF[] = INCBIN_U16("graphics/trainers/front_pics/swimmer_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:289:18: note: previous declaration of 'gTrainerPalette_SwimmerF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  289 | extern const u32 gTrainerPalette_SwimmerF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:206:11: error: conflicting types for 'gTrainerPalette_Twins'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  206 | const u16 gTrainerPalette_Twins[] = INCBIN_U16("graphics/trainers/front_pics/twins.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:290:18: note: previous declaration of 'gTrainerPalette_Twins' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  290 | extern const u32 gTrainerPalette_Twins[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:209:11: error: conflicting types for 'gTrainerPalette_Sailor'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  209 | const u16 gTrainerPalette_Sailor[] = INCBIN_U16("graphics/trainers/front_pics/sailor.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:291:18: note: previous declaration of 'gTrainerPalette_Sailor' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  291 | extern const u32 gTrainerPalette_Sailor[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:212:11: error: conflicting types for 'gTrainerPalette_MagmaAdmin'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  212 | const u16 gTrainerPalette_MagmaAdmin[] = INCBIN_U16("graphics/trainers/front_pics/magma_admin.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:292:18: note: previous declaration of 'gTrainerPalette_MagmaAdmin' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  292 | extern const u32 gTrainerPalette_MagmaAdmin[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:215:11: error: conflicting types for 'gTrainerPalette_Wally'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  215 | const u16 gTrainerPalette_Wally[] = INCBIN_U16("graphics/trainers/palettes/wally.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:293:18: note: previous declaration of 'gTrainerPalette_Wally' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  293 | extern const u32 gTrainerPalette_Wally[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:218:11: error: conflicting types for 'gTrainerPalette_Brendan'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  218 | const u16 gTrainerPalette_Brendan[] = INCBIN_U16("graphics/trainers/palettes/brendan.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:294:18: note: previous declaration of 'gTrainerPalette_Brendan' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  294 | extern const u32 gTrainerPalette_Brendan[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:221:11: error: conflicting types for 'gTrainerPalette_May'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  221 | const u16 gTrainerPalette_May[] = INCBIN_U16("graphics/trainers/palettes/may.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~
+include/graphics.h:295:18: note: previous declaration of 'gTrainerPalette_May' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  295 | extern const u32 gTrainerPalette_May[];
+      |                  ^~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:224:11: error: conflicting types for 'gTrainerPalette_BugCatcher'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  224 | const u16 gTrainerPalette_BugCatcher[] = INCBIN_U16("graphics/trainers/front_pics/bug_catcher.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:296:18: note: previous declaration of 'gTrainerPalette_BugCatcher' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  296 | extern const u32 gTrainerPalette_BugCatcher[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:227:11: error: conflicting types for 'gTrainerPalette_PokemonRangerM'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  227 | const u16 gTrainerPalette_PokemonRangerM[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_ranger_m.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:297:18: note: previous declaration of 'gTrainerPalette_PokemonRangerM' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  297 | extern const u32 gTrainerPalette_PokemonRangerM[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:230:11: error: conflicting types for 'gTrainerPalette_PokemonRangerF'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  230 | const u16 gTrainerPalette_PokemonRangerF[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_ranger_f.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:298:18: note: previous declaration of 'gTrainerPalette_PokemonRangerF' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  298 | extern const u32 gTrainerPalette_PokemonRangerF[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:233:11: error: conflicting types for 'gTrainerPalette_MagmaLeaderMaxie'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  233 | const u16 gTrainerPalette_MagmaLeaderMaxie[] = INCBIN_U16("graphics/trainers/front_pics/magma_leader_maxie.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:299:18: note: previous declaration of 'gTrainerPalette_MagmaLeaderMaxie' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  299 | extern const u32 gTrainerPalette_MagmaLeaderMaxie[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:236:11: error: conflicting types for 'gTrainerPalette_Lass'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  236 | const u16 gTrainerPalette_Lass[] = INCBIN_U16("graphics/trainers/front_pics/lass.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~
+include/graphics.h:300:18: note: previous declaration of 'gTrainerPalette_Lass' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  300 | extern const u32 gTrainerPalette_Lass[];
+      |                  ^~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:239:11: error: conflicting types for 'gTrainerPalette_YoungCouple'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  239 | const u16 gTrainerPalette_YoungCouple[] = INCBIN_U16("graphics/trainers/front_pics/young_couple.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:301:18: note: previous declaration of 'gTrainerPalette_YoungCouple' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  301 | extern const u32 gTrainerPalette_YoungCouple[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:242:11: error: conflicting types for 'gTrainerPalette_OldCouple'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  242 | const u16 gTrainerPalette_OldCouple[] = INCBIN_U16("graphics/trainers/front_pics/old_couple.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:302:18: note: previous declaration of 'gTrainerPalette_OldCouple' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  302 | extern const u32 gTrainerPalette_OldCouple[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:245:11: error: conflicting types for 'gTrainerPalette_SisAndBro'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  245 | const u16 gTrainerPalette_SisAndBro[] = INCBIN_U16("graphics/trainers/front_pics/sis_and_bro.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:303:18: note: previous declaration of 'gTrainerPalette_SisAndBro' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  303 | extern const u32 gTrainerPalette_SisAndBro[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:248:11: error: conflicting types for 'gTrainerPalette_Steven'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  248 | const u16 gTrainerPalette_Steven[] = INCBIN_U16("graphics/trainers/front_pics/steven.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:304:18: note: previous declaration of 'gTrainerPalette_Steven' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  304 | extern const u32 gTrainerPalette_Steven[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:251:11: error: conflicting types for 'gTrainerPalette_SalonMaidenAnabel'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  251 | const u16 gTrainerPalette_SalonMaidenAnabel[] = INCBIN_U16("graphics/trainers/front_pics/salon_maiden_anabel.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:305:18: note: previous declaration of 'gTrainerPalette_SalonMaidenAnabel' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  305 | extern const u32 gTrainerPalette_SalonMaidenAnabel[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:254:11: error: conflicting types for 'gTrainerPalette_DomeAceTucker'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  254 | const u16 gTrainerPalette_DomeAceTucker[] = INCBIN_U16("graphics/trainers/front_pics/dome_ace_tucker.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:306:18: note: previous declaration of 'gTrainerPalette_DomeAceTucker' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  306 | extern const u32 gTrainerPalette_DomeAceTucker[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:257:11: error: conflicting types for 'gTrainerPalette_PalaceMavenSpenser'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  257 | const u16 gTrainerPalette_PalaceMavenSpenser[] = INCBIN_U16("graphics/trainers/front_pics/palace_maven_spenser.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:307:18: note: previous declaration of 'gTrainerPalette_PalaceMavenSpenser' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  307 | extern const u32 gTrainerPalette_PalaceMavenSpenser[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:260:11: error: conflicting types for 'gTrainerPalette_ArenaTycoonGreta'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  260 | const u16 gTrainerPalette_ArenaTycoonGreta[] = INCBIN_U16("graphics/trainers/front_pics/arena_tycoon_greta.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:308:18: note: previous declaration of 'gTrainerPalette_ArenaTycoonGreta' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  308 | extern const u32 gTrainerPalette_ArenaTycoonGreta[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:263:11: error: conflicting types for 'gTrainerPalette_FactoryHeadNoland'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  263 | const u16 gTrainerPalette_FactoryHeadNoland[] = INCBIN_U16("graphics/trainers/front_pics/factory_head_noland.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:309:18: note: previous declaration of 'gTrainerPalette_FactoryHeadNoland' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  309 | extern const u32 gTrainerPalette_FactoryHeadNoland[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:266:11: error: conflicting types for 'gTrainerPalette_PikeQueenLucy'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  266 | const u16 gTrainerPalette_PikeQueenLucy[] = INCBIN_U16("graphics/trainers/front_pics/pike_queen_lucy.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:310:18: note: previous declaration of 'gTrainerPalette_PikeQueenLucy' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  310 | extern const u32 gTrainerPalette_PikeQueenLucy[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:269:11: error: conflicting types for 'gTrainerPalette_PyramidKingBrandon'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  269 | const u16 gTrainerPalette_PyramidKingBrandon[] = INCBIN_U16("graphics/trainers/front_pics/pyramid_king_brandon.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:311:18: note: previous declaration of 'gTrainerPalette_PyramidKingBrandon' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  311 | extern const u32 gTrainerPalette_PyramidKingBrandon[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:272:11: error: conflicting types for 'gTrainerPalette_Red'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  272 | const u16 gTrainerPalette_Red[] = INCBIN_U16("graphics/trainers/front_pics/red.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~
+include/graphics.h:312:18: note: previous declaration of 'gTrainerPalette_Red' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  312 | extern const u32 gTrainerPalette_Red[];
+      |                  ^~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:275:11: error: conflicting types for 'gTrainerPalette_Leaf'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  275 | const u16 gTrainerPalette_Leaf[] = INCBIN_U16("graphics/trainers/front_pics/leaf.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~
+include/graphics.h:313:18: note: previous declaration of 'gTrainerPalette_Leaf' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  313 | extern const u32 gTrainerPalette_Leaf[];
+      |                  ^~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:278:11: error: conflicting types for 'gTrainerPalette_RubySapphireBrendan'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  278 | const u16 gTrainerPalette_RubySapphireBrendan[] = INCBIN_U16("graphics/trainers/palettes/brendan_rs.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:314:18: note: previous declaration of 'gTrainerPalette_RubySapphireBrendan' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  314 | extern const u32 gTrainerPalette_RubySapphireBrendan[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:281:11: error: conflicting types for 'gTrainerPalette_RubySapphireMay'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  281 | const u16 gTrainerPalette_RubySapphireMay[] = INCBIN_U16("graphics/trainers/palettes/may_rs.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:315:18: note: previous declaration of 'gTrainerPalette_RubySapphireMay' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  315 | extern const u32 gTrainerPalette_RubySapphireMay[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:292:11: error: conflicting types for 'gTrainerBackPicPalette_Red'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  292 | const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:383:18: note: previous declaration of 'gTrainerBackPicPalette_Red' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  383 | extern const u32 gTrainerBackPicPalette_Red[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:293:11: error: conflicting types for 'gTrainerBackPicPalette_Leaf'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  293 | const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:384:18: note: previous declaration of 'gTrainerBackPicPalette_Leaf' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  384 | extern const u32 gTrainerBackPicPalette_Leaf[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:301:11: error: conflicting types for 'gTrainerPalette_Lorelei'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  301 | const u16 gTrainerPalette_Lorelei[] = INCBIN_U16("graphics/trainers/palettes/lorelei_front_pic.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:317:18: note: previous declaration of 'gTrainerPalette_Lorelei' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  317 | extern const u32 gTrainerPalette_Lorelei[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:304:11: error: conflicting types for 'gTrainerPalette_Blaine'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  304 | const u16 gTrainerPalette_Blaine[] = INCBIN_U16("graphics/trainers/palettes/blaine.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:318:18: note: previous declaration of 'gTrainerPalette_Blaine' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  318 | extern const u32 gTrainerPalette_Blaine[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:307:11: error: conflicting types for 'gTrainerPalette_JesseAndJames'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  307 | const u16 gTrainerPalette_JesseAndJames[] = INCBIN_U16("graphics/trainers/palettes/jesseandjames.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:319:18: note: previous declaration of 'gTrainerPalette_JesseAndJames' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  319 | extern const u32 gTrainerPalette_JesseAndJames[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:310:11: error: conflicting types for 'gTrainerPalette_SuperNerd'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  310 | const u16 gTrainerPalette_SuperNerd[] = INCBIN_U16("graphics/trainers/palettes/super_nerd.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:320:18: note: previous declaration of 'gTrainerPalette_SuperNerd' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  320 | extern const u32 gTrainerPalette_SuperNerd[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:313:11: error: conflicting types for 'gTrainerPalette_AromaLady2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  313 | const u16 gTrainerPalette_AromaLady2[] = INCBIN_U16("graphics/trainers/palettes/aroma_lady2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:321:18: note: previous declaration of 'gTrainerPalette_AromaLady2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  321 | extern const u32 gTrainerPalette_AromaLady2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:316:11: error: conflicting types for 'gTrainerPalette_Biker'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  316 | const u16 gTrainerPalette_Biker[] = INCBIN_U16("graphics/trainers/palettes/biker.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:322:18: note: previous declaration of 'gTrainerPalette_Biker' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  322 | extern const u32 gTrainerPalette_Biker[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:319:11: error: conflicting types for 'gTrainerPalette_BirdKeeper2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  319 | const u16 gTrainerPalette_BirdKeeper2[] = INCBIN_U16("graphics/trainers/palettes/bird_keeper2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:323:18: note: previous declaration of 'gTrainerPalette_BirdKeeper2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  323 | extern const u32 gTrainerPalette_BirdKeeper2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:322:11: error: conflicting types for 'gTrainerPalette_Beauty2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  322 | const u16 gTrainerPalette_Beauty2[] = INCBIN_U16("graphics/trainers/palettes/beauty2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:324:18: note: previous declaration of 'gTrainerPalette_Beauty2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  324 | extern const u32 gTrainerPalette_Beauty2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:325:11: error: conflicting types for 'gTrainerPalette_BlackBelt2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  325 | const u16 gTrainerPalette_BlackBelt2[] = INCBIN_U16("graphics/trainers/palettes/black_belt2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:325:18: note: previous declaration of 'gTrainerPalette_BlackBelt2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  325 | extern const u32 gTrainerPalette_BlackBelt2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:328:11: error: conflicting types for 'gTrainerPalette_Burglar'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  328 | const u16 gTrainerPalette_Burglar[] = INCBIN_U16("graphics/trainers/palettes/burglar.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:326:18: note: previous declaration of 'gTrainerPalette_Burglar' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  326 | extern const u32 gTrainerPalette_Burglar[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:331:11: error: conflicting types for 'gTrainerPalette_Camper2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  331 | const u16 gTrainerPalette_Camper2[] = INCBIN_U16("graphics/trainers/palettes/camper2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:327:18: note: previous declaration of 'gTrainerPalette_Camper2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  327 | extern const u32 gTrainerPalette_Camper2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:334:11: error: conflicting types for 'gTrainerPalette_Blue2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  334 | const u16 gTrainerPalette_Blue2[] = INCBIN_U16("graphics/trainers/palettes/blue2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:328:18: note: previous declaration of 'gTrainerPalette_Blue2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  328 | extern const u32 gTrainerPalette_Blue2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:337:11: error: conflicting types for 'gTrainerPalette_Blue3'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  337 | const u16 gTrainerPalette_Blue3[] = INCBIN_U16("graphics/trainers/palettes/blue3.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:329:18: note: previous declaration of 'gTrainerPalette_Blue3' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  329 | extern const u32 gTrainerPalette_Blue3[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:340:11: error: conflicting types for 'gTrainerPalette_Channeler'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  340 | const u16 gTrainerPalette_Channeler[] = INCBIN_U16("graphics/trainers/palettes/channeler.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:330:18: note: previous declaration of 'gTrainerPalette_Channeler' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  330 | extern const u32 gTrainerPalette_Channeler[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:343:11: error: conflicting types for 'gTrainerPalette_CueBall'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  343 | const u16 gTrainerPalette_CueBall[] = INCBIN_U16("graphics/trainers/palettes/cue_ball.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:331:18: note: previous declaration of 'gTrainerPalette_CueBall' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  331 | extern const u32 gTrainerPalette_CueBall[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:346:11: error: conflicting types for 'gTrainerPalette_Agatha'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  346 | const u16 gTrainerPalette_Agatha[] = INCBIN_U16("graphics/trainers/palettes/agatha.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:332:18: note: previous declaration of 'gTrainerPalette_Agatha' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  332 | extern const u32 gTrainerPalette_Agatha[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:349:11: error: conflicting types for 'gTrainerPalette_Bruno'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  349 | const u16 gTrainerPalette_Bruno[] = INCBIN_U16("graphics/trainers/palettes/bruno.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:333:18: note: previous declaration of 'gTrainerPalette_Bruno' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  333 | extern const u32 gTrainerPalette_Bruno[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:352:11: error: conflicting types for 'gTrainerPalette_Lance'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  352 | const u16 gTrainerPalette_Lance[] = INCBIN_U16("graphics/trainers/palettes/lance.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:334:18: note: previous declaration of 'gTrainerPalette_Lance' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  334 | extern const u32 gTrainerPalette_Lance[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:355:11: error: conflicting types for 'gTrainerPalette_Engineer'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  355 | const u16 gTrainerPalette_Engineer[] = INCBIN_U16("graphics/trainers/palettes/engineer.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:335:18: note: previous declaration of 'gTrainerPalette_Engineer' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  335 | extern const u32 gTrainerPalette_Engineer[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:358:11: error: conflicting types for 'gTrainerPalette_Gamer'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  358 | const u16 gTrainerPalette_Gamer[] = INCBIN_U16("graphics/trainers/palettes/gamer.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:336:18: note: previous declaration of 'gTrainerPalette_Gamer' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  336 | extern const u32 gTrainerPalette_Gamer[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:361:11: error: conflicting types for 'gTrainerPalette_Gentleman2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  361 | const u16 gTrainerPalette_Gentleman2[] = INCBIN_U16("graphics/trainers/palettes/gentleman2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:337:18: note: previous declaration of 'gTrainerPalette_Gentleman2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  337 | extern const u32 gTrainerPalette_Gentleman2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:364:11: error: conflicting types for 'gTrainerPalette_Hiker2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  364 | const u16 gTrainerPalette_Hiker2[] = INCBIN_U16("graphics/trainers/palettes/hiker2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:338:18: note: previous declaration of 'gTrainerPalette_Hiker2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  338 | extern const u32 gTrainerPalette_Hiker2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:367:11: error: conflicting types for 'gTrainerPalette_Juggler'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  367 | const u16 gTrainerPalette_Juggler[] = INCBIN_U16("graphics/trainers/palettes/juggler.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:339:18: note: previous declaration of 'gTrainerPalette_Juggler' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  339 | extern const u32 gTrainerPalette_Juggler[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:370:11: error: conflicting types for 'gTrainerPalette_Lady2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  370 | const u16 gTrainerPalette_Lady2[] = INCBIN_U16("graphics/trainers/palettes/lady2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:340:18: note: previous declaration of 'gTrainerPalette_Lady2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  340 | extern const u32 gTrainerPalette_Lady2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:373:11: error: conflicting types for 'gTrainerPalette_Lass2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  373 | const u16 gTrainerPalette_Lass2[] = INCBIN_U16("graphics/trainers/palettes/lass2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:341:18: note: previous declaration of 'gTrainerPalette_Lass2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  341 | extern const u32 gTrainerPalette_Lass2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:376:11: error: conflicting types for 'gTrainerPalette_Brock'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  376 | const u16 gTrainerPalette_Brock[] = INCBIN_U16("graphics/trainers/palettes/brock.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:342:18: note: previous declaration of 'gTrainerPalette_Brock' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  342 | extern const u32 gTrainerPalette_Brock[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:379:11: error: conflicting types for 'gTrainerPalette_Erika'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  379 | const u16 gTrainerPalette_Erika[] = INCBIN_U16("graphics/trainers/palettes/erika.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:343:18: note: previous declaration of 'gTrainerPalette_Erika' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  343 | extern const u32 gTrainerPalette_Erika[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:382:11: error: conflicting types for 'gTrainerPalette_Giovanni'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  382 | const u16 gTrainerPalette_Giovanni[] = INCBIN_U16("graphics/trainers/palettes/giovanni.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:344:18: note: previous declaration of 'gTrainerPalette_Giovanni' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  344 | extern const u32 gTrainerPalette_Giovanni[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:385:11: error: conflicting types for 'gTrainerPalette_Koga'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  385 | const u16 gTrainerPalette_Koga[] = INCBIN_U16("graphics/trainers/palettes/koga.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~
+include/graphics.h:345:18: note: previous declaration of 'gTrainerPalette_Koga' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  345 | extern const u32 gTrainerPalette_Koga[];
+      |                  ^~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:388:11: error: conflicting types for 'gTrainerPalette_LtSurge'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  388 | const u16 gTrainerPalette_LtSurge[] = INCBIN_U16("graphics/trainers/palettes/lt_surge.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:346:18: note: previous declaration of 'gTrainerPalette_LtSurge' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  346 | extern const u32 gTrainerPalette_LtSurge[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:391:11: error: conflicting types for 'gTrainerPalette_Misty'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  391 | const u16 gTrainerPalette_Misty[] = INCBIN_U16("graphics/trainers/palettes/misty.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:347:18: note: previous declaration of 'gTrainerPalette_Misty' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  347 | extern const u32 gTrainerPalette_Misty[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:394:11: error: conflicting types for 'gTrainerPalette_Sabrina'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  394 | const u16 gTrainerPalette_Sabrina[] = INCBIN_U16("graphics/trainers/palettes/sabrina.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:348:18: note: previous declaration of 'gTrainerPalette_Sabrina' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  348 | extern const u32 gTrainerPalette_Sabrina[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:397:11: error: conflicting types for 'gTrainerPalette_Painter'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  397 | const u16 gTrainerPalette_Painter[] = INCBIN_U16("graphics/trainers/palettes/painter.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:349:18: note: previous declaration of 'gTrainerPalette_Painter' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  349 | extern const u32 gTrainerPalette_Painter[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:400:11: error: conflicting types for 'gTrainerPalette_Picnicker2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  400 | const u16 gTrainerPalette_Picnicker2[] = INCBIN_U16("graphics/trainers/palettes/picnicker2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:350:18: note: previous declaration of 'gTrainerPalette_Picnicker2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  350 | extern const u32 gTrainerPalette_Picnicker2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:403:11: error: conflicting types for 'gTrainerPalette_Pokemaniac2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  403 | const u16 gTrainerPalette_Pokemaniac2[] = INCBIN_U16("graphics/trainers/palettes/pokemaniac2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:351:18: note: previous declaration of 'gTrainerPalette_Pokemaniac2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  351 | extern const u32 gTrainerPalette_Pokemaniac2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:406:11: error: conflicting types for 'gTrainerPalette_PokemonBreederF2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  406 | const u16 gTrainerPalette_PokemonBreederF2[] = INCBIN_U16("graphics/trainers/palettes/pokemon_breeder_f2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:352:18: note: previous declaration of 'gTrainerPalette_PokemonBreederF2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  352 | extern const u32 gTrainerPalette_PokemonBreederF2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:409:11: error: conflicting types for 'gTrainerPalette_ProfessorOak'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  409 | const u16 gTrainerPalette_ProfessorOak[] = INCBIN_U16("graphics/trainers/palettes/professor_oak.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:353:18: note: previous declaration of 'gTrainerPalette_ProfessorOak' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  353 | extern const u32 gTrainerPalette_ProfessorOak[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:412:11: error: conflicting types for 'gTrainerPalette_PsychicM2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  412 | const u16 gTrainerPalette_PsychicM2[] = INCBIN_U16("graphics/trainers/palettes/psychic_m2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:354:18: note: previous declaration of 'gTrainerPalette_PsychicM2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  354 | extern const u32 gTrainerPalette_PsychicM2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:415:11: error: conflicting types for 'gTrainerPalette_PsychicF2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  415 | const u16 gTrainerPalette_PsychicF2[] = INCBIN_U16("graphics/trainers/palettes/psychic_f2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:355:18: note: previous declaration of 'gTrainerPalette_PsychicF2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  355 | extern const u32 gTrainerPalette_PsychicF2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:418:11: error: conflicting types for 'gTrainerPalette_Rocker'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  418 | const u16 gTrainerPalette_Rocker[] = INCBIN_U16("graphics/trainers/palettes/rocker.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:356:18: note: previous declaration of 'gTrainerPalette_Rocker' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  356 | extern const u32 gTrainerPalette_Rocker[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:421:11: error: conflicting types for 'gTrainerPalette_RuinManiac2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  421 | const u16 gTrainerPalette_RuinManiac2[] = INCBIN_U16("graphics/trainers/palettes/ruin_maniac2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:357:18: note: previous declaration of 'gTrainerPalette_RuinManiac2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  357 | extern const u32 gTrainerPalette_RuinManiac2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:424:11: error: conflicting types for 'gTrainerPalette_Sailor2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  424 | const u16 gTrainerPalette_Sailor2[] = INCBIN_U16("graphics/trainers/palettes/sailor2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:358:18: note: previous declaration of 'gTrainerPalette_Sailor2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  358 | extern const u32 gTrainerPalette_Sailor2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:427:11: error: conflicting types for 'gTrainerPalette_Scientist'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  427 | const u16 gTrainerPalette_Scientist[] = INCBIN_U16("graphics/trainers/palettes/scientist.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:359:18: note: previous declaration of 'gTrainerPalette_Scientist' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  359 | extern const u32 gTrainerPalette_Scientist[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:430:11: error: conflicting types for 'gTrainerPalette_Tamer'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  430 | const u16 gTrainerPalette_Tamer[] = INCBIN_U16("graphics/trainers/palettes/tamer.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:360:18: note: previous declaration of 'gTrainerPalette_Tamer' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  360 | extern const u32 gTrainerPalette_Tamer[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:433:11: error: conflicting types for 'gTrainerPalette_Youngster2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  433 | const u16 gTrainerPalette_Youngster2[] = INCBIN_U16("graphics/trainers/palettes/youngster2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:361:18: note: previous declaration of 'gTrainerPalette_Youngster2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  361 | extern const u32 gTrainerPalette_Youngster2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:436:11: error: conflicting types for 'gTrainerPalette_MewtwoArmor'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  436 | const u16 gTrainerPalette_MewtwoArmor[] = INCBIN_U16("graphics/trainers/palettes/mewtwo_armor.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:362:18: note: previous declaration of 'gTrainerPalette_MewtwoArmor' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  362 | extern const u32 gTrainerPalette_MewtwoArmor[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:439:11: error: conflicting types for 'gTrainerPalette_Soldier'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  439 | const u16 gTrainerPalette_Soldier[] = INCBIN_U16("graphics/trainers/palettes/soldier.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:363:18: note: previous declaration of 'gTrainerPalette_Soldier' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  363 | extern const u32 gTrainerPalette_Soldier[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:442:11: error: conflicting types for 'gTrainerPalette_Misty2'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  442 | const u16 gTrainerPalette_Misty2[] = INCBIN_U16("graphics/trainers/palettes/misty2.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:364:18: note: previous declaration of 'gTrainerPalette_Misty2' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  364 | extern const u32 gTrainerPalette_Misty2[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:445:11: error: conflicting types for 'gTrainerPalette_Janitor'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  445 | const u16 gTrainerPalette_Janitor[] = INCBIN_U16("graphics/trainers/palettes/janitor.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:365:18: note: previous declaration of 'gTrainerPalette_Janitor' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  365 | extern const u32 gTrainerPalette_Janitor[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:448:11: error: conflicting types for 'gTrainerPalette_NurseJoy'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  448 | const u16 gTrainerPalette_NurseJoy[] = INCBIN_U16("graphics/trainers/palettes/nurse_joy.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:366:18: note: previous declaration of 'gTrainerPalette_NurseJoy' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  366 | extern const u32 gTrainerPalette_NurseJoy[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:451:11: error: conflicting types for 'gTrainerPalette_CueBallNoBike'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  451 | const u16 gTrainerPalette_CueBallNoBike[] = INCBIN_U16("graphics/trainers/palettes/cue_ball_no_bike.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:367:18: note: previous declaration of 'gTrainerPalette_CueBallNoBike' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  367 | extern const u32 gTrainerPalette_CueBallNoBike[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:454:11: error: conflicting types for 'gTrainerPalette_Green'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  454 | const u16 gTrainerPalette_Green[] = INCBIN_U16("graphics/trainers/palettes/green.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:368:18: note: previous declaration of 'gTrainerPalette_Green' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  368 | extern const u32 gTrainerPalette_Green[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:457:11: error: conflicting types for 'gTrainerPalette_BigBlue'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  457 | const u16 gTrainerPalette_BigBlue[] = INCBIN_U16("graphics/trainers/palettes/big_blue.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:369:18: note: previous declaration of 'gTrainerPalette_BigBlue' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  369 | extern const u32 gTrainerPalette_BigBlue[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:460:11: error: conflicting types for 'gTrainerPalette_BigYellow'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  460 | const u16 gTrainerPalette_BigYellow[] = INCBIN_U16("graphics/trainers/palettes/big_yellow.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:370:18: note: previous declaration of 'gTrainerPalette_BigYellow' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  370 | extern const u32 gTrainerPalette_BigYellow[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:463:11: error: conflicting types for 'gTrainerPalette_BigGreen'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  463 | const u16 gTrainerPalette_BigGreen[] = INCBIN_U16("graphics/trainers/palettes/big_green.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:371:18: note: previous declaration of 'gTrainerPalette_BigGreen' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  371 | extern const u32 gTrainerPalette_BigGreen[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+src/data/graphics/trainers.h:466:11: error: conflicting types for 'gTrainerPalette_BigRed'; have 'const u16[]' {aka 'const short unsigned int[]'}
+  466 | const u16 gTrainerPalette_BigRed[] = INCBIN_U16("graphics/trainers/palettes/big_red.gbapal");
+      |           ^~~~~~~~~~~~~~~~~~~~~~
+include/graphics.h:372:18: note: previous declaration of 'gTrainerPalette_BigRed' with type 'const u32[]' {aka 'const long unsigned int[]'}
+  372 | extern const u32 gTrainerPalette_BigRed[];
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Makefile:401: build/modern/src/graphics.o] Error 1
+make: *** Deleting file 'build/modern/src/graphics.o'
