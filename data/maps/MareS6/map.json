@@ -115,168 +115,6 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 23,
-      "y": 66,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_IslaPinaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 66,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_IslaPinaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 73,
-      "y": 54,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_IslaPinaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 73,
-      "y": 55,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_IslaPinaTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 67,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "1",
-      "script": "MareS6_Script_MareOccidensTransitionSilent"
-    },
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 67,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "1",
-      "script": "MareS6_Script_MareOccidensTransitionSilent"
-    },
-    {
-      "type": "trigger",
-      "x": 74,
-      "y": 54,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "1",
-      "script": "MareS6_Script_MareTropicumTransitionSilent"
-    },
-    {
-      "type": "trigger",
-      "x": 74,
-      "y": 55,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "1",
-      "script": "MareS6_Script_MareTropicumTransitionSilent"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 33,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 32,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 31,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 29,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 27,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 25,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 24,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
       "x": 78,
       "y": 23,
       "elevation": 0,
@@ -520,201 +358,12 @@
     },
     {
       "type": "trigger",
-      "x": 78,
-      "y": 34,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 81,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 82,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 83,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 84,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 78,
-      "y": 85,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "2",
-      "script": "MareS6_Script_MareTropicumTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 85,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 84,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 83,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 82,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 81,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 33,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 32,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 31,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 29,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 27,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 25,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
-      "x": 77,
-      "y": 24,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
-    },
-    {
-      "type": "trigger",
       "x": 77,
       "y": 23,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -723,7 +372,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -732,7 +381,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -741,7 +390,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -750,7 +399,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -759,7 +408,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -768,7 +417,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -777,7 +426,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -786,7 +435,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -795,7 +444,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -804,7 +453,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -813,7 +462,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -822,7 +471,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -831,7 +480,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -840,7 +489,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -849,7 +498,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -858,7 +507,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -867,7 +516,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -876,7 +525,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -885,7 +534,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -894,7 +543,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -903,7 +552,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -912,7 +561,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -921,7 +570,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -930,7 +579,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -939,7 +588,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -948,7 +597,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -957,7 +606,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -966,7 +615,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -975,7 +624,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -984,7 +633,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",
-      "script": "MareS6_Script_MareOccidensTransition"
+      "script": "MareS6_Script_Transition_MareOccidens"
     },
     {
       "type": "trigger",
@@ -1156,6 +805,87 @@
       "var": "VAR_TEMP_5",
       "var_value": "2",
       "script": "MareS6_Script_PlayaEchonaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 81,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 82,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 83,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 85,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS6_Script_MareTropicumTransition"
     }
   ],
   "bg_events": []

@@ -1001,6 +1001,19 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if (x > 45 && y < 17)
 					ShowMapNamePopup();
 			}
+            //MareS6 - Handle from MareS5
+			if (destMapNum == MAP_NUM(MAP_MARE_S6) && destMapGroup == MAP_GROUP(MAP_MARE_S6))
+			{
+				if (x > 84 && y < 63 && y > 56)
+					ShowMapNamePopup();
+			}
+            //MareS5 - Handle from MareS6
+			if (destMapNum == MAP_NUM(MAP_MARE_S5) && destMapGroup == MAP_GROUP(MAP_MARE_S5))
+			{
+				if (x < 1 && y < 63 && y > 56)
+					ShowMapNamePopup();
+			}
+
 			
 			//Other Maps 
 			//
@@ -4115,9 +4128,9 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		n = GetDynamicMapSec_MareS5(FALSE);
 		switch (n) {
 			case 1:
-				return MAPSEC_ACTA_ECHONA;
-			case 2:
 				return MAPSEC_MARE_TROPICUM;
+			case 2:
+				return MAPSEC_ACTA_ECHONA;
 			case 3:
 				return MAPSEC_ISLA_PINEA;
 			default:
@@ -4634,7 +4647,7 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 	//SRoute18
 	if (mapGroup == MAP_GROUP(MAP_SROUTE18) && mapNum == MAP_NUM(MAP_SROUTE18))
 	{
-		n = GetDynamicMapSec_MareS5(useWarpInfo);
+		n = GetDynamicMapSec_SRoute18(useWarpInfo);
 		switch (n) {
             //1: Sinus Pacificus
             case 1:
@@ -4655,12 +4668,12 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 	{
 		n = GetDynamicMapSec_MareS5(useWarpInfo);
 		switch (n) {
-			//Acta Echona
-			case 1:
-				return MUS_RG_SS_ANNE;
 			//Mare Tropicum
-			case 2:
+			case 1:
 				return MUS_SURF;
+			//Acta Echona
+			case 2:
+				return MUS_RG_SS_ANNE;
 			//Isla Pina
 			case 3:
 				return MUS_PETALBURG;

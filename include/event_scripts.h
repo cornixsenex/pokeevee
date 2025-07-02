@@ -691,14 +691,19 @@ extern const u8 EventScript_MovedTooFast[];
 
 //		BEGIN 	KUSTOMS		///
 
-
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];
 //Colchis Forced Battle
 extern const u8 Colchis_Script_CheckForcedBattle[]; 
+
 //Ocean Map Transitions
+
+//Route10
 extern const u8 Route10_Script_Transition_ActaTranquilla[]; 
 extern const u8 Route10_Script_Transition_MareTranquillum[];
+//MareS6
+extern const u8 MareS6_Script_Transition_IslaPina[];
+extern const u8 MareS6_Script_Transition_MareOccidens[];
 
 
 //		END		KUSTOMS		///

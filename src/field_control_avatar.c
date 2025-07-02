@@ -679,6 +679,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+        //MareS6 - Isla Pina Transition
+		if (mapGroup == MAP_GROUP(MAP_MARE_S6) && mapNum == MAP_NUM(MAP_MARE_S6)) {
+			if (VarGet(VAR_TEMP_5) != 1) {
+				ScriptContext_SetupScript(MareS6_Script_Transition_IslaPina);
+				return TRUE;
+			}
+		}
     }
 	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
     {
@@ -688,6 +695,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 		if (mapGroup == MAP_GROUP(MAP_ROUTE10) && mapNum == MAP_NUM(MAP_ROUTE10)) {
 			if (VarGet(VAR_TEMP_5) == 2) {
 				ScriptContext_SetupScript(Route10_Script_Transition_MareTranquillum);
+				return TRUE;
+			}
+		}
+        //MareS6 - Mare Occidens Transition
+		if (mapGroup == MAP_GROUP(MAP_MARE_S6) && mapNum == MAP_NUM(MAP_MARE_S6)) {
+			if (VarGet(VAR_TEMP_5) != 2) {
+				ScriptContext_SetupScript(MareS6_Script_Transition_MareOccidens);
 				return TRUE;
 			}
 		}

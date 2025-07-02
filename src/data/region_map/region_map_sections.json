@@ -1624,8 +1624,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_MARINE_CAVE",
-      "name": "MARINE CAVE",
+      "id": "MAPSEC_SCYLLA_CHARYBDIS",
+      "name": "SCYLLA CHARYBDIS",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1832,8 +1832,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_ISLA_YERBA_BUENA",
-      "name": "ISLA YERBA BVENA",
+      "id": "MAPSEC_ISLA_HERBA_BONA",
+      "name": "ISLA HERBA BONA",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1856,8 +1856,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_ISLA_LAVINIA",
-      "name": "ISLA LAVINIA",
+      "id": "MAPSEC_ISLA_HESPERIA",
+      "name": "ISLA HESPERIA",
       "x": 0,
       "y": 0,
       "width": 1,

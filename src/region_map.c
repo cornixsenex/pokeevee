@@ -1839,9 +1839,9 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_ACTA_ECHONA);
-				case 2:
 					return StringCopy(dest, sMapName_MARE_TROPICVM);
+				case 2:
+					return StringCopy(dest, sMapName_ACTA_ECHONA);
 				case 3:
 					return StringCopy(dest, sMapName_ISLA_PINEA);
 				default:
@@ -3470,7 +3470,7 @@ u32 GetDynamicMapSec_MareS6(bool32 useWarpInfo)
 		( (x >= 85) && ( (y > 30) && (y < 63) ) ) 
 		)
 		return 1;
-    //Playa Echona
+    //Acta Echona
     else if (
             ( (y <= 0) && (x > 68) ) ||
             ( (y == 1)  && (x > 68) ) ||
@@ -3735,8 +3735,8 @@ u32 GetDynamicMapSec_SRoute18(bool32 useWarpInfo)
 
 bool32 GetDynamicMapSec_MareS5(bool32 useWarpInfo)
 {
-	//1: Acta Echona
-	//2: Mare Tropicum
+	//1: Mare Tropicum
+	//2: Acta Echona
     //3: Isla Pina
 	
     s16 x, y;
@@ -3753,24 +3753,31 @@ bool32 GetDynamicMapSec_MareS5(bool32 useWarpInfo)
 	//Acta Echona - Top Left
 	if
 		(
-		(y <= 1 && x < 11) ||
-		(y == 2 && x < 9) ||
-		(y == 3 && x < 7) ||
-		(y == 4 && x < 6)
+        (x < 1 && y < 5) ||
+        (x == 1 && y < 5) ||
+        (x == 2 && y < 5) ||
+        (x == 3 && y < 5) ||
+        (x == 4 && y < 5) ||
+        (x == 5 && y < 5) ||
+        (x == 6 && y < 4) ||
+        (x == 7 && y < 3) ||
+        (x == 8 && y < 3) ||
+        (x == 9 && y < 2) ||
+        (x == 10 && y < 2)
 		)
-		return 1;
+		return 2;
     //Isla Pina - 3
     else if
         (
         (x < 1 && y > 30 && y < 57) ||
         (x == 1 && y > 32 && y < 54) ||
-        (x == 1 && y > 35 && y < 51) ||
-        (x == 1 && y > 37 && y < 49) 
+        (x == 2 && y > 35 && y < 51) ||
+        (x == 3 && y > 37 && y < 49) 
         )
         return 3;
     //Mare Tropicum is Default
 	else 
-		return 2;
+		return 1;
 }
 	
 u32 GetDynamicMapSec_Route4(bool32 useWarpInfo)
@@ -4496,5 +4503,163 @@ bool32 IsGatoCityParkNThermae(bool32 useWarpInfo)
     else
         return FALSE;
 }
+
+u32 GetDynamicMapSec_MareS4(bool32 useWarpInfo)
+{
+
+	//1: Mare Tropicum
+	//2: Mare Tranquillum
+	//3: Mare Subtroicum
+    //4: Isla Herba Bona
+    //5: Isla Hesperia
+    //6: Scylla Charybdis
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("MareS4\nX %d\nY %d", x, y);
+
+    //Mare Tranquillum
+    if
+        (
+        (x == 75 && y < 1) ||
+        (x == 76 && y < 2) ||
+        (x == 77 && y < 3) ||
+        (x == 78 && y < 4) ||
+        (x == 79 && y < 5) ||
+        (x == 80 && y < 7) ||
+        (x == 81 && y < 8) ||
+        (x == 82 && y < 9) ||
+        (x == 83 && y < 10) ||
+        (x == 84 && y < 12) ||
+        (x >= 85 && y < 13)
+        )
+        return 2;
+    //Mare Subtropicum
+    else if
+        (
+        (x == 72 && y > 84) ||
+        (x == 73 && y > 82) ||
+        (x == 74 && y > 80) ||
+        (x == 75 && y > 78) ||
+        (x == 76 && y > 75) ||
+        (x == 77 && y > 73) ||
+        (x == 78 && y > 71) ||
+        (x == 79 && y > 68) ||
+        (x == 80 && y > 66) ||
+        (x == 81 && y > 64) ||
+        (x == 82 && y > 62) ||
+        (x == 83 && y > 57) ||
+        (x == 84 && y > 58) ||
+        (x >= 85 && y > 58)
+        )
+        return 3;
+    //Isla Herba Bona
+    else if
+        (
+        (x == 63 && y > 21 && y < 40) ||
+        (x == 64 && y > 21 && y < 43) ||
+        (x == 65 && y > 18 && y < 45) ||
+        (x == 66 && y > 15 && y < 45) ||
+        (x == 67 && y > 13 && y < 46) ||
+        (x == 68 && y > 13 && y < 46) ||
+        (x == 69 && y > 12 && y < 46) ||
+        (x == 70 && y > 12 && y < 46) ||
+        (x == 71 && y > 12 && y < 46) ||
+        (x == 72 && y > 10 && y < 45) ||
+        (x == 73 && y > 10 && y < 45) ||
+        (x == 74 && y >  9 && y < 46) ||
+        (x == 75 && y >  9 && y < 46) ||
+        (x == 76 && y >  9 && y < 43) ||
+        (x == 77 && y >  9 && y < 46) ||
+        (x == 78 && y >  9 && y < 47) ||
+        (x == 79 && y >  9 && y < 48) ||
+        (x == 80 && y >  9 && y < 48) ||
+        (x == 80 && y > 52 && y < 55) || //Special Case near whirlpool
+        (x == 81 && y >  9 && y < 56) ||
+        (x == 82 && y >  9 && y < 57) ||
+        (x == 83 && y >  9 && y < 58) ||
+        (x == 84 && y >  9 && y < 59) ||
+        (x >= 85 && y >  9 && y < 59)
+        )
+        return 4;
+    //Isla Hesperia
+    else if 
+        (
+        (x == 19 && y > YY) ||
+        (x == 20 && y > YY) ||
+        (x == 21 && y > YY) ||
+        (x == 22 && y > YY) ||
+        (x == 23 && y > YY) ||
+        (x == 24 && y > YY) ||
+        (x == 25 && y > YY) ||
+        (x == 26 && y > YY) ||
+        (x == 27 && y > YY) ||
+        (x == 28 && y > YY) ||
+        (x == 29 && y > YY) ||
+        (x == 30 && y > YY) ||
+        (x == 31 && y > YY) ||
+        (x == 32 && y > YY) ||
+        (x == 33 && y > YY) ||
+        (x == 34 && y > YY) ||
+        (x == 35 && y > YY) ||
+        (x == 36 && y > YY) ||
+        (x == 37 && y > YY) ||
+        (x == 38 && y > YY) ||
+        (x == 39 && y > YY) ||
+        (x == 40 && y > YY) ||
+        (x == 41 && y > YY) ||
+        (x == 42 && y > YY) ||
+        (x == 43 && y > YY) ||
+        (x == 44 && y > YY) ||
+        (x == 45 && y > YY) ||
+        (x == 46 && y > YY) ||
+        (x == 47 && y > YY) ||
+        (x == 48 && y > YY) ||
+        (x == 49 && y > YY) ||
+        (x == 50 && y > YY) ||
+        (x == 51 && y > YY) ||
+        (x == 52 && y > YY) ||
+        (x == 53 && y > YY) ||
+        (x == 54 && y > YY) ||
+        (x == 55 && y > YY) ||
+        (x == 56 && y > YY) ||
+        (x == 57 && y > YY) ||
+        (x == 58 && y > YY) ||
+        (x == 59 && y > YY) ||
+        (x == 60 && y > YY) ||
+        (x == 61 && y > YY) ||
+        (x == 62 && y > YY) ||
+        (x == 63 && y > YY) ||
+        (x == 64 && y > YY) ||
+        (x == 65 && y > YY) ||
+        (x == 66 && y > YY) ||
+        (x == 67 && y > YY) ||
+        (x == 68 && y > YY) ||
+        (x == 69 && y > YY) ||
+        (x == 70 && y > YY) ||
+        (x == 71 && y > YY) ||
+        (x == 72 && y > YY && y < 85) ||
+        (x == 73 && y > YY && y < 83) ||
+        (x == 74 && y > YY && y < 81) ||
+        (x == 75 && y > YY && y < 79) ||
+        (x == 76 && y > YY && y < 76) ||
+        (x == 77 && y > YY && y < 74) ||
+        (x == 78 && y > YY && y < 72) ||
+        (x == 79 && y > YY && y < 69) ||
+        (x == 80 && y > YY && y < 67) ||
+        (x == 81 && y > YY && y < 65) ||
+        (x == 82 && y > YY && y < 63) 
+        )
+        return 5;
+
 	
 

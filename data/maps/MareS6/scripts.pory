@@ -4,10 +4,11 @@
 //1: ISLA PINA
 //2: MARE OCCIDENS
 //3: MARE TROPICUM
+//4: Acta Echona
 
-//ISLAND TRANSITIONS HANDLED BY START STOP SURF TASK
+//Ocean Map Transisiton A: Transition_IslaPina
+//Ocean Map Transisiton B: Transition_MareOccidens
 
-//Transitions work a bit different on this map. Only show triggers are for between Occidens and Tropicum
 
 mapscripts MareS6_MapScripts {
 
@@ -28,13 +29,13 @@ mapscripts MareS6_MapScripts {
 }
 
 //Silent in this case as island transitions are handled by Start Stop surf task
-script MareS6_Script_IslaPinaTransition {
+script MareS6_Script_Transition_IslaPina {
 	setvar (VAR_TEMP_5, 1)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script MareS6_Script_MareOccidensTransition {
+script MareS6_Script_Transition_MareOccidens {
 	setvar (VAR_TEMP_5, 2)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
@@ -49,19 +50,7 @@ script MareS6_Script_MareTropicumTransition {
 //Playa Echona
 script MareS6_Script_PlayaEchonaTransition {
 	setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
-
-//Note: Silent. Only to keep track of Var between island and ocean - popup done by start / stop surf task
-script MareS6_Script_MareOccidensTransitionSilent {
-	setvar (VAR_TEMP_5, 2)
-}
-
-script MareS6_Script_MareTropicumTransitionSilent {
-	setvar (VAR_TEMP_5, 3)
-}
-
-
-
-
 

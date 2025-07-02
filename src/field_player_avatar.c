@@ -2096,11 +2096,6 @@ static void Task_WaitStopSurfing(u8 taskId)
 			)
 			ShowMapNamePopup();
             TransitionMapMusic();
-        //MareS6 (Isla Pina save some transitions)
-		if (mapGroup == MAP_GROUP(MAP_MARE_S6) && mapNum == MAP_NUM(MAP_MARE_S6))
-			ShowMapNamePopup();
-            TransitionMapMusic();
-
     }
 }
 
@@ -2996,10 +2991,6 @@ static void Task_WaitStartSurfing(u8 taskId)
 				 (x > 74) ||
 				 ( (x > 51) && (y > 45) ) )
 			)
-			ShowMapNamePopup();
-            TransitionMapMusic();
-        //MareS6 (Isla Pina save some transitions)
-		if (mapGroup == MAP_GROUP(MAP_MARE_S6) && mapNum == MAP_NUM(MAP_MARE_S6))
 			ShowMapNamePopup();
             TransitionMapMusic();
     }
