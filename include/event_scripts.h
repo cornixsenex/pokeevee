@@ -704,6 +704,11 @@ extern const u8 Route10_Script_Transition_MareTranquillum[];
 //MareS6
 extern const u8 MareS6_Script_Transition_IslaPina[];
 extern const u8 MareS6_Script_Transition_MareOccidens[];
+//MareS4
+extern const u8 MareS4_Script_Transition_MareTropicum[];
+extern const u8 MareS4_Script_Transition_MareSubtropicum[];
+extern const u8 MareS4_Script_Transition_IslaHerbaBona[];
+extern const u8 MareS4_Script_Transition_IslaHesperia[];
 
 
 //		END		KUSTOMS		///

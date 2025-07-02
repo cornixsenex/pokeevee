@@ -104,10 +104,10 @@ South Central                                                     # CALI OR IDK
 Deseret                                                           # MUS_RUSTBORO - MEH
 Palms                                                             # DESERT OR IDK
 Tranquillitas                                                     # MUS_RG_CELADON
-Isla Yerba Buena                                                  # MUS_FALLARBOR
+Isla Herba Bona                                                   # MUS_FALLARBOR
 Isla Ignifera                                                     # FOTM
-Isla Tropica / Tropicana                                          # MUS_RG_FUCHSIA
-Isla Italia / Latium / Lavinia / Arcadia / Hesperia               # MUS_SOOTOPOLIS
+Isla Tropica                                                      # MUS_RG_FUCHSIA
+Isla Hesperia                                                     # MUS_SOOTOPOLIS
 Isla Ithaca                                                       # MUS_FORTREE
 Isla Pina                                                         # MUS_PETALBURG
 Salix                                                             # MUS_VERDANTURF #Double see SnowTown
@@ -537,7 +537,7 @@ UNDERWORLD - GROUDON maybe idk
 #define MUS_CONTEST                 ##### trumpets march then chills out bounces
 
 ****SPOOKY - DUNGEON
-#define MUS_PETALBURG_WOODS         ##### Spooky jiji iii iijn
+#define MUS_PETALBURG_WOODS         ##### Spooky jijiiii iijn
 #define MUS_MT_CHIMNEY              ##### should be intro to battle music 
 #define MUS_AQUA_MAGMA_HIDEOUT      ##### Bass, techno, funky, suspicious, dark
 #define MUS_MT_PYRE                 ##### awesome dungeon theme

@@ -622,3 +622,4 @@ gSpecials::
     def_special GetDynamicMapSec_Hippodrome_F
     def_special IsSanjoRockFillerSabinaNova_F
     def_special IsGatoCityParkNThermae_F
+	def_special GetDynamicMapSec_MareS4_F

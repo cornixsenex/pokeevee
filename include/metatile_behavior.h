@@ -201,5 +201,7 @@ bool8 MetatileBehavior_IsColchisBattle(u8);
 //Ocean Map Transition
 bool8 MetatileBehavior_IsOceanMapTransitionA(u8);
 bool8 MetatileBehavior_IsOceanMapTransitionB(u8);
+bool8 MetatileBehavior_IsOceanMapTransitionC(u8);
+bool8 MetatileBehavior_IsOceanMapTransitionD(u8);
 
 #endif // GUARD_METATILE_BEHAVIOR_H

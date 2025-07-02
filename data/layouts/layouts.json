@@ -4947,7 +4947,7 @@
       "width": 151,
       "height": 32,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Montgomery",
+      "secondary_tileset": "gTileset_BigIsland",
       "border_filepath": "data/layouts/MareW/border.bin",
       "blockdata_filepath": "data/layouts/MareW/map.bin"
     },
@@ -5897,7 +5897,7 @@
       "width": 86,
       "height": 86,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_BigIsland",
       "border_filepath": "data/layouts/MareS8/border.bin",
       "blockdata_filepath": "data/layouts/MareS8/map.bin"
     },

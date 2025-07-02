@@ -6063,6 +6063,9 @@ bool32 IsGatoCityParkNThermae_F(void)
     return IsGatoCityParkNThermae(FALSE);
 }
 
-
+bool32 GetDynamicMapSec_MareS4_F(void)
+{
+    return GetDynamicMapSec_MareS4(FALSE);
+}
 
 

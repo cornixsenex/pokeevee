@@ -1346,6 +1346,39 @@ static void LoadMapNamePopUpWindowBg(void)
 			else 
 				regionMapSectionId = MAPSEC_HORTUS_PUBLICUS;
 		}
+        //MareS4 
+        if (mapGroup == MAP_GROUP(MAP_MARE_S4) && mapNum == MAP_NUM(MAP_MARE_S4)) 
+		{
+			//1: Mare Tropicum
+			//2: Mare Tranquillum
+			//3: Mare Subtropicum
+			//4: Isla Herba Bona
+            //5: Isla Hesperia
+            //6: Scylla Charybdis
+			n = GetDynamicMapSec_MareS4(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_ISLA_HERBA_BONA;
+					break;
+				case 5:
+					regionMapSectionId = MAPSEC_ISLA_HESPERIA;
+					break;
+				case 6:
+					regionMapSectionId = MAPSEC_SCYLLA_CHARYBDIS;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}

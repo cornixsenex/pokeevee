@@ -1013,6 +1013,18 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if (x < 1 && y < 63 && y > 56)
 					ShowMapNamePopup();
 			}
+            //MareW - Handle from MareS4
+			if (destMapNum == MAP_NUM(MAP_MARE_W) && destMapGroup == MAP_GROUP(MAP_MARE_W))
+			{
+				if (x == 120 && y > 6)
+					ShowMapNamePopup();
+			}
+            //MareS4 - Handle from MareW 
+			if (destMapNum == MAP_NUM(MAP_MARE_S4) && destMapGroup == MAP_GROUP(MAP_MARE_S4))
+			{
+				if (y < 1 && x == 74)
+					ShowMapNamePopup();
+			}
 
 			
 			//Other Maps 
@@ -4401,7 +4413,33 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
         else
             return MAPSEC_HORTUS_PUBLICUS;
 	}
-
+	//MareS4
+	if (mapGroup == MAP_GROUP(MAP_MARE_S4) && mapNum == MAP_NUM(MAP_MARE_S4)) 
+	{
+        //1: Mare Tropicum
+        //2: Mare Tranquillum
+        //3: Mare Subtropicum
+        //4: Isla Herba Bona
+        //5: Isla Hesperia
+        //6: Scylla Charybdis
+		n = GetDynamicMapSec_MareS4(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_MARE_TROPICUM;
+			case 2:
+				return MAPSEC_MARE_TRANQUILLUM; 
+			case 3:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 4:
+				return MAPSEC_ISLA_HERBA_BONA; 
+			case 5:
+				return MAPSEC_ISLA_HESPERIA; 
+			case 6:
+				return MAPSEC_SCYLLA_CHARYBDIS; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    //Other Maps Go Here
     
@@ -4987,6 +5025,40 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
             return MUS_FOTM;
         else
             return MUS_XXPLOSIVE;
+	}
+	//MareS4
+	if (mapGroup == MAP_GROUP(MAP_MARE_S4) && mapNum == MAP_NUM(MAP_MARE_S4)) 
+	{
+        //1: Mare Tropicum
+        //2: Mare Tranquillum
+        //3: Mare Subtropicum
+        //4: Isla Herba Bona
+        //5: Isla Hesperia
+        //6: Scylla Charybdis
+		n = GetDynamicMapSec_MareS4(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS4 returned: %d\n", n);
+		switch (n) {
+		    //Mare Tropicum
+			case 1:
+				return MUS_SURF;
+		    //Mare Tranquillum
+			case 2:
+				return MUS_RG_SURF;
+		    //Mare Subtropicum
+			case 3:
+				return MUS_LILYCOVE; 
+			//Isla Herba Bona
+			case 4:
+				return MUS_FALLARBOR; 
+			//Isla Hesperia
+			case 5:
+				return MUS_SOOTOPOLIS; 
+			//Scylla Charybdis
+			case 6:
+				return MUS_SEALED_CHAMBER; 
+			default:
+				return MUS_CANTINA;
+		}
 	}
 
 	//Default SHOULD NEVER BE REACHED

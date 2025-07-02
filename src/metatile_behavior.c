@@ -160,6 +160,8 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
 	//Ocean Map Transition Tiles
 	[MB_OCEAN_MAP_TRANSITION_A]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 	[MB_OCEAN_MAP_TRANSITION_B]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_OCEAN_MAP_TRANSITION_C]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_OCEAN_MAP_TRANSITION_D]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 
 };
 
@@ -945,6 +947,8 @@ bool8 MetatileBehavior_IsDeepOrOceanWater(u8 metatileBehavior)
      || metatileBehavior == MB_INTERIOR_DEEP_WATER
 	 || metatileBehavior == MB_OCEAN_MAP_TRANSITION_A //Ocean Map Transition
 	 || metatileBehavior == MB_OCEAN_MAP_TRANSITION_B //Ocean Map Transition
+	 || metatileBehavior == MB_OCEAN_MAP_TRANSITION_C //Ocean Map Transition
+	 || metatileBehavior == MB_OCEAN_MAP_TRANSITION_D //Ocean Map Transition
      || metatileBehavior == MB_DEEP_WATER)
         return TRUE;
     else
@@ -1211,6 +1215,8 @@ bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
       || metatileBehavior == MB_NORTHWARD_CURRENT
 	  || metatileBehavior == MB_OCEAN_MAP_TRANSITION_A //Ocean Map Transitions
 	  || metatileBehavior == MB_OCEAN_MAP_TRANSITION_B //Ocean Map Transitions
+	  || metatileBehavior == MB_OCEAN_MAP_TRANSITION_C //Ocean Map Transitions
+	  || metatileBehavior == MB_OCEAN_MAP_TRANSITION_D //Ocean Map Transitions
       || metatileBehavior == MB_SOUTHWARD_CURRENT))
         return TRUE;
     else
@@ -1280,6 +1286,24 @@ bool8 MetatileBehavior_IsOceanMapTransitionB(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsOceanMapTransitionC(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_OCEAN_MAP_TRANSITION_C)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsOceanMapTransitionD(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_OCEAN_MAP_TRANSITION_D)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+
 
 bool8 MetatileBehavior_IsMuddySlope(u8 metatileBehavior)
 {
