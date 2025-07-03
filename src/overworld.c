@@ -1022,7 +1022,18 @@ if (I_VS_SEEKER_CHARGING != 0)
             //MareS4 - Handle from MareW 
 			if (destMapNum == MAP_NUM(MAP_MARE_S4) && destMapGroup == MAP_GROUP(MAP_MARE_S4))
 			{
+				//From MareW
 				if (y < 1 && x == 74)
+					ShowMapNamePopup();
+				//From MareS3
+				if (x >= 85 && y == 59)
+					ShowMapNamePopup();
+			}
+			//MareS3
+			if (destMapNum == MAP_NUM(MAP_MARE_S3) && destMapGroup == MAP_GROUP(MAP_MARE_S3))
+			{
+				//From MareS4
+				if (x < 1 && y == 59)
 					ShowMapNamePopup();
 			}
 
@@ -4440,6 +4451,24 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareS3
+	if (mapGroup == MAP_GROUP(MAP_MARE_S3) && mapNum == MAP_NUM(MAP_MARE_S3)) 
+	{
+		//1: Mare Tranquillum
+		//2: Mare Subtropicum
+		//3: Isla Herba Bona
+		n = GetDynamicMapSec_MareS3(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_MARE_TRANQUILLUM;
+			case 2:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 3:
+				return MAPSEC_ISLA_HERBA_BONA; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    //Other Maps Go Here
     
@@ -5056,6 +5085,28 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 			//Scylla Charybdis
 			case 6:
 				return MUS_SEALED_CHAMBER; 
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//MareS3
+	if (mapGroup == MAP_GROUP(MAP_MARE_S3) && mapNum == MAP_NUM(MAP_MARE_S3)) 
+	{
+        //1: Mare Tranquillum
+        //2: Mare Subtropicum
+        //3: Isla Herba Bona
+		n = GetDynamicMapSec_MareS3(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS3 returned: %d\n", n);
+		switch (n) {
+		    //Mare Tranquillum
+			case 1:
+				return MUS_RG_SURF;
+		    //Mare Subtropicum
+			case 2:
+				return MUS_LILYCOVE;
+		    //Isla Herba Bona
+			case 3:
+				return MUS_FALLARBOR; 
 			default:
 				return MUS_CANTINA;
 		}

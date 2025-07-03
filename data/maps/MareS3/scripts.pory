@@ -1,1 +1,36 @@
-mapscripts MareS3_MapScripts {}
+
+//DYNAMIC MAP TEMP_VAR_5
+
+//1: Mare Tranquillum
+//2: Mare Subropicum
+//3: Isla Herba Bona
+
+//MB_OCEAN_MAP_TRANSITION_A: Mare Tranquillum
+//MB_OCEAN_MAP_TRANSITION_B: Mare Subtropicum
+//MB_OCEAN_MAP_TRANSITION_C: Isla Herba Bona
+
+mapscripts MareS3_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS3_F)
+    }
+
+}
+
+script MareS3_Script_Transition_MareTranquillum {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS3_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS3_Script_Transition_IslaHerbaBona {
+    setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}

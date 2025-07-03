@@ -2150,6 +2150,25 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+		//MareS3
+		if (mapGroup == MAP_GROUP(MAP_MARE_S3) && mapNum == MAP_NUM(MAP_MARE_S3))
+        {
+			//1: Mare Tranquillum
+			//2: Mare Subtropicum
+			//3: Isla Herba Bona
+			n = GetDynamicMapSec_MareS3(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 3:
+					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else

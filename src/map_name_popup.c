@@ -1379,6 +1379,27 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+		//MareS3 
+        if (mapGroup == MAP_GROUP(MAP_MARE_S3) && mapNum == MAP_NUM(MAP_MARE_S3)) 
+		{
+			//1: Mare Tranquillum
+			//2: Mare Subtropicum
+			//3: Isla Herba Bona
+			n = GetDynamicMapSec_MareS3(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_ISLA_HERBA_BONA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}

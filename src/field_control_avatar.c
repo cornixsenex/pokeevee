@@ -693,6 +693,14 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS3 - Transition Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_MARE_S3) && mapNum == MAP_NUM(MAP_MARE_S3)) {
+			if (VarGet(VAR_TEMP_5) != 1) {
+				ScriptContext_SetupScript(MareS3_Script_Transition_MareTranquillum);
+				return TRUE;
+			}
+		}
+
     }
 	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
     {
@@ -719,6 +727,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS3 - Transition Mare Subtropicum
+		if (mapGroup == MAP_GROUP(MAP_MARE_S3) && mapNum == MAP_NUM(MAP_MARE_S3)) {
+			if (VarGet(VAR_TEMP_5) != 2) {
+				ScriptContext_SetupScript(MareS3_Script_Transition_MareSubtropicum);
+				return TRUE;
+			}
+		}
     }
 	else if (MetatileBehavior_IsOceanMapTransitionC(metatileBehavior))
     {
@@ -731,6 +746,14 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS3 - Transition Isla Herba Bona
+		if (mapGroup == MAP_GROUP(MAP_MARE_S3) && mapNum == MAP_NUM(MAP_MARE_S3)) {
+			if (VarGet(VAR_TEMP_5) != 3) {
+				ScriptContext_SetupScript(MareS3_Script_Transition_IslaHerbaBona);
+				return TRUE;
+			}
+		}
+
     }
 	else if (MetatileBehavior_IsOceanMapTransitionD(metatileBehavior))
     {

@@ -8,6 +8,10 @@
 //5: Isla Hesperia
 //6: Scylla Charybdis
 
+//MB_OCEAN_MAP_TRANSITION_A: Mare Tropicum
+//MB_OCEAN_MAP_TRANSITION_B: Mare Subtropicum
+//MB_OCEAN_MAP_TRANSITION_C: Isla Herba Bona
+//MB_OCEAN_MAP_TRANSITION_D: Isla Hesperia
 
 mapscripts MareS4_MapScripts {
 
@@ -34,20 +38,20 @@ script MareS4_Script_Transition_MareSubtropicum {
     setvar (VAR_TEMP_5, 3)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
-
 }
+
 script MareS4_Script_Transition_IslaHerbaBona {
     setvar (VAR_TEMP_5, 4)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
-
 }
+
 script MareS4_Script_Transition_IslaHesperia {
     setvar (VAR_TEMP_5, 5)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
-
 }
+
 script MareS4_Script_Transition_ScyllaCharybdis {
     setvar (VAR_TEMP_5, 6)
 	special (TransitionMapMusic)
