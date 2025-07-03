@@ -4697,7 +4697,7 @@
       "width": 120,
       "height": 58,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_graveyard",
       "border_filepath": "data/layouts/MareE/border.bin",
       "blockdata_filepath": "data/layouts/MareE/map.bin"
     },
@@ -5807,7 +5807,7 @@
       "width": 86,
       "height": 86,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_graveyard",
       "border_filepath": "data/layouts/MareS1/border.bin",
       "blockdata_filepath": "data/layouts/MareS1/map.bin"
     },
