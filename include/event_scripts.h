@@ -691,11 +691,15 @@ extern const u8 EventScript_MovedTooFast[];
 
 //		BEGIN 	KUSTOMS		///
 
+
+//Tombstone Scripts
+extern const u8 Script_Tombstone_Default[];
+extern const u8 Script_Tombstone_Jesus[];
+
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];
 //Colchis Forced Battle
 extern const u8 Colchis_Script_CheckForcedBattle[]; 
-
 //Ocean Map Transitions
 
 //Route10
@@ -713,7 +717,6 @@ extern const u8 MareS4_Script_Transition_IslaHesperia[];
 extern const u8 MareS3_Script_Transition_MareTranquillum[];
 extern const u8 MareS3_Script_Transition_MareSubtropicum[];
 extern const u8 MareS3_Script_Transition_IslaHerbaBona[];
-
 
 
 //		END		KUSTOMS		///

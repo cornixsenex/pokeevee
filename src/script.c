@@ -1,6 +1,7 @@
 #include "global.h"
 #include "script.h"
 #include "event_data.h"
+#include "event_scripts.h"
 #include "mystery_gift.h"
 #include "random.h"
 #include "trainer_see.h"

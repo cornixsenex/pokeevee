@@ -82,6 +82,8 @@ static void SetMsgSignPostAndVarFacing(u32 playerDirection);
 static void SetUpWalkIntoSignScript(const u8 *script, u32 playerDirection);
 static u32 GetFacingSignpostType(u16 metatileBehvaior, u32 direction);
 static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition * position);
+//Cornix Tombstones
+static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -507,8 +509,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     if (MetatileBehavior_IsTrashCan(metatileBehavior) == TRUE)
         return EventScript_EmptyTrashCan;
 	//Mortia Tombstone
-    if (MetatileBehavior_IsTombstone(metatileBehavior) == TRUE)
-        return EventScript_EmptyTrashCan;
+    if (MetatileBehavior_IsPlayerFacingTombstone(metatileBehavior, direction) == TRUE)
+        return GetTombstoneScriptAtMapPosition(position);
     if (MetatileBehavior_IsShopShelf(metatileBehavior) == TRUE)
         return EventScript_ShopShelf;
     if (MetatileBehavior_IsBlueprint(metatileBehavior) == TRUE)
@@ -1399,6 +1401,28 @@ static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition *position)
         return event->bgUnion.script;
     return EventScript_TestSignpostMsg;
 }
+
+//cornix Mortia tombstone
+static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
+{
+	u16 x, y;
+	x = position->x;
+	y = position->y;
+
+	//Shift x et y
+	x -= 7;
+	y -= 7;
+	
+	//Logic
+	DebugPrintf("GetTombstoneScriptAtMapPosition\nx: %d\ny: %d\n", x, y);
+	
+	//WIP
+	if (x == 52 && y == 51)
+		return Script_Tombstone_Jesus;
+	else
+		return Script_Tombstone_Default;
+}
+	
 
 static void Task_OpenStartMenu(u8 taskId)
 {

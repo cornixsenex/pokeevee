@@ -1,1 +1,31 @@
 mapscripts MareS1_MapScripts {}
+
+
+
+
+
+
+//Tombstone Scripts
+script Script_Tombstone_Default {
+	msgbox (Tombstone_Text_Default)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Jesus {
+	msgbox (Tombstone_Text_Jesus)
+	closemessage
+	end
+}
+
+
+
+
+//Tombstone Text
+text Tombstone_Text_Default {
+	format("The inscription is too faded to read")
+}
+
+text Tombstone_Text_Jesus {
+	format("IESUS NAZARENUS\nDCCLVIII - DCCXC")
+}

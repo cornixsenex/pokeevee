@@ -288,9 +288,11 @@ bool8 MetatileBehavior_IsCanvas(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 MetatileBehavior_IsTombstone(u8 metatileBehavior)
+bool8 MetatileBehavior_IsPlayerFacingTombstone(u8 metatileBehavior, u8 playerDir)
 {
-    if (metatileBehavior == MB_TOMBSTONE)
+	if (playerDir != DIR_NORTH)
+		return FALSE;
+	else if (metatileBehavior == MB_TOMBSTONE)
         return TRUE;
     else
         return FALSE;
