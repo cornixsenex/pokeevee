@@ -695,6 +695,11 @@ extern const u8 EventScript_MovedTooFast[];
 //Tombstone Scripts
 extern const u8 Script_Tombstone_Default[];
 extern const u8 Script_Tombstone_Jesus[];
+extern const u8 Script_Tombstone_Player[];
+extern const u8 Script_Tombstone_Pyramus[];
+extern const u8 Script_Tombstone_Thisbe[];
+extern const u8 Script_Tombstone_Buddha[];
+extern const u8 Script_Tombstone_Mahometus[];
 
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];

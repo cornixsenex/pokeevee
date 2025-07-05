@@ -1417,8 +1417,18 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 	DebugPrintf("GetTombstoneScriptAtMapPosition\nx: %d\ny: %d\n", x, y);
 	
 	//WIP
-	if (x == 52 && y == 51)
+	if (x == 60 && y == 14)
 		return Script_Tombstone_Jesus;
+	else if (x == 59 && y == 14)
+		return Script_Tombstone_Buddha;
+	else if (x == 61 && y == 14)
+		return Script_Tombstone_Mahometus;
+	else if (x == 8 && y == 10)
+		return Script_Tombstone_Player;
+	else if (x == 29 && y == 62)
+		return Script_Tombstone_Pyramus;
+	else if (x == 30 && y == 62)
+		return Script_Tombstone_Thisbe;
 	else
 		return Script_Tombstone_Default;
 }

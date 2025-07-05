@@ -36,23 +36,12 @@ script Script_Tombstone_Thisbe {
 	end
 }
 
-script Script_Tombstone_Buddha {
-	msgbox (Tombstone_Text_Buddha)
-	closemessage
-	end
-}
-
-script Script_Tombstone_Mahometus {
-	msgbox (Tombstone_Text_Mahometus)
-	closemessage
-	end
-}
 
 
 
 //Tombstone Text
 text Tombstone_Text_Default {
-	format("The inscription is too faded to read.")
+	format("The inscription is too faded to read")
 }
 
 text Tombstone_Text_Jesus {
@@ -63,18 +52,10 @@ text Tombstone_Text_Player {
 	format("{PLAYER}\nMMDCCL - MMDCCLXXVIII")
 }
 
-text Tombstone_Text_Pyramus {
+text Tombstone_Text_Player {
 	format("PYRAMVS")
 }
 
-text Tombstone_Text_Thisbe {
-	format("THISBE")
-}
-
-text Tombstone_Text_Buddha {
-	format("SIDDHARTHA GVATAMA\nCCLXXIV - CCCLIII")
-}
-
-text Tombstone_Text_Mahometus {
-	format("MAHOMETVS\nMCCCXXIV - MCCCLXXXV")
+text Tombstone_Text_Player {
+	format("{PLAYER}\nMMDCCL - MMDCCLXXVIII")
 }

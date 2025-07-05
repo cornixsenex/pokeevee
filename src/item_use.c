@@ -779,7 +779,8 @@ static const u8 *const gBookVerseCollection[] =
 	gText_BookVerse35,
 	gText_BookVerse36,
 	gText_BookVerse37,
-	gText_BookVerse38
+	gText_BookVerse38,
+	gText_BookVerse39
 };
 
 //Test Book

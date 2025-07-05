@@ -213,11 +213,11 @@ const u8 gText_BookVerse35[] =_("Like glowing coals the words\nfall off the page
 const u8 gText_BookVerse36[] =_("Like glowing coals the words\nfall off the page:\pThe masters make the rules for\nthe wise men and the fools.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BookVerse37[] =_("Like glowing coals the words\nfall off the page:\pOne who sings with his tongue on\nfire gargles in the rat race choir.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BookVerse38[] =_("Like glowing coals the words\nfall off the page:\pNo woman\nNo cry{PAUSE_UNTIL_PRESS}");
+const u8 gText_BookVerse39[] =_("Like glowing coals the words\nfall off the page:\pShotgun Willy sits around in\nhis underwear{PAUSE_UNTIL_PRESS}");
 
 //End Book Verses
 
 //Ostracon
-//const u8 gText_Ostracon[] =_("In search of Colchis' cave a hidden path\nEluding their keen sight Shiny Mareep\nSo far away lost in shadowy night\nA SPEAROW released took off graceful flight\nRevealing secrets kept by cavern walls\nThus by the SPEAROW's flight the truth was shown\nHow Jason and his crew found paths unknown.");
 const u8 gText_Ostracon[] =_("In search of secret cave and sacred wool\nBy SPEAROW free to show by gentle flight\pThe hidden path you seek is truely shown\nThus Argo and her crew find paths unkown{PAUSE_UNTIL_PRESS}");
 const u8 gText_TrainerCard[] = _("Your LEVEL CAP:\n{STR_VAR_1}{PAUSE_UNTIL_PRESS}");
 
