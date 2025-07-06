@@ -48,6 +48,157 @@ script Script_Tombstone_Mahometus {
 	end
 }
 
+script Script_Tombstone_Einstein {
+	msgbox (Tombstone_Text_Einstein)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Gandhi {
+	msgbox (Tombstone_Text_Gandhi)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Napoleon {
+	msgbox (Tombstone_Text_Napoleon)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Marx {
+	msgbox (Tombstone_Text_Marx)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Caesar {
+	msgbox (Tombstone_Text_Caesar)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Virgil {
+	msgbox (Tombstone_Text_Virgil)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Shakespeare {
+	msgbox (Tombstone_Text_Shakespeare)
+	closemessage
+	end
+}
+
+script Script_Tombstone_MartinLuther {
+	msgbox (Tombstone_Text_MartinLuther)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Newton {
+	msgbox (Tombstone_Text_Newton)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Columbus {
+	msgbox (Tombstone_Text_Columbus)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Augustus {
+	msgbox (Tombstone_Text_Augustus)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Khan {
+	msgbox (Tombstone_Text_Khan)
+	closemessage
+	end
+}
+
+script Script_Tombstone_WilliamNorman {
+	msgbox (Tombstone_Text_WilliamNorman)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Cleopatra {
+	msgbox (Tombstone_Text_Cleopatra)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Richard1 {
+	msgbox (Tombstone_Text_Richard1)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Lincoln {
+	msgbox (Tombstone_Text_Lincoln)
+	closemessage
+	end
+}
+
+script Script_Tombstone_AlexanderGreat {
+	msgbox (Tombstone_Text_AlexanderGreat)
+	closemessage
+	end
+}
+
+script Script_Tombstone_KarlusMagnus {
+	msgbox (Tombstone_Text_KarlusMagnus)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Socrates {
+	msgbox (Tombstone_Text_Socrates)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Plato {
+	msgbox (Tombstone_Text_Plato)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Aristotle {
+	msgbox (Tombstone_Text_Aristotle)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Turing {
+	msgbox (Tombstone_Text_Turing)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Lovelace {
+	msgbox (Tombstone_Text_Lovelace)
+	closemessage
+	end
+}
+
+script Script_Tombstone_JohnLinn {
+	msgbox (Tombstone_Text_JohnLinn)
+	closemessage
+	end
+}
+
+script Script_Tombstone_JamesStrait {
+	msgbox (Tombstone_Text_JamesStrait)
+	closemessage
+	end
+}
+
+
 
 
 //Tombstone Text
@@ -76,5 +227,105 @@ text Tombstone_Text_Buddha {
 }
 
 text Tombstone_Text_Mahometus {
-	format("MAHOMETVS\nMCCCXXIV - MCCCLXXXV")
+	format("MAHOMETVS MECCAE\nMCCCXXIV - MCCCLXXXV")
+}
+
+text Tombstone_Text_Einstein{
+	format("ALBERTVS EINSTEIN\nMMDCXXXII - MMDCCVIII")
+}
+
+text Tombstone_Text_Gandhi {
+	format("MOHANDAS GANDHI\nMMDCXXII - MMDCCI")
+}
+
+text Tombstone_Text_Napoleon {
+	format("NAPOLIO BONAPARS\nMMDXXII - MMDLXXIV")
+}
+
+text Tombstone_Text_Marx {
+	format("CAROLVS MARXIVS\nMMDLXXI - MMDCXXXVI")
+}
+
+text Tombstone_Text_Caesar {
+	format("GAIVS IVLIVS CAESAR\nDCLIV - DCCX")
+}
+
+text Tombstone_Text_Virgil {
+	format("PVBLIVS VERGILIVS MARO\nDCLXXXIV - DCCXXXV")
+}
+
+text Tombstone_Text_Shakespeare {
+	format("GVLIELMVS SHAKESPERIVS\nMMCCCXVII - MMCCCLXIX")
+}
+
+text Tombstone_Text_MartinLuther {
+	format("MARTINVS LVTHERVS\nMMCCXXXVI - MMCCXCIX")
+}
+
+text Tombstone_Text_Newton {
+	format("ISAACVS NEVTONVS\nMMCCCXCV - MMCDLXXX")
+}
+
+text Tombstone_Text_Columbus {
+	format("CHRISTOPHORVS COLVMBVS\nMMCCIV - MMCCLIX")
+}
+
+text Tombstone_Text_Augustus {
+	format("GAIVS OCTAVIVS\nDCXCI - DCCLXVII")
+}
+
+text Tombstone_Text_Khan {
+	format("BORIGIN TEMUGIN\nMCMXV - MCMLXXX")
+}
+
+text Tombstone_Text_WilliamNorman {
+	format("GVLIELMVS NORMANNVS\nMDCCLXXXI - MDCCCXL")
+}
+
+text Tombstone_Text_Cleopatra {
+	format("CLEOPATRA PHILOPATOR\nDCLXXXV - DCCXXIV")
+}
+
+text Tombstone_Text_Richard1 {
+	format("RICARDVS OXONIAE\nMCMX - MCMLII")
+}
+
+text Tombstone_Text_Lincoln {
+	format("ABRAHAMVS LINCOLN\nMMDLXII - MMDCXVIII")
+}
+
+text Tombstone_Text_AlexanderGreat {
+	format("ALEXANDER MACEDONIAE\nCCCXCVIII - CDXXXI")
+}
+
+text Tombstone_Text_KarlusMagnus {
+	format("CAROLUS CAROLINGVS\nMCDXCIII - MDLXVII")
+}
+
+text Tombstone_Text_Socrates {
+	format("SOCRATES ATHENARVM\nCCLXXXV - CCCLV")
+}
+
+text Tombstone_Text_Plato {
+	format("PLATO ATHENARVM\nCCCXXIX - CDVI")
+}
+
+text Tombstone_Text_Aristotle {
+	format("ARISTOTELES STAGIRORVM\nCCCLXXXIV - CDXXXII")
+}
+
+text Tombstone_Text_Turing {
+	format("ALANVS TVRING\nMMDCLXV - MMDCCVII")
+}
+
+text Tombstone_Text_Lovelace {
+	format("ADA LOVELACE\nMMDLXVIII - MMDCV")
+}
+
+text Tombstone_Text_JohnLinn {
+	format("IOANNES LINN\nMMDCXCIV - MMDCCLXXVII")
+}
+
+text Tombstone_Text_JamesStrait {
+	format("ADA LOVELACE\nMMDCLXXXVIII - MMDCCLXXVI")
 }

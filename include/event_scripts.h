@@ -700,6 +700,34 @@ extern const u8 Script_Tombstone_Pyramus[];
 extern const u8 Script_Tombstone_Thisbe[];
 extern const u8 Script_Tombstone_Buddha[];
 extern const u8 Script_Tombstone_Mahometus[];
+extern const u8 Script_Tombstone_Einstein[];
+extern const u8 Script_Tombstone_Gandhi[];
+extern const u8 Script_Tombstone_Napoleon[];
+extern const u8 Script_Tombstone_Marx[];
+extern const u8 Script_Tombstone_Caesar[];
+extern const u8 Script_Tombstone_Virgil[];
+extern const u8 Script_Tombstone_Shakespeare[];
+extern const u8 Script_Tombstone_MartinLuther[];
+extern const u8 Script_Tombstone_Newton[];
+extern const u8 Script_Tombstone_Columbus[];
+extern const u8 Script_Tombstone_Augustus[];
+extern const u8 Script_Tombstone_Khan[];
+extern const u8 Script_Tombstone_WilliamNorman[];
+extern const u8 Script_Tombstone_Cleopatra[];
+extern const u8 Script_Tombstone_Richard1[];
+extern const u8 Script_Tombstone_Lincoln[];
+extern const u8 Script_Tombstone_AlexanderGreat[];
+extern const u8 Script_Tombstone_KarlusMagnus[];
+extern const u8 Script_Tombstone_Socrates[];
+extern const u8 Script_Tombstone_Aristotle[];
+extern const u8 Script_Tombstone_Plato[];
+extern const u8 Script_Tombstone_Turing[];
+extern const u8 Script_Tombstone_Lovelace[];
+extern const u8 Script_Tombstone_JohnLinn[];
+extern const u8 Script_Tombstone_JamesStrait[];
+
+
+
 
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];

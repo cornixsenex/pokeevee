@@ -1417,18 +1417,81 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 	DebugPrintf("GetTombstoneScriptAtMapPosition\nx: %d\ny: %d\n", x, y);
 	
 	//WIP
+	//3 prophets
 	if (x == 60 && y == 14)
 		return Script_Tombstone_Jesus;
-	else if (x == 59 && y == 14)
+	else if (x == 58 && y == 14)
 		return Script_Tombstone_Buddha;
-	else if (x == 61 && y == 14)
+	else if (x == 62 && y == 14)
 		return Script_Tombstone_Mahometus;
+	//Row 1 Upper Area
+	else if (x == 34 && y == 6)
+		return Script_Tombstone_Einstein;
+	else if (x == 37 && y == 6)
+		return Script_Tombstone_Gandhi;
+	else if (x == 45 && y == 6)
+		return Script_Tombstone_Napoleon;
+	else if (x == 48 && y == 6)
+		return Script_Tombstone_Marx;
+	//Row 2 Upper Area
+	else if (x == 34 && y == 9)
+		return Script_Tombstone_Caesar;
+	else if (x == 37 && y == 9)
+		return Script_Tombstone_Virgil;
+	else if (x == 45 && y == 9)
+		return Script_Tombstone_Shakespeare;
+	else if (x == 48 && y == 9)
+		return Script_Tombstone_MartinLuther;
+	//Row 3 Upper Area
+	else if (x == 34 && y == 12)
+		return Script_Tombstone_Newton;
+	else if (x == 37 && y == 12)
+		return Script_Tombstone_Columbus;
+	else if (x == 45 && y == 12)
+		return Script_Tombstone_Augustus;
+	else if (x == 48 && y == 12)
+		return Script_Tombstone_Khan;
+	//6 Ante top
+	else if (x == 32 && y == 16)
+		return Script_Tombstone_WilliamNorman;
+	else if (x == 35 && y == 16)
+		return Script_Tombstone_Cleopatra;
+	else if (x == 38 && y == 16)
+		return Script_Tombstone_Richard1;
+	else if (x == 44 && y == 16)
+		return Script_Tombstone_Lincoln;
+	else if (x == 47 && y == 16)
+		return Script_Tombstone_AlexanderGreat;
+	else if (x == 50 && y == 16)
+		return Script_Tombstone_KarlusMagnus;
+	//3 philosophers together
+	else if (x == 52 && y == 13)
+		return Script_Tombstone_Socrates;
+	else if (x == 53 && y == 13)
+		return Script_Tombstone_Aristotle;
+	else if (x == 54 && y == 13)
+		return Script_Tombstone_Plato;
+	//2 together up top
+	else if (x == 58 && y == 8)
+		return Script_Tombstone_Turing;
+	else if (x == 59 && y == 8)
+		return Script_Tombstone_Lovelace;
+	
+
+
+	//player et pyramus et thisbe - ETC at end
 	else if (x == 8 && y == 10)
 		return Script_Tombstone_Player;
+	else if (x == 14 && y == 13)
+		return Script_Tombstone_JohnLinn;
+	else if (x == 11 && y == 16)
+		return Script_Tombstone_JamesStrait;
 	else if (x == 29 && y == 62)
 		return Script_Tombstone_Pyramus;
 	else if (x == 30 && y == 62)
 		return Script_Tombstone_Thisbe;
+
+
 	else
 		return Script_Tombstone_Default;
 }
