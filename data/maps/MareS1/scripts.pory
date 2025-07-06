@@ -198,6 +198,24 @@ script Script_Tombstone_JamesStrait {
 	end
 }
 
+script Script_Tombstone_Jerry {
+	msgbox (Tombstone_Text_Jerry)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Phil {
+	msgbox (Tombstone_Text_Phil)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Ryan {
+	msgbox (Tombstone_Text_Ryan)
+	closemessage
+	end
+}
+
 
 
 
@@ -327,5 +345,17 @@ text Tombstone_Text_JohnLinn {
 }
 
 text Tombstone_Text_JamesStrait {
-	format("ADA LOVELACE\nMMDCLXXXVIII - MMDCCLXXVI")
+	format("IACOBVS STRAIT\nMMDCLXXXVIII - MMDCCLXXVI")
+}
+
+text Tombstone_Text_Jerry {
+	format("HIERONYMVS GARCIA\nMMDCXCV - MMDCCXLVIII")
+}
+
+text Tombstone_Text_Phil {
+	format("PHILLIPPVS LESH\nMMDCXCIII - MMDCCLXXVII")
+}
+
+text Tombstone_Text_Ryan {
+	format("RYAN CORSA\nMMDCCXLIX")
 }

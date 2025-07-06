@@ -725,6 +725,9 @@ extern const u8 Script_Tombstone_Turing[];
 extern const u8 Script_Tombstone_Lovelace[];
 extern const u8 Script_Tombstone_JohnLinn[];
 extern const u8 Script_Tombstone_JamesStrait[];
+extern const u8 Script_Tombstone_Jerry[];
+extern const u8 Script_Tombstone_Phil[];
+extern const u8 Script_Tombstone_Ryan[];
 
 
 

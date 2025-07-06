@@ -1486,6 +1486,15 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_JohnLinn;
 	else if (x == 11 && y == 16)
 		return Script_Tombstone_JamesStrait;
+	else if (x == 11 && y == 13)
+		return Script_Tombstone_Jerry;
+	else if (x == 11 && y == 10)
+		return Script_Tombstone_Phil;
+	else if (x == 8 && y == 7)
+		return Script_Tombstone_Ryan;
+
+
+	//Pyramus et Thisbe
 	else if (x == 29 && y == 62)
 		return Script_Tombstone_Pyramus;
 	else if (x == 30 && y == 62)
