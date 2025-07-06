@@ -728,6 +728,29 @@ extern const u8 Script_Tombstone_JamesStrait[];
 extern const u8 Script_Tombstone_Jerry[];
 extern const u8 Script_Tombstone_Phil[];
 extern const u8 Script_Tombstone_Ryan[];
+extern const u8 Script_Tombstone_Maggie[];
+extern const u8 Script_Tombstone_Ramiro[];
+extern const u8 Script_Tombstone_Kira[];
+extern const u8 Script_Tombstone_Bo[];
+extern const u8 Script_Tombstone_SawyerHawkins[];
+extern const u8 Script_Tombstone_MichaelDavis[];
+extern const u8 Script_Tombstone_Hunter[];
+extern const u8 Script_Tombstone_Owsley[];
+extern const u8 Script_Tombstone_Brent[];
+extern const u8 Script_Tombstone_Pigpen[];
+extern const u8 Script_Tombstone_Keith[];
+extern const u8 Script_Tombstone_BillGraham[];
+extern const u8 Script_Tombstone_CowboyNeal[];
+extern const u8 Script_Tombstone_Antony[];
+extern const u8 Script_Tombstone_Wright1[];
+extern const u8 Script_Tombstone_Wright2[];
+extern const u8 Script_Tombstone_Jefferson[];
+extern const u8 Script_Tombstone_Adams[];
+extern const u8 Script_Tombstone_Lennon[];
+extern const u8 Script_Tombstone_Harrison[];
+extern const u8 Script_Tombstone_Washington[];
+extern const u8 Script_Tombstone_Hisler[];
+extern const u8 Script_Tombstone_Elizabeth[];
 
 
 

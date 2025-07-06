@@ -1455,7 +1455,7 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 	else if (x == 32 && y == 16)
 		return Script_Tombstone_WilliamNorman;
 	else if (x == 35 && y == 16)
-		return Script_Tombstone_Cleopatra;
+		return Script_Tombstone_Elizabeth;
 	else if (x == 38 && y == 16)
 		return Script_Tombstone_Richard1;
 	else if (x == 44 && y == 16)
@@ -1492,6 +1492,58 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Phil;
 	else if (x == 8 && y == 7)
 		return Script_Tombstone_Ryan;
+	else if (x == 11 && y == 7)
+		return Script_Tombstone_Maggie;
+	else if (x == 14 && y == 7)
+		return Script_Tombstone_Ramiro;
+	else if (x == 14 && y == 10)
+		return Script_Tombstone_Kira;
+	else if (x == 17 && y == 10)
+		return Script_Tombstone_Bo;
+	else if (x == 17 && y == 13)
+		return Script_Tombstone_SawyerHawkins;
+	else if (x == 20 && y == 13)
+		return Script_Tombstone_MichaelDavis;
+	else if (x == 30 && y == 11)
+		return Script_Tombstone_Hunter;
+	else if (x == 14 && y == 16)
+		return Script_Tombstone_CowboyNeal;
+	else if (x == 17 && y == 16)
+		return Script_Tombstone_Owsley;
+	else if (x == 20 && y == 16)
+		return Script_Tombstone_Brent;
+	else if (x == 22 && y == 16)
+		return Script_Tombstone_Pigpen;
+	else if (x == 24 && y == 16)
+		return Script_Tombstone_Keith;
+	else if (x == 27 && y == 16)
+		return Script_Tombstone_BillGraham;
+    //Single out West
+	else if (x == 13 && y == 27)
+		return Script_Tombstone_Hisler;
+    //Single out East
+	else if (x == 62 && y == 26)
+		return Script_Tombstone_Washington;
+    //Double top left
+	else if (x == 29 && y == 27)
+		return Script_Tombstone_Lennon;
+	else if (x == 30 && y == 27)
+		return Script_Tombstone_Harrison;
+    //Double top right
+	else if (x == 52 && y == 27)
+		return Script_Tombstone_Wright1;
+	else if (x == 53 && y == 27)
+		return Script_Tombstone_Wright2;
+    //Double bottom left
+	else if (x == 29 && y == 42)
+		return Script_Tombstone_Antony;
+	else if (x == 30 && y == 42)
+		return Script_Tombstone_Cleopatra;
+    //Double bottom right
+	else if (x == 52 && y == 42)
+		return Script_Tombstone_Jefferson;
+	else if (x == 53 && y == 42)
+		return Script_Tombstone_Adams;
 
 
 	//Pyramus et Thisbe
