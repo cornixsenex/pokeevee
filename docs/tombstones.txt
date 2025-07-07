@@ -344,14 +344,10 @@ frid khalo
 chaplin
 stephen hawking
 sagan
-Chien-Shiung Wu
-Faraday
-Maxwell
 James watt
 niels bohr
 schrodinger
 feynman
-Goethe
 Twain
 howard zinn
 immanuel kant
@@ -361,8 +357,6 @@ shopenhaur
 descartes
 epicurus
 diogenes
-voltaire
-trotsky
 hitchcock
 welles
 aristophanes

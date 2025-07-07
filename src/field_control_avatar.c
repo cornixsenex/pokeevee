@@ -1583,6 +1583,19 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Picasso;
 	else if (x == 35 && y == 34)
 		return Script_Tombstone_ChienShiungWu;
+	//Left Fence Row 4
+	else if (x == 24 && y == 37)
+		return Script_Tombstone_Faraday;
+	else if (x == 26 && y == 37)
+		return Script_Tombstone_Maxwell;
+	else if (x == 28 && y == 37)
+		return Script_Tombstone_Goethe;
+	else if (x == 31 && y == 37)
+		return Script_Tombstone_Voltaire;
+	else if (x == 33 && y == 37)
+		return Script_Tombstone_Trotsky;
+	else if (x == 35 && y == 37)
+		return Script_Tombstone_Kafka;
 
 
 	//Pyramus et Thisbe

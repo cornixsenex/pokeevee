@@ -771,6 +771,13 @@ extern const u8 Script_Tombstone_VanGogh[];
 extern const u8 Script_Tombstone_Picasso[];
 extern const u8 Script_Tombstone_ChienShiungWu[];
 
+extern const u8 Script_Tombstone_Faraday[];
+extern const u8 Script_Tombstone_Maxwell[];
+extern const u8 Script_Tombstone_Goethe[];
+extern const u8 Script_Tombstone_Voltaire[];
+extern const u8 Script_Tombstone_Trotsky[];
+extern const u8 Script_Tombstone_Kafka[];
+
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];
 //Colchis Forced Battle

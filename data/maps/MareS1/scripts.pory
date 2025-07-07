@@ -464,6 +464,42 @@ script Script_Tombstone_ChienShiungWu {
 	end
 }
 
+script Script_Tombstone_Faraday {
+	msgbox (Tombstone_Text_Faraday)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Maxwell {
+	msgbox (Tombstone_Text_Maxwell)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Goethe {
+	msgbox (Tombstone_Text_Goethe)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Voltaire {
+	msgbox (Tombstone_Text_Voltaire)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Trotsky {
+	msgbox (Tombstone_Text_Trotsky)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Kafka {
+	msgbox (Tombstone_Text_Kafka)
+	closemessage
+	end
+}
+
 
 
 //Tombstone Text
@@ -768,7 +804,31 @@ text Tombstone_Text_Picasso {
 }
 
 text Tombstone_Text_ChienShiungWu {
-	format("CHIEN SHIUNG WU\nMMCLXV - MMDCCL")
+	format("CHIEN SHIVNG VV\nMMCLXV - MMDCCL")
+}
+
+text Tombstone_Text_Faraday {
+	format("MICHAEL FARADAY\nMMDCXXXIV - MMDCCXXVI")
+}
+
+text Tombstone_Text_Maxwell {
+	format("IACOBVS MAXUELL\nMMDLXXXIV - MMDCXXXII")
+}
+
+text Tombstone_Text_Goethe {
+	format("iIOANNES GOETHIVS\nMMDII - MMDLXXXV")
+}
+
+text Tombstone_Text_Voltaire {
+	format("FRANCISCVS AROVET\nMMCDXLVII - MMDXXXI")
+}
+
+text Tombstone_Text_Trotsky {
+	format("LEO BRONSTEINVS\nMMDCXXXII - MMDCXCIII")
+}
+
+text Tombstone_Text_Kafka {
+	format("FRANCISCVS KAFKA\nMMDCXXXVI - MMDCLXXVII")
 }
 
 
