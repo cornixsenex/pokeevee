@@ -752,8 +752,24 @@ extern const u8 Script_Tombstone_Washington[];
 extern const u8 Script_Tombstone_Hisler[];
 extern const u8 Script_Tombstone_Elizabeth[];
 
-
-
+extern const u8 Script_Tombstone_Thucydides[];
+extern const u8 Script_Tombstone_Ford[];
+extern const u8 Script_Tombstone_Rockefeller[];
+extern const u8 Script_Tombstone_Morgan[];
+extern const u8 Script_Tombstone_Mays[];
+extern const u8 Script_Tombstone_Kubrick[];
+extern const u8 Script_Tombstone_Brando[];
+extern const u8 Script_Tombstone_Gutenburg[];
+extern const u8 Script_Tombstone_Horace[];
+extern const u8 Script_Tombstone_CatoElder[];
+extern const u8 Script_Tombstone_Dickens[];
+extern const u8 Script_Tombstone_Darwin[];
+extern const u8 Script_Tombstone_Pasteur[];
+extern const u8 Script_Tombstone_Fleming[];
+extern const u8 Script_Tombstone_Tubman[];
+extern const u8 Script_Tombstone_VanGogh[];
+extern const u8 Script_Tombstone_Picasso[];
+extern const u8 Script_Tombstone_ChienShiungWu[];
 
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];

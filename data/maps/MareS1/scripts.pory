@@ -356,6 +356,114 @@ script Script_Tombstone_Elizabeth {
 	end
 }
 
+script Script_Tombstone_Thucydides {
+	msgbox (Tombstone_Text_Thucydides)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Ford {
+	msgbox (Tombstone_Text_Ford)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Rockefeller {
+	msgbox (Tombstone_Text_Rockefeller)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Morgan {
+	msgbox (Tombstone_Text_Morgan)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Mays {
+	msgbox (Tombstone_Text_Mays)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Kubrick {
+	msgbox (Tombstone_Text_Kubrick)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Brando {
+	msgbox (Tombstone_Text_Brando)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Gutenburg {
+	msgbox (Tombstone_Text_Gutenburg)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Horace {
+	msgbox (Tombstone_Text_Horace)
+	closemessage
+	end
+}
+
+script Script_Tombstone_CatoElder {
+	msgbox (Tombstone_Text_CatoElder)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Dickens {
+	msgbox (Tombstone_Text_Dickens)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Darwin {
+	msgbox (Tombstone_Text_Darwin)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Pasteur {
+	msgbox (Tombstone_Text_Pasteur)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Fleming {
+	msgbox (Tombstone_Text_Fleming)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Tubman {
+	msgbox (Tombstone_Text_Tubman)
+	closemessage
+	end
+}
+
+script Script_Tombstone_VanGogh {
+	msgbox (Tombstone_Text_VanGogh)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Picasso {
+	msgbox (Tombstone_Text_Picasso)
+	closemessage
+	end
+}
+
+script Script_Tombstone_ChienShiungWu {
+	msgbox (Tombstone_Text_ChienShiungWu)
+	closemessage
+	end
+}
+
 
 
 //Tombstone Text
@@ -588,7 +696,80 @@ text Tombstone_Text_Hisler {
 }
 
 text Tombstone_Text_Elizabeth {
-	format("ELIZABETHA TUDOR\nMMCCLXXXVI - MMCCCLVI")
+	format("ELIZABETHA TVDOR\nMMCCLXXXVI - MMCCCLVI")
 }
+
+text Tombstone_Text_Thucydides {
+	format("THVCYDIDES ATHENARVM\nCCXCIV - CCCLIV")
+}
+
+text Tombstone_Text_Ford {
+	format("HENRICVS FORD\nMMDCXVI - MMDCC")
+}
+
+text Tombstone_Text_Rockefeller {
+	format("IOANNES ROCKEFELLER\nMMDXCII - MMDCXC")
+}
+
+text Tombstone_Text_Morgan {
+	format("IOANNES MORGAN\nMMDXC - MMDCLXVI")
+}
+
+text Tombstone_Text_Mays {
+	format("GVLIELMUS MAYS\nMMDCLXXXIV - MMDCCLXXVII")
+}
+
+text Tombstone_Text_Kubrick {
+	format("STANLEY KVBRICK\nMMDCLXXXI - MMDCCLII")
+}
+
+text Tombstone_Text_Brando {
+	format("MARLON BRANDO\nMMDCLXXVII - MMDCCLVII")
+}
+
+text Tombstone_Text_Gutenburg {
+	format("IOANNES GUTENBERGVS\nMMCLIII - MMCCXXI")
+}
+
+text Tombstone_Text_Horace {
+	format("QVINTVS HORATIVS FLACCVS\nDCLXXXIX - DCCXLVI")
+}
+
+text Tombstone_Text_CatoElder {
+	format("MARCVS PORCIVS CATO\nDXX - DCV")
+}
+
+text Tombstone_Text_Dickens {
+	format("CAROLVS DICKENS\nMMDLXV - MMDCXXIII")
+}
+
+text Tombstone_Text_Darwin {
+	format("CAROLVS DARWINIVS\nMMDLXII - MMDCXXXV")
+}
+
+text Tombstone_Text_Pasteur {
+	format("LVDOVICVS PASTEVR\nMMDLXXV - MMDCXLVIII")
+}
+
+text Tombstone_Text_Fleming {
+	format("ALEXANDER FLEMING\nMMDCXXXIV - MMDCCVIII")
+}
+
+text Tombstone_Text_Tubman {
+	format("ARAMINTA ROSS\nMMDLXXV - MMDCLXVI")
+}
+
+text Tombstone_Text_VanGogh {
+	format("VINCENTIVS VAN GOGH\nMMDCVI - MMDCXLIII")
+}
+
+text Tombstone_Text_Picasso {
+	format("PAVLVS PICASSO\nMMDCXXXIV - MMDCCXXVI")
+}
+
+text Tombstone_Text_ChienShiungWu {
+	format("CHIEN SHIUNG WU\nMMCLXV - MMDCCL")
+}
+
 
 

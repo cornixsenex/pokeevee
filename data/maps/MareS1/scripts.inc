@@ -466,289 +466,523 @@ Script_Tombstone_Elizabeth::
 	end
 
 
+Script_Tombstone_Thucydides::
+# 360 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Thucydides
+# 361 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Ford::
+# 366 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Ford
+# 367 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Rockefeller::
+# 372 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Rockefeller
+# 373 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Morgan::
+# 378 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Morgan
+# 379 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Mays::
+# 384 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Mays
+# 385 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Kubrick::
+# 390 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Kubrick
+# 391 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Brando::
+# 396 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Brando
+# 397 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Gutenburg::
+# 402 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Gutenburg
+# 403 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Horace::
+# 408 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Horace
+# 409 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_CatoElder::
+# 414 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_CatoElder
+# 415 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Dickens::
+# 420 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Dickens
+# 421 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Darwin::
+# 426 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Darwin
+# 427 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Pasteur::
+# 432 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Pasteur
+# 433 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Fleming::
+# 438 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Fleming
+# 439 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Tubman::
+# 444 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Tubman
+# 445 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_VanGogh::
+# 450 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_VanGogh
+# 451 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_Picasso::
+# 456 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_Picasso
+# 457 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
+Script_Tombstone_ChienShiungWu::
+# 462 "data/maps/MareS1/scripts.pory"
+	msgbox Tombstone_Text_ChienShiungWu
+# 463 "data/maps/MareS1/scripts.pory"
+	closemessage
+	end
+
+
 Tombstone_Text_Default::
-# 362 "data/maps/MareS1/scripts.pory"
+# 470 "data/maps/MareS1/scripts.pory"
 	.string "The inscription is too faded to read.$"
 
 Tombstone_Text_Jesus::
-# 366 "data/maps/MareS1/scripts.pory"
+# 474 "data/maps/MareS1/scripts.pory"
 	.string "IESVS NAZARENVS\n"
 	.string "DCCLVIII - DCCXC$"
 
 Tombstone_Text_Player::
-# 370 "data/maps/MareS1/scripts.pory"
+# 478 "data/maps/MareS1/scripts.pory"
 	.string "{PLAYER}\n"
 	.string "MMDCCL - MMDCCLXXVIII$"
 
 Tombstone_Text_Pyramus::
-# 374 "data/maps/MareS1/scripts.pory"
+# 482 "data/maps/MareS1/scripts.pory"
 	.string "PYRAMVS$"
 
 Tombstone_Text_Thisbe::
-# 378 "data/maps/MareS1/scripts.pory"
+# 486 "data/maps/MareS1/scripts.pory"
 	.string "THISBE$"
 
 Tombstone_Text_Buddha::
-# 382 "data/maps/MareS1/scripts.pory"
+# 490 "data/maps/MareS1/scripts.pory"
 	.string "SIDDHARTHA GVATAMA\n"
 	.string "CCLXXIV - CCCLIII$"
 
 Tombstone_Text_Mahometus::
-# 386 "data/maps/MareS1/scripts.pory"
+# 494 "data/maps/MareS1/scripts.pory"
 	.string "MAHOMETVS MECCAE\n"
 	.string "MCCCXXIV - MCCCLXXXV$"
 
 Tombstone_Text_Einstein::
-# 390 "data/maps/MareS1/scripts.pory"
+# 498 "data/maps/MareS1/scripts.pory"
 	.string "ALBERTVS EINSTEIN\n"
 	.string "MMDCXXXII - MMDCCVIII$"
 
 Tombstone_Text_Gandhi::
-# 394 "data/maps/MareS1/scripts.pory"
+# 502 "data/maps/MareS1/scripts.pory"
 	.string "MOHANDAS GANDHI\n"
 	.string "MMDCXXII - MMDCCI$"
 
 Tombstone_Text_Napoleon::
-# 398 "data/maps/MareS1/scripts.pory"
+# 506 "data/maps/MareS1/scripts.pory"
 	.string "NAPOLIO BONAPARS\n"
 	.string "MMDXXII - MMDLXXIV$"
 
 Tombstone_Text_Marx::
-# 402 "data/maps/MareS1/scripts.pory"
+# 510 "data/maps/MareS1/scripts.pory"
 	.string "CAROLVS MARXIVS\n"
 	.string "MMDLXXI - MMDCXXXVI$"
 
 Tombstone_Text_Caesar::
-# 406 "data/maps/MareS1/scripts.pory"
+# 514 "data/maps/MareS1/scripts.pory"
 	.string "GAIVS IVLIVS CAESAR\n"
 	.string "DCLIV - DCCX$"
 
 Tombstone_Text_Virgil::
-# 410 "data/maps/MareS1/scripts.pory"
+# 518 "data/maps/MareS1/scripts.pory"
 	.string "PVBLIVS VERGILIVS MARO\n"
 	.string "DCLXXXIV - DCCXXXV$"
 
 Tombstone_Text_Shakespeare::
-# 414 "data/maps/MareS1/scripts.pory"
+# 522 "data/maps/MareS1/scripts.pory"
 	.string "GVLIELMVS SHAKESPERIVS\n"
 	.string "MMCCCXVII - MMCCCLXIX$"
 
 Tombstone_Text_MartinLuther::
-# 418 "data/maps/MareS1/scripts.pory"
+# 526 "data/maps/MareS1/scripts.pory"
 	.string "MARTINVS LVTHERVS\n"
 	.string "MMCCXXXVI - MMCCXCIX$"
 
 Tombstone_Text_Newton::
-# 422 "data/maps/MareS1/scripts.pory"
+# 530 "data/maps/MareS1/scripts.pory"
 	.string "ISAACVS NEVTONVS\n"
 	.string "MMCCCXCV - MMCDLXXX$"
 
 Tombstone_Text_Columbus::
-# 426 "data/maps/MareS1/scripts.pory"
+# 534 "data/maps/MareS1/scripts.pory"
 	.string "CHRISTOPHORVS COLVMBVS\n"
 	.string "MMCCIV - MMCCLIX$"
 
 Tombstone_Text_Augustus::
-# 430 "data/maps/MareS1/scripts.pory"
+# 538 "data/maps/MareS1/scripts.pory"
 	.string "GAIVS OCTAVIVS\n"
 	.string "DCXCI - DCCLXVII$"
 
 Tombstone_Text_Khan::
-# 434 "data/maps/MareS1/scripts.pory"
+# 542 "data/maps/MareS1/scripts.pory"
 	.string "BORIGIN TEMUGIN\n"
 	.string "MCMXV - MCMLXXX$"
 
 Tombstone_Text_WilliamNorman::
-# 438 "data/maps/MareS1/scripts.pory"
+# 546 "data/maps/MareS1/scripts.pory"
 	.string "GVLIELMVS NORMANNVS\n"
 	.string "MDCCLXXXI - MDCCCXL$"
 
 Tombstone_Text_Cleopatra::
-# 442 "data/maps/MareS1/scripts.pory"
+# 550 "data/maps/MareS1/scripts.pory"
 	.string "CLEOPATRA PHILOPATOR\n"
 	.string "DCLXXXV - DCCXXIV$"
 
 Tombstone_Text_Richard1::
-# 446 "data/maps/MareS1/scripts.pory"
+# 554 "data/maps/MareS1/scripts.pory"
 	.string "RICARDVS PLANTAGENISTAE\n"
 	.string "MCMX - MCMLII$"
 
 Tombstone_Text_Lincoln::
-# 450 "data/maps/MareS1/scripts.pory"
+# 558 "data/maps/MareS1/scripts.pory"
 	.string "ABRAHAMVS LINCOLN\n"
 	.string "MMDLXII - MMDCXVIII$"
 
 Tombstone_Text_AlexanderGreat::
-# 454 "data/maps/MareS1/scripts.pory"
+# 562 "data/maps/MareS1/scripts.pory"
 	.string "ALEXANDER MACEDONIAE\n"
 	.string "CCCXCVIII - CDXXXI$"
 
 Tombstone_Text_KarlusMagnus::
-# 458 "data/maps/MareS1/scripts.pory"
+# 566 "data/maps/MareS1/scripts.pory"
 	.string "CAROLUS CAROLINGVS\n"
 	.string "MCDXCIII - MDLXVII$"
 
 Tombstone_Text_Socrates::
-# 462 "data/maps/MareS1/scripts.pory"
+# 570 "data/maps/MareS1/scripts.pory"
 	.string "SOCRATES ATHENARVM\n"
 	.string "CCLXXXV - CCCLV$"
 
 Tombstone_Text_Plato::
-# 466 "data/maps/MareS1/scripts.pory"
+# 574 "data/maps/MareS1/scripts.pory"
 	.string "PLATO ATHENARVM\n"
 	.string "CCCXXIX - CDVI$"
 
 Tombstone_Text_Aristotle::
-# 470 "data/maps/MareS1/scripts.pory"
+# 578 "data/maps/MareS1/scripts.pory"
 	.string "ARISTOTELES STAGIRORVM\n"
 	.string "CCCLXXXIV - CDXXXII$"
 
 Tombstone_Text_Turing::
-# 474 "data/maps/MareS1/scripts.pory"
+# 582 "data/maps/MareS1/scripts.pory"
 	.string "ALANVS TVRING\n"
 	.string "MMDCLXV - MMDCCVII$"
 
 Tombstone_Text_Lovelace::
-# 478 "data/maps/MareS1/scripts.pory"
+# 586 "data/maps/MareS1/scripts.pory"
 	.string "ADA LOVELACE\n"
 	.string "MMDLXVIII - MMDCV$"
 
 Tombstone_Text_JohnLinn::
-# 482 "data/maps/MareS1/scripts.pory"
+# 590 "data/maps/MareS1/scripts.pory"
 	.string "IOANNES LINN\n"
 	.string "MMDCXCIV - MMDCCLXXVII$"
 
 Tombstone_Text_JamesStrait::
-# 486 "data/maps/MareS1/scripts.pory"
+# 594 "data/maps/MareS1/scripts.pory"
 	.string "IACOBVS STRAIT\n"
 	.string "MMDCLXXXVIII - MMDCCLXXVI$"
 
 Tombstone_Text_Jerry::
-# 490 "data/maps/MareS1/scripts.pory"
+# 598 "data/maps/MareS1/scripts.pory"
 	.string "HIERONYMVS GARCIA\n"
 	.string "MMDCXCV - MMDCCXLVIII$"
 
 Tombstone_Text_Phil::
-# 494 "data/maps/MareS1/scripts.pory"
+# 602 "data/maps/MareS1/scripts.pory"
 	.string "PHILLIPPVS LESH\n"
 	.string "MMDCXCIII - MMDCCLXXVII$"
 
 Tombstone_Text_Ryan::
-# 498 "data/maps/MareS1/scripts.pory"
+# 606 "data/maps/MareS1/scripts.pory"
 	.string "RYAN CORSA\n"
 	.string "MMDCCXLIX$"
 
 Tombstone_Text_Maggie::
-# 502 "data/maps/MareS1/scripts.pory"
+# 610 "data/maps/MareS1/scripts.pory"
 	.string "MAGDALENA STRAIT\n"
 	.string "MMDCCLII - MMDCCLXXVII$"
 
 Tombstone_Text_Ramiro::
-# 506 "data/maps/MareS1/scripts.pory"
+# 614 "data/maps/MareS1/scripts.pory"
 	.string "RAMIRVS MELECIO\n"
 	.string "MMDCCIL - MMDCCLXIX$"
 
 Tombstone_Text_Kira::
-# 510 "data/maps/MareS1/scripts.pory"
+# 618 "data/maps/MareS1/scripts.pory"
 	.string "KIRA NORTON\n"
 	.string "MMDCCIL - MMDCCLXXV$"
 
 Tombstone_Text_Bo::
-# 514 "data/maps/MareS1/scripts.pory"
+# 622 "data/maps/MareS1/scripts.pory"
 	.string "BO TRIANTOS\n"
 	.string "MMDCCXLV - MMDCCLXXI$"
 
 Tombstone_Text_SawyerHawkins::
-# 518 "data/maps/MareS1/scripts.pory"
+# 626 "data/maps/MareS1/scripts.pory"
 	.string "SAVYER HAVKINS\n"
 	.string "MMDCCLVI - MMDCCLXXII$"
 
 Tombstone_Text_MichaelDavis::
-# 522 "data/maps/MareS1/scripts.pory"
+# 630 "data/maps/MareS1/scripts.pory"
 	.string "MICHAEL DAVIS\n"
 	.string "MMDCCL - MMDCCLXXVI$"
 
 Tombstone_Text_Hunter::
-# 526 "data/maps/MareS1/scripts.pory"
+# 634 "data/maps/MareS1/scripts.pory"
 	.string "ROBERTVS HVNTER\n"
 	.string "MMDCXCIV - MMDCCLXXII$"
 
 Tombstone_Text_Owsley::
-# 530 "data/maps/MareS1/scripts.pory"
+# 638 "data/maps/MareS1/scripts.pory"
 	.string "AVGVSTVS STANLEY III\n"
 	.string "MMDCLXXXVIII - MMDCCLXIV$"
 
 Tombstone_Text_Brent::
-# 534 "data/maps/MareS1/scripts.pory"
+# 642 "data/maps/MareS1/scripts.pory"
 	.string "BRENT MYDLAND\n"
 	.string "MMDCCV - MMDCCXLIII$"
 
 Tombstone_Text_Pigpen::
-# 538 "data/maps/MareS1/scripts.pory"
+# 646 "data/maps/MareS1/scripts.pory"
 	.string "RONALDVS MCKERNAN\n"
 	.string "MMDCXCVIII - MMDCCXXVI$"
 
 Tombstone_Text_Keith::
-# 542 "data/maps/MareS1/scripts.pory"
+# 650 "data/maps/MareS1/scripts.pory"
 	.string "KEITH GODCHAUX\n"
 	.string "MMDCCI - MMDCCXXXIII$"
 
 Tombstone_Text_BillGraham::
-# 546 "data/maps/MareS1/scripts.pory"
+# 654 "data/maps/MareS1/scripts.pory"
 	.string "VLF GRAIONCA\n"
 	.string "MMDCLXXXIV - MMDCCXLIV$"
 
 Tombstone_Text_CowboyNeal::
-# 550 "data/maps/MareS1/scripts.pory"
+# 658 "data/maps/MareS1/scripts.pory"
 	.string "NEAL CASSADY\n"
 	.string "MMDCLXXIX - MMDCCXXI$"
 
 Tombstone_Text_Antony::
-# 554 "data/maps/MareS1/scripts.pory"
+# 662 "data/maps/MareS1/scripts.pory"
 	.string "MARCVS ANTONIVS\n"
 	.string "DCLXXI - DCCXXIV$"
 
 Tombstone_Text_Wright1::
-# 558 "data/maps/MareS1/scripts.pory"
+# 666 "data/maps/MareS1/scripts.pory"
 	.string "VILBVR VRIGHT\n"
 	.string "MMDCXX - MMDCLXV$"
 
 Tombstone_Text_Wright2::
-# 562 "data/maps/MareS1/scripts.pory"
+# 670 "data/maps/MareS1/scripts.pory"
 	.string "AVRIVILLIUVS VRIGHT\n"
 	.string "MMDCXXIV - MMDCCI$"
 
 Tombstone_Text_Jefferson::
-# 566 "data/maps/MareS1/scripts.pory"
+# 674 "data/maps/MareS1/scripts.pory"
 	.string "THOMAS IEFFERSONIVS\n"
 	.string "MMCDXCVI - MMDLXXIX$"
 
 Tombstone_Text_Adams::
-# 570 "data/maps/MareS1/scripts.pory"
+# 678 "data/maps/MareS1/scripts.pory"
 	.string "IOANNES ADAMIVS\n"
 	.string "MMCDLXXXVIII - MMDLXXIX$"
 
 Tombstone_Text_Lennon::
-# 574 "data/maps/MareS1/scripts.pory"
+# 682 "data/maps/MareS1/scripts.pory"
 	.string "IOANNES LENNON\n"
 	.string "MMDCXCIII - MMDCCXXXIII$"
 
 Tombstone_Text_Harrison::
-# 578 "data/maps/MareS1/scripts.pory"
+# 686 "data/maps/MareS1/scripts.pory"
 	.string "GEORGIVS HARRISON\n"
 	.string "MMDCXCVI - MMDCCLIV$"
 
 Tombstone_Text_Washington::
-# 582 "data/maps/MareS1/scripts.pory"
+# 690 "data/maps/MareS1/scripts.pory"
 	.string "GEORGIVS VASINGTONIUVS\n"
 	.string "MMCDLXXXV - MMDLII$"
 
 Tombstone_Text_Hisler::
-# 586 "data/maps/MareS1/scripts.pory"
+# 694 "data/maps/MareS1/scripts.pory"
 	.string "ADOLPHVS HITLER\n"
 	.string "MMDCXLII - MMDCXCVIII$"
 
 Tombstone_Text_Elizabeth::
-# 590 "data/maps/MareS1/scripts.pory"
-	.string "ELIZABETHA TUDOR\n"
+# 698 "data/maps/MareS1/scripts.pory"
+	.string "ELIZABETHA TVDOR\n"
 	.string "MMCCLXXXVI - MMCCCLVI$"
+
+Tombstone_Text_Thucydides::
+# 702 "data/maps/MareS1/scripts.pory"
+	.string "THVCYDIDES ATHENARVM\n"
+	.string "CCXCIV - CCCLIV$"
+
+Tombstone_Text_Ford::
+# 706 "data/maps/MareS1/scripts.pory"
+	.string "HENRICVS FORD\n"
+	.string "MMDCXVI - MMDCC$"
+
+Tombstone_Text_Rockefeller::
+# 710 "data/maps/MareS1/scripts.pory"
+	.string "IOANNES ROCKEFELLER\n"
+	.string "MMDXCII - MMDCXC$"
+
+Tombstone_Text_Morgan::
+# 714 "data/maps/MareS1/scripts.pory"
+	.string "IOANNES MORGAN\n"
+	.string "MMDXC - MMDCLXVI$"
+
+Tombstone_Text_Mays::
+# 718 "data/maps/MareS1/scripts.pory"
+	.string "GVLIELMUS MAYS\n"
+	.string "MMDCLXXXIV - MMDCCLXXVII$"
+
+Tombstone_Text_Kubrick::
+# 722 "data/maps/MareS1/scripts.pory"
+	.string "STANLEY KVBRICK\n"
+	.string "MMDCLXXXI - MMDCCLII$"
+
+Tombstone_Text_Brando::
+# 726 "data/maps/MareS1/scripts.pory"
+	.string "MARLON BRANDO\n"
+	.string "MMDCLXXVII - MMDCCLVII$"
+
+Tombstone_Text_Gutenburg::
+# 730 "data/maps/MareS1/scripts.pory"
+	.string "IOANNES GUTENBERGVS\n"
+	.string "MMCLIII - MMCCXXI$"
+
+Tombstone_Text_Horace::
+# 734 "data/maps/MareS1/scripts.pory"
+	.string "QVINTVS HORATIVS FLACCVS\n"
+	.string "DCLXXXIX - DCCXLVI$"
+
+Tombstone_Text_CatoElder::
+# 738 "data/maps/MareS1/scripts.pory"
+	.string "MARCVS PORCIVS CATO\n"
+	.string "DXX - DCV$"
+
+Tombstone_Text_Dickens::
+# 742 "data/maps/MareS1/scripts.pory"
+	.string "CAROLVS DICKENS\n"
+	.string "MMDLXV - MMDCXXIII$"
+
+Tombstone_Text_Darwin::
+# 746 "data/maps/MareS1/scripts.pory"
+	.string "CAROLVS DARWINIVS\n"
+	.string "MMDLXII - MMDCXXXV$"
+
+Tombstone_Text_Pasteur::
+# 750 "data/maps/MareS1/scripts.pory"
+	.string "LVDOVICVS PASTEVR\n"
+	.string "MMDLXXV - MMDCXLVIII$"
+
+Tombstone_Text_Fleming::
+# 754 "data/maps/MareS1/scripts.pory"
+	.string "ALEXANDER FLEMING\n"
+	.string "MMDCXXXIV - MMDCCVIII$"
+
+Tombstone_Text_Tubman::
+# 758 "data/maps/MareS1/scripts.pory"
+	.string "ARAMINTA ROSS\n"
+	.string "MMDLXXV - MMDCLXVI$"
+
+Tombstone_Text_VanGogh::
+# 762 "data/maps/MareS1/scripts.pory"
+	.string "VINCENTIVS VAN GOGH\n"
+	.string "MMDCVI - MMDCXLIII$"
+
+Tombstone_Text_Picasso::
+# 766 "data/maps/MareS1/scripts.pory"
+	.string "PAVLVS PICASSO\n"
+	.string "MMDCXXXIV - MMDCCXXVI$"
+
+Tombstone_Text_ChienShiungWu::
+# 770 "data/maps/MareS1/scripts.pory"
+	.string "CHIEN SHIUNG WU\n"
+	.string "MMCLXV - MMDCCL$"

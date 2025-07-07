@@ -1544,6 +1544,45 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Jefferson;
 	else if (x == 53 && y == 42)
 		return Script_Tombstone_Adams;
+	//Left Fence Top Row
+	else if (x == 24 && y == 28)
+		return Script_Tombstone_Thucydides;
+	else if (x == 26 && y == 28)
+		return Script_Tombstone_Ford;
+	else if (x == 28 && y == 28)
+		return Script_Tombstone_Rockefeller;
+	else if (x == 31 && y == 28)
+		return Script_Tombstone_Morgan;
+	else if (x == 33 && y == 28)
+		return Script_Tombstone_Mays;
+	else if (x == 35 && y == 28)
+		return Script_Tombstone_Kubrick;
+	//Left Fence Row 2
+	else if (x == 24 && y == 31)
+		return Script_Tombstone_Brando;
+	else if (x == 26 && y == 31)
+		return Script_Tombstone_Gutenburg;
+	else if (x == 28 && y == 31)
+		return Script_Tombstone_Horace;
+	else if (x == 31 && y == 31)
+		return Script_Tombstone_CatoElder;
+	else if (x == 33 && y == 31)
+		return Script_Tombstone_Dickens;
+	else if (x == 35 && y == 31)
+		return Script_Tombstone_Darwin;
+	//Left Fence Row 3
+	else if (x == 24 && y == 34)
+		return Script_Tombstone_Pasteur;
+	else if (x == 26 && y == 34)
+		return Script_Tombstone_Fleming;
+	else if (x == 28 && y == 34)
+		return Script_Tombstone_Tubman;
+	else if (x == 31 && y == 34)
+		return Script_Tombstone_VanGogh;
+	else if (x == 33 && y == 34)
+		return Script_Tombstone_Picasso;
+	else if (x == 35 && y == 34)
+		return Script_Tombstone_ChienShiungWu;
 
 
 	//Pyramus et Thisbe
