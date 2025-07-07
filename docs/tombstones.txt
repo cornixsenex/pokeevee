@@ -287,24 +287,15 @@ Player et Personal 19
 
 Thinkers / Writers / Artists ~ 50+
 	Jack Kilby
-	Von Neumann
-	Edison
 	Charles Babbage
 Herodotus
-Dante
 Geoffrey Momuth
-Chaucer
 Thomas Aquinas
 Tesla
-Vanderbilt
 Beethoven
 Mozart
 Bach
-Tchaikovsky
-Montesque
-Rousou
 Hobbes
-Paine
 Dimaggio
 Sinatra
 Cash
@@ -312,8 +303,6 @@ Hendrix
 Tolkien
 Jobs
 Disney
-Elvis
-Lennon
 Cobain
 Oppenheimer
 Chuck Berry
@@ -322,12 +311,10 @@ Copernicus
 Galileo
 Machiavelli
 John Milton
-Ovid
 Sophocles
 Aeschylus
 Euripides
 Cicero
-Tacitus
 Livy
 Sallust
 Apostles
@@ -337,7 +324,6 @@ Freud
 marie curie
 da vinci
 jane austen
-cato younger
 archimedes
 euclid
 frid khalo
@@ -345,7 +331,6 @@ chaplin
 stephen hawking
 sagan
 James watt
-niels bohr
 schrodinger
 feynman
 Twain
@@ -354,25 +339,16 @@ immanuel kant
 jean-paul sartre
 nietzshe
 shopenhaur
-descartes
 epicurus
 diogenes
 hitchcock
 welles
-aristophanes
 f scott fitzgerald
-hemingway
 woolf
 joyce
-kafka
-tolstoy
 dostoevsky
 cervantes
-alexander pope
-Hunter S Thompson
-Kesey
 Kerouac
-Ginsberg
 harrison
 jim morrison
 bill graham
@@ -380,8 +356,6 @@ Janis
 Bradly
 Tupac
 MJ
-miles davis
-coletrane
 
 
 
@@ -394,10 +368,8 @@ Washington
 Catherine great
 Bolivar
 Bismark
-Leonidas
 Scipio Africanus
 Cincinatus
-Antony
 Pompey
 Pericles
 Hanibal

@@ -1596,6 +1596,83 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Trotsky;
 	else if (x == 35 && y == 37)
 		return Script_Tombstone_Kafka;
+    //Right Fence Row 1
+	else if (x == 47 && y == 28)
+		return Script_Tombstone_Tolstoy;
+	else if (x == 49 && y == 28)
+		return Script_Tombstone_Pope;
+	else if (x == 51 && y == 28)
+		return Script_Tombstone_HunterThompson;
+	else if (x == 54 && y == 28)
+		return Script_Tombstone_Kesey;
+	else if (x == 56 && y == 28)
+		return Script_Tombstone_MilesDavis;
+	else if (x == 58 && y == 28)
+		return Script_Tombstone_Coltrane;
+    //Right Fence Row 2
+	else if (x == 47 && y == 31)
+		return Script_Tombstone_Dante;
+	else if (x == 49 && y == 31)
+		return Script_Tombstone_Chaucer;
+	else if (x == 51 && y == 31)
+		return Script_Tombstone_Tchaikovsky;
+	else if (x == 54 && y == 31)
+		return Script_Tombstone_Montesquieu;
+	else if (x == 56 && y == 31)
+		return Script_Tombstone_Rousseau;
+	else if (x == 58 && y == 31)
+		return Script_Tombstone_Paine;
+     //Fence Right Row 3
+	else if (x == 47 && y == 34)
+		return Script_Tombstone_Elvis;
+	else if (x == 49 && y == 34)
+		return Script_Tombstone_Ovid;
+	else if (x == 51 && y == 34)
+		return Script_Tombstone_Tacitus;
+	else if (x == 54 && y == 34)
+		return Script_Tombstone_CatoMinor;
+	else if (x == 56 && y == 34)
+		return Script_Tombstone_Bohr;
+	else if (x == 58 && y == 34)
+		return Script_Tombstone_Descartes;
+    //Right Fence Row 4
+	else if (x == 47 && y == 37)
+		return Script_Tombstone_Aristophanes;
+	else if (x == 49 && y == 37)
+		return Script_Tombstone_Hemingway;
+	else if (x == 51 && y == 37)
+		return Script_Tombstone_Ginsberg;
+	else if (x == 54 && y == 37)
+		return Script_Tombstone_VonNeumann;
+	else if (x == 56 && y == 37)
+		return Script_Tombstone_Edison;
+	else if (x == 58 && y == 37)
+		return Script_Tombstone_Vanderbilt;
+    //Left Outer Fence Col 1
+	else if (x == 19 && y == 27)
+		return Script_Tombstone_Leonidas;
+	else if (x == 19 && y == 30)
+		return Script_Tombstone_Pompey;
+	else if (x == 19 && y == 33)
+		return Script_Tombstone_Pericles;
+	else if (x == 19 && y == 36)
+		return Script_Tombstone_Antigonos;
+	else if (x == 19 && y == 39)
+		return Script_Tombstone_Darius;
+    //Left Outer Fence Col 2
+	else if (x == 21 && y == 27)
+		return Script_Tombstone_Spartacus;
+	else if (x == 21 && y == 30)
+		return Script_Tombstone_Otto;
+	else if (x == 21 && y == 33)
+		return Script_Tombstone_Justinian;
+	else if (x == 21 && y == 36)
+		return Script_Tombstone_Pepin;
+	else if (x == 21 && y == 39)
+		return Script_Tombstone_Timur;
+	else if (x == 21 && y == 42)
+		return Script_Tombstone_Churchill;
+
 
 
 	//Pyramus et Thisbe
