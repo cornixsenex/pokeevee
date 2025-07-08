@@ -1806,23 +1806,70 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Aeschylus;
 	//Far Right Col 3
 	else if (x == 73 && y == 36)
-		return Script_Tombstone_;
+		return Script_Tombstone_StPeter;
 	else if (x == 73 && y == 39)
-		return Script_Tombstone_;
+		return Script_Tombstone_Engles;
 	else if (x == 73 && y == 42)
-		return Script_Tombstone_;
+		return Script_Tombstone_Archimedes;
 	else if (x == 73 && y == 45)
-		return Script_Tombstone_;
+		return Script_Tombstone_Watt;
 	else if (x == 73 && y == 48)
-		return Script_Tombstone_;
+		return Script_Tombstone_Schrodinger;
 	else if (x == 73 && y == 51)
-		return Script_Tombstone_;
+		return Script_Tombstone_Fitzgerald;
 	else if (x == 73 && y == 54)
-		return Script_Tombstone_;
+		return Script_Tombstone_Woolfe;
 	else if (x == 73 && y == 57)
-		return Script_Tombstone_;
+		return Script_Tombstone_Dostoevsky;
 	else if (x == 73 && y == 60)
-		return Script_Tombstone_;
+		return Script_Tombstone_Janis;
+    //1 furthest right
+	else if (x == 75 && y == 39)
+		return Script_Tombstone_Richard2;
+    //Bottom Left 3 far lefta
+	else if (x == 23 && y == 51)
+		return Script_Tombstone_Cyrus;
+	else if (x == 23 && y == 54)
+		return Script_Tombstone_Caligula;
+	else if (x == 23 && y == 57)
+		return Script_Tombstone_Isabella;
+     //Bottom Row 1
+	else if (x == 30 && y == 51)
+		return Script_Tombstone_Yeltsin;
+	else if (x == 32 && y == 51)
+		return Script_Tombstone_JackKilby;
+	else if (x == 34 && y == 51)
+		return Script_Tombstone_Mozart;
+	else if (x == 36 && y == 51)
+		return Script_Tombstone_Jobs;
+	else if (x == 38 && y == 51)
+		return Script_Tombstone_Cobain;
+	else if (x == 40 && y == 51)
+		return Script_Tombstone_Michelangelo;
+	else if (x == 42 && y == 51)
+		return Script_Tombstone_Copernicus;
+	else if (x == 44 && y == 51)
+		return Script_Tombstone_Galileo;
+	else if (x == 46 && y == 51)
+		return Script_Tombstone_Cash;
+	else if (x == 48 && y == 51)
+		return Script_Tombstone_Freud;
+	else if (x == 50 && y == 51)
+		return Script_Tombstone_Kant;
+	else if (x == 52 && y == 51)
+		return Script_Tombstone_Diogenes;
+	else if (x == 59 && y == 51)
+		return Script_Tombstone_Cervantes;
+	else if (x == 61 && y == 51)
+		return Script_Tombstone_Kerouac;
+	else if (x == 63 && y == 51)
+		return Script_Tombstone_Tupac;
+	else if (x == 65 && y == 51)
+		return Script_Tombstone_Osama;
+	else if (x == 67 && y == 51)
+		return Script_Tombstone_JFK;
+
+
 
 
 

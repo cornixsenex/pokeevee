@@ -1088,6 +1088,186 @@ script Script_Tombstone_Aeschylus {
 	end
 }
 
+script Script_Tombstone_StPeter {
+	msgbox (Tombstone_Text_StPeter)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Engles {
+	msgbox (Tombstone_Text_Engles)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Archimedes {
+	msgbox (Tombstone_Text_Archimedes)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Watt {
+	msgbox (Tombstone_Text_Watt)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Schrodinger {
+	msgbox (Tombstone_Text_Schrodinger)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Fitzgerald {
+	msgbox (Tombstone_Text_Fitzgerald)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Woolfe {
+	msgbox (Tombstone_Text_Woolfe)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Dostoevsky {
+	msgbox (Tombstone_Text_Dostoevsky)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Janis {
+	msgbox (Tombstone_Text_Janis)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Richard2 {
+	msgbox (Tombstone_Text_Richard2)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Cyrus {
+	msgbox (Tombstone_Text_Cyrus)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Caligula {
+	msgbox (Tombstone_Text_Caligula)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Isabella {
+	msgbox (Tombstone_Text_Isabella)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Yeltsin {
+	msgbox (Tombstone_Text_Yeltsin)
+	closemessage
+	end
+}
+
+script Script_Tombstone_JackKilby {
+	msgbox (Tombstone_Text_JackKilby)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Mozart {
+	msgbox (Tombstone_Text_Mozart)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Jobs {
+	msgbox (Tombstone_Text_Jobs)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Cobain {
+	msgbox (Tombstone_Text_Cobain)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Michelangelo {
+	msgbox (Tombstone_Text_Michelangelo)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Copernicus {
+	msgbox (Tombstone_Text_Copernicus)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Galileo {
+	msgbox (Tombstone_Text_Galileo)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Cash {
+	msgbox (Tombstone_Text_Cash)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Freud {
+	msgbox (Tombstone_Text_Freud)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Kant {
+	msgbox (Tombstone_Text_Kant)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Diogenes {
+	msgbox (Tombstone_Text_Diogenes)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Cervantes {
+	msgbox (Tombstone_Text_Cervantes)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Kerouac {
+	msgbox (Tombstone_Text_Kerouac)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Tupac {
+	msgbox (Tombstone_Text_Tupac)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Osama {
+	msgbox (Tombstone_Text_Osama)
+	closemessage
+	end
+}
+
+script Script_Tombstone_JFK {
+	msgbox (Tombstone_Text_JFK)
+	closemessage
+	end
+}
+
 //Tombstone Text
 text Tombstone_Text_Default {
 	format("The inscription is too faded to read.")
@@ -1807,6 +1987,126 @@ text Tombstone_Text_Sophocles {
 
 text Tombstone_Text_Aeschylus {
 	format("AESCHYLVS ATHENARVM\nCCXXIX - CCXCVIII")
+}
+
+text Tombstone_Text_StPeter {
+	format("SIMON IONA\nDCCLIII - DCCCXVIII")
+}
+
+text Tombstone_Text_Engles {
+	format("FREDERICVS ENGELS\nMMDLXXIII - MMDCXLVIII")
+}
+
+text Tombstone_Text_Archimedes {
+	format("ARCHIMEDES SYRACVSANVS\nCDLXVII - DXLII")
+}
+
+text Tombstone_Text_Watt {
+	format("IACOBVS WATT\nMMCDLXXXIX - MMDLXXII")
+}
+
+text Tombstone_Text_Schrodinger {
+	format("ERVINVS SCHRODINGER\nMMDCXL - MMDCCXIV")
+}
+
+text Tombstone_Text_Fitzgerald {
+	format("FRANCISCVS FITZGERALD\nMMDCXLIX - MMDCXCIII")
+}
+
+text Tombstone_Text_Woolfe {
+	format("VIRGINIA WOOLF\nMMDCXXXV - MMDCXCIV")
+}
+
+text Tombstone_Text_Dostoevsky {
+	format("THEODORVS DOSTOEVSKII\nMMDLXXIV - MMDCXXXIV")
+}
+
+text Tombstone_Text_Janis {
+	format("IOANNA IOPLIN\nMMDCXCVI - MMDCCXXIII")
+}
+
+text Tombstone_Text_Richard2 {
+	format("RICARDVS II PLANTAGENISTAE\nMMCXX - MMCLIII")
+}
+
+text Tombstone_Text_Cyrus {
+	format("CYRVS II ACHAEMENIDAE\nCLIV - CCXXIV")
+}
+
+text Tombstone_Text_Caligula {
+	format("GAIVS CAESAR GERMANICVS\nDCCLXV - DCCXCIV")
+}
+
+text Tombstone_Text_Isabella {
+	format("ISABELLA TRASTAMARAE\nMMCCIV - MMCCLVII") 
+}
+
+text Tombstone_Text_Yeltsin {
+	format("BORIS IELTSIN\nMMDCLXXXIV - MMDCCLX")
+}
+
+text Tombstone_Text_JackKilby {
+	format("IACOBVS KILBY\nMMDCLXXVI - MMDCCLVIII")
+}
+
+text Tombstone_Text_Mozart {
+	format("VLFGANGVS MOZART\nMMDIX - MMDXLIV")
+}
+
+text Tombstone_Text_Jobs {
+	format("STEPHANVS JOBS\nMMDCCIV - MMDCCLXIV")
+}
+
+text Tombstone_Text_Cobain {
+	format("KVRTIVS COBAIN\nMMDCCXX - MMDCCXLVII")
+}
+
+text Tombstone_Text_Michelangelo {
+	format("MICHAEL BONAROTIVS\nMMCCXXVIII - MMCCCXVII")
+}
+
+text Tombstone_Text_Copernicus {
+	format("NICOLAVS COPERNICVS\nMMCCXXVI - MMCCXCVI")
+}
+
+text Tombstone_Text_Galileo {
+	format("GALILAEVS GALILAEI\nMMCCCXVII - MMCCCXCV")
+}
+
+text Tombstone_Text_Cash {
+	format("IOANNES CASH\nMMDCLXXXV - MMDCCLVI")
+}
+
+text Tombstone_Text_Freud {
+	format("SIGISMVNDVS FREVD\nMMDCIX - MMDCXCII")
+}
+
+text Tombstone_Text_Kant {
+	format("IMMANVEL KANTIVS\nMMCDLXXVII - MMDLVII")
+}
+
+text Tombstone_Text_Diogenes {
+	format("DIOGENES SINOPENSIS\nCCCLIV - CDXXXI")
+}
+
+text Tombstone_Text_Cervantes {
+	format("MICHAEL CERVANTES\nMMCCC - MMCCCLXIX")
+}
+
+text Tombstone_Text_Kerouac {
+	format("IACOBVS KEROVAC\nMMDCLXXV - MMDCCXII")
+}
+
+text Tombstone_Text_Tupac {
+	format("TVPAC SHAKVR\nMMDCCXXIV - MMDCCXLIX")
+}
+
+text Tombstone_Text_Osama {
+	format("VSAMA BIN LADIN\nMMDCCX - MMDCCLXIV")
+}
+
+text Tombstone_Text_JFK {
+	format("IOANNES KENNEDY\nMMDCLXX - MMDCCXVI")
 }
 
 
