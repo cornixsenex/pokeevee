@@ -291,13 +291,10 @@ Jung
 Freud
 marie curie
 jane austen
-archimedes
 frid khalo
 chaplin
 stephen hawking
 sagan
-James watt
-schrodinger
 Twain
 howard zinn
 immanuel kant
@@ -306,14 +303,10 @@ epicurus
 diogenes
 hitchcock
 welles
-f scott fitzgerald
-woolf
-dostoevsky
 cervantes
 Kerouac
 harrison
 jim morrison
-bill graham
 Janis
 Tupac
 MJ
@@ -349,13 +342,11 @@ Michaelanglo
 Copernicus
 Galileo
 Machiavelli
-Aeschylus
 Euripides
 Cicero
 Livy
 Sallust
 Apostles
-Engles
 
 
 

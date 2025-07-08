@@ -874,6 +874,16 @@ extern const u8 Script_Tombstone_Milton[];
 extern const u8 Script_Tombstone_Sophocles[];
 extern const u8 Script_Tombstone_Aeschylus[];
 
+extern const u8 Script_Tombstone_StPeter[];
+extern const u8 Script_Tombstone_Engles[];
+extern const u8 Script_Tombstone_Archimedes[];
+extern const u8 Script_Tombstone_Watt[];
+extern const u8 Script_Tombstone_Schrodinger[];
+extern const u8 Script_Tombstone_Fitzgerald[];
+extern const u8 Script_Tombstone_Woolfe[];
+extern const u8 Script_Tombstone_Dostoevsky[];
+extern const u8 Script_Tombstone_Janis[];
+
 
 
 //Ignis Monte (added to cave_hole.inc

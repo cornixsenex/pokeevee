@@ -1804,6 +1804,25 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Sophocles;
 	else if (x == 71 && y == 60)
 		return Script_Tombstone_Aeschylus;
+	//Far Right Col 3
+	else if (x == 73 && y == 36)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 39)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 42)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 45)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 48)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 51)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 54)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 57)
+		return Script_Tombstone_;
+	else if (x == 73 && y == 60)
+		return Script_Tombstone_;
 
 
 
