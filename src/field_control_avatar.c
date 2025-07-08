@@ -1868,19 +1868,80 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Osama;
 	else if (x == 67 && y == 51)
 		return Script_Tombstone_JFK;
-
-
-
-
-
-
+     //Bottom Row 2
+	else if (x == 30 && y == 54)
+		return Script_Tombstone_Twain;
+	else if (x == 32 && y == 54)
+		return Script_Tombstone_Hitchcock;
+	else if (x == 34 && y == 54)
+		return Script_Tombstone_JimMorrison;
+	else if (x == 36 && y == 54)
+		return Script_Tombstone_MJ;
+	else if (x == 38 && y == 54)
+		return Script_Tombstone_Teddy;
+	else if (x == 40 && y == 54)
+		return Script_Tombstone_MLK;
+	else if (x == 42 && y == 54)
+		return Script_Tombstone_Sinatra;
+	else if (x == 44 && y == 54)
+		return Script_Tombstone_Oppenheimer;
+	else if (x == 46 && y == 54)
+		return Script_Tombstone_Jung;
+	else if (x == 48 && y == 54)
+		return Script_Tombstone_Khalo;
+	else if (x == 50 && y == 54)
+		return Script_Tombstone_Scipio;
+	else if (x == 52 && y == 54)
+		return Script_Tombstone_Stalin;
+	else if (x == 59 && y == 54)
+		return Script_Tombstone_Rommel;
+	else if (x == 61 && y == 54)
+		return Script_Tombstone_Euripides;
+	else if (x == 63 && y == 54)
+		return Script_Tombstone_Hawking;
+	else if (x == 65 && y == 54)
+		return Script_Tombstone_Suleiman;
+	else if (x == 67 && y == 54)
+		return Script_Tombstone_Machiavelli;
+     //Bottom Row 3
+	else if (x == 30 && y == 57)
+		return Script_Tombstone_Cicero;
+	else if (x == 32 && y == 57)
+		return Script_Tombstone_MarieCurie;
+	else if (x == 34 && y == 57)
+		return Script_Tombstone_JaneAusten;
+	else if (x == 36 && y == 57)
+		return Script_Tombstone_Hannibal;
+	else if (x == 38 && y == 57)
+		return Script_Tombstone_Sullust;
+	else if (x == 40 && y == 57)
+		return Script_Tombstone_Zinn;
+	else if (x == 42 && y == 57)
+		return Script_Tombstone_Disney;
+	else if (x == 50 && y == 57)
+		return Script_Tombstone_Chaplin;
+	else if (x == 52 && y == 57)
+		return Script_Tombstone_Sagan;
+	else if (x == 59 && y == 57)
+		return Script_Tombstone_Dimaggio;
+	else if (x == 61 && y == 57)
+		return Script_Tombstone_Lee;
+	else if (x == 67 && y == 57)
+		return Script_Tombstone_Livy;
+    //Bottom 2 left
+	else if (x == 32 && y == 60)
+		return Script_Tombstone_Epicurus;
+	else if (x == 34 && y == 60)
+		return Script_Tombstone_Schopenhaur;
+    //Bottom 1 right 
+	else if (x == 69 && y == 60)
+		return Script_Tombstone_Wells;
 	//Pyramus et Thisbe
 	else if (x == 29 && y == 62)
 		return Script_Tombstone_Pyramus;
 	else if (x == 30 && y == 62)
 		return Script_Tombstone_Thisbe;
-
-
+    //Default - unused I do believe
 	else
 		return Script_Tombstone_Default;
 }

@@ -886,7 +886,6 @@ extern const u8 Script_Tombstone_Richard2[];
 extern const u8 Script_Tombstone_Cyrus[];
 extern const u8 Script_Tombstone_Caligula[];
 extern const u8 Script_Tombstone_Isabella[];
-
 extern const u8 Script_Tombstone_Yeltsin[];
 extern const u8 Script_Tombstone_JackKilby[];
 extern const u8 Script_Tombstone_Mozart[];
@@ -904,8 +903,39 @@ extern const u8 Script_Tombstone_Kerouac[];
 extern const u8 Script_Tombstone_Tupac[];
 extern const u8 Script_Tombstone_Osama[];
 extern const u8 Script_Tombstone_JFK[];
+extern const u8 Script_Tombstone_Twain[];
+extern const u8 Script_Tombstone_Hitchcock[];
+extern const u8 Script_Tombstone_JimMorrison[];
+extern const u8 Script_Tombstone_MJ[];
+extern const u8 Script_Tombstone_Teddy[];
+extern const u8 Script_Tombstone_MLK[];
+extern const u8 Script_Tombstone_Sinatra[];
+extern const u8 Script_Tombstone_Oppenheimer[];
+extern const u8 Script_Tombstone_Jung[];
+extern const u8 Script_Tombstone_Khalo[];
+extern const u8 Script_Tombstone_Scipio[];
+extern const u8 Script_Tombstone_Stalin[];
+extern const u8 Script_Tombstone_Rommel[];
+extern const u8 Script_Tombstone_Euripides[];
+extern const u8 Script_Tombstone_Hawking[];
+extern const u8 Script_Tombstone_Suleiman[];
+extern const u8 Script_Tombstone_Machiavelli[];
+extern const u8 Script_Tombstone_Cicero[];
+extern const u8 Script_Tombstone_MarieCurie[];
+extern const u8 Script_Tombstone_JaneAusten[];
+extern const u8 Script_Tombstone_Hannibal[];
+extern const u8 Script_Tombstone_Sullust[];
+extern const u8 Script_Tombstone_Zinn[];
+extern const u8 Script_Tombstone_Disney[];
+extern const u8 Script_Tombstone_Chaplin[];
+extern const u8 Script_Tombstone_Sagan[];
+extern const u8 Script_Tombstone_Dimaggio[];
+extern const u8 Script_Tombstone_Lee[];
+extern const u8 Script_Tombstone_Livy[];
 
-
+extern const u8 Script_Tombstone_Epicurus[];
+extern const u8 Script_Tombstone_Schopenhaur[];
+extern const u8 Script_Tombstone_Wells[];
 
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];
