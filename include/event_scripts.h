@@ -810,6 +810,46 @@ extern const u8 Script_Tombstone_Justinian[];
 extern const u8 Script_Tombstone_Pepin[];
 extern const u8 Script_Tombstone_Timur[];
 extern const u8 Script_Tombstone_Churchill[];
+extern const u8 Script_Tombstone_Henry6[];
+extern const u8 Script_Tombstone_Hindenburg[];
+extern const u8 Script_Tombstone_Elizabeth2[];
+extern const u8 Script_Tombstone_Cromwell[];
+extern const u8 Script_Tombstone_Mao[];
+extern const u8 Script_Tombstone_Eisenhower[];
+extern const u8 Script_Tombstone_Ashoka[];
+extern const u8 Script_Tombstone_QinShiHuang[];
+extern const u8 Script_Tombstone_Che[];
+extern const u8 Script_Tombstone_Cincinnatus[];
+extern const u8 Script_Tombstone_MarcusAurelius[];
+extern const u8 Script_Tombstone_Trajan[];
+extern const u8 Script_Tombstone_Urban2[];
+extern const u8 Script_Tombstone_Henry8[];
+extern const u8 Script_Tombstone_FrederickGreat[];
+extern const u8 Script_Tombstone_Robespierre[];
+extern const u8 Script_Tombstone_Lenin[];
+extern const u8 Script_Tombstone_Mandela[];
+extern const u8 Script_Tombstone_Catherine[];
+extern const u8 Script_Tombstone_Bolivar[];
+extern const u8 Script_Tombstone_Bismark[];
+extern const u8 Script_Tombstone_Castro[];
+extern const u8 Script_Tombstone_GustavusAdolphus[];
+extern const u8 Script_Tombstone_Victoria[];
+extern const u8 Script_Tombstone_Louis16[];
+extern const u8 Script_Tombstone_Patton[];
+extern const u8 Script_Tombstone_Louis14[];
+extern const u8 Script_Tombstone_Atilla[];
+extern const u8 Script_Tombstone_Sulla[];
+extern const u8 Script_Tombstone_Xerxes[];
+extern const u8 Script_Tombstone_Nero[];
+extern const u8 Script_Tombstone_EdwardPrince[];
+extern const u8 Script_Tombstone_Mussolini[];
+extern const u8 Script_Tombstone_Gorbachev[];
+extern const u8 Script_Tombstone_SusanAnthony[];
+extern const u8 Script_Tombstone_Henry4[];
+extern const u8 Script_Tombstone_Franklin[];
+extern const u8 Script_Tombstone_Tiberius[];
+
+
 
 //Ignis Monte (added to cave_hole.inc
 extern const u8 EventScript_FallDownFalseFloor[];

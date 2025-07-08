@@ -1672,6 +1672,86 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Timur;
 	else if (x == 21 && y == 42)
 		return Script_Tombstone_Churchill;
+    //Right outer fence col L
+	else if (x == 61 && y == 27)
+		return Script_Tombstone_Henry6;
+	else if (x == 61 && y == 30)
+		return Script_Tombstone_Hindenburg;
+	else if (x == 61 && y == 33)
+		return Script_Tombstone_Elizabeth2;
+	else if (x == 61 && y == 36)
+		return Script_Tombstone_Cromwell;
+	else if (x == 61 && y == 39)
+		return Script_Tombstone_Mao;
+	else if (x == 61 && y == 42)
+		return Script_Tombstone_Eisenhower;
+	else if (x == 61 && y == 45)
+		return Script_Tombstone_Ashoka;
+    //Right outer fence col R
+	else if (x == 63 && y == 27)
+		return Script_Tombstone_QinShiHuang;
+	else if (x == 63 && y == 30)
+		return Script_Tombstone_Che;
+	else if (x == 63 && y == 33)
+		return Script_Tombstone_Cincinnatus;
+	else if (x == 63 && y == 36)
+		return Script_Tombstone_MarcusAurelius;
+	else if (x == 63 && y == 39)
+		return Script_Tombstone_Trajan;
+	else if (x == 63 && y == 42)
+		return Script_Tombstone_Urban2;
+	else if (x == 63 && y == 45)
+		return Script_Tombstone_Henry8;
+     //Below Fences Row 1 (note exclude those handled by cols above)
+	else if (x == 23 && y == 42)
+		return Script_Tombstone_GustavusAdolphus;
+	else if (x == 25 && y == 42)
+		return Script_Tombstone_Robespierre;
+	else if (x == 27 && y == 42)
+		return Script_Tombstone_Lenin;
+	else if (x == 32 && y == 42)
+		return Script_Tombstone_Mandela;
+	else if (x == 34 && y == 42)
+		return Script_Tombstone_Catherine;
+	else if (x == 36 && y == 42)
+		return Script_Tombstone_Bolivar;
+	else if (x == 46 && y == 42)
+		return Script_Tombstone_Bismark;
+	else if (x == 48 && y == 42)
+		return Script_Tombstone_Castro;
+	else if (x == 50 && y == 42)
+		return Script_Tombstone_FrederickGreat;
+	else if (x == 55 && y == 42)
+		return Script_Tombstone_Victoria;
+	else if (x == 57 && y == 42)
+		return Script_Tombstone_Louis16;
+	else if (x == 59 && y == 42)
+		return Script_Tombstone_Patton;
+     //Below Fences Row 2 (note exclude those handled by cols above)
+	else if (x == 23 && y == 45)
+		return Script_Tombstone_Louis14;
+	else if (x == 25 && y == 45)
+		return Script_Tombstone_Atilla;
+	else if (x == 27 && y == 45)
+		return Script_Tombstone_Sulla;
+	else if (x == 32 && y == 45)
+		return Script_Tombstone_Xerxes;
+	else if (x == 34 && y == 45)
+		return Script_Tombstone_Nero;
+	else if (x == 36 && y == 45)
+		return Script_Tombstone_EdwardPrince;
+	else if (x == 46 && y == 45)
+		return Script_Tombstone_Mussolini;
+	else if (x == 48 && y == 45)
+		return Script_Tombstone_Gorbachev;
+	else if (x == 50 && y == 45)
+		return Script_Tombstone_SusanAnthony;
+	else if (x == 55 && y == 45)
+		return Script_Tombstone_Henry4;
+	else if (x == 57 && y == 45)
+		return Script_Tombstone_Franklin;
+	else if (x == 59 && y == 45)
+		return Script_Tombstone_Tiberius;
 
 
 

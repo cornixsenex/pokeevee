@@ -710,6 +710,234 @@ script Script_Tombstone_Churchill {
 	end
 }
 
+script Script_Tombstone_Henry6 {
+	msgbox (Tombstone_Text_Henry6)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Hindenburg {
+	msgbox (Tombstone_Text_Hindenburg)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Elizabeth2 {
+	msgbox (Tombstone_Text_Elizabeth2)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Cromwell {
+	msgbox (Tombstone_Text_Cromwell)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Mao {
+	msgbox (Tombstone_Text_Mao)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Eisenhower {
+	msgbox (Tombstone_Text_Eisenhower)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Ashoka {
+	msgbox (Tombstone_Text_Ashoka)
+	closemessage
+	end
+}
+
+script Script_Tombstone_QinShiHuang {
+	msgbox (Tombstone_Text_QinShiHuang)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Che {
+	msgbox (Tombstone_Text_Che)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Cincinnatus {
+	msgbox (Tombstone_Text_Cincinnatus)
+	closemessage
+	end
+}
+
+script Script_Tombstone_MarcusAurelius {
+	msgbox (Tombstone_Text_MarcusAurelius)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Trajan {
+	msgbox (Tombstone_Text_Trajan)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Urban2 {
+	msgbox (Tombstone_Text_Urban2)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Henry8 {
+	msgbox (Tombstone_Text_Henry8)
+	closemessage
+	end
+}
+
+script Script_Tombstone_GustavusAdolphus {
+	msgbox (Tombstone_Text_GustavusAdolphus)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Robespierre {
+	msgbox (Tombstone_Text_Robespierre)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Lenin {
+	msgbox (Tombstone_Text_Lenin)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Mandela {
+	msgbox (Tombstone_Text_Mandela)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Catherine {
+	msgbox (Tombstone_Text_Catherine)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Bolivar {
+	msgbox (Tombstone_Text_Bolivar)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Bismark {
+	msgbox (Tombstone_Text_Bismark)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Castro {
+	msgbox (Tombstone_Text_Castro)
+	closemessage
+	end
+}
+
+script Script_Tombstone_FrederickGreat {
+	msgbox (Tombstone_Text_FrederickGreat)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Victoria {
+	msgbox (Tombstone_Text_Victoria)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Louis16 {
+	msgbox (Tombstone_Text_Louis16)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Patton {
+	msgbox (Tombstone_Text_Patton)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Louis14 {
+	msgbox (Tombstone_Text_Louis14)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Atilla {
+	msgbox (Tombstone_Text_Atilla)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Sulla {
+	msgbox (Tombstone_Text_Sulla)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Xerxes {
+	msgbox (Tombstone_Text_Xerxes)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Nero {
+	msgbox (Tombstone_Text_Nero)
+	closemessage
+	end
+}
+
+script Script_Tombstone_EdwardPrince {
+	msgbox (Tombstone_Text_EdwardPrince)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Mussolini {
+	msgbox (Tombstone_Text_Mussolini)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Gorbachev {
+	msgbox (Tombstone_Text_Gorbachev)
+	closemessage
+	end
+}
+
+script Script_Tombstone_SusanAnthony {
+	msgbox (Tombstone_Text_SusanAnthony)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Henry4 {
+	msgbox (Tombstone_Text_Henry4)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Franklin {
+	msgbox (Tombstone_Text_Franklin)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Tiberius {
+	msgbox (Tombstone_Text_Tiberius)
+	closemessage
+	end
+}
+
 //Tombstone Text
 text Tombstone_Text_Default {
 	format("The inscription is too faded to read.")
@@ -1177,6 +1405,158 @@ text Tombstone_Text_Timur {
 
 text Tombstone_Text_Churchill {
 	format("WINSTON CHVRCHILLVS\nMMDCXXVII - MMDCCXVIII")
+}
+
+text Tombstone_Text_Henry6 {
+	format("HENRICVS VI LANCASTRIA\nMMCLXXIV - MMCCXXIV")
+}
+
+text Tombstone_Text_Hindenburg {
+	format("PAVLVS HINDENBVRG\nMMDC - MMDCLXXXVII")
+}
+
+text Tombstone_Text_Elizabeth2 {
+	format("ELIZABETHA II WINDSORANI\nMMDCLXXIX - MMDCCLXXV")
+}
+
+text Tombstone_Text_Cromwell {
+	format("OLIVERIVS CROMVELLVS\nMMCCCLII - MMCDXI")
+}
+
+text Tombstone_Text_Mao {
+	format("MAO TSE TVNG\nMMDCXLVI - MMDCCXXIX")
+}
+
+text Tombstone_Text_Eisenhower {
+	format("DVIGHT EISENHOVER\nMMDCXLIII - MMDCCXXII")
+}
+
+text Tombstone_Text_Ashoka {
+	format("PIODASSES MAVRYA\nCDL - DXXII")
+}
+
+text Tombstone_Text_QinShiHuang {
+	format("CHINGVS CHI\nCDXCV - DXLIV")
+}
+
+text Tombstone_Text_Che {
+	format("ERNESTVS GVEVARA\nMMDCLXXXI - MMDCCXX")
+}
+
+text Tombstone_Text_Cincinnatus {
+	format("LVCIVS QVINCTIVS CINCINNATVS\nCCXXXV - CCCXXIV")
+}
+
+text Tombstone_Text_MarcusAurelius {
+	format("MARCVS CATILIVS SEVERVS ANNIVS VERVS\nDCCCLXXIV - CMXXXIII")
+}
+
+text Tombstone_Text_Trajan {
+	format("MARCVS VLPIVS TRAIANVS\nDCCCVI - DCCCLXX")
+}
+
+text Tombstone_Text_Urban2 {
+	format("OTTO CAMPANIAE\nMDCCLXXXVIII - MDCCCLII")
+}
+
+text Tombstone_Text_Henry8 {
+	format("HENRICVS VIII TVDOR\nMMCCXLIV - MMCCC")
+}
+
+text Tombstone_Text_GustavusAdolphus {
+	format("GVSTAVS II ADOLPHVS\nMMCCCXLVII - MMCCCLXXXV")
+}
+
+text Tombstone_Text_Robespierre {
+	format("MAXIMILIANVS ROBESPIERRE\nMMDXI - MMDXLVII")
+}
+
+text Tombstone_Text_Lenin {
+	format("VLADIMIRVS LENIN\nMMDCXXIII - MMDCLXXVII")
+}
+
+text Tombstone_Text_Mandela {
+	format("NELSON MANDELA\nMMDCLXXI - MMDCCLXVI")
+}
+
+text Tombstone_Text_Catherine {
+	format("CATHARINA II ALEXII\nMMCDLXXXII - MMDXLIX")
+}
+
+text Tombstone_Text_Bolivar {
+	format("SIMON BOLIVARVS\nMMDXXXVI - MMDLXXXIII")
+}
+
+text Tombstone_Text_Bismark {
+	format("OTHO BISMARK\nMMDLXVIII - MMDCLI")
+}
+
+text Tombstone_Text_Castro {
+	format("FIDELIS CASTRO\nMMDCLXXIX - MMDCCLXIX")
+}
+
+text Tombstone_Text_FrederickGreat {
+	format("FRIDERICVS II BORVSSIAE\nMMCDLXV - MMDXXXIX")
+}
+
+text Tombstone_Text_Victoria {
+	format("ALEXANDRINA VICTORIA\nMMDLXXII - MMDCLIV")
+}
+
+text Tombstone_Text_Louis16 {
+	format("LVDOVICVS XVI BORBONIENSIS\nMMDVII - MMDXLVI")
+}
+
+text Tombstone_Text_Patton {
+	format("GEORGIVS PATTON\nMMDCXXXVIII - MMDCXCVIII")
+}
+
+text Tombstone_Text_Louis14 {
+	format("LVDOVICVS XIV BORBONIENSIS\nMMCCCXCI - MMCDLXVIII")
+}
+
+text Tombstone_Text_Atilla {
+	format("ATILLA HVNNORVM\nMCLIX - MCCVI")
+}
+
+text Tombstone_Text_Sulla {
+	format("LVCIVS CORNELIVS SVLLA\nDCXVI - DCLXXVI")
+}
+
+text Tombstone_Text_Xerxes {
+	format("XERXES ACHAEMENIDAE\nCCXXXV - CCLXXXIX")
+}
+
+text Tombstone_Text_Nero {
+	format("LVCIVS DOMITIVS AHENOBARBVS\nDCCXC - DCCCXXI")
+}
+
+text Tombstone_Text_EdwardPrince {
+	format("EDVARDVS WOODSTOCK ANJOV\nMMLXXXIII - MMCXXIX")
+}
+
+text Tombstone_Text_Mussolini {
+	format("BENITVS MVSSOLINI\nMMDCXXXVI- MMDCXCVI")
+}
+
+text Tombstone_Text_Gorbachev {
+	format("MICHAEL GORBACEV\nMMDCLXXXIV - MMDCCLXXV")
+}
+
+text Tombstone_Text_SusanAnthony {
+	format("SVSANA ANTONIA\nMMDLXXIII - MMDCLIX")
+}
+
+text Tombstone_Text_Henry4 {
+	format("HENRICVS IV PLANTAGENISTAE\nMMCXX- MMCLXVI")
+}
+
+text Tombstone_Text_Franklin {
+	format("BENIAMINVS FRANKLINIVS\nMMCDLIX - MMDXLIII")
+}
+
+text Tombstone_Text_Tiberius {
+	format("TIBERIVS CLAVDIVS NERO\nDCCXII - DCCXC")
 }
 
 
