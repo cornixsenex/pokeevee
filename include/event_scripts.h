@@ -848,6 +848,31 @@ extern const u8 Script_Tombstone_SusanAnthony[];
 extern const u8 Script_Tombstone_Henry4[];
 extern const u8 Script_Tombstone_Franklin[];
 extern const u8 Script_Tombstone_Tiberius[];
+extern const u8 Script_Tombstone_DaVinci[];
+extern const u8 Script_Tombstone_Pythagoras[];
+extern const u8 Script_Tombstone_Feynman[];
+extern const u8 Script_Tombstone_Sartre[];
+extern const u8 Script_Tombstone_Nietzshe[];
+extern const u8 Script_Tombstone_Joyce[];
+extern const u8 Script_Tombstone_Bradly[];
+extern const u8 Script_Tombstone_Constantine[];
+extern const u8 Script_Tombstone_Henry2[];
+extern const u8 Script_Tombstone_Henry5[];
+extern const u8 Script_Tombstone_FrederickBarbarossa[];
+extern const u8 Script_Tombstone_AndrewJackson[];
+extern const u8 Script_Tombstone_FDR[];
+extern const u8 Script_Tombstone_Reagan[];
+extern const u8 Script_Tombstone_Hirohito[];
+extern const u8 Script_Tombstone_Aquinas[];
+extern const u8 Script_Tombstone_Tesla[];
+extern const u8 Script_Tombstone_Bach[];
+extern const u8 Script_Tombstone_Hobbes[];
+extern const u8 Script_Tombstone_Hendrix[];
+extern const u8 Script_Tombstone_Tolkien[];
+extern const u8 Script_Tombstone_Berry[];
+extern const u8 Script_Tombstone_Milton[];
+extern const u8 Script_Tombstone_Sophocles[];
+extern const u8 Script_Tombstone_Aeschylus[];
 
 
 

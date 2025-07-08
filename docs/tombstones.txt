@@ -280,64 +280,27 @@ susan b antony
 
 REPEAT FOR ELIMIATION WHILE WRITING SCRIPTS
 
-Player et Personal 19
-	Hunter
-	owsley
-
 
 Thinkers / Writers / Artists ~ 50+
-	Jack Kilby
-	Charles Babbage
-Herodotus
-Geoffrey Momuth
-Thomas Aquinas
-Tesla
-Beethoven
-Mozart
-Bach
-Hobbes
-Dimaggio
-Sinatra
-Cash
-Hendrix
-Tolkien
-Jobs
-Disney
-Cobain
-Oppenheimer
-Chuck Berry
-Michaelanglo
-Copernicus
-Galileo
-Machiavelli
-John Milton
-Sophocles
-Aeschylus
-Euripides
-Cicero
-Livy
-Sallust
-Apostles
-Engles
+
+
+
+
+
 Jung
 Freud
 marie curie
-da vinci
 jane austen
 archimedes
-euclid
 frid khalo
 chaplin
 stephen hawking
 sagan
 James watt
 schrodinger
-feynman
 Twain
 howard zinn
 immanuel kant
-jean-paul sartre
-nietzshe
 shopenhaur
 epicurus
 diogenes
@@ -345,7 +308,6 @@ hitchcock
 welles
 f scott fitzgerald
 woolf
-joyce
 dostoevsky
 cervantes
 Kerouac
@@ -353,36 +315,47 @@ harrison
 jim morrison
 bill graham
 Janis
-Bradly
 Tupac
 MJ
-
-
-
-
-Leaders ~ 60+
 Scipio Africanus
 Hanibal
 Cyrus
 Caligula
-Constantine
-henry 2
-henry 4
-henry 5
 richar 2
 Suleiman 
 isabella
-frederick barbarossa
-Jackson
 stalin
-Roosevelt FDR
+Teddy
 MLK
-reagan
 bin laden
 jfk
 rommel
 nimitz
-hirohito
 yeltsin
+Jack Kilby
+Charles Babbage
+Herodotus
+Geoffrey Momuth
+Beethoven
+Mozart
+Dimaggio
+Sinatra
+Cash
+Jobs
+Disney
+Cobain
+Oppenheimer
+Michaelanglo
+Copernicus
+Galileo
+Machiavelli
+Aeschylus
+Euripides
+Cicero
+Livy
+Sallust
+Apostles
+Engles
+
 
 

@@ -938,6 +938,156 @@ script Script_Tombstone_Tiberius {
 	end
 }
 
+script Script_Tombstone_DaVinci {
+	msgbox (Tombstone_Text_DaVinci)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Pythagoras {
+	msgbox (Tombstone_Text_Pythagoras)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Feynman {
+	msgbox (Tombstone_Text_Feynman)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Sartre {
+	msgbox (Tombstone_Text_Sartre)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Nietzshe {
+	msgbox (Tombstone_Text_Nietzshe)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Joyce {
+	msgbox (Tombstone_Text_Joyce)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Bradly {
+	msgbox (Tombstone_Text_Bradly)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Constantine {
+	msgbox (Tombstone_Text_Constantine)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Henry2 {
+	msgbox (Tombstone_Text_Henry2)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Henry5 {
+	msgbox (Tombstone_Text_Henry5)
+	closemessage
+	end
+}
+
+script Script_Tombstone_FrederickBarbarossa {
+	msgbox (Tombstone_Text_FrederickBarbaorossa)
+	closemessage
+	end
+}
+
+script Script_Tombstone_AndrewJackson {
+	msgbox (Tombstone_Text_AndrewJackson)
+	closemessage
+	end
+}
+
+script Script_Tombstone_FDR {
+	msgbox (Tombstone_Text_FDR)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Reagan {
+	msgbox (Tombstone_Text_Reagan)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Hirohito {
+	msgbox (Tombstone_Text_Hirohito)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Aquinas {
+	msgbox (Tombstone_Text_Aquinas)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Tesla {
+	msgbox (Tombstone_Text_Tesla)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Bach {
+	msgbox (Tombstone_Text_Bach)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Hobbes {
+	msgbox (Tombstone_Text_Hobbes)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Hendrix {
+	msgbox (Tombstone_Text_Hendrix)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Tolkien {
+	msgbox (Tombstone_Text_Tolkien)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Berry {
+	msgbox (Tombstone_Text_Berry)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Milton {
+	msgbox (Tombstone_Text_Milton)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Sophocles {
+	msgbox (Tombstone_Text_Sophocles)
+	closemessage
+	end
+}
+
+script Script_Tombstone_Aeschylus {
+	msgbox (Tombstone_Text_Aeschylus)
+	closemessage
+	end
+}
+
 //Tombstone Text
 text Tombstone_Text_Default {
 	format("The inscription is too faded to read.")
@@ -1532,7 +1682,7 @@ text Tombstone_Text_Nero {
 }
 
 text Tombstone_Text_EdwardPrince {
-	format("EDVARDVS WOODSTOCK ANJOV\nMMLXXXIII - MMCXXIX")
+	format("EDVARDVS WOODSTOCK ANIOV\nMMLXXXIII - MMCXXIX")
 }
 
 text Tombstone_Text_Mussolini {
@@ -1548,7 +1698,7 @@ text Tombstone_Text_SusanAnthony {
 }
 
 text Tombstone_Text_Henry4 {
-	format("HENRICVS IV PLANTAGENISTAE\nMMCXX- MMCLXVI")
+	format("HENRICVS IV LANCASTRIA\nMMCXX- MMCLXVI")
 }
 
 text Tombstone_Text_Franklin {
@@ -1557,6 +1707,106 @@ text Tombstone_Text_Franklin {
 
 text Tombstone_Text_Tiberius {
 	format("TIBERIVS CLAVDIVS NERO\nDCCXII - DCCXC")
+}
+
+text Tombstone_Text_DaVinci {
+	format("LEONARDVS VINCIVS\nMMCCV - MMCCLXXII")
+}
+
+text Tombstone_Text_Pythagoras {
+	format("PYTHAGORAS SAMI\nCLXXXIV - CCLIX")
+}
+
+text Tombstone_Text_Feynman {
+	format("RICARDVS FEYNMAN\nMMDCLXXI - MMDCCXLI")
+}
+
+text Tombstone_Text_Sartre {
+	format("IOANNES SARTRE\nMMDCLVIII - MMDCCXXXIII")
+}
+
+text Tombstone_Text_Nietzshe {
+	format("FRIDERICVS NIETZSCHE\nMMDXCVII - MMDCLIII")
+}
+
+text Tombstone_Text_Joyce {
+	format("IACOBVS IOYCE\nMMDCXXXV - MMDCXCIV")
+}
+
+text Tombstone_Text_Bradly {
+	format("BRADLY NOVELL\nMMDCCXXI - MMDCCXLIX")
+}
+
+text Tombstone_Text_Constantine {
+	format("FLAVIVS VALERIVS CONSTANTINVS\nMXXV - MXC")
+}
+
+text Tombstone_Text_Henry2 {
+	format("HENRICVS II PLANTAGENISTAE\nMDCCCLXXXVI - MCMXLII")
+}
+
+text Tombstone_Text_Henry5 {
+	format("HENRICVS V LANCASTRIA\nMMCXXXIX - MMCLXXV")
+}
+
+text Tombstone_Text_FrederickBarbaorossa {
+	format("FRIDERICVS I HOHENSTAVFEN\nMDCCCLXXV - MCMXLIII")
+}
+
+text Tombstone_Text_AndrewJackson {
+	format("ANDREAS IACKSON\nMMDXX - MMDXCVIII")
+}
+
+text Tombstone_Text_FDR {
+	format("FRANKLINVS ROOSEVELT\nMMDCXXXV - MMDCXCVIII")
+}
+
+text Tombstone_Text_Reagan {
+	format("RONALDVS REAGAN\nMMDCLXIV - MMDCCLVII")
+}
+
+text Tombstone_Text_Hirohito {
+	format("SHOVA HIROHITO\nMMDCLIV - MMDCCXLII")
+}
+
+text Tombstone_Text_Aquinas {
+	format("THOMAS AQUVINAS\nMCMLXXVIII - MMXXVII")
+}
+
+text Tombstone_Text_Tesla {
+	format("NICOLAVS TESLA\nMMDCIX - MMDCXCVI")
+}
+
+text Tombstone_Text_Bach {
+	format("IOANNES BACHIVS\nMMCDXXXVIII - MMDIII")
+}
+
+text Tombstone_Text_Hobbes {
+	format("THOMAS HOBBIVS\nMMCCCXLI - MMCDXXXII")
+}
+
+text Tombstone_Text_Hendrix {
+	format("IACOBVS HENDRIX\nMMDCXLV - MMDCCXXIII")
+}
+
+text Tombstone_Text_Tolkien {
+	format("IOANNES TOLKIEN\nMMDCXLV - MMDCCXXVI")
+}
+
+text Tombstone_Text_Berry {
+	format("CAROLVS BERRY\nMMDCLXXIX - MMDCCLXX")
+}
+
+text Tombstone_Text_Milton {
+	format("IOANNES MILTONVS\nMMCCCLXI - MMCDXXVII")
+}
+
+text Tombstone_Text_Sophocles {
+	format("SOPHOCLES COLONI\nCCLVII - CCCXLVIII")
+}
+
+text Tombstone_Text_Aeschylus {
+	format("AESCHYLVS ATHENARVM\nCCXXIX - CCXCVIII")
 }
 
 

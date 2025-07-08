@@ -1752,6 +1752,59 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Franklin;
 	else if (x == 59 && y == 45)
 		return Script_Tombstone_Tiberius;
+	//Far Right Col 1
+	else if (x == 69 && y == 21)
+		return Script_Tombstone_DaVinci;
+	else if (x == 69 && y == 24)
+		return Script_Tombstone_Pythagoras;
+	else if (x == 69 && y == 27)
+		return Script_Tombstone_Feynman;
+	else if (x == 69 && y == 30)
+		return Script_Tombstone_Sartre;
+	else if (x == 69 && y == 33)
+		return Script_Tombstone_Nietzshe;
+	else if (x == 69 && y == 36)
+		return Script_Tombstone_Joyce;
+	else if (x == 69 && y == 39)
+		return Script_Tombstone_Bradly;
+	else if (x == 69 && y == 42)
+		return Script_Tombstone_Constantine;
+	else if (x == 69 && y == 45)
+		return Script_Tombstone_Henry2;
+	else if (x == 69 && y == 48)
+		return Script_Tombstone_Henry5;
+	else if (x == 69 && y == 51)
+		return Script_Tombstone_FrederickBarbarossa;
+	else if (x == 69 && y == 54)
+		return Script_Tombstone_AndrewJackson;
+	else if (x == 69 && y == 57)
+		return Script_Tombstone_FDR;
+	else if (x == 69 && y == 60)
+		return Script_Tombstone_Reagan;
+	//Far Right Col 2
+	else if (x == 71 && y == 30)
+		return Script_Tombstone_Hirohito;
+	else if (x == 71 && y == 33)
+		return Script_Tombstone_Aquinas;
+	else if (x == 71 && y == 36)
+		return Script_Tombstone_Tesla;
+	else if (x == 71 && y == 39)
+		return Script_Tombstone_Bach;
+	else if (x == 71 && y == 42)
+		return Script_Tombstone_Hobbes;
+	else if (x == 71 && y == 45)
+		return Script_Tombstone_Hendrix;
+	else if (x == 71 && y == 48)
+		return Script_Tombstone_Tolkien;
+	else if (x == 71 && y == 51)
+		return Script_Tombstone_Berry;
+	else if (x == 71 && y == 54)
+		return Script_Tombstone_Milton;
+	else if (x == 71 && y == 57)
+		return Script_Tombstone_Sophocles;
+	else if (x == 71 && y == 60)
+		return Script_Tombstone_Aeschylus;
+
 
 
 
