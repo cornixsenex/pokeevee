@@ -49,6 +49,8 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "rtc.h" //Start Menu Clock
+#include "fake_rtc.h" //Start Menu Clock
 
 // Menu actions
 enum
@@ -89,6 +91,7 @@ EWRAM_DATA static u8 sStartMenuCursorPos = 0;
 EWRAM_DATA static u8 sNumStartMenuActions = 0;
 EWRAM_DATA static u8 sCurrentStartMenuActions[9] = {0};
 EWRAM_DATA static s8 sInitStartMenuData[2] = {0};
+EWRAM_DATA static u8 sStartClockWindowId = 0; // Time Start Menu
 
 EWRAM_DATA static u8 (*sSaveDialogCallback)(void) = NULL;
 EWRAM_DATA static u8 sSaveDialogTimer = 0;
@@ -147,12 +150,24 @@ static bool8 FieldCB_ReturnToFieldStartMenu(void);
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .bg = 0,
     .tilemapLeft = 1,
-    .tilemapTop = 1,
+    .tilemapTop = 5, //Modified from Start Menu Clock
     .width = 9,
     .height = 4,
     .paletteNum = 15,
     .baseBlock = 0x8
 };
+
+//Start Menu Clock
+static const struct WindowTemplate sWindowTemplate_StartClock = {
+    .bg = 0, 
+    .tilemapLeft = 1, 
+    .tilemapTop = 1, 
+    .width = 11, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
+    .height = 2, 
+    .paletteNum = 15,
+    .baseBlock = 0x30
+};
+
 
 static const u8 *const sPyramidFloorNames[FRONTIER_STAGES_PER_CHALLENGE + 1] =
 {
@@ -169,7 +184,7 @@ static const u8 *const sPyramidFloorNames[FRONTIER_STAGES_PER_CHALLENGE + 1] =
 static const struct WindowTemplate sWindowTemplate_PyramidFloor = {
     .bg = 0,
     .tilemapLeft = 1,
-    .tilemapTop = 1,
+    .tilemapTop = 5,
     .width = 10,
     .height = 4,
     .paletteNum = 15,
@@ -179,7 +194,7 @@ static const struct WindowTemplate sWindowTemplate_PyramidFloor = {
 static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
     .bg = 0,
     .tilemapLeft = 1,
-    .tilemapTop = 1,
+    .tilemapTop = 5,
     .width = 12,
     .height = 4,
     .paletteNum = 15,
@@ -278,6 +293,7 @@ static void ShowSaveInfoWindow(void);
 static void RemoveSaveInfoWindow(void);
 static void HideStartMenuWindow(void);
 static void HideStartMenuDebug(void);
+static void ShowTimeWindow(void); //Time on Start Menu - RavePossum
 
 void SetDexPokemonPokenavFlags(void) // unused
 {
@@ -462,18 +478,24 @@ static void ShowPyramidFloorWindow(void)
     CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
 }
 
+
 static void RemoveExtraStartMenuWindows(void)
 {
     if (GetSafariZoneFlag())
     {
         ClearStdWindowAndFrameToTransparent(sSafariBallsWindowId, FALSE);
-        CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
+        //CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
         RemoveWindow(sSafariBallsWindowId);
     }
-    if (InBattlePyramid())
+    else if (InBattlePyramid())
     {
         ClearStdWindowAndFrameToTransparent(sBattlePyramidFloorWindowId, FALSE);
         RemoveWindow(sBattlePyramidFloorWindowId);
+    }
+    else
+    {
+        ClearStdWindowAndFrameToTransparent(sStartClockWindowId, FALSE);
+        RemoveWindow(sStartClockWindowId);
     }
 }
 
@@ -508,6 +530,7 @@ static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
     return FALSE;
 }
 
+//NOTE: modified for RavePossum Start Menu Time
 static bool32 InitStartMenuStep(void)
 {
     s8 state = sInitStartMenuData[0];
@@ -530,15 +553,19 @@ static bool32 InitStartMenuStep(void)
     case 3:
         if (GetSafariZoneFlag())
             ShowSafariBallsWindow();
-        if (InBattlePyramid())
+        else if (InBattlePyramid())
             ShowPyramidFloorWindow();
         sInitStartMenuData[0]++;
         break;
     case 4:
+        ShowTimeWindow();
+        sInitStartMenuData[0]++;
+        break;
+    case 5:
         if (PrintStartMenuActions(&sInitStartMenuData[1], 2))
             sInitStartMenuData[0]++;
         break;
-    case 5:
+    case 6:
         sStartMenuCursorPos = InitMenuNormal(GetStartMenuWindowId(), FONT_NORMAL, 0, 9, 16, sNumStartMenuActions, sStartMenuCursorPos);
         CopyWindowToVram(GetStartMenuWindowId(), COPYWIN_MAP);
         return TRUE;
@@ -621,6 +648,7 @@ void ShowStartMenu(void)
     LockPlayerFieldControls();
 }
 
+//NOTE: Modified for RavePossum Start Menu
 static bool8 HandleStartMenuInput(void)
 {
     if (JOY_NEW(DPAD_UP))
@@ -667,7 +695,9 @@ static bool8 HandleStartMenuInput(void)
         HideStartMenu();
         return TRUE;
     }
-
+    //RavePossum Time Start Menu
+    RemoveExtraStartMenuWindows();
+    ShowTimeWindow();
     return FALSE;
 }
 
@@ -687,6 +717,7 @@ bool8 StartMenuPokedexCallback(void)
     return FALSE;
 }
 
+//NOTE: Modified for RavePossum Time Menu Start
 static bool8 StartMenuPokemonCallback(void)
 {
 	
@@ -698,6 +729,12 @@ static bool8 StartMenuPokemonCallback(void)
         SetMainCallback2(CB2_PartyMenuFromStartMenu); // Display party menu
 
         return TRUE;
+    }
+
+    if (!GetSafariZoneFlag() && !InBattlePyramid() && gSaveBlock2Ptr->playTimeSeconds == 0) 
+    {
+        RemoveExtraStartMenuWindows();
+        ShowTimeWindow();
     }
 
     return FALSE;
@@ -800,6 +837,43 @@ static bool8 StartMenuDebugCallback(void)
     }
 
 return TRUE;
+}
+
+#define CLOCK_WINDOW_WIDTH 65
+
+//RavePossum Time Start Menu
+static void ShowTimeWindow(void)
+{
+    sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
+    PutWindowTilemap(sStartClockWindowId);
+    DrawStdWindowFrame(sStartClockWindowId, FALSE);
+
+    //Calculate Time
+    if (OW_USE_FAKE_RTC)
+    {
+        struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+        StringExpandPlaceholders(gStringVar1, gDayNameStringsTable[rtc->dayOfWeek]);
+        ConvertIntToDecimalStringN(gStringVar2, rtc->hour, STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(gStringVar3, rtc->minute, STR_CONV_MODE_LEADING_ZEROS, 2);
+    }
+    else
+    {
+        u32 day = ((gLocalTime.days - 1) + 6) % 7 ;
+        RtcCalcLocalTime();
+        StringExpandPlaceholders(gStringVar1, gDayNameStringsTable[day]);
+        ConvertIntToDecimalStringN(gStringVar2, gLocalTime.hours, STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(gStringVar3, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    }
+
+    //Format String
+    StringAppend (gStringVar2, gText_Colon2);
+    StringAppend (gStringVar2, gStringVar3);
+
+    //Print String
+    AddTextPrinterParameterized(sStartClockWindowId, FONT_NORMAL, gStringVar1, 1, 1, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(sStartClockWindowId, FONT_NORMAL, gStringVar2, 61, 1, TEXT_SKIP_DRAW, NULL);
+    
+    CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
 }
 
 static bool8 StartMenuSafariZoneRetireCallback(void)
