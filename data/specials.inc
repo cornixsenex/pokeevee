@@ -624,3 +624,4 @@ gSpecials::
     def_special IsGatoCityParkNThermae_F
 	def_special GetDynamicMapSec_MareS4_F
 	def_special GetDynamicMapSec_MareS3_F
+	def_special GetDynamicMapSec_MareS2_F

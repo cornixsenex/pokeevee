@@ -158,6 +158,7 @@ u32 IsSanjoRockFillerSabinaNova(bool32 useWarpInfo);
 u32 IsGatoCityParkNThermae(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareS4(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareS3(bool32 useWarpInfo);
+u32 GetDynamicMapSec_MareS2(bool32 useWarpInfo);
 
 
 extern const struct RegionMapLocation gRegionMapEntries[];

@@ -1616,10 +1616,10 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_ARTISAN_CAVE",
-      "name": "ARTISAN CAVE",
-      "x": 22,
-      "y": 12,
+      "id": "MAPSEC_MORTIA",
+      "name": "MORTIA",
+      "x": 0,
+      "y": 0,
       "width": 1,
       "height": 1
     },

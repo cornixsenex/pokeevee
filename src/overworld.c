@@ -1035,8 +1035,17 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//From MareS4
 				if (x < 1 && y == 59)
 					ShowMapNamePopup();
+				//From MareS2
+				if (x > 84 && y == 40)
+					ShowMapNamePopup();
 			}
-
+			//MareS2
+			if (destMapNum == MAP_NUM(MAP_MARE_S2) && destMapGroup == MAP_GROUP(MAP_MARE_S2))
+			{
+				//From MareS3
+				if (x < 1 && y == 40)
+					ShowMapNamePopup();
+			}
 			
 			//Other Maps 
 			//
@@ -1061,8 +1070,26 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Silvan Woods - Suppres from SilvanFiller
 				(! (destMapGroup == MAP_GROUP(MAP_SILVAN_WOODS) && destMapNum == MAP_NUM(MAP_SILVAN_WOODS) && x < 1 && y > 29 ) ) &&
                 //Dest: GatoParkN - Suppress from GatoPark as Hortus Publicus continues
-                (! (destMapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && destMapNum == MAP_NUM(MAP_GATO_CITY_PARK_N) ) )
-                )
+                (! (destMapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && destMapNum == MAP_NUM(MAP_GATO_CITY_PARK_N) ) ) && 
+				//Handle FROM MareC next 5
+				//Penninsula E
+                (! (destMapGroup == MAP_GROUP(MAP_PENNINSULA_E) && destMapNum == MAP_NUM(MAP_PENNINSULA_E) && y > 30) ) && 
+				//Elicius Beach
+                (! (destMapGroup == MAP_GROUP(MAP_ELICIUS_BEACH) && destMapNum == MAP_NUM(MAP_ELICIUS_BEACH) && y > 69) ) && 
+				//MareS2
+                (! (destMapGroup == MAP_GROUP(MAP_MARE_S2) && destMapNum == MAP_NUM(MAP_MARE_S2) && y < 1) ) && 
+				//MareS3
+                (! (destMapGroup == MAP_GROUP(MAP_MARE_S3) && destMapNum == MAP_NUM(MAP_MARE_S3) && y < 1 && x > 20) ) && 
+				//mareW
+                (! (destMapGroup == MAP_GROUP(MAP_MARE_W) && destMapNum == MAP_NUM(MAP_MARE_W) && x > 150) ) &&
+				//peninsula W (typo I know)
+                (! (destMapGroup == MAP_GROUP(MAP_PENINSULA_W) && destMapNum == MAP_NUM(MAP_PENINSULA_W) && y > 5 && x > 47) )
+
+				
+				//Handle other Dest Dynamic maps here - Adjust the && above too
+
+				)
+
 					ShowMapNamePopup();
 			
 		}
@@ -1079,8 +1106,13 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Dest: Silvan Filler - Suppress from SilvanWoods
 				(! (destMapGroup == MAP_GROUP(MAP_BULBUS_SILVAN_FILLER) && destMapNum == MAP_NUM(MAP_BULBUS_SILVAN_FILLER) && x > 22 ) ) &&
                 //Dest: GatoCityPark - Suppress from GatoCityParkN
-				(! (destMapGroup == MAP_GROUP(MAP_GATO_CITY_PARK) && destMapNum == MAP_NUM(MAP_GATO_CITY_PARK) && y < 3 ) )
-				)
+				(! (destMapGroup == MAP_GROUP(MAP_GATO_CITY_PARK) && destMapNum == MAP_NUM(MAP_GATO_CITY_PARK) && y < 3 ) )	 &&
+				//Dest: MareC - Suppress central Mare Tranquillum
+                (! (destMapGroup == MAP_GROUP(MAP_MARE_C) && destMapNum == MAP_NUM(MAP_MARE_C) ) )
+
+				//Handle other maps here - adjust && above
+				
+                ) 
 					ShowMapNamePopup();
 		}
     }
@@ -4469,6 +4501,31 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareS2
+	if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) 
+	{
+		//1: Mare Tranquillum
+		//2: Mare Mortuorum
+		//3: Mare Subtropicum
+		//4: Isla Herba Bona
+		//5: Mortia
+		n = GetDynamicMapSec_MareS2(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_MARE_TRANQUILLUM;
+			case 2:
+				return MAPSEC_MARE_MORTUORUM; 
+			case 3:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 4:
+				return MAPSEC_ISLA_HERBA_BONA; 
+			case 5:
+				return MAPSEC_MORTIA; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+   
    
    //Other Maps Go Here
     
@@ -5107,6 +5164,36 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Isla Herba Bona
 			case 3:
 				return MUS_FALLARBOR; 
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//MareS2
+	if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) 
+	{
+		//1: Mare Tranquillum
+		//2: Mare Mortuorum
+		//3: Mare Subtropicum
+		//4: Isla Herba Bona
+		//5: Mortia
+		n = GetDynamicMapSec_MareS2(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS2 returned: %d\n", n);
+		switch (n) {
+		    //Mare Tranquillum
+			case 1:
+				return MUS_RG_SURF;
+		    //Mare Mortuorum
+			case 2:
+				return MUS_RG_POKE_TOWER;
+		    //Mare Subtropicum
+			case 3:
+				return MUS_LILYCOVE; 
+		    //Isla Herba Bona
+			case 4:
+				return MUS_FALLARBOR; 
+		    //Mortia
+			case 5:
+				return MUS_RG_LAVENDER; 
 			default:
 				return MUS_CANTINA;
 		}

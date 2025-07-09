@@ -1,1 +1,52 @@
-mapscripts MareS2_MapScripts {}
+
+
+//DYNAMIC MAP TEMP_VAR_5
+
+//1: Mare Tranquillum
+//2: Mare Mortuorum 
+//3: Mare Subropicum
+//4: Isla Herba Bona
+//5: Mortia
+
+//MB_OCEAN_MAP_TRANSITION_A: Mare Tranquillum
+//MB_OCEAN_MAP_TRANSITION_B: Mare Mortuorum
+//MB_OCEAN_MAP_TRANSITION_C: Mare Subropicum
+//MB_OCEAN_MAP_TRANSITION_D: Isla Herba Bona
+
+mapscripts MareS2_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS2_F)
+    }
+
+}
+
+script MareS2_Script_Transition_MareTranquillum {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS2_Script_Transition_MareMortuorum {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS2_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS2_Script_Transition_IslaHerbaBona {
+    setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS2_Script_Transition_Mortia {
+    setvar (VAR_TEMP_5, 5)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}

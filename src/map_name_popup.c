@@ -298,9 +298,9 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
     [MAPSEC_MIRAGE_TOWER] = MAPPOPUP_THEME_STONE,
     [MAPSEC_BIRTH_ISLAND] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_FARAWAY_ISLAND] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_ARTISAN_CAVE] = MAPPOPUP_THEME_STONE,
 
 	//Cornix Customs
+    [MAPSEC_MORTIA] = MAPPOPUP_THEME_STONE,
     [MAPSEC_SCYLLA_CHARYBDIS] = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_THERMAE] = MAPPOPUP_THEME_STONE,
     [MAPSEC_HORTUS_PUBLICUS] = MAPPOPUP_THEME_WOOD,
@@ -1395,6 +1395,35 @@ static void LoadMapNamePopUpWindowBg(void)
 					break;
 				case 3:
 					regionMapSectionId = MAPSEC_ISLA_HERBA_BONA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+		}
+		//MareS2 
+        if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) 
+		{
+			//1: Mare Tranquillum
+			//2: Mare Mortuorum
+			//3: Mare Subtropicum
+			//4: Isla Herba Bona
+			//5: Mortia
+			n = GetDynamicMapSec_MareS2(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_MARE_TRANQUILLUM;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_MORTUORUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_ISLA_HERBA_BONA;
+					break;
+				case 5:
+					regionMapSectionId = MAPSEC_MORTIA;
 					break;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;

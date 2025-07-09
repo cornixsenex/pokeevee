@@ -174,7 +174,7 @@ Tower                                                             # MUS_RG_ROCKE
 Capital                                                           # 
 Castrum                                                           # MUS_B_DOME_LOBBY
 Drake Cave                                                        # 
-Mortia / Graveyard                                                # MUS_RG_LAVENDER
+Mortia                                                            # MUS_RG_LAVENDER
 
 ****Deserts - arabic, hot, cumbias etc                            # MUS_DESERT
 Cacnorum                                                          # MUS_DESERT
@@ -188,8 +188,8 @@ Mare Internum                                                     # MUS_DEWFORD
 Mare Tropicum                                                     # MUS_SURF
 Mare Subtropicum                                                  # MUS_LILYCOVE
 Mare Occidens                                                     # MUS_ABANDONED_SHIP
-Mare Oriens                                                       # MUS_CAVE_OF_ORIGIN
-Mare Mortuorum                                                    #MUS_SEALED_CHAMBER, POKE_TOWER
+Mare Oriens                                                       # MUS_SEALED_CHAMBER
+Mare Mortuorum                                                    # MUS_RG_POKE_TOWER
 River Drake  / Lake Drake                                         # MUS_RG_SEVII_ROUTE
 
 ****OTHER - specials                                              

@@ -4707,7 +4707,7 @@
       "width": 124,
       "height": 58,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_BigIsland",
       "border_filepath": "data/layouts/MareC/border.bin",
       "blockdata_filepath": "data/layouts/MareC/map.bin"
     },

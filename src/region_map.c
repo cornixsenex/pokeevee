@@ -160,7 +160,7 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
    // {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
    // {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
    // {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
-    {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
+   // {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
     {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
     {MAPSEC_NONE,                       MAPSEC_NONE}
 };
@@ -2165,6 +2165,31 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
 				case 3:
 					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
+		//MareS2
+		if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2))
+        {
+			//1: Mare Tranquillum
+			//2: Mare Mortuorum
+			//3: Mare Subtropicum
+			//4: Isla Herba Bona
+			//5: Mortia
+			n = GetDynamicMapSec_MareS2(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_MORTVORVM);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 4:
+					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+				case 5:
+					return StringCopy(dest, sMapName_MORTIA);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -4883,6 +4908,95 @@ u32 GetDynamicMapSec_MareS3(bool32 useWarpInfo)
         return 3;
 }
 
+u32 GetDynamicMapSec_MareS2(bool32 useWarpInfo)
+{
+
+	//1: Mare Tranquillum
+	//2: Mare Mortuorum
+	//3: Mare Subtropicum
+	//4: Isla Herba Bona
+	//5: Mortia
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("MareS2\nX %d\nY %d", x, y);
+
+	//Mare Tranquilluma
+	if 
+		(
+		(x  < 7  && y < 41) ||
+		(x == 7  && y < 39) ||
+		(x == 8  && y < 36) ||
+		(x == 9  && y < 33) ||
+		(x == 10 && y < 31) ||
+		(x == 11 && y < 29) ||
+		(x == 12 && y < 27) ||
+		(x == 13 && y < 25) ||
+		(x == 14 && y < 22) ||
+		(x == 15 && y < 20) ||
+		(x == 16 && y < 17) ||
+		(x == 17 && y < 14) ||
+		(x == 18 && y < 12) ||
+		(x == 19 && y < 11) ||
+		(x == 20 && y < 10) ||
+		(x == 21 && y <  8) ||
+		(x == 22 && y <  6) ||
+		(x == 23 && y <  5) ||
+		(x == 24 && y <  4) 
+		)
+		return 1;
+	//3: Mare Subtropicum
+	else if 
+		(
+		(x < 1   && y > 73) ||
+		(x == 1  && y > 72) ||
+		(x == 2  && y > 70) ||
+		(x == 3  && y > 70) ||
+		(x == 4  && y > 69) ||
+		(x == 5  && y > 74) ||
+		(x == 6  && y > 79) ||
+		(x == 7  && y > 80) ||
+		(x == 8  && y > 81) ||
+		(x == 9  && y > 82) ||
+		(x == 10 && y > 83) ||
+		(x == 11 && y > 83) ||
+		(x == 12 && y > 84) ||
+		(x == 13 && y > 84) 
+		)
+		return 3;
+	//4: Isla Herba Bona
+	else if
+		(
+		(x  < 1  && y > 40 && y < 74) ||
+		(x == 1  && y > 40 && y < 73) ||
+		(x == 2  && y > 40 && y < 71) ||
+		(x == 3  && y > 40 && y < 71) ||
+		(x == 4  && y > 40 && y < 70) ||
+		(x == 5  && y > 40 && y < 69) ||
+		(x == 6  && y > 40 && y < 68) ||
+		(x == 7  && y > 40 && y < 68) ||
+		(x == 8  && y > 40 && y < 67) ||
+		(x == 9  && y > 42 && y < 66) ||
+		(x == 10 && y > 43 && y < 65) ||
+		(x == 11 && y > 46 && y < 62) 
+		)
+		return 4;
+	//5: Mortia
+	else if (x > 76 && y < 6)
+		return 5;
+	//Default is 2 = Mare Mortuorum
+	else 
+		return 2;
+}
 
 	
 

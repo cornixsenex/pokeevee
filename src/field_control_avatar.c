@@ -705,6 +705,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS2 - Transition Mare Tranquillum
+		if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) {
+			if (VarGet(VAR_TEMP_5) != 1) {
+				ScriptContext_SetupScript(MareS2_Script_Transition_MareTranquillum);
+				return TRUE;
+			}
+		}
 
     }
 	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
@@ -739,6 +746,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS2 - Transition Mare Mortuorum 
+		if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) {
+			if (VarGet(VAR_TEMP_5) != 2) {
+				ScriptContext_SetupScript(MareS2_Script_Transition_MareMortuorum);
+				return TRUE;
+			}
+		}
     }
 	else if (MetatileBehavior_IsOceanMapTransitionC(metatileBehavior))
     {
@@ -758,6 +772,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS2 - Transition Mare Subtropicum
+		if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) {
+			if (VarGet(VAR_TEMP_5) != 3) {
+				ScriptContext_SetupScript(MareS2_Script_Transition_MareSubtropicum);
+				return TRUE;
+			}
+		}
 
     }
 	else if (MetatileBehavior_IsOceanMapTransitionD(metatileBehavior))
@@ -768,6 +789,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 		if (mapGroup == MAP_GROUP(MAP_MARE_S4) && mapNum == MAP_NUM(MAP_MARE_S4)) {
 			if (VarGet(VAR_TEMP_5) != 5) {
 				ScriptContext_SetupScript(MareS4_Script_Transition_IslaHesperia);
+				return TRUE;
+			}
+		}
+		//MareS2 - Transition Isla Hesperia
+		if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) {
+			if (VarGet(VAR_TEMP_5) != 4) {
+				ScriptContext_SetupScript(MareS2_Script_Transition_IslaHerbaBona);
 				return TRUE;
 			}
 		}
@@ -1402,6 +1430,54 @@ static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition *position)
     return EventScript_TestSignpostMsg;
 }
 
+static void Task_OpenStartMenu(u8 taskId)
+{
+    if (ArePlayerFieldControlsLocked())
+        return;
+
+    PlaySE(SE_WIN_OPEN);
+    ShowStartMenu();
+    DestroyTask(taskId);
+}
+
+bool32 IsDpadPushedToTurnOrMovePlayer(struct FieldInput *input)
+{
+    return (input->dpadDirection != 0 && GetPlayerFacingDirection() != input->dpadDirection);
+}
+
+void CancelSignPostMessageBox(struct FieldInput *input)
+{
+    if (!ScriptContext_IsEnabled())
+        return;
+
+    if (gWalkAwayFromSignpostTimer)
+    {
+        gWalkAwayFromSignpostTimer--;
+        return;
+    }
+
+    if (!gMsgBoxIsCancelable)
+        return;
+
+    if (IsDpadPushedToTurnOrMovePlayer(input))
+    {
+        ScriptContext_SetupScript(EventScript_CancelMessageBox);
+        LockPlayerFieldControls();
+        return;
+    }
+
+    if (!input->pressedStartButton)
+        return;
+
+    ScriptContext_SetupScript(EventScript_CancelMessageBox);
+    LockPlayerFieldControls();
+
+    if (FuncIsActiveTask(Task_OpenStartMenu))
+        return;
+
+    CreateTask(Task_OpenStartMenu, 8);
+}
+
 //cornix Mortia tombstone
 static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 {
@@ -1476,10 +1552,7 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
 		return Script_Tombstone_Turing;
 	else if (x == 59 && y == 8)
 		return Script_Tombstone_Lovelace;
-	
-
-
-	//player et pyramus et thisbe - ETC at end
+	//player et frens
 	else if (x == 8 && y == 10)
 		return Script_Tombstone_Player;
 	else if (x == 14 && y == 13)
@@ -1944,53 +2017,4 @@ static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position)
     //Default - unused I do believe
 	else
 		return Script_Tombstone_Default;
-}
-	
-
-static void Task_OpenStartMenu(u8 taskId)
-{
-    if (ArePlayerFieldControlsLocked())
-        return;
-
-    PlaySE(SE_WIN_OPEN);
-    ShowStartMenu();
-    DestroyTask(taskId);
-}
-
-bool32 IsDpadPushedToTurnOrMovePlayer(struct FieldInput *input)
-{
-    return (input->dpadDirection != 0 && GetPlayerFacingDirection() != input->dpadDirection);
-}
-
-void CancelSignPostMessageBox(struct FieldInput *input)
-{
-    if (!ScriptContext_IsEnabled())
-        return;
-
-    if (gWalkAwayFromSignpostTimer)
-    {
-        gWalkAwayFromSignpostTimer--;
-        return;
-    }
-
-    if (!gMsgBoxIsCancelable)
-        return;
-
-    if (IsDpadPushedToTurnOrMovePlayer(input))
-    {
-        ScriptContext_SetupScript(EventScript_CancelMessageBox);
-        LockPlayerFieldControls();
-        return;
-    }
-
-    if (!input->pressedStartButton)
-        return;
-
-    ScriptContext_SetupScript(EventScript_CancelMessageBox);
-    LockPlayerFieldControls();
-
-    if (FuncIsActiveTask(Task_OpenStartMenu))
-        return;
-
-    CreateTask(Task_OpenStartMenu, 8);
 }
