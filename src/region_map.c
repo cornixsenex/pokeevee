@@ -2194,6 +2194,44 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+		//MareS1
+		if (mapGroup == MAP_GROUP(MAP_MARE_S1) && mapNum == MAP_NUM(MAP_MARE_S1))
+        {
+            //1: Mortia
+			//2: Mare Mortuorum
+			n = GetDynamicMapSec_MareS1(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_MORTIA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_MORTVORVM);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
+		//BigIslandN
+		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N))
+        {
+			//1: Mare Mortuorum
+            //2: Mare Oriens
+            //3: Mare Subtropicum
+            //4: Isla Ignifera
+			n = GetDynamicMapSec_BigIslandN(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_MARE_MORTVORVM);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_ORIENS);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 4:
+					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -4996,6 +5034,208 @@ u32 GetDynamicMapSec_MareS2(bool32 useWarpInfo)
 	//Default is 2 = Mare Mortuorum
 	else 
 		return 2;
+}
+
+u32 GetDynamicMapSec_MareS1(bool32 useWarpInfo)
+{
+
+    //1: Mortia
+	//2: Mare Mortuorum
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("MareS1\nX %d\nY %d", x, y);
+
+	//Mortia
+    if
+        (
+        (y < 14) ||
+        (y == 14 && x > 1) ||
+        (y == 15 && x > 2) ||
+        (y == 16 && x > 2) ||
+        (y == 17 && x > 2) ||
+        (y == 18 && x > 2) ||
+        (y == 19 && x > 2) ||
+        (y == 20 && x > 3) ||
+        (y == 21 && x > 3) ||
+        (y == 22 && x > 4) ||
+        (y == 23 && x > 4) ||
+        (y == 24 && x > 5) ||
+        (y == 25 && x > 5) ||
+        (y == 26 && x > 6) ||
+        (y == 27 && x > 6) ||
+        (y == 28 && x > 6) ||
+        (y == 29 && x > 6) ||
+        (y == 30 && x > 7) ||
+        (y == 31 && x > 7) ||
+        (y == 32 && x > 7) ||
+        (y == 33 && x > 7) ||
+        (y == 34 && x > 7) ||
+        (y == 35 && x > 8) ||
+        (y == 36 && x > 8) ||
+        (y == 37 && x > 8) ||
+        (y == 38 && x > 8) ||
+        (y == 39 && x > 8) ||
+        (y == 40 && x > 9) ||
+        (y == 41 && x > 9) ||
+        (y == 42 && x > 9) ||
+        (y == 43 && x > 9) ||
+        (y == 44 && x > 10) ||
+        (y == 45 && x > 10) ||
+        (y == 46 && x > 10) ||
+        (y == 47 && x > 10) ||
+        (y == 48 && x > 10) ||
+        (y == 49 && x > 10) ||
+        (y == 50 && x > 10) ||
+        (y == 51 && x > 10) ||
+        (y == 52 && x > 10) ||
+        (y == 53 && x > 10) ||
+        (y == 54 && x > 10) ||
+        (y == 55 && x > 10) ||
+        (y == 56 && x > 10) ||
+        (y == 57 && x > 10) ||
+        (y == 58 && x > 10) ||
+        (y == 59 && x > 10) ||
+        (y == 60 && x > 9 && x != 55 && x != 56) || //Special Case
+        (y == 61 && x > 9 && x != 55 && x != 56) || //Special Case
+        (y == 62 && x > 9 && x < 52) || //Special Case
+        (y == 62 && x > 59) || //Special Case
+        (y == 63 && x > 9 && x < 50) || //Special Case
+        (y == 64 && x > 10 && x < 49)    //Special Case
+        )
+            return 1;
+        //Mare Mortuorum is default
+        else
+            return 2;
+}
+
+u32 GetDynamicMapSec_BigIslandN(bool32 useWarpInfo)
+{
+
+    //1: Mare Mortuorum
+    //2: Mare Oriens
+    //3: Mare Subtropicum
+    //4: Isla Ignifera
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("GetDynamicMapSec_BigIslandN\nX: %d\nY: %d", x, y);
+
+    //1: Mare Mortuorum
+    if 
+        (
+        (y < 1 && x > 14) ||
+        (y == 1 && x > 16) ||
+        (y == 2 && x > 17) ||
+        (y == 3 && x > 18) ||
+        (y == 4 && x > 22) ||
+        (y == 5 && x > 42) ||
+        (y == 6 && x > 47 && x < 162) || //Special Case
+        (y == 7 && x > 68 && x < 79) || //Special Case
+        (y == 7 && x > 94 && x < 160) || //Special Case
+        (y == 8 && x > 71 && x < 79) || //Special Case
+        (y == 8 && x > 94 && x < 123) || //Special Case
+        (y == 8 && x > 138 && x < 155) || //Special Case
+        (y == 9 && x > 108 && x < 118) || //Special Case
+        (y == 9 && x > 139 && x < 151) || //Special Case
+        (y == 10 && x > 140 && x < 145) //Special Case
+        )
+        return 1;
+    //2: Mare Oriens
+    else if
+        (
+        (x == 134 && y > 41) ||
+        (x == 135 && y > 39) ||
+        (x == 136 && y > 36) ||
+        (x == 137 && y > 34) ||
+        (x == 138 && y > 32) ||
+        (x == 139 && y > 30) ||
+        (x == 140 && y > 29) ||
+        (x == 141 && y > 28) ||
+        (x == 142 && y > 26) || // Special Case
+        (x == 142 && y > 10 && y < 14) || // Special Case
+        (x == 143 && y > 10) ||
+        (x == 144 && y > 10) || 
+        (x == 145 && y > 9) ||
+        (x == 146 && y > 9) ||
+        (x == 147 && y > 9) ||
+        (x == 148 && y > 9) ||
+        (x == 149 && y > 9) ||
+        (x == 150 && y > 9) ||
+        (x == 151 && y > 8) ||
+        (x == 152 && y > 8) ||
+        (x == 153 && y > 8) ||
+        (x == 154 && y > 8) ||
+        (x == 155 && y > 7) ||
+        (x == 156 && y > 7) ||
+        (x == 157 && y > 7) ||
+        (x == 158 && y > 7) ||
+        (x == 159 && y > 7) ||
+        (x == 160 && y > 6) ||
+        (x == 161 && y > 6) ||
+        (x == 162 && y > 5) ||
+        (x == 163 && y > 5)
+        )
+        return 2;
+    //3: Mare Subtroicum
+    //Top
+    else if 
+        (
+        (y < 1 && x < 15) ||
+        (y == 1 && x < 17) ||
+        (y == 2 && x < 18) ||
+        (y == 3 && x < 19) ||
+        (y == 4 && x < 6) ||
+        (y == 5 && x < 6) ||
+        (y == 6 && x < 6) ||
+        (y == 7 && x < 6) ||
+        (y == 8 && x < 1)
+        )
+        return 3;
+    //Bottom
+    else if
+        (
+        (x < 1 && y > 23) ||
+        (x == 1 && y > 24) ||
+        (x == 2 && y > 26) ||
+        (x == 3 && y > 27) ||
+        (x == 4 && y > 27) ||
+        (x == 5 && y > 27) ||
+        (x == 6 && y > 27) ||
+        (x == 7 && y > 27) ||
+        (x == 8 && y > 27) ||
+        (x == 9 && y > 27) ||
+        (x == 10 && y > 27) ||
+        (x == 12 && y > 27) ||
+        (x == 13 && y > 28) ||
+        (x == 14 && y > 28) ||
+        (x == 15 && y > 28) ||
+        (x == 16 && y > 29) ||
+        (x == 17 && y > 30) ||
+        (x == 18 && y > 32 && y < 35) //Special Case
+        )
+        return 3;
+    //4: Isla Ignifera is Default
+    else
+        return 4;
 }
 
 	

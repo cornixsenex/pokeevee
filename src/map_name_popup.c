@@ -1429,6 +1429,48 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
 		}
+		//MareS1 
+        if (mapGroup == MAP_GROUP(MAP_MARE_S1) && mapNum == MAP_NUM(MAP_MARE_S1)) 
+		{
+            //1: Mortia
+			//2: Mare Mortuorum
+			n = GetDynamicMapSec_MareS1(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_MORTIA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_MORTUORUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
+		//BigIslandN 
+        if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N)) 
+		{
+			//1: Mare Mortuorum
+            //2: Mare Oriens
+            //3: Mare Subtropicum
+            //4: Isla Ignifera
+			n = GetDynamicMapSec_BigIslandN(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_MARE_MORTUORUM;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_ORIENS;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_ISLA_IGNIFERA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}

@@ -712,6 +712,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+        //BigIslandN - Mare Mortuorum
+		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N)) {
+			if (VarGet(VAR_TEMP_5) != 1) {
+				ScriptContext_SetupScript(BigIslandN_Script_Transition_MareMortuorum);
+				return TRUE;
+			}
+		}
 
     }
 	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
@@ -753,6 +760,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//BigIslandN - Mare Oriens 
+		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N)) {
+			if (VarGet(VAR_TEMP_5) != 2) {
+				ScriptContext_SetupScript(BigIslandN_Script_Transition_MareOriens);
+				return TRUE;
+			}
+		}
     }
 	else if (MetatileBehavior_IsOceanMapTransitionC(metatileBehavior))
     {
@@ -779,6 +793,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//BigIslandN - Mare Subtropicum
+		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N)) {
+			if (VarGet(VAR_TEMP_5) != 3) {
+				ScriptContext_SetupScript(BigIslandN_Script_Transition_MareSubtropicum);
+				return TRUE;
+			}
+		}
 
     }
 	else if (MetatileBehavior_IsOceanMapTransitionD(metatileBehavior))
@@ -796,6 +817,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 		if (mapGroup == MAP_GROUP(MAP_MARE_S2) && mapNum == MAP_NUM(MAP_MARE_S2)) {
 			if (VarGet(VAR_TEMP_5) != 4) {
 				ScriptContext_SetupScript(MareS2_Script_Transition_IslaHerbaBona);
+				return TRUE;
+			}
+		}
+		//BigIslandN - Isla Ignifera
+		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N)) {
+			if (VarGet(VAR_TEMP_5) != 4) {
+				ScriptContext_SetupScript(BigIslandN_Script_Transition_IslaIgnifera);
 				return TRUE;
 			}
 		}

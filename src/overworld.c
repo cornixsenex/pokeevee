@@ -4525,6 +4525,42 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareS1
+	if (mapGroup == MAP_GROUP(MAP_MARE_S1) && mapNum == MAP_NUM(MAP_MARE_S1)) 
+	{
+		//1: Mortia
+		//2: Mare Mortuorum
+		n = GetDynamicMapSec_MareS1(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_MORTIA;
+			case 2:
+				return MAPSEC_MARE_MORTUORUM; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//BigIslandN
+	if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N)) 
+	{
+        //1: Mare Mortuorum
+        //2: Mare Oriens
+        //3: Mare Subtropicum
+        //4: Isla Ignifera
+		n = GetDynamicMapSec_BigIslandN(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_MARE_MORTUORUM;
+			case 2:
+				return MAPSEC_MARE_ORIENS; 
+			case 3:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 4:
+				return MAPSEC_ISLA_IGNIFERA; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    
    //Other Maps Go Here
@@ -5194,6 +5230,50 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Mortia
 			case 5:
 				return MUS_RG_LAVENDER; 
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//MareS1
+	if (mapGroup == MAP_GROUP(MAP_MARE_S1) && mapNum == MAP_NUM(MAP_MARE_S1)) 
+	{
+		//1: Mortia 
+		//2: Mare Mortuorum
+		n = GetDynamicMapSec_MareS1(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS1 returned: %d\n", n);
+		switch (n) {
+		    //Mortia 
+			case 1:
+				return MUS_RG_LAVENDER;
+		    //Mare Mortuorum
+			case 2:
+				return MUS_RG_POKE_TOWER;
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//BigIslandN
+	if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && mapNum == MAP_NUM(MAP_BIG_ISLAND_N)) 
+	{
+        //1: Mare Mortuorum
+        //2: Mare Oriens
+        //3: Mare Subtropicum
+        //4: Isla Ignifera
+		n = GetDynamicMapSec_BigIslandN(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_BigIslandN returned: %d\n", n);
+		switch (n) {
+		    //Mare Mortuorum
+			case 1:
+				return MUS_RG_POKE_TOWER;
+		    //Mare Oriens
+			case 2:
+				return MUS_SEALED_CHAMBER;
+		    //Mare Subtropicum
+			case 3:
+				return MUS_LILYCOVE;
+		    //Isla Ignifera
+			case 4:
+				return MUS_FOTM;
 			default:
 				return MUS_CANTINA;
 		}

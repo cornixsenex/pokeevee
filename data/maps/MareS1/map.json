@@ -36,6 +36,43 @@
   ],
   "object_events": [],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS1_Script_Transition_Mortia"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS1_Script_Transition_Mortia"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS1_Script_Transition_MareMortuorum"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "MareS1_Script_Transition_MareMortuorum"
+    }
+  ],
   "bg_events": []
 }

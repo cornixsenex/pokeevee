@@ -1,9 +1,32 @@
-mapscripts MareS1_MapScripts {}
+
+//DYNAMIC MAP TEMP_VAR_5
+
+//1: Mortia 
+//2: Mare Mortuorum 
+
+mapscripts MareS1_MapScripts {
 
 
 
+    MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS1_F)
+    }
 
+}
 
+script MareS1_Script_Transition_Mortia {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS1_Script_Transition_MareMortuorum {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+// ============== //
 
 //Tombstone Scripts
 script Script_Tombstone_Default {

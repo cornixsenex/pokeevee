@@ -625,3 +625,5 @@ gSpecials::
 	def_special GetDynamicMapSec_MareS4_F
 	def_special GetDynamicMapSec_MareS3_F
 	def_special GetDynamicMapSec_MareS2_F
+	def_special GetDynamicMapSec_MareS1_F
+	def_special GetDynamicMapSec_BigIslandN_F

@@ -1,4 +1,12 @@
 
+
+//DYNAMIC MAP TEMP_VAR_5
+
+//1: Mare Mortuorum
+//2: Mare Oriens
+//3: Mare Subtropicum
+//4: Isla Ignifera
+
 const OBJ_EVENT_ARGO = 1
 const OBJ_EVENT_CASTOR = 2
 const OBJ_EVENT_POLLUX = 3
@@ -19,6 +27,10 @@ const FIELD_PIC_MEDEA = 24
 mapscripts BigIslandN_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
+
+        //Handle Dynamic Map
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_BigIslandN_F)
+        //Setup for story based object placement - BELOW
 		//2 = Boat has landed, Jason waits for journey to Colchis script
 		if (var(VAR_ARGO_STATE) == 2) {
 			call (BigIslandN_Script_ShowArgo2)
@@ -48,6 +60,32 @@ mapscripts BigIslandN_MapScripts {
 		VAR_ARGO_STATE, 18: BigIslandN_Script_EscapeColchis
 	]
 
+}
+
+//Dynamic Map transitions
+
+script BigIslandN_Script_Transition_MareMortuorum {
+    setvar (VAR_TEMP_5, 1)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script BigIslandN_Script_Transition_MareOriens {
+    setvar (VAR_TEMP_5, 2)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script BigIslandN_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 3)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script BigIslandN_Script_Transition_IslaIgnifera {
+    setvar (VAR_TEMP_5, 4)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
 }
 
 

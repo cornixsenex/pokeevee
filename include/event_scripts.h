@@ -963,6 +963,11 @@ extern const u8 MareS2_Script_Transition_MareTranquillum[];
 extern const u8 MareS2_Script_Transition_MareSubtropicum[];
 extern const u8 MareS2_Script_Transition_IslaHerbaBona[];
 extern const u8 MareS2_Script_Transition_MareMortuorum[];
+//BigIslandN
+extern const u8 BigIslandN_Script_Transition_MareOriens[];
+extern const u8 BigIslandN_Script_Transition_MareSubtropicum[];
+extern const u8 BigIslandN_Script_Transition_IslaIgnifera[];
+extern const u8 BigIslandN_Script_Transition_MareMortuorum[];
 
 
 //		END		KUSTOMS		///

@@ -6078,3 +6078,13 @@ bool32 GetDynamicMapSec_MareS2_F(void)
     return GetDynamicMapSec_MareS2(FALSE);
 }
 
+bool32 GetDynamicMapSec_MareS1_F(void)
+{
+    return GetDynamicMapSec_MareS1(FALSE);
+}
+
+bool32 GetDynamicMapSec_BigIslandN_F(void)
+{
+    return GetDynamicMapSec_BigIslandN(FALSE);
+}
+
