@@ -2273,6 +2273,22 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+		//BigIslandFillerW
+		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_FILLER_W) && mapNum == MAP_NUM(MAP_BIG_ISLAND_FILLER_W))
+        {
+			//1: Isla Ignifera
+            //2: Mare Subtropicum
+			n = GetDynamicMapSec_BigIslandFillerW(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -5459,5 +5475,39 @@ u32 GetDynamicMapSec_OceanPerimeterBigIslandS(bool32 useWarpInfo)
         return 3;
 }
 
+u32 GetDynamicMapSec_BigIslandFillerW(bool32 useWarpInfo)
+{
+
+    //1: Isla Ignifera 
+    //2: Mare Subtropicum
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("GetDynamicMapSec_BigIslandFillerW\nX: %d\nY: %d", x, y);
+
+    //1: Isla Ignifera
+    if
+        (
+        (x == 12 && y > 7 && y < 23) ||
+        (x == 13 && y > 4 && y < 25) ||
+        (x >= 14 && y < 26)
+        )
+        return 1;
+    //Default Mare Subtropicum = 2
+    else
+        return 2;
+}
+
+
+   
 	
 

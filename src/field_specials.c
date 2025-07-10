@@ -6098,3 +6098,7 @@ bool32 GetDynamicMapSec_OceanPerimeterBigIslandS_F(void)
     return GetDynamicMapSec_OceanPerimeterBigIslandS(FALSE);
 }
 
+bool32 GetDynamicMapSec_BigIslandFillerW_F(void)
+{
+    return GetDynamicMapSec_BigIslandFillerW(FALSE);
+}

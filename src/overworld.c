@@ -1061,6 +1061,10 @@ if (I_VS_SEEKER_CHARGING != 0)
                 //R
 				if (y > 58 && x > 82 && x < 87)
 					ShowMapNamePopup();
+
+                //Handle from BigIslandFillerW
+                if (x < 1 && y == 26)
+                    ShowMapNamePopup();
 			}
             //OceanPerimeterBigIslandS
 			if (destMapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && destMapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S))
@@ -1076,6 +1080,13 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if (y < 1 && x > 98 && x < 103)
 					ShowMapNamePopup();
 			}
+            //BigIslandFillerW
+			if (destMapNum == MAP_NUM(MAP_BIG_ISLAND_FILLER_W) && destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_FILLER_W))
+            {
+                //Handle from BigIslandS
+                if (x > 14 && y == 26)
+					ShowMapNamePopup();
+            }
 
 			
 			//Other Maps 
@@ -4641,7 +4652,21 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-   
+	//BigIslandFillerW
+	if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_FILLER_W) && mapNum == MAP_NUM(MAP_BIG_ISLAND_FILLER_W)) 
+	{
+        //1: Isla Ignifera
+        //2: Mare Subtropicum
+		n = GetDynamicMapSec_BigIslandFillerW(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_ISLA_IGNIFERA;
+			case 2:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    //Other Maps Go Here
     
@@ -5402,6 +5427,24 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Mare Oriens
 			case 3:
 				return MUS_SEALED_CHAMBER;
+			default:
+				return MUS_CANTINA;
+		}
+    }
+	//BigIslandFillerW
+	if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_FILLER_W) && mapNum == MAP_NUM(MAP_BIG_ISLAND_FILLER_W)) 
+	{
+        //1: Isla Ignifera
+        //2: Mare Subtropicum 
+		n = GetDynamicMapSec_BigIslandFillerW(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_BigIslandFillerW returned: %d\n", n);
+		switch (n) {
+		    //Isla Ignifera
+			case 1:
+				return MUS_FOTM;
+		    //Mare Subtropicum
+			case 2:
+				return MUS_LILYCOVE;
 			default:
 				return MUS_CANTINA;
 		}

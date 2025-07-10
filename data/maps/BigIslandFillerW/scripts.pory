@@ -1,1 +1,25 @@
-mapscripts BigIslandFillerW_MapScripts {}
+
+//VAR_TEMP_5 DYNAMIC MAP
+
+    //1: Isla Ignifera
+    //2: Mare Subtropicum
+
+mapscripts BigIslandFillerW_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS2_F)
+    }
+
+}
+
+script BigIslandFillerW_Script_Transition_IslaIgnifera {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script BigIslandFillerW_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}

@@ -1517,6 +1517,23 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
         }
+		//BigIslandFillerW 
+        if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_FILLER_W) && mapNum == MAP_NUM(MAP_BIG_ISLAND_FILLER_W)) 
+		{
+			//1: Isla Ignifera
+            //2: Mare Subtropicum 
+			n = GetDynamicMapSec_BigIslandFillerW(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_ISLA_IGNIFERA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
 
 
         //Other Maps Go Here
