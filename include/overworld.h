@@ -177,7 +177,7 @@ bool16 SetTimeOfDay(u16 hours);
 
 //CornixSenex Custom Dynamic Map support
 u32 DetermineDynamicMapsecValue (void);
-bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection);
+bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection);
 
 //Cornix Custom Dynamic Music system
 u16 GetDynamicMusic(bool32 useWarpInfo);

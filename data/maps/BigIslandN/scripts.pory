@@ -66,23 +66,41 @@ mapscripts BigIslandN_MapScripts {
 
 script BigIslandN_Script_Transition_MareMortuorum {
     setvar (VAR_TEMP_5, 1)
+    setflag (FLAG_MANUAL_WEATHER)
+    setweather (WEATHER_FOG_DIAGONAL)
+    doweather
     special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
 script BigIslandN_Script_Transition_MareOriens {
+    if (var(VAR_TEMP_5) == 1) {
+        clearflag (FLAG_MANUAL_WEATHER)
+        setweather (WEATHER_NONE)
+        doweather
+    }
     setvar (VAR_TEMP_5, 2)
     special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
 script BigIslandN_Script_Transition_MareSubtropicum {
+    if (var(VAR_TEMP_5) == 1) {
+        clearflag (FLAG_MANUAL_WEATHER)
+        setweather (WEATHER_NONE)
+        doweather
+    }
     setvar (VAR_TEMP_5, 3)
     special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
 
 script BigIslandN_Script_Transition_IslaIgnifera {
+    if (var(VAR_TEMP_5) == 1) {
+        clearflag (FLAG_MANUAL_WEATHER)
+        setweather (WEATHER_NONE)
+        doweather
+    }
     setvar (VAR_TEMP_5, 4)
     special (TransitionMapMusic)
     special (ShowMapNamePopup)

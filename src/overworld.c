@@ -885,7 +885,9 @@ if (I_VS_SEEKER_CHARGING != 0)
     MapResetTrainerRematches(mapGroup, mapNum);
 
     DoTimeBasedEvents();
-    SetSavedWeatherFromCurrMapHeader();
+    //Cornix Custom check FLAG_MANUEL_WEATHER
+    if (!FlagGet(FLAG_MANUAL_WEATHER))
+        SetSavedWeatherFromCurrMapHeader();
     ChooseAmbientCrySpecies();
     SetDefaultFlashLevel();
     Overworld_ClearSavedMusic();
@@ -1046,6 +1048,35 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if (x < 1 && y == 40)
 					ShowMapNamePopup();
 			}
+            //BigIslandS
+			if (destMapNum == MAP_NUM(MAP_BIG_ISLAND_S) && destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_S))
+			{
+                //Handle from PerimeterBigIslandS - 3 sections 
+                //L
+				if (y > 58 && x > 37 && x < 44)
+					ShowMapNamePopup();
+                //C
+				if (y > 58 && x > 61 && x < 64)
+					ShowMapNamePopup();
+                //R
+				if (y > 58 && x > 82 && x < 87)
+					ShowMapNamePopup();
+			}
+            //OceanPerimeterBigIslandS
+			if (destMapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && destMapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S))
+			{
+                //Handle from BigIslandS - 3 sections 
+                //L
+				if (y < 1 && x > 53 && x < 60)
+					ShowMapNamePopup();
+                //C
+				if (y < 1 && x > 77 && x < 80)
+					ShowMapNamePopup();
+                //R
+				if (y < 1 && x > 98 && x < 103)
+					ShowMapNamePopup();
+			}
+
 			
 			//Other Maps 
 			//
@@ -1086,6 +1117,8 @@ if (I_VS_SEEKER_CHARGING != 0)
                 (! (destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && destMapNum == MAP_NUM(MAP_BIG_ISLAND_N)) ) &&
 				//BigIslandS -  suppress general
                 (! (destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_S) && destMapNum == MAP_NUM(MAP_BIG_ISLAND_S)) ) &&
+				//OceanPerimeterBigIslandS -  suppress general
+                (! (destMapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && destMapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) ) &&
 				//peninsula W (typo I know)
                 (! (destMapGroup == MAP_GROUP(MAP_PENINSULA_W) && destMapNum == MAP_NUM(MAP_PENINSULA_W) && y > 5 && x > 47) )
 
@@ -2476,7 +2509,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
 				//A dynamic map is involver - Check for whether or not to display popup
 				if (gMapHeader.regionMapSectionId == MAPSEC_DYNAMIC || sLastMapSectionId == MAPSEC_DYNAMIC)
 				{
-					if (DoMapPopupOnDynamicWarp(gMapHeader.regionMapSectionId, sLastMapSectionId))
+					if (CheckDoMapPopupOnDynamicWarp(gMapHeader.regionMapSectionId, sLastMapSectionId))
 						ShowMapNamePopup();
 				}
 				//Neither dest nor prev are DYNAMIC
@@ -4590,6 +4623,24 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//OceanPerimeterBigIslandS
+	if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) 
+	{
+        //1: Isla Ignifera
+        //2: Mare Subtropicum
+        //3: Mare Oriens
+		n = GetDynamicMapSec_OceanPerimeterBigIslandS(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_ISLA_IGNIFERA;
+			case 2:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 3:
+				return MAPSEC_MARE_ORIENS; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    
    //Other Maps Go Here
@@ -5333,6 +5384,28 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
 	}
+	//OceanPerimeterBigIslandS
+	if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) 
+	{
+        //1: Isla Ignifera
+        //2: Mare Subtropicum 
+        //3: Mare Oriens
+		n = GetDynamicMapSec_OceanPerimeterBigIslandS(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_OceanPerimeterBigIslandS returned: %d\n", n);
+		switch (n) {
+		    //Isla Ignifera
+			case 1:
+				return MUS_FOTM;
+		    //Mare Subtropicum
+			case 2:
+				return MUS_LILYCOVE;
+		    //Mare Oriens
+			case 3:
+				return MUS_SEALED_CHAMBER;
+			default:
+				return MUS_CANTINA;
+		}
+    }
 
 	//Default SHOULD NEVER BE REACHED
 	else 
@@ -5342,9 +5415,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
     }
 }
 
-bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
+bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 {
 	//List is INCLUSIVE as in default is don't show the popup ONLY show in these specific cases
+    DebugPrintf("CheckDoMapPopupOnDynamicWarp()");
 
 
 	//Dest Map is Dynamic - Handle exit to Dynamic
@@ -5354,6 +5428,7 @@ bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 			lastMapSection == MAPSEC_HARENAE_AUREAE  ||    // Exit Harenae Aureae to dynamic peccatum
             lastMapSection == MAPSEC_PUTEUS_OBSCURUS ||    // Exit Dark Cave onto Via Saxosa = dynamic Route9
             lastMapSection == MAPSEC_POWER_PLANT     ||    // Exit Power Plant to dynamic Vegas
+            lastMapSection == MAPSEC_AEDES_SUB_MONTE      ||    // Exit Aedes Sub Monte to Ignis Mons
 			lastMapSection == MAPSEC_VIA_MAGNA             // Exit Terminal (only place with header == VM & warp) 
 		   )
 			return TRUE;
@@ -5366,6 +5441,7 @@ bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 		if (destMapSection == MAPSEC_PALATIUM_FELIX  || //Enter Palatium Felix from dynamic Peccatuma
             destMapSection == MAPSEC_PUTEUS_OBSCURUS || // Enter Dark Cave from dynamic Via Saxosa
             destMapSection == MAPSEC_POWER_PLANT     || //Enter Power plant from dynamic vegas
+            destMapSection == MAPSEC_AEDES_SUB_MONTE      || //Enter Aedes Sub Monte from Ignis Mons 
 			destMapSection == MAPSEC_HARENAE_AUREAE    //Enter Harenae Aurea from dynamic Peccatum
 		   )
 			return TRUE;
@@ -5374,7 +5450,7 @@ bool32 DoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	}
 	//fallback - should never be reached
 	else {
-		DebugPrintf("BIG ERROR dest and last not DYNAMIC in DoMapPopupOnDynamicWarp");
+		DebugPrintf("BIG ERROR dest and last not DYNAMIC in CheckDoMapPopupOnDynamicWarp");
 		return FALSE;
 	}
 }

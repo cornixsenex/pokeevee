@@ -2254,6 +2254,25 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+		//OceanPerimeterBigIslandS
+		if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S))
+        {
+			//1: Isla Ignifera
+            //2: Mare Subtropicum
+            //3: Mare Oriens 
+			n = GetDynamicMapSec_OceanPerimeterBigIslandS(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_ORIENS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -5401,6 +5420,43 @@ u32 GetDynamicMapSec_BigIslandS(bool32 useWarpInfo)
     //Default isla ignifera
     else
         return 2;
+}
+
+u32 GetDynamicMapSec_OceanPerimeterBigIslandS(bool32 useWarpInfo)
+{
+
+    //1: Isla Ignifera 
+    //2: Mare Subtropicum
+    //3: Mare Oriens 
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("GetDynamicMapSec_OceanPerimeterBigIslandS\nX: %d\nY: %d", x, y);
+
+    //1: Isla Ignifera
+    if 
+        (
+        (y < 1 && x > 59 && x < 78) ||
+        (y < 1 && x > 79 && x < 99) ||
+        (y == 1 && x > 59 && x < 77) ||
+        (y == 1 && x > 80 && x < 98) ||
+        (y == 2 && x > 80 && x < 98)
+        )
+        return 1;
+    //2: Mare Subtropicum
+    else if (x < 91)
+        return 2;
+    else
+        return 3;
 }
 
 	

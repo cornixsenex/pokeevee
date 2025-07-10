@@ -719,6 +719,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+        //OceanPerimeterBigIslandS - Isla Ignifera
+		if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) {
+			if (VarGet(VAR_TEMP_5) != 1) {
+				ScriptContext_SetupScript(OceanPerimeterBigIslandS_Script_Transition_IslaIgnifera);
+				return TRUE;
+			}
+		}
 
     }
 	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
@@ -774,6 +781,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//OceanPerimeterBigIslandS - Mare Subtropicum 
+		if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) {
+			if (VarGet(VAR_TEMP_5) != 2) {
+				ScriptContext_SetupScript(OceanPerimeterBigIslandS_Script_Transition_MareSubtropicum);
+				return TRUE;
+			}
+		}
     }
 	else if (MetatileBehavior_IsOceanMapTransitionC(metatileBehavior))
     {
@@ -811,6 +825,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_S) && mapNum == MAP_NUM(MAP_BIG_ISLAND_S)) {
 			if (VarGet(VAR_TEMP_5) != 3) {
 				ScriptContext_SetupScript(BigIslandS_Script_Transition_MareSubtropicum);
+				return TRUE;
+			}
+		}
+		//OceanPerimeterBigIslandS - Mare Oriens
+		if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) {
+			if (VarGet(VAR_TEMP_5) != 3) {
+				ScriptContext_SetupScript(OceanPerimeterBigIslandS_Script_Transition_MareOriens);
 				return TRUE;
 			}
 		}

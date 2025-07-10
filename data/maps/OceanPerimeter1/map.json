@@ -2,7 +2,7 @@
   "id": "MAP_OCEAN_PERIMETER1",
   "name": "OceanPerimeter1",
   "layout": "LAYOUT_OCEAN_PERIMETER1",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_LILYCOVE",
   "region_map_section": "MAPSEC_MARE_SUBTROPICUM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

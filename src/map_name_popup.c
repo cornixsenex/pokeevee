@@ -1496,6 +1496,27 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
         }
+		//OceanPerimeterBigIslandS 
+        if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) 
+		{
+			//1: Isla Ignifera
+            //2: Mare Subtropicum 
+            //3: Mare Oriens 
+			n = GetDynamicMapSec_OceanPerimeterBigIslandS(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_ISLA_IGNIFERA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_ORIENS;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
 
 
         //Other Maps Go Here

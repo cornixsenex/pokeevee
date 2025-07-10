@@ -1,1 +1,33 @@
-mapscripts OceanPerimeterBigIsalndS_MapScripts {}
+
+
+//DYNAMIC MAP TEMP_VAR_5
+    // 1: Isla Ignifera
+    // 2: Mare Subtropicum
+    // 3: Mare Oriens
+
+mapscripts OceanPerimeterBigIsalndS_MapScripts {
+    
+    MAP_SCRIPT_ON_TRANSITION {
+        //Handle Dynamic map
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_OceanPerimeterBigIslandS_F)
+    }
+
+}
+
+script OceanPerimeterBigIslandS_Script_Transition_MareOriens {
+    setvar (VAR_TEMP_5, 3)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script OceanPerimeterBigIslandS_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 2)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script OceanPerimeterBigIslandS_Script_Transition_IslaIgnifera {
+    setvar (VAR_TEMP_5, 1)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}

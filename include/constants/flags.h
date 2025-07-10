@@ -198,11 +198,10 @@
 #define FLAG_SYS_FORCE_OBEY                  0xA8
 #define FLAG_SILVAN_FERRY_ISWEST             0xA9
 #define FLAG_CASTALIA_GARDEN_COMPLETE        0xAA
-
+#define FLAG_MANUAL_WEATHER                  0xAB //Set to prevent Update Weather - REMEMBER TO UNSET - handle Fly and etc
 
 // BREAK //
 
-#define FLAG_UNUSED_0xAB                     0xAB
 #define FLAG_RECEIVED_SECRET_POWER           0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
