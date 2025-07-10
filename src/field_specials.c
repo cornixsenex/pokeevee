@@ -6088,3 +6088,9 @@ bool32 GetDynamicMapSec_BigIslandN_F(void)
     return GetDynamicMapSec_BigIslandN(FALSE);
 }
 
+bool32 GetDynamicMapSec_BigIslandS_F(void)
+{
+    return GetDynamicMapSec_BigIslandS(FALSE);
+}
+
+

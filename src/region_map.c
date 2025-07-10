@@ -279,7 +279,7 @@ static const union AnimCmd *const sRegionMapPlayerIconAnimTable[] =
 static const u8 sMapSecIdsOffMap[] =
 {
     MAPSEC_BIRTH_ISLAND,
-    MAPSEC_FARAWAY_ISLAND,
+    //MAPSEC_FARAWAY_ISLAND,
 //    MAPSEC_NAVEL_ROCK
 };
 
@@ -2228,6 +2228,28 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
 				case 4:
 					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
+		//BigIslandS
+		if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_S) && mapNum == MAP_NUM(MAP_BIG_ISLAND_S))
+        {
+			//1: Ignis Mons
+            //2: Isla Ignifera
+            //3: Mare Subtropicum
+            //4: Mare Oriens
+			n = GetDynamicMapSec_BigIslandS(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_IGNIS_MONS);
+				case 2:
+					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 4:
+					return StringCopy(dest, sMapName_MARE_ORIENS);
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -4618,7 +4640,7 @@ u32 GetDynamicMapSec_MareS4(bool32 useWarpInfo)
 
 	//1: Mare Tropicum
 	//2: Mare Tranquillum
-	//3: Mare Subtroicum
+	//3: Mare Subtropicum
     //4: Isla Herba Bona
     //5: Isla Hesperia
     //6: Scylla Charybdis
@@ -5147,7 +5169,7 @@ u32 GetDynamicMapSec_BigIslandN(bool32 useWarpInfo)
         (y == 2 && x > 17) ||
         (y == 3 && x > 18) ||
         (y == 4 && x > 22) ||
-        (y == 5 && x > 42) ||
+        (y == 5 && x > 42 && x < 163) || //Special Case
         (y == 6 && x > 47 && x < 162) || //Special Case
         (y == 7 && x > 68 && x < 79) || //Special Case
         (y == 7 && x > 94 && x < 160) || //Special Case
@@ -5195,7 +5217,7 @@ u32 GetDynamicMapSec_BigIslandN(bool32 useWarpInfo)
         (x == 163 && y > 5)
         )
         return 2;
-    //3: Mare Subtroicum
+    //3: Mare Subtropicum
     //Top
     else if 
         (
@@ -5236,6 +5258,149 @@ u32 GetDynamicMapSec_BigIslandN(bool32 useWarpInfo)
     //4: Isla Ignifera is Default
     else
         return 4;
+}
+
+u32 GetDynamicMapSec_BigIslandS(bool32 useWarpInfo)
+{
+
+    //1: Ignis Mons
+    //2: Isla Ignifera
+    //3: Mare Subtropicum
+    //4: Mare Oriens
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("GetDynamicMapSec_BigIslandS\nX: %d\nY: %d", x, y);
+
+    //1: Ignis Mons
+    if
+        (
+        (x == 32 && y > 6 && y < 35) ||
+        (x == 33 && y > 5 && y < 37) ||
+        (x == 34 && y > 4 && y < 41) ||
+        (x == 35 && y > 4 && y < 41) ||
+        (x == 36 && y > 4 && y < 43) ||
+        (x == 37 && y > 4 && y < 43) ||
+        (x == 38 && y > 4 && y < 45) ||
+        (x == 39 && y > 4 && y < 46) ||
+        (x == 40 && y < 48) ||
+        (x == 41 && y < 48) ||
+        (x == 42 && y < 49) ||
+        (x == 43 && y < 50) ||
+        (x == 44 && y < 51) ||
+        (x == 45 && y < 51) ||
+        (x == 46 && y < 52) ||
+        (x == 47 && y < 52) ||
+        (x == 48 && y < 50) ||
+        (x == 49 && y < 50) ||
+        (x == 50 && y < 50) ||
+        (x == 51 && y < 50) ||
+        (x == 52 && y < 50) ||
+        (x == 53 && y < 48) ||
+        (x == 54 && y < 48) ||
+        (x == 55 && y < 46) ||
+        (x == 56 && y < 46) ||
+        (x == 57 && y < 44) ||
+        (x == 58 && y < 44) ||
+        (x == 59 && y < 40) ||
+        (x == 60 && y < 40) 
+        )
+        return 1;
+    //3: Mare Subtropicum
+    else if 
+        (
+        (x < 1 && y > 26) ||
+        (x == 1 && y > 26) ||
+        (x == 2 && y > 27) ||
+        (x == 3 && y > 27) ||
+        (x == 4 && y > 28) ||
+        (x == 5 && y > 28) ||
+        (x == 6 && y > 30) ||
+        (x == 7 && y > 30) ||
+        (x == 8 && y > 31) ||
+        (x == 9 && y > 31) ||
+        (x == 10 && y > 32) ||
+        (x == 11 && y > 34) ||
+        (x == 12 && y > 34) ||
+        (x == 13 && y > 34) ||
+        (x == 14 && y > 35) ||
+        (x == 15 && y > 36) ||
+        (x == 16 && y > 37) ||
+        (x == 17 && y > 38) ||
+        (x == 18 && y > 39) ||
+        (x == 19 && y > 39) ||
+        (x == 20 && y > 42) ||
+        (x == 21 && y > 42) ||
+        (x == 22 && y > 43) ||
+        (x == 23 && y > 44) ||
+        (x == 24 && y > 44) ||
+        (x == 25 && y > 45) ||
+        (x == 26 && y > 46) ||
+        (x == 27 && y > 47) ||
+        (x == 28 && y > 48) ||
+        (x == 29 && y > 49) ||
+        (x == 30 && y > 50) ||
+        (x == 31 && y > 52) ||
+        (x == 32 && y > 53) ||
+        (x == 33 && y > 54) ||
+        (x == 34 && y > 56) ||
+        (x == 35 && y > 57) ||
+        (x == 36 && y > 58) ||
+        (x == 37 && y > 58) 
+        )
+        return 3;
+    //4: Mare Oriens
+    else if 
+        (
+        (x == 87 && y > 58) || 
+        (x == 88 && y > 58) || 
+        (x == 89 && y > 57) || //special case
+        (x == 89 && y == 36) || //special case
+        (x == 90 && y > 56) || //special case
+        (x == 90 && y > 33 && y < 39) || //special case
+        (x == 91 && y > 55) || //special case
+        (x == 91 && y > 31 && y < 41) || //special case
+        (x == 92 && y > 30) || 
+        (x == 93 && y > 28) || 
+        (x == 94 && y > 27) || 
+        (x == 95 && y > 26) || 
+        (x == 96 && y > 25) || 
+        (x == 97 && y > 24) || 
+        (x == 98 && y > 24) || 
+        (x == 99 && y > 23) || 
+        (x == 100 && y > 22) || 
+        (x == 101 && y > 21) || 
+        (x == 102 && y > 20) || 
+        (x == 103 && y > 19) || 
+        (x == 104 && y > 18) || 
+        (x == 105 && y > 17) || 
+        (x == 106 && y > 15) || 
+        (x == 107 && y > 15) || 
+        (x == 108 && y > 13) || 
+        (x == 109 && y > 12) || 
+        (x == 110 && y > 11) || 
+        (x == 111 && y > 10) || 
+        (x == 112 && y > 9) || 
+        (x == 113 && y > 8) || 
+        (x == 114 && y > 7) || 
+        (x == 115 && y > 4) || 
+        (x == 116 && y > 2) || 
+        (x == 117 && y > 0) || 
+        (x > 117)
+        )
+        return 4;
+    //Default isla ignifera
+    else
+        return 2;
 }
 
 	

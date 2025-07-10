@@ -1082,6 +1082,10 @@ if (I_VS_SEEKER_CHARGING != 0)
                 (! (destMapGroup == MAP_GROUP(MAP_MARE_S3) && destMapNum == MAP_NUM(MAP_MARE_S3) && y < 1 && x > 20) ) && 
 				//mareW
                 (! (destMapGroup == MAP_GROUP(MAP_MARE_W) && destMapNum == MAP_NUM(MAP_MARE_W) && x > 150) ) &&
+				//BigIslandN -  suppress general
+                (! (destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_N) && destMapNum == MAP_NUM(MAP_BIG_ISLAND_N)) ) &&
+				//BigIslandS -  suppress general
+                (! (destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_S) && destMapNum == MAP_NUM(MAP_BIG_ISLAND_S)) ) &&
 				//peninsula W (typo I know)
                 (! (destMapGroup == MAP_GROUP(MAP_PENINSULA_W) && destMapNum == MAP_NUM(MAP_PENINSULA_W) && y > 5 && x > 47) )
 
@@ -1107,6 +1111,10 @@ if (I_VS_SEEKER_CHARGING != 0)
 				(! (destMapGroup == MAP_GROUP(MAP_BULBUS_SILVAN_FILLER) && destMapNum == MAP_NUM(MAP_BULBUS_SILVAN_FILLER) && x > 22 ) ) &&
                 //Dest: GatoCityPark - Suppress from GatoCityParkN
 				(! (destMapGroup == MAP_GROUP(MAP_GATO_CITY_PARK) && destMapNum == MAP_NUM(MAP_GATO_CITY_PARK) && y < 3 ) )	 &&
+                //Dest: OceanPerimeter4
+				(! (destMapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER4) && destMapNum == MAP_NUM(MAP_OCEAN_PERIMETER4)) )	 &&
+                //Dest: BigIslandFillerE 
+				(! (destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_FILLER_E) && destMapNum == MAP_NUM(MAP_BIG_ISLAND_FILLER_E)) )	 &&
 				//Dest: MareC - Suppress central Mare Tranquillum
                 (! (destMapGroup == MAP_GROUP(MAP_MARE_C) && destMapNum == MAP_NUM(MAP_MARE_C) ) )
 
@@ -4561,6 +4569,27 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//BigIslandS
+	if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_S) && mapNum == MAP_NUM(MAP_BIG_ISLAND_S)) 
+	{
+        //1: Ignis Mons 
+        //2: Isla Ignifera
+        //3: Mare Subtropicum
+        //4: Mare Oriens
+		n = GetDynamicMapSec_BigIslandS(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_IGNIS_MONS;
+			case 2:
+				return MAPSEC_ISLA_IGNIFERA; 
+			case 3:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 4:
+				return MAPSEC_MARE_ORIENS; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    
    //Other Maps Go Here
@@ -5274,6 +5303,32 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Isla Ignifera
 			case 4:
 				return MUS_FOTM;
+			default:
+				return MUS_CANTINA;
+		}
+	}
+	//BigIslandS
+	if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_S) && mapNum == MAP_NUM(MAP_BIG_ISLAND_S)) 
+	{
+        //1: Ignis Mons
+        //2: Isla Ignifera 
+        //3: Mare Subtropicum
+        //4: Mare Oriens
+		n = GetDynamicMapSec_BigIslandS(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_BigIslandS returned: %d\n", n);
+		switch (n) {
+		    //Ignis Mons
+			case 1:
+				return MUS_FOTM;
+		    //Isla Ignifera
+			case 2:
+				return MUS_FOTM;
+		    //Mare Subtropicum
+			case 3:
+				return MUS_LILYCOVE;
+		    //Mare Oriens
+			case 4:
+				return MUS_SEALED_CHAMBER;
 			default:
 				return MUS_CANTINA;
 		}

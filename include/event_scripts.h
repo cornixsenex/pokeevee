@@ -968,6 +968,11 @@ extern const u8 BigIslandN_Script_Transition_MareOriens[];
 extern const u8 BigIslandN_Script_Transition_MareSubtropicum[];
 extern const u8 BigIslandN_Script_Transition_IslaIgnifera[];
 extern const u8 BigIslandN_Script_Transition_MareMortuorum[];
+//BigIslandS
+extern const u8 BigIslandS_Script_Transition_MareOriens[];
+extern const u8 BigIslandS_Script_Transition_MareSubtropicum[];
+extern const u8 BigIslandS_Script_Transition_IslaIgnifera[];
+extern const u8 BigIslandS_Script_Transition_IgnisMons[];
 
 
 //		END		KUSTOMS		///

@@ -2,8 +2,8 @@
   "id": "MAP_BIG_ISLAND_S",
   "name": "BigIslandS",
   "layout": "LAYOUT_BIG_ISLAND_S",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "music": "MUS_DYNAMIC",
+  "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -174,6 +174,42 @@
       "var": "VAR_TEMP_2",
       "var_value": "0",
       "script": "BigIslandS_Script_MonkeyTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "BigIslandS_Script_Transition_IgnisMons"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "BigIslandS_Script_Transition_IgnisMons"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "BigIslandS_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "1",
+      "script": "BigIslandS_Script_Transition_IslaIgnifera"
     }
   ],
   "bg_events": []

@@ -127,7 +127,7 @@ Via Saxosa                                                        # MUS_ROUTE119
 Via Posterior                                                     # MUS_VICTORY_ROAD  ?
 Venator Mons                                                      # MUS_ROUTE110
 Villae Rusticae                                                   # MUS_RG_ROUTE1
-Ignis Mons                                                        # 
+Ignis Mons                                                        # MUS_FOTM?
 Isla Arida                                                        # 
 Drake / Kashmir                                                   # KASHMIR
 Lake Drake                                                        # MUS_RG_SEVII_ROUTE
@@ -159,7 +159,7 @@ Desert Temple                                                     #
 Pyramids                                                          # MUS_B_PYRAMID
 Dark Cave / Labyrinth                                             # 
 Silva Ignifera                                                    # 
-Ignis Mons Temple                                                 # 
+Aedes Sub Monte                                                   # MUS_MT_PYRE
 Colchis                                                           # 
 Lupercal                                                          # 
 Triforce Temple                                                   # 

@@ -1,5 +1,13 @@
 
 
+//DYNAMIC MAP TEMP_VAR_5
+
+//1: Ignis Mons
+//2: Isla Ignifera
+//3: Mare Subtropicum
+//4: Mare Oriens
+
+
 const OBJ_EVENT_IGNIS_A = 4
 const OBJ_EVENT_IGNIS_B = 5
 const OBJ_EVENT_HOOH  = 3
@@ -10,11 +18,54 @@ const OBJ_EVENT_CHIMCHAR = 8
 
 
 mapscripts BigIslandS_MapScripts {
+    
+    MAP_SCRIPT_ON_TRANSITION {
+        //Handle Dynamic map
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_BigIslandS_F)
+        //Handle Volcanic Ash on exit from 
+        if (var(VAR_TEMP_5) == 1) {
+            setweather (WEATHER_VOLCANIC_ASH)
+            doweather
+        }
+            
+    }
 
 	MAP_SCRIPT_ON_RESUME {
 		call (BigIslandS_OnResume)
 	}
 
+}
+
+//Dynamic Map Transitions
+
+script BigIslandS_Script_Transition_MareOriens {
+    setvar (VAR_TEMP_5, 4)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script BigIslandS_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 3)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script BigIslandS_Script_Transition_IslaIgnifera {
+    if (var(VAR_TEMP_5) == 1) {
+        setweather (WEATHER_NONE)
+        doweather
+    }
+    setvar (VAR_TEMP_5, 2)
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script BigIslandS_Script_Transition_IgnisMons {
+    setvar (VAR_TEMP_5, 1)
+    setweather (WEATHER_VOLCANIC_ASH)
+    doweather
+    special (TransitionMapMusic)
+    special (ShowMapNamePopup)
 }
 
 

@@ -269,7 +269,7 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
 	[MAPSEC_PALMAE] =                       MAPPOPUP_THEME_STONE, 
 	[MAPSEC_SCHOLA] =                       MAPPOPUP_THEME_WOOD, 
 	[MAPSEC_ARDENS] =                       MAPPOPUP_THEME_MARBLE, 
-	[MAPSEC_IGNIS_MONS] =                   MAPPOPUP_THEME_STONE2, 
+	[MAPSEC_IGNIS_MONS] =                   MAPPOPUP_THEME_STONE, 
 	[MAPSEC_DESERET] =                      MAPPOPUP_THEME_STONE, 
 	[MAPSEC_URBIA] =                        MAPPOPUP_THEME_MARBLE, 
 	[MAPSEC_HARENAE_AUREAE] =               MAPPOPUP_THEME_WOOD, 
@@ -297,9 +297,9 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
     [MAPSEC_MAGMA_HIDEOUT] = MAPPOPUP_THEME_STONE,
     [MAPSEC_MIRAGE_TOWER] = MAPPOPUP_THEME_STONE,
     [MAPSEC_BIRTH_ISLAND] = MAPPOPUP_THEME_WOOD,
-    [MAPSEC_FARAWAY_ISLAND] = MAPPOPUP_THEME_WOOD,
 
 	//Cornix Customs
+    [MAPSEC_AEDES_SUB_MONTE] = MAPPOPUP_THEME_STONE2,
     [MAPSEC_MORTIA] = MAPPOPUP_THEME_STONE,
     [MAPSEC_SCYLLA_CHARYBDIS] = MAPPOPUP_THEME_UNDERWATER,
     [MAPSEC_THERMAE] = MAPPOPUP_THEME_STONE,
@@ -1471,6 +1471,33 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
         }
+		//BigIslandS 
+        if (mapGroup == MAP_GROUP(MAP_BIG_ISLAND_S) && mapNum == MAP_NUM(MAP_BIG_ISLAND_S)) 
+		{
+			//1: Ignis Mons
+            //2: Isla Ignifera
+            //3: Mare Subtropicum
+            //4: Mare Oriens
+			n = GetDynamicMapSec_BigIslandS(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_IGNIS_MONS;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_ISLA_IGNIFERA;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_MARE_ORIENS;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
+
+
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);
 	}
