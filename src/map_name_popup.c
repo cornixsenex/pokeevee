@@ -296,9 +296,9 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
     [MAPSEC_AQUA_HIDEOUT] = MAPPOPUP_THEME_STONE,
     [MAPSEC_MAGMA_HIDEOUT] = MAPPOPUP_THEME_STONE,
     [MAPSEC_MIRAGE_TOWER] = MAPPOPUP_THEME_STONE,
-    [MAPSEC_BIRTH_ISLAND] = MAPPOPUP_THEME_WOOD,
 
 	//Cornix Customs
+    [MAPSEC_TROPICANA] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_AEDES_SUB_MONTE] = MAPPOPUP_THEME_STONE2,
     [MAPSEC_MORTIA] = MAPPOPUP_THEME_STONE,
     [MAPSEC_SCYLLA_CHARYBDIS] = MAPPOPUP_THEME_UNDERWATER,
@@ -1592,6 +1592,37 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
         }
+		//MareS9
+        if (mapGroup == MAP_GROUP(MAP_MARE_S9) && mapNum == MAP_NUM(MAP_MARE_S9)) 
+		{
+			//1: Isla Tropica 
+			//2: Mare Subtropicum
+			//3: Mare Tropicum
+			//4: Isla Hesperia
+			//5: Tropicana
+			n = GetDynamicMapSec_MareS9(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_ISLA_TROPICA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_ISLA_HESPERIA;
+					break;
+				case 5:
+					regionMapSectionId = MAPSEC_TROPICANA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
+
+
 
 
         //Other Maps Go Here

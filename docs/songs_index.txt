@@ -107,6 +107,7 @@ Tranquillitas                                                     # MUS_RG_CELAD
 Isla Herba Bona                                                   # MUS_FALLARBOR
 Isla Ignifera                                                     # FOTM
 Isla Tropica                                                      # MUS_RG_FUCHSIA
+Tropicana                                                         # MUS_SLATEPORT (?)
 Isla Hesperia                                                     # MUS_SOOTOPOLIS
 Isla Ithaca                                                       # MUS_FORTREE
 Isla Pina                                                         # MUS_PETALBURG

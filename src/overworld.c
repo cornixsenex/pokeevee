@@ -1030,6 +1030,13 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//From MareS3
 				if (x >= 85 && y == 59)
 					ShowMapNamePopup();
+                //Handle from MareS8 - Two squares
+                //L
+                if (y > 84 && x == 18)
+					ShowMapNamePopup();
+                //R
+                if (y > 84 && x == 71)
+					ShowMapNamePopup();
 			}
 			//MareS3
 			if (destMapNum == MAP_NUM(MAP_MARE_S3) && destMapGroup == MAP_GROUP(MAP_MARE_S3))
@@ -1102,6 +1109,9 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//Handle from BigIslandN
 				if (x > 83 && y == 23)
 					ShowMapNamePopup();
+                //Handle from MareS8
+                if (x < 1 && y > 3 && y < 6)
+                    ShowMapNamePopup();
 			}
 			//BigIslandN
 			if (destMapNum == MAP_NUM(MAP_BIG_ISLAND_N) && destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_N))
@@ -1113,7 +1123,30 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if (y < 1 && x == 14)
 					ShowMapNamePopup();
 			}
-
+            //MareS8
+			if (destMapNum == MAP_NUM(MAP_MARE_S8) && destMapGroup == MAP_GROUP(MAP_MARE_S8))
+            {
+                //Handle from MareS7
+                if (x > 84 && y > 3 && y < 6)
+                    ShowMapNamePopup();
+                //Handle from MareS4 - 2 squares
+                //L
+                if (y < 1 && x == 18)
+                    ShowMapNamePopup();
+                //R
+                if (y < 1 && x == 71)
+                    ShowMapNamePopup();
+                //Handle from MareS9
+                if (x < 1 && y > 22 && y < 25)
+                    ShowMapNamePopup();
+            }
+            //MareS9
+			if (destMapNum == MAP_NUM(MAP_MARE_S9) && destMapGroup == MAP_GROUP(MAP_MARE_S9))
+            {
+                //Handle from MareS8
+                if (x > 84 && y > 22 && y < 25)
+                    ShowMapNamePopup();
+            }
 			
 			//Other Maps 
 			//
@@ -4720,11 +4753,11 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 	//MareS8
 	if (mapGroup == MAP_GROUP(MAP_MARE_S8) && mapNum == MAP_NUM(MAP_MARE_S8)) 
 	{
-			//1: Isla Ithaca
-			//2: Mare Subtropicum
-			//3: Mare Tropicum
-			//4: Isla Hesperia
-			//5: Isla Tropica
+        //1: Isla Ithaca
+        //2: Mare Subtropicum
+        //3: Mare Tropicum
+        //4: Isla Hesperia
+        //5: Isla Tropica
 		n = GetDynamicMapSec_MareS8(FALSE);
 		switch (n) {
 			case 1:
@@ -4737,6 +4770,30 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_ISLA_HESPERIA; 
 			case 5:
 				return MAPSEC_ISLA_TROPICA; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
+	//MareS9
+	if (mapGroup == MAP_GROUP(MAP_MARE_S9) && mapNum == MAP_NUM(MAP_MARE_S9)) 
+	{
+        //1: Isla Tropica
+        //2: Mare Subtropicum
+        //3: Mare Tropicum
+        //4: Isla Hesperia
+        //5: Tropicana
+		n = GetDynamicMapSec_MareS9(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_ISLA_TROPICA;
+			case 2:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 3:
+				return MAPSEC_MARE_TROPICUM; 
+			case 4:
+				return MAPSEC_ISLA_HESPERIA; 
+			case 5:
+				return MAPSEC_TROPICANA; 
 			default:
 				return MAPSEC_DYNAMIC;
 		}
@@ -5583,6 +5640,37 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
     }
+	//MareS9
+	if (mapGroup == MAP_GROUP(MAP_MARE_S9) && mapNum == MAP_NUM(MAP_MARE_S9)) 
+	{
+        //1: Isla Tropica
+        //2: Mare Subtropicum
+        //3: Mare Tropicum
+        //4: Isla Hesperia
+        //5: Tropicana
+		n = GetDynamicMapSec_MareS9(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS9 returned: %d\n", n);
+		switch (n) {
+		    //Isla Tropica
+			case 1:
+				return MUS_RG_FUCHSIA;
+		    //Mare Subtropicum
+			case 2:
+				return MUS_LILYCOVE;
+		    //Mare Tropicum
+			case 3:
+				return MUS_SURF;
+		    //Isla Hesperia
+			case 4:
+				return MUS_SOOTOPOLIS;
+		    //Tropicana
+			case 5:
+				return MUS_SLATEPORT;
+			default:
+				return MUS_CANTINA;
+		}
+    }
+
 
 	//Default SHOULD NEVER BE REACHED
 	else 

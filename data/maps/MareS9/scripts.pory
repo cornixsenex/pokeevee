@@ -1,5 +1,49 @@
-mapscripts MareS9_MapScripts {}
 
+//VAR_TEMP_5 Dynamic Map
+
+    //1: Isla Tropica  
+    //2: Mare Subtropicum
+    //3: Mare Tropicum
+    //4: Isla Hesperia
+    //5: Topicana
+
+mapscripts MareS9_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS9_F)
+    }
+
+}
+
+script MareS9_Script_Transition_MareTropicum {
+    setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS9_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS9_Script_Transition_IslaHesperia {
+    setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS9_Script_Transition_Tropicana {
+    setvar (VAR_TEMP_5, 5)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS9_Script_Transition_IslaTropica {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
 
 
 

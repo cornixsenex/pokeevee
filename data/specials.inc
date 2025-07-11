@@ -631,3 +631,5 @@ gSpecials::
 	def_special GetDynamicMapSec_OceanPerimeterBigIslandS_F
 	def_special GetDynamicMapSec_BigIslandFillerW_F
 	def_special GetDynamicMapSec_MareS7_F
+	def_special GetDynamicMapSec_MareS8_F
+	def_special GetDynamicMapSec_MareS9_F
