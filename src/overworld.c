@@ -4717,6 +4717,30 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareS8
+	if (mapGroup == MAP_GROUP(MAP_MARE_S8) && mapNum == MAP_NUM(MAP_MARE_S8)) 
+	{
+			//1: Isla Ithaca
+			//2: Mare Subtropicum
+			//3: Mare Tropicum
+			//4: Isla Hesperia
+			//5: Isla Tropica
+		n = GetDynamicMapSec_MareS8(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_ISLA_ITHACA;
+			case 2:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 3:
+				return MAPSEC_MARE_TROPICUM; 
+			case 4:
+				return MAPSEC_ISLA_HESPERIA; 
+			case 5:
+				return MAPSEC_ISLA_TROPICA; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    //Other Maps Go Here
     
@@ -5525,6 +5549,36 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Isla Ignifera
 			case 5:
 				return MUS_FOTM;
+			default:
+				return MUS_CANTINA;
+		}
+    }
+	//MareS8
+	if (mapGroup == MAP_GROUP(MAP_MARE_S8) && mapNum == MAP_NUM(MAP_MARE_S8)) 
+	{
+        //1: Isla Ithaca
+        //2: Mare Subtropicum
+        //3: Mare Tropicum
+        //4: Isla Hesperia
+        //5: Isla Tropica
+		n = GetDynamicMapSec_MareS8(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS8 returned: %d\n", n);
+		switch (n) {
+		    //Isla Ithaca
+			case 1:
+				return MUS_FORTREE;
+		    //Mare Subtropicum
+			case 2:
+				return MUS_LILYCOVE;
+		    //Mare Tropicum
+			case 3:
+				return MUS_SURF;
+		    //Isla Hesperia
+			case 4:
+				return MUS_SOOTOPOLIS;
+		    //Isla Tropica
+			case 5:
+				return MUS_RG_FUCHSIA;
 			default:
 				return MUS_CANTINA;
 		}

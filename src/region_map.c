@@ -2314,6 +2314,31 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+		//MareS8
+		if (mapGroup == MAP_GROUP(MAP_MARE_S8) && mapNum == MAP_NUM(MAP_MARE_S8))
+        {
+			//1: Isla Ithaca
+			//2: Mare Subtropicum
+			//3: Mare Tropicum
+			//4: Isla Hesperia
+			//5: Isla Tropica
+			n = GetDynamicMapSec_MareS8(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_ISLA_ITHACA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 3:
+					return StringCopy(dest, sMapName_MARE_TROPICVM);
+				case 4:
+					return StringCopy(dest, sMapName_ISLA_HESPERIA);
+				case 5:
+					return StringCopy(dest, sMapName_ISLA_TROPICA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -5665,5 +5690,147 @@ u32 GetDynamicMapSec_MareS7(bool32 useWarpInfo)
 		return 2;
 }
 
+u32 GetDynamicMapSec_MareS8(bool32 useWarpInfo)
+{
+
+    //1: Isla Ithaca
+    //2: Mare Subtropicum - Default
+    //3: Mare Tropicum
+    //4: Isla Hesperia
+    //5: Isla Tropica
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("MareS8\nX %d\nY %d", x, y);
+
+    //1: Isla Ithaca
+    if
+        (
+        (x == 54 && y > 24 && y < 39) ||
+        (x == 55 && y > 24 && y < 40) ||
+        (x == 56 && y > 21 && y < 41) ||
+        (x == 57 && y > 20 && y < 41) ||
+        (x == 58 && y > 19 && y < 41) ||
+        (x == 59 && y > 18 && y < 41) ||
+        (x == 60 && y > 17 && y < 41) ||
+        (x == 61 && y > 16 && y < 41) ||
+        (x == 62 && y > 16 && y < 41) ||
+        (x == 63 && y > 15 && y < 41) ||
+        (x == 64 && y > 14 && y < 41) ||
+        (x == 65 && y > 14 && y < 41) ||
+        (x == 66 && y > 13 && y < 41) ||
+        (x == 67 && y > 13 && y < 41) ||
+        (x == 68 && y > 13 && y < 41) ||
+        (x == 69 && y > 12 && y < 41) ||
+        (x == 70 && y > 12 && y < 41) ||
+        (x == 71 && y > 12 && y < 41) ||
+        (x == 72 && y > 11 && y < 40) ||
+        (x == 73 && y > 11 && y < 40) ||
+        (x == 74 && y > 10 && y < 39) ||
+        (x == 75 && y > 10 && y < 38) ||
+        (x == 76 && y > 9 && y < 39) ||
+        (x == 77 && y > 9 && y < 43) ||
+        (x == 78 && y > 9 && y < 43) ||
+        (x == 79 && y > 8 && y < 43) ||
+        (x == 80 && y > 8 && y < 43) ||
+        (x == 81 && y > 7 && y < 44) ||
+        (x == 82 && y > 7 && y < 45) ||
+        (x == 83 && y > 6 && y < 46) ||
+        (x == 84 && y > 6 && y < 46) ||
+        (x >= 85 && y > 5 && y < 46)
+        )
+        return 1;
+        //3: Mare Tropicum
+        else if 
+            (
+            (y  < 3 && x < 18) ||
+            (y == 3 && x < 17) ||
+            (y == 3 && x < 15) ||
+            (y == 3 && x < 15) ||
+            (y == 25 && x < 2) ||
+            (y == 26 && x < 4) ||
+            (y == 27 && x < 5) ||
+            (y == 28 && x < 7) ||
+            (y == 29 && x < 16) ||
+            (y == 30 && x < 16) ||
+            (y == 31 && x < 16) ||
+            (y == 32 && x < 16) ||
+            (y == 33 && x < 16) ||
+            (y == 34 && x < 16) ||
+            (y == 35 && x < 16) ||
+            (y == 36 && x < 16) ||
+            (y == 37 && x < 16) ||
+            (y == 38 && x < 16) ||
+            (y == 39 && x < 16) ||
+            (y == 40 && x < 18) ||
+            (y == 41 && x < 17) ||
+            (y == 42 && x < 16) ||
+            (y == 43 && x < 15 && x > 2) || //Special Case
+            (y == 44 && x < 14 && x > 4) || //Special Case
+            (y == 45 && x < 12 && x > 4) || //Special Case
+            (y == 46 && x < 11 && x > 5) || //Special Case
+            (y == 47 && x < 10 && x > 5) || //Special Case
+            (y == 48 && x < 8 && x > 5)    //Special Case
+            )                      
+            return 3;
+        //4: Isla Hesperia
+        else if
+            (
+            (y  < 1  && x > 17 && x < 71) ||
+            (y == 1  && x > 17 && x < 71) ||
+            (y == 2  && x > 17 && x < 70) ||
+            (y == 3  && x > 16 && x < 69) ||
+            (y == 4  && x > 14 && x < 69) ||
+            (y == 5  && x > 14 && x < 66) ||
+            (y == 6  && x < 65) ||
+            (y == 7  && x < 64) ||
+            (y == 8  && x < 62) ||
+            (y == 9  && x < 61) ||
+            (y == 10 && x < 61) ||
+            (y == 11 && x < 61) ||
+            (y == 12 && x < 60) ||
+            (y == 13 && x < 59) ||
+            (y == 14 && x < 59) ||
+            (y == 15 && x < 57) ||
+            (y == 16 && x < 56) ||
+            (y == 17 && x < 56) ||
+            (y == 18 && x < 55) ||
+            (y == 19 && x < 54) ||
+            (y == 20 && x < 53) ||
+            (y == 21 && x < 52) ||
+            (y == 22 && x < 52) ||
+            (y == 23 && x < 51) ||
+            (y == 24 && x < 51) ||
+            (y == 25 && x > 1 && x < 50) ||
+            (y == 26 && x > 3 && x < 50) ||
+            (y == 27 && x > 4 && x < 49) ||
+            (y == 28 && x > 6 && x < 48) ||
+            (y == 29 && x > 15 && x < 47) ||
+            (y == 30 && x > 15 && x < 46) ||
+            (y == 31 && x > 15 && x < 45) ||
+            (y == 32 && x > 15 && x < 44) ||
+            (y == 33 && x > 15 && x < 43) ||
+            (y == 34 && x > 15 && x < 42) ||
+            (y == 35 && x > 15 && x < 41) ||
+            (y == 36 && x > 15 && x < 40) ||
+            (y == 37 && x > 15 && x < 38) ||
+            (y == 38 && x > 15 && x < 36) ||
+            (y == 39 && x > 15 && x < 34)
+            )
+            return 4;
+        //2: Mare Subtropicum is Default
+        else
+            return 2;
+}
+        
 	
 
