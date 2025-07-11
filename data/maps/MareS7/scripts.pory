@@ -1,1 +1,47 @@
-mapscripts MareS7_MapScripts {}
+
+//Dynamic map VAR_TEMP_5
+
+//1: Isla Ithaca
+//2: Mare Subtropicum
+//3: Isla Herba Bona
+//4: Isla Arida
+//5: Isla Ignifera
+
+
+mapscripts MareS7_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS7_F)
+    }
+
+}
+
+script MareS7_Script_Transition_IslaIthaca {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS7_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS7_Script_Transition_IslaHerbaBona {
+    setvar (VAR_TEMP_5, 3)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS7_Script_Transition_IslaArida {
+    setvar (VAR_TEMP_5, 4)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS7_Script_Transition_IslaIgnifera {
+    setvar (VAR_TEMP_5, 5)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}

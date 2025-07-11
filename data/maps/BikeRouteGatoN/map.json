@@ -19,11 +19,6 @@
       "direction": "left"
     },
     {
-      "map": "MAP_GRAVEYARD",
-      "offset": -15,
-      "direction": "left"
-    },
-    {
       "map": "MAP_ROUTE12",
       "offset": -15,
       "direction": "right"

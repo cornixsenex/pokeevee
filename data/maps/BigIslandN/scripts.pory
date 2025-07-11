@@ -30,6 +30,12 @@ mapscripts BigIslandN_MapScripts {
 
         //Handle Dynamic Map
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_BigIslandN_F)
+		//Handle Edge Case - transition from Mare Mortuorum on camera transition (14, 0)
+		if (var(VAR_TEMP_5) == 3 && flag(FLAG_MANUAL_WEATHER)) {
+			clearflag (FLAG_MANUAL_WEATHER)
+			setweather (WEATHER_NONE)
+			doweather
+		}
         //Setup for story based object placement - BELOW
 		//2 = Boat has landed, Jason waits for journey to Colchis script
 		if (var(VAR_ARGO_STATE) == 2) {

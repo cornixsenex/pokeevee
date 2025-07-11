@@ -1040,12 +1040,18 @@ if (I_VS_SEEKER_CHARGING != 0)
 				//From MareS2
 				if (x > 84 && y == 40)
 					ShowMapNamePopup();
+				//From MareS7
+				if (y > 83 && x > 47 && x < 51)
+					ShowMapNamePopup();
 			}
 			//MareS2
 			if (destMapNum == MAP_NUM(MAP_MARE_S2) && destMapGroup == MAP_GROUP(MAP_MARE_S2))
 			{
 				//From MareS3
 				if (x < 1 && y == 40)
+					ShowMapNamePopup();
+				//From BigIslandN
+				if (y > 84 && x == 14)
 					ShowMapNamePopup();
 			}
             //BigIslandS
@@ -1087,6 +1093,26 @@ if (I_VS_SEEKER_CHARGING != 0)
                 if (x > 14 && y == 26)
 					ShowMapNamePopup();
             }
+			//MareS7
+			if (destMapNum == MAP_NUM(MAP_MARE_S7) && destMapGroup == MAP_GROUP(MAP_MARE_S7))
+            {
+				//Handle from MareS3
+				if (y < 1 && x > 47 && x < 51)
+					ShowMapNamePopup();
+				//Handle from BigIslandN
+				if (x > 83 && y == 23)
+					ShowMapNamePopup();
+			}
+			//BigIslandN
+			if (destMapNum == MAP_NUM(MAP_BIG_ISLAND_N) && destMapGroup == MAP_GROUP(MAP_BIG_ISLAND_N))
+            {
+				//Handle from Mare S7
+				if (x < 1 && y == 23)
+					ShowMapNamePopup();
+				//Handle from MareS2
+				if (y < 1 && x == 14)
+					ShowMapNamePopup();
+			}
 
 			
 			//Other Maps 
@@ -4667,6 +4693,30 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareS7
+	if (mapGroup == MAP_GROUP(MAP_MARE_S7) && mapNum == MAP_NUM(MAP_MARE_S7)) 
+	{
+		//1: Isla Ithaca
+		//2: Mare Subtropicum - Default
+		//3: Isla Herba Bona
+		//4: Isla Arida
+		//5: Isla Ignifera
+		n = GetDynamicMapSec_MareS7(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_ISLA_ITHACA;
+			case 2:
+				return MAPSEC_MARE_SUBTROPICUM; 
+			case 3:
+				return MAPSEC_ISLA_HERBA_BONA; 
+			case 4:
+				return MAPSEC_ISLA_ARIDA; 
+			case 5:
+				return MAPSEC_ISLA_IGNIFERA; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    //Other Maps Go Here
     
@@ -5445,6 +5495,36 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Mare Subtropicum
 			case 2:
 				return MUS_LILYCOVE;
+			default:
+				return MUS_CANTINA;
+		}
+    }
+	//MareS7
+	if (mapGroup == MAP_GROUP(MAP_MARE_S7) && mapNum == MAP_NUM(MAP_MARE_S7)) 
+	{
+		//1: Isla Ithaca
+		//2: Mare Subtropicum - Default
+		//3: Isla Herba Bona
+		//4: Isla Arida
+		//5: Isla Ignifera
+		n = GetDynamicMapSec_MareS7(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS7 returned: %d\n", n);
+		switch (n) {
+		    //Isla Ithaca
+			case 1:
+				return MUS_FORTREE;
+		    //Mare Subtropicum
+			case 2:
+				return MUS_LILYCOVE;
+		    //Isla Herba Bona
+			case 3:
+				return MUS_FALLARBOR;
+		    //Isla Arida
+			case 4:
+				return MUS_ROUTE113;
+		    //Isla Ignifera
+			case 5:
+				return MUS_FOTM;
 			default:
 				return MUS_CANTINA;
 		}

@@ -1534,6 +1534,35 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
         }
+		//MareS7
+        if (mapGroup == MAP_GROUP(MAP_MARE_S7) && mapNum == MAP_NUM(MAP_MARE_S7)) 
+		{
+			//1: Isla Ithaca
+			//2: Mare Subtropicum
+			//3: Isla Herba Bona
+			//4: Isla Arida
+			//5: Isla Ignifera
+			n = GetDynamicMapSec_MareS7(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_ISLA_ITHACA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_ISLA_HERBA_BONA;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_ISLA_ARIDA;
+					break;
+				case 5:
+					regionMapSectionId = MAPSEC_ISLA_IGNIFERA;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
 
 
         //Other Maps Go Here

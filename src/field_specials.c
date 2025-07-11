@@ -6102,3 +6102,8 @@ bool32 GetDynamicMapSec_BigIslandFillerW_F(void)
 {
     return GetDynamicMapSec_BigIslandFillerW(FALSE);
 }
+
+bool32 GetDynamicMapSec_MareS7_F(void)
+{
+    return GetDynamicMapSec_MareS7(FALSE);
+}

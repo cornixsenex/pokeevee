@@ -2,8 +2,8 @@
   "id": "MAP_MARE_S7",
   "name": "MareS7",
   "layout": "LAYOUT_MARE_S7",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "music": "MUS_DYNAMIC",
+  "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
@@ -56,6 +56,142 @@
   ],
   "object_events": [],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 85,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 84,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    },
+    {
+      "type": "trigger",
+      "x": 85,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "2",
+      "script": "MareS7_Script_Transition_IslaIgnifera"
+    }
+  ],
   "bg_events": []
 }

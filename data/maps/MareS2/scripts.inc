@@ -4,102 +4,119 @@ MareS2_MapScripts::
 	.byte 0
 
 MareS2_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-# 19 "data/maps/MareS2/scripts.pory"
+# 20 "data/maps/MareS2/scripts.pory"
 	specialvar VAR_TEMP_5, GetDynamicMapSec_MareS2_F
+# 22 "data/maps/MareS2/scripts.pory"
+	compare VAR_TEMP_5, 2
+	goto_if_eq MareS2_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	return
+
+MareS2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 23 "data/maps/MareS2/scripts.pory"
+	setflag FLAG_MANUAL_WEATHER
+# 24 "data/maps/MareS2/scripts.pory"
+	setweather WEATHER_FOG_DIAGONAL
+# 25 "data/maps/MareS2/scripts.pory"
+	doweather
+	return
+
+MareS2_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 22 "data/maps/MareS2/scripts.pory"
+	goto_if_unset FLAG_MANUAL_WEATHER, MareS2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
 
 MareS2_Script_Transition_MareTranquillum::
-# 25 "data/maps/MareS2/scripts.pory"
+# 33 "data/maps/MareS2/scripts.pory"
 	compare VAR_TEMP_5, 2
 	goto_if_eq MareS2_Script_Transition_MareTranquillum_2
 MareS2_Script_Transition_MareTranquillum_1:
-# 30 "data/maps/MareS2/scripts.pory"
+# 38 "data/maps/MareS2/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 31 "data/maps/MareS2/scripts.pory"
+# 39 "data/maps/MareS2/scripts.pory"
 	special TransitionMapMusic
-# 32 "data/maps/MareS2/scripts.pory"
+# 40 "data/maps/MareS2/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 MareS2_Script_Transition_MareTranquillum_2:
-# 26 "data/maps/MareS2/scripts.pory"
+# 34 "data/maps/MareS2/scripts.pory"
 	clearflag FLAG_MANUAL_WEATHER
-# 27 "data/maps/MareS2/scripts.pory"
+# 35 "data/maps/MareS2/scripts.pory"
 	setweather WEATHER_NONE
-# 28 "data/maps/MareS2/scripts.pory"
+# 36 "data/maps/MareS2/scripts.pory"
 	doweather
 	goto MareS2_Script_Transition_MareTranquillum_1
 
 
 MareS2_Script_Transition_MareMortuorum::
-# 36 "data/maps/MareS2/scripts.pory"
+# 44 "data/maps/MareS2/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 37 "data/maps/MareS2/scripts.pory"
+# 45 "data/maps/MareS2/scripts.pory"
 	setflag FLAG_MANUAL_WEATHER
-# 38 "data/maps/MareS2/scripts.pory"
+# 46 "data/maps/MareS2/scripts.pory"
 	setweather WEATHER_FOG_DIAGONAL
-# 39 "data/maps/MareS2/scripts.pory"
+# 47 "data/maps/MareS2/scripts.pory"
 	doweather
-# 40 "data/maps/MareS2/scripts.pory"
+# 48 "data/maps/MareS2/scripts.pory"
 	special TransitionMapMusic
-# 41 "data/maps/MareS2/scripts.pory"
+# 49 "data/maps/MareS2/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS2_Script_Transition_MareSubtropicum::
-# 45 "data/maps/MareS2/scripts.pory"
+# 53 "data/maps/MareS2/scripts.pory"
 	compare VAR_TEMP_5, 2
 	goto_if_eq MareS2_Script_Transition_MareSubtropicum_2
 MareS2_Script_Transition_MareSubtropicum_1:
-# 50 "data/maps/MareS2/scripts.pory"
+# 58 "data/maps/MareS2/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 51 "data/maps/MareS2/scripts.pory"
+# 59 "data/maps/MareS2/scripts.pory"
 	special TransitionMapMusic
-# 52 "data/maps/MareS2/scripts.pory"
+# 60 "data/maps/MareS2/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 MareS2_Script_Transition_MareSubtropicum_2:
-# 46 "data/maps/MareS2/scripts.pory"
+# 54 "data/maps/MareS2/scripts.pory"
 	clearflag FLAG_MANUAL_WEATHER
-# 47 "data/maps/MareS2/scripts.pory"
+# 55 "data/maps/MareS2/scripts.pory"
 	setweather WEATHER_NONE
-# 48 "data/maps/MareS2/scripts.pory"
+# 56 "data/maps/MareS2/scripts.pory"
 	doweather
 	goto MareS2_Script_Transition_MareSubtropicum_1
 
 
 MareS2_Script_Transition_IslaHerbaBona::
-# 56 "data/maps/MareS2/scripts.pory"
+# 64 "data/maps/MareS2/scripts.pory"
 	compare VAR_TEMP_5, 2
 	goto_if_eq MareS2_Script_Transition_IslaHerbaBona_2
 MareS2_Script_Transition_IslaHerbaBona_1:
-# 61 "data/maps/MareS2/scripts.pory"
+# 69 "data/maps/MareS2/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 62 "data/maps/MareS2/scripts.pory"
+# 70 "data/maps/MareS2/scripts.pory"
 	special TransitionMapMusic
-# 63 "data/maps/MareS2/scripts.pory"
+# 71 "data/maps/MareS2/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 MareS2_Script_Transition_IslaHerbaBona_2:
-# 57 "data/maps/MareS2/scripts.pory"
+# 65 "data/maps/MareS2/scripts.pory"
 	clearflag FLAG_MANUAL_WEATHER
-# 58 "data/maps/MareS2/scripts.pory"
+# 66 "data/maps/MareS2/scripts.pory"
 	setweather WEATHER_NONE
-# 59 "data/maps/MareS2/scripts.pory"
+# 67 "data/maps/MareS2/scripts.pory"
 	doweather
 	goto MareS2_Script_Transition_IslaHerbaBona_1
 
 
 MareS2_Script_Transition_Mortia::
-# 67 "data/maps/MareS2/scripts.pory"
+# 75 "data/maps/MareS2/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 68 "data/maps/MareS2/scripts.pory"
+# 76 "data/maps/MareS2/scripts.pory"
 	special TransitionMapMusic
-# 69 "data/maps/MareS2/scripts.pory"
+# 77 "data/maps/MareS2/scripts.pory"
 	special ShowMapNamePopup
 	return
 

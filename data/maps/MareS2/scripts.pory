@@ -16,7 +16,15 @@
 mapscripts MareS2_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
+		//Handle Dynamic Map
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS2_F)
+		//Handle Edge Case - transition to Mare Mortuorum on camera transition (14, 85)
+		if (var(VAR_TEMP_5) == 2 && !flag(FLAG_MANUAL_WEATHER)) {
+			setflag (FLAG_MANUAL_WEATHER)
+			setweather (WEATHER_FOG_DIAGONAL)
+			doweather
+		}
+
     }
 
 }

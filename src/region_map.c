@@ -2289,6 +2289,31 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+		//MareS7
+		if (mapGroup == MAP_GROUP(MAP_MARE_S7) && mapNum == MAP_NUM(MAP_MARE_S7))
+        {
+			//1: Isla Ithaca
+			//2: Mare Subtropicum
+			//3: Isla Herba Bona
+			//4: Isla Arida
+			//5: Isla Ignifera
+			n = GetDynamicMapSec_MareS7(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_ISLA_ITHACA);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 3:
+					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+				case 4:
+					return StringCopy(dest, sMapName_ISLA_ARIDA);
+				case 5:
+					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -5577,7 +5602,7 @@ u32 GetDynamicMapSec_MareS7(bool32 useWarpInfo)
         )
         return 1;
     //3: Isla Herba Bona
-    if
+	else if
         (
         (y < 1 && x > 21 && x < 48) ||
         (y == 1 && x > 22 && x < 45) ||
@@ -5585,49 +5610,60 @@ u32 GetDynamicMapSec_MareS7(bool32 useWarpInfo)
         )
         return 3;
     //4: Isla Aridaa
-    if
+	else if
         (
         (y == 42 && x > 44 && x < 61) ||
-        (y == 43 && x > 41 && x < XX) ||
-        (y == 44 && x > 38 && x < XX) ||
-        (y == 45 && x > 36 && x < XX) ||
-        (y == 46 && x > 35 && x < XX) ||
-        (y == 47 && x > 34 && x < XX) ||
-        (y == 48 && x > 32 && x < XX) ||
-        (y == 49 && x > 31 && x < XX) ||
-        (y == 50 && x > 30 && x < XX) ||
-        (y == 51 && x > 29 && x < XX) ||
-        (y == 52 && x > 27 && x < XX) ||
-        (y == 53 && x > 26 && x < XX) ||
-        (y == 54 && x > 25 && x < XX) ||
-        (y == 55 && x > 23 && x < XX) ||
-        (y == 56 && x > 22 && x < XX) ||
-        (y == 57 && x > 21 && x < XX) ||
-        (y == 58 && x > 21 && x < XX) ||
-        (y == 59 && x > 20 && x < XX) ||
-        (y == 60 && x > 20 && x < XX) ||
-        (y == 61 && x > 20 && x < XX) ||
-        (y == 62 && x > 20 && x < XX) ||
-        (y == 63 && x > 20 && x < XX) ||
-        (y == 64 && x > 20 && x < XX) ||
-        (y == 65 && x > 20 && x < XX) ||
-        (y == 66 && x > 20 && x < XX) ||
-        (y == 67 && x > 20 && x < XX) ||
-        (y == 68 && x > 20 && x < XX) ||
-        (y == 69 && x > 20 && x < XX) ||
-        (y == 70 && x > 20 && x < XX) ||
-        (y == 71 && x > 20 && x < XX) ||
-        (y == 72 && x > 20 && x < XX) ||
-        (y == 73 && x > 25 && x < XX) ||
-        (y == 74 && x > 27 && x < XX) ||
-        (y == 75 && x > 27 && x < XX) ||
-        (y == 76 && x > 30 && x < XX) ||
-        (y == 77 && x > 30 && x < XX) ||
-        (y == 78 && x > 31 && x < XX) ||
-        (y == 79 && x > 31 && x < XX) ||
-        (y == 80 && x > 32 && x < XX)
+        (y == 43 && x > 41 && x < 63) ||
+        (y == 44 && x > 38 && x < 65) ||
+        (y == 45 && x > 36 && x < 67) ||
+        (y == 46 && x > 35 && x < 67) ||
+        (y == 47 && x > 34 && x < 68) ||
+        (y == 48 && x > 32 && x < 69) ||
+        (y == 49 && x > 31 && x < 69) ||
+        (y == 50 && x > 30 && x < 69) ||
+        (y == 51 && x > 29 && x < 69) ||
+        (y == 52 && x > 27 && x < 69) ||
+        (y == 53 && x > 26 && x < 69) ||
+        (y == 54 && x > 25 && x < 69) ||
+        (y == 55 && x > 23 && x < 69) ||
+        (y == 56 && x > 22 && x < 69) ||
+        (y == 57 && x > 21 && x < 70) ||
+        (y == 58 && x > 21 && x < 78) ||
+        (y == 59 && x > 20 && x < 78) ||
+        (y == 60 && x > 20 && x < 78) ||
+        (y == 61 && x > 20 && x < 78) ||
+        (y == 62 && x > 20 && x < 78) ||
+        (y == 63 && x > 20 && x < 78) ||
+        (y == 64 && x > 20 && x < 78) ||
+        (y == 65 && x > 20 && x < 78) ||
+        (y == 66 && x > 20 && x < 78) ||
+        (y == 67 && x > 20 && x < 78) ||
+        (y == 68 && x > 20 && x < 78) ||
+        (y == 69 && x > 20 && x < 78) ||
+        (y == 70 && x > 20 && x < 78) ||
+        (y == 71 && x > 20 && x < 78) ||
+        (y == 72 && x > 20 && x < 77) ||
+        (y == 73 && x > 25 && x < 76) ||
+        (y == 74 && x > 27 && x < 75) ||
+        (y == 75 && x > 27 && x < 63) ||
+        (y == 76 && x > 30 && x < 61) ||
+        (y == 77 && x > 30 && x < 59) ||
+        (y == 78 && x > 31 && x < 59) ||
+        (y == 79 && x > 31 && x < 51) ||
+        (y == 80 && x > 32 && x < 50)
         )
         return 4;
+	//5: Isla Ignifera
+	else if 
+		(
+		(x == 84 && y > 9 && y < 23) ||
+		(x > 84 && y > 8 && y < 23)
+		)
+			return 5;
+    //2: Mare Subtropicum - Default
+	else
+		return 2;
+}
 
 	
 

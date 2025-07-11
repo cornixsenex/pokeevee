@@ -110,8 +110,9 @@ Isla Tropica                                                      # MUS_RG_FUCHS
 Isla Hesperia                                                     # MUS_SOOTOPOLIS
 Isla Ithaca                                                       # MUS_FORTREE
 Isla Pina                                                         # MUS_PETALBURG
+Isla Arida                                                        # MUS_ROUTE113
+Isla Solata                                                       # IDK tbh
 Salix                                                             # MUS_VERDANTURF #Double see SnowTown
-Isla Vaca                                                         # IDK tbh
 Slab City                                                         # MUS_RG_SEVII_45
 Snow Town                                                         # MUS_VERDANTURF #Double see Salix
 
@@ -128,7 +129,6 @@ Via Posterior                                                     # MUS_VICTORY_
 Venator Mons                                                      # MUS_ROUTE110
 Villae Rusticae                                                   # MUS_RG_ROUTE1
 Ignis Mons                                                        # MUS_FOTM?
-Isla Arida                                                        # 
 Drake / Kashmir                                                   # KASHMIR
 Lake Drake                                                        # MUS_RG_SEVII_ROUTE
 Spicelands                                                        # MUS_ROUTE113

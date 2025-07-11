@@ -6,8 +6,6 @@
 
 mapscripts MareS1_MapScripts {
 
-
-
     MAP_SCRIPT_ON_TRANSITION {
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS1_F)
     }

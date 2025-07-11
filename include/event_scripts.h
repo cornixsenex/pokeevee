@@ -977,7 +977,11 @@ extern const u8 BigIslandS_Script_Transition_IgnisMons[];
 extern const u8 OceanPerimeterBigIslandS_Script_Transition_MareOriens[];
 extern const u8 OceanPerimeterBigIslandS_Script_Transition_MareSubtropicum[];
 extern const u8 OceanPerimeterBigIslandS_Script_Transition_IslaIgnifera[];
-
+//MareS7
+extern const u8 MareS7_Script_Transition_IslaArida[];
+extern const u8 MareS7_Script_Transition_MareSubtropicum[];
+extern const u8 MareS7_Script_Transition_IslaHerbaBona[];
+extern const u8 MareS7_Script_Transition_IslaIthaca[];
 
 //		END		KUSTOMS		///
 
