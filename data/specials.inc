@@ -633,3 +633,4 @@ gSpecials::
 	def_special GetDynamicMapSec_MareS7_F
 	def_special GetDynamicMapSec_MareS8_F
 	def_special GetDynamicMapSec_MareS9_F
+	def_special GetDynamicMapSec_MareS10_F

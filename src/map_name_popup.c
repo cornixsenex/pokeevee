@@ -1621,9 +1621,35 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
         }
-
-
-
+		//MareS10
+        if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10)) 
+		{
+			//1 Isla Tropica
+			//2 Mare Occidens
+			//3 Mare Tropicum
+			//4 Isla Solata
+			//5 Mare Subtropicum
+			n = GetDynamicMapSec_MareS10(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_ISLA_TROPICA;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_OCCIDENS;
+					break;
+				case 3:
+					regionMapSectionId = MAPSEC_MARE_TROPICUM;
+					break;
+				case 4:
+					regionMapSectionId = MAPSEC_ISLA_SOLATA;
+					break;
+				case 5:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
 
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);

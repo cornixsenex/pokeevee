@@ -112,7 +112,7 @@ Isla Hesperia                                                     # MUS_SOOTOPOL
 Isla Ithaca                                                       # MUS_FORTREE
 Isla Pina                                                         # MUS_PETALBURG
 Isla Arida                                                        # MUS_ROUTE113
-Isla Solata                                                       # IDK tbh
+Isla Solata                                                       # IDK tbh MUS_RG_SEVII_ROUTE - NOTE REPEAT maybe
 Salix                                                             # MUS_VERDANTURF #Double see SnowTown
 Slab City                                                         # MUS_RG_SEVII_45
 Snow Town                                                         # MUS_VERDANTURF #Double see Salix

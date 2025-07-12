@@ -6115,5 +6115,10 @@ bool32 GetDynamicMapSec_MareS8_F(void)
 
 bool32 GetDynamicMapSec_MareS9_F(void)
 {
-    return GetDynamicMapSec_MareS8(FALSE);
+    return GetDynamicMapSec_MareS9(FALSE);
+}
+
+bool32 GetDynamicMapSec_MareS10_F(void)
+{
+    return GetDynamicMapSec_MareS10(FALSE);
 }

@@ -2365,31 +2365,6 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
-		//MareS10
-		if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10))
-        {
-			//1 Isla Tropica
-			//2 Mare Occidens
-			//3 Mare Tropicum
-			//4 Isla Solata
-			//5 Mare Subtropicum
-			n = GetDynamicMapSec_MareS10(FALSE);
-			switch (n)
-			{
-				case 1:
-					return StringCopy(dest, sMapName_ISLA_TROPICA);
-				case 2:
-					return StringCopy(dest, sMapName_MARE_OCCIDENS);
-				case 3:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
-				case 4:
-					return StringCopy(dest, sMapName_ISLA_SOLATA);
-				case 5:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
-				default:
-					return StringCopy(dest, gText_Ferry);
-			}
-        }
 
 		//Default Map - Should never be reached
 		else
@@ -6175,76 +6150,3 @@ u32 GetDynamicMapSec_MareS10(bool32 useWarpInfo)
 		(y == 64 && x > 84) 
 		)
 		return 1;
-	//4: Isla Solata
-	else if
-		(
-		(x == 15  && y > 58 && y < 74) ||
-		(x == 16  && y > 51 && y < 76) ||
-		(x == 17  && y > 46 && y < 77) ||
-		(x == 18  && y > 44 && y < 78) ||
-		(x == 19  && y > 43 && y < 79) ||
-		(x == 20  && y > 41 && y < 79) ||
-		(x == 20  && y > 15 && y < 30) ||
-		(x == 21  && y > 40 && y < 81) ||
-		(x == 21  && y > 13 && y < 34) ||
-		(x == 22  && y > 37 && y < 81) ||
-		(x == 22  && y > 12 && y < 36) ||
-		(x == 23  && y > 11 && y < 81) ||
-		(x == 24  && y > 10 && y < 81) ||
-		(x == 25  && y > 9  && y < 81) ||
-		(x == 26  && y > 9  && y < 81) ||
-		(x == 27  && y > 8  && y < 81) ||
-		(x == 28  && y > 8  && y < 81) ||
-		(x == 29  && y > 8  && y < 81) ||
-		(x == 30  && y > 8  && y < 81) ||
-		(x == 31  && y > 8  && y < 81) ||
-		(x == 32  && y > 8  && y < 81) ||
-		(x == 33  && y > 8  && y < 81) ||
-		(x == 34  && y > 8  && y < 83) ||
-		(x == 35  && y > 8  && y < 83) ||
-		(x == 36  && y > 8  && y < 83) ||
-		(x == 37  && y > 8  && y < 83) ||
-		(x == 38  && y > 8  && y < 83) ||
-		(x == 39  && y > 8  && y < 84) ||
-		(x == 40  && y > 8  && y < 84) ||
-		(x == 41  && y > 8  && y < 84) ||
-		(x == 42  && y > 8  && y < 84) ||
-		(x == 43  && y > 8  && y < 84) ||
-		(x == 44  && y > 8  && y < 84) ||
-		(x == 45  && y > 8  && y < 84) ||
-		(x == 46  && y > 8  && y < 84) ||
-		(x == 47  && y > 8  && y < 84) ||
-		(x == 48  && y > 8  && y < 84) ||
-		(x == 49  && y > 8  && y < 84) ||
-		(x == 50  && y > 8  && y < 84) ||
-		(x == 51  && y > 8  && y < 84) ||
-		(x == 52  && y > 9  && y < 84) ||
-		(x == 53  && y > 10 && y < 84) ||
-		(x == 54  && y > 10 && y < 84 && y != 60) ||
-		(x == 55  && y > 12 && y < 59) ||
-		(x == 55  && y > 61 && y < 84) ||
-		(x == 56  && y > 16 && y < 33) ||
-		(x == 56  && y > 34 && y < 58) ||
-		(x == 56  && y > 62 && y < 84) ||
-		(x == 57  && y > 19 && y < 32) ||
-		(x == 57  && y > 34 && y < 56) ||
-		(x == 57  && y > 63 && y < 84) ||
-		(x == 58  && y > 36 && y < 54) ||
-		(x == 58  && y > 64 && y < 84) ||
-		(x == 59  && y > 36 && y < 53) ||
-		(x == 59  && y > 64 && y < 84) ||
-		(x == 60  && y > 36 && y < 52) ||
-		(x == 60  && y > 65 && y < 83) ||
-		(x == 61  && y > 66 && y < 82)
-		)
-		return 4;
-	//2 Mare Oriens
-	else if (x < 78)
-		return 2;
-	//5 Mare Subtropicum
-	else if (x > 77)
-		return 5;
-	//3 Mare Tropicum - Default
-	else
-		return 3;
-}

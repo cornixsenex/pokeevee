@@ -167,6 +167,7 @@ u32 GetDynamicMapSec_BigIslandFillerW(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareS7(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareS8(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareS9(bool32 useWarpInfo);
+u32 GetDynamicMapSec_MareS10(bool32 useWarpInfo);
 
 
 extern const struct RegionMapLocation gRegionMapEntries[];

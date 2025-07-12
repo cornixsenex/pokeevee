@@ -747,6 +747,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS10 - Transition Isla Tropica
+		if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10)) {
+			if (VarGet(VAR_TEMP_5) != 1) {
+				ScriptContext_SetupScript(MareS10_Script_Transition_IslaTropica);
+				return TRUE;
+			}
+		}
 
     }
 	else if (MetatileBehavior_IsOceanMapTransitionB(metatileBehavior))
@@ -830,6 +837,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS10 - Transition Mare Occidens 
+		if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10)) {
+			if (VarGet(VAR_TEMP_5) != 2) {
+				ScriptContext_SetupScript(MareS10_Script_Transition_MareOccidens);
+				return TRUE;
+			}
+		}
     }
 	else if (MetatileBehavior_IsOceanMapTransitionC(metatileBehavior))
     {
@@ -898,6 +912,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//MareS10 - Transition Mare Tropicum 
+		if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10)) {
+			if (VarGet(VAR_TEMP_5) != 3) {
+				ScriptContext_SetupScript(MareS10_Script_Transition_MareTropicum);
+				return TRUE;
+			}
+		}
 
     }
 	else if (MetatileBehavior_IsOceanMapTransitionD(metatileBehavior))
@@ -950,6 +971,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 		if (mapGroup == MAP_GROUP(MAP_MARE_S9) && mapNum == MAP_NUM(MAP_MARE_S9)) {
 			if (VarGet(VAR_TEMP_5) != 4) {
 				ScriptContext_SetupScript(MareS9_Script_Transition_IslaHesperia);
+				return TRUE;
+			}
+		}
+		//MareS10 - Transition Isla Solata
+		if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10)) {
+			if (VarGet(VAR_TEMP_5) != 4) {
+				ScriptContext_SetupScript(MareS10_Script_Transition_IslaSolata);
 				return TRUE;
 			}
 		}

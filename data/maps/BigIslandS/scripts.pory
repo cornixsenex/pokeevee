@@ -68,7 +68,6 @@ script BigIslandS_Script_Transition_IgnisMons {
     special (ShowMapNamePopup)
 }
 
-
 script BigIslandS_OnResume {
 	setstepcallback (STEP_CB_ASH)
 	if (flag(FLAG_SYS_CTRL_OBJ_DELETE) ){

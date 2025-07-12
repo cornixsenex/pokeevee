@@ -1003,10 +1003,14 @@ if (I_VS_SEEKER_CHARGING != 0)
 				if (x > 45 && y < 17)
 					ShowMapNamePopup();
 			}
-            //MareS6 - Handle from MareS5
+            //MareS6 
 			if (destMapNum == MAP_NUM(MAP_MARE_S6) && destMapGroup == MAP_GROUP(MAP_MARE_S6))
 			{
+				//Handle from MareS5
 				if (x > 84 && y < 63 && y > 56)
+					ShowMapNamePopup();
+				//Handle from MareS10
+				if (y > 84 && x > 47 && x < 79)
 					ShowMapNamePopup();
 			}
             //MareS5 - Handle from MareS6
@@ -1146,7 +1150,20 @@ if (I_VS_SEEKER_CHARGING != 0)
                 //Handle from MareS8
                 if (x > 84 && y > 22 && y < 25)
                     ShowMapNamePopup();
+				//Handle from MareS10
+				if (x < 1 && y > 64 && y < 68)
+                    ShowMapNamePopup();
             }
+			//MareS10
+			if (destMapNum == MAP_NUM(MAP_MARE_S10) && destMapGroup == MAP_GROUP(MAP_MARE_S10))
+            {
+				//Handle from MareS6
+				if (y < 1 && x > 47 && x < 79)
+                    ShowMapNamePopup();
+				//Handle from MareS9
+				if (x > 84 && y > 64 && y < 68)
+                    ShowMapNamePopup();
+			}
 			
 			//Other Maps 
 			//
@@ -4798,6 +4815,30 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//MareS10
+	if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10)) 
+	{
+		//1 Isla Tropica
+		//2 mare Occidens
+		//3 Mare Tropicum
+		//4 Isla Solata
+		//5 Mare Subtropicum
+		n = GetDynamicMapSec_MareS10(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_ISLA_TROPICA;
+			case 2:
+				return MAPSEC_MARE_OCCIDENS; 
+			case 3:
+				return MAPSEC_MARE_TROPICUM; 
+			case 4:
+				return MAPSEC_ISLA_SOLATA; 
+			case 5:
+				return MAPSEC_MARE_SUBTROPICUM;
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    //Other Maps Go Here
     
@@ -5666,6 +5707,36 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Tropicana
 			case 5:
 				return MUS_SLATEPORT;
+			default:
+				return MUS_CANTINA;
+		}
+    }
+	//MareS10
+	if (mapGroup == MAP_GROUP(MAP_MARE_S10) && mapNum == MAP_NUM(MAP_MARE_S10)) 
+	{
+		//1 Isla Tropica
+		//2 mare Occidens
+		//3 Mare Tropicum
+		//4 Isla Solata
+		//5 Mare Subtropicum
+		n = GetDynamicMapSec_MareS10(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_MareS10 returned: %d\n", n);
+		switch (n) {
+		    //Isla Tropica
+			case 1:
+				return MUS_RG_FUCHSIA;
+		    //Mare Occidens
+			case 2:
+				return MUS_ABANDONED_SHIP;
+		    //Mare Tropicum
+			case 3:
+				return MUS_SURF;
+		    //Isla Solata
+			case 4:
+				return MUS_RG_SEVII_ROUTE;
+		    //Mare Subtropicum
+			case 5:
+				return MUS_LILYCOVE;
 			default:
 				return MUS_CANTINA;
 		}
