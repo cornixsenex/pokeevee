@@ -474,7 +474,7 @@ script BigIslandN_Script_ArgoArrival {
 	waitmovement (0)
 	
 	//ETC 
-	setflag (FLAG_MARES5_HIDE_ARGO)
+	setflag (FLAG_MAREC_HIDE_ARGO)
 	setvar (VAR_ARGO_STATE, 2)
 
 

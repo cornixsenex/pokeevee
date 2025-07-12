@@ -119,9 +119,7 @@
 #define FLAG_SS2F_YELLOW                     0x60
 #define FLAG_SS2F_RED                        0x61
 #define FLAG_SS2F_GREEN                      0x62
-
-//These are all UNUSED
-#define FLAG_MARES5_HIDE_ARGO                0x63
+#define FLAG_MAREC_HIDE_ARGO                 0x63
 #define FLAG_BIGISLAND_S_HIDE_IGNISGRUNTS    0x64 
 #define FLAG_BIGISLAND_S_HIDE_PROMETHEUS     0x65 // Set after Hooh battle
 #define FLAG_BIGISLAND_N_JASONCOLCHIS_INTRO  0x66 

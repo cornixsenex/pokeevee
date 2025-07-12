@@ -6,7 +6,7 @@ Argo_EventScript_ExitWarp::
 # 8 "data/maps/Argo/scripts.pory"
 	lock
 # 9 "data/maps/Argo/scripts.pory"
-	warpsilent MAP_MARE_S5, 45, 45
+	warpsilent MAP_MARE_C, 62, 31
 # 10 "data/maps/Argo/scripts.pory"
 	waitstate
 # 11 "data/maps/Argo/scripts.pory"
@@ -79,7 +79,7 @@ Argo_Script_BeginAdventure::
 # 69 "data/maps/Argo/scripts.pory"
 	setvar VAR_ARGO_STATE, 1
 # 70 "data/maps/Argo/scripts.pory"
-	warp MAP_MARE_S5, 45, 45
+	warp MAP_MARE_C, 62, 30
 # 71 "data/maps/Argo/scripts.pory"
 	waitstate
 	end
@@ -91,7 +91,7 @@ Argo_Script_TestBeginAdventure::
 # 77 "data/maps/Argo/scripts.pory"
 	setvar VAR_ARGO_STATE, 1
 # 78 "data/maps/Argo/scripts.pory"
-	warp MAP_MARE_S5, 45, 45
+	warp MAP_MARE_C, 62, 30
 # 79 "data/maps/Argo/scripts.pory"
 	waitstate
 	end

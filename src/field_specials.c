@@ -6122,3 +6122,8 @@ bool32 GetDynamicMapSec_MareS10_F(void)
 {
     return GetDynamicMapSec_MareS10(FALSE);
 }
+
+bool32 GetDynamicMapSec_OceanPerimeter2_F(void)
+{
+    return GetDynamicMapSec_OceanPerimeter2(FALSE);
+}

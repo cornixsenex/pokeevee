@@ -6,7 +6,7 @@ mapscripts Argo_MapScripts {}
 
 script Argo_EventScript_ExitWarp {
 	lock
-	warpsilent (MAP_MARE_S5, 45, 45)
+	warpsilent (MAP_MARE_C, 62, 31)
 	waitstate
 	release
 	end
@@ -67,7 +67,7 @@ script Argo_Script_Jason {
 script Argo_Script_BeginAdventure {
 	msgbox (Argo_Text_BeginAdventure, MSGBOX_NPC)
 	setvar (VAR_ARGO_STATE, 1)
-	warp (MAP_MARE_S5, 45, 45)
+	warp (MAP_MARE_C, 62, 30)
 	waitstate
 	end
 }
@@ -75,7 +75,7 @@ script Argo_Script_BeginAdventure {
 script Argo_Script_TestBeginAdventure {
 	msgbox ("TEST BEGIN", MSGBOX_NPC)
 	setvar (VAR_ARGO_STATE, 1)
-	warp (MAP_MARE_S5, 45, 45)
+	warp (MAP_MARE_C, 62, 30)
 	waitstate
 	end
 }

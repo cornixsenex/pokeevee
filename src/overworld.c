@@ -4839,6 +4839,21 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
+	//OceanPerimeter2
+	if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER2) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER2)) 
+	{
+		//1 Mare Subtropicum
+		//2 mare Occidens
+		n = GetDynamicMapSec_OceanPerimeter2(FALSE);
+		switch (n) {
+			case 1:
+				return MAPSEC_MARE_SUBTROPICUM;
+			case 2:
+				return MAPSEC_MARE_OCCIDENS; 
+			default:
+				return MAPSEC_DYNAMIC;
+		}
+	}
    
    //Other Maps Go Here
     
@@ -5737,6 +5752,24 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Mare Subtropicum
 			case 5:
 				return MUS_LILYCOVE;
+			default:
+				return MUS_CANTINA;
+		}
+    }
+	//OceanPerimeter2
+	if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER2) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER2)) 
+	{
+		//1 Mare Subtropicum
+		//2 mare Occidens
+		n = GetDynamicMapSec_OceanPerimeter2(useWarpInfo);
+		DebugPrintf("GetDynamicMapSec_OceanPerimeter2 returned: %d\n", n);
+		switch (n) {
+		    //Mare Subtropicum
+			case 1:
+				return MUS_LILYCOVE;
+		    //Mare Occidens
+			case 2:
+				return MUS_ABANDONED_SHIP;
 			default:
 				return MUS_CANTINA;
 		}

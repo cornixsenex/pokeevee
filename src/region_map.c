@@ -2390,6 +2390,22 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 					return StringCopy(dest, gText_Ferry);
 			}
         }
+		//OceanPerimeter2
+		if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER2) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER2))
+        {
+			//1 Mare Subtropicum
+			//2 Mare Occidens
+			n = GetDynamicMapSec_OceanPerimeter2(FALSE);
+			switch (n)
+			{
+				case 1:
+					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+				case 2:
+					return StringCopy(dest, sMapName_MARE_OCCIDENS);
+				default:
+					return StringCopy(dest, gText_Ferry);
+			}
+        }
 
 		//Default Map - Should never be reached
 		else
@@ -6242,9 +6258,34 @@ u32 GetDynamicMapSec_MareS10(bool32 useWarpInfo)
 	else if (x < 78)
 		return 2;
 	//5 Mare Subtropicum
-	else if (x > 77)
+	else if (x > 77 && y > 45)
 		return 5;
 	//3 Mare Tropicum - Default
 	else
 		return 3;
+}
+
+u32 GetDynamicMapSec_OceanPerimeter2(bool32 useWarpInfo)
+{
+
+	//1: Mare Subtropicum
+	//2: Mare occidens
+
+	s16 x, y;
+    if (useWarpInfo) 
+    {
+        x = sWarpDestination.x;
+        y = sWarpDestination.y;
+    } else
+    {
+        x = gSaveBlock1Ptr->pos.x;
+        y = gSaveBlock1Ptr->pos.y;
+    }
+
+	DebugPrintf("OceanPerimeter2\nX %d\nY %d", x, y);
+
+    if (x > 77)
+        return 1;
+    else
+        return 2;
 }

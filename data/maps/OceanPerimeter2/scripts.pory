@@ -1,1 +1,26 @@
-mapscripts OceanPerimeter2_MapScripts {}
+
+//Dynamic Map VAR_TEMP_5
+//1: Mare Subtropicum
+//2: Mare Occidens
+
+mapscripts OceanPerimeter2_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+		//handle dynamic map
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS9_F)
+    }
+
+}
+
+
+script OceanPerimeter2_Script_Transition_MareOccidens {
+    setvar (VAR_TEMP_5, 2)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script OceanPerimeter2_Script_Transition_MareSubtropicum {
+    setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}

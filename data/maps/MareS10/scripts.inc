@@ -5,7 +5,7 @@ MareS10_MapScripts::
 
 MareS10_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 13 "data/maps/MareS10/scripts.pory"
-	specialvar VAR_TEMP_5, GetDynamicMapSec_MareS9_F
+	specialvar VAR_TEMP_5, GetDynamicMapSec_MareS10_F
 # 15 "data/maps/MareS10/scripts.pory"
 	compare VAR_TEMP_5, 4
 	goto_if_eq MareS10_MapScripts_MAP_SCRIPT_ON_TRANSITION_1

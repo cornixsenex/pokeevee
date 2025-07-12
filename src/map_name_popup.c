@@ -1650,6 +1650,23 @@ static void LoadMapNamePopUpWindowBg(void)
 					regionMapSectionId = MAPSEC_DYNAMIC;
 			}
         }
+		//OceanPerimeter2
+        if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER2) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER2)) 
+		{
+			//1 Mare Subtropicum
+			//2 Mare Occidens
+			n = GetDynamicMapSec_OceanPerimeter2(FALSE);
+			switch (n) {
+				case 1:
+					regionMapSectionId = MAPSEC_MARE_SUBTROPICUM;
+					break;
+				case 2:
+					regionMapSectionId = MAPSEC_MARE_OCCIDENS;
+					break;
+				default:
+					regionMapSectionId = MAPSEC_DYNAMIC;
+			}
+        }
 
         //Other Maps Go Here
 		DebugPrintf("\nBottom of Dynamic BG Theme\nregionMapSectionId: %d", regionMapSectionId);

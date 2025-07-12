@@ -1,1 +1,80 @@
-mapscripts MareC_MapScripts {}
+mapscripts MareC_MapScripts {
+
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_ARGO_STATE) == 1) {
+			call (MareC_Script_SupressSurf)
+		}
+	}
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_ARGO_STATE, 1: MareC_Script_HidePlayer
+	]
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ARGO_STATE, 1: MareC_Script_SailToColchis
+	]
+
+}
+
+
+script MareC_Script_SupressSurf {
+	setmetatile (62, 30, METATILE_Slateport_CalmWater_False, FALSE)
+	end
+}
+
+script MareC_Script_HidePlayer {
+	setobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_MARE_S5, 0)
+	hideobjectat (OBJ_EVENT_ID_PLAYER, MAP_MARE_S5)
+	end
+}
+
+script MareC_Script_Argo {
+	lockall
+	applymovement (LOCALID_MAREC_ARGO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox(MareS5_Text_ArgoIntro1, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == YES) {
+		warpsilent (MAP_ARGO, 16, 9)
+		waitstate
+	} else {
+		msgbox(MareS5_Text_ArgoFarewell)
+		closemessage
+	}
+	releaseall
+	end
+}
+
+script MareC_Script_SailToColchis {
+	lockall
+	call (Common_EventScript_PlayBrineysBoatMusic)
+	applymovement (LOCALID_MAREC_ARGO, MareC_Movement_SailToColchis1)
+	applymovement (OBJ_EVENT_ID_PLAYER, MareC_Movement_SailToColchis1)
+	waitmovement (0)
+	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (MareS5_Text_Scylla, MSGBOX_DEFAULT)
+	closemessage
+	showobjectat (LOCALID_MAREC_ARGO, MAP_MARE_S4)
+	hideobjectat (LOCALID_MAREC_ARGO, MAP_MARE_C)
+	applymovement (LOCALID_MAREC_ARGO, MareC_Movement_SailToColchis2)
+	applymovement (OBJ_EVENT_ID_PLAYER, MareC_Movement_SailToColchis2)
+	waitmovement (0)
+	delay (15)
+	call (BigIslandN_Script_ArgoArrival)
+	releaseall
+	end
+}
+
+movement MareC_Movement_SailToColchis1 {
+    walk_faster_down * 2
+    walk_faster_left * 96
+    walk_faster_down * 76
+}
+
+//Placeholder
+movement MareC_Movement_SailToColchis2 {
+    face_left
+}
+
+

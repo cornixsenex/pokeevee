@@ -10,7 +10,7 @@ mapscripts MareS10_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
 		//handle dynamic map
-		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS9_F)
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS10_F)
 		//handle Isla Solata drought / extreme sun idk
 		if (var(VAR_TEMP_5) == 4) {
 			setweather (WEATHER_DROUGHT)

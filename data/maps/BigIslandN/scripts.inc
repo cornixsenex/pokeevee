@@ -685,7 +685,7 @@ BigIslandN_Script_ArgoArrival::
 # 474 "data/maps/BigIslandN/scripts.pory"
 	waitmovement 0
 # 477 "data/maps/BigIslandN/scripts.pory"
-	setflag FLAG_MARES5_HIDE_ARGO
+	setflag FLAG_MAREC_HIDE_ARGO
 # 478 "data/maps/BigIslandN/scripts.pory"
 	setvar VAR_ARGO_STATE, 2
 # 484 "data/maps/BigIslandN/scripts.pory"
