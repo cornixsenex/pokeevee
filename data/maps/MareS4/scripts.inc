@@ -6,65 +6,73 @@ MareS4_MapScripts::
 MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 20 "data/maps/MareS4/scripts.pory"
 	specialvar VAR_TEMP_5, GetDynamicMapSec_MareS4_F
+# 22 "data/maps/MareS4/scripts.pory"
+	compare VAR_ARGO_STATE, 1
+	goto_if_ne MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 23 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_ARGO, 0, 0
 	return
 
 
 MareS4_Script_Transition_MareTropicum::
-# 26 "data/maps/MareS4/scripts.pory"
+# 29 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 27 "data/maps/MareS4/scripts.pory"
+# 30 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 28 "data/maps/MareS4/scripts.pory"
+# 31 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_MareTranquillum::
-# 32 "data/maps/MareS4/scripts.pory"
+# 35 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 33 "data/maps/MareS4/scripts.pory"
+# 36 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 34 "data/maps/MareS4/scripts.pory"
+# 37 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_MareSubtropicum::
-# 38 "data/maps/MareS4/scripts.pory"
+# 41 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 39 "data/maps/MareS4/scripts.pory"
+# 42 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 40 "data/maps/MareS4/scripts.pory"
+# 43 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_IslaHerbaBona::
-# 44 "data/maps/MareS4/scripts.pory"
+# 47 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 45 "data/maps/MareS4/scripts.pory"
+# 48 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 46 "data/maps/MareS4/scripts.pory"
+# 49 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_IslaHesperia::
-# 50 "data/maps/MareS4/scripts.pory"
+# 53 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 51 "data/maps/MareS4/scripts.pory"
+# 54 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 52 "data/maps/MareS4/scripts.pory"
+# 55 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_ScyllaCharybdis::
-# 56 "data/maps/MareS4/scripts.pory"
+# 59 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 6
-# 57 "data/maps/MareS4/scripts.pory"
+# 60 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 58 "data/maps/MareS4/scripts.pory"
+# 61 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 

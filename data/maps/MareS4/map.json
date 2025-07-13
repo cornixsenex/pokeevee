@@ -46,6 +46,7 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_MARES4_ARGO",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 71,
       "y": 50,
@@ -216,15 +217,6 @@
     {
       "type": "trigger",
       "x": 72,
-      "y": 46,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "4",
-      "script": "MareS4_Script_Transition_ScyllaCharybdis"
-    },
-    {
-      "type": "trigger",
-      "x": 71,
       "y": 47,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -234,33 +226,6 @@
     {
       "type": "trigger",
       "x": 70,
-      "y": 47,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "4",
-      "script": "MareS4_Script_Transition_ScyllaCharybdis"
-    },
-    {
-      "type": "trigger",
-      "x": 70,
-      "y": 47,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "5",
-      "script": "MareS4_Script_Transition_ScyllaCharybdis"
-    },
-    {
-      "type": "trigger",
-      "x": 70,
-      "y": 48,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "5",
-      "script": "MareS4_Script_Transition_ScyllaCharybdis"
-    },
-    {
-      "type": "trigger",
-      "x": 69,
       "y": 49,
       "elevation": 0,
       "var": "VAR_TEMP_5",
@@ -269,11 +234,29 @@
     },
     {
       "type": "trigger",
-      "x": 77,
-      "y": 55,
+      "x": 71,
+      "y": 48,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "5",
+      "script": "MareS4_Script_Transition_ScyllaCharybdis"
+    },
+    {
+      "type": "trigger",
+      "x": 71,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
+      "script": "MareS4_Script_Transition_ScyllaCharybdis"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "4",
       "script": "MareS4_Script_Transition_ScyllaCharybdis"
     },
     {
@@ -298,24 +281,6 @@
       "type": "trigger",
       "x": 79,
       "y": 54,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "4",
-      "script": "MareS4_Script_Transition_ScyllaCharybdis"
-    },
-    {
-      "type": "trigger",
-      "x": 79,
-      "y": 53,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "4",
-      "script": "MareS4_Script_Transition_ScyllaCharybdis"
-    },
-    {
-      "type": "trigger",
-      "x": 80,
-      "y": 52,
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "4",

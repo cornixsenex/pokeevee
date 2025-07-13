@@ -18,8 +18,11 @@ mapscripts MareS4_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         //Handle Dynamic Map Trigger Setup
         specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS4_F)
+		//Hide Argo boat @ Scylla Charybdis when not needed
+		if (var(VAR_ARGO_STATE) != 1) {
+			setobjectxyperm (LOCALID_MARES4_ARGO, 0, 0)
+		}
     }
-
 }
 
 script MareS4_Script_Transition_MareTropicum {
