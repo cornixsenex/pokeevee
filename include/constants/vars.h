@@ -225,13 +225,14 @@
                                                                 //3: After 3rd instructor
                                                                 //4: After 4th instructor trigger Misty Scene
                                                                 //5: After Misty Scene - Finish
-																
+#define VAR_AENEID_STATE                                 0x407A // Tracks progress thru Aeneid
+                                                                //0: Init, Aeneas et co stranded on Isla Tropica with no hope
+                                                                //1: After you speak with him and go into the city, setup Dido entrance
 						// BREAK
 
 
 
 
-#define VAR_ROUTE127_STATE                               0x407A // Unused Var
 #define VAR_ROUTE128_STATE                   		     0x407B
 #define VAR_ROUTE129_STATE                   		     0x407C // Unused Var
 #define VAR_ROUTE130_STATE                   		     0x407D // Unused Var

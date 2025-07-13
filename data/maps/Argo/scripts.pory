@@ -41,19 +41,26 @@ script Argo_Script_Philoctetes {
 }
 
 script Argo_Script_Jason {
-	//A long journey now we're lost at sea though we seem without hope I cannot turn back, for pride, and for fear of how Medea will look at me in defeat
-	msgbox (Argo_Text_Jason1, MSGBOX_NPC)
-	checkitem (ITEM_COLCHIS_MAP, 1)
-	if (var(VAR_RESULT) == TRUE) {
-		//Whats this? You've found an ancient / secret / sacred map of the islands showing where colchis is. Will you join with our quest for journey? Once succesful I will surely ever be your servant
-		msgbox(Argo_Text_Jason2, MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			call (Argo_Script_BeginAdventure)
-		} else {
-			//very well your choice is your own i cannot / will not force you one way or another return if you change your mind
-			msgbox(Argo_Text_Jason3, MSGBOX_NPC)
-		}
-	}
+    if (!flag(FLAG_TEMP_6)) {
+        //Lost at sea...
+        msgbox (Argo_Text_Jason1, MSGBOX_NPC)
+        //Whats this? You've found an ancient / secret / sacred map of the islands showing where colchis is. Will you join with our quest for journey? Once succesful I will surely ever be your servant
+        msgbox(Argo_Text_Jason2, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            call (Argo_Script_BeginAdventure)
+        } else {
+            setflag (FLAG_TEMP_6)
+            //very well your choice is your own i cannot / will not force you one way or another return if you change your mind
+            msgbox(Argo_Text_Jason3, MSGBOX_NPC)
+        }
+    } else {
+        msgbox(Argo_Text_Jason4, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            call (Argo_Script_BeginAdventure)
+        } else {
+            msgbox(Argo_Text_Jason3, MSGBOX_NPC)
+        }
+    }
 	end
 }
 
@@ -69,20 +76,6 @@ script Argo_Script_BeginAdventure {
 	setvar (VAR_ARGO_STATE, 1)
 	warp (MAP_MARE_C, 62, 30)
 	waitstate
-	end
-}
-
-script Argo_Script_TestBeginAdventure {
-	msgbox ("TEST BEGIN", MSGBOX_NPC)
-	setvar (VAR_ARGO_STATE, 1)
-	warp (MAP_MARE_C, 62, 30)
-	waitstate
-	end
-}
-
-script Argo_Script_TestSign {
-	msgbox (Argo_Text_TestSign)
-	closemessage
 	end
 }
 
@@ -133,11 +126,20 @@ text Argo_Text_Jason3 {
 	format("We'll find our way without you in that case. Return if you decide to join the quest.")
 }
 
-text Argo_Text_BeginAdventure {
-	format("Many thanks friend with this map we will reach Colchis and win our prize: SHINY MAREEP. In order to become an Argonaut you first must swear the oath. Repeat these words: I swear to sail under Jason's command and serve the Argo even to my death until we have attained SHINY MAREEP. That being done let us set off at once. Assemble Argonauts! We sail at once!")
+text Argo_Text_Jason4 {
+    format("Have you changed your mind, lad? Will you let me
+            take a look at your map to find Colchis?")
 }
 
-text Argo_Text_TestSign {
-	format("abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz")
+text Argo_Text_BeginAdventure {
+	format("Many thanks friend. With this map we will reach 
+            Colchis and find fabled SHINY MAREEP. 
+            In order to become an Argonaut 
+            you first must swear the oath. Repeat these words: 
+            I swear to sail under Jason's command
+            and serve the Argo, even to my death, 
+            until we have attained SHINY MAREEP. 
+            That being done let's have no more delay. 
+            Assemble Argonauts! We sail at once!")
 }
 

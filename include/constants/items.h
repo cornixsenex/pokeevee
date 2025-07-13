@@ -1004,7 +1004,7 @@
 #define ITEM_ANCIENT_LAMP 837
 #define ITEM_BOOK      838
 #define ITEM_WEDDING_INVITATION_HECTOR 839
-#define ITEM_COLCHIS_MAP 840
+#define ITEM_COLCHIS_MAP 840                 //UNUSED 
 #define ITEM_BIG_HAMMER 841
 #define ITEM_OSTRACON 842
 #define ITEM_COLCHIS_KEY 843
@@ -1020,11 +1020,12 @@
 #define ITEM_MEWRA_SIGIL 853
 #define ITEM_FLASHLIGHT 854
 #define ITEM_CORNELIUS_LETTER 855
+//NOTE COLCHIS_MAP UNUSED ABOVE
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 856
+#define ITEMS_COUNT 856 //DID YOU NOTICE UNUSED ABOVE?
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

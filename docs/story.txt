@@ -1014,9 +1014,18 @@ Eumaeus (swineheard)
 Beggar Ulysses
 Klytamnestra			:link receptionist
 Iphigeneia				:Beauty
-Aeneas					:Gentleman
-Faustulus (son)
-Romulus and Remus (twin babies)
+#Aeneid
+Aeneas					: Gentleman
+Ascianus                : Man4
+Romulus                 : Ninja Boy
+Remus                   : Little Boy
+Achates (Aeneas fren)   : Man1
+Faustulus (old man)     : Bug Catcher
+Beroe (woman)           : Woman 4
+Dido                    : Cynthia
+
+Turnus
+Latins
 Patrokles				:Wallace
 Aias					:Boy 3
 Lessar Aias				:Fat Man
