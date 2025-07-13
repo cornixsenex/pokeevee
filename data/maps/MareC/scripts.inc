@@ -51,14 +51,14 @@ MareC_Script_Argo::
 # 34 "data/maps/MareC/scripts.pory"
 	waitmovement 0
 # 35 "data/maps/MareC/scripts.pory"
-	msgbox MareS5_Text_ArgoIntro1, MSGBOX_YESNO
+	msgbox MareC_Text_ArgoIntro1, MSGBOX_YESNO
 # 36 "data/maps/MareC/scripts.pory"
 	closemessage
 # 37 "data/maps/MareC/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareC_Script_Argo_2
 # 41 "data/maps/MareC/scripts.pory"
-	msgbox MareS5_Text_ArgoFarewell
+	msgbox MareC_Text_ArgoFarewell
 # 42 "data/maps/MareC/scripts.pory"
 	closemessage
 MareC_Script_Argo_1:
@@ -90,7 +90,7 @@ MareC_Script_SailToColchis::
 # 55 "data/maps/MareC/scripts.pory"
 	waitmovement 0
 # 56 "data/maps/MareC/scripts.pory"
-	msgbox MareS5_Text_Scylla, MSGBOX_DEFAULT
+	msgbox MareC_Text_Scylla, MSGBOX_DEFAULT
 # 57 "data/maps/MareC/scripts.pory"
 	closemessage
 # 58 "data/maps/MareC/scripts.pory"
@@ -462,10 +462,939 @@ MareC_Movement_SailToColchis1:
 	walk_faster_down
 # 72 "data/maps/MareC/scripts.pory"
 	walk_faster_down
+# 73 "data/maps/MareC/scripts.pory"
+	face_right
 	step_end
 
-# 76 "data/maps/MareC/scripts.pory"
-MareC_Movement_SailToColchis2:
 # 77 "data/maps/MareC/scripts.pory"
-	face_left
+MareC_Movement_SailToColchis2:
+# 78 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 79 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 80 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 81 "data/maps/MareC/scripts.pory"
+	walk_faster_left
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 82 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 83 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 84 "data/maps/MareC/scripts.pory"
+	walk_faster_up
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 85 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 86 "data/maps/MareC/scripts.pory"
+	walk_faster_down
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 87 "data/maps/MareC/scripts.pory"
+	walk_faster_right
+# 88 "data/maps/MareC/scripts.pory"
+	face_down
 	step_end
+
+MareC_Text_Scylla::
+# 92 "data/maps/MareC/scripts.pory"
+	.string "Ahoy mateys! Weigh anchor! Drop your\n"
+	.string "oars! A mighty monster, whirlpool,\l"
+	.string "clashing rocks, lie in our path ahead.\l"
+	.string "Turn back lest Argo wreck and we\l"
+	.string "perish!$"
+
+MareC_Text_ArgoIntro1::
+# 96 "data/maps/MareC/scripts.pory"
+	.string "Ahoy matey! If you be lost at sea feel\n"
+	.string "free to join us!\n"
+	.string "Will you board Argo?$"
+
+MareC_Text_ArgoFarewell::
+# 100 "data/maps/MareC/scripts.pory"
+	.string "Farewell! Calm winds and gentle seas to\n"
+	.string "you.$"

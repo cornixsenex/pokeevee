@@ -2226,91 +2226,91 @@ BigIslandN_Script_Dioscuri_Text_0:
 BigIslandN_Text_ArrivedAtColchis1::
 # 1213 "data/maps/BigIslandN/scripts.pory"
 	.string "We've landed on the north side of the\n"
-	.string "big island we call Ignis. According to\l"
-	.string "this map Colchis is located within a\l"
-	.string "cave on the west side of the island.$"
+	.string "big island we call Ignis. According to my\l"
+	.string "sources Colchis is located in a cave on\l"
+	.string "the west side of the island.$"
 
 BigIslandN_Text_ArrivedAtColchis2::
-# 1217 "data/maps/BigIslandN/scripts.pory"
+# 1220 "data/maps/BigIslandN/scripts.pory"
 	.string "Orpheus, search for food and fresh\n"
 	.string "water.$"
 
 BigIslandN_Text_ArrivedAtColchis3::
-# 1221 "data/maps/BigIslandN/scripts.pory"
+# 1224 "data/maps/BigIslandN/scripts.pory"
 	.string "And Theseus inquire with the town\n"
 	.string "whether the locals will give us shelter\l"
 	.string "and open their markets to Argonauts.$"
 
 BigIslandN_Text_ArrivedAtColchis4::
-# 1225 "data/maps/BigIslandN/scripts.pory"
+# 1228 "data/maps/BigIslandN/scripts.pory"
 	.string "Castor and Pollux you will guard the\n"
 	.string "ship while {PLAYER} and I and\l"
 	.string "Philoctetes go investigate the rumored\l"
 	.string "Colchis cave.$"
 
 BigIslandN_Text_ArrivedAtColchis5::
-# 1229 "data/maps/BigIslandN/scripts.pory"
+# 1232 "data/maps/BigIslandN/scripts.pory"
 	.string "Meet Philoctetes and I in the woods\n"
 	.string "when you're ready to find the Colchis\l"
 	.string "cave.$"
 
 BigIslandN_Text_Philoctetes::
-# 1233 "data/maps/BigIslandN/scripts.pory"
+# 1236 "data/maps/BigIslandN/scripts.pory"
 	.string "We've finally arrived on the island!\n"
 	.string "Speak to Jason and let's go find\l"
 	.string "Colchis.$"
 
 BigIslandN_Text_Jason::
-# 1237 "data/maps/BigIslandN/scripts.pory"
+# 1240 "data/maps/BigIslandN/scripts.pory"
 	.string "Let us set off at once to find Colchis.$"
 
 BigIslandN_Text_Ambush::
-# 1241 "data/maps/BigIslandN/scripts.pory"
+# 1244 "data/maps/BigIslandN/scripts.pory"
 	.string "On guard friends! Something wicked\n"
 	.string "heads our way.$"
 
 BigIslandN_Text_Ambush2::
-# 1245 "data/maps/BigIslandN/scripts.pory"
+# 1248 "data/maps/BigIslandN/scripts.pory"
 	.string "To arms! Defend the party! Now recall\n"
 	.string "the sacred oaths you swore. Now to\l"
 	.string "battle!$"
 
 BigIslandN_Text_ColchisGrunt1Pre::
-# 1249 "data/maps/BigIslandN/scripts.pory"
+# 1252 "data/maps/BigIslandN/scripts.pory"
 	.string "Illkay ethay invadersay anday\n"
 	.string "otectpray areeppmay$"
 
 BigIslandN_Text_ColchisGrunt1Lost::
-# 1253 "data/maps/BigIslandN/scripts.pory"
+# 1256 "data/maps/BigIslandN/scripts.pory"
 	.string "Ymay ifelay isay orfeitfay. Iay eavelay\n"
 	.string "inay efeatday$"
 
 BigIslandN_Text_ColchisGrunt1Post::
-# 1257 "data/maps/BigIslandN/scripts.pory"
+# 1260 "data/maps/BigIslandN/scripts.pory"
 	.string "Eway eednay otay arnway Aeetesay ofay\n"
 	.string "isthat otplay otay ealstay Areepmay.\l"
 	.string "Urryhay ackbay otay ethay avecay$"
 
 BigIslandN_Text_PhiloctetesAbducted::
-# 1261 "data/maps/BigIslandN/scripts.pory"
+# 1264 "data/maps/BigIslandN/scripts.pory"
 	.string "Please help me friends! I'm lost! They're\n"
 	.string "taking me! Assemble Argonauts! Jason!\l"
 	.string "Please Help!$"
 
 BigIslandN_Text_JasonLeaveHim::
-# 1265 "data/maps/BigIslandN/scripts.pory"
+# 1268 "data/maps/BigIslandN/scripts.pory"
 	.string "Leave him. He swore an oath that he\n"
 	.string "would die in service of our quest to\l"
 	.string "find Mareep. We must find the location\l"
 	.string "of Colchis.$"
 
 BigIslandN_Text_JasonPostAmbush::
-# 1269 "data/maps/BigIslandN/scripts.pory"
+# 1272 "data/maps/BigIslandN/scripts.pory"
 	.string "Well done your bravery has saved our\n"
 	.string "quest.$"
 
 BigIslandN_Text_CultistsEnterCave::
-# 1274 "data/maps/BigIslandN/scripts.pory"
+# 1277 "data/maps/BigIslandN/scripts.pory"
 	.string "Uicklyquay! Urryhay! Eway ustmay\n"
 	.string "arnway Aeetesay atthay uffiansray\l"
 	.string "areay erehay otay ealstay Areepmay.\l"
@@ -2318,22 +2318,22 @@ BigIslandN_Text_CultistsEnterCave::
 	.string "ehindbay ouyay.$"
 
 BigIslandN_Text_OpenColchisCave1::
-# 1278 "data/maps/BigIslandN/scripts.pory"
+# 1281 "data/maps/BigIslandN/scripts.pory"
 	.string "This must be where Colchis Cave is\n"
 	.string "hidden. The only question now is how do\l"
 	.string "we open the secret door...$"
 
 BigIslandN_Text_OpenColchisCave2::
-# 1282 "data/maps/BigIslandN/scripts.pory"
+# 1285 "data/maps/BigIslandN/scripts.pory"
 	.string "OPEN SAYS ME!$"
 
 BigIslandN_Text_OpenColchisCave3::
-# 1286 "data/maps/BigIslandN/scripts.pory"
+# 1289 "data/maps/BigIslandN/scripts.pory"
 	.string "That didn't work, but what else could we\n"
 	.string "try...$"
 
 BigIslandN_Text_Ostracon::
-# 1301 "data/maps/BigIslandN/scripts.pory"
+# 1304 "data/maps/BigIslandN/scripts.pory"
 	.string "What's that? Philoctetes enchanted by\n"
 	.string "an evil witch?\l"
 	.string "And a volcanic bird!\l"
@@ -2343,45 +2343,45 @@ BigIslandN_Text_Ostracon::
 	.string "work on opening this cave.$"
 
 BigIslandN_Text_ReleaseSpearow::
-# 1305 "data/maps/BigIslandN/scripts.pory"
+# 1308 "data/maps/BigIslandN/scripts.pory"
 	.string "Will you release SPEAROW?$"
 
 BigIslandN_Text_DeclineReleaseSpearow::
-# 1309 "data/maps/BigIslandN/scripts.pory"
+# 1312 "data/maps/BigIslandN/scripts.pory"
 	.string "Best not to release SPEAROW here and\n"
 	.string "now.$"
 
 BigIslandN_Text_OpenColchisCave4::
-# 1313 "data/maps/BigIslandN/scripts.pory"
+# 1316 "data/maps/BigIslandN/scripts.pory"
 	.string "My goodness lad! What kind of magic is\n"
 	.string "this where SPEAROW flies and cave doors\l"
 	.string "open? Let's not waste any time. Now\l"
 	.string "follow me!$"
 
 BigIslandN_Text_ReleasedSpearow::
-# 1317 "data/maps/BigIslandN/scripts.pory"
+# 1320 "data/maps/BigIslandN/scripts.pory"
 	.string "{STR_VAR_1} was released!\p"
 	.string "Bye Bye {STR_VAR_1}!$"
 
 BigIslandN_Text_Argo::
-# 1321 "data/maps/BigIslandN/scripts.pory"
+# 1324 "data/maps/BigIslandN/scripts.pory"
 	.string "The mighty ship of Jason:\n"
 	.string "THE ARGO$"
 
 BigIslandN_Text_Orpheus0::
-# 1325 "data/maps/BigIslandN/scripts.pory"
+# 1328 "data/maps/BigIslandN/scripts.pory"
 	.string "ARGO VAR STATE is 0 you should never\n"
 	.string "read this. Please report bugs to\l"
 	.string "CornixSenex$"
 
 BigIslandN_Text_Orpheus1::
-# 1329 "data/maps/BigIslandN/scripts.pory"
+# 1332 "data/maps/BigIslandN/scripts.pory"
 	.string "ARGO VAR STATE is 1 you should never\n"
 	.string "read this. Please report bugs to\l"
 	.string "CornixSenex$"
 
 BigIslandN_Text_Orpheus2::
-# 1333 "data/maps/BigIslandN/scripts.pory"
+# 1336 "data/maps/BigIslandN/scripts.pory"
 	.string "On distant shores, where sea and sorrow\n"
 	.string "meet, I stand, a wanderer, with heart\l"
 	.string "forlorn and beat. My quest, lost to the\l"
@@ -2389,7 +2389,7 @@ BigIslandN_Text_Orpheus2::
 	.string "my hopes, forever on the shore.$"
 
 BigIslandN_Text_Orpheus3::
-# 1337 "data/maps/BigIslandN/scripts.pory"
+# 1340 "data/maps/BigIslandN/scripts.pory"
 	.string "The sun dips low, in fiery splendor set,\n"
 	.string "amidst the waves, that gently lap and\l"
 	.string "fret. The salty scent, of ocean's\l"
@@ -2397,7 +2397,7 @@ BigIslandN_Text_Orpheus3::
 	.string "my soul finds rest.$"
 
 BigIslandN_Text_Orpheus4::
-# 1341 "data/maps/BigIslandN/scripts.pory"
+# 1344 "data/maps/BigIslandN/scripts.pory"
 	.string "The cries of gulls, that wheel and soar\n"
 	.string "above, echo my sighs, and share my\l"
 	.string "endless love, for thee, O Ocean, vast\l"
@@ -2405,7 +2405,7 @@ BigIslandN_Text_Orpheus4::
 	.string "in thy dark secrecy.$"
 
 BigIslandN_Text_Orpheus5::
-# 1345 "data/maps/BigIslandN/scripts.pory"
+# 1348 "data/maps/BigIslandN/scripts.pory"
 	.string "The breeze, that whispers secrets in my\n"
 	.string "ear, of distant lands, and memories so\l"
 	.string "dear, stirs up the depths, of sorrow and\l"
@@ -2413,7 +2413,7 @@ BigIslandN_Text_Orpheus5::
 	.string "left to stare.$"
 
 BigIslandN_Text_Orpheus6::
-# 1349 "data/maps/BigIslandN/scripts.pory"
+# 1352 "data/maps/BigIslandN/scripts.pory"
 	.string "The tide, that ebbs and flows, with\n"
 	.string "soothing sound, lulls me to sleep, on\l"
 	.string "this forsaken ground, yet, in my dreams,\l"
@@ -2421,7 +2421,7 @@ BigIslandN_Text_Orpheus6::
 	.string "find, my heart still bereft.$"
 
 BigIslandN_Text_Orpheus7::
-# 1353 "data/maps/BigIslandN/scripts.pory"
+# 1356 "data/maps/BigIslandN/scripts.pory"
 	.string "O, cruel fate, that brought me to this\n"
 	.string "place! A poet, lost, without a friendly\l"
 	.string "face. My lyre, silenced, and my voice,\l"
@@ -2429,7 +2429,7 @@ BigIslandN_Text_Orpheus7::
 	.string "my word.$"
 
 BigIslandN_Text_Orpheus8::
-# 1357 "data/maps/BigIslandN/scripts.pory"
+# 1360 "data/maps/BigIslandN/scripts.pory"
 	.string "The ocean's vastness stretches far and\n"
 	.string "wide. A limitless expanse, where I am\l"
 	.string "lost inside. No hope, no rescue, comes\l"
@@ -2437,14 +2437,14 @@ BigIslandN_Text_Orpheus8::
 	.string "eternity.$"
 
 BigIslandN_Text_Dioscuri1::
-# 1361 "data/maps/BigIslandN/scripts.pory"
+# 1364 "data/maps/BigIslandN/scripts.pory"
 	.string "I can't believe we're stuck on guard\n"
 	.string "duty!\l"
 	.string "It's so boring! How long have they been\l"
 	.string "gone?$"
 
 BigIslandN_Text_Dioscuri2::
-# 1365 "data/maps/BigIslandN/scripts.pory"
+# 1368 "data/maps/BigIslandN/scripts.pory"
 	.string "We made friends with a couple islanders\n"
 	.string "who tell us that people have been going\l"
 	.string "missing recently and the rumour is\l"
@@ -2454,26 +2454,26 @@ BigIslandN_Text_Dioscuri2::
 	.string "to us.$"
 
 BigIslandN_Text_Dioscuri3::
-# 1369 "data/maps/BigIslandN/scripts.pory"
+# 1372 "data/maps/BigIslandN/scripts.pory"
 	.string "Hey {PLAYER} don't tell Jason that we\n"
 	.string "snuck off.$"
 
 BigIslandN_Text_Theseus::
-# 1373 "data/maps/BigIslandN/scripts.pory"
+# 1376 "data/maps/BigIslandN/scripts.pory"
 	.string "This island's home to beautiful women!$"
 
 BigIslandN_Text_MedeaExitColchis::
-# 1378 "data/maps/BigIslandN/scripts.pory"
+# 1381 "data/maps/BigIslandN/scripts.pory"
 	.string "Ethay ayway otay Olchiscay isay\n"
 	.string "osedclay oreverfay.$"
 
 BigIslandN_Text_JasonExitColchis::
-# 1382 "data/maps/BigIslandN/scripts.pory"
+# 1385 "data/maps/BigIslandN/scripts.pory"
 	.string "Let us depart this place for our new\n"
 	.string "life.$"
 
 BigIslandN_Text_JasonExeunt1::
-# 1392 "data/maps/BigIslandN/scripts.pory"
+# 1395 "data/maps/BigIslandN/scripts.pory"
 	.string "Attention Argonauts, our quest is done.\n"
 	.string "Shiny Mareep, and victory, is ours!\l"
 	.string "Though grivously we lost great Heracles\l"
@@ -2485,15 +2485,15 @@ BigIslandN_Text_JasonExeunt1::
 	.string "cheers from all for our new companions.$"
 
 BigIslandN_Text_ThreeCheers::
-# 1396 "data/maps/BigIslandN/scripts.pory"
+# 1399 "data/maps/BigIslandN/scripts.pory"
 	.string "Hip hip horray!\p"
 	.string "Hip hip hooray!\p"
 	.string "Hip hip hooray!$"
 
 BigIslandN_Text_JasonExeunt2::
-# 1400 "data/maps/BigIslandN/scripts.pory"
+# 1403 "data/maps/BigIslandN/scripts.pory"
 	.string "Now let us return home, triumphantly.$"
 
 BigIslandN_Text_JasonExeunt3::
-# 1404 "data/maps/BigIslandN/scripts.pory"
+# 1407 "data/maps/BigIslandN/scripts.pory"
 	.string "Visit us sometime soon in Bulbus Town.$"

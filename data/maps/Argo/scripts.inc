@@ -175,25 +175,25 @@ Argo_Text_Jason1::
 	.string "until we reach Colchis. We started out\l"
 	.string "swearing an oath on the docks of Bulbus\l"
 	.string "to never quit until we have retrieved\l"
-	.string "SHINY MAREEP for my wife Medea. We'll\l"
-	.string "find the way forward, or die trying.$"
+	.string "SHINY MAREEP to end the bitter strike.\l"
+	.string "We'll find the way forward, or die trying.$"
 
 Argo_Text_Jason2::
-# 120 "data/maps/Argo/scripts.pory"
-	.string "What's this? You've found an ancient\n"
-	.string "island map showing our position and\l"
-	.string "Colchis too? Most noble friend, will you\l"
-	.string "give me the map and join our quest to\l"
-	.string "find SHINY MAREEP?$"
+# 125 "data/maps/Argo/scripts.pory"
+	.string "What's this? You have possesion of a\n"
+	.string "map showing our location on this wide\l"
+	.string "sea? Most noble friend, will you lend me\l"
+	.string "your map and join our quest to find\l"
+	.string "SHINNY MAREEP?$"
 
 Argo_Text_Jason3::
-# 124 "data/maps/Argo/scripts.pory"
+# 132 "data/maps/Argo/scripts.pory"
 	.string "We'll find our way without you in that\n"
 	.string "case. Return if you decide to join the\l"
 	.string "quest.$"
 
 Argo_Text_BeginAdventure::
-# 128 "data/maps/Argo/scripts.pory"
+# 136 "data/maps/Argo/scripts.pory"
 	.string "Many thanks friend with this map we will\n"
 	.string "reach Colchis and win our prize: SHINY\l"
 	.string "MAREEP. In order to become an Argonaut\l"
@@ -206,6 +206,6 @@ Argo_Text_BeginAdventure::
 	.string "sail at once!$"
 
 Argo_Text_TestSign::
-# 132 "data/maps/Argo/scripts.pory"
+# 140 "data/maps/Argo/scripts.pory"
 	.string "abcdefghijklmnopqrstuvwxyz\n"
 	.string "abcdefghijklmnopqrstuvwxyz$"

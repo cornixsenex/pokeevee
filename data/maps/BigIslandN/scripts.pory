@@ -1211,7 +1211,10 @@ movement BigIslandN_Movement_OrpheusExeunt {
 }
 
 text BigIslandN_Text_ArrivedAtColchis1 {
-	format("We've landed on the north side of the big island we call Ignis. According to this map Colchis is located within a cave on the west side of the island.")
+	format("We've landed on the north side of the big 
+			island we call Ignis. According to 
+			my sources Colchis is located in 
+			a cave on the west side of the island.")
 }
 
 text BigIslandN_Text_ArrivedAtColchis2 {

@@ -114,11 +114,19 @@ text Argo_Text_Philoctetes {
 }
 
 text Argo_Text_Jason1 {
-	format("Though we be lost at sea we travel on until we reach Colchis. We started out swearing an oath on the docks of Bulbus to never quit until we have retrieved SHINY MAREEP for my wife Medea. We'll find the way forward, or die trying.")
+	format("Though we be lost at sea we travel on 
+			until we reach Colchis. We started out 
+			swearing an oath on the docks of Bulbus 
+			to never quit until we have retrieved 
+			SHINY MAREEP to end the bitter strike. 
+			We'll find the way forward, or die trying.")
 }
 
 text Argo_Text_Jason2 {
-	format("What's this? You've found an ancient island map showing our position and Colchis too? Most noble friend, will you give me the map and join our quest to find SHINY MAREEP?")
+	format("What's this? You have possesion of a map
+			showing our location on this wide sea?
+			Most noble friend, will you lend me your map
+			and join our quest to find SHINNY MAREEP?")
 }
 
 text Argo_Text_Jason3 {
