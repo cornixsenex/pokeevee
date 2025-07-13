@@ -1728,6 +1728,7 @@ static void SaveRecordMixBases(struct SecretBaseRecordMixer *mixers)
             mixers[2].version = gLinkPlayers[linkId3].version & 0xFF;   \
             mixers[2].language = gLinkPlayers[linkId3].language;
 
+//NOTE: Cornix re-purposed the relevant flag
 void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
 {
     struct SecretBaseRecordMixer mixers[3];
@@ -1736,7 +1737,8 @@ void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx)
     if (linkIdx > 3)
         return;
 
-    if (FlagGet(FLAG_RECEIVED_SECRET_POWER))
+    //CORNIX NEUTERED TO USE THIS FLAG
+    if (FlagGet(FLAG_TEMP_1C))
     {
         switch (GetLinkPlayerCount())
         {

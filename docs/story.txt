@@ -1016,7 +1016,7 @@ Klytamnestra			:link receptionist
 Iphigeneia				:Beauty
 #Aeneid
 Aeneas					: Gentleman
-Ascianus                : Man4
+Ascanius                : Man4
 Romulus                 : Ninja Boy
 Remus                   : Little Boy
 Achates (Aeneas fren)   : Man1

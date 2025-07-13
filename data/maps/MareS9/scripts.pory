@@ -10,11 +10,18 @@
 mapscripts MareS9_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
+        //Handle Dynamic Map
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS9_F)
+        //Setup Aeneid scene
+        if (var(VAR_AENEID_STATE) == 0) {
+            call (MareS9_Script_SetupAeneid0)
+        }
+
     }
 
 }
 
+//Transition Scripts
 script MareS9_Script_Transition_MareTropicum {
     setvar (VAR_TEMP_5, 3)
 	special (TransitionMapMusic)
@@ -45,16 +52,183 @@ script MareS9_Script_Transition_IslaTropica {
     special (ShowMapNamePopup)
 }
 
-
-
-
-script MareS9_Script_TestSign {
-	lock
-	msgbox (MareS9_Text_TestSign, MSGBOX_SIGN)
-	release
-	end
+//Aeneid Setup Scripts
+script MareS9_Script_SetupAeneid0 {
+    //Pristis
+    setobjectxyperm (LOCALID_MARES9_PRISTIS, 15, 36)
+    setobjectmovementtype (LOCALID_MARES9_PRISTIS, MOVEMENT_TYPE_FACE_DOWN)
+    //Aeneas
+    setobjectxyperm (LOCALID_MARES9_AENEAS, 19, 36)
+    setobjectmovementtype (LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
+    //Achates
+    setobjectxyperm (LOCALID_MARES9_FAUSTULUS, 18, 36)
+    setobjectmovementtype (LOCALID_MARES9_FAUSTULUS, MOVEMENT_TYPE_FACE_DOWN)
+    //Beroe
+    setobjectxyperm (LOCALID_MARES9_BEROE, 16, 36)
+    setobjectmovementtype (LOCALID_MARES9_BEROE, MOVEMENT_TYPE_FACE_DOWN)
+    //Ascanius
+    setobjectxyperm (LOCALID_MARES9_ASCANIUS, 16, 40)
+    setobjectmovementtype (LOCALID_MARES9_ASCANIUS, MOVEMENT_TYPE_LOOK_AROUND)
+    //Romulus
+    setobjectxyperm (LOCALID_MARES9_ROMULUS, 14, 41)
+    setobjectmovementtype (LOCALID_MARES9_ROMULUS, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+    //Remus
+    setobjectxyperm (LOCALID_MARES9_REMUS, 17, 38)
+    setobjectmovementtype (LOCALID_MARES9_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP)
+    
+    return
 }
 
-text MareS9_Text_TestSign {
-	format("abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz")
+//Aeneid Member Scripts
+script MareS9_Script_Aeneas {
+    faceplayer
+    //var0: At the ship ready to depart
+    if (var(VAR_AENEID_STATE) == 0) {
+        if (flag(FLAG_MARES9_AENEAS_INTROD)) {
+            msgbox (MareS9_Text_Aeneas_Help2, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                call (MareS9_Script_DidoScene)
+            } else {
+                msgbox (MareS9_Text_Aeneas_NoHelp)
+                closemessage
+                call (Common_Script_Unfaceplayer)
+            }
+        } else {
+            setflag (FLAG_MARES9_AENEAS_INTROD)
+            msgbox (MareS9_Text_Aeneas_Help1, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == NO) {
+                call (MareS9_Script_DidoScene)
+            } else {
+                msgbox (MareS9_Text_Aeneas_NoHelp)
+                closemessage
+                call (Common_Script_Unfaceplayer)
+            }
+        }
+    }
+    //var 2: at the ship after dido, ready to start funeral games
 }
+
+script MareS9_Script_Ascanius {
+    msgbox (MareS9_Text_Ascanius1)
+    faceplayer
+    msgbox (MareS9_Text_Ascanius2)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS9_Script_Romulus {
+    faceplayer
+    msgbox (MareS9_Text_Romulus)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS9_Script_Remus {
+    faceplayer
+    msgbox (MareS9_Text_Remus)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS9_Script_Faustulus {
+    faceplayer
+    if (var(VAR_AENEID_STATE) == 0) {
+        msgbox (MareS9_Text_Faustulus1)
+    } elif (var(VAR_AENEID_STATE) == 1) {
+        msgbox (MareS9_Text_Faustulus2)
+    } else {
+        msgbox (MareS9_Text_Faustulus3)
+    }
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS9_Script_Beroe {
+    faceplayer
+    if (var(VAR_AENEID_STATE) == 0) {
+        msgbox (MareS9_Text_Beroe1)
+    } elif (var(VAR_AENEID_STATE) == 1) {
+        msgbox (MareS9_Text_Beroe2)
+    } else {
+        msgbox (MareS9_Text_Beroe3)
+    }
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+//Admit lost
+//Reference trials
+//Admit this is land but not the promised land
+//We must persist
+//The boat is broken; need parts and labor
+//Will you help us?
+text MareS9_Text_Aeneas_Help1 {
+    format("My manly pride prevents me from crying
+            but honesty compels me to admit
+            that we are stranded here. Oh, pardon me,
+            my manners must have slipped my mind. My name
+            is Aeneas. I am a man of Troy
+            who set sail long ago to found a new
+            city on the Isla Hesperia.
+            We were five ships, and twenty seven strong,
+            when first we set sail for Lavinian shores
+            but we have had a rough going at sea.
+            A mighty storm broke two of our proud ships,
+            another sank at Scylla Charybdis,
+            a fourth was burned by the sunburned island,
+            and now our final ship, the swift Pristis,
+            has run aground after Palinurus,
+            our late helmsman, threw himself from the deck.
+            My father, and my wife, and my best friend,
+            have all died on this journey I began.
+            Now we have made landfall and some would have
+            us give up our quest for Hesperia
+            and settle here, but I will not give up!
+            It has been prophesised I am to found
+            the city which will come to rule the world.
+            The fortune teller, Princess Cassandra,
+            forsaw my city on Hesperia.
+            If we quit now then all was lost in vain,
+            then my dear father, and my tender wife,
+            and all the rest, were killed, and nothing gained.
+            We must persist, but right now the Pristis
+            is not sea worthy. We must make repairs!
+            Although I neither knowledge nor parts,
+            perhaps we can aquire both in town.
+            Tell me, young friend, will you not win glory
+            and join our quest to found a new city?")
+}
+
+text MareS9_Text_Aeneas_NoHelp {
+    format("I understand. Your path is yours to choose.
+            We'll find some other way to fix Pristis
+            and sail to glory and Hesperia,
+            but if you change your mind, come speak with me.")
+}
+
+
+text MareS9_Text_Aeneas_Help2 {
+    format("Young friend, have you come to help fix Pristis?")
+}
+
+text MareS9_Text_Ascanius1 {
+    format("Romulus! Remus! Stop running around!")
+}
+
+text MareS9_Text_Ascanius2 {
+    format("Even shipwrecked parenting's such a chore.")
+}
+
+text MareS9_Text_Romulus {
+    format("I am the older twin. That mean's I'm first!")
+}
+
+text MareS9_Text_Remus {
+    format("I am the faster twin. That mean's I'm best!")
+}
+

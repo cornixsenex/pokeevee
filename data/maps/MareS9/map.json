@@ -51,21 +51,9 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_MARES9_PRISTIS",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
-      "x": 27,
-      "y": 24,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 27,
+      "x": 26,
       "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
@@ -77,34 +65,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
-      "x": 27,
-      "y": 26,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
-      "x": 27,
-      "y": 27,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 27,
+      "local_id": "LOCALID_MARES9_AENEAS",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 26,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
@@ -112,12 +75,13 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS9_Script_Aeneas",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 27,
+      "local_id": "LOCALID_MARES9_ASCANIUS",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "x": 26,
       "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
@@ -125,26 +89,70 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS9_Script_Ascanius",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "local_id": "LOCALID_MARES9_ROMULUS",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 27,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 4,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS9_Script_Romulus",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES9_REMUS",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": 26,
       "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS9_Script_Remus",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES9_FAUSTULUS",
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 26,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS9_Script_Faustulus",
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES9_BEROE",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 26,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS9_Script_Beroe",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES9_DIDO",
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
       "x": 27,
-      "y": 31,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -401,14 +409,5 @@
       "script": "MareS9_Script_Transition_Tropicana"
     }
   ],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 48,
-      "y": 56,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MareS9_Script_TestSign"
-    }
-  ]
+  "bg_events": []
 }
