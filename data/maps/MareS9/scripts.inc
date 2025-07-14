@@ -246,8 +246,22 @@ MareS9_Script_Beroe_3:
 	goto MareS9_Script_Beroe_1
 
 
+MareS9_Script_DidoScene::
+# 165 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Script_DidoScene_Text_0
+# 166 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 180 "data/maps/MareS9/scripts.pory"
+	release
+	end
+
+
+MareS9_Script_DidoScene_Text_0:
+# 165 "data/maps/MareS9/scripts.pory"
+	.string "TEST WIP$"
+
 MareS9_Text_Aeneas_Help1::
-# 170 "data/maps/MareS9/scripts.pory"
+# 190 "data/maps/MareS9/scripts.pory"
 	.string "My manly pride prevents me from crying\n"
 	.string "but honesty compels me to admit that\l"
 	.string "we are stranded here. Oh, pardon me, my\l"
@@ -286,7 +300,7 @@ MareS9_Text_Aeneas_Help1::
 	.string "our quest to found a new city?$"
 
 MareS9_Text_Aeneas_NoHelp::
-# 207 "data/maps/MareS9/scripts.pory"
+# 227 "data/maps/MareS9/scripts.pory"
 	.string "I understand. Your path is yours to\n"
 	.string "choose. We'll find some other way to fix\l"
 	.string "Pristis and sail to glory and Hesperia,\l"
@@ -294,25 +308,71 @@ MareS9_Text_Aeneas_NoHelp::
 	.string "with me.$"
 
 MareS9_Text_Aeneas_Help2::
-# 215 "data/maps/MareS9/scripts.pory"
+# 235 "data/maps/MareS9/scripts.pory"
 	.string "Young friend, have you come to help fix\n"
 	.string "Pristis?$"
 
 MareS9_Text_Ascanius1::
-# 219 "data/maps/MareS9/scripts.pory"
+# 239 "data/maps/MareS9/scripts.pory"
 	.string "Romulus! Remus! Stop running around!$"
 
 MareS9_Text_Ascanius2::
-# 223 "data/maps/MareS9/scripts.pory"
+# 243 "data/maps/MareS9/scripts.pory"
 	.string "Even shipwrecked parenting's such a\n"
 	.string "chore.$"
 
 MareS9_Text_Romulus::
-# 227 "data/maps/MareS9/scripts.pory"
+# 247 "data/maps/MareS9/scripts.pory"
 	.string "I am the older twin. That mean's I'm\n"
 	.string "first!$"
 
 MareS9_Text_Remus::
-# 231 "data/maps/MareS9/scripts.pory"
+# 251 "data/maps/MareS9/scripts.pory"
 	.string "I am the faster twin. That mean's I'm\n"
 	.string "best!$"
+
+MareS9_Text_Faustulus1::
+# 256 "data/maps/MareS9/scripts.pory"
+	.string "Ka-Aeneas all madays maserve. Island\n"
+	.string "way off kafigure maknow. Big town\l"
+	.string "kafound kadestine taknowya$"
+
+MareS9_Text_Faustulus2::
+# 263 "data/maps/MareS9/scripts.pory"
+	.string "Ka-Aeneas kaaroundna good mafeelna.\n"
+	.string "Soon kareturn mahope.$"
+
+MareS9_Text_Faustulus3::
+# 269 "data/maps/MareS9/scripts.pory"
+	.string "Ka-Aeneas kaback magladya. Kaaround\n"
+	.string "safe mafeelna.$"
+
+MareS9_Text_Beroe1::
+# 276 "data/maps/MareS9/scripts.pory"
+	.string "It seems like all we do is fall from one\n"
+	.string "disaster to another! We have been at\l"
+	.string "sea for months and finally when we land\l"
+	.string "on shores where no one tries to get us\l"
+	.string "killed Aeneas wants to leave ASAP! We're\l"
+	.string "better off staying here, where it's\l"
+	.string "safe, than casting off again to search\l"
+	.string "in vain for some island. I'm not sure it\l"
+	.string "exists!$"
+
+MareS9_Text_Beroe2::
+# 289 "data/maps/MareS9/scripts.pory"
+	.string "Oh great, Aeneas has gone off again and\n"
+	.string "sent these savages to fix Pristis. I\l"
+	.string "doubt they know how to tie their own\l"
+	.string "shoes let alone repair ships. This thing\l"
+	.string "will sink the minute we set sail! You\l"
+	.string "mark my words.$"
+
+MareS9_Text_Beroe3::
+# 298 "data/maps/MareS9/scripts.pory"
+	.string "Fantastic, now Aeneas thinks the boat\n"
+	.string "is seaworthy again and cannot wait to\l"
+	.string "sail from this beachhead into some new\l"
+	.string "unkown danger. I swear that's all he\l"
+	.string "does! He takes a bad picture and makes\l"
+	.string "it worse!$"

@@ -161,6 +161,26 @@ script MareS9_Script_Beroe {
     end
 }
 
+script MareS9_Script_DidoScene {
+	msgbox("TEST WIP")
+	closemessage
+	//A: Lets go
+	//Move into start position based on player location
+	//Go to scene position
+	//face eachother
+	//A:Wow big city how should we find the parts and help we need lets split up 
+	//INTERRUPT - Make way for the queen
+	//Enter dido et train
+	//She encounters Aeneas
+	//D: Wow who's this lovely why are you here
+	//A: Pardon our intrusion, backstory, boat broken, need help
+	//D: I'm moved. We will repair your boat please come with me and tell me of your adventures
+	//exeunt
+	//set vars
+	release
+	end
+}
+
 //Admit lost
 //Reference trials
 //Admit this is land but not the promised land
@@ -230,5 +250,56 @@ text MareS9_Text_Romulus {
 
 text MareS9_Text_Remus {
     format("I am the faster twin. That mean's I'm best!")
+}
+
+//I've served Master Aeneas all my life. I know he'll figure out a way to get us off this island. He's destined to found a mighty city you know.
+text MareS9_Text_Faustulus1 {
+	format("Ka-Aeneas all madays maserve.
+			Island way off kafigure maknow.
+			Big town kafound kadestine taknowya")
+}
+
+//I never feel good without aeneas around. I hope he returns soon.
+text MareS9_Text_Faustulus2 {
+	format("Ka-Aeneas kaaroundna good mafeelna.
+			Soon kareturn mahope.")
+}
+
+//I'm glad Aeneas is back. I feel safer around him.
+text MareS9_Text_Faustulus3 {
+	format("Ka-Aeneas kaback magladya. Kaaround safe mafeelna.")
+}
+
+//One disaster after another
+//Been at sea for months
+//I think we'd be better off staying here than trying our luck out there again.
+text MareS9_Text_Beroe1 {
+	format("It seems like all we do is fall from one
+			disaster to another! We have been
+			at sea for months and finally when we land
+			on shores where no one tries to get us killed
+			Aeneas wants to leave ASAP!
+			We're better off staying here, where it's safe,
+			than casting off again to search in vain
+			for some island. I'm not sure it exists!")
+}
+
+//Great now Aeneas is gone
+//Pretty soon it'll be just me and that 
+text MareS9_Text_Beroe2 {
+	format("Oh great, Aeneas has gone off again
+			and sent these savages to fix Pristis.
+			I doubt they know how to tie their own shoes
+			let alone repair ships. This thing will sink
+			the minute we set sail! You mark my words.")
+}
+
+//Fantastic, now that the boat is fixed Aeneas will take us from this desolate beachhead into some new and unknown danger. That's all he's good for taking a bad situation and making it worse.
+text MareS9_Text_Beroe3 {
+	format("Fantastic, now Aeneas thinks the boat
+			is seaworthy again and cannot wait
+			to sail from this beachhead into some new
+			unkown danger. I swear that's all he does!
+			He takes a bad picture and makes it worse!")
 }
 
