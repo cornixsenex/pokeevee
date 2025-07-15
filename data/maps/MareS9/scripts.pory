@@ -96,7 +96,7 @@ script MareS9_Script_Aeneas {
         } else {
             setflag (FLAG_MARES9_AENEAS_INTROD)
             msgbox (MareS9_Text_Aeneas_Help1, MSGBOX_YESNO)
-            if (var(VAR_RESULT) == NO) {
+            if (var(VAR_RESULT) == YES) {
                 call (MareS9_Script_DidoScene)
             } else {
                 msgbox (MareS9_Text_Aeneas_NoHelp)
@@ -162,10 +162,50 @@ script MareS9_Script_Beroe {
 }
 
 script MareS9_Script_DidoScene {
-	msgbox("TEST WIP")
-	closemessage
 	//A: Lets go
+	msgbox(MareS9_Script_Aeneas_DidoSceneStart)
+	closemessage
 	//Move into start position based on player location
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+			waitmovement (0)
+		case DIR_SOUTH:
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkDown)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+			waitmovement (0)
+		case DIR_WEST:
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement (0)
+		case DIR_EAST:
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkDown)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+			waitmovement (0)
+			applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight2)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight2)
+			waitmovement (0)
+		default:
+			msgbox("ERROR: GetPlayer\nFacingDirection OOB")
+			closemessage
+			end
+	}
 	//Go to scene position
 	//face eachother
 	//A:Wow big city how should we find the parts and help we need lets split up 
@@ -234,6 +274,11 @@ text MareS9_Text_Aeneas_NoHelp {
 
 text MareS9_Text_Aeneas_Help2 {
     format("Young friend, have you come to help fix Pristis?")
+}
+
+text MareS9_Script_Aeneas_DidoSceneStart {
+	format("Then let's head into town and try to find
+			the parts and labor we need to set sail.")
 }
 
 text MareS9_Text_Ascanius1 {
