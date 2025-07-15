@@ -166,8 +166,12 @@
 #define TRAINER_PIC_BIG_YELLOW            147
 #define TRAINER_PIC_BIG_GREEN             148
 #define TRAINER_PIC_BIG_RED               149
+#define TRAINER_PIC_KANDO                 150
+#define TRAINER_PIC_ROOD                  151
+#define TRAINER_PIC_CYNTHIA               152
+#define TRAINER_PIC_LENORA                153
 
-#define TRAINER_PIC_COUNT                 150
+#define TRAINER_PIC_COUNT                 154
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

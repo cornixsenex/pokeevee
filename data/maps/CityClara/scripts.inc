@@ -1368,177 +1368,183 @@ CityClara_Script_IncrementGardenVar_11:
 	goto CityClara_Script_IncrementGardenVar_1
 
 
+CityClara_TestScript_TestBattle::
 # 856 "data/maps/CityClara/scripts.pory"
+	trainerbattle_no_intro TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost
+	end
+
+
+# 860 "data/maps/CityClara/scripts.pory"
 CityClara_Movement_RocketBlock1A:
-# 857 "data/maps/CityClara/scripts.pory"
+# 861 "data/maps/CityClara/scripts.pory"
 	walk_down
-# 858 "data/maps/CityClara/scripts.pory"
+# 862 "data/maps/CityClara/scripts.pory"
 	face_right
 	step_end
 
-# 861 "data/maps/CityClara/scripts.pory"
+# 865 "data/maps/CityClara/scripts.pory"
 CityClara_Movement_RocketBlock2A:
-# 862 "data/maps/CityClara/scripts.pory"
-	walk_down
-# 863 "data/maps/CityClara/scripts.pory"
-	walk_left
-	step_end
-
 # 866 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_PlayerFaceLeft:
+	walk_down
 # 867 "data/maps/CityClara/scripts.pory"
-	face_left
+	walk_left
 	step_end
 
 # 870 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_PlayerFaceRight:
+CityClara_Movement_PlayerFaceLeft:
 # 871 "data/maps/CityClara/scripts.pory"
-	face_right
+	face_left
 	step_end
 
 # 874 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn1A:
+CityClara_Movement_PlayerFaceRight:
 # 875 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 876 "data/maps/CityClara/scripts.pory"
-	face_down
-	step_end
-
-# 879 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn2A:
-# 880 "data/maps/CityClara/scripts.pory"
-	walk_right
-# 881 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 882 "data/maps/CityClara/scripts.pory"
-	face_down
-	step_end
-
-# 885 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_PlayerReturn:
-# 886 "data/maps/CityClara/scripts.pory"
-	walk_down
-# 886 "data/maps/CityClara/scripts.pory"
-	walk_down
-	step_end
-
-# 889 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketBlock1B:
-# 890 "data/maps/CityClara/scripts.pory"
-	walk_down
-# 891 "data/maps/CityClara/scripts.pory"
-	walk_right
-	step_end
-
-# 894 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketBlock2B:
-# 895 "data/maps/CityClara/scripts.pory"
-	walk_down
-# 896 "data/maps/CityClara/scripts.pory"
-	face_left
-	step_end
-
-# 899 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn1B:
-# 900 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 901 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 902 "data/maps/CityClara/scripts.pory"
-	face_down
-	step_end
-
-# 905 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_RocketReturn2B:
-# 906 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 907 "data/maps/CityClara/scripts.pory"
-	face_down
-	step_end
-
-# 910 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_LeafEtScottScene_Player:
-# 911 "data/maps/CityClara/scripts.pory"
-	walk_right
-# 911 "data/maps/CityClara/scripts.pory"
-	walk_right
-# 911 "data/maps/CityClara/scripts.pory"
-	walk_right
-# 912 "data/maps/CityClara/scripts.pory"
-	walk_up
-	step_end
-
-# 915 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_LeafEtScottScene_ScottExit:
-# 916 "data/maps/CityClara/scripts.pory"
-	walk_down
-# 916 "data/maps/CityClara/scripts.pory"
-	walk_down
-# 916 "data/maps/CityClara/scripts.pory"
-	walk_down
-# 917 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 917 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 917 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 917 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 917 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 917 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 917 "data/maps/CityClara/scripts.pory"
-	walk_left
-	step_end
-
-# 920 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_LeafEtScottScene_LeafExit:
-# 921 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 921 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 921 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 921 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 921 "data/maps/CityClara/scripts.pory"
-	walk_up
-	step_end
-
-# 924 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_PlayerBeginGarden1:
-# 925 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 925 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 926 "data/maps/CityClara/scripts.pory"
-	face_left
-	step_end
-
-# 929 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_GardenerBeginGarden1:
-# 930 "data/maps/CityClara/scripts.pory"
-	walk_up
-# 931 "data/maps/CityClara/scripts.pory"
-	walk_left
-# 932 "data/maps/CityClara/scripts.pory"
 	face_right
 	step_end
 
-# 935 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_PlayerBeginGarden2:
-# 936 "data/maps/CityClara/scripts.pory"
+# 878 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketReturn1A:
+# 879 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 880 "data/maps/CityClara/scripts.pory"
+	face_down
+	step_end
+
+# 883 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketReturn2A:
+# 884 "data/maps/CityClara/scripts.pory"
 	walk_right
-# 937 "data/maps/CityClara/scripts.pory"
+# 885 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 886 "data/maps/CityClara/scripts.pory"
+	face_down
+	step_end
+
+# 889 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_PlayerReturn:
+# 890 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 890 "data/maps/CityClara/scripts.pory"
+	walk_down
+	step_end
+
+# 893 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketBlock1B:
+# 894 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 895 "data/maps/CityClara/scripts.pory"
+	walk_right
+	step_end
+
+# 898 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketBlock2B:
+# 899 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 900 "data/maps/CityClara/scripts.pory"
 	face_left
 	step_end
 
-# 940 "data/maps/CityClara/scripts.pory"
-CityClara_Movement_GardenerFinishGarden:
-# 941 "data/maps/CityClara/scripts.pory"
+# 903 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketReturn1B:
+# 904 "data/maps/CityClara/scripts.pory"
 	walk_left
-# 942 "data/maps/CityClara/scripts.pory"
+# 905 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 906 "data/maps/CityClara/scripts.pory"
+	face_down
+	step_end
+
+# 909 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_RocketReturn2B:
+# 910 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 911 "data/maps/CityClara/scripts.pory"
+	face_down
+	step_end
+
+# 914 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_LeafEtScottScene_Player:
+# 915 "data/maps/CityClara/scripts.pory"
+	walk_right
+# 915 "data/maps/CityClara/scripts.pory"
+	walk_right
+# 915 "data/maps/CityClara/scripts.pory"
+	walk_right
+# 916 "data/maps/CityClara/scripts.pory"
+	walk_up
+	step_end
+
+# 919 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_LeafEtScottScene_ScottExit:
+# 920 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 920 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 920 "data/maps/CityClara/scripts.pory"
+	walk_down
+# 921 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 921 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 921 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 921 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 921 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 921 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 921 "data/maps/CityClara/scripts.pory"
+	walk_left
+	step_end
+
+# 924 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_LeafEtScottScene_LeafExit:
+# 925 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 925 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 925 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 925 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 925 "data/maps/CityClara/scripts.pory"
+	walk_up
+	step_end
+
+# 928 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_PlayerBeginGarden1:
+# 929 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 929 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 930 "data/maps/CityClara/scripts.pory"
+	face_left
+	step_end
+
+# 933 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_GardenerBeginGarden1:
+# 934 "data/maps/CityClara/scripts.pory"
+	walk_up
+# 935 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 936 "data/maps/CityClara/scripts.pory"
+	face_right
+	step_end
+
+# 939 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_PlayerBeginGarden2:
+# 940 "data/maps/CityClara/scripts.pory"
+	walk_right
+# 941 "data/maps/CityClara/scripts.pory"
+	face_left
+	step_end
+
+# 944 "data/maps/CityClara/scripts.pory"
+CityClara_Movement_GardenerFinishGarden:
+# 945 "data/maps/CityClara/scripts.pory"
+	walk_left
+# 946 "data/maps/CityClara/scripts.pory"
 	face_up
 	step_end
 
@@ -1555,93 +1561,93 @@ CityClara_Script_IncrementGardenVar_Text_0:
 	.string "VAR_TEMP_9 OOB$"
 
 CityClara_Text_ClubSign::
-# 945 "data/maps/CityClara/scripts.pory"
+# 949 "data/maps/CityClara/scripts.pory"
 	.string "The Chronic\n"
 	.string "Premium Cannabis Club$"
 
 CityClara_Text_TownSign::
-# 949 "data/maps/CityClara/scripts.pory"
+# 953 "data/maps/CityClara/scripts.pory"
 	.string "City Saeclara built upon the lake$"
 
 CityClara_Text_CannaWoman::
-# 953 "data/maps/CityClara/scripts.pory"
+# 957 "data/maps/CityClara/scripts.pory"
 	.string "You see this building here? The Chronic\n"
 	.string "Club? They got me so high I can barely\l"
 	.string "walk!$"
 
 CityClara_Text_LeafBridge::
-# 957 "data/maps/CityClara/scripts.pory"
+# 961 "data/maps/CityClara/scripts.pory"
 	.string "This line is so long and it's not moving!\n"
 	.string "We need to find a way inside, and fast.$"
 
 CityClara_Text_GreenSuit::
-# 961 "data/maps/CityClara/scripts.pory"
+# 965 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_GreenSuit2::
-# 965 "data/maps/CityClara/scripts.pory"
+# 969 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_FatMan::
-# 969 "data/maps/CityClara/scripts.pory"
+# 973 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_FatMan2::
-# 973 "data/maps/CityClara/scripts.pory"
+# 977 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_WomanA::
-# 977 "data/maps/CityClara/scripts.pory"
+# 981 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_WomanA2::
-# 981 "data/maps/CityClara/scripts.pory"
+# 985 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_RedWoman::
-# 985 "data/maps/CityClara/scripts.pory"
+# 989 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_RedWoman2::
-# 989 "data/maps/CityClara/scripts.pory"
+# 993 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_OldMan::
-# 993 "data/maps/CityClara/scripts.pory"
+# 997 "data/maps/CityClara/scripts.pory"
 	.string "I'm first in line because I payed for it.$"
 
 CityClara_Text_OldMan2::
-# 997 "data/maps/CityClara/scripts.pory"
+# 1001 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_OldWoman::
-# 1001 "data/maps/CityClara/scripts.pory"
+# 1005 "data/maps/CityClara/scripts.pory"
 	.string "Is Mew really here? Am I really here?\n"
 	.string "This life feels like reflections on\l"
 	.string "water...$"
 
 CityClara_Text_OldWoman2::
-# 1005 "data/maps/CityClara/scripts.pory"
+# 1009 "data/maps/CityClara/scripts.pory"
 	.string "Am I still here, or am I an echo?$"
 
 CityClara_Text_Lass::
-# 1009 "data/maps/CityClara/scripts.pory"
+# 1013 "data/maps/CityClara/scripts.pory"
 	.string "I want to go play in the garden but the\n"
 	.string "gardener says it's dangerous now.$"
 
 CityClara_Text_Lass2::
-# 1013 "data/maps/CityClara/scripts.pory"
+# 1017 "data/maps/CityClara/scripts.pory"
 	.string "I trust the Party to take care of Mew.$"
 
 CityClara_Text_Senex1::
-# 1017 "data/maps/CityClara/scripts.pory"
+# 1021 "data/maps/CityClara/scripts.pory"
 	.string "My boy come here, or no, are you a girl?\n"
 	.string "Forgive me for my eyes are old as I have\l"
 	.string "grown. Tell me would you ask me to speak\l"
 	.string "and tell to you the tale of this city?$"
 
 CityClara_Text_Senex2::
-# 1021 "data/maps/CityClara/scripts.pory"
+# 1025 "data/maps/CityClara/scripts.pory"
 	.string "This place is ancient, older than I am.\n"
 	.string "They say that people first lived on the\l"
 	.string "lake thousands of years ago. Escpaing\l"
@@ -1656,22 +1662,22 @@ CityClara_Text_Senex2::
 	.string "that Mew is here?$"
 
 CityClara_Text_Senex3::
-# 1025 "data/maps/CityClara/scripts.pory"
+# 1029 "data/maps/CityClara/scripts.pory"
 	.string "No one has time for history these\n"
 	.string "days...$"
 
 CityClara_Text_RocketBlock1::
-# 1029 "data/maps/CityClara/scripts.pory"
+# 1033 "data/maps/CityClara/scripts.pory"
 	.string "Hey You!$"
 
 CityClara_Text_RocketBlock2::
-# 1033 "data/maps/CityClara/scripts.pory"
+# 1037 "data/maps/CityClara/scripts.pory"
 	.string "Stop right there! Take not one more\n"
 	.string "stop. This road is closed, we shall let\l"
 	.string "no one pass.$"
 
 CityClara_Text_RocketBlock3::
-# 1037 "data/maps/CityClara/scripts.pory"
+# 1041 "data/maps/CityClara/scripts.pory"
 	.string "By order of the Rocket High Command\n"
 	.string "only party business will be allowed\l"
 	.string "until our mission has been completed.\l"
@@ -1679,14 +1685,14 @@ CityClara_Text_RocketBlock3::
 	.string "trouble$"
 
 CityClara_Text_Rocket1::
-# 1041 "data/maps/CityClara/scripts.pory"
+# 1045 "data/maps/CityClara/scripts.pory"
 	.string "The Rocket Party helped me buy a home!\n"
 	.string "Standing watch on the road's the very\l"
 	.string "least I can do to pay back our dear\l"
 	.string "leader.$"
 
 CityClara_Text_Rocket2::
-# 1045 "data/maps/CityClara/scripts.pory"
+# 1049 "data/maps/CityClara/scripts.pory"
 	.string "The party only wants the very best\n"
 	.string "people to represent their interests.\l"
 	.string "Perhaps with time, and practice, and\l"
@@ -1695,7 +1701,7 @@ CityClara_Text_Rocket2::
 	.string "here for you.$"
 
 CityClara_Text_Jessie::
-# 1049 "data/maps/CityClara/scripts.pory"
+# 1053 "data/maps/CityClara/scripts.pory"
 	.string "This church is being occupied by the\n"
 	.string "Rocket Party and we're watching the\l"
 	.string "door. You'll have to get in line and wait\l"
@@ -1703,7 +1709,7 @@ CityClara_Text_Jessie::
 	.string "step inside.$"
 
 CityClara_Text_James::
-# 1053 "data/maps/CityClara/scripts.pory"
+# 1057 "data/maps/CityClara/scripts.pory"
 	.string "This town is so antique it's comical.\n"
 	.string "Look at all these people waiting in line\l"
 	.string "just for a glimpse of some old pokemon.\l"
@@ -1711,14 +1717,14 @@ CityClara_Text_James::
 	.string "party people are superior.$"
 
 CityClara_Text_Leaf1::
-# 1057 "data/maps/CityClara/scripts.pory"
+# 1061 "data/maps/CityClara/scripts.pory"
 	.string "Looks like we weren't the only ones who\n"
 	.string "came to Castalia to catch a glimpse of\l"
 	.string "Mew. The line to enter church is super\l"
 	.string "long!$"
 
 CityClara_Text_Scott1::
-# 1061 "data/maps/CityClara/scripts.pory"
+# 1065 "data/maps/CityClara/scripts.pory"
 	.string "It's not moving either. Those\n"
 	.string "government stooges have it blocked up!\l"
 	.string "If you ask me it's no use waiting in that\l"
@@ -1729,7 +1735,7 @@ CityClara_Text_Scott1::
 	.string "Lotus and let time pass.$"
 
 CityClara_Text_Leaf2::
-# 1065 "data/maps/CityClara/scripts.pory"
+# 1069 "data/maps/CityClara/scripts.pory"
 	.string "There's no way after traveling out here\n"
 	.string "that we're going to go sit in a club\l"
 	.string "while Mew herself awaits us in that\l"
@@ -1738,40 +1744,40 @@ CityClara_Text_Leaf2::
 	.string "ASAP!$"
 
 CityClara_Text_Woman3_1::
-# 1069 "data/maps/CityClara/scripts.pory"
+# 1073 "data/maps/CityClara/scripts.pory"
 	.string "The line is long, but the wait is worth\n"
 	.string "it.$"
 
 CityClara_Text_Woman3_2::
-# 1073 "data/maps/CityClara/scripts.pory"
+# 1077 "data/maps/CityClara/scripts.pory"
 	.string "I can't believe how fast time's flying\n"
 	.string "by! I still feel like that same little\l"
 	.string "school girl...$"
 
 CityClara_Text_Gardener_BeforeGardenIntro::
-# 1077 "data/maps/CityClara/scripts.pory"
+# 1081 "data/maps/CityClara/scripts.pory"
 	.string "Oh no! My garden has been overrun by\n"
 	.string "pests and weeds! I don't know what to\l"
 	.string "do!$"
 
 CityClara_Text_Gardener_BeforeGardenBeginYN::
-# 1081 "data/maps/CityClara/scripts.pory"
+# 1085 "data/maps/CityClara/scripts.pory"
 	.string "Oh hey! You're a young, fit, capable boy.\n"
 	.string "Will you help me clean up the garden?\l"
 	.string "Please?$"
 
 CityClara_Text_Gardener_BeforeGardenDecline::
-# 1085 "data/maps/CityClara/scripts.pory"
+# 1089 "data/maps/CityClara/scripts.pory"
 	.string "I understand. It's not your job. Take\n"
 	.string "care.$"
 
 CityClara_Text_Gardener_BeforeGardenBegin::
-# 1089 "data/maps/CityClara/scripts.pory"
+# 1093 "data/maps/CityClara/scripts.pory"
 	.string "Thank you so much! Let me show you\n"
 	.string "inside.$"
 
 CityClara_Text_Gardener_BeginGarden1::
-# 1093 "data/maps/CityClara/scripts.pory"
+# 1097 "data/maps/CityClara/scripts.pory"
 	.string "Welcome to the Castalia Garden! In\n"
 	.string "better times we grow beautiful things\l"
 	.string "but now the garden looks like such a\l"
@@ -1780,33 +1786,33 @@ CityClara_Text_Gardener_BeginGarden1::
 	.string "cut down the small trees.$"
 
 CityClara_Text_Gardener_BeginGarden2::
-# 1097 "data/maps/CityClara/scripts.pory"
+# 1101 "data/maps/CityClara/scripts.pory"
 	.string "Now get to work! Good luck! You can do\n"
 	.string "it!$"
 
 CityClara_Text_Gardener_DuringGarden::
-# 1101 "data/maps/CityClara/scripts.pory"
+# 1105 "data/maps/CityClara/scripts.pory"
 	.string "You're not done yet. The garden's still a\n"
 	.string "mess!$"
 
 CityClara_Text_Gardener_AfterGarden::
-# 1105 "data/maps/CityClara/scripts.pory"
+# 1109 "data/maps/CityClara/scripts.pory"
 	.string "Thank you again for cleaining the\n"
 	.string "garden.$"
 
 CityClara_Text_Gardener_FinishGarden1::
-# 1109 "data/maps/CityClara/scripts.pory"
+# 1113 "data/maps/CityClara/scripts.pory"
 	.string "You did it! You cut down every weed and\n"
 	.string "fully resolved the infestation! As\l"
 	.string "thanks I want you to keep that Sharp\l"
 	.string "Scythe.$"
 
 CityClara_Text_Gardener_FinishGarden2::
-# 1113 "data/maps/CityClara/scripts.pory"
+# 1117 "data/maps/CityClara/scripts.pory"
 	.string "Come back and visit the garden later.$"
 
 CityClara_Text_LeafOnTheRoad::
-# 1117 "data/maps/CityClara/scripts.pory"
+# 1121 "data/maps/CityClara/scripts.pory"
 	.string "The way to Deseret is not direct. The\n"
 	.string "fastest was is north: Fidelium up to\l"
 	.string "Robustica. The road curves around the\l"

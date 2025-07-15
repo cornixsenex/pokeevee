@@ -750,7 +750,7 @@
     {
 		.trainerClass = TRAINER_CLASS_FUCKBOY,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
-		.trainerPic = TRAINER_PIC_BLUE1,
+		.trainerPic = TRAINER_PIC_LENORA,
 		.trainerName = _("{B_RIVAL_NAME}"),
 		.items = {},
 		.battleType = TRAINER_BATTLE_TYPE_SINGLES,

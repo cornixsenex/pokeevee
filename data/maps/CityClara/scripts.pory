@@ -852,6 +852,10 @@ script CityClara_Script_IncrementGardenVar {
 	return
 }	
 
+script CityClara_TestScript_TestBattle {
+	trainerbattle_no_intro(TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost)
+	end
+}
 
 movement CityClara_Movement_RocketBlock1A {
 	walk_down

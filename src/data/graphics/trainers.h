@@ -465,6 +465,17 @@ const u16 gTrainerPalette_BigGreen[] = INCBIN_U16("graphics/trainers/palettes/bi
 const u32 gTrainerFrontPic_BigRed[] = INCBIN_U32("graphics/trainers/front_pics/big_red_front_pic.4bpp.lz");
 const u16 gTrainerPalette_BigRed[] = INCBIN_U16("graphics/trainers/palettes/big_red.gbapal");
 
+const u32 gTrainerFrontPic_Kando[] = INCBIN_U32("graphics/trainers/front_pics/kando.4bpp.lz");
+const u16 gTrainerPalette_Kando[] = INCBIN_U16("graphics/trainers/palettes/kando.gbapal");
+
+const u32 gTrainerFrontPic_Rood[] = INCBIN_U32("graphics/trainers/front_pics/rood.4bpp.lz");
+const u16 gTrainerPalette_Rood[] = INCBIN_U16("graphics/trainers/palettes/rood.gbapal");
+
+const u32 gTrainerFrontPic_Cynthia[] = INCBIN_U32("graphics/trainers/front_pics/cynthia.4bpp.lz");
+const u16 gTrainerPalette_Cynthia[] = INCBIN_U16("graphics/trainers/palettes/cynthia.gbapal");
+
+const u32 gTrainerFrontPic_Lenora[] = INCBIN_U32("graphics/trainers/front_pics/lenora.4bpp.lz");
+const u16 gTrainerPalette_Lenora[] = INCBIN_U16("graphics/trainers/palettes/lenora.gbapal");
 
 
 
@@ -635,6 +646,10 @@ const struct TrainerSprite gTrainerSprites[] =
 	TRAINER_SPRITE(TRAINER_PIC_BIG_YELLOW, gTrainerFrontPic_BigYellow, gTrainerPalette_BigYellow),            
 	TRAINER_SPRITE(TRAINER_PIC_BIG_GREEN, gTrainerFrontPic_BigGreen, gTrainerPalette_BigGreen),             
 	TRAINER_SPRITE(TRAINER_PIC_BIG_RED, gTrainerFrontPic_BigRed, gTrainerPalette_BigRed),     
+	TRAINER_SPRITE(TRAINER_PIC_KANDO, gTrainerFrontPic_Kando, gTrainerPalette_Kando),               
+	TRAINER_SPRITE(TRAINER_PIC_ROOD, gTrainerFrontPic_Rood, gTrainerPalette_Rood),               
+	TRAINER_SPRITE(TRAINER_PIC_CYNTHIA, gTrainerFrontPic_Cynthia, gTrainerPalette_Cynthia),               
+	TRAINER_SPRITE(TRAINER_PIC_LENORA, gTrainerFrontPic_Lenora, gTrainerPalette_Lenora),               
 	//END KUSTOM TRAINER SPRITES
 };
 
