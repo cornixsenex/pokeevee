@@ -298,6 +298,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionEk
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionYoungster;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionYoungster2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CollisionDrifblim;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lenora;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rood;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kando;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -567,6 +571,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_COLLISION_YOUNGSTER] =      &gObjectEventGraphicsInfo_CollisionYoungster,
 	[OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2] =    &gObjectEventGraphicsInfo_CollisionYoungster2,
 	[OBJ_EVENT_GFX_COLLISION_DRIFBLIM] =       &gObjectEventGraphicsInfo_CollisionDrifblim,
+	[OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
+	[OBJ_EVENT_GFX_LENORA] =                   &gObjectEventGraphicsInfo_Lenora,
+	[OBJ_EVENT_GFX_ROOD] =                     &gObjectEventGraphicsInfo_Rood,
+	[OBJ_EVENT_GFX_KANDO] =                    &gObjectEventGraphicsInfo_Kando,
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,
     [OBJ_EVENT_GFX_DEOXYS] =                   &gObjectEventGraphicsInfo_Deoxys,

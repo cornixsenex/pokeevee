@@ -1718,6 +1718,53 @@ static const struct SpriteFrameImage sPicTable_Bruno[] = {
     overworld_frame(gObjectEventPic_Bruno, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Cynthia[] = {
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Lenora[] = {
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Lenora, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Rood[] = {
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Rood, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Kando[] = {
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Kando, 2, 4, 8),
+};
 
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),

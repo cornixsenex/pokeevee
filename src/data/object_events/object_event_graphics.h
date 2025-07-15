@@ -469,6 +469,18 @@ const u16 gObjectEventPal_CollisionEkans[] = INCBIN_U16("graphics/pokemon/ekans/
 const u32 gObjectEventPic_CollisionDrifblim[] = INCBIN_U32("graphics/pokemon/drifblim/overworld.4bpp");
 const u16 gObjectEventPal_CollisionDrifblim[] = INCBIN_U16("graphics/pokemon/drifblim/overworld_normal.gbapal");
 
+const u32 gObjectEventPic_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/cynthia.4bpp");
+const u16 gObjectEventPal_Cynthia[] = INCBIN_U16("graphics/object_events/palettes/cynthia.gbapal");
+
+const u32 gObjectEventPic_Lenora[] = INCBIN_U32("graphics/object_events/pics/people/lenora.4bpp");
+const u16 gObjectEventPal_Lenora[] = INCBIN_U16("graphics/object_events/palettes/lenora.gbapal");
+
+const u32 gObjectEventPic_Rood[] = INCBIN_U32("graphics/object_events/pics/people/rood.4bpp");
+const u16 gObjectEventPal_Rood[] = INCBIN_U16("graphics/object_events/palettes/rood.gbapal");
+
+const u32 gObjectEventPic_Kando[] = INCBIN_U32("graphics/object_events/pics/people/kando.4bpp");
+const u16 gObjectEventPal_Kando[] = INCBIN_U16("graphics/object_events/palettes/kando.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
