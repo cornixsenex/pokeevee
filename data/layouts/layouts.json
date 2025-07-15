@@ -6430,6 +6430,66 @@
       "secondary_tileset": "gTileset_SurfSchool",
       "border_filepath": "data/layouts/Tranquillitas_SurfSchool/border.bin",
       "blockdata_filepath": "data/layouts/Tranquillitas_SurfSchool/map.bin"
+    },
+    {
+      "id": "LAYOUT_TURRIS_SALTUS1F",
+      "name": "TurrisSaltus1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Argo",
+      "border_filepath": "data/layouts/TurrisSaltus1F/border.bin",
+      "blockdata_filepath": "data/layouts/TurrisSaltus1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TURRIS_SALTUS3F",
+      "name": "TurrisSaltus3F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Argo",
+      "border_filepath": "data/layouts/TurrisSaltus3F/border.bin",
+      "blockdata_filepath": "data/layouts/TurrisSaltus3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TURRIS_SALTUS2F",
+      "name": "TurrisSaltus2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Argo",
+      "border_filepath": "data/layouts/TurrisSaltus2F/border.bin",
+      "blockdata_filepath": "data/layouts/TurrisSaltus2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TURRIS_SALTUS5F",
+      "name": "TurrisSaltus5F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Argo",
+      "border_filepath": "data/layouts/TurrisSaltus5F/border.bin",
+      "blockdata_filepath": "data/layouts/TurrisSaltus5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TURRIS_SALTUS4F",
+      "name": "TurrisSaltus4F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Argo",
+      "border_filepath": "data/layouts/TurrisSaltus4F/border.bin",
+      "blockdata_filepath": "data/layouts/TurrisSaltus4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TURRIS_SALTUS6F",
+      "name": "TurrisSaltus6F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Argo",
+      "border_filepath": "data/layouts/TurrisSaltus6F/border.bin",
+      "blockdata_filepath": "data/layouts/TurrisSaltus6F/map.bin"
     }
   ]
 }

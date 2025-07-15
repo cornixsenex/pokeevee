@@ -750,7 +750,13 @@
     "IgnisMons_0F",
     "IgnisMons_2F",
     "IgnisMons_3F",
-    "Colchis"
+    "Colchis",
+    "TurrisSaltus1F",
+    "TurrisSaltus2F",
+    "TurrisSaltus3F",
+    "TurrisSaltus4F",
+    "TurrisSaltus5F",
+    "TurrisSaltus6F"
   ],
   "gMapGroup_IndoorRoute123": [
     "Route123_BerryMastersHouse"

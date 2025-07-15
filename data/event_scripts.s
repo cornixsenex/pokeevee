@@ -1644,3 +1644,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Palmae_FratHouse/scripts.inc"
 
 	.include "data/maps/Tranquillitas_SurfSchool/scripts.inc"
+
+	.include "data/maps/TurrisSaltus1F/scripts.inc"
+
+	.include "data/maps/TurrisSaltus6F/scripts.inc"
+
+	.include "data/maps/TurrisSaltus2F/scripts.inc"
+
+	.include "data/maps/TurrisSaltus5F/scripts.inc"
+
+	.include "data/maps/TurrisSaltus4F/scripts.inc"
+
+	.include "data/maps/TurrisSaltus3F/scripts.inc"

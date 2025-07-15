@@ -722,6 +722,12 @@
 #define MAP_IGNIS_MONS_2F           (3 | (32 << 8))
 #define MAP_IGNIS_MONS_3F           (4 | (32 << 8))
 #define MAP_COLCHIS                 (5 | (32 << 8))
+#define MAP_TURRIS_SALTUS1F         (6 | (32 << 8))
+#define MAP_TURRIS_SALTUS2F         (7 | (32 << 8))
+#define MAP_TURRIS_SALTUS3F         (8 | (32 << 8))
+#define MAP_TURRIS_SALTUS4F         (9 | (32 << 8))
+#define MAP_TURRIS_SALTUS5F         (10 | (32 << 8))
+#define MAP_TURRIS_SALTUS6F         (11 | (32 << 8))
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (33 << 8))
