@@ -60,7 +60,7 @@ script MareS9_Script_SetupAeneid0 {
     //Aeneas
     setobjectxyperm (LOCALID_MARES9_AENEAS, 19, 36)
     setobjectmovementtype (LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
-    //Achates
+    //Faustulus
     setobjectxyperm (LOCALID_MARES9_FAUSTULUS, 18, 36)
     setobjectmovementtype (LOCALID_MARES9_FAUSTULUS, MOVEMENT_TYPE_FACE_DOWN)
     //Beroe
@@ -81,6 +81,33 @@ script MareS9_Script_SetupAeneid0 {
     
     return
 }
+
+script MareS9_Script_ShowTyriansFixingPristis {
+    //Tyrian 1
+    setobjectxyperm (LOCALID_MARES9_TYRIAN1, 15, 37)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    //Tyrian 2
+    setobjectxyperm (LOCALID_MARES9_TYRIAN2, 16, 36)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN2, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    //Faustulus
+    setobjectxyperm (LOCALID_MARES9_FAUSTULUS, 18, 36)
+    setobjectmovementtype (LOCALID_MARES9_FAUSTULUS, MOVEMENT_TYPE_FACE_DOWN)
+    //Beroe
+    setobjectxyperm (LOCALID_MARES9_BEROE, 19, 36)
+    setobjectmovementtype (LOCALID_MARES9_BEROE, MOVEMENT_TYPE_LOOK_AROUND)
+    //Ascanius
+    setobjectxyperm (LOCALID_MARES9_ASCANIUS, 16, 40)
+    setobjectmovementtype (LOCALID_MARES9_ASCANIUS, MOVEMENT_TYPE_LOOK_AROUND)
+    //Romulus
+    setobjectxyperm (LOCALID_MARES9_ROMULUS, 14, 41)
+    setobjectmovementtype (LOCALID_MARES9_ROMULUS, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+    //Remus
+    setobjectxyperm (LOCALID_MARES9_REMUS, 17, 38)
+    setobjectmovementtype (LOCALID_MARES9_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP)
+
+    return
+}
+
 
 //Aeneid Member Scripts
 script MareS9_Script_Aeneas {
@@ -185,6 +212,14 @@ script MareS9_Script_Tyrian1 {
     }
 }
 
+script MareS9_Script_Tyrian2 {
+    faceplayer
+    msgbox (MareS9_Text_TyrianFixer2)
+    closemessage
+    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_FaceLeft)
+    waitmovement (0)
+}
+
 script MareS9_Script_DidoScene {
 	//A: Lets go
 	msgbox(MareS9_Script_Aeneas_DidoSceneStart)
@@ -262,10 +297,10 @@ script MareS9_Script_DidoScene {
     removeobject (LOCALID_MARES9_TYRIAN3)
     removeobject (LOCALID_MARES9_TYRIAN4)
     setobjectxyperm (LOCALID_MARES9_ELISSA, 22, 55)
-    setobjectxyperm (LOCALID_MARES9_TYRIAN1, 21, 54)
-    setobjectxyperm (LOCALID_MARES9_TYRIAN2, 21, 56)
-    setobjectxyperm (LOCALID_MARES9_TYRIAN3, 23, 54)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN3, 21, 56)
     setobjectxyperm (LOCALID_MARES9_TYRIAN4, 23, 56)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN1, 23, 54)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN2, 21, 54)
     setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype (LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype (LOCALID_MARES9_TYRIAN2, MOVEMENT_TYPE_FACE_DOWN)
@@ -296,10 +331,76 @@ script MareS9_Script_DidoScene {
     applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_FaceUp)
     waitmovement (0)
 	//D: Wow who's this lovely why are you here
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (MareS9_Text_Elissa1)
+    destroy_field_pic (FIELD_PIC_ELISSA)
 	//A: Pardon our intrusion, backstory, boat broken, need help
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS9_Text_AeneasToElissa)
+    destroy_field_pic (FIELD_PIC_AENEAS)
 	//D: I'm moved. We will repair your boat please come with me and tell me of your adventures
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (MareS9_Text_Elissa2)
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //You two go fix the ship
+    msgbox (MareS9_Text_Elissa3)
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    closemessage
+    //Exeunt tyrians 1et2
+    applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp2)
+    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp2)
+    waitmovement (0)
+    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_WalkRight4)
+    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight4)
+    waitmovement (0)
+    applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp4)
+    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp4)
+    waitmovement (0)
+    //Show Tyrians fixing ship
+    removeobject (LOCALID_MARES9_TYRIAN1)
+    removeobject (LOCALID_MARES9_TYRIAN2)
+    call (MareS9_Script_ShowTyriansFixingPristis)
+    addobject (LOCALID_MARES9_TYRIAN1)
+    addobject (LOCALID_MARES9_TYRIAN2)
+    //E: Come tell me more in Turris Saltus aeneas flirt
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_FaceUp)
+    waitmovement (0)
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (MareS9_Text_Elissa4)
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS9_Text_Aeneas_GoWithElissa)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (MareS9_Text_Elissa5)
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    closemessage
 	//exeunt
+    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight)
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkRight)
+    applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight)
+    applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkUp3)
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkUp3)
+    applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_WalkUp3)
+    applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_WalkUp3)
+    waitmovement (0)
+    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkRight7)
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkRight7)
+    applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight7)
+    applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight7)
+    waitmovement (0)
+    //remove train etc
+    removeobject (LOCALID_MARES9_AENEAS)
+    removeobject (LOCALID_MARES9_ELISSA)
+    removeobject (LOCALID_MARES9_TYRIAN3)
+    removeobject (LOCALID_MARES9_TYRIAN4)
 	//set vars
+    setvar (VAR_AENEID_STATE, 1)
 	release
 	end
 }
@@ -381,6 +482,78 @@ text MareS9_Script_Aeneas_DidoSceneStart {
 			the parts and labor we need to set sail.")
 }
 
+//shock
+//stranger looks good
+//tell me who you are and why you're here
+text MareS9_Text_Elissa1 {
+    format("What's this? A stranger has come to our land?
+            Someone unkown to us, that much is sure,
+            but how, and why, as well are quickly guessed.
+            Either a merchant, pirate criminal,
+            or else a pilgrim scattered by the waves.
+            Your coat too clean, and brow too nobly held,
+            to be the kind of scum who comes to steal,
+            too aged, too honest, and too insecure,
+            to be part of the guild, so you must be
+            a traveller who, by the winds of fate,
+            was blown off course for us to meet you here.
+            Tell us, pilgrim, does our guess find it's mark?")
+}
+
+text MareS9_Text_AeneasToElissa {
+    format("Indeed, fair queen, I mean not to intrude.
+            My name is Aeneas, and I am lost.
+            Some time ago I was a prince of Troy
+            who set off in search of Hesperia
+            where fate and prophesy have promised me
+            a mighty city is mine too create.
+            A wicked storm, the perils of the sea,
+            and my late helmsman have left me shipwrecked,
+            my fleet destroyed, and my best men drowned.
+            I come before you to bargain, else beg,
+            the parts and labor needed to repair
+            my last surviving boat, now washed ashore
+            by chance on your island. We come in peace.")
+}
+
+text MareS9_Text_Elissa2 {
+    format("And in peace you will have all that you seek.
+            My name is Elissa I am the queen
+            of Turris Saltus and the Tyrians.
+            My handmaidens will swiftly fix your ships
+            and resupply your voyage on the sea.
+            These thing I offer you freely for I
+            desire nothing in return except
+            to see your princely face turn to smile.")
+}
+
+text MareS9_Text_Elissa3 {
+    format("You two, go to his ship. Spare no expense.
+            Set her afloat as strong as newly built.")
+}
+
+text MareS9_Text_Elissa4 {
+    format("Tell me, Aeneas, prince, will you join me
+            atop Turris Saltus? We might enjoy
+            the pleasant things in life. Good food, fine wine,
+            and breathtaking views would accompany
+            our conversation on my queenly couch.
+            For I would have you tell of your journey,
+            which intrests me as much as you, fine prince.")
+}
+
+text MareS9_Text_Aeneas_GoWithElissa {
+    format("Most gracious queen, your offer unrefused,
+            I will go with you, and must bow my head,
+            to give my greatest thanks...")
+}
+
+text MareS9_Text_Elissa5 {
+    format("Smile, don't bow!
+            Now come Aeneas, prince, there's much to say,
+            to see, to do, to feel, just you and I.")
+}
+
 text MareS9_Text_Ascanius1 {
     format("Romulus! Remus! Stop running around!")
 }
@@ -449,8 +622,17 @@ text MareS9_Text_Beroe3 {
 }
 
 text MareS9_Text_TyrianTowerBlock {
-    format("Turis Saltus, home of the Tyrians
+    format("Turris Saltus, home of the Tyrians
             and our most noble queen, fair Elissa,
             is not open to visitors. Goodbye.")
+}
+
+text MareS9_Text_TyrianFixer1 {
+    format("Don't worry, I've fixed ships like this before.")
+}
+
+text MareS9_Text_TyrianFixer2 {
+    format("I don't love fixing boats, but it's my job.
+            When the Queen says 'do this' it is performed.")
 }
 

@@ -136,7 +136,22 @@ Common_Movement_WalkRight2:
 	walk_right
 	step_end
 
+Common_Movement_WalkRight3:
+	walk_right
+	walk_right
+	step_end
+
 Common_Movement_WalkRight4:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Common_Movement_WalkRight7:
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
