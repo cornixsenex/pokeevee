@@ -75,6 +75,9 @@ script MareS9_Script_SetupAeneid0 {
     //Remus
     setobjectxyperm (LOCALID_MARES9_REMUS, 17, 38)
     setobjectmovementtype (LOCALID_MARES9_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP)
+    //Tyrian Tower Block
+    setobjectxyperm (LOCALID_MARES9_TYRIAN1, 34, 32)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_FACE_DOWN)
     
     return
 }
@@ -82,6 +85,7 @@ script MareS9_Script_SetupAeneid0 {
 //Aeneid Member Scripts
 script MareS9_Script_Aeneas {
     faceplayer
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
     //var0: At the ship ready to depart
     if (var(VAR_AENEID_STATE) == 0) {
         if (flag(FLAG_MARES9_AENEAS_INTROD)) {
@@ -90,16 +94,19 @@ script MareS9_Script_Aeneas {
                 call (MareS9_Script_DidoScene)
             } else {
                 msgbox (MareS9_Text_Aeneas_NoHelp)
+                destroy_field_pic (FIELD_PIC_AENEAS)
                 closemessage
                 call (Common_Script_Unfaceplayer)
             }
         } else {
             setflag (FLAG_MARES9_AENEAS_INTROD)
-            msgbox (MareS9_Text_Aeneas_Help1, MSGBOX_YESNO)
+            //msgbox (MareS9_Text_Aeneas_Help1, MSGBOX_YESNO)
+            msgbox ("PLACEHOLDER", MSGBOX_YESNO)
             if (var(VAR_RESULT) == YES) {
                 call (MareS9_Script_DidoScene)
             } else {
                 msgbox (MareS9_Text_Aeneas_NoHelp)
+                destroy_field_pic (FIELD_PIC_AENEAS)
                 closemessage
                 call (Common_Script_Unfaceplayer)
             }
@@ -161,9 +168,27 @@ script MareS9_Script_Beroe {
     end
 }
 
+script MareS9_Script_Tyrian1 {
+    faceplayer
+    //Tyrian Tower Block
+    if (var(VAR_AENEID_STATE) == 0) {
+        msgbox (MareS9_Text_TyrianTowerBlock)
+        closemessage
+        applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_FaceDown)
+        waitmovement (0)
+    //Ship Fix 1
+    } else {
+        msgbox (MareS9_Text_TyrianFixer1)
+        closemessage
+        applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_FaceUp)
+        waitmovement (0)
+    }
+}
+
 script MareS9_Script_DidoScene {
 	//A: Lets go
 	msgbox(MareS9_Script_Aeneas_DidoSceneStart)
+    destroy_field_pic (FIELD_PIC_AENEAS)
 	closemessage
 	//Move into start position based on player location
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
@@ -207,11 +232,69 @@ script MareS9_Script_DidoScene {
 			end
 	}
 	//Go to scene position
+    applymovement (LOCALID_MARES9_AENEAS, MareS9_Movement_BeginDidoScene)
+    applymovement (LOCALID_PLAYER, MareS9_Movement_BeginDidoScene)
+    waitmovement (0)
 	//face eachother
+    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceLeft)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
 	//A:Wow big city how should we find the parts and help we need lets split up 
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS9_Text_Aeneas_EnterTown)
+    destroy_field_pic (FIELD_PIC_AENEAS)
 	//INTERRUPT - Make way for the queen
+    load_field_pic (FIELD_PIC_TYRIAN, 190, 98)
+    msgbox (MareS9_Text_MakeWay)
+    destroy_field_pic (FIELD_PIC_TYRIAN)
+    closemessage
+    //Alert and face player et aeneas
+    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    //Place Tyrian Train
+    removeobject (LOCALID_MARES9_ELISSA)
+    removeobject (LOCALID_MARES9_TYRIAN1)
+    removeobject (LOCALID_MARES9_TYRIAN2)
+    removeobject (LOCALID_MARES9_TYRIAN3)
+    removeobject (LOCALID_MARES9_TYRIAN4)
+    setobjectxyperm (LOCALID_MARES9_ELISSA, 22, 55)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN1, 21, 54)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN2, 21, 56)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN3, 23, 54)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN4, 23, 56)
+    setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN2, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN3, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN4, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (LOCALID_MARES9_ELISSA)
+    addobject (LOCALID_MARES9_TYRIAN1)
+    addobject (LOCALID_MARES9_TYRIAN2)
+    addobject (LOCALID_MARES9_TYRIAN3)
+    addobject (LOCALID_MARES9_TYRIAN4)
 	//Enter dido et train
-	//She encounters Aeneas
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkUp6)
+    applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp6)
+    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp6)
+    applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_WalkUp6)
+    applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_WalkUp6)
+    waitmovement (0)
+    //Dido alert to Aeneas
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Dido approch Aeneas
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkRight4)
+    applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight4)
+    applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight4)
+    waitmovement (0)
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_FaceUp)
+    applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_FaceUp)
+    applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_FaceUp)
+    waitmovement (0)
 	//D: Wow who's this lovely why are you here
 	//A: Pardon our intrusion, backstory, boat broken, need help
 	//D: I'm moved. We will repair your boat please come with me and tell me of your adventures
@@ -219,6 +302,11 @@ script MareS9_Script_DidoScene {
 	//set vars
 	release
 	end
+}
+
+movement MareS9_Movement_BeginDidoScene {
+    walk_right * 5
+    walk_down * 11
 }
 
 //Admit lost
@@ -274,6 +362,18 @@ text MareS9_Text_Aeneas_NoHelp {
 
 text MareS9_Text_Aeneas_Help2 {
     format("Young friend, have you come to help fix Pristis?")
+}
+
+
+//Cut off...
+text MareS9_Text_Aeneas_EnterTown {
+    format("This island is more inhabited than
+            I thought at first. I think we should split up
+            to search for the parts and...")
+}
+
+text MareS9_Text_MakeWay {
+    format("Make way for Queen Tyrii, Elissa!")
 }
 
 text MareS9_Script_Aeneas_DidoSceneStart {
@@ -346,5 +446,11 @@ text MareS9_Text_Beroe3 {
 			to sail from this beachhead into some new
 			unkown danger. I swear that's all he does!
 			He takes a bad picture and makes it worse!")
+}
+
+text MareS9_Text_TyrianTowerBlock {
+    format("Turis Saltus, home of the Tyrians
+            and our most noble queen, fair Elissa,
+            is not open to visitors. Goodbye.")
 }
 
