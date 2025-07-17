@@ -16,6 +16,9 @@ mapscripts MareS9_MapScripts {
         if (var(VAR_AENEID_STATE) == 0) {
             call (MareS9_Script_SetupAeneid0)
         }
+        if (var(VAR_AENEID_STATE) == 1) {
+            call (MareS9_Script_SetupAeneid1)
+        }
 
     }
 
@@ -82,6 +85,16 @@ script MareS9_Script_SetupAeneid0 {
     return
 }
 
+script MareS9_Script_SetupAeneid1 {
+    call (MareS9_Script_ShowTyriansFixingPristis)
+    setobjectxyperm (LOCALID_MARES9_AENEAS, 0, 0)
+    setobjectmovementtype (LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_INVISIBLE)
+
+    return
+}
+
+
+
 script MareS9_Script_ShowTyriansFixingPristis {
     //Tyrian 1
     setobjectxyperm (LOCALID_MARES9_TYRIAN1, 15, 37)
@@ -127,8 +140,7 @@ script MareS9_Script_Aeneas {
             }
         } else {
             setflag (FLAG_MARES9_AENEAS_INTROD)
-            //msgbox (MareS9_Text_Aeneas_Help1, MSGBOX_YESNO)
-            msgbox ("PLACEHOLDER", MSGBOX_YESNO)
+            msgbox (MareS9_Text_Aeneas_Help1, MSGBOX_YESNO)
             if (var(VAR_RESULT) == YES) {
                 call (MareS9_Script_DidoScene)
             } else {
@@ -209,6 +221,7 @@ script MareS9_Script_Tyrian1 {
         closemessage
         applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_FaceUp)
         waitmovement (0)
+        setobjectmovementtype (LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
     }
 }
 
@@ -218,6 +231,7 @@ script MareS9_Script_Tyrian2 {
     closemessage
     applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_FaceLeft)
     waitmovement (0)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN2, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
 }
 
 script MareS9_Script_DidoScene {
@@ -353,8 +367,8 @@ script MareS9_Script_DidoScene {
     waitmovement (0)
     applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight)
     waitmovement (0)
-    applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_WalkRight4)
-    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight4)
+    applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_WalkRight3)
+    applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight3)
     waitmovement (0)
     applymovement (LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp4)
     applymovement (LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp4)
@@ -384,8 +398,8 @@ script MareS9_Script_DidoScene {
     applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight)
     applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight)
     waitmovement (0)
-    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkUp3)
-    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkUp3)
+    applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkUp2)
+    applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkUp2)
     applymovement (LOCALID_MARES9_TYRIAN3, Common_Movement_WalkUp3)
     applymovement (LOCALID_MARES9_TYRIAN4, Common_Movement_WalkUp3)
     waitmovement (0)
@@ -399,6 +413,14 @@ script MareS9_Script_DidoScene {
     removeobject (LOCALID_MARES9_ELISSA)
     removeobject (LOCALID_MARES9_TYRIAN3)
     removeobject (LOCALID_MARES9_TYRIAN4)
+    setobjectxyperm (LOCALID_MARES9_AENEAS, 0, 0)
+    setobjectmovementtype (LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_INVISIBLE)
+    setobjectxyperm (LOCALID_MARES9_ELISSA, 0, 0)
+    setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_INVISIBLE)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN3, 0, 0)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN3, MOVEMENT_TYPE_INVISIBLE)
+    setobjectxyperm (LOCALID_MARES9_TYRIAN4, 0, 0)
+    setobjectmovementtype (LOCALID_MARES9_TYRIAN4, MOVEMENT_TYPE_INVISIBLE)
 	//set vars
     setvar (VAR_AENEID_STATE, 1)
 	release
@@ -425,7 +447,7 @@ text MareS9_Text_Aeneas_Help1 {
             who set sail long ago to found a new
             city on the Isla Hesperia.
             We were five ships, and twenty seven strong,
-            when first we set sail for Lavinian shores
+            when first we set sail for Lavinian shores,
             but we have had a rough going at sea.
             A mighty storm broke two of our proud ships,
             another sank at Scylla Charybdis,
@@ -434,21 +456,21 @@ text MareS9_Text_Aeneas_Help1 {
             has run aground after Palinurus,
             our late helmsman, threw himself from the deck.
             My father, and my wife, and my best friend,
-            have all died on this journey I began.
+            have all died on this journey I command.
             Now we have made landfall and some would have
             us give up our quest for Hesperia
             and settle here, but I will not give up!
-            It has been prophesised I am to found
+            It has been prophesied ! I am to found
             the city which will come to rule the world.
             The fortune teller, Princess Cassandra,
-            forsaw my city on Hesperia.
+            foresaw my city on Hesperia.
             If we quit now then all was lost in vain,
             then my dear father, and my tender wife,
             and all the rest, were killed, and nothing gained.
             We must persist, but right now the Pristis
             is not sea worthy. We must make repairs!
             Although I neither knowledge nor parts,
-            perhaps we can aquire both in town.
+            perhaps we can acquire both in town.
             Tell me, young friend, will you not win glory
             and join our quest to found a new city?")
 }
@@ -487,7 +509,7 @@ text MareS9_Script_Aeneas_DidoSceneStart {
 //tell me who you are and why you're here
 text MareS9_Text_Elissa1 {
     format("What's this? A stranger has come to our land?
-            Someone unkown to us, that much is sure,
+            Someone unknown to us, that much is sure,
             but how, and why, as well are quickly guessed.
             Either a merchant, pirate criminal,
             or else a pilgrim scattered by the waves.
@@ -517,14 +539,14 @@ text MareS9_Text_AeneasToElissa {
 }
 
 text MareS9_Text_Elissa2 {
-    format("And in peace you will have all that you seek.
-            My name is Elissa I am the queen
+    format("And in peace you will find all that you seek!
+            My name is Elissa, I am the queen
             of Turris Saltus and the Tyrians.
-            My handmaidens will swiftly fix your ships
+            My handmaidens will swiftly fix your ship
             and resupply your voyage on the sea.
-            These thing I offer you freely for I
-            desire nothing in return except
-            to see your princely face turn to smile.")
+            These thing I offer you freely, for I
+            desire nothing in return, except
+            to see your princely face brought to smile.")
 }
 
 text MareS9_Text_Elissa3 {
@@ -539,11 +561,11 @@ text MareS9_Text_Elissa4 {
             and breathtaking views would accompany
             our conversation on my queenly couch.
             For I would have you tell of your journey,
-            which intrests me as much as you, fine prince.")
+            which interests me as much as you, fine prince.")
 }
 
 text MareS9_Text_Aeneas_GoWithElissa {
-    format("Most gracious queen, your offer unrefused,
+    format("Most gracious queen, your offer I accept.
             I will go with you, and must bow my head,
             to give my greatest thanks...")
 }

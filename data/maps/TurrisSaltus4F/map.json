@@ -2,7 +2,7 @@
   "id": "MAP_TURRIS_SALTUS4F",
   "name": "TurrisSaltus4F",
   "layout": "LAYOUT_TURRIS_SALTUS4F",
-  "music": "MUS_CANTINA",
+  "music": "MUS_B_PALACE",
   "region_map_section": "MAPSEC_TURRIS_SALTUS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

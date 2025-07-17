@@ -2,7 +2,7 @@
   "id": "MAP_TURRIS_SALTUS1F",
   "name": "TurrisSaltus1F",
   "layout": "LAYOUT_TURRIS_SALTUS1F",
-  "music": "MUS_CANTINA",
+  "music": "MUS_B_PALACE",
   "region_map_section": "MAPSEC_TURRIS_SALTUS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,7 +14,29 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 15,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_TURRIS_SALTUS2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_MARE_S9",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_TURRIS_SALTUS2F",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

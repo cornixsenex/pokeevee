@@ -139,6 +139,7 @@ Common_Movement_WalkRight2:
 Common_Movement_WalkRight3:
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 Common_Movement_WalkRight4:
