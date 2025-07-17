@@ -6434,7 +6434,7 @@
     {
       "id": "LAYOUT_TURRIS_SALTUS1F",
       "name": "TurrisSaltus1F_Layout",
-      "width": 30,
+      "width": 29,
       "height": 25,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Argo",
@@ -6464,7 +6464,7 @@
     {
       "id": "LAYOUT_TURRIS_SALTUS5F",
       "name": "TurrisSaltus5F_Layout",
-      "width": 20,
+      "width": 21,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Argo",
@@ -6474,7 +6474,7 @@
     {
       "id": "LAYOUT_TURRIS_SALTUS4F",
       "name": "TurrisSaltus4F_Layout",
-      "width": 20,
+      "width": 21,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Argo",
