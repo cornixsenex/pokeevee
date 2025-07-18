@@ -146,8 +146,12 @@ static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
 
-void CheckIgnisMons3FFalseFloorFallWait(s16, s16);
-void CheckIgnisMons2FFalseFloorFallWait(s16, s16);
+//False Floor Functions
+static void CheckIgnisMons3FFalseFloorFallWait(s16, s16);
+static void CheckIgnisMons2FFalseFloorFallWait(s16, s16);
+static void CheckTurrisSaltus5FFalseFloorFallWait(s16, s16);
+static void CheckTurrisSaltus4FFalseFloorFallWait(s16, s16);
+static void CheckTurrisSaltus3FFalseFloorFallWait(s16, s16);
 
 #if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
@@ -5766,6 +5770,26 @@ void DoFalseFloorFall(struct ScriptContext *ctx)
 		CheckIgnisMons3FFalseFloorFallWait(x, y);
         SetWarpDestination(mapGroup, mapNum-1, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
 	}
+    //TurrisSaltus5F
+    if (mapGroup == MAP_GROUP(MAP_TURRIS_SALTUS5F) && mapNum == MAP_NUM(MAP_TURRIS_SALTUS5F)) {
+        CheckTurrisSaltus5FFalseFloorFallWait(x, y);
+        SetWarpDestination(mapGroup, MAP_NUM(MAP_TURRIS_SALTUS4F), WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+    }
+    //TurrisSaltus4F
+    if (mapGroup == MAP_GROUP(MAP_TURRIS_SALTUS4F) && mapNum == MAP_NUM(MAP_TURRIS_SALTUS4F)) {
+        CheckTurrisSaltus4FFalseFloorFallWait(x, y);
+        SetWarpDestination(mapGroup, MAP_NUM(MAP_TURRIS_SALTUS3F), WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+    }
+    //TurrisSaltus3F
+    if (mapGroup == MAP_GROUP(MAP_TURRIS_SALTUS3F) && mapNum == MAP_NUM(MAP_TURRIS_SALTUS3F)) {
+        CheckTurrisSaltus3FFalseFloorFallWait(x, y);
+        SetWarpDestination(mapGroup, MAP_NUM(MAP_TURRIS_SALTUS2F), WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
+    }
+    //TurrisSaltus2F
+    if (mapGroup == MAP_GROUP(MAP_TURRIS_SALTUS2F) && mapNum == MAP_NUM(MAP_TURRIS_SALTUS2F)) {
+        VarSet(VAR_FALSEFLOOR_WAIT, 0);
+        SetWarpDestination(mapGroup, MAP_NUM(MAP_TURRIS_SALTUS1F), WARP_ID_NONE, 15, 16); //Note this one is different
+    }
 
 	DoFallWarp();
 	ResetInitialPlayerAvatarState();
@@ -5822,6 +5846,46 @@ void CheckIgnisMons2FFalseFloorFallWait(s16 x, s16 y)
 		VarSet(VAR_FALSEFLOOR_WAIT, 0);
 }
 
+void CheckTurrisSaltus5FFalseFloorFallWait(s16 x, s16 y)
+{
+	x = x - MAP_OFFSET;
+	y = y - MAP_OFFSET;
+	if (
+       (x == 17 && y > 5 && y < 8) ||
+       (x == 6 && y == 12)
+       )
+		VarSet(VAR_FALSEFLOOR_WAIT, 1);
+	else
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+}
+
+void CheckTurrisSaltus4FFalseFloorFallWait(s16 x, s16 y)
+{
+	x = x - MAP_OFFSET;
+	y = y - MAP_OFFSET;
+	if (
+       (y == 5 && x > 2 && x < 5) ||
+       (x == 1 && y == 10) ||
+       (x == 6 && y == 12)
+       )
+		VarSet(VAR_FALSEFLOOR_WAIT, 1);
+	else
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+}
+
+void CheckTurrisSaltus3FFalseFloorFallWait(s16 x, s16 y)
+{
+	x = x - MAP_OFFSET;
+	y = y - MAP_OFFSET;
+	if (
+       (x == 10 && y == 10)
+       )
+		VarSet(VAR_FALSEFLOOR_WAIT, 1);
+	else
+		VarSet(VAR_FALSEFLOOR_WAIT, 0);
+}
+
+
 void FalseFloorMetatileUpdate(void)
 {
 	s16 x, y;
@@ -5834,6 +5898,10 @@ void FalseFloorMetatileUpdate(void)
 		MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole);
 	if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
 		MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
+    if (metatileId == METATILE_Argo_FalseFloor)
+		MapGridSetMetatileIdAt(x, y, METATILE_Argo_FalseFloor_Hole);
+	if (metatileId == METATILE_Argo_FalseFloor_Shadow)
+		MapGridSetMetatileIdAt(x, y, METATILE_Argo_FalseFloor_Hole_Shadow);
 	CurrentMapDrawMetatileAt(x, y);
 }
 

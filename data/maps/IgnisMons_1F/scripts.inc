@@ -12,7 +12,7 @@ IgnisMons_1F_MapScripts_MAP_SCRIPT_ON_RESUME:
 
 IgnisMons_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 20 "data/maps/IgnisMons_1F/scripts.pory"
-	map_script_2 VAR_FALSEFLOOR_WAIT, 1, IgnisMons_1F_FalseFloorContinue
+	map_script_2 VAR_FALSEFLOOR_WAIT, 1, Common_Script_FalseFloorContinue
 	.2byte 0
 
 
@@ -340,7 +340,7 @@ IgnisMons_1F_Script_HideGreen::
 	return
 
 
-IgnisMons_1F_FalseFloorContinue::
+Common_Script_FalseFloorContinue::
 # 231 "data/maps/IgnisMons_1F/scripts.pory"
 	lockall
 # 232 "data/maps/IgnisMons_1F/scripts.pory"

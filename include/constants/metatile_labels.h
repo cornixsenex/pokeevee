@@ -1,6 +1,12 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_Argo
+#define METATILE_Argo_FalseFloor              0x2B8
+#define METATILE_Argo_FalseFloor_Hole         0x2B9
+#define METATILE_Argo_FalseFloor_Hole_Shadow  0x2C1
+#define METATILE_Argo_FalseFloor_Shadow       0x2C0
+
 // gTileset_BattleArena
 #define METATILE_BattleArena_Door  0x21B
 

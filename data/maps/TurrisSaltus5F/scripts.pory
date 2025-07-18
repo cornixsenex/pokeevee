@@ -1,1 +1,7 @@
-mapscripts TurrisSaltus5F_MapScripts {}
+mapscripts TurrisSaltus5F_MapScripts {
+
+    MAP_SCRIPT_ON_RESUME {
+        setstepcallback (STEP_CB_FALSE_FLOOR)
+    }
+
+}

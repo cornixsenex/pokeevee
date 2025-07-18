@@ -35,7 +35,7 @@
  *      . SecretBasePerStepCallback: Records the decorations in a friend's secret base that the player steps on.
  *      . CrackedFloorPerStepCallback: Breaks cracked floors that the player steps on.
  *      - CanvasPerStepCallback: Kustom to change metatile from white to black on canvas.
- *      - FalseFloorPerStepCallback: Kustom for Ignis Mons False Floor
+ *      - FalseFloorPerStepCallback: Kustom False Floor - IgnisMons, TurrisSaltus
  *
  *  NOTE: "PerStep" is perhaps misleading. One function in sPerStepCallbacks is called
  *        every frame while in the overworld by Task_RunPerStepCallback regardless of
@@ -834,6 +834,10 @@ static void FalseFloorPerStepCallback(u8 taskId)
 				MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole);
 			if (metatileId == METATILE_IgnisMons_FalseFloor_Shadow)
 				MapGridSetMetatileIdAt(x, y, METATILE_IgnisMons_FalseFloor_Hole_Shadow);
+			if (metatileId == METATILE_Argo_FalseFloor) 
+				MapGridSetMetatileIdAt(x, y, METATILE_Argo_FalseFloor_Hole);
+			if (metatileId == METATILE_Argo_FalseFloor_Shadow)
+				MapGridSetMetatileIdAt(x, y, METATILE_Argo_FalseFloor_Hole_Shadow);
 			CurrentMapDrawMetatileAt(x, y);
 		}
 	}

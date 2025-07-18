@@ -12,7 +12,7 @@ IgnisMons_2F_MapScripts_MAP_SCRIPT_ON_RESUME:
 
 IgnisMons_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 10 "data/maps/IgnisMons_2F/scripts.pory"
-	map_script_2 VAR_FALSEFLOOR_WAIT, 1, IgnisMons_2F_FalseFloorContinue
+	map_script_2 VAR_FALSEFLOOR_WAIT, 1, Common_Script_FalseFloorContinue
 	.2byte 0
 
 
@@ -358,20 +358,4 @@ IgnisMons_2F_Script_HideGreen::
 # 219 "data/maps/IgnisMons_2F/scripts.pory"
 	setmetatile 11, 26, METATILE_IgnisMons_Button_White, FALSE
 	return
-
-
-IgnisMons_2F_FalseFloorContinue::
-# 225 "data/maps/IgnisMons_2F/scripts.pory"
-	lockall
-# 226 "data/maps/IgnisMons_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 227 "data/maps/IgnisMons_2F/scripts.pory"
-	waitmovement 0
-# 228 "data/maps/IgnisMons_2F/scripts.pory"
-	special FalseFloorMetatileUpdate
-# 229 "data/maps/IgnisMons_2F/scripts.pory"
-	call EventScript_FallDownFalseFloor
-# 230 "data/maps/IgnisMons_2F/scripts.pory"
-	releaseall
-	end
 

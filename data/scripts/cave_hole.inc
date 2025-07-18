@@ -8,7 +8,9 @@ CaveHole_FixCrackedGround:
 
 EventScript_FallDownHole::
 	lockall
-	delay 20
+    applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+    waitmovement 0
+	delay 40
 	applymovement LOCALID_PLAYER, Movement_SetInvisible
 	waitmovement 0
 	playse SE_FALL
@@ -19,8 +21,10 @@ EventScript_FallDownHole::
 
 EventScript_FallDownFalseFloor::
 	lockall
-	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_SetInvisible
+    applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+    waitmovement 0
+	delay 40
+	applymovement LOCALID_PLAYER, Movement_SetInvisible
 	waitmovement 0
 	playse SE_FALL
 	delay 60

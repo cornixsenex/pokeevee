@@ -17,7 +17,7 @@ mapscripts IgnisMons_1F_MapScripts {
 
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_FALSEFLOOR_WAIT, 1: IgnisMons_1F_FalseFloorContinue
+		VAR_FALSEFLOOR_WAIT, 1: Common_Script_FalseFloorContinue
 	]
 
 
@@ -227,7 +227,7 @@ script IgnisMons_1F_Script_HideGreen {
 	return
 }
 
-script IgnisMons_1F_FalseFloorContinue {
+script Common_Script_FalseFloorContinue {
 	lockall
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)

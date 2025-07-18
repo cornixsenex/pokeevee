@@ -1,1 +1,11 @@
-mapscripts TurrisSaltus3F_MapScripts {}
+mapscripts TurrisSaltus3F_MapScripts {
+
+	MAP_SCRIPT_ON_RESUME {
+        setstepcallback (STEP_CB_FALSE_FLOOR)
+	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_FALSEFLOOR_WAIT, 1: Common_Script_FalseFloorContinue
+	]
+
+}

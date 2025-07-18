@@ -1,1 +1,24 @@
-mapscripts TurrisSaltus1F_MapScripts {}
+mapscripts TurrisSaltus1F_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        //Show DoorGuard if TowerStart
+        if (var(VAR_TURRIS_SALTUS_STATE) < 1) {
+            call (TurrisSaltus1F_Script_ShowDoorGuard)
+        }
+}
+
+//Setup Scripts
+script TurrisSaltus1F_Script_ShowDoorGuard {
+
+}
+
+//Tryian Scripts
+
+//Tyrian Battle Setup Scripts
+script TurrisSaltus1F_Script_Trigger_Tyrian1A {
+
+}
+
+script TurrisSaltus1F_Script_Trigger_Tyrian1B {
+
+}:
