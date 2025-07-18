@@ -51,4 +51,6 @@ void StartEscapeRopeFieldEffect(void);
 bool8 IsRockClimbActive(void);
 void FieldEffectFreeGraphicsResources(struct Sprite *sprite);
 
+void HideFollowerForFieldEffect(void);
+
 #endif // GUARD_FIELD_EFFECTS_H
