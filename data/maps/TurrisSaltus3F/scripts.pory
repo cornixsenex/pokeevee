@@ -9,3 +9,147 @@ mapscripts TurrisSaltus3F_MapScripts {
 	]
 
 }
+
+//Tyrian Scripts
+
+script TurrisSaltus3F_Script_Tyrian8 {
+    if (var(VAR_TURRIS_SALTUS_STATE) <= 8) {
+        applymovement (LOCALID_TURRISSALTUS3F_TYRIAN8, Common_Movement_FaceUp)
+        waitmovement (0)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_TURRISSALTUS3F_TYRIAN8, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        call (TurrisSaltus_Script_HandmaidenBattle)
+    } else {
+        call (TurrisSaltus_Script_HandmaidenPost)
+    }
+}
+
+script TurrisSaltus3F_Script_Tyrian9 {
+    if (var(VAR_TURRIS_SALTUS_STATE) <= 9) {
+        applymovement (LOCALID_TURRISSALTUS3F_TYRIAN9, Common_Movement_FaceRight)
+        waitmovement (0)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_TURRISSALTUS3F_TYRIAN9, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        call (TurrisSaltus_Script_HandmaidenBattle)
+    } else {
+        call (TurrisSaltus_Script_HandmaidenPost)
+    }
+}
+
+//Tyrian Trigger scripts
+script TurrisSaltus3F_Script_Trigger_Tyrian8A {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN8, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN8, Common_Movement_WalkLeft2)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}
+
+script TurrisSaltus3F_Script_Trigger_Tyrian8B {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN8, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN8, Common_Movement_WalkLeft)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}
+
+script TurrisSaltus3F_Script_Trigger_Tyrian8C {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN8, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move tyrian into position
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}
+
+script TurrisSaltus3F_Script_Trigger_Tyrian9A {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN9, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//if needed move tyrian into position
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}
+
+script TurrisSaltus3F_Script_Trigger_Tyrian9B {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN9, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN9, Common_Movement_WalkDown)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}
+
+script TurrisSaltus3F_Script_Trigger_Tyrian10A {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN10, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN10, Common_Movement_WalkRight)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}
+
+script TurrisSaltus3F_Script_Trigger_Tyrian10B {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN10, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS3F_TYRIAN10, Common_Movement_WalkRight2)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}

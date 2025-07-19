@@ -56,22 +56,31 @@ script TurrisSaltus1F_Script_DoorGuard {
 	end
 }
 
-
 //Tryian Scripts
-script TurrisSaltus1F_Script_Tyrian1 {
-
-}
-
 script TurrisSaltus1F_Script_Tyrian2 {
-
+    if (var(VAR_TURRIS_SALTUS_STATE) <= 2) {
+        applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_FaceRight)
+        waitmovement (0)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        call (TurrisSaltus_Script_HandmaidenBattle)
+    } else {
+        call (TurrisSaltus_Script_HandmaidenPost)
+    }
 }
 
 script TurrisSaltus1F_Script_Tyrian3 {
-
-}
-
-script TurrisSaltus1F_Script_Tyrian4 {
-
+    if (var(VAR_TURRIS_SALTUS_STATE) <= 3) {
+        applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_FaceDown)
+        waitmovement (0)
+        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        call (TurrisSaltus_Script_HandmaidenBattle)
+    } else {
+        call (TurrisSaltus_Script_HandmaidenPost)
+    }
 }
 
 //Tyrian Battle Setup Scripts
@@ -90,45 +99,223 @@ script TurrisSaltus1F_Script_Trigger_Tyrian1A {
 	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
-
 script TurrisSaltus1F_Script_Trigger_Tyrian1B {
-
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN1, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN1, Common_Movement_WalkDown)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
 script TurrisSaltus1F_Script_Trigger_Tyrian2A {
-
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_WalkUp)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
 script TurrisSaltus1F_Script_Trigger_Tyrian2B {
-
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//if needed move tyrian into position
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
 script TurrisSaltus1F_Script_Trigger_Tyrian3A {
-
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move tyrian into position
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
 script TurrisSaltus1F_Script_Trigger_Tyrian3B {
-
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_WalkRight)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
 script TurrisSaltus1F_Script_Trigger_Tyrian4A {
-
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN4, Common_Movement_WalkRight)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
 script TurrisSaltus1F_Script_Trigger_Tyrian4B {
-
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move tyrian into position
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN4, Common_Movement_WalkRight2)
+    waitmovement (0)
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
 //Turris Saltus General Handmaiden battle script
 script TurrisSaltus_Script_HandmaidenBattle {
-	//pick random pre, lost, et post messages
+	//pick random pre messages
+    specialvar (VAR_RESULT, RandDigit)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            msgbox (TurrisSaltus_Text_HandmaidenPre10)
+        case 1:
+            msgbox (TurrisSaltus_Text_HandmaidenPre1)
+        case 2:
+            msgbox (TurrisSaltus_Text_HandmaidenPre2)
+        case 3:
+            msgbox (TurrisSaltus_Text_HandmaidenPre3)
+        case 4:
+            msgbox (TurrisSaltus_Text_HandmaidenPre4)
+        case 5:
+            msgbox (TurrisSaltus_Text_HandmaidenPre5)
+        case 6:
+            msgbox (TurrisSaltus_Text_HandmaidenPre6)
+        case 7:
+            msgbox (TurrisSaltus_Text_HandmaidenPre7)
+        case 8:
+            msgbox (TurrisSaltus_Text_HandmaidenPre8)
+        case 9:
+            msgbox (TurrisSaltus_Text_HandmaidenPre9)
+        default:
+                msgbox("ERROR RandDigit OOB")
+                closemessage
+                releaseall
+                end
+    }
+    closemessage
 	//choose the actual battle at random
-	//post message (?)
+    specialvar (VAR_RESULT, RandDigit)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost10)
+        case 1:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost1)
+        case 2:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost2)
+        case 3:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost3)
+        case 4:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost4)
+        case 5:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost5)
+        case 6:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost6)
+        case 7:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost7)
+        case 8:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost8)
+        case 9:
+            trainerbattle_no_intro (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus_Text_HandmaidenLost9)
+        default:
+                msgbox("ERROR RandDigit OOB")
+                closemessage
+                releaseall
+                end
+    }
 	//inc var
 	addvar (VAR_TURRIS_SALTUS_STATE, 1)
 	//fin
 	releaseall
 	end
+}
+
+script TurrisSaltus_Script_HandmaidenPost {
+    faceplayer
+	//pick random post messages
+    specialvar (VAR_RESULT, RandDigit)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            msgbox (TurrisSaltus_Text_HandmaidenPost10)
+        case 1:
+            msgbox (TurrisSaltus_Text_HandmaidenPost1)
+        case 2:
+            msgbox (TurrisSaltus_Text_HandmaidenPost2)
+        case 3:
+            msgbox (TurrisSaltus_Text_HandmaidenPost3)
+        case 4:
+            msgbox (TurrisSaltus_Text_HandmaidenPost4)
+        case 5:
+            msgbox (TurrisSaltus_Text_HandmaidenPost5)
+        case 6:
+            msgbox (TurrisSaltus_Text_HandmaidenPost6)
+        case 7:
+            msgbox (TurrisSaltus_Text_HandmaidenPost7)
+        case 8:
+            msgbox (TurrisSaltus_Text_HandmaidenPost8)
+        case 9:
+            msgbox (TurrisSaltus_Text_HandmaidenPost9)
+        default:
+                msgbox("ERROR RandDigit OOB")
+                closemessage
+                releaseall
+                end
+    }
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
 }
 
 text TurrisSaltus1F_Text_DoorGuardPre {
@@ -154,3 +341,126 @@ text TurrisSaltus1F_Text_DoorGuardPost {
 text TurrisSaltus1F_Text_DoorGuardExit {
 	format("Come, sister, let's arouse the tower guard.")
 }
+
+//Turris Saltus General Handmaiden text
+
+text TurrisSaltus_Text_HandmaidenPre1 {
+    format("Your intrustion is over.")
+}
+
+text TurrisSaltus_Text_HandmaidenPre2 {
+    format("Stop right there!")
+}
+
+text TurrisSaltus_Text_HandmaidenPre3 {
+    format("None may enter but at the queen's pleasure.")
+}
+
+text TurrisSaltus_Text_HandmaidenPre4 {
+    format("You never should have come here, outsider.")
+}
+
+text TurrisSaltus_Text_HandmaidenPre5 {
+    format("This tower belongs to the Tyrians!")
+}
+
+text TurrisSaltus_Text_HandmaidenPre6 {
+    format("Intruder alert!")
+}
+
+text TurrisSaltus_Text_HandmaidenPre7 {
+    format("Stop, criminal scum!")
+}
+
+text TurrisSaltus_Text_HandmaidenPre8 {
+    format("The queen will thank me for defeating you.")
+}
+
+text TurrisSaltus_Text_HandmaidenPre9 {
+    format("You won't get past me! I'm a Tyrian.")
+}
+
+text TurrisSaltus_Text_HandmaidenPre10 {
+    format("Turris Saltus is not open to you.")
+}
+
+text TurrisSaltus_Text_HandmaidenLost1 {
+    format("Queen Elissa! I failed you...forgive me.")
+}
+
+text TurrisSaltus_Text_HandmaidenLost2 {
+    format("Impressive. Most impressive.")
+}
+
+text TurrisSaltus_Text_HandmaidenLost3 {
+    format("Aargh!")
+}
+
+text TurrisSaltus_Text_HandmaidenLost4 {
+    format("Ack!")
+}
+
+text TurrisSaltus_Text_HandmaidenLost5 {
+    format("I'll never live this down.")
+}
+
+text TurrisSaltus_Text_HandmaidenLost6 {
+    format("I'm so ashamed!")
+}
+
+text TurrisSaltus_Text_HandmaidenLost7 {
+    format("This was my first time battling a boy.")
+}
+
+text TurrisSaltus_Text_HandmaidenLost8 {
+    format("You're stronger than you look.")
+}
+
+text TurrisSaltus_Text_HandmaidenLost9 {
+    format("I yield! I yield!")
+}
+
+text TurrisSaltus_Text_HandmaidenLost10 {
+    format("You got lucky this time. It was just luck.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost1 {
+    format("I can't compel you, but still I must say, you must leave now. You are not welcome here.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost2 {
+    format("Be gone! Trouble the Tyrians no more.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost3 {
+    format("Our tower has never been so abused.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost4 {
+    format("I may have failed, but someone will stop you.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost5 {
+    format("Turris Saltus was built to be our home and keep our all intruders, such as you.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost6 {
+    format("The Tropic people despise our tower, and say we built it by dishonest means.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost7 {
+    format("Turris Saltus is the tallest building on the islands. It was built as high as our queen Elissa's Magikarp could jumpm")
+}
+
+text TurrisSaltus_Text_HandmaidenPost8 {
+    format("We will stop you. We will have our revenge.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost9 {
+    format("It's not polite to gloat. You won, be off.")
+}
+
+text TurrisSaltus_Text_HandmaidenPost10 {
+    format("You're anti-Tyrian! You don't respect the Tyrian women's right to exist.")
+}
+

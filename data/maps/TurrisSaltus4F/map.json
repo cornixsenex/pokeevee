@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_TURRISSALTUS4F_TYRIAN12",
       "graphics_id": "OBJ_EVENT_GFX_LENORA",
       "x": 19,
       "y": 12,
@@ -28,6 +29,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_TURRISSALTUS4F_TYRIAN11",
       "graphics_id": "OBJ_EVENT_GFX_LENORA",
       "x": 13,
       "y": 15,
@@ -54,6 +56,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_TURRISSALTUS4F_TYRIAN13",
       "graphics_id": "OBJ_EVENT_GFX_LENORA",
       "x": 11,
       "y": 7,
@@ -83,6 +86,88 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "11",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian11A"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "11",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian11B"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "11",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian11C"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "12",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian12A"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "12",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian12B"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "12",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian12C"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "12",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian12D"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "13",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian13A"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "13",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian13B"
+    }
+  ],
   "bg_events": []
 }
