@@ -5,20 +5,150 @@ mapscripts TurrisSaltus1F_MapScripts {
         if (var(VAR_TURRIS_SALTUS_STATE) < 1) {
             call (TurrisSaltus1F_Script_ShowDoorGuard)
         }
+	}
+
 }
 
 //Setup Scripts
 script TurrisSaltus1F_Script_ShowDoorGuard {
+    setobjectxyperm (LOCALID_TURRISSALTUS1F_DOORGUARD1, 19, 13)
+    setobjectmovementtype (LOCALID_TURRISSALTUS1F_DOORGUARD1, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_TURRISSALTUS1F_DOORGUARD2, 20, 13)
+    setobjectmovementtype (LOCALID_TURRISSALTUS1F_DOORGUARD2, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+//Doorguard
+script TurrisSaltus1F_Script_DoorGuard {
+	//D: Shouldn't have come here idk
+	msgbox (TurrisSaltus1F_Text_DoorGuardPre)
+	closemessage
+	trainerbattle_two_trainers (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus1F_Text_DoorGuard1Lost, TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus1F_Text_DoorGuard2Lost)
+	//D: Something to you
+	msgbox (TurrisSaltus1F_Text_DoorGuardPost)
+	//D face eachother
+	applymovement (LOCALID_TURRISSALTUS1F_DOORGUARD1, Common_Movement_FaceRight)
+	applymovement (LOCALID_TURRISSALTUS1F_DOORGUARD2, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//D: Something to eachother
+	msgbox (TurrisSaltus1F_Text_DoorGuardExit)
+	closemessage
+	//exeunt
+	applymovement (LOCALID_TURRISSALTUS1F_DOORGUARD1, Common_Movement_WalkUp2)
+	applymovement (LOCALID_TURRISSALTUS1F_DOORGUARD2, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_TURRISSALTUS1F_DOORGUARD1, Common_Movement_WalkLeft9)
+	applymovement (LOCALID_TURRISSALTUS1F_DOORGUARD2, Common_Movement_WalkLeft9)
+	waitmovement (0)
+	//hide door guards
+	removeobject (LOCALID_TURRISSALTUS1F_DOORGUARD1)
+	removeobject (LOCALID_TURRISSALTUS1F_DOORGUARD2)
+	setobjectxyperm (LOCALID_TURRISSALTUS1F_DOORGUARD1, 0, 0)
+	setobjectxyperm (LOCALID_TURRISSALTUS1F_DOORGUARD2 0, 0)
+	setobjectmovementtype (LOCALID_TURRISSALTUS1F_DOORGUARD1, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (LOCALID_TURRISSALTUS1F_DOORGUARD2, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_TURRISSALTUS1F_DOORGUARD1)
+	addobject (LOCALID_TURRISSALTUS1F_DOORGUARD2)
+	//inc var
+	addvar (VAR_TURRIS_SALTUS_STATE, 1)
+	//fin
+	release
+	end
+}
+
+
+//Tryian Scripts
+script TurrisSaltus1F_Script_Tyrian1 {
 
 }
 
-//Tryian Scripts
+script TurrisSaltus1F_Script_Tyrian2 {
+
+}
+
+script TurrisSaltus1F_Script_Tyrian3 {
+
+}
+
+script TurrisSaltus1F_Script_Tyrian4 {
+
+}
 
 //Tyrian Battle Setup Scripts
 script TurrisSaltus1F_Script_Trigger_Tyrian1A {
+	lockall
+	//Music
+	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	//Alert Handmaiden
+    applymovement (LOCALID_TURRISSALTUS1F_TYRIAN1, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//if needed move tyrian into position
+	//do battle
+	call (TurrisSaltus_Script_HandmaidenBattle)
+}
 
+script TurrisSaltus_Script_HandmaidenBattle {
+	//pick random pre, lost, et post messages
+	//choose the actual battle at random
+	//post message (?)
+	//inc var
+	addvar (VAR_TURRIS_SALTUS_STATE, 1)
+	//fin
+	releaseall
+	end
 }
 
 script TurrisSaltus1F_Script_Trigger_Tyrian1B {
 
-}:
+}
+
+script TurrisSaltus1F_Script_Trigger_Tyrian2A {
+
+}
+
+script TurrisSaltus1F_Script_Trigger_Tyrian2B {
+
+}
+
+script TurrisSaltus1F_Script_Trigger_Tyrian3A {
+
+}
+
+script TurrisSaltus1F_Script_Trigger_Tyrian3B {
+
+}
+
+script TurrisSaltus1F_Script_Trigger_Tyrian4A {
+
+}
+
+script TurrisSaltus1F_Script_Trigger_Tyrian4B {
+
+}
+
+text TurrisSaltus1F_Text_DoorGuardPre {
+	format("Halt!\pStop right there!\pThis tower is private
+			property of the Tyrian Maidens.\p
+			Since you were not invited by our queen,
+			but somehow managed to gain entrance here,
+			we must kill you.\pA dead man tells no tales.")
+}
+
+text TurrisSaltus1F_Text_DoorGuard1Lost {
+	format("Defeated...how?")
+}
+
+text TurrisSaltus1F_Text_DoorGuard2Lost {
+	format("We have failed you our queen!")
+}
+
+text TurrisSaltus1F_Text_DoorGuardPost {
+	format("You will pay for attacking our tower.")
+}
+
+text TurrisSaltus1F_Text_DoorGuardExit {
+	format("Come, sister, let's arouse the tower guard.")
+}

@@ -2315,6 +2315,21 @@
 		.partySize = 2,
     },
 
+	[DIFFICULTY_NORMAL][TRAINER_TYRIAN_HANDMAIDEN] =
+    {
+        .trainerClass = TRAINER_CLASS_TYRIAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LENORA,
+        .trainerName = _("HANDMAIDEN"),
+        .items = {},
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .poolSize = 13,
+        .party = sParty_Handmaiden,
+		.partySize = 2,
+    },
+
+
 
 ///	====BREAK====    NOTE! UNUSED ABOVE 61 in INCLUDE
 ///
@@ -2322,17 +2337,6 @@
 
 
 
-    [DIFFICULTY_NORMAL][TRAINER_ATSUSHI] =
-    {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("ATSUSHI"),
-        .items = {},
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Atsushi),
-    },
 
     [DIFFICULTY_NORMAL][TRAINER_KIRK] =
     {

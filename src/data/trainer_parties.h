@@ -2672,11 +2672,41 @@ static const struct TrainerMon sParty_SurfInstructor[] = {
     }
 };
 
-static const struct TrainerMon sParty_Atsushi[] = {
+static const struct TrainerMon sParty_Handmaiden[] = {
     {
     .iv = 100,
     .lvl = 32,
     .species = SPECIES_HARIYAMA,
+    },
+	{
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_MANTINE,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_SHARPEDO,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_GASTRODON,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_WHISCASH,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_CORSOLA,
+    },
+    {
+    .iv = 100,
+    .lvl = 19,
+    .species = SPECIES_SEEL,
     }
 };
 

@@ -426,9 +426,10 @@
 #define TRAINER_CLASS_CULTIST		 0x49
 #define TRAINER_CLASS_SURF_SCHOOL    0x4A
 #define TRAINER_CLASS_SURFER         0x4B
+#define TRAINER_CLASS_TYRIAN         0x4C
 
 //CHANGE THIS ONE IF YOU ADD MORE
-#define TRAINER_CLASS_COUNT          0x4C
+#define TRAINER_CLASS_COUNT          0x4D
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
