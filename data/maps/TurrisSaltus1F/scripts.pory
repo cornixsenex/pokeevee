@@ -90,16 +90,6 @@ script TurrisSaltus1F_Script_Trigger_Tyrian1A {
 	call (TurrisSaltus_Script_HandmaidenBattle)
 }
 
-script TurrisSaltus_Script_HandmaidenBattle {
-	//pick random pre, lost, et post messages
-	//choose the actual battle at random
-	//post message (?)
-	//inc var
-	addvar (VAR_TURRIS_SALTUS_STATE, 1)
-	//fin
-	releaseall
-	end
-}
 
 script TurrisSaltus1F_Script_Trigger_Tyrian1B {
 
@@ -127,6 +117,18 @@ script TurrisSaltus1F_Script_Trigger_Tyrian4A {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian4B {
 
+}
+
+//Turris Saltus General Handmaiden battle script
+script TurrisSaltus_Script_HandmaidenBattle {
+	//pick random pre, lost, et post messages
+	//choose the actual battle at random
+	//post message (?)
+	//inc var
+	addvar (VAR_TURRIS_SALTUS_STATE, 1)
+	//fin
+	releaseall
+	end
 }
 
 text TurrisSaltus1F_Text_DoorGuardPre {
