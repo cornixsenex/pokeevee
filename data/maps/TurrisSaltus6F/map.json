@@ -29,7 +29,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_TURRISSALTUS6F_CYNTHIA",
+      "local_id": "LOCALID_TURRISSALTUS6F_ELISSA",
       "graphics_id": "OBJ_EVENT_GFX_CYNTHIA",
       "x": 3,
       "y": 0,
@@ -97,7 +97,7 @@
       "elevation": 0,
       "var": "VAR_TURRIS_SALTUS_STATE",
       "var_value": "21",
-      "script": "TurrisSaltus6F_Script_Trigger_DoorguardA"
+      "script": "TurrisSaltus6F_Script_Trigger_DoorguardB"
     },
     {
       "type": "trigger",
@@ -106,7 +106,34 @@
       "elevation": 0,
       "var": "VAR_TURRIS_SALTUS_STATE",
       "var_value": "21",
-      "script": "TurrisSaltus6F_Script_Trigger_DoorguardA"
+      "script": "TurrisSaltus6F_Script_Trigger_DoorguardC"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "22",
+      "script": "TurrisSaltus6F_Script_Trigger_AeneasSceneA"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "22",
+      "script": "TurrisSaltus6F_Script_Trigger_AeneasSceneB"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "22",
+      "script": "TurrisSaltus6F_Script_Trigger_AeneasSceneC"
     }
   ],
   "bg_events": []

@@ -1,5 +1,7 @@
 
+
 //FLAG_TEMP_A used to determine player position in DoorGuardB
+//VAR_TEMP_5 determines player position for Aeneas Setup Script
 
 mapscripts TurrisSaltus6F_MapScripts {
 
@@ -24,8 +26,8 @@ script TurrisSaltus6F_Script_ShowDoorGuards {
 }
 
 script TurrisSaltus6F_Script_ShowAeneasScene {
-	setobjectxyperm (LOCALID_TURRISSALTUS6F_CYNTHIA, 7, 2)
-	setobjectmovementtype (LOCALID_TURRISSALTUS6F_CYNTHIA, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_TURRISSALTUS6F_ELISSA, 7, 2)
+	setobjectmovementtype (LOCALID_TURRISSALTUS6F_ELISSA, MOVEMENT_TYPE_FACE_DOWN)
 	setobjectxyperm (LOCALID_TURRISSALTUS6F_AENEAS, 7, 2)
 	setobjectmovementtype (LOCALID_TURRISSALTUS6F_AENEAS, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
 	return
@@ -73,9 +75,9 @@ script TurrisSaltus6F_Script_Doorguard2 {
 	specialvar (VAR_RESULT, GetPlayerFacingDirection)
     if (var(VAR_RESULT) == DIR_WEST) {
         setflag (FLAG_TEMP_A)
-        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight2)
         waitmovement (0)
-        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkUp)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_FaceUp)
         waitmovement (0)
         applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
         waitmovement (0)
@@ -86,7 +88,7 @@ script TurrisSaltus6F_Script_Doorguard2 {
     call (TurrisSaltus6F_Script_DoorGuardBattle)
     //exeunt doorguards
     if (flag(FLAG_TEMP_A)) {
-        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
         waitmovement (0)
         applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
         applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
@@ -94,6 +96,9 @@ script TurrisSaltus6F_Script_Doorguard2 {
     } else {
         applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkRight)
         waitmovement (0)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
         applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
         waitmovement (0)
         applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
@@ -104,7 +109,6 @@ script TurrisSaltus6F_Script_Doorguard2 {
 
 script TurrisSaltus6F_Script_Trigger_DoorguardA {
     lockall
-    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_ExclamationMark)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_ExclamationMark)
@@ -122,7 +126,6 @@ script TurrisSaltus6F_Script_Trigger_DoorguardA {
     closemessage
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
     waitmovement (0)
-    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     call (TurrisSaltus6F_Script_DoorGuardBattle)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown2)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown2)
@@ -137,7 +140,6 @@ script TurrisSaltus6F_Script_Trigger_DoorguardA {
 
 script TurrisSaltus6F_Script_Trigger_DoorguardB {
     lockall
-    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_ExclamationMark)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_ExclamationMark)
@@ -156,7 +158,6 @@ script TurrisSaltus6F_Script_Trigger_DoorguardB {
     closemessage
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
     waitmovement (0)
-    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     call (TurrisSaltus6F_Script_DoorGuardBattle)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown2)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown2)
@@ -171,7 +172,6 @@ script TurrisSaltus6F_Script_Trigger_DoorguardB {
 
 script TurrisSaltus6F_Script_Trigger_DoorguardC {
     lockall
-    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_ExclamationMark)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_ExclamationMark)
@@ -189,7 +189,6 @@ script TurrisSaltus6F_Script_Trigger_DoorguardC {
     closemessage
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
     waitmovement (0)
-    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     call (TurrisSaltus6F_Script_DoorGuardBattle)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown2)
     applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown2)
@@ -238,6 +237,129 @@ waitmovement (0)
     //inc var
 	addvar (VAR_TURRIS_SALTUS_STATE, 1)
     //fin
+    releaseall
+    end
+}
+
+script TurrisSaltus6F_Script_Trigger_AeneasSceneA {
+    setvar (VAR_TEMP_5, 1)
+    call (TurrisSaltus6F_Script_AeneasScene)
+}
+
+script TurrisSaltus6F_Script_Trigger_AeneasSceneB {
+    setvar (VAR_TEMP_5, 2)
+    call (TurrisSaltus6F_Script_AeneasScene)
+}
+
+script TurrisSaltus6F_Script_Trigger_AeneasSceneC {
+    setvar (VAR_TEMP_5, 3)
+    call (TurrisSaltus6F_Script_AeneasScene)
+}
+
+script TurrisSaltus6F_Script_AeneasScene {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp4)
+    waitmovement (0)
+    if (var(VAR_TEMP_5) == 1) {
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        waitmovement (0)
+    }
+    if (var(VAR_TEMP_5) == 3) {
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        waitmovement (0)
+    }
+    delay (60)
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    delay (60)
+    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Aeneas exit bed
+    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkLeft2)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown)
+    waitmovement (0)
+    //C: 
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (TurrisSaltus6F_Text_Elissa1)
+    //alert cynthia
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //C Screama
+    //C:
+    msgbox (TurrisSaltus6F_Text_Elissa2)
+    //A et C face eachother
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    //A:
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (TurrisSaltus6F_Text_Aeneas1)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+    //C alert
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //C:
+    msgbox (TurrisSaltus6F_Text_Elissa3)
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    //A:
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (TurrisSaltus6F_Text_Aeneas2)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+    closemessage
+    //A exit et C face down
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_FaceDown)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown5)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkRight2)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown2)
+    waitmovement (0)
+    //C: 
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (TurrisSaltus6F_Text_Elissa4)
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    closemessage
+    //C go to player
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft2)
+    waitmovement (0)
+    //player face C
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    //C:
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (TurrisSaltus6F_Text_Elissa5)
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    closemessage
+    //battle
+    trainerbattle_no_intro (TRAINER_ELISSA, TurrisSaltus6_Text_ElissaLost)
+    //C:
+    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (TurrisSaltus6F_Text_Elissa6)
+    destroy_field_pic (FIELD_PIC_ELISSA)
+    closemessage
+    //C exit
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown5)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft2)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown2)
+    waitmovement (0)
+    //hide actors
+    removeobject (LOCALID_TURRISSALTUS6F_ELISSA)
+    removeobject (LOCALID_TURRISSALTUS6F_AENEAS)
+    setobjectxyperm (LOCALID_TURRISSALTUS6F_ELISSA, 0, 0)
+    setobjectxyperm (LOCALID_TURRISSALTUS6F_AENEAS, 0, 0)
+    setobjectmovementtype (LOCALID_TURRISSALTUS6F_AENEAS, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (LOCALID_TURRISSALTUS6F_ELISSA, MOVEMENT_TYPE_INVISIBLE)
+    //inc var
+    addvar (VAR_TURRIS_SALTUS_STATE, 1)
+    //fin
     end
 }
 
@@ -264,4 +386,70 @@ text TurrisSaltus6F_Text_DoorguardPost {
             The Tyrians you defeated today
             will neither forgive nor forget your acts.
             Disgraced, and defeated, we shall depart.")
+}
+
+text TurrisSaltus6F_Text_Elissa1 {
+    format("Aeneas, prince, what's wrong...")
+}
+
+text TurrisSaltus6F_Text_Elissa2 {
+    format("Aaahh!\pWhat nightmare has 
+            disturbed our love filled bed? What vagabond 
+            would so roughly violate our tower
+            and break the royal seal of our chamber?")
+}
+
+text TurrisSaltus6F_Text_Elissa3 {
+    format("This can't be so! How could you scorn our love?
+            I'm sure this must be some outrageous scheme
+            to pacify this violent tresspasser
+            before you waste him and return to bed")
+}
+
+text TurrisSaltus6F_Text_Elissa4 {
+    format("Aeneas! You will curse thie betrayal!
+            I name you traitor, enemy of our state,
+            and declare bitter war on you and your
+            descendants forever! War without end!\p
+            And you!")
+}
+
+text TurrisSaltus6F_Text_Elissa5 {
+    format("You are the errow cruelly shot
+            that pierced my and tore away my love!
+            For violating our Turris Saltus,
+            befriending the traitor, Aeneas Pig,
+            and butchering my love, you die today.")
+}
+
+text TurrisSaltus6_Text_ElissaLost {
+    format("I'm fallen! Like my love, I am no more.")
+}
+
+text TurrisSaltus6F_Text_Elissa6 {
+    format("Too sick to scream, too weak to have revenge,
+            too lowly to hope for recovery,
+            I persist in thie world devoid of light
+            like some kind of ghost or fallen angel
+            who once dwelt happily in the glow of love
+            now ripped out and cast down to Tartarus.
+            The one and only choice I've left to make
+            this life in hell, or death. I choose to die.")
+}
+
+text TurrisSaltus6F_Text_Aeneas1 {
+    format("This man is my companioin on our quest 
+            to reach Hesperia and found a new
+            mighty city to one day rule the world.
+            His arrival reminds me of that quest.
+            Elissa, queen, I must be on my way
+            for as sweetly as I have come to love
+            your royal bed, and all fruits held therin,
+            my piety, sacred obedience,
+            and love of destiny is tronger yet.")
+}
+
+text TurrisSaltus6F_Text_Aeneas2 {
+    format("Elissa, by the sun, the moon, and stars
+            I do not lie. I must leave you. Goodbye.")
 }
