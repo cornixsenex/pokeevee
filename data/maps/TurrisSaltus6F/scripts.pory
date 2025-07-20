@@ -1,7 +1,13 @@
+
+//FLAG_TEMP_A used to determine player position in DoorGuardB
+
 mapscripts TurrisSaltus6F_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
         //Show DoorGuard if TowerStart
+        if (var(VAR_TURRIS_SALTUS_STATE) < 22) {
+            call (TurrisSaltus6F_Script_ShowDoorGuards)
+        }
         if (var(VAR_TURRIS_SALTUS_STATE) < 23) {
             call (TurrisSaltus6F_Script_ShowAeneasScene)
         }
@@ -9,10 +15,253 @@ mapscripts TurrisSaltus6F_MapScripts {
 
 }
 
+script TurrisSaltus6F_Script_ShowDoorGuards {
+	setobjectxyperm (LOCALID_TURRISSALTUS6F_DOORGUARD1, 5, 11)
+	setobjectmovementtype (LOCALID_TURRISSALTUS6F_DOORGUARD1, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_TURRISSALTUS6F_DOORGUARD2, 9, 11)
+	setobjectmovementtype (LOCALID_TURRISSALTUS6F_DOORGUARD2, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
 script TurrisSaltus6F_Script_ShowAeneasScene {
 	setobjectxyperm (LOCALID_TURRISSALTUS6F_CYNTHIA, 7, 2)
 	setobjectmovementtype (LOCALID_TURRISSALTUS6F_CYNTHIA, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectxyperm (LOCALID_TURRISSALTUS6F_AENEAS, 9, 2)
+	setobjectxyperm (LOCALID_TURRISSALTUS6F_AENEAS, 7, 2)
 	setobjectmovementtype (LOCALID_TURRISSALTUS6F_AENEAS, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
 	return
+}
+
+script TurrisSaltus6F_Script_Doorguard1 {
+    faceplayer
+    playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
+    //Doorguard pre 1
+    msgbox (TurrisSaltus6F_Text_DoorguardPre1)
+    closemessage
+    //Doorguard 2 to player
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkLeft3)
+    waitmovement (0)
+    //face player to doorguard 2
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    call (TurrisSaltus6F_Script_DoorGuardBattle)
+    //exeunt doorguards
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight4)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkRight4)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
+    waitmovement (0)
+    call (TurrisSaltus6F_Script_ExeuntDoorGuards)
+}
+
+script TurrisSaltus6F_Script_Doorguard2 {
+    faceplayer
+    playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
+    //Doorguard pre 1
+    msgbox (TurrisSaltus6F_Text_DoorguardPre1)
+    closemessage
+    //Doorguard 2 to player
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight3)
+    waitmovement (0)
+    //face player to doorguard 2
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+    if (var(VAR_RESULT) == DIR_WEST) {
+        setflag (FLAG_TEMP_A)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+        waitmovement (0)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkUp)
+        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+        waitmovement (0)
+    } else {
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+        waitmovement (0)
+    }
+    call (TurrisSaltus6F_Script_DoorGuardBattle)
+    //exeunt doorguards
+    if (flag(FLAG_TEMP_A)) {
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
+        waitmovement (0)
+    } else {
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkRight)
+        waitmovement (0)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+        waitmovement (0)
+    }
+    call (TurrisSaltus6F_Script_ExeuntDoorGuards)
+}
+
+script TurrisSaltus6F_Script_Trigger_DoorguardA {
+    lockall
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    delay (30)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_FaceRight)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_FaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkLeft2)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //Doorguard pre 1
+    msgbox (TurrisSaltus6F_Text_DoorguardPre1)
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    call (TurrisSaltus6F_Script_DoorGuardBattle)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown2)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown2)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight3)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkRight3)
+    waitmovement (0)
+    call (TurrisSaltus6F_Script_ExeuntDoorGuards)
+}
+
+script TurrisSaltus6F_Script_Trigger_DoorguardB {
+    lockall
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    delay (30)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_FaceRight)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_FaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkLeft)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //Doorguard pre 1
+    msgbox (TurrisSaltus6F_Text_DoorguardPre1)
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    call (TurrisSaltus6F_Script_DoorGuardBattle)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown2)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown2)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight2)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkRight2)
+    waitmovement (0)
+    call (TurrisSaltus6F_Script_ExeuntDoorGuards)
+}
+
+script TurrisSaltus6F_Script_Trigger_DoorguardC {
+    lockall
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    delay (30)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_FaceRight)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_FaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight2)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //Doorguard pre 1
+    msgbox (TurrisSaltus6F_Text_DoorguardPre1)
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    call (TurrisSaltus6F_Script_DoorGuardBattle)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkDown2)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkDown2)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkRight)
+    waitmovement (0)
+    call (TurrisSaltus6F_Script_ExeuntDoorGuards)
+}
+
+//Player facing second guard
+script TurrisSaltus6F_Script_DoorGuardBattle {
+    //doorguard pre2
+    msgbox (TurrisSaltus6F_Text_DoorguardPre2)
+    closemessage
+    //battle
+	trainerbattle_two_trainers (TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus6F_Text_DoorGuard1Lost, TRAINER_TYRIAN_HANDMAIDEN, TurrisSaltus6F_Text_DoorGuard2Lost)
+    //doorguard post
+    msgbox (TurrisSaltus6F_Text_DoorguardPost)
+    closemessage
+    return
+}
+
+//They should both be at 9-10, 13)
+script TurrisSaltus6F_Script_ExeuntDoorGuards {
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkRight4)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkRight4)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkUp2)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkUp2)
+    waitmovement (0)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD1, Common_Movement_WalkLeft)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkLeft)
+    waitmovement (0)
+    //hideobjectat (LOCALID_TURRISSALTUS6F_DOORGUARD1, MAP_TURRIS_SALTUS6F)
+    removeobject (LOCALID_TURRISSALTUS6F_DOORGUARD1)
+    applymovement (LOCALID_TURRISSALTUS6F_DOORGUARD2, Common_Movement_WalkLeft)
+waitmovement (0)
+    removeobject (LOCALID_TURRISSALTUS6F_DOORGUARD2)
+    setobjectxyperm (LOCALID_TURRISSALTUS6F_DOORGUARD1, 0, 0)
+    setobjectxyperm (LOCALID_TURRISSALTUS6F_DOORGUARD2, 0, 0)
+    setobjectmovementtype (LOCALID_TURRISSALTUS6F_DOORGUARD1, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (LOCALID_TURRISSALTUS6F_DOORGUARD2, MOVEMENT_TYPE_INVISIBLE)
+    //inc var
+	addvar (VAR_TURRIS_SALTUS_STATE, 1)
+    //fin
+    end
+}
+
+text TurrisSaltus6F_Text_DoorguardPre1 {
+    format("We are Queen Elissa's most trusted guards.")
+}
+
+text TurrisSaltus6F_Text_DoorguardPre2 {
+    format("No one may enter her private chamber
+            without getting past us. Prepare to fall!")
+}
+
+text TurrisSaltus6F_Text_DoorGuard1Lost {
+    format("Turris Saltus has fallen!")
+}
+
+text TurrisSaltus6F_Text_DoorGuard2Lost {
+    format("We have failed!")
+}
+
+text TurrisSaltus6F_Text_DoorguardPost {
+    format("You have destroyed our way of life today
+            and violated our most sacred place.
+            The Tyrians you defeated today
+            will neither forgive nor forget your acts.
+            Disgraced, and defeated, we shall depart.")
 }
