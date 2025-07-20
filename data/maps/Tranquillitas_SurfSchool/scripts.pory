@@ -17,10 +17,12 @@ script Tranquillitas_SurfSchool_Script_ShowLeaf {
 
 script SurfSchool_Script_TriggerSurfer1 {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     setvar (VAR_SURFSCHOOL_STATE, 1)
     playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
     applymovement (LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_ExclamationMark)
     waitmovement (0)
+	delay (30)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer1Intro)
@@ -28,6 +30,7 @@ script SurfSchool_Script_TriggerSurfer1 {
     trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost)
     msgbox (SurfSchool_Text_Surfer1Post)
     closemessage
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     releaseall
     end
 }
@@ -56,10 +59,12 @@ script SurfSchool_Script_Surfer1 {
 
 script SurfSchool_Script_TriggerSurfer2 {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     setvar (VAR_SURFSCHOOL_STATE, 2)
     playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
     applymovement (LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_ExclamationMark)
     waitmovement (0)
+	delay (30)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer2Intro)
@@ -67,6 +72,7 @@ script SurfSchool_Script_TriggerSurfer2 {
     trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost)
     msgbox (SurfSchool_Text_Surfer2Post)
     closemessage
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     releaseall
     end
 }
@@ -94,10 +100,12 @@ script SurfSchool_Script_Surfer2 {
 
 script SurfSchool_Script_TriggerSurfer3 {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     setvar (VAR_SURFSCHOOL_STATE, 3)
     playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
     applymovement (LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_ExclamationMark)
     waitmovement (0)
+	delay (30)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer3Intro)
@@ -105,6 +113,7 @@ script SurfSchool_Script_TriggerSurfer3 {
     trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost)
     msgbox (SurfSchool_Text_Surfer3Post)
     closemessage
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     releaseall
     end
 }
@@ -132,10 +141,12 @@ script SurfSchool_Script_Surfer3 {
 
 script SurfSchool_Script_TriggerSurfer4 {
     lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     setvar (VAR_SURFSCHOOL_STATE, 4)
     playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
     applymovement (LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_ExclamationMark)
     waitmovement (0)
+	delay (30)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
     waitmovement (0)
     msgbox (SurfSchool_Text_Surfer4Intro)
@@ -143,6 +154,7 @@ script SurfSchool_Script_TriggerSurfer4 {
     trainerbattle_no_intro (TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost)
     msgbox (SurfSchool_Text_Surfer4Post)
     closemessage
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     releaseall
     end
 }

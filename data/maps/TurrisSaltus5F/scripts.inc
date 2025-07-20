@@ -10,175 +10,327 @@ TurrisSaltus5F_MapScripts_MAP_SCRIPT_ON_RESUME:
 
 
 TurrisSaltus5F_Script_Tyrian14::
-# 10 "data/maps/TurrisSaltus5F/scripts.pory"
+# 11 "data/maps/TurrisSaltus5F/scripts.pory"
 	compare VAR_TURRIS_SALTUS_STATE, 14
 	goto_if_le TurrisSaltus5F_Script_Tyrian14_1
-# 18 "data/maps/TurrisSaltus5F/scripts.pory"
+# 19 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenPost
 	return
 
 TurrisSaltus5F_Script_Tyrian14_1:
-# 11 "data/maps/TurrisSaltus5F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_FaceUp
 # 12 "data/maps/TurrisSaltus5F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_FaceRight
 # 13 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 14 "data/maps/TurrisSaltus5F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
-# 15 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
+# 14 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 15 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
 # 16 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 17 "data/maps/TurrisSaltus5F/scripts.pory"
+	call TurrisSaltus_Script_HandmaidenBattle
+	return
+
+
+TurrisSaltus5F_Script_Tyrian19::
+# 24 "data/maps/TurrisSaltus5F/scripts.pory"
+	compare VAR_TURRIS_SALTUS_STATE, 19
+	goto_if_le TurrisSaltus5F_Script_Tyrian19_1
+# 32 "data/maps/TurrisSaltus5F/scripts.pory"
+	call TurrisSaltus_Script_HandmaidenPost
+	return
+
+TurrisSaltus5F_Script_Tyrian19_1:
+# 25 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN19, Common_Movement_FaceUp
+# 26 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 27 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 28 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN19, Common_Movement_ExclamationMark
+# 29 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 30 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenBattle
 	return
 
 
 TurrisSaltus5F_Script_Trigger_Tyrian14A::
-# 23 "data/maps/TurrisSaltus5F/scripts.pory"
+# 37 "data/maps/TurrisSaltus5F/scripts.pory"
 	lockall
-# 25 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 27 "data/maps/TurrisSaltus5F/scripts.pory"
+# 38 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 40 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 42 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
-# 28 "data/maps/TurrisSaltus5F/scripts.pory"
+# 43 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 30 "data/maps/TurrisSaltus5F/scripts.pory"
+# 45 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 46 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 31 "data/maps/TurrisSaltus5F/scripts.pory"
+# 47 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 33 "data/maps/TurrisSaltus5F/scripts.pory"
+# 49 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_WalkUp4
-# 34 "data/maps/TurrisSaltus5F/scripts.pory"
+# 50 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 36 "data/maps/TurrisSaltus5F/scripts.pory"
+# 52 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenBattle
 	return
 
 
 TurrisSaltus5F_Script_Trigger_Tyrian14B::
-# 40 "data/maps/TurrisSaltus5F/scripts.pory"
+# 56 "data/maps/TurrisSaltus5F/scripts.pory"
 	lockall
-# 42 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 44 "data/maps/TurrisSaltus5F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
-# 45 "data/maps/TurrisSaltus5F/scripts.pory"
-	waitmovement 0
-# 47 "data/maps/TurrisSaltus5F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 48 "data/maps/TurrisSaltus5F/scripts.pory"
-	waitmovement 0
-# 50 "data/maps/TurrisSaltus5F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_WalkUp3
-# 51 "data/maps/TurrisSaltus5F/scripts.pory"
-	waitmovement 0
-# 53 "data/maps/TurrisSaltus5F/scripts.pory"
-	call TurrisSaltus_Script_HandmaidenBattle
-	return
-
-
-TurrisSaltus5F_Script_Trigger_Tyrian14C::
 # 57 "data/maps/TurrisSaltus5F/scripts.pory"
-	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 59 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
 # 61 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
 # 62 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
 # 64 "data/maps/TurrisSaltus5F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	delay 30
 # 65 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+# 66 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 67 "data/maps/TurrisSaltus5F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_WalkUp2
 # 68 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_WalkUp3
+# 69 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 70 "data/maps/TurrisSaltus5F/scripts.pory"
+# 71 "data/maps/TurrisSaltus5F/scripts.pory"
+	call TurrisSaltus_Script_HandmaidenBattle
+	return
+
+
+TurrisSaltus5F_Script_Trigger_Tyrian14C::
+# 75 "data/maps/TurrisSaltus5F/scripts.pory"
+	lockall
+# 76 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 78 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 80 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
+# 81 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 83 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 84 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+# 85 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 87 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_WalkUp2
+# 88 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 90 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenBattle
 	return
 
 
 TurrisSaltus5F_Script_Trigger_Tyrian14D::
-# 74 "data/maps/TurrisSaltus5F/scripts.pory"
+# 94 "data/maps/TurrisSaltus5F/scripts.pory"
 	lockall
-# 76 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 78 "data/maps/TurrisSaltus5F/scripts.pory"
+# 95 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 97 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 99 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
-# 79 "data/maps/TurrisSaltus5F/scripts.pory"
+# 100 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 81 "data/maps/TurrisSaltus5F/scripts.pory"
+# 102 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 103 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 82 "data/maps/TurrisSaltus5F/scripts.pory"
+# 104 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 84 "data/maps/TurrisSaltus5F/scripts.pory"
+# 106 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_WalkUp
-# 85 "data/maps/TurrisSaltus5F/scripts.pory"
+# 107 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 87 "data/maps/TurrisSaltus5F/scripts.pory"
+# 109 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenBattle
 	return
 
 
 TurrisSaltus5F_Script_Trigger_Tyrian14E::
-# 91 "data/maps/TurrisSaltus5F/scripts.pory"
+# 113 "data/maps/TurrisSaltus5F/scripts.pory"
 	lockall
-# 93 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 95 "data/maps/TurrisSaltus5F/scripts.pory"
+# 114 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 116 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 118 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN14, Common_Movement_ExclamationMark
-# 96 "data/maps/TurrisSaltus5F/scripts.pory"
+# 119 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 98 "data/maps/TurrisSaltus5F/scripts.pory"
+# 121 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 122 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 99 "data/maps/TurrisSaltus5F/scripts.pory"
+# 123 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 102 "data/maps/TurrisSaltus5F/scripts.pory"
+# 126 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenBattle
 	return
 
 
 TurrisSaltus5F_Script_Trigger_Tyrian15A::
-# 106 "data/maps/TurrisSaltus5F/scripts.pory"
+# 130 "data/maps/TurrisSaltus5F/scripts.pory"
 	lockall
-# 108 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 110 "data/maps/TurrisSaltus5F/scripts.pory"
+# 131 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 133 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 135 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN15, Common_Movement_ExclamationMark
-# 111 "data/maps/TurrisSaltus5F/scripts.pory"
+# 136 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 113 "data/maps/TurrisSaltus5F/scripts.pory"
+# 138 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 139 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 114 "data/maps/TurrisSaltus5F/scripts.pory"
+# 140 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 116 "data/maps/TurrisSaltus5F/scripts.pory"
+# 142 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN15, Common_Movement_WalkRight3
-# 117 "data/maps/TurrisSaltus5F/scripts.pory"
+# 143 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 119 "data/maps/TurrisSaltus5F/scripts.pory"
+# 145 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenBattle
 	return
 
 
 TurrisSaltus5F_Script_Trigger_Tyrian15B::
-# 123 "data/maps/TurrisSaltus5F/scripts.pory"
+# 149 "data/maps/TurrisSaltus5F/scripts.pory"
 	lockall
-# 125 "data/maps/TurrisSaltus5F/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 127 "data/maps/TurrisSaltus5F/scripts.pory"
+# 150 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 152 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 154 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN15, Common_Movement_ExclamationMark
-# 128 "data/maps/TurrisSaltus5F/scripts.pory"
+# 155 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 130 "data/maps/TurrisSaltus5F/scripts.pory"
+# 157 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 158 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 131 "data/maps/TurrisSaltus5F/scripts.pory"
+# 159 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 133 "data/maps/TurrisSaltus5F/scripts.pory"
+# 161 "data/maps/TurrisSaltus5F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS5F_TYRIAN15, Common_Movement_WalkRight4
-# 134 "data/maps/TurrisSaltus5F/scripts.pory"
+# 162 "data/maps/TurrisSaltus5F/scripts.pory"
 	waitmovement 0
-# 136 "data/maps/TurrisSaltus5F/scripts.pory"
+# 164 "data/maps/TurrisSaltus5F/scripts.pory"
+	call TurrisSaltus_Script_HandmaidenBattle
+	return
+
+
+TurrisSaltus5F_Script_Trigger_Tyrian19A::
+# 168 "data/maps/TurrisSaltus5F/scripts.pory"
+	lockall
+# 169 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 171 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 173 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN19, Common_Movement_ExclamationMark
+# 174 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 176 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 177 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 178 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 181 "data/maps/TurrisSaltus5F/scripts.pory"
+	call TurrisSaltus_Script_HandmaidenBattle
+	return
+
+
+TurrisSaltus5F_Script_Trigger_Tyrian19B::
+# 185 "data/maps/TurrisSaltus5F/scripts.pory"
+	lockall
+# 186 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 188 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 190 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN19, Common_Movement_ExclamationMark
+# 191 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 193 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 194 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 195 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 197 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN19, Common_Movement_WalkRight
+# 198 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 200 "data/maps/TurrisSaltus5F/scripts.pory"
+	call TurrisSaltus_Script_HandmaidenBattle
+	return
+
+
+TurrisSaltus5F_Script_Trigger_Tyrian20A::
+# 204 "data/maps/TurrisSaltus5F/scripts.pory"
+	lockall
+# 205 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 207 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 209 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN20, Common_Movement_ExclamationMark
+# 210 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 212 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 213 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 214 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 216 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN20, Common_Movement_WalkDown
+# 217 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 219 "data/maps/TurrisSaltus5F/scripts.pory"
+	call TurrisSaltus_Script_HandmaidenBattle
+	return
+
+
+TurrisSaltus5F_Script_Trigger_Tyrian20B::
+# 223 "data/maps/TurrisSaltus5F/scripts.pory"
+	lockall
+# 224 "data/maps/TurrisSaltus5F/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 226 "data/maps/TurrisSaltus5F/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_ROCKET, FALSE
+# 228 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN20, Common_Movement_ExclamationMark
+# 229 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 231 "data/maps/TurrisSaltus5F/scripts.pory"
+	delay 30
+# 232 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 233 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 235 "data/maps/TurrisSaltus5F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS5F_TYRIAN20, Common_Movement_WalkDown2
+# 236 "data/maps/TurrisSaltus5F/scripts.pory"
+	waitmovement 0
+# 238 "data/maps/TurrisSaltus5F/scripts.pory"
 	call TurrisSaltus_Script_HandmaidenBattle
 	return
 

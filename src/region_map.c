@@ -6126,7 +6126,7 @@ u32 GetDynamicMapSec_MareS9(bool32 useWarpInfo)
         (x == 42 && y > 43 && y < 48) ||
         (x == 43 && y > 43 && y < 48) ||
         (x == 44 && y > 43 && y < 48) ||
-        (x == 45 && y > 43 && y < 48)
+        (x == 45 && y > 43 && y < 47)
         )
         return 5;
     //1: Isla Tropica - Default

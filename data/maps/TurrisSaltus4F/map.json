@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TurrisSaltus_Script_HandmaidenPost",
       "flag": "0"
     },
     {
@@ -39,10 +39,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TurrisSaltus4F_Script_Tyrian11",
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_TURRISSALTUS4F_TYRIAN18",
       "graphics_id": "OBJ_EVENT_GFX_LENORA",
       "x": 9,
       "y": 12,
@@ -52,7 +53,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TurrisSaltus4F_Script_Tyrian18",
       "flag": "0"
     },
     {
@@ -66,7 +67,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TurrisSaltus_Script_HandmaidenPost",
       "flag": "0"
     }
   ],
@@ -84,6 +85,20 @@
       "elevation": 0,
       "dest_map": "MAP_TURRIS_SALTUS5F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_TURRIS_SALTUS3F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_TURRIS_SALTUS5F",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -167,6 +182,24 @@
       "var": "VAR_TURRIS_SALTUS_STATE",
       "var_value": "13",
       "script": "TurrisSaltus4F_Script_Trigger_Tyrian13B"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "18",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian18A"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "18",
+      "script": "TurrisSaltus4F_Script_Trigger_Tyrian18B"
     }
   ],
   "bg_events": []

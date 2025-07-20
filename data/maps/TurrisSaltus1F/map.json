@@ -138,7 +138,7 @@
       "y": 11,
       "elevation": 0,
       "var": "VAR_TURRIS_SALTUS_STATE",
-      "var_value": "2",
+      "var_value": "1",
       "script": "TurrisSaltus1F_Script_Trigger_Tyrian1B"
     },
     {

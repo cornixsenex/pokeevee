@@ -61,7 +61,7 @@ script TurrisSaltus1F_Script_Tyrian2 {
     if (var(VAR_TURRIS_SALTUS_STATE) <= 2) {
         applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_FaceRight)
         waitmovement (0)
-        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
         applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_ExclamationMark)
         waitmovement (0)
         call (TurrisSaltus_Script_HandmaidenBattle)
@@ -74,7 +74,7 @@ script TurrisSaltus1F_Script_Tyrian3 {
     if (var(VAR_TURRIS_SALTUS_STATE) <= 3) {
         applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_FaceDown)
         waitmovement (0)
-        playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+        playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
         applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_ExclamationMark)
         waitmovement (0)
         call (TurrisSaltus_Script_HandmaidenBattle)
@@ -86,12 +86,14 @@ script TurrisSaltus1F_Script_Tyrian3 {
 //Tyrian Battle Setup Scripts
 script TurrisSaltus1F_Script_Trigger_Tyrian1A {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN1, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -101,12 +103,14 @@ script TurrisSaltus1F_Script_Trigger_Tyrian1A {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian1B {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN1, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -118,12 +122,14 @@ script TurrisSaltus1F_Script_Trigger_Tyrian1B {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian2A {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -135,12 +141,14 @@ script TurrisSaltus1F_Script_Trigger_Tyrian2A {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian2B {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN2, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -150,12 +158,14 @@ script TurrisSaltus1F_Script_Trigger_Tyrian2B {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian3A {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -165,12 +175,14 @@ script TurrisSaltus1F_Script_Trigger_Tyrian3A {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian3B {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN3, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -182,12 +194,14 @@ script TurrisSaltus1F_Script_Trigger_Tyrian3B {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian4A {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN4, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -199,12 +213,14 @@ script TurrisSaltus1F_Script_Trigger_Tyrian4A {
 
 script TurrisSaltus1F_Script_Trigger_Tyrian4B {
 	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//Music
-	playbgm (MUS_RG_ENCOUNTER_GIRL, FALSE)
+	playbgm (MUS_RG_ENCOUNTER_ROCKET, FALSE)
 	//Alert Handmaiden
     applymovement (LOCALID_TURRISSALTUS1F_TYRIAN4, Common_Movement_ExclamationMark)
     waitmovement (0)
 	//Turn et face player
+	delay (30)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
 	waitmovement (0)
 	//if needed move tyrian into position
@@ -216,6 +232,7 @@ script TurrisSaltus1F_Script_Trigger_Tyrian4B {
 
 //Turris Saltus General Handmaiden battle script
 script TurrisSaltus_Script_HandmaidenBattle {
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//pick random pre messages
     specialvar (VAR_RESULT, RandDigit)
     switch (var(VAR_RESULT)) {
@@ -441,7 +458,7 @@ text TurrisSaltus_Text_HandmaidenPost4 {
 }
 
 text TurrisSaltus_Text_HandmaidenPost5 {
-    format("Turris Saltus was built to be our home and keep our all intruders, such as you.")
+    format("Turris Saltus was built to be our home and keep out all intruders, such as you.")
 }
 
 text TurrisSaltus_Text_HandmaidenPost6 {

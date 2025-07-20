@@ -27,566 +27,590 @@ SurfSchool_Script_TriggerSurfer1::
 # 19 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	lockall
 # 20 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setvar VAR_SURFSCHOOL_STATE, 1
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 21 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
+	setvar VAR_SURFSCHOOL_STATE, 1
 # 22 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_ExclamationMark
+	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
 # 23 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_ExclamationMark
 # 24 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 25 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
+# 25 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	delay 30
 # 26 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer1Intro
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 # 27 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
+	waitmovement 0
 # 28 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost
+	msgbox SurfSchool_Text_Surfer1Intro
 # 29 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer1Post
-# 30 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
+# 30 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost
 # 31 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer1Post
+# 32 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 33 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 34 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	releaseall
 	end
 
 
 SurfSchool_Script_Surfer1::
-# 36 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 39 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	faceplayer
-# 37 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 40 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	compare VAR_SURFSCHOOL_STATE, 0
 	goto_if_gt SurfSchool_Script_Surfer1_2
-# 41 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setvar VAR_SURFSCHOOL_STATE, 1
-# 42 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 43 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_ExclamationMark
 # 44 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
+	setvar VAR_SURFSCHOOL_STATE, 1
 # 45 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer1Intro
+	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
 # 46 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
+	applymovement LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_ExclamationMark
 # 47 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost
+	waitmovement 0
 # 48 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer1Post
+	msgbox SurfSchool_Text_Surfer1Intro
 # 49 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
-SurfSchool_Script_Surfer1_1:
+# 50 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer1Lost
 # 51 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_FaceLeft
+	msgbox SurfSchool_Text_Surfer1Post
 # 52 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+SurfSchool_Script_Surfer1_1:
+# 54 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_SURF_SCHOOL_SURFER1, Common_Movement_FaceLeft
+# 55 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
 	end
 
 SurfSchool_Script_Surfer1_2:
-# 38 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 41 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer1Post
-# 39 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 42 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 	goto SurfSchool_Script_Surfer1_1
 
 
 SurfSchool_Script_TriggerSurfer2::
-# 58 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	lockall
-# 59 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setvar VAR_SURFSCHOOL_STATE, 2
-# 60 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
 # 61 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_ExclamationMark
+	lockall
 # 62 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 63 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	setvar VAR_SURFSCHOOL_STATE, 2
 # 64 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
+	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
 # 65 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer2Intro
+	applymovement LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_ExclamationMark
 # 66 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
+	waitmovement 0
 # 67 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost
+	delay 30
 # 68 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer2Post
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 # 69 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
+	waitmovement 0
 # 70 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer2Intro
+# 71 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 72 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost
+# 73 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer2Post
+# 74 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 75 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 76 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	releaseall
 	end
 
 
 SurfSchool_Script_Surfer2::
-# 75 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 81 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	faceplayer
-# 76 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 82 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	compare VAR_SURFSCHOOL_STATE, 1
 	goto_if_gt SurfSchool_Script_Surfer2_2
-# 80 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setvar VAR_SURFSCHOOL_STATE, 2
-# 81 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 82 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_ExclamationMark
-# 83 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
-# 84 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer2Intro
-# 85 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
 # 86 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost
+	setvar VAR_SURFSCHOOL_STATE, 2
 # 87 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer2Post
+	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
 # 88 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_ExclamationMark
+# 89 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	waitmovement 0
+# 90 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer2Intro
+# 91 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 92 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer2Lost
+# 93 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer2Post
+# 94 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 SurfSchool_Script_Surfer2_1:
-# 90 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 96 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_SURFER2, Common_Movement_FaceDown
-# 91 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 97 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
 	end
 
 SurfSchool_Script_Surfer2_2:
-# 77 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 83 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer2Post
-# 78 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 84 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 	goto SurfSchool_Script_Surfer2_1
 
 
 SurfSchool_Script_TriggerSurfer3::
-# 96 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	lockall
-# 97 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setvar VAR_SURFSCHOOL_STATE, 3
-# 98 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 99 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_ExclamationMark
-# 100 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
-# 101 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 # 102 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
+	lockall
 # 103 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer3Intro
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 104 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
+	setvar VAR_SURFSCHOOL_STATE, 3
 # 105 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost
+	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
 # 106 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer3Post
+	applymovement LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_ExclamationMark
 # 107 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
+	waitmovement 0
 # 108 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	delay 30
+# 109 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+# 110 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	waitmovement 0
+# 111 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer3Intro
+# 112 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 113 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost
+# 114 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer3Post
+# 115 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 116 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 117 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	releaseall
 	end
 
 
 SurfSchool_Script_Surfer3::
-# 113 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 122 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	faceplayer
-# 114 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 123 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	compare VAR_SURFSCHOOL_STATE, 2
 	goto_if_gt SurfSchool_Script_Surfer3_2
-# 118 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 127 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	setvar VAR_SURFSCHOOL_STATE, 3
-# 119 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 128 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 120 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 129 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_ExclamationMark
-# 121 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 130 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 122 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 131 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer3Intro
-# 123 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 132 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
-# 124 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 133 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer3Lost
-# 125 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 134 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer3Post
-# 126 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 135 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 SurfSchool_Script_Surfer3_1:
-# 128 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 137 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_SURFER3, Common_Movement_FaceUp
-# 129 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 138 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
 	end
 
 SurfSchool_Script_Surfer3_2:
-# 115 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 124 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer3Post
-# 116 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 125 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 	goto SurfSchool_Script_Surfer3_1
 
 
 SurfSchool_Script_TriggerSurfer4::
-# 134 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	lockall
-# 135 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setvar VAR_SURFSCHOOL_STATE, 4
-# 136 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 137 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_ExclamationMark
-# 138 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
-# 139 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 140 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
-# 141 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer4Intro
-# 142 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
 # 143 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost
+	lockall
 # 144 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Surfer4Post
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 145 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
+	setvar VAR_SURFSCHOOL_STATE, 4
 # 146 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
+# 147 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_ExclamationMark
+# 148 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	waitmovement 0
+# 149 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	delay 30
+# 150 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 151 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	waitmovement 0
+# 152 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer4Intro
+# 153 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 154 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost
+# 155 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Surfer4Post
+# 156 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 157 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 158 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	releaseall
 	end
 
 
 SurfSchool_Script_Surfer4::
-# 151 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 163 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	faceplayer
-# 152 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 164 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	compare VAR_SURFSCHOOL_STATE, 3
 	goto_if_gt SurfSchool_Script_Surfer4_2
-# 156 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 168 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	setvar VAR_SURFSCHOOL_STATE, 4
-# 157 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 169 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	playbgm MUS_RG_ENCOUNTER_GIRL, FALSE
-# 158 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 170 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_ExclamationMark
-# 159 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 171 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 160 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 172 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer4Intro
-# 161 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 173 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
-# 162 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 174 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	trainerbattle_no_intro TRAINER_SURFINSTRUCTOR, SurfSchool_Text_Surfer4Lost
-# 163 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 175 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer4Post
-# 164 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 176 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 SurfSchool_Script_Surfer4_1:
-# 166 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 178 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_SURFER4, Common_Movement_FaceRight
-# 167 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 179 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
 	end
 
 SurfSchool_Script_Surfer4_2:
-# 153 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 165 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Surfer4Post
-# 154 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 166 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
 	goto SurfSchool_Script_Surfer4_1
 
 
 SurfSchool_Script_Trigger_LeafSceneA::
-# 172 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 184 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	lockall
-# 173 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 185 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight
-# 174 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 186 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 175 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 187 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_ExclamationMark
-# 176 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 188 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 177 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 189 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 178 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 190 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 179 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 191 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	call SurfSchool_Script_LeafScene
 	return
 
 
 SurfSchool_Script_Trigger_LeafSceneB::
-# 183 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 195 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	lockall
-# 184 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 196 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight
-# 185 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 197 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 186 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 198 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_ExclamationMark
-# 187 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 199 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 188 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 200 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	call SurfSchool_Script_LeafScene
 	return
 
 
 SurfSchool_Script_LeafScene::
-# 194 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setvar VAR_SURFSCHOOL_STATE, 5
-# 196 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 197 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
-# 198 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft2
-# 199 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
-# 201 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	load_field_pic FIELD_PIC_LEAF, 190, 98
-# 202 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Leaf1
-# 203 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
-# 204 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	destroy_field_pic FIELD_PIC_LEAF
 # 206 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-# 207 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_WalkUp
+	setvar VAR_SURFSCHOOL_STATE, 5
 # 208 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+# 209 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
 # 210 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	load_field_pic FIELD_PIC_MISTY, 190, 98
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft2
 # 211 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Misty1
-# 212 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	destroy_field_pic FIELD_PIC_MISTY
+	waitmovement 0
+# 213 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	load_field_pic FIELD_PIC_LEAF, 190, 98
 # 214 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	msgbox SurfSchool_Text_Leaf1
 # 215 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight
+	closemessage
 # 216 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_LEAF
 # 218 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	load_field_pic FIELD_PIC_LEAF, 190, 98
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 # 219 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Leaf2
+	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_WalkUp
 # 220 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
-# 221 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	destroy_field_pic FIELD_PIC_LEAF
+	waitmovement 0
 # 222 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	call SurfSchool_Script_SetupMultiBattle
+	load_field_pic FIELD_PIC_MISTY, 190, 98
+# 223 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Misty1
 # 224 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 225 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceUp
+	destroy_field_pic FIELD_PIC_MISTY
 # 226 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	waitmovement 0
-# 228 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 229 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Misty2
-# 230 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
-# 231 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	destroy_field_pic FIELD_PIC_MISTY
-# 233 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	multi_2_vs_1 TRAINER_MISTY, SurfSchool_Text_MistyLost, PARTNER_LEAF
-# 235 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 236 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Misty3
-# 237 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	closemessage
-# 238 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	destroy_field_pic FIELD_PIC_MISTY
-# 240 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	giveitem ITEM_SURFBOARD
-# 242 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 243 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Misty4
-# 244 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	destroy_field_pic FIELD_PIC_MISTY
-# 246 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 247 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 227 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight
-# 248 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 228 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
-# 250 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 230 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	load_field_pic FIELD_PIC_LEAF, 190, 98
-# 251 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	msgbox SurfSchool_Text_Leaf3
-# 252 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 231 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Leaf2
+# 232 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
-# 253 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 233 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	destroy_field_pic FIELD_PIC_LEAF
-# 255 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	applymovement LOCALID_SURF_SCHOOL_LEAF, SurfSchool_Movement_LeafExit
-# 256 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 234 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	call SurfSchool_Script_SetupMultiBattle
+# 236 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 237 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceUp
+# 238 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitmovement 0
+# 240 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	load_field_pic FIELD_PIC_MISTY, 190, 98
+# 241 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Misty2
+# 242 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 243 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	destroy_field_pic FIELD_PIC_MISTY
+# 245 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	multi_2_vs_1 TRAINER_MISTY, SurfSchool_Text_MistyLost, PARTNER_LEAF
+# 247 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	load_field_pic FIELD_PIC_MISTY, 190, 98
+# 248 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Misty3
+# 249 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 250 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	destroy_field_pic FIELD_PIC_MISTY
+# 252 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	giveitem ITEM_SURFBOARD
+# 254 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	load_field_pic FIELD_PIC_MISTY, 190, 98
+# 255 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Misty4
+# 256 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	destroy_field_pic FIELD_PIC_MISTY
 # 258 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	hideobjectat LOCALID_SURF_SCHOOL_LEAF, MAP_TRANQUILLITAS_SURF_SCHOOL
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 # 259 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	removeobject LOCALID_SURF_SCHOOL_LEAF
+	applymovement LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceRight
 # 260 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setobjectxyperm LOCALID_SURF_SCHOOL_LEAF, 0, 0
-# 261 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	setobjectmovementtype LOCALID_SURF_SCHOOL_LEAF, MOVEMENT_TYPE_INVISIBLE
+	waitmovement 0
+# 262 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	load_field_pic FIELD_PIC_LEAF, 190, 98
 # 263 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	msgbox SurfSchool_Text_Leaf3
+# 264 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	closemessage
+# 265 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	destroy_field_pic FIELD_PIC_LEAF
+# 267 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	applymovement LOCALID_SURF_SCHOOL_LEAF, SurfSchool_Movement_LeafExit
+# 268 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	waitmovement 0
+# 270 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	hideobjectat LOCALID_SURF_SCHOOL_LEAF, MAP_TRANQUILLITAS_SURF_SCHOOL
+# 271 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	removeobject LOCALID_SURF_SCHOOL_LEAF
+# 272 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	setobjectxyperm LOCALID_SURF_SCHOOL_LEAF, 0, 0
+# 273 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+	setobjectmovementtype LOCALID_SURF_SCHOOL_LEAF, MOVEMENT_TYPE_INVISIBLE
+# 275 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	releaseall
 	end
 
 
 SurfSchool_Script_SetupMultiBattle::
-# 268 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 280 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	special SavePlayerParty
-# 269 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 281 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	special ChooseHalfPartyForBattle
-# 270 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 282 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	waitstate
-# 271 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 283 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SurfSchool_Script_SetupMultiBattle_1
 	return
 
 SurfSchool_Script_SetupMultiBattle_1:
-# 272 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 284 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	call SurfSchool_Script_SetupMultiBattle
 	return
 
 
 SurfSchool_Script_Misty::
-# 279 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	faceplayer
-# 280 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 292 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	load_field_pic FIELD_PIC_MISTY, 190, 98
-# 281 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	msgbox SurfSchool_Text_Misty5
-# 282 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	destroy_field_pic FIELD_PIC_MISTY
-# 283 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	closemessage
-# 284 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 296 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	call Common_Script_Unfaceplayer
 	end
 
 
-# 289 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 301 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 SurfSchool_Movement_LeafExit:
-# 290 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 302 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 303 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 303 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 291 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 303 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 292 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 304 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_up
-# 292 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 304 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_up
-# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 305 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 305 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 305 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 305 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 293 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 305 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_right
-# 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 306 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
-# 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 306 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
-# 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 306 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
-# 294 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 306 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 295 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 307 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 296 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 308 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
-# 297 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 309 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_left
-# 298 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 310 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
-# 298 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 310 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	walk_down
 	step_end
 
 SurfSchool_Text_Surfer1Intro::
-# 302 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 314 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You don't look tough enough to handle\n"
 	.string "the open water where pokemon attack at\l"
 	.string "any moment. Let me test your skill.$"
 
 SurfSchool_Text_Surfer1Lost::
-# 308 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 320 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You catch on fast.$"
 
 SurfSchool_Text_Surfer1Post::
-# 312 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 324 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "While surfing the oceans a wild pokemon\n"
 	.string "could suddenly attack so you must\l"
 	.string "always be alert.$"
 
 SurfSchool_Text_Surfer2Intro::
-# 319 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 331 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "So, you think you can tame the mighty\n"
 	.string "waves?$"
 
 SurfSchool_Text_Surfer2Lost::
-# 323 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 335 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You're stronger than you look.$"
 
 SurfSchool_Text_Surfer2Post::
-# 327 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 339 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "While you're surfing be careful not to\n"
 	.string "wander into a deep sea current which\l"
 	.string "could whisk you away. There's no way of\l"
 	.string "stopping once you're caught up!$"
 
 SurfSchool_Text_Surfer3Intro::
-# 335 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 347 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "It's time for me to test your aptitude.$"
 
 SurfSchool_Text_Surfer3Lost::
-# 339 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 351 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You've satisfied my examination.$"
 
 SurfSchool_Text_Surfer3Post::
-# 343 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 355 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Stay close to shore if you're not\n"
 	.string "strong enough to surf the ocean. The\l"
 	.string "shallow waters are home to much weaker\l"
@@ -594,17 +618,17 @@ SurfSchool_Text_Surfer3Post::
 	.string "the deep ocean.$"
 
 SurfSchool_Text_Surfer4Intro::
-# 351 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 363 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "If you get past me you may face Misty\n"
 	.string "and demonstrate your worthiness to\l"
 	.string "surf.$"
 
 SurfSchool_Text_Surfer4Lost::
-# 356 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 368 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Impressive.$"
 
 SurfSchool_Text_Surfer4Post::
-# 360 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 372 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "The ocean is divided into seven seas:\n"
 	.string "Mare Tranquillum, Mares Tropicum and\l"
 	.string "Subtropicum, Mare Internum, Mare\l"
@@ -628,12 +652,12 @@ SurfSchool_Text_Surfer4Post::
 	.string "seas.$"
 
 SurfSchool_Text_Leaf1::
-# 384 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 396 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Ok, let's do this, let's leran how to\n"
 	.string "surf.$"
 
 SurfSchool_Text_Misty1::
-# 388 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 400 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "You've both demonstrated prerequisite\n"
 	.string "ability you need to learn to surf but\l"
 	.string "before I can give you your surfboards\l"
@@ -644,7 +668,7 @@ SurfSchool_Text_Misty1::
 	.string "defeat me and pass my Surfing School.$"
 
 SurfSchool_Text_Leaf2::
-# 399 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 411 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Here we go {PLAYER}, time to earn our\n"
 	.string "surfboards and demonstrate the power\l"
 	.string "of our love. We'll take down Misty\l"
@@ -654,24 +678,24 @@ SurfSchool_Text_Leaf2::
 	.string "three pokemon will you choose?$"
 
 SurfSchool_Text_Misty2::
-# 408 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 420 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Now I will test the strength of your\n"
 	.string "union and see if you're ready to surf\l"
 	.string "the seas.$"
 
 SurfSchool_Text_MistyLost::
-# 413 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 425 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Your strength as a couple's\n"
 	.string "unquestionable.$"
 
 SurfSchool_Text_Misty3::
-# 417 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 429 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Impressive, you have both\n"
 	.string "demonstrated your readiness to surf,\l"
 	.string "so please take these.$"
 
 SurfSchool_Text_Misty4::
-# 422 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 434 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "With those surfboards you'll be able to\n"
 	.string "surf over the seven seas and explore\l"
 	.string "the surface of rivers, lakes, and indoor\l"
@@ -710,7 +734,7 @@ SurfSchool_Text_Misty4::
 	.string "safe.$"
 
 SurfSchool_Text_Leaf3::
-# 460 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 472 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "I'm so excited {PLAYER} I can't\n"
 	.string "believe we finally have surfboards of\l"
 	.string "our own. I can't wait to go out and ride\l"
@@ -721,7 +745,7 @@ SurfSchool_Text_Leaf3::
 	.string "Mare Mortuorum.$"
 
 SurfSchool_Text_Misty5::
-# 470 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
+# 482 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	.string "Have fun surfing, but do not surf too\n"
 	.string "far. With great freedom comes great\l"
 	.string "chance peril, you must be cautions and\l"

@@ -43,6 +43,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_TURRISSALTUS2F_TYRIAN16",
       "graphics_id": "OBJ_EVENT_GFX_LENORA",
       "x": 9,
       "y": 11,
@@ -52,7 +53,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TurrisSaltus_Script_HandmaidenPost",
       "flag": "0"
     },
     {
@@ -84,6 +85,13 @@
       "elevation": 0,
       "dest_map": "MAP_TURRIS_SALTUS3F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_TURRIS_SALTUS3F",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [
@@ -149,6 +157,24 @@
       "var": "VAR_TURRIS_SALTUS_STATE",
       "var_value": "7",
       "script": "TurrisSaltus2F_Script_Trigger_Tyrian7C"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "16",
+      "script": "TurrisSaltus2F_Script_Trigger_Tyrian16A"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TURRIS_SALTUS_STATE",
+      "var_value": "16",
+      "script": "TurrisSaltus2F_Script_Trigger_Tyrian16B"
     }
   ],
   "bg_events": []

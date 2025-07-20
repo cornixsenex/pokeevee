@@ -2691,7 +2691,7 @@ static const struct TrainerMon sParty_Handmaiden[] = {
     {
     .iv = 100,
     .lvl = 19,
-    .species = SPECIES_GASTRODON,
+    .species = SPECIES_AZELF,
     },
     {
     .iv = 100,
