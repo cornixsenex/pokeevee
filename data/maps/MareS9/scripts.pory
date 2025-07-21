@@ -150,7 +150,6 @@ script MareS9_Script_ShowTyriansFixingPristis {
     return
 }
 
-
 //Aeneid Member Scripts
 script MareS9_Script_Aeneas {
     faceplayer
@@ -201,9 +200,22 @@ script MareS9_Script_Aeneas {
         applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceRight)
         applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
         waitmovement (0)
+        //lock for setup for boat
+        lockall
         //move camera
         special (SpawnCameraObject)
         applymovement (LOCALID_CAMERA, MareS9_Movement_MoveCameraToFuneral)
+        waitmovement (0)
+        //setup Ascanius et kids for boat
+        removeobject (LOCALID_MARES9_ROMULUS)
+        removeobject (LOCALID_MARES9_REMUS)
+        setobjectxyperm (LOCALID_MARES9_ROMULUS, 15, 40)
+        setobjectxyperm (LOCALID_MARES9_REMUS, 17, 40)
+        setobjectmovementtype (LOCALID_MARES9_ROMULUS, MOVEMENT_TYPE_FACE_UP)
+        setobjectmovementtype (LOCALID_MARES9_REMUS, MOVEMENT_TYPE_FACE_UP)
+        addobject (LOCALID_MARES9_ROMULUS)
+        addobject (LOCALID_MARES9_REMUS)
+        applymovement (LOCALID_MARES9_ASCANIUS, Common_Movement_FaceUp)
         waitmovement (0)
         //E: Lament
         load_field_pic (FIELD_PIC_ELISSA, 190, 98)
@@ -267,19 +279,148 @@ script MareS9_Script_Aeneas {
         applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft)
         waitmovement (0)
         msgbox (MareS9_Text_Aeneas_Funeral4)
+        destroy_field_pic (FIELD_PIC_AENEAS)
         //F: I'm ready
+        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+        msgbox (MareS9_Text_Faustulus_Funeral1)
+        destroy_field_pic (FIELD_PIC_FAUSTULUS)
         //A: Get to it
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral5)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
         //F to player
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft)
+        waitmovement (0)
         //F pre
+        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+        msgbox (MareS9_Text_Faustulus_Funeral2)
+        destroy_field_pic (FIELD_PIC_FAUSTULUS)
+        closemessage
         //f battle
+        trainerbattle_no_intro (TRAINER_FAUSTULUS, MareS9_Text_FaustulusLost)
         //f post
+        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+        msgbox (MareS9_Text_Faustulus_Funeral3)
+        destroy_field_pic (FIELD_PIC_FAUSTULUS)
+        closemessage
+        //turn player et f back to aeneas
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceUp)
+        waitmovement (0)
         //A: Next a foot race
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral6)
+        destroy_field_pic (FIELD_PIC_AENEAS)
         //B: NO! I will burn this ship to ashes lets go
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+        msgbox (MareS9_Text_Beroe_Funeral2)
+        destroy_field_pic (FIELD_PIC_BEROE)
+        //turn A to B
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceLeft)
+        waitmovement (0)
         //A: Ok you're right lets be off
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral7)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
         //load onto boat
+        //Beroe
+        applymovement (LOCALID_MARES9_BEROE, Common_Movement_WalkUp)
+        waitmovement (0)
+        removeobject (LOCALID_MARES9_BEROE)
+        setobjectxyperm (LOCALID_MARES9_BEROE, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_BEROE, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_BEROE)
+        //Romulus, Ascanius, Remus
+        applymovement (LOCALID_MARES9_ROMULUS, Common_Movement_WalkUp)
+        applymovement (LOCALID_MARES9_ASCANIUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES9_REMUS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_ROMULUS, Common_Movement_WalkUp)
+        applymovement (LOCALID_MARES9_ASCANIUS, Common_Movement_WalkUp)
+        applymovement (LOCALID_MARES9_REMUS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_ROMULUS, Common_Movement_WalkUp2)
+        applymovement (LOCALID_MARES9_ASCANIUS, Common_Movement_WalkUp2)
+        applymovement (LOCALID_MARES9_REMUS, Common_Movement_WalkUp2)
+        waitmovement (0)
+        removeobject (LOCALID_MARES9_ROMULUS)
+        setobjectxyperm (LOCALID_MARES9_ROMULUS, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_ROMULUS, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_ROMULUS)
+        applymovement (LOCALID_MARES9_ASCANIUS, Common_Movement_WalkUp)
+        applymovement (LOCALID_MARES9_REMUS, Common_Movement_WalkUp)
+        waitmovement (0)
+        removeobject (LOCALID_MARES9_ASCANIUS)
+        setobjectxyperm (LOCALID_MARES9_ASCANIUS, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_ASCANIUS, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_ASCANIUS)
+        applymovement (LOCALID_MARES9_REMUS, Common_Movement_WalkUp)
+        waitmovement (0)
+        removeobject (LOCALID_MARES9_REMUS)
+        setobjectxyperm (LOCALID_MARES9_REMUS, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_REMUS, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_REMUS)
+        //Player
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+        waitmovement (0)
+        hideobjectat (LOCALID_PLAYER, MAP_MARE_S9
+        //Faustulus
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkLeft2)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkUp)
+        waitmovement (0)
+        removeobject (LOCALID_MARES9_FAUSTULUS)
+        setobjectxyperm (LOCALID_MARES9_FAUSTULUS, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_FAUSTULUS, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_FAUSTULUS)
+        //Aeneas
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_WalkUp)
+        waitmovement (0)
+        removeobject (LOCALID_MARES9_AENEAS)
+        setobjectxyperm (LOCALID_MARES9_AENEAS, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_AENEAS)
+        //A: Let our journey be safe and may we reach Hesperia
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral8)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
         //sail to hesperia
+        setflag (FLAG_DONT_TRANSITION_MUSIC)
+        playbgm (MUS_SAILING, FALSE)
+        applymovement (LOCALID_MARES9_PRISTIS, MareS9_Movement_Pristis1) //Go up and doo loops towards east but do loops
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_PRISTIS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        //B: Are you sure you know where you're going - it's all a cirlce?
+        //A: Never question your captain
         //lose control again lol
+        applymovement (LOCALID_MARES9_PRISTIS, MareS9_Movement_Pristis2) //Got off towards rocks NW of Hesperia
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_PRISTIS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        //B: Look out you're going to hit those rocks
+        //A: Be quiet
         //crash
+        applymovement (LOCALID_MARES9_PRISTIS, MareS9_Movement_Pristis3) //Loops and then crash on Hesperia
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_PRISTIS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        //B: AAAAAA!
+        //F: Master save us!
+        //A: Everyone off the boat
         //disembark boat
         //Ascanius: You kids alright
         //F: My leg hurts
@@ -295,6 +436,8 @@ script MareS9_Script_Aeneas {
         //Setup hesperia battle
         //set vars
         //fin
+        releaseall
+        end
     }
 }
 
@@ -874,8 +1017,47 @@ text MareS9_Text_Aeneas_Funeral3 {
     format("")
 }
 
-//Faustulus will you fight for glory in our first contest
+//Faustulus will you fight for glory in our first contest - or freedom lol
 text MareS9_Text_Aeneas_Funeral4 {
     format("")
 }
 
+//My honor
+text MareS9_Text_Faustulus_Funeral1 {
+    format("")
+}
+
+//No doubt let the best man win
+text MareS9_Text_Aeneas_Funeral5 {
+    format("")
+}
+
+//This is personal
+text MareS9_Text_Faustulus_Funeral2 {
+    format("")
+}
+
+//Not good enough
+text MareS9_Text_FaustulusLost {
+    format("")
+}
+
+//Thank you for reminding me of my place
+text MareS9_Text_Faustulus_Funeral3 {
+    format("")
+}
+
+//splending the spirit of my father is very pleased with you Player. let the games conitnue next we will have a foot race from here to...
+text MareS9_Text_Aeneas_Funeral6 {
+    format("")
+}
+
+//No what are we doing wasting time here supposed to be on a journey lets get this over with I will burn these ships down if you keep playing games
+text MareS9_Text_Beroe_Funeral2 {
+    format("")
+}
+
+//B you're right lets be off. Assemble onto the boat let's hit the waves
+text MareS9_Text_Aeneas_Funeral7 {
+    format("")
+}

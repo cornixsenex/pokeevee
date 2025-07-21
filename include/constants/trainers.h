@@ -170,8 +170,9 @@
 #define TRAINER_PIC_ROOD                  151
 #define TRAINER_PIC_CYNTHIA               152
 #define TRAINER_PIC_LENORA                153
+#define TRAINER_PIC_FARMER_M              154
 
-#define TRAINER_PIC_COUNT                 154
+#define TRAINER_PIC_COUNT                 155
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -428,9 +429,10 @@
 #define TRAINER_CLASS_SURFER         0x4B
 #define TRAINER_CLASS_TYRIAN         0x4C
 #define TRAINER_CLASS_TYRIAN_QUEEN   0x4D
+#define TRAINER_CLASS_TROPIC_SLAVE   0x4E
 
 //CHANGE THIS ONE IF YOU ADD MORE
-#define TRAINER_CLASS_COUNT          0x4E
+#define TRAINER_CLASS_COUNT          0x4F
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

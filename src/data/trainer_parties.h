@@ -2728,7 +2728,7 @@ static const struct TrainerMon sParty_Elissa[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntAquaHideout7[] = {
+static const struct TrainerMon sParty_Faustulus[] = {
     {
     .iv = 0,
     .lvl = 31,
@@ -2740,6 +2740,8 @@ static const struct TrainerMon sParty_GruntAquaHideout7[] = {
     .species = SPECIES_ZUBAT,
     }
 };
+
+//BREAK
 
 static const struct TrainerMon sParty_GruntAquaHideout8[] = {
     {

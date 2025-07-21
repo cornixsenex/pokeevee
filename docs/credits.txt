@@ -42,4 +42,6 @@ MGriffin
     General midnight support
 Aveontrainer
 	>Object Event Graphics
+Beliot419
+    >farmer trainer sprite
 

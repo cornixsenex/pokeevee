@@ -2341,6 +2341,18 @@
         .aiFlags = AI_FLAG_SMART_TRAINER,
         .party = TRAINER_PARTY(sParty_Elissa),
     },
+    
+    [DIFFICULTY_NORMAL][TRAINER_FAUSTULUS] =
+    {
+        .trainerClass = TRAINER_CLASS_TROPIC_SLAVE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FARMER_M,
+        .trainerName = _("FAUSTULUS"),
+        .items = {},
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .party = TRAINER_PARTY(sParty_Faustulus),
+    },
 
 
 
@@ -2352,17 +2364,6 @@
 
 
 
-    [DIFFICULTY_NORMAL][TRAINER_GRUNT_AQUA_HIDEOUT_7] =
-    {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .trainerName = _("GRUNT"),
-        .items = {},
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_GruntAquaHideout7),
-    },
 
     [DIFFICULTY_NORMAL][TRAINER_GRUNT_AQUA_HIDEOUT_8] =
     {
