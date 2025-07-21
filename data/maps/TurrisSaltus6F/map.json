@@ -2,7 +2,7 @@
   "id": "MAP_TURRIS_SALTUS6F",
   "name": "TurrisSaltus6F",
   "layout": "LAYOUT_TURRIS_SALTUS6F",
-  "music": "MUS_B_PALACE",
+  "music": "MUS_CREDITS",
   "region_map_section": "MAPSEC_TURRIS_SALTUS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

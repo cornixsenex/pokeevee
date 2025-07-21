@@ -26,7 +26,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TurrisSaltus_Script_HandmaidenPost",
-      "flag": "0"
+      "flag": "FLAG_TURRISSALTUS_HIDETYRIANS"
     },
     {
       "local_id": "LOCALID_TURRISSALTUS4F_TYRIAN11",
@@ -40,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TurrisSaltus4F_Script_Tyrian11",
-      "flag": "0"
+      "flag": "FLAG_TURRISSALTUS_HIDETYRIANS"
     },
     {
       "local_id": "LOCALID_TURRISSALTUS4F_TYRIAN18",
@@ -54,7 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TurrisSaltus4F_Script_Tyrian18",
-      "flag": "0"
+      "flag": "FLAG_TURRISSALTUS_HIDETYRIANS"
     },
     {
       "local_id": "LOCALID_TURRISSALTUS4F_TYRIAN13",
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TurrisSaltus_Script_HandmaidenPost",
-      "flag": "0"
+      "flag": "FLAG_TURRISSALTUS_HIDETYRIANS"
     }
   ],
   "warp_events": [

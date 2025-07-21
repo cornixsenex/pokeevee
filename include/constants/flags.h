@@ -198,10 +198,9 @@
 #define FLAG_CASTALIA_GARDEN_COMPLETE        0xAA
 #define FLAG_MANUAL_WEATHER                  0xAB //Set to prevent Update Weather - REMEMBER TO UNSET - handle Fly and etc
 #define FLAG_MARES9_AENEAS_INTROD            0xAC //Set after initial Aeneas intro
-
+#define FLAG_TURRISSALTUS_HIDETYRIANS        0xAD //Set after final tyrian doorguards - hides all tyrians in turris
 // BREAK //
 
-#define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
 #define FLAG_DECORATION_3                    0xB0

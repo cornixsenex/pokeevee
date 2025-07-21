@@ -2328,6 +2328,19 @@
         .party = sParty_Handmaiden,
 		.partySize = 2,
     },
+    
+	[DIFFICULTY_NORMAL][TRAINER_ELISSA] =
+    {
+        .trainerClass = TRAINER_CLASS_TYRIAN_QUEEN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CYNTHIA,
+        .trainerName = _("ELISSA"),
+        .items = {},
+		.mugshotColor = MUGSHOT_COLOR_PURPLE,
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .party = TRAINER_PARTY(sParty_Elissa),
+    },
 
 
 
@@ -2338,17 +2351,6 @@
 
 
 
-    [DIFFICULTY_NORMAL][TRAINER_KIRK] =
-    {
-        .trainerClass = TRAINER_CLASS_GUITARIST,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_GUITARIST,
-        .trainerName = _("KIRK"),
-        .items = {},
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Kirk),
-    },
 
     [DIFFICULTY_NORMAL][TRAINER_GRUNT_AQUA_HIDEOUT_7] =
     {

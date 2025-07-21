@@ -404,230 +404,248 @@ TurrisSaltus6F_Script_ExeuntDoorGuards::
 	setobjectmovementtype LOCALID_TURRISSALTUS6F_DOORGUARD2, MOVEMENT_TYPE_INVISIBLE
 # 238 "data/maps/TurrisSaltus6F/scripts.pory"
 	addvar VAR_TURRIS_SALTUS_STATE, 1
-# 240 "data/maps/TurrisSaltus6F/scripts.pory"
+# 239 "data/maps/TurrisSaltus6F/scripts.pory"
+	setflag FLAG_TURRISSALTUS_HIDETYRIANS
+# 241 "data/maps/TurrisSaltus6F/scripts.pory"
 	releaseall
 	end
 
 
 TurrisSaltus6F_Script_Trigger_AeneasSceneA::
-# 245 "data/maps/TurrisSaltus6F/scripts.pory"
-	setvar VAR_TEMP_5, 1
 # 246 "data/maps/TurrisSaltus6F/scripts.pory"
+	setvar VAR_TEMP_5, 1
+# 247 "data/maps/TurrisSaltus6F/scripts.pory"
 	call TurrisSaltus6F_Script_AeneasScene
 	return
 
 
 TurrisSaltus6F_Script_Trigger_AeneasSceneB::
-# 250 "data/maps/TurrisSaltus6F/scripts.pory"
-	setvar VAR_TEMP_5, 2
 # 251 "data/maps/TurrisSaltus6F/scripts.pory"
+	setvar VAR_TEMP_5, 2
+# 252 "data/maps/TurrisSaltus6F/scripts.pory"
 	call TurrisSaltus6F_Script_AeneasScene
 	return
 
 
 TurrisSaltus6F_Script_Trigger_AeneasSceneC::
-# 255 "data/maps/TurrisSaltus6F/scripts.pory"
-	setvar VAR_TEMP_5, 3
 # 256 "data/maps/TurrisSaltus6F/scripts.pory"
+	setvar VAR_TEMP_5, 3
+# 257 "data/maps/TurrisSaltus6F/scripts.pory"
 	call TurrisSaltus6F_Script_AeneasScene
 	return
 
 
 TurrisSaltus6F_Script_AeneasScene::
-# 260 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp4
 # 261 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp4
 # 262 "data/maps/TurrisSaltus6F/scripts.pory"
+	waitmovement 0
+# 263 "data/maps/TurrisSaltus6F/scripts.pory"
 	compare VAR_TEMP_5, 1
 	goto_if_eq TurrisSaltus6F_Script_AeneasScene_2
 TurrisSaltus6F_Script_AeneasScene_1:
-# 268 "data/maps/TurrisSaltus6F/scripts.pory"
+# 269 "data/maps/TurrisSaltus6F/scripts.pory"
 	compare VAR_TEMP_5, 3
 	goto_if_eq TurrisSaltus6F_Script_AeneasScene_5
 TurrisSaltus6F_Script_AeneasScene_4:
-# 274 "data/maps/TurrisSaltus6F/scripts.pory"
-	delay 60
 # 275 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 276 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
-# 277 "data/maps/TurrisSaltus6F/scripts.pory"
 	delay 60
+# 276 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 277 "data/maps/TurrisSaltus6F/scripts.pory"
+	waitmovement 0
 # 278 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_ExclamationMark
+	delay 60
 # 279 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	lock
+# 280 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_ExclamationMark
 # 281 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkLeft2
-# 282 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
-# 283 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown
+# 282 "data/maps/TurrisSaltus6F/scripts.pory"
+	delay 60
 # 284 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkLeft2
+# 285 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
 # 286 "data/maps/TurrisSaltus6F/scripts.pory"
-	load_field_pic FIELD_PIC_ELISSA, 190, 98
+	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown
 # 287 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Elissa1
-# 289 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_ExclamationMark
-# 290 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
-# 293 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Elissa2
-# 295 "data/maps/TurrisSaltus6F/scripts.pory"
-	destroy_field_pic FIELD_PIC_ELISSA
-# 297 "data/maps/TurrisSaltus6F/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 298 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Aeneas1
-# 299 "data/maps/TurrisSaltus6F/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
-# 301 "data/maps/TurrisSaltus6F/scripts.pory"
+# 289 "data/maps/TurrisSaltus6F/scripts.pory"
 	load_field_pic FIELD_PIC_ELISSA, 190, 98
-# 302 "data/maps/TurrisSaltus6F/scripts.pory"
+# 290 "data/maps/TurrisSaltus6F/scripts.pory"
+	msgbox TurrisSaltus6F_Text_Elissa1
+# 292 "data/maps/TurrisSaltus6F/scripts.pory"
 	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_ExclamationMark
+# 293 "data/maps/TurrisSaltus6F/scripts.pory"
+	waitmovement 0
+# 295 "data/maps/TurrisSaltus6F/scripts.pory"
+	msgbox TurrisSaltus6F_Script_AeneasScene_Text_0
+# 298 "data/maps/TurrisSaltus6F/scripts.pory"
+	destroy_field_pic FIELD_PIC_ELISSA
+# 299 "data/maps/TurrisSaltus6F/scripts.pory"
+	closemessage
+# 300 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkRight2
+# 301 "data/maps/TurrisSaltus6F/scripts.pory"
+	waitmovement 0
+# 302 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown
 # 303 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
+# 304 "data/maps/TurrisSaltus6F/scripts.pory"
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
 # 305 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Elissa3
+	msgbox TurrisSaltus6F_Text_Elissa2
 # 306 "data/maps/TurrisSaltus6F/scripts.pory"
 	destroy_field_pic FIELD_PIC_ELISSA
+# 307 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_FaceLeft
 # 308 "data/maps/TurrisSaltus6F/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
+	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_FaceRight
 # 309 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Aeneas2
-# 310 "data/maps/TurrisSaltus6F/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
+	waitmovement 0
 # 311 "data/maps/TurrisSaltus6F/scripts.pory"
-	closemessage
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 312 "data/maps/TurrisSaltus6F/scripts.pory"
+	msgbox TurrisSaltus6F_Text_Aeneas1
 # 313 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_FaceDown
-# 314 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_AENEAS
 # 315 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown5
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
 # 316 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_ExclamationMark
 # 317 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkRight2
-# 318 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
 # 319 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown2
+	msgbox TurrisSaltus6F_Text_Elissa3
 # 320 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_ELISSA
 # 322 "data/maps/TurrisSaltus6F/scripts.pory"
-	load_field_pic FIELD_PIC_ELISSA, 190, 98
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
 # 323 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Elissa4
+	msgbox TurrisSaltus6F_Text_Aeneas2
 # 324 "data/maps/TurrisSaltus6F/scripts.pory"
-	destroy_field_pic FIELD_PIC_ELISSA
-# 325 "data/maps/TurrisSaltus6F/scripts.pory"
-	closemessage
+	destroy_field_pic FIELD_PIC_AENEAS
+# 326 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_FaceDown
 # 327 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown
+	waitmovement 0
 # 328 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
 # 329 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft2
+	applymovement LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown7
 # 330 "data/maps/TurrisSaltus6F/scripts.pory"
+	msgbox TurrisSaltus6F_Text_Elissa4
+# 331 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
-# 332 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 333 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+# 334 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown
 # 335 "data/maps/TurrisSaltus6F/scripts.pory"
-	load_field_pic FIELD_PIC_ELISSA, 190, 98
+	waitmovement 0
 # 336 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Elissa5
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft
 # 337 "data/maps/TurrisSaltus6F/scripts.pory"
-	destroy_field_pic FIELD_PIC_ELISSA
-# 338 "data/maps/TurrisSaltus6F/scripts.pory"
-	closemessage
+	waitmovement 0
+# 339 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 # 340 "data/maps/TurrisSaltus6F/scripts.pory"
-	trainerbattle_no_intro TRAINER_ELISSA, TurrisSaltus6_Text_ElissaLost
+	waitmovement 0
 # 342 "data/maps/TurrisSaltus6F/scripts.pory"
-	load_field_pic FIELD_PIC_ELISSA, 190, 98
+	msgbox TurrisSaltus6F_Text_Elissa5
 # 343 "data/maps/TurrisSaltus6F/scripts.pory"
-	msgbox TurrisSaltus6F_Text_Elissa6
-# 344 "data/maps/TurrisSaltus6F/scripts.pory"
 	destroy_field_pic FIELD_PIC_ELISSA
-# 345 "data/maps/TurrisSaltus6F/scripts.pory"
+# 344 "data/maps/TurrisSaltus6F/scripts.pory"
 	closemessage
-# 347 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown5
+# 346 "data/maps/TurrisSaltus6F/scripts.pory"
+	trainerbattle_no_intro TRAINER_ELISSA, TurrisSaltus6_Text_ElissaLost
 # 348 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
 # 349 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft2
+	msgbox TurrisSaltus6F_Text_Elissa6
 # 350 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_ELISSA
 # 351 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown2
-# 352 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	closemessage
+# 353 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown5
 # 354 "data/maps/TurrisSaltus6F/scripts.pory"
-	removeobject LOCALID_TURRISSALTUS6F_ELISSA
+	waitmovement 0
 # 355 "data/maps/TurrisSaltus6F/scripts.pory"
-	removeobject LOCALID_TURRISSALTUS6F_AENEAS
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft2
 # 356 "data/maps/TurrisSaltus6F/scripts.pory"
-	setobjectxyperm LOCALID_TURRISSALTUS6F_ELISSA, 0, 0
+	waitmovement 0
 # 357 "data/maps/TurrisSaltus6F/scripts.pory"
-	setobjectxyperm LOCALID_TURRISSALTUS6F_AENEAS, 0, 0
+	applymovement LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown2
 # 358 "data/maps/TurrisSaltus6F/scripts.pory"
-	setobjectmovementtype LOCALID_TURRISSALTUS6F_AENEAS, MOVEMENT_TYPE_INVISIBLE
-# 359 "data/maps/TurrisSaltus6F/scripts.pory"
-	setobjectmovementtype LOCALID_TURRISSALTUS6F_ELISSA, MOVEMENT_TYPE_INVISIBLE
+	waitmovement 0
+# 360 "data/maps/TurrisSaltus6F/scripts.pory"
+	removeobject LOCALID_TURRISSALTUS6F_ELISSA
 # 361 "data/maps/TurrisSaltus6F/scripts.pory"
+	removeobject LOCALID_TURRISSALTUS6F_AENEAS
+# 362 "data/maps/TurrisSaltus6F/scripts.pory"
+	setobjectxyperm LOCALID_TURRISSALTUS6F_ELISSA, 0, 0
+# 363 "data/maps/TurrisSaltus6F/scripts.pory"
+	setobjectxyperm LOCALID_TURRISSALTUS6F_AENEAS, 0, 0
+# 364 "data/maps/TurrisSaltus6F/scripts.pory"
+	setobjectmovementtype LOCALID_TURRISSALTUS6F_AENEAS, MOVEMENT_TYPE_INVISIBLE
+# 365 "data/maps/TurrisSaltus6F/scripts.pory"
+	setobjectmovementtype LOCALID_TURRISSALTUS6F_ELISSA, MOVEMENT_TYPE_INVISIBLE
+# 367 "data/maps/TurrisSaltus6F/scripts.pory"
 	addvar VAR_TURRIS_SALTUS_STATE, 1
+# 369 "data/maps/TurrisSaltus6F/scripts.pory"
+	release
 	end
 
 TurrisSaltus6F_Script_AeneasScene_2:
-# 263 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 # 264 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
 # 265 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
 # 266 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 267 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
 	goto TurrisSaltus6F_Script_AeneasScene_1
 
 TurrisSaltus6F_Script_AeneasScene_5:
-# 269 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 # 270 "data/maps/TurrisSaltus6F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 # 271 "data/maps/TurrisSaltus6F/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
 # 272 "data/maps/TurrisSaltus6F/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 273 "data/maps/TurrisSaltus6F/scripts.pory"
 	waitmovement 0
 	goto TurrisSaltus6F_Script_AeneasScene_4
 
 
+TurrisSaltus6F_Script_AeneasScene_Text_0:
+# 295 "data/maps/TurrisSaltus6F/scripts.pory"
+	.string "Aaahh!$"
+
 TurrisSaltus6F_Text_DoorguardPre1::
-# 366 "data/maps/TurrisSaltus6F/scripts.pory"
+# 373 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "We are Queen Elissa's most trusted\n"
 	.string "guards.$"
 
 TurrisSaltus6F_Text_DoorguardPre2::
-# 370 "data/maps/TurrisSaltus6F/scripts.pory"
+# 377 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "No one may enter her private chamber\n"
 	.string "without getting past us. Prepare to\l"
 	.string "fall!$"
 
 TurrisSaltus6F_Text_DoorGuard1Lost::
-# 375 "data/maps/TurrisSaltus6F/scripts.pory"
+# 382 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Turris Saltus has fallen!$"
 
 TurrisSaltus6F_Text_DoorGuard2Lost::
-# 379 "data/maps/TurrisSaltus6F/scripts.pory"
+# 386 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "We have failed!$"
 
 TurrisSaltus6F_Text_DoorguardPost::
-# 383 "data/maps/TurrisSaltus6F/scripts.pory"
+# 390 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "You have destroyed our way of life\n"
 	.string "today and violated our most sacred\l"
 	.string "place. The Tyrians you defeated today\l"
@@ -636,59 +654,58 @@ TurrisSaltus6F_Text_DoorguardPost::
 	.string "depart.$"
 
 TurrisSaltus6F_Text_Elissa1::
-# 391 "data/maps/TurrisSaltus6F/scripts.pory"
+# 398 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Aeneas, prince, what's wrong...$"
 
 TurrisSaltus6F_Text_Elissa2::
-# 395 "data/maps/TurrisSaltus6F/scripts.pory"
-	.string "Aaahh!\p"
+# 402 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "What nightmare has disturbed our love\n"
 	.string "filled bed? What vagabond would so\l"
 	.string "roughly violate our tower and break the\l"
 	.string "royal seal of our chamber?$"
 
 TurrisSaltus6F_Text_Elissa3::
-# 402 "data/maps/TurrisSaltus6F/scripts.pory"
+# 409 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "This can't be so! How could you scorn\n"
 	.string "our love? I'm sure this must be some\l"
 	.string "outrageous scheme to pacify this\l"
 	.string "violent tresspasser before you waste\l"
-	.string "him and return to bed$"
+	.string "him and return to bed.$"
 
 TurrisSaltus6F_Text_Elissa4::
-# 409 "data/maps/TurrisSaltus6F/scripts.pory"
-	.string "Aeneas! You will curse thie betrayal! I\n"
+# 416 "data/maps/TurrisSaltus6F/scripts.pory"
+	.string "Aeneas! You will curse this betrayal! I\n"
 	.string "name you traitor, enemy of our state,\l"
 	.string "and declare bitter war on you and your\l"
-	.string "descendants forever! War without end!\p"
+	.string "descendants forever! War without end!\l"
 	.string "And you!$"
 
 TurrisSaltus6F_Text_Elissa5::
-# 417 "data/maps/TurrisSaltus6F/scripts.pory"
-	.string "You are the errow cruelly shot that\n"
-	.string "pierced my and tore away my love! For\l"
-	.string "violating our Turris Saltus, befriending\l"
-	.string "the traitor, Aeneas Pig, and butchering\l"
-	.string "my love, you die today.$"
+# 424 "data/maps/TurrisSaltus6F/scripts.pory"
+	.string "You are the arrow cruelly shot that\n"
+	.string "pierced my heart and tore away my love!\l"
+	.string "For violating our Turris Saltus,\l"
+	.string "befriending the traitor, Aeneas Pig, and\l"
+	.string "butchering my love, you die today.$"
 
 TurrisSaltus6_Text_ElissaLost::
-# 425 "data/maps/TurrisSaltus6F/scripts.pory"
+# 432 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "I'm fallen! Like my love, I am no more.$"
 
 TurrisSaltus6F_Text_Elissa6::
-# 429 "data/maps/TurrisSaltus6F/scripts.pory"
+# 436 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Too sick to scream, too weak to have\n"
 	.string "revenge, too lowly to hope for recovery,\l"
-	.string "I persist in thie world devoid of light\l"
-	.string "like some kind of ghost or fallen angel\l"
+	.string "I persist in this world devoid of light\l"
+	.string "like some kind of ghost or fallen angel,\l"
 	.string "who once dwelt happily in the glow of\l"
-	.string "love now ripped out and cast down to\l"
+	.string "love, now ripped out and cast down to\l"
 	.string "Tartarus. The one and only choice I've\l"
-	.string "left to make this life in hell, or death.\l"
+	.string "left to make, this life in hell, or death.\l"
 	.string "I choose to die.$"
 
 TurrisSaltus6F_Text_Aeneas1::
-# 440 "data/maps/TurrisSaltus6F/scripts.pory"
+# 447 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "This man is my companioin on our quest\n"
 	.string "to reach Hesperia and found a new\l"
 	.string "mighty city to one day rule the world.\l"
@@ -697,9 +714,9 @@ TurrisSaltus6F_Text_Aeneas1::
 	.string "sweetly as I have come to love your\l"
 	.string "royal bed, and all fruits held therin, my\l"
 	.string "piety, sacred obedience, and love of\l"
-	.string "destiny is tronger yet.$"
+	.string "destiny is stronger yet.$"
 
 TurrisSaltus6F_Text_Aeneas2::
-# 452 "data/maps/TurrisSaltus6F/scripts.pory"
-	.string "Elissa, by the sun, the moon, and stars I\n"
-	.string "do not lie. I must leave you. Goodbye.$"
+# 459 "data/maps/TurrisSaltus6F/scripts.pory"
+	.string "Elissa, by the sun, the moon, and stars,\n"
+	.string "I do not lie. I must leave you. Goodbye.$"

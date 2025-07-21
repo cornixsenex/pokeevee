@@ -2710,18 +2710,21 @@ static const struct TrainerMon sParty_Handmaiden[] = {
     }
 };
 
-static const struct TrainerMon sParty_Kirk[] = {
+static const struct TrainerMon sParty_Elissa[] = {
     {
     .iv = 100,
     .lvl = 17,
-    .species = SPECIES_ELECTRIKE,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_SPARK, MOVE_LEER}
+    .species = SPECIES_SHARPEDO,
+	.gender = TRAINER_MON_FEMALE,
+	.ball = ITEM_DIVE_BALL,
     },
     {
-    .iv = 100,
-    .lvl = 17,
-    .species = SPECIES_VOLTORB,
-    .moves = {MOVE_CHARGE, MOVE_SHOCK_WAVE, MOVE_SCREECH, MOVE_NONE}
+    .iv = 200,
+    .lvl = 77,
+	.gender = TRAINER_MON_FEMALE,
+    .species = SPECIES_MAGIKARP,
+	.isShiny = TRUE,
+    .moves = {MOVE_SPLASH, MOVE_BOUNCE, MOVE_TACKLE, MOVE_FLAIL}
     }
 };
 

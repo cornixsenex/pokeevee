@@ -236,6 +236,7 @@ waitmovement (0)
     setobjectmovementtype (LOCALID_TURRISSALTUS6F_DOORGUARD2, MOVEMENT_TYPE_INVISIBLE)
     //inc var
 	addvar (VAR_TURRIS_SALTUS_STATE, 1)
+	setflag (FLAG_TURRISSALTUS_HIDETYRIANS)
     //fin
     releaseall
     end
@@ -275,8 +276,10 @@ script TurrisSaltus6F_Script_AeneasScene {
     applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement (0)
     delay (60)
+	lock
     applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_ExclamationMark)
     waitmovement (0)
+	delay (60)
     //Aeneas exit bed
     applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkLeft2)
     waitmovement (0)
@@ -289,10 +292,21 @@ script TurrisSaltus6F_Script_AeneasScene {
     applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_ExclamationMark)
     waitmovement (0)
     //C Screama
+	msgbox ("Aaahh!")
     //C:
-    msgbox (TurrisSaltus6F_Text_Elissa2)
     //A et C face eachother
     destroy_field_pic (FIELD_PIC_ELISSA)
+	closemessage
+	applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown)
+	waitmovement (0)
+	load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    msgbox (TurrisSaltus6F_Text_Elissa2)
+	destroy_field_pic (FIELD_PIC_ELISSA)
+	applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_FaceLeft)
+	applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_FaceRight)
+	waitmovement (0)
     //A:
     load_field_pic (FIELD_PIC_AENEAS, 190, 98)
     msgbox (TurrisSaltus6F_Text_Aeneas1)
@@ -308,31 +322,23 @@ script TurrisSaltus6F_Script_AeneasScene {
     load_field_pic (FIELD_PIC_AENEAS, 190, 98)
     msgbox (TurrisSaltus6F_Text_Aeneas2)
     destroy_field_pic (FIELD_PIC_AENEAS)
-    closemessage
     //A exit et C face down
     applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_FaceDown)
     waitmovement (0)
-    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown5)
-    waitmovement (0)
-    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkRight2)
-    waitmovement (0)
-    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown2)
+	load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+    applymovement (LOCALID_TURRISSALTUS6F_AENEAS, Common_Movement_WalkDown7)
+    msgbox (TurrisSaltus6F_Text_Elissa4)
     waitmovement (0)
     //C: 
-    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
-    msgbox (TurrisSaltus6F_Text_Elissa4)
-    destroy_field_pic (FIELD_PIC_ELISSA)
-    closemessage
     //C go to player
     applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown)
     waitmovement (0)
-    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft2)
+    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft)
     waitmovement (0)
     //player face C
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
     waitmovement (0)
     //C:
-    load_field_pic (FIELD_PIC_ELISSA, 190, 98)
     msgbox (TurrisSaltus6F_Text_Elissa5)
     destroy_field_pic (FIELD_PIC_ELISSA)
     closemessage
@@ -360,6 +366,7 @@ script TurrisSaltus6F_Script_AeneasScene {
     //inc var
     addvar (VAR_TURRIS_SALTUS_STATE, 1)
     //fin
+	release
     end
 }
 
@@ -393,7 +400,7 @@ text TurrisSaltus6F_Text_Elissa1 {
 }
 
 text TurrisSaltus6F_Text_Elissa2 {
-    format("Aaahh!\pWhat nightmare has 
+    format("What nightmare has 
             disturbed our love filled bed? What vagabond 
             would so roughly violate our tower
             and break the royal seal of our chamber?")
@@ -403,20 +410,20 @@ text TurrisSaltus6F_Text_Elissa3 {
     format("This can't be so! How could you scorn our love?
             I'm sure this must be some outrageous scheme
             to pacify this violent tresspasser
-            before you waste him and return to bed")
+            before you waste him and return to bed.")
 }
 
 text TurrisSaltus6F_Text_Elissa4 {
-    format("Aeneas! You will curse thie betrayal!
+    format("Aeneas! You will curse this betrayal!
             I name you traitor, enemy of our state,
             and declare bitter war on you and your
-            descendants forever! War without end!\p
+            descendants forever! War without end!
             And you!")
 }
 
 text TurrisSaltus6F_Text_Elissa5 {
-    format("You are the errow cruelly shot
-            that pierced my and tore away my love!
+    format("You are the arrow cruelly shot
+            that pierced my heart and tore away my love!
             For violating our Turris Saltus,
             befriending the traitor, Aeneas Pig,
             and butchering my love, you die today.")
@@ -429,11 +436,11 @@ text TurrisSaltus6_Text_ElissaLost {
 text TurrisSaltus6F_Text_Elissa6 {
     format("Too sick to scream, too weak to have revenge,
             too lowly to hope for recovery,
-            I persist in thie world devoid of light
-            like some kind of ghost or fallen angel
-            who once dwelt happily in the glow of love
+            I persist in this world devoid of light
+            like some kind of ghost or fallen angel,
+            who once dwelt happily in the glow of love,
             now ripped out and cast down to Tartarus.
-            The one and only choice I've left to make
+            The one and only choice I've left to make,
             this life in hell, or death. I choose to die.")
 }
 
@@ -446,10 +453,10 @@ text TurrisSaltus6F_Text_Aeneas1 {
             for as sweetly as I have come to love
             your royal bed, and all fruits held therin,
             my piety, sacred obedience,
-            and love of destiny is tronger yet.")
+            and love of destiny is stronger yet.")
 }
 
 text TurrisSaltus6F_Text_Aeneas2 {
-    format("Elissa, by the sun, the moon, and stars
+    format("Elissa, by the sun, the moon, and stars,
             I do not lie. I must leave you. Goodbye.")
 }
