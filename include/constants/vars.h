@@ -228,13 +228,14 @@
 #define VAR_AENEID_STATE                                 0x407A // Tracks progress thru Aeneid
                                                                 //0: Init, Aeneas et co stranded on Isla Tropica with no hope
                                                                 //1: After you speak with him and go into the city, setup Dido entrance
+                                                                //2: Set after Elissa Battle. Setup Funeral games.
 #define VAR_TURRIS_SALTUS_STATE                   		 0x407B //Triggers battles and tracks progress thru Turrus Saltus
                                                                 //Increases by 1 after each battle
                                                                 //0: Door Guard
                                                                 //1 - 20 trigger battles
                                                                 //21 On enter 5F, doorguards 2
                                                                 //22 Aeneas et Elissa scene
-                                                                //23 Fin
+                                                                //23 After Elissa fight - fin
 
 						// BREAK
 

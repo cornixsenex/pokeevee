@@ -5852,6 +5852,7 @@ void CheckTurrisSaltus5FFalseFloorFallWait(s16 x, s16 y)
 	y = y - MAP_OFFSET;
 	if (
        (x == 17 && y > 5 && y < 8) ||
+       (x == 13 && y == 16) ||
        (x == 6 && y == 12)
        )
 		VarSet(VAR_FALSEFLOOR_WAIT, 1);
@@ -5866,6 +5867,7 @@ void CheckTurrisSaltus4FFalseFloorFallWait(s16 x, s16 y)
 	if (
        (y == 5 && x > 2 && x < 5) ||
        (x == 1 && y == 10) ||
+       (x == 13 && y == 16) ||
        (x == 6 && y == 12)
        )
 		VarSet(VAR_FALSEFLOOR_WAIT, 1);
@@ -5878,7 +5880,8 @@ void CheckTurrisSaltus3FFalseFloorFallWait(s16 x, s16 y)
 	x = x - MAP_OFFSET;
 	y = y - MAP_OFFSET;
 	if (
-       (x == 10 && y == 10)
+       (x == 10 && y == 10) ||
+       (x == 13 && y == 16)
        )
 		VarSet(VAR_FALSEFLOOR_WAIT, 1);
 	else

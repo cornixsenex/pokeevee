@@ -12,14 +12,18 @@ mapscripts MareS9_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         //Handle Dynamic Map
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS9_F)
-        //Setup Aeneid scene
+        //Init state Aeneas shipwrecked
         if (var(VAR_AENEID_STATE) == 0) {
             call (MareS9_Script_SetupAeneid0)
         }
+        //Tyrians fixing Pristis
         if (var(VAR_AENEID_STATE) == 1) {
             call (MareS9_Script_SetupAeneid1)
         }
-
+        //Funeral Games
+        if (var(VAR_AENEID_STATE) == 2) {
+            call (MareS9_Script_SetupAeneid2)
+        }
     }
 
 }
@@ -89,13 +93,38 @@ script MareS9_Script_SetupAeneid1 {
     call (MareS9_Script_ShowTyriansFixingPristis)
     setobjectxyperm (LOCALID_MARES9_AENEAS, 0, 0)
     setobjectmovementtype (LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_INVISIBLE)
-
     return
 }
 
-
+script MareS9_Script_SetupAeneid2 {
+    //Pristis
+    setobjectxyperm (LOCALID_MARES9_PRISTIS, 15, 36)
+    setobjectmovementtype (LOCALID_MARES9_PRISTIS, MOVEMENT_TYPE_FACE_DOWN)
+    //Ascanius
+    setobjectxyperm (LOCALID_MARES9_ASCANIUS, 16, 40)
+    setobjectmovementtype (LOCALID_MARES9_ASCANIUS, MOVEMENT_TYPE_LOOK_AROUND)
+    //Romulus
+    setobjectxyperm (LOCALID_MARES9_ROMULUS, 14, 41)
+    setobjectmovementtype (LOCALID_MARES9_ROMULUS, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+    //Remus
+    setobjectxyperm (LOCALID_MARES9_REMUS, 17, 38)
+    setobjectmovementtype (LOCALID_MARES9_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP)
+    //Aeneas
+    setobjectxyperm (LOCALID_MARES9_AENEAS, 16, 36)
+    setobjectmovementtype (LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
+    //Beroe
+    setobjectxyperm (LOCALID_MARES9_BEROE, 15, 37)
+    setobjectmovementtype (LOCALID_MARES9_BEROE, MOVEMENT_TYPE_FACE_UP)
+    //Faustulus
+    setobjectxyperm (LOCALID_MARES9_FAUSTULUS, 17, 36)
+    setobjectmovementtype (LOCALID_MARES9_FAUSTULUS, MOVEMENT_TYPE_FACE_DOWN)
+    return
+}
 
 script MareS9_Script_ShowTyriansFixingPristis {
+    //Pristis
+    setobjectxyperm (LOCALID_MARES9_PRISTIS, 15, 36)
+    setobjectmovementtype (LOCALID_MARES9_PRISTIS, MOVEMENT_TYPE_FACE_DOWN)
     //Tyrian 1
     setobjectxyperm (LOCALID_MARES9_TYRIAN1, 15, 37)
     setobjectmovementtype (LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
@@ -152,6 +181,121 @@ script MareS9_Script_Aeneas {
         }
     }
     //var 2: at the ship after dido, ready to start funeral games
+    else {
+        //A: Funeral 1
+        msgbox (MareS9_Text_Aeneas_Funeral1)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        //E: Scream 
+        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+        msgbox (MareS9_Text_Elissa_Funeral1)
+        destroy_field_pic (FIELD_PIC_ELISSA)
+        closemessage
+        setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+        //Alert all
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        //Face Right
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceRight)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceRight)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+        waitmovement (0)
+        //move camera
+        special (SpawnCameraObject)
+        applymovement (LOCALID_CAMERA, MareS9_Movement_MoveCameraToFuneral)
+        waitmovement (0)
+        //E: Lament
+        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+        msgbox (MareS9_Text_Elissa_Funeral2)
+        destroy_field_pic (FIELD_PIC_ELISSA)
+        closemessage
+        //Show Elissa
+        removeobject (LOCALID_MARES9_ELISSA)
+        setobjectxyperm (LOCALID_MARES9_ELISSA, 34, 19)
+        setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_FACE_UP)
+        addobject (LOCALID_MARES9_ELISSA)
+        //Move to water
+        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkUp)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_FaceDown)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        //Do drop
+        delay (40)
+        applymovement (LOCALID_MARES9_ELISSA, Movement_SetInvisible)
+        waitmovement (0)
+        playse (SE_FALL)
+        delay (60)
+        playse (SE_M_DIVE)
+        delay (60)
+        //Hide Elissa
+        removeobject (LOCALID_MARES9_ELISSA)
+        setobjectxyperm (LOCALID_MARES9_ELISSA, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_ELISSA)
+        //Return Camera
+        applymovement (LOCALID_CAMERA, MareS9_Movement_ReturnCameraFromFuneral)
+        waitmovement (0)
+        special (RemoveCameraObject)
+        //face aeneas et faustulus down, player up
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceDown)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        waitmovement (0)
+        clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+        //A: Speech
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral2)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
+        //face Beroe
+        applymovement (LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_BEROE, Common_Movement_FaceRight)
+        waitmovement (0)
+        //B: 
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+        msgbox (MareS9_Text_Beroe_Funeral1)
+        destroy_field_pic (FIELD_PIC_BEROE)
+        //A: No funeral games for my father - let's have a trial of strength
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral3)
+        //face aeneas et faustulus
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceRight)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft)
+        waitmovement (0)
+        msgbox (MareS9_Text_Aeneas_Funeral4)
+        //F: I'm ready
+        //A: Get to it
+        //F to player
+        //F pre
+        //f battle
+        //f post
+        //A: Next a foot race
+        //B: NO! I will burn this ship to ashes lets go
+        //A: Ok you're right lets be off
+        //load onto boat
+        //sail to hesperia
+        //lose control again lol
+        //crash
+        //disembark boat
+        //Ascanius: You kids alright
+        //F: My leg hurts
+        //B: Now where have you gotten us
+        //A: Not to worry as long as we're all together we will repair again...
+        //Enter Rutullian
+        //R:So long as King Turnus lives and Rutulians breath air none shall take our land!
+        //R attacks
+        //R post - we will drive these invaders from the sea
+        //B: Looks like danger
+        //A: No you heard him this is Hesperia we've arrived! B watch the boys. Quickly let's defeat the savagges and take what is ours!
+        //Exit right the men
+        //Setup hesperia battle
+        //set vars
+        //fin
+    }
 }
 
 script MareS9_Script_Ascanius {
@@ -432,6 +576,16 @@ movement MareS9_Movement_BeginDidoScene {
     walk_down * 11
 }
 
+movement MareS9_Movement_MoveCameraToFuneral {
+    walk_right * 18
+    walk_up * 16
+}
+
+movement MareS9_Movement_ReturnCameraFromFuneral {
+    walk_left * 18
+    walk_down * 16
+}
+
 //Admit lost
 //Reference trials
 //Admit this is land but not the promised land
@@ -656,5 +810,72 @@ text MareS9_Text_TyrianFixer1 {
 text MareS9_Text_TyrianFixer2 {
     format("I don't love fixing boats, but it's my job.
             When the Queen says 'do this' it is performed.")
+}
+
+text MareS9_Text_Aeneas_Funeral1 {
+    format("Pristis has been repaired and a fair wind
+            is blowing to cast us off of this shore.
+            Thank you, my lad, for reminding me of
+            my sacred duty. Now...")
+}
+
+text MareS9_Text_Elissa_Funeral1 {
+    format("Aeneas! Pig!")
+}
+
+text MareS9_Text_Elissa_Funeral2 {
+    format("Traitor! Liar! Abuser of my love!
+            Look at wretched Elissa! Once a queen
+            pursued by multitudes of rich suitors,
+            I had resolved to live a virgin's life
+            when I found all of them sorely lacking,
+            all suitors, except one, Aeneas Prince.
+            Yes, prince I called you once. Prince, and darling,
+            and every other title gained by love
+            were yours, but now revoked by treachery.
+            You left our marriage bed for sailor's cot!
+            What shall I do? Should poor Elissa be
+            a sad widow to infidelity,
+            a second rate bride to a lesser man,
+            or follow you across the seven seas
+            like carrion birds behind a grim army,
+            unwanted, hated, but lingering there
+            close enough to consume th'abandoned dead.
+            Before Turris Saltus was beaten down,
+            when the Tyrians were a proud people,
+            I might have imagined a hot pursuit
+            of mighty ships, and women dressed for war,
+            chasing you down until you were cornered
+            and made to endure but a fraction of
+            the pain you brought to me and my people,
+            but such revenge is impossible now.
+            Therefore, left with no choice, I must now die.
+            Farewell cruel world, goodbye Turris Saltus,
+            adieu my Tyrians. No bon voyage
+            for you, Aeneas Pig! I swear upon
+            the marriage bed you inhumanely scorned
+            that I will torment you from Tartarus,
+            for not even the endless void of death
+            can compass the bounds of eternal rage!")
+}
+
+//Lets have a funeral and games to honor the dead
+text MareS9_Text_Aeneas_Funeral2 {
+    format("")
+}
+
+//Wow you must have really loved her
+text MareS9_Text_Beroe_Funeral1 {
+    format("")
+}
+
+//What? No of course not. This for the sailors we've lost frendo and most of all my father
+text MareS9_Text_Aeneas_Funeral3 {
+    format("")
+}
+
+//Faustulus will you fight for glory in our first contest
+text MareS9_Text_Aeneas_Funeral4 {
+    format("")
 }
 

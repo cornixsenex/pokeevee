@@ -595,6 +595,8 @@ TurrisSaltus6F_Script_AeneasScene_4:
 # 367 "data/maps/TurrisSaltus6F/scripts.pory"
 	addvar VAR_TURRIS_SALTUS_STATE, 1
 # 369 "data/maps/TurrisSaltus6F/scripts.pory"
+	setvar VAR_AENEID_STATE, 2
+# 371 "data/maps/TurrisSaltus6F/scripts.pory"
 	release
 	end
 
@@ -626,26 +628,26 @@ TurrisSaltus6F_Script_AeneasScene_Text_0:
 	.string "Aaahh!$"
 
 TurrisSaltus6F_Text_DoorguardPre1::
-# 373 "data/maps/TurrisSaltus6F/scripts.pory"
+# 375 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "We are Queen Elissa's most trusted\n"
 	.string "guards.$"
 
 TurrisSaltus6F_Text_DoorguardPre2::
-# 377 "data/maps/TurrisSaltus6F/scripts.pory"
+# 379 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "No one may enter her private chamber\n"
 	.string "without getting past us. Prepare to\l"
 	.string "fall!$"
 
 TurrisSaltus6F_Text_DoorGuard1Lost::
-# 382 "data/maps/TurrisSaltus6F/scripts.pory"
+# 384 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Turris Saltus has fallen!$"
 
 TurrisSaltus6F_Text_DoorGuard2Lost::
-# 386 "data/maps/TurrisSaltus6F/scripts.pory"
+# 388 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "We have failed!$"
 
 TurrisSaltus6F_Text_DoorguardPost::
-# 390 "data/maps/TurrisSaltus6F/scripts.pory"
+# 392 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "You have destroyed our way of life\n"
 	.string "today and violated our most sacred\l"
 	.string "place. The Tyrians you defeated today\l"
@@ -654,18 +656,18 @@ TurrisSaltus6F_Text_DoorguardPost::
 	.string "depart.$"
 
 TurrisSaltus6F_Text_Elissa1::
-# 398 "data/maps/TurrisSaltus6F/scripts.pory"
+# 400 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Aeneas, prince, what's wrong...$"
 
 TurrisSaltus6F_Text_Elissa2::
-# 402 "data/maps/TurrisSaltus6F/scripts.pory"
+# 404 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "What nightmare has disturbed our love\n"
 	.string "filled bed? What vagabond would so\l"
 	.string "roughly violate our tower and break the\l"
 	.string "royal seal of our chamber?$"
 
 TurrisSaltus6F_Text_Elissa3::
-# 409 "data/maps/TurrisSaltus6F/scripts.pory"
+# 411 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "This can't be so! How could you scorn\n"
 	.string "our love? I'm sure this must be some\l"
 	.string "outrageous scheme to pacify this\l"
@@ -673,7 +675,7 @@ TurrisSaltus6F_Text_Elissa3::
 	.string "him and return to bed.$"
 
 TurrisSaltus6F_Text_Elissa4::
-# 416 "data/maps/TurrisSaltus6F/scripts.pory"
+# 418 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Aeneas! You will curse this betrayal! I\n"
 	.string "name you traitor, enemy of our state,\l"
 	.string "and declare bitter war on you and your\l"
@@ -681,7 +683,7 @@ TurrisSaltus6F_Text_Elissa4::
 	.string "And you!$"
 
 TurrisSaltus6F_Text_Elissa5::
-# 424 "data/maps/TurrisSaltus6F/scripts.pory"
+# 426 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "You are the arrow cruelly shot that\n"
 	.string "pierced my heart and tore away my love!\l"
 	.string "For violating our Turris Saltus,\l"
@@ -689,11 +691,11 @@ TurrisSaltus6F_Text_Elissa5::
 	.string "butchering my love, you die today.$"
 
 TurrisSaltus6_Text_ElissaLost::
-# 432 "data/maps/TurrisSaltus6F/scripts.pory"
+# 434 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "I'm fallen! Like my love, I am no more.$"
 
 TurrisSaltus6F_Text_Elissa6::
-# 436 "data/maps/TurrisSaltus6F/scripts.pory"
+# 438 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Too sick to scream, too weak to have\n"
 	.string "revenge, too lowly to hope for recovery,\l"
 	.string "I persist in this world devoid of light\l"
@@ -705,7 +707,7 @@ TurrisSaltus6F_Text_Elissa6::
 	.string "I choose to die.$"
 
 TurrisSaltus6F_Text_Aeneas1::
-# 447 "data/maps/TurrisSaltus6F/scripts.pory"
+# 449 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "This man is my companioin on our quest\n"
 	.string "to reach Hesperia and found a new\l"
 	.string "mighty city to one day rule the world.\l"
@@ -717,6 +719,6 @@ TurrisSaltus6F_Text_Aeneas1::
 	.string "destiny is stronger yet.$"
 
 TurrisSaltus6F_Text_Aeneas2::
-# 459 "data/maps/TurrisSaltus6F/scripts.pory"
+# 461 "data/maps/TurrisSaltus6F/scripts.pory"
 	.string "Elissa, by the sun, the moon, and stars,\n"
 	.string "I do not lie. I must leave you. Goodbye.$"

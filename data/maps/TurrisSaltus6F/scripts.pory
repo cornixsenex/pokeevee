@@ -365,6 +365,8 @@ script TurrisSaltus6F_Script_AeneasScene {
     setobjectmovementtype (LOCALID_TURRISSALTUS6F_ELISSA, MOVEMENT_TYPE_INVISIBLE)
     //inc var
     addvar (VAR_TURRIS_SALTUS_STATE, 1)
+    //Advance aeneid
+    setvar (VAR_AENEID_STATE, 2)
     //fin
 	release
     end
