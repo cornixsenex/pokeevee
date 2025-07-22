@@ -202,6 +202,7 @@ script MareS9_Script_Aeneas {
         waitmovement (0)
         //lock for setup for boat
         lockall
+		fadenewbgm (MUS_CREDITS)
         //move camera
         special (SpawnCameraObject)
         applymovement (LOCALID_CAMERA, MareS9_Movement_MoveCameraToFuneral)
@@ -241,12 +242,13 @@ script MareS9_Script_Aeneas {
         playse (SE_FALL)
         delay (60)
         playse (SE_M_DIVE)
-        delay (60)
+        delay (120)
         //Hide Elissa
         removeobject (LOCALID_MARES9_ELISSA)
         setobjectxyperm (LOCALID_MARES9_ELISSA, 0, 0)
         setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_INVISIBLE)
         addobject (LOCALID_MARES9_ELISSA)
+		fadenewbgm (MUS_RG_FUCHSIA)
         //Return Camera
         applymovement (LOCALID_CAMERA, MareS9_Movement_ReturnCameraFromFuneral)
         waitmovement (0)
@@ -281,16 +283,19 @@ script MareS9_Script_Aeneas {
         msgbox (MareS9_Text_Aeneas_Funeral4)
         destroy_field_pic (FIELD_PIC_AENEAS)
         //F: I'm ready
+		applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark)
+		waitmovement (0)
         load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
         msgbox (MareS9_Text_Faustulus_Funeral1)
         destroy_field_pic (FIELD_PIC_FAUSTULUS)
+		applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
+		waitmovement (0)
         //A: Get to it
         load_field_pic (FIELD_PIC_AENEAS, 190, 98)
         msgbox (MareS9_Text_Aeneas_Funeral5)
         destroy_field_pic (FIELD_PIC_AENEAS)
         closemessage
         //F to player
-        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
         applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
         applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkDown)
         waitmovement (0)
@@ -316,16 +321,28 @@ script MareS9_Script_Aeneas {
         load_field_pic (FIELD_PIC_AENEAS, 190, 98)
         msgbox (MareS9_Text_Aeneas_Funeral6)
         destroy_field_pic (FIELD_PIC_AENEAS)
-        //B: NO! I will burn this ship to ashes lets go
+		//alert B
+		applymovement (LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark)
+		waitmovement (0)
         load_field_pic (FIELD_PIC_BEROE, 190, 98)
+		msgbox ("Aeneas!")
+        //alert A
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+		//Please lets leave
         msgbox (MareS9_Text_Beroe_Funeral2)
         destroy_field_pic (FIELD_PIC_BEROE)
-        //turn A to B
-        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceLeft)
-        waitmovement (0)
-        //A: Ok you're right lets be off
+		//This is to honor those dead. The funeral games are solumn tradition...
         load_field_pic (FIELD_PIC_AENEAS, 190, 98)
         msgbox (MareS9_Text_Aeneas_Funeral7)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+		//I will burn this ship
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+        msgbox (MareS9_Text_Beroe_Funeral3)
+        destroy_field_pic (FIELD_PIC_BEROE)
+        //A: Ok you're right lets be off
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral8)
         destroy_field_pic (FIELD_PIC_AENEAS)
         closemessage
         //load onto boat
@@ -371,7 +388,7 @@ script MareS9_Script_Aeneas {
         waitmovement (0)
         applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
         waitmovement (0)
-        hideobjectat (LOCALID_PLAYER, MAP_MARE_S9
+        hideobjectat (LOCALID_PLAYER, MAP_MARE_S9)
         //Faustulus
         applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkLeft2)
         waitmovement (0)
@@ -729,6 +746,25 @@ movement MareS9_Movement_ReturnCameraFromFuneral {
     walk_down * 16
 }
 
+movement MareS9_Movement_Pristis1 {
+	walk_faster_up * 30
+	walk_faster_right * 25
+	walk_faster_up * 10
+	walk_faster_left * 12
+	walk_faster_down * 8
+	walk_faster_right * 11
+	walk_faster_up * 3
+	walk_faster_down * 6
+}
+
+movement MareS9_Movement_Pristis2 {
+	walk_faster_down * 6
+}
+
+movement MareS9_Movement_Pristis3 {
+	walk_faster_up * 3
+}
+
 //Admit lost
 //Reference trials
 //Admit this is land but not the promised land
@@ -1004,60 +1040,108 @@ text MareS9_Text_Elissa_Funeral2 {
 
 //Lets have a funeral and games to honor the dead
 text MareS9_Text_Aeneas_Funeral2 {
-    format("")
+    format("In light of the most dreadful loss we have
+			suffered we ought to hold a funeral
+			to celebrate the dead before we leave.")
 }
 
 //Wow you must have really loved her
 text MareS9_Text_Beroe_Funeral1 {
-    format("")
+    format("That woman, did you love her, Aeneas?")
 }
 
 //What? No of course not. This for the sailors we've lost frendo and most of all my father
 text MareS9_Text_Aeneas_Funeral3 {
-    format("")
+    format("What woman? This is for my dead father,
+			best friend, and sailors lost while on our quest.
+			We dedicate this funeral to them,
+			and in their honor hold these funeral games
+			to celebrate the lives of those who died.
+			The first event will be trainer battles.
+			Our new friend, {PLAYER}, will fight to win his place
+			among our crew...")
 }
 
 //Faustulus will you fight for glory in our first contest - or freedom lol
 text MareS9_Text_Aeneas_Funeral4 {
-    format("")
+    format("against you, Faustulus.
+			If you prevail, I will grant you freedom,
+			and let you freely choose to stay with us
+			as a full and equal crew member, or
+			to pursue your pleasures as a free man
+			in whatever way would seem best to you.")
 }
 
-//My honor
+//Me? A free man? Master you are too kind. I will gladly fight. It is my honor
 text MareS9_Text_Faustulus_Funeral1 {
-    format("")
+    format("Mafree man be? Too kind Ka-are! Gladly will mafight. Honor ma-is")
 }
 
-//No doubt let the best man win
 text MareS9_Text_Aeneas_Funeral5 {
-    format("")
+    format("Look to your arms, and let the best man win!")
 }
 
-//This is personal
+//Nothing personal but I must defeat you to please master and win my freedom
 text MareS9_Text_Faustulus_Funeral2 {
-    format("")
+    format("Personalna but tadefeat meneed kaplease and mafreedom makeya.")
 }
 
-//Not good enough
+//I was not strong enough.
 text MareS9_Text_FaustulusLost {
-    format("")
+    format("Mastrongna!")
 }
 
 //Thank you for reminding me of my place
 text MareS9_Text_Faustulus_Funeral3 {
-    format("")
+    format("Tathank maplace taremind. Kaslave maonly be.")
 }
 
 //splending the spirit of my father is very pleased with you Player. let the games conitnue next we will have a foot race from here to...
 text MareS9_Text_Aeneas_Funeral6 {
-    format("")
+    format("Well fought, {PLAYER}! Your victory pleases me
+			and all the souls of our lost companions.
+			By virtue of your glorious triumph
+			I name you one of proud Aeneas' men
+			and welcome you to join our noble quest.
+			Now, let the games continue! Next we will
+			have a footrace from here to...")
 }
 
 //No what are we doing wasting time here supposed to be on a journey lets get this over with I will burn these ships down if you keep playing games
 text MareS9_Text_Beroe_Funeral2 {
-    format("")
+    format("Aeneas!
+			We did not cross the unforgiving seas,
+			navigate Scylla Charybdis, escape
+			Isla Solata, or sacrifice the
+			flower of our youth for you to play games
+			on some savage island! Have you forgot
+			the prophesy Kassandra told of you?
+			Mighty Aeneas, father of the kings
+			who one day will rule all the world from the
+			great city you are destined to create,
+			let not those hero's deaths have been in vain.
+			We should set sail while the winds favor us,
+			while we still have our strenghth, and while our ship,
+			freshly repaired, is eager for the surf.")
+}
+
+//This is to honor those dead. Funeral games solumn tradition...
+text MareS9_Text_Aeneas_Funeral7 {
+    format("These games are a solumn tradition to
+			honor the dead...")
+}
+
+//I will burn this ship to ashes
+text MareS9_Text_Beroe_Funeral3 {
+	format("I will burn the ship to
+			ashes if you will not swiftly depart!")
 }
 
 //B you're right lets be off. Assemble onto the boat let's hit the waves
-text MareS9_Text_Aeneas_Funeral7 {
-    format("")
+text MareS9_Text_Aeneas_Funeral8 {
+    format("You'd burn the ship? Let's not be hasty now!
+			There is much reason to your argument.
+			The wind is fair, our party full of strength,
+			and proud Pristis repaired, and not aflame.
+			Let us be off! Assemble! To the boat!")
 }

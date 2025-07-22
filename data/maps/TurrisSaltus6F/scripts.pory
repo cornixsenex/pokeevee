@@ -352,8 +352,6 @@ script TurrisSaltus6F_Script_AeneasScene {
     //C exit
     applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown5)
     waitmovement (0)
-    applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkLeft2)
-    waitmovement (0)
     applymovement (LOCALID_TURRISSALTUS6F_ELISSA, Common_Movement_WalkDown2)
     waitmovement (0)
     //hide actors
