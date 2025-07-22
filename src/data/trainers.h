@@ -2324,7 +2324,7 @@
         .items = {},
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
         .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .poolSize = 13,
+        .poolSize = 11,
         .party = sParty_Handmaiden,
 		.partySize = 2,
     },
@@ -2353,6 +2353,20 @@
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .party = TRAINER_PARTY(sParty_Faustulus),
     },
+    
+    [DIFFICULTY_NORMAL][TRAINER_RUTULIAN] =
+    {
+        .trainerClass = TRAINER_CLASS_RUTULIAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_KANDO,
+        .trainerName = _("INFANTRY"),
+        .items = {},
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .poolSize = 10,
+        .party = sParty_Rutulian,
+		.partySize = 3,
+    },
 
 
 
@@ -2365,17 +2379,6 @@
 
 
 
-    [DIFFICULTY_NORMAL][TRAINER_GRUNT_AQUA_HIDEOUT_8] =
-    {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
-        .items = {},
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_GruntAquaHideout8),
-    },
 
     [DIFFICULTY_NORMAL][TRAINER_SHAWN] =
     {

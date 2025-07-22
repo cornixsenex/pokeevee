@@ -231,7 +231,7 @@ script SurfSchool_Script_LeafScene {
     msgbox (SurfSchool_Text_Leaf2)
     closemessage
     destroy_field_pic (FIELD_PIC_LEAF)
-    call (SurfSchool_Script_SetupMultiBattle)
+    call (Common_Script_SelectPartyForMultiBattle)
     //they face up
     applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
     applymovement (LOCALID_SURF_SCHOOL_LEAF, Common_Movement_FaceUp)
@@ -276,12 +276,12 @@ script SurfSchool_Script_LeafScene {
     end
 }
 
-script SurfSchool_Script_SetupMultiBattle {
+script Common_Script_SelectPartyForMultiBattle {
     special (SavePlayerParty)
     special (ChooseHalfPartyForBattle)
     waitstate
     if (var(VAR_RESULT) == 0) {
-        call (SurfSchool_Script_SetupMultiBattle)
+        call (Common_Script_SelectPartyForMultiBattle)
     } else {
         return
     }

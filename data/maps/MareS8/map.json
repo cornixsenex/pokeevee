@@ -47,9 +47,9 @@
   "object_events": [
     {
       "local_id": "LOCALID_MARES8_AENEAS",
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 20,
-      "y": 19,
+      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "x": 15,
+      "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -62,8 +62,8 @@
     {
       "local_id": "LOCALID_MARES8_PRISTIS",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
-      "x": 22,
-      "y": 19,
+      "x": 11,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -76,8 +76,8 @@
     {
       "local_id": "LOCALID_MARES8_BEROE",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 19,
-      "y": 22,
+      "x": 14,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -90,7 +90,7 @@
     {
       "local_id": "LOCALID_MARES8_FAUSTULUS",
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 19,
+      "x": 15,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
@@ -104,8 +104,8 @@
     {
       "local_id": "LOCALID_MARES8_ASCANIUS",
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
-      "x": 16,
-      "y": 24,
+      "x": 13,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -118,8 +118,8 @@
     {
       "local_id": "LOCALID_MARES8_ROMULUS",
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
-      "x": 15,
-      "y": 24,
+      "x": 13,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -132,8 +132,8 @@
     {
       "local_id": "LOCALID_MARES8_REMUS",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 17,
-      "y": 24,
+      "x": 14,
+      "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -146,8 +146,8 @@
     {
       "local_id": "LOCALID_MARES8_RUTULIAN1",
       "graphics_id": "OBJ_EVENT_GFX_KANDO",
-      "x": 18,
-      "y": 20,
+      "x": 16,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,

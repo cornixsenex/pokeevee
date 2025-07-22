@@ -225,6 +225,15 @@ Common_Movement_WalkLeft4:
 	walk_left
 	step_end
 
+Common_Movement_WalkLeft6:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 Common_Movement_WalkLeft8:
     walk_left
     walk_left

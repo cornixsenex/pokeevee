@@ -405,7 +405,7 @@ SurfSchool_Script_LeafScene::
 # 233 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	destroy_field_pic FIELD_PIC_LEAF
 # 234 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	call SurfSchool_Script_SetupMultiBattle
+	call Common_Script_SelectPartyForMultiBattle
 # 236 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 # 237 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -469,7 +469,7 @@ SurfSchool_Script_LeafScene::
 	end
 
 
-SurfSchool_Script_SetupMultiBattle::
+Common_Script_SelectPartyForMultiBattle::
 # 280 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	special SavePlayerParty
 # 281 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
@@ -478,12 +478,12 @@ SurfSchool_Script_SetupMultiBattle::
 	waitstate
 # 283 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq SurfSchool_Script_SetupMultiBattle_1
+	goto_if_eq Common_Script_SelectPartyForMultiBattle_1
 	return
 
-SurfSchool_Script_SetupMultiBattle_1:
+Common_Script_SelectPartyForMultiBattle_1:
 # 284 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	call SurfSchool_Script_SetupMultiBattle
+	call Common_Script_SelectPartyForMultiBattle
 	return
 
 

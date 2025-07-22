@@ -2678,6 +2678,18 @@ static const struct TrainerMon sParty_Handmaiden[] = {
     .lvl = 32,
     .species = SPECIES_HARIYAMA,
     },
+    {
+    .iv = 140,
+    .lvl = 33,
+    .species = SPECIES_MACHOP,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = 140,
+    .lvl = 33,
+    .species = SPECIES_MACHOKE,
+    .heldItem = ITEM_NONE
+    },
 	{
     .iv = 100,
     .lvl = 19,
@@ -2707,6 +2719,16 @@ static const struct TrainerMon sParty_Handmaiden[] = {
     .iv = 100,
     .lvl = 19,
     .species = SPECIES_SEEL,
+    },
+    {
+    .iv = 100,
+    .lvl = 17,
+    .species = SPECIES_VOLTORB,
+    },
+    {
+    .iv = 100,
+    .lvl = 17,
+    .species = SPECIES_MAGNEMITE,
     }
 };
 
@@ -2741,15 +2763,61 @@ static const struct TrainerMon sParty_Faustulus[] = {
     }
 };
 
-//BREAK
-
-static const struct TrainerMon sParty_GruntAquaHideout8[] = {
+static const struct TrainerMon sParty_Rutulian[] = {
     {
     .iv = 0,
     .lvl = 32,
     .species = SPECIES_CARVANHA,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_STEELIX,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_PUPITAR,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_MACHOKE,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_BLAZIKEN,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_MEDICHAM,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_HITMONLEE,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_LUCARIO,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_BRONZONG,
+    },
+    {
+    .iv = 0,
+    .lvl = 32,
+    .species = SPECIES_SCYTHER,
     }
 };
+
+//BREAK
+
 
 static const struct TrainerMon sParty_Shawn[] = {
     {

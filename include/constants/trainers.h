@@ -430,9 +430,10 @@
 #define TRAINER_CLASS_TYRIAN         0x4C
 #define TRAINER_CLASS_TYRIAN_QUEEN   0x4D
 #define TRAINER_CLASS_TROPIC_SLAVE   0x4E
+#define TRAINER_CLASS_RUTULIAN       0x4F
 
 //CHANGE THIS ONE IF YOU ADD MORE
-#define TRAINER_CLASS_COUNT          0x4F
+#define TRAINER_CLASS_COUNT          0x50
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

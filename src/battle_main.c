@@ -385,6 +385,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 	[TRAINER_CLASS_TYRIAN] = { _("TYRIAN") },
 	[TRAINER_CLASS_TYRIAN_QUEEN] = { _("TYRIAN QUEEN") },
 	[TRAINER_CLASS_TROPIC_SLAVE] = { _("TROPIC SLAVE") },
+	[TRAINER_CLASS_RUTULIAN] = { _("RUTULIAN") },
 	//End Kustom Classes
 };
 

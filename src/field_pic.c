@@ -183,6 +183,16 @@ static const u16 sPic38Pal[] = INCBIN_U16("graphics/trainers/palettes/beauty2.gb
 //Farmer = 38
 static const u32 sPic39Gfx[] = INCBIN_U32("graphics/trainers/front_pics/farmer_m.4bpp.lz");
 static const u16 sPic39Pal[] = INCBIN_U16("graphics/trainers/palettes/farmer_m.gbapal");
+
+//Kando = 39
+static const u32 sPic40Gfx[] = INCBIN_U32("graphics/trainers/front_pics/kando.4bpp.lz");
+static const u16 sPic40Pal[] = INCBIN_U16("graphics/trainers/palettes/kando.gbapal");
+
+//Steven = 40
+static const u32 sPic41Gfx[] = INCBIN_U32("graphics/trainers/front_pics/steven.4bpp.lz");
+static const u16 sPic41Pal[] = INCBIN_U16("graphics/trainers/palettes/steven.gbapal");
+
+
 /* And this is an example script.
 
 
@@ -284,6 +294,10 @@ static const struct Pic sPics[] =
     {sPic38Gfx, sPic38Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Farmer
     {sPic39Gfx, sPic39Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Kando
+    {sPic40Gfx, sPic40Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Steven
+    {sPic41Gfx, sPic41Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

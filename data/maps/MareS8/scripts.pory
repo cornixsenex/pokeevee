@@ -16,7 +16,6 @@ mapscripts MareS8_MapScripts {
 
 }
 
-
 script MareS8_Script_Transition_MareTropicum {
     setvar (VAR_TEMP_5, 3)
 	special (TransitionMapMusic)
@@ -66,6 +65,8 @@ script MareS8_Script_ArriveHesperia {
         applymovement (LOCALID_MARES8_BEROE, Common_Movement_WalkLeft3)
         waitmovement (0)
         applymovement (LOCALID_MARES8_BEROE, Common_Movement_WalkDown3)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_BEROE, Common_Movement_FaceUp)
         waitmovement (0)
         //Romulus, Ascanius et Remus
         removeobject (LOCALID_MARES8_ROMULUS)
@@ -117,24 +118,107 @@ script MareS8_Script_ArriveHesperia {
         applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown)
         applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkDown)
         waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_FaceUp)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_FaceUp)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_FaceUp)
+        waitmovement (0)
+        //Faustulus
+        removeobject (LOCALID_MARES8_FAUSTULUS)
+        setobjectxyperm (LOCALID_MARES8_FAUSTULUS, 22, 19)
+        setobjectmovementtype (LOCALID_MARES8_FAUSTULUS, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (LOCALID_MARES8_FAUSTULUS)
+        applymovement (LOCALID_MARES8_FAUSTULUS, Common_Movement_WalkLeft4)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_FAUSTULUS, Common_Movement_FaceDown)
+        waitmovement (0)
         //Player
         resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_MARE_S9)
-        applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft4)
         showobjectat (LOCALID_PLAYER, MAP_MARE_S8)
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft3)
         waitmovement (0)
-        applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
         waitmovement (0)
-
-        //Faustulus
         //Aeneas
+        removeobject (LOCALID_MARES8_AENEAS)
+        setobjectxyperm (LOCALID_MARES8_AENEAS, 22, 19)
+        setobjectmovementtype (LOCALID_MARES8_AENEAS, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (LOCALID_MARES8_AENEAS)
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_WalkLeft2)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceDown)
+        waitmovement (0)
+        //alert all
+        call (MareS8_Script_AlertParty)
         //sink boat
-        //Ascanius: You kids alright
-        //F: My leg hurts
-        //B: Now where have you gotten us
-        //A: Not to worry as long as we're all together we will repair again...
-        //Enter Rutullian
+        applymovement (LOCALID_MARES8_PRISTIS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        playse (SE_M_DIVE)
+        delay (60)
+        applymovement (LOCALID_MARES8_PRISTIS, Movement_SetInvisible)
+        waitmovement (0)
+        playse (SE_M_DIVE)
+        delay (60)
+        removeobject (LOCALID_MARES8_PRISTIS)
+        setobjectxyperm (LOCALID_MARES8_PRISTIS, 0, 0)
+        setobjectmovementtype (LOCALID_MARES8_PRISTIS, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES8_PRISTIS)
+        //B: Now where have you gotten us, we lost our ship this cant get much worse
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+        msgbox (MareS8_Text_Beroe1)
+        destroy_field_pic (FIELD_PIC_BEROE)
+        //alert party
+        call (MareS8_Script_AlertParty)
+        //R: Intruders be gone!
+        load_field_pic (FIELD_PIC_RUTULIAN, 190, 98)
+        msgbox (MareS8_Text_RutulianAmbush1)
+        destroy_field_pic (FIELD_PIC_RUTULIAN)
+        //A: On guard it may be about to get worse 
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS8_Text_Aeneas_GetWorse)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        //face player et aeneas
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceUp)
+        waitmovement (0)
+        //show rutuli
+        removeobject (LOCALID_MARES8_RUTULIAN1)
+        removeobject (LOCALID_MARES8_RUTULIAN2)
+        setobjectxyperm (LOCALID_MARES8_RUTULIAN1, 27, 16)
+        setobjectxyperm (LOCALID_MARES8_RUTULIAN2, 28, 16)
+        setobjectmovementtype (LOCALID_MARES8_RUTULIAN1, MOVEMENT_TYPE_FACE_LEFT)
+        setobjectmovementtype (LOCALID_MARES8_RUTULIAN2, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (LOCALID_MARES8_RUTULIAN1)
+        addobject (LOCALID_MARES8_RUTULIAN2)
+        //Enter 2 Rs
+        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkLeft6)
+        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkLeft6)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkSouthWest)
+        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkSouthWest)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkDown)
+        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkDown)
+        waitmovement (0)
+        //Setup Multi Battle
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceLeft)
+        waitmovement (0)
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS8_Text_AeneasSetup)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        call (Common_Script_SelectPartyForMultiBattle)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceUp)
+        waitmovement (0)
         //R:So long as King Turnus lives and Rutulians breath air none shall take our land!
+        load_field_pic (FIELD_PIC_RUTULIAN, 190, 98)
+        msgbox (MareS8_Text_RutulianAmbushPre)
+        destroy_field_pic (FIELD_PIC_RUTULIAN)
         //R attacks
+        multi_2_vs_2 (TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS)
         //R post - we will drive these invaders from the sea
         //B: Looks like danger
         //A: No you heard him this is Hesperia we've arrived! B watch the boys. Quickly let's defeat the savagges and take what is ours!
@@ -147,3 +231,42 @@ script MareS8_Script_ArriveHesperia {
 
 }
 
+script MareS8_Script_AlertParty {
+        applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES8_BEROE, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES8_FAUSTULUS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+}
+
+
+text MareS8_Text_Beroe1 {
+    format("Leave it to Aeneas to find a way
+            to put us in a worse situation.
+            We lost our ship and still have no idea
+            where we are or where Heperia is.
+            I can't see how this could get any worse!")
+}
+
+//Death to the foemen!
+text MareS8_Text_RutulianAmbush1 {
+    format("Foemen sadeathya!")
+}
+
+text MareS8_Text_Aeneas_GetWorse {
+    format("On guard! I think it's about to get worse.")
+}
+
+text MareS8_Text_AeneasSetup {
+    format("We're being attacked by two savages!
+            Let's unite and defeat them as a team.
+            Select three Pokemon you will fight with.")
+}
+
+//
+text MareS8_Text_RutulianAmbushPre {
+    format("")
+}

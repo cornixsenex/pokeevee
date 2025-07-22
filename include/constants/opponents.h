@@ -196,10 +196,10 @@
 #define TRAINER_TYRIAN_HANDMAIDEN           190
 #define TRAINER_ELISSA                      191
 #define TRAINER_FAUSTULUS                   192
+#define TRAINER_RUTULIAN                    193
 
 //BREAK// - 61 UNUSED OPEN ABOVE PLZ
 
-#define TRAINER_GRUNT_AQUA_HIDEOUT_8        193
 #define TRAINER_SHAWN                       194
 #define TRAINER_FERNANDO_1                  195
 #define TRAINER_DALTON_1                    196
