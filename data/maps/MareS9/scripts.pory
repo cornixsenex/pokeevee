@@ -457,12 +457,17 @@ script MareS9_Script_Aeneas {
         waitmovement (0)
         applymovement (LOCALID_MARES9_PRISTIS, Common_Movement_ExclamationMark)
         waitmovement (0)
+        setvar (VAR_0x8004, 1)
+        setvar (VAR_0x8005, 1)
+        setvar (VAR_0x8006, 16)
+        setvar (VAR_0x8007, 3)
+        special (ShakeCamera)
         //do crash - B scream et camera shake
         load_field_pic (FIELD_PIC_BEROE, 190, 98)
         msgbox ("AAAAAH!")
         setvar (VAR_0x8004, 1)
         setvar (VAR_0x8005, 1)
-        setvar (VAR_0x8006, 16)
+        setvar (VAR_0x8006, 41)
         setvar (VAR_0x8007, 3)
         special (ShakeCamera)
         playse (SE_EFFECTIVE)
@@ -472,22 +477,8 @@ script MareS9_Script_Aeneas {
         msgbox (MareS9_Text_Aeneas_Boat3)
         destroy_field_pic (FIELD_PIC_AENEAS)
         closemessage
-        //disembark boat
-        //sink boat
-        //Ascanius: You kids alright
-        //F: My leg hurts
-        //B: Now where have you gotten us
-        //A: Not to worry as long as we're all together we will repair again...
-        //Enter Rutullian
-        //R:So long as King Turnus lives and Rutulians breath air none shall take our land!
-        //R attacks
-        //R post - we will drive these invaders from the sea
-        //B: Looks like danger
-        //A: No you heard him this is Hesperia we've arrived! B watch the boys. Quickly let's defeat the savagges and take what is ours!
-        //Exit right the men
-        //Setup hesperia battle
-        //set vars
-        //fin
+        //setup the boat
+        call (MareS8_Script_ArriveHesperia)
         releaseall
         end
     }
@@ -817,9 +808,19 @@ movement MareS9_Movement_Pristis2 {
 }
 
 movement MareS9_Movement_Pristis3 {
-	walk_faster_down * 30
-    walk_faster_right * 22
-    walk_faster_up * 12
+	walk_faster_down * 15
+    walk_faster_left * 8
+    walk_faster_down * 10
+    walk_faster_right * 6
+    walk_faster_down * 5
+    walk_faster_right * 9
+    walk_faster_up * 7
+    walk_faster_down * 7
+    walk_faster_right * 14
+    walk_faster_up * 5
+    walk_faster_right * 8
+    walk_faster_down * 4
+    walk_faster_up * 11
 }
 
 //Admit lost
@@ -1214,7 +1215,7 @@ text MareS9_Text_Beroe_Boat1 {
 }
 
 text MareS9_Text_Aeneas_Boat1 {
-     format("Don't question your captain's authority!")
+     format("Don't question your captain's ability!")
 }
 
 text MareS9_Text_Beroe_Boat2 {

@@ -46,3 +46,104 @@ script MareS8_Script_Transition_IslaTropica {
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
+
+script MareS8_Script_ArriveHesperia {
+        //reset music
+        fadenewbgm (MUS_SOOTOPOLIS)
+        clearflag (FLAG_DONT_TRANSITION_MUSIC)
+        //setup the boat
+        removeobject (LOCALID_MARES8_PRISTIS)
+        setobjectxyperm (LOCALID_MARES8_PRISTIS, 22, 19)
+        setobjectmovementtype (LOCALID_MARES8_PRISTIS, MOVEMENT_TYPE_FACE_UP)
+        addobject (LOCALID_MARES8_PRISTIS)
+        hideobjectat (LOCALID_MARES9_PRISTIS, MAP_MARE_S9)
+        //disembark boat
+        //Beroe
+        removeobject (LOCALID_MARES8_BEROE)
+        setobjectxyperm (LOCALID_MARES8_BEROE, 22, 19)
+        setobjectmovementtype (LOCALID_MARES8_BEROE, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (LOCALID_MARES8_BEROE)
+        applymovement (LOCALID_MARES8_BEROE, Common_Movement_WalkLeft3)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_BEROE, Common_Movement_WalkDown3)
+        waitmovement (0)
+        //Romulus, Ascanius et Remus
+        removeobject (LOCALID_MARES8_ROMULUS)
+        setobjectxyperm (LOCALID_MARES8_ROMULUS, 22, 19)
+        setobjectmovementtype (LOCALID_MARES8_ROMULUS, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (LOCALID_MARES8_ROMULUS)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        removeobject (LOCALID_MARES8_ASCANIUS)
+        setobjectxyperm (LOCALID_MARES8_ASCANIUS, 22, 19)
+        setobjectmovementtype (LOCALID_MARES8_ASCANIUS, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (LOCALID_MARES8_ASCANIUS)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        removeobject (LOCALID_MARES8_REMUS)
+        setobjectxyperm (LOCALID_MARES8_REMUS, 22, 19)
+        setobjectmovementtype (LOCALID_MARES8_REMUS, MOVEMENT_TYPE_FACE_LEFT)
+        addobject (LOCALID_MARES8_REMUS)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft2)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft2)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkLeft2)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown2)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown2)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkDown2)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown)
+        applymovement (LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown)
+        applymovement (LOCALID_MARES8_REMUS, Common_Movement_WalkDown)
+        waitmovement (0)
+        //Player
+        resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_MARE_S9)
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft4)
+        showobjectat (LOCALID_PLAYER, MAP_MARE_S8)
+        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+        waitmovement (0)
+
+        //Faustulus
+        //Aeneas
+        //sink boat
+        //Ascanius: You kids alright
+        //F: My leg hurts
+        //B: Now where have you gotten us
+        //A: Not to worry as long as we're all together we will repair again...
+        //Enter Rutullian
+        //R:So long as King Turnus lives and Rutulians breath air none shall take our land!
+        //R attacks
+        //R post - we will drive these invaders from the sea
+        //B: Looks like danger
+        //A: No you heard him this is Hesperia we've arrived! B watch the boys. Quickly let's defeat the savagges and take what is ours!
+        //Exit right the men
+        //Setup hesperia battle
+        //set vars
+        //fin
+        releaseall
+        end
+
+}
+

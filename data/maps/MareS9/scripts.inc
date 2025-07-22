@@ -433,33 +433,45 @@ MareS9_Script_Aeneas::
 	applymovement LOCALID_MARES9_PRISTIS, Common_Movement_ExclamationMark
 # 459 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 461 "data/maps/MareS9/scripts.pory"
-	load_field_pic FIELD_PIC_BEROE, 190, 98
-# 462 "data/maps/MareS9/scripts.pory"
-	msgbox MareS9_Script_Aeneas_Text_0
-# 463 "data/maps/MareS9/scripts.pory"
+# 460 "data/maps/MareS9/scripts.pory"
 	setvar VAR_0x8004, 1
-# 464 "data/maps/MareS9/scripts.pory"
+# 461 "data/maps/MareS9/scripts.pory"
 	setvar VAR_0x8005, 1
-# 465 "data/maps/MareS9/scripts.pory"
+# 462 "data/maps/MareS9/scripts.pory"
 	setvar VAR_0x8006, 16
-# 466 "data/maps/MareS9/scripts.pory"
+# 463 "data/maps/MareS9/scripts.pory"
 	setvar VAR_0x8007, 3
-# 467 "data/maps/MareS9/scripts.pory"
+# 464 "data/maps/MareS9/scripts.pory"
 	special ShakeCamera
+# 466 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_BEROE, 190, 98
+# 467 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Script_Aeneas_Text_0
 # 468 "data/maps/MareS9/scripts.pory"
-	playse SE_EFFECTIVE
+	setvar VAR_0x8004, 1
 # 469 "data/maps/MareS9/scripts.pory"
-	destroy_field_pic FIELD_PIC_BEROE
+	setvar VAR_0x8005, 1
+# 470 "data/maps/MareS9/scripts.pory"
+	setvar VAR_0x8006, 41
 # 471 "data/maps/MareS9/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
+	setvar VAR_0x8007, 3
 # 472 "data/maps/MareS9/scripts.pory"
-	msgbox MareS9_Text_Aeneas_Boat3
+	special ShakeCamera
 # 473 "data/maps/MareS9/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
+	playse SE_EFFECTIVE
 # 474 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_BEROE
+# 476 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 477 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Boat3
+# 478 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 479 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 491 "data/maps/MareS9/scripts.pory"
+# 481 "data/maps/MareS9/scripts.pory"
+	call MareS8_Script_ArriveHesperia
+# 482 "data/maps/MareS9/scripts.pory"
 	releaseall
 	end
 
@@ -511,1564 +523,1654 @@ MareS9_Script_Aeneas_10:
 
 
 MareS9_Script_Ascanius::
-# 497 "data/maps/MareS9/scripts.pory"
+# 488 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Ascanius1
-# 498 "data/maps/MareS9/scripts.pory"
+# 489 "data/maps/MareS9/scripts.pory"
 	faceplayer
-# 499 "data/maps/MareS9/scripts.pory"
+# 490 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Ascanius2
-# 500 "data/maps/MareS9/scripts.pory"
+# 491 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 501 "data/maps/MareS9/scripts.pory"
+# 492 "data/maps/MareS9/scripts.pory"
 	call Common_Script_Unfaceplayer
 	end
 
 
 MareS9_Script_Romulus::
-# 506 "data/maps/MareS9/scripts.pory"
+# 497 "data/maps/MareS9/scripts.pory"
 	faceplayer
-# 507 "data/maps/MareS9/scripts.pory"
+# 498 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Romulus
-# 508 "data/maps/MareS9/scripts.pory"
+# 499 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 509 "data/maps/MareS9/scripts.pory"
+# 500 "data/maps/MareS9/scripts.pory"
 	call Common_Script_Unfaceplayer
 	end
 
 
 MareS9_Script_Remus::
-# 514 "data/maps/MareS9/scripts.pory"
+# 505 "data/maps/MareS9/scripts.pory"
 	faceplayer
-# 515 "data/maps/MareS9/scripts.pory"
+# 506 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Remus
-# 516 "data/maps/MareS9/scripts.pory"
+# 507 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 517 "data/maps/MareS9/scripts.pory"
+# 508 "data/maps/MareS9/scripts.pory"
 	call Common_Script_Unfaceplayer
 	end
 
 
 MareS9_Script_Faustulus::
-# 522 "data/maps/MareS9/scripts.pory"
+# 513 "data/maps/MareS9/scripts.pory"
 	faceplayer
-# 523 "data/maps/MareS9/scripts.pory"
+# 514 "data/maps/MareS9/scripts.pory"
 	compare VAR_AENEID_STATE, 0
 	goto_if_eq MareS9_Script_Faustulus_2
-# 525 "data/maps/MareS9/scripts.pory"
+# 516 "data/maps/MareS9/scripts.pory"
 	compare VAR_AENEID_STATE, 1
 	goto_if_eq MareS9_Script_Faustulus_3
-# 528 "data/maps/MareS9/scripts.pory"
+# 519 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Faustulus3
 MareS9_Script_Faustulus_1:
-# 530 "data/maps/MareS9/scripts.pory"
+# 521 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 531 "data/maps/MareS9/scripts.pory"
+# 522 "data/maps/MareS9/scripts.pory"
 	call Common_Script_Unfaceplayer
 	end
 
 MareS9_Script_Faustulus_2:
-# 524 "data/maps/MareS9/scripts.pory"
+# 515 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Faustulus1
 	goto MareS9_Script_Faustulus_1
 
 MareS9_Script_Faustulus_3:
-# 526 "data/maps/MareS9/scripts.pory"
+# 517 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Faustulus2
 	goto MareS9_Script_Faustulus_1
 
 
 MareS9_Script_Beroe::
-# 536 "data/maps/MareS9/scripts.pory"
+# 527 "data/maps/MareS9/scripts.pory"
 	faceplayer
-# 537 "data/maps/MareS9/scripts.pory"
+# 528 "data/maps/MareS9/scripts.pory"
 	compare VAR_AENEID_STATE, 0
 	goto_if_eq MareS9_Script_Beroe_2
-# 539 "data/maps/MareS9/scripts.pory"
+# 530 "data/maps/MareS9/scripts.pory"
 	compare VAR_AENEID_STATE, 1
 	goto_if_eq MareS9_Script_Beroe_3
-# 542 "data/maps/MareS9/scripts.pory"
+# 533 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Beroe3
 MareS9_Script_Beroe_1:
-# 544 "data/maps/MareS9/scripts.pory"
+# 535 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 545 "data/maps/MareS9/scripts.pory"
+# 536 "data/maps/MareS9/scripts.pory"
 	call Common_Script_Unfaceplayer
 	end
 
 MareS9_Script_Beroe_2:
-# 538 "data/maps/MareS9/scripts.pory"
+# 529 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Beroe1
 	goto MareS9_Script_Beroe_1
 
 MareS9_Script_Beroe_3:
-# 540 "data/maps/MareS9/scripts.pory"
+# 531 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Beroe2
 	goto MareS9_Script_Beroe_1
 
 
 MareS9_Script_Tyrian1::
-# 550 "data/maps/MareS9/scripts.pory"
+# 541 "data/maps/MareS9/scripts.pory"
 	faceplayer
-# 552 "data/maps/MareS9/scripts.pory"
+# 543 "data/maps/MareS9/scripts.pory"
 	compare VAR_AENEID_STATE, 0
 	goto_if_eq MareS9_Script_Tyrian1_1
-# 559 "data/maps/MareS9/scripts.pory"
+# 550 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_TyrianFixer1
-# 560 "data/maps/MareS9/scripts.pory"
+# 551 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 561 "data/maps/MareS9/scripts.pory"
+# 552 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_FaceUp
-# 562 "data/maps/MareS9/scripts.pory"
+# 553 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 563 "data/maps/MareS9/scripts.pory"
+# 554 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
 MareS9_Script_Tyrian1_1:
-# 553 "data/maps/MareS9/scripts.pory"
+# 544 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_TyrianTowerBlock
-# 554 "data/maps/MareS9/scripts.pory"
+# 545 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 555 "data/maps/MareS9/scripts.pory"
+# 546 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_FaceDown
-# 556 "data/maps/MareS9/scripts.pory"
+# 547 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 	return
 
 
 MareS9_Script_Tyrian2::
-# 568 "data/maps/MareS9/scripts.pory"
+# 559 "data/maps/MareS9/scripts.pory"
 	faceplayer
-# 569 "data/maps/MareS9/scripts.pory"
+# 560 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_TyrianFixer2
-# 570 "data/maps/MareS9/scripts.pory"
+# 561 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 571 "data/maps/MareS9/scripts.pory"
+# 562 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_FaceLeft
-# 572 "data/maps/MareS9/scripts.pory"
+# 563 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 573 "data/maps/MareS9/scripts.pory"
+# 564 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN2, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
 	return
 
 
 MareS9_Script_DidoScene::
-# 578 "data/maps/MareS9/scripts.pory"
+# 569 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Script_Aeneas_DidoSceneStart
-# 579 "data/maps/MareS9/scripts.pory"
+# 570 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
-# 580 "data/maps/MareS9/scripts.pory"
+# 571 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 582 "data/maps/MareS9/scripts.pory"
+# 573 "data/maps/MareS9/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 583 "data/maps/MareS9/scripts.pory"
+# 574 "data/maps/MareS9/scripts.pory"
 	switch VAR_RESULT
-# 584 "data/maps/MareS9/scripts.pory"
+# 575 "data/maps/MareS9/scripts.pory"
 	case DIR_NORTH, MareS9_Script_DidoScene_3
-# 592 "data/maps/MareS9/scripts.pory"
+# 583 "data/maps/MareS9/scripts.pory"
 	case DIR_SOUTH, MareS9_Script_DidoScene_4
-# 602 "data/maps/MareS9/scripts.pory"
+# 593 "data/maps/MareS9/scripts.pory"
 	case DIR_WEST, MareS9_Script_DidoScene_5
-# 610 "data/maps/MareS9/scripts.pory"
+# 601 "data/maps/MareS9/scripts.pory"
 	case DIR_EAST, MareS9_Script_DidoScene_6
-# 618 "data/maps/MareS9/scripts.pory"
+# 609 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Script_DidoScene_Text_0
-# 619 "data/maps/MareS9/scripts.pory"
+# 610 "data/maps/MareS9/scripts.pory"
 	closemessage
 	end
 
 MareS9_Script_DidoScene_1:
-# 623 "data/maps/MareS9/scripts.pory"
+# 614 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, MareS9_Movement_BeginDidoScene
-# 624 "data/maps/MareS9/scripts.pory"
+# 615 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, MareS9_Movement_BeginDidoScene
-# 625 "data/maps/MareS9/scripts.pory"
+# 616 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 627 "data/maps/MareS9/scripts.pory"
+# 618 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_FaceLeft
-# 628 "data/maps/MareS9/scripts.pory"
+# 619 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 629 "data/maps/MareS9/scripts.pory"
+# 620 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 631 "data/maps/MareS9/scripts.pory"
+# 622 "data/maps/MareS9/scripts.pory"
 	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 632 "data/maps/MareS9/scripts.pory"
+# 623 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Aeneas_EnterTown
-# 633 "data/maps/MareS9/scripts.pory"
+# 624 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
-# 635 "data/maps/MareS9/scripts.pory"
+# 626 "data/maps/MareS9/scripts.pory"
 	load_field_pic FIELD_PIC_TYRIAN, 190, 98
-# 636 "data/maps/MareS9/scripts.pory"
+# 627 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_MakeWay
-# 637 "data/maps/MareS9/scripts.pory"
+# 628 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_TYRIAN
-# 638 "data/maps/MareS9/scripts.pory"
+# 629 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 640 "data/maps/MareS9/scripts.pory"
+# 631 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark
-# 641 "data/maps/MareS9/scripts.pory"
+# 632 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 642 "data/maps/MareS9/scripts.pory"
+# 633 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 643 "data/maps/MareS9/scripts.pory"
+# 634 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_FaceDown
-# 644 "data/maps/MareS9/scripts.pory"
+# 635 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 645 "data/maps/MareS9/scripts.pory"
+# 636 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 647 "data/maps/MareS9/scripts.pory"
+# 638 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_ELISSA
-# 648 "data/maps/MareS9/scripts.pory"
+# 639 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_TYRIAN1
-# 649 "data/maps/MareS9/scripts.pory"
+# 640 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_TYRIAN2
-# 650 "data/maps/MareS9/scripts.pory"
+# 641 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_TYRIAN3
-# 651 "data/maps/MareS9/scripts.pory"
+# 642 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_TYRIAN4
-# 652 "data/maps/MareS9/scripts.pory"
+# 643 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_ELISSA, 22, 55
-# 653 "data/maps/MareS9/scripts.pory"
+# 644 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_TYRIAN3, 21, 56
-# 654 "data/maps/MareS9/scripts.pory"
+# 645 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_TYRIAN4, 23, 56
-# 655 "data/maps/MareS9/scripts.pory"
+# 646 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_TYRIAN1, 23, 54
-# 656 "data/maps/MareS9/scripts.pory"
+# 647 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_TYRIAN2, 21, 54
-# 657 "data/maps/MareS9/scripts.pory"
+# 648 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_FACE_DOWN
-# 658 "data/maps/MareS9/scripts.pory"
+# 649 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN1, MOVEMENT_TYPE_FACE_DOWN
-# 659 "data/maps/MareS9/scripts.pory"
+# 650 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN2, MOVEMENT_TYPE_FACE_DOWN
-# 660 "data/maps/MareS9/scripts.pory"
+# 651 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN3, MOVEMENT_TYPE_FACE_DOWN
-# 661 "data/maps/MareS9/scripts.pory"
+# 652 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN4, MOVEMENT_TYPE_FACE_DOWN
-# 662 "data/maps/MareS9/scripts.pory"
+# 653 "data/maps/MareS9/scripts.pory"
 	addobject LOCALID_MARES9_ELISSA
-# 663 "data/maps/MareS9/scripts.pory"
+# 654 "data/maps/MareS9/scripts.pory"
 	addobject LOCALID_MARES9_TYRIAN1
-# 664 "data/maps/MareS9/scripts.pory"
+# 655 "data/maps/MareS9/scripts.pory"
 	addobject LOCALID_MARES9_TYRIAN2
-# 665 "data/maps/MareS9/scripts.pory"
+# 656 "data/maps/MareS9/scripts.pory"
 	addobject LOCALID_MARES9_TYRIAN3
-# 666 "data/maps/MareS9/scripts.pory"
+# 657 "data/maps/MareS9/scripts.pory"
 	addobject LOCALID_MARES9_TYRIAN4
-# 668 "data/maps/MareS9/scripts.pory"
+# 659 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_ELISSA, Common_Movement_WalkUp6
-# 669 "data/maps/MareS9/scripts.pory"
+# 660 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp6
-# 670 "data/maps/MareS9/scripts.pory"
+# 661 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp6
-# 671 "data/maps/MareS9/scripts.pory"
+# 662 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_WalkUp6
-# 672 "data/maps/MareS9/scripts.pory"
+# 663 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_WalkUp6
-# 673 "data/maps/MareS9/scripts.pory"
+# 664 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 675 "data/maps/MareS9/scripts.pory"
+# 666 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_ELISSA, Common_Movement_ExclamationMark
+# 667 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 669 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_ELISSA, Common_Movement_WalkRight4
+# 670 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight4
+# 671 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight4
+# 672 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 673 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_ELISSA, Common_Movement_FaceUp
+# 674 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_FaceUp
+# 675 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_FaceUp
 # 676 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 # 678 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_ELISSA, Common_Movement_WalkRight4
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
 # 679 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight4
-# 680 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight4
-# 681 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
-# 682 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_ELISSA, Common_Movement_FaceUp
-# 683 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_FaceUp
-# 684 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_FaceUp
-# 685 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
-# 687 "data/maps/MareS9/scripts.pory"
-	load_field_pic FIELD_PIC_ELISSA, 190, 98
-# 688 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Elissa1
-# 689 "data/maps/MareS9/scripts.pory"
+# 680 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_ELISSA
-# 691 "data/maps/MareS9/scripts.pory"
+# 682 "data/maps/MareS9/scripts.pory"
 	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 692 "data/maps/MareS9/scripts.pory"
+# 683 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_AeneasToElissa
-# 693 "data/maps/MareS9/scripts.pory"
+# 684 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
-# 695 "data/maps/MareS9/scripts.pory"
+# 686 "data/maps/MareS9/scripts.pory"
 	load_field_pic FIELD_PIC_ELISSA, 190, 98
-# 696 "data/maps/MareS9/scripts.pory"
+# 687 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Elissa2
-# 697 "data/maps/MareS9/scripts.pory"
+# 688 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_ELISSA, Common_Movement_FaceLeft
+# 689 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 691 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Elissa3
+# 692 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_ELISSA
+# 693 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 695 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp2
+# 696 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp2
+# 697 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
 # 698 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight
+# 699 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 # 700 "data/maps/MareS9/scripts.pory"
-	msgbox MareS9_Text_Elissa3
+	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_WalkRight3
 # 701 "data/maps/MareS9/scripts.pory"
-	destroy_field_pic FIELD_PIC_ELISSA
+	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight3
 # 702 "data/maps/MareS9/scripts.pory"
-	closemessage
+	waitmovement 0
+# 703 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp4
 # 704 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp2
+	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp4
 # 705 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp2
-# 706 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 # 707 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight
+	removeobject LOCALID_MARES9_TYRIAN1
 # 708 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
+	removeobject LOCALID_MARES9_TYRIAN2
 # 709 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_WalkRight3
+	call MareS9_Script_ShowTyriansFixingPristis
 # 710 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkRight3
+	addobject LOCALID_MARES9_TYRIAN1
 # 711 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
-# 712 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN1, Common_Movement_WalkUp4
+	addobject LOCALID_MARES9_TYRIAN2
 # 713 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_TYRIAN2, Common_Movement_WalkUp4
+	applymovement LOCALID_MARES9_ELISSA, Common_Movement_FaceUp
 # 714 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
+# 715 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
 # 716 "data/maps/MareS9/scripts.pory"
-	removeobject LOCALID_MARES9_TYRIAN1
-# 717 "data/maps/MareS9/scripts.pory"
-	removeobject LOCALID_MARES9_TYRIAN2
-# 718 "data/maps/MareS9/scripts.pory"
-	call MareS9_Script_ShowTyriansFixingPristis
-# 719 "data/maps/MareS9/scripts.pory"
-	addobject LOCALID_MARES9_TYRIAN1
-# 720 "data/maps/MareS9/scripts.pory"
-	addobject LOCALID_MARES9_TYRIAN2
-# 722 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_ELISSA, Common_Movement_FaceUp
-# 723 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
-# 724 "data/maps/MareS9/scripts.pory"
-	load_field_pic FIELD_PIC_ELISSA, 190, 98
-# 725 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Elissa4
-# 726 "data/maps/MareS9/scripts.pory"
+# 717 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_ELISSA
-# 727 "data/maps/MareS9/scripts.pory"
+# 718 "data/maps/MareS9/scripts.pory"
 	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 728 "data/maps/MareS9/scripts.pory"
+# 719 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Aeneas_GoWithElissa
-# 729 "data/maps/MareS9/scripts.pory"
+# 720 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
-# 730 "data/maps/MareS9/scripts.pory"
+# 721 "data/maps/MareS9/scripts.pory"
 	load_field_pic FIELD_PIC_ELISSA, 190, 98
-# 731 "data/maps/MareS9/scripts.pory"
+# 722 "data/maps/MareS9/scripts.pory"
 	msgbox MareS9_Text_Elissa5
-# 732 "data/maps/MareS9/scripts.pory"
+# 723 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_ELISSA
-# 733 "data/maps/MareS9/scripts.pory"
+# 724 "data/maps/MareS9/scripts.pory"
 	closemessage
-# 735 "data/maps/MareS9/scripts.pory"
+# 726 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
-# 736 "data/maps/MareS9/scripts.pory"
+# 727 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_ELISSA, Common_Movement_WalkRight
-# 737 "data/maps/MareS9/scripts.pory"
+# 728 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight
-# 738 "data/maps/MareS9/scripts.pory"
+# 729 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight
-# 739 "data/maps/MareS9/scripts.pory"
+# 730 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 740 "data/maps/MareS9/scripts.pory"
+# 731 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkUp2
-# 741 "data/maps/MareS9/scripts.pory"
+# 732 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_ELISSA, Common_Movement_WalkUp2
-# 742 "data/maps/MareS9/scripts.pory"
+# 733 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_WalkUp3
-# 743 "data/maps/MareS9/scripts.pory"
+# 734 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_WalkUp3
-# 744 "data/maps/MareS9/scripts.pory"
+# 735 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 745 "data/maps/MareS9/scripts.pory"
+# 736 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight7
-# 746 "data/maps/MareS9/scripts.pory"
+# 737 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_ELISSA, Common_Movement_WalkRight7
-# 747 "data/maps/MareS9/scripts.pory"
+# 738 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN3, Common_Movement_WalkRight7
-# 748 "data/maps/MareS9/scripts.pory"
+# 739 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_TYRIAN4, Common_Movement_WalkRight7
-# 749 "data/maps/MareS9/scripts.pory"
+# 740 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 751 "data/maps/MareS9/scripts.pory"
+# 742 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_AENEAS
-# 752 "data/maps/MareS9/scripts.pory"
+# 743 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_ELISSA
-# 753 "data/maps/MareS9/scripts.pory"
+# 744 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_TYRIAN3
-# 754 "data/maps/MareS9/scripts.pory"
+# 745 "data/maps/MareS9/scripts.pory"
 	removeobject LOCALID_MARES9_TYRIAN4
-# 755 "data/maps/MareS9/scripts.pory"
+# 746 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_AENEAS, 0, 0
-# 756 "data/maps/MareS9/scripts.pory"
+# 747 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_AENEAS, MOVEMENT_TYPE_INVISIBLE
-# 757 "data/maps/MareS9/scripts.pory"
+# 748 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_ELISSA, 0, 0
-# 758 "data/maps/MareS9/scripts.pory"
+# 749 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_INVISIBLE
-# 759 "data/maps/MareS9/scripts.pory"
+# 750 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_TYRIAN3, 0, 0
-# 760 "data/maps/MareS9/scripts.pory"
+# 751 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN3, MOVEMENT_TYPE_INVISIBLE
-# 761 "data/maps/MareS9/scripts.pory"
+# 752 "data/maps/MareS9/scripts.pory"
 	setobjectxyperm LOCALID_MARES9_TYRIAN4, 0, 0
-# 762 "data/maps/MareS9/scripts.pory"
+# 753 "data/maps/MareS9/scripts.pory"
 	setobjectmovementtype LOCALID_MARES9_TYRIAN4, MOVEMENT_TYPE_INVISIBLE
-# 764 "data/maps/MareS9/scripts.pory"
+# 755 "data/maps/MareS9/scripts.pory"
 	setvar VAR_AENEID_STATE, 1
-# 765 "data/maps/MareS9/scripts.pory"
+# 756 "data/maps/MareS9/scripts.pory"
 	release
 	end
 
 MareS9_Script_DidoScene_3:
-# 585 "data/maps/MareS9/scripts.pory"
+# 576 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
-# 586 "data/maps/MareS9/scripts.pory"
+# 577 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 587 "data/maps/MareS9/scripts.pory"
+# 578 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkDown
-# 588 "data/maps/MareS9/scripts.pory"
+# 579 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 589 "data/maps/MareS9/scripts.pory"
+# 580 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
-# 590 "data/maps/MareS9/scripts.pory"
+# 581 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 591 "data/maps/MareS9/scripts.pory"
+# 582 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 	goto MareS9_Script_DidoScene_1
 
 MareS9_Script_DidoScene_4:
-# 593 "data/maps/MareS9/scripts.pory"
+# 584 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkDown
-# 594 "data/maps/MareS9/scripts.pory"
+# 585 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+# 586 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 587 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
+# 588 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+# 589 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 590 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
+# 591 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+# 592 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+	goto MareS9_Script_DidoScene_1
+
+MareS9_Script_DidoScene_5:
+# 594 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkDown
 # 595 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 # 596 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
 # 597 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
 # 598 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
 # 599 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
-# 600 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 601 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
-	goto MareS9_Script_DidoScene_1
-
-MareS9_Script_DidoScene_5:
-# 603 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkDown
-# 604 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
-# 605 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
-# 606 "data/maps/MareS9/scripts.pory"
-	waitmovement 0
-# 607 "data/maps/MareS9/scripts.pory"
-	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight
-# 608 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 609 "data/maps/MareS9/scripts.pory"
+# 600 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 	goto MareS9_Script_DidoScene_1
 
 MareS9_Script_DidoScene_6:
-# 611 "data/maps/MareS9/scripts.pory"
+# 602 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkDown
-# 612 "data/maps/MareS9/scripts.pory"
+# 603 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 613 "data/maps/MareS9/scripts.pory"
+# 604 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
-# 614 "data/maps/MareS9/scripts.pory"
+# 605 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_AENEAS, Common_Movement_WalkRight2
-# 615 "data/maps/MareS9/scripts.pory"
+# 606 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight2
-# 616 "data/maps/MareS9/scripts.pory"
+# 607 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 	goto MareS9_Script_DidoScene_1
 
 
-# 769 "data/maps/MareS9/scripts.pory"
+# 760 "data/maps/MareS9/scripts.pory"
 MareS9_Movement_BeginDidoScene:
-# 770 "data/maps/MareS9/scripts.pory"
+# 761 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 770 "data/maps/MareS9/scripts.pory"
+# 761 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 770 "data/maps/MareS9/scripts.pory"
+# 761 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 770 "data/maps/MareS9/scripts.pory"
+# 761 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 770 "data/maps/MareS9/scripts.pory"
+# 761 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 771 "data/maps/MareS9/scripts.pory"
+# 762 "data/maps/MareS9/scripts.pory"
 	walk_down
 	step_end
 
-# 774 "data/maps/MareS9/scripts.pory"
+# 765 "data/maps/MareS9/scripts.pory"
 MareS9_Movement_MoveCameraToFuneral:
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 775 "data/maps/MareS9/scripts.pory"
+# 766 "data/maps/MareS9/scripts.pory"
 	walk_right
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
-# 776 "data/maps/MareS9/scripts.pory"
+# 767 "data/maps/MareS9/scripts.pory"
 	walk_up
 	step_end
 
-# 779 "data/maps/MareS9/scripts.pory"
+# 770 "data/maps/MareS9/scripts.pory"
 MareS9_Movement_ReturnCameraFromFuneral:
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 780 "data/maps/MareS9/scripts.pory"
+# 771 "data/maps/MareS9/scripts.pory"
 	walk_left
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
-# 781 "data/maps/MareS9/scripts.pory"
+# 772 "data/maps/MareS9/scripts.pory"
 	walk_down
 	step_end
 
-# 784 "data/maps/MareS9/scripts.pory"
+# 775 "data/maps/MareS9/scripts.pory"
 MareS9_Movement_Pristis1:
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 785 "data/maps/MareS9/scripts.pory"
+# 776 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 786 "data/maps/MareS9/scripts.pory"
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 777 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 778 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 779 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 780 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 781 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 781 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 781 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 781 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 781 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 781 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 781 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 782 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 782 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 782 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 782 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 783 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 783 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 784 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 784 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 784 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 784 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 784 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 785 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 785 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
 # 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_down
 # 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_down
 # 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 786 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 787 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
 # 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 787 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 788 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 789 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 790 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 790 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 790 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 790 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 790 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 790 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 790 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 791 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 791 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 791 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 791 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 792 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 792 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 793 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 793 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 793 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 793 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 793 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 794 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 794 "data/maps/MareS9/scripts.pory"
+# 787 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 795 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 795 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 795 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 796 "data/maps/MareS9/scripts.pory"
+# 787 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 796 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 796 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 796 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 797 "data/maps/MareS9/scripts.pory"
+# 788 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
 	step_end
 
-# 800 "data/maps/MareS9/scripts.pory"
+# 791 "data/maps/MareS9/scripts.pory"
 MareS9_Movement_Pristis2:
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 801 "data/maps/MareS9/scripts.pory"
+# 792 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 802 "data/maps/MareS9/scripts.pory"
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 793 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 794 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 795 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 796 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 796 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 796 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 796 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 796 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 796 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 796 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 797 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 798 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 799 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 800 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 801 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
+	walk_faster_up
 # 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 802 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 803 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 803 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
+# 803 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 803 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 803 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 804 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 805 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 805 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 805 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 805 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 805 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 805 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
 # 805 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
+	walk_faster_right
+# 805 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 805 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 805 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
 # 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
+	walk_faster_down
 # 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 806 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 807 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
+	walk_faster_right
 # 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 807 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 808 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 809 "data/maps/MareS9/scripts.pory"
-	walk_faster_left
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 810 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 811 "data/maps/MareS9/scripts.pory"
-	walk_faster_up
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 812 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 813 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 814 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 815 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 815 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
 	step_end
 
-# 819 "data/maps/MareS9/scripts.pory"
+# 810 "data/maps/MareS9/scripts.pory"
 MareS9_Movement_Pristis3:
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 811 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 812 "data/maps/MareS9/scripts.pory"
+	walk_faster_left
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
+# 813 "data/maps/MareS9/scripts.pory"
 	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 820 "data/maps/MareS9/scripts.pory"
-	walk_faster_down
-# 821 "data/maps/MareS9/scripts.pory"
+# 814 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 814 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 814 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 814 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 814 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 814 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 815 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 815 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 815 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 815 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 815 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
+# 816 "data/maps/MareS9/scripts.pory"
 	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 821 "data/maps/MareS9/scripts.pory"
-	walk_faster_right
-# 822 "data/maps/MareS9/scripts.pory"
+# 817 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 817 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 817 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 817 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 817 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 817 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 817 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 818 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 818 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 818 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 818 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 818 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 818 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 818 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 819 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 820 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 820 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 820 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
-# 822 "data/maps/MareS9/scripts.pory"
+# 820 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
+# 820 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
+# 821 "data/maps/MareS9/scripts.pory"
+	walk_faster_right
 # 822 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 822 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 822 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 822 "data/maps/MareS9/scripts.pory"
+	walk_faster_down
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
+	walk_faster_up
+# 823 "data/maps/MareS9/scripts.pory"
 	walk_faster_up
 	step_end
 
 MareS9_Script_Aeneas_Text_0:
-# 462 "data/maps/MareS9/scripts.pory"
+# 467 "data/maps/MareS9/scripts.pory"
 	.string "AAAAAH!$"
 
 MareS9_Script_DidoScene_Text_0:
-# 618 "data/maps/MareS9/scripts.pory"
+# 609 "data/maps/MareS9/scripts.pory"
 	.string "ERROR: GetPlayer\nFacingDirection OOB$"
 
 MareS9_Text_Aeneas_Help1::
-# 831 "data/maps/MareS9/scripts.pory"
+# 832 "data/maps/MareS9/scripts.pory"
 	.string "My manly pride prevents me from crying\n"
 	.string "but honesty compels me to admit that\l"
 	.string "we are stranded here. Oh, pardon me, my\l"
@@ -2107,7 +2209,7 @@ MareS9_Text_Aeneas_Help1::
 	.string "our quest to found a new city?$"
 
 MareS9_Text_Aeneas_NoHelp::
-# 868 "data/maps/MareS9/scripts.pory"
+# 869 "data/maps/MareS9/scripts.pory"
 	.string "I understand. Your path is yours to\n"
 	.string "choose. We'll find some other way to fix\l"
 	.string "Pristis and sail to glory and Hesperia,\l"
@@ -2115,28 +2217,28 @@ MareS9_Text_Aeneas_NoHelp::
 	.string "with me.$"
 
 MareS9_Text_Aeneas_Help2::
-# 876 "data/maps/MareS9/scripts.pory"
+# 877 "data/maps/MareS9/scripts.pory"
 	.string "Young friend, have you come to help fix\n"
 	.string "Pristis?$"
 
 MareS9_Text_Aeneas_EnterTown::
-# 882 "data/maps/MareS9/scripts.pory"
+# 883 "data/maps/MareS9/scripts.pory"
 	.string "This island is more inhabited than I\n"
 	.string "thought at first. I think we should\l"
 	.string "split up to search for the parts and...$"
 
 MareS9_Text_MakeWay::
-# 888 "data/maps/MareS9/scripts.pory"
+# 889 "data/maps/MareS9/scripts.pory"
 	.string "Make way for Queen Tyrii, Elissa!$"
 
 MareS9_Script_Aeneas_DidoSceneStart::
-# 892 "data/maps/MareS9/scripts.pory"
+# 893 "data/maps/MareS9/scripts.pory"
 	.string "Then let's head into town and try to\n"
 	.string "find the parts and labor we need to set\l"
 	.string "sail.$"
 
 MareS9_Text_Elissa1::
-# 900 "data/maps/MareS9/scripts.pory"
+# 901 "data/maps/MareS9/scripts.pory"
 	.string "What's this? A stranger has come to our\n"
 	.string "land? Someone unknown to us, that much\l"
 	.string "is sure, but how, and why, as well are\l"
@@ -2153,7 +2255,7 @@ MareS9_Text_Elissa1::
 	.string "find it's mark?$"
 
 MareS9_Text_AeneasToElissa::
-# 915 "data/maps/MareS9/scripts.pory"
+# 916 "data/maps/MareS9/scripts.pory"
 	.string "Indeed, fair queen, I mean not to\n"
 	.string "intrude. My name is Aeneas, and I am\l"
 	.string "lost. Some time ago I was a prince of\l"
@@ -2170,7 +2272,7 @@ MareS9_Text_AeneasToElissa::
 	.string "island. We come in peace.$"
 
 MareS9_Text_Elissa2::
-# 931 "data/maps/MareS9/scripts.pory"
+# 932 "data/maps/MareS9/scripts.pory"
 	.string "And in peace you will find all that you\n"
 	.string "seek! My name is Elissa, I am the queen\l"
 	.string "of Turris Saltus and the Tyrians. My\l"
@@ -2181,13 +2283,13 @@ MareS9_Text_Elissa2::
 	.string "your princely face brought to smile.$"
 
 MareS9_Text_Elissa3::
-# 942 "data/maps/MareS9/scripts.pory"
+# 943 "data/maps/MareS9/scripts.pory"
 	.string "You two, go to his ship. Spare no\n"
 	.string "expense. Set her afloat as strong as\l"
 	.string "newly built.$"
 
 MareS9_Text_Elissa4::
-# 947 "data/maps/MareS9/scripts.pory"
+# 948 "data/maps/MareS9/scripts.pory"
 	.string "Tell me, Aeneas, prince, will you join me\n"
 	.string "atop Turris Saltus? We might enjoy the\l"
 	.string "pleasant things in life. Good food, fine\l"
@@ -2198,54 +2300,54 @@ MareS9_Text_Elissa4::
 	.string "much as you, fine prince.$"
 
 MareS9_Text_Aeneas_GoWithElissa::
-# 957 "data/maps/MareS9/scripts.pory"
+# 958 "data/maps/MareS9/scripts.pory"
 	.string "Most gracious queen, your offer I\n"
 	.string "accept. I will go with you, and must bow\l"
 	.string "my head, to give my greatest thanks...$"
 
 MareS9_Text_Elissa5::
-# 963 "data/maps/MareS9/scripts.pory"
+# 964 "data/maps/MareS9/scripts.pory"
 	.string "Smile, don't bow! Now come Aeneas,\n"
 	.string "prince, there's much to say, to see, to\l"
 	.string "do, to feel, just you and I.$"
 
 MareS9_Text_Ascanius1::
-# 969 "data/maps/MareS9/scripts.pory"
+# 970 "data/maps/MareS9/scripts.pory"
 	.string "Romulus! Remus! Stop running around!$"
 
 MareS9_Text_Ascanius2::
-# 973 "data/maps/MareS9/scripts.pory"
+# 974 "data/maps/MareS9/scripts.pory"
 	.string "Even shipwrecked parenting's such a\n"
 	.string "chore.$"
 
 MareS9_Text_Romulus::
-# 977 "data/maps/MareS9/scripts.pory"
+# 978 "data/maps/MareS9/scripts.pory"
 	.string "I am the older twin. That mean's I'm\n"
 	.string "first!$"
 
 MareS9_Text_Remus::
-# 981 "data/maps/MareS9/scripts.pory"
+# 982 "data/maps/MareS9/scripts.pory"
 	.string "I am the faster twin. That mean's I'm\n"
 	.string "best!$"
 
 MareS9_Text_Faustulus1::
-# 986 "data/maps/MareS9/scripts.pory"
+# 987 "data/maps/MareS9/scripts.pory"
 	.string "Ka-Aeneas all madays maserve. Island\n"
 	.string "way off kafigure maknow. Big town\l"
 	.string "kafound kadestine taknowya$"
 
 MareS9_Text_Faustulus2::
-# 993 "data/maps/MareS9/scripts.pory"
+# 994 "data/maps/MareS9/scripts.pory"
 	.string "Ka-Aeneas kaaroundna good mafeelna.\n"
 	.string "Soon kareturn mahope.$"
 
 MareS9_Text_Faustulus3::
-# 999 "data/maps/MareS9/scripts.pory"
+# 1000 "data/maps/MareS9/scripts.pory"
 	.string "Ka-Aeneas kaback magladya. Kaaround\n"
 	.string "safe mafeelna.$"
 
 MareS9_Text_Beroe1::
-# 1006 "data/maps/MareS9/scripts.pory"
+# 1007 "data/maps/MareS9/scripts.pory"
 	.string "It seems like all we do is fall from one\n"
 	.string "disaster to another! We have been at\l"
 	.string "sea for months and finally when we land\l"
@@ -2257,7 +2359,7 @@ MareS9_Text_Beroe1::
 	.string "exists!$"
 
 MareS9_Text_Beroe2::
-# 1019 "data/maps/MareS9/scripts.pory"
+# 1020 "data/maps/MareS9/scripts.pory"
 	.string "Oh great, Aeneas has gone off again and\n"
 	.string "sent these savages to fix Pristis. I\l"
 	.string "doubt they know how to tie their own\l"
@@ -2266,7 +2368,7 @@ MareS9_Text_Beroe2::
 	.string "mark my words.$"
 
 MareS9_Text_Beroe3::
-# 1028 "data/maps/MareS9/scripts.pory"
+# 1029 "data/maps/MareS9/scripts.pory"
 	.string "Fantastic, now Aeneas thinks the boat\n"
 	.string "is seaworthy again and cannot wait to\l"
 	.string "sail from this beachhead into some new\l"
@@ -2275,35 +2377,35 @@ MareS9_Text_Beroe3::
 	.string "it worse!$"
 
 MareS9_Text_TyrianTowerBlock::
-# 1036 "data/maps/MareS9/scripts.pory"
+# 1037 "data/maps/MareS9/scripts.pory"
 	.string "Turris Saltus, home of the Tyrians and\n"
 	.string "our most noble queen, fair Elissa, is not\l"
 	.string "open to visitors. Goodbye.$"
 
 MareS9_Text_TyrianFixer1::
-# 1042 "data/maps/MareS9/scripts.pory"
+# 1043 "data/maps/MareS9/scripts.pory"
 	.string "Don't worry, I've fixed ships like this\n"
 	.string "before.$"
 
 MareS9_Text_TyrianFixer2::
-# 1046 "data/maps/MareS9/scripts.pory"
+# 1047 "data/maps/MareS9/scripts.pory"
 	.string "I don't love fixing boats, but it's my\n"
 	.string "job. When the Queen says 'do this' it is\l"
 	.string "performed.$"
 
 MareS9_Text_Aeneas_Funeral1::
-# 1051 "data/maps/MareS9/scripts.pory"
+# 1052 "data/maps/MareS9/scripts.pory"
 	.string "Pristis has been repaired and a fair\n"
 	.string "wind is blowing to cast us off of this\l"
 	.string "shore. Thank you, my lad, for reminding\l"
 	.string "me of my sacred duty. Now...$"
 
 MareS9_Text_Elissa_Funeral1::
-# 1058 "data/maps/MareS9/scripts.pory"
+# 1059 "data/maps/MareS9/scripts.pory"
 	.string "Aeneas! Pig!$"
 
 MareS9_Text_Elissa_Funeral2::
-# 1062 "data/maps/MareS9/scripts.pory"
+# 1063 "data/maps/MareS9/scripts.pory"
 	.string "Traitor! Liar! Abuser of my love! Look\n"
 	.string "at wretched Elissa! Once a queen\l"
 	.string "pursued by multitudes of rich suitors, I\l"
@@ -2340,18 +2442,18 @@ MareS9_Text_Elissa_Funeral2::
 	.string "bounds of eternal rage!$"
 
 MareS9_Text_Aeneas_Funeral2::
-# 1099 "data/maps/MareS9/scripts.pory"
+# 1100 "data/maps/MareS9/scripts.pory"
 	.string "In light of the most dreadful loss we\n"
 	.string "have suffered we ought to hold a\l"
 	.string "funeral to celebrate the dead before\l"
 	.string "we leave.$"
 
 MareS9_Text_Beroe_Funeral1::
-# 1106 "data/maps/MareS9/scripts.pory"
+# 1107 "data/maps/MareS9/scripts.pory"
 	.string "That woman, did you love her, Aeneas?$"
 
 MareS9_Text_Aeneas_Funeral3::
-# 1111 "data/maps/MareS9/scripts.pory"
+# 1112 "data/maps/MareS9/scripts.pory"
 	.string "What woman? This is for my dead father,\n"
 	.string "best friend, and sailors lost while on\l"
 	.string "our quest. We dedicate this funeral to\l"
@@ -2363,7 +2465,7 @@ MareS9_Text_Aeneas_Funeral3::
 	.string "among our crew...$"
 
 MareS9_Text_Aeneas_Funeral4::
-# 1123 "data/maps/MareS9/scripts.pory"
+# 1124 "data/maps/MareS9/scripts.pory"
 	.string "against you, Faustulus. If you prevail,\n"
 	.string "I will grant you freedom, and let you\l"
 	.string "freely choose to stay with us as a full\l"
@@ -2372,31 +2474,31 @@ MareS9_Text_Aeneas_Funeral4::
 	.string "whatever way would seem best to you.$"
 
 MareS9_Text_Faustulus_Funeral1::
-# 1133 "data/maps/MareS9/scripts.pory"
+# 1134 "data/maps/MareS9/scripts.pory"
 	.string "Mafree man be? Too kind Ka-are! Gladly\n"
 	.string "will mafight. Honor ma-is$"
 
 MareS9_Text_Aeneas_Funeral5::
-# 1137 "data/maps/MareS9/scripts.pory"
+# 1138 "data/maps/MareS9/scripts.pory"
 	.string "Look to your arms, and let the best man\n"
 	.string "win!$"
 
 MareS9_Text_Faustulus_Funeral2::
-# 1142 "data/maps/MareS9/scripts.pory"
+# 1143 "data/maps/MareS9/scripts.pory"
 	.string "Personalna but tadefeat meneed\n"
 	.string "kaplease and mafreedom makeya.$"
 
 MareS9_Text_FaustulusLost::
-# 1147 "data/maps/MareS9/scripts.pory"
+# 1148 "data/maps/MareS9/scripts.pory"
 	.string "Mastrongna!$"
 
 MareS9_Text_Faustulus_Funeral3::
-# 1152 "data/maps/MareS9/scripts.pory"
+# 1153 "data/maps/MareS9/scripts.pory"
 	.string "Tathank maplace taremind. Kaslave\n"
 	.string "maonly be.$"
 
 MareS9_Text_Aeneas_Funeral6::
-# 1157 "data/maps/MareS9/scripts.pory"
+# 1158 "data/maps/MareS9/scripts.pory"
 	.string "Well fought, {PLAYER}! Your victory\n"
 	.string "pleases me and all the souls of our lost\l"
 	.string "companions. By virtue of your glorious\l"
@@ -2407,7 +2509,7 @@ MareS9_Text_Aeneas_Funeral6::
 	.string "to...$"
 
 MareS9_Text_Beroe_Funeral2::
-# 1168 "data/maps/MareS9/scripts.pory"
+# 1169 "data/maps/MareS9/scripts.pory"
 	.string "We did not cross the unforgiving seas,\n"
 	.string "navigate Scylla Charybdis, escape Isla\l"
 	.string "Solata, or sacrifice the flower of our\l"
@@ -2424,17 +2526,17 @@ MareS9_Text_Beroe_Funeral2::
 	.string "eager for the surf.$"
 
 MareS9_Text_Aeneas_Funeral7::
-# 1185 "data/maps/MareS9/scripts.pory"
+# 1186 "data/maps/MareS9/scripts.pory"
 	.string "These games are a solumn tradition to\n"
 	.string "honor the dead...$"
 
 MareS9_Text_Beroe_Funeral3::
-# 1191 "data/maps/MareS9/scripts.pory"
+# 1192 "data/maps/MareS9/scripts.pory"
 	.string "I will burn the ship to ashes if you will\n"
 	.string "not swiftly depart!$"
 
 MareS9_Text_Aeneas_Funeral8::
-# 1197 "data/maps/MareS9/scripts.pory"
+# 1198 "data/maps/MareS9/scripts.pory"
 	.string "You'd burn the ship? Let's not be hasty\n"
 	.string "now! There is much reason to your\l"
 	.string "argument. The wind is fair, our party\l"
@@ -2443,36 +2545,35 @@ MareS9_Text_Aeneas_Funeral8::
 	.string "Assemble! To the boat!$"
 
 MareS9_Text_Aeneas_Funeral9::
-# 1205 "data/maps/MareS9/scripts.pory"
+# 1206 "data/maps/MareS9/scripts.pory"
 	.string "May the winds stay fair and may we\n"
 	.string "safely traverse the sea and reach\l"
 	.string "Hesperia.$"
 
 MareS9_Text_Beroe_Boat1::
-# 1210 "data/maps/MareS9/scripts.pory"
+# 1211 "data/maps/MareS9/scripts.pory"
 	.string "Are you sure you know where you're\n"
 	.string "going? We have just gone in a big\l"
 	.string "circle!. I doubt you can sail this ship\l"
 	.string "to Hesperia.$"
 
 MareS9_Text_Aeneas_Boat1::
-# 1216 "data/maps/MareS9/scripts.pory"
-	.string "Don't question your captain's\n"
-	.string "authority!$"
+# 1217 "data/maps/MareS9/scripts.pory"
+	.string "Don't question your captain's ability!$"
 
 MareS9_Text_Beroe_Boat2::
-# 1220 "data/maps/MareS9/scripts.pory"
+# 1221 "data/maps/MareS9/scripts.pory"
 	.string "Aeneas! We're about to hit those rocks!$"
 
 MareS9_Text_Aeneas_Boat2::
-# 1224 "data/maps/MareS9/scripts.pory"
+# 1225 "data/maps/MareS9/scripts.pory"
 	.string "I know what I'm doing! I'm the captain,\n"
 	.string "not you! Stop trying to backseat pilot!$"
 
 MareS9_Text_Beroe_Boat3::
-# 1229 "data/maps/MareS9/scripts.pory"
+# 1230 "data/maps/MareS9/scripts.pory"
 	.string "I wish Palinurus were at the helm.$"
 
 MareS9_Text_Aeneas_Boat3::
-# 1233 "data/maps/MareS9/scripts.pory"
+# 1234 "data/maps/MareS9/scripts.pory"
 	.string "Abandon ship! Everyone off the boat!$"
