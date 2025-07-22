@@ -270,3 +270,11 @@ text MareS8_Text_AeneasSetup {
 text MareS8_Text_RutulianAmbushPre {
     format("")
 }
+
+text MareS8_Text_RutulianAmbushLost1 {
+    format("")
+}
+
+text MareS8_Text_RutulianAmbushLost2 {
+    format("")
+}

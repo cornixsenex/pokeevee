@@ -405,3 +405,22 @@ MareS8_Text_Aeneas_GetWorse::
 # 259 "data/maps/MareS8/scripts.pory"
 	.string "On guard! I think it's about to get\n"
 	.string "worse.$"
+
+MareS8_Text_AeneasSetup::
+# 263 "data/maps/MareS8/scripts.pory"
+	.string "We're being attacked by two savages!\n"
+	.string "Let's unite and defeat them as a team.\l"
+	.string "Select three Pokemon you will fight\l"
+	.string "with.$"
+
+MareS8_Text_RutulianAmbushPre::
+# 270 "data/maps/MareS8/scripts.pory"
+	.string "$"
+
+MareS8_Text_RutulianAmbushLost1::
+# 274 "data/maps/MareS8/scripts.pory"
+	.string "$"
+
+MareS8_Text_RutulianAmbushLost2::
+# 278 "data/maps/MareS8/scripts.pory"
+	.string "$"
