@@ -21,6 +21,7 @@ Island People - Tropix
 		>Ma- Me
 		>Ta- You
 		>Sa- he/she/they
+		>Wa- We
 	>Suffixes
 		> -na No
 		> -ya yes

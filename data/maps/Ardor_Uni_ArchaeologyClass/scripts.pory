@@ -145,13 +145,11 @@ script Ardor_Uni_ArchaeologyClass_EventScript_AddRebels {
 }
 	
 script Ardor_Uni_ArchaeologyClass_EventScript_DoIndyReveal {
-	lockall
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	applymovement (OBJ_EVENT_ID_PLAYER, Ardor_Uni_ArchaeologyClass_Movement_PlayerApproachCutscene)
 	waitmovement  (0)
 	call (Ardor_Uni_ArchaeologyClass_EventScript_Cutscene)
-	releaseall
 	end
 }
 

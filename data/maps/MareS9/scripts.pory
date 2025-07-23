@@ -184,6 +184,8 @@ script MareS9_Script_Aeneas {
         //A: Funeral 1
 //        msgbox (MareS9_Text_Aeneas_Funeral1)
           destroy_field_pic (FIELD_PIC_AENEAS)
+		  applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkSouthWest)
+		  waitmovement (0)
 //        //E: Scream 
 //        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
 //        msgbox (MareS9_Text_Elissa_Funeral1)
@@ -455,13 +457,14 @@ script MareS9_Script_Aeneas {
         applymovement (LOCALID_MARES9_PRISTIS, MareS9_Movement_Pristis3)         
         applymovement (LOCALID_PLAYER, MareS9_Movement_Pristis3)         
         waitmovement (0)
-        applymovement (LOCALID_MARES9_PRISTIS, Common_Movement_ExclamationMark)
-        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+        playse (SE_EFFECTIVE)
         setvar (VAR_0x8004, 1)
         setvar (VAR_0x8005, 1)
         setvar (VAR_0x8006, 16)
         setvar (VAR_0x8007, 3)
         special (ShakeCamera)
+        waitmovement (0)
         //do crash - B scream et camera shake
         load_field_pic (FIELD_PIC_BEROE, 190, 98)
         msgbox ("AAAAAH!")

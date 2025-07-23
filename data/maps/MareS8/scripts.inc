@@ -6,391 +6,545 @@ MareS8_MapScripts::
 MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 14 "data/maps/MareS8/scripts.pory"
 	specialvar VAR_TEMP_5, GetDynamicMapSec_MareS8_F
+# 16 "data/maps/MareS8/scripts.pory"
+	compare VAR_AENEID_STATE, 69
+	goto_if_lt MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 19 "data/maps/MareS8/scripts.pory"
+	compare VAR_AENEID_STATE, 7
+	goto_if_lt MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	return
+
+MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 17 "data/maps/MareS8/scripts.pory"
+	call MareS8_Script_ShowAeneidDuringWar
+	goto MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
+# 16 "data/maps/MareS8/scripts.pory"
+	compare VAR_AENEID_STATE, 2
+	goto_if_gt MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
+# 20 "data/maps/MareS8/scripts.pory"
+	call MareS8_Script_ShowRutulianWar
+	return
+
+MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+# 19 "data/maps/MareS8/scripts.pory"
+	compare VAR_AENEID_STATE, 2
+	goto_if_gt MareS8_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
+	return
+
+
+MareS8_Script_ShowRutulianWar::
+# 27 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_RUTULIAN3, 30, 11
+# 28 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_FACE_RIGHT
+# 29 "data/maps/MareS8/scripts.pory"
+	compare VAR_AENEID_STATE, 6
+	goto_if_lt MareS8_Script_ShowRutulianWar_2
+MareS8_Script_ShowRutulianWar_1:
+# 33 "data/maps/MareS8/scripts.pory"
+	compare VAR_AENEID_STATE, 5
+	goto_if_lt MareS8_Script_ShowRutulianWar_5
+MareS8_Script_ShowRutulianWar_4:
+# 37 "data/maps/MareS8/scripts.pory"
+	compare VAR_AENEID_STATE, 4
+	goto_if_lt MareS8_Script_ShowRutulianWar_8
+MareS8_Script_ShowRutulianWar_7:
+	return
+
+MareS8_Script_ShowRutulianWar_2:
+# 30 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_RUTULIAN4, 30, 11
+# 31 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_RUTULIAN4, MOVEMENT_TYPE_FACE_LEFT
+	goto MareS8_Script_ShowRutulianWar_1
+
+MareS8_Script_ShowRutulianWar_5:
+# 34 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_RUTULIAN2, 30, 11
+# 35 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_RUTULIAN2, MOVEMENT_TYPE_FACE_UP
+	goto MareS8_Script_ShowRutulianWar_4
+
+MareS8_Script_ShowRutulianWar_8:
+# 38 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_RUTULIAN1, 30, 11
+# 39 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_RUTULIAN1, MOVEMENT_TYPE_FACE_LEFT
+	goto MareS8_Script_ShowRutulianWar_7
+
+
+MareS8_Script_ShowAeneidDuringWar::
+# 46 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_AENEAS, 20, 19
+# 47 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_FAUSTULUS, 18, 19
+# 48 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_BEROE, 19, 22
+# 49 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_ROMULUS, 15, 24
+# 50 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_ASCANIUS, 16, 24
+# 51 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_REMUS, 17, 24
+# 52 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_AENEAS, MOVEMENT_TYPE_FACE_DOWN
+# 53 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_FAUSTULUS, MOVEMENT_TYPE_FACE_RIGHT
+# 54 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_BEROE, MOVEMENT_TYPE_FACE_UP
+# 55 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_ROMULUS, MOVEMENT_TYPE_FACE_UP
+# 56 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_ASCANIUS, MOVEMENT_TYPE_FACE_UP
+# 57 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_REMUS, MOVEMENT_TYPE_FACE_UP
 	return
 
 
 MareS8_Script_Transition_MareTropicum::
-# 20 "data/maps/MareS8/scripts.pory"
+# 63 "data/maps/MareS8/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 21 "data/maps/MareS8/scripts.pory"
+# 64 "data/maps/MareS8/scripts.pory"
 	special TransitionMapMusic
-# 22 "data/maps/MareS8/scripts.pory"
+# 65 "data/maps/MareS8/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS8_Script_Transition_MareSubtropicum::
-# 26 "data/maps/MareS8/scripts.pory"
+# 69 "data/maps/MareS8/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 27 "data/maps/MareS8/scripts.pory"
+# 70 "data/maps/MareS8/scripts.pory"
 	special TransitionMapMusic
-# 28 "data/maps/MareS8/scripts.pory"
+# 71 "data/maps/MareS8/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS8_Script_Transition_IslaIthaca::
-# 32 "data/maps/MareS8/scripts.pory"
+# 75 "data/maps/MareS8/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 33 "data/maps/MareS8/scripts.pory"
+# 76 "data/maps/MareS8/scripts.pory"
 	special TransitionMapMusic
-# 34 "data/maps/MareS8/scripts.pory"
+# 77 "data/maps/MareS8/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS8_Script_Transition_IslaHesperia::
-# 38 "data/maps/MareS8/scripts.pory"
+# 81 "data/maps/MareS8/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 39 "data/maps/MareS8/scripts.pory"
+# 82 "data/maps/MareS8/scripts.pory"
 	special TransitionMapMusic
-# 40 "data/maps/MareS8/scripts.pory"
+# 83 "data/maps/MareS8/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS8_Script_Transition_IslaTropica::
-# 44 "data/maps/MareS8/scripts.pory"
+# 87 "data/maps/MareS8/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 45 "data/maps/MareS8/scripts.pory"
+# 88 "data/maps/MareS8/scripts.pory"
 	special TransitionMapMusic
-# 46 "data/maps/MareS8/scripts.pory"
+# 89 "data/maps/MareS8/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS8_Script_ArriveHesperia::
-# 51 "data/maps/MareS8/scripts.pory"
-	fadenewbgm MUS_SOOTOPOLIS
-# 52 "data/maps/MareS8/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 54 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_PRISTIS
-# 55 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_PRISTIS, 22, 19
-# 56 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_PRISTIS, MOVEMENT_TYPE_FACE_UP
-# 57 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_PRISTIS
-# 58 "data/maps/MareS8/scripts.pory"
-	hideobjectat LOCALID_MARES9_PRISTIS, MAP_MARE_S9
-# 61 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_BEROE
-# 62 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_BEROE, 22, 19
-# 63 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_BEROE, MOVEMENT_TYPE_FACE_LEFT
-# 64 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_BEROE
-# 65 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_BEROE, Common_Movement_WalkLeft3
-# 66 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 67 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_BEROE, Common_Movement_WalkDown3
-# 68 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 69 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_BEROE, Common_Movement_FaceUp
-# 70 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 72 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_ROMULUS
-# 73 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_ROMULUS, 22, 19
-# 74 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_ROMULUS, MOVEMENT_TYPE_FACE_LEFT
-# 75 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_ROMULUS
-# 76 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
-# 77 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 78 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_ASCANIUS
-# 79 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_ASCANIUS, 22, 19
-# 80 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_ASCANIUS, MOVEMENT_TYPE_FACE_LEFT
-# 81 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_ASCANIUS
-# 82 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
-# 83 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
-# 84 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 85 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_REMUS
-# 86 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_REMUS, 22, 19
-# 87 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_REMUS, MOVEMENT_TYPE_FACE_LEFT
-# 88 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_REMUS
-# 89 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft2
-# 90 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft2
-# 91 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft2
-# 92 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 93 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown
-# 94 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
 # 95 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft
+	removeobject LOCALID_MARES8_PRISTIS
 # 96 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	setobjectxyperm LOCALID_MARES8_PRISTIS, 22, 19
 # 97 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown
+	setobjectmovementtype LOCALID_MARES8_PRISTIS, MOVEMENT_TYPE_FACE_UP
 # 98 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown
+	addobject LOCALID_MARES8_PRISTIS
 # 99 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft
-# 100 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 101 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown2
+	hideobjectat LOCALID_MARES9_PRISTIS, MAP_MARE_S9
 # 102 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown2
+	removeobject LOCALID_MARES8_BEROE
 # 103 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown2
+	setobjectxyperm LOCALID_MARES8_BEROE, 22, 19
 # 104 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	setobjectmovementtype LOCALID_MARES8_BEROE, MOVEMENT_TYPE_FACE_LEFT
 # 105 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
+	addobject LOCALID_MARES8_BEROE
 # 106 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown
+	applymovement LOCALID_MARES8_BEROE, Common_Movement_WalkLeft3
 # 107 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown
-# 108 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
+# 108 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_BEROE, Common_Movement_WalkDown3
 # 109 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
+	waitmovement 0
 # 110 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
+	applymovement LOCALID_MARES8_BEROE, Common_Movement_FaceUp
 # 111 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown
-# 112 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
 # 113 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
+	removeobject LOCALID_MARES8_ROMULUS
 # 114 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
+	setobjectxyperm LOCALID_MARES8_ROMULUS, 22, 19
 # 115 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft
+	setobjectmovementtype LOCALID_MARES8_ROMULUS, MOVEMENT_TYPE_FACE_LEFT
 # 116 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	addobject LOCALID_MARES8_ROMULUS
 # 117 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
 # 118 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown
-# 119 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown
-# 120 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
+# 119 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_ASCANIUS
+# 120 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_ASCANIUS, 22, 19
 # 121 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_FaceUp
+	setobjectmovementtype LOCALID_MARES8_ASCANIUS, MOVEMENT_TYPE_FACE_LEFT
 # 122 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_FaceUp
+	addobject LOCALID_MARES8_ASCANIUS
 # 123 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_REMUS, Common_Movement_FaceUp
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
 # 124 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
+# 125 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
 # 126 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_FAUSTULUS
+	removeobject LOCALID_MARES8_REMUS
 # 127 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_FAUSTULUS, 22, 19
+	setobjectxyperm LOCALID_MARES8_REMUS, 22, 19
 # 128 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_FAUSTULUS, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype LOCALID_MARES8_REMUS, MOVEMENT_TYPE_FACE_LEFT
 # 129 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_FAUSTULUS
+	addobject LOCALID_MARES8_REMUS
 # 130 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_FAUSTULUS, Common_Movement_WalkLeft4
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft2
 # 131 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft2
 # 132 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_FAUSTULUS, Common_Movement_FaceDown
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft2
 # 133 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
+# 134 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown
 # 135 "data/maps/MareS8/scripts.pory"
-	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_MARE_S9
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
 # 136 "data/maps/MareS8/scripts.pory"
-	showobjectat LOCALID_PLAYER, MAP_MARE_S8
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft
 # 137 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft3
-# 138 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
+# 138 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown
 # 139 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown
 # 140 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft
+# 141 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
 # 142 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_AENEAS
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown2
 # 143 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_AENEAS, 22, 19
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown2
 # 144 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_AENEAS, MOVEMENT_TYPE_FACE_LEFT
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown2
 # 145 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_AENEAS
-# 146 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_AENEAS, Common_Movement_WalkLeft2
-# 147 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
+# 146 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
+# 147 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown
 # 148 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_AENEAS, Common_Movement_FaceDown
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown
 # 149 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
+# 150 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
 # 151 "data/maps/MareS8/scripts.pory"
-	call MareS8_Script_AlertParty
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
+# 152 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown
 # 153 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_PRISTIS, Common_Movement_ExclamationMark
+	waitmovement 0
 # 154 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkLeft
 # 155 "data/maps/MareS8/scripts.pory"
-	playse SE_M_DIVE
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkLeft
 # 156 "data/maps/MareS8/scripts.pory"
-	delay 60
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkLeft
 # 157 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_PRISTIS, Movement_SetInvisible
+	waitmovement 0
 # 158 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_WalkDown
 # 159 "data/maps/MareS8/scripts.pory"
-	playse SE_M_DIVE
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_WalkDown
 # 160 "data/maps/MareS8/scripts.pory"
-	delay 60
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_WalkDown
 # 161 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_PRISTIS
+	waitmovement 0
 # 162 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_PRISTIS, 0, 0
+	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_FaceUp
 # 163 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_PRISTIS, MOVEMENT_TYPE_INVISIBLE
+	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_FaceUp
 # 164 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_PRISTIS
-# 166 "data/maps/MareS8/scripts.pory"
-	load_field_pic FIELD_PIC_BEROE, 190, 98
+	applymovement LOCALID_MARES8_REMUS, Common_Movement_FaceUp
+# 165 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
 # 167 "data/maps/MareS8/scripts.pory"
-	msgbox MareS8_Text_Beroe1
+	removeobject LOCALID_MARES8_FAUSTULUS
 # 168 "data/maps/MareS8/scripts.pory"
-	destroy_field_pic FIELD_PIC_BEROE
+	setobjectxyperm LOCALID_MARES8_FAUSTULUS, 22, 19
+# 169 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_FAUSTULUS, MOVEMENT_TYPE_FACE_LEFT
 # 170 "data/maps/MareS8/scripts.pory"
-	call MareS8_Script_AlertParty
+	addobject LOCALID_MARES8_FAUSTULUS
+# 171 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_FAUSTULUS, Common_Movement_WalkLeft4
 # 172 "data/maps/MareS8/scripts.pory"
-	load_field_pic FIELD_PIC_RUTULIAN, 190, 98
+	waitmovement 0
 # 173 "data/maps/MareS8/scripts.pory"
-	msgbox MareS8_Text_RutulianAmbush1
+	applymovement LOCALID_MARES8_FAUSTULUS, Common_Movement_FaceDown
 # 174 "data/maps/MareS8/scripts.pory"
-	destroy_field_pic FIELD_PIC_RUTULIAN
+	waitmovement 0
 # 176 "data/maps/MareS8/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
+	fadenewbgm MUS_SOOTOPOLIS
 # 177 "data/maps/MareS8/scripts.pory"
-	msgbox MareS8_Text_Aeneas_GetWorse
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 178 "data/maps/MareS8/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
+	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_MARE_S9
+# 179 "data/maps/MareS8/scripts.pory"
+	showobjectat LOCALID_PLAYER, MAP_MARE_S8
 # 180 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft3
 # 181 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_AENEAS, Common_Movement_FaceUp
+	waitmovement 0
 # 182 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+# 183 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
-# 184 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_RUTULIAN1
 # 185 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_RUTULIAN2
+	removeobject LOCALID_MARES8_AENEAS
 # 186 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_RUTULIAN1, 27, 16
+	setobjectxyperm LOCALID_MARES8_AENEAS, 22, 19
 # 187 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_RUTULIAN2, 28, 16
+	setobjectmovementtype LOCALID_MARES8_AENEAS, MOVEMENT_TYPE_FACE_LEFT
 # 188 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_RUTULIAN1, MOVEMENT_TYPE_FACE_LEFT
+	addobject LOCALID_MARES8_AENEAS
 # 189 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_RUTULIAN2, MOVEMENT_TYPE_FACE_LEFT
+	applymovement LOCALID_MARES8_AENEAS, Common_Movement_WalkLeft2
 # 190 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_RUTULIAN1
+	waitmovement 0
 # 191 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_RUTULIAN2
-# 193 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkLeft6
+	applymovement LOCALID_MARES8_AENEAS, Common_Movement_FaceDown
+# 192 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
 # 194 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkLeft6
-# 195 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	call MareS8_Script_AlertParty
 # 196 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkSouthWest
+	applymovement LOCALID_MARES8_PRISTIS, Common_Movement_ExclamationMark
 # 197 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkLeft
-# 198 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
+# 198 "data/maps/MareS8/scripts.pory"
+	playse SE_M_DIVE
 # 199 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkLeft
+	delay 60
 # 200 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkSouthWest
+	applymovement LOCALID_MARES8_PRISTIS, Movement_SetInvisible
 # 201 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
 # 202 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkDown
+	playse SE_M_DIVE
 # 203 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkDown
+	delay 60
 # 204 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	removeobject LOCALID_MARES8_PRISTIS
+# 205 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_PRISTIS, 0, 0
 # 206 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	setobjectmovementtype LOCALID_MARES8_PRISTIS, MOVEMENT_TYPE_INVISIBLE
 # 207 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_AENEAS, Common_Movement_FaceLeft
-# 208 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	addobject LOCALID_MARES8_PRISTIS
 # 209 "data/maps/MareS8/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
+	load_field_pic FIELD_PIC_BEROE, 190, 98
 # 210 "data/maps/MareS8/scripts.pory"
-	msgbox MareS8_Text_AeneasSetup
+	msgbox MareS8_Text_Beroe1
 # 211 "data/maps/MareS8/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
-# 212 "data/maps/MareS8/scripts.pory"
-	call Common_Script_SelectPartyForMultiBattle
+	destroy_field_pic FIELD_PIC_BEROE
 # 213 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 214 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_AENEAS, Common_Movement_FaceUp
+	call MareS8_Script_AlertParty
 # 215 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
-# 217 "data/maps/MareS8/scripts.pory"
 	load_field_pic FIELD_PIC_RUTULIAN, 190, 98
-# 218 "data/maps/MareS8/scripts.pory"
-	msgbox MareS8_Text_RutulianAmbushPre
-# 219 "data/maps/MareS8/scripts.pory"
+# 216 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_RutulianAmbush1
+# 217 "data/maps/MareS8/scripts.pory"
 	destroy_field_pic FIELD_PIC_RUTULIAN
+# 219 "data/maps/MareS8/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 220 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_Aeneas_GetWorse
 # 221 "data/maps/MareS8/scripts.pory"
-	multi_2_vs_2 TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS
+	destroy_field_pic FIELD_PIC_AENEAS
+# 223 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 224 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_AENEAS, Common_Movement_FaceUp
+# 225 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 227 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_RUTULIAN1
+# 228 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_RUTULIAN2
 # 229 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_RUTULIAN1, 27, 16
+# 230 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_RUTULIAN2, 28, 16
+# 231 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_RUTULIAN1, MOVEMENT_TYPE_FACE_LEFT
+# 232 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_RUTULIAN2, MOVEMENT_TYPE_FACE_LEFT
+# 233 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_RUTULIAN1
+# 234 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_RUTULIAN2
+# 236 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkLeft6
+# 237 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkLeft6
+# 238 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 239 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkSouthWest
+# 240 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkLeft
+# 241 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 242 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkLeft
+# 243 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkSouthWest
+# 244 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 245 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceDown
+# 246 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_FaceDown
+# 247 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 249 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 250 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_AENEAS, Common_Movement_FaceLeft
+# 251 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 252 "data/maps/MareS8/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 253 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_AeneasSetup
+# 254 "data/maps/MareS8/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 255 "data/maps/MareS8/scripts.pory"
+	call Common_Script_SelectPartyForMultiBattle
+# 256 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 257 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_AENEAS, Common_Movement_WalkUp
+# 258 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 260 "data/maps/MareS8/scripts.pory"
+	load_field_pic FIELD_PIC_RUTULIAN, 190, 98
+# 261 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_RutulianAmbushPre
+# 262 "data/maps/MareS8/scripts.pory"
+	destroy_field_pic FIELD_PIC_RUTULIAN
+# 264 "data/maps/MareS8/scripts.pory"
+	multi_2_vs_2 TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS
+# 266 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceRight
+# 267 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_FaceLeft
+# 268 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 269 "data/maps/MareS8/scripts.pory"
+	load_field_pic FIELD_PIC_RUTULIAN, 190, 98
+# 270 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_RutulianAmbushPost
+# 271 "data/maps/MareS8/scripts.pory"
+	destroy_field_pic FIELD_PIC_RUTULIAN
+# 273 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkUp
+# 274 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkUp
+# 275 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 276 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkRight
+# 278 "data/maps/MareS8/scripts.pory"
+	waitmovement 0
+# 286 "data/maps/MareS8/scripts.pory"
+	load_field_pic FIELD_PIC_BEROE, 190, 98
+# 287 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_Beroe2
+# 288 "data/maps/MareS8/scripts.pory"
+	destroy_field_pic FIELD_PIC_BEROE
+# 290 "data/maps/MareS8/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 291 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_AeneasHesperia
+# 294 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_AeneasGoToWar
+# 296 "data/maps/MareS8/scripts.pory"
+	setvar VAR_AENEID_STATE, 3
+# 298 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_RUTULIAN1
+# 299 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_RUTULIAN2
+# 300 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_RUTULIAN3
+# 301 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_RUTULIAN4
+# 302 "data/maps/MareS8/scripts.pory"
+	call MareS8_Script_ShowRutulianWar
+# 303 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_RUTULIAN1
+# 304 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_RUTULIAN2
+# 305 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_RUTULIAN3
+# 306 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_RUTULIAN4
+# 308 "data/maps/MareS8/scripts.pory"
+	call MareS8_Script_ShowAeneidDuringWar
+# 310 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
 
 MareS8_Script_AlertParty::
-# 235 "data/maps/MareS8/scripts.pory"
+# 316 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 236 "data/maps/MareS8/scripts.pory"
+# 317 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_AENEAS, Common_Movement_ExclamationMark
-# 237 "data/maps/MareS8/scripts.pory"
+# 318 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_BEROE, Common_Movement_ExclamationMark
-# 238 "data/maps/MareS8/scripts.pory"
+# 319 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_FAUSTULUS, Common_Movement_ExclamationMark
-# 239 "data/maps/MareS8/scripts.pory"
+# 320 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_ExclamationMark
-# 240 "data/maps/MareS8/scripts.pory"
+# 321 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_ExclamationMark
-# 241 "data/maps/MareS8/scripts.pory"
+# 322 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_REMUS, Common_Movement_ExclamationMark
-# 242 "data/maps/MareS8/scripts.pory"
+# 323 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
 	return
 
 
 MareS8_Text_Beroe1::
-# 246 "data/maps/MareS8/scripts.pory"
+# 327 "data/maps/MareS8/scripts.pory"
 	.string "Leave it to Aeneas to find a way to put\n"
 	.string "us in a worse situation. We lost our ship\l"
 	.string "and still have no idea where we are or\l"
@@ -398,29 +552,47 @@ MareS8_Text_Beroe1::
 	.string "could get any worse!$"
 
 MareS8_Text_RutulianAmbush1::
-# 255 "data/maps/MareS8/scripts.pory"
+# 336 "data/maps/MareS8/scripts.pory"
 	.string "Foemen sadeathya!$"
 
 MareS8_Text_Aeneas_GetWorse::
-# 259 "data/maps/MareS8/scripts.pory"
+# 340 "data/maps/MareS8/scripts.pory"
 	.string "On guard! I think it's about to get\n"
 	.string "worse.$"
 
 MareS8_Text_AeneasSetup::
-# 263 "data/maps/MareS8/scripts.pory"
+# 344 "data/maps/MareS8/scripts.pory"
 	.string "We're being attacked by two savages!\n"
 	.string "Let's unite and defeat them as a team.\l"
 	.string "Select three Pokemon you will fight\l"
 	.string "with.$"
 
 MareS8_Text_RutulianAmbushPre::
-# 270 "data/maps/MareS8/scripts.pory"
-	.string "$"
+# 351 "data/maps/MareS8/scripts.pory"
+	.string "Into sea safoe wadrive.$"
 
 MareS8_Text_RutulianAmbushLost1::
-# 274 "data/maps/MareS8/scripts.pory"
-	.string "$"
+# 356 "data/maps/MareS8/scripts.pory"
+	.string "More Rutulians waneed.$"
 
 MareS8_Text_RutulianAmbushLost2::
-# 278 "data/maps/MareS8/scripts.pory"
+# 361 "data/maps/MareS8/scripts.pory"
+	.string "Nasty defeatya!$"
+
+MareS8_Text_RutulianAmbushPost::
+# 366 "data/maps/MareS8/scripts.pory"
+	.string "Hesperia to safoe fall waletna.\p"
+	.string "Ka-Turnus wawarn and wa-army\n"
+	.string "warouseya!$"
+
+MareS8_Text_Beroe2::
+# 370 "data/maps/MareS8/scripts.pory"
+	.string "$"
+
+MareS8_Text_AeneasHesperia::
+# 374 "data/maps/MareS8/scripts.pory"
+	.string "$"
+
+MareS8_Text_AeneasGoToWar::
+# 378 "data/maps/MareS8/scripts.pory"
 	.string "$"

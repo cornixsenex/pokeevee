@@ -12,8 +12,51 @@ mapscripts MareS8_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS8_F)
+		//Handle Aeneid Setup
+		if (var(VAR_AENEID_STATE) < 69 && var(VAR_AENEID_STATE) > 2) { //Obviously update this to the right number
+			call (MareS8_Script_ShowAeneidDuringWar)
+		}
+		if (var(VAR_AENEID_STATE) < 7 && var(VAR_AENEID_STATE) > 2) {
+			call (MareS8_Script_ShowRutulianWar)
+		}
     }
 
+}
+
+script MareS8_Script_ShowRutulianWar {
+	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 30, 11)
+	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_FACE_RIGHT)
+	if (var(VAR_AENEID_STATE) < 6) {
+		setobjectxyperm (LOCALID_MARES8_RUTULIAN4, 30, 11)
+		setobjectmovementtype (LOCALID_MARES8_RUTULIAN4, MOVEMENT_TYPE_FACE_LEFT)
+	}
+	if (var(VAR_AENEID_STATE) < 5) {
+		setobjectxyperm (LOCALID_MARES8_RUTULIAN2, 30, 11)
+		setobjectmovementtype (LOCALID_MARES8_RUTULIAN2, MOVEMENT_TYPE_FACE_UP)
+	}
+	if (var(VAR_AENEID_STATE) < 4) {
+		setobjectxyperm (LOCALID_MARES8_RUTULIAN1, 30, 11)
+		setobjectmovementtype (LOCALID_MARES8_RUTULIAN1, MOVEMENT_TYPE_FACE_LEFT)
+	}
+	return
+}
+
+//Show party on beach
+script MareS8_Script_ShowAeneidDuringWar {
+	setobjectxyperm (LOCALID_MARES8_AENEAS, 20, 19)
+	setobjectxyperm (LOCALID_MARES8_FAUSTULUS, 18, 19)
+	setobjectxyperm (LOCALID_MARES8_BEROE, 19, 22)
+	setobjectxyperm (LOCALID_MARES8_ROMULUS, 15, 24)
+	setobjectxyperm (LOCALID_MARES8_ASCANIUS, 16, 24)
+	setobjectxyperm (LOCALID_MARES8_REMUS, 17, 24)
+	setobjectmovementtype (LOCALID_MARES8_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (LOCALID_MARES8_FAUSTULUS, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectmovementtype (LOCALID_MARES8_BEROE, MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype (LOCALID_MARES8_ROMULUS, MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype (LOCALID_MARES8_ASCANIUS, MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype (LOCALID_MARES8_REMUS, MOVEMENT_TYPE_FACE_UP)
+
+	return
 }
 
 script MareS8_Script_Transition_MareTropicum {
@@ -48,8 +91,6 @@ script MareS8_Script_Transition_IslaTropica {
 
 script MareS8_Script_ArriveHesperia {
         //reset music
-        fadenewbgm (MUS_SOOTOPOLIS)
-        clearflag (FLAG_DONT_TRANSITION_MUSIC)
         //setup the boat
         removeobject (LOCALID_MARES8_PRISTIS)
         setobjectxyperm (LOCALID_MARES8_PRISTIS, 22, 19)
@@ -132,6 +173,8 @@ script MareS8_Script_ArriveHesperia {
         applymovement (LOCALID_MARES8_FAUSTULUS, Common_Movement_FaceDown)
         waitmovement (0)
         //Player
+        fadenewbgm (MUS_SOOTOPOLIS)
+        clearflag (FLAG_DONT_TRANSITION_MUSIC)
         resetobjectsubpriority (OBJ_EVENT_ID_PLAYER, MAP_MARE_S9)
         showobjectat (LOCALID_PLAYER, MAP_MARE_S8)
         applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft3)
@@ -199,9 +242,9 @@ script MareS8_Script_ArriveHesperia {
         applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkLeft)
         applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkSouthWest)
         waitmovement (0)
-        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkDown)
-        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkDown)
-        waitmovement (0)
+		applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceDown)
+		applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_FaceDown)
+		waitmovement (0)
         //Setup Multi Battle
         applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
         applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceLeft)
@@ -210,8 +253,8 @@ script MareS8_Script_ArriveHesperia {
         msgbox (MareS8_Text_AeneasSetup)
         destroy_field_pic (FIELD_PIC_AENEAS)
         call (Common_Script_SelectPartyForMultiBattle)
-        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
-        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceUp)
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_WalkUp)
         waitmovement (0)
         //R:So long as King Turnus lives and Rutulians breath air none shall take our land!
         load_field_pic (FIELD_PIC_RUTULIAN, 190, 98)
@@ -220,11 +263,49 @@ script MareS8_Script_ArriveHesperia {
         //R attacks
         multi_2_vs_2 (TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS)
         //R post - we will drive these invaders from the sea
-        //B: Looks like danger
+		applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceRight)
+		applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_FaceLeft)
+		waitmovement (0)
+        load_field_pic (FIELD_PIC_RUTULIAN, 190, 98)
+        msgbox (MareS8_Text_RutulianAmbushPost)
+        destroy_field_pic (FIELD_PIC_RUTULIAN)
+		//exeunt Rutuli
+        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkUp)
+        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkUp)
+        waitmovement (0)
+        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkRight)
+        //applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkNorthEast)
+        waitmovement (0)
+       // applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkNorthEast)
+       // applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkRight)
+       // waitmovement (0)
+       // applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkRight6)
+       // applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkRight6)
+       // waitmovement (0)
+        //B: Well I can't believe it. It's now much worse - stranded savages... 
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+        msgbox (MareS8_Text_Beroe2)
+        destroy_field_pic (FIELD_PIC_BEROE)
         //A: No you heard him this is Hesperia we've arrived! B watch the boys. Quickly let's defeat the savagges and take what is ours!
-        //Exit right the men
-        //Setup hesperia battle
-        //set vars
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS8_Text_AeneasHesperia)
+		//A et player face again
+		//A: I'll keep watch over the women and children. I'm trusting you to scout ahead and clear the island of the savage menace. Go win glory for yourself and Aeneas' men!
+		msgbox (MareS8_Text_AeneasGoToWar)
+		//set vars
+		setvar (VAR_AENEID_STATE, 3)
+		//setup for Rutulian War section
+		removeobject (LOCALID_MARES8_RUTULIAN1)
+		removeobject (LOCALID_MARES8_RUTULIAN2)
+		removeobject (LOCALID_MARES8_RUTULIAN3)
+		removeobject (LOCALID_MARES8_RUTULIAN4)
+		call (MareS8_Script_ShowRutulianWar)
+		addobject (LOCALID_MARES8_RUTULIAN1)
+		addobject (LOCALID_MARES8_RUTULIAN2)
+		addobject (LOCALID_MARES8_RUTULIAN3)
+		addobject (LOCALID_MARES8_RUTULIAN4)
+		//persist party location
+		call (MareS8_Script_ShowAeneidDuringWar)
         //fin
         releaseall
         end
@@ -266,15 +347,34 @@ text MareS8_Text_AeneasSetup {
             Select three Pokemon you will fight with.")
 }
 
-//
+//Lets drive the enemy into the sea
 text MareS8_Text_RutulianAmbushPre {
-    format("")
+    format("Into sea safoe wadrive.")
 }
 
+//We need more men!
 text MareS8_Text_RutulianAmbushLost1 {
-    format("")
+    format("More Rutulians waneed.")
 }
 
+//Nasty defeat!
 text MareS8_Text_RutulianAmbushLost2 {
-    format("")
+    format("Nasty defeatya!")
+}
+
+//We can't let Hesperia fall to these foes! Let's warn Turnus and rouse the Rutulian Army!
+text MareS8_Text_RutulianAmbushPost {
+    format("Hesperia to safoe fall waletna.\pKa-Turnus wawarn and wa-army warouseya!")
+}
+
+text MareS8_Text_Beroe2 {
+	format("")
+}
+
+text MareS8_Text_AeneasHesperia {
+	format("")
+}
+
+text MareS8_Text_AeneasGoToWar {
+	format("")
 }

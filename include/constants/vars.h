@@ -229,6 +229,11 @@
                                                                 //0: Init, Aeneas et co stranded on Isla Tropica with no hope
                                                                 //1: After you speak with him and go into the city, setup Dido entrance
                                                                 //2: Set after Elissa Battle. Setup Funeral games.
+																//3: Landed on Hesperia. 0 Rutulians defeated
+																//Increases by one after each R on S8 (4-7)
+																//7: S8 cleared - On S4
+																//
+																//69: After war is finished - Hide Aeneid MareS8
 #define VAR_TURRIS_SALTUS_STATE                   		 0x407B //Triggers battles and tracks progress thru Turrus Saltus
                                                                 //Increases by 1 after each battle
                                                                 //0: Door Guard
