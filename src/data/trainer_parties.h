@@ -2766,52 +2766,52 @@ static const struct TrainerMon sParty_Faustulus[] = {
 static const struct TrainerMon sParty_Rutulian[] = {
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 2,
     .species = SPECIES_CARVANHA,
     },
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_STEELIX,
+    .lvl = 2,
+    .species = SPECIES_BULBASAUR,
     },
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 3,
     .species = SPECIES_PUPITAR,
     },
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 3,
     .species = SPECIES_MACHOKE,
     },
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 2,
     .species = SPECIES_BLAZIKEN,
     },
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 3,
     .species = SPECIES_MEDICHAM,
     },
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 3,
     .species = SPECIES_HITMONLEE,
     },
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 2,
     .species = SPECIES_LUCARIO,
     },
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_BRONZONG,
+    .lvl = 2,
+    .species = SPECIES_BEAUTIFLY,
     },
     {
     .iv = 0,
-    .lvl = 32,
+    .lvl = 2,
     .species = SPECIES_SCYTHER,
     }
 };

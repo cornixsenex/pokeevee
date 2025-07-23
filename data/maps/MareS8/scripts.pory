@@ -260,6 +260,7 @@ script MareS8_Script_ArriveHesperia {
         load_field_pic (FIELD_PIC_RUTULIAN, 190, 98)
         msgbox (MareS8_Text_RutulianAmbushPre)
         destroy_field_pic (FIELD_PIC_RUTULIAN)
+		closemessage
         //R attacks
         multi_2_vs_2 (TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS)
         //R post - we will drive these invaders from the sea
@@ -269,19 +270,11 @@ script MareS8_Script_ArriveHesperia {
         load_field_pic (FIELD_PIC_RUTULIAN, 190, 98)
         msgbox (MareS8_Text_RutulianAmbushPost)
         destroy_field_pic (FIELD_PIC_RUTULIAN)
+		closemessage
 		//exeunt Rutuli
-        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkUp)
-        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkUp)
+        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkUp6)
+        applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkUp6)
         waitmovement (0)
-        applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkRight)
-        //applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkNorthEast)
-        waitmovement (0)
-       // applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkNorthEast)
-       // applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkRight)
-       // waitmovement (0)
-       // applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkRight6)
-       // applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkRight6)
-       // waitmovement (0)
         //B: Well I can't believe it. It's now much worse - stranded savages... 
         load_field_pic (FIELD_PIC_BEROE, 190, 98)
         msgbox (MareS8_Text_Beroe2)
@@ -292,6 +285,7 @@ script MareS8_Script_ArriveHesperia {
 		//A et player face again
 		//A: I'll keep watch over the women and children. I'm trusting you to scout ahead and clear the island of the savage menace. Go win glory for yourself and Aeneas' men!
 		msgbox (MareS8_Text_AeneasGoToWar)
+		destroy_field_pic (FIELD_PIC_AENEAS)
 		//set vars
 		setvar (VAR_AENEID_STATE, 3)
 		//setup for Rutulian War section

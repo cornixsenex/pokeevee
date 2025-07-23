@@ -184,8 +184,6 @@ script MareS9_Script_Aeneas {
         //A: Funeral 1
 //        msgbox (MareS9_Text_Aeneas_Funeral1)
           destroy_field_pic (FIELD_PIC_AENEAS)
-		  applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkSouthWest)
-		  waitmovement (0)
 //        //E: Scream 
 //        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
 //        msgbox (MareS9_Text_Elissa_Funeral1)

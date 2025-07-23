@@ -460,91 +460,91 @@ MareS8_Script_ArriveHesperia::
 	msgbox MareS8_Text_RutulianAmbushPre
 # 262 "data/maps/MareS8/scripts.pory"
 	destroy_field_pic FIELD_PIC_RUTULIAN
-# 264 "data/maps/MareS8/scripts.pory"
+# 263 "data/maps/MareS8/scripts.pory"
+	closemessage
+# 265 "data/maps/MareS8/scripts.pory"
 	multi_2_vs_2 TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS
-# 266 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceRight
 # 267 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_FaceLeft
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceRight
 # 268 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_FaceLeft
 # 269 "data/maps/MareS8/scripts.pory"
-	load_field_pic FIELD_PIC_RUTULIAN, 190, 98
+	waitmovement 0
 # 270 "data/maps/MareS8/scripts.pory"
-	msgbox MareS8_Text_RutulianAmbushPost
+	load_field_pic FIELD_PIC_RUTULIAN, 190, 98
 # 271 "data/maps/MareS8/scripts.pory"
+	msgbox MareS8_Text_RutulianAmbushPost
+# 272 "data/maps/MareS8/scripts.pory"
 	destroy_field_pic FIELD_PIC_RUTULIAN
 # 273 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkUp
-# 274 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkUp
+	closemessage
 # 275 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkUp6
 # 276 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_WalkRight
-# 278 "data/maps/MareS8/scripts.pory"
+	applymovement LOCALID_MARES8_RUTULIAN2, Common_Movement_WalkUp6
+# 277 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
-# 286 "data/maps/MareS8/scripts.pory"
+# 279 "data/maps/MareS8/scripts.pory"
 	load_field_pic FIELD_PIC_BEROE, 190, 98
-# 287 "data/maps/MareS8/scripts.pory"
+# 280 "data/maps/MareS8/scripts.pory"
 	msgbox MareS8_Text_Beroe2
-# 288 "data/maps/MareS8/scripts.pory"
+# 281 "data/maps/MareS8/scripts.pory"
 	destroy_field_pic FIELD_PIC_BEROE
-# 290 "data/maps/MareS8/scripts.pory"
+# 283 "data/maps/MareS8/scripts.pory"
 	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 291 "data/maps/MareS8/scripts.pory"
+# 284 "data/maps/MareS8/scripts.pory"
 	msgbox MareS8_Text_AeneasHesperia
-# 294 "data/maps/MareS8/scripts.pory"
+# 287 "data/maps/MareS8/scripts.pory"
 	msgbox MareS8_Text_AeneasGoToWar
-# 296 "data/maps/MareS8/scripts.pory"
+# 289 "data/maps/MareS8/scripts.pory"
 	setvar VAR_AENEID_STATE, 3
-# 298 "data/maps/MareS8/scripts.pory"
+# 291 "data/maps/MareS8/scripts.pory"
 	removeobject LOCALID_MARES8_RUTULIAN1
-# 299 "data/maps/MareS8/scripts.pory"
+# 292 "data/maps/MareS8/scripts.pory"
 	removeobject LOCALID_MARES8_RUTULIAN2
-# 300 "data/maps/MareS8/scripts.pory"
+# 293 "data/maps/MareS8/scripts.pory"
 	removeobject LOCALID_MARES8_RUTULIAN3
-# 301 "data/maps/MareS8/scripts.pory"
+# 294 "data/maps/MareS8/scripts.pory"
 	removeobject LOCALID_MARES8_RUTULIAN4
-# 302 "data/maps/MareS8/scripts.pory"
+# 295 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_ShowRutulianWar
-# 303 "data/maps/MareS8/scripts.pory"
+# 296 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_RUTULIAN1
-# 304 "data/maps/MareS8/scripts.pory"
+# 297 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_RUTULIAN2
-# 305 "data/maps/MareS8/scripts.pory"
+# 298 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_RUTULIAN3
-# 306 "data/maps/MareS8/scripts.pory"
+# 299 "data/maps/MareS8/scripts.pory"
 	addobject LOCALID_MARES8_RUTULIAN4
-# 308 "data/maps/MareS8/scripts.pory"
+# 301 "data/maps/MareS8/scripts.pory"
 	call MareS8_Script_ShowAeneidDuringWar
-# 310 "data/maps/MareS8/scripts.pory"
+# 303 "data/maps/MareS8/scripts.pory"
 	releaseall
 	end
 
 
 MareS8_Script_AlertParty::
-# 316 "data/maps/MareS8/scripts.pory"
+# 309 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 317 "data/maps/MareS8/scripts.pory"
+# 310 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_AENEAS, Common_Movement_ExclamationMark
-# 318 "data/maps/MareS8/scripts.pory"
+# 311 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_BEROE, Common_Movement_ExclamationMark
-# 319 "data/maps/MareS8/scripts.pory"
+# 312 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_FAUSTULUS, Common_Movement_ExclamationMark
-# 320 "data/maps/MareS8/scripts.pory"
+# 313 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_ASCANIUS, Common_Movement_ExclamationMark
-# 321 "data/maps/MareS8/scripts.pory"
+# 314 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_ROMULUS, Common_Movement_ExclamationMark
-# 322 "data/maps/MareS8/scripts.pory"
+# 315 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_REMUS, Common_Movement_ExclamationMark
-# 323 "data/maps/MareS8/scripts.pory"
+# 316 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
 	return
 
 
 MareS8_Text_Beroe1::
-# 327 "data/maps/MareS8/scripts.pory"
+# 320 "data/maps/MareS8/scripts.pory"
 	.string "Leave it to Aeneas to find a way to put\n"
 	.string "us in a worse situation. We lost our ship\l"
 	.string "and still have no idea where we are or\l"
@@ -552,47 +552,47 @@ MareS8_Text_Beroe1::
 	.string "could get any worse!$"
 
 MareS8_Text_RutulianAmbush1::
-# 336 "data/maps/MareS8/scripts.pory"
+# 329 "data/maps/MareS8/scripts.pory"
 	.string "Foemen sadeathya!$"
 
 MareS8_Text_Aeneas_GetWorse::
-# 340 "data/maps/MareS8/scripts.pory"
+# 333 "data/maps/MareS8/scripts.pory"
 	.string "On guard! I think it's about to get\n"
 	.string "worse.$"
 
 MareS8_Text_AeneasSetup::
-# 344 "data/maps/MareS8/scripts.pory"
+# 337 "data/maps/MareS8/scripts.pory"
 	.string "We're being attacked by two savages!\n"
 	.string "Let's unite and defeat them as a team.\l"
 	.string "Select three Pokemon you will fight\l"
 	.string "with.$"
 
 MareS8_Text_RutulianAmbushPre::
-# 351 "data/maps/MareS8/scripts.pory"
+# 344 "data/maps/MareS8/scripts.pory"
 	.string "Into sea safoe wadrive.$"
 
 MareS8_Text_RutulianAmbushLost1::
-# 356 "data/maps/MareS8/scripts.pory"
+# 349 "data/maps/MareS8/scripts.pory"
 	.string "More Rutulians waneed.$"
 
 MareS8_Text_RutulianAmbushLost2::
-# 361 "data/maps/MareS8/scripts.pory"
+# 354 "data/maps/MareS8/scripts.pory"
 	.string "Nasty defeatya!$"
 
 MareS8_Text_RutulianAmbushPost::
-# 366 "data/maps/MareS8/scripts.pory"
+# 359 "data/maps/MareS8/scripts.pory"
 	.string "Hesperia to safoe fall waletna.\p"
 	.string "Ka-Turnus wawarn and wa-army\n"
 	.string "warouseya!$"
 
 MareS8_Text_Beroe2::
-# 370 "data/maps/MareS8/scripts.pory"
+# 363 "data/maps/MareS8/scripts.pory"
 	.string "$"
 
 MareS8_Text_AeneasHesperia::
-# 374 "data/maps/MareS8/scripts.pory"
+# 367 "data/maps/MareS8/scripts.pory"
 	.string "$"
 
 MareS8_Text_AeneasGoToWar::
-# 378 "data/maps/MareS8/scripts.pory"
+# 371 "data/maps/MareS8/scripts.pory"
 	.string "$"
