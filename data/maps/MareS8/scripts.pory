@@ -24,14 +24,14 @@ mapscripts MareS8_MapScripts {
 }
 
 script MareS8_Script_ShowRutulianWar {
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 30, 11)
+	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 45, 4)
 	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_FACE_RIGHT)
 	if (var(VAR_AENEID_STATE) < 6) {
-		setobjectxyperm (LOCALID_MARES8_RUTULIAN4, 30, 11)
+		setobjectxyperm (LOCALID_MARES8_RUTULIAN4, 48, 4)
 		setobjectmovementtype (LOCALID_MARES8_RUTULIAN4, MOVEMENT_TYPE_FACE_LEFT)
 	}
 	if (var(VAR_AENEID_STATE) < 5) {
-		setobjectxyperm (LOCALID_MARES8_RUTULIAN2, 30, 11)
+		setobjectxyperm (LOCALID_MARES8_RUTULIAN2, 35, 8)
 		setobjectmovementtype (LOCALID_MARES8_RUTULIAN2, MOVEMENT_TYPE_FACE_UP)
 	}
 	if (var(VAR_AENEID_STATE) < 4) {
@@ -279,13 +279,23 @@ script MareS8_Script_ArriveHesperia {
         load_field_pic (FIELD_PIC_BEROE, 190, 98)
         msgbox (MareS8_Text_Beroe2)
         destroy_field_pic (FIELD_PIC_BEROE)
+        //Move A et Player down again
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_WalkDown)
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+        waitmovement (0)
         //A: No you heard him this is Hesperia we've arrived! B watch the boys. Quickly let's defeat the savagges and take what is ours!
         load_field_pic (FIELD_PIC_AENEAS, 190, 98)
         msgbox (MareS8_Text_AeneasHesperia)
 		//A et player face again
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceLeft)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+        waitmovement (0)
 		//A: I'll keep watch over the women and children. I'm trusting you to scout ahead and clear the island of the savage menace. Go win glory for yourself and Aeneas' men!
 		msgbox (MareS8_Text_AeneasGoToWar)
 		destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
+        applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceDown)
+        waitmovement (0)
 		//set vars
 		setvar (VAR_AENEID_STATE, 3)
 		//setup for Rutulian War section
@@ -304,6 +314,55 @@ script MareS8_Script_ArriveHesperia {
         releaseall
         end
 
+}
+
+script MareS8_Script_Remus {
+    faceplayer
+    msgbox (MareS8_Text_RemusDuringWar)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS8_Script_Beroe {
+    faceplayer
+    msgbox (MareS8_Text_BeroeDuringWar)
+    closemessage
+    applymovement (LOCALID_MARES8_BEROE, Common_Movement_FaceUp)
+    waitmovement (0)
+    end
+}
+
+script MareS8_Script_Aeneas {
+    faceplayer
+    msgbox (MareS8_Text_AeneasDuringWar)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS8_Script_Faustulus {
+    faceplayer
+    msgbox (MareS8_Text_FaustulusDuringWar)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS8_Script_Ascanius {
+    faceplayer
+    msgbox (MareS8_Text_AscaniusDuringWar)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
+}
+
+script MareS8_Script_Romulus {
+    faceplayer
+    msgbox (MareS8_Text_RomulusDuringWar)
+    closemessage
+    call (Common_Script_Unfaceplayer)
+    end
 }
 
 script MareS8_Script_AlertParty {
@@ -361,14 +420,56 @@ text MareS8_Text_RutulianAmbushPost {
     format("Hesperia to safoe fall waletna.\pKa-Turnus wawarn and wa-army warouseya!")
 }
 
+
 text MareS8_Text_Beroe2 {
-	format("")
+	format("Well, Aeneas, you're right. It's now much worse.
+            We're lost without a ship and stranded on
+            some hostile island.")
 }
 
 text MareS8_Text_AeneasHesperia {
-	format("")
+	format("Didn't you hear?
+            That savage said this is Hesperia!
+            At long last we have arrived in that land
+            where I'm destined to found a great city!
+            Rejoice, for our long voyage has at last
+            reached it's destination! All that remains
+            for us to do is clear this island of
+            it's heathen natives and then start building.")
 }
 
 text MareS8_Text_AeneasGoToWar {
-	format("")
+	format("I will wait here, and guard the party from
+            any ambush those primitives might launch.
+            You go ahead, make war on the natives,
+            bring down their chief, expel the savages,
+            and make the island safe for construction.
+            Go forth! Win glory for Aeneas' men!")
+}
+
+text MareS8_Text_AscaniusDuringWar {
+    format("While I'm nervous of a savage ambush
+            I'm quite relieved my boys finally calmed down.")
+}
+
+text MareS8_Text_AeneasDuringWar {
+    format("What are you waiting for? Go win glory!")
+}
+
+//I'm not scared. I know master will win. He always wins.
+text MareS8_Text_FaustulusDuringWar {
+    format("Mascarena! Kawin maknow. Alwaysya kawin.")
+}
+
+text MareS8_Text_RomulusDuringWar {
+    format("I think we would be safer if we built
+            a mighty wall to keep out the natives.")
+}
+
+text MareS8_Text_RemusDuringWar {
+    format("If I were older, I'd be fighting too!")
+}
+
+text MareS8_Text_BeroeDuringWar {
+    format("I hope the natives don't attack again.")
 }

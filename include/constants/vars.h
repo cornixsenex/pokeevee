@@ -217,7 +217,7 @@
 																//0: BEGIN
 																//1: END
 #define VAR_AGAMEMNON_STATE                              0x4076 // - Tracks Orestreia and updates maps associated
-#define VAR_AENEAS_STATE                                 0x4077 // - Tracks Aeneid and updates maps associated
+#define VAR_UNUSED_4077                                  0x4077 // - UNUSED
 #define VAR_SURFSCHOOL_STATE                             0x4079 // - Tracks progress in surf school and triggers battles, misty scene
                                                                 //0: Begin
                                                                 //1: After 1st instructor
@@ -246,8 +246,9 @@
 
 
 
-
+//HEY WE HAVE UNUSED UP ABOVE - USE THOSE :)
 #define VAR_ROUTE129_STATE                   		     0x407C // Unused Var
+//DID YOU READ ABOVE? USE THE UNUSED FIRST PLS
 #define VAR_ROUTE130_STATE                   		     0x407D // Unused Var
 #define VAR_ROUTE131_STATE                   		     0x407E // Unused Var
 #define VAR_ROUTE132_STATE                   		     0x407F // Unused Var

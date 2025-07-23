@@ -88,7 +88,7 @@ script Tucson_Script_ShowNestorHousePreWedding {
 		setobjectmovementtype (OBJ_EVENT_HECTOR, MOVEMENT_TYPE_FACE_DOWN)
 	}
 
-	//Aeneis
+	//Aeneas
 	
 	//Agamemnon
 
@@ -285,7 +285,7 @@ script Tucson_Script_Paris {
 			//Check if Hector is here:
 			if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
 				//check if Aeneas not here
-				if (var(VAR_AENEAS_STATE) < 1) {
+				if (var(VAR_AENEID_STATE) < 69) { //Needs Updating
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
 					msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 					closemessage
@@ -298,7 +298,7 @@ script Tucson_Script_Paris {
 			} else {
 				msgbox (Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT)
 				//Check if Aeneis not here
-				if (var(VAR_AENEAS_STATE) < 1) {
+				if (var(VAR_AENEID_STATE) < 1) {
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
 				}
 				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)

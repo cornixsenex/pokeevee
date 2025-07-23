@@ -375,7 +375,7 @@ Tucson_Script_Paris_3:
 # 299 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT
 # 301 "data/maps/Tucson/scripts.pory"
-	compare VAR_AENEAS_STATE, 1
+	compare VAR_AENEID_STATE, 1
 	goto_if_lt Tucson_Script_Paris_18
 Tucson_Script_Paris_17:
 # 304 "data/maps/Tucson/scripts.pory"
@@ -414,7 +414,7 @@ Tucson_Script_Paris_8:
 
 Tucson_Script_Paris_11:
 # 288 "data/maps/Tucson/scripts.pory"
-	compare VAR_AENEAS_STATE, 1
+	compare VAR_AENEID_STATE, 69
 	goto_if_lt Tucson_Script_Paris_14
 # 294 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris2, MSGBOX_DEFAULT
