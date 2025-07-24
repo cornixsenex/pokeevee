@@ -710,7 +710,7 @@ script MareS8_Script_ShowRutuliBlock {
 }
 
 script MareS8_Script_RutuliBlock {
-	msgbox (MareS8_Script_RutuliBlock)
+	msgbox (MareS8_Text_RutuliBlock)
 	closemessage
 }
 
@@ -847,6 +847,12 @@ script MareS8_Script_Trigger_Rutulian3A {
 	//do battle
 	call (Hesperia_Script_RutulianBattle)	
 	//do exit
+	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp5)
+	waitmovement (0)
 	removeobject (LOCALID_MARES8_RUTULIAN3)
 	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
 	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
@@ -873,6 +879,8 @@ script MareS8_Script_Trigger_Rutulian3B {
 	//do battle
 	call (Hesperia_Script_RutulianBattle)	
 	//do exit
+	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp6)
+	waitmovement (0)
 	removeobject (LOCALID_MARES8_RUTULIAN3)
 	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
 	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
@@ -899,6 +907,8 @@ script MareS8_Script_Trigger_Rutulian3C {
 	//do battle
 	call (Hesperia_Script_RutulianBattle)	
 	//do exit
+	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp6)
+	waitmovement (0)
 	removeobject (LOCALID_MARES8_RUTULIAN3)
 	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
 	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
@@ -1079,24 +1089,29 @@ text Hesperia_Text_RutulianPost5 {
 	format("Overna! Wa-Rutuli yield waknowna.")
 }
 
+//Your invasion of our island stops here
 text MareS8_Text_RutuliDoublePre1 {
-	format("")
+	format("Ta-attack waisland stopya.")
 }
 
+//How can you expect to defeat two of us at once?
 text MareS8_Text_RutuliDoublePre2 {
-	format("")
+	format("Watwo Rutuli tadefeatna.")
 }
 
 text MareS8_Text_RutuliDoubleLost1 {
-	format("")
+	format("Wafall backya!")
 }
 
 text MareS8_Text_RutuliDoubleLost2 {
-	format("")
+	format("Wabeat!")
 }
 
 text MareS8_Text_RutuliDoublePost {
-	format("")
+	format("Waneed more Rutuli here fastya!")
 }
 
+text MareS8_Text_RutuliBlock {
+	format("Isla holy Hesperia beya.\p Taoutsider welcomena. Tago!")
+}
 
