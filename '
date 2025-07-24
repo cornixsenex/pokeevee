@@ -13,7 +13,7 @@ mapscripts MareS8_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS8_F)
 		//Show Rutulian Block if Pristis still on Tropica
-		if (var(VAR_AENEID_STATE) < 3) {
+			if (var(VAR_AENEID_STATE) < 3 && (!flag(FLAG_DONT_TRANSITION_MUSIC)) ) {
 			call (MareS8_Script_ShowRutuliBlock)
 		}
 		//Handle Aeneid Setup
@@ -406,6 +406,9 @@ script MareS8_Script_Trigger_Rutulian1A {
 	waitmovement (0)
 	//remove Rutulian
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian1B {
@@ -432,6 +435,9 @@ script MareS8_Script_Trigger_Rutulian1B {
 	waitmovement (0)
 	//remove Rutulian
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian1C {
@@ -456,6 +462,9 @@ script MareS8_Script_Trigger_Rutulian1C {
 	waitmovement (0)
 	//remove Rutulian
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian2A {
@@ -482,6 +491,9 @@ script MareS8_Script_Trigger_Rutulian2A {
 	waitmovement (0)
 	//remove Rutulian et inc var
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian2B {
@@ -508,6 +520,9 @@ script MareS8_Script_Trigger_Rutulian2B {
 	waitmovement (0)
 	//remove Rutulian et inc var
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian2C {
@@ -534,6 +549,9 @@ script MareS8_Script_Trigger_Rutulian2C {
 	waitmovement (0)
 	//remove Rutulian et inc var
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian2D {
@@ -558,6 +576,9 @@ script MareS8_Script_Trigger_Rutulian2D {
 	waitmovement (0)
 	//remove Rutulian et inc var
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian2E {
@@ -580,6 +601,9 @@ script MareS8_Script_Trigger_Rutulian2E {
 	waitmovement (0)
 	//remove Rutulian et inc var
 	call (MareS8_Script_RemoveRutulian)
+	//fin
+	releaseall
+	end
 }
 	
 script Hesperia_Script_RutulianBattle {
@@ -696,216 +720,12 @@ script MareS8_Script_RemoveRutulian {
 	}
 	//incvar
 	addvar (VAR_AENEID_STATE, 1)
-	//fin
-	releaseall
-	end
-}
-
-script MareS8_Script_ShowRutuliBlock {
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN1, 29, 9)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN2, 30, 9)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN1, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN2, MOVEMENT_TYPE_FACE_DOWN)
+	//return to fin
 	return
 }
 
-script MareS8_Script_RutuliBlock {
-	msgbox (MareS8_Script_RutuliBlock)
-	closemessage
-}
-
-//potential double battle R on the right.
-script MareS8_Script_Rutulian4 {
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_FaceDown)
-	waitmovement (0)
-	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	call (Hesperia_Script_RutulianBattle)
-	//Exit
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_WalkUp4)
-	waitmovement (0)
-	//Remove
-	call (MareS8_Script_RemoveRutulian)
-}
-
-script MareS8_Script_Trigger_Rutuli34A {
-	//setup
-	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	//music
-	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
-	//alert rutuli
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_ExclamationMark)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	delay (30)
-	//face player to approaching R
-	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_WalkLeft)
-	waitmovement (0)
-	//RD Pre1
-	msgbox (MareS8_Text_RutuliDoublePre1)
-	//face player to L
-	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement (0)
-	//RD Pre2
-	msgbox (MareS8_Text_RutuliDoublePre2)
-	closemessage
-	//do double battle - RL1, RL2
-	trainerbattle_two_trainers (TRAINER_RUTULIAN, MareS8_Text_RutuliDoubleLost1, TRAINER_RUTULIAN, MareS8_Text_RutuliDoubleLost2)
-	//Rd post
-	msgbox (MareS8_Text_RutuliDoublePost)
-	closemessage
-	//exeunt rutuli
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_WalkUp)
-	waitmovement (0)
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkRight)
-	waitmovement (0)
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp5)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_WalkUp5)
-	waitmovement (0)
-	//remove them both
-	removeobject (LOCALID_MARES8_RUTULIAN3)
-	removeobject (LOCALID_MARES8_RUTULIAN4)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN4, 0, 0)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_MARES8_RUTULIAN3)
-	addobject (LOCALID_MARES8_RUTULIAN4)
-	//set var to 7
-	setvar (VAR_AENEID_STATE, 7)
-	//fin
-}
-
-script MareS8_Script_Trigger_Rutuli34B {
-	//setup
-	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	//music
-	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
-	//alert rutuli
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_ExclamationMark)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	delay (30)
-	//face player to approaching R
-	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkRight)
-	waitmovement (0)
-	//RD Pre1
-	msgbox (MareS8_Text_RutuliDoublePre1)
-	//face player to L
-	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
-	waitmovement (0)
-	//RD Pre2
-	msgbox (MareS8_Text_RutuliDoublePre2)
-	closemessage
-	//do double battle - RL1, RL2
-	trainerbattle_two_trainers (TRAINER_RUTULIAN, MareS8_Text_RutuliDoubleLost1, TRAINER_RUTULIAN, MareS8_Text_RutuliDoubleLost2)
-	//Rd post
-	msgbox (MareS8_Text_RutuliDoublePost)
-	closemessage
-	//exeunt rutuli
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_WalkUp)
-	waitmovement (0)
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkRight)
-	waitmovement (0)
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkUp5)
-	applymovement (LOCALID_MARES8_RUTULIAN4, Common_Movement_WalkUp5)
-	waitmovement (0)
-	//remove them both
-	removeobject (LOCALID_MARES8_RUTULIAN3)
-	removeobject (LOCALID_MARES8_RUTULIAN4)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN4, 0, 0)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_MARES8_RUTULIAN3)
-	addobject (LOCALID_MARES8_RUTULIAN4)
-	//set var to 7
-	setvar (VAR_AENEID_STATE, 7)
-	//fin
-}
-
-script MareS8_Script_Trigger_Rutulian3A {
-	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	//Music
-	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
-	//Alert Rutulian 
-    applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_ExclamationMark)
-    waitmovement (0)
-	//Turn et face player
-	delay (30)
-	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement (0)
-	//if needed move Rutulian into position
-	//do battle
-	call (Hesperia_Script_RutulianBattle)	
-	//do exit
-	removeobject (LOCALID_MARES8_RUTULIAN3)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_MARES8_RUTULIAN3)
-	//remove Rutulian et inc var
-	call (MareS8_Script_RemoveRutulian)
-}
-
-script MareS8_Script_Trigger_Rutulian3B {
-	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	//Music
-	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
-	//Alert Rutulian 
-    applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_ExclamationMark)
-    waitmovement (0)
-	//Turn et face player
-	delay (30)
-	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement (0)
-	//if needed move Rutulian into position
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkRight)
-	waitmovement (0)
-	//do battle
-	call (Hesperia_Script_RutulianBattle)	
-	//do exit
-	removeobject (LOCALID_MARES8_RUTULIAN3)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_MARES8_RUTULIAN3)
-	//remove Rutulian et inc var
-	call (MareS8_Script_RemoveRutulian)
-}
-
-script MareS8_Script_Trigger_Rutulian3C {
-	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
-	//Music
-	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
-	//Alert Rutulian 
-    applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_ExclamationMark)
-    waitmovement (0)
-	//Turn et face player
-	delay (30)
-	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
-	waitmovement (0)
-	//if needed move Rutulian into position
-	applymovement (LOCALID_MARES8_RUTULIAN3, Common_Movement_WalkRight2)
-	waitmovement (0)
-	//do battle
-	call (Hesperia_Script_RutulianBattle)	
-	//do exit
-	removeobject (LOCALID_MARES8_RUTULIAN3)
-	setobjectxyperm (LOCALID_MARES8_RUTULIAN3, 0, 0)
-	setobjectmovementtype (LOCALID_MARES8_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_MARES8_RUTULIAN3)
-	//remove Rutulian et inc var
-	call (MareS8_Script_RemoveRutulian)
-}
+script MareS8_Script_ShowRutuliBlock {
+	setobjectxyperm (LOCALID_MARES8_RUTULIAN1, 
 
 text MareS8_Text_Beroe1 {
     format("Leave it to Aeneas to find a way
@@ -1077,26 +897,6 @@ text Hesperia_Text_RutulianPost4 {
 //This isn't over. We Rutulians don't know the word surrender
 text Hesperia_Text_RutulianPost5 {
 	format("Overna! Wa-Rutuli yield waknowna.")
-}
-
-text MareS8_Text_RutuliDoublePre1 {
-	format("")
-}
-
-text MareS8_Text_RutuliDoublePre2 {
-	format("")
-}
-
-text MareS8_Text_RutuliDoubleLost1 {
-	format("")
-}
-
-text MareS8_Text_RutuliDoubleLost2 {
-	format("")
-}
-
-text MareS8_Text_RutuliDoublePost {
-	format("")
 }
 
 
