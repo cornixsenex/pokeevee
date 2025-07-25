@@ -1,8 +1,9 @@
 
-//TEMP_VARS A-F control the 1-6 Rutuli Triggers
+//TEMP_VARS A-E control the 1-6 Rutuli Triggers
 //	>Setup on transition via check the 6 S4Rutuli Flags
 //	>1 is trigger battle (IE Rutuli is still on map, flag NOT set)
 //	>0 is don't trigger battle (IE flag has been set, Specific Rutulian has been defeated)
+//TEMP_VAR_E is shared by 5 et 6
 
 
 //DYNAMIC MAP TEMP_VAR_5
@@ -77,28 +78,32 @@ script MareS4_Script_Transition_ScyllaCharybdis {
 script MareS4_Script_SetupRutuli {
 	//7 et 8
 	if (var(VAR_AENEID_STATE) < 8) {
-		setobjectxyperm (LOCALID_MARES4_RUTULIAN7, 67, 60)
-		setobjectxyperm (LOCALID_MARES4_RUTULIAN8, 69, 60)
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN7, 67, 59)
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN8, 69, 59)
 		setobjectmovementtype (LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_FACE_DOWN)
 		setobjectmovementtype (LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_FACE_DOWN)
 	}
 	//1
 	if (!flag(FLAG_MARES4_RUTULIAN1)) {
+		setvar (VAR_TEMP_A, 1)
 		setobjectxyperm (LOCALID_MARES4_RUTULIAN1, 47, 75)
 		setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_FACE_RIGHT)
 	}
 	//2
 	if (!flag(FLAG_MARES4_RUTULIAN2)) {
+		setvar (VAR_TEMP_B, 1)
 		setobjectxyperm (LOCALID_MARES4_RUTULIAN2, 55, 76)
 		setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_FACE_DOWN)
 	}
 	//3
 	if (!flag(FLAG_MARES4_RUTULIAN3)) {
-		setobjectxyperm (LOCALID_MARES4_RUTULIAN3, 54, 70)
-		setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_FACE_LEFT)
+		setvar (VAR_TEMP_C, 1)
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN3, 52, 71)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_FACE_UP)
 	}
 	//4
 	if (!flag(FLAG_MARES4_RUTULIAN4)) {
+		setvar (VAR_TEMP_D, 1)
 		setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 67, 73)
 		setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_FACE_LEFT)
 	}
@@ -112,5 +117,542 @@ script MareS4_Script_SetupRutuli {
 		setobjectxyperm (LOCALID_MARES4_RUTULIAN6, 70, 64)
 		setobjectmovementtype (LOCALID_MARES4_RUTULIAN6, MOVEMENT_TYPE_FACE_LEFT)
 	}
+	if (!flag(FLAG_MARES4_RUTULIAN5) && !flag(FLAG_MARES4_RUTULIAN6)) {
+		setvar (VAR_TEMP_E, 3)
+	}
+	if (!flag(FLAG_MARES4_RUTULIAN5) && flag(FLAG_MARES4_RUTULIAN6)) {
+		setvar (VAR_TEMP_E, 1)
+	}
+	if (flag(FLAG_MARES4_RUTULIAN5) && !flag(FLAG_MARES4_RUTULIAN6)) {
+		setvar (VAR_TEMP_E, 2)
+	}
 	return
+}
+
+script MareS4_Script_Rutulian1 {
+	//Face Rutulian
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_FaceDown)
+	waitmovement (0)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Battle - Pre et Post included
+	call (Hesperia_Script_RutulianBattle)
+	//Exit
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight3)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp5)
+	waitmovement (0)
+	//remove rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN1)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN1, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN1)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN1)
+	//fin
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian1A {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight3)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp7)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN1)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN1, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN1)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN1)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian1B {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp5)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN1)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN1, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN1)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN1)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian1C {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight2)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp5)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN1)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN1, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN1)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN1)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Rutulian2 {
+	//Face Rutulian
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_FaceRight)
+	waitmovement (0)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Battle - Pre et Post included
+	call (Hesperia_Script_RutulianBattle)
+	//Exit
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkLeft5)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkUp7)
+	waitmovement (0)
+	//remove rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN2)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN2, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN2)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN2)
+	//fin
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian2A {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight3)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight5)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN2)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN2, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN2)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN2)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian2B {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkDown)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight6)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN2)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN2, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN2)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN2)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Rutulian3 {
+	//Face Rutulian
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Battle - Pre et Post included
+	call (Hesperia_Script_RutulianBattle)
+	//Exit
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp6)
+	waitmovement (0)
+	//remove rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN3)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN3, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN3)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN3)
+	//fin
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian3A {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp7)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN3)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN3, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN3)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN3)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian3B {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp5)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN3)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN3, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN3)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN3)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Rutulian4 {
+	//Face Rutulian
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_FaceUp)
+	waitmovement (0)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Battle - Pre et Post included
+	call (Hesperia_Script_RutulianBattle)
+	//Exit
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft5)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp7)
+	waitmovement (0)
+	//remove rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN4)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN4)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN4)
+	//fin
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian4A {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft4)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp3)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp3)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN4)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN4)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN4)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian4B {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft3)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp4)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN4)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN4)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN4)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian4C {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft2)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp4)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN4)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN4)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN4)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian4D {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft)
+	waitmovement (0)
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp4)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp2)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN4)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN4)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN4)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Rutulian4E {
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert Rutulian 
+    applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	//Turn et face player
+	delay (30)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//if needed move Rutulian into position
+	//do battle
+	call (Hesperia_Script_RutulianBattle)	
+	//do exit
+	applymovement (LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp6)
+	waitmovement (0)
+	//remove Rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN4)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN4)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN4)
+	//fin
+	releaseall
+	end
 }

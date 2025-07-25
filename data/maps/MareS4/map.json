@@ -96,7 +96,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Rutulian1",
       "flag": "0"
     },
     {
@@ -110,7 +110,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Rutulian2",
       "flag": "0"
     },
     {
@@ -138,7 +138,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Rutulian4",
       "flag": "0"
     },
     {
@@ -152,7 +152,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Rutulian5",
       "flag": "0"
     },
     {
@@ -166,7 +166,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Rutulian6",
       "flag": "0"
     },
     {
@@ -180,7 +180,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Rutulian7",
       "flag": "0"
     },
     {
@@ -194,7 +194,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Rutulian8",
       "flag": "0"
     }
   ],
@@ -397,6 +397,393 @@
       "var": "VAR_TEMP_5",
       "var_value": "4",
       "script": "MareS4_Script_Transition_ScyllaCharybdis"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 75,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian1A"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 75,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian1B"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 75,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian1C"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 77,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian2A"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 78,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian2B"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 69,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian3A"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 70,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian3B"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian4A"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian4B"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian4B"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian4C"
+    },
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian4D"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 73,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian4E"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleA"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleB"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleC"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleD"
+    },
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleE"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleF"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleG"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleH"
+    },
+    {
+      "type": "trigger",
+      "x": 69,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "MareS4_Script_Trigger_RutuliDoubleI"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5A"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5B"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5C"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5D"
+    },
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5E"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5F"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5G"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5H"
+    },
+    {
+      "type": "trigger",
+      "x": 69,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5I"
+    },
+    {
+      "type": "trigger",
+      "x": 70,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS4_Script_Trigger_Rutulian5J"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6A"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6B"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6C"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6D"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6E"
+    },
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6F"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6G"
+    },
+    {
+      "type": "trigger",
+      "x": 67,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6H"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6I"
+    },
+    {
+      "type": "trigger",
+      "x": 69,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "MareS4_Script_Trigger_Rutulian6J"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_AENEID_STATE",
+      "var_value": "0",
+      "script": "NULL"
     }
   ],
   "bg_events": []
