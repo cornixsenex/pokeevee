@@ -230,21 +230,22 @@ SecretBase_EventScript_CancelOnEntrance::
 	releaseall
 	end
 
+	//Free Decoration Flags - 250724 CS
 SecretBase_EventScript_SetDecorationFlags::
-	setflag FLAG_DECORATION_1
-	setflag FLAG_DECORATION_2
-	setflag FLAG_DECORATION_3
-	setflag FLAG_DECORATION_4
-	setflag FLAG_DECORATION_5
-	setflag FLAG_DECORATION_6
-	setflag FLAG_DECORATION_7
-	setflag FLAG_DECORATION_8
-	setflag FLAG_DECORATION_9
-	setflag FLAG_DECORATION_10
-	setflag FLAG_DECORATION_11
-	setflag FLAG_DECORATION_12
-	setflag FLAG_DECORATION_13
-	setflag FLAG_DECORATION_14
+	//setflag FLAG_DECORATION_1
+	//setflag FLAG_DECORATION_2
+	//setflag FLAG_DECORATION_3
+	//setflag FLAG_DECORATION_4
+	//setflag FLAG_DECORATION_5
+	//setflag FLAG_DECORATION_6
+	//setflag FLAG_DECORATION_7
+	//setflag FLAG_DECORATION_8
+	//setflag FLAG_DECORATION_9
+	//setflag FLAG_DECORATION_10
+	//setflag FLAG_DECORATION_11
+	//setflag FLAG_DECORATION_12
+	//setflag FLAG_DECORATION_13
+	//setflag FLAG_DECORATION_14
 	return
 
 SecretBase_EventScript_InitDecorations::

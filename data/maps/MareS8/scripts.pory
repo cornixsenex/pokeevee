@@ -17,7 +17,7 @@ mapscripts MareS8_MapScripts {
 			call (MareS8_Script_ShowRutuliBlock)
 		}
 		//Handle Aeneid Setup
-		if (var(VAR_AENEID_STATE) < 69 && var(VAR_AENEID_STATE) > 2) { //Obviously update this to the right number
+		if (var(VAR_AENEID_STATE) < 9 && var(VAR_AENEID_STATE) > 2) { //Obviously update this to the right number
 			call (MareS8_Script_ShowAeneidDuringWar)
 		}
 		if (var(VAR_AENEID_STATE) < 7 && var(VAR_AENEID_STATE) > 2) {

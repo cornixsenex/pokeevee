@@ -199,14 +199,14 @@
 #define FLAG_MANUAL_WEATHER                  0xAB //Set to prevent Update Weather - REMEMBER TO UNSET - handle Fly and etc
 #define FLAG_MARES9_AENEAS_INTROD            0xAC //Set after initial Aeneas intro
 #define FLAG_TURRISSALTUS_HIDETYRIANS        0xAD //Set after final tyrian doorguards - hides all tyrians in turris
+#define FLAG_MARES4_RUTULIAN1                0xAE
+#define FLAG_MARES4_RUTULIAN2                0xAF
+#define FLAG_MARES4_RUTULIAN3                0xB0
+#define FLAG_MARES4_RUTULIAN4                0xB1
+#define FLAG_MARES4_RUTULIAN5                0xB2
+#define FLAG_MARES4_RUTULIAN6                0xB3
 // BREAK //
 
-#define FLAG_DECORATION_1                    0xAE
-#define FLAG_DECORATION_2                    0xAF
-#define FLAG_DECORATION_3                    0xB0
-#define FLAG_DECORATION_4                    0xB1
-#define FLAG_DECORATION_5                    0xB2
-#define FLAG_DECORATION_6                    0xB3
 #define FLAG_DECORATION_7                    0xB4
 #define FLAG_DECORATION_8                    0xB5
 #define FLAG_DECORATION_9                    0xB6

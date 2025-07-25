@@ -519,20 +519,20 @@ bool8 CurMapIsSecretBase(void)
 void InitSecretBaseAppearance(bool8 hidePC)
 {
     u16 secretBaseIdx;
-    s16 x, y = 0;
-    u8 *decorations;
-    u8 *decorPos;
+    s16 x= 0, y = 0;
+   // u8 *decorations;
+   // u8 *decorPos;
 
     if (CurMapIsSecretBase())
     {
         secretBaseIdx = VarGet(VAR_CURRENT_SECRET_BASE);
-        decorations = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorations;
-        decorPos = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorationPositions;
-        for (x = 0; x < DECOR_MAX_SECRET_BASE; x++)
-        {
-            if (decorations[x] > 0 && decorations[x] <= NUM_DECORATIONS && gDecorations[decorations[x]].permission != DECORPERM_SPRITE)
-                ShowDecorationOnMap((decorPos[x] >> 4) + MAP_OFFSET, (decorPos[x] & 0xF) + MAP_OFFSET, decorations[x]);
-        }
+   //     decorations = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorations;
+   //     decorPos = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorationPositions;
+//        for (x = 0; x < DECOR_MAX_SECRET_BASE; x++)
+//        {
+////            if (decorations[x] > 0 && decorations[x] <= NUM_DECORATIONS && gDecorations[decorations[x]].permission != DECORPERM_SPRITE)
+////                ShowDecorationOnMap((decorPos[x] >> 4) + MAP_OFFSET, (decorPos[x] & 0xF) + MAP_OFFSET, decorations[x]);
+//        }
 
         if (secretBaseIdx != 0)
         {
@@ -586,7 +586,7 @@ void InitSecretBaseDecorationSprites(void)
         {
             for (objectEventId = 0; objectEventId < gMapHeader.events->objectEventCount; objectEventId++)
             {
-                if (gMapHeader.events->objectEvents[objectEventId].flagId == FLAG_DECORATION_1 + gSpecialVar_0x8004)
+            //    if (gMapHeader.events->objectEvents[objectEventId].flagId == FLAG_DECORATION_1 + gSpecialVar_0x8004)
                     break;
             }
 
@@ -602,7 +602,7 @@ void InitSecretBaseDecorationSprites(void)
                 gSpecialVar_Result = VAR_OBJ_GFX_ID_0 + (gMapHeader.events->objectEvents[objectEventId].graphicsId - OBJ_EVENT_GFX_VAR_0);
                 VarSet(gSpecialVar_Result, gDecorations[decorations[i]].tiles[0]);
                 gSpecialVar_Result = gMapHeader.events->objectEvents[objectEventId].localId;
-                FlagClear(FLAG_DECORATION_1 + gSpecialVar_0x8004);
+//                FlagClear(FLAG_DECORATION_1 + gSpecialVar_0x8004);
                 TrySpawnObjectEvent(gSpecialVar_Result, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
                 TryMoveObjectEventToMapCoords(gSpecialVar_Result, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, gSpecialVar_0x8006, gSpecialVar_0x8007);
                 TryOverrideObjectEventTemplateCoords(gSpecialVar_Result, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
@@ -634,21 +634,22 @@ void InitSecretBaseDecorationSprites(void)
 
 void HideSecretBaseDecorationSprites(void)
 {
-    u8 objectEventId;
-    u16 flag;
+	DebugPrintf("CORNIX REMOVED THIS FUNCTION"); //Free Decoration Flags 250724
+   // u8 objectEventId;
+    //u16 flag;
 
-    for (objectEventId = 0; objectEventId < gMapHeader.events->objectEventCount; objectEventId++)
-    {
-        flag = gMapHeader.events->objectEvents[objectEventId].flagId;
-        if (flag >= FLAG_DECORATION_1 && flag <= FLAG_DECORATION_14)
-        {
-            RemoveObjectEventByLocalIdAndMap(
-                gMapHeader.events->objectEvents[objectEventId].localId,
-                gSaveBlock1Ptr->location.mapNum,
-                gSaveBlock1Ptr->location.mapGroup);
-            FlagSet(flag);
-        }
-    }
+   // for (objectEventId = 0; objectEventId < gMapHeader.events->objectEventCount; objectEventId++)
+   // {
+   //     //flag = gMapHeader.events->objectEvents[objectEventId].flagId;
+// //       if (flag >= FLAG_DECORATION_1 && flag <= FLAG_DECORATION_14)
+// //       {
+// //           RemoveObjectEventByLocalIdAndMap(
+// //               gMapHeader.events->objectEvents[objectEventId].localId,
+// //               gSaveBlock1Ptr->location.mapNum,
+// //               gSaveBlock1Ptr->location.mapGroup);
+// //           FlagSet(flag);
+// //       }
+   // }
 }
 
 void SetSecretBaseOwnerGfxId(void)

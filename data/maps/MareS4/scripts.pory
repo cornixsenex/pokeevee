@@ -1,4 +1,10 @@
 
+//TEMP_VARS A-F control the 1-6 Rutuli Triggers
+//	>Setup on transition via check the 6 S4Rutuli Flags
+//	>1 is trigger battle (IE Rutuli is still on map, flag NOT set)
+//	>0 is don't trigger battle (IE flag has been set, Specific Rutulian has been defeated)
+
+
 //DYNAMIC MAP TEMP_VAR_5
 
 //1: Mare Tropicum
@@ -22,6 +28,11 @@ mapscripts MareS4_MapScripts {
 		if (var(VAR_ARGO_STATE) != 1) {
 			setobjectxyperm (LOCALID_MARES4_ARGO, 0, 0)
 		}
+		//Show and Setup Rutuli if applicable
+		if (var(VAR_AENEID_STATE) < 9 && var(VAR_AENEID_STATE) > 2) {
+			call (MareS4_Script_SetupRutuli)
+		}
+
     }
 }
 
@@ -59,4 +70,47 @@ script MareS4_Script_Transition_ScyllaCharybdis {
     setvar (VAR_TEMP_5, 6)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
+}
+
+//Using the flags set the specific Temp Var and show Rutuli if applicable
+//Also setup 7et8 if var < 8 (they don't have specific flags they use the var)
+script MareS4_Script_SetupRutuli {
+	//7 et 8
+	if (var(VAR_AENEID_STATE) < 8) {
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN7, 67, 60)
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN8, 69, 60)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_FACE_DOWN)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_FACE_DOWN)
+	}
+	//1
+	if (!flag(FLAG_MARES4_RUTULIAN1)) {
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN1, 47, 75)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_FACE_RIGHT)
+	}
+	//2
+	if (!flag(FLAG_MARES4_RUTULIAN2)) {
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN2, 55, 76)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_FACE_DOWN)
+	}
+	//3
+	if (!flag(FLAG_MARES4_RUTULIAN3)) {
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN3, 54, 70)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_FACE_LEFT)
+	}
+	//4
+	if (!flag(FLAG_MARES4_RUTULIAN4)) {
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN4, 67, 73)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_FACE_LEFT)
+	}
+	//5
+	if (!flag(FLAG_MARES4_RUTULIAN5)) {
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN5, 60, 64)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_FACE_RIGHT)
+	}
+	//6
+	if (!flag(FLAG_MARES4_RUTULIAN6)) {
+		setobjectxyperm (LOCALID_MARES4_RUTULIAN6, 70, 64)
+		setobjectmovementtype (LOCALID_MARES4_RUTULIAN6, MOVEMENT_TYPE_FACE_LEFT)
+	}
+	return
 }

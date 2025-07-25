@@ -41,7 +41,7 @@
 
 #define PLACE_DECORATION_SELECTOR_TAG 0xbe5
 #define PLACE_DECORATION_PLAYER_TAG   0x008
-#define NUM_DECORATION_FLAGS (FLAG_DECORATION_14 - FLAG_DECORATION_1 + 1)
+//#define NUM_DECORATION_FLAGS (FLAG_DECORATION_14 - FLAG_DECORATION_1 + 1)
 
 #define tCursorX data[0]
 #define tCursorY data[1]
@@ -1285,35 +1285,37 @@ void ShowDecorationOnMap(u16 mapX, u16 mapY, u16 decoration)
     }
 }
 
+//Cornix removed for free decoration flags 250724
 void SetDecoration(void)
 {
-    u8 i;
-    u8 j;
+	DebugPrintf("CORNIX REMOVED THIS FUNCTION!");
+//    u8 i;
+//    u8 j;
 
-    for (i = 0; i < NUM_DECORATION_FLAGS; i++)
-    {
-        if (FlagGet(FLAG_DECORATION_1 + i) == TRUE)
-        {
-            FlagClear(FLAG_DECORATION_1 + i);
-            for (j = 0; j < gMapHeader.events->objectEventCount; j++)
-            {
-                if (gMapHeader.events->objectEvents[j].flagId == FLAG_DECORATION_1 + i)
-                    break;
-            }
+  //  for (i = 0; i < NUM_DECORATION_FLAGS; i++)
+  //  {
+  //      if (FlagGet(FLAG_DECORATION_1 + i) == TRUE)
+  //      {
+  //          FlagClear(FLAG_DECORATION_1 + i);
+  //          for (j = 0; j < gMapHeader.events->objectEventCount; j++)
+  //          {
+  //              if (gMapHeader.events->objectEvents[j].flagId == FLAG_DECORATION_1 + i)
+  //                  break;
+  //          }
 
-            VarSet(
-                VAR_OBJ_GFX_ID_0 + (gMapHeader.events->objectEvents[j].graphicsId - OBJ_EVENT_GFX_VAR_0),
-                sPlaceDecorationGraphicsDataBuffer.decoration->tiles[0]);
+  //          VarSet(
+  //              VAR_OBJ_GFX_ID_0 + (gMapHeader.events->objectEvents[j].graphicsId - OBJ_EVENT_GFX_VAR_0),
+  //              sPlaceDecorationGraphicsDataBuffer.decoration->tiles[0]);
 
-            gSpecialVar_0x8005 = gMapHeader.events->objectEvents[j].localId;
-            gSpecialVar_0x8006 = sCurDecorMapX;
-            gSpecialVar_0x8007 = sCurDecorMapY;
-            TrySpawnObjectEvent(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
-            TryMoveObjectEventToMapCoords(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, gSpecialVar_0x8006, gSpecialVar_0x8007);
-            TryOverrideObjectEventTemplateCoords(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
-            break;
-        }
-    }
+  //          gSpecialVar_0x8005 = gMapHeader.events->objectEvents[j].localId;
+  //          gSpecialVar_0x8006 = sCurDecorMapX;
+  //          gSpecialVar_0x8007 = sCurDecorMapY;
+  //          TrySpawnObjectEvent(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+  //          TryMoveObjectEventToMapCoords(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, gSpecialVar_0x8006, gSpecialVar_0x8007);
+  //          TryOverrideObjectEventTemplateCoords(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+  //          break;
+  //      }
+  //  }
 }
 
 static bool8 HasDecorationSpace(void)
@@ -1636,11 +1638,12 @@ static bool8 CanPlaceDecoration(u8 taskId, const struct Decoration *decoration)
     // If sprite(like), check if there is an available object event slot for it
     if (decoration->permission == DECORPERM_SPRITE)
     {
-        for (i = 0; i < NUM_DECORATION_FLAGS; i++)
-        {
-            if (FlagGet(FLAG_DECORATION_1 + i) == TRUE)
-                return TRUE;
-        }
+		//CORNIX REMOVED - Free Decoration Flags 250724
+    //    for (i = 0; i < NUM_DECORATION_FLAGS; i++)
+    //    {
+    //        if (FlagGet(FLAG_DECORATION_1 + i) == TRUE)
+    //            return TRUE;
+    //    }
         return FALSE;
     }
     return TRUE;
