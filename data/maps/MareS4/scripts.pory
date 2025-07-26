@@ -656,3 +656,33 @@ script MareS4_Script_Trigger_Rutulian4E {
 	releaseall
 	end
 }
+
+script MareS4_Script_Rutulian5 {
+	//Face Rutulian
+	applymovement (LOCALID_MARES4_RUTULIAN5, Common_Movement_FaceUp)
+	waitmovement (0)
+	//Music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//Alert
+	applymovement (LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Battle - Pre et Post included
+	call (Hesperia_Script_RutulianBattle)
+	//Exit
+	applymovement (LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkLeft5)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp7)
+	waitmovement (0)
+	//remove rutulian
+	removeobject (LOCALID_MARES4_RUTULIAN5)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN5, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN5)
+	//set flag
+	setflag (FLAG_MARES4_RUTULIAN5)
+	//fin
+	end
+}
+
+	
+
