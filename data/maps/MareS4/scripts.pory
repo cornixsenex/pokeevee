@@ -1380,7 +1380,7 @@ script MareS4_Script_Trigger_Rutuli56Double_Template {
 	//do double battle
 	trainerbattle_two_trainers (TRAINER_RUTULIAN, MareS4_Text_Rutuli56Lost1, TRAINER_RUTULIAN, MareS4_Text_Rutuli56Lost2)
 	//RD post
-	msgbox (MareS4_Text_Rutuli56Post)
+msgbox (MareS4_Text_Rutuli56Post)
 	closemessage
 	//exeunt rutuli - switch
 	applymovement (LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp)
@@ -1517,12 +1517,156 @@ script MareS4_Script_Trigger_Rutuli56Double_Template {
 
 //Doorguard L
 script MareS4_Script_Rutulian7 {
-	
+	//setup
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//alert both
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//face both
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_FaceDown)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkLeft)
+	waitmovement (0)
+	//Doorguard Pre 1
+	msgbox (MareS4_Text_DoorguardPre1)
+	//face player R
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//doorguard Pre 2
+	msgbox (MareS4_Text_DoorguardPre2)
+	closemessage
+	//battle
+	trainerbattle_two_trainers (TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2)
+	//post - we can't show our faces after failure
+	msgbox (MareS4_Text_DoorguardPost)
+	closemessage
+	//exeunt south
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown7)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown7)
+	waitmovement (0)
+	//remove both
+	removeobject (LOCALID_MARES4_RUTULIAN7)
+	removeobject (LOCALID_MARES4_RUTULIAN8)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN7, 0, 0)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN8, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN7)
+	addobject (LOCALID_MARES4_RUTULIAN8)
+	//update vars
+	setvar (VAR_AENEID_STATE, 8)
+	//fin
+	releaseall
+	end
 }
 
 //Doorguard R
 script MareS4_Script_Rutulian8 {
-	
+	//setup
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//alert both
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//face both
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_FaceDown)
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkRight)
+	waitmovement (0)
+	//Doorguard Pre 1
+	msgbox (MareS4_Text_DoorguardPre1)
+	//face player R
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//doorguard Pre 2
+	msgbox (MareS4_Text_DoorguardPre2)
+	closemessage
+	//battle
+	trainerbattle_two_trainers (TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2)
+	//post - we can't show our faces after failure
+	msgbox (MareS4_Text_DoorguardPost)
+	closemessage
+	//exeunt south
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown7)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown7)
+	waitmovement (0)
+	//remove both
+	removeobject (LOCALID_MARES4_RUTULIAN7)
+	removeobject (LOCALID_MARES4_RUTULIAN8)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN7, 0, 0)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN8, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN7)
+	addobject (LOCALID_MARES4_RUTULIAN8)
+	//update vars
+	setvar (VAR_AENEID_STATE, 8)
+	//fin
+	releaseall
+	end
+}
+
+script MareS4_Script_Trigger_Doorguards {
+	//setup
+	lockall
+	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+	//alert both
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//face both
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_FaceRight)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//face player L
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//Doorguard Pre 1
+	msgbox (MareS4_Text_DoorguardPre1)
+	//face player R
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
+	//doorguard Pre 2
+	msgbox (MareS4_Text_DoorguardPre2)
+	closemessage
+	//battle
+	trainerbattle_two_trainers (TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2)
+	//post - we can't show our faces after failure
+	msgbox (MareS4_Text_DoorguardPost)
+	closemessage
+	//exeunt south
+	applymovement (LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown6)
+	applymovement (LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown6)
+	waitmovement (0)
+	//remove both
+	removeobject (LOCALID_MARES4_RUTULIAN7)
+	removeobject (LOCALID_MARES4_RUTULIAN8)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN7, 0, 0)
+	setobjectxyperm (LOCALID_MARES4_RUTULIAN8, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE)
+	setobjectmovementtype (LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_RUTULIAN7)
+	addobject (LOCALID_MARES4_RUTULIAN8)
+	//update vars
+	setvar (VAR_AENEID_STATE, 8)
+	//fin
+	releaseall
+	end
 }
 
 //When we Rutuli fight together we fight stronger
@@ -1545,8 +1689,28 @@ text MareS4_Text_Rutuli56Lost2 {
 	format("Ka-Turnus! Wafail!")
 }
 
-//We must fall back! We are beaten!
 text MareS4_Text_Rutuli56Post {
-	format("Wamust back fallya! Wabeat beya!")
+	format("")
 }
+
+text MareS4_Text_DoorguardPre1 {
+	format("")
+}
+
+text MareS4_Text_DoorguardPre2 {
+	format("")
+}
+
+text MareS4_Text_DoorguardLost1 {
+	format("")
+}
+
+text MareS4_Text_DoorguardLost2 {
+	format("")
+}
+
+text MareS4_Text_DoorguardPost {
+	format("")
+}
+
 

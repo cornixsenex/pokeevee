@@ -779,11 +779,11 @@
     {
       "type": "trigger",
       "x": 68,
-      "y": 60,
+      "y": 59,
       "elevation": 0,
       "var": "VAR_AENEID_STATE",
-      "var_value": "0",
-      "script": "NULL"
+      "var_value": "7",
+      "script": "MareS4_Script_Trigger_Doorguards"
     }
   ],
   "bg_events": []
