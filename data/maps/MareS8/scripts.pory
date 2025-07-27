@@ -778,6 +778,8 @@ script MareS8_Script_Trigger_Rutuli34A {
 	//set var to 7
 	setvar (VAR_AENEID_STATE, 7)
 	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutuli34B {
@@ -829,6 +831,8 @@ script MareS8_Script_Trigger_Rutuli34B {
 	//set var to 7
 	setvar (VAR_AENEID_STATE, 7)
 	//fin
+	releaseall
+	end
 }
 
 script MareS8_Script_Trigger_Rutulian3A {

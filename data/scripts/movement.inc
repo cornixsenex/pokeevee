@@ -75,9 +75,27 @@ Common_Movement_WalkInPlaceRight:
 Common_Movement_FollowerSafeEnd::
 	step_end
 
-Common_Movement_WalkUp6:
+Common_Movement_Delay32:
+	delay_16
+	delay_16
+	step_end
+
+Common_Movement_WalkUp::
+	walk_up
+	step_end
+
+Common_Movement_WalkUp2:
 	walk_up
 	walk_up
+	step_end
+	
+Common_Movement_WalkUp3:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+	
+Common_Movement_WalkUp4:
 	walk_up
 	walk_up
 	walk_up
@@ -92,29 +110,21 @@ Common_Movement_WalkUp5:
 	walk_up
 	step_end
 
-Common_Movement_WalkUp4:
+Common_Movement_WalkUp6:
 	walk_up
 	walk_up
 	walk_up
-	walk_up
-	step_end
-
-Common_Movement_WalkUp3:
 	walk_up
 	walk_up
 	walk_up
 	step_end
 
-Common_Movement_Delay32:
-	delay_16
-	delay_16
-	step_end
-
-Common_Movement_WalkUp::
+Common_Movement_WalkUp7:
 	walk_up
-	step_end
-
-Common_Movement_WalkUp2:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_up
 	walk_up
 	step_end
@@ -175,6 +185,14 @@ Common_Movement_WalkRight4:
 	walk_right
 	step_end
 
+Common_Movement_WalkRight5:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 Common_Movement_WalkRight6:
 	walk_right
 	walk_right
@@ -195,6 +213,18 @@ Common_Movement_WalkRight7:
 	step_end
 
 Common_Movement_WalkRight8:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Common_Movement_WalkRight9:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -240,6 +270,14 @@ Common_Movement_WalkLeft4:
 	walk_left
 	step_end
 
+Common_Movement_WalkLeft5:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 Common_Movement_WalkLeft6:
 	walk_left
 	walk_left
@@ -248,6 +286,18 @@ Common_Movement_WalkLeft6:
 	walk_left
 	walk_left
 	step_end
+
+Common_Movement_WalkLeft7:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+
 
 Common_Movement_WalkLeft8:
     walk_left
