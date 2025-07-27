@@ -233,6 +233,8 @@
 																//Increases by one after each R on S8 (4-7)
 																//7: S8 cleared - On S4 - Do Turnus' Doorguards
 																//8: After Turnus' doorguards - Trigger Turnus in hut
+                                                                //9: After Turnus - Trigger RetR lost on S4
+                                                                //10: During RetR lost - setup Lupercal
 																//69: After war is finished - Hide Aeneid MareS8
 #define VAR_TURRIS_SALTUS_STATE                   		 0x407B //Triggers battles and tracks progress thru Turrus Saltus
                                                                 //Increases by 1 after each battle

@@ -256,7 +256,7 @@ script MareS8_Script_ArriveHesperia {
         load_field_pic (FIELD_PIC_AENEAS, 190, 98)
         msgbox (MareS8_Text_AeneasSetup)
         destroy_field_pic (FIELD_PIC_AENEAS)
-       // call (Common_Script_SelectPartyForMultiBattle)
+        call (Common_Script_SelectPartyForMultiBattle)
         applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
         applymovement (LOCALID_MARES8_AENEAS, Common_Movement_WalkUp)
         waitmovement (0)
@@ -266,7 +266,7 @@ script MareS8_Script_ArriveHesperia {
         destroy_field_pic (FIELD_PIC_RUTULIAN)
 		closemessage
         //R attacks
-       // multi_2_vs_2 (TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS)
+        multi_2_vs_2 (TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS)
         //R post - we will drive these invaders from the sea
 		applymovement (LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceRight)
 		applymovement (LOCALID_MARES8_RUTULIAN2, Common_Movement_FaceLeft)

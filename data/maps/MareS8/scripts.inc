@@ -455,6 +455,8 @@ MareS8_Script_ArriveHesperia::
 	msgbox MareS8_Text_AeneasSetup
 # 258 "data/maps/MareS8/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
+# 259 "data/maps/MareS8/scripts.pory"
+	call Common_Script_SelectPartyForMultiBattle
 # 260 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 # 261 "data/maps/MareS8/scripts.pory"
@@ -469,6 +471,8 @@ MareS8_Script_ArriveHesperia::
 	destroy_field_pic FIELD_PIC_RUTULIAN
 # 267 "data/maps/MareS8/scripts.pory"
 	closemessage
+# 269 "data/maps/MareS8/scripts.pory"
+	multi_2_vs_2 TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS
 # 271 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_RUTULIAN1, Common_Movement_FaceRight
 # 272 "data/maps/MareS8/scripts.pory"

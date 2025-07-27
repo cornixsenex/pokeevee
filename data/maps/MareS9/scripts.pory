@@ -182,26 +182,26 @@ script MareS9_Script_Aeneas {
     //var 2: at the ship after dido, ready to start funeral games
     else {
         //A: Funeral 1
-//        msgbox (MareS9_Text_Aeneas_Funeral1)
+          msgbox (MareS9_Text_Aeneas_Funeral1)
           destroy_field_pic (FIELD_PIC_AENEAS)
-//        //E: Scream 
-//        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
-//        msgbox (MareS9_Text_Elissa_Funeral1)
-//        destroy_field_pic (FIELD_PIC_ELISSA)
-//        closemessage
-//        //Alert all
-//        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
-//        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark)
-//        applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
-//        waitmovement (0)
-//        //Face Right
-//        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceRight)
-//        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceRight)
-//        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
-//        waitmovement (0)
-//        //lock for setup for boat
-//        lockall
-//		fadenewbgm (MUS_CREDITS)
+        //E: Scream 
+        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+        msgbox (MareS9_Text_Elissa_Funeral1)
+        destroy_field_pic (FIELD_PIC_ELISSA)
+        closemessage
+        //Alert all
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark)
+        applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        //Face Right
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceRight)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceRight)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+        waitmovement (0)
+        //lock for setup for boat
+        lockall
+		fadenewbgm (MUS_CREDITS)
         //move camera
         special (SpawnCameraObject)
         applymovement (LOCALID_CAMERA, MareS9_Movement_MoveCameraToFuneral)
@@ -218,133 +218,133 @@ script MareS9_Script_Aeneas {
         applymovement (LOCALID_MARES9_ASCANIUS, Common_Movement_FaceUp)
         waitmovement (0)
         //E: Lament
-//        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
-//        msgbox (MareS9_Text_Elissa_Funeral2)
-//        destroy_field_pic (FIELD_PIC_ELISSA)
-//        closemessage
-//        //Show Elissa
-//        removeobject (LOCALID_MARES9_ELISSA)
-//        setobjectxyperm (LOCALID_MARES9_ELISSA, 34, 19)
-//        setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_FACE_UP)
-//        addobject (LOCALID_MARES9_ELISSA)
-//        //Move to water
-//        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkUp)
-//        waitmovement (0)
-//        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_FaceDown)
-//        waitmovement (0)
-//        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_ExclamationMark)
-//        waitmovement (0)
-//        //Do drop
-//        delay (40)
-//        applymovement (LOCALID_MARES9_ELISSA, Movement_SetInvisible)
-//        waitmovement (0)
-//        playse (SE_FALL)
-//        delay (60)
-//        playse (SE_M_DIVE)
-//        delay (120)
-//        //Hide Elissa
-//        removeobject (LOCALID_MARES9_ELISSA)
-//        setobjectxyperm (LOCALID_MARES9_ELISSA, 0, 0)
-//        setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_INVISIBLE)
-//        addobject (LOCALID_MARES9_ELISSA)
-//		fadenewbgm (MUS_RG_FUCHSIA)
-//        //Return Camera
+        load_field_pic (FIELD_PIC_ELISSA, 190, 98)
+        msgbox (MareS9_Text_Elissa_Funeral2)
+        destroy_field_pic (FIELD_PIC_ELISSA)
+        closemessage
+        //Show Elissa
+        removeobject (LOCALID_MARES9_ELISSA)
+        setobjectxyperm (LOCALID_MARES9_ELISSA, 34, 19)
+        setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_FACE_UP)
+        addobject (LOCALID_MARES9_ELISSA)
+        //Move to water
+        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_WalkUp)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_FaceDown)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_ELISSA, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        //Do drop
+        delay (40)
+        applymovement (LOCALID_MARES9_ELISSA, Movement_SetInvisible)
+        waitmovement (0)
+        playse (SE_FALL)
+        delay (60)
+        playse (SE_M_DIVE)
+        delay (120)
+        //Hide Elissa
+        removeobject (LOCALID_MARES9_ELISSA)
+        setobjectxyperm (LOCALID_MARES9_ELISSA, 0, 0)
+        setobjectmovementtype (LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_INVISIBLE)
+        addobject (LOCALID_MARES9_ELISSA)
+		fadenewbgm (MUS_RG_FUCHSIA)
+        //Return Camera
         applymovement (LOCALID_CAMERA, MareS9_Movement_ReturnCameraFromFuneral)
         waitmovement (0)
         special (RemoveCameraObject)
         //face aeneas et faustulus down, player up
-//        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
-//        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceDown)
-//        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
-//        waitmovement (0)
-//        //A: Speech
-//        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
-//        msgbox (MareS9_Text_Aeneas_Funeral2)
-//        destroy_field_pic (FIELD_PIC_AENEAS)
-//        closemessage
-//        //face Beroe
-//        applymovement (LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark)
-//        waitmovement (0)
-//        applymovement (LOCALID_MARES9_BEROE, Common_Movement_FaceRight)
-//        waitmovement (0)
-//        //B: 
-//        load_field_pic (FIELD_PIC_BEROE, 190, 98)
-//        msgbox (MareS9_Text_Beroe_Funeral1)
-//        destroy_field_pic (FIELD_PIC_BEROE)
-//        //A: No funeral games for my father - let's have a trial of strength
-//        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
-//        msgbox (MareS9_Text_Aeneas_Funeral3)
-//        //face aeneas et faustulus
-//        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceRight)
-//        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft)
-//        waitmovement (0)
-//        msgbox (MareS9_Text_Aeneas_Funeral4)
-//        destroy_field_pic (FIELD_PIC_AENEAS)
-//        //F: I'm ready
-//		applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark)
-//		waitmovement (0)
-//        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
-//        msgbox (MareS9_Text_Faustulus_Funeral1)
-//        destroy_field_pic (FIELD_PIC_FAUSTULUS)
-//		applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
-//		waitmovement (0)
-//        //A: Get to it
-//        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
-//        msgbox (MareS9_Text_Aeneas_Funeral5)
-//        destroy_field_pic (FIELD_PIC_AENEAS)
-//        closemessage
-//        //F to player
-//        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
-//        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkDown)
-//        waitmovement (0)
-//        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft)
-//        waitmovement (0)
-//        //F pre
-//        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
-//        msgbox (MareS9_Text_Faustulus_Funeral2)
-//        destroy_field_pic (FIELD_PIC_FAUSTULUS)
-//        closemessage
-//        //f battle
-//        trainerbattle_no_intro (TRAINER_FAUSTULUS, MareS9_Text_FaustulusLost)
-//        //f post
-//        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
-//        msgbox (MareS9_Text_Faustulus_Funeral3)
-//        destroy_field_pic (FIELD_PIC_FAUSTULUS)
-//        closemessage
-//        //turn player et f back to aeneas
-//        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
-//        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceUp)
-//        waitmovement (0)
-//        //A: Next a foot race
-//        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
-//        msgbox (MareS9_Text_Aeneas_Funeral6)
-//        destroy_field_pic (FIELD_PIC_AENEAS)
-//		//alert B
-//		applymovement (LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark)
-//		waitmovement (0)
-//        load_field_pic (FIELD_PIC_BEROE, 190, 98)
-//		msgbox ("Aeneas!")
-//        //alert A
-//        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
-//        waitmovement (0)
-//		//Please lets leave
-//        msgbox (MareS9_Text_Beroe_Funeral2)
-//        destroy_field_pic (FIELD_PIC_BEROE)
-//		//This is to honor those dead. The funeral games are solumn tradition...
-//        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
-//        msgbox (MareS9_Text_Aeneas_Funeral7)
-//        destroy_field_pic (FIELD_PIC_AENEAS)
-//		//I will burn this ship
-//        load_field_pic (FIELD_PIC_BEROE, 190, 98)
-//        msgbox (MareS9_Text_Beroe_Funeral3)
-//        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
-//        waitmovement (0)
-//        destroy_field_pic (FIELD_PIC_BEROE)
-//        //A: Ok you're right lets be off
-//        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
-//        msgbox (MareS9_Text_Aeneas_Funeral8)
-//        destroy_field_pic (FIELD_PIC_AENEAS)
-//        closemessage
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceDown)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        waitmovement (0)
+        //A: Speech
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral2)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
+        //face Beroe
+        applymovement (LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_BEROE, Common_Movement_FaceRight)
+        waitmovement (0)
+        //B: 
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+        msgbox (MareS9_Text_Beroe_Funeral1)
+        destroy_field_pic (FIELD_PIC_BEROE)
+        //A: No funeral games for my father - let's have a trial of strength
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral3)
+        //face aeneas et faustulus
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceRight)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft)
+        waitmovement (0)
+        msgbox (MareS9_Text_Aeneas_Funeral4)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        //F: I'm ready
+		applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark)
+		waitmovement (0)
+        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+        msgbox (MareS9_Text_Faustulus_Funeral1)
+        destroy_field_pic (FIELD_PIC_FAUSTULUS)
+		applymovement (LOCALID_MARES9_AENEAS, Common_Movement_FaceDown)
+		waitmovement (0)
+        //A: Get to it
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral5)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
+        //F to player
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkDown)
+        waitmovement (0)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft)
+        waitmovement (0)
+        //F pre
+        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+        msgbox (MareS9_Text_Faustulus_Funeral2)
+        destroy_field_pic (FIELD_PIC_FAUSTULUS)
+        closemessage
+        //f battle
+        trainerbattle_no_intro (TRAINER_FAUSTULUS, MareS9_Text_FaustulusLost)
+        //f post
+        load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+        msgbox (MareS9_Text_Faustulus_Funeral3)
+        destroy_field_pic (FIELD_PIC_FAUSTULUS)
+        closemessage
+        //turn player et f back to aeneas
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        applymovement (LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceUp)
+        waitmovement (0)
+        //A: Next a foot race
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral6)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+		//alert B
+		applymovement (LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark)
+		waitmovement (0)
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+		msgbox ("Aeneas!")
+        //alert A
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+		//Please lets leave
+        msgbox (MareS9_Text_Beroe_Funeral2)
+        destroy_field_pic (FIELD_PIC_BEROE)
+		//This is to honor those dead. The funeral games are solumn tradition...
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral7)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+		//I will burn this ship
+        load_field_pic (FIELD_PIC_BEROE, 190, 98)
+        msgbox (MareS9_Text_Beroe_Funeral3)
+        applymovement (LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        destroy_field_pic (FIELD_PIC_BEROE)
+        //A: Ok you're right lets be off
+        load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+        msgbox (MareS9_Text_Aeneas_Funeral8)
+        destroy_field_pic (FIELD_PIC_AENEAS)
+        closemessage
         //load onto boat
         //Beroe
         applymovement (LOCALID_MARES9_BEROE, Common_Movement_WalkUp)

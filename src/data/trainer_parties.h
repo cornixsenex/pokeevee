@@ -2818,8 +2818,7 @@ static const struct TrainerMon sParty_Rutulian[] = {
 
 //BREAK
 
-
-static const struct TrainerMon sParty_Shawn[] = {
+static const struct TrainerMon sParty_Turnus[] = {
     {
     .iv = 100,
     .lvl = 17,

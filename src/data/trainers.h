@@ -2368,6 +2368,18 @@
 		.partySize = 3,
     },
 
+    [DIFFICULTY_NORMAL][TRAINER_TURNUS] =
+    {
+        .trainerClass = TRAINER_CLASS_RUTULIAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_ROOD,
+        .trainerName = _("KING TURNUS"),
+        .items = {},
+		.mugshotColor = MUGSHOT_COLOR_YELLOW,
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .party = TRAINER_PARTY(sParty_Turnus),
+    },
 
 
 ///	====BREAK====    NOTE! UNUSED ABOVE 61 in INCLUDE
@@ -2380,17 +2392,6 @@
 
 
 
-    [DIFFICULTY_NORMAL][TRAINER_SHAWN] =
-    {
-        .trainerClass = TRAINER_CLASS_GUITARIST,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_GUITARIST,
-        .trainerName = _("SHAWN"),
-        .items = {},
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
-        .party = TRAINER_PARTY(sParty_Shawn),
-    },
 
     [DIFFICULTY_NORMAL][TRAINER_FERNANDO_1] =
     {

@@ -35,8 +35,69 @@ mapscripts MareS4_MapScripts {
 		if (var(VAR_AENEID_STATE) < 9 && var(VAR_AENEID_STATE) > 2) {
 			call (MareS4_Script_SetupRutuli)
 		}
-
+        //Setup begin RetR lost scene
+        if (var(VAR_AENEID_STATE) == 9) {
+            call (MareS4_Script_SetupRetRLostScene)
+        }
     }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AENEID_STATE, 9: MareS4_Script_RetRLostScene
+    ]
+}
+
+script MareS4_Script_SetupRetRLostScene {
+    setobjectxyperm (LOCALID_MARES4_AENEAS, 68, 61)
+    setobjectxyperm (LOCALID_MARES4_FAUSTULUS, 69, 61)
+    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 68, 65)
+    setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_FACE_UP)
+    return
+}
+
+script MareS4_Script_RetRLostScene {
+    lockall
+    setvar (VAR_AENEID_STATE, 10)
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //player to AetF
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement (0)
+    //A: Good job
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS4_Text_Aeneas_GoodJob)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+    //As: HELP! (offscreen)
+    load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
+    msgbox ("HELP!")
+    destroy_field_pic (FIELD_PIC_ASCANIUS)
+    closemessage
+    //altert all
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //face AetF down
+    applymovement (LOCALID_MARES4_AENEAS, Common_Movement_FaceDown)
+    applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_FaceDown)
+    waitmovement (0)
+    //enter As
+    applymovement (LOCALID_MARES4_ASCANIUS, Common_Movement_WalkUp3)
+    waitmovement (0)
+    //As: Oh the horror!
+    //A: What's wrong
+    //RetR are gone
+    //Alert all
+    //A: Terrible.
+    //F: They must have run off during the battle
+    //As: Or captured by the fleeing natives
+    //A we must split up and find them - Asc the beach, F the northern hills and player the southern. I'll wait here in case they come here or if any of those natives try returning
+    //Exeunt Asc et F
+    //Face A down
+    //fin
+    releaseall
+    end
 }
 
 script MareS4_Script_Transition_MareTropicum {
@@ -1689,28 +1750,38 @@ text MareS4_Text_Rutuli56Lost2 {
 	format("Ka-Turnus! Wafail!")
 }
 
+//We must fall back! We are beaten!
 text MareS4_Text_Rutuli56Post {
-	format("")
+	format("Back fallya wamust! Wabeat beya!")
 }
 
+//We are Turnus' most trusted men.
 text MareS4_Text_DoorguardPre1 {
-	format("")
+	format("KaTurnus best katrust men wabe.")
 }
 
+//No one gets past us alive.
 text MareS4_Text_DoorguardPre2 {
-	format("")
+	format("Wapast aliveya gona!")
 }
 
+//What happened?
 text MareS4_Text_DoorguardLost1 {
-	format("")
+	format("What happen?")
 }
 
+//This can't be so!
 text MareS4_Text_DoorguardLost2 {
-	format("")
+	format("Sacanna bena!")
 }
 
+//We can never admit our defeat to Turnus.\nWe must leave our home forever and go into exile.
 text MareS4_Text_DoorguardPost {
-	format("")
+	format("Wa-admit KaTurnus wadefeat wacanna.\pWaHesperia forever waleave wamust. Exhile wagoya.")
+}
+
+text MareS4_Text_Aeneas_GoodJob {
+    format("")
 }
 
 

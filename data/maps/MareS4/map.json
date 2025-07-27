@@ -196,9 +196,59 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS4_Script_Rutulian8",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES4_AENEAS",
+      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "x": 55,
+      "y": 62,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES4_FAUSTULUS",
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 55,
+      "y": 63,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES4_ASCANIUS",
+      "graphics_id": "OBJ_EVENT_GFX_BILL",
+      "x": 56,
+      "y": 63,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 68,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_CASA_TURNI",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
     {
       "type": "trigger",
@@ -599,7 +649,7 @@
     {
       "type": "trigger",
       "x": 61,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -608,7 +658,7 @@
     {
       "type": "trigger",
       "x": 62,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -617,7 +667,7 @@
     {
       "type": "trigger",
       "x": 63,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -626,7 +676,7 @@
     {
       "type": "trigger",
       "x": 64,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -635,7 +685,7 @@
     {
       "type": "trigger",
       "x": 65,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -644,7 +694,7 @@
     {
       "type": "trigger",
       "x": 66,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -653,7 +703,7 @@
     {
       "type": "trigger",
       "x": 67,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -662,7 +712,7 @@
     {
       "type": "trigger",
       "x": 68,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -671,7 +721,7 @@
     {
       "type": "trigger",
       "x": 69,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -680,7 +730,7 @@
     {
       "type": "trigger",
       "x": 70,
-      "y": 63,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "1",
@@ -689,7 +739,7 @@
     {
       "type": "trigger",
       "x": 60,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -698,7 +748,7 @@
     {
       "type": "trigger",
       "x": 61,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -707,7 +757,7 @@
     {
       "type": "trigger",
       "x": 62,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -716,7 +766,7 @@
     {
       "type": "trigger",
       "x": 63,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -725,7 +775,7 @@
     {
       "type": "trigger",
       "x": 64,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -734,7 +784,7 @@
     {
       "type": "trigger",
       "x": 65,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -743,7 +793,7 @@
     {
       "type": "trigger",
       "x": 66,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -752,7 +802,7 @@
     {
       "type": "trigger",
       "x": 67,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -761,7 +811,7 @@
     {
       "type": "trigger",
       "x": 68,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",
@@ -770,7 +820,7 @@
     {
       "type": "trigger",
       "x": 69,
-      "y": 65,
+      "y": 64,
       "elevation": 0,
       "var": "VAR_TEMP_E",
       "var_value": "2",

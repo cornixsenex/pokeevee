@@ -481,6 +481,9 @@ const u16 gObjectEventPal_Rood[] = INCBIN_U16("graphics/object_events/palettes/r
 const u32 gObjectEventPic_Kando[] = INCBIN_U32("graphics/object_events/pics/people/kando.4bpp");
 const u16 gObjectEventPal_Kando[] = INCBIN_U16("graphics/object_events/palettes/kando.gbapal");
 
+const u32 gObjectEventPic_Bill[] = INCBIN_U32("graphics/object_events/pics/people/bill.4bpp");
+const u16 gObjectEventPal_Bill[] = INCBIN_U16("graphics/object_events/palettes/bill.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

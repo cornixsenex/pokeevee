@@ -68,7 +68,7 @@
 #define FLAG_ROUTE9_CLEARBLOCK      0x36 //Set after enter Tranquilitas - Clears the "rock slide" block 
 #define FLAG_TRANQUILITAS_SURFSCHOOL_OPEN      0x37 //Set after Leaf opens Surf School - Hides Misty in Tranquilitas 
 
-#define FLAG_UNUSED_0x38      0x38 //UNUSED
+#define FLAG_CASATURNI_HIDERUTULI      0x38 //Set after Turnus battle - hides the rutuli
 #define FLAG_UNUSED_0x39      0x39 //UNUSED
 #define FLAG_UNUSED_0x3A      0x3A //UNUSED 
 #define FLAG_UNUSED_0x3B      0x3B //UNUSED 

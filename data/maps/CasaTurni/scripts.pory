@@ -1,0 +1,187 @@
+mapscripts CasaTurni_MapScripts {
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AENEID_STATE, 8: CasaTurni_Script_TurnusScene
+    ]
+
+}
+
+script CasaTurni_Script_TurnusScene {
+    lockall
+    setvar (VAR_AENEID_STATE, 9)
+    //music
+	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+    //alert rutuli
+    call (CasaTurni_Script_AlertRutuli)
+    //move player to position facing up
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp3)
+    waitmovement (0)
+    //R: lets get him
+	load_field_pic(FIELD_PIC_RUTULIAN, 190, 98)
+    msgbox (CasaTurni_Text_RutuliPre)
+    destroy_field_pic (FIELD_PIC_RUTULIAN)
+    //T: Dont take my glory
+    load_field_pic (FIELD_PIC_TURNUS, 190, 98)
+    msgbox (CasaTurni_Text_TurnusPre1)
+    call (CasaTurni_Script_AlertRutuli)
+    msgbox (CasaTurni_Text_TurnusPre2)
+    destroy_field_pic (FIELD_PIC_TURNUS)
+    closemessage
+    //T to player
+    applymovement (LOCALID_CASATURNI_TURNUS, Common_Movement_WalkDown2)
+    waitmovement (0)
+    //Face eachother
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    applymovement (LOCALID_CASATURNI_TURNUS, Common_Movement_FaceRight)
+    waitmovement (0)
+    //T pre
+    load_field_pic (FIELD_PIC_TURNUS, 190, 98)
+    msgbox (CasaTurni_Text_TurnusPre3)
+    destroy_field_pic (FIELD_PIC_TURNUS)
+    closemessage
+    //T battle
+    trainerbattle_no_intro (TRAINER_TURNUS, CasaTurni_Text_TurnusLost)
+    //T post
+    load_field_pic (FIELD_PIC_TURNUS, 190, 98)
+    msgbox (CasaTurni_Text_TurnusPost)
+    destroy_field_pic (FIELD_PIC_TURNUS)
+    closemessage
+    //T exit
+    applymovement (LOCALID_CASATURNI_TURNUS, Common_Movement_WalkDown3)
+    waitmovement (0)
+    //remove T
+    removeobject (LOCALID_CASATURNI_TURNUS)
+    setobjectxyperm (LOCALID_CASATURNI_TURNUS, 0, 0)
+    setobjectmovementtype (LOCALID_CASATURNI_TURNUS, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_CASATURNI_TURNUS)
+    call (CasaTurni_Script_AlertRutuli)
+    //R: omg scatter
+	load_field_pic(FIELD_PIC_RUTULIAN, 190, 98)
+    msgbox (CasaTurni_Text_RutuliPost)
+    destroy_field_pic (FIELD_PIC_RUTULIAN)
+    closemessage
+    //exeunt rutuli
+    applymovement (2, Common_Movement_WalkDown)
+    applymovement (3, Common_Movement_WalkDown)
+    applymovement (4, Common_Movement_WalkRight)
+    applymovement (5, Common_Movement_WalkLeft)
+    applymovement (6, Common_Movement_WalkRight)
+    applymovement (7, Common_Movement_WalkLeft)
+    waitmovement (0)
+    applymovement (2, Common_Movement_WalkRight)
+    applymovement (3, Common_Movement_WalkLeft)
+    applymovement (4, Common_Movement_WalkRight)
+    applymovement (5, Common_Movement_WalkLeft)
+    applymovement (6, Common_Movement_WalkRight)
+    applymovement (7, Common_Movement_WalkLeft)
+    waitmovement (0)
+    applymovement (2, Common_Movement_WalkRight)
+    applymovement (3, Common_Movement_WalkLeft)
+    applymovement (4, Common_Movement_WalkDown)
+    applymovement (5, Common_Movement_WalkDown)
+    applymovement (6, Common_Movement_FaceDown)
+    applymovement (7, Common_Movement_FaceDown)
+    waitmovement (0)
+    //remove 67
+    applymovement (6, Common_Movement_WalkDown)
+    applymovement (7, Common_Movement_WalkDown)
+    waitmovement (0)
+    removeobject (7)
+    setobjectxyperm (7, 0, 0)
+    setobjectmovementtype (7, MOVEMENT_TYPE_INVISIBLE)
+    addobject (7)
+    removeobject (6)
+    setobjectxyperm (6, 0, 0)
+    setobjectmovementtype (6, MOVEMENT_TYPE_INVISIBLE)
+    addobject (6)
+    //cont exeunt
+    applymovement (2, Common_Movement_WalkDown)
+    applymovement (3, Common_Movement_WalkDown)
+    applymovement (4, Common_Movement_WalkDown)
+    applymovement (5, Common_Movement_WalkDown)
+    waitmovement (0)
+    //remove 45
+    applymovement (4, Common_Movement_WalkDown)
+    applymovement (5, Common_Movement_WalkDown)
+    waitmovement (0)
+    removeobject (5)
+    setobjectxyperm (5, 0, 0)
+    setobjectmovementtype (5, MOVEMENT_TYPE_INVISIBLE)
+    addobject (5)
+    removeobject (4)
+    setobjectxyperm (4, 0, 0)
+    setobjectmovementtype (4, MOVEMENT_TYPE_INVISIBLE)
+    addobject (4)
+    //cont exeunt
+    applymovement (2, Common_Movement_WalkDown3)
+    applymovement (3, Common_Movement_WalkDown3)
+    waitmovement (0)
+    //remove 23
+    applymovement (2, Common_Movement_WalkDown)
+    applymovement (3, Common_Movement_WalkDown)
+    waitmovement (0)
+    removeobject (3)
+    setobjectxyperm (3, 0, 0)
+    setobjectmovementtype (3, MOVEMENT_TYPE_INVISIBLE)
+    addobject (3)
+    removeobject (2)
+    setobjectxyperm (2, 0, 0)
+    setobjectmovementtype (2, MOVEMENT_TYPE_INVISIBLE)
+    addobject (2)
+    //set flag
+    setflag (FLAG_CASATURNI_HIDERUTULI)
+    //fin
+    releaseall
+    end
+}
+
+script CasaTurni_Script_AlertRutuli {
+    applymovement (2, Common_Movement_ExclamationMark)
+    applymovement (3, Common_Movement_ExclamationMark)
+    applymovement (4, Common_Movement_ExclamationMark)
+    applymovement (5, Common_Movement_ExclamationMark)
+    applymovement (6, Common_Movement_ExclamationMark)
+    applymovement (7, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    return
+}
+
+
+//Intruder!
+//Look to your arms!
+//Get him!
+text CasaTurni_Text_RutuliPre {
+    format("Satresspass!\pSa-arms salook!\pSaget!")
+}
+
+//Stay back you worms! 
+text CasaTurni_Text_TurnusPre1 {
+    format("Saworms! Saback!")
+}
+
+//Would you deny Turnus the glory?
+text CasaTurni_Text_TurnusPre2 {
+    format("Turnus glory sadenyya?")
+}
+
+//Never before has anyone dared assail my throne. Now I will show why I am king of Hesperia.
+text CasaTurni_Text_TurnusPre3 {
+    format("Mathrone assailna neverya. Why making Hesperia tashowya.")
+}
+
+//My crown is broken!
+text CasaTurni_Text_TurnusLost {
+    format("Macrown breakya.")
+}
+
+//This is the end of my kingdom, and my life.
+text CasaTurni_Text_TurnusPost {
+    format("Makingdom and malife doneya.")
+}
+
+//The mighty Turnus defeated?
+//Now all is lost!
+//Run for your lives!
+text CasaTurni_Text_RutuliPost {
+    format("Katurnus! Kadefeatya?\pAll lostya!\pFor talife tarunya!")
+}

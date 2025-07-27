@@ -207,8 +207,38 @@ MareS9_Script_Aeneas::
 # 158 "data/maps/MareS9/scripts.pory"
 	compare VAR_AENEID_STATE, 0
 	goto_if_eq MareS9_Script_Aeneas_1
+# 185 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral1
 # 186 "data/maps/MareS9/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
+# 188 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
+# 189 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Elissa_Funeral1
+# 190 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_ELISSA
+# 191 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 193 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark
+# 194 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark
+# 195 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 196 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 198 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_FaceRight
+# 199 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceRight
+# 200 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 201 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 203 "data/maps/MareS9/scripts.pory"
+	lockall
+# 204 "data/maps/MareS9/scripts.pory"
+	fadenewbgm MUS_CREDITS
 # 206 "data/maps/MareS9/scripts.pory"
 	special SpawnCameraObject
 # 207 "data/maps/MareS9/scripts.pory"
@@ -235,12 +265,210 @@ MareS9_Script_Aeneas::
 	applymovement LOCALID_MARES9_ASCANIUS, Common_Movement_FaceUp
 # 219 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
+# 221 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_ELISSA, 190, 98
+# 222 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Elissa_Funeral2
+# 223 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_ELISSA
+# 224 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 226 "data/maps/MareS9/scripts.pory"
+	removeobject LOCALID_MARES9_ELISSA
+# 227 "data/maps/MareS9/scripts.pory"
+	setobjectxyperm LOCALID_MARES9_ELISSA, 34, 19
+# 228 "data/maps/MareS9/scripts.pory"
+	setobjectmovementtype LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_FACE_UP
+# 229 "data/maps/MareS9/scripts.pory"
+	addobject LOCALID_MARES9_ELISSA
+# 231 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_ELISSA, Common_Movement_WalkUp
+# 232 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 233 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_ELISSA, Common_Movement_FaceDown
+# 234 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 235 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_ELISSA, Common_Movement_ExclamationMark
+# 236 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 238 "data/maps/MareS9/scripts.pory"
+	delay 40
+# 239 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_ELISSA, Movement_SetInvisible
+# 240 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 241 "data/maps/MareS9/scripts.pory"
+	playse SE_FALL
+# 242 "data/maps/MareS9/scripts.pory"
+	delay 60
+# 243 "data/maps/MareS9/scripts.pory"
+	playse SE_M_DIVE
+# 244 "data/maps/MareS9/scripts.pory"
+	delay 120
+# 246 "data/maps/MareS9/scripts.pory"
+	removeobject LOCALID_MARES9_ELISSA
+# 247 "data/maps/MareS9/scripts.pory"
+	setobjectxyperm LOCALID_MARES9_ELISSA, 0, 0
+# 248 "data/maps/MareS9/scripts.pory"
+	setobjectmovementtype LOCALID_MARES9_ELISSA, MOVEMENT_TYPE_INVISIBLE
+# 249 "data/maps/MareS9/scripts.pory"
+	addobject LOCALID_MARES9_ELISSA
+# 250 "data/maps/MareS9/scripts.pory"
+	fadenewbgm MUS_RG_FUCHSIA
 # 252 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_CAMERA, MareS9_Movement_ReturnCameraFromFuneral
 # 253 "data/maps/MareS9/scripts.pory"
 	waitmovement 0
 # 254 "data/maps/MareS9/scripts.pory"
 	special RemoveCameraObject
+# 256 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_FaceDown
+# 257 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceDown
+# 258 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 259 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 261 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 262 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral2
+# 263 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 264 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 266 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark
+# 267 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 268 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_BEROE, Common_Movement_FaceRight
+# 269 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 271 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_BEROE, 190, 98
+# 272 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Beroe_Funeral1
+# 273 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_BEROE
+# 275 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 276 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral3
+# 278 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_FaceRight
+# 279 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft
+# 280 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 281 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral4
+# 282 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 284 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_ExclamationMark
+# 285 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 286 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
+# 287 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Faustulus_Funeral1
+# 288 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_FAUSTULUS
+# 289 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_FaceDown
+# 290 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 292 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 293 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral5
+# 294 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 295 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 297 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 298 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_WalkDown
+# 299 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 300 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceLeft
+# 301 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 303 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
+# 304 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Faustulus_Funeral2
+# 305 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_FAUSTULUS
+# 306 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 308 "data/maps/MareS9/scripts.pory"
+	trainerbattle_no_intro TRAINER_FAUSTULUS, MareS9_Text_FaustulusLost
+# 310 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
+# 311 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Faustulus_Funeral3
+# 312 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_FAUSTULUS
+# 313 "data/maps/MareS9/scripts.pory"
+	closemessage
+# 315 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 316 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_FAUSTULUS, Common_Movement_FaceUp
+# 317 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 319 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 320 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral6
+# 321 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 323 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_BEROE, Common_Movement_ExclamationMark
+# 324 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 325 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_BEROE, 190, 98
+# 326 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Script_Aeneas_Text_0
+# 328 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark
+# 329 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 331 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Beroe_Funeral2
+# 332 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_BEROE
+# 334 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 335 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral7
+# 336 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 338 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_BEROE, 190, 98
+# 339 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Beroe_Funeral3
+# 340 "data/maps/MareS9/scripts.pory"
+	applymovement LOCALID_MARES9_AENEAS, Common_Movement_ExclamationMark
+# 341 "data/maps/MareS9/scripts.pory"
+	waitmovement 0
+# 342 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_BEROE
+# 344 "data/maps/MareS9/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 345 "data/maps/MareS9/scripts.pory"
+	msgbox MareS9_Text_Aeneas_Funeral8
+# 346 "data/maps/MareS9/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 347 "data/maps/MareS9/scripts.pory"
+	closemessage
 # 350 "data/maps/MareS9/scripts.pory"
 	applymovement LOCALID_MARES9_BEROE, Common_Movement_WalkUp
 # 351 "data/maps/MareS9/scripts.pory"
@@ -448,7 +676,7 @@ MareS9_Script_Aeneas::
 # 467 "data/maps/MareS9/scripts.pory"
 	load_field_pic FIELD_PIC_BEROE, 190, 98
 # 468 "data/maps/MareS9/scripts.pory"
-	msgbox MareS9_Script_Aeneas_Text_0
+	msgbox MareS9_Script_Aeneas_Text_1
 # 469 "data/maps/MareS9/scripts.pory"
 	setvar VAR_0x8004, 1
 # 470 "data/maps/MareS9/scripts.pory"
@@ -2164,6 +2392,10 @@ MareS9_Movement_Pristis3:
 	step_end
 
 MareS9_Script_Aeneas_Text_0:
+# 326 "data/maps/MareS9/scripts.pory"
+	.string "Aeneas!$"
+
+MareS9_Script_Aeneas_Text_1:
 # 468 "data/maps/MareS9/scripts.pory"
 	.string "AAAAAH!$"
 

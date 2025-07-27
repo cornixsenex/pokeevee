@@ -480,6 +480,8 @@ const u16 gTrainerPalette_Lenora[] = INCBIN_U16("graphics/trainers/palettes/leno
 const u32 gTrainerFrontPic_Farmer_M[] = INCBIN_U32("graphics/trainers/front_pics/farmer_m.4bpp.lz");
 const u16 gTrainerPalette_Farmer_M[] = INCBIN_U16("graphics/trainers/palettes/farmer_m.gbapal");
 
+const u32 gTrainerFrontPic_Bill[] = INCBIN_U32("graphics/trainers/front_pics/bill.4bpp.lz");
+const u16 gTrainerPalette_Bill[] = INCBIN_U16("graphics/trainers/palettes/bill.gbapal");
 
 
 // The first two parameters invoke a front pic and palette by
@@ -654,6 +656,7 @@ const struct TrainerSprite gTrainerSprites[] =
 	TRAINER_SPRITE(TRAINER_PIC_CYNTHIA, gTrainerFrontPic_Cynthia, gTrainerPalette_Cynthia),               
 	TRAINER_SPRITE(TRAINER_PIC_LENORA, gTrainerFrontPic_Lenora, gTrainerPalette_Lenora),               
 	TRAINER_SPRITE(TRAINER_PIC_FARMER_M, gTrainerFrontPic_Farmer_M, gTrainerPalette_Farmer_M),               
+    TRAINER_SPRITE(TRAINER_PIC_BILL, gTrainerFrontPic_Bill, gTrainerPalette_Bill),               
 	//END KUSTOM TRAINER SPRITES
 };
 

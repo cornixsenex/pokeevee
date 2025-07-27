@@ -6490,6 +6490,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/TurrisSaltus6F/border.bin",
       "blockdata_filepath": "data/layouts/TurrisSaltus6F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASA_TURNI",
+      "name": "CasaTurni_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CasaTurni/border.bin",
+      "blockdata_filepath": "data/layouts/CasaTurni/map.bin"
     }
   ]
 }

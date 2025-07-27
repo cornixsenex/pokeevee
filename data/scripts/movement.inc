@@ -144,6 +144,13 @@ Common_Movement_WalkDown3:
     walk_down
 	step_end
 
+Common_Movement_WalkDown4:
+	walk_down
+	walk_down
+    walk_down
+    walk_down
+	step_end
+
 Common_Movement_WalkDown5:
 	walk_down
 	walk_down
@@ -170,7 +177,6 @@ Common_Movement_WalkDown7:
 	walk_down
     walk_down
 	step_end
-
 
 Common_Movement_WalkRight:
 	walk_right
@@ -306,8 +312,6 @@ Common_Movement_WalkLeft7:
 	walk_left
 	step_end
 
-
-
 Common_Movement_WalkLeft8:
     walk_left
     walk_left
@@ -343,7 +347,6 @@ Common_Movement_WalkLeft10:
     walk_left
     walk_left
     step_end
-
 
 @ Cornix Customs
 Common_Movement_WalkNorthEast::

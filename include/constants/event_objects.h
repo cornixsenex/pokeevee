@@ -295,10 +295,11 @@
 #define OBJ_EVENT_GFX_LENORA				     287
 #define OBJ_EVENT_GFX_ROOD   				     288
 #define OBJ_EVENT_GFX_KANDO   				     289
+#define OBJ_EVENT_GFX_BILL   				     290
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        290
+#define NUM_OBJ_EVENT_GFX                        291
 
 
 // These are dynamic object gfx ids.
@@ -472,6 +473,7 @@
 #define OBJ_EVENT_PAL_TAG_LENORA          	      0x114F
 #define OBJ_EVENT_PAL_TAG_ROOD          	      0x1150
 #define OBJ_EVENT_PAL_TAG_KANDO          	      0x1151
+#define OBJ_EVENT_PAL_TAG_BILL          	      0x1152
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
