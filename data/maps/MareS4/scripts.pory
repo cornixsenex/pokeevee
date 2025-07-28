@@ -183,6 +183,7 @@ script MareS4_Script_Rutulian1 {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN1)
 	//set flag
+	setvar (VAR_TEMP_A, 0)
 	setflag (FLAG_MARES4_RUTULIAN1)
 	//fin
 	end
@@ -216,6 +217,7 @@ script MareS4_Script_Trigger_Rutulian1A {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN1)
 	//set flag
+	setvar (VAR_TEMP_A, 0)
 	setflag (FLAG_MARES4_RUTULIAN1)
 	//fin
 	releaseall
@@ -252,6 +254,7 @@ script MareS4_Script_Trigger_Rutulian1B {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN1)
 	//set flag
+	setvar (VAR_TEMP_A, 0)
 	setflag (FLAG_MARES4_RUTULIAN1)
 	//fin
 	releaseall
@@ -288,6 +291,7 @@ script MareS4_Script_Trigger_Rutulian1C {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN1)
 	//set flag
+	setvar (VAR_TEMP_A, 0)
 	setflag (FLAG_MARES4_RUTULIAN1)
 	//fin
 	releaseall
@@ -318,6 +322,7 @@ script MareS4_Script_Rutulian2 {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN2)
 	//set flag
+	setvar (VAR_TEMP_B, 0)
 	setflag (FLAG_MARES4_RUTULIAN2)
 	//fin
 	end
@@ -351,6 +356,7 @@ script MareS4_Script_Trigger_Rutulian2A {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN2)
 	//set flag
+	setvar (VAR_TEMP_B, 0)
 	setflag (FLAG_MARES4_RUTULIAN2)
 	//fin
 	releaseall
@@ -387,6 +393,7 @@ script MareS4_Script_Trigger_Rutulian2B {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN2)
 	//set flag
+	setvar (VAR_TEMP_B, 0)
 	setflag (FLAG_MARES4_RUTULIAN2)
 	//fin
 	releaseall
@@ -413,6 +420,7 @@ script MareS4_Script_Rutulian3 {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN3)
 	//set flag
+	setvar (VAR_TEMP_C, 0)
 	setflag (FLAG_MARES4_RUTULIAN3)
 	//fin
 	end
@@ -446,6 +454,7 @@ script MareS4_Script_Trigger_Rutulian3A {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN3)
 	//set flag
+	setvar (VAR_TEMP_C, 0)
 	setflag (FLAG_MARES4_RUTULIAN3)
 	//fin
 	releaseall
@@ -482,6 +491,7 @@ script MareS4_Script_Trigger_Rutulian3B {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN3)
 	//set flag
+	setvar (VAR_TEMP_C, 0)
 	setflag (FLAG_MARES4_RUTULIAN3)
 	//fin
 	releaseall
@@ -510,6 +520,7 @@ script MareS4_Script_Rutulian4 {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN4)
 	//set flag
+	setvar (VAR_TEMP_D, 0)
 	setflag (FLAG_MARES4_RUTULIAN4)
 	//fin
 	end
@@ -545,6 +556,7 @@ script MareS4_Script_Trigger_Rutulian4A {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN4)
 	//set flag
+	setvar (VAR_TEMP_D, 0)
 	setflag (FLAG_MARES4_RUTULIAN4)
 	//fin
 	releaseall
@@ -581,6 +593,7 @@ script MareS4_Script_Trigger_Rutulian4B {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN4)
 	//set flag
+	setvar (VAR_TEMP_D, 0)
 	setflag (FLAG_MARES4_RUTULIAN4)
 	//fin
 	releaseall
@@ -617,6 +630,7 @@ script MareS4_Script_Trigger_Rutulian4C {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN4)
 	//set flag
+	setvar (VAR_TEMP_D, 0)
 	setflag (FLAG_MARES4_RUTULIAN4)
 	//fin
 	releaseall
@@ -653,6 +667,7 @@ script MareS4_Script_Trigger_Rutulian4D {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN4)
 	//set flag
+	setvar (VAR_TEMP_D, 0)
 	setflag (FLAG_MARES4_RUTULIAN4)
 	//fin
 	releaseall
@@ -683,6 +698,7 @@ script MareS4_Script_Trigger_Rutulian4E {
 	setobjectmovementtype (LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES4_RUTULIAN4)
 	//set flag
+	setvar (VAR_TEMP_D, 0)
 	setflag (FLAG_MARES4_RUTULIAN4)
 	//fin
 	releaseall
