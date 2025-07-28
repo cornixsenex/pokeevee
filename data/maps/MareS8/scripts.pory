@@ -23,6 +23,12 @@ mapscripts MareS8_MapScripts {
 		if (var(VAR_AENEID_STATE) < 7 && var(VAR_AENEID_STATE) > 2) {
 			call (MareS8_Script_ShowRutulianWar)
 		}
+		//RetR search
+		if (var(VAR_AENEID_STATE) == 10) {
+			setobjectxyperm (LOCALID_MARES8_BEROE, 19, 22)
+			setobjectmovementtype (LOCALID_MARES8_BEROE, MOVEMENT_TYPE_FACE_UP)
+		}
+
     }
 
 }
@@ -223,6 +229,7 @@ script MareS8_Script_ArriveHesperia {
         load_field_pic (FIELD_PIC_AENEAS, 190, 98)
         msgbox (MareS8_Text_Aeneas_GetWorse)
         destroy_field_pic (FIELD_PIC_AENEAS)
+		playbgm (MUS_ENCOUNTER_AQUA, TRUE)
         //face player et aeneas
         applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
         applymovement (LOCALID_MARES8_AENEAS, Common_Movement_FaceUp)
@@ -265,6 +272,7 @@ script MareS8_Script_ArriveHesperia {
         msgbox (MareS8_Text_RutulianAmbushPre)
         destroy_field_pic (FIELD_PIC_RUTULIAN)
 		closemessage
+		playbgm (MUS_SOOTOPOLIS, TRUE)
         //R attacks
         multi_2_vs_2 (TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost1, TRAINER_RUTULIAN, MareS8_Text_RutulianAmbushLost2, PARTNER_AENEAS)
         //R post - we will drive these invaders from the sea
@@ -330,7 +338,13 @@ script MareS8_Script_Remus {
 
 script MareS8_Script_Beroe {
     faceplayer
-    msgbox (MareS8_Text_BeroeDuringWar)
+	load_field_pic (FIELD_PIC_BEROE, 190, 98)
+	if (var(VAR_AENEID_STATE) < 9) {
+		msgbox (MareS8_Text_BeroeDuringWar)
+	} else {
+		msgbox (MareS8_Text_BeroeDuringSearch)
+	}
+	destroy_field_pic (FIELD_PIC_BEROE)
     closemessage
     applymovement (LOCALID_MARES8_BEROE, Common_Movement_FaceUp)
     waitmovement (0)
@@ -339,24 +353,30 @@ script MareS8_Script_Beroe {
 
 script MareS8_Script_Aeneas {
     faceplayer
+	load_field_pic (FIELD_PIC_AENEAS, 190, 98)
     msgbox (MareS8_Text_AeneasDuringWar)
     closemessage
+	destroy_field_pic (FIELD_PIC_AENEAS)
     call (Common_Script_Unfaceplayer)
     end
 }
 
 script MareS8_Script_Faustulus {
     faceplayer
+	load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
     msgbox (MareS8_Text_FaustulusDuringWar)
     closemessage
+	destroy_field_pic (FIELD_PIC_FAUSTULUS)
     call (Common_Script_Unfaceplayer)
     end
 }
 
 script MareS8_Script_Ascanius {
     faceplayer
+	load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
     msgbox (MareS8_Text_AscaniusDuringWar)
     closemessage
+	destroy_field_pic (FIELD_PIC_ASCANIUS)
     call (Common_Script_Unfaceplayer)
     end
 }
@@ -1117,5 +1137,10 @@ text MareS8_Text_RutuliDoublePost {
 
 text MareS8_Text_RutuliBlock {
 	format("Isla holy Hesperia beya.\p Taoutsider welcomena. Tago!")
+}
+
+text MareS8_Text_BeroeDuringSearch {
+	format("The boys, Romulus and Remus, are gone!
+			I hope they turn up soon...It's terrible!")
 }
 

@@ -486,9 +486,11 @@ script MareS9_Script_Aeneas {
 }
 
 script MareS9_Script_Ascanius {
+	load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
     msgbox (MareS9_Text_Ascanius1)
     faceplayer
     msgbox (MareS9_Text_Ascanius2)
+	destroy_field_pic (FIELD_PIC_ASCANIUS)
     closemessage
     call (Common_Script_Unfaceplayer)
     end
@@ -512,6 +514,7 @@ script MareS9_Script_Remus {
 
 script MareS9_Script_Faustulus {
     faceplayer
+	load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
     if (var(VAR_AENEID_STATE) == 0) {
         msgbox (MareS9_Text_Faustulus1)
     } elif (var(VAR_AENEID_STATE) == 1) {
@@ -519,6 +522,7 @@ script MareS9_Script_Faustulus {
     } else {
         msgbox (MareS9_Text_Faustulus3)
     }
+    destroy_field_pic (FIELD_PIC_FAUSTULUS)
     closemessage
     call (Common_Script_Unfaceplayer)
     end

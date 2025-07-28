@@ -39,65 +39,14 @@ mapscripts MareS4_MapScripts {
         if (var(VAR_AENEID_STATE) == 9) {
             call (MareS4_Script_SetupRetRLostScene)
         }
+		//Show RetR search
+		if (var(VAR_AENEID_STATE) == 10) {
+			call (MareS4_Script_ShowRetRSearch)
+		}
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AENEID_STATE, 9: MareS4_Script_RetRLostScene
     ]
-}
-
-script MareS4_Script_SetupRetRLostScene {
-    setobjectxyperm (LOCALID_MARES4_AENEAS, 68, 61)
-    setobjectxyperm (LOCALID_MARES4_FAUSTULUS, 69, 61)
-    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 68, 65)
-    setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_UP)
-    setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP)
-    setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_FACE_UP)
-    return
-}
-
-script MareS4_Script_RetRLostScene {
-    lockall
-    setvar (VAR_AENEID_STATE, 10)
-    //alert player
-    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
-    waitmovement (0)
-    //player to AetF
-    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
-    waitmovement (0)
-    //A: Good job
-    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
-    msgbox (MareS4_Text_Aeneas_GoodJob)
-    destroy_field_pic (FIELD_PIC_AENEAS)
-    //As: HELP! (offscreen)
-    load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
-    msgbox ("HELP!")
-    destroy_field_pic (FIELD_PIC_ASCANIUS)
-    closemessage
-    //altert all
-    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
-    applymovement (LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark)
-    applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark)
-    waitmovement (0)
-    //face AetF down
-    applymovement (LOCALID_MARES4_AENEAS, Common_Movement_FaceDown)
-    applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_FaceDown)
-    waitmovement (0)
-    //enter As
-    applymovement (LOCALID_MARES4_ASCANIUS, Common_Movement_WalkUp3)
-    waitmovement (0)
-    //As: Oh the horror!
-    //A: What's wrong
-    //RetR are gone
-    //Alert all
-    //A: Terrible.
-    //F: They must have run off during the battle
-    //As: Or captured by the fleeing natives
-    //A we must split up and find them - Asc the beach, F the northern hills and player the southern. I'll wait here in case they come here or if any of those natives try returning
-    //Exeunt Asc et F
-    //Face A down
-    //fin
-    releaseall
-    end
 }
 
 script MareS4_Script_Transition_MareTropicum {
@@ -190,6 +139,26 @@ script MareS4_Script_SetupRutuli {
 		setvar (VAR_TEMP_E, 2)
 	}
 	return
+}
+
+script MareS4_Script_SetupRetRLostScene {
+    setobjectxyperm (LOCALID_MARES4_AENEAS, 69, 61)
+    setobjectxyperm (LOCALID_MARES4_FAUSTULUS, 67, 61)
+    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 69, 65)
+    setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_FACE_UP)
+    return
+}
+
+script MareS4_Script_ShowRetRSearch {
+	setobjectxyperm (LOCALID_MARES4_AENEAS, 69, 61)
+    setobjectxyperm (LOCALID_MARES4_FAUSTULUS, 53, 77)
+    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 42, 74)
+    setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT)
+    setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP)
+    return
 }
 
 script MareS4_Script_Rutulian1 {
@@ -1730,6 +1699,130 @@ script MareS4_Script_Trigger_Doorguards {
 	end
 }
 
+script MareS4_Script_RetRLostScene {
+    lockall
+    setvar (VAR_AENEID_STATE, 10)
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //player to AetF
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement (0)
+    //A: Good job
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS4_Text_Aeneas_GoodJob)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+    //As: HELP! (offscreen)
+    load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
+    msgbox ("HELP!")
+    destroy_field_pic (FIELD_PIC_ASCANIUS)
+    closemessage
+    //altert all
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //face AetF down
+    applymovement (LOCALID_MARES4_AENEAS, Common_Movement_FaceDown)
+    applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_FaceDown)
+    waitmovement (0)
+    //enter As
+    applymovement (LOCALID_MARES4_ASCANIUS, Common_Movement_WalkUp3)
+    waitmovement (0)
+    //As: Oh the horror!
+    load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
+    msgbox (MareS4_Text_Ascanius_Help)
+    destroy_field_pic (FIELD_PIC_ASCANIUS)
+    //A: What's wrong
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS4_Text_Aeneas_WhatsWrong)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+    //RetR are gone
+    load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
+    msgbox (MareS4_Text_Ascanius_RetRGone)
+    destroy_field_pic (FIELD_PIC_ASCANIUS)
+    //Alert all
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //A: Terrible.
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS4_Text_Aeneas_Terrible)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+    //F: They must have run off during the battle
+    load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+    msgbox (MareS4_Text_Faustulus_RunOff)
+    destroy_field_pic (FIELD_PIC_FAUSTULUS)
+    //As: Or captured by the fleeing natives
+    load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
+    msgbox (MareS4_Text_Ascanius_OrCaptured)
+    destroy_field_pic (FIELD_PIC_ASCANIUS)
+    //A we must split up and find them - Asc the beach, F the northern hills and player the southern. I'll wait here in case they come here or if any of those natives try returning
+	load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS4_Text_Aeneas_TakeAction)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+	closemessage
+    //Exeunt Asc et F
+	applymovement (LOCALID_MARES4_ASCANIUS, Common_Movement_WalkDown6)
+	applymovement (LOCALID_MARES4_FAUSTULUS, Common_Movement_WalkDown6)
+	waitmovement (0)
+	//A sends player off
+	applymovement (LOCALID_MARES4_AENEAS, Common_Movement_FaceUp)
+	waitmovement (0)
+    load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+    msgbox (MareS4_Text_Aeneas_Search)
+    destroy_field_pic (FIELD_PIC_AENEAS)
+	closemessage
+	applymovement (LOCALID_MARES4_AENEAS, Common_Movement_FaceDown)
+	waitmovement (0)
+	//Setup RetR search
+	removeobject (LOCALID_MARES4_FAUSTULUS)
+	removeobject (LOCALID_MARES4_ASCANIUS)
+	call (MareS4_Script_ShowRetRSearch)
+	addobject (LOCALID_MARES4_FAUSTULUS)
+	addobject (LOCALID_MARES4_ASCANIUS)
+    //fin
+    releaseall
+    end
+}
+
+script MareS4_Script_Aeneas {
+	faceplayer
+	//RetR search
+	if (var(VAR_AENEID_STATE) == 10) {
+		load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+		msgbox (MareS4_Text_Aeneas_Search)
+		destroy_field_pic (FIELD_PIC_AENEAS)
+		closemessage
+	}
+	call (Common_Script_Unfaceplayer)
+}
+
+script MareS4_Script_Faustulus {
+	faceplayer
+	//RetR search
+	if (var(VAR_AENEID_STATE) == 10) {
+		load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+		msgbox (MareS4_Text_Faustulus_Search)
+		destroy_field_pic (FIELD_PIC_FAUSTULUS)
+		closemessage
+	}
+	call (Common_Script_Unfaceplayer)
+}
+
+script MareS4_Script_Ascanius {
+	faceplayer
+	//RetR search
+	if (var(VAR_AENEID_STATE) == 10) {
+		load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
+		msgbox (MareS4_Text_Ascianus_Search)
+		destroy_field_pic (FIELD_PIC_ASCANIUS)
+		closemessage
+	}
+	call (Common_Script_Unfaceplayer)
+}
+
 //When we Rutuli fight together we fight stronger
 text MareS4_Text_Rutuli56Pre1 {
 	format("Warutuli wafight wastrongya.")
@@ -1781,7 +1874,59 @@ text MareS4_Text_DoorguardPost {
 }
 
 text MareS4_Text_Aeneas_GoodJob {
-    format("")
+    format("My lad! Good job, you've ran the savages
+			off the island. I saw the last of them
+			jump in the sea like they were being chased
+			by swarms of hornets! Now we can begin...")
 }
 
+text MareS4_Text_Ascanius_Help {
+	format("Aeneas! Come quick! Something terrible
+			has happened!")
+}
 
+text MareS4_Text_Aeneas_WhatsWrong {
+	format("Ascianus, what is is?")
+}
+
+text MareS4_Text_Ascanius_RetRGone {
+	format("My boys, Remus and Romulus, are gone!")
+}
+
+text MareS4_Text_Aeneas_Terrible {
+	format("They're gone? That's terrible! They must be found.")
+}
+
+//They probably just ran off to play and got lost
+text MareS4_Text_Faustulus_RunOff {
+	format("Sarun off likely saplay and salostya.")
+}
+
+text MareS4_Text_Ascanius_OrCaptured {
+	format("Or captured by the enemy! Or dead!")
+}
+
+text MareS4_Text_Aeneas_TakeAction {
+	format("This is time for action, not blind panic.
+			Ascianus I know it must be hard
+			but regain your composure and then search
+			the beaches for any sign of the boys.
+			Faustulus, you will search the northern half
+			of the island. {PLAYER} search the southern half.
+			I'll wait here in case they, or the natives,
+			decide to return to the chieftain's hut.")
+}
+
+text MareS4_Text_Aeneas_Search {
+	format("Be off! Hurry! There is no time to lose!")
+}
+
+text MareS4_Text_Ascianus_Search {
+	format("Oh Remus! Romulus! Come back to me!
+			We need to find my boys! I'm so worried!")
+}
+
+//I know the boys are ok, I know it in my heart. They're just playing around somewhere. There are so many places for them to be hiding. I'm sure we'll find them behind some rock, or up some tree, or in a cave around here.
+text MareS4_Text_Faustulus_Search {
+	format("Maheart know satwins ok beya. Around saplay sabeya. Many places beya sahide. Behind rock, up tree, in cave wafindya.")
+}

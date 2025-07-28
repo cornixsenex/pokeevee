@@ -208,7 +208,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Aeneas",
       "flag": "0"
     },
     {
@@ -218,11 +218,11 @@
       "y": 63,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
+      "movement_range_x": 4,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Faustulus",
       "flag": "0"
     },
     {
@@ -232,11 +232,11 @@
       "y": 63,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 5,
+      "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS4_Script_Ascanius",
       "flag": "0"
     }
   ],
