@@ -154,7 +154,7 @@ script MareS4_Script_SetupRetRLostScene {
 script MareS4_Script_ShowRetRSearch {
 	setobjectxyperm (LOCALID_MARES4_AENEAS, 69, 61)
     setobjectxyperm (LOCALID_MARES4_FAUSTULUS, 53, 77)
-    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 42, 74)
+    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 42, 72)
     setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT)
     setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP)
@@ -1424,6 +1424,7 @@ script MareS4_Script_Trigger_Rutuli56Double_Template {
 	msgbox (MareS4_Text_Rutuli56Pre2)
 	closemessage
 	//do double battle
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	trainerbattle_two_trainers (TRAINER_RUTULIAN, MareS4_Text_Rutuli56Lost1, TRAINER_RUTULIAN, MareS4_Text_Rutuli56Lost2)
 	//RD post
 msgbox (MareS4_Text_Rutuli56Post)
@@ -1560,12 +1561,10 @@ msgbox (MareS4_Text_Rutuli56Post)
 	end
 }
 
-
 //Doorguard L
 script MareS4_Script_Rutulian7 {
 	//setup
 	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//music
 	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
 	//alert both
@@ -1617,7 +1616,6 @@ script MareS4_Script_Rutulian7 {
 script MareS4_Script_Rutulian8 {
 	//setup
 	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//music
 	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
 	//alert both
@@ -1668,7 +1666,6 @@ script MareS4_Script_Rutulian8 {
 script MareS4_Script_Trigger_Doorguards {
 	//setup
 	lockall
-	setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//music
 	playbgm (MUS_ENCOUNTER_AQUA, FALSE)
 	//alert both
@@ -1716,7 +1713,6 @@ script MareS4_Script_Trigger_Doorguards {
 }
 
 script MareS4_Script_RetRLostScene {
-    lockall
     setvar (VAR_AENEID_STATE, 10)
     //alert player
     applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
@@ -1799,7 +1795,6 @@ script MareS4_Script_RetRLostScene {
 	addobject (LOCALID_MARES4_FAUSTULUS)
 	addobject (LOCALID_MARES4_ASCANIUS)
     //fin
-    releaseall
     end
 }
 
@@ -1824,7 +1819,6 @@ script MareS4_Script_Faustulus {
 		destroy_field_pic (FIELD_PIC_FAUSTULUS)
 		closemessage
 	}
-	call (Common_Script_Unfaceplayer)
 }
 
 script MareS4_Script_Ascanius {
@@ -1836,7 +1830,6 @@ script MareS4_Script_Ascanius {
 		destroy_field_pic (FIELD_PIC_ASCANIUS)
 		closemessage
 	}
-	call (Common_Script_Unfaceplayer)
 }
 
 //When we Rutuli fight together we fight stronger

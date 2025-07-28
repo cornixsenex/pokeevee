@@ -2777,7 +2777,7 @@ static const struct TrainerMon sParty_Rutulian[] = {
     {
     .iv = 0,
     .lvl = 3,
-    .species = SPECIES_PUPITAR,
+    .species = SPECIES_PIPLUP,
     },
     {
     .iv = 0,

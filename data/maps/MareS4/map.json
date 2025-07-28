@@ -536,15 +536,6 @@
       "elevation": 0,
       "var": "VAR_TEMP_D",
       "var_value": "1",
-      "script": "MareS4_Script_Trigger_Rutulian4B"
-    },
-    {
-      "type": "trigger",
-      "x": 64,
-      "y": 73,
-      "elevation": 0,
-      "var": "VAR_TEMP_D",
-      "var_value": "1",
       "script": "MareS4_Script_Trigger_Rutulian4C"
     },
     {
