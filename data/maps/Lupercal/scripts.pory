@@ -1,1 +1,86 @@
-mapscripts Lupercal_MapScripts {}
+
+
+mapscripts Lupercal_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+		//Setup for Lupercal Scenea
+		if (var(VAR_AENEID_STATE) == 10) {
+			call (Lupercal_Script_ShowLupercalScene)
+		}
+	}
+
+}
+
+script Lupercal_Script_ShowLupercalScene {
+	setobjectxyperm (LOCALID_LUPERCAL_LUPA, 6, 4)
+	setobjectxyperm (LOCALID_LUPERCAL_ROMULUS, 7, 4)
+	setobjectxyperm (LOCALID_LUPERCAL_REMUS, 5, 4)
+	setobjectmovementtype (LOCALID_LUPERCAL_LUPA, MOVEMENT_TYPE_FACE_UP)
+	setobjectmovementtype (LOCALID_LUPERCAL_ROMULUS, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+	setobjectmovementtype (LOCALID_LUPERCAL_REMUS, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+
+	return
+}
+
+script Lupercal_Script_LupercalSceneA {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	call (Lupercal_Script_LupercalScene)
+}
+
+script Lupercal_Script_LupercalSceneB {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	call (Lupercal_Script_LupercalScene)
+}
+
+script Lupercal_Script_LupercalScene {
+	//Into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//beat
+	delay (45)
+	//alert Lupa
+	applymovement (LOCALID_LUPERCAL_LUPA, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Turn Lupa
+	applymovement (LOCALID_LUPERCAL_LUPA, Common_Movement_FaceDown)
+	waitmovement (0)
+	applymovement (LOCALID_LUPERCAL_LUPA, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Lupa growl
+	playmoncry (SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+	delay (40)
+	waitmoncry
+	//Alert and pause RetR suckling
+	lockall
+	applymovement (LOCALID_LUPERCAL_ROMULUS, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_LUPERCAL_REMUS, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Lupa approach P
+	applymovement (LOCALID_LUPERCAL_LUPA, Common_Movement_WalkDown)
+	waitmovement (0)
+	//Lupa growl et battle
+	playmoncry (SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	//special (DoLupaBattle)
+	//waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_LUPERCAL_LUPA)
+	//Enter F
+	//F: Boys you're all right!
+	//F approach
+	//F: We were so afraid for you, lets get back now
+	//exeunt
+	//set var
+	//fin
+	releaseall
+	end
+
+}
