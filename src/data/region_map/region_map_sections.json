@@ -1576,18 +1576,18 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_AQUA_HIDEOUT",
-      "name": "AQUA HIDEOUT",
-      "x": 19,
-      "y": 3,
+      "id": "MAPSEC_SALINAE",
+      "name": "SALINAE",
+      "x": 0,
+      "y": 0,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_MAGMA_HIDEOUT",
-      "name": "MAGMA HIDEOUT",
-      "x": 6,
-      "y": 3,
+      "id": "MAPSEC_LUPERCAL",
+      "name": "LVPERCAL",
+      "x": 0,
+      "y": 0,
       "width": 1,
       "height": 1
     },
@@ -2014,6 +2014,9 @@
       "y": 0,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_MAGMA_HIDEOUT"
     }
   ]
 }

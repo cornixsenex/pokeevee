@@ -1811,13 +1811,11 @@ script MareS4_Script_Aeneas {
 }
 
 script MareS4_Script_Faustulus {
-	faceplayer
 	//RetR search
 	if (var(VAR_AENEID_STATE) == 10) {
 		load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
-		msgbox (MareS4_Text_Faustulus_Search)
+		msgbox (MareS4_Text_Faustulus_Search, MSGBOX_NPC)
 		destroy_field_pic (FIELD_PIC_FAUSTULUS)
-		closemessage
 	}
 }
 
@@ -1826,9 +1824,8 @@ script MareS4_Script_Ascanius {
 	//RetR search
 	if (var(VAR_AENEID_STATE) == 10) {
 		load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
-		msgbox (MareS4_Text_Ascianus_Search)
+		msgbox (MareS4_Text_Ascianus_Search, MSGBOX_NPC)
 		destroy_field_pic (FIELD_PIC_ASCANIUS)
-		closemessage
 	}
 }
 

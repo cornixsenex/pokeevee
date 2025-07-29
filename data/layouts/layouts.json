@@ -6500,6 +6500,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/CasaTurni/border.bin",
       "blockdata_filepath": "data/layouts/CasaTurni/map.bin"
+    },
+    {
+      "id": "LAYOUT_SALINAE",
+      "name": "Salinae_Layout",
+      "width": 29,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Salinae/border.bin",
+      "blockdata_filepath": "data/layouts/Salinae/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUPERCAL",
+      "name": "Lupercal_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Lupercal/border.bin",
+      "blockdata_filepath": "data/layouts/Lupercal/map.bin"
     }
   ]
 }

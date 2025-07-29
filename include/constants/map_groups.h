@@ -729,6 +729,8 @@
 #define MAP_TURRIS_SALTUS5F         (10 | (32 << 8))
 #define MAP_TURRIS_SALTUS6F         (11 | (32 << 8))
 #define MAP_CASA_TURNI              (12 | (32 << 8))
+#define MAP_LUPERCAL                (13 | (32 << 8))
+#define MAP_SALINAE                 (14 | (32 << 8))
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (33 << 8))

@@ -1658,3 +1658,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/TurrisSaltus3F/scripts.inc"
 
 	.include "data/maps/CasaTurni/scripts.inc"
+
+	.include "data/maps/Lupercal/scripts.inc"
+
+	.include "data/maps/Salinae/scripts.inc"

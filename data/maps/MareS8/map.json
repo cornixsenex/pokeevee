@@ -200,7 +200,22 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 41,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_LUPERCAL",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SALINAE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
     {
       "type": "trigger",
