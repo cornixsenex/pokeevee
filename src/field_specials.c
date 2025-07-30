@@ -5989,22 +5989,48 @@ void DoShinyMareepBattle(void)
 	u16 thunderwave = MOVE_THUNDER_WAVE;
 	u16 recover = MOVE_RECOVER;
 	bool32 makeShiny = TRUE;
-
-
 	mon = &gEnemyParty[0];
 	//Create ScriptedWildMon
-
     ZeroEnemyPartyMons();
-
 	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
 	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-	
 	//Make Shiny Mareep
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &thunder);
 	SetMonData(mon, MON_DATA_MOVE2, &thunderbolt);
 	SetMonData(mon, MON_DATA_MOVE3, &thunderwave);
 	SetMonData(mon, MON_DATA_MOVE4, &recover);
+	
+	//DoWildBattle
+    BattleSetup_StartScriptedWildBattle();
+    ScriptContext_Stop();
+}
+
+void DoLupaBattle(void)
+{
+	//SetWildBattle
+	u16 species = SPECIES_MIGHTYENA;
+	u8 level = 18;
+    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
+	struct Pokemon *mon;
+	u16  move1= MOVE_CRUNCH;
+	u16  move2= MOVE_SUCKER_PUNCH;
+	u16  move3= MOVE_LAST_RESORT;
+	u16  move4= MOVE_MILK_DRINK;
+	bool32 makeShiny = TRUE;
+	mon = &gEnemyParty[0];
+    StringCopy(nickname, gText_Quiz);
+	//Create ScriptedWildMon
+    ZeroEnemyPartyMons();
+	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	//Make Shiny Mareep
+	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+	SetMonData(mon, MON_DATA_MOVE1, &move1);
+	SetMonData(mon, MON_DATA_MOVE2, &move2);
+	SetMonData(mon, MON_DATA_MOVE3, &move3);
+	SetMonData(mon, MON_DATA_MOVE4, &move4);   
+    SetMonData(mon, MON_DATA_NICKNAME, nickname);
 	
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();

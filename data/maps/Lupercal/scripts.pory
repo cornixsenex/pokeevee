@@ -69,8 +69,8 @@ script Lupercal_Script_LupercalScene {
 	playmoncry (SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
 	waitmoncry
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
-	//special (DoLupaBattle)
-	//waitstate
+	special (DoLupaBattle)
+	waitstate
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	removeobject (LOCALID_LUPERCAL_LUPA)
 	//Enter F

@@ -102,6 +102,10 @@ Lupercal_Script_LupercalScene::
 	waitmoncry
 # 71 "data/maps/Lupercal/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 72 "data/maps/Lupercal/scripts.pory"
+	special DoLupaBattle
+# 73 "data/maps/Lupercal/scripts.pory"
+	waitstate
 # 74 "data/maps/Lupercal/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 75 "data/maps/Lupercal/scripts.pory"
