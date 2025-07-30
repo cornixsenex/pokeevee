@@ -238,6 +238,48 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS4_Script_Ascanius",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES4_ROMULUS",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
+      "x": 57,
+      "y": 63,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS4_Script_Romulus",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES4_REMUS",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": 58,
+      "y": 63,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS4_Script_Remus",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES4_BEROE",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 58,
+      "y": 62,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS4_Script_Beroe",
+      "flag": "0"
     }
   ],
   "warp_events": [

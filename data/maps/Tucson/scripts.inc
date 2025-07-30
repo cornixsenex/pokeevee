@@ -375,7 +375,7 @@ Tucson_Script_Paris_3:
 # 299 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT
 # 301 "data/maps/Tucson/scripts.pory"
-	compare VAR_AENEID_STATE, 1
+	compare VAR_AENEID_STATE, 12
 	goto_if_lt Tucson_Script_Paris_18
 Tucson_Script_Paris_17:
 # 304 "data/maps/Tucson/scripts.pory"
@@ -414,7 +414,7 @@ Tucson_Script_Paris_8:
 
 Tucson_Script_Paris_11:
 # 288 "data/maps/Tucson/scripts.pory"
-	compare VAR_AENEID_STATE, 69
+	compare VAR_AENEID_STATE, 12
 	goto_if_lt Tucson_Script_Paris_14
 # 294 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris2, MSGBOX_DEFAULT
@@ -720,7 +720,7 @@ Tucson_Text_Nestor5::
 
 Tucson_Text_Hector::
 # 410 "data/maps/Tucson/scripts.pory"
-	.string "It is a great honor and true privaledge\n"
+	.string "It is a great honor and true privledge\n"
 	.string "to be here in the great house of Nestor\l"
 	.string "to see the wedding of lovely Helen\l"
 	.string "whether my brother is the groom or not.$"
@@ -819,7 +819,7 @@ Tucson_Text_Menelaus_GiveInvites::
 Tucson_Text_Menelaus_OnAgamemnon::
 # 462 "data/maps/Tucson/scripts.pory"
 	.string "My dear older brother Agamemnon lives\n"
-	.string "with his family in Aldeon.$"
+	.string "with his family in Albion Town.$"
 
 Tucson_Text_Menelaus_OnUlysses::
 # 466 "data/maps/Tucson/scripts.pory"

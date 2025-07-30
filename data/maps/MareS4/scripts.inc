@@ -1,7 +1,7 @@
 MareS4_MapScripts::
 # 27 "data/maps/MareS4/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION
-# 47 "data/maps/MareS4/scripts.pory"
+# 55 "data/maps/MareS4/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, MareS4_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
@@ -22,7 +22,15 @@ MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_9:
 # 43 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
-	goto_if_eq MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_12
+	goto_if_eq MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_13
+MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_12:
+# 47 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 11
+	goto_if_eq MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_16
+MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_15:
+# 51 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 12
+	goto_if_eq MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_18
 	return
 
 MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -46,1048 +54,1056 @@ MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
 	call MareS4_Script_SetupRetRLostScene
 	goto MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_9
 
-MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_12:
+MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_13:
 # 44 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_ShowRetRSearch
+	goto MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_12
+
+MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_16:
+# 48 "data/maps/MareS4/scripts.pory"
+	call MareS4_Script_ShowRetRFound
+	goto MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_15
+
+MareS4_MapScripts_MAP_SCRIPT_ON_TRANSITION_18:
+# 52 "data/maps/MareS4/scripts.pory"
+	call MareS4_Script_ShowAeneasGone
 	return
 
 MareS4_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 48 "data/maps/MareS4/scripts.pory"
+# 56 "data/maps/MareS4/scripts.pory"
 	map_script_2 VAR_AENEID_STATE, 9, MareS4_Script_RetRLostScene
 	.2byte 0
 
 
 MareS4_Script_Transition_MareTropicum::
-# 53 "data/maps/MareS4/scripts.pory"
+# 61 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 54 "data/maps/MareS4/scripts.pory"
+# 62 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 55 "data/maps/MareS4/scripts.pory"
+# 63 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_MareTranquillum::
-# 59 "data/maps/MareS4/scripts.pory"
+# 67 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 60 "data/maps/MareS4/scripts.pory"
+# 68 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 61 "data/maps/MareS4/scripts.pory"
+# 69 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_MareSubtropicum::
-# 65 "data/maps/MareS4/scripts.pory"
+# 73 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 66 "data/maps/MareS4/scripts.pory"
+# 74 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 67 "data/maps/MareS4/scripts.pory"
+# 75 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_IslaHerbaBona::
-# 71 "data/maps/MareS4/scripts.pory"
+# 79 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 72 "data/maps/MareS4/scripts.pory"
+# 80 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 73 "data/maps/MareS4/scripts.pory"
+# 81 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_IslaHesperia::
-# 77 "data/maps/MareS4/scripts.pory"
+# 85 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 78 "data/maps/MareS4/scripts.pory"
+# 86 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 79 "data/maps/MareS4/scripts.pory"
+# 87 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_Transition_ScyllaCharybdis::
-# 83 "data/maps/MareS4/scripts.pory"
+# 91 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_5, 6
-# 84 "data/maps/MareS4/scripts.pory"
+# 92 "data/maps/MareS4/scripts.pory"
 	special TransitionMapMusic
-# 85 "data/maps/MareS4/scripts.pory"
+# 93 "data/maps/MareS4/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS4_Script_SetupRutuli::
-# 92 "data/maps/MareS4/scripts.pory"
+# 100 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 8
 	goto_if_lt MareS4_Script_SetupRutuli_2
 MareS4_Script_SetupRutuli_1:
-# 99 "data/maps/MareS4/scripts.pory"
+# 107 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN1, MareS4_Script_SetupRutuli_5
 MareS4_Script_SetupRutuli_4:
-# 105 "data/maps/MareS4/scripts.pory"
+# 113 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN2, MareS4_Script_SetupRutuli_8
 MareS4_Script_SetupRutuli_7:
-# 111 "data/maps/MareS4/scripts.pory"
+# 119 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN3, MareS4_Script_SetupRutuli_11
 MareS4_Script_SetupRutuli_10:
-# 117 "data/maps/MareS4/scripts.pory"
+# 125 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN4, MareS4_Script_SetupRutuli_14
 MareS4_Script_SetupRutuli_13:
-# 123 "data/maps/MareS4/scripts.pory"
+# 131 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN5, MareS4_Script_SetupRutuli_17
 MareS4_Script_SetupRutuli_16:
-# 128 "data/maps/MareS4/scripts.pory"
+# 136 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN6, MareS4_Script_SetupRutuli_20
 MareS4_Script_SetupRutuli_19:
-# 132 "data/maps/MareS4/scripts.pory"
+# 140 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN5, MareS4_Script_SetupRutuli_24
 MareS4_Script_SetupRutuli_22:
-# 135 "data/maps/MareS4/scripts.pory"
+# 143 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN5, MareS4_Script_SetupRutuli_29
 MareS4_Script_SetupRutuli_27:
-# 138 "data/maps/MareS4/scripts.pory"
+# 146 "data/maps/MareS4/scripts.pory"
 	goto_if_set FLAG_MARES4_RUTULIAN5, MareS4_Script_SetupRutuli_34
 MareS4_Script_SetupRutuli_32:
 	return
 
 MareS4_Script_SetupRutuli_2:
-# 93 "data/maps/MareS4/scripts.pory"
+# 101 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN7, 67, 59
-# 94 "data/maps/MareS4/scripts.pory"
+# 102 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN8, 69, 59
-# 95 "data/maps/MareS4/scripts.pory"
+# 103 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_FACE_DOWN
-# 96 "data/maps/MareS4/scripts.pory"
+# 104 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_FACE_DOWN
 	goto MareS4_Script_SetupRutuli_1
 
 MareS4_Script_SetupRutuli_5:
-# 100 "data/maps/MareS4/scripts.pory"
+# 108 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_A, 1
-# 101 "data/maps/MareS4/scripts.pory"
+# 109 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN1, 47, 75
-# 102 "data/maps/MareS4/scripts.pory"
+# 110 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_FACE_RIGHT
 	goto MareS4_Script_SetupRutuli_4
 
 MareS4_Script_SetupRutuli_8:
-# 106 "data/maps/MareS4/scripts.pory"
+# 114 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_B, 1
-# 107 "data/maps/MareS4/scripts.pory"
+# 115 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN2, 55, 76
-# 108 "data/maps/MareS4/scripts.pory"
+# 116 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_FACE_DOWN
 	goto MareS4_Script_SetupRutuli_7
 
 MareS4_Script_SetupRutuli_11:
-# 112 "data/maps/MareS4/scripts.pory"
+# 120 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_C, 1
-# 113 "data/maps/MareS4/scripts.pory"
+# 121 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN3, 52, 71
-# 114 "data/maps/MareS4/scripts.pory"
+# 122 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_FACE_UP
 	goto MareS4_Script_SetupRutuli_10
 
 MareS4_Script_SetupRutuli_14:
-# 118 "data/maps/MareS4/scripts.pory"
+# 126 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_D, 1
-# 119 "data/maps/MareS4/scripts.pory"
+# 127 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN4, 67, 73
-# 120 "data/maps/MareS4/scripts.pory"
+# 128 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_FACE_LEFT
 	goto MareS4_Script_SetupRutuli_13
 
 MareS4_Script_SetupRutuli_17:
-# 124 "data/maps/MareS4/scripts.pory"
+# 132 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN5, 60, 64
-# 125 "data/maps/MareS4/scripts.pory"
+# 133 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_FACE_RIGHT
 	goto MareS4_Script_SetupRutuli_16
 
 MareS4_Script_SetupRutuli_20:
-# 129 "data/maps/MareS4/scripts.pory"
+# 137 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN6, 70, 64
-# 130 "data/maps/MareS4/scripts.pory"
+# 138 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN6, MOVEMENT_TYPE_FACE_LEFT
 	goto MareS4_Script_SetupRutuli_19
 
 MareS4_Script_SetupRutuli_23:
-# 133 "data/maps/MareS4/scripts.pory"
+# 141 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_E, 3
 	goto MareS4_Script_SetupRutuli_22
 
 MareS4_Script_SetupRutuli_24:
-# 132 "data/maps/MareS4/scripts.pory"
+# 140 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN6, MareS4_Script_SetupRutuli_23
 	goto MareS4_Script_SetupRutuli_22
 
 MareS4_Script_SetupRutuli_28:
-# 136 "data/maps/MareS4/scripts.pory"
+# 144 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_E, 1
 	goto MareS4_Script_SetupRutuli_27
 
 MareS4_Script_SetupRutuli_29:
-# 135 "data/maps/MareS4/scripts.pory"
+# 143 "data/maps/MareS4/scripts.pory"
 	goto_if_set FLAG_MARES4_RUTULIAN6, MareS4_Script_SetupRutuli_28
 	goto MareS4_Script_SetupRutuli_27
 
 MareS4_Script_SetupRutuli_33:
-# 139 "data/maps/MareS4/scripts.pory"
+# 147 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_E, 2
 	goto MareS4_Script_SetupRutuli_32
 
 MareS4_Script_SetupRutuli_34:
-# 138 "data/maps/MareS4/scripts.pory"
+# 146 "data/maps/MareS4/scripts.pory"
 	goto_if_unset FLAG_MARES4_RUTULIAN6, MareS4_Script_SetupRutuli_33
 	goto MareS4_Script_SetupRutuli_32
 
 
 MareS4_Script_SetupRetRLostScene::
-# 145 "data/maps/MareS4/scripts.pory"
+# 153 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_AENEAS, 69, 61
-# 146 "data/maps/MareS4/scripts.pory"
+# 154 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_FAUSTULUS, 67, 61
-# 147 "data/maps/MareS4/scripts.pory"
+# 155 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_ASCANIUS, 69, 65
-# 148 "data/maps/MareS4/scripts.pory"
+# 156 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_UP
-# 149 "data/maps/MareS4/scripts.pory"
+# 157 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP
-# 150 "data/maps/MareS4/scripts.pory"
+# 158 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_FACE_UP
 	return
 
 
 MareS4_Script_ShowRetRSearch::
-# 155 "data/maps/MareS4/scripts.pory"
+# 163 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_AENEAS, 69, 61
-# 156 "data/maps/MareS4/scripts.pory"
+# 164 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_FAUSTULUS, 53, 77
-# 157 "data/maps/MareS4/scripts.pory"
+# 165 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_ASCANIUS, 42, 72
-# 158 "data/maps/MareS4/scripts.pory"
+# 166 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_DOWN
-# 159 "data/maps/MareS4/scripts.pory"
+# 167 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT
-# 160 "data/maps/MareS4/scripts.pory"
+# 168 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP
 	return
 
 
-MareS4_Script_Rutulian1::
-# 166 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_FaceDown
-# 167 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 169 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 171 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark
-# 172 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
+MareS4_Script_ShowRetRFound::
+# 173 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_AENEAS, 69, 61
 # 174 "data/maps/MareS4/scripts.pory"
-	call Hesperia_Script_RutulianBattle
+	setobjectxyperm LOCALID_MARES4_FAUSTULUS, 65, 62
+# 175 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_ASCANIUS, 66, 64
 # 176 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight3
+	setobjectxyperm LOCALID_MARES4_ROMULUS, 63, 64
 # 177 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
+	setobjectxyperm LOCALID_MARES4_REMUS, 67, 66
 # 178 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp5
+	setobjectxyperm LOCALID_MARES4_BEROE, 70, 64
 # 179 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
+	setobjectmovementtype LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_DOWN
+# 180 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP
 # 181 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN1
+	setobjectmovementtype LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_LOOK_AROUND
 # 182 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN1, 0, 0
+	setobjectmovementtype LOCALID_MARES4_ROMULUS, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
 # 183 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE
+	setobjectmovementtype LOCALID_MARES4_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP
 # 184 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_BEROE, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+
+MareS4_Script_ShowAeneasGone::
+# 189 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_FAUSTULUS, 65, 62
+# 190 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_ASCANIUS, 66, 64
+# 191 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_ROMULUS, 63, 64
+# 192 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_REMUS, 67, 66
+# 193 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_BEROE, 70, 64
+# 194 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP
+# 195 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_LOOK_AROUND
+# 196 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_ROMULUS, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
+# 197 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP
+# 198 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_BEROE, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+
+MareS4_Script_Rutulian1::
+# 204 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_FaceDown
+# 205 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 207 "data/maps/MareS4/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+# 209 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark
+# 210 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 212 "data/maps/MareS4/scripts.pory"
+	call Hesperia_Script_RutulianBattle
+# 214 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight3
+# 215 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 216 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp5
+# 217 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 219 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN1
+# 220 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN1, 0, 0
+# 221 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE
+# 222 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN1
-# 186 "data/maps/MareS4/scripts.pory"
+# 224 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_A, 0
-# 187 "data/maps/MareS4/scripts.pory"
+# 225 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN1
 	end
 
 
 MareS4_Script_Trigger_Rutulian1A::
-# 193 "data/maps/MareS4/scripts.pory"
+# 231 "data/maps/MareS4/scripts.pory"
 	lockall
-# 194 "data/maps/MareS4/scripts.pory"
+# 232 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 196 "data/maps/MareS4/scripts.pory"
+# 234 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 198 "data/maps/MareS4/scripts.pory"
+# 236 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark
-# 199 "data/maps/MareS4/scripts.pory"
+# 237 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 201 "data/maps/MareS4/scripts.pory"
+# 239 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 202 "data/maps/MareS4/scripts.pory"
+# 240 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 203 "data/maps/MareS4/scripts.pory"
+# 241 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 206 "data/maps/MareS4/scripts.pory"
+# 244 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 208 "data/maps/MareS4/scripts.pory"
+# 246 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkDown
-# 209 "data/maps/MareS4/scripts.pory"
+# 247 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 210 "data/maps/MareS4/scripts.pory"
+# 248 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight3
-# 211 "data/maps/MareS4/scripts.pory"
+# 249 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 212 "data/maps/MareS4/scripts.pory"
+# 250 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp7
-# 213 "data/maps/MareS4/scripts.pory"
+# 251 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 215 "data/maps/MareS4/scripts.pory"
+# 253 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN1
-# 216 "data/maps/MareS4/scripts.pory"
+# 254 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN1, 0, 0
-# 217 "data/maps/MareS4/scripts.pory"
+# 255 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE
-# 218 "data/maps/MareS4/scripts.pory"
+# 256 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN1
-# 220 "data/maps/MareS4/scripts.pory"
+# 258 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_A, 0
-# 221 "data/maps/MareS4/scripts.pory"
+# 259 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN1
-# 223 "data/maps/MareS4/scripts.pory"
+# 261 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian1B::
-# 228 "data/maps/MareS4/scripts.pory"
+# 266 "data/maps/MareS4/scripts.pory"
 	lockall
-# 229 "data/maps/MareS4/scripts.pory"
+# 267 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 231 "data/maps/MareS4/scripts.pory"
+# 269 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 233 "data/maps/MareS4/scripts.pory"
+# 271 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark
-# 234 "data/maps/MareS4/scripts.pory"
+# 272 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 236 "data/maps/MareS4/scripts.pory"
+# 274 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 237 "data/maps/MareS4/scripts.pory"
+# 275 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 238 "data/maps/MareS4/scripts.pory"
+# 276 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 240 "data/maps/MareS4/scripts.pory"
+# 278 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight
-# 241 "data/maps/MareS4/scripts.pory"
+# 279 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 243 "data/maps/MareS4/scripts.pory"
+# 281 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 245 "data/maps/MareS4/scripts.pory"
+# 283 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp
-# 246 "data/maps/MareS4/scripts.pory"
+# 284 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 247 "data/maps/MareS4/scripts.pory"
+# 285 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight2
-# 248 "data/maps/MareS4/scripts.pory"
+# 286 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 249 "data/maps/MareS4/scripts.pory"
+# 287 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp5
-# 250 "data/maps/MareS4/scripts.pory"
+# 288 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 252 "data/maps/MareS4/scripts.pory"
+# 290 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN1
-# 253 "data/maps/MareS4/scripts.pory"
+# 291 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN1, 0, 0
-# 254 "data/maps/MareS4/scripts.pory"
+# 292 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE
-# 255 "data/maps/MareS4/scripts.pory"
+# 293 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN1
-# 257 "data/maps/MareS4/scripts.pory"
+# 295 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_A, 0
-# 258 "data/maps/MareS4/scripts.pory"
+# 296 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN1
-# 260 "data/maps/MareS4/scripts.pory"
+# 298 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian1C::
-# 265 "data/maps/MareS4/scripts.pory"
+# 303 "data/maps/MareS4/scripts.pory"
 	lockall
-# 266 "data/maps/MareS4/scripts.pory"
+# 304 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 268 "data/maps/MareS4/scripts.pory"
+# 306 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 270 "data/maps/MareS4/scripts.pory"
+# 308 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_ExclamationMark
-# 271 "data/maps/MareS4/scripts.pory"
+# 309 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 273 "data/maps/MareS4/scripts.pory"
+# 311 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 274 "data/maps/MareS4/scripts.pory"
+# 312 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 275 "data/maps/MareS4/scripts.pory"
+# 313 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 277 "data/maps/MareS4/scripts.pory"
+# 315 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight2
-# 278 "data/maps/MareS4/scripts.pory"
+# 316 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 280 "data/maps/MareS4/scripts.pory"
+# 318 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 282 "data/maps/MareS4/scripts.pory"
+# 320 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp
-# 283 "data/maps/MareS4/scripts.pory"
+# 321 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 284 "data/maps/MareS4/scripts.pory"
+# 322 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkRight
-# 285 "data/maps/MareS4/scripts.pory"
+# 323 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 286 "data/maps/MareS4/scripts.pory"
+# 324 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN1, Common_Movement_WalkUp5
-# 287 "data/maps/MareS4/scripts.pory"
+# 325 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 289 "data/maps/MareS4/scripts.pory"
+# 327 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN1
-# 290 "data/maps/MareS4/scripts.pory"
+# 328 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN1, 0, 0
-# 291 "data/maps/MareS4/scripts.pory"
+# 329 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN1, MOVEMENT_TYPE_INVISIBLE
-# 292 "data/maps/MareS4/scripts.pory"
+# 330 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN1
-# 294 "data/maps/MareS4/scripts.pory"
+# 332 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_A, 0
-# 295 "data/maps/MareS4/scripts.pory"
+# 333 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN1
-# 297 "data/maps/MareS4/scripts.pory"
+# 335 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Rutulian2::
-# 303 "data/maps/MareS4/scripts.pory"
+# 341 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_FaceRight
-# 304 "data/maps/MareS4/scripts.pory"
+# 342 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 306 "data/maps/MareS4/scripts.pory"
+# 344 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 308 "data/maps/MareS4/scripts.pory"
+# 346 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_ExclamationMark
-# 309 "data/maps/MareS4/scripts.pory"
+# 347 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 311 "data/maps/MareS4/scripts.pory"
+# 349 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 313 "data/maps/MareS4/scripts.pory"
+# 351 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkDown
-# 314 "data/maps/MareS4/scripts.pory"
+# 352 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 315 "data/maps/MareS4/scripts.pory"
+# 353 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkLeft5
-# 316 "data/maps/MareS4/scripts.pory"
+# 354 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 317 "data/maps/MareS4/scripts.pory"
+# 355 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkUp7
-# 318 "data/maps/MareS4/scripts.pory"
+# 356 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 320 "data/maps/MareS4/scripts.pory"
+# 358 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN2
-# 321 "data/maps/MareS4/scripts.pory"
+# 359 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN2, 0, 0
-# 322 "data/maps/MareS4/scripts.pory"
+# 360 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE
-# 323 "data/maps/MareS4/scripts.pory"
+# 361 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN2
-# 325 "data/maps/MareS4/scripts.pory"
+# 363 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_B, 0
-# 326 "data/maps/MareS4/scripts.pory"
+# 364 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN2
 	end
 
 
 MareS4_Script_Trigger_Rutulian2A::
-# 332 "data/maps/MareS4/scripts.pory"
+# 370 "data/maps/MareS4/scripts.pory"
 	lockall
-# 333 "data/maps/MareS4/scripts.pory"
+# 371 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 335 "data/maps/MareS4/scripts.pory"
+# 373 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 337 "data/maps/MareS4/scripts.pory"
+# 375 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_ExclamationMark
-# 338 "data/maps/MareS4/scripts.pory"
+# 376 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 340 "data/maps/MareS4/scripts.pory"
+# 378 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 341 "data/maps/MareS4/scripts.pory"
+# 379 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 342 "data/maps/MareS4/scripts.pory"
+# 380 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 345 "data/maps/MareS4/scripts.pory"
+# 383 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 347 "data/maps/MareS4/scripts.pory"
+# 385 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight3
-# 348 "data/maps/MareS4/scripts.pory"
+# 386 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 349 "data/maps/MareS4/scripts.pory"
+# 387 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkUp
-# 350 "data/maps/MareS4/scripts.pory"
+# 388 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 351 "data/maps/MareS4/scripts.pory"
+# 389 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight5
-# 352 "data/maps/MareS4/scripts.pory"
+# 390 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 354 "data/maps/MareS4/scripts.pory"
+# 392 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN2
-# 355 "data/maps/MareS4/scripts.pory"
+# 393 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN2, 0, 0
-# 356 "data/maps/MareS4/scripts.pory"
+# 394 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE
-# 357 "data/maps/MareS4/scripts.pory"
+# 395 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN2
-# 359 "data/maps/MareS4/scripts.pory"
+# 397 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_B, 0
-# 360 "data/maps/MareS4/scripts.pory"
+# 398 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN2
-# 362 "data/maps/MareS4/scripts.pory"
+# 400 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian2B::
-# 367 "data/maps/MareS4/scripts.pory"
+# 405 "data/maps/MareS4/scripts.pory"
 	lockall
-# 368 "data/maps/MareS4/scripts.pory"
+# 406 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 370 "data/maps/MareS4/scripts.pory"
+# 408 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 372 "data/maps/MareS4/scripts.pory"
+# 410 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_ExclamationMark
-# 373 "data/maps/MareS4/scripts.pory"
+# 411 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 375 "data/maps/MareS4/scripts.pory"
+# 413 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 376 "data/maps/MareS4/scripts.pory"
+# 414 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 377 "data/maps/MareS4/scripts.pory"
+# 415 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 379 "data/maps/MareS4/scripts.pory"
+# 417 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkDown
-# 380 "data/maps/MareS4/scripts.pory"
+# 418 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 382 "data/maps/MareS4/scripts.pory"
+# 420 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 384 "data/maps/MareS4/scripts.pory"
+# 422 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight
-# 385 "data/maps/MareS4/scripts.pory"
+# 423 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 386 "data/maps/MareS4/scripts.pory"
+# 424 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkUp2
-# 387 "data/maps/MareS4/scripts.pory"
+# 425 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 388 "data/maps/MareS4/scripts.pory"
+# 426 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN2, Common_Movement_WalkRight6
-# 389 "data/maps/MareS4/scripts.pory"
+# 427 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 391 "data/maps/MareS4/scripts.pory"
+# 429 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN2
-# 392 "data/maps/MareS4/scripts.pory"
+# 430 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN2, 0, 0
-# 393 "data/maps/MareS4/scripts.pory"
+# 431 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN2, MOVEMENT_TYPE_INVISIBLE
-# 394 "data/maps/MareS4/scripts.pory"
+# 432 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN2
-# 396 "data/maps/MareS4/scripts.pory"
+# 434 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_B, 0
-# 397 "data/maps/MareS4/scripts.pory"
+# 435 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN2
-# 399 "data/maps/MareS4/scripts.pory"
+# 437 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Rutulian3::
-# 405 "data/maps/MareS4/scripts.pory"
+# 443 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_FaceLeft
-# 406 "data/maps/MareS4/scripts.pory"
+# 444 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 408 "data/maps/MareS4/scripts.pory"
+# 446 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 410 "data/maps/MareS4/scripts.pory"
+# 448 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_ExclamationMark
-# 411 "data/maps/MareS4/scripts.pory"
+# 449 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 413 "data/maps/MareS4/scripts.pory"
+# 451 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 415 "data/maps/MareS4/scripts.pory"
+# 453 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp6
-# 416 "data/maps/MareS4/scripts.pory"
+# 454 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 418 "data/maps/MareS4/scripts.pory"
+# 456 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN3
-# 419 "data/maps/MareS4/scripts.pory"
+# 457 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN3, 0, 0
-# 420 "data/maps/MareS4/scripts.pory"
+# 458 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE
-# 421 "data/maps/MareS4/scripts.pory"
+# 459 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN3
-# 423 "data/maps/MareS4/scripts.pory"
+# 461 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_C, 0
-# 424 "data/maps/MareS4/scripts.pory"
+# 462 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN3
 	end
 
 
 MareS4_Script_Trigger_Rutulian3A::
-# 430 "data/maps/MareS4/scripts.pory"
+# 468 "data/maps/MareS4/scripts.pory"
 	lockall
-# 431 "data/maps/MareS4/scripts.pory"
+# 469 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 433 "data/maps/MareS4/scripts.pory"
+# 471 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 435 "data/maps/MareS4/scripts.pory"
+# 473 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_ExclamationMark
-# 436 "data/maps/MareS4/scripts.pory"
+# 474 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 438 "data/maps/MareS4/scripts.pory"
+# 476 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 439 "data/maps/MareS4/scripts.pory"
+# 477 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 440 "data/maps/MareS4/scripts.pory"
+# 478 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 442 "data/maps/MareS4/scripts.pory"
+# 480 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp
-# 443 "data/maps/MareS4/scripts.pory"
+# 481 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 445 "data/maps/MareS4/scripts.pory"
+# 483 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 447 "data/maps/MareS4/scripts.pory"
+# 485 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkRight
-# 448 "data/maps/MareS4/scripts.pory"
+# 486 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 449 "data/maps/MareS4/scripts.pory"
+# 487 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp7
-# 450 "data/maps/MareS4/scripts.pory"
+# 488 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 452 "data/maps/MareS4/scripts.pory"
+# 490 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN3
-# 453 "data/maps/MareS4/scripts.pory"
+# 491 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN3, 0, 0
-# 454 "data/maps/MareS4/scripts.pory"
+# 492 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE
-# 455 "data/maps/MareS4/scripts.pory"
+# 493 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN3
-# 457 "data/maps/MareS4/scripts.pory"
+# 495 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_C, 0
-# 458 "data/maps/MareS4/scripts.pory"
+# 496 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN3
-# 460 "data/maps/MareS4/scripts.pory"
+# 498 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian3B::
-# 465 "data/maps/MareS4/scripts.pory"
+# 503 "data/maps/MareS4/scripts.pory"
 	lockall
-# 466 "data/maps/MareS4/scripts.pory"
+# 504 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 468 "data/maps/MareS4/scripts.pory"
+# 506 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 470 "data/maps/MareS4/scripts.pory"
+# 508 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_ExclamationMark
-# 471 "data/maps/MareS4/scripts.pory"
+# 509 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 473 "data/maps/MareS4/scripts.pory"
+# 511 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 474 "data/maps/MareS4/scripts.pory"
+# 512 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 475 "data/maps/MareS4/scripts.pory"
+# 513 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 478 "data/maps/MareS4/scripts.pory"
+# 516 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 480 "data/maps/MareS4/scripts.pory"
+# 518 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkLeft
-# 481 "data/maps/MareS4/scripts.pory"
+# 519 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 482 "data/maps/MareS4/scripts.pory"
+# 520 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp2
-# 483 "data/maps/MareS4/scripts.pory"
+# 521 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 484 "data/maps/MareS4/scripts.pory"
+# 522 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkRight2
-# 485 "data/maps/MareS4/scripts.pory"
+# 523 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 486 "data/maps/MareS4/scripts.pory"
+# 524 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN3, Common_Movement_WalkUp5
-# 487 "data/maps/MareS4/scripts.pory"
+# 525 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 489 "data/maps/MareS4/scripts.pory"
+# 527 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN3
-# 490 "data/maps/MareS4/scripts.pory"
+# 528 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN3, 0, 0
-# 491 "data/maps/MareS4/scripts.pory"
+# 529 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN3, MOVEMENT_TYPE_INVISIBLE
-# 492 "data/maps/MareS4/scripts.pory"
+# 530 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN3
-# 494 "data/maps/MareS4/scripts.pory"
+# 532 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_C, 0
-# 495 "data/maps/MareS4/scripts.pory"
+# 533 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN3
-# 497 "data/maps/MareS4/scripts.pory"
+# 535 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Rutulian4::
-# 503 "data/maps/MareS4/scripts.pory"
+# 541 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_FaceUp
-# 504 "data/maps/MareS4/scripts.pory"
+# 542 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 506 "data/maps/MareS4/scripts.pory"
+# 544 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 508 "data/maps/MareS4/scripts.pory"
+# 546 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark
-# 509 "data/maps/MareS4/scripts.pory"
+# 547 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 511 "data/maps/MareS4/scripts.pory"
+# 549 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 513 "data/maps/MareS4/scripts.pory"
+# 551 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft5
-# 514 "data/maps/MareS4/scripts.pory"
+# 552 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 515 "data/maps/MareS4/scripts.pory"
+# 553 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp7
-# 516 "data/maps/MareS4/scripts.pory"
+# 554 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 518 "data/maps/MareS4/scripts.pory"
+# 556 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN4
-# 519 "data/maps/MareS4/scripts.pory"
+# 557 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN4, 0, 0
-# 520 "data/maps/MareS4/scripts.pory"
+# 558 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE
-# 521 "data/maps/MareS4/scripts.pory"
+# 559 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN4
-# 523 "data/maps/MareS4/scripts.pory"
+# 561 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 524 "data/maps/MareS4/scripts.pory"
+# 562 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN4
 	end
 
 
 MareS4_Script_Trigger_Rutulian4A::
-# 530 "data/maps/MareS4/scripts.pory"
+# 568 "data/maps/MareS4/scripts.pory"
 	lockall
-# 531 "data/maps/MareS4/scripts.pory"
+# 569 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 533 "data/maps/MareS4/scripts.pory"
+# 571 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 535 "data/maps/MareS4/scripts.pory"
+# 573 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark
-# 536 "data/maps/MareS4/scripts.pory"
+# 574 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 538 "data/maps/MareS4/scripts.pory"
+# 576 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 539 "data/maps/MareS4/scripts.pory"
+# 577 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 540 "data/maps/MareS4/scripts.pory"
+# 578 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 542 "data/maps/MareS4/scripts.pory"
+# 580 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft4
-# 543 "data/maps/MareS4/scripts.pory"
+# 581 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 545 "data/maps/MareS4/scripts.pory"
+# 583 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 547 "data/maps/MareS4/scripts.pory"
+# 585 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp3
-# 548 "data/maps/MareS4/scripts.pory"
+# 586 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 549 "data/maps/MareS4/scripts.pory"
+# 587 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft
-# 550 "data/maps/MareS4/scripts.pory"
+# 588 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 551 "data/maps/MareS4/scripts.pory"
+# 589 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp3
-# 552 "data/maps/MareS4/scripts.pory"
+# 590 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 554 "data/maps/MareS4/scripts.pory"
+# 592 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN4
-# 555 "data/maps/MareS4/scripts.pory"
+# 593 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN4, 0, 0
-# 556 "data/maps/MareS4/scripts.pory"
+# 594 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE
-# 557 "data/maps/MareS4/scripts.pory"
+# 595 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN4
-# 559 "data/maps/MareS4/scripts.pory"
+# 597 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 560 "data/maps/MareS4/scripts.pory"
+# 598 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN4
-# 562 "data/maps/MareS4/scripts.pory"
+# 600 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian4B::
-# 567 "data/maps/MareS4/scripts.pory"
+# 605 "data/maps/MareS4/scripts.pory"
 	lockall
-# 568 "data/maps/MareS4/scripts.pory"
+# 606 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 570 "data/maps/MareS4/scripts.pory"
+# 608 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 572 "data/maps/MareS4/scripts.pory"
+# 610 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark
-# 573 "data/maps/MareS4/scripts.pory"
+# 611 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 575 "data/maps/MareS4/scripts.pory"
+# 613 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 576 "data/maps/MareS4/scripts.pory"
+# 614 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 577 "data/maps/MareS4/scripts.pory"
+# 615 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 579 "data/maps/MareS4/scripts.pory"
+# 617 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft3
-# 580 "data/maps/MareS4/scripts.pory"
+# 618 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 582 "data/maps/MareS4/scripts.pory"
+# 620 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 584 "data/maps/MareS4/scripts.pory"
+# 622 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp2
-# 585 "data/maps/MareS4/scripts.pory"
+# 623 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 586 "data/maps/MareS4/scripts.pory"
+# 624 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft2
-# 587 "data/maps/MareS4/scripts.pory"
+# 625 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 588 "data/maps/MareS4/scripts.pory"
+# 626 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp4
-# 589 "data/maps/MareS4/scripts.pory"
+# 627 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 591 "data/maps/MareS4/scripts.pory"
+# 629 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN4
-# 592 "data/maps/MareS4/scripts.pory"
+# 630 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN4, 0, 0
-# 593 "data/maps/MareS4/scripts.pory"
+# 631 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE
-# 594 "data/maps/MareS4/scripts.pory"
+# 632 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN4
-# 596 "data/maps/MareS4/scripts.pory"
+# 634 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 597 "data/maps/MareS4/scripts.pory"
+# 635 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN4
-# 599 "data/maps/MareS4/scripts.pory"
+# 637 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian4C::
-# 604 "data/maps/MareS4/scripts.pory"
+# 642 "data/maps/MareS4/scripts.pory"
 	lockall
-# 605 "data/maps/MareS4/scripts.pory"
+# 643 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 607 "data/maps/MareS4/scripts.pory"
+# 645 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 609 "data/maps/MareS4/scripts.pory"
+# 647 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark
-# 610 "data/maps/MareS4/scripts.pory"
+# 648 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 612 "data/maps/MareS4/scripts.pory"
+# 650 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 613 "data/maps/MareS4/scripts.pory"
+# 651 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 614 "data/maps/MareS4/scripts.pory"
+# 652 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 616 "data/maps/MareS4/scripts.pory"
+# 654 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft2
-# 617 "data/maps/MareS4/scripts.pory"
+# 655 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 619 "data/maps/MareS4/scripts.pory"
+# 657 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 621 "data/maps/MareS4/scripts.pory"
+# 659 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp2
-# 622 "data/maps/MareS4/scripts.pory"
+# 660 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 623 "data/maps/MareS4/scripts.pory"
+# 661 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkRight2
-# 624 "data/maps/MareS4/scripts.pory"
+# 662 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 625 "data/maps/MareS4/scripts.pory"
+# 663 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp4
-# 626 "data/maps/MareS4/scripts.pory"
+# 664 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 628 "data/maps/MareS4/scripts.pory"
+# 666 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN4
-# 629 "data/maps/MareS4/scripts.pory"
+# 667 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN4, 0, 0
-# 630 "data/maps/MareS4/scripts.pory"
+# 668 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE
-# 631 "data/maps/MareS4/scripts.pory"
+# 669 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN4
-# 633 "data/maps/MareS4/scripts.pory"
+# 671 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 634 "data/maps/MareS4/scripts.pory"
+# 672 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN4
-# 636 "data/maps/MareS4/scripts.pory"
+# 674 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian4D::
-# 641 "data/maps/MareS4/scripts.pory"
+# 679 "data/maps/MareS4/scripts.pory"
 	lockall
-# 642 "data/maps/MareS4/scripts.pory"
+# 680 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 644 "data/maps/MareS4/scripts.pory"
+# 682 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 646 "data/maps/MareS4/scripts.pory"
+# 684 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark
-# 647 "data/maps/MareS4/scripts.pory"
+# 685 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 649 "data/maps/MareS4/scripts.pory"
+# 687 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 650 "data/maps/MareS4/scripts.pory"
+# 688 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 651 "data/maps/MareS4/scripts.pory"
+# 689 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 653 "data/maps/MareS4/scripts.pory"
+# 691 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkLeft
-# 654 "data/maps/MareS4/scripts.pory"
+# 692 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 656 "data/maps/MareS4/scripts.pory"
+# 694 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 658 "data/maps/MareS4/scripts.pory"
+# 696 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp4
-# 659 "data/maps/MareS4/scripts.pory"
+# 697 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 660 "data/maps/MareS4/scripts.pory"
+# 698 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkRight2
-# 661 "data/maps/MareS4/scripts.pory"
+# 699 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 662 "data/maps/MareS4/scripts.pory"
+# 700 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp2
-# 663 "data/maps/MareS4/scripts.pory"
+# 701 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 665 "data/maps/MareS4/scripts.pory"
+# 703 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN4
-# 666 "data/maps/MareS4/scripts.pory"
+# 704 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN4, 0, 0
-# 667 "data/maps/MareS4/scripts.pory"
+# 705 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE
-# 668 "data/maps/MareS4/scripts.pory"
+# 706 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN4
-# 670 "data/maps/MareS4/scripts.pory"
+# 708 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 671 "data/maps/MareS4/scripts.pory"
+# 709 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN4
-# 673 "data/maps/MareS4/scripts.pory"
+# 711 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Rutulian4E::
-# 678 "data/maps/MareS4/scripts.pory"
+# 716 "data/maps/MareS4/scripts.pory"
 	lockall
-# 679 "data/maps/MareS4/scripts.pory"
+# 717 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 681 "data/maps/MareS4/scripts.pory"
+# 719 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 683 "data/maps/MareS4/scripts.pory"
+# 721 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_ExclamationMark
-# 684 "data/maps/MareS4/scripts.pory"
+# 722 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 686 "data/maps/MareS4/scripts.pory"
+# 724 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 687 "data/maps/MareS4/scripts.pory"
+# 725 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 688 "data/maps/MareS4/scripts.pory"
+# 726 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 691 "data/maps/MareS4/scripts.pory"
+# 729 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 693 "data/maps/MareS4/scripts.pory"
+# 731 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN4, Common_Movement_WalkUp6
-# 694 "data/maps/MareS4/scripts.pory"
+# 732 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 696 "data/maps/MareS4/scripts.pory"
+# 734 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN4
-# 697 "data/maps/MareS4/scripts.pory"
+# 735 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN4, 0, 0
-# 698 "data/maps/MareS4/scripts.pory"
+# 736 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN4, MOVEMENT_TYPE_INVISIBLE
-# 699 "data/maps/MareS4/scripts.pory"
+# 737 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN4
-# 701 "data/maps/MareS4/scripts.pory"
+# 739 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 702 "data/maps/MareS4/scripts.pory"
+# 740 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN4
-# 704 "data/maps/MareS4/scripts.pory"
+# 742 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Rutulian5::
-# 710 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_FaceDown
-# 711 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 713 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 715 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
-# 716 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 718 "data/maps/MareS4/scripts.pory"
-	call Hesperia_Script_RutulianBattle
-# 720 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight8
-# 721 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 723 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN5
-# 724 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN5, 0, 0
-# 725 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_INVISIBLE
-# 726 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN5
-# 728 "data/maps/MareS4/scripts.pory"
-	setflag FLAG_MARES4_RUTULIAN5
-# 730 "data/maps/MareS4/scripts.pory"
-	goto_if_set FLAG_MARES4_RUTULIAN6, MareS4_Script_Rutulian5_2
-# 733 "data/maps/MareS4/scripts.pory"
-	setvar VAR_TEMP_E, 2
-MareS4_Script_Rutulian5_1:
-	end
-
-MareS4_Script_Rutulian5_2:
-# 731 "data/maps/MareS4/scripts.pory"
-	setvar VAR_TEMP_E, 0
-	goto MareS4_Script_Rutulian5_1
-
-
-MareS4_Script_Trigger_Rutulian5A::
-# 739 "data/maps/MareS4/scripts.pory"
-	lockall
-# 740 "data/maps/MareS4/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 742 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 744 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
-# 745 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 747 "data/maps/MareS4/scripts.pory"
-	delay 30
 # 748 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_FaceDown
 # 749 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 752 "data/maps/MareS4/scripts.pory"
-	call Hesperia_Script_RutulianBattle
+# 751 "data/maps/MareS4/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+# 753 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
 # 754 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp
-# 755 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 756 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight8
-# 757 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
+	call Hesperia_Script_RutulianBattle
 # 758 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight8
 # 759 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 761 "data/maps/MareS4/scripts.pory"
@@ -1101,32 +1117,34 @@ MareS4_Script_Trigger_Rutulian5A::
 # 766 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN5
 # 768 "data/maps/MareS4/scripts.pory"
-	setvar VAR_AENEID_STATE, 0
-# 770 "data/maps/MareS4/scripts.pory"
-	releaseall
+	goto_if_set FLAG_MARES4_RUTULIAN6, MareS4_Script_Rutulian5_2
+# 771 "data/maps/MareS4/scripts.pory"
+	setvar VAR_TEMP_E, 2
+MareS4_Script_Rutulian5_1:
 	end
 
+MareS4_Script_Rutulian5_2:
+# 769 "data/maps/MareS4/scripts.pory"
+	setvar VAR_TEMP_E, 0
+	goto MareS4_Script_Rutulian5_1
 
-MareS4_Script_Trigger_Rutulian5B::
-# 775 "data/maps/MareS4/scripts.pory"
+
+MareS4_Script_Trigger_Rutulian5A::
+# 777 "data/maps/MareS4/scripts.pory"
 	lockall
-# 776 "data/maps/MareS4/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 778 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 780 "data/maps/MareS4/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+# 782 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
-# 781 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
 # 783 "data/maps/MareS4/scripts.pory"
-	delay 30
-# 784 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 785 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
+# 785 "data/maps/MareS4/scripts.pory"
+	delay 30
+# 786 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 # 787 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 788 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 790 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
@@ -1135,7 +1153,7 @@ MareS4_Script_Trigger_Rutulian5B::
 # 793 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 794 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight7
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight8
 # 795 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 796 "data/maps/MareS4/scripts.pory"
@@ -1159,7 +1177,7 @@ MareS4_Script_Trigger_Rutulian5B::
 	end
 
 
-MareS4_Script_Trigger_Rutulian5C::
+MareS4_Script_Trigger_Rutulian5B::
 # 813 "data/maps/MareS4/scripts.pory"
 	lockall
 # 814 "data/maps/MareS4/scripts.pory"
@@ -1177,7 +1195,7 @@ MareS4_Script_Trigger_Rutulian5C::
 # 823 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 825 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight2
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
 # 826 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 828 "data/maps/MareS4/scripts.pory"
@@ -1187,7 +1205,7 @@ MareS4_Script_Trigger_Rutulian5C::
 # 831 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 832 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight6
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight7
 # 833 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 834 "data/maps/MareS4/scripts.pory"
@@ -1211,7 +1229,7 @@ MareS4_Script_Trigger_Rutulian5C::
 	end
 
 
-MareS4_Script_Trigger_Rutulian5D::
+MareS4_Script_Trigger_Rutulian5C::
 # 851 "data/maps/MareS4/scripts.pory"
 	lockall
 # 852 "data/maps/MareS4/scripts.pory"
@@ -1229,7 +1247,7 @@ MareS4_Script_Trigger_Rutulian5D::
 # 861 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 863 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight3
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight2
 # 864 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 866 "data/maps/MareS4/scripts.pory"
@@ -1239,7 +1257,7 @@ MareS4_Script_Trigger_Rutulian5D::
 # 869 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 870 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight5
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight6
 # 871 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 872 "data/maps/MareS4/scripts.pory"
@@ -1263,7 +1281,7 @@ MareS4_Script_Trigger_Rutulian5D::
 	end
 
 
-MareS4_Script_Trigger_Rutulian5E::
+MareS4_Script_Trigger_Rutulian5D::
 # 889 "data/maps/MareS4/scripts.pory"
 	lockall
 # 890 "data/maps/MareS4/scripts.pory"
@@ -1281,7 +1299,7 @@ MareS4_Script_Trigger_Rutulian5E::
 # 899 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 901 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight4
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight3
 # 902 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 904 "data/maps/MareS4/scripts.pory"
@@ -1291,7 +1309,7 @@ MareS4_Script_Trigger_Rutulian5E::
 # 907 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 908 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight4
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight5
 # 909 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 910 "data/maps/MareS4/scripts.pory"
@@ -1315,7 +1333,7 @@ MareS4_Script_Trigger_Rutulian5E::
 	end
 
 
-MareS4_Script_Trigger_Rutulian5F::
+MareS4_Script_Trigger_Rutulian5E::
 # 927 "data/maps/MareS4/scripts.pory"
 	lockall
 # 928 "data/maps/MareS4/scripts.pory"
@@ -1333,7 +1351,7 @@ MareS4_Script_Trigger_Rutulian5F::
 # 937 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 939 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight5
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight4
 # 940 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 942 "data/maps/MareS4/scripts.pory"
@@ -1343,7 +1361,7 @@ MareS4_Script_Trigger_Rutulian5F::
 # 945 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 946 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight3
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight4
 # 947 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 948 "data/maps/MareS4/scripts.pory"
@@ -1367,7 +1385,7 @@ MareS4_Script_Trigger_Rutulian5F::
 	end
 
 
-MareS4_Script_Trigger_Rutulian5G::
+MareS4_Script_Trigger_Rutulian5F::
 # 965 "data/maps/MareS4/scripts.pory"
 	lockall
 # 966 "data/maps/MareS4/scripts.pory"
@@ -1385,7 +1403,7 @@ MareS4_Script_Trigger_Rutulian5G::
 # 975 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 977 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight6
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight5
 # 978 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 980 "data/maps/MareS4/scripts.pory"
@@ -1395,7 +1413,7 @@ MareS4_Script_Trigger_Rutulian5G::
 # 983 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 984 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight2
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight3
 # 985 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 986 "data/maps/MareS4/scripts.pory"
@@ -1419,7 +1437,7 @@ MareS4_Script_Trigger_Rutulian5G::
 	end
 
 
-MareS4_Script_Trigger_Rutulian5H::
+MareS4_Script_Trigger_Rutulian5G::
 # 1003 "data/maps/MareS4/scripts.pory"
 	lockall
 # 1004 "data/maps/MareS4/scripts.pory"
@@ -1437,7 +1455,7 @@ MareS4_Script_Trigger_Rutulian5H::
 # 1013 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1015 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight7
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight6
 # 1016 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1018 "data/maps/MareS4/scripts.pory"
@@ -1447,7 +1465,7 @@ MareS4_Script_Trigger_Rutulian5H::
 # 1021 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1022 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight2
 # 1023 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1024 "data/maps/MareS4/scripts.pory"
@@ -1471,7 +1489,7 @@ MareS4_Script_Trigger_Rutulian5H::
 	end
 
 
-MareS4_Script_Trigger_Rutulian5I::
+MareS4_Script_Trigger_Rutulian5H::
 # 1041 "data/maps/MareS4/scripts.pory"
 	lockall
 # 1042 "data/maps/MareS4/scripts.pory"
@@ -1489,65 +1507,65 @@ MareS4_Script_Trigger_Rutulian5I::
 # 1051 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1053 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight8
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight7
 # 1054 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1056 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
 # 1058 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp6
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp
 # 1059 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
+# 1060 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
 # 1061 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN5
+	waitmovement 0
 # 1062 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN5, 0, 0
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
 # 1063 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_INVISIBLE
-# 1064 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN5
+	waitmovement 0
+# 1065 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN5
 # 1066 "data/maps/MareS4/scripts.pory"
-	setflag FLAG_MARES4_RUTULIAN5
+	setobjectxyperm LOCALID_MARES4_RUTULIAN5, 0, 0
+# 1067 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_INVISIBLE
 # 1068 "data/maps/MareS4/scripts.pory"
-	setvar VAR_AENEID_STATE, 0
+	addobject LOCALID_MARES4_RUTULIAN5
 # 1070 "data/maps/MareS4/scripts.pory"
+	setflag FLAG_MARES4_RUTULIAN5
+# 1072 "data/maps/MareS4/scripts.pory"
+	setvar VAR_AENEID_STATE, 0
+# 1074 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
-MareS4_Script_Trigger_Rutulian5J::
-# 1075 "data/maps/MareS4/scripts.pory"
+MareS4_Script_Trigger_Rutulian5I::
+# 1079 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1076 "data/maps/MareS4/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1078 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
 # 1080 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
-# 1081 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1083 "data/maps/MareS4/scripts.pory"
-	delay 30
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1082 "data/maps/MareS4/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
 # 1084 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
 # 1085 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1087 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight9
+	delay 30
 # 1088 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 1089 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1090 "data/maps/MareS4/scripts.pory"
-	call Hesperia_Script_RutulianBattle
+# 1091 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight8
 # 1092 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp
-# 1093 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1094 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkLeft
-# 1095 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
+	call Hesperia_Script_RutulianBattle
 # 1096 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp6
 # 1097 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1099 "data/maps/MareS4/scripts.pory"
@@ -1567,1333 +1585,1462 @@ MareS4_Script_Trigger_Rutulian5J::
 	end
 
 
-MareS4_Script_Rutulian6::
+MareS4_Script_Trigger_Rutulian5J::
+# 1113 "data/maps/MareS4/scripts.pory"
+	lockall
 # 1114 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_FaceUp
-# 1115 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1117 "data/maps/MareS4/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1116 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
+# 1118 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
 # 1119 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_ExclamationMark
-# 1120 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
+# 1121 "data/maps/MareS4/scripts.pory"
+	delay 30
 # 1122 "data/maps/MareS4/scripts.pory"
-	call Hesperia_Script_RutulianBattle
-# 1124 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft8
-# 1125 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 1123 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1127 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN6
+# 1125 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight9
+# 1126 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
 # 1128 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN6, 0, 0
-# 1129 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN6, MOVEMENT_TYPE_INVISIBLE
+	call Hesperia_Script_RutulianBattle
 # 1130 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN6
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp
+# 1131 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
 # 1132 "data/maps/MareS4/scripts.pory"
-	setflag FLAG_MARES4_RUTULIAN6
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkLeft
+# 1133 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
 # 1134 "data/maps/MareS4/scripts.pory"
-	goto_if_set FLAG_MARES4_RUTULIAN5, MareS4_Script_Rutulian6_2
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
+# 1135 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
 # 1137 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN5
+# 1138 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN5, 0, 0
+# 1139 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_INVISIBLE
+# 1140 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN5
+# 1142 "data/maps/MareS4/scripts.pory"
+	setflag FLAG_MARES4_RUTULIAN5
+# 1144 "data/maps/MareS4/scripts.pory"
+	setvar VAR_AENEID_STATE, 0
+# 1146 "data/maps/MareS4/scripts.pory"
+	releaseall
+	end
+
+
+MareS4_Script_Rutulian6::
+# 1152 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_FaceUp
+# 1153 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1155 "data/maps/MareS4/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+# 1157 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_ExclamationMark
+# 1158 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1160 "data/maps/MareS4/scripts.pory"
+	call Hesperia_Script_RutulianBattle
+# 1162 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft8
+# 1163 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1165 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN6
+# 1166 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN6, 0, 0
+# 1167 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN6, MOVEMENT_TYPE_INVISIBLE
+# 1168 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN6
+# 1170 "data/maps/MareS4/scripts.pory"
+	setflag FLAG_MARES4_RUTULIAN6
+# 1172 "data/maps/MareS4/scripts.pory"
+	goto_if_set FLAG_MARES4_RUTULIAN5, MareS4_Script_Rutulian6_2
+# 1175 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_E, 1
 MareS4_Script_Rutulian6_1:
 	end
 
 MareS4_Script_Rutulian6_2:
-# 1135 "data/maps/MareS4/scripts.pory"
+# 1173 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_E, 0
 	goto MareS4_Script_Rutulian6_1
 
 
 MareS4_Script_Trigger_Rutulian6A::
-# 1144 "data/maps/MareS4/scripts.pory"
+# 1182 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1145 "data/maps/MareS4/scripts.pory"
+# 1183 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 1
-# 1146 "data/maps/MareS4/scripts.pory"
+# 1184 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6B::
-# 1150 "data/maps/MareS4/scripts.pory"
+# 1188 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1151 "data/maps/MareS4/scripts.pory"
+# 1189 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 2
-# 1152 "data/maps/MareS4/scripts.pory"
+# 1190 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6C::
-# 1156 "data/maps/MareS4/scripts.pory"
+# 1194 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1157 "data/maps/MareS4/scripts.pory"
+# 1195 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 3
-# 1158 "data/maps/MareS4/scripts.pory"
+# 1196 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6D::
-# 1162 "data/maps/MareS4/scripts.pory"
+# 1200 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1163 "data/maps/MareS4/scripts.pory"
+# 1201 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 4
-# 1164 "data/maps/MareS4/scripts.pory"
+# 1202 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6E::
-# 1168 "data/maps/MareS4/scripts.pory"
+# 1206 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1169 "data/maps/MareS4/scripts.pory"
+# 1207 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 5
-# 1170 "data/maps/MareS4/scripts.pory"
+# 1208 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6F::
-# 1174 "data/maps/MareS4/scripts.pory"
+# 1212 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1175 "data/maps/MareS4/scripts.pory"
+# 1213 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 6
-# 1176 "data/maps/MareS4/scripts.pory"
+# 1214 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6G::
-# 1180 "data/maps/MareS4/scripts.pory"
+# 1218 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1181 "data/maps/MareS4/scripts.pory"
+# 1219 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 7
-# 1182 "data/maps/MareS4/scripts.pory"
+# 1220 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6H::
-# 1186 "data/maps/MareS4/scripts.pory"
+# 1224 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1187 "data/maps/MareS4/scripts.pory"
+# 1225 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 8
-# 1188 "data/maps/MareS4/scripts.pory"
+# 1226 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6I::
-# 1192 "data/maps/MareS4/scripts.pory"
+# 1230 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1193 "data/maps/MareS4/scripts.pory"
+# 1231 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 9
-# 1194 "data/maps/MareS4/scripts.pory"
+# 1232 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6J::
-# 1198 "data/maps/MareS4/scripts.pory"
+# 1236 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1199 "data/maps/MareS4/scripts.pory"
+# 1237 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 10
-# 1200 "data/maps/MareS4/scripts.pory"
+# 1238 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutulian6_Template
 	return
 
 
 MareS4_Script_Trigger_Rutulian6_Template::
-# 1205 "data/maps/MareS4/scripts.pory"
+# 1243 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1207 "data/maps/MareS4/scripts.pory"
+# 1245 "data/maps/MareS4/scripts.pory"
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 1209 "data/maps/MareS4/scripts.pory"
+# 1247 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_ExclamationMark
-# 1210 "data/maps/MareS4/scripts.pory"
+# 1248 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1212 "data/maps/MareS4/scripts.pory"
+# 1250 "data/maps/MareS4/scripts.pory"
 	delay 30
-# 1213 "data/maps/MareS4/scripts.pory"
+# 1251 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 1214 "data/maps/MareS4/scripts.pory"
+# 1252 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1216 "data/maps/MareS4/scripts.pory"
+# 1254 "data/maps/MareS4/scripts.pory"
 	switch VAR_TEMP_9
-# 1217 "data/maps/MareS4/scripts.pory"
+# 1255 "data/maps/MareS4/scripts.pory"
 	case 1, MareS4_Script_Trigger_Rutulian6_Template_3
-# 1219 "data/maps/MareS4/scripts.pory"
+# 1257 "data/maps/MareS4/scripts.pory"
 	case 2, MareS4_Script_Trigger_Rutulian6_Template_4
-# 1221 "data/maps/MareS4/scripts.pory"
+# 1259 "data/maps/MareS4/scripts.pory"
 	case 3, MareS4_Script_Trigger_Rutulian6_Template_5
-# 1223 "data/maps/MareS4/scripts.pory"
+# 1261 "data/maps/MareS4/scripts.pory"
 	case 4, MareS4_Script_Trigger_Rutulian6_Template_6
-# 1225 "data/maps/MareS4/scripts.pory"
+# 1263 "data/maps/MareS4/scripts.pory"
 	case 5, MareS4_Script_Trigger_Rutulian6_Template_7
-# 1227 "data/maps/MareS4/scripts.pory"
+# 1265 "data/maps/MareS4/scripts.pory"
 	case 6, MareS4_Script_Trigger_Rutulian6_Template_8
-# 1229 "data/maps/MareS4/scripts.pory"
+# 1267 "data/maps/MareS4/scripts.pory"
 	case 7, MareS4_Script_Trigger_Rutulian6_Template_9
-# 1231 "data/maps/MareS4/scripts.pory"
+# 1269 "data/maps/MareS4/scripts.pory"
 	case 8, MareS4_Script_Trigger_Rutulian6_Template_10
-# 1233 "data/maps/MareS4/scripts.pory"
+# 1271 "data/maps/MareS4/scripts.pory"
 	case 9, MareS4_Script_Trigger_Rutulian6_Template_11
-# 1235 "data/maps/MareS4/scripts.pory"
+# 1273 "data/maps/MareS4/scripts.pory"
 	case 10, MareS4_Script_Trigger_Rutulian6_Template_12
-# 1238 "data/maps/MareS4/scripts.pory"
+# 1276 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Script_Trigger_Rutulian6_Template_Text_0
-# 1239 "data/maps/MareS4/scripts.pory"
+# 1277 "data/maps/MareS4/scripts.pory"
 	closemessage
-# 1240 "data/maps/MareS4/scripts.pory"
+# 1278 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 1241 "data/maps/MareS4/scripts.pory"
+# 1279 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1242 "data/maps/MareS4/scripts.pory"
+# 1280 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 MareS4_Script_Trigger_Rutulian6_Template_1:
-# 1245 "data/maps/MareS4/scripts.pory"
+# 1283 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1247 "data/maps/MareS4/scripts.pory"
+# 1285 "data/maps/MareS4/scripts.pory"
 	call Hesperia_Script_RutulianBattle
-# 1249 "data/maps/MareS4/scripts.pory"
+# 1287 "data/maps/MareS4/scripts.pory"
 	switch VAR_TEMP_9
-# 1250 "data/maps/MareS4/scripts.pory"
+# 1288 "data/maps/MareS4/scripts.pory"
 	case 1, MareS4_Script_Trigger_Rutulian6_Template_16
-# 1252 "data/maps/MareS4/scripts.pory"
+# 1290 "data/maps/MareS4/scripts.pory"
 	case 2, MareS4_Script_Trigger_Rutulian6_Template_17
-# 1256 "data/maps/MareS4/scripts.pory"
-	case 3, MareS4_Script_Trigger_Rutulian6_Template_18
-# 1260 "data/maps/MareS4/scripts.pory"
-	case 4, MareS4_Script_Trigger_Rutulian6_Template_19
-# 1264 "data/maps/MareS4/scripts.pory"
-	case 5, MareS4_Script_Trigger_Rutulian6_Template_20
-# 1268 "data/maps/MareS4/scripts.pory"
-	case 6, MareS4_Script_Trigger_Rutulian6_Template_21
-# 1272 "data/maps/MareS4/scripts.pory"
-	case 7, MareS4_Script_Trigger_Rutulian6_Template_22
-# 1276 "data/maps/MareS4/scripts.pory"
-	case 8, MareS4_Script_Trigger_Rutulian6_Template_23
-# 1278 "data/maps/MareS4/scripts.pory"
-	case 9, MareS4_Script_Trigger_Rutulian6_Template_24
-# 1284 "data/maps/MareS4/scripts.pory"
-	case 10, MareS4_Script_Trigger_Rutulian6_Template_25
-# 1291 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Script_Trigger_Rutulian6_Template_Text_0
-# 1292 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1293 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 # 1294 "data/maps/MareS4/scripts.pory"
+	case 3, MareS4_Script_Trigger_Rutulian6_Template_18
+# 1298 "data/maps/MareS4/scripts.pory"
+	case 4, MareS4_Script_Trigger_Rutulian6_Template_19
+# 1302 "data/maps/MareS4/scripts.pory"
+	case 5, MareS4_Script_Trigger_Rutulian6_Template_20
+# 1306 "data/maps/MareS4/scripts.pory"
+	case 6, MareS4_Script_Trigger_Rutulian6_Template_21
+# 1310 "data/maps/MareS4/scripts.pory"
+	case 7, MareS4_Script_Trigger_Rutulian6_Template_22
+# 1314 "data/maps/MareS4/scripts.pory"
+	case 8, MareS4_Script_Trigger_Rutulian6_Template_23
+# 1316 "data/maps/MareS4/scripts.pory"
+	case 9, MareS4_Script_Trigger_Rutulian6_Template_24
+# 1322 "data/maps/MareS4/scripts.pory"
+	case 10, MareS4_Script_Trigger_Rutulian6_Template_25
+# 1329 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Script_Trigger_Rutulian6_Template_Text_0
+# 1330 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1331 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+# 1332 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1295 "data/maps/MareS4/scripts.pory"
+# 1333 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 MareS4_Script_Trigger_Rutulian6_Template_3:
-# 1218 "data/maps/MareS4/scripts.pory"
+# 1256 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft9
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_4:
-# 1220 "data/maps/MareS4/scripts.pory"
+# 1258 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft8
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_5:
-# 1222 "data/maps/MareS4/scripts.pory"
+# 1260 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft7
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_6:
-# 1224 "data/maps/MareS4/scripts.pory"
+# 1262 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft6
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_7:
-# 1226 "data/maps/MareS4/scripts.pory"
+# 1264 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft5
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_8:
-# 1228 "data/maps/MareS4/scripts.pory"
+# 1266 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft4
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_9:
-# 1230 "data/maps/MareS4/scripts.pory"
+# 1268 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft3
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_10:
-# 1232 "data/maps/MareS4/scripts.pory"
+# 1270 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft2
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_11:
-# 1234 "data/maps/MareS4/scripts.pory"
+# 1272 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_12:
-# 1236 "data/maps/MareS4/scripts.pory"
+# 1274 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_FaceLeft
 	goto MareS4_Script_Trigger_Rutulian6_Template_1
 
 MareS4_Script_Trigger_Rutulian6_Template_14:
-# 1298 "data/maps/MareS4/scripts.pory"
+# 1336 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1300 "data/maps/MareS4/scripts.pory"
+# 1338 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN6
-# 1301 "data/maps/MareS4/scripts.pory"
+# 1339 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN6, 0, 0
-# 1302 "data/maps/MareS4/scripts.pory"
+# 1340 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN6, MOVEMENT_TYPE_INVISIBLE
-# 1303 "data/maps/MareS4/scripts.pory"
+# 1341 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN6
-# 1305 "data/maps/MareS4/scripts.pory"
+# 1343 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN6
-# 1307 "data/maps/MareS4/scripts.pory"
+# 1345 "data/maps/MareS4/scripts.pory"
 	setvar VAR_AENEID_STATE, 0
-# 1308 "data/maps/MareS4/scripts.pory"
+# 1346 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 0
-# 1310 "data/maps/MareS4/scripts.pory"
+# 1348 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 MareS4_Script_Trigger_Rutulian6_Template_16:
-# 1251 "data/maps/MareS4/scripts.pory"
+# 1289 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight7
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_17:
-# 1253 "data/maps/MareS4/scripts.pory"
+# 1291 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight6
-# 1254 "data/maps/MareS4/scripts.pory"
+# 1292 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1255 "data/maps/MareS4/scripts.pory"
+# 1293 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp6
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_18:
-# 1257 "data/maps/MareS4/scripts.pory"
+# 1295 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight5
-# 1258 "data/maps/MareS4/scripts.pory"
+# 1296 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1259 "data/maps/MareS4/scripts.pory"
+# 1297 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp6
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_19:
-# 1261 "data/maps/MareS4/scripts.pory"
+# 1299 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight4
-# 1262 "data/maps/MareS4/scripts.pory"
+# 1300 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1263 "data/maps/MareS4/scripts.pory"
+# 1301 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp6
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_20:
-# 1265 "data/maps/MareS4/scripts.pory"
+# 1303 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight3
-# 1266 "data/maps/MareS4/scripts.pory"
+# 1304 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1267 "data/maps/MareS4/scripts.pory"
+# 1305 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp6
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_21:
-# 1269 "data/maps/MareS4/scripts.pory"
+# 1307 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight2
-# 1270 "data/maps/MareS4/scripts.pory"
+# 1308 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1271 "data/maps/MareS4/scripts.pory"
+# 1309 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp6
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_22:
-# 1273 "data/maps/MareS4/scripts.pory"
+# 1311 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight
-# 1274 "data/maps/MareS4/scripts.pory"
+# 1312 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1275 "data/maps/MareS4/scripts.pory"
+# 1313 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp6
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_23:
-# 1277 "data/maps/MareS4/scripts.pory"
+# 1315 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp6
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_24:
-# 1279 "data/maps/MareS4/scripts.pory"
+# 1317 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1280 "data/maps/MareS4/scripts.pory"
+# 1318 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1281 "data/maps/MareS4/scripts.pory"
+# 1319 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft
-# 1282 "data/maps/MareS4/scripts.pory"
+# 1320 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1283 "data/maps/MareS4/scripts.pory"
+# 1321 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 MareS4_Script_Trigger_Rutulian6_Template_25:
-# 1285 "data/maps/MareS4/scripts.pory"
+# 1323 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1286 "data/maps/MareS4/scripts.pory"
+# 1324 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1287 "data/maps/MareS4/scripts.pory"
+# 1325 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft2
-# 1288 "data/maps/MareS4/scripts.pory"
+# 1326 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1289 "data/maps/MareS4/scripts.pory"
+# 1327 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
 	goto MareS4_Script_Trigger_Rutulian6_Template_14
 
 
 MareS4_Script_Trigger_RutuliDoubleA::
-# 1316 "data/maps/MareS4/scripts.pory"
+# 1354 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1317 "data/maps/MareS4/scripts.pory"
+# 1355 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 1
-# 1318 "data/maps/MareS4/scripts.pory"
+# 1356 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleB::
-# 1322 "data/maps/MareS4/scripts.pory"
+# 1360 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1323 "data/maps/MareS4/scripts.pory"
+# 1361 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 2
-# 1324 "data/maps/MareS4/scripts.pory"
+# 1362 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleC::
-# 1328 "data/maps/MareS4/scripts.pory"
+# 1366 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1329 "data/maps/MareS4/scripts.pory"
+# 1367 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 3
-# 1330 "data/maps/MareS4/scripts.pory"
+# 1368 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleD::
-# 1334 "data/maps/MareS4/scripts.pory"
+# 1372 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1335 "data/maps/MareS4/scripts.pory"
+# 1373 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 4
-# 1336 "data/maps/MareS4/scripts.pory"
+# 1374 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleE::
-# 1340 "data/maps/MareS4/scripts.pory"
+# 1378 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1341 "data/maps/MareS4/scripts.pory"
+# 1379 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 5
-# 1342 "data/maps/MareS4/scripts.pory"
+# 1380 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleF::
-# 1346 "data/maps/MareS4/scripts.pory"
+# 1384 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1347 "data/maps/MareS4/scripts.pory"
+# 1385 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 6
-# 1348 "data/maps/MareS4/scripts.pory"
+# 1386 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleG::
-# 1352 "data/maps/MareS4/scripts.pory"
+# 1390 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1353 "data/maps/MareS4/scripts.pory"
+# 1391 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 7
-# 1354 "data/maps/MareS4/scripts.pory"
+# 1392 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleH::
-# 1358 "data/maps/MareS4/scripts.pory"
+# 1396 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1359 "data/maps/MareS4/scripts.pory"
+# 1397 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 8
-# 1360 "data/maps/MareS4/scripts.pory"
+# 1398 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_RutuliDoubleI::
-# 1364 "data/maps/MareS4/scripts.pory"
+# 1402 "data/maps/MareS4/scripts.pory"
 	lockall
-# 1365 "data/maps/MareS4/scripts.pory"
+# 1403 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 9
-# 1366 "data/maps/MareS4/scripts.pory"
+# 1404 "data/maps/MareS4/scripts.pory"
 	call MareS4_Script_Trigger_Rutuli56Double_Template
 	return
 
 
 MareS4_Script_Trigger_Rutuli56Double_Template::
-# 1372 "data/maps/MareS4/scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1374 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 1376 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
-# 1377 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_ExclamationMark
-# 1378 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1380 "data/maps/MareS4/scripts.pory"
-	switch VAR_TEMP_9
-# 1381 "data/maps/MareS4/scripts.pory"
-	case 1, MareS4_Script_Trigger_Rutuli56Double_Template_3
-# 1383 "data/maps/MareS4/scripts.pory"
-	case 2, MareS4_Script_Trigger_Rutuli56Double_Template_4
-# 1386 "data/maps/MareS4/scripts.pory"
-	case 3, MareS4_Script_Trigger_Rutuli56Double_Template_5
-# 1389 "data/maps/MareS4/scripts.pory"
-	case 4, MareS4_Script_Trigger_Rutuli56Double_Template_6
-# 1392 "data/maps/MareS4/scripts.pory"
-	case 5, MareS4_Script_Trigger_Rutuli56Double_Template_7
-# 1395 "data/maps/MareS4/scripts.pory"
-	case 6, MareS4_Script_Trigger_Rutuli56Double_Template_8
-# 1398 "data/maps/MareS4/scripts.pory"
-	case 7, MareS4_Script_Trigger_Rutuli56Double_Template_9
-# 1401 "data/maps/MareS4/scripts.pory"
-	case 8, MareS4_Script_Trigger_Rutuli56Double_Template_10
-# 1404 "data/maps/MareS4/scripts.pory"
-	case 9, MareS4_Script_Trigger_Rutuli56Double_Template_11
-# 1407 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Script_Trigger_Rutulian6_Template_Text_0
-# 1408 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1409 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 # 1410 "data/maps/MareS4/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 1412 "data/maps/MareS4/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+# 1414 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_ExclamationMark
+# 1415 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_ExclamationMark
+# 1416 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1411 "data/maps/MareS4/scripts.pory"
+# 1418 "data/maps/MareS4/scripts.pory"
+	switch VAR_TEMP_9
+# 1419 "data/maps/MareS4/scripts.pory"
+	case 1, MareS4_Script_Trigger_Rutuli56Double_Template_3
+# 1421 "data/maps/MareS4/scripts.pory"
+	case 2, MareS4_Script_Trigger_Rutuli56Double_Template_4
+# 1424 "data/maps/MareS4/scripts.pory"
+	case 3, MareS4_Script_Trigger_Rutuli56Double_Template_5
+# 1427 "data/maps/MareS4/scripts.pory"
+	case 4, MareS4_Script_Trigger_Rutuli56Double_Template_6
+# 1430 "data/maps/MareS4/scripts.pory"
+	case 5, MareS4_Script_Trigger_Rutuli56Double_Template_7
+# 1433 "data/maps/MareS4/scripts.pory"
+	case 6, MareS4_Script_Trigger_Rutuli56Double_Template_8
+# 1436 "data/maps/MareS4/scripts.pory"
+	case 7, MareS4_Script_Trigger_Rutuli56Double_Template_9
+# 1439 "data/maps/MareS4/scripts.pory"
+	case 8, MareS4_Script_Trigger_Rutuli56Double_Template_10
+# 1442 "data/maps/MareS4/scripts.pory"
+	case 9, MareS4_Script_Trigger_Rutuli56Double_Template_11
+# 1445 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Script_Trigger_Rutulian6_Template_Text_0
+# 1446 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1447 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+# 1448 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1449 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 MareS4_Script_Trigger_Rutuli56Double_Template_1:
-# 1414 "data/maps/MareS4/scripts.pory"
+# 1452 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1416 "data/maps/MareS4/scripts.pory"
+# 1454 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 1417 "data/maps/MareS4/scripts.pory"
+# 1455 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1419 "data/maps/MareS4/scripts.pory"
+# 1457 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Rutuli56Pre1
-# 1421 "data/maps/MareS4/scripts.pory"
+# 1459 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 1422 "data/maps/MareS4/scripts.pory"
+# 1460 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1424 "data/maps/MareS4/scripts.pory"
+# 1462 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Rutuli56Pre2
-# 1425 "data/maps/MareS4/scripts.pory"
+# 1463 "data/maps/MareS4/scripts.pory"
 	closemessage
-# 1427 "data/maps/MareS4/scripts.pory"
+# 1465 "data/maps/MareS4/scripts.pory"
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 1428 "data/maps/MareS4/scripts.pory"
+# 1466 "data/maps/MareS4/scripts.pory"
 	trainerbattle_two_trainers TRAINER_RUTULIAN, MareS4_Text_Rutuli56Lost1, TRAINER_RUTULIAN, MareS4_Text_Rutuli56Lost2
-# 1430 "data/maps/MareS4/scripts.pory"
+# 1468 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Rutuli56Post
-# 1431 "data/maps/MareS4/scripts.pory"
+# 1469 "data/maps/MareS4/scripts.pory"
 	closemessage
-# 1433 "data/maps/MareS4/scripts.pory"
+# 1471 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp
-# 1434 "data/maps/MareS4/scripts.pory"
+# 1472 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1435 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1436 "data/maps/MareS4/scripts.pory"
-	switch VAR_TEMP_9
-# 1437 "data/maps/MareS4/scripts.pory"
-	case 1, MareS4_Script_Trigger_Rutuli56Double_Template_15
-# 1449 "data/maps/MareS4/scripts.pory"
-	case 2, MareS4_Script_Trigger_Rutuli56Double_Template_16
-# 1461 "data/maps/MareS4/scripts.pory"
-	case 3, MareS4_Script_Trigger_Rutuli56Double_Template_17
 # 1473 "data/maps/MareS4/scripts.pory"
-	case 4, MareS4_Script_Trigger_Rutuli56Double_Template_18
-# 1485 "data/maps/MareS4/scripts.pory"
-	case 5, MareS4_Script_Trigger_Rutuli56Double_Template_19
-# 1497 "data/maps/MareS4/scripts.pory"
-	case 6, MareS4_Script_Trigger_Rutuli56Double_Template_20
-# 1509 "data/maps/MareS4/scripts.pory"
-	case 7, MareS4_Script_Trigger_Rutuli56Double_Template_21
-# 1518 "data/maps/MareS4/scripts.pory"
-	case 8, MareS4_Script_Trigger_Rutuli56Double_Template_22
-# 1527 "data/maps/MareS4/scripts.pory"
-	case 9, MareS4_Script_Trigger_Rutuli56Double_Template_23
-# 1537 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Script_Trigger_Rutulian6_Template_Text_0
-# 1538 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1539 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 1540 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1541 "data/maps/MareS4/scripts.pory"
+# 1474 "data/maps/MareS4/scripts.pory"
+	switch VAR_TEMP_9
+# 1475 "data/maps/MareS4/scripts.pory"
+	case 1, MareS4_Script_Trigger_Rutuli56Double_Template_15
+# 1487 "data/maps/MareS4/scripts.pory"
+	case 2, MareS4_Script_Trigger_Rutuli56Double_Template_16
+# 1499 "data/maps/MareS4/scripts.pory"
+	case 3, MareS4_Script_Trigger_Rutuli56Double_Template_17
+# 1511 "data/maps/MareS4/scripts.pory"
+	case 4, MareS4_Script_Trigger_Rutuli56Double_Template_18
+# 1523 "data/maps/MareS4/scripts.pory"
+	case 5, MareS4_Script_Trigger_Rutuli56Double_Template_19
+# 1535 "data/maps/MareS4/scripts.pory"
+	case 6, MareS4_Script_Trigger_Rutuli56Double_Template_20
+# 1547 "data/maps/MareS4/scripts.pory"
+	case 7, MareS4_Script_Trigger_Rutuli56Double_Template_21
+# 1556 "data/maps/MareS4/scripts.pory"
+	case 8, MareS4_Script_Trigger_Rutuli56Double_Template_22
+# 1565 "data/maps/MareS4/scripts.pory"
+	case 9, MareS4_Script_Trigger_Rutuli56Double_Template_23
+# 1575 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Script_Trigger_Rutulian6_Template_Text_0
+# 1576 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1577 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+# 1578 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1579 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 MareS4_Script_Trigger_Rutuli56Double_Template_3:
-# 1382 "data/maps/MareS4/scripts.pory"
+# 1420 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft8
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_4:
-# 1384 "data/maps/MareS4/scripts.pory"
+# 1422 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1385 "data/maps/MareS4/scripts.pory"
+# 1423 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft7
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_5:
-# 1387 "data/maps/MareS4/scripts.pory"
+# 1425 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight2
-# 1388 "data/maps/MareS4/scripts.pory"
+# 1426 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft6
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_6:
-# 1390 "data/maps/MareS4/scripts.pory"
+# 1428 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight3
-# 1391 "data/maps/MareS4/scripts.pory"
+# 1429 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft5
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_7:
-# 1393 "data/maps/MareS4/scripts.pory"
+# 1431 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft4
-# 1394 "data/maps/MareS4/scripts.pory"
+# 1432 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight4
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_8:
-# 1396 "data/maps/MareS4/scripts.pory"
+# 1434 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft3
-# 1397 "data/maps/MareS4/scripts.pory"
+# 1435 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight5
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_9:
-# 1399 "data/maps/MareS4/scripts.pory"
+# 1437 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft2
-# 1400 "data/maps/MareS4/scripts.pory"
+# 1438 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight6
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_10:
-# 1402 "data/maps/MareS4/scripts.pory"
+# 1440 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft
-# 1403 "data/maps/MareS4/scripts.pory"
+# 1441 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight7
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_11:
-# 1405 "data/maps/MareS4/scripts.pory"
+# 1443 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight8
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_1
 
 MareS4_Script_Trigger_Rutuli56Double_Template_13:
-# 1545 "data/maps/MareS4/scripts.pory"
+# 1583 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN5
-# 1546 "data/maps/MareS4/scripts.pory"
+# 1584 "data/maps/MareS4/scripts.pory"
 	removeobject LOCALID_MARES4_RUTULIAN6
-# 1547 "data/maps/MareS4/scripts.pory"
+# 1585 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN5, 0, 0
-# 1548 "data/maps/MareS4/scripts.pory"
+# 1586 "data/maps/MareS4/scripts.pory"
 	setobjectxyperm LOCALID_MARES4_RUTULIAN6, 0, 0
-# 1549 "data/maps/MareS4/scripts.pory"
+# 1587 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN5, MOVEMENT_TYPE_INVISIBLE
-# 1550 "data/maps/MareS4/scripts.pory"
+# 1588 "data/maps/MareS4/scripts.pory"
 	setobjectmovementtype LOCALID_MARES4_RUTULIAN6, MOVEMENT_TYPE_INVISIBLE
-# 1551 "data/maps/MareS4/scripts.pory"
+# 1589 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN5
-# 1552 "data/maps/MareS4/scripts.pory"
+# 1590 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_RUTULIAN6
-# 1554 "data/maps/MareS4/scripts.pory"
+# 1592 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN5
-# 1555 "data/maps/MareS4/scripts.pory"
+# 1593 "data/maps/MareS4/scripts.pory"
 	setflag FLAG_MARES4_RUTULIAN6
-# 1557 "data/maps/MareS4/scripts.pory"
+# 1595 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_E, 0
-# 1558 "data/maps/MareS4/scripts.pory"
+# 1596 "data/maps/MareS4/scripts.pory"
 	setvar VAR_TEMP_9, 0
-# 1560 "data/maps/MareS4/scripts.pory"
+# 1598 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 MareS4_Script_Trigger_Rutuli56Double_Template_15:
-# 1438 "data/maps/MareS4/scripts.pory"
+# 1476 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1439 "data/maps/MareS4/scripts.pory"
+# 1477 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1440 "data/maps/MareS4/scripts.pory"
+# 1478 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight6
-# 1441 "data/maps/MareS4/scripts.pory"
+# 1479 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight6
-# 1442 "data/maps/MareS4/scripts.pory"
+# 1480 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1443 "data/maps/MareS4/scripts.pory"
+# 1481 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1444 "data/maps/MareS4/scripts.pory"
+# 1482 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1445 "data/maps/MareS4/scripts.pory"
+# 1483 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1446 "data/maps/MareS4/scripts.pory"
+# 1484 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1447 "data/maps/MareS4/scripts.pory"
+# 1485 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1448 "data/maps/MareS4/scripts.pory"
+# 1486 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_16:
-# 1450 "data/maps/MareS4/scripts.pory"
+# 1488 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1451 "data/maps/MareS4/scripts.pory"
+# 1489 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1452 "data/maps/MareS4/scripts.pory"
+# 1490 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight5
-# 1453 "data/maps/MareS4/scripts.pory"
+# 1491 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight5
-# 1454 "data/maps/MareS4/scripts.pory"
+# 1492 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1455 "data/maps/MareS4/scripts.pory"
+# 1493 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1456 "data/maps/MareS4/scripts.pory"
+# 1494 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1457 "data/maps/MareS4/scripts.pory"
+# 1495 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1458 "data/maps/MareS4/scripts.pory"
+# 1496 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1459 "data/maps/MareS4/scripts.pory"
+# 1497 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1460 "data/maps/MareS4/scripts.pory"
+# 1498 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_17:
-# 1462 "data/maps/MareS4/scripts.pory"
+# 1500 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1463 "data/maps/MareS4/scripts.pory"
+# 1501 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1464 "data/maps/MareS4/scripts.pory"
+# 1502 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight4
-# 1465 "data/maps/MareS4/scripts.pory"
+# 1503 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight4
-# 1466 "data/maps/MareS4/scripts.pory"
+# 1504 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1467 "data/maps/MareS4/scripts.pory"
+# 1505 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1468 "data/maps/MareS4/scripts.pory"
+# 1506 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1469 "data/maps/MareS4/scripts.pory"
+# 1507 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1470 "data/maps/MareS4/scripts.pory"
+# 1508 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1471 "data/maps/MareS4/scripts.pory"
+# 1509 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1472 "data/maps/MareS4/scripts.pory"
+# 1510 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_18:
-# 1474 "data/maps/MareS4/scripts.pory"
+# 1512 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1475 "data/maps/MareS4/scripts.pory"
+# 1513 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1476 "data/maps/MareS4/scripts.pory"
+# 1514 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight3
-# 1477 "data/maps/MareS4/scripts.pory"
+# 1515 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight3
-# 1478 "data/maps/MareS4/scripts.pory"
+# 1516 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1479 "data/maps/MareS4/scripts.pory"
+# 1517 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1480 "data/maps/MareS4/scripts.pory"
+# 1518 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1481 "data/maps/MareS4/scripts.pory"
+# 1519 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1482 "data/maps/MareS4/scripts.pory"
+# 1520 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1483 "data/maps/MareS4/scripts.pory"
+# 1521 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1484 "data/maps/MareS4/scripts.pory"
+# 1522 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_19:
-# 1486 "data/maps/MareS4/scripts.pory"
+# 1524 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1487 "data/maps/MareS4/scripts.pory"
+# 1525 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1488 "data/maps/MareS4/scripts.pory"
+# 1526 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight2
-# 1489 "data/maps/MareS4/scripts.pory"
+# 1527 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight2
-# 1490 "data/maps/MareS4/scripts.pory"
+# 1528 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1491 "data/maps/MareS4/scripts.pory"
+# 1529 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1492 "data/maps/MareS4/scripts.pory"
+# 1530 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1493 "data/maps/MareS4/scripts.pory"
+# 1531 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1494 "data/maps/MareS4/scripts.pory"
+# 1532 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1495 "data/maps/MareS4/scripts.pory"
+# 1533 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1496 "data/maps/MareS4/scripts.pory"
+# 1534 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_20:
-# 1498 "data/maps/MareS4/scripts.pory"
+# 1536 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1499 "data/maps/MareS4/scripts.pory"
+# 1537 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1500 "data/maps/MareS4/scripts.pory"
+# 1538 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1501 "data/maps/MareS4/scripts.pory"
+# 1539 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkRight
-# 1502 "data/maps/MareS4/scripts.pory"
+# 1540 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1503 "data/maps/MareS4/scripts.pory"
+# 1541 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1504 "data/maps/MareS4/scripts.pory"
+# 1542 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1505 "data/maps/MareS4/scripts.pory"
+# 1543 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1506 "data/maps/MareS4/scripts.pory"
+# 1544 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1507 "data/maps/MareS4/scripts.pory"
+# 1545 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1508 "data/maps/MareS4/scripts.pory"
+# 1546 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_21:
-# 1510 "data/maps/MareS4/scripts.pory"
+# 1548 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1511 "data/maps/MareS4/scripts.pory"
+# 1549 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1512 "data/maps/MareS4/scripts.pory"
+# 1550 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp
-# 1513 "data/maps/MareS4/scripts.pory"
+# 1551 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1514 "data/maps/MareS4/scripts.pory"
+# 1552 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1515 "data/maps/MareS4/scripts.pory"
+# 1553 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1516 "data/maps/MareS4/scripts.pory"
+# 1554 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1517 "data/maps/MareS4/scripts.pory"
+# 1555 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_22:
-# 1519 "data/maps/MareS4/scripts.pory"
+# 1557 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkRight
-# 1520 "data/maps/MareS4/scripts.pory"
+# 1558 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1521 "data/maps/MareS4/scripts.pory"
+# 1559 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp
-# 1522 "data/maps/MareS4/scripts.pory"
+# 1560 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft
-# 1523 "data/maps/MareS4/scripts.pory"
+# 1561 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1524 "data/maps/MareS4/scripts.pory"
+# 1562 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1525 "data/maps/MareS4/scripts.pory"
+# 1563 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1526 "data/maps/MareS4/scripts.pory"
+# 1564 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 MareS4_Script_Trigger_Rutuli56Double_Template_23:
-# 1528 "data/maps/MareS4/scripts.pory"
+# 1566 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft
-# 1529 "data/maps/MareS4/scripts.pory"
+# 1567 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1530 "data/maps/MareS4/scripts.pory"
+# 1568 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp
-# 1531 "data/maps/MareS4/scripts.pory"
+# 1569 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkLeft
-# 1532 "data/maps/MareS4/scripts.pory"
+# 1570 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1533 "data/maps/MareS4/scripts.pory"
+# 1571 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN5, Common_Movement_WalkUp5
-# 1534 "data/maps/MareS4/scripts.pory"
+# 1572 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_MARES4_RUTULIAN6, Common_Movement_WalkUp5
-# 1535 "data/maps/MareS4/scripts.pory"
+# 1573 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Trigger_Rutuli56Double_Template_13
 
 
 MareS4_Script_Rutulian7::
-# 1567 "data/maps/MareS4/scripts.pory"
-	lockall
-# 1569 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 1571 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark
-# 1572 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark
-# 1573 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1575 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_FaceDown
-# 1576 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown
-# 1577 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1578 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkLeft
-# 1579 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1581 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPre1
-# 1583 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 1584 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1586 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPre2
-# 1587 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1589 "data/maps/MareS4/scripts.pory"
-	trainerbattle_two_trainers TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2
-# 1591 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPost
-# 1592 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1594 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkRight
-# 1595 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1596 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown7
-# 1597 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown7
-# 1598 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1600 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN7
-# 1601 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN8
-# 1602 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN7, 0, 0
-# 1603 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN8, 0, 0
-# 1604 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE
 # 1605 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE
-# 1606 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN7
+	lockall
 # 1607 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN8
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
 # 1609 "data/maps/MareS4/scripts.pory"
-	setvar VAR_AENEID_STATE, 8
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark
+# 1610 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark
 # 1611 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1613 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_FaceDown
+# 1614 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown
+# 1615 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1616 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkLeft
+# 1617 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1619 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPre1
+# 1621 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 1622 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1624 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPre2
+# 1625 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1627 "data/maps/MareS4/scripts.pory"
+	trainerbattle_two_trainers TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2
+# 1629 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPost
+# 1630 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1632 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkRight
+# 1633 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1634 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown7
+# 1635 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown7
+# 1636 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1638 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN7
+# 1639 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN8
+# 1640 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN7, 0, 0
+# 1641 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN8, 0, 0
+# 1642 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE
+# 1643 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE
+# 1644 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN7
+# 1645 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN8
+# 1647 "data/maps/MareS4/scripts.pory"
+	setvar VAR_AENEID_STATE, 8
+# 1649 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Rutulian8::
-# 1618 "data/maps/MareS4/scripts.pory"
-	lockall
-# 1620 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 1622 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark
-# 1623 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark
-# 1624 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1626 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_FaceDown
-# 1627 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown
-# 1628 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1629 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkRight
-# 1630 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1632 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPre1
-# 1634 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 1635 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1637 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPre2
-# 1638 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1640 "data/maps/MareS4/scripts.pory"
-	trainerbattle_two_trainers TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2
-# 1642 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPost
-# 1643 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1645 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkLeft
-# 1646 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1647 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown7
-# 1648 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown7
-# 1649 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1651 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN7
-# 1652 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN8
-# 1653 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN7, 0, 0
-# 1654 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN8, 0, 0
-# 1655 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE
 # 1656 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE
-# 1657 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN7
+	lockall
 # 1658 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN8
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
 # 1660 "data/maps/MareS4/scripts.pory"
-	setvar VAR_AENEID_STATE, 8
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark
+# 1661 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark
 # 1662 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1664 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_FaceDown
+# 1665 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown
+# 1666 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1667 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkRight
+# 1668 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1670 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPre1
+# 1672 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 1673 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1675 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPre2
+# 1676 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1678 "data/maps/MareS4/scripts.pory"
+	trainerbattle_two_trainers TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2
+# 1680 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPost
+# 1681 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1683 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkLeft
+# 1684 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1685 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown7
+# 1686 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown7
+# 1687 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1689 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN7
+# 1690 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN8
+# 1691 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN7, 0, 0
+# 1692 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN8, 0, 0
+# 1693 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE
+# 1694 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE
+# 1695 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN7
+# 1696 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN8
+# 1698 "data/maps/MareS4/scripts.pory"
+	setvar VAR_AENEID_STATE, 8
+# 1700 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_Trigger_Doorguards::
-# 1668 "data/maps/MareS4/scripts.pory"
-	lockall
-# 1670 "data/maps/MareS4/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 1672 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark
-# 1673 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark
-# 1674 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1676 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_FaceRight
-# 1677 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_FaceLeft
-# 1678 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1680 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 1681 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1683 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPre1
-# 1685 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 1686 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1688 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPre2
-# 1689 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1691 "data/maps/MareS4/scripts.pory"
-	trainerbattle_two_trainers TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2
-# 1693 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_DoorguardPost
-# 1694 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1696 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown6
-# 1697 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown6
-# 1698 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1700 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN7
-# 1701 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_RUTULIAN8
-# 1702 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN7, 0, 0
-# 1703 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_RUTULIAN8, 0, 0
-# 1704 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE
-# 1705 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE
 # 1706 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN7
-# 1707 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_RUTULIAN8
-# 1709 "data/maps/MareS4/scripts.pory"
-	setvar VAR_AENEID_STATE, 8
+	lockall
+# 1708 "data/maps/MareS4/scripts.pory"
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+# 1710 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_ExclamationMark
 # 1711 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_ExclamationMark
+# 1712 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1714 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_FaceRight
+# 1715 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_FaceLeft
+# 1716 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1718 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 1719 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1721 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPre1
+# 1723 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 1724 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1726 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPre2
+# 1727 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1729 "data/maps/MareS4/scripts.pory"
+	trainerbattle_two_trainers TRAINER_RUTULIAN, MareS4_Text_DoorguardLost1, TRAINER_RUTULIAN, MareS4_Text_DoorguardLost2
+# 1731 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_DoorguardPost
+# 1732 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1734 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN7, Common_Movement_WalkDown6
+# 1735 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_RUTULIAN8, Common_Movement_WalkDown6
+# 1736 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1738 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN7
+# 1739 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_RUTULIAN8
+# 1740 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN7, 0, 0
+# 1741 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_RUTULIAN8, 0, 0
+# 1742 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN7, MOVEMENT_TYPE_INVISIBLE
+# 1743 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_RUTULIAN8, MOVEMENT_TYPE_INVISIBLE
+# 1744 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN7
+# 1745 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_RUTULIAN8
+# 1747 "data/maps/MareS4/scripts.pory"
+	setvar VAR_AENEID_STATE, 8
+# 1749 "data/maps/MareS4/scripts.pory"
 	releaseall
 	end
 
 
 MareS4_Script_RetRLostScene::
-# 1716 "data/maps/MareS4/scripts.pory"
-	setvar VAR_AENEID_STATE, 10
-# 1718 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 1719 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1721 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 1722 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1724 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 1725 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Aeneas_GoodJob
-# 1726 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
-# 1728 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
-# 1729 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Script_RetRLostScene_Text_0
-# 1730 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_ASCANIUS
-# 1731 "data/maps/MareS4/scripts.pory"
-	closemessage
-# 1733 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 1734 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark
-# 1735 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark
-# 1736 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1738 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_AENEAS, Common_Movement_FaceDown
-# 1739 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_FaceDown
-# 1740 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1742 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_ASCANIUS, Common_Movement_WalkUp3
-# 1743 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
-# 1745 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
-# 1746 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Ascanius_Help
-# 1747 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_ASCANIUS
-# 1749 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 1750 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Aeneas_WhatsWrong
-# 1751 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
-# 1753 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
 # 1754 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Ascanius_RetRGone
-# 1755 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_ASCANIUS
-# 1757 "data/maps/MareS4/scripts.pory"
+	setvar VAR_AENEID_STATE, 10
+# 1756 "data/maps/MareS4/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 1758 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark
+# 1757 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
 # 1759 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 # 1760 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1762 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_AENEAS, 190, 98
 # 1763 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Aeneas_Terrible
+	msgbox MareS4_Text_Aeneas_GoodJob
 # 1764 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
 # 1766 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
-# 1767 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Faustulus_RunOff
-# 1768 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_FAUSTULUS
-# 1770 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
-# 1771 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Ascanius_OrCaptured
-# 1772 "data/maps/MareS4/scripts.pory"
+# 1767 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Script_RetRLostScene_Text_0
+# 1768 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_ASCANIUS
-# 1774 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 1775 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Aeneas_TakeAction
-# 1776 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
-# 1777 "data/maps/MareS4/scripts.pory"
+# 1769 "data/maps/MareS4/scripts.pory"
 	closemessage
-# 1779 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_ASCANIUS, Common_Movement_WalkDown6
+# 1771 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 1772 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark
+# 1773 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark
+# 1774 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1776 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_FaceDown
+# 1777 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_FaceDown
+# 1778 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
 # 1780 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_WalkDown6
+	applymovement LOCALID_MARES4_ASCANIUS, Common_Movement_WalkUp3
 # 1781 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 # 1783 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_AENEAS, Common_Movement_FaceUp
+	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
 # 1784 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
+	msgbox MareS4_Text_Ascanius_Help
 # 1785 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 1786 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Aeneas_Search
+	destroy_field_pic FIELD_PIC_ASCANIUS
 # 1787 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
 # 1788 "data/maps/MareS4/scripts.pory"
-	closemessage
+	msgbox MareS4_Text_Aeneas_WhatsWrong
 # 1789 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_AENEAS, Common_Movement_FaceDown
-# 1790 "data/maps/MareS4/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1791 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
 # 1792 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_FAUSTULUS
+	msgbox MareS4_Text_Ascanius_RetRGone
 # 1793 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_ASCANIUS
-# 1794 "data/maps/MareS4/scripts.pory"
-	call MareS4_Script_ShowRetRSearch
+	destroy_field_pic FIELD_PIC_ASCANIUS
 # 1795 "data/maps/MareS4/scripts.pory"
-	addobject LOCALID_MARES4_FAUSTULUS
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 1796 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark
+# 1797 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_ExclamationMark
+# 1798 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1800 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 1801 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Aeneas_Terrible
+# 1802 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1804 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
+# 1805 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Faustulus_RunOff
+# 1806 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_FAUSTULUS
+# 1808 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
+# 1809 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Ascanius_OrCaptured
+# 1810 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_ASCANIUS
+# 1812 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 1813 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Aeneas_TakeAction
+# 1814 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1815 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1817 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_ASCANIUS, Common_Movement_WalkDown6
+# 1818 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_FAUSTULUS, Common_Movement_WalkDown6
+# 1819 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1821 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_FaceUp
+# 1822 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1823 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 1824 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Aeneas_Search
+# 1825 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1826 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1827 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_FaceDown
+# 1828 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1830 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_FAUSTULUS
+# 1831 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_ASCANIUS
+# 1832 "data/maps/MareS4/scripts.pory"
+	call MareS4_Script_ShowRetRSearch
+# 1833 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_FAUSTULUS
+# 1834 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_ASCANIUS
 	end
 
 
 MareS4_Script_Aeneas::
-# 1802 "data/maps/MareS4/scripts.pory"
+# 1840 "data/maps/MareS4/scripts.pory"
 	faceplayer
-# 1804 "data/maps/MareS4/scripts.pory"
+# 1842 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
 	goto_if_eq MareS4_Script_Aeneas_2
 MareS4_Script_Aeneas_1:
-# 1810 "data/maps/MareS4/scripts.pory"
+# 1849 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 11
+	goto_if_eq MareS4_Script_Aeneas_5
+MareS4_Script_Aeneas_4:
+# 1856 "data/maps/MareS4/scripts.pory"
 	call Common_Script_Unfaceplayer
 	return
 
 MareS4_Script_Aeneas_2:
-# 1805 "data/maps/MareS4/scripts.pory"
+# 1843 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_AENEAS, 190, 98
-# 1806 "data/maps/MareS4/scripts.pory"
+# 1844 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Aeneas_Search
-# 1807 "data/maps/MareS4/scripts.pory"
+# 1845 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
-# 1808 "data/maps/MareS4/scripts.pory"
+# 1846 "data/maps/MareS4/scripts.pory"
 	closemessage
 	goto MareS4_Script_Aeneas_1
 
+MareS4_Script_Aeneas_5:
+# 1850 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 1851 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Aeneas_Found
+# 1853 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1854 "data/maps/MareS4/scripts.pory"
+	closemessage
+	goto MareS4_Script_Aeneas_4
+
 
 MareS4_Script_Faustulus::
-# 1815 "data/maps/MareS4/scripts.pory"
+# 1861 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
-	goto_if_eq MareS4_Script_Faustulus_1
+	goto_if_eq MareS4_Script_Faustulus_2
+MareS4_Script_Faustulus_1:
+# 1866 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 11
+	goto_if_eq MareS4_Script_Faustulus_4
 	return
 
-MareS4_Script_Faustulus_1:
-# 1816 "data/maps/MareS4/scripts.pory"
+MareS4_Script_Faustulus_2:
+# 1862 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
-# 1817 "data/maps/MareS4/scripts.pory"
+# 1863 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Faustulus_Search, MSGBOX_NPC
-# 1818 "data/maps/MareS4/scripts.pory"
+# 1864 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_FAUSTULUS
+	goto MareS4_Script_Faustulus_1
+
+MareS4_Script_Faustulus_4:
+# 1867 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
+# 1868 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Faustulus_Found, MSGBOX_NPC
+# 1869 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_FAUSTULUS
 	return
 
 
 MareS4_Script_Ascanius::
-# 1823 "data/maps/MareS4/scripts.pory"
+# 1874 "data/maps/MareS4/scripts.pory"
 	faceplayer
-# 1825 "data/maps/MareS4/scripts.pory"
+# 1876 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
-	goto_if_eq MareS4_Script_Ascanius_1
+	goto_if_eq MareS4_Script_Ascanius_2
+MareS4_Script_Ascanius_1:
+# 1881 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 11
+	goto_if_eq MareS4_Script_Ascanius_4
 	return
 
-MareS4_Script_Ascanius_1:
-# 1826 "data/maps/MareS4/scripts.pory"
+MareS4_Script_Ascanius_2:
+# 1877 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
-# 1827 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Ascianus_Search, MSGBOX_NPC
-# 1828 "data/maps/MareS4/scripts.pory"
+# 1878 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Ascanius_Search, MSGBOX_NPC
+# 1879 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_ASCANIUS
+	goto MareS4_Script_Ascanius_1
+
+MareS4_Script_Ascanius_4:
+# 1882 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
+# 1883 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Ascanius_Found, MSGBOX_NPC
+# 1884 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_ASCANIUS
 	return
 
 
+MareS4_Script_Romulus::
+# 1890 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 11
+	goto_if_eq MareS4_Script_Romulus_1
+	return
+
+MareS4_Script_Romulus_1:
+# 1891 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Romulus_Found, MSGBOX_NPC
+	return
+
+
+MareS4_Script_Remus::
+# 1897 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 11
+	goto_if_eq MareS4_Script_Remus_1
+	return
+
+MareS4_Script_Remus_1:
+# 1898 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Remus_Found, MSGBOX_NPC
+	return
+
+
+MareS4_Script_Beroe::
+# 1904 "data/maps/MareS4/scripts.pory"
+	compare VAR_AENEID_STATE, 11
+	goto_if_eq MareS4_Script_Beroe_1
+	return
+
+MareS4_Script_Beroe_1:
+# 1905 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Beroe_Found, MSGBOX_NPC
+	return
+
+
 MareS4_Script_Trigger_Rutulian6_Template_Text_0:
-# 1238 "data/maps/MareS4/scripts.pory"
+# 1276 "data/maps/MareS4/scripts.pory"
 	.string "ERROR\pVAR_TEMP_9 OOB$"
 
 MareS4_Script_RetRLostScene_Text_0:
-# 1729 "data/maps/MareS4/scripts.pory"
+# 1767 "data/maps/MareS4/scripts.pory"
 	.string "HELP!$"
 
 MareS4_Text_Rutuli56Pre1::
-# 1833 "data/maps/MareS4/scripts.pory"
+# 1912 "data/maps/MareS4/scripts.pory"
 	.string "Warutuli wafight wastrongya.$"
 
 MareS4_Text_Rutuli56Pre2::
-# 1838 "data/maps/MareS4/scripts.pory"
+# 1917 "data/maps/MareS4/scripts.pory"
 	.string "Ka-Turnus watrust tastop.$"
 
 MareS4_Text_Rutuli56Lost1::
-# 1843 "data/maps/MareS4/scripts.pory"
+# 1922 "data/maps/MareS4/scripts.pory"
 	.string "Wastrong bena!$"
 
 MareS4_Text_Rutuli56Lost2::
-# 1848 "data/maps/MareS4/scripts.pory"
+# 1927 "data/maps/MareS4/scripts.pory"
 	.string "Ka-Turnus! Wafail!$"
 
 MareS4_Text_Rutuli56Post::
-# 1853 "data/maps/MareS4/scripts.pory"
+# 1932 "data/maps/MareS4/scripts.pory"
 	.string "Back fallya wamust! Wabeat beya!$"
 
 MareS4_Text_DoorguardPre1::
-# 1858 "data/maps/MareS4/scripts.pory"
+# 1937 "data/maps/MareS4/scripts.pory"
 	.string "KaTurnus best katrust men wabe.$"
 
 MareS4_Text_DoorguardPre2::
-# 1863 "data/maps/MareS4/scripts.pory"
+# 1942 "data/maps/MareS4/scripts.pory"
 	.string "Wapast aliveya gona!$"
 
 MareS4_Text_DoorguardLost1::
-# 1868 "data/maps/MareS4/scripts.pory"
+# 1947 "data/maps/MareS4/scripts.pory"
 	.string "What happen?$"
 
 MareS4_Text_DoorguardLost2::
-# 1873 "data/maps/MareS4/scripts.pory"
+# 1952 "data/maps/MareS4/scripts.pory"
 	.string "Sacanna bena!$"
 
 MareS4_Text_DoorguardPost::
-# 1878 "data/maps/MareS4/scripts.pory"
+# 1957 "data/maps/MareS4/scripts.pory"
 	.string "Wa-admit KaTurnus wadefeat wacanna.\p"
 	.string "WaHesperia forever waleave wamust.\n"
 	.string "Exhile wagoya.$"
 
 MareS4_Text_Aeneas_GoodJob::
-# 1882 "data/maps/MareS4/scripts.pory"
+# 1961 "data/maps/MareS4/scripts.pory"
 	.string "My lad! Good job, you've ran the savages\n"
 	.string "off the island. I saw the last of them\l"
 	.string "jump in the sea like they were being\l"
@@ -2901,33 +3048,33 @@ MareS4_Text_Aeneas_GoodJob::
 	.string "can begin...$"
 
 MareS4_Text_Ascanius_Help::
-# 1889 "data/maps/MareS4/scripts.pory"
+# 1968 "data/maps/MareS4/scripts.pory"
 	.string "Aeneas! Come quick! Something terrible\n"
 	.string "has happened!$"
 
 MareS4_Text_Aeneas_WhatsWrong::
-# 1894 "data/maps/MareS4/scripts.pory"
+# 1973 "data/maps/MareS4/scripts.pory"
 	.string "Ascianus, what is is?$"
 
 MareS4_Text_Ascanius_RetRGone::
-# 1898 "data/maps/MareS4/scripts.pory"
+# 1977 "data/maps/MareS4/scripts.pory"
 	.string "My boys, Remus and Romulus, are gone!$"
 
 MareS4_Text_Aeneas_Terrible::
-# 1902 "data/maps/MareS4/scripts.pory"
+# 1981 "data/maps/MareS4/scripts.pory"
 	.string "They're gone? That's terrible! They\n"
 	.string "must be found.$"
 
 MareS4_Text_Faustulus_RunOff::
-# 1907 "data/maps/MareS4/scripts.pory"
+# 1986 "data/maps/MareS4/scripts.pory"
 	.string "Sarun off likely saplay and salostya.$"
 
 MareS4_Text_Ascanius_OrCaptured::
-# 1911 "data/maps/MareS4/scripts.pory"
+# 1990 "data/maps/MareS4/scripts.pory"
 	.string "Or captured by the enemy! Or dead!$"
 
 MareS4_Text_Aeneas_TakeAction::
-# 1915 "data/maps/MareS4/scripts.pory"
+# 1994 "data/maps/MareS4/scripts.pory"
 	.string "This is time for action, not blind panic.\n"
 	.string "Ascianus I know it must be hard but\l"
 	.string "regain your composure and then search\l"
@@ -2939,16 +3086,56 @@ MareS4_Text_Aeneas_TakeAction::
 	.string "to the chieftain's hut.$"
 
 MareS4_Text_Aeneas_Search::
-# 1926 "data/maps/MareS4/scripts.pory"
+# 2005 "data/maps/MareS4/scripts.pory"
 	.string "Be off! Hurry! There is no time to lose!$"
 
-MareS4_Text_Ascianus_Search::
-# 1930 "data/maps/MareS4/scripts.pory"
+MareS4_Text_Ascanius_Search::
+# 2009 "data/maps/MareS4/scripts.pory"
 	.string "Oh Remus! Romulus! Come back to me! We\n"
 	.string "need to find my boys! I'm so worried!$"
 
 MareS4_Text_Faustulus_Search::
-# 1936 "data/maps/MareS4/scripts.pory"
+# 2015 "data/maps/MareS4/scripts.pory"
 	.string "Maheart know satwins ok beya. Around\n"
 	.string "saplay sabeya. Many places beya sahide.\l"
 	.string "Behind rock, up tree, in cave wafindya.$"
+
+MareS4_Text_Aeneas_Found::
+# 2019 "data/maps/MareS4/scripts.pory"
+	.string "At last, I can relax. We found the boys,\n"
+	.string "expelled the natives and fully control\l"
+	.string "Isla Hesperia. All that remains is to\l"
+	.string "build a mighty city upon the seven hills\l"
+	.string "of this noble island.$"
+
+MareS4_Text_Faustulus_Found::
+# 2028 "data/maps/MareS4/scripts.pory"
+	.string "Maheart sawarm masee saboys safeya\n"
+	.string "again saplay.$"
+
+MareS4_Text_Beroe_Found::
+# 2032 "data/maps/MareS4/scripts.pory"
+	.string "Even with the island all to ourselves I\n"
+	.string "can't help but feel lost, and vulnerable\l"
+	.string "in this exotic wilderness. I miss the\l"
+	.string "fields of Ilium... the walls of Troy...$"
+
+MareS4_Text_Ascanius_Found::
+# 2039 "data/maps/MareS4/scripts.pory"
+	.string "My boys are back! I was deathly afriad\n"
+	.string "that I had lost them just like I lost\l"
+	.string "their mother on our bitter journey here.$"
+
+MareS4_Text_Romulus_Found::
+# 2045 "data/maps/MareS4/scripts.pory"
+	.string "When I get older I will build my house\n"
+	.string "upon the hill where the she wolf nursed\l"
+	.string "us.$"
+
+MareS4_Text_Remus_Found::
+# 2050 "data/maps/MareS4/scripts.pory"
+	.string "I'm staying far away from that dark\n"
+	.string "cave where that monster kept us from\l"
+	.string "our father. The furthest southern hill\l"
+	.string "is where I will build my house to avoid\l"
+	.string "that cursed place.$"

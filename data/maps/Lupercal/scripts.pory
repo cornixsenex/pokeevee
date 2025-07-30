@@ -8,6 +8,12 @@ mapscripts Lupercal_MapScripts {
 			call (Lupercal_Script_ShowLupercalScene)
 		}
 	}
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			hideobjectat (LOCALID_LUPERCAL_LUPA, MAP_LUPERCAL)
+			removeobject (LOCALID_LUPERCAL_LUPA)
+		}
+	}
 
 }
 
@@ -65,6 +71,10 @@ script Lupercal_Script_LupercalScene {
 	//Lupa approach P
 	applymovement (LOCALID_LUPERCAL_LUPA, Common_Movement_WalkDown)
 	waitmovement (0)
+	//RetR face battle
+	applymovement (LOCALID_LUPERCAL_ROMULUS, Common_Movement_FaceDown)
+	applymovement (LOCALID_LUPERCAL_REMUS, Common_Movement_FaceDown)
+	waitmovement (0)
 	//Lupa growl et battle
 	playmoncry (SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
 	waitmoncry
@@ -72,15 +82,75 @@ script Lupercal_Script_LupercalScene {
 	special (DoLupaBattle)
 	waitstate
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	//remove L
 	removeobject (LOCALID_LUPERCAL_LUPA)
+	setobjectxyperm (LOCALID_LUPERCAL_LUPA, 0, 0)
+	setobjectmovementtype (LOCALID_LUPERCAL_LUPA, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_LUPERCAL_LUPA)
+	//add F
+	removeobject (LOCALID_LUPERCAL_FAUSTULUS)
+	setobjectxyperm (LOCALID_LUPERCAL_FAUSTULUS, 6, 12)
+	setobjectmovementtype (LOCALID_LUPERCAL_FAUSTULUS, MOVEMENT_TYPE_FACE_UP)
+	addobject (LOCALID_LUPERCAL_FAUSTULUS)
+	//F: Romulus! Remus!
+    load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+    msgbox (Lupercal_Text_Faustulus1)
+    destroy_field_pic (FIELD_PIC_FAUSTULUS)
+	closemessage
+	//alert all
+	applymovement (LOCALID_LUPERCAL_ROMULUS, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_LUPERCAL_REMUS, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//face player down
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
 	//Enter F
-	//F: Boys you're all right!
-	//F approach
-	//F: We were so afraid for you, lets get back now
+	applymovement (LOCALID_LUPERCAL_FAUSTULUS, Common_Movement_WalkUp4)
+	waitmovement (0)
+	//F: You're alright! We were so afraid for you, lets get back now
+    load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+    msgbox (Lupercal_Text_Faustulus2)
+    destroy_field_pic (FIELD_PIC_FAUSTULUS)
+	closemessage
 	//exeunt
+	applymovement (LOCALID_LUPERCAL_ROMULUS, Common_Movement_WalkDown5)
+	applymovement (LOCALID_LUPERCAL_REMUS, Common_Movement_WalkDown5)
+	waitmovement (0)
+	applymovement (LOCALID_LUPERCAL_FAUSTULUS, Common_Movement_WalkDown)
+	applymovement (LOCALID_LUPERCAL_ROMULUS, Common_Movement_WalkRight)
+	applymovement (LOCALID_LUPERCAL_REMUS, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (LOCALID_LUPERCAL_FAUSTULUS, Common_Movement_WalkDown4)
+	applymovement (LOCALID_LUPERCAL_ROMULUS, Common_Movement_WalkDown4)
+	applymovement (LOCALID_LUPERCAL_REMUS, Common_Movement_WalkDown4)
+	waitmovement (0)
+	//remove RetRetF
+	removeobject (LOCALID_LUPERCAL_ROMULUS)
+	setobjectxyperm (LOCALID_LUPERCAL_ROMULUS, 0, 0)
+	setobjectmovementtype (LOCALID_LUPERCAL_ROMULUS, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_LUPERCAL_ROMULUS)
+	removeobject (LOCALID_LUPERCAL_REMUS)
+	setobjectxyperm (LOCALID_LUPERCAL_REMUS, 0, 0)
+	setobjectmovementtype (LOCALID_LUPERCAL_REMUS, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_LUPERCAL_REMUS)
+	removeobject (LOCALID_LUPERCAL_FAUSTULUS)
+	setobjectxyperm (LOCALID_LUPERCAL_FAUSTULUS, 0, 0)
+	setobjectmovementtype (LOCALID_LUPERCAL_FAUSTULUS, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_LUPERCAL_FAUSTULUS)
 	//set var
+	addvar (VAR_AENEID_STATE, 1)
 	//fin
 	releaseall
 	end
 
+}
+
+text Lupercal_Text_Faustulus1 {
+	format("Romulus! Remus!")
+}
+
+//Oh boys you're safe! It's such a relief to find you here. C'mon we need to get back to the other, your father is worried sick about you.
+text Lupercal_Text_Faustulus2 {
+	format("Oh boys safe tabe! Tahere mafind relief isya! To safety wagoya, tafather saworried badya.")
 }

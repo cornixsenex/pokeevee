@@ -285,7 +285,7 @@ script Tucson_Script_Paris {
 			//Check if Hector is here:
 			if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
 				//check if Aeneas not here
-				if (var(VAR_AENEID_STATE) < 69) { //Needs Updating
+				if (var(VAR_AENEID_STATE) < 12) { 
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
 					msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 					closemessage
@@ -298,7 +298,7 @@ script Tucson_Script_Paris {
 			} else {
 				msgbox (Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT)
 				//Check if Aeneis not here
-				if (var(VAR_AENEID_STATE) < 1) {
+				if (var(VAR_AENEID_STATE) < 12) {
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)
 				}
 				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
@@ -408,7 +408,7 @@ text Tucson_Text_Nestor5 {
 }
 
 text Tucson_Text_Hector {
-	format("It is a great honor and true privaledge to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
+	format("It is a great honor and true privledge to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
 }
 
 text Tucson_Text_Helen1 {
@@ -460,7 +460,7 @@ text Tucson_Text_Menelaus_GiveInvites {
 }	   
 
 text Tucson_Text_Menelaus_OnAgamemnon {
-	format("My dear older brother Agamemnon lives with his family in Aldeon.")
+	format("My dear older brother Agamemnon lives with his family in Albion Town.")
 }
 
 text Tucson_Text_Menelaus_OnUlysses {

@@ -43,6 +43,14 @@ mapscripts MareS4_MapScripts {
 		if (var(VAR_AENEID_STATE) == 10) {
 			call (MareS4_Script_ShowRetRSearch)
 		}
+		//Show RetR found - Aeneas Present
+		if (var(VAR_AENEID_STATE) == 11) {
+			call (MareS4_Script_ShowRetRFound)
+		}
+		//Show Aeneas has left
+		if (var(VAR_AENEID_STATE) == 12) {
+			call (MareS4_Script_ShowAeneasGone)
+		}
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AENEID_STATE, 9: MareS4_Script_RetRLostScene
@@ -158,6 +166,36 @@ script MareS4_Script_ShowRetRSearch {
     setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT)
     setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_RIGHT_UP)
+    return
+}
+
+script MareS4_Script_ShowRetRFound {
+	setobjectxyperm (LOCALID_MARES4_AENEAS, 69, 61)
+    setobjectxyperm (LOCALID_MARES4_FAUSTULUS, 65, 62)
+    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 66, 64)
+    setobjectxyperm (LOCALID_MARES4_ROMULUS, 63, 64)
+    setobjectxyperm (LOCALID_MARES4_REMUS, 67, 66)
+    setobjectxyperm (LOCALID_MARES4_BEROE, 70, 64)
+    setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_LOOK_AROUND)
+    setobjectmovementtype (LOCALID_MARES4_ROMULUS, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+    setobjectmovementtype (LOCALID_MARES4_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP)
+    setobjectmovementtype (LOCALID_MARES4_BEROE, MOVEMENT_TYPE_FACE_RIGHT)
+    return
+}
+
+script MareS4_Script_ShowAeneasGone {
+    setobjectxyperm (LOCALID_MARES4_FAUSTULUS, 65, 62)
+    setobjectxyperm (LOCALID_MARES4_ASCANIUS, 66, 64)
+    setobjectxyperm (LOCALID_MARES4_ROMULUS, 63, 64)
+    setobjectxyperm (LOCALID_MARES4_REMUS, 67, 66)
+    setobjectxyperm (LOCALID_MARES4_BEROE, 70, 64)
+    setobjectmovementtype (LOCALID_MARES4_FAUSTULUS, MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype (LOCALID_MARES4_ASCANIUS, MOVEMENT_TYPE_LOOK_AROUND)
+    setobjectmovementtype (LOCALID_MARES4_ROMULUS, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+    setobjectmovementtype (LOCALID_MARES4_REMUS, MOVEMENT_TYPE_WALK_DOWN_AND_UP)
+    setobjectmovementtype (LOCALID_MARES4_BEROE, MOVEMENT_TYPE_FACE_RIGHT)
     return
 }
 
@@ -1807,6 +1845,14 @@ script MareS4_Script_Aeneas {
 		destroy_field_pic (FIELD_PIC_AENEAS)
 		closemessage
 	}
+	//RetR found
+	if (var(VAR_AENEID_STATE) == 11) {
+		load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+		msgbox (MareS4_Text_Aeneas_Found)
+		//Here go invitation script
+		destroy_field_pic (FIELD_PIC_AENEAS)
+		closemessage
+	}
 	call (Common_Script_Unfaceplayer)
 }
 
@@ -1816,6 +1862,11 @@ script MareS4_Script_Faustulus {
 		load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
 		msgbox (MareS4_Text_Faustulus_Search, MSGBOX_NPC)
 		destroy_field_pic (FIELD_PIC_FAUSTULUS)
+	}	//RetR found 
+	if (var(VAR_AENEID_STATE) == 11) {
+		load_field_pic (FIELD_PIC_FAUSTULUS, 190, 98)
+		msgbox (MareS4_Text_Faustulus_Found, MSGBOX_NPC)
+		destroy_field_pic (FIELD_PIC_FAUSTULUS)
 	}
 }
 
@@ -1824,10 +1875,38 @@ script MareS4_Script_Ascanius {
 	//RetR search
 	if (var(VAR_AENEID_STATE) == 10) {
 		load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
-		msgbox (MareS4_Text_Ascianus_Search, MSGBOX_NPC)
+		msgbox (MareS4_Text_Ascanius_Search, MSGBOX_NPC)
+		destroy_field_pic (FIELD_PIC_ASCANIUS)
+	}	//RetR found 
+	if (var(VAR_AENEID_STATE) == 11) {
+		load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)
+		msgbox (MareS4_Text_Ascanius_Found, MSGBOX_NPC)
 		destroy_field_pic (FIELD_PIC_ASCANIUS)
 	}
 }
+
+script MareS4_Script_Romulus {
+	//RetR found 
+	if (var(VAR_AENEID_STATE) == 11) {
+		msgbox (MareS4_Text_Romulus_Found, MSGBOX_NPC)
+	}
+}
+
+script MareS4_Script_Remus {
+	//RetR Found 
+	if (var(VAR_AENEID_STATE) == 11) {
+		msgbox (MareS4_Text_Remus_Found, MSGBOX_NPC)
+	}
+}
+
+script MareS4_Script_Beroe {
+	//RetR Found
+	if (var(VAR_AENEID_STATE) == 11) {
+		msgbox (MareS4_Text_Beroe_Found, MSGBOX_NPC)
+	}
+}
+
+
 
 //When we Rutuli fight together we fight stronger
 text MareS4_Text_Rutuli56Pre1 {
@@ -1927,7 +2006,7 @@ text MareS4_Text_Aeneas_Search {
 	format("Be off! Hurry! There is no time to lose!")
 }
 
-text MareS4_Text_Ascianus_Search {
+text MareS4_Text_Ascanius_Search {
 	format("Oh Remus! Romulus! Come back to me!
 			We need to find my boys! I'm so worried!")
 }
@@ -1936,3 +2015,43 @@ text MareS4_Text_Ascianus_Search {
 text MareS4_Text_Faustulus_Search {
 	format("Maheart know satwins ok beya. Around saplay sabeya. Many places beya sahide. Behind rock, up tree, in cave wafindya.")
 }
+
+text MareS4_Text_Aeneas_Found {
+	format("At last, I can relax. We found the boys,
+			expelled the natives and fully control 
+			Isla Hesperia. All that remains
+			is to build a mighty city upon
+			the seven hills of this noble island.")
+}
+
+//Warms my heart to see the boys safe and playing again
+text MareS4_Text_Faustulus_Found {
+	format("Maheart sawarm masee saboys safeya again saplay.")
+}
+
+text MareS4_Text_Beroe_Found {
+	format("Even with the island all to ourselves
+			I can't help but feel lost, and vulnerable
+			in this exotic wilderness. I miss
+			the fields of Ilium... the walls of Troy...")
+}
+
+text MareS4_Text_Ascanius_Found {
+	format("My boys are back! I was deathly afriad
+			that I had lost them just like I lost
+			their mother on our bitter journey here.")
+}
+
+text MareS4_Text_Romulus_Found {
+	format("When I get older I will build my house
+			upon the hill where the she wolf nursed us.")
+}
+
+text MareS4_Text_Remus_Found {
+	format("I'm staying far away from that dark cave
+			where that monster kept us from our father.
+			The furthest southern hill is where I will
+			build my house to avoid that cursed place.")
+}
+
+
