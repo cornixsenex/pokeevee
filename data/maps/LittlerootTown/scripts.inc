@@ -122,6 +122,12 @@ LittlerootTown_EventScript_StepOffTruckFemale::
 	releaseall
 	end
 
+LittlerootTown_Script_TestSign::
+	givemon SPECIES_JOLTEON, 40, ITEM_NON
+	setwildbattle SPECIES_PIDGEY, 3
+	dowildbattle
+	end
+
 LittlerootTown_EventScript_GoInsideWithMom::
 	delay 15
 	playse SE_LEDGE
