@@ -2866,7 +2866,7 @@ MareS4_Script_Aeneas_1:
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Aeneas_5
 MareS4_Script_Aeneas_4:
-# 1856 "data/maps/MareS4/scripts.pory"
+# 1890 "data/maps/MareS4/scripts.pory"
 	call Common_Script_Unfaceplayer
 	return
 
@@ -2887,104 +2887,157 @@ MareS4_Script_Aeneas_5:
 # 1851 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Aeneas_Found
 # 1853 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
+	checkitem ITEM_WEDDING_INVITATION_AENEAS, 1
 # 1854 "data/maps/MareS4/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq MareS4_Script_Aeneas_7
+# 1859 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark
+# 1860 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1862 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Aeneas_Wedding1
+# 1863 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1865 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_GiveInvitation
+# 1867 "data/maps/MareS4/scripts.pory"
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
+# 1868 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Aeneas_Wedding2
+# 1869 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1870 "data/maps/MareS4/scripts.pory"
+	closemessage
+# 1872 "data/maps/MareS4/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 1873 "data/maps/MareS4/scripts.pory"
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq MareS4_Script_Aeneas_11
+MareS4_Script_Aeneas_10:
+# 1877 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_WalkDown6
+# 1878 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+# 1880 "data/maps/MareS4/scripts.pory"
+	removeobject LOCALID_MARES4_AENEAS
+# 1881 "data/maps/MareS4/scripts.pory"
+	setobjectxyperm LOCALID_MARES4_AENEAS, 0, 0
+# 1882 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_INVISIBLE
+# 1883 "data/maps/MareS4/scripts.pory"
+	addobject LOCALID_MARES4_AENEAS
+# 1885 "data/maps/MareS4/scripts.pory"
+	addvar VAR_AENEID_STATE, 1
+	end
+
+MareS4_Script_Aeneas_7:
+# 1855 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1856 "data/maps/MareS4/scripts.pory"
 	closemessage
 	goto MareS4_Script_Aeneas_4
 
+MareS4_Script_Aeneas_11:
+# 1874 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_WalkLeft
+# 1875 "data/maps/MareS4/scripts.pory"
+	waitmovement 0
+	goto MareS4_Script_Aeneas_10
+
 
 MareS4_Script_Faustulus::
-# 1861 "data/maps/MareS4/scripts.pory"
+# 1895 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
 	goto_if_eq MareS4_Script_Faustulus_2
 MareS4_Script_Faustulus_1:
-# 1866 "data/maps/MareS4/scripts.pory"
+# 1900 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Faustulus_4
 	return
 
 MareS4_Script_Faustulus_2:
-# 1862 "data/maps/MareS4/scripts.pory"
+# 1896 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
-# 1863 "data/maps/MareS4/scripts.pory"
+# 1897 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Faustulus_Search, MSGBOX_NPC
-# 1864 "data/maps/MareS4/scripts.pory"
+# 1898 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_FAUSTULUS
 	goto MareS4_Script_Faustulus_1
 
 MareS4_Script_Faustulus_4:
-# 1867 "data/maps/MareS4/scripts.pory"
+# 1901 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
-# 1868 "data/maps/MareS4/scripts.pory"
+# 1902 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Faustulus_Found, MSGBOX_NPC
-# 1869 "data/maps/MareS4/scripts.pory"
+# 1903 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_FAUSTULUS
 	return
 
 
 MareS4_Script_Ascanius::
-# 1874 "data/maps/MareS4/scripts.pory"
+# 1908 "data/maps/MareS4/scripts.pory"
 	faceplayer
-# 1876 "data/maps/MareS4/scripts.pory"
+# 1910 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
 	goto_if_eq MareS4_Script_Ascanius_2
 MareS4_Script_Ascanius_1:
-# 1881 "data/maps/MareS4/scripts.pory"
+# 1915 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Ascanius_4
 	return
 
 MareS4_Script_Ascanius_2:
-# 1877 "data/maps/MareS4/scripts.pory"
+# 1911 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
-# 1878 "data/maps/MareS4/scripts.pory"
+# 1912 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Ascanius_Search, MSGBOX_NPC
-# 1879 "data/maps/MareS4/scripts.pory"
+# 1913 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_ASCANIUS
 	goto MareS4_Script_Ascanius_1
 
 MareS4_Script_Ascanius_4:
-# 1882 "data/maps/MareS4/scripts.pory"
+# 1916 "data/maps/MareS4/scripts.pory"
 	load_field_pic FIELD_PIC_ASCANIUS, 190, 98
-# 1883 "data/maps/MareS4/scripts.pory"
+# 1917 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Ascanius_Found, MSGBOX_NPC
-# 1884 "data/maps/MareS4/scripts.pory"
+# 1918 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_ASCANIUS
 	return
 
 
 MareS4_Script_Romulus::
-# 1890 "data/maps/MareS4/scripts.pory"
+# 1924 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Romulus_1
 	return
 
 MareS4_Script_Romulus_1:
-# 1891 "data/maps/MareS4/scripts.pory"
+# 1925 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Romulus_Found, MSGBOX_NPC
 	return
 
 
 MareS4_Script_Remus::
-# 1897 "data/maps/MareS4/scripts.pory"
+# 1931 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Remus_1
 	return
 
 MareS4_Script_Remus_1:
-# 1898 "data/maps/MareS4/scripts.pory"
+# 1932 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Remus_Found, MSGBOX_NPC
 	return
 
 
 MareS4_Script_Beroe::
-# 1904 "data/maps/MareS4/scripts.pory"
+# 1938 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Beroe_1
 	return
 
 MareS4_Script_Beroe_1:
-# 1905 "data/maps/MareS4/scripts.pory"
+# 1939 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_Beroe_Found, MSGBOX_NPC
 	return
 
@@ -2998,49 +3051,49 @@ MareS4_Script_RetRLostScene_Text_0:
 	.string "HELP!$"
 
 MareS4_Text_Rutuli56Pre1::
-# 1912 "data/maps/MareS4/scripts.pory"
+# 1946 "data/maps/MareS4/scripts.pory"
 	.string "Warutuli wafight wastrongya.$"
 
 MareS4_Text_Rutuli56Pre2::
-# 1917 "data/maps/MareS4/scripts.pory"
+# 1951 "data/maps/MareS4/scripts.pory"
 	.string "Ka-Turnus watrust tastop.$"
 
 MareS4_Text_Rutuli56Lost1::
-# 1922 "data/maps/MareS4/scripts.pory"
+# 1956 "data/maps/MareS4/scripts.pory"
 	.string "Wastrong bena!$"
 
 MareS4_Text_Rutuli56Lost2::
-# 1927 "data/maps/MareS4/scripts.pory"
+# 1961 "data/maps/MareS4/scripts.pory"
 	.string "Ka-Turnus! Wafail!$"
 
 MareS4_Text_Rutuli56Post::
-# 1932 "data/maps/MareS4/scripts.pory"
+# 1966 "data/maps/MareS4/scripts.pory"
 	.string "Back fallya wamust! Wabeat beya!$"
 
 MareS4_Text_DoorguardPre1::
-# 1937 "data/maps/MareS4/scripts.pory"
+# 1971 "data/maps/MareS4/scripts.pory"
 	.string "KaTurnus best katrust men wabe.$"
 
 MareS4_Text_DoorguardPre2::
-# 1942 "data/maps/MareS4/scripts.pory"
+# 1976 "data/maps/MareS4/scripts.pory"
 	.string "Wapast aliveya gona!$"
 
 MareS4_Text_DoorguardLost1::
-# 1947 "data/maps/MareS4/scripts.pory"
+# 1981 "data/maps/MareS4/scripts.pory"
 	.string "What happen?$"
 
 MareS4_Text_DoorguardLost2::
-# 1952 "data/maps/MareS4/scripts.pory"
+# 1986 "data/maps/MareS4/scripts.pory"
 	.string "Sacanna bena!$"
 
 MareS4_Text_DoorguardPost::
-# 1957 "data/maps/MareS4/scripts.pory"
+# 1991 "data/maps/MareS4/scripts.pory"
 	.string "Wa-admit KaTurnus wadefeat wacanna.\p"
 	.string "WaHesperia forever waleave wamust.\n"
 	.string "Exhile wagoya.$"
 
 MareS4_Text_Aeneas_GoodJob::
-# 1961 "data/maps/MareS4/scripts.pory"
+# 1995 "data/maps/MareS4/scripts.pory"
 	.string "My lad! Good job, you've ran the savages\n"
 	.string "off the island. I saw the last of them\l"
 	.string "jump in the sea like they were being\l"
@@ -3048,33 +3101,33 @@ MareS4_Text_Aeneas_GoodJob::
 	.string "can begin...$"
 
 MareS4_Text_Ascanius_Help::
-# 1968 "data/maps/MareS4/scripts.pory"
+# 2002 "data/maps/MareS4/scripts.pory"
 	.string "Aeneas! Come quick! Something terrible\n"
 	.string "has happened!$"
 
 MareS4_Text_Aeneas_WhatsWrong::
-# 1973 "data/maps/MareS4/scripts.pory"
+# 2007 "data/maps/MareS4/scripts.pory"
 	.string "Ascianus, what is is?$"
 
 MareS4_Text_Ascanius_RetRGone::
-# 1977 "data/maps/MareS4/scripts.pory"
+# 2011 "data/maps/MareS4/scripts.pory"
 	.string "My boys, Remus and Romulus, are gone!$"
 
 MareS4_Text_Aeneas_Terrible::
-# 1981 "data/maps/MareS4/scripts.pory"
+# 2015 "data/maps/MareS4/scripts.pory"
 	.string "They're gone? That's terrible! They\n"
 	.string "must be found.$"
 
 MareS4_Text_Faustulus_RunOff::
-# 1986 "data/maps/MareS4/scripts.pory"
+# 2020 "data/maps/MareS4/scripts.pory"
 	.string "Sarun off likely saplay and salostya.$"
 
 MareS4_Text_Ascanius_OrCaptured::
-# 1990 "data/maps/MareS4/scripts.pory"
+# 2024 "data/maps/MareS4/scripts.pory"
 	.string "Or captured by the enemy! Or dead!$"
 
 MareS4_Text_Aeneas_TakeAction::
-# 1994 "data/maps/MareS4/scripts.pory"
+# 2028 "data/maps/MareS4/scripts.pory"
 	.string "This is time for action, not blind panic.\n"
 	.string "Ascianus I know it must be hard but\l"
 	.string "regain your composure and then search\l"
@@ -3086,22 +3139,22 @@ MareS4_Text_Aeneas_TakeAction::
 	.string "to the chieftain's hut.$"
 
 MareS4_Text_Aeneas_Search::
-# 2005 "data/maps/MareS4/scripts.pory"
+# 2039 "data/maps/MareS4/scripts.pory"
 	.string "Be off! Hurry! There is no time to lose!$"
 
 MareS4_Text_Ascanius_Search::
-# 2009 "data/maps/MareS4/scripts.pory"
+# 2043 "data/maps/MareS4/scripts.pory"
 	.string "Oh Remus! Romulus! Come back to me! We\n"
 	.string "need to find my boys! I'm so worried!$"
 
 MareS4_Text_Faustulus_Search::
-# 2015 "data/maps/MareS4/scripts.pory"
+# 2049 "data/maps/MareS4/scripts.pory"
 	.string "Maheart know satwins ok beya. Around\n"
 	.string "saplay sabeya. Many places beya sahide.\l"
 	.string "Behind rock, up tree, in cave wafindya.$"
 
 MareS4_Text_Aeneas_Found::
-# 2019 "data/maps/MareS4/scripts.pory"
+# 2053 "data/maps/MareS4/scripts.pory"
 	.string "At last, I can relax. We found the boys,\n"
 	.string "expelled the natives and fully control\l"
 	.string "Isla Hesperia. All that remains is to\l"
@@ -3109,33 +3162,59 @@ MareS4_Text_Aeneas_Found::
 	.string "of this noble island.$"
 
 MareS4_Text_Faustulus_Found::
-# 2028 "data/maps/MareS4/scripts.pory"
+# 2062 "data/maps/MareS4/scripts.pory"
 	.string "Maheart sawarm masee saboys safeya\n"
 	.string "again saplay.$"
 
 MareS4_Text_Beroe_Found::
-# 2032 "data/maps/MareS4/scripts.pory"
+# 2066 "data/maps/MareS4/scripts.pory"
 	.string "Even with the island all to ourselves I\n"
 	.string "can't help but feel lost, and vulnerable\l"
 	.string "in this exotic wilderness. I miss the\l"
 	.string "fields of Ilium... the walls of Troy...$"
 
 MareS4_Text_Ascanius_Found::
-# 2039 "data/maps/MareS4/scripts.pory"
+# 2073 "data/maps/MareS4/scripts.pory"
 	.string "My boys are back! I was deathly afriad\n"
 	.string "that I had lost them just like I lost\l"
 	.string "their mother on our bitter journey here.$"
 
 MareS4_Text_Romulus_Found::
-# 2045 "data/maps/MareS4/scripts.pory"
+# 2079 "data/maps/MareS4/scripts.pory"
 	.string "When I get older I will build my house\n"
 	.string "upon the hill where the she wolf nursed\l"
 	.string "us.$"
 
 MareS4_Text_Remus_Found::
-# 2050 "data/maps/MareS4/scripts.pory"
+# 2084 "data/maps/MareS4/scripts.pory"
 	.string "I'm staying far away from that dark\n"
 	.string "cave where that monster kept us from\l"
 	.string "our father. The furthest southern hill\l"
 	.string "is where I will build my house to avoid\l"
 	.string "that cursed place.$"
+
+MareS4_Text_Aeneas_Wedding1::
+# 2091 "data/maps/MareS4/scripts.pory"
+	.string "What's that? You have something to\n"
+	.string "give to me?$"
+
+MareS4_Text_GiveInvitation::
+# 2095 "data/maps/MareS4/scripts.pory"
+	.string "{PLAYER} gave the Wedding Invitation\n"
+	.string "to Aeneas$"
+
+MareS4_Text_Aeneas_Wedding2::
+# 2099 "data/maps/MareS4/scripts.pory"
+	.string "My dear friend Paris is at the great\n"
+	.string "house of Nestor as a guest and expects\l"
+	.string "to take his daughter, Helen, to be his\l"
+	.string "wife! Wonderful news! I must be off at\l"
+	.string "once! Though I am loathe to leave my\l"
+	.string "destiny to wait on this island I must\l"
+	.string "attend this most consequential\l"
+	.string "ceremony. With the primitives purged\l"
+	.string "Hesperia will be kept safe by my\l"
+	.string "Ascanius while I attend my good\l"
+	.string "friend's wedding day. Therefore I take\l"
+	.string "my leave. When I return we shall begin\l"
+	.string "to build the great city!$"

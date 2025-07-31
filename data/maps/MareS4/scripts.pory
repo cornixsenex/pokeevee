@@ -1850,8 +1850,42 @@ script MareS4_Script_Aeneas {
 		load_field_pic (FIELD_PIC_AENEAS, 190, 98)
 		msgbox (MareS4_Text_Aeneas_Found)
 		//Here go invitation script
-		destroy_field_pic (FIELD_PIC_AENEAS)
-		closemessage
+        checkitem (ITEM_WEDDING_INVITATION_AENEAS, 1)
+        if (var(VAR_RESULT) == FALSE) {
+            destroy_field_pic (FIELD_PIC_AENEAS)
+            closemessage
+        } else {
+            //alert aeneas
+            applymovement (LOCALID_MARES4_AENEAS, Common_Movement_ExclamationMark)
+            waitmovement (0)
+            //A: Whats that? You have something for me?
+            msgbox (MareS4_Text_Aeneas_Wedding1)
+            destroy_field_pic (FIELD_PIC_AENEAS)
+            //Give A Wedding Invitation
+            msgbox (MareS4_Text_GiveInvitation)
+            //My dear friend Paris is at the mighty home of Nestor? I must attend! Thank you for delivering this to me. As much as I want to get to work, building my city must wait. I will leave at once.
+            load_field_pic (FIELD_PIC_AENEAS, 190, 98)
+            msgbox (MareS4_Text_Aeneas_Wedding2)
+            destroy_field_pic (FIELD_PIC_AENEAS)
+            closemessage
+            //exit aeneas
+            specialvar (VAR_RESULT, GetPlayerFacingDirection)
+            if (var(VAR_RESULT) == DIR_NORTH) {
+                applymovement (LOCALID_MARES4_AENEAS, Common_Movement_WalkLeft)
+                waitmovement (0)
+            }
+            applymovement (LOCALID_MARES4_AENEAS, Common_Movement_WalkDown6)
+            waitmovement (0)
+            //hide aeneas
+            removeobject (LOCALID_MARES4_AENEAS)
+            setobjectxyperm (LOCALID_MARES4_AENEAS, 0, 0)
+            setobjectmovementtype (LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_INVISIBLE)
+            addobject (LOCALID_MARES4_AENEAS)
+            //setvars
+            addvar (VAR_AENEID_STATE, 1)
+            //fin
+            end
+        }
 	}
 	call (Common_Script_Unfaceplayer)
 }
@@ -2053,5 +2087,29 @@ text MareS4_Text_Remus_Found {
 			The furthest southern hill is where I will
 			build my house to avoid that cursed place.")
 }
+
+text MareS4_Text_Aeneas_Wedding1 {
+    format("What's that? You have something to give to me?")
+}
+
+text MareS4_Text_GiveInvitation {
+    format("{PLAYER} gave the Wedding Invitation to Aeneas")
+}
+
+text MareS4_Text_Aeneas_Wedding2 {
+    format("My dear friend Paris is at the great house
+            of Nestor as a guest and expects to
+            take his daughter, Helen, to be his wife!
+            Wonderful news! I must be off at once!
+            Though I am loathe to leave my destiny
+            to wait on this island I must attend
+            this most consequential ceremony.
+            With the primitives purged Hesperia
+            will be kept safe by my Ascanius
+            while I attend my good friend's wedding day.
+            Therefore I take my leave. When I return
+            we shall begin to build the great city!")
+}
+
 
 

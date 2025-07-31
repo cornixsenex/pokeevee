@@ -1,1 +1,31 @@
-mapscripts Gymnasium_MapScripts {}
+
+
+mapscripts Gymnasium_MapScripts {
+
+
+}
+
+
+script  Gymnasium_Script_BlackBelt {
+
+}
+
+script  Gymnasium_Script_Hector {
+
+}
+
+script  Gymnasium_Script_TrainerHector {
+
+}
+
+script  Gymnasium_Script_Protesilaus {
+
+}
+
+script  Gymnasium_Script_TrainerProtesilaus {
+
+}
+
+script  Gymnasium_Script_Chiron {
+
+}

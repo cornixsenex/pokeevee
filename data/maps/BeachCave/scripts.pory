@@ -2,14 +2,36 @@
 const OBJ_HECTOR = 7
 
 
-mapscripts BeachCave_MapScripts {}
+mapscripts BeachCave_MapScripts {
 
+    MAP_SCRIPT_ON_TRANSITION {
+        //Hide Hector et Trainer (after acquire Invitation)
+        checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
+        if (var(VAR_RESULT) == TRUE) { // Needs to check if he's at Nestor already - New flag
+            call (BeachCave_Script_HideHector)
+        }
+    }
+
+}
+
+script BeachCave_Script_HideHector {
+    setobjectxyperm (LOCALID_BEACHCAVE_HECTOR, 0, 0)
+    setobjectxyperm (LOCALID_BEACHCAVE_HECTORTRAINER, 0, 0)
+    setobjectmovementtype (LOCALID_BEACHCAVE_HECTOR, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (LOCALID_BEACHCAVE_HECTORTRAINER, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (LOCALID_BEACHCAVE_LASS, MOVEMENT_TYPE_FACE_DOWN)
+    return
+}
 
 script BeachCave_EventScript_Nick {
 	trainerbattle_single(TRAINER_NICK, Route3_Text_NickIntro, Route3_Text_NickLost)
 	msgbox (Route3_Text_NickPost)
 	closemessage
 	end
+}
+
+script BeachCave_Script_Lass {
+
 }
 
 script BeachCave_EventScript_Kyle {

@@ -81,14 +81,16 @@ script Tucson_Script_ShowNestorHousePreWedding {
 	if (var(VAR_ARGO_STATE > 19)) {
 		call (Tucson_Script_ShowDioscuri)
 	}
-
 	// Hector
 	if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
-		setobjectxyperm (OBJ_EVENT_HECTOR, 23, 10)
+		setobjectxyperm (OBJ_EVENT_HECTOR, 22, 10)
 		setobjectmovementtype (OBJ_EVENT_HECTOR, MOVEMENT_TYPE_FACE_DOWN)
 	}
-
 	//Aeneas
+    if (var(VAR_AENEID_STATE) > 11) {
+		setobjectxyperm (LOCALID_TUCSON_AENEAS, 22, 10)
+		setobjectmovementtype (LOCALID_TUCSON_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
+    }
 	
 	//Agamemnon
 

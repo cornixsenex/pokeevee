@@ -235,9 +235,8 @@
 																//8: After Turnus' doorguards - Trigger Turnus in hut
                                                                 //9: After Turnus - Trigger RetR lost on S4
                                                                 //10: During RetR lost - setup Lupercal
-																//11: After Lupercal - show RetR returned - setup Aeneas depart for Nestor's House
-																//12: After Aeneas has left (will he return...?)
-																//69: After war is finished - Hide Aeneid MareS8
+																//11: After Lupercal - show RetR returned - setup Aeneas recieve invitation 
+																//12: After invitation - Aeneas has left (will he return...?)
 #define VAR_TURRIS_SALTUS_STATE                   		 0x407B //Triggers battles and tracks progress thru Turrus Saltus
                                                                 //Increases by 1 after each battle
                                                                 //0: Door Guard

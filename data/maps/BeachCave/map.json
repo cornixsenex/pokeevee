@@ -28,8 +28,9 @@
       "flag": "0"
     },
     {
+      "local_id": " LOCALID_BEACHCAVE_HECTORTRAINER",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 13,
+      "x": 20,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
@@ -43,10 +44,10 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
       "x": 4,
-      "y": 13,
+      "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
-      "movement_range_x": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
@@ -68,7 +69,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 23,
+      "x": 25,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -93,17 +94,32 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_BEACHCAVE_HECTOR",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
-      "x": 24,
-      "y": 7,
+      "x": 19,
+      "y": 6,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 4,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BeachCave_EventScript_Hector",
       "flag": "FLAG_BEACHCAVE_HIDE_HECTOR"
+    },
+    {
+      "local_id": "LOCALID_BEACHCAVE_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 16,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BeachCave_Script_Lass",
+      "flag": "0"
     }
   ],
   "warp_events": [
