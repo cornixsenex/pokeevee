@@ -6520,6 +6520,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Lupercal/border.bin",
       "blockdata_filepath": "data/layouts/Lupercal/map.bin"
+    },
+    {
+      "id": "LAYOUT_GYMNASIUM",
+      "name": "Gymnasium_Layout",
+      "width": 11,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/Gymnasium/border.bin",
+      "blockdata_filepath": "data/layouts/Gymnasium/map.bin"
     }
   ]
 }

@@ -1662,3 +1662,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Lupercal/scripts.inc"
 
 	.include "data/maps/Salinae/scripts.inc"
+
+	.include "data/maps/Gymnasium/scripts.inc"
