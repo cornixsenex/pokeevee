@@ -28,6 +28,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_GYMNASIUM_PROTESILAUSTRAINER",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 0,
       "y": 4,
@@ -41,6 +42,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_GYMNASIUM_HECTORTRAINER",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 10,
       "y": 4,
@@ -54,6 +56,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_GYMNASIUM_PROTESILAUS",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 1,
       "y": 4,

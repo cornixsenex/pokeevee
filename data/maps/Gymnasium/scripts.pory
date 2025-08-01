@@ -1,4 +1,5 @@
 
+//FLAG_TEMP_B used to setup champion Protesilaus stuff
 
 mapscripts Gymnasium_MapScripts {
 
@@ -6,18 +7,28 @@ mapscripts Gymnasium_MapScripts {
 		//hide hector if he's gone
 		if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
 			call (Gymnasium_Script_HideHector)
+			//show challenger as champion if re-enter after he left
+			call (Gymnasium_Script_ShowChampionProtesilaus)
+			//set temp flag to toggle everyone's dialogue - ie reflect P won and H lost - without flag text is just like 'did h really just leave' he's coming back right? etc etc
+			setflag (FLAG_TEMP_B)
 		}
-		//show challenger as champion if re-enter after he left
-		//set temp flag to toggle everyone's dialogue - ie reflect P won and H lost - without flag text is just like 'did h really just leave' he's coming back right? etc etc
-
 	}
-
 
 }
 
 script Gymnasium_Script_HideHector {
 	setobjectxyperm (LOCALID_GYMNASIUM_HECTOR, 0, 0)
 	setobjectmovementtype (LOCALID_GYMNASIUM_HECTOR, MOVEMENT_TYPE_INVISIBLE)
+	return
+}
+
+script Gymnasium_Script_ShowChampionProtesilaus {
+	setobjectxyperm (LOCALID_GYMNASIUM_HECTORTRAINER, 7, 4)
+	setobjectmovementtype (LOCALID_GYMNASIUM_HECTORTRAINER, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_GYMNASIUM_PROTESILAUSTRAINER, 3, 4)
+	setobjectmovementtype (LOCALID_GYMNASIUM_PROTESILAUSTRAINER, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_GYMNASIUM_PROTESILAUS, 4, 2)
+	setobjectmovementtype (LOCALID_GYMNASIUM_PROTESILAUS, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
 
@@ -82,7 +93,23 @@ script  Gymnasium_Script_TrainerHector {
 }
 
 script  Gymnasium_Script_Protesilaus {
-
+	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
+	//Champion Protesilaus - Yes trans flag
+	if (flag(FLAG_TEMP_B)) {
+		msgbox (Gymnasium_Text_Protesilaus_Champion, MSGBOX_NPC)
+	}
+	//Hector in the building - Yes Invitation & no gym hector flag
+	elif (var(VAR_RESULT) == TRUE) {
+		msgbox (Gymnasium_Text_Protesilaus_BeforeHectorFight, MSGBOX_NPC)
+	} else {
+		//After Hector Leaves - No invitation & no gym hector flag & no trans flag
+		if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
+			msgbox (Gymnasium_Text_Protesilaus_AfterHectorExit, MSGBOX_NPC)
+		} else {
+		//Before Hector Arrives - No invitation & No Gym Hector Flag
+			msgbox (Gymnasium_Text_Protesilaus_Train, MSGBOX_NPC)
+		}
+	}
 }
 
 script  Gymnasium_Script_TrainerProtesilaus {
@@ -94,30 +121,63 @@ script  Gymnasium_Script_Chiron {
 }
 
 text Gymnasium_Text_BlackBelt1 {
-	format("")
+	format("This is the Gymnasium, home of the Grand Tournanment.")
 }
 
 text Gymnasium_Text_BlackBelt2 {
-	format("")
+	format("I'm honored just to guard the door of this place.")
 }
 
 text Gymnasium_Text_BlackBelt3 {
-	format("")
+	format("You don't look like most of the men who come to the Gymnasium to train under Chiron and fight in the Grand Tournament.")
 }
 
 text Gymnasium_Text_Hector1 {
-	format("")
+	format("I've trained all my life for this tournanment.
+			I'm ready. I will be the champion.")
 }
 
 text Gymnasium_Text_Hector_Wedding1 {
-	format("")
+	format("What's that? You brought something to give to me?")
 }
 
 text Gymnasium_Text_Hector_Wedding2 {
-	format("")
+	format("Wonderful news! My young brother, Paris,
+			is staying as a guest at Nestor's house
+			and is one of two candidates to wed
+			Nestor's lovely daughter, Helen! I must
+			attend. As much as I would like to stay,
+			to win, to become the champion I
+			have worked so hard to be, my family
+			comes first. I will not act dishonorably
+			by chasing vain glory and scorning the
+			pious obligation to attend my
+			brother's wedding. Even if he is not
+			the groom, an invitation to the house
+			of Nestor is honorable as well.
+			Therefore, I lay down my bid for the wreath
+			of laurel and my fight for victory.
+			Farewell, all! I must be off for the house
+			of Nestor to be with my dear Paris.")
 }
 
 text Gymnasium_Text_GiveInvitation {
+    format("{PLAYER} gave the Wedding Invitation to Hector")
+}
+
+text Gymnasium_Text_Protesilaus_Train {
+	format("")
+}
+
+text Gymnasium_Text_Protesilaus_BeforeHectorFight {
+	format("")
+}
+
+text Gymnasium_Text_Protesilaus_AfterHectorExit {
+	format("")
+}
+
+text Gymnasium_Text_Protesilaus_Champion {
 	format("")
 }
 	
