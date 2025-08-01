@@ -1861,6 +1861,7 @@ script MareS4_Script_Aeneas {
             //A: Whats that? You have something for me?
             msgbox (MareS4_Text_Aeneas_Wedding1)
             destroy_field_pic (FIELD_PIC_AENEAS)
+			removeitem (ITEM_WEDDING_INVITATION_AENEAS)
             //Give A Wedding Invitation
             msgbox (MareS4_Text_GiveInvitation)
             //My dear friend Paris is at the mighty home of Nestor? I must attend! Thank you for delivering this to me. As much as I want to get to work, building my city must wait. I will leave at once.
@@ -1905,7 +1906,6 @@ script MareS4_Script_Faustulus {
 }
 
 script MareS4_Script_Ascanius {
-	faceplayer
 	//RetR search
 	if (var(VAR_AENEID_STATE) == 10) {
 		load_field_pic (FIELD_PIC_ASCANIUS, 190, 98)

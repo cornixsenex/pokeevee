@@ -82,7 +82,7 @@ script Tucson_Script_ShowNestorHousePreWedding {
 		call (Tucson_Script_ShowDioscuri)
 	}
 	// Hector
-	if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
+	if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
 		setobjectxyperm (OBJ_EVENT_HECTOR, 22, 10)
 		setobjectmovementtype (OBJ_EVENT_HECTOR, MOVEMENT_TYPE_FACE_DOWN)
 	}
@@ -285,7 +285,7 @@ script Tucson_Script_Paris {
 		else {
 			//Check if guests have arrived, if so say like ready for the wedding
 			//Check if Hector is here:
-			if (flag(FLAG_BEACHCAVE_HIDE_HECTOR)) {
+			if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
 				//check if Aeneas not here
 				if (var(VAR_AENEID_STATE) < 12) { 
 					msgbox (Tucson_Text_Paris_OnAeneas, MSGBOX_DEFAULT)

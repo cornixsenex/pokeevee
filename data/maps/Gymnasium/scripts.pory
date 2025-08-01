@@ -2,16 +2,79 @@
 
 mapscripts Gymnasium_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		//hide hector if he's gone
+		if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
+			call (Gymnasium_Script_HideHector)
+		}
+		//show challenger as champion if re-enter after he left
+		//set temp flag to toggle everyone's dialogue - ie reflect P won and H lost - without flag text is just like 'did h really just leave' he's coming back right? etc etc
+
+	}
+
 
 }
 
+script Gymnasium_Script_HideHector {
+	setobjectxyperm (LOCALID_GYMNASIUM_HECTOR, 0, 0)
+	setobjectmovementtype (LOCALID_GYMNASIUM_HECTOR, MOVEMENT_TYPE_INVISIBLE)
+	return
+}
 
+//Entry dudes
 script  Gymnasium_Script_BlackBelt {
-
+    specialvar (VAR_RESULT, RandDigit)
+	switch (var(VAR_RESULT)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+			msgbox (Gymnasium_Text_BlackBelt1, MSGBOX_NPC)
+		case 4:
+		case 5:
+		case 6:
+			msgbox (Gymnasium_Text_BlackBelt2, MSGBOX_NPC)
+		case 7:
+		case 8:
+		case 9:
+		default:
+			msgbox (Gymnasium_Text_BlackBelt3, MSGBOX_NPC)
+	}
 }
 
 script  Gymnasium_Script_Hector {
-
+	msgbox (Gymnasium_Text_Hector1, MSGBOX_NPC)
+	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		end
+	} else {
+		//alert Hector
+		applymovement (LOCALID_GYMNASIUM_HECTOR, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//H: Whats that? You have something for me?
+		msgbox (Gymnasium_Text_Hector_Wedding1)
+		removeitem (ITEM_WEDDING_INVITATION_HECTOR)
+		//Give H Wedding Invitation
+		msgbox (Gymnasium_Text_GiveInvitation)
+		msgbox (Gymnasium_Text_Hector_Wedding2)
+		closemessage
+		//exit hector
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_NORTH) {
+			applymovement (LOCALID_GYMNASIUM_HECTOR, Common_Movement_WalkLeft)
+			waitmovement (0)
+		}
+		applymovement (LOCALID_GYMNASIUM_HECTOR, Common_Movement_WalkDown7)
+		waitmovement (0)
+		//hide aeneas
+		removeobject (LOCALID_GYMNASIUM_HECTOR)
+		call (Gymnasium_Script_HideHector)
+		addobject (LOCALID_GYMNASIUM_HECTOR)
+		//setflag
+		setflag (FLAG_GYMNASIUM_HECTORLEFT)
+		end
+	}
+	//fin
 }
 
 script  Gymnasium_Script_TrainerHector {
@@ -29,3 +92,32 @@ script  Gymnasium_Script_TrainerProtesilaus {
 script  Gymnasium_Script_Chiron {
 
 }
+
+text Gymnasium_Text_BlackBelt1 {
+	format("")
+}
+
+text Gymnasium_Text_BlackBelt2 {
+	format("")
+}
+
+text Gymnasium_Text_BlackBelt3 {
+	format("")
+}
+
+text Gymnasium_Text_Hector1 {
+	format("")
+}
+
+text Gymnasium_Text_Hector_Wedding1 {
+	format("")
+}
+
+text Gymnasium_Text_Hector_Wedding2 {
+	format("")
+}
+
+text Gymnasium_Text_GiveInvitation {
+	format("")
+}
+	

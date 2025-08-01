@@ -2866,7 +2866,7 @@ MareS4_Script_Aeneas_1:
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Aeneas_5
 MareS4_Script_Aeneas_4:
-# 1890 "data/maps/MareS4/scripts.pory"
+# 1891 "data/maps/MareS4/scripts.pory"
 	call Common_Script_Unfaceplayer
 	return
 
@@ -2899,35 +2899,37 @@ MareS4_Script_Aeneas_5:
 	msgbox MareS4_Text_Aeneas_Wedding1
 # 1863 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_AENEAS
-# 1865 "data/maps/MareS4/scripts.pory"
+# 1864 "data/maps/MareS4/scripts.pory"
+	removeitem ITEM_WEDDING_INVITATION_AENEAS
+# 1866 "data/maps/MareS4/scripts.pory"
 	msgbox MareS4_Text_GiveInvitation
-# 1867 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_AENEAS, 190, 98
 # 1868 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Aeneas_Wedding2
+	load_field_pic FIELD_PIC_AENEAS, 190, 98
 # 1869 "data/maps/MareS4/scripts.pory"
-	destroy_field_pic FIELD_PIC_AENEAS
+	msgbox MareS4_Text_Aeneas_Wedding2
 # 1870 "data/maps/MareS4/scripts.pory"
+	destroy_field_pic FIELD_PIC_AENEAS
+# 1871 "data/maps/MareS4/scripts.pory"
 	closemessage
-# 1872 "data/maps/MareS4/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 1873 "data/maps/MareS4/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 1874 "data/maps/MareS4/scripts.pory"
 	compare VAR_RESULT, DIR_NORTH
 	goto_if_eq MareS4_Script_Aeneas_11
 MareS4_Script_Aeneas_10:
-# 1877 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_AENEAS, Common_Movement_WalkDown6
 # 1878 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_WalkDown6
+# 1879 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
-# 1880 "data/maps/MareS4/scripts.pory"
-	removeobject LOCALID_MARES4_AENEAS
 # 1881 "data/maps/MareS4/scripts.pory"
-	setobjectxyperm LOCALID_MARES4_AENEAS, 0, 0
+	removeobject LOCALID_MARES4_AENEAS
 # 1882 "data/maps/MareS4/scripts.pory"
-	setobjectmovementtype LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_MARES4_AENEAS, 0, 0
 # 1883 "data/maps/MareS4/scripts.pory"
+	setobjectmovementtype LOCALID_MARES4_AENEAS, MOVEMENT_TYPE_INVISIBLE
+# 1884 "data/maps/MareS4/scripts.pory"
 	addobject LOCALID_MARES4_AENEAS
-# 1885 "data/maps/MareS4/scripts.pory"
+# 1886 "data/maps/MareS4/scripts.pory"
 	addvar VAR_AENEID_STATE, 1
 	end
 
@@ -2939,45 +2941,43 @@ MareS4_Script_Aeneas_7:
 	goto MareS4_Script_Aeneas_4
 
 MareS4_Script_Aeneas_11:
-# 1874 "data/maps/MareS4/scripts.pory"
-	applymovement LOCALID_MARES4_AENEAS, Common_Movement_WalkLeft
 # 1875 "data/maps/MareS4/scripts.pory"
+	applymovement LOCALID_MARES4_AENEAS, Common_Movement_WalkLeft
+# 1876 "data/maps/MareS4/scripts.pory"
 	waitmovement 0
 	goto MareS4_Script_Aeneas_10
 
 
 MareS4_Script_Faustulus::
-# 1895 "data/maps/MareS4/scripts.pory"
+# 1896 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
 	goto_if_eq MareS4_Script_Faustulus_2
 MareS4_Script_Faustulus_1:
-# 1900 "data/maps/MareS4/scripts.pory"
+# 1901 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 11
 	goto_if_eq MareS4_Script_Faustulus_4
 	return
 
 MareS4_Script_Faustulus_2:
-# 1896 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
 # 1897 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Faustulus_Search, MSGBOX_NPC
+	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
 # 1898 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Faustulus_Search, MSGBOX_NPC
+# 1899 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_FAUSTULUS
 	goto MareS4_Script_Faustulus_1
 
 MareS4_Script_Faustulus_4:
-# 1901 "data/maps/MareS4/scripts.pory"
-	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
 # 1902 "data/maps/MareS4/scripts.pory"
-	msgbox MareS4_Text_Faustulus_Found, MSGBOX_NPC
+	load_field_pic FIELD_PIC_FAUSTULUS, 190, 98
 # 1903 "data/maps/MareS4/scripts.pory"
+	msgbox MareS4_Text_Faustulus_Found, MSGBOX_NPC
+# 1904 "data/maps/MareS4/scripts.pory"
 	destroy_field_pic FIELD_PIC_FAUSTULUS
 	return
 
 
 MareS4_Script_Ascanius::
-# 1908 "data/maps/MareS4/scripts.pory"
-	faceplayer
 # 1910 "data/maps/MareS4/scripts.pory"
 	compare VAR_AENEID_STATE, 10
 	goto_if_eq MareS4_Script_Ascanius_2

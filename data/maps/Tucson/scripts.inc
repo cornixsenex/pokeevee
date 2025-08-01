@@ -102,7 +102,7 @@ Tucson_Script_ShowNestorHousePreWedding::
 	goto_if_ne Tucson_Script_ShowNestorHousePreWedding_2
 Tucson_Script_ShowNestorHousePreWedding_1:
 # 85 "data/maps/Tucson/scripts.pory"
-	goto_if_set FLAG_BEACHCAVE_HIDE_HECTOR, Tucson_Script_ShowNestorHousePreWedding_5
+	goto_if_set FLAG_GYMNASIUM_HECTORLEFT, Tucson_Script_ShowNestorHousePreWedding_5
 Tucson_Script_ShowNestorHousePreWedding_4:
 # 90 "data/maps/Tucson/scripts.pory"
 	compare VAR_AENEID_STATE, 11
@@ -382,7 +382,7 @@ Tucson_Script_Paris_3:
 # 271 "data/maps/Tucson/scripts.pory"
 	goto_if_unset FLAG_TUCSON_PARIS_DID_INVITE, Tucson_Script_Paris_8
 # 288 "data/maps/Tucson/scripts.pory"
-	goto_if_set FLAG_BEACHCAVE_HIDE_HECTOR, Tucson_Script_Paris_11
+	goto_if_set FLAG_GYMNASIUM_HECTORLEFT, Tucson_Script_Paris_11
 # 301 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Paris_OnHector, MSGBOX_DEFAULT
 # 303 "data/maps/Tucson/scripts.pory"

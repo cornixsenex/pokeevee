@@ -69,7 +69,7 @@
 #define FLAG_TRANQUILITAS_SURFSCHOOL_OPEN      0x37 //Set after Leaf opens Surf School - Hides Misty in Tranquilitas 
 
 #define FLAG_CASATURNI_HIDERUTULI      0x38 //Set after Turnus battle - hides the rutuli
-#define FLAG_UNUSED_0x39      0x39 //UNUSED
+#define FLAG_GYMNASIUM_HECTORLEFT      0x39 //Set after Hector leaves for Nestor House. Hide Hector in Gymansium and CavernaCamela
 #define FLAG_UNUSED_0x3A      0x3A //UNUSED 
 #define FLAG_UNUSED_0x3B      0x3B //UNUSED 
 #define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4 - hides Mewtwo in Capital
@@ -102,7 +102,7 @@
 #define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
 #define FLAG_UNUSED_0x51                     0x51 //UNUSED
 #define FLAG_SLABS_HIDE_RIVAL                0x52
-#define FLAG_BEACHCAVE_HIDE_HECTOR           0x53  // Set after talk to hector W/ wedding invitation. Hides Hector in beach cave (and shows hector in Tuscon?) 
+#define FLAG_UNUSED_0x53                     0x53 //UNUSED  
 #define FLAG_TUCSON_NESTOR_INTROD            0x54  // Set after speaking with Tucson Nestor one time
 #define FLAG_CAPITAL_HIDE_ROCKETS            0x55  // Set after Gio is defeated at the capital 
 #define FLAG_WHJ_OPEN                        0x56  // Set when allowed into WHJ 					
@@ -205,9 +205,10 @@
 #define FLAG_MARES4_RUTULIAN4                0xB1
 #define FLAG_MARES4_RUTULIAN5                0xB2
 #define FLAG_MARES4_RUTULIAN6                0xB3
-// BREAK //
 
-#define FLAG_DECORATION_7                    0xB4
+// BREAK // - USE UNUSED ABOVE PLS
+
+#define FLAG_DECORATION_7                    0xB4 //DID YOU USE UNUSED ABOVE?
 #define FLAG_DECORATION_8                    0xB5
 #define FLAG_DECORATION_9                    0xB6
 #define FLAG_DECORATION_10                   0xB7

@@ -7,11 +7,10 @@ mapscripts BeachCave_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         //Hide Hector et Trainer (after acquire Invitation)
         checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
-        if (var(VAR_RESULT) == TRUE) { // Needs to check if he's at Nestor already - New flag
+		if (var(VAR_RESULT) == TRUE || flag(FLAG_GYMNASIUM_HECTORLEFT)) { 
             call (BeachCave_Script_HideHector)
         }
     }
-
 }
 
 script BeachCave_Script_HideHector {
@@ -31,7 +30,12 @@ script BeachCave_EventScript_Nick {
 }
 
 script BeachCave_Script_Lass {
-
+	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
+	if (var(VAR_RESULT) == TRUE || flag(FLAG_GYMNASIUM_HECTORLEFT)) {
+		msgbox(BeachCave_Text_Lass2, MSGBOX_NPC)
+	} else {
+		msgbox(BeachCave_Text_Lass1, MSGBOX_NPC)
+	}
 }
 
 script BeachCave_EventScript_Kyle {
@@ -69,23 +73,13 @@ script BeachCave_EventScript_Trevor {
 	end
 }
 
-script BeachCave_EventScript_Hector {
-	lock
-	faceplayer
-	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
-	if (var(VAR_RESULT) == TRUE) {
-		removeitem (ITEM_WEDDING_INVITATION_HECTOR)
-		msgbox(BeachCave_Text_Hector2)
-		closemessage
-		fadescreenswapbuffers (1)
-		removeobject (OBJ_HECTOR)
-		setflag (FLAG_BEACHCAVE_HIDE_HECTOR)
-		fadescreenswapbuffers (0)
-	} else {
-		msgbox(BeachCave_Text_Hector1)
-		closemessage
-	}
-	release
+script BeachCave_Script_Hector {
+	msgbox(BeachCave_Text_Hector, MSGBOX_NPC)
+}
+
+script BeachCave_Script_HectorTrainer {
+	msgbox (BeachCave_Text_HectorTrainer1)
+	msgbox(BeachCave_Text_HectorTrainer2, MSGBOX_NPC)
 }
 
 text Route3_Text_NickIntro {
@@ -160,10 +154,27 @@ text Route3_Text_TrevorPost {
 	format("There's no way I'm going to pay for this...")
 }
 
-text BeachCave_Text_Hector1 {
-	format("Hello. My name is Hector, I'm from Troy. I dedicate every waking moment to self improvement, pious discipline, and rightous action. Go with God stranger.")
+text BeachCave_Text_Hector {
+	format("I dedicate every waking moment 
+			to self improvement, pious discipline, 
+			and rightous action. Now, if you don't mind,
+			please step aside. I must get back to work.")
 }
 
-text BeachCave_Text_Hector2 {
-	format("What's this invitation that you've brought me? My brother Paris will marry Helen? I must travel to Nestor's house at once!")
+text BeachCave_Text_HectorTrainer1  {
+	format("Three! Four! Watch your breathing! Fix your form!")
 }
+
+text BeachCave_Text_HectorTrainer2  {
+	format("Excuse me, but I'm much too busy training the mighty Hector to be bothered by some scrub like you. Get lost kid!")
+}
+
+text BeachCave_Text_Lass1 {
+	format("All day and night I love to stand right here
+			and watch Hector exercise his body.")
+}
+
+text BeachCave_Text_Lass2 {
+	format("Since Hector's gone life hasn't been the same...")
+}
+
