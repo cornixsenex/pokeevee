@@ -970,6 +970,28 @@ if (I_VS_SEEKER_CHARGING != 0)
 					)
 						ShowMapNamePopup();
 			}
+			//City Clara - Handle from SRoute18
+			if (destMapNum == MAP_NUM(MAP_CITY_CLARA) && destMapGroup == MAP_GROUP(MAP_CITY_CLARA))
+			{
+				if (x > 86 && y < 34)
+					ShowMapNamePopup();
+			}
+			//Route 4 - Handle from SRoute18
+			if (destMapNum == MAP_NUM(MAP_ROUTE4) && destMapGroup == MAP_GROUP(MAP_ROUTE4))
+			{
+				if (x > 32 && y > 30 && y < 33)
+					ShowMapNamePopup();
+			}
+			//Sroute18 - 
+			if (destMapNum == MAP_NUM(MAP_SROUTE18) && destMapGroup == MAP_GROUP(MAP_SROUTE18))
+			{
+				//Handle from Route 4
+				if (x < 1 && y > 10 && y < 13)
+					ShowMapNamePopup();
+				//Handle from CityClara
+				if (x < 1 && y > 85 && y < 94)
+					ShowMapNamePopup();
+			}
 			//Route17 - Handle ONE SQUARE from Silvan Woods :/
 			if (destMapNum == MAP_NUM(MAP_ROUTE17) && destMapGroup == MAP_GROUP(MAP_ROUTE17) && y == 163)
 				ShowMapNamePopup();
