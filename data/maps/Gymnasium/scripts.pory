@@ -1,19 +1,48 @@
 
-//FLAG_TEMP_B used to setup champion Protesilaus stuff
+const GYMNASIUM_STATE = VAR_TEMP_5
+//0: OOB
+//1: Before Hector arrives
+//2: Hector is preparing to fight
+//3: Hector has just left
+//4: Protesilaus is champion / fin
 
 mapscripts Gymnasium_MapScripts {
-
 	MAP_SCRIPT_ON_TRANSITION {
+		//set Gymansium State 
+		call (Gymnasium_Script_SetGymnasiumState)
+		//show Gymnasium setup based on GYMNASIUM_STATE 
+		if (var(GYMNASIUM_STATE) == 1) { //Before Hector Arrives
+			call (Gymnasium_Script_HideHectorEtTrainer)
+		}
 		//hide hector if he's gone
-		if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
+		if (var(GYMNASIUM_STATE) > 2) { //Only 4 (P champ) should ever be evald 
 			call (Gymnasium_Script_HideHector)
 			//show challenger as champion if re-enter after he left
 			call (Gymnasium_Script_ShowChampionProtesilaus)
-			//set temp flag to toggle everyone's dialogue - ie reflect P won and H lost - without flag text is just like 'did h really just leave' he's coming back right? etc etc
-			setflag (FLAG_TEMP_B)
 		}
 	}
+}
 
+//Sets var to know gymnasium state
+script Gymnasium_Script_SetGymnasiumState {
+	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
+	//Champion Protesilaus 
+	if (flag(FLAG_TEMP_B)) {
+		setvar (GYMNASIUM_STATE, 4)
+	}
+	//Hector in the building 
+	elif (var(VAR_RESULT) == TRUE) {
+		setvar (GYMNASIUM_STATE, 2)
+	} else {
+		//Hector just left
+		if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
+			setvar (GYMNASIUM_STATE, 3)
+		} else {
+			//Before Hector Arrives 
+			setvar (GYMNASIUM_STATE, 1)
+		}
+	}
+	return
 }
 
 script Gymnasium_Script_HideHector {
@@ -21,6 +50,13 @@ script Gymnasium_Script_HideHector {
 	setobjectmovementtype (LOCALID_GYMNASIUM_HECTOR, MOVEMENT_TYPE_INVISIBLE)
 	return
 }
+
+script Gymnasium_Script_HideHectorEtTrainer {
+	call (Gymnasium_Script_HideHector)
+	setobjectxyperm (LOCALID_GYMNASIUM_HECTORTRAINER, 0, 0)
+	setobjectmovementtype (LOCALID_GYMNASIUM_HECTORTRAINER, MOVEMENT_TYPE_INVISIBLE)
+	return
+}	
 
 script Gymnasium_Script_ShowChampionProtesilaus {
 	setobjectxyperm (LOCALID_GYMNASIUM_HECTORTRAINER, 7, 4)
@@ -83,40 +119,81 @@ script  Gymnasium_Script_Hector {
 		addobject (LOCALID_GYMNASIUM_HECTOR)
 		//setflag
 		setflag (FLAG_GYMNASIUM_HECTORLEFT)
+		//inc var to accomodate - Hector Just left stuff
+		addvar (GYMNASIUM_STATE, 1)
+		//fin
 		end
 	}
-	//fin
 }
 
-script  Gymnasium_Script_TrainerHector {
-
+script  Gymnasium_Script_HectorTrainer {
+	switch (var(GYMNASIUM_STATE)) {
+		case 0:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
+		case 1:
+			msgbox("ERROR\nGYMNASIUM_STATE OOB")
+			closemessage
+			end
+		case 2:
+			msgbox (Gymnasium_Text_HectorTrainer1, MSGBOX_NPC)
+		case 3:
+			msgbox (Gymnasium_Text_HectorTrainer2, MSGBOX_NPC)
+		case 4:
+			msgbox (Gymnasium_Text_HectorTrainer3, MSGBOX_NPC)
+		default:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
+	}
 }
 
 script  Gymnasium_Script_Protesilaus {
-	checkitem (ITEM_WEDDING_INVITATION_HECTOR, 1)
-	//Champion Protesilaus - Yes trans flag
-	if (flag(FLAG_TEMP_B)) {
-		msgbox (Gymnasium_Text_Protesilaus_Champion, MSGBOX_NPC)
-	}
-	//Hector in the building - Yes Invitation & no gym hector flag
-	elif (var(VAR_RESULT) == TRUE) {
-		msgbox (Gymnasium_Text_Protesilaus_BeforeHectorFight, MSGBOX_NPC)
-	} else {
-		//After Hector Leaves - No invitation & no gym hector flag & no trans flag
-		if (flag(FLAG_GYMNASIUM_HECTORLEFT)) {
-			msgbox (Gymnasium_Text_Protesilaus_AfterHectorExit, MSGBOX_NPC)
-		} else {
-		//Before Hector Arrives - No invitation & No Gym Hector Flag
-			msgbox (Gymnasium_Text_Protesilaus_Train, MSGBOX_NPC)
-		}
+	switch (var(GYMNASIUM_STATE)) {
+		case 0:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
+		case 1:
+			msgbox (Gymnasium_Text_Protesilaus1, MSGBOX_NPC)
+		case 2:
+			msgbox (Gymnasium_Text_Protesilaus2, MSGBOX_NPC)
+		case 3:
+			msgbox (Gymnasium_Text_Protesilaus3, MSGBOX_NPC)
+		case 4:
+			msgbox (Gymnasium_Text_Protesilaus4, MSGBOX_NPC)
+		default:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
 	}
 }
 
-script  Gymnasium_Script_TrainerProtesilaus {
-
+script  Gymnasium_Script_ProtesilausTrainer {
+	switch (var(GYMNASIUM_STATE)) {
+		case 0:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
+		case 1:
+			msgbox (Gymnasium_Text_ProtesilausTrainer1, MSGBOX_NPC)
+		case 2:
+			msgbox (Gymnasium_Text_ProtesilausTrainer2, MSGBOX_NPC)
+		case 3:
+			msgbox (Gymnasium_Text_ProtesilausTrainer3, MSGBOX_NPC)
+		case 4:
+			msgbox (Gymnasium_Text_ProtesilausTrainer4, MSGBOX_NPC)
+		default:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
+	}
 }
 
 script  Gymnasium_Script_Chiron {
+	switch (var(GYMNASIUM_STATE)) {
+		case 0:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
+		case 1:
+			msgbox (Gymnasium_Text_Chiron1, MSGBOX_NPC)
+		case 2:
+			msgbox (Gymnasium_Text_Chiron2, MSGBOX_NPC)
+		case 3:
+			msgbox (Gymnasium_Text_Chiron3, MSGBOX_NPC)
+		case 4:
+			msgbox (Gymnasium_Text_Chiron4, MSGBOX_NPC)
+		default:
+			msgbox ("ERROR\n GYMNASIUM_STATE OOB", MSGBOX_NPC)
+	}
 
 }
 
@@ -165,19 +242,84 @@ text Gymnasium_Text_GiveInvitation {
     format("{PLAYER} gave the Wedding Invitation to Hector")
 }
 
-text Gymnasium_Text_Protesilaus_Train {
-	format("")
+text Gymnasium_Text_Protesilaus1 {
+	format("I'll beat anyone, any challenger!")
 }
 
-text Gymnasium_Text_Protesilaus_BeforeHectorFight {
-	format("")
+text Gymnasium_Text_Protesilaus2 {
+	format("That man over there, Hector, he is much
+			larger and confident than I assumed.")
 }
 
-text Gymnasium_Text_Protesilaus_AfterHectorExit {
-	format("")
+text Gymnasium_Text_Protesilaus3 {
+	format("Is he serious? Did he just withdraw?")
 }
 
-text Gymnasium_Text_Protesilaus_Champion {
-	format("")
+text Gymnasium_Text_Protesilaus4 {
+	format("My years of training have finally paid off!
+			Look here, kid, if you work hard all your life
+			perhaps one day you too can be the champ.")
+}
+
+text Gymnasium_Text_Chiron1 {
+	format("Hello, my name is Chiron I am the
+			the grandmaster of the Gymnasium
+			and preside over the Grand Tournement.")
+}
+
+text Gymnasium_Text_Chiron2 {
+	format("The championship fight will soon begin.
+			I have seen dozens of champions crowned
+			since the days of my youth when I myself
+			crowned champion with the laurel wreath.
+			In all those years no fight has been so far
+			mismatched as today between Hector and
+			Protesilaus. Hector is by far
+			stronger, faster, more noble, and more calm.
+			This fight will likely not last two whole rounds.
+			I'm sure Hector will win, but still they must
+			compete to determine the champion.")
+}
+
+text Gymnasium_Text_Chiron3 {
+	format("Never in all my days...Where did he go?")
+}
+
+text Gymnasium_Text_Chiron4 {
+	format("The champion, Protesilaus, has
+			not earned his laurel wreath by victory
+			but on a technicality. Without
+			an opponent to challenge him he is
+			the champion by default. If I were
+			only fifteen years younger, a far cry
+			from the figher I was back in my youth,
+			I'd challenge this default champion and win!")
+}
+
+text Gymnasium_Text_ProtesilausTrainer1 {
+	format("Keep on your toes! Focus!")
+}
+
+text Gymnasium_Text_ProtesilausTrainer2 {
+	format("Stay loose! We'll need agility to beat Hector.")
+}
+
+text Gymnasium_Text_ProtesilausTrainer3 {
+	format("This must be some kind of ruse. Keep getting ready for battle!")
+}
+
+text Gymnasium_Text_ProtesilausTrainer4 {
+	format("It's been a long journey with Protesilaus but I am so proud to see all his hard work pay off. Being a champion's trainer will make my services command a much higher premium as well.")
 }
 	
+text Gymnasium_Text_HectorTrainer1 {
+	format("We've trained all this time for this moment! You're ready! You're going to win!")
+}
+
+text Gymnasium_Text_HectorTrainer2 {
+	format("What? Where is he going? Hector!")
+}
+
+text Gymnasium_Text_HectorTrainer3 {
+	format("I can't believe it...disqualified...on a technicality... and now all that work just... gone...")
+}
