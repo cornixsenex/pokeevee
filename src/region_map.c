@@ -2951,14 +2951,14 @@ u32 GetDynamicMapSec_MareWWW(bool32 useWarpInfo) //Obviously not cormplete atm
 u32 GetDynamicMapSec_Route17(bool32 useWarpInfo)
 {
 	//0: OOB
-	//1: Lago Draco
-	//2: Lago Draco Shores
+	//1: Lacus Dracus
+	//2: Litus Lacus
 	//3: Upper Rio Draco
 	//4: Lower Rio Draco
-	//5: Upper Draco East
-	//6: Lower Draco East
-	//7: Upper Draco West
-	//8: Lower Draco West
+	//5: Upper East Drake 
+	//6: Lower East Drake
+	//7: Upper West Drake
+	//8: Lower West Drake
 	
 	s16 x, y;
     if (useWarpInfo) 

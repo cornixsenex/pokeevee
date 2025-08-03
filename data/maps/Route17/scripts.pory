@@ -104,6 +104,10 @@ script Route17_Script_BridgeBlock {
 	}
 }
 
+script Route17_Script_Orestes{
+
+}
+
 text Route17_Text_Block1 {
 	format("This is the Via Fluvia which leads 
 			to Lacus Drako and the town Salix
@@ -118,12 +122,11 @@ text Route17_Text_Block2 {
 			is still broken. Be careful of the road
 			many wild, powerful pokemon
 			attacked us while our men were hard at work.
-			What's more the way to Salix has been shut.
-			It may have happened during the storm but
-			it seems to us intentionally done.
+			What's more the way to Salix has been shut
+            by sleeping Snorlaxes...Snorlacii?
 			We've sent word back to Urbia to send
-			more men, and more security, but that
+			more men,and something to wake them, but that
 			could be some time from now. You know how the
 			bureaucrats in the capital forget
-			about the common folk up in the hills.")
+			about us common folk up in the hills.")
 }
