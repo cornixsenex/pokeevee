@@ -99,10 +99,7 @@ mapscripts CityClara_MapScripts {
 		if (flag(FLAG_TEMP_C)) {
 			removeobject (36)
 		}
-
-
 	}
-
 }
 
 script CityClara_Script_ActaEchonaTransition {
@@ -181,24 +178,24 @@ script  CityClara_Script_ShowMewScene {
 }
 
 script CityClara_Script_ShowLeafEtScott {
-    setobjectxyperm (OBJ_EVENT_SCOTT, 30, 37)
-    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASTALIA_SCOTT, 30, 37)
+    setobjectmovementtype (LOCALID_CASTALIA_SCOTT, MOVEMENT_TYPE_FACE_DOWN)
 
-    setobjectxyperm (OBJ_EVENT_LEAF, 31, 37)
-    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASTALIA_LEAF, 31, 37)
+    setobjectmovementtype (LOCALID_CASTALIA_LEAF, MOVEMENT_TYPE_FACE_DOWN)
 
-    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 32, 37)
-    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASTALIA_JIGGLYPUFF, 32, 37)
+    setobjectmovementtype (LOCALID_CASTALIA_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
 
     return
 }
 
 script CityClara_Script_ShowLeaf {
-    setobjectxyperm (OBJ_EVENT_LEAF, 32, 31)
-    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASTALIA_LEAF, 32, 31)
+    setobjectmovementtype (LOCALID_CASTALIA_LEAF, MOVEMENT_TYPE_FACE_DOWN)
 
-    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 31, 31)
-    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASTALIA_JIGGLYPUFF, 31, 31)
+    setobjectmovementtype (LOCALID_CASTALIA_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
 
     return
 }
@@ -240,11 +237,11 @@ script CityClara_Script_OpenGarden {
 }
 
 script CityClara_Script_ShowLeafOnTheRoad {
-	setobjectxyperm (OBJ_EVENT_LEAF, 64, 13)
-	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_CASTALIA_LEAF, 64, 13)
+	setobjectmovementtype (LOCALID_CASTALIA_LEAF, MOVEMENT_TYPE_FACE_DOWN)
 
-	setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 63, 13)
-	setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_CASTALIA_JIGGLYPUFF, 63, 13)
+	setobjectmovementtype (LOCALID_CASTALIA_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
 
 	return
 }
@@ -294,34 +291,34 @@ script CityClara_Script_LeafEtScottScene {
 	destroy_field_pic (FIELD_PIC_SCOTT)
     closemessage
     //Exit Scott
-    applymovement (OBJ_EVENT_SCOTT, CityClara_Movement_LeafEtScottScene_ScottExit)
+    applymovement (LOCALID_CASTALIA_SCOTT, CityClara_Movement_LeafEtScottScene_ScottExit)
     waitmovement (0) 
     //remove scott
-    removeobject (OBJ_EVENT_SCOTT)
-    setobjectxyperm (OBJ_EVENT_SCOTT, 0, 0)
-    setobjectmovementtype (OBJ_EVENT_SCOTT, MOVEMENT_TYPE_INVISIBLE)
-    addobject (OBJ_EVENT_SCOTT)
+    removeobject (LOCALID_CASTALIA_SCOTT)
+    setobjectxyperm (LOCALID_CASTALIA_SCOTT, 0, 0)
+    setobjectmovementtype (LOCALID_CASTALIA_SCOTT, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_CASTALIA_SCOTT)
     //L: I won't wait we need to find a way inside the church to see Mew
 	load_field_pic (FIELD_PIC_LEAF, 190, 98)
 	msgbox (CityClara_Text_Leaf2)
 	destroy_field_pic (FIELD_PIC_LEAF)
     closemessage
     //Exit Leaf
-    applymovement (OBJ_EVENT_LEAF, CityClara_Movement_LeafEtScottScene_LeafExit)
-    applymovement (OBJ_EVENT_JIGGLYPUFF, CityClara_Movement_LeafEtScottScene_LeafExit)
+    applymovement (LOCALID_CASTALIA_LEAF, CityClara_Movement_LeafEtScottScene_LeafExit)
+    applymovement (LOCALID_CASTALIA_JIGGLYPUFF, CityClara_Movement_LeafEtScottScene_LeafExit)
     waitmovement (0) 
     //reset Leaf et Jig location
-    removeobject (OBJ_EVENT_LEAF)
-    setobjectxyperm (OBJ_EVENT_LEAF, 32, 31)
-    setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_FACE_DOWN)
-    addobject (OBJ_EVENT_LEAF)
-    showobjectat (OBJ_EVENT_LEAF, MAP_CITY_CLARA)
+    removeobject (LOCALID_CASTALIA_LEAF)
+    setobjectxyperm (LOCALID_CASTALIA_LEAF, 32, 31)
+    setobjectmovementtype (LOCALID_CASTALIA_LEAF, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (LOCALID_CASTALIA_LEAF)
+    showobjectat (LOCALID_CASTALIA_LEAF, MAP_CITY_CLARA)
 
-    removeobject (OBJ_EVENT_JIGGLYPUFF)
-    setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 31, 31)
-    setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
-    addobject (OBJ_EVENT_JIGGLYPUFF)
-    showobjectat (OBJ_EVENT_JIGGLYPUFF, MAP_CITY_CLARA)
+    removeobject (LOCALID_CASTALIA_JIGGLYPUFF)
+    setobjectxyperm (LOCALID_CASTALIA_JIGGLYPUFF, 31, 31)
+    setobjectmovementtype (LOCALID_CASTALIA_JIGGLYPUFF, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (LOCALID_CASTALIA_JIGGLYPUFF)
+    showobjectat (LOCALID_CASTALIA_JIGGLYPUFF, MAP_CITY_CLARA)
     //setup vars
     setvar (VAR_CITYCLARA_STATE, 1)
 
@@ -603,7 +600,7 @@ script CityClara_EventScript_LeafBridge {
 	msgbox (CityClara_Text_LeafBridge)
 	destroy_field_pic (4)
 	closemessage
-	applymovement (OBJ_EVENT_LEAF, Common_Movement_FaceDown)
+	applymovement (LOCALID_CASTALIA_LEAF, Common_Movement_FaceDown)
 	waitmovement (0)
 	releaseall
 	end
@@ -615,20 +612,20 @@ script CityClara_EventScript_LeafOnTheRoad {
 	msgbox (CityClara_Text_LeafOnTheRoad)
 	destroy_field_pic (4)
 	closemessage
-	applymovement (OBJ_EVENT_LEAF, Common_Movement_WalkUp6)
-	applymovement (OBJ_EVENT_JIGGLYPUFF, Common_Movement_WalkUp6)
+	applymovement (LOCALID_CASTALIA_LEAF, Common_Movement_WalkUp6)
+	applymovement (LOCALID_CASTALIA_JIGGLYPUFF, Common_Movement_WalkUp6)
 	waitmovement (0)
 	//remove Leaf et Jig
-	removeobject (OBJ_EVENT_LEAF)
-	setobjectxyperm (OBJ_EVENT_LEAF, 0, 0)
-	setobjectmovementtype (OBJ_EVENT_LEAF, MOVEMENT_TYPE_INVISIBLE)
-	addobject (OBJ_EVENT_LEAF)
-	showobjectat (OBJ_EVENT_LEAF, MAP_CITY_CLARA)
-	removeobject (OBJ_EVENT_JIGGLYPUFF)
-	setobjectxyperm (OBJ_EVENT_JIGGLYPUFF, 0, 0)
-	setobjectmovementtype (OBJ_EVENT_JIGGLYPUFF, MOVEMENT_TYPE_INVISIBLE)
-	addobject (OBJ_EVENT_JIGGLYPUFF)
-	showobjectat (OBJ_EVENT_JIGGLYPUFF, MAP_CITY_CLARA)
+	removeobject (LOCALID_CASTALIA_LEAF)
+	setobjectxyperm (LOCALID_CASTALIA_LEAF, 0, 0)
+	setobjectmovementtype (LOCALID_CASTALIA_LEAF, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_CASTALIA_LEAF)
+	showobjectat (LOCALID_CASTALIA_LEAF, MAP_CITY_CLARA)
+	removeobject (LOCALID_CASTALIA_JIGGLYPUFF)
+	setobjectxyperm (LOCALID_CASTALIA_JIGGLYPUFF, 0, 0)
+	setobjectmovementtype (LOCALID_CASTALIA_JIGGLYPUFF, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_CASTALIA_JIGGLYPUFF)
+	showobjectat (LOCALID_CASTALIA_JIGGLYPUFF, MAP_CITY_CLARA)
 	releaseall
 	end
 }

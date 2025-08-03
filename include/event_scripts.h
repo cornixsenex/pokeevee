@@ -1001,6 +1001,10 @@ extern const u8 MareS10_Script_Transition_MareOccidens[];
 //OceanPerimeter2
 extern const u8 OceanPerimeter2_Script_Transition_MareOccidens[];
 extern const u8 OceanPerimeter2_Script_Transition_MareSubtropicum[];
+//SRoute18
+extern const u8 SRoute18_Script_SinusPacificusTransition[];
+extern const u8 SRoute18_Script_SinusClarusTransition[];
+extern const u8 SRoute18_Script_MareInternumTransition[];
 
 //		END		KUSTOMS		///
 

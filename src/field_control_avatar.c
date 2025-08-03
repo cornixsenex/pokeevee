@@ -719,6 +719,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//SRoute18 - Sinus Pacificus
+		if (mapGroup == MAP_GROUP(MAP_SROUTE18) && mapNum == MAP_NUM(MAP_SROUTE18)) {
+			if (VarGet(VAR_TEMP_5) != 1) {
+				ScriptContext_SetupScript(SRoute18_Script_SinusPacificusTransition);
+				return TRUE;
+			}
+		}
         //OceanPerimeterBigIslandS - Isla Ignifera
 		if (mapGroup == MAP_GROUP(MAP_OCEAN_PERIMETER_BIG_ISALND_S) && mapNum == MAP_NUM(MAP_OCEAN_PERIMETER_BIG_ISALND_S)) {
 			if (VarGet(VAR_TEMP_5) != 1) {
@@ -858,6 +865,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
+		//SRoute18 - Sinus Clarus
+		if (mapGroup == MAP_GROUP(MAP_SROUTE18) && mapNum == MAP_NUM(MAP_SROUTE18)) {
+			if (VarGet(VAR_TEMP_5) != 3) {
+				ScriptContext_SetupScript(SRoute18_Script_SinusClarusTransition);
+				return TRUE;
+			}
+		}
     }
 	else if (MetatileBehavior_IsOceanMapTransitionC(metatileBehavior))
     {
@@ -937,6 +951,13 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 		if (mapGroup == MAP_GROUP(MAP_MARE_S6) && mapNum == MAP_NUM(MAP_MARE_S6)) {
 			if (VarGet(VAR_TEMP_5) != 3) {
 				ScriptContext_SetupScript(MareS6_Script_MareTropicumTransition); //Note name irregularity
+				return TRUE;
+			}
+		}
+	//SRoute18 - Mare Internum
+		if (mapGroup == MAP_GROUP(MAP_SROUTE18) && mapNum == MAP_NUM(MAP_SROUTE18)) {
+			if (VarGet(VAR_TEMP_5) != 4) {
+				ScriptContext_SetupScript(SRoute18_Script_MareInternumTransition);
 				return TRUE;
 			}
 		}

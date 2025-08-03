@@ -4009,7 +4009,7 @@ u32 GetDynamicMapSec_SRoute18(bool32 useWarpInfo)
 		(
 		(x < 1 && y > 93) ||
 		(x == 1 && y > 94 && y < 111) ||
-		(x == 1 && y > 95 && y < 111)
+		(x == 2 && y > 95 && y < 111)
 		)
 		return 3;
 	//Mare Internum (Default)
