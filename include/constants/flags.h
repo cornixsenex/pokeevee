@@ -43,54 +43,54 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_LOONIXGIFTHOUSE_HIDEBALL    0x20 // Mew Flag also a placeholder flag in src/wild_encounter.c
-#define FLAG_LOONIXGIFTHOUSE_GAVEEG    0x21 // Gift Egg
-#define FLAG_LOONIXGIFTHOUSE_GAVEARBOK    0x22 // Arbok Dude
-#define FLAG_LOONIXBEACH_GAVESURFBOARD    0x23 // Surfboard Flag
-#define FLAG_LOONIXHILLS_GAVEDIALGA    0x24 // Dialga Flag
+#define FLAG_LOONIXGIFTHOUSE_HIDEBALL             0x20 // Mew Flag also a placeholder flag in src/wild_encounter.c
+#define FLAG_LOONIXGIFTHOUSE_GAVEEG               0x21 // Gift Egg
+#define FLAG_LOONIXGIFTHOUSE_GAVEARBOK            0x22 // Arbok Dude
+#define FLAG_LOONIXBEACH_GAVESURFBOARD            0x23 // Surfboard Flag
+#define FLAG_LOONIXHILLS_GAVEDIALGA               0x24 // Dialga Flag
 #define FLAG_PYRAMIDSINSIDEPUZZLE_HIDEDUSCLOPS    0x25 // Clear Dusclops block after pyramids puzzle completion
-#define FLAG_FORCE_ENTER_MASTERBALL_GFX    0x26 // Set during CityClara Church scene to force Mew ball to be Master Ball gfx
-#define FLAG_SABINANOVA_LEAFSCENE    0x27 // Set after Ambush OR SN Leaf Scene (disables SN Leaf scene while RoadToArdor Var == 3
-#define FLAG_PALATIUMFELIX_LOGISTICS_DONE       0x28 // Set after the logistics scene 
-#define FLAG_PECCADUM_TRUCK_READY       0x29 // Set after giving Cornelius Letter. Clear after Truck Scene. Allow player return to truck scene if leave after giving letter 
-#define FLAG_PYRAMIDINSIDE1F_HIDEINDY       0x2A // Set after Indy goes to top of pyramid 
-#define FLAG_HASINSURANCE       0x2B // Allows Pokecenter Use (Should be checkitem?)
-#define FLAG_SILVANWOODS_BLUESHOWN  0x2C // Set after Blue shown walking by
-#define FLAG_HIDE_RT17_BLOCK1 0x2D // Hides the first block
-#define FLAG_BULBUS_HIDE_STRIKE 0x2E // Hides strike (opens boat + shop)
-#define FLAG_SILVANWOODS_HIDEFIGHT1   0x2F // After Leaf1 fight hides Fight1
-#define FLAG_SILVANWOODS_HIDEFIGHT2    0x30 // After Mew sight / Stoney fight
-#define FLAG_RECEIVED_SCYTHE      0x31 //Set after Castalian Garden, allows cut (should be an item too or instead idk)
-#define FLAG_PALATIUMFELIX_OPEN      0x32 //Set after initial opening of Palatium Felix
-#define FLAG_URBIA_BIKESHOP_INTROD      0x33 //Set after initial sales pitch
-#define FLAG_LEAF_ISGF     0x34 // Set after Leaf agrees to be your GF
+#define FLAG_FORCE_ENTER_MASTERBALL_GFX           0x26 // Set during CityClara Church scene to force Mew ball to be Master Ball gfx
+#define FLAG_SABINANOVA_LEAFSCENE                 0x27 // Set after Ambush OR SN Leaf Scene (disables SN Leaf scene while RoadToArdor Var == 3
+#define FLAG_PALATIUMFELIX_LOGISTICS_DONE         0x28 // Set after the logistics scene 
+#define FLAG_PECCADUM_TRUCK_READY                 0x29 // Set after giving Cornelius Letter. Clear after Truck Scene. Allow player return to truck scene if leave after giving letter 
+#define FLAG_PYRAMIDINSIDE1F_HIDEINDY             0x2A // Set after Indy goes to top of pyramid 
+#define FLAG_HASINSURANCE                         0x2B // Allows Pokecenter Use (Should be checkitem?)
+#define FLAG_SILVANWOODS_BLUESHOWN                0x2C // Set after Blue shown walking by
+#define FLAG_UNUSED_0x2D                          0x2D // UNUSED
+#define FLAG_BULBUS_HIDE_STRIKE                   0x2E // Hides strike (opens boat + shop)
+#define FLAG_SILVANWOODS_HIDEFIGHT1               0x2F // After Leaf1 fight hides Fight1
+#define FLAG_SILVANWOODS_HIDEFIGHT2               0x30 // After Mew sight / Stoney fight
+#define FLAG_RECEIVED_SCYTHE                      0x31 //Set after Castalian Garden, allows cut (should be an item too or instead idk)
+#define FLAG_PALATIUMFELIX_OPEN                   0x32 //Set after initial opening of Palatium Felix
+#define FLAG_URBIA_BIKESHOP_INTROD                0x33 //Set after initial sales pitch
+#define FLAG_LEAF_ISGF                            0x34 // Set after Leaf agrees to be your GF
 #define FLAG_PALMAE_RENTALHOUSE_LEAFGFINTROD      0x35 //Set after first talk to leaf after Indy Introd 
-#define FLAG_ROUTE9_CLEARBLOCK      0x36 //Set after enter Tranquilitas - Clears the "rock slide" block 
-#define FLAG_TRANQUILITAS_SURFSCHOOL_OPEN      0x37 //Set after Leaf opens Surf School - Hides Misty in Tranquilitas 
+#define FLAG_ROUTE9_CLEARBLOCK                    0x36 //Set after enter Tranquilitas - Clears the "rock slide" block 
+#define FLAG_TRANQUILITAS_SURFSCHOOL_OPEN         0x37 //Set after Leaf opens Surf School - Hides Misty in Tranquilitas 
 
-#define FLAG_CASATURNI_HIDERUTULI      0x38 //Set after Turnus battle - hides the rutuli
-#define FLAG_GYMNASIUM_HECTORLEFT      0x39 //Set after Hector leaves for Nestor House. Hide Hector in Gymansium and CavernaCamela
-#define FLAG_UNUSED_0x3A      0x3A //UNUSED 
-#define FLAG_UNUSED_0x3B      0x3B //UNUSED 
-#define FLAG_ROUTE4_HIDEROCKETS    0x3C // Hides Rocket memebers route4 - hides Mewtwo in Capital
-#define FLAG_ROBUSTUS_HIDELEAF    0x3D // Hides Leaf after entering Robustus
-#define FLAG_ROBUSTUS_HIDECAMPERS    0x3E // after the flower game
+#define FLAG_CASATURNI_HIDERUTULI                 0x38 //Set after Turnus battle - hides the rutuli
+#define FLAG_GYMNASIUM_HECTORLEFT                 0x39 //Set after Hector leaves for Nestor House. Hide Hector in Gymansium and CavernaCamela
+#define FLAG_UNUSED_0x3A                          0x3A //UNUSED 
+#define FLAG_UNUSED_0x3B                          0x3B //UNUSED 
+#define FLAG_ROUTE4_HIDEROCKETS                   0x3C // Hides Rocket memebers route4 - hides Mewtwo in Capital
+#define FLAG_ROBUSTUS_HIDELEAF                    0x3D // Hides Leaf after entering Robustus
+#define FLAG_ROBUSTUS_HIDECAMPERS                 0x3E // after the flower game
 
-#define FLAG_ROUTE6_HIDEPIKACHU      0x3F // after J&J cutscen
+#define FLAG_ROUTE6_HIDEPIKACHU                   0x3F // after J&J cutscen
 
-#define FLAG_ROUTE7_HIDEOLDWOMAN    0x40 // Hides the old lady after the roadblock trigger
-#define FLAG_ROCKTUNNEL_RIVALDEFEATED    0x41 // Hides Leaf on the bridge
-#define FLAG_VEGAS_POWERON   0x42 // Set after PowerPlant fixed, controls generator metatiles
-#define FLAG_FRAT_LEAF    0x43 // Set after Indy leaves pyramids 
-#define FLAG_PYRAMIDS_INDY    0x44 // Set after defeating at the Pyramids. Hides Indy at the pyramid AND Leaf on Uni2F
-#define FLAG_ARCHAELOGY_CLASS_HIDEREBELS    0x45 // Spelling error lol; also does what it says
-#define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS    0x46 // Does what it says
-#define FLAG_RECEIVED_FLASH    0x47 // Set after owner gives you hm05 in the hotel 1F
-#define FLAG_UNUSED_0x48    0x48 //  UNUSED
-#define FLAG_RECEIVED_CARD_KEY    0x49 // Set after Card Key is taken in Rocket Tower, hides the pokeball as well
-#define FLAG_HIDE_ROCKETTOWER_13F_GIO    0x4A // Set by Gio cutscene
-#define FLAG_HIDE_CARDKEY    0x4B // Set after you grab the card key from 13F RocketTower
-#define FLAG_FOLLOWER_ACTIVE    0x4C // Set when you have follower active
+#define FLAG_ROUTE7_HIDEOLDWOMAN                  0x40 // Hides the old lady after the roadblock trigger
+#define FLAG_ROCKTUNNEL_RIVALDEFEATED             0x41 // Hides Leaf on the bridge
+#define FLAG_VEGAS_POWERON                        0x42 // Set after PowerPlant fixed, controls generator metatiles
+#define FLAG_FRAT_LEAF                            0x43 // Set after Indy leaves pyramids 
+#define FLAG_PYRAMIDS_INDY                        0x44 // Set after defeating at the Pyramids. Hides Indy at the pyramid AND Leaf on Uni2F
+#define FLAG_ARCHAELOGY_CLASS_HIDEREBELS          0x45 // Spelling error lol; also does what it says
+#define FLAG_ARCHAELOGY_CLASS_HIDESTUDENTS        0x46 // Does what it says
+#define FLAG_RECEIVED_FLASH                       0x47 // Set after owner gives you hm05 in the hotel 1F
+#define FLAG_UNUSED_0x48                          0x48 //  UNUSED
+#define FLAG_RECEIVED_CARD_KEY                    0x49 // Set after Card Key is taken in Rocket Tower, hides the pokeball as well
+#define FLAG_HIDE_ROCKETTOWER_13F_GIO             0x4A // Set by Gio cutscene
+#define FLAG_HIDE_CARDKEY                         0x4B // Set after you grab the card key from 13F RocketTower
+#define FLAG_FOLLOWER_ACTIVE                      0x4C // Set when you have follower active
 
 //DEBUG
 #define FLAG_SYS_NO_COLLISION    0x4D

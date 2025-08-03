@@ -51,30 +51,32 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_ROUTE17_BRIDGEBLOCK1",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 20,
-      "y": 164,
+      "y": 163,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route17_EventScript_Block1",
-      "flag": "FLAG_HIDE_RT17_BLOCK1"
+      "script": "Route17_Script_BridgeBlock",
+      "flag": "NULL"
     },
     {
+      "local_id": "LOCALID_ROUTE17_BRIDGEBLOCK2",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 21,
-      "y": 164,
+      "y": 163,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route17_EventScript_Block1",
-      "flag": "FLAG_HIDE_RT17_BLOCK1"
+      "script": "Route17_Script_BridgeBlock",
+      "flag": "NULL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -90,9 +92,23 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "x": 26,
-      "y": 14,
+      "local_id": "LOCALID_ROUTE17_ORESTES",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 8,
+      "y": 123,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route17_Script_Orestes",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SUDOWOODO",
+      "x": 29,
+      "y": 40,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -103,9 +119,22 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "x": 29,
-      "y": 14,
+      "graphics_id": "OBJ_EVENT_GFX_SUDOWOODO",
+      "x": 30,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SUDOWOODO",
+      "x": 31,
+      "y": 40,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
