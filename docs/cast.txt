@@ -8,9 +8,11 @@ Granny
 Leaf
 Blue
 Scott
+Sailors
+Rocket Grunts
 TeamRocket	          DONE
-Pythia
-Blaine                DONE
+Pythia                Glacia
+Scientist             Blaine / Cliff / Petel / ScientistGen9
 Indy                  Nolan
 Jason                 Archie
 Orpheus               Musician gen8
@@ -30,27 +32,28 @@ Turnus                Rood
 Orestes
 GanonPriest
 Klytemnestra
-Iphigenia
-Agamemnon             MrStone?
+Iphigenia             Lucy
+Agamemnon             MrStone? Leon? Lysandre?
 Ulysses
-Polyphemus?
+Polyphemus?           Dusclops
 Circe?
 Calypso?
-Achilles
+Achilles             Gaeric
 Tiresias             Iscan? / Gordie? / FlareGrunt? / Collector / Cabbie / Blaine / 
-Oedipus
+Oedipus              Gambler
 Jocasta
+Amazonians           PlasmaGruntF
 Hipolyta
-Trojans             Roughneck / Lance / Koga / Dragontamer / Plasma
+Trojans             Roughneck / Lance / Koga / Dragontamer / Plasma / Ingo-master
 Briseis
 Troilus
 IrohLotus
 Priam
-Cassandra
+Cassandra          Karen?
 Hercules           Bruno
 Atlas?             Drayden
 PlutoDis           Ghetis
 Persephone         Olympia
 Gio                DONE
 
-Old guys: Magnus / Spenser / Vince / MrBriney / Li
+Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce
