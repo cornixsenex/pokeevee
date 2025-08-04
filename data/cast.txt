@@ -1,0 +1,56 @@
+In order from start to finish
+All named / major characters need an independant sprite and overworld to make dialogue comprehensible
+
+NAME		          SPRITE		OVERWORLD
+
+Player
+Granny
+Leaf
+Blue
+Scott
+TeamRocket	          DONE
+Pythia
+Blaine                DONE
+Indy                  Nolan
+Jason                 Archie
+Orpheus               Musician gen8
+Philoctetes
+CastorEtPollux        SwordwardShieldbert
+Theseus
+Medea                 Chaneller
+Aeetes                Maxie
+Nestor
+Helen                 Lillie-Masters
+Paris                 Siebold / Palmer
+Menelaus              Supernerd
+Hector                Chuck?
+Aeneas                Steven
+Elissa                Cynthia
+Turnus                Rood
+Orestes
+GanonPriest
+Klytemnestra
+Iphigenia
+Agamemnon             MrStone?
+Ulysses
+Polyphemus?
+Circe?
+Calypso?
+Achilles
+Tiresias             Iscan? / Gordie? / FlareGrunt? / Collector / Cabbie / Blaine / 
+Oedipus
+Jocasta
+Hipolyta
+Trojans             Roughneck / Lance / Koga / Dragontamer / Plasma
+Briseis
+Troilus
+IrohLotus
+Priam
+Cassandra
+Hercules           Bruno
+Atlas?             Drayden
+PlutoDis           Ghetis
+Persephone         Olympia
+Gio                DONE
+
+Old guys: Magnus / Spenser / Vince / MrBriney / Li

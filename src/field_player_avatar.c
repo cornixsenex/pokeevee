@@ -18,6 +18,7 @@
 #include "overworld.h"
 #include "party_menu.h"
 #include "random.h"
+#include "region_map.h" //Cornix for Dynamic Maps from Surf start / stop
 #include "rotating_gate.h"
 #include "rtc.h"
 #include "script.h"
@@ -2059,7 +2060,7 @@ static void Task_StopSurfingInit(u8 taskId)
 //Cornix support surf transition triggers and auto-map popup on specific maps (Lake Ira et cetera)
 static void Task_WaitStopSurfing(u8 taskId)
 {
-	u32 mapGroup, mapNum;
+	u32 mapGroup, mapNum, mapSection;
 	s32 x, y;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     struct MapPosition position;
@@ -2096,6 +2097,15 @@ static void Task_WaitStopSurfing(u8 taskId)
 			)
 			ShowMapNamePopup();
             TransitionMapMusic();
+		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17)) 
+		{
+			//Update VAR_TEMP_5
+			mapSection = GetDynamicMapSec_Route17(FALSE);
+			VarSet(VAR_TEMP_5, mapSection);
+			//Standard Transition
+			ShowMapNamePopup();
+			TransitionMapMusic();
+		}	
     }
 }
 
@@ -2962,7 +2972,7 @@ static void Task_StartSurfingInit(u8 taskId)
 //Cornix support surf transition triggers and auto-map popup on specific maps (Lake Ira et cetera)
 static void Task_WaitStartSurfing(u8 taskId)
 {
-	u32 mapGroup, mapNum;
+	u32 mapGroup, mapNum, mapSection;
 	s32 x, y;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     struct MapPosition position; 
@@ -2983,6 +2993,7 @@ static void Task_WaitStartSurfing(u8 taskId)
 		GetPlayerPosition(&position); 
 		TryStartCoordEventScript(&position); 
 		//Automatically show map popup on Start Surfing 
+		//Lake Ira
 		if (
 				 (mapGroup == MAP_GROUP(MAP_LAKE_IRA) && mapNum == MAP_NUM(MAP_LAKE_IRA) ) && ( 
 				 (x < 27) || 
@@ -2993,6 +3004,16 @@ static void Task_WaitStartSurfing(u8 taskId)
 			)
 			ShowMapNamePopup();
             TransitionMapMusic();
+		//Route17
+		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17)) 
+		{
+			//Update VAR_TEMP_5
+			mapSection = GetDynamicMapSec_Route17(FALSE);
+			VarSet(VAR_TEMP_5, mapSection);
+			//Standard Transition
+			ShowMapNamePopup();
+			TransitionMapMusic();
+		}	
     }
 
 }
