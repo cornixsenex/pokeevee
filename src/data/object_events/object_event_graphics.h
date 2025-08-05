@@ -490,6 +490,9 @@ const u16 gObjectEventPal_Sordward[] = INCBIN_U16("graphics/object_events/palett
 const u32 gObjectEventPic_Shielbert[] = INCBIN_U32("graphics/object_events/pics/people/shielbert.4bpp");
 const u16 gObjectEventPal_Shielbert[] = INCBIN_U16("graphics/object_events/palettes/shielbert.gbapal");
 
+const u32 gObjectEventPic_HexManiac2[] = INCBIN_U32("graphics/object_events/pics/people/hex_maniac2.4bpp");
+const u16 gObjectEventPal_HexManiac2[] = INCBIN_U16("graphics/object_events/palettes/hex_maniac2.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

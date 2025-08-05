@@ -4464,8 +4464,8 @@
     {
       "id": "LAYOUT_LOONIX_SNOW",
       "name": "LoonixSnow_Layout",
-      "width": 85,
-      "height": 85,
+      "width": 15,
+      "height": 15,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/LoonixSnow/border.bin",
