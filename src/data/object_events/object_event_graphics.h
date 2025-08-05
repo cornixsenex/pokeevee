@@ -484,6 +484,12 @@ const u16 gObjectEventPal_Kando[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_Bill[] = INCBIN_U32("graphics/object_events/pics/people/bill.4bpp");
 const u16 gObjectEventPal_Bill[] = INCBIN_U16("graphics/object_events/palettes/bill.gbapal");
 
+const u32 gObjectEventPic_Sordward[] = INCBIN_U32("graphics/object_events/pics/people/sordward.4bpp");
+const u16 gObjectEventPal_Sordward[] = INCBIN_U16("graphics/object_events/palettes/sordward.gbapal");
+
+const u32 gObjectEventPic_Shielbert[] = INCBIN_U32("graphics/object_events/pics/people/shielbert.4bpp");
+const u16 gObjectEventPal_Shielbert[] = INCBIN_U16("graphics/object_events/palettes/shielbert.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

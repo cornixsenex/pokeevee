@@ -303,6 +303,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lenora;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rood;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kando;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bill;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sordward;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shielbert;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -577,6 +579,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_ROOD] =                     &gObjectEventGraphicsInfo_Rood,
 	[OBJ_EVENT_GFX_KANDO] =                    &gObjectEventGraphicsInfo_Kando,
 	[OBJ_EVENT_GFX_BILL] =                     &gObjectEventGraphicsInfo_Bill,
+	[OBJ_EVENT_GFX_SORDWARD] =                 &gObjectEventGraphicsInfo_Sordward,
+	[OBJ_EVENT_GFX_SHIELBERT] =                &gObjectEventGraphicsInfo_Shielbert,
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,
     [OBJ_EVENT_GFX_DEOXYS] =                   &gObjectEventGraphicsInfo_Deoxys,

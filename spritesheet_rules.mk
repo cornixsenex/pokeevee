@@ -5023,6 +5023,12 @@ $(OBJEVENTGFXDIR)/people/kando.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/bill.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/sordward.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/shielbert.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 

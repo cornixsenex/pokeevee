@@ -1,37 +1,45 @@
 In order from start to finish
 All named / major characters need an independant sprite and overworld to make dialogue comprehensible
 
+Size Difference:
+1 Overworld: 
+
 NAME		          SPRITE		OVERWORLD
 
-Player
-Granny
-Leaf
-Blue
-Scott
-Sailors
-Rocket Grunts
-TeamRocket	          DONE
-Pythia                Glacia
-Scientist             Blaine / Cliff / Petel / ScientistGen9
+#Player                Brendan
+#Granny                Granny
+#Leaf                  Leaf
+#Blue                  Blue
+#Scott                 Scott
+#Sailors               Aqua Grunts
+#Rocket Grunts         Rocket Grunts
+#TeamRocket	          DONE
+#Pythia                Glacia
+Scientist             Blaine / Cliff / Petel / ScientistGen9, Archer
 Indy                  Nolan
-Jason                 Archie
+#Misty                 Misty
+#SurfInstructors       Phoebe
+#Jason                 Archie
 Orpheus               Musician gen8
 Philoctetes
-CastorEtPollux        SwordwardShieldbert
+#CastorEtPollux        SwordwardShieldbert
 Theseus
-Medea                 Chaneller
-Aeetes                Maxie
+Medea                 HexManiac                                                                        HexManiac
+#Colchians             Magma Grunts
+#Aeetes                Maxie
 Nestor
 Helen                 Lillie-Masters
 Paris                 Siebold / Palmer
 Menelaus              Supernerd
 Hector                Chuck?
-Aeneas                Steven
-Elissa                Cynthia
-Turnus                Rood
-Orestes
+#Aeneas                Steven
+#Elissa                Cynthia
+#Tyrians               Hau
+#Rutulians             Kondo
+#Turnus                Rood
+Orestes               Wally, 
 GanonPriest
-Klytemnestra
+Klytemnestra          BeautyGen9, 
 Iphigenia             Lucy
 Agamemnon             MrStone? Leon? Lysandre?
 Ulysses
@@ -39,13 +47,17 @@ Polyphemus?           Dusclops
 Circe?
 Calypso?
 Achilles             Gaeric
-Tiresias             Iscan? / Gordie? / FlareGrunt? / Collector / Cabbie / Blaine / 
-Oedipus              Gambler
-Jocasta
-Amazonians           PlasmaGruntF
-Hipolyta
-Trojans             Roughneck / Lance / Koga / Dragontamer / Plasma / Ingo-master
-Briseis
+Ajax?
+Aias?
+Diomede?
+Teucer?
+Tiresias             Iscan? / Gordie? / FlareGrunt? / Collector / Cabbie / Blaine / a                     Blaine:
+Oedipus              Gambler, Leon
+Jocasta              Juniper? Madame, mom, SabrinaMasters
+Amazonians           PlasmaGruntF                                                                         PlasmaGruntF
+Hipolyta             Sierra?, Ariana, Diantha, SabrinaMasters
+Trojans              Roughneck / Lance / Koga / Dragontamer / Plasma / Ingo-master, Butler, Chili, 
+Briseis              Concordia
 Troilus
 IrohLotus
 Priam
@@ -55,5 +67,9 @@ Atlas?             Drayden
 PlutoDis           Ghetis
 Persephone         Olympia
 Gio                DONE
+Red? Ash?
 
-Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce
+Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce / Watson, Juan, 
+Cool / Normal guys: Silver, Veteran, Volkner, acetrainer, Brandon, Brawly, Brock, Ethan, Flint, Guzma, Hilbert, Lucas?, Mohn, Morty, Oak, Palmer, PlayerGo, Riley, 
+Best Chicks: Skyla, Sightseer, Caitlin, Cogita(allblack), Dana, Dancer, 
+

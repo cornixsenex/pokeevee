@@ -108,6 +108,14 @@ script Route17_Script_Orestes{
 
 }
 
+script Route17_Script_TestFieldPic {
+    load_field_pic (43, 190, 98)
+    msgbox ("TEST")
+    destroy_field_pic (43)
+	closemessage
+	end
+}
+
 text Route17_Text_Block1 {
 	format("This is the Via Fluvia which leads 
 			to Lacus Drako and the town Salix

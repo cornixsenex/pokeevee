@@ -483,6 +483,9 @@ const u16 gTrainerPalette_Farmer_M[] = INCBIN_U16("graphics/trainers/palettes/fa
 const u32 gTrainerFrontPic_Bill[] = INCBIN_U32("graphics/trainers/front_pics/bill.4bpp.lz");
 const u16 gTrainerPalette_Bill[] = INCBIN_U16("graphics/trainers/palettes/bill.gbapal");
 
+const u32 gTrainerFrontPic_Sordward_Shielbert[] = INCBIN_U32("graphics/trainers/front_pics/sordward_shielbert.4bpp.lz");
+const u16 gTrainerPalette_Sordward_Shielbert[] = INCBIN_U16("graphics/trainers/palettes/sordward_shielbert.gbapal");
+
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -657,6 +660,7 @@ const struct TrainerSprite gTrainerSprites[] =
 	TRAINER_SPRITE(TRAINER_PIC_LENORA, gTrainerFrontPic_Lenora, gTrainerPalette_Lenora),               
 	TRAINER_SPRITE(TRAINER_PIC_FARMER_M, gTrainerFrontPic_Farmer_M, gTrainerPalette_Farmer_M),               
     TRAINER_SPRITE(TRAINER_PIC_BILL, gTrainerFrontPic_Bill, gTrainerPalette_Bill),               
+    TRAINER_SPRITE(TRAINER_PIC_SORDWARD_SHIELBERT, gTrainerFrontPic_Sordward_Shielbert, gTrainerPalette_Sordward_Shielbert),               
 	//END KUSTOM TRAINER SPRITES
 };
 

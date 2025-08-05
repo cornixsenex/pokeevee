@@ -248,14 +248,14 @@
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
 //KUSTOMS
 #define OBJ_EVENT_GFX_GRANDMA				     242
-#define OBJ_EVENT_GFX_EEVEE				         243
-#define OBJ_EVENT_GFX_FLAREON				     244
-#define OBJ_EVENT_GFX_JOLTEON				     245
-#define OBJ_EVENT_GFX_VAPOREON				     246
-#define OBJ_EVENT_GFX_ESPEON				     247
-#define OBJ_EVENT_GFX_UMBREON				     248
-#define OBJ_EVENT_GFX_LEAFEON				     249
-#define OBJ_EVENT_GFX_GLACEON				     250
+#define OBJ_EVENT_GFX_EEVEE				         243 //UNUSED
+#define OBJ_EVENT_GFX_FLAREON				     244 //UNUSED
+#define OBJ_EVENT_GFX_JOLTEON				     245 //UNUSED
+#define OBJ_EVENT_GFX_VAPOREON				     246 //UNUSED
+#define OBJ_EVENT_GFX_ESPEON				     247 //UNUSED
+#define OBJ_EVENT_GFX_UMBREON				     248 //UNUSED
+#define OBJ_EVENT_GFX_LEAFEON				     249 //UNUSED
+#define OBJ_EVENT_GFX_GLACEON				     250 //UNUSED
 #define OBJ_EVENT_GFX_ROCKET_M				     251
 #define OBJ_EVENT_GFX_ROCKET_F				     252
 #define OBJ_EVENT_GFX_GIOVANNI				     253
@@ -296,10 +296,13 @@
 #define OBJ_EVENT_GFX_ROOD   				     288
 #define OBJ_EVENT_GFX_KANDO   				     289
 #define OBJ_EVENT_GFX_BILL   				     290
+#define OBJ_EVENT_GFX_SORDWARD   				 291 
+#define OBJ_EVENT_GFX_SHIELBERT   				 292 //NOTE UNUSED ABOVE
+//UNUSED ABOVE !!!
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        291
+#define NUM_OBJ_EVENT_GFX                        293
 
 
 // These are dynamic object gfx ids.
@@ -474,13 +477,8 @@
 #define OBJ_EVENT_PAL_TAG_COLLISIONDRIFBLIM       0x114D
 #define OBJ_EVENT_PAL_TAG_CYNTHIA          	      0x114E
 #define OBJ_EVENT_PAL_TAG_LENORA          	      0x114F
-#define OBJ_EVENT_PAL_TAG_ROOD          	      0x1150
-#define OBJ_EVENT_PAL_TAG_KANDO          	      0x1151
-#define OBJ_EVENT_PAL_TAG_BILL          	      0x1152
 
-#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
-
-//END KUSTOMS
+//BREAK FOR POKEBALL PAL TAGS...
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
@@ -517,6 +515,18 @@
 // Gen VIII
 #define OBJ_EVENT_PAL_TAG_BALL_STRANGE            0x116A
 #endif //OW_FOLLOWERS_POKEBALLS
+	   
+//BREAK RETURN TO CUSTOMS FOLLOWING POKE BALL PAL TAGS
+
+//KUSTOMS
+#define OBJ_EVENT_PAL_TAG_ROOD          	      0x116B
+#define OBJ_EVENT_PAL_TAG_KANDO          	      0x116C
+#define OBJ_EVENT_PAL_TAG_BILL          	      0x116D
+#define OBJ_EVENT_PAL_TAG_SORDWARD          	  0x116E 
+#define OBJ_EVENT_PAL_TAG_SHIELBERT          	  0x116F //NOTE UNUSED ABOVE
+//NOTE UNUSED ABOVE
+
+
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611
 #define OBJ_EVENT_PAL_TAG_LIGHT                   0x8001

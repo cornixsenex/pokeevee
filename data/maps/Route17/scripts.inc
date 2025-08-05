@@ -182,8 +182,24 @@ Route17_Script_Orestes::
 	return
 
 
+Route17_Script_TestFieldPic::
+# 112 "data/maps/Route17/scripts.pory"
+	load_field_pic 43, 190, 98
+# 113 "data/maps/Route17/scripts.pory"
+	msgbox Route17_Script_TestFieldPic_Text_0
+# 114 "data/maps/Route17/scripts.pory"
+	destroy_field_pic 43
+# 115 "data/maps/Route17/scripts.pory"
+	closemessage
+	end
+
+
+Route17_Script_TestFieldPic_Text_0:
+# 113 "data/maps/Route17/scripts.pory"
+	.string "TEST$"
+
 Route17_Text_Block1::
-# 111 "data/maps/Route17/scripts.pory"
+# 119 "data/maps/Route17/scripts.pory"
 	.string "This is the Via Fluvia which leads to\n"
 	.string "Lacus Drako and the town Salix but it is\l"
 	.string "impossible to use now. The storm has\l"
@@ -191,7 +207,7 @@ Route17_Text_Block1::
 	.string "be some time before they're fixed.$"
 
 Route17_Text_Block2::
-# 119 "data/maps/Route17/scripts.pory"
+# 127 "data/maps/Route17/scripts.pory"
 	.string "We managed to repair the lower bridge\n"
 	.string "but the second one by the dragon's lake\l"
 	.string "is still broken. Be careful of the road\l"
