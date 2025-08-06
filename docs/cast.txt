@@ -13,63 +13,64 @@ NAME		          SPRITE		OVERWORLD
 #Scott                 Scott
 #Sailors               Aqua Grunts
 #Rocket Grunts         Rocket Grunts
-#TeamRocket	          DONE
+#TeamRocket	           DONE
 #Pythia                Glacia
-Scientist             Blaine / Cliff / Petel / ScientistGen9, Archer
-Indy                  Nolan
+Rocket Boss            Petrel                               Petrel
+#Indy                  Nolan
 #Misty                 Misty
 #SurfInstructors       Phoebe
 #Jason                 Archie
-Orpheus               Musician gen8
-Philoctetes
+Orpheus                Musician gen8
+Philoctetes            Phil
 #CastorEtPollux        SwordwardShieldbert
-Theseus
-Medea                 HexManiac                                                                        HexManiac
+Theseus                Veteran
+Medea                  HexManiac                            HexManiac
 #Colchians             Magma Grunts
 #Aeetes                Maxie
-Nestor
-Helen                 Lillie-Masters
-Paris                 Siebold / Palmer
-Menelaus              Supernerd
-Hector                Chuck?
+Nestor                 Magnus
+Helen                  Lillie-Masters
+Paris                  Palmer
+Menelaus               Silver
+Hector                 Lance
 #Aeneas                Steven
 #Elissa                Cynthia
 #Tyrians               Hau
 #Rutulians             Kondo
 #Turnus                Rood
-Orestes               Wally, 
-GanonPriest
-Klytemnestra          BeautyGen9, 
-Iphigenia             Lucy
-Agamemnon             MrStone? Leon? Lysandre?
-Ulysses
-Polyphemus?           Dusclops
-Circe?
-Calypso?
-Achilles             Gaeric
-Ajax?
-Aias?
-Diomede?
-Teucer?
-Tiresias             Iscan? / Gordie? / FlareGrunt? / Collector / Cabbie / Blaine / a                     Blaine:
-Oedipus              Gambler, Leon
-Jocasta              Juniper? Madame, mom, SabrinaMasters
-Amazonians           PlasmaGruntF                                                                         PlasmaGruntF
-Hipolyta             Sierra?, Ariana, Diantha, SabrinaMasters
-Trojans              Roughneck / Lance / Koga / Dragontamer / Plasma / Ingo-master, Butler, Chili, 
-Briseis              Concordia
-Troilus
-IrohLotus
-Priam
-Cassandra          Karen?
-Hercules           Bruno
-Atlas?             Drayden
-PlutoDis           Ghetis
-Persephone         Olympia
-Gio                DONE
+Orestes                Wally
+Priest                 Sage
+Klytemnestra           BeautyGen9, 
+Iphigenia              Lucy
+Agamemnon              Lysandre
+Ulysses                Brock
+Polyphemus?            Dusclops
+Circe?                 Agatha
+Calypso?               Claire
+Achilles               Tucker
+Patrokles              Gaeric
+Ajax                   Chuck
+Aias                   Avery
+Diomede                Mohn
+Teucer                 Guzma
+Tiresias               Blaine                    Blaine:
+Oedipus                Leon
+Jocasta                SabrinaMasters
+Amazonians             PlasmaGruntF              PlasmaGruntF
+Hipolyta               Sierra
+Trojans                Dragontamers 
+Cressida               Concordia 
+Troilus                Dragontamer
+IrohLotus?              Spenser
+Priam                  Li 
+Cassandra              Karen
+Hercules               Bruno
+Atlas?                 Drayden
+PlutoDis               Ghetis
+Persephone             Olympia
+Gio                    DONE
 Red? Ash?
 
 Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce / Watson, Juan, 
-Cool / Normal guys: Silver, Veteran, Volkner, acetrainer, Brandon, Brawly, Brock, Ethan, Flint, Guzma, Hilbert, Lucas?, Mohn, Morty, Oak, Palmer, PlayerGo, Riley, 
+Cool / Normal guys: , Veteran, Volkner, acetrainer, Brandon, Brawly, Ethan, Flint, Guzma, Hilbert, Lucas?, Morty, Oak, PlayerGo, Riley, Paxton, phil
 Best Chicks: Skyla, Sightseer, Caitlin, Cogita(allblack), Dana, Dancer, 
 
