@@ -30,7 +30,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route17_Script_TestFieldPic",
+      "script": "LoonixSnow_Script_TestFieldPic",
       "flag": "0"
     }
   ],

@@ -1,3 +1,5 @@
+
+const FIELD_PIC_TEST = 44
 const FIELD_PIC_MEW = 31
 
 mapscripts LoonixSnow_MapScripts {
@@ -43,5 +45,13 @@ script LoonixSnow_Script_MewDream {
 
 	waitstate
 	releaseall
+	end
+}
+
+script LoonixSnow_Script_TestFieldPic {
+    load_field_pic (FIELD_PIC_TEST, 190, 98)
+    msgbox ("TEST")
+    destroy_field_pic (FIELD_PIC_TEST)
+	closemessage
 	end
 }

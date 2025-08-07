@@ -173,8 +173,9 @@
 #define TRAINER_PIC_FARMER_M              154
 #define TRAINER_PIC_BILL                  155
 #define TRAINER_PIC_SORDWARD_SHIELBERT    156
+#define TRAINER_PIC_PETREL                157
 
-#define TRAINER_PIC_COUNT                 157
+#define TRAINER_PIC_COUNT                 158
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

@@ -200,9 +200,13 @@ static const u16 sPic42Pal[] = INCBIN_U16("graphics/trainers/palettes/rood.gbapa
 static const u32 sPic43Gfx[] = INCBIN_U32("graphics/trainers/front_pics/bill.4bpp.lz");
 static const u16 sPic43Pal[] = INCBIN_U16("graphics/trainers/palettes/bill.gbapal");
 
-//Sordward = 43
+//SordwardEtShieldbert = 43
 static const u32 sPic44Gfx[] = INCBIN_U32("graphics/trainers/front_pics/sordward_shielbert.4bpp.lz");
 static const u16 sPic44Pal[] = INCBIN_U16("graphics/trainers/palettes/sordward_shielbert.gbapal");
+
+//Petrel = 44
+static const u32 sPic45Gfx[] = INCBIN_U32("graphics/trainers/front_pics/petrel.4bpp.lz");
+static const u16 sPic45Pal[] = INCBIN_U16("graphics/trainers/palettes/petrel.gbapal");
 
 
 /* And this is an example script.
@@ -314,8 +318,10 @@ static const struct Pic sPics[] =
     {sPic42Gfx, sPic42Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Bill
     {sPic43Gfx, sPic43Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
-	//Sordward
+	//SordwardEtShieldbert
     {sPic44Gfx, sPic44Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Petrel
+    {sPic45Gfx, sPic45Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
