@@ -15,13 +15,13 @@ NAME		          SPRITE		OVERWORLD
 #Rocket Grunts         Rocket Grunts
 #TeamRocket	           DONE
 #Pythia                Glacia
-Rocket Boss            Petrel                               Petrel
+#Rocket Boss           Petrel                               Petrel
 #Indy                  Nolan
 #Misty                 Misty
 #SurfInstructors       Phoebe
 #Jason                 Archie
-Orpheus                Musician gen8
-Philoctetes            Phil
+#Orpheus               Musician                              Anime Blane, 
+Philoctetes            Phil                                  Aveontrainer/791007878Drake - Change Colors
 #CastorEtPollux        SwordwardShieldbert
 Theseus                Veteran
 Medea                  HexManiac                            HexManiac
