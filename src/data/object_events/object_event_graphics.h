@@ -493,6 +493,9 @@ const u16 gObjectEventPal_Shielbert[] = INCBIN_U16("graphics/object_events/palet
 const u32 gObjectEventPic_HexManiac2[] = INCBIN_U32("graphics/object_events/pics/people/hex_maniac2.4bpp");
 const u16 gObjectEventPal_HexManiac2[] = INCBIN_U16("graphics/object_events/palettes/hex_maniac2.gbapal");
 
+const u32 gObjectEventPic_Petrel[] = INCBIN_U32("graphics/object_events/pics/people/petrel.4bpp");
+const u16 gObjectEventPal_Petrel[] = INCBIN_U16("graphics/object_events/palettes/petrel.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
