@@ -24,10 +24,10 @@ NAME		          SPRITE		OVERWORLD
 #Philoctetes            Phil                                  Aveontrainer/791007878Drake - Change Colors
 #CastorEtPollux        SwordwardShieldbert
 #Theseus                Veteran                              HGSS Burglar modified :(
-Medea                  HexManiac                            HexManiac
+#Medea                  HexManiac                            HexManiac
 #Colchians             Magma Grunts
 #Aeetes                Maxie
-Nestor                 Magnus
+#Nestor                 Magnus                                Aveon-882644...-Wulfric, 
 Helen                  Lillie-Masters
 Paris                  Palmer
 Menelaus               Silver
@@ -38,7 +38,7 @@ Hector                 Lance
 #Rutulians             Kondo
 #Turnus                Rood
 Orestes                Wally
-Priest                 Sage
+Priest                 Sage                                  Other/Sage
 Klytemnestra           BeautyGen9, 
 Iphigenia              Lucy
 Agamemnon              Lysandre

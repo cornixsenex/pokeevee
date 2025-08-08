@@ -505,6 +505,9 @@ const u16 gObjectEventPal_Phil[] = INCBIN_U16("graphics/object_events/palettes/p
 const u32 gObjectEventPic_Theseus[] = INCBIN_U32("graphics/object_events/pics/people/theseus.4bpp");
 const u16 gObjectEventPal_Theseus[] = INCBIN_U16("graphics/object_events/palettes/theseus.gbapal");
 
+const u32 gObjectEventPic_Nestor[] = INCBIN_U32("graphics/object_events/pics/people/nestor.4bpp");
+const u16 gObjectEventPal_Nestor[] = INCBIN_U16("graphics/object_events/palettes/nestor.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

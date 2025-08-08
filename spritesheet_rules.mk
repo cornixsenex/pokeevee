@@ -5044,6 +5044,9 @@ $(OBJEVENTGFXDIR)/people/phil.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/theseus.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/nestor.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 
