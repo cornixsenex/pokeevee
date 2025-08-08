@@ -23,7 +23,7 @@ NAME		          SPRITE		OVERWORLD
 #Orpheus               Musician                              Anime Blane, 
 #Philoctetes            Phil                                  Aveontrainer/791007878Drake - Change Colors
 #CastorEtPollux        SwordwardShieldbert
-Theseus                Veteran                              HGSS Burglar modified :(
+#Theseus                Veteran                              HGSS Burglar modified :(
 Medea                  HexManiac                            HexManiac
 #Colchians             Magma Grunts
 #Aeetes                Maxie

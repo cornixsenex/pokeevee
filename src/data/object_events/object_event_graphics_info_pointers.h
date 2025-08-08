@@ -309,6 +309,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Orpheus;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Phil;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Theseus;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -589,6 +590,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_PETREL] =                   &gObjectEventGraphicsInfo_Petrel,
 	[OBJ_EVENT_GFX_ORPHEUS] =                  &gObjectEventGraphicsInfo_Orpheus,
 	[OBJ_EVENT_GFX_PHIL] =                     &gObjectEventGraphicsInfo_Phil,
+	[OBJ_EVENT_GFX_THESEUS] =                  &gObjectEventGraphicsInfo_Theseus,
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,
     [OBJ_EVENT_GFX_DEOXYS] =                   &gObjectEventGraphicsInfo_Deoxys,

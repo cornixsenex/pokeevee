@@ -252,7 +252,7 @@
 #define OBJ_EVENT_GFX_PETREL				     244 
 #define OBJ_EVENT_GFX_ORPHEUS				     245 
 #define OBJ_EVENT_GFX_PHIL				         246 
-#define OBJ_EVENT_GFX_ESPEON				     247 //UNUSED
+#define OBJ_EVENT_GFX_THESEUS				     247 
 #define OBJ_EVENT_GFX_UMBREON				     248 //UNUSED
 #define OBJ_EVENT_GFX_LEAFEON				     249 //UNUSED
 #define OBJ_EVENT_GFX_GLACEON				     250 //UNUSED
@@ -440,7 +440,7 @@
 #define OBJ_EVENT_PAL_TAG_PETREL		          0x1128 
 #define OBJ_EVENT_PAL_TAG_ORPHEUS		          0x1129 
 #define OBJ_EVENT_PAL_TAG_PHIL		              0x112A 
-#define OBJ_EVENT_PAL_TAG_UMBREON		          0x112B //UNUSED
+#define OBJ_EVENT_PAL_TAG_THESEUS		          0x112B 
 #define OBJ_EVENT_PAL_TAG_LEAFEON		          0x112C //UNUSED
 #define OBJ_EVENT_PAL_TAG_GLACEON		          0x112D //UNUSED
 #define OBJ_EVENT_PAL_TAG_ROCKET_M		          0x112E

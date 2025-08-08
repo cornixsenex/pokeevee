@@ -495,6 +495,9 @@ const u16 gTrainerPalette_Orpheus[] = INCBIN_U16("graphics/trainers/palettes/orp
 const u32 gTrainerFrontPic_Phil[] = INCBIN_U32("graphics/trainers/front_pics/phil.4bpp.lz");
 const u16 gTrainerPalette_Phil[] = INCBIN_U16("graphics/trainers/palettes/phil.gbapal");
 
+const u32 gTrainerFrontPic_Theseus[] = INCBIN_U32("graphics/trainers/front_pics/theseus.4bpp.lz");
+const u16 gTrainerPalette_Theseus[] = INCBIN_U16("graphics/trainers/palettes/theseus.gbapal");
+
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -673,6 +676,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_PETREL, gTrainerFrontPic_Petrel, gTrainerPalette_Petrel),               
     TRAINER_SPRITE(TRAINER_PIC_ORPHEUS, gTrainerFrontPic_Orpheus, gTrainerPalette_Orpheus),               
     TRAINER_SPRITE(TRAINER_PIC_PHIL, gTrainerFrontPic_Phil, gTrainerPalette_Phil),               
+    TRAINER_SPRITE(TRAINER_PIC_THESEUS, gTrainerFrontPic_Theseus, gTrainerPalette_Theseus),               
 	//END KUSTOM TRAINER SPRITES
 };
 

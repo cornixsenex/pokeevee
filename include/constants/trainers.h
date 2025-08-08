@@ -176,8 +176,9 @@
 #define TRAINER_PIC_PETREL                157
 #define TRAINER_PIC_ORPHEUS               158
 #define TRAINER_PIC_PHIL                  159
+#define TRAINER_PIC_THESEUS               160
 
-#define TRAINER_PIC_COUNT                 160
+#define TRAINER_PIC_COUNT                 161
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

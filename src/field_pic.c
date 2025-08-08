@@ -216,6 +216,10 @@ static const u16 sPic46Pal[] = INCBIN_U16("graphics/trainers/palettes/orpheus.gb
 static const u32 sPic47Gfx[] = INCBIN_U32("graphics/trainers/front_pics/phil.4bpp.lz");
 static const u16 sPic47Pal[] = INCBIN_U16("graphics/trainers/palettes/phil.gbapal");
 
+//Theseus = 47
+static const u32 sPic48Gfx[] = INCBIN_U32("graphics/trainers/front_pics/theseus.4bpp.lz");
+static const u16 sPic48Pal[] = INCBIN_U16("graphics/trainers/palettes/theseus.gbapal");
+
 
 /* And this is an example script.
 
@@ -334,6 +338,8 @@ static const struct Pic sPics[] =
     {sPic46Gfx, sPic46Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Phil
     {sPic47Gfx, sPic47Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Theseus
+    {sPic48Gfx, sPic48Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
