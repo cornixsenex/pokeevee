@@ -28,9 +28,9 @@ NAME		          SPRITE		OVERWORLD
 #Colchians             Magma Grunts
 #Aeetes                Maxie
 #Nestor                 Magnus                                Aveon-882644...-Wulfric, 
-Helen                  Lillie-Masters
-Paris                  Palmer
-Menelaus               Silver
+#Helen                  Lillie-Masters                         FRLG Acetrainer F
+#Paris                  Palmer                                Paris
+#Menelaus               Silver                                 Silver
 Hector                 Lance
 #Aeneas                Steven
 #Elissa                Cynthia
@@ -67,7 +67,7 @@ Hercules               Bruno
 Atlas?                 Drayden
 PlutoDis               Ghetis
 Persephone             Olympia
-Gio                    DONE
+#Gio                    DONE
 Red? Ash?
 
 Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce / Watson, Juan, 

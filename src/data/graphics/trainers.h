@@ -501,6 +501,15 @@ const u16 gTrainerPalette_Theseus[] = INCBIN_U16("graphics/trainers/palettes/the
 const u32 gTrainerFrontPic_Nestor[] = INCBIN_U32("graphics/trainers/front_pics/nestor.4bpp.lz");
 const u16 gTrainerPalette_Nestor[] = INCBIN_U16("graphics/trainers/palettes/nestor.gbapal");
 
+const u32 gTrainerFrontPic_Helen[] = INCBIN_U32("graphics/trainers/front_pics/helen.4bpp.lz");
+const u16 gTrainerPalette_Helen[] = INCBIN_U16("graphics/trainers/palettes/helen.gbapal");
+
+const u32 gTrainerFrontPic_Paris[] = INCBIN_U32("graphics/trainers/front_pics/paris.4bpp.lz");
+const u16 gTrainerPalette_Paris[] = INCBIN_U16("graphics/trainers/palettes/paris.gbapal");
+
+const u32 gTrainerFrontPic_Silver[] = INCBIN_U32("graphics/trainers/front_pics/silver.4bpp.lz");
+const u16 gTrainerPalette_Silver[] = INCBIN_U16("graphics/trainers/palettes/silver.gbapal");
+
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -681,6 +690,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_PHIL, gTrainerFrontPic_Phil, gTrainerPalette_Phil),               
     TRAINER_SPRITE(TRAINER_PIC_THESEUS, gTrainerFrontPic_Theseus, gTrainerPalette_Theseus),               
     TRAINER_SPRITE(TRAINER_PIC_NESTOR, gTrainerFrontPic_Nestor, gTrainerPalette_Nestor),               
+    TRAINER_SPRITE(TRAINER_PIC_HELEN, gTrainerFrontPic_Helen, gTrainerPalette_Helen),               
+    TRAINER_SPRITE(TRAINER_PIC_PARIS, gTrainerFrontPic_Paris, gTrainerPalette_Paris),               
+    TRAINER_SPRITE(TRAINER_PIC_SILVER, gTrainerFrontPic_Silver, gTrainerPalette_Silver),               
 	//END KUSTOM TRAINER SPRITES
 };
 
