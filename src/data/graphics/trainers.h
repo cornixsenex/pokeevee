@@ -348,7 +348,7 @@ const u16 gTrainerPalette_Agatha[] = INCBIN_U16("graphics/trainers/palettes/agat
 const u32 gTrainerFrontPic_Bruno[] = INCBIN_U32("graphics/trainers/front_pics/bruno_front_pic.4bpp.lz");
 const u16 gTrainerPalette_Bruno[] = INCBIN_U16("graphics/trainers/palettes/bruno.gbapal");
 
-const u32 gTrainerFrontPic_Lance[] = INCBIN_U32("graphics/trainers/front_pics/lance_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_Lance[] = INCBIN_U32("graphics/trainers/front_pics/lance.4bpp.lz");
 const u16 gTrainerPalette_Lance[] = INCBIN_U16("graphics/trainers/palettes/lance.gbapal");
 
 const u32 gTrainerFrontPic_Engineer[] = INCBIN_U32("graphics/trainers/front_pics/engineer_front_pic.4bpp.lz");
@@ -509,6 +509,12 @@ const u16 gTrainerPalette_Paris[] = INCBIN_U16("graphics/trainers/palettes/paris
 
 const u32 gTrainerFrontPic_Silver[] = INCBIN_U32("graphics/trainers/front_pics/silver.4bpp.lz");
 const u16 gTrainerPalette_Silver[] = INCBIN_U16("graphics/trainers/palettes/silver.gbapal");
+
+const u32 gTrainerFrontPic_Sage[] = INCBIN_U32("graphics/trainers/front_pics/sage.4bpp.lz");
+const u16 gTrainerPalette_Sage[] = INCBIN_U16("graphics/trainers/palettes/sage.gbapal");
+
+const u32 gTrainerFrontPic_Klytaimnestra[] = INCBIN_U32("graphics/trainers/front_pics/klytaimnestra.4bpp.lz");
+const u16 gTrainerPalette_Klytaimnestra[] = INCBIN_U16("graphics/trainers/palettes/klytaimnestra.gbapal");
 
 
 // The first two parameters invoke a front pic and palette by

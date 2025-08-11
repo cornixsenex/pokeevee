@@ -299,8 +299,11 @@
 #define OBJ_EVENT_GFX_SORDWARD   				 291 
 #define OBJ_EVENT_GFX_SHIELBERT   				 292
 #define OBJ_EVENT_GFX_SILVER   				     293
+#define OBJ_EVENT_GFX_LANCE   				     294
+#define OBJ_EVENT_GFX_SAGE   				     295
+#define OBJ_EVENT_GFX_KLYTAIMNESTRA   		     296
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        294
+#define NUM_OBJ_EVENT_GFX                        297
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -527,6 +530,10 @@
 #define OBJ_EVENT_PAL_TAG_SHIELBERT          	  0x116F
 #define OBJ_EVENT_PAL_TAG_PARIS          	      0x1170
 #define OBJ_EVENT_PAL_TAG_SILVER          	      0x1171
+#define OBJ_EVENT_PAL_TAG_LANCE          	      0x1172
+#define OBJ_EVENT_PAL_TAG_WALLY          	      0x1173
+#define OBJ_EVENT_PAL_TAG_SAGE          	      0x1174
+#define OBJ_EVENT_PAL_TAG_KLYTAIMNESTRA           0x1175
 
 
 // Used as a placeholder follower graphic

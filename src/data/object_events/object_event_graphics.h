@@ -517,6 +517,18 @@ const u16 gObjectEventPal_Paris[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_Silver[] = INCBIN_U32("graphics/object_events/pics/people/silver.4bpp");
 const u16 gObjectEventPal_Silver[] = INCBIN_U16("graphics/object_events/palettes/silver.gbapal");
 
+const u32 gObjectEventPic_Lance[] = INCBIN_U32("graphics/object_events/pics/people/lance.4bpp");
+const u16 gObjectEventPal_Lance[] = INCBIN_U16("graphics/object_events/palettes/lance.gbapal");
+
+//Only pal as pic was added earlier / vanilla
+const u16 gObjectEventPal_Wally[] = INCBIN_U16("graphics/object_events/palettes/wally.gbapal");
+
+const u32 gObjectEventPic_Sage[] = INCBIN_U32("graphics/object_events/pics/people/sage.4bpp");
+const u16 gObjectEventPal_Sage[] = INCBIN_U16("graphics/object_events/palettes/sage.gbapal");
+
+const u32 gObjectEventPic_Klytaimnestra[] = INCBIN_U32("graphics/object_events/pics/people/klytaimnestra.4bpp");
+const u16 gObjectEventPal_Klytaimnestra[] = INCBIN_U16("graphics/object_events/palettes/klytaimnestra.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

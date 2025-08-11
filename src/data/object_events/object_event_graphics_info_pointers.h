@@ -314,6 +314,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nestor;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Helen;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Paris;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Silver;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lance;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sage;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Klytaimnestra;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -599,6 +602,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_HELEN] =                    &gObjectEventGraphicsInfo_Helen,
 	[OBJ_EVENT_GFX_PARIS] =                    &gObjectEventGraphicsInfo_Paris,
 	[OBJ_EVENT_GFX_SILVER] =                   &gObjectEventGraphicsInfo_Silver,
+	[OBJ_EVENT_GFX_LANCE] =                    &gObjectEventGraphicsInfo_Lance,
+	[OBJ_EVENT_GFX_SAGE] =                     &gObjectEventGraphicsInfo_Sage,
+	[OBJ_EVENT_GFX_KLYTAIMNESTRA] =            &gObjectEventGraphicsInfo_Klytaimnestra,
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,
     [OBJ_EVENT_GFX_DEOXYS] =                   &gObjectEventGraphicsInfo_Deoxys,

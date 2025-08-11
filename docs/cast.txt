@@ -27,19 +27,19 @@ NAME		          SPRITE		OVERWORLD
 #Medea                  HexManiac                            HexManiac
 #Colchians             Magma Grunts
 #Aeetes                Maxie
-#Nestor                 Magnus                                Aveon-882644...-Wulfric, 
-#Helen                  Lillie-Masters                         FRLG Acetrainer F
+#Nestor                 Nestor                                Nestor 
+#Helen                  Lillie-Masters                        Helen 
 #Paris                  Palmer                                Paris
 #Menelaus               Silver                                 Silver
-Hector                 Lance
+#Hector                 Lance                                   Lance
 #Aeneas                Steven
 #Elissa                Cynthia
 #Tyrians               Hau
 #Rutulians             Kondo
 #Turnus                Rood
-Orestes                Wally
-Priest                 Sage                                  Other/Sage
-Klytemnestra           BeautyGen9, 
+#Orestes               Wally                                 Wally
+#Priest                 Sage                                  Sage
+Klytemnestra           BeautyGen9,                            klytaimnestra
 Iphigenia              Lucy
 Agamemnon              Lysandre
 Ulysses                Brock
@@ -57,7 +57,7 @@ Oedipus                Leon
 Jocasta                SabrinaMasters
 Amazonians             PlasmaGruntF              PlasmaGruntF
 Hipolyta               Sierra
-Trojans                Dragontamers 
+Trojans                Dragontamers                     
 Cressida               Concordia 
 Troilus                Dragontamer
 IrohLotus?              Spenser

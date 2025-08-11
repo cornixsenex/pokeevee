@@ -184,6 +184,18 @@ static const u16 sPic51Pal[] = INCBIN_U16("graphics/trainers/palettes/paris.gbap
 //Silver = 51
 static const u32 sPic52Gfx[] = INCBIN_U32("graphics/trainers/front_pics/silver.4bpp.lz");
 static const u16 sPic52Pal[] = INCBIN_U16("graphics/trainers/palettes/silver.gbapal");
+//Lance = 52
+static const u32 sPic53Gfx[] = INCBIN_U32("graphics/trainers/front_pics/lance.4bpp.lz");
+static const u16 sPic53Pal[] = INCBIN_U16("graphics/trainers/palettes/lance.gbapal");
+//Wally = 53
+static const u32 sPic54Gfx[] = INCBIN_U32("graphics/trainers/front_pics/wally.4bpp.lz");
+static const u16 sPic54Pal[] = INCBIN_U16("graphics/trainers/palettes/wally.gbapal");
+//Sage = 54
+static const u32 sPic55Gfx[] = INCBIN_U32("graphics/trainers/front_pics/sage.4bpp.lz");
+static const u16 sPic55Pal[] = INCBIN_U16("graphics/trainers/palettes/sage.gbapal");
+//Klytaimnestra = 55
+static const u32 sPic56Gfx[] = INCBIN_U32("graphics/trainers/front_pics/klytaimnestra.4bpp.lz");
+static const u16 sPic56Pal[] = INCBIN_U16("graphics/trainers/palettes/klytaimnestra.gbapal");
 
 
 /* And this is an example script.
@@ -313,6 +325,14 @@ static const struct Pic sPics[] =
     {sPic51Gfx, sPic51Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Silver
     {sPic52Gfx, sPic52Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Lance
+    {sPic53Gfx, sPic53Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Wally
+    {sPic54Gfx, sPic54Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Sage
+    {sPic55Gfx, sPic55Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Klytaimnestra
+    {sPic56Gfx, sPic56Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

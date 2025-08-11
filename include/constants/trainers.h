@@ -181,8 +181,10 @@
 #define TRAINER_PIC_HELEN                 162
 #define TRAINER_PIC_PARIS                 163
 #define TRAINER_PIC_SILVER                164
+#define TRAINER_PIC_SAGE                  165
+#define TRAINER_PIC_KLYTAIMNESTRA         166
 
-#define TRAINER_PIC_COUNT                 165
+#define TRAINER_PIC_COUNT                 167
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

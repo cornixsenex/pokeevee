@@ -1910,6 +1910,26 @@ static const struct SpriteFrameImage sPicTable_Silver[] = {
     overworld_frame(gObjectEventPic_Silver, 2, 4, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_Lance[] = {
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Lance, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Sage[] = {
+    overworld_ascending_frames(gObjectEventPic_Sage, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Klytaimnestra[] = {
+    overworld_ascending_frames(gObjectEventPic_Klytaimnestra, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };
