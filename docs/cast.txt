@@ -39,7 +39,7 @@ NAME		          SPRITE		OVERWORLD
 #Turnus                Rood
 #Orestes               Wally                                 Wally
 #Priest                 Sage                                  Sage
-Klytemnestra           BeautyGen9,                            klytaimnestra
+#Klytemnestra           BeautyGen9,                            klytaimnestra
 Iphigenia              Lucy
 Agamemnon              Lysandre
 Ulysses                Brock
