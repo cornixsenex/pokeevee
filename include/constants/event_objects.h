@@ -302,8 +302,9 @@
 #define OBJ_EVENT_GFX_LANCE   				     294
 #define OBJ_EVENT_GFX_SAGE   				     295
 #define OBJ_EVENT_GFX_KLYTAIMNESTRA   		     296
+#define OBJ_EVENT_GFX_AGAMEMNON   		         297
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        297
+#define NUM_OBJ_EVENT_GFX                        298
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -534,6 +535,7 @@
 #define OBJ_EVENT_PAL_TAG_WALLY          	      0x1173
 #define OBJ_EVENT_PAL_TAG_SAGE          	      0x1174
 #define OBJ_EVENT_PAL_TAG_KLYTAIMNESTRA           0x1175
+#define OBJ_EVENT_PAL_TAG_AGAMEMNON               0x1176
 
 
 // Used as a placeholder follower graphic

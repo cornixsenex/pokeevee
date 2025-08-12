@@ -1930,6 +1930,10 @@ static const struct SpriteFrameImage sPicTable_Klytaimnestra[] = {
     overworld_ascending_frames(gObjectEventPic_Klytaimnestra, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Agamemnon[] = {
+    overworld_ascending_frames(gObjectEventPic_Agamemnon, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

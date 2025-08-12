@@ -5065,6 +5065,9 @@ $(OBJEVENTGFXDIR)/people/sage.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/klytaimnestra.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/agamemnon.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 

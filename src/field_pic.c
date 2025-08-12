@@ -196,6 +196,12 @@ static const u16 sPic55Pal[] = INCBIN_U16("graphics/trainers/palettes/sage.gbapa
 //Klytaimnestra = 55
 static const u32 sPic56Gfx[] = INCBIN_U32("graphics/trainers/front_pics/klytaimnestra.4bpp.lz");
 static const u16 sPic56Pal[] = INCBIN_U16("graphics/trainers/palettes/klytaimnestra.gbapal");
+//Lucy = 56
+static const u32 sPic57Gfx[] = INCBIN_U32("graphics/trainers/front_pics/lucy.4bpp.lz");
+static const u16 sPic57Pal[] = INCBIN_U16("graphics/trainers/palettes/lucy.gbapal");
+//Agamemnon = 57
+static const u32 sPic58Gfx[] = INCBIN_U32("graphics/trainers/front_pics/agamemnon.4bpp.lz");
+static const u16 sPic58Pal[] = INCBIN_U16("graphics/trainers/palettes/agamemnon.gbapal");
 
 
 /* And this is an example script.
@@ -333,6 +339,10 @@ static const struct Pic sPics[] =
     {sPic55Gfx, sPic55Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Klytaimnestra
     {sPic56Gfx, sPic56Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Lucy
+    {sPic57Gfx, sPic57Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Agamemnon
+    {sPic58Gfx, sPic58Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

@@ -40,7 +40,7 @@ NAME		          SPRITE		OVERWORLD
 #Orestes               Wally                                 Wally
 #Priest                 Sage                                  Sage
 #Klytemnestra           BeautyGen9,                            klytaimnestra
-Iphigenia              Lucy
+#Iphigenia             Lucy                                  Lucy
 Agamemnon              Lysandre
 Ulysses                Brock
 Polyphemus?            Dusclops
