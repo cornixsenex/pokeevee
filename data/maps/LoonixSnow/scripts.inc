@@ -68,11 +68,11 @@ LoonixSnow_Script_MewDream::
 
 LoonixSnow_Script_TestFieldPic::
 # 52 "data/maps/LoonixSnow/scripts.pory"
-	load_field_pic 57, 190, 98
+	load_field_pic 58, 190, 98
 # 53 "data/maps/LoonixSnow/scripts.pory"
 	msgbox LoonixSnow_Script_TestFieldPic_Text_0
 # 54 "data/maps/LoonixSnow/scripts.pory"
-	destroy_field_pic 57
+	destroy_field_pic 58
 # 55 "data/maps/LoonixSnow/scripts.pory"
 	closemessage
 	end

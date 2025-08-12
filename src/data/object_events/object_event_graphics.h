@@ -532,6 +532,9 @@ const u16 gObjectEventPal_Klytaimnestra[] = INCBIN_U16("graphics/object_events/p
 const u32 gObjectEventPic_Agamemnon[] = INCBIN_U32("graphics/object_events/pics/people/agamemnon.4bpp");
 const u16 gObjectEventPal_Agamemnon[] = INCBIN_U16("graphics/object_events/palettes/agamemnon.gbapal");
 
+const u32 gObjectEventPic_Brock[] = INCBIN_U32("graphics/object_events/pics/people/brock.4bpp");
+const u16 gObjectEventPal_Brock[] = INCBIN_U16("graphics/object_events/palettes/brock.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

@@ -41,11 +41,11 @@ NAME		          SPRITE		OVERWORLD
 #Priest                 Sage                                  Sage
 #Klytemnestra           BeautyGen9,                            klytaimnestra
 #Iphigenia             Lucy                                  Lucy
-Agamemnon              Lysandre
-Ulysses                Brock
-Polyphemus?            Dusclops
-Circe?                 Agatha
-Calypso?               Claire
+#Agamemnon              Lysandre                             Agamemnon
+#Ulysses                Brock                                 Brock
+#Polyphemus?            Dusclops
+Circe                  Agatha
+Calypso                Claire
 Achilles               Tucker
 Patrokles              Gaeric
 Ajax                   Chuck
