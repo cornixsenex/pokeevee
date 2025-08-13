@@ -1776,6 +1776,7 @@ Hector
 Agamemnon
 Drake                                           *B4
 Triforce Temples
+	>Orestes goes to the temple sage tells him "the prophet is silent he cannot speak until the Triforce is returned" O: Noo please help me player -> 3 temples: Water Temple (lake, waterfalls, water level) Spirit / Light (light beams et the hand) Earth Temple (stone statues that you move around) - after water temple a triforce shard quest with a map and fishing locations around the lake - all pieces returned do an anim and sage -> slowking he says Orestes your mother is at fault but you cannot be the one to do it Orestes asks you to do if for him you go thru servants entrance via serving house confrontation (is her man there? idk yet) defeat her restore Theoden / Agamemnon Iphigenia tantrum and he goes to Nestor House
 Clytemnestra
 Aeneas
 Mare Tropicum                                   *L4
@@ -1787,6 +1788,7 @@ Mare Subtropicum
 Odysseus, Ithaca, Lotus Grove                        
 Isla Arida
 Isla Pina, Siren Islands / Beach
+	>Circe: Ulysses @ city, proceed to circe house, she mentions pina violeta and promises to fix everyone if you bring it and Ulysses takes her to bed, U: I'll do it for the team, they tell you to scram if you return after leaving they're in bed, gather pina violeta, return -> alert ulysses is a pokemon battle circe I'm Melting after use Pina Violeta to change back Ulysses et co
 Scylla, underwater?
 Calypso Cave, Phaeacia, Swineherd, Beggar
 Achilles
