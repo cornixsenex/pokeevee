@@ -68,14 +68,61 @@ LoonixSnow_Script_MewDream::
 
 LoonixSnow_Script_TestFieldPic::
 # 52 "data/maps/LoonixSnow/scripts.pory"
-	load_field_pic 58, 190, 98
+	load_field_pic 60, 190, 98
 # 53 "data/maps/LoonixSnow/scripts.pory"
 	msgbox LoonixSnow_Script_TestFieldPic_Text_0
 # 54 "data/maps/LoonixSnow/scripts.pory"
-	destroy_field_pic 58
+	destroy_field_pic 60
 # 55 "data/maps/LoonixSnow/scripts.pory"
 	closemessage
 	end
+
+
+LoonixSnow_Script_TestAgatha::
+# 61 "data/maps/LoonixSnow/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 62 "data/maps/LoonixSnow/scripts.pory"
+	switch VAR_RESULT
+# 63 "data/maps/LoonixSnow/scripts.pory"
+	case DIR_NORTH, LoonixSnow_Script_TestAgatha_3
+# 65 "data/maps/LoonixSnow/scripts.pory"
+	case DIR_SOUTH, LoonixSnow_Script_TestAgatha_4
+# 67 "data/maps/LoonixSnow/scripts.pory"
+	case DIR_WEST, LoonixSnow_Script_TestAgatha_5
+# 69 "data/maps/LoonixSnow/scripts.pory"
+	case DIR_EAST, LoonixSnow_Script_TestAgatha_6
+LoonixSnow_Script_TestAgatha_1:
+# 72 "data/maps/LoonixSnow/scripts.pory"
+	waitmovement 0
+# 73 "data/maps/LoonixSnow/scripts.pory"
+	load_field_pic 59, 190, 98
+# 74 "data/maps/LoonixSnow/scripts.pory"
+	msgbox LoonixSnow_Script_TestFieldPic_Text_0
+# 75 "data/maps/LoonixSnow/scripts.pory"
+	destroy_field_pic 59
+# 76 "data/maps/LoonixSnow/scripts.pory"
+	closemessage
+	end
+
+LoonixSnow_Script_TestAgatha_3:
+# 64 "data/maps/LoonixSnow/scripts.pory"
+	applymovement LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceDown
+	goto LoonixSnow_Script_TestAgatha_1
+
+LoonixSnow_Script_TestAgatha_4:
+# 66 "data/maps/LoonixSnow/scripts.pory"
+	applymovement LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceUp
+	goto LoonixSnow_Script_TestAgatha_1
+
+LoonixSnow_Script_TestAgatha_5:
+# 68 "data/maps/LoonixSnow/scripts.pory"
+	applymovement LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceRight
+	goto LoonixSnow_Script_TestAgatha_1
+
+LoonixSnow_Script_TestAgatha_6:
+# 70 "data/maps/LoonixSnow/scripts.pory"
+	applymovement LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceLeft
+	goto LoonixSnow_Script_TestAgatha_1
 
 
 LoonixSnow_Script_TestFieldPic_Text_0:

@@ -1,5 +1,5 @@
 
-const FIELD_PIC_TEST = 58
+const FIELD_PIC_TEST = 60
 const FIELD_PIC_MEW = 31
 
 mapscripts LoonixSnow_MapScripts {
@@ -52,6 +52,27 @@ script LoonixSnow_Script_TestFieldPic {
     load_field_pic (FIELD_PIC_TEST, 190, 98)
     msgbox ("TEST")
     destroy_field_pic (FIELD_PIC_TEST)
+	closemessage
+	end
+}
+
+script LoonixSnow_Script_TestAgatha {
+	//face player - TEST
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			applymovement (LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceDown)
+		case DIR_SOUTH:
+			applymovement (LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceUp)
+		case DIR_WEST:
+			applymovement (LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceRight)
+		case DIR_EAST:
+			applymovement (LOCALID_LOONIXSNOW_AGATHA, Common_Movement_FaceLeft)
+	}
+	waitmovement (0)
+    load_field_pic (59, 190, 98)
+	msgbox ("TEST")
+    destroy_field_pic (59)
 	closemessage
 	end
 }

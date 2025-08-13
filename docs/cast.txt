@@ -44,8 +44,8 @@ NAME		          SPRITE		OVERWORLD
 #Agamemnon              Lysandre                             Agamemnon
 #Ulysses                Brock                                 Brock
 #Polyphemus?            Dusclops
-Circe                  Agatha
-Calypso                Claire
+#Circe                  Agatha                               Agatha - NO WALK
+#Calypso                Claire                                claire
 Achilles               Tucker
 Patrokles              Gaeric
 Ajax                   Chuck
@@ -65,6 +65,8 @@ Priam                  Li
 Cassandra              Karen
 Hercules               Bruno
 Atlas?                 Drayden
+Cherubim			   Jirachi?
+Serpent??
 PlutoDis               Ghetis
 Persephone             Olympia
 #Gio                    DONE

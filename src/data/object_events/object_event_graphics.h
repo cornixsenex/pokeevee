@@ -535,6 +535,12 @@ const u16 gObjectEventPal_Agamemnon[] = INCBIN_U16("graphics/object_events/palet
 const u32 gObjectEventPic_Brock[] = INCBIN_U32("graphics/object_events/pics/people/brock.4bpp");
 const u16 gObjectEventPal_Brock[] = INCBIN_U16("graphics/object_events/palettes/brock.gbapal");
 
+const u32 gObjectEventPic_Agatha[] = INCBIN_U32("graphics/object_events/pics/people/agatha.4bpp");
+const u16 gObjectEventPal_Agatha[] = INCBIN_U16("graphics/object_events/palettes/agatha.gbapal");
+
+const u32 gObjectEventPic_Claire[] = INCBIN_U32("graphics/object_events/pics/people/claire.4bpp");
+const u16 gObjectEventPal_Claire[] = INCBIN_U16("graphics/object_events/palettes/claire.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
