@@ -48,8 +48,8 @@ NAME		          SPRITE		OVERWORLD
 #Calypso                Claire                                claire
 #Achilles               Tucker
 #Patrokles              Wallace2                   Wallace2
-Ajax                   Chuck
-Aias                   Avery
+#Ajax                   Chuck                      Chuck
+#Aias                   Avery                      Avery
 Diomede                Mohn
 Teucer                 Guzma
 Tiresias               Blaine                    Blaine:

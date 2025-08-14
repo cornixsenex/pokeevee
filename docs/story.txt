@@ -1796,17 +1796,22 @@ Tiresias, Oedipus
 Achilles
 	>T: You need a mighty hero to win this war
 	>Heracles? Nah he's impossible to find and harder to get to do what we want
-	>Achilles? Nah he's gone missing
-	>U: Nah he's at skylos (g@y castrumsanchez area)
-	>D: Let's get him. I raced with his father
+    >Achilles? It's said he's to become mightier than Peleus
+    >But he's went and 'livin on reds...what a shame' he's with Patroklos
+	>D: Let's get him. I raced with his father and Patroklos they'lle welcome me
+    >U: I'll go too to help convince achilles to change his mind
 	>N: Player go with them
-	>Go to skylos (maybe in city idk where yet)
-	>arrive there is Patroklos (G) Achilles (T as Pyrrha) LBQ ladies for the gift scene
-	>"No achilles here" (it's Pyrrha now but not explicity stated)
+	>Go to skylos / House Patroklos
+    >Patroklos welcomes them but gets annoyed at Achilles (pronouns it's Pyhhra now)
+    >They go in and continue to say instulting stuff (adam apple, hands, voice, hair etc)
+    >A: WTF, P: Bad guests
+    >U lies about being sorry says he brought gifts
 	>ulysses gives gifts (3 girly mons 1 manly mon)
 	>pyrrha achilles goes to the manly one
-	>alarum (IDK how to do this transition yet but leads to)
-	>battle et defeat patroklos
+    >U et D make jokes about him choosing like machop
+    >A et P super pissed
+	>alarum
+    >battle et defeat patroklos
 	>wrath of achilleus
 	>battle achilleus
 	>fine i'll go but call me pyrrha

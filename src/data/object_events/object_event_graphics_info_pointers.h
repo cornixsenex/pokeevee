@@ -322,6 +322,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Agatha;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Claire;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wallace2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chuck;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Avery;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -614,7 +616,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_BROCK] =                    &gObjectEventGraphicsInfo_Brock,
 	[OBJ_EVENT_GFX_AGATHA] =                   &gObjectEventGraphicsInfo_Agatha,
 	[OBJ_EVENT_GFX_CLAIRE] =                   &gObjectEventGraphicsInfo_Claire,
-	[OBJ_EVENT_GFX_WALLACE2] =                   &gObjectEventGraphicsInfo_Wallace2,
+	[OBJ_EVENT_GFX_WALLACE2] =                 &gObjectEventGraphicsInfo_Wallace2,
+	[OBJ_EVENT_GFX_CHUCK] =                    &gObjectEventGraphicsInfo_Chuck,
+	[OBJ_EVENT_GFX_AVERY] =                    &gObjectEventGraphicsInfo_Avery,
 
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,

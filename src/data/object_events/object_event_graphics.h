@@ -544,6 +544,12 @@ const u16 gObjectEventPal_Claire[] = INCBIN_U16("graphics/object_events/palettes
 const u32 gObjectEventPic_Wallace2[] = INCBIN_U32("graphics/object_events/pics/people/wallace2.4bpp");
 const u16 gObjectEventPal_Wallace2[] = INCBIN_U16("graphics/object_events/palettes/wallace2.gbapal");
 
+const u32 gObjectEventPic_Chuck[] = INCBIN_U32("graphics/object_events/pics/people/chuck.4bpp");
+const u16 gObjectEventPal_Chuck[] = INCBIN_U16("graphics/object_events/palettes/chuck.gbapal");
+
+const u32 gObjectEventPic_Avery[] = INCBIN_U32("graphics/object_events/pics/people/avery.4bpp");
+const u16 gObjectEventPal_Avery[] = INCBIN_U16("graphics/object_events/palettes/avery.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
