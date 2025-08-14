@@ -5077,6 +5077,9 @@ $(OBJEVENTGFXDIR)/people/agatha.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/claire.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/wallace2.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 

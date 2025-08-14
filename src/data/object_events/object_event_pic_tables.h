@@ -1954,6 +1954,10 @@ static const struct SpriteFrameImage sPicTable_Claire[] = {
     overworld_ascending_frames(gObjectEventPic_Claire, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Wallace2[] = {
+    overworld_ascending_frames(gObjectEventPic_Wallace2, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

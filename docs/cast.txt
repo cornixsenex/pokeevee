@@ -46,8 +46,8 @@ NAME		          SPRITE		OVERWORLD
 #Polyphemus?            Dusclops
 #Circe                  Agatha                               Agatha - NO WALK
 #Calypso                Claire                                claire
-Achilles               Tucker
-Patrokles              Wallace
+#Achilles               Tucker
+Patrokles              Wallace2                   Wallace2
 Ajax                   Chuck
 Aias                   Avery
 Diomede                Mohn
