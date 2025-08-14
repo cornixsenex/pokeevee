@@ -1327,13 +1327,14 @@ Ceberus
 			>Proposal for Menelaus and Paris to duel (arranged by Hektor and Agamemnon)
 			>Paris chicken
 			>General Battle (Glaucus)
-		>A respite
+		>A respite - Thersites (Aias?)
 		>A second meeting of the armies (Deiphobus)
 		>Retreat to the camp
 		>Hold the camp (Dolon)
+		>Troilus is cought sneaking around. Agrees to give up Troy in exchange for his love. Rage of Achilleus.
 		>Debate what to do - Old Nestor Joke fighting the Centaurs
 		>Soldiers grow tired of his rambling, ask Tiresias what to do
-		>Troy will not fall without the bow of Philoctetes
+		>Troy will not fall without the bow of Philoctetes / a great hero is needed Philoctetes is / was eromenos of Heracles
 		>Philoctetes
 			>Was left behind wounded on Big Island during Argo
 			>Player and Ulysses are sent to bring him back (And Achilles and Patrokles? You need a boat to get down there)
@@ -1345,7 +1346,6 @@ Ceberus
 			>Philoctetes says his pain is finally reduced and he can sleep, bids Player go leave him to dream
 			>Player returns with Ulysses where Philoctetes relates his dream where Heracles tells him he must return to Troy it is his destiny
 		>Upon returning to Troy Philoctetes' wound is healed and the council convenes
-		>Troilus is cought sneaking around. Agrees to give up Troy in exchange for his love. Rage of Achilleus.
 		>Take the 3 Palladia
 			>Lake (Sarpedon)
 			>Forest (Pandarus)
