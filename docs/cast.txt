@@ -47,7 +47,7 @@ NAME		          SPRITE		OVERWORLD
 #Circe                  Agatha                               Agatha - NO WALK
 #Calypso                Claire                                claire
 #Achilles               Tucker
-Patrokles              Wallace2                   Wallace2
+#Patrokles              Wallace2                   Wallace2
 Ajax                   Chuck
 Aias                   Avery
 Diomede                Mohn
