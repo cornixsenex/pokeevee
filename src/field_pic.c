@@ -211,7 +211,12 @@ static const u16 sPic60Pal[] = INCBIN_U16("graphics/trainers/palettes/agatha.gba
 //Claire = 60
 static const u32 sPic61Gfx[] = INCBIN_U32("graphics/trainers/front_pics/claire.4bpp.lz");
 static const u16 sPic61Pal[] = INCBIN_U16("graphics/trainers/palettes/claire.gbapal");
-
+//Tucker = 61 NOTE: dome_ace
+static const u32 sPic62Gfx[] = INCBIN_U32("graphics/trainers/front_pics/dome_ace_tucker.4bpp.lz");
+static const u16 sPic62Pal[] = INCBIN_U16("graphics/trainers/front_pics/dome_ace_tucker.gbapal");
+//Wallace = 62 NOTE: champion_
+static const u32 sPic63Gfx[] = INCBIN_U32("graphics/trainers/front_pics/champion_wallace.4bpp.lz");
+static const u16 sPic63Pal[] = INCBIN_U16("graphics/trainers/front_pics/champion_wallace.gbapal");
 
 /* And this is an example script.
 
@@ -358,6 +363,10 @@ static const struct Pic sPics[] =
     {sPic60Gfx, sPic60Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Claire
     {sPic61Gfx, sPic61Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Tucker
+    {sPic62Gfx, sPic62Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Wallace
+    {sPic63Gfx, sPic63Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
