@@ -1966,6 +1966,10 @@ static const struct SpriteFrameImage sPicTable_Avery[] = {
     overworld_ascending_frames(gObjectEventPic_Avery, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Mohn[] = {
+    overworld_ascending_frames(gObjectEventPic_Mohn, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };
