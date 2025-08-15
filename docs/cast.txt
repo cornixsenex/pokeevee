@@ -50,8 +50,8 @@ NAME		          SPRITE		OVERWORLD
 #Patrokles              Wallace2                   Wallace2
 #Ajax                   Chuck                      Chuck
 #Aias                   Avery                      Avery
-Diomede                Mohn                        Mohn
-Teucer                 Guzma
+#Diomede                Mohn                        Mohn
+Teucer                 Teucer                    Teucer 
 Tiresias               Blaine                    Blaine:
 Oedipus                Leon
 Jocasta                SabrinaMasters

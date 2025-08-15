@@ -537,6 +537,9 @@ const u16 gTrainerPalette_Avery[] = INCBIN_U16("graphics/trainers/palettes/avery
 const u32 gTrainerFrontPic_Mohn[] = INCBIN_U32("graphics/trainers/front_pics/mohn.4bpp.lz");
 const u16 gTrainerPalette_Mohn[] = INCBIN_U16("graphics/trainers/palettes/mohn.gbapal");
 
+const u32 gTrainerFrontPic_Teucer[] = INCBIN_U32("graphics/trainers/front_pics/teucer.4bpp.lz");
+const u16 gTrainerPalette_Teucer[] = INCBIN_U16("graphics/trainers/palettes/teucer.gbapal");
+
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and

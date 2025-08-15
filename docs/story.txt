@@ -1239,8 +1239,8 @@ Ceberus
 		>Diomedes - Horse Races
 			>Defeat Diomedes in a race - Hippodrome
 			>Maybe just beat him in a horse race betting thing. Easy to script a single lap horse race where the inside horse always wins
-		>Teucer - Darts
-			>He's an archer. Make a dart minigame
+		>Teucer - Darts & Gluttony
+			>He's an archer. Make a dart minigame. He's trying to eat at every place in the state never fills up or he's in the woods trying to eat every type of pokemon idk something like gluttonous and he's fat
 	>The Heros assembled Menelaus will not wait until Castor and Pollux return with Heracles and Nestor agrees. Agamemnon orders the army to depart for Troy
 	>Gather outside and realize Nestor has forgotten where Troy is. 
 	>Nestor suggests a prophet the wise Tiresias from back in his day (a man transformed into a women...9/10 the pleasure etc)
