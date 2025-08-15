@@ -51,7 +51,7 @@ NAME		          SPRITE		OVERWORLD
 #Ajax                   Chuck                      Chuck
 #Aias                   Avery                      Avery
 #Diomede                Mohn                        Mohn
-Teucer                 Teucer                    Teucer 
+#Teucer                 Teucer                    Teucer 
 Tiresias               Blaine                    Blaine:
 Oedipus                Leon
 Jocasta                SabrinaMasters
@@ -60,7 +60,7 @@ Hipolyta               Sierra
 Trojans                Dragontamers                     
 Cressida               Concordia 
 Troilus                Dragontamer
-IrohLotus?              Spenser
+IrohLotus?             Spenser
 Priam                  Li 
 Cassandra              Karen
 Hercules               Bruno
