@@ -556,6 +556,9 @@ const u16 gObjectEventPal_Mohn[] = INCBIN_U16("graphics/object_events/palettes/m
 const u32 gObjectEventPic_Teucer[] = INCBIN_U32("graphics/object_events/pics/people/teucer.4bpp");
 const u16 gObjectEventPal_Teucer[] = INCBIN_U16("graphics/object_events/palettes/teucer.gbapal");
 
+const u32 gObjectEventPic_Blaine2[] = INCBIN_U32("graphics/object_events/pics/people/blaine2.4bpp");
+const u16 gObjectEventPal_Blaine2[] = INCBIN_U16("graphics/object_events/palettes/blaine2.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

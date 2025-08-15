@@ -191,8 +191,9 @@
 #define TRAINER_PIC_AVERY                 172
 #define TRAINER_PIC_MOHN                  173
 #define TRAINER_PIC_TEUCER                174
+#define TRAINER_PIC_BLAINE2               175
 
-#define TRAINER_PIC_COUNT                 175
+#define TRAINER_PIC_COUNT                 176
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

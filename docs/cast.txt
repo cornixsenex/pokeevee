@@ -52,7 +52,7 @@ NAME		          SPRITE		OVERWORLD
 #Aias                   Avery                      Avery
 #Diomede                Mohn                        Mohn
 #Teucer                 Teucer                    Teucer 
-Tiresias               Blaine                    Blaine:
+#Tiresias               Blaine2                    Blaine2
 Oedipus                Leon
 Jocasta                SabrinaMasters
 Amazonians             PlasmaGruntF              PlasmaGruntF
