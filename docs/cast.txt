@@ -53,7 +53,7 @@ NAME		          SPRITE		OVERWORLD
 #Diomede                Mohn                        Mohn
 #Teucer                 Teucer                    Teucer 
 #Tiresias               Blaine2                    Blaine2
-Oedipus                Leon
+!Oedipus                Leon
 Jocasta                SabrinaMasters
 Amazonians             PlasmaGruntF              PlasmaGruntF
 Hipolyta               Sierra

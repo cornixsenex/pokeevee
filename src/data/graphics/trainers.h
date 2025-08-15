@@ -543,6 +543,9 @@ const u16 gTrainerPalette_Teucer[] = INCBIN_U16("graphics/trainers/palettes/teuc
 const u32 gTrainerFrontPic_Blaine2[] = INCBIN_U32("graphics/trainers/front_pics/blaine2.4bpp.lz");
 const u16 gTrainerPalette_Blaine2[] = INCBIN_U16("graphics/trainers/palettes/blaine2.gbapal");
 
+const u32 gTrainerFrontPic_Leon[] = INCBIN_U32("graphics/trainers/front_pics/leon.4bpp.lz");
+const u16 gTrainerPalette_Leon[] = INCBIN_U16("graphics/trainers/palettes/leon.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by
