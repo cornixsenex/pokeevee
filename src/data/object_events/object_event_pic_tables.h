@@ -1982,6 +1982,14 @@ static const struct SpriteFrameImage sPicTable_Leon[] = {
     overworld_ascending_frames(gObjectEventPic_Leon, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Sabrina[] = {
+    overworld_ascending_frames(gObjectEventPic_Sabrina, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Amazon[] = {
+    overworld_ascending_frames(gObjectEventPic_Amazon, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

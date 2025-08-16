@@ -53,9 +53,9 @@ NAME		          SPRITE		OVERWORLD
 #Diomede                Mohn                        Mohn
 #Teucer                 Teucer                    Teucer 
 #Tiresias               Blaine2                    Blaine2
-!Oedipus                Leon
-Jocasta                SabrinaMasters
-Amazonians             PlasmaGruntF              PlasmaGruntF
+#Oedipus                Leon
+#Jocasta                Jocasta                   Sabrina              NOTE: Sabrina OW et Jocasta Trainer
+!Amazonians             PlasmaGruntF              amazon
 Hipolyta               Sierra
 Trojans                Dragontamers                     
 Cressida               Concordia 

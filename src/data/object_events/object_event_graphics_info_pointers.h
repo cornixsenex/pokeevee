@@ -328,6 +328,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mohn;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Teucer;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blaine2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Leon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sabrina;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Amazon;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -627,6 +629,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_TEUCER] =                   &gObjectEventGraphicsInfo_Teucer,
 	[OBJ_EVENT_GFX_BLAINE2] =                  &gObjectEventGraphicsInfo_Blaine2,
 	[OBJ_EVENT_GFX_LEON] =                     &gObjectEventGraphicsInfo_Leon,
+	[OBJ_EVENT_GFX_SABRINA] =                  &gObjectEventGraphicsInfo_Sabrina,
+	[OBJ_EVENT_GFX_AMAZON] =                   &gObjectEventGraphicsInfo_Amazon,
 
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,

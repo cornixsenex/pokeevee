@@ -5098,6 +5098,12 @@ $(OBJEVENTGFXDIR)/people/blaine2.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/leon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/sabrina.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/amazon.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 

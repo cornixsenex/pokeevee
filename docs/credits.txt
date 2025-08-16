@@ -46,4 +46,6 @@ Beliot419
     >farmer trainer sprite
 kyledove
     >trainer art
+Horo
+	>Sabrina OW Sprite
 
