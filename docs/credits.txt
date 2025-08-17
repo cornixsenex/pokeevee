@@ -48,4 +48,6 @@ kyledove
     >trainer art
 Horo
 	>Sabrina OW Sprite
+Delta231
+	>dragontamer / trojan OW sprite
 
