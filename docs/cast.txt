@@ -58,9 +58,10 @@ NAME		          SPRITE		OVERWORLD
 #Amazonians             PlasmaGruntF              amazon
 #Hipolyta               Sierra                     hippolyta
 #Trojans                Dragontamers               trojan               
-Troilus                Dragontamer-gen6            8257-dragon tamer
+!Troilus                Dragontamer-gen6            8257-dragon tamer - troilus
 Cressida               Concordia 
 IrohLotus?             Spenser
+Trojan Hores           Kimono Girl                 823127696_Kimono
 Priam                  Li 
 Cassandra              Karen
 Hercules               Bruno
