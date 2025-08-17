@@ -55,8 +55,8 @@ NAME		          SPRITE		OVERWORLD
 #Tiresias               Blaine2                    Blaine2
 #Oedipus                Leon
 #Jocasta                Jocasta                   Sabrina              NOTE: Sabrina OW et Jocasta Trainer
-!Amazonians             PlasmaGruntF              amazon
-Hipolyta               Sierra
+#Amazonians             PlasmaGruntF              amazon
+#Hipolyta               Sierra                     hippolyta
 Trojans                Dragontamers                     
 Cressida               Concordia 
 Troilus                Dragontamer

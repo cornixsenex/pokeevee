@@ -568,6 +568,9 @@ const u16 gObjectEventPal_Sabrina[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_Amazon[] = INCBIN_U32("graphics/object_events/pics/people/amazon.4bpp");
 const u16 gObjectEventPal_Amazon[] = INCBIN_U16("graphics/object_events/palettes/amazon.gbapal");
 
+const u32 gObjectEventPic_Hippolyta[] = INCBIN_U32("graphics/object_events/pics/people/hippolyta.4bpp");
+const u16 gObjectEventPal_Hippolyta[] = INCBIN_U16("graphics/object_events/palettes/hippolyta.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
