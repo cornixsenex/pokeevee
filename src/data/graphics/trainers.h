@@ -555,6 +555,9 @@ const u16 gTrainerPalette_Amazon[] = INCBIN_U16("graphics/trainers/palettes/amaz
 const u32 gTrainerFrontPic_Hippolyta[] = INCBIN_U32("graphics/trainers/front_pics/hippolyta.4bpp.lz");
 const u16 gTrainerPalette_Hippolyta[] = INCBIN_U16("graphics/trainers/palettes/hippolyta.gbapal");
 
+const u32 gTrainerFrontPic_Trojan[] = INCBIN_U32("graphics/trainers/front_pics/trojan.4bpp.lz");
+const u16 gTrainerPalette_Trojan[] = INCBIN_U16("graphics/trainers/palettes/trojan.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by

@@ -196,8 +196,9 @@
 #define TRAINER_PIC_JOCASTA               177
 #define TRAINER_PIC_AMAZON                178
 #define TRAINER_PIC_HIPPOLYTA             179
+#define TRAINER_PIC_TROJAN                180
 
-#define TRAINER_PIC_COUNT                 180
+#define TRAINER_PIC_COUNT                 181
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
