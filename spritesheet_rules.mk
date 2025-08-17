@@ -5107,6 +5107,9 @@ $(OBJEVENTGFXDIR)/people/amazon.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/hippolyta.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/trojan.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 

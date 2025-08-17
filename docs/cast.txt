@@ -57,9 +57,9 @@ NAME		          SPRITE		OVERWORLD
 #Jocasta                Jocasta                   Sabrina              NOTE: Sabrina OW et Jocasta Trainer
 #Amazonians             PlasmaGruntF              amazon
 #Hipolyta               Sierra                     hippolyta
-Trojans                Dragontamers                     
+!Trojans                Dragontamers               trojan               
+Troilus                Dragontamer-gen6            8257-dragon tamer
 Cressida               Concordia 
-Troilus                Dragontamer
 IrohLotus?             Spenser
 Priam                  Li 
 Cassandra              Karen

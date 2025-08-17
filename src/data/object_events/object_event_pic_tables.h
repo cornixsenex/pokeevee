@@ -1994,6 +1994,10 @@ static const struct SpriteFrameImage sPicTable_Hippolyta[] = {
     overworld_ascending_frames(gObjectEventPic_Hippolyta, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Trojan[] = {
+    overworld_ascending_frames(gObjectEventPic_Trojan, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };
