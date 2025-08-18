@@ -1,5 +1,5 @@
 
-const FIELD_PIC_TEST = 73
+const FIELD_PIC_TEST = 74
 const FIELD_PIC_MEW = 31
 
 mapscripts LoonixSnow_MapScripts {

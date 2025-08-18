@@ -561,6 +561,9 @@ const u16 gTrainerPalette_Trojan[] = INCBIN_U16("graphics/trainers/palettes/troj
 const u32 gTrainerFrontPic_Troilus[] = INCBIN_U32("graphics/trainers/front_pics/troilus.4bpp.lz");
 const u16 gTrainerPalette_Troilus[] = INCBIN_U16("graphics/trainers/palettes/troilus.gbapal");
 
+const u32 gTrainerFrontPic_Cressida[] = INCBIN_U32("graphics/trainers/front_pics/cressida.4bpp.lz");
+const u16 gTrainerPalette_Cressida[] = INCBIN_U16("graphics/trainers/palettes/cressida.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by

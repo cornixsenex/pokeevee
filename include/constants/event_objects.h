@@ -318,9 +318,10 @@
 #define OBJ_EVENT_GFX_HIPPOLYTA   		         310
 #define OBJ_EVENT_GFX_TROJAN   		             311
 #define OBJ_EVENT_GFX_TROILUS   		         312
+#define OBJ_EVENT_GFX_CRESSIDA   		         313
 
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        313
+#define NUM_OBJ_EVENT_GFX                        314
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -567,6 +568,7 @@
 #define OBJ_EVENT_PAL_TAG_HIPPOLYTA               0x1183
 #define OBJ_EVENT_PAL_TAG_TROJAN                  0x1184
 #define OBJ_EVENT_PAL_TAG_TROILUS                 0x1185
+#define OBJ_EVENT_PAL_TAG_CRESSIDA                0x1186
 
 
 // Used as a placeholder follower graphic

@@ -577,6 +577,9 @@ const u16 gObjectEventPal_Trojan[] = INCBIN_U16("graphics/object_events/palettes
 const u32 gObjectEventPic_Troilus[] = INCBIN_U32("graphics/object_events/pics/people/troilus.4bpp");
 const u16 gObjectEventPal_Troilus[] = INCBIN_U16("graphics/object_events/palettes/troilus.gbapal");
 
+const u32 gObjectEventPic_Cressida[] = INCBIN_U32("graphics/object_events/pics/people/cressida.4bpp");
+const u16 gObjectEventPal_Cressida[] = INCBIN_U16("graphics/object_events/palettes/cressida.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
