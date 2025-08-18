@@ -5110,6 +5110,9 @@ $(OBJEVENTGFXDIR)/people/hippolyta.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/trojan.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/troilus.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 
