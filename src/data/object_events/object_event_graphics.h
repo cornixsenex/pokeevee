@@ -580,6 +580,9 @@ const u16 gObjectEventPal_Troilus[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_Cressida[] = INCBIN_U32("graphics/object_events/pics/people/cressida.4bpp");
 const u16 gObjectEventPal_Cressida[] = INCBIN_U16("graphics/object_events/palettes/cressida.gbapal");
 
+const u32 gObjectEventPic_Kimono_Girl[] = INCBIN_U32("graphics/object_events/pics/people/kimono_girl.4bpp");
+const u16 gObjectEventPal_Kimono_Girl[] = INCBIN_U16("graphics/object_events/palettes/kimono_girl.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

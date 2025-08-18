@@ -2006,6 +2006,10 @@ static const struct SpriteFrameImage sPicTable_Cressida[] = {
     overworld_ascending_frames(gObjectEventPic_Cressida, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Kimono_Girl[] = {
+    overworld_ascending_frames(gObjectEventPic_Kimono_Girl, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

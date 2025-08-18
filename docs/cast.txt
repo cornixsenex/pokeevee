@@ -60,8 +60,8 @@ NAME		          SPRITE		OVERWORLD
 #Trojans                Dragontamers               trojan               
 #Troilus                Dragontamer-gen6            8257-dragon tamer - troilus
 #Cressida               Concordia 
-IrohLotus?             Spenser
-Trojan Hores           Kimono Girl                 823127696_Kimono
+#IrohLotus?             Spenser
+#Trojan Hores           Kimono Girl                kimono_girl 
 Priam                  Li 
 Cassandra              Karen
 Hercules               Bruno

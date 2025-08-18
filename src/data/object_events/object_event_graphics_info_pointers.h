@@ -334,6 +334,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hippolyta;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trojan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Troilus;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cressida;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kimono_Girl;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -639,6 +640,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_TROJAN] =                   &gObjectEventGraphicsInfo_Trojan,
 	[OBJ_EVENT_GFX_TROILUS] =                  &gObjectEventGraphicsInfo_Troilus,
 	[OBJ_EVENT_GFX_CRESSIDA] =                 &gObjectEventGraphicsInfo_Cressida,
+	[OBJ_EVENT_GFX_KIMONO_GIRL] =              &gObjectEventGraphicsInfo_Kimono_Girl,
 
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,
