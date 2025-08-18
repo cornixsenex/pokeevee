@@ -62,7 +62,7 @@ NAME		          SPRITE		OVERWORLD
 #Cressida               Concordia 
 #IrohLotus?             Spenser
 #Trojan Hores           Kimono Girl                kimono_girl 
-Priam                  Li 
+Priam                  Li                          priam 
 Cassandra              Karen
 Hercules               Bruno
 Atlas?                 Drayden
