@@ -65,7 +65,7 @@ NAME		          SPRITE		OVERWORLD
 #Priam                  Li                          priam 
 #Cassandra              Karen                        karen
 #Hercules               Bruno                         bruno
-Atlas?                 Drayden
+Atlas?                 Drayden                     drayden
 Cherubim			   Jirachi?
 Serpent??
 PlutoDis               Ghetis

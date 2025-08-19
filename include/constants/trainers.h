@@ -202,8 +202,9 @@
 #define TRAINER_PIC_KIMONO_GIRL           183
 #define TRAINER_PIC_PRIAM                 184
 #define TRAINER_PIC_KAREN                 185
+#define TRAINER_PIC_DRAYDEN               186
 
-#define TRAINER_PIC_COUNT                 186
+#define TRAINER_PIC_COUNT                 187
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

@@ -50,4 +50,6 @@ Horo
 	>Sabrina OW Sprite
 Delta231
 	>dragontamer / trojan OW sprite
+Kasen
+	>Atlas / Drayden OW sprite
 
