@@ -1706,18 +1706,6 @@ static const struct SpriteFrameImage sPicTable_BigYellow[] = {
     overworld_frame(gObjectEventPic_BigYellow, 2, 4, 8),
 };
 
-static const struct SpriteFrameImage sPicTable_Bruno[] = {
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Bruno, 2, 4, 2),
-};
-
 static const struct SpriteFrameImage sPicTable_Cynthia[] = {
     overworld_frame(gObjectEventPic_Cynthia, 2, 4, 0),
     overworld_frame(gObjectEventPic_Cynthia, 2, 4, 1),
@@ -2016,6 +2004,10 @@ static const struct SpriteFrameImage sPicTable_Priam[] = {
 
 static const struct SpriteFrameImage sPicTable_Karen[] = {
     overworld_ascending_frames(gObjectEventPic_Karen, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Bruno[] = {
+    overworld_ascending_frames(gObjectEventPic_Bruno, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {

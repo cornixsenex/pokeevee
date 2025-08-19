@@ -64,7 +64,7 @@ NAME		          SPRITE		OVERWORLD
 #Trojan Hores           Kimono Girl                kimono_girl 
 #Priam                  Li                          priam 
 #Cassandra              Karen                        karen
-Hercules               Bruno
+#Hercules               Bruno                         bruno
 Atlas?                 Drayden
 Cherubim			   Jirachi?
 Serpent??
