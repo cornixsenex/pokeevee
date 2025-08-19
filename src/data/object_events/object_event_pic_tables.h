@@ -2014,6 +2014,10 @@ static const struct SpriteFrameImage sPicTable_Priam[] = {
     overworld_ascending_frames(gObjectEventPic_Priam, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Karen[] = {
+    overworld_ascending_frames(gObjectEventPic_Karen, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

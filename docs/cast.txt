@@ -62,14 +62,14 @@ NAME		          SPRITE		OVERWORLD
 #Cressida               Concordia 
 #IrohLotus?             Spenser
 #Trojan Hores           Kimono Girl                kimono_girl 
-Priam                  Li                          priam 
-Cassandra              Karen
+#Priam                  Li                          priam 
+#Cassandra              Karen                        karen
 Hercules               Bruno
 Atlas?                 Drayden
 Cherubim			   Jirachi?
 Serpent??
 PlutoDis               Ghetis
-Persephone             Olympia
+Persephone             Olympia                     8826 shauntal?
 #Gio                    DONE
 Red? Ash?
 

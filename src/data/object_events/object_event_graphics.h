@@ -586,6 +586,9 @@ const u16 gObjectEventPal_Kimono_Girl[] = INCBIN_U16("graphics/object_events/pal
 const u32 gObjectEventPic_Priam[] = INCBIN_U32("graphics/object_events/pics/people/priam.4bpp");
 const u16 gObjectEventPal_Priam[] = INCBIN_U16("graphics/object_events/palettes/priam.gbapal");
 
+const u32 gObjectEventPic_Karen[] = INCBIN_U32("graphics/object_events/pics/people/karen.4bpp");
+const u16 gObjectEventPal_Karen[] = INCBIN_U16("graphics/object_events/palettes/karen.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

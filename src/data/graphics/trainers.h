@@ -567,6 +567,12 @@ const u16 gTrainerPalette_Cressida[] = INCBIN_U16("graphics/trainers/palettes/cr
 const u32 gTrainerFrontPic_Kimono_Girl[] = INCBIN_U32("graphics/trainers/front_pics/kimono_girl.4bpp.lz");
 const u16 gTrainerPalette_Kimono_Girl[] = INCBIN_U16("graphics/trainers/palettes/kimono_girl.gbapal");
 
+const u32 gTrainerFrontPic_Priam[] = INCBIN_U32("graphics/trainers/front_pics/priam.4bpp.lz");
+const u16 gTrainerPalette_Priam[] = INCBIN_U16("graphics/trainers/palettes/priam.gbapal");
+
+const u32 gTrainerFrontPic_Karen[] = INCBIN_U32("graphics/trainers/front_pics/karen.4bpp.lz");
+const u16 gTrainerPalette_Karen[] = INCBIN_U16("graphics/trainers/palettes/karen.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by

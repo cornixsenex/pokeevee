@@ -259,6 +259,12 @@ static const u16 sPic76Pal[] = INCBIN_U16("graphics/trainers/front_pics/palace_m
 //Kimono Girl = 76
 static const u32 sPic77Gfx[] = INCBIN_U32("graphics/trainers/front_pics/kimono_girl.4bpp.lz");
 static const u16 sPic77Pal[] = INCBIN_U16("graphics/trainers/front_pics/kimono_girl.gbapal");
+//Priam = 77
+static const u32 sPic78Gfx[] = INCBIN_U32("graphics/trainers/front_pics/priam.4bpp.lz");
+static const u16 sPic78Pal[] = INCBIN_U16("graphics/trainers/front_pics/priam.gbapal");
+//Karen = 78
+static const u32 sPic79Gfx[] = INCBIN_U32("graphics/trainers/front_pics/karen.4bpp.lz");
+static const u16 sPic79Pal[] = INCBIN_U16("graphics/trainers/front_pics/karen.gbapal");
 
 /* And this is an example script.
 
@@ -437,6 +443,10 @@ static const struct Pic sPics[] =
     {sPic76Gfx, sPic76Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Kimono Girl
     {sPic77Gfx, sPic77Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Priam
+    {sPic78Gfx, sPic78Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Karen
+    {sPic79Gfx, sPic79Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;
