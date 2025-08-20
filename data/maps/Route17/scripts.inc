@@ -204,13 +204,21 @@ Route17_Script_OrestesBridgeScene::
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 125 "data/maps/Route17/scripts.pory"
 	waitmovement 0
+# 127 "data/maps/Route17/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
+# 128 "data/maps/Route17/scripts.pory"
+	msgbox Route17_Text_OrestesBridge
+# 129 "data/maps/Route17/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
 # 130 "data/maps/Route17/scripts.pory"
+	closemessage
+# 134 "data/maps/Route17/scripts.pory"
 	setvar VAR_ORESTES_STATE, 1
 	return
 
 
 Route17_Text_Block1::
-# 134 "data/maps/Route17/scripts.pory"
+# 138 "data/maps/Route17/scripts.pory"
 	.string "This is the Via Fluvia which leads to\n"
 	.string "Lacus Drako and the town Salix but it is\l"
 	.string "impossible to use now. The storm has\l"
@@ -218,9 +226,9 @@ Route17_Text_Block1::
 	.string "be some time before they're fixed.$"
 
 Route17_Text_Block2::
-# 142 "data/maps/Route17/scripts.pory"
+# 146 "data/maps/Route17/scripts.pory"
 	.string "We managed to repair the lower bridge\n"
-	.string "but the second one by the dragon's lake\l"
+	.string "but the second one, up by Dragon Lake,\l"
 	.string "is still broken. Be careful of the road\l"
 	.string "many wild, powerful pokemon attacked\l"
 	.string "us while our men were hard at work.\l"
@@ -232,3 +240,7 @@ Route17_Text_Block2::
 	.string "You know how the bureaucrats in the\l"
 	.string "capital forget about us common folk up\l"
 	.string "in the hills.$"
+
+Route17_Text_OrestesBridge::
+# 161 "data/maps/Route17/scripts.pory"
+	.string "WIP ORESTES MONOLOGUE$"

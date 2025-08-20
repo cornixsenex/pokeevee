@@ -124,6 +124,10 @@ script Route17_Script_OrestesBridgeScene {
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	//Orestes monologue
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (Route17_Text_OrestesBridge)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
 	//exit Orestes
 	//remove Orestes
 	//update var
@@ -141,7 +145,7 @@ text Route17_Text_Block1 {
 
 text Route17_Text_Block2 {
 	format("We managed to repair the lower bridge
-			but the second one by the dragon's lake
+			but the second one, up by Dragon Lake,
 			is still broken. Be careful of the road
 			many wild, powerful pokemon
 			attacked us while our men were hard at work.
@@ -152,4 +156,8 @@ text Route17_Text_Block2 {
 			could be some time from now. You know how the
 			bureaucrats in the capital forget
 			about us common folk up in the hills.")
+}
+
+text Route17_Text_OrestesBridge {
+	format("WIP ORESTES MONOLOGUE")
 }
