@@ -204,8 +204,9 @@
 #define TRAINER_PIC_KAREN                 185
 #define TRAINER_PIC_DRAYDEN               186
 #define TRAINER_PIC_GHETSIS               187
+#define TRAINER_PIC_OLYMPIA               188
 
-#define TRAINER_PIC_COUNT                 188
+#define TRAINER_PIC_COUNT                 189
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

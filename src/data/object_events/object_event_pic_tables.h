@@ -2018,6 +2018,10 @@ static const struct SpriteFrameImage sPicTable_Ghetsis[] = {
     overworld_ascending_frames(gObjectEventPic_Ghetsis, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Olympia[] = {
+    overworld_ascending_frames(gObjectEventPic_Olympia, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

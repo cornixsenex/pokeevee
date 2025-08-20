@@ -67,7 +67,7 @@ NAME		          SPRITE		OVERWORLD
 #Hercules               Bruno                         bruno
 #Atlas?                 Drayden                     drayden
 #PlutoDis               Ghetis                      ghetsis
-Persephone             Olympia                     8826 shauntal?
+#Persephone             Olympia                     olympia
 
 Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce / Watson, Juan, 
 Cool / Normal guys: , Veteran, Volkner, acetrainer, Brandon, Brawly, Ethan, Flint, Guzma, Hilbert, Lucas?, Morty, Oak, PlayerGo, Riley, Paxton, phil

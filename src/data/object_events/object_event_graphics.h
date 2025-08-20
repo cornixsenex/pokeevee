@@ -595,6 +595,9 @@ const u16 gObjectEventPal_Drayden[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_Ghetsis[] = INCBIN_U32("graphics/object_events/pics/people/ghetsis.4bpp");
 const u16 gObjectEventPal_Ghetsis[] = INCBIN_U16("graphics/object_events/palettes/ghetsis.gbapal");
 
+const u32 gObjectEventPic_Olympia[] = INCBIN_U32("graphics/object_events/pics/people/olympia.4bpp");
+const u16 gObjectEventPal_Olympia[] = INCBIN_U16("graphics/object_events/palettes/olympia.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

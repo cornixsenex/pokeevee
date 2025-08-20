@@ -579,6 +579,9 @@ const u16 gTrainerPalette_Drayden[] = INCBIN_U16("graphics/trainers/palettes/dra
 const u32 gTrainerFrontPic_Ghetsis[] = INCBIN_U32("graphics/trainers/front_pics/ghetsis.4bpp.lz");
 const u16 gTrainerPalette_Ghetsis[] = INCBIN_U16("graphics/trainers/palettes/ghetsis.gbapal");
 
+const u32 gTrainerFrontPic_Olympia[] = INCBIN_U32("graphics/trainers/front_pics/olympia.4bpp.lz");
+const u16 gTrainerPalette_Olympia[] = INCBIN_U16("graphics/trainers/palettes/olympia.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by
