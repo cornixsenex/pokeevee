@@ -65,13 +65,9 @@ NAME		          SPRITE		OVERWORLD
 #Priam                  Li                          priam 
 #Cassandra              Karen                        karen
 #Hercules               Bruno                         bruno
-Atlas?                 Drayden                     drayden
-Cherubim			   Jirachi?
-Serpent??
-PlutoDis               Ghetis
+#Atlas?                 Drayden                     drayden
+#PlutoDis               Ghetis                      ghetsis
 Persephone             Olympia                     8826 shauntal?
-#Gio                    DONE
-Red? Ash?
 
 Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce / Watson, Juan, 
 Cool / Normal guys: , Veteran, Volkner, acetrainer, Brandon, Brawly, Ethan, Flint, Guzma, Hilbert, Lucas?, Morty, Oak, PlayerGo, Riley, Paxton, phil
