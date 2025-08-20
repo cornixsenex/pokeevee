@@ -27,7 +27,11 @@ Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 39 "data/maps/Route17/scripts.pory"
 	compare VAR_SURFSCHOOL_STATE, 4
-	goto_if_gt Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
+	goto_if_gt Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_12
+Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
+# 43 "data/maps/Route17/scripts.pory"
+	compare VAR_ORESTES_STATE, 0
+	goto_if_eq Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_14
 	return
 
 Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
@@ -70,110 +74,123 @@ Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
 	setvar VAR_TEMP_5, 8
 	goto Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
-Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
+Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_12:
 # 40 "data/maps/Route17/scripts.pory"
 	call Route17_Script_RemoveBridgeBlock
+	goto Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
+
+Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_14:
+# 44 "data/maps/Route17/scripts.pory"
+	call Route17_Script_ShowOrestesBridge
+	return
+
+
+Route17_Script_ShowOrestesBridge::
+# 51 "data/maps/Route17/scripts.pory"
+	setobjectxyperm LOCALID_ROUTE17_ORESTES, 25, 139
+# 52 "data/maps/Route17/scripts.pory"
+	setobjectmovementtype LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 
 Route17_Script_RemoveBridgeBlock::
-# 46 "data/maps/Route17/scripts.pory"
+# 57 "data/maps/Route17/scripts.pory"
 	setobjectxyperm LOCALID_ROUTE17_BRIDGEBLOCK1, 20, 156
-# 47 "data/maps/Route17/scripts.pory"
+# 58 "data/maps/Route17/scripts.pory"
 	setobjectxyperm LOCALID_ROUTE17_BRIDGEBLOCK2, 21, 156
 	return
 
 
 Route17_Script_Transition_LagoDraco::
-# 52 "data/maps/Route17/scripts.pory"
+# 63 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 53 "data/maps/Route17/scripts.pory"
+# 64 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 54 "data/maps/Route17/scripts.pory"
+# 65 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_Transition_LagoDracoShore::
-# 58 "data/maps/Route17/scripts.pory"
+# 69 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 59 "data/maps/Route17/scripts.pory"
+# 70 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 60 "data/maps/Route17/scripts.pory"
+# 71 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_Transition_UpperRioDraco::
-# 64 "data/maps/Route17/scripts.pory"
+# 75 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 65 "data/maps/Route17/scripts.pory"
+# 76 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 66 "data/maps/Route17/scripts.pory"
+# 77 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_Transition_LowerRioDraco::
-# 70 "data/maps/Route17/scripts.pory"
+# 81 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 71 "data/maps/Route17/scripts.pory"
+# 82 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 72 "data/maps/Route17/scripts.pory"
+# 83 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_Transition_UpperDracoEast::
-# 76 "data/maps/Route17/scripts.pory"
+# 87 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 77 "data/maps/Route17/scripts.pory"
+# 88 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 78 "data/maps/Route17/scripts.pory"
+# 89 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_Transition_LowerDracoEast::
-# 82 "data/maps/Route17/scripts.pory"
+# 93 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 6
-# 83 "data/maps/Route17/scripts.pory"
+# 94 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 84 "data/maps/Route17/scripts.pory"
+# 95 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_Transition_UpperDracoWest::
-# 88 "data/maps/Route17/scripts.pory"
+# 99 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 7
-# 89 "data/maps/Route17/scripts.pory"
+# 100 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 90 "data/maps/Route17/scripts.pory"
+# 101 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_Transition_LowerDracoWest::
-# 94 "data/maps/Route17/scripts.pory"
+# 105 "data/maps/Route17/scripts.pory"
 	setvar VAR_TEMP_5, 8
-# 95 "data/maps/Route17/scripts.pory"
+# 106 "data/maps/Route17/scripts.pory"
 	special TransitionMapMusic
-# 96 "data/maps/Route17/scripts.pory"
+# 107 "data/maps/Route17/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 Route17_Script_BridgeBlock::
-# 100 "data/maps/Route17/scripts.pory"
+# 111 "data/maps/Route17/scripts.pory"
 	compare VAR_SURFSCHOOL_STATE, 4
 	goto_if_gt Route17_Script_BridgeBlock_1
-# 103 "data/maps/Route17/scripts.pory"
+# 114 "data/maps/Route17/scripts.pory"
 	msgbox Route17_Text_Block1, MSGBOX_NPC
 	return
 
 Route17_Script_BridgeBlock_1:
-# 101 "data/maps/Route17/scripts.pory"
+# 112 "data/maps/Route17/scripts.pory"
 	msgbox Route17_Text_Block2, MSGBOX_NPC
 	return
 
@@ -182,8 +199,18 @@ Route17_Script_Orestes::
 	return
 
 
+Route17_Script_OrestesBridgeScene::
+# 124 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 125 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 130 "data/maps/Route17/scripts.pory"
+	setvar VAR_ORESTES_STATE, 1
+	return
+
+
 Route17_Text_Block1::
-# 111 "data/maps/Route17/scripts.pory"
+# 134 "data/maps/Route17/scripts.pory"
 	.string "This is the Via Fluvia which leads to\n"
 	.string "Lacus Drako and the town Salix but it is\l"
 	.string "impossible to use now. The storm has\l"
@@ -191,7 +218,7 @@ Route17_Text_Block1::
 	.string "be some time before they're fixed.$"
 
 Route17_Text_Block2::
-# 119 "data/maps/Route17/scripts.pory"
+# 142 "data/maps/Route17/scripts.pory"
 	.string "We managed to repair the lower bridge\n"
 	.string "but the second one by the dragon's lake\l"
 	.string "is still broken. Be careful of the road\l"

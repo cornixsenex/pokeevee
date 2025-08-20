@@ -17,11 +17,6 @@
       "map": "MAP_LOONIX_BEACH",
       "offset": 0,
       "direction": "right"
-    },
-    {
-      "map": "MAP_LOONIX_SNOW",
-      "offset": 3,
-      "direction": "up"
     }
   ],
   "object_events": [

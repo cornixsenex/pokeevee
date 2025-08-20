@@ -93,10 +93,10 @@
     },
     {
       "local_id": "LOCALID_ROUTE17_ORESTES",
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 8,
       "y": 123,
-      "elevation": 0,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -401,6 +401,24 @@
       "var": "VAR_TEMP_5",
       "var_value": "5",
       "script": "Route17_Script_Transition_LowerDracoEast"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 138,
+      "elevation": 4,
+      "var": "VAR_ORESTES_STATE",
+      "var_value": "0",
+      "script": "Route17_Script_OrestesBridgeScene"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 139,
+      "elevation": 4,
+      "var": "VAR_ORESTES_STATE",
+      "var_value": "0",
+      "script": "Route17_Script_OrestesBridgeScene"
     }
   ],
   "bg_events": []
