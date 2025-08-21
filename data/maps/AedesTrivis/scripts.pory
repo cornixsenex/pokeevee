@@ -15,18 +15,67 @@ mapscripts AedesTrivis_MapScripts {
 
 script AedesTrivis_Script_HideTriforceFloor {
 	//Row 1
-	setmetatile (11, 5, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (11,  5, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 2
-	setmetatile (10, 6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
-	setmetatile (11, 6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
-	setmetatile (12, 6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (10,  6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (11,  6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (12,  6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
 	//Row 3
+	setmetatile ( 9,  7, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (10,  7, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (11,  7, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (12,  7, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (13,  7, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 4
+	setmetatile ( 8,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 9,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (10,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (11,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (12,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (13,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (14,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 5
+	setmetatile ( 7,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 8,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 9,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (10,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (11,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (12,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (13,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (14,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (15,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 6
+	setmetatile ( 6, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 7, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 8, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 9, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (10, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (11, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (12, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (13, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (14, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (15, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (16, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 7
+	setmetatile ( 5, 11, METATILE_PetalburgGym_TempleFloor, FALSE)
+
+	setmetatile (17, 11, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 8
+	setmetatile ( 4, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 5, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 6, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+
+	setmetatile (16, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (17, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (18, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 9
+	setmetatile ( 4, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 5, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 6, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+
+	setmetatile (16, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (17, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (18, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 10
 	//Row 11
 	//Row 12
