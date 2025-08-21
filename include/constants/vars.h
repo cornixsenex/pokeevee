@@ -114,7 +114,9 @@
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_ORESTES_STATE                                0x4055 // Trackes Orestreia and sets up Agamemnon Invitationa
 																// 0: Start - Orestes on Bridge - Trigger Bridge Scene
-																// 1: After Orestes on Bridge - Trigger (next scene)
+																// 1: After Orestes on Bridge - Trigger Orestes Walk Scene
+																// 2: After OrestesWalkScene - Trigger OrestesAedes1
+																// 3: After Trivis Scene 1 - Setup Temples
 #define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058

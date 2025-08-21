@@ -39,11 +39,11 @@ mapscripts Route17_MapScripts {
 		if (var(VAR_SURFSCHOOL_STATE) > 4) {
 			call (Route17_Script_RemoveBridgeBlock)
 		}
-		//Setup Orestes Locationa
+		//Setup Orestes Locations
+		//Orestes Bridge
 		if (var(VAR_ORESTES_STATE) == 0) {
 			call (Route17_Script_ShowOrestesBridge)
 		}
-
 	}
 }
 
@@ -115,11 +115,9 @@ script Route17_Script_BridgeBlock {
 	}
 }
 
-script Route17_Script_Orestes{
-
-}
-
 script Route17_Script_OrestesBridgeScene {
+	//setup
+	setflag  (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//alert player
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
@@ -129,10 +127,48 @@ script Route17_Script_OrestesBridgeScene {
 	destroy_field_pic (FIELD_PIC_ORESTES)
 	closemessage
 	//exit Orestes
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight4)
+	waitmovement (0)
 	//remove Orestes
+	removeobject (LOCALID_ROUTE17_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 0, 0 )
+	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_ROUTE17_ORESTES)
 	//update var
 	setvar (VAR_ORESTES_STATE, 1)
 	//fin
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	end
+}
+
+script Route17_Script_OrestesWalkScene {
+	//setup
+	setflag  (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//setup orestes position
+	removeobject (LOCALID_ROUTE17_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 2, 73)
+	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_UP)
+	addobject (LOCALID_ROUTE17_ORESTES)
+	//do orestes walk
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp7)
+	waitmovement (0)
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkLeft2)
+	waitmovement (0)
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp5)
+	waitmovement (0)
+	//remove orestes
+	removeobject (LOCALID_ROUTE17_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 0, 0 )
+	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_ROUTE17_ORESTES)
+	//update var
+	setvar (VAR_ORESTES_STATE, 2)
+	//fin	
+	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	end
 }
 
 text Route17_Text_Block1 {
@@ -158,6 +194,31 @@ text Route17_Text_Block2 {
 			about us common folk up in the hills.")
 }
 
+//motif - river
+//RQ - Is it not better to die? Why would anyone live like this
+//Allusion - Tantalus et Sysyphus et Hamlet
+//paralel structure
+//alliteration
+//repetition
+//figurative analogy
+
+//Oh River Draco, all my life I've come to you in times of love, of growing, learning, and now once more I come to you in pain to throw myself into your waters and end this life that began on your banks
+//This little life that grew up on your shores has become unbearable and too painful to continue for a single day
+//How could I continue to live with the shame of allowing that mighty hyperion among satyrs  my own father the proud Agamemnon of the Trade Guild to be poisoned in his own house, but how can I resolve the issue when the the witch who did this is my own mother
+//That witch! Look how already I despise the woman who birthed and raised me. 
+//Such is a great sin  I cannot live this way. I must die. What other choice do I have I must either war my mother, dishonor my father, or else leap into your waters mighty drake and drown myself in your waters and sink down to the river styx below
+//the styx river of sleep, of death, end of earthly troubles and release from pain...
+//the realm of tantalus! Of Sysiphus! aye theres the rub for if sins be real then so must be the punishment
+//if death were such a simple solution then why would any man persist on earth in misery unless the punishment on the other side for taking the easy way out were even worse
+//To kill myself now would be to go into the unknown with the worst sins of all. My father dishonored, my mother heartbroken, and myself with the cowards way out
+//Perhaps there is not Tantalus, no Sysyphus, no tartarus and no divine punishment that this life is a mere blink of existence among an eternal thoughtless night. If that is so then my own despair is a mere fleeting moment and will be over forever relatively soon even if I should live 100 years
+//But if there is a tartarus and sin and punishment then I must compose myself here and now in the best way possible
+//To war my mother is unforgivable, to dishonor my father a terrible sin, and to leap to the lazy end of life the worst of all it seems
+//What to do? Assuming God exists then his representatives on Earth would be the best place to determine the best course of action
+//!
+//Then that's just what I'll do! I'll go upstream to the ancient trivis temple and ask the oracle for advice.
+//If there is no God then it doesn't matter what I do but if He does exist then I must do as I"m instructed 
+//Therefore whether I believe or not does not matter the only thing to do is go to the temple and seek guidance for my present situation
 text Route17_Text_OrestesBridge {
 	format("WIP ORESTES MONOLOGUE")
 }

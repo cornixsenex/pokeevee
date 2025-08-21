@@ -6530,6 +6530,16 @@
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/Gymnasium/border.bin",
       "blockdata_filepath": "data/layouts/Gymnasium/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_TRIVIS",
+      "name": "AedesTrivis_Layout",
+      "width": 23,
+      "height": 18,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/AedesTrivis/border.bin",
+      "blockdata_filepath": "data/layouts/AedesTrivis/map.bin"
     }
   ]
 }

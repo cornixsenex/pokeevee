@@ -1,0 +1,35 @@
+mapscripts AedesTrivis_MapScripts {
+
+
+
+	MAP_SCRIPT_ON_LOAD {
+
+		//Hide Triforce on floor
+		if (var(VAR_ORESTES_STATE) < 69) {
+			call (AedesTrivis_Script_HideTriforceFloor)
+		}
+
+	}
+
+}
+
+script AedesTrivis_Script_HideTriforceFloor {
+	//Row 1
+	setmetatile (11, 5, METATILE_PetalburgGym_TempleFloor, FALSE)
+	//Row 2
+	setmetatile (10, 6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (11, 6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (12, 6, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	//Row 3
+	//Row 4
+	//Row 5
+	//Row 6
+	//Row 7
+	//Row 8
+	//Row 9
+	//Row 10
+	//Row 11
+	//Row 12
+
+	return
+}

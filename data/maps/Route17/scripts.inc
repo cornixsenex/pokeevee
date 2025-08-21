@@ -29,7 +29,7 @@ Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	compare VAR_SURFSCHOOL_STATE, 4
 	goto_if_gt Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_12
 Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
-# 43 "data/maps/Route17/scripts.pory"
+# 44 "data/maps/Route17/scripts.pory"
 	compare VAR_ORESTES_STATE, 0
 	goto_if_eq Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_14
 	return
@@ -80,7 +80,7 @@ Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_12:
 	goto Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
 
 Route17_MapScripts_MAP_SCRIPT_ON_TRANSITION_14:
-# 44 "data/maps/Route17/scripts.pory"
+# 45 "data/maps/Route17/scripts.pory"
 	call Route17_Script_ShowOrestesBridge
 	return
 
@@ -195,30 +195,84 @@ Route17_Script_BridgeBlock_1:
 	return
 
 
-Route17_Script_Orestes::
-	return
-
-
 Route17_Script_OrestesBridgeScene::
-# 124 "data/maps/Route17/scripts.pory"
+# 120 "data/maps/Route17/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 122 "data/maps/Route17/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 125 "data/maps/Route17/scripts.pory"
+# 123 "data/maps/Route17/scripts.pory"
 	waitmovement 0
-# 127 "data/maps/Route17/scripts.pory"
+# 125 "data/maps/Route17/scripts.pory"
 	load_field_pic FIELD_PIC_ORESTES, 190, 98
-# 128 "data/maps/Route17/scripts.pory"
+# 126 "data/maps/Route17/scripts.pory"
 	msgbox Route17_Text_OrestesBridge
-# 129 "data/maps/Route17/scripts.pory"
+# 127 "data/maps/Route17/scripts.pory"
 	destroy_field_pic FIELD_PIC_ORESTES
-# 130 "data/maps/Route17/scripts.pory"
+# 128 "data/maps/Route17/scripts.pory"
 	closemessage
+# 130 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight4
+# 131 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 133 "data/maps/Route17/scripts.pory"
+	removeobject LOCALID_ROUTE17_ORESTES
 # 134 "data/maps/Route17/scripts.pory"
+	setobjectxyperm LOCALID_ROUTE17_ORESTES, 0, 0
+# 135 "data/maps/Route17/scripts.pory"
+	setobjectmovementtype LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE
+# 136 "data/maps/Route17/scripts.pory"
+	addobject LOCALID_ROUTE17_ORESTES
+# 138 "data/maps/Route17/scripts.pory"
 	setvar VAR_ORESTES_STATE, 1
-	return
+# 140 "data/maps/Route17/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	end
+
+
+Route17_Script_OrestesWalkScene::
+# 146 "data/maps/Route17/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 148 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 149 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 151 "data/maps/Route17/scripts.pory"
+	removeobject LOCALID_ROUTE17_ORESTES
+# 152 "data/maps/Route17/scripts.pory"
+	setobjectxyperm LOCALID_ROUTE17_ORESTES, 2, 73
+# 153 "data/maps/Route17/scripts.pory"
+	setobjectmovementtype LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_UP
+# 154 "data/maps/Route17/scripts.pory"
+	addobject LOCALID_ROUTE17_ORESTES
+# 156 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp7
+# 157 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 158 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkLeft2
+# 159 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 160 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp5
+# 161 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 163 "data/maps/Route17/scripts.pory"
+	removeobject LOCALID_ROUTE17_ORESTES
+# 164 "data/maps/Route17/scripts.pory"
+	setobjectxyperm LOCALID_ROUTE17_ORESTES, 0, 0
+# 165 "data/maps/Route17/scripts.pory"
+	setobjectmovementtype LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE
+# 166 "data/maps/Route17/scripts.pory"
+	addobject LOCALID_ROUTE17_ORESTES
+# 168 "data/maps/Route17/scripts.pory"
+	setvar VAR_ORESTES_STATE, 2
+# 170 "data/maps/Route17/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	end
 
 
 Route17_Text_Block1::
-# 138 "data/maps/Route17/scripts.pory"
+# 174 "data/maps/Route17/scripts.pory"
 	.string "This is the Via Fluvia which leads to\n"
 	.string "Lacus Drako and the town Salix but it is\l"
 	.string "impossible to use now. The storm has\l"
@@ -226,7 +280,7 @@ Route17_Text_Block1::
 	.string "be some time before they're fixed.$"
 
 Route17_Text_Block2::
-# 146 "data/maps/Route17/scripts.pory"
+# 182 "data/maps/Route17/scripts.pory"
 	.string "We managed to repair the lower bridge\n"
 	.string "but the second one, up by Dragon Lake,\l"
 	.string "is still broken. Be careful of the road\l"
@@ -242,5 +296,5 @@ Route17_Text_Block2::
 	.string "in the hills.$"
 
 Route17_Text_OrestesBridge::
-# 161 "data/maps/Route17/scripts.pory"
+# 222 "data/maps/Route17/scripts.pory"
 	.string "WIP ORESTES MONOLOGUE$"

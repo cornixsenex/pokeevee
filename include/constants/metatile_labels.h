@@ -457,6 +457,8 @@
 #define METATILE_PetalburgGym_SlidingDoor_Frame2  0x21A
 #define METATILE_PetalburgGym_SlidingDoor_Frame3  0x21B
 #define METATILE_PetalburgGym_SlidingDoor_Frame4  0x21C
+#define METATILE_PetalburgGym_TempleFloor         0x288
+#define METATILE_PetalburgGym_TempleFloor_Shadow  0x290
 
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D
