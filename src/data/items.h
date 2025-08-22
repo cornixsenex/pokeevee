@@ -240,6 +240,11 @@ static const u8 sTrainerCardDesc[] = _(
 		"An official \n"
 		"Pokemon Trainer \n"
 		"Card");
+
+static const u8 sTrivisShardDesc[] = _(
+        "A pale gold\n"
+        "fragment with sharp\n"
+        "and irregular edges.");
 		
 
 //END KUSTOMS
@@ -14681,6 +14686,110 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_Trivis,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD1] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard1,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD2] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard2,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD3] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard3,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD4] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard4,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD5] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard5,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD6] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard6,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD7] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard7,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_SHARD8] =
+    {
+        .name = _("Trivis Shard"),
+        .price = 0,
+		.description = sTrivisShardDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TrivisShard8,
         .iconPalette = gItemIconPalette_Trivis,
     },
 

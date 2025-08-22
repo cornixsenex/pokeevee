@@ -2117,3 +2117,13 @@ const u16 gItemIconPalette_Scythe[] = INCBIN_U16("graphics/items/icon_palettes/s
 
 const u32 gItemIcon_Trivis[] = INCBIN_U32("graphics/items/icons/trivis.4bpp.lz");
 const u16 gItemIconPalette_Trivis[] = INCBIN_U16("graphics/items/icon_palettes/trivis.gbapal");
+
+//8 Trivis Shards - share the same palette
+const u32 gItemIcon_TrivisShard1[] = INCBIN_U32("graphics/items/icons/trivis_shard1.4bpp.lz");
+const u32 gItemIcon_TrivisShard2[] = INCBIN_U32("graphics/items/icons/trivis_shard2.4bpp.lz");
+const u32 gItemIcon_TrivisShard3[] = INCBIN_U32("graphics/items/icons/trivis_shard3.4bpp.lz");
+const u32 gItemIcon_TrivisShard4[] = INCBIN_U32("graphics/items/icons/trivis_shard4.4bpp.lz");
+const u32 gItemIcon_TrivisShard5[] = INCBIN_U32("graphics/items/icons/trivis_shard5.4bpp.lz");
+const u32 gItemIcon_TrivisShard6[] = INCBIN_U32("graphics/items/icons/trivis_shard6.4bpp.lz");
+const u32 gItemIcon_TrivisShard7[] = INCBIN_U32("graphics/items/icons/trivis_shard7.4bpp.lz");
+const u32 gItemIcon_TrivisShard8[] = INCBIN_U32("graphics/items/icons/trivis_shard8.4bpp.lz");

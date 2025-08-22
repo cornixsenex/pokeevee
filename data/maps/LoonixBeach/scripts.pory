@@ -21,19 +21,29 @@ script LoonixBeach_EventScript_Item_Surfboard {
 
 script LoonixBeach_Script_Sign1 {
 	giveitem (ITEM_BOOK, 1)
-	closemessage
+    closemessage
 	end
 }
 
 script LoonixBeach_Script_Sign2 {
 	giveitem (ITEM_BIG_HAMMER, 1)
-	closemessage
+    closemessage
 	end
 }
 
 script LoonixBeach_Script_Sign3 {
-	giveitem (ITEM_SCYTHE, 1)
-	closemessage
+	giveitem (ITEM_TRIVIS_POTESTATIS, 1)
+	giveitem (ITEM_TRIVIS_SAPIENTIAE, 1)
+	giveitem (ITEM_TRIVIS_FORTITUDINIS, 1)
+	giveitem (ITEM_TRIVIS_SHARD1, 1)
+	giveitem (ITEM_TRIVIS_SHARD2, 1)
+	giveitem (ITEM_TRIVIS_SHARD3, 1)
+	giveitem (ITEM_TRIVIS_SHARD4, 1)
+	giveitem (ITEM_TRIVIS_SHARD5, 1)
+	giveitem (ITEM_TRIVIS_SHARD6, 1)
+	giveitem (ITEM_TRIVIS_SHARD7, 1)
+	giveitem (ITEM_TRIVIS_SHARD8, 1)
+    closemessage
 	end
 }
 

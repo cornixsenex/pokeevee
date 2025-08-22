@@ -1717,6 +1717,14 @@ extern const u32 gItemIcon_Scythe[];
 extern const u16 gItemIconPalette_Scythe[];
 
 extern const u32 gItemIcon_Trivis[];
+extern const u32 gItemIcon_TrivisShard1[];
+extern const u32 gItemIcon_TrivisShard2[];
+extern const u32 gItemIcon_TrivisShard3[];
+extern const u32 gItemIcon_TrivisShard4[];
+extern const u32 gItemIcon_TrivisShard5[];
+extern const u32 gItemIcon_TrivisShard6[];
+extern const u32 gItemIcon_TrivisShard7[];
+extern const u32 gItemIcon_TrivisShard8[];
 extern const u16 gItemIconPalette_Trivis[];
 //End Kustom Items
 

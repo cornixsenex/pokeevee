@@ -48,16 +48,36 @@ LoonixBeach_Script_Sign2::
 
 LoonixBeach_Script_Sign3::
 # 35 "data/maps/LoonixBeach/scripts.pory"
-	giveitem ITEM_SCYTHE, 1
+	giveitem ITEM_TRIVIS_POTESTATIS, 1
 # 36 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SAPIENTIAE, 1
+# 37 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_FORTITUDINIS, 1
+# 38 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD1, 1
+# 39 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD2, 1
+# 40 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD3, 1
+# 41 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD4, 1
+# 42 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD5, 1
+# 43 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD6, 1
+# 44 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD7, 1
+# 45 "data/maps/LoonixBeach/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD8, 1
+# 46 "data/maps/LoonixBeach/scripts.pory"
 	closemessage
 	end
 
 
 LoonixBeach_Text_BlueFight::
-# 40 "data/maps/LoonixBeach/scripts.pory"
+# 50 "data/maps/LoonixBeach/scripts.pory"
 	.string "My first Pokeball is a BEAST BALL$"
 
 LoonixBeach_Text_BlueLost::
-# 44 "data/maps/LoonixBeach/scripts.pory"
+# 54 "data/maps/LoonixBeach/scripts.pory"
 	.string "I wonder why my face looks like that.$"
