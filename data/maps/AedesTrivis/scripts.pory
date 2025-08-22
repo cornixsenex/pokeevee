@@ -195,7 +195,17 @@ script AedesTrivis_Script_Sage {
 			msgbox (AedesTrivis_Text_SageDuringQuest)
 		}
 		//check if you have all trivis pieces
-		//if so do complete quest et reveal slowking
+        checkitem (ITEM_TRIVIS_POTESTATIS, 1)
+        if (var(VAR_RESULT) == TRUE) {
+            checkitem (ITEM_TRIVIS_SAPIENTIAE)
+            if (var(VAR_RESULT) == TRUE) {
+                checkitem (ITEM_TRIVIS_FORTITUDINIS)
+                if (var(VAR_RESULT) == TRUE) {
+                    //if so do complete quest et reveal slowking
+                    call (AedesTrivis_Script_TrivisScene)
+                }
+            }
+        }
 		//else fin
 		closemessage
 		destroy_field_pic (FIELD_PIC_SAGE)
@@ -261,6 +271,36 @@ script AedesTrivis_Script_OrestesSageScene {
 	//fin
 	releaseall
 	end
+}
+
+script AedesTrivis_Script_TrivisScene {
+    //alert sage
+    //S: You've returned with the trivis! Please let me see
+    //Give items to Sage
+    //set var for trivis floor
+    //white out
+    //load back in with trivis floor visible
+    //S: It's finnaly happened our temple has been restored
+    //SK offscreen - Thank you {PLAYER}
+    //alert all
+    //S: The speaker has returned!
+    //S, Player, et Orestes to SK (prolly put Orestes center)
+    //SK: Correct now that PLAYER has brought back the Trivis I have returned
+    //O: The speaker is a slowking?
+    //SK: Do not be so quick to judge young one. I sense you're in great distress what is the matter
+    //O tells tale, asks advice
+    //SK: I see your mother has done a terrible thing and must be punished but you cannot be the one to do it. Ask another to do this for you, restore your father to health, and all will be well
+    //Turn Orestes et player to eachother
+    //O: I'm already greatly indebted to you but if you can do one more thing I can promise my father will greatly reward you. He's the chief of the commerce guild. Just meet me at my house, we'll defeat my wicked mother and restore Agamemnon to health then he'll surely reward you
+    //Exit O
+    //SK: Now Player come here I must thank you myself
+    //Player approach SK
+    //SK: Many years ago our Trivis was stolen by the robber in Green. You have restored our temple and allowed me to re-appear. As thanks please accept this
+    //Give Kings rock (?)
+    //SK: That will let you raise a SK of your own, tho yours will not have as strong divine connection as I have. - Please return to see your future (or whatever I decide to have SK do)
+    //NOTE: SK should only read futures on a re-entry not this initial episode
+    //set vars? 
+    //release
 }
 
 text AedesTrivis_Text_OrestesSageScene_Orestes1 {
