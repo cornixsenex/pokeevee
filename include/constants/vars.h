@@ -116,7 +116,8 @@
 																// 0: Start - Orestes on Bridge - Trigger Bridge Scene
 																// 1: After Orestes on Bridge - Trigger Orestes Walk Scene
 																// 2: After OrestesWalkScene - Trigger OrestesAedes1
-																// 3: After Trivis Scene 1 - Setup Temples
+																// 3: After Trivis Scene 1 - During Trivis Quest
+																// 69: After Trivis Quest - Please UPDATE NUM
 #define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058

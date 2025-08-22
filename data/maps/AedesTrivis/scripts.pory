@@ -183,8 +183,24 @@ script AedesTrivis_Script_Orestes {
 }
 
 script AedesTrivis_Script_Sage {
-	//Trivis Quest Intro(?)
-	//During Trivis Quest
+	//During Quest:
+	if (var(VAR_ORESTES_STATE) < 69) {
+		//Trivis Quest Intro
+		load_field_pic (FIELD_PIC_SAGE, 190, 98)
+		if (!flag(FLAG_AEDES_TRIVIS_SAGEINTROD)) {
+			setflag (FLAG_AEDES_TRIVIS_SAGEINTROD)
+			msgbox (AedesTrivis_Text_SageIntroQuest)
+		//After intro
+		} else {
+			msgbox (AedesTrivis_Text_SageDuringQuest)
+		}
+		//check if you have all trivis pieces
+		//if so do complete quest et reveal slowking
+		//else fin
+		closemessage
+		destroy_field_pic (FIELD_PIC_SAGE)
+		end
+	}
 	//After Quest(?)
 }
 
@@ -307,6 +323,7 @@ text AedesTrivis_Text_OrestesSageScene_Orestes5 {
 }
 
 text AedesTrivis_Text_OrestesDuringTrivisQuest {
-	format("")
+	format("Please help me! Please repair the tree vest and
+			bring back the oracle, else I must die!")
 }
 

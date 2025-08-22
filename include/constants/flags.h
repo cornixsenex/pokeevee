@@ -56,7 +56,7 @@
 #define FLAG_PYRAMIDINSIDE1F_HIDEINDY             0x2A // Set after Indy goes to top of pyramid 
 #define FLAG_HASINSURANCE                         0x2B // Allows Pokecenter Use (Should be checkitem?)
 #define FLAG_SILVANWOODS_BLUESHOWN                0x2C // Set after Blue shown walking by
-#define FLAG_UNUSED_0x2D                          0x2D // UNUSED
+#define FLAG_AEDES_TRIVIS_SAGEINTROD              0x2D // Set after first time talking with sage during tivis quest
 #define FLAG_BULBUS_HIDE_STRIKE                   0x2E // Hides strike (opens boat + shop)
 #define FLAG_SILVANWOODS_HIDEFIGHT1               0x2F // After Leaf1 fight hides Fight1
 #define FLAG_SILVANWOODS_HIDEFIGHT2               0x30 // After Mew sight / Stoney fight
