@@ -1,15 +1,46 @@
 mapscripts AedesTrivis_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		//Setup OrestesSageScene
+		if (var(VAR_ORESTES_STATE) == 2) {
+			call (AedesTrivis_Script_ShowOrestesSageScene)
+		}
+		//During Triforce Quest
+		if (var(VAR_ORESTES_STATE) == 3) {
+			call (AedesTrivis_Script_ShowDuringTrivisQuest)
+		}
+		//After Slowking Revealed
+	}
 
 
 	MAP_SCRIPT_ON_LOAD {
-
 		//Hide Triforce on floor
 		if (var(VAR_ORESTES_STATE) < 69) {
 			call (AedesTrivis_Script_HideTriforceFloor)
 		}
 
 	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ORESTES_STATE, 2: AedesTrivis_Script_OrestesSageScene
+	]
+
+}
+
+script AedesTrivis_Script_ShowOrestesSageScene {
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SAGE, 11, 8)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 11, 10)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_FACE_UP)
+	return
+}
+
+script AedesTrivis_Script_ShowDuringTrivisQuest {
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SAGE, 11, 8)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 11, 9)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
+	return
 
 }
 
@@ -27,13 +58,13 @@ script AedesTrivis_Script_HideTriforceFloor {
 	setmetatile (12,  7, METATILE_PetalburgGym_TempleFloor, FALSE)
 	setmetatile (13,  7, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 4
-	setmetatile ( 8,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 9,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (10,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (11,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (12,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (13,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (14,  8, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 8,  8, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 9,  8, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (10,  8, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (11,  8, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (12,  8, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (13,  8, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (14,  8, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
 	//Row 5
 	setmetatile ( 7,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
 	setmetatile ( 8,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
@@ -45,40 +76,237 @@ script AedesTrivis_Script_HideTriforceFloor {
 	setmetatile (14,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
 	setmetatile (15,  9, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 6
-	setmetatile ( 6, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 7, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 8, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 9, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (10, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (11, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (12, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (13, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (14, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (15, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (16, 10, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 6, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 7, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 8, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 9, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (10, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (11, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (12, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (13, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (14, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (15, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (16, 10, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
 	//Row 7
 	setmetatile ( 5, 11, METATILE_PetalburgGym_TempleFloor, FALSE)
 
 	setmetatile (17, 11, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 8
-	setmetatile ( 4, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 5, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 6, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 4, 12, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 5, 12, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 6, 12, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
 
-	setmetatile (16, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (17, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (18, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (16, 12, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (17, 12, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (18, 12, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
 	//Row 9
-	setmetatile ( 4, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 5, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile ( 6, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 3, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 4, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 5, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 6, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 7, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
 
-	setmetatile (16, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (17, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
-	setmetatile (18, 12, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (15, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (16, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (17, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (18, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (19, 13, METATILE_PetalburgGym_TempleFloor, FALSE)
 	//Row 10
-	//Row 11
-	//Row 12
+	setmetatile ( 2, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 3, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 4, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 5, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 6, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 7, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 8, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
 
+	setmetatile (14, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (15, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (16, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (17, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (18, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (19, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (20, 14, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	//Row 11
+	setmetatile ( 1, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 2, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 3, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 4, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 5, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 6, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 7, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 8, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile ( 9, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+
+	setmetatile (13, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (14, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (15, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (16, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (17, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (18, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (19, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (20, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	setmetatile (21, 15, METATILE_PetalburgGym_TempleFloor, FALSE)
+	//Row 12
+	setmetatile ( 0, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 1, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 2, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 3, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 4, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 5, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 6, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 7, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 8, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile ( 9, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (10, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+
+	setmetatile (12, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (13, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (14, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (15, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (16, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (17, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (18, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (19, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (20, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (21, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	setmetatile (22, 16, METATILE_PetalburgGym_TempleFloor_Shadow, FALSE)
+	//fin
 	return
 }
+
+script AedesTrivis_Script_Orestes {
+	//Only possible to talk to him here during Trivis Quest
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_OrestesDuringTrivisQuest, MSGBOX_NPC)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+}
+
+script AedesTrivis_Script_Sage {
+	//Trivis Quest Intro(?)
+	//During Trivis Quest
+	//After Quest(?)
+}
+
+script AedesTrivis_Script_Slowking {
+	//I'd like him to initially give player the gift (King's Rock?)
+	//Then daily give some divination like where the swarm mons are or something
+	//Then if he already gave divination just say like "come again"
+}
+
+script AedesTrivis_Script_OrestesSageScene {
+	lockall
+	//setvar
+	setvar (VAR_ORESTES_STATE, 3)
+	//Alert Player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//plaer approach
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp6)
+	waitmovement (0)
+	//W: What do you mean he's not here
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_OrestesSageScene_Orestes1)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	//S: As I said the speaker's podium is vacant. He has been gone ever since the pirate in green stole the Trivis
+	load_field_pic (FIELD_PIC_SAGE, 190, 98)
+	msgbox (AedesTrivis_Text_OrestesSageScene_Sage1)
+	destroy_field_pic (FIELD_PIC_SAGE)
+	//W: Well who are you? Why can't you go get it
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_OrestesSageScene_Orestes2)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	//S: I am the stweard of the temple and I'm bound to it by oath. You, or a champion better than you, may go out and seek the Trivis. If it is restored then the speaker may return but until then I can offer no spiritual guidance
+	load_field_pic (FIELD_PIC_SAGE, 190, 98)
+	msgbox (AedesTrivis_Text_OrestesSageScene_Sage2)
+	destroy_field_pic (FIELD_PIC_SAGE)
+	//Turn Wally down
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceDown)
+	waitmovement (0)
+	//W: Despair! God has forsaken me!
+	msgbox (AedesTrivis_Text_OrestesSageScene_Orestes3)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
+	//Wally to player
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown)
+	waitmovement (0)
+	//Alert Wally
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//W: Who are you? The odds of another traveller coming here at the same time as me are impossible you must have been sent to help me out! I am most distressted and must speak with the oracle and know which path to follow but that guy says the oracle is gone and won't return until some Tree Vist is brought back. Go ask him what he's talking about and help me out, please! I'm going to die if I can't speak with the oracle
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_OrestesSageScene_Orestes4)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (AedesTrivis_Text_OrestesSageScene_Orestes5)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
+	//fin
+	releaseall
+	end
+}
+
+text AedesTrivis_Text_OrestesSageScene_Orestes1 {
+	format("What do you mean 'The Speaker is not here?'
+			I must consult the oracle!")
+}
+
+text AedesTrivis_Text_OrestesSageScene_Sage1 {
+	format("He's gone.
+			I already told you ever since the
+			green robed pirate carried off the Trivis
+			the speaker's pedestal has been vacant.")
+}
+
+text AedesTrivis_Text_OrestesSageScene_Orestes2 {
+	format("Well, if this tree vest is so important
+			to the temple, why don't you go get it?")
+}
+
+text AedesTrivis_Text_OrestesSageScene_Sage2 {
+	format("I'm bound by oathe to attend the Aedes
+			Trivis. Only in death may I depart.
+			Someone, perhaps you or your champion,
+			must seek out the three pieces of Trivis
+			broken by that scoundrel who came in green
+			and robbed our sacred place of the Trivis.")
+}
+
+text AedesTrivis_Text_OrestesSageScene_Orestes3 {
+	format("Despair! I know now there turly is no
+			God, Gods, or Goddess looking down on me!
+			My query on the bridge has been answered
+			by the total absence of a reply.
+			My mind's made up, I must now jump...now die.")
+}
+
+text AedesTrivis_Text_OrestesSageScene_Orestes4 {
+	format("Who are you!? Why have you come to this place?
+			I hope you did not come seeking guidance
+			since that charlatan is offering none.
+			He says some green pirate stole his tree vest
+			so he can't tell anyone their future.")
+}
+
+text AedesTrivis_Text_OrestesSageScene_Orestes5 {
+	format("I just realized you're the answer to my
+			desperate supplication for help. The odds
+			of another traveller arriving
+			here just as I'm leaving...impossible!
+			You must be here to restore the temple
+			and bring the oracle back to tell me
+			what is it I must do. I simply must
+			speak with him soon or I will surely die!
+			So please, hurry, find the missing tree vest
+			and bring the oracle back. Maybe try
+			to talk to that pretender and see if
+			he has any helpful advice for you.
+			Thank you God, Gods, Goddesses, or Goddess
+			for answering my most desperate prayers!")
+}
+
+text AedesTrivis_Text_OrestesDuringTrivisQuest {
+	format("")
+}
+
