@@ -14464,20 +14464,6 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_FabMail,
 	},
 
-	[ITEM_COLCHIS_MAP] =
-	{
-		.name = _("Old Map"),
-        .price = 0,
-		.description = sColchisMapDesc,
-        .importance = 1,
-        .pocket = POCKET_KEY_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-        .iconPic = gItemIcon_OldSeaMap,
-        .iconPalette = gItemIconPalette_OldSeaMap,
-	},
-
 	[ITEM_BIG_HAMMER] =
 	{
 		.name = _("Big Hammer"),
@@ -14650,6 +14636,53 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_LavaCookieAndLetter,
     },
 
+    [ITEM_TRIVIS_POTESTATIS] =
+    {
+        .name = _("Trivis Potestatis"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A heavy piece of\n"
+            "gold metal. It feels\n"
+            "cold to the touch"),
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Trivis,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+
+    [ITEM_TRIVIS_SAPIENTIAE] =
+    {
+        .name = _("Trivis Sapientiae"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A smooth, gold,\n"
+            "object like glass\n"
+            "with a faint glow."),
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Trivis,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
+    
+    [ITEM_TRIVIS_FORTITUDINIS] =
+    {
+        .name = _("Trivis Fortitudinis"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A solid, warm, piece\n"
+            "of gold metal with a\n"
+            "worn, matte finish."),
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Trivis,
+        .iconPalette = gItemIconPalette_Trivis,
+    },
 
 
 

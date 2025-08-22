@@ -1713,9 +1713,11 @@ extern const u16 gItemIconPalette_Book[];
 extern const u32 gItemIcon_BigHammer[];
 extern const u16 gItemIconPalette_BigHammer[];
 
-
 extern const u32 gItemIcon_Scythe[];
 extern const u16 gItemIconPalette_Scythe[];
+
+extern const u32 gItemIcon_Trivis[];
+extern const u16 gItemIconPalette_Trivis[];
 //End Kustom Items
 
 extern const u32 gItemIcon_FairyFeather[];

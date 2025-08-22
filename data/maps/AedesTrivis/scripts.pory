@@ -327,3 +327,11 @@ text AedesTrivis_Text_OrestesDuringTrivisQuest {
 			bring back the oracle, else I must die!")
 }
 
+text AedesTrivis_Text_SageIntroQuest {
+    format("")
+}
+
+text AedesTrivis_Text_SageDuringQuest {
+    format("")
+}
+

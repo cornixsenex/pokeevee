@@ -299,7 +299,31 @@ AedesTrivis_Script_Orestes::
 
 
 AedesTrivis_Script_Sage::
+# 187 "data/maps/AedesTrivis/scripts.pory"
+	compare VAR_ORESTES_STATE, 69
+	goto_if_lt AedesTrivis_Script_Sage_1
 	return
+
+AedesTrivis_Script_Sage_1:
+# 189 "data/maps/AedesTrivis/scripts.pory"
+	load_field_pic FIELD_PIC_SAGE, 190, 98
+# 190 "data/maps/AedesTrivis/scripts.pory"
+	goto_if_unset FLAG_AEDES_TRIVIS_SAGEINTROD, AedesTrivis_Script_Sage_4
+# 195 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_SageDuringQuest
+AedesTrivis_Script_Sage_3:
+# 200 "data/maps/AedesTrivis/scripts.pory"
+	closemessage
+# 201 "data/maps/AedesTrivis/scripts.pory"
+	destroy_field_pic FIELD_PIC_SAGE
+	end
+
+AedesTrivis_Script_Sage_4:
+# 191 "data/maps/AedesTrivis/scripts.pory"
+	setflag FLAG_AEDES_TRIVIS_SAGEINTROD
+# 192 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_SageIntroQuest
+	goto AedesTrivis_Script_Sage_3
 
 
 AedesTrivis_Script_Slowking::
@@ -307,100 +331,100 @@ AedesTrivis_Script_Slowking::
 
 
 AedesTrivis_Script_OrestesSageScene::
-# 198 "data/maps/AedesTrivis/scripts.pory"
-	lockall
-# 200 "data/maps/AedesTrivis/scripts.pory"
-	setvar VAR_ORESTES_STATE, 3
-# 202 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 203 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
-# 205 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp6
-# 206 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
-# 208 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_ORESTES, 190, 98
-# 209 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_OrestesSageScene_Orestes1
-# 210 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
-# 212 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SAGE, 190, 98
-# 213 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_OrestesSageScene_Sage1
 # 214 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SAGE
+	lockall
 # 216 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_ORESTES, 190, 98
-# 217 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_OrestesSageScene_Orestes2
+	setvar VAR_ORESTES_STATE, 3
 # 218 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
-# 220 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SAGE, 190, 98
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 219 "data/maps/AedesTrivis/scripts.pory"
+	waitmovement 0
 # 221 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_OrestesSageScene_Sage2
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp6
 # 222 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SAGE
+	waitmovement 0
 # 224 "data/maps/AedesTrivis/scripts.pory"
 	load_field_pic FIELD_PIC_ORESTES, 190, 98
 # 225 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceDown
+	msgbox AedesTrivis_Text_OrestesSageScene_Orestes1
 # 226 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_ORESTES
 # 228 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_OrestesSageScene_Orestes3
+	load_field_pic FIELD_PIC_SAGE, 190, 98
 # 229 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
+	msgbox AedesTrivis_Text_OrestesSageScene_Sage1
 # 230 "data/maps/AedesTrivis/scripts.pory"
-	closemessage
+	destroy_field_pic FIELD_PIC_SAGE
 # 232 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown
-# 233 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
-# 235 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark
-# 236 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
-# 238 "data/maps/AedesTrivis/scripts.pory"
 	load_field_pic FIELD_PIC_ORESTES, 190, 98
-# 239 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_OrestesSageScene_Orestes4
-# 240 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark
-# 241 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
-# 242 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_OrestesSageScene_Orestes5
-# 243 "data/maps/AedesTrivis/scripts.pory"
+# 233 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_OrestesSageScene_Orestes2
+# 234 "data/maps/AedesTrivis/scripts.pory"
 	destroy_field_pic FIELD_PIC_ORESTES
+# 236 "data/maps/AedesTrivis/scripts.pory"
+	load_field_pic FIELD_PIC_SAGE, 190, 98
+# 237 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_OrestesSageScene_Sage2
+# 238 "data/maps/AedesTrivis/scripts.pory"
+	destroy_field_pic FIELD_PIC_SAGE
+# 240 "data/maps/AedesTrivis/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
+# 241 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceDown
+# 242 "data/maps/AedesTrivis/scripts.pory"
+	waitmovement 0
 # 244 "data/maps/AedesTrivis/scripts.pory"
-	closemessage
+	msgbox AedesTrivis_Text_OrestesSageScene_Orestes3
+# 245 "data/maps/AedesTrivis/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
 # 246 "data/maps/AedesTrivis/scripts.pory"
+	closemessage
+# 248 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown
+# 249 "data/maps/AedesTrivis/scripts.pory"
+	waitmovement 0
+# 251 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark
+# 252 "data/maps/AedesTrivis/scripts.pory"
+	waitmovement 0
+# 254 "data/maps/AedesTrivis/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
+# 255 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_OrestesSageScene_Orestes4
+# 256 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark
+# 257 "data/maps/AedesTrivis/scripts.pory"
+	waitmovement 0
+# 258 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_OrestesSageScene_Orestes5
+# 259 "data/maps/AedesTrivis/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
+# 260 "data/maps/AedesTrivis/scripts.pory"
+	closemessage
+# 262 "data/maps/AedesTrivis/scripts.pory"
 	releaseall
 	end
 
 
 AedesTrivis_Text_OrestesSageScene_Orestes1::
-# 250 "data/maps/AedesTrivis/scripts.pory"
+# 266 "data/maps/AedesTrivis/scripts.pory"
 	.string "What do you mean 'The Speaker is not\n"
 	.string "here?' I must consult the oracle!$"
 
 AedesTrivis_Text_OrestesSageScene_Sage1::
-# 255 "data/maps/AedesTrivis/scripts.pory"
+# 271 "data/maps/AedesTrivis/scripts.pory"
 	.string "He's gone. I already told you ever since\n"
 	.string "the green robed pirate carried off the\l"
 	.string "Trivis the speaker's pedestal has been\l"
 	.string "vacant.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes2::
-# 262 "data/maps/AedesTrivis/scripts.pory"
+# 278 "data/maps/AedesTrivis/scripts.pory"
 	.string "Well, if this tree vest is so important\n"
 	.string "to the temple, why don't you go get it?$"
 
 AedesTrivis_Text_OrestesSageScene_Sage2::
-# 267 "data/maps/AedesTrivis/scripts.pory"
+# 283 "data/maps/AedesTrivis/scripts.pory"
 	.string "I'm bound by oathe to attend the Aedes\n"
 	.string "Trivis. Only in death may I depart.\l"
 	.string "Someone, perhaps you or your champion,\l"
@@ -410,7 +434,7 @@ AedesTrivis_Text_OrestesSageScene_Sage2::
 	.string "place of the Trivis.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes3::
-# 276 "data/maps/AedesTrivis/scripts.pory"
+# 292 "data/maps/AedesTrivis/scripts.pory"
 	.string "Despair! I know now there turly is no\n"
 	.string "God, Gods, or Goddess looking down on\l"
 	.string "me! My query on the bridge has been\l"
@@ -419,7 +443,7 @@ AedesTrivis_Text_OrestesSageScene_Orestes3::
 	.string "jump...now die.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes4::
-# 284 "data/maps/AedesTrivis/scripts.pory"
+# 300 "data/maps/AedesTrivis/scripts.pory"
 	.string "Who are you!? Why have you come to this\n"
 	.string "place? I hope you did not come seeking\l"
 	.string "guidance since that charlatan is\l"
@@ -428,7 +452,7 @@ AedesTrivis_Text_OrestesSageScene_Orestes4::
 	.string "tell anyone their future.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes5::
-# 292 "data/maps/AedesTrivis/scripts.pory"
+# 308 "data/maps/AedesTrivis/scripts.pory"
 	.string "I just realized you're the answer to my\n"
 	.string "desperate supplication for help. The\l"
 	.string "odds of another traveller arriving here\l"
@@ -445,5 +469,15 @@ AedesTrivis_Text_OrestesSageScene_Orestes5::
 	.string "answering my most desperate prayers!$"
 
 AedesTrivis_Text_OrestesDuringTrivisQuest::
-# 309 "data/maps/AedesTrivis/scripts.pory"
+# 325 "data/maps/AedesTrivis/scripts.pory"
+	.string "Please help me! Please repair the tree\n"
+	.string "vest and bring back the oracle, else I\l"
+	.string "must die!$"
+
+AedesTrivis_Text_SageIntroQuest::
+# 330 "data/maps/AedesTrivis/scripts.pory"
+	.string "$"
+
+AedesTrivis_Text_SageDuringQuest::
+# 334 "data/maps/AedesTrivis/scripts.pory"
 	.string "$"

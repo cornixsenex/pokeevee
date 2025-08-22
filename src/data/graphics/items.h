@@ -2114,3 +2114,6 @@ const u16 gItemIconPalette_BigHammer[] = INCBIN_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_Scythe[] = INCBIN_U32("graphics/items/icons/scythe.4bpp.lz");
 const u16 gItemIconPalette_Scythe[] = INCBIN_U16("graphics/items/icon_palettes/scythe.gbapal");
+
+const u32 gItemIcon_Trivis[] = INCBIN_U32("graphics/items/icons/trivis.4bpp.lz");
+const u16 gItemIconPalette_Trivis[] = INCBIN_U16("graphics/items/icon_palettes/trivis.gbapal");
