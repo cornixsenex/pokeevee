@@ -1785,14 +1785,115 @@ Triforce Temples
 	>Orestes goes to the temple sage tells him "the prophet is silent he cannot speak until the Triforce is returned" O: Noo please help me player -> 3 temples: Water Temple (lake, waterfalls, water level) Spirit / Light (light beams et the hand) Earth Temple (stone statues that you move around) - after water temple a triforce shard quest with a map and fishing locations around the lake - all pieces returned do an anim and sage -> slowking he says Orestes your mother is at fault but you cannot be the one to do it Orestes asks you to do if for him you go thru servants entrance via serving house confrontation (is her man there? idk yet) defeat her restore Theoden / Agamemnon Iphigenia tantrum and he goes to Nestor House
 Clytemnestra
 Mare Subtropicum
-Odysseus, Ithaca, Lotus Grove                        
-Isla Arida
-Isla Pina, Siren Islands / Beach
+Odyssey
+    >Ithaca
+        >Ulysses madness, plowing sowing salt - push his boy into danger and he returns
+    >Lotus Eaters
+        >Isla Herba Bona
+    >Cyclops
+        >Isla Arida
 	>Circe: Ulysses @ city, proceed to circe house, she mentions pina violeta and promises to fix everyone if you bring it and Ulysses takes her to bed, U: I'll do it for the team, they tell you to scram if you return after leaving they're in bed, gather pina violeta, return -> alert ulysses is a pokemon battle circe I'm Melting after use Pina Violeta to change back Ulysses et co
-Scylla, underwater?
-Calypso Cave, Phaeacia, Swineherd, Beggar
-Ajax, Ajax Inferior, Diomedes, Teucer
-Tiresias, Oedipus
+    >Circe
+        >Isla Pina 
+            >Ulysses at town - We must intervene in the witch she turns men to mons
+            >Proceed thru woods to her house
+            >Circe seduces Ulysses, says leave us alone get the "pina violeta?"
+            >Acquire "Pina Violeta?" While they stay in bed
+            >Return scene -
+                >Alert Player
+                >Ulysses is a mon do sound and alert
+                >Battle Circe
+                >Use Pina Violeta to turn them all back
+    >Shades
+        >Still Isla Pina - Western Shores - Ulysses must make cleansing sacrifices
+    >Sirens
+        >Ulysses entranced / asleep on Jigglypuff island (need to make still)
+        >IN Mare Tropicum mayhaps?
+    >Scylla et Charybdis
+        >Ulysses at head of Isla Hesperia says we must defeat the monster to proceed
+        >As you approach the whirlpool she sucks you in - battle Scylla
+        >After her defeat you're pulled under water - belly of the beast? Maybe
+        >After you resurface speak with Ulysses and proceed
+    >Calypso
+        >Cave on Big Island(?)
+        >They're in bed, you interrupt Calypso says "You wont take him from me!" 
+        >Battle
+        >After Ulysses pretends to have been enchanted and departs
+    >Phaecia - Mare Internum? Acta Tranquilla?
+        >Find Ulysses et Girl on a beach
+        >Ulysses explains he nearly drowned but she saved his life
+        >She insists they go to her father's house to recover and tell his story
+        >He tells you I know I know but she saved my life we must do as we're asked
+        >Go to father's house
+        >Ulysses re-tells his entire story
+        >Father gives him directions to Nestor's house
+    >Swineherd - Villae Rusticae?
+        >Ulysses is in a poor swineherd's hut
+        >He insists you bring the man something to eat before he goes any further
+        >Bring him some food and Ulysses says now I will go
+    >Beggar - Urbia
+        >A new beggar is on the streets of Urbia being crazy and panhandling etc
+        >At this point Penelope will have lost her ring
+        >It's...somewhere around the house or island
+        >Find it wherever it is 
+        >(I think if you go back to her with the ring she just doesn't react idk maybe she takes it and then loses it again)
+        >Regardless go speak with the beggar (Ulysses) with the ring he sees it and becomes enraged then reveals himself and attacks
+    >Battle
+        >Tricky pokemon = psychic dark fighting etc
+        >After the battle agrees to finally go to Nestor's house in exchange for the ring.
+Rape of Helen
+    Nestors House All assembled - wedding decision Menelause - go to church
+    At churhc Rape of Helen scene engraged Agamemnon made leader calls for heros
+    Nestor gives you his 4 rings / sigils / invites for the 4 heroes
+4 Heroes
+    Ajax
+        >He's a muderous psychopath
+        >Sheep people (Villae Rusticae?) are upset someone / something is coming to kill their sheep (not even eat them just murder) each night
+        >They ask you to see what it is
+        >At night catch werewolf Ajax on the prowl
+        >Battle
+        >After battle Ajax recognizes what he's done and contemplates suicide until you give invite then realizes it's a constructive outlet for his rage and goes
+    Ajax Inferior   
+        >He's at the dead show they began playing beat the band stop the music
+    Diomedes 
+        >He's the best owner / breeder at the circus mon races
+        >Enter a better mon to beat him
+        >Also you can sabotage his Rapidash somehow to increase the num of mons who can beat it
+        >After you beat him he goes to congratulate you, gets invited, and agrees to go
+    Teucer
+        >A bar / grill (Urbia?) has just opened and has a promotion the holder of the high score in their game (IDK Pinball or something) eats for free.
+        >Teucer is great at the game and is eating them out of house and home
+        >The owner is upset and gives you a tip to beat his score
+        >A crowd of people is there just to watch Teucer Eat
+        >Teucer is busy eating to listen to you try to invite him
+        >Beat the high score
+        >Talk to Teucer, he's upset but after invited realizes Nestor will provide provisions for the quest and goes to eat Nestor's Food
+Tiresias
+    >Shinx has taken over the Peccadum Power Plant
+    >Oedipus / Rex in the lobby / out front begs you to do something that he will reward you (how much money I'm losing please help)
+    >Power Plant
+    >Shinx Riddle - either solve it or else battle
+    >Power Restored (Switch maybe or auto)
+    >Rex gives player a penthouse suite (or gift idk elevator key?) and invites him to his suite for a party - elevator key top floor
+    >Rex introduces him to his secret weapon, Tiresias (Story time how he ran the tables until he beat the old owner at a game and won this entire tower casino, he's always right except for when he warns me that I will eventually ), and his wife, Jocasta (joke about their age gap)
+    >R: Nah I love her best woman I've ever known
+    >J: Since I lost my son I never slept with my old husband felt nothing until I met Rex
+    >Someone at party calls Rex "New Money"
+    >R: It's true I was raised in the orphanage but the money you make yourself is ten times as sweet as that you inherit
+    >Not only unlocked here but at some point you must visit the orphanage in Urbia and speak with the old woman, Merope. She will ask you to hurry to the hospital and speak with Polybius, who had come to speak with his son before he dies
+    >OK so like after Polybius loses everything to Rex he crashes out pretty bad and ends up close to death and in that state wants to make ammends and tries to contact his son but can't because Merope doesn't know where he went so Merope asks you to find the boy "Rex" or Polybius is dying and gives you a note to give his son, "Oedipus" and Merope says the boy she raised called himself "Rex" like king because he despised his former name "Bigfoot"
+    >So you need the note from Polybius (he dies when he gives it to you) and you need to have spoken with Merope and with that done you go back to the party and give the note to Rex
+    >Rex takes the note and reads aloud (Jocasta by his side)
+    >After some of the details are revealed she gets sick and runs off
+    >Rex assumes she's just drunk and continues to read
+    >At the end he sign's it off "Your father, Polybius"
+    >Here Rex realizes he is Oedipus and Jocasta is his mother
+    >He's enraged, runs to the room to find Jocasta
+    >Follow him to the room
+    >Discover Jocasta jumped out the window Oedipus Rex gives his lil speech then jumps to his own death as well
+    >Tiresias is like "I told him this would all happen" then is somehow invited to join Nestor (IDK how that's gonna work)
+    >I think he has to follow you back to the house of Nestor
+Tiresias gathered he makes a prophecy "Your quest is hopeless without a mighty hero"
 Achilles
 	>T: You need a mighty hero to win this war
 	>Heracles? Nah he's impossible to find and harder to get to do what we want
@@ -1817,7 +1918,34 @@ Achilles
 	>fine i'll go but call me pyrrha
 	>shut up achilles lets go
 	>they exit to aulis / church
-Iphigenia, Aulis                              *L5
+Iphigenia, Aulis     
+    >All gathered They are ready to set out but realize they have no idea where to go
+    >Tiresias says the way can only be made clear if Agamemnon will sacrifice his own daughter
+    >A: OK but she'll never come willingly
+    >U: Just send for her and say she's going to marry Achilles in exchange for his joinging our war
+    >A: Great idea
+    >Ach: I'm getting married
+    >A: Of course not we're only saying so
+    >D: Besides aren't you a woman
+    >Ach: I've accepted my time as eromenos is over and I must now become the erastes
+    >A: Player go to my house and bring my daughter here. Give her this note
+    >At House Atrides Orestes says she's ran off and left her flute (SNORLAX FLUTE)
+    >Use flute to open snorlax pass to Salix
+    >Learn Rock Climb from the hippies
+    >Ice / Dragon Cave
+    >Snow Peak Pass
+    >Amazon temple
+    >Doorguards says men are not allowed
+    >React to the note you show them
+    >Bring Iphi out - with Hippo?, give her the note she cries and agrees to go
+    >Hippo says the choice is hers but that she may never return
+    >Iphi is like "It's ok I've always wanted a normal life and achilles is the best I'm going
+    >Hippos is like "the young maidens are always so weak of heart not really believers in anything be gone then
+    >Amazons exit inside
+    >Lead Iphi back? IDK 
+    >either way they return to Aulis / Church
+Back at the Church she is sacrificed on an altar and Nestor announces the way to Troy is made clear: Ilium
+The party departs for Ilium
 Illium, Philoctetes, Ida Mons
 Heracles, Lion, Hydra, Hind, Boar, Stables, Birds
 Minotaur, Labyrinth
