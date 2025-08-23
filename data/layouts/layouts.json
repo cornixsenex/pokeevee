@@ -6540,6 +6540,16 @@
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/AedesTrivis/border.bin",
       "blockdata_filepath": "data/layouts/AedesTrivis/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_AQUA",
+      "name": "AedesAqua_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AedesAqua/border.bin",
+      "blockdata_filepath": "data/layouts/AedesAqua/map.bin"
     }
   ]
 }

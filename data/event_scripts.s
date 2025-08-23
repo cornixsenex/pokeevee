@@ -1666,3 +1666,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Gymnasium/scripts.inc"
 
 	.include "data/maps/AedesTrivis/scripts.inc"
+
+	.include "data/maps/AedesAqua/scripts.inc"
