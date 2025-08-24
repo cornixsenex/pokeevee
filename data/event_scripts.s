@@ -1668,3 +1668,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/AedesTrivis/scripts.inc"
 
 	.include "data/maps/AedesAqua/scripts.inc"
+
+	.include "data/maps/AedesAqua_Water1/scripts.inc"
