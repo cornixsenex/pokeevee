@@ -6545,7 +6545,7 @@
       "id": "LAYOUT_AEDES_AQUA",
       "name": "AedesAqua_Layout",
       "width": 64,
-      "height": 64,
+      "height": 66,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesAqua/border.bin",
