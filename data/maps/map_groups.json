@@ -763,7 +763,8 @@
     "Gymnasium",
     "AedesTrivis",
     "AedesAqua",
-    "AedesAqua_Water1"
+    "AedesAqua_Water1",
+    "AedesAqua_Water2"
   ],
   "gMapGroup_IndoorRoute123": [
     "Route123_BerryMastersHouse"

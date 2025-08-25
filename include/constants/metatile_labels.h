@@ -139,9 +139,17 @@
 #define METATILE_Cave_CaveType3EntranceBottom            0x306
 #define METATILE_Cave_CaveType3EntranceTop               0x2FE
 #define METATILE_Cave_CaveType3TopWall                   0x2E9
+#define METATILE_Cave_CaveWater                          0x293
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
+#define METATILE_Cave_RockCornerSEWater                  0x2B5
+#define METATILE_Cave_RockCornerSEWaterHalf              0x39F
+#define METATILE_Cave_RockCornerSWWater                  0x2B3
+#define METATILE_Cave_RockCornerSWWaterHalf              0x39E
+#define METATILE_Cave_RockWallEWater                     0x27C
+#define METATILE_Cave_RockWallSWater                     0x2B4
+#define METATILE_Cave_RockWallWWater                     0x27A
 #define METATILE_Cave_SealedChamberBraille_Mid           0x235
 #define METATILE_Cave_SealedChamberEntrance_BottomLeft   0x232
 #define METATILE_Cave_SealedChamberEntrance_BottomMid    0x233
@@ -270,6 +278,8 @@
 #define METATILE_General_TallGrass_TreeLeft    0x1C6
 #define METATILE_General_TallGrass_TreeRight   0x1C7
 #define METATILE_General_TallGrass_TreeUp      0x025
+#define METATILE_General_WaterfallBottom       0x0B9
+#define METATILE_General_WaterfallTop          0x0B3
 #define METATILE_General_YellowCaveIndent      0x1A8
 #define METATILE_General_YellowCaveOpen        0x1A9
 

@@ -1,1 +1,83 @@
 mapscripts AedesAqua_MapScripts {}
+
+
+script AedesAqua_Script_ShowWaterfall {
+	//Row 1
+	setmetatile (26, 0, METATILE_Cave_RockWallEWater, TRUE)
+	setmetatile (27, 0, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (28, 0, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (29, 0, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (30, 0, METATILE_Cave_RockWallWWater, TRUE)
+	setmetatile (32, 0, METATILE_Cave_RockWallEWater, TRUE)
+	setmetatile (33, 0, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (34, 0, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (35, 0, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (36, 0, METATILE_Cave_RockWallWWater, TRUE)
+	//Row 2
+	setmetatile (26, 1, METATILE_Cave_RockWallEWater, TRUE)
+	setmetatile (27, 1, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (28, 1, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (29, 1, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (30, 1, METATILE_Cave_RockWallWWater, TRUE)
+	setmetatile (32, 1, METATILE_Cave_RockWallEWater, TRUE)
+	setmetatile (33, 1, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (34, 1, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (35, 1, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (36, 1, METATILE_Cave_RockWallWWater, TRUE)
+	//Row 3
+	setmetatile (26, 2, METATILE_Cave_RockCornerSEWaterHalf, TRUE)
+	setmetatile (27, 2, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (28, 2, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (29, 2, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (30, 2, METATILE_Cave_RockCornerSWWater, TRUE)
+	setmetatile (31, 2, METATILE_Cave_RockWallSWater, TRUE)
+	setmetatile (32, 2, METATILE_Cave_RockWallEWater, TRUE)
+	setmetatile (33, 2, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (34, 2, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (35, 2, METATILE_Cave_CaveWater, TRUE)
+	setmetatile (36, 2, METATILE_Cave_RockCornerSWWaterHalf, TRUE)
+	//Row 4
+	setmetatile (26, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (27, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (28, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (29, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (30, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (31, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (32, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (33, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (34, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (35, 3, METATILE_General_WaterfallTop, TRUE)
+	setmetatile (36, 3, METATILE_General_WaterfallTop, TRUE)
+	//Row 5
+	setmetatile (26, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (27, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (28, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (29, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (30, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (31, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (32, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (33, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (34, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (35, 4, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (36, 4, METATILE_General_WaterfallBottom, TRUE)
+	//Row 6
+	setmetatile (26, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (27, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (28, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (29, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (30, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (31, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (32, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (33, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (34, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (35, 5, METATILE_General_WaterfallBottom, TRUE)
+	setmetatile (36, 5, METATILE_General_WaterfallBottom, TRUE)
+
+	return
+}
+
+script AedesAqua_Script_Test {
+	call (AedesAqua_Script_ShowWaterfall)
+	special (DrawWholeMapView)
+	end
+}
