@@ -118,7 +118,8 @@
 																// 2: After OrestesWalkScene - Trigger OrestesAedes1
 																// 3: After Trivis Scene 1 - During Trivis Quest
 																// 69: After Trivis Quest - Please UPDATE NUM
-#define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
+#define VAR_AEDES_AQUA_STATE                             0x4056 // Handle Water Level and Warps in Aedes Aqua
+																// 0: Default - No Water No Warp - Entrance
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
 #define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var

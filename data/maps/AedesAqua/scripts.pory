@@ -31,13 +31,13 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (29, 2, METATILE_Cave_CaveWater, TRUE)
 	setmetatile (30, 2, METATILE_Cave_RockCornerSWWater, TRUE)
 	setmetatile (31, 2, METATILE_Cave_RockWallSWater, TRUE)
-	setmetatile (32, 2, METATILE_Cave_RockWallEWater, TRUE)
+	setmetatile (32, 2, METATILE_Cave_RockCornerSEWater, TRUE)
 	setmetatile (33, 2, METATILE_Cave_CaveWater, TRUE)
 	setmetatile (34, 2, METATILE_Cave_CaveWater, TRUE)
 	setmetatile (35, 2, METATILE_Cave_CaveWater, TRUE)
 	setmetatile (36, 2, METATILE_Cave_RockCornerSWWaterHalf, TRUE)
 	//Row 4
-	setmetatile (26, 3, METATILE_General_WaterfallTop, TRUE)
+//	setmetatile (26, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (27, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (28, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (29, 3, METATILE_General_WaterfallTop, TRUE)
@@ -47,9 +47,9 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (33, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (34, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (35, 3, METATILE_General_WaterfallTop, TRUE)
-	setmetatile (36, 3, METATILE_General_WaterfallTop, TRUE)
+//	setmetatile (36, 3, METATILE_General_WaterfallTop, TRUE)
 	//Row 5
-	setmetatile (26, 4, METATILE_General_WaterfallBottom, TRUE)
+//	setmetatile (26, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (27, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (28, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (29, 4, METATILE_General_WaterfallBottom, TRUE)
@@ -59,9 +59,9 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (33, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (34, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (35, 4, METATILE_General_WaterfallBottom, TRUE)
-	setmetatile (36, 4, METATILE_General_WaterfallBottom, TRUE)
+//	setmetatile (36, 4, METATILE_General_WaterfallBottom, TRUE)
 	//Row 6
-	setmetatile (26, 5, METATILE_General_WaterfallBottom, TRUE)
+//	setmetatile (26, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (27, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (28, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (29, 5, METATILE_General_WaterfallBottom, TRUE)
@@ -71,9 +71,25 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (33, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (34, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (35, 5, METATILE_General_WaterfallBottom, TRUE)
-	setmetatile (36, 5, METATILE_General_WaterfallBottom, TRUE)
+//	setmetatile (36, 5, METATILE_General_WaterfallBottom, TRUE)
 
 	return
+}
+
+script AedesAqua_Script_WaterControl7 {
+	//interact Y/N - NOTE on the lower water ones it should just say "Has No Effect" on Y choice
+	//save var (this one is 17 because New Water level is 1 and position is 7)
+	//set flag to hide player on warp to show waterfall
+	//alert player
+	//warp to waterfall
+	//This part must be handled OnFrame
+		//noise
+		//show new waterfall
+		//nosie
+		//clear flag to show on next warp
+		//warp to new map position (7)
+
+
 }
 
 script AedesAqua_Script_Test {
