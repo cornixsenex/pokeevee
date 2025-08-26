@@ -1,7 +1,38 @@
-mapscripts AedesAqua_MapScripts {}
+mapscripts AedesAqua_MapScripts {
+	//Every warp var must hide player one waterfall show
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_AEDES_AQUA_STATE, 17: AedesAqua_Script_HidePlayer
+	]
 
+	//noise
+	//show new waterfall
+	//nosie
+	//reset var to 0
+	//warp to new map position (7)
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_AEDES_AQUA_STATE, 17: AedesAqua_Script_Waterfall17
+	]
+}
+
+script AedesAqua_Script_HidePlayer {
+	hideobjectat (LOCALID_PLAYER, MAP_AEDES_AQUA)
+	hideobjectat (LOCALID_FOLLOWING_POKEMON)
+	return
+}
+
+script AedesAqua_Script_Waterfall17 {
+
+	//show new waterfall
+	call (AedesAqua_Script_ShowWaterfall)
+	//nosie
+	//reset var to 0
+	//warp to new map position (7)
+
+}
 
 script AedesAqua_Script_ShowWaterfall {
+	playse (SE_M_SURF)
+	waitse
 	//Row 1
 	setmetatile (26, 0, METATILE_Cave_RockWallEWater, TRUE)
 	setmetatile (27, 0, METATILE_Cave_CaveWater, TRUE)
@@ -78,16 +109,20 @@ script AedesAqua_Script_ShowWaterfall {
 
 script AedesAqua_Script_WaterControl7 {
 	//interact Y/N - NOTE on the lower water ones it should just say "Has No Effect" on Y choice
-	//save var (this one is 17 because New Water level is 1 and position is 7)
-	//set flag to hide player on warp to show waterfall
-	//alert player
-	//warp to waterfall
-	//This part must be handled OnFrame
-		//noise
-		//show new waterfall
-		//nosie
-		//clear flag to show on next warp
-		//warp to new map position (7)
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+		closemessage
+		end
+	} else {
+		//save var (this one is 17 because New Water level is 1 and position is 7)
+		setvar (VAR_AEDES_AQUA_STATE, 17)
+		//alert player
+		applymovement (LOCALID_PLAYER)
+		//warp to waterfall
+
+
+
+
 
 
 }
