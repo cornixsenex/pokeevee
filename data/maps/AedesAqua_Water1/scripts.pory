@@ -1,1 +1,96 @@
-mapscripts AedesAqua_Water1_MapScripts {}
+mapscripts AedesAqua_Water1_MapScripts {
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		//Turn Player Up and Reset Var
+		VAR_AEDES_AQUA_STATE, 13: AedesAqua_Script_FacePlayerUp
+		VAR_AEDES_AQUA_STATE, 15: AedesAqua_Script_FacePlayerUp
+		VAR_AEDES_AQUA_STATE, 17: AedesAqua_Script_FacePlayerUp
+
+		//Hide Player on waterfall show
+
+	]
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_AEDES_AQUA_STATE, 2: AedesAqua_Water1_Script_NoWaterfall4
+
+	]
+		
+}
+
+script AedesAqua_Water1_Script_NoWaterfall4 {
+	call (AedesAqua_Water1_Script_ShowNoWaterfall)
+	warpsilent (MAP_AEDES_AQUA, 58, 6)
+}
+
+script AedesAqua_Water1_Script_ShowNoWaterfall  {
+	playse (SE_M_HYDRO_PUMP)
+	waitse
+	//Row 1
+	setmetatile (26, 0, METATILE_Cave_RockWallE, TRUE)
+	setmetatile (27, 0, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (28, 0, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (29, 0, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (30, 0, METATILE_Cave_RockWallW, TRUE)
+	setmetatile (32, 0, METATILE_Cave_RockWallE, TRUE)
+	setmetatile (33, 0, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (34, 0, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (35, 0, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (36, 0, METATILE_Cave_RockWallW, TRUE)
+	//Row 2
+	setmetatile (26, 1, METATILE_Cave_RockWallE, TRUE)
+	setmetatile (27, 1, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (28, 1, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (29, 1, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (30, 1, METATILE_Cave_RockWallW, TRUE)
+	setmetatile (32, 1, METATILE_Cave_RockWallE, TRUE)
+	setmetatile (33, 1, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (34, 1, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (35, 1, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (36, 1, METATILE_Cave_RockWallW, TRUE)
+	//Row 3
+	setmetatile (26, 2, METATILE_Cave_RockWallSE, TRUE)
+	setmetatile (27, 2, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (28, 2, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (29, 2, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (30, 2, METATILE_Cave_RockWallSW, TRUE)
+	setmetatile (31, 2, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (32, 2, METATILE_Cave_RockWallSE, TRUE)
+	setmetatile (33, 2, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (34, 2, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (35, 2, METATILE_Cave_RockWallTop, TRUE)
+	setmetatile (36, 2, METATILE_Cave_RockWallSW, TRUE)
+	//Row 4
+	setmetatile (27, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (28, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (29, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (30, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (31, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (32, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (33, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (34, 3, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (35, 3, METATILE_Cave_RockWallS, TRUE)
+	//Row 5
+	setmetatile (27, 4, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (28, 4, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (29, 4, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (30, 4, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (31, 4, METATILE_Cave_SealedChamberEntrance_TopMid, TRUE)
+	setmetatile (32, 4, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (33, 4, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (34, 4, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (35, 4, METATILE_Cave_RockWallS, TRUE)
+	//Row 6
+	setmetatile (27, 5, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (28, 5, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (29, 5, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (30, 5, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (31, 5, METATILE_Cave_SealedChamberEntrance_BottomMid, TRUE)
+	setmetatile (32, 5, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (33, 5, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (34, 5, METATILE_Cave_RockWallS, TRUE)
+	setmetatile (35, 5, METATILE_Cave_RockWallS, TRUE)
+	special (DrawWholeMapView)
+	delay (50)
+	return
+
+}

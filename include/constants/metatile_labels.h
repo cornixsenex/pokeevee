@@ -147,8 +147,14 @@
 #define METATILE_Cave_RockCornerSEWaterHalf              0x39F
 #define METATILE_Cave_RockCornerSWWater                  0x2B3
 #define METATILE_Cave_RockCornerSWWaterHalf              0x39E
+#define METATILE_Cave_RockWallE                          0x212
 #define METATILE_Cave_RockWallEWater                     0x27C
+#define METATILE_Cave_RockWallS                          0x219
+#define METATILE_Cave_RockWallSE                         0x21A
+#define METATILE_Cave_RockWallSW                         0x218
 #define METATILE_Cave_RockWallSWater                     0x2B4
+#define METATILE_Cave_RockWallTop                        0x211
+#define METATILE_Cave_RockWallW                          0x210
 #define METATILE_Cave_RockWallWWater                     0x27A
 #define METATILE_Cave_SealedChamberBraille_Mid           0x235
 #define METATILE_Cave_SealedChamberEntrance_BottomLeft   0x232

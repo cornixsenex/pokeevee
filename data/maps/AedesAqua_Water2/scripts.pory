@@ -1,1 +1,11 @@
-mapscripts AedesAqua_Water2_MapScripts {}
+mapscripts AedesAqua_Water2_MapScripts {
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		//Turn Player Up and Reset Var
+		VAR_AEDES_AQUA_STATE, 21: AedesAqua_Script_FacePlayerUp
+
+		//Hide Player on waterfall show
+
+	]
+
+}

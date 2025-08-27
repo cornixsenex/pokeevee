@@ -1,7 +1,13 @@
 mapscripts AedesAqua_MapScripts {
-	//Every warp var must hide player one waterfall show
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+
+		//Turn Player Up and Reset Var - from other map
+	
+		//Every warp var must hide player one waterfall show - from same map
+		VAR_AEDES_AQUA_STATE, 13: AedesAqua_Script_HidePlayer
+		VAR_AEDES_AQUA_STATE, 15: AedesAqua_Script_HidePlayer
 		VAR_AEDES_AQUA_STATE, 17: AedesAqua_Script_HidePlayer
+		VAR_AEDES_AQUA_STATE, 21: AedesAqua_Script_HidePlayer
 	]
 
 	//noise
@@ -10,28 +16,42 @@ mapscripts AedesAqua_MapScripts {
 	//reset var to 0
 	//warp to new map position (7)
 	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_AEDES_AQUA_STATE, 13: AedesAqua_Script_Waterfall13
+		VAR_AEDES_AQUA_STATE, 15: AedesAqua_Script_Waterfall15
 		VAR_AEDES_AQUA_STATE, 17: AedesAqua_Script_Waterfall17
+		VAR_AEDES_AQUA_STATE, 21: AedesAqua_Script_Waterfall21
 	]
 }
 
 script AedesAqua_Script_HidePlayer {
 	hideobjectat (LOCALID_PLAYER, MAP_AEDES_AQUA)
-	hideobjectat (LOCALID_FOLLOWING_POKEMON)
+	hideobjectat (LOCALID_FOLLOWING_POKEMON, MAP_AEDES_AQUA)
 	return
 }
 
-script AedesAqua_Script_Waterfall17 {
-
-	//show new waterfall
+script AedesAqua_Script_Waterfall13 {
 	call (AedesAqua_Script_ShowWaterfall)
-	//nosie
-	//reset var to 0
-	//warp to new map position (7)
-
+	warpsilent (MAP_AEDES_AQUA_WATER1, 24, 18)
 }
 
+script AedesAqua_Script_Waterfall15 {
+	call (AedesAqua_Script_ShowWaterfall)
+	warpsilent (MAP_AEDES_AQUA_WATER1, 48, 16)
+}
+
+script AedesAqua_Script_Waterfall17 {
+	call (AedesAqua_Script_ShowWaterfall)
+	warpsilent (MAP_AEDES_AQUA_WATER1, 16, 48)
+}
+
+script AedesAqua_Script_Waterfall21 {
+	call (AedesAqua_Script_ShowWaterfall)
+	warpsilent (MAP_AEDES_AQUA_WATER2, 8, 10)
+}
+
+
 script AedesAqua_Script_ShowWaterfall {
-	playse (SE_M_SURF)
+	playse (SE_M_HYDRO_PUMP)
 	waitse
 	//Row 1
 	setmetatile (26, 0, METATILE_Cave_RockWallEWater, TRUE)
@@ -68,7 +88,6 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (35, 2, METATILE_Cave_CaveWater, TRUE)
 	setmetatile (36, 2, METATILE_Cave_RockCornerSWWaterHalf, TRUE)
 	//Row 4
-//	setmetatile (26, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (27, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (28, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (29, 3, METATILE_General_WaterfallTop, TRUE)
@@ -78,9 +97,7 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (33, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (34, 3, METATILE_General_WaterfallTop, TRUE)
 	setmetatile (35, 3, METATILE_General_WaterfallTop, TRUE)
-//	setmetatile (36, 3, METATILE_General_WaterfallTop, TRUE)
 	//Row 5
-//	setmetatile (26, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (27, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (28, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (29, 4, METATILE_General_WaterfallBottom, TRUE)
@@ -90,9 +107,7 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (33, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (34, 4, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (35, 4, METATILE_General_WaterfallBottom, TRUE)
-//	setmetatile (36, 4, METATILE_General_WaterfallBottom, TRUE)
 	//Row 6
-//	setmetatile (26, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (27, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (28, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (29, 5, METATILE_General_WaterfallBottom, TRUE)
@@ -102,33 +117,90 @@ script AedesAqua_Script_ShowWaterfall {
 	setmetatile (33, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (34, 5, METATILE_General_WaterfallBottom, TRUE)
 	setmetatile (35, 5, METATILE_General_WaterfallBottom, TRUE)
-//	setmetatile (36, 5, METATILE_General_WaterfallBottom, TRUE)
-
+	special (DrawWholeMapView)	
+	playse (SE_M_HYDRO_PUMP)
+	waitse
 	return
 }
 
-script AedesAqua_Script_WaterControl7 {
-	//interact Y/N - NOTE on the lower water ones it should just say "Has No Effect" on Y choice
+script AedesAqua_Script_FacePlayerUp {
+	turnobject (LOCALID_PLAYER, DIR_NORTH)
+	setvar (VAR_AEDES_AQUA_STATE, 0)
+	return
+}
+
+script AedesAqua_Script_WaterControlNoEffect {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+	} else {
+		msgbox (AedesAqua_Text_WaterControlNoEffect)
+	}
+	closemessage
+}
+
+script AedesAqua_Script_WaterControl1 {
 	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == FALSE) {
 		closemessage
 		end
 	} else {
-		//save var (this one is 17 because New Water level is 1 and position is 7)
-		setvar (VAR_AEDES_AQUA_STATE, 17)
-		//alert player
-		applymovement (LOCALID_PLAYER)
-		//warp to waterfall
-
-
-
-
-
-
+		//save var 
+		setvar (VAR_AEDES_AQUA_STATE, 21)
+		//Waterfall Scene
+		call (AedesAqua_Script_GoToWaterfallScene)
+	}
 }
 
-script AedesAqua_Script_Test {
-	call (AedesAqua_Script_ShowWaterfall)
-	special (DrawWholeMapView)
-	end
+script AedesAqua_Script_WaterControl3 {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+		closemessage
+		end
+	} else {
+		//save var 
+		setvar (VAR_AEDES_AQUA_STATE, 13)
+		//Waterfall Scene
+		call (AedesAqua_Script_GoToWaterfallScene)
+	}
+}
+
+script AedesAqua_Script_WaterControl5 {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+		closemessage
+		end
+	} else {
+		//save var 
+		setvar (VAR_AEDES_AQUA_STATE, 15)
+		//Waterfall Scene
+		call (AedesAqua_Script_GoToWaterfallScene)
+	}
+}
+
+script AedesAqua_Script_WaterControl7 {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+		closemessage
+		end
+	} else {
+		setvar (VAR_AEDES_AQUA_STATE, 17)
+		call (AedesAqua_Script_GoToWaterfallScene)
+	}
+}
+
+script AedesAqua_Script_GoToWaterfallScene {
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//warp to waterfall
+	warpsilent (MAP_AEDES_AQUA, 31, 6)
+	waitstate
+}
+
+text AedesAqua_Text_WaterControl {
+	format("It seems to be a control panel. Would you like to try pressing the buttons?")
+}
+
+text AedesAqua_Text_WaterControlNoEffect {
+	format("It seems like nothing happened.")
 }
