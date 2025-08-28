@@ -1,4 +1,29 @@
 mapscripts AedesAqua_Water1_MapScripts {
+	
+	MAP_SCRIPT_ON_LOAD {
+		//Set Crystal Tiles if pressed
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL2)) {
+			setmetatile (15, 24, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL4)) {
+			setmetatile (50, 20, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL5)) {
+			setmetatile (5, 31, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL7)) {
+			setmetatile (29, 38, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL10)) {
+			setmetatile (18, 53, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL11)) {
+			setmetatile (35, 52, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL12)) {
+			setmetatile (11, 62, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+	}
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 		//Turn Player Up and Reset Var
@@ -92,5 +117,6 @@ script AedesAqua_Water1_Script_ShowNoWaterfall  {
 	special (DrawWholeMapView)
 	delay (50)
 	return
-
 }
+
+

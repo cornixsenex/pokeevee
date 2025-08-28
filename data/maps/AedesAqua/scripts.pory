@@ -301,6 +301,38 @@ script AedesAqua_Script_Crystal4 {
 	end
 }
 
+script AedesAqua_Script_Crystal5 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL5)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL5)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (5, 31, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
+script AedesAqua_Script_Crystal7 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL7)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL7)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (29, 38, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
 script AedesAqua_Script_Crystal9 {
 	if (!flag(FLAG_AEDES_AQUA_CRYSTAL9)) {
 		setflag (FLAG_AEDES_AQUA_CRYSTAL9)
@@ -317,6 +349,22 @@ script AedesAqua_Script_Crystal9 {
 	end
 }
 
+script AedesAqua_Script_Crystal10 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL10)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL10)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (18, 53, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
 script AedesAqua_Script_Crystal11 {
 	if (!flag(FLAG_AEDES_AQUA_CRYSTAL11)) {
 		setflag (FLAG_AEDES_AQUA_CRYSTAL11)
@@ -325,6 +373,22 @@ script AedesAqua_Script_Crystal11 {
 		waitse
 		closemessage
 		setmetatile (35, 52, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
+script AedesAqua_Script_Crystal12 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL12)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL12)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (11, 62, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
 		special (DrawWholeMapView)
 	} else {
 		msgbox (AedesAqua_Text_CrystalPressed)
