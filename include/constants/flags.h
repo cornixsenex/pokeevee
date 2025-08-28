@@ -665,18 +665,18 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
+#define FLAG_AEDES_AQUA_CRYSTAL1  0x264 // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL2  0x265 // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL3  0x266 // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL4  0x267 // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL5  0x268 // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL6  0x269 // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL7  0x26A // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL8  0x26B // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL9  0x26C // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL10 0x26D // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL11 0x26E // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
+#define FLAG_AEDES_AQUA_CRYSTAL12 0x26F // Opens Gate and clears crystal - Top -> Bottom - Left -> Right
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag

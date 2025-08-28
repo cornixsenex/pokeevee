@@ -1,7 +1,47 @@
 mapscripts AedesAqua_MapScripts {
+
+
+	MAP_SCRIPT_ON_LOAD {
+		//Set Crystal Tiles if pressed
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL1)) {
+			setmetatile (43, 10, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL2)) {
+			setmetatile (15, 24, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL3)) {
+			setmetatile (32, 25, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL4)) {
+			setmetatile (50, 20, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL5)) {
+			setmetatile (5, 31, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL7)) {
+			setmetatile (29, 38, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL9)) {
+			setmetatile (52, 44, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL10)) {
+			setmetatile (18, 53, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL11)) {
+			setmetatile (35, 52, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+		if (flag(FLAG_AEDES_AQUA_CRYSTAL12)) {
+			setmetatile (11, 62, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		}
+	}
+
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
 
 		//Turn Player Up and Reset Var - from other map
+		VAR_AEDES_AQUA_STATE, 2: AedesAqua_Script_FacePlayerUp
+		VAR_AEDES_AQUA_STATE, 4: AedesAqua_Script_FacePlayerUp
+		VAR_AEDES_AQUA_STATE, 6: AedesAqua_Script_FacePlayerUp
+		VAR_AEDES_AQUA_STATE, 8: AedesAqua_Script_FacePlayerUp
 	
 		//Every warp var must hide player one waterfall show - from same map
 		VAR_AEDES_AQUA_STATE, 13: AedesAqua_Script_HidePlayer
@@ -197,10 +237,114 @@ script AedesAqua_Script_GoToWaterfallScene {
 	waitstate
 }
 
+script AedesAqua_Script_Crystal1 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL1)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL1)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (43, 10, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
+script AedesAqua_Script_Crystal2 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL2)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL2)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (15, 24, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
+script AedesAqua_Script_Crystal3 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL3)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL3)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (32, 25, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
+script AedesAqua_Script_Crystal4 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL4)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL4)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (50, 20, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
+script AedesAqua_Script_Crystal9 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL9)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL9)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (52, 44, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
+script AedesAqua_Script_Crystal11 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL11)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL11)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (35, 52, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
+
 text AedesAqua_Text_WaterControl {
 	format("It seems to be a control panel. Would you like to try pressing the buttons?")
 }
 
 text AedesAqua_Text_WaterControlNoEffect {
 	format("It seems like nothing happened.")
+}
+
+text AedesAqua_Text_CrystalPress {
+	format("It looks like the blue crystal can be pushed down. Better press it!")
+}
+
+text AedesAqua_Text_CrystalPressed {
+	format("The blue crystal won't go any further down.")
 }
