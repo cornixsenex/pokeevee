@@ -11529,41 +11529,6 @@ bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *object
     return TRUE;
 }
 
-// CUSTOM
-
-// fast diagonal
-bool8 MovementAction_WalkFastDiagonalUpLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    InitMovementNormal(objectEvent, sprite, DIR_NORTHWEST, 1);
-    return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
-}
-
-bool8 MovementAction_WalkFastDiagonalUpRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    InitMovementNormal(objectEvent, sprite, DIR_NORTHEAST, 1);
-    return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
-}
-
-bool8 MovementAction_WalkFastDiagonalDownLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    InitMovementNormal(objectEvent, sprite, DIR_SOUTHWEST, 1);
-    return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
-}
-
-bool8 MovementAction_WalkFastDiagonalDownRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    InitMovementNormal(objectEvent, sprite, DIR_SOUTHEAST, 1);
-    return MovementAction_WalkFastDiagonal_Step1(objectEvent, sprite);
-}
-
-bool8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    if (UpdateMovementNormal(objectEvent, sprite))
-    {
-        sprite->data[2] = 2;
-        return TRUE;
-    }
-    return FALSE;
 }
 
 u16 GetMiniStepCount(u8 speed)
@@ -11784,8 +11749,6 @@ bool8 MovementAction_WalkSlowStairsUp_Step1(struct ObjectEvent *objectEvent, str
     return FALSE;
 }
 
-<<<<<<< HEAD
-=======
 // fast diagonal
 bool8 MovementAction_WalkFastDiagonalUpLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
@@ -11821,7 +11784,6 @@ bool8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *objectEvent, str
     return FALSE;
 }
 
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 bool8 MovementAction_WalkSlowStairsDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     InitWalkSlow(objectEvent, sprite, DIR_SOUTH);

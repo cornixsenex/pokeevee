@@ -12421,10 +12421,6 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-<<<<<<< HEAD
-        .secondaryId = MOVE_ROCK_CLIMB,
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
     },
 
 
@@ -15250,8 +15246,5 @@ const struct Item gItemsInfo[] =
 
 };
 
-<<<<<<< HEAD
-=======
 #undef ITEM_NAME
 #undef ITEM_PLURAL_NAME
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920

@@ -179,14 +179,9 @@ static void CB1_OverworldLink(void);
 static void SetKeyInterceptCallback(u16 (*func)(u32));
 static void SetFieldVBlankCallback(void);
 static void FieldClearVBlankHBlankCallbacks(void);
-<<<<<<< HEAD
-static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *, u16, u8);
-static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *, u8, u16, u8);
-=======
-static void TransitionMapMusic(void);
+//static void TransitionMapMusic(void); - CS -M oved to include/overworld.h DynamicMaps
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *playerStruct, u16 metatileBehavior, enum MapType mapType);
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType);
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 static u16 GetCenterScreenMetatileBehavior(void);
 
 static void *sUnusedOverworldCallback;
@@ -4123,16 +4118,20 @@ static void DestroyItemIconSprite(void)
     }
 }
 
-<<<<<<< HEAD
-#else
-void ScriptShowItemDescription(struct ScriptContext *ctx)
+// returns old sHoursOverride
+u16 SetTimeOfDay(u16 hours)
 {
-    (void) ScriptReadByte(ctx);
+    u16 oldHours = sHoursOverride;
+    sHoursOverride = hours;
+    gTimeUpdateCounter = 0;
+    return oldHours;
 }
-void ScriptHideItemDescription(struct ScriptContext *ctx)
+
+bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
 {
+    SetTimeOfDay(ScriptReadByte(ctx));
+    return FALSE;
 }
-#endif // OW_SHOW_ITEM_DESCRIPTIONS
 
 u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom dynamic maps 
 {
@@ -5859,19 +5858,3 @@ bool32 CheckDoMapPopupOnDynamicWarp(u8 destMapSection, u16 lastMapSection)
 	}
 }
 
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
-// returns old sHoursOverride
-u16 SetTimeOfDay(u16 hours)
-{
-    u16 oldHours = sHoursOverride;
-    sHoursOverride = hours;
-    gTimeUpdateCounter = 0;
-    return oldHours;
-}
-
-bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
-{
-    SetTimeOfDay(ScriptReadByte(ctx));
-    return FALSE;
-}

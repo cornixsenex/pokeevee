@@ -11,14 +11,9 @@
 #include "event_scripts.h"
 #include "fieldmap.h"
 #include "field_control_avatar.h"
-<<<<<<< HEAD
-#include "field_effect.h" //Rock Climb
-#include "field_message_box.h"
-=======
 #include "field_message_box.h"
 #include "field_move.h"
 #include "field_effect.h"
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 #include "field_player_avatar.h"
 #include "field_poison.h"
 #include "field_screen_effect.h"
@@ -528,11 +523,6 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_Questionnaire;
     if (MetatileBehavior_IsTrainerHillTimer(metatileBehavior) == TRUE)
         return EventScript_TrainerHillTimer;
-<<<<<<< HEAD
-    if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
-        return EventScript_UseRockClimb;
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
     if (MetatileBehavior_IsPokeMartSign(metatileBehavior) == TRUE)
     {
         if(direction != DIR_NORTH)
@@ -547,11 +537,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         SetMsgSignPostAndVarFacing(direction);
         return Common_EventScript_ShowPokemonCenterSign;
     }
-<<<<<<< HEAD
-=======
     if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
         return EventScript_UseRockClimb;
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 
     elevation = position->elevation;
     if (elevation == MapGridGetElevationAt(position->x, position->y))

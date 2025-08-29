@@ -4691,7 +4691,13 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
-<<<<<<< HEAD
+void SetHiddenNature(void)
+{
+    u32 hiddenNature = gSpecialVar_Result;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
 //CUSTOMS
 // - DO NOTE: VARIABLES MUST BE DECLARED AT THE TOP OF FUNCTION C89 BS OR SMTHN
 
@@ -6224,11 +6230,4 @@ bool32 GetDynamicMapSec_MareS10_F(void)
 bool32 GetDynamicMapSec_OceanPerimeter2_F(void)
 {
     return GetDynamicMapSec_OceanPerimeter2(FALSE);
-=======
-void SetHiddenNature(void)
-{
-    u32 hiddenNature = gSpecialVar_Result;
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
-    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 }

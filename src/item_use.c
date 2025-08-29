@@ -45,11 +45,8 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
-<<<<<<< HEAD
-#include "random.h"
-#include "constants/map_types.h"
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
+#include "random.h"                //CORNIX - Not 100% they're used but theyre here 
+#include "constants/map_types.h"   //CORNIX - Not 100% they're used but theyre here
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);

@@ -1633,8 +1633,7 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
     INCBIN_U16("data/tilesets/secondary/union_room/palettes/15.gbapal"),
 };
 
-<<<<<<< HEAD
-const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");
+const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.fastSmol");
 
 //HERE BEGINS THE CUSTOM TILESETS
 
@@ -2273,6 +2272,4 @@ const u16 gTilesetPalettes_SurfSchool[][16] =
 };
 
 const u32 gTilesetTiles_SurfSchool[] = INCBIN_U32("data/tilesets/secondary/surf_school/tiles.4bpp.lz");
-=======
-const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.fastSmol");
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
+

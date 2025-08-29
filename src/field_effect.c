@@ -246,12 +246,6 @@ static void UseVsSeeker_DoPlayerAnimation(struct Task *task);
 static void UseVsSeeker_ResetPlayerGraphics(struct Task *task);
 static void UseVsSeeker_CleanUpFieldEffect(struct Task *task);
 
-<<<<<<< HEAD
-
-//Rock Climb
-
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 static void Task_UseRockClimb(u8);
 static bool8 RockClimb_Init(struct Task *, struct ObjectEvent *);
 static bool8 RockClimb_FieldMovePose(struct Task *, struct ObjectEvent *);
@@ -262,18 +256,8 @@ static bool8 RockClimb_Ride(struct Task *task, struct ObjectEvent *objectEvent);
 static bool8 RockClimb_ContinueRideOrEnd(struct Task *, struct ObjectEvent *);
 static bool8 RockClimb_WaitStopRockClimb(struct Task *task, struct ObjectEvent *objectEvent);
 static bool8 RockClimb_StopRockClimbInit(struct Task *task, struct ObjectEvent *objectEvent);
-<<<<<<< HEAD
-
-//End Rock Climb
-
 // Static RAM declarations
 
-static void TryAttachFollowerToPlayer(void);
-
-=======
-// Static RAM declarations
-
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 static u8 sActiveList[32];
 
 // External declarations
@@ -4172,8 +4156,6 @@ static void Task_MoveDeoxysRock(u8 taskId)
     }
 }
 
-<<<<<<< HEAD
-=======
 u8 FldEff_CaveDust(void)
 {
     u8 spriteId;
@@ -4189,7 +4171,6 @@ u8 FldEff_CaveDust(void)
     return spriteId;
 }
 
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 // ROCK CLIMB
 enum RockClimbState
 {
@@ -4366,10 +4347,6 @@ static void RockClimbDust(struct ObjectEvent *objectEvent, u8 direction)
     s8 dx = sRockClimbMovement[direction].dx;
     s8 dy = sRockClimbMovement[direction].dy;
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
     gFieldEffectArguments[0] = objectEvent->currentCoords.x + dx;
     gFieldEffectArguments[1] = objectEvent->currentCoords.y + dy;
     gFieldEffectArguments[2] = objectEvent->previousElevation;
@@ -4390,14 +4367,7 @@ static bool8 RockClimb_ContinueRideOrEnd(struct Task *task, struct ObjectEvent *
 {
     if (!ObjectEventClearHeldMovementIfFinished(objectEvent))
         return FALSE;
-<<<<<<< HEAD
-   
-   //CornixSenex Hacky solution for rockclimb - assumes no ghoul follower functionality :/	
-	TryAttachFollowerToPlayer();
     
-=======
-
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
     PlayerGetDestCoords(&task->tDestX, &task->tDestY);
     MoveCoords(objectEvent->movementDirection, &task->tDestX, &task->tDestY);
     if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(task->tDestX, task->tDestY)))
@@ -4408,10 +4378,6 @@ static bool8 RockClimb_ContinueRideOrEnd(struct Task *task, struct ObjectEvent *
 
     LockPlayerFieldControls();
     gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_SURFING;
-<<<<<<< HEAD
-    gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_CONTROLLABLE;
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_ON_FOOT;
     task->tState++;
     return FALSE;
@@ -4462,45 +4428,6 @@ bool8 IsRockClimbActive(void)
         return FALSE;
 }
 
-<<<<<<< HEAD
-//Cornix Senex Hacky rock climb solution
-//
-//static void TryAttachFollowerToPlayer(void)
-//{
-//    if (PlayerHasFollower())
-//    {
-//        //Keep the follow close by while its hidden to prevent it from going too far out of view
-//        struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
-//        struct ObjectEvent* follower = &gObjectEvents[GetFollowerMapObjId()];
-//        MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
-//    }
-//}
-//
-
-static void TryAttachFollowerToPlayer(void)
-{
-	struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
-	struct ObjectEvent* follower = GetFollowerObject();
-	MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
-}
-
-u8 FldEff_CaveDust(void)
-{
-    u8 spriteId;
-
-    SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
-    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_CAVE_DUST], gFieldEffectArguments[0], gFieldEffectArguments[1], 0xFF);
-    if (spriteId != MAX_SPRITES)
-    {
-        gSprites[spriteId].coordOffsetEnabled = TRUE;
-        gSprites[spriteId].data[0] = 22;
-    }
-
-    return spriteId;
-}
-
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 #undef tState
 #undef tSpriteId
 #undef tTargetX

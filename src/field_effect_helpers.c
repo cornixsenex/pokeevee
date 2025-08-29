@@ -1436,10 +1436,7 @@ u32 FldEff_RockClimbDust(void)
     }
     return 0;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 // Sprite data for FLDEFF_SAND_PILE
 #define sLocalId  data[0]
 #define sMapNum   data[1]

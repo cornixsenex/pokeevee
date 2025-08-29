@@ -27,11 +27,8 @@
 #include "heal_location.h"
 #include "constants/field_specials.h"
 #include "constants/heal_locations.h"
-<<<<<<< HEAD
-#include "constants/map_types.h"
+#include "constants/map_types.h"          //CS - not 100% sure I need this here tbh
 #include "constants/metatile_behaviors.h" //CornixSenex
-=======
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 #include "constants/rgb.h"
 #include "constants/weather.h"
 
