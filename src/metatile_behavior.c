@@ -1,7 +1,7 @@
-#include "field_player_avatar.h" //Cornix - Cycling PullTiles
 #include "global.h"
 #include "metatile_behavior.h"
 #include "constants/metatile_behaviors.h"
+#include "field_player_avatar.h" //CS cycling pull tiles
 
 #define TILE_FLAG_HAS_ENCOUNTERS (1 << 0)
 #define TILE_FLAG_SURFABLE       (1 << 1)
@@ -12,7 +12,8 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_NORMAL]                             = TILE_FLAG_UNUSED,
     [MB_TALL_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_LONG_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_05]                          = TILE_FLAG_HAS_ENCOUNTERS,
+    //Art Canvas
+    [MB_CANVAS]                             = TILE_FLAG_HAS_ENCOUNTERS,
     [MB_DEEP_SAND]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SHORT_GRASS]                        = TILE_FLAG_UNUSED,
     [MB_CAVE]                               = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
@@ -37,7 +38,8 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_ICE]                                = TILE_FLAG_UNUSED,
     [MB_SAND]                               = TILE_FLAG_UNUSED,
     [MB_SEAWEED]                            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_23]                          = TILE_FLAG_UNUSED,
+    //Mortia Tombstone
+    [MB_TOMBSTONE]                          = TILE_FLAG_UNUSED,
     [MB_ASHGRASS]                           = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_FOOTPRINTS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_THIN_ICE]                           = TILE_FLAG_UNUSED,
@@ -46,6 +48,11 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_LAVARIDGE_GYM_B1F_WARP]             = TILE_FLAG_UNUSED,
     [MB_SEAWEED_NO_SURFACING]               = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_REFLECTION_UNDER_BRIDGE]            = TILE_FLAG_UNUSED,
+    //Cycling Directional Pull Tiles
+	[MB_CYCLING_ROAD_PULL_DOWN]            = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_UP]              = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_LEFT]            = TILE_FLAG_UNUSED,
+	[MB_CYCLING_ROAD_PULL_RIGHT]           = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_EAST]                    = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_WEST]                    = TILE_FLAG_UNUSED,
     [MB_IMPASSABLE_NORTH]                   = TILE_FLAG_UNUSED,
@@ -71,6 +78,12 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_WESTWARD_CURRENT]                   = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_NORTHWARD_CURRENT]                  = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_SOUTHWARD_CURRENT]                  = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+	//Spin Tiles
+    [MB_SPIN_RIGHT]                        = TILE_FLAG_UNUSED,
+    [MB_SPIN_LEFT]                         = TILE_FLAG_UNUSED,
+    [MB_SPIN_UP]                           = TILE_FLAG_UNUSED,
+    [MB_SPIN_DOWN]                         = TILE_FLAG_UNUSED,
+    [MB_STOP_SPINNING]                     = TILE_FLAG_UNUSED,
     [MB_NON_ANIMATED_DOOR]                  = TILE_FLAG_UNUSED,
     [MB_LADDER]                             = TILE_FLAG_UNUSED,
     [MB_EAST_ARROW_WARP]                    = TILE_FLAG_UNUSED,
@@ -135,10 +148,6 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM]   = TILE_FLAG_UNUSED,
     [MB_ROCK_STAIRS]                        = TILE_FLAG_UNUSED,
     [MB_ROCK_CLIMB]                         = TILE_FLAG_UNUSED,
-    //Art Class
-    [MB_CANVAS]                          = TILE_FLAG_UNUSED,
-    //Mortia Tombstone
-    [MB_TOMBSTONE]                       = TILE_FLAG_UNUSED,
     //Ignis Mons etc false floor
     [MB_FALSE_FLOOR]                     = TILE_FLAG_UNUSED,
     [MB_FALSE_FLOOR_HOLE]                = TILE_FLAG_UNUSED,
@@ -149,34 +158,13 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_UP_LEFT_STAIR_WARP]                = TILE_FLAG_UNUSED,
     [MB_DOWN_RIGHT_STAIR_WARP]             = TILE_FLAG_UNUSED,
     [MB_DOWN_LEFT_STAIR_WARP]              = TILE_FLAG_UNUSED,
-	//Sideways Stairs
-    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE]        = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_LEFT_SIDE]         = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE_TOP]    = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_LEFT_SIDE_TOP]     = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_RIGHT_SIDE_BOTTOM] = TILE_FLAG_UNUSED,
-    [MB_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM]  = TILE_FLAG_UNUSED,
-    [MB_ROCK_STAIRS]                       = TILE_FLAG_UNUSED,
-	//Rock Climb
-    [MB_ROCK_CLIMB]                        = TILE_FLAG_UNUSED,
-	//Spin Tiles
-    [MB_SPIN_RIGHT]                        = TILE_FLAG_UNUSED,
-    [MB_SPIN_LEFT]                         = TILE_FLAG_UNUSED,
-    [MB_SPIN_UP]                           = TILE_FLAG_UNUSED,
-    [MB_SPIN_DOWN]                         = TILE_FLAG_UNUSED,
-    [MB_STOP_SPINNING]                     = TILE_FLAG_UNUSED,
 	//Cycling Road Tiles
-	[MB_CYCLING_ROAD_PULL_DOWN]            = TILE_FLAG_UNUSED,
-	[MB_CYCLING_ROAD_PULL_UP]              = TILE_FLAG_UNUSED,
-	[MB_CYCLING_ROAD_PULL_LEFT]            = TILE_FLAG_UNUSED,
-	[MB_CYCLING_ROAD_PULL_RIGHT]           = TILE_FLAG_UNUSED,
 	[MB_CYCLING_ROAD_BRIDGE_PULL_RIGHT]    = TILE_FLAG_UNUSED,
 	//Ocean Map Transition Tiles
 	[MB_OCEAN_MAP_TRANSITION_A]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 	[MB_OCEAN_MAP_TRANSITION_B]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 	[MB_OCEAN_MAP_TRANSITION_C]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
 	[MB_OCEAN_MAP_TRANSITION_D]            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 };
 
 bool8 MetatileBehavior_IsATile(u8 metatileBehavior)

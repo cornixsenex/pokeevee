@@ -7911,27 +7911,6 @@ void IsLastMonThatKnowsSurf(void)
     }
 }
 
-static void FieldCallback_RockClimb(void)
-{
-    gFieldEffectArguments[0] = GetCursorSelectionMonId();
-    FieldEffectStart(FLDEFF_USE_ROCK_CLIMB);
-}
-
-static bool8 SetUpFieldMove_RockClimb(void)
-{
-    s16 x, y;
-
-    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-    if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(x, y)))
-    {
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_RockClimb;
-        return TRUE;
-    }
-    
-    return FALSE;
-}
-
 void CursorCb_MoveItemCallback(u8 taskId)
 {
     u16 item1, item2;

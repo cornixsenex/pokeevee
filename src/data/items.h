@@ -14704,7 +14704,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_SURFBOARD] =
     {
-        .name = _("Surfboard"),
+        .name = ITEM_NAME("Surfboard"),
         .price = 0,
         .description = sSurfboardDesc,
         .importance = 1,
@@ -14718,7 +14718,7 @@ const struct Item gItemsInfo[] =
 	
 	[ITEM_KIND_BUD] =
 	{
-		.name = _("Kind Bud"),
+		.name = ITEM_NAME("Kind Bud"),
 		.price = 420,
         .holdEffectParam = 255,
 		.description = sKindBudDesc,
@@ -14734,7 +14734,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_INSURANCE_FORM_A] =
 	{
-		.name = _("Forms"),
+		.name = ITEM_NAME("Forms"),
         .price = 0,
         .description = sInsuranceFormADesc,
         .importance = 1,
@@ -14748,7 +14748,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_INSURANCE_FORM_B] =
 	{
-		.name = _("Forms"),
+		.name = ITEM_NAME("Forms"),
         .price = 0,
         .description = sInsuranceFormBDesc,
         .importance = 1,
@@ -14762,7 +14762,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_INSURANCE_CARD] =
 	{
-		.name = _("Isurance Card"),
+		.name = ITEM_NAME("Isurance Card"),
         .price = 0,
         .description = sInsuranceCardDesc,
         .importance = 1,
@@ -14776,7 +14776,7 @@ const struct Item gItemsInfo[] =
 	
 	[ITEM_DEATH_STICK] =
 	{
-		.name = _("Death Stick"),
+		.name = ITEM_NAME("Death Stick"),
 		.price = 420,
         .holdEffectParam = 255,
 		.description = sDeathStickDesc,
@@ -14792,7 +14792,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_TATTOO] =
 	{
-		.name = _("Tough Tattoo"),
+		.name = ITEM_NAME("Tough Tattoo"),
         .price = 0,
         .description = sTattooDesc,
         .importance = 1,
@@ -14806,7 +14806,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_DIPLOMA] =
 	{
-		.name = _("Diploma"),
+		.name = ITEM_NAME("Diploma"),
         .price = 0,
 		.description = sDiplomaDesc,
         .importance = 1,
@@ -14820,7 +14820,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_KEG] =
 	{
-		.name = _("Keg"),
+		.name = ITEM_NAME("Keg"),
         .price = 0,
 		.description = sKegDesc,
         .importance = 1,
@@ -14834,7 +14834,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_ANCIENT_LAMP] =
 	{
-		.name = _("Ancient Lamp"),
+		.name = ITEM_NAME("Ancient Lamp"),
         .price = 0,
 		.description = sAncientLampDesc,
         .importance = 1,
@@ -14848,7 +14848,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_BOOK] =
 	{
-		.name = _("Test Book"),
+		.name = ITEM_NAME("Test Book"),
         .price = 0,
 		.description = sTestBookDesc,
         .importance = 1,
@@ -14862,7 +14862,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_WEDDING_INVITATION_HECTOR] =
 	{
-		.name = _("Invitation"),
+		.name = ITEM_NAME("Invitation"),
         .price = 0,
 		.description = sWeddingInvitationDesc_Hector,
         .importance = 1,
@@ -14876,7 +14876,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_WEDDING_INVITATION_AENEAS] =
 	{
-		.name = _("Invitation"),
+		.name = ITEM_NAME("Invitation"),
         .price = 0,
 		.description = sWeddingInvitationDesc_Aeneas,
         .importance = 1,
@@ -14890,7 +14890,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_WEDDING_INVITATION_AGAMEMNON] =
 	{
-		.name = _("Invitation"),
+		.name = ITEM_NAME("Invitation"),
         .price = 0,
 		.description = sWeddingInvitationDesc_Agamemnon,
         .importance = 1,
@@ -14904,7 +14904,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_WEDDING_INVITATION_ULYSSES] =
 	{
-		.name = _("Invitation"),
+		.name = ITEM_NAME("Invitation"),
         .price = 0,
 		.description = sWeddingInvitationDesc_Ulysses,
         .importance = 1,
@@ -14918,7 +14918,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_BIG_HAMMER] =
 	{
-		.name = _("Big Hammer"),
+		.name = ITEM_NAME("Big Hammer"),
         .price = 0,
 		.description = sBigHammerDesc,
         .importance = 1,
@@ -14933,7 +14933,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_OSTRACON] =
 	{
-		.name = _("Ostracon"),
+		.name = ITEM_NAME("Ostracon"),
         .price = 0,
 		.description = sOstraconDesc,
         .importance = 1,
@@ -14947,7 +14947,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_COLCHIS_KEY] =
     {
-        .name = _("Colchis Key"),
+        .name = ITEM_NAME("Colchis Key"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A rusty key from\n"
@@ -14963,7 +14963,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_COLCHIS_RING] =
     {
-        .name = _("Colchis Ring"),
+        .name = ITEM_NAME("Colchis Ring"),
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(
@@ -14979,7 +14979,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_COLCHIS_APPLE] =
     {
-        .name = _("Colchis Apple"),
+        .name = ITEM_NAME("Colchis Apple"),
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(
@@ -14995,7 +14995,7 @@ const struct Item gItemsInfo[] =
     
 	[ITEM_COLCHIS_JAIL_KEY] =
     {
-        .name = _("Colchis Jail Key"),
+        .name = ITEM_NAME("Colchis Jail Key"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A rusty key from\n"
@@ -15011,7 +15011,7 @@ const struct Item gItemsInfo[] =
 	
 	[ITEM_TRAINER_CARD] =
 	{
-		.name = _("Trainer Card"),
+		.name = ITEM_NAME("Trainer Card"),
         .price = 0,
 		.description = sTrainerCardDesc,
         .importance = 1,
@@ -15025,7 +15025,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_SCYTHE] =
 	{
-		.name = _("Scythe"),
+		.name = ITEM_NAME("Scythe"),
         .price = 0,
 		.description = sScytheDesc,
         .importance = 1,
@@ -15040,7 +15040,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_MEWRA_SIGIL] =
 	{
-		.name = _("Mewra Sigil"),
+		.name = ITEM_NAME("Mewra Sigil"),
         .price = 0,
         .description = COMPOUND_STRING(
             "An ancient symbol\n"
@@ -15057,7 +15057,7 @@ const struct Item gItemsInfo[] =
 
 	[ITEM_FLASHLIGHT] =
 	{
-		.name = _("Flashlight"),
+		.name = ITEM_NAME("Flashlight"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A durable plastic\n"
@@ -15074,7 +15074,7 @@ const struct Item gItemsInfo[] =
     
 	[ITEM_CORNELIUS_LETTER] =
     {
-        .name = _("Sealed Envelope"),
+        .name = ITEM_NAME("Sealed Envelope"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A sealed envelope\n"
@@ -15090,7 +15090,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_TRIVIS_POTESTATIS] =
     {
-        .name = _("Trivis Potestatis"),
+        .name = ITEM_NAME("Trivis Potestatis"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A heavy piece of\n"
@@ -15106,7 +15106,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_TRIVIS_SAPIENTIAE] =
     {
-        .name = _("Trivis Sapientiae"),
+        .name = ITEM_NAME("Trivis Sapientiae"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A smooth, gold,\n"
@@ -15122,7 +15122,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_FORTITUDINIS] =
     {
-        .name = _("Trivis Fortitudinis"),
+        .name = ITEM_NAME("Trivis Fortitudinis"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A solid, warm, piece\n"
@@ -15138,7 +15138,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD1] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,
@@ -15151,7 +15151,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD2] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,
@@ -15164,7 +15164,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD3] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,
@@ -15177,7 +15177,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD4] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,
@@ -15190,7 +15190,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD5] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,
@@ -15203,7 +15203,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD6] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,
@@ -15216,7 +15216,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD7] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,
@@ -15229,7 +15229,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_TRIVIS_SHARD8] =
     {
-        .name = _("Trivis Shard"),
+        .name = ITEM_NAME("Trivis Shard"),
         .price = 0,
 		.description = sTrivisShardDesc,
         .importance = 2,

@@ -11529,8 +11529,6 @@ bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *object
     return TRUE;
 }
 
-}
-
 u16 GetMiniStepCount(u8 speed)
 {
     return (u16)sStepTimes[speed];
