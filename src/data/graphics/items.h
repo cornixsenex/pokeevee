@@ -2102,27 +2102,27 @@ const u16 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U16("graphics/items/icon
 
 // KUSTOM ITEM ICONS
 
-const u32 gItemIcon_KindBud[] = INCBIN_U32("graphics/items/icons/kind_bud.4bpp.lz");
+const u32 gItemIcon_KindBud[] = INCBIN_U32("graphics/items/icons/kind_bud.4bpp.smol");
 const u16 gItemIconPalette_KindBud[] = INCBIN_U16("graphics/items/icon_palettes/kind_bud.gbapal");
 
-const u32 gItemIcon_Book[] = INCBIN_U32("graphics/items/icons/book.4bpp.lz");
+const u32 gItemIcon_Book[] = INCBIN_U32("graphics/items/icons/book.4bpp.smol");
 const u16 gItemIconPalette_Book[] = INCBIN_U16("graphics/items/icon_palettes/book.gbapal");
 
-const u32 gItemIcon_BigHammer[] = INCBIN_U32("graphics/items/icons/big_hammer.4bpp.lz");
+const u32 gItemIcon_BigHammer[] = INCBIN_U32("graphics/items/icons/big_hammer.4bpp.smol");
 const u16 gItemIconPalette_BigHammer[] = INCBIN_U16("graphics/items/icon_palettes/big_hammer.gbapal");
 
-const u32 gItemIcon_Scythe[] = INCBIN_U32("graphics/items/icons/scythe.4bpp.lz");
+const u32 gItemIcon_Scythe[] = INCBIN_U32("graphics/items/icons/scythe.4bpp.smol");
 const u16 gItemIconPalette_Scythe[] = INCBIN_U16("graphics/items/icon_palettes/scythe.gbapal");
 
-const u32 gItemIcon_Trivis[] = INCBIN_U32("graphics/items/icons/trivis.4bpp.lz");
+const u32 gItemIcon_Trivis[] = INCBIN_U32("graphics/items/icons/trivis.4bpp.smol");
 const u16 gItemIconPalette_Trivis[] = INCBIN_U16("graphics/items/icon_palettes/trivis.gbapal");
 
 //8 Trivis Shards - share the same palette
-const u32 gItemIcon_TrivisShard1[] = INCBIN_U32("graphics/items/icons/trivis_shard1.4bpp.lz");
-const u32 gItemIcon_TrivisShard2[] = INCBIN_U32("graphics/items/icons/trivis_shard2.4bpp.lz");
-const u32 gItemIcon_TrivisShard3[] = INCBIN_U32("graphics/items/icons/trivis_shard3.4bpp.lz");
-const u32 gItemIcon_TrivisShard4[] = INCBIN_U32("graphics/items/icons/trivis_shard4.4bpp.lz");
-const u32 gItemIcon_TrivisShard5[] = INCBIN_U32("graphics/items/icons/trivis_shard5.4bpp.lz");
-const u32 gItemIcon_TrivisShard6[] = INCBIN_U32("graphics/items/icons/trivis_shard6.4bpp.lz");
-const u32 gItemIcon_TrivisShard7[] = INCBIN_U32("graphics/items/icons/trivis_shard7.4bpp.lz");
-const u32 gItemIcon_TrivisShard8[] = INCBIN_U32("graphics/items/icons/trivis_shard8.4bpp.lz");
+const u32 gItemIcon_TrivisShard1[] = INCBIN_U32("graphics/items/icons/trivis_shard1.4bpp.smol");
+const u32 gItemIcon_TrivisShard2[] = INCBIN_U32("graphics/items/icons/trivis_shard2.4bpp.smol");
+const u32 gItemIcon_TrivisShard3[] = INCBIN_U32("graphics/items/icons/trivis_shard3.4bpp.smol");
+const u32 gItemIcon_TrivisShard4[] = INCBIN_U32("graphics/items/icons/trivis_shard4.4bpp.smol");
+const u32 gItemIcon_TrivisShard5[] = INCBIN_U32("graphics/items/icons/trivis_shard5.4bpp.smol");
+const u32 gItemIcon_TrivisShard6[] = INCBIN_U32("graphics/items/icons/trivis_shard6.4bpp.smol");
+const u32 gItemIcon_TrivisShard7[] = INCBIN_U32("graphics/items/icons/trivis_shard7.4bpp.smol");
+const u32 gItemIcon_TrivisShard8[] = INCBIN_U32("graphics/items/icons/trivis_shard8.4bpp.smol");
