@@ -1970,12 +1970,7 @@ const u16 gItemIconPalette_PunchingGlove[] = INCBIN_U16("graphics/items/icon_pal
 const u32 gItemIcon_CovertCloak[] = INCBIN_U32("graphics/items/icons/covert_cloak.4bpp.smol");
 const u16 gItemIconPalette_CovertCloak[] = INCBIN_U16("graphics/items/icon_palettes/covert_cloak.gbapal");
 
-<<<<<<< HEAD
-
-const u32 gItemIcon_LoadedDice[] = INCBIN_U32("graphics/items/icons/loaded_dice.4bpp.lz");
-=======
 const u32 gItemIcon_LoadedDice[] = INCBIN_U32("graphics/items/icons/loaded_dice.4bpp.smol");
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 const u16 gItemIconPalette_LoadedDice[] = INCBIN_U16("graphics/items/icon_palettes/loaded_dice.gbapal");
 
 const u32 gItemIcon_AuspiciousArmor[] = INCBIN_U32("graphics/items/icons/auspicious_armor.4bpp.smol");

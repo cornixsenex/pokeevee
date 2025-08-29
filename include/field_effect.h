@@ -49,14 +49,6 @@ void MultiplyPaletteRGBComponents(u16 i, u8 r, u8 g, u8 b);
 void FreeResourcesAndDestroySprite(struct Sprite *sprite, u8 spriteId);
 u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority);
 void StartEscapeRopeFieldEffect(void);
-<<<<<<< HEAD
-bool8 IsRockClimbActive(void);
-void FieldEffectFreeGraphicsResources(struct Sprite *sprite);
-
-void HideFollowerForFieldEffect(void);
-
-=======
 void FieldEffectFreeGraphicsResources(struct Sprite *sprite);
 bool8 IsRockClimbActive(void);
->>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 #endif // GUARD_FIELD_EFFECTS_H
