@@ -504,6 +504,29 @@ EventScript_UseDefog::
 	releaseall
 	end
 
+@@Cornix Custom DoRockClimb
+EventScript_DoRockClimb::
+	lock
+	checkitem ITEM_HM_DIVE, 1
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantDoRockClimb
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToRockClimb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndRockClimb
+	msgbox Text_DoRockClimb, MSGBOX_DEFAULT
+	closemessage
+	dofieldeffect FLDEFF_USE_ROCK_CLIMB
+	waitstate
+	goto EventScript_EndRockClimb
+	end
+
+EventScript_CantDoRockClimb::
+	msgbox Text_CantDoRockClimb, MSGBOX_DEFAULT
+    closemessage
+    releaseall
+    end
+
+
+@@ rhh vanilla
 EventScript_UseRockClimb::
 	lockall
 	checkfieldmove FIELD_MOVE_ROCK_CLIMB
@@ -530,9 +553,16 @@ Text_WantToRockClimb:
     .string "The cliff is steep.\n"
     .string "Would you like to use Rock Climb?$"
 
+Text_DoRockClimb:
+    .string "{PLAYER} used the Climbing Gloves!$"
+
 Text_MonUsedRockClimb:
     .string "{STR_VAR_1} used Rock Climb!$"
 
 Text_CantRockClimb:
     .string "The cliff is steep.\n"
     .string "A Pokémon may be able to climb it.$"
+
+Text_CantDoRockClimb:
+    .string "The cliff is steep! Maybe one\n"
+    .string "day I'll be able to climb it.$"

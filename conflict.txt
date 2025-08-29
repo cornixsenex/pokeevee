@@ -79,10 +79,8 @@ $CONFLICT (content): Merge conflict in src/region_map.c
 
 
 #Rock Climb - followers
-#Custom Trainers
 #Custom Field Moves (scythe, hammer, flashlight)a
 #field effect table thingymadoot may be out of order check various field effects
-#Custom Trainer Classes
 #Custom metatile behaviors (art class, spin tiles, cyling pull, false floor, colchis battle, ocean transition, mortia tombstones)
 #Custom obedience stuff
 #Sideways stairs
