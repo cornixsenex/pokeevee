@@ -244,7 +244,6 @@
 #define MOVEMENT_ACTION_FIGURE_8                        0x9B
 #define MOVEMENT_ACTION_FLY_UP                          0x9C
 #define MOVEMENT_ACTION_FLY_DOWN                        0x9D
-//These are for VS SEEKER added by rhh
 #define MOVEMENT_ACTION_EMOTE_X                         0x9E
 #define MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK          0x9F
 #define MOVEMENT_ACTION_EXIT_POKEBALL                   0xA0
@@ -261,21 +260,18 @@
 #define MOVEMENT_ACTION_SURF_STILL_UP                   0xAB
 #define MOVEMENT_ACTION_SURF_STILL_LEFT                 0xAC
 #define MOVEMENT_ACTION_SURF_STILL_RIGHT                0xAD
+//fast diagonal movement
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT      0xAE
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT     0xAF
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT    0xB0
+#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT   0xB1
 
 //KUSTOMS
-
 //Spin Tiles (added for...spin tiles)
-#define MOVEMENT_ACTION_SPIN_DOWN                       0xAE
-#define MOVEMENT_ACTION_SPIN_UP                         0xAF
-#define MOVEMENT_ACTION_SPIN_LEFT                       0xB0
-#define MOVEMENT_ACTION_SPIN_RIGHT                      0xB1
-
-//fast diagonal movement (added for Rock Climb)
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT      0xB2
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT     0xB3
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT    0xB4
-#define MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT   0xB5
-
+#define MOVEMENT_ACTION_SPIN_DOWN                       0xB2
+#define MOVEMENT_ACTION_SPIN_UP                         0xB3
+#define MOVEMENT_ACTION_SPIN_LEFT                       0xB4
+#define MOVEMENT_ACTION_SPIN_RIGHT                      0xB5
 //END KUSTOMS
 
 #define MOVEMENT_ACTION_STEP_END 0xFE

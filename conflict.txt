@@ -1,0 +1,56 @@
+!Trainer party syntax
+
+$CONFLICT (content): Merge conflict in .gitignore
+	>poryscript
+$CONFLICT (content): Merge conflict in data/event_scripts.s
+	>field_pic.h
+$CONFLICT (content): Merge conflict in data/field_effect_scripts.s
+	>Blank Spaces. Rock Climb Related
+$CONFLICT (content): Merge conflict in data/scripts/field_move_scripts.inc	
+	>Duplicate Rock Climb entries
+$CONFLICT (content): Merge conflict in data/specials.inc
+	>New SetHiddenNature above all my customs
+$CONFLICT (content): Merge conflict in include/config/battle.hs
+	>Config
+$CONFLICT (content): Merge conflict in include/config/overworld.h
+	>Config - add Rockclimb field move config
+$CONFLICT (content): Merge conflict in include/constants/event_object_movement.h
+	>Official rock climb movement actions - re-organize spin tiles to the bottom
+$CONFLICT (content): Merge conflict in include/constants/field_effects.h
+	>Official rock climb field effect - kept my not to keep table in order
+$CONFLICT (content): Merge conflict in include/constants/map_types.h
+	>Just a comment
+$CONFLICT (content): Merge conflict in include/constants/metatile_behaviors.h
+	>Rock Climb official
+!CONFLICT (content): Merge conflict in include/constants/trainers.h
+	>Trainer Class are an enum now not defines 
+CONFLICT (content): Merge conflict in include/field_effect.h
+CONFLICT (content): Merge conflict in include/metatile_behavior.h
+CONFLICT (content): Merge conflict in include/trainer_pokemon_sprites.h
+CONFLICT (content): Merge conflict in src/battle_util.c
+CONFLICT (modify/delete): src/data/battle_partners.h deleted in 7056aaba6eda97a83aa22765c8dff3ca39e69920 and modified in HEAD.  Version HEAD of src/data/battle_partners.h left in tree.
+CONFLICT (content): Merge conflict in src/data/field_effects/field_effect_object_template_pointers.h
+CONFLICT (content): Merge conflict in src/data/field_effects/field_effect_objects.h
+CONFLICT (content): Merge conflict in src/data/graphics/items.h
+CONFLICT (content): Merge conflict in src/data/items.h
+CONFLICT (content): Merge conflict in src/data/object_events/movement_action_func_tables.h
+CONFLICT (content): Merge conflict in src/data/party_menu.h
+CONFLICT (content): Merge conflict in src/data/tilesets/graphics.h
+CONFLICT (modify/delete): src/data/trainers.h deleted in 7056aaba6eda97a83aa22765c8dff3ca39e69920 and modified in HEAD.  Version HEAD of src/data/trainers.h left in tree.
+CONFLICT (content): Merge conflict in src/event_object_movement.c
+CONFLICT (content): Merge conflict in src/field_control_avatar.c
+CONFLICT (content): Merge conflict in src/field_effect.c
+CONFLICT (content): Merge conflict in src/field_effect_helpers.c
+CONFLICT (content): Merge conflict in src/field_specials.c
+CONFLICT (content): Merge conflict in src/item_use.c
+CONFLICT (content): Merge conflict in src/metatile_behavior.c
+CONFLICT (content): Merge conflict in src/overworld.c
+CONFLICT (content): Merge conflict in src/party_menu.c
+CONFLICT (content): Merge conflict in src/region_map.c
+
+
+
+#Rock Climb
+#Custom Trainers
+#Custom Field Moves (scythe, hammer, flashlight)a
+#field effect table thingymadoot may be out of order check various field effects

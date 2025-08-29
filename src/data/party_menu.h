@@ -785,6 +785,7 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
 };
 
+<<<<<<< HEAD
 static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =
 {
     [FIELD_MOVE_CUT]          = MOVE_CUT,
@@ -836,6 +837,8 @@ struct
 #endif
 };
 
+=======
+>>>>>>> 7056aaba6eda97a83aa22765c8dff3ca39e69920
 static const u8 *const sUnionRoomTradeMessages[] =
 {
     [UR_TRADE_MSG_NOT_MON_PARTNER_WANTS - 1]       = gText_NotPkmnOtherTrainerWants,
