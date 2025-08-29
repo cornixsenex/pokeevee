@@ -28,10 +28,10 @@
 #define B_BURN_DAMAGE               GEN_LATEST // In Gen7+, burn damage is 1/16th of max HP instead of 1/8th. Also applies to Frostbite.
 #define B_BURN_FACADE_DMG           GEN_LATEST // In Gen6+, burn's effect of lowering the Attack stat no longer applies to Facade.
 #define B_BINDING_DAMAGE            GEN_LATEST // In Gen6+, binding damage is 1/8 of max HP instead of 1/16. (With Binding Band, 1/6 and 1/8 respectively.)
-#define B_PSYWAVE_DMG               GEN_4 // Psywave's damage formula. See Cmd_psywavedamageeffect.
-#define B_PAYBACK_SWITCH_BOOST      GEN_4 // In Gen5+, if the opponent switches out, Payback's damage will no longer be doubled.
-#define B_HIDDEN_POWER_DMG          GEN_4 // In Gen6+, Hidden Power's base power was set to always be 60. Before, it was determined by the mon's IVs.
-#define B_ROUGH_SKIN_DMG            GEN_3 // In Gen4+, Rough Skin contact damage is 1/8th of max HP instead of 1/16th. This will also affect Iron Barbs.
+#define B_PSYWAVE_DMG               GEN_LATEST // Psywave's damage formula. See DoFixedDamageMoveCalc for details.
+#define B_PAYBACK_SWITCH_BOOST      GEN_LATEST // In Gen5+, if the opponent switches out, Payback's damage will no longer be doubled.
+#define B_HIDDEN_POWER_DMG          GEN_4      // In Gen6+, Hidden Power's base power was set to always be 60. Before, it was determined by the mon's IVs.
+#define B_ROUGH_SKIN_DMG            GEN_3      // In Gen4+, Rough Skin contact damage is 1/8th of max HP instead of 1/16th. This will also affect Iron Barbs.
 #define B_KNOCK_OFF_DMG             GEN_LATEST // In Gen6+, Knock Off deals 50% more damage when knocking off an item.
 #define B_SPORT_DMG_REDUCTION       GEN_LATEST // In Gen5+, Water/Mud Sport reduce Fire/Electric Damage by 67% instead of 50%.
 #define B_EXPLOSION_DEFENSE         GEN_4 // In Gen5+, Self-Destruct and Explosion don't halve the targets' defense.

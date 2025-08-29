@@ -1622,7 +1622,7 @@ static void Task_StairWarp(u8 taskId)
         LockPlayerFieldControls();
         FreezeObjectEvents();
         CameraObjectFreeze();
-        HideFollowerForFieldEffect(); // Hide follower before warping
+        HideFollowerForFieldEffect();
         tState++;
         break;
     case 1:

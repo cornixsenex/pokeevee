@@ -1,7 +1,6 @@
-	.align 2
-voicegroup193::
-	voice_keysplit voicegroup005, KeySplitTable1
-	voice_keysplit voicegroup005, KeySplitTable1
+voice_group voicegroup193
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -49,18 +48,18 @@ voicegroup193::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 235, 0, 204
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup006, KeySplitTable2
-	voice_keysplit voicegroup006, KeySplitTable2
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 235, 0, 204
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup006, KeySplitTable2
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup008, KeySplitTable4
+	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup009, KeySplitTable5
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

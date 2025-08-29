@@ -1,5 +1,4 @@
-	.align 2
-voicegroup192::
+voice_group voicegroup192
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -22,13 +21,13 @@ voicegroup192::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit_all voicegroup002
+	voice_keysplit_all voicegroup_frlg_fanfare_drumset_1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup006, KeySplitTable2
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup005, KeySplitTable1
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -80,7 +79,7 @@ voicegroup192::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup007, KeySplitTable3
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
