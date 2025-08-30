@@ -1,6 +1,11 @@
 mapscripts AedesAqua_Water1_MapScripts {
 	
 	MAP_SCRIPT_ON_LOAD {
+		//Suppress Surf Blob on Waterfall Scene
+		if (var(VAR_AEDES_AQUA_STATE) == 4) { //if var == anything that triggers waterfall ON_FRAME_TABLE
+			call (AedesAqua_Water1_Script_SupressSurf)
+		}
+
 		//Set Crystal Tiles if pressed
 		if (flag(FLAG_AEDES_AQUA_CRYSTAL2)) {
 			setmetatile (15, 24, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
@@ -32,11 +37,12 @@ mapscripts AedesAqua_Water1_MapScripts {
 		VAR_AEDES_AQUA_STATE, 17: AedesAqua_Script_FacePlayerUp
 
 		//Hide Player on waterfall show
+		VAR_AEDES_AQUA_STATE, 4: AedesAqua_Water1_Script_HidePlayer
 
 	]
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_AEDES_AQUA_STATE, 2: AedesAqua_Water1_Script_NoWaterfall4
+		VAR_AEDES_AQUA_STATE, 4: AedesAqua_Water1_Script_NoWaterfall4
 
 	]
 		
@@ -44,7 +50,7 @@ mapscripts AedesAqua_Water1_MapScripts {
 
 script AedesAqua_Water1_Script_NoWaterfall4 {
 	call (AedesAqua_Water1_Script_ShowNoWaterfall)
-	warpsilent (MAP_AEDES_AQUA, 58, 6)
+	warpsilent (MAP_AEDES_AQUA, 40, 18)
 }
 
 script AedesAqua_Water1_Script_ShowNoWaterfall  {
@@ -104,19 +110,54 @@ script AedesAqua_Water1_Script_ShowNoWaterfall  {
 	setmetatile (33, 4, METATILE_Cave_RockWallS, TRUE)
 	setmetatile (34, 4, METATILE_Cave_RockWallS, TRUE)
 	setmetatile (35, 4, METATILE_Cave_RockWallS, TRUE)
+	//This part needs work to look better 
+
+
 	//Row 6
-	setmetatile (27, 5, METATILE_Cave_RockWallS, TRUE)
-	setmetatile (28, 5, METATILE_Cave_RockWallS, TRUE)
-	setmetatile (29, 5, METATILE_Cave_RockWallS, TRUE)
-	setmetatile (30, 5, METATILE_Cave_RockWallS, TRUE)
-	setmetatile (31, 5, METATILE_Cave_SealedChamberEntrance_BottomMid, TRUE)
-	setmetatile (32, 5, METATILE_Cave_RockWallS, TRUE)
-	setmetatile (33, 5, METATILE_Cave_RockWallS, TRUE)
-	setmetatile (34, 5, METATILE_Cave_RockWallS, TRUE)
-	setmetatile (35, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (27, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (28, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (29, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (30, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (31, 5, METATILE_Cave_SealedChamberEntrance_BottomMid, TRUE)
+	//setmetatile (32, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (33, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (34, 5, METATILE_Cave_RockWallS, TRUE)
+	//setmetatile (35, 5, METATILE_Cave_RockWallS, TRUE)
 	special (DrawWholeMapView)
 	delay (50)
 	return
 }
 
+script AedesAqua_Water1_Script_SupressSurf {
+	setmetatile (31, 6, METATILE_Cave_CaveWater_False, FALSE)
+	return
+}
+
+script AedesAqua_Water1_Script_HidePlayer {
+	hideobjectat (LOCALID_PLAYER, MAP_AEDES_AQUA_WATER1)
+	hideobjectat (LOCALID_FOLLOWING_POKEMON, MAP_AEDES_AQUA_WATER1)
+	return
+}
+
+script AedesAqua_Water1_Script_WaterControl4 {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == FALSE) {
+		closemessage
+		end
+	} else {
+		//save var 
+		setvar (VAR_AEDES_AQUA_STATE, 4)
+		//Waterfall Scene
+		call (AedesAqua_Water1_Script_GoToWaterfallScene)
+	}
+}
+
+script AedesAqua_Water1_Script_GoToWaterfallScene {
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//warp to waterfall
+	warpsilent (MAP_AEDES_AQUA_WATER1, 31, 6)
+	waitstate
+}
 
