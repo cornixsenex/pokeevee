@@ -2375,7 +2375,7 @@ text Tombstone_Text_Rommel {
 }
 
 text Tombstone_Text_Euripides {
-	format("EVRIPIDES SALAMINIS\nMMDCLXX - MMDCCXVI")
+	format("EVRIPIDES SALAMINIS\nCCLXXIV - CCCXLVIII")
 }
 
 text Tombstone_Text_Hawking {

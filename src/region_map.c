@@ -27,8 +27,6 @@
 #include "heal_location.h"
 #include "constants/field_specials.h"
 #include "constants/heal_locations.h"
-#include "constants/map_types.h"          //CS - not 100% sure I need this here tbh
-#include "constants/metatile_behaviors.h" //CornixSenex
 #include "constants/rgb.h"
 #include "constants/weather.h"
 

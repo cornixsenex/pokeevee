@@ -20,8 +20,10 @@ script LoonixBeach_EventScript_Item_Surfboard {
 }
 
 script LoonixBeach_Script_Sign1 {
-	giveitem (ITEM_BOOK, 1)
+	giveitem (ITEM_POTION, 1)
     closemessage
+	giveitem (ITEM_ORAN_BERRY, 4)
+	closemessage
 	end
 }
 

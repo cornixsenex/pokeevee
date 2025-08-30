@@ -3080,7 +3080,7 @@ Tombstone_Text_Rommel::
 Tombstone_Text_Euripides::
 # 2377 "data/maps/MareS1/scripts.pory"
 	.string "EVRIPIDES SALAMINIS\n"
-	.string "MMDCLXX - MMDCCXVI$"
+	.string "CCLXXIV - CCCXLVIII$"
 
 Tombstone_Text_Hawking::
 # 2381 "data/maps/MareS1/scripts.pory"
