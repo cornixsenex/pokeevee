@@ -168,6 +168,9 @@
 #define METATILE_Cave_ShoalCave_BlueStone_Small          0x35B
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
+#define METATILE_Cave_WaterDoorEdgeL                     0x3A1
+#define METATILE_Cave_WaterDoorEdgeR                     0x3A2
+#define METATILE_Cave_WaterLedgeS                        0x291
 
 // gTileset_Colchis
 #define METATILE_Colchis_DoorOpen_Left        0x200
