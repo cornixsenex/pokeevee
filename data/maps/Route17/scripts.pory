@@ -220,5 +220,39 @@ text Route17_Text_Block2 {
 //If there is no God then it doesn't matter what I do but if He does exist then I must do as I"m instructed 
 //Therefore whether I believe or not does not matter the only thing to do is go to the temple and seek guidance for my present situation
 text Route17_Text_OrestesBridge {
-	format("WIP ORESTES MONOLOGUE")
+	format("Familiar Drake, unchanged since happy days
+			long gone, transformed into my present grief,
+			do you still recognize Orestes, or
+			is this face too twisted by pain and tears?
+			How else could a good son compose himself
+			while his father, no ordinary man
+			but that Hyperion among satyrs
+			mighty Agamemnon, lies comatose
+			in bed, bewitched by that accursed...Accursed?
+			My temper betrays my tongue to speak sin
+			for how could a good son call his mother
+			accursed? There lies the heart of my despair.
+			I cannot leave my father unavenged
+			neither can I avenge him by fighting
+			mother. Therefore I am resolved to end
+			the pain of my conflicted heart. I've come
+			to drown myself and sink down to the Styx,
+			sink down to sweet release, sink down to death.
+			Sink down to Tartarus! To Sisyphus!
+			Aye, there's the rub, for if in death we're judged,
+			and punished for the sins we do in life,
+			then jumping now would be no sweet release
+			but condemnation to fiery hell
+			as I must answer for my unavenged
+			father as well as heartbroken mother
+			and my own cowardice. What can I do?
+			Both action and inaction reek of sin!
+			If only I could ask the judge himself
+			to know what I might do to avoid it.
+			I must be satisfied to ask the one
+			who is known as his representative.
+			Though he may be a liar my conscience
+			will be guiltless if I trust him in faith.
+			I'll go consult the oracle at the 
+			Aedes Trivis, his words will set me free.")
 }
