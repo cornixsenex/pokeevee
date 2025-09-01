@@ -32,56 +32,52 @@ LoonixBeach_EventScript_Item_Surfboard::
 
 LoonixBeach_Script_Sign1::
 # 23 "data/maps/LoonixBeach/scripts.pory"
-	giveitem ITEM_POTION, 1
+	special NameRival
 # 24 "data/maps/LoonixBeach/scripts.pory"
-	closemessage
-# 25 "data/maps/LoonixBeach/scripts.pory"
-	giveitem ITEM_ORAN_BERRY, 4
-# 26 "data/maps/LoonixBeach/scripts.pory"
-	closemessage
+	trainerbattle_no_intro TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost
 	end
 
 
 LoonixBeach_Script_Sign2::
-# 31 "data/maps/LoonixBeach/scripts.pory"
+# 29 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_BIG_HAMMER, 1
-# 32 "data/maps/LoonixBeach/scripts.pory"
+# 30 "data/maps/LoonixBeach/scripts.pory"
 	closemessage
 	end
 
 
 LoonixBeach_Script_Sign3::
-# 37 "data/maps/LoonixBeach/scripts.pory"
+# 35 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_POTESTATIS, 1
-# 38 "data/maps/LoonixBeach/scripts.pory"
+# 36 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SAPIENTIAE, 1
-# 39 "data/maps/LoonixBeach/scripts.pory"
+# 37 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_FORTITUDINIS, 1
-# 40 "data/maps/LoonixBeach/scripts.pory"
+# 38 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD1, 1
-# 41 "data/maps/LoonixBeach/scripts.pory"
+# 39 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD2, 1
-# 42 "data/maps/LoonixBeach/scripts.pory"
+# 40 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD3, 1
-# 43 "data/maps/LoonixBeach/scripts.pory"
+# 41 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD4, 1
-# 44 "data/maps/LoonixBeach/scripts.pory"
+# 42 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD5, 1
-# 45 "data/maps/LoonixBeach/scripts.pory"
+# 43 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD6, 1
-# 46 "data/maps/LoonixBeach/scripts.pory"
+# 44 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD7, 1
-# 47 "data/maps/LoonixBeach/scripts.pory"
+# 45 "data/maps/LoonixBeach/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD8, 1
-# 48 "data/maps/LoonixBeach/scripts.pory"
+# 46 "data/maps/LoonixBeach/scripts.pory"
 	closemessage
 	end
 
 
 LoonixBeach_Text_BlueFight::
-# 52 "data/maps/LoonixBeach/scripts.pory"
+# 50 "data/maps/LoonixBeach/scripts.pory"
 	.string "My first Pokeball is a BEAST BALL$"
 
 LoonixBeach_Text_BlueLost::
-# 56 "data/maps/LoonixBeach/scripts.pory"
+# 54 "data/maps/LoonixBeach/scripts.pory"
 	.string "I wonder why my face looks like that.$"

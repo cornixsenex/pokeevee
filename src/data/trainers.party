@@ -998,21 +998,30 @@ Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_TEST_BATTLE ===
-Name: LOLA
-Class: Tuber F
-Pic: Tuber F
-Gender: Female
-Music: Girl
+Name: {B_RIVAL_NAME}
+Class: Fuckboy
+Pic: Blue1
+Gender: Male
+Music: Cool
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
+Mugshot: Blue 
 
-Marill
-Level: 29
+Batty (Zubat) (M) @ Assault Vest
+Level: 9
+Ball: Net Ball
+Ability: Pressure
+EVs: 200 HP / 200 Atk / 200 Def / 200 SpA / 200 SpD / 200 Spe
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Happiness: 255
+Nature: Timid
+Shiny: Yes
+- Earthquake
+- Psychic
+- Meteor Mash
+- Shadow Ball
 
-Marill
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
 
 === TRAINER_MRS_SULLY ===
 Name: LOLA

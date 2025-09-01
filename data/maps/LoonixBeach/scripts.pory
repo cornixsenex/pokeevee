@@ -20,10 +20,8 @@ script LoonixBeach_EventScript_Item_Surfboard {
 }
 
 script LoonixBeach_Script_Sign1 {
-	giveitem (ITEM_POTION, 1)
-    closemessage
-	giveitem (ITEM_ORAN_BERRY, 4)
-	closemessage
+	special (NameRival)
+	trainerbattle_no_intro(TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost)
 	end
 }
 
