@@ -736,6 +736,7 @@
 #define MAP_AEDES_AQUA              (17 | (32 << 8))
 #define MAP_AEDES_AQUA_WATER1       (18 | (32 << 8))
 #define MAP_AEDES_AQUA_WATER2       (19 | (32 << 8))
+#define MAP_AEDES_AQUA_WATER_MAZE   (20 | (32 << 8))
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (33 << 8))

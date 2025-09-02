@@ -6570,6 +6570,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesAqua_Water2/border.bin",
       "blockdata_filepath": "data/layouts/AedesAqua_Water2/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_AQUA_WATER_MAZE",
+      "name": "AedesAqua_WaterMaze_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AedesAqua_WaterMaze/border.bin",
+      "blockdata_filepath": "data/layouts/AedesAqua_WaterMaze/map.bin"
     }
   ]
 }

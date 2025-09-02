@@ -764,7 +764,8 @@
     "AedesTrivis",
     "AedesAqua",
     "AedesAqua_Water1",
-    "AedesAqua_Water2"
+    "AedesAqua_Water2",
+    "AedesAqua_WaterMaze"
   ],
   "gMapGroup_IndoorRoute123": [
     "Route123_BerryMastersHouse"

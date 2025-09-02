@@ -21,6 +21,13 @@
       "elevation": 0,
       "dest_map": "MAP_LAKE_IRA",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_AEDES_AQUA_WATER_MAZE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

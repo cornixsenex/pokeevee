@@ -40,6 +40,46 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "AedesAqua_Water2_Script_WaterControl5"
+    },
+    {
+      "type": "sign",
+      "x": 50,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesAqua_Script_Crystal4"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesAqua_Script_Crystal5"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 53,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesAqua_Script_Crystal10"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesAqua_Script_Crystal5"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 38,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesAqua_Script_Crystal7"
     }
   ]
 }

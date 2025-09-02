@@ -1011,6 +1011,9 @@ Music: Intense
 Double Battle: No
 AI: Basic Trainer
 Mugshot: Blue
+Party Size: 2
+Pool Rules: Basic
+Pool Pick Functions: Default
 
 Batty (Zubat) (M) @ Assault Vest
 Level: 9
@@ -1025,6 +1028,15 @@ Shiny: Yes
 - Psychic
 - Meteor Mash
 - Shadow Ball
+
+Geodude
+Level: 4
+
+Machop
+Level: 4
+
+Pinsir
+Level: 4
 
 === TRAINER_MRS_SULLY ===
 Name: MRS. SULLY
