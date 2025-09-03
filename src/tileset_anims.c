@@ -75,6 +75,8 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+//Customs
+static void QueueAnimTiles_Cave_WaterCurrents(u16); //Water Currenst - Cave
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -370,6 +372,28 @@ const u16 *const gTilesetAnims_Lavaridge_Cave_Lava[] = {
     gTilesetAnims_Lavaridge_Cave_Lava_Frame2,
     gTilesetAnims_Lavaridge_Cave_Lava_Frame3
 };
+
+//CUSTOM CAVE WATER CURRENT
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame0[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/0.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame1[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/1.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame2[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/2.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame3[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/3.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame4[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/4.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame5[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/5.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame6[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/6.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame7[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/7.4bpp");
+
+const u16 *const gTilesetAnims_Cave_WaterCurrents[] = {
+    gTilesetAnims_Cave_WaterCurrents_Frame0,
+    gTilesetAnims_Cave_WaterCurrents_Frame1,
+    gTilesetAnims_Cave_WaterCurrents_Frame2,
+    gTilesetAnims_Cave_WaterCurrents_Frame3,
+    gTilesetAnims_Cave_WaterCurrents_Frame4,
+    gTilesetAnims_Cave_WaterCurrents_Frame5,
+    gTilesetAnims_Cave_WaterCurrents_Frame6,
+    gTilesetAnims_Cave_WaterCurrents_Frame7
+};
+//END CUSTOM CAVE WATER CURRENT
 
 const u16 gTilesetAnims_EverGrande_Flowers_Frame0[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/0.4bpp");
 const u16 gTilesetAnims_EverGrande_Flowers_Frame1[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/1.4bpp");
@@ -1001,6 +1025,8 @@ static void TilesetAnim_Underwater(u16 timer)
 
 static void TilesetAnim_Cave(u16 timer)
 {
+    if (timer % 16 == 0)
+        QueueAnimTiles_Cave_WaterCurrents(timer / 16);
     if (timer % 16 == 1)
         QueueAnimTiles_Cave_Lava(timer / 16);
 }
@@ -1107,6 +1133,13 @@ static void QueueAnimTiles_Cave_Lava(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_Lavaridge_Cave_Lava);
     AppendTilesetAnimToBuffer(gTilesetAnims_Lavaridge_Cave_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 416)), 4 * TILE_SIZE_4BPP);
+}
+
+//Custom Cave Water Current
+static void QueueAnimTiles_Cave_WaterCurrents(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Cave_WaterCurrents);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Cave_WaterCurrents[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 432)), 8 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Dewford_Flag(u16 timer)
