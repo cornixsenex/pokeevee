@@ -1113,7 +1113,7 @@ const struct Tileset gTileset_BigIsland =
     .palettes = gTilesetPalettes_BigIsland,
     .metatiles = gMetatiles_BigIsland,
     .metatileAttributes = gMetatileAttributes_BigIsland,
-    .callback = NULL,
+    .callback = InitTilesetAnim_BigIsland,
 };
 
 const struct Tileset gTileset_Troy =

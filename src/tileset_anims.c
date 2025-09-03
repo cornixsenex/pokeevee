@@ -26,7 +26,6 @@ static void _InitSecondaryTilesetAnimation(void);
 static void TilesetAnim_General(u16);
 static void TilesetAnim_Building(u16);
 static void TilesetAnim_Rustboro(u16);
-static void TilesetAnim_CityClara(u16);
 static void TilesetAnim_Dewford(u16);
 static void TilesetAnim_Slateport(u16);
 static void TilesetAnim_Mauville(u16);
@@ -76,7 +75,11 @@ static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
 //Customs
+static void TilesetAnim_CityClara(u16);    //Custom tilesets with anims  
+static void TilesetAnim_BigIsland(u16);    //Custom tilesets with anims
 static void QueueAnimTiles_Cave_WaterCurrents(u16); //Water Currenst - Cave
+static void QueueAnimTiles_BigIsland_WaterCurrents(u16); //Water Currenst - Big Island 
+static void QueueAnimTiles_Slateport_WaterCurrents(u16); //Water Currenst - Slateport 
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -374,14 +377,14 @@ const u16 *const gTilesetAnims_Lavaridge_Cave_Lava[] = {
 };
 
 //CUSTOM CAVE WATER CURRENT
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame0[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/0.4bpp");
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame1[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/1.4bpp");
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame2[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/2.4bpp");
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame3[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/3.4bpp");
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame4[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/4.4bpp");
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame5[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/5.4bpp");
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame6[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/6.4bpp");
-const u16 gTilesetAnims_Cave_WaterCurrents_Frame7[] = INCBIN_U16("data/tilesets/secondary/cave/anim/water_currents/7.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame0[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/0.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame1[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/1.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame2[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/2.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame3[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/3.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame4[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/4.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame5[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/5.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame6[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/6.4bpp");
+const u16 gTilesetAnims_Cave_WaterCurrents_Frame7[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/7.4bpp");
 
 const u16 *const gTilesetAnims_Cave_WaterCurrents[] = {
     gTilesetAnims_Cave_WaterCurrents_Frame0,
@@ -393,7 +396,49 @@ const u16 *const gTilesetAnims_Cave_WaterCurrents[] = {
     gTilesetAnims_Cave_WaterCurrents_Frame6,
     gTilesetAnims_Cave_WaterCurrents_Frame7
 };
-//END CUSTOM CAVE WATER CURRENT
+
+////CUSTOM BIG ISLAND WATER CURRENT
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame0[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/0.4bpp");
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame1[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/1.4bpp");
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame2[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/2.4bpp");
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame3[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/3.4bpp");
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame4[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/4.4bpp");
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame5[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/5.4bpp");
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame6[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/6.4bpp");
+const u16 gTilesetAnims_BigIsland_WaterCurrents_Frame7[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/7.4bpp");
+
+const u16 *const gTilesetAnims_BigIsland_WaterCurrents[] = {
+    gTilesetAnims_BigIsland_WaterCurrents_Frame0,
+    gTilesetAnims_BigIsland_WaterCurrents_Frame1,
+    gTilesetAnims_BigIsland_WaterCurrents_Frame2,
+    gTilesetAnims_BigIsland_WaterCurrents_Frame3,
+    gTilesetAnims_BigIsland_WaterCurrents_Frame4,
+    gTilesetAnims_BigIsland_WaterCurrents_Frame5,
+    gTilesetAnims_BigIsland_WaterCurrents_Frame6,
+    gTilesetAnims_BigIsland_WaterCurrents_Frame7
+};
+
+////CUSTOM Slateport WATER CURRENT
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame0[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/0.4bpp");
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame1[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/1.4bpp");
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame2[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/2.4bpp");
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame3[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/3.4bpp");
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame4[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/4.4bpp");
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame5[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/5.4bpp");
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame6[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/6.4bpp");
+const u16 gTilesetAnims_Slateport_WaterCurrents_Frame7[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/water_currents/7.4bpp");
+
+const u16 *const gTilesetAnims_Slateport_WaterCurrents[] = {
+    gTilesetAnims_Slateport_WaterCurrents_Frame0,
+    gTilesetAnims_Slateport_WaterCurrents_Frame1,
+    gTilesetAnims_Slateport_WaterCurrents_Frame2,
+    gTilesetAnims_Slateport_WaterCurrents_Frame3,
+    gTilesetAnims_Slateport_WaterCurrents_Frame4,
+    gTilesetAnims_Slateport_WaterCurrents_Frame5,
+    gTilesetAnims_Slateport_WaterCurrents_Frame6,
+    gTilesetAnims_Slateport_WaterCurrents_Frame7
+};
+//END CUSTOM Water Currents
 
 const u16 gTilesetAnims_EverGrande_Flowers_Frame0[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/0.4bpp");
 const u16 gTilesetAnims_EverGrande_Flowers_Frame1[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/1.4bpp");
@@ -752,6 +797,13 @@ void InitTilesetAnim_CityClara(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_CityClara;
 }
 
+void InitTilesetAnim_BigIsland(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_BigIsland;
+}
+
 void InitTilesetAnim_Dewford(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -920,6 +972,12 @@ static void TilesetAnim_CityClara(u16 timer)
         QueueAnimTiles_CityClara_WindyWater(timer >> 3, 7);
 }
 
+static void TilesetAnim_BigIsland(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_BigIsland_WaterCurrents(timer / 16);
+}
+
 static void TilesetAnim_Rustboro(u16 timer)
 {
     if (timer % 8 == 0)
@@ -953,6 +1011,8 @@ static void TilesetAnim_Slateport(u16 timer)
 {
     if (timer % 16 == 0)
         QueueAnimTiles_Slateport_Balloons(timer / 16);
+    if (timer % 16 == 1)
+        QueueAnimTiles_Slateport_WaterCurrents(timer / 16);
 }
 
 static void TilesetAnim_Mauville(u16 timer)
@@ -1140,6 +1200,19 @@ static void QueueAnimTiles_Cave_WaterCurrents(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_Cave_WaterCurrents);
     AppendTilesetAnimToBuffer(gTilesetAnims_Cave_WaterCurrents[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 432)), 8 * TILE_SIZE_4BPP);
+}
+
+//Custom Big Island Water Current
+static void QueueAnimTiles_BigIsland_WaterCurrents(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_BigIsland_WaterCurrents);
+    AppendTilesetAnimToBuffer(gTilesetAnims_BigIsland_WaterCurrents[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 179)), 8 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Slateport_WaterCurrents(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Slateport_WaterCurrents);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Slateport_WaterCurrents[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 504)), 8 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Dewford_Flag(u16 timer)
