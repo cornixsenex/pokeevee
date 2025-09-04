@@ -17,7 +17,7 @@
   "warp_events": [
     {
       "x": 31,
-      "y": 62,
+      "y": 61,
       "elevation": 0,
       "dest_map": "MAP_LAKE_IRA",
       "dest_warp_id": "0"

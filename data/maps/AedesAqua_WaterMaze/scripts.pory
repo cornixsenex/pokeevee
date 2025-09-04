@@ -1,1 +1,92 @@
+
+//FLAG_TEMP_6 = Reversed Water Flow (West top et Bottom L)
+
+
 mapscripts AedesAqua_WaterMaze_MapScripts {}
+
+
+//Initial Water Flow - East Top et Bottom L
+script AedesAqua_WaterMaze_Script_ShowWaterStateA {
+	//Play Start Sound
+	playse (SE_M_HYDRO_PUMP)
+	waitse
+	
+	//Switch Metatiles
+
+	//TOP
+	//Row 1
+	//Row 2
+	//Row 3
+	//Row 4
+	//Row 5
+	//Row 6
+
+	//BOTTOM L
+	//Row 1
+	//Row 2
+	//Row 3
+	//Row 4
+	//Row 5
+
+	//Play finish sound
+	playse (SE_EFFECTIVE)
+	waitse
+	//Draw Map
+	special (DrawWholeMapView)	
+	//fin
+	return
+}
+
+//Reverse Water Flow - West top et Bottom L
+script AedesAqua_WaterMaze_Script_ShowWaterStateB {
+	//Play Start Sound
+	playse (SE_M_HYDRO_PUMP)
+	waitse
+	
+	//Switch Metatiles
+
+	//TOP
+	//Row 1
+	//Row 2
+	//Row 3
+	//Row 4
+	//Row 5
+	//Row 6
+
+	//BOTTOM L
+	//Row 1
+	//Row 2
+	//Row 3
+	//Row 4
+	//Row 5
+
+	//Play finish sound
+	playse (SE_EFFECTIVE)
+	waitse
+	//Draw Map
+	special (DrawWholeMapView)	
+	//fin
+	return
+}
+
+
+
+script AedesAqua_WaterMaze_Script_WaterSwitchR {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == TRUE && flag(FLAG_TEMP_6)) {
+		clearflag (FLAG_TEMP_6)
+		call (AedesAqua_WaterMaze_Script_ShowWaterStateA)
+	}
+	end
+}
+
+script AedesAqua_WaterMaze_Script_WaterSwitchL {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	closemessage
+	if (var(VAR_RESULT) == TRUE && !flag(FLAG_TEMP_6)) {
+		setflag (FLAG_TEMP_6)
+		call (AedesAqua_WaterMaze_Script_ShowWaterStateB)
+	}
+	end
+}
