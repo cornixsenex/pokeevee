@@ -177,6 +177,8 @@
 #define METATILE_Cave_ShoalCave_BlueStone_Small          0x35B
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
+#define METATILE_Cave_WaterCurrent_Eastward              0x3AF
+#define METATILE_Cave_WaterCurrent_Westward              0x3AD
 #define METATILE_Cave_WaterDoorEdgeL                     0x3A1
 #define METATILE_Cave_WaterDoorEdgeR                     0x3A2
 #define METATILE_Cave_WaterLedgeS                        0x291
