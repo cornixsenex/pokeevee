@@ -2,7 +2,7 @@
   "id": "MAP_AEDES_AQUA_WATER_MAZE",
   "name": "AedesAqua_WaterMaze",
   "layout": "LAYOUT_AEDES_AQUA_WATER_MAZE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_CANTINA",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

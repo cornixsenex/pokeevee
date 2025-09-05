@@ -6,13 +6,11 @@ mapscripts AedesAqua_WaterMaze_MapScripts {}
 
 
 //Initial Water Flow - East Top et Bottom L
-script AedesAqua_WaterMaze_Script_ShowWaterStateA {
+script AedesAqua_WaterMaze_Script_ShowWaterStateB {
 	//Play Start Sound
 	playse (SE_M_HYDRO_PUMP)
 	waitse
-	
 	//Switch Metatiles
-
 	//TOP
 	//Row 1
 	setmetatile (12, 4, METATILE_Cave_InnerCornerTopLeft_Eastward, FALSE)
@@ -84,22 +82,60 @@ script AedesAqua_WaterMaze_Script_ShowWaterStateA {
 
 	//BOTTOM L
 	//Row 1
+	setmetatile ( 9, 22, METATILE_Cave_CornerTopRight_Eastward, FALSE)
+	setmetatile (10, 22, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (11, 22, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (12, 22, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (13, 22, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (14, 22, METATILE_Cave_WaterCurrent_Eastward, FALSE)
 	//Row 2
+	setmetatile ( 9, 23, METATILE_Cave_Right_Eastward, FALSE)
+	setmetatile (10, 23, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (11, 23, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (12, 23, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (13, 23, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (14, 23, METATILE_Cave_CornerTopLeft_Eastward, FALSE)
 	//Row 3
+	setmetatile ( 9, 24, METATILE_Cave_Right_Eastward, FALSE)
+	setmetatile (10, 24, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (11, 24, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (12, 24, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (13, 24, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (14, 24, METATILE_Cave_Left_Eastward, FALSE)
 	//Row 4
+	setmetatile ( 5, 25, METATILE_Cave_InnerCornerTopLeft_Eastward, FALSE)
+	setmetatile ( 6, 25, METATILE_Cave_Bottom_Eastward, FALSE)
+	setmetatile ( 7, 25, METATILE_Cave_Bottom_Eastward, FALSE)
+	setmetatile ( 8, 25, METATILE_Cave_Bottom_Eastward, FALSE)
+	setmetatile ( 9, 25, METATILE_Cave_CornerBottomRight_Eastward, FALSE)
+	setmetatile (10, 25, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (11, 25, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (12, 25, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (13, 25, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (14, 25, METATILE_Cave_Left_Eastward, FALSE)
 	//Row 5
+	setmetatile ( 5, 26, METATILE_Cave_Right_Eastward, FALSE)
+	setmetatile ( 6, 26, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile ( 7, 26, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile ( 8, 26, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile ( 9, 26, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (10, 26, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (11, 26, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (12, 26, METATILE_Cave_WaterCurrent_Eastward, FALSE)
+	setmetatile (13, 26, METATILE_Cave_CornerTopLeft_Eastward, FALSE)
 
+	//Draw Map
+	special (DrawWholeMapView)	
 	//Play finish sound
 	playse (SE_EFFECTIVE)
 	waitse
-	//Draw Map
-	special (DrawWholeMapView)	
+
 	//fin
 	return
 }
 
 //Reverse Water Flow - West top et Bottom L
-script AedesAqua_WaterMaze_Script_ShowWaterStateB {
+script AedesAqua_WaterMaze_Script_ShowWaterStateA {
 	//Play Start Sound
 	playse (SE_M_HYDRO_PUMP)
 	waitse
@@ -108,18 +144,116 @@ script AedesAqua_WaterMaze_Script_ShowWaterStateB {
 
 	//TOP
 	//Row 1
+	setmetatile (12, 4, METATILE_Cave_InnerCornerTopLeft_Westward, FALSE)
+	setmetatile (13, 4, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile (14, 4, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile (15, 4, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile (16, 4, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile (17, 4, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile (18, 4, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile (19, 4, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile (20, 4, METATILE_Cave_InnerCornerTopRight_Westward, FALSE)
 	//Row 2
+	setmetatile (12, 5, METATILE_Cave_Right_Westward, FALSE)
+	setmetatile (13, 5, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 5, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (15, 5, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (16, 5, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (17, 5, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (18, 5, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (19, 5, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (20, 5, METATILE_Cave_Left_Westward, FALSE)
 	//Row 3
+	setmetatile (12, 6, METATILE_Cave_Right_Westward, FALSE)
+	setmetatile (13, 6, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 6, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (15, 6, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (16, 6, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (17, 6, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (18, 6, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (19, 6, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (20, 6, METATILE_Cave_Left_Westward, FALSE)
 	//Row 4
+	setmetatile (11, 7, METATILE_Cave_InnerCornerTopLeft_Westward, FALSE)
+	setmetatile (12, 7, METATILE_Cave_CornerBottomRight_Westward, FALSE)
+	setmetatile (13, 7, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 7, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (15, 7, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (16, 7, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (17, 7, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (18, 7, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (19, 7, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (20, 7, METATILE_Cave_Left_Westward, FALSE)
 	//Row 5
+	setmetatile (10, 8, METATILE_Cave_InnerCornerTopLeft_Westward, FALSE)
+	setmetatile (11, 8, METATILE_Cave_CornerBottomRight_Westward, FALSE)
+	setmetatile (12, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (13, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (15, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (16, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (17, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (18, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (19, 8, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (20, 8, METATILE_Cave_CornerBottomLeft_Westward, FALSE)
+	setmetatile (21, 8, METATILE_Cave_InnerCornerTopRight_Westward, FALSE)
 	//Row 6
+	setmetatile (10, 9, METATILE_Cave_CornerBottomRight_Westward, FALSE)
+	setmetatile (11, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (12, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (13, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (15, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (16, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (17, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (18, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (19, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (20, 9, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (21, 9, METATILE_Cave_Left_Westward, FALSE)
 
 	//BOTTOM L
 	//Row 1
+	setmetatile ( 9, 22, METATILE_Cave_CornerTopRight_Westward, FALSE)
+	setmetatile (10, 22, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (11, 22, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (12, 22, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (13, 22, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 22, METATILE_Cave_WaterCurrent_Westward, FALSE)
 	//Row 2
+	setmetatile ( 9, 23, METATILE_Cave_Right_Westward, FALSE)
+	setmetatile (10, 23, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (11, 23, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (12, 23, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (13, 23, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 23, METATILE_Cave_CornerTopLeft_Westward, FALSE)
 	//Row 3
+	setmetatile ( 9, 24, METATILE_Cave_Right_Westward, FALSE)
+	setmetatile (10, 24, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (11, 24, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (12, 24, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (13, 24, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 24, METATILE_Cave_Left_Westward, FALSE)
 	//Row 4
+	setmetatile ( 5, 25, METATILE_Cave_InnerCornerTopLeft_Westward, FALSE)
+	setmetatile ( 6, 25, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile ( 7, 25, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile ( 8, 25, METATILE_Cave_Bottom_Westward, FALSE)
+	setmetatile ( 9, 25, METATILE_Cave_CornerBottomRight_Westward, FALSE)
+	setmetatile (10, 25, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (11, 25, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (12, 25, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (13, 25, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (14, 25, METATILE_Cave_Left_Westward, FALSE)
 	//Row 5
+	setmetatile ( 5, 26, METATILE_Cave_Right_Westward, FALSE)
+	setmetatile ( 6, 26, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile ( 7, 26, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile ( 8, 26, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile ( 9, 26, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (10, 26, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (11, 26, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (12, 26, METATILE_Cave_WaterCurrent_Westward, FALSE)
+	setmetatile (13, 26, METATILE_Cave_CornerTopLeft_Westward, FALSE)
 
 	//Play finish sound
 	playse (SE_EFFECTIVE)
@@ -135,8 +269,8 @@ script AedesAqua_WaterMaze_Script_ShowWaterStateB {
 script AedesAqua_WaterMaze_Script_WaterSwitchR {
 	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
 	closemessage
-	if (var(VAR_RESULT) == TRUE && flag(FLAG_TEMP_6)) {
-		clearflag (FLAG_TEMP_6)
+	if (var(VAR_RESULT) == TRUE && !flag(FLAG_TEMP_6)) {
+		setflag (FLAG_TEMP_6)
 		call (AedesAqua_WaterMaze_Script_ShowWaterStateA)
 	}
 	end
@@ -145,8 +279,8 @@ script AedesAqua_WaterMaze_Script_WaterSwitchR {
 script AedesAqua_WaterMaze_Script_WaterSwitchL {
 	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
 	closemessage
-	if (var(VAR_RESULT) == TRUE && !flag(FLAG_TEMP_6)) {
-		setflag (FLAG_TEMP_6)
+	if (var(VAR_RESULT) == TRUE && flag(FLAG_TEMP_6)) {
+		clearflag (FLAG_TEMP_6)
 		call (AedesAqua_WaterMaze_Script_ShowWaterStateB)
 	}
 	end

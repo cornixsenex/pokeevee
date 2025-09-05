@@ -6580,6 +6580,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesAqua_WaterMaze/border.bin",
       "blockdata_filepath": "data/layouts/AedesAqua_WaterMaze/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_AQUA_PUDDLE_ROOM",
+      "name": "AedesAqua_PuddleRoom_Layout",
+      "width": 16,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AedesAqua_PuddleRoom/border.bin",
+      "blockdata_filepath": "data/layouts/AedesAqua_PuddleRoom/map.bin"
     }
   ]
 }

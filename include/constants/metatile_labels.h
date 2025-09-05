@@ -134,6 +134,7 @@
 
 // gTileset_Cave
 #define METATILE_Cave_Bottom_Eastward                    0x3C6
+#define METATILE_Cave_Bottom_Westward                    0x3CD
 #define METATILE_Cave_CaveType3BottomHole                0x2E6
 #define METATILE_Cave_CaveType3BottomHoleLeft            0x2E5
 #define METATILE_Cave_CaveType3BottomHoleRight           0x2E7
@@ -143,16 +144,24 @@
 #define METATILE_Cave_CaveWater                          0x293
 #define METATILE_Cave_CaveWater_False                    0x3A3
 #define METATILE_Cave_CornerBottomLeft_Eastward          0x3CB
+#define METATILE_Cave_CornerBottomLeft_Westward          0x3D2
 #define METATILE_Cave_CornerBottomRight_Eastward         0x3C7
+#define METATILE_Cave_CornerBottomRight_Westward         0x3D1
 #define METATILE_Cave_CornerTopLeft_Eastward             0x3CA
+#define METATILE_Cave_CornerTopLeft_Westward             0x3D4
 #define METATILE_Cave_CornerTopRight_Eastward            0x3AB
+#define METATILE_Cave_CornerTopRight_Westward            0x3D3
 #define METATILE_Cave_CrackedFloor                       0x22F
 #define METATILE_Cave_CrackedFloor_Hole                  0x206
 #define METATILE_Cave_EntranceCover                      0x229
 #define METATILE_Cave_InnerCornerTopLeft_Eastward        0x3C2
+#define METATILE_Cave_InnerCornerTopLeft_Westward        0x3CC
 #define METATILE_Cave_InnerCornerTopRight_Eastward       0x3C8
+#define METATILE_Cave_InnerCornerTopRight_Westward       0x3CE
 #define METATILE_Cave_Left_Eastward                      0x3C9
+#define METATILE_Cave_Left_Westward                      0x3D0
 #define METATILE_Cave_Right_Eastward                     0x3AC
+#define METATILE_Cave_Right_Westward                     0x3CF
 #define METATILE_Cave_RockCornerSEWater                  0x2B5
 #define METATILE_Cave_RockCornerSEWaterHalf              0x39F
 #define METATILE_Cave_RockCornerSWWater                  0x2B3

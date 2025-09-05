@@ -1675,3 +1675,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/AedesAqua_Water2/scripts.inc"
 
 	.include "data/maps/AedesAqua_WaterMaze/scripts.inc"
+
+	.include "data/maps/AedesAqua_PuddleRoom/scripts.inc"
