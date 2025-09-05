@@ -6584,8 +6584,8 @@
     {
       "id": "LAYOUT_AEDES_AQUA_PUDDLE_ROOM",
       "name": "AedesAqua_PuddleRoom_Layout",
-      "width": 16,
-      "height": 16,
+      "width": 13,
+      "height": 15,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesAqua_PuddleRoom/border.bin",

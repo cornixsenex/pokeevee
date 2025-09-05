@@ -1,1 +1,18 @@
 mapscripts AedesAqua_PuddleRoom_MapScripts {}
+
+
+script AedesAqua_PuddleRoom_Script_Crystal8 {
+	if (!flag(FLAG_AEDES_AQUA_CRYSTAL8)) {
+		setflag (FLAG_AEDES_AQUA_CRYSTAL8)
+		msgbox (AedesAqua_Text_CrystalPress)
+		playse (SE_SWITCH)
+		waitse
+		closemessage
+		setmetatile (6, 6, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+		special (DrawWholeMapView)
+	} else {
+		msgbox (AedesAqua_Text_CrystalPressed)
+		closemessage
+	}
+	end
+}
