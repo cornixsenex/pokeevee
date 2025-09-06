@@ -8674,7 +8674,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_DARKBRENDAN] =
     {
 #line 3307
-        .trainerName = _("Player"),
+        .trainerName = _("{B_PLAYER_NAME}"),
 #line 3308
         .trainerClass = TRAINER_CLASS_DARK_SHADOW,
 #line 3309

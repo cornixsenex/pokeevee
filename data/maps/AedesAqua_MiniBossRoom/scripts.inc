@@ -50,7 +50,8 @@ AedesAqua_MiniBossRoom_Script_DarkBrendan::
 
 AedesAqua_MiniBossRoom_Text_DarkBrendanPre::
 # 33 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	.string "Player: {PLAYER} B_PLAYER: {B_PLAYER_NAME}$"
+	.string "Player: {PLAYER}\n"
+	.string "B_PLAYER: {B_PLAYER_NAME}$"
 
 AedesAqua_MiniBossRoom_Text_DarkBrendanLost::
 # 37 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
