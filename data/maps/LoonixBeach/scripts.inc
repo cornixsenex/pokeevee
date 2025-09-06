@@ -34,7 +34,7 @@ LoonixBeach_Script_Sign1::
 # 23 "data/maps/LoonixBeach/scripts.pory"
 	special NameRival
 # 24 "data/maps/LoonixBeach/scripts.pory"
-	trainerbattle_no_intro TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost
+	trainerbattle_no_intro TRAINER_DARKBRENDAN, LoonixBeach_Text_BlueLost
 	end
 
 

@@ -25,8 +25,13 @@ script AedesAqua_MiniBossRoom_Script_Crystal6 {
 }
 
 script AedesAqua_MiniBossRoom_Script_DarkBrendan {
-	setflag (FLAG_SETUPDARKBRENDAN)
+    msgbox (AedesAqua_MiniBossRoom_Text_DarkBrendanPre)
+    closemessage
 	trainerbattle_no_intro (TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost)
+}
+
+text AedesAqua_MiniBossRoom_Text_DarkBrendanPre {
+	format("Player: {PLAYER} B_PLAYER: {B_PLAYER_NAME}")
 }
 
 text AedesAqua_MiniBossRoom_Text_DarkBrendanLost {

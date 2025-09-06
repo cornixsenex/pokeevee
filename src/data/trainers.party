@@ -3304,20 +3304,16 @@ Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DARKBRENDAN ===
-Name: {B_LEAF_NAME} 
+Name: Player 
 Class: Dark Shadow
-Pic: Brendan
+Pic: RS Brendan
 Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Electrike
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Loudred
-Level: 30
+Wobbuffet
+Level: 1
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DALTON_1 ===

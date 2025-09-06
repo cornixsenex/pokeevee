@@ -70,7 +70,7 @@
 
 #define FLAG_CASATURNI_HIDERUTULI                 0x38 //Set after Turnus battle - hides the rutuli
 #define FLAG_GYMNASIUM_HECTORLEFT                 0x39 //Set after Hector leaves for Nestor House. Hide Hector in Gymansium and CavernaCamela
-#define FLAG_SETUPDARKBRENDAN                     0x3A //Test rn tryna get Dark Brendan workin
+#define FLAG_UNUSED_0x3A                          0x3A //UNUSED
 #define FLAG_UNUSED_0x3B                          0x3B //UNUSED 
 #define FLAG_ROUTE4_HIDEROCKETS                   0x3C // Hides Rocket memebers route4 - hides Mewtwo in Capital
 #define FLAG_ROBUSTUS_HIDELEAF                    0x3D // Hides Leaf after entering Robustus
