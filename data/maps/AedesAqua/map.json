@@ -42,6 +42,27 @@
       "elevation": 0,
       "dest_map": "MAP_AEDES_AQUA_MINI_BOSS_ROOM",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_AEDES_AQUA_HALLWAYS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_AEDES_AQUA_HALLWAYS",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 31,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_AEDES_AQUA_HALLWAYS",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

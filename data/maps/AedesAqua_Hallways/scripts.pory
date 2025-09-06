@@ -1,0 +1,145 @@
+mapscripts AedesAqua_Hallways_MapScripts {
+
+
+    MAP_SCRIPT_ON_LOAD {
+        //Clear gates if Crystal flag is set
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL1)) {
+			setmetatile (25, 66, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 66, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 66, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 66, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 66, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 66, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 66, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL2)) {
+			setmetatile (25, 62, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 62, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 62, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 62, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 62, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 62, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 62, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL3)) {
+			setmetatile (25, 58, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 58, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 58, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 58, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 58, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 58, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 58, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL4)) {
+			setmetatile (25, 54, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 54, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 54, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 54, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 54, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 54, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 54, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL5)) {
+			setmetatile (25, 50, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 50, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 50, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 50, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 50, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 50, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 50, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL6)) {
+			setmetatile (25, 46, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 46, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 46, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 46, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 46, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 46, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 46, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL7)) {
+			setmetatile (25, 42, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 42, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 42, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 42, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 42, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 42, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 42, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL8)) {
+			setmetatile (25, 38, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 38, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 38, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 38, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 38, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 38, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 38, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL9)) {
+			setmetatile (25, 34, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 34, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 34, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 34, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 34, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 34, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 34, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL10)) {
+			setmetatile (25, 30, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 30, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 30, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 30, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 30, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 30, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 30, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL11)) {
+			setmetatile (25, 26, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 26, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 26, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 26, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 26, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 26, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 26, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL12)) {
+			setmetatile (25, 22, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (26, 22, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (27, 22, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (28, 22, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (29, 22, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (30, 22, METATILE_Cave_CaveFloorBottom, FALSE)
+			setmetatile (31, 22, METATILE_Cave_CaveFloorBottom, FALSE)
+        }
+    }
+
+}
+
+
+script AedesAqua_Hallways_Script_LinkMessage {
+    msgbox (AedesAqua_Text_LinkMessage, MSGBOX_SIGN)
+    closemessage
+}
+
+script AedesAqua_Hallways_Script_TestLink {
+
+	trainerbattle_no_intro(TRAINER_SMOKEY, LoonixBeach_Text_BlueLost)
+
+}
+
+text AedesAqua_Text_LinkMessage {
+    format("The golden power which you seek\n
+            Is not for anyone to keep.\n
+            Too dangerous to leave alone,\n
+            I took it from it's former home.\n
+            The three components I have hid\n
+            Within three temples dark and dim.\n
+            The one I hide under the lake\n
+            I have decided to unmake.\n
+            The golden shards, which number eight,\n
+            have been sunk to preserve our fate.\n
+            The first is in this very room\n
+            The rest under the sun and moon.\n
+            The map will show you where they lie\n
+            On the lake bed where fishes die")
+}

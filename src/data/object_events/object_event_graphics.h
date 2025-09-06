@@ -598,6 +598,9 @@ const u16 gObjectEventPal_Ghetsis[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_Olympia[] = INCBIN_U32("graphics/object_events/pics/people/olympia.4bpp");
 const u16 gObjectEventPal_Olympia[] = INCBIN_U16("graphics/object_events/palettes/olympia.gbapal");
 
+const u32 gObjectEventPic_Link[] = INCBIN_U32("graphics/object_events/pics/people/link.4bpp");
+const u16 gObjectEventPal_Link[] = INCBIN_U16("graphics/object_events/palettes/link.gbapal");
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

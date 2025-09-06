@@ -135,6 +135,7 @@
 // gTileset_Cave
 #define METATILE_Cave_Bottom_Eastward                    0x3C6
 #define METATILE_Cave_Bottom_Westward                    0x3CD
+#define METATILE_Cave_CaveFloorBottom                    0x201
 #define METATILE_Cave_CaveType3BottomHole                0x2E6
 #define METATILE_Cave_CaveType3BottomHoleLeft            0x2E5
 #define METATILE_Cave_CaveType3BottomHoleRight           0x2E7

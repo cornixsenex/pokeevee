@@ -6600,6 +6600,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesAqua_MiniBossRoom/border.bin",
       "blockdata_filepath": "data/layouts/AedesAqua_MiniBossRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_AQUA_HALLWAYS",
+      "name": "AedesAqua_Hallways_Layout",
+      "width": 40,
+      "height": 76,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AedesAqua_Hallways/border.bin",
+      "blockdata_filepath": "data/layouts/AedesAqua_Hallways/map.bin"
     }
   ]
 }

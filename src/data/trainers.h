@@ -2547,7 +2547,7 @@ F_TRAINER_FEMALE |
 #line 955
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 956
-        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerPic = TRAINER_PIC_LINK,
         .encounterMusic_gender =
 #line 958
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -2556,7 +2556,7 @@ F_TRAINER_FEMALE |
 #line 960
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 0
-        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
+        .trainerBackPic = TRAINER_PIC_LINK,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2684,7 +2684,7 @@ F_TRAINER_FEMALE |
 #line 1007
         .trainerClass = TRAINER_CLASS_CHAMPION,
 #line 1008
-        .trainerPic = TRAINER_PIC_LENORA,
+        .trainerPic = TRAINER_PIC_LINK,
         .encounterMusic_gender =
 #line 1010
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2699,7 +2699,7 @@ F_TRAINER_FEMALE |
 #line 1016
         .poolPickIndex = POOL_PICK_DEFAULT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_LENORA,
+        .trainerBackPic = TRAINER_PIC_LINK,
 #line 1014
         .partySize = 2,
         .poolSize = 4,

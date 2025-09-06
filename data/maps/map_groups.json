@@ -767,7 +767,8 @@
     "AedesAqua_Water2",
     "AedesAqua_WaterMaze",
     "AedesAqua_PuddleRoom",
-    "AedesAqua_MiniBossRoom"
+    "AedesAqua_MiniBossRoom",
+    "AedesAqua_Hallways"
   ],
   "gMapGroup_IndoorRoute123": [
     "Route123_BerryMastersHouse"
