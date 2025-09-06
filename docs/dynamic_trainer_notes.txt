@@ -1,0 +1,18 @@
+ShinyMareep field special is a scripted wild battle
+I want a scripted trainer battle
+
+
+
+>HERE I NEED TO STORE THE INFO INTO RAM :)
+	>TrainerBattleLoadArgs(ScriptContext IDK)
+	>InitTrainerBattleVariables()
+	memcpy gTrainerBattleParameter.data
+>HERE THE TRAINER BATTLE PARAMS MUST ALREADY BE SET INTO RAM
+>dotrainerbattle -> BattleSetup_StartTrainerBattle() - Starts battle using info stored in RAM 
+>BattleSetup_StartTrainerBattle -> DoTrainerBattle()
+>DoTrainerBattle() -> CreateBattleStartTask()
+>CreateBattleStartTask
+>Task_BattleStart
+>BattleTransition_StartOnField
+
+SetRentalsToOpponentParty IDK
