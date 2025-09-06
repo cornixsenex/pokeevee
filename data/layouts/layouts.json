@@ -6590,6 +6590,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesAqua_PuddleRoom/border.bin",
       "blockdata_filepath": "data/layouts/AedesAqua_PuddleRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_AQUA_MINI_BOSS_ROOM",
+      "name": "AedesAqua_MiniBossRoom_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AedesAqua_MiniBossRoom/border.bin",
+      "blockdata_filepath": "data/layouts/AedesAqua_MiniBossRoom/map.bin"
     }
   ]
 }
