@@ -1,7 +1,28 @@
-mapscripts AedesAqua_MiniBossRoom_MapScripts {}
+mapscripts AedesAqua_MiniBossRoom_MapScripts {
 
+    MAP_SCRIPT_ON_TRANSITION {
+        //Setup Dark Bendan if not defeated
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL6) && !defeated(TRAINER_DARKBRENDAN)) {
+            setobjectxyperm (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 10, 11)
+            setobjectmovementtype (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_CHASE_PLAYER)
+        }
+    }
 
+    MAP_SCRIPT_ON_LOAD {
+        //Show pressed crystal tile
+        if (flag(FLAG_AEDES_AQUA_CRYSTAL6)) {
+			setmetatile (10, 4, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
+        }
+    }
 
+    MAP_SCRIPT_ON_RESUME {
+        //Hide Dark Brendan on return from battle
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+            hideobjectat (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MAP_AEDES_AQUA_MINI_BOSS_ROOM)
+            removeobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
+        }
+    }
+}
 
 script AedesAqua_MiniBossRoom_Script_Crystal6 {
 	if (!flag(FLAG_AEDES_AQUA_CRYSTAL6)) {
@@ -12,7 +33,7 @@ script AedesAqua_MiniBossRoom_Script_Crystal6 {
 		closemessage
 		setmetatile (10, 4, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
 		special (DrawWholeMapView)
-		//Do Miniboss
+		//Setup Dark Brendan 
 		removeobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
 		setobjectxyperm (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 10, 11)
 		setobjectmovementtype (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_CHASE_PLAYER)
@@ -25,9 +46,15 @@ script AedesAqua_MiniBossRoom_Script_Crystal6 {
 }
 
 script AedesAqua_MiniBossRoom_Script_DarkBrendan {
+    setflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
 	trainerbattle_no_intro (TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost)
+    clearflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
+    //remove him after battle
+    removeobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
+    setobjectxyperm (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 0, 0)
+    setobjectmovementtype (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
 }
-
 
 text AedesAqua_MiniBossRoom_Text_DarkBrendanLost {
 	format("")

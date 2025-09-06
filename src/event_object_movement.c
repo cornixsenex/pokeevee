@@ -6710,7 +6710,12 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
                 || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
                 || objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
 				|| objectEvent->graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM
+                //Going forwad just do it this way unless you have a good reason to not to. Saves adding a duplicate COLLISION sprite, seems cleaner and easier
+
+                //Colchis Lugia
 				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && objectEvent->mapNum == MAP_NUM(MAP_COLCHIS) && objectEvent->mapGroup == MAP_GROUP(MAP_COLCHIS) ) //Lugia different cuz no special COLLISION sprite
+                //Aedes Aqua Dark Brendan
+				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN && objectEvent->mapNum == MAP_NUM(MAP_AEDES_AQUA_MINI_BOSS_ROOM) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_AQUA_MINI_BOSS_ROOM) ) 
 				)
 			{
 				//Yes, it's a special collision with player do script
