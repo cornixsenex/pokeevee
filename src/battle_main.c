@@ -384,6 +384,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 	[TRAINER_CLASS_TYRIAN_QUEEN] = { _("TYRIAN QUEEN") },
 	[TRAINER_CLASS_TROPIC_SLAVE] = { _("TROPIC SLAVE") },
 	[TRAINER_CLASS_RUTULIAN] = { _("RUTULIAN") },
+	[TRAINER_CLASS_DARK_SHADOW] = { _("DARK SHADOW") },
 	//End Kustom Classes
 };
 
@@ -2031,6 +2032,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             }
         }
     }
+	//This is working right here. Very Ugly but working. PROMISING!
+	u16 species = SPECIES_MAREEP;
+	if (FlagGet(FLAG_SETUPDARKBRENDAN))
+		SetMonData(&gEnemyParty[0], MON_DATA_SPECIES, &species);
 
     return trainer->partySize;
 }

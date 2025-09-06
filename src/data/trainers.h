@@ -8671,14 +8671,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 3306
-    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_1] =
+    [DIFFICULTY_NORMAL][TRAINER_DARKBRENDAN] =
     {
 #line 3307
-        .trainerName = _("FERNANDO"),
+        .trainerName = _("{B_LEAF_NAME}"),
 #line 3308
-        .trainerClass = TRAINER_CLASS_GUITARIST,
+        .trainerClass = TRAINER_CLASS_DARK_SHADOW,
 #line 3309
-        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender =
 #line 3311
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8687,7 +8687,7 @@ F_TRAINER_FEMALE |
 #line 3313
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 0
-        .trainerBackPic = TRAINER_PIC_GUITARIST,
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {

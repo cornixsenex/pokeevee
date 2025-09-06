@@ -13,10 +13,10 @@ script AedesAqua_MiniBossRoom_Script_Crystal6 {
 		setmetatile (10, 4, METATILE_Cave_ShoalCave_BlueStone_Small, TRUE)
 		special (DrawWholeMapView)
 		//Do Miniboss
-		removeobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN)
-		setobjectxyperm (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN, 10, 11)
-		setobjectmovementtype (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN, MOVEMENT_TYPE_CHASE_PLAYER)
-		addobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN)
+		removeobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
+		setobjectxyperm (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 10, 11)
+		setobjectmovementtype (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_CHASE_PLAYER)
+		addobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
 	} else {
 		msgbox (AedesAqua_Text_CrystalPressed)
 		closemessage
@@ -24,6 +24,11 @@ script AedesAqua_MiniBossRoom_Script_Crystal6 {
 	end
 }
 
-script AedesAqua_MiniBossRoom_Script_DarkBrenden {
+script AedesAqua_MiniBossRoom_Script_DarkBrendan {
+	setflag (FLAG_SETUPDARKBRENDAN)
+	trainerbattle_no_intro (TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost)
+}
 
+text AedesAqua_MiniBossRoom_Text_DarkBrendanLost {
+	format("")
 }

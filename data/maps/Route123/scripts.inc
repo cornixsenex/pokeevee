@@ -132,7 +132,7 @@ Route123_EventScript_RegisterFernando::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route123_Text_FernandoRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_FERNANDO_1
+//	register_matchcall TRAINER_FERNANDO_1
 	release
 	end
 

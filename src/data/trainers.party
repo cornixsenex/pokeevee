@@ -3303,10 +3303,10 @@ Magnemite
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_FERNANDO_1 ===
-Name: FERNANDO
-Class: Guitarist
-Pic: Guitarist
+=== TRAINER_DARKBRENDAN ===
+Name: {B_LEAF_NAME} 
+Class: Dark Shadow
+Pic: Brendan
 Gender: Male
 Music: Intense
 Double Battle: No

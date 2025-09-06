@@ -28,16 +28,24 @@ AedesAqua_MiniBossRoom_Script_Crystal6_2:
 # 14 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	special DrawWholeMapView
 # 16 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	removeobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN
+	removeobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN
 # 17 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	setobjectxyperm LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN, 10, 11
+	setobjectxyperm LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 10, 11
 # 18 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	setobjectmovementtype LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN, MOVEMENT_TYPE_CHASE_PLAYER
+	setobjectmovementtype LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_CHASE_PLAYER
 # 19 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	addobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDEN
+	addobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN
 	goto AedesAqua_MiniBossRoom_Script_Crystal6_1
 
 
-AedesAqua_MiniBossRoom_Script_DarkBrenden::
+AedesAqua_MiniBossRoom_Script_DarkBrendan::
+# 28 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+	setflag FLAG_SETUPDARKBRENDAN
+# 29 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost
 	return
 
+
+AedesAqua_MiniBossRoom_Text_DarkBrendanLost::
+# 32 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+	.string "$"
