@@ -40,19 +40,10 @@ AedesAqua_MiniBossRoom_Script_Crystal6_2:
 
 AedesAqua_MiniBossRoom_Script_DarkBrendan::
 # 28 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	msgbox AedesAqua_MiniBossRoom_Text_DarkBrendanPre
-# 29 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	closemessage
-# 30 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	trainerbattle_no_intro TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost
 	return
 
 
-AedesAqua_MiniBossRoom_Text_DarkBrendanPre::
-# 33 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
-	.string "Player: {PLAYER}\n"
-	.string "B_PLAYER: {B_PLAYER_NAME}$"
-
 AedesAqua_MiniBossRoom_Text_DarkBrendanLost::
-# 37 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+# 32 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	.string "$"

@@ -1897,6 +1897,66 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
+static void SetupDarkBrendanBattle(void)
+{
+    s32 i;
+    u8 level;
+    u8 evZero = 0;
+    u32 ivZero = 0;
+    u16 stat;
+    struct Pokemon *playerMon;
+    struct Pokemon *enemyMon;
+    for (i = 0; i < 6; i++)
+    {
+        //First just copy over the mon
+        gEnemyParty[i] = gPlayerParty[i];
+        //Assign mon variables
+        enemyMon = &gEnemyParty[i];
+        playerMon = &gPlayerParty[i];
+        //lower levela
+        level = GetMonData(playerMon, MON_DATA_LEVEL);
+        level = level - (level / 10);
+        SetMonData(enemyMon, MON_DATA_LEVEL, &level);
+        //lower attack
+        stat = GetMonData(playerMon, MON_DATA_ATK);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_ATK, &stat);
+        //lower defense
+        stat = GetMonData(playerMon, MON_DATA_DEF);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_DEF, &stat);
+        //lower speed
+        stat = GetMonData(playerMon, MON_DATA_SPEED);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_SPEED, &stat);
+        //lower spAttack
+        stat = GetMonData(playerMon, MON_DATA_SPATK);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_SPATK, &stat);
+        //lower spDefense
+        stat = GetMonData(playerMon, MON_DATA_SPDEF);
+        stat = stat - (stat / 10);
+        SetMonData (enemyMon, MON_DATA_SPDEF, &stat);
+        //Set EVs to zero
+        SetMonData(enemyMon, MON_DATA_HP_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_ATK_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_DEF_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_SPEED_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_SPATK_EV, &evZero);
+        SetMonData(enemyMon, MON_DATA_SPDEF_EV, &evZero);
+        //Set IVs to zero
+        SetMonData (enemyMon, MON_DATA_HP_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_ATK_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_DEF_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_SPEED_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_SPATK_IV, &ivZero);
+        SetMonData (enemyMon, MON_DATA_SPDEF_IV, &ivZero);
+        //Remove held itesm
+        SetMonData(enemyMon, MON_DATA_HELD_ITEM, ITEM_NONE);
+    }
+
+}
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
     u32 personalityValue;
@@ -2037,64 +2097,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
     //Dark Brendan - Copy Player, lower levels, lower stats and 0 EV et IV
     if (trainer->trainerClass == TRAINER_CLASS_DARK_SHADOW) 
-    {
-        u8 level;
-        u8 evZero = 0;
-        u32 ivZero = 0;
-        u16 stat;
-        struct Pokemon *playerMon;
-        struct Pokemon *enemyMon;
-        for (i = 0; i < 6; i++)
-        {
-            //First just copy over the mon
-            gEnemyParty[i] = gPlayerParty[i];
-            //Assign mon variables
-            enemyMon = &gEnemyParty[i];
-            playerMon = &gPlayerParty[i];
-            //lower levela
-            level = GetMonData(playerMon, MON_DATA_LEVEL);
-            level = level - (level / 10);
-            SetMonData(enemyMon, MON_DATA_LEVEL, &level);
-            //lower attack
-            stat = GetMonData(playerMon, MON_DATA_ATK);
-            stat = stat - (stat / 10);
-            SetMonData (enemyMon, MON_DATA_ATK, &stat);
-            //lower defense
-            stat = GetMonData(playerMon, MON_DATA_DEF);
-            stat = stat - (stat / 10);
-            SetMonData (enemyMon, MON_DATA_DEF, &stat);
-            //lower speed
-            stat = GetMonData(playerMon, MON_DATA_SPEED);
-            stat = stat - (stat / 10);
-            SetMonData (enemyMon, MON_DATA_SPEED, &stat);
-            //lower spAttack
-            stat = GetMonData(playerMon, MON_DATA_SPATK);
-            stat = stat - (stat / 10);
-            SetMonData (enemyMon, MON_DATA_SPATK, &stat);
-            //lower spDefense
-            stat = GetMonData(playerMon, MON_DATA_SPDEF);
-            stat = stat - (stat / 10);
-            SetMonData (enemyMon, MON_DATA_SPDEF, &stat);
-            //Set EVs to zero
-            SetMonData(enemyMon, MON_DATA_HP_EV, &evZero);
-            SetMonData(enemyMon, MON_DATA_ATK_EV, &evZero);
-            SetMonData(enemyMon, MON_DATA_DEF_EV, &evZero);
-            SetMonData(enemyMon, MON_DATA_SPEED_EV, &evZero);
-            SetMonData(enemyMon, MON_DATA_SPATK_EV, &evZero);
-            SetMonData(enemyMon, MON_DATA_SPDEF_EV, &evZero);
-            //Set IVs to zero
-            SetMonData (enemyMon, MON_DATA_HP_IV, &ivZero);
-            SetMonData (enemyMon, MON_DATA_ATK_IV, &ivZero);
-            SetMonData (enemyMon, MON_DATA_DEF_IV, &ivZero);
-            SetMonData (enemyMon, MON_DATA_SPEED_IV, &ivZero);
-            SetMonData (enemyMon, MON_DATA_SPATK_IV, &ivZero);
-            SetMonData (enemyMon, MON_DATA_SPDEF_IV, &ivZero);
-            //Remove held itesm
-            SetMonData(enemyMon, MON_DATA_HELD_ITEM, ITEM_NONE);
-        }
-		//SetMonData(&gEnemyParty[0], MON_DATA_SPECIES, &species);
-    }
-
+        SetupDarkBrendanBattle();
+    
     return trainer->partySize;
 }
 
