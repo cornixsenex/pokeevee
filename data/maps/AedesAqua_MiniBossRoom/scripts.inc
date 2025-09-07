@@ -99,9 +99,9 @@ AedesAqua_MiniBossRoom_Script_DarkBrendan::
 	setobjectmovementtype LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_INVISIBLE
 # 56 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	addobject LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN
-	return
+	end
 
 
 AedesAqua_MiniBossRoom_Text_DarkBrendanLost::
-# 59 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
+# 60 "data/maps/AedesAqua_MiniBossRoom/scripts.pory"
 	.string "$"

@@ -162,11 +162,11 @@ AedesAqua_Water2_Script_ShowNoWaterfall::
 # 93 "data/maps/AedesAqua_Water2/scripts.pory"
 	setmetatile 29, 4, METATILE_Cave_WaterLedgeS, TRUE
 # 94 "data/maps/AedesAqua_Water2/scripts.pory"
-	setmetatile 30, 4, METATILE_Cave_WaterDoorEdgeL, TRUE
+	setmetatile 30, 4, METATILE_Cave_WaterLedgeS, TRUE
 # 95 "data/maps/AedesAqua_Water2/scripts.pory"
-	setmetatile 31, 4, METATILE_Cave_SealedChamberEntrance_TopMid, TRUE
+	setmetatile 31, 4, METATILE_Cave_WaterLedgeS, TRUE
 # 96 "data/maps/AedesAqua_Water2/scripts.pory"
-	setmetatile 32, 4, METATILE_Cave_WaterDoorEdgeL, TRUE
+	setmetatile 32, 4, METATILE_Cave_WaterLedgeS, TRUE
 # 97 "data/maps/AedesAqua_Water2/scripts.pory"
 	setmetatile 33, 4, METATILE_Cave_WaterLedgeS, TRUE
 # 98 "data/maps/AedesAqua_Water2/scripts.pory"

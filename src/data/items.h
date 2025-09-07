@@ -220,11 +220,6 @@ static const u8 sWeddingInvitationDesc_Ulysses[] = _(
 		"An invitation to the\n"
 		"wedding of Helen\n");
 
-static const u8 sColchisMapDesc[] = _(
-		"An ancient map showing"
-		"locations sacred to"
-		"the native islanders");
-
 static const u8 sBigHammerDesc[] = _( 
 		"A large hammer that\n"
 		"smashes rocks with\n"

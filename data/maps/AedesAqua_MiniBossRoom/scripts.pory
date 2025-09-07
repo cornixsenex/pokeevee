@@ -54,6 +54,7 @@ script AedesAqua_MiniBossRoom_Script_DarkBrendan {
     setobjectxyperm (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, 0, 0)
     setobjectmovementtype (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN, MOVEMENT_TYPE_INVISIBLE)
     addobject (LOCALID_AEDESAQUA_MINIBOSSROOM_DARKBRENDAN)
+	end
 }
 
 text AedesAqua_MiniBossRoom_Text_DarkBrendanLost {

@@ -582,7 +582,7 @@ const u16 gTrainerPalette_Ghetsis[] = INCBIN_U16("graphics/trainers/palettes/ghe
 const u32 gTrainerFrontPic_Olympia[] = INCBIN_U32("graphics/trainers/front_pics/olympia.4bpp.smol");
 const u16 gTrainerPalette_Olympia[] = INCBIN_U16("graphics/trainers/palettes/olympia.gbapal");
 
-const u32 gTrainerFrontPic_Link[] = INCBIN_U32("graphics/trainers/front_pics/link.4bpp");
+const u32 gTrainerFrontPic_Link[] = INCBIN_U32("graphics/trainers/front_pics/link.4bpp.smol");
 const u16 gTrainerPalette_Link[] = INCBIN_U16("graphics/trainers/palettes/link.gbapal");
 
 
@@ -773,6 +773,27 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_KLYTAIMNESTRA, gTrainerFrontPic_Klytaimnestra, gTrainerPalette_Sage),               
     TRAINER_SPRITE(TRAINER_PIC_LUCY, gTrainerFrontPic_Lucy, gTrainerPalette_Lucy),               
     TRAINER_SPRITE(TRAINER_PIC_AGAMEMNON, gTrainerFrontPic_Agamemnon, gTrainerPalette_Agamemnon),               
+    TRAINER_SPRITE(TRAINER_PIC_CLAIRE, gTrainerFrontPic_Claire, gTrainerPalette_Claire),               
+    TRAINER_SPRITE(TRAINER_PIC_WALLACE2, gTrainerFrontPic_Wallace2, gTrainerPalette_Wallace2),               
+    TRAINER_SPRITE(TRAINER_PIC_CHUCK, gTrainerFrontPic_Chuck, gTrainerPalette_Chuck),               
+    TRAINER_SPRITE(TRAINER_PIC_AVERY, gTrainerFrontPic_Avery, gTrainerPalette_Avery),               
+    TRAINER_SPRITE(TRAINER_PIC_MOHN, gTrainerFrontPic_Mohn, gTrainerPalette_Mohn),               
+    TRAINER_SPRITE(TRAINER_PIC_TEUCER, gTrainerFrontPic_Teucer, gTrainerPalette_Teucer),               
+    TRAINER_SPRITE(TRAINER_PIC_BLAINE2, gTrainerFrontPic_Blaine2, gTrainerPalette_Blaine2),               
+    TRAINER_SPRITE(TRAINER_PIC_LEON, gTrainerFrontPic_Leon, gTrainerPalette_Leon),               
+    TRAINER_SPRITE(TRAINER_PIC_JOCASTA, gTrainerFrontPic_Jocasta, gTrainerPalette_Jocasta),               
+    TRAINER_SPRITE(TRAINER_PIC_AMAZON, gTrainerFrontPic_Amazon, gTrainerPalette_Amazon),               
+    TRAINER_SPRITE(TRAINER_PIC_HIPPOLYTA, gTrainerFrontPic_Hippolyta, gTrainerPalette_Hippolyta),               
+    TRAINER_SPRITE(TRAINER_PIC_TROJAN, gTrainerFrontPic_Trojan, gTrainerPalette_Trojan),               
+    TRAINER_SPRITE(TRAINER_PIC_TROILUS, gTrainerFrontPic_Troilus, gTrainerPalette_Troilus),               
+    TRAINER_SPRITE(TRAINER_PIC_CRESSIDA, gTrainerFrontPic_Cressida, gTrainerPalette_Cressida),               
+    TRAINER_SPRITE(TRAINER_PIC_KIMONO_GIRL, gTrainerFrontPic_Kimono_Girl, gTrainerPalette_Kimono_Girl),               
+    TRAINER_SPRITE(TRAINER_PIC_PRIAM, gTrainerFrontPic_Priam, gTrainerPalette_Priam),               
+    TRAINER_SPRITE(TRAINER_PIC_KAREN, gTrainerFrontPic_Karen, gTrainerPalette_Karen),               
+    TRAINER_SPRITE(TRAINER_PIC_DRAYDEN, gTrainerFrontPic_Drayden, gTrainerPalette_Drayden),               
+    TRAINER_SPRITE(TRAINER_PIC_GHETSIS, gTrainerFrontPic_Ghetsis, gTrainerPalette_Ghetsis),               
+    TRAINER_SPRITE(TRAINER_PIC_OLYMPIA, gTrainerFrontPic_Olympia, gTrainerPalette_Olympia),               
+    TRAINER_SPRITE(TRAINER_PIC_LINK, gTrainerFrontPic_Link, gTrainerPalette_Link),               
 	//END KUSTOM TRAINER SPRITES
 };
 

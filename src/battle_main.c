@@ -385,6 +385,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 	[TRAINER_CLASS_TROPIC_SLAVE] = { _("TROPIC SLAVE") },
 	[TRAINER_CLASS_RUTULIAN] = { _("RUTULIAN") },
 	[TRAINER_CLASS_DARK_SHADOW] = { _("DARK SHADOW") },
+	[TRAINER_CLASS_SILENT_HERO] = { _("SILENT HERO") },
 	//End Kustom Classes
 };
 

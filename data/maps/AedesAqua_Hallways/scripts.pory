@@ -1,5 +1,17 @@
+
+//VAR_TEMP_6 = Trigger Link Battle
+
 mapscripts AedesAqua_Hallways_MapScripts {
 
+	MAP_SCRIPT_ON_TRANSITION {
+		//Setup Link Battle
+		if (!defeated(TRAINER_LINK)) {
+			setvar (VAR_TEMP_6, 1)
+			setobjectxyperm (LOCALID_AEDESAQUA_HALLWAYS_LINK, 28, 15)
+			setobjectmovementtype (LOCALID_AEDESAQUA_HALLWAYS_LINK, MOVEMENT_TYPE_FACE_DOWN)
+		}
+		//Hide Map if already done
+	}
 
     MAP_SCRIPT_ON_LOAD {
         //Clear gates if Crystal flag is set
@@ -121,10 +133,84 @@ script AedesAqua_Hallways_Script_LinkMessage {
     closemessage
 }
 
-script AedesAqua_Hallways_Script_TestLink {
+script AedesAqua_Hallways_Script_TriggerLinkA {
+	//Move into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight3)
+	waitmovement (0)
+	//Call LinkScene
+	call (AedesAqua_Hallways_Script_LinkScene)
+}
 
-	trainerbattle_no_intro(TRAINER_SMOKEY, LoonixBeach_Text_BlueLost)
+script AedesAqua_Hallways_Script_TriggerLinkB {
+	//Move into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight2)
+	waitmovement (0)
+	//Call LinkScene
+	call (AedesAqua_Hallways_Script_LinkScene)
+}
 
+script AedesAqua_Hallways_Script_TriggerLinkC {
+	//Move into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
+	//Call LinkScene
+	call (AedesAqua_Hallways_Script_LinkScene)
+}
+
+script AedesAqua_Hallways_Script_TriggerLinkD {
+	//Call LinkScene
+	call (AedesAqua_Hallways_Script_LinkScene)
+}
+
+script AedesAqua_Hallways_Script_TriggerLinkE {
+	//Move into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	//Call LinkScene
+	call (AedesAqua_Hallways_Script_LinkScene)
+}
+
+script AedesAqua_Hallways_Script_TriggerLinkF {
+	//Move into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft2)
+	waitmovement (0)
+	//Call LinkScene
+	call (AedesAqua_Hallways_Script_LinkScene)
+}
+
+script AedesAqua_Hallways_Script_TriggerLinkG {
+	//Move into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft3)
+	waitmovement (0)
+	//Call LinkScene
+	call (AedesAqua_Hallways_Script_LinkScene)
+}
+
+script AedesAqua_Hallways_Script_LinkScene {
+	//set var to stop trigger
+	setvar (VAR_TEMP_6, 0)
+	//Move into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp2)
+	waitmovement (0)
+	//setup hide link
+    setflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
+	//do battle
+	trainerbattle_no_intro (TRAINER_LINK, AedesAqua_MiniBossRoom_Text_DarkBrendanLost)
+    //remove him after battle
+    clearflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
+    removeobject (LOCALID_AEDESAQUA_HALLWAYS_LINK)
+    setobjectxyperm (LOCALID_AEDESAQUA_HALLWAYS_LINK, 0, 0)
+    setobjectmovementtype (LOCALID_AEDESAQUA_HALLWAYS_LINK, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_AEDESAQUA_HALLWAYS_LINK)
+	end
+}
+
+script AedesAqua_Hallways_Script_Map {
+	removeobject (LOCALID_AEDESAQUA_HALLWAYS_MAP)
+	setobjectxyperm (LOCALID_AEDESAQUA_HALLWAYS_MAP, 0, 0)
+	setobjectmovementtype (LOCALID_AEDESAQUA_HALLWAYS_MAP, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_AEDESAQUA_HALLWAYS_MAP)
+	giveitem (ITEM_POKE_BALL)
 }
 
 text AedesAqua_Text_LinkMessage {
