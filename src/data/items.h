@@ -245,6 +245,11 @@ static const u8 sTrivisShardDesc[] = _(
         "A pale gold\n"
         "fragment with sharp\n"
         "and irregular edges.");
+
+static const u8 sTrivisMapDesc[] = _(
+        "A faded map that\n"
+        "shows a lake with\n"
+        "7 marked spots.");
 		
 
 //END KUSTOMS
@@ -15235,6 +15240,20 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_TrivisShard8,
         .iconPalette = gItemIconPalette_Trivis,
     },
+    
+	[ITEM_TRIVIS_MAP] =
+    {
+        .name = ITEM_NAME("Trivis Map"),
+        .price = 0,
+		.description = sTrivisMapDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_OldSeaMap,
+        .iconPalette = gItemIconPalette_OldSeaMap,
+    },
+
 
 
 

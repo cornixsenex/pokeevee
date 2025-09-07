@@ -265,7 +265,7 @@ AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_LOAD_34:
 
 AedesAqua_Hallways_Script_LinkMessage::
 # 132 "data/maps/AedesAqua_Hallways/scripts.pory"
-	msgbox AedesAqua_Text_LinkMessage, MSGBOX_SIGN
+	msgbox AedesAqua_Text_LinkMessage
 # 133 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
 	return
@@ -371,23 +371,25 @@ AedesAqua_Hallways_Script_Map::
 # 212 "data/maps/AedesAqua_Hallways/scripts.pory"
 	addobject LOCALID_AEDESAQUA_HALLWAYS_MAP
 # 213 "data/maps/AedesAqua_Hallways/scripts.pory"
-	giveitem ITEM_POKE_BALL
+	giveitem ITEM_TRIVIS_MAP
+# 214 "data/maps/AedesAqua_Hallways/scripts.pory"
+	closemessage
 	return
 
 
 AedesAqua_Text_LinkMessage::
-# 216 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 217 "data/maps/AedesAqua_Hallways/scripts.pory"
 	.string "The golden power which you seek\n"
-	.string "Is not for anyone to keep.\n"
+	.string "Is not for anyone to keep.\p"
 	.string "Too dangerous to leave alone,\n"
-	.string "I took it from it's former home.\n"
+	.string "I took it from it's former home.\p"
 	.string "The three components I have hid\n"
-	.string "Within three temples dark and dim.\n"
+	.string "Within three temples dark and dim.\p"
 	.string "The one I hide under the lake\n"
-	.string "I have decided to unmake.\n"
+	.string "I have decided to unmake.\p"
 	.string "The golden shards, which number eight,\n"
-	.string "have been sunk to preserve our fate.\n"
+	.string "have been sunk to preserve our fate.\p"
 	.string "The first is in this very room\n"
-	.string "The rest under the sun and moon.\n"
+	.string "The rest under the sun and moon.\p"
 	.string "The map will show you where they lie\n"
 	.string "On the lake bed where fishes die$"

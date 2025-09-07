@@ -129,7 +129,7 @@ mapscripts AedesAqua_Hallways_MapScripts {
 
 
 script AedesAqua_Hallways_Script_LinkMessage {
-    msgbox (AedesAqua_Text_LinkMessage, MSGBOX_SIGN)
+    msgbox (AedesAqua_Text_LinkMessage)
     closemessage
 }
 
@@ -210,22 +210,23 @@ script AedesAqua_Hallways_Script_Map {
 	setobjectxyperm (LOCALID_AEDESAQUA_HALLWAYS_MAP, 0, 0)
 	setobjectmovementtype (LOCALID_AEDESAQUA_HALLWAYS_MAP, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_AEDESAQUA_HALLWAYS_MAP)
-	giveitem (ITEM_POKE_BALL)
+	giveitem (ITEM_TRIVIS_MAP)
+	closemessage
 }
 
 text AedesAqua_Text_LinkMessage {
     format("The golden power which you seek\n
-            Is not for anyone to keep.\n
+            Is not for anyone to keep.\p
             Too dangerous to leave alone,\n
-            I took it from it's former home.\n
+            I took it from it's former home.\p
             The three components I have hid\n
-            Within three temples dark and dim.\n
+            Within three temples dark and dim.\p
             The one I hide under the lake\n
-            I have decided to unmake.\n
+            I have decided to unmake.\p
             The golden shards, which number eight,\n
-            have been sunk to preserve our fate.\n
+            have been sunk to preserve our fate.\p
             The first is in this very room\n
-            The rest under the sun and moon.\n
+            The rest under the sun and moon.\p
             The map will show you where they lie\n
-            On the lake bed where fishes die")
+            On the lake bed where fishes die.")
 }

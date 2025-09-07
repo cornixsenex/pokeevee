@@ -1030,11 +1030,12 @@
 #define ITEM_TRIVIS_SHARD6 863
 #define ITEM_TRIVIS_SHARD7 864
 #define ITEM_TRIVIS_SHARD8 865
+#define ITEM_TRIVIS_MAP    866
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 866 
+#define ITEMS_COUNT 867 
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
