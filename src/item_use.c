@@ -1708,6 +1708,7 @@ static void ItemUseOnFieldCB_TownMap(u8 taskId)
     LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_RegionMap);
     DestroyTask(taskId);
+
 }
 
 void ItemUseOutOfBattle_TownMap(u8 taskId)
@@ -1722,6 +1723,30 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
     else
     {
         gTasks[taskId].func = ItemUseOnFieldCB_TownMap;
+    }
+}
+
+//Trivis Map Custom
+
+static void ItemUseOnFieldCB_TrivisMap(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_TrivisMap);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_TrivisMap(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_TrivisMap;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gTasks[taskId].func = ItemUseOnFieldCB_TrivisMap;
     }
 }
 

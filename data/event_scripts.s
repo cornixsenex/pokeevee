@@ -783,6 +783,15 @@ EventScript_RegionMap::
 	releaseall
 	end
 
+EventScript_TrivisMap::
+	lockall
+	load_field_pic 83, 120, 70
+	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT
+	closemessage
+	destroy_field_pic 83
+	releaseall
+	end
+
 Common_EventScript_PlayBrineysBoatMusic::
 	setflag FLAG_DONT_TRANSITION_MUSIC
 	playbgm MUS_SAILING, FALSE

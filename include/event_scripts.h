@@ -1006,6 +1006,8 @@ extern const u8 OceanPerimeter2_Script_Transition_MareSubtropicum[];
 extern const u8 SRoute18_Script_SinusPacificusTransition[];
 extern const u8 SRoute18_Script_SinusClarusTransition[];
 extern const u8 SRoute18_Script_MareInternumTransition[];
+//Trivis Map
+extern const u8 EventScript_TrivisMap[];
 
 //		END		KUSTOMS		///
 

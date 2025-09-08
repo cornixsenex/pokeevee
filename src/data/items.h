@@ -15249,9 +15249,25 @@ const struct Item gItemsInfo[] =
         .importance = 2,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_TrivisMap,
         .iconPic = gItemIcon_OldSeaMap,
         .iconPalette = gItemIconPalette_OldSeaMap,
+    },
+	
+	[ITEM_FISHING_ROD] =
+    {
+        .name = ITEM_NAME("Fishing Rod"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Use by any body of\n"
+            "water to fish for\n"
+            "wild Pokémon."),
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SuperRod,
+        .iconPalette = gItemIconPalette_SuperRod,
     },
 
 

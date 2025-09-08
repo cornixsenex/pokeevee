@@ -277,6 +277,9 @@ static const u16 sPic82Pal[] = INCBIN_U16("graphics/trainers/front_pics/ghetsis.
 //Olympia = 82
 static const u32 sPic83Gfx[] = INCBIN_U32("graphics/trainers/front_pics/olympia.4bpp.lz");
 static const u16 sPic83Pal[] = INCBIN_U16("graphics/trainers/front_pics/olympia.gbapal");
+//Trivis Map = 83
+static const u32 sPic84Gfx[] = INCBIN_U32("graphics/misc/trivis_map.4bpp.lz");
+static const u16 sPic84Pal[] = INCBIN_U16("graphics/misc/trivis_map.gbapal");
 
 /* And this is an example script.
 
@@ -331,7 +334,6 @@ static const struct Pic sPics[] =
 	//Lt Surge
     {sPic15Gfx, sPic15Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Mewtwo
-    //{sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), sAnims},
     {sPic16Gfx, sPic16Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//BLUE2 - Manic Pose
     {sPic17Gfx, sPic17Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
@@ -467,6 +469,8 @@ static const struct Pic sPics[] =
     {sPic82Gfx, sPic82Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Olympia
     {sPic83Gfx, sPic83Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Trivis Map
+    {sPic84Gfx, sPic84Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

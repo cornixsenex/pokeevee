@@ -392,4 +392,4 @@ AedesAqua_Text_LinkMessage::
 	.string "The first is in this very room\n"
 	.string "The rest under the sun and moon.\p"
 	.string "The map will show you where they lie\n"
-	.string "On the lake bed where fishes die$"
+	.string "On the lake bed where fishes die.$"
