@@ -1022,21 +1022,25 @@
 #define ITEM_CORNELIUS_LETTER 855
 #define ITEM_TRIVIS_SAPIENTIAE 856
 #define ITEM_TRIVIS_FORTITUDINIS 857
-#define ITEM_TRIVIS_SHARD1 858
-#define ITEM_TRIVIS_SHARD2 859
-#define ITEM_TRIVIS_SHARD3 860
-#define ITEM_TRIVIS_SHARD4 861
-#define ITEM_TRIVIS_SHARD5 862
-#define ITEM_TRIVIS_SHARD6 863
-#define ITEM_TRIVIS_SHARD7 864
-#define ITEM_TRIVIS_SHARD8 865
-#define ITEM_TRIVIS_MAP    866
-#define ITEM_FISHING_ROD   867
+#define ITEM_TRIVIS_SHARD1       858
+#define ITEM_TRIVIS_SHARD2       859
+#define ITEM_TRIVIS_SHARD3       860
+#define ITEM_TRIVIS_SHARD4       861
+#define ITEM_TRIVIS_SHARD5       862
+#define ITEM_TRIVIS_SHARD6       863
+#define ITEM_TRIVIS_SHARD7       864
+#define ITEM_TRIVIS_SHARD8       865
+#define ITEM_TRIVIS_MAP          866
+#define ITEM_FISHING_ROD         867
+#define ITEM_FISHING_BAIT        868
+#define ITEM_FISHING_LURE        869
+#define ITEM_LIVE_BAIT           870
+#define ITEM_LIVE_BAIT_TOOLS     871
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 868 
+#define ITEMS_COUNT 872
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
