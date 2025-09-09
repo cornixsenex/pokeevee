@@ -1074,9 +1074,21 @@
 #define MAX_PYRAMID_ITEM_DIGITS ((MAX_PYRAMID_BAG_ITEM_CAPACITY > 99) ? 3 : 2)
 
 // Secondary IDs for rods
-#define OLD_ROD   0
-#define GOOD_ROD  1
-#define SUPER_ROD 2
+#define OLD_ROD     0
+#define GOOD_ROD    1
+#define SUPER_ROD   2
+#define FISHING_ROD 3
+#define BAIT        4
+#define LURE        5
+#define LIVE_BATE   6
+//NOTE I define SUNKEN TREASURE stuff here as well since I set that to the rod value anyways
+#define SUNKEN_TREASURE_TRIVIS_SHARD_1 11
+#define SUNKEN_TREASURE_TRIVIS_SHARD_2 12
+#define SUNKEN_TREASURE_TRIVIS_SHARD_3 13
+#define SUNKEN_TREASURE_TRIVIS_SHARD_4 14
+#define SUNKEN_TREASURE_TRIVIS_SHARD_5 15
+#define SUNKEN_TREASURE_TRIVIS_SHARD_6 16
+#define SUNKEN_TREASURE_TRIVIS_SHARD_7 17
 
 // Secondary IDs for bikes
 #define MACH_BIKE 0

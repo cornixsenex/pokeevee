@@ -377,8 +377,30 @@ AedesAqua_Hallways_Script_Map::
 	return
 
 
+AedesAqua_Hallways_SunkenTreasure_TrivisShard1::
+# 218 "data/maps/AedesAqua_Hallways/scripts.pory"
+	giveitem ITEM_TRIVIS_SHARD1
+# 219 "data/maps/AedesAqua_Hallways/scripts.pory"
+	closemessage
+# 220 "data/maps/AedesAqua_Hallways/scripts.pory"
+	setflag FLAG_TRIVIS_SHARD_1
+	end
+
+
+EventScript_SunkenTreasure_Error::
+# 225 "data/maps/AedesAqua_Hallways/scripts.pory"
+	msgbox EventScript_SunkenTreasure_Error_Text_0
+# 226 "data/maps/AedesAqua_Hallways/scripts.pory"
+	closemessage
+	end
+
+
+EventScript_SunkenTreasure_Error_Text_0:
+# 225 "data/maps/AedesAqua_Hallways/scripts.pory"
+	.string "ERROR:\ntask->tFishingRod OOB\p$"
+
 AedesAqua_Text_LinkMessage::
-# 217 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 230 "data/maps/AedesAqua_Hallways/scripts.pory"
 	.string "The golden power which you seek\n"
 	.string "Is not for anyone to keep.\p"
 	.string "Too dangerous to leave alone,\n"

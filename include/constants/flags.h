@@ -205,17 +205,17 @@
 #define FLAG_MARES4_RUTULIAN4                0xB1
 #define FLAG_MARES4_RUTULIAN5                0xB2
 #define FLAG_MARES4_RUTULIAN6                0xB3
+#define FLAG_TRIVIS_SHARD_1                  0xB4 
+#define FLAG_TRIVIS_SHARD_2                  0xB5
+#define FLAG_TRIVIS_SHARD_3                  0xB6
+#define FLAG_TRIVIS_SHARD_4                  0xB7
+#define FLAG_TRIVIS_SHARD_5                  0xB8
+#define FLAG_TRIVIS_SHARD_6                  0xB9
+#define FLAG_TRIVIS_SHARD_7                  0xBA
 
 // BREAK // - USE UNUSED ABOVE PLS
 
-#define FLAG_DECORATION_7                    0xB4 //DID YOU USE UNUSED ABOVE?
-#define FLAG_DECORATION_8                    0xB5
-#define FLAG_DECORATION_9                    0xB6
-#define FLAG_DECORATION_10                   0xB7
-#define FLAG_DECORATION_11                   0xB8
-#define FLAG_DECORATION_12                   0xB9
-#define FLAG_DECORATION_13                   0xBA
-#define FLAG_DECORATION_14                   0xBB
+#define FLAG_DECORATION_14                   0xBB  //DID YOU USE UNUSED ABOVE?
 #define FLAG_RECEIVED_POKENAV                0xBC
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE

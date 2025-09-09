@@ -214,6 +214,19 @@ script AedesAqua_Hallways_Script_Map {
 	closemessage
 }
 
+script AedesAqua_Hallways_SunkenTreasure_TrivisShard1 {
+	giveitem (ITEM_TRIVIS_SHARD1)
+	closemessage
+	setflag (FLAG_TRIVIS_SHARD_1)
+	end
+}
+
+script  EventScript_SunkenTreasure_Error {
+	msgbox ("ERROR:\ntask->tFishingRod OOB\p")
+	closemessage
+	end
+}
+
 text AedesAqua_Text_LinkMessage {
     format("The golden power which you seek\n
             Is not for anyone to keep.\p

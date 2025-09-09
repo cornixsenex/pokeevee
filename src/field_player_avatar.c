@@ -3,6 +3,7 @@
 #include "bike.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "event_scripts.h"
 #include "field_camera.h"
 #include "field_control_avatar.h" //Cornix surf transition triggers
 #include "field_effect.h"
@@ -183,6 +184,8 @@ static bool32 Fishing_GotAway(struct Task *);
 static bool32 Fishing_NoMon(struct Task *);
 static bool32 Fishing_PutRodAway(struct Task *);
 static bool32 Fishing_EndNoMon(struct Task *);
+static bool32 CheckForSunkenTreasure(struct Task *);  //Cornix Custom Sunken Treasure  
+static bool32 Fishing_FoundTreasure(struct Task *);   //Cornix Custom Sunken Treasure
 static void AlignFishingAnimationFrames(void);
 static bool32 DoesFishingMinigameAllowCancel(void);
 static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void);
@@ -1151,7 +1154,7 @@ bool8 IsPlayerCollidingWithFarawayIslandMew(u8 direction)
     s16 playerY;
     s16 mewPrevX;
 
-    object = &gObjectEvents[gPlayerAvatar.objectEventId];
+object = &gObjectEvents[gPlayerAvatar.objectEventId];
     playerX = object->currentCoords.x;
     playerY = object->currentCoords.y;
 
@@ -2166,6 +2169,8 @@ enum
     FISHING_NO_MON,
     FISHING_PUT_ROD_AWAY,
     FISHING_END_NO_MON,
+	FISHING_CHECK_FOR_TREASURE,
+	FISHING_FOUND_TREASURE,
 };
 
 static bool32 (*const sFishingStateFuncs[])(struct Task *) =
@@ -2188,6 +2193,7 @@ static bool32 (*const sFishingStateFuncs[])(struct Task *) =
     [FISHING_NO_MON]                = Fishing_NoMon,
     [FISHING_PUT_ROD_AWAY]          = Fishing_PutRodAway,
     [FISHING_END_NO_MON]            = Fishing_EndNoMon,
+    [FISHING_FOUND_TREASURE]        = Fishing_FoundTreasure, //Custom Cornix fishing treasures
 };
 
 void StartFishing(u8 rod)
@@ -2337,6 +2343,13 @@ static bool32 Fishing_CheckForBite(struct Task *task)
 
 static bool32 Fishing_GotBite(struct Task *task)
 {
+	//Cornix Custom fishing treasures
+	if (CheckForSunkenTreasure(task))
+	{
+		task->tStep = FISHING_FOUND_TREASURE;
+		return TRUE;
+	}
+		
     AlignFishingAnimationFrames();
     AddTextPrinterParameterized(0, FONT_NORMAL, gText_OhABite, 0, 17, 0, NULL);
     task->tStep = FISHING_CHANGE_MINIGAME;
@@ -2461,12 +2474,18 @@ static bool32 Fishing_StartEncounter(struct Task *task)
 
 static bool32 Fishing_NotEvenNibble(struct Task *task)
 {
+	//Cornix Custom fishing treasures
+	if (CheckForSunkenTreasure(task))
+	{
+		task->tStep = FISHING_FOUND_TREASURE;
+		return TRUE;
+	}
     gChainFishingDexNavStreak = 0;
     AlignFishingAnimationFrames();
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     AddTextPrinterParameterized2(0, FONT_NORMAL, gText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-    task->tStep = FISHING_NO_MON;
+	task->tStep = FISHING_NO_MON;
     return TRUE;
 }
 
@@ -2717,6 +2736,90 @@ static bool32 IsMetatileLand(s16 x, s16 y, u32 collison)
         default:
             return FALSE;
     }
+}
+
+static bool32 CheckForSunkenTreasure(struct Task *task)
+{
+	//This function checks if you're at the right spot on the right map and if this treasure has not been found yet. If so it sets the rod number to a corresponding treasure number and returns TRUE the actual giving of the item and setting of the flag and all will be handled by the task FOUND_TREASURE which will in turn lead to the whole ending of the fishing sequence
+	
+	//Variables
+	u32 mapGroup, mapNum;
+	s16 playerX, playerY;
+	//Assignment
+	mapGroup = gSaveBlock1Ptr->location.mapGroup;
+	mapNum   = gSaveBlock1Ptr->location.mapNum;
+	playerX = gSaveBlock1Ptr->pos.x;
+	playerY = gSaveBlock1Ptr->pos.y;
+	//If in AedesAqua_Hallways && not found yet the YES
+	if (
+			mapGroup == MAP_GROUP(MAP_AEDES_AQUA_HALLWAYS) && 
+			mapNum == MAP_NUM(MAP_AEDES_AQUA_HALLWAYS) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_1) &&
+			playerX > 24 &&
+			playerX < 32 &&
+			playerY > 7 &&
+			playerY < 14
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_1;
+		return TRUE;
+	}
+
+
+	//Other Sunken Treasures go here simple if()
+	
+	//If you reach here no sunken treasures were found so just return FALSE
+	return FALSE;
+}
+
+//Custom Found Treasure Task
+//Should do the giving of the item, the setting of the flag and ideally the ending of the fishing sequence as well
+static bool32 Fishing_FoundTreasure(struct Task *task)
+{
+    AlignFishingAnimationFrames();
+	//Wait for Text to Finish Printing
+    if (task->tFrameCounter == 0)
+    {
+		StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
+        if (!IsTextPrinterActive(0))
+        {
+            task->tFrameCounter++;
+            return FALSE;
+        }
+    }
+	//Start the event script
+    if (task->tFrameCounter == 1)
+	{
+		if (gSprites[gPlayerAvatar.spriteId].animEnded)
+		{
+			if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
+				SetSurfBlob_PlayerOffset(gObjectEvents[gPlayerAvatar.objectEventId].fieldEffectSpriteId, FALSE, 0);
+			switch (task->tFishingRod) {
+				case SUNKEN_TREASURE_TRIVIS_SHARD_1:
+					ScriptContext_SetupScript(AedesAqua_Hallways_SunkenTreasure_TrivisShard1);
+					break;
+				default:
+					ScriptContext_SetupScript(EventScript_SunkenTreasure_Error);
+			}
+			task->tFrameCounter++;
+		}
+		return FALSE;
+	}
+	//Wait for script to be finished (Flag will be set)
+    if (task->tFrameCounter == 2)
+	{
+		switch (task->tFishingRod) {
+			case SUNKEN_TREASURE_TRIVIS_SHARD_1:
+				if (FlagGet(FLAG_TRIVIS_SHARD_1))
+					task->tStep = FISHING_NO_MON;
+				return FALSE;
+			default:
+				ScriptContext_SetupScript(EventScript_SunkenTreasure_Error);
+				task->tStep = FISHING_NO_MON;
+				return FALSE;
+		}
+	}
+	return FALSE;
 }
 
 #undef tStep
