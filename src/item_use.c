@@ -353,6 +353,20 @@ void ItemUseOutOfBattle_Rod(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_FishingBait(u8 taskId) 
+{
+	if (CanFish() == TRUE)
+	{
+        RemoveUsedItem();
+		sItemUseOnFieldCB = ItemUseOnFieldCB_Rod;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
+    else
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
+}
+
 static bool32 CanFlashlight(void)
 {
     if (gMapHeader.cave)

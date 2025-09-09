@@ -15279,11 +15279,12 @@ const struct Item gItemsInfo[] =
             "water to fish for\n"
             "wild Pokémon."),
         .importance = 2,
-        .pocket = POCKET_KEY_ITEMS,
+        .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_SuperRod,
-        .iconPalette = gItemIconPalette_SuperRod,
+        .fieldUseFunc = ItemUseOutOfBattle_FishingBait,
+        .secondaryId = GOOD_ROD,
+        .iconPic = gItemIcon_BlackApricorn,
+        .iconPalette = gItemIconPalette_BlackApricorn,
     },
 	
 	[ITEM_FISHING_LURE] =
