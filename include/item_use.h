@@ -56,6 +56,8 @@ void ItemUseOutOfBattle_TrainerCard(u8);
 void ItemUseOutOfBattle_Scythe(u8);
 void ItemUseOutOfBattle_Flashlight(u8);
 void ItemUseOutOfBattle_TrivisMap(u8);
+void ItemUseOutOfBattle_FishingBait(u8);
+void ItemUseOutOfBattle_FishingLure(u8);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

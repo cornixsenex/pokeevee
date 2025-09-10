@@ -187,7 +187,7 @@ static bool32 Fishing_EndNoMon(struct Task *);
 static bool32 CheckForSunkenTreasure(struct Task *);  //Cornix Custom Sunken Treasure  
 static bool32 Fishing_FoundTreasure(struct Task *);   //Cornix Custom Sunken Treasure
 static void AlignFishingAnimationFrames(void);
-static bool32 DoesFishingMinigameAllowCancel(void);
+//static bool32 DoesFishingMinigameAllowCancel(void); //Cornix removed - New custom minigame determiner
 static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void);
 static bool32 Fishing_RollForBite(u32, bool32);
 static u32 CalculateFishingBiteOdds(u32, bool32);
@@ -2280,8 +2280,11 @@ static bool32 Fishing_ShowDots(struct Task *task)
     task->tFrameCounter++;
     if (JOY_NEW(A_BUTTON))
     {
-        if (!DoesFishingMinigameAllowCancel())
-            return FALSE;
+		if (task->tFishingRod != FISHING_LURE)
+			return FALSE;
+	  	
+      //  if (!DoesFishingMinigameAllowCancel()) //!IsMinigame
+      //      return FALSE;
 
         task->tStep = FISHING_NOT_EVEN_NIBBLE;
         if (task->tRoundsPlayed != 0)
@@ -2357,29 +2360,42 @@ static bool32 Fishing_GotBite(struct Task *task)
     return FALSE;
 }
 
+//Cornix Modified for determing minigame on FISHING_LURE
 static bool32 Fishing_ChangeMinigame(struct Task *task)
 {
-    switch (I_FISHING_MINIGAME)
-    {
-        case GEN_1:
-        case GEN_2:
-            task->tStep = FISHING_A_PRESS_NO_MINIGAME;
-            break;
-        case GEN_3:
-        default:
-            task->tStep = FISHING_WAIT_FOR_A;
-            break;
-    }
-    return TRUE;
+	if (task->tFishingRod != FISHING_LURE)
+		task->tStep = FISHING_A_PRESS_NO_MINIGAME;
+	else
+		task->tStep = FISHING_WAIT_FOR_A;
+    
+	return TRUE;
 }
+
+//OG RHH
+//static bool32 Fishing_ChangeMinigame(struct Task *task)
+//{
+//    switch (I_FISHING_MINIGAME)
+//    {
+//        case GEN_1:
+//        case GEN_2:
+//            task->tStep = FISHING_A_PRESS_NO_MINIGAME;
+//            break;
+//        case GEN_3:
+//        default:
+//            task->tStep = FISHING_WAIT_FOR_A;
+//            break;
+//    }
+//    return TRUE;
+//}
 
 // We have a bite. Now, wait for the player to press A, or the timer to expire.
 static bool32 Fishing_WaitForA(struct Task *task)
 {
-    const s16 reelTimeouts[3] = {
-        [OLD_ROD]   = 36,
-        [GOOD_ROD]  = 33,
-        [SUPER_ROD] = 30
+    const s16 reelTimeouts[] = {
+        [OLD_ROD]      = 36,
+        [GOOD_ROD]     = 33,
+        [FISHING_LURE] = 30,
+        [SUPER_ROD]    = 30
     };
 
     AlignFishingAnimationFrames();
@@ -2404,9 +2420,10 @@ static bool32 Fishing_CheckMoreDots(struct Task *task)
 {
     const s16 moreDotsChance[][2] =
     {
-        [OLD_ROD]   = {0, 0},
-        [GOOD_ROD]  = {40, 10},
-        [SUPER_ROD] = {70, 30}
+        [OLD_ROD]      = {0, 0},
+        [GOOD_ROD]     = {40, 10},
+        [FISHING_LURE] = {85, 45},
+        [SUPER_ROD]    = {70, 30}
     };
 
     AlignFishingAnimationFrames();
@@ -2540,18 +2557,20 @@ static bool32 Fishing_EndNoMon(struct Task *task)
     return FALSE;
 }
 
-static bool32 DoesFishingMinigameAllowCancel(void)
-{
-    switch(I_FISHING_MINIGAME)
-    {
-        case GEN_1:
-        case GEN_2:
-            return FALSE;
-        case GEN_3:
-        default:
-            return TRUE;
-    }
-}
+//Cornix is changing - Using a lure means play mini game otherwise no mini game - 250909
+//OG rhh 
+//static bool32 DoesFishingMinigameAllowCancel(void)
+//{
+//    switch(I_FISHING_MINIGAME)
+//    {
+//        case GEN_1:
+//        case GEN_2:
+//            return FALSE;
+//        case GEN_3:
+//        default:
+//            return TRUE;
+//    }
+//}
 
 static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void)
 {

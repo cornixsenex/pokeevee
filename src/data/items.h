@@ -250,6 +250,21 @@ static const u8 sTrivisMapDesc[] = _(
         "A faded map that\n"
         "shows a lake with\n"
         "7 marked spots.");
+
+static const u8 sFishingBaitDesc[] = _(
+        "A small bit of\n"
+        "food used to\n"
+        "attracks fish.");
+
+static const u8 sFishingLureDesc[] = _(
+        "A colorful lure\n"
+        "used to attract\n"
+        "fish..");
+
+static const u8 sLiveBaitDesc[] = _(
+        "A living {PKMN}\n"
+        "fitted with hooks\n"
+        "to attract fish.");
 		
 
 //END KUSTOMS
@@ -15265,7 +15280,8 @@ const struct Item gItemsInfo[] =
         .importance = 2,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Rod,
+        .secondaryId = OLD_ROD,
         .iconPic = gItemIcon_SuperRod,
         .iconPalette = gItemIconPalette_SuperRod,
     },
@@ -15273,12 +15289,8 @@ const struct Item gItemsInfo[] =
 	[ITEM_FISHING_BAIT] =
     {
         .name = ITEM_NAME("Fishing Bait"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "Use by any body of\n"
-            "water to fish for\n"
-            "wild Pokémon."),
-        .importance = 2,
+        .price = 200,
+		.description = sFishingBaitDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_FishingBait,
@@ -15290,33 +15302,27 @@ const struct Item gItemsInfo[] =
 	[ITEM_FISHING_LURE] =
     {
         .name = ITEM_NAME("Fishing Lure"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "Use by any body of\n"
-            "water to fish for\n"
-            "wild Pokémon."),
-        .importance = 2,
-        .pocket = POCKET_KEY_ITEMS,
+        .price = 300,
+		.description = sFishingLureDesc,
+        .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_SuperRod,
-        .iconPalette = gItemIconPalette_SuperRod,
+        .fieldUseFunc = ItemUseOutOfBattle_FishingLure,
+        .secondaryId = FISHING_LURE,
+        .iconPic = gItemIcon_CatchingCharm,
+        .iconPalette = gItemIconPalette_CatchingCharm,
     },
 	
 	[ITEM_LIVE_BAIT] =
     {
         .name = ITEM_NAME("Live Bait"),
-        .price = 0,
-        .description = COMPOUND_STRING(
-            "Use by any body of\n"
-            "water to fish for\n"
-            "wild Pokémon."),
-        .importance = 2,
-        .pocket = POCKET_KEY_ITEMS,
+        .price = 500,
+		.description = sLiveBaitDesc,
+        .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_SuperRod,
-        .iconPalette = gItemIconPalette_SuperRod,
+        .fieldUseFunc = ItemUseOutOfBattle_FishingBait,
+        .secondaryId = SUPER_ROD,
+        .iconPic = gItemIcon_PokeshiDoll,
+        .iconPalette = gItemIconPalette_PokeshiDoll,
     },
 	
 	[ITEM_LIVE_BAIT_TOOLS] =

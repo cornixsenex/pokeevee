@@ -81,6 +81,7 @@ static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
 static void ItemUseOnFieldCB_Honey(u8 taskId);
 static bool32 IsValidLocationForVsSeeker(void);
+static void RemoveUsedItem(void);
 
 static const u8 sText_CantDismountBike[] = _("You can't dismount your BIKE here.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_ItemFinderNearby[] = _("Huh?\nThe ITEMFINDER's responding!\pThere's an item buried around here!{PAUSE_UNTIL_PRESS}");
@@ -355,7 +356,7 @@ void ItemUseOutOfBattle_Rod(u8 taskId)
 
 void ItemUseOutOfBattle_FishingBait(u8 taskId) 
 {
-	if (CanFish() == TRUE)
+	if (CanFish() == TRUE && CheckBagHasItem(ITEM_FISHING_ROD, 1))
 	{
         RemoveUsedItem();
 		sItemUseOnFieldCB = ItemUseOnFieldCB_Rod;
@@ -365,6 +366,32 @@ void ItemUseOutOfBattle_FishingBait(u8 taskId)
     {
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
     }
+}
+
+void ItemUseOutOfBattle_FishingLure(u8 taskId) 
+{
+	u16 randomNum;
+	if (CanFish() == TRUE && CheckBagHasItem(ITEM_FISHING_ROD, 1))
+	{
+		//Chance to break the lure
+		randomNum = Random();
+		randomNum %= 10;
+		//Adjust the odds if you like rn it's 20% chance to break
+		if (randomNum > 7)
+			RemoveUsedItem();
+		sItemUseOnFieldCB = ItemUseOnFieldCB_Rod;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
+    else
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
+}
+
+static void ItemUseOnFieldCB_Rod(u8 taskId)
+{
+    StartFishing(GetItemSecondaryId(gSpecialVar_ItemId));
+    DestroyTask(taskId);
 }
 
 static bool32 CanFlashlight(void)
@@ -398,13 +425,6 @@ static void ItemUseOnFieldCB_Flashlight(u8 taskId)
     DestroyTask(taskId);
 }
     
-
-static void ItemUseOnFieldCB_Rod(u8 taskId)
-{
-    StartFishing(GetItemSecondaryId(gSpecialVar_ItemId));
-    DestroyTask(taskId);
-}
-
 void ItemUseOutOfBattle_Itemfinder(u8 var)
 {
     IncrementGameStat(GAME_STAT_USED_ITEMFINDER);
