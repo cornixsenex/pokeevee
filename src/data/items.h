@@ -265,6 +265,11 @@ static const u8 sLiveBaitDesc[] = _(
         "A living {PKMN}\n"
         "fitted with hooks\n"
         "to attract fish.");
+
+static const u8 sLiveBaitToolsDesc[] = _(
+        "WIP WIP WIP\n"
+        "fitted with hooks\n"
+        "to attract fish.");
 		
 
 //END KUSTOMS
@@ -15277,9 +15282,9 @@ const struct Item gItemsInfo[] =
             "Use by any body of\n"
             "water to fish for\n"
             "wild Pokémon."),
-        .importance = 2,
+        .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_Rod,
         .secondaryId = OLD_ROD,
         .iconPic = gItemIcon_SuperRod,
@@ -15292,7 +15297,7 @@ const struct Item gItemsInfo[] =
         .price = 200,
 		.description = sFishingBaitDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_FishingBait,
         .secondaryId = GOOD_ROD,
         .iconPic = gItemIcon_BlackApricorn,
@@ -15305,9 +15310,10 @@ const struct Item gItemsInfo[] =
         .price = 300,
 		.description = sFishingLureDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_FishingLure,
         .secondaryId = FISHING_LURE,
+		.flingPower = 30,
         .iconPic = gItemIcon_CatchingCharm,
         .iconPalette = gItemIconPalette_CatchingCharm,
     },
@@ -15318,9 +15324,10 @@ const struct Item gItemsInfo[] =
         .price = 500,
 		.description = sLiveBaitDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_FishingBait,
         .secondaryId = SUPER_ROD,
+		.flingPower = 30,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
@@ -15329,16 +15336,13 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Live Bait Tools"),
         .price = 0,
-        .description = COMPOUND_STRING(
-            "Use by any body of\n"
-            "water to fish for\n"
-            "wild Pokémon."),
+		.description = sLiveBaitToolsDesc,
         .importance = 2,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_SuperRod,
-        .iconPalette = gItemIconPalette_SuperRod,
+        .iconPic = gItemIcon_EjectPack,
+        .iconPalette = gItemIconPalette_EjectPack,
     },
 
 ///	KUSTOM ITEMS END ///

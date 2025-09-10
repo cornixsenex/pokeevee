@@ -11947,7 +11947,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_AZURILL"
+                "species": "SPECIES_NONE"
               }
             ]
           },
@@ -12012,7 +12012,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_WOOPER"
+                "species": "SPECIES_QUAGSIRE"
               },
               {
                 "min_level": 5,
@@ -12022,7 +12022,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SHELLOS_WEST"
+                "species": "SPECIES_GASTRODON_WEST"
               },
               {
                 "min_level": 5,
@@ -12032,7 +12032,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_QUAGSIRE"
+                "species": "SPECIES_CLAMPERL"
               }
             ]
           }
