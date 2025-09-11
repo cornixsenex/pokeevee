@@ -5921,7 +5921,7 @@ bool32 IsSpearowInParty(void)
 	u32 species;
 	struct Pokemon *pokemon;
 	
-	for (i = 0;i < PARTY_SIZE; i++)
+	for (i = 0; i < PARTY_SIZE; i++)
     {
         pokemon = &gPlayerParty[i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))

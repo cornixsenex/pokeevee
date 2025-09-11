@@ -267,9 +267,9 @@ static const u8 sLiveBaitDesc[] = _(
         "to attract fish.");
 
 static const u8 sLiveBaitToolsDesc[] = _(
-        "WIP WIP WIP\n"
-        "fitted with hooks\n"
-        "to attract fish.");
+        "Tools used to\n"
+        "process {PKMN} into\n"
+        "live fishing bait.");
 		
 
 //END KUSTOMS
