@@ -58,6 +58,7 @@ void ItemUseOutOfBattle_Flashlight(u8);
 void ItemUseOutOfBattle_TrivisMap(u8);
 void ItemUseOutOfBattle_FishingBait(u8);
 void ItemUseOutOfBattle_FishingLure(u8);
+void ItemUseOutOfBattle_LiveBaitTools(u8 taskId);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

@@ -1284,6 +1284,12 @@ void ItemUseOutOfBattle_EvolutionStone(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_LiveBaitTools(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_LiveBaitTools;
+    SetUpItemUseCallback(taskId);
+}
+
 static u32 GetBallThrowableState(void)
 {
     if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))

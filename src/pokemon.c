@@ -3831,11 +3831,20 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     else
         holdEffect = GetItemHoldEffect(heldItem);
 
+	//Cornix Custom Live Bait Tools
+	if (item == ITEM_LIVE_BAIT_TOOLS && PokemonCanBeUsedAsLiveBait(mon))
+	{
+		ZeroMonData(mon);
+		CompactPartySlots();
+		CalculatePlayerPartyCount();
+		return FALSE;
+	}
+
     // Skip using the item if it won't do anything
     if (GetItemEffect(item) == NULL && item != ITEM_ENIGMA_BERRY_E_READER)
         return TRUE;
-
-    // Get item effect
+    
+	// Get item effect
     itemEffect = GetItemEffect(item);
 
     // Do item effect
@@ -7261,3 +7270,17 @@ u32 IsSpeciesOfType(u32 species, u32 type)
         return TRUE;
     return FALSE;
 }
+
+//Cornix Custom - Live Bait Tools
+bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
+{
+	u32 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+	if  (
+		(species == SPECIES_WURMPLE)
+		)
+		return TRUE;
+	else
+		return FALSE;
+}
+
+

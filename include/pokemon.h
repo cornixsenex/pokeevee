@@ -892,5 +892,6 @@ u32 IsSpeciesOfType(u32 species, u32 type);
 
 //CornixSenex Custom Dynamic Map support
 u32 DetermineDynamicMapsecValue (void);
+bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon);
 
 #endif // GUARD_POKEMON_H

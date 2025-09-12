@@ -4818,7 +4818,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 
 void Task_AbilityCapsule(u8 taskId)
 {
-    static const u8 askText[] = _("Would you like to change {STR_VAR_1}'s\nability to {STR_VAR_2}?");
+    static const u8 askText[] = _("Wouldyou like to change {STR_VAR_1}'s\nability to {STR_VAR_2}?");
     static const u8 doneText[] = _("{STR_VAR_1}'s ability became\n{STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
     s16 *data = gTasks[taskId].data;
 
@@ -4843,7 +4843,7 @@ void Task_AbilityCapsule(u8 taskId)
         StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, tAbilityNum)].name);
         StringExpandPlaceholders(gStringVar4, askText);
         PlaySE(SE_SELECT);
-        DisplayPartyMenuMessage(gStringVar4, 1);
+DisplayPartyMenuMessage(gStringVar4, 1);
         ScheduleBgCopyTilemapToVram(2);
         tState++;
         break;
@@ -6122,7 +6122,7 @@ void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc task)
 void Task_LiveBaitTools(u8 taskId)
 {
 	static const u8 askLiveBaitText[] =  _("Would you like to turn {STR_VAR_1}\ninto Live Bait?");
-	static const u8 doneLiveBaitText[] = _("You turned {STR_VAR_1} into Live Bait.\nBye Bye {STR_VAR_1}!{PAUSE_UNTIL_PRESS}");
+	static const u8 doneLiveBaitText[] = _("You have turned {STR_VAR_1}\ninto Live Bait!{PAUSE_UNTIL_PRESS}");
     s16 *data = gTasks[taskId].data;
 
 	switch (tState)
@@ -6193,9 +6193,35 @@ void Task_LiveBaitTools(u8 taskId)
 //All this function does is calls the task, compare AbilityCapsule
 void ItemUseCB_LiveBaitTools(u8 taskId, TaskFunc task)
 {
+	DebugPrintf ("ItemUseCB_LiveBaitTools");
+
     s16 *data = gTasks[taskId].data;
 	tState = 0;
 	gTasks[taskId].func = Task_LiveBaitTools;
+
+//	//Move this to the Task
+//	if (!PokemonCanBeUsedAsLiveBait(&gPlayerParty[gPartyMenu.slotId]))
+//    {
+//        gPartyMenuUseExitCallback = FALSE;
+//        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+//        ScheduleBgCopyTilemapToVram(2);
+//        gTasks[taskId].func = task;
+//    }
+//    else
+//    {
+//		DebugPrintf ("ELSE");
+//		//HERE IS YOU HAVE SELECTED A MON TO CONVERT
+//		//Confirm
+//		//Do Conversion
+//		ZeroMonData(&gPlayerParty[gPartyMenu.slotId]);
+//		CompactPartySlots();
+//		CalculatePlayerPartyCount();
+//		AddBagItem(ITEM_LIVE_BAIT, 1);
+//		//Do some indication it's been converted
+//		DisplayPartyMenuMessage (gText_ByeBye, TRUE);
+//		//Close and return to field
+//		Task_ClosePartyMenu(taskId);
+//    }
 }
 
 #define FUSE_MON        1

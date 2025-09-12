@@ -114,4 +114,7 @@ bool32 SetUpFieldMove_Waterfall(void);
 bool32 SetUpFieldMove_Dive(void);
 bool32 SetUpFieldMove_RockClimb(void);
 
+//Custom
+void ItemUseCB_LiveBaitTools(u8 taskId, TaskFunc task);
+
 #endif // GUARD_PARTY_MENU_H
