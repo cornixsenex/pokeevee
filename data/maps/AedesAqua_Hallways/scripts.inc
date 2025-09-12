@@ -377,13 +377,13 @@ AedesAqua_Hallways_Script_Map::
 	return
 
 
-AedesAqua_Hallways_SunkenTreasure_TrivisShard1::
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8::
 # 218 "data/maps/AedesAqua_Hallways/scripts.pory"
-	giveitem ITEM_TRIVIS_SHARD1
+	giveitem ITEM_TRIVIS_SHARD8
 # 219 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
 # 220 "data/maps/AedesAqua_Hallways/scripts.pory"
-	setflag FLAG_TRIVIS_SHARD_1
+	setflag FLAG_TRIVIS_SHARD_8
 	end
 
 

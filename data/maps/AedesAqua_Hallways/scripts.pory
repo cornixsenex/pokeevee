@@ -214,10 +214,10 @@ script AedesAqua_Hallways_Script_Map {
 	closemessage
 }
 
-script AedesAqua_Hallways_SunkenTreasure_TrivisShard1 {
-	giveitem (ITEM_TRIVIS_SHARD1)
+script AedesAqua_Hallways_SunkenTreasure_TrivisShard8 {
+	giveitem (ITEM_TRIVIS_SHARD8)
 	closemessage
-	setflag (FLAG_TRIVIS_SHARD_1)
+	setflag (FLAG_TRIVIS_SHARD_8)
 	end
 }
 

@@ -785,10 +785,14 @@ EventScript_RegionMap::
 
 EventScript_TrivisMap::
 	lockall
-	load_field_pic 83, 120, 70
-	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT
+	load_field_pic 83,  56, 60, VAR_0x8008
+    load_field_pic 84, 120, 60, VAR_0x8009
+    load_field_pic 85, 184, 60, VAR_0x800A
+	msgbox Common_Text_LookCloserAtTrivisMap, MSGBOX_DEFAULT
 	closemessage
-	destroy_field_pic 83
+	destroy_field_pic 83, VAR_0x8008
+    destroy_field_pic 84, VAR_0x8009
+    destroy_field_pic 85, VAR_0x800A
 	releaseall
 	end
 

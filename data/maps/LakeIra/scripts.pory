@@ -4,3 +4,10 @@
 
 mapscripts LakeIra_MapScripts {}
 
+script LakeIra_SunkenTreasure_TrivisShard1 {
+	giveitem (ITEM_TRIVIS_SHARD1)
+	closemessage
+	setflag (FLAG_TRIVIS_SHARD_1)
+	end
+}
+

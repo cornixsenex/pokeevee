@@ -277,9 +277,15 @@ static const u16 sPic82Pal[] = INCBIN_U16("graphics/trainers/front_pics/ghetsis.
 //Olympia = 82
 static const u32 sPic83Gfx[] = INCBIN_U32("graphics/trainers/front_pics/olympia.4bpp.lz");
 static const u16 sPic83Pal[] = INCBIN_U16("graphics/trainers/front_pics/olympia.gbapal");
-//Trivis Map = 83
-static const u32 sPic84Gfx[] = INCBIN_U32("graphics/misc/trivis_map.4bpp.lz");
+//Trivis Map1 = 83
+static const u32 sPic84Gfx[] = INCBIN_U32("graphics/misc/trivis_map1.4bpp.lz");
 static const u16 sPic84Pal[] = INCBIN_U16("graphics/misc/trivis_map.gbapal");
+//Trivis Map2 = 84
+static const u32 sPic85Gfx[] = INCBIN_U32("graphics/misc/trivis_map2.4bpp.lz");
+static const u16 sPic85Pal[] = INCBIN_U16("graphics/misc/trivis_map.gbapal");
+//Trivis Map3 = 85
+static const u32 sPic86Gfx[] = INCBIN_U32("graphics/misc/trivis_map3.4bpp.lz");
+static const u16 sPic86Pal[] = INCBIN_U16("graphics/misc/trivis_map.gbapal");
 
 /* And this is an example script.
 
@@ -469,8 +475,12 @@ static const struct Pic sPics[] =
     {sPic82Gfx, sPic82Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Olympia
     {sPic83Gfx, sPic83Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
-	//Trivis Map
+	//Trivis Map 1
     {sPic84Gfx, sPic84Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Trivis Map 2
+    {sPic85Gfx, sPic85Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Trivis Map 3
+    {sPic86Gfx, sPic86Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

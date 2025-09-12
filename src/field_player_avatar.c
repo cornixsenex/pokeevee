@@ -2769,10 +2769,26 @@ static bool32 CheckForSunkenTreasure(struct Task *task)
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
 	playerX = gSaveBlock1Ptr->pos.x;
 	playerY = gSaveBlock1Ptr->pos.y;
-	//If in AedesAqua_Hallways && not found yet the YES
+	//AedesAqua_Hallways - Trivis Shard 8
 	if (
 			mapGroup == MAP_GROUP(MAP_AEDES_AQUA_HALLWAYS) && 
 			mapNum == MAP_NUM(MAP_AEDES_AQUA_HALLWAYS) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_8) &&
+			playerX > 24 &&
+			playerX < 32 &&
+			playerY > 7 &&
+			playerY < 14
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_8;
+		return TRUE;
+	}
+    //7 Trivis Shards on Lake Ira - Just go Left to Right ignore Up / Down for counting
+    //Each Shard is discoverable in a 4x4 grid 
+    //Lake Ira Trivis Shard 1
+	if (
+			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
+			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
 			!FlagGet(FLAG_TRIVIS_SHARD_1) &&
 			playerX > 24 &&
 			playerX < 32 &&
@@ -2783,6 +2799,12 @@ static bool32 CheckForSunkenTreasure(struct Task *task)
 		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_1;
 		return TRUE;
 	}
+    //Lake Ira Trivis Shard 2
+    //Lake Ira Trivis Shard 3
+    //Lake Ira Trivis Shard 4
+    //Lake Ira Trivis Shard 5
+    //Lake Ira Trivis Shard 6
+    //Lake Ira Trivis Shard 7
 
 
 	//Other Sunken Treasures go here simple if()
@@ -2814,8 +2836,10 @@ static bool32 Fishing_FoundTreasure(struct Task *task)
 			if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
 				SetSurfBlob_PlayerOffset(gObjectEvents[gPlayerAvatar.objectEventId].fieldEffectSpriteId, FALSE, 0);
 			switch (task->tFishingRod) {
+				case SUNKEN_TREASURE_TRIVIS_SHARD_8:
+					ScriptContext_SetupScript(AedesAqua_Hallways_SunkenTreasure_TrivisShard8);
 				case SUNKEN_TREASURE_TRIVIS_SHARD_1:
-					ScriptContext_SetupScript(AedesAqua_Hallways_SunkenTreasure_TrivisShard1);
+					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard1);
 					break;
 				default:
 					ScriptContext_SetupScript(EventScript_SunkenTreasure_Error);
@@ -2828,6 +2852,10 @@ static bool32 Fishing_FoundTreasure(struct Task *task)
     if (task->tFrameCounter == 2)
 	{
 		switch (task->tFishingRod) {
+			case SUNKEN_TREASURE_TRIVIS_SHARD_8:
+				if (FlagGet(FLAG_TRIVIS_SHARD_8))
+					task->tStep = FISHING_NO_MON;
+               return FALSE;
 			case SUNKEN_TREASURE_TRIVIS_SHARD_1:
 				if (FlagGet(FLAG_TRIVIS_SHARD_1))
 					task->tStep = FISHING_NO_MON;

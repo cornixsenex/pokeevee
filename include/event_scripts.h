@@ -1010,7 +1010,8 @@ extern const u8 SRoute18_Script_MareInternumTransition[];
 extern const u8 EventScript_TrivisMap[];
 //Sunken Treasure - Defined on their maps
 extern const u8 EventScript_SunkenTreasure_Error[]; //Defined in AedesAqua_Hallways
-extern const u8 AedesAqua_Hallways_SunkenTreasure_TrivisShard1[];
+extern const u8 AedesAqua_Hallways_SunkenTreasure_TrivisShard8[];
+extern const u8 LakeIra_SunkenTreasure_TrivisShard1[];
 
 
 //		END		KUSTOMS		///
