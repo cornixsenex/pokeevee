@@ -147,10 +147,10 @@ static const u8 sMapName_CAPE_BRINK[] = _("CAPE BRINK");
 static const u8 sMapName_BOND_BRIDGE[] = _("BOND BRIDGE");
 static const u8 sMapName_THREE_ISLE_PORT[] = _("THREE ISLE PORT");
 static const u8 sMapName_SEVII_ISLE_6[] = _("SEVII ISLE 6");
-static const u8 sMapName_SEVII_ISLE_7[] = _("SEVII ISLE 7");
-static const u8 sMapName_SEVII_ISLE_8[] = _("SEVII ISLE 8");
-static const u8 sMapName_SEVII_ISLE_9[] = _("SEVII ISLE 9");
-static const u8 sMapName_RESORT_GORGEOUS[] = _("RESORT GORGEOUS");
+static const u8 sMapName_AEDES_AQVA[] = _("AEDES AQVA");
+static const u8 sMapName_AEDES_TERRA[] = _("AEDES TERRA");
+static const u8 sMapName_AEDES_LVX[] = _("AEDES LVX");
+static const u8 sMapName_AEDES_TRIVIS[] = _("AEDES TRIVIS");
 static const u8 sMapName_SALTY_SPITOON[] = _("SALTY SPITOON");
 static const u8 sMapName_CAVERNA_CAMELA[] = _("CAVERNA CAMELA");
 static const u8 sMapName_ECCLESIA[] = _("ECCLESIA");
@@ -1337,33 +1337,33 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .height = 1,
         .name = sMapName_SEVII_ISLE_6,
     },
-    [MAPSEC_SEVII_ISLE_7] = {
+    [MAPSEC_AEDES_AQUA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEVII_ISLE_7,
+        .name = sMapName_AEDES_AQVA,
     },
-    [MAPSEC_SEVII_ISLE_8] = {
+    [MAPSEC_AEDES_TERRA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEVII_ISLE_8,
+        .name = sMapName_AEDES_TERRA,
     },
-    [MAPSEC_SEVII_ISLE_9] = {
+    [MAPSEC_AEDES_LUX] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEVII_ISLE_9,
+        .name = sMapName_AEDES_LVX,
     },
-    [MAPSEC_RESORT_GORGEOUS] = {
+    [MAPSEC_AEDES_TRIVIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_RESORT_GORGEOUS,
+        .name = sMapName_AEDES_TRIVIS,
     },
     [MAPSEC_SALTY_SPITOON] = {
         .x = 0,

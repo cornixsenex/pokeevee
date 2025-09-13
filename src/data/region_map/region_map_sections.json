@@ -964,20 +964,36 @@
       "name": "SEVII ISLE 6"
     },
     {
-      "id": "MAPSEC_SEVII_ISLE_7",
-      "name": "SEVII ISLE 7"
+      "id": "MAPSEC_AEDES_AQUA",
+      "name": "AEDES AQVA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
-      "id": "MAPSEC_SEVII_ISLE_8",
-      "name": "SEVII ISLE 8"
+      "id": "MAPSEC_AEDES_TERRA",
+      "name": "AEDES TERRA",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
-      "id": "MAPSEC_SEVII_ISLE_9",
-      "name": "SEVII ISLE 9"
+      "id": "MAPSEC_AEDES_LUX",
+      "name": "AEDES LVX",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
-      "id": "MAPSEC_RESORT_GORGEOUS",
-      "name": "RESORT GORGEOUS"
+      "id": "MAPSEC_AEDES_TRIVIS",
+      "name": "AEDES TRIVIS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SALTY_SPITOON",

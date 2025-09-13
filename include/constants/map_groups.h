@@ -740,6 +740,7 @@
 #define MAP_AEDES_AQUA_PUDDLE_ROOM    (21 | (32 << 8))
 #define MAP_AEDES_AQUA_MINI_BOSS_ROOM (22 | (32 << 8))
 #define MAP_AEDES_AQUA_HALLWAYS       (23 | (32 << 8))
+#define MAP_AEDES_TERRA               (24 | (32 << 8))
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (33 << 8))

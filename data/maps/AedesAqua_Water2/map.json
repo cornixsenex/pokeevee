@@ -3,7 +3,7 @@
   "name": "AedesAqua_Water2",
   "layout": "LAYOUT_AEDES_AQUA_WATER2",
   "music": "MUS_CANTINA",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_AEDES_AQUA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

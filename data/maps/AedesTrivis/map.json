@@ -3,7 +3,7 @@
   "name": "AedesTrivis",
   "layout": "LAYOUT_AEDES_TRIVIS",
   "music": "MUS_CANTINA",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_AEDES_TRIVIS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
