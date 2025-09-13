@@ -2768,6 +2768,8 @@ static bool32 CheckForSunkenTreasure(struct Task *task)
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    x -= MAP_OFFSET;
+    y -= MAP_OFFSET;
 	//AedesAqua_Hallways - Trivis Shard 8
 	if (
 			mapGroup == MAP_GROUP(MAP_AEDES_AQUA_HALLWAYS) && 

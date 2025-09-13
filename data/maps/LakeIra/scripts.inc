@@ -340,44 +340,66 @@ LakeIra_SunkenTreasure_TrivisShard7_12:
 
 LakeIra_Script_GiveTrivisFortitudinis::
 # 139 "data/maps/LakeIra/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	setflag FLAG_TRIVIS_SHARD_1
 # 140 "data/maps/LakeIra/scripts.pory"
-	waitmovement 0
+	setflag FLAG_TRIVIS_SHARD_2
+# 141 "data/maps/LakeIra/scripts.pory"
+	setflag FLAG_TRIVIS_SHARD_3
 # 142 "data/maps/LakeIra/scripts.pory"
-	msgbox LakeIra_Text_TrivisShardsGlow
+	setflag FLAG_TRIVIS_SHARD_4
 # 143 "data/maps/LakeIra/scripts.pory"
-	closemessage
+	setflag FLAG_TRIVIS_SHARD_5
+# 144 "data/maps/LakeIra/scripts.pory"
+	setflag FLAG_TRIVIS_SHARD_6
 # 145 "data/maps/LakeIra/scripts.pory"
-	playse SE_M_HYPER_BEAM
+	setflag FLAG_TRIVIS_SHARD_7
 # 146 "data/maps/LakeIra/scripts.pory"
-	waitse
+	setflag FLAG_TRIVIS_SHARD_8
 # 148 "data/maps/LakeIra/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 149 "data/maps/LakeIra/scripts.pory"
-	delay 40
+	waitmovement 0
 # 150 "data/maps/LakeIra/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 152 "data/maps/LakeIra/scripts.pory"
-	giveitem ITEM_TRIVIS_FORTITUDINIS, 1
+	playse SE_M_HYPER_BEAM
+# 151 "data/maps/LakeIra/scripts.pory"
+	waitse
+# 153 "data/maps/LakeIra/scripts.pory"
+	msgbox LakeIra_Text_TrivisShardsGlow
 # 154 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD1
-# 155 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD2
+	closemessage
 # 156 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD3
+	playse SE_M_HYPER_BEAM
 # 157 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD4
-# 158 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD5
+	waitse
 # 159 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD6
+	fadescreen FADE_TO_WHITE
 # 160 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD7
+	delay 40
 # 161 "data/maps/LakeIra/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 163 "data/maps/LakeIra/scripts.pory"
+	giveitem ITEM_TRIVIS_FORTITUDINIS, 1
+# 165 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD1
+# 166 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD2
+# 167 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD3
+# 168 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD4
+# 169 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD5
+# 170 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD6
+# 171 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD7
+# 172 "data/maps/LakeIra/scripts.pory"
 	removeitem ITEM_TRIVIS_SHARD8
+# 173 "data/maps/LakeIra/scripts.pory"
+	closemessage
 	return
 
 
 LakeIra_Text_TrivisShardsGlow::
-# 166 "data/maps/LakeIra/scripts.pory"
+# 178 "data/maps/LakeIra/scripts.pory"
 	.string "The eight Trivis Shards began to glow.$"

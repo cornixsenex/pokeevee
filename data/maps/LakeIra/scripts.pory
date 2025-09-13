@@ -135,9 +135,20 @@ script LakeIra_SunkenTreasure_TrivisShard7 {
 }
 
 script LakeIra_Script_GiveTrivisFortitudinis {
+    //set all flags to end the fishing task
+    setflag (FLAG_TRIVIS_SHARD_1)
+    setflag (FLAG_TRIVIS_SHARD_2)
+    setflag (FLAG_TRIVIS_SHARD_3)
+    setflag (FLAG_TRIVIS_SHARD_4)
+    setflag (FLAG_TRIVIS_SHARD_5)
+    setflag (FLAG_TRIVIS_SHARD_6)
+    setflag (FLAG_TRIVIS_SHARD_7)
+    setflag (FLAG_TRIVIS_SHARD_8)
     //alert player
     applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement (0)
+    playse (SE_M_HYPER_BEAM)
+    waitse
     //The trivis shards started to glow
     msgbox (LakeIra_Text_TrivisShardsGlow)
     closemessage
@@ -159,6 +170,7 @@ script LakeIra_Script_GiveTrivisFortitudinis {
     removeitem (ITEM_TRIVIS_SHARD6)
     removeitem (ITEM_TRIVIS_SHARD7)
     removeitem (ITEM_TRIVIS_SHARD8)
+    closemessage
     //return
 	return
 }
