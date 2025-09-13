@@ -7276,7 +7276,56 @@ bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
 {
 	u32 species = GetMonData(mon, MON_DATA_SPECIES, 0);
 	if  (
-		(species == SPECIES_WURMPLE)
+		(species == SPECIES_CATERPIE)   ||
+		(species == SPECIES_METAPOD)    ||
+		(species == SPECIES_BUTTERFREE) ||
+		(species == SPECIES_WEEDLE)   ||
+		(species == SPECIES_KAKUNA)    ||
+		(species == SPECIES_BEEDRILL) ||
+		(species == SPECIES_PARAS) ||
+		(species == SPECIES_PARASECT) ||
+		(species == SPECIES_VENONAT) ||
+		(species == SPECIES_VENOMOTH) ||
+		(species == SPECIES_POLIWAG) ||
+		(species == SPECIES_POLIWHIRL) ||
+		(species == SPECIES_POLIWRATH) ||
+		(species == SPECIES_POLITOED) ||
+		(species == SPECIES_TENTACOOL) ||
+		(species == SPECIES_TENTACRUEL) ||
+		(species == SPECIES_HORSEA) ||
+		(species == SPECIES_GOLDEEN) ||
+		(species == SPECIES_SEAKING) ||
+		(species == SPECIES_STARYU) ||
+		(species == SPECIES_STARMIE) ||
+		(species == SPECIES_SCYTHER) ||
+		(species == SPECIES_PINSIR) ||
+		(species == SPECIES_MAGIKARP) ||
+		(species == SPECIES_LEDYBA) ||
+		(species == SPECIES_LEDIAN) ||
+		(species == SPECIES_SPINARAK) ||
+		(species == SPECIES_ARIADOS) ||
+		(species == SPECIES_YANMA) ||
+		(species == SPECIES_HERACROSS) ||
+		(species == SPECIES_REMORAID) ||
+		(species == SPECIES_WURMPLE) ||
+		(species == SPECIES_SILCOON) ||
+		(species == SPECIES_BEAUTIFLY) ||
+		(species == SPECIES_CASCOON) ||
+		(species == SPECIES_DUSTOX) ||
+		(species == SPECIES_SURSKIT) ||
+		(species == SPECIES_MASQUERAIN) ||
+		(species == SPECIES_NINCADA) ||
+		(species == SPECIES_NINJASK) ||
+		(species == SPECIES_VOLBEAT) ||
+		(species == SPECIES_ILLUMISE) ||
+		(species == SPECIES_BARBOACH) ||
+		(species == SPECIES_ANORITH) ||
+		(species == SPECIES_FEEBAS) ||
+		(species == SPECIES_LUVDISC) ||
+		(species == SPECIES_KRICKETOT) ||
+		(species == SPECIES_KRICKETUNE) ||
+		(species == SPECIES_COMBEE) ||
+		(species == SPECIES_VESPIQUEN)
 		)
 		return TRUE;
 	else
