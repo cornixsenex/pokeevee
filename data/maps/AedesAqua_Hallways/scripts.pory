@@ -129,8 +129,12 @@ mapscripts AedesAqua_Hallways_MapScripts {
 
 
 script AedesAqua_Hallways_Script_LinkMessage {
-    msgbox (AedesAqua_Text_LinkMessage)
-    closemessage
+    msgbox (AedesAqua_Text_LinkMessage, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        warpsilent (MAP_AEDES_AQUA, 31, 59)
+    } else {
+        closemessage
+    }
 }
 
 script AedesAqua_Hallways_Script_TriggerLinkA {
@@ -226,9 +230,8 @@ script AedesAqua_Hallways_SunkenTreasure_TrivisShard8 {
 		flag(FLAG_TRIVIS_SHARD_1) 
 	) {
 		call (LakeIra_Script_GiveTrivisFortitudinis)
-	}
+    }
 	setflag (FLAG_TRIVIS_SHARD_8)
-	end
 }
 
 script  EventScript_SunkenTreasure_Error {
@@ -251,5 +254,6 @@ text AedesAqua_Text_LinkMessage {
             The first is in this very room\n
             The rest under the sun and moon.\p
             The map will show you where they lie\n
-            On the lake bed where fishes die.")
+            On the lake bed where fishes die.\p
+            Would you like to return to the beginning of the dungeon?")
 }

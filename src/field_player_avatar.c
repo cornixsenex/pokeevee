@@ -2772,11 +2772,7 @@ static bool32 CheckForSunkenTreasure(struct Task *task)
 	if (
 			mapGroup == MAP_GROUP(MAP_AEDES_AQUA_HALLWAYS) && 
 			mapNum == MAP_NUM(MAP_AEDES_AQUA_HALLWAYS) && 
-			!FlagGet(FLAG_TRIVIS_SHARD_8) &&
-			x >= 26 &&
-			x <= 30 &&
-			y >= 9 &&
-			y <= 12
+			!FlagGet(FLAG_TRIVIS_SHARD_8)
 			)
 	{
 		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_8;
@@ -2914,6 +2910,7 @@ static bool32 Fishing_FoundTreasure(struct Task *task)
 			switch (task->tFishingRod) {
 				case SUNKEN_TREASURE_TRIVIS_SHARD_8:
 					ScriptContext_SetupScript(AedesAqua_Hallways_SunkenTreasure_TrivisShard8);
+                    break;
 				case SUNKEN_TREASURE_TRIVIS_SHARD_1:
 					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard1);
 					break;
@@ -2949,35 +2946,35 @@ static bool32 Fishing_FoundTreasure(struct Task *task)
 			case SUNKEN_TREASURE_TRIVIS_SHARD_8:
 				if (FlagGet(FLAG_TRIVIS_SHARD_8))
 					task->tStep = FISHING_NO_MON;
-               return FALSE;
+                break;
 			case SUNKEN_TREASURE_TRIVIS_SHARD_1:
 				if (FlagGet(FLAG_TRIVIS_SHARD_1))
 					task->tStep = FISHING_NO_MON;
-				return FALSE;
+                break;
 			case SUNKEN_TREASURE_TRIVIS_SHARD_2:
 				if (FlagGet(FLAG_TRIVIS_SHARD_2))
 					task->tStep = FISHING_NO_MON;
-				return FALSE;
+			    break;	
 			case SUNKEN_TREASURE_TRIVIS_SHARD_3:
 				if (FlagGet(FLAG_TRIVIS_SHARD_3))
 					task->tStep = FISHING_NO_MON;
-				return FALSE;
+			    break;	
 			case SUNKEN_TREASURE_TRIVIS_SHARD_4:
 				if (FlagGet(FLAG_TRIVIS_SHARD_4))
 					task->tStep = FISHING_NO_MON;
-				return FALSE;
+			    break;	
 			case SUNKEN_TREASURE_TRIVIS_SHARD_5:
 				if (FlagGet(FLAG_TRIVIS_SHARD_5))
 					task->tStep = FISHING_NO_MON;
-				return FALSE;
+			    break;	
 			case SUNKEN_TREASURE_TRIVIS_SHARD_6:
 				if (FlagGet(FLAG_TRIVIS_SHARD_6))
 					task->tStep = FISHING_NO_MON;
-				return FALSE;
+			    break;	
 			case SUNKEN_TREASURE_TRIVIS_SHARD_7:
 				if (FlagGet(FLAG_TRIVIS_SHARD_7))
 					task->tStep = FISHING_NO_MON;
-				return FALSE;
+			    break;	
 			default:
 				ScriptContext_SetupScript(EventScript_SunkenTreasure_Error);
 				task->tStep = FISHING_NO_MON;

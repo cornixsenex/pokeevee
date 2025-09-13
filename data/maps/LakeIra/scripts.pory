@@ -135,10 +135,36 @@ script LakeIra_SunkenTreasure_TrivisShard7 {
 }
 
 script LakeIra_Script_GiveTrivisFortitudinis {
-	msgbox ("TRIVIS SCENE")
-	closemessage
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //The trivis shards started to glow
+    msgbox (LakeIra_Text_TrivisShardsGlow)
+    closemessage
+    //sound
+    playse (SE_M_HYPER_BEAM)
+    waitse
+    //whiteout
+    fadescreen (FADE_TO_WHITE)
+    delay (40)
+    fadescreen (FADE_FROM_WHITE)
+    //give full trivis
+    giveitem (ITEM_TRIVIS_FORTITUDINIS, 1)
+    //remove trivis shards
+    removeitem (ITEM_TRIVIS_SHARD1)
+    removeitem (ITEM_TRIVIS_SHARD2)
+    removeitem (ITEM_TRIVIS_SHARD3)
+    removeitem (ITEM_TRIVIS_SHARD4)
+    removeitem (ITEM_TRIVIS_SHARD5)
+    removeitem (ITEM_TRIVIS_SHARD6)
+    removeitem (ITEM_TRIVIS_SHARD7)
+    removeitem (ITEM_TRIVIS_SHARD8)
+    //return
 	return
 }
 
+text LakeIra_Text_TrivisShardsGlow {
+    format("The eight Trivis Shards began to glow.")
+}
 
 
