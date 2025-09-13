@@ -2763,21 +2763,20 @@ static bool32 CheckForSunkenTreasure(struct Task *task)
 	
 	//Variables
 	u32 mapGroup, mapNum;
-	s16 playerX, playerY;
+	s16 x, y;
 	//Assignment
 	mapGroup = gSaveBlock1Ptr->location.mapGroup;
 	mapNum   = gSaveBlock1Ptr->location.mapNum;
-	playerX = gSaveBlock1Ptr->pos.x;
-	playerY = gSaveBlock1Ptr->pos.y;
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
 	//AedesAqua_Hallways - Trivis Shard 8
 	if (
 			mapGroup == MAP_GROUP(MAP_AEDES_AQUA_HALLWAYS) && 
 			mapNum == MAP_NUM(MAP_AEDES_AQUA_HALLWAYS) && 
 			!FlagGet(FLAG_TRIVIS_SHARD_8) &&
-			playerX > 24 &&
-			playerX < 32 &&
-			playerY > 7 &&
-			playerY < 14
+			x >= 26 &&
+			x <= 30 &&
+			y >= 9 &&
+			y <= 12
 			)
 	{
 		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_8;
@@ -2790,22 +2789,99 @@ static bool32 CheckForSunkenTreasure(struct Task *task)
 			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
 			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
 			!FlagGet(FLAG_TRIVIS_SHARD_1) &&
-			playerX > 24 &&
-			playerX < 32 &&
-			playerY > 7 &&
-			playerY < 14
+			x >= 18 &&
+			y >= 24 &&
+			x <= 21 &&
+			y <= 27
 			)
 	{
 		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_1;
 		return TRUE;
 	}
     //Lake Ira Trivis Shard 2
+	if (
+			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
+			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_2) &&
+			x >= 22 &&
+			y >= 38 &&
+			x <= 25 &&
+			y <= 41
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_2;
+		return TRUE;
+	}
     //Lake Ira Trivis Shard 3
+	if (
+			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
+			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_3) &&
+			x >= 36 &&
+			y >= 49 &&
+			x <= 39 &&
+			y <= 52
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_3;
+		return TRUE;
+	}
     //Lake Ira Trivis Shard 4
+	if (
+			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
+			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_4) &&
+			x >= 38 &&
+			y >= 24 &&
+			x <= 41 &&
+			y <= 27
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_4;
+		return TRUE;
+	}
     //Lake Ira Trivis Shard 5
+	if (
+			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
+			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_5) &&
+			x >= 51 &&
+			y >= 32 &&
+			x <= 54 &&
+			y <= 35
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_5;
+		return TRUE;
+	}
     //Lake Ira Trivis Shard 6
+	if (
+			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
+			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_6) &&
+			x >= 57 &&
+			y >= 11 &&
+			x <= 60 &&
+			y <= 14
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_6;
+		return TRUE;
+	}
     //Lake Ira Trivis Shard 7
-
+	if (
+			mapGroup == MAP_GROUP(MAP_LAKE_IRA) && 
+			mapNum == MAP_NUM(MAP_LAKE_IRA) && 
+			!FlagGet(FLAG_TRIVIS_SHARD_7) &&
+			x >= 63 &&
+			y >= 39 &&
+			x <= 66 &&
+			y <= 42
+			)
+	{
+		task->tFishingRod = SUNKEN_TREASURE_TRIVIS_SHARD_7;
+		return TRUE;
+	}
 
 	//Other Sunken Treasures go here simple if()
 	
@@ -2841,6 +2917,24 @@ static bool32 Fishing_FoundTreasure(struct Task *task)
 				case SUNKEN_TREASURE_TRIVIS_SHARD_1:
 					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard1);
 					break;
+				case SUNKEN_TREASURE_TRIVIS_SHARD_2:
+					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard2);
+					break;
+				case SUNKEN_TREASURE_TRIVIS_SHARD_3:
+					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard3);
+					break;
+				case SUNKEN_TREASURE_TRIVIS_SHARD_4:
+					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard4);
+					break;
+				case SUNKEN_TREASURE_TRIVIS_SHARD_5:
+					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard5);
+					break;
+				case SUNKEN_TREASURE_TRIVIS_SHARD_6:
+					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard6);
+					break;
+				case SUNKEN_TREASURE_TRIVIS_SHARD_7:
+					ScriptContext_SetupScript(LakeIra_SunkenTreasure_TrivisShard7);
+					break;
 				default:
 					ScriptContext_SetupScript(EventScript_SunkenTreasure_Error);
 			}
@@ -2858,6 +2952,30 @@ static bool32 Fishing_FoundTreasure(struct Task *task)
                return FALSE;
 			case SUNKEN_TREASURE_TRIVIS_SHARD_1:
 				if (FlagGet(FLAG_TRIVIS_SHARD_1))
+					task->tStep = FISHING_NO_MON;
+				return FALSE;
+			case SUNKEN_TREASURE_TRIVIS_SHARD_2:
+				if (FlagGet(FLAG_TRIVIS_SHARD_2))
+					task->tStep = FISHING_NO_MON;
+				return FALSE;
+			case SUNKEN_TREASURE_TRIVIS_SHARD_3:
+				if (FlagGet(FLAG_TRIVIS_SHARD_3))
+					task->tStep = FISHING_NO_MON;
+				return FALSE;
+			case SUNKEN_TREASURE_TRIVIS_SHARD_4:
+				if (FlagGet(FLAG_TRIVIS_SHARD_4))
+					task->tStep = FISHING_NO_MON;
+				return FALSE;
+			case SUNKEN_TREASURE_TRIVIS_SHARD_5:
+				if (FlagGet(FLAG_TRIVIS_SHARD_5))
+					task->tStep = FISHING_NO_MON;
+				return FALSE;
+			case SUNKEN_TREASURE_TRIVIS_SHARD_6:
+				if (FlagGet(FLAG_TRIVIS_SHARD_6))
+					task->tStep = FISHING_NO_MON;
+				return FALSE;
+			case SUNKEN_TREASURE_TRIVIS_SHARD_7:
+				if (FlagGet(FLAG_TRIVIS_SHARD_7))
 					task->tStep = FISHING_NO_MON;
 				return FALSE;
 			default:

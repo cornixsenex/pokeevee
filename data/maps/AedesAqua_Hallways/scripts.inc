@@ -383,24 +383,62 @@ AedesAqua_Hallways_SunkenTreasure_TrivisShard8::
 # 219 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
 # 220 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_TRIVIS_SHARD_2, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_4
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1:
+# 230 "data/maps/AedesAqua_Hallways/scripts.pory"
 	setflag FLAG_TRIVIS_SHARD_8
 	end
 
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_2:
+# 228 "data/maps/AedesAqua_Hallways/scripts.pory"
+	call LakeIra_Script_GiveTrivisFortitudinis
+	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
+
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_3:
+# 222 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_TRIVIS_SHARD_4, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_8
+	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
+
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_4:
+# 221 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_TRIVIS_SHARD_3, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_3
+	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
+
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_7:
+# 224 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_TRIVIS_SHARD_6, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_12
+	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
+
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_8:
+# 223 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_TRIVIS_SHARD_5, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_7
+	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
+
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_11:
+# 226 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_TRIVIS_SHARD_1, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_2
+	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
+
+AedesAqua_Hallways_SunkenTreasure_TrivisShard8_12:
+# 225 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_TRIVIS_SHARD_7, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_11
+	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
+
 
 EventScript_SunkenTreasure_Error::
-# 225 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 235 "data/maps/AedesAqua_Hallways/scripts.pory"
 	msgbox EventScript_SunkenTreasure_Error_Text_0
-# 226 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 236 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
 	end
 
 
 EventScript_SunkenTreasure_Error_Text_0:
-# 225 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 235 "data/maps/AedesAqua_Hallways/scripts.pory"
 	.string "ERROR:\ntask->tFishingRod OOB\p$"
 
 AedesAqua_Text_LinkMessage::
-# 230 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 240 "data/maps/AedesAqua_Hallways/scripts.pory"
 	.string "The golden power which you seek\n"
 	.string "Is not for anyone to keep.\p"
 	.string "Too dangerous to leave alone,\n"

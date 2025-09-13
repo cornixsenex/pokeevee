@@ -1012,6 +1012,12 @@ extern const u8 EventScript_TrivisMap[];
 extern const u8 EventScript_SunkenTreasure_Error[]; //Defined in AedesAqua_Hallways
 extern const u8 AedesAqua_Hallways_SunkenTreasure_TrivisShard8[];
 extern const u8 LakeIra_SunkenTreasure_TrivisShard1[];
+extern const u8 LakeIra_SunkenTreasure_TrivisShard2[];
+extern const u8 LakeIra_SunkenTreasure_TrivisShard3[];
+extern const u8 LakeIra_SunkenTreasure_TrivisShard4[];
+extern const u8 LakeIra_SunkenTreasure_TrivisShard5[];
+extern const u8 LakeIra_SunkenTreasure_TrivisShard6[];
+extern const u8 LakeIra_SunkenTreasure_TrivisShard7[];
 
 
 //		END		KUSTOMS		///

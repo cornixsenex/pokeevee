@@ -217,6 +217,16 @@ script AedesAqua_Hallways_Script_Map {
 script AedesAqua_Hallways_SunkenTreasure_TrivisShard8 {
 	giveitem (ITEM_TRIVIS_SHARD8)
 	closemessage
+	if (flag(FLAG_TRIVIS_SHARD_2) &&
+		flag(FLAG_TRIVIS_SHARD_3) &&
+		flag(FLAG_TRIVIS_SHARD_4) &&
+		flag(FLAG_TRIVIS_SHARD_5) &&
+		flag(FLAG_TRIVIS_SHARD_6) &&
+		flag(FLAG_TRIVIS_SHARD_7) &&
+		flag(FLAG_TRIVIS_SHARD_1) 
+	) {
+		call (LakeIra_Script_GiveTrivisFortitudinis)
+	}
 	setflag (FLAG_TRIVIS_SHARD_8)
 	end
 }
