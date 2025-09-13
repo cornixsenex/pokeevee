@@ -2030,6 +2030,18 @@ static const struct SpriteFrameImage sPicTable_Map[] = {
     obj_frame_tiles(gObjectEventPic_Map),
 };
 
+static const struct SpriteFrameImage sPicTable_CircleCushion[] = {
+    obj_frame_tiles(gObjectEventPic_CircleCushion),
+};
+
+static const struct SpriteFrameImage sPicTable_SquareCushion[] = {
+    obj_frame_tiles(gObjectEventPic_SquareCushion),
+};
+
+static const struct SpriteFrameImage sPicTable_KiteCushion[] = {
+    obj_frame_tiles(gObjectEventPic_KiteCushion),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

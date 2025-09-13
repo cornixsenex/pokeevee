@@ -342,6 +342,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ghetsis;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Olympia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Link;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Map;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CircleCushion;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SquareCushion;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KiteCushion;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -655,6 +658,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_OLYMPIA] =                  &gObjectEventGraphicsInfo_Olympia,
 	[OBJ_EVENT_GFX_LINK] =                     &gObjectEventGraphicsInfo_Link,
 	[OBJ_EVENT_GFX_MAP] =                      &gObjectEventGraphicsInfo_Map,
+	[OBJ_EVENT_GFX_CIRCLE_CUSHION] =           &gObjectEventGraphicsInfo_CircleCushion,
+	[OBJ_EVENT_GFX_SQUARE_CUSHION] =           &gObjectEventGraphicsInfo_SquareCushion,
+	[OBJ_EVENT_GFX_KITE_CUSHION] =             &gObjectEventGraphicsInfo_KiteCushion,
 
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,

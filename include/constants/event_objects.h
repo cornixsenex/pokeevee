@@ -327,9 +327,12 @@
 #define OBJ_EVENT_GFX_OLYMPIA   		         319
 #define OBJ_EVENT_GFX_LINK   		             320
 #define OBJ_EVENT_GFX_MAP   		             321
+#define OBJ_EVENT_GFX_CIRCLE_CUSHION   		     322
+#define OBJ_EVENT_GFX_SQUARE_CUSHION   		     323
+#define OBJ_EVENT_GFX_KITE_CUSHION   		     324
 
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        322
+#define NUM_OBJ_EVENT_GFX                        325
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -585,6 +588,9 @@
 #define OBJ_EVENT_PAL_TAG_OLYMPIA                 0x118C
 #define OBJ_EVENT_PAL_TAG_LINK                    0x118D
 #define OBJ_EVENT_PAL_TAG_MAP                     0x118E
+#define OBJ_EVENT_PAL_TAG_CIRCLE_CUSHION          0x118F
+#define OBJ_EVENT_PAL_TAG_SQUARE_CUSHION          0x1190
+#define OBJ_EVENT_PAL_TAG_KITE_CUSHION            0x1191
 
 
 // Used as a placeholder follower graphic

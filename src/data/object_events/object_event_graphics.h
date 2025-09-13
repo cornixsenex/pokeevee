@@ -604,6 +604,15 @@ const u16 gObjectEventPal_Link[] = INCBIN_U16("graphics/object_events/palettes/l
 const u32 gObjectEventPic_Map[] = INCBIN_U32("graphics/object_events/pics/misc/map.4bpp"); //Map not Person 
 const u16 gObjectEventPal_Map[] = INCBIN_U16("graphics/object_events/palettes/map.gbapal");//Map not Person
 
+const u32 gObjectEventPic_CircleCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/circle_cushion.4bpp"); //Cushion not Person 
+const u16 gObjectEventPal_CircleCushion[] = INCBIN_U16("graphics/object_events/pics/cushions/circle_cushion.gbapal");//Cushion not Person
+
+const u32 gObjectEventPic_SquareCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/square_cushion.4bpp"); //Cushion not Person 
+const u16 gObjectEventPal_SquareCushion[] = INCBIN_U16("graphics/object_events/pics/cushions/square_cushion.gbapal");//Cushion not Person
+
+const u32 gObjectEventPic_KiteCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/kite_cushion.4bpp"); //Cushion not Person 
+const u16 gObjectEventPal_KiteCushion[] = INCBIN_U16("graphics/object_events/pics/cushions/kite_cushion.gbapal");//Cushion not Person
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
