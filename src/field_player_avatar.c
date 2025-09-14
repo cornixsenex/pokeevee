@@ -150,6 +150,14 @@ static bool8 PushBoulder_Start(struct Task *, struct ObjectEvent *, struct Objec
 static bool8 PushBoulder_Move(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
 static bool8 PushBoulder_End(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
 
+//Custom Slide Cushion
+static void StartSlideCushionAnim(u8 objectEventId, u8 direction);
+static void Task_SlideCushion(u8 taskId);
+static bool8 SlideCushion_Start(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
+static bool8 SlideCushion_Move(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
+static bool8 SlideCushion_Slide(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
+static bool8 SlideCushion_End(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
+
 static void DoPlayerMatJump(void);
 static void DoPlayerAvatarSecretBaseMatJump(u8);
 static u8 PlayerAvatar_DoSecretBaseMatJump(struct Task *, struct ObjectEvent *);
@@ -385,6 +393,14 @@ static bool8 (*const sPushBoulderFuncs[])(struct Task *, struct ObjectEvent *, s
     PushBoulder_Start,
     PushBoulder_Move,
     PushBoulder_End,
+};
+
+static bool8 (*const sSlideCushionFuncs[])(struct Task *, struct ObjectEvent *, struct ObjectEvent *) =
+{
+    SlideCushion_Start,
+    SlideCushion_Move,
+	SlideCushion_Slide,
+    SlideCushion_End,
 };
 
 static bool8 (*const sPlayerAvatarSecretBaseMatJump[])(struct Task *, struct ObjectEvent *) =
@@ -1034,10 +1050,7 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
 
 	//Kustom Collisions
 	if (collision == COLLISION_OBJECT_EVENT && CheckSpecialObjectCollision(x, y, direction))
-	{
-		//DebugPrintf("RETURN COLLISION_SPECIAL_OBJECT", 0);
 		return COLLISION_SPECIAL_OBJECT;
-	}
 
     if (collision == COLLISION_NONE)
     {
@@ -1129,6 +1142,32 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
             }
         }
     }
+	//Aedes Terra pushable cushions
+	if (
+			gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_AEDES_TERRA) &&
+			gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_AEDES_TERRA)
+	   )
+	{
+        u8 objectEventId = GetObjectEventIdByXY(x, y);
+		if (
+				objectEventId != OBJECT_EVENTS_COUNT && (
+				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_CIRCLE_CUSHION ||
+				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SQUARE_CUSHION ||
+				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_KITE_CUSHION )
+		   )
+		{
+			x = gObjectEvents[objectEventId].currentCoords.x;
+            y = gObjectEvents[objectEventId].currentCoords.y;
+            MoveCoords(direction, &x, &y);
+            if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
+             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
+            {
+                StartSlideCushionAnim(objectEventId, direction);
+                return TRUE;
+            }
+		}
+	}
+
     return FALSE;
 }
 
@@ -1932,9 +1971,116 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
     return FALSE;
 }
 
+//Slide Cushion Anim - Aedes Terra
+
+static void StartSlideCushionAnim(u8 objectEventId, u8 direction)
+{
+    u8 taskId = CreateTask(Task_SlideCushion, 0xFF);
+
+    gTasks[taskId].tBoulderObjId = objectEventId;
+    gTasks[taskId].tDirection = direction;
+    Task_SlideCushion(taskId);
+}
+
+static void Task_SlideCushion(u8 taskId)
+{
+    while (sSlideCushionFuncs[gTasks[taskId].tState](&gTasks[taskId],
+                                                     &gObjectEvents[gPlayerAvatar.objectEventId],
+                                                     &gObjectEvents[gTasks[taskId].tBoulderObjId]))
+        ;
+}
+
+static bool8 SlideCushion_Start(struct Task *task, struct ObjectEvent *player, struct ObjectEvent *boulder)
+{
+    LockPlayerFieldControls();
+    gPlayerAvatar.preventStep = TRUE;
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 SlideCushion_Move(struct Task *task, struct ObjectEvent *player, struct ObjectEvent *boulder)
+{
+    if (ObjectEventIsHeldMovementActive(player))
+        ObjectEventClearHeldMovementIfFinished(player);
+
+    if (ObjectEventIsHeldMovementActive(boulder))
+        ObjectEventClearHeldMovementIfFinished(boulder);
+
+    if (!ObjectEventIsMovementOverridden(player)
+     && !ObjectEventIsMovementOverridden(boulder))
+    {
+        ObjectEventClearHeldMovementIfFinished(player);
+        ObjectEventClearHeldMovementIfFinished(boulder);
+        ObjectEventSetHeldMovement(player, GetWalkInPlaceNormalMovementAction((u8)task->tDirection));
+        ObjectEventSetHeldMovement(boulder, GetWalkSlowMovementAction((u8)task->tDirection));
+        gFieldEffectArguments[0] = boulder->currentCoords.x;
+        gFieldEffectArguments[1] = boulder->currentCoords.y;
+        gFieldEffectArguments[2] = boulder->previousElevation;
+        gFieldEffectArguments[3] = gSprites[boulder->spriteId].oam.priority;
+        FieldEffectStart(FLDEFF_DUST);
+        PlaySE(SE_M_STRENGTH);
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static bool8 SlideCushion_Slide(struct Task *task, struct ObjectEvent *player, struct ObjectEvent *boulder)
+{
+	if (GetCollisionInDirection(boulder, task->tDirection))
+	{
+		task->tState++;
+		return FALSE;
+	}
+    if (ObjectEventIsHeldMovementActive(player))
+	{
+        ObjectEventClearHeldMovementIfFinished(player);
+		return FALSE;
+	}
+
+    if (ObjectEventIsHeldMovementActive(boulder))
+	{
+        ObjectEventClearHeldMovementIfFinished(boulder);
+		return FALSE;
+	}
+
+    if (!ObjectEventIsMovementOverridden(player)
+     && !ObjectEventIsMovementOverridden(boulder))
+    {
+		if (GetCollisionAtCoords(boulder, boulder->currentCoords.x, boulder->currentCoords.y, task->tDirection) == COLLISION_NONE)
+		{
+			ObjectEventClearHeldMovementIfFinished(boulder);
+			ObjectEventSetHeldMovement(boulder, GetWalkSlowMovementAction((u8)task->tDirection));
+			gFieldEffectArguments[0] = boulder->currentCoords.x;
+			gFieldEffectArguments[1] = boulder->currentCoords.y;
+			gFieldEffectArguments[2] = boulder->previousElevation;
+			gFieldEffectArguments[3] = gSprites[boulder->spriteId].oam.priority;
+			FieldEffectStart(FLDEFF_DUST);
+			PlaySE(SE_M_STRENGTH);
+		} 
+		else
+			task->tState++;
+	}
+	return FALSE;
+}
+
+static bool8 SlideCushion_End(struct Task *task, struct ObjectEvent *player, struct ObjectEvent *boulder)
+{
+    if (ObjectEventCheckHeldMovementStatus(player)
+     && ObjectEventCheckHeldMovementStatus(boulder))
+    {
+        ObjectEventClearHeldMovementIfFinished(player);
+        ObjectEventClearHeldMovementIfFinished(boulder);
+        gPlayerAvatar.preventStep = FALSE;
+        UnlockPlayerFieldControls();
+        DestroyTask(FindTaskIdByFunc(Task_SlideCushion));
+    }
+    return FALSE;
+}
+	
 #undef tState
 #undef tBoulderObjId
 #undef tDirection
+
 
 /* Some field effect */
 

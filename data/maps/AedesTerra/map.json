@@ -2,7 +2,7 @@
   "id": "MAP_AEDES_TERRA",
   "name": "AedesTerra",
   "layout": "LAYOUT_AEDES_TERRA",
-  "music": "MUS_DUMMY",
+  "music": "MUS_NONE",
   "region_map_section": "MAPSEC_AEDES_TERRA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
