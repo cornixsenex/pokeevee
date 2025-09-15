@@ -35,6 +35,7 @@
 #include "constants/field_effects.h"
 #include "constants/items.h"
 #include "constants/metatile_behaviors.h"
+#include "constants/metatile_labels.h" //Cornix for check Stair collision Aedes Terra
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
@@ -1162,12 +1163,43 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
             if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
              && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
             {
-                StartSlideCushionAnim(objectEventId, direction);
-                return TRUE;
+				switch (direction)
+				{
+					case DIR_NORTH:
+						if (MapGridGetMetatileIdAt(x, y-1) != METATILE_Cave_TerraStairs)
+						{
+							StartSlideCushionAnim(objectEventId, direction);
+							return TRUE;
+						}
+						break;
+					case DIR_SOUTH:
+						if (MapGridGetMetatileIdAt(x, y+1) != METATILE_Cave_TerraStairs)
+						{
+							StartSlideCushionAnim(objectEventId, direction);
+							return TRUE;
+						}
+						break;
+					case DIR_EAST:
+						if (MapGridGetMetatileIdAt(x+1, y) != METATILE_Cave_TerraStairs)
+						{
+							StartSlideCushionAnim(objectEventId, direction);
+							return TRUE;
+						}
+						break;
+
+					case DIR_WEST:
+						if (MapGridGetMetatileIdAt(x-1, y) != METATILE_Cave_TerraStairs)
+						{
+							StartSlideCushionAnim(objectEventId, direction);
+							return TRUE;
+						}
+						break;
+					default:
+						break;
+				}
             }
 		}
 	}
-
     return FALSE;
 }
 
@@ -2031,6 +2063,40 @@ static bool8 SlideCushion_Slide(struct Task *task, struct ObjectEvent *player, s
 		task->tState++;
 		return FALSE;
 	}
+	//Check Stairs
+	switch (task->tDirection)
+	{
+		case DIR_NORTH:
+			if (MapGridGetMetatileIdAt(boulder->currentCoords.x, boulder->currentCoords.y-1) == METATILE_Cave_TerraStairs)
+				{
+					task->tState++;
+					return FALSE;
+				}
+			break;
+		case DIR_SOUTH:
+			if (MapGridGetMetatileIdAt(boulder->currentCoords.x, boulder->currentCoords.y+1) == METATILE_Cave_TerraStairs)
+				{
+					task->tState++;
+					return FALSE;
+				}
+			break;
+		case DIR_EAST:
+			if (MapGridGetMetatileIdAt(boulder->currentCoords.x+1, boulder->currentCoords.y) == METATILE_Cave_TerraStairs)
+				{
+					task->tState++;
+					return FALSE;
+				}
+			break;
+		case DIR_WEST:
+			if (MapGridGetMetatileIdAt(boulder->currentCoords.x-1, boulder->currentCoords.y) == METATILE_Cave_TerraStairs)
+				{
+					task->tState++;
+					return FALSE;
+				}
+			break;
+		default:
+			break;
+	}
     if (ObjectEventIsHeldMovementActive(player))
 	{
         ObjectEventClearHeldMovementIfFinished(player);
@@ -2068,6 +2134,13 @@ static bool8 SlideCushion_End(struct Task *task, struct ObjectEvent *player, str
     if (ObjectEventCheckHeldMovementStatus(player)
      && ObjectEventCheckHeldMovementStatus(boulder))
     {
+		//Update cushion position
+		SetObjEventTemplateCoords(boulder->localId, boulder->currentCoords.x-MAP_OFFSET, boulder->currentCoords.y-MAP_OFFSET);
+		//Update boulder vars
+		//Update Map
+		//Check for puzzle solution
+
+		//Standard Ending stuff
         ObjectEventClearHeldMovementIfFinished(player);
         ObjectEventClearHeldMovementIfFinished(boulder);
         gPlayerAvatar.preventStep = FALSE;

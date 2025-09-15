@@ -1,1 +1,11 @@
+
+//PUZZLE VARS - 1 - 9 
+//TEMP_VAR_A - Circle Cushion X
+//TEMP_VAR_B - Circle Cushion Y
+//TEMP_VAR_C - Square Cushion X
+//TEMP_VAR_D - Square Cushion Y
+//TEMP_VAR_E - Kite Cushion   X 
+//TEMP_VAR_F - Kite Cushion   Y
+
+
 mapscripts AedesTerra_MapScripts {}
