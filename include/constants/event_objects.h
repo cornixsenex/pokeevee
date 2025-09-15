@@ -330,9 +330,10 @@
 #define OBJ_EVENT_GFX_CIRCLE_CUSHION   		     322
 #define OBJ_EVENT_GFX_SQUARE_CUSHION   		     323
 #define OBJ_EVENT_GFX_KITE_CUSHION   		     324
+#define OBJ_EVENT_GFX_CROSS_CUSHION   		     325
 
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        325
+#define NUM_OBJ_EVENT_GFX                        326
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -591,6 +592,7 @@
 #define OBJ_EVENT_PAL_TAG_CIRCLE_CUSHION          0x118F
 #define OBJ_EVENT_PAL_TAG_SQUARE_CUSHION          0x1190
 #define OBJ_EVENT_PAL_TAG_KITE_CUSHION            0x1191
+#define OBJ_EVENT_PAL_TAG_CROSS_CUSHION           0x1192
 
 
 // Used as a placeholder follower graphic

@@ -2042,6 +2042,10 @@ static const struct SpriteFrameImage sPicTable_KiteCushion[] = {
     obj_frame_tiles(gObjectEventPic_KiteCushion),
 };
 
+static const struct SpriteFrameImage sPicTable_CrossCushion[] = {
+    obj_frame_tiles(gObjectEventPic_CrossCushion),
+};
+
 static const struct SpriteFrameImage sPicTable_CollisionRattata[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionRattata, 4, 4),
 };

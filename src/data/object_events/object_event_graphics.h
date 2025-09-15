@@ -613,6 +613,9 @@ const u16 gObjectEventPal_SquareCushion[] = INCBIN_U16("graphics/object_events/p
 const u32 gObjectEventPic_KiteCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/kite_cushion.4bpp"); //Cushion not Person 
 const u16 gObjectEventPal_KiteCushion[] = INCBIN_U16("graphics/object_events/pics/cushions/kite_cushion.gbapal");//Cushion not Person
 
+const u32 gObjectEventPic_CrossCushion[] = INCBIN_U32("graphics/object_events/pics/cushions/cross_cushion.4bpp"); //Cushion not Person 
+const u16 gObjectEventPal_CrossCushion[] = INCBIN_U16("graphics/object_events/pics/cushions/cross_cushion.gbapal");//Cushion not Person
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
