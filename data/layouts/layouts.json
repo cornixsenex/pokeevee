@@ -6615,7 +6615,7 @@
       "id": "LAYOUT_AEDES_TERRA",
       "name": "AedesTerra_Layout",
       "width": 67,
-      "height": 51,
+      "height": 49,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesTerra/border.bin",

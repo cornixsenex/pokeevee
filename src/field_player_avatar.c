@@ -1154,6 +1154,7 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
 				objectEventId != OBJECT_EVENTS_COUNT && (
 				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_CIRCLE_CUSHION ||
 				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SQUARE_CUSHION ||
+				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_CROSS_CUSHION ||
 				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_KITE_CUSHION )
 		   )
 		{
@@ -1166,21 +1167,29 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
 				switch (direction)
 				{
 					case DIR_NORTH:
-						if (MapGridGetMetatileIdAt(x, y-1) != METATILE_Cave_TerraStairs)
+						DebugPrintf("DIR IS NORTH");
+						if (MapGridGetMetatileIdAt(x, y) != METATILE_Cave_TerraStairs)
 						{
+							DebugPrintf("Is Not Terra Stiars");
+							//Not Terra Stairs
 							StartSlideCushionAnim(objectEventId, direction);
 							return TRUE;
 						}
+						else
+						{
+							DebugPrintf ("ELSE");
+							return FALSE;
+						}
 						break;
 					case DIR_SOUTH:
-						if (MapGridGetMetatileIdAt(x, y+1) != METATILE_Cave_TerraStairs)
+						if (MapGridGetMetatileIdAt(x, y) != METATILE_Cave_TerraStairs)
 						{
 							StartSlideCushionAnim(objectEventId, direction);
 							return TRUE;
 						}
 						break;
 					case DIR_EAST:
-						if (MapGridGetMetatileIdAt(x+1, y) != METATILE_Cave_TerraStairs)
+						if (MapGridGetMetatileIdAt(x, y) != METATILE_Cave_TerraStairs)
 						{
 							StartSlideCushionAnim(objectEventId, direction);
 							return TRUE;
@@ -1188,7 +1197,7 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
 						break;
 
 					case DIR_WEST:
-						if (MapGridGetMetatileIdAt(x-1, y) != METATILE_Cave_TerraStairs)
+						if (MapGridGetMetatileIdAt(x, y) != METATILE_Cave_TerraStairs)
 						{
 							StartSlideCushionAnim(objectEventId, direction);
 							return TRUE;
