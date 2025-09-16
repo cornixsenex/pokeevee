@@ -1,11 +1,36 @@
 
-//PUZZLE VARS - 1 - 9 
-//TEMP_VAR_A - Circle Cushion X
-//TEMP_VAR_B - Circle Cushion Y
-//TEMP_VAR_C - Square Cushion X
-//TEMP_VAR_D - Square Cushion Y
-//TEMP_VAR_E - Kite Cushion   X 
-//TEMP_VAR_F - Kite Cushion   Y
+//Puzzle flags (number goes l to r t to b
+//FLAG_TEMP_1 - Show Square on Puzzle 2
+//FLAG_TEMP_2 - Open Boss Room
+//FLAG_TEMP_3 - Show Cirlce on Puzzle 3
+//FLAG_TEMP_4 - Show Left Bridge
+//FLAG_TEMP_5 - Show Right Bridge
 
 
 mapscripts AedesTerra_MapScripts {}
+
+
+
+script AedesTerra_Script_ResetPuzzle4 {
+	msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		if (!flag(FLAG_TEMP_4)) {
+			closemessage
+			removeobject (LOCALID_AEDESTERRA_CROSS4)
+			setobjectxyperm (LOCALID_AEDESTERRA_CROSS4, 8, 35)
+			addobject (LOCALID_AEDESTERRA_CROSS4)
+		} else {
+			msgbox (AedesTerra_Text_CantReset)
+			closemessage
+		}
+	}
+	end
+}
+
+text AedesTerra_Text_ResetPuzzle {
+	format("Would you like to reset the puzzle?")
+}
+
+text AedesTerra_Text_CantReset {
+	format("Nothing happened...")
+}
