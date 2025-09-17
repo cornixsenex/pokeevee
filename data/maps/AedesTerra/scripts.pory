@@ -9,7 +9,38 @@
 
 mapscripts AedesTerra_MapScripts {}
 
+script AedesTerra_Script_HideAllBridges {
 
+}
+
+script AedesTerra_Script_ShowBridgeLeft {
+
+}
+
+script AedesTerra_Script_ShowBridgeRight {
+
+}
+
+script AedesTerra_Script_ShowBridgeCenter {
+
+}
+
+//After Boss Door open - Show Bridges, Hide Cushions, Open Door
+script AedesTerra_Script_PersistSolution {
+	//Show Bridges
+	//Show Open Door
+	//Hide Cushions
+	setobjectxyperm (LOCALID_AEDESTERRA_CROSS1, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_CROSS2, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_CROSS3, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_CROSS4, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_CROSS5, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_SQUARE1, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_SQUARE2, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE2, 24, 0)
+	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE3, 24, 0)
+	return
+}
 
 script AedesTerra_Script_ResetPuzzle4 {
 	msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
@@ -119,6 +150,43 @@ script AedesTerra_Script_SolvedPuzzle1 {
 	addobject (LOCALID_AEDESTERRA_SQUARE2)
 	//set flag
 	setflag (FLAG_TEMP_1)
+}
+
+script AedesTerra_Script_UnSolvedPuzzle1 {
+	//hide square on puzzle 2
+	removeobject (LOCALID_AEDESTERRA_SQUARE2)
+	setobjectxyperm (LOCALID_AEDESTERRA_SQUARE2, 24, 0)
+	addobject (LOCALID_AEDESTERRA_SQUARE2)
+	//clear flag
+	clearflag (FLAG_TEMP_1)
+}
+
+script AedesTerra_Script_SolvedPuzzle2 {
+	call (AedesTerra_Script_SolvedPuzzle)
+	//I think set temp var then let CheckSlidePuzzleSolved() finish then run a script on FRAME_TABLE that does like an alert, shake, open door THEN run PersistSolution because otherwise puzzle checks for 3-5 will throw the Unsolved 
+	//Alt re-order CheckSlidePuzzleSolved()
+	call (AedesTerra_Script_PersistSolution)
+	//set flag
+	setflag (FLAG_AEDESTERRA_SOLVED)
+}
+
+script AedesTerra_Script_SolvedPuzzle3 {
+	call (AedesTerra_Script_SolvedPuzzle)
+	//show square on puzzle 2
+	removeobject (LOCALID_AEDESTERRA_CIRCLE3)
+	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE3, 36, 8)
+	addobject (LOCALID_AEDESTERRA_CIRCLE3)
+	//set flag
+	setflag (FLAG_TEMP_3)
+}
+
+script AedesTerra_Script_UnSolvedPuzzle3 {
+	//hide square on puzzle 2
+	removeobject (LOCALID_AEDESTERRA_CIRCLE3)
+	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE3, 24, 0)
+	addobject (LOCALID_AEDESTERRA_CIRCLE3)
+	//clear flag
+	clearflag (FLAG_TEMP_3)
 }
 
 script AedesTerra_Script_SolvedPuzzle {

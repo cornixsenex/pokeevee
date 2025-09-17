@@ -2016,21 +2016,73 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
 
 static void CheckSlidePuzzleSolved()
 {
-	struct ObjectEvent *square1;
+	//On each puzzle the object is loaded into memory via the 3 placeholder ObjectEventvars (note 3 is all that's needed and only on puzzle2)
+	//NOTE only solution pieces are needed to be tracked (Cross1 et Cross3 are irrelevant)
+	struct ObjectEvent *square, *circle, *cross;
 	u32 objectEventId;
 
-	//Assign ObjectEvent vars - NOTE only solution pieces are needed to be tracked (Cross1 et Cross3 are irrelevant)
-	//square1
-	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_SQUARE1, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
-	square1 = &gObjectEvents[objectEventId];
-	
 	//Puzzle 1
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_SQUARE1, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	square = &gObjectEvents[objectEventId];
+	//Check Solved
 	if  (
 		(!FlagGet(FLAG_TEMP_1)) &&
-		(square1->currentCoords.x - MAP_OFFSET == 8) &&
-		(square1->currentCoords.y - MAP_OFFSET == 4)
+		(square->currentCoords.x - MAP_OFFSET == 8) &&
+		(square->currentCoords.y - MAP_OFFSET == 4)
 		)
 		ScriptContext_SetupScript(AedesTerra_Script_SolvedPuzzle1);
+	//Check Unsolved
+	if (
+		(FlagGet(FLAG_TEMP_1)) &&
+		(square->currentCoords.x - MAP_OFFSET != 8) &&
+		(square->currentCoords.y - MAP_OFFSET != 4)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_UnSolvedPuzzle1);
+	
+	//Puzzle 3	
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_CIRCLE3, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	circle = &gObjectEvents[objectEventId];
+	//Check Solved
+	if  (
+		(!FlagGet(FLAG_TEMP_3)) &&
+		(circle->currentCoords.x - MAP_OFFSET == 55) &&
+		(circle->currentCoords.y - MAP_OFFSET == 13)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_SolvedPuzzle3);
+	//Check Unsolved
+	if (
+		(FlagGet(FLAG_TEMP_3)) &&
+		(circle->currentCoords.x - MAP_OFFSET != 55) &&
+		(circle->currentCoords.y - MAP_OFFSET != 13)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_UnSolvedPuzzle3);
+
+
+	//Puzzle 4	
+
+	//Puzzle 5	
+	
+	//Puzzle 2 - NOTE: This must be final check because solving it removes the all cushions which would cause them to throw Unsolved checks
+	//square 2
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_SQUARE2, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	square = &gObjectEvents[objectEventId];
+	//circle 2
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_CIRCLE2, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	circle = &gObjectEvents[objectEventId];
+	//cross 2
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_CROSS2, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	cross = &gObjectEvents[objectEventId];
+	//Check Solved 2 
+	if  (
+		(!FlagGet(FLAG_AEDESTERRA_SOLVED)) &&
+		(square->currentCoords.x - MAP_OFFSET == 31) &&
+		(square->currentCoords.y - MAP_OFFSET == 11) &&
+		(circle->currentCoords.x - MAP_OFFSET == 35) &&
+		(circle->currentCoords.y - MAP_OFFSET == 11) &&
+		(cross->currentCoords.x  - MAP_OFFSET == 33) &&
+		(cross->currentCoords.y  - MAP_OFFSET == 8) 
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_SolvedPuzzle2);
 }
 
 static void StartSlideCushionAnim(u8 objectEventId, u8 direction)
