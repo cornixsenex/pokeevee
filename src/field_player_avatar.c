@@ -2014,6 +2014,25 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
 
 //Slide Cushion Anim - Aedes Terra
 
+static void CheckSlidePuzzleSolved()
+{
+	struct ObjectEvent *square1;
+	u32 objectEventId;
+
+	//Assign ObjectEvent vars - NOTE only solution pieces are needed to be tracked (Cross1 et Cross3 are irrelevant)
+	//square1
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_SQUARE1, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	square1 = &gObjectEvents[objectEventId];
+	
+	//Puzzle 1
+	if  (
+		(!FlagGet(FLAG_TEMP_1)) &&
+		(square1->currentCoords.x - MAP_OFFSET == 8) &&
+		(square1->currentCoords.y - MAP_OFFSET == 4)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_SolvedPuzzle1);
+}
+
 static void StartSlideCushionAnim(u8 objectEventId, u8 direction)
 {
     u8 taskId = CreateTask(Task_SlideCushion, 0xFF);
@@ -2148,6 +2167,7 @@ static bool8 SlideCushion_End(struct Task *task, struct ObjectEvent *player, str
 		//Update boulder vars
 		//Update Map
 		//Check for puzzle solution
+		CheckSlidePuzzleSolved();
 
 		//Standard Ending stuff
         ObjectEventClearHeldMovementIfFinished(player);

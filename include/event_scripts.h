@@ -1018,6 +1018,8 @@ extern const u8 LakeIra_SunkenTreasure_TrivisShard4[];
 extern const u8 LakeIra_SunkenTreasure_TrivisShard5[];
 extern const u8 LakeIra_SunkenTreasure_TrivisShard6[];
 extern const u8 LakeIra_SunkenTreasure_TrivisShard7[];
+//AedesTerra Solved Puzzle Scripts
+extern const u8 AedesTerra_Script_SolvedPuzzle1[];
 
 
 //		END		KUSTOMS		///

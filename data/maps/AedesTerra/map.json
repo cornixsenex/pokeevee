@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_AEDESTERRA_CIRCLE2",
       "graphics_id": "OBJ_EVENT_GFX_CIRCLE_CUSHION",
-      "x": 36,
-      "y": 4,
+      "x": 25,
+      "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -31,8 +31,8 @@
     {
       "local_id": "LOCALID_AEDESTERRA_SQUARE2",
       "graphics_id": "OBJ_EVENT_GFX_SQUARE_CUSHION",
-      "x": 30,
-      "y": 4,
+      "x": 24,
+      "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -88,7 +88,7 @@
       "local_id": "LOCALID_AEDESTERRA_CROSS3",
       "graphics_id": "OBJ_EVENT_GFX_CROSS_CUSHION",
       "x": 55,
-      "y": 15,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -102,7 +102,7 @@
       "local_id": "LOCALID_AEDESTERRA_CIRCLE3",
       "graphics_id": "OBJ_EVENT_GFX_CIRCLE_CUSHION",
       "x": 58,
-      "y": 15,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -181,6 +181,46 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "AedesTerra_Script_ResetPuzzle4"
+    },
+    {
+      "type": "sign",
+      "x": 54,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AedesTerra_Script_ResetPuzzle5"
+    },
+    {
+      "type": "sign",
+      "x": 58,
+      "y": 29,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AedesTerra_Script_ResetPuzzle5"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AedesTerra_Script_ResetPuzzle1"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AedesTerra_Script_ResetPuzzle2"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AedesTerra_Script_ResetPuzzle3"
     }
   ]
 }

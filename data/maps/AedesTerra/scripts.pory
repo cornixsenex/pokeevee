@@ -27,6 +27,111 @@ script AedesTerra_Script_ResetPuzzle4 {
 	end
 }
 
+script AedesTerra_Script_ResetPuzzle5 {
+	msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		if (!flag(FLAG_TEMP_5)) {
+			closemessage
+			removeobject (LOCALID_AEDESTERRA_CROSS5)
+			setobjectxyperm (LOCALID_AEDESTERRA_CROSS5, 56, 37)
+			addobject (LOCALID_AEDESTERRA_CROSS5)
+		} else {
+			msgbox (AedesTerra_Text_CantReset)
+			closemessage
+		}
+	}
+	end
+}
+
+script AedesTerra_Script_ResetPuzzle1 {
+	msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		if (!flag(FLAG_TEMP_1)) {
+			closemessage
+			removeobject (LOCALID_AEDESTERRA_CROSS1)
+			removeobject (LOCALID_AEDESTERRA_SQUARE1)
+			setobjectxyperm (LOCALID_AEDESTERRA_CROSS1, 14, 4)
+			setobjectxyperm (LOCALID_AEDESTERRA_SQUARE1, 8, 8)
+			addobject (LOCALID_AEDESTERRA_CROSS1)
+			addobject (LOCALID_AEDESTERRA_SQUARE1)
+		} else {
+			msgbox (AedesTerra_Text_CantReset)
+			closemessage
+		}
+	}
+	end
+}
+
+script AedesTerra_Script_ResetPuzzle2 {
+	msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		if (!flag(FLAG_TEMP_2)) {
+			closemessage
+			removeobject (LOCALID_AEDESTERRA_CROSS2)
+			if (flag(FLAG_TEMP_1)) {
+				removeobject (LOCALID_AEDESTERRA_SQUARE2)
+				setobjectxyperm (LOCALID_AEDESTERRA_SQUARE2, 30, 8)
+			}
+			if (flag(FLAG_TEMP_3)) {
+				removeobject (LOCALID_AEDESTERRA_CIRCLE2)
+				setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE2, 36, 8)
+			}
+			setobjectxyperm (LOCALID_AEDESTERRA_CROSS2, 33, 11)
+			addobject (LOCALID_AEDESTERRA_CROSS2)
+			if (flag(FLAG_TEMP_1)) {
+				addobject (LOCALID_AEDESTERRA_SQUARE2)
+			}
+			if (flag(FLAG_TEMP_3)) {
+				addobject (LOCALID_AEDESTERRA_CIRCLE2)
+			}
+		} else {
+			msgbox (AedesTerra_Text_CantReset)
+			closemessage
+		}
+	}
+	end
+}
+
+script AedesTerra_Script_ResetPuzzle3 {
+	msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		if (!flag(FLAG_TEMP_3)) {
+			closemessage
+			removeobject (LOCALID_AEDESTERRA_CROSS3)
+			removeobject (LOCALID_AEDESTERRA_CIRCLE3)
+			setobjectxyperm (LOCALID_AEDESTERRA_CROSS3, 55, 14)
+			setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE3, 58, 14)
+			addobject (LOCALID_AEDESTERRA_CROSS3)
+			addobject (LOCALID_AEDESTERRA_CIRCLE3)
+		} else {
+			msgbox (AedesTerra_Text_CantReset)
+			closemessage
+		}
+	}
+	end
+}
+
+script AedesTerra_Script_SolvedPuzzle1 {
+	call (AedesTerra_Script_SolvedPuzzle)
+	//show square on puzzle 2
+	removeobject (LOCALID_AEDESTERRA_SQUARE2)
+	setobjectxyperm (LOCALID_AEDESTERRA_SQUARE2, 30, 8)
+	addobject (LOCALID_AEDESTERRA_SQUARE2)
+	//set flag
+	setflag (FLAG_TEMP_1)
+}
+
+script AedesTerra_Script_SolvedPuzzle {
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//make sound
+	playse (SE_SWITCH)
+	waitse
+
+	return
+}
+
 text AedesTerra_Text_ResetPuzzle {
 	format("Would you like to reset the puzzle?")
 }
