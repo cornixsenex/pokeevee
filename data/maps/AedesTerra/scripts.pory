@@ -398,8 +398,9 @@ script AedesTerra_Script_SolvedPuzzle {
 }
 
 script AedesTerra_Script_Granon {
+	lockall
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
-//	waitmovement (0)
+	waitmovement (0)
 	playmoncry (SPECIES_GRANBULL, CRY_MODE_ENCOUNTER)
 	waitmoncry
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
@@ -412,6 +413,7 @@ script AedesTerra_Script_Granon {
 	setobjectmovementtype (LOCALID_AEDESTERRA_GRANON, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_AEDESTERRA_GRANON)
 	setflag (FLAG_AEDESTERRA_HIDEGRANON)
+	releaseall
 	end
 }
 
