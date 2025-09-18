@@ -6001,7 +6001,8 @@ void DoShinyMareepBattle(void)
     ZeroEnemyPartyMons();
 	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
 	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-	//Make Shiny Mareep
+	//Make Shiny Mareep	
+	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &thunder);
 	SetMonData(mon, MON_DATA_MOVE2, &thunderbolt);
 	SetMonData(mon, MON_DATA_MOVE3, &thunderwave);
@@ -6052,7 +6053,7 @@ void DoGranonBattle(void)
 	struct Pokemon *mon;
 	u32 personality;
 	u16  move1= MOVE_FAINT_ATTACK;
-	u16  move2= MOVE_OVERHEAT;
+	u16  move2= MOVE_FIRE_PUNCH;
 	u16  move3= MOVE_EARTHQUAKE;
 	u16  move4= MOVE_CLOSE_COMBAT;
 	//setup
