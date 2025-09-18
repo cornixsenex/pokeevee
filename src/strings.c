@@ -1475,3 +1475,4 @@ const u8 gText_Rename[] = _("RENAME");
 const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 
 const u8 gText_Lupa[] = _("LUPA");
+const u8 gText_Granon[] = _("GRANON");

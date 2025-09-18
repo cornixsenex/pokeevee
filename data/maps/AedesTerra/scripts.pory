@@ -7,29 +7,169 @@
 //FLAG_TEMP_5 - Show Right Bridge
 
 
-mapscripts AedesTerra_MapScripts {}
+mapscripts AedesTerra_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		//Remove cushions is puzzles solved
+		if (flag(FLAG_AEDESTERRA_SOLVED)) {
+			call (AedesTerra_Script_HideCushions)
+		}
+		//Show Grannon if not defeated yet
+		if (!flag(FLAG_AEDESTERRA_HIDEGRANON)) {
+			setobjectxyperm (LOCALID_AEDESTERRA_GRANON, 33, 20)
+			setobjectmovementtype (LOCALID_AEDESTERRA_GRANON, MOVEMENT_TYPE_CHASE_PLAYER)
+		}
+	}
+
+	MAP_SCRIPT_ON_LOAD {
+		//Unless puzzle solved hide bridges et door
+		if (!flag(FLAG_AEDESTERRA_SOLVED)) {
+			call (AedesTerra_Script_HideAllBridges)
+			call (AedesTerra_Script_HideBossDoor)
+		}
+	}
+
+    MAP_SCRIPT_ON_RESUME {
+        //Hide Granon on return from battle
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+            hideobjectat (LOCALID_AEDESTERRA_GRANON, MAP_AEDES_TERRA)
+            removeobject (LOCALID_AEDESTERRA_GRANON)
+        }
+    }
+
+}
 
 script AedesTerra_Script_HideAllBridges {
+	call (AedesTerra_Script_HideBridgeLeft)
+	call (AedesTerra_Script_HideBridgeRight)
+	call (AedesTerra_Script_HideBridgeCenter)
+	return
+}
 
+script AedesTerra_Script_ShowAllBridges {
+	call (AedesTerra_Script_ShowBridgeLeft)
+	call (AedesTerra_Script_ShowBridgeRight)
+	call (AedesTerra_Script_ShowBridgeCenter)
+	return
+}
+
+script AedesTerra_Script_HideBridgeLeft {
+	setmetatile (19, 30, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (19, 31, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (20, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (20, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (21, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (21, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (22, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (22, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (23, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (23, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (24, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (24, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (25, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (25, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (26, 30, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	setmetatile (26, 31, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	return
 }
 
 script AedesTerra_Script_ShowBridgeLeft {
+	setmetatile (19, 30, METATILE_Cave_AedesTerra_LavaBridgeTopLeft, FALSE)
+	setmetatile (19, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomLeft, FALSE)
+	setmetatile (20, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (20, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (21, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (21, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (22, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (22, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (23, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (23, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (24, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (24, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (25, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (25, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (26, 30, METATILE_Cave_AedesTerra_LavaBridgeTopRight, FALSE)
+	setmetatile (26, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomRight, FALSE)
+	return
+}
 
+script AedesTerra_Script_HideBridgeRight {
+	setmetatile (43, 30, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (43, 31, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (44, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (44, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (45, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (45, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (46, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (46, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (47, 30, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	setmetatile (47, 31, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	return
 }
 
 script AedesTerra_Script_ShowBridgeRight {
+	setmetatile (43, 30, METATILE_Cave_AedesTerra_LavaBridgeTopLeft, FALSE)
+	setmetatile (43, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomLeft, FALSE)
+	setmetatile (44, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (44, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (45, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (45, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (46, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (46, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (47, 30, METATILE_Cave_AedesTerra_LavaBridgeTopRight, FALSE)
+	setmetatile (47, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomRight, FALSE)
+	return
+}
 
+script AedesTerra_Script_HideBridgeCenter {
+	//Left Side
+	setmetatile (29, 30, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (29, 31, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (30, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (30, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (31, 30, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	setmetatile (31, 31, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	//Right Side
+	setmetatile (35, 30, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (35, 31, METATILE_Cave_AedesTerra_LavaWallEast, TRUE)
+	setmetatile (36, 30, METATILE_Cave_Lava, TRUE)
+	setmetatile (36, 31, METATILE_Cave_Lava, TRUE)
+	setmetatile (37, 30, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	setmetatile (37, 31, METATILE_Cave_AedesTerra_LavaWallWest, TRUE)
+	return
 }
 
 script AedesTerra_Script_ShowBridgeCenter {
-
+	//Left Side
+	setmetatile (29, 30, METATILE_Cave_AedesTerra_LavaBridgeTopLeft, FALSE)
+	setmetatile (29, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomLeft, FALSE)
+	setmetatile (30, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (30, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (31, 30, METATILE_Cave_AedesTerra_LavaBridgeTopRight, FALSE)
+	setmetatile (31, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomRight, FALSE)
+	//Right Side
+	setmetatile (35, 30, METATILE_Cave_AedesTerra_LavaBridgeTopLeft, FALSE)
+	setmetatile (35, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomLeft, FALSE)
+	setmetatile (36, 30, METATILE_Cave_AedesTerra_LavaBridgeTopCenter, FALSE)
+	setmetatile (36, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomCenter, FALSE)
+	setmetatile (37, 30, METATILE_Cave_AedesTerra_LavaBridgeTopRight, FALSE)
+	setmetatile (37, 31, METATILE_Cave_AedesTerra_LavaBridgeBottomRight, FALSE)
+	return
 }
 
-//After Boss Door open - Show Bridges, Hide Cushions, Open Door
-script AedesTerra_Script_PersistSolution {
-	//Show Bridges
-	//Show Open Door
-	//Hide Cushions
+script AedesTerra_Script_HideBossDoor {
+	setmetatile (33, 4, METATILE_Cave_AedesTerra_WallSouth, TRUE)
+	setmetatile (33, 5, METATILE_Cave_AedesTerra_WallSouth, TRUE)
+	return
+}
+
+script AedesTerra_Script_ShowBossDoor {
+	setmetatile (33, 4, METATILE_Cave_AedesTerra_CaveDoorTop, TRUE)
+	setmetatile (33, 5, METATILE_Cave_AedesTerra_CaveDoorBottom, FALSE)
+	return
+}
+
+script AedesTerra_Script_HideCushions {
 	setobjectxyperm (LOCALID_AEDESTERRA_CROSS1, 24, 0)
 	setobjectxyperm (LOCALID_AEDESTERRA_CROSS2, 24, 0)
 	setobjectxyperm (LOCALID_AEDESTERRA_CROSS3, 24, 0)
@@ -39,6 +179,17 @@ script AedesTerra_Script_PersistSolution {
 	setobjectxyperm (LOCALID_AEDESTERRA_SQUARE2, 24, 0)
 	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE2, 24, 0)
 	setobjectxyperm (LOCALID_AEDESTERRA_CIRCLE3, 24, 0)
+	return
+}
+
+//After Boss Door open - Show Bridges, Hide Cushions, Open Door
+script AedesTerra_Script_PersistSolution {
+	//Show Bridges
+	call (AedesTerra_Script_ShowAllBridges)
+	//Show Open Door
+	call (AedesTerra_Script_ShowBossDoor)
+	//Hide Cushions
+	call (AedesTerra_Script_HideCushions)
 	return
 }
 
@@ -189,6 +340,52 @@ script AedesTerra_Script_UnSolvedPuzzle3 {
 	clearflag (FLAG_TEMP_3)
 }
 
+script AedesTerra_Script_SolvedPuzzle4 {
+	call (AedesTerra_Script_SolvedPuzzle)
+	//Show Left Bridge
+	call (AedesTerra_Script_ShowBridgeLeft)
+	//Check if should show center bridge
+	if (flag(FLAG_TEMP_5)) {
+		call (AedesTerra_Script_ShowBridgeCenter)
+	}
+	//setflag
+	setflag (FLAG_TEMP_4)
+}
+
+script AedesTerra_Script_UnSolvedPuzzle4 {
+	//Hide Bridge Left
+	call (AedesTerra_Script_HideBridgeLeft)
+	//Check Hide Bridge Center
+	if (flag(FLAG_TEMP_5)) {
+		call (AedesTerra_Script_HideBridgeCenter)
+	}
+	//clear flag
+	clearflag (FLAG_TEMP_4)
+}
+
+script AedesTerra_Script_SolvedPuzzle5 {
+	call (AedesTerra_Script_SolvedPuzzle)
+	//Show Left Bridge
+	call (AedesTerra_Script_ShowBridgeRight)
+	//Check if should show center bridge
+	if (flag(FLAG_TEMP_4)) {
+		call (AedesTerra_Script_ShowBridgeCenter)
+	}
+	//setflag
+	setflag (FLAG_TEMP_5)
+}
+
+script AedesTerra_Script_UnSolvedPuzzle5 {
+	//Hide Bridge Left
+	call (AedesTerra_Script_HideBridgeRight)
+	//Check Hide Bridge Center
+	if (flag(FLAG_TEMP_4)) {
+		call (AedesTerra_Script_HideBridgeCenter)
+	}
+	//clear flag
+	clearflag (FLAG_TEMP_5)
+}
+
 script AedesTerra_Script_SolvedPuzzle {
 	//alert player
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
@@ -198,6 +395,24 @@ script AedesTerra_Script_SolvedPuzzle {
 	waitse
 
 	return
+}
+
+script AedesTerra_Script_Granon {
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+//	waitmovement (0)
+	playmoncry (SPECIES_GRANBULL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	//mon battle
+	special (DoGranonBattle)
+	waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_AEDESTERRA_GRANON)
+	setobjectxyperm (LOCALID_AEDESTERRA_GRANON, 0, 0)
+	setobjectmovementtype (LOCALID_AEDESTERRA_GRANON, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_AEDESTERRA_GRANON)
+	setflag (FLAG_AEDESTERRA_HIDEGRANON)
+	end
 }
 
 text AedesTerra_Text_ResetPuzzle {

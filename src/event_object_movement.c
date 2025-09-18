@@ -6723,9 +6723,12 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && objectEvent->mapNum == MAP_NUM(MAP_COLCHIS) && objectEvent->mapGroup == MAP_GROUP(MAP_COLCHIS) ) //Lugia different cuz no special COLLISION sprite
                 //Aedes Aqua Dark Brendan
 				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN && objectEvent->mapNum == MAP_NUM(MAP_AEDES_AQUA_MINI_BOSS_ROOM) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_AQUA_MINI_BOSS_ROOM) ) 
+				//Aedes Terra Granon
+				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(GRANBULL) && objectEvent->mapNum == MAP_NUM(MAP_AEDES_TERRA) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_TERRA) ) 
 				)
 			{
 				//Yes, it's a special collision with player do script
+				//Face Player to special object
 				script = GetObjectEventScriptPointerByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);
 				ScriptContext_SetupScript(script);
 				return TRUE;

@@ -2,7 +2,7 @@
   "id": "MAP_AEDES_TERRA",
   "name": "AedesTerra",
   "layout": "LAYOUT_AEDES_TERRA",
-  "music": "MUS_NONE",
+  "music": "MUS_FOTM",
   "region_map_section": "MAPSEC_AEDES_TERRA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -57,17 +57,17 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_AEDESTERRA_GRANBULL",
+      "local_id": "LOCALID_AEDESTERRA_GRANON",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GRANBULL)",
-      "x": 33,
-      "y": 20,
+      "x": 0,
+      "y": 0,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "AedesTerra_Script_Granon",
       "flag": "0"
     },
     {

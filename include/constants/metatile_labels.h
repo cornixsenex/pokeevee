@@ -133,6 +133,17 @@
 #define METATILE_Building_TV_On   0x003
 
 // gTileset_Cave
+#define METATILE_Cave_AedesTerra_CaveDoorBottom          0x336
+#define METATILE_Cave_AedesTerra_CaveDoorTop             0x32E
+#define METATILE_Cave_AedesTerra_LavaBridgeBottomCenter  0x3F6
+#define METATILE_Cave_AedesTerra_LavaBridgeBottomLeft    0x3F5
+#define METATILE_Cave_AedesTerra_LavaBridgeBottomRight   0x3F7
+#define METATILE_Cave_AedesTerra_LavaBridgeTopCenter     0x3EE
+#define METATILE_Cave_AedesTerra_LavaBridgeTopLeft       0x3ED
+#define METATILE_Cave_AedesTerra_LavaBridgeTopRight      0x3EF
+#define METATILE_Cave_AedesTerra_LavaWallEast            0x36D
+#define METATILE_Cave_AedesTerra_LavaWallWest            0x36B
+#define METATILE_Cave_AedesTerra_WallSouth               0x329
 #define METATILE_Cave_Bottom_Eastward                    0x3C6
 #define METATILE_Cave_Bottom_Westward                    0x3CD
 #define METATILE_Cave_CaveFloorBottom                    0x201
@@ -159,6 +170,7 @@
 #define METATILE_Cave_InnerCornerTopLeft_Westward        0x3CC
 #define METATILE_Cave_InnerCornerTopRight_Eastward       0x3C8
 #define METATILE_Cave_InnerCornerTopRight_Westward       0x3CE
+#define METATILE_Cave_Lava                               0x364
 #define METATILE_Cave_Left_Eastward                      0x3C9
 #define METATILE_Cave_Left_Westward                      0x3D0
 #define METATILE_Cave_Right_Eastward                     0x3AC

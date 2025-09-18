@@ -2555,8 +2555,10 @@ extern const u8 gText_BookVerse39[];
 extern const u8 gText_Ostracon[];
 //Trainer Card
 extern const u8 gText_TrainerCard[];
-//Lupa etc
+//Lupa
 extern const u8 gText_Lupa[];
+//Granon
+extern const u8 gText_Granon[];
 
 extern const u8 gText_BasePointsResetToZero[];
 

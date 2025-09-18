@@ -46,6 +46,8 @@ script AedesAqua_MiniBossRoom_Script_Crystal6 {
 }
 
 script AedesAqua_MiniBossRoom_Script_DarkBrendan {
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
     setflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
 	trainerbattle_no_intro (TRAINER_DARKBRENDAN, AedesAqua_MiniBossRoom_Text_DarkBrendanLost)
     clearflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag

@@ -1112,7 +1112,10 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_YOUNGSTER_2
 				|| gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_COLLISION_DRIFBLIM
-				|| (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && gObjectEvents[objectEventId].mapNum == MAP_NUM(MAP_COLCHIS) && gObjectEvents[objectEventId].mapGroup == MAP_GROUP(MAP_COLCHIS) ) // Note Lugia different
+				//Colchis Lugia
+				|| (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SPECIES(LUGIA) && gObjectEvents[objectEventId].mapNum == MAP_NUM(MAP_COLCHIS) && gObjectEvents[objectEventId].mapGroup == MAP_GROUP(MAP_COLCHIS) )
+			    //Aedes Aqua Dark Brendan - NOTE I originally only had the check in src/event_object_movement.c and it worked but I feel this does...something 
+				|| (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN && gObjectEvents[objectEventId].mapNum == MAP_NUM(MAP_AEDES_AQUA_MINI_BOSS_ROOM) && gObjectEvents[objectEventId].mapGroup == MAP_GROUP(MAP_AEDES_AQUA_MINI_BOSS_ROOM) )
 				)
 		{
 			script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
@@ -2059,8 +2062,41 @@ static void CheckSlidePuzzleSolved()
 
 
 	//Puzzle 4	
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_CROSS4, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	cross = &gObjectEvents[objectEventId];
+	//Check Solved
+	if  (
+		(!FlagGet(FLAG_TEMP_4)) &&
+		(cross->currentCoords.x - MAP_OFFSET == 10) &&
+		(cross->currentCoords.y - MAP_OFFSET == 33)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_SolvedPuzzle4);
+	//Check Unsolved
+	if (
+		(FlagGet(FLAG_TEMP_4)) &&
+		(cross->currentCoords.x - MAP_OFFSET != 10) &&
+		(cross->currentCoords.y - MAP_OFFSET != 33)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_UnSolvedPuzzle4);
 
-	//Puzzle 5	
+	//Puzzle 5		
+	objectEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_AEDESTERRA_CROSS5, MAP_NUM(MAP_AEDES_TERRA), MAP_GROUP(MAP_AEDES_TERRA));
+	//
+	cross = &gObjectEvents[objectEventId];
+	//Check Solved
+	if  (
+		(!FlagGet(FLAG_TEMP_5)) &&
+		(cross->currentCoords.x - MAP_OFFSET == 56) &&
+		(cross->currentCoords.y - MAP_OFFSET == 34)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_SolvedPuzzle5);
+	//Check Unsolved
+	if (
+		(FlagGet(FLAG_TEMP_5)) &&
+		(cross->currentCoords.x - MAP_OFFSET != 56) &&
+		(cross->currentCoords.y - MAP_OFFSET != 34)
+		)
+		ScriptContext_SetupScript(AedesTerra_Script_UnSolvedPuzzle5);
 	
 	//Puzzle 2 - NOTE: This must be final check because solving it removes the all cushions which would cause them to throw Unsolved checks
 	//square 2
