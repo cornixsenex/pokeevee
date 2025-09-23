@@ -1,1 +1,36 @@
-mapscripts AedesTerra_BossRoom_MapScripts {}
+
+//VAR_TEMP_B - Trigger ganondorf battle on frame table
+
+
+mapscripts AedesTerra_BossRoom_MapScripts {
+
+
+	MAP_SCRIPT_ON_TRANSITION {
+		//Setup Ganondorf battle
+		if (!flag(FLAG_AEDESTERRA_GANONDORF)) {
+			setvar (VAR_TEMP_B, 1)
+		}
+	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_B, 1: AedesTerra_BossRoom_Script_GanondorfScene
+	]
+
+
+}
+
+
+script AedesTerra_BossRoom_Script_GanondorfScene {
+	//set var - stop trigger
+	//alert player
+	//move player into position
+	//G monologue
+	//setup hide G
+	//G battle
+	//do hide G
+	//Set flag
+	//fin
+
+}
+
+
