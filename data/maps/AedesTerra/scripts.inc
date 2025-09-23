@@ -635,44 +635,62 @@ AedesTerra_Script_SolvedPuzzle::
 	return
 
 
-AedesTerra_Script_Granon::
+AedesTerra_Script_TestGanon::
 # 401 "data/maps/AedesTerra/scripts.pory"
-	lockall
+	load_field_pic 86, 190, 98
 # 402 "data/maps/AedesTerra/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	msgbox AedesTerra_Script_TestGanon_Text_0
 # 403 "data/maps/AedesTerra/scripts.pory"
-	waitmovement 0
+	closemessage
 # 404 "data/maps/AedesTerra/scripts.pory"
-	playmoncry SPECIES_GRANBULL, CRY_MODE_ENCOUNTER
+	destroy_field_pic 86
 # 405 "data/maps/AedesTerra/scripts.pory"
-	waitmoncry
-# 406 "data/maps/AedesTerra/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 408 "data/maps/AedesTerra/scripts.pory"
-	special DoGranonBattle
-# 409 "data/maps/AedesTerra/scripts.pory"
-	waitstate
-# 410 "data/maps/AedesTerra/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	trainerbattle_no_intro TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost
+	end
+
+
+AedesTerra_Script_Granon::
 # 411 "data/maps/AedesTerra/scripts.pory"
-	removeobject LOCALID_AEDESTERRA_GRANON
+	lockall
 # 412 "data/maps/AedesTerra/scripts.pory"
-	setobjectxyperm LOCALID_AEDESTERRA_GRANON, 0, 0
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 413 "data/maps/AedesTerra/scripts.pory"
-	setobjectmovementtype LOCALID_AEDESTERRA_GRANON, MOVEMENT_TYPE_INVISIBLE
+	waitmovement 0
 # 414 "data/maps/AedesTerra/scripts.pory"
-	addobject LOCALID_AEDESTERRA_GRANON
+	playmoncry SPECIES_GRANBULL, CRY_MODE_ENCOUNTER
 # 415 "data/maps/AedesTerra/scripts.pory"
-	setflag FLAG_AEDESTERRA_HIDEGRANON
+	waitmoncry
 # 416 "data/maps/AedesTerra/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 418 "data/maps/AedesTerra/scripts.pory"
+	special DoGranonBattle
+# 419 "data/maps/AedesTerra/scripts.pory"
+	waitstate
+# 420 "data/maps/AedesTerra/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 421 "data/maps/AedesTerra/scripts.pory"
+	removeobject LOCALID_AEDESTERRA_GRANON
+# 422 "data/maps/AedesTerra/scripts.pory"
+	setobjectxyperm LOCALID_AEDESTERRA_GRANON, 0, 0
+# 423 "data/maps/AedesTerra/scripts.pory"
+	setobjectmovementtype LOCALID_AEDESTERRA_GRANON, MOVEMENT_TYPE_INVISIBLE
+# 424 "data/maps/AedesTerra/scripts.pory"
+	addobject LOCALID_AEDESTERRA_GRANON
+# 425 "data/maps/AedesTerra/scripts.pory"
+	setflag FLAG_AEDESTERRA_HIDEGRANON
+# 426 "data/maps/AedesTerra/scripts.pory"
 	releaseall
 	end
 
 
+AedesTerra_Script_TestGanon_Text_0:
+# 402 "data/maps/AedesTerra/scripts.pory"
+	.string "TEST$"
+
 AedesTerra_Text_ResetPuzzle::
-# 420 "data/maps/AedesTerra/scripts.pory"
+# 430 "data/maps/AedesTerra/scripts.pory"
 	.string "Would you like to reset the puzzle?$"
 
 AedesTerra_Text_CantReset::
-# 424 "data/maps/AedesTerra/scripts.pory"
+# 434 "data/maps/AedesTerra/scripts.pory"
 	.string "Nothing happened...$"

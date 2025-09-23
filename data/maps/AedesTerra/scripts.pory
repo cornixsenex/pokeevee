@@ -397,6 +397,16 @@ script AedesTerra_Script_SolvedPuzzle {
 	return
 }
 
+script AedesTerra_Script_TestGanon {
+	load_field_pic (86, 190, 98)
+	msgbox ("TEST")
+	closemessage
+	destroy_field_pic (86)
+	trainerbattle_no_intro(TRAINER_TEST_BATTLE, LoonixBeach_Text_BlueLost)
+	end
+	
+}
+
 script AedesTerra_Script_Granon {
 	lockall
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)

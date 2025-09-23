@@ -286,6 +286,9 @@ static const u16 sPic85Pal[] = INCBIN_U16("graphics/misc/trivis_map.gbapal");
 //Trivis Map3 = 85
 static const u32 sPic86Gfx[] = INCBIN_U32("graphics/misc/trivis_map3.4bpp.lz");
 static const u16 sPic86Pal[] = INCBIN_U16("graphics/misc/trivis_map.gbapal");
+//Ganondorf = 86
+static const u32 sPic87Gfx[] = INCBIN_U32("graphics/trainers/front_pics/ganondorf.4bpp.lz");
+static const u16 sPic87Pal[] = INCBIN_U16("graphics/trainers/front_pics/ganondorf.gbapal");
 
 /* And this is an example script.
 
@@ -481,6 +484,8 @@ static const struct Pic sPics[] =
     {sPic85Gfx, sPic85Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Trivis Map 3
     {sPic86Gfx, sPic86Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Ganondorf
+    {sPic87Gfx, sPic87Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

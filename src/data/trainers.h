@@ -2684,7 +2684,7 @@ F_TRAINER_FEMALE |
 #line 1007
         .trainerClass = TRAINER_CLASS_CHAMPION,
 #line 1008
-        .trainerPic = TRAINER_PIC_LINK,
+        .trainerPic = TRAINER_PIC_GANONDORF,
         .encounterMusic_gender =
 #line 1010
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -2699,7 +2699,7 @@ F_TRAINER_FEMALE |
 #line 1016
         .poolPickIndex = POOL_PICK_DEFAULT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_LINK,
+        .trainerBackPic = TRAINER_PIC_GANONDORF,
 #line 1014
         .partySize = 2,
         .poolSize = 4,

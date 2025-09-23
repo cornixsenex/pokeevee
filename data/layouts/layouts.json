@@ -6620,6 +6620,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesTerra/border.bin",
       "blockdata_filepath": "data/layouts/AedesTerra/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_TERRA_BOSS_ROOM",
+      "name": "AedesTerra_BossRoom_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AedesTerra_BossRoom/border.bin",
+      "blockdata_filepath": "data/layouts/AedesTerra_BossRoom/map.bin"
     }
   ]
 }

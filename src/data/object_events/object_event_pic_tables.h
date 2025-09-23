@@ -2058,6 +2058,10 @@ static const struct SpriteFrameImage sPicTable_CollisionDrifblim[] = {
     overworld_ascending_frames(gObjectEventPic_CollisionDrifblim, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Ganondorf[] = {
+    obj_frame_tiles(gObjectEventPic_Ganondorf),
+};
+
 
 /// BREAK ///
 

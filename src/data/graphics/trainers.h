@@ -585,6 +585,9 @@ const u16 gTrainerPalette_Olympia[] = INCBIN_U16("graphics/trainers/palettes/oly
 const u32 gTrainerFrontPic_Link[] = INCBIN_U32("graphics/trainers/front_pics/link.4bpp.smol");
 const u16 gTrainerPalette_Link[] = INCBIN_U16("graphics/trainers/palettes/link.gbapal");
 
+const u32 gTrainerFrontPic_Ganondorf[] = INCBIN_U32("graphics/trainers/front_pics/ganondorf.4bpp.smol");
+const u16 gTrainerPalette_Ganondorf[] = INCBIN_U16("graphics/trainers/palettes/ganondorf.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by
@@ -794,6 +797,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_GHETSIS, gTrainerFrontPic_Ghetsis, gTrainerPalette_Ghetsis),               
     TRAINER_SPRITE(TRAINER_PIC_OLYMPIA, gTrainerFrontPic_Olympia, gTrainerPalette_Olympia),               
     TRAINER_SPRITE(TRAINER_PIC_LINK, gTrainerFrontPic_Link, gTrainerPalette_Link),               
+    TRAINER_SPRITE(TRAINER_PIC_GANONDORF, gTrainerFrontPic_Ganondorf, gTrainerPalette_Ganondorf),               
 	//END KUSTOM TRAINER SPRITES
 };
 

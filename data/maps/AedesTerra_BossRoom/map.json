@@ -1,0 +1,28 @@
+{
+  "id": "MAP_AEDES_TERRA_BOSS_ROOM",
+  "name": "AedesTerra_BossRoom",
+  "layout": "LAYOUT_AEDES_TERRA_BOSS_ROOM",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_AEDES_TERRA",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_AEDES_TERRA",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

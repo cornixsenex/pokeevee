@@ -1696,3 +1696,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/AedesAqua_Hallways/scripts.inc"
 
 	.include "data/maps/AedesTerra/scripts.inc"
+
+	.include "data/maps/AedesTerra_BossRoom/scripts.inc"
