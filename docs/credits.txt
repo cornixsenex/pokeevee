@@ -52,4 +52,5 @@ Delta231
 	>dragontamer / trojan OW sprite
 Kasen
 	>Atlas / Drayden OW sprite
-
+thesixthsaint
+	>Ganondorf trainer sprite
