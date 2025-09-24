@@ -200,10 +200,10 @@
 #define TRAINER_TURNUS                      194
 #define TRAINER_DARKBRENDAN                 195
 #define TRAINER_LINK                        196
+#define TRAINER_GANONDORF                   197
 
 //BREAK// - 61 UNUSED OPEN ABOVE PLZ
 
-#define TRAINER_DALTON_2                    197
 #define TRAINER_DALTON_3                    198
 #define TRAINER_DALTON_4                    199
 #define TRAINER_DALTON_5                    200

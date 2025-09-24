@@ -8783,14 +8783,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 3348
-    [DIFFICULTY_NORMAL][TRAINER_DALTON_2] =
+    [DIFFICULTY_NORMAL][TRAINER_GANONDORF] =
     {
 #line 3349
-        .trainerName = _("DALTON"),
+        .trainerName = _("GANONDORF"),
 #line 3350
-        .trainerClass = TRAINER_CLASS_GUITARIST,
+        .trainerClass = TRAINER_CLASS_SILENT_HERO,
 #line 3351
-        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerPic = TRAINER_PIC_GANONDORF,
         .encounterMusic_gender =
 #line 3353
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -8799,7 +8799,7 @@ F_TRAINER_FEMALE |
 #line 3355
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 0
-        .trainerBackPic = TRAINER_PIC_GUITARIST,
+        .trainerBackPic = TRAINER_PIC_GANONDORF,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {

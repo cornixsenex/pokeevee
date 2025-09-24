@@ -21,16 +21,43 @@ mapscripts AedesTerra_BossRoom_MapScripts {
 
 
 script AedesTerra_BossRoom_Script_GanondorfScene {
+	lockall
 	//set var - stop trigger
+	setvar (VAR_TEMP_B, 0)
 	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//move player into position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp5)
+	waitmovement (0)
 	//G monologue
+	load_field_pic (FIELD_PIC_GANONDORF, 190, 98)
+	msgbox (AedesTerra_BossRoom_Text_GanondorfPre)
+	destroy_field_pic (FIELD_PIC_GANONDORF)
+	closemessage
 	//setup hide G
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	//G battle
+	trainerbattle_no_intro (TRAINER_GANONDORF, AedesTerra_BossRoom_Text_GanondorfLost)
 	//do hide G
+	clearflag (FLAG_AEDESTERRA_GANONDORF)
+	removeobject (LOCALID_AEDESTERRABOSSROOM_GANONDORF)
+	setobjectxyperm (LOCALID_AEDESTERRABOSSROOM_GANONDORF, 0, 0)
+	setobjectmovementtype (LOCALID_AEDESTERRABOSSROOM_GANONDORF, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_AEDESTERRABOSSROOM_GANONDORF)
 	//Set flag
+	setflag (FLAG_AEDESTERRA_GANONDORF)
 	//fin
-
+	releaseall
+	end
 }
 
+text AedesTerra_BossRoom_Text_GanondorfPre
+{
+	format("")
+}
 
+text AedesTerra_BossRoom_Text_GanondorfLost
+{
+	format("")
+}
