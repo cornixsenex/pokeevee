@@ -6630,6 +6630,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AedesTerra_BossRoom/border.bin",
       "blockdata_filepath": "data/layouts/AedesTerra_BossRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_AEDES_LUX_1F",
+      "name": "AedesLux_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MauvilleGym",
+      "border_filepath": "data/layouts/AedesLux_1F/border.bin",
+      "blockdata_filepath": "data/layouts/AedesLux_1F/map.bin"
     }
   ]
 }

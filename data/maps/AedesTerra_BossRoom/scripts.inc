@@ -102,8 +102,24 @@ AedesTerra_BossRoom_Script_Trivis::
 	return
 
 
+AedesTerra_BossRoom_Script_WarpSign::
+# 80 "data/maps/AedesTerra_BossRoom/scripts.pory"
+	msgbox AedesTerra_BossRoom_Text_WarpSign, MSGBOX_YESNO
+# 81 "data/maps/AedesTerra_BossRoom/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq AedesTerra_BossRoom_Script_WarpSign_1
+# 84 "data/maps/AedesTerra_BossRoom/scripts.pory"
+	closemessage
+	return
+
+AedesTerra_BossRoom_Script_WarpSign_1:
+# 82 "data/maps/AedesTerra_BossRoom/scripts.pory"
+	warpsilent MAP_AEDES_TERRA, 33, 43
+	return
+
+
 AedesTerra_BossRoom_Text_GanondorfPre::
-# 79 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 88 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	.string "You foolish child! You opened the path\n"
 	.string "to the sacred power the green hero\l"
 	.string "sealed here. Now all that's left for me\l"
@@ -111,10 +127,15 @@ AedesTerra_BossRoom_Text_GanondorfPre::
 	.string "myself.$"
 
 AedesTerra_BossRoom_Text_GanondorfLost::
-# 87 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 96 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	.string "Impossible! Victory was so close!$"
 
 AedesTerra_BossRoom_Text_Trivis::
-# 92 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 101 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	.string "The golden triangle begins glowing\n"
 	.string "brightly as you approach.$"
+
+AedesTerra_BossRoom_Text_WarpSign::
+# 105 "data/maps/AedesTerra_BossRoom/scripts.pory"
+	.string "Would you like to return to the\n"
+	.string "beginning of the temple?$"

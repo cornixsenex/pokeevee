@@ -1698,3 +1698,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/AedesTerra/scripts.inc"
 
 	.include "data/maps/AedesTerra_BossRoom/scripts.inc"
+
+	.include "data/maps/AedesLux_1F/scripts.inc"

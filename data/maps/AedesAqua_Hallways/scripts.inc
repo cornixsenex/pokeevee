@@ -484,4 +484,4 @@ AedesAqua_Text_LinkMessage::
 	.string "The map will show you where they lie\n"
 	.string "On the lake bed where fishes die.\p"
 	.string "Would you like to return to the\n"
-	.string "beginning of the dungeon?$"
+	.string "beginning of the temple?$"

@@ -1,0 +1,20 @@
+{
+  "id": "MAP_AEDES_LUX_1F",
+  "name": "AedesLux_1F",
+  "layout": "LAYOUT_AEDES_LUX_1F",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_AEDES_LUX",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

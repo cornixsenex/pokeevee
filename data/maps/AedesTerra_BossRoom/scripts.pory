@@ -78,7 +78,7 @@ script AedesTerra_BossRoom_Script_Trivis {
 
 script AedesTerra_BossRoom_Script_WarpSign {
 	msgbox (AedesTerra_BossRoom_Text_WarpSign, MSGBOX_YESNO)
-	if (var(VAR_RESULT) = YES) {
+	if (var(VAR_RESULT) == YES) {
 		warpsilent (MAP_AEDES_TERRA, 33, 43)
 	} else {
 		closemessage
@@ -100,4 +100,8 @@ text AedesTerra_BossRoom_Text_GanondorfLost
 
 text AedesTerra_BossRoom_Text_Trivis {
 	format("The golden triangle begins glowing brightly as you approach.")
+}
+
+text AedesTerra_BossRoom_Text_WarpSign {
+	format("Would you like to return to the beginning of the temple?")
 }
