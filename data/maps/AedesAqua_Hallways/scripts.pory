@@ -11,6 +11,8 @@ mapscripts AedesAqua_Hallways_MapScripts {
 			setobjectmovementtype (LOCALID_AEDESAQUA_HALLWAYS_LINK, MOVEMENT_TYPE_FACE_DOWN)
 		}
 		//Hide Map if already done
+		call (AedesAqua_Hallways_TryHideMap)
+
 	}
 
     MAP_SCRIPT_ON_LOAD {
@@ -125,6 +127,16 @@ mapscripts AedesAqua_Hallways_MapScripts {
         }
     }
 
+}
+
+script AedesAqua_Hallways_TryHideMap {
+	checkitem (ITEM_TRIVIS_MAP)
+	if (var(VAR_RESULT) == YES) {
+		removeobject (LOCALID_AEDESAQUA_HALLWAYS_MAP)
+		setobjectxyperm (LOCALID_AEDESAQUA_HALLWAYS_MAP, 0, 0)
+		setobjectmovementtype (LOCALID_AEDESAQUA_HALLWAYS_MAP, MOVEMENT_TYPE_INVISIBLE)
+	}
+	return
 }
 
 

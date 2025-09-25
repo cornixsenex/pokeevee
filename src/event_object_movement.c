@@ -618,6 +618,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_KiteCushion,           OBJ_EVENT_PAL_TAG_KITE_CUSHION},
 	{gObjectEventPal_CrossCushion,          OBJ_EVENT_PAL_TAG_CROSS_CUSHION},
 	{gObjectEventPal_Ganondorf,             OBJ_EVENT_PAL_TAG_GANONDORF},
+	{gObjectEventPal_Trivis,                OBJ_EVENT_PAL_TAG_TRIVIS},
 	
     
 #if OW_FOLLOWERS_POKEBALLS

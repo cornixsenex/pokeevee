@@ -1244,6 +1244,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ganondorf = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+//NOTE: Trivis does NOT move - Copyied Birth Island Stone AKA Deoxys Triangle
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trivis = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TRIVIS,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = 10,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_Trivis,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 //BREAK//
 
 

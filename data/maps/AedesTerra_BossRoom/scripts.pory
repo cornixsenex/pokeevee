@@ -7,15 +7,21 @@ mapscripts AedesTerra_BossRoom_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
 		//Setup Ganondorf battle
-		if (!flag(FLAG_AEDESTERRA_GANONDORF)) {
+		if (!defeated(TRAINER_GANONDORF)) {
 			setvar (VAR_TEMP_B, 1)
+			setobjectxyperm (LOCALID_AEDESTERRABOSSROOM_GANONDORF, 10, 12)
+			setobjectmovementtype (LOCALID_AEDESTERRABOSSROOM_GANONDORF, MOVEMENT_TYPE_FACE_DOWN)
+		}
+		//Hide Trivis if taken
+		if (flag(FLAG_AEDESTERRA_TRIVIS)) {
+			setobjectxyperm (LOCALID_AEDESTERRABOSSROOM_TRIVIS, 0, 0)
+			setobjectmovementtype (LOCALID_AEDESTERRABOSSROOM_TRIVIS, MOVEMENT_TYPE_INVISIBLE)
 		}
 	}
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_TEMP_B, 1: AedesTerra_BossRoom_Script_GanondorfScene
 	]
-
 
 }
 
@@ -40,24 +46,58 @@ script AedesTerra_BossRoom_Script_GanondorfScene {
 	//G battle
 	trainerbattle_no_intro (TRAINER_GANONDORF, AedesTerra_BossRoom_Text_GanondorfLost)
 	//do hide G
-	clearflag (FLAG_AEDESTERRA_GANONDORF)
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	removeobject (LOCALID_AEDESTERRABOSSROOM_GANONDORF)
 	setobjectxyperm (LOCALID_AEDESTERRABOSSROOM_GANONDORF, 0, 0)
 	setobjectmovementtype (LOCALID_AEDESTERRABOSSROOM_GANONDORF, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_AEDESTERRABOSSROOM_GANONDORF)
-	//Set flag
-	setflag (FLAG_AEDESTERRA_GANONDORF)
 	//fin
 	releaseall
 	end
 }
 
+script AedesTerra_BossRoom_Script_Trivis {
+	//msg
+	msgbox (AedesTerra_BossRoom_Text_Trivis)
+	closemessage
+	//glow up
+	fadescreen (FADE_TO_WHITE)
+	delay (40)
+	//remove trivis
+	removeobject (LOCALID_AEDESTERRABOSSROOM_TRIVIS)
+	setobjectxyperm (LOCALID_AEDESTERRABOSSROOM_TRIVIS, 0, 0)
+	setobjectmovementtype (LOCALID_AEDESTERRABOSSROOM_TRIVIS, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_AEDESTERRABOSSROOM_TRIVIS)
+	//back to world
+	fadescreen (FADE_FROM_WHITE)
+	//give item
+	giveitem (ITEM_TRIVIS_POTESTATIS)
+	//setflag
+	setflag (FLAG_AEDESTERRA_TRIVIS)
+}
+
+script AedesTerra_BossRoom_Script_WarpSign {
+	msgbox (AedesTerra_BossRoom_Text_WarpSign, MSGBOX_YESNO)
+	if (var(VAR_RESULT) = YES) {
+		warpsilent (MAP_AEDES_TERRA, 33, 43)
+	} else {
+		closemessage
+	}
+}
+
 text AedesTerra_BossRoom_Text_GanondorfPre
 {
-	format("")
+	format("You foolish child! You opened the path
+			to the sacred power the green hero
+			sealed here. Now all that's left for me to do
+			is finish you and seize it for myself.")
 }
 
 text AedesTerra_BossRoom_Text_GanondorfLost
 {
-	format("")
+	format("Impossible! Victory was so close!")
+}
+
+text AedesTerra_BossRoom_Text_Trivis {
+	format("The golden triangle begins glowing brightly as you approach.")
 }

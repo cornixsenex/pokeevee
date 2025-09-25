@@ -2062,6 +2062,10 @@ static const struct SpriteFrameImage sPicTable_Ganondorf[] = {
     obj_frame_tiles(gObjectEventPic_Ganondorf),
 };
 
+static const struct SpriteFrameImage sPicTable_Trivis[] = {
+    obj_frame_tiles(gObjectEventPic_Trivis),
+};
+
 
 /// BREAK ///
 

@@ -332,9 +332,10 @@
 #define OBJ_EVENT_GFX_KITE_CUSHION   		     324
 #define OBJ_EVENT_GFX_CROSS_CUSHION   		     325
 #define OBJ_EVENT_GFX_GANONDORF   		         326
+#define OBJ_EVENT_GFX_TRIVIS   		             327
 
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        327
+#define NUM_OBJ_EVENT_GFX                        328
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -595,6 +596,9 @@
 #define OBJ_EVENT_PAL_TAG_KITE_CUSHION            0x1191
 #define OBJ_EVENT_PAL_TAG_CROSS_CUSHION           0x1192
 #define OBJ_EVENT_PAL_TAG_GANONDORF               0x1193
+#define OBJ_EVENT_PAL_TAG_TRIVIS                  0x1194
+
+//MAX is (prolly) 0x11FF
 
 
 // Used as a placeholder follower graphic
