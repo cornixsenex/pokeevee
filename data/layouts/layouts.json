@@ -6634,8 +6634,8 @@
     {
       "id": "LAYOUT_AEDES_LUX_1F",
       "name": "AedesLux_1F_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 34,
+      "height": 51,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_MauvilleGym",
       "border_filepath": "data/layouts/AedesLux_1F/border.bin",

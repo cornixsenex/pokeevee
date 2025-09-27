@@ -16,15 +16,15 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 10,
-      "y": 19,
+      "x": 17,
+      "y": 50,
       "elevation": 0,
       "dest_map": "MAP_LAKE_IRA_SOUTH",
       "dest_warp_id": "0"
     },
     {
-      "x": 9,
-      "y": 19,
+      "x": 16,
+      "y": 50,
       "elevation": 0,
       "dest_map": "MAP_LAKE_IRA_SOUTH",
       "dest_warp_id": "0"
