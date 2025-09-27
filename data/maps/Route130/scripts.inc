@@ -21,7 +21,6 @@ Route130_OnTransition:
 	setflag FLAG_TEMP_1C
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1E
-	setflag FLAG_TEMP_1F
 	setmaplayoutindex LAYOUT_ROUTE130
 	end
 
