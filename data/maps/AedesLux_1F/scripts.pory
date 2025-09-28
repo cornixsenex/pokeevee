@@ -28,6 +28,12 @@ mapscripts AedesLux_1F_MapScripts {
 
 }
 
+script AedesLux_Script_PoleDanger {
+	msgbox (AedesLux_Text_PoleDanger)
+	closemessage
+	end
+}
+
 //Pole Scripts
 
 script AedesLux_Script_Puzzle1L_Pole1 {
@@ -38,9 +44,34 @@ script AedesLux_Script_Puzzle1L_Pole1 {
         end
     }
     //Else "It's an electric pole, wanna press it? YesNo
+	msgbox (AedesLux_Text_Pole, MSGBOX_YESNO)
     //If No - "Best Leave it alone" et release
-    //Else - check face direction and if clear toggle it on / off - sound et Redraw puzzle
-
+	if (var(VAR_RESULT) == NO) {
+		closemessage
+		end
+	} else {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_NORTH && flag(FLAG_TEMP_4)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		if (var(VAR_RESULT) == DIR_WEST && flag(FLAG_TEMP_2)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Turn Pole on
+		if (!flag(FLAG_TEMP_1)) {
+			setflag (FLAG_TEMP_1)
+		//Turn Pole off
+		} else {
+			clearflag (FLAG_TEMP_1)
+		}
+		//Make sound
+		playse (SE_M_THUNDERBOLT2)
+		waitse
+		call (AedesLux_Script_DrawPuzzle1L)
+	}
+	end
 }
 
 //Reset Scripts
@@ -125,4 +156,12 @@ script AedesLux_Script_DrawPuzzle1L {
 
 text AedesLux_Text_PoleDeactivated {
     format("It seems to have been deactivated. Best leave it alone for now!")
+}
+
+text AedesLux_Text_Pole {
+	format("It seems to be some kind of electrical pole with a control panel. Would you like to flip the switch?")
+}
+
+text AedesLux_Text_PoleDanger {
+	format("This seems dangerous. Better leave it alone for now.")
 }
