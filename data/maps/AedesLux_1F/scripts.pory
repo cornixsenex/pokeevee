@@ -12,7 +12,12 @@
 //    >Init on 0
 //    >1 after first puzzle
 //    >etc
-   
+  
+
+//VAR_TEMP_B will fire the 'solved puzzle' script 
+//0 is just wait state
+//set to 1 after solve 1
+//ON frame 1 will be alert, show open stairs, deactivate puzzle 1, setup puzzle 2, and then update VAR_TEMP_A
 
 
 mapscripts AedesLux_1F_MapScripts {
@@ -36,6 +41,7 @@ script AedesLux_Script_PoleDanger {
 
 //Pole Scripts
 
+//1L
 script AedesLux_Script_Puzzle1L_Pole1 {
     //If already solved puzzle "It seems deactivated"
     if (var(VAR_TEMP_A) != 1) {
@@ -70,11 +76,17 @@ script AedesLux_Script_Puzzle1L_Pole1 {
 		//Turn Pole off
 		} else {
 			clearflag (FLAG_TEMP_1)
+			//check power off adjacent poles
+			if (flag(FLAG_TEMP_2) && !flag(FLAG_TEMP_3)) {
+				clearflag (FLAG_TEMP_2)
+			}
+			if (flag(FLAG_TEMP_4) && !flag(FLAG_TEMP_5)) {
+				clearflag (FLAG_TEMP_4)
+			}
 		}
 		//Make sound
 		playse (SE_M_THUNDERBOLT2)
 		waitse
-		call (AedesLux_Script_CheckSolvePuzzle1)
 		call (AedesLux_Script_DrawPuzzle1)
 	}
 	end
@@ -114,6 +126,8 @@ script AedesLux_Script_DrawPuzzle1 {
 	if (var(VAR_TEMP_A) != 0) {
 		return
 	}
+	//Check Solved puzzle
+	call (AedesLux_Script_CheckSolvePuzzle1)
 	call (AedesLux_Script_DrawPuzzle1L)
 	call (AedesLux_Script_DrawPuzzle1R)
     //Draw Map
@@ -168,9 +182,6 @@ script AedesLux_Script_DrawPuzzle1L {
         setmetatile (8, 47, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
     }
 
-	//Check Solution - Has to move into Pole scripts as CheckSolvePuzzle() calls this Draw Function - No LOOPS
-	call (AedesLux_Script_CheckSolvePuzzle1)
-
     return
 }
 
@@ -184,6 +195,13 @@ script AedesLux_Script_DrawPuzzle1R {
 script AedesLux_Script_CheckSolvePuzzle1 {
 	//Check Left and Right
 	if (flag(FLAG_TEMP_2) && flag(FLAG_TEMP_3) && flag(FLAG_TEMP_6) && flag(FLAG_TEMP_7)) {
+		//This var will fire the Show Solve Puzzle X script ON_FRAME
+		setvar (VAR_TEMP_B, 1)
+
+
+
+		//ALL THIS MOVE INTO ON_FRAME
+
 		//alert player
 		applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 		waitmovement (0)
@@ -199,8 +217,6 @@ script AedesLux_Script_CheckSolvePuzzle1 {
 		setmetatile (17, 41, METATILE_MauvilleGym_StairsR, FALSE)
 		setmetatile (16, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE)
 		setmetatile (17, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE)
-		//draw puzzle
-		call (AedesLux_Script_DrawPuzzle1)
 		//update var
 		setvar (VAR_TEMP_A, 1)
 		//setup next puzzle flags
