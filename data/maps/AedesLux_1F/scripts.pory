@@ -43,8 +43,13 @@ script AedesLux_Script_Puzzle1L_Pole1 {
         closemessage
         end
     }
-    //Else "It's an electric pole, wanna press it? YesNo
-	msgbox (AedesLux_Text_Pole, MSGBOX_YESNO)
+    //Else tell if pole is on or off, ask if wanna flip switch 
+	if (flag(FLAG_TEMP_1)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
     //If No - "Best Leave it alone" et release
 	if (var(VAR_RESULT) == NO) {
 		closemessage
@@ -60,7 +65,7 @@ script AedesLux_Script_Puzzle1L_Pole1 {
 		}
 		//No danger found - do switch
 		//Turn Pole on
-		if (!flag(FLAG_TEMP_1)) {
+		if (!flag(FLAG_TEMP_1) && (flag(FLAG_TEMP_2) || flag(FLAG_TEMP_4))) {
 			setflag (FLAG_TEMP_1)
 		//Turn Pole off
 		} else {
@@ -69,7 +74,8 @@ script AedesLux_Script_Puzzle1L_Pole1 {
 		//Make sound
 		playse (SE_M_THUNDERBOLT2)
 		waitse
-		call (AedesLux_Script_DrawPuzzle1L)
+		call (AedesLux_Script_CheckSolvePuzzle1)
+		call (AedesLux_Script_DrawPuzzle1)
 	}
 	end
 }
@@ -87,12 +93,14 @@ script AedesLux_Script_ResetPuzzle1L {
         } else {
             //Reset Puzzle
             closemessage
+			playse (SE_M_THUNDERBOLT2)
+			waitse
             setflag (FLAG_TEMP_1)
             clearflag (FLAG_TEMP_2)
             clearflag (FLAG_TEMP_3)
             setflag (FLAG_TEMP_4)
             clearflag (FLAG_TEMP_5)
-            call (AedesLux_Script_DrawPuzzle1L)
+            call (AedesLux_Script_DrawPuzzle1)
         }
     } else {
         closemessage
@@ -100,6 +108,18 @@ script AedesLux_Script_ResetPuzzle1L {
 }
 
 //Draw Puzzle Scripts
+
+script AedesLux_Script_DrawPuzzle1 {
+	//If you already solved the puzzle just return
+	if (var(VAR_TEMP_A) != 0) {
+		return
+	}
+	call (AedesLux_Script_DrawPuzzle1L)
+	call (AedesLux_Script_DrawPuzzle1R)
+    //Draw Map
+    special (DrawWholeMapView)
+	return
+}
 
 //For Every possible combination check if the flags are set, if they are show electricity, else show base
 script AedesLux_Script_DrawPuzzle1L {
@@ -119,11 +139,11 @@ script AedesLux_Script_DrawPuzzle1L {
     if (flag(FLAG_TEMP_1) && flag(FLAG_TEMP_4)) {
         setmetatile (8, 42, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE)
         setmetatile (8, 43, METATILE_MauvilleGym_Floor_ElectricV, TRUE)
-        setmetatile (8, 44, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, TRUE)
+        setmetatile (8, 44, METATILE_MauvilleGym_Floor_PoleTop, TRUE)
     } else {
-        setmetatile (8, 42, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE)
-        setmetatile (8, 43, METATILE_MauvilleGym_Floor_ElectricV, FALSE)
-        setmetatile (8, 44, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, FALSE)
+        setmetatile (8, 42, METATILE_MauvilleGym_Floor_Pole, TRUE)
+        setmetatile (8, 43, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (8, 44, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
     }
     //2 et 3
     if (flag(FLAG_TEMP_2) && flag(FLAG_TEMP_3)) {
@@ -139,29 +159,107 @@ script AedesLux_Script_DrawPuzzle1L {
     }
     //4 et 5
     if (flag(FLAG_TEMP_4) && flag(FLAG_TEMP_5)) {
-        setmetatile (8, 45, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE)
+        setmetatile (8, 45, METATILE_MauvilleGym_Floor_Pole_Electric, TRUE)
         setmetatile (8, 46, METATILE_MauvilleGym_Floor_ElectricV, TRUE)
-        setmetatile (8, 47, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, TRUE)
+        setmetatile (8, 47, METATILE_MauvilleGym_Floor_PoleTop, TRUE)
     } else {
-        setmetatile (8, 45, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE)
-        setmetatile (8, 46, METATILE_MauvilleGym_Floor_ElectricV, FALSE)
-        setmetatile (8, 47, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, FALSE)
+        setmetatile (8, 45, METATILE_MauvilleGym_Floor_Pole, TRUE)
+        setmetatile (8, 46, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (8, 47, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
     }
 
-    //Draw Map
-    special (DrawWholeMapView)
+	//Check Solution - Has to move into Pole scripts as CheckSolvePuzzle() calls this Draw Function - No LOOPS
+	call (AedesLux_Script_CheckSolvePuzzle1)
 
     return
 }
 
-text AedesLux_Text_PoleDeactivated {
-    format("It seems to have been deactivated. Best leave it alone for now!")
+script AedesLux_Script_DrawPuzzle1R {
+	//Placeholder
+
+	return
 }
 
-text AedesLux_Text_Pole {
-	format("It seems to be some kind of electrical pole with a control panel. Would you like to flip the switch?")
+//Check Solve Puzzle Scripts
+script AedesLux_Script_CheckSolvePuzzle1 {
+	//Check Left and Right
+	if (flag(FLAG_TEMP_2) && flag(FLAG_TEMP_3) && flag(FLAG_TEMP_6) && flag(FLAG_TEMP_7)) {
+		//alert player
+		applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//play sound
+		playse (SE_EFFECTIVE)
+		waitse
+		//clear all flags
+		call (AedesLux_Script_ClearAllFlags)
+		//open stairs
+		setmetatile (16, 40, METATILE_MauvilleGym_StairsL, FALSE)
+		setmetatile (17, 40, METATILE_MauvilleGym_StairsR, FALSE)
+		setmetatile (16, 41, METATILE_MauvilleGym_StairsL, FALSE)
+		setmetatile (17, 41, METATILE_MauvilleGym_StairsR, FALSE)
+		setmetatile (16, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+		setmetatile (17, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+		//draw puzzle
+		call (AedesLux_Script_DrawPuzzle1)
+		//update var
+		setvar (VAR_TEMP_A, 1)
+		//setup next puzzle flags
+		setflag (FLAG_TEMP_4)
+		setflag (FLAG_TEMP_6)
+		setflag (FLAG_TEMP_F)
+		setflag (FLAG_TEMP_10)
+		setflag (FLAG_TEMP_11)
+	}
+
+	return
+}
+
+//clear all flags utility script
+script AedesLux_Script_ClearAllFlags {
+	clearflag (FLAG_TEMP_1)
+	clearflag (FLAG_TEMP_2)
+	clearflag (FLAG_TEMP_3)
+	clearflag (FLAG_TEMP_4)
+	clearflag (FLAG_TEMP_5)
+	clearflag (FLAG_TEMP_6)
+	clearflag (FLAG_TEMP_7)
+	clearflag (FLAG_TEMP_8)
+	clearflag (FLAG_TEMP_9)
+	clearflag (FLAG_TEMP_A)
+	clearflag (FLAG_TEMP_B)
+	clearflag (FLAG_TEMP_C)
+	clearflag (FLAG_TEMP_D)
+	clearflag (FLAG_TEMP_E)
+	clearflag (FLAG_TEMP_F)
+	clearflag (FLAG_TEMP_10)
+	clearflag (FLAG_TEMP_11)
+	clearflag (FLAG_TEMP_12)
+	clearflag (FLAG_TEMP_13)
+	clearflag (FLAG_TEMP_14)
+	clearflag (FLAG_TEMP_15)
+	clearflag (FLAG_TEMP_16)
+	clearflag (FLAG_TEMP_17)
+	clearflag (FLAG_TEMP_18)
+	clearflag (FLAG_TEMP_19)
+	return
+}
+
+text AedesLux_Text_PoleDeactivated {
+    format("Nothing happened...")
+}
+
+text AedesLux_Text_PoleSwitch {
+	format("Would you like to flip the switch?")
+}
+
+text AedesLux_Text_PoleOn {
+	format("The pole is glowing with electricity.")
+}
+
+text AedesLux_Text_PoleOff {
+	format("The pole seems to be deactivated.")
 }
 
 text AedesLux_Text_PoleDanger {
-	format("This seems dangerous. Better leave it alone for now.")
+	format("This seems dangerous. Better leave it alone for now!")
 }

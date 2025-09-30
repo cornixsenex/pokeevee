@@ -432,6 +432,7 @@
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
 
 // gTileset_MauvilleGym
+#define METATILE_MauvilleGym_Floor                                0x268
 #define METATILE_MauvilleGym_FloorLeftShadow_PoleTop              0x2C1
 #define METATILE_MauvilleGym_FloorTile                            0x21A
 #define METATILE_MauvilleGym_FloorTopShadow                       0x26B
@@ -442,6 +443,9 @@
 #define METATILE_MauvilleGym_FloorTopShadow_Pole                  0x2CC
 #define METATILE_MauvilleGym_FloorTopShadow_Pole_Electric         0x2D4
 #define METATILE_MauvilleGym_Floor_ElectricV                      0x2D8
+#define METATILE_MauvilleGym_Floor_Pole                           0x2C8
+#define METATILE_MauvilleGym_Floor_PoleTop                        0x2C0
+#define METATILE_MauvilleGym_Floor_Pole_Electric                  0x2D0
 #define METATILE_MauvilleGym_GreenBeamH1_Off                      0x230
 #define METATILE_MauvilleGym_GreenBeamH1_On                       0x220
 #define METATILE_MauvilleGym_GreenBeamH2_Off                      0x231
@@ -468,6 +472,8 @@
 #define METATILE_MauvilleGym_RedBeamH4_On                         0x22B
 #define METATILE_MauvilleGym_RedBeamV1_On                         0x241
 #define METATILE_MauvilleGym_RedBeamV2_On                         0x249
+#define METATILE_MauvilleGym_StairsL                              0x25B
+#define METATILE_MauvilleGym_StairsR                              0x25C
 #define METATILE_MauvilleGym_Wall                                 0x292
 #define METATILE_MauvilleGym_WallSymbol                           0x25E
 #define METATILE_MauvilleGym_WallSymbol_Electric_TopRight         0x2E6
