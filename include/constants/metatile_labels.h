@@ -443,6 +443,10 @@
 #define METATILE_MauvilleGym_FloorTopShadow_Pole                  0x2CC
 #define METATILE_MauvilleGym_FloorTopShadow_Pole_Electric         0x2D4
 #define METATILE_MauvilleGym_Floor_ElectricV                      0x2D8
+#define METATILE_MauvilleGym_Floor_Electric_BottomLeft            0x300
+#define METATILE_MauvilleGym_Floor_Electric_BottomRight           0x301
+#define METATILE_MauvilleGym_Floor_Electric_TopLeft               0x2F8
+#define METATILE_MauvilleGym_Floor_Electric_TopRight              0x2F9
 #define METATILE_MauvilleGym_Floor_Pole                           0x2C8
 #define METATILE_MauvilleGym_Floor_PoleTop                        0x2C0
 #define METATILE_MauvilleGym_Floor_Pole_Electric                  0x2D0

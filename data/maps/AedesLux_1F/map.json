@@ -39,6 +39,46 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "AedesLux_Script_ResetPuzzle1L"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 42,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle1L_Pole1"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 42,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle1L_Pole2"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 42,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle1L_Pole3"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 45,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle1L_Pole4"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 48,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle1L_Pole5"
     }
   ]
 }
