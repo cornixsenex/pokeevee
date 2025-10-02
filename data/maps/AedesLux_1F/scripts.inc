@@ -1461,92 +1461,360 @@ AedesLux_Script_Puzzle2L_Pole3_26:
 	goto AedesLux_Script_Puzzle2L_Pole3_16
 
 
+AedesLux_Script_Puzzle2L_Pole4::
+# 735 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_TEMP_A, 1
+	goto_if_ne AedesLux_Script_Puzzle2L_Pole4_2
+AedesLux_Script_Puzzle2L_Pole4_1:
+# 739 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_4, AedesLux_Script_Puzzle2L_Pole4_5
+# 742 "data/maps/AedesLux_1F/scripts.pory"
+	msgbox AedesLux_Text_PoleOff
+AedesLux_Script_Puzzle2L_Pole4_4:
+# 744 "data/maps/AedesLux_1F/scripts.pory"
+	msgbox AedesLux_Text_PoleSwitch, MSGBOX_YESNO
+# 746 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_ne AedesLux_Script_Puzzle2L_Pole4_9
+AedesLux_Script_Puzzle2L_Pole4_8:
+# 778 "data/maps/AedesLux_1F/scripts.pory"
+	closemessage
+	end
+
+AedesLux_Script_Puzzle2L_Pole4_2:
+# 736 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleCompleted
+	goto AedesLux_Script_Puzzle2L_Pole4_1
+
+AedesLux_Script_Puzzle2L_Pole4_5:
+# 740 "data/maps/AedesLux_1F/scripts.pory"
+	msgbox AedesLux_Text_PoleOn
+	goto AedesLux_Script_Puzzle2L_Pole4_4
+
+AedesLux_Script_Puzzle2L_Pole4_9:
+# 748 "data/maps/AedesLux_1F/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 749 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_RESULT, DIR_WEST
+	goto_if_eq AedesLux_Script_Puzzle2L_Pole4_13
+AedesLux_Script_Puzzle2L_Pole4_11:
+# 752 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq AedesLux_Script_Puzzle2L_Pole4_18
+AedesLux_Script_Puzzle2L_Pole4_16:
+# 757 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_4, AedesLux_Script_Puzzle2L_Pole4_24
+AedesLux_Script_Puzzle2L_Pole4_23:
+# 761 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_4, AedesLux_Script_Puzzle2L_Pole4_30
+AedesLux_Script_Puzzle2L_Pole4_29:
+# 765 "data/maps/AedesLux_1F/scripts.pory"
+	clearflag FLAG_TEMP_4
+# 767 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_5, AedesLux_Script_Puzzle2L_Pole4_35
+AedesLux_Script_Puzzle2L_Pole4_32:
+# 770 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_6, AedesLux_Script_Puzzle2L_Pole4_40
+AedesLux_Script_Puzzle2L_Pole4_21:
+# 775 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_UpdatePuzzle
+	goto AedesLux_Script_Puzzle2L_Pole4_8
+
+AedesLux_Script_Puzzle2L_Pole4_12:
+# 750 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleDanger
+	goto AedesLux_Script_Puzzle2L_Pole4_11
+
+AedesLux_Script_Puzzle2L_Pole4_13:
+# 749 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_5, AedesLux_Script_Puzzle2L_Pole4_12
+	goto AedesLux_Script_Puzzle2L_Pole4_11
+
+AedesLux_Script_Puzzle2L_Pole4_17:
+# 753 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleDanger
+	goto AedesLux_Script_Puzzle2L_Pole4_16
+
+AedesLux_Script_Puzzle2L_Pole4_18:
+# 752 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_6, AedesLux_Script_Puzzle2L_Pole4_17
+	goto AedesLux_Script_Puzzle2L_Pole4_16
+
+AedesLux_Script_Puzzle2L_Pole4_22:
+# 758 "data/maps/AedesLux_1F/scripts.pory"
+	setflag FLAG_TEMP_3
+	goto AedesLux_Script_Puzzle2L_Pole4_21
+
+AedesLux_Script_Puzzle2L_Pole4_24:
+# 757 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_5, AedesLux_Script_Puzzle2L_Pole4_22
+# 757 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_6, AedesLux_Script_Puzzle2L_Pole4_22
+	goto AedesLux_Script_Puzzle2L_Pole4_23
+
+AedesLux_Script_Puzzle2L_Pole4_30:
+# 762 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleNothingHappened
+	goto AedesLux_Script_Puzzle2L_Pole4_29
+
+AedesLux_Script_Puzzle2L_Pole4_33:
+# 768 "data/maps/AedesLux_1F/scripts.pory"
+	clearflag FLAG_TEMP_5
+	goto AedesLux_Script_Puzzle2L_Pole4_32
+
+AedesLux_Script_Puzzle2L_Pole4_34:
+# 767 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_7, AedesLux_Script_Puzzle2L_Pole4_33
+	goto AedesLux_Script_Puzzle2L_Pole4_32
+
+AedesLux_Script_Puzzle2L_Pole4_35:
+# 767 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_1, AedesLux_Script_Puzzle2L_Pole4_34
+	goto AedesLux_Script_Puzzle2L_Pole4_32
+
+AedesLux_Script_Puzzle2L_Pole4_39:
+# 771 "data/maps/AedesLux_1F/scripts.pory"
+	clearflag FLAG_TEMP_6
+	goto AedesLux_Script_Puzzle2L_Pole4_21
+
+AedesLux_Script_Puzzle2L_Pole4_40:
+# 770 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_7, AedesLux_Script_Puzzle2L_Pole4_39
+	goto AedesLux_Script_Puzzle2L_Pole4_21
+
+
+AedesLux_Script_Puzzle2L_Pole5::
+# 784 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_TEMP_A, 1
+	goto_if_ne AedesLux_Script_Puzzle2L_Pole5_2
+AedesLux_Script_Puzzle2L_Pole5_1:
+# 788 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_5, AedesLux_Script_Puzzle2L_Pole5_5
+# 791 "data/maps/AedesLux_1F/scripts.pory"
+	msgbox AedesLux_Text_PoleOff
+AedesLux_Script_Puzzle2L_Pole5_4:
+# 793 "data/maps/AedesLux_1F/scripts.pory"
+	msgbox AedesLux_Text_PoleSwitch, MSGBOX_YESNO
+# 795 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_ne AedesLux_Script_Puzzle2L_Pole5_9
+AedesLux_Script_Puzzle2L_Pole5_8:
+# 833 "data/maps/AedesLux_1F/scripts.pory"
+	closemessage
+	end
+
+AedesLux_Script_Puzzle2L_Pole5_2:
+# 785 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleCompleted
+	goto AedesLux_Script_Puzzle2L_Pole5_1
+
+AedesLux_Script_Puzzle2L_Pole5_5:
+# 789 "data/maps/AedesLux_1F/scripts.pory"
+	msgbox AedesLux_Text_PoleOn
+	goto AedesLux_Script_Puzzle2L_Pole5_4
+
+AedesLux_Script_Puzzle2L_Pole5_9:
+# 797 "data/maps/AedesLux_1F/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 798 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq AedesLux_Script_Puzzle2L_Pole5_13
+AedesLux_Script_Puzzle2L_Pole5_11:
+# 801 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq AedesLux_Script_Puzzle2L_Pole5_18
+AedesLux_Script_Puzzle2L_Pole5_16:
+# 804 "data/maps/AedesLux_1F/scripts.pory"
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq AedesLux_Script_Puzzle2L_Pole5_23
+AedesLux_Script_Puzzle2L_Pole5_21:
+# 809 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_5, AedesLux_Script_Puzzle2L_Pole5_29
+AedesLux_Script_Puzzle2L_Pole5_28:
+# 813 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_5, AedesLux_Script_Puzzle2L_Pole5_37
+AedesLux_Script_Puzzle2L_Pole5_36:
+# 817 "data/maps/AedesLux_1F/scripts.pory"
+	clearflag FLAG_TEMP_5
+# 819 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_1, AedesLux_Script_Puzzle2L_Pole5_41
+AedesLux_Script_Puzzle2L_Pole5_39:
+# 822 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_7, AedesLux_Script_Puzzle2L_Pole5_46
+AedesLux_Script_Puzzle2L_Pole5_44:
+# 825 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_4, AedesLux_Script_Puzzle2L_Pole5_50
+AedesLux_Script_Puzzle2L_Pole5_26:
+# 830 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_UpdatePuzzle
+	goto AedesLux_Script_Puzzle2L_Pole5_8
+
+AedesLux_Script_Puzzle2L_Pole5_12:
+# 799 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleDanger
+	goto AedesLux_Script_Puzzle2L_Pole5_11
+
+AedesLux_Script_Puzzle2L_Pole5_13:
+# 798 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_4, AedesLux_Script_Puzzle2L_Pole5_12
+	goto AedesLux_Script_Puzzle2L_Pole5_11
+
+AedesLux_Script_Puzzle2L_Pole5_17:
+# 802 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleDanger
+	goto AedesLux_Script_Puzzle2L_Pole5_16
+
+AedesLux_Script_Puzzle2L_Pole5_18:
+# 801 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_7, AedesLux_Script_Puzzle2L_Pole5_17
+	goto AedesLux_Script_Puzzle2L_Pole5_16
+
+AedesLux_Script_Puzzle2L_Pole5_22:
+# 805 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleDanger
+	goto AedesLux_Script_Puzzle2L_Pole5_21
+
+AedesLux_Script_Puzzle2L_Pole5_23:
+# 804 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_1, AedesLux_Script_Puzzle2L_Pole5_22
+	goto AedesLux_Script_Puzzle2L_Pole5_21
+
+AedesLux_Script_Puzzle2L_Pole5_27:
+# 810 "data/maps/AedesLux_1F/scripts.pory"
+	setflag FLAG_TEMP_5
+	goto AedesLux_Script_Puzzle2L_Pole5_26
+
+AedesLux_Script_Puzzle2L_Pole5_29:
+# 809 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_1, AedesLux_Script_Puzzle2L_Pole5_27
+# 809 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_4, AedesLux_Script_Puzzle2L_Pole5_27
+# 809 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_set FLAG_TEMP_7, AedesLux_Script_Puzzle2L_Pole5_27
+	goto AedesLux_Script_Puzzle2L_Pole5_28
+
+AedesLux_Script_Puzzle2L_Pole5_37:
+# 814 "data/maps/AedesLux_1F/scripts.pory"
+	call AedesLux_Script_PoleNothingHappened
+	goto AedesLux_Script_Puzzle2L_Pole5_36
+
+AedesLux_Script_Puzzle2L_Pole5_40:
+# 820 "data/maps/AedesLux_1F/scripts.pory"
+	clearflag FLAG_TEMP_1
+	goto AedesLux_Script_Puzzle2L_Pole5_39
+
+AedesLux_Script_Puzzle2L_Pole5_41:
+# 819 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_2, AedesLux_Script_Puzzle2L_Pole5_40
+	goto AedesLux_Script_Puzzle2L_Pole5_39
+
+AedesLux_Script_Puzzle2L_Pole5_45:
+# 823 "data/maps/AedesLux_1F/scripts.pory"
+	clearflag FLAG_TEMP_7
+	goto AedesLux_Script_Puzzle2L_Pole5_44
+
+AedesLux_Script_Puzzle2L_Pole5_46:
+# 822 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_6, AedesLux_Script_Puzzle2L_Pole5_45
+	goto AedesLux_Script_Puzzle2L_Pole5_44
+
+AedesLux_Script_Puzzle2L_Pole5_49:
+# 826 "data/maps/AedesLux_1F/scripts.pory"
+	clearflag FLAG_TEMP_4
+	goto AedesLux_Script_Puzzle2L_Pole5_26
+
+AedesLux_Script_Puzzle2L_Pole5_50:
+# 825 "data/maps/AedesLux_1F/scripts.pory"
+	goto_if_unset FLAG_TEMP_6, AedesLux_Script_Puzzle2L_Pole5_49
+	goto AedesLux_Script_Puzzle2L_Pole5_26
+
+
 AedesLux_Script_ResetPuzzle1::
-# 737 "data/maps/AedesLux_1F/scripts.pory"
+# 841 "data/maps/AedesLux_1F/scripts.pory"
 	msgbox AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO
-# 738 "data/maps/AedesLux_1F/scripts.pory"
+# 842 "data/maps/AedesLux_1F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq AedesLux_Script_ResetPuzzle1_1
-# 752 "data/maps/AedesLux_1F/scripts.pory"
+# 856 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
 	return
 
 AedesLux_Script_ResetPuzzle1_1:
-# 740 "data/maps/AedesLux_1F/scripts.pory"
+# 844 "data/maps/AedesLux_1F/scripts.pory"
 	compare VAR_TEMP_A, 0
 	goto_if_ne AedesLux_Script_ResetPuzzle1_4
-# 745 "data/maps/AedesLux_1F/scripts.pory"
+# 849 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
-# 746 "data/maps/AedesLux_1F/scripts.pory"
+# 850 "data/maps/AedesLux_1F/scripts.pory"
 	playse SE_M_THUNDERBOLT2
-# 747 "data/maps/AedesLux_1F/scripts.pory"
+# 851 "data/maps/AedesLux_1F/scripts.pory"
 	waitse
-# 748 "data/maps/AedesLux_1F/scripts.pory"
+# 852 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_SetupPuzzle1Flags
-# 749 "data/maps/AedesLux_1F/scripts.pory"
+# 853 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle1
 	return
 
 AedesLux_Script_ResetPuzzle1_4:
-# 741 "data/maps/AedesLux_1F/scripts.pory"
+# 845 "data/maps/AedesLux_1F/scripts.pory"
 	msgbox AedesTerra_Text_CantReset
-# 742 "data/maps/AedesLux_1F/scripts.pory"
+# 846 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
 	return
 
 
 AedesLux_Script_ResetPuzzle2::
-# 758 "data/maps/AedesLux_1F/scripts.pory"
+# 862 "data/maps/AedesLux_1F/scripts.pory"
 	msgbox AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO
-# 759 "data/maps/AedesLux_1F/scripts.pory"
+# 863 "data/maps/AedesLux_1F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq AedesLux_Script_ResetPuzzle2_1
-# 773 "data/maps/AedesLux_1F/scripts.pory"
+# 877 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
 	return
 
 AedesLux_Script_ResetPuzzle2_1:
-# 761 "data/maps/AedesLux_1F/scripts.pory"
+# 865 "data/maps/AedesLux_1F/scripts.pory"
 	compare VAR_TEMP_A, 1
 	goto_if_ne AedesLux_Script_ResetPuzzle2_4
-# 766 "data/maps/AedesLux_1F/scripts.pory"
+# 870 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
-# 767 "data/maps/AedesLux_1F/scripts.pory"
+# 871 "data/maps/AedesLux_1F/scripts.pory"
 	playse SE_M_THUNDERBOLT2
-# 768 "data/maps/AedesLux_1F/scripts.pory"
+# 872 "data/maps/AedesLux_1F/scripts.pory"
 	waitse
-# 769 "data/maps/AedesLux_1F/scripts.pory"
+# 873 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_SetupPuzzle2Flags
-# 770 "data/maps/AedesLux_1F/scripts.pory"
+# 874 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle2
 	return
 
 AedesLux_Script_ResetPuzzle2_4:
-# 762 "data/maps/AedesLux_1F/scripts.pory"
+# 866 "data/maps/AedesLux_1F/scripts.pory"
 	msgbox AedesTerra_Text_CantReset
-# 763 "data/maps/AedesLux_1F/scripts.pory"
+# 867 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
 	return
 
 
 AedesLux_Script_UpdatePuzzle::
-# 780 "data/maps/AedesLux_1F/scripts.pory"
+# 884 "data/maps/AedesLux_1F/scripts.pory"
 	playse SE_M_THUNDERBOLT2
-# 781 "data/maps/AedesLux_1F/scripts.pory"
+# 885 "data/maps/AedesLux_1F/scripts.pory"
 	waitse
-# 783 "data/maps/AedesLux_1F/scripts.pory"
+# 887 "data/maps/AedesLux_1F/scripts.pory"
 	switch VAR_TEMP_A
-# 785 "data/maps/AedesLux_1F/scripts.pory"
+# 889 "data/maps/AedesLux_1F/scripts.pory"
 	case 0, AedesLux_Script_UpdatePuzzle_3
-# 787 "data/maps/AedesLux_1F/scripts.pory"
+# 891 "data/maps/AedesLux_1F/scripts.pory"
 	case 1, AedesLux_Script_UpdatePuzzle_4
-# 789 "data/maps/AedesLux_1F/scripts.pory"
+# 893 "data/maps/AedesLux_1F/scripts.pory"
 	case 2, AedesLux_Script_UpdatePuzzle_5
-# 791 "data/maps/AedesLux_1F/scripts.pory"
+# 895 "data/maps/AedesLux_1F/scripts.pory"
 	case 3, AedesLux_Script_UpdatePuzzle_5
-# 796 "data/maps/AedesLux_1F/scripts.pory"
+# 900 "data/maps/AedesLux_1F/scripts.pory"
 	msgbox AedesLux_Script_UpdatePuzzle_Text_1
-# 797 "data/maps/AedesLux_1F/scripts.pory"
+# 901 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
 	end
 
@@ -1554,946 +1822,946 @@ AedesLux_Script_UpdatePuzzle_1:
 	return
 
 AedesLux_Script_UpdatePuzzle_3:
-# 786 "data/maps/AedesLux_1F/scripts.pory"
+# 890 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle1
 	goto AedesLux_Script_UpdatePuzzle_1
 
 AedesLux_Script_UpdatePuzzle_4:
-# 788 "data/maps/AedesLux_1F/scripts.pory"
+# 892 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle2
 	goto AedesLux_Script_UpdatePuzzle_1
 
 AedesLux_Script_UpdatePuzzle_5:
-# 792 "data/maps/AedesLux_1F/scripts.pory"
+# 896 "data/maps/AedesLux_1F/scripts.pory"
 	msgbox AedesLux_Script_UpdatePuzzle_Text_0
-# 793 "data/maps/AedesLux_1F/scripts.pory"
+# 897 "data/maps/AedesLux_1F/scripts.pory"
 	closemessage
 	end
 
 
 AedesLux_Script_DrawPuzzle1::
-# 807 "data/maps/AedesLux_1F/scripts.pory"
+# 911 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_CheckSolvePuzzle1
-# 808 "data/maps/AedesLux_1F/scripts.pory"
+# 912 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle1L
-# 809 "data/maps/AedesLux_1F/scripts.pory"
+# 913 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle1R
-# 811 "data/maps/AedesLux_1F/scripts.pory"
+# 915 "data/maps/AedesLux_1F/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 AedesLux_Script_DrawPuzzle2::
-# 817 "data/maps/AedesLux_1F/scripts.pory"
+# 921 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_CheckSolvePuzzle2
-# 818 "data/maps/AedesLux_1F/scripts.pory"
+# 922 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle2L
-# 819 "data/maps/AedesLux_1F/scripts.pory"
+# 923 "data/maps/AedesLux_1F/scripts.pory"
 	call AedesLux_Script_DrawPuzzle2R
-# 821 "data/maps/AedesLux_1F/scripts.pory"
+# 925 "data/maps/AedesLux_1F/scripts.pory"
 	special DrawWholeMapView
 	return
 
 
 AedesLux_Script_DrawPuzzle1L::
-# 828 "data/maps/AedesLux_1F/scripts.pory"
+# 932 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, AedesLux_Script_DrawPuzzle1L_4
 AedesLux_Script_DrawPuzzle1L_3:
-# 834 "data/maps/AedesLux_1F/scripts.pory"
+# 938 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 41, METATILE_MauvilleGym_Wall, TRUE
-# 835 "data/maps/AedesLux_1F/scripts.pory"
+# 939 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 41, METATILE_MauvilleGym_WallSymbol, TRUE
-# 836 "data/maps/AedesLux_1F/scripts.pory"
+# 940 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 837 "data/maps/AedesLux_1F/scripts.pory"
+# 941 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle1L_1:
-# 840 "data/maps/AedesLux_1F/scripts.pory"
+# 944 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, AedesLux_Script_DrawPuzzle1L_10
 AedesLux_Script_DrawPuzzle1L_9:
-# 845 "data/maps/AedesLux_1F/scripts.pory"
+# 949 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 42, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE
-# 846 "data/maps/AedesLux_1F/scripts.pory"
+# 950 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 43, METATILE_MauvilleGym_Floor, FALSE
-# 847 "data/maps/AedesLux_1F/scripts.pory"
+# 951 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 44, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle1L_7:
-# 850 "data/maps/AedesLux_1F/scripts.pory"
+# 954 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_2, AedesLux_Script_DrawPuzzle1L_16
 AedesLux_Script_DrawPuzzle1L_15:
-# 856 "data/maps/AedesLux_1F/scripts.pory"
+# 960 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 41, METATILE_MauvilleGym_Wall, TRUE
-# 857 "data/maps/AedesLux_1F/scripts.pory"
+# 961 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 41, METATILE_MauvilleGym_Wall, TRUE
-# 858 "data/maps/AedesLux_1F/scripts.pory"
+# 962 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 859 "data/maps/AedesLux_1F/scripts.pory"
+# 963 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 42, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle1L_13:
-# 862 "data/maps/AedesLux_1F/scripts.pory"
+# 966 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_4, AedesLux_Script_DrawPuzzle1L_22
 AedesLux_Script_DrawPuzzle1L_21:
-# 867 "data/maps/AedesLux_1F/scripts.pory"
+# 971 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 45, METATILE_MauvilleGym_Floor_Pole, TRUE
-# 868 "data/maps/AedesLux_1F/scripts.pory"
+# 972 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 46, METATILE_MauvilleGym_Floor, FALSE
-# 869 "data/maps/AedesLux_1F/scripts.pory"
+# 973 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 47, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle1L_19:
 	return
 
 AedesLux_Script_DrawPuzzle1L_2:
-# 829 "data/maps/AedesLux_1F/scripts.pory"
+# 933 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 41, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE
-# 830 "data/maps/AedesLux_1F/scripts.pory"
+# 934 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 41, METATILE_MauvilleGym_WallSymbol_Electric_TopRight, TRUE
-# 831 "data/maps/AedesLux_1F/scripts.pory"
+# 935 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 42, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 832 "data/maps/AedesLux_1F/scripts.pory"
+# 936 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 42, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle1L_1
 
 AedesLux_Script_DrawPuzzle1L_4:
-# 828 "data/maps/AedesLux_1F/scripts.pory"
+# 932 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_2, AedesLux_Script_DrawPuzzle1L_2
 	goto AedesLux_Script_DrawPuzzle1L_3
 
 AedesLux_Script_DrawPuzzle1L_8:
-# 841 "data/maps/AedesLux_1F/scripts.pory"
+# 945 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 42, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE
-# 842 "data/maps/AedesLux_1F/scripts.pory"
+# 946 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 43, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 843 "data/maps/AedesLux_1F/scripts.pory"
+# 947 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 44, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle1L_7
 
 AedesLux_Script_DrawPuzzle1L_10:
-# 840 "data/maps/AedesLux_1F/scripts.pory"
+# 944 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_4, AedesLux_Script_DrawPuzzle1L_8
 	goto AedesLux_Script_DrawPuzzle1L_9
 
 AedesLux_Script_DrawPuzzle1L_14:
-# 851 "data/maps/AedesLux_1F/scripts.pory"
+# 955 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 41, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE
-# 852 "data/maps/AedesLux_1F/scripts.pory"
+# 956 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 41, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE
-# 853 "data/maps/AedesLux_1F/scripts.pory"
+# 957 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 42, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 854 "data/maps/AedesLux_1F/scripts.pory"
+# 958 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 42, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle1L_13
 
 AedesLux_Script_DrawPuzzle1L_16:
-# 850 "data/maps/AedesLux_1F/scripts.pory"
+# 954 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_3, AedesLux_Script_DrawPuzzle1L_14
 	goto AedesLux_Script_DrawPuzzle1L_15
 
 AedesLux_Script_DrawPuzzle1L_20:
-# 863 "data/maps/AedesLux_1F/scripts.pory"
+# 967 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 45, METATILE_MauvilleGym_Floor_Pole_Electric, TRUE
-# 864 "data/maps/AedesLux_1F/scripts.pory"
+# 968 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 46, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 865 "data/maps/AedesLux_1F/scripts.pory"
+# 969 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 47, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle1L_19
 
 AedesLux_Script_DrawPuzzle1L_22:
-# 862 "data/maps/AedesLux_1F/scripts.pory"
+# 966 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_5, AedesLux_Script_DrawPuzzle1L_20
 	goto AedesLux_Script_DrawPuzzle1L_21
 
 
 AedesLux_Script_DrawPuzzle1R::
-# 876 "data/maps/AedesLux_1F/scripts.pory"
+# 980 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_6, AedesLux_Script_DrawPuzzle1R_4
 AedesLux_Script_DrawPuzzle1R_3:
-# 881 "data/maps/AedesLux_1F/scripts.pory"
+# 985 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 42, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE
-# 882 "data/maps/AedesLux_1F/scripts.pory"
+# 986 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 43, METATILE_MauvilleGym_Floor, FALSE
-# 883 "data/maps/AedesLux_1F/scripts.pory"
+# 987 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 44, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle1R_1:
-# 886 "data/maps/AedesLux_1F/scripts.pory"
+# 990 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_7, AedesLux_Script_DrawPuzzle1R_10
 AedesLux_Script_DrawPuzzle1R_9:
-# 891 "data/maps/AedesLux_1F/scripts.pory"
+# 995 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 45, METATILE_MauvilleGym_Floor_Pole, TRUE
-# 892 "data/maps/AedesLux_1F/scripts.pory"
+# 996 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 46, METATILE_MauvilleGym_Floor, FALSE
-# 893 "data/maps/AedesLux_1F/scripts.pory"
+# 997 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 47, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle1R_7:
-# 896 "data/maps/AedesLux_1F/scripts.pory"
+# 1000 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_8, AedesLux_Script_DrawPuzzle1R_16
 AedesLux_Script_DrawPuzzle1R_15:
-# 902 "data/maps/AedesLux_1F/scripts.pory"
+# 1006 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 47, METATILE_MauvilleGym_Floor, FALSE
-# 903 "data/maps/AedesLux_1F/scripts.pory"
+# 1007 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 47, METATILE_MauvilleGym_Floor, FALSE
-# 904 "data/maps/AedesLux_1F/scripts.pory"
+# 1008 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 48, METATILE_MauvilleGym_Floor, FALSE
-# 905 "data/maps/AedesLux_1F/scripts.pory"
+# 1009 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 48, METATILE_MauvilleGym_Floor, FALSE
 AedesLux_Script_DrawPuzzle1R_13:
-# 908 "data/maps/AedesLux_1F/scripts.pory"
+# 1012 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_9, AedesLux_Script_DrawPuzzle1R_22
 AedesLux_Script_DrawPuzzle1R_21:
-# 914 "data/maps/AedesLux_1F/scripts.pory"
+# 1018 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 47, METATILE_MauvilleGym_Floor, FALSE
-# 915 "data/maps/AedesLux_1F/scripts.pory"
+# 1019 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 47, METATILE_MauvilleGym_Floor, FALSE
-# 916 "data/maps/AedesLux_1F/scripts.pory"
+# 1020 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 48, METATILE_MauvilleGym_Floor, FALSE
-# 917 "data/maps/AedesLux_1F/scripts.pory"
+# 1021 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 48, METATILE_MauvilleGym_Floor, FALSE
 AedesLux_Script_DrawPuzzle1R_19:
 	return
 
 AedesLux_Script_DrawPuzzle1R_2:
-# 877 "data/maps/AedesLux_1F/scripts.pory"
+# 981 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 42, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE
-# 878 "data/maps/AedesLux_1F/scripts.pory"
+# 982 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 43, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 879 "data/maps/AedesLux_1F/scripts.pory"
+# 983 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 44, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle1R_1
 
 AedesLux_Script_DrawPuzzle1R_4:
-# 876 "data/maps/AedesLux_1F/scripts.pory"
+# 980 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_7, AedesLux_Script_DrawPuzzle1R_2
 	goto AedesLux_Script_DrawPuzzle1R_3
 
 AedesLux_Script_DrawPuzzle1R_8:
-# 887 "data/maps/AedesLux_1F/scripts.pory"
+# 991 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 45, METATILE_MauvilleGym_Floor_Pole_Electric, TRUE
-# 888 "data/maps/AedesLux_1F/scripts.pory"
+# 992 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 46, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 889 "data/maps/AedesLux_1F/scripts.pory"
+# 993 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 19, 47, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle1R_7
 
 AedesLux_Script_DrawPuzzle1R_10:
-# 886 "data/maps/AedesLux_1F/scripts.pory"
+# 990 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_8, AedesLux_Script_DrawPuzzle1R_8
 	goto AedesLux_Script_DrawPuzzle1R_9
 
 AedesLux_Script_DrawPuzzle1R_14:
-# 897 "data/maps/AedesLux_1F/scripts.pory"
+# 1001 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 47, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE
-# 898 "data/maps/AedesLux_1F/scripts.pory"
+# 1002 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 47, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE
-# 899 "data/maps/AedesLux_1F/scripts.pory"
+# 1003 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 48, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE
-# 900 "data/maps/AedesLux_1F/scripts.pory"
+# 1004 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 48, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle1R_13
 
 AedesLux_Script_DrawPuzzle1R_16:
-# 896 "data/maps/AedesLux_1F/scripts.pory"
+# 1000 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_9, AedesLux_Script_DrawPuzzle1R_14
 	goto AedesLux_Script_DrawPuzzle1R_15
 
 AedesLux_Script_DrawPuzzle1R_20:
-# 909 "data/maps/AedesLux_1F/scripts.pory"
+# 1013 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 47, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE
-# 910 "data/maps/AedesLux_1F/scripts.pory"
+# 1014 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 47, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE
-# 911 "data/maps/AedesLux_1F/scripts.pory"
+# 1015 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 48, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE
-# 912 "data/maps/AedesLux_1F/scripts.pory"
+# 1016 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 48, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle1R_19
 
 AedesLux_Script_DrawPuzzle1R_22:
-# 908 "data/maps/AedesLux_1F/scripts.pory"
+# 1012 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_A, AedesLux_Script_DrawPuzzle1R_20
 	goto AedesLux_Script_DrawPuzzle1R_21
 
 
 AedesLux_Script_DrawPuzzle2L::
-# 925 "data/maps/AedesLux_1F/scripts.pory"
+# 1029 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, AedesLux_Script_DrawPuzzle2L_4
 AedesLux_Script_DrawPuzzle2L_3:
-# 931 "data/maps/AedesLux_1F/scripts.pory"
+# 1035 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 30, METATILE_MauvilleGym_Wall, TRUE
-# 932 "data/maps/AedesLux_1F/scripts.pory"
+# 1036 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 30, METATILE_MauvilleGym_Wall, TRUE
-# 933 "data/maps/AedesLux_1F/scripts.pory"
+# 1037 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 934 "data/maps/AedesLux_1F/scripts.pory"
+# 1038 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle2L_1:
-# 937 "data/maps/AedesLux_1F/scripts.pory"
+# 1041 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_2, AedesLux_Script_DrawPuzzle2L_10
 AedesLux_Script_DrawPuzzle2L_9:
-# 943 "data/maps/AedesLux_1F/scripts.pory"
+# 1047 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 30, METATILE_MauvilleGym_Wall, TRUE
-# 944 "data/maps/AedesLux_1F/scripts.pory"
+# 1048 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 30, METATILE_MauvilleGym_Wall, TRUE
-# 945 "data/maps/AedesLux_1F/scripts.pory"
+# 1049 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 946 "data/maps/AedesLux_1F/scripts.pory"
+# 1050 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle2L_7:
-# 949 "data/maps/AedesLux_1F/scripts.pory"
+# 1053 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, AedesLux_Script_DrawPuzzle2L_16
 AedesLux_Script_DrawPuzzle2L_15:
-# 954 "data/maps/AedesLux_1F/scripts.pory"
+# 1058 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 31, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE
-# 955 "data/maps/AedesLux_1F/scripts.pory"
+# 1059 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 32, METATILE_MauvilleGym_Floor, FALSE
-# 956 "data/maps/AedesLux_1F/scripts.pory"
+# 1060 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 33, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle2L_13:
-# 959 "data/maps/AedesLux_1F/scripts.pory"
+# 1063 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_4, AedesLux_Script_DrawPuzzle2L_22
 AedesLux_Script_DrawPuzzle2L_21:
-# 965 "data/maps/AedesLux_1F/scripts.pory"
+# 1069 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 33, METATILE_MauvilleGym_Floor, FALSE
-# 966 "data/maps/AedesLux_1F/scripts.pory"
+# 1070 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 33, METATILE_MauvilleGym_Floor, FALSE
-# 967 "data/maps/AedesLux_1F/scripts.pory"
+# 1071 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 34, METATILE_MauvilleGym_Floor, FALSE
-# 968 "data/maps/AedesLux_1F/scripts.pory"
+# 1072 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 34, METATILE_MauvilleGym_Floor, FALSE
 AedesLux_Script_DrawPuzzle2L_19:
-# 971 "data/maps/AedesLux_1F/scripts.pory"
+# 1075 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_4, AedesLux_Script_DrawPuzzle2L_28
 AedesLux_Script_DrawPuzzle2L_27:
-# 976 "data/maps/AedesLux_1F/scripts.pory"
+# 1080 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 5, 34, METATILE_MauvilleGym_FloorLeftShadow_Pole, TRUE
-# 977 "data/maps/AedesLux_1F/scripts.pory"
+# 1081 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 5, 35, METATILE_MauvilleGym_FloorLeftShadow, FALSE
-# 978 "data/maps/AedesLux_1F/scripts.pory"
+# 1082 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 5, 36, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle2L_25:
-# 981 "data/maps/AedesLux_1F/scripts.pory"
+# 1085 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_5, AedesLux_Script_DrawPuzzle2L_34
 AedesLux_Script_DrawPuzzle2L_33:
-# 986 "data/maps/AedesLux_1F/scripts.pory"
+# 1090 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 34, METATILE_MauvilleGym_Floor_Pole, TRUE
-# 987 "data/maps/AedesLux_1F/scripts.pory"
+# 1091 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 35, METATILE_MauvilleGym_Floor, FALSE
-# 988 "data/maps/AedesLux_1F/scripts.pory"
+# 1092 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 36, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle2L_31:
-# 991 "data/maps/AedesLux_1F/scripts.pory"
+# 1095 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_6, AedesLux_Script_DrawPuzzle2L_40
 AedesLux_Script_DrawPuzzle2L_39:
-# 997 "data/maps/AedesLux_1F/scripts.pory"
+# 1101 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 36, METATILE_MauvilleGym_Floor, FALSE
-# 998 "data/maps/AedesLux_1F/scripts.pory"
+# 1102 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 36, METATILE_MauvilleGym_Floor, FALSE
-# 999 "data/maps/AedesLux_1F/scripts.pory"
+# 1103 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 37, METATILE_MauvilleGym_Floor, FALSE
-# 1000 "data/maps/AedesLux_1F/scripts.pory"
+# 1104 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 37, METATILE_MauvilleGym_Floor, FALSE
 AedesLux_Script_DrawPuzzle2L_37:
 	return
 
 AedesLux_Script_DrawPuzzle2L_2:
-# 926 "data/maps/AedesLux_1F/scripts.pory"
+# 1030 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE
-# 927 "data/maps/AedesLux_1F/scripts.pory"
+# 1031 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE
-# 928 "data/maps/AedesLux_1F/scripts.pory"
+# 1032 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 9, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 929 "data/maps/AedesLux_1F/scripts.pory"
+# 1033 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 10, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2L_1
 
 AedesLux_Script_DrawPuzzle2L_4:
-# 925 "data/maps/AedesLux_1F/scripts.pory"
+# 1029 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_2, AedesLux_Script_DrawPuzzle2L_2
 	goto AedesLux_Script_DrawPuzzle2L_3
 
 AedesLux_Script_DrawPuzzle2L_8:
-# 938 "data/maps/AedesLux_1F/scripts.pory"
+# 1042 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE
-# 939 "data/maps/AedesLux_1F/scripts.pory"
+# 1043 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE
-# 940 "data/maps/AedesLux_1F/scripts.pory"
+# 1044 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 12, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 941 "data/maps/AedesLux_1F/scripts.pory"
+# 1045 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 13, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2L_7
 
 AedesLux_Script_DrawPuzzle2L_10:
-# 937 "data/maps/AedesLux_1F/scripts.pory"
+# 1041 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_3, AedesLux_Script_DrawPuzzle2L_8
 	goto AedesLux_Script_DrawPuzzle2L_9
 
 AedesLux_Script_DrawPuzzle2L_14:
-# 950 "data/maps/AedesLux_1F/scripts.pory"
+# 1054 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 31, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE
-# 951 "data/maps/AedesLux_1F/scripts.pory"
+# 1055 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 32, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 952 "data/maps/AedesLux_1F/scripts.pory"
+# 1056 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 33, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle2L_13
 
 AedesLux_Script_DrawPuzzle2L_16:
-# 949 "data/maps/AedesLux_1F/scripts.pory"
+# 1053 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_5, AedesLux_Script_DrawPuzzle2L_14
 	goto AedesLux_Script_DrawPuzzle2L_15
 
 AedesLux_Script_DrawPuzzle2L_20:
-# 960 "data/maps/AedesLux_1F/scripts.pory"
+# 1064 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 33, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE
-# 961 "data/maps/AedesLux_1F/scripts.pory"
+# 1065 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 33, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE
-# 962 "data/maps/AedesLux_1F/scripts.pory"
+# 1066 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 34, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE
-# 963 "data/maps/AedesLux_1F/scripts.pory"
+# 1067 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 34, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2L_19
 
 AedesLux_Script_DrawPuzzle2L_22:
-# 959 "data/maps/AedesLux_1F/scripts.pory"
+# 1063 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_5, AedesLux_Script_DrawPuzzle2L_20
 	goto AedesLux_Script_DrawPuzzle2L_21
 
 AedesLux_Script_DrawPuzzle2L_26:
-# 972 "data/maps/AedesLux_1F/scripts.pory"
+# 1076 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 5, 34, METATILE_MauvilleGym_FloorLeftShadow_Pole_Electric, TRUE
-# 973 "data/maps/AedesLux_1F/scripts.pory"
+# 1077 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 5, 35, METATILE_MauvilleGym_FloorLeftShadow_ElectricV, TRUE
-# 974 "data/maps/AedesLux_1F/scripts.pory"
+# 1078 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 5, 36, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle2L_25
 
 AedesLux_Script_DrawPuzzle2L_28:
-# 971 "data/maps/AedesLux_1F/scripts.pory"
+# 1075 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_6, AedesLux_Script_DrawPuzzle2L_26
 	goto AedesLux_Script_DrawPuzzle2L_27
 
 AedesLux_Script_DrawPuzzle2L_32:
-# 982 "data/maps/AedesLux_1F/scripts.pory"
+# 1086 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 34, METATILE_MauvilleGym_Floor_Pole_Electric, TRUE
-# 983 "data/maps/AedesLux_1F/scripts.pory"
+# 1087 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 35, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 984 "data/maps/AedesLux_1F/scripts.pory"
+# 1088 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 8, 36, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle2L_31
 
 AedesLux_Script_DrawPuzzle2L_34:
-# 981 "data/maps/AedesLux_1F/scripts.pory"
+# 1085 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_7, AedesLux_Script_DrawPuzzle2L_32
 	goto AedesLux_Script_DrawPuzzle2L_33
 
 AedesLux_Script_DrawPuzzle2L_38:
-# 992 "data/maps/AedesLux_1F/scripts.pory"
+# 1096 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 36, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE
-# 993 "data/maps/AedesLux_1F/scripts.pory"
+# 1097 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 36, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE
-# 994 "data/maps/AedesLux_1F/scripts.pory"
+# 1098 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 6, 37, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE
-# 995 "data/maps/AedesLux_1F/scripts.pory"
+# 1099 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 7, 37, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2L_37
 
 AedesLux_Script_DrawPuzzle2L_40:
-# 991 "data/maps/AedesLux_1F/scripts.pory"
+# 1095 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_7, AedesLux_Script_DrawPuzzle2L_38
 	goto AedesLux_Script_DrawPuzzle2L_39
 
 
 AedesLux_Script_DrawPuzzle2R::
-# 1007 "data/maps/AedesLux_1F/scripts.pory"
+# 1111 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_8, AedesLux_Script_DrawPuzzle2R_4
 AedesLux_Script_DrawPuzzle2R_3:
-# 1013 "data/maps/AedesLux_1F/scripts.pory"
+# 1117 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 30, METATILE_MauvilleGym_Wall, TRUE
-# 1014 "data/maps/AedesLux_1F/scripts.pory"
+# 1118 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 30, METATILE_MauvilleGym_Wall, TRUE
-# 1015 "data/maps/AedesLux_1F/scripts.pory"
+# 1119 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 1016 "data/maps/AedesLux_1F/scripts.pory"
+# 1120 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle2R_1:
-# 1019 "data/maps/AedesLux_1F/scripts.pory"
+# 1123 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_8, AedesLux_Script_DrawPuzzle2R_10
 AedesLux_Script_DrawPuzzle2R_9:
-# 1025 "data/maps/AedesLux_1F/scripts.pory"
+# 1129 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 30, METATILE_MauvilleGym_Wall, TRUE
-# 1026 "data/maps/AedesLux_1F/scripts.pory"
+# 1130 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 30, METATILE_MauvilleGym_Wall, TRUE
-# 1027 "data/maps/AedesLux_1F/scripts.pory"
+# 1131 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 1028 "data/maps/AedesLux_1F/scripts.pory"
+# 1132 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle2R_7:
-# 1031 "data/maps/AedesLux_1F/scripts.pory"
+# 1135 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_A, AedesLux_Script_DrawPuzzle2R_16
 AedesLux_Script_DrawPuzzle2R_15:
-# 1037 "data/maps/AedesLux_1F/scripts.pory"
+# 1141 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 30, METATILE_MauvilleGym_Wall, TRUE
-# 1038 "data/maps/AedesLux_1F/scripts.pory"
+# 1142 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 30, METATILE_MauvilleGym_WallSymbol, TRUE
-# 1039 "data/maps/AedesLux_1F/scripts.pory"
+# 1143 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 1040 "data/maps/AedesLux_1F/scripts.pory"
+# 1144 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle2R_13:
-# 1043 "data/maps/AedesLux_1F/scripts.pory"
+# 1147 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_A, AedesLux_Script_DrawPuzzle2R_22
 AedesLux_Script_DrawPuzzle2R_21:
-# 1048 "data/maps/AedesLux_1F/scripts.pory"
+# 1152 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 31, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE
-# 1049 "data/maps/AedesLux_1F/scripts.pory"
+# 1153 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 32, METATILE_MauvilleGym_FloorLeftShadow, FALSE
-# 1050 "data/maps/AedesLux_1F/scripts.pory"
+# 1154 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 33, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle2R_19:
-# 1053 "data/maps/AedesLux_1F/scripts.pory"
+# 1157 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_B, AedesLux_Script_DrawPuzzle2R_28
 AedesLux_Script_DrawPuzzle2R_27:
-# 1058 "data/maps/AedesLux_1F/scripts.pory"
+# 1162 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 31, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE
-# 1059 "data/maps/AedesLux_1F/scripts.pory"
+# 1163 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 32, METATILE_MauvilleGym_Floor, FALSE
-# 1060 "data/maps/AedesLux_1F/scripts.pory"
+# 1164 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 33, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle2R_25:
-# 1063 "data/maps/AedesLux_1F/scripts.pory"
+# 1167 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_C, AedesLux_Script_DrawPuzzle2R_34
 AedesLux_Script_DrawPuzzle2R_33:
-# 1069 "data/maps/AedesLux_1F/scripts.pory"
+# 1173 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 33, METATILE_MauvilleGym_Floor, FALSE
-# 1070 "data/maps/AedesLux_1F/scripts.pory"
+# 1174 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 33, METATILE_MauvilleGym_Floor, FALSE
-# 1071 "data/maps/AedesLux_1F/scripts.pory"
+# 1175 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 34, METATILE_MauvilleGym_Floor, FALSE
-# 1072 "data/maps/AedesLux_1F/scripts.pory"
+# 1176 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 34, METATILE_MauvilleGym_Floor, FALSE
 AedesLux_Script_DrawPuzzle2R_31:
-# 1075 "data/maps/AedesLux_1F/scripts.pory"
+# 1179 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_C, AedesLux_Script_DrawPuzzle2R_40
 AedesLux_Script_DrawPuzzle2R_39:
-# 1080 "data/maps/AedesLux_1F/scripts.pory"
+# 1184 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 34, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE
-# 1081 "data/maps/AedesLux_1F/scripts.pory"
+# 1185 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 35, METATILE_MauvilleGym_FloorLeftShadow, FALSE
-# 1082 "data/maps/AedesLux_1F/scripts.pory"
+# 1186 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 36, METATILE_MauvilleGym_FloorCornerShadow_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle2R_37:
-# 1085 "data/maps/AedesLux_1F/scripts.pory"
+# 1189 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_D, AedesLux_Script_DrawPuzzle2R_46
 AedesLux_Script_DrawPuzzle2R_45:
-# 1090 "data/maps/AedesLux_1F/scripts.pory"
+# 1194 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 34, METATILE_MauvilleGym_Floor_Pole, TRUE
-# 1091 "data/maps/AedesLux_1F/scripts.pory"
+# 1195 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 35, METATILE_MauvilleGym_Floor, FALSE
-# 1092 "data/maps/AedesLux_1F/scripts.pory"
+# 1196 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 36, METATILE_MauvilleGym_Floor_PoleTop, FALSE
 AedesLux_Script_DrawPuzzle2R_43:
-# 1095 "data/maps/AedesLux_1F/scripts.pory"
+# 1199 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_E, AedesLux_Script_DrawPuzzle2R_52
 AedesLux_Script_DrawPuzzle2R_51:
-# 1101 "data/maps/AedesLux_1F/scripts.pory"
+# 1205 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 36, METATILE_MauvilleGym_Floor, FALSE
-# 1102 "data/maps/AedesLux_1F/scripts.pory"
+# 1206 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 36, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 1103 "data/maps/AedesLux_1F/scripts.pory"
+# 1207 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 37, METATILE_MauvilleGym_Floor, FALSE
-# 1104 "data/maps/AedesLux_1F/scripts.pory"
+# 1208 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 37, METATILE_MauvilleGym_Floor, FALSE
 AedesLux_Script_DrawPuzzle2R_49:
-# 1107 "data/maps/AedesLux_1F/scripts.pory"
+# 1211 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_F, AedesLux_Script_DrawPuzzle2R_58
 AedesLux_Script_DrawPuzzle2R_57:
-# 1113 "data/maps/AedesLux_1F/scripts.pory"
+# 1217 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 36, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 1114 "data/maps/AedesLux_1F/scripts.pory"
+# 1218 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 36, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 1115 "data/maps/AedesLux_1F/scripts.pory"
+# 1219 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 37, METATILE_MauvilleGym_FloorTopShadow, FALSE
-# 1116 "data/maps/AedesLux_1F/scripts.pory"
+# 1220 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 37, METATILE_MauvilleGym_FloorTopShadow, FALSE
 AedesLux_Script_DrawPuzzle2R_55:
-# 1119 "data/maps/AedesLux_1F/scripts.pory"
+# 1223 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_10, AedesLux_Script_DrawPuzzle2R_64
 AedesLux_Script_DrawPuzzle2R_63:
-# 1125 "data/maps/AedesLux_1F/scripts.pory"
+# 1229 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 36, METATILE_MauvilleGym_Floor, FALSE
-# 1126 "data/maps/AedesLux_1F/scripts.pory"
+# 1230 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 36, METATILE_MauvilleGym_Floor, FALSE
-# 1127 "data/maps/AedesLux_1F/scripts.pory"
+# 1231 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 37, METATILE_MauvilleGym_Floor, FALSE
-# 1128 "data/maps/AedesLux_1F/scripts.pory"
+# 1232 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 37, METATILE_MauvilleGym_Floor, FALSE
 AedesLux_Script_DrawPuzzle2R_61:
 	return
 
 AedesLux_Script_DrawPuzzle2R_2:
-# 1008 "data/maps/AedesLux_1F/scripts.pory"
+# 1112 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE
-# 1009 "data/maps/AedesLux_1F/scripts.pory"
+# 1113 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE
-# 1010 "data/maps/AedesLux_1F/scripts.pory"
+# 1114 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 1011 "data/maps/AedesLux_1F/scripts.pory"
+# 1115 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_1
 
 AedesLux_Script_DrawPuzzle2R_4:
-# 1007 "data/maps/AedesLux_1F/scripts.pory"
+# 1111 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_9, AedesLux_Script_DrawPuzzle2R_2
 	goto AedesLux_Script_DrawPuzzle2R_3
 
 AedesLux_Script_DrawPuzzle2R_8:
-# 1020 "data/maps/AedesLux_1F/scripts.pory"
+# 1124 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE
-# 1021 "data/maps/AedesLux_1F/scripts.pory"
+# 1125 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE
-# 1022 "data/maps/AedesLux_1F/scripts.pory"
+# 1126 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 1023 "data/maps/AedesLux_1F/scripts.pory"
+# 1127 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_7
 
 AedesLux_Script_DrawPuzzle2R_10:
-# 1019 "data/maps/AedesLux_1F/scripts.pory"
+# 1123 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_9, AedesLux_Script_DrawPuzzle2R_8
 	goto AedesLux_Script_DrawPuzzle2R_9
 
 AedesLux_Script_DrawPuzzle2R_14:
-# 1032 "data/maps/AedesLux_1F/scripts.pory"
+# 1136 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE
-# 1033 "data/maps/AedesLux_1F/scripts.pory"
+# 1137 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 30, METATILE_MauvilleGym_WallSymbol_Electric_TopRight, TRUE
-# 1034 "data/maps/AedesLux_1F/scripts.pory"
+# 1138 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 1035 "data/maps/AedesLux_1F/scripts.pory"
+# 1139 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_13
 
 AedesLux_Script_DrawPuzzle2R_16:
-# 1031 "data/maps/AedesLux_1F/scripts.pory"
+# 1135 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_B, AedesLux_Script_DrawPuzzle2R_14
 	goto AedesLux_Script_DrawPuzzle2R_15
 
 AedesLux_Script_DrawPuzzle2R_20:
-# 1044 "data/maps/AedesLux_1F/scripts.pory"
+# 1148 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 31, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE
-# 1045 "data/maps/AedesLux_1F/scripts.pory"
+# 1149 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 32, METATILE_MauvilleGym_FloorLeftShadow_ElectricV, TRUE
-# 1046 "data/maps/AedesLux_1F/scripts.pory"
+# 1150 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 33, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_19
 
 AedesLux_Script_DrawPuzzle2R_22:
-# 1043 "data/maps/AedesLux_1F/scripts.pory"
+# 1147 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_C, AedesLux_Script_DrawPuzzle2R_20
 	goto AedesLux_Script_DrawPuzzle2R_21
 
 AedesLux_Script_DrawPuzzle2R_26:
-# 1054 "data/maps/AedesLux_1F/scripts.pory"
+# 1158 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 31, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE
-# 1055 "data/maps/AedesLux_1F/scripts.pory"
+# 1159 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 32, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 1056 "data/maps/AedesLux_1F/scripts.pory"
+# 1160 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 33, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_25
 
 AedesLux_Script_DrawPuzzle2R_28:
-# 1053 "data/maps/AedesLux_1F/scripts.pory"
+# 1157 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_D, AedesLux_Script_DrawPuzzle2R_26
 	goto AedesLux_Script_DrawPuzzle2R_27
 
 AedesLux_Script_DrawPuzzle2R_32:
-# 1064 "data/maps/AedesLux_1F/scripts.pory"
+# 1168 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 33, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE
-# 1065 "data/maps/AedesLux_1F/scripts.pory"
+# 1169 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 33, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE
-# 1066 "data/maps/AedesLux_1F/scripts.pory"
+# 1170 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 34, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE
-# 1067 "data/maps/AedesLux_1F/scripts.pory"
+# 1171 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 34, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_31
 
 AedesLux_Script_DrawPuzzle2R_34:
-# 1063 "data/maps/AedesLux_1F/scripts.pory"
+# 1167 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_D, AedesLux_Script_DrawPuzzle2R_32
 	goto AedesLux_Script_DrawPuzzle2R_33
 
 AedesLux_Script_DrawPuzzle2R_38:
-# 1076 "data/maps/AedesLux_1F/scripts.pory"
+# 1180 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 34, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE
-# 1077 "data/maps/AedesLux_1F/scripts.pory"
+# 1181 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 35, METATILE_MauvilleGym_FloorLeftShadow_ElectricV, TRUE
-# 1078 "data/maps/AedesLux_1F/scripts.pory"
+# 1182 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 25, 36, METATILE_MauvilleGym_FloorCornerShadow_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_37
 
 AedesLux_Script_DrawPuzzle2R_40:
-# 1075 "data/maps/AedesLux_1F/scripts.pory"
+# 1179 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_10, AedesLux_Script_DrawPuzzle2R_38
 	goto AedesLux_Script_DrawPuzzle2R_39
 
 AedesLux_Script_DrawPuzzle2R_44:
-# 1086 "data/maps/AedesLux_1F/scripts.pory"
+# 1190 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 34, METATILE_MauvilleGym_Floor_Pole_Electric, TRUE
-# 1087 "data/maps/AedesLux_1F/scripts.pory"
+# 1191 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 35, METATILE_MauvilleGym_Floor_ElectricV, TRUE
-# 1088 "data/maps/AedesLux_1F/scripts.pory"
+# 1192 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 28, 36, METATILE_MauvilleGym_Floor_PoleTop, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_43
 
 AedesLux_Script_DrawPuzzle2R_46:
-# 1085 "data/maps/AedesLux_1F/scripts.pory"
+# 1189 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_11, AedesLux_Script_DrawPuzzle2R_44
 	goto AedesLux_Script_DrawPuzzle2R_45
 
 AedesLux_Script_DrawPuzzle2R_50:
-# 1096 "data/maps/AedesLux_1F/scripts.pory"
+# 1200 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 36, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE
-# 1097 "data/maps/AedesLux_1F/scripts.pory"
+# 1201 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 36, METATILE_MauvilleGym_FloorTopShadow_Electric_TopRight, FALSE
-# 1098 "data/maps/AedesLux_1F/scripts.pory"
+# 1202 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 20, 37, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE
-# 1099 "data/maps/AedesLux_1F/scripts.pory"
+# 1203 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 21, 37, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_49
 
 AedesLux_Script_DrawPuzzle2R_52:
-# 1095 "data/maps/AedesLux_1F/scripts.pory"
+# 1199 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_F, AedesLux_Script_DrawPuzzle2R_50
 	goto AedesLux_Script_DrawPuzzle2R_51
 
 AedesLux_Script_DrawPuzzle2R_56:
-# 1108 "data/maps/AedesLux_1F/scripts.pory"
+# 1212 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 36, METATILE_MauvilleGym_FloorTopShadow_Electric_TopLeft, FALSE
-# 1109 "data/maps/AedesLux_1F/scripts.pory"
+# 1213 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 36, METATILE_MauvilleGym_FloorTopShadow_Electric_TopRight, FALSE
-# 1110 "data/maps/AedesLux_1F/scripts.pory"
+# 1214 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 23, 37, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE
-# 1111 "data/maps/AedesLux_1F/scripts.pory"
+# 1215 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 24, 37, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_55
 
 AedesLux_Script_DrawPuzzle2R_58:
-# 1107 "data/maps/AedesLux_1F/scripts.pory"
+# 1211 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_10, AedesLux_Script_DrawPuzzle2R_56
 	goto AedesLux_Script_DrawPuzzle2R_57
 
 AedesLux_Script_DrawPuzzle2R_62:
-# 1120 "data/maps/AedesLux_1F/scripts.pory"
+# 1224 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 36, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE
-# 1121 "data/maps/AedesLux_1F/scripts.pory"
+# 1225 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 36, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE
-# 1122 "data/maps/AedesLux_1F/scripts.pory"
+# 1226 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 26, 37, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE
-# 1123 "data/maps/AedesLux_1F/scripts.pory"
+# 1227 "data/maps/AedesLux_1F/scripts.pory"
 	setmetatile 27, 37, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE
 	goto AedesLux_Script_DrawPuzzle2R_61
 
 AedesLux_Script_DrawPuzzle2R_64:
-# 1119 "data/maps/AedesLux_1F/scripts.pory"
+# 1223 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_11, AedesLux_Script_DrawPuzzle2R_62
 	goto AedesLux_Script_DrawPuzzle2R_63
 
 
 AedesLux_Script_CheckSolvePuzzle1::
-# 1136 "data/maps/AedesLux_1F/scripts.pory"
+# 1240 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, AedesLux_Script_CheckSolvePuzzle1_4
 AedesLux_Script_CheckSolvePuzzle1_1:
 	return
 
 AedesLux_Script_CheckSolvePuzzle1_2:
-# 1147 "data/maps/AedesLux_1F/scripts.pory"
+# 1251 "data/maps/AedesLux_1F/scripts.pory"
 	setvar VAR_TEMP_B, 1
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_3:
-# 1138 "data/maps/AedesLux_1F/scripts.pory"
+# 1242 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_3, AedesLux_Script_CheckSolvePuzzle1_8
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_4:
-# 1137 "data/maps/AedesLux_1F/scripts.pory"
+# 1241 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_2, AedesLux_Script_CheckSolvePuzzle1_3
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_7:
-# 1140 "data/maps/AedesLux_1F/scripts.pory"
+# 1244 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_5, AedesLux_Script_CheckSolvePuzzle1_12
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_8:
-# 1139 "data/maps/AedesLux_1F/scripts.pory"
+# 1243 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_4, AedesLux_Script_CheckSolvePuzzle1_7
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_11:
-# 1142 "data/maps/AedesLux_1F/scripts.pory"
+# 1246 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_7, AedesLux_Script_CheckSolvePuzzle1_16
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_12:
-# 1141 "data/maps/AedesLux_1F/scripts.pory"
+# 1245 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_6, AedesLux_Script_CheckSolvePuzzle1_11
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_15:
-# 1144 "data/maps/AedesLux_1F/scripts.pory"
+# 1248 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_9, AedesLux_Script_CheckSolvePuzzle1_19
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_16:
-# 1143 "data/maps/AedesLux_1F/scripts.pory"
+# 1247 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_8, AedesLux_Script_CheckSolvePuzzle1_15
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 AedesLux_Script_CheckSolvePuzzle1_19:
-# 1145 "data/maps/AedesLux_1F/scripts.pory"
+# 1249 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_A, AedesLux_Script_CheckSolvePuzzle1_2
 	goto AedesLux_Script_CheckSolvePuzzle1_1
 
 
 AedesLux_Script_CheckSolvePuzzle2::
-# 1154 "data/maps/AedesLux_1F/scripts.pory"
+# 1258 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, AedesLux_Script_CheckSolvePuzzle2_4
 AedesLux_Script_CheckSolvePuzzle2_1:
 	return
 
 AedesLux_Script_CheckSolvePuzzle2_2:
-# 1172 "data/maps/AedesLux_1F/scripts.pory"
+# 1276 "data/maps/AedesLux_1F/scripts.pory"
 	setvar VAR_TEMP_B, 2
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_3:
-# 1156 "data/maps/AedesLux_1F/scripts.pory"
+# 1260 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_3, AedesLux_Script_CheckSolvePuzzle2_8
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_4:
-# 1155 "data/maps/AedesLux_1F/scripts.pory"
+# 1259 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_2, AedesLux_Script_CheckSolvePuzzle2_3
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_7:
-# 1158 "data/maps/AedesLux_1F/scripts.pory"
+# 1262 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_5, AedesLux_Script_CheckSolvePuzzle2_12
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_8:
-# 1157 "data/maps/AedesLux_1F/scripts.pory"
+# 1261 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_4, AedesLux_Script_CheckSolvePuzzle2_7
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_11:
-# 1160 "data/maps/AedesLux_1F/scripts.pory"
+# 1264 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_7, AedesLux_Script_CheckSolvePuzzle2_16
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_12:
-# 1159 "data/maps/AedesLux_1F/scripts.pory"
+# 1263 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_6, AedesLux_Script_CheckSolvePuzzle2_11
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_15:
-# 1162 "data/maps/AedesLux_1F/scripts.pory"
+# 1266 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_9, AedesLux_Script_CheckSolvePuzzle2_20
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_16:
-# 1161 "data/maps/AedesLux_1F/scripts.pory"
+# 1265 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_8, AedesLux_Script_CheckSolvePuzzle2_15
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_19:
-# 1164 "data/maps/AedesLux_1F/scripts.pory"
+# 1268 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_B, AedesLux_Script_CheckSolvePuzzle2_24
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_20:
-# 1163 "data/maps/AedesLux_1F/scripts.pory"
+# 1267 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_A, AedesLux_Script_CheckSolvePuzzle2_19
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_23:
-# 1166 "data/maps/AedesLux_1F/scripts.pory"
+# 1270 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_D, AedesLux_Script_CheckSolvePuzzle2_28
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_24:
-# 1165 "data/maps/AedesLux_1F/scripts.pory"
+# 1269 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_C, AedesLux_Script_CheckSolvePuzzle2_23
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_27:
-# 1168 "data/maps/AedesLux_1F/scripts.pory"
+# 1272 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_F, AedesLux_Script_CheckSolvePuzzle2_32
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_28:
-# 1167 "data/maps/AedesLux_1F/scripts.pory"
+# 1271 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_E, AedesLux_Script_CheckSolvePuzzle2_27
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_31:
-# 1170 "data/maps/AedesLux_1F/scripts.pory"
+# 1274 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_11, AedesLux_Script_CheckSolvePuzzle2_2
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 AedesLux_Script_CheckSolvePuzzle2_32:
-# 1169 "data/maps/AedesLux_1F/scripts.pory"
+# 1273 "data/maps/AedesLux_1F/scripts.pory"
 	goto_if_set FLAG_TEMP_10, AedesLux_Script_CheckSolvePuzzle2_31
 	goto AedesLux_Script_CheckSolvePuzzle2_1
 
 
 AedesLux_Script_ClearAllFlags::
-# 1178 "data/maps/AedesLux_1F/scripts.pory"
+# 1282 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_1
-# 1179 "data/maps/AedesLux_1F/scripts.pory"
+# 1283 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_2
-# 1180 "data/maps/AedesLux_1F/scripts.pory"
+# 1284 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_3
-# 1181 "data/maps/AedesLux_1F/scripts.pory"
+# 1285 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_4
-# 1182 "data/maps/AedesLux_1F/scripts.pory"
+# 1286 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_5
-# 1183 "data/maps/AedesLux_1F/scripts.pory"
+# 1287 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_6
-# 1184 "data/maps/AedesLux_1F/scripts.pory"
+# 1288 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_7
-# 1185 "data/maps/AedesLux_1F/scripts.pory"
+# 1289 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_8
-# 1186 "data/maps/AedesLux_1F/scripts.pory"
+# 1290 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_9
-# 1187 "data/maps/AedesLux_1F/scripts.pory"
+# 1291 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_A
-# 1188 "data/maps/AedesLux_1F/scripts.pory"
+# 1292 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_B
-# 1189 "data/maps/AedesLux_1F/scripts.pory"
+# 1293 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_C
-# 1190 "data/maps/AedesLux_1F/scripts.pory"
+# 1294 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_D
-# 1191 "data/maps/AedesLux_1F/scripts.pory"
+# 1295 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_E
-# 1192 "data/maps/AedesLux_1F/scripts.pory"
+# 1296 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_F
-# 1193 "data/maps/AedesLux_1F/scripts.pory"
+# 1297 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_10
-# 1194 "data/maps/AedesLux_1F/scripts.pory"
+# 1298 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_11
-# 1195 "data/maps/AedesLux_1F/scripts.pory"
+# 1299 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_12
-# 1196 "data/maps/AedesLux_1F/scripts.pory"
+# 1300 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_13
-# 1197 "data/maps/AedesLux_1F/scripts.pory"
+# 1301 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_14
-# 1198 "data/maps/AedesLux_1F/scripts.pory"
+# 1302 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_15
-# 1199 "data/maps/AedesLux_1F/scripts.pory"
+# 1303 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_16
-# 1200 "data/maps/AedesLux_1F/scripts.pory"
+# 1304 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_17
-# 1201 "data/maps/AedesLux_1F/scripts.pory"
+# 1305 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_18
-# 1202 "data/maps/AedesLux_1F/scripts.pory"
+# 1306 "data/maps/AedesLux_1F/scripts.pory"
 	clearflag FLAG_TEMP_19
 	return
 
@@ -2507,34 +2775,34 @@ AedesLux_Script_SolvedPuzzle_Text_1:
 	.string "ERROR VAR_TEMP_B OOB$"
 
 AedesLux_Script_UpdatePuzzle_Text_0:
-# 792 "data/maps/AedesLux_1F/scripts.pory"
+# 896 "data/maps/AedesLux_1F/scripts.pory"
 	.string "ERROR VAR_TEMP_A = 3$"
 
 AedesLux_Script_UpdatePuzzle_Text_1:
-# 796 "data/maps/AedesLux_1F/scripts.pory"
+# 900 "data/maps/AedesLux_1F/scripts.pory"
 	.string "ERROR VAR_TEMP_A OOB$"
 
 AedesLux_Text_NothingHappened::
-# 1206 "data/maps/AedesLux_1F/scripts.pory"
+# 1310 "data/maps/AedesLux_1F/scripts.pory"
 	.string "Nothing happened...$"
 
 AedesLux_Text_PoleSwitch::
-# 1210 "data/maps/AedesLux_1F/scripts.pory"
+# 1314 "data/maps/AedesLux_1F/scripts.pory"
 	.string "Would you like to flip the switch?$"
 
 AedesLux_Text_PoleOn::
-# 1214 "data/maps/AedesLux_1F/scripts.pory"
+# 1318 "data/maps/AedesLux_1F/scripts.pory"
 	.string "The pole is glowing with electricity.$"
 
 AedesLux_Text_PoleOff::
-# 1218 "data/maps/AedesLux_1F/scripts.pory"
+# 1322 "data/maps/AedesLux_1F/scripts.pory"
 	.string "The pole seems to be deactivated.$"
 
 AedesLux_Text_PoleDanger::
-# 1222 "data/maps/AedesLux_1F/scripts.pory"
+# 1326 "data/maps/AedesLux_1F/scripts.pory"
 	.string "This seems dangerous. Better leave it\n"
 	.string "alone for now!$"
 
 AedesLux_Text_PoleCompleted::
-# 1226 "data/maps/AedesLux_1F/scripts.pory"
+# 1330 "data/maps/AedesLux_1F/scripts.pory"
 	.string "The switch seems stuck in place.$"

@@ -730,6 +730,110 @@ script AedesLux_Script_Puzzle2L_Pole3 {
 	end
 }
 
+script AedesLux_Script_Puzzle2L_Pole4 {
+    //Puzzle Already Solved 
+    if (var(VAR_TEMP_A) != 1) {
+		call (AedesLux_Script_PoleCompleted)
+    }
+    //Check if Pole is currently On or Off
+	if (flag(FLAG_TEMP_4)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
+	//Only do something if player says YES otherwise just skip to fin
+	if (var(VAR_RESULT) != NO) {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_WEST && flag(FLAG_TEMP_5)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		if (var(VAR_RESULT) == DIR_NORTH && flag(FLAG_TEMP_6)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Try turn Pole on
+		if (!flag(FLAG_TEMP_4) && (flag(FLAG_TEMP_5) || flag(FLAG_TEMP_6))) {
+			setflag (FLAG_TEMP_3)
+		} else {
+			//Trying to turn pole on but no adjacent power
+			if (!flag(FLAG_TEMP_4)) {
+				call (AedesLux_Script_PoleNothingHappened)
+			} 
+			//Switch Pole Off
+			clearflag (FLAG_TEMP_4)
+			//Check Adjacent Poles for lose power
+			if (flag(FLAG_TEMP_5) && !flag(FLAG_TEMP_1) && !flag(FLAG_TEMP_7)) {
+				clearflag (FLAG_TEMP_5)
+			}
+			if (flag(FLAG_TEMP_6) && !flag(FLAG_TEMP_7)) {
+				clearflag (FLAG_TEMP_6)
+			}
+		}
+		//Update Puzzle
+		call (AedesLux_Script_UpdatePuzzle)
+	}
+	//fin
+	closemessage
+	end
+}
+
+script AedesLux_Script_Puzzle2L_Pole5 {
+    //Puzzle Already Solved 
+    if (var(VAR_TEMP_A) != 1) {
+		call (AedesLux_Script_PoleCompleted)
+    }
+    //Check if Pole is currently On or Off
+	if (flag(FLAG_TEMP_5)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
+	//Only do something if player says YES otherwise just skip to fin
+	if (var(VAR_RESULT) != NO) {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_EAST && flag(FLAG_TEMP_4)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		if (var(VAR_RESULT) == DIR_NORTH && flag(FLAG_TEMP_7)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		if (var(VAR_RESULT) == DIR_SOUTH && flag(FLAG_TEMP_1)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Try turn Pole on
+		if (!flag(FLAG_TEMP_5) && (flag(FLAG_TEMP_1) || flag(FLAG_TEMP_4) || flag(FLAG_TEMP_7))) {
+			setflag (FLAG_TEMP_5)
+		} else {
+			//Trying to turn pole on but no adjacent power
+			if (!flag(FLAG_TEMP_5)) {
+				call (AedesLux_Script_PoleNothingHappened)
+			} 
+			//Switch Pole Off
+			clearflag (FLAG_TEMP_5)
+			//Check Adjacent Poles for lose power
+			if (flag(FLAG_TEMP_1) && !flag(FLAG_TEMP_2)) {
+				clearflag (FLAG_TEMP_1)
+			}
+			if (flag(FLAG_TEMP_7) && !flag(FLAG_TEMP_6)) {
+				clearflag (FLAG_TEMP_7)
+			}
+			if (flag(FLAG_TEMP_4) && !flag(FLAG_TEMP_6)) {
+				clearflag (FLAG_TEMP_4)
+			}
+		}
+		//Update Puzzle
+		call (AedesLux_Script_UpdatePuzzle)
+	}
+	//fin
+	closemessage
+	end
+}
+
 //Reset Scripts
 
 script AedesLux_Script_ResetPuzzle1 {
