@@ -433,7 +433,12 @@
 
 // gTileset_MauvilleGym
 #define METATILE_MauvilleGym_Floor                                0x268
+#define METATILE_MauvilleGym_FloorCornerShadow_PoleTop            0x2D3
+#define METATILE_MauvilleGym_FloorLeftShadow                      0x269
+#define METATILE_MauvilleGym_FloorLeftShadow_ElectricV            0x2D9
+#define METATILE_MauvilleGym_FloorLeftShadow_Pole                 0x2C9
 #define METATILE_MauvilleGym_FloorLeftShadow_PoleTop              0x2C1
+#define METATILE_MauvilleGym_FloorLeftShadow_Pole_Electric        0x2D1
 #define METATILE_MauvilleGym_FloorTile                            0x21A
 #define METATILE_MauvilleGym_FloorTopShadow                       0x26B
 #define METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft   0x318

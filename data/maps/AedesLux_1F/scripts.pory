@@ -25,10 +25,7 @@ mapscripts AedesLux_1F_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
         //Set initial Puzzle flags
-        setflag (FLAG_TEMP_1)
-        setflag (FLAG_TEMP_4)
-        setflag (FLAG_TEMP_9)
-        setflag (FLAG_TEMP_A)
+		call (AedesLux_Script_SetupPuzzle1Flags)
     }
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -63,14 +60,7 @@ script AedesLux_Script_SolvedPuzzle {
 			//Show open ladder
 			special (DrawWholeMapView)
 			//setup flags for next puzzle
-			call (AedesLux_Script_ClearAllFlags)
-			//L
-			setflag (FLAG_TEMP_4)
-			setflag (FLAG_TEMP_6)
-			//R
-			setflag (FLAG_TEMP_F)
-			setflag (FLAG_TEMP_10)
-			setflag (FLAG_TEMP_11)
+			call (AedesLux_Script_SetupPuzzle2Flags)
 			//setup Var_A for next puzzle
 			setvar (VAR_TEMP_A, 1)
 		case 2:
@@ -88,6 +78,29 @@ script AedesLux_Script_SolvedPuzzle {
 	end
 }
 
+//Setup Flags scripts
+
+script AedesLux_Script_SetupPuzzle1Flags {
+	call (AedesLux_Script_ClearAllFlags)
+	setflag (FLAG_TEMP_1)
+	setflag (FLAG_TEMP_4)
+	setflag (FLAG_TEMP_9)
+	setflag (FLAG_TEMP_A)
+	return
+}
+
+script AedesLux_Script_SetupPuzzle2Flags {
+	call (AedesLux_Script_ClearAllFlags)
+	//L
+	setflag (FLAG_TEMP_4)
+	setflag (FLAG_TEMP_6)
+	//R
+	setflag (FLAG_TEMP_C)
+	setflag (FLAG_TEMP_10)
+	setflag (FLAG_TEMP_11)
+	return
+}
+
 
 //Pole Scripts
 
@@ -97,8 +110,8 @@ script AedesLux_Script_PoleDanger {
 	end
 }
 
-script AedesLux_Script_PoleDeactivated {
-	msgbox (AedesLux_Text_PoleOff)
+script AedesLux_Script_PoleCompleted {
+	msgbox (AedesLux_Text_PoleCompleted)
 	closemessage
 	end
 }
@@ -113,7 +126,7 @@ script AedesLux_Script_PoleNothingHappened {
 script AedesLux_Script_Puzzle1L_Pole1 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_1)) {
@@ -162,7 +175,7 @@ script AedesLux_Script_Puzzle1L_Pole1 {
 script AedesLux_Script_Puzzle1L_Pole2 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_2)) {
@@ -210,7 +223,7 @@ script AedesLux_Script_Puzzle1L_Pole2 {
 script AedesLux_Script_Puzzle1L_Pole3 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_3)) {
@@ -253,7 +266,7 @@ script AedesLux_Script_Puzzle1L_Pole3 {
 script AedesLux_Script_Puzzle1L_Pole4 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_4)) {
@@ -301,7 +314,7 @@ script AedesLux_Script_Puzzle1L_Pole4 {
 script AedesLux_Script_Puzzle1L_Pole5 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_5)) {
@@ -346,7 +359,7 @@ script AedesLux_Script_Puzzle1L_Pole5 {
 script AedesLux_Script_Puzzle1R_Pole6 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_6)) {
@@ -389,7 +402,7 @@ script AedesLux_Script_Puzzle1R_Pole6 {
 script AedesLux_Script_Puzzle1R_Pole7 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_7)) {
@@ -437,7 +450,7 @@ script AedesLux_Script_Puzzle1R_Pole7 {
 script AedesLux_Script_Puzzle1R_Pole8 {
     //Puzzle Already Solved 
     if (var(VAR_TEMP_A) != 0) {
-		call (AedesLux_Script_PoleDeactivated)
+		call (AedesLux_Script_PoleCompleted)
     }
     //Check if Pole is currently On or Off
 	if (flag(FLAG_TEMP_8)) {
@@ -483,11 +496,243 @@ script AedesLux_Script_Puzzle1R_Pole8 {
 	end
 }
 
+script AedesLux_Script_Puzzle1R_Pole9 {
+    //Puzzle Already Solved 
+    if (var(VAR_TEMP_A) != 0) {
+		call (AedesLux_Script_PoleCompleted)
+    }
+    //Check if Pole is currently On or Off
+	if (flag(FLAG_TEMP_9)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
+	//Only do something if player says YES otherwise just skip to fin
+	if (var(VAR_RESULT) != NO) {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_EAST && flag(FLAG_TEMP_8)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		if (var(VAR_RESULT) == DIR_WEST && flag(FLAG_TEMP_A)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Try turn Pole on
+		if (!flag(FLAG_TEMP_9) && (flag(FLAG_TEMP_8) || flag(FLAG_TEMP_A))) {
+			setflag (FLAG_TEMP_9)
+		} else {
+			//Trying to turn pole on but no adjacent power
+			if (!flag(FLAG_TEMP_9)) {
+				call (AedesLux_Script_PoleNothingHappened)
+			} 
+			//Switch Pole Off
+			clearflag (FLAG_TEMP_9)
+			//Check Adjacent Poles for lose power
+			if (flag(FLAG_TEMP_8) && !flag(FLAG_TEMP_7)) {
+				clearflag (FLAG_TEMP_8)
+			}
+			//Pole A needs Pole 9 for power
+			clearflag (FLAG_TEMP_A)
+		}
+		//Update Puzzle
+		call (AedesLux_Script_UpdatePuzzle)
+	}
+	//fin
+	closemessage
+	end
+}
 
+script AedesLux_Script_Puzzle1R_PoleA {
+    //Puzzle Already Solved 
+    if (var(VAR_TEMP_A) != 0) {
+		call (AedesLux_Script_PoleCompleted)
+    }
+    //Check if Pole is currently On or Off
+	if (flag(FLAG_TEMP_A)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
+	//Only do something if player says YES otherwise just skip to fin
+	if (var(VAR_RESULT) != NO) {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_WEST && flag(FLAG_TEMP_9)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Try turn Pole on
+		if (!flag(FLAG_TEMP_A) && flag(FLAG_TEMP_9)) {
+			setflag (FLAG_TEMP_A)
+		} else {
+			//Trying to turn pole on but no adjacent power
+			if (!flag(FLAG_TEMP_A)) {
+				call (AedesLux_Script_PoleNothingHappened)
+			} 
+			//Switch Pole Off
+			clearflag (FLAG_TEMP_A)
+			//Check Adjacent Poles for lose power
+			if (flag(FLAG_TEMP_9) && !flag(FLAG_TEMP_8)) {
+				clearflag (FLAG_TEMP_8)
+			}
+		}
+		//Update Puzzle
+		call (AedesLux_Script_UpdatePuzzle)
+	}
+	//fin
+	closemessage
+	end
+}
+
+//Puzzle 2 Poles
+
+//2L
+script AedesLux_Script_Puzzle2L_Pole1 {
+    //Puzzle Already Solved 
+    if (var(VAR_TEMP_A) != 1) {
+		call (AedesLux_Script_PoleCompleted)
+    }
+    //Check if Pole is currently On or Off
+	if (flag(FLAG_TEMP_1)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
+	//Only do something if player says YES otherwise just skip to fin
+	if (var(VAR_RESULT) != NO) {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_WEST && flag(FLAG_TEMP_2)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		if (var(VAR_RESULT) == DIR_NORTH && flag(FLAG_TEMP_5)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Try turn Pole on
+		if (!flag(FLAG_TEMP_1) && (flag(FLAG_TEMP_2) || flag(FLAG_TEMP_5))) {
+			setflag (FLAG_TEMP_1)
+		} else {
+			//Trying to turn pole on but no adjacent power
+			if (!flag(FLAG_TEMP_1)) {
+				call (AedesLux_Script_PoleNothingHappened)
+			} 
+			//Switch Pole Off
+			clearflag (FLAG_TEMP_1)
+			//Check Adjacent Poles for lose power
+			if (flag(FLAG_TEMP_2) && !flag(FLAG_TEMP_3)) {
+				clearflag (FLAG_TEMP_2)
+			}
+			if (flag(FLAG_TEMP_5) && !flag(FLAG_TEMP_4) && !flag(FLAG_TEMP_7)) {
+				clearflag (FLAG_TEMP_5)
+			}
+		}
+		//Update Puzzle
+		call (AedesLux_Script_UpdatePuzzle)
+	}
+	//fin
+	closemessage
+	end
+}
+
+script AedesLux_Script_Puzzle2L_Pole2 {
+    //Puzzle Already Solved 
+    if (var(VAR_TEMP_A) != 1) {
+		call (AedesLux_Script_PoleCompleted)
+    }
+    //Check if Pole is currently On or Off
+	if (flag(FLAG_TEMP_2)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
+	//Only do something if player says YES otherwise just skip to fin
+	if (var(VAR_RESULT) != NO) {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_WEST && flag(FLAG_TEMP_3)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		if (var(VAR_RESULT) == DIR_EAST && flag(FLAG_TEMP_1)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Try turn Pole on
+		if (!flag(FLAG_TEMP_2) && (flag(FLAG_TEMP_1) || flag(FLAG_TEMP_3))) {
+			setflag (FLAG_TEMP_2)
+		} else {
+			//Trying to turn pole on but no adjacent power
+			if (!flag(FLAG_TEMP_2)) {
+				call (AedesLux_Script_PoleNothingHappened)
+			} 
+			//Switch Pole Off
+			clearflag (FLAG_TEMP_2)
+			//Check Adjacent Poles for lose power
+			if (flag(FLAG_TEMP_1) && !flag(FLAG_TEMP_5)) {
+				clearflag (FLAG_TEMP_1)
+			}
+			//Pole 3 needs 2 to be active
+			clearflag (FLAG_TEMP_3)
+		}
+		//Update Puzzle
+		call (AedesLux_Script_UpdatePuzzle)
+	}
+	//fin
+	closemessage
+	end
+}
+
+script AedesLux_Script_Puzzle2L_Pole3 {
+    //Puzzle Already Solved 
+    if (var(VAR_TEMP_A) != 1) {
+		call (AedesLux_Script_PoleCompleted)
+    }
+    //Check if Pole is currently On or Off
+	if (flag(FLAG_TEMP_3)) {
+		msgbox (AedesLux_Text_PoleOn) //Pole is ON - Yes Electricity
+	} else {
+		msgbox (AedesLux_Text_PoleOff) //Pole is Off - No Electricity
+	}
+	msgbox (AedesLux_Text_PoleSwitch, MSGBOX_YESNO)
+	//Only do something if player says YES otherwise just skip to fin
+	if (var(VAR_RESULT) != NO) {
+		//Check for pole danger
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		if (var(VAR_RESULT) == DIR_EAST && flag(FLAG_TEMP_2)) {
+			call (AedesLux_Script_PoleDanger)
+		}
+		//No danger found - do switch
+		//Try turn Pole on
+		if (!flag(FLAG_TEMP_3) && flag(FLAG_TEMP_2)) {
+			setflag (FLAG_TEMP_3)
+		} else {
+			//Trying to turn pole on but no adjacent power
+			if (!flag(FLAG_TEMP_3)) {
+				call (AedesLux_Script_PoleNothingHappened)
+			} 
+			//Switch Pole Off
+			clearflag (FLAG_TEMP_3)
+			//Check Adjacent Poles for lose power
+			if (flag(FLAG_TEMP_2) && !flag(FLAG_TEMP_1)) {
+				clearflag (FLAG_TEMP_2)
+			}
+		}
+		//Update Puzzle
+		call (AedesLux_Script_UpdatePuzzle)
+	}
+	//fin
+	closemessage
+	end
+}
 
 //Reset Scripts
 
-script AedesLux_Script_ResetPuzzle1L {
+script AedesLux_Script_ResetPuzzle1 {
     //Wanna Reset Puzzle
     msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
@@ -500,11 +745,7 @@ script AedesLux_Script_ResetPuzzle1L {
             closemessage
 			playse (SE_M_THUNDERBOLT2)
 			waitse
-            setflag (FLAG_TEMP_1)
-            clearflag (FLAG_TEMP_2)
-            clearflag (FLAG_TEMP_3)
-            setflag (FLAG_TEMP_4)
-            clearflag (FLAG_TEMP_5)
+			call (AedesLux_Script_SetupPuzzle1Flags)
             call (AedesLux_Script_DrawPuzzle1)
         }
     } else {
@@ -512,12 +753,12 @@ script AedesLux_Script_ResetPuzzle1L {
     }
 }
 
-script AedesLux_Script_ResetPuzzle1R {
+script AedesLux_Script_ResetPuzzle2 {
     //Wanna Reset Puzzle
     msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
         //Already Solved this floor's puzzle - just skip to save the headache say nah
-        if (var(VAR_TEMP_A) != 0) {
+        if (var(VAR_TEMP_A) != 1) {
 			msgbox (AedesTerra_Text_CantReset)
 			closemessage
         } else {
@@ -525,12 +766,8 @@ script AedesLux_Script_ResetPuzzle1R {
             closemessage
 			playse (SE_M_THUNDERBOLT2)
 			waitse
-			clearflag (FLAG_TEMP_6)
-			clearflag (FLAG_TEMP_7)
-			clearflag (FLAG_TEMP_8)
-			setflag (FLAG_TEMP_9)
-			setflag (FLAG_TEMP_A)
-            call (AedesLux_Script_DrawPuzzle1)
+			call (AedesLux_Script_SetupPuzzle2Flags)
+            call (AedesLux_Script_DrawPuzzle2)
         }
     } else {
         closemessage
@@ -548,7 +785,7 @@ script AedesLux_Script_UpdatePuzzle {
 		case 0:
 			call (AedesLux_Script_DrawPuzzle1)
 		case 1:
-//			call (AedesLux_Script_DrawPuzzle2) PLACEHOLDER
+		    call (AedesLux_Script_DrawPuzzle2)
 		case 2:
 //			call (AedesLux_Script_DrawPuzzle2) PLACEHOLDER
 		case 3:
@@ -570,6 +807,16 @@ script AedesLux_Script_DrawPuzzle1 {
 	call (AedesLux_Script_CheckSolvePuzzle1)
 	call (AedesLux_Script_DrawPuzzle1L)
 	call (AedesLux_Script_DrawPuzzle1R)
+    //Draw Map
+    special (DrawWholeMapView)
+	return
+}
+
+script AedesLux_Script_DrawPuzzle2 {
+	//Check Solved puzzle
+	call (AedesLux_Script_CheckSolvePuzzle2)
+	call (AedesLux_Script_DrawPuzzle2L)
+	call (AedesLux_Script_DrawPuzzle2R)
     //Draw Map
     special (DrawWholeMapView)
 	return
@@ -646,7 +893,7 @@ script AedesLux_Script_DrawPuzzle1R {
         setmetatile (19, 47, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
     }
 	//8 et 9
-	if (flag(FLAG_TEMP_7) && flag(FLAG_TEMP_8)) {
+	if (flag(FLAG_TEMP_8) && flag(FLAG_TEMP_9)) {
 		setmetatile (20, 47, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE)
         setmetatile (21, 47, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE)
         setmetatile (20, 48, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE)
@@ -673,6 +920,216 @@ script AedesLux_Script_DrawPuzzle1R {
 	return
 }
 
+script AedesLux_Script_DrawPuzzle2L {
+	//1 et 2
+    if (flag(FLAG_TEMP_1) && flag(FLAG_TEMP_2)) {
+        setmetatile (9, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE)
+        setmetatile (10, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE)
+        setmetatile (9, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE)
+        setmetatile (10, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE)
+    } else {
+        setmetatile (9, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (10, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (9, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (10, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+    }
+	//2 et 3
+	if (flag(FLAG_TEMP_2) && flag(FLAG_TEMP_3)) {
+        setmetatile (12, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE)
+        setmetatile (13, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE)
+        setmetatile (12, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE)
+        setmetatile (13, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE)
+    } else {
+        setmetatile (12, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (13, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (12, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (13, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+    }
+	//1 et 5
+	if (flag(FLAG_TEMP_1) && flag(FLAG_TEMP_5)) {
+        setmetatile (8, 31, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE)
+        setmetatile (8, 32, METATILE_MauvilleGym_Floor_ElectricV, TRUE)
+        setmetatile (8, 33, METATILE_MauvilleGym_Floor_PoleTop, TRUE)
+    } else {
+        setmetatile (8, 31, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE)
+        setmetatile (8, 32, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (8, 33, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
+    }
+	//4 et 5
+	if (flag(FLAG_TEMP_4) && flag(FLAG_TEMP_5)) {
+		setmetatile (6, 33, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE)
+        setmetatile (7, 33, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE)
+        setmetatile (6, 34, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE)
+        setmetatile (7, 34, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE)
+	} else {
+		setmetatile (6, 33, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (7, 33, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (6, 34, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (7, 34, METATILE_MauvilleGym_Floor, FALSE)
+	}
+	//4 et 6
+	if (flag(FLAG_TEMP_4) && flag(FLAG_TEMP_6)) {
+        setmetatile (5, 34, METATILE_MauvilleGym_FloorLeftShadow_Pole_Electric, TRUE)
+        setmetatile (5, 35, METATILE_MauvilleGym_FloorLeftShadow_ElectricV, TRUE)
+        setmetatile (5, 36, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, TRUE)
+    } else {
+        setmetatile (5, 34, METATILE_MauvilleGym_FloorLeftShadow_Pole, TRUE)
+        setmetatile (5, 35, METATILE_MauvilleGym_FloorLeftShadow, FALSE)
+        setmetatile (5, 36, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, FALSE)
+    }
+	//5 et 7
+	if (flag(FLAG_TEMP_5) && flag(FLAG_TEMP_7)) {
+		setmetatile (8, 34, METATILE_MauvilleGym_Floor_Pole_Electric, TRUE)
+        setmetatile (8, 35, METATILE_MauvilleGym_Floor_ElectricV, TRUE)
+        setmetatile (8, 36, METATILE_MauvilleGym_Floor_PoleTop, TRUE)
+    } else {
+        setmetatile (8, 34, METATILE_MauvilleGym_Floor_Pole, TRUE)
+        setmetatile (8, 35, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (8, 36, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
+    }
+	//6 et 7
+	if (flag(FLAG_TEMP_6) && flag(FLAG_TEMP_7)) {
+		setmetatile (6, 36, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE)
+        setmetatile (7, 36, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE)
+        setmetatile (6, 37, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE)
+        setmetatile (7, 37, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE)
+	} else {
+		setmetatile (6, 36, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (7, 36, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (6, 37, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (7, 37, METATILE_MauvilleGym_Floor, FALSE)
+	}
+	return
+}
+
+script AedesLux_Script_DrawPuzzle2R {
+	//8 et 9
+    if (flag(FLAG_TEMP_8) && flag(FLAG_TEMP_9)) {
+        setmetatile (20, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE)
+        setmetatile (21, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE)
+        setmetatile (20, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE)
+        setmetatile (21, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE)
+    } else {
+        setmetatile (20, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (21, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (20, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (21, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+    }
+	//9 et A
+	if (flag(FLAG_TEMP_8) && flag(FLAG_TEMP_9)) {
+        setmetatile (23, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE)
+        setmetatile (24, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE)
+        setmetatile (23, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE)
+        setmetatile (24, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE)
+    } else {
+        setmetatile (23, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (24, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (23, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (24, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+    }
+	//A et B
+	if (flag(FLAG_TEMP_A) && flag(FLAG_TEMP_B)) {
+        setmetatile (26, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE)
+        setmetatile (27, 30, METATILE_MauvilleGym_WallSymbol_Electric_TopRight, TRUE)
+        setmetatile (26, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE)
+        setmetatile (27, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE)
+    } else {
+        setmetatile (26, 30, METATILE_MauvilleGym_Wall, TRUE)
+        setmetatile (27, 30, METATILE_MauvilleGym_WallSymbol, TRUE)
+        setmetatile (26, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (27, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+    }
+	//A et C
+	if (flag(FLAG_TEMP_A) && flag(FLAG_TEMP_C)) {
+		setmetatile (25, 31, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE)
+		setmetatile (25, 32, METATILE_MauvilleGym_FloorLeftShadow_ElectricV, TRUE)
+		setmetatile (25, 33, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, TRUE)
+	} else {
+		setmetatile (25, 31, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE)
+		setmetatile (25, 32, METATILE_MauvilleGym_FloorLeftShadow, FALSE)
+		setmetatile (25, 33, METATILE_MauvilleGym_FloorLeftShadow_PoleTop, FALSE)
+	}
+	//B et D
+	if (flag(FLAG_TEMP_B) && flag(FLAG_TEMP_D)) {
+        setmetatile (28, 31, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE)
+        setmetatile (28, 32, METATILE_MauvilleGym_Floor_ElectricV, TRUE)
+        setmetatile (28, 33, METATILE_MauvilleGym_Floor_PoleTop, TRUE)
+    } else {
+        setmetatile (28, 31, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE)
+        setmetatile (28, 32, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (28, 33, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
+    }
+	//C et D
+	if (flag(FLAG_TEMP_C) && flag(FLAG_TEMP_D)) {
+		setmetatile (26, 33, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE)
+        setmetatile (27, 33, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE)
+        setmetatile (26, 34, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE)
+        setmetatile (27, 34, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE)
+	} else {
+		setmetatile (26, 33, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (27, 33, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (26, 34, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (27, 34, METATILE_MauvilleGym_Floor, FALSE)
+	}
+	//C et 10
+	if (flag(FLAG_TEMP_C) && flag(FLAG_TEMP_10)) {
+		setmetatile (25, 34, METATILE_MauvilleGym_FloorTopShadow_Pole_Electric, TRUE)
+		setmetatile (25, 35, METATILE_MauvilleGym_FloorLeftShadow_ElectricV, TRUE)
+		setmetatile (25, 36, METATILE_MauvilleGym_FloorCornerShadow_PoleTop, TRUE)
+	} else {
+		setmetatile (25, 34, METATILE_MauvilleGym_FloorTopShadow_Pole, TRUE)
+		setmetatile (25, 35, METATILE_MauvilleGym_FloorLeftShadow, FALSE)
+		setmetatile (25, 36, METATILE_MauvilleGym_FloorCornerShadow_PoleTop, FALSE)
+	}
+	//D et 11
+	if (flag(FLAG_TEMP_D) && flag(FLAG_TEMP_11)) {
+        setmetatile (28, 34, METATILE_MauvilleGym_Floor_Pole_Electric, TRUE)
+        setmetatile (28, 35, METATILE_MauvilleGym_Floor_ElectricV, TRUE)
+        setmetatile (28, 36, METATILE_MauvilleGym_Floor_PoleTop, TRUE)
+    } else {
+        setmetatile (28, 34, METATILE_MauvilleGym_Floor_Pole, TRUE)
+        setmetatile (28, 35, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (28, 36, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
+    }
+	//E et F
+	if (flag(FLAG_TEMP_E) && flag(FLAG_TEMP_F)) {
+		setmetatile (20, 36, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE)
+        setmetatile (21, 36, METATILE_MauvilleGym_FloorTopShadow_Electric_TopRight, FALSE)
+        setmetatile (20, 37, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE)
+        setmetatile (21, 37, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE)
+	} else {
+		setmetatile (20, 36, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (21, 36, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (20, 37, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (21, 37, METATILE_MauvilleGym_Floor, FALSE)
+	}
+	//F et 10
+	if (flag(FLAG_TEMP_F) && flag(FLAG_TEMP_10)) {
+		setmetatile (23, 36, METATILE_MauvilleGym_FloorTopShadow_Electric_TopLeft, FALSE)
+        setmetatile (24, 36, METATILE_MauvilleGym_FloorTopShadow_Electric_TopRight, FALSE)
+        setmetatile (23, 37, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE)
+        setmetatile (24, 37, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomRight, TRUE)
+	} else {
+		setmetatile (23, 36, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (24, 36, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (23, 37, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+        setmetatile (24, 37, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+	}
+	//10 et 11
+	if (flag(FLAG_TEMP_10) && flag(FLAG_TEMP_11)) {
+		setmetatile (26, 36, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE)
+        setmetatile (27, 36, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE)
+        setmetatile (26, 37, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE)
+        setmetatile (27, 37, METATILE_MauvilleGym_Floor_Electric_BottomRight, TRUE)
+	} else {
+		setmetatile (26, 36, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (27, 36, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (26, 37, METATILE_MauvilleGym_Floor, FALSE)
+        setmetatile (27, 37, METATILE_MauvilleGym_Floor, FALSE)
+	}
+	return
+}
+
 //Check Solve Puzzle Scripts - Changing to all poles activated
 script AedesLux_Script_CheckSolvePuzzle1 {
 	//Check all poles are setup
@@ -688,6 +1145,31 @@ script AedesLux_Script_CheckSolvePuzzle1 {
 			flag(FLAG_TEMP_A)) {
 		//This var will fire the Show Solve Puzzle X script ON_FRAME
 		setvar (VAR_TEMP_B, 1)
+	}
+	return
+}
+
+script AedesLux_Script_CheckSolvePuzzle2 {
+	//Check all poles are setup
+	if (flag(FLAG_TEMP_1) && 
+			flag(FLAG_TEMP_2) && 
+			flag(FLAG_TEMP_3) && 
+			flag(FLAG_TEMP_4) && 
+			flag(FLAG_TEMP_5) && 
+			flag(FLAG_TEMP_6) && 
+			flag(FLAG_TEMP_7) && 
+			flag(FLAG_TEMP_8) && 
+			flag(FLAG_TEMP_9) && 
+			flag(FLAG_TEMP_A) && 
+			flag(FLAG_TEMP_B) && 
+			flag(FLAG_TEMP_C) && 
+			flag(FLAG_TEMP_D) && 
+			flag(FLAG_TEMP_E) && 
+			flag(FLAG_TEMP_F) && 
+			flag(FLAG_TEMP_10) && 
+			flag(FLAG_TEMP_11)) {
+		//This var will fire the Show Solve Puzzle X script ON_FRAME
+		setvar (VAR_TEMP_B, 2)
 	}
 	return
 }
@@ -739,4 +1221,8 @@ text AedesLux_Text_PoleOff {
 
 text AedesLux_Text_PoleDanger {
 	format("This seems dangerous. Better leave it alone for now!")
+}
+
+text AedesLux_Text_PoleCompleted {
+	format("The switch seems stuck in place.")
 }
