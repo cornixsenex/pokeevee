@@ -30,6 +30,8 @@ mapscripts AedesLux_1F_MapScripts {
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_TEMP_B, 1: AedesLux_Script_SolvedPuzzle
+		VAR_TEMP_B, 2: AedesLux_Script_SolvedPuzzle
+		VAR_TEMP_B, 3: AedesLux_Script_SolvedPuzzle
 	]
 
 }
@@ -49,7 +51,7 @@ script AedesLux_Script_SolvedPuzzle {
 			msgbox ("ERROR VAR_TEMP_B = 0")
 			closemessage
 			end
-		case 1:
+		case 1: //Finish Puzzle 1
 			//open ladder
 			setmetatile (16, 40, METATILE_MauvilleGym_StairsL, FALSE)
 			setmetatile (17, 40, METATILE_MauvilleGym_StairsR, FALSE)
@@ -63,10 +65,21 @@ script AedesLux_Script_SolvedPuzzle {
 			call (AedesLux_Script_SetupPuzzle2Flags)
 			//setup Var_A for next puzzle
 			setvar (VAR_TEMP_A, 1)
-		case 2:
-			//Finish Puzzle 2
-		case 3:
-			//Finish Puzzle 3
+		case 2: //Finish Puzzle 2
+			//open ladder
+			setmetatile (16, 29, METATILE_MauvilleGym_StairsL, FALSE)
+			setmetatile (17, 29, METATILE_MauvilleGym_StairsR, FALSE)
+			setmetatile (16, 30, METATILE_MauvilleGym_StairsL, FALSE)
+			setmetatile (17, 30, METATILE_MauvilleGym_StairsR, FALSE)
+			setmetatile (16, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+			setmetatile (17, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
+			//Show open ladder
+			special (DrawWholeMapView)
+			//setup flags for next puzzle
+			call (AedesLux_Script_SetupPuzzle3Flags)
+			//setup Var_A for next puzzle
+			setvar (VAR_TEMP_A, 2)
+		case 3: //Finish Puzzle 3
 		default:
 			msgbox ("ERROR VAR_TEMP_B OOB")
 			closemessage
@@ -101,6 +114,48 @@ script AedesLux_Script_SetupPuzzle2Flags {
 	return
 }
 
+script AedesLux_Script_SetupPuzzle3Flags {
+    call (AedesLux_Script_SetupPuzzle3LFlags)
+    call (AedesLux_Script_SetupPuzzle3RFlags)
+    return
+}
+
+script AedesLux_Script_SetupPuzzle3LFlags {
+    //clear L flags
+    clearflag (FLAG_TEMP_1)
+    clearflag (FLAG_TEMP_2)
+    clearflag (FLAG_TEMP_3)
+    clearflag (FLAG_TEMP_4)
+    clearflag (FLAG_TEMP_5)
+    clearflag (FLAG_TEMP_6)
+    clearflag (FLAG_TEMP_7)
+    clearflag (FLAG_TEMP_8)
+    clearflag (FLAG_TEMP_9)
+    //set L flags
+    setflag (FLAG_TEMP_2)
+    setflag (FLAG_TEMP_4)
+    setflag (FLAG_TEMP_5)
+    setflag (FLAG_TEMP_6)
+    setflag (FLAG_TEMP_7)
+	return
+}
+
+script AedesLux_Script_SetupPuzzle3RFlags {
+    //clear R flags
+    clearflag (FLAG_TEMP_A)
+    clearflag (FLAG_TEMP_B)
+    clearflag (FLAG_TEMP_C)
+    clearflag (FLAG_TEMP_D)
+    clearflag (FLAG_TEMP_E)
+    clearflag (FLAG_TEMP_F)
+    clearflag (FLAG_TEMP_10)
+    clearflag (FLAG_TEMP_11)
+    clearflag (FLAG_TEMP_12)
+    //set R flags
+    setflag (FLAG_TEMP_A)
+    setflag (FLAG_TEMP_D)
+	return
+}
 
 //Pole Scripts
 
@@ -1434,6 +1489,10 @@ script AedesLux_Script_Puzzle2R_Pole11 {
 	end
 }
 
+//3L
+
+//3R
+
 //Reset Scripts
 
 script AedesLux_Script_ResetPuzzle1 {
@@ -1478,6 +1537,48 @@ script AedesLux_Script_ResetPuzzle2 {
     }
 }
 
+script AedesLux_Script_ResetPuzzle3L {
+    //Wanna Reset Puzzle
+    msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        //Already Solved this floor's puzzle - just skip to save the headache say nah
+        if (var(VAR_TEMP_A) != 2) {
+			msgbox (AedesTerra_Text_CantReset)
+			closemessage
+        } else {
+            //Reset Puzzle
+            closemessage
+			playse (SE_M_THUNDERBOLT2)
+			waitse
+			call (AedesLux_Script_SetupPuzzle3LFlags)
+            call (AedesLux_Script_DrawPuzzle3)
+        }
+    } else {
+        closemessage
+    }
+}
+
+script AedesLux_Script_ResetPuzzle3R {
+    //Wanna Reset Puzzle
+    msgbox (AedesTerra_Text_ResetPuzzle, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        //Already Solved this floor's puzzle - just skip to save the headache say nah
+        if (var(VAR_TEMP_A) != 2) {
+			msgbox (AedesTerra_Text_CantReset)
+			closemessage
+        } else {
+            //Reset Puzzle
+            closemessage
+			playse (SE_M_THUNDERBOLT2)
+			waitse
+			call (AedesLux_Script_SetupPuzzle3RFlags)
+            call (AedesLux_Script_DrawPuzzle3)
+        }
+    } else {
+        closemessage
+    }
+}
+
 //Update Puzzle Script - Just save retyping the playse really
 script AedesLux_Script_UpdatePuzzle {
 	//play sound
@@ -1491,7 +1592,7 @@ script AedesLux_Script_UpdatePuzzle {
 		case 1:
 		    call (AedesLux_Script_DrawPuzzle2)
 		case 2:
-//			call (AedesLux_Script_DrawPuzzle2) PLACEHOLDER
+			call (AedesLux_Script_DrawPuzzle3)
 		case 3:
 				msgbox("ERROR VAR_TEMP_A = 3")
 				closemessage
@@ -1526,6 +1627,15 @@ script AedesLux_Script_DrawPuzzle2 {
 	return
 }
 
+script AedesLux_Script_DrawPuzzle3 {
+	//Check Solved puzzle
+	call (AedesLux_Script_CheckSolvePuzzle3)
+	call (AedesLux_Script_DrawPuzzle3L)
+	call (AedesLux_Script_DrawPuzzle3R)
+    //Draw Map
+    special (DrawWholeMapView)
+	return
+}
 //For Every possible combination check if the flags are set, if they are show electricity, else show base
 script AedesLux_Script_DrawPuzzle1L {
     //1 et 2
@@ -1720,7 +1830,7 @@ script AedesLux_Script_DrawPuzzle2R {
         setmetatile (21, 31, METATILE_MauvilleGym_FloorTopShadow, FALSE)
     }
 	//9 et A
-	if (flag(FLAG_TEMP_8) && flag(FLAG_TEMP_9)) {
+	if (flag(FLAG_TEMP_9) && flag(FLAG_TEMP_A)) {
         setmetatile (23, 30, METATILE_MauvilleGym_Wall_Electric_TopLeft, TRUE)
         setmetatile (24, 30, METATILE_MauvilleGym_Wall_Electric_TopRight, TRUE)
         setmetatile (23, 31, METATILE_MauvilleGym_FloorTopShadow_Electric_BottomLeft, TRUE)
@@ -1834,6 +1944,16 @@ script AedesLux_Script_DrawPuzzle2R {
 	return
 }
 
+script AedesLux_Script_DrawPuzzle3L {
+
+    return
+}
+
+script AedesLux_Script_DrawPuzzle3R {
+
+    return
+}
+
 //Check Solve Puzzle Scripts - Changing to all poles activated
 script AedesLux_Script_CheckSolvePuzzle1 {
 	//Check all poles are setup
@@ -1855,25 +1975,53 @@ script AedesLux_Script_CheckSolvePuzzle1 {
 
 script AedesLux_Script_CheckSolvePuzzle2 {
 	//Check all poles are setup
-	if (flag(FLAG_TEMP_1) && 
-			flag(FLAG_TEMP_2) && 
-			flag(FLAG_TEMP_3) && 
-			flag(FLAG_TEMP_4) && 
-			flag(FLAG_TEMP_5) && 
-			flag(FLAG_TEMP_6) && 
-			flag(FLAG_TEMP_7) && 
-			flag(FLAG_TEMP_8) && 
-			flag(FLAG_TEMP_9) && 
-			flag(FLAG_TEMP_A) && 
-			flag(FLAG_TEMP_B) && 
-			flag(FLAG_TEMP_C) && 
-			flag(FLAG_TEMP_D) && 
-			flag(FLAG_TEMP_E) && 
-			flag(FLAG_TEMP_F) && 
-			flag(FLAG_TEMP_10) && 
-			flag(FLAG_TEMP_11)) {
+	if (flag(FLAG_TEMP_1)  && 
+        flag(FLAG_TEMP_2)  && 
+        flag(FLAG_TEMP_3)  && 
+        flag(FLAG_TEMP_4)  && 
+        flag(FLAG_TEMP_5)  && 
+        flag(FLAG_TEMP_6)  && 
+        flag(FLAG_TEMP_7)  && 
+        flag(FLAG_TEMP_8)  && 
+        flag(FLAG_TEMP_9)  && 
+        flag(FLAG_TEMP_A)  && 
+        flag(FLAG_TEMP_B)  && 
+        flag(FLAG_TEMP_C)  && 
+        flag(FLAG_TEMP_D)  && 
+        flag(FLAG_TEMP_E)  && 
+        flag(FLAG_TEMP_F)  && 
+        flag(FLAG_TEMP_10) && 
+        flag(FLAG_TEMP_11)
+        ) {
 		//This var will fire the Show Solve Puzzle X script ON_FRAME
 		setvar (VAR_TEMP_B, 2)
+	}
+	return
+}
+
+script AedesLux_Script_CheckSolvePuzzle3 {
+	//Check all poles are setup
+	if (flag(FLAG_TEMP_1)  && 
+        flag(FLAG_TEMP_2)  && 
+        flag(FLAG_TEMP_3)  && 
+        flag(FLAG_TEMP_4)  && 
+        flag(FLAG_TEMP_5)  && 
+        flag(FLAG_TEMP_6)  && 
+        flag(FLAG_TEMP_7)  && 
+        flag(FLAG_TEMP_8)  && 
+        flag(FLAG_TEMP_9)  && 
+        flag(FLAG_TEMP_A)  && 
+        flag(FLAG_TEMP_B)  && 
+        flag(FLAG_TEMP_C)  && 
+        flag(FLAG_TEMP_D)  && 
+        flag(FLAG_TEMP_E)  && 
+        flag(FLAG_TEMP_F)  && 
+        flag(FLAG_TEMP_10) && 
+        flag(FLAG_TEMP_11) && 
+        flag(FLAG_TEMP_12)
+        ) {
+		//This var will fire the Show Solve Puzzle X script ON_FRAME
+		setvar (VAR_TEMP_B, 3)
 	}
 	return
 }
@@ -1900,10 +2048,6 @@ script AedesLux_Script_ClearAllFlags {
 	clearflag (FLAG_TEMP_13)
 	clearflag (FLAG_TEMP_14)
 	clearflag (FLAG_TEMP_15)
-	clearflag (FLAG_TEMP_16)
-	clearflag (FLAG_TEMP_17)
-	clearflag (FLAG_TEMP_18)
-	clearflag (FLAG_TEMP_19)
 	return
 }
 

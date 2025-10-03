@@ -215,6 +215,70 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "AedesLux_Script_Puzzle2R_Pole9"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_PoleA"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_PoleB"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_PoleC"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_PoleD"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_PoleE"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_PoleF"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_Pole10"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Puzzle2R_Pole11"
     }
   ]
 }
