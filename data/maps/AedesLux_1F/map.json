@@ -279,6 +279,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "AedesLux_Script_Puzzle2R_Pole11"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_ResetPuzzle3L"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_ResetPuzzle3R"
     }
   ]
 }
