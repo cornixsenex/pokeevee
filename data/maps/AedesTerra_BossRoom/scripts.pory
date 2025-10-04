@@ -72,6 +72,7 @@ script AedesTerra_BossRoom_Script_Trivis {
 	fadescreenswapbuffers (FADE_FROM_WHITE)
 	//give item
 	giveitem (ITEM_TRIVIS_POTESTATIS)
+    closemessage
 	//setflag
 	setflag (FLAG_AEDESTERRA_TRIVIS)
 }

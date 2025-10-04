@@ -3,6 +3,8 @@ AedesAqua_Hallways_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_TRANSITION
 # 18 "data/maps/AedesAqua_Hallways/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_LOAD
+# 130 "data/maps/AedesAqua_Hallways/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_RESUME
 	.byte 0
 
 AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -265,210 +267,222 @@ AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_LOAD_34:
 	setmetatile 31, 22, METATILE_Cave_CaveFloorBottom, FALSE
 	return
 
+AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_RESUME:
+# 132 "data/maps/AedesAqua_Hallways/scripts.pory"
+	goto_if_set FLAG_SYS_CTRL_OBJ_DELETE, AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_RESUME_1
+	return
+
+AedesAqua_Hallways_MapScripts_MAP_SCRIPT_ON_RESUME_1:
+# 133 "data/maps/AedesAqua_Hallways/scripts.pory"
+	hideobjectat LOCALID_AEDESAQUA_HALLWAYS_LINK, MAP_AEDES_AQUA_HALLWAYS
+# 134 "data/maps/AedesAqua_Hallways/scripts.pory"
+	removeobject LOCALID_AEDESAQUA_HALLWAYS_LINK
+	return
+
 
 AedesAqua_Hallways_TryHideMap::
-# 133 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 140 "data/maps/AedesAqua_Hallways/scripts.pory"
 	checkitem ITEM_TRIVIS_MAP
-# 134 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 141 "data/maps/AedesAqua_Hallways/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq AedesAqua_Hallways_TryHideMap_2
 AedesAqua_Hallways_TryHideMap_1:
 	return
 
 AedesAqua_Hallways_TryHideMap_2:
-# 135 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 142 "data/maps/AedesAqua_Hallways/scripts.pory"
 	removeobject LOCALID_AEDESAQUA_HALLWAYS_MAP
-# 136 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 143 "data/maps/AedesAqua_Hallways/scripts.pory"
 	setobjectxyperm LOCALID_AEDESAQUA_HALLWAYS_MAP, 0, 0
-# 137 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 144 "data/maps/AedesAqua_Hallways/scripts.pory"
 	setobjectmovementtype LOCALID_AEDESAQUA_HALLWAYS_MAP, MOVEMENT_TYPE_INVISIBLE
 	goto AedesAqua_Hallways_TryHideMap_1
 
 
 AedesAqua_Hallways_Script_LinkMessage::
-# 144 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 151 "data/maps/AedesAqua_Hallways/scripts.pory"
 	msgbox AedesAqua_Text_LinkMessage, MSGBOX_YESNO
-# 145 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 152 "data/maps/AedesAqua_Hallways/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq AedesAqua_Hallways_Script_LinkMessage_1
-# 148 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 155 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
 	return
 
 AedesAqua_Hallways_Script_LinkMessage_1:
-# 146 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 153 "data/maps/AedesAqua_Hallways/scripts.pory"
 	warpsilent MAP_AEDES_AQUA, 31, 59
 	return
 
 
 AedesAqua_Hallways_Script_TriggerLinkA::
-# 154 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 161 "data/maps/AedesAqua_Hallways/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight3
-# 155 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 162 "data/maps/AedesAqua_Hallways/scripts.pory"
 	waitmovement 0
-# 157 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 164 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call AedesAqua_Hallways_Script_LinkScene
 	return
 
 
 AedesAqua_Hallways_Script_TriggerLinkB::
-# 162 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 169 "data/maps/AedesAqua_Hallways/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight2
-# 163 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 170 "data/maps/AedesAqua_Hallways/scripts.pory"
 	waitmovement 0
-# 165 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 172 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call AedesAqua_Hallways_Script_LinkScene
 	return
 
 
 AedesAqua_Hallways_Script_TriggerLinkC::
-# 170 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 177 "data/maps/AedesAqua_Hallways/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 171 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 178 "data/maps/AedesAqua_Hallways/scripts.pory"
 	waitmovement 0
-# 173 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 180 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call AedesAqua_Hallways_Script_LinkScene
 	return
 
 
 AedesAqua_Hallways_Script_TriggerLinkD::
-# 178 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 185 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call AedesAqua_Hallways_Script_LinkScene
 	return
 
 
 AedesAqua_Hallways_Script_TriggerLinkE::
-# 183 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 190 "data/maps/AedesAqua_Hallways/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
-# 184 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 191 "data/maps/AedesAqua_Hallways/scripts.pory"
 	waitmovement 0
-# 186 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 193 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call AedesAqua_Hallways_Script_LinkScene
 	return
 
 
 AedesAqua_Hallways_Script_TriggerLinkF::
-# 191 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 198 "data/maps/AedesAqua_Hallways/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft2
-# 192 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 199 "data/maps/AedesAqua_Hallways/scripts.pory"
 	waitmovement 0
-# 194 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 201 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call AedesAqua_Hallways_Script_LinkScene
 	return
 
 
 AedesAqua_Hallways_Script_TriggerLinkG::
-# 199 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 206 "data/maps/AedesAqua_Hallways/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft3
-# 200 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 207 "data/maps/AedesAqua_Hallways/scripts.pory"
 	waitmovement 0
-# 202 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 209 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call AedesAqua_Hallways_Script_LinkScene
 	return
 
 
 AedesAqua_Hallways_Script_LinkScene::
-# 207 "data/maps/AedesAqua_Hallways/scripts.pory"
-	setvar VAR_TEMP_6, 0
-# 209 "data/maps/AedesAqua_Hallways/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
-# 210 "data/maps/AedesAqua_Hallways/scripts.pory"
-	waitmovement 0
-# 212 "data/maps/AedesAqua_Hallways/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 214 "data/maps/AedesAqua_Hallways/scripts.pory"
-	trainerbattle_no_intro TRAINER_LINK, AedesAqua_MiniBossRoom_Text_DarkBrendanLost
+	setvar VAR_TEMP_6, 0
 # 216 "data/maps/AedesAqua_Hallways/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
 # 217 "data/maps/AedesAqua_Hallways/scripts.pory"
-	removeobject LOCALID_AEDESAQUA_HALLWAYS_LINK
-# 218 "data/maps/AedesAqua_Hallways/scripts.pory"
-	setobjectxyperm LOCALID_AEDESAQUA_HALLWAYS_LINK, 0, 0
+	waitmovement 0
 # 219 "data/maps/AedesAqua_Hallways/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 221 "data/maps/AedesAqua_Hallways/scripts.pory"
+	trainerbattle_no_intro TRAINER_LINK, AedesAqua_MiniBossRoom_Text_DarkBrendanLost
+# 223 "data/maps/AedesAqua_Hallways/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 224 "data/maps/AedesAqua_Hallways/scripts.pory"
+	removeobject LOCALID_AEDESAQUA_HALLWAYS_LINK
+# 225 "data/maps/AedesAqua_Hallways/scripts.pory"
+	setobjectxyperm LOCALID_AEDESAQUA_HALLWAYS_LINK, 0, 0
+# 226 "data/maps/AedesAqua_Hallways/scripts.pory"
 	setobjectmovementtype LOCALID_AEDESAQUA_HALLWAYS_LINK, MOVEMENT_TYPE_INVISIBLE
-# 220 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 227 "data/maps/AedesAqua_Hallways/scripts.pory"
 	addobject LOCALID_AEDESAQUA_HALLWAYS_LINK
 	end
 
 
 AedesAqua_Hallways_Script_Map::
-# 225 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 232 "data/maps/AedesAqua_Hallways/scripts.pory"
 	removeobject LOCALID_AEDESAQUA_HALLWAYS_MAP
-# 226 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 233 "data/maps/AedesAqua_Hallways/scripts.pory"
 	setobjectxyperm LOCALID_AEDESAQUA_HALLWAYS_MAP, 0, 0
-# 227 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 234 "data/maps/AedesAqua_Hallways/scripts.pory"
 	setobjectmovementtype LOCALID_AEDESAQUA_HALLWAYS_MAP, MOVEMENT_TYPE_INVISIBLE
-# 228 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 235 "data/maps/AedesAqua_Hallways/scripts.pory"
 	addobject LOCALID_AEDESAQUA_HALLWAYS_MAP
-# 229 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 236 "data/maps/AedesAqua_Hallways/scripts.pory"
 	giveitem ITEM_TRIVIS_MAP
-# 230 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 237 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
 	return
 
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8::
-# 234 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 241 "data/maps/AedesAqua_Hallways/scripts.pory"
 	giveitem ITEM_TRIVIS_SHARD8
-# 235 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 242 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
-# 236 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 243 "data/maps/AedesAqua_Hallways/scripts.pory"
 	goto_if_set FLAG_TRIVIS_SHARD_2, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_4
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1:
-# 246 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 253 "data/maps/AedesAqua_Hallways/scripts.pory"
 	setflag FLAG_TRIVIS_SHARD_8
 	return
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_2:
-# 244 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 251 "data/maps/AedesAqua_Hallways/scripts.pory"
 	call LakeIra_Script_GiveTrivisFortitudinis
 	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_3:
-# 238 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 245 "data/maps/AedesAqua_Hallways/scripts.pory"
 	goto_if_set FLAG_TRIVIS_SHARD_4, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_8
 	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_4:
-# 237 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 244 "data/maps/AedesAqua_Hallways/scripts.pory"
 	goto_if_set FLAG_TRIVIS_SHARD_3, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_3
 	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_7:
-# 240 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 247 "data/maps/AedesAqua_Hallways/scripts.pory"
 	goto_if_set FLAG_TRIVIS_SHARD_6, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_12
 	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_8:
-# 239 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 246 "data/maps/AedesAqua_Hallways/scripts.pory"
 	goto_if_set FLAG_TRIVIS_SHARD_5, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_7
 	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_11:
-# 242 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 249 "data/maps/AedesAqua_Hallways/scripts.pory"
 	goto_if_set FLAG_TRIVIS_SHARD_1, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_2
 	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
 
 AedesAqua_Hallways_SunkenTreasure_TrivisShard8_12:
-# 241 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 248 "data/maps/AedesAqua_Hallways/scripts.pory"
 	goto_if_set FLAG_TRIVIS_SHARD_7, AedesAqua_Hallways_SunkenTreasure_TrivisShard8_11
 	goto AedesAqua_Hallways_SunkenTreasure_TrivisShard8_1
 
 
 EventScript_SunkenTreasure_Error::
-# 250 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 257 "data/maps/AedesAqua_Hallways/scripts.pory"
 	msgbox EventScript_SunkenTreasure_Error_Text_0
-# 251 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 258 "data/maps/AedesAqua_Hallways/scripts.pory"
 	closemessage
 	end
 
 
 EventScript_SunkenTreasure_Error_Text_0:
-# 250 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 257 "data/maps/AedesAqua_Hallways/scripts.pory"
 	.string "ERROR:\ntask->tFishingRod OOB\p$"
 
 AedesAqua_Text_LinkMessage::
-# 255 "data/maps/AedesAqua_Hallways/scripts.pory"
+# 262 "data/maps/AedesAqua_Hallways/scripts.pory"
 	.string "The golden power which you seek\n"
 	.string "Is not for anyone to keep.\p"
 	.string "Too dangerous to leave alone,\n"

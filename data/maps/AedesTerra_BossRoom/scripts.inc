@@ -97,29 +97,31 @@ AedesTerra_BossRoom_Script_Trivis::
 	fadescreenswapbuffers FADE_FROM_WHITE
 # 74 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	giveitem ITEM_TRIVIS_POTESTATIS
-# 76 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 75 "data/maps/AedesTerra_BossRoom/scripts.pory"
+	closemessage
+# 77 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	setflag FLAG_AEDESTERRA_TRIVIS
 	return
 
 
 AedesTerra_BossRoom_Script_WarpSign::
-# 80 "data/maps/AedesTerra_BossRoom/scripts.pory"
-	msgbox AedesTerra_BossRoom_Text_WarpSign, MSGBOX_YESNO
 # 81 "data/maps/AedesTerra_BossRoom/scripts.pory"
+	msgbox AedesTerra_BossRoom_Text_WarpSign, MSGBOX_YESNO
+# 82 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq AedesTerra_BossRoom_Script_WarpSign_1
-# 84 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 85 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	closemessage
 	return
 
 AedesTerra_BossRoom_Script_WarpSign_1:
-# 82 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 83 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	warpsilent MAP_AEDES_TERRA, 33, 43
 	return
 
 
 AedesTerra_BossRoom_Text_GanondorfPre::
-# 88 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 89 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	.string "You foolish child! You opened the path\n"
 	.string "to the sacred power the green hero\l"
 	.string "sealed here. Now all that's left for me\l"
@@ -127,15 +129,15 @@ AedesTerra_BossRoom_Text_GanondorfPre::
 	.string "myself.$"
 
 AedesTerra_BossRoom_Text_GanondorfLost::
-# 96 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 97 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	.string "Impossible! Victory was so close!$"
 
 AedesTerra_BossRoom_Text_Trivis::
-# 101 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 102 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	.string "The golden triangle begins glowing\n"
 	.string "brightly as you approach.$"
 
 AedesTerra_BossRoom_Text_WarpSign::
-# 105 "data/maps/AedesTerra_BossRoom/scripts.pory"
+# 106 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	.string "Would you like to return to the\n"
 	.string "beginning of the temple?$"

@@ -127,6 +127,13 @@ mapscripts AedesAqua_Hallways_MapScripts {
         }
     }
 
+    MAP_SCRIPT_ON_RESUME {
+        //Hide Link on return from battle
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+            hideobjectat (LOCALID_AEDESAQUA_HALLWAYS_LINK, MAP_AEDES_AQUA_HALLWAYS)
+            removeobject (LOCALID_AEDESAQUA_HALLWAYS_LINK)
+        }
+    }
 }
 
 script AedesAqua_Hallways_TryHideMap {

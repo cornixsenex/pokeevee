@@ -9,13 +9,15 @@ mapscripts AedesTrivis_MapScripts {
 		if (var(VAR_ORESTES_STATE) == 3) {
 			call (AedesTrivis_Script_ShowDuringTrivisQuest)
 		}
-		//After Slowking Revealed
+        //Check return with 3 Trivis
+        call (AedesTrivis_Script_CheckTrivisComplete)
+		//After Slowking Revealed = ORESTES 5 / After Trivis Complete Scene
 	}
 
 
-	MAP_SCRIPT_ON_LOAD {
+	MAP_SCRIPT_ON_LOAD { // After Trivis Complete Scene
 		//Hide Triforce on floor
-		if (var(VAR_ORESTES_STATE) < 69) {
+		if (var(VAR_ORESTES_STATE) < 5) {
 			call (AedesTrivis_Script_HideTriforceFloor)
 		}
 
@@ -23,6 +25,7 @@ mapscripts AedesTrivis_MapScripts {
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_ORESTES_STATE, 2: AedesTrivis_Script_OrestesSageScene
+		VAR_ORESTES_STATE, 4: AedesTrivis_Script_TrivisCompleteScene
 	]
 
 }
@@ -175,6 +178,31 @@ script AedesTrivis_Script_HideTriforceFloor {
 	return
 }
 
+script AedesTrivis_Script_CheckTrivisComplete {
+	checkitem (ITEM_TRIVIS_FORTITUDINIS)
+    if (var(VAR_RESULT) == YES) {
+        checkitem (ITEM_TRIVIS_SAPIENTIAE)
+        if (var(VAR_RESULT) == YES) {
+            checkitem (ITEM_TRIVIS_POTESTATIS)
+            if (var(VAR_RESULT) == YES) {
+                call (AedesTrivis_Script_SetupTrivisComplete)
+            }
+        }
+    }
+    return
+}
+
+script AedesTrivis_Script_SetupTrivisComplete {
+    //setup objects
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SAGE, 12, 10)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_LEFT)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 10, 10)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_FACE_RIGHT)
+    //set var to trigger On Frame scene
+    setvar (VAR_ORESTES_STATE, 4)
+
+}
+
 script AedesTrivis_Script_Orestes {
 	//Only possible to talk to him here during Trivis Quest
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
@@ -194,18 +222,6 @@ script AedesTrivis_Script_Sage {
 		} else {
 			msgbox (AedesTrivis_Text_SageDuringQuest)
 		}
-		//check if you have all trivis pieces
-        checkitem (ITEM_TRIVIS_POTESTATIS, 1)
-        if (var(VAR_RESULT) == TRUE) {
-            checkitem (ITEM_TRIVIS_SAPIENTIAE)
-            if (var(VAR_RESULT) == TRUE) {
-                checkitem (ITEM_TRIVIS_FORTITUDINIS)
-                if (var(VAR_RESULT) == TRUE) {
-                    //if so do complete quest et reveal slowking
-                    call (AedesTrivis_Script_TrivisScene)
-                }
-            }
-        }
 		//else fin
 		closemessage
 		destroy_field_pic (FIELD_PIC_SAGE)
@@ -273,7 +289,10 @@ script AedesTrivis_Script_OrestesSageScene {
 	end
 }
 
-script AedesTrivis_Script_TrivisScene {
+script AedesTrivis_Script_TrivisCompleteScene {
+    //Player approach
+    //Alert player
+    //The two of them arguing
     //alert sage
     //S: You've returned with the trivis! Please let me see
     //Give items to Sage
@@ -299,7 +318,8 @@ script AedesTrivis_Script_TrivisScene {
     //Give Kings rock (?)
     //SK: That will let you raise a SK of your own, tho yours will not have as strong divine connection as I have. - Please return to see your future (or whatever I decide to have SK do)
     //NOTE: SK should only read futures on a re-entry not this initial episode
-    //set vars? 
+    //set vars
+    setvar (VAR_ORESTES_STATE, 5)
     //release
 }
 

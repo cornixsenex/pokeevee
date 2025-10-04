@@ -29,8 +29,12 @@
 
 mapscripts AedesLux_1F_MapScripts {
 
-
     MAP_SCRIPT_ON_TRANSITION {
+        //Try Hide Trivis
+        if (flag(FLAG_AEDESLUX_TRIVIS)) {
+            setobjectxyperm (LOCALID_AEDESLUX_TRIVIS, 0, 0)
+            setobjectmovementtype (LOCALID_AEDESLUX_TRIVIS, MOVEMENT_TYPE_INVISIBLE)
+        }
         //Setup Sheik if not defeated
         if (!defeated(TRAINER_SHEIK)) {
             setvar (VAR_TEMP_C, 1)
@@ -49,12 +53,33 @@ mapscripts AedesLux_1F_MapScripts {
         }
     }
 
+    MAP_SCRIPT_ON_RESUME {
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+            if (defeated(TRAINER_ZELDA)) {
+                hideobjectat (LOCALID_AEDESLUX_ZELDA, MAP_AEDES_LUX_1F)
+                removeobject (LOCALID_AEDESLUX_ZELDA)
+            } else {
+                hideobjectat (LOCALID_AEDESLUX_SHEIK, MAP_AEDES_LUX_1F)
+                removeobject (LOCALID_AEDESLUX_SHEIK)
+            }
+        }
+    }
+
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_TEMP_B, 1: AedesLux_Script_SolvedPuzzle
 		VAR_TEMP_B, 2: AedesLux_Script_SolvedPuzzle
 		VAR_TEMP_B, 3: AedesLux_Script_SolvedPuzzle
 	]
 
+}
+
+script AedesLux_Script_Warp {
+	msgbox (AedesTerra_BossRoom_Text_WarpSign, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		warpsilent (MAP_AEDES_LUX_1F, 17, 47)
+	} else {
+		closemessage
+	}
 }
 
 //Sheik Scripts
@@ -70,17 +95,6 @@ script AedesLux_Script_SheikStairSceneR {
     removeobject (LOCALID_AEDESLUX_SHEIK)
     setobjectxyperm  (LOCALID_AEDESLUX_SHEIK, 17, 36)
     setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_FACE_DOWN)
-    addobject (LOCALID_AEDESLUX_SHEIK)
-    //fade in
-    fadescreenswapbuffers (FADE_FROM_BLACK)
-    //wait
-    delay (40)
-    //fade out
-    fadescreenswapbuffers (FADE_TO_BLACK)
-    //hide shiek
-    removeobject (LOCALID_AEDESLUX_SHEIK)
-    setobjectxyperm  (LOCALID_AEDESLUX_SHEIK, 0, 0)
-    setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_INVISIBLE)
     addobject (LOCALID_AEDESLUX_SHEIK)
     //fade in
     fadescreenswapbuffers (FADE_FROM_BLACK)
@@ -107,8 +121,20 @@ script AedesLux_Script_SheikStairSceneL {
     addobject (LOCALID_AEDESLUX_SHEIK)
     //fade in
     fadescreenswapbuffers (FADE_FROM_BLACK)
-    //wait
-    delay (40)
+    //setvar
+    setvar (VAR_TEMP_C, 2)
+    //fin
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    releaseall
+    end
+}
+
+script AedesLux_Script_HideSheikStairs {
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    lockall
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
     //fade out
     fadescreenswapbuffers (FADE_TO_BLACK)
     //hide shiek
@@ -119,7 +145,7 @@ script AedesLux_Script_SheikStairSceneL {
     //fade in
     fadescreenswapbuffers (FADE_FROM_BLACK)
     //setvar
-    setvar (VAR_TEMP_C, 2)
+    setvar (VAR_TEMP_C, 3)
     //fin
     clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
     releaseall
@@ -238,6 +264,7 @@ script AedesLux_Script_Trivis {
 	giveitem (ITEM_TRIVIS_SAPIENTIAE)
 	//setflag
 	setflag (FLAG_AEDESLUX_TRIVIS)
+    closemessage
 }
 
 script AedesLux_Script_SolvedPuzzle {
@@ -3300,7 +3327,7 @@ script AedesLux_Script_DrawPuzzle3R {
         setmetatile (19, 25, METATILE_MauvilleGym_Floor_PoleTop, FALSE)
     }
 	//D et E
-	if (flag(FLAG_TEMP_D) && flag(FLAG_TEMP_D)) {
+	if (flag(FLAG_TEMP_D) && flag(FLAG_TEMP_E)) {
         setmetatile (20, 22, METATILE_MauvilleGym_Floor_Electric_TopLeft, FALSE)
         setmetatile (21, 22, METATILE_MauvilleGym_Floor_Electric_TopRight, FALSE)
         setmetatile (20, 23, METATILE_MauvilleGym_Floor_Electric_BottomLeft, TRUE)
@@ -3509,9 +3536,12 @@ text AedesLux_Text_PoleCompleted {
 }
 
 text AedesLux_Text_ZeldaPre {
-    format("")
+    format("I am Zelda, the princess of Hyrule.
+            The Green Hero trusted me to protect
+            the Trivis Sapientiae. You will
+            never take it, as long as I draw breath!")
 }
 
 text AedesLux_Text_ZeldaLost {
-    format("")
+    format("I am beaten...Hyrule, I have failed you...")
 }

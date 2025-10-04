@@ -134,8 +134,44 @@
       "y": 32,
       "elevation": 0,
       "var": "VAR_TEMP_C",
-      "var_value": "2",
+      "var_value": "3",
       "script": "AedesLux_Script_SheikBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 39,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "2",
+      "script": "AedesLux_Script_HideSheikStairs"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "2",
+      "script": "AedesLux_Script_HideSheikStairs"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "2",
+      "script": "AedesLux_Script_HideSheikStairs"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 39,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "2",
+      "script": "AedesLux_Script_HideSheikStairs"
     }
   ],
   "bg_events": [
@@ -546,6 +582,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "AedesLux_Script_Puzzle3R_Pole12"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AedesLux_Script_Warp"
     }
   ]
 }

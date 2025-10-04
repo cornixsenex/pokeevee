@@ -117,6 +117,8 @@
 																// 1: After Orestes on Bridge - Trigger Orestes Walk Scene
 																// 2: After OrestesWalkScene - Trigger OrestesAedes1
 																// 3: After Trivis Scene 1 - During Trivis Quest
+                                                                // 4: After walk in with all 3 Trivis = Trivis Complete Scene
+                                                                // 5: After Trivis Complete Scene = Slowking Returned
 																// 69: After Trivis Quest - Please UPDATE NUM
 #define VAR_AEDES_AQUA_STATE                             0x4056 // Handle Water Level and Warps in Aedes Aqua
 																// 0: Default - No Water No Warp - Entrance
