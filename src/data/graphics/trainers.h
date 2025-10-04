@@ -588,6 +588,12 @@ const u16 gTrainerPalette_Link[] = INCBIN_U16("graphics/trainers/palettes/link.g
 const u32 gTrainerFrontPic_Ganondorf[] = INCBIN_U32("graphics/trainers/front_pics/ganondorf.4bpp.smol");
 const u16 gTrainerPalette_Ganondorf[] = INCBIN_U16("graphics/trainers/palettes/ganondorf.gbapal");
 
+const u32 gTrainerFrontPic_Sheik[] = INCBIN_U32("graphics/trainers/front_pics/sheik.4bpp.smol");
+const u16 gTrainerPalette_Sheik[] = INCBIN_U16("graphics/trainers/palettes/sheik.gbapal");
+
+const u32 gTrainerFrontPic_Zelda[] = INCBIN_U32("graphics/trainers/front_pics/zelda.4bpp.smol");
+const u16 gTrainerPalette_Zelda[] = INCBIN_U16("graphics/trainers/palettes/zelda.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by
@@ -798,6 +804,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_OLYMPIA, gTrainerFrontPic_Olympia, gTrainerPalette_Olympia),               
     TRAINER_SPRITE(TRAINER_PIC_LINK, gTrainerFrontPic_Link, gTrainerPalette_Link),               
     TRAINER_SPRITE(TRAINER_PIC_GANONDORF, gTrainerFrontPic_Ganondorf, gTrainerPalette_Ganondorf),               
+    TRAINER_SPRITE(TRAINER_PIC_SHEIK, gTrainerFrontPic_Sheik, gTrainerPalette_Sheik),               
+    TRAINER_SPRITE(TRAINER_PIC_ZELDA, gTrainerFrontPic_Zelda, gTrainerPalette_Zelda),               
 	//END KUSTOM TRAINER SPRITES
 };
 

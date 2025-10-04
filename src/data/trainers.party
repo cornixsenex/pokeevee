@@ -1778,6 +1778,35 @@ Roselia
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+=== TRAINER_SHEIK ===
+Name: SHEIK
+Class: Silent Hero
+Pic: Sheik
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+
+Kingdra
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_ZELDA ===
+Name: ZELDA
+Class: Fuckboy
+Pic: Zelda
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Purple
+
+Chinchou
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
 === TRAINER_RIVAL3 ===
 Name: {B_RIVAL_NAME}
 Class: Fuckboy

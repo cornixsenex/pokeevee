@@ -1264,6 +1264,46 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trivis = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+//NOTE: Sheik does NOT move 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sheik = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHEIK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 10,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_Sheik,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+//NOTE: Zelda does NOT move
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zelda = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ZELDA,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 10,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_Zelda,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 //BREAK//
 
 

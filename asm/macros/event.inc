@@ -1960,7 +1960,7 @@
 	@Destroys the pic completely along with gfx.
 	.macro destroy_field_pic id:req, sprite_id=0xff
 	setvar VAR_0x8004, \id
-	copyvar VAR_0x8005, \sprite_id
+	setvar VAR_0x8005, \sprite_id
 	callnative DestroyFieldPic
 	.endm
 

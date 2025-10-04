@@ -82,7 +82,7 @@ AedesTerra_BossRoom_Script_Trivis::
 # 62 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	closemessage
 # 64 "data/maps/AedesTerra_BossRoom/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 # 65 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	delay 40
 # 67 "data/maps/AedesTerra_BossRoom/scripts.pory"
@@ -94,7 +94,7 @@ AedesTerra_BossRoom_Script_Trivis::
 # 70 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	addobject LOCALID_AEDESTERRABOSSROOM_TRIVIS
 # 72 "data/maps/AedesTerra_BossRoom/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 74 "data/maps/AedesTerra_BossRoom/scripts.pory"
 	giveitem ITEM_TRIVIS_POTESTATIS
 # 76 "data/maps/AedesTerra_BossRoom/scripts.pory"

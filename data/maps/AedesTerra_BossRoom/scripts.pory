@@ -61,7 +61,7 @@ script AedesTerra_BossRoom_Script_Trivis {
 	msgbox (AedesTerra_BossRoom_Text_Trivis)
 	closemessage
 	//glow up
-	fadescreen (FADE_TO_WHITE)
+	fadescreenswapbuffers (FADE_TO_WHITE)
 	delay (40)
 	//remove trivis
 	removeobject (LOCALID_AEDESTERRABOSSROOM_TRIVIS)
@@ -69,7 +69,7 @@ script AedesTerra_BossRoom_Script_Trivis {
 	setobjectmovementtype (LOCALID_AEDESTERRABOSSROOM_TRIVIS, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_AEDESTERRABOSSROOM_TRIVIS)
 	//back to world
-	fadescreen (FADE_FROM_WHITE)
+	fadescreenswapbuffers (FADE_FROM_WHITE)
 	//give item
 	giveitem (ITEM_TRIVIS_POTESTATIS)
 	//setflag

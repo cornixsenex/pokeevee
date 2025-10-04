@@ -622,6 +622,12 @@ const u16 gObjectEventPal_Ganondorf[] = INCBIN_U16("graphics/object_events/palet
 const u32 gObjectEventPic_Trivis[] = INCBIN_U32("graphics/object_events/pics/misc/trivis.4bpp"); //Trivis not person
 const u16 gObjectEventPal_Trivis[] = INCBIN_U16("graphics/object_events/pics/misc/trivis.gbapal");    //Trivis not person
 
+const u32 gObjectEventPic_Sheik[] = INCBIN_U32("graphics/object_events/pics/people/sheik.4bpp"); 
+const u16 gObjectEventPal_Sheik[] = INCBIN_U16("graphics/object_events/pics/people/sheik.gbapal");  
+
+const u32 gObjectEventPic_Zelda[] = INCBIN_U32("graphics/object_events/pics/people/zelda.4bpp"); 
+const u16 gObjectEventPal_Zelda[] = INCBIN_U16("graphics/object_events/pics/people/zelda.gbapal");    
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

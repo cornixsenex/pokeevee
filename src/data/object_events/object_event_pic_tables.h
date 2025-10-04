@@ -2066,6 +2066,14 @@ static const struct SpriteFrameImage sPicTable_Trivis[] = {
     obj_frame_tiles(gObjectEventPic_Trivis),
 };
 
+static const struct SpriteFrameImage sPicTable_Sheik[] = {
+    obj_frame_tiles(gObjectEventPic_Sheik),
+};
+
+static const struct SpriteFrameImage sPicTable_Zelda[] = {
+    obj_frame_tiles(gObjectEventPic_Zelda),
+};
+
 
 /// BREAK ///
 

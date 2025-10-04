@@ -100,7 +100,7 @@
 
 // Scripts
 #define FLAG_ROUTE10_HIDE_RIVAL              0x50 //starts set, cleared after misty tells you the keys are stolen, reset after defeating route 10 rival
-#define FLAG_UNUSED_0x51                     0x51 //UNUSED
+#define FLAG_AEDESLUX_TRIVIS                 0x51 //Set after get Aedes Lux Trivis - Hide Trivis
 #define FLAG_SLABS_HIDE_RIVAL                0x52
 #define FLAG_UNUSED_0x53                     0x53 //UNUSED  
 #define FLAG_TUCSON_NESTOR_INTROD            0x54  // Set after speaking with Tucson Nestor one time

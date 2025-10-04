@@ -348,6 +348,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KiteCushion
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CrossCushion;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ganondorf;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trivis;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sheik;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zelda;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -667,6 +669,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_CROSS_CUSHION] =            &gObjectEventGraphicsInfo_CrossCushion,
 	[OBJ_EVENT_GFX_GANONDORF] =                &gObjectEventGraphicsInfo_Ganondorf,
 	[OBJ_EVENT_GFX_TRIVIS] =                   &gObjectEventGraphicsInfo_Trivis,
+	[OBJ_EVENT_GFX_SHEIK] =                    &gObjectEventGraphicsInfo_Sheik,
+	[OBJ_EVENT_GFX_ZELDA] =                    &gObjectEventGraphicsInfo_Zelda,
 
 
     [OBJ_EVENT_GFX_LEAF] =                     &gObjectEventGraphicsInfo_Leaf,

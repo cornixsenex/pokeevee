@@ -156,9 +156,9 @@ script LakeIra_Script_GiveTrivisFortitudinis {
     playse (SE_M_HYPER_BEAM)
     waitse
     //whiteout
-    fadescreen (FADE_TO_WHITE)
+    fadescreenswapbuffers (FADE_TO_WHITE)
     delay (40)
-    fadescreen (FADE_FROM_WHITE)
+    fadescreenswapbuffers (FADE_FROM_WHITE)
     //give full trivis
     giveitem (ITEM_TRIVIS_FORTITUDINIS, 1)
     //remove trivis shards

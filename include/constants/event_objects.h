@@ -333,9 +333,11 @@
 #define OBJ_EVENT_GFX_CROSS_CUSHION   		     325
 #define OBJ_EVENT_GFX_GANONDORF   		         326
 #define OBJ_EVENT_GFX_TRIVIS   		             327
+#define OBJ_EVENT_GFX_SHEIK   		             328
+#define OBJ_EVENT_GFX_ZELDA   		             329
 
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        328
+#define NUM_OBJ_EVENT_GFX                        330
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -597,6 +599,8 @@
 #define OBJ_EVENT_PAL_TAG_CROSS_CUSHION           0x1192
 #define OBJ_EVENT_PAL_TAG_GANONDORF               0x1193
 #define OBJ_EVENT_PAL_TAG_TRIVIS                  0x1194
+#define OBJ_EVENT_PAL_TAG_SHEIK                   0x1195
+#define OBJ_EVENT_PAL_TAG_ZELDA                   0x1196
 
 //MAX is (prolly) 0x11FF
 

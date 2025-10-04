@@ -289,6 +289,12 @@ static const u16 sPic86Pal[] = INCBIN_U16("graphics/misc/trivis_map.gbapal");
 //Ganondorf = 86
 static const u32 sPic87Gfx[] = INCBIN_U32("graphics/trainers/front_pics/ganondorf.4bpp.lz");
 static const u16 sPic87Pal[] = INCBIN_U16("graphics/trainers/front_pics/ganondorf.gbapal");
+//Sheik = 87
+static const u32 sPic88Gfx[] = INCBIN_U32("graphics/trainers/front_pics/sheik.4bpp.lz");
+static const u16 sPic88Pal[] = INCBIN_U16("graphics/trainers/front_pics/sheik.gbapal");
+//Zelda = 88
+static const u32 sPic89Gfx[] = INCBIN_U32("graphics/trainers/front_pics/zelda.4bpp.lz");
+static const u16 sPic89Pal[] = INCBIN_U16("graphics/trainers/front_pics/zelda.gbapal");
 
 /* And this is an example script.
 
@@ -486,6 +492,10 @@ static const struct Pic sPics[] =
     {sPic86Gfx, sPic86Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Ganondorf
     {sPic87Gfx, sPic87Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Sheik
+    {sPic88Gfx, sPic88Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Zelda
+    {sPic89Gfx, sPic89Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

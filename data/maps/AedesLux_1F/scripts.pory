@@ -9,10 +9,11 @@
 //Start 1 then go up
 
 //VAR_TEMP_A will track which puzzle you're one
-//    >Init on 0
-//    >1 after first puzzle
-//    >2 after 2
-//	  >3 after 3
+//    Init on 0
+//    1 after first puzzle
+//    2 after 2
+//	  3 after 3
+//    4 is solved AKA puzzle finished after zelda battle
   
 
 //VAR_TEMP_B will fire the 'solved puzzle' script 
@@ -20,13 +21,32 @@
 //set to 1 after solve 1
 //ON frame 1 will be alert, show open stairs, deactivate puzzle 1, setup puzzle 2, and then update VAR_TEMP_A
 
+//VAR_TEMP_C will track Sheik stuff
+//  0: init - Nothing, either after sheik battle or before map is loaded
+//  1: show shiek in top left corner - Trigger Show Sheik on stairs
+//  2: After sheik on stairs, trigger sheik battle
+
 
 mapscripts AedesLux_1F_MapScripts {
 
 
     MAP_SCRIPT_ON_TRANSITION {
-        //Set initial Puzzle flags if Zelda undefeated, else open everything
-		call (AedesLux_Script_SetupPuzzle1Flags)
+        //Setup Sheik if not defeated
+        if (!defeated(TRAINER_SHEIK)) {
+            setvar (VAR_TEMP_C, 1)
+            setobjectxyperm (LOCALID_AEDESLUX_SHEIK, 7, 39)
+            setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_FACE_DOWN)
+        }
+        //Setup Zelda if not defeated
+        if (!defeated(TRAINER_ZELDA)) {
+            setobjectxyperm (LOCALID_AEDESLUX_ZELDA, 16, 11)
+            setobjectmovementtype (LOCALID_AEDESLUX_ZELDA, MOVEMENT_TYPE_FACE_DOWN)
+            //Set initial Puzzle flags if Zelda undefeated, else open everything
+            call (AedesLux_Script_SetupPuzzle1Flags)
+        } else {
+            //Else open everything - re-enter after defeat Zelda = open puzzle
+            call (AedesLux_Script_OpenPuzzle)
+        }
     }
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -37,9 +57,118 @@ mapscripts AedesLux_1F_MapScripts {
 
 }
 
+//Sheik Scripts
+script AedesLux_Script_SheikStairSceneR {
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    lockall
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //fade out
+    fadescreenswapbuffers (FADE_TO_BLACK)
+    //set sheik xy
+    removeobject (LOCALID_AEDESLUX_SHEIK)
+    setobjectxyperm  (LOCALID_AEDESLUX_SHEIK, 17, 36)
+    setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (LOCALID_AEDESLUX_SHEIK)
+    //fade in
+    fadescreenswapbuffers (FADE_FROM_BLACK)
+    //wait
+    delay (40)
+    //fade out
+    fadescreenswapbuffers (FADE_TO_BLACK)
+    //hide shiek
+    removeobject (LOCALID_AEDESLUX_SHEIK)
+    setobjectxyperm  (LOCALID_AEDESLUX_SHEIK, 0, 0)
+    setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_AEDESLUX_SHEIK)
+    //fade in
+    fadescreenswapbuffers (FADE_FROM_BLACK)
+    //setvar
+    setvar (VAR_TEMP_C, 2)
+    //fin
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    releaseall
+    end
+}
+
+script AedesLux_Script_SheikStairSceneL {
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    lockall
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //fade out
+    fadescreenswapbuffers (FADE_TO_BLACK)
+    //set sheik xy
+    removeobject (LOCALID_AEDESLUX_SHEIK)
+    setobjectxyperm  (LOCALID_AEDESLUX_SHEIK, 16, 36)
+    setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (LOCALID_AEDESLUX_SHEIK)
+    //fade in
+    fadescreenswapbuffers (FADE_FROM_BLACK)
+    //wait
+    delay (40)
+    //fade out
+    fadescreenswapbuffers (FADE_TO_BLACK)
+    //hide shiek
+    removeobject (LOCALID_AEDESLUX_SHEIK)
+    setobjectxyperm  (LOCALID_AEDESLUX_SHEIK, 0, 0)
+    setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_AEDESLUX_SHEIK)
+    //fade in
+    fadescreenswapbuffers (FADE_FROM_BLACK)
+    //setvar
+    setvar (VAR_TEMP_C, 2)
+    //fin
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    releaseall
+    end
+}
+
+script AedesLux_Script_SheikBattle {
+    setflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    lockall
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //fade out
+    fadescreenswapbuffers (FADE_TO_BLACK)
+    //set sheik xy
+    removeobject (LOCALID_AEDESLUX_SHEIK)
+    setobjectxyperm  (LOCALID_AEDESLUX_SHEIK, 20, 31)
+    setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_FACE_DOWN)
+    addobject (LOCALID_AEDESLUX_SHEIK)
+    //fade in
+    fadescreenswapbuffers (FADE_FROM_BLACK)
+    //face player
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    //wait
+    delay (40)
+    //setup hide sheik
+    setflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
+	//do battle
+	trainerbattle_no_intro (TRAINER_SHEIK, AedesAqua_MiniBossRoom_Text_DarkBrendanLost)
+    //remove sheik after battle
+    clearflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
+    removeobject (LOCALID_AEDESLUX_SHEIK)
+    setobjectxyperm (LOCALID_AEDESLUX_SHEIK, 0, 0)
+    setobjectmovementtype (LOCALID_AEDESLUX_SHEIK, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_AEDESLUX_SHEIK)
+    //setvar
+    setvar (VAR_TEMP_C, 0)
+    //fin
+    clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+    releaseall
+    end
+}
+
 //Zelda Scripts
 script AedesLux_Script_ZeldaTrigger1 {
 	//Move into position
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
 	call (AedesLux_Script_ZeldaScene)
 
 }
@@ -52,23 +181,63 @@ script AedesLux_Script_ZeldaTrigger2 {
 
 script AedesLux_Script_ZeldaTrigger3 {
 	//Move into position
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+    waitmovement (0)
 	call (AedesLux_Script_ZeldaScene)
 
 }
 
 script AedesLux_Script_ZeldaTrigger4 {
 	//Move into position
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft2)
+    waitmovement (0)
 	call (AedesLux_Script_ZeldaScene)
 
 }
 
 script AedesLux_Script_ZeldaScene {
 	//Move into position
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp3)
+    waitmovement (0)
 	//Z: Intro
+    load_field_pic (FIELD_PIC_ZELDA, 190, 98)
+    msgbox (AedesLux_Text_ZeldaPre)
+    destroy_field_pic (FIELD_PIC_ZELDA)
+    closemessage
+    //setup hide zelda 
+    setflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
 	//Battle
-	//set vars, flags?
+	trainerbattle_no_intro (TRAINER_ZELDA, AedesLux_Text_ZeldaLost)
+    //Hide zelda after battle
+    clearflag (FLAG_SYS_CTRL_OBJ_DELETE) //Sys flag
+    removeobject (LOCALID_AEDESLUX_ZELDA)
+    setobjectxyperm (LOCALID_AEDESLUX_ZELDA, 0, 0)
+    setobjectmovementtype (LOCALID_AEDESLUX_ZELDA, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_AEDESLUX_ZELDA)
+	//set var
+    setvar (VAR_TEMP_A, 4)
 	//fin
 	end
+}
+
+script AedesLux_Script_Trivis {
+	//msg
+	msgbox (AedesTerra_BossRoom_Text_Trivis)
+	closemessage
+	//glow up
+	fadescreenswapbuffers (FADE_TO_WHITE)
+	delay (40)
+	//remove trivis
+	removeobject (LOCALID_AEDESLUX_TRIVIS)
+	setobjectxyperm (LOCALID_AEDESLUX_TRIVIS, 0, 0)
+	setobjectmovementtype (LOCALID_AEDESLUX_TRIVIS, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_AEDESLUX_TRIVIS)
+	//back to world
+	fadescreenswapbuffers (FADE_FROM_WHITE)
+	//give item
+	giveitem (ITEM_TRIVIS_SAPIENTIAE)
+	//setflag
+	setflag (FLAG_AEDESLUX_TRIVIS)
 }
 
 script AedesLux_Script_SolvedPuzzle {
@@ -3276,6 +3445,45 @@ script AedesLux_Script_ClearAllFlags {
 	return
 }
 
+script AedesLux_Script_SetAllFlags {
+	setflag (FLAG_TEMP_1)
+	setflag (FLAG_TEMP_2)
+	setflag (FLAG_TEMP_3)
+	setflag (FLAG_TEMP_4)
+	setflag (FLAG_TEMP_5)
+	setflag (FLAG_TEMP_6)
+	setflag (FLAG_TEMP_7)
+	setflag (FLAG_TEMP_8)
+	setflag (FLAG_TEMP_9)
+	setflag (FLAG_TEMP_A)
+	setflag (FLAG_TEMP_B)
+	setflag (FLAG_TEMP_C)
+	setflag (FLAG_TEMP_D)
+	setflag (FLAG_TEMP_E)
+	setflag (FLAG_TEMP_F)
+	setflag (FLAG_TEMP_10)
+	setflag (FLAG_TEMP_11)
+	setflag (FLAG_TEMP_12)
+	setflag (FLAG_TEMP_13)
+	setflag (FLAG_TEMP_14)
+	setflag (FLAG_TEMP_15)
+	return
+}
+
+script AedesLux_Script_OpenPuzzle {
+    //prevent puzzle reset / pole interactions
+    setvar (VAR_TEMP_A, 4)
+    //set all poles
+    call (AedesLux_Script_SetAllFlags)
+	call (AedesLux_Script_DrawPuzzle1L)
+	call (AedesLux_Script_DrawPuzzle1R)
+	call (AedesLux_Script_DrawPuzzle2L)
+	call (AedesLux_Script_DrawPuzzle2R)
+	call (AedesLux_Script_DrawPuzzle3L)
+	call (AedesLux_Script_DrawPuzzle3R)
+    return
+}
+
 text AedesLux_Text_NothingHappened {
     format("Nothing happened...")
 }
@@ -3298,4 +3506,12 @@ text AedesLux_Text_PoleDanger {
 
 text AedesLux_Text_PoleCompleted {
 	format("The switch seems stuck in place.")
+}
+
+text AedesLux_Text_ZeldaPre {
+    format("")
+}
+
+text AedesLux_Text_ZeldaLost {
+    format("")
 }

@@ -372,11 +372,11 @@ LakeIra_Script_GiveTrivisFortitudinis::
 # 157 "data/maps/LakeIra/scripts.pory"
 	waitse
 # 159 "data/maps/LakeIra/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 # 160 "data/maps/LakeIra/scripts.pory"
 	delay 40
 # 161 "data/maps/LakeIra/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 163 "data/maps/LakeIra/scripts.pory"
 	giveitem ITEM_TRIVIS_FORTITUDINIS, 1
 # 165 "data/maps/LakeIra/scripts.pory"
