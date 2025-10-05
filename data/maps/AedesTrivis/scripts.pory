@@ -290,15 +290,40 @@ script AedesTrivis_Script_OrestesSageScene {
 }
 
 script AedesTrivis_Script_TrivisCompleteScene {
-    //Player approach
     //Alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+    //Player approach
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp6)
+	waitmovement (0)
     //The two of them arguing
-    //alert sage
-    //S: You've returned with the trivis! Please let me see
-    //Give items to Sage
+	//O: I told you I'm cursed I need to know what to do because as we wait my father is dishonored but it's my mother doing the defiling! I must know whether to act the anguish will lead me to death
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete1)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	//S: And I told you I am a mere custodian of this place. The speaker has gone and only the Trivis Returned could possibly bring him back
+    load_field_pic (FIELD_PIC_SAGE, 190, 98)
+	msgbox (AedesTrivis_Text_Sage_TrivisComplete1)
+	destroy_field_pic (FIELD_PIC_SAGE)
+    //alert both
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//turn both
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_FaceDown)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceDown)
+	waitmovement (0)
+	//O: Player, you're back
+	//S: Have you returned with what you seeked?
+	//Both approach
+	//alert all
+	//Trivis begins to glow message
+	//white out
+	//remove items
     //set var for trivis floor
-    //white out
     //load back in with trivis floor visible
+	//O: What just happened. What was that light?
+	//S: You've done it, you've returned the Trivis!
     //S: It's finnaly happened our temple has been restored
     //SK offscreen - Thank you {PLAYER}
     //alert all
@@ -395,3 +420,14 @@ text AedesTrivis_Text_SageDuringQuest {
     format("")
 }
 
+//Trivis Complete Scene
+
+//O: I told you I'm cursed I need to know what to do because as we wait my father is dishonored but it's my mother doing the defiling! I must know whether to act the anguish will lead me to death
+text AedesTrivis_Text_Orestes_TrivisComplete1 {
+	format("")
+}
+
+//S: And I told you I am a mere custodian of this place. The speaker has gone and only the Trivis Returned could possibly bring him back
+text AedesTrivis_Text_Sage_TrivisComplete1 {
+	format("")
+}
