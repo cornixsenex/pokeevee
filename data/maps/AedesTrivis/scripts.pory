@@ -387,9 +387,9 @@ script AedesTrivis_Script_TrivisCompleteScene1 {
 }
 
 
+//load back in with trivis floor visible
 script AedesTrivis_Script_TrivisCompleteScene2 {
 	lockall
-	//load back in with trivis floor visible
 	//O: What just happened. What was that light?
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
 	msgbox (AedesTrivis_Text_Orestes_TrivisComplete3)
@@ -408,11 +408,58 @@ script AedesTrivis_Script_TrivisCompleteScene2 {
 	msgbox (AedesTrivis_Text_Slowking_TrivisComplete1)
 	destroy_field_pic (FIELD_PIC_SLOWKING)
     //alert all
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//O: Who was that?
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete5)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	//turn all
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_FaceUp)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceUp)
+	waitmovement (0)
     //S: The speaker has returned!
+    load_field_pic (FIELD_PIC_SAGE, 190, 98)
+	msgbox (AedesTrivis_Text_Sage_TrivisComplete4)
+	destroy_field_pic (FIELD_PIC_SAGE)
+	closemessage
 	//Put slowking into position
-    //S, Player, et Orestes to SK (prolly put Orestes center)
+	removeobject (LOCALID_AEDESTRIVIS_SLOWKING)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SLOWKING, 11, 2)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SLOWKING, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (LOCALID_AEDESTRIVIS_SLOWKING)
+    //S, Player, et Orestes to SK 
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_WalkUp6)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp6)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkUp6)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
     //SK: Correct now that PLAYER has brought back the Trivis I have returned
+    load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete2)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
+	//S:Mighty speaker...
+    load_field_pic (FIELD_PIC_SAGE, 190, 98)
+	msgbox (AedesTrivis_Text_Sage_TrivisComplete4)
+	destroy_field_pic (FIELD_PIC_SAGE)
+	//O: Hello!
+	//Orestes to the dias
+	//O: Intro
+	//SK: Hasty!
+	//O: monologue
+	//SK: Advice
+	//O: But
+	//SK: I have spoken. Be gone.
+	//Exit Orestes (DO rest his stuff outside the temple on frame)
+
+
+
+
+
+
     //O: The speaker is a slowking?
     //SK: Do not be so quick to judge young one. I sense you're in great distress what is the matter
     //O tells tale, asks advice
@@ -567,9 +614,25 @@ text AedesTrivis_Text_Sage_TrivisComplete3 {
 }
 
 text AedesTrivis_Text_Orestes_TrivisComplete4 {
-	format("The tree vest restored? The means...")
+	format("The tree vest restored? That means...")
 }
 
 text AedesTrivis_Text_Slowking_TrivisComplete1 {
-	format("Thank you {PLAYER}.")
+	format("Thank you, {PLAYER}.")
+}
+
+text AedesTrivis_Text_Orestes_TrivisComplete5 {
+	format("What? Who was that?")
+}
+
+text AedesTrivis_Text_Sage_TrivisComplete4 {
+	format("The speaker has returned!")
+}
+
+text AedesTrivis_Text_Slowking_TrivisComplete2 {
+	format("The speaker? Yes, that's what they once called us.
+			After the Trivis was stolen from here
+			we were unable to take corporal
+			form but, now that the temple is restored,
+			we have returned to serve devout pilgrims.")
 }
