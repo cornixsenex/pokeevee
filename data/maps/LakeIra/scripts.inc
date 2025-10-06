@@ -372,34 +372,38 @@ LakeIra_Script_GiveTrivisFortitudinis::
 # 157 "data/maps/LakeIra/scripts.pory"
 	waitse
 # 159 "data/maps/LakeIra/scripts.pory"
-	fadescreenswapbuffers FADE_TO_WHITE
+	playse SE_M_HYPER_BEAM
 # 160 "data/maps/LakeIra/scripts.pory"
-	delay 40
+	waitse
 # 161 "data/maps/LakeIra/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
+# 162 "data/maps/LakeIra/scripts.pory"
+	delay 40
 # 163 "data/maps/LakeIra/scripts.pory"
-	giveitem ITEM_TRIVIS_FORTITUDINIS, 1
+	fadescreenswapbuffers FADE_FROM_WHITE
 # 165 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD1
-# 166 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD2
+	giveitem ITEM_TRIVIS_FORTITUDINIS, 1
 # 167 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD3
+	removeitem ITEM_TRIVIS_SHARD1
 # 168 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD4
+	removeitem ITEM_TRIVIS_SHARD2
 # 169 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD5
+	removeitem ITEM_TRIVIS_SHARD3
 # 170 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD6
+	removeitem ITEM_TRIVIS_SHARD4
 # 171 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD7
+	removeitem ITEM_TRIVIS_SHARD5
 # 172 "data/maps/LakeIra/scripts.pory"
-	removeitem ITEM_TRIVIS_SHARD8
+	removeitem ITEM_TRIVIS_SHARD6
 # 173 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD7
+# 174 "data/maps/LakeIra/scripts.pory"
+	removeitem ITEM_TRIVIS_SHARD8
+# 175 "data/maps/LakeIra/scripts.pory"
 	closemessage
 	return
 
 
 LakeIra_Text_TrivisShardsGlow::
-# 178 "data/maps/LakeIra/scripts.pory"
+# 180 "data/maps/LakeIra/scripts.pory"
 	.string "The eight Trivis Shards began to glow.$"

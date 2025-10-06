@@ -156,6 +156,8 @@ script LakeIra_Script_GiveTrivisFortitudinis {
     playse (SE_M_HYPER_BEAM)
     waitse
     //whiteout
+    playse (SE_M_HYPER_BEAM)
+    waitse
     fadescreenswapbuffers (FADE_TO_WHITE)
     delay (40)
     fadescreenswapbuffers (FADE_FROM_WHITE)

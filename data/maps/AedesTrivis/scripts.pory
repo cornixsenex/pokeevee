@@ -8,10 +8,17 @@ mapscripts AedesTrivis_MapScripts {
 		//During Triforce Quest
 		if (var(VAR_ORESTES_STATE) == 3) {
 			call (AedesTrivis_Script_ShowDuringTrivisQuest)
+			call (AedesTrivis_Script_CheckTrivisComplete)
 		}
-        //Check return with 3 Trivis
-        call (AedesTrivis_Script_CheckTrivisComplete)
-		//After Slowking Revealed = ORESTES 5 / After Trivis Complete Scene
+		//Return to Aedes Trivis from whiteout after Trivis Complete 
+		if (var(VAR_ORESTES_STATE) == 5) {
+			call (AedesTrivis_Script_SetupReturnFromWhiteout)
+		}
+		//After Orestes has left - slowking on stage, sage attending - terminal state?
+		if (var(VAR_ORESTES_STATE) > 5) {
+			call (AedesTrivis_Script_SetupSlowkingEtSage)
+		}
+		
 	}
 
 
@@ -23,9 +30,14 @@ mapscripts AedesTrivis_MapScripts {
 
 	}
 
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_ORESTES_STATE, 5: AedesTrivis_Script_FacePlayerUp
+	]
+
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_ORESTES_STATE, 2: AedesTrivis_Script_OrestesSageScene
-		VAR_ORESTES_STATE, 4: AedesTrivis_Script_TrivisCompleteScene
+		VAR_ORESTES_STATE, 4: AedesTrivis_Script_TrivisCompleteScene1
+		VAR_ORESTES_STATE, 5: AedesTrivis_Script_TrivisCompleteScene2
 	]
 
 }
@@ -194,12 +206,35 @@ script AedesTrivis_Script_CheckTrivisComplete {
 
 script AedesTrivis_Script_SetupTrivisComplete {
     //setup objects
-	setobjectxyperm (LOCALID_AEDESTRIVIS_SAGE, 12, 10)
-	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_LEFT)
-	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 10, 10)
-	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SAGE, 10, 10)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 12, 10)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_FACE_LEFT)
     //set var to trigger On Frame scene
     setvar (VAR_ORESTES_STATE, 4)
+	return
+}
+
+script AedesTrivis_Script_SetupReturnFromWhiteout {
+    //setup objects
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SAGE, 10, 11)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 12, 11)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script AedesTrivis_Script_FacePlayerUp {
+	turnobject (LOCALID_PLAYER, DIR_NORTH)
+	return
+}
+
+script AedesTrivis_Script_SetupSlowkingEtSage {
+	//setup objects
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SAGE, 10, 4)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_SLOWKING, 11, 2)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_SLOWKING, MOVEMENT_TYPE_FACE_DOWN)
 
 }
 
@@ -289,7 +324,8 @@ script AedesTrivis_Script_OrestesSageScene {
 	end
 }
 
-script AedesTrivis_Script_TrivisCompleteScene {
+script AedesTrivis_Script_TrivisCompleteScene1 {
+	lockall
     //Alert player
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
@@ -314,20 +350,67 @@ script AedesTrivis_Script_TrivisCompleteScene {
 	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceDown)
 	waitmovement (0)
 	//O: Player, you're back
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete2)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//S: Have you returned with what you seeked?
+    load_field_pic (FIELD_PIC_SAGE, 190, 98)
+	msgbox (AedesTrivis_Text_Sage_TrivisComplete2)
+	destroy_field_pic (FIELD_PIC_SAGE)
+	closemessage
 	//Both approach
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_WalkDown)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown)
+	waitmovement (0)
 	//alert all
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//Trivis begins to glow message
+    playse (SE_M_HYPER_BEAM)
+    waitse
+	msgbox (AedesTrivis_Text_TrivisGlow)
+    playse (SE_M_HYPER_BEAM)
+    waitse
 	//white out
+    fadescreenswapbuffers (FADE_TO_WHITE)
+    delay (40)
 	//remove items
+	removeitem (ITEM_TRIVIS_FORTITUDINIS)
+	removeitem (ITEM_TRIVIS_SAPIENTIAE)
+	removeitem (ITEM_TRIVIS_POTESTATIS)
     //set var for trivis floor
-    //load back in with trivis floor visible
+	setvar (VAR_ORESTES_STATE, 5)
+	//warp back to map (show Trivis and trigger rest of scene OnFrame5)
+	warpsilent (MAP_AEDES_TRIVIS, 11, 12)
+}
+
+
+script AedesTrivis_Script_TrivisCompleteScene2 {
+	lockall
+	//load back in with trivis floor visible
 	//O: What just happened. What was that light?
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete3)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//S: You've done it, you've returned the Trivis!
     //S: It's finnaly happened our temple has been restored
+    load_field_pic (FIELD_PIC_SAGE, 190, 98)
+	msgbox (AedesTrivis_Text_Sage_TrivisComplete3)
+	destroy_field_pic (FIELD_PIC_SAGE)
+	//O: The tree vest? That means...
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete4)
+	destroy_field_pic (FIELD_PIC_ORESTES)
     //SK offscreen - Thank you {PLAYER}
+    load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete1)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
     //alert all
+	//O: Who was that?
     //S: The speaker has returned!
+	//Put slowking into position
     //S, Player, et Orestes to SK (prolly put Orestes center)
     //SK: Correct now that PLAYER has brought back the Trivis I have returned
     //O: The speaker is a slowking?
@@ -344,8 +427,10 @@ script AedesTrivis_Script_TrivisCompleteScene {
     //SK: That will let you raise a SK of your own, tho yours will not have as strong divine connection as I have. - Please return to see your future (or whatever I decide to have SK do)
     //NOTE: SK should only read futures on a re-entry not this initial episode
     //set vars
-    setvar (VAR_ORESTES_STATE, 5)
-    //release
+    setvar (VAR_ORESTES_STATE, 6)
+    //fin
+	releaseall
+	end
 }
 
 text AedesTrivis_Text_OrestesSageScene_Orestes1 {
@@ -413,21 +498,78 @@ text AedesTrivis_Text_OrestesDuringTrivisQuest {
 }
 
 text AedesTrivis_Text_SageIntroQuest {
-    format("")
+    format("The thief in green snuck in during the night
+			and stole the Trivis from this sacred place.
+			That he wore green seems no coincidence
+			for this was once the land of Hylia
+			where young men were clothed in tunics of green
+			when they reached the age of majority.
+			Whether this thief was just a copycat,
+			or if some of the Hylians survive
+			underground, in the caves along the Drake,
+			is not clear but I think the thief must have
+			been inspired to take the Trivis by
+			the Hylian people, living or dead.")
 }
 
 text AedesTrivis_Text_SageDuringQuest {
-    format("")
+    format("If you intend to rescue the Trivis
+			and return the temple's stolen glory
+			I would begin your search inside the caves
+			that run deep underground along the Drake.
+			I know of one just south of the temple,
+			along the western shore, not far from here.
+			There are others as well. I am not sure
+			if the thief has them or hid them or might
+			be trying to use their power for ill.
+			Tread carefully, good luck, and please return.")
 }
 
 //Trivis Complete Scene
 
 //O: I told you I'm cursed I need to know what to do because as we wait my father is dishonored but it's my mother doing the defiling! I must know whether to act the anguish will lead me to death
 text AedesTrivis_Text_Orestes_TrivisComplete1 {
-	format("")
+	format("You don't understand! This is Urgent! I
+			must have guidance! The guilt is killing me!")
 }
 
 //S: And I told you I am a mere custodian of this place. The speaker has gone and only the Trivis Returned could possibly bring him back
 text AedesTrivis_Text_Sage_TrivisComplete1 {
-	format("")
+	format("And as I told you, many times before,
+			I am a mere custodian. I can't
+			give you any advice worth more than words.
+			Until the Trivis is returned, and the
+			Speaker assumes his post, there is no one
+			who can help you here and raising your voice
+			will not change that. Now, please, compose yourself.")
+}
+
+text AedesTrivis_Text_Orestes_TrivisComplete2 {
+	format("What's that? It's {PLAYER}!")
+}
+
+text AedesTrivis_Text_Sage_TrivisComplete2 {
+	format("Have you found the Trivis?")
+}
+
+text AedesTrivis_Text_TrivisGlow {
+	format("The three pieces of Trivis begin to glow.")
+}
+
+text AedesTrivis_Text_Orestes_TrivisComplete3 {
+	format("What happened? Woah! What was that sound? That light?")
+}
+
+text AedesTrivis_Text_Sage_TrivisComplete3 {
+	format("What happy day! You've done it lad! You have
+			returned our temple to it's lost glory!
+			The Trivis, at long last, has been restored!")
+}
+
+text AedesTrivis_Text_Orestes_TrivisComplete4 {
+	format("The tree vest restored? The means...")
+}
+
+text AedesTrivis_Text_Slowking_TrivisComplete1 {
+	format("Thank you {PLAYER}.")
 }
