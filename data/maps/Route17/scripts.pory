@@ -44,11 +44,26 @@ mapscripts Route17_MapScripts {
 		if (var(VAR_ORESTES_STATE) == 0) {
 			call (Route17_Script_ShowOrestesBridge)
 		}
+		//Orestes after Aedes Trivis
+		if (var(VAR_ORESTES_STATE) == 6) {
+			call (Route17_Script_ShowOrestesAfterAedesTrivis)
+		}
 	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ORESTES_STATE, 6: Route17_Script_OrestesAfterAedesTrivis
+	]
+
 }
 
 script Route17_Script_ShowOrestesBridge {
 	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 25, 139)
+	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script Route17_Script_ShowOrestesAfterAedesTrivis {
+	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 7, 52)
 	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
@@ -168,6 +183,20 @@ script Route17_Script_OrestesWalkScene {
 	setvar (VAR_ORESTES_STATE, 2)
 	//fin	
 	clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+	end
+}
+
+script Route17_Script_OrestesAfterAedesTrivis {
+	lockall
+	//alert O
+	//O to player
+	//O: You heard SK my father must be avenged but I can't be the one to do it. I need you player to be my hands. Trust me my father agamemnon is wealth he's the head of the commerce guild he will reward you. Meet me in Aldeon Town later I have a plan.
+	//exit O
+	//remove O
+	//setvars
+	setvar (VAR_ORESTES_STATE, 7)
+	//fin
+	releaseall
 	end
 }
 

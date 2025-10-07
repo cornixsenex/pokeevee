@@ -445,33 +445,73 @@ script AedesTrivis_Script_TrivisCompleteScene2 {
     load_field_pic (FIELD_PIC_SAGE, 190, 98)
 	msgbox (AedesTrivis_Text_Sage_TrivisComplete4)
 	destroy_field_pic (FIELD_PIC_SAGE)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//O: Hello!
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete6)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
 	//Orestes to the dias
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceUp)
+	waitmovement (0)
 	//O: Intro
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete7)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//SK: Hasty!
+    load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete3)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
 	//O: monologue
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete8)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//SK: Advice
+	load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete4)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
 	//O: But
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AedesTrivis_Text_Orestes_TrivisComplete9)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//SK: I have spoken. Be gone.
+	load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete5)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
+	closemessage
 	//Exit Orestes (DO rest his stuff outside the temple on frame)
-
-
-
-
-
-
-    //O: The speaker is a slowking?
-    //SK: Do not be so quick to judge young one. I sense you're in great distress what is the matter
-    //O tells tale, asks advice
-    //SK: I see your mother has done a terrible thing and must be punished but you cannot be the one to do it. Ask another to do this for you, restore your father to health, and all will be well
-    //Turn Orestes et player to eachother
-    //O: I'm already greatly indebted to you but if you can do one more thing I can promise my father will greatly reward you. He's the chief of the commerce guild. Just meet me at my house, we'll defeat my wicked mother and restore Agamemnon to health then he'll surely reward you
-    //Exit O
-    //SK: Now Player come here I must thank you myself
-    //Player approach SK
-    //SK: Many years ago our Trivis was stolen by the robber in Green. You have restored our temple and allowed me to re-appear. As thanks please accept this
-    //Give Kings rock (?)
-    //SK: That will let you raise a SK of your own, tho yours will not have as strong divine connection as I have. - Please return to see your future (or whatever I decide to have SK do)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown6)
+	waitmovement (0)
+	//remove Orestes
+	removeobject (LOCALID_AEDESTRIVIS_ORESTES)
+	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 0, 0)
+	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_AEDESTRIVIS_ORESTES)
+	//SK: Now approach Sneed I wish to thank you for your service to the temple
+	load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete6)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
+	closemessage
+	//Player to SK
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp2)
+	waitmovement (0)
+	//SK: You have done a great deed and restored a place of light in this world of darkness As thanks I present to you this gift
+	load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete7)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
+	//give item Kings_Rock
+	giveitem (ITEM_KINGS_ROCK)
+	//That rock was once the crown upon the head of a mighty king. Use it well. and if the path forward seems dim return to me and I will shed light on it for you
+	load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+	msgbox (AedesTrivis_Text_Slowking_TrivisComplete8)
+	destroy_field_pic (FIELD_PIC_SLOWKING)
     //NOTE: SK should only read futures on a re-entry not this initial episode
     //set vars
     setvar (VAR_ORESTES_STATE, 6)
@@ -635,4 +675,73 @@ text AedesTrivis_Text_Slowking_TrivisComplete2 {
 			we were unable to take corporal
 			form but, now that the temple is restored,
 			we have returned to serve devout pilgrims.")
+}
+
+text AedesTrivis_Text_Orestes_TrivisComplete6 {
+	format("Hello!")
+}
+
+text AedesTrivis_Text_Orestes_TrivisComplete7 {
+	format("I'm Orestes, son of Agamemnon,
+			and I desperately need divine advice!")
+}
+
+text AedesTrivis_Text_Slowking_TrivisComplete3 {
+	format("Hasty Orestes, long have we observed
+			your haughty family act beyond the will
+			of He who holds the scale to judge our lives.
+			Despite the godless actions of your kin,
+			your own abstainment from ritual prayer
+			up to this point, and your rude impatience,
+			we welcome and invite you to approach
+			our platform and tell us what bothers you.")
+}
+
+text AedesTrivis_Text_Orestes_TrivisComplete8 {
+	format("My father, who's soul may be stained with sin,
+			lies petrified in bed, bewitched by my
+			mother, who's own life is no more righteous.
+			The shame of knowing my father lies there
+			disgraced and curesed while I do nothing to
+			avenge or rescure him from that sad fate
+			fills me with deep remorse and thoughts of death.
+			Yet neither can I act upon these pains
+			without crossing mother, another sin.
+			You say my family's sinful, and that I
+			have ever scored the will of the divine.
+			These things are true, but now I want to change.
+			I came here to ask what action to take,
+			to learn, then do, the will of the divine.
+			I'm sorry if I seem hasty, or base,
+			but my situation's indeed dire!")
+}
+
+//Hear ya, your father is wrongly dishonored and something must be done to save him. Your mother must be punished and defeated but yea you cannot be the one to do it. Find someone to do your dirty work for you, orchestrate the revival of your father and the downfall of your mother but you cannot be the hand of her downfall. That is the will of the divine as I see it.
+text AedesTrivis_Text_Slowking_TrivisComplete4 {
+	format("")
+}
+
+//But...
+text AedesTrivis_Text_Orestes_TrivisComplete9 {
+	format("")
+}
+
+//Enought I have spoken be gone
+text AedesTrivis_Text_Slowking_TrivisComplete5 {
+	format("")
+}
+
+//Nor approach player
+text AedesTrivis_Text_Slowking_TrivisComplete6 {
+	format("")
+}
+
+//You have done great deed take this gift
+text AedesTrivis_Text_Slowking_TrivisComplete7 {
+	format("")
+}
+
+//that rock, use well, return sometime
+text AedesTrivis_Text_Slowking_TrivisComplete8 {
+	format("")
 }
