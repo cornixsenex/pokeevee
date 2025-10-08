@@ -718,27 +718,43 @@ text AedesTrivis_Text_Orestes_TrivisComplete8 {
 
 //Hear ya, your father is wrongly dishonored and something must be done to save him. Your mother must be punished and defeated but yea you cannot be the one to do it. Find someone to do your dirty work for you, orchestrate the revival of your father and the downfall of your mother but you cannot be the hand of her downfall. That is the will of the divine as I see it.
 text AedesTrivis_Text_Slowking_TrivisComplete4 {
-	format("")
+	format("Your father has injustly been abused
+			and as his son you msut see justice done.
+			Since the offending party's your mother
+			the hand of justice cannot be your own.
+			You must find someone else to break the spell
+			and free Agamemnon. Orestes, know
+			your mother will not persist in this world.
+			After her curse is broken she will die,
+			but you will not be guilty for her death
+			instead renowned as your father's savior.
+			Therefore depart, find someone else to bring
+			justice to your father, death to your mom.")
 }
 
 //But...
 text AedesTrivis_Text_Orestes_TrivisComplete9 {
-	format("")
+	format("But, how...")
 }
 
 //Enought I have spoken be gone
 text AedesTrivis_Text_Slowking_TrivisComplete5 {
-	format("")
+	format("No buts! We've said our prophecy.
+			Be gone! Attend to your urgent business.")
 }
 
 //Nor approach player
 text AedesTrivis_Text_Slowking_TrivisComplete6 {
-	format("")
+	format("Now, {PLAYER}, approach our dias. We would thank
+			you for your great service to our temple.")
 }
 
 //You have done great deed take this gift
 text AedesTrivis_Text_Slowking_TrivisComplete7 {
-	format("")
+	format("Most valiant and pure hearted {PLAYER}, we thank
+			you for returning the stolen Trivis
+			and restoring this place of light. Accept
+			this gift on behalf of our")
 }
 
 //that rock, use well, return sometime
