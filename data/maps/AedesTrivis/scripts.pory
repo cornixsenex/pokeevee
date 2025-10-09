@@ -1,3 +1,6 @@
+
+//FLAG_TEMP_7 is set after slowking advice (Only one advice per entrance)
+
 mapscripts AedesTrivis_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
@@ -266,9 +269,16 @@ script AedesTrivis_Script_Sage {
 }
 
 script AedesTrivis_Script_Slowking {
-	//I'd like him to initially give player the gift (King's Rock?)
-	//Then daily give some divination like where the swarm mons are or something
-	//Then if he already gave divination just say like "come again"
+	//Come again ie divination DONE / One per map transition
+	if (flag(FLAG_TEMP_7)) {
+		load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
+		msgbox (AedesTrivis_Text_Slowking_Return)
+		destroy_field_pic (FIELD_PIC_SLOWKING)
+		closemessage
+		end
+	//Divination
+	} else {
+	}
 }
 
 script AedesTrivis_Script_OrestesSageScene {
@@ -511,8 +521,11 @@ script AedesTrivis_Script_TrivisCompleteScene2 {
 	//That rock was once the crown upon the head of a mighty king. Use it well. and if the path forward seems dim return to me and I will shed light on it for you
 	load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
 	msgbox (AedesTrivis_Text_Slowking_TrivisComplete8)
+	msgbox (AedesTrivis_Text_Slowking_Return)
 	destroy_field_pic (FIELD_PIC_SLOWKING)
+	closemessage
     //NOTE: SK should only read futures on a re-entry not this initial episode
+	setflag (FLAG_TEMP_7)
     //set vars
     setvar (VAR_ORESTES_STATE, 6)
     //fin
@@ -754,10 +767,21 @@ text AedesTrivis_Text_Slowking_TrivisComplete7 {
 	format("Most valiant and pure hearted {PLAYER}, we thank
 			you for returning the stolen Trivis
 			and restoring this place of light. Accept
-			this gift on behalf of our")
+			this gift on behalf of our diocese")
 }
 
 //that rock, use well, return sometime
 text AedesTrivis_Text_Slowking_TrivisComplete8 {
-	format("")
+	format("That ancient stone was once regalia
+			of the Hylian Kings. It has been kept
+			in our possesion all this tired age.
+			Now it is yours, to do with as you please.
+			Use it wisely. Keep to the righteous path
+			and by persistance you'll achieve your quest.
+			Now farewell, {PLAYER}. Be about your business.")
+}
+
+text AedesTrivis_Text_Slowking_Return {
+	format("If during your journey you recquire
+			additional advice, return to us.")
 }
