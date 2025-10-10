@@ -189,10 +189,34 @@ script Route17_Script_OrestesWalkScene {
 script Route17_Script_OrestesAfterAedesTrivis {
 	lockall
 	//alert O
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//O to player
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+	waitmovement (0)
 	//O: You heard SK my father must be avenged but I can't be the one to do it. I need you player to be my hands. Trust me my father agamemnon is wealth he's the head of the commerce guild he will reward you. Meet me in Aldeon Town later I have a plan.
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (Route17_Text_OrestesAfterAedesTrivis)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
 	//exit O
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3)
+	waitmovement (0)
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3)
+	waitmovement (0)
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3)
+	waitmovement (0)
+	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3)
+	waitmovement (0)
 	//remove O
+	removeobject (LOCALID_ROUTE17_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 0, 0)
+	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_ROUTE17_ORESTES)
 	//setvars
 	setvar (VAR_ORESTES_STATE, 7)
 	//fin
@@ -284,4 +308,16 @@ text Route17_Text_OrestesBridge {
 			will be guiltless if I trust him in faith.
 			I'll go consult the oracle at the 
 			Aedes Trivis, his words will set me free.")
+}
+
+text Route17_Text_OrestesAfterAedesTrivis {
+	format("Hey {PLAYER}, sorry I had to wait outside.
+			Did you hear what that talking Slowking said?
+			I need someone to help me save my dad
+			and after you found the Tree Vest I think
+			you would be the perfect person to ask.
+			Don't worry I can sneak you in the house
+			and my father, Agamemnon, surely
+			will reward you handsomely for your work.
+			Our house is in Aldeon, meet me there.")
 }

@@ -298,15 +298,63 @@ Route17_Script_OrestesWalkScene::
 Route17_Script_OrestesAfterAedesTrivis::
 # 190 "data/maps/Route17/scripts.pory"
 	lockall
+# 192 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_ExclamationMark
+# 193 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 195 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp2
+# 196 "data/maps/Route17/scripts.pory"
+	waitmovement 0
 # 197 "data/maps/Route17/scripts.pory"
-	setvar VAR_ORESTES_STATE, 7
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkLeft
+# 198 "data/maps/Route17/scripts.pory"
+	waitmovement 0
 # 199 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 200 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 202 "data/maps/Route17/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
+# 203 "data/maps/Route17/scripts.pory"
+	msgbox Route17_Text_OrestesAfterAedesTrivis
+# 204 "data/maps/Route17/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
+# 205 "data/maps/Route17/scripts.pory"
+	closemessage
+# 207 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3
+# 208 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 209 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3
+# 210 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 211 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3
+# 212 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 213 "data/maps/Route17/scripts.pory"
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3
+# 214 "data/maps/Route17/scripts.pory"
+	waitmovement 0
+# 216 "data/maps/Route17/scripts.pory"
+	removeobject LOCALID_ROUTE17_ORESTES
+# 217 "data/maps/Route17/scripts.pory"
+	setobjectxyperm LOCALID_ROUTE17_ORESTES, 0, 0
+# 218 "data/maps/Route17/scripts.pory"
+	setobjectmovementtype LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE
+# 219 "data/maps/Route17/scripts.pory"
+	addobject LOCALID_ROUTE17_ORESTES
+# 221 "data/maps/Route17/scripts.pory"
+	setvar VAR_ORESTES_STATE, 7
+# 223 "data/maps/Route17/scripts.pory"
 	releaseall
 	end
 
 
 Route17_Text_Block1::
-# 203 "data/maps/Route17/scripts.pory"
+# 227 "data/maps/Route17/scripts.pory"
 	.string "This is the Via Fluvia which leads to\n"
 	.string "Lacus Drako and the town Salix but it is\l"
 	.string "impossible to use now. The storm has\l"
@@ -314,7 +362,7 @@ Route17_Text_Block1::
 	.string "be some time before they're fixed.$"
 
 Route17_Text_Block2::
-# 211 "data/maps/Route17/scripts.pory"
+# 235 "data/maps/Route17/scripts.pory"
 	.string "We managed to repair the lower bridge\n"
 	.string "but the second one, up by Dragon Lake,\l"
 	.string "is still broken. Be careful of the road\l"
@@ -330,7 +378,7 @@ Route17_Text_Block2::
 	.string "in the hills.$"
 
 Route17_Text_OrestesBridge::
-# 251 "data/maps/Route17/scripts.pory"
+# 275 "data/maps/Route17/scripts.pory"
 	.string "Familiar Drake, unchanged since happy\n"
 	.string "days long gone, transformed into my\l"
 	.string "present grief, do you still recognize\l"
@@ -369,3 +417,16 @@ Route17_Text_OrestesBridge::
 	.string "I trust him in faith. I'll go consult the\l"
 	.string "oracle at the Aedes Trivis, his words\l"
 	.string "will set me free.$"
+
+Route17_Text_OrestesAfterAedesTrivis::
+# 313 "data/maps/Route17/scripts.pory"
+	.string "Hey {PLAYER}, sorry I had to wait\n"
+	.string "outside. Did you hear what that talking\l"
+	.string "Slowking said? I need someone to help\l"
+	.string "me save my dad and after you found the\l"
+	.string "Tree Vest I think you would be the\l"
+	.string "perfect person to ask. Don't worry I\l"
+	.string "can sneak you in the house and my\l"
+	.string "father, Agamemnon, surely will reward\l"
+	.string "you handsomely for your work. Our house\l"
+	.string "is in Aldeon, meet me there.$"

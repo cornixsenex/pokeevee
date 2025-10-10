@@ -27,6 +27,10 @@ mapscripts AldeonTown_MapScripts {
 		if (var(VAR_GRANNY_STATE) > 15) {
 			call (AldeonTown_Script_HideOldMan)
 		}
+		//Setup Orestes for Orestreia
+		if (var(VAR_ORESTES_STATE) == 7) {
+			call (AldeonTown_Script_ShowOrestes)
+		}
 
 	}
 
@@ -114,6 +118,12 @@ script AldeonTown_Script_SetupStorm2 {
 	setweather (WEATHER_DOWNPOUR)
 	playbgm(MUS_ABNORMAL_WEATHER, TRUE)
 
+	return
+}
+
+script AldeonTown_Script_ShowOrestes {
+	setobjectxyperm (LOCALID_ALDEON_ORESTES, 21, 20)
+	setobjectmovementtype (LOCALID_ALDEON_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
 
@@ -423,6 +433,25 @@ script AldeonTown_Script_Scott {
 	end
 }
 
+script AldeonTown_Script_Orestes {
+	faceplayer
+	//ready yn?
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AldeonTown_Text_OrestesReady, MSGBOX_YESNO)
+	//if n then 'come back'; face down; release
+	if (var(VAR_RESULT) == NO) {
+		msgbox (AldeonTown_Text_OrestesNotReady)
+		destroy_field_pic (FIELD_PIC_ORESTES)
+		closemessage
+		end
+	//else begin txt then follow him to the servant house
+	} else {
+
+	}
+	
+	end
+}
+
 movement AldeonTown_Movement_PlayerSnorlax1 {
 	walk_left
 	walk_up
@@ -570,5 +599,13 @@ text AldeonTown_Text_Lass1 {
 
 text AldeonTown_Text_Lass2 {
 	format("The Big House was here, before the fires.")
+}
+
+text AldeonTown_Text_OrestesReady {
+	format("Are you ready to save Agamemnon?")
+}
+
+text AldeonTown_Text_OrestesNotReady {
+	format("Come back when you're ready. Please don't delay!")
 }
 
