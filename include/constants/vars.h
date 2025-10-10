@@ -120,7 +120,8 @@
                                                                 // 4: After walk in with all 3 Trivis = Trivis Complete Scene1
 																// 5: After remove trivis and warp back to Aedes Trivis (show Trivis Floor)
                                                                 // 6: After Trivis Complete Scene = Slowking Returned - Trigger Orestes setup for Orestreia on frame exit Aedes Trivis
-																// 7: After setup Orestreia - Show Orestes in Aldeon - Ready for begin Orestreia
+																// 7: After setup Orestreia - Show Orestes in Aldeon
+																// 8: Orestes in Servant House - OnFrame open servant's passage
 #define VAR_AEDES_AQUA_STATE                             0x4056 // Handle Water Level and Warps in Aedes Aqua
 																// 0: Default - No Water No Warp - Entrance
 #define VAR_PETALBURG_CITY_STATE                         0x4057

@@ -446,7 +446,53 @@ script AldeonTown_Script_Orestes {
 		end
 	//else begin txt then follow him to the servant house
 	} else {
-
+		msgbox (AldeonTown_Text_OrestesYesReady)
+		destroy_field_pic (FIELD_PIC_ORESTES)
+		closemessage
+		//Get into position 
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		switch (var(VAR_RESULT)) {
+			case DIR_NORTH:
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				waitmovement (0)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown)
+				waitmovement (0)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+				waitmovement (0)
+			case DIR_SOUTH:
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+				waitmovement (0)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+				waitmovement (0)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+				waitmovement (0)
+			case DIR_EAST:
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown)
+				waitmovement (0)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				waitmovement (0)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+				waitmovement (0)
+			default:
+				msgbox("ERROR: GetPlayer\nFacingDirection OOB")
+				closemessage
+				end
+		}
+		applymovement (LOCALID_ALDEON_ORESTES, AldeonTown_Movement_OrestesToServantHouse)
+		applymovement (LOCALID_PLAYER, AldeonTown_Movement_OrestesToServantHouse)
+		waitmovement (0)
+		applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkUp)
+		applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+		waitmovement (0)
+		//Orestes enter Door
+		//set var
+		setvar (VAR_ORESTES_STATE, 8)
+		//fin - continue On Frame in servant house
 	}
 	
 	end
@@ -484,6 +530,10 @@ movement AldeonTown_Movement_BlueLeafExeuntL {
 
 movement AldeonTown_Movement_StormBlock1 {
 	walk_left * 6
+}
+
+movement AldeonTown_Movement_OrestesToServantHouse {
+	walk_right 
 }
 
 
@@ -607,5 +657,12 @@ text AldeonTown_Text_OrestesReady {
 
 text AldeonTown_Text_OrestesNotReady {
 	format("Come back when you're ready. Please don't delay!")
+}
+
+text AldeonTown_Text_OrestesYesReady {
+	format("Follow me, we can't just go in the main
+			entrance. My mother, Klytmnestra, has
+			it guarded well. We'll have to go in through
+			the servant's tunnel to save my father.")
 }
 
