@@ -208,8 +208,6 @@ script Route17_Script_OrestesAfterAedesTrivis {
 	waitmovement (0)
 	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3)
 	waitmovement (0)
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3)
-	waitmovement (0)
 	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3)
 	waitmovement (0)
 	//remove O

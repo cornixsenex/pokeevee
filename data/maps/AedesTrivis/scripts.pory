@@ -447,6 +447,10 @@ script AedesTrivis_Script_TrivisCompleteScene2 {
 	waitmovement (0)
 	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
 	waitmovement (0)
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_AEDESTRIVIS_SAGE, Common_Movement_FaceDown)
+	waitmovement (0)
     //SK: Correct now that PLAYER has brought back the Trivis I have returned
     load_field_pic (FIELD_PIC_SLOWKING, 190, 98)
 	msgbox (AedesTrivis_Text_Slowking_TrivisComplete2)
@@ -467,7 +471,7 @@ script AedesTrivis_Script_TrivisCompleteScene2 {
 	waitmovement (0)
 	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkLeft)
 	waitmovement (0)
-	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceUp)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkUp)
 	waitmovement (0)
 	//O: Intro
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
@@ -495,6 +499,8 @@ script AedesTrivis_Script_TrivisCompleteScene2 {
 	destroy_field_pic (FIELD_PIC_SLOWKING)
 	closemessage
 	//Exit Orestes (DO rest his stuff outside the temple on frame)
+	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown)
+	waitmovement (0)
 	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkRight)
 	waitmovement (0)
 	applymovement (LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown6)
@@ -704,7 +710,7 @@ text AedesTrivis_Text_Slowking_TrivisComplete3 {
 			your haughty family act beyond the will
 			of He who holds the scale to judge our lives.
 			Despite the godless actions of your kin,
-			your own abstainment from ritual prayer
+			your own abstainment  from ritual prayer
 			up to this point, and your rude impatience,
 			we welcome and invite you to approach
 			our platform and tell us what bothers you.")
@@ -715,8 +721,8 @@ text AedesTrivis_Text_Orestes_TrivisComplete8 {
 			lies petrified in bed, bewitched by my
 			mother, who's own life is no more righteous.
 			The shame of knowing my father lies there
-			disgraced and curesed while I do nothing to
-			avenge or rescure him from that sad fate
+			disgraced and cursed while I do nothing to
+			avenge or rescue him from that sad fate
 			fills me with deep remorse and thoughts of death.
 			Yet neither can I act upon these pains
 			without crossing mother, another sin.
@@ -731,8 +737,8 @@ text AedesTrivis_Text_Orestes_TrivisComplete8 {
 
 //Hear ya, your father is wrongly dishonored and something must be done to save him. Your mother must be punished and defeated but yea you cannot be the one to do it. Find someone to do your dirty work for you, orchestrate the revival of your father and the downfall of your mother but you cannot be the hand of her downfall. That is the will of the divine as I see it.
 text AedesTrivis_Text_Slowking_TrivisComplete4 {
-	format("Your father has injustly been abused
-			and as his son you msut see justice done.
+	format("Your father has unjustly been abused
+			and as his son you must see justice done.
 			Since the offending party's your mother
 			the hand of justice cannot be your own.
 			You must find someone else to break the spell
@@ -758,7 +764,7 @@ text AedesTrivis_Text_Slowking_TrivisComplete5 {
 
 //Nor approach player
 text AedesTrivis_Text_Slowking_TrivisComplete6 {
-	format("Now, {PLAYER}, approach our dias. We would thank
+	format("Now, {PLAYER}, approach our dais. We would thank
 			you for your great service to our temple.")
 }
 
@@ -774,14 +780,14 @@ text AedesTrivis_Text_Slowking_TrivisComplete7 {
 text AedesTrivis_Text_Slowking_TrivisComplete8 {
 	format("That ancient stone was once regalia
 			of the Hylian Kings. It has been kept
-			in our possesion all this tired age.
+			in our possession all this tired age.
 			Now it is yours, to do with as you please.
 			Use it wisely. Keep to the righteous path
-			and by persistance you'll achieve your quest.
+			and by persistence you'll achieve your quest.
 			Now farewell, {PLAYER}. Be about your business.")
 }
 
 text AedesTrivis_Text_Slowking_Return {
-	format("If during your journey you recquire
+	format("If during your journey you require
 			additional advice, return to us.")
 }

@@ -690,154 +690,166 @@ AedesTrivis_Script_TrivisCompleteScene2::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 # 449 "data/maps/AedesTrivis/scripts.pory"
 	waitmovement 0
+# 450 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_SAGE, Common_Movement_WalkUp
 # 451 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SLOWKING, 190, 98
+	waitmovement 0
 # 452 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_TrivisComplete2
+	applymovement LOCALID_AEDESTRIVIS_SAGE, Common_Movement_FaceDown
 # 453 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SLOWKING
+	waitmovement 0
 # 455 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SAGE, 190, 98
+	load_field_pic FIELD_PIC_SLOWKING, 190, 98
 # 456 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Sage_TrivisComplete4
+	msgbox AedesTrivis_Text_Slowking_TrivisComplete2
 # 457 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SAGE
-# 458 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark
+	destroy_field_pic FIELD_PIC_SLOWKING
 # 459 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
+	load_field_pic FIELD_PIC_SAGE, 190, 98
+# 460 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_Sage_TrivisComplete4
 # 461 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_ORESTES, 190, 98
+	destroy_field_pic FIELD_PIC_SAGE
 # 462 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Orestes_TrivisComplete6
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_ExclamationMark
 # 463 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
-# 464 "data/maps/AedesTrivis/scripts.pory"
-	closemessage
+	waitmovement 0
+# 465 "data/maps/AedesTrivis/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
 # 466 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkUp
+	msgbox AedesTrivis_Text_Orestes_TrivisComplete6
 # 467 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_ORESTES
 # 468 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkLeft
-# 469 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
+	closemessage
 # 470 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_FaceUp
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkUp
 # 471 "data/maps/AedesTrivis/scripts.pory"
 	waitmovement 0
+# 472 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkLeft
 # 473 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_ORESTES, 190, 98
+	waitmovement 0
 # 474 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Orestes_TrivisComplete7
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkUp
 # 475 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
+	waitmovement 0
 # 477 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SLOWKING, 190, 98
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
 # 478 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_TrivisComplete3
+	msgbox AedesTrivis_Text_Orestes_TrivisComplete7
 # 479 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SLOWKING
+	destroy_field_pic FIELD_PIC_ORESTES
 # 481 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_ORESTES, 190, 98
+	load_field_pic FIELD_PIC_SLOWKING, 190, 98
 # 482 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Orestes_TrivisComplete8
+	msgbox AedesTrivis_Text_Slowking_TrivisComplete3
 # 483 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
+	destroy_field_pic FIELD_PIC_SLOWKING
 # 485 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SLOWKING, 190, 98
-# 486 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_TrivisComplete4
-# 487 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SLOWKING
-# 489 "data/maps/AedesTrivis/scripts.pory"
 	load_field_pic FIELD_PIC_ORESTES, 190, 98
-# 490 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Orestes_TrivisComplete9
-# 491 "data/maps/AedesTrivis/scripts.pory"
+# 486 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_Orestes_TrivisComplete8
+# 487 "data/maps/AedesTrivis/scripts.pory"
 	destroy_field_pic FIELD_PIC_ORESTES
+# 489 "data/maps/AedesTrivis/scripts.pory"
+	load_field_pic FIELD_PIC_SLOWKING, 190, 98
+# 490 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_Slowking_TrivisComplete4
+# 491 "data/maps/AedesTrivis/scripts.pory"
+	destroy_field_pic FIELD_PIC_SLOWKING
 # 493 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SLOWKING, 190, 98
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
 # 494 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_TrivisComplete5
+	msgbox AedesTrivis_Text_Orestes_TrivisComplete9
 # 495 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SLOWKING
-# 496 "data/maps/AedesTrivis/scripts.pory"
-	closemessage
+	destroy_field_pic FIELD_PIC_ORESTES
+# 497 "data/maps/AedesTrivis/scripts.pory"
+	load_field_pic FIELD_PIC_SLOWKING, 190, 98
 # 498 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkRight
+	msgbox AedesTrivis_Text_Slowking_TrivisComplete5
 # 499 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
+	destroy_field_pic FIELD_PIC_SLOWKING
 # 500 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown6
-# 501 "data/maps/AedesTrivis/scripts.pory"
-	waitmovement 0
-# 503 "data/maps/AedesTrivis/scripts.pory"
-	removeobject LOCALID_AEDESTRIVIS_ORESTES
-# 504 "data/maps/AedesTrivis/scripts.pory"
-	setobjectxyperm LOCALID_AEDESTRIVIS_ORESTES, 0, 0
-# 505 "data/maps/AedesTrivis/scripts.pory"
-	setobjectmovementtype LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_INVISIBLE
-# 506 "data/maps/AedesTrivis/scripts.pory"
-	addobject LOCALID_AEDESTRIVIS_ORESTES
-# 508 "data/maps/AedesTrivis/scripts.pory"
-	load_field_pic FIELD_PIC_SLOWKING, 190, 98
-# 509 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_TrivisComplete6
-# 510 "data/maps/AedesTrivis/scripts.pory"
-	destroy_field_pic FIELD_PIC_SLOWKING
-# 511 "data/maps/AedesTrivis/scripts.pory"
 	closemessage
-# 513 "data/maps/AedesTrivis/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
-# 514 "data/maps/AedesTrivis/scripts.pory"
+# 502 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown
+# 503 "data/maps/AedesTrivis/scripts.pory"
 	waitmovement 0
-# 516 "data/maps/AedesTrivis/scripts.pory"
+# 504 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkRight
+# 505 "data/maps/AedesTrivis/scripts.pory"
+	waitmovement 0
+# 506 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_AEDESTRIVIS_ORESTES, Common_Movement_WalkDown6
+# 507 "data/maps/AedesTrivis/scripts.pory"
+	waitmovement 0
+# 509 "data/maps/AedesTrivis/scripts.pory"
+	removeobject LOCALID_AEDESTRIVIS_ORESTES
+# 510 "data/maps/AedesTrivis/scripts.pory"
+	setobjectxyperm LOCALID_AEDESTRIVIS_ORESTES, 0, 0
+# 511 "data/maps/AedesTrivis/scripts.pory"
+	setobjectmovementtype LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_INVISIBLE
+# 512 "data/maps/AedesTrivis/scripts.pory"
+	addobject LOCALID_AEDESTRIVIS_ORESTES
+# 514 "data/maps/AedesTrivis/scripts.pory"
 	load_field_pic FIELD_PIC_SLOWKING, 190, 98
-# 517 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_TrivisComplete7
-# 518 "data/maps/AedesTrivis/scripts.pory"
+# 515 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_Slowking_TrivisComplete6
+# 516 "data/maps/AedesTrivis/scripts.pory"
 	destroy_field_pic FIELD_PIC_SLOWKING
+# 517 "data/maps/AedesTrivis/scripts.pory"
+	closemessage
+# 519 "data/maps/AedesTrivis/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
 # 520 "data/maps/AedesTrivis/scripts.pory"
-	giveitem ITEM_KINGS_ROCK
+	waitmovement 0
 # 522 "data/maps/AedesTrivis/scripts.pory"
 	load_field_pic FIELD_PIC_SLOWKING, 190, 98
 # 523 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_TrivisComplete8
+	msgbox AedesTrivis_Text_Slowking_TrivisComplete7
 # 524 "data/maps/AedesTrivis/scripts.pory"
-	msgbox AedesTrivis_Text_Slowking_Return
-# 525 "data/maps/AedesTrivis/scripts.pory"
 	destroy_field_pic FIELD_PIC_SLOWKING
 # 526 "data/maps/AedesTrivis/scripts.pory"
-	closemessage
+	giveitem ITEM_KINGS_ROCK
 # 528 "data/maps/AedesTrivis/scripts.pory"
-	setflag FLAG_TEMP_7
+	load_field_pic FIELD_PIC_SLOWKING, 190, 98
+# 529 "data/maps/AedesTrivis/scripts.pory"
+	msgbox AedesTrivis_Text_Slowking_TrivisComplete8
 # 530 "data/maps/AedesTrivis/scripts.pory"
-	setvar VAR_ORESTES_STATE, 6
+	msgbox AedesTrivis_Text_Slowking_Return
+# 531 "data/maps/AedesTrivis/scripts.pory"
+	destroy_field_pic FIELD_PIC_SLOWKING
 # 532 "data/maps/AedesTrivis/scripts.pory"
+	closemessage
+# 534 "data/maps/AedesTrivis/scripts.pory"
+	setflag FLAG_TEMP_7
+# 536 "data/maps/AedesTrivis/scripts.pory"
+	setvar VAR_ORESTES_STATE, 6
+# 538 "data/maps/AedesTrivis/scripts.pory"
 	releaseall
 	end
 
 
 AedesTrivis_Text_OrestesSageScene_Orestes1::
-# 536 "data/maps/AedesTrivis/scripts.pory"
+# 542 "data/maps/AedesTrivis/scripts.pory"
 	.string "What do you mean 'The Speaker is not\n"
 	.string "here?' I must consult the oracle!$"
 
 AedesTrivis_Text_OrestesSageScene_Sage1::
-# 541 "data/maps/AedesTrivis/scripts.pory"
+# 547 "data/maps/AedesTrivis/scripts.pory"
 	.string "He's gone. I already told you ever since\n"
 	.string "the green robed pirate carried off the\l"
 	.string "Trivis the speaker's pedestal has been\l"
 	.string "vacant.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes2::
-# 548 "data/maps/AedesTrivis/scripts.pory"
+# 554 "data/maps/AedesTrivis/scripts.pory"
 	.string "Well, if this tree vest is so important\n"
 	.string "to the temple, why don't you go get it?$"
 
 AedesTrivis_Text_OrestesSageScene_Sage2::
-# 553 "data/maps/AedesTrivis/scripts.pory"
+# 559 "data/maps/AedesTrivis/scripts.pory"
 	.string "I'm bound by oathe to attend the Aedes\n"
 	.string "Trivis. Only in death may I depart.\l"
 	.string "Someone, perhaps you or your champion,\l"
@@ -847,7 +859,7 @@ AedesTrivis_Text_OrestesSageScene_Sage2::
 	.string "place of the Trivis.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes3::
-# 562 "data/maps/AedesTrivis/scripts.pory"
+# 568 "data/maps/AedesTrivis/scripts.pory"
 	.string "Despair! I know now there turly is no\n"
 	.string "God, Gods, or Goddess looking down on\l"
 	.string "me! My query on the bridge has been\l"
@@ -856,7 +868,7 @@ AedesTrivis_Text_OrestesSageScene_Orestes3::
 	.string "jump...now die.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes4::
-# 570 "data/maps/AedesTrivis/scripts.pory"
+# 576 "data/maps/AedesTrivis/scripts.pory"
 	.string "Who are you!? Why have you come to this\n"
 	.string "place? I hope you did not come seeking\l"
 	.string "guidance since that charlatan is\l"
@@ -865,7 +877,7 @@ AedesTrivis_Text_OrestesSageScene_Orestes4::
 	.string "tell anyone their future.$"
 
 AedesTrivis_Text_OrestesSageScene_Orestes5::
-# 578 "data/maps/AedesTrivis/scripts.pory"
+# 584 "data/maps/AedesTrivis/scripts.pory"
 	.string "I just realized you're the answer to my\n"
 	.string "desperate supplication for help. The\l"
 	.string "odds of another traveller arriving here\l"
@@ -882,13 +894,13 @@ AedesTrivis_Text_OrestesSageScene_Orestes5::
 	.string "answering my most desperate prayers!$"
 
 AedesTrivis_Text_OrestesDuringTrivisQuest::
-# 595 "data/maps/AedesTrivis/scripts.pory"
+# 601 "data/maps/AedesTrivis/scripts.pory"
 	.string "Please help me! Please repair the tree\n"
 	.string "vest and bring back the oracle, else I\l"
 	.string "must die!$"
 
 AedesTrivis_Text_SageIntroQuest::
-# 600 "data/maps/AedesTrivis/scripts.pory"
+# 606 "data/maps/AedesTrivis/scripts.pory"
 	.string "The thief in green snuck in during the\n"
 	.string "night and stole the Trivis from this\l"
 	.string "sacred place. That he wore green seems\l"
@@ -905,7 +917,7 @@ AedesTrivis_Text_SageIntroQuest::
 	.string "or dead.$"
 
 AedesTrivis_Text_SageDuringQuest::
-# 615 "data/maps/AedesTrivis/scripts.pory"
+# 621 "data/maps/AedesTrivis/scripts.pory"
 	.string "If you intend to rescue the Trivis and\n"
 	.string "return the temple's stolen glory I would\l"
 	.string "begin your search inside the caves that\l"
@@ -919,13 +931,13 @@ AedesTrivis_Text_SageDuringQuest::
 	.string "please return.$"
 
 AedesTrivis_Text_Orestes_TrivisComplete1::
-# 631 "data/maps/AedesTrivis/scripts.pory"
+# 637 "data/maps/AedesTrivis/scripts.pory"
 	.string "You don't understand! This is Urgent! I\n"
 	.string "must have guidance! The guilt is killing\l"
 	.string "me!$"
 
 AedesTrivis_Text_Sage_TrivisComplete1::
-# 637 "data/maps/AedesTrivis/scripts.pory"
+# 643 "data/maps/AedesTrivis/scripts.pory"
 	.string "And as I told you, many times before, I\n"
 	.string "am a mere custodian. I can't give you\l"
 	.string "any advice worth more than words. Until\l"
@@ -936,48 +948,48 @@ AedesTrivis_Text_Sage_TrivisComplete1::
 	.string "compose yourself.$"
 
 AedesTrivis_Text_Orestes_TrivisComplete2::
-# 647 "data/maps/AedesTrivis/scripts.pory"
+# 653 "data/maps/AedesTrivis/scripts.pory"
 	.string "What's that? It's {PLAYER}!$"
 
 AedesTrivis_Text_Sage_TrivisComplete2::
-# 651 "data/maps/AedesTrivis/scripts.pory"
+# 657 "data/maps/AedesTrivis/scripts.pory"
 	.string "Have you found the Trivis?$"
 
 AedesTrivis_Text_TrivisGlow::
-# 655 "data/maps/AedesTrivis/scripts.pory"
+# 661 "data/maps/AedesTrivis/scripts.pory"
 	.string "The three pieces of Trivis begin to\n"
 	.string "glow.$"
 
 AedesTrivis_Text_Orestes_TrivisComplete3::
-# 659 "data/maps/AedesTrivis/scripts.pory"
+# 665 "data/maps/AedesTrivis/scripts.pory"
 	.string "What happened? Woah! What was that\n"
 	.string "sound? That light?$"
 
 AedesTrivis_Text_Sage_TrivisComplete3::
-# 663 "data/maps/AedesTrivis/scripts.pory"
+# 669 "data/maps/AedesTrivis/scripts.pory"
 	.string "What happy day! You've done it lad! You\n"
 	.string "have returned our temple to it's lost\l"
 	.string "glory! The Trivis, at long last, has been\l"
 	.string "restored!$"
 
 AedesTrivis_Text_Orestes_TrivisComplete4::
-# 669 "data/maps/AedesTrivis/scripts.pory"
+# 675 "data/maps/AedesTrivis/scripts.pory"
 	.string "The tree vest restored? That means...$"
 
 AedesTrivis_Text_Slowking_TrivisComplete1::
-# 673 "data/maps/AedesTrivis/scripts.pory"
+# 679 "data/maps/AedesTrivis/scripts.pory"
 	.string "Thank you, {PLAYER}.$"
 
 AedesTrivis_Text_Orestes_TrivisComplete5::
-# 677 "data/maps/AedesTrivis/scripts.pory"
+# 683 "data/maps/AedesTrivis/scripts.pory"
 	.string "What? Who was that?$"
 
 AedesTrivis_Text_Sage_TrivisComplete4::
-# 681 "data/maps/AedesTrivis/scripts.pory"
+# 687 "data/maps/AedesTrivis/scripts.pory"
 	.string "The speaker has returned!$"
 
 AedesTrivis_Text_Slowking_TrivisComplete2::
-# 685 "data/maps/AedesTrivis/scripts.pory"
+# 691 "data/maps/AedesTrivis/scripts.pory"
 	.string "The speaker? Yes, that's what they\n"
 	.string "once called us. After the Trivis was\l"
 	.string "stolen from here we were unable to take\l"
@@ -986,16 +998,16 @@ AedesTrivis_Text_Slowking_TrivisComplete2::
 	.string "devout pilgrims.$"
 
 AedesTrivis_Text_Orestes_TrivisComplete6::
-# 693 "data/maps/AedesTrivis/scripts.pory"
+# 699 "data/maps/AedesTrivis/scripts.pory"
 	.string "Hello!$"
 
 AedesTrivis_Text_Orestes_TrivisComplete7::
-# 697 "data/maps/AedesTrivis/scripts.pory"
+# 703 "data/maps/AedesTrivis/scripts.pory"
 	.string "I'm Orestes, son of Agamemnon, and I\n"
 	.string "desperately need divine advice!$"
 
 AedesTrivis_Text_Slowking_TrivisComplete3::
-# 702 "data/maps/AedesTrivis/scripts.pory"
+# 708 "data/maps/AedesTrivis/scripts.pory"
 	.string "Hasty Orestes, long have we observed\n"
 	.string "your haughty family act beyond the will\l"
 	.string "of He who holds the scale to judge our\l"
@@ -1007,30 +1019,30 @@ AedesTrivis_Text_Slowking_TrivisComplete3::
 	.string "us what bothers you.$"
 
 AedesTrivis_Text_Orestes_TrivisComplete8::
-# 713 "data/maps/AedesTrivis/scripts.pory"
+# 719 "data/maps/AedesTrivis/scripts.pory"
 	.string "My father, who's soul may be stained\n"
 	.string "with sin, lies petrified in bed,\l"
 	.string "bewitched by my mother, who's own life\l"
 	.string "is no more righteous. The shame of\l"
 	.string "knowing my father lies there disgraced\l"
-	.string "and curesed while I do nothing to\l"
-	.string "avenge or rescure him from that sad\l"
-	.string "fate fills me with deep remorse and\l"
-	.string "thoughts of death. Yet neither can I\l"
-	.string "act upon these pains without crossing\l"
-	.string "mother, another sin. You say my family's\l"
-	.string "sinful, and that I have ever scored the\l"
-	.string "will of the divine. These things are\l"
-	.string "true, but now I want to change. I came\l"
-	.string "here to ask what action to take, to\l"
-	.string "learn, then do, the will of the divine.\l"
-	.string "I'm sorry if I seem hasty, or base, but\l"
-	.string "my situation's indeed dire!$"
+	.string "and cursed while I do nothing to avenge\l"
+	.string "or rescue him from that sad fate fills\l"
+	.string "me with deep remorse and thoughts of\l"
+	.string "death. Yet neither can I act upon these\l"
+	.string "pains without crossing mother, another\l"
+	.string "sin. You say my family's sinful, and that\l"
+	.string "I have ever scored the will of the\l"
+	.string "divine. These things are true, but now I\l"
+	.string "want to change. I came here to ask what\l"
+	.string "action to take, to learn, then do, the\l"
+	.string "will of the divine. I'm sorry if I seem\l"
+	.string "hasty, or base, but my situation's\l"
+	.string "indeed dire!$"
 
 AedesTrivis_Text_Slowking_TrivisComplete4::
-# 733 "data/maps/AedesTrivis/scripts.pory"
-	.string "Your father has injustly been abused\n"
-	.string "and as his son you msut see justice\l"
+# 739 "data/maps/AedesTrivis/scripts.pory"
+	.string "Your father has unjustly been abused\n"
+	.string "and as his son you must see justice\l"
 	.string "done. Since the offending party's your\l"
 	.string "mother the hand of justice cannot be\l"
 	.string "your own. You must find someone else to\l"
@@ -1045,22 +1057,22 @@ AedesTrivis_Text_Slowking_TrivisComplete4::
 	.string "mom.$"
 
 AedesTrivis_Text_Orestes_TrivisComplete9::
-# 749 "data/maps/AedesTrivis/scripts.pory"
+# 755 "data/maps/AedesTrivis/scripts.pory"
 	.string "But, how...$"
 
 AedesTrivis_Text_Slowking_TrivisComplete5::
-# 754 "data/maps/AedesTrivis/scripts.pory"
+# 760 "data/maps/AedesTrivis/scripts.pory"
 	.string "No buts! We've said our prophecy. Be\n"
 	.string "gone! Attend to your urgent business.$"
 
 AedesTrivis_Text_Slowking_TrivisComplete6::
-# 760 "data/maps/AedesTrivis/scripts.pory"
-	.string "Now, {PLAYER}, approach our dias. We\n"
+# 766 "data/maps/AedesTrivis/scripts.pory"
+	.string "Now, {PLAYER}, approach our dais. We\n"
 	.string "would thank you for your great service\l"
 	.string "to our temple.$"
 
 AedesTrivis_Text_Slowking_TrivisComplete7::
-# 766 "data/maps/AedesTrivis/scripts.pory"
+# 772 "data/maps/AedesTrivis/scripts.pory"
 	.string "Most valiant and pure hearted\n"
 	.string "{PLAYER}, we thank you for returning\l"
 	.string "the stolen Trivis and restoring this\l"
@@ -1068,17 +1080,17 @@ AedesTrivis_Text_Slowking_TrivisComplete7::
 	.string "behalf of our diocese$"
 
 AedesTrivis_Text_Slowking_TrivisComplete8::
-# 774 "data/maps/AedesTrivis/scripts.pory"
+# 780 "data/maps/AedesTrivis/scripts.pory"
 	.string "That ancient stone was once regalia of\n"
 	.string "the Hylian Kings. It has been kept in\l"
-	.string "our possesion all this tired age. Now it\l"
+	.string "our possession all this tired age. Now it\l"
 	.string "is yours, to do with as you please. Use\l"
 	.string "it wisely. Keep to the righteous path\l"
-	.string "and by persistance you'll achieve your\l"
+	.string "and by persistence you'll achieve your\l"
 	.string "quest. Now farewell, {PLAYER}. Be\l"
 	.string "about your business.$"
 
 AedesTrivis_Text_Slowking_Return::
-# 784 "data/maps/AedesTrivis/scripts.pory"
-	.string "If during your journey you recquire\n"
+# 790 "data/maps/AedesTrivis/scripts.pory"
+	.string "If during your journey you require\n"
 	.string "additional advice, return to us.$"

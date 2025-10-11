@@ -122,7 +122,7 @@ script AldeonTown_Script_SetupStorm2 {
 }
 
 script AldeonTown_Script_ShowOrestes {
-	setobjectxyperm (LOCALID_ALDEON_ORESTES, 21, 20)
+	setobjectxyperm (LOCALID_ALDEON_ORESTES, 9, 20)
 	setobjectmovementtype (LOCALID_ALDEON_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
@@ -434,6 +434,7 @@ script AldeonTown_Script_Scott {
 }
 
 script AldeonTown_Script_Orestes {
+	lock
 	faceplayer
 	//ready yn?
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
@@ -454,47 +455,51 @@ script AldeonTown_Script_Orestes {
 		switch (var(VAR_RESULT)) {
 			case DIR_NORTH:
 				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
 				waitmovement (0)
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft4)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft4)
 				waitmovement (0)
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
-				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
-				waitmovement (0)
-			case DIR_SOUTH:
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown)
-				applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
-				waitmovement (0)
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
-				applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
-				waitmovement (0)
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
-				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+			case DIR_WEST:
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft5)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft5)
 				waitmovement (0)
 			case DIR_EAST:
 				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown)
 				waitmovement (0)
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft2)
 				waitmovement (0)
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft)
-				applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkUp)
+				waitmovement (0)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft4)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft4)
 				waitmovement (0)
 			default:
 				msgbox("ERROR: GetPlayer\nFacingDirection OOB")
 				closemessage
+				release
 				end
 		}
-		applymovement (LOCALID_ALDEON_ORESTES, AldeonTown_Movement_OrestesToServantHouse)
-		applymovement (LOCALID_PLAYER, AldeonTown_Movement_OrestesToServantHouse)
+		//Orestes enter Door
+		applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkInPlaceFasterUp)
+		waitmovement (0)
+		opendoor (3, 19)
+		waitdooranim
+		applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkInPlaceFasterUp)
 		waitmovement (0)
 		applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkUp)
-		applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
 		waitmovement (0)
-		//Orestes enter Door
+		removeobject (LOCALID_ALDEON_ORESTES)
+		setobjectxyperm (LOCALID_ALDEON_ORESTES, 0, 0)
+		setobjectmovementtype (LOCALID_ALDEON_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_ALDEON_ORESTES)
+		closedoor (3, 19)
+		waitdooranim
 		//set var
 		setvar (VAR_ORESTES_STATE, 8)
 		//fin - continue On Frame in servant house
+		release
 	}
-	
 	end
 }
 
@@ -531,11 +536,6 @@ movement AldeonTown_Movement_BlueLeafExeuntL {
 movement AldeonTown_Movement_StormBlock1 {
 	walk_left * 6
 }
-
-movement AldeonTown_Movement_OrestesToServantHouse {
-	walk_right 
-}
-
 
 text AldeonTown_Text_FatManBlock {
 	format("Woah, hold your horses there young man! Be careful these here snorlaxes..or uh snorlaci, can be mighty dangerous. You don't wanna get too close. If you just wait I'm sure he'll wander off soon. Why don't you go off and play?")

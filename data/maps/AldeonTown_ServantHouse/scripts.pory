@@ -1,6 +1,90 @@
 const OBJ_EVENT_SERVANT = 1
 
-mapscripts AldeonTown_ServantHouse_MapScripts {}
+mapscripts AldeonTown_ServantHouse_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		//Show Orestes for Scene
+		if (var(VAR_ORESTES_STATE) == 8) {
+			call (AldeonTown_ServantHouse_Script_SetupOrestesScene)
+		}
+		//Update servant location
+		if (var(VAR_ORESTES_STATE) > 8) {
+			call (AldeonTown_ServantHouse_Script_ShowServantByStairs)
+		}
+	}
+
+	MAP_SCRIPT_ON_LOAD {
+		//Show stairs
+		if (var(VAR_ORESTES_STATE) < 9) {
+			call (AldeonTown_ServantHouse_Script_HideStairs)
+		}
+	}
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ORESTES_STATE, 8: AldeonTown_ServantHouse_Script_OrestesInServantHouse
+	]
+
+}
+
+script AldeonTown_ServantHouse_Script_SetupOrestesScene {
+	setobjectxyperm (LOCALID_ALDEONSERVANTHOUSE_SERVANT, 6, 5)
+	setobjectxyperm (LOCALID_ALDEONSERVANTHOUSE_ORESTES, 5, 5,)
+	setobjectmovementtype (LOCALID_ALDEONSERVANTHOUSE_ORESTES, MOVEMENT_TYPE_FACE_RIGHT)
+	return
+}
+
+script AldeonTown_ServantHouse_Script_ShowServantByStairs {
+	setobjectxyperm (LOCALID_ALDEONSERVANTHOUSE_SERVANT, 7, 2)
+	setobjectmovementtype (LOCALID_ALDEONSERVANTHOUSE_SERVANT, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script AldeonTown_ServantHouse_Script_HideStairs {
+	setmetatile (5, 0, METATILE_GenericBuilding_BlueWallTop, TRUE)
+	setmetatile (6, 0, METATILE_GenericBuilding_BlueWallTop, TRUE)
+	setmetatile (7, 0, METATILE_GenericBuilding_BlueWallTop, TRUE)
+	setmetatile (5, 1, METATILE_GenericBuilding_BlueWallBottom, TRUE)
+	setmetatile (6, 1, METATILE_GenericBuilding_BlueWallBottom, TRUE)
+	setmetatile (7, 1, METATILE_GenericBuilding_BlueWallBottom, TRUE)
+	return
+}
+
+script AldeonTown_ServantHouse_Script_OrestesInServantHouse {
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//player to position
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//S: Thank Lord you're here! Does your mother know?
+    load_field_pic (FIELD_PIC_SAILOR2, 190, 98)
+	msgbox (AldeonTown_ServantHouse_Text_OrestesScene_Sailor1)
+	destroy_field_pic (FIELD_PIC_SAILOR2)
+	//O: No time I'm not here to see my mother, I'm here to save father.
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (AldeonTown_ServantHouse_Text_OrestesScene_Orestes1)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	//S: But you father...
+	//O: I have a plan but I need your help. Open the passage and allow me and my friend to pass thru undisturbed
+	//S: Very strange but whatever you say
+	//S to the stairs
+	//Sound
+	//Show stairs
+	//O to the stairs
+	//S:Never seen you take this way before. Why not the front door?
+	//O: Never you mind. Move out the way
+	//S out the way
+	//O up and face S
+	//O: And let him pass too
+	//O enter stairs
+	//set vars
+	setvar (VAR_ORESTES_STATE, 9)
+	//fin
+}
 
 script AldeonTown_ServantHouse_Script_Servant {
 	lock
@@ -52,4 +136,12 @@ text AldeonTown_ServantHouse_Text_Servant4 {
 //Master Agamemnon is a good man and a kind master but he has seemed not well recently. Master Atreus never used to shut himself indoors like this. I hope Master Menelaus returns soon.
 text AldeonTown_ServantHouse_Text_Servant5 {
 	format("Good man Master Agamemnon being and kind master but recently not seemin' well. Indoors shuttin' like this Master Atreus never be doin'. Master Menelaus returnin' soon me hopin'.")
+}
+
+text AldeonTown_ServantHouse_Text_OrestesScene_Sailor1 {
+	format("")
+}
+
+text AldeonTown_ServantHouse_Text_OrestesScene_Orestes1 {
+	format("")
 }

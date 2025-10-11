@@ -331,30 +331,26 @@ Route17_Script_OrestesAfterAedesTrivis::
 # 210 "data/maps/Route17/scripts.pory"
 	waitmovement 0
 # 211 "data/maps/Route17/scripts.pory"
-	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3
+	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3
 # 212 "data/maps/Route17/scripts.pory"
 	waitmovement 0
-# 213 "data/maps/Route17/scripts.pory"
-	applymovement LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3
 # 214 "data/maps/Route17/scripts.pory"
-	waitmovement 0
-# 216 "data/maps/Route17/scripts.pory"
 	removeobject LOCALID_ROUTE17_ORESTES
-# 217 "data/maps/Route17/scripts.pory"
+# 215 "data/maps/Route17/scripts.pory"
 	setobjectxyperm LOCALID_ROUTE17_ORESTES, 0, 0
-# 218 "data/maps/Route17/scripts.pory"
+# 216 "data/maps/Route17/scripts.pory"
 	setobjectmovementtype LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE
-# 219 "data/maps/Route17/scripts.pory"
+# 217 "data/maps/Route17/scripts.pory"
 	addobject LOCALID_ROUTE17_ORESTES
-# 221 "data/maps/Route17/scripts.pory"
+# 219 "data/maps/Route17/scripts.pory"
 	setvar VAR_ORESTES_STATE, 7
-# 223 "data/maps/Route17/scripts.pory"
+# 221 "data/maps/Route17/scripts.pory"
 	releaseall
 	end
 
 
 Route17_Text_Block1::
-# 227 "data/maps/Route17/scripts.pory"
+# 225 "data/maps/Route17/scripts.pory"
 	.string "This is the Via Fluvia which leads to\n"
 	.string "Lacus Drako and the town Salix but it is\l"
 	.string "impossible to use now. The storm has\l"
@@ -362,7 +358,7 @@ Route17_Text_Block1::
 	.string "be some time before they're fixed.$"
 
 Route17_Text_Block2::
-# 235 "data/maps/Route17/scripts.pory"
+# 233 "data/maps/Route17/scripts.pory"
 	.string "We managed to repair the lower bridge\n"
 	.string "but the second one, up by Dragon Lake,\l"
 	.string "is still broken. Be careful of the road\l"
@@ -378,7 +374,7 @@ Route17_Text_Block2::
 	.string "in the hills.$"
 
 Route17_Text_OrestesBridge::
-# 275 "data/maps/Route17/scripts.pory"
+# 273 "data/maps/Route17/scripts.pory"
 	.string "Familiar Drake, unchanged since happy\n"
 	.string "days long gone, transformed into my\l"
 	.string "present grief, do you still recognize\l"
@@ -419,7 +415,7 @@ Route17_Text_OrestesBridge::
 	.string "will set me free.$"
 
 Route17_Text_OrestesAfterAedesTrivis::
-# 313 "data/maps/Route17/scripts.pory"
+# 311 "data/maps/Route17/scripts.pory"
 	.string "Hey {PLAYER}, sorry I had to wait\n"
 	.string "outside. Did you hear what that talking\l"
 	.string "Slowking said? I need someone to help\l"

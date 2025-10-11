@@ -171,7 +171,7 @@ AldeonTown_Script_SetupStorm2::
 
 AldeonTown_Script_ShowOrestes::
 # 125 "data/maps/AldeonTown/scripts.pory"
-	setobjectxyperm LOCALID_ALDEON_ORESTES, 21, 20
+	setobjectxyperm LOCALID_ALDEON_ORESTES, 9, 20
 # 126 "data/maps/AldeonTown/scripts.pory"
 	setobjectmovementtype LOCALID_ALDEON_ORESTES, MOVEMENT_TYPE_FACE_DOWN
 	return
@@ -654,245 +654,251 @@ AldeonTown_Script_Scott::
 
 AldeonTown_Script_Orestes::
 # 437 "data/maps/AldeonTown/scripts.pory"
+	lock
+# 438 "data/maps/AldeonTown/scripts.pory"
 	faceplayer
-# 439 "data/maps/AldeonTown/scripts.pory"
-	load_field_pic FIELD_PIC_ORESTES, 190, 98
 # 440 "data/maps/AldeonTown/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
+# 441 "data/maps/AldeonTown/scripts.pory"
 	msgbox AldeonTown_Text_OrestesReady, MSGBOX_YESNO
-# 442 "data/maps/AldeonTown/scripts.pory"
+# 443 "data/maps/AldeonTown/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq AldeonTown_Script_Orestes_2
-# 449 "data/maps/AldeonTown/scripts.pory"
-	msgbox AldeonTown_Text_OrestesYesReady
 # 450 "data/maps/AldeonTown/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
+	msgbox AldeonTown_Text_OrestesYesReady
 # 451 "data/maps/AldeonTown/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
+# 452 "data/maps/AldeonTown/scripts.pory"
 	closemessage
-# 453 "data/maps/AldeonTown/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 454 "data/maps/AldeonTown/scripts.pory"
-	switch VAR_RESULT
+	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 455 "data/maps/AldeonTown/scripts.pory"
+	switch VAR_RESULT
+# 456 "data/maps/AldeonTown/scripts.pory"
 	case DIR_NORTH, AldeonTown_Script_Orestes_7
 # 463 "data/maps/AldeonTown/scripts.pory"
-	case DIR_SOUTH, AldeonTown_Script_Orestes_8
-# 473 "data/maps/AldeonTown/scripts.pory"
+	case DIR_WEST, AldeonTown_Script_Orestes_8
+# 467 "data/maps/AldeonTown/scripts.pory"
 	case DIR_EAST, AldeonTown_Script_Orestes_9
-# 482 "data/maps/AldeonTown/scripts.pory"
+# 478 "data/maps/AldeonTown/scripts.pory"
 	msgbox AldeonTown_Script_Orestes_Text_0
-# 483 "data/maps/AldeonTown/scripts.pory"
+# 479 "data/maps/AldeonTown/scripts.pory"
 	closemessage
+# 480 "data/maps/AldeonTown/scripts.pory"
+	release
 	end
 
 AldeonTown_Script_Orestes_1:
 	end
 
 AldeonTown_Script_Orestes_2:
-# 443 "data/maps/AldeonTown/scripts.pory"
-	msgbox AldeonTown_Text_OrestesNotReady
 # 444 "data/maps/AldeonTown/scripts.pory"
-	destroy_field_pic FIELD_PIC_ORESTES
+	msgbox AldeonTown_Text_OrestesNotReady
 # 445 "data/maps/AldeonTown/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
+# 446 "data/maps/AldeonTown/scripts.pory"
 	closemessage
 	end
 
 AldeonTown_Script_Orestes_5:
-# 486 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, AldeonTown_Movement_OrestesToServantHouse
-# 487 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_PLAYER, AldeonTown_Movement_OrestesToServantHouse
-# 488 "data/maps/AldeonTown/scripts.pory"
+# 484 "data/maps/AldeonTown/scripts.pory"
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkInPlaceFasterUp
+# 485 "data/maps/AldeonTown/scripts.pory"
 	waitmovement 0
+# 486 "data/maps/AldeonTown/scripts.pory"
+	opendoor 3, 19
+# 487 "data/maps/AldeonTown/scripts.pory"
+	waitdooranim
+# 488 "data/maps/AldeonTown/scripts.pory"
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkInPlaceFasterUp
 # 489 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkUp
+	waitmovement 0
 # 490 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkUp
 # 491 "data/maps/AldeonTown/scripts.pory"
 	waitmovement 0
+# 492 "data/maps/AldeonTown/scripts.pory"
+	removeobject LOCALID_ALDEON_ORESTES
+# 493 "data/maps/AldeonTown/scripts.pory"
+	setobjectxyperm LOCALID_ALDEON_ORESTES, 0, 0
 # 494 "data/maps/AldeonTown/scripts.pory"
+	setobjectmovementtype LOCALID_ALDEON_ORESTES, MOVEMENT_TYPE_INVISIBLE
+# 495 "data/maps/AldeonTown/scripts.pory"
+	addobject LOCALID_ALDEON_ORESTES
+# 496 "data/maps/AldeonTown/scripts.pory"
+	closedoor 3, 19
+# 497 "data/maps/AldeonTown/scripts.pory"
+	waitdooranim
+# 499 "data/maps/AldeonTown/scripts.pory"
 	setvar VAR_ORESTES_STATE, 8
+# 501 "data/maps/AldeonTown/scripts.pory"
+	release
 	goto AldeonTown_Script_Orestes_1
 
 AldeonTown_Script_Orestes_7:
-# 456 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft
 # 457 "data/maps/AldeonTown/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft
 # 458 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 # 459 "data/maps/AldeonTown/scripts.pory"
 	waitmovement 0
 # 460 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft4
 # 461 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft4
 # 462 "data/maps/AldeonTown/scripts.pory"
 	waitmovement 0
 	goto AldeonTown_Script_Orestes_5
 
 AldeonTown_Script_Orestes_8:
 # 464 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft5
 # 465 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft5
 # 466 "data/maps/AldeonTown/scripts.pory"
-	waitmovement 0
-# 467 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft
-# 468 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 469 "data/maps/AldeonTown/scripts.pory"
-	waitmovement 0
-# 470 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft
-# 471 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
-# 472 "data/maps/AldeonTown/scripts.pory"
 	waitmovement 0
 	goto AldeonTown_Script_Orestes_5
 
 AldeonTown_Script_Orestes_9:
-# 474 "data/maps/AldeonTown/scripts.pory"
+# 468 "data/maps/AldeonTown/scripts.pory"
 	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkDown
+# 469 "data/maps/AldeonTown/scripts.pory"
+	waitmovement 0
+# 470 "data/maps/AldeonTown/scripts.pory"
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft2
+# 471 "data/maps/AldeonTown/scripts.pory"
+	waitmovement 0
+# 472 "data/maps/AldeonTown/scripts.pory"
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkUp
+# 473 "data/maps/AldeonTown/scripts.pory"
+	waitmovement 0
+# 474 "data/maps/AldeonTown/scripts.pory"
+	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft4
 # 475 "data/maps/AldeonTown/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft4
 # 476 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft
-# 477 "data/maps/AldeonTown/scripts.pory"
-	waitmovement 0
-# 478 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft
-# 479 "data/maps/AldeonTown/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 480 "data/maps/AldeonTown/scripts.pory"
 	waitmovement 0
 	goto AldeonTown_Script_Orestes_5
 
 
-# 501 "data/maps/AldeonTown/scripts.pory"
+# 506 "data/maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_PlayerSnorlax1:
-# 502 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 503 "data/maps/AldeonTown/scripts.pory"
-	walk_up
-# 504 "data/maps/AldeonTown/scripts.pory"
-	face_right
-	step_end
-
 # 507 "data/maps/AldeonTown/scripts.pory"
-AldeonTown_Movement_PlayerSnorlax2:
+	walk_left
 # 508 "data/maps/AldeonTown/scripts.pory"
 	walk_up
 # 509 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 510 "data/maps/AldeonTown/scripts.pory"
-	walk_up
-# 511 "data/maps/AldeonTown/scripts.pory"
 	face_right
 	step_end
 
+# 512 "data/maps/AldeonTown/scripts.pory"
+AldeonTown_Movement_PlayerSnorlax2:
+# 513 "data/maps/AldeonTown/scripts.pory"
+	walk_up
 # 514 "data/maps/AldeonTown/scripts.pory"
-AldeonTown_Movement_Leaf1:
-# 515 "data/maps/AldeonTown/scripts.pory"
 	walk_left
 # 515 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 515 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 515 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 515 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 515 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 515 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 515 "data/maps/AldeonTown/scripts.pory"
-	walk_left
+	walk_up
 # 516 "data/maps/AldeonTown/scripts.pory"
-	face_up
+	face_right
 	step_end
 
 # 519 "data/maps/AldeonTown/scripts.pory"
+AldeonTown_Movement_Leaf1:
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 520 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 521 "data/maps/AldeonTown/scripts.pory"
+	face_up
+	step_end
+
+# 524 "data/maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_Blue1:
-# 520 "data/maps/AldeonTown/scripts.pory"
+# 525 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 520 "data/maps/AldeonTown/scripts.pory"
+# 525 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 520 "data/maps/AldeonTown/scripts.pory"
+# 525 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 520 "data/maps/AldeonTown/scripts.pory"
+# 525 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 520 "data/maps/AldeonTown/scripts.pory"
+# 525 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 520 "data/maps/AldeonTown/scripts.pory"
+# 525 "data/maps/AldeonTown/scripts.pory"
 	walk_right
 	step_end
 
-# 523 "data/maps/AldeonTown/scripts.pory"
+# 528 "data/maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_BlueLeafExeunt:
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
-# 524 "data/maps/AldeonTown/scripts.pory"
+# 529 "data/maps/AldeonTown/scripts.pory"
 	walk_right
 	step_end
 
-# 527 "data/maps/AldeonTown/scripts.pory"
+# 532 "data/maps/AldeonTown/scripts.pory"
 AldeonTown_Movement_BlueLeafExeuntL:
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
-# 528 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-	step_end
-
-# 531 "data/maps/AldeonTown/scripts.pory"
-AldeonTown_Movement_StormBlock1:
-# 532 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 532 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 532 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 532 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 532 "data/maps/AldeonTown/scripts.pory"
-	walk_left
-# 532 "data/maps/AldeonTown/scripts.pory"
+# 533 "data/maps/AldeonTown/scripts.pory"
 	walk_left
 	step_end
 
-# 535 "data/maps/AldeonTown/scripts.pory"
-AldeonTown_Movement_OrestesToServantHouse:
 # 536 "data/maps/AldeonTown/scripts.pory"
-	walk_right
+AldeonTown_Movement_StormBlock1:
+# 537 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 537 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 537 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 537 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 537 "data/maps/AldeonTown/scripts.pory"
+	walk_left
+# 537 "data/maps/AldeonTown/scripts.pory"
+	walk_left
 	step_end
 
 AldeonTown_Script_TriggerLeafBattle_Text_0:
@@ -900,7 +906,7 @@ AldeonTown_Script_TriggerLeafBattle_Text_0:
 	.string "Hey {PLAYER}!$"
 
 AldeonTown_Script_Orestes_Text_0:
-# 482 "data/maps/AldeonTown/scripts.pory"
+# 478 "data/maps/AldeonTown/scripts.pory"
 	.string "ERROR: GetPlayer\nFacingDirection OOB$"
 
 AldeonTown_Text_FatManBlock::
