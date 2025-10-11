@@ -24,22 +24,164 @@ script CasaAtrei_Script_ShowOrestesBeforeIphigeniaFight {
     setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_FACE_DOWN)
     setobjectxyperm (LOCALID_CASAATREI_AGAMEMNON, 15, 18)
     setobjectmovementtype (LOCALID_CASAATREI_AGAMEMNON, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASAATREI_KLYTMNESTRA, 13, 20)
+    setobjectmovementtype (LOCALID_CASAATREI_KLYTMNESTRA, MOVEMENT_TYPE_FACE_DOWN)
     return
 }
 
 script CasaAtrei_Script_ShowOrestesDuringIphigeniaFight {
-
+    setobjectxyperm (LOCALID_CASAATREI_ORESTES, 11, 8)
+    setobjectmovementtype (LOCALID_CASAATREI_ORESTES, MOVEMENT_TYPE_RUN_IN_PLACE_DOWN)
+    setobjectxyperm (LOCALID_CASAATREI_IPHIGENIA, 11, 9)
+    setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_RUN_IN_PLACE_UP)
+    setobjectxyperm (LOCALID_CASAATREI_AGAMEMNON, 15, 18)
+    setobjectmovementtype (LOCALID_CASAATREI_AGAMEMNON, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASAATREI_KLYTMNESTRA, 13, 20)
+    setobjectmovementtype (LOCALID_CASAATREI_KLYTMNESTRA, MOVEMENT_TYPE_FACE_DOWN)
     return
 }
 
 script CasaAtrei_Script_OrestesIphigeniaTriggerA {
-
+    lockall
+    //alert
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Into Position
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    //OrestesIphigeniaFightScene
+    call (CasaAtrei_Script_OrestesIphegeniaFightScene)
 }
 
 script CasaAtrei_Script_OrestesIphigeniaTriggerB {
-
+    lockall
+    //alert
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Into Position
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    //OrestesIphigeniaFightScene
+    call (CasaAtrei_Script_OrestesIphegeniaFightScene)
 }
 
 script CasaAtrei_Script_OrestesIphigeniaTriggerC {
+    lockall
+    //alert
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //Into Position
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    //OrestesIphigeniaFightScene
+    call (CasaAtrei_Script_OrestesIphegeniaFightScene)
+}
 
+script CasaAtrei_Script_OrestesIphegeniaFightScene {
+    //alert O
+    applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //face O to player
+    specialvar (VAR_RESULT, GetPlayerFacingDirection)
+    if (var(VAR_RESULT) == DIR_SOUTH) {
+        applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceUp)
+    } else {
+        applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceLeft)
+    }
+    waitmovement (0)
+    //O: the coast seems clear lets go down and save father, remember I can't help you once we confront Klytmnestra
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight1, MSGBOX_YESNO)
+    destroy_field_pic (FIELD_PIC_ORESTES)
+    //I offstage: Orestes! WTF what you doing
+    load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
+	msgbox (CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1, MSGBOX_YESNO)
+    destroy_field_pic (FIELD_PIC_IPHIGENIA)
+    closemessage
+    //alert both player et O
+    applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //face player et O
+    applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceDown)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    //enter Iphi
+    applymovement (LOCALID_CASAATREI_IPHIGENIA, Common_Movement_WalkUp6)
+    waitmovement (0)
+    //I: You won't do this I'll stop you
+    load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
+	msgbox (CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2, MSGBOX_YESNO)
+    destroy_field_pic (FIELD_PIC_IPHIGENIA)
+    //O face to player
+    if (var(VAR_RESULT) == DIR_SOUTH) {
+        applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceUp)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    } else {
+        applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceLeft)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    }
+    waitmovement (0)
+    //O: Go on without me, I'll hold her back. Find the master bedroom, defeat Klytmnestra and rescue Agamemnon
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight2, MSGBOX_YESNO)
+    //O face back to I
+    applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceDown)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    //O I wont let you interfere we're saving Dad
+	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight3, MSGBOX_YESNO)
+    destroy_field_pic (FIELD_PIC_ORESTES)
+    //I I wont let you hurt mum
+    load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
+	msgbox (CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3, MSGBOX_YESNO)
+    destroy_field_pic (FIELD_PIC_IPHIGENIA)
+    closemessage
+    //They run into each other
+    setobjectmovementtype (LOCALID_CASAATREI_ORESTES, MOVEMENT_TYPE_RUN_IN_PLACE_DOWN)
+    setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_RUN_IN_PLACE_UP)
+    //setvar
+    setvar (VAR_ORESTES_STATE, 10)
+    //fin
+    releaseall
+    end
+}
+
+script CasaAtrei_Script_Orestes {
+
+}
+
+script CasaAtrei_Script_Iphigenia {
+
+}
+
+script CasaAtrei_Script_Agamemnon {
+
+}
+
+
+text CasaAtrei_Text_OrestesBeforeIphegeniaFight1 {
+    format("")
+}
+
+text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1 {
+    format("")
+}
+
+text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2 {
+    format("")
+}
+
+text CasaAtrei_Text_OrestesBeforeIphegeniaFight2 {
+    format("")
+}
+
+text CasaAtrei_Text_OrestesBeforeIphegeniaFight3 {
+    format("")
+}
+
+text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3 {
+    format("")
 }
