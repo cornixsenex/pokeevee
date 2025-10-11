@@ -6640,6 +6640,26 @@
       "secondary_tileset": "gTileset_MauvilleGym",
       "border_filepath": "data/layouts/AedesLux_1F/border.bin",
       "blockdata_filepath": "data/layouts/AedesLux_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASA_ATREI",
+      "name": "CasaAtrei_Layout",
+      "width": 18,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CasaAtrei/border.bin",
+      "blockdata_filepath": "data/layouts/CasaAtrei/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASA_ATREI_PASSAGE",
+      "name": "CasaAtrei_Passage_Layout",
+      "width": 20,
+      "height": 7,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CasaAtrei_Passage/border.bin",
+      "blockdata_filepath": "data/layouts/CasaAtrei_Passage/map.bin"
     }
   ]
 }

@@ -4711,7 +4711,7 @@ F_TRAINER_FEMALE |
 #line 1782
         .trainerName = _("SHEIK"),
 #line 1783
-        .trainerClass = TRAINER_CLASS_SILENT_HERO,
+        .trainerClass = TRAINER_CLASS_MYSTERIOUS,
 #line 1784
         .trainerPic = TRAINER_PIC_SHEIK,
         .encounterMusic_gender =
@@ -4747,7 +4747,7 @@ F_TRAINER_FEMALE |
 #line 1796
         .trainerName = _("ZELDA"),
 #line 1797
-        .trainerClass = TRAINER_CLASS_FUCKBOY,
+        .trainerClass = TRAINER_CLASS_PRINCESS,
 #line 1798
         .trainerPic = TRAINER_PIC_ZELDA,
         .encounterMusic_gender =

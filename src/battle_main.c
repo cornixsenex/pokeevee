@@ -387,6 +387,8 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 	[TRAINER_CLASS_DARK_SHADOW] = { _("DARK SHADOW") },
 	[TRAINER_CLASS_SILENT_HERO] = { _("SILENT HERO") },
 	[TRAINER_CLASS_GERUDO_KING] = { _("GERUDO KING") },
+	[TRAINER_CLASS_PRINCESS] = { _("PRINCESS") },
+	[TRAINER_CLASS_MYSTERIOUS] = { _("MYSTERIOUS") },
 	//End Kustom Classes
 };
 

@@ -771,7 +771,9 @@
     "AedesAqua_Hallways",
     "AedesTerra",
     "AedesTerra_BossRoom",
-    "AedesLux_1F"
+    "AedesLux_1F",
+    "CasaAtrei_Passage",
+    "CasaAtrei"
   ],
   "gMapGroup_IndoorRoute123": [
     "Route123_BerryMastersHouse"

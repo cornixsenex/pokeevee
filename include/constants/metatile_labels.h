@@ -328,11 +328,16 @@
 #define METATILE_General_YellowCaveOpen        0x1A9
 
 // gTileset_GenericBuilding
-#define METATILE_GenericBuilding_BlueWallBottom          0x20D
-#define METATILE_GenericBuilding_BlueWallTop             0x205
-#define METATILE_GenericBuilding_TableEdge               0x2F1
-#define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
-#define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
+#define METATILE_GenericBuilding_BlueWallBottom              0x20D
+#define METATILE_GenericBuilding_BlueWallTop                 0x205
+#define METATILE_GenericBuilding_BlueWall_StairsBottomLeft   0x20A
+#define METATILE_GenericBuilding_BlueWall_StairsBottomRight  0x20C
+#define METATILE_GenericBuilding_BlueWall_StairsTopCenter    0x203
+#define METATILE_GenericBuilding_BlueWall_StairsTopLeft      0x202
+#define METATILE_GenericBuilding_BlueWall_StairsTopRight     0x204
+#define METATILE_GenericBuilding_TableEdge                   0x2F1
+#define METATILE_GenericBuilding_TrickHouse_Door_Closed      0x21B
+#define METATILE_GenericBuilding_TrickHouse_Stairs_Down      0x219
 
 // gTileset_Hospital
 #define METATILE_Hospital_PC_Off  0x000

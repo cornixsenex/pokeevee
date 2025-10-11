@@ -743,6 +743,8 @@
 #define MAP_AEDES_TERRA               (24 | (32 << 8))
 #define MAP_AEDES_TERRA_BOSS_ROOM     (25 | (32 << 8))
 #define MAP_AEDES_LUX_1F              (26 | (32 << 8))
+#define MAP_CASA_ATREI_PASSAGE        (27 | (32 << 8))
+#define MAP_CASA_ATREI                (28 | (32 << 8))
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (33 << 8))

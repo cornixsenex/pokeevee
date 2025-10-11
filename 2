@@ -118,76 +118,45 @@ script AldeonTown_ServantHouse_Script_OrestesInServantHouse {
 	destroy_field_pic (FIELD_PIC_SAILOR2)
 	//O: Never you mind. Move out the way
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
-	msgbox (AldeonTown_ServantHouse_Text_OrestesScene_Orestes4)
+	msgbox (AldeonTown_ServantHouse_Text_OrestesScene_Orestes3)
 	destroy_field_pic (FIELD_PIC_ORESTES)
     closemessage
 	//S out the way
     applymovement (LOCALID_ALDEONSERVANTHOUSE_SERVANT, Common_Movement_WalkRight)
     applymovement (LOCALID_ALDEONSERVANTHOUSE_ORESTES, Common_Movement_WalkRight)
     waitmovement (0)
-    //O et S face
-    applymovement (LOCALID_ALDEONSERVANTHOUSE_SERVANT, Common_Movement_FaceLeft)
-    waitmovement (0)
+	//O up and face S
 	//O: And let him pass too
-    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
-	msgbox (AldeonTown_ServantHouse_Text_OrestesScene_Orestes5)
-	destroy_field_pic (FIELD_PIC_ORESTES)
-    closemessage
-    //S face down
-    applymovement (LOCALID_ALDEONSERVANTHOUSE_SERVANT, Common_Movement_FaceDown)
-    waitmovement (0)
 	//O enter stairs
-    applymovement (LOCALID_ALDEONSERVANTHOUSE_ORESTES, Common_Movement_WalkUp)
-    waitmovement (0)
-    //hide orestes
-    removeobject (LOCALID_ALDEONSERVANTHOUSE_ORESTES)
-    setobjectxyperm (LOCALID_ALDEONSERVANTHOUSE_ORESTES, 0, 0)
-    setobjectmovementtype (LOCALID_ALDEONSERVANTHOUSE_ORESTES, MOVEMENT_TYPE_INVISIBLE)
-    addobject (LOCALID_ALDEONSERVANTHOUSE_ORESTES)
 	//set vars
 	setvar (VAR_ORESTES_STATE, 9)
 	//fin
-    end
 }
 
 script AldeonTown_ServantHouse_Script_Servant {
 	lock
 	faceplayer
-    //Before Orestes Arrives
-    if (var(VAR_ORESTES_STATE) < 8) {
-        specialvar (VAR_RESULT, RandDigit)
-        switch (var(VAR_RESULT)) {
-            case 1:
-            case 2:
-                msgbox (AldeonTown_ServantHouse_Text_Servant1, MSGBOX_DEFAULT)
-            case 3:
-            case 4:
-                msgbox (AldeonTown_ServantHouse_Text_Servant2, MSGBOX_DEFAULT)
-            case 5:
-            case 6:
-                msgbox (AldeonTown_ServantHouse_Text_Servant3, MSGBOX_DEFAULT)
-            case 7:
-            case 8:
-                msgbox (AldeonTown_ServantHouse_Text_Servant4, MSGBOX_DEFAULT)
-            default :
-                msgbox (AldeonTown_ServantHouse_Text_Servant5, MSGBOX_DEFAULT)
-        }
-        closemessage
-        applymovement (OBJ_EVENT_SERVANT, Common_Movement_FaceLeft)
-        waitmovement (0)
-    //During Orestreia
-    } elif (var(VAR_ORESTES_STATE) == 9) {
-        msgbox (AldeonTown_ServantHouse_Text_ServantDuringOrestreia)
-        closemessage
-        applymovement (LOCALID_ALDEONSERVANTHOUSE_SERVANT, Common_Movement_FaceDown)
-        waitmovement (0)
-    //After Orestreia
-    } else {
-        msgbox (AldeonTown_ServantHouse_Text_ServantAfterOrestreia)
-        closemessage
-        applymovement (OBJ_EVENT_SERVANT, Common_Movement_FaceLeft)
-        waitmovement (0)
-    }
+	//should check state of Orpheus quest
+	specialvar (VAR_RESULT, RandDigit)
+	switch (var(VAR_RESULT)) {
+		case 1:
+		case 2:
+			msgbox (AldeonTown_ServantHouse_Text_Servant1, MSGBOX_DEFAULT)
+		case 3:
+		case 4:
+			msgbox (AldeonTown_ServantHouse_Text_Servant2, MSGBOX_DEFAULT)
+		case 5:
+		case 6:
+			msgbox (AldeonTown_ServantHouse_Text_Servant3, MSGBOX_DEFAULT)
+		case 7:
+		case 8:
+			msgbox (AldeonTown_ServantHouse_Text_Servant4, MSGBOX_DEFAULT)
+		default :
+			msgbox (AldeonTown_ServantHouse_Text_Servant5, MSGBOX_DEFAULT)
+	}
+	closemessage
+	applymovement (OBJ_EVENT_SERVANT, Common_Movement_FaceLeft)
+	waitmovement (0)
 	release
 	end
 }
@@ -203,7 +172,7 @@ text AldeonTown_ServantHouse_Text_Servant2 {
 
 //Master Menelaus has been gone for some time and I think the rest of the family misses him.
 text AldeonTown_ServantHouse_Text_Servant3 {
-	format("Young master Orestes some time being gone. Family missin' him I think.")
+	format("Master Menelaus some time being gone. Family missin' him I think.")
 }
 
 //I wasn't born here but way back on my island home
@@ -249,16 +218,4 @@ text AldeonTown_ServantHouse_Text_OrestesScene_Servant4 {
 
 text AldeonTown_ServantHouse_Text_OrestesScene_Orestes4 {
     format("Never you mind 'why.' Get out of my way!")
-}
-
-text AldeonTown_ServantHouse_Text_OrestesScene_Orestes5 {
-    format("Do not follow, and let him pass as well.")
-}
-
-text AldeonTown_ServantHouse_Text_ServantDuringOrestreia {
-    format("This is all so strange, what's gotten into the young master, and who are you?")
-}
-
-text AldeonTown_ServantHouse_Text_ServantAfterOrestreia {
-    format("Thank you for helping young master and saving master Agamemnon. The house finally feels peaceful and happy again.")
 }
