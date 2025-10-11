@@ -39,18 +39,18 @@ script AldeonTown_ServantHouse_Script_ShowServantByStairs {
 	return
 }
 
-script AldeonTown_ServantHouse_Script_HideStairs {
+script AldeonTown_ServantHouse_Script_ShowStairs {
 	setmetatile (5, 0, METATILE_GenericBuilding_BlueWall_StairsTopLeft, TRUE)
 	setmetatile (6, 0, METATILE_GenericBuilding_BlueWall_StairsTopCenter, TRUE)
 	setmetatile (7, 0, METATILE_GenericBuilding_BlueWall_StairsTopRight, TRUE)
 	setmetatile (5, 1, METATILE_GenericBuilding_BlueWall_StairsBottomLeft, TRUE)
-	setmetatile (6, 1, METATILE_GenericBuilding_TrickHouse_Stairs_Down, TRUE)
+	setmetatile (6, 1, METATILE_GenericBuilding_TrickHouse_Stairs_Down, FALSE)
 	setmetatile (7, 1, METATILE_GenericBuilding_BlueWall_StairsBottomRight, TRUE)
     special (DrawWholeMapView)
 	return
 }
 
-script AldeonTown_ServantHouse_Script_ShowStairs {
+script AldeonTown_ServantHouse_Script_HideStairs {
 	setmetatile (5, 0, METATILE_GenericBuilding_BlueWallTop, TRUE)
 	setmetatile (6, 0, METATILE_GenericBuilding_BlueWallTop, TRUE)
 	setmetatile (7, 0, METATILE_GenericBuilding_BlueWallTop, TRUE)
@@ -176,7 +176,7 @@ script AldeonTown_ServantHouse_Script_Servant {
         applymovement (OBJ_EVENT_SERVANT, Common_Movement_FaceLeft)
         waitmovement (0)
     //During Orestreia
-    } elif (var(VAR_ORESTES_STATE) == 9) {
+    } elif (var(VAR_ORESTES_STATE) > 8 && var(VAR_ORESTES_STATE) < 11) {
         msgbox (AldeonTown_ServantHouse_Text_ServantDuringOrestreia)
         closemessage
         applymovement (LOCALID_ALDEONSERVANTHOUSE_SERVANT, Common_Movement_FaceDown)

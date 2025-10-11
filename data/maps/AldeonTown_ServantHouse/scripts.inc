@@ -62,7 +62,7 @@ AldeonTown_ServantHouse_Script_ShowServantByStairs::
 	return
 
 
-AldeonTown_ServantHouse_Script_HideStairs::
+AldeonTown_ServantHouse_Script_ShowStairs::
 # 43 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	setmetatile 5, 0, METATILE_GenericBuilding_BlueWall_StairsTopLeft, TRUE
 # 44 "data/maps/AldeonTown_ServantHouse/scripts.pory"
@@ -72,7 +72,7 @@ AldeonTown_ServantHouse_Script_HideStairs::
 # 46 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	setmetatile 5, 1, METATILE_GenericBuilding_BlueWall_StairsBottomLeft, TRUE
 # 47 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	setmetatile 6, 1, METATILE_GenericBuilding_TrickHouse_Stairs_Down, TRUE
+	setmetatile 6, 1, METATILE_GenericBuilding_TrickHouse_Stairs_Down, FALSE
 # 48 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	setmetatile 7, 1, METATILE_GenericBuilding_BlueWall_StairsBottomRight, TRUE
 # 49 "data/maps/AldeonTown_ServantHouse/scripts.pory"
@@ -80,7 +80,7 @@ AldeonTown_ServantHouse_Script_HideStairs::
 	return
 
 
-AldeonTown_ServantHouse_Script_ShowStairs::
+AldeonTown_ServantHouse_Script_HideStairs::
 # 54 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	setmetatile 5, 0, METATILE_GenericBuilding_BlueWallTop, TRUE
 # 55 "data/maps/AldeonTown_ServantHouse/scripts.pory"
@@ -235,8 +235,9 @@ AldeonTown_ServantHouse_Script_Servant::
 	compare VAR_ORESTES_STATE, 8
 	goto_if_lt AldeonTown_ServantHouse_Script_Servant_2
 # 179 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	compare VAR_ORESTES_STATE, 9
-	goto_if_eq AldeonTown_ServantHouse_Script_Servant_3
+	compare VAR_ORESTES_STATE, 8
+	goto_if_gt AldeonTown_ServantHouse_Script_Servant_5
+AldeonTown_ServantHouse_Script_Servant_4:
 # 186 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	msgbox AldeonTown_ServantHouse_Text_ServantAfterOrestreia
 # 187 "data/maps/AldeonTown_ServantHouse/scripts.pory"
@@ -256,24 +257,24 @@ AldeonTown_ServantHouse_Script_Servant_2:
 # 159 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	switch VAR_RESULT
 # 160 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 1, AldeonTown_ServantHouse_Script_Servant_9
+	case 1, AldeonTown_ServantHouse_Script_Servant_11
 # 161 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 2, AldeonTown_ServantHouse_Script_Servant_9
+	case 2, AldeonTown_ServantHouse_Script_Servant_11
 # 163 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 3, AldeonTown_ServantHouse_Script_Servant_10
+	case 3, AldeonTown_ServantHouse_Script_Servant_12
 # 164 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 4, AldeonTown_ServantHouse_Script_Servant_10
+	case 4, AldeonTown_ServantHouse_Script_Servant_12
 # 166 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 5, AldeonTown_ServantHouse_Script_Servant_11
+	case 5, AldeonTown_ServantHouse_Script_Servant_13
 # 167 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 6, AldeonTown_ServantHouse_Script_Servant_11
+	case 6, AldeonTown_ServantHouse_Script_Servant_13
 # 169 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 7, AldeonTown_ServantHouse_Script_Servant_12
+	case 7, AldeonTown_ServantHouse_Script_Servant_14
 # 170 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	case 8, AldeonTown_ServantHouse_Script_Servant_12
+	case 8, AldeonTown_ServantHouse_Script_Servant_14
 # 173 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	msgbox AldeonTown_ServantHouse_Text_Servant5, MSGBOX_DEFAULT
-AldeonTown_ServantHouse_Script_Servant_7:
+AldeonTown_ServantHouse_Script_Servant_9:
 # 175 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	closemessage
 # 176 "data/maps/AldeonTown_ServantHouse/scripts.pory"
@@ -293,25 +294,31 @@ AldeonTown_ServantHouse_Script_Servant_3:
 	waitmovement 0
 	goto AldeonTown_ServantHouse_Script_Servant_1
 
-AldeonTown_ServantHouse_Script_Servant_9:
-# 162 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	msgbox AldeonTown_ServantHouse_Text_Servant1, MSGBOX_DEFAULT
-	goto AldeonTown_ServantHouse_Script_Servant_7
-
-AldeonTown_ServantHouse_Script_Servant_10:
-# 165 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	msgbox AldeonTown_ServantHouse_Text_Servant2, MSGBOX_DEFAULT
-	goto AldeonTown_ServantHouse_Script_Servant_7
+AldeonTown_ServantHouse_Script_Servant_5:
+# 179 "data/maps/AldeonTown_ServantHouse/scripts.pory"
+	compare VAR_ORESTES_STATE, 11
+	goto_if_lt AldeonTown_ServantHouse_Script_Servant_3
+	goto AldeonTown_ServantHouse_Script_Servant_4
 
 AldeonTown_ServantHouse_Script_Servant_11:
-# 168 "data/maps/AldeonTown_ServantHouse/scripts.pory"
-	msgbox AldeonTown_ServantHouse_Text_Servant3, MSGBOX_DEFAULT
-	goto AldeonTown_ServantHouse_Script_Servant_7
+# 162 "data/maps/AldeonTown_ServantHouse/scripts.pory"
+	msgbox AldeonTown_ServantHouse_Text_Servant1, MSGBOX_DEFAULT
+	goto AldeonTown_ServantHouse_Script_Servant_9
 
 AldeonTown_ServantHouse_Script_Servant_12:
+# 165 "data/maps/AldeonTown_ServantHouse/scripts.pory"
+	msgbox AldeonTown_ServantHouse_Text_Servant2, MSGBOX_DEFAULT
+	goto AldeonTown_ServantHouse_Script_Servant_9
+
+AldeonTown_ServantHouse_Script_Servant_13:
+# 168 "data/maps/AldeonTown_ServantHouse/scripts.pory"
+	msgbox AldeonTown_ServantHouse_Text_Servant3, MSGBOX_DEFAULT
+	goto AldeonTown_ServantHouse_Script_Servant_9
+
+AldeonTown_ServantHouse_Script_Servant_14:
 # 171 "data/maps/AldeonTown_ServantHouse/scripts.pory"
 	msgbox AldeonTown_ServantHouse_Text_Servant4, MSGBOX_DEFAULT
-	goto AldeonTown_ServantHouse_Script_Servant_7
+	goto AldeonTown_ServantHouse_Script_Servant_9
 
 
 AldeonTown_ServantHouse_Text_Servant1::

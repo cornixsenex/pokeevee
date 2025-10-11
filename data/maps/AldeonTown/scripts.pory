@@ -31,6 +31,10 @@ mapscripts AldeonTown_MapScripts {
 		if (var(VAR_ORESTES_STATE) == 7) {
 			call (AldeonTown_Script_ShowOrestes)
 		}
+        //Hide Maid Block after Orestreia
+        if (var(VAR_ORESTES_STATE) > 10) {
+            call (AldeonTown_Script_HideMaid)
+        }
 
 	}
 
@@ -125,6 +129,12 @@ script AldeonTown_Script_ShowOrestes {
 	setobjectxyperm (LOCALID_ALDEON_ORESTES, 9, 20)
 	setobjectmovementtype (LOCALID_ALDEON_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
 	return
+}
+
+script AldeonTown_Script_HideMaid {
+    setobjectxyperm (LOCALID_ALDEON_MAID, 0, 0)
+    setobjectmovementtype (LOCALID_ALDEON_MAID, MOVEMENT_TYPE_INVISIBLE)
+    return
 }
 
 script AldeonTown_Script_TriggerLeafBattle {

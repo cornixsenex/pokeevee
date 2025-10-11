@@ -39,6 +39,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ALDEON_MAID",
       "graphics_id": "OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN",
       "x": 11,
       "y": 16,
@@ -205,6 +206,13 @@
       "elevation": 0,
       "dest_map": "MAP_CITY_CLARA_SCHOOL",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_CASA_ATREI",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

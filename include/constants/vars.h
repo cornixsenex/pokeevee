@@ -122,7 +122,10 @@
                                                                 // 6: After Trivis Complete Scene = Slowking Returned - Trigger Orestes setup for Orestreia on frame exit Aedes Trivis
 																// 7: After setup Orestreia - Show Orestes in Aldeon
 																// 8: Orestes in Servant House - OnFrame open servant's passage
-																// 9: After Orestes in Servant House scene - open passage - move servant - update servant dialogue
+																// 9: After Orestes in Servant House scene - open passage - move servant - update servant dialogue - trigger  Orestes Fights Iphigenia
+                                                                //10: While Orestes Fights Iphigenia - Trigger Klytaimnestra scene
+                                                                //11: After Klytaimnestra defeated, Agamemnon revived, Iphi in her room, Orestes with his father, fin? There's another state where Agamemnon is gone to Nestor, then Iphi is gone etc Orestes in Kitchen but I think that's handelded by another VAR tbh
+
 #define VAR_AEDES_AQUA_STATE                             0x4056 // Handle Water Level and Warps in Aedes Aqua
 																// 0: Default - No Water No Warp - Entrance
 #define VAR_PETALBURG_CITY_STATE                         0x4057

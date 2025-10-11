@@ -1,1 +1,45 @@
-mapscripts CasaAtrei_MapScripts {}
+mapscripts CasaAtrei_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        //Show Orestes before Iphigenia fight
+        if (var(VAR_ORESTES_STATE) == 9) {
+            call (CasaAtrei_Script_ShowOrestesBeforeIphigeniaFight)
+        }
+        if (var(VAR_ORESTES_STATE) == 10) {
+            call (CasaAtrei_Script_ShowOrestesDuringIphigeniaFight)
+        }
+        //Show Orestes during Iphigenia fight
+        if (var(VAR_ORESTES_STATE) == 11) {
+        //Show after Klytmnestra before Agamemnon departs
+        //Show after Agamemnon departs
+        //Show after Iphigenia departs
+        }
+    }
+}
+
+script CasaAtrei_Script_ShowOrestesBeforeIphigeniaFight {
+    setobjectxyperm (LOCALID_CASAATREI_ORESTES, 11, 8)
+    setobjectmovementtype (LOCALID_CASAATREI_ORESTES, MOVEMENT_TYPE_LOOK_AROUND)
+    setobjectxyperm (LOCALID_CASAATREI_IPHIGENIA, 11, 15)
+    setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm (LOCALID_CASAATREI_AGAMEMNON, 15, 18)
+    setobjectmovementtype (LOCALID_CASAATREI_AGAMEMNON, MOVEMENT_TYPE_FACE_DOWN)
+    return
+}
+
+script CasaAtrei_Script_ShowOrestesDuringIphigeniaFight {
+
+    return
+}
+
+script CasaAtrei_Script_OrestesIphigeniaTriggerA {
+
+}
+
+script CasaAtrei_Script_OrestesIphigeniaTriggerB {
+
+}
+
+script CasaAtrei_Script_OrestesIphigeniaTriggerC {
+
+}
