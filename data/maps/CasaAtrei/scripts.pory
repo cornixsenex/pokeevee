@@ -15,6 +15,13 @@ mapscripts CasaAtrei_MapScripts {
         //Show after Iphigenia departs
         }
     }
+
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			hideobjectat (LOCALID_CASAATREI_KLYTMNESTRA, MAP_CASA_ATREI)
+			removeobject (LOCALID_CASAATREI_KLYTMNESTRA)
+		}
+	}
 }
 
 script CasaAtrei_Script_ShowOrestesBeforeIphigeniaFight {
@@ -199,8 +206,16 @@ script CasaAtrei_Script_KlytmnestraScene {
 	msgbox (CasaAtrei_Text_Klytmnestra2)
 	destroy_field_pic (FIELD_PIC_KLYTMNESTRA)
 	closemessage
+	//setup for hide K
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	//K battle - melting(?)
 	trainerbattle_no_intro (TRAINER_KLYTMNESTRA, CasaAtrei_Text_KlytmnestraLost)
+	//Hide K after battle
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_CASAATREI_KLYTMNESTRA)
+	setobjectxyperm (LOCALID_CASAATREI_KLYTMNESTRA, 0, 0)
+	setobjectmovementtype (LOCALID_CASAATREI_KLYTMNESTRA, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_CASAATREI_KLYTMNESTRA)
 	//O off screan: you did it!
 	//O come down
 	//face eachother

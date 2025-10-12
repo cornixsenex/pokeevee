@@ -3397,12 +3397,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_KLYTMNESTRA ===
 Name: KLYTMNESTRA
-Class: Guitarist
-Pic: Guitarist
-Gender: Male
+Class: Enchantress
+Pic: Klytaimnestra
+Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
+Mugshot: Purple
 
 Magnemite
 Level: 28
