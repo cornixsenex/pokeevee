@@ -8913,10 +8913,10 @@ F_TRAINER_FEMALE |
         },
     },
 #line 3398
-    [DIFFICULTY_NORMAL][TRAINER_DALTON_3] =
+    [DIFFICULTY_NORMAL][TRAINER_KLYTMNESTRA] =
     {
 #line 3399
-        .trainerName = _("DALTON"),
+        .trainerName = _("KLYTMNESTRA"),
 #line 3400
         .trainerClass = TRAINER_CLASS_GUITARIST,
 #line 3401

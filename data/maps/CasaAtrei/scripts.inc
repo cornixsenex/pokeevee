@@ -229,6 +229,82 @@ CasaAtrei_Script_OrestesIphegeniaFightScene_6:
 	goto CasaAtrei_Script_OrestesIphegeniaFightScene_5
 
 
+CasaAtrei_Script_TriggerKlytmnestraSceneA::
+# 154 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown2
+# 155 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 156 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight2
+# 157 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 159 "data/maps/CasaAtrei/scripts.pory"
+	call CasaAtrei_Script_KlytmnestraScene
+	return
+
+
+CasaAtrei_Script_TriggerKlytmnestraSceneB::
+# 164 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown2
+# 165 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 166 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+# 167 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 169 "data/maps/CasaAtrei/scripts.pory"
+	call CasaAtrei_Script_KlytmnestraScene
+	return
+
+
+CasaAtrei_Script_TriggerKlytmnestraSceneC::
+# 174 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown2
+# 175 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 176 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 177 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 179 "data/maps/CasaAtrei/scripts.pory"
+	call CasaAtrei_Script_KlytmnestraScene
+	return
+
+
+CasaAtrei_Script_KlytmnestraScene::
+# 184 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 185 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 187 "data/maps/CasaAtrei/scripts.pory"
+	load_field_pic FIELD_PIC_KLYTMNESTRA, 190, 98
+# 188 "data/maps/CasaAtrei/scripts.pory"
+	msgbox CasaAtrei_Text_Klytmnestra1
+# 189 "data/maps/CasaAtrei/scripts.pory"
+	destroy_field_pic FIELD_PIC_KLYTMNESTRA
+# 190 "data/maps/CasaAtrei/scripts.pory"
+	closemessage
+# 192 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+# 193 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 195 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_CASAATREI_KLYTMNESTRA, Common_Movement_FaceLeft
+# 196 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 198 "data/maps/CasaAtrei/scripts.pory"
+	load_field_pic FIELD_PIC_KLYTMNESTRA, 190, 98
+# 199 "data/maps/CasaAtrei/scripts.pory"
+	msgbox CasaAtrei_Text_Klytmnestra2
+# 200 "data/maps/CasaAtrei/scripts.pory"
+	destroy_field_pic FIELD_PIC_KLYTMNESTRA
+# 201 "data/maps/CasaAtrei/scripts.pory"
+	closemessage
+# 203 "data/maps/CasaAtrei/scripts.pory"
+	trainerbattle_no_intro TRAINER_KLYTMNESTRA, CasaAtrei_Text_KlytmnestraLost
+	return
+
+
 CasaAtrei_Script_Orestes::
 	return
 
@@ -242,25 +318,37 @@ CasaAtrei_Script_Agamemnon::
 
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight1::
-# 165 "data/maps/CasaAtrei/scripts.pory"
+# 250 "data/maps/CasaAtrei/scripts.pory"
 	.string "$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1::
-# 169 "data/maps/CasaAtrei/scripts.pory"
+# 254 "data/maps/CasaAtrei/scripts.pory"
 	.string "$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2::
-# 173 "data/maps/CasaAtrei/scripts.pory"
+# 258 "data/maps/CasaAtrei/scripts.pory"
 	.string "$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight2::
-# 177 "data/maps/CasaAtrei/scripts.pory"
+# 262 "data/maps/CasaAtrei/scripts.pory"
 	.string "$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight3::
-# 181 "data/maps/CasaAtrei/scripts.pory"
+# 266 "data/maps/CasaAtrei/scripts.pory"
 	.string "$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3::
-# 185 "data/maps/CasaAtrei/scripts.pory"
+# 270 "data/maps/CasaAtrei/scripts.pory"
+	.string "$"
+
+CasaAtrei_Text_Klytmnestra1::
+# 274 "data/maps/CasaAtrei/scripts.pory"
+	.string "$"
+
+CasaAtrei_Text_Klytmnestra2::
+# 278 "data/maps/CasaAtrei/scripts.pory"
+	.string "$"
+
+CasaAtrei_Text_KlytmnestraLost::
+# 282 "data/maps/CasaAtrei/scripts.pory"
 	.string "$"

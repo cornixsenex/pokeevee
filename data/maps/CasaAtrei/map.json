@@ -75,7 +75,7 @@
       "x": 0,
       "y": 0,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -134,6 +134,33 @@
       "var": "VAR_ORESTES_STATE",
       "var_value": "9",
       "script": "CasaAtrei_Script_OrestesIphigeniaTriggerC"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_ORESTES_STATE",
+      "var_value": "10",
+      "script": "CasaAtrei_Script_TriggerKlytmnestraSceneA"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_ORESTES_STATE",
+      "var_value": "10",
+      "script": "CasaAtrei_Script_TriggerKlytmnestraSceneB"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_ORESTES_STATE",
+      "var_value": "10",
+      "script": "CasaAtrei_Script_TriggerKlytmnestraSceneC"
     }
   ],
   "bg_events": []

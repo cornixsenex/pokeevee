@@ -191,16 +191,8 @@ script CasaAtrei_Script_KlytmnestraScene {
 	//player walk right
 	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
 	waitmovement (0)
-	//K face L
-	applymovement (LOCALID_CASAATREI_KLYTMNESTRA, Common_Movement_FaceLeft)
-	waitmovement (0)
 	//K: Intro monologue
-    load_field_pic (FIELD_PIC_KLYTMNESTRA, 190, 98)
-	msgbox (CasaAtrei_Text_Klytmnestra2)
-	destroy_field_pic (FIELD_PIC_KLYTMNESTRA)
-	closemessage
 	//K battle - melting(?)
-	trainerbattle_no_intro (TRAINER_KLYTMNESTRA, CasaAtrei_Text_KlytmnestraLost)
 	//O off screan: you did it!
 	//O come down
 	//face eachother
@@ -220,19 +212,7 @@ script CasaAtrei_Script_KlytmnestraScene {
 	//A: Iphi think not of losing a mother but gaining a father
 	//I: I will never honor you, I'm going to my room\
 	//exit I
-	//A: She'll come around now O tell me how you did this and who this is
-	//O: I was quite lost about how to resolve this but I visited the oracle at the Aedes Trivis who suggested I get someone else to do the dirty work. I asked brave sneed here and he agreed. He's the one you should thank
-	//A: and thank him I will indeed. Come here sneed
-	//Player to A
-	//A: I apologize for introducing myself in bed but my full strength has not yet returned to me. I am agamemnon. Take this gift
-	//give gift (idk what yet)
-	//A: Please come back some time later after I've gained my strength, now I must sleep
-	//player exit with O
-	//O: thanks again, Father needs his rest but if you want to speak with him just come back later once he's regained himself
-	//player past the block
-	//set var for Agamemnon bedroom block (player must leave house and re-enter to deliver invitation)
-	//fin
-}
+	//A: She'll come around
 
 script CasaAtrei_Script_Orestes {
 
@@ -269,16 +249,4 @@ text CasaAtrei_Text_OrestesBeforeIphegeniaFight3 {
 
 text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3 {
     format("")
-}
-
-text CasaAtrei_Text_Klytmnestra1 {
-	format("")
-}
-
-text CasaAtrei_Text_Klytmnestra2 {
-	format("")
-}
-
-text CasaAtrei_Text_KlytmnestraLost {
-	format("")
 }
