@@ -122,6 +122,8 @@ script CasaAtrei_Script_OrestesIphegeniaFightScene {
     load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
 	msgbox (CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2, MSGBOX_YESNO)
     destroy_field_pic (FIELD_PIC_IPHIGENIA)
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight2, MSGBOX_YESNO)
     //O face to player
     if (var(VAR_RESULT) == DIR_SOUTH) {
         applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceUp)
@@ -133,13 +135,13 @@ script CasaAtrei_Script_OrestesIphegeniaFightScene {
     waitmovement (0)
     //O: Go on without me, I'll hold her back. Find the master bedroom, defeat Klytmnestra and rescue Agamemnon
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
-	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight2, MSGBOX_YESNO)
+	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight3, MSGBOX_YESNO)
     //O face back to I
     applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceDown)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
     waitmovement (0)
     //O I wont let you interfere we're saving Dad
-	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight3, MSGBOX_YESNO)
+	msgbox (CasaAtrei_Text_OrestesBeforeIphegeniaFight4, MSGBOX_YESNO)
     destroy_field_pic (FIELD_PIC_ORESTES)
     //I I wont let you hurt mum
     load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
@@ -246,14 +248,28 @@ script CasaAtrei_Script_KlytmnestraScene {
 	//O: thanks again, Father needs his rest but if you want to speak with him just come back later once he's regained himself
 	//player past the block
 	//set var for Agamemnon bedroom block (player must leave house and re-enter to deliver invitation)
+	setvar (VAR_ORESTES_STATE, 11)
 	//fin
 }
 
 script CasaAtrei_Script_Orestes {
-
+	//During Orestes et Iphigenia fight
+	if (var(VAR_ORESTES_STATE) == 10) {
+		load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+		msgbox (CasaAtrei_Text_OrestesDuringIphigeniaFight)
+		destroy_field_pic (FIELD_PIC_ORESTES)
+		closemessage
+	}
 }
 
 script CasaAtrei_Script_Iphigenia {
+	//During Orestes et Iphigenia fight
+	if (var(VAR_ORESTES_STATE) == 10) {
+		load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
+		msgbox (CasaAtrei_Text_IphigeniaDuringIphigeniaFight)
+		destroy_field_pic (FIELD_PIC_IPHIGENIA)
+		closemessage
+	}
 
 }
 
@@ -263,37 +279,73 @@ script CasaAtrei_Script_Agamemnon {
 
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight1 {
-    format("")
+    format("Oh, {PLAYER}! You made it, good! The coast seems clear
+			but I'm not sure where 4everyone has gone.
+			I already checked my sister's room and 
+			saw no trace of...")
 }
 
 text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1 {
-    format("")
+    format("Orestes! Stop right there!")
 }
 
 text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2 {
-    format("")
+    format("I know you come to stop our mother! I
+			will not allow you to revive father!")
 }
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight2 {
-    format("")
+    format("My purpose, Iphigenia, is plain
+			for all to see. I will see dad rescued
+			but fear not, I won't touch a single hair
+			upon the foul head of that wicked witch.")
 }
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight3 {
-    format("")
+    format("Be quick! Go on! Find Klytmnestra! I'll
+			keep my sister occuped here with me.")
+}
+
+text CasaAtrei_Text_OrestesBeforeIphegeniaFight4 {
+	format("This is your final warning, dear sister,
+			I do not wish to come to blows with you
+			but I will do what I must in order
+			to see mother defeated, father saved.")
 }
 
 text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3 {
-    format("")
+    format("The die is cast, foul brother Orestes.
+			I won't let you bring harm to our mother!")
+}
+
+text CasaAtrei_Text_OrestesDuringIphigeniaFight {
+	format("Gah! What animal fights with spit, nails, and teeth?")
+}
+
+text CasaAtrei_Text_IphigeniaDuringIphigeniaFight {
+	format("What monster fights his own mom and sister?")
 }
 
 text CasaAtrei_Text_Klytmnestra1 {
-	format("")
+	format("I've been expecting you. Come closer, boy.")
 }
 
 text CasaAtrei_Text_Klytmnestra2 {
-	format("")
+	format("I've known for some time my son would betray
+			the woman who birthed, raised, clothed, and fed him.
+			While this attack has long been foreseen I
+			must admit that he would entrust the task
+			of confronting me to someone like you
+			is quite a shock. Perhaps I did not raise
+			the boy as well as I had once believed.
+			I am Klytmnestra, the enchantress.
+			While typically I like to play with my
+			food before I eat it, this is different.
+			Since my very own life is threatened, I
+			must make an exception and quickly see
+			your soul dispatched to hell. Prepare to die!")
 }
 
 text CasaAtrei_Text_KlytmnestraLost {
-	format("")
+	format("My soul is being severed from the world!")
 }
