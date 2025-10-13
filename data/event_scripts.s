@@ -790,9 +790,9 @@ EventScript_TrivisMap::
     load_field_pic 85, 184, 60, VAR_0x800A
 	msgbox Common_Text_LookCloserAtTrivisMap, MSGBOX_DEFAULT
 	closemessage
-	destroy_field_pic 83, VAR_0x8008
-    destroy_field_pic 84, VAR_0x8009
-    destroy_field_pic 85, VAR_0x800A
+	destroy_field_pic_copyvar 83, VAR_0x8008
+    destroy_field_pic_copyvar 84, VAR_0x8009
+    destroy_field_pic_copyvar 85, VAR_0x800A
 	releaseall
 	end
 

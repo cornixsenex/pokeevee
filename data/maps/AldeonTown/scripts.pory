@@ -444,21 +444,19 @@ script AldeonTown_Script_Scott {
 }
 
 script AldeonTown_Script_Orestes {
-	lock
+	lockall
 	faceplayer
+	//intro Orestes in Aldeon Town if not introd (just like "I knew you make it" or whtv
 	//ready yn?
-    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
 	msgbox (AldeonTown_Text_OrestesReady, MSGBOX_YESNO)
 	//if n then 'come back'; face down; release
 	if (var(VAR_RESULT) == NO) {
 		msgbox (AldeonTown_Text_OrestesNotReady)
-		destroy_field_pic (FIELD_PIC_ORESTES)
 		closemessage
 		end
 	//else begin txt then follow him to the servant house
 	} else {
 		msgbox (AldeonTown_Text_OrestesYesReady)
-		destroy_field_pic (FIELD_PIC_ORESTES)
 		closemessage
 		//Get into position 
 		specialvar (VAR_RESULT, GetPlayerFacingDirection)
@@ -481,8 +479,8 @@ script AldeonTown_Script_Orestes {
 				waitmovement (0)
 				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkUp)
 				waitmovement (0)
-				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft4)
-				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft4)
+				applymovement (LOCALID_ALDEON_ORESTES, Common_Movement_WalkLeft5)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft5)
 				waitmovement (0)
 			default:
 				msgbox("ERROR: GetPlayer\nFacingDirection OOB")
@@ -508,7 +506,7 @@ script AldeonTown_Script_Orestes {
 		//set var
 		setvar (VAR_ORESTES_STATE, 8)
 		//fin - continue On Frame in servant house
-		release
+		releaseall
 	}
 	end
 }

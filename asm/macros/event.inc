@@ -1962,6 +1962,14 @@
 	setvar VAR_0x8004, \id
 	setvar VAR_0x8005, \sprite_id
 	callnative DestroyFieldPic
+	.endm	
+
+	@CORNIX CUSTOM TO REMOVE copyvar warnings 
+	@Destroys the pic completely along with gfx.
+	.macro destroy_field_pic_copyvar id:req, sprite_id=0xff
+	setvar VAR_0x8004, \id
+	copyvar VAR_0x8005, \sprite_id
+	callnative DestroyFieldPic
 	.endm
 
 	.macro goto_if_unset flag:req, dest:req
