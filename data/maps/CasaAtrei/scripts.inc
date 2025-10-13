@@ -332,43 +332,75 @@ CasaAtrei_Script_KlytmnestraScene::
 	setobjectmovementtype LOCALID_CASAATREI_KLYTMNESTRA, MOVEMENT_TYPE_INVISIBLE
 # 220 "data/maps/CasaAtrei/scripts.pory"
 	addobject LOCALID_CASAATREI_KLYTMNESTRA
-# 251 "data/maps/CasaAtrei/scripts.pory"
+# 222 "data/maps/CasaAtrei/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
+# 223 "data/maps/CasaAtrei/scripts.pory"
+	msgbox CasaAtrei_Text_OrestesKlytmnestraScene1, MSGBOX_YESNO
+# 224 "data/maps/CasaAtrei/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
+# 225 "data/maps/CasaAtrei/scripts.pory"
+	closemessage
+# 227 "data/maps/CasaAtrei/scripts.pory"
+	removeobject LOCALID_CASAATREI_ORESTES
+# 228 "data/maps/CasaAtrei/scripts.pory"
+	setobjectxyperm LOCALID_CASAATREI_ORESTES, 11, 14
+# 229 "data/maps/CasaAtrei/scripts.pory"
+	setobjectmovementtype LOCALID_CASAATREI_ORESTES, MOVEMENT_TYPE_FACE_DOWN
+# 230 "data/maps/CasaAtrei/scripts.pory"
+	addobject LOCALID_CASAATREI_ORESTES
+# 232 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_CASAATREI_ORESTES, Common_Movement_WalkDown6
+# 233 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 235 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_CASAATREI_ORESTES, Common_Movement_FaceRight
+# 236 "data/maps/CasaAtrei/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 237 "data/maps/CasaAtrei/scripts.pory"
+	waitmovement 0
+# 239 "data/maps/CasaAtrei/scripts.pory"
+	load_field_pic FIELD_PIC_ORESTES, 190, 98
+# 240 "data/maps/CasaAtrei/scripts.pory"
+	msgbox CasaAtrei_Text_OrestesKlytmnestraScene2, MSGBOX_YESNO
+# 241 "data/maps/CasaAtrei/scripts.pory"
+	destroy_field_pic FIELD_PIC_ORESTES
+# 268 "data/maps/CasaAtrei/scripts.pory"
 	setvar VAR_ORESTES_STATE, 11
 	return
 
 
 CasaAtrei_Script_Orestes::
-# 257 "data/maps/CasaAtrei/scripts.pory"
+# 274 "data/maps/CasaAtrei/scripts.pory"
 	compare VAR_ORESTES_STATE, 10
 	goto_if_eq CasaAtrei_Script_Orestes_1
 	return
 
 CasaAtrei_Script_Orestes_1:
-# 258 "data/maps/CasaAtrei/scripts.pory"
+# 275 "data/maps/CasaAtrei/scripts.pory"
 	load_field_pic FIELD_PIC_ORESTES, 190, 98
-# 259 "data/maps/CasaAtrei/scripts.pory"
+# 276 "data/maps/CasaAtrei/scripts.pory"
 	msgbox CasaAtrei_Text_OrestesDuringIphigeniaFight
-# 260 "data/maps/CasaAtrei/scripts.pory"
+# 277 "data/maps/CasaAtrei/scripts.pory"
 	destroy_field_pic FIELD_PIC_ORESTES
-# 261 "data/maps/CasaAtrei/scripts.pory"
+# 278 "data/maps/CasaAtrei/scripts.pory"
 	closemessage
 	return
 
 
 CasaAtrei_Script_Iphigenia::
-# 267 "data/maps/CasaAtrei/scripts.pory"
+# 284 "data/maps/CasaAtrei/scripts.pory"
 	compare VAR_ORESTES_STATE, 10
 	goto_if_eq CasaAtrei_Script_Iphigenia_1
 	return
 
 CasaAtrei_Script_Iphigenia_1:
-# 268 "data/maps/CasaAtrei/scripts.pory"
+# 285 "data/maps/CasaAtrei/scripts.pory"
 	load_field_pic FIELD_PIC_IPHIGENIA, 190, 98
-# 269 "data/maps/CasaAtrei/scripts.pory"
+# 286 "data/maps/CasaAtrei/scripts.pory"
 	msgbox CasaAtrei_Text_IphigeniaDuringIphigeniaFight
-# 270 "data/maps/CasaAtrei/scripts.pory"
+# 287 "data/maps/CasaAtrei/scripts.pory"
 	destroy_field_pic FIELD_PIC_IPHIGENIA
-# 271 "data/maps/CasaAtrei/scripts.pory"
+# 288 "data/maps/CasaAtrei/scripts.pory"
 	closemessage
 	return
 
@@ -378,7 +410,7 @@ CasaAtrei_Script_Agamemnon::
 
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight1::
-# 281 "data/maps/CasaAtrei/scripts.pory"
+# 298 "data/maps/CasaAtrei/scripts.pory"
 	.string "Oh, {PLAYER}! You made it, good! The\n"
 	.string "coast seems clear but I'm not sure\l"
 	.string "where 4everyone has gone. I already\l"
@@ -386,55 +418,55 @@ CasaAtrei_Text_OrestesBeforeIphegeniaFight1::
 	.string "trace of...$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1::
-# 288 "data/maps/CasaAtrei/scripts.pory"
+# 305 "data/maps/CasaAtrei/scripts.pory"
 	.string "Orestes! Stop right there!$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2::
-# 292 "data/maps/CasaAtrei/scripts.pory"
+# 309 "data/maps/CasaAtrei/scripts.pory"
 	.string "I know you come to stop our mother! I\n"
 	.string "will not allow you to revive father!$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight2::
-# 297 "data/maps/CasaAtrei/scripts.pory"
+# 314 "data/maps/CasaAtrei/scripts.pory"
 	.string "My purpose, Iphigenia, is plain for all\n"
 	.string "to see. I will see dad rescued but fear\l"
 	.string "not, I won't touch a single hair upon\l"
 	.string "the foul head of that wicked witch.$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight3::
-# 304 "data/maps/CasaAtrei/scripts.pory"
+# 321 "data/maps/CasaAtrei/scripts.pory"
 	.string "Be quick! Go on! Find Klytmnestra! I'll\n"
 	.string "keep my sister occuped here with me.$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight4::
-# 309 "data/maps/CasaAtrei/scripts.pory"
+# 326 "data/maps/CasaAtrei/scripts.pory"
 	.string "This is your final warning, dear sister,\n"
 	.string "I do not wish to come to blows with you\l"
 	.string "but I will do what I must in order to see\l"
 	.string "mother defeated, father saved.$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3::
-# 316 "data/maps/CasaAtrei/scripts.pory"
+# 333 "data/maps/CasaAtrei/scripts.pory"
 	.string "The die is cast, foul brother Orestes. I\n"
 	.string "won't let you bring harm to our mother!$"
 
 CasaAtrei_Text_OrestesDuringIphigeniaFight::
-# 321 "data/maps/CasaAtrei/scripts.pory"
+# 338 "data/maps/CasaAtrei/scripts.pory"
 	.string "Gah! What animal fights with spit, nails,\n"
 	.string "and teeth?$"
 
 CasaAtrei_Text_IphigeniaDuringIphigeniaFight::
-# 325 "data/maps/CasaAtrei/scripts.pory"
+# 342 "data/maps/CasaAtrei/scripts.pory"
 	.string "What monster fights his own mom and\n"
 	.string "sister?$"
 
 CasaAtrei_Text_Klytmnestra1::
-# 329 "data/maps/CasaAtrei/scripts.pory"
+# 346 "data/maps/CasaAtrei/scripts.pory"
 	.string "I've been expecting you. Come closer,\n"
 	.string "boy.$"
 
 CasaAtrei_Text_Klytmnestra2::
-# 333 "data/maps/CasaAtrei/scripts.pory"
+# 350 "data/maps/CasaAtrei/scripts.pory"
 	.string "I've known for some time my son would\n"
 	.string "betray the woman who birthed, raised,\l"
 	.string "clothed, and fed him. While this attack\l"
@@ -451,5 +483,14 @@ CasaAtrei_Text_Klytmnestra2::
 	.string "soul dispatched to hell. Prepare to die!$"
 
 CasaAtrei_Text_KlytmnestraLost::
-# 349 "data/maps/CasaAtrei/scripts.pory"
+# 366 "data/maps/CasaAtrei/scripts.pory"
 	.string "My soul is being severed from the world!$"
+
+CasaAtrei_Text_OrestesKlytmnestraScene1::
+# 370 "data/maps/CasaAtrei/scripts.pory"
+	.string "You did it {PLAYER}!$"
+
+CasaAtrei_Text_OrestesKlytmnestraScene2::
+# 374 "data/maps/CasaAtrei/scripts.pory"
+	.string "You broke the witch's spell and lifted\n"
+	.string "the curse!$"

@@ -219,9 +219,26 @@ script CasaAtrei_Script_KlytmnestraScene {
 	setobjectmovementtype (LOCALID_CASAATREI_KLYTMNESTRA, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_CASAATREI_KLYTMNESTRA)
 	//O off screan: you did it!
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene1, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
+	//set O position
+	removeobject (LOCALID_CASAATREI_ORESTES)
+	setobjectxyperm (LOCALID_CASAATREI_ORESTES, 11, 14)
+	setobjectmovementtype (LOCALID_CASAATREI_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (LOCALID_CASAATREI_ORESTES)
 	//O come down
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_WalkDown6)
+	waitmovement (0)
 	//face eachother
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceRight)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
 	//O: Thanks couldn't do it without you
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene2, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//A: What happened
 	//O: Father
 	//go to bed
@@ -348,4 +365,13 @@ text CasaAtrei_Text_Klytmnestra2 {
 
 text CasaAtrei_Text_KlytmnestraLost {
 	format("My soul is being severed from the world!")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene1 {
+	format("You did it {PLAYER}!")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene2 {
+	format("You broke the witch's spell
+			and lifted the curse!")
 }
