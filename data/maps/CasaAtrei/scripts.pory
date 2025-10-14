@@ -240,22 +240,109 @@ script CasaAtrei_Script_KlytmnestraScene {
 	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene2, MSGBOX_YESNO)
 	destroy_field_pic (FIELD_PIC_ORESTES)
 	//A: What happened
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene1, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
 	//O: Father
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene3, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
 	//go to bed
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_WalkRight3)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight3)
+	waitmovement (0)
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceRight)
+	waitmovement (0)
 	//A: Why do I feel so cold
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene2, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
 	//O: Father be still you were put under a spell but we rescued you
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene4, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//A: How could this be, who would have done such a thing
-	//O: Your own wife, Klytmnestra
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene3, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
+	//O: Your own wife, my mother, Klytmnestra
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene5, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//A: Terrible! Thanks for saving me
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene4, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
 	//I offscreen: Orestes!
+    load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
+	msgbox (CasaAtrei_Text_IphigeniaKlytmnestraScene1, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_IPHIGENIA)
+	closemessage
+	//alert all
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//set I position
+	removeobject (LOCALID_CASAATREI_IPHIGENIA)
+	setobjectxyperm (LOCALID_CASAATREI_IPHIGENIA, 11, 14)
+	setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (LOCALID_CASAATREI_IPHIGENIA)
 	//Enter I
+	applymovement (LOCALID_CASAATREI_IPHIGENIA, Common_Movement_WalkDown6)
+	waitmovement (0)
+	applymovement (LOCALID_CASAATREI_IPHIGENIA, Common_Movement_WalkRight2)
+	waitmovement (0)
+	//face player et o
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceDown)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+	waitmovement (0)
+	//A: Iphi...
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene5, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
 	//I: How could you do this you killed mom what evil
+    load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
+	msgbox (CasaAtrei_Text_IphigeniaKlytmnestraScene2, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_IPHIGENIA)
 	//O: I did nothing, I saved father and my hands are blameless in mother's tragic but deserved death
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene6, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//A: Iphi think not of losing a mother but gaining a father
-	//I: I will never honor you, I'm going to my room\
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene6, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
+	//I: I will never honor you, I'm going to my room
+    load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
+	msgbox (CasaAtrei_Text_IphigeniaKlytmnestraScene3, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_IPHIGENIA)
+	closemessage
 	//exit I
+	applymovement (LOCALID_CASAATREI_IPHIGENIA, Common_Movement_WalkLeft2)
+	waitmovement (0)
+	applymovement (LOCALID_CASAATREI_IPHIGENIA, Common_Movement_WalkUp6)
+	waitmovement (0)
+	//set I in room
+	removeobject (LOCALID_CASAATREI_IPHIGENIA)
+	setobjectxyperm (LOCALID_CASAATREI_IPHIGENIA, 14, 4)
+	setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (LOCALID_CASAATREI_IPHIGENIA)
+	//face O et P back to A
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceRight)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
 	//A: She'll come around now O tell me how you did this and who this is
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene7, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
 	//O: I was quite lost about how to resolve this but I visited the oracle at the Aedes Trivis who suggested I get someone else to do the dirty work. I asked brave sneed here and he agreed. He's the one you should thank
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene7, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
 	//A: and thank him I will indeed. Come here sneed
 	//Player to A
 	//A: I apologize for introducing myself in bed but my full strength has not yet returned to me. I am agamemnon. Take this gift
@@ -320,7 +407,7 @@ text CasaAtrei_Text_OrestesBeforeIphegeniaFight2 {
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight3 {
     format("Be quick! Go on! Find Klytmnestra! I'll
-			keep my sister occuped here with me.")
+			keep my sister occupied here with me.")
 }
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight4 {
@@ -375,3 +462,95 @@ text CasaAtrei_Text_OrestesKlytmnestraScene2 {
 	format("You broke the witch's spell
 			and lifted the curse!")
 }
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene1 {
+	format("Where am I?")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene3 {
+	format("Father!")
+}
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene2 {
+	format("Orestes! What happened? I feel so cold
+			like the winds of winter howl in my bones.
+			My head aches, I must have had a bad dream...")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene4 {
+	format("Rest now father, your nightmare's at it's end.
+			You have been several months under a spell
+			but your son, and the young heroic {PLAYER},
+			have rescued you.")
+}
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene3 {
+	format("A spell? Impossible? How could this be?
+			I was just getting into bed with your
+			mother, then I don't know... My memories
+			are confusing, icy cold and jet black....
+			What evil witch could have done this to me?")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene5 {
+	format("Your own wife, my mother, Klytmnestra
+			was none other than that accursed witch
+			who held you here entranced for all this time.")
+}
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene4 {
+	format("Klytmnestra? My wife, did this? I can't
+			believe it! She was the love of my life!
+			Mother of my two children...")
+}
+
+text CasaAtrei_Text_IphigeniaKlytmnestraScene1 {
+	format("Orestes!")
+}
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene5 {
+	format("Iphigenia!")
+}
+
+text CasaAtrei_Text_IphigeniaKlytmnestraScene2 {
+	format("How could you do this?
+			You killed your own mother! Have you no shame?")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene6 {
+	format("I did no such thing! My hands are blameless
+			in mother's tragic, but well deserved, death.")
+}
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene6 {
+	format("My dearest firstborn daughter, please don't cry
+			for losing your treacherous mother but
+			smile for regaining your lost father.
+			Though you have ever been more like her in
+			similar mind, body, spirit and soul,
+			think not that her sins must be passed to you,
+			nor that you must do penance for the way
+			you sided with her while I was poisoned.
+			Instead, rejoice to see your father well,
+			and take cheer in the restoration of
+			your life's genitor, of your family's king.")
+}
+
+text CasaAtrei_Text_IphigeniaKlytmnestraScene3 {
+	format("I'll never honor you, mother was right!
+			We women ought to be in charge of things
+			and one day I will see mother avenged.
+			Until then I will curse you and your son
+			from the oppressive prison of my room!")
+}
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene7 {
+	format("Let her grieve in peace. She will come around
+			eventually. Now tell me, son how did
+			you manage to break Klytmnestra's spell,
+			and tell me of {PLAYER} who helped you do it.")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene7 {
+   format("")
+}	   
