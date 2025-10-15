@@ -552,5 +552,31 @@ text CasaAtrei_Text_AgamemnonKlytmnestraScene7 {
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene7 {
-   format("")
+   format("At first, I believed what mother told me,
+		   that you had fallen ill, but over time
+		   I grew restless and couldn't understand
+		   why I wasn't allowed to visit you.
+		   One day I heard Iphigenia boast
+		   that female sex was supreme in our house
+		   and my impatience turned to suspicion.
+		   I krept out one night, unable to sleep,
+		   and snuck into this very same bedroom
+		   where I witnessed that witch, Klytmnestra,
+		   casting black spells over your limp body.
+		   That was when I realized what had been done.
+		   For weeks I wondered what I ought to do.
+		   I knew I had to help you, but how could
+		   I justify crossing my own mother?
+		   The torment of my confusion led me
+		   to run away from home. It drove mad
+		   even to the near edge of suicide
+		   when I heard the voice of the divine call
+		   me to consult the oracle. I went
+		   upstream to the Aedes Trivis where I
+		   presented my problem to the Slowking
+		   who told me I must help you be revived
+		   but that my hand could not strike my mother's.
+		   I met young {PLAYER} there, he agreed to help,
+		   and it was him who sent Klytmnestra
+		   down to the pits of Hell and saved your life.")
 }	   
