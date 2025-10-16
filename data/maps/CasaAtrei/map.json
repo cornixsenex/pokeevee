@@ -161,6 +161,24 @@
       "var": "VAR_ORESTES_STATE",
       "var_value": "10",
       "script": "CasaAtrei_Script_TriggerKlytmnestraSceneC"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ORESTES_STATE",
+      "var_value": "11",
+      "script": "CasaAtrei_Script_OrestesBlockAgamemnonRest"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ORESTES_STATE",
+      "var_value": "11",
+      "script": "CasaAtrei_Script_OrestesBlockAgamemnonRest"
     }
   ],
   "bg_events": []

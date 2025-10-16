@@ -344,16 +344,71 @@ script CasaAtrei_Script_KlytmnestraScene {
 	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene7, MSGBOX_YESNO)
 	destroy_field_pic (FIELD_PIC_ORESTES)
 	//A: and thank him I will indeed. Come here sneed
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene8, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
+	closemessage
 	//Player to A
-	//A: I apologize for introducing myself in bed but my full strength has not yet returned to me. I am agamemnon. Take this gift
-	//give gift (idk what yet)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//A: I apologize for introducing myself in bed but my full strength has not yet returned to me. I am agamemnon.
 	//A: Please come back some time later after I've gained my strength, now I must sleep
+    load_field_pic (FIELD_PIC_AGAMEMNON, 190, 99)
+	msgbox (CasaAtrei_Text_AgamemnonKlytmnestraScene9, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_AGAMEMNON)
+	//O: Very well father, cmon sneed lets let him rest
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene8, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
 	//player exit with O
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkDown2)
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_WalkDown2)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft5)
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_WalkLeft5)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp8)
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_WalkUp8)
+	waitmovement (0)
+	//Player over to O
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	//O face player
+	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_FaceRight)
+	waitmovement (0)
 	//O: thanks again, Father needs his rest but if you want to speak with him just come back later once he's regained himself
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene9, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
 	//player past the block
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
 	//set var for Agamemnon bedroom block (player must leave house and re-enter to deliver invitation)
 	setvar (VAR_ORESTES_STATE, 11)
 	//fin
+}
+
+
+//Block Player
+script CasaAtrei_Script_OrestesBlockAgamemnonRest {
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//O: Please let my father rest. Come back later I'm sure he'll give you that gift he mentioned
+    load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+	msgbox (CasaAtrei_Text_OrestesBlock, MSGBOX_YESNO)
+	destroy_field_pic (FIELD_PIC_ORESTES)
+	closemessage
+	//player up one
+	//fin
+
+
 }
 
 script CasaAtrei_Script_Orestes {
@@ -580,3 +635,53 @@ text CasaAtrei_Text_OrestesKlytmnestraScene7 {
 		   and it was him who sent Klytmnestra
 		   down to the pits of Hell and saved your life.")
 }	   
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene8 {
+	format("A horrible story! I'm so sorry
+			that you were put in that position, son,
+			but in the darkest nights do heroic
+			actions shine brightest. Thank you, thank you both
+			for waking me from that most deathlike sleep.
+			Now {PLAYER}, please come here. I would introduce
+			myself and give you my most sincere thanks.")
+}
+
+text CasaAtrei_Text_AgamemnonKlytmnestraScene9 {
+	format("Apologies for remaining in bed
+			when I first shake your hand but the effects
+			of the late witch's spell still linger on
+			and make more strenuous activity
+			impossible for now but still I must
+			introduce myself to the one who's life
+			I am indebted to for my freedom
+			before I close my eyes again. I am
+			Agamemnon, lord of the Commerce Guild,
+			father of Orestes and resident
+			of Albion. It is my great pleasure
+			to meet you and I offer you my deep,
+			sincere, heartfelt, eternal gratitude.
+			Thank you for defeating Klytmnestra,
+			breaking the witch's spell, and waking me
+			I must regain my strengh, but please return
+			after I've rested I will give to you
+			the princely gift you've earned by your valor.
+			Now please, excuse me boys, and let me rest.")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene8 {
+	format("Very well, father, we'll leave and let you rest.
+			C'mon {PLAYER}, let's leave my father alone.")
+}
+
+text CasaAtrei_Text_OrestesKlytmnestraScene9 {
+	format("Thank you again, but father needs his rest.
+			I'm sure he'll be up and feeling well soon
+			and doubltess he will give you your gift then
+			but until then why not let him alone,
+			let him rest up but please do come back soon.")
+}
+
+text CasaAtrei_Text_OrestesBlock {
+	format("Father must rest now to regain his strength.
+			Please come back later to recieve your gift.")
+}
