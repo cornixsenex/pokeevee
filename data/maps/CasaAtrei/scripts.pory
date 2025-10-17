@@ -8,12 +8,18 @@ mapscripts CasaAtrei_MapScripts {
         if (var(VAR_ORESTES_STATE) == 10) {
             call (CasaAtrei_Script_ShowOrestesDuringIphigeniaFight)
         }
-        //Show Orestes during Iphigenia fight
+        //Enter Casa Atrei after Klytmnestra first time - setup Agamemon et Orestes in Kitchen
         if (var(VAR_ORESTES_STATE) == 11) {
-        //Show after Klytmnestra before Agamemnon departs
+			call (CasaAtrei_Script_SetupAgamemnonKitchen)
+		}
+		//Agamemon in kitchen, has not departed
+        if (var(VAR_ORESTES_STATE) == 12) {
+			call (CasaAtrei_Script_ShowAgamemnonKitchen)
+		}
+
         //Show after Agamemnon departs
+		
         //Show after Iphigenia departs
-        }
     }
 
 	MAP_SCRIPT_ON_RESUME {
@@ -46,6 +52,27 @@ script CasaAtrei_Script_ShowOrestesDuringIphigeniaFight {
     setobjectxyperm (LOCALID_CASAATREI_KLYTMNESTRA, 13, 20)
     setobjectmovementtype (LOCALID_CASAATREI_KLYTMNESTRA, MOVEMENT_TYPE_FACE_DOWN)
     return
+}
+
+script CasaAtrei_Script_SetupAgamemnonKitchen {
+	//setvar
+	setvar (VAR_ORESTES_STATE, 12)
+	//show agamemnon in kitchen
+	call (CasaAtrei_Script_ShowAgamemnonKitchen)
+	return
+}
+
+script CasaAtrei_Script_ShowAgamemnonKitchen {
+	setobjectxyperm (LOCALID_CASAATREI_AGAMEMNON, 6, 4)
+	setobjectmovementtype (LOCALID_CASAATREI_AGAMEMNON, MOVEMENT_TYPE_FACE_LEFT)
+	setobjectxyperm (LOCALID_CASAATREI_ORESTES, 6, 5)
+	setobjectmovementtype (LOCALID_CASAATREI_ORESTES, MOVEMENT_TYPE_FACE_LEFT)
+	setobjectxyperm (LOCALID_CASAATREI_IPHIGENIA, 14, 4)
+	setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_CASAATREI_MAID, 9, 7)
+	setobjectmovementtype (LOCALID_CASAATREI_MAID, MOVEMENT_TYPE_WANDER_AROUND)
+
+	return
 }
 
 script CasaAtrei_Script_OrestesIphigeniaTriggerA {
