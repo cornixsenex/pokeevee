@@ -81,7 +81,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CasaAtrei_Script_Maid",
       "flag": "0"
     }
   ],
@@ -180,6 +180,24 @@
       "var": "VAR_ORESTES_STATE",
       "var_value": "11",
       "script": "CasaAtrei_Script_OrestesBlockAgamemnonRest"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "CasaAtrei_Script_DoorBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "CasaAtrei_Script_DoorBlock"
     }
   ],
   "bg_events": []

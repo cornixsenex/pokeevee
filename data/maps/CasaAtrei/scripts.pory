@@ -1,6 +1,13 @@
+
+//VAR_TEMP_D = door block during orestreia
+
 mapscripts CasaAtrei_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
+		//setup door block
+		if (var(VAR_ORESTES_STATE) < 11) {
+			setvar (VAR_TEMP_D, 1)
+		}
         //Show Orestes before Iphigenia fight
         if (var(VAR_ORESTES_STATE) == 9) {
             call (CasaAtrei_Script_ShowOrestesBeforeIphigeniaFight)
@@ -392,6 +399,13 @@ script CasaAtrei_Script_KlytmnestraScene {
 	msgbox (CasaAtrei_Text_OrestesKlytmnestraScene8, MSGBOX_YESNO)
 	destroy_field_pic (FIELD_PIC_ORESTES)
 	closemessage
+	//setup maid
+	removeobject (LOCALID_CASAATREI_MAID)
+	setobjectxyperm (LOCALID_CASAATREI_MAID, 9, 7)
+	setobjectmovementtype (LOCALID_CASAATREI_MAID, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (LOCALID_CASAATREI_MAID)
+	//Unblock door
+	setvar (VAR_TEMP_D, 0)
 	//player exit with O
 	applymovement (LOCALID_PLAYER, Common_Movement_WalkDown2)
 	applymovement (LOCALID_CASAATREI_ORESTES, Common_Movement_WalkDown2)
@@ -435,7 +449,20 @@ script CasaAtrei_Script_OrestesBlockAgamemnonRest {
 	//player up one
 	//fin
 
+}
 
+script CasaAtrei_Script_DoorBlock {
+	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//the door is blocked from the outside
+	msgbox (CasaAtrei_Text_DoorBlock)
+	closemessage
+	//walk player up
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	//fin
+	end
 }
 
 script CasaAtrei_Script_Orestes {
@@ -460,6 +487,10 @@ script CasaAtrei_Script_Iphigenia {
 }
 
 script CasaAtrei_Script_Agamemnon {
+
+}
+
+script CasaAtrei_Script_Maid {
 
 }
 
@@ -711,4 +742,8 @@ text CasaAtrei_Text_OrestesKlytmnestraScene9 {
 text CasaAtrei_Text_OrestesBlock {
 	format("Father must rest now to regain his strength.
 			Please come back later to recieve your gift.")
+}
+
+text CasaAtrei_Text_DoorBlock {
+	format("The door is blocked from the outside.")
 }
