@@ -466,24 +466,44 @@ script CasaAtrei_Script_DoorBlock {
 }
 
 script CasaAtrei_Script_Orestes {
-	//During Orestes et Iphigenia fight
-	if (var(VAR_ORESTES_STATE) == 10) {
-		load_field_pic (FIELD_PIC_ORESTES, 190, 98)
-		msgbox (CasaAtrei_Text_OrestesDuringIphigeniaFight)
-		destroy_field_pic (FIELD_PIC_ORESTES)
-		closemessage
+	switch (var(VAR_ORESTES_STATE)) {
+		//During Orestes et Iphigenia fight
+		case 10:
+			load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+			msgbox (CasaAtrei_Text_OrestesDuringIphigeniaFight)
+			destroy_field_pic (FIELD_PIC_ORESTES)
+			closemessage
+		//After K fight while A rests = OrestesBlock
+		case 11:
+			faceplayer
+			load_field_pic (FIELD_PIC_ORESTES, 190, 98)
+			msgbox (CasaAtrei_Text_OrestesBlock)
+			destroy_field_pic (FIELD_PIC_ORESTES)
+			closemessage
+		default:
+			msgbox("ERROR VAR_ORESTES_STATE OOB")
+			closemessage
+			end
 	}
+	end
 }
 
 script CasaAtrei_Script_Iphigenia {
+	load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
 	//During Orestes et Iphigenia fight
 	if (var(VAR_ORESTES_STATE) == 10) {
-		load_field_pic (FIELD_PIC_IPHIGENIA, 190, 98)
 		msgbox (CasaAtrei_Text_IphigeniaDuringIphigeniaFight)
-		destroy_field_pic (FIELD_PIC_IPHIGENIA)
-		closemessage
 	}
-
+	//Else she's sulking in her room
+	else {
+		faceplayer
+		msgbox (CasaAtrei_Text_IphigeniaInRoom)
+		applymovement (LOCALID_CASAATREI_IPHIGENIA, Common_Movement_FaceDown)
+		waitmovement (0)
+	}
+	destroy_field_pic (FIELD_PIC_IPHIGENIA)
+	closemessage
+	end
 }
 
 script CasaAtrei_Script_Agamemnon {
@@ -746,4 +766,10 @@ text CasaAtrei_Text_OrestesBlock {
 
 text CasaAtrei_Text_DoorBlock {
 	format("The door is blocked from the outside.")
+}
+
+text CasaAtrei_Text_IphigeniaInRoom {
+	format("You men are all the same, ignorant pigs!
+			One day I'll run away and go somewhere
+			without any men, a real paradise!")
 }
