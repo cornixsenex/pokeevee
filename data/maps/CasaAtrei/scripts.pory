@@ -480,6 +480,11 @@ script CasaAtrei_Script_Orestes {
 			msgbox (CasaAtrei_Text_OrestesBlock)
 			destroy_field_pic (FIELD_PIC_ORESTES)
 			closemessage
+		//With A in the Kitchen
+		//After A left in the kitchen
+		//After I left in room before give flute
+		//After I left in room after gave flute
+		//After I sacrifice
 		default:
 			msgbox("ERROR VAR_ORESTES_STATE OOB")
 			closemessage
@@ -507,6 +512,9 @@ script CasaAtrei_Script_Iphigenia {
 }
 
 script CasaAtrei_Script_Agamemnon {
+	//First time = he thanks you and gives you the gift
+	//check if ready for invitation
+	//if so give invite and he leaves for Nestor, update orestes state
 
 }
 
