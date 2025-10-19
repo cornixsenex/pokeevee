@@ -772,18 +772,40 @@ CasaAtrei_Script_Agamemnon_1:
 # 520 "data/maps/CasaAtrei/scripts.pory"
 	load_field_pic FIELD_PIC_AGAMEMNON, 190, 98
 # 521 "data/maps/CasaAtrei/scripts.pory"
-	msgbox CasaAtrei_Text_AgamemnonGiftIntro, MSGBOX_YESNO
+	msgbox CasaAtrei_Text_AgamemnonGift1, MSGBOX_YESNO
 # 522 "data/maps/CasaAtrei/scripts.pory"
 	destroy_field_pic FIELD_PIC_AGAMEMNON
+# 524 "data/maps/CasaAtrei/scripts.pory"
+	giveitem ITEM_AMULET_COIN
+# 526 "data/maps/CasaAtrei/scripts.pory"
+	load_field_pic FIELD_PIC_AGAMEMNON, 190, 98
+# 527 "data/maps/CasaAtrei/scripts.pory"
+	msgbox CasaAtrei_Text_AgamemnonGift2, MSGBOX_YESNO
+# 528 "data/maps/CasaAtrei/scripts.pory"
+	destroy_field_pic FIELD_PIC_AGAMEMNON
+# 530 "data/maps/CasaAtrei/scripts.pory"
+	checkitem ITEM_WEDDING_INVITATION_AGAMEMNON
+# 531 "data/maps/CasaAtrei/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq CasaAtrei_Script_Agamemnon_3
+	return
+
+CasaAtrei_Script_Agamemnon_3:
+# 532 "data/maps/CasaAtrei/scripts.pory"
+	call CasaAtrei_Script_AgamemnonInvite
+	return
+
+
+CasaAtrei_Script_AgamemnonInvite::
 	return
 
 
 CasaAtrei_Script_Maid::
-# 533 "data/maps/CasaAtrei/scripts.pory"
+# 545 "data/maps/CasaAtrei/scripts.pory"
 	switch VAR_ORESTES_STATE
-# 535 "data/maps/CasaAtrei/scripts.pory"
+# 547 "data/maps/CasaAtrei/scripts.pory"
 	msgbox CasaAtrei_Script_Orestes_Text_0
-# 536 "data/maps/CasaAtrei/scripts.pory"
+# 548 "data/maps/CasaAtrei/scripts.pory"
 	closemessage
 	end
 
@@ -793,7 +815,7 @@ CasaAtrei_Script_Orestes_Text_0:
 	.string "ERROR VAR_ORESTES_STATE OOB$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight1::
-# 544 "data/maps/CasaAtrei/scripts.pory"
+# 556 "data/maps/CasaAtrei/scripts.pory"
 	.string "Oh, {PLAYER}! You made it, good! The\n"
 	.string "coast seems clear but I'm not sure\l"
 	.string "where 4everyone has gone. I already\l"
@@ -801,55 +823,55 @@ CasaAtrei_Text_OrestesBeforeIphegeniaFight1::
 	.string "trace of...$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1::
-# 551 "data/maps/CasaAtrei/scripts.pory"
+# 563 "data/maps/CasaAtrei/scripts.pory"
 	.string "Orestes! Stop right there!$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2::
-# 555 "data/maps/CasaAtrei/scripts.pory"
+# 567 "data/maps/CasaAtrei/scripts.pory"
 	.string "I know you come to stop our mother! I\n"
 	.string "will not allow you to revive father!$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight2::
-# 560 "data/maps/CasaAtrei/scripts.pory"
+# 572 "data/maps/CasaAtrei/scripts.pory"
 	.string "My purpose, Iphigenia, is plain for all\n"
 	.string "to see. I will see dad rescued but fear\l"
 	.string "not, I won't touch a single hair upon\l"
 	.string "the foul head of that wicked witch.$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight3::
-# 567 "data/maps/CasaAtrei/scripts.pory"
+# 579 "data/maps/CasaAtrei/scripts.pory"
 	.string "Be quick! Go on! Find Klytmnestra! I'll\n"
 	.string "keep my sister occupied here with me.$"
 
 CasaAtrei_Text_OrestesBeforeIphegeniaFight4::
-# 572 "data/maps/CasaAtrei/scripts.pory"
+# 584 "data/maps/CasaAtrei/scripts.pory"
 	.string "This is your final warning, dear sister,\n"
 	.string "I do not wish to come to blows with you\l"
 	.string "but I will do what I must in order to see\l"
 	.string "mother defeated, father saved.$"
 
 CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3::
-# 579 "data/maps/CasaAtrei/scripts.pory"
+# 591 "data/maps/CasaAtrei/scripts.pory"
 	.string "The die is cast, foul brother Orestes. I\n"
 	.string "won't let you bring harm to our mother!$"
 
 CasaAtrei_Text_OrestesDuringIphigeniaFight::
-# 584 "data/maps/CasaAtrei/scripts.pory"
+# 596 "data/maps/CasaAtrei/scripts.pory"
 	.string "Gah! What animal fights with spit, nails,\n"
 	.string "and teeth?$"
 
 CasaAtrei_Text_IphigeniaDuringIphigeniaFight::
-# 588 "data/maps/CasaAtrei/scripts.pory"
+# 600 "data/maps/CasaAtrei/scripts.pory"
 	.string "What monster fights his own mom and\n"
 	.string "sister?$"
 
 CasaAtrei_Text_Klytmnestra1::
-# 592 "data/maps/CasaAtrei/scripts.pory"
+# 604 "data/maps/CasaAtrei/scripts.pory"
 	.string "I've been expecting you. Come closer,\n"
 	.string "boy.$"
 
 CasaAtrei_Text_Klytmnestra2::
-# 596 "data/maps/CasaAtrei/scripts.pory"
+# 608 "data/maps/CasaAtrei/scripts.pory"
 	.string "I've known for some time my son would\n"
 	.string "betray the woman who birthed, raised,\l"
 	.string "clothed, and fed him. While this attack\l"
@@ -866,35 +888,35 @@ CasaAtrei_Text_Klytmnestra2::
 	.string "soul dispatched to hell. Prepare to die!$"
 
 CasaAtrei_Text_KlytmnestraLost::
-# 612 "data/maps/CasaAtrei/scripts.pory"
+# 624 "data/maps/CasaAtrei/scripts.pory"
 	.string "My soul is being severed from the world!$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene1::
-# 616 "data/maps/CasaAtrei/scripts.pory"
+# 628 "data/maps/CasaAtrei/scripts.pory"
 	.string "You did it {PLAYER}!$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene2::
-# 620 "data/maps/CasaAtrei/scripts.pory"
+# 632 "data/maps/CasaAtrei/scripts.pory"
 	.string "You broke the witch's spell and lifted\n"
 	.string "the curse!$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene1::
-# 625 "data/maps/CasaAtrei/scripts.pory"
+# 637 "data/maps/CasaAtrei/scripts.pory"
 	.string "Where am I?$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene3::
-# 629 "data/maps/CasaAtrei/scripts.pory"
+# 641 "data/maps/CasaAtrei/scripts.pory"
 	.string "Father!$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene2::
-# 633 "data/maps/CasaAtrei/scripts.pory"
+# 645 "data/maps/CasaAtrei/scripts.pory"
 	.string "Orestes! What happened? I feel so cold\n"
 	.string "like the winds of winter howl in my\l"
 	.string "bones. My head aches, I must have had a\l"
 	.string "bad dream...$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene4::
-# 639 "data/maps/CasaAtrei/scripts.pory"
+# 651 "data/maps/CasaAtrei/scripts.pory"
 	.string "Rest now father, your nightmare's at\n"
 	.string "it's end. You have been several months\l"
 	.string "under a spell but your son, and the\l"
@@ -902,7 +924,7 @@ CasaAtrei_Text_OrestesKlytmnestraScene4::
 	.string "you.$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene3::
-# 646 "data/maps/CasaAtrei/scripts.pory"
+# 658 "data/maps/CasaAtrei/scripts.pory"
 	.string "A spell? Impossible? How could this be?\n"
 	.string "I was just getting into bed with your\l"
 	.string "mother, then I don't know... My memories\l"
@@ -911,39 +933,39 @@ CasaAtrei_Text_AgamemnonKlytmnestraScene3::
 	.string "me?$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene5::
-# 654 "data/maps/CasaAtrei/scripts.pory"
+# 666 "data/maps/CasaAtrei/scripts.pory"
 	.string "Your own wife, my mother, Klytmnestra\n"
 	.string "was none other than that accursed\l"
 	.string "witch who held you here entranced for\l"
 	.string "all this time.$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene4::
-# 660 "data/maps/CasaAtrei/scripts.pory"
+# 672 "data/maps/CasaAtrei/scripts.pory"
 	.string "Klytmnestra? My wife, did this? I can't\n"
 	.string "believe it! She was the love of my life!\l"
 	.string "Mother of my two children...$"
 
 CasaAtrei_Text_IphigeniaKlytmnestraScene1::
-# 666 "data/maps/CasaAtrei/scripts.pory"
+# 678 "data/maps/CasaAtrei/scripts.pory"
 	.string "Orestes!$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene5::
-# 670 "data/maps/CasaAtrei/scripts.pory"
+# 682 "data/maps/CasaAtrei/scripts.pory"
 	.string "Iphigenia!$"
 
 CasaAtrei_Text_IphigeniaKlytmnestraScene2::
-# 674 "data/maps/CasaAtrei/scripts.pory"
+# 686 "data/maps/CasaAtrei/scripts.pory"
 	.string "How could you do this? You killed your\n"
 	.string "own mother! Have you no shame?$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene6::
-# 679 "data/maps/CasaAtrei/scripts.pory"
+# 691 "data/maps/CasaAtrei/scripts.pory"
 	.string "I did no such thing! My hands are\n"
 	.string "blameless in mother's tragic, but well\l"
 	.string "deserved, death.$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene6::
-# 684 "data/maps/CasaAtrei/scripts.pory"
+# 696 "data/maps/CasaAtrei/scripts.pory"
 	.string "My dearest firstborn daughter, please\n"
 	.string "don't cry for losing your treacherous\l"
 	.string "mother but smile for regaining your lost\l"
@@ -958,7 +980,7 @@ CasaAtrei_Text_AgamemnonKlytmnestraScene6::
 	.string "genitor, of your family's king.$"
 
 CasaAtrei_Text_IphigeniaKlytmnestraScene3::
-# 698 "data/maps/CasaAtrei/scripts.pory"
+# 710 "data/maps/CasaAtrei/scripts.pory"
 	.string "I'll never honor you, mother was right!\n"
 	.string "We women ought to be in charge of\l"
 	.string "things and one day I will see mother\l"
@@ -967,7 +989,7 @@ CasaAtrei_Text_IphigeniaKlytmnestraScene3::
 	.string "my room!$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene7::
-# 706 "data/maps/CasaAtrei/scripts.pory"
+# 718 "data/maps/CasaAtrei/scripts.pory"
 	.string "Let her grieve in peace. She will come\n"
 	.string "around eventually. Now tell me, son how\l"
 	.string "did you manage to break Klytmnestra's\l"
@@ -975,7 +997,7 @@ CasaAtrei_Text_AgamemnonKlytmnestraScene7::
 	.string "helped you do it.$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene7::
-# 713 "data/maps/CasaAtrei/scripts.pory"
+# 725 "data/maps/CasaAtrei/scripts.pory"
 	.string "At first, I believed what mother told\n"
 	.string "me, that you had fallen ill, but over\l"
 	.string "time I grew restless and couldn't\l"
@@ -1006,7 +1028,7 @@ CasaAtrei_Text_OrestesKlytmnestraScene7::
 	.string "the pits of Hell and saved your life.$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene8::
-# 743 "data/maps/CasaAtrei/scripts.pory"
+# 755 "data/maps/CasaAtrei/scripts.pory"
 	.string "A horrible story! I'm so sorry that you\n"
 	.string "were put in that position, son, but in\l"
 	.string "the darkest nights do heroic actions\l"
@@ -1017,7 +1039,7 @@ CasaAtrei_Text_AgamemnonKlytmnestraScene8::
 	.string "give you my most sincere thanks.$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene9::
-# 753 "data/maps/CasaAtrei/scripts.pory"
+# 765 "data/maps/CasaAtrei/scripts.pory"
 	.string "Apologies for remaining in bed when I\n"
 	.string "first shake your hand but the effects\l"
 	.string "of the late witch's spell still linger on\l"
@@ -1039,13 +1061,13 @@ CasaAtrei_Text_AgamemnonKlytmnestraScene9::
 	.string "excuse me boys, and let me rest.$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene8::
-# 775 "data/maps/CasaAtrei/scripts.pory"
+# 787 "data/maps/CasaAtrei/scripts.pory"
 	.string "Very well, father, we'll leave and let you\n"
 	.string "rest. C'mon {PLAYER}, let's leave my\l"
 	.string "father alone.$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene9::
-# 780 "data/maps/CasaAtrei/scripts.pory"
+# 792 "data/maps/CasaAtrei/scripts.pory"
 	.string "Thank you again, but father needs his\n"
 	.string "rest. I'm sure he'll be up and feeling\l"
 	.string "well soon and doubltess he will give you\l"
@@ -1054,21 +1076,25 @@ CasaAtrei_Text_OrestesKlytmnestraScene9::
 	.string "do come back soon.$"
 
 CasaAtrei_Text_OrestesBlock::
-# 788 "data/maps/CasaAtrei/scripts.pory"
+# 800 "data/maps/CasaAtrei/scripts.pory"
 	.string "Father must rest now to regain his\n"
 	.string "strength. Please come back later to\l"
 	.string "recieve your gift.$"
 
 CasaAtrei_Text_DoorBlock::
-# 793 "data/maps/CasaAtrei/scripts.pory"
+# 805 "data/maps/CasaAtrei/scripts.pory"
 	.string "The door is blocked from the outside.$"
 
 CasaAtrei_Text_IphigeniaInRoom::
-# 797 "data/maps/CasaAtrei/scripts.pory"
+# 809 "data/maps/CasaAtrei/scripts.pory"
 	.string "You men are all the same, ignorant pigs!\n"
 	.string "One day I'll run away and go somewhere\l"
 	.string "without any men, a real paradise!$"
 
-CasaAtrei_Text_AgamemnonGiftIntro::
-# 803 "data/maps/CasaAtrei/scripts.pory"
+CasaAtrei_Text_AgamemnonGift1::
+# 815 "data/maps/CasaAtrei/scripts.pory"
+	.string "$"
+
+CasaAtrei_Text_AgamemnonGift2::
+# 819 "data/maps/CasaAtrei/scripts.pory"
 	.string "$"

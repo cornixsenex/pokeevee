@@ -518,14 +518,26 @@ script CasaAtrei_Script_Agamemnon {
 		setflag (FLAG_CASAATREI_AGAMEMNONGIFT)
 		//A: Thanks for coming back, here is your gift
 		load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
-		msgbox (CasaAtrei_Text_AgamemnonGiftIntro, MSGBOX_YESNO)
+		msgbox (CasaAtrei_Text_AgamemnonGift1, MSGBOX_YESNO)
 		destroy_field_pic (FIELD_PIC_AGAMEMNON)
-	}
 		//give item (GIFT) EXP share / Amulet Coin / Leftovers / etc
+		giveitem (ITEM_AMULET_COIN)
 		//Explain item thanks again
+		load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+		msgbox (CasaAtrei_Text_AgamemnonGift2, MSGBOX_YESNO)
+		destroy_field_pic (FIELD_PIC_AGAMEMNON)
 		//check if ready for invite...
+		checkitem (ITEM_WEDDING_INVITATION_AGAMEMNON)
+		if (var(VAR_RESULT) == TRUE) {
+			call (CasaAtrei_Script_AgamemnonInvite)
+		}
+	}
 	//check if ready for invitation
 	//if so give invite and he leaves for Nestor, update orestes state
+
+}
+
+script CasaAtrei_Script_AgamemnonInvite {
 
 }
 
@@ -800,6 +812,10 @@ text CasaAtrei_Text_IphigeniaInRoom {
 			without any men, a real paradise!")
 }
 
-text CasaAtrei_Text_AgamemnonGiftIntro {
+text CasaAtrei_Text_AgamemnonGift1 {
+	format("")
+}
+
+text CasaAtrei_Text_AgamemnonGift2 {
 	format("")
 }
