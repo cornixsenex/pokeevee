@@ -513,12 +513,30 @@ script CasaAtrei_Script_Iphigenia {
 
 script CasaAtrei_Script_Agamemnon {
 	//First time = he thanks you and gives you the gift
+	if (!flag(FLAG_CASAATREI_AGAMEMNONGIFT)) {
+		//setflag
+		setflag (FLAG_CASAATREI_AGAMEMNONGIFT)
+		//A: Thanks for coming back, here is your gift
+		load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
+		msgbox (CasaAtrei_Text_AgamemnonGiftIntro, MSGBOX_YESNO)
+		destroy_field_pic (FIELD_PIC_AGAMEMNON)
+	}
+		//give item (GIFT) EXP share / Amulet Coin / Leftovers / etc
+		//Explain item thanks again
+		//check if ready for invite...
 	//check if ready for invitation
 	//if so give invite and he leaves for Nestor, update orestes state
 
 }
 
 script CasaAtrei_Script_Maid {
+	switch (var(VAR_ORESTES_STATE)) {
+		default:
+			msgbox("ERROR VAR_ORESTES_STATE OOB")
+			closemessage
+			end
+
+	}
 
 }
 
@@ -780,4 +798,8 @@ text CasaAtrei_Text_IphigeniaInRoom {
 	format("You men are all the same, ignorant pigs!
 			One day I'll run away and go somewhere
 			without any men, a real paradise!")
+}
+
+text CasaAtrei_Text_AgamemnonGiftIntro {
+	format("")
 }
