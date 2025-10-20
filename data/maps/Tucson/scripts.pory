@@ -93,6 +93,10 @@ script Tucson_Script_ShowNestorHousePreWedding {
     }
 	
 	//Agamemnon
+	if (var(VAR_ORESTES_STATE) == 13) {
+		setobjectxyperm (LOCALID_TUCSON_AGAMEMNON, 22, 22)
+		setobjectmovementtype (LOCALID_TUCSON_AGAMEMNON, MOVEMENT_TYPE_FACE_DOWN)
+	}
 
 	//Ulysses
 

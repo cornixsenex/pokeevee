@@ -23,10 +23,8 @@ mapscripts CasaAtrei_MapScripts {
         if (var(VAR_ORESTES_STATE) == 12) {
 			call (CasaAtrei_Script_ShowAgamemnonKitchen)
 		}
+
         //Show after Agamemnon departs
-        if (var(VAR_ORESTES_STATE) == 12) {
-			call (CasaAtrei_Script_ShowAgamemnonDeparted)
-		}
 		
         //Show after Iphigenia departs
     }
@@ -80,16 +78,7 @@ script CasaAtrei_Script_ShowAgamemnonKitchen {
 	setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_FACE_DOWN)
 	setobjectxyperm (LOCALID_CASAATREI_MAID, 9, 7)
 	setobjectmovementtype (LOCALID_CASAATREI_MAID, MOVEMENT_TYPE_WANDER_AROUND)
-	return
-}
 
-script CasaAtrei_Script_ShowAgamemnonDeparted {
-	setobjectxyperm (LOCALID_CASAATREI_ORESTES, 6, 5)
-	setobjectmovementtype (LOCALID_CASAATREI_ORESTES, MOVEMENT_TYPE_FACE_LEFT)
-	setobjectxyperm (LOCALID_CASAATREI_IPHIGENIA, 14, 4)
-	setobjectmovementtype (LOCALID_CASAATREI_IPHIGENIA, MOVEMENT_TYPE_FACE_DOWN)
-	setobjectxyperm (LOCALID_CASAATREI_MAID, 9, 7)
-	setobjectmovementtype (LOCALID_CASAATREI_MAID, MOVEMENT_TYPE_WANDER_AROUND)
 	return
 }
 
@@ -557,7 +546,6 @@ script CasaAtrei_Script_Agamemnon {
 			closemessage
 			end
 		}
-	}
 }
 
 script CasaAtrei_Script_AgamemnonInvite {
@@ -565,46 +553,12 @@ script CasaAtrei_Script_AgamemnonInvite {
 	msgbox (CasaAtrei_Text_AgamemnonInvite1)
 	destroy_field_pic (FIELD_PIC_AGAMEMNON)
 	//Give invite msg
-	msgbox (CasaAtrei_Text_GaveInvite)
 	//remove invite item
-	removeitem (ITEM_WEDDING_INVITATION_AGAMEMNON)
 	//alert A
-	applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_ExclamationMark)
-	waitmovement (0)
 	//A:My own brother getting married at Nestor's house! What an incredible blessing I must leave at once
-	load_field_pic (FIELD_PIC_AGAMEMNON, 190, 98)
-	msgbox (CasaAtrei_Text_AgamemnonInvite1)
-	destroy_field_pic (FIELD_PIC_AGAMEMNON)
-	closemessage
 	//A exit
-    specialvar (VAR_RESULT, GetPlayerFacingDirection)
-	if (var(VAR_RESULT) == DIR_NORTH) {
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkUp2)
-		waitmovement (0)
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkRight)
-		waitmovement (0)
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkDown5)
-		waitmovement (0)
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkLeft2)
-		waitmovement (0)
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkDown2)
-		waitmovement (0)
-	} else {
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkDown5)
-		waitmovement (0)
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkLeft)
-		waitmovement (0)
-		applymovement (LOCALID_CASAATREI_AGAMEMNON, Common_Movement_WalkDown)
-		waitmovement (0)
-	}
-	removeobject (LOCALID_CASAATREI_AGAMEMNON)
-	setobjectxyperm (LOCALID_CASAATREI_AGAMEMNON, 0, 0)
-	setobjectmovementtype (LOCALID_CASAATREI_AGAMEMNON, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_CASAATREI_AGAMEMNON)
 	//set vars
-	setvar (VAR_ORESTES_STATE, 13)
 	//fin
-	end
 }
 
 script CasaAtrei_Script_Maid {
@@ -879,34 +833,9 @@ text CasaAtrei_Text_IphigeniaInRoom {
 }
 
 text CasaAtrei_Text_AgamemnonGift1 {
-	format("Hello again, {PLAYER}, it's great to see you.
-			I'm pleased you have come back. Forgive me for
-			having to rest before, but now I am
-			feeling myself again. I have a gift
-			I'd like to give you for saving my life.")
+	format("")
 }
 
 text CasaAtrei_Text_AgamemnonGift2 {
-	format("That Amulet Coin was my lucky charm.
-			I carried it while building my business.
-			I hope it brings you good luck and fortune.")
-}
-
-text CasaAtrei_Text_AgamemnonAfterGift {
-	format("Hello and thank you once again, my friend.")
-}
-
-text CasaAtrei_Text_AgamemnonInvite1 {
-	format("What's that? You brought something to give to me?")
-}
-
-text CasaAtrei_Text_GaveInvite {
-	format("{PLAYER} gave the Wedding Invitation to Agamemnon.")
-}
-
-text CasaAtrei_Text_AgamemnonInvite2 {
-	format("My brother, Menelaus, is getting
-			married at Nestors house! I'm invited
-			to attend this spectacular event.
-			I must make haste, to delay would be rude!")
+	format("")
 }

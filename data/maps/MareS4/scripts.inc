@@ -3201,7 +3201,7 @@ MareS4_Text_Aeneas_Wedding1::
 MareS4_Text_GiveInvitation::
 # 2095 "data/maps/MareS4/scripts.pory"
 	.string "{PLAYER} gave the Wedding Invitation\n"
-	.string "to Aeneas$"
+	.string "to Aeneas.$"
 
 MareS4_Text_Aeneas_Wedding2::
 # 2099 "data/maps/MareS4/scripts.pory"

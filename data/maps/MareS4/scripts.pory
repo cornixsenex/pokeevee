@@ -2093,7 +2093,7 @@ text MareS4_Text_Aeneas_Wedding1 {
 }
 
 text MareS4_Text_GiveInvitation {
-    format("{PLAYER} gave the Wedding Invitation to Aeneas")
+    format("{PLAYER} gave the Wedding Invitation to Aeneas.")
 }
 
 text MareS4_Text_Aeneas_Wedding2 {
