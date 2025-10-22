@@ -11,7 +11,10 @@
 mapscripts MareS7_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
+		//Handle Dynamic Map
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS7_F)
+		//Hide Telemachus if either not ready or already done
+		//Setup Ulysses Stand / Chase
     }
 
 }

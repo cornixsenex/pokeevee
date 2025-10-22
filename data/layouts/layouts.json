@@ -6660,6 +6660,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/CasaAtrei_Passage/border.bin",
       "blockdata_filepath": "data/layouts/CasaAtrei_Passage/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASA_ULYSSIS",
+      "name": "CasaUlyssis_Layout",
+      "width": 12,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/CasaUlyssis/border.bin",
+      "blockdata_filepath": "data/layouts/CasaUlyssis/map.bin"
     }
   ]
 }

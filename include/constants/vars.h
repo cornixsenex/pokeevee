@@ -133,7 +133,10 @@
 																// 0: Default - No Water No Warp - Entrance
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
-#define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
+#define VAR_ULYSSES_STATE                                0x4059 // Track Ulysses thru Odyssey
+																// 0: At home farm standing with Tauros
+																// 1: At home farm chasing Tauros
+																// 2: After Tauros scene (begin Odyssey)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
 #define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
@@ -230,9 +233,7 @@
 																//2: After NestorGather1. Nestor check for guests arrived. Suitors ready to give invitations. Party members ready to be invited.
 																//3: Talk to Nestor after all guests have arrived. Trigger NestorGather2 on Tucson Frame Table
 																//4: After NestorGather2 - Nestor house empty. Church ready for NestorChurch script
-#define VAR_ULYSSES_STATE                                0x4075 // - Tracks Odyssey and updates maps associated
-																//0: BEGIN
-																//1: END
+#define VAR_UNUSED_4075                                  0x4075 // - UNUSED 
 #define VAR_AGAMEMNON_STATE                              0x4076 // - Tracks Orestreia and updates maps associated
 #define VAR_UNUSED_4077                                  0x4077 // - UNUSED
 #define VAR_SURFSCHOOL_STATE                             0x4079 // - Tracks progress in surf school and triggers battles, misty scene
