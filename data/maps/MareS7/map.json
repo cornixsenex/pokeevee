@@ -70,11 +70,12 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES7_TAUROS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS)",
       "x": 9,
-      "y": 29,
+      "y": 23,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -83,11 +84,12 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES7_ULYSSES",
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
       "x": 8,
-      "y": 29,
+      "y": 23,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
