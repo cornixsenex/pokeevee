@@ -6153,8 +6153,8 @@ bool32 MovementType_ChaseNidoking_Step1(struct ObjectEvent *objectEvent, struct 
 	u32 direction;
     s32 x = objectEvent->currentCoords.x;
     s32 y = objectEvent->currentCoords.y;
-    s32 nidokingX = nidokingObjectEvent->currentCoords.x;
-    s32 nidokingY = nidokingObjectEvent->currentCoords.y;
+    s32 nidokingX = nidokingObjectEvent->previousCoords.x;
+    s32 nidokingY = nidokingObjectEvent->previousCoords.y;
 	s32 dX, dY;
 	//Compare player xy to object event xy and determine a direction
 	//
