@@ -84,7 +84,8 @@
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT       0x50
 #define MOVEMENT_TYPE_CHASE_PLAYER                     0x51 // KUSTOM
 #define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x52 // RHH 1.9.0
-#define NUM_MOVEMENT_TYPES                             0x53
+#define MOVEMENT_TYPE_CHASE_NIDOKING                   0x53 // KUSTOM
+#define NUM_MOVEMENT_TYPES                             0x54
 
 #define MOVEMENT_ACTION_FACE_DOWN                       0x0
 #define MOVEMENT_ACTION_FACE_UP                         0x1

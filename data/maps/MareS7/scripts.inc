@@ -32,9 +32,9 @@ MareS7_Script_SetupUlyssesStand::
 # 30 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND
 # 31 "data/maps/MareS7/scripts.pory"
-	setobjectxyperm LOCALID_MARES7_TAUROS, 9, 28
+	setobjectxyperm LOCALID_MARES7_NIDOKING, 9, 28
 # 32 "data/maps/MareS7/scripts.pory"
-	setobjectmovementtype LOCALID_MARES7_TAUROS, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_MARES7_NIDOKING, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 
@@ -42,11 +42,11 @@ MareS7_Script_SetupUlyssesChase::
 # 37 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_ULYSSES, 8, 28
 # 38 "data/maps/MareS7/scripts.pory"
-	setobjectmovementtype LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
+	setobjectmovementtype LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_CHASE_NIDOKING
 # 39 "data/maps/MareS7/scripts.pory"
-	setobjectxyperm LOCALID_MARES7_TAUROS, 9, 28
+	setobjectxyperm LOCALID_MARES7_NIDOKING, 9, 28
 # 40 "data/maps/MareS7/scripts.pory"
-	setobjectmovementtype LOCALID_MARES7_TAUROS, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
+	setobjectmovementtype LOCALID_MARES7_NIDOKING, MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP
 	return
 
 

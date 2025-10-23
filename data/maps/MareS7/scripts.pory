@@ -28,16 +28,16 @@ mapscripts MareS7_MapScripts {
 script MareS7_Script_SetupUlyssesStand {
 	setobjectxyperm (LOCALID_MARES7_ULYSSES, 8, 28)
 	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND)
-	setobjectxyperm (LOCALID_MARES7_TAUROS, 9, 28)
-	setobjectmovementtype (LOCALID_MARES7_TAUROS, MOVEMENT_TYPE_FACE_RIGHT)
+	setobjectxyperm (LOCALID_MARES7_NIDOKING, 9, 28)
+	setobjectmovementtype (LOCALID_MARES7_NIDOKING, MOVEMENT_TYPE_FACE_RIGHT)
 	return
 }
 
 script MareS7_Script_SetupUlyssesChase {
 	setobjectxyperm (LOCALID_MARES7_ULYSSES, 8, 28)
-	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT)
-	setobjectxyperm (LOCALID_MARES7_TAUROS, 9, 28)
-	setobjectmovementtype (LOCALID_MARES7_TAUROS, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT)
+	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_CHASE_NIDOKING)
+	setobjectxyperm (LOCALID_MARES7_NIDOKING, 9, 28)
+	setobjectmovementtype (LOCALID_MARES7_NIDOKING, MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP)
 	return
 }
 

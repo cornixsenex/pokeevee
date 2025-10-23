@@ -350,8 +350,8 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
-	//KUSTOM DESERT TEMPLE
-    [MOVEMENT_TYPE_CHASE_PLAYER] = MovementType_ChasePlayer,
+    [MOVEMENT_TYPE_CHASE_PLAYER] = MovementType_ChasePlayer, //KUSTOM
+    [MOVEMENT_TYPE_CHASE_NIDOKING] = MovementType_ChaseNidoking, //KUSTOM
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -484,6 +484,7 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_CHASE_PLAYER] = DIR_SOUTH,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
+    [MOVEMENT_TYPE_CHASE_NIDOKING] = DIR_SOUTH,
 };
 
 
@@ -6024,6 +6025,8 @@ bool8 MovementType_CopyPlayerInGrass_Step1(struct ObjectEvent *objectEvent, stru
     return gCopyPlayerMovementFuncs[PlayerGetCopyableMovement()](objectEvent, sprite, GetPlayerMovementDirection(), MetatileBehavior_IsPokeGrass);
 }
 
+//Chase Player 
+
 movement_type_def(MovementType_ChasePlayer, gMovementTypeFuncs_ChasePlayer)
 
 bool32 MovementType_ChasePlayer_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
@@ -6123,6 +6126,117 @@ bool32 MovementType_ChasePlayer_Step2(struct ObjectEvent *objectEvent, struct Sp
 }
 
 bool32 MovementType_ChasePlayer_Step3(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        objectEvent->singleMovementActive = FALSE;
+        sprite->sTypeFuncId = 1;
+    }
+    return FALSE;
+}
+
+//Chase Nidoking
+
+movement_type_def(MovementType_ChaseNidoking, gMovementTypeFuncs_ChaseNidoking)
+
+bool32 MovementType_ChaseNidoking_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool32 MovementType_ChaseNidoking_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+	struct ObjectEvent *nidokingObjectEvent = &gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES7_NIDOKING, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)]; 
+	bool32 collision;
+	u32 direction;
+    s32 x = objectEvent->currentCoords.x;
+    s32 y = objectEvent->currentCoords.y;
+    s32 nidokingX = nidokingObjectEvent->currentCoords.x;
+    s32 nidokingY = nidokingObjectEvent->currentCoords.y;
+	s32 dX, dY;
+	//Compare player xy to object event xy and determine a direction
+	//
+	dX = x - nidokingX;
+	dY = y - nidokingY;
+
+	if (dX == 0 && dY == 0)
+		return FALSE;
+	else if ( abs(dY) >= abs(dX) )
+	{
+		if (dY > 0)
+			direction = DIR_NORTH;
+		else
+			direction = DIR_SOUTH;
+	} 
+	else
+	{
+		if (dX > 0)
+			direction = DIR_WEST;
+		else
+			direction = DIR_EAST;
+	}
+	
+    SetObjectEventDirection(objectEvent, direction);
+    collision = GetCollisionInDirection(objectEvent, objectEvent->movementDirection);
+	if (collision)
+	{
+		if (direction == DIR_NORTH || direction == DIR_SOUTH) 
+		{
+			if (abs(dX) > 0)
+			{
+				if (dX > 0)
+				{
+					direction = DIR_WEST;
+				} 
+				else
+				{
+					direction = DIR_EAST;
+				}
+				SetObjectEventDirection(objectEvent, direction);
+			}
+		}
+		else
+		{
+			if (abs(dY) > 0)
+			{
+				if (dY > 0)
+				{
+					direction = DIR_NORTH;
+				} 
+				else
+				{
+					direction = DIR_SOUTH;
+				}
+				SetObjectEventDirection(objectEvent, direction);
+			}
+		}
+
+	}
+
+    sprite->sTypeFuncId = 2;
+    return TRUE;
+}
+
+bool32 MovementType_ChaseNidoking_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+	bool32 collision;
+	u32 movementActionId;
+
+    collision = GetCollisionInDirection(objectEvent, objectEvent->movementDirection);
+    movementActionId = GetWalkNormalMovementAction(objectEvent->movementDirection);
+
+    if (collision)
+        movementActionId = GetWalkInPlaceNormalMovementAction(objectEvent->facingDirection);
+
+    ObjectEventSetSingleMovement(objectEvent, sprite, movementActionId);
+    objectEvent->singleMovementActive = TRUE;
+    sprite->sTypeFuncId = 3;
+    return TRUE;
+}
+
+bool32 MovementType_ChaseNidoking_Step3(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
     {

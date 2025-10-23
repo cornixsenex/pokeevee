@@ -325,6 +325,8 @@ void MovementType_FollowPlayer(struct Sprite *sprite);
 void MovementType_ChasePlayer(struct Sprite *);
 //Kustom Fix Spin Tiles
 u8 GetSpinMovementAction(u32);
+//For Ulysses Chase Nidoking
+void MovementType_ChaseNidoking(struct Sprite *);
 
 //END KUSTOMS
 
@@ -508,6 +510,11 @@ u32 MovementType_ChasePlayer_Step0(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChasePlayer_Step1(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChasePlayer_Step2(struct ObjectEvent *, struct Sprite *);
 u32 MovementType_ChasePlayer_Step3(struct ObjectEvent *, struct Sprite *);
+// Kustom Chase Nidoking 
+u32 MovementType_ChaseNidoking_Step0(struct ObjectEvent *, struct Sprite *);
+u32 MovementType_ChaseNidoking_Step1(struct ObjectEvent *, struct Sprite *);
+u32 MovementType_ChaseNidoking_Step2(struct ObjectEvent *, struct Sprite *);
+u32 MovementType_ChaseNidoking_Step3(struct ObjectEvent *, struct Sprite *);
 
 
 u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction);
