@@ -1,43 +1,5 @@
 
-//To setup Ulysses chasing Tauros VAR_ULYSSES_STATE is toggled between 0 (stand) and 1 (chase) via triggers placed around the door warps.
-//If VAR_ULYSSES_STATE is less than 2 (is he's in the farm w/ tauros) then temp vars A et B are set to 1
-//VAR_TEMP_A
-
 mapscripts CasaUlyssis_MapScripts {
 
-	MAP_SCRIPT_ON_TRANSITION {
-		//Setup Ulysses chase toggle
-		if (var(VAR_ULYSSES_STATE) < 2) {
-			setvar (VAR_TEMP_A, 1)
-			setvar (VAR_TEMP_B, 1)
-		}
-
-	}
-
-
 }
-
-
-script CasaUlyssis_Script_SetupUlyssesChase {
-	//clear temp var
-	setvar (VAR_TEMP_B, 0)
-	//reset other temp var
-	setvar (VAR_TEMP_A, 1)
-	//double check to ensure we don't reset ulysses state later on - sanity check?
-	if (var(VAR_ULYSSES_STATE) == 0) {
-		setvar (VAR_ULYSSES_STATE, 1)
-	}
-}
-
-script CasaUlyssis_Script_SetupUlyssesStand {
-	//clear temp var
-	setvar (VAR_TEMP_A, 0)
-	//reset other temp var
-	setvar (VAR_TEMP_B, 1)
-	//double check to ensure we don't reset ulysses state later on - sanity check?
-	if (var(VAR_ULYSSES_STATE) == 1) {
-		setvar (VAR_ULYSSES_STATE, 0)
-	}
-}
-
 

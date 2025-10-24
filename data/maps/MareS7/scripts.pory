@@ -16,28 +16,27 @@ mapscripts MareS7_MapScripts {
 		//Hide Telemachus if either not ready or already done
 		//Setup Ulysses Stand / Chase
 		if (var(VAR_ULYSSES_STATE) == 0) {
-			call (MareS7_Script_SetupUlyssesStand)
-		}
-		if (var(VAR_ULYSSES_STATE) == 1) {
-			call (MareS7_Script_SetupUlyssesChase)
+			call (MareS7_Script_CheckUlyssesChase)
 		}
     }
 
 }
 
-script MareS7_Script_SetupUlyssesStand {
-	setobjectxyperm (LOCALID_MARES7_ULYSSES, 8, 28)
-	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND)
-	setobjectxyperm (LOCALID_MARES7_NIDOKING, 9, 28)
-	setobjectmovementtype (LOCALID_MARES7_NIDOKING, MOVEMENT_TYPE_FACE_RIGHT)
+script MareS7_Script_CheckUlyssesChase {
+	checkitem (ITEM_WEDDING_INVITATION_ULYSSES)
+	if (var(VAR_RESULT) == YES) {
+		call (MareS7_Script_SetupUlyssesChase)
+	}
 	return
 }
 
 script MareS7_Script_SetupUlyssesChase {
-	setobjectxyperm (LOCALID_MARES7_ULYSSES, 8, 28)
-	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_CHASE_NIDOKING)
-	setobjectxyperm (LOCALID_MARES7_NIDOKING, 9, 28)
-	setobjectmovementtype (LOCALID_MARES7_NIDOKING, MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP)
+	setobjectxyperm (LOCALID_MARES7_ULYSSES, 11, 30)
+	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES7_TAUROS1, 9, 28)
+	setobjectmovementtype (LOCALID_MARES7_TAUROS1, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+	setobjectxyperm (LOCALID_MARES7_TAUROS2, 13, 32)
+	setobjectmovementtype (LOCALID_MARES7_TAUROS2, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT)
 	return
 }
 

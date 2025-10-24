@@ -134,14 +134,12 @@
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
 #define VAR_ULYSSES_STATE                                0x4059 // Track Ulysses thru Odyssey
-																// 0: At home farm standing with Tauros
-																// 1: At home farm chasing Tauros
-																// 2: After Tauros scene (begin Odyssey)
+																// 0: Ulyssas on Ithaca - either in house or "mad"
+																// 1: After Telemachus scene, 
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
 #define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
-
 
 
 

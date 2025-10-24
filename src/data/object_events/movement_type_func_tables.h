@@ -434,13 +434,6 @@ u32 (*const gMovementTypeFuncs_ChasePlayer[])(struct ObjectEvent *, struct Sprit
 	MovementType_ChasePlayer_Step3,
 };
 
-u32 (*const gMovementTypeFuncs_ChaseNidoking[])(struct ObjectEvent *, struct Sprite *) = {
-	MovementType_ChaseNidoking_Step0,
-	MovementType_ChaseNidoking_Step1,
-	MovementType_ChaseNidoking_Step2,
-	MovementType_ChaseNidoking_Step3,
-};
-
 u8 (*const gMovementTypeFuncs_Buried[])(struct ObjectEvent *, struct Sprite *) = {
     MovementType_Buried_Step0,
 };

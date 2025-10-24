@@ -529,7 +529,7 @@ Tucson_Script_Menelaus_9:
 # 343 "data/maps/Tucson/scripts.pory"
 	closemessage
 # 344 "data/maps/Tucson/scripts.pory"
-	giveitem ITEM_WEDDING_INVITATION_AENEAS
+	giveitem ITEM_WEDDING_INVITATION_ULYSSES
 # 345 "data/maps/Tucson/scripts.pory"
 	msgbox Tucson_Text_Menelaus_OnUlysses, MSGBOX_DEFAULT
 # 346 "data/maps/Tucson/scripts.pory"

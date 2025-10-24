@@ -6665,7 +6665,7 @@
       "id": "LAYOUT_CASA_ULYSSIS",
       "name": "CasaUlyssis_Layout",
       "width": 12,
-      "height": 17,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/CasaUlyssis/border.bin",

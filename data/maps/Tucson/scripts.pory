@@ -341,7 +341,7 @@ script Tucson_Script_Menelaus {
 				giveitem (ITEM_WEDDING_INVITATION_AGAMEMNON)
 				msgbox (Tucson_Text_Menelaus_OnAgamemnon, MSGBOX_DEFAULT)
 				closemessage
-				giveitem (ITEM_WEDDING_INVITATION_AENEAS)
+				giveitem (ITEM_WEDDING_INVITATION_ULYSSES)
 				msgbox (Tucson_Text_Menelaus_OnUlysses, MSGBOX_DEFAULT)
 				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 			} else {
