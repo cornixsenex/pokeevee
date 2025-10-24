@@ -677,6 +677,7 @@ extern const u8 Common_Movement_FaceUp[];
 extern const u8 Common_Movement_FaceDown[];
 extern const u8 Common_Movement_FaceRight[];
 extern const u8 Common_Movement_FaceLeft[];
+extern const u8 Common_Movement_FaceOriginalDirection[];
 
 extern const u8 EventScript_CancelMessageBox[];
 extern const u8 Common_EventScript_ShowPokemonCenterSign[];
@@ -1028,7 +1029,6 @@ extern const u8 AedesTerra_Script_SolvedPuzzle4[];
 extern const u8 AedesTerra_Script_UnSolvedPuzzle4[];
 extern const u8 AedesTerra_Script_SolvedPuzzle5[];
 extern const u8 AedesTerra_Script_UnSolvedPuzzle5[];
-
 
 //		END		KUSTOMS		///
 

@@ -1917,6 +1917,11 @@
 	.byte \disable
 	.endm
 
+    @ Cornix Custom - unfaceplayer
+    .macro unfaceplayer 
+    .byte SCR_OP_UNFACEPLAYER
+    .endm
+
 
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL

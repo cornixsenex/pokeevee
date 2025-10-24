@@ -1530,6 +1530,12 @@ bool8 ScrCmd_resetobjectsubpriority(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_unfaceplayer(struct ScriptContext *ctx)
+{
+    ScriptMovement_StartObjectMovementScript(gObjectEvents[gSelectedObjectEvent].localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, Common_Movement_FaceUp);
+    return FALSE;
+}
+
 bool8 ScrCmd_faceplayer(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);

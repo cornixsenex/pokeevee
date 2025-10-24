@@ -39,11 +39,31 @@ script CasaUlyssis_Script_ShowUlyssesAtTable {
 }
 
 script CasaUlyssis_Script_ShowUlyssesDepart {
-
+    //U
+    setobjectxyperm (LOCALID_CASAULYSSIS_ULYSSES, 7, 7)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_ULYSSES, MOVEMENT_TYPE_FACE_DOWN)
+    //P
+    setobjectxyperm (LOCALID_CASAULYSSIS_PENELOPE, 8, 7)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_PENELOPE, MOVEMENT_TYPE_FACE_DOWN)
+    //T
+    setobjectxyperm (LOCALID_CASAULYSSIS_TELEMACHUS, 9, 7)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_TELEMACHUS, MOVEMENT_TYPE_FACE_DOWN)
+    return
 }
 
 script CasaUlyssis_Script_Ulysses {
-
+    faceplayer
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    //Before invitation
+    if (var(VAR_ULYSSES_STATE) == 0) {
+        msgbox (CasaUlyssis_Text_UlyssesBeforeInvite)
+    //After everything
+    } else {
+        msgbox (CasaUlyssis_Text_UlyssesFinal)
+    }
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+    unfaceplayer
 }
 
 script CasaUlyssis_Script_Penelope {
@@ -52,4 +72,12 @@ script CasaUlyssis_Script_Penelope {
 
 script CasaUlyssis_Script_Telemachus {
 
+}
+
+text CasaUlyssis_Text_UlyssesBeforeInvite {
+    format("")
+}
+
+text CasaUlyssis_Text_UlyssesFinal {
+    format("")
 }
