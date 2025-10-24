@@ -6726,6 +6726,12 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
 				ScriptContext_SetupScript(script);
 				return TRUE;
 			}
+            //MareS7 Tauros is different because normal interaction should have no effect only when it collides with you should script fire
+            if (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TAUROS) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S7) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S7)) 
+            {
+                ScriptContext_SetupScript(MareS7_Script_TaurosPush);
+                return TRUE;
+            }
 		}
 	}
 	return FALSE;

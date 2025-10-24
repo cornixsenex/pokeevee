@@ -67,17 +67,56 @@ script CasaUlyssis_Script_Ulysses {
 }
 
 script CasaUlyssis_Script_Penelope {
-
+    faceplayer
+    switch (var(VAR_ULYSSES_STATE)) {
+        //with ulysses at table
+        case 0:
+            msgbox (CasaUlyssis_Text_PenelopeBeforeInvite)
+        //after he departed
+        //during ring scene - lost ring
+        //during ring scene - you brought her back the ring
+        //after ring scene
+        //fin - ulysses returned
+        //OOB
+        default:
+            msgbox ("VAR_ULYSSES_STATE OOB")
+    }
+    closemessage
+    unfaceplayer
 }
 
 script CasaUlyssis_Script_Telemachus {
-
+    faceplayer
+    switch (var(VAR_ULYSSES_STATE)) {
+        //ulysses at table
+        case 0:
+            msgbox (CasaUlyssis_Text_TelemachusBeforeInvite)
+        //ulysses departed
+        //he has the ring
+        //he just gave the ring back
+        //after the ring scene
+        //fin
+        default:
+            msgbox ("VAR_ULYSSES_STATE OOB")
+    }
+    closemessage
+    unfaceplayer
 }
 
 text CasaUlyssis_Text_UlyssesBeforeInvite {
-    format("")
+    format("Hello, my name is Ulysses. I'm blessed
+            to have my own beautiful family,
+            farmland, and house. There's nothing more I need.")
 }
 
 text CasaUlyssis_Text_UlyssesFinal {
-    format("")
+    format("WIP FIN Text")
+}
+
+text CasaUlyssis_Text_PenelopeBeforeInvite {
+    format("My husband, Ulysses, is my whole world.")
+}
+
+text CasaUlyssis_Text_TelemachusBeforeInvite {
+    format("Papa always gets me ice cream and he likes to play catch too!")
 }

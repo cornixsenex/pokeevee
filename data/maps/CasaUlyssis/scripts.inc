@@ -97,17 +97,68 @@ CasaUlyssis_Script_Ulysses_2:
 
 
 CasaUlyssis_Script_Penelope::
+# 70 "data/maps/CasaUlyssis/scripts.pory"
+	faceplayer
+# 71 "data/maps/CasaUlyssis/scripts.pory"
+	switch VAR_ULYSSES_STATE
+# 73 "data/maps/CasaUlyssis/scripts.pory"
+	case 0, CasaUlyssis_Script_Penelope_3
+# 82 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Script_Penelope_Text_0
+CasaUlyssis_Script_Penelope_1:
+# 84 "data/maps/CasaUlyssis/scripts.pory"
+	closemessage
+# 85 "data/maps/CasaUlyssis/scripts.pory"
+	unfaceplayer
 	return
+
+CasaUlyssis_Script_Penelope_3:
+# 74 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_PenelopeBeforeInvite
+	goto CasaUlyssis_Script_Penelope_1
 
 
 CasaUlyssis_Script_Telemachus::
+# 89 "data/maps/CasaUlyssis/scripts.pory"
+	faceplayer
+# 90 "data/maps/CasaUlyssis/scripts.pory"
+	switch VAR_ULYSSES_STATE
+# 92 "data/maps/CasaUlyssis/scripts.pory"
+	case 0, CasaUlyssis_Script_Telemachus_3
+# 100 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Script_Penelope_Text_0
+CasaUlyssis_Script_Telemachus_1:
+# 102 "data/maps/CasaUlyssis/scripts.pory"
+	closemessage
+# 103 "data/maps/CasaUlyssis/scripts.pory"
+	unfaceplayer
 	return
 
+CasaUlyssis_Script_Telemachus_3:
+# 93 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_TelemachusBeforeInvite
+	goto CasaUlyssis_Script_Telemachus_1
+
+
+CasaUlyssis_Script_Penelope_Text_0:
+# 82 "data/maps/CasaUlyssis/scripts.pory"
+	.string "VAR_ULYSSES_STATE OOB$"
 
 CasaUlyssis_Text_UlyssesBeforeInvite::
-# 77 "data/maps/CasaUlyssis/scripts.pory"
-	.string "$"
+# 106 "data/maps/CasaUlyssis/scripts.pory"
+	.string "Hello, my name is Ulysses. I'm blessed to\n"
+	.string "have my own beautiful family, farmland,\l"
+	.string "and house. There's nothing more I need.$"
 
 CasaUlyssis_Text_UlyssesFinal::
-# 81 "data/maps/CasaUlyssis/scripts.pory"
-	.string "$"
+# 112 "data/maps/CasaUlyssis/scripts.pory"
+	.string "WIP FIN Text$"
+
+CasaUlyssis_Text_PenelopeBeforeInvite::
+# 116 "data/maps/CasaUlyssis/scripts.pory"
+	.string "My husband, Ulysses, is my whole world.$"
+
+CasaUlyssis_Text_TelemachusBeforeInvite::
+# 120 "data/maps/CasaUlyssis/scripts.pory"
+	.string "Papa always gets me ice cream and he\n"
+	.string "likes to play catch too!$"
