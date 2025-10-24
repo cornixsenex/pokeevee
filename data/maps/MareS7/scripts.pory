@@ -31,12 +31,21 @@ script MareS7_Script_CheckUlyssesChase {
 }
 
 script MareS7_Script_SetupUlyssesChase {
+    //U Wander
 	setobjectxyperm (LOCALID_MARES7_ULYSSES, 11, 30)
 	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND)
+    //T1 
 	setobjectxyperm (LOCALID_MARES7_TAUROS1, 9, 28)
 	setobjectmovementtype (LOCALID_MARES7_TAUROS1, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+    //T2
 	setobjectxyperm (LOCALID_MARES7_TAUROS2, 13, 32)
 	setobjectmovementtype (LOCALID_MARES7_TAUROS2, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT)
+    //P
+	setobjectxyperm (LOCALID_MARES7_PENELOPE, 11, 34)
+	setobjectmovementtype (LOCALID_MARES7_PENELOPE, MOVEMENT_TYPE_FACE_UP)
+    //Telemachus
+	setobjectxyperm (LOCALID_MARES7_TELEMACHUS, 10, 34)
+	setobjectmovementtype (LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
 

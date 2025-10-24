@@ -33,67 +33,75 @@ MareS7_Script_CheckUlyssesChase_2:
 
 
 MareS7_Script_SetupUlyssesChase::
-# 34 "data/maps/MareS7/scripts.pory"
-	setobjectxyperm LOCALID_MARES7_ULYSSES, 11, 30
 # 35 "data/maps/MareS7/scripts.pory"
-	setobjectmovementtype LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND
+	setobjectxyperm LOCALID_MARES7_ULYSSES, 11, 30
 # 36 "data/maps/MareS7/scripts.pory"
-	setobjectxyperm LOCALID_MARES7_TAUROS1, 9, 28
-# 37 "data/maps/MareS7/scripts.pory"
-	setobjectmovementtype LOCALID_MARES7_TAUROS1, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
+	setobjectmovementtype LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND
 # 38 "data/maps/MareS7/scripts.pory"
-	setobjectxyperm LOCALID_MARES7_TAUROS2, 13, 32
+	setobjectxyperm LOCALID_MARES7_TAUROS1, 9, 28
 # 39 "data/maps/MareS7/scripts.pory"
+	setobjectmovementtype LOCALID_MARES7_TAUROS1, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
+# 41 "data/maps/MareS7/scripts.pory"
+	setobjectxyperm LOCALID_MARES7_TAUROS2, 13, 32
+# 42 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_TAUROS2, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT
+# 44 "data/maps/MareS7/scripts.pory"
+	setobjectxyperm LOCALID_MARES7_PENELOPE, 11, 34
+# 45 "data/maps/MareS7/scripts.pory"
+	setobjectmovementtype LOCALID_MARES7_PENELOPE, MOVEMENT_TYPE_FACE_UP
+# 47 "data/maps/MareS7/scripts.pory"
+	setobjectxyperm LOCALID_MARES7_TELEMACHUS, 10, 34
+# 48 "data/maps/MareS7/scripts.pory"
+	setobjectmovementtype LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 
 MareS7_Script_Transition_IslaIthaca::
-# 44 "data/maps/MareS7/scripts.pory"
+# 53 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 45 "data/maps/MareS7/scripts.pory"
+# 54 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 46 "data/maps/MareS7/scripts.pory"
+# 55 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_MareSubtropicum::
-# 50 "data/maps/MareS7/scripts.pory"
+# 59 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 51 "data/maps/MareS7/scripts.pory"
+# 60 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 52 "data/maps/MareS7/scripts.pory"
+# 61 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_IslaHerbaBona::
-# 56 "data/maps/MareS7/scripts.pory"
+# 65 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 57 "data/maps/MareS7/scripts.pory"
+# 66 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 58 "data/maps/MareS7/scripts.pory"
+# 67 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_IslaArida::
-# 62 "data/maps/MareS7/scripts.pory"
+# 71 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 63 "data/maps/MareS7/scripts.pory"
+# 72 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 64 "data/maps/MareS7/scripts.pory"
+# 73 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_IslaIgnifera::
-# 68 "data/maps/MareS7/scripts.pory"
+# 77 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 69 "data/maps/MareS7/scripts.pory"
+# 78 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 70 "data/maps/MareS7/scripts.pory"
+# 79 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 

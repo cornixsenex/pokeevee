@@ -1,5 +1,55 @@
-
 mapscripts CasaUlyssis_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        //Before Invite - show family at table
+        //During Ulysses Chase
+        if (var(VAR_ULYSSES_STATE) == 0) {
+            call (CasaUlyssis_Script_CheckUlyssesChase)
+        }
+        //Ulysses agrees to go on odyssey
+        if (var(VAR_ULYSSES_STATE) == 1) {
+            call (CasaUlyssis_Script_ShowUlyssesDepart)
+        }
+        //While Ulysses on odysses - normal
+        //Setup Telemachus took Penelope's ring
+        //You have the ring - Telemachus back with Penelope
+        //After the Odyssey? - return Ulysses
+    }
 
 }
 
+script CasaUlyssis_Script_CheckUlyssesChase {
+	checkitem (ITEM_WEDDING_INVITATION_ULYSSES)
+	if (var(VAR_RESULT) == NO) {
+        call (CasaUlyssis_Script_ShowUlyssesAtTable)
+    }
+    return
+}
+
+script CasaUlyssis_Script_ShowUlyssesAtTable {
+    //U
+    setobjectxyperm (LOCALID_CASAULYSSIS_ULYSSES, 4, 6)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
+    //P
+    setobjectxyperm (LOCALID_CASAULYSSIS_PENELOPE, 7, 6)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_PENELOPE, MOVEMENT_TYPE_FACE_LEFT)
+    //T
+    setobjectxyperm (LOCALID_CASAULYSSIS_TELEMACHUS, 9, 7)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_TELEMACHUS, MOVEMENT_TYPE_WANDER_AROUND)
+    return
+}
+
+script CasaUlyssis_Script_ShowUlyssesDepart {
+
+}
+
+script CasaUlyssis_Script_Ulysses {
+
+}
+
+script CasaUlyssis_Script_Penelope {
+
+}
+
+script CasaUlyssis_Script_Telemachus {
+
+}
