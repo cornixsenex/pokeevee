@@ -1155,7 +1155,7 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
         u8 objectEventId = GetObjectEventIdByXY(x, y);
 		if (
 				objectEventId != OBJECT_EVENTS_COUNT && (
-				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_CIRCLE_CUSHION ||
+gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_CIRCLE_CUSHION ||
 				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SQUARE_CUSHION ||
 				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_CROSS_CUSHION ||
 				gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_KITE_CUSHION )
@@ -1209,6 +1209,26 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
 					default:
 						break;
 				}
+            }
+		}
+	}
+	//MareS7 pushable Telemachus
+	if (
+			gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MARE_S7) &&
+			gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MARE_S7)
+	   )
+	{
+        u8 objectEventId = GetObjectEventIdByXY(x, y);
+		if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].localId == LOCALID_MARES7_TELEMACHUS)
+		{
+            x = gObjectEvents[objectEventId].currentCoords.x;
+            y = gObjectEvents[objectEventId].currentCoords.y;
+            MoveCoords(direction, &x, &y);
+            if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
+             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
+            {
+                StartStrengthAnim(objectEventId, direction);
+                return TRUE;
             }
 		}
 	}

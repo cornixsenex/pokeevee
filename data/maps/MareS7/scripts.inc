@@ -329,6 +329,14 @@ MareS7_Script_TaurosPush_19:
 	goto MareS7_Script_TaurosPush_7
 
 
+MareS7_Script_TaurosTelemachus::
+# 198 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark
+# 199 "data/maps/MareS7/scripts.pory"
+	waitmovement 0
+	return
+
+
 MareS7_Script_TaurosPush_Text_0:
 # 138 "data/maps/MareS7/scripts.pory"
 	.string "ERROR CheckWhichTaurosPush OOB$"
@@ -346,7 +354,7 @@ MareS7_Script_TaurosPush_Text_3:
 	.string "ERROR VAR_TEMP_B default switch$"
 
 MareS7_Text_Penelope1::
-# 197 "data/maps/MareS7/scripts.pory"
+# 202 "data/maps/MareS7/scripts.pory"
 	.string "What ever shall I do? My poor husband,\n"
 	.string "the resourceful and brilliant Ulysses,\l"
 	.string "has gone insane! Look how he wanders\l"
@@ -354,14 +362,14 @@ MareS7_Text_Penelope1::
 	.string "destroy our fields!$"
 
 MareS7_Text_Penelope2::
-# 204 "data/maps/MareS7/scripts.pory"
+# 209 "data/maps/MareS7/scripts.pory"
 	.string "I'm so sorry but I must ask you to\n"
 	.string "respect our privacy during this time of\l"
 	.string "tragedy. Please leave, my husband is\l"
 	.string "not well. Curse the madness of Ulysses!$"
 
 MareS7_Text_UlyssesMadness6::
-# 211 "data/maps/MareS7/scripts.pory"
+# 216 "data/maps/MareS7/scripts.pory"
 	.string "...and viddy films I would! Where I was\n"
 	.string "taken to, brothers, was like no cine I'd\l"
 	.string "ever viddied before. I was bound up in a\l"
@@ -369,33 +377,33 @@ MareS7_Text_UlyssesMadness6::
 	.string "strapped to a headrest...$"
 
 MareS7_Text_UlyssesMadness2::
-# 215 "data/maps/MareS7/scripts.pory"
+# 220 "data/maps/MareS7/scripts.pory"
 	.string "The spy coast on the deep road toward\n"
 	.string "that narrow north...$"
 
 MareS7_Text_UlyssesMadness3::
-# 219 "data/maps/MareS7/scripts.pory"
+# 224 "data/maps/MareS7/scripts.pory"
 	.string "Jar women, tomb of sand, the bitter\n"
 	.string "summer guests, the mighty bread...$"
 
 MareS7_Text_UlyssesMadness4::
-# 223 "data/maps/MareS7/scripts.pory"
+# 228 "data/maps/MareS7/scripts.pory"
 	.string "I am the eggman. You are the eggman. I\n"
 	.string "am the walrus. Goo goo g'joob!$"
 
 MareS7_Text_UlyssesMadness5::
-# 227 "data/maps/MareS7/scripts.pory"
+# 232 "data/maps/MareS7/scripts.pory"
 	.string "A is B and C is B and D is B but A is not C\n"
 	.string "and A is not D and C is not D.$"
 
 MareS7_Text_UlyssesMadness1::
-# 231 "data/maps/MareS7/scripts.pory"
+# 236 "data/maps/MareS7/scripts.pory"
 	.string "Jingle bells! Mermaid Man smells!\n"
 	.string "Barnacle Boy laid an egg! The invisible\l"
 	.string "boat mobile lost a wheel and...$"
 
 MareS7_Text_Telemachus::
-# 235 "data/maps/MareS7/scripts.pory"
+# 240 "data/maps/MareS7/scripts.pory"
 	.string "I don't get it! What's wrong with pa?\n"
 	.string "Why can't he stop the Tauros from\l"
 	.string "hurting our farm?$"

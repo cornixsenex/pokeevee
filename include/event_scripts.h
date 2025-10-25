@@ -1030,6 +1030,7 @@ extern const u8 AedesTerra_Script_SolvedPuzzle5[];
 extern const u8 AedesTerra_Script_UnSolvedPuzzle5[];
 //MareS7 Ulysses Madness scripts
 extern const u8 MareS7_Script_TaurosPush[];
+extern const u8 MareS7_Script_TaurosTelemachus[];
 
 //		END		KUSTOMS		///
 

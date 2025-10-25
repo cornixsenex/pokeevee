@@ -218,7 +218,7 @@ static bool8 AreElevationsCompatible(u8, u8);
 static void CopyObjectGraphicsInfoToSpriteTemplate_WithMovementType(u16 graphicsId, u16 movementType, struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables);
 
 //Kustom Collisions
-static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *, s16, s16);
+static bool8 IsSpecialCollision(struct ObjectEvent *, s16, s16);
 static u16 GetGraphicsIdForMon(u32 species, bool32 shiny, bool32 female);
 static u16 GetUnownSpecies(struct Pokemon *mon);
 
@@ -6550,7 +6550,7 @@ static u8 GetVanillaCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 
         return COLLISION_IMPASSABLE;
     else if (IsElevationMismatchAt(objectEvent->currentElevation, x, y))
         return COLLISION_ELEVATION_MISMATCH;
-	else if (IsSpecialCollisionWithPlayer(objectEvent, x, y))
+	else if (IsSpecialCollision(objectEvent, x, y))
 		return COLLISION_SPECIAL_OBJECT;
     else if (DoesObjectCollideWithObjectAt(objectEvent, x, y))
         return COLLISION_OBJECT_EVENT;
@@ -6691,16 +6691,18 @@ static bool8 IsMetatileDirectionallyImpassable(struct ObjectEvent *objectEvent, 
     return FALSE;
 }
 
-static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x, s16 y)
+static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
 {
 	struct ObjectEvent *playerObject;
-    s16 playerX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
-    s16 playerY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+    s16 targetX, targetY;
 	const u8 *script;
 	playerObject = &gObjectEvents[gPlayerAvatar.objectEventId];
 
-	//Check if there is an object colliding with player
-	if (playerX == x && playerY == y)
+	//First we check for collisions with player (most special collisions) so assign target to player xy
+    targetX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+    targetY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	//Check if there is a special object collision with player
+	if (targetX == x && targetY == y)
 	{
 		if (AreElevationsCompatible(objectEvent->currentElevation, playerObject->currentElevation))
 		{
@@ -6732,6 +6734,21 @@ static bool8 IsSpecialCollisionWithPlayer(struct ObjectEvent *objectEvent, s16 x
                 ScriptContext_SetupScript(MareS7_Script_TaurosPush);
                 return TRUE;
             }
+		}
+	}
+	//next we check other types of special collisions (not involving the player)
+	//mares7 telemachus
+	//first determine if the colliding object is tauros on mare s7
+	if (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TAUROS) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S7) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S7))
+	{
+		//if so determine if the object being collided with is Telemachus
+		targetX = gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES7_TELEMACHUS, MAP_NUM(MAP_MARE_S7), MAP_GROUP(MAP_MARE_S7))].currentCoords.x;
+		targetY = gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES7_TELEMACHUS, MAP_NUM(MAP_MARE_S7), MAP_GROUP(MAP_MARE_S7))].currentCoords.y;
+		//if so do script
+		if (targetX == x && targetY == y)
+		{
+			ScriptContext_SetupScript(MareS7_Script_TaurosTelemachus);
+			return TRUE;
 		}
 	}
 	return FALSE;

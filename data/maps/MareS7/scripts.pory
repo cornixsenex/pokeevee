@@ -194,6 +194,11 @@ script MareS7_Script_TaurosPush {
     end
 }
 
+script MareS7_Script_TaurosTelemachus {
+	applymovement (LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark)
+	waitmovement (0)
+}
+
 text MareS7_Text_Penelope1 {
     format("What ever shall I do? My poor husband,
             the resourceful and brilliant Ulysses,
