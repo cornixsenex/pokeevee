@@ -301,6 +301,9 @@ static const u16 sPic90Pal[] = INCBIN_U16("graphics/pokemon/slowking/normal.gbap
 //Sailor2 = 90
 static const u32 sPic91Gfx[] = INCBIN_U32("graphics/trainers/front_pics/sailor2_front_pic.4bpp.lz");
 static const u16 sPic91Pal[] = INCBIN_U16("graphics/trainers/palettes/sailor2.gbapal");
+//Mom = 91
+static const u32 sPic92Gfx[] = INCBIN_U32("graphics/trainers/front_pics/mom.4bpp.lz");
+static const u16 sPic92Pal[] = INCBIN_U16("graphics/trainers/palettes/mom.gbapal");
 
 /* And this is an example script.
 
@@ -506,6 +509,8 @@ static const struct Pic sPics[] =
     {sPic90Gfx, sPic90Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Sailor2
     {sPic91Gfx, sPic91Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Mom
+    {sPic92Gfx, sPic92Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

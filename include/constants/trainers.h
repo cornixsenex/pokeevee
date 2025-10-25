@@ -209,8 +209,9 @@
 #define TRAINER_PIC_GANONDORF             190
 #define TRAINER_PIC_SHEIK                 191
 #define TRAINER_PIC_ZELDA                 192
+#define TRAINER_PIC_MOM                   193
 
-#define TRAINER_PIC_COUNT                 193
+#define TRAINER_PIC_COUNT                 194
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

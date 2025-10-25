@@ -99,9 +99,14 @@ script MareS7_Script_SetupUlyssesChase {
 
 script MareS7_Script_ShowUlyssesSaveTelemachus {
 	//T
+    setobjectxyperm (LOCALID_MARES7_TELEMACHUS, 10, 33)
+    setobjectmovementtype (LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_RIGHT)
 	//U
+    setobjectxyperm (LOCALID_MARES7_ULYSSES, 11, 33)
+    setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_FACE_LEFT)
 	//P
-	
+    setobjectxyperm (LOCALID_MARES7_PENELOPE, 12, 33)
+    setobjectmovementtype (LOCALID_MARES7_PENELOPE, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
 
@@ -136,9 +141,11 @@ load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 script MareS7_Script_Penelope {
 	applymovement (LOCALID_MARES7_PENELOPE, Common_Movement_ExclamationMark)
 	waitmovement (0)
+    load_field_pic (FIELD_PIC_PENELOPE, 190, 98)
     msgbox (MareS7_Text_Penelope1)
     faceplayer
     msgbox (MareS7_Text_Penelope2)
+    destroy_field_pic (FIELD_PIC_PENELOPE)
     closemessage
     unfaceplayer
     end
@@ -259,16 +266,23 @@ script MareS7_Script_TaurosTelemachus {
 	}
 	//U: No! Telemachus!
     load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
-	msgbox(MareS7_Text_UlyssesSaveTelemachus)
+	msgbox(MareS7_Text_UlyssesSaveTelemachus1)
 	setvar (VAR_ULYSSES_STATE, 1)
 	warpsilent (MAP_MARE_S7, 11, 34)
 }
 
 script MareS7_Script_UlyssesSaveTelemachus {
 	//U: Are you OK? That was so close
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox(MareS7_Text_UlyssesSaveTelemachus2)
 	//U face down
+    applymovement (LOCALID_MARES7_ULYSSES, Common_Movement_FaceDown)
+    applymovement (LOCALID_MARES7_TELEMACHUS, Common_Movement_FaceDown)
+    waitmovement (0)
 	//U: Oh! Sorry I uhh didn't see you there, I uhh...Wow I've been miraculously cured. Hello, guest, welcome to my home Ithaca. We should probably head insdie now
+	msgbox(MareS7_Text_UlyssesSaveTelemachus3)
 	//warp into Casa
+    warpsilent (MAP_CASA_ULYSSIS, 7, 8)
 }
 
 text MareS7_Text_Penelope1 {
@@ -313,6 +327,21 @@ text MareS7_Text_Telemachus {
     format("I don't get it! What's wrong with pa? Why can't he stop the Tauros from hurting our farm?")
 }
 
-text MareS7_Text_UlyssesSaveTelemachus {
+text MareS7_Text_UlyssesSaveTelemachus1 {
 	format("No! Telemachus!")
+}
+
+text MareS7_Text_UlyssesSaveTelemachus2 {
+    format("My darling son, are you OK? You're not
+            injured? That was nearly catastrophe!")
+}
+
+text MareS7_Text_UlyssesSaveTelemachus3 {
+    format("Oh! Hello...uhh I uhh...didn't see you there. Wow! I uhh.. I'm feeling just like myself again! Yeah, that's right!
+            I've been miraculously healed of my
+            former condition, now I'm thinking straight
+            and seeing clearly. Praise to the divine!
+            But where are my manners, you are our guest
+            on out family home, Isla Ithaca.
+            We should all head inside. Please, come with me.")
 }

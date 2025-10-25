@@ -15,59 +15,60 @@ NAME		          SPRITE		OVERWORLD
 #Rocket Grunts         Rocket Grunts
 #TeamRocket	           DONE
 #Pythia                Glacia
-#Rocket Boss           Petrel                               Petrel
+#Rocket Boss           Petrel                     Petrel
 #Indy                  Nolan
 #Misty                 Misty
 #SurfInstructors       Phoebe
 #Jason                 Archie
-#Orpheus               Musician                              Anime Blane, 
-#Philoctetes            Phil                                  Aveontrainer/791007878Drake - Change Colors
+#Orpheus               Musician                   Anime Blane, 
+#Philoctetes           Phil                       Aveontrainer/791007878Drake - Change Colors
 #CastorEtPollux        SwordwardShieldbert
-#Theseus                Veteran                              HGSS Burglar modified :(
-#Medea                  HexManiac                            HexManiac
+#Theseus               Veteran                    HGSS Burglar modified :(
+#Medea                 HexManiac                  HexManiac
 #Colchians             Magma Grunts
 #Aeetes                Maxie
-#Nestor                 Nestor                                Nestor 
-#Helen                  Lillie-Masters                        Helen 
-#Paris                  Palmer                                Paris
-#Menelaus               Silver                                 Silver
-#Hector                 Lance                                   Lance
+#Nestor                Nestor                     Nestor 
+#Helen                 Lillie-Masters             Helen 
+#Paris                 Palmer                     Paris
+#Menelaus              Silver                     Silver
+#Hector                Lance                      Lance
 #Aeneas                Steven
 #Elissa                Cynthia
 #Tyrians               Hau
 #Rutulians             Kondo
 #Turnus                Rood
-#Orestes               Wally                                 Wally
-#Priest                 Sage                                  Sage
-#Klytemnestra           BeautyGen9,                            klytaimnestra
-#Iphigenia             Lucy                                  Lucy
-#Agamemnon              Lysandre                             Agamemnon
-#Ulysses                Brock                                 Brock
-#Polyphemus?            Dusclops
-#Circe                  Agatha                               Agatha - NO WALK
-#Calypso                Claire                                claire
-#Achilles               Tucker
-#Patrokles              Wallace2                   Wallace2
-#Ajax                   Chuck                      Chuck
-#Aias                   Avery                      Avery
-#Diomede                Mohn                        Mohn
-#Teucer                 Teucer                    Teucer 
-#Tiresias               Blaine2                    Blaine2
-#Oedipus                Leon
-#Jocasta                Jocasta                   Sabrina              NOTE: Sabrina OW et Jocasta Trainer
-#Amazonians             PlasmaGruntF              amazon
-#Hipolyta               Sierra                     hippolyta
-#Trojans                Dragontamers               trojan               
-#Troilus                Dragontamer-gen6            8257-dragon tamer - troilus
-#Cressida               Concordia 
-#IrohLotus?             Spenser
-#Trojan Hores           Kimono Girl                kimono_girl 
-#Priam                  Li                          priam 
-#Cassandra              Karen                        karen
-#Hercules               Bruno                         bruno
-#Atlas?                 Drayden                     drayden
-#PlutoDis               Ghetis                      ghetsis
-#Persephone             Olympia                     olympia
+#Orestes               Wally                      Wally
+#Priest                Sage                       Sage
+#Klytemnestra          BeautyGen9,                klytaimnestra
+#Iphigenia             Lucy                       Lucy
+#Agamemnon             Lysandre                   Agamemnon
+#Ulysses               Brock                      Brock
+#Penelope              Mom                        Mom
+#Polyphemus?           Dusclops
+#Circe                 Agatha                     Agatha - NO WALK
+#Calypso               Claire                     claire
+#Achilles              Tucker
+#Patrokles             Wallace2                   Wallace2
+#Ajax                  Chuck                      Chuck
+#Aias                  Avery                      Avery
+#Diomede               Mohn                       Mohn
+#Teucer                Teucer                     Teucer 
+#Tiresias              Blaine2                    Blaine2
+#Oedipus               Leon
+#Jocasta               Jocasta                    Sabrina              NOTE: Sabrina OW et Jocasta Trainer
+#Amazonians            PlasmaGruntF               amazon
+#Hipolyta              Sierra                     hippolyta
+#Trojans               Dragontamers               trojan               
+#Troilus               Dragontamer-gen6           8257-dragon tamer - troilus
+#Cressida              Concordia 
+#IrohLotus?            Spenser
+#Trojan Hores          Kimono Girl                kimono_girl 
+#Priam                 Li                         priam 
+#Cassandra             Karen                      karen
+#Hercules              Bruno                      bruno
+#Atlas?                Drayden                    drayden
+#PlutoDis              Ghetis                     ghetsis
+#Persephone            Olympia                    olympia
 
 Old guys: Magnus / Spenser / Vince / MrBriney / Li / Kurt / Owner  / Pryce / Watson, Juan, 
 Cool / Normal guys: , Veteran, Volkner, acetrainer, Brandon, Brawly, Ethan, Flint, Guzma, Hilbert, Lucas?, Morty, Oak, PlayerGo, Riley, Paxton, phil

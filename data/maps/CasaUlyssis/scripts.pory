@@ -14,6 +14,16 @@ mapscripts CasaUlyssis_MapScripts {
         //You have the ring - Telemachus back with Penelope
         //After the Odyssey? - return Ulysses
     }
+	
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		//Turn Player for Ulysses Save Telemachus scene
+		VAR_ULYSSES_STATE, 1: Common_Script_FacePlayerUp
+	]
+	
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		//Do Ulysses save telemachus sceen
+		VAR_ULYSSES_STATE, 1: CasaUlyssis_Script_UlyssesDepart
+	]
 
 }
 
@@ -68,6 +78,7 @@ script CasaUlyssis_Script_Ulysses {
 
 script CasaUlyssis_Script_Penelope {
     faceplayer
+    load_field_pic (FIELD_PIC_PENELOPE, 190, 98)
     switch (var(VAR_ULYSSES_STATE)) {
         //with ulysses at table
         case 0:
@@ -81,6 +92,7 @@ script CasaUlyssis_Script_Penelope {
         default:
             msgbox ("VAR_ULYSSES_STATE OOB")
     }
+    destroy_field_pic (FIELD_PIC_PENELOPE)
     closemessage
     unfaceplayer
 }
@@ -103,6 +115,42 @@ script CasaUlyssis_Script_Telemachus {
     unfaceplayer
 }
 
+script CasaUlyssis_Script_UlyssesDepart {
+    //U:This is my home, my wife Penelope and son telemachus, I tell you I am the luckiest man alive I'm wealthy both in money and family, now tell me friend what brings you to our home?
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaUlyssis_Text_Ulysses_Depart1)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+    //alert U
+    applymovement (LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //U: Whats that? A letter for me?
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaUlyssis_Text_Ulysses_Depart2)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    //give invite
+    msgbox (CasaUlyssis_Text_GaveInvite)
+    //alert U
+    applymovement (LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //U: My old friend Menelaus is getting married and wants me to be his best man.
+    //P: Menewho?
+    //they face eachother
+    //U: We worked together, he's Agamemnon's younger brother. I really can't get out of this one
+    //P: I understand
+    //U: I promise to return you know when I go on a journey I stay focused and never get distracted and never visit any other women
+    //P: Thast what you said last time...
+    //U: Wife I've changed. I'm leaving now, and nothing you say can stop me. I must represent our family at Agamemnon's family wedding. I love you, see you
+    //P: Farewell
+    //U face player
+    //U: Thank you for delivering this to me. Now if you would excuse me, I must be on my way
+    //U exit
+    //setvars
+    setvar (VAR_ULYSSES_STATE, 2)
+    //fin
+    end
+}
+
 text CasaUlyssis_Text_UlyssesBeforeInvite {
     format("Hello, my name is Ulysses. I'm blessed
             to have my own beautiful family,
@@ -119,4 +167,24 @@ text CasaUlyssis_Text_PenelopeBeforeInvite {
 
 text CasaUlyssis_Text_TelemachusBeforeInvite {
     format("Papa always gets me ice cream and he likes to play catch too!")
+}
+
+text CasaUlyssis_Text_Ulysses_Depart1 {
+    format("Welcome, fiend, to our happy little home.
+            I'd like to introduce Penelope,
+            my wife, and Telemachus, my young boy.
+            Despite my recent loss of sanity
+            I count myself among the luckiet
+            people alive. I am wealthy in both
+            material things and in family.
+            Now tell me, friend, what brings you out this far
+            across the ocean to our blessed home?")
+}
+
+text CasaUlyssis_Text_Ulysses_Depart2 {
+    format("What's that? You came to deliver me mail?")
+}
+
+text CasaUlyssis_Text_GaveInvite {
+	format("{PLAYER} gave the Wedding Invitation to Ulysses.")
 }
