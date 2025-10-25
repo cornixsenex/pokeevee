@@ -134,17 +134,61 @@ script CasaUlyssis_Script_UlyssesDepart {
     applymovement (LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_ExclamationMark)
     waitmovement (0)
     //U: My old friend Menelaus is getting married and wants me to be his best man.
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaUlyssis_Text_Ulysses_Depart3)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
     //P: Menewho?
+    load_field_pic (FIELD_PIC_PENELOPE, 190, 98)
+    msgbox (CasaUlyssis_Text_Penelope_Depart1)
     //they face eachother
+    applymovement (LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_FaceRight)
+    applymovement (LOCALID_CASAULYSSIS_PENELOPE, Common_Movement_FaceLeft)
+    waitmovement (0)
+    //P: Who's that?
+    msgbox (CasaUlyssis_Text_Penelope_Depart2)
+    destroy_field_pic (FIELD_PIC_PENELOPE)
     //U: We worked together, he's Agamemnon's younger brother. I really can't get out of this one
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaUlyssis_Text_Ulysses_Depart4)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
     //P: I understand
+    load_field_pic (FIELD_PIC_PENELOPE, 190, 98)
+    msgbox (CasaUlyssis_Text_Penelope_Depart3)
+    destroy_field_pic (FIELD_PIC_PENELOPE)
     //U: I promise to return you know when I go on a journey I stay focused and never get distracted and never visit any other women
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaUlyssis_Text_Ulysses_Depart5)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
     //P: Thast what you said last time...
+    load_field_pic (FIELD_PIC_PENELOPE, 190, 98)
+    msgbox (CasaUlyssis_Text_Penelope_Depart4)
+    destroy_field_pic (FIELD_PIC_PENELOPE)
     //U: Wife I've changed. I'm leaving now, and nothing you say can stop me. I must represent our family at Agamemnon's family wedding. I love you, see you
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaUlyssis_Text_Ulysses_Depart6)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
     //P: Farewell
+    load_field_pic (FIELD_PIC_PENELOPE, 190, 98)
+    msgbox (CasaUlyssis_Text_Penelope_Depart5)
+    destroy_field_pic (FIELD_PIC_PENELOPE)
     //U face player
+    applymovement (LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_FaceDown)
+    waitmovement (0)
     //U: Thank you for delivering this to me. Now if you would excuse me, I must be on my way
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaUlyssis_Text_Ulysses_Depart7)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
     //U exit
+    applymovement (LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_WalkLeft)
+    waitmovement (0)
+    applymovement (LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_WalkDown2)
+    waitmovement (0)
+    //remove U
+    removeobject (LOCALID_CASAULYSSIS_ULYSSES)
+    setobjectxyperm (LOCALID_CASAULYSSIS_ULYSSES, 0, 0)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_CASAULYSSIS_ULYSSES)
     //setvars
     setvar (VAR_ULYSSES_STATE, 2)
     //fin
@@ -187,4 +231,79 @@ text CasaUlyssis_Text_Ulysses_Depart2 {
 
 text CasaUlyssis_Text_GaveInvite {
 	format("{PLAYER} gave the Wedding Invitation to Ulysses.")
+}
+
+text CasaUlyssis_Text_Ulysses_Depart3 {
+    format("An old friend of mine, Menelaus, is
+            getting married and wants me to be the 
+            best man at his wedding.")
+}
+
+text CasaUlyssis_Text_Penelope_Depart1 {
+    format("Menelaus?")
+}
+
+text CasaUlyssis_Text_Penelope_Depart2 {
+    format("Who's that? One of you childhood best friends?")
+}
+
+text CasaUlyssis_Text_Ulysses_Depart4 {
+    format("He's an old coworker of mine from the
+            Commerce Guild. Though we never were too close,
+            in fact I never respected the guy,
+            he's Agamemnon's own younger brother
+            so I have little choice but to attend.")
+}
+
+text CasaUlyssis_Text_Penelope_Depart3 {
+    format("It's strange he'd ask you to be his best man
+            if the two of you were never that close
+            but I understand you will have to go.
+            We owe our fortunes to Agamemnon.")
+}
+
+text CasaUlyssis_Text_Ulysses_Depart5 {
+    format("He always was, let's say, an eccentric
+            and irritating man. I'd imagine
+            he has no one else in his life to ask.
+            We worked together for a couple years,
+            that may have been the deepest connection
+            he formed with anyone. While I'm away
+            be well assured, my one and only wife,
+            I will endevour tirelessly to
+            return promptly. Know that my mind is like
+            the fixed course of the stars across the sky
+            and that neither adventure nor women
+            will draw me from my course. I'll be direct
+            in my journey, just there and back again.")
+}
+
+text CasaUlyssis_Text_Penelope_Depart4 {
+    format("Faithful husband, my one and only love,
+            I want to believe the sweet words you say
+            but last time you...")
+}
+
+text CasaUlyssis_Text_Ulysses_Depart6 {
+    format("Penelope! I've changed!
+            I was a younger man, on business trips,
+            and I told you she tricked me in...")
+}
+
+text CasaUlyssis_Text_Penelope_Depart5 {
+    format("Farewell...
+            I know no words of mine can sway your will
+            and once you've made your mind up to depart
+            nothing short of the wrath of the Ocean
+            can delay, let alone break off, your leave.
+            Be safe, my love, be quick in your return,
+            and trust that I will wait here patiently,
+            faithful, and lonesome until you return.")
+}
+
+text CasaUlyssis_Text_Ulysses_Depart7 {
+    format("Thank you for bringing me this urgent mail.
+            Unfortunately, I must now be off.
+            Excuse me for being an unkind host,
+            but I have pressing business to attend.")
 }
