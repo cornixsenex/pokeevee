@@ -79,13 +79,12 @@ script MareS7_Script_SetupUlyssesChase {
 	setobjectmovementtype (LOCALID_MARES7_PENELOPE, MOVEMENT_TYPE_FACE_UP)
     //Telemachus
 	setobjectxyperm (LOCALID_MARES7_TELEMACHUS, 10, 34)
-	setobjectmovementtype (LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectmovementtype (LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_UP)
 	return
 }
 
 //Ulysses feigns madness
 script MareS7_Script_Ulysses {
-    lock
     load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
     specialvar (VAR_RESULT, RandDigit)
     switch (var(VAR_RESULT)) {
@@ -109,11 +108,12 @@ script MareS7_Script_Ulysses {
     }
     destroy_field_pic (FIELD_PIC_ULYSSES)
     closemessage
-    release
     end
 }
 
 script MareS7_Script_Penelope {
+	applymovement (LOCALID_MARES7_PENELOPE, Common_Movement_ExclamationMark)
+	waitmovement (0)
     msgbox (MareS7_Text_Penelope1)
     faceplayer
     msgbox (MareS7_Text_Penelope2)

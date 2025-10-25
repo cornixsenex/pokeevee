@@ -102,77 +102,77 @@ MareS7_Script_SetupUlyssesChase::
 # 81 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_TELEMACHUS, 10, 34
 # 82 "data/maps/MareS7/scripts.pory"
-	setobjectmovementtype LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_UP
 	return
 
 
 MareS7_Script_Ulysses::
 # 88 "data/maps/MareS7/scripts.pory"
-	lock
-# 89 "data/maps/MareS7/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 90 "data/maps/MareS7/scripts.pory"
+# 89 "data/maps/MareS7/scripts.pory"
 	specialvar VAR_RESULT, RandDigit
-# 91 "data/maps/MareS7/scripts.pory"
+# 90 "data/maps/MareS7/scripts.pory"
 	switch VAR_RESULT
-# 92 "data/maps/MareS7/scripts.pory"
+# 91 "data/maps/MareS7/scripts.pory"
 	case 0, MareS7_Script_Ulysses_3
-# 93 "data/maps/MareS7/scripts.pory"
+# 92 "data/maps/MareS7/scripts.pory"
 	case 1, MareS7_Script_Ulysses_3
-# 95 "data/maps/MareS7/scripts.pory"
+# 94 "data/maps/MareS7/scripts.pory"
 	case 2, MareS7_Script_Ulysses_4
-# 96 "data/maps/MareS7/scripts.pory"
+# 95 "data/maps/MareS7/scripts.pory"
 	case 3, MareS7_Script_Ulysses_4
-# 98 "data/maps/MareS7/scripts.pory"
+# 97 "data/maps/MareS7/scripts.pory"
 	case 4, MareS7_Script_Ulysses_5
-# 99 "data/maps/MareS7/scripts.pory"
+# 98 "data/maps/MareS7/scripts.pory"
 	case 5, MareS7_Script_Ulysses_5
-# 101 "data/maps/MareS7/scripts.pory"
+# 100 "data/maps/MareS7/scripts.pory"
 	case 6, MareS7_Script_Ulysses_6
-# 102 "data/maps/MareS7/scripts.pory"
+# 101 "data/maps/MareS7/scripts.pory"
 	case 7, MareS7_Script_Ulysses_6
-# 104 "data/maps/MareS7/scripts.pory"
+# 103 "data/maps/MareS7/scripts.pory"
 	case 8, MareS7_Script_Ulysses_7
-# 105 "data/maps/MareS7/scripts.pory"
+# 104 "data/maps/MareS7/scripts.pory"
 	case 9, MareS7_Script_Ulysses_7
-# 108 "data/maps/MareS7/scripts.pory"
+# 107 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness6
 MareS7_Script_Ulysses_1:
-# 110 "data/maps/MareS7/scripts.pory"
+# 109 "data/maps/MareS7/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 111 "data/maps/MareS7/scripts.pory"
+# 110 "data/maps/MareS7/scripts.pory"
 	closemessage
-# 112 "data/maps/MareS7/scripts.pory"
-	release
 	end
 
 MareS7_Script_Ulysses_3:
-# 94 "data/maps/MareS7/scripts.pory"
+# 93 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness1
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_4:
-# 97 "data/maps/MareS7/scripts.pory"
+# 96 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness2
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_5:
-# 100 "data/maps/MareS7/scripts.pory"
+# 99 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness3
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_6:
-# 103 "data/maps/MareS7/scripts.pory"
+# 102 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness4
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_7:
-# 106 "data/maps/MareS7/scripts.pory"
+# 105 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness5
 	goto MareS7_Script_Ulysses_1
 
 
 MareS7_Script_Penelope::
+# 115 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_PENELOPE, Common_Movement_ExclamationMark
+# 116 "data/maps/MareS7/scripts.pory"
+	waitmovement 0
 # 117 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_Penelope1
 # 118 "data/maps/MareS7/scripts.pory"
