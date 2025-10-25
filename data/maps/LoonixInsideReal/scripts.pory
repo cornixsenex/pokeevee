@@ -37,7 +37,7 @@ mapscripts LoonixInsideReal_MapScripts {
     }
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_GRANNY_STATE, 6: LoonixInsideReal_Script_FacePlayerUp
+		VAR_GRANNY_STATE, 6: Common_Script_FacePlayerUp
 	]
 	
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -89,12 +89,6 @@ script LoonixInsideReal_Script_ShowGrannyTV {
 script LoonixInsideReal_Script_ShowGrannyBed {
 	setobjectxyperm (OBJ_EVENT_GRANNY, 11, 3)
 	setobjectmovementtype (OBJ_EVENT_GRANNY, MOVEMENT_TYPE_FACE_DOWN)
-
-	return
-}
-
-script LoonixInsideReal_Script_FacePlayerUp {
-	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
 
 	return
 }

@@ -1,6 +1,10 @@
 MareS7_MapScripts::
 # 15 "data/maps/MareS7/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 29 "data/maps/MareS7/scripts.pory"
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, MareS7_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
+# 34 "data/maps/MareS7/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MareS7_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -8,353 +12,465 @@ MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	specialvar VAR_TEMP_5, GetDynamicMapSec_MareS7_F
 # 20 "data/maps/MareS7/scripts.pory"
 	compare VAR_ULYSSES_STATE, 0
-	goto_if_eq MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_eq MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 24 "data/maps/MareS7/scripts.pory"
+	compare VAR_ULYSSES_STATE, 0
+	goto_if_eq MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 	return
 
-MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 21 "data/maps/MareS7/scripts.pory"
 	call MareS7_Script_CheckUlyssesChase
+	goto MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+# 25 "data/maps/MareS7/scripts.pory"
+	call MareS7_Script_ShowUlyssesSaveTelemachus
 	return
+
+MareS7_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+# 31 "data/maps/MareS7/scripts.pory"
+	map_script_2 VAR_ULYSSES_STATE, 1, Common_Script_FacePlayerUp
+	.2byte 0
+
+MareS7_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 36 "data/maps/MareS7/scripts.pory"
+	map_script_2 VAR_ULYSSES_STATE, 1, MareS7_Script_UlyssesSaveTelemachus
+	.2byte 0
 
 
 MareS7_Script_Transition_IslaIthaca::
-# 30 "data/maps/MareS7/scripts.pory"
+# 44 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 1
-# 31 "data/maps/MareS7/scripts.pory"
+# 45 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 32 "data/maps/MareS7/scripts.pory"
+# 46 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_MareSubtropicum::
-# 36 "data/maps/MareS7/scripts.pory"
+# 50 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 2
-# 37 "data/maps/MareS7/scripts.pory"
+# 51 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 38 "data/maps/MareS7/scripts.pory"
+# 52 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_IslaHerbaBona::
-# 42 "data/maps/MareS7/scripts.pory"
+# 56 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 3
-# 43 "data/maps/MareS7/scripts.pory"
+# 57 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 44 "data/maps/MareS7/scripts.pory"
+# 58 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_IslaArida::
-# 48 "data/maps/MareS7/scripts.pory"
+# 62 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 4
-# 49 "data/maps/MareS7/scripts.pory"
+# 63 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 50 "data/maps/MareS7/scripts.pory"
+# 64 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_Transition_IslaIgnifera::
-# 54 "data/maps/MareS7/scripts.pory"
+# 68 "data/maps/MareS7/scripts.pory"
 	setvar VAR_TEMP_5, 5
-# 55 "data/maps/MareS7/scripts.pory"
+# 69 "data/maps/MareS7/scripts.pory"
 	special TransitionMapMusic
-# 56 "data/maps/MareS7/scripts.pory"
+# 70 "data/maps/MareS7/scripts.pory"
 	special ShowMapNamePopup
 	return
 
 
 MareS7_Script_CheckUlyssesChase::
-# 60 "data/maps/MareS7/scripts.pory"
+# 74 "data/maps/MareS7/scripts.pory"
 	checkitem ITEM_WEDDING_INVITATION_ULYSSES
-# 61 "data/maps/MareS7/scripts.pory"
+# 75 "data/maps/MareS7/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS7_Script_CheckUlyssesChase_2
 MareS7_Script_CheckUlyssesChase_1:
 	return
 
 MareS7_Script_CheckUlyssesChase_2:
-# 62 "data/maps/MareS7/scripts.pory"
+# 76 "data/maps/MareS7/scripts.pory"
 	call MareS7_Script_SetupUlyssesChase
 	goto MareS7_Script_CheckUlyssesChase_1
 
 
 MareS7_Script_SetupUlyssesChase::
-# 69 "data/maps/MareS7/scripts.pory"
+# 83 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_ULYSSES, 11, 30
-# 70 "data/maps/MareS7/scripts.pory"
+# 84 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
-# 72 "data/maps/MareS7/scripts.pory"
+# 86 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_TAUROS1, 9, 28
-# 73 "data/maps/MareS7/scripts.pory"
+# 87 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_TAUROS1, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
-# 75 "data/maps/MareS7/scripts.pory"
+# 89 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_TAUROS2, 13, 32
-# 76 "data/maps/MareS7/scripts.pory"
+# 90 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_TAUROS2, MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT
-# 78 "data/maps/MareS7/scripts.pory"
+# 92 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_PENELOPE, 11, 34
-# 79 "data/maps/MareS7/scripts.pory"
+# 93 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_PENELOPE, MOVEMENT_TYPE_FACE_UP
-# 81 "data/maps/MareS7/scripts.pory"
+# 95 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_TELEMACHUS, 10, 34
-# 82 "data/maps/MareS7/scripts.pory"
+# 96 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_TELEMACHUS, MOVEMENT_TYPE_FACE_UP
 	return
 
 
+MareS7_Script_ShowUlyssesSaveTelemachus::
+	return
+
+
 MareS7_Script_Ulysses::
-# 88 "data/maps/MareS7/scripts.pory"
+# 110 "data/maps/MareS7/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 89 "data/maps/MareS7/scripts.pory"
+# 111 "data/maps/MareS7/scripts.pory"
 	specialvar VAR_RESULT, RandDigit
-# 90 "data/maps/MareS7/scripts.pory"
+# 112 "data/maps/MareS7/scripts.pory"
 	switch VAR_RESULT
-# 91 "data/maps/MareS7/scripts.pory"
+# 113 "data/maps/MareS7/scripts.pory"
 	case 0, MareS7_Script_Ulysses_3
-# 92 "data/maps/MareS7/scripts.pory"
+# 114 "data/maps/MareS7/scripts.pory"
 	case 1, MareS7_Script_Ulysses_3
-# 94 "data/maps/MareS7/scripts.pory"
+# 116 "data/maps/MareS7/scripts.pory"
 	case 2, MareS7_Script_Ulysses_4
-# 95 "data/maps/MareS7/scripts.pory"
+# 117 "data/maps/MareS7/scripts.pory"
 	case 3, MareS7_Script_Ulysses_4
-# 97 "data/maps/MareS7/scripts.pory"
+# 119 "data/maps/MareS7/scripts.pory"
 	case 4, MareS7_Script_Ulysses_5
-# 98 "data/maps/MareS7/scripts.pory"
+# 120 "data/maps/MareS7/scripts.pory"
 	case 5, MareS7_Script_Ulysses_5
-# 100 "data/maps/MareS7/scripts.pory"
+# 122 "data/maps/MareS7/scripts.pory"
 	case 6, MareS7_Script_Ulysses_6
-# 101 "data/maps/MareS7/scripts.pory"
+# 123 "data/maps/MareS7/scripts.pory"
 	case 7, MareS7_Script_Ulysses_6
-# 103 "data/maps/MareS7/scripts.pory"
+# 125 "data/maps/MareS7/scripts.pory"
 	case 8, MareS7_Script_Ulysses_7
-# 104 "data/maps/MareS7/scripts.pory"
+# 126 "data/maps/MareS7/scripts.pory"
 	case 9, MareS7_Script_Ulysses_7
-# 107 "data/maps/MareS7/scripts.pory"
+# 129 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness6
 MareS7_Script_Ulysses_1:
-# 109 "data/maps/MareS7/scripts.pory"
+# 131 "data/maps/MareS7/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 110 "data/maps/MareS7/scripts.pory"
+# 132 "data/maps/MareS7/scripts.pory"
 	closemessage
 	end
 
 MareS7_Script_Ulysses_3:
-# 93 "data/maps/MareS7/scripts.pory"
+# 115 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness1
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_4:
-# 96 "data/maps/MareS7/scripts.pory"
+# 118 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness2
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_5:
-# 99 "data/maps/MareS7/scripts.pory"
+# 121 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness3
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_6:
-# 102 "data/maps/MareS7/scripts.pory"
+# 124 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness4
 	goto MareS7_Script_Ulysses_1
 
 MareS7_Script_Ulysses_7:
-# 105 "data/maps/MareS7/scripts.pory"
+# 127 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_UlyssesMadness5
 	goto MareS7_Script_Ulysses_1
 
 
 MareS7_Script_Penelope::
-# 115 "data/maps/MareS7/scripts.pory"
+# 137 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_MARES7_PENELOPE, Common_Movement_ExclamationMark
-# 116 "data/maps/MareS7/scripts.pory"
+# 138 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
-# 117 "data/maps/MareS7/scripts.pory"
+# 139 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_Penelope1
-# 118 "data/maps/MareS7/scripts.pory"
+# 140 "data/maps/MareS7/scripts.pory"
 	faceplayer
-# 119 "data/maps/MareS7/scripts.pory"
+# 141 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_Penelope2
-# 120 "data/maps/MareS7/scripts.pory"
+# 142 "data/maps/MareS7/scripts.pory"
 	closemessage
-# 121 "data/maps/MareS7/scripts.pory"
+# 143 "data/maps/MareS7/scripts.pory"
 	unfaceplayer
 	end
 
 
 MareS7_Script_Telemachus::
-# 126 "data/maps/MareS7/scripts.pory"
+# 148 "data/maps/MareS7/scripts.pory"
 	faceplayer
-# 127 "data/maps/MareS7/scripts.pory"
+# 149 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_Telemachus
-# 128 "data/maps/MareS7/scripts.pory"
+# 150 "data/maps/MareS7/scripts.pory"
 	closemessage
-# 129 "data/maps/MareS7/scripts.pory"
+# 151 "data/maps/MareS7/scripts.pory"
 	unfaceplayer
 	end
 
 
 MareS7_Script_TaurosPush::
-# 134 "data/maps/MareS7/scripts.pory"
+# 156 "data/maps/MareS7/scripts.pory"
 	specialvar VAR_TEMP_A, CheckWhichTaurosPush
-# 135 "data/maps/MareS7/scripts.pory"
+# 157 "data/maps/MareS7/scripts.pory"
 	switch VAR_TEMP_A
-# 137 "data/maps/MareS7/scripts.pory"
+# 159 "data/maps/MareS7/scripts.pory"
 	case 0, MareS7_Script_TaurosPush_3
-# 140 "data/maps/MareS7/scripts.pory"
+# 162 "data/maps/MareS7/scripts.pory"
 	case 1, MareS7_Script_TaurosPush_4
-# 145 "data/maps/MareS7/scripts.pory"
+# 167 "data/maps/MareS7/scripts.pory"
 	case 2, MareS7_Script_TaurosPush_5
-# 150 "data/maps/MareS7/scripts.pory"
+# 172 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Script_TaurosPush_Text_0
 MareS7_Script_TaurosPush_1:
-# 153 "data/maps/MareS7/scripts.pory"
+# 175 "data/maps/MareS7/scripts.pory"
 	playmoncry SPECIES_TAUROS, CRY_MODE_ENCOUNTER
-# 154 "data/maps/MareS7/scripts.pory"
+# 176 "data/maps/MareS7/scripts.pory"
 	waitmoncry
-# 156 "data/maps/MareS7/scripts.pory"
+# 178 "data/maps/MareS7/scripts.pory"
 	specialvar VAR_TEMP_B, CheckTaurosPushDirection
-# 157 "data/maps/MareS7/scripts.pory"
-	switch VAR_TEMP_B
-# 159 "data/maps/MareS7/scripts.pory"
-	case DIR_EAST, MareS7_Script_TaurosPush_9
-# 169 "data/maps/MareS7/scripts.pory"
-	case DIR_WEST, MareS7_Script_TaurosPush_10
 # 179 "data/maps/MareS7/scripts.pory"
+	switch VAR_TEMP_B
+# 181 "data/maps/MareS7/scripts.pory"
+	case DIR_EAST, MareS7_Script_TaurosPush_9
+# 191 "data/maps/MareS7/scripts.pory"
+	case DIR_WEST, MareS7_Script_TaurosPush_10
+# 201 "data/maps/MareS7/scripts.pory"
 	case DIR_NORTH, MareS7_Script_TaurosPush_11
-# 182 "data/maps/MareS7/scripts.pory"
+# 204 "data/maps/MareS7/scripts.pory"
 	case DIR_SOUTH, MareS7_Script_TaurosPush_12
-# 185 "data/maps/MareS7/scripts.pory"
+# 207 "data/maps/MareS7/scripts.pory"
 	case 67, MareS7_Script_TaurosPush_13
-# 187 "data/maps/MareS7/scripts.pory"
+# 209 "data/maps/MareS7/scripts.pory"
 	case 69, MareS7_Script_TaurosPush_14
-# 190 "data/maps/MareS7/scripts.pory"
+# 212 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Script_TaurosPush_Text_3
 MareS7_Script_TaurosPush_7:
-# 193 "data/maps/MareS7/scripts.pory"
+# 215 "data/maps/MareS7/scripts.pory"
 	release
 	end
 
 MareS7_Script_TaurosPush_3:
-# 138 "data/maps/MareS7/scripts.pory"
+# 160 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Script_TaurosPush_Text_0
 	goto MareS7_Script_TaurosPush_1
 
 MareS7_Script_TaurosPush_4:
-# 141 "data/maps/MareS7/scripts.pory"
+# 163 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 142 "data/maps/MareS7/scripts.pory"
+# 164 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_MARES7_TAUROS1, Common_Movement_ExclamationMark
-# 143 "data/maps/MareS7/scripts.pory"
+# 165 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_1
 
 MareS7_Script_TaurosPush_5:
-# 146 "data/maps/MareS7/scripts.pory"
+# 168 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 147 "data/maps/MareS7/scripts.pory"
+# 169 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_MARES7_TAUROS2, Common_Movement_ExclamationMark
-# 148 "data/maps/MareS7/scripts.pory"
+# 170 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_1
 
 MareS7_Script_TaurosPush_9:
-# 160 "data/maps/MareS7/scripts.pory"
+# 182 "data/maps/MareS7/scripts.pory"
 	compare VAR_TEMP_A, 1
 	goto_if_eq MareS7_Script_TaurosPush_16
-# 165 "data/maps/MareS7/scripts.pory"
+# 187 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_MARES7_TAUROS2, Common_Movement_WalkRight
-# 166 "data/maps/MareS7/scripts.pory"
+# 188 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 167 "data/maps/MareS7/scripts.pory"
+# 189 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_7
 
 MareS7_Script_TaurosPush_10:
-# 170 "data/maps/MareS7/scripts.pory"
+# 192 "data/maps/MareS7/scripts.pory"
 	compare VAR_TEMP_A, 1
 	goto_if_eq MareS7_Script_TaurosPush_19
-# 175 "data/maps/MareS7/scripts.pory"
+# 197 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_MARES7_TAUROS2, Common_Movement_WalkLeft
-# 176 "data/maps/MareS7/scripts.pory"
+# 198 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
-# 177 "data/maps/MareS7/scripts.pory"
+# 199 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_7
 
 MareS7_Script_TaurosPush_11:
-# 180 "data/maps/MareS7/scripts.pory"
+# 202 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-# 181 "data/maps/MareS7/scripts.pory"
+# 203 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_7
 
 MareS7_Script_TaurosPush_12:
-# 183 "data/maps/MareS7/scripts.pory"
+# 205 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-# 184 "data/maps/MareS7/scripts.pory"
+# 206 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_7
 
 MareS7_Script_TaurosPush_13:
-# 186 "data/maps/MareS7/scripts.pory"
+# 208 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Script_TaurosPush_Text_1
 	goto MareS7_Script_TaurosPush_7
 
 MareS7_Script_TaurosPush_14:
-# 188 "data/maps/MareS7/scripts.pory"
+# 210 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Script_TaurosPush_Text_2
 	goto MareS7_Script_TaurosPush_7
 
 MareS7_Script_TaurosPush_16:
-# 161 "data/maps/MareS7/scripts.pory"
+# 183 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_MARES7_TAUROS1, Common_Movement_WalkRight
-# 162 "data/maps/MareS7/scripts.pory"
+# 184 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 163 "data/maps/MareS7/scripts.pory"
+# 185 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_7
 
 MareS7_Script_TaurosPush_19:
-# 171 "data/maps/MareS7/scripts.pory"
+# 193 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_MARES7_TAUROS1, Common_Movement_WalkLeft
-# 172 "data/maps/MareS7/scripts.pory"
+# 194 "data/maps/MareS7/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
-# 173 "data/maps/MareS7/scripts.pory"
+# 195 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
 	goto MareS7_Script_TaurosPush_7
 
 
 MareS7_Script_TaurosTelemachus::
-# 198 "data/maps/MareS7/scripts.pory"
-	applymovement LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark
-# 199 "data/maps/MareS7/scripts.pory"
+# 221 "data/maps/MareS7/scripts.pory"
+	specialvar VAR_TEMP_A, CheckWhichTaurosTelemachusPush
+# 222 "data/maps/MareS7/scripts.pory"
+	switch VAR_TEMP_A
+# 224 "data/maps/MareS7/scripts.pory"
+	case 0, MareS7_Script_TaurosTelemachus_3
+# 230 "data/maps/MareS7/scripts.pory"
+	case 1, MareS7_Script_TaurosTelemachus_4
+# 235 "data/maps/MareS7/scripts.pory"
+	case 2, MareS7_Script_TaurosTelemachus_5
+# 240 "data/maps/MareS7/scripts.pory"
+	msgbox MareS7_Script_TaurosPush_Text_0
+MareS7_Script_TaurosTelemachus_1:
+# 243 "data/maps/MareS7/scripts.pory"
+	playmoncry SPECIES_TAUROS, CRY_MODE_ENCOUNTER
+# 244 "data/maps/MareS7/scripts.pory"
+	waitmoncry
+# 246 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_ULYSSES, Common_Movement_ExclamationMark
+# 247 "data/maps/MareS7/scripts.pory"
 	waitmovement 0
+# 249 "data/maps/MareS7/scripts.pory"
+	compare VAR_TEMP_A, 1
+	goto_if_eq MareS7_Script_TaurosTelemachus_8
+# 252 "data/maps/MareS7/scripts.pory"
+	compare VAR_TEMP_A, 2
+	goto_if_eq MareS7_Script_TaurosTelemachus_9
+# 256 "data/maps/MareS7/scripts.pory"
+	msgbox MareS7_Script_TaurosTelemachus_Text_0
+# 257 "data/maps/MareS7/scripts.pory"
+	closemessage
+	end
+
+MareS7_Script_TaurosTelemachus_3:
+# 225 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_TAUROS1, Common_Movement_ExclamationMark
+# 226 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_TAUROS2, Common_Movement_ExclamationMark
+# 227 "data/maps/MareS7/scripts.pory"
+	waitmovement 0
+# 228 "data/maps/MareS7/scripts.pory"
+	msgbox MareS7_Script_TaurosPush_Text_0
+	goto MareS7_Script_TaurosTelemachus_1
+
+MareS7_Script_TaurosTelemachus_4:
+# 231 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark
+# 232 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_TAUROS1, Common_Movement_ExclamationMark
+# 233 "data/maps/MareS7/scripts.pory"
+	waitmovement 0
+	goto MareS7_Script_TaurosTelemachus_1
+
+MareS7_Script_TaurosTelemachus_5:
+# 236 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark
+# 237 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_TAUROS2, Common_Movement_ExclamationMark
+# 238 "data/maps/MareS7/scripts.pory"
+	waitmovement 0
+	goto MareS7_Script_TaurosTelemachus_1
+
+MareS7_Script_TaurosTelemachus_7:
+# 261 "data/maps/MareS7/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 262 "data/maps/MareS7/scripts.pory"
+	msgbox MareS7_Text_UlyssesSaveTelemachus
+# 263 "data/maps/MareS7/scripts.pory"
+	setvar VAR_ULYSSES_STATE, 1
+# 264 "data/maps/MareS7/scripts.pory"
+	warpsilent MAP_MARE_S7, 11, 34
+	return
+
+MareS7_Script_TaurosTelemachus_8:
+# 250 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_ULYSSES, Common_Movement_FaceUp
+# 251 "data/maps/MareS7/scripts.pory"
+	waitmovement 0
+	goto MareS7_Script_TaurosTelemachus_7
+
+MareS7_Script_TaurosTelemachus_9:
+# 253 "data/maps/MareS7/scripts.pory"
+	applymovement LOCALID_MARES7_ULYSSES, Common_Movement_FaceDown
+# 254 "data/maps/MareS7/scripts.pory"
+	waitmovement 0
+	goto MareS7_Script_TaurosTelemachus_7
+
+
+MareS7_Script_UlyssesSaveTelemachus::
 	return
 
 
 MareS7_Script_TaurosPush_Text_0:
-# 138 "data/maps/MareS7/scripts.pory"
+# 160 "data/maps/MareS7/scripts.pory"
 	.string "ERROR CheckWhichTaurosPush OOB$"
 
 MareS7_Script_TaurosPush_Text_1:
-# 186 "data/maps/MareS7/scripts.pory"
+# 208 "data/maps/MareS7/scripts.pory"
 	.string "ERROR 67 \nNo Valid Push Direction sin collision$"
 
 MareS7_Script_TaurosPush_Text_2:
-# 188 "data/maps/MareS7/scripts.pory"
+# 210 "data/maps/MareS7/scripts.pory"
 	.string "ERROR 69 CheckTaurosPushDirection$"
 
 MareS7_Script_TaurosPush_Text_3:
-# 190 "data/maps/MareS7/scripts.pory"
+# 212 "data/maps/MareS7/scripts.pory"
 	.string "ERROR VAR_TEMP_B default switch$"
 
+MareS7_Script_TaurosTelemachus_Text_0:
+# 256 "data/maps/MareS7/scripts.pory"
+	.string "ERROR VAR_TEMP_A OOB in Ulysses Face$"
+
 MareS7_Text_Penelope1::
-# 202 "data/maps/MareS7/scripts.pory"
+# 274 "data/maps/MareS7/scripts.pory"
 	.string "What ever shall I do? My poor husband,\n"
 	.string "the resourceful and brilliant Ulysses,\l"
 	.string "has gone insane! Look how he wanders\l"
@@ -362,14 +478,14 @@ MareS7_Text_Penelope1::
 	.string "destroy our fields!$"
 
 MareS7_Text_Penelope2::
-# 209 "data/maps/MareS7/scripts.pory"
+# 281 "data/maps/MareS7/scripts.pory"
 	.string "I'm so sorry but I must ask you to\n"
 	.string "respect our privacy during this time of\l"
 	.string "tragedy. Please leave, my husband is\l"
 	.string "not well. Curse the madness of Ulysses!$"
 
 MareS7_Text_UlyssesMadness6::
-# 216 "data/maps/MareS7/scripts.pory"
+# 288 "data/maps/MareS7/scripts.pory"
 	.string "...and viddy films I would! Where I was\n"
 	.string "taken to, brothers, was like no cine I'd\l"
 	.string "ever viddied before. I was bound up in a\l"
@@ -377,33 +493,37 @@ MareS7_Text_UlyssesMadness6::
 	.string "strapped to a headrest...$"
 
 MareS7_Text_UlyssesMadness2::
-# 220 "data/maps/MareS7/scripts.pory"
+# 292 "data/maps/MareS7/scripts.pory"
 	.string "The spy coast on the deep road toward\n"
 	.string "that narrow north...$"
 
 MareS7_Text_UlyssesMadness3::
-# 224 "data/maps/MareS7/scripts.pory"
+# 296 "data/maps/MareS7/scripts.pory"
 	.string "Jar women, tomb of sand, the bitter\n"
 	.string "summer guests, the mighty bread...$"
 
 MareS7_Text_UlyssesMadness4::
-# 228 "data/maps/MareS7/scripts.pory"
+# 300 "data/maps/MareS7/scripts.pory"
 	.string "I am the eggman. You are the eggman. I\n"
 	.string "am the walrus. Goo goo g'joob!$"
 
 MareS7_Text_UlyssesMadness5::
-# 232 "data/maps/MareS7/scripts.pory"
+# 304 "data/maps/MareS7/scripts.pory"
 	.string "A is B and C is B and D is B but A is not C\n"
 	.string "and A is not D and C is not D.$"
 
 MareS7_Text_UlyssesMadness1::
-# 236 "data/maps/MareS7/scripts.pory"
+# 308 "data/maps/MareS7/scripts.pory"
 	.string "Jingle bells! Mermaid Man smells!\n"
 	.string "Barnacle Boy laid an egg! The invisible\l"
 	.string "boat mobile lost a wheel and...$"
 
 MareS7_Text_Telemachus::
-# 240 "data/maps/MareS7/scripts.pory"
+# 312 "data/maps/MareS7/scripts.pory"
 	.string "I don't get it! What's wrong with pa?\n"
 	.string "Why can't he stop the Tauros from\l"
 	.string "hurting our farm?$"
+
+MareS7_Text_UlyssesSaveTelemachus::
+# 316 "data/maps/MareS7/scripts.pory"
+	.string "No! Telemachus!$"

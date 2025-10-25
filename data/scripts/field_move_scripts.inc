@@ -549,6 +549,22 @@ EventScript_EndRockClimb::
 	releaseall
 	end
 
+Common_Script_FacePlayerUp::
+	turnobject LOCALID_PLAYER, DIR_NORTH
+	return
+
+Common_Script_FacePlayerDown::
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+	return
+
+Common_Script_FacePlayerRight::
+	turnobject LOCALID_PLAYER, DIR_EAST
+	return
+
+Common_Script_FacePlayerLeft::
+	turnobject LOCALID_PLAYER, DIR_WEST
+	return
+
 Text_WantToRockClimb:
     .string "The cliff is steep.\n"
     .string "Would you like to use Rock Climb?$"

@@ -6091,6 +6091,21 @@ u32 CheckWhichTaurosPush(void)
 		return 0;
 }
 
+u32 CheckWhichTaurosTelemachusPush(void)
+{
+	int y;
+    y = gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES7_TELEMACHUS, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)].currentCoords.y;
+	y -= MAP_OFFSET;
+
+	//Tauros 1
+	if (y == 28)
+		return 1;
+	else if (y == 32)
+		return 2;
+	else 
+		return 0;
+}
+
 u32 CheckTaurosPushDirection(void)
 {
 	//First determine which tauros

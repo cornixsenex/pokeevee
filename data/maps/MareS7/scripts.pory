@@ -20,7 +20,21 @@ mapscripts MareS7_MapScripts {
 		if (var(VAR_ULYSSES_STATE) == 0) {
 			call (MareS7_Script_CheckUlyssesChase)
 		}
+		//Setup Ulysses save Telemachus scene
+		if (var(VAR_ULYSSES_STATE) == 0) {
+			call (MareS7_Script_ShowUlyssesSaveTelemachus)
+		}
     }
+
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		//Turn Player for Ulysses Save Telemachus scene
+		VAR_ULYSSES_STATE, 1: Common_Script_FacePlayerUp
+	]
+	
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		//Do Ulysses save telemachus sceen
+		VAR_ULYSSES_STATE, 1: MareS7_Script_UlyssesSaveTelemachus
+	]
 
 }
 
@@ -83,9 +97,17 @@ script MareS7_Script_SetupUlyssesChase {
 	return
 }
 
+script MareS7_Script_ShowUlyssesSaveTelemachus {
+	//T
+	//U
+	//P
+	
+	return
+}
+
 //Ulysses feigns madness
 script MareS7_Script_Ulysses {
-    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
     specialvar (VAR_RESULT, RandDigit)
     switch (var(VAR_RESULT)) {
         case 0:
@@ -195,8 +217,58 @@ script MareS7_Script_TaurosPush {
 }
 
 script MareS7_Script_TaurosTelemachus {
-	applymovement (LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark)
+	//alert Telemachus et relevant Tauros
+	specialvar (VAR_TEMP_A, CheckWhichTaurosTelemachusPush)
+	switch (var(VAR_TEMP_A)) {
+		//OOB
+		case 0:
+			applymovement (LOCALID_MARES7_TAUROS1, Common_Movement_ExclamationMark)
+			applymovement (LOCALID_MARES7_TAUROS2, Common_Movement_ExclamationMark)
+			waitmovement (0)
+			msgbox("ERROR CheckWhichTaurosPush OOB")
+		//T1
+		case 1:
+			applymovement (LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark)
+			applymovement (LOCALID_MARES7_TAUROS1, Common_Movement_ExclamationMark)
+			waitmovement (0)
+		//T2
+		case 2:
+			applymovement (LOCALID_MARES7_TELEMACHUS, Common_Movement_ExclamationMark)
+			applymovement (LOCALID_MARES7_TAUROS2, Common_Movement_ExclamationMark)
+			waitmovement (0)
+		default:
+			msgbox("ERROR CheckWhichTaurosPush OOB")
+	}
+	//tauros sound
+	playmoncry (SPECIES_TAUROS, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	//alerty U
+	applymovement (LOCALID_MARES7_ULYSSES, Common_Movement_ExclamationMark)
 	waitmovement (0)
+	//turn U
+	if (var(VAR_TEMP_A) == 1) {
+		applymovement (LOCALID_MARES7_ULYSSES, Common_Movement_FaceUp)
+		waitmovement (0)
+	} elif (var(VAR_TEMP_A) == 2) {
+		applymovement (LOCALID_MARES7_ULYSSES, Common_Movement_FaceDown)
+		waitmovement (0)
+	} else {
+		msgbox("ERROR VAR_TEMP_A OOB in Ulysses Face")
+		closemessage
+		end
+	}
+	//U: No! Telemachus!
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox(MareS7_Text_UlyssesSaveTelemachus)
+	setvar (VAR_ULYSSES_STATE, 1)
+	warpsilent (MAP_MARE_S7, 11, 34)
+}
+
+script MareS7_Script_UlyssesSaveTelemachus {
+	//U: Are you OK? That was so close
+	//U face down
+	//U: Oh! Sorry I uhh didn't see you there, I uhh...Wow I've been miraculously cured. Hello, guest, welcome to my home Ithaca. We should probably head insdie now
+	//warp into Casa
 }
 
 text MareS7_Text_Penelope1 {
@@ -239,4 +311,8 @@ text MareS7_Text_UlyssesMadness1 {
 
 text MareS7_Text_Telemachus {
     format("I don't get it! What's wrong with pa? Why can't he stop the Tauros from hurting our farm?")
+}
+
+text MareS7_Text_UlyssesSaveTelemachus {
+	format("No! Telemachus!")
 }

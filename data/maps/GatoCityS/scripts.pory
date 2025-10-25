@@ -40,12 +40,12 @@ mapscripts GatoCityS_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_SALTYSPITOON_STATE, 25: GatoCityS_EventScript_FacePlayerRight
-		VAR_SALTYSPITOON_STATE, 26: GatoCityS_EventScript_FacePlayerUp
-		VAR_SALTYSPITOON_STATE, 27: GatoCityS_EventScript_FacePlayerLeft
-		VAR_SALTYSPITOON_STATE, 35: GatoCityS_EventScript_FacePlayerRight
-		VAR_SALTYSPITOON_STATE, 36: GatoCityS_EventScript_FacePlayerUp
-		VAR_SALTYSPITOON_STATE, 37: GatoCityS_EventScript_FacePlayerLeft
+		VAR_SALTYSPITOON_STATE, 25: Common_Script_FacePlayerRight
+		VAR_SALTYSPITOON_STATE, 26: Common_Script_FacePlayerUp
+		VAR_SALTYSPITOON_STATE, 27: Common_Script_FacePlayerLeft
+		VAR_SALTYSPITOON_STATE, 35: Common_Script_FacePlayerRight
+		VAR_SALTYSPITOON_STATE, 36: Common_Script_FacePlayerUp
+		VAR_SALTYSPITOON_STATE, 37: Common_Script_FacePlayerLeft
 	]
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -63,21 +63,6 @@ mapscripts GatoCityS_MapScripts {
 script GatoCityS_EventScript_ResetSS {
 	setflag(FLAG_TEMP_1)
 	setvar(VAR_SALTYSPITOON_STATE, 4)
-	end
-}
-
-script GatoCityS_EventScript_FacePlayerRight {
-	turnobject (OBJ_EVENT_ID_PLAYER, DIR_EAST)
-	end
-}
-
-script GatoCityS_EventScript_FacePlayerUp {
-	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-	end
-}
-
-script GatoCityS_EventScript_FacePlayerLeft {
-	turnobject (OBJ_EVENT_ID_PLAYER, DIR_WEST)
 	end
 }
 

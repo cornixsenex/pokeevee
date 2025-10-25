@@ -34,7 +34,7 @@ mapscripts AedesTrivis_MapScripts {
 	}
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_ORESTES_STATE, 5: AedesTrivis_Script_FacePlayerUp
+		VAR_ORESTES_STATE, 5: Common_Script_FacePlayerUp
 	]
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -224,11 +224,6 @@ script AedesTrivis_Script_SetupReturnFromWhiteout {
 	setobjectmovementtype (LOCALID_AEDESTRIVIS_SAGE, MOVEMENT_TYPE_FACE_DOWN)
 	setobjectxyperm (LOCALID_AEDESTRIVIS_ORESTES, 12, 11)
 	setobjectmovementtype (LOCALID_AEDESTRIVIS_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
-	return
-}
-
-script AedesTrivis_Script_FacePlayerUp {
-	turnobject (LOCALID_PLAYER, DIR_NORTH)
 	return
 }
 
