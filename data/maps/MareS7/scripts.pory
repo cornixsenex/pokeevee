@@ -67,7 +67,7 @@ script MareS7_Script_CheckUlyssesChase {
 script MareS7_Script_SetupUlyssesChase {
     //U Wander
 	setobjectxyperm (LOCALID_MARES7_ULYSSES, 11, 30)
-	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectmovementtype (LOCALID_MARES7_ULYSSES, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
     //T1 
 	setobjectxyperm (LOCALID_MARES7_TAUROS1, 9, 28)
 	setobjectmovementtype (LOCALID_MARES7_TAUROS1, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
@@ -156,8 +156,6 @@ script MareS7_Script_TaurosPush {
 	specialvar (VAR_TEMP_B, CheckTaurosPushDirection)
 	switch (var(VAR_TEMP_B)) {
 		//handle error code
-		case 69:
-			msgbox("ERROR 69 CheckTaurosPushDirection")
 		case DIR_EAST:
 			if (var(VAR_TEMP_A) == 1) {
 				applymovement (LOCALID_MARES7_TAUROS1, Common_Movement_WalkRight)
@@ -178,6 +176,18 @@ script MareS7_Script_TaurosPush {
 				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
 				waitmovement (0)
 			}
+        case DIR_NORTH:
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+				waitmovement (0)
+        case DIR_SOUTH:
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+				waitmovement (0)
+        case 67:
+            msgbox("ERROR 67 \nNo Valid Push Direction sin collision")
+		case 69:
+			msgbox("ERROR 69 CheckTaurosPushDirection")
+        default:
+                msgbox("ERROR VAR_TEMP_B default switch")
 	}
     //fin
     release

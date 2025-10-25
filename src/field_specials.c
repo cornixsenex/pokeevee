@@ -6112,17 +6112,33 @@ u32 CheckTaurosPushDirection(void)
 		taurosDirection = gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES7_TAUROS2, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)].facingDirection;
 	else
 		return 69;
-	if (taurosDirection == DIR_WEST) {
-		if(!CheckObjectAtXY(playerX-1, playerY))
+	if (taurosDirection == DIR_WEST) 
+    {
+		if (!CheckObjectAtXY(playerX-1, playerY))
 			return taurosDirection;
 		else
-			return DIR_SOUTH;
+        {
+            if (!CheckObjectAtXY(playerX, playerY+1))
+                return DIR_SOUTH;
+            else if (!CheckObjectAtXY(playerX, playerY-1))
+                return DIR_NORTH;
+            else
+                return 67;
+        }
 	}
-	else if (taurosDirection == DIR_EAST) {
+	else if (taurosDirection == DIR_EAST) 
+    {
 		if(!CheckObjectAtXY(playerX+1, playerY))
 			return taurosDirection;
 		else
-			return DIR_NORTH;
+        {
+            if (!CheckObjectAtXY(playerX, playerY-1))
+                return DIR_NORTH;
+            else if (!CheckObjectAtXY(playerX, playerY+1))
+                return DIR_SOUTH;
+            else
+                return 67;
+        }
 	}
 	else //taurosDirection OOB
 		 return 69;
