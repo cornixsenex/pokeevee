@@ -597,6 +597,8 @@ gSpecials::
 	def_special DoShinyMareepBattle
 	def_special DoLupaBattle
 	def_special DoGranonBattle
+	def_special CheckWhichTaurosPush
+	def_special CheckTaurosPushDirection
 	def_special IsShinyMareepInParty
 	def_special ScriptGetPartyMonIsShiny
 	def_special IsRoute3RiverDelta_F

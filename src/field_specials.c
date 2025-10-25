@@ -6075,6 +6075,59 @@ void DoGranonBattle(void)
     ScriptContext_Stop();
 }
 
+//Ulysses Chase return 1 or 2 for which tauros you're interacting with to switch which one to "hold" movement
+u32 CheckWhichTaurosPush(void)
+{
+	int y;
+    y = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	y -= MAP_OFFSET;
+
+	//Tauros 1
+	if (y == 28)
+		return 1;
+	else if (y == 32)
+		return 2;
+	else 
+		return 0;
+}
+
+u32 CheckTaurosPushDirection(void)
+{
+	//First determine which tauros
+	//Then get it's push direction
+	//Then check if collision with Telemachus
+	//If no collision, push in direction
+	//Else if collision push player up or down
+	//69 is OOB error code. In script display an OOB erros msg
+	int taurosNumber = CheckWhichTaurosPush();
+	int taurosDirection;
+	int playerX, playerY;
+    playerX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+    playerY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	playerX -= MAP_OFFSET;
+	playerY -= MAP_OFFSET;
+	if (taurosNumber == 1) //Top Tauros
+		taurosDirection = gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES7_TAUROS1, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)].facingDirection;
+	else if (taurosNumber == 2) //Bottom Tauros
+		taurosDirection = gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES7_TAUROS2, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)].facingDirection;
+	else
+		return 69;
+	if (taurosDirection == DIR_WEST) {
+		if(!CheckObjectAtXY(playerX-1, playerY))
+			return taurosDirection;
+		else
+			return DIR_SOUTH;
+	}
+	else if (taurosDirection == DIR_EAST) {
+		if(!CheckObjectAtXY(playerX+1, playerY))
+			return taurosDirection;
+		else
+			return DIR_NORTH;
+	}
+	else //taurosDirection OOB
+		 return 69;
+}
+
 //Beginner stuff fix it later - just do a standard warp setup the truck sequence do the shaking then open the door and release let it warp to Urbia and then have them take the truck away in another fade screen (that should all be handled ON_FRAME_TABLE)
 void DoPeccadumTruckScene(void)
 {
