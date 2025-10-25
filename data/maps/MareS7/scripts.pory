@@ -7,7 +7,7 @@
 //4: Isla Arida
 //5: Isla Ignifera
 
-//VAR_TEMP_A et VAR_TEMP_B used to hold XY values during Tauros Push
+//VAR_TEMP_A et VAR_TEMP_B used to hold values during Tauros Push
 
 
 mapscripts MareS7_MapScripts {
@@ -131,8 +131,8 @@ script MareS7_Script_Telemachus {
 }
 
 script MareS7_Script_TaurosPush {
-	specialvar (VAR_RESULT, CheckWhichTaurosPush)
-	switch (var(VAR_RESULT)) {
+	specialvar (VAR_TEMP_A, CheckWhichTaurosPush)
+	switch (var(VAR_TEMP_A)) {
 		//OOB
 		case 0:
 			msgbox("ERROR CheckWhichTaurosPush OOB")
@@ -153,17 +153,31 @@ script MareS7_Script_TaurosPush {
 	playmoncry (SPECIES_TAUROS, CRY_MODE_ENCOUNTER)
 	waitmoncry
     //push player - check tauros direction, push player in that direction unless collision with telemachus in which case just move player down
-	specialvar (VAR_RESULT, CheckTaurosPushDirection)
-	switch (var(VAR_RESULT)) {
+	specialvar (VAR_TEMP_B, CheckTaurosPushDirection)
+	switch (var(VAR_TEMP_B)) {
 		//handle error code
 		case 69:
 			msgbox("ERROR 69 CheckTaurosPushDirection")
 		case DIR_EAST:
-			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
-			waitmovement (0)
+			if (var(VAR_TEMP_A) == 1) {
+				applymovement (LOCALID_MARES7_TAUROS1, Common_Movement_WalkRight)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+				waitmovement (0)
+			} else {
+				applymovement (LOCALID_MARES7_TAUROS2, Common_Movement_WalkRight)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+				waitmovement (0)
+			}
 		case DIR_WEST:
-			applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
-			waitmovement (0)
+			if (var(VAR_TEMP_A) == 1) {
+				applymovement (LOCALID_MARES7_TAUROS1, Common_Movement_WalkLeft)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+				waitmovement (0)
+			} else {
+				applymovement (LOCALID_MARES7_TAUROS2, Common_Movement_WalkLeft)
+				applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+				waitmovement (0)
+			}
 	}
     //fin
     release
