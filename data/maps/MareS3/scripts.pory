@@ -9,13 +9,23 @@
 //MB_OCEAN_MAP_TRANSITION_B: Mare Subtropicum
 //MB_OCEAN_MAP_TRANSITION_C: Isla Herba Bona
 
+//FLAG_TEMP_1 - FLAG_TEMP_7 hide the 7 Lotus Heads
+//VAR_TEMP_A holds data for Lotus Heads (which head interacted w/ for generic script hide post battle)
+
 mapscripts MareS3_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
+		//Handle Dynamic Maps
 		specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS3_F)
+		//Show Ulysses and the Lotus Heads
+		if (var(VAR_ULYSSES_STATE) == 2) {
+			call (MareS3_Script_ShowLotusEaters)
+		}
     }
 
 }
+
+//Dynamic Map Scripts
 
 script MareS3_Script_Transition_MareTranquillum {
     setvar (VAR_TEMP_5, 1)
@@ -33,4 +43,47 @@ script MareS3_Script_Transition_IslaHerbaBona {
     setvar (VAR_TEMP_5, 3)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
+}
+
+script MareS3_Script_ShowLotusEaters {
+	setobjectxyperm (LOCALID_MARES3_ULYSSES, 29, 60)
+	setobjectmovementtype (LOCALID_MARES3_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD1, 29, 56)
+	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD2, 31, 58)
+	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD2, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD3, 33, 61)
+	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD3, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD4, 31, 64)
+	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD4, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD5, 27, 63)
+	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD5, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD6, 26, 60)
+	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD6, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD7, 27, 57)
+	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD7, MOVEMENT_TYPE_WANDER_AROUND)
+	return
+}
+
+script MareS3_Script_Ulysses {
+	//Before Lotus Defeated
+	//After all Lotus Defeated
+}
+
+script MareS3_Script_LotusHead1 {
+   setvar (VAR_TEMP_A, 1)
+   call (MareS3_Script_LotusHead)
+}   
+
+//Generic Lotus Head Script
+script MareS3_Script_LotusHead {
+	faceplayer
+	//You wanna get comfy YN
+	msgbox (MareS3_Text_LotusHeadIntro)
+	//Y: do heal, reset Lotus Heads
+	//N: do battle set flag hide head
+}
+
+text MareS3_Text_LotusHeadIntro {
+	format("Hey man, you seem, like, really stressed out. This is Isla Herba Bona, man. Nobody should have any worries around here, man. You wanna, like, eat some Lotus and take your mind off things?")
 }
