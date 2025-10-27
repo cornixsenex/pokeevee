@@ -15,7 +15,7 @@ MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_eq MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 24 "data/maps/MareS7/scripts.pory"
-	compare VAR_ULYSSES_STATE, 0
+	compare VAR_ULYSSES_STATE, 1
 	goto_if_eq MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 	return
 

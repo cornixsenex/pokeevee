@@ -116,187 +116,200 @@ CasaUlyssis_Script_Penelope::
 # 81 "data/maps/CasaUlyssis/scripts.pory"
 	load_field_pic FIELD_PIC_PENELOPE, 190, 98
 # 82 "data/maps/CasaUlyssis/scripts.pory"
-	switch VAR_ULYSSES_STATE
-# 84 "data/maps/CasaUlyssis/scripts.pory"
-	case 0, CasaUlyssis_Script_Penelope_3
-# 93 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Script_Penelope_Text_0
+	compare VAR_ULYSSES_STATE, 0
+	goto_if_eq CasaUlyssis_Script_Penelope_2
+# 85 "data/maps/CasaUlyssis/scripts.pory"
+	compare VAR_ULYSSES_STATE, 69
+	goto_if_lt CasaUlyssis_Script_Penelope_3
+# 94 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_PenelopeAfterUlyssesReturns
 CasaUlyssis_Script_Penelope_1:
-# 95 "data/maps/CasaUlyssis/scripts.pory"
-	destroy_field_pic FIELD_PIC_PENELOPE
 # 96 "data/maps/CasaUlyssis/scripts.pory"
-	closemessage
+	destroy_field_pic FIELD_PIC_PENELOPE
 # 97 "data/maps/CasaUlyssis/scripts.pory"
+	closemessage
+# 98 "data/maps/CasaUlyssis/scripts.pory"
 	unfaceplayer
 	return
 
-CasaUlyssis_Script_Penelope_3:
-# 85 "data/maps/CasaUlyssis/scripts.pory"
+CasaUlyssis_Script_Penelope_2:
+# 83 "data/maps/CasaUlyssis/scripts.pory"
 	msgbox CasaUlyssis_Text_PenelopeBeforeInvite
+	goto CasaUlyssis_Script_Penelope_1
+
+CasaUlyssis_Script_Penelope_3:
+# 86 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_PenelopeWhileUlyssesAway
 	goto CasaUlyssis_Script_Penelope_1
 
 
 CasaUlyssis_Script_Telemachus::
-# 101 "data/maps/CasaUlyssis/scripts.pory"
-	faceplayer
 # 102 "data/maps/CasaUlyssis/scripts.pory"
+	faceplayer
+# 103 "data/maps/CasaUlyssis/scripts.pory"
 	switch VAR_ULYSSES_STATE
-# 104 "data/maps/CasaUlyssis/scripts.pory"
+# 105 "data/maps/CasaUlyssis/scripts.pory"
 	case 0, CasaUlyssis_Script_Telemachus_3
-# 112 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Script_Penelope_Text_0
+# 113 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Script_Telemachus_Text_0
 CasaUlyssis_Script_Telemachus_1:
-# 114 "data/maps/CasaUlyssis/scripts.pory"
-	closemessage
 # 115 "data/maps/CasaUlyssis/scripts.pory"
+	closemessage
+# 116 "data/maps/CasaUlyssis/scripts.pory"
 	unfaceplayer
 	return
 
 CasaUlyssis_Script_Telemachus_3:
-# 105 "data/maps/CasaUlyssis/scripts.pory"
+# 106 "data/maps/CasaUlyssis/scripts.pory"
 	msgbox CasaUlyssis_Text_TelemachusBeforeInvite
 	goto CasaUlyssis_Script_Telemachus_1
 
 
 CasaUlyssis_Script_UlyssesDepart::
-# 120 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 121 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Ulysses_Depart1
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 122 "data/maps/CasaUlyssis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
+	msgbox CasaUlyssis_Text_Ulysses_Depart1
 # 123 "data/maps/CasaUlyssis/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 124 "data/maps/CasaUlyssis/scripts.pory"
 	closemessage
-# 125 "data/maps/CasaUlyssis/scripts.pory"
-	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_ExclamationMark
 # 126 "data/maps/CasaUlyssis/scripts.pory"
-	waitmovement 0
-# 128 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 129 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Ulysses_Depart2
-# 130 "data/maps/CasaUlyssis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
-# 132 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_GaveInvite
-# 134 "data/maps/CasaUlyssis/scripts.pory"
 	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_ExclamationMark
+# 127 "data/maps/CasaUlyssis/scripts.pory"
+	waitmovement 0
+# 129 "data/maps/CasaUlyssis/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 130 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Ulysses_Depart2
+# 131 "data/maps/CasaUlyssis/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 133 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_GaveInvite
 # 135 "data/maps/CasaUlyssis/scripts.pory"
+	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_ExclamationMark
+# 136 "data/maps/CasaUlyssis/scripts.pory"
 	waitmovement 0
-# 137 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 138 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Ulysses_Depart3
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 139 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Ulysses_Depart3
+# 140 "data/maps/CasaUlyssis/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 141 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_PENELOPE, 190, 98
 # 142 "data/maps/CasaUlyssis/scripts.pory"
+	load_field_pic FIELD_PIC_PENELOPE, 190, 98
+# 143 "data/maps/CasaUlyssis/scripts.pory"
 	msgbox CasaUlyssis_Text_Penelope_Depart1
-# 144 "data/maps/CasaUlyssis/scripts.pory"
-	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_FaceRight
 # 145 "data/maps/CasaUlyssis/scripts.pory"
-	applymovement LOCALID_CASAULYSSIS_PENELOPE, Common_Movement_FaceLeft
+	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_FaceRight
 # 146 "data/maps/CasaUlyssis/scripts.pory"
+	applymovement LOCALID_CASAULYSSIS_PENELOPE, Common_Movement_FaceLeft
+# 147 "data/maps/CasaUlyssis/scripts.pory"
 	waitmovement 0
-# 148 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Penelope_Depart2
 # 149 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Penelope_Depart2
+# 150 "data/maps/CasaUlyssis/scripts.pory"
 	destroy_field_pic FIELD_PIC_PENELOPE
-# 151 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 152 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Ulysses_Depart4
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 153 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Ulysses_Depart4
+# 154 "data/maps/CasaUlyssis/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 155 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_PENELOPE, 190, 98
 # 156 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Penelope_Depart3
+	load_field_pic FIELD_PIC_PENELOPE, 190, 98
 # 157 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Penelope_Depart3
+# 158 "data/maps/CasaUlyssis/scripts.pory"
 	destroy_field_pic FIELD_PIC_PENELOPE
-# 159 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 160 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Ulysses_Depart5
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 161 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Ulysses_Depart5
+# 162 "data/maps/CasaUlyssis/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 163 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_PENELOPE, 190, 98
 # 164 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Penelope_Depart4
-# 165 "data/maps/CasaUlyssis/scripts.pory"
-	destroy_field_pic FIELD_PIC_PENELOPE
-# 167 "data/maps/CasaUlyssis/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 168 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Ulysses_Depart6
-# 169 "data/maps/CasaUlyssis/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
-# 171 "data/maps/CasaUlyssis/scripts.pory"
 	load_field_pic FIELD_PIC_PENELOPE, 190, 98
-# 172 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Penelope_Depart5
-# 173 "data/maps/CasaUlyssis/scripts.pory"
+# 165 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Penelope_Depart4
+# 166 "data/maps/CasaUlyssis/scripts.pory"
 	destroy_field_pic FIELD_PIC_PENELOPE
-# 175 "data/maps/CasaUlyssis/scripts.pory"
-	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_FaceDown
-# 176 "data/maps/CasaUlyssis/scripts.pory"
-	waitmovement 0
-# 178 "data/maps/CasaUlyssis/scripts.pory"
+# 168 "data/maps/CasaUlyssis/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 179 "data/maps/CasaUlyssis/scripts.pory"
-	msgbox CasaUlyssis_Text_Ulysses_Depart7
-# 180 "data/maps/CasaUlyssis/scripts.pory"
+# 169 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Ulysses_Depart6
+# 170 "data/maps/CasaUlyssis/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
+# 172 "data/maps/CasaUlyssis/scripts.pory"
+	load_field_pic FIELD_PIC_PENELOPE, 190, 98
+# 173 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Penelope_Depart5
+# 174 "data/maps/CasaUlyssis/scripts.pory"
+	destroy_field_pic FIELD_PIC_PENELOPE
+# 176 "data/maps/CasaUlyssis/scripts.pory"
+	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_FaceDown
+# 177 "data/maps/CasaUlyssis/scripts.pory"
+	waitmovement 0
+# 179 "data/maps/CasaUlyssis/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 180 "data/maps/CasaUlyssis/scripts.pory"
+	msgbox CasaUlyssis_Text_Ulysses_Depart7
 # 181 "data/maps/CasaUlyssis/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 182 "data/maps/CasaUlyssis/scripts.pory"
 	closemessage
-# 183 "data/maps/CasaUlyssis/scripts.pory"
-	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_WalkLeft
 # 184 "data/maps/CasaUlyssis/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_WalkLeft
 # 185 "data/maps/CasaUlyssis/scripts.pory"
-	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_WalkDown2
-# 186 "data/maps/CasaUlyssis/scripts.pory"
 	waitmovement 0
-# 188 "data/maps/CasaUlyssis/scripts.pory"
-	removeobject LOCALID_CASAULYSSIS_ULYSSES
+# 186 "data/maps/CasaUlyssis/scripts.pory"
+	applymovement LOCALID_CASAULYSSIS_ULYSSES, Common_Movement_WalkDown2
+# 187 "data/maps/CasaUlyssis/scripts.pory"
+	waitmovement 0
 # 189 "data/maps/CasaUlyssis/scripts.pory"
-	setobjectxyperm LOCALID_CASAULYSSIS_ULYSSES, 0, 0
+	removeobject LOCALID_CASAULYSSIS_ULYSSES
 # 190 "data/maps/CasaUlyssis/scripts.pory"
-	setobjectmovementtype LOCALID_CASAULYSSIS_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+	setobjectxyperm LOCALID_CASAULYSSIS_ULYSSES, 0, 0
 # 191 "data/maps/CasaUlyssis/scripts.pory"
+	setobjectmovementtype LOCALID_CASAULYSSIS_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+# 192 "data/maps/CasaUlyssis/scripts.pory"
 	addobject LOCALID_CASAULYSSIS_ULYSSES
-# 193 "data/maps/CasaUlyssis/scripts.pory"
+# 194 "data/maps/CasaUlyssis/scripts.pory"
+	applymovement LOCALID_CASAULYSSIS_PENELOPE, Common_Movement_FaceDown
+# 195 "data/maps/CasaUlyssis/scripts.pory"
+	waitmovement 0
+# 196 "data/maps/CasaUlyssis/scripts.pory"
+	setobjectmovementtype LOCALID_CASAULYSSIS_PENELOPE, MOVEMENT_TYPE_FACE_DOWN
+# 198 "data/maps/CasaUlyssis/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 2
 	end
 
 
-CasaUlyssis_Script_Penelope_Text_0:
-# 93 "data/maps/CasaUlyssis/scripts.pory"
+CasaUlyssis_Script_Telemachus_Text_0:
+# 113 "data/maps/CasaUlyssis/scripts.pory"
 	.string "VAR_ULYSSES_STATE OOB$"
 
 CasaUlyssis_Text_UlyssesBeforeInvite::
-# 198 "data/maps/CasaUlyssis/scripts.pory"
+# 203 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Hello, my name is Ulysses. I'm blessed to\n"
 	.string "have my own beautiful family, farmland,\l"
 	.string "and house. There's nothing more I need.$"
 
 CasaUlyssis_Text_UlyssesFinal::
-# 204 "data/maps/CasaUlyssis/scripts.pory"
+# 209 "data/maps/CasaUlyssis/scripts.pory"
 	.string "WIP FIN Text$"
 
 CasaUlyssis_Text_PenelopeBeforeInvite::
-# 208 "data/maps/CasaUlyssis/scripts.pory"
+# 213 "data/maps/CasaUlyssis/scripts.pory"
 	.string "My husband, Ulysses, is my whole world.$"
 
 CasaUlyssis_Text_TelemachusBeforeInvite::
-# 212 "data/maps/CasaUlyssis/scripts.pory"
+# 217 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Papa always gets me ice cream and he\n"
 	.string "likes to play catch too!$"
 
 CasaUlyssis_Text_Ulysses_Depart1::
-# 216 "data/maps/CasaUlyssis/scripts.pory"
+# 221 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Welcome, fiend, to our happy little home.\n"
 	.string "I'd like to introduce Penelope, my wife,\l"
 	.string "and Telemachus, my young boy. Despite\l"
@@ -308,32 +321,32 @@ CasaUlyssis_Text_Ulysses_Depart1::
 	.string "our blessed home?$"
 
 CasaUlyssis_Text_Ulysses_Depart2::
-# 228 "data/maps/CasaUlyssis/scripts.pory"
+# 233 "data/maps/CasaUlyssis/scripts.pory"
 	.string "What's that? You came to deliver me\n"
 	.string "mail?$"
 
 CasaUlyssis_Text_GaveInvite::
-# 232 "data/maps/CasaUlyssis/scripts.pory"
+# 237 "data/maps/CasaUlyssis/scripts.pory"
 	.string "{PLAYER} gave the Wedding Invitation\n"
 	.string "to Ulysses.$"
 
 CasaUlyssis_Text_Ulysses_Depart3::
-# 236 "data/maps/CasaUlyssis/scripts.pory"
+# 241 "data/maps/CasaUlyssis/scripts.pory"
 	.string "An old friend of mine, Menelaus, is\n"
 	.string "getting married and wants me to be the\l"
 	.string "best man at his wedding.$"
 
 CasaUlyssis_Text_Penelope_Depart1::
-# 242 "data/maps/CasaUlyssis/scripts.pory"
+# 247 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Menelaus?$"
 
 CasaUlyssis_Text_Penelope_Depart2::
-# 246 "data/maps/CasaUlyssis/scripts.pory"
+# 251 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Who's that? One of you childhood best\n"
 	.string "friends?$"
 
 CasaUlyssis_Text_Ulysses_Depart4::
-# 250 "data/maps/CasaUlyssis/scripts.pory"
+# 255 "data/maps/CasaUlyssis/scripts.pory"
 	.string "He's an old coworker of mine from the\n"
 	.string "Commerce Guild. Though we never were\l"
 	.string "too close, in fact I never respected\l"
@@ -342,14 +355,14 @@ CasaUlyssis_Text_Ulysses_Depart4::
 	.string "attend.$"
 
 CasaUlyssis_Text_Penelope_Depart3::
-# 258 "data/maps/CasaUlyssis/scripts.pory"
+# 263 "data/maps/CasaUlyssis/scripts.pory"
 	.string "It's strange he'd ask you to be his best\n"
 	.string "man if the two of you were never that\l"
 	.string "close but I understand you will have to\l"
 	.string "go. We owe our fortunes to Agamemnon.$"
 
 CasaUlyssis_Text_Ulysses_Depart5::
-# 265 "data/maps/CasaUlyssis/scripts.pory"
+# 270 "data/maps/CasaUlyssis/scripts.pory"
 	.string "He always was, let's say, an eccentric\n"
 	.string "and irritating man. I'd imagine he has no\l"
 	.string "one else in his life to ask. We worked\l"
@@ -365,19 +378,19 @@ CasaUlyssis_Text_Ulysses_Depart5::
 	.string "my journey, just there and back again.$"
 
 CasaUlyssis_Text_Penelope_Depart4::
-# 281 "data/maps/CasaUlyssis/scripts.pory"
+# 286 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Faithful husband, my one and only love,\n"
 	.string "I want to believe the sweet words you\l"
 	.string "say but last time you...$"
 
 CasaUlyssis_Text_Ulysses_Depart6::
-# 287 "data/maps/CasaUlyssis/scripts.pory"
+# 292 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Penelope! I've changed! I was a younger\n"
 	.string "man, on business trips, and I told you\l"
 	.string "she tricked me in...$"
 
 CasaUlyssis_Text_Penelope_Depart5::
-# 293 "data/maps/CasaUlyssis/scripts.pory"
+# 298 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Farewell... I know no words of mine can\n"
 	.string "sway your will and once you've made your\l"
 	.string "mind up to depart nothing short of the\l"
@@ -388,8 +401,17 @@ CasaUlyssis_Text_Penelope_Depart5::
 	.string "lonesome until you return.$"
 
 CasaUlyssis_Text_Ulysses_Depart7::
-# 304 "data/maps/CasaUlyssis/scripts.pory"
+# 309 "data/maps/CasaUlyssis/scripts.pory"
 	.string "Thank you for bringing me this urgent\n"
 	.string "mail. Unfortunately, I must now be off.\l"
 	.string "Excuse me for being an unkind host, but\l"
 	.string "I have pressing business to attend.$"
+
+CasaUlyssis_Text_PenelopeWhileUlyssesAway::
+# 316 "data/maps/CasaUlyssis/scripts.pory"
+	.string "I miss my husband and wish he'd return...$"
+
+CasaUlyssis_Text_PenelopeAfterUlyssesReturns::
+# 320 "data/maps/CasaUlyssis/scripts.pory"
+	.string "After what felt like an eternity, our\n"
+	.string "happy family's reunited!$"

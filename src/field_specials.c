@@ -5917,24 +5917,8 @@ void FalseFloorMetatileUpdate(void)
 
 bool32 IsSpearowInParty(void)
 {
-	u32 i;
-	u32 species;
-	struct Pokemon *pokemon;
-	
-	for (i = 0; i < PARTY_SIZE; i++)
-    {
-        pokemon = &gPlayerParty[i];
-        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
-        {
-            species = GetMonData(pokemon, MON_DATA_SPECIES);
-            if ( species == SPECIES_SPEAROW
-			  )
-            {
-                return TRUE;
-            }
-        }
-    }
-    return FALSE;
+	u32 species = SPECIES_SPEAROW;
+	return CheckPartyHasSpecies(species);
 }
 
 bool32 IsShinyMareepInParty(void)

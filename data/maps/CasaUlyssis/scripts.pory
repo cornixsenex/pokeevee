@@ -79,19 +79,20 @@ script CasaUlyssis_Script_Ulysses {
 script CasaUlyssis_Script_Penelope {
     faceplayer
     load_field_pic (FIELD_PIC_PENELOPE, 190, 98)
-    switch (var(VAR_ULYSSES_STATE)) {
-        //with ulysses at table
-        case 0:
-            msgbox (CasaUlyssis_Text_PenelopeBeforeInvite)
+	if (var(VAR_ULYSSES_STATE) == 0) {
+		msgbox (CasaUlyssis_Text_PenelopeBeforeInvite)
         //after he departed
+	} elif (var(VAR_ULYSSES_STATE) < 69) {
+		msgbox (CasaUlyssis_Text_PenelopeWhileUlyssesAway)
+	}
         //during ring scene - lost ring
         //during ring scene - you brought her back the ring
         //after ring scene
         //fin - ulysses returned
         //OOB
-        default:
-            msgbox ("VAR_ULYSSES_STATE OOB")
-    }
+	else {
+		msgbox (CasaUlyssis_Text_PenelopeAfterUlyssesReturns)
+	}
     destroy_field_pic (FIELD_PIC_PENELOPE)
     closemessage
     unfaceplayer
@@ -189,6 +190,10 @@ script CasaUlyssis_Script_UlyssesDepart {
     setobjectxyperm (LOCALID_CASAULYSSIS_ULYSSES, 0, 0)
     setobjectmovementtype (LOCALID_CASAULYSSIS_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
     addobject (LOCALID_CASAULYSSIS_ULYSSES)
+	//face P
+	applymovement (LOCALID_CASAULYSSIS_PENELOPE, Common_Movement_FaceDown)
+	waitmovement (0)
+	setobjectmovementtype (LOCALID_CASAULYSSIS_PENELOPE, MOVEMENT_TYPE_FACE_DOWN)
     //setvars
     setvar (VAR_ULYSSES_STATE, 2)
     //fin
@@ -306,4 +311,13 @@ text CasaUlyssis_Text_Ulysses_Depart7 {
             Unfortunately, I must now be off.
             Excuse me for being an unkind host,
             but I have pressing business to attend.")
+}
+
+text CasaUlyssis_Text_PenelopeWhileUlyssesAway {
+	format("I miss my husband and wish he'd return...")
+}
+
+text CasaUlyssis_Text_PenelopeAfterUlyssesReturns {
+	format("After what felt like an eternity,
+			our happy family's reunited!")
 }

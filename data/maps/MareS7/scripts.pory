@@ -21,7 +21,7 @@ mapscripts MareS7_MapScripts {
 			call (MareS7_Script_CheckUlyssesChase)
 		}
 		//Setup Ulysses save Telemachus scene
-		if (var(VAR_ULYSSES_STATE) == 0) {
+		if (var(VAR_ULYSSES_STATE) == 1) {
 			call (MareS7_Script_ShowUlyssesSaveTelemachus)
 		}
     }

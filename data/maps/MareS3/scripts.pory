@@ -107,6 +107,42 @@ script MareS3_Script_LotusHead1 {
    call (MareS3_Script_LotusHead)
 }   
 
+script MareS3_Script_LotusHead2 {
+   faceplayer
+   setflag (FLAG_TEMP_2)
+   call (MareS3_Script_LotusHead)
+}   
+
+script MareS3_Script_LotusHead3 {
+   faceplayer
+   setflag (FLAG_TEMP_3)
+   call (MareS3_Script_LotusHead)
+}   
+
+script MareS3_Script_LotusHead4 {
+   faceplayer
+   setflag (FLAG_TEMP_4)
+   call (MareS3_Script_LotusHead)
+}   
+
+script MareS3_Script_LotusHead5 {
+   faceplayer
+   setflag (FLAG_TEMP_5)
+   call (MareS3_Script_LotusHead)
+}   
+
+script MareS3_Script_LotusHead6 {
+   faceplayer
+   setflag (FLAG_TEMP_6)
+   call (MareS3_Script_LotusHead)
+}   
+
+script MareS3_Script_LotusHead7 {
+   faceplayer
+   setflag (FLAG_TEMP_7)
+   call (MareS3_Script_LotusHead)
+}   
+
 //Generic Lotus Head Script
 script MareS3_Script_LotusHead {
 	//You wanna get comfy YN
