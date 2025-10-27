@@ -10,7 +10,6 @@
 //MB_OCEAN_MAP_TRANSITION_C: Isla Herba Bona
 
 //FLAG_TEMP_1 - FLAG_TEMP_7 hide the 7 Lotus Heads
-//VAR_TEMP_A holds data for Lotus Heads (which head interacted w/ for generic script hide post battle)
 
 mapscripts MareS3_MapScripts {
 
@@ -22,6 +21,38 @@ mapscripts MareS3_MapScripts {
 			call (MareS3_Script_ShowLotusEaters)
 		}
     }
+
+	MAP_SCRIPT_ON_RESUME {
+		//Hide Lotus Heads on return
+		if (flag(FLAG_TEMP_1)) {
+			hideobjectat (LOCALID_MARES3_LOTUSHEAD1, MAP_MARE_S3)
+			removeobject (LOCALID_MARES3_LOTUSHEAD1)
+		}
+		if (flag(FLAG_TEMP_2)) {
+			hideobjectat (LOCALID_MARES3_LOTUSHEAD2, MAP_MARE_S3)
+			removeobject (LOCALID_MARES3_LOTUSHEAD2)
+		}
+		if (flag(FLAG_TEMP_3)) {
+			hideobjectat (LOCALID_MARES3_LOTUSHEAD3, MAP_MARE_S3)
+			removeobject (LOCALID_MARES3_LOTUSHEAD3)
+		}
+		if (flag(FLAG_TEMP_4)) {
+			hideobjectat (LOCALID_MARES3_LOTUSHEAD4, MAP_MARE_S3)
+			removeobject (LOCALID_MARES3_LOTUSHEAD4)
+		}
+		if (flag(FLAG_TEMP_5)) {
+			hideobjectat (LOCALID_MARES3_LOTUSHEAD5, MAP_MARE_S3)
+			removeobject (LOCALID_MARES3_LOTUSHEAD5)
+		}
+		if (flag(FLAG_TEMP_6)) {
+			hideobjectat (LOCALID_MARES3_LOTUSHEAD6, MAP_MARE_S3)
+			removeobject (LOCALID_MARES3_LOTUSHEAD6)
+		}
+		if (flag(FLAG_TEMP_7)) {
+			hideobjectat (LOCALID_MARES3_LOTUSHEAD7, MAP_MARE_S3)
+			removeobject (LOCALID_MARES3_LOTUSHEAD7)
+		}
+	}
 
 }
 
@@ -71,19 +102,145 @@ script MareS3_Script_Ulysses {
 }
 
 script MareS3_Script_LotusHead1 {
-   setvar (VAR_TEMP_A, 1)
+   faceplayer
+   setflag (FLAG_TEMP_1)
    call (MareS3_Script_LotusHead)
 }   
 
 //Generic Lotus Head Script
 script MareS3_Script_LotusHead {
-	faceplayer
 	//You wanna get comfy YN
-	msgbox (MareS3_Text_LotusHeadIntro)
+	msgbox (MareS3_Text_LotusHeadIntro, MSGBOX_YESNO)
 	//Y: do heal, reset Lotus Heads
+	if (var(VAR_RESULT) == YES) {
+		call (MareS3_Script_ResetLotusHeads)
 	//N: do battle set flag hide head
+	} else {
+		//check if it's after a lotus clear, if so set flag1
+		if (!flag(FLAG_TEMP_1) && !flag(FLAG_TEMP_2) && !flag(FLAG_TEMP_3) && !flag(FLAG_TEMP_4) && !flag(FLAG_TEMP_5) && !flag(FLAG_TEMP_6) && !flag(FLAG_TEMP_7)) {
+			setflag (FLAG_TEMP_1)
+		}
+		msgbox (MareS3_Text_LotusHeadPre)
+		closemessage
+		trainerbattle_no_intro (TRAINER_TEST_BATTLE, MareS3_Text_LotusHeadLost)
+		call (MareS3_Script_HideLotusHeads)
+		end
+	}
+}
+
+//After trainer battle - remove object, set xy 0,0 movement invisible and then re-add
+script MareS3_Script_HideLotusHeads {
+	if (flag(FLAG_TEMP_1)) {
+		removeobject (LOCALID_MARES3_LOTUSHEAD1)
+		setobjectxyperm (LOCALID_MARES3_LOTUSHEAD1, 0, 0)
+		setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES3_LOTUSHEAD1)
+	}
+	if (flag(FLAG_TEMP_2)) {
+		removeobject (LOCALID_MARES3_LOTUSHEAD2)
+		setobjectxyperm (LOCALID_MARES3_LOTUSHEAD2, 0, 0)
+		setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD2, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES3_LOTUSHEAD2)
+	}
+	if (flag(FLAG_TEMP_3)) {
+		removeobject (LOCALID_MARES3_LOTUSHEAD3)
+		setobjectxyperm (LOCALID_MARES3_LOTUSHEAD3, 0, 0)
+		setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD3, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES3_LOTUSHEAD3)
+	}
+	if (flag(FLAG_TEMP_4)) {
+		removeobject (LOCALID_MARES3_LOTUSHEAD4)
+		setobjectxyperm (LOCALID_MARES3_LOTUSHEAD4, 0, 0)
+		setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD4, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES3_LOTUSHEAD4)
+	}
+	if (flag(FLAG_TEMP_5)) {
+		removeobject (LOCALID_MARES3_LOTUSHEAD5)
+		setobjectxyperm (LOCALID_MARES3_LOTUSHEAD5, 0, 0)
+		setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD5, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES3_LOTUSHEAD5)
+	}
+	if (flag(FLAG_TEMP_6)) {
+		removeobject (LOCALID_MARES3_LOTUSHEAD6)
+		setobjectxyperm (LOCALID_MARES3_LOTUSHEAD6, 0, 0)
+		setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD6, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES3_LOTUSHEAD6)
+	}
+	if (flag(FLAG_TEMP_7)) {
+		removeobject (LOCALID_MARES3_LOTUSHEAD7)
+		setobjectxyperm (LOCALID_MARES3_LOTUSHEAD7, 0, 0)
+		setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD7, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES3_LOTUSHEAD7)
+	}
+	return
+}
+
+script MareS3_Script_ResetLotusHeads {
+	//There you go hold it in
+	msgbox (MareS3_Text_LotusReset)
+	//heal up
+	fadescreenswapbuffers (FADE_TO_BLACK)
+	playfanfare (MUS_HEAL)
+	waitfanfare
+	special (HealPlayerParty)
+	callnative (UpdateFollowingPokemon)
+	//reset lotus head flags
+	call (MareS3_Script_ClearLotusHeadFlags)	
+	//remove lotus heads
+	call (MareS3_Script_RemoveLotusHeads)
+	//set their xy and movement via code
+	callnative (ResetLotusHeads)
+	//add lotus heads
+	fadescreenswapbuffers (FADE_FROM_BLACK)
+	//back to top / loop
+	call (MareS3_Script_LotusHead)
+}
+
+script MareS3_Script_ClearLotusHeadFlags {
+	clearflag (FLAG_TEMP_1)
+	clearflag (FLAG_TEMP_2)
+	clearflag (FLAG_TEMP_3)
+	clearflag (FLAG_TEMP_4)
+	clearflag (FLAG_TEMP_5)
+	clearflag (FLAG_TEMP_6)
+	clearflag (FLAG_TEMP_7)
+	return
+}
+
+script MareS3_Script_RemoveLotusHeads {
+	removeobject (LOCALID_MARES3_LOTUSHEAD1)
+	removeobject (LOCALID_MARES3_LOTUSHEAD2)
+	removeobject (LOCALID_MARES3_LOTUSHEAD3)
+	removeobject (LOCALID_MARES3_LOTUSHEAD4)
+	removeobject (LOCALID_MARES3_LOTUSHEAD5)
+	removeobject (LOCALID_MARES3_LOTUSHEAD6)
+	removeobject (LOCALID_MARES3_LOTUSHEAD7)
+	return
+}
+
+script MareS3_Script_AddLotusHeads {
+	addobject (LOCALID_MARES3_LOTUSHEAD1)
+	addobject (LOCALID_MARES3_LOTUSHEAD2)
+	addobject (LOCALID_MARES3_LOTUSHEAD3)
+	addobject (LOCALID_MARES3_LOTUSHEAD4)
+	addobject (LOCALID_MARES3_LOTUSHEAD5)
+	addobject (LOCALID_MARES3_LOTUSHEAD6)
+	addobject (LOCALID_MARES3_LOTUSHEAD7)
+	return
 }
 
 text MareS3_Text_LotusHeadIntro {
 	format("Hey man, you seem, like, really stressed out. This is Isla Herba Bona, man. Nobody should have any worries around here, man. You wanna, like, eat some Lotus and take your mind off things?")
+}
+
+text MareS3_Text_LotusHeadPre {
+	format("")
+}
+
+text MareS3_Text_LotusHeadLost {
+	format("")
+}
+
+text MareS3_Text_LotusReset {
+	format("")
 }

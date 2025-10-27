@@ -11967,3 +11967,5 @@ bool8 MovementAction_SurfStillRight_Step1(struct ObjectEvent *objectEvent, struc
     }
     return FALSE;
 }
+
+//Custom Setup Lotus Heads

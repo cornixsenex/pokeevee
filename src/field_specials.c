@@ -6159,6 +6159,95 @@ u32 CheckTaurosPushDirection(void)
 		 return 69;
 }
 
+//set Lotus Head xy and movement
+void ResetLotusHeads(void)
+{
+	u8 direction;
+	u16 x, y, i;
+	u32 overlap = 0; //used in the while loop
+	//First setup LotusHead1 facing player
+	direction = GetPlayerFacingDirection();
+    x = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+    y = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+	switch (direction) {
+		case DIR_NORTH:
+			y -= 1;
+			SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_FACE_DOWN);
+			break;
+		case DIR_SOUTH:
+			y += 1;
+			SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_FACE_UP);
+			break;
+		case DIR_WEST:
+			x -= 1;
+			SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_FACE_RIGHT);
+			break;
+		case DIR_EAST:
+			x += 1;
+			SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_FACE_LEFT);
+			break;
+		default:
+			y += 1;
+			SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_FACE_UP);
+			break;
+	}
+	SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD1, x, y);
+	//Then place LotusHeads2-7 and Ulysses in random locattions between 26,56 and 32,64 (exclude impassible tiles and occupied tiles)
+	//Lotus xy should be random values between 26,56 and 32,64 (x range is 0-6 + 26 - y range is 0-8 + 56)
+	//after random values chosen check to make sure A) It's not an impassible tile and B) There isn't already an object there. If that's all good then set ObjectXY and move on
+	//They all wander around other than LotusHead1 who should be facing the player until after the script ends then he wanders around too
+	
+	for (i = 2; i < 8; i++)
+	{
+		do 
+		{
+			x = Random() % 7; //0 - 6 inclusive
+			y = Random() % 9; //0 - 8 inclusive
+			x += 26;
+			y += 56;
+			overlap = 0;
+			//first check if it's an impassible tile
+			if (
+			   (x == 31 && y == 56) ||
+			   (x == 32 && y == 56) ||
+			   (x == 32 && y == 57)
+			   )
+				overlap = 1;
+			//next check if object already there
+			if (CheckObjectAtXY(x, y))
+				overlap = 1;
+		}
+		while (overlap);
+		switch (i)
+		{
+			case 2:
+				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD2, x, y);
+				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD2, MOVEMENT_TYPE_WANDER_AROUND);
+				break;
+			case 3:
+				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD3, x, y);
+				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD3, MOVEMENT_TYPE_WANDER_AROUND);
+				break;
+			case 4:
+				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD4, x, y);
+				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD4, MOVEMENT_TYPE_WANDER_AROUND);
+				break;
+			case 5:
+				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD5, x, y);
+				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD5, MOVEMENT_TYPE_WANDER_AROUND);
+				break;
+			case 6:
+				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD6, x, y);
+				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD6, MOVEMENT_TYPE_WANDER_AROUND);
+				break;
+			case 7:
+				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD7, x, y);
+				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD7, MOVEMENT_TYPE_WANDER_AROUND);
+				break;
+		}
+	}
+}
+
 //Beginner stuff fix it later - just do a standard warp setup the truck sequence do the shaking then open the door and release let it warp to Urbia and then have them take the truck away in another fade screen (that should all be handled ON_FRAME_TABLE)
 void DoPeccadumTruckScene(void)
 {
