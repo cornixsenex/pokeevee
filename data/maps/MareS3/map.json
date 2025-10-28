@@ -75,7 +75,7 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS3_Script_LotusHead2",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS3_Script_LotusHead6",
       "flag": "0"
     },
     {
@@ -103,7 +103,7 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS3_Script_LotusHead4",
       "flag": "0"
     },
     {
@@ -131,7 +131,7 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS3_Script_LotusHead3",
       "flag": "0"
     },
     {
@@ -145,7 +145,7 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS3_Script_LotusHead5",
       "flag": "0"
     },
     {
@@ -159,7 +159,7 @@
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS3_Script_LotusHead7",
       "flag": "0"
     }
   ],

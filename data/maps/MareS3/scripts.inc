@@ -399,82 +399,102 @@ MareS3_Script_ResetLotusHeads::
 # 218 "data/maps/MareS3/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 219 "data/maps/MareS3/scripts.pory"
-	playfanfare MUS_HEAL
+	lockall
 # 220 "data/maps/MareS3/scripts.pory"
-	waitfanfare
+	playfanfare MUS_HEAL
 # 221 "data/maps/MareS3/scripts.pory"
-	special HealPlayerParty
+	waitfanfare
 # 222 "data/maps/MareS3/scripts.pory"
+	special HealPlayerParty
+# 223 "data/maps/MareS3/scripts.pory"
 	callnative UpdateFollowingPokemon
-# 224 "data/maps/MareS3/scripts.pory"
+# 225 "data/maps/MareS3/scripts.pory"
 	call MareS3_Script_ClearLotusHeadFlags
-# 226 "data/maps/MareS3/scripts.pory"
+# 227 "data/maps/MareS3/scripts.pory"
 	call MareS3_Script_RemoveLotusHeads
-# 228 "data/maps/MareS3/scripts.pory"
+# 229 "data/maps/MareS3/scripts.pory"
 	callnative ResetLotusHeads
-# 230 "data/maps/MareS3/scripts.pory"
+# 231 "data/maps/MareS3/scripts.pory"
+	call MareS3_Script_AddLotusHeads
+# 234 "data/maps/MareS3/scripts.pory"
+	releaseall
+# 235 "data/maps/MareS3/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 232 "data/maps/MareS3/scripts.pory"
-	call MareS3_Script_LotusHead
-	return
+# 237 "data/maps/MareS3/scripts.pory"
+	closemessage
+	end
 
 
 MareS3_Script_ClearLotusHeadFlags::
-# 236 "data/maps/MareS3/scripts.pory"
+# 244 "data/maps/MareS3/scripts.pory"
 	clearflag FLAG_TEMP_1
-# 237 "data/maps/MareS3/scripts.pory"
+# 245 "data/maps/MareS3/scripts.pory"
 	clearflag FLAG_TEMP_2
-# 238 "data/maps/MareS3/scripts.pory"
+# 246 "data/maps/MareS3/scripts.pory"
 	clearflag FLAG_TEMP_3
-# 239 "data/maps/MareS3/scripts.pory"
+# 247 "data/maps/MareS3/scripts.pory"
 	clearflag FLAG_TEMP_4
-# 240 "data/maps/MareS3/scripts.pory"
+# 248 "data/maps/MareS3/scripts.pory"
 	clearflag FLAG_TEMP_5
-# 241 "data/maps/MareS3/scripts.pory"
+# 249 "data/maps/MareS3/scripts.pory"
 	clearflag FLAG_TEMP_6
-# 242 "data/maps/MareS3/scripts.pory"
+# 250 "data/maps/MareS3/scripts.pory"
 	clearflag FLAG_TEMP_7
 	return
 
 
 MareS3_Script_RemoveLotusHeads::
-# 247 "data/maps/MareS3/scripts.pory"
+# 255 "data/maps/MareS3/scripts.pory"
 	removeobject LOCALID_MARES3_LOTUSHEAD1
-# 248 "data/maps/MareS3/scripts.pory"
+# 256 "data/maps/MareS3/scripts.pory"
 	removeobject LOCALID_MARES3_LOTUSHEAD2
-# 249 "data/maps/MareS3/scripts.pory"
+# 257 "data/maps/MareS3/scripts.pory"
 	removeobject LOCALID_MARES3_LOTUSHEAD3
-# 250 "data/maps/MareS3/scripts.pory"
+# 258 "data/maps/MareS3/scripts.pory"
 	removeobject LOCALID_MARES3_LOTUSHEAD4
-# 251 "data/maps/MareS3/scripts.pory"
+# 259 "data/maps/MareS3/scripts.pory"
 	removeobject LOCALID_MARES3_LOTUSHEAD5
-# 252 "data/maps/MareS3/scripts.pory"
+# 260 "data/maps/MareS3/scripts.pory"
 	removeobject LOCALID_MARES3_LOTUSHEAD6
-# 253 "data/maps/MareS3/scripts.pory"
+# 261 "data/maps/MareS3/scripts.pory"
 	removeobject LOCALID_MARES3_LOTUSHEAD7
+# 262 "data/maps/MareS3/scripts.pory"
+	setobjectxyperm LOCALID_MARES3_LOTUSHEAD1, 0, 0
+# 263 "data/maps/MareS3/scripts.pory"
+	setobjectxyperm LOCALID_MARES3_LOTUSHEAD2, 0, 0
+# 264 "data/maps/MareS3/scripts.pory"
+	setobjectxyperm LOCALID_MARES3_LOTUSHEAD3, 0, 0
+# 265 "data/maps/MareS3/scripts.pory"
+	setobjectxyperm LOCALID_MARES3_LOTUSHEAD4, 0, 0
+# 266 "data/maps/MareS3/scripts.pory"
+	setobjectxyperm LOCALID_MARES3_LOTUSHEAD5, 0, 0
+# 267 "data/maps/MareS3/scripts.pory"
+	setobjectxyperm LOCALID_MARES3_LOTUSHEAD6, 0, 0
+# 268 "data/maps/MareS3/scripts.pory"
+	setobjectxyperm LOCALID_MARES3_LOTUSHEAD7, 0, 0
 	return
 
 
 MareS3_Script_AddLotusHeads::
-# 258 "data/maps/MareS3/scripts.pory"
+# 273 "data/maps/MareS3/scripts.pory"
 	addobject LOCALID_MARES3_LOTUSHEAD1
-# 259 "data/maps/MareS3/scripts.pory"
+# 274 "data/maps/MareS3/scripts.pory"
 	addobject LOCALID_MARES3_LOTUSHEAD2
-# 260 "data/maps/MareS3/scripts.pory"
+# 275 "data/maps/MareS3/scripts.pory"
 	addobject LOCALID_MARES3_LOTUSHEAD3
-# 261 "data/maps/MareS3/scripts.pory"
+# 276 "data/maps/MareS3/scripts.pory"
 	addobject LOCALID_MARES3_LOTUSHEAD4
-# 262 "data/maps/MareS3/scripts.pory"
+# 277 "data/maps/MareS3/scripts.pory"
 	addobject LOCALID_MARES3_LOTUSHEAD5
-# 263 "data/maps/MareS3/scripts.pory"
+# 278 "data/maps/MareS3/scripts.pory"
 	addobject LOCALID_MARES3_LOTUSHEAD6
-# 264 "data/maps/MareS3/scripts.pory"
+# 279 "data/maps/MareS3/scripts.pory"
 	addobject LOCALID_MARES3_LOTUSHEAD7
 	return
 
 
 MareS3_Text_LotusHeadIntro::
-# 268 "data/maps/MareS3/scripts.pory"
+# 283 "data/maps/MareS3/scripts.pory"
 	.string "Hey man, you seem, like, really stressed\n"
 	.string "out. This is Isla Herba Bona, man.\l"
 	.string "Nobody should have any worries around\l"
@@ -482,13 +502,13 @@ MareS3_Text_LotusHeadIntro::
 	.string "Lotus and take your mind off things?$"
 
 MareS3_Text_LotusHeadPre::
-# 272 "data/maps/MareS3/scripts.pory"
+# 287 "data/maps/MareS3/scripts.pory"
 	.string "$"
 
 MareS3_Text_LotusHeadLost::
-# 276 "data/maps/MareS3/scripts.pory"
+# 291 "data/maps/MareS3/scripts.pory"
 	.string "$"
 
 MareS3_Text_LotusReset::
-# 280 "data/maps/MareS3/scripts.pory"
+# 295 "data/maps/MareS3/scripts.pory"
 	.string "$"

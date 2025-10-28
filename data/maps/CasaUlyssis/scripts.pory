@@ -10,6 +10,9 @@ mapscripts CasaUlyssis_MapScripts {
             call (CasaUlyssis_Script_ShowUlyssesDepart)
         }
         //While Ulysses on odysses - normal
+		if (var(VAR_ULYSSES_STATE) < 69) {
+			call (CasaUlyssis_Script_ShowUlyssesGone)
+		}
         //Setup Telemachus took Penelope's ring
         //You have the ring - Telemachus back with Penelope
         //After the Odyssey? - return Ulysses
@@ -40,6 +43,16 @@ script CasaUlyssis_Script_ShowUlyssesAtTable {
     setobjectxyperm (LOCALID_CASAULYSSIS_ULYSSES, 4, 6)
     setobjectmovementtype (LOCALID_CASAULYSSIS_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
     //P
+    setobjectxyperm (LOCALID_CASAULYSSIS_PENELOPE, 7, 6)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_PENELOPE, MOVEMENT_TYPE_FACE_LEFT)
+    //T
+    setobjectxyperm (LOCALID_CASAULYSSIS_TELEMACHUS, 9, 7)
+    setobjectmovementtype (LOCALID_CASAULYSSIS_TELEMACHUS, MOVEMENT_TYPE_WANDER_AROUND)
+    return
+}
+
+script CasaUlyssis_Script_ShowUlyssesGone {
+	//P
     setobjectxyperm (LOCALID_CASAULYSSIS_PENELOPE, 7, 6)
     setobjectmovementtype (LOCALID_CASAULYSSIS_PENELOPE, MOVEMENT_TYPE_FACE_LEFT)
     //T

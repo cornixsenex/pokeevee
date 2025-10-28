@@ -18,6 +18,7 @@
 #include "field_screen_effect.h"
 #include "field_specials.h"
 #include "field_weather.h"
+#include "follower_npc.h"
 #include "graphics.h"
 #include "international_string_util.h"
 #include "item.h"
@@ -4915,8 +4916,6 @@ void ChangeGen (void)
 	SetMonData(mon, MON_DATA_SPATK,      &SPATK);
 	SetMonData(mon, MON_DATA_SPDEF,      &SPDEF);
 }
-	
-
 
 void LobotomizePokemon(void)
 {
@@ -6175,6 +6174,9 @@ void ResetLotusHeads(void)
 			SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_FACE_UP);
 			break;
 	}
+	x -= MAP_OFFSET;
+	y -= MAP_OFFSET;
+	TryMoveObjectEventToMapCoords(LOCALID_MARES3_LOTUSHEAD1, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
 	SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD1, x, y);
 	//Then place LotusHeads2-7 and Ulysses in random locattions between 26,56 and 32,64 (exclude impassible tiles and occupied tiles)
 	//Lotus xy should be random values between 26,56 and 32,64 (x range is 0-6 + 26 - y range is 0-8 + 56)
@@ -6200,31 +6202,46 @@ void ResetLotusHeads(void)
 			//next check if object already there
 			if (CheckObjectAtXY(x, y))
 				overlap = 1;
+			//Check if Player is there
+			if (gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x == x + 7 && gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y == y + 7)
+				overlap = 1;
+			//Check if Follower is there
+			if (gObjectEvents[GetFollowerNPCObjectId()].currentCoords.x == x + 7 && gObjectEvents[GetFollowerNPCObjectId()].currentCoords.y == y + 7)
+				overlap = 1;
+			//Check if Brock is there
+			if (gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES3_ULYSSES, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)].currentCoords.x == x + 7 && gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_MARES3_ULYSSES, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup)].currentCoords.x == x + 7)
+				overlap = 1;
 		}
 		while (overlap);
 		switch (i)
 		{
 			case 2:
+				TryMoveObjectEventToMapCoords(LOCALID_MARES3_LOTUSHEAD2, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
 				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD2, x, y);
 				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD2, MOVEMENT_TYPE_WANDER_AROUND);
 				break;
 			case 3:
+				TryMoveObjectEventToMapCoords(LOCALID_MARES3_LOTUSHEAD3, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
 				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD3, x, y);
 				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD3, MOVEMENT_TYPE_WANDER_AROUND);
 				break;
 			case 4:
+				TryMoveObjectEventToMapCoords(LOCALID_MARES3_LOTUSHEAD4, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
 				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD4, x, y);
 				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD4, MOVEMENT_TYPE_WANDER_AROUND);
 				break;
 			case 5:
+				TryMoveObjectEventToMapCoords(LOCALID_MARES3_LOTUSHEAD5, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
 				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD5, x, y);
 				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD5, MOVEMENT_TYPE_WANDER_AROUND);
 				break;
 			case 6:
+				TryMoveObjectEventToMapCoords(LOCALID_MARES3_LOTUSHEAD6, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
 				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD6, x, y);
 				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD6, MOVEMENT_TYPE_WANDER_AROUND);
 				break;
 			case 7:
+				TryMoveObjectEventToMapCoords(LOCALID_MARES3_LOTUSHEAD7, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
 				SetObjEventTemplateCoords(LOCALID_MARES3_LOTUSHEAD7, x, y);
 				SetObjEventTemplateMovementType(LOCALID_MARES3_LOTUSHEAD7, MOVEMENT_TYPE_WANDER_AROUND);
 				break;

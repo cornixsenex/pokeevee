@@ -102,45 +102,45 @@ script MareS3_Script_Ulysses {
 }
 
 script MareS3_Script_LotusHead1 {
-   faceplayer
-   setflag (FLAG_TEMP_1)
-   call (MareS3_Script_LotusHead)
+    faceplayer
+    setflag (FLAG_TEMP_1)
+    call (MareS3_Script_LotusHead)
 }   
 
 script MareS3_Script_LotusHead2 {
-   faceplayer
-   setflag (FLAG_TEMP_2)
-   call (MareS3_Script_LotusHead)
+    faceplayer
+    setflag (FLAG_TEMP_2)
+    call (MareS3_Script_LotusHead)
 }   
 
 script MareS3_Script_LotusHead3 {
-   faceplayer
-   setflag (FLAG_TEMP_3)
-   call (MareS3_Script_LotusHead)
+    faceplayer
+    setflag (FLAG_TEMP_3)
+    call (MareS3_Script_LotusHead)
 }   
 
 script MareS3_Script_LotusHead4 {
-   faceplayer
-   setflag (FLAG_TEMP_4)
-   call (MareS3_Script_LotusHead)
+    faceplayer
+    setflag (FLAG_TEMP_4)
+    call (MareS3_Script_LotusHead)
 }   
 
 script MareS3_Script_LotusHead5 {
-   faceplayer
-   setflag (FLAG_TEMP_5)
-   call (MareS3_Script_LotusHead)
+    faceplayer
+    setflag (FLAG_TEMP_5)
+    call (MareS3_Script_LotusHead)
 }   
 
 script MareS3_Script_LotusHead6 {
-   faceplayer
-   setflag (FLAG_TEMP_6)
-   call (MareS3_Script_LotusHead)
+    faceplayer
+    setflag (FLAG_TEMP_6)
+    call (MareS3_Script_LotusHead)
 }   
 
 script MareS3_Script_LotusHead7 {
-   faceplayer
-   setflag (FLAG_TEMP_7)
-   call (MareS3_Script_LotusHead)
+    faceplayer
+    setflag (FLAG_TEMP_7)
+    call (MareS3_Script_LotusHead)
 }   
 
 //Generic Lotus Head Script
@@ -216,6 +216,7 @@ script MareS3_Script_ResetLotusHeads {
 	msgbox (MareS3_Text_LotusReset)
 	//heal up
 	fadescreenswapbuffers (FADE_TO_BLACK)
+	lockall
 	playfanfare (MUS_HEAL)
 	waitfanfare
 	special (HealPlayerParty)
@@ -227,9 +228,16 @@ script MareS3_Script_ResetLotusHeads {
 	//set their xy and movement via code
 	callnative (ResetLotusHeads)
 	//add lotus heads
+	call (MareS3_Script_AddLotusHeads)
+	//add lotus heads
+	//fade screen back
+	releaseall
 	fadescreenswapbuffers (FADE_FROM_BLACK)
+	//temp fin
+	closemessage
+	end
 	//back to top / loop
-	call (MareS3_Script_LotusHead)
+	//call (MareS3_Script_LotusHead)
 }
 
 script MareS3_Script_ClearLotusHeadFlags {
@@ -251,6 +259,13 @@ script MareS3_Script_RemoveLotusHeads {
 	removeobject (LOCALID_MARES3_LOTUSHEAD5)
 	removeobject (LOCALID_MARES3_LOTUSHEAD6)
 	removeobject (LOCALID_MARES3_LOTUSHEAD7)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD1, 0, 0)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD2, 0, 0)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD3, 0, 0)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD4, 0, 0)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD5, 0, 0)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD6, 0, 0)
+	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD7, 0, 0)
 	return
 }
 
