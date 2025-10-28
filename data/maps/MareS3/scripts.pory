@@ -97,8 +97,76 @@ script MareS3_Script_ShowLotusEaters {
 }
 
 script MareS3_Script_Ulysses {
-	//Before Lotus Defeated
+	faceplayer
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 	//After all Lotus Defeated
+	if (flag(FLAG_TEMP_1) && flag(FLAG_TEMP_2) && flag(FLAG_TEMP_3) && flag(FLAG_TEMP_4) && flag(FLAG_TEMP_5) && flag(FLAG_TEMP_6) && flag(FLAG_TEMP_7)) {
+		//U: I want some more lotus
+		msgbox (MareS3_Text_UlyssesExit1)
+		destroy_field_pic (FIELD_PIC_ULYSSES)
+		closemessage
+		//U look around
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceUp)
+		waitmovement (0)
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceLeft)
+		waitmovement (0)
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceDown)
+		waitmovement (0)
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceUp)
+		waitmovement (0)
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceRight)
+		waitmovement (0)
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceLeft)
+		waitmovement (0)
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceUp)
+		waitmovement (0)
+		//U alert
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//U face back to player
+		faceplayer
+		//Oh no I'm gonna be sick
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+		msgbox (MareS3_Text_UlyssesExit2)
+		destroy_field_pic (FIELD_PIC_ULYSSES)
+		closemessage
+		//U away from player
+		specialvar (VAR_RESULT, GetPlayerFacingDirection)
+		switch (var(VAR_RESULT)) {
+			case DIR_NORTH:
+				applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceUp)
+			case DIR_SOUTH:
+				applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceDown)
+			case DIR_WEST:
+				applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceLeft)
+			case DIR_EAST:
+				applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_FaceRight)
+		}
+		waitmovement (0)
+		//U alert
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//U: Puke sounds
+		load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+		msgbox (MareS3_Text_UlyssesExit3)
+		//U alert
+		applymovement (LOCALID_MARES3_ULYSSES, Common_Movement_ExclamationMark)
+		waitmovement (0)
+		//U: Puke sounds
+		msgbox (MareS3_Text_UlyssesExit4)
+		//U face back player
+		faceplayer
+		//U: My tummy feels better but I've got a splitting headache. Anyways if they're out of Lotus I'm leaving I'm late for Nestors house
+		msgbox (MareS3_Text_UlyssesExit5)
+		destroy_field_pic (FIELD_PIC_ULYSSES)
+		closemessage
+		//U exit - this gonna be hard to do cuz his location is dynamic
+		//setup toxic orb location where U puked lol
+	}
+	
+	//Before Lotus Defeated
 }
 
 script MareS3_Script_LotusHead1 {
@@ -233,11 +301,8 @@ script MareS3_Script_ResetLotusHeads {
 	//fade screen back
 	releaseall
 	fadescreenswapbuffers (FADE_FROM_BLACK)
-	//temp fin
-	closemessage
-	end
 	//back to top / loop
-	//call (MareS3_Script_LotusHead)
+	call (MareS3_Script_LotusHead)
 }
 
 script MareS3_Script_ClearLotusHeadFlags {
@@ -293,5 +358,25 @@ text MareS3_Text_LotusHeadLost {
 }
 
 text MareS3_Text_LotusReset {
+	format("")
+}
+
+text MareS3_Text_UlyssesExit1 {
+	format("")
+}
+
+text MareS3_Text_UlyssesExit2 {
+	format("")
+}
+
+text MareS3_Text_UlyssesExit3 {
+	format("")
+}
+
+text MareS3_Text_UlyssesExit4 {
+	format("")
+}
+
+text MareS3_Text_UlyssesExit5 {
 	format("")
 }
