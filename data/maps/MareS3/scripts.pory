@@ -414,17 +414,21 @@ text MareS3_Text_UlyssesExit1 {
 }
 
 text MareS3_Text_UlyssesExit2 {
-	format("Hey, man! Where'd everybody go, man?")
+	format("Hey, man! Where'd everybody go, man? You just don't get it, man. I need that Lotus, man! Uhh! I don't feel so good...I think I'm gonna be sick...")
 }
 
 text MareS3_Text_UlyssesExit3 {
-	format("")
+	format("Hurk... hurk... BLAAARRRGH!")
 }
 
 text MareS3_Text_UlyssesExit4 {
-	format("")
+	format("Hurk... hurk... BLAAARRRGH... splat!")
 }
 
 text MareS3_Text_UlyssesExit5 {
-	format("")
+	format("How terrible! My stomach's been relieved,
+			but now I feel a deep burning headache.
+			I'm sorry you had to witness that, {PLAYER},
+			but now I am feeling myself again
+			and will leave for Menelaus' wedding.")
 }

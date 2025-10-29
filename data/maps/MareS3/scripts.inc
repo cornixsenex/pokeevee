@@ -768,16 +768,24 @@ MareS3_Text_UlyssesExit1::
 
 MareS3_Text_UlyssesExit2::
 # 416 "data/maps/MareS3/scripts.pory"
-	.string "Hey, man! Where'd everybody go, man?$"
+	.string "Hey, man! Where'd everybody go, man?\n"
+	.string "You just don't get it, man. I need that\l"
+	.string "Lotus, man! Uhh! I don't feel so good...I\l"
+	.string "think I'm gonna be sick...$"
 
 MareS3_Text_UlyssesExit3::
 # 420 "data/maps/MareS3/scripts.pory"
-	.string "$"
+	.string "Hurk... hurk... BLAAARRRGH!$"
 
 MareS3_Text_UlyssesExit4::
 # 424 "data/maps/MareS3/scripts.pory"
-	.string "$"
+	.string "Hurk... hurk... BLAAARRRGH... splat!$"
 
 MareS3_Text_UlyssesExit5::
 # 428 "data/maps/MareS3/scripts.pory"
-	.string "$"
+	.string "How terrible! My stomach's been\n"
+	.string "relieved, but now I feel a deep burning\l"
+	.string "headache. I'm sorry you had to witness\l"
+	.string "that, {PLAYER}, but now I am feeling\l"
+	.string "myself again and will leave for\l"
+	.string "Menelaus' wedding.$"
