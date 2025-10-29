@@ -137,7 +137,7 @@
 																// 0: Ulyssas on Ithaca - either in house or "mad"
 																// 1: Telemachus scene (On Frame in MareS7 et Casa do Odyssey begin scene)
                                                                 // 2: Ulysses and Lotus Eaters MareS3
-																//
+																// 3: Ulysses Being Cyclopees Scene
 																// NOTE: Update '69' in CasaUlyssis Setup, Penelope et Telemachus scripts
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

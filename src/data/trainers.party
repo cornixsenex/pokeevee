@@ -3417,25 +3417,34 @@ Magnemite
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DALTON_4 ===
-Name: DALTON
-Class: Guitarist
-Pic: Guitarist
+=== TRAINER_LOTUS_HEAD ===
+Name: HEAD
+Class: Lotus
+Pic: Youngster
 Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
+Party Size: 2
 
-Magneton
-Level: 31
+Oddish
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Loudred
-Level: 31
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Magneton
-Level: 31
+Slaking
+Level: 3
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Koffing
+Level: 3
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Slowpoke
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DALTON_5 ===

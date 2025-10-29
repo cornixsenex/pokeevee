@@ -56,7 +56,7 @@
       "x": 29,
       "y": 60,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 5,
       "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -165,5 +165,38 @@
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 59,
+      "elevation": 0,
+      "item": "ITEM_TOXIC_ORB",
+      "flag": "FLAG_TEMP_8"
+    },
+    {
+      "type": "hidden_item",
+      "x": 30,
+      "y": 60,
+      "elevation": 0,
+      "item": "ITEM_TOXIC_ORB",
+      "flag": "FLAG_TEMP_9"
+    },
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 61,
+      "elevation": 0,
+      "item": "ITEM_TOXIC_ORB",
+      "flag": "FLAG_TEMP_A"
+    },
+    {
+      "type": "hidden_item",
+      "x": 28,
+      "y": 60,
+      "elevation": 0,
+      "item": "ITEM_TOXIC_ORB",
+      "flag": "FLAG_TEMP_B"
+    }
+  ]
 }
