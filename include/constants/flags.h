@@ -213,10 +213,10 @@
 #define FLAG_TRIVIS_SHARD_6                  0xB9
 #define FLAG_TRIVIS_SHARD_7                  0xBA
 #define FLAG_TRIVIS_SHARD_8                  0xBB  
+#define FLAG_ISLAARIDA_HIDEPRISONERS         0xBC //Set after Ulysses Polyphemus scene  
 
-// BREAK // - USE UNUSED ABOVE PLS
+// BREAK // 
 
-#define FLAG_RECEIVED_POKENAV                0xBC  //DID YOU USE UNUSED ABOVE?
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
 #define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF

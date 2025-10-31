@@ -112,7 +112,7 @@ Hospital2F_EventScript_Stoner_16:
 # 64 "data/maps/Hospital2F/scripts.pory"
 	closemessage
 # 65 "data/maps/Hospital2F/scripts.pory"
-	checkitem ITEM_KIND_BUD
+	checkitem ITEM_LOTUS_LEAF
 # 66 "data/maps/Hospital2F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Hospital2F_EventScript_Stoner_26
@@ -159,7 +159,7 @@ Hospital2F_EventScript_Stoner_26:
 
 Hospital2F_EventScript_Stoner_28:
 # 69 "data/maps/Hospital2F/scripts.pory"
-	removeitem ITEM_KIND_BUD
+	removeitem ITEM_LOTUS_LEAF
 # 70 "data/maps/Hospital2F/scripts.pory"
 	removeitem ITEM_INSURANCE_FORM_A
 # 71 "data/maps/Hospital2F/scripts.pory"

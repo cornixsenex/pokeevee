@@ -62,11 +62,11 @@ script Hospital2F_EventScript_Stoner {
 	if (var(VAR_HOSPITAL_STATE) == 4) {
 		msgbox (Hospital2F_Text_Stoner9)
 		closemessage
-		checkitem (ITEM_KIND_BUD)
+		checkitem (ITEM_LOTUS_LEAF)
 		if (var(VAR_RESULT) == TRUE) {
 			msgbox (Hospital2F_Text_Stoner10, MSGBOX_YESNO)
 			if (var(VAR_RESULT) == YES) {
-				removeitem (ITEM_KIND_BUD)
+				removeitem (ITEM_LOTUS_LEAF)
 				removeitem (ITEM_INSURANCE_FORM_A)
 				setvar (VAR_HOSPITAL_STATE, 5)
 				msgbox (Hospital2F_Text_Stoner11)

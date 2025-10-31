@@ -139,11 +139,11 @@ script LoonixGiftHouse_MewFanfare {
 script LoonixGiftHouse_Item_Kind_Bud {
 	lock
 	faceplayer
-	giveitem (ITEM_KIND_BUD, 1)
-	//checkitem (ITEM_KIND_BUD, 1)
+	giveitem (ITEM_LOTUS_LEAF, 1)
+	//checkitem (ITEM_LOTUS)_LEAF, 1)
 	//if (var(VAR_RESULT) == 0) {
 	//	msgbox (LoonixGiftHouse_Kind_Bud_Find)
-	//	checkitemspace (ITEM_KIND_BUD, 1)
+	//	checkitemspace (ITEM_LOTUS_LEAF, 1)
 	//	if (var(VAR_RESULT) == 1) {
 	//		giveitem (ITEM_ANCIENT_LAMP)
 	//	} else {

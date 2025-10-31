@@ -684,7 +684,7 @@ movement SaltySpitoon_Movement_BigGreenExitR {
 
 mart SaltySpitoon_Mart_Deathsticks {
 	ITEM_RARE_CANDY
-	ITEM_KIND_BUD
+	ITEM_LOTUS_LEAF
 	ITEM_DEATH_STICK
 }
 

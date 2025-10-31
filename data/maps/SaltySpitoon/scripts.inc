@@ -1578,7 +1578,7 @@ SaltySpitoon_Mart_Deathsticks:
 # 686 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_RARE_CANDY
 # 687 "data/maps/SaltySpitoon/scripts.pory"
-	.2byte ITEM_KIND_BUD
+	.2byte ITEM_LOTUS_LEAF
 # 688 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_DEATH_STICK
 	.2byte ITEM_NONE

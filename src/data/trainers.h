@@ -132,7 +132,7 @@
             .species = SPECIES_MUDKIP,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 48
-            .heldItem = ITEM_KIND_BUD,
+            .heldItem = ITEM_LOTUS_LEAF,
 #line 52
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 51

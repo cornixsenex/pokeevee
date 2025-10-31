@@ -993,7 +993,7 @@
 #define ITEM_STRANGE_BALL 828
 
 // Unique to this project items
-#define ITEM_KIND_BUD 829
+#define ITEM_LOTUS_LEAF 829
 #define ITEM_INSURANCE_FORM_A 830
 #define ITEM_INSURANCE_FORM_B 831
 #define ITEM_INSURANCE_CARD 832

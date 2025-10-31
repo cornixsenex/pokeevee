@@ -14737,7 +14737,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_ResistFeather,
     },
 	
-	[ITEM_KIND_BUD] =
+	[ITEM_LOTUS_LEAF] =
 	{
 		.name = ITEM_NAME("Kind Bud"),
 		.price = 420,

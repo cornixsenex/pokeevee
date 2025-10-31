@@ -24,6 +24,14 @@ mapscripts MareS7_MapScripts {
 		if (var(VAR_ULYSSES_STATE) == 1) {
 			call (MareS7_Script_ShowUlyssesSaveTelemachus)
 		}
+        //Hide Arida Ulysses
+        if (var(VAR_ULYSSES_STATE) != 3) {
+            call (MareS7_Script_HideAridaUlysses)
+        }
+        //Show Polyphemus Dancing
+        if (flag(FLAG_ISLAARIDA_HIDEPRISONERS)) {
+            call (MareS7_Script_ShowPolyphemusDancing)
+        }
     }
 
 	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
@@ -110,9 +118,21 @@ script MareS7_Script_ShowUlyssesSaveTelemachus {
 	return
 }
 
+script MareS7_Script_HideAridaUlysses {
+    setobjectxyperm (LOCALID_MARES7_ARIDAULYSSES, 0, 0)
+    setobjectmovementtype (LOCALID_MARES7_ARIDAULYSSES, MOVEMENT_TYPE_INVISIBLE)
+    return
+}
+
+script MareS7_Script_ShowPolyphemusDancing {
+    setobjectxyperm (LOCALID_MARES7_POLYPHEMUS, 47, 59)
+    setobjectmovementtype (LOCALID_MARES7_POLYPHEMUS, MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_LEFT_DOWN)
+    return
+}
+
 //Ulysses feigns madness
 script MareS7_Script_Ulysses {
-load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
     specialvar (VAR_RESULT, RandDigit)
     switch (var(VAR_RESULT)) {
         case 0:
@@ -285,6 +305,108 @@ script MareS7_Script_UlyssesSaveTelemachus {
     warpsilent (MAP_CASA_ULYSSIS, 7, 8)
 }
 
+script MareS7_Script_Polyphemus {
+    //Before Ulysses
+    if (var(VAR_ULYSSES_STATE) < 3) {
+        msgbox (MareS7_Text_PolyphemusBeforeUlysses)
+        closemessage
+    //During Ulysses
+    } elif (var(VAR_ULYSSES_STATE) == 3) {
+        //p intro, mention lotus
+        msgbox (MareS7_Text_PolyphemusDuringUlysses)
+        //check lotus
+        checkitem (ITEM_LOTUS_LEAF)
+        //if lotus hey is that lotus can I have some?
+        if (var(VAR_RESULT) == YES) {
+            msgbox (MareS7_Text_PolyphemusGiveLotus, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                //if yes give lotus
+                removeitem (ITEM_LOTUS_LEAF, 1)
+                msgbox (MareS7_Text_GavePolyphemusLotus)
+                closemessage
+                applymovement (LOCALID_MARES7_POLYPHEMUS, Common_Movement_ExclamationMark)
+                waitmovement (0)
+                //P: Ahh thats the stuff hey wanna see me dance, just dont let anyone escape, especially not nobody
+                msgbox (MareS7_Text_PolyphemusLotus1)
+                closemessage
+                //P begin dance
+                applymovement (LOCALID_MARES7_POLYPHEMUS, Common_Movement_WalkDown2)
+                applymovement (LOCALID_PLAYER, Common_Movement_WalkDown2)
+                waitmovement (0)
+                applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+                applymovement (LOCALID_MARES7_POLYPHEMUS, Common_Movement_FaceLeft)
+                waitmovement (0)
+                applymovement (LOCALID_MARES7_POLYPHEMUS, Common_Movement_WalkLeft6)
+                waitmovement (0)
+                applymovement (LOCALID_MARES7_POLYPHEMUS, Common_Movement_WalkDown)
+                waitmovement (0)
+                setobjectmovementtype (LOCALID_MARES7_POLYPHEMUS, MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_LEFT_DOWN)
+                //prisoners escape
+                applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+                waitmovement (0)
+                fadescreenswapbuffers (FADE_TO_BLACK)
+                call (MareS7_Script_HidePrisoners)
+                removeobject (LOCALID_MARES7_ARIDAULYSSES)
+                setobjectxyperm (LOCALID_MARES7_ARIDAULYSSES, 53, 58)
+                setobjectmovementtype (LOCALID_MARES7_ARIDAULYSSES, MOVEMENT_TYPE_FACE_DOWN)
+                addobject (LOCALID_MARES7_ARIDAULYSSES)
+                fadescreenswapbuffers (FADE_FROM_BLACK)
+                //U thanks
+                load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+                msgbox (MareS7_Text_UlyssesAfterPolyphemus)
+                destroy_field_pic (FIELD_PIC_ULYSSES)
+                closemessage
+                //U exit
+                applymovement (LOCALID_MARES7_ARIDAULYSSES, Common_Movement_WalkRight3)
+                waitmovement (0)
+                applymovement (LOCALID_MARES7_ARIDAULYSSES, Common_Movement_WalkDown3)
+                waitmovement (0)
+                applymovement (LOCALID_MARES7_ARIDAULYSSES, Common_Movement_WalkRight5)
+                waitmovement (0)
+                //remove U
+                removeobject (LOCALID_MARES7_ARIDAULYSSES)
+                setobjectxyperm (LOCALID_MARES7_ARIDAULYSSES, 0, 0)
+                setobjectmovementtype (LOCALID_MARES7_ARIDAULYSSES, MOVEMENT_TYPE_INVISIBLE)
+                addobject (LOCALID_MARES7_ARIDAULYSSES)
+                //set var
+                setvar (VAR_ULYSSES_STATE, 4)
+                //set flag
+                setflag (FLAG_ISLAARIDA_HIDEPRISONERS)
+                //fin
+            }
+        }
+    //After  Ulysses
+    } else {
+        //P dancing
+        msgbox (MareS7_Text_PolyphemusDancing)
+        closemessage
+    }
+    end
+}
+
+script MareS7_Script_HidePrisoners {
+    removeobject (LOCALID_MARES7_PRISONER1)
+    removeobject (LOCALID_MARES7_PRISONER2)
+    removeobject (LOCALID_MARES7_PRISONER3)
+    removeobject (LOCALID_MARES7_PRISONER4)
+
+    setobjectxyperm (LOCALID_MARES7_PRISONER1, 0, 0)
+    setobjectxyperm (LOCALID_MARES7_PRISONER2, 0, 0)
+    setobjectxyperm (LOCALID_MARES7_PRISONER3, 0, 0)
+    setobjectxyperm (LOCALID_MARES7_PRISONER4, 0, 0)
+    
+    setobjectmovementtype (LOCALID_MARES7_PRISONER1, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (LOCALID_MARES7_PRISONER2, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (LOCALID_MARES7_PRISONER3, MOVEMENT_TYPE_INVISIBLE)
+    setobjectmovementtype (LOCALID_MARES7_PRISONER4, MOVEMENT_TYPE_INVISIBLE)
+
+    addobject (LOCALID_MARES7_PRISONER1)
+    addobject (LOCALID_MARES7_PRISONER2)
+    addobject (LOCALID_MARES7_PRISONER3)
+    addobject (LOCALID_MARES7_PRISONER4)
+
+    return
+}
 text MareS7_Text_Penelope1 {
     format("What ever shall I do? My poor husband,
             the resourceful and brilliant Ulysses,
@@ -345,3 +467,32 @@ text MareS7_Text_UlyssesSaveTelemachus3 {
             on out family home, Isla Ithaca.
             We should all head inside. Please, come with me.")
 }
+
+text MareS7_Text_PolyphemusBeforeUlysses {
+    format("")
+}
+
+text MareS7_Text_PolyphemusDuringUlysses {
+    format("")
+}
+
+text MareS7_Text_PolyphemusGiveLotus {
+    format("")
+}
+
+text MareS7_Text_GavePolyphemusLotus {
+    format("")
+}
+
+text MareS7_Text_PolyphemusLotus1 {
+    format("")
+}
+
+text MareS7_Text_UlyssesAfterPolyphemus {
+    format("")
+}
+
+text MareS7_Text_PolyphemusDancing {
+    format("")
+}
+            
