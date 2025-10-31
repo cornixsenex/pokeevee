@@ -469,11 +469,11 @@ text MareS7_Text_UlyssesSaveTelemachus3 {
 }
 
 text MareS7_Text_PolyphemusBeforeUlysses {
-    format("")
+    format("Me Polyphemus! This Polyphemus Island! You leave now before Polyphemus get angry!")
 }
 
 text MareS7_Text_PolyphemusDuringUlysses {
-    format("")
+    format("You puny intruder! Me Polyphemus! This Polyphemus Island! You lucky Polyphemus pen all full other intruders. You leave now before Polyphemus get angry!")
 }
 
 text MareS7_Text_PolyphemusGiveLotus {

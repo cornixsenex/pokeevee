@@ -776,11 +776,17 @@ MareS7_Text_UlyssesSaveTelemachus3::
 
 MareS7_Text_PolyphemusBeforeUlysses::
 # 471 "data/maps/MareS7/scripts.pory"
-	.string "$"
+	.string "Me Polyphemus! This Polyphemus Island!\n"
+	.string "You leave now before Polyphemus get\l"
+	.string "angry!$"
 
 MareS7_Text_PolyphemusDuringUlysses::
 # 475 "data/maps/MareS7/scripts.pory"
-	.string "$"
+	.string "You puny intruder! Me Polyphemus! This\n"
+	.string "Polyphemus Island! You lucky\l"
+	.string "Polyphemus pen all full other intruders.\l"
+	.string "You leave now before Polyphemus get\l"
+	.string "angry!$"
 
 MareS7_Text_PolyphemusGiveLotus::
 # 479 "data/maps/MareS7/scripts.pory"
