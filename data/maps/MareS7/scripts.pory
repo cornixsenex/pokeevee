@@ -373,7 +373,10 @@ script MareS7_Script_Polyphemus {
                 //set flag
                 setflag (FLAG_ISLAARIDA_HIDEPRISONERS)
                 //fin
-            }
+            } else {
+				msgbox (MareS7_Text_PolyphemusNoLotus)
+				closemessage
+			}
         }
     //After  Ulysses
     } else {
@@ -477,22 +480,30 @@ text MareS7_Text_PolyphemusDuringUlysses {
 }
 
 text MareS7_Text_PolyphemusGiveLotus {
-    format("")
+    format("Oi! You have Lotus Leaf? You give to Polyphemus, yes?")
+}
+
+text MareS7_Text_PolyphemusNoLotus {
+	format("You leave Polyphemus Island now! Polyphemus want Lotus Leaf!")
 }
 
 text MareS7_Text_GavePolyphemusLotus {
-    format("")
+    format("{PLAYER} gave Lotus Leaf to Polyphemus.")
 }
 
 text MareS7_Text_PolyphemusLotus1 {
-    format("")
+    format("Oh that good Lotus Leaf...Polyphemus very happy, very relaxed. You see Polyphemus dance now but make sure nobody escape Polyphemus pen, ok?")
 }
 
 text MareS7_Text_UlyssesAfterPolyphemus {
-    format("")
+    format("That was a close one, but thanks to you {PLAYER}
+			I've managed to escape the jaws of death
+			and free myself from Polyphemus' pen.
+			I must depart and, with haste, make for the
+			house of Nestor, where I am expected.")
 }
 
 text MareS7_Text_PolyphemusDancing {
-    format("")
+    format("Polyphemus like dancing! Polyphemus really like dancing like Lotus Leaf! Weeee!")
 }
             
