@@ -111,11 +111,39 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES6_ULYSSES",
       "graphics_id": "OBJ_EVENT_GFX_BROCK",
-      "x": 63,
+      "x": 64,
       "y": 60,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS6_Script_Ulysses",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARES6_FISHERMAN",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 73,
+      "y": 66,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MareS6_Script_Fisherman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 16,
+      "y": 61,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -818,6 +846,69 @@
       "var": "VAR_TEMP_5",
       "var_value": "2",
       "script": "MareS6_Script_PlayaEchonaTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "5",
+      "script": "MareS6_Script_UlyssesJungle"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 56,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "5",
+      "script": "MareS6_Script_UlyssesJungleB"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 57,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "5",
+      "script": "MareS6_Script_UlyssesJungleC"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "5",
+      "script": "MareS6_Script_UlyssesJungleD"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "6",
+      "script": "MareS6_Script_UlyssesAntePortamA"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "6",
+      "script": "MareS6_Script_UlyssesAntePortam"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "6",
+      "script": "MareS6_Script_UlyssesAntePortamC"
     }
   ],
   "bg_events": []

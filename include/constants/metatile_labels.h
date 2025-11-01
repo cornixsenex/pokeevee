@@ -89,6 +89,14 @@
 // gTileset_BattleTent
 #define METATILE_BattleTent_Door  0x26B
 
+// gTileset_BigIsland
+#define METATILE_BigIsland_SandPalmFruitC    0x21E
+#define METATILE_BigIsland_SandPalmFruitL    0x21D
+#define METATILE_BigIsland_SandPalmFruitR    0x21F
+#define METATILE_BigIsland_SandPalmNoFruitC  0x214
+#define METATILE_BigIsland_SandPalmNoFruitL  0x213
+#define METATILE_BigIsland_SandPalmNoFruitR  0x215
+
 // gTileset_BikeShop
 #define METATILE_BikeShop_Barrier_Blue_Bottom      0x2CF
 #define METATILE_BikeShop_Barrier_Blue_BottomMid   0x2C7

@@ -9,6 +9,7 @@
 //Ocean Map Transisiton A: Transition_IslaPina
 //Ocean Map Transisiton B: Transition_MareOccidens
 
+//FLAG_TEMP_F used in Ulysses Fisherman scene for "player began scene talking to fisherman"
 
 mapscripts MareS6_MapScripts {
 
@@ -25,6 +26,19 @@ mapscripts MareS6_MapScripts {
 			case 4:
 				setvar (VAR_TEMP_5, 4)
         }
+        //Setup Ulysses with fisherman
+        if (var(VAR_ULYSSES_STATE) == 4) {
+            call (MareS6_Script_ShowUlyssesWithFisherman)
+        }
+        //Setup Ulysses in Woods
+        if (var(VAR_ULYSSES_STATE) == 5) {
+            call (MareS6_Script_ShowUlyssesInForest)
+        }
+        //Setup Ulysses ante portam
+        if (var(VAR_ULYSSES_STATE) == 6) {
+            call (MareS6_Script_ShowUlyssesAntePortam)
+        }
+        //Hide piggies
 	}
 }
 
@@ -54,3 +68,254 @@ script MareS6_Script_PlayaEchonaTransition {
 	special (ShowMapNamePopup)
 }
 
+script MareS6_Script_ShowUlyssesWithFisherman {
+    setobjectxyperm (LOCALID_MARES6_ULYSSES, 72, 66)
+    setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
+
+    setobjectmovementtype (LOCALID_MARES6_FISHERMAN, MOVEMENT_TYPE_FACE_LEFT)
+    return
+}
+
+script MareS6_Script_ShowUlyssesInForest {
+    setobjectxyperm (LOCALID_MARES6_ULYSSES, 34, 55)
+    setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND)
+    return
+}
+
+script MareS6_Script_ShowUlyssesAntePortam {
+    setobjectxyperm (LOCALID_MARES6_ULYSSES, 63, 44)
+    setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND)
+    return
+}
+
+script MareS6_Script_Fisherman {
+    load_field_pic (FIELD_PIC_FISHERMAN, 190, 98)
+    //before Ulysses arrives
+    if (var(VAR_ULYSSES_STATE) < 4) {
+        faceplayer
+        msgbox (MareS6_Text_FishermanBeforeUlysses)
+    }
+    //during Ulysses et Fisherman scene
+    elif (var(VAR_ULYSSES_STATE) == 4) {
+        setflag (FLAG_TEMP_F)
+        call (MareS6_Script_UlyssesEtFishermanScene)
+    }
+    //during Ulysses et Circe scene
+    elif (var(VAR_ULYSSES_STATE) < 12) {
+        faceplayer
+        msgbox (MareS6_Text_FishermanDuringUlysses)
+    }
+    //after Circe scene
+    else {
+        faceplayer
+        msgbox (MareS6_Text_FishermanAfterUlysses)
+    }
+    destroy_field_pic (FIELD_PIC_FISHERMAN)
+    closemessage
+    unfaceplayer
+    end
+}
+
+script MareS6_Script_Ulysses {
+    //during Ulysses et fisherman scene
+    if (var(VAR_ULYSSES_STATE) == 4) {
+        call (MareS6_Script_UlyssesEtFishermanScene)
+    }
+    //Ulysses in the pen during Molly piggies
+    //Ulysses on the western shores
+}
+
+script MareS6_Script_UlyssesEtFishermanScene {
+    //F: exposition
+    msgbox (MareS6_Text_FishermanExposition)
+    destroy_field_pic (FIELD_PIC_FISHERMAN)
+    //U: response
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (MareS6_Text_UlyssesResponseToFisherman)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+    //Alert U
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //P to U if needed
+    if (flag(FLAG_TEMP_F)) {
+        applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+        waitmovement (0)
+    }
+    //U face P
+    specialvar (VAR_RESULT, GetPlayerFacingDirection)
+    if (var(VAR_RESULT) == DIR_NORTH) {
+        applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceDown)
+    } elif (var(VAR_RESULT) == DIR_EAST) {
+        applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
+    } else {
+        msgbox ("ERROR, \nPlayerFacingDirection OOB")
+        closemessage
+        end
+    }
+    waitmovement (0)
+    //U: call to action
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (MareS6_Text_UlyssesCallToAction)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+    //exit U
+    specialvar (VAR_RESULT, GetPlayerFacingDirection)
+    if (var(VAR_RESULT) == DIR_EAST) {
+        applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceDown)
+        waitmovement (0)
+    }
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkLeft3)
+    waitmovement (0)
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown7)
+    waitmovement (0)
+    //update U position
+    removeobject (LOCALID_MARES6_ULYSSES)
+    call (MareS6_Script_ShowUlyssesInForest)
+    addobject (LOCALID_MARES6_ULYSSES)
+    //face fisherman
+    applymovement (LOCALID_MARES6_FISHERMAN, Common_Movement_FaceUp)
+    waitmovement (0)
+    //update vars
+    setvar (VAR_ULYSSES_STATE, 5)
+    //fin
+    end
+}
+
+script MareS6_Script_UlyssesJungleB {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+    waitmovement (0)
+    call (MareS6_Script_UlyssesJungle)
+}
+
+script MareS6_Script_UlyssesJungleC {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp2)
+    waitmovement (0)
+    call (MareS6_Script_UlyssesJungle)
+}
+
+script MareS6_Script_UlyssesJungleD {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp3)
+    waitmovement (0)
+    call (MareS6_Script_UlyssesJungle)
+}
+
+script MareS6_Script_UlyssesJungle {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
+    waitmovement (0)
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (MareS6_Text_UlyssesJungle)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+    //U exit
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkUp6)
+    waitmovement (0)
+    //Reposition U
+    removeobject (LOCALID_MARES6_ULYSSES)
+    call (MareS6_Script_ShowUlyssesAntePortam)
+    addobject (LOCALID_MARES6_ULYSSES)
+    //update var
+    setvar (VAR_ULYSSES_STATE, 6)
+    //fin
+    end
+}
+
+script MareS6_Script_UlyssesAntePortamA {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+    waitmovement (0)
+    call (MareS6_Script_UlyssesAntePortam)
+}
+
+script MareS6_Script_UlyssesAntePortamC {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+    waitmovement (0)
+    call (MareS6_Script_UlyssesAntePortam)
+}
+
+script MareS6_Script_UlyssesAntePortam {
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceDown)
+    waitmovement (0)
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (MareS6_Text_UlyssesAntePortam)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+    //U exit
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkUp2)
+    waitmovement (0)
+    //Door stuff
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkInPlaceFasterUp)
+    waitmovement (0)
+    opendoor (63, 42)
+    waitdooranim
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkInPlaceFasterUp)
+    waitmovement (0)
+    applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkUp)
+    waitmovement (0)
+    removeobject (LOCALID_MARES6_ULYSSES)
+    setobjectxyperm (LOCALID_MARES6_ULYSSES, 0, 0)
+    setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_MARES6_ULYSSES)
+    closedoor (63, 42)
+    waitdooranim
+    //update var
+    setvar (VAR_ULYSSES_STATE, 7)
+    //fin
+    end
+}
+
+text MareS6_Text_FishermanBeforeUlysses { 
+    format("There's been some strange happenings on our sleepy little island. People have been going missing. I'm doing my best to stay out of it and focus on my fishing.")
+}
+
+text MareS6_Text_FishermanDuringUlysses {
+    format("Well, I'll tell you what, that Ulysses character sure is a confident walked and a smooth talker, but I don't think anyone can stop that witch in the woods. No sir, I think he'd be better off staying here with me and the fishes.")
+}
+
+text MareS6_Text_FishermanAfterUlysses {
+    format("This is my only joy in life, out here just me and the sea. I keep my rod clean and stay out of trouble, that's all I do.")
+}
+
+text MareS6_Text_FishermanExposition {
+    format("Now losing people is an unfortunate part of life out here on Isla Pina, but nothing like this. We must have lost half a dozen just this month. We sent out a search party, all strong men like yourself, but we haven't seen them since. We all know it must be that crazy old witch who lives out in the woods but the way I see it there's nothing we can do about it.")
+}
+
+text MareS6_Text_UlyssesResponseToFisherman {
+    format("That's terrible! Someone must do something!")
+}
+
+text MareS6_Text_UlyssesCallToAction {
+    format("My goodness, {PLAYER}, am I glad to see you!
+            I washed ashore and these good people of
+            the island gave me food, water, and clothes.
+            I was about to leave when I just learned
+            an evil witch, who lives out in the woods,
+            is kidnapping the people who live here.
+            After the hospitality they showed
+            to this stranger in his time of great need,
+            it wouldn't be right for me to leave now
+            without paying them back by finding this
+            murderous witch and saving the island.
+            Let's head for the jungle and search for the
+            secret lair of the witch. I'll meet you there!")
+}
+
+text MareS6_Text_UlyssesJungle {
+    format("This jungle more dangerous than I
+            had expected but we cannot turn back.
+            Lets muscle our way to the witches lair!")
+}
+
+text MareS6_Text_UlyssesAntePortam {
+    format("This must be it, the evil witch's lair.
+            Be cautious, we don't know what kind of tricks
+            she has waiting for us once we're inside.
+            Now follow me forward. Let's save the town!")
+}
