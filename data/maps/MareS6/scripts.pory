@@ -40,6 +40,12 @@ mapscripts MareS6_MapScripts {
         }
         //Hide piggies
 	}
+
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_ULYSSES_STATE) == 8) {
+			call (MareS6_Script_ShowMollyFruit)
+		}
+	}
 }
 
 //Silent in this case as island transitions are handled by Start Stop surf task
@@ -86,6 +92,13 @@ script MareS6_Script_ShowUlyssesAntePortam {
     setobjectxyperm (LOCALID_MARES6_ULYSSES, 63, 44)
     setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND)
     return
+}
+
+script MareS6_Script_ShowMollyFruit {
+	setmetatile (16, 60, METATILE_BigIsland_SandPalmFruitL, FALSE)
+	setmetatile (17, 60, METATILE_BigIsland_SandPalmFruitC, FALSE)
+	setmetatile (18, 60, METATILE_BigIsland_SandPalmFruitR, FALSE)
+	return
 }
 
 script MareS6_Script_Fisherman {
