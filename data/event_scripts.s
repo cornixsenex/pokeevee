@@ -1706,3 +1706,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CasaAtrei/scripts.inc"
 
 	.include "data/maps/CasaUlyssis/scripts.inc"
+
+	.include "data/maps/CasaCirces/scripts.inc"

@@ -748,6 +748,7 @@ enum
     MAP_CASA_ATREI_PASSAGE        = (27 | (32 << 8)),
     MAP_CASA_ATREI                = (28 | (32 << 8)),
     MAP_CASA_ULYSSIS              = (29 | (32 << 8)),
+    MAP_CASA_CIRCES               = (30 | (32 << 8)),
 
     // gMapGroup_IndoorRoute123
     MAP_ROUTE123_BERRY_MASTERS_HOUSE = (0 | (33 << 8)),

@@ -6670,6 +6670,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/CasaUlyssis/border.bin",
       "blockdata_filepath": "data/layouts/CasaUlyssis/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASA_CIRCES",
+      "name": "CasaCirces_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/CasaCirces/border.bin",
+      "blockdata_filepath": "data/layouts/CasaCirces/map.bin"
     }
   ]
 }
