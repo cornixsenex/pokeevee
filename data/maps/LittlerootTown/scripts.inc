@@ -148,7 +148,7 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
 	waitmovement 0
 	setvar VAR_LITTLEROOT_INTRO_STATE, 3
-	hideobjectat LOCALID_PLAYER, 0
+	hideplayer
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
 	return

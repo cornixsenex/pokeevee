@@ -684,11 +684,27 @@
 	map \map
 	.endm
 
+	@ Set the player object's invisibility to FALSE.
+	.macro showplayer
+	.byte SCR_OP_SHOWOBJECTAT
+	.2byte LOCALID_PLAYER
+	.byte 0 @ map group
+	.byte 0 @ map num
+	.endm
+
 	@ Sets the specified object's invisibility to TRUE.
 	.macro hideobjectat localId:req, map:req
 	.byte SCR_OP_HIDEOBJECTAT
 	.2byte \localId
 	map \map
+	.endm
+
+	@ Set the player object's invisibility to TRUE.
+	.macro hideplayer
+	.byte SCR_OP_HIDEOBJECTAT
+	.2byte LOCALID_PLAYER
+	.byte 0 @ map group
+	.byte 0 @ map num
 	.endm
 
 	@ Turns the currently selected object (if there is one) to face the player.
@@ -986,7 +1002,7 @@
 
 	@ Gives the player a Pokémon of the specified species and level, and allows to customize extra parameters.
 	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_GIVEN_TO_PC, or MON_CANT_GIVE depending on the outcome.
-	.macro givemon species:req, level:req, item, ball, nature, abilityNum, gender, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, gmaxFactor, teraType, dmaxLevel
+	.macro givemon species:req, level:req, item, ball, nature, abilityNum, gender, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, shinyMode, gmaxFactor, teraType, dmaxLevel
 	callnative ScrCmd_createmon, requests_effects=1
 	.byte 0
 	.byte PARTY_SIZE @ assign to first empty slot
@@ -1014,7 +1030,7 @@
 	.ifnb \move2; .set givemon_flags, givemon_flags | (1 << 18); .endif
 	.ifnb \move3; .set givemon_flags, givemon_flags | (1 << 19); .endif
 	.ifnb \move4; .set givemon_flags, givemon_flags | (1 << 20); .endif
-	.ifnb \isShiny; .set givemon_flags, givemon_flags | (1 << 21); .endif
+	.ifnb \shinyMode; .set givemon_flags, givemon_flags | (1 << 21); .endif
 	.ifnb \gmaxFactor; .set givemon_flags, givemon_flags | (1 << 22); .endif
 	.ifnb \teraType; .set givemon_flags, givemon_flags | (1 << 23); .endif
 	.ifnb \dmaxLevel; .set givemon_flags, givemon_flags | (1 << 24); .endif
@@ -1040,7 +1056,7 @@
 	.ifnb \move2; .2byte \move2; .endif
 	.ifnb \move3; .2byte \move3; .endif
 	.ifnb \move4; .2byte \move4; .endif
-	.ifnb \isShiny; .2byte \isShiny; .endif
+	.ifnb \shinyMode; .2byte \shinyMode; .endif
 	.ifnb \gmaxFactor; .2byte \gmaxFactor; .endif
 	.ifnb \teraType; .2byte \teraType; .endif
 	.ifnb \dmaxLevel; .2byte \dmaxLevel; .endif
@@ -1048,7 +1064,7 @@
 
 	@ creates a mon for a given party and slot
 	@ otherwise
-	.macro createmon side:req, slot:req, species:req, level:req, item, ball, nature, abilityNum, gender, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, gmaxFactor, teraType, dmaxLevel
+	.macro createmon side:req, slot:req, species:req, level:req, item, ball, nature, abilityNum, gender, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, shinyMode, gmaxFactor, teraType, dmaxLevel
 	callnative ScrCmd_createmon, requests_effects=1
 	.byte \side	 @ 0 - player, 1 - opponent
 	.byte \slot	 @ 0-5
@@ -1076,7 +1092,7 @@
 	.ifnb \move2; .set givemon_flags, givemon_flags | (1 << 18); .endif
 	.ifnb \move3; .set givemon_flags, givemon_flags | (1 << 19); .endif
 	.ifnb \move4; .set givemon_flags, givemon_flags | (1 << 20); .endif
-	.ifnb \isShiny; .set givemon_flags, givemon_flags | (1 << 21); .endif
+	.ifnb \shinyMode; .set givemon_flags, givemon_flags | (1 << 21); .endif
 	.ifnb \gmaxFactor; .set givemon_flags, givemon_flags | (1 << 22); .endif
 	.ifnb \teraType; .set givemon_flags, givemon_flags | (1 << 23); .endif
 	.ifnb \dmaxLevel; .set givemon_flags, givemon_flags | (1 << 24); .endif
@@ -1102,7 +1118,7 @@
 	.ifnb \move2; .2byte \move2; .endif
 	.ifnb \move3; .2byte \move3; .endif
 	.ifnb \move4; .2byte \move4; .endif
-	.ifnb \isShiny; .2byte \isShiny; .endif
+	.ifnb \shinyMode; .2byte \shinyMode; .endif
 	.ifnb \gmaxFactor; .2byte \gmaxFactor; .endif
 	.ifnb \teraType; .2byte \teraType; .endif
 	.ifnb \dmaxLevel; .2byte \dmaxLevel; .endif
@@ -1887,41 +1903,6 @@
 	.2byte \id
 	.endm	
 
-	@ CORNIX CUSTOM - Changes the value of destination by multiplying value to it. Overflow is not prevented (0x0000 - 1 = 0xFFFF).
-	.macro multvar destination:req, value:req
-	.byte SCR_OP_MULTVAR
-	.2byte \destination
-	.2byte \value
-	.endm
-
-	@ CORNIX CUSTOM - Copied from multvar
-	.macro divvar destination:req, value:req
-	.byte SCR_OP_DIVVAR
-	.2byte \destination
-	.2byte \value
-	.endm
-
-	@ CORNIX CUSTOM - like checkcoins but for money
-	@ Gets the number of money the player has and stores it in the variable 'out'.
-	.macro copymoney out:req
-	.byte SCR_OP_COPYMONEY
-	.2byte \out
-	.endm
-
-	@CORNIX CUSTOM - copied from removemoney but will remove the value of the var passed rather than the var
-	@ Subtracts value from the player's money. If the player has less than 'value' money, their money is set to 0.
-	@ If 'disable' is set to anything but 0 then this command does nothing.
-	.macro removevarmoney value:req, disable=0
-	.byte SCR_OP_REMOVEVARMONEY
-	.4byte \value
-	.byte \disable
-	.endm
-
-    @ Cornix Custom - unfaceplayer
-    .macro unfaceplayer id=VAR_LAST_TALKED
-    applymovement \id Common_Movement_FaceOriginalDirection
-    .endm
-
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
@@ -2572,9 +2553,44 @@
 
 	@ Hides any follower Pokémon if present, putting them into their Poké Ball; by default waits for their movement to finish.
 	.macro hidefollower wait=1
-	callnative ScrFunc_hidefollower
+	.byte SCR_OP_HIDEFOLLOWER
 	.2byte \wait
 	.endm
+
+	@ CORNIX CUSTOM - Changes the value of destination by multiplying value to it. Overflow is not prevented (0x0000 - 1 = 0xFFFF).
+	.macro multvar destination:req, value:req
+	.byte SCR_OP_MULTVAR
+	.2byte \destination
+	.2byte \value
+	.endm
+
+	@ CORNIX CUSTOM - Copied from multvar
+	.macro divvar destination:req, value:req
+	.byte SCR_OP_DIVVAR
+	.2byte \destination
+	.2byte \value
+	.endm
+
+	@ CORNIX CUSTOM - like checkcoins but for money
+	@ Gets the number of money the player has and stores it in the variable 'out'.
+	.macro copymoney out:req
+	.byte SCR_OP_COPYMONEY
+	.2byte \out
+	.endm
+
+	@CORNIX CUSTOM - copied from removemoney but will remove the value of the var passed rather than the var
+	@ Subtracts value from the player's money. If the player has less than 'value' money, their money is set to 0.
+	@ If 'disable' is set to anything but 0 then this command does nothing.
+	.macro removevarmoney value:req, disable=0
+	.byte SCR_OP_REMOVEVARMONEY
+	.4byte \value
+	.byte \disable
+	.endm
+
+    @ Cornix Custom - unfaceplayer
+    .macro unfaceplayer id=VAR_LAST_TALKED
+    applymovement \id Common_Movement_FaceOriginalDirection
+    .endm
 
 	.macro increasedifficulty
 	callnative Script_IncreaseDifficulty, requests_effects=1

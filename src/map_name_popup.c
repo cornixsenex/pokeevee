@@ -761,7 +761,7 @@ static void LoadMapNamePopUpWindowBg(void)
 	u32 n;
     u8 popUpThemeId;
     u8 popupWindowId = GetMapNamePopUpWindowId();
-    u16 regionMapSectionId = gMapHeader.regionMapSectionId;
+    mapsec_u16_t regionMapSectionId = gMapHeader.regionMapSectionId;
     u8 secondaryPopUpWindowId;
 
 	//Handle Dyanmic Map Popup Themes

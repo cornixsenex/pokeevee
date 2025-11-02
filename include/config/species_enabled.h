@@ -383,7 +383,8 @@
 #define P_FAMILY_RESHIRAM                P_GEN_5_POKEMON
 #define P_FAMILY_ZEKROM                  P_GEN_5_POKEMON
 #define P_FAMILY_LANDORUS                P_GEN_5_POKEMON
-#define P_FAMILY_KYUREM                  P_GEN_5_POKEMON
+//#define P_FAMILY_KYUREM                  P_GEN_5_POKEMON
+#define P_FAMILY_KYUREM                  FALSE              //Also broken IDK why 
 #define P_FAMILY_KELDEO                  P_GEN_5_POKEMON
 #define P_FAMILY_MELOETTA                P_GEN_5_POKEMON
 #define P_FAMILY_GENESECT                P_GEN_5_POKEMON
