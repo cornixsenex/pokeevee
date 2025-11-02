@@ -1,6 +1,0 @@
-CONFLICT (content): Merge conflict in data/script_cmd_table.inc
-CONFLICT (content): Merge conflict in include/save.h
-CONFLICT (content): Merge conflict in spritesheet_rules.mk
-CONFLICT (content): Merge conflict in src/field_specials.c
-CONFLICT (content): Merge conflict in src/region_map.c
-CONFLICT (content): Merge conflict in src/strings.c
