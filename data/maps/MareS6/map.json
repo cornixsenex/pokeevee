@@ -57,7 +57,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Shinx",
-      "flag": "0"
+      "flag": "NULL"
     },
     {
       "local_id": "LOCALID_MARES6_TURTWIG",
@@ -71,7 +71,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Turtwig",
-      "flag": "0"
+      "flag": "NULL"
     },
     {
       "local_id": "LOCALID_MARES6_TORCHIC",
@@ -85,7 +85,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Torchic",
-      "flag": "0"
+      "flag": "NULL"
     },
     {
       "local_id": "LOCALID_MARES6_POOCHYENA",
@@ -99,7 +99,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Poochyena",
-      "flag": "0"
+      "flag": "NULL"
     },
     {
       "local_id": "LOCALID_MARES6_SNUBBULL",
@@ -113,7 +113,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Snubbull",
-      "flag": "0"
+      "flag": "NULL"
     },
     {
       "local_id": "LOCALID_MARES6_ULYSSES",

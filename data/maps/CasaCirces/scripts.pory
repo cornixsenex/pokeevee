@@ -1,1 +1,131 @@
-mapscripts CasaCirces_MapScripts {}
+mapscripts CasaCirces_MapScripts {
+
+
+    MAP_SCRIPT_ON_TRANSITION {
+        //Ulysses Confront Circe scene
+        if (var(VAR_ULYSSES_STATE) == 7) {
+            call (CasaCirces_Script_ShowUlyssesConfrontCirce)
+        }
+        //Ulysses in bed w/ Circe
+        if (var(VAR_ULYSSES_STATE) == 8) {
+            call (CasaCirces_Script_ShowUlyssesWithCirce)
+        }
+        //Player confront Circe - U a pig
+        if (var(VAR_ULYSSES_STATE) == 9) {
+            call (CasaCirces_Script_ShowPlayerConfrontCirce)
+        }
+        //Circe defeated - U still a pig
+        if (var(VAR_ULYSSES_STATE) == 10) {
+            call (CasaCirces_Script_ShowUlyssesAfterCirce)
+        }
+        //default is show nobody which is after circe scene
+    }
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        //U confront C
+        VAR_ULYSSES_STATE, 7: CasaCirces_Script_UlyssesConfrontCirce
+        //P confront C
+        VAR_ULYSSES_STATE, 9: CasaCirces_Script_PlayerConfrontCirce
+    ]
+
+}
+
+script CasaCirces_Script_ShowUlyssesConfrontCirce {
+    //C
+    setobjectxyperm (LOCALID_CASACIRCES_CIRCE, 4, 2)
+    setobjectmovementtype (LOCALID_CASACIRCES_CIRCE, MOVEMENT_TYPE_FACE_DOWN)
+    //M
+    setobjectxyperm (LOCALID_CASACIRCES_MISMAGIUS, 5, 2)
+    setobjectmovementtype (LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    //U
+    setobjectxyperm (LOCALID_CASACIRCES_ULYSSES, 4, 4)
+    setobjectmovementtype (LOCALID_CASACIRCES_ULYSSES, MOVEMENT_TYPE_FACE_UP)
+    return
+}
+
+script CasaCirces_Script_ShowUlyssesWithCirce {
+    //C
+    setobjectxyperm (LOCALID_CASACIRCES_CIRCE, 6, 3)
+    setobjectmovementtype (LOCALID_CASACIRCES_CIRCE, MOVEMENT_TYPE_FACE_DOWN)
+    //M
+    setobjectxyperm (LOCALID_CASACIRCES_MISMAGIUS, 7, 3)
+    setobjectmovementtype (LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    //U
+    setobjectxyperm (LOCALID_CASACIRCES_ULYSSES, 6, 3)
+    setobjectmovementtype (LOCALID_CASACIRCES_ULYSSES, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    return
+}
+
+script CasaCirces_Script_ShowPlayerConfrontCirce {
+    //C
+    setobjectxyperm (LOCALID_CASACIRCES_CIRCE, 4, 2)
+    setobjectmovementtype (LOCALID_CASACIRCES_CIRCE, MOVEMENT_TYPE_FACE_DOWN)
+    //M
+    setobjectxyperm (LOCALID_CASACIRCES_MISMAGIUS, 5, 2)
+    setobjectmovementtype (LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    //T
+    setobjectxyperm (LOCALID_CASACIRCES_TEDDIURSA, 4, 2)
+    setobjectmovementtype (LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_LOOK_AROUND)
+    return
+}
+
+script CasaCirces_Script_ShowUlyssesAfterCirce {
+    //T
+    setobjectxyperm (LOCALID_CASACIRCES_TEDDIURSA, 4, 2)
+    setobjectmovementtype (LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_LOOK_AROUND)
+    return
+}
+
+
+script CasaCirces_Script_UlyssesConfrontCirce {
+    //player up a bit
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+    waitmovement (0)
+    //alert P
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //U: So, you're the witch
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaCirces_Text_Ulysses_ConfrontCirce1)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    //C: Here I am? Who is this handsome gentleman caller?
+    load_field_pic (FIELD_PIC_CIRCE, 190, 98)
+    msgbox (CasaCirces_Text_Circe_ConfrontUlysses1)
+    destroy_field_pic (FIELD_PIC_CIRCE)
+    //U and P up to C
+    //U: We're here to stop you.Don't try and run
+    //C: I wouldn't dream of it. Hard to get was never my style. I'm circe, I prefer physician, homemaker, and lover. Now tell me your name handsome stranger.
+    //U: Im ulysses, i'm here to set free the men you've captured
+    //C: Those men rather held me than I held them. But alas I cannot save them. They are beyond my powers to return. Only the Moly (Purple Pinea?) fruit, can bring them back.
+    //U: Then bring out the fruit, if you're a doctor as you say and save them
+    //C: Alas I cannot. The fruit is a rarity, only growing on our trees from time to time. Perhaps your companion should go out and look for it while you stay here with me. Wouldn't want to leafve me unnatended who knows what kind of mischief I could get up to.
+    //U turn to player
+    //U: She's right, too dangerous to be left alone. Go search for this fruit I will keep hold of the witch
+    //U turn to C
+    //U: So be it. I will stay with you, but only to keep watch while we rescue the men
+    //C: Sweet
+    closemessage
+    //U up to position (face down left of C)
+    //setvars
+    setvar (VAR_ULYSSES_STATE, 8)
+    //fin
+    end
+
+
+}
+
+script CasaCirces_Script_PlayerConfrontCirce {
+
+
+}
+
+text CasaCirces_Text_Ulysses_ConfrontCirce1 {
+    format("Behold! The wicked witch of the forest!
+            We've got you cornered now!")
+}
+
+text CasaCirces_Text_Circe_ConfrontUlysses1 {
+    format("Hi! Here I am!
+            You've really got me now, but I wonder,
+            who is this handsome man who will take me?")
+}

@@ -38,12 +38,13 @@ mapscripts MareS6_MapScripts {
         if (var(VAR_ULYSSES_STATE) == 6) {
             call (MareS6_Script_ShowUlyssesAntePortam)
         }
-        //Hide piggies
+        //Hide pigges
 	}
 
 	MAP_SCRIPT_ON_LOAD {
+        //Show / Hide Moly fruit 
 		if (var(VAR_ULYSSES_STATE) == 8) {
-			call (MareS6_Script_ShowMollyFruit)
+			call (MareS6_Script_ShowMolyFruit)
 		}
 	}
 }
@@ -94,7 +95,7 @@ script MareS6_Script_ShowUlyssesAntePortam {
     return
 }
 
-script MareS6_Script_ShowMollyFruit {
+script MareS6_Script_ShowMolyFruit {
 	setmetatile (16, 60, METATILE_BigIsland_SandPalmFruitL, FALSE)
 	setmetatile (17, 60, METATILE_BigIsland_SandPalmFruitC, FALSE)
 	setmetatile (18, 60, METATILE_BigIsland_SandPalmFruitR, FALSE)

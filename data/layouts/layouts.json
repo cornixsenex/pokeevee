@@ -6674,7 +6674,7 @@
     {
       "id": "LAYOUT_CASA_CIRCES",
       "name": "CasaCirces_Layout",
-      "width": 10,
+      "width": 8,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
