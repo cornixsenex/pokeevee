@@ -284,6 +284,41 @@ script MareS6_Script_UlyssesAntePortam {
     end
 }
 
+//Transformed Prisoners as animals
+
+script MareS6_Script_Shinx {
+    //face player
+    faceplayer
+    //alert animal
+    applymovement (LOCALID_MARES6_SHINX, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //do animal sound
+	playmoncry (SPECIES_SHINX, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    //msg the (animal) is looking at you knowingly
+    bufferspeciesname (STR_VAR_1, SPECIES_SHINX)
+    msgbox (MareS6_Text_MeetsGaze)
+    //check for Moly
+    //if so YesNo give Moly
+
+}
+
+script MareS6_Script_Turtwig {
+
+}
+
+script MareS6_Script_Torchic {
+
+}
+
+script MareS6_Script_Snubbull {
+
+}
+
+script MareS6_Script_Poochyena {
+
+}
+
 text MareS6_Text_FishermanBeforeUlysses { 
     format("There's been some strange happenings on our sleepy little island. People have been going missing. I'm doing my best to stay out of it and focus on my fishing.")
 }
@@ -331,4 +366,8 @@ text MareS6_Text_UlyssesAntePortam {
             Be cautious, we don't know what kind of tricks
             she has waiting for us once we're inside.
             Now follow me forward. Let's save the town!")
+}
+
+text MareS6_Text_MeetsGaze {
+    format("{STR_VAR_1} meets your gaze with quiet understanding.")
 }

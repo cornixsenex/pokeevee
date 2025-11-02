@@ -456,19 +456,53 @@ MareS6_Script_UlyssesAntePortam::
 	end
 
 
+MareS6_Script_Shinx::
+# 291 "data/maps/MareS6/scripts.pory"
+	faceplayer
+# 293 "data/maps/MareS6/scripts.pory"
+	applymovement LOCALID_MARES6_SHINX, Common_Movement_ExclamationMark
+# 294 "data/maps/MareS6/scripts.pory"
+	waitmovement 0
+# 296 "data/maps/MareS6/scripts.pory"
+	playmoncry SPECIES_SHINX, CRY_MODE_ENCOUNTER
+# 297 "data/maps/MareS6/scripts.pory"
+	waitmoncry
+# 299 "data/maps/MareS6/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_SHINX
+# 300 "data/maps/MareS6/scripts.pory"
+	msgbox MareS6_Text_MeetsGaze
+	return
+
+
+MareS6_Script_Turtwig::
+	return
+
+
+MareS6_Script_Torchic::
+	return
+
+
+MareS6_Script_Snubbull::
+	return
+
+
+MareS6_Script_Poochyena::
+	return
+
+
 MareS6_Script_UlyssesEtFishermanScene_Text_0:
 # 167 "data/maps/MareS6/scripts.pory"
 	.string "ERROR, \nPlayerFacingDirection OOB$"
 
 MareS6_Text_FishermanBeforeUlysses::
-# 287 "data/maps/MareS6/scripts.pory"
+# 322 "data/maps/MareS6/scripts.pory"
 	.string "There's been some strange happenings\n"
 	.string "on our sleepy little island. People have\l"
 	.string "been going missing. I'm doing my best to\l"
 	.string "stay out of it and focus on my fishing.$"
 
 MareS6_Text_FishermanDuringUlysses::
-# 291 "data/maps/MareS6/scripts.pory"
+# 326 "data/maps/MareS6/scripts.pory"
 	.string "Well, I'll tell you what, that Ulysses\n"
 	.string "character sure is a confident walked\l"
 	.string "and a smooth talker, but I don't think\l"
@@ -477,13 +511,13 @@ MareS6_Text_FishermanDuringUlysses::
 	.string "staying here with me and the fishes.$"
 
 MareS6_Text_FishermanAfterUlysses::
-# 295 "data/maps/MareS6/scripts.pory"
+# 330 "data/maps/MareS6/scripts.pory"
 	.string "This is my only joy in life, out here just\n"
 	.string "me and the sea. I keep my rod clean and\l"
 	.string "stay out of trouble, that's all I do.$"
 
 MareS6_Text_FishermanExposition::
-# 299 "data/maps/MareS6/scripts.pory"
+# 334 "data/maps/MareS6/scripts.pory"
 	.string "Now losing people is an unfortunate\n"
 	.string "part of life out here on Isla Pina, but\l"
 	.string "nothing like this. We must have lost\l"
@@ -496,12 +530,12 @@ MareS6_Text_FishermanExposition::
 	.string "do about it.$"
 
 MareS6_Text_UlyssesResponseToFisherman::
-# 303 "data/maps/MareS6/scripts.pory"
+# 338 "data/maps/MareS6/scripts.pory"
 	.string "That's terrible! Someone must do\n"
 	.string "something!$"
 
 MareS6_Text_UlyssesCallToAction::
-# 307 "data/maps/MareS6/scripts.pory"
+# 342 "data/maps/MareS6/scripts.pory"
 	.string "My goodness, {PLAYER}, am I glad to\n"
 	.string "see you! I washed ashore and these\l"
 	.string "good people of the island gave me food,\l"
@@ -519,15 +553,20 @@ MareS6_Text_UlyssesCallToAction::
 	.string "I'll meet you there!$"
 
 MareS6_Text_UlyssesJungle::
-# 323 "data/maps/MareS6/scripts.pory"
+# 358 "data/maps/MareS6/scripts.pory"
 	.string "This jungle more dangerous than I had\n"
 	.string "expected but we cannot turn back. Lets\l"
 	.string "muscle our way to the witches lair!$"
 
 MareS6_Text_UlyssesAntePortam::
-# 329 "data/maps/MareS6/scripts.pory"
+# 364 "data/maps/MareS6/scripts.pory"
 	.string "This must be it, the evil witch's lair. Be\n"
 	.string "cautious, we don't know what kind of\l"
 	.string "tricks she has waiting for us once we're\l"
 	.string "inside. Now follow me forward. Let's\l"
 	.string "save the town!$"
+
+MareS6_Text_MeetsGaze::
+# 371 "data/maps/MareS6/scripts.pory"
+	.string "{STR_VAR_1} meets your gaze with\n"
+	.string "quiet understanding.$"
