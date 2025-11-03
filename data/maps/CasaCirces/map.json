@@ -17,7 +17,7 @@
     {
       "local_id": "LOCALID_CASACIRCES_ULYSSES",
       "graphics_id": "OBJ_EVENT_GFX_BROCK",
-      "x": -1,
+      "x": 0,
       "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -31,7 +31,7 @@
     {
       "local_id": "LOCALID_CASACIRCES_CIRCE",
       "graphics_id": "OBJ_EVENT_GFX_AGATHA",
-      "x": 0,
+      "x": 1,
       "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -45,7 +45,7 @@
     {
       "local_id": "LOCALID_CASACIRCES_TEDDIURSA",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TEDDIURSA)",
-      "x": 1,
+      "x": 2,
       "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -59,7 +59,7 @@
     {
       "local_id": "LOCALID_CASACIRCES_MISMAGIUS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MISMAGIUS)",
-      "x": 2,
+      "x": 3,
       "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -87,7 +87,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": -1,
+      "x": 0,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_MARE_S6",

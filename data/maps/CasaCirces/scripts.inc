@@ -128,9 +128,45 @@ CasaCirces_Script_UlyssesConfrontCirce::
 	msgbox CasaCirces_Text_Circe_ConfrontUlysses1
 # 94 "data/maps/CasaCirces/scripts.pory"
 	destroy_field_pic FIELD_PIC_CIRCE
-# 107 "data/maps/CasaCirces/scripts.pory"
-	closemessage
+# 96 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
+# 97 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 98 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 100 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 101 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce2
+# 102 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 104 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_CIRCE, 190, 98
+# 105 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Circe_ConfrontUlysses2
+# 106 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
+# 108 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 109 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce3
 # 110 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 112 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_CIRCE, 190, 98
+# 113 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Circe_ConfrontUlysses3
+# 114 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
+# 116 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 117 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce4
+# 118 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 125 "data/maps/CasaCirces/scripts.pory"
+	closemessage
+# 128 "data/maps/CasaCirces/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 8
 	end
 
@@ -140,12 +176,52 @@ CasaCirces_Script_PlayerConfrontCirce::
 
 
 CasaCirces_Text_Ulysses_ConfrontCirce1::
-# 122 "data/maps/CasaCirces/scripts.pory"
+# 140 "data/maps/CasaCirces/scripts.pory"
 	.string "Behold! The wicked witch of the forest!\n"
 	.string "We've got you cornered now!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses1::
-# 127 "data/maps/CasaCirces/scripts.pory"
+# 145 "data/maps/CasaCirces/scripts.pory"
 	.string "Hi! Here I am! You've really got me now,\n"
 	.string "but I wonder, who is this handsome man\l"
 	.string "who will take me?$"
+
+CasaCirces_Text_Ulysses_ConfrontCirce2::
+# 151 "data/maps/CasaCirces/scripts.pory"
+	.string "Stay back you naughty witch, your time\n"
+	.string "has come. I'm here to punish you and put\l"
+	.string "an end to your evil magic! Don't try and\l"
+	.string "run!$"
+
+CasaCirces_Text_Circe_ConfrontUlysses2::
+# 157 "data/maps/CasaCirces/scripts.pory"
+	.string "Don't try and run? I'd never dream of it!\n"
+	.string "Playing hard to get is not my style. I am\l"
+	.string "Circe, the lady of the woods. Naughty\l"
+	.string "witch is such a nasty title, I prefer\l"
+	.string "physician, or beloved. Now tell me, for I\l"
+	.string "am eager to learn, the name of my new\l"
+	.string "gentleman caller.$"
+
+CasaCirces_Text_Ulysses_ConfrontCirce3::
+# 167 "data/maps/CasaCirces/scripts.pory"
+	.string "I am Ulysses, lord of Ithaca, and I've\n"
+	.string "come to save the men you've bewitched\l"
+	.string "on behalf of the people of the town.$"
+
+CasaCirces_Text_Circe_ConfrontUlysses3::
+# 173 "data/maps/CasaCirces/scripts.pory"
+	.string "Welcome, Lord Ulysses, to abode. Those\n"
+	.string "men, I think, bewitched and conquered\l"
+	.string "me more than I bewitched or ill-treated\l"
+	.string "them but still I empathize with your\l"
+	.string "concern. I can assure you they are all\l"
+	.string "unharmed and close at hand. Alas they\l"
+	.string "can't return, their restoration is\l"
+	.string "beyond my skill alone. Only the noble\l"
+	.string "Piña fruit can restore them to their\l"
+	.string "previous forms.$"
+
+CasaCirces_Text_Ulysses_ConfrontCirce4::
+# 185 "data/maps/CasaCirces/scripts.pory"
+	.string "1234, woman, give me the fruit!$"

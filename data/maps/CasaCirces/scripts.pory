@@ -93,11 +93,29 @@ script CasaCirces_Script_UlyssesConfrontCirce {
     msgbox (CasaCirces_Text_Circe_ConfrontUlysses1)
     destroy_field_pic (FIELD_PIC_CIRCE)
     //U and P up to C
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
     //U: We're here to stop you.Don't try and run
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaCirces_Text_Ulysses_ConfrontCirce2)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
     //C: I wouldn't dream of it. Hard to get was never my style. I'm circe, I prefer physician, homemaker, and lover. Now tell me your name handsome stranger.
+    load_field_pic (FIELD_PIC_CIRCE, 190, 98)
+    msgbox (CasaCirces_Text_Circe_ConfrontUlysses2)
+    destroy_field_pic (FIELD_PIC_CIRCE)
     //U: Im ulysses, i'm here to set free the men you've captured
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaCirces_Text_Ulysses_ConfrontCirce3)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
     //C: Those men rather held me than I held them. But alas I cannot save them. They are beyond my powers to return. Only the Moly (Purple Pinea?) fruit, can bring them back.
+    load_field_pic (FIELD_PIC_CIRCE, 190, 98)
+    msgbox (CasaCirces_Text_Circe_ConfrontUlysses3)
+    destroy_field_pic (FIELD_PIC_CIRCE)
     //U: Then bring out the fruit, if you're a doctor as you say and save them
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaCirces_Text_Ulysses_ConfrontCirce4)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
     //C: Alas I cannot. The fruit is a rarity, only growing on our trees from time to time. Perhaps your companion should go out and look for it while you stay here with me. Wouldn't want to leafve me unnatended who knows what kind of mischief I could get up to.
     //U turn to player
     //U: She's right, too dangerous to be left alone. Go search for this fruit I will keep hold of the witch
@@ -128,4 +146,42 @@ text CasaCirces_Text_Circe_ConfrontUlysses1 {
     format("Hi! Here I am!
             You've really got me now, but I wonder,
             who is this handsome man who will take me?")
+}
+
+text CasaCirces_Text_Ulysses_ConfrontCirce2 {
+	format("Stay back you naughty witch, your time has come.
+			I'm here to punish you and put an end
+			to your evil magic! Don't try and run!")
+}
+
+text CasaCirces_Text_Circe_ConfrontUlysses2 {
+	format("Don't try and run? I'd never dream of it!
+			Playing hard to get is not my style.
+			I am Circe, the lady of the woods.
+			Naughty witch is such a nasty title,
+			I prefer physician, or beloved.
+			Now tell me, for I am eager to learn,
+			the name of my new gentleman caller.")
+}
+
+text CasaCirces_Text_Ulysses_ConfrontCirce3 {
+	format("I am Ulysses, lord of Ithaca,
+			and I've come to save the men you've bewitched
+			on behalf of the people of the town.")
+}
+
+text CasaCirces_Text_Circe_ConfrontUlysses3 {
+	format("Welcome, Lord Ulysses, to abode.
+			Those men, I think, bewitched and conquered me
+			more than I bewitched or ill-treated them
+			but still I empathize with your concern.
+			I can assure you they are all unharmed
+			and close at hand. Alas they can't return,
+			their restoration is beyond my skill
+			alone. Only the noble Piña fruit
+			can restore them to their previous forms.")
+}
+
+text CasaCirces_Text_Ulysses_ConfrontCirce4 {
+	format("1234, woman, give me the fruit!")
 }
