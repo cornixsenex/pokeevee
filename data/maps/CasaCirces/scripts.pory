@@ -131,9 +131,17 @@ script CasaCirces_Script_UlyssesConfrontCirce {
 	waitmovement (0)
     //U: So be it. I will stay with you, but only to keep watch while we rescue the men
     msgbox (CasaCirces_Text_Ulysses_ConfrontCirce6)
-    //C: Sweet
-    closemessage
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
     //U up to position (face down left of C)
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown)
+	waitmovement (0)
     //setvars
     setvar (VAR_ULYSSES_STATE, 8)
     //fin
@@ -225,5 +233,19 @@ text CasaCirces_Text_Ulysses_ConfrontCirce5 {
 }
 
 text CasaCirces_Text_Ulysses_ConfrontCirce6 {
-	format("")
+	format("So be it, witch, I'll keep ahold of you
+			while my companion, {PLAYER}, fetches the fruit
+			you need to return the men to their homes.")
 }
+
+text CasaCirces_Text_Ulysses_AfterConfrontCirce {
+	format("Let me handle Circe alone, you go
+			search the island and find the Piña fruit.")
+}
+
+text CasaCirces_Text_Circe_AfterConfrontUlysses {
+	format("The Piña tree only rarely bears fruit.
+			You'd better hurry up and start your search
+			if you have any hopes of finding some.")
+}
+

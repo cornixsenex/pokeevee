@@ -184,9 +184,27 @@ CasaCirces_Script_UlyssesConfrontCirce::
 	waitmovement 0
 # 133 "data/maps/CasaCirces/scripts.pory"
 	msgbox CasaCirces_Text_Ulysses_ConfrontCirce6
+# 134 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
 # 135 "data/maps/CasaCirces/scripts.pory"
 	closemessage
+# 137 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
 # 138 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 139 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkRight
+# 140 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 141 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
+# 142 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 143 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown
+# 144 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 146 "data/maps/CasaCirces/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 8
 	end
 
@@ -196,25 +214,25 @@ CasaCirces_Script_PlayerConfrontCirce::
 
 
 CasaCirces_Text_Ulysses_ConfrontCirce1::
-# 150 "data/maps/CasaCirces/scripts.pory"
+# 158 "data/maps/CasaCirces/scripts.pory"
 	.string "Behold! The wicked witch of the forest!\n"
 	.string "We've got you cornered now!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses1::
-# 155 "data/maps/CasaCirces/scripts.pory"
+# 163 "data/maps/CasaCirces/scripts.pory"
 	.string "Hi! Here I am! You've really got me now,\n"
 	.string "but I wonder, who is this handsome man\l"
 	.string "who will take me?$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce2::
-# 161 "data/maps/CasaCirces/scripts.pory"
+# 169 "data/maps/CasaCirces/scripts.pory"
 	.string "Stay back you naughty witch, your time\n"
 	.string "has come. I'm here to punish you and put\l"
 	.string "an end to your evil magic! Don't try and\l"
 	.string "run!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses2::
-# 167 "data/maps/CasaCirces/scripts.pory"
+# 175 "data/maps/CasaCirces/scripts.pory"
 	.string "Don't try and run? I'd never dream of it!\n"
 	.string "Playing hard to get is not my style. I am\l"
 	.string "Circe, the lady of the woods. Naughty\l"
@@ -224,13 +242,13 @@ CasaCirces_Text_Circe_ConfrontUlysses2::
 	.string "gentleman caller.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce3::
-# 177 "data/maps/CasaCirces/scripts.pory"
+# 185 "data/maps/CasaCirces/scripts.pory"
 	.string "I am Ulysses, lord of Ithaca, and I've\n"
 	.string "come to save the men you've bewitched\l"
 	.string "on behalf of the people of the town.$"
 
 CasaCirces_Text_Circe_ConfrontUlysses3::
-# 183 "data/maps/CasaCirces/scripts.pory"
+# 191 "data/maps/CasaCirces/scripts.pory"
 	.string "Welcome, Lord Ulysses, to abode. Those\n"
 	.string "men, I think, bewitched and conquered\l"
 	.string "me more than I bewitched or ill-treated\l"
@@ -243,12 +261,12 @@ CasaCirces_Text_Circe_ConfrontUlysses3::
 	.string "previous forms.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce4::
-# 195 "data/maps/CasaCirces/scripts.pory"
+# 203 "data/maps/CasaCirces/scripts.pory"
 	.string "Enough waiting, woman, give me the\n"
 	.string "fruit!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses4::
-# 199 "data/maps/CasaCirces/scripts.pory"
+# 207 "data/maps/CasaCirces/scripts.pory"
 	.string "The Piña fruit, native to our island, is\n"
 	.string "very rare. The Piña tree only flowers\l"
 	.string "once in a generation we would need to\l"
@@ -266,7 +284,7 @@ CasaCirces_Text_Circe_ConfrontUlysses4::
 	.string "mischief together...$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce5::
-# 216 "data/maps/CasaCirces/scripts.pory"
+# 224 "data/maps/CasaCirces/scripts.pory"
 	.string "I think, for now, we'll have to trust the\n"
 	.string "witch. Don't worry, I think I can hold my\l"
 	.string "own if she tries any tricks I'll pin her\l"
@@ -278,5 +296,20 @@ CasaCirces_Text_Ulysses_ConfrontCirce5::
 	.string "up! Leave me and her alone.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce6::
-# 227 "data/maps/CasaCirces/scripts.pory"
-	.string "$"
+# 235 "data/maps/CasaCirces/scripts.pory"
+	.string "So be it, witch, I'll keep ahold of you\n"
+	.string "while my companion, {PLAYER}, fetches\l"
+	.string "the fruit you need to return the men to\l"
+	.string "their homes.$"
+
+CasaCirces_Text_Ulysses_AfterConfrontCirce::
+# 241 "data/maps/CasaCirces/scripts.pory"
+	.string "Let me handle Circe alone, you go search\n"
+	.string "the island and find the Piña fruit.$"
+
+CasaCirces_Text_Circe_AfterConfrontUlysses::
+# 246 "data/maps/CasaCirces/scripts.pory"
+	.string "The Piña tree only rarely bears fruit.\n"
+	.string "You'd better hurry up and start your\l"
+	.string "search if you have any hopes of finding\l"
+	.string "some.$"
