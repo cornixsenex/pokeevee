@@ -164,9 +164,29 @@ CasaCirces_Script_UlyssesConfrontCirce::
 	msgbox CasaCirces_Text_Ulysses_ConfrontCirce4
 # 118 "data/maps/CasaCirces/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
+# 120 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_CIRCE, 190, 98
+# 121 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Circe_ConfrontUlysses4
+# 122 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
+# 124 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown
 # 125 "data/maps/CasaCirces/scripts.pory"
-	closemessage
+	waitmovement 0
+# 127 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 128 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce5
+# 130 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceUp
+# 131 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 133 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce6
+# 135 "data/maps/CasaCirces/scripts.pory"
+	closemessage
+# 138 "data/maps/CasaCirces/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 8
 	end
 
@@ -176,25 +196,25 @@ CasaCirces_Script_PlayerConfrontCirce::
 
 
 CasaCirces_Text_Ulysses_ConfrontCirce1::
-# 140 "data/maps/CasaCirces/scripts.pory"
+# 150 "data/maps/CasaCirces/scripts.pory"
 	.string "Behold! The wicked witch of the forest!\n"
 	.string "We've got you cornered now!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses1::
-# 145 "data/maps/CasaCirces/scripts.pory"
+# 155 "data/maps/CasaCirces/scripts.pory"
 	.string "Hi! Here I am! You've really got me now,\n"
 	.string "but I wonder, who is this handsome man\l"
 	.string "who will take me?$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce2::
-# 151 "data/maps/CasaCirces/scripts.pory"
+# 161 "data/maps/CasaCirces/scripts.pory"
 	.string "Stay back you naughty witch, your time\n"
 	.string "has come. I'm here to punish you and put\l"
 	.string "an end to your evil magic! Don't try and\l"
 	.string "run!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses2::
-# 157 "data/maps/CasaCirces/scripts.pory"
+# 167 "data/maps/CasaCirces/scripts.pory"
 	.string "Don't try and run? I'd never dream of it!\n"
 	.string "Playing hard to get is not my style. I am\l"
 	.string "Circe, the lady of the woods. Naughty\l"
@@ -204,13 +224,13 @@ CasaCirces_Text_Circe_ConfrontUlysses2::
 	.string "gentleman caller.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce3::
-# 167 "data/maps/CasaCirces/scripts.pory"
+# 177 "data/maps/CasaCirces/scripts.pory"
 	.string "I am Ulysses, lord of Ithaca, and I've\n"
 	.string "come to save the men you've bewitched\l"
 	.string "on behalf of the people of the town.$"
 
 CasaCirces_Text_Circe_ConfrontUlysses3::
-# 173 "data/maps/CasaCirces/scripts.pory"
+# 183 "data/maps/CasaCirces/scripts.pory"
 	.string "Welcome, Lord Ulysses, to abode. Those\n"
 	.string "men, I think, bewitched and conquered\l"
 	.string "me more than I bewitched or ill-treated\l"
@@ -223,5 +243,40 @@ CasaCirces_Text_Circe_ConfrontUlysses3::
 	.string "previous forms.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce4::
-# 185 "data/maps/CasaCirces/scripts.pory"
-	.string "1234, woman, give me the fruit!$"
+# 195 "data/maps/CasaCirces/scripts.pory"
+	.string "Enough waiting, woman, give me the\n"
+	.string "fruit!$"
+
+CasaCirces_Text_Circe_ConfrontUlysses4::
+# 199 "data/maps/CasaCirces/scripts.pory"
+	.string "The Piña fruit, native to our island, is\n"
+	.string "very rare. The Piña tree only flowers\l"
+	.string "once in a generation we would need to\l"
+	.string "search the entire island, and check\l"
+	.string "every tree, and still the odds of\l"
+	.string "finding just one fruit would be minute.\l"
+	.string "Perhaps your companion has sharper\l"
+	.string "eyes and better luck than we mature\l"
+	.string "adults. Let him go out and seach the\l"
+	.string "island for the Piña fruit. Let's you and\l"
+	.string "me stay here, you wouldn't want to leave\l"
+	.string "me all alone, and unattended. Who knows\l"
+	.string "what kind of mischief I might get up to\l"
+	.string "by myself... Best stay here and make\l"
+	.string "mischief together...$"
+
+CasaCirces_Text_Ulysses_ConfrontCirce5::
+# 216 "data/maps/CasaCirces/scripts.pory"
+	.string "I think, for now, we'll have to trust the\n"
+	.string "witch. Don't worry, I think I can hold my\l"
+	.string "own if she tries any tricks I'll pin her\l"
+	.string "down and give her punishment for\l"
+	.string "naughtiness... You better go start\l"
+	.string "searching the island for the rare Piña\l"
+	.string "fruit and remember the fate of those\l"
+	.string "lost men lies in your hands. So, hurry\l"
+	.string "up! Leave me and her alone.$"
+
+CasaCirces_Text_Ulysses_ConfrontCirce6::
+# 227 "data/maps/CasaCirces/scripts.pory"
+	.string "$"

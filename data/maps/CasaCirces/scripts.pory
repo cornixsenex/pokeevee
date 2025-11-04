@@ -117,10 +117,20 @@ script CasaCirces_Script_UlyssesConfrontCirce {
     msgbox (CasaCirces_Text_Ulysses_ConfrontCirce4)
     destroy_field_pic (FIELD_PIC_ULYSSES)
     //C: Alas I cannot. The fruit is a rarity, only growing on our trees from time to time. Perhaps your companion should go out and look for it while you stay here with me. Wouldn't want to leafve me unnatended who knows what kind of mischief I could get up to.
+    load_field_pic (FIELD_PIC_CIRCE, 190, 98)
+    msgbox (CasaCirces_Text_Circe_ConfrontUlysses4)
+    destroy_field_pic (FIELD_PIC_CIRCE)
     //U turn to player
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown)
+	waitmovement (0)
     //U: She's right, too dangerous to be left alone. Go search for this fruit I will keep hold of the witch
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+    msgbox (CasaCirces_Text_Ulysses_ConfrontCirce5)
     //U turn to C
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceUp)
+	waitmovement (0)
     //U: So be it. I will stay with you, but only to keep watch while we rescue the men
+    msgbox (CasaCirces_Text_Ulysses_ConfrontCirce6)
     //C: Sweet
     closemessage
     //U up to position (face down left of C)
@@ -183,5 +193,37 @@ text CasaCirces_Text_Circe_ConfrontUlysses3 {
 }
 
 text CasaCirces_Text_Ulysses_ConfrontCirce4 {
-	format("1234, woman, give me the fruit!")
+	format("Enough waiting, woman, give me the fruit!")
+}
+
+text CasaCirces_Text_Circe_ConfrontUlysses4 {
+	format("The Piña fruit, native to our island,
+			is very rare. The Piña tree only
+			flowers once in a generation we
+			would need to search the entire island,
+			and check every tree, and still the odds
+			of finding just one fruit would be minute.
+			Perhaps your companion has sharper eyes
+			and better luck than we mature adults.
+			Let him go out and seach the island for
+			the Piña fruit. Let's you and me stay here,
+			you wouldn't want to leave me all alone,
+			and unattended. Who knows what kind of
+			mischief I might get up to by myself...
+			Best stay here and make mischief together...")
+}
+
+text CasaCirces_Text_Ulysses_ConfrontCirce5 {
+	format("I think, for now, we'll have to trust the witch.
+			Don't worry, I think I can hold my own
+			if she tries any tricks I'll pin her down
+			and give her punishment for naughtiness...
+			You better go start searching the island
+			for the rare Piña fruit and remember
+			the fate of those lost men lies in your hands.
+			So, hurry up! Leave me and her alone.")
+}
+
+text CasaCirces_Text_Ulysses_ConfrontCirce6 {
+	format("")
 }
