@@ -270,6 +270,12 @@ static const u8 sLiveBaitToolsDesc[] = _(
         "Tools used to\n"
         "process {PKMN} into\n"
         "live fishing bait.");
+
+static const u8 sPinaFruitDesc[] = _(
+        "The rare fruit\n"
+        "of the Piña tree is\n"
+        "said to be medicinal.");
+		
 		
 
 //END KUSTOMS
@@ -15343,6 +15349,19 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_LiveBaitTools,
         .iconPic = gItemIcon_EjectPack,
         .iconPalette = gItemIconPalette_EjectPack,
+    },
+	
+    [ITEM_PINA_FRUIT] =
+    {
+        .name = ITEM_NAME("Piña Fruit"),
+        .price = 0,
+		.description = sPinaFruitDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PinapBerry,
+        .iconPalette = gItemIconPalette_PinapBerry,
     },
 
 ///	KUSTOM ITEMS END ///

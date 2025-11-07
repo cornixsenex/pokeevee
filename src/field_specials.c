@@ -6250,6 +6250,19 @@ void ResetLotusHeads(void)
 	}
 }
 
+bool32 CheckHeadbutt(void)
+{
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        if (!species)
+            break;
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], MOVE_HEADBUTT) == TRUE)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 //Beginner stuff fix it later - just do a standard warp setup the truck sequence do the shaking then open the door and release let it warp to Urbia and then have them take the truck away in another fade screen (that should all be handled ON_FRAME_TABLE)
 void DoPeccadumTruckScene(void)
 {

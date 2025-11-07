@@ -1,3 +1,6 @@
+
+//FLAG_TEMP_2 disables object event scripts (set during U in bed with C)
+
 mapscripts CasaCirces_MapScripts {
 
 
@@ -44,6 +47,8 @@ script CasaCirces_Script_ShowUlyssesConfrontCirce {
 }
 
 script CasaCirces_Script_ShowUlyssesWithCirce {
+    //disable their object scripts
+    setflag (FLAG_TEMP_2)
     //C
     setobjectxyperm (LOCALID_CASACIRCES_CIRCE, 6, 3)
     setobjectmovementtype (LOCALID_CASACIRCES_CIRCE, MOVEMENT_TYPE_FACE_DOWN)
@@ -76,6 +81,51 @@ script CasaCirces_Script_ShowUlyssesAfterCirce {
     return
 }
 
+//Event Scripts
+
+script CasaCirces_Script_Ulysses {
+    if (!flag(FLAG_TEMP_2)) {
+        faceplayer
+        load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+        msgbox (CasaCirces_Text_Ulysses_AfterConfrontCirce)
+        destroy_field_pic (FIELD_PIC_ULYSSES)
+        closemessage
+        unfaceplayer
+    }
+}
+
+script CasaCirces_Script_Circe {
+    if (!flag(FLAG_TEMP_2)) {
+        faceplayer
+        load_field_pic (FIELD_PIC_CIRCE, 190, 98)
+        msgbox (CasaCirces_Text_Circe_AfterConfrontUlysses)
+        destroy_field_pic (FIELD_PIC_CIRCE)
+        closemessage
+        unfaceplayer
+    }
+}
+
+script CasaCirces_Script_Mismagius {
+    if (!flag(FLAG_TEMP_2)) {
+        faceplayer
+        playmoncry (SPECIES_MISMAGIUS, CRY_MODE_ENCOUNTER)
+        waitmoncry 
+        unfaceplayer
+    }
+}
+
+script CasaCirces_Script_Teddiursa {
+    faceplayer
+    applymovement (LOCALID_CASACIRCES_TEDDIURSA, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    playmoncry (SPECIES_MISMAGIUS, CRY_MODE_ENCOUNTER)
+    waitmoncry 
+    bufferspeciesname (STR_VAR_1, SPECIES_SHINX)
+    msgbox (MareS6_Text_MeetsGaze)
+    //Check for Pina Fruit
+    unfaceplayer
+}
+//Scene Scripts
 
 script CasaCirces_Script_UlyssesConfrontCirce {
     //player up a bit

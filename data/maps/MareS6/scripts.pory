@@ -300,8 +300,24 @@ script MareS6_Script_Shinx {
     bufferspeciesname (STR_VAR_1, SPECIES_SHINX)
     msgbox (MareS6_Text_MeetsGaze)
     //check for Moly
-    //if so YesNo give Moly
-
+    checkitem (ITEM_PINA_FRUIT)
+    if (var(VAR_RESULT) == YES) {
+        msgbox (MareS6_Text_UsePinaFruit, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            closemessage
+            unfaceplayer
+            end
+        //if so YesNo give Moly
+        } else {
+            //M: Player game V moly
+            //fade screen
+            //sound effect?
+            //remove V
+            //add sailor to correct location
+            //face sailor to correct direction
+            //setvar
+        }
+    }
 }
 
 script MareS6_Script_Turtwig {
@@ -319,6 +335,36 @@ script MareS6_Script_Snubbull {
 script MareS6_Script_Poochyena {
 
 }
+
+script MareS6_Sript_MolyTreeHeadbutt {
+    //NOTE Headbutt trees have not been added yet to expansion. I expect they will be but until then I just won't have actual normal encounters here just the special case BUT in the finished product all the trees on this island should be headbuttable, normally Execute but other stuffs sometimes yknow
+    //Check if player mons have headbutt
+    //specialvar check headbutt
+    msgbox (MareS6_Text_TreeIsHeadbuttable)
+    specialvar (VAR_RESULT, CheckHeadbutt)
+    if (var(VAR_RESULT) == YES) {
+        //Player Can Headbutt
+        msgbox (MareS6_Text_WantToHeadbutt, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            //Do Headbutt - either normal or pina fruit
+            //Check if Pina Fruit time
+            if (var(VAR_ULYSSES_STATE) == 8) {
+                //do headbutt anim thing
+                //clear fruit metatiles
+                //alert player
+                //M: fruit fell!
+                //give item
+                //close message
+                //setvar
+            } else {
+                //normal headbutt
+            }
+        }
+    }
+    closemessage
+    end
+}
+
 
 text MareS6_Text_FishermanBeforeUlysses { 
     format("There's been some strange happenings on our sleepy little island. People have been going missing. I'm doing my best to stay out of it and focus on my fishing.")
@@ -372,3 +418,16 @@ text MareS6_Text_UlyssesAntePortam {
 text MareS6_Text_MeetsGaze {
     format("{STR_VAR_1} meets your gaze with quiet understanding.")
 }
+
+text MareS6_Text_UsePinaFruit {
+    format("Would you like to give {STR_VAR_1} some of the Piña fruit?")
+}
+
+text MareS6_Text_WantToHeadbutt {
+    format("It's a large, formidable treed. Would you like to use Headbutt?")
+}
+
+text MareS6_Text_TreeIsHeadbuttable {
+    format("There's a large, formidable tree that looks like it can be headbutted!")
+}
+
