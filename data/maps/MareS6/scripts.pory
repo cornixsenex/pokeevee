@@ -9,7 +9,8 @@
 //Ocean Map Transisiton A: Transition_IslaPina
 //Ocean Map Transisiton B: Transition_MareOccidens
 
-//FLAG_TEMP_F used in Ulysses Fisherman scene for "player began scene talking to fisherman"
+//FLAG_TEMP_F used in Ulysses Fisherman scene for "player began scene talking to fisherman
+//FLAG_TEMP_3 is set during interact with special Moly Tree
 
 mapscripts MareS6_MapScripts {
 
@@ -336,33 +337,105 @@ script MareS6_Script_Poochyena {
 
 }
 
-script MareS6_Sript_MolyTreeHeadbutt {
-    //NOTE Headbutt trees have not been added yet to expansion. I expect they will be but until then I just won't have actual normal encounters here just the special case BUT in the finished product all the trees on this island should be headbuttable, normally Execute but other stuffs sometimes yknow
-    //Check if player mons have headbutt
-    //specialvar check headbutt
+//This is the special tree
+script MareS6_Script_PinaFruitTree {
+    //setup special Moly Tree
+    setflag (FLAG_TEMP_3)
+    //generic Pina Tree
+    call (MareS6_Script_PinaTree)
+}
+
+//These are the normal trees
+script MareS6_Script_PinaTree {
     msgbox (MareS6_Text_TreeIsHeadbuttable)
+    //Check if player mons have headbutt
     specialvar (VAR_RESULT, CheckHeadbutt)
     if (var(VAR_RESULT) == YES) {
         //Player Can Headbutt
         msgbox (MareS6_Text_WantToHeadbutt, MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
-            //Do Headbutt - either normal or pina fruit
-            //Check if Pina Fruit time
-            if (var(VAR_ULYSSES_STATE) == 8) {
-                //do headbutt anim thing
-                //clear fruit metatiles
-                //alert player
-                //M: fruit fell!
-                //give item
-                //close message
-                //setvar
-            } else {
-                //normal headbutt
-            }
+            call (MareS6_Script_HeadbuttTree)
         }
+    } else {
+        //player cannot headbutt
+        msgbox (MareS6_Text_TreeIsHeadbuttable)
     }
     closemessage
     end
+}
+
+//The guy next to the fruit tree
+script MareS6_Script_FruitFan {
+    faceplayer
+    //before fruit grows
+    if (var(VAR_ULYSSES_STATE) < 8) {
+        msgbox (MareS6_Text_FruitFan1)
+    }
+    //while fruit is growing
+    elif (var(VAR_ULYSSES_STATE) == 8) {
+        msgbox (MareS6_Text_FruitFan2)
+    }
+    //after you took fruit (battle?)
+    else {
+        msgbox (MareS6_Text_FruitFan3)
+    }
+    closemessage
+    unfaceplayer
+}
+
+
+//NOTE Headbutt trees have not been added yet to expansion. I expect they will be but until then I just won't have actual normal encounters here just the special case BUT in the finished product all the trees on this island should be headbuttable, normally Execute but other stuffs sometimes yknow
+script MareS6_Script_HeadbuttTree {
+    //setup headbutt message
+    bufferpartymonnick (STR_VAR_1, VAR_RESULT)
+    buffermovename (STR_VAR_2, MOVE_HEADBUTT)
+    //M: mon used headbutt
+    msgbox (Text_MonUsedFieldMove)
+    //check is follower
+    isfollowerfieldmoveuser (VAR_0x8004)
+    //setfieldeffectargument (3, VAR_0x8004) //skip pose if so
+    if (var(VAR_0x8004) == TRUE) {
+        call (EventScript_FollowerFieldMove)
+    }
+    //do headbutt
+    playse (SE_M_HEADBUTT)
+    waitse
+    //check if it's Moly Fruit or regular
+    if (flag(FLAG_TEMP_3) && var(VAR_ULYSSES_STATE) == 8) {
+        call (MareS6_Script_PinaFruit)
+    } else {
+        //just placeholder battle - make it better of course
+        setwildbattle (SPECIES_EXEGGCUTE, 7)
+    }
+    //reset moly tree flag
+    clearflag (FLAG_TEMP_3)
+    //fin
+    end
+}
+
+//When the player gets the pina fruit
+script MareS6_Script_PinaFruit {
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //falling sound
+    playse (SE_FALL)
+    waitse
+    //metatiles
+	setmetatile (16, 60, METATILE_BigIsland_SandPalmNoFruitL, FALSE)
+	setmetatile (17, 60, METATILE_BigIsland_SandPalmNoFruitC, FALSE)
+	setmetatile (18, 60, METATILE_BigIsland_SandPalmNoFruitR, FALSE)
+    special (DrawWholeMapView)
+    //fruit fall message
+    msgbox (MareS6_Text_PinaFruitFell)
+    closemessage
+    //give item
+    giveitem (ITEM_PINA_FRUIT)
+    closemessage
+    //setvar
+    setvar (VAR_ULYSSES_STATE, 9)
+    //fin
+    return
 }
 
 
@@ -424,10 +497,31 @@ text MareS6_Text_UsePinaFruit {
 }
 
 text MareS6_Text_WantToHeadbutt {
-    format("It's a large, formidable treed. Would you like to use Headbutt?")
+    format("It's a large, formidable tree. Would you like to use Headbutt?")
 }
 
 text MareS6_Text_TreeIsHeadbuttable {
     format("There's a large, formidable tree that looks like it can be headbutted!")
 }
 
+text MareS6_Text_PinaFruitFell {
+    format("The fruit fell down from the tree!")
+}
+
+text MareS6_Text_FruitFan1 {
+    format("This piña tree is preparing to bloom!
+            How do I know? I can talk to the trees.")
+}
+
+text MareS6_Text_FruitFan2 {
+    format("The piña tree has borne fruit! Do you know
+            how rare that is? Sometimes not even one
+            tree on the whole island will fruit all year!")
+}
+
+text MareS6_Text_FruitFan3 {
+    format("The piña fruit! What have you done with it?
+            That should belong to the men and women
+            of the island in common, not for some
+            foreign child to steal! You'll pay for this!")
+}

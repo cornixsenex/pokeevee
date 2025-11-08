@@ -357,7 +357,7 @@ CasaCirces_Text_Circe_ConfrontUlysses4::
 	.string "Perhaps your companion has sharper\l"
 	.string "eyes and better luck than we mature\l"
 	.string "adults. Let him go out and seach the\l"
-	.string "island for the Piña fruit. Let's you and\l"
+	.string "island for the piña fruit. Let's you and\l"
 	.string "me stay here, you wouldn't want to leave\l"
 	.string "me all alone, and unattended. Who knows\l"
 	.string "what kind of mischief I might get up to\l"

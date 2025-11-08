@@ -6258,7 +6258,11 @@ bool32 CheckHeadbutt(void)
         if (!species)
             break;
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], MOVE_HEADBUTT) == TRUE)
+        {
+            //save species as var for check if follower
+            gSpecialVar_0x8004 = species;
             return TRUE;
+        }
     }
     return FALSE;
 }
