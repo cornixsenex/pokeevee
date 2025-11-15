@@ -3447,24 +3447,20 @@ Slowpoke
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DALTON_5 ===
-Name: DALTON
+=== TRAINER_CIRCE ===
+Name: CIRCE
 Class: Guitarist
-Pic: Guitarist
-Gender: Male
+Pic: Agatha
+Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Magneton
+Mismagius
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Exploud
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Magneton
+Roselia
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

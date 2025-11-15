@@ -24,6 +24,16 @@ mapscripts CasaCirces_MapScripts {
         //default is show nobody which is after circe scene
     }
 
+    MAP_SCRIPT_ON_RESUME {
+        if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+            hideobjectat (LOCALID_CASACIRCES_CIRCE, MAP_CASA_CIRCES)
+            removeobject (LOCALID_CASACIRCES_CIRCE)
+            hideobjectat (LOCALID_CASACIRCES_MISMAGIUS, MAP_CASA_CIRCES)
+            removeobject (LOCALID_CASACIRCES_MISMAGIUS)
+        }
+    }
+
+
     MAP_SCRIPT_ON_FRAME_TABLE [
         //U confront C
         VAR_ULYSSES_STATE, 7: CasaCirces_Script_UlyssesConfrontCirce
@@ -201,7 +211,45 @@ script CasaCirces_Script_UlyssesConfrontCirce {
 }
 
 script CasaCirces_Script_PlayerConfrontCirce {
-
+    //player up a bit
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp2)
+    waitmovement (0)
+    //alert player
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //C: You're too late
+    load_field_pic (FIELD_PIC_CIRCE, 190, 98)
+    msgbox (CasaCirces_Text_Circe_ConfrontPlayer1)
+    destroy_field_pic (FIELD_PIC_CIRCE)
+    //U / T mon sound
+    load_field_pic (FIELD_PIC_TEDDIURSA, 190, 98)
+    playmoncry (SPECIES_TEDDIURSA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    destroy_field_pic (FIELD_PIC_TEDDIURSA)
+    //player to C
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkUp2)
+    waitmovement (0)
+    //Now I'll make you mine just like him
+    load_field_pic (FIELD_PIC_CIRCE, 190, 98)
+    msgbox (CasaCirces_Text_Circe_ConfrontPlayer2)
+    destroy_field_pic (FIELD_PIC_CIRCE)
+    //battle -> melting
+    setflag (FLAG_SYS_CTRL_OBJ_DELETE) //sys flag
+	trainerbattle_no_intro (TRAINER_CIRCE, CasaCirces_Text_CirceLost)
+    //hide C on return from battle
+    clearflag (FLAG_SYS_CTRL_OBJ_DELETE) //sys flag
+    removeobject (LOCALID_CASACIRCES_CIRCE)
+    setobjectxyperm (LOCALID_CASACIRCES_CIRCE, 0, 0)
+    setobjectmovementtype (LOCALID_CASACIRCES_CIRCE, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_CASACIRCES_CIRCE)
+    removeobject (LOCALID_CASACIRCES_MISMAGIUS)
+    removeobject (LOCALID_CASACIRCES_CIRCE)
+    setobjectxyperm (LOCALID_CASACIRCES_MISMAGIUS, 0, 0)
+    setobjectmovementtype (LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_INVISIBLE)
+    addobject (LOCALID_CASACIRCES_MISMAGIUS)
+    //setvars
+    setvar (VAR_ULYSSES_STATE, 10)
+    //fin
 
 }
 
@@ -297,5 +345,18 @@ text CasaCirces_Text_Circe_AfterConfrontUlysses {
 	format("The Piña tree only rarely bears fruit.
 			You'd better hurry up and start your search
 			if you have any hopes of finding some.")
+}
+
+text CasaCirces_Text_Circe_ConfrontPlayer1 {
+    format("You're too late.")
+}
+
+text CasaCirces_Text_Circe_ConfrontPlayer2 {
+    format("Your friend is beyond your help,
+            but don't you worry. You'll be with him soon.")
+}
+
+text CasaCirces_Text_CirceLost {
+    format("Look what you've done! I'm melting! I'm melting!")
 }
 

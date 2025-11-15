@@ -203,10 +203,10 @@
 #define TRAINER_GANONDORF                   197
 #define TRAINER_KLYTMNESTRA                 198
 #define TRAINER_LOTUS_HEAD                  199
+#define TRAINER_CIRCE                       200
 
 //BREAK// - UNUSED OPEN ABOVE PLZ
 
-#define TRAINER_DALTON_5                    200
 #define TRAINER_COLE                        201
 #define TRAINER_JEFF                        202
 #define TRAINER_AXLE                        203
