@@ -769,3 +769,8 @@ MareS6_Text_FruitFan3::
 	.string "women of the island in common, not for\l"
 	.string "some foreign child to steal! You'll pay\l"
 	.string "for this!$"
+
+MareS6_Text_PlayerGaveMoly::
+# 529 "data/maps/MareS6/scripts.pory"
+	.string "{PLAYER} gave {STR_VAR_1} some of\n"
+	.string "the piña fruit.$"

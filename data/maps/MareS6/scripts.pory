@@ -525,3 +525,8 @@ text MareS6_Text_FruitFan3 {
             of the island in common, not for some
             foreign child to steal! You'll pay for this!")
 }
+
+text MareS6_Text_PlayerGaveMoly {
+    format("{PLAYER} gave {STR_VAR_1} some of the piña fruit.")
+}
+

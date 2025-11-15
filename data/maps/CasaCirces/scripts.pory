@@ -130,10 +130,19 @@ script CasaCirces_Script_Teddiursa {
     waitmovement (0)
     playmoncry (SPECIES_MISMAGIUS, CRY_MODE_ENCOUNTER)
     waitmoncry 
-    bufferspeciesname (STR_VAR_1, SPECIES_SHINX)
+    bufferspeciesname (STR_VAR_1, SPECIES_TEDDIURSA)
     msgbox (MareS6_Text_MeetsGaze)
-    //Check for Pina Fruit
-    unfaceplayer
+    //No need to check you can only interact with this object after you have the fruit
+    msgbox (MareS6_Text_UsePinaFruit, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        closemessage
+        unfaceplayer
+        end
+    } else {
+        //Restore Ulysses scene
+        msgbox (MareS6_Text_PlayerGaveMoly)
+
+    }
 }
 //Scene Scripts
 
