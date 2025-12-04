@@ -215,8 +215,6 @@ script CasaCirces_Script_UlyssesConfrontCirce {
     setvar (VAR_ULYSSES_STATE, 8)
     //fin
     end
-
-
 }
 
 script CasaCirces_Script_PlayerConfrontCirce {

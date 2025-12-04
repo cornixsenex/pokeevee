@@ -321,87 +321,87 @@ CasaCirces_Script_UlyssesConfrontCirce::
 
 
 CasaCirces_Script_PlayerConfrontCirce::
-# 224 "data/maps/CasaCirces/scripts.pory"
+# 222 "data/maps/CasaCirces/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
+# 223 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
 # 225 "data/maps/CasaCirces/scripts.pory"
-	waitmovement 0
-# 227 "data/maps/CasaCirces/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 226 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
 # 228 "data/maps/CasaCirces/scripts.pory"
-	waitmovement 0
-# 230 "data/maps/CasaCirces/scripts.pory"
 	load_field_pic FIELD_PIC_CIRCE, 190, 98
-# 231 "data/maps/CasaCirces/scripts.pory"
+# 229 "data/maps/CasaCirces/scripts.pory"
 	msgbox CasaCirces_Text_Circe_ConfrontPlayer1
+# 230 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
 # 232 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_CIRCE
-# 234 "data/maps/CasaCirces/scripts.pory"
 	load_field_pic FIELD_PIC_TEDDIURSA, 190, 98
-# 235 "data/maps/CasaCirces/scripts.pory"
+# 233 "data/maps/CasaCirces/scripts.pory"
 	playmoncry SPECIES_TEDDIURSA, CRY_MODE_ENCOUNTER
-# 236 "data/maps/CasaCirces/scripts.pory"
+# 234 "data/maps/CasaCirces/scripts.pory"
 	waitmoncry
-# 237 "data/maps/CasaCirces/scripts.pory"
+# 235 "data/maps/CasaCirces/scripts.pory"
 	destroy_field_pic FIELD_PIC_TEDDIURSA
-# 239 "data/maps/CasaCirces/scripts.pory"
+# 237 "data/maps/CasaCirces/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
-# 240 "data/maps/CasaCirces/scripts.pory"
+# 238 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
-# 242 "data/maps/CasaCirces/scripts.pory"
+# 240 "data/maps/CasaCirces/scripts.pory"
 	load_field_pic FIELD_PIC_CIRCE, 190, 98
-# 243 "data/maps/CasaCirces/scripts.pory"
+# 241 "data/maps/CasaCirces/scripts.pory"
 	msgbox CasaCirces_Text_Circe_ConfrontPlayer2
-# 244 "data/maps/CasaCirces/scripts.pory"
+# 242 "data/maps/CasaCirces/scripts.pory"
 	destroy_field_pic FIELD_PIC_CIRCE
-# 246 "data/maps/CasaCirces/scripts.pory"
+# 244 "data/maps/CasaCirces/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 247 "data/maps/CasaCirces/scripts.pory"
+# 245 "data/maps/CasaCirces/scripts.pory"
 	trainerbattle_no_intro TRAINER_CIRCE, CasaCirces_Text_CirceLost
-# 249 "data/maps/CasaCirces/scripts.pory"
+# 247 "data/maps/CasaCirces/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 250 "data/maps/CasaCirces/scripts.pory"
+# 248 "data/maps/CasaCirces/scripts.pory"
 	removeobject LOCALID_CASACIRCES_CIRCE
-# 251 "data/maps/CasaCirces/scripts.pory"
+# 249 "data/maps/CasaCirces/scripts.pory"
 	setobjectxyperm LOCALID_CASACIRCES_CIRCE, 0, 0
-# 252 "data/maps/CasaCirces/scripts.pory"
+# 250 "data/maps/CasaCirces/scripts.pory"
 	setobjectmovementtype LOCALID_CASACIRCES_CIRCE, MOVEMENT_TYPE_INVISIBLE
-# 253 "data/maps/CasaCirces/scripts.pory"
+# 251 "data/maps/CasaCirces/scripts.pory"
 	addobject LOCALID_CASACIRCES_CIRCE
-# 254 "data/maps/CasaCirces/scripts.pory"
+# 252 "data/maps/CasaCirces/scripts.pory"
 	removeobject LOCALID_CASACIRCES_MISMAGIUS
-# 255 "data/maps/CasaCirces/scripts.pory"
+# 253 "data/maps/CasaCirces/scripts.pory"
 	removeobject LOCALID_CASACIRCES_CIRCE
-# 256 "data/maps/CasaCirces/scripts.pory"
+# 254 "data/maps/CasaCirces/scripts.pory"
 	setobjectxyperm LOCALID_CASACIRCES_MISMAGIUS, 0, 0
-# 257 "data/maps/CasaCirces/scripts.pory"
+# 255 "data/maps/CasaCirces/scripts.pory"
 	setobjectmovementtype LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_INVISIBLE
-# 258 "data/maps/CasaCirces/scripts.pory"
+# 256 "data/maps/CasaCirces/scripts.pory"
 	addobject LOCALID_CASACIRCES_MISMAGIUS
-# 260 "data/maps/CasaCirces/scripts.pory"
+# 258 "data/maps/CasaCirces/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 10
 	return
 
 
 CasaCirces_Text_Ulysses_ConfrontCirce1::
-# 265 "data/maps/CasaCirces/scripts.pory"
+# 263 "data/maps/CasaCirces/scripts.pory"
 	.string "Behold! The wicked witch of the forest!\n"
 	.string "We've got you cornered now!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses1::
-# 270 "data/maps/CasaCirces/scripts.pory"
+# 268 "data/maps/CasaCirces/scripts.pory"
 	.string "Hi! Here I am! You've really got me now,\n"
 	.string "but I wonder, who is this handsome man\l"
 	.string "who will take me?$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce2::
-# 276 "data/maps/CasaCirces/scripts.pory"
+# 274 "data/maps/CasaCirces/scripts.pory"
 	.string "Stay back you naughty witch, your time\n"
 	.string "has come. I'm here to punish you and put\l"
 	.string "an end to your evil magic! Don't try and\l"
 	.string "run!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses2::
-# 282 "data/maps/CasaCirces/scripts.pory"
+# 280 "data/maps/CasaCirces/scripts.pory"
 	.string "Don't try and run? I'd never dream of it!\n"
 	.string "Playing hard to get is not my style. I am\l"
 	.string "Circe, the lady of the woods. Naughty\l"
@@ -411,13 +411,13 @@ CasaCirces_Text_Circe_ConfrontUlysses2::
 	.string "gentleman caller.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce3::
-# 292 "data/maps/CasaCirces/scripts.pory"
+# 290 "data/maps/CasaCirces/scripts.pory"
 	.string "I am Ulysses, lord of Ithaca, and I've\n"
 	.string "come to save the men you've bewitched\l"
 	.string "on behalf of the people of the town.$"
 
 CasaCirces_Text_Circe_ConfrontUlysses3::
-# 298 "data/maps/CasaCirces/scripts.pory"
+# 296 "data/maps/CasaCirces/scripts.pory"
 	.string "Welcome, Lord Ulysses, to abode. Those\n"
 	.string "men, I think, bewitched and conquered\l"
 	.string "me more than I bewitched or ill-treated\l"
@@ -430,12 +430,12 @@ CasaCirces_Text_Circe_ConfrontUlysses3::
 	.string "previous forms.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce4::
-# 310 "data/maps/CasaCirces/scripts.pory"
+# 308 "data/maps/CasaCirces/scripts.pory"
 	.string "Enough waiting, woman, give me the\n"
 	.string "fruit!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses4::
-# 314 "data/maps/CasaCirces/scripts.pory"
+# 312 "data/maps/CasaCirces/scripts.pory"
 	.string "The Piña fruit, native to our island, is\n"
 	.string "very rare. The Piña tree only flowers\l"
 	.string "once in a generation we would need to\l"
@@ -453,7 +453,7 @@ CasaCirces_Text_Circe_ConfrontUlysses4::
 	.string "mischief together...$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce5::
-# 331 "data/maps/CasaCirces/scripts.pory"
+# 329 "data/maps/CasaCirces/scripts.pory"
 	.string "I think, for now, we'll have to trust the\n"
 	.string "witch. Don't worry, I think I can hold my\l"
 	.string "own if she tries any tricks I'll pin her\l"
@@ -465,34 +465,34 @@ CasaCirces_Text_Ulysses_ConfrontCirce5::
 	.string "up! Leave me and her alone.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce6::
-# 342 "data/maps/CasaCirces/scripts.pory"
+# 340 "data/maps/CasaCirces/scripts.pory"
 	.string "So be it, witch, I'll keep ahold of you\n"
 	.string "while my companion, {PLAYER}, fetches\l"
 	.string "the fruit you need to return the men to\l"
 	.string "their homes.$"
 
 CasaCirces_Text_Ulysses_AfterConfrontCirce::
-# 348 "data/maps/CasaCirces/scripts.pory"
+# 346 "data/maps/CasaCirces/scripts.pory"
 	.string "Let me handle Circe alone, you go search\n"
 	.string "the island and find the Piña fruit.$"
 
 CasaCirces_Text_Circe_AfterConfrontUlysses::
-# 353 "data/maps/CasaCirces/scripts.pory"
+# 351 "data/maps/CasaCirces/scripts.pory"
 	.string "The Piña tree only rarely bears fruit.\n"
 	.string "You'd better hurry up and start your\l"
 	.string "search if you have any hopes of finding\l"
 	.string "some.$"
 
 CasaCirces_Text_Circe_ConfrontPlayer1::
-# 359 "data/maps/CasaCirces/scripts.pory"
+# 357 "data/maps/CasaCirces/scripts.pory"
 	.string "You're too late.$"
 
 CasaCirces_Text_Circe_ConfrontPlayer2::
-# 363 "data/maps/CasaCirces/scripts.pory"
+# 361 "data/maps/CasaCirces/scripts.pory"
 	.string "Your friend is beyond your help, but\n"
 	.string "don't you worry. You'll be with him soon.$"
 
 CasaCirces_Text_CirceLost::
-# 368 "data/maps/CasaCirces/scripts.pory"
+# 366 "data/maps/CasaCirces/scripts.pory"
 	.string "Look what you've done! I'm melting! I'm\n"
 	.string "melting!$"
