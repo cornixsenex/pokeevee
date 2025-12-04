@@ -5,854 +5,615 @@
 #ifndef GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 #define GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 
-
-static const u8 sMapName_LITTLEROOT_TOWN[] = _("LITTLEROOT TOWN");
-static const u8 sMapName_OLDALE_TOWN[] = _("OLDALE TOWN");
-static const u8 sMapName_DEWFORD_TOWN[] = _("DEWFORD TOWN");
-static const u8 sMapName_LAVARIDGE_TOWN[] = _("LAVARIDGE TOWN");
-static const u8 sMapName_FALLARBOR_TOWN[] = _("FALLARBOR TOWN");
-static const u8 sMapName_VERDANTURF_TOWN[] = _("VERDANTURF TOWN");
-static const u8 sMapName_PACIFIDLOG_TOWN[] = _("PACIFIDLOG TOWN");
-static const u8 sMapName_PETALBURG_CITY[] = _("PETALBURG CITY");
-static const u8 sMapName_SLATEPORT_CITY[] = _("SLATEPORT CITY");
-static const u8 sMapName_MAUVILLE_CITY[] = _("MAUVILLE CITY");
-static const u8 sMapName_RUSTBORO_CITY[] = _("RUSTBORO CITY");
-static const u8 sMapName_FORTREE_CITY[] = _("FORTREE CITY");
-static const u8 sMapName_LILYCOVE_CITY[] = _("LILYCOVE CITY");
-static const u8 sMapName_MOSSDEEP_CITY[] = _("MOSSDEEP CITY");
-static const u8 sMapName_SOOTOPOLIS_CITY[] = _("SOOTOPOLIS CITY");
-static const u8 sMapName_EVER_GRANDE_CITY[] = _("EVER GRANDE CITY");
-static const u8 sMapName_ROUTE_101[] = _("ROUTE 101");
-static const u8 sMapName_ROUTE_102[] = _("ROUTE 102");
-static const u8 sMapName_ROUTE_103[] = _("ROUTE 103");
-static const u8 sMapName_ROUTE_104[] = _("ROUTE 104");
-static const u8 sMapName_ROUTE_105[] = _("ROUTE 105");
-static const u8 sMapName_ROUTE_106[] = _("ROUTE 106");
-static const u8 sMapName_ROUTE_107[] = _("ROUTE 107");
-static const u8 sMapName_ROUTE_108[] = _("ROUTE 108");
-static const u8 sMapName_ROUTE_109[] = _("ROUTE 109");
-static const u8 sMapName_ROUTE_110[] = _("ROUTE 110");
-static const u8 sMapName_ROUTE_111[] = _("ROUTE 111");
-static const u8 sMapName_ROUTE_112[] = _("ROUTE 112");
-static const u8 sMapName_ROUTE_113[] = _("ROUTE 113");
-static const u8 sMapName_ROUTE_114[] = _("ROUTE 114");
-static const u8 sMapName_ROUTE_115[] = _("ROUTE 115");
-static const u8 sMapName_ROUTE_116[] = _("ROUTE 116");
-static const u8 sMapName_ROUTE_117[] = _("ROUTE 117");
-static const u8 sMapName_ROUTE_118[] = _("ROUTE 118");
-static const u8 sMapName_ROUTE_119[] = _("ROUTE 119");
-static const u8 sMapName_ROUTE_120[] = _("ROUTE 120");
-static const u8 sMapName_ROUTE_121[] = _("ROUTE 121");
-static const u8 sMapName_ROUTE_122[] = _("ROUTE 122");
-static const u8 sMapName_ROUTE_123[] = _("ROUTE 123");
-static const u8 sMapName_ROUTE_124[] = _("ROUTE 124");
-static const u8 sMapName_ROUTE_125[] = _("ROUTE 125");
-static const u8 sMapName_ROUTE_126[] = _("ROUTE 126");
-static const u8 sMapName_ROUTE_127[] = _("ROUTE 127");
-static const u8 sMapName_ROUTE_128[] = _("ROUTE 128");
-static const u8 sMapName_ROUTE_129[] = _("ROUTE 129");
-static const u8 sMapName_ROUTE_130[] = _("ROUTE 130");
-static const u8 sMapName_ROUTE_131[] = _("ROUTE 131");
-static const u8 sMapName_ROUTE_132[] = _("ROUTE 132");
-static const u8 sMapName_ROUTE_133[] = _("ROUTE 133");
-static const u8 sMapName_ROUTE_134[] = _("ROUTE 134");
-static const u8 sMapName_UNDERWATER[] = _("UNDERWATER");
-static const u8 sMapName_GRANITE_CAVE[] = _("GRANITE CAVE");
-static const u8 sMapName_MT__CHIMNEY[] = _("MT. CHIMNEY");
-static const u8 sMapName_SAFARI_ZONE[] = _("SAFARI ZONE");
-static const u8 sMapName_BATTLE_FRONTIER[] = _("BATTLE FRONTIER");
-static const u8 sMapName_PETALBURG_WOODS[] = _("PETALBURG WOODS");
-static const u8 sMapName_RUSTURF_TUNNEL[] = _("RUSTURF TUNNEL");
-static const u8 sMapName_ABANDONED_SHIP[] = _("ABANDONED SHIP");
-static const u8 sMapName_NEW_MAUVILLE[] = _("NEW MAUVILLE");
-static const u8 sMapName_METEOR_FALLS[] = _("METEOR FALLS");
-static const u8 sMapName_MT__PYRE[] = _("MT. PYRE");
-static const u8 sMapName__AQUA__HIDEOUT[] = _("{AQUA} HIDEOUT");
-static const u8 sMapName_SHOAL_CAVE[] = _("SHOAL CAVE");
-static const u8 sMapName_SEAFLOOR_CAVERN[] = _("SEAFLOOR CAVERN");
-static const u8 sMapName_VICTORY_ROAD[] = _("VICTORY ROAD");
-static const u8 sMapName_MIRAGE_ISLAND[] = _("MIRAGE ISLAND");
-static const u8 sMapName_CAVE_OF_ORIGIN[] = _("CAVE OF ORIGIN");
-static const u8 sMapName_SOUTHERN_ISLAND[] = _("SOUTHERN ISLAND");
-static const u8 sMapName_FIERY_PATH[] = _("FIERY PATH");
-static const u8 sMapName_JAGGED_PASS[] = _("JAGGED PASS");
-static const u8 sMapName_SEALED_CHAMBER[] = _("SEALED CHAMBER");
-static const u8 sMapName_SCORCHED_SLAB[] = _("SCORCHED SLAB");
-static const u8 sMapName_ISLAND_CAVE[] = _("ISLAND CAVE");
-static const u8 sMapName_DESERT_RUINS[] = _("DESERT RUINS");
-static const u8 sMapName_ANCIENT_TOMB[] = _("ANCIENT TOMB");
-static const u8 sMapName_INSIDE_OF_TRUCK[] = _("INSIDE OF TRUCK");
-static const u8 sMapName_SKY_PILLAR[] = _("SKY PILLAR");
-static const u8 sMapName_SECRET_BASE[] = _("SECRET BASE");
-static const u8 sMapName_PALLET_TOWN[] = _("PALLET TOWN");
-static const u8 sMapName_VIRIDIAN_CITY[] = _("VIRIDIAN CITY");
-static const u8 sMapName_PEWTER_CITY[] = _("PEWTER CITY");
-static const u8 sMapName_CERULEAN_CITY[] = _("CERULEAN CITY");
-static const u8 sMapName_LAVENDER_TOWN[] = _("LAVENDER TOWN");
-static const u8 sMapName_VERMILION_CITY[] = _("VERMILION CITY");
-static const u8 sMapName_CELADON_CITY[] = _("CELADON CITY");
-static const u8 sMapName_FUCHSIA_CITY[] = _("FUCHSIA CITY");
-static const u8 sMapName_CINNABAR_ISLAND[] = _("CINNABAR ISLAND");
-static const u8 sMapName_INDIGO_PLATEAU[] = _("INDIGO PLATEAU");
-static const u8 sMapName_SAFFRON_CITY[] = _("SAFFRON CITY");
-static const u8 sMapName_ROUTE_4[] = _("ROUTE 4");
-static const u8 sMapName_ROUTE_10[] = _("ROUTE 10");
-static const u8 sMapName_ROUTE_1[] = _("ROUTE 1");
-static const u8 sMapName_ROUTE_2[] = _("ROUTE 2");
-static const u8 sMapName_ROUTE_3[] = _("ROUTE 3");
-static const u8 sMapName_ROUTE_5[] = _("ROUTE 5");
-static const u8 sMapName_ROUTE_6[] = _("ROUTE 6");
-static const u8 sMapName_ROUTE_7[] = _("ROUTE 7");
-static const u8 sMapName_ROUTE_8[] = _("ROUTE 8");
-static const u8 sMapName_ROUTE_9[] = _("ROUTE 9");
-static const u8 sMapName_ROUTE_11[] = _("ROUTE 11");
-static const u8 sMapName_ROUTE_12[] = _("ROUTE 12");
-static const u8 sMapName_ROUTE_13[] = _("ROUTE 13");
-static const u8 sMapName_ROUTE_14[] = _("ROUTE 14");
-static const u8 sMapName_ROUTE_15[] = _("ROUTE 15");
-static const u8 sMapName_ROUTE_16[] = _("ROUTE 16");
-static const u8 sMapName_ROUTE_17[] = _("ROUTE 17");
-static const u8 sMapName_ROUTE_18[] = _("ROUTE 18");
-static const u8 sMapName_ROUTE_19[] = _("ROUTE 19");
-static const u8 sMapName_ROUTE_20[] = _("ROUTE 20");
-static const u8 sMapName_ROUTE_21[] = _("ROUTE 21");
-static const u8 sMapName_ROUTE_22[] = _("ROUTE 22");
-static const u8 sMapName_ROUTE_23[] = _("ROUTE 23");
-static const u8 sMapName_ROUTE_24[] = _("ROUTE 24");
-static const u8 sMapName_ROUTE_25[] = _("ROUTE 25");
-static const u8 sMapName_VIRIDIAN_FOREST[] = _("VIRIDIAN FOREST");
-static const u8 sMapName_MT__MOON[] = _("MT. MOON");
-static const u8 sMapName_S_S__ANNE[] = _("S.S. ANNE");
-static const u8 sMapName_UNDERGROUND_PATH[] = _("UNDERGROUND PATH");
-static const u8 sMapName_DIGLETT_S_CAVE[] = _("DIGLETT'S CAVE");
-static const u8 sMapName_ROCKET_HIDEOUT[] = _("ROCKET HIDEOUT");
-static const u8 sMapName_SILPH_CO_[] = _("SILPH CO.");
-static const u8 sMapName_POK__MON_MANSION[] = _("POKéMON MANSION");
-static const u8 sMapName_POK__MON_LEAGUE[] = _("POKéMON LEAGUE");
-static const u8 sMapName_ROCK_TUNNEL[] = _("ROCK TUNNEL");
-static const u8 sMapName_SEAFOAM_ISLANDS[] = _("SEAFOAM ISLANDS");
-static const u8 sMapName_POK__MON_TOWER[] = _("POKéMON TOWER");
-static const u8 sMapName_CERULEAN_CAVE[] = _("CERULEAN CAVE");
-static const u8 sMapName_POWER_PLANT[] = _("POWER PLANT");
-static const u8 sMapName_ONE_ISLAND[] = _("ONE ISLAND");
-static const u8 sMapName_TWO_ISLAND[] = _("TWO ISLAND");
-static const u8 sMapName_THREE_ISLAND[] = _("THREE ISLAND");
-static const u8 sMapName_FOUR_ISLAND[] = _("FOUR ISLAND");
-static const u8 sMapName_FIVE_ISLAND[] = _("FIVE ISLAND");
-static const u8 sMapName_SEVEN_ISLAND[] = _("SEVEN ISLAND");
-static const u8 sMapName_SIX_ISLAND[] = _("SIX ISLAND");
-static const u8 sMapName_KINDLE_ROAD[] = _("KINDLE ROAD");
-static const u8 sMapName_TREASURE_BEACH[] = _("TREASURE BEACH");
-static const u8 sMapName_CAPE_BRINK[] = _("CAPE BRINK");
-static const u8 sMapName_BOND_BRIDGE[] = _("BOND BRIDGE");
-static const u8 sMapName_THREE_ISLE_PORT[] = _("THREE ISLE PORT");
-static const u8 sMapName_SEVII_ISLE_6[] = _("SEVII ISLE 6");
-static const u8 sMapName_AEDES_AQVA[] = _("AEDES AQVA");
-static const u8 sMapName_AEDES_TERRA[] = _("AEDES TERRA");
-static const u8 sMapName_AEDES_LVX[] = _("AEDES LVX");
-static const u8 sMapName_AEDES_TRIVIS[] = _("AEDES TRIVIS");
-static const u8 sMapName_SALTY_SPITOON[] = _("SALTY SPITOON");
-static const u8 sMapName_CAVERNA_CAMELA[] = _("CAVERNA CAMELA");
-static const u8 sMapName_ECCLESIA[] = _("ECCLESIA");
-static const u8 sMapName_PVTEVS_OBSCVRVS[] = _("PVTEVS OBSCVRVS");
-static const u8 sMapName_ELECTRIFICINA[] = _("ELECTRIFICINA");
-static const u8 sMapName_PYRAMIS[] = _("PYRAMIS");
-static const u8 sMapName_VALLIS_PYRAMIDIS[] = _("VALLIS PYRAMIDIS");
-static const u8 sMapName_D__SOLITARIVM[] = _("D. SOLITARIVM");
-static const u8 sMapName_D__CACTORVM[] = _("D. CACTORVM");
-static const u8 sMapName_DESERTVM_CALIDVM[] = _("DESERTVM CALIDVM");
-static const u8 sMapName_COLVMNAR[] = _("COLVMNAR");
-static const u8 sMapName_CAMPVS_HARPASTI[] = _("CAMPVS HARPASTI");
-static const u8 sMapName_OASIS[] = _("OASIS");
-static const u8 sMapName_PALMAE[] = _("PALMAE");
-static const u8 sMapName_SCHOLA[] = _("SCHOLA");
-static const u8 sMapName_ARDENS[] = _("ARDENS");
-static const u8 sMapName_IGNIS_MONS[] = _("IGNIS MONS");
-static const u8 sMapName_DESERET[] = _("DESERET");
-static const u8 sMapName_VRBIA[] = _("VRBIA");
-static const u8 sMapName_HARENAE_AVREAE[] = _("HARENAE AVREAE");
-static const u8 sMapName_PALATIVM_FELIX[] = _("PALATIVM FELIX");
-static const u8 sMapName_PECCATVM[] = _("PECCATVM");
-static const u8 sMapName_VIA_POSTERIOR[] = _("VIA POSTERIOR");
-static const u8 sMapName_D__COLVMNARIS[] = _("D. COLVMNARIS");
-static const u8 sMapName_VIA_SAXOSA[] = _("VIA SAXOSA");
-static const u8 sMapName_VIA_MAGNA[] = _("VIA MAGNA");
-static const u8 sMapName_ROBVSTICA[] = _("ROBVSTICA");
-static const u8 sMapName_VENATOR_MONS[] = _("VENATOR MONS");
-static const u8 sMapName_VILLA_VENATORVM[] = _("VILLA VENATORVM");
-static const u8 sMapName_SABINA_NOVA[] = _("SABINA NOVA");
-static const u8 sMapName_VILLA_VALLIS[] = _("VILLA VALLIS");
-static const u8 sMapName_MONTES_VIGILIAE[] = _("MONTES VIGILIAE");
-static const u8 sMapName_VILLA_VIVARIA[] = _("VILLA VIVARIA");
-static const u8 sMapName_VIA_LITORALIS[] = _("VIA LITORALIS");
-static const u8 sMapName_CASTRVM[] = _("CASTRVM");
-static const u8 sMapName_SINVS_PACIFICVS[] = _("SINVS PACIFICVS");
-static const u8 sMapName_SPECIAL_AREA[] = _("SPECIAL AREA");
-static const u8 sMapName_SALINAE[] = _("SALINAE");
-static const u8 sMapName_LVPERCAL[] = _("LVPERCAL");
-static const u8 sMapName_TVRRIS_SALTVS[] = _("TVRRIS SALTVS");
-static const u8 sMapName_TROPICANA[] = _("TROPICANA");
-static const u8 sMapName_AEDES_SVB_MONTE[] = _("AEDES SVB MONTE");
-static const u8 sMapName_MORTIA[] = _("MORTIA");
-static const u8 sMapName_SCYLLA_CHARYBDIS[] = _("SCYLLA CHARYBDIS");
-static const u8 sMapName_THERMAE[] = _("THERMAE");
-static const u8 sMapName_HORTVS_PVBLICVS[] = _("HORTVS PVBLICVS");
-static const u8 sMapName_VILLAE_RVSTICAE[] = _("VILLAE RVSTICAE");
-static const u8 sMapName_TROIA[] = _("TROIA");
-static const u8 sMapName_ILIVM[] = _("ILIVM");
-static const u8 sMapName_CIRCVS[] = _("CIRCVS");
-static const u8 sMapName_PORTVS_VRBIS[] = _("PORTVS VRBIS");
-static const u8 sMapName_TRANQVILLITAS[] = _("TRANQVILLITAS");
-static const u8 sMapName_ACTA_TRANQVILLA[] = _("ACTA TRANQVILLA");
-static const u8 sMapName_ELICIUS_BEACH[] = _("ELICIUS BEACH");
-static const u8 sMapName_VILLA_FLOREA[] = _("VILLA FLOREA");
-static const u8 sMapName_VIA_FLOREA[] = _("VIA FLOREA");
-static const u8 sMapName_ALBION[] = _("ALBION");
-static const u8 sMapName_VIA_ARBVSTA[] = _("VIA ARBVSTA");
-static const u8 sMapName_PORTVS_PRIMVS[] = _("PORTVS PRIMVS");
-static const u8 sMapName_SINVS_CAMELVS[] = _("SINVS CAMELVS");
-static const u8 sMapName_DELTA_DRACI[] = _("DELTA DRACI");
-static const u8 sMapName_MARE_OCCIDENS[] = _("MARE OCCIDENS");
-static const u8 sMapName_MARE_ORIENS[] = _("MARE ORIENS");
-static const u8 sMapName_MARE_INTERNVM[] = _("MARE INTERNVM");
-static const u8 sMapName_MARE_TRANQVILLVM[] = _("MARE TRANQVILLVM");
-static const u8 sMapName_MARE_TROPICVM[] = _("MARE TROPICVM");
-static const u8 sMapName_MARE_SVBTROPICVM[] = _("MARE SVBTROPICVM");
-static const u8 sMapName_MARE_MORTVORVM[] = _("MARE MORTVORVM");
-static const u8 sMapName_ISLA_IGNIFERA[] = _("ISLA IGNIFERA");
-static const u8 sMapName_ISLA_HERBA_BONA[] = _("ISLA HERBA BONA");
-static const u8 sMapName_ISLA_TROPICA[] = _("ISLA TROPICA");
-static const u8 sMapName_ISLA_PINEA[] = _("ISLA PINEA");
-static const u8 sMapName_ISLA_HESPERIA[] = _("ISLA HESPERIA");
-static const u8 sMapName_ISLA_ITHACA[] = _("ISLA ITHACA");
-static const u8 sMapName_ISLA_SOLATA[] = _("ISLA SOLATA");
-static const u8 sMapName_ISLA_ARIDA[] = _("ISLA ARIDA");
-static const u8 sMapName_ACTA_ECHONA[] = _("ACTA ECHONA");
-static const u8 sMapName_SILVA[] = _("SILVA");
-static const u8 sMapName_SILVA_PROFVNDA[] = _("SILVA PROFVNDA");
-static const u8 sMapName_DRACVS[] = _("DRACVS");
-static const u8 sMapName_SALIX[] = _("SALIX");
-static const u8 sMapName_LACVS_DRACVS[] = _("LACVS DRACVS");
-static const u8 sMapName_LITVS_LACVS[] = _("LITVS LACVS");
-static const u8 sMapName_DRACVS_SVPERIOR[] = _("DRACVS SVPERIOR");
-static const u8 sMapName_DRACVS_INFERIOR[] = _("DRACVS INFERIOR");
-static const u8 sMapName_UPPER_EAST_DRAKE[] = _("UPPER EAST DRAKE");
-static const u8 sMapName_LOWER_EAST_DRAKE[] = _("LOWER EAST DRAKE");
-static const u8 sMapName_UPPER_WEST_DRAKE[] = _("UPPER WEST DRAKE");
-static const u8 sMapName_LOWER_WEST_DRAKE[] = _("LOWER WEST DRAKE");
-static const u8 sMapName_CASTALIA[] = _("CASTALIA");
-static const u8 sMapName_SINVS_CLARVS[] = _("SINVS CLARVS");
-static const u8 sMapName_VIA_FIDELIVM[] = _("VIA FIDELIVM");
-
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN] = {
         .x = 4,
         .y = 11,
         .width = 1,
         .height = 1,
-        .name = sMapName_LITTLEROOT_TOWN,
+        .name = COMPOUND_STRING("LITTLEROOT TOWN"),
     },
     [MAPSEC_OLDALE_TOWN] = {
         .x = 4,
         .y = 9,
         .width = 1,
         .height = 1,
-        .name = sMapName_OLDALE_TOWN,
+        .name = COMPOUND_STRING("OLDALE TOWN"),
     },
     [MAPSEC_DEWFORD_TOWN] = {
         .x = 2,
         .y = 14,
         .width = 1,
         .height = 1,
-        .name = sMapName_DEWFORD_TOWN,
+        .name = COMPOUND_STRING("DEWFORD TOWN"),
     },
     [MAPSEC_LAVARIDGE_TOWN] = {
         .x = 5,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sMapName_LAVARIDGE_TOWN,
+        .name = COMPOUND_STRING("LAVARIDGE TOWN"),
     },
     [MAPSEC_FALLARBOR_TOWN] = {
         .x = 3,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_FALLARBOR_TOWN,
+        .name = COMPOUND_STRING("FALLARBOR TOWN"),
     },
     [MAPSEC_VERDANTURF_TOWN] = {
         .x = 4,
         .y = 6,
         .width = 1,
         .height = 1,
-        .name = sMapName_VERDANTURF_TOWN,
+        .name = COMPOUND_STRING("VERDANTURF TOWN"),
     },
     [MAPSEC_PACIFIDLOG_TOWN] = {
         .x = 17,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sMapName_PACIFIDLOG_TOWN,
+        .name = COMPOUND_STRING("PACIFIDLOG TOWN"),
     },
     [MAPSEC_PETALBURG_CITY] = {
         .x = 1,
         .y = 9,
         .width = 1,
         .height = 1,
-        .name = sMapName_PETALBURG_CITY,
+        .name = COMPOUND_STRING("PETALBURG CITY"),
     },
     [MAPSEC_SLATEPORT_CITY] = {
         .x = 8,
         .y = 10,
         .width = 1,
         .height = 2,
-        .name = sMapName_SLATEPORT_CITY,
+        .name = COMPOUND_STRING("SLATEPORT CITY"),
     },
     [MAPSEC_MAUVILLE_CITY] = {
         .x = 8,
         .y = 6,
         .width = 2,
         .height = 1,
-        .name = sMapName_MAUVILLE_CITY,
+        .name = COMPOUND_STRING("MAUVILLE CITY"),
     },
     [MAPSEC_RUSTBORO_CITY] = {
         .x = 0,
         .y = 5,
         .width = 1,
         .height = 2,
-        .name = sMapName_RUSTBORO_CITY,
+        .name = COMPOUND_STRING("RUSTBORO CITY"),
     },
     [MAPSEC_FORTREE_CITY] = {
         .x = 12,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_FORTREE_CITY,
+        .name = COMPOUND_STRING("FORTREE CITY"),
     },
     [MAPSEC_LILYCOVE_CITY] = {
         .x = 18,
         .y = 3,
         .width = 2,
         .height = 1,
-        .name = sMapName_LILYCOVE_CITY,
+        .name = COMPOUND_STRING("LILYCOVE CITY"),
     },
     [MAPSEC_MOSSDEEP_CITY] = {
         .x = 24,
         .y = 5,
         .width = 2,
         .height = 1,
-        .name = sMapName_MOSSDEEP_CITY,
+        .name = COMPOUND_STRING("MOSSDEEP CITY"),
     },
     [MAPSEC_SOOTOPOLIS_CITY] = {
         .x = 21,
         .y = 7,
         .width = 1,
         .height = 1,
-        .name = sMapName_SOOTOPOLIS_CITY,
+        .name = COMPOUND_STRING("SOOTOPOLIS CITY"),
     },
     [MAPSEC_EVER_GRANDE_CITY] = {
         .x = 27,
         .y = 8,
         .width = 1,
         .height = 2,
-        .name = sMapName_EVER_GRANDE_CITY,
+        .name = COMPOUND_STRING("EVER GRANDE CITY"),
     },
     [MAPSEC_ROUTE_101] = {
         .x = 4,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_101,
+        .name = COMPOUND_STRING("ROUTE 101"),
     },
     [MAPSEC_ROUTE_102] = {
         .x = 2,
         .y = 9,
         .width = 2,
         .height = 1,
-        .name = sMapName_ROUTE_102,
+        .name = COMPOUND_STRING("ROUTE 102"),
     },
     [MAPSEC_ROUTE_103] = {
         .x = 4,
         .y = 8,
         .width = 4,
         .height = 1,
-        .name = sMapName_ROUTE_103,
+        .name = COMPOUND_STRING("ROUTE 103"),
     },
     [MAPSEC_ROUTE_104] = {
         .x = 0,
         .y = 7,
         .width = 1,
         .height = 3,
-        .name = sMapName_ROUTE_104,
+        .name = COMPOUND_STRING("ROUTE 104"),
     },
     [MAPSEC_ROUTE_105] = {
         .x = 0,
         .y = 10,
         .width = 1,
         .height = 3,
-        .name = sMapName_ROUTE_105,
+        .name = COMPOUND_STRING("ROUTE 105"),
     },
     [MAPSEC_ROUTE_106] = {
         .x = 0,
         .y = 13,
         .width = 2,
         .height = 1,
-        .name = sMapName_ROUTE_106,
+        .name = COMPOUND_STRING("ROUTE 106"),
     },
     [MAPSEC_ROUTE_107] = {
         .x = 3,
         .y = 14,
         .width = 3,
         .height = 1,
-        .name = sMapName_ROUTE_107,
+        .name = COMPOUND_STRING("ROUTE 107"),
     },
     [MAPSEC_ROUTE_108] = {
         .x = 6,
         .y = 14,
         .width = 2,
         .height = 1,
-        .name = sMapName_ROUTE_108,
+        .name = COMPOUND_STRING("ROUTE 108"),
     },
     [MAPSEC_ROUTE_109] = {
         .x = 8,
         .y = 12,
         .width = 1,
         .height = 3,
-        .name = sMapName_ROUTE_109,
+        .name = COMPOUND_STRING("ROUTE 109"),
     },
     [MAPSEC_ROUTE_110] = {
         .x = 8,
         .y = 7,
         .width = 1,
         .height = 3,
-        .name = sMapName_ROUTE_110,
+        .name = COMPOUND_STRING("ROUTE 110"),
     },
     [MAPSEC_ROUTE_111] = {
         .x = 8,
         .y = 0,
         .width = 1,
         .height = 6,
-        .name = sMapName_ROUTE_111,
+        .name = COMPOUND_STRING("ROUTE 111"),
     },
     [MAPSEC_ROUTE_112] = {
         .x = 6,
         .y = 3,
         .width = 2,
         .height = 1,
-        .name = sMapName_ROUTE_112,
+        .name = COMPOUND_STRING("ROUTE 112"),
     },
     [MAPSEC_ROUTE_113] = {
         .x = 4,
         .y = 0,
         .width = 4,
         .height = 1,
-        .name = sMapName_ROUTE_113,
+        .name = COMPOUND_STRING("ROUTE 113"),
     },
     [MAPSEC_ROUTE_114] = {
         .x = 1,
         .y = 0,
         .width = 2,
         .height = 3,
-        .name = sMapName_ROUTE_114,
+        .name = COMPOUND_STRING("ROUTE 114"),
     },
     [MAPSEC_ROUTE_115] = {
         .x = 0,
         .y = 2,
         .width = 1,
         .height = 3,
-        .name = sMapName_ROUTE_115,
+        .name = COMPOUND_STRING("ROUTE 115"),
     },
     [MAPSEC_ROUTE_116] = {
         .x = 1,
         .y = 5,
         .width = 4,
         .height = 1,
-        .name = sMapName_ROUTE_116,
+        .name = COMPOUND_STRING("ROUTE 116"),
     },
     [MAPSEC_ROUTE_117] = {
         .x = 5,
         .y = 6,
         .width = 3,
         .height = 1,
-        .name = sMapName_ROUTE_117,
+        .name = COMPOUND_STRING("ROUTE 117"),
     },
     [MAPSEC_ROUTE_118] = {
         .x = 10,
         .y = 6,
         .width = 2,
         .height = 1,
-        .name = sMapName_ROUTE_118,
+        .name = COMPOUND_STRING("ROUTE 118"),
     },
     [MAPSEC_ROUTE_119] = {
         .x = 11,
         .y = 0,
         .width = 1,
         .height = 6,
-        .name = sMapName_ROUTE_119,
+        .name = COMPOUND_STRING("ROUTE 119"),
     },
     [MAPSEC_ROUTE_120] = {
         .x = 13,
         .y = 0,
         .width = 1,
         .height = 4,
-        .name = sMapName_ROUTE_120,
+        .name = COMPOUND_STRING("ROUTE 120"),
     },
     [MAPSEC_ROUTE_121] = {
         .x = 14,
         .y = 3,
         .width = 4,
         .height = 1,
-        .name = sMapName_ROUTE_121,
+        .name = COMPOUND_STRING("ROUTE 121"),
     },
     [MAPSEC_ROUTE_122] = {
         .x = 16,
         .y = 4,
         .width = 1,
         .height = 2,
-        .name = sMapName_ROUTE_122,
+        .name = COMPOUND_STRING("ROUTE 122"),
     },
     [MAPSEC_ROUTE_123] = {
         .x = 12,
         .y = 6,
         .width = 5,
         .height = 1,
-        .name = sMapName_ROUTE_123,
+        .name = COMPOUND_STRING("ROUTE 123"),
     },
     [MAPSEC_ROUTE_124] = {
         .x = 20,
         .y = 3,
         .width = 4,
         .height = 3,
-        .name = sMapName_ROUTE_124,
+        .name = COMPOUND_STRING("ROUTE 124"),
     },
     [MAPSEC_ROUTE_125] = {
         .x = 24,
         .y = 3,
         .width = 2,
         .height = 2,
-        .name = sMapName_ROUTE_125,
+        .name = COMPOUND_STRING("ROUTE 125"),
     },
     [MAPSEC_ROUTE_126] = {
         .x = 20,
         .y = 6,
         .width = 3,
         .height = 3,
-        .name = sMapName_ROUTE_126,
+        .name = COMPOUND_STRING("ROUTE 126"),
     },
     [MAPSEC_ROUTE_127] = {
         .x = 23,
         .y = 6,
         .width = 3,
         .height = 3,
-        .name = sMapName_ROUTE_127,
+        .name = COMPOUND_STRING("ROUTE 127"),
     },
     [MAPSEC_ROUTE_128] = {
         .x = 23,
         .y = 9,
         .width = 4,
         .height = 1,
-        .name = sMapName_ROUTE_128,
+        .name = COMPOUND_STRING("ROUTE 128"),
     },
     [MAPSEC_ROUTE_129] = {
         .x = 24,
         .y = 10,
         .width = 2,
         .height = 1,
-        .name = sMapName_ROUTE_129,
+        .name = COMPOUND_STRING("ROUTE 129"),
     },
     [MAPSEC_ROUTE_130] = {
         .x = 21,
         .y = 10,
         .width = 3,
         .height = 1,
-        .name = sMapName_ROUTE_130,
+        .name = COMPOUND_STRING("ROUTE 130"),
     },
     [MAPSEC_ROUTE_131] = {
         .x = 18,
         .y = 10,
         .width = 3,
         .height = 1,
-        .name = sMapName_ROUTE_131,
+        .name = COMPOUND_STRING("ROUTE 131"),
     },
     [MAPSEC_ROUTE_132] = {
         .x = 15,
         .y = 10,
         .width = 2,
         .height = 1,
-        .name = sMapName_ROUTE_132,
+        .name = COMPOUND_STRING("ROUTE 132"),
     },
     [MAPSEC_ROUTE_133] = {
         .x = 12,
         .y = 10,
         .width = 3,
         .height = 1,
-        .name = sMapName_ROUTE_133,
+        .name = COMPOUND_STRING("ROUTE 133"),
     },
     [MAPSEC_ROUTE_134] = {
         .x = 9,
         .y = 10,
         .width = 3,
         .height = 1,
-        .name = sMapName_ROUTE_134,
+        .name = COMPOUND_STRING("ROUTE 134"),
     },
     [MAPSEC_UNDERWATER_124] = {
         .x = 20,
         .y = 3,
         .width = 4,
         .height = 3,
-        .name = sMapName_UNDERWATER,
+        .name = COMPOUND_STRING("UNDERWATER"),
     },
     [MAPSEC_UNDERWATER_126] = {
         .x = 20,
         .y = 6,
         .width = 3,
         .height = 3,
-        .name = sMapName_UNDERWATER,
+        .name = COMPOUND_STRING("UNDERWATER"),
     },
     [MAPSEC_UNDERWATER_127] = {
         .x = 23,
         .y = 6,
         .width = 3,
         .height = 3,
-        .name = sMapName_UNDERWATER,
+        .name = COMPOUND_STRING("UNDERWATER"),
     },
     [MAPSEC_UNDERWATER_128] = {
         .x = 23,
         .y = 9,
         .width = 4,
         .height = 1,
-        .name = sMapName_UNDERWATER,
+        .name = COMPOUND_STRING("UNDERWATER"),
     },
     [MAPSEC_UNDERWATER_SOOTOPOLIS] = {
         .x = 21,
         .y = 7,
         .width = 1,
         .height = 1,
-        .name = sMapName_UNDERWATER,
+        .name = COMPOUND_STRING("UNDERWATER"),
     },
     [MAPSEC_GRANITE_CAVE] = {
         .x = 1,
         .y = 13,
         .width = 1,
         .height = 1,
-        .name = sMapName_GRANITE_CAVE,
+        .name = COMPOUND_STRING("GRANITE CAVE"),
     },
     [MAPSEC_MT_CHIMNEY] = {
         .x = 6,
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sMapName_MT__CHIMNEY,
+        .name = COMPOUND_STRING("MT. CHIMNEY"),
     },
     [MAPSEC_SAFARI_ZONE] = {
         .x = 16,
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sMapName_SAFARI_ZONE,
+        .name = COMPOUND_STRING("SAFARI ZONE"),
     },
     [MAPSEC_BATTLE_FRONTIER] = {
         .x = 22,
         .y = 12,
         .width = 1,
         .height = 1,
-        .name = sMapName_BATTLE_FRONTIER,
+        .name = COMPOUND_STRING("BATTLE FRONTIER"),
     },
     [MAPSEC_PETALBURG_WOODS] = {
         .x = 0,
         .y = 8,
         .width = 1,
         .height = 1,
-        .name = sMapName_PETALBURG_WOODS,
+        .name = COMPOUND_STRING("PETALBURG WOODS"),
     },
     [MAPSEC_RUSTURF_TUNNEL] = {
         .x = 2,
         .y = 5,
         .width = 1,
         .height = 1,
-        .name = sMapName_RUSTURF_TUNNEL,
+        .name = COMPOUND_STRING("RUSTURF TUNNEL"),
     },
     [MAPSEC_ABANDONED_SHIP] = {
         .x = 6,
         .y = 14,
         .width = 1,
         .height = 1,
-        .name = sMapName_ABANDONED_SHIP,
+        .name = COMPOUND_STRING("ABANDONED SHIP"),
     },
     [MAPSEC_NEW_MAUVILLE] = {
         .x = 8,
         .y = 7,
         .width = 1,
         .height = 1,
-        .name = sMapName_NEW_MAUVILLE,
+        .name = COMPOUND_STRING("NEW MAUVILLE"),
     },
     [MAPSEC_METEOR_FALLS] = {
         .x = 0,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sMapName_METEOR_FALLS,
+        .name = COMPOUND_STRING("METEOR FALLS"),
     },
     [MAPSEC_METEOR_FALLS2] = {
         .x = 1,
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sMapName_METEOR_FALLS,
+        .name = COMPOUND_STRING("METEOR FALLS"),
     },
     [MAPSEC_MT_PYRE] = {
         .x = 16,
         .y = 4,
         .width = 1,
         .height = 1,
-        .name = sMapName_MT__PYRE,
+        .name = COMPOUND_STRING("MT. PYRE"),
     },
     [MAPSEC_AQUA_HIDEOUT_OLD] = {
         .x = 19,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sMapName__AQUA__HIDEOUT,
+        .name = COMPOUND_STRING("{AQUA} HIDEOUT"),
     },
     [MAPSEC_SHOAL_CAVE] = {
         .x = 24,
         .y = 4,
         .width = 1,
         .height = 1,
-        .name = sMapName_SHOAL_CAVE,
+        .name = COMPOUND_STRING("SHOAL CAVE"),
     },
     [MAPSEC_SEAFLOOR_CAVERN] = {
         .x = 24,
         .y = 9,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEAFLOOR_CAVERN,
+        .name = COMPOUND_STRING("SEAFLOOR CAVERN"),
     },
     [MAPSEC_UNDERWATER_SEAFLOOR_CAVERN] = {
         .x = 24,
         .y = 9,
         .width = 1,
         .height = 1,
-        .name = sMapName_UNDERWATER,
+        .name = COMPOUND_STRING("UNDERWATER"),
     },
     [MAPSEC_VICTORY_ROAD] = {
         .x = 27,
         .y = 9,
         .width = 1,
         .height = 1,
-        .name = sMapName_VICTORY_ROAD,
+        .name = COMPOUND_STRING("VICTORY ROAD"),
     },
     [MAPSEC_MIRAGE_ISLAND] = {
         .x = 17,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sMapName_MIRAGE_ISLAND,
+        .name = COMPOUND_STRING("MIRAGE ISLAND"),
     },
     [MAPSEC_CAVE_OF_ORIGIN] = {
         .x = 21,
         .y = 7,
         .width = 1,
         .height = 1,
-        .name = sMapName_CAVE_OF_ORIGIN,
+        .name = COMPOUND_STRING("CAVE OF ORIGIN"),
     },
     [MAPSEC_SOUTHERN_ISLAND] = {
         .x = 12,
         .y = 14,
         .width = 1,
         .height = 1,
-        .name = sMapName_SOUTHERN_ISLAND,
+        .name = COMPOUND_STRING("SOUTHERN ISLAND"),
     },
     [MAPSEC_FIERY_PATH] = {
         .x = 6,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sMapName_FIERY_PATH,
+        .name = COMPOUND_STRING("FIERY PATH"),
     },
     [MAPSEC_FIERY_PATH2] = {
         .x = 7,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sMapName_FIERY_PATH,
+        .name = COMPOUND_STRING("FIERY PATH"),
     },
     [MAPSEC_JAGGED_PASS] = {
         .x = 6,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sMapName_JAGGED_PASS,
+        .name = COMPOUND_STRING("JAGGED PASS"),
     },
     [MAPSEC_JAGGED_PASS2] = {
         .x = 7,
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sMapName_JAGGED_PASS,
+        .name = COMPOUND_STRING("JAGGED PASS"),
     },
     [MAPSEC_SEALED_CHAMBER] = {
         .x = 11,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEALED_CHAMBER,
+        .name = COMPOUND_STRING("SEALED CHAMBER"),
     },
     [MAPSEC_UNDERWATER_SEALED_CHAMBER] = {
         .x = 11,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sMapName_UNDERWATER,
+        .name = COMPOUND_STRING("UNDERWATER"),
     },
     [MAPSEC_SCORCHED_SLAB] = {
         .x = 13,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SCORCHED_SLAB,
+        .name = COMPOUND_STRING("SCORCHED SLAB"),
     },
     [MAPSEC_ISLAND_CAVE] = {
         .x = 0,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLAND_CAVE,
+        .name = COMPOUND_STRING("ISLAND CAVE"),
     },
     [MAPSEC_DESERT_RUINS] = {
         .x = 8,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sMapName_DESERT_RUINS,
+        .name = COMPOUND_STRING("DESERT RUINS"),
     },
     [MAPSEC_ANCIENT_TOMB] = {
         .x = 13,
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sMapName_ANCIENT_TOMB,
+        .name = COMPOUND_STRING("ANCIENT TOMB"),
     },
     [MAPSEC_INSIDE_OF_TRUCK] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_INSIDE_OF_TRUCK,
+        .name = COMPOUND_STRING("INSIDE OF TRUCK"),
     },
     [MAPSEC_SKY_PILLAR] = {
         .x = 19,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sMapName_SKY_PILLAR,
+        .name = COMPOUND_STRING("SKY PILLAR"),
     },
     [MAPSEC_SECRET_BASE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SECRET_BASE,
+        .name = COMPOUND_STRING("SECRET BASE"),
     },
     [MAPSEC_DYNAMIC] = {
         .x = 0,
@@ -866,1148 +627,1148 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PALLET_TOWN,
+        .name = COMPOUND_STRING("PALLET TOWN"),
     },
     [MAPSEC_VIRIDIAN_CITY] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIRIDIAN_CITY,
+        .name = COMPOUND_STRING("VIRIDIAN CITY"),
     },
     [MAPSEC_PEWTER_CITY] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PEWTER_CITY,
+        .name = COMPOUND_STRING("PEWTER CITY"),
     },
     [MAPSEC_CERULEAN_CITY] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CERULEAN_CITY,
+        .name = COMPOUND_STRING("CERULEAN CITY"),
     },
     [MAPSEC_LAVENDER_TOWN] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_LAVENDER_TOWN,
+        .name = COMPOUND_STRING("LAVENDER TOWN"),
     },
     [MAPSEC_VERMILION_CITY] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VERMILION_CITY,
+        .name = COMPOUND_STRING("VERMILION CITY"),
     },
     [MAPSEC_CELADON_CITY] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CELADON_CITY,
+        .name = COMPOUND_STRING("CELADON CITY"),
     },
     [MAPSEC_FUCHSIA_CITY] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_FUCHSIA_CITY,
+        .name = COMPOUND_STRING("FUCHSIA CITY"),
     },
     [MAPSEC_CINNABAR_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CINNABAR_ISLAND,
+        .name = COMPOUND_STRING("CINNABAR ISLAND"),
     },
     [MAPSEC_INDIGO_PLATEAU] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_INDIGO_PLATEAU,
+        .name = COMPOUND_STRING("INDIGO PLATEAU"),
     },
     [MAPSEC_SAFFRON_CITY] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SAFFRON_CITY,
+        .name = COMPOUND_STRING("SAFFRON CITY"),
     },
     [MAPSEC_ROUTE_4_POKECENTER] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_4,
+        .name = COMPOUND_STRING("ROUTE 4"),
     },
     [MAPSEC_ROUTE_10_POKECENTER] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_10,
+        .name = COMPOUND_STRING("ROUTE 10"),
     },
     [MAPSEC_ROUTE_1] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_1,
+        .name = COMPOUND_STRING("ROUTE 1"),
     },
     [MAPSEC_ROUTE_2] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_2,
+        .name = COMPOUND_STRING("ROUTE 2"),
     },
     [MAPSEC_ROUTE_3] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_3,
+        .name = COMPOUND_STRING("ROUTE 3"),
     },
     [MAPSEC_ROUTE_4] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_4,
+        .name = COMPOUND_STRING("ROUTE 4"),
     },
     [MAPSEC_ROUTE_5] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_5,
+        .name = COMPOUND_STRING("ROUTE 5"),
     },
     [MAPSEC_ROUTE_6] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_6,
+        .name = COMPOUND_STRING("ROUTE 6"),
     },
     [MAPSEC_ROUTE_7] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_7,
+        .name = COMPOUND_STRING("ROUTE 7"),
     },
     [MAPSEC_ROUTE_8] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_8,
+        .name = COMPOUND_STRING("ROUTE 8"),
     },
     [MAPSEC_ROUTE_9] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_9,
+        .name = COMPOUND_STRING("ROUTE 9"),
     },
     [MAPSEC_ROUTE_10] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_10,
+        .name = COMPOUND_STRING("ROUTE 10"),
     },
     [MAPSEC_ROUTE_11] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_11,
+        .name = COMPOUND_STRING("ROUTE 11"),
     },
     [MAPSEC_ROUTE_12] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_12,
+        .name = COMPOUND_STRING("ROUTE 12"),
     },
     [MAPSEC_ROUTE_13] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_13,
+        .name = COMPOUND_STRING("ROUTE 13"),
     },
     [MAPSEC_ROUTE_14] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_14,
+        .name = COMPOUND_STRING("ROUTE 14"),
     },
     [MAPSEC_ROUTE_15] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_15,
+        .name = COMPOUND_STRING("ROUTE 15"),
     },
     [MAPSEC_ROUTE_16] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_16,
+        .name = COMPOUND_STRING("ROUTE 16"),
     },
     [MAPSEC_ROUTE_17] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_17,
+        .name = COMPOUND_STRING("ROUTE 17"),
     },
     [MAPSEC_ROUTE_18] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_18,
+        .name = COMPOUND_STRING("ROUTE 18"),
     },
     [MAPSEC_ROUTE_19] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_19,
+        .name = COMPOUND_STRING("ROUTE 19"),
     },
     [MAPSEC_ROUTE_20] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_20,
+        .name = COMPOUND_STRING("ROUTE 20"),
     },
     [MAPSEC_ROUTE_21] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_21,
+        .name = COMPOUND_STRING("ROUTE 21"),
     },
     [MAPSEC_ROUTE_22] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_22,
+        .name = COMPOUND_STRING("ROUTE 22"),
     },
     [MAPSEC_ROUTE_23] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_23,
+        .name = COMPOUND_STRING("ROUTE 23"),
     },
     [MAPSEC_ROUTE_24] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_24,
+        .name = COMPOUND_STRING("ROUTE 24"),
     },
     [MAPSEC_ROUTE_25] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROUTE_25,
+        .name = COMPOUND_STRING("ROUTE 25"),
     },
     [MAPSEC_VIRIDIAN_FOREST] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIRIDIAN_FOREST,
+        .name = COMPOUND_STRING("VIRIDIAN FOREST"),
     },
     [MAPSEC_MT_MOON] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MT__MOON,
+        .name = COMPOUND_STRING("MT. MOON"),
     },
     [MAPSEC_S_S_ANNE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_S_S__ANNE,
+        .name = COMPOUND_STRING("S.S. ANNE"),
     },
     [MAPSEC_UNDERGROUND_PATH] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_UNDERGROUND_PATH,
+        .name = COMPOUND_STRING("UNDERGROUND PATH"),
     },
     [MAPSEC_UNDERGROUND_PATH_2] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_UNDERGROUND_PATH,
+        .name = COMPOUND_STRING("UNDERGROUND PATH"),
     },
     [MAPSEC_DIGLETTS_CAVE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_DIGLETT_S_CAVE,
+        .name = COMPOUND_STRING("DIGLETT'S CAVE"),
     },
     [MAPSEC_KANTO_VICTORY_ROAD] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VICTORY_ROAD,
+        .name = COMPOUND_STRING("VICTORY ROAD"),
     },
     [MAPSEC_ROCKET_HIDEOUT] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROCKET_HIDEOUT,
+        .name = COMPOUND_STRING("ROCKET HIDEOUT"),
     },
     [MAPSEC_SILPH_CO] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SILPH_CO_,
+        .name = COMPOUND_STRING("SILPH CO."),
     },
     [MAPSEC_POKEMON_MANSION] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_POK__MON_MANSION,
+        .name = COMPOUND_STRING("POKéMON MANSION"),
     },
     [MAPSEC_KANTO_SAFARI_ZONE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SAFARI_ZONE,
+        .name = COMPOUND_STRING("SAFARI ZONE"),
     },
     [MAPSEC_POKEMON_LEAGUE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_POK__MON_LEAGUE,
+        .name = COMPOUND_STRING("POKéMON LEAGUE"),
     },
     [MAPSEC_ROCK_TUNNEL] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROCK_TUNNEL,
+        .name = COMPOUND_STRING("ROCK TUNNEL"),
     },
     [MAPSEC_SEAFOAM_ISLANDS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEAFOAM_ISLANDS,
+        .name = COMPOUND_STRING("SEAFOAM ISLANDS"),
     },
     [MAPSEC_POKEMON_TOWER] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_POK__MON_TOWER,
+        .name = COMPOUND_STRING("POKéMON TOWER"),
     },
     [MAPSEC_CERULEAN_CAVE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CERULEAN_CAVE,
+        .name = COMPOUND_STRING("CERULEAN CAVE"),
     },
     [MAPSEC_POWER_PLANT] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_POWER_PLANT,
+        .name = COMPOUND_STRING("POWER PLANT"),
     },
     [MAPSEC_ONE_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ONE_ISLAND,
+        .name = COMPOUND_STRING("ONE ISLAND"),
     },
     [MAPSEC_TWO_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_TWO_ISLAND,
+        .name = COMPOUND_STRING("TWO ISLAND"),
     },
     [MAPSEC_THREE_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_THREE_ISLAND,
+        .name = COMPOUND_STRING("THREE ISLAND"),
     },
     [MAPSEC_FOUR_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_FOUR_ISLAND,
+        .name = COMPOUND_STRING("FOUR ISLAND"),
     },
     [MAPSEC_FIVE_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_FIVE_ISLAND,
+        .name = COMPOUND_STRING("FIVE ISLAND"),
     },
     [MAPSEC_SEVEN_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEVEN_ISLAND,
+        .name = COMPOUND_STRING("SEVEN ISLAND"),
     },
     [MAPSEC_SIX_ISLAND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SIX_ISLAND,
+        .name = COMPOUND_STRING("SIX ISLAND"),
     },
     [MAPSEC_KINDLE_ROAD] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_KINDLE_ROAD,
+        .name = COMPOUND_STRING("KINDLE ROAD"),
     },
     [MAPSEC_TREASURE_BEACH] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_TREASURE_BEACH,
+        .name = COMPOUND_STRING("TREASURE BEACH"),
     },
     [MAPSEC_CAPE_BRINK] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CAPE_BRINK,
+        .name = COMPOUND_STRING("CAPE BRINK"),
     },
     [MAPSEC_BOND_BRIDGE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_BOND_BRIDGE,
+        .name = COMPOUND_STRING("BOND BRIDGE"),
     },
     [MAPSEC_THREE_ISLE_PORT] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_THREE_ISLE_PORT,
+        .name = COMPOUND_STRING("THREE ISLE PORT"),
     },
     [MAPSEC_SEVII_ISLE_6] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SEVII_ISLE_6,
+        .name = COMPOUND_STRING("SEVII ISLE 6"),
     },
     [MAPSEC_AEDES_AQUA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_AEDES_AQVA,
+        .name = COMPOUND_STRING("AEDES AQVA"),
     },
     [MAPSEC_AEDES_TERRA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_AEDES_TERRA,
+        .name = COMPOUND_STRING("AEDES TERRA"),
     },
     [MAPSEC_AEDES_LUX] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_AEDES_LVX,
+        .name = COMPOUND_STRING("AEDES LVX"),
     },
     [MAPSEC_AEDES_TRIVIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_AEDES_TRIVIS,
+        .name = COMPOUND_STRING("AEDES TRIVIS"),
     },
     [MAPSEC_SALTY_SPITOON] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SALTY_SPITOON,
+        .name = COMPOUND_STRING("SALTY SPITOON"),
     },
     [MAPSEC_CAVERNA_CAMELA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CAVERNA_CAMELA,
+        .name = COMPOUND_STRING("CAVERNA CAMELA"),
     },
     [MAPSEC_ECCLESIA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ECCLESIA,
+        .name = COMPOUND_STRING("ECCLESIA"),
     },
     [MAPSEC_PUTEUS_OBSCURUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PVTEVS_OBSCVRVS,
+        .name = COMPOUND_STRING("PVTEVS OBSCVRVS"),
     },
     [MAPSEC_ELECTRIFICINA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ELECTRIFICINA,
+        .name = COMPOUND_STRING("ELECTRIFICINA"),
     },
     [MAPSEC_PYRAMIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PYRAMIS,
+        .name = COMPOUND_STRING("PYRAMIS"),
     },
     [MAPSEC_VALLIS_PYRAMIDIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VALLIS_PYRAMIDIS,
+        .name = COMPOUND_STRING("VALLIS PYRAMIDIS"),
     },
     [MAPSEC_D_SOLITARIUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_D__SOLITARIVM,
+        .name = COMPOUND_STRING("D. SOLITARIVM"),
     },
     [MAPSEC_D_CACTORUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_D__CACTORVM,
+        .name = COMPOUND_STRING("D. CACTORVM"),
     },
     [MAPSEC_DESERTUM_CALIDUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_DESERTVM_CALIDVM,
+        .name = COMPOUND_STRING("DESERTVM CALIDVM"),
     },
     [MAPSEC_COLUMNAR] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_COLVMNAR,
+        .name = COMPOUND_STRING("COLVMNAR"),
     },
     [MAPSEC_CAMPUS_HARPASTI] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CAMPVS_HARPASTI,
+        .name = COMPOUND_STRING("CAMPVS HARPASTI"),
     },
     [MAPSEC_OASIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_OASIS,
+        .name = COMPOUND_STRING("OASIS"),
     },
     [MAPSEC_PALMAE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PALMAE,
+        .name = COMPOUND_STRING("PALMAE"),
     },
     [MAPSEC_SCHOLA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SCHOLA,
+        .name = COMPOUND_STRING("SCHOLA"),
     },
     [MAPSEC_ARDENS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ARDENS,
+        .name = COMPOUND_STRING("ARDENS"),
     },
     [MAPSEC_IGNIS_MONS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_IGNIS_MONS,
+        .name = COMPOUND_STRING("IGNIS MONS"),
     },
     [MAPSEC_DESERET] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_DESERET,
+        .name = COMPOUND_STRING("DESERET"),
     },
     [MAPSEC_URBIA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VRBIA,
+        .name = COMPOUND_STRING("VRBIA"),
     },
     [MAPSEC_HARENAE_AUREAE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_HARENAE_AVREAE,
+        .name = COMPOUND_STRING("HARENAE AVREAE"),
     },
     [MAPSEC_PALATIUM_FELIX] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PALATIVM_FELIX,
+        .name = COMPOUND_STRING("PALATIVM FELIX"),
     },
     [MAPSEC_PECCATUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PECCATVM,
+        .name = COMPOUND_STRING("PECCATVM"),
     },
     [MAPSEC_VIA_POSTERIOR] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIA_POSTERIOR,
+        .name = COMPOUND_STRING("VIA POSTERIOR"),
     },
     [MAPSEC_D_COLUMNARIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_D__COLVMNARIS,
+        .name = COMPOUND_STRING("D. COLVMNARIS"),
     },
     [MAPSEC_VIA_SAXOSA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIA_SAXOSA,
+        .name = COMPOUND_STRING("VIA SAXOSA"),
     },
     [MAPSEC_VIA_MAGNA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIA_MAGNA,
+        .name = COMPOUND_STRING("VIA MAGNA"),
     },
     [MAPSEC_ROBUSTICA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ROBVSTICA,
+        .name = COMPOUND_STRING("ROBVSTICA"),
     },
     [MAPSEC_VENATOR_MONS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VENATOR_MONS,
+        .name = COMPOUND_STRING("VENATOR MONS"),
     },
     [MAPSEC_VILLA_VENATORUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VILLA_VENATORVM,
+        .name = COMPOUND_STRING("VILLA VENATORVM"),
     },
     [MAPSEC_SABINA_NOVA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SABINA_NOVA,
+        .name = COMPOUND_STRING("SABINA NOVA"),
     },
     [MAPSEC_VILLA_VALLIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VILLA_VALLIS,
+        .name = COMPOUND_STRING("VILLA VALLIS"),
     },
     [MAPSEC_MONTES_VIGILIAE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MONTES_VIGILIAE,
+        .name = COMPOUND_STRING("MONTES VIGILIAE"),
     },
     [MAPSEC_VILLA_VIVARIA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VILLA_VIVARIA,
+        .name = COMPOUND_STRING("VILLA VIVARIA"),
     },
     [MAPSEC_VIA_LITORALIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIA_LITORALIS,
+        .name = COMPOUND_STRING("VIA LITORALIS"),
     },
     [MAPSEC_CASTRUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CASTRVM,
+        .name = COMPOUND_STRING("CASTRVM"),
     },
     [MAPSEC_SINUS_PACIFICUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SINVS_PACIFICVS,
+        .name = COMPOUND_STRING("SINVS PACIFICVS"),
     },
     [MAPSEC_SPECIAL_AREA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SPECIAL_AREA,
+        .name = COMPOUND_STRING("SPECIAL AREA"),
     },
     [MAPSEC_SALINAE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SALINAE,
+        .name = COMPOUND_STRING("SALINAE"),
     },
     [MAPSEC_LUPERCAL] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_LVPERCAL,
+        .name = COMPOUND_STRING("LVPERCAL"),
     },
     [MAPSEC_TURRIS_SALTUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_TVRRIS_SALTVS,
+        .name = COMPOUND_STRING("TVRRIS SALTVS"),
     },
     [MAPSEC_TROPICANA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_TROPICANA,
+        .name = COMPOUND_STRING("TROPICANA"),
     },
     [MAPSEC_AEDES_SUB_MONTE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_AEDES_SVB_MONTE,
+        .name = COMPOUND_STRING("AEDES SVB MONTE"),
     },
     [MAPSEC_MORTIA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MORTIA,
+        .name = COMPOUND_STRING("MORTIA"),
     },
     [MAPSEC_SCYLLA_CHARYBDIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SCYLLA_CHARYBDIS,
+        .name = COMPOUND_STRING("SCYLLA CHARYBDIS"),
     },
     [MAPSEC_THERMAE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_THERMAE,
+        .name = COMPOUND_STRING("THERMAE"),
     },
     [MAPSEC_HORTUS_PUBLICUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_HORTVS_PVBLICVS,
+        .name = COMPOUND_STRING("HORTVS PVBLICVS"),
     },
     [MAPSEC_VILLAE_RUSTICAE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VILLAE_RVSTICAE,
+        .name = COMPOUND_STRING("VILLAE RVSTICAE"),
     },
     [MAPSEC_TROIA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_TROIA,
+        .name = COMPOUND_STRING("TROIA"),
     },
     [MAPSEC_ILIUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ILIVM,
+        .name = COMPOUND_STRING("ILIVM"),
     },
     [MAPSEC_CIRCUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CIRCVS,
+        .name = COMPOUND_STRING("CIRCVS"),
     },
     [MAPSEC_PORTUS_URBIS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PORTVS_VRBIS,
+        .name = COMPOUND_STRING("PORTVS VRBIS"),
     },
     [MAPSEC_TRANQUILLITAS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_TRANQVILLITAS,
+        .name = COMPOUND_STRING("TRANQVILLITAS"),
     },
     [MAPSEC_ACTA_TRANQUILLA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ACTA_TRANQVILLA,
+        .name = COMPOUND_STRING("ACTA TRANQVILLA"),
     },
     [MAPSEC_ELICIUS_BEACH] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ELICIUS_BEACH,
+        .name = COMPOUND_STRING("ELICIUS BEACH"),
     },
     [MAPSEC_VILLA_FLOREA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VILLA_FLOREA,
+        .name = COMPOUND_STRING("VILLA FLOREA"),
     },
     [MAPSEC_VIA_FLOREA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIA_FLOREA,
+        .name = COMPOUND_STRING("VIA FLOREA"),
     },
     [MAPSEC_ALBION] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ALBION,
+        .name = COMPOUND_STRING("ALBION"),
     },
     [MAPSEC_VIA_ARBUSTA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIA_ARBVSTA,
+        .name = COMPOUND_STRING("VIA ARBVSTA"),
     },
     [MAPSEC_PORTUS_PRIMUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_PORTVS_PRIMVS,
+        .name = COMPOUND_STRING("PORTVS PRIMVS"),
     },
     [MAPSEC_SINUS_CAMELUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SINVS_CAMELVS,
+        .name = COMPOUND_STRING("SINVS CAMELVS"),
     },
     [MAPSEC_DELTA_DRACI] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_DELTA_DRACI,
+        .name = COMPOUND_STRING("DELTA DRACI"),
     },
     [MAPSEC_MARE_OCCIDENS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MARE_OCCIDENS,
+        .name = COMPOUND_STRING("MARE OCCIDENS"),
     },
     [MAPSEC_MARE_ORIENS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MARE_ORIENS,
+        .name = COMPOUND_STRING("MARE ORIENS"),
     },
     [MAPSEC_MARE_INTERNUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MARE_INTERNVM,
+        .name = COMPOUND_STRING("MARE INTERNVM"),
     },
     [MAPSEC_MARE_TRANQUILLUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MARE_TRANQVILLVM,
+        .name = COMPOUND_STRING("MARE TRANQVILLVM"),
     },
     [MAPSEC_MARE_TROPICUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MARE_TROPICVM,
+        .name = COMPOUND_STRING("MARE TROPICVM"),
     },
     [MAPSEC_MARE_SUBTROPICUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MARE_SVBTROPICVM,
+        .name = COMPOUND_STRING("MARE SVBTROPICVM"),
     },
     [MAPSEC_MARE_MORTUORUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_MARE_MORTVORVM,
+        .name = COMPOUND_STRING("MARE MORTVORVM"),
     },
     [MAPSEC_ISLA_IGNIFERA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_IGNIFERA,
+        .name = COMPOUND_STRING("ISLA IGNIFERA"),
     },
     [MAPSEC_ISLA_HERBA_BONA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_HERBA_BONA,
+        .name = COMPOUND_STRING("ISLA HERBA BONA"),
     },
     [MAPSEC_ISLA_TROPICA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_TROPICA,
+        .name = COMPOUND_STRING("ISLA TROPICA"),
     },
     [MAPSEC_ISLA_PINEA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_PINEA,
+        .name = COMPOUND_STRING("ISLA PINEA"),
     },
     [MAPSEC_ISLA_HESPERIA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_HESPERIA,
+        .name = COMPOUND_STRING("ISLA HESPERIA"),
     },
     [MAPSEC_ISLA_ITHACA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_ITHACA,
+        .name = COMPOUND_STRING("ISLA ITHACA"),
     },
     [MAPSEC_ISLA_SOLATA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_SOLATA,
+        .name = COMPOUND_STRING("ISLA SOLATA"),
     },
     [MAPSEC_ISLA_ARIDA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ISLA_ARIDA,
+        .name = COMPOUND_STRING("ISLA ARIDA"),
     },
     [MAPSEC_ACTA_ECHONA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_ACTA_ECHONA,
+        .name = COMPOUND_STRING("ACTA ECHONA"),
     },
     [MAPSEC_SILVA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SILVA,
+        .name = COMPOUND_STRING("SILVA"),
     },
     [MAPSEC_SILVA_PROFUNDA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SILVA_PROFVNDA,
+        .name = COMPOUND_STRING("SILVA PROFVNDA"),
     },
     [MAPSEC_RIO_DRACO] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_DRACVS,
+        .name = COMPOUND_STRING("DRACVS"),
     },
     [MAPSEC_SALIX] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SALIX,
+        .name = COMPOUND_STRING("SALIX"),
     },
     [MAPSEC_LACUS_DRACUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_LACVS_DRACVS,
+        .name = COMPOUND_STRING("LACVS DRACVS"),
     },
     [MAPSEC_LITUS_LACUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_LITVS_LACVS,
+        .name = COMPOUND_STRING("LITVS LACVS"),
     },
     [MAPSEC_DRACUS_SUPERIOR] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_DRACVS_SVPERIOR,
+        .name = COMPOUND_STRING("DRACVS SVPERIOR"),
     },
     [MAPSEC_DRACUS_INFERIOR] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_DRACVS_INFERIOR,
+        .name = COMPOUND_STRING("DRACVS INFERIOR"),
     },
     [MAPSEC_UPPER_EAST_DRAKE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_UPPER_EAST_DRAKE,
+        .name = COMPOUND_STRING("UPPER EAST DRAKE"),
     },
     [MAPSEC_LOWER_EAST_DRAKE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_LOWER_EAST_DRAKE,
+        .name = COMPOUND_STRING("LOWER EAST DRAKE"),
     },
     [MAPSEC_UPPER_WEST_DRAKE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_UPPER_WEST_DRAKE,
+        .name = COMPOUND_STRING("UPPER WEST DRAKE"),
     },
     [MAPSEC_LOWER_WEST_DRAKE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_LOWER_WEST_DRAKE,
+        .name = COMPOUND_STRING("LOWER WEST DRAKE"),
     },
     [MAPSEC_CASTALIA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_CASTALIA,
+        .name = COMPOUND_STRING("CASTALIA"),
     },
     [MAPSEC_SINUS_CLARUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_SINVS_CLARVS,
+        .name = COMPOUND_STRING("SINVS CLARVS"),
     },
     [MAPSEC_VIA_FIDELIUM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sMapName_VIA_FIDELIVM,
+        .name = COMPOUND_STRING("VIA FIDELIVM"),
     },
     [MAPSEC_MAGMA_HIDEOUT] = {
         .x = 0,

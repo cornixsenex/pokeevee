@@ -1627,9 +1627,9 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 		if (mapGroup == MAP_GROUP(MAP_ROUTE3) && mapNum == MAP_NUM(MAP_ROUTE3)) 
 		{
 			if (IsRoute3RiverDelta(FALSE))
-				return StringCopy(dest, sMapName_DELTA_DRACI);
+				return StringCopy(dest, COMPOUND_STRING("DELTA DRACI"));
 			else  // Default part of map => Cove
-				return StringCopy(dest, sMapName_SINVS_CAMELVS);
+				return StringCopy(dest, COMPOUND_STRING("SINVS CAMELVS"));
 		}
 		//MareWWW - Mare Occidens or River Delta
 		if (mapGroup == MAP_GROUP(MAP_MARE_WWW) && mapNum == MAP_NUM(MAP_MARE_WWW))
@@ -1640,11 +1640,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_MARE_OCCIDENS);
+					return StringCopy(dest, COMPOUND_STRING("MARE OCCIDENS"));
 				case 2:
-					return StringCopy(dest, sMapName_DELTA_DRACI);
+					return StringCopy(dest, COMPOUND_STRING("DELTA DRACI"));
 				case 3:
-					return StringCopy(dest, sMapName_ACTA_ECHONA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA ECHONA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1659,21 +1659,21 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_LACVS_DRACVS);
+					return StringCopy(dest, COMPOUND_STRING("LACVS DRACVS"));
 				case 2:
-					return StringCopy(dest, sMapName_LITVS_LACVS);
+					return StringCopy(dest, COMPOUND_STRING("LITVS LACVS"));
 				case 3:
-					return StringCopy(dest, sMapName_DRACVS_SVPERIOR);
+					return StringCopy(dest, COMPOUND_STRING("DRACVS SVPERIOR"));
 				case 4:
-					return StringCopy(dest, sMapName_DRACVS_INFERIOR);
+					return StringCopy(dest, COMPOUND_STRING("DRACVS INFERIOR"));
 				case 5:
-					return StringCopy(dest, sMapName_UPPER_EAST_DRAKE);
+					return StringCopy(dest, COMPOUND_STRING("UPPER EAST DRAKE"));
 				case 6:
-					return StringCopy(dest, sMapName_LOWER_EAST_DRAKE);
+					return StringCopy(dest, COMPOUND_STRING("LOWER EAST DRAKE"));
 				case 7:
-					return StringCopy(dest, sMapName_UPPER_WEST_DRAKE);
+					return StringCopy(dest, COMPOUND_STRING("UPPER WEST DRAKE"));
 				case 8:
-					return StringCopy(dest, sMapName_LOWER_WEST_DRAKE);
+					return StringCopy(dest, COMPOUND_STRING("LOWER WEST DRAKE"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1687,11 +1687,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_LACVS_DRACVS);
+					return StringCopy(dest, COMPOUND_STRING("LACVS DRACVS"));
 				case 2:
-					return StringCopy(dest, sMapName_LITVS_LACVS);
+					return StringCopy(dest, COMPOUND_STRING("LITVS LACVS"));
 				case 3:
-					return StringCopy(dest, sMapName_SALIX);
+					return StringCopy(dest, COMPOUND_STRING("SALIX"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1700,18 +1700,18 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 		if (mapGroup == MAP_GROUP(MAP_LAKE_IRA_SOUTH) && mapNum == MAP_NUM(MAP_LAKE_IRA_SOUTH)) 	
 		{
 			if (IsLakeIraSouthUpperDracoWest(FALSE))
-				return StringCopy(dest, sMapName_UPPER_WEST_DRAKE);
+				return StringCopy(dest, COMPOUND_STRING("UPPER WEST DRAKE"));
 			else  // Default part of map => Cove
-				return StringCopy(dest, sMapName_LOWER_WEST_DRAKE);
+				return StringCopy(dest, COMPOUND_STRING("LOWER WEST DRAKE"));
 		}
 
 		//Silvan Woods N
 		if (mapGroup == MAP_GROUP(MAP_SILVAN_WOODS_N) && mapNum == MAP_NUM(MAP_SILVAN_WOODS_N)) 	
 		{		
 			if (IsSilvanWoodsNUpperDracoEast(FALSE))
-				return StringCopy(dest, sMapName_UPPER_EAST_DRAKE);
+				return StringCopy(dest, COMPOUND_STRING("UPPER EAST DRAKE"));
 			else  // Default part of map => Cove
-				return StringCopy(dest, sMapName_LOWER_EAST_DRAKE);
+				return StringCopy(dest, COMPOUND_STRING("LOWER EAST DRAKE"));
 		}
 		//Silvan Woods
 		if (mapGroup == MAP_GROUP(MAP_SILVAN_WOODS) && mapNum == MAP_NUM(MAP_SILVAN_WOODS))
@@ -1722,11 +1722,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_SILVA);
+					return StringCopy(dest, COMPOUND_STRING("SILVA"));
 				case 2:
-					return StringCopy(dest, sMapName_DRACVS_INFERIOR);
+					return StringCopy(dest, COMPOUND_STRING("DRACVS INFERIOR"));
 				case 3:
-					return StringCopy(dest, sMapName_SILVA_PROFVNDA);
+					return StringCopy(dest, COMPOUND_STRING("SILVA PROFVNDA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1740,13 +1740,13 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_PINEA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA PINEA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_OCCIDENS);
+					return StringCopy(dest, COMPOUND_STRING("MARE OCCIDENS"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_ACTA_ECHONA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA ECHONA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1760,11 +1760,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_DELTA_DRACI);
+					return StringCopy(dest, COMPOUND_STRING("DELTA DRACI"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				case 3:
-					return StringCopy(dest, sMapName_ACTA_ECHONA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA ECHONA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1778,17 +1778,17 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_ACTA_ECHONA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA ECHONA"));
 				case 2:
-					return StringCopy(dest, sMapName_SILVA);
+					return StringCopy(dest, COMPOUND_STRING("SILVA"));
 				case 3:
-					return StringCopy(dest, sMapName_VIA_FIDELIVM);
+					return StringCopy(dest, COMPOUND_STRING("VIA FIDELIVM"));
 				case 4:
-					return StringCopy(dest, sMapName_SINVS_CLARVS);
+					return StringCopy(dest, COMPOUND_STRING("SINVS CLARVS"));
 				case 5:
-					return StringCopy(dest, sMapName_CASTALIA);
+					return StringCopy(dest, COMPOUND_STRING("CASTALIA"));
 				case 6:
-					return StringCopy(dest, sMapName_DELTA_DRACI);
+					return StringCopy(dest, COMPOUND_STRING("DELTA DRACI"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1802,13 +1802,13 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_ACTA_ECHONA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA ECHONA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_INTERNVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE INTERNVM"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
 				case 4:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1822,13 +1822,13 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_SINVS_PACIFICVS);
+					return StringCopy(dest, COMPOUND_STRING("SINVS PACIFICVS"));
 				case 2:
-					return StringCopy(dest, sMapName_CASTRVM);
+					return StringCopy(dest, COMPOUND_STRING("CASTRVM"));
 				case 3:
-					return StringCopy(dest, sMapName_SINVS_CLARVS);
+					return StringCopy(dest, COMPOUND_STRING("SINVS CLARVS"));
 				case 4:
-					return StringCopy(dest, sMapName_MARE_INTERNVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE INTERNVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1840,11 +1840,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				case 2:
-					return StringCopy(dest, sMapName_ACTA_ECHONA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA ECHONA"));
 				case 3:
-					return StringCopy(dest, sMapName_ISLA_PINEA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA PINEA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
             }
@@ -1858,11 +1858,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_VIA_FIDELIVM);
+					return StringCopy(dest, COMPOUND_STRING("VIA FIDELIVM"));
 				case 2:
-					return StringCopy(dest, sMapName_VIA_LITORALIS);
+					return StringCopy(dest, COMPOUND_STRING("VIA LITORALIS"));
 				case 3:
-					return StringCopy(dest, sMapName_SINVS_PACIFICVS);
+					return StringCopy(dest, COMPOUND_STRING("SINVS PACIFICVS"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1876,11 +1876,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 0:
 					return StringCopy(dest, gText_Ferry);
 				case 1:
-					return StringCopy(dest, sMapName_VIA_LITORALIS);
+					return StringCopy(dest, COMPOUND_STRING("VIA LITORALIS"));
 				case 2:
-					return StringCopy(dest, sMapName_VILLA_VIVARIA);
+					return StringCopy(dest, COMPOUND_STRING("VILLA VIVARIA"));
 				case 3:
-					return StringCopy(dest, sMapName_SINVS_PACIFICVS);
+					return StringCopy(dest, COMPOUND_STRING("SINVS PACIFICVS"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1892,15 +1892,15 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_VIA_LITORALIS);
+					return StringCopy(dest, COMPOUND_STRING("VIA LITORALIS"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_INTERNVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE INTERNVM"));
 				case 3:
-					return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+					return StringCopy(dest, COMPOUND_STRING("MONTES VIGILIAE"));
 				case 4:
-					return StringCopy(dest, sMapName_VILLA_VALLIS);
+					return StringCopy(dest, COMPOUND_STRING("VILLA VALLIS"));
 				case 5:
-					return StringCopy(dest, sMapName_SABINA_NOVA);
+					return StringCopy(dest, COMPOUND_STRING("SABINA NOVA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1912,11 +1912,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_VENATOR_MONS);
+					return StringCopy(dest, COMPOUND_STRING("VENATOR MONS"));
 				case 2:
-					return StringCopy(dest, sMapName_VIA_LITORALIS);
+					return StringCopy(dest, COMPOUND_STRING("VIA LITORALIS"));
 				case 3:
-					return StringCopy(dest, sMapName_VILLA_VENATORVM);
+					return StringCopy(dest, COMPOUND_STRING("VILLA VENATORVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1925,41 +1925,41 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 		if (mapGroup == MAP_GROUP(MAP_SANJO) && mapNum == MAP_NUM(MAP_SANJO))
 		{
 			if (IsSanjoSabinaNova(FALSE))
-                return StringCopy(dest, sMapName_SABINA_NOVA);
+                return StringCopy(dest, COMPOUND_STRING("SABINA NOVA"));
             else
-                return StringCopy(dest, sMapName_VIA_MAGNA);
+                return StringCopy(dest, COMPOUND_STRING("VIA MAGNA"));
         }
 		//Doak Town
 		if (mapGroup == MAP_GROUP(MAP_DOAK_TOWN) && mapNum == MAP_NUM(MAP_DOAK_TOWN))
 		{
 			if (IsDoakTownRobustica(FALSE))
-                return StringCopy(dest, sMapName_ROBVSTICA);
+                return StringCopy(dest, COMPOUND_STRING("ROBVSTICA"));
             else
-                return StringCopy(dest, sMapName_VIA_MAGNA);
+                return StringCopy(dest, COMPOUND_STRING("VIA MAGNA"));
         }
 		//SRoute19 - Mare Internum or Montes Vigiliae
 		if (mapGroup == MAP_GROUP(MAP_SROUTE19) && mapNum == MAP_NUM(MAP_SROUTE19))
 		{
 			if (IsSRoute19MareInternum(FALSE))
-                return StringCopy(dest, sMapName_MARE_INTERNVM);
+                return StringCopy(dest, COMPOUND_STRING("MARE INTERNVM"));
             else
-                return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+                return StringCopy(dest, COMPOUND_STRING("MONTES VIGILIAE"));
         }
         //Route9 - Via Saxosa or Montes Vigiliae
 		if (mapGroup == MAP_GROUP(MAP_ROUTE9) && mapNum == MAP_NUM(MAP_ROUTE9))
         {
             if (IsRoute9ViaSaxosa(FALSE))
-                return StringCopy(dest, sMapName_VIA_SAXOSA);
+                return StringCopy(dest, COMPOUND_STRING("VIA SAXOSA"));
             else
-                return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+                return StringCopy(dest, COMPOUND_STRING("MONTES VIGILIAE"));
         }
 		//Route16 - Venator Mons or D. Columnaris 
 		if (mapGroup == MAP_GROUP(MAP_ROUTE16) && mapNum == MAP_NUM(MAP_ROUTE16))
         {
             if (IsRoute16VenatorMons(FALSE))
-                return StringCopy(dest, sMapName_VENATOR_MONS);
+                return StringCopy(dest, COMPOUND_STRING("VENATOR MONS"));
             else
-                return StringCopy(dest, sMapName_D__COLVMNARIS);
+                return StringCopy(dest, COMPOUND_STRING("D. COLVMNARIS"));
         }
 		//Tucson - Via Magna, Oasis, Deseret
 		if (mapGroup == MAP_GROUP(MAP_TUCSON) && mapNum == MAP_NUM(MAP_TUCSON))
@@ -1968,11 +1968,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_VIA_MAGNA);
+					return StringCopy(dest, COMPOUND_STRING("VIA MAGNA"));
 				case 2:
-					return StringCopy(dest, sMapName_OASIS);
+					return StringCopy(dest, COMPOUND_STRING("OASIS"));
 				case 3:
-					return StringCopy(dest, sMapName_DESERET);
+					return StringCopy(dest, COMPOUND_STRING("DESERET"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -1981,9 +1981,9 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 		if (mapGroup == MAP_GROUP(MAP_PYRAMIDS) && mapNum == MAP_NUM(MAP_PYRAMIDS))
         {
             if (IsPyramidsDCactorum(FALSE))
-                return StringCopy(dest, sMapName_D__CACTORVM);
+                return StringCopy(dest, COMPOUND_STRING("D. CACTORVM"));
             else
-                return StringCopy(dest, sMapName_VALLIS_PYRAMIDIS);
+                return StringCopy(dest, COMPOUND_STRING("VALLIS PYRAMIDIS"));
         }
 		//Vegas - Peccatum or Via Magna
 		if (mapGroup == MAP_GROUP(MAP_VEGAS) && mapNum == MAP_NUM(MAP_VEGAS))
@@ -1992,11 +1992,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_PECCATVM);
+					return StringCopy(dest, COMPOUND_STRING("PECCATVM"));
 				case 2:
-					return StringCopy(dest, sMapName_VIA_MAGNA);
+					return StringCopy(dest, COMPOUND_STRING("VIA MAGNA"));
 				case 3:
-					return StringCopy(dest, sMapName_D__COLVMNARIS);
+					return StringCopy(dest, COMPOUND_STRING("D. COLVMNARIS"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2008,15 +2008,15 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_VIA_SAXOSA);
+					return StringCopy(dest, COMPOUND_STRING("VIA SAXOSA"));
 				case 2:
-					return StringCopy(dest, sMapName_TRANQVILLITAS);
+					return StringCopy(dest, COMPOUND_STRING("TRANQVILLITAS"));
 				case 3:
-					return StringCopy(dest, sMapName_MONTES_VIGILIAE);
+					return StringCopy(dest, COMPOUND_STRING("MONTES VIGILIAE"));
 				case 4:
-					return StringCopy(dest, sMapName_ACTA_TRANQVILLA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA TRANQVILLA"));
 				case 5:
-					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2028,11 +2028,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_TRANQVILLITAS);
+					return StringCopy(dest, COMPOUND_STRING("TRANQVILLITAS"));
 				case 2:
-					return StringCopy(dest, sMapName_ACTA_TRANQVILLA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA TRANQVILLA"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2044,11 +2044,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_PORTVS_VRBIS);
+					return StringCopy(dest, COMPOUND_STRING("PORTVS VRBIS"));
 				case 2:
-					return StringCopy(dest, sMapName_ACTA_TRANQVILLA);
+					return StringCopy(dest, COMPOUND_STRING("ACTA TRANQVILLA"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2057,9 +2057,9 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 		if (mapGroup == MAP_GROUP(MAP_PENNINSULA_E) && mapNum == MAP_NUM(MAP_PENNINSULA_E))
         {
             if (IsPenninsulaECastrum(FALSE))
-                return StringCopy(dest, sMapName_CASTRVM);
+                return StringCopy(dest, COMPOUND_STRING("CASTRVM"));
             else
-                return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+                return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
         }
 		//Hippodrome 
 		if (mapGroup == MAP_GROUP(MAP_HIPPODROME) && mapNum == MAP_NUM(MAP_HIPPODROME))
@@ -2072,13 +2072,13 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+					return StringCopy(dest, COMPOUND_STRING("VILLAE RVSTICAE"));
 				case 2:
-					return StringCopy(dest, sMapName_CIRCVS);
+					return StringCopy(dest, COMPOUND_STRING("CIRCVS"));
 				case 3:
-					return StringCopy(dest, sMapName_ILIVM);
+					return StringCopy(dest, COMPOUND_STRING("ILIVM"));
 				case 4:
-					return StringCopy(dest, sMapName_VRBIA);
+					return StringCopy(dest, COMPOUND_STRING("VRBIA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2087,41 +2087,41 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 		if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_E) && mapNum == MAP_NUM(MAP_BIKE_MAP_E))
         {
             if (IsBikeMapEViaMagna(FALSE))
-                return StringCopy(dest, sMapName_VIA_MAGNA);
+                return StringCopy(dest, COMPOUND_STRING("VIA MAGNA"));
             else
-                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+                return StringCopy(dest, COMPOUND_STRING("VILLAE RVSTICAE"));
         }
         //BikeMapW - Via Magna or Villae Rusticae
 		if (mapGroup == MAP_GROUP(MAP_BIKE_MAP_W) && mapNum == MAP_NUM(MAP_BIKE_MAP_W))
         {
             if (IsBikeMapWViaMagna(FALSE))
-                return StringCopy(dest, sMapName_VIA_MAGNA);
+                return StringCopy(dest, COMPOUND_STRING("VIA MAGNA"));
             else
-                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+                return StringCopy(dest, COMPOUND_STRING("VILLAE RVSTICAE"));
         }
         //BikeRouteFarm - Via Magna or Villae Rusticae
 		if (mapGroup == MAP_GROUP(MAP_BIKE_ROUTE_FARM) && mapNum == MAP_NUM(MAP_BIKE_ROUTE_FARM))
         {
             if (IsBikeRouteFarmViaMagna(FALSE))
-                return StringCopy(dest, sMapName_VIA_MAGNA);
+                return StringCopy(dest, COMPOUND_STRING("VIA MAGNA"));
             else
-                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+                return StringCopy(dest, COMPOUND_STRING("VILLAE RVSTICAE"));
         }
         //SanjoRockFiller - Sabina Nova or Villae Rusticae 
 		if (mapGroup == MAP_GROUP(MAP_SANJO_ROCK_FILLER) && mapNum == MAP_NUM(MAP_SANJO_ROCK_FILLER))
         {
             if (IsSanjoRockFillerSabinaNova(FALSE))
-                return StringCopy(dest, sMapName_SABINA_NOVA);
+                return StringCopy(dest, COMPOUND_STRING("SABINA NOVA"));
             else
-                return StringCopy(dest, sMapName_VILLAE_RVSTICAE);
+                return StringCopy(dest, COMPOUND_STRING("VILLAE RVSTICAE"));
         }
 		//GatoCityParkN - Thermae or Hortus Publicus 
 		if (mapGroup == MAP_GROUP(MAP_GATO_CITY_PARK_N) && mapNum == MAP_NUM(MAP_GATO_CITY_PARK_N))
         {
             if (IsGatoCityParkNThermae(FALSE))
-                return StringCopy(dest, sMapName_THERMAE);
+                return StringCopy(dest, COMPOUND_STRING("THERMAE"));
             else
-                return StringCopy(dest, sMapName_HORTVS_PVBLICVS);
+                return StringCopy(dest, COMPOUND_STRING("HORTVS PVBLICVS"));
         }
 		//MareS4 
 		if (mapGroup == MAP_GROUP(MAP_MARE_S4) && mapNum == MAP_NUM(MAP_MARE_S4))
@@ -2136,17 +2136,17 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA_BONA"));
 				case 5:
-					return StringCopy(dest, sMapName_ISLA_HESPERIA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA HESPERIA"));
 				case 6:
-					return StringCopy(dest, sMapName_SCYLLA_CHARYBDIS);
+					return StringCopy(dest, COMPOUND_STRING("SCYLLA CHARYBDIS"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2161,11 +2161,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 3:
-					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA_BONA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2182,15 +2182,15 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_MARE_TRANQVILLVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TRANQVILLVM"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_MORTVORVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE MORTVORVM"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA BONA"));
 				case 5:
-					return StringCopy(dest, sMapName_MORTIA);
+					return StringCopy(dest, COMPOUND_STRING("MORTIA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2204,9 +2204,9 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_MORTIA);
+					return StringCopy(dest, COMPOUND_STRING("MORTIA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_MORTVORVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE MORTVORVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2222,13 +2222,13 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_MARE_MORTVORVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE MORTVORVM"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_ORIENS);
+					return StringCopy(dest, COMPOUND_STRING("MARE ORIENS"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA IGNIFERA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2244,13 +2244,13 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_IGNIS_MONS);
+					return StringCopy(dest, COMPOUND_STRING("IGNIS MONS"));
 				case 2:
-					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA IGNIFERA"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_MARE_ORIENS);
+					return StringCopy(dest, COMPOUND_STRING("MARE ORIENS"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2265,11 +2265,11 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA IGNIFERA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_ORIENS);
+					return StringCopy(dest, COMPOUND_STRING("MARE ORIENS"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2283,9 +2283,9 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA IGNIFERA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2302,15 +2302,15 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_ITHACA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA ITHACA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 3:
-					return StringCopy(dest, sMapName_ISLA_HERBA_BONA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA BONA"));
 				case 4:
-					return StringCopy(dest, sMapName_ISLA_ARIDA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA ARIDA"));
 				case 5:
-					return StringCopy(dest, sMapName_ISLA_IGNIFERA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA IGNIFERA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2327,15 +2327,15 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_ITHACA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA ITHACA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_ISLA_HESPERIA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA HESPERIA"));
 				case 5:
-					return StringCopy(dest, sMapName_ISLA_TROPICA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA TROPICA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2352,15 +2352,15 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_TROPICA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA TROPICA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_ISLA_HESPERIA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA HESPERIA"));
 				case 5:
-					return StringCopy(dest, sMapName_TROPICANA);
+					return StringCopy(dest, COMPOUND_STRING("TROPICANA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2377,15 +2377,15 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_ISLA_TROPICA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA TROPICA"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_OCCIDENS);
+					return StringCopy(dest, COMPOUND_STRING("MARE OCCIDENS"));
 				case 3:
-					return StringCopy(dest, sMapName_MARE_TROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE TROPICVM"));
 				case 4:
-					return StringCopy(dest, sMapName_ISLA_SOLATA);
+					return StringCopy(dest, COMPOUND_STRING("ISLA SOLATA"));
 				case 5:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -2399,9 +2399,9 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			switch (n)
 			{
 				case 1:
-					return StringCopy(dest, sMapName_MARE_SVBTROPICVM);
+					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 2:
-					return StringCopy(dest, sMapName_MARE_OCCIDENS);
+					return StringCopy(dest, COMPOUND_STRING("MARE OCCIDENS"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}

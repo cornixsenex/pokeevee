@@ -3,6 +3,7 @@
 #include "config/item.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
+#include "constants/apricorn_tree.h"
 #include "constants/battle.h"
 #include "constants/battle_arena.h"
 #include "constants/battle_dome.h"
@@ -45,6 +46,7 @@
 #include "constants/maps.h"
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_labels.h"
+#include "constants/move_relearner.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/pokedex.h"
@@ -64,6 +66,7 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/speaker_names.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -697,6 +700,7 @@ EventScript_SetBrineyLocation_Route109::
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/record_mix.inc"
 	.include "data/scripts/pc.inc"
+	.include "data/scripts/move_relearner.inc"
 
 @ scripts/notices.inc? signs.inc? See comment about text/notices.inc
 Common_EventScript_ShowPokemartSign::
@@ -895,6 +899,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/pkmn_center_nurse.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
+	.include "data/text/move_relearner.inc"
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
@@ -1127,9 +1132,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/cable_club.inc"
 	.include "data/text/cable_club.inc"
 	.include "data/scripts/contest_hall.inc"
-	.include "data/text/contest_strings.inc"
-	.include "data/text/contest_link.inc"
-	.include "data/text/contest_painting.inc"
 	.include "data/scripts/tv.inc"
 	.include "data/text/tv.inc"
 	.include "data/scripts/interview.inc"
@@ -1173,538 +1175,271 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
-
     .include "data/scripts/overworld_pokemon.inc" @Custom for interact with pokemon in overworld
-
+	.include "data/scripts/battle_frontier.inc"
+	.include "data/scripts/apricorn_tree.inc"
 	.include "data/maps/Loonix/scripts.inc"
-
 	.include "data/maps/LoonixInsideReal/scripts.inc"
-
-
-
 	.include "data/maps/LoonixGiftHouse/scripts.inc"
-
 	.include "data/maps/LoonixBeach/scripts.inc"
-
 	.include "data/maps/LoonixHills/scripts.inc"
-
 	.include "data/maps/LoonixSnow/scripts.inc"
-
 	.include "data/maps/LoonixInsideReal_F2/scripts.inc"
-
 	.include "data/maps/GrandmasCabin/scripts.inc"
-
 	.include "data/maps/Route1/scripts.inc"
-
 	.include "data/maps/RivalHouse/scripts.inc"
-
 	.include "data/maps/RivalHouseInside/scripts.inc"
-
 	.include "data/maps/AldeonTown/scripts.inc"
-
 	.include "data/maps/Route2/scripts.inc"
-
 	.include "data/maps/BulbusTown/scripts.inc"
-
 	.include "data/maps/Route3/scripts.inc"
-
 	.include "data/maps/CityClara/scripts.inc"
-
 	.include "data/maps/Route4/scripts.inc"
-
 	.include "data/maps/Route5/scripts.inc"
-
 	.include "data/maps/DoakTown/scripts.inc"
-
 	.include "data/maps/Route6/scripts.inc"
-
 	.include "data/maps/SRoute18/scripts.inc"
-
 	.include "data/maps/Route7/scripts.inc"
-
 	.include "data/maps/SRoute19/scripts.inc"
-
 	.include "data/maps/Route8/scripts.inc"
-
 	.include "data/maps/Route9/scripts.inc"
-
 	.include "data/maps/EliciusBeach/scripts.inc"
-
 	.include "data/maps/Route10/scripts.inc"
-
 	.include "data/maps/Route11/scripts.inc"
-
 	.include "data/maps/MareE/scripts.inc"
-
 	.include "data/maps/MareC/scripts.inc"
-
 	.include "data/maps/FortMontgomery/scripts.inc"
-
 	.include "data/maps/GatoCity/scripts.inc"
-
 	.include "data/maps/GatoCityDT/scripts.inc"
-
 	.include "data/maps/GatoCityE/scripts.inc"
-
 	.include "data/maps/GatoCityN/scripts.inc"
-
 	.include "data/maps/GatoCityS/scripts.inc"
-
 	.include "data/maps/GatoCityZoo/scripts.inc"
-
 	.include "data/maps/GatoCityPark/scripts.inc"
-
 	.include "data/maps/GatoCityParkN/scripts.inc"
-
 	.include "data/maps/BikeMapW/scripts.inc"
-
 	.include "data/maps/BikeMapE/scripts.inc"
-
 	.include "data/maps/BikeRouteGatoN/scripts.inc"
-
 	.include "data/maps/BikeRouteNE/scripts.inc"
-
 	.include "data/maps/Graveyard/scripts.inc"
-
 	.include "data/maps/Route12/scripts.inc"
-
 	.include "data/maps/Slabs/scripts.inc"
-
 	.include "data/maps/Route14/scripts.inc"
-
 	.include "data/maps/BikeRouteNWS/scripts.inc"
-
 	.include "data/maps/Pyramids/scripts.inc"
-
 	.include "data/maps/Phoenix/scripts.inc"
-
 	.include "data/maps/Route15/scripts.inc"
-
 	.include "data/maps/Vegas/scripts.inc"
-
 	.include "data/maps/Route16/scripts.inc"
-
 	.include "data/maps/MareW/scripts.inc"
-
 	.include "data/maps/MareWW/scripts.inc"
-
 	.include "data/maps/Route17/scripts.inc"
-
 	.include "data/maps/Willow/scripts.inc"
-
 	.include "data/maps/WillowEast/scripts.inc"
-
 	.include "data/maps/Aldeon_Leaf_House/scripts.inc"
-
 	.include "data/maps/Aldeon_Leaf_House_2F/scripts.inc"
-
 	.include "data/maps/AldeonTown_House/scripts.inc"
-
 	.include "data/maps/AldeonTown_ServantHouse/scripts.inc"
-
 	.include "data/maps/AldeonTown_Mart/scripts.inc"
-
 	.include "data/maps/BulbusTown_PokemonCenter/scripts.inc"
-
 	.include "data/maps/BulbusTown_CannabisCenter/scripts.inc"
-
 	.include "data/maps/BulbusTown_Mart/scripts.inc"
-
 	.include "data/maps/SilvanWoods/scripts.inc"
-
 	.include "data/maps/BulbusTown_House1/scripts.inc"
-
 	.include "data/maps/BulbusTown_House2/scripts.inc"
-
 	.include "data/maps/BulbusTown_House3/scripts.inc"
-
 	.include "data/maps/BulbusTown_House4/scripts.inc"
-
 	.include "data/maps/BeachCave/scripts.inc"
-
 	.include "data/maps/CityClara_CannabisClub/scripts.inc"
-
 	.include "data/maps/CityClara_House1/scripts.inc"
-
 	.include "data/maps/CityClara_House2/scripts.inc"
-
 	.include "data/maps/CityClara_PokemonCenter/scripts.inc"
-
 	.include "data/maps/CityClara_School/scripts.inc"
-
 	.include "data/maps/CityClara_Mart/scripts.inc"
-
 	.include "data/maps/CityClara_Church/scripts.inc"
-
 	.include "data/maps/CampLodge/scripts.inc"
-
 	.include "data/maps/RockTunnel/scripts.inc"
-
 	.include "data/maps/Vegas_Hotel1F/scripts.inc"
-
 	.include "data/maps/PowerPlant/scripts.inc"
-
 	.include "data/maps/Vegas_PowerPlant/scripts.inc"
-
 	.include "data/maps/Vegas_PowerPlant2F/scripts.inc"
-
 	.include "data/maps/Ardor_Uni1F/scripts.inc"
-
 	.include "data/maps/Ardor_Uni2F/scripts.inc"
-
 	.include "data/maps/Ardor_Uni3F/scripts.inc"
-
 	.include "data/maps/PyramidInside1F/scripts.inc"
-
 	.include "data/maps/PyramidInside2F/scripts.inc"
-
 	.include "data/maps/PyramidsInside3F/scripts.inc"
-
 	.include "data/maps/PyramidsInide4F/scripts.inc"
-
 	.include "data/maps/PyramidInside5F/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_ArchaeologyClass/scripts.inc"
-
 	.include "data/maps/DarkCave_1FNW/scripts.inc"
-
 	.include "data/maps/DarkCave_1FN/scripts.inc"
-
 	.include "data/maps/DarkCave_1FS/scripts.inc"
-
 	.include "data/maps/DarkCave_2F/scripts.inc"
-
 	.include "data/maps/RocketPrison_Gate/scripts.inc"
-
 	.include "data/maps/RocketPrison_Jail/scripts.inc"
-
 	.include "data/maps/RocketPirson_Mines/scripts.inc"
-
 	.include "data/maps/RocketPrison_Mines1/scripts.inc"
-
 	.include "data/maps/RocketPrison_Mines2/scripts.inc"
-
 	.include "data/maps/NewMap1/scripts.inc"
-
 	.include "data/maps/RocketPrison_Office/scripts.inc"
-
 	.include "data/maps/RocketTower_1F/scripts.inc"
-
 	.include "data/maps/RocketTower_2F/scripts.inc"
-
 	.include "data/maps/RocketTower_3F/scripts.inc"
-
 	.include "data/maps/RocketTower_4F/scripts.inc"
-
 	.include "data/maps/RocketTower_5F/scripts.inc"
-
 	.include "data/maps/RocketTower_6F/scripts.inc"
-
 	.include "data/maps/RocketTower_7F/scripts.inc"
-
 	.include "data/maps/RocketTower_8F/scripts.inc"
-
 	.include "data/maps/RocketTower_9F/scripts.inc"
-
 	.include "data/maps/RocketTower_10F/scripts.inc"
-
 	.include "data/maps/RocketTower_11F/scripts.inc"
-
 	.include "data/maps/RocketTower_12F/scripts.inc"
-
 	.include "data/maps/RocketTower_13F/scripts.inc"
-
 	.include "data/maps/RocketTower_Elevator/scripts.inc"
-
 	.include "data/maps/RocketTower_BF1/scripts.inc"
-
 	.include "data/maps/RocketTower_Underground_Path/scripts.inc"
-
 	.include "data/maps/Capital/scripts.inc"
-
 	.include "data/maps/SecretCave/scripts.inc"
-
 	.include "data/maps/SuperWeenieHutJr/scripts.inc"
-
 	.include "data/maps/WeenieHutJr/scripts.inc"
-
 	.include "data/maps/Hospital1F/scripts.inc"
-
 	.include "data/maps/Hospital2F/scripts.inc"
-
 	.include "data/maps/Hospital3F/scripts.inc"
-
 	.include "data/maps/Hospital4F/scripts.inc"
-
 	.include "data/maps/Hospital5F/scripts.inc"
-
 	.include "data/maps/Hospital6F/scripts.inc"
-
 	.include "data/maps/Hospital7F/scripts.inc"
-
 	.include "data/maps/Hospital_Elevator/scripts.inc"
-
 	.include "data/maps/SaltySpitoon/scripts.inc"
-
 	.include "data/maps/SaltySpitoon_2F/scripts.inc"
-
 	.include "data/maps/Warehouse_Green/scripts.inc"
-
 	.include "data/maps/Warehouse_Red/scripts.inc"
-
 	.include "data/maps/Warehouse_Blue/scripts.inc"
-
 	.include "data/maps/Warehouse_Yellow/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_GeologyClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_BiologyClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_ChemistryClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_MusicClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_ArithmeticClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_GrammarClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_ArtClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_GeometryClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_AlgebraClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_LogicClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_HistoryClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_PsychologyClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_CalculusClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_PhysicsClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_PhilosophyClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_LiteratureClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_PoetryClass/scripts.inc"
-
 	.include "data/maps/Ardor_Uni_RhetoricClass/scripts.inc"
-
-
 	.include "data/maps/Ardor_Uni_Office/scripts.inc"
-
 	.include "data/maps/FootballField/scripts.inc"
-
 	.include "data/maps/Phoenix_Mart/scripts.inc"
-
 	.include "data/maps/DesertTemple_5F/scripts.inc"
-
 	.include "data/maps/DesertTemple_4F/scripts.inc"
-
 	.include "data/maps/DesertTemple_3F/scripts.inc"
-
 	.include "data/maps/DesertTemple_2F/scripts.inc"
-
 	.include "data/maps/DesertTemple_1F/scripts.inc"
-
 	.include "data/maps/DesertTemple_B1F/scripts.inc"
-
 	.include "data/maps/Route15_DesertCave/scripts.inc"
-
 	.include "data/maps/ArtCanvas/scripts.inc"
-
 	.include "data/maps/LogicPuzzle/scripts.inc"
-
 	.include "data/maps/GatoCityAvenues/scripts.inc"
-
 	.include "data/maps/PenninsulaE/scripts.inc"
-
 	.include "data/maps/PeninsulaW/scripts.inc"
-
 	.include "data/maps/MareWWW/scripts.inc"
-
 	.include "data/maps/BikeRouteNW/scripts.inc"
-
 	.include "data/maps/BikeRouteNNW/scripts.inc"
-
 	.include "data/maps/Tucson/scripts.inc"
-
 	.include "data/maps/MountainPath/scripts.inc"
-
 	.include "data/maps/MareS1/scripts.inc"
-
 	.include "data/maps/MareS2/scripts.inc"
-
 	.include "data/maps/MareS3/scripts.inc"
-
 	.include "data/maps/MareS4/scripts.inc"
-
 	.include "data/maps/MareS5/scripts.inc"
-
 	.include "data/maps/MareS6/scripts.inc"
-
 	.include "data/maps/BigIslandN/scripts.inc"
-
 	.include "data/maps/BigIslandS/scripts.inc"
-
 	.include "data/maps/MareS7/scripts.inc"
-
 	.include "data/maps/MareS8/scripts.inc"
-
 	.include "data/maps/MareS9/scripts.inc"
-
 	.include "data/maps/MareS10/scripts.inc"
-
 	.include "data/maps/BikeRouteFarm/scripts.inc"
-
 	.include "data/maps/Farm/scripts.inc"
-
 	.include "data/maps/Hippodrome/scripts.inc"
-
 	.include "data/maps/Troy/scripts.inc"
-
 	.include "data/maps/TroyE/scripts.inc"
-
 	.include "data/maps/TroyS/scripts.inc"
-
 	.include "data/maps/HippodromeW/scripts.inc"
-
 	.include "data/maps/BikeMapNE/scripts.inc"
-
 	.include "data/maps/BikeMapNNE/scripts.inc"
-
 	.include "data/maps/BikeMapTucson/scripts.inc"
-
 	.include "data/maps/BikeMapTucsonS/scripts.inc"
-
 	.include "data/maps/Argo/scripts.inc"
-
 	.include "data/maps/BigIslandFillerW/scripts.inc"
-
 	.include "data/maps/BigIslandFillerE/scripts.inc"
-
 	.include "data/maps/IgnisMons_1F/scripts.inc"
-
 	.include "data/maps/IgnisMons_0F/scripts.inc"
-
 	.include "data/maps/IgnisMons_2F/scripts.inc"
-
 	.include "data/maps/IgnisMons_3F/scripts.inc"
-
 	.include "data/maps/Colchis/scripts.inc"
-
 	.include "data/maps/BulbusSilvanFiller/scripts.inc"
-
 	.include "data/maps/LakeIra/scripts.inc"
-
 	.include "data/maps/SilvanWoodsN/scripts.inc"
-
 	.include "data/maps/WillowWest/scripts.inc"
-
 	.include "data/maps/LakeIraSouth/scripts.inc"
-
 	.include "data/maps/Sanjo/scripts.inc"
-
 	.include "data/maps/SanjoRockFiller/scripts.inc"
-
 	.include "data/maps/BikeMapVegas/scripts.inc"
-
 	.include "data/maps/BulbusWest/scripts.inc"
-
 	.include "data/maps/WesternOceanFiller/scripts.inc"
-
 	.include "data/maps/OceanPerimeterBigIsalndS/scripts.inc"
-
 	.include "data/maps/OceanPerimeter1/scripts.inc"
-
 	.include "data/maps/OceanPerimeter2/scripts.inc"
-
 	.include "data/maps/OceanPerimeter3/scripts.inc"
-
 	.include "data/maps/OceanPerimeter4/scripts.inc"
-
 	.include "data/maps/TroySE/scripts.inc"
-
 	.include "data/maps/ViaMagnaTerminal_Urbia/scripts.inc"
-
 	.include "data/maps/ViaMagnaTerminal_SabinaNova/scripts.inc"
-
 	.include "data/maps/ViaMagnaTerminal_Robustica/scripts.inc"
-
 	.include "data/maps/ViaMagnaTerminal_Deseret/scripts.inc"
-
 	.include "data/maps/ViaMagnaTerminal_Peccadum/scripts.inc"
-
 	.include "data/maps/FarmS/scripts.inc"
-
 	.include "data/maps/Peccadum_TruckDepot/scripts.inc"
-
 	.include "data/maps/Peccadum_HarenaeAureae/scripts.inc"
-
 	.include "data/maps/Peccadum_PalatiumFelix/scripts.inc"
-
 	.include "data/maps/Urbia_TruckDepot/scripts.inc"
-
 	.include "data/maps/Urbia_BikeShop/scripts.inc"
-
 	.include "data/maps/Deseret_DoctorBrunusLab/scripts.inc"
-
 	.include "data/maps/PyramidInsidePuzzle/scripts.inc"
-
 	.include "data/maps/Palmae_RentalHouse/scripts.inc"
-
 	.include "data/maps/Palmae_FratHouse/scripts.inc"
-
 	.include "data/maps/Tranquillitas_SurfSchool/scripts.inc"
-
 	.include "data/maps/TurrisSaltus1F/scripts.inc"
-
 	.include "data/maps/TurrisSaltus6F/scripts.inc"
-
 	.include "data/maps/TurrisSaltus2F/scripts.inc"
-
 	.include "data/maps/TurrisSaltus5F/scripts.inc"
-
 	.include "data/maps/TurrisSaltus4F/scripts.inc"
-
 	.include "data/maps/TurrisSaltus3F/scripts.inc"
-
 	.include "data/maps/CasaTurni/scripts.inc"
-
 	.include "data/maps/Lupercal/scripts.inc"
-
 	.include "data/maps/Salinae/scripts.inc"
-
 	.include "data/maps/Gymnasium/scripts.inc"
-
 	.include "data/maps/AedesTrivis/scripts.inc"
-
 	.include "data/maps/AedesAqua/scripts.inc"
-
 	.include "data/maps/AedesAqua_Water1/scripts.inc"
-
 	.include "data/maps/AedesAqua_Water2/scripts.inc"
-
 	.include "data/maps/AedesAqua_WaterMaze/scripts.inc"
-
 	.include "data/maps/AedesAqua_PuddleRoom/scripts.inc"
-
 	.include "data/maps/AedesAqua_MiniBossRoom/scripts.inc"
-
 	.include "data/maps/AedesAqua_Hallways/scripts.inc"
-
 	.include "data/maps/AedesTerra/scripts.inc"
-
 	.include "data/maps/AedesTerra_BossRoom/scripts.inc"
-
 	.include "data/maps/AedesLux_1F/scripts.inc"
-
 	.include "data/maps/CasaAtrei_Passage/scripts.inc"
-
 	.include "data/maps/CasaAtrei/scripts.inc"
-
 	.include "data/maps/CasaUlyssis/scripts.inc"
-
 	.include "data/maps/CasaCirces/scripts.inc"

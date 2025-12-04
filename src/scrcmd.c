@@ -34,6 +34,7 @@
 #include "menu.h"
 #include "money.h"
 #include "move.h"
+#include "move_relearner.h"
 #include "mystery_event_script.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -3283,6 +3284,41 @@ void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
         StopScript(ctx);
 }
 
+bool8 ScrCmd_setmoverelearnerstate(struct ScriptContext *ctx)
+{
+    enum MoveRelearnerStates state = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    gMoveRelearnerState = state;
+    return FALSE;
+}
+
+bool8 ScrCmd_getmoverelearnerstate(struct ScriptContext *ctx)
+{
+    u32 varId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+    u16 *varPointer = GetVarPointer(varId);
+    *varPointer = gMoveRelearnerState;
+    return FALSE;
+}
+
+bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
+{
+    const u8 *ptr = (const u8 *)ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if ((P_TM_MOVES_RELEARNER || P_ENABLE_MOVE_RELEARNERS)
+     && (P_ENABLE_ALL_TM_MOVES || IsBagPocketNonEmpty(POCKET_TM_HM)))
+        ScriptCall(ctx, ptr);
+
+    return FALSE;
+}
+
 //Cornix Custom
 bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
 {
@@ -3302,8 +3338,6 @@ bool8 ScrCmd_removevarmoney(struct ScriptContext *ctx)
     u32 varId = ScriptReadHalfword(ctx);
     u16 *ptr = GetVarPointer(varId);
     u8 ignore = ScriptReadByte(ctx);
-
-    DebugPrintf("removevarmoney: %d", *ptr);
 
     if (!ignore)
     {

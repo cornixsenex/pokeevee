@@ -335,9 +335,10 @@
 #define OBJ_EVENT_GFX_TRIVIS   		             327
 #define OBJ_EVENT_GFX_SHEIK   		             328
 #define OBJ_EVENT_GFX_ZELDA   		             329
+#define OBJ_EVENT_GFX_APRICORN_TREE              330 //rhh
 
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        330
+#define NUM_OBJ_EVENT_GFX                        331
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
