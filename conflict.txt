@@ -32,30 +32,8 @@
 #CONFLICT (content): Merge conflict in src/scrcmd.c
 
 ##
-	>Rom name (pokeevee) - Check title et .gba file
-	>Hide ability popup - Check Battle
-	>rock cliomb
-	>pc in hospital and rocket tower
-	>Scroll multis
-		>rocket tower elevator
-		>hospital elevator
-		>tictactoe move
-		>salty spitoon get wager
-		>ardor choose science
-		>ardor choose social
-		>ardor choose elective
-		>choose fossil
-		>ardo music choose note
-		>get blue roulette range 1 num
-		>get blue roulette range 2 num
-		>get blue roulette range 3 num
-		>palatium felix coin cashier
 	>Setup Lotus Heads
-	>Auto Run
 	>Fishing
+		!Fishing Lure minigame not working or way too hard
+		!Live Bait It Got Away (check odds maybe possible but not common)
 	>Fishing treasure
-	>misty registration script (money)
-	>Ardor Music Select note
-	>dynamic map popup
-		>D. Columnaris
-	>sound / custom songs
