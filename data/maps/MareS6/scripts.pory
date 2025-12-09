@@ -310,7 +310,7 @@ script MareS6_Script_Shinx {
             end
         //if so YesNo give Moly
         } else {
-            //M: Player game V moly
+            //M: Player gave V moly
             //fade screen
             //sound effect?
             //remove V

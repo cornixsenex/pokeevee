@@ -84,7 +84,7 @@ script MareS3_Script_Transition_IslaHerbaBona {
 
 script MareS3_Script_ShowLotusEaters {
 	setobjectxyperm (LOCALID_MARES3_ULYSSES, 29, 60)
-	setobjectmovementtype (LOCALID_MARES3_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND)
+	setobjectmovementtype (LOCALID_MARES3_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND)
 	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD1, 29, 56)
 	setobjectmovementtype (LOCALID_MARES3_LOTUSHEAD1, MOVEMENT_TYPE_WANDER_AROUND)
 	setobjectxyperm (LOCALID_MARES3_LOTUSHEAD2, 31, 58)
