@@ -169,11 +169,13 @@ static bool32 Fishing_GetRodOut(struct Task *task)
     const s16 minRounds1[] = {
         [OLD_ROD]   = 1,
         [GOOD_ROD]  = 1,
+        [FISHING_LURE]  = 1,
         [SUPER_ROD] = 1
     };
     const s16 minRounds2[] = {
         [OLD_ROD]   = 1,
         [GOOD_ROD]  = 3,
+        [FISHING_LURE]  = 3,
         [SUPER_ROD] = 6
     };
 
@@ -542,6 +544,8 @@ static u32 CalculateFishingBiteOdds(u32 rod, bool32 isStickyHold)
         odds = FISHING_OLD_ROD_ODDS;
     if (rod == GOOD_ROD)
         odds = FISHING_GOOD_ROD_ODDS;
+    if (rod == FISHING_LURE)
+        odds = FISHING_GOOD_ROD_ODDS;
     if (rod == SUPER_ROD)
         odds = FISHING_SUPER_ROD_ODDS;
 
@@ -553,7 +557,6 @@ static u32 CalculateFishingBiteOdds(u32 rod, bool32 isStickyHold)
         odds *= 2;
 
     odds = min(100, odds);
-    DebugPrintf("Fishing odds: %d", odds);
     return odds;
 }
 
@@ -909,7 +912,6 @@ u32 CalculateChainFishingShinyRolls(void)
     if (!I_FISHING_CHAIN || !gIsFishingEncounter)
         return 0;
     u32 a = 2 * min(gChainFishingDexNavStreak, FISHING_CHAIN_SHINY_STREAK_MAX);
-    DebugPrintf("Total Shiny Rolls %d", a);
     return a;
 }
 
