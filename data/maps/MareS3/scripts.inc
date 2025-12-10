@@ -134,7 +134,7 @@ MareS3_Script_ShowLotusEaters::
 # 86 "data/maps/MareS3/scripts.pory"
 	setobjectxyperm LOCALID_MARES3_ULYSSES, 29, 60
 # 87 "data/maps/MareS3/scripts.pory"
-	setobjectmovementtype LOCALID_MARES3_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND
+	setobjectmovementtype LOCALID_MARES3_ULYSSES, MOVEMENT_TYPE_LOOK_AROUND
 # 88 "data/maps/MareS3/scripts.pory"
 	setobjectxyperm LOCALID_MARES3_LOTUSHEAD1, 29, 56
 # 89 "data/maps/MareS3/scripts.pory"

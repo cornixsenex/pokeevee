@@ -605,6 +605,7 @@ gSpecials::
 	def_special CheckWhichTaurosTelemachusPush
 	def_special IsShinyMareepInParty
 	def_special CheckHeadbutt
+	def_special IsMonFollower 
 	def_special ScriptGetPartyMonIsShiny
 	def_special IsRoute3RiverDelta_F
 	def_special GetDynamicMapSec_MareWWW_F

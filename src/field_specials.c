@@ -6269,11 +6269,24 @@ bool32 CheckHeadbutt(void)
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], MOVE_HEADBUTT) == TRUE)
         {
             //save species as var for check if follower
-            gSpecialVar_0x8004 = species;
+            gSpecialVar_0x8004 = i;
             return TRUE;
         }
     }
     return FALSE;
+}
+
+bool32 IsMonFollower(void)
+{
+	u32 i = VarGet(VAR_0x8004); //NOTE VAR_0x8004 is hard coded
+	struct Pokemon *follower = GetFirstLiveMon();
+	struct Pokemon *checkMon = &gPlayerParty[i];
+	if (checkMon == follower) {
+		return TRUE;
+	}
+	else {
+		return FALSE;
+	}
 }
 
 //Beginner stuff fix it later - just do a standard warp setup the truck sequence do the shaking then open the door and release let it warp to Urbia and then have them take the truck away in another fade screen (that should all be handled ON_FRAME_TABLE)

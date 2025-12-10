@@ -47,6 +47,10 @@ mapscripts MareS6_MapScripts {
 		if (var(VAR_ULYSSES_STATE) == 8) {
 			call (MareS6_Script_ShowMolyFruit)
 		}
+		//Lock Circe Door
+		if (var(VAR_ULYSSES_STATE) < 7) {
+			call (MareS6_Script_LockCirceDoor)
+		}
 	}
 }
 
@@ -100,6 +104,11 @@ script MareS6_Script_ShowMolyFruit {
 	setmetatile (16, 60, METATILE_BigIsland_SandPalmFruitL, FALSE)
 	setmetatile (17, 60, METATILE_BigIsland_SandPalmFruitC, FALSE)
 	setmetatile (18, 60, METATILE_BigIsland_SandPalmFruitR, FALSE)
+	return
+}
+
+script MareS6_Script_LockCirceDoor {
+	setmetatile (63, 42, METATILE_General_Door, TRUE)
 	return
 }
 
@@ -347,7 +356,6 @@ script MareS6_Script_PinaFruitTree {
 
 //These are the normal trees
 script MareS6_Script_PinaTree {
-    msgbox (MareS6_Text_TreeIsHeadbuttable)
     //Check if player mons have headbutt
     specialvar (VAR_RESULT, CheckHeadbutt)
     if (var(VAR_RESULT) == YES) {
@@ -387,16 +395,21 @@ script MareS6_Script_FruitFan {
 //NOTE Headbutt trees have not been added yet to expansion. I expect they will be but until then I just won't have actual normal encounters here just the special case BUT in the finished product all the trees on this island should be headbuttable, normally Execute but other stuffs sometimes yknow
 script MareS6_Script_HeadbuttTree {
     //setup headbutt message
-    bufferpartymonnick (STR_VAR_1, VAR_RESULT)
+    bufferpartymonnick (STR_VAR_1, VAR_0x8004)
     buffermovename (STR_VAR_2, MOVE_HEADBUTT)
     //M: mon used headbutt
     msgbox (Text_MonUsedFieldMove)
+	closemessage
     //check is follower
-    isfollowerfieldmoveuser (VAR_0x8004)
-    //setfieldeffectargument (3, VAR_0x8004) //skip pose if so
-    if (var(VAR_0x8004) == TRUE) {
-        call (EventScript_FollowerFieldMove)
-    }
+	specialvar (VAR_RESULT, IsMonFollower)
+    ////setfieldeffectargument (3, VAR_0x8004) //skip pose if so
+    if (var(VAR_RESULT) == TRUE) {
+//        call (EventScript_FollowerFieldMove)
+		msgbox ("FOLLOWER")
+    } else {
+		msgbox ("NOFOLLOWER")
+	}
+	closemessage
     //do headbutt
     playse (SE_M_HEADBUTT)
     waitse
@@ -406,6 +419,7 @@ script MareS6_Script_HeadbuttTree {
     } else {
         //just placeholder battle - make it better of course
         setwildbattle (SPECIES_EXEGGCUTE, 7)
+		dowildbattle
     }
     //reset moly tree flag
     clearflag (FLAG_TEMP_3)
@@ -444,7 +458,7 @@ text MareS6_Text_FishermanBeforeUlysses {
 }
 
 text MareS6_Text_FishermanDuringUlysses {
-    format("Well, I'll tell you what, that Ulysses character sure is a confident walked and a smooth talker, but I don't think anyone can stop that witch in the woods. No sir, I think he'd be better off staying here with me and the fishes.")
+    format("Well, I'll tell you what, that Ulysses character sure is a confident walker and a smooth talker, but I don't think anyone can stop that witch in the woods. No sir, I think he'd be better off staying here with me and the fishes.")
 }
 
 text MareS6_Text_FishermanAfterUlysses {
