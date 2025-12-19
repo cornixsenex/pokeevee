@@ -404,12 +404,11 @@ script MareS6_Script_HeadbuttTree {
 	specialvar (VAR_RESULT, IsMonFollower)
     ////setfieldeffectargument (3, VAR_0x8004) //skip pose if so
     if (var(VAR_RESULT) == TRUE) {
-//        call (EventScript_FollowerFieldMove)
-		msgbox ("FOLLOWER")
-    } else {
-		msgbox ("NOFOLLOWER")
+		setflag (FLAG_SAFE_FOLLOWER_MOVEMENT) 
+        call (EventScript_FollowerFieldMove)
+		clearflag (FLAG_SAFE_FOLLOWER_MOVEMENT)
+		updatefollowingmon
 	}
-	closemessage
     //do headbutt
     playse (SE_M_HEADBUTT)
     waitse
@@ -424,6 +423,7 @@ script MareS6_Script_HeadbuttTree {
     //reset moly tree flag
     clearflag (FLAG_TEMP_3)
     //fin
+	releaseall
     end
 }
 

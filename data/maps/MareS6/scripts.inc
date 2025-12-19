@@ -603,42 +603,46 @@ MareS6_Script_HeadbuttTree::
 # 406 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MareS6_Script_HeadbuttTree_2
-# 410 "data/maps/MareS6/scripts.pory"
-	msgbox MareS6_Script_HeadbuttTree_Text_1
 MareS6_Script_HeadbuttTree_1:
-# 412 "data/maps/MareS6/scripts.pory"
-	closemessage
-# 414 "data/maps/MareS6/scripts.pory"
+# 413 "data/maps/MareS6/scripts.pory"
 	playse SE_M_HEADBUTT
-# 415 "data/maps/MareS6/scripts.pory"
+# 414 "data/maps/MareS6/scripts.pory"
 	waitse
-# 417 "data/maps/MareS6/scripts.pory"
-	goto_if_set FLAG_TEMP_3, MareS6_Script_HeadbuttTree_8
-MareS6_Script_HeadbuttTree_7:
-# 421 "data/maps/MareS6/scripts.pory"
+# 416 "data/maps/MareS6/scripts.pory"
+	goto_if_set FLAG_TEMP_3, MareS6_Script_HeadbuttTree_7
+MareS6_Script_HeadbuttTree_6:
+# 420 "data/maps/MareS6/scripts.pory"
 	setwildbattle SPECIES_EXEGGCUTE, 7
-# 422 "data/maps/MareS6/scripts.pory"
+# 421 "data/maps/MareS6/scripts.pory"
 	dowildbattle
-MareS6_Script_HeadbuttTree_5:
-# 425 "data/maps/MareS6/scripts.pory"
+MareS6_Script_HeadbuttTree_4:
+# 424 "data/maps/MareS6/scripts.pory"
 	clearflag FLAG_TEMP_3
+# 426 "data/maps/MareS6/scripts.pory"
+	releaseall
 	end
 
 MareS6_Script_HeadbuttTree_2:
+# 407 "data/maps/MareS6/scripts.pory"
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 408 "data/maps/MareS6/scripts.pory"
-	msgbox MareS6_Script_HeadbuttTree_Text_0
+	call EventScript_FollowerFieldMove
+# 409 "data/maps/MareS6/scripts.pory"
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+# 410 "data/maps/MareS6/scripts.pory"
+	updatefollowingmon
 	goto MareS6_Script_HeadbuttTree_1
 
-MareS6_Script_HeadbuttTree_6:
-# 418 "data/maps/MareS6/scripts.pory"
-	call MareS6_Script_PinaFruit
-	goto MareS6_Script_HeadbuttTree_5
-
-MareS6_Script_HeadbuttTree_8:
+MareS6_Script_HeadbuttTree_5:
 # 417 "data/maps/MareS6/scripts.pory"
+	call MareS6_Script_PinaFruit
+	goto MareS6_Script_HeadbuttTree_4
+
+MareS6_Script_HeadbuttTree_7:
+# 416 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
-	goto_if_eq MareS6_Script_HeadbuttTree_6
-	goto MareS6_Script_HeadbuttTree_7
+	goto_if_eq MareS6_Script_HeadbuttTree_5
+	goto MareS6_Script_HeadbuttTree_6
 
 
 MareS6_Script_PinaFruit::
@@ -674,14 +678,6 @@ MareS6_Script_PinaFruit::
 MareS6_Script_UlyssesEtFishermanScene_Text_0:
 # 178 "data/maps/MareS6/scripts.pory"
 	.string "ERROR, \nPlayerFacingDirection OOB$"
-
-MareS6_Script_HeadbuttTree_Text_0:
-# 408 "data/maps/MareS6/scripts.pory"
-	.string "FOLLOWER$"
-
-MareS6_Script_HeadbuttTree_Text_1:
-# 410 "data/maps/MareS6/scripts.pory"
-	.string "NOFOLLOWER$"
 
 MareS6_Text_FishermanBeforeUlysses::
 # 456 "data/maps/MareS6/scripts.pory"
