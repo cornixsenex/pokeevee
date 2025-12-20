@@ -499,6 +499,16 @@ MareS6_Script_Shinx_1:
 # 316 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq MareS6_Script_Shinx_3
+# 323 "data/maps/MareS6/scripts.pory"
+	msgbox MareS6_Text_PlayerGaveMoly
+# 324 "data/maps/MareS6/scripts.pory"
+	closemessage
+# 326 "data/maps/MareS6/scripts.pory"
+	fadescreenswapbuffers FADE_TO_WHITE
+# 328 "data/maps/MareS6/scripts.pory"
+	playse MUS_HEAL
+# 329 "data/maps/MareS6/scripts.pory"
+	waitse
 	return
 
 MareS6_Script_Shinx_3:
@@ -526,151 +536,163 @@ MareS6_Script_Poochyena::
 
 
 MareS6_Script_PinaFruitTree::
-# 352 "data/maps/MareS6/scripts.pory"
+# 357 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_TEMP_3
-# 354 "data/maps/MareS6/scripts.pory"
+# 359 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_PinaTree
 	return
 
 
 MareS6_Script_PinaTree::
-# 360 "data/maps/MareS6/scripts.pory"
+# 365 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, CheckHeadbutt
-# 361 "data/maps/MareS6/scripts.pory"
+# 366 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_PinaTree_2
-# 369 "data/maps/MareS6/scripts.pory"
+# 374 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_TreeIsHeadbuttable
 MareS6_Script_PinaTree_1:
-# 371 "data/maps/MareS6/scripts.pory"
+# 376 "data/maps/MareS6/scripts.pory"
 	closemessage
 	end
 
 MareS6_Script_PinaTree_2:
-# 363 "data/maps/MareS6/scripts.pory"
+# 368 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_WantToHeadbutt, MSGBOX_YESNO
-# 364 "data/maps/MareS6/scripts.pory"
+# 369 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_PinaTree_5
 	goto MareS6_Script_PinaTree_1
 
 MareS6_Script_PinaTree_5:
-# 365 "data/maps/MareS6/scripts.pory"
+# 370 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_HeadbuttTree
 	goto MareS6_Script_PinaTree_1
 
 
 MareS6_Script_FruitFan::
-# 377 "data/maps/MareS6/scripts.pory"
+# 382 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 379 "data/maps/MareS6/scripts.pory"
+# 384 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_lt MareS6_Script_FruitFan_2
-# 383 "data/maps/MareS6/scripts.pory"
+# 388 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_eq MareS6_Script_FruitFan_3
-# 388 "data/maps/MareS6/scripts.pory"
-	msgbox MareS6_Text_FruitFan3
+# 393 "data/maps/MareS6/scripts.pory"
+	checktrainerflag TRAINER_PINA_FRUIT_FAN
+	goto_if 0, MareS6_Script_FruitFan_7
+# 398 "data/maps/MareS6/scripts.pory"
+	msgbox MareS6_Text_PinaFruitFanPost
 MareS6_Script_FruitFan_1:
-# 390 "data/maps/MareS6/scripts.pory"
+# 401 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 391 "data/maps/MareS6/scripts.pory"
+# 402 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
-	return
+	end
 
 MareS6_Script_FruitFan_2:
-# 380 "data/maps/MareS6/scripts.pory"
+# 385 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_FruitFan1
 	goto MareS6_Script_FruitFan_1
 
 MareS6_Script_FruitFan_3:
-# 384 "data/maps/MareS6/scripts.pory"
+# 389 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_FruitFan2
+	goto MareS6_Script_FruitFan_1
+
+MareS6_Script_FruitFan_7:
+# 394 "data/maps/MareS6/scripts.pory"
+	msgbox MareS6_Text_PinaFruitFanPre
+# 395 "data/maps/MareS6/scripts.pory"
+	closemessage
+# 396 "data/maps/MareS6/scripts.pory"
+	trainerbattle_no_intro TRAINER_PINA_FRUIT_FAN, MareS6_Text_PinaFruitFanLost
 	goto MareS6_Script_FruitFan_1
 
 
 MareS6_Script_HeadbuttTree::
-# 398 "data/maps/MareS6/scripts.pory"
+# 410 "data/maps/MareS6/scripts.pory"
 	bufferpartymonnick STR_VAR_1, VAR_0x8004
-# 399 "data/maps/MareS6/scripts.pory"
+# 411 "data/maps/MareS6/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_HEADBUTT
-# 401 "data/maps/MareS6/scripts.pory"
+# 413 "data/maps/MareS6/scripts.pory"
 	msgbox Text_MonUsedFieldMove
-# 402 "data/maps/MareS6/scripts.pory"
+# 414 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 404 "data/maps/MareS6/scripts.pory"
+# 416 "data/maps/MareS6/scripts.pory"
 	specialvar VAR_RESULT, IsMonFollower
-# 406 "data/maps/MareS6/scripts.pory"
+# 418 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MareS6_Script_HeadbuttTree_2
 MareS6_Script_HeadbuttTree_1:
-# 413 "data/maps/MareS6/scripts.pory"
+# 425 "data/maps/MareS6/scripts.pory"
 	playse SE_M_HEADBUTT
-# 414 "data/maps/MareS6/scripts.pory"
+# 426 "data/maps/MareS6/scripts.pory"
 	waitse
-# 416 "data/maps/MareS6/scripts.pory"
+# 428 "data/maps/MareS6/scripts.pory"
 	goto_if_set FLAG_TEMP_3, MareS6_Script_HeadbuttTree_7
 MareS6_Script_HeadbuttTree_6:
-# 420 "data/maps/MareS6/scripts.pory"
+# 432 "data/maps/MareS6/scripts.pory"
 	setwildbattle SPECIES_EXEGGCUTE, 7
-# 421 "data/maps/MareS6/scripts.pory"
+# 433 "data/maps/MareS6/scripts.pory"
 	dowildbattle
 MareS6_Script_HeadbuttTree_4:
-# 424 "data/maps/MareS6/scripts.pory"
+# 436 "data/maps/MareS6/scripts.pory"
 	clearflag FLAG_TEMP_3
-# 426 "data/maps/MareS6/scripts.pory"
+# 438 "data/maps/MareS6/scripts.pory"
 	releaseall
 	end
 
 MareS6_Script_HeadbuttTree_2:
-# 407 "data/maps/MareS6/scripts.pory"
+# 419 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 408 "data/maps/MareS6/scripts.pory"
+# 420 "data/maps/MareS6/scripts.pory"
 	call EventScript_FollowerFieldMove
-# 409 "data/maps/MareS6/scripts.pory"
+# 421 "data/maps/MareS6/scripts.pory"
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 410 "data/maps/MareS6/scripts.pory"
+# 422 "data/maps/MareS6/scripts.pory"
 	updatefollowingmon
 	goto MareS6_Script_HeadbuttTree_1
 
 MareS6_Script_HeadbuttTree_5:
-# 417 "data/maps/MareS6/scripts.pory"
+# 429 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_PinaFruit
 	goto MareS6_Script_HeadbuttTree_4
 
 MareS6_Script_HeadbuttTree_7:
-# 416 "data/maps/MareS6/scripts.pory"
+# 428 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_eq MareS6_Script_HeadbuttTree_5
 	goto MareS6_Script_HeadbuttTree_6
 
 
 MareS6_Script_PinaFruit::
-# 433 "data/maps/MareS6/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 434 "data/maps/MareS6/scripts.pory"
-	waitmovement 0
-# 436 "data/maps/MareS6/scripts.pory"
-	playse SE_FALL
-# 437 "data/maps/MareS6/scripts.pory"
-	waitse
-# 439 "data/maps/MareS6/scripts.pory"
-	setmetatile 16, 60, METATILE_BigIsland_SandPalmNoFruitL, FALSE
-# 440 "data/maps/MareS6/scripts.pory"
-	setmetatile 17, 60, METATILE_BigIsland_SandPalmNoFruitC, FALSE
-# 441 "data/maps/MareS6/scripts.pory"
-	setmetatile 18, 60, METATILE_BigIsland_SandPalmNoFruitR, FALSE
-# 442 "data/maps/MareS6/scripts.pory"
-	special DrawWholeMapView
-# 444 "data/maps/MareS6/scripts.pory"
-	msgbox MareS6_Text_PinaFruitFell
 # 445 "data/maps/MareS6/scripts.pory"
-	closemessage
-# 447 "data/maps/MareS6/scripts.pory"
-	giveitem ITEM_PINA_FRUIT
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 446 "data/maps/MareS6/scripts.pory"
+	waitmovement 0
 # 448 "data/maps/MareS6/scripts.pory"
+	playse SE_FALL
+# 449 "data/maps/MareS6/scripts.pory"
+	waitse
+# 451 "data/maps/MareS6/scripts.pory"
+	setmetatile 16, 60, METATILE_BigIsland_SandPalmNoFruitL, FALSE
+# 452 "data/maps/MareS6/scripts.pory"
+	setmetatile 17, 60, METATILE_BigIsland_SandPalmNoFruitC, FALSE
+# 453 "data/maps/MareS6/scripts.pory"
+	setmetatile 18, 60, METATILE_BigIsland_SandPalmNoFruitR, FALSE
+# 454 "data/maps/MareS6/scripts.pory"
+	special DrawWholeMapView
+# 456 "data/maps/MareS6/scripts.pory"
+	msgbox MareS6_Text_PinaFruitFell
+# 457 "data/maps/MareS6/scripts.pory"
 	closemessage
-# 450 "data/maps/MareS6/scripts.pory"
+# 459 "data/maps/MareS6/scripts.pory"
+	giveitem ITEM_PINA_FRUIT
+# 460 "data/maps/MareS6/scripts.pory"
+	closemessage
+# 462 "data/maps/MareS6/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 9
 	return
 
@@ -680,14 +702,14 @@ MareS6_Script_UlyssesEtFishermanScene_Text_0:
 	.string "ERROR, \nPlayerFacingDirection OOB$"
 
 MareS6_Text_FishermanBeforeUlysses::
-# 456 "data/maps/MareS6/scripts.pory"
+# 468 "data/maps/MareS6/scripts.pory"
 	.string "There's been some strange happenings\n"
 	.string "on our sleepy little island. People have\l"
 	.string "been going missing. I'm doing my best to\l"
 	.string "stay out of it and focus on my fishing.$"
 
 MareS6_Text_FishermanDuringUlysses::
-# 460 "data/maps/MareS6/scripts.pory"
+# 472 "data/maps/MareS6/scripts.pory"
 	.string "Well, I'll tell you what, that Ulysses\n"
 	.string "character sure is a confident walker\l"
 	.string "and a smooth talker, but I don't think\l"
@@ -696,13 +718,13 @@ MareS6_Text_FishermanDuringUlysses::
 	.string "staying here with me and the fishes.$"
 
 MareS6_Text_FishermanAfterUlysses::
-# 464 "data/maps/MareS6/scripts.pory"
+# 476 "data/maps/MareS6/scripts.pory"
 	.string "This is my only joy in life, out here just\n"
 	.string "me and the sea. I keep my rod clean and\l"
 	.string "stay out of trouble, that's all I do.$"
 
 MareS6_Text_FishermanExposition::
-# 468 "data/maps/MareS6/scripts.pory"
+# 480 "data/maps/MareS6/scripts.pory"
 	.string "Now losing people is an unfortunate\n"
 	.string "part of life out here on Isla Pina, but\l"
 	.string "nothing like this. We must have lost\l"
@@ -715,12 +737,12 @@ MareS6_Text_FishermanExposition::
 	.string "do about it.$"
 
 MareS6_Text_UlyssesResponseToFisherman::
-# 472 "data/maps/MareS6/scripts.pory"
+# 484 "data/maps/MareS6/scripts.pory"
 	.string "That's terrible! Someone must do\n"
 	.string "something!$"
 
 MareS6_Text_UlyssesCallToAction::
-# 476 "data/maps/MareS6/scripts.pory"
+# 488 "data/maps/MareS6/scripts.pory"
 	.string "My goodness, {PLAYER}, am I glad to\n"
 	.string "see you! I washed ashore and these\l"
 	.string "good people of the island gave me food,\l"
@@ -738,13 +760,13 @@ MareS6_Text_UlyssesCallToAction::
 	.string "I'll meet you there!$"
 
 MareS6_Text_UlyssesJungle::
-# 492 "data/maps/MareS6/scripts.pory"
+# 504 "data/maps/MareS6/scripts.pory"
 	.string "This jungle more dangerous than I had\n"
 	.string "expected but we cannot turn back. Lets\l"
 	.string "muscle our way to the witches lair!$"
 
 MareS6_Text_UlyssesAntePortam::
-# 498 "data/maps/MareS6/scripts.pory"
+# 510 "data/maps/MareS6/scripts.pory"
 	.string "This must be it, the evil witch's lair. Be\n"
 	.string "cautious, we don't know what kind of\l"
 	.string "tricks she has waiting for us once we're\l"
@@ -752,50 +774,58 @@ MareS6_Text_UlyssesAntePortam::
 	.string "save the town!$"
 
 MareS6_Text_MeetsGaze::
-# 505 "data/maps/MareS6/scripts.pory"
+# 517 "data/maps/MareS6/scripts.pory"
 	.string "{STR_VAR_1} meets your gaze with\n"
 	.string "quiet understanding.$"
 
 MareS6_Text_UsePinaFruit::
-# 509 "data/maps/MareS6/scripts.pory"
+# 521 "data/maps/MareS6/scripts.pory"
 	.string "Would you like to give {STR_VAR_1}\n"
 	.string "some of the Piña fruit?$"
 
 MareS6_Text_WantToHeadbutt::
-# 513 "data/maps/MareS6/scripts.pory"
+# 525 "data/maps/MareS6/scripts.pory"
 	.string "It's a large, formidable tree. Would you\n"
 	.string "like to use Headbutt?$"
 
 MareS6_Text_TreeIsHeadbuttable::
-# 517 "data/maps/MareS6/scripts.pory"
+# 529 "data/maps/MareS6/scripts.pory"
 	.string "There's a large, formidable tree that\n"
 	.string "looks like it can be headbutted!$"
 
 MareS6_Text_PinaFruitFell::
-# 521 "data/maps/MareS6/scripts.pory"
+# 533 "data/maps/MareS6/scripts.pory"
 	.string "The fruit fell down from the tree!$"
 
 MareS6_Text_FruitFan1::
-# 525 "data/maps/MareS6/scripts.pory"
+# 537 "data/maps/MareS6/scripts.pory"
 	.string "This piña tree is preparing to bloom!\n"
 	.string "How do I know? I can talk to the trees.$"
 
 MareS6_Text_FruitFan2::
-# 530 "data/maps/MareS6/scripts.pory"
+# 542 "data/maps/MareS6/scripts.pory"
 	.string "The piña tree has borne fruit! Do you\n"
 	.string "know how rare that is? Sometimes not\l"
 	.string "even one tree on the whole island will\l"
 	.string "fruit all year!$"
 
-MareS6_Text_FruitFan3::
-# 536 "data/maps/MareS6/scripts.pory"
+MareS6_Text_PinaFruitFanPre::
+# 548 "data/maps/MareS6/scripts.pory"
 	.string "The piña fruit! What have you done with\n"
 	.string "it? That should belong to the men and\l"
 	.string "women of the island in common, not for\l"
 	.string "some foreign child to steal! You'll pay\l"
 	.string "for this!$"
 
+MareS6_Text_PinaFruitFanLost::
+# 555 "data/maps/MareS6/scripts.pory"
+	.string "You are a villain and you are a thief.$"
+
+MareS6_Text_PinaFruitFanPost::
+# 559 "data/maps/MareS6/scripts.pory"
+	.string "$"
+
 MareS6_Text_PlayerGaveMoly::
-# 543 "data/maps/MareS6/scripts.pory"
+# 563 "data/maps/MareS6/scripts.pory"
 	.string "{PLAYER} gave {STR_VAR_1} some of\n"
 	.string "the piña fruit.$"

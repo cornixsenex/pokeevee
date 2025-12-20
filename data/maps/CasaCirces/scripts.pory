@@ -79,14 +79,14 @@ script CasaCirces_Script_ShowPlayerConfrontCirce {
     setobjectxyperm (LOCALID_CASACIRCES_MISMAGIUS, 5, 2)
     setobjectmovementtype (LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
     //T
-    setobjectxyperm (LOCALID_CASACIRCES_TEDDIURSA, 4, 2)
+    setobjectxyperm (LOCALID_CASACIRCES_TEDDIURSA, 2, 4)
     setobjectmovementtype (LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_LOOK_AROUND)
     return
 }
 
 script CasaCirces_Script_ShowUlyssesAfterCirce {
     //T
-    setobjectxyperm (LOCALID_CASACIRCES_TEDDIURSA, 4, 2)
+    setobjectxyperm (LOCALID_CASACIRCES_TEDDIURSA, 2, 4)
     setobjectmovementtype (LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_LOOK_AROUND)
     return
 }
@@ -139,10 +139,80 @@ script CasaCirces_Script_Teddiursa {
         unfaceplayer
         end
     } else {
-        //Restore Ulysses scene
-        msgbox (MareS6_Text_PlayerGaveMoly)
-
+		call (CasaCirces_Script_RestoreUlysses) //Restore Ulysses scene
     }
+	end
+}
+
+script CasaCirces_Script_RestoreUlysses {
+
+	msgbox (MareS6_Text_PlayerGaveMoly)
+	closemessage
+	//fade screen
+	fadescreenswapbuffers (FADE_TO_WHITE)
+	//sound effect
+	playse (MUS_HEAL)
+	waitse
+	//remove T
+	removeobject (LOCALID_CASACIRCES_TEDDIURSA)
+	setobjectxyperm (LOCALID_CASACIRCES_TEDDIURSA, 0, 0)
+	setobjectmovementtype (LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_CASACIRCES_TEDDIURSA)
+	//place U
+	removeobject (LOCALID_CASACIRCES_ULYSSES)
+	setobjectxyperm (LOCALID_CASACIRCES_ULYSSES, 2, 4)
+	setobjectmovementtype (LOCALID_CASACIRCES_ULYSSES, MOVEMENT_TYPE_FACE_DOWN)
+	addobject (LOCALID_CASACIRCES_ULYSSES)
+	addobject (LOCALID_CASACIRCES_ULYSSES)
+	//face U
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown)
+		case DIR_SOUTH:
+			applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceUp)
+		case DIR_EAST:
+			applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceLeft)
+		case DIR_WEST:
+			applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceRight)
+		default:
+			msgbox("ERROR: GetPlayer\nFacingDirection OOB")
+			closemessage
+			release
+			end
+	}
+	waitmovement (0)
+	//unfade screen
+	fadescreenswapbuffers (FADE_FROM_WHITE)
+	//U:
+	msgbox (CasaCirces_Text_Ulysses_Restored1)
+	closemessage
+	applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	msgbox (CasaCirces_Text_Ulysses_Restored2)
+	closemessage
+	//Exit U
+	if (var(VAR_RESULT) != DIR_NORTH) {
+		applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+		applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkLeft2)
+	} else {
+		applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkLeft)
+		waitmovement (0)
+		applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+		applymovement (LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkLeft)
+	}
+	waitmovement (0)
+	//remove U
+	removeobject (LOCALID_CASACIRCES_ULYSSES)
+	setobjectxyperm (LOCALID_CASACIRCES_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_CASACIRCES_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_CASACIRCES_ULYSSES)
+	//setvar
+	setvar (VAR_ULYSSES_STATE, 11)
+	//fin
+	return
 }
 //Scene Scripts
 
@@ -257,7 +327,7 @@ script CasaCirces_Script_PlayerConfrontCirce {
     //setvars
     setvar (VAR_ULYSSES_STATE, 10)
     //fin
-
+	end
 }
 
 text CasaCirces_Text_Ulysses_ConfrontCirce1 {
@@ -367,3 +437,17 @@ text CasaCirces_Text_CirceLost {
     format("Look what you've done! I'm melting! I'm melting!")
 }
 
+text CasaCirces_Text_Ulysses_Restored1 {
+	format("My lad! Is that you? What happened to me?
+			Where is Circe? I had a wicked dream
+			that I was transformed by her magic spell
+			into Teddiursa...")
+}
+
+text CasaCirces_Text_Ulysses_Restored2 {
+	format("That was no dream!
+			You saved me, {PLAYER}! I can't thank you enough.
+			The witch must have transformed the missing men
+			who came here from the town. We must act now
+			and save them! C'mon, {PLAYER}, no time to lose.")
+}

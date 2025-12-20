@@ -962,7 +962,7 @@ AedesTrivis_Text_Orestes_TrivisComplete3::
 AedesTrivis_Text_Sage_TrivisComplete3::
 # 664 "data/maps/AedesTrivis/scripts.pory"
 	.string "What happy day! You've done it lad! You\n"
-	.string "have returned our temple to it's lost\l"
+	.string "have returned our temple to its lost\l"
 	.string "glory! The Trivis, at long last, has been\l"
 	.string "restored!$"
 

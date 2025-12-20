@@ -1015,7 +1015,7 @@ text CityClara_Text_Senex1 {
 }
 
 text CityClara_Text_Senex2 {
-	format("This place is ancient, older than I am. They say that people first lived on the lake thousands of years ago. Escpaing drought the elder race escaped across the sea and here observed a certain sign of fate. Upon the crystal clear basin surface a Charizard devoured it's own tail. The elders knew their fate: To build a town upon the lake in reverence of their god. And now thousands of years in the future is it coincedance that Mew is here?")
+	format("This place is ancient, older than I am. They say that people first lived on the lake thousands of years ago. Escpaing drought the elder race escaped across the sea and here observed a certain sign of fate. Upon the crystal clear basin surface a Charizard devoured its own tail. The elders knew their fate: To build a town upon the lake in reverence of their god. And now thousands of years in the future is it coincedance that Mew is here?")
 }
 
 text CityClara_Text_Senex3 {

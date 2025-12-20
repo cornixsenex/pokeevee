@@ -2494,7 +2494,7 @@ MareS9_Text_Elissa1::
 	.string "traveller who, by the winds of fate, was\l"
 	.string "blown off course for us to meet you\l"
 	.string "here. Tell us, pilgrim, does our guess\l"
-	.string "find it's mark?$"
+	.string "find its mark?$"
 
 MareS9_Text_AeneasToElissa::
 # 921 "data/maps/MareS9/scripts.pory"

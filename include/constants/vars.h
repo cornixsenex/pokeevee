@@ -146,12 +146,8 @@
                                                                 // 9: After Molly acquired - Circe Battle On_Frame
                                                                 // 10: After Circle Battle - Ulysses a Pig
                                                                 // 11: After Ulysses restored to man - In Pen with prisoners
-                                                                //12: 1 Prisoner restored
-                                                                //13: 2 Prisoner restored
-                                                                //14: 3 Prisoner restored
-                                                                //15: 4 Prisoner restored
-                                                                //16: 5 Prisoner restored - Trigger finish Moly script
-                                                                //17: After Circe episode - Ulysses on Western Shores - Begin Shades
+                                                                // 12: Prisoners restored - Show Ulysses Beach - Begin Shades
+                                                                // 13: After Circe episode - Ulysses on Western Shores - Begin Shades
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

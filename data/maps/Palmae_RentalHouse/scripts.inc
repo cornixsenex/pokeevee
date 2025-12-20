@@ -303,7 +303,7 @@ Palmae_RentalHouse_Text_Leaf2::
 	.string "School. Now I begin to feel the\l"
 	.string "constant click of time grinding the\l"
 	.string "gears of my youthful beauty\l"
-	.string "approaching it's inevitable end. I think\l"
+	.string "approaching its inevitable end. I think\l"
 	.string "it's time to settle down and find a good\l"
 	.string "husband. Though not to say we must give\l"
 	.string "up our quest but that it's taken up\l"

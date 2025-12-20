@@ -663,7 +663,7 @@ text AedesTrivis_Text_Orestes_TrivisComplete3 {
 
 text AedesTrivis_Text_Sage_TrivisComplete3 {
 	format("What happy day! You've done it lad! You have
-			returned our temple to it's lost glory!
+			returned our temple to its lost glory!
 			The Trivis, at long last, has been restored!")
 }
 

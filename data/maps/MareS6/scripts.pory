@@ -320,8 +320,13 @@ script MareS6_Script_Shinx {
         //if so YesNo give Moly
         } else {
             //M: Player gave V moly
+			msgbox (MareS6_Text_PlayerGaveMoly)
+			closemessage
             //fade screen
+			fadescreenswapbuffers (FADE_TO_WHITE)
             //sound effect?
+			playse (MUS_HEAL)
+			waitse
             //remove V
             //add sailor to correct location
             //face sailor to correct direction
@@ -385,10 +390,17 @@ script MareS6_Script_FruitFan {
     }
     //after you took fruit (battle?)
     else {
-        msgbox (MareS6_Text_FruitFan3)
+		if (!defeated(TRAINER_PINA_FRUIT_FAN)) {
+			msgbox (MareS6_Text_PinaFruitFanPre)
+			closemessage
+			trainerbattle_no_intro (TRAINER_PINA_FRUIT_FAN, MareS6_Text_PinaFruitFanLost)
+		} else {
+			msgbox (MareS6_Text_PinaFruitFanPost)
+		}
     }
     closemessage
     unfaceplayer
+	end
 }
 
 
@@ -533,11 +545,19 @@ text MareS6_Text_FruitFan2 {
             tree on the whole island will fruit all year!")
 }
 
-text MareS6_Text_FruitFan3 {
+text MareS6_Text_PinaFruitFanPre {
     format("The piña fruit! What have you done with it?
             That should belong to the men and women
             of the island in common, not for some
             foreign child to steal! You'll pay for this!")
+}
+
+text MareS6_Text_PinaFruitFanLost {
+	format("You are a villain and you are a thief.")
+}
+
+text MareS6_Text_PinaFruitFanPost {
+	format("")
 }
 
 text MareS6_Text_PlayerGaveMoly {

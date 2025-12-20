@@ -1648,7 +1648,7 @@ CityClara_Text_Senex2::
 	.string "drought the elder race escaped across\l"
 	.string "the sea and here observed a certain\l"
 	.string "sign of fate. Upon the crystal clear\l"
-	.string "basin surface a Charizard devoured it's\l"
+	.string "basin surface a Charizard devoured its\l"
 	.string "own tail. The elders knew their fate: To\l"
 	.string "build a town upon the lake in reverence\l"
 	.string "of their god. And now thousands of\l"

@@ -486,7 +486,7 @@ AedesAqua_Text_LinkMessage::
 	.string "The golden power which you seek\n"
 	.string "Is not for anyone to keep.\p"
 	.string "Too dangerous to leave alone,\n"
-	.string "I took it from it's former home.\p"
+	.string "I took it from its former home.\p"
 	.string "The three components I have hid\n"
 	.string "Within three temples dark and dim.\p"
 	.string "The one I hide under the lake\n"

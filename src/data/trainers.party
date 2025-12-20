@@ -1806,6 +1806,18 @@ Chinchou
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+=== TRAINER_PINA_FRUIT_FAN ===
+Name: Jack
+Class: Fruit Fan
+Pic: Bug Catcher
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+
+Tropius
+Level: 3
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RIVAL3 ===
 Name: {B_RIVAL_NAME}
@@ -2974,10 +2986,10 @@ Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MEDEA ===
-Name: MEDEA
-Class: Hex Maniac
+Name: Medea
+Class: Enchantress
 Pic: Channeler
-Gender: Male
+Gender: Female
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -3448,8 +3460,8 @@ Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CIRCE ===
-Name: CIRCE
-Class: Guitarist
+Name: Circe
+Class: Enchantress
 Pic: Agatha
 Gender: Female
 Music: Intense

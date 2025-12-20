@@ -113,7 +113,7 @@ CasaCirces_Script_ShowPlayerConfrontCirce::
 # 80 "data/maps/CasaCirces/scripts.pory"
 	setobjectmovementtype LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 # 82 "data/maps/CasaCirces/scripts.pory"
-	setobjectxyperm LOCALID_CASACIRCES_TEDDIURSA, 4, 2
+	setobjectxyperm LOCALID_CASACIRCES_TEDDIURSA, 2, 4
 # 83 "data/maps/CasaCirces/scripts.pory"
 	setobjectmovementtype LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_LOOK_AROUND
 	return
@@ -121,7 +121,7 @@ CasaCirces_Script_ShowPlayerConfrontCirce::
 
 CasaCirces_Script_ShowUlyssesAfterCirce::
 # 89 "data/maps/CasaCirces/scripts.pory"
-	setobjectxyperm LOCALID_CASACIRCES_TEDDIURSA, 4, 2
+	setobjectxyperm LOCALID_CASACIRCES_TEDDIURSA, 2, 4
 # 90 "data/maps/CasaCirces/scripts.pory"
 	setobjectmovementtype LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_LOOK_AROUND
 	return
@@ -205,12 +205,12 @@ CasaCirces_Script_Teddiursa::
 	msgbox MareS6_Text_UsePinaFruit, MSGBOX_YESNO
 # 137 "data/maps/CasaCirces/scripts.pory"
 	compare VAR_RESULT, NO
-	goto_if_eq CasaCirces_Script_Teddiursa_1
-# 143 "data/maps/CasaCirces/scripts.pory"
-	msgbox MareS6_Text_PlayerGaveMoly
-	return
+	goto_if_eq CasaCirces_Script_Teddiursa_2
+# 142 "data/maps/CasaCirces/scripts.pory"
+	call CasaCirces_Script_RestoreUlysses
+	end
 
-CasaCirces_Script_Teddiursa_1:
+CasaCirces_Script_Teddiursa_2:
 # 138 "data/maps/CasaCirces/scripts.pory"
 	closemessage
 # 139 "data/maps/CasaCirces/scripts.pory"
@@ -218,190 +218,318 @@ CasaCirces_Script_Teddiursa_1:
 	end
 
 
-CasaCirces_Script_UlyssesConfrontCirce::
-# 151 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+CasaCirces_Script_RestoreUlysses::
+# 149 "data/maps/CasaCirces/scripts.pory"
+	msgbox MareS6_Text_PlayerGaveMoly
+# 150 "data/maps/CasaCirces/scripts.pory"
+	closemessage
 # 152 "data/maps/CasaCirces/scripts.pory"
-	waitmovement 0
+	fadescreenswapbuffers FADE_TO_WHITE
 # 154 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	playse MUS_HEAL
 # 155 "data/maps/CasaCirces/scripts.pory"
-	waitmovement 0
+	waitse
 # 157 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+	removeobject LOCALID_CASACIRCES_TEDDIURSA
 # 158 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Ulysses_ConfrontCirce1
+	setobjectxyperm LOCALID_CASACIRCES_TEDDIURSA, 0, 0
 # 159 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
-# 161 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_CIRCE, 190, 98
+	setobjectmovementtype LOCALID_CASACIRCES_TEDDIURSA, MOVEMENT_TYPE_INVISIBLE
+# 160 "data/maps/CasaCirces/scripts.pory"
+	addobject LOCALID_CASACIRCES_TEDDIURSA
 # 162 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Circe_ConfrontUlysses1
+	removeobject LOCALID_CASACIRCES_ULYSSES
 # 163 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_CIRCE
+	setobjectxyperm LOCALID_CASACIRCES_ULYSSES, 2, 4
+# 164 "data/maps/CasaCirces/scripts.pory"
+	setobjectmovementtype LOCALID_CASACIRCES_ULYSSES, MOVEMENT_TYPE_FACE_DOWN
 # 165 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
+	addobject LOCALID_CASACIRCES_ULYSSES
 # 166 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-# 167 "data/maps/CasaCirces/scripts.pory"
-	waitmovement 0
+	addobject LOCALID_CASACIRCES_ULYSSES
+# 168 "data/maps/CasaCirces/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 169 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+	switch VAR_RESULT
 # 170 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Ulysses_ConfrontCirce2
-# 171 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
-# 173 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_CIRCE, 190, 98
+	case DIR_NORTH, CasaCirces_Script_RestoreUlysses_3
+# 172 "data/maps/CasaCirces/scripts.pory"
+	case DIR_SOUTH, CasaCirces_Script_RestoreUlysses_4
 # 174 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Circe_ConfrontUlysses2
-# 175 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_CIRCE
-# 177 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 178 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Ulysses_ConfrontCirce3
+	case DIR_EAST, CasaCirces_Script_RestoreUlysses_5
+# 176 "data/maps/CasaCirces/scripts.pory"
+	case DIR_WEST, CasaCirces_Script_RestoreUlysses_6
 # 179 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
+	msgbox CasaCirces_Script_RestoreUlysses_Text_0
+# 180 "data/maps/CasaCirces/scripts.pory"
+	closemessage
 # 181 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_CIRCE, 190, 98
-# 182 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Circe_ConfrontUlysses3
-# 183 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_CIRCE
-# 185 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 186 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Ulysses_ConfrontCirce4
-# 187 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
-# 189 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_CIRCE, 190, 98
-# 190 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Circe_ConfrontUlysses4
-# 191 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_CIRCE
-# 193 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown
-# 194 "data/maps/CasaCirces/scripts.pory"
+	release
+	end
+
+CasaCirces_Script_RestoreUlysses_1:
+# 184 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
-# 196 "data/maps/CasaCirces/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 197 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Ulysses_ConfrontCirce5
-# 199 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceUp
+# 186 "data/maps/CasaCirces/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_WHITE
+# 188 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_Restored1
+# 189 "data/maps/CasaCirces/scripts.pory"
+	closemessage
+# 190 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_ExclamationMark
+# 191 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 192 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_Restored2
+# 193 "data/maps/CasaCirces/scripts.pory"
+	closemessage
+# 195 "data/maps/CasaCirces/scripts.pory"
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_ne CasaCirces_Script_RestoreUlysses_9
 # 200 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkLeft
+# 201 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
 # 202 "data/maps/CasaCirces/scripts.pory"
-	msgbox CasaCirces_Text_Ulysses_ConfrontCirce6
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkDown
 # 203 "data/maps/CasaCirces/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
+	waitmovement 0
 # 204 "data/maps/CasaCirces/scripts.pory"
-	closemessage
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkLeft
+CasaCirces_Script_RestoreUlysses_8:
 # 206 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
-# 207 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
 # 208 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkRight
+	removeobject LOCALID_CASACIRCES_ULYSSES
 # 209 "data/maps/CasaCirces/scripts.pory"
-	waitmovement 0
+	setobjectxyperm LOCALID_CASACIRCES_ULYSSES, 0, 0
 # 210 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
+	setobjectmovementtype LOCALID_CASACIRCES_ULYSSES, MOVEMENT_TYPE_INVISIBLE
 # 211 "data/maps/CasaCirces/scripts.pory"
-	waitmovement 0
-# 212 "data/maps/CasaCirces/scripts.pory"
-	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown
+	addobject LOCALID_CASACIRCES_ULYSSES
 # 213 "data/maps/CasaCirces/scripts.pory"
+	setvar VAR_ULYSSES_STATE, 11
+	return
+
+CasaCirces_Script_RestoreUlysses_3:
+# 171 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown
+	goto CasaCirces_Script_RestoreUlysses_1
+
+CasaCirces_Script_RestoreUlysses_4:
+# 173 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceUp
+	goto CasaCirces_Script_RestoreUlysses_1
+
+CasaCirces_Script_RestoreUlysses_5:
+# 175 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceLeft
+	goto CasaCirces_Script_RestoreUlysses_1
+
+CasaCirces_Script_RestoreUlysses_6:
+# 177 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceRight
+	goto CasaCirces_Script_RestoreUlysses_1
+
+CasaCirces_Script_RestoreUlysses_9:
+# 196 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkDown
+# 197 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
-# 215 "data/maps/CasaCirces/scripts.pory"
+# 198 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkLeft2
+	goto CasaCirces_Script_RestoreUlysses_8
+
+
+CasaCirces_Script_UlyssesConfrontCirce::
+# 221 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 222 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 224 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 225 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 227 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 228 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce1
+# 229 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 231 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_CIRCE, 190, 98
+# 232 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Circe_ConfrontUlysses1
+# 233 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
+# 235 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
+# 236 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 237 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 239 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 240 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce2
+# 241 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 243 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_CIRCE, 190, 98
+# 244 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Circe_ConfrontUlysses2
+# 245 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
+# 247 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 248 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce3
+# 249 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 251 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_CIRCE, 190, 98
+# 252 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Circe_ConfrontUlysses3
+# 253 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
+# 255 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 256 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce4
+# 257 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 259 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_CIRCE, 190, 98
+# 260 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Circe_ConfrontUlysses4
+# 261 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_CIRCE
+# 263 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown
+# 264 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 266 "data/maps/CasaCirces/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 267 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce5
+# 269 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceUp
+# 270 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 272 "data/maps/CasaCirces/scripts.pory"
+	msgbox CasaCirces_Text_Ulysses_ConfrontCirce6
+# 273 "data/maps/CasaCirces/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 274 "data/maps/CasaCirces/scripts.pory"
+	closemessage
+# 276 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
+# 277 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 278 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkRight
+# 279 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 280 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_WalkUp
+# 281 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 282 "data/maps/CasaCirces/scripts.pory"
+	applymovement LOCALID_CASACIRCES_ULYSSES, Common_Movement_FaceDown
+# 283 "data/maps/CasaCirces/scripts.pory"
+	waitmovement 0
+# 285 "data/maps/CasaCirces/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 8
 	end
 
 
 CasaCirces_Script_PlayerConfrontCirce::
-# 222 "data/maps/CasaCirces/scripts.pory"
+# 292 "data/maps/CasaCirces/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
-# 223 "data/maps/CasaCirces/scripts.pory"
+# 293 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
-# 225 "data/maps/CasaCirces/scripts.pory"
+# 295 "data/maps/CasaCirces/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 226 "data/maps/CasaCirces/scripts.pory"
+# 296 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
-# 228 "data/maps/CasaCirces/scripts.pory"
+# 298 "data/maps/CasaCirces/scripts.pory"
 	load_field_pic FIELD_PIC_CIRCE, 190, 98
-# 229 "data/maps/CasaCirces/scripts.pory"
+# 299 "data/maps/CasaCirces/scripts.pory"
 	msgbox CasaCirces_Text_Circe_ConfrontPlayer1
-# 230 "data/maps/CasaCirces/scripts.pory"
+# 300 "data/maps/CasaCirces/scripts.pory"
 	destroy_field_pic FIELD_PIC_CIRCE
-# 232 "data/maps/CasaCirces/scripts.pory"
+# 302 "data/maps/CasaCirces/scripts.pory"
 	load_field_pic FIELD_PIC_TEDDIURSA, 190, 98
-# 233 "data/maps/CasaCirces/scripts.pory"
+# 303 "data/maps/CasaCirces/scripts.pory"
 	playmoncry SPECIES_TEDDIURSA, CRY_MODE_ENCOUNTER
-# 234 "data/maps/CasaCirces/scripts.pory"
+# 304 "data/maps/CasaCirces/scripts.pory"
 	waitmoncry
-# 235 "data/maps/CasaCirces/scripts.pory"
+# 305 "data/maps/CasaCirces/scripts.pory"
 	destroy_field_pic FIELD_PIC_TEDDIURSA
-# 237 "data/maps/CasaCirces/scripts.pory"
+# 307 "data/maps/CasaCirces/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
-# 238 "data/maps/CasaCirces/scripts.pory"
+# 308 "data/maps/CasaCirces/scripts.pory"
 	waitmovement 0
-# 240 "data/maps/CasaCirces/scripts.pory"
+# 310 "data/maps/CasaCirces/scripts.pory"
 	load_field_pic FIELD_PIC_CIRCE, 190, 98
-# 241 "data/maps/CasaCirces/scripts.pory"
+# 311 "data/maps/CasaCirces/scripts.pory"
 	msgbox CasaCirces_Text_Circe_ConfrontPlayer2
-# 242 "data/maps/CasaCirces/scripts.pory"
+# 312 "data/maps/CasaCirces/scripts.pory"
 	destroy_field_pic FIELD_PIC_CIRCE
-# 244 "data/maps/CasaCirces/scripts.pory"
+# 314 "data/maps/CasaCirces/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 245 "data/maps/CasaCirces/scripts.pory"
+# 315 "data/maps/CasaCirces/scripts.pory"
 	trainerbattle_no_intro TRAINER_CIRCE, CasaCirces_Text_CirceLost
-# 247 "data/maps/CasaCirces/scripts.pory"
+# 317 "data/maps/CasaCirces/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 248 "data/maps/CasaCirces/scripts.pory"
+# 318 "data/maps/CasaCirces/scripts.pory"
 	removeobject LOCALID_CASACIRCES_CIRCE
-# 249 "data/maps/CasaCirces/scripts.pory"
+# 319 "data/maps/CasaCirces/scripts.pory"
 	setobjectxyperm LOCALID_CASACIRCES_CIRCE, 0, 0
-# 250 "data/maps/CasaCirces/scripts.pory"
+# 320 "data/maps/CasaCirces/scripts.pory"
 	setobjectmovementtype LOCALID_CASACIRCES_CIRCE, MOVEMENT_TYPE_INVISIBLE
-# 251 "data/maps/CasaCirces/scripts.pory"
+# 321 "data/maps/CasaCirces/scripts.pory"
 	addobject LOCALID_CASACIRCES_CIRCE
-# 252 "data/maps/CasaCirces/scripts.pory"
+# 322 "data/maps/CasaCirces/scripts.pory"
 	removeobject LOCALID_CASACIRCES_MISMAGIUS
-# 253 "data/maps/CasaCirces/scripts.pory"
+# 323 "data/maps/CasaCirces/scripts.pory"
 	removeobject LOCALID_CASACIRCES_CIRCE
-# 254 "data/maps/CasaCirces/scripts.pory"
+# 324 "data/maps/CasaCirces/scripts.pory"
 	setobjectxyperm LOCALID_CASACIRCES_MISMAGIUS, 0, 0
-# 255 "data/maps/CasaCirces/scripts.pory"
+# 325 "data/maps/CasaCirces/scripts.pory"
 	setobjectmovementtype LOCALID_CASACIRCES_MISMAGIUS, MOVEMENT_TYPE_INVISIBLE
-# 256 "data/maps/CasaCirces/scripts.pory"
+# 326 "data/maps/CasaCirces/scripts.pory"
 	addobject LOCALID_CASACIRCES_MISMAGIUS
-# 258 "data/maps/CasaCirces/scripts.pory"
+# 328 "data/maps/CasaCirces/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 10
-	return
+	end
 
+
+CasaCirces_Script_RestoreUlysses_Text_0:
+# 179 "data/maps/CasaCirces/scripts.pory"
+	.string "ERROR: GetPlayer\nFacingDirection OOB$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce1::
-# 263 "data/maps/CasaCirces/scripts.pory"
+# 333 "data/maps/CasaCirces/scripts.pory"
 	.string "Behold! The wicked witch of the forest!\n"
 	.string "We've got you cornered now!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses1::
-# 268 "data/maps/CasaCirces/scripts.pory"
+# 338 "data/maps/CasaCirces/scripts.pory"
 	.string "Hi! Here I am! You've really got me now,\n"
 	.string "but I wonder, who is this handsome man\l"
 	.string "who will take me?$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce2::
-# 274 "data/maps/CasaCirces/scripts.pory"
+# 344 "data/maps/CasaCirces/scripts.pory"
 	.string "Stay back you naughty witch, your time\n"
 	.string "has come. I'm here to punish you and put\l"
 	.string "an end to your evil magic! Don't try and\l"
 	.string "run!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses2::
-# 280 "data/maps/CasaCirces/scripts.pory"
+# 350 "data/maps/CasaCirces/scripts.pory"
 	.string "Don't try and run? I'd never dream of it!\n"
 	.string "Playing hard to get is not my style. I am\l"
 	.string "Circe, the lady of the woods. Naughty\l"
@@ -411,13 +539,13 @@ CasaCirces_Text_Circe_ConfrontUlysses2::
 	.string "gentleman caller.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce3::
-# 290 "data/maps/CasaCirces/scripts.pory"
+# 360 "data/maps/CasaCirces/scripts.pory"
 	.string "I am Ulysses, lord of Ithaca, and I've\n"
 	.string "come to save the men you've bewitched\l"
 	.string "on behalf of the people of the town.$"
 
 CasaCirces_Text_Circe_ConfrontUlysses3::
-# 296 "data/maps/CasaCirces/scripts.pory"
+# 366 "data/maps/CasaCirces/scripts.pory"
 	.string "Welcome, Lord Ulysses, to abode. Those\n"
 	.string "men, I think, bewitched and conquered\l"
 	.string "me more than I bewitched or ill-treated\l"
@@ -430,12 +558,12 @@ CasaCirces_Text_Circe_ConfrontUlysses3::
 	.string "previous forms.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce4::
-# 308 "data/maps/CasaCirces/scripts.pory"
+# 378 "data/maps/CasaCirces/scripts.pory"
 	.string "Enough waiting, woman, give me the\n"
 	.string "fruit!$"
 
 CasaCirces_Text_Circe_ConfrontUlysses4::
-# 312 "data/maps/CasaCirces/scripts.pory"
+# 382 "data/maps/CasaCirces/scripts.pory"
 	.string "The Piña fruit, native to our island, is\n"
 	.string "very rare. The Piña tree only flowers\l"
 	.string "once in a generation we would need to\l"
@@ -453,7 +581,7 @@ CasaCirces_Text_Circe_ConfrontUlysses4::
 	.string "mischief together...$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce5::
-# 329 "data/maps/CasaCirces/scripts.pory"
+# 399 "data/maps/CasaCirces/scripts.pory"
 	.string "I think, for now, we'll have to trust the\n"
 	.string "witch. Don't worry, I think I can hold my\l"
 	.string "own if she tries any tricks I'll pin her\l"
@@ -465,34 +593,50 @@ CasaCirces_Text_Ulysses_ConfrontCirce5::
 	.string "up! Leave me and her alone.$"
 
 CasaCirces_Text_Ulysses_ConfrontCirce6::
-# 340 "data/maps/CasaCirces/scripts.pory"
+# 410 "data/maps/CasaCirces/scripts.pory"
 	.string "So be it, witch, I'll keep ahold of you\n"
 	.string "while my companion, {PLAYER}, fetches\l"
 	.string "the fruit you need to return the men to\l"
 	.string "their homes.$"
 
 CasaCirces_Text_Ulysses_AfterConfrontCirce::
-# 346 "data/maps/CasaCirces/scripts.pory"
+# 416 "data/maps/CasaCirces/scripts.pory"
 	.string "Let me handle Circe alone, you go search\n"
 	.string "the island and find the Piña fruit.$"
 
 CasaCirces_Text_Circe_AfterConfrontUlysses::
-# 351 "data/maps/CasaCirces/scripts.pory"
+# 421 "data/maps/CasaCirces/scripts.pory"
 	.string "The Piña tree only rarely bears fruit.\n"
 	.string "You'd better hurry up and start your\l"
 	.string "search if you have any hopes of finding\l"
 	.string "some.$"
 
 CasaCirces_Text_Circe_ConfrontPlayer1::
-# 357 "data/maps/CasaCirces/scripts.pory"
+# 427 "data/maps/CasaCirces/scripts.pory"
 	.string "You're too late.$"
 
 CasaCirces_Text_Circe_ConfrontPlayer2::
-# 361 "data/maps/CasaCirces/scripts.pory"
+# 431 "data/maps/CasaCirces/scripts.pory"
 	.string "Your friend is beyond your help, but\n"
 	.string "don't you worry. You'll be with him soon.$"
 
 CasaCirces_Text_CirceLost::
-# 366 "data/maps/CasaCirces/scripts.pory"
+# 436 "data/maps/CasaCirces/scripts.pory"
 	.string "Look what you've done! I'm melting! I'm\n"
 	.string "melting!$"
+
+CasaCirces_Text_Ulysses_Restored1::
+# 440 "data/maps/CasaCirces/scripts.pory"
+	.string "My lad! Is that you? What happened to\n"
+	.string "me? Where is Circe? I had a wicked dream\l"
+	.string "that I was transformed by her magic\l"
+	.string "spell into Teddiursa...$"
+
+CasaCirces_Text_Ulysses_Restored2::
+# 447 "data/maps/CasaCirces/scripts.pory"
+	.string "That was no dream! You saved me,\n"
+	.string "{PLAYER}! I can't thank you enough.\l"
+	.string "The witch must have transformed the\l"
+	.string "missing men who came here from the\l"
+	.string "town. We must act now and save them!\l"
+	.string "C'mon, {PLAYER}, no time to lose.$"

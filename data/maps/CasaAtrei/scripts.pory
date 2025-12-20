@@ -715,7 +715,7 @@ text CasaAtrei_Text_AgamemnonKlytmnestraScene2 {
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene4 {
-	format("Rest now father, your nightmare's at it's end.
+	format("Rest now father, your nightmare's at its end.
 			You have been several months under a spell
 			but your son, and the young heroic {PLAYER},
 			have rescued you.")

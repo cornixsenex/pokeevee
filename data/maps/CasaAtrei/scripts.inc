@@ -1034,7 +1034,7 @@ CasaAtrei_Text_AgamemnonKlytmnestraScene2::
 CasaAtrei_Text_OrestesKlytmnestraScene4::
 # 717 "data/maps/CasaAtrei/scripts.pory"
 	.string "Rest now father, your nightmare's at\n"
-	.string "it's end. You have been several months\l"
+	.string "its end. You have been several months\l"
 	.string "under a spell but your son, and the\l"
 	.string "young heroic {PLAYER}, have rescued\l"
 	.string "you.$"

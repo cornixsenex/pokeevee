@@ -109,7 +109,7 @@
 #define TRAINER_PATRICK                     103
 #define TRAINER_SHEIK                       104 
 #define TRAINER_ZELDA                       105 
-#define TRAINER_UNUSED_106                  106 //UNUSED
+#define TRAINER_PINA_FRUIT_FAN              106 
 #define TRAINER_UNUSED_107                  107 //UNUSED
 #define TRAINER_RIVAL3	                    108
 #define TRAINER_TASHA                       109

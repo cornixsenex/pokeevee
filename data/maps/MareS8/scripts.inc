@@ -1597,9 +1597,9 @@ MareS8_Text_AeneasHesperia::
 	.string "is Hesperia! At long last we have\l"
 	.string "arrived in that land where I'm destined\l"
 	.string "to found a great city! Rejoice, for our\l"
-	.string "long voyage has at last reached it's\l"
+	.string "long voyage has at last reached its\l"
 	.string "destination! All that remains for us to\l"
-	.string "do is clear this island of it's heathen\l"
+	.string "do is clear this island of its heathen\l"
 	.string "natives and then start building.$"
 
 MareS8_Text_AeneasGoToWar::
