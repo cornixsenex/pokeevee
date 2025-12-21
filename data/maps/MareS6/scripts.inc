@@ -509,6 +509,8 @@ MareS6_Script_Shinx_1:
 	playse MUS_HEAL
 # 329 "data/maps/MareS6/scripts.pory"
 	waitse
+# 334 "data/maps/MareS6/scripts.pory"
+	setflag FLAG_MARES6_RESTORED_SHINXSAILOR
 	return
 
 MareS6_Script_Shinx_3:
@@ -536,77 +538,77 @@ MareS6_Script_Poochyena::
 
 
 MareS6_Script_PinaFruitTree::
-# 357 "data/maps/MareS6/scripts.pory"
+# 358 "data/maps/MareS6/scripts.pory"
 	setflag FLAG_TEMP_3
-# 359 "data/maps/MareS6/scripts.pory"
+# 360 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_PinaTree
 	return
 
 
 MareS6_Script_PinaTree::
-# 365 "data/maps/MareS6/scripts.pory"
-	specialvar VAR_RESULT, CheckHeadbutt
 # 366 "data/maps/MareS6/scripts.pory"
+	specialvar VAR_RESULT, CheckHeadbutt
+# 367 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_PinaTree_2
-# 374 "data/maps/MareS6/scripts.pory"
+# 375 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_TreeIsHeadbuttable
 MareS6_Script_PinaTree_1:
-# 376 "data/maps/MareS6/scripts.pory"
+# 377 "data/maps/MareS6/scripts.pory"
 	closemessage
 	end
 
 MareS6_Script_PinaTree_2:
-# 368 "data/maps/MareS6/scripts.pory"
-	msgbox MareS6_Text_WantToHeadbutt, MSGBOX_YESNO
 # 369 "data/maps/MareS6/scripts.pory"
+	msgbox MareS6_Text_WantToHeadbutt, MSGBOX_YESNO
+# 370 "data/maps/MareS6/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MareS6_Script_PinaTree_5
 	goto MareS6_Script_PinaTree_1
 
 MareS6_Script_PinaTree_5:
-# 370 "data/maps/MareS6/scripts.pory"
+# 371 "data/maps/MareS6/scripts.pory"
 	call MareS6_Script_HeadbuttTree
 	goto MareS6_Script_PinaTree_1
 
 
 MareS6_Script_FruitFan::
-# 382 "data/maps/MareS6/scripts.pory"
+# 383 "data/maps/MareS6/scripts.pory"
 	faceplayer
-# 384 "data/maps/MareS6/scripts.pory"
+# 385 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_lt MareS6_Script_FruitFan_2
-# 388 "data/maps/MareS6/scripts.pory"
+# 389 "data/maps/MareS6/scripts.pory"
 	compare VAR_ULYSSES_STATE, 8
 	goto_if_eq MareS6_Script_FruitFan_3
-# 393 "data/maps/MareS6/scripts.pory"
+# 394 "data/maps/MareS6/scripts.pory"
 	checktrainerflag TRAINER_PINA_FRUIT_FAN
 	goto_if 0, MareS6_Script_FruitFan_7
-# 398 "data/maps/MareS6/scripts.pory"
+# 399 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_PinaFruitFanPost
 MareS6_Script_FruitFan_1:
-# 401 "data/maps/MareS6/scripts.pory"
-	closemessage
 # 402 "data/maps/MareS6/scripts.pory"
+	closemessage
+# 403 "data/maps/MareS6/scripts.pory"
 	unfaceplayer
 	end
 
 MareS6_Script_FruitFan_2:
-# 385 "data/maps/MareS6/scripts.pory"
+# 386 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_FruitFan1
 	goto MareS6_Script_FruitFan_1
 
 MareS6_Script_FruitFan_3:
-# 389 "data/maps/MareS6/scripts.pory"
+# 390 "data/maps/MareS6/scripts.pory"
 	msgbox MareS6_Text_FruitFan2
 	goto MareS6_Script_FruitFan_1
 
 MareS6_Script_FruitFan_7:
-# 394 "data/maps/MareS6/scripts.pory"
-	msgbox MareS6_Text_PinaFruitFanPre
 # 395 "data/maps/MareS6/scripts.pory"
-	closemessage
+	msgbox MareS6_Text_PinaFruitFanPre
 # 396 "data/maps/MareS6/scripts.pory"
+	closemessage
+# 397 "data/maps/MareS6/scripts.pory"
 	trainerbattle_no_intro TRAINER_PINA_FRUIT_FAN, MareS6_Text_PinaFruitFanLost
 	goto MareS6_Script_FruitFan_1
 

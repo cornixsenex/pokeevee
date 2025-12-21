@@ -330,7 +330,8 @@ script MareS6_Script_Shinx {
             //remove V
             //add sailor to correct location
             //face sailor to correct direction
-            //setvar
+            //setflag
+			setflag (FLAG_MARES6_RESTORED_SHINXSAILOR)
         }
     }
 }
@@ -402,7 +403,6 @@ script MareS6_Script_FruitFan {
     unfaceplayer
 	end
 }
-
 
 //NOTE Headbutt trees have not been added yet to expansion. I expect they will be but until then I just won't have actual normal encounters here just the special case BUT in the finished product all the trees on this island should be headbuttable, normally Execute but other stuffs sometimes yknow
 script MareS6_Script_HeadbuttTree {

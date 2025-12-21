@@ -214,14 +214,14 @@
 #define FLAG_TRIVIS_SHARD_7                  0xBA
 #define FLAG_TRIVIS_SHARD_8                  0xBB  
 #define FLAG_ISLAARIDA_HIDEPRISONERS         0xBC //Set after Ulysses Polyphemus scene  
+#define FLAG_MARES6_RESTORED_SHINXSAILOR     0xBD //UNUSED
+#define FLAG_MARES6_RESTORED_TURTWIGCAMPER   0xBE
+#define FLAG_MARES6_RESTORED_TORCHICMAN3     0xBF
+#define FLAG_MARES6_RESTORED_SNUBULLOLDMAN3  0xC0
+#define FLAG_MARES6_RESTORED_POOCHYENAHIKER  0xC1
 
 // BREAK // 
 
-#define FLAG_UNUSED_0xBD                     0xBD //UNUSED
-#define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
-#define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
-#define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
-#define FLAG_WALLY_SPEECH                    0xC1
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //
