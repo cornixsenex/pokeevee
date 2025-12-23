@@ -51,13 +51,13 @@
       "x": 49,
       "y": 45,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Shinx",
-      "flag": "NULL"
+      "flag": "FLAG_MARES6_RESTORED_SHINXSAILOR"
     },
     {
       "local_id": "LOCALID_MARES6_TURTWIG",
@@ -65,13 +65,13 @@
       "x": 52,
       "y": 46,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Turtwig",
-      "flag": "NULL"
+      "flag": "FLAG_MARES6_RESTORED_TURTWIGCAMPER"
     },
     {
       "local_id": "LOCALID_MARES6_TORCHIC",
@@ -79,13 +79,13 @@
       "x": 56,
       "y": 45,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Torchic",
-      "flag": "NULL"
+      "flag": "FLAG_MARES6_RESTORED_TORCHICMAN3"
     },
     {
       "local_id": "LOCALID_MARES6_POOCHYENA",
@@ -93,27 +93,27 @@
       "x": 59,
       "y": 45,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Poochyena",
-      "flag": "NULL"
+      "flag": "FLAG_MARES6_RESTORED_POOCHYENAHIKER"
     },
     {
       "local_id": "LOCALID_MARES6_SNUBBULL",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNUBBULL)",
       "x": 58,
-      "y": 42,
+      "y": 43,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 4,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MareS6_Script_Snubbull",
-      "flag": "NULL"
+      "flag": "FLAG_MARES6_RESTORED_SNUBBULLOLDMAN2"
     },
     {
       "local_id": "LOCALID_MARES6_ULYSSES",
@@ -157,6 +157,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES6_SAILOR",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 43,
       "y": 39,
@@ -170,6 +171,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES6_CAMPER",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 44,
       "y": 39,
@@ -183,6 +185,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES6_MAN3",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 45,
       "y": 39,
@@ -196,6 +199,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES6_HIKER",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 47,
       "y": 39,
@@ -209,6 +213,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_MARES6_OLDMAN2",
       "graphics_id": "OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2",
       "x": 46,
       "y": 39,

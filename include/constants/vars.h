@@ -134,20 +134,20 @@
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
 #define VAR_ULYSSES_STATE                                0x4059 // Track Ulysses thru Odyssey
-																// 0: Ulyssas on Ithaca - either in house or "mad"
-																// 1: Telemachus scene (On Frame in MareS7 et Casa do Odyssey begin scene)
-                                                                // 2: Ulysses and Lotus Eaters MareS3
-																// 3: Ulysses trapped by Cyclopees Scene
-                                                                // 4: Ulysses with local on Isla Pina
-                                                                // 5: Ulysses in the jungle 
-                                                                // 6: Ulysses Ante Portam Circes
-                                                                // 7: Ulysses in Casa Circes house - encounter Circe On_Frame scene
-                                                                // 8: During Molly Hunt
-                                                                // 9: After Molly acquired - Circe Battle On_Frame
+																// 0:  Ulyssas on Ithaca - either in house or "mad"
+																// 1:  Telemachus scene (On Frame in MareS7 et Casa do Odyssey begin scene)
+                                                                // 2:  Ulysses and Lotus Eaters MareS3
+																// 3:  Ulysses trapped by Cyclopees Scene
+                                                                // 4:  Ulysses with local on Isla Pina
+                                                                // 5:  Ulysses in the jungle 
+                                                                // 6:  Ulysses Ante Portam Circes
+                                                                // 7:  Ulysses in Casa Circes house - encounter Circe On_Frame scene
+                                                                // 8:  During Molly Hunt
+                                                                // 9:  After Molly acquired - Circe Battle On_Frame
                                                                 // 10: After Circle Battle - Ulysses a Pig
                                                                 // 11: After Ulysses restored to man - In Pen with prisoners
-                                                                // 12: Prisoners restored - Show Ulysses Beach - Begin Shades
-                                                                // 13: After Circe episode - Ulysses on Western Shores - Begin Shades
+                                                                // 12: All Prisoners Restored - Trigger Ulysses scene on pen exit
+                                                                // 13: Begin Shades - Show Ulysses Beach  
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

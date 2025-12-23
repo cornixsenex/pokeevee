@@ -328,28 +328,366 @@ script MareS6_Script_Shinx {
 			playse (MUS_HEAL)
 			waitse
             //remove V
+			removeobject (LOCALID_MARES6_SHINX)
+			setobjectxyperm (LOCALID_MARES6_SHINX, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_SHINX, MOVEMENT_TYPE_INVISIBLE)
+			addobject (LOCALID_MARES6_SHINX)
             //add sailor to correct location
-            //face sailor to correct direction
+			removeobject (LOCALID_MARES6_SAILOR)
+			setobjectxyperm (LOCALID_MARES6_SAILOR, 49, 45)
+			specialvar (VAR_RESULT, GetPlayerFacingDirection)
+			switch (var(VAR_RESULT)) {
+				case DIR_SOUTH:
+					setobjectmovementtype (LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_UP)
+				case DIR_EAST:
+					setobjectmovementtype (LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_LEFT)
+				case DIR_WEST:
+					setobjectmovementtype (LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_RIGHT)
+				case DIR_NORTH:
+				default:
+					setobjectmovementtype (LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_DOWN)
+			}
+			addobject (LOCALID_MARES6_SAILOR)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_WHITE)
+			//S: Thanks for helping me. Cant wait to get home
+			msgbox (MareS6_Text_SailorRestored)
+			msgbox (MareS6_Text_GenericRestored)
+			closemessage 
+			//fade black
+			fadescreenswapbuffers (FADE_TO_BLACK)
+			//remove S
+			removeobject (LOCALID_MARES6_SAILOR)
+			setobjectxyperm (LOCALID_MARES6_SAILOR, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (LOCALID_MARES6_SAILOR)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_BLACK)
             //setflag
 			setflag (FLAG_MARES6_RESTORED_SHINXSAILOR)
+			//Check if all restored
+			call (MareS6_Script_CheckAllRestored)
+			//fin
+			end
         }
     }
 }
 
 script MareS6_Script_Turtwig {
-
+    //face player
+    faceplayer
+    //alert animal
+    applymovement (LOCALID_MARES6_TURTWIG, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //do animal sound
+	playmoncry (SPECIES_TURTWIG, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    //msg the (animal) is looking at you knowingly
+    bufferspeciesname (STR_VAR_1, SPECIES_TURTWIG)
+    msgbox (MareS6_Text_MeetsGaze)
+    //check for Moly
+    checkitem (ITEM_PINA_FRUIT)
+    if (var(VAR_RESULT) == YES) {
+        msgbox (MareS6_Text_UsePinaFruit, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            closemessage
+            unfaceplayer
+            end
+        //if so YesNo give Moly
+        } else {
+            //M: Player gave V moly
+			msgbox (MareS6_Text_PlayerGaveMoly)
+			closemessage
+            //fade screen
+			fadescreenswapbuffers (FADE_TO_WHITE)
+            //sound effect?
+			playse (MUS_HEAL)
+			waitse
+            //remove V
+			removeobject (LOCALID_MARES6_TURTWIG)
+			setobjectxyperm (LOCALID_MARES6_TURTWIG, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_TURTWIG, MOVEMENT_TYPE_INVISIBLE)
+			addobject (LOCALID_MARES6_TURTWIG)
+            //add sailor to correct location
+			removeobject (LOCALID_MARES6_CAMPER)
+			setobjectxyperm (LOCALID_MARES6_CAMPER, 52, 46)
+			specialvar (VAR_RESULT, GetPlayerFacingDirection)
+			switch (var(VAR_RESULT)) {
+				case DIR_SOUTH:
+					setobjectmovementtype (LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_UP)
+				case DIR_EAST:
+					setobjectmovementtype (LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_LEFT)
+				case DIR_WEST:
+					setobjectmovementtype (LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_RIGHT)
+				case DIR_NORTH:
+				default:
+					setobjectmovementtype (LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_DOWN)
+			}
+			addobject (LOCALID_MARES6_CAMPER)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_WHITE)
+			//S: Thanks for helping me. Cant wait to get home
+			msgbox (MareS6_Text_CamperRestored)
+			msgbox (MareS6_Text_GenericRestored)
+			closemessage 
+			//fade black
+			fadescreenswapbuffers (FADE_TO_BLACK)
+			//remove S
+			removeobject (LOCALID_MARES6_CAMPER)
+			setobjectxyperm (LOCALID_MARES6_CAMPER, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (LOCALID_MARES6_CAMPER)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+            //setflag
+			setflag (FLAG_MARES6_RESTORED_TURTWIGCAMPER)
+			//Check if all restored
+			call (MareS6_Script_CheckAllRestored)
+			//fin
+			end
+        }
+    }
 }
 
 script MareS6_Script_Torchic {
-
+    //face player
+    faceplayer
+    //alert animal
+    applymovement (LOCALID_MARES6_TORCHIC, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //do animal sound
+	playmoncry (SPECIES_TORCHIC, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    //msg the (animal) is looking at you knowingly
+    bufferspeciesname (STR_VAR_1, SPECIES_TORCHIC)
+    msgbox (MareS6_Text_MeetsGaze)
+    //check for Moly
+    checkitem (ITEM_PINA_FRUIT)
+    if (var(VAR_RESULT) == YES) {
+        msgbox (MareS6_Text_UsePinaFruit, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            closemessage
+            unfaceplayer
+            end
+        //if so YesNo give Moly
+        } else {
+            //M: Player gave V moly
+			msgbox (MareS6_Text_PlayerGaveMoly)
+			closemessage
+            //fade screen
+			fadescreenswapbuffers (FADE_TO_WHITE)
+            //sound effect?
+			playse (MUS_HEAL)
+			waitse
+            //remove V
+			removeobject (LOCALID_MARES6_TORCHIC)
+			setobjectxyperm (LOCALID_MARES6_TORCHIC, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_TORCHIC, MOVEMENT_TYPE_INVISIBLE)
+			addobject (LOCALID_MARES6_TORCHIC)
+            //add sailor to correct location
+			removeobject (LOCALID_MARES6_MAN3)
+			setobjectxyperm (LOCALID_MARES6_MAN3, 56, 45)
+			specialvar (VAR_RESULT, GetPlayerFacingDirection)
+			switch (var(VAR_RESULT)) {
+				case DIR_SOUTH:
+					setobjectmovementtype (LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_UP)
+				case DIR_EAST:
+					setobjectmovementtype (LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_LEFT)
+				case DIR_WEST:
+					setobjectmovementtype (LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_RIGHT)
+				case DIR_NORTH:
+				default:
+					setobjectmovementtype (LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_DOWN)
+			}
+			addobject (LOCALID_MARES6_MAN3)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_WHITE)
+			//S: Thanks for helping me. Cant wait to get home
+			msgbox (MareS6_Text_Man3Restored)
+			msgbox (MareS6_Text_GenericRestored)
+			closemessage 
+			//fade black
+			fadescreenswapbuffers (FADE_TO_BLACK)
+			//remove S
+			removeobject (LOCALID_MARES6_MAN3)
+			setobjectxyperm (LOCALID_MARES6_MAN3, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_MAN3, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (LOCALID_MARES6_MAN3)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+            //setflag
+			setflag (FLAG_MARES6_RESTORED_TORCHICMAN3)
+			//Check if all restored
+			call (MareS6_Script_CheckAllRestored)
+			//fin
+			end
+        }
+    }
 }
 
 script MareS6_Script_Snubbull {
-
+    //face player
+    faceplayer
+    //alert animal
+    applymovement (LOCALID_MARES6_SNUBBULL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //do animal sound
+	playmoncry (SPECIES_SNUBBULL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    //msg the (animal) is looking at you knowingly
+    bufferspeciesname (STR_VAR_1, SPECIES_SNUBBULL)
+    msgbox (MareS6_Text_MeetsGaze)
+    //check for Moly
+    checkitem (ITEM_PINA_FRUIT)
+    if (var(VAR_RESULT) == YES) {
+        msgbox (MareS6_Text_UsePinaFruit, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            closemessage
+            unfaceplayer
+            end
+        //if so YesNo give Moly
+        } else {
+            //M: Player gave V moly
+			msgbox (MareS6_Text_PlayerGaveMoly)
+			closemessage
+            //fade screen
+			fadescreenswapbuffers (FADE_TO_WHITE)
+            //sound effect?
+			playse (MUS_HEAL)
+			waitse
+            //remove V
+			removeobject (LOCALID_MARES6_SNUBBULL)
+			setobjectxyperm (LOCALID_MARES6_SNUBBULL, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_SNUBBULL, MOVEMENT_TYPE_INVISIBLE)
+			addobject (LOCALID_MARES6_SNUBBULL)
+            //add sailor to correct location
+			removeobject (LOCALID_MARES6_OLDMAN2)
+			setobjectxyperm (LOCALID_MARES6_OLDMAN2, 58, 43)
+			specialvar (VAR_RESULT, GetPlayerFacingDirection)
+			switch (var(VAR_RESULT)) {
+				case DIR_SOUTH:
+					setobjectmovementtype (LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_UP)
+				case DIR_EAST:
+					setobjectmovementtype (LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_LEFT)
+				case DIR_WEST:
+					setobjectmovementtype (LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_RIGHT)
+				case DIR_NORTH:
+				default:
+					setobjectmovementtype (LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_DOWN)
+			}
+			addobject (LOCALID_MARES6_OLDMAN2)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_WHITE)
+			//S: Thanks for helping me. Cant wait to get home
+			msgbox (MareS6_Text_OldMan2Restored)
+			msgbox (MareS6_Text_GenericRestored)
+			closemessage 
+			//fade black
+			fadescreenswapbuffers (FADE_TO_BLACK)
+			//remove S
+			removeobject (LOCALID_MARES6_OLDMAN2)
+			setobjectxyperm (LOCALID_MARES6_OLDMAN2, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_OLDMAN2, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (LOCALID_MARES6_OLDMAN2)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+            //setflag
+			setflag (FLAG_MARES6_RESTORED_SNUBBULLOLDMAN2)
+			//Check if all restored
+			call (MareS6_Script_CheckAllRestored)
+			//fin
+			end
+        }
+    }
 }
 
 script MareS6_Script_Poochyena {
+    //face player
+    faceplayer
+    //alert animal
+    applymovement (LOCALID_MARES6_POOCHYENA, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    //do animal sound
+	playmoncry (SPECIES_POOCHYENA, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    //msg the (animal) is looking at you knowingly
+    bufferspeciesname (STR_VAR_1, SPECIES_POOCHYENA)
+    msgbox (MareS6_Text_MeetsGaze)
+    //check for Moly
+    checkitem (ITEM_PINA_FRUIT)
+    if (var(VAR_RESULT) == YES) {
+        msgbox (MareS6_Text_UsePinaFruit, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            closemessage
+            unfaceplayer
+            end
+        //if so YesNo give Moly
+        } else {
+            //M: Player gave V moly
+			msgbox (MareS6_Text_PlayerGaveMoly)
+			closemessage
+            //fade screen
+			fadescreenswapbuffers (FADE_TO_WHITE)
+            //sound effect?
+			playse (MUS_HEAL)
+			waitse
+            //remove V
+			removeobject (LOCALID_MARES6_POOCHYENA)
+			setobjectxyperm (LOCALID_MARES6_POOCHYENA, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_POOCHYENA, MOVEMENT_TYPE_INVISIBLE)
+			addobject (LOCALID_MARES6_POOCHYENA)
+            //add sailor to correct location
+			removeobject (LOCALID_MARES6_HIKER)
+			setobjectxyperm (LOCALID_MARES6_HIKER, 59, 45)
+			specialvar (VAR_RESULT, GetPlayerFacingDirection)
+			switch (var(VAR_RESULT)) {
+				case DIR_SOUTH:
+					setobjectmovementtype (LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_UP)
+				case DIR_EAST:
+					setobjectmovementtype (LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_LEFT)
+				case DIR_WEST:
+					setobjectmovementtype (LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_RIGHT)
+				case DIR_NORTH:
+				default:
+					setobjectmovementtype (LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_DOWN)
+			}
+			addobject (LOCALID_MARES6_HIKER)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_WHITE)
+			//S: Thanks for helping me. Cant wait to get home
+			msgbox (MareS6_Text_HikerRestored)
+			msgbox (MareS6_Text_GenericRestored)
+			closemessage 
+			//fade black
+			fadescreenswapbuffers (FADE_TO_BLACK)
+			//remove S
+			removeobject (LOCALID_MARES6_HIKER)
+			setobjectxyperm (LOCALID_MARES6_HIKER, 0, 0)
+			setobjectmovementtype (LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_LEFT)
+			addobject (LOCALID_MARES6_HIKER)
+			//fade back
+			fadescreenswapbuffers (FADE_FROM_BLACK)
+            //setflag
+			setflag (FLAG_MARES6_RESTORED_POOCHYENAHIKER)
+			//Check if all restored
+			call (MareS6_Script_CheckAllRestored)
+			//fin
+			end
+        }
+    }
+}
 
+script MareS6_Script_CheckAllRestored {
+	if (	
+			flag(FLAG_MARES6_RESTORED_SHINXSAILOR) &&
+			flag(FLAG_MARES6_RESTORED_TURTWIGCAMPER) && 
+			flag(FLAG_MARES6_RESTORED_TORCHICMAN3) && 
+			flag(FLAG_MARES6_RESTORED_SNUBBULLOLDMAN2) && 
+			flag(FLAG_MARES6_RESTORED_POOCHYENAHIKER) 
+		) {
+		setvar (VAR_ULYSSES_STATE, 12)
+	}
+	return
 }
 
 //This is the special tree
@@ -396,7 +734,11 @@ script MareS6_Script_FruitFan {
 			closemessage
 			trainerbattle_no_intro (TRAINER_PINA_FRUIT_FAN, MareS6_Text_PinaFruitFanLost)
 		} else {
-			msgbox (MareS6_Text_PinaFruitFanPost)
+			if (var(VAR_ULYSSES_STATE) < 13) {
+				msgbox (MareS6_Text_PinaFruitFanPost)
+			} else {
+				msgbox (MareS6_Text_PinaFruitFanPost2)
+			}
 		}
     }
     closemessage
@@ -557,10 +899,47 @@ text MareS6_Text_PinaFruitFanLost {
 }
 
 text MareS6_Text_PinaFruitFanPost {
-	format("")
+	format("Well, now the piña fruit is yours. I hope
+			you at least put that rare fruit to good use.")
+}
+
+text MareS6_Text_PinaFruitFanPost2 {
+	format("Another fruit will grow another day,
+			and I will make sure that no one steals it.")
 }
 
 text MareS6_Text_PlayerGaveMoly {
     format("{PLAYER} gave {STR_VAR_1} some of the piña fruit.")
+}
+
+text MareS6_Text_SailorRestored {
+	format("What terrible dreams I've suffered of late!
+			I dreamt my ship had crashed and I had washed
+			ashore upon some cursed island of Shinx.")
+}
+
+text MareS6_Text_CamperRestored {
+	format("All the merit badges I earned could not
+			Save me from Circe's curse. I'm in your debt.")
+}
+
+text MareS6_Text_Man3Restored { 
+	format("We came to save the town from Circe but
+			in the end we ourselves needed saving.")
+}
+
+text MareS6_Text_OldMan2Restored { 
+	format("I've lived a long time. Never in my days
+			have I seen people turned to Pokemon.")
+}
+
+text MareS6_Text_HikerRestored { 
+	format("It feels such a relief to be brought back
+			into my old body again. I feared
+			I'd be stuck as a Pokemon for good!")
+}
+
+text MareS6_Text_GenericRestored {
+	format("Thank you for saving me. I'm heading home!")
 }
 
