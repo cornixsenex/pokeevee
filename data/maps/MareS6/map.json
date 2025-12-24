@@ -167,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS6_Script_Sailor",
       "flag": "0"
     },
     {
@@ -181,7 +181,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS6_Script_Camper",
       "flag": "0"
     },
     {
@@ -209,7 +209,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MareS6_Script_Hiker",
       "flag": "0"
     },
     {
@@ -1006,6 +1006,15 @@
       "var": "VAR_ULYSSES_STATE",
       "var_value": "6",
       "script": "MareS6_Script_UlyssesAntePortamC"
+    },
+    {
+      "type": "trigger",
+      "x": 59,
+      "y": 41,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "12",
+      "script": "MareS6_Script_AfterPenTrigger"
     }
   ],
   "bg_events": [
@@ -1021,6 +1030,94 @@
       "type": "sign",
       "x": 20,
       "y": 66,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 64,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 63,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 62,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 57,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 42,
+      "y": 43,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 45,
+      "y": 43,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 52,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 55,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 67,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 74,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MareS6_Script_PinaTree"
+    },
+    {
+      "type": "sign",
+      "x": 74,
+      "y": 42,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MareS6_Script_PinaTree"

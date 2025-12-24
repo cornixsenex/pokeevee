@@ -40,6 +40,29 @@ mapscripts MareS6_MapScripts {
             call (MareS6_Script_ShowUlyssesAntePortam)
         }
         //Ulysses in pen
+		if (var(VAR_ULYSSES_STATE) > 10 && var(VAR_ULYSSES_STATE) < 13) {
+			call (MareS6_Script_ShowUlyssesInPen)
+		}
+		//Ulysses Shades
+        if (var(VAR_ULYSSES_STATE) == 13) {
+            call (MareS6_Script_ShowUlyssesShades)
+        }
+
+		//Show restored prisoners - after restoration
+		//Sailor - Eastern Beach
+		if (flag(FLAG_MARES6_RESTORED_SHINXSAILOR)) {
+			call (MareS6_Script_ShowSailorRestored)
+		}
+		//Camper - In Town
+		if (flag(FLAG_MARES6_RESTORED_TURTWIGCAMPER)) {
+			call (MareS6_Script_ShowCamperRestored)
+		}
+		//Man    - With Family in house
+		//Old Man- In House by himself
+		//Hiker  - Mountain
+		if (flag(FLAG_MARES6_RESTORED_POOCHYENAHIKER)) {
+			call (MareS6_Script_ShowHikerRestored)
+		}
 
 	}
 
@@ -101,6 +124,37 @@ script MareS6_Script_ShowUlyssesAntePortam {
     return
 }
 
+script MareS6_Script_ShowUlyssesInPen {
+    setobjectxyperm (LOCALID_MARES6_ULYSSES, 58, 40)
+    setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script MareS6_Script_ShowUlyssesShades {
+    setobjectxyperm (LOCALID_MARES6_ULYSSES, 13, 65)
+    setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_FACE_LEFT)
+	
+	return
+}
+
+script MareS6_Script_ShowSailorRestored {
+	setobjectxyperm (LOCALID_MARES6_SAILOR, 77, 59)
+	setobjectmovementtype (LOCALID_MARES6_SAILOR, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT)
+	return
+}
+
+script MareS6_Script_ShowCamperRestored {
+	setobjectxyperm (LOCALID_MARES6_CAMPER, 76, 71)
+	setobjectmovementtype (LOCALID_MARES6_CAMPER, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+script MareS6_Script_ShowHikerRestored {
+	setobjectxyperm (LOCALID_MARES6_HIKER, 53, 67)
+	setobjectmovementtype (LOCALID_MARES6_HIKER, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
 script MareS6_Script_ShowMolyFruit {
 	setmetatile (16, 60, METATILE_BigIsland_SandPalmFruitL, FALSE)
 	setmetatile (17, 60, METATILE_BigIsland_SandPalmFruitC, FALSE)
@@ -147,7 +201,17 @@ script MareS6_Script_Ulysses {
         call (MareS6_Script_UlyssesEtFishermanScene)
     }
     //Ulysses in the pen during Molly piggies
+	if (var(VAR_ULYSSES_STATE) == 11) {
+		call (MareS6_Script_UlyssesDuringPen)
+	}
+	//After all prisoners restored
+	if (var(VAR_ULYSSES_STATE) == 12) {
+		call (MareS6_Script_UlyssesAfterPen)
+	}
     //Ulysses on the western shores
+	if (var(VAR_ULYSSES_STATE) == 13) {
+		call (MareS6_Script_UlyssesShades)
+	}
 }
 
 script MareS6_Script_UlyssesEtFishermanScene {
@@ -294,6 +358,49 @@ script MareS6_Script_UlyssesAntePortam {
     setvar (VAR_ULYSSES_STATE, 7)
     //fin
     end
+}
+
+script MareS6_Script_UlyssesDuringPen {
+	faceplayer
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS6_Text_UlyssesDuringPen)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+	unfaceplayer
+	end
+}
+
+script MareS6_Script_UlyssesAfterPen {
+	faceplayer
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS6_Text_UlyssesAfterPen)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_WEST) {
+		applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+	}
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight2)
+	waitmovement (0)
+	removeobject (LOCALID_MARES6_ULYSSES)
+	setobjectxyperm (LOCALID_MARES6_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES6_ULYSSES)
+	setvar (VAR_ULYSSES_STATE, 13)
+	end
+}
+
+script MareS6_Script_UlyssesShades {
+	//face
+	//U: Shades background
+	//Check if player brough sacrifice - from party idk
+	//YesNo
+	//If Yes then give do sacrifice etc fin
+	//If not
+	//U: Bring it I can't leave unpurified
+	//reface
+	//fin
 }
 
 //Transformed Prisoners as animals
@@ -685,10 +792,38 @@ script MareS6_Script_CheckAllRestored {
 			flag(FLAG_MARES6_RESTORED_TORCHICMAN3) && 
 			flag(FLAG_MARES6_RESTORED_SNUBBULLOLDMAN2) && 
 			flag(FLAG_MARES6_RESTORED_POOCHYENAHIKER) 
-		) {
+		) 
+	{
 		setvar (VAR_ULYSSES_STATE, 12)
+		removeitem (ITEM_PINA_FRUIT)
 	}
 	return
+}
+
+script MareS6_Script_AfterPenTrigger {
+	//alert
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//U right
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight)
+	waitmovement (0)
+	//face eachother
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceDown)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	//scene
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS6_Text_UlyssesAfterPen)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight)
+	waitmovement (0)
+	removeobject (LOCALID_MARES6_ULYSSES)
+	setobjectxyperm (LOCALID_MARES6_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES6_ULYSSES)
+	setvar (VAR_ULYSSES_STATE, 13)
+	end
 }
 
 //This is the special tree
@@ -805,6 +940,27 @@ script MareS6_Script_PinaFruit {
     setvar (VAR_ULYSSES_STATE, 9)
     //fin
     return
+}
+
+script MareS6_Script_Sailor {
+	faceplayer
+	msgbox (MareS6_Text_SailorPostRestored)
+	closemessage
+	unfaceplayer
+}
+
+script MareS6_Script_Camper {
+	faceplayer
+	msgbox (MareS6_Text_CamperPostRestored)
+	closemessage
+	unfaceplayer
+}
+
+script MareS6_Script_Hiker {
+	faceplayer
+	msgbox (MareS6_Text_HikerPostRestored)
+	closemessage
+	unfaceplayer
 }
 
 
@@ -942,5 +1098,44 @@ text MareS6_Text_HikerRestored {
 
 text MareS6_Text_GenericRestored {
 	format("Thank you for saving me. I'm heading home!")
+}
+
+text MareS6_Text_UlyssesDuringPen {
+	format("Hurry {PLAYER}! Save them with the piña fruit.")
+}
+
+text MareS6_Text_UlyssesAfterPen {
+	format("We did it {PLAYER}! We saved the townspeople.
+			Now finally we can depart this place,
+			however, even since being restored
+			to my human body I feel unclean
+			like one who still reeks of the witch's curse.
+			I must be purified before I set
+			out on the road to Nestor's house again.
+			I must appease the powers who govern
+			the turbulant seas and the endless skies
+			by making sacrifice upon the shores.
+			Meet me at the island's westernmost point
+			and bring me a suitable sacrifice.")
+}
+
+text MareS6_Text_SailorPostRestored {
+	format("It feels so calming to gaze at the sea.
+			I had feared I would never get the chance
+			to see her again while I had been cursed.")
+}
+
+text MareS6_Text_CamperPostRestored {
+	format("I'm glad to be back home. I try to tell
+			myself that it was all just a bad dream
+			but I have lost that rash, impulsive drive
+			to dive headfirst into danger. I fear
+			I'll be hesitant if danger returns.")
+}
+
+text MareS6_Text_HikerPostRestored {
+	format("They say the air gets thinner as you climb.
+			That may be true, but one thing is for sure.
+			Climbing brings peace of mind, and heals all hurts.")
 }
 
