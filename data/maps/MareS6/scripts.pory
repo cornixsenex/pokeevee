@@ -39,7 +39,8 @@ mapscripts MareS6_MapScripts {
         if (var(VAR_ULYSSES_STATE) == 6) {
             call (MareS6_Script_ShowUlyssesAntePortam)
         }
-        //Hide pigges
+        //Ulysses in pen
+
 	}
 
 	MAP_SCRIPT_ON_LOAD {
