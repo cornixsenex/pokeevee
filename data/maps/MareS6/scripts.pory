@@ -401,6 +401,7 @@ script MareS6_Script_UlyssesShades {
 	} else {
 		faceplayer
 		load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+		msgbox (MareS6_Text_UlyssesShadesIntro3)
 	}
 	//Check if player brough sacrifice 
 	//YesNo
@@ -413,23 +414,25 @@ script MareS6_Script_UlyssesShades {
 		//Nothing was selected
 		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
 			load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
-			msgbox (BigIslandN_Text_DeclineReleaseSpearow, MSGBOX_DEFAULT)
+			msgbox (MareS6_Text_NoToSacrifice, MSGBOX_DEFAULT)
 			destroy_field_pic (FIELD_PIC_ULYSSES)
 			closemessage
 			applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
 			waitmovement (0)
 			end
-		//Check selected mon is valid sacrifice
+		//Something selected - Check selected mon is valid sacrifice
 		} else {
-			//If Yes then give do sacrifice etc fin
 			specialvar (VAR_RESULT, CheckSelectedMonValidSacrifice)
+			//If Yes then give do sacrifice etc fin
 			if (var(VAR_RESULT) == TRUE) {
 				call (MareS6_Script_UlyssesSacrificeScene)
 			//If not
 			} else {
 				//U: Bring it I can't leave unpurified
+				special (BufferMonNickname)
 				load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 				msgbox (MareS6_Text_SacrificeNotValid)
+				msgbox (MareS6_Text_NoToSacrifice)
 				destroy_field_pic (FIELD_PIC_ULYSSES)
 				closemessage
 				//reface
@@ -439,11 +442,59 @@ script MareS6_Script_UlyssesShades {
 				end
 			}
 		}
+	//No to sacrifice question
+	} else {
+		msgbox (MareS6_Text_NoToSacrifice)
+		destroy_field_pic (FIELD_PIC_ULYSSES)
+		closemessage
+		applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
+		waitmovement (0)
+		end
 	}
 }
 
 script MareS6_Script_UlyssesSacrificeScene {
-	
+	special (BufferMonNickname)
+	msgbox (MareS6_Text_GiveSacrifice)
+	special (ReleaseChosenMon)
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS6_Text_UlyssesSacrifice1)
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
+	waitmovement (0)
+	msgbox (MareS6_Text_UlyssesSacrifice2)
+	faceplayer
+	msgbox (MareS6_Text_UlyssesSacrifice3)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	//Exit U
+    specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_WEST) {
+		applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+		applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight)
+	} else {
+		applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight)
+		waitmovement (0)
+		applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown)
+	}
+	waitmovement (0)
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight4)
+	waitmovement (0)
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkDown)
+	waitmovement (0)
+	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_WalkRight3)
+	waitmovement (0)
+	//remove U
+	removeobject (LOCALID_MARES6_ULYSSES)
+	setobjectxyperm (LOCALID_MARES6_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_MARES6_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES6_ULYSSES)
+	//setvar
+	setvar (VAR_ULYSSES_STATE, 14)
+	//fin
+	end
 }
 
 //Transformed Prisoners as animals
@@ -1156,7 +1207,7 @@ text MareS6_Text_UlyssesAfterPen {
 			I must be purified before I set
 			out on the road to Nestor's house again.
 			I must appease the powers who govern
-			the turbulant seas and the endless skies
+			the turbulent seas and the endless skies
 			by making sacrifice upon the shores.
 			Meet me at the island's westernmost point
 			and bring me a suitable sacrifice.")
@@ -1183,18 +1234,62 @@ text MareS6_Text_HikerPostRestored {
 }
 
 text MareS6_Text_UlyssesShadesIntro1 {
-	format("")
+	format("The western sea, the boundary between
+			this living world of men, and the unknown,
+			undying lands where the sun never sets.")
 }
 
 text MareS6_Text_UlyssesShadesIntro2 {
-	format("")
+	format("I fear my passage to those western shores
+			we all must reach, after our lives are done,
+			will be hindered by my accursed soul.
+			I must make myself clean from suffering
+			under the witch's curse with sacrifice.")
+}
+
+text MareS6_Text_UlyssesShadesIntro3 {
+	format("Oh, {PLAYER}! I'm glad you didn't forget me.")
 }
 
 text MareS6_Text_UlyssesBringSacrifice {
-	format("")
+	format("Did you bring me something to sacrifice?")
+}
+
+text MareS6_Text_NoToSacrifice {
+	format("You must bring me a Pokemon to throw
+			into the ocean to please the powers
+			who guard the way to the undying lands
+			from those who have impure souls, like myself.
+			Until then I will remain on these shores,
+			I will not leave until I've sacrificed.")
 }
 
 text MareS6_Text_SacrificeNotValid {
-	format("")
+	format("I'm sorry, {PLAYER}, but {STR_VAR_1} is not a proper Pokemon to sacrifice.")
 }
 
+text MareS6_Text_GiveSacrifice {
+	format("{PLAYER} gave {STR_VAR_1} to Ulysses!\p Bye Bye {STR_VAR_1}!")
+}
+
+text MareS6_Text_UlyssesSacrifice1 {
+	format("Yes, perfect, {STR_VAR_1} will make an excellent sacrifice.")
+}
+
+text MareS6_Text_UlyssesSacrifice2 {
+	format("Now hear me, you powers beyond the sea,
+			Ulysses, ever your faithful servant,
+			have brought you {STR_VAR_1} and offer you it's life
+			in exchange for your purification
+			of my soul, recently tormented by
+			the evil witch's curse. {STR_VAR_1}! I cast you into the sea!
+			May your death be pleasing to those who guard
+			the westward path to the undying lands.")
+}
+
+text MareS6_Text_UlyssesSacrifice3 {
+	format("It is done, let us be gone from this place.
+			I am quite ready to set sail again
+			and, at long last, arrive at Nestor's home
+			to attend my brother's joyous wedding.")
+}
