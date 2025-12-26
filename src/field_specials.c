@@ -5294,6 +5294,7 @@ bool32 IsAnimalTypeInParty(void)
 			  || species == SPECIES_MAGIKARP 
 			  || species == SPECIES_GYARADOS 
 			  || species == SPECIES_LAPRAS 
+			  || species == SPECIES_EEVEE
 			  || species == SPECIES_VAPOREON 
 			  || species == SPECIES_JOLTEON 
 			  || species == SPECIES_FLAREON  
@@ -5484,6 +5485,7 @@ bool32 IsAnimalTypeInParty(void)
 			  || species == SPECIES_MILOTIC
 			  || species == SPECIES_KECLEON
 			  || species == SPECIES_TROPIUS
+			  || species == SPECIES_ABSOL
 			  || species == SPECIES_WYNAUT 
 			  || species == SPECIES_SNORUNT
 			  || species == SPECIES_SPHEAL 
@@ -6296,6 +6298,109 @@ bool32 CheckSelectedMonValidSacrifice(void)
 	if (	   species == SPECIES_PIDGEY
 			|| species == SPECIES_PIDGEOTTO
 			|| species == SPECIES_PIDGEOT
+			|| species == SPECIES_SPEAROW
+			|| species == SPECIES_FEAROW
+			|| species == SPECIES_VULPIX
+			|| species == SPECIES_NINETALES
+			|| species == SPECIES_GROWLITHE
+			|| species == SPECIES_ARCANINE
+			|| species == SPECIES_ABRA
+			|| species == SPECIES_KADABRA
+			|| species == SPECIES_ALAKAZAM
+			|| species == SPECIES_MACHOP
+			|| species == SPECIES_MACHOKE
+			|| species == SPECIES_MACHAMP
+			|| species == SPECIES_PONYTA
+			|| species == SPECIES_RAPIDASH
+			|| species == SPECIES_FARFETCHD
+			|| species == SPECIES_DODUO
+			|| species == SPECIES_DODRIO
+			|| species == SPECIES_HITMONLEE
+			|| species == SPECIES_HITMONCHAN
+			|| species == SPECIES_MR_MIME
+			|| species == SPECIES_JYNX
+			|| species == SPECIES_TAUROS
+			|| species == SPECIES_EEVEE
+			|| species == SPECIES_VAPOREON
+			|| species == SPECIES_JOLTEON
+			|| species == SPECIES_FLAREON
+			|| species == SPECIES_HOOTHOOT
+			|| species == SPECIES_NOCTOWL
+			|| species == SPECIES_NATU
+			|| species == SPECIES_XATU
+			|| species == SPECIES_MAREEP
+			|| species == SPECIES_FLAAFFY
+			|| species == SPECIES_AMPHAROS
+			|| species == SPECIES_ESPEON
+			|| species == SPECIES_UMBREON
+			|| species == SPECIES_SNUBBULL
+			|| species == SPECIES_GRANBULL
+			|| species == SPECIES_SWINUB
+			|| species == SPECIES_PILOSWINE
+			|| species == SPECIES_DELIBIRD
+			|| species == SPECIES_SKARMORY
+			|| species == SPECIES_HOUNDOUR
+			|| species == SPECIES_HOUNDOOM
+			|| species == SPECIES_PHANPY
+			|| species == SPECIES_DONPHAN
+			|| species == SPECIES_STANTLER
+			|| species == SPECIES_TYROGUE
+			|| species == SPECIES_HITMONTOP
+			|| species == SPECIES_SMOOCHUM
+			|| species == SPECIES_MILTANK
+			|| species == SPECIES_TORCHIC
+			|| species == SPECIES_COMBUSKEN
+			|| species == SPECIES_BLAZIKEN
+			|| species == SPECIES_POOCHYENA
+			|| species == SPECIES_MIGHTYENA
+			|| species == SPECIES_TAILLOW
+			|| species == SPECIES_SWELLOW
+			|| species == SPECIES_WINGULL
+			|| species == SPECIES_PELIPPER
+			|| species == SPECIES_RALTS
+			|| species == SPECIES_KIRLIA
+			|| species == SPECIES_GARDEVOIR
+			|| species == SPECIES_MAKUHITA
+			|| species == SPECIES_HARIYAMA
+			|| species == SPECIES_MEDITITE
+			|| species == SPECIES_MEDICHAM
+			|| species == SPECIES_SPOINK
+			|| species == SPECIES_GRUMPIG
+			|| species == SPECIES_SWABLU
+			|| species == SPECIES_ALTARIA
+			|| species == SPECIES_ABSOL
+			|| species == SPECIES_STARLY
+			|| species == SPECIES_STARAVIA
+			|| species == SPECIES_STARAPTOR
+			|| species == SPECIES_MIME_JR
+			|| species == SPECIES_CHATOT
+			|| species == SPECIES_RIOLU
+			|| species == SPECIES_LUCARIO
+			|| species == SPECIES_TEPIG
+			|| species == SPECIES_PIGNITE
+			|| species == SPECIES_EMBOAR
+			|| species == SPECIES_LILLIPUP
+			|| species == SPECIES_HERDIER
+			|| species == SPECIES_STOUTLAND
+			|| species == SPECIES_MUNNA
+			|| species == SPECIES_MUSHARNA
+			|| species == SPECIES_PIDOVE
+			|| species == SPECIES_TRANQUILL
+			|| species == SPECIES_UNFEZANT
+			|| species == SPECIES_AUDINO
+			|| species == SPECIES_THROH
+			|| species == SPECIES_SAWK
+			|| species == SPECIES_ZORUA
+			|| species == SPECIES_ZOROARK
+			|| species == SPECIES_DUCKLETT
+			|| species == SPECIES_SWANNA
+			|| species == SPECIES_DEERLING
+			|| species == SPECIES_SAWSBUCK
+			|| species == SPECIES_BOUFFALANT
+			|| species == SPECIES_RUFFLET
+			|| species == SPECIES_BRAVIARY
+			|| species == SPECIES_VULLABY
+			|| species == SPECIES_MANDIBUZZ
 	   ) {
 		return TRUE;
 	} else {
