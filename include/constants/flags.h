@@ -219,10 +219,10 @@
 #define FLAG_MARES6_RESTORED_TORCHICMAN3     0xBF //Circe Prisoners 
 #define FLAG_MARES6_RESTORED_SNUBBULLOLDMAN2 0xC0 //Circe Prisoners 
 #define FLAG_MARES6_RESTORED_POOCHYENAHIKER  0xC1 //Circe Prisoners 
+#define FLAG_ULYSSES_SHADES_INTROD           0xC2 //Set after Ulysses shades intro 
 
 // BREAK // 
 
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //
 #define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4   0xC5 //

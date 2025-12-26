@@ -392,15 +392,58 @@ script MareS6_Script_UlyssesAfterPen {
 }
 
 script MareS6_Script_UlyssesShades {
-	//face
 	//U: Shades background
-	//Check if player brough sacrifice - from party idk
+	if (!flag(FLAG_ULYSSES_SHADES_INTROD)) {
+		load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+		msgbox (MareS6_Text_UlyssesShadesIntro1)
+		faceplayer
+		msgbox (MareS6_Text_UlyssesShadesIntro2)
+	} else {
+		faceplayer
+		load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	}
+	//Check if player brough sacrifice 
 	//YesNo
-	//If Yes then give do sacrifice etc fin
-	//If not
-	//U: Bring it I can't leave unpurified
-	//reface
-	//fin
+	msgbox (MareS6_Text_UlyssesBringSacrifice, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		destroy_field_pic (FIELD_PIC_ULYSSES)
+		closemessage
+		special (ChoosePartyMon)
+		waitstate
+		//Nothing was selected
+		if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+			load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+			msgbox (BigIslandN_Text_DeclineReleaseSpearow, MSGBOX_DEFAULT)
+			destroy_field_pic (FIELD_PIC_ULYSSES)
+			closemessage
+			applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
+			waitmovement (0)
+			end
+		//Check selected mon is valid sacrifice
+		} else {
+			//If Yes then give do sacrifice etc fin
+			specialvar (VAR_RESULT, CheckSelectedMonValidSacrifice)
+			if (var(VAR_RESULT) == TRUE) {
+				call (MareS6_Script_UlyssesSacrificeScene)
+			//If not
+			} else {
+				//U: Bring it I can't leave unpurified
+				load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+				msgbox (MareS6_Text_SacrificeNotValid)
+				destroy_field_pic (FIELD_PIC_ULYSSES)
+				closemessage
+				//reface
+				applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
+				waitmovement (0)
+				//fin
+				end
+			}
+		}
+	}
+}
+
+script MareS6_Script_UlyssesSacrificeScene {
+	
 }
 
 //Transformed Prisoners as animals
@@ -1137,5 +1180,21 @@ text MareS6_Text_HikerPostRestored {
 	format("They say the air gets thinner as you climb.
 			That may be true, but one thing is for sure.
 			Climbing brings peace of mind, and heals all hurts.")
+}
+
+text MareS6_Text_UlyssesShadesIntro1 {
+	format("")
+}
+
+text MareS6_Text_UlyssesShadesIntro2 {
+	format("")
+}
+
+text MareS6_Text_UlyssesBringSacrifice {
+	format("")
+}
+
+text MareS6_Text_SacrificeNotValid {
+	format("")
 }
 

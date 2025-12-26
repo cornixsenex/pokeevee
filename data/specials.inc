@@ -607,6 +607,7 @@ gSpecials::
 	def_special CheckHeadbutt
 	def_special IsMonFollower 
 	def_special ScriptGetPartyMonIsShiny
+	def_special CheckSelectedMonValidSacrifice
 	def_special IsRoute3RiverDelta_F
 	def_special GetDynamicMapSec_MareWWW_F
 	def_special GetDynamicMapSec_Route17_F
