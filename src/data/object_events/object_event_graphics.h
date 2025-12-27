@@ -628,6 +628,9 @@ const u16 gObjectEventPal_Sheik[] = INCBIN_U16("graphics/object_events/pics/peop
 const u32 gObjectEventPic_Zelda[] = INCBIN_U32("graphics/object_events/pics/people/zelda.4bpp"); 
 const u16 gObjectEventPal_Zelda[] = INCBIN_U16("graphics/object_events/pics/people/zelda.gbapal");    
 
+const u32 gObjectEventPic_BrockLyingDown[] = INCBIN_U32("graphics/object_events/pics/people/brock_lying_down.4bpp"); 
+const u16 gObjectEventPal_BrockLyingDown[] = INCBIN_U16("graphics/object_events/palettes/brock_lying_down.gbapal");    
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

@@ -33,3 +33,15 @@ script MareS5_Script_ActaEchonaTransition {
     special (ShowMapNamePopup)
 }
 
+script MareS5_Script_UlyssesLyingDown {
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS5_Text_UlyssesSleep)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+}
+
+//Siren names: Molpe, Thelxiepia, Aglaopheme
+
+text MareS5_Text_UlyssesSleep {
+	format("Zzz...")
+}

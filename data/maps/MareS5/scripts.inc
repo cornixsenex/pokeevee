@@ -38,3 +38,19 @@ MareS5_Script_ActaEchonaTransition::
 	special ShowMapNamePopup
 	return
 
+
+MareS5_Script_UlyssesLyingDown::
+# 37 "data/maps/MareS5/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 38 "data/maps/MareS5/scripts.pory"
+	msgbox MareS5_Text_UlyssesSleep
+# 39 "data/maps/MareS5/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 40 "data/maps/MareS5/scripts.pory"
+	closemessage
+	return
+
+
+MareS5_Text_UlyssesSleep::
+# 45 "data/maps/MareS5/scripts.pory"
+	.string "Zzz...$"

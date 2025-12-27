@@ -1304,6 +1304,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zelda = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+//NOTE THIS ONE IS DIFFERENT
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrockLyingDown = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BROCK_LYING_DOWN,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,   //DIFFERENT
+    .width = 32,   //DIFFERENT
+    .height = 32,   //DIFFERENT
+    .paletteSlot = 10,   //DIFFERENT
+    .shadowSize = SHADOW_SIZE_M,   //DIFFERENT
+    .inanimate = FALSE,   //DIFFERENT
+    .compressed = FALSE,   //DIFFERENT
+    .tracks = TRACKS_FOOT,   //DIFFERENT
+    .oam = &gObjectEventBaseOam_32x32,   //DIFFERENT
+    .subspriteTables = sOamTables_32x32, //32x32
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_BrockLyingDown,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 //BREAK//
 
 
