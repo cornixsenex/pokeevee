@@ -148,7 +148,8 @@
                                                                 // 11: After Ulysses restored to man - In Pen with prisoners
                                                                 // 12: All Prisoners Restored - Trigger Ulysses scene on pen exit
                                                                 // 13: Begin Shades - Show Ulysses Beach  
-																// 14: Ulysses et Sirens
+																// 14: Ulysses asleep on Siren Beach
+																// 15: Ulysses awake on Siren Beach (after all Sirens defeated)
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

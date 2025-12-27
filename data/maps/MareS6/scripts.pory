@@ -8,6 +8,7 @@
 
 //Ocean Map Transisiton A: Transition_IslaPina
 //Ocean Map Transisiton B: Transition_MareOccidens
+//Ocean Map Transisiton C: Transition_MareTropicum
 
 //FLAG_TEMP_F used in Ulysses Fisherman scene for "player began scene talking to fisherman
 //FLAG_TEMP_3 is set during interact with special Moly Tree

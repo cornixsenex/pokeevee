@@ -4358,6 +4358,8 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_ACTA_ECHONA;
 			case 3:
 				return MAPSEC_ISLA_PINEA;
+			case 4:
+				return MAPSEC_SIRENUM_SCOPULI;
 			default:
 				return MAPSEC_DYNAMIC;
 		}
@@ -5171,6 +5173,12 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 			//Isla Pina
 			case 3:
 				return MUS_PETALBURG;
+			case 4:
+				if (VarGet(VAR_ULYSSES_STATE) < 15) {
+					return MUS_XXPLOSIVE;
+				} else {
+					return MUS_SURF;
+				}
 			//fallback
 			default:
 				return MUS_CANTINA;

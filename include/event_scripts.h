@@ -951,6 +951,11 @@ extern const u8 Route10_Script_Transition_MareTranquillum[];
 extern const u8 MareS6_Script_Transition_IslaPina[];
 extern const u8 MareS6_Script_Transition_MareOccidens[];
 extern const u8 MareS6_Script_MareTropicumTransition[];
+//MareS5
+extern const u8 MareS5_Script_Transition_IslaPina[];
+extern const u8 MareS5_Script_Transition_ActaEchona[];
+extern const u8 MareS5_Script_Transition_SirenumScopuli[];
+extern const u8 MareS5_Script_Transition_MareTropicum[];
 //MareS4
 extern const u8 MareS4_Script_Transition_MareTropicum[];
 extern const u8 MareS4_Script_Transition_MareSubtropicum[];

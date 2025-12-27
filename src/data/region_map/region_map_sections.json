@@ -960,8 +960,12 @@
       "name": "THREE ISLE PORT"
     },
     {
-      "id": "MAPSEC_SEVII_ISLE_6",
-      "name": "SEVII ISLE 6"
+      "id": "MAPSEC_SIRENUM_SCOPULI",
+      "name": "SIRENVM SCOPVLI",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_AEDES_AQUA",

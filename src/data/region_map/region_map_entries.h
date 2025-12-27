@@ -1091,12 +1091,12 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .height = 1,
         .name = COMPOUND_STRING("THREE ISLE PORT"),
     },
-    [MAPSEC_SEVII_ISLE_6] = {
+    [MAPSEC_SIRENUM_SCOPULI] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = COMPOUND_STRING("SEVII ISLE 6"),
+        .name = COMPOUND_STRING("SIRENVM SCOPVLI"),
     },
     [MAPSEC_AEDES_AQUA] = {
         .x = 0,

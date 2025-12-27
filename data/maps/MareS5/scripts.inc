@@ -1,5 +1,5 @@
 MareS5_MapScripts::
-# 10 "data/maps/MareS5/scripts.pory"
+# 11 "data/maps/MareS5/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, MareS5_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
@@ -19,7 +19,7 @@ MareS5_Script_Transition_IslaPina::
 	return
 
 
-MareS5_Script_MareTropicumTransition::
+MareS5_Script_Transition_MareTropicum::
 # 25 "data/maps/MareS5/scripts.pory"
 	setvar VAR_TEMP_5, 1
 # 26 "data/maps/MareS5/scripts.pory"
@@ -29,7 +29,7 @@ MareS5_Script_MareTropicumTransition::
 	return
 
 
-MareS5_Script_ActaEchonaTransition::
+MareS5_Script_Transition_ActaEchona::
 # 31 "data/maps/MareS5/scripts.pory"
 	setvar VAR_TEMP_5, 2
 # 32 "data/maps/MareS5/scripts.pory"
@@ -39,18 +39,28 @@ MareS5_Script_ActaEchonaTransition::
 	return
 
 
-MareS5_Script_UlyssesLyingDown::
+MareS5_Script_Transition_SirenumScopuli::
 # 37 "data/maps/MareS5/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+	setvar VAR_TEMP_5, 4
 # 38 "data/maps/MareS5/scripts.pory"
-	msgbox MareS5_Text_UlyssesSleep
+	special TransitionMapMusic
 # 39 "data/maps/MareS5/scripts.pory"
+	special ShowMapNamePopup
+	return
+
+
+MareS5_Script_UlyssesLyingDown::
+# 43 "data/maps/MareS5/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 44 "data/maps/MareS5/scripts.pory"
+	msgbox MareS5_Text_UlyssesSleep
+# 45 "data/maps/MareS5/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 40 "data/maps/MareS5/scripts.pory"
+# 46 "data/maps/MareS5/scripts.pory"
 	closemessage
 	return
 
 
 MareS5_Text_UlyssesSleep::
-# 45 "data/maps/MareS5/scripts.pory"
+# 51 "data/maps/MareS5/scripts.pory"
 	.string "Zzz...$"
