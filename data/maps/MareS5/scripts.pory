@@ -12,6 +12,12 @@ mapscripts MareS5_MapScripts {
         //Handle Dynamic Map Trigger Setup
         specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS5_F)
 		//Setup Ulysses during Sirens
+		if (var(VAR_ULYSSES_STATE) < 15) {
+			call (MareS5_Script_ShowUlyssesLyingDown)
+		}
+		if (var(VAR_ULYSSES_STATE) == 15) {
+			call (MareS5_Script_ShowUlyssesAwake)
+		}
     }
 }
 
@@ -39,11 +45,85 @@ script MareS5_Script_Transition_SirenumScopuli {
     special (ShowMapNamePopup)
 }
 
+script MareS5_Script_ShowUlyssesLyingDown {
+	setobjectxyperm (LOCALID_MARES5_ULYSSESLYINGDOWN, 44, 49)
+	setobjectmovementtype (LOCALID_MARES5_ULYSSESLYINGDOWN, MOVEMENT_TYPE_FACE_DOWN)
+	if (!flag(FLAG_MARES5_SIREN_MOLPE)) {
+		setobjectxyperm (LOCALID_MARES5_MOLPE, 52, 23)
+		setobjectmovementtype (LOCALID_MARES5_MOLPE, MOVEMENT_TYPE_WANDER_AROUND)
+	}
+	if (!flag(FLAG_MARES5_SIREN_THELXIEPIA)) {
+		setobjectxyperm (LOCALID_MARES5_THELXIEPIA, 36, 39)
+		setobjectmovementtype (LOCALID_MARES5_THELXIEPIA, MOVEMENT_TYPE_WANDER_AROUND)
+	}
+	if (!flag(FLAG_MARES5_SIREN_AGLAOPHEME)) {
+		setobjectxyperm (LOCALID_MARES5_AGLAOPHEME, 36, 65)
+		setobjectmovementtype (LOCALID_MARES5_AGLAOPHEME, MOVEMENT_TYPE_WANDER_AROUND)
+	}
+	return
+}
+
+script MareS5_Script_ShowUlyssesAwake {
+	setobjectxyperm (LOCALID_MARES5_ULYSSES, 44, 49)
+	setobjectmovementtype (LOCALID_MARES5_ULYSSES, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
+
 script MareS5_Script_UlyssesLyingDown {
     load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 	msgbox (MareS5_Text_UlyssesSleep)
     destroy_field_pic (FIELD_PIC_ULYSSES)
     closemessage
+}
+
+script MareS5_Script_Ulysses {
+
+}
+
+script MareS5_Script_SirenSetup {
+	faceplayer
+	playmoncry (SPECIES_JIGGLYPUFF, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	return
+}
+
+script MareS5_Script_Molpe {
+	call (MareS5_Script_SirenSetup)
+	//callnative (DoMolpeBattle)
+	//waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_MARES5_MOLPE)
+	setobjectxyperm (LOCALID_MARES5_MOLPE, 38, 0)
+	setobjectmovementtype (LOCALID_MARES5_MOLPE, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES5_MOLPE)
+	setflag (FLAG_MARES5_SIREN_MOLPE)
+}
+
+script MareS5_Script_Thelxiepia {
+	call (MareS5_Script_SirenSetup)
+	//callnative (DoThelxiepiaBattle)
+	//waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_MARES5_THELXIEPIA)
+	setobjectxyperm (LOCALID_MARES5_THELXIEPIA, 38, 0)
+	setobjectmovementtype (LOCALID_MARES5_THELXIEPIA, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES5_THELXIEPIA)
+	setflag (FLAG_MARES5_SIREN_THELXIEPIA)
+
+}
+
+script MareS5_Script_Aglaopheme {
+	call (MareS5_Script_SirenSetup)
+	//callnative (DoAglaophemeBattle)
+	//waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_MARES5_AGLAOPHEME)
+	setobjectxyperm (LOCALID_MARES5_AGLAOPHEME, 38, 0)
+	setobjectmovementtype (LOCALID_MARES5_AGLAOPHEME, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES5_AGLAOPHEME)
+	setflag (FLAG_MARES5_SIREN_AGLAOPHEME)
 }
 
 //Siren names: Molpe, Thelxiepia, Aglaopheme
