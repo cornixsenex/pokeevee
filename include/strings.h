@@ -2537,6 +2537,10 @@ extern const u8 gText_TrainerCard[];
 extern const u8 gText_Lupa[];
 //Granon
 extern const u8 gText_Granon[];
+//Sirens
+extern const u8 gText_Molpe[];
+extern const u8 gText_Thelxiepia[];
+extern const u8 gText_Aglaopheme[];
 
 extern const u8 gText_BasePointsResetToZero[];
 

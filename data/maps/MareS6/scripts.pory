@@ -463,6 +463,13 @@ script MareS6_Script_UlyssesSacrificeScene {
 	applymovement (LOCALID_MARES6_ULYSSES, Common_Movement_FaceLeft)
 	waitmovement (0)
 	msgbox (MareS6_Text_UlyssesSacrifice2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	playse (SE_FALL)
+	delay (60)
+	playse (SE_M_DIVE)
+	delay (120)
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 	faceplayer
 	msgbox (MareS6_Text_UlyssesSacrifice3)
 	destroy_field_pic (FIELD_PIC_ULYSSES)

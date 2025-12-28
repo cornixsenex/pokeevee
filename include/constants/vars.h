@@ -150,6 +150,7 @@
                                                                 // 13: Begin Shades - Show Ulysses Beach  
 																// 14: Ulysses asleep on Siren Beach
 																// 15: Ulysses awake on Siren Beach (after all Sirens defeated)
+																// 16: Ulysses waiting at Scylla
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

@@ -78,7 +78,19 @@ script MareS5_Script_UlyssesLyingDown {
 }
 
 script MareS5_Script_Ulysses {
-
+	faceplayer
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS5_Text_UlyssesAwake)
+    destroy_field_pic (FIELD_PIC_ULYSSES)
+    closemessage
+	fadescreenswapbuffers (FADE_TO_BLACK)
+	removeobject (LOCALID_MARES5_ULYSSES)
+	setobjectxyperm (LOCALID_MARES5_ULYSSES, 38, 0)
+	setobjectmovementtype (LOCALID_MARES5_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES5_ULYSSES)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
+	setvar (VAR_ULYSSES_STATE, 16)
+	end
 }
 
 script MareS5_Script_SirenSetup {
@@ -91,43 +103,76 @@ script MareS5_Script_SirenSetup {
 
 script MareS5_Script_Molpe {
 	call (MareS5_Script_SirenSetup)
-	//callnative (DoMolpeBattle)
-	//waitstate
+	callnative (DoMolpeBattle)
+	waitstate
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	removeobject (LOCALID_MARES5_MOLPE)
 	setobjectxyperm (LOCALID_MARES5_MOLPE, 38, 0)
 	setobjectmovementtype (LOCALID_MARES5_MOLPE, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES5_MOLPE)
 	setflag (FLAG_MARES5_SIREN_MOLPE)
+	call (MareS5_Script_CheckSirensCompleted)
 }
 
 script MareS5_Script_Thelxiepia {
 	call (MareS5_Script_SirenSetup)
-	//callnative (DoThelxiepiaBattle)
-	//waitstate
+	callnative (DoThelxiepiaBattle)
+	waitstate
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	removeobject (LOCALID_MARES5_THELXIEPIA)
 	setobjectxyperm (LOCALID_MARES5_THELXIEPIA, 38, 0)
 	setobjectmovementtype (LOCALID_MARES5_THELXIEPIA, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES5_THELXIEPIA)
 	setflag (FLAG_MARES5_SIREN_THELXIEPIA)
-
+	call (MareS5_Script_CheckSirensCompleted)
 }
 
 script MareS5_Script_Aglaopheme {
 	call (MareS5_Script_SirenSetup)
-	//callnative (DoAglaophemeBattle)
-	//waitstate
+	callnative (DoAglaophemeBattle)
+	waitstate
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	removeobject (LOCALID_MARES5_AGLAOPHEME)
 	setobjectxyperm (LOCALID_MARES5_AGLAOPHEME, 38, 0)
 	setobjectmovementtype (LOCALID_MARES5_AGLAOPHEME, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES5_AGLAOPHEME)
 	setflag (FLAG_MARES5_SIREN_AGLAOPHEME)
+	call (MareS5_Script_CheckSirensCompleted)
+}
+
+script MareS5_Script_CheckSirensCompleted {
+	if (flag(FLAG_MARES5_SIREN_MOLPE) && flag(FLAG_MARES5_SIREN_THELXIEPIA) && flag(FLAG_MARES5_SIREN_AGLAOPHEME)) {
+		//setvar
+		setvar (VAR_ULYSSES_STATE, 15)
+		//Remove sleeping Ulysses
+		removeobject (LOCALID_MARES5_ULYSSESLYINGDOWN)
+		setobjectxyperm (LOCALID_MARES5_ULYSSESLYINGDOWN, 38, 0)
+		setobjectmovementtype (LOCALID_MARES5_ULYSSESLYINGDOWN, MOVEMENT_TYPE_INVISIBLE)
+		addobject (LOCALID_MARES5_ULYSSESLYINGDOWN)
+		//Show Ulysses awak
+		removeobject (LOCALID_MARES5_ULYSSES)
+		call (MareS5_Script_ShowUlyssesAwake)
+		addobject (LOCALID_MARES5_ULYSSES)
+	}
+	return
 }
 
 //Siren names: Molpe, Thelxiepia, Aglaopheme
 
 text MareS5_Text_UlyssesSleep {
 	format("Zzz...")
+}
+
+text MareS5_Text_UlyssesAwake {
+	format("That song! I dreamt three beautiful voices
+			sang in chorus the sweetest melody
+			that ever in my days has graced my ears.
+			I wish indeed you had not silenced them.
+			This bitter, waking world appears hollow,
+			like some pathetic mockery of that
+			usullied light, radient perfection
+			of those dreams that song had lulled me into.
+			Being awake I will resign myself
+			to re-attend my quest. I must be off
+			for Nestor's house and my brother's wedding.")
 }

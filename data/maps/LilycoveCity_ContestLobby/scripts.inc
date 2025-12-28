@@ -331,7 +331,6 @@ LilycoveCity_ContestLobby_EventScript_SetMasterContestType::
 
 @ Functionally unused
 LilycoveCity_ContestLobby_EventScript_SetDebug::
-	copyvar VAR_LILYCOVE_MUSEUM_2F_STATE, 1
 #ifdef UBFIX
 	setvar VAR_LILYCOVE_MUSEUM_2F_STATE, 1
 #else

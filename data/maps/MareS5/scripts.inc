@@ -125,75 +125,168 @@ MareS5_Script_UlyssesLyingDown::
 
 
 MareS5_Script_Ulysses::
-	return
+# 81 "data/maps/MareS5/scripts.pory"
+	faceplayer
+# 82 "data/maps/MareS5/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 83 "data/maps/MareS5/scripts.pory"
+	msgbox MareS5_Text_UlyssesAwake
+# 84 "data/maps/MareS5/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 85 "data/maps/MareS5/scripts.pory"
+	closemessage
+# 86 "data/maps/MareS5/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 87 "data/maps/MareS5/scripts.pory"
+	removeobject LOCALID_MARES5_ULYSSES
+# 88 "data/maps/MareS5/scripts.pory"
+	setobjectxyperm LOCALID_MARES5_ULYSSES, 38, 0
+# 89 "data/maps/MareS5/scripts.pory"
+	setobjectmovementtype LOCALID_MARES5_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+# 90 "data/maps/MareS5/scripts.pory"
+	addobject LOCALID_MARES5_ULYSSES
+# 91 "data/maps/MareS5/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 92 "data/maps/MareS5/scripts.pory"
+	setvar VAR_ULYSSES_STATE, 16
+	end
 
 
 MareS5_Script_SirenSetup::
-# 85 "data/maps/MareS5/scripts.pory"
+# 97 "data/maps/MareS5/scripts.pory"
 	faceplayer
-# 86 "data/maps/MareS5/scripts.pory"
+# 98 "data/maps/MareS5/scripts.pory"
 	playmoncry SPECIES_JIGGLYPUFF, CRY_MODE_ENCOUNTER
-# 87 "data/maps/MareS5/scripts.pory"
+# 99 "data/maps/MareS5/scripts.pory"
 	waitmoncry
-# 88 "data/maps/MareS5/scripts.pory"
+# 100 "data/maps/MareS5/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	return
 
 
 MareS5_Script_Molpe::
-# 93 "data/maps/MareS5/scripts.pory"
+# 105 "data/maps/MareS5/scripts.pory"
 	call MareS5_Script_SirenSetup
-# 96 "data/maps/MareS5/scripts.pory"
+# 106 "data/maps/MareS5/scripts.pory"
+	callnative DoMolpeBattle
+# 107 "data/maps/MareS5/scripts.pory"
+	waitstate
+# 108 "data/maps/MareS5/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 97 "data/maps/MareS5/scripts.pory"
+# 109 "data/maps/MareS5/scripts.pory"
 	removeobject LOCALID_MARES5_MOLPE
-# 98 "data/maps/MareS5/scripts.pory"
+# 110 "data/maps/MareS5/scripts.pory"
 	setobjectxyperm LOCALID_MARES5_MOLPE, 38, 0
-# 99 "data/maps/MareS5/scripts.pory"
+# 111 "data/maps/MareS5/scripts.pory"
 	setobjectmovementtype LOCALID_MARES5_MOLPE, MOVEMENT_TYPE_INVISIBLE
-# 100 "data/maps/MareS5/scripts.pory"
+# 112 "data/maps/MareS5/scripts.pory"
 	addobject LOCALID_MARES5_MOLPE
-# 101 "data/maps/MareS5/scripts.pory"
+# 113 "data/maps/MareS5/scripts.pory"
 	setflag FLAG_MARES5_SIREN_MOLPE
+# 114 "data/maps/MareS5/scripts.pory"
+	call MareS5_Script_CheckSirensCompleted
 	return
 
 
 MareS5_Script_Thelxiepia::
-# 105 "data/maps/MareS5/scripts.pory"
+# 118 "data/maps/MareS5/scripts.pory"
 	call MareS5_Script_SirenSetup
-# 108 "data/maps/MareS5/scripts.pory"
+# 119 "data/maps/MareS5/scripts.pory"
+	callnative DoThelxiepiaBattle
+# 120 "data/maps/MareS5/scripts.pory"
+	waitstate
+# 121 "data/maps/MareS5/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 109 "data/maps/MareS5/scripts.pory"
+# 122 "data/maps/MareS5/scripts.pory"
 	removeobject LOCALID_MARES5_THELXIEPIA
-# 110 "data/maps/MareS5/scripts.pory"
+# 123 "data/maps/MareS5/scripts.pory"
 	setobjectxyperm LOCALID_MARES5_THELXIEPIA, 38, 0
-# 111 "data/maps/MareS5/scripts.pory"
+# 124 "data/maps/MareS5/scripts.pory"
 	setobjectmovementtype LOCALID_MARES5_THELXIEPIA, MOVEMENT_TYPE_INVISIBLE
-# 112 "data/maps/MareS5/scripts.pory"
+# 125 "data/maps/MareS5/scripts.pory"
 	addobject LOCALID_MARES5_THELXIEPIA
-# 113 "data/maps/MareS5/scripts.pory"
+# 126 "data/maps/MareS5/scripts.pory"
 	setflag FLAG_MARES5_SIREN_THELXIEPIA
+# 127 "data/maps/MareS5/scripts.pory"
+	call MareS5_Script_CheckSirensCompleted
 	return
 
 
 MareS5_Script_Aglaopheme::
-# 118 "data/maps/MareS5/scripts.pory"
+# 131 "data/maps/MareS5/scripts.pory"
 	call MareS5_Script_SirenSetup
-# 121 "data/maps/MareS5/scripts.pory"
+# 132 "data/maps/MareS5/scripts.pory"
+	callnative DoAglaophemeBattle
+# 133 "data/maps/MareS5/scripts.pory"
+	waitstate
+# 134 "data/maps/MareS5/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 122 "data/maps/MareS5/scripts.pory"
+# 135 "data/maps/MareS5/scripts.pory"
 	removeobject LOCALID_MARES5_AGLAOPHEME
-# 123 "data/maps/MareS5/scripts.pory"
+# 136 "data/maps/MareS5/scripts.pory"
 	setobjectxyperm LOCALID_MARES5_AGLAOPHEME, 38, 0
-# 124 "data/maps/MareS5/scripts.pory"
+# 137 "data/maps/MareS5/scripts.pory"
 	setobjectmovementtype LOCALID_MARES5_AGLAOPHEME, MOVEMENT_TYPE_INVISIBLE
-# 125 "data/maps/MareS5/scripts.pory"
+# 138 "data/maps/MareS5/scripts.pory"
 	addobject LOCALID_MARES5_AGLAOPHEME
-# 126 "data/maps/MareS5/scripts.pory"
+# 139 "data/maps/MareS5/scripts.pory"
 	setflag FLAG_MARES5_SIREN_AGLAOPHEME
+# 140 "data/maps/MareS5/scripts.pory"
+	call MareS5_Script_CheckSirensCompleted
 	return
 
 
+MareS5_Script_CheckSirensCompleted::
+# 144 "data/maps/MareS5/scripts.pory"
+	goto_if_set FLAG_MARES5_SIREN_MOLPE, MareS5_Script_CheckSirensCompleted_4
+MareS5_Script_CheckSirensCompleted_1:
+	return
+
+MareS5_Script_CheckSirensCompleted_2:
+# 146 "data/maps/MareS5/scripts.pory"
+	setvar VAR_ULYSSES_STATE, 15
+# 148 "data/maps/MareS5/scripts.pory"
+	removeobject LOCALID_MARES5_ULYSSESLYINGDOWN
+# 149 "data/maps/MareS5/scripts.pory"
+	setobjectxyperm LOCALID_MARES5_ULYSSESLYINGDOWN, 38, 0
+# 150 "data/maps/MareS5/scripts.pory"
+	setobjectmovementtype LOCALID_MARES5_ULYSSESLYINGDOWN, MOVEMENT_TYPE_INVISIBLE
+# 151 "data/maps/MareS5/scripts.pory"
+	addobject LOCALID_MARES5_ULYSSESLYINGDOWN
+# 153 "data/maps/MareS5/scripts.pory"
+	removeobject LOCALID_MARES5_ULYSSES
+# 154 "data/maps/MareS5/scripts.pory"
+	call MareS5_Script_ShowUlyssesAwake
+# 155 "data/maps/MareS5/scripts.pory"
+	addobject LOCALID_MARES5_ULYSSES
+	goto MareS5_Script_CheckSirensCompleted_1
+
+MareS5_Script_CheckSirensCompleted_3:
+# 144 "data/maps/MareS5/scripts.pory"
+	goto_if_set FLAG_MARES5_SIREN_AGLAOPHEME, MareS5_Script_CheckSirensCompleted_2
+	goto MareS5_Script_CheckSirensCompleted_1
+
+MareS5_Script_CheckSirensCompleted_4:
+# 144 "data/maps/MareS5/scripts.pory"
+	goto_if_set FLAG_MARES5_SIREN_THELXIEPIA, MareS5_Script_CheckSirensCompleted_3
+	goto MareS5_Script_CheckSirensCompleted_1
+
+
 MareS5_Text_UlyssesSleep::
-# 131 "data/maps/MareS5/scripts.pory"
+# 162 "data/maps/MareS5/scripts.pory"
 	.string "Zzz...$"
+
+MareS5_Text_UlyssesAwake::
+# 166 "data/maps/MareS5/scripts.pory"
+	.string "That song! I dreamt three beautiful\n"
+	.string "voices sang in chorus the sweetest\l"
+	.string "melody that ever in my days has graced\l"
+	.string "my ears. I wish indeed you had not\l"
+	.string "silenced them. This bitter, waking world\l"
+	.string "appears hollow, like some pathetic\l"
+	.string "mockery of that usullied light, radient\l"
+	.string "perfection of those dreams that song\l"
+	.string "had lulled me into. Being awake I will\l"
+	.string "resign myself to re-attend my quest. I\l"
+	.string "must be off for Nestor's house and my\l"
+	.string "brother's wedding.$"
