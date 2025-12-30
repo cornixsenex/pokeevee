@@ -151,6 +151,10 @@
 																// 14: Ulysses asleep on Siren Beach
 																// 15: Ulysses awake on Siren Beach (after all Sirens defeated)
 																// 16: Ulysses waiting at Scylla
+																// 17: After speak Ulysses - Show Scylla, reverse whirlpool
+																// 18: After Scylla Battle - Do dive warp - Charybdis battle
+																// 19: After Charybdis - Hide Whirlpool - Show Ulysses there
+																// 20: After Ulysses clears Scylla Charybdis - Show Ulysses with Calypso
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
