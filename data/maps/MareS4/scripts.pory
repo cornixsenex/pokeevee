@@ -228,11 +228,71 @@ script MareS4_Script_ShowUlysses {
 }
 
 script MareS4_Script_ReverseWhirlpool {
+	setmetatile (75, 47, METATILE_Pacifidlog_WaterCurrent_Southward, FALSE)
 
+	setmetatile (74, 48, METATILE_Pacifidlog_WaterCurrent_Southward, FALSE)
+	setmetatile (75, 48, METATILE_Pacifidlog_WaterCurrent_Southward, FALSE)
+	setmetatile (76, 48, METATILE_Pacifidlog_WaterCurrent_Southward, FALSE)
+	
+	setmetatile (73, 49, METATILE_Pacifidlog_WaterCurrent_Eastward, FALSE)
+	setmetatile (74, 49, METATILE_Pacifidlog_WaterCurrent_Eastward, FALSE)
+	setmetatile (75, 49, METATILE_Pacifidlog_WaterCurrent_Southward, FALSE)
+	setmetatile (76, 49, METATILE_Pacifidlog_WaterCurrent_Southward, FALSE)
+	setmetatile (77, 49, METATILE_Pacifidlog_WaterCurrent_Westward, FALSE)
+
+	setmetatile (72, 50, METATILE_Pacifidlog_WaterCurrent_Eastward, FALSE)
+	setmetatile (73, 50, METATILE_Pacifidlog_WaterCurrent_Eastward, FALSE)
+	setmetatile (74, 50, METATILE_Pacifidlog_WaterCurrent_Eastward, FALSE)
+	setmetatile (76, 50, METATILE_Pacifidlog_WaterCurrent_Westward, FALSE)
+	setmetatile (77, 50, METATILE_Pacifidlog_WaterCurrent_Westward, FALSE)
+	setmetatile (78, 50, METATILE_Pacifidlog_WaterCurrent_Westward, FALSE)
+	
+	setmetatile (73, 51, METATILE_Pacifidlog_WaterCurrent_Eastward, FALSE)
+	setmetatile (74, 51, METATILE_Pacifidlog_WaterCurrent_Northward, FALSE)
+	setmetatile (75, 51, METATILE_Pacifidlog_WaterCurrent_Northward, FALSE)
+	setmetatile (76, 51, METATILE_Pacifidlog_WaterCurrent_Westward, FALSE)
+	setmetatile (77, 51, METATILE_Pacifidlog_WaterCurrent_Westward, FALSE)
+	
+	setmetatile (74, 52, METATILE_Pacifidlog_WaterCurrent_Northward, FALSE)
+	setmetatile (75, 52, METATILE_Pacifidlog_WaterCurrent_Northward, FALSE)
+	setmetatile (76, 52, METATILE_Pacifidlog_WaterCurrent_Northward, FALSE)
+	
+	setmetatile (75, 53, METATILE_Pacifidlog_WaterCurrent_Northward, FALSE)
+	
 	return
 }
 
 script MareS4_Script_HideWhirlpool {
+	setmetatile (75, 47, METATILE_General_CalmWater, FALSE)
+
+	setmetatile (74, 48, METATILE_General_CalmWater, FALSE)
+	setmetatile (75, 48, METATILE_General_CalmWater, FALSE)
+	setmetatile (76, 48, METATILE_General_CalmWater, FALSE)
+	
+	setmetatile (73, 49, METATILE_General_CalmWater, FALSE)
+	setmetatile (74, 49, METATILE_General_CalmWater, FALSE)
+	setmetatile (75, 49, METATILE_General_CalmWater, FALSE)
+	setmetatile (76, 49, METATILE_General_CalmWater, FALSE)
+	setmetatile (77, 49, METATILE_General_CalmWater, FALSE)
+
+	setmetatile (72, 50, METATILE_General_CalmWater, FALSE)
+	setmetatile (73, 50, METATILE_General_CalmWater, FALSE)
+	setmetatile (74, 50, METATILE_General_CalmWater, FALSE)
+	setmetatile (76, 50, METATILE_General_CalmWater, FALSE)
+	setmetatile (77, 50, METATILE_General_CalmWater, FALSE)
+	setmetatile (78, 50, METATILE_General_CalmWater, FALSE)
+	
+	setmetatile (73, 51, METATILE_General_CalmWater, FALSE)
+	setmetatile (74, 51, METATILE_General_CalmWater, FALSE)
+	setmetatile (75, 51, METATILE_General_CalmWater, FALSE)
+	setmetatile (76, 51, METATILE_General_CalmWater, FALSE)
+	setmetatile (77, 51, METATILE_General_CalmWater, FALSE)
+	
+	setmetatile (74, 52, METATILE_General_CalmWater, FALSE)
+	setmetatile (75, 52, METATILE_General_CalmWater, FALSE)
+	setmetatile (76, 52, METATILE_General_CalmWater, FALSE)
+	
+	setmetatile (75, 53, METATILE_General_CalmWater, FALSE)
 
 	return
 }

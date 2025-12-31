@@ -545,6 +545,10 @@
 #define METATILE_Pacifidlog_SubmergedLogs_HorizontalRight      0x255
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalBottom       0x262
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
+#define METATILE_Pacifidlog_WaterCurrent_Eastward              0x284
+#define METATILE_Pacifidlog_WaterCurrent_Northward             0x283
+#define METATILE_Pacifidlog_WaterCurrent_Southward             0x28C
+#define METATILE_Pacifidlog_WaterCurrent_Westward              0x28B
 
 // gTileset_Petalburg
 #define METATILE_Petalburg_Door_BirchsLab   0x249
