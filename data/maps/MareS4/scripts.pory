@@ -353,6 +353,21 @@ script MareS4_Script_UlyssesAfterCharybdis {
 	end
 }
 
+//Dive under water - warp to under the sea
+script MareS4_Script_Whirlpool {
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Ardor_Uni_ArchaeologyClass_Movement_Spin)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Movement_SetInvisible)
+	waitmovement (0)
+	playse (SE_M_WHIRLPOOL)
+	waitse
+	playse (SE_M_DIVE)
+	waitse
+	warpsilent (MAP_MARE_S4, 25, 25)
+}
+
 
 
 script MareS4_Script_Rutulian1 {

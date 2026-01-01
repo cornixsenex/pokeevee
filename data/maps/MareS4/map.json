@@ -882,6 +882,15 @@
       "var": "VAR_AENEID_STATE",
       "var_value": "7",
       "script": "MareS4_Script_Trigger_Doorguards"
+    },
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "18",
+      "script": "MareS4_Script_Whirlpool"
     }
   ],
   "bg_events": []
