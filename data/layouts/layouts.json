@@ -6680,6 +6680,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/CasaCirces/border.bin",
       "blockdata_filepath": "data/layouts/CasaCirces/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUB_MARE",
+      "name": "SubMare_Layout",
+      "width": 49,
+      "height": 49,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/SubMare/border.bin",
+      "blockdata_filepath": "data/layouts/SubMare/map.bin"
     }
   ]
 }

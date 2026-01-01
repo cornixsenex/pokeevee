@@ -956,8 +956,12 @@
       "name": "BOND BRIDGE"
     },
     {
-      "id": "MAPSEC_THREE_ISLE_PORT",
-      "name": "THREE ISLE PORT"
+      "id": "MAPSEC_SUB_MARE",
+      "name": "SVB MARE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SIRENUM_SCOPULI",

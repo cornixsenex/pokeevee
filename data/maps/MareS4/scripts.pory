@@ -24,6 +24,16 @@
 
 mapscripts MareS4_MapScripts {
 
+	MAP_SCRIPT_ON_LOAD {
+		//Reverse Whirlpool
+		if (var(VAR_ULYSSES_STATE) > 16 && var(VAR_ULYSSES_STATE) < 19) {
+			call (MareS4_Script_ReverseWhirlpool)
+		}
+		//Hide Whirlpool
+		if (var(VAR_ULYSSES_STATE) > 18) {
+			call (MareS4_Script_HideWhirlpool)
+		}
+	}
     MAP_SCRIPT_ON_TRANSITION {
         //Handle Dynamic Map Trigger Setup
         specialvar (VAR_TEMP_5, GetDynamicMapSec_MareS4_F)
@@ -58,14 +68,6 @@ mapscripts MareS4_MapScripts {
 		//Ulysses During Scylla Charybdis
 		if (var(VAR_ULYSSES_STATE) > 15 && var(VAR_ULYSSES_STATE) < 20) {
 			call (MareS4_Script_ShowUlysses)
-		}
-		//Reverse Whirlpool
-		if (var(VAR_ULYSSES_STATE) > 16 && var(VAR_ULYSSES_STATE) < 19) {
-			call (MareS4_Script_ReverseWhirlpool)
-		}
-		//Hide Whirlpool
-		if (var(VAR_ULYSSES_STATE) > 18) {
-			call (MareS4_Script_HideWhirlpool)
 		}
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -365,7 +367,7 @@ script MareS4_Script_Whirlpool {
 	waitse
 	playse (SE_M_DIVE)
 	waitse
-	warpsilent (MAP_MARE_S4, 25, 25)
+	warpsilent (MAP_SUB_MARE, 27, 45)
 }
 
 
