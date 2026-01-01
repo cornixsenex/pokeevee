@@ -2541,6 +2541,8 @@ extern const u8 gText_Granon[];
 extern const u8 gText_Molpe[];
 extern const u8 gText_Thelxiepia[];
 extern const u8 gText_Aglaopheme[];
+//Scylla
+extern const u8 gText_Scylla[];
 
 extern const u8 gText_BasePointsResetToZero[];
 

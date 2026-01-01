@@ -6723,6 +6723,9 @@ static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
 				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN && objectEvent->mapNum == MAP_NUM(MAP_AEDES_AQUA_MINI_BOSS_ROOM) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_AQUA_MINI_BOSS_ROOM) ) 
 				//Aedes Terra Granon
 				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(GRANBULL) && objectEvent->mapNum == MAP_NUM(MAP_AEDES_TERRA) && objectEvent->mapGroup == MAP_GROUP(MAP_AEDES_TERRA) ) 
+
+				//MareS4 Scylla
+				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TENTACRUEL) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S4) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S4) ) 
 				)
 			{
 				//Yes, it's a special collision with player do script

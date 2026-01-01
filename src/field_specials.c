@@ -6507,6 +6507,39 @@ void DoAglaophemeBattle(void)
     ScriptContext_Stop();
 }
 
+void DoScyllaBattle(void)
+{
+	//vars
+	u16 species = SPECIES_TENTACRUEL;
+	u8 level = 18;
+    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
+	struct Pokemon *mon;
+	u32 personality;
+	u16  move1= MOVE_WHIRLPOOL;
+	u16  move2= MOVE_HYDRO_PUMP;
+	u16  move3= MOVE_SLUDGE_WAVE;
+	u16  move4= MOVE_WRING_OUT;
+	//setup
+	bool32 makeShiny = TRUE;
+	mon = &gEnemyParty[0];
+    StringCopy(nickname, gText_Scylla);
+    ZeroEnemyPartyMons();
+	do
+		personality = Random32();
+    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
+	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	//Assign Mon Data
+	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+	SetMonData(mon, MON_DATA_MOVE1, &move1);
+	SetMonData(mon, MON_DATA_MOVE2, &move2);
+	SetMonData(mon, MON_DATA_MOVE3, &move3);
+	SetMonData(mon, MON_DATA_MOVE4, &move4);   
+    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	//DoWildBattle
+    BattleSetup_StartScriptedWildBattle();
+    ScriptContext_Stop();
+}
+
 //Beginner stuff fix it later - just do a standard warp setup the truck sequence do the shaking then open the door and release let it warp to Urbia and then have them take the truck away in another fade screen (that should all be handled ON_FRAME_TABLE)
 void DoPeccadumTruckScene(void)
 {

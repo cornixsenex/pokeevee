@@ -298,12 +298,61 @@ script MareS4_Script_HideWhirlpool {
 }
 
 script MareS4_Script_Scylla {
-
+	faceplayer
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	playmoncry (SPECIES_TENTACRUEL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	callnative (DoScyllaBattle)
+	waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_MARES4_SCYLLA)
+	setobjectxyperm (LOCALID_MARES4_SCYLLA, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_SCYLLA, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_SCYLLA)
+	if (var(VAR_ULYSSES_STATE) == 17) {
+		setvar (VAR_ULYSSES_STATE, 18)
+	}
+	end
 }
 
 script MareS4_Script_Ulysses {
-
+	faceplayer
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	switch (var(VAR_ULYSSES_STATE)) {
+		case 16:
+			//Ulysses waits by whirlpool
+			msgbox (MareS4_Text_UlyssesAnteScylla)
+		case 17:
+			//U and Scylla visible
+			msgbox (MareS4_Text_UlyssesDuringScylla)
+		case 18:
+			//Scylla vanquished but whirlpool still open
+			msgbox (MareS4_Text_UlyssesDuringCharybdis)
+		case 19:
+			//After charybdis
+			call (MareS4_Script_UlyssesAfterCharybdis)
+		default:
+			msgbox("VAR_ULYSSES_STATE OOB")
+			closemessage
+			destroy_field_pic (FIELD_PIC_ULYSSES)
+			end
+	}
 }
+
+script MareS4_Script_UlyssesAfterCharybdis {
+	//U: You did it
+	msgbox (MareS4_Text_UlyssesAfterCharybdis)
+	destroy_field_pic(FIELD_PIC_ULYSSES)
+	closemessage
+	//exit U - switch on player face
+	//remove U
+	//setvar
+	//fin
+	end
+}
+
 
 
 script MareS4_Script_Rutulian1 {
@@ -2218,5 +2267,20 @@ text MareS4_Text_Aeneas_Wedding2 {
             we shall begin to build the great city!")
 }
 
+text MareS4_Text_UlyssesAnteScylla {
+	format("")
+}
+
+text MareS4_Text_UlyssesDuringScylla {
+	format("")
+}
+
+text MareS4_Text_UlyssesDuringCharybdis {
+	format("")
+}
+
+text MareS4_Text_UlyssesAfterCharybdis {
+	format("")
+}
 
 

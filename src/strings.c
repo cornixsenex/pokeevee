@@ -1466,6 +1466,8 @@ const u8 gText_Granon[] = _("GRANON");
 const u8 gText_Molpe[] = _("MOLPE");
 const u8 gText_Thelxiepia[] = _("THELXIEPIA");
 const u8 gText_Aglaopheme[] = _("AGLAOPHEME");
+//Scylla
+const u8 gText_Scylla[] = _("SCYLLA");
 
 const u8 gText_CannotSendMonToBoxActive[] = _("Cannot send an active battler\nto the box.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't,\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
