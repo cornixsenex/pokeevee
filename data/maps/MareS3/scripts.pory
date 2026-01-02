@@ -10,7 +10,7 @@
 //MB_OCEAN_MAP_TRANSITION_C: Isla Herba Bona
 
 //FLAG_TEMP_1 - FLAG_TEMP_7 hide the 7 Lotus Heads
-//FLAG_TEMP_8, 9, A, B are Toxic Orb (N, E, S, W) - set every time you transition to map, cleared only when U pukes until you transition again
+//FLAG_TEMP_8, 9, A, B are Toxic Orb (N, E, S, W) 
 
 mapscripts MareS3_MapScripts {
 
@@ -21,11 +21,6 @@ mapscripts MareS3_MapScripts {
 		if (var(VAR_ULYSSES_STATE) == 2) {
 			call (MareS3_Script_ShowLotusEaters)
 		}
-		//Clear Toxic Orb Flag
-		setflag (FLAG_TEMP_8)
-		setflag (FLAG_TEMP_9)
-		setflag (FLAG_TEMP_A)
-		setflag (FLAG_TEMP_B)
     }
 
 	MAP_SCRIPT_ON_RESUME {
@@ -191,13 +186,13 @@ script MareS3_Script_Ulysses {
 		specialvar (VAR_RESULT, GetPlayerFacingDirection)
 		switch (var(VAR_RESULT)) {
 			case DIR_NORTH:
-				clearflag (FLAG_TEMP_8)
+				setflag (FLAG_TEMP_8)
 			case DIR_EAST:
-				clearflag (FLAG_TEMP_9)
+				setflag (FLAG_TEMP_9)
 			case DIR_SOUTH:
-				clearflag (FLAG_TEMP_A)
+				setflag (FLAG_TEMP_A)
 			case DIR_WEST:
-				clearflag (FLAG_TEMP_B)
+				setflag (FLAG_TEMP_B)
 		}
 		//setvar
 		setvar (VAR_ULYSSES_STATE, 3)
@@ -211,6 +206,39 @@ script MareS3_Script_Ulysses {
 		unfaceplayer
 		end
 	}
+}
+
+script MareS3_Script_ToxicOrbNorth {
+	if (flag(FLAG_TEMP_8)) {
+		clearflag (FLAG_TEMP_8)
+		call (MareS3_Script_ToxicOrb)
+	}
+}
+
+script MareS3_Script_ToxicOrbEast {
+	if (flag(FLAG_TEMP_9)) {
+		clearflag (FLAG_TEMP_9)
+		call (MareS3_Script_ToxicOrb)
+	}
+}
+
+script MareS3_Script_ToxicOrbSouth {
+	if (flag(FLAG_TEMP_A)) {
+		clearflag (FLAG_TEMP_A)
+		call (MareS3_Script_ToxicOrb)
+	}
+}
+
+script MareS3_Script_ToxicOrbWest {
+	if (flag(FLAG_TEMP_B)) {
+		clearflag (FLAG_TEMP_B)
+		call (MareS3_Script_ToxicOrb)
+	}
+}
+
+script MareS3_Script_ToxicOrb {
+	giveitem (ITEM_TOXIC_ORB)
+	end
 }
 
 script MareS3_Script_LotusHead1 {
