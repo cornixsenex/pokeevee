@@ -52,5 +52,6 @@ Delta231
 	>dragontamer / trojan OW sprite
 Kasen
 	>Atlas / Drayden OW sprite
+	>Hide Surf Blob
 thesixthsaint
 	>Ganondorf trainer sprite

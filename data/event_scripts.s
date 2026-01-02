@@ -1445,3 +1445,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CasaCirces/scripts.inc"
 
 	.include "data/maps/SubMare/scripts.inc"
+
+	.include "data/maps/SubMareCave/scripts.inc"

@@ -6690,6 +6690,16 @@
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/SubMare/border.bin",
       "blockdata_filepath": "data/layouts/SubMare/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUB_MARE_CAVE",
+      "name": "SubMareCave_Layout",
+      "width": 28,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/SubMareCave/border.bin",
+      "blockdata_filepath": "data/layouts/SubMareCave/map.bin"
     }
   ]
 }

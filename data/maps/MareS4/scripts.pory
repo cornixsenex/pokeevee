@@ -370,8 +370,6 @@ script MareS4_Script_Whirlpool {
 	warpsilent (MAP_SUB_MARE, 27, 45)
 }
 
-
-
 script MareS4_Script_Rutulian1 {
 	//Face Rutulian
 	applymovement (LOCALID_MARES4_RUTULIAN1, Common_Movement_FaceDown)

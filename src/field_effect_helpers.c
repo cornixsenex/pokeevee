@@ -1355,6 +1355,8 @@ static void UpdateBobbingEffect(struct ObjectEvent *playerObj, struct Sprite *pl
             sprite->x = playerSprite->x;
             sprite->y = playerSprite->y + 8;
         }
+		//Make blob inherit visibility from player sprite - Thanks Kasen
+		sprite->invisible = playerSprite->invisible;
     }
 }
 
