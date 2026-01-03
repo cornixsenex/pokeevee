@@ -1,1 +1,17 @@
 mapscripts SubMareCave_MapScripts {}
+
+
+script SubMareCave_Script_Panel {
+	msgbox (AedesAqua_Text_WaterControl, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == TRUE) {
+		if (!flag(FLAG_SUBMARE_HIDESUBS)) {
+			playse (SE_EFFECTIVE)
+			waitse
+			setflag (FLAG_SUBMARE_HIDESUBS)
+		} else {
+			msgbox (AedesAqua_Text_WaterControlNoEffect)
+		}
+	}
+	closemessage
+	end
+}

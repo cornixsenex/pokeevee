@@ -223,10 +223,10 @@
 #define FLAG_MARES5_SIREN_MOLPE              0xC3 //After clear siren
 #define FLAG_MARES5_SIREN_THELXIEPIA         0xC4 //After clear siren
 #define FLAG_MARES5_SIREN_AGLAOPHEME         0xC5 //After clear siren
+#define FLAG_SUBMARE_HIDESUBS                0xC6 //Press panel -> hide submarines
 
 // BREAK // 
 
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5   0xC6 //
 #define FLAG_RUSTURF_TUNNEL_OPENED           0xC7
 #define FLAG_RECEIVED_RED_SCARF              0xC8
 #define FLAG_RECEIVED_BLUE_SCARF             0xC9
