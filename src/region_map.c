@@ -2144,7 +2144,7 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 3:
 					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 4:
-					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA_BONA"));
+					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA BONA"));
 				case 5:
 					return StringCopy(dest, COMPOUND_STRING("ISLA HESPERIA"));
 				case 6:
@@ -2167,7 +2167,7 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 				case 2:
 					return StringCopy(dest, COMPOUND_STRING("MARE SVBTROPICVM"));
 				case 3:
-					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA_BONA"));
+					return StringCopy(dest, COMPOUND_STRING("ISLA HERBA BONA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}

@@ -349,8 +349,27 @@ script MareS4_Script_UlyssesAfterCharybdis {
 	destroy_field_pic(FIELD_PIC_ULYSSES)
 	closemessage
 	//exit U - switch on player face
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_NORTH) {
+		applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_WalkLeft)
+		waitmovement (0)
+		applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+	} else {
+		applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+		applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_WalkLeft)
+		waitmovement (0)
+	}
+	applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_WalkDown6)
+	waitmovement (0)
 	//remove U
+	removeobject (LOCALID_MARES4_ULYSSES)
+	setobjectxyperm (LOCALID_MARES4_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_MARES4_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES4_ULYSSES)
 	//setvar
+	setvar (VAR_ULYSSES_STATE, 20)
 	//fin
 	end
 }
