@@ -959,8 +959,10 @@
 #define METATILE_TrickHousePuzzle_Stairs_Down                 0x20B
 
 // gTileset_Underwater
-#define METATILE_Underwater_FloorShadow  0x228
-#define METATILE_Underwater_RockWall     0x21E
+#define METATILE_Underwater_FloorShadow          0x228
+#define METATILE_Underwater_RockWall             0x21E
+#define METATILE_Underwater_UnderwaterFloor      0x216
+#define METATILE_Underwater_UnderwaterWallSouth  0x21B
 
 // gTileset_desert
 #define METATILE_desert_DeepSand_Center  0x219

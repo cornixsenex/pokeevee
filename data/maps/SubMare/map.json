@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_SUBMARE_CHARYBDIS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WAILORD)",
       "x": 11,
       "y": 5,
@@ -25,6 +26,34 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SUBMARE_FOSSIL_R",
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 41,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SubMare_Script_Fossil",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SUBMARE_FOSSIL_L",
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 11,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SubMare_Script_Fossil",
       "flag": "0"
     }
   ],
@@ -37,6 +66,34 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "18",
+      "script": "SubMare_Script_CharybdisA"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "18",
+      "script": "SubMare_Script_CharybdisB"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "18",
+      "script": "SubMare_Script_CharybdisC"
+    }
+  ],
   "bg_events": []
 }

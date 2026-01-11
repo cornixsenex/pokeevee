@@ -1,1 +1,126 @@
-mapscripts SubMare_MapScripts {}
+mapscripts SubMare_MapScripts {
+	
+	MAP_SCRIPT_ON_TRANSITION {
+		//Show fossil
+		if (flag(FLAG_SUBMARE_HIDESUBS)) {
+			call (SubMare_Script_ShowFossil)
+		}
+	}
+
+	MAP_SCRIPT_ON_LOAD {
+		//Hide Sub
+		if (flag(FLAG_SUBMARE_HIDESUBS)) {
+			call (SubMare_Script_HideSubs)
+		}
+	}
+
+}
+
+script SubMare_Script_ShowFossil {
+	//Fossil L
+	setobjectxyperm (LOCALID_SUBMARE_FOSSIL_L, 12, 3)
+	setobjectmovementtype (LOCALID_SUBMARE_FOSSIL_L, MOVEMENT_TYPE_FACE_DOWN)
+	//Fossil R
+	if (!flag(FLAG_SUBMARE_HIDEFOSSIL)) {
+		setobjectxyperm (LOCALID_SUBMARE_FOSSIL_R, 41, 6)
+		setobjectmovementtype (LOCALID_SUBMARE_FOSSIL_R, MOVEMENT_TYPE_FACE_DOWN)
+	}
+	return
+}
+
+script SubMare_Script_HideSubs {
+	//Sub L
+	setmetatile (10, 2, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (11, 2, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (12, 2, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (13, 2, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (10, 3, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (11, 3, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (12, 3, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (13, 3, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (10, 4, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (11, 4, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (12, 4, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (13, 4, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	//Sub R
+	setmetatile (40, 5, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (41, 5, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (42, 5, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (43, 5, METATILE_Underwater_UnderwaterWallSouth, FALSE)	
+	setmetatile (40, 5, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (41, 5, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (42, 5, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (43, 5, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (40, 6, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (41, 6, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (42, 6, METATILE_Underwater_UnderwaterFloor, FALSE)	
+	setmetatile (43, 6, METATILE_Underwater_UnderwaterFloor, FALSE)	
+
+	return
+}
+
+script SubMare_Script_Fossil {
+	//give fossil
+    specialvar (VAR_RESULT, RandDigit)
+	if (var(VAR_RESULT) < 5) {
+		giveitem (ITEM_ROOT_FOSSIL)
+	} else {
+		giveitem (ITEM_HELIX_FOSSIL)
+	}
+	//Hide Fossil
+	removeobject (LOCALID_SUBMARE_FOSSIL_R)
+	setobjectxyperm (LOCALID_SUBMARE_FOSSIL_R, 0, 0)
+	setobjectmovementtype (LOCALID_SUBMARE_FOSSIL_R, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_SUBMARE_FOSSIL_R)
+	//set flag
+	setflag (FLAG_SUBMARE_HIDEFOSSIL)
+	end
+}
+
+script SubMare_Script_CharybdisA {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
+	call (SubMare_Script_CharybdisScene)
+}
+
+script SubMare_Script_CharybdisB {
+	call (SubMare_Script_CharybdisScene)
+}
+
+script SubMare_Script_CharybdisC {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	call (SubMare_Script_CharybdisScene)
+}
+
+script SubMare_Script_CharybdisScene {
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp3)
+	waitmovement (0)
+	playmoncry (SPECIES_WAILORD, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	callnative (DoCharybdisBattle)
+	waitstate
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_SUBMARE_CHARYBDIS)
+	setobjectxyperm (LOCALID_SUBMARE_CHARYBDIS, 0, 0)
+	setobjectmovementtype (LOCALID_SUBMARE_CHARYBDIS, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_SUBMARE_CHARYBDIS)
+	//Do resurface
+	setvar (VAR_ULYSSES_STATE, 19)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Ardor_Uni_ArchaeologyClass_Movement_Spin)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Movement_SetInvisible)
+	waitmovement (0)
+	playse (SE_M_WHIRLPOOL)
+	waitse
+	playse (SE_M_DIVE)
+	waitse
+	warpsilent (MAP_MARE_S4, 59, 10)
+
+	end //should never be reached
+}

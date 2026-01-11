@@ -1478,7 +1478,7 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
 
 u8 TryUpdateRusturfTunnelState(void)
 {
-    if (!FlagGet(FLAG_RUSTURF_TUNNEL_OPENED)
+    if (!FlagGet(FLAG_SUBMARE_HIDESUBS) //Neutered flag
         && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RUSTURF_TUNNEL)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RUSTURF_TUNNEL))
     {
@@ -6524,6 +6524,39 @@ void DoScyllaBattle(void)
 	bool32 makeShiny = TRUE;
 	mon = &gEnemyParty[0];
     StringCopy(nickname, gText_Scylla);
+    ZeroEnemyPartyMons();
+	do
+		personality = Random32();
+    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
+	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	//Assign Mon Data
+	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
+	SetMonData(mon, MON_DATA_MOVE1, &move1);
+	SetMonData(mon, MON_DATA_MOVE2, &move2);
+	SetMonData(mon, MON_DATA_MOVE3, &move3);
+	SetMonData(mon, MON_DATA_MOVE4, &move4);   
+    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	//DoWildBattle
+    BattleSetup_StartScriptedWildBattle();
+    ScriptContext_Stop();
+}
+
+void DoCharybdisBattle(void)
+{
+	//vars
+	u16 species = SPECIES_WAILORD;
+	u8 level = 18;
+    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
+	struct Pokemon *mon;
+	u32 personality;
+	u16  move1= MOVE_DIVE;
+	u16  move2= MOVE_HYDRO_PUMP;
+	u16  move3= MOVE_HEAVY_SLAM;
+	u16  move4= MOVE_AMNESIA;
+	//setup
+	bool32 makeShiny = TRUE;
+	mon = &gEnemyParty[0];
+    StringCopy(nickname, gText_Charybdis);
     ZeroEnemyPartyMons();
 	do
 		personality = Random32();
