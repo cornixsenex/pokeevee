@@ -6700,6 +6700,16 @@
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/SubMareCave/border.bin",
       "blockdata_filepath": "data/layouts/SubMareCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAVUM_CALYPSUS",
+      "name": "CavumCalypsus_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Calypso",
+      "border_filepath": "data/layouts/CavumCalypsus/border.bin",
+      "blockdata_filepath": "data/layouts/CavumCalypsus/map.bin"
     }
   ]
 }
