@@ -325,7 +325,7 @@ script MareS4_Script_Ulysses {
 	switch (var(VAR_ULYSSES_STATE)) {
 		case 16:
 			//Ulysses waits by whirlpool
-			msgbox (MareS4_Text_UlyssesAnteScylla)
+			call (MareS4_Script_UlyssesBeginScylla)
 		case 17:
 			//U and Scylla visible
 			msgbox (MareS4_Text_UlyssesDuringScylla)
@@ -337,10 +337,41 @@ script MareS4_Script_Ulysses {
 			call (MareS4_Script_UlyssesAfterCharybdis)
 		default:
 			msgbox("VAR_ULYSSES_STATE OOB")
-			closemessage
-			destroy_field_pic (FIELD_PIC_ULYSSES)
-			end
 	}
+	closemessage
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	unfaceplayer
+	end
+}
+
+script MareS4_Script_UlyssesBeginScylla {
+	msgbox (MareS4_Text_UlyssesAnteScylla)
+	closemessage
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_FaceRight)
+	waitmovement (0)
+	removeobject (LOCALID_MARES4_SCYLLA)
+	setobjectxyperm (LOCALID_MARES4_SCYLLA, 75, 50)
+	setobjectmovementtype (LOCALID_MARES4_SCYLLA, MOVEMENT_TYPE_LOOK_AROUND)
+	addobject (LOCALID_MARES4_SCYLLA)
+	playmoncry (SPECIES_TENTACRUEL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_NORTH) {
+		applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_FaceDown)
+	} else {
+		applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_FaceLeft)
+	}
+	waitmovement (0)
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS4_Text_UlyssesDuringScylla)
+	closemessage
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	unfaceplayer
+	setvar (VAR_ULYSSES_STATE, 17)
+	end
 }
 
 script MareS4_Script_UlyssesAfterCharybdis {
