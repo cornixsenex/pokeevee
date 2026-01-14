@@ -365,13 +365,11 @@ script MareS4_Script_UlyssesBeginScylla {
 		applymovement (LOCALID_MARES4_ULYSSES, Common_Movement_FaceLeft)
 	}
 	waitmovement (0)
+	setvar (VAR_ULYSSES_STATE, 17)
+	call (MareS4_Script_ReverseWhirlpool)
     load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 	msgbox (MareS4_Text_UlyssesDuringScylla)
-	closemessage
-	destroy_field_pic (FIELD_PIC_ULYSSES)
-	unfaceplayer
-	setvar (VAR_ULYSSES_STATE, 17)
-	end
+	return
 }
 
 script MareS4_Script_UlyssesAfterCharybdis {
@@ -2333,19 +2331,31 @@ text MareS4_Text_Aeneas_Wedding2 {
 }
 
 text MareS4_Text_UlyssesAnteScylla {
-	format("")
+	format("Oh no, {PLAYER}! It seem we cannot go on.
+			That impassable whirlpool blocks the way
+			forward. We could not hope to get across!")
 }
 
 text MareS4_Text_UlyssesDuringScylla {
-	format("")
+	format("That sea monster must be responsible
+			for the whirlpool. Quick! Get down there and find
+			a way to drive away the monster and
+			clear the whirlpool so we can journey on.")
 }
 
 text MareS4_Text_UlyssesDuringCharybdis {
-	format("")
+	format("The monster's gone, but the whirlpool remains.
+			There must be something else responsible.
+			Get back down there and try to find a way
+			to clear that whirlpool so we can move on.")
 }
 
 text MareS4_Text_UlyssesAfterCharybdis {
-	format("")
+	format("I can't believe...I mean, you did it {PLAYER}!
+			You've triumphed over the deep sea monster
+			and cleared the treacherous whirlpool. Now we
+			can finally resume the long journey
+			to Nestor's house, to my dear friend's wedding.")
 }
 
 
