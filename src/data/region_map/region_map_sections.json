@@ -952,8 +952,12 @@
       "name": "CAPE BRINK"
     },
     {
-      "id": "MAPSEC_BOND_BRIDGE",
-      "name": "BOND BRIDGE"
+      "id": "MAPSEC_CAVUM_CALYPSUS",
+      "name": "CAVVM CALYPSVS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SUB_MARE",

@@ -1077,12 +1077,12 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .height = 1,
         .name = COMPOUND_STRING("CAPE BRINK"),
     },
-    [MAPSEC_BOND_BRIDGE] = {
+    [MAPSEC_CAVUM_CALYPSUS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = COMPOUND_STRING("BOND BRIDGE"),
+        .name = COMPOUND_STRING("CAVVM CALYPSVS"),
     },
     [MAPSEC_SUB_MARE] = {
         .x = 0,
