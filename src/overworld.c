@@ -4820,6 +4820,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
         //3: Mare Tropicum
         //4: Isla Hesperia
         //5: Isla Tropica
+		//6: Isla Elenna
 		n = GetDynamicMapSec_MareS8(FALSE);
 		switch (n) {
 			case 1:
@@ -4832,6 +4833,8 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_ISLA_HESPERIA; 
 			case 5:
 				return MAPSEC_ISLA_TROPICA; 
+			case 6:
+				return MAPSEC_ISLA_ELENNA; 
 			default:
 				return MAPSEC_DYNAMIC;
 		}
@@ -5725,6 +5728,7 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
         //3: Mare Tropicum
         //4: Isla Hesperia
         //5: Isla Tropica
+        //6: Isla Elenna 
 		n = GetDynamicMapSec_MareS8(useWarpInfo);
 		DebugPrintf("GetDynamicMapSec_MareS8 returned: %d\n", n);
 		switch (n) {
@@ -5743,6 +5747,9 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		    //Isla Tropica
 			case 5:
 				return MUS_RG_FUCHSIA;
+			//Isla Elenna
+			case 6:
+				return MUS_ROUTE120;
 			default:
 				return MUS_CANTINA;
 		}

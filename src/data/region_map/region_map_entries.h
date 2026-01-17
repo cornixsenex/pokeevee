@@ -1070,12 +1070,12 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .height = 1,
         .name = COMPOUND_STRING("TREASURE BEACH"),
     },
-    [MAPSEC_CAPE_BRINK] = {
+    [MAPSEC_ISLA_ELENNA] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = COMPOUND_STRING("CAPE BRINK"),
+        .name = COMPOUND_STRING("ISLA ELENNA"),
     },
     [MAPSEC_CAVUM_CALYPSUS] = {
         .x = 0,

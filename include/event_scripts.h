@@ -994,6 +994,7 @@ extern const u8 MareS8_Script_Transition_IslaIthaca[];
 extern const u8 MareS8_Script_Transition_MareSubtropicum[];
 extern const u8 MareS8_Script_Transition_IslaHesperia[];
 extern const u8 MareS8_Script_Transition_MareTropicum[];
+extern const u8 MareS8_Script_Transition_IslaElenna[];
 //MareS9
 extern const u8 MareS9_Script_Transition_IslaTropica[];
 extern const u8 MareS9_Script_Transition_MareSubtropicum[];

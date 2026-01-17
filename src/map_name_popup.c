@@ -242,10 +242,10 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
 	[MAPSEC_SIX_ISLAND] =                   MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_KINDLE_ROAD] =                  MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_TREASURE_BEACH] =               MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_CAPE_BRINK] =                   MAPPOPUP_THEME_BRICK, 
 
 	//BREAK BELOW ALTERED
 	
+	[MAPSEC_ISLA_ELENNA] =                  MAPPOPUP_THEME_WOOD, 
 	[MAPSEC_CAVUM_CALYPSUS] =               MAPPOPUP_THEME_MARBLE, 
 	[MAPSEC_SUB_MARE] =                     MAPPOPUP_THEME_UNDERWATER, 
 	[MAPSEC_SIRENUM_SCOPULI] =              MAPPOPUP_THEME_MARBLE, 
@@ -1565,6 +1565,7 @@ static void LoadMapNamePopUpWindowBg(void)
 			//3: Mare Tropicum
 			//4: Isla Hesperia
 			//5: Isla Tropica
+			//6: Isla Elenna
 			n = GetDynamicMapSec_MareS8(FALSE);
 			switch (n) {
 				case 1:
@@ -1581,6 +1582,9 @@ static void LoadMapNamePopUpWindowBg(void)
 					break;
 				case 5:
 					regionMapSectionId = MAPSEC_ISLA_TROPICA;
+					break;
+				case 6:
+					regionMapSectionId = MAPSEC_ISLA_ELENNA;
 					break;
 				default:
 					regionMapSectionId = MAPSEC_DYNAMIC;

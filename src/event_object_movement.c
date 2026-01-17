@@ -1852,6 +1852,8 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     if (objectEvent->movementType == MOVEMENT_TYPE_INVISIBLE)
         objectEvent->invisible = TRUE;
 
+	//Kecleon Island Invisibility (mapNum, mapGroup, graphicsId)
+
     if (OW_GFX_COMPRESS)
         spriteTemplate->tileTag = LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, NULL);
 

@@ -221,7 +221,7 @@ enum {
     MB_OCEAN_MAP_TRANSITION_B, //Ocean Water that triggers a map transition - Rout10, BigIslandN etc
     MB_OCEAN_MAP_TRANSITION_C,
     MB_OCEAN_MAP_TRANSITION_D,
-    MB_UNUSED_DB,
+    MB_OCEAN_MAP_TRANSITION_E,
     MB_UNUSED_DC,
     MB_UNUSED_DD,
     MB_UNUSED_DE,

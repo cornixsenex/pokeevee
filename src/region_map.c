@@ -2325,6 +2325,7 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			//3: Mare Tropicum
 			//4: Isla Hesperia
 			//5: Isla Tropica
+			//6: Isla Elenna
 			n = GetDynamicMapSec_MareS8(FALSE);
 			switch (n)
 			{
@@ -2338,6 +2339,8 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 					return StringCopy(dest, COMPOUND_STRING("ISLA HESPERIA"));
 				case 5:
 					return StringCopy(dest, COMPOUND_STRING("ISLA TROPICA"));
+				case 6:
+					return StringCopy(dest, COMPOUND_STRING("ISLA ELENNA"));
 				default:
 					return StringCopy(dest, gText_Ferry);
 			}
@@ -5845,6 +5848,7 @@ u32 GetDynamicMapSec_MareS8(bool32 useWarpInfo)
     //3: Mare Tropicum
     //4: Isla Hesperia
     //5: Isla Tropica
+	//6: Isla Elenna
 
 	s16 x, y;
     if (useWarpInfo) 
@@ -5986,6 +5990,56 @@ u32 GetDynamicMapSec_MareS8(bool32 useWarpInfo)
             (x == 5 && y > 45 && y < 59)
             )
             return 5;
+		//6: Isla Elenna
+		if
+			(
+			(y == 41 && x > 37 && x < 56) ||
+			(y == 42 && x > 35 && x < 57) ||
+			(y == 43 && x > 35 && x < 57) ||
+			(y == 44 && x > 34 && x < 57) ||
+			(y == 45 && x > 34 && x < 58) ||
+			(y == 46 && x > 34 && x < 58) ||
+			(y == 47 && x > 34 && x < 58) ||
+			(y == 48 && x > 33 && x < 58) ||
+			(y == 49 && x > 33 && x < 73) ||
+			(y == 50 && x > 30 && x < 75) ||
+			(y == 51 && x > 16 && x < 77) ||
+			(y == 52 && x > 15 && x < 78) ||
+			(y == 53 && x > 15 && x < 78) ||
+			(y == 54 && x > 15 && x < 79) ||
+			(y == 55 && x > 15 && x < 79) ||
+			(y == 56 && x > 15 && x < 79) ||
+			(y == 57 && x > 15 && x < 79) ||
+			(y == 58 && x > 15 && x < 79) ||
+			(y == 59 && x > 15 && x < 79) ||
+			(y == 60 && x > 15 && x < 79) ||
+			(y == 61 && x > 15 && x < 79) ||
+			(y == 62 && x > 15 && x < 79) ||
+			(y == 63 && x > 16 && x < 79) ||
+			(y == 64 && x > 16 && x < 79) ||
+			(y == 65 && x > 17 && x < 78) ||
+			(y == 66 && x > 18 && x < 77) ||
+			(y == 67 && x > 19 && x < 76) ||
+			(y == 68 && x > 20 && x < 72) ||
+			(y == 69 && x > 20 && x < 73) ||
+			(y == 70 && x > 19 && x < 74) ||
+			(y == 71 && x > 18 && x < 75) ||
+			(y == 72 && x > 18 && x < 75) ||
+			(y == 73 && x > 18 && x < 75) ||
+			(y == 74 && x > 18 && x < 75) ||
+			(y == 75 && x > 18 && x < 75) ||
+			(y == 76 && x > 18 && x < 75) ||
+			(y == 77 && x > 18 && x < 75) ||
+			(y == 78 && x > 18 && x < 75) ||
+			(y == 79 && x > 18 && x < 75) ||
+			(y == 80 && x > 18 && x < 75) ||
+			(y == 81 && x > 18 && x < 75) ||
+			(y == 82 && x > 18 && x < 75 && x != 50) || //special case
+			(y == 83 && x > 18 && x < 46) ||
+			(y == 84 && x > 19 && x < 42) ||
+			(y >= 85 && x > 20 && x < 38)
+			)
+			return 6;
         //2: Mare Subtropicum is Default
         else
             return 2;

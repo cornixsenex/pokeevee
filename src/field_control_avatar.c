@@ -1054,9 +1054,20 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 				return TRUE;
 			}
 		}
-   
-   
 	}
+	else if (MetatileBehavior_IsOceanMapTransitionE(metatileBehavior))
+    {
+		mapGroup = gSaveBlock1Ptr->location.mapGroup;
+		mapNum   = gSaveBlock1Ptr->location.mapNum;
+		//MareS8 - Isla Elenna
+		if (mapGroup == MAP_GROUP(MAP_MARE_S8) && mapNum == MAP_NUM(MAP_MARE_S8)) {
+			if (VarGet(VAR_TEMP_5) != 6) {
+				ScriptContext_SetupScript(MareS8_Script_Transition_IslaElenna);
+				return TRUE;
+			}
+		}
+	}
+	
     else if (MetatileBehavior_IsBattlePyramidWarp(metatileBehavior))
     {
         ScriptContext_SetupScript(BattlePyramid_WarpToNextFloor);

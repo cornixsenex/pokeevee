@@ -205,6 +205,7 @@ bool8 MetatileBehavior_IsOceanMapTransitionA(u8);
 bool8 MetatileBehavior_IsOceanMapTransitionB(u8);
 bool8 MetatileBehavior_IsOceanMapTransitionC(u8);
 bool8 MetatileBehavior_IsOceanMapTransitionD(u8);
+bool8 MetatileBehavior_IsOceanMapTransitionE(u8);
 
 //Mortia Tombstone
 bool8 MetatileBehavior_IsPlayerFacingTombstone(u8 metatileBehavior, u8 playerDir);

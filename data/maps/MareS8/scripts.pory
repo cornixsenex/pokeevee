@@ -7,6 +7,7 @@
 //3: Mare Tropicum
 //4: Isla Hesperia
 //5: Isla Tropica
+//6: Isla Elenna
 
 mapscripts MareS8_MapScripts {
 
@@ -83,6 +84,12 @@ script MareS8_Script_Transition_MareSubtropicum {
 
 script MareS8_Script_Transition_IslaIthaca {
     setvar (VAR_TEMP_5, 1)
+	special (TransitionMapMusic)
+    special (ShowMapNamePopup)
+}
+
+script MareS8_Script_Transition_IslaElenna {
+    setvar (VAR_TEMP_5, 6)
 	special (TransitionMapMusic)
     special (ShowMapNamePopup)
 }
