@@ -21,9 +21,11 @@ MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 28 "data/maps/MareS7/scripts.pory"
 	compare VAR_ULYSSES_STATE, 3
 	goto_if_ne MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
+# 28 "data/maps/MareS7/scripts.pory"
+	goto_if_set FLAG_ULYSSES_POST_POLYPHEMUS, MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 # 32 "data/maps/MareS7/scripts.pory"
-	goto_if_set FLAG_ISLAARIDA_HIDEPRISONERS, MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
+	goto_if_set FLAG_ULYSSES_POST_POLYPHEMUS, MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_12
 	return
 
 MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -41,7 +43,7 @@ MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 	call MareS7_Script_HideAridaUlysses
 	goto MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 
-MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
+MareS7_MapScripts_MAP_SCRIPT_ON_TRANSITION_12:
 # 33 "data/maps/MareS7/scripts.pory"
 	call MareS7_Script_ShowPolyphemusDancing
 	return
@@ -518,10 +520,11 @@ MareS7_Script_Polyphemus::
 	goto_if_lt MareS7_Script_Polyphemus_2
 # 314 "data/maps/MareS7/scripts.pory"
 	compare VAR_ULYSSES_STATE, 3
-	goto_if_eq MareS7_Script_Polyphemus_3
-# 384 "data/maps/MareS7/scripts.pory"
+	goto_if_eq MareS7_Script_Polyphemus_5
+MareS7_Script_Polyphemus_4:
+# 383 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_PolyphemusDancing
-# 385 "data/maps/MareS7/scripts.pory"
+# 384 "data/maps/MareS7/scripts.pory"
 	closemessage
 MareS7_Script_Polyphemus_1:
 	end
@@ -540,22 +543,27 @@ MareS7_Script_Polyphemus_3:
 	checkitem ITEM_LOTUS_LEAF
 # 320 "data/maps/MareS7/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq MareS7_Script_Polyphemus_7
+	goto_if_eq MareS7_Script_Polyphemus_9
 	goto MareS7_Script_Polyphemus_1
 
-MareS7_Script_Polyphemus_7:
+MareS7_Script_Polyphemus_5:
+# 314 "data/maps/MareS7/scripts.pory"
+	goto_if_unset FLAG_ULYSSES_POST_POLYPHEMUS, MareS7_Script_Polyphemus_3
+	goto MareS7_Script_Polyphemus_4
+
+MareS7_Script_Polyphemus_9:
 # 321 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_PolyphemusGiveLotus, MSGBOX_YESNO
 # 322 "data/maps/MareS7/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq MareS7_Script_Polyphemus_9
-# 377 "data/maps/MareS7/scripts.pory"
+	goto_if_eq MareS7_Script_Polyphemus_11
+# 376 "data/maps/MareS7/scripts.pory"
 	msgbox MareS7_Text_PolyphemusNoLotus
-# 378 "data/maps/MareS7/scripts.pory"
+# 377 "data/maps/MareS7/scripts.pory"
 	closemessage
 	goto MareS7_Script_Polyphemus_1
 
-MareS7_Script_Polyphemus_9:
+MareS7_Script_Polyphemus_11:
 # 324 "data/maps/MareS7/scripts.pory"
 	removeitem ITEM_LOTUS_LEAF, 1
 # 325 "data/maps/MareS7/scripts.pory"
@@ -639,44 +647,42 @@ MareS7_Script_Polyphemus_9:
 # 370 "data/maps/MareS7/scripts.pory"
 	addobject LOCALID_MARES7_ARIDAULYSSES
 # 372 "data/maps/MareS7/scripts.pory"
-	setvar VAR_ULYSSES_STATE, 4
-# 374 "data/maps/MareS7/scripts.pory"
-	setflag FLAG_ISLAARIDA_HIDEPRISONERS
+	setflag FLAG_ULYSSES_POST_POLYPHEMUS
 	goto MareS7_Script_Polyphemus_1
 
 
 MareS7_Script_HidePrisoners::
-# 391 "data/maps/MareS7/scripts.pory"
+# 390 "data/maps/MareS7/scripts.pory"
 	removeobject LOCALID_MARES7_PRISONER1
-# 392 "data/maps/MareS7/scripts.pory"
+# 391 "data/maps/MareS7/scripts.pory"
 	removeobject LOCALID_MARES7_PRISONER2
-# 393 "data/maps/MareS7/scripts.pory"
+# 392 "data/maps/MareS7/scripts.pory"
 	removeobject LOCALID_MARES7_PRISONER3
-# 394 "data/maps/MareS7/scripts.pory"
+# 393 "data/maps/MareS7/scripts.pory"
 	removeobject LOCALID_MARES7_PRISONER4
-# 396 "data/maps/MareS7/scripts.pory"
+# 395 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_PRISONER1, 0, 0
-# 397 "data/maps/MareS7/scripts.pory"
+# 396 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_PRISONER2, 0, 0
-# 398 "data/maps/MareS7/scripts.pory"
+# 397 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_PRISONER3, 0, 0
-# 399 "data/maps/MareS7/scripts.pory"
+# 398 "data/maps/MareS7/scripts.pory"
 	setobjectxyperm LOCALID_MARES7_PRISONER4, 0, 0
-# 401 "data/maps/MareS7/scripts.pory"
+# 400 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_PRISONER1, MOVEMENT_TYPE_INVISIBLE
-# 402 "data/maps/MareS7/scripts.pory"
+# 401 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_PRISONER2, MOVEMENT_TYPE_INVISIBLE
-# 403 "data/maps/MareS7/scripts.pory"
+# 402 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_PRISONER3, MOVEMENT_TYPE_INVISIBLE
-# 404 "data/maps/MareS7/scripts.pory"
+# 403 "data/maps/MareS7/scripts.pory"
 	setobjectmovementtype LOCALID_MARES7_PRISONER4, MOVEMENT_TYPE_INVISIBLE
-# 406 "data/maps/MareS7/scripts.pory"
+# 405 "data/maps/MareS7/scripts.pory"
 	addobject LOCALID_MARES7_PRISONER1
-# 407 "data/maps/MareS7/scripts.pory"
+# 406 "data/maps/MareS7/scripts.pory"
 	addobject LOCALID_MARES7_PRISONER2
-# 408 "data/maps/MareS7/scripts.pory"
+# 407 "data/maps/MareS7/scripts.pory"
 	addobject LOCALID_MARES7_PRISONER3
-# 409 "data/maps/MareS7/scripts.pory"
+# 408 "data/maps/MareS7/scripts.pory"
 	addobject LOCALID_MARES7_PRISONER4
 	return
 
@@ -702,7 +708,7 @@ MareS7_Script_TaurosTelemachus_Text_0:
 	.string "ERROR VAR_TEMP_A OOB in Ulysses Face$"
 
 MareS7_Text_Penelope1::
-# 413 "data/maps/MareS7/scripts.pory"
+# 412 "data/maps/MareS7/scripts.pory"
 	.string "What ever shall I do? My poor husband,\n"
 	.string "the resourceful and brilliant Ulysses,\l"
 	.string "has gone insane! Look how he wanders\l"
@@ -710,14 +716,14 @@ MareS7_Text_Penelope1::
 	.string "destroy our fields!$"
 
 MareS7_Text_Penelope2::
-# 420 "data/maps/MareS7/scripts.pory"
+# 419 "data/maps/MareS7/scripts.pory"
 	.string "I'm so sorry but I must ask you to\n"
 	.string "respect our privacy during this time of\l"
 	.string "tragedy. Please leave, my husband is\l"
 	.string "not well. Curse the madness of Ulysses!$"
 
 MareS7_Text_UlyssesMadness6::
-# 427 "data/maps/MareS7/scripts.pory"
+# 426 "data/maps/MareS7/scripts.pory"
 	.string "...and viddy films I would! Where I was\n"
 	.string "taken to, brothers, was like no cine I'd\l"
 	.string "ever viddied before. I was bound up in a\l"
@@ -725,48 +731,48 @@ MareS7_Text_UlyssesMadness6::
 	.string "strapped to a headrest...$"
 
 MareS7_Text_UlyssesMadness2::
-# 431 "data/maps/MareS7/scripts.pory"
+# 430 "data/maps/MareS7/scripts.pory"
 	.string "The spy coast on the deep road toward\n"
 	.string "that narrow north...$"
 
 MareS7_Text_UlyssesMadness3::
-# 435 "data/maps/MareS7/scripts.pory"
+# 434 "data/maps/MareS7/scripts.pory"
 	.string "Jar women, tomb of sand, the bitter\n"
 	.string "summer guests, the mighty bread...$"
 
 MareS7_Text_UlyssesMadness4::
-# 439 "data/maps/MareS7/scripts.pory"
+# 438 "data/maps/MareS7/scripts.pory"
 	.string "I am the eggman. You are the eggman. I\n"
 	.string "am the walrus. Goo goo g'joob!$"
 
 MareS7_Text_UlyssesMadness5::
-# 443 "data/maps/MareS7/scripts.pory"
+# 442 "data/maps/MareS7/scripts.pory"
 	.string "A is B and C is B and D is B but A is not C\n"
 	.string "and A is not D and C is not D.$"
 
 MareS7_Text_UlyssesMadness1::
-# 447 "data/maps/MareS7/scripts.pory"
+# 446 "data/maps/MareS7/scripts.pory"
 	.string "Jingle bells! Mermaid Man smells!\n"
 	.string "Barnacle Boy laid an egg! The invisible\l"
 	.string "boat mobile lost a wheel and...$"
 
 MareS7_Text_Telemachus::
-# 451 "data/maps/MareS7/scripts.pory"
+# 450 "data/maps/MareS7/scripts.pory"
 	.string "I don't get it! What's wrong with pa?\n"
 	.string "Why can't he stop the Tauros from\l"
 	.string "hurting our farm?$"
 
 MareS7_Text_UlyssesSaveTelemachus1::
-# 455 "data/maps/MareS7/scripts.pory"
+# 454 "data/maps/MareS7/scripts.pory"
 	.string "No! Telemachus!$"
 
 MareS7_Text_UlyssesSaveTelemachus2::
-# 459 "data/maps/MareS7/scripts.pory"
+# 458 "data/maps/MareS7/scripts.pory"
 	.string "My darling son, are you OK? You're not\n"
 	.string "injured? That was nearly catastrophe!$"
 
 MareS7_Text_UlyssesSaveTelemachus3::
-# 464 "data/maps/MareS7/scripts.pory"
+# 463 "data/maps/MareS7/scripts.pory"
 	.string "Oh! Hello...uhh I uhh...didn't see you\n"
 	.string "there. Wow! I uhh.. I'm feeling just like\l"
 	.string "myself again! Yeah, that's right! I've\l"
@@ -779,13 +785,13 @@ MareS7_Text_UlyssesSaveTelemachus3::
 	.string "with me.$"
 
 MareS7_Text_PolyphemusBeforeUlysses::
-# 474 "data/maps/MareS7/scripts.pory"
+# 473 "data/maps/MareS7/scripts.pory"
 	.string "Me Polyphemus! This Polyphemus Island!\n"
 	.string "You leave now before Polyphemus get\l"
 	.string "angry!$"
 
 MareS7_Text_PolyphemusDuringUlysses::
-# 478 "data/maps/MareS7/scripts.pory"
+# 477 "data/maps/MareS7/scripts.pory"
 	.string "You puny intruder! Me Polyphemus! This\n"
 	.string "Polyphemus Island! You lucky\l"
 	.string "Polyphemus pen all full other intruders.\l"
@@ -793,29 +799,29 @@ MareS7_Text_PolyphemusDuringUlysses::
 	.string "angry!$"
 
 MareS7_Text_PolyphemusGiveLotus::
-# 482 "data/maps/MareS7/scripts.pory"
+# 481 "data/maps/MareS7/scripts.pory"
 	.string "Oi! You have Lotus Leaf? You give to\n"
 	.string "Polyphemus, yes?$"
 
 MareS7_Text_PolyphemusNoLotus::
-# 486 "data/maps/MareS7/scripts.pory"
+# 485 "data/maps/MareS7/scripts.pory"
 	.string "You leave Polyphemus Island now!\n"
 	.string "Polyphemus want Lotus Leaf!$"
 
 MareS7_Text_GavePolyphemusLotus::
-# 490 "data/maps/MareS7/scripts.pory"
+# 489 "data/maps/MareS7/scripts.pory"
 	.string "{PLAYER} gave Lotus Leaf to\n"
 	.string "Polyphemus.$"
 
 MareS7_Text_PolyphemusLotus1::
-# 494 "data/maps/MareS7/scripts.pory"
+# 493 "data/maps/MareS7/scripts.pory"
 	.string "Oh that good Lotus Leaf...Polyphemus\n"
 	.string "very happy, very relaxed. You see\l"
 	.string "Polyphemus dance now but make sure\l"
 	.string "nobody escape Polyphemus pen, ok?$"
 
 MareS7_Text_UlyssesAfterPolyphemus::
-# 498 "data/maps/MareS7/scripts.pory"
+# 497 "data/maps/MareS7/scripts.pory"
 	.string "That was a close one, but thanks to you\n"
 	.string "{PLAYER} I've managed to escape the\l"
 	.string "jaws of death and free myself from\l"
@@ -824,7 +830,7 @@ MareS7_Text_UlyssesAfterPolyphemus::
 	.string "where I am expected.$"
 
 MareS7_Text_PolyphemusDancing::
-# 506 "data/maps/MareS7/scripts.pory"
+# 505 "data/maps/MareS7/scripts.pory"
 	.string "Polyphemus like dancing! Polyphemus\n"
 	.string "really like dancing like Lotus Leaf!\l"
 	.string "Weeee!$"

@@ -1,16 +1,18 @@
 
 //VAR_TEMP_5 Dynamic Map
 
-//VAR_TEMP_A - VAR_TEMP_F setup corresponding Kecleon Chase scenes 1-6
-//Note: 7 is never needed because Kec7 only appears during Ulysses scene
-
-
 //1: Isla Ithaca
 //2: Mare Subtropicum - Default
 //3: Mare Tropicum
 //4: Isla Hesperia
 //5: Isla Tropica
 //6: Isla Elenna
+
+//VAR_TEMP_7 Trigger Ulysses Scene
+//VAR_TEMP_A - VAR_TEMP_F setup corresponding Kecleon Chase scenes 1-6
+//Note: 7 is never needed because Kec7 only appears during Ulysses scene
+
+//FLAG_TEMP_A switches player position for Ulysses Scene
 
 mapscripts MareS8_MapScripts {
 
@@ -34,7 +36,10 @@ mapscripts MareS8_MapScripts {
 		}
 		//Setup Kecleons
 		call (MareS8_Script_SetupKecleonChase)
-
+		//Setup Ulysses Scene
+		if (var(VAR_ULYSSES_STATE) == 3 && flag(FLAG_ULYSSES_POST_POLYPHEMUS)) {
+			call (MareS8_Script_SetupUlysses)
+		}
     }
 
 	MAP_SCRIPT_ON_RESUME {
@@ -978,8 +983,111 @@ script MareS8_Script_SetupKecleonChase {
 	if (!flag(FLAG_MARES8_KECLEON5)) {
 		setvar (VAR_TEMP_E, 1)
 	}
-	//6 only if not Ulysses scene
+	//6 - just setup normal and remove in setupulysses called after
+	setvar (VAR_TEMP_F, 1)
+	return
+}
 
+script MareS8_Script_SetupUlysses {
+	setobjectxyperm (LOCALID_MARES8_ULYSSES, 33, 76)
+	setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP)
+	//remove Kecleon 6
+	setobjectxyperm (LOCALID_MARES8_KECLEON6, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE)
+	//disable Kecleon6 Chase
+	setvar (VAR_TEMP_F, 0)
+	//setup Ulysses Scene trigger
+	setvar (VAR_TEMP_7, 1)
+	return
+}
+
+script MareS8_Script_UlyssesSceneA {
+	setflag (FLAG_TEMP_A)
+	call (MareS8_Script_UlyssesScene)
+}
+
+script MareS8_Script_UlyssesSceneB {
+	call (MareS8_Script_UlyssesScene)
+}
+
+script MareS8_Script_UlyssesScene {
+	lockall
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_FaceRight)
+	waitmovement (0)
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS8_Text_Ulysses1)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	//setup Kecleon
+	removeobject (LOCALID_MARES8_KECLEON6)
+	setobjectxyperm (LOCALID_MARES8_KECLEON6, 34, 77)
+	addobject (LOCALID_MARES8_KECLEON6)
+
+	removeobject (LOCALID_MARES8_KECLEON7)
+	setobjectxyperm (LOCALID_MARES8_KECLEON7, 34, 78)
+	addobject (LOCALID_MARES8_KECLEON7)
+
+	applymovement (LOCALID_MARES8_KECLEON6, Common_Movement_WalkRight)
+	applymovement (LOCALID_MARES8_KECLEON7, Common_Movement_WalkRight)
+	waitmovement (0)
+	//Cry Kecleon
+	playmoncry (SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	//Show kecleon
+	showobjectat (LOCALID_MARES8_KECLEON6, MAP_MARE_S8)
+	showobjectat (LOCALID_MARES8_KECLEON7, MAP_MARE_S8)
+	//Battle Kecleon
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	setwildbattle (SPECIES_KECLEON, 13, SPECIES_KECLEON, 13)
+	dowildbattle
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	//remove kecleon
+	removeobject (LOCALID_MARES8_KECLEON6)
+	setobjectxyperm (LOCALID_MARES8_KECLEON6, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON6)
+	
+	removeobject (LOCALID_MARES8_KECLEON7)
+	setobjectxyperm (LOCALID_MARES8_KECLEON7, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON7, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON7)
+	//Ulysses to player
+	//U: Thanks
+	//U exit
+	//setvars
+	end
+}
+
+script MareS8_Script_KecleonChase1 {
+	setobjectmovementtypeghoul (LOCALID_MARES8_KECLEON1, MOVEMENT_TYPE_CHASE_PLAYER)
+	return
+}
+
+script MareS8_Script_KecleonChase2 {
+	setobjectmovementtypeghoul (LOCALID_MARES8_KECLEON2, MOVEMENT_TYPE_CHASE_PLAYER)
+	return
+}
+
+script MareS8_Script_KecleonChase3 {
+	setobjectmovementtypeghoul (LOCALID_MARES8_KECLEON3, MOVEMENT_TYPE_CHASE_PLAYER)
+	return
+}
+
+script MareS8_Script_KecleonChase4 {
+	setobjectmovementtypeghoul (LOCALID_MARES8_KECLEON4, MOVEMENT_TYPE_CHASE_PLAYER)
+	return
+}
+
+script MareS8_Script_KecleonChase5 {
+	setobjectmovementtypeghoul (LOCALID_MARES8_KECLEON5, MOVEMENT_TYPE_CHASE_PLAYER)
+	return
+}
+
+script MareS8_Script_KecleonChase6 {
+	setobjectmovementtypeghoul (LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_CHASE_PLAYER)
 	return
 }
 
@@ -987,7 +1095,7 @@ script MareS8_Script_KecleonSetup {
 	lockall
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
-	playmoncry (SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
+playmoncry (SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
 	waitmoncry
 	return
 }
@@ -998,6 +1106,74 @@ script MareS8_Script_KecleonBattle {
 	dowildbattle
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	return
+}
+
+script MareS8_Script_Kecleon1 {
+	call (MareS8_Script_KecleonSetup)
+	//set not invisible
+	showobjectat (LOCALID_MARES8_KECLEON1, MAP_MARE_S8)
+	//battle
+	call (MareS8_Script_KecleonBattle)
+	//Remove specific Kecleon
+	removeobject (LOCALID_MARES8_KECLEON1)
+	setobjectxyperm (LOCALID_MARES8_KECLEON1, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON1, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON1)
+	//clear Kecleon
+	setvar (VAR_TEMP_A, 0)
+	releaseall
+	end
+}
+
+script MareS8_Script_Kecleon2 {
+	call (MareS8_Script_KecleonSetup)
+	//set not invisible
+	showobjectat (LOCALID_MARES8_KECLEON2, MAP_MARE_S8)
+	//battle
+	call (MareS8_Script_KecleonBattle)
+	//Remove specific Kecleon
+	removeobject (LOCALID_MARES8_KECLEON2)
+	setobjectxyperm (LOCALID_MARES8_KECLEON2, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON2, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON2)
+	//clear Kecleon
+	setvar (VAR_TEMP_B, 0)
+	releaseall
+	end
+}
+
+script MareS8_Script_Kecleon3 {
+	call (MareS8_Script_KecleonSetup)
+	//set not invisible
+	showobjectat (LOCALID_MARES8_KECLEON3, MAP_MARE_S8)
+	//battle
+	call (MareS8_Script_KecleonBattle)
+	//Remove specific Kecleon
+	removeobject (LOCALID_MARES8_KECLEON3)
+	setobjectxyperm (LOCALID_MARES8_KECLEON3, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON3, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON3)
+	//clear Kecleon
+	setvar (VAR_TEMP_C, 0)
+	releaseall
+	end
+}
+
+script MareS8_Script_Kecleon4 {
+	call (MareS8_Script_KecleonSetup)
+	//set not invisible
+	showobjectat (LOCALID_MARES8_KECLEON4, MAP_MARE_S8)
+	//battle
+	call (MareS8_Script_KecleonBattle)
+	//Remove specific Kecleon
+	removeobject (LOCALID_MARES8_KECLEON4)
+	setobjectxyperm (LOCALID_MARES8_KECLEON4, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON4, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON4)
+	//clear Kecleon
+	setvar (VAR_TEMP_D, 0)
+	releaseall
+	end
 }
 
 //Beach - Only Once
@@ -1012,8 +1188,26 @@ script MareS8_Script_Kecleon5 {
 	setobjectxyperm (LOCALID_MARES8_KECLEON5, 0, 0)
 	setobjectmovementtype (LOCALID_MARES8_KECLEON5, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES8_KECLEON5)
-	//setflag
-	setflag (FLAG_MARES8_KECLEON5)
+	//clear Kecleon
+	setflag (FLAG_MARES8_KECLEON5) //Perm
+	setvar (VAR_TEMP_E, 0)
+	releaseall
+	end
+}
+
+script MareS8_Script_Kecleon6 {
+	call (MareS8_Script_KecleonSetup)
+	//set not invisible
+	showobjectat (LOCALID_MARES8_KECLEON6, MAP_MARE_S8)
+	//battle
+	call (MareS8_Script_KecleonBattle)
+	//Remove specific Kecleon
+	removeobject (LOCALID_MARES8_KECLEON6)
+	setobjectxyperm (LOCALID_MARES8_KECLEON6, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON6)
+	//clear Kecleon
+	setvar (VAR_TEMP_F, 0)
 	releaseall
 	end
 }
@@ -1219,5 +1413,9 @@ text MareS8_Text_RutuliBlock {
 text MareS8_Text_BeroeDuringSearch {
 	format("The boys, Romulus and Remus, are gone!
 			I hope they turn up soon...It's terrible!")
+}
+
+text MareS8_Text_Ulysses1 {
+	format("")
 }
 

@@ -137,7 +137,7 @@
 																// 0:  Ulyssas on Ithaca - either in house or 'mad'
 																// 1:  Telemachus scene (On Frame in MareS7 et Casa do Odyssey begin scene)
                                                                 // 2:  Ulysses and Lotus Eaters MareS3
-																// 3:  Ulysses trapped by Cyclopees Scene
+																// 3:  Ulysses trapped by Cyclopees Scene && Ulysses Kecleon Island
                                                                 // 4:  Ulysses with local on Isla Pina
                                                                 // 5:  Ulysses in the jungle 
                                                                 // 6:  Ulysses Ante Portam Circes

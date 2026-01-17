@@ -213,7 +213,7 @@
 #define FLAG_TRIVIS_SHARD_6                  0xB9
 #define FLAG_TRIVIS_SHARD_7                  0xBA
 #define FLAG_TRIVIS_SHARD_8                  0xBB  
-#define FLAG_ISLAARIDA_HIDEPRISONERS         0xBC //Set after Ulysses Polyphemus scene  
+#define FLAG_ULYSSES_POST_POLYPHEMUS         0xBC //Set after Ulysses Polyphemus scene  
 #define FLAG_MARES6_RESTORED_SHINXSAILOR     0xBD //Circe Prisoners  
 #define FLAG_MARES6_RESTORED_TURTWIGCAMPER   0xBE //Circe Prisoners 
 #define FLAG_MARES6_RESTORED_TORCHICMAN3     0xBF //Circe Prisoners 
@@ -229,7 +229,6 @@
 
 // BREAK // 
 
-#define FLAG_RECEIVED_BLUE_SCARF             0xC9
 #define FLAG_RECEIVED_PINK_SCARF             0xCA
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC

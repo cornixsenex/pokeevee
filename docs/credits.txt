@@ -55,3 +55,5 @@ Kasen
 	>Hide Surf Blob
 thesixthsaint
 	>Ganondorf trainer sprite
+GriffinRichards GriffinR
+	>Invisible Kecleon

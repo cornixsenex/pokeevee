@@ -25,11 +25,11 @@ mapscripts MareS7_MapScripts {
 			call (MareS7_Script_ShowUlyssesSaveTelemachus)
 		}
         //Hide Arida Ulysses
-        if (var(VAR_ULYSSES_STATE) != 3) {
+        if (var(VAR_ULYSSES_STATE) != 3 || flag(FLAG_ULYSSES_POST_POLYPHEMUS)) {
             call (MareS7_Script_HideAridaUlysses)
         }
         //Show Polyphemus Dancing
-        if (flag(FLAG_ISLAARIDA_HIDEPRISONERS)) {
+        if (flag(FLAG_ULYSSES_POST_POLYPHEMUS)) {
             call (MareS7_Script_ShowPolyphemusDancing)
         }
     }
@@ -311,7 +311,7 @@ script MareS7_Script_Polyphemus {
         msgbox (MareS7_Text_PolyphemusBeforeUlysses)
         closemessage
     //During Ulysses
-    } elif (var(VAR_ULYSSES_STATE) == 3) {
+    } elif (var(VAR_ULYSSES_STATE) == 3 && !flag(FLAG_ULYSSES_POST_POLYPHEMUS)) {
         //p intro, mention lotus
         msgbox (MareS7_Text_PolyphemusDuringUlysses)
         //check lotus
@@ -368,10 +368,9 @@ script MareS7_Script_Polyphemus {
                 setobjectxyperm (LOCALID_MARES7_ARIDAULYSSES, 0, 0)
                 setobjectmovementtype (LOCALID_MARES7_ARIDAULYSSES, MOVEMENT_TYPE_INVISIBLE)
                 addobject (LOCALID_MARES7_ARIDAULYSSES)
-                //set var
-                setvar (VAR_ULYSSES_STATE, 4)
                 //set flag
-                setflag (FLAG_ISLAARIDA_HIDEPRISONERS)
+                setflag (FLAG_ULYSSES_POST_POLYPHEMUS)
+				//NOTE: Var3 is Reused for the Kecleon scene :/
                 //fin
             } else {
 				msgbox (MareS7_Text_PolyphemusNoLotus)

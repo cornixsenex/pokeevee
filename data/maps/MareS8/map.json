@@ -206,8 +206,8 @@
       "y": 67,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -276,8 +276,8 @@
       "y": 59,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -286,12 +286,12 @@
     {
       "local_id": "LOCALID_MARES8_KECLEON6",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KECLEON)",
-      "x": 33,
+      "x": 32,
       "y": 77,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -733,6 +733,195 @@
       "var": "VAR_AENEID_STATE",
       "var_value": "6",
       "script": "MareS8_Script_Trigger_Rutulian3C"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 69,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 68,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 67,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 66,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 65,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase5"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 74,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase4"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 75,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase4"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 58,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase3"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 59,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase3"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_C",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase3"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase2"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_B",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 60,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 77,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase6"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 78,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "MareS8_Script_KecleonChase6"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 77,
+      "elevation": 0,
+      "var": "VAR_TEMP_7",
+      "var_value": "1",
+      "script": "MareS8_Script_UlyssesSceneA"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 78,
+      "elevation": 0,
+      "var": "VAR_TEMP_7",
+      "var_value": "1",
+      "script": "MareS8_Script_UlyssesSceneB"
     }
   ],
   "bg_events": []
