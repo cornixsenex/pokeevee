@@ -1852,7 +1852,9 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     if (objectEvent->movementType == MOVEMENT_TYPE_INVISIBLE)
         objectEvent->invisible = TRUE;
 
-	//Kecleon Island Invisibility (mapNum, mapGroup, graphicsId)
+	//Kecleon Island Invisibility (mapNum, mapGroup, graphicsId, NOT follower)
+	if (objectEvent->mapNum == MAP_NUM(MAP_MARE_S8) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S8) && objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(KECLEON) && objectEvent->localId != OBJ_EVENT_ID_FOLLOWER)
+        objectEvent->invisible = TRUE;
 
     if (OW_GFX_COMPRESS)
         spriteTemplate->tileTag = LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, NULL);
@@ -10334,10 +10336,23 @@ static void (*const sGroundEffectTracksFuncs[])(struct ObjectEvent *objEvent, st
     [TRACKS_BUG] = DoTracksGroundEffect_FootprintsB,
 };
 
+//Cornix modified to support the invisble Kecleon on the beach
+//Converted the ternary back out into if else table
+//preserved the old ternary to make merges easier in future
+//CS 260117 
 void GroundEffect_SandTracks(struct ObjectEvent *objEvent, struct Sprite *sprite)
 {
     const struct ObjectEventGraphicsInfo *info = GetObjectEventGraphicsInfo(objEvent->graphicsId);
-    sGroundEffectTracksFuncs[objEvent->invisible ? TRACKS_NONE : info->tracks](objEvent, sprite, FALSE);
+ //   sGroundEffectTracksFuncs[objEvent->invisible ? TRACKS_NONE : info->tracks](objEvent, sprite, FALSE);
+ 
+	int trackType;
+	if (objEvent->mapNum == MAP_NUM(MAP_MARE_S8) && objEvent->mapGroup == MAP_GROUP(MAP_MARE_S8) && objEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(KECLEON) && objEvent->localId != OBJ_EVENT_ID_FOLLOWER)
+		trackType = info->tracks;
+	else if (objEvent->invisible)
+		trackType = TRACKS_NONE;
+	else
+		trackType = info->tracks;
+	sGroundEffectTracksFuncs[trackType](objEvent, sprite, FALSE);
 }
 
 void GroundEffect_DeepSandTracks(struct ObjectEvent *objEvent, struct Sprite *sprite)
