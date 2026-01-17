@@ -1,6 +1,9 @@
 
 //VAR_TEMP_5 Dynamic Map
 
+//VAR_TEMP_A - VAR_TEMP_F setup corresponding Kecleon Chase scenes 1-6
+//Note: 7 is never needed because Kec7 only appears during Ulysses scene
+
 
 //1: Isla Ithaca
 //2: Mare Subtropicum - Default
@@ -29,8 +32,23 @@ mapscripts MareS8_MapScripts {
 			setobjectxyperm (LOCALID_MARES8_BEROE, 19, 22)
 			setobjectmovementtype (LOCALID_MARES8_BEROE, MOVEMENT_TYPE_FACE_UP)
 		}
+		//Setup Kecleons
+		call (MareS8_Script_SetupKecleonChase)
 
     }
+
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			//just hide them all
+			hideobjectat (LOCALID_MARES8_KECLEON1, MAP_MARE_S8)
+			hideobjectat (LOCALID_MARES8_KECLEON2, MAP_MARE_S8)
+			hideobjectat (LOCALID_MARES8_KECLEON3, MAP_MARE_S8)
+			hideobjectat (LOCALID_MARES8_KECLEON4, MAP_MARE_S8)
+			hideobjectat (LOCALID_MARES8_KECLEON5, MAP_MARE_S8)
+			hideobjectat (LOCALID_MARES8_KECLEON6, MAP_MARE_S8)
+			hideobjectat (LOCALID_MARES8_KECLEON7, MAP_MARE_S8)
+		}
+	}
 
 }
 
@@ -946,6 +964,58 @@ script MareS8_Script_Trigger_Rutulian3C {
 	addobject (LOCALID_MARES8_RUTULIAN3)
 	//remove Rutulian et inc var
 	call (MareS8_Script_RemoveRutulian)
+}
+
+//Mare Elenna Kecleon et Ulysses
+
+script MareS8_Script_SetupKecleonChase {
+	//1-4 always
+	setvar (VAR_TEMP_A, 1)
+	setvar (VAR_TEMP_B, 1)
+	setvar (VAR_TEMP_C, 1)
+	setvar (VAR_TEMP_D, 1)
+	//5 only once
+	if (!flag(FLAG_MARES8_KECLEON5)) {
+		setvar (VAR_TEMP_E, 1)
+	}
+	//6 only if not Ulysses scene
+
+	return
+}
+
+script MareS8_Script_KecleonSetup {
+	lockall
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	playmoncry (SPECIES_KECLEON, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	return
+}
+
+script MareS8_Script_KecleonBattle {
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	setwildbattle (SPECIES_KECLEON, 13)
+	dowildbattle
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	return
+}
+
+//Beach - Only Once
+script MareS8_Script_Kecleon5 {
+	call (MareS8_Script_KecleonSetup)
+	//set not invisible
+	showobjectat (LOCALID_MARES8_KECLEON5, MAP_MARE_S8)
+	//battle
+	call (MareS8_Script_KecleonBattle)
+	//Remove specific Kecleon
+	removeobject (LOCALID_MARES8_KECLEON5)
+	setobjectxyperm (LOCALID_MARES8_KECLEON5, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_KECLEON5, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_KECLEON5)
+	//setflag
+	setflag (FLAG_MARES8_KECLEON5)
+	releaseall
+	end
 }
 
 text MareS8_Text_Beroe1 {

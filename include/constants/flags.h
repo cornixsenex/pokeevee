@@ -225,10 +225,10 @@
 #define FLAG_MARES5_SIREN_AGLAOPHEME         0xC5 //After clear siren
 #define FLAG_SUBMARE_HIDESUBS                0xC6 //Press panel -> hide submarines
 #define FLAG_SUBMARE_HIDEFOSSIL              0xC7
+#define FLAG_MARES8_KECLEON5                 0xC8 //persist no more beach kecleon
 
 // BREAK // 
 
-#define FLAG_RECEIVED_RED_SCARF              0xC8
 #define FLAG_RECEIVED_BLUE_SCARF             0xC9
 #define FLAG_RECEIVED_PINK_SCARF             0xCA
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB

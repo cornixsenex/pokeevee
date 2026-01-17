@@ -6730,6 +6730,8 @@ static bool8 IsSpecialCollision(struct ObjectEvent *objectEvent, s16 x, s16 y)
 
 				//MareS4 Scylla
 				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(TENTACRUEL) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S4) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S4) ) 
+				//MareS8 Kecleons 
+				|| (objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(KECLEON) && objectEvent->mapNum == MAP_NUM(MAP_MARE_S8) && objectEvent->mapGroup == MAP_GROUP(MAP_MARE_S8) ) 
 				)
 			{
 				//Yes, it's a special collision with player do script

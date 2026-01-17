@@ -134,7 +134,7 @@
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
 #define VAR_ULYSSES_STATE                                0x4059 // Track Ulysses thru Odyssey
-																// 0:  Ulyssas on Ithaca - either in house or "mad"
+																// 0:  Ulyssas on Ithaca - either in house or 'mad'
 																// 1:  Telemachus scene (On Frame in MareS7 et Casa do Odyssey begin scene)
                                                                 // 2:  Ulysses and Lotus Eaters MareS3
 																// 3:  Ulysses trapped by Cyclopees Scene
