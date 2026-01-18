@@ -1042,6 +1042,8 @@ script MareS8_Script_UlyssesScene {
 	//Battle Kecleon
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	setwildbattle (SPECIES_KECLEON, 13, SPECIES_KECLEON, 13)
+	setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 77)
+	setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
 	dowildbattle
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	//remove kecleon
@@ -1055,9 +1057,39 @@ script MareS8_Script_UlyssesScene {
 	setobjectmovementtype (LOCALID_MARES8_KECLEON7, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES8_KECLEON7)
 	//Ulysses to player
+	if (!flag(FLAG_TEMP_A)) {
+		applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+	}
+	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkRight)
+	waitmovement (0)
 	//U: Thanks
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (MareS8_Text_Ulysses2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
 	//U exit
+	if (flag(FLAG_TEMP_A)) {
+		applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkDown)
+	} else {
+		applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkUp)
+	}
+	waitmovement (0)
+	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkRight3)
+	waitmovement (0)
+	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkUp2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkUp5)
+	waitmovement (0)
+	//Remove U
+	removeobject (LOCALID_MARES8_ULYSSES)
+	setobjectxyperm (LOCALID_MARES8_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_MARES8_ULYSSES)
 	//setvars
+	setvar (VAR_ULYSSES_STATE, 4)
 	end
 }
 
@@ -1416,6 +1448,14 @@ text MareS8_Text_BeroeDuringSearch {
 }
 
 text MareS8_Text_Ulysses1 {
-	format("")
+	format("Please, help me {PLAYER}! Help me! I'm being chased
+			by some kind of invisible monsters!")
 }
 
+text MareS8_Text_Ulysses2 {
+	format("Thank you, {PLAYER}. Those monsters had me trapped
+			on this island with no hope of escape.
+			Now I must be gone. I cannot delay
+			my journey to Nestor's house where my friend
+			Menelaus will celebrate marriage.")
+}
