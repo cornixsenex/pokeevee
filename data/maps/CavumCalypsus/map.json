@@ -52,6 +52,51 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "20",
+      "script": "CavumCalypsus_Script_UlyssesSceneA"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "20",
+      "script": "CavumCalypsus_Script_UlyssesSceneB"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "20",
+      "script": "CavumCalypsus_Script_UlyssesSceneC"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_SOUTH",
+      "script": "Common_Script_Bed"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Common_Script_Bed"
+    }
+  ]
 }

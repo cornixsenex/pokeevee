@@ -1042,25 +1042,25 @@ script MareS8_Script_UlyssesScene {
 	//Battle Kecleon
 	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
 	setwildbattle (SPECIES_KECLEON, 13, SPECIES_KECLEON, 13)
-	setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 77)
+	if (flag(FLAG_TEMP_A)) {
+		setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 77)
+	} else {
+		setobjectxyperm (LOCALID_MARES8_ULYSSES, 34, 78)
+	}
 	setobjectmovementtype (LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
 	dowildbattle
 	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
-	//remove kecleon
+	//remove kecleon6
 	removeobject (LOCALID_MARES8_KECLEON6)
 	setobjectxyperm (LOCALID_MARES8_KECLEON6, 0, 0)
 	setobjectmovementtype (LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES8_KECLEON6)
-	
+	//remove kecleon7	
 	removeobject (LOCALID_MARES8_KECLEON7)
 	setobjectxyperm (LOCALID_MARES8_KECLEON7, 0, 0)
 	setobjectmovementtype (LOCALID_MARES8_KECLEON7, MOVEMENT_TYPE_INVISIBLE)
 	addobject (LOCALID_MARES8_KECLEON7)
 	//Ulysses to player
-	if (!flag(FLAG_TEMP_A)) {
-		applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkDown)
-		waitmovement (0)
-	}
 	applymovement (LOCALID_MARES8_ULYSSES, Common_Movement_WalkRight)
 	waitmovement (0)
 	//U: Thanks

@@ -1689,32 +1689,32 @@ MareS8_Script_UlyssesScene::
 # 1044 "data/maps/MareS8/scripts.pory"
 	setwildbattle SPECIES_KECLEON, 13, SPECIES_KECLEON, 13
 # 1045 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_ULYSSES, 34, 77
-# 1046 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT
-# 1047 "data/maps/MareS8/scripts.pory"
-	dowildbattle
+	goto_if_set FLAG_TEMP_A, MareS8_Script_UlyssesScene_2
 # 1048 "data/maps/MareS8/scripts.pory"
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 1050 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON6
-# 1051 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON6, 0, 0
-# 1052 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE
-# 1053 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_KECLEON6
-# 1055 "data/maps/MareS8/scripts.pory"
-	removeobject LOCALID_MARES8_KECLEON7
-# 1056 "data/maps/MareS8/scripts.pory"
-	setobjectxyperm LOCALID_MARES8_KECLEON7, 0, 0
-# 1057 "data/maps/MareS8/scripts.pory"
-	setobjectmovementtype LOCALID_MARES8_KECLEON7, MOVEMENT_TYPE_INVISIBLE
-# 1058 "data/maps/MareS8/scripts.pory"
-	addobject LOCALID_MARES8_KECLEON7
-# 1060 "data/maps/MareS8/scripts.pory"
-	goto_if_unset FLAG_TEMP_A, MareS8_Script_UlyssesScene_2
+	setobjectxyperm LOCALID_MARES8_ULYSSES, 34, 78
 MareS8_Script_UlyssesScene_1:
+# 1050 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT
+# 1051 "data/maps/MareS8/scripts.pory"
+	dowildbattle
+# 1052 "data/maps/MareS8/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 1054 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_KECLEON6
+# 1055 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_KECLEON6, 0, 0
+# 1056 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON6, MOVEMENT_TYPE_INVISIBLE
+# 1057 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_KECLEON6
+# 1059 "data/maps/MareS8/scripts.pory"
+	removeobject LOCALID_MARES8_KECLEON7
+# 1060 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_KECLEON7, 0, 0
+# 1061 "data/maps/MareS8/scripts.pory"
+	setobjectmovementtype LOCALID_MARES8_KECLEON7, MOVEMENT_TYPE_INVISIBLE
+# 1062 "data/maps/MareS8/scripts.pory"
+	addobject LOCALID_MARES8_KECLEON7
 # 1064 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_ULYSSES, Common_Movement_WalkRight
 # 1065 "data/maps/MareS8/scripts.pory"
@@ -1728,10 +1728,10 @@ MareS8_Script_UlyssesScene_1:
 # 1070 "data/maps/MareS8/scripts.pory"
 	closemessage
 # 1072 "data/maps/MareS8/scripts.pory"
-	goto_if_set FLAG_TEMP_A, MareS8_Script_UlyssesScene_5
+	goto_if_set FLAG_TEMP_A, MareS8_Script_UlyssesScene_6
 # 1075 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_ULYSSES, Common_Movement_WalkUp
-MareS8_Script_UlyssesScene_4:
+MareS8_Script_UlyssesScene_5:
 # 1077 "data/maps/MareS8/scripts.pory"
 	waitmovement 0
 # 1078 "data/maps/MareS8/scripts.pory"
@@ -1763,16 +1763,14 @@ MareS8_Script_UlyssesScene_4:
 	end
 
 MareS8_Script_UlyssesScene_2:
-# 1061 "data/maps/MareS8/scripts.pory"
-	applymovement LOCALID_MARES8_ULYSSES, Common_Movement_WalkDown
-# 1062 "data/maps/MareS8/scripts.pory"
-	waitmovement 0
+# 1046 "data/maps/MareS8/scripts.pory"
+	setobjectxyperm LOCALID_MARES8_ULYSSES, 34, 77
 	goto MareS8_Script_UlyssesScene_1
 
-MareS8_Script_UlyssesScene_5:
+MareS8_Script_UlyssesScene_6:
 # 1073 "data/maps/MareS8/scripts.pory"
 	applymovement LOCALID_MARES8_ULYSSES, Common_Movement_WalkDown
-	goto MareS8_Script_UlyssesScene_4
+	goto MareS8_Script_UlyssesScene_5
 
 
 MareS8_Script_KecleonChase1::

@@ -1,1 +1,120 @@
-mapscripts CavumCalypsus_MapScripts {}
+mapscripts CavumCalypsus_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ULYSSES_STATE) == 20) {
+			call (CavumCalypsus_Script_ShowUlysses)
+		}
+	}
+
+}
+
+script CavumCalypsus_Script_ShowUlysses {
+	setobjectxyperm (LOCALID_CAVUMCALYPSUS_CALYPSO, 11, 5)
+	setobjectmovementtype (LOCALID_CAVUMCALYPSUS_CALYPSO, MOVEMENT_TYPE_FACE_DOWN)
+	setobjectxyperm (LOCALID_CAVUMCALYPSUS_ULYSSES, 11, 5)
+	setobjectmovementtype (LOCALID_CAVUMCALYPSUS_ULYSSES, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+	return
+}
+
+script Common_Script_Bed {
+	msgbox(Common_Text_Bed, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (Common_EventScript_OutOfCenterPartyHeal)
+	}
+	closemessage
+	end
+}
+
+script CavumCalypsus_Script_UlyssesSceneA {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	call (CavumCalypsus_Script_UlyssesScene)
+}
+
+script CavumCalypsus_Script_UlyssesSceneB {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	call (CavumCalypsus_Script_UlyssesScene)
+}
+
+script CavumCalypsus_Script_UlyssesSceneC {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+	waitmovement (0)
+	call (CavumCalypsus_Script_UlyssesScene)
+}
+
+script CavumCalypsus_Script_UlyssesScene {
+    delay (60)
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    delay (60)
+	lock
+    applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_ExclamationMark)
+    waitmovement (0)
+	delay (60)
+    //Ulysses exit bed
+    applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_WalkLeft2)
+    waitmovement (0)
+    applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_WalkDown)
+    waitmovement (0)
+	load_field_pic (FIELD_PIC_CALYPSO, 190, 98)
+	msgbox (CavumCalypsus_Text_Calypso1)
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_FaceDown)
+	waitmovement (0)
+	msgbox ("Aaahh!")
+    destroy_field_pic (FIELD_PIC_CALYPSO)
+	closemessage
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_FaceRight)
+	waitmovement (0)
+	//C: What's happening? Who is this?
+	load_field_pic (FIELD_PIC_CALYPSO, 190, 98)
+	msgbox (CavumCalypsus_Text_Calypso2)
+    destroy_field_pic (FIELD_PIC_CALYPSO)
+	//U: This is the messanger of my departure. I must be gone
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (CavumCalypsus_Text_Ulysses1)
+	//C: 
+
+	end
+}
+
+text Common_Text_Bed {
+	format("It's a comfortable looking bed! Would you like to take a rest?")
+}
+
+text CavumCalypsus_Text_Calypso1 {
+	format("Ulysses, darling, please come back to bed.")
+}
+
+text CavumCalypsus_Text_Calypso2 {
+	format("")
+}
+
+text CavumCalypsus_Text_Ulysses1 {
+	format("")
+}
+
+//Whats happening? Who's this? Do you know him?
+//
+//He is the herald of my departure.
+//For too long you have kept me prisoner
+//of your pleasure. Now, I must swiftly leave.
+//
+//You lied! Or else you have been enchantedd
+//by some rival power that breaks my own.
+//Did not you seven times swear faithfully
+//to be my bed fellow, my lover? Why?
+//
+//NOTE: circles of grief, paralel Aeneas and Elissa. Try to tease that Ulysses is a cheater.
