@@ -85,36 +85,93 @@ script CavumCalypsus_Script_UlyssesScene {
 	//U: This is the messanger of my departure. I must be gone
 	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
 	msgbox (CavumCalypsus_Text_Ulysses1)
-	//C: 
-
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	//alert C
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//C: Anger, Denial, liar you promies
+	load_field_pic (FIELD_PIC_CALYPSO, 190, 98)
+	msgbox (CavumCalypsus_Text_Calypso3)
+    destroy_field_pic (FIELD_PIC_CALYPSO)
+	//U: Nah Penelope
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (CavumCalypsus_Text_Ulysses2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	//C: YOu  told me I did things better than her. It's all this herald's fault
+	load_field_pic (FIELD_PIC_CALYPSO, 190, 98)
+	msgbox (CavumCalypsus_Text_Calypso4)
+    destroy_field_pic (FIELD_PIC_CALYPSO)
+	closemessage
+	//C to P
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_WalkDown2)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_FaceDown)
+	waitmovement (0)
+	//C: SO Penelope sent you to take him from me. Fight time
+	load_field_pic (FIELD_PIC_CALYPSO, 190, 98)
+	msgbox (CavumCalypsus_Text_Calypso5)
+    destroy_field_pic (FIELD_PIC_CALYPSO)
+	closemessage
+	//Fight
+	//Post?
+	//U to Player
+	//Finally I'm free. She bewitched me. Don't mention this to Penelope. I'm off
+	//Exit U
+	//Set vars
+	//fin
 	end
 }
 
 text Common_Text_Bed {
 	format("It's a comfortable looking bed! Would you like to take a rest?")
 }
-
+//C1
 text CavumCalypsus_Text_Calypso1 {
 	format("Ulysses, darling, please come back to bed.")
 }
-
-text CavumCalypsus_Text_Calypso2 {
-	format("")
-}
-
-text CavumCalypsus_Text_Ulysses1 {
-	format("")
-}
-
 //Whats happening? Who's this? Do you know him?
-//
+text CavumCalypsus_Text_Calypso2 {
+	format("What's happening? Who's this? Do you know him?")
+}
 //He is the herald of my departure.
 //For too long you have kept me prisoner
 //of your pleasure. Now, I must swiftly leave.
-//
-//You lied! Or else you have been enchantedd
-//by some rival power that breaks my own.
+text CavumCalypsus_Text_Ulysses1 {
+	format("He is the herald of my departure.
+			For too long you have kept me prisoner
+			of your pleasure. The time's come, I must go.")
+}
+//You lied! Or else you have been enchanted
+//by some rival power beyond my own.
 //Did not you seven times swear faithfully
-//to be my bed fellow, my lover? Why?
-//
+//to be my bed fellow, my lover? Why
+//now scorn the sweet love that you and I have?
+text CavumCalypsus_Text_Calypso3 {
+	format("")
+}
+//My love is given to but one woman.
+//Penelope, my wife and avowed queen,
+//forever has my heart. It was a dream
+//you cast upon my tongue, or some magic
+//which caused my lips to swear a profane oath
+//if ever I have pronounced a thing
+//for truely I cannot recall those words.
+text CavumCalypsus_Text_Ulysses2 {
+	format("")
+}
+//Liar. I do it better than her! No! It's that guys fault!
+text CavumCalypsus_Text_Calypso4 {
+	format("")
+}
+//I'll stop you (fight pre)
+text CavumCalypsus_Text_Calypso5 {
+	format("")
+}
+//Lost
+text CavumCalypsus_Text_CalypsoLost {
+	format("")
+}
+
 //NOTE: circles of grief, paralel Aeneas and Elissa. Try to tease that Ulysses is a cheater.

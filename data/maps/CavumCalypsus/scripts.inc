@@ -151,6 +151,52 @@ CavumCalypsus_Script_UlyssesScene::
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
 # 87 "data/maps/CavumCalypsus/scripts.pory"
 	msgbox CavumCalypsus_Text_Ulysses1
+# 88 "data/maps/CavumCalypsus/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 90 "data/maps/CavumCalypsus/scripts.pory"
+	applymovement LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_ExclamationMark
+# 91 "data/maps/CavumCalypsus/scripts.pory"
+	waitmovement 0
+# 93 "data/maps/CavumCalypsus/scripts.pory"
+	load_field_pic FIELD_PIC_CALYPSO, 190, 98
+# 94 "data/maps/CavumCalypsus/scripts.pory"
+	msgbox CavumCalypsus_Text_Calypso3
+# 95 "data/maps/CavumCalypsus/scripts.pory"
+	destroy_field_pic FIELD_PIC_CALYPSO
+# 97 "data/maps/CavumCalypsus/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 98 "data/maps/CavumCalypsus/scripts.pory"
+	msgbox CavumCalypsus_Text_Ulysses2
+# 99 "data/maps/CavumCalypsus/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 101 "data/maps/CavumCalypsus/scripts.pory"
+	load_field_pic FIELD_PIC_CALYPSO, 190, 98
+# 102 "data/maps/CavumCalypsus/scripts.pory"
+	msgbox CavumCalypsus_Text_Calypso4
+# 103 "data/maps/CavumCalypsus/scripts.pory"
+	destroy_field_pic FIELD_PIC_CALYPSO
+# 104 "data/maps/CavumCalypsus/scripts.pory"
+	closemessage
+# 106 "data/maps/CavumCalypsus/scripts.pory"
+	applymovement LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_WalkDown2
+# 107 "data/maps/CavumCalypsus/scripts.pory"
+	waitmovement 0
+# 108 "data/maps/CavumCalypsus/scripts.pory"
+	applymovement LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_WalkRight
+# 109 "data/maps/CavumCalypsus/scripts.pory"
+	waitmovement 0
+# 110 "data/maps/CavumCalypsus/scripts.pory"
+	applymovement LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_FaceDown
+# 111 "data/maps/CavumCalypsus/scripts.pory"
+	waitmovement 0
+# 113 "data/maps/CavumCalypsus/scripts.pory"
+	load_field_pic FIELD_PIC_CALYPSO, 190, 98
+# 114 "data/maps/CavumCalypsus/scripts.pory"
+	msgbox CavumCalypsus_Text_Calypso5
+# 115 "data/maps/CavumCalypsus/scripts.pory"
+	destroy_field_pic FIELD_PIC_CALYPSO
+# 116 "data/maps/CavumCalypsus/scripts.pory"
+	closemessage
 	end
 
 
@@ -159,19 +205,43 @@ CavumCalypsus_Script_UlyssesScene_Text_0:
 	.string "Aaahh!$"
 
 Common_Text_Bed::
-# 93 "data/maps/CavumCalypsus/scripts.pory"
+# 127 "data/maps/CavumCalypsus/scripts.pory"
 	.string "It's a comfortable looking bed! Would\n"
 	.string "you like to take a rest?$"
 
 CavumCalypsus_Text_Calypso1::
-# 97 "data/maps/CavumCalypsus/scripts.pory"
+# 131 "data/maps/CavumCalypsus/scripts.pory"
 	.string "Ulysses, darling, please come back to\n"
 	.string "bed.$"
 
 CavumCalypsus_Text_Calypso2::
-# 101 "data/maps/CavumCalypsus/scripts.pory"
-	.string "$"
+# 135 "data/maps/CavumCalypsus/scripts.pory"
+	.string "What's happening? Who's this? Do you\n"
+	.string "know him?$"
 
 CavumCalypsus_Text_Ulysses1::
-# 105 "data/maps/CavumCalypsus/scripts.pory"
+# 141 "data/maps/CavumCalypsus/scripts.pory"
+	.string "He is the herald of my departure. For\n"
+	.string "too long you have kept me prisoner of\l"
+	.string "your pleasure. The time's come, I must\l"
+	.string "go.$"
+
+CavumCalypsus_Text_Calypso3::
+# 151 "data/maps/CavumCalypsus/scripts.pory"
+	.string "$"
+
+CavumCalypsus_Text_Ulysses2::
+# 161 "data/maps/CavumCalypsus/scripts.pory"
+	.string "$"
+
+CavumCalypsus_Text_Calypso4::
+# 165 "data/maps/CavumCalypsus/scripts.pory"
+	.string "$"
+
+CavumCalypsus_Text_Calypso5::
+# 169 "data/maps/CavumCalypsus/scripts.pory"
+	.string "$"
+
+CavumCalypsus_Text_CalypsoLost::
+# 173 "data/maps/CavumCalypsus/scripts.pory"
 	.string "$"
