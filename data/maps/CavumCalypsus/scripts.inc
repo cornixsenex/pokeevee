@@ -235,13 +235,13 @@ CavumCalypsus_Text_Ulysses2::
 	.string "$"
 
 CavumCalypsus_Text_Calypso4::
-# 165 "data/maps/CavumCalypsus/scripts.pory"
+# 183 "data/maps/CavumCalypsus/scripts.pory"
 	.string "$"
 
 CavumCalypsus_Text_Calypso5::
-# 169 "data/maps/CavumCalypsus/scripts.pory"
+# 188 "data/maps/CavumCalypsus/scripts.pory"
 	.string "$"
 
 CavumCalypsus_Text_CalypsoLost::
-# 173 "data/maps/CavumCalypsus/scripts.pory"
+# 192 "data/maps/CavumCalypsus/scripts.pory"
 	.string "$"
