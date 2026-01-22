@@ -184,13 +184,33 @@ text CavumCalypsus_Text_Calypso4 {
 	format("")
 }
 
-//I'll stop you (fight pre)
+//I don't know who you are, or what you want,
+//but I can tell you've come to take my man.
+//If you want him you'll have to go through me.
 text CavumCalypsus_Text_Calypso5 {
 	format("")
 }
-//Lost
+//Cupid's arrow pierced my heart fatally.
 text CavumCalypsus_Text_CalypsoLost {
 	format("")
 }
+
+//I won't endure a single wretched day
+//upon this cursed Earth without my love!
+//Forsaken, and alone, I'll drown myself.!
+text CavumCalypsus_Text_Calypso6 {
+	format("")
+}
+
+//Thank you, {PLAYER}. I was trapped here, prisoner
+of foul Calypso's subtle magic arts.
+She forced me to perform unholy acts
+ans pronoucne false beliefs in her base bed.
+I lived as in a dream, nay, a nightmare
+for all the time my heart cried out in pain
+and yearning for my wife, Penelope.
+I beg you not to mention this to her.
+A woman's heart is too fragile to hear
+
 
 //NOTE: circles of grief, paralel Aeneas and Elissa. Try to tease that Ulysses is a cheater.
