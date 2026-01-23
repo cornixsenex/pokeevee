@@ -4814,17 +4814,19 @@ F_TRAINER_FEMALE |
         },
     },
 #line 1822
-    [DIFFICULTY_NORMAL][TRAINER_RIVAL3] =
+    [DIFFICULTY_NORMAL][TRAINER_CALYPSO] =
     {
 #line 1823
-        .trainerName = _("{B_RIVAL_NAME}"),
+        .trainerName = _("CALYPSO"),
 #line 1824
-        .trainerClass = TRAINER_CLASS_FUCKBOY,
+        .trainerClass = TRAINER_CLASS_ENCHANTRESS,
 #line 1825
-        .trainerPic = TRAINER_PIC_BLUE2,
+        .trainerPic = TRAINER_PIC_CLAIRE,
         .encounterMusic_gender =
+#line 1826
+F_TRAINER_FEMALE | 
 #line 1827
-            TRAINER_ENCOUNTER_MUSIC_COOL,
+            TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 1828
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1829
@@ -4832,13 +4834,13 @@ F_TRAINER_FEMALE |
 #line 1830
         .mugshotColor = MUGSHOT_COLOR_BLUE,
 #line 0
-        .trainerBackPic = TRAINER_PIC_BLUE2,
+        .trainerBackPic = TRAINER_PIC_CLAIRE,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
             {
 #line 1832
-            .species = SPECIES_PELIPPER,
+            .species = SPECIES_GOLDUCK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1834
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -4849,7 +4851,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 1836
-            .species = SPECIES_NUMEL,
+            .species = SPECIES_LOPUNNY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1838
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -4860,7 +4862,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 1840
-            .species = SPECIES_ROSELIA,
+            .species = SPECIES_KINGDRA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1842
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

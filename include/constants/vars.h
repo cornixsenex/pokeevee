@@ -155,7 +155,7 @@
 																// 18: After Scylla Battle - Do dive warp - Trigger Charybdis battle
 																// 19: After Charybdis - Hide Whirlpool - Show Ulysses there
 																// 20: After Ulysses clears Scylla Charybdis - Ulysses et Calypso scene
-																// 21: After Calypso - Ulysses Acta Echona
+																// 21: After Calypso - Ulysses Phaeacians trigger & setup
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

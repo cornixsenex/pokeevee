@@ -115,11 +115,49 @@ script CavumCalypsus_Script_UlyssesScene {
     destroy_field_pic (FIELD_PIC_CALYPSO)
 	closemessage
 	//Fight
+	trainerbattle_no_intro (TRAINER_CALYPSO, CavumCalypsus_Text_CalypsoLost)
 	//Post?
+	load_field_pic (FIELD_PIC_CALYPSO, 190, 98)
+	msgbox (CavumCalypsus_Text_Calypso5)
+    destroy_field_pic (FIELD_PIC_CALYPSO)
+	closemessage
+	//exit C
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_CALYPSO, Common_Movement_WalkDown6)
+	waitmovement (0)
+	//Dive sound 
+	playse (SE_M_DIVE)
+	waitse
+	//remove C
+	removeobject (LOCALID_CAVUMCALYPSUS_CALYPSO)
+	setobjectxyperm (LOCALID_CAVUMCALYPSUS_CALYPSO, 0, 0)
+	setobjectmovementtype (LOCALID_CAVUMCALYPSUS_CALYPSO, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_CAVUMCALYPSUS_CALYPSO)
 	//U to Player
+	applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_WalkDown2)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_FaceDown)
+	waitmovement (0)
 	//Finally I'm free. She bewitched me. Don't mention this to Penelope. I'm off
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (CavumCalypsus_Text_Ulysses3)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
 	//Exit U
+	applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_CAVUMCALYPSUS_ULYSSES, Common_Movement_WalkDown6)
+	waitmovement (0)
+	//remove U
+	removeobject (LOCALID_CAVUMCALYPSUS_ULYSSES)
+	setobjectxyperm (LOCALID_CAVUMCALYPSUS_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_CAVUMCALYPSUS_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_CAVUMCALYPSUS_ULYSSES)
 	//Set vars
+	setvar (VAR_ULYSSES_STATE, 21)
 	//fin
 	end
 }
@@ -127,39 +165,36 @@ script CavumCalypsus_Script_UlyssesScene {
 text Common_Text_Bed {
 	format("It's a comfortable looking bed! Would you like to take a rest?")
 }
-//C1
+
 text CavumCalypsus_Text_Calypso1 {
 	format("Ulysses, darling, please come back to bed.")
 }
-//Whats happening? Who's this? Do you know him?
+
 text CavumCalypsus_Text_Calypso2 {
 	format("What's happening? Who's this? Do you know him?")
 }
-//He is the herald of my departure.
-//For too long you have kept me prisoner
-//of your pleasure. Now, I must swiftly leave.
+
 text CavumCalypsus_Text_Ulysses1 {
 	format("He is the herald of my departure.
 			For too long you have kept me prisoner
 			of your pleasure. The time's come, I must go.")
 }
-//You lied! Or else you have been enchanted
-//by some rival power beyond my own.
-//Did not you seven times swear faithfully
-//to be my bed fellow, my lover? Why
-//now scorn the sweet love that you and I have?
+
 text CavumCalypsus_Text_Calypso3 {
-	format("")
+	format("You lied! Or else you have been enchanted
+			by some rival power beyond my own.
+			Did not you seven times swear faithfully
+			to be my bed fellow, my lover? Why
+			now scorn the sweet love that you and I have?")
 }
-//My love is given to but one woman.
-//Penelope, my wife and avowed queen,
-//forever has my heart. It was a dream
-//you cast upon my tongue, or some magic
-//which caused my lips to swear a profane oath
-//if ever I have pronounced a thing
-//for truely I cannot recall those words.
 text CavumCalypsus_Text_Ulysses2 {
-	format("")
+	format("My love is given to but one woman.
+			Penelope, my wife and avowed queen,
+			forever has my heart. It was a dream
+			you cast upon my tongue, or some magic
+			which caused my lips to swear a profane oath
+			if ever I have pronounced such a thing
+			for truly I cannot recall those words.")
 }
 //Penelope? I can't believel my ears!
 //What happened to the man I thought I loved?
@@ -181,36 +216,52 @@ text CavumCalypsus_Text_Ulysses2 {
 //by this intruder to betray our love.
 //I'll rescue you! I'll fight to save our love!
 text CavumCalypsus_Text_Calypso4 {
-	format("")
+	format("Penelope? I can't believe my ears!
+			What happened to the man I thought I loved?
+			Where is that virile man who's lips I kissed,
+			who told me my love was the most potent,
+			second to none, even Penelope's.
+			There was no magic spell, or secret art
+			of mine at play beyond the simple charms
+			a woman works on the man whom she wants.
+			Nothing but the arrows of Cupid were
+			at work. Now I fear his twin sided shafts
+			have shot a grievous pain into my heart.
+			You've been deceived, or otherwise coerced,
+			by this intruder to betray our love.
+			I'll rescue you! I'll fight to save our love!")
 }
 
-//I don't know who you are, or what you want,
-//but I can tell you've come to take my man.
-//If you want him you'll have to go through me.
 text CavumCalypsus_Text_Calypso5 {
-	format("")
+	format("I don't know who you are, or where you're from,
+			but I can tell you've come to take my man.
+			If you want him you'll have to go through me.")
 }
-//Cupid's arrow pierced my heart fatally.
 text CavumCalypsus_Text_CalypsoLost {
-	format("")
+	format("Cupid's arrow pierced my heart fatally.")
 }
 
-//I won't endure a single wretched day
-//upon this cursed Earth without my love!
-//Forsaken, and alone, I'll drown myself.!
+
 text CavumCalypsus_Text_Calypso6 {
-	format("")
+	format("I won't endure a single wretched day
+			upon this cursed Earth without my love!
+			Forsaken, and alone, I'll drown myself!")
 }
 
-//Thank you, {PLAYER}. I was trapped here, prisoner
-of foul Calypso's subtle magic arts.
-She forced me to perform unholy acts
-ans pronoucne false beliefs in her base bed.
-I lived as in a dream, nay, a nightmare
-for all the time my heart cried out in pain
-and yearning for my wife, Penelope.
-I beg you not to mention this to her.
-A woman's heart is too fragile to hear
-
+text CavumCalypsus_Text_Ulysses3 {
+	format("Thank you, {PLAYER}. I was trapped here, prisoner
+			of foul Calypso's subtle magic arts.
+			She forced me to perform unholy acts
+			ans pronounce false beliefs in her base bed.
+			I lived as in a dream, nay, a nightmare
+			for all the time my heart cried out in pain
+			and yearning for my wife, Penelope.
+			I beg you not to mention this to her.
+			A woman's heart is too fragile to hear
+			stories of her man being so abused.
+			The time has come at last, I shall depart
+			with all possible haste for Nestor's house
+			and my friend Menelaus' wedding.")
+}
 
 //NOTE: circles of grief, paralel Aeneas and Elissa. Try to tease that Ulysses is a cheater.

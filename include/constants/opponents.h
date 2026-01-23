@@ -110,7 +110,7 @@
 #define TRAINER_SHEIK                       104 
 #define TRAINER_ZELDA                       105 
 #define TRAINER_PINA_FRUIT_FAN              106 
-#define TRAINER_UNUSED_107                  107 //UNUSED
+#define TRAINER_CALYPSO                     107 
 #define TRAINER_RIVAL3	                    108
 #define TRAINER_TASHA                       109
 #define TRAINER_GIO1                        110
@@ -205,7 +205,7 @@
 #define TRAINER_LOTUS_HEAD                  199
 #define TRAINER_CIRCE                       200
 
-//BREAK// - UNUSED OPEN ABOVE PLZ
+//BREAK// 
 
 #define TRAINER_COLE                        201
 #define TRAINER_JEFF                        202
