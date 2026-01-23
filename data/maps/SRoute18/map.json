@@ -44,7 +44,50 @@
       "direction": "down"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_SROUTE18_NAUSICAA",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
+      "x": 8,
+      "y": 74,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SROUTE18_ULYSSES",
+      "graphics_id": "OBJ_EVENT_GFX_BROCK_LYING_DOWN",
+      "x": 7,
+      "y": 74,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SROUTE18_DOORBLOCK",
+      "graphics_id": "OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL",
+      "x": 10,
+      "y": 74,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Common_Script_LockedDoor",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
       "x": 42,
@@ -52,6 +95,13 @@
       "elevation": 0,
       "dest_map": "MAP_GYMNASIUM",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 98,
+      "elevation": 0,
+      "dest_map": "MAP_SROUTE18",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -135,6 +185,132 @@
       "var": "VAR_TEMP_5",
       "var_value": "2",
       "script": "SRoute18_Script_MareInternumTransition"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 98,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 98,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 98,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 98,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 99,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 100,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 101,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 102,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 101,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 100,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 99,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "21",
+      "script": "SRoute18_Script_UlyssesScene"
     }
   ],
   "bg_events": []

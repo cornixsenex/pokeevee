@@ -9,18 +9,29 @@ mapscripts SRoute18_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION {
 		//Handle Dynamic Map Triggers
-		specialvar (VAR_RESULT, GetDynamicMapSec_SRoute18_F)
-		if (var(VAR_RESULT) == 1) {
-			setvar (VAR_TEMP_5, 1)
-		} elif (var(VAR_RESULT) == 2) {
-			setvar (VAR_TEMP_5, 2)
-		} elif (var(VAR_RESULT) == 3) {
-			setvar (VAR_TEMP_5, 3)
-		} elif (var(VAR_RESULT) == 4) {
-			setvar (VAR_TEMP_5, 4)
+		specialvar (VAR_TEMP_5, GetDynamicMapSec_SRoute18_F)
+		//setup door block
+		if (var(VAR_ULYSSES_STATE) < 22) {
+			call (SRoute18_Script_SetupDoorBlock)
+		}
+		//Show Ulysses if stranded - Alcinous Block
+		if (var(VAR_ULYSSES_STATE) == 21) {
+			call (SRoute18_Script_ShowUlysses)
 		}
 	}
+}
 
+script SRoute18_Script_SetupDoorBlock {
+	setobjectxyperm (LOCALID_SROUTE18_DOORBLOCK, 15, 98)
+	return
+}
+
+script SRoute18_Script_ShowUlysses {
+	setobjectxyperm (LOCALID_SROUTE18_ULYSSES, 11, 100)
+	setobjectmovementtype (LOCALID_SROUTE18_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (LOCALID_SROUTE18_NAUSICAA, 12, 100)
+	setobjectmovementtype (LOCALID_SROUTE18_NAUSICAA, MOVEMENT_TYPE_FACE_LEFT)
+	return
 }
 
 script SRoute18_Script_SinusPacificusTransition {
@@ -77,4 +88,25 @@ script Sroute18_Script_TestPorygon {
 	closemessage
 	release
 	end
+}
+
+script SRoute18_Script_UlyssesScene {
+	//alert player
+	//N: OMG! lets get you inside to my father
+	//just do a fade
+	//remove door block
+	//remove N
+	//remove U
+	//set var
+	//refade
+	//fin
+}
+
+script Common_Script_LockedDoor {
+	msgbox (Common_Text_LockedDoor)
+	closemessage
+}
+
+text Common_Text_LockedDoor {
+	format("The door is locked.")
 }
