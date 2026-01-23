@@ -84,80 +84,66 @@ SRoute18_Script_MareInternumTransition::
 	return
 
 
-SRoute18_Script_TestTriggerOn2::
-# 63 "data/maps/SRoute18/scripts.pory"
-	lock
-# 64 "data/maps/SRoute18/scripts.pory"
-	setvar VAR_TEMP_7, 1
-# 65 "data/maps/SRoute18/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 66 "data/maps/SRoute18/scripts.pory"
-	waitmovement 0
-# 67 "data/maps/SRoute18/scripts.pory"
-	msgbox SRoute18_Script_TestTriggerOn2_Text_0, MSGBOX_DEFAULT
-# 68 "data/maps/SRoute18/scripts.pory"
-	closemessage
-# 69 "data/maps/SRoute18/scripts.pory"
-	release
-	end
-
-
-SRoute18_Script_TestTriggerOn1::
-# 74 "data/maps/SRoute18/scripts.pory"
-	lock
-# 75 "data/maps/SRoute18/scripts.pory"
-	setvar VAR_TEMP_7, 2
-# 76 "data/maps/SRoute18/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-# 77 "data/maps/SRoute18/scripts.pory"
-	waitmovement 0
-# 78 "data/maps/SRoute18/scripts.pory"
-	msgbox SRoute18_Script_TestTriggerOn1_Text_0, MSGBOX_DEFAULT
-# 79 "data/maps/SRoute18/scripts.pory"
-	closemessage
-# 80 "data/maps/SRoute18/scripts.pory"
-	release
-	end
-
-
-Sroute18_Script_TestPorygon::
-# 85 "data/maps/SRoute18/scripts.pory"
-	lock
-# 86 "data/maps/SRoute18/scripts.pory"
-	setvar VAR_TEMP_7, 1
-# 87 "data/maps/SRoute18/scripts.pory"
-	msgbox Sroute18_Script_TestPorygon_Text_0, MSGBOX_DEFAULT
-# 88 "data/maps/SRoute18/scripts.pory"
-	closemessage
-# 89 "data/maps/SRoute18/scripts.pory"
-	release
-	end
-
-
 SRoute18_Script_UlyssesScene::
-	return
+# 63 "data/maps/SRoute18/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 64 "data/maps/SRoute18/scripts.pory"
+	waitmovement 0
+# 66 "data/maps/SRoute18/scripts.pory"
+	load_field_pic FIELD_PIC_NAUSICAA, 190, 98
+# 67 "data/maps/SRoute18/scripts.pory"
+	msgbox SRoute18_Text_Nausicaa
+# 68 "data/maps/SRoute18/scripts.pory"
+	destroy_field_pic FIELD_PIC_NAUSICAA
+# 69 "data/maps/SRoute18/scripts.pory"
+	closemessage
+# 71 "data/maps/SRoute18/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 73 "data/maps/SRoute18/scripts.pory"
+	removeobject LOCALID_SROUTE18_DOORBLOCK
+# 74 "data/maps/SRoute18/scripts.pory"
+	setobjectxyperm LOCALID_SROUTE18_DOORBLOCK, 7, 74
+# 75 "data/maps/SRoute18/scripts.pory"
+	setobjectmovementtype LOCALID_SROUTE18_DOORBLOCK, MOVEMENT_TYPE_INVISIBLE
+# 76 "data/maps/SRoute18/scripts.pory"
+	addobject LOCALID_SROUTE18_DOORBLOCK
+# 78 "data/maps/SRoute18/scripts.pory"
+	removeobject LOCALID_SROUTE18_NAUSICAA
+# 79 "data/maps/SRoute18/scripts.pory"
+	setobjectxyperm LOCALID_SROUTE18_NAUSICAA, 7, 74
+# 80 "data/maps/SRoute18/scripts.pory"
+	setobjectmovementtype LOCALID_SROUTE18_NAUSICAA, MOVEMENT_TYPE_INVISIBLE
+# 81 "data/maps/SRoute18/scripts.pory"
+	addobject LOCALID_SROUTE18_NAUSICAA
+# 83 "data/maps/SRoute18/scripts.pory"
+	removeobject LOCALID_SROUTE18_ULYSSES
+# 84 "data/maps/SRoute18/scripts.pory"
+	setobjectxyperm LOCALID_SROUTE18_ULYSSES, 7, 74
+# 85 "data/maps/SRoute18/scripts.pory"
+	setobjectmovementtype LOCALID_SROUTE18_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+# 86 "data/maps/SRoute18/scripts.pory"
+	addobject LOCALID_SROUTE18_ULYSSES
+# 88 "data/maps/SRoute18/scripts.pory"
+	setvar VAR_ULYSSES_STATE, 22
+# 90 "data/maps/SRoute18/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+	end
 
 
 Common_Script_LockedDoor::
-# 106 "data/maps/SRoute18/scripts.pory"
+# 96 "data/maps/SRoute18/scripts.pory"
 	msgbox Common_Text_LockedDoor
-# 107 "data/maps/SRoute18/scripts.pory"
+# 97 "data/maps/SRoute18/scripts.pory"
 	closemessage
 	return
 
 
-SRoute18_Script_TestTriggerOn2_Text_0:
-# 67 "data/maps/SRoute18/scripts.pory"
-	.string "TRIGGER 2!$"
-
-SRoute18_Script_TestTriggerOn1_Text_0:
-# 78 "data/maps/SRoute18/scripts.pory"
-	.string "TRIGGER 1$"
-
-Sroute18_Script_TestPorygon_Text_0:
-# 87 "data/maps/SRoute18/scripts.pory"
-	.string "VAR_TEMP_7 set to 1$"
-
 Common_Text_LockedDoor::
-# 110 "data/maps/SRoute18/scripts.pory"
+# 100 "data/maps/SRoute18/scripts.pory"
 	.string "The door is locked.$"
+
+SRoute18_Text_Nausicaa::
+# 104 "data/maps/SRoute18/scripts.pory"
+	.string "Hello? Mister, can you hear me? You\n"
+	.string "don't look too good... Oh no! I better\l"
+	.string "take you to Papa right away!$"

@@ -310,6 +310,15 @@ static const u16 sPic93Pal[] = INCBIN_U16("graphics/trainers/front_pics/fisherma
 //Teddiursa = 93
 static const u32 sPic94Gfx[] = INCBIN_U32("graphics/pokemon/teddiursa/anim_front.4bpp.lz");
 static const u16 sPic94Pal[] = INCBIN_U16("graphics/pokemon/teddiursa/normal.gbapal");
+//School Kid F = 94
+static const u32 sPic95Gfx[] = INCBIN_U32("graphics/trainers/front_pics/school_kid_f.4bpp.lz");
+static const u16 sPic95Pal[] = INCBIN_U16("graphics/trainers/front_pics/school_kid_f.gbapal");
+//Brawly = 95
+static const u32 sPic96Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leader_brawly.4bpp.lz");
+static const u16 sPic96Pal[] = INCBIN_U16("graphics/trainers/front_pics/leader_brawly.gbapal");
+//Roxanne = 96
+static const u32 sPic97Gfx[] = INCBIN_U32("graphics/trainers/front_pics/leader_roxanne.4bpp.lz");
+static const u16 sPic97Pal[] = INCBIN_U16("graphics/trainers/front_pics/leader_roxanne.gbapal");
 
 /* And this is an example script.
 
@@ -521,6 +530,12 @@ static const struct Pic sPics[] =
     {sPic93Gfx, sPic93Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 	//Teddiursa
     {sPic94Gfx, sPic94Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//School Kid F
+    {sPic95Gfx, sPic95Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Brawly
+    {sPic96Gfx, sPic96Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
+	//Roxanne
+    {sPic97Gfx, sPic97Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

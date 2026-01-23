@@ -752,6 +752,7 @@ enum
     MAP_SUB_MARE                  = (31 | (32 << 8)),
     MAP_SUB_MARE_CAVE             = (32 | (32 << 8)),
     MAP_CAVUM_CALYPSUS            = (33 | (32 << 8)),
+    MAP_SCHERIA                   = (34 | (32 << 8)),
 
     // gMapGroup_IndoorRoute123
     MAP_ROUTE123_BERRY_MASTERS_HOUSE = (0 | (33 << 8)),

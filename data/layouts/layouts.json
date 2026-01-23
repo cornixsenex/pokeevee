@@ -6710,6 +6710,16 @@
       "secondary_tileset": "gTileset_Calypso",
       "border_filepath": "data/layouts/CavumCalypsus/border.bin",
       "blockdata_filepath": "data/layouts/CavumCalypsus/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCHERIA",
+      "name": "Scheria_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Scheria/border.bin",
+      "blockdata_filepath": "data/layouts/Scheria/map.bin"
     }
   ]
 }

@@ -1,0 +1,78 @@
+mapscripts Scheria_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		//setup Ulysses Scene
+		if (var(VAR_ULYSSES_STATE) == 22) {
+			call (Scheria_Script_SetupUlyssesScene)
+		}
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_ULYSSES_STATE, 22: Scheria_Script_UlyssesScene
+	]
+}
+
+script Scheria_Script_SetupUlyssesScene {
+	setobjectxyperm (LOCALID_SCHERIA_ULYSSES, 4, 5)
+	setobjectmovementtype (LOCALID_SCHERIA_ULYSSES, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectxyperm (LOCALID_SCHERIA_NAUSICAA, 3, 4)
+	setobjectmovementtype (LOCALID_SCHERIA_NAUSICAA, MOVEMENT_TYPE_FACE_RIGHT)
+	
+	setobjectxyperm (LOCALID_SCHERIA_ALCINOUS, 5, 3)
+	setobjectmovementtype (LOCALID_SCHERIA_ALCINOUS, MOVEMENT_TYPE_FACE_DOWN)
+	
+	setobjectxyperm (LOCALID_SCHERIA_ARETE, 4, 3)
+	setobjectmovementtype (LOCALID_SCHERIA_ARETE, MOVEMENT_TYPE_FACE_DOWN)
+
+	return
+}
+
+script Scheria_Script_UlyssesScene {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Intro
+	//Notice Player
+	//U: My companion
+	//Alc: Approach
+	//Player to Alc
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	//Alc: I know you are eager to leave but you need your strength and beside we would hear the tale
+	//U: Ok..........LONG ASS STORY
+	//N: And that's when I found him on the beach
+	//Aret: Terrible story
+	//Alc: You are strong to survive. Good news you have reached Mare Internum and you are near your goal. Take those provisions and may you reach your dest soon
+	//U: Thanks
+	//U to player
+	applymovement (LOCALID_SCHERIA_ULYSSES, Common_Movement_FaceRight)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//Ok I'm out now
+	//U exit
+	applymovement (LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkDown2)
+	waitmovement (0)
+	applymovement (LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement (0)
+	//remove U
+	removeobject (LOCALID_SCHERIA_ULYSSES)
+	setobjectxyperm (LOCALID_SCHERIA_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_SCHERIA_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_SCHERIA_ULYSSES)
+	//setvars
+	setvar (VAR_ULYSSES_STATE, 23)
+	//fin
+	end
+}
+
+script Scheria_Script_Arete {
+
+}
+
+script Scheria_Script_Alcinous {
+
+}
+
+script Scheria_Script_Nausicaa {
+
+}

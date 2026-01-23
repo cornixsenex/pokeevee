@@ -100,47 +100,11 @@
       "x": 15,
       "y": 98,
       "elevation": 0,
-      "dest_map": "MAP_SROUTE18",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_SCHERIA",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 28,
-      "y": 109,
-      "elevation": 0,
-      "var": "VAR_TEMP_7",
-      "var_value": "1",
-      "script": "SRoute18_Script_TestTriggerOn1"
-    },
-    {
-      "type": "trigger",
-      "x": 29,
-      "y": 109,
-      "elevation": 0,
-      "var": "VAR_TEMP_7",
-      "var_value": "1",
-      "script": "SRoute18_Script_TestTriggerOn1"
-    },
-    {
-      "type": "trigger",
-      "x": 29,
-      "y": 110,
-      "elevation": 0,
-      "var": "VAR_TEMP_7",
-      "var_value": "2",
-      "script": "SRoute18_Script_TestTriggerOn2"
-    },
-    {
-      "type": "trigger",
-      "x": 28,
-      "y": 110,
-      "elevation": 0,
-      "var": "VAR_TEMP_7",
-      "var_value": "2",
-      "script": "SRoute18_Script_TestTriggerOn2"
-    },
     {
       "type": "trigger",
       "x": 41,

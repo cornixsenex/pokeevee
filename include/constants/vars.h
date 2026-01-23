@@ -156,6 +156,8 @@
 																// 19: After Charybdis - Hide Whirlpool - Show Ulysses there
 																// 20: After Ulysses clears Scylla Charybdis - Ulysses et Calypso scene
 																// 21: After Calypso - Ulysses Phaeacians trigger & setup
+																// 22: Ulysses in Scheria. Trigger Odysses scene on frame
+																// 23: After Odyssey, Ulysses at Swinubherd
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

@@ -1450,3 +1450,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SubMareCave/scripts.inc"
 
 	.include "data/maps/CavumCalypsus/scripts.inc"
+
+	.include "data/maps/Scheria/scripts.inc"

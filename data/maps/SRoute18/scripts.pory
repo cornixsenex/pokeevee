@@ -58,48 +58,38 @@ script SRoute18_Script_MareInternumTransition {
 	special (ShowMapNamePopup)
 }
 
-
-script SRoute18_Script_TestTriggerOn2 {
-	lock
-	setvar (VAR_TEMP_7, 1)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	msgbox("TRIGGER 2!", MSGBOX_DEFAULT)
-	closemessage
-	release
-	end
-}
-
-script SRoute18_Script_TestTriggerOn1 {
-	lock
-	setvar (VAR_TEMP_7, 2)
-	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-	waitmovement (0)
-	msgbox("TRIGGER 1", MSGBOX_DEFAULT)
-	closemessage
-	release
-	end
-}
-
-script Sroute18_Script_TestPorygon {
-	lock
-	setvar (VAR_TEMP_7, 1)
-	msgbox ("VAR_TEMP_7 set to 1", MSGBOX_DEFAULT)
-	closemessage
-	release
-	end
-}
-
 script SRoute18_Script_UlyssesScene {
 	//alert player
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//N: OMG! lets get you inside to my father
+	load_field_pic (FIELD_PIC_NAUSICAA, 190, 98)
+	msgbox (SRoute18_Text_Nausicaa)
+	destroy_field_pic (FIELD_PIC_NAUSICAA)
+	closemessage
 	//just do a fade
+	fadescreenswapbuffers (FADE_TO_BLACK)
 	//remove door block
+	removeobject (LOCALID_SROUTE18_DOORBLOCK)
+	setobjectxyperm (LOCALID_SROUTE18_DOORBLOCK, 7, 74)
+	setobjectmovementtype (LOCALID_SROUTE18_DOORBLOCK, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_SROUTE18_DOORBLOCK)
 	//remove N
+	removeobject (LOCALID_SROUTE18_NAUSICAA)
+	setobjectxyperm (LOCALID_SROUTE18_NAUSICAA, 7, 74)
+	setobjectmovementtype (LOCALID_SROUTE18_NAUSICAA, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_SROUTE18_NAUSICAA)
 	//remove U
+	removeobject (LOCALID_SROUTE18_ULYSSES)
+	setobjectxyperm (LOCALID_SROUTE18_ULYSSES, 7, 74)
+	setobjectmovementtype (LOCALID_SROUTE18_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_SROUTE18_ULYSSES)
 	//set var
+	setvar (VAR_ULYSSES_STATE, 22)
 	//refade
+	fadescreenswapbuffers (FADE_FROM_BLACK)
 	//fin
+	end
 }
 
 script Common_Script_LockedDoor {
@@ -109,4 +99,8 @@ script Common_Script_LockedDoor {
 
 text Common_Text_LockedDoor {
 	format("The door is locked.")
+}
+
+text SRoute18_Text_Nausicaa {
+	format("Hello? Mister, can you hear me? You don't look too good... Oh no! I better take you to Papa right away!")
 }
