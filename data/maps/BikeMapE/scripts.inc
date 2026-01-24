@@ -6,234 +6,361 @@ BikeMapE_MapScripts::
 BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 8 "data/maps/BikeMapE/scripts.pory"
 	compare VAR_ULYSSES_STATE, 23
-	goto_if_eq BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_eq BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 # 8 "data/maps/BikeMapE/scripts.pory"
 	compare VAR_ULYSSES_STATE, 24
-	goto_if_eq BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_eq BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 12 "data/maps/BikeMapE/scripts.pory"
+	compare VAR_ULYSSES_STATE, 25
+	goto_if_eq BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 	return
 
-BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 9 "data/maps/BikeMapE/scripts.pory"
 	call BikeMapE_Script_SetupUlyssesSceneIntro
+	goto BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+BikeMapE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
+# 13 "data/maps/BikeMapE/scripts.pory"
+	call BikeMapE_Script_SetupUlyssesPostArgus
 	return
 
 
 BikeMapE_Script_SetupUlyssesSceneIntro::
-# 16 "data/maps/BikeMapE/scripts.pory"
-	setobjectxy LOCALID_BIKEMAPE_ULYSSES, 75, 36
-# 17 "data/maps/BikeMapE/scripts.pory"
-	setobjectmovementtype LOCALID_BIKEMAPE_ULYSSES, MOVEMENT_TYPE_FACE_UP
-# 19 "data/maps/BikeMapE/scripts.pory"
-	setobjectxy LOCALID_BIKEMAPE_SWINEHERD1, 74, 35
 # 20 "data/maps/BikeMapE/scripts.pory"
-	setobjectmovementtype LOCALID_BIKEMAPE_SWINEHERD1, MOVEMENT_TYPE_FACE_DOWN
-# 22 "data/maps/BikeMapE/scripts.pory"
-	setobjectxy LOCALID_BIKEMAPE_SWINEHERD2, 76, 35
+	setobjectxy LOCALID_BIKEMAPE_ULYSSES, 75, 36
+# 21 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_ULYSSES, MOVEMENT_TYPE_FACE_UP
 # 23 "data/maps/BikeMapE/scripts.pory"
-	setobjectmovementtype LOCALID_BIKEMAPE_SWINEHERD2, MOVEMENT_TYPE_FACE_DOWN
-# 25 "data/maps/BikeMapE/scripts.pory"
-	setobjectxy LOCALID_BIKEMAPE_ARGUS, 0, 0
+	setobjectxy LOCALID_BIKEMAPE_SWINEHERD1, 74, 35
+# 24 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_SWINEHERD1, MOVEMENT_TYPE_FACE_DOWN
 # 26 "data/maps/BikeMapE/scripts.pory"
+	setobjectxy LOCALID_BIKEMAPE_SWINEHERD2, 76, 35
+# 27 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_SWINEHERD2, MOVEMENT_TYPE_FACE_DOWN
+# 29 "data/maps/BikeMapE/scripts.pory"
+	setobjectxy LOCALID_BIKEMAPE_ARGUS, 0, 0
+# 30 "data/maps/BikeMapE/scripts.pory"
 	setobjectmovementtype LOCALID_BIKEMAPE_ARGUS, MOVEMENT_TYPE_INVISIBLE
 	return
 
 
+BikeMapE_Script_SetupUlyssesPostArgus::
+# 36 "data/maps/BikeMapE/scripts.pory"
+	setobjectxy LOCALID_BIKEMAPE_ULYSSES, 75, 36
+# 37 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_ULYSSES, MOVEMENT_TYPE_FACE_UP
+# 39 "data/maps/BikeMapE/scripts.pory"
+	setobjectxy LOCALID_BIKEMAPE_SWINEHERD1, 74, 35
+# 40 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_SWINEHERD1, MOVEMENT_TYPE_FACE_DOWN
+# 42 "data/maps/BikeMapE/scripts.pory"
+	setobjectxy LOCALID_BIKEMAPE_SWINEHERD2, 76, 35
+# 43 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_SWINEHERD2, MOVEMENT_TYPE_FACE_DOWN
+# 45 "data/maps/BikeMapE/scripts.pory"
+	setobjectxy LOCALID_BIKEMAPE_ARGUS, 75, 35
+# 46 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_ARGUS, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+
 BikeMapE_Script_UlyssesSceneIntroA::
-# 32 "data/maps/BikeMapE/scripts.pory"
+# 52 "data/maps/BikeMapE/scripts.pory"
 	setvar VAR_TEMP_6, 1
-# 33 "data/maps/BikeMapE/scripts.pory"
+# 53 "data/maps/BikeMapE/scripts.pory"
 	call BikeMapE_Script_UlyssesSceneIntro
 	return
 
 
 BikeMapE_Script_UlyssesSceneIntroB::
-# 37 "data/maps/BikeMapE/scripts.pory"
+# 57 "data/maps/BikeMapE/scripts.pory"
 	setvar VAR_TEMP_6, 2
-# 38 "data/maps/BikeMapE/scripts.pory"
+# 58 "data/maps/BikeMapE/scripts.pory"
 	call BikeMapE_Script_UlyssesSceneIntro
 	return
 
 
 BikeMapE_Script_UlyssesSceneIntroC::
-# 42 "data/maps/BikeMapE/scripts.pory"
+# 62 "data/maps/BikeMapE/scripts.pory"
 	setvar VAR_TEMP_6, 3
-# 43 "data/maps/BikeMapE/scripts.pory"
+# 63 "data/maps/BikeMapE/scripts.pory"
 	call BikeMapE_Script_UlyssesSceneIntro
 	return
 
 
 BikeMapE_Script_UlyssesSceneIntro::
-# 48 "data/maps/BikeMapE/scripts.pory"
+# 68 "data/maps/BikeMapE/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 49 "data/maps/BikeMapE/scripts.pory"
-	msgbox BikeMapE_Text_UlyssesIntro1
-# 50 "data/maps/BikeMapE/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
-# 51 "data/maps/BikeMapE/scripts.pory"
-	closemessage
-# 53 "data/maps/BikeMapE/scripts.pory"
-	switch VAR_TEMP_6
-# 54 "data/maps/BikeMapE/scripts.pory"
-	case 1, BikeMapE_Script_UlyssesSceneIntro_3
-# 60 "data/maps/BikeMapE/scripts.pory"
-	case 2, BikeMapE_Script_UlyssesSceneIntro_4
-# 62 "data/maps/BikeMapE/scripts.pory"
-	case 3, BikeMapE_Script_UlyssesSceneIntro_5
 # 69 "data/maps/BikeMapE/scripts.pory"
-	msgbox BikeMapE_Script_UlyssesSceneIntro_Text_0
+	msgbox BikeMapE_Text_UlyssesIntro1
 # 70 "data/maps/BikeMapE/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 71 "data/maps/BikeMapE/scripts.pory"
+	closemessage
+# 73 "data/maps/BikeMapE/scripts.pory"
+	switch VAR_TEMP_6
+# 74 "data/maps/BikeMapE/scripts.pory"
+	case 1, BikeMapE_Script_UlyssesSceneIntro_3
+# 80 "data/maps/BikeMapE/scripts.pory"
+	case 2, BikeMapE_Script_UlyssesSceneIntro_4
+# 82 "data/maps/BikeMapE/scripts.pory"
+	case 3, BikeMapE_Script_UlyssesSceneIntro_5
+# 89 "data/maps/BikeMapE/scripts.pory"
+	msgbox BikeMapE_Script_UlyssesSceneIntro_Text_0
+# 90 "data/maps/BikeMapE/scripts.pory"
 	closemessage
 	end
 
 BikeMapE_Script_UlyssesSceneIntro_1:
-# 73 "data/maps/BikeMapE/scripts.pory"
+# 93 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 75 "data/maps/BikeMapE/scripts.pory"
+# 95 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_BIKEMAPE_ULYSSES, Common_Movement_ExclamationMark
-# 76 "data/maps/BikeMapE/scripts.pory"
+# 96 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 78 "data/maps/BikeMapE/scripts.pory"
+# 98 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_BIKEMAPE_ULYSSES, Common_Movement_FaceDown
-# 79 "data/maps/BikeMapE/scripts.pory"
+# 99 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 81 "data/maps/BikeMapE/scripts.pory"
+# 101 "data/maps/BikeMapE/scripts.pory"
 	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 82 "data/maps/BikeMapE/scripts.pory"
+# 102 "data/maps/BikeMapE/scripts.pory"
 	msgbox BikeMapE_Text_UlyssesIntro2
-# 83 "data/maps/BikeMapE/scripts.pory"
+# 103 "data/maps/BikeMapE/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 84 "data/maps/BikeMapE/scripts.pory"
+# 104 "data/maps/BikeMapE/scripts.pory"
 	closemessage
-# 86 "data/maps/BikeMapE/scripts.pory"
+# 106 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_BIKEMAPE_ULYSSES, Common_Movement_FaceUp
-# 87 "data/maps/BikeMapE/scripts.pory"
+# 107 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 89 "data/maps/BikeMapE/scripts.pory"
+# 109 "data/maps/BikeMapE/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 24
 	end
 
 BikeMapE_Script_UlyssesSceneIntro_3:
-# 55 "data/maps/BikeMapE/scripts.pory"
+# 75 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-# 56 "data/maps/BikeMapE/scripts.pory"
+# 76 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 57 "data/maps/BikeMapE/scripts.pory"
+# 77 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 58 "data/maps/BikeMapE/scripts.pory"
+# 78 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 59 "data/maps/BikeMapE/scripts.pory"
+# 79 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	goto BikeMapE_Script_UlyssesSceneIntro_1
 
 BikeMapE_Script_UlyssesSceneIntro_4:
-# 61 "data/maps/BikeMapE/scripts.pory"
+# 81 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	goto BikeMapE_Script_UlyssesSceneIntro_1
 
 BikeMapE_Script_UlyssesSceneIntro_5:
-# 63 "data/maps/BikeMapE/scripts.pory"
+# 83 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-# 64 "data/maps/BikeMapE/scripts.pory"
+# 84 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 65 "data/maps/BikeMapE/scripts.pory"
+# 85 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-# 66 "data/maps/BikeMapE/scripts.pory"
+# 86 "data/maps/BikeMapE/scripts.pory"
 	waitmovement 0
-# 67 "data/maps/BikeMapE/scripts.pory"
+# 87 "data/maps/BikeMapE/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	goto BikeMapE_Script_UlyssesSceneIntro_1
 
 
+BikeMapE_Script_UlyssesScenePostArgusA::
+# 115 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 116 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 117 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight2
+# 118 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 119 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 120 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 121 "data/maps/BikeMapE/scripts.pory"
+	call BikeMapE_Script_UlyssesPostArgus
+	return
+
+
+BikeMapE_Script_UlyssesScenePostArgusB::
+# 125 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 126 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 127 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+# 128 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 129 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+# 130 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 131 "data/maps/BikeMapE/scripts.pory"
+	call BikeMapE_Script_UlyssesPostArgus
+	return
+
+
+BikeMapE_Script_UlyssesScenePostArgusC::
+# 135 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
+# 136 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 137 "data/maps/BikeMapE/scripts.pory"
+	call BikeMapE_Script_UlyssesPostArgus
+	return
+
+
+BikeMapE_Script_UlyssesPostArgus::
+# 142 "data/maps/BikeMapE/scripts.pory"
+	load_field_pic FIELD_PIC_SWINEHERD, 190, 98
+# 143 "data/maps/BikeMapE/scripts.pory"
+	msgbox BikeMapE_Text_UlyssesPostArgus_Swineherd
+# 144 "data/maps/BikeMapE/scripts.pory"
+	destroy_field_pic FIELD_PIC_SWINEHERD
+# 146 "data/maps/BikeMapE/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 147 "data/maps/BikeMapE/scripts.pory"
+	msgbox BikeMapE_Text_UlyssesPostArgus_Ulysses1
+# 149 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_BIKEMAPE_ULYSSES, Common_Movement_FaceRight
+# 150 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 151 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 153 "data/maps/BikeMapE/scripts.pory"
+	msgbox BikeMapE_Text_UlyssesPostArgus_Ulysses2
+# 154 "data/maps/BikeMapE/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 155 "data/maps/BikeMapE/scripts.pory"
+	closemessage
+# 157 "data/maps/BikeMapE/scripts.pory"
+	applymovement LOCALID_BIKEMAPE_ULYSSES, Common_Movement_WalkDown6
+# 158 "data/maps/BikeMapE/scripts.pory"
+	waitmovement 0
+# 160 "data/maps/BikeMapE/scripts.pory"
+	removeobject LOCALID_BIKEMAPE_ULYSSES
+# 161 "data/maps/BikeMapE/scripts.pory"
+	setobjectxy LOCALID_BIKEMAPE_ULYSSES, 0, 0
+# 162 "data/maps/BikeMapE/scripts.pory"
+	setobjectmovementtype LOCALID_BIKEMAPE_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+# 163 "data/maps/BikeMapE/scripts.pory"
+	addobject LOCALID_BIKEMAPE_ULYSSES
+# 165 "data/maps/BikeMapE/scripts.pory"
+	setvar VAR_ULYSSES_STATE, 26
+	return
+
+
 BikeMapE_Script_SwineHerd1::
-# 95 "data/maps/BikeMapE/scripts.pory"
+# 170 "data/maps/BikeMapE/scripts.pory"
 	faceplayer
-# 96 "data/maps/BikeMapE/scripts.pory"
+# 171 "data/maps/BikeMapE/scripts.pory"
 	compare VAR_ULYSSES_STATE < 24, 0
 	goto_if_ne BikeMapE_Script_SwineHerd1_2
-# 98 "data/maps/BikeMapE/scripts.pory"
+# 173 "data/maps/BikeMapE/scripts.pory"
 	compare VAR_ULYSSES_STATE, 24
 	goto_if_eq BikeMapE_Script_SwineHerd1_3
-# 101 "data/maps/BikeMapE/scripts.pory"
+# 176 "data/maps/BikeMapE/scripts.pory"
 	msgbox BikeMapE_Text_SwineHerd1_PostUlysses
 BikeMapE_Script_SwineHerd1_1:
-# 103 "data/maps/BikeMapE/scripts.pory"
+# 178 "data/maps/BikeMapE/scripts.pory"
 	closemessage
-# 104 "data/maps/BikeMapE/scripts.pory"
+# 179 "data/maps/BikeMapE/scripts.pory"
 	unfaceplayer
 	end
 
 BikeMapE_Script_SwineHerd1_2:
-# 97 "data/maps/BikeMapE/scripts.pory"
+# 172 "data/maps/BikeMapE/scripts.pory"
 	msgbox BikeMapE_Text_SwineHerd1_AnteUlysses
 	goto BikeMapE_Script_SwineHerd1_1
 
 BikeMapE_Script_SwineHerd1_3:
-# 99 "data/maps/BikeMapE/scripts.pory"
+# 174 "data/maps/BikeMapE/scripts.pory"
 	msgbox BikeMapE_Text_SwineHerd1_DuringUlysses
 	goto BikeMapE_Script_SwineHerd1_1
 
 
 BikeMapE_Script_SwineHerd2::
-# 109 "data/maps/BikeMapE/scripts.pory"
+# 184 "data/maps/BikeMapE/scripts.pory"
 	faceplayer
-# 110 "data/maps/BikeMapE/scripts.pory"
+# 185 "data/maps/BikeMapE/scripts.pory"
 	compare VAR_ULYSSES_STATE < 24, 0
 	goto_if_ne BikeMapE_Script_SwineHerd2_2
-# 112 "data/maps/BikeMapE/scripts.pory"
+# 187 "data/maps/BikeMapE/scripts.pory"
 	compare VAR_ULYSSES_STATE, 24
 	goto_if_eq BikeMapE_Script_SwineHerd2_3
-# 115 "data/maps/BikeMapE/scripts.pory"
+# 190 "data/maps/BikeMapE/scripts.pory"
 	msgbox BikeMapE_Text_SwineHerd2_PostUlysses
 BikeMapE_Script_SwineHerd2_1:
-# 117 "data/maps/BikeMapE/scripts.pory"
+# 192 "data/maps/BikeMapE/scripts.pory"
 	closemessage
-# 118 "data/maps/BikeMapE/scripts.pory"
+# 193 "data/maps/BikeMapE/scripts.pory"
 	unfaceplayer
 	end
 
 BikeMapE_Script_SwineHerd2_2:
-# 111 "data/maps/BikeMapE/scripts.pory"
+# 186 "data/maps/BikeMapE/scripts.pory"
 	msgbox BikeMapE_Text_SwineHerd2_AnteUlysses
 	goto BikeMapE_Script_SwineHerd2_1
 
 BikeMapE_Script_SwineHerd2_3:
-# 113 "data/maps/BikeMapE/scripts.pory"
+# 188 "data/maps/BikeMapE/scripts.pory"
 	msgbox BikeMapE_Text_SwineHerd2_DuringUlysses
 	goto BikeMapE_Script_SwineHerd2_1
 
 
 BikeMapE_Script_UlyssesSceneIntro_Text_0:
-# 69 "data/maps/BikeMapE/scripts.pory"
+# 89 "data/maps/BikeMapE/scripts.pory"
 	.string "VAR_TEMP_6 OOB$"
 
 BikeMapE_Text_SwineHerd1_AnteUlysses::
-# 122 "data/maps/BikeMapE/scripts.pory"
+# 197 "data/maps/BikeMapE/scripts.pory"
 	.string "$"
 
 BikeMapE_Text_SwineHerd1_DuringUlysses::
-# 126 "data/maps/BikeMapE/scripts.pory"
+# 201 "data/maps/BikeMapE/scripts.pory"
 	.string "$"
 
 BikeMapE_Text_SwineHerd1_PostUlysses::
-# 130 "data/maps/BikeMapE/scripts.pory"
+# 205 "data/maps/BikeMapE/scripts.pory"
 	.string "$"
 
 BikeMapE_Text_SwineHerd2_AnteUlysses::
-# 134 "data/maps/BikeMapE/scripts.pory"
+# 209 "data/maps/BikeMapE/scripts.pory"
 	.string "$"
 
 BikeMapE_Text_SwineHerd2_DuringUlysses::
-# 138 "data/maps/BikeMapE/scripts.pory"
+# 213 "data/maps/BikeMapE/scripts.pory"
 	.string "$"
 
 BikeMapE_Text_SwineHerd2_PostUlysses::
-# 142 "data/maps/BikeMapE/scripts.pory"
+# 217 "data/maps/BikeMapE/scripts.pory"
 	.string "$"
 
 BikeMapE_Text_UlyssesIntro1::
-# 146 "data/maps/BikeMapE/scripts.pory"
+# 221 "data/maps/BikeMapE/scripts.pory"
 	.string "$"
 
 BikeMapE_Text_UlyssesIntro2::
-# 150 "data/maps/BikeMapE/scripts.pory"
+# 225 "data/maps/BikeMapE/scripts.pory"
+	.string "$"
+
+BikeMapE_Text_UlyssesPostArgus_Swineherd::
+# 229 "data/maps/BikeMapE/scripts.pory"
+	.string "$"
+
+BikeMapE_Text_UlyssesPostArgus_Ulysses1::
+# 233 "data/maps/BikeMapE/scripts.pory"
+	.string "$"
+
+BikeMapE_Text_UlyssesPostArgus_Ulysses2::
+# 237 "data/maps/BikeMapE/scripts.pory"
 	.string "$"

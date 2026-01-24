@@ -1,1 +1,92 @@
-mapscripts Farm_MapScripts {}
+
+//FLAG_TEMP_A determines position for Argus scene
+
+mapscripts Farm_MapScripts {
+
+
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_ULYSSES_STATE) != 24) {
+			call (Farm_Script_HideArgus)
+		}
+	}
+
+	MAP_SCRIPT_ON_RESUME {
+		if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+			hideobjectat (LOCALID_FARM_WOLF, MAP_FARM)
+		}
+	}
+}
+
+script Farm_Script_HideArgus {
+	setobjectxyperm (LOCALID_FARM_ARGUS, 64, 33)
+	setobjectmovementtype (LOCALID_FARM_ARGUS, MOVEMENT_TYPE_INVISIBLE)
+	setobjectxyperm (LOCALID_FARM_WOLF, 64, 33)
+	setobjectmovementtype (LOCALID_FARM_WOLF, MOVEMENT_TYPE_INVISIBLE)
+	return
+}
+
+script Farm_Script_ArgusSceneA {
+	setflag (FLAG_TEMP_A)
+	call (Farm_Script_ArgusScene)
+}
+
+script Farm_Script_ArgusScene {
+	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	if (flag(FLAG_TEMP_A)) {
+		applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+		waitmovement (0)
+	}
+	applymovement (LOCALID_FARM_ARGUS, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_FARM_WOLF, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	lockall
+	applymovement (LOCALID_FARM_WOLF, Common_Movement_WalkLeft)
+	waitmovement (0)
+	applymovement (LOCALID_FARM_WOLF, Common_Movement_WalkUp)
+	waitmovement (0)
+	if (flag(FLAG_TEMP_A)) {
+		applymovement (LOCALID_FARM_WOLF, Common_Movement_FaceLeft)
+		waitmovement (0)
+	} else {
+		applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+		waitmovement (0)
+	}
+	playmoncry (SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	setflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	setwildbattle (SPECIES_MIGHTYENA, 13)
+	dowildbattle
+	clearflag (FLAG_SYS_CTRL_OBJ_DELETE)
+	removeobject (LOCALID_FARM_WOLF)
+	setobjectxyperm (LOCALID_FARM_WOLF, 64, 33)
+	setobjectmovementtype (LOCALID_FARM_WOLF, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_FARM_WOLF)
+	applymovement (LOCALID_FARM_ARGUS, Common_Movement_WalkLeft2)
+	waitmovement (0)
+	applymovement (LOCALID_FARM_ARGUS, Common_Movement_WalkUp)
+	waitmovement (0)
+	if (flag(FLAG_TEMP_A)) {
+		applymovement (LOCALID_FARM_ARGUS, Common_Movement_FaceLeft)
+		waitmovement (0)
+	}
+	playmoncry (SPECIES_GROWLITHE, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	//exit A
+	if (flag(FLAG_TEMP_A)) {
+		applymovement (LOCALID_FARM_ARGUS, Common_Movement_WalkUp6)
+	} else {
+		applymovement (LOCALID_FARM_ARGUS, Common_Movement_WalkLeft)
+		waitmovement (0)
+		applymovement (LOCALID_FARM_ARGUS, Common_Movement_WalkUp7)
+	} 
+	waitmovement (0)
+	removeobject (LOCALID_FARM_ARGUS)
+	setobjectxyperm (LOCALID_FARM_ARGUS, 64, 33)
+	setobjectmovementtype (LOCALID_FARM_ARGUS, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_FARM_ARGUS)
+	setvar (VAR_ULYSSES_STATE, 25)
+	releaseall
+	end
+}
+	

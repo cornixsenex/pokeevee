@@ -4,9 +4,13 @@
 mapscripts BikeMapE_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
-		//Setup Ulysses with the Swineherda
+		//Setup Ulysses with the Swineherd
 		if (var(VAR_ULYSSES_STATE) == 23 || var(VAR_ULYSSES_STATE) == 24) {
 			call (BikeMapE_Script_SetupUlyssesSceneIntro)
+		}
+		//Ulysses post Argus
+		if (var(VAR_ULYSSES_STATE) == 25) {
+			call (BikeMapE_Script_SetupUlyssesPostArgus)
 		}
 	}
 			
@@ -27,6 +31,22 @@ script BikeMapE_Script_SetupUlyssesSceneIntro {
 
 	return
 }
+
+script BikeMapE_Script_SetupUlyssesPostArgus {
+	setobjectxy (LOCALID_BIKEMAPE_ULYSSES, 75, 36)
+	setobjectmovementtype (LOCALID_BIKEMAPE_ULYSSES, MOVEMENT_TYPE_FACE_UP)
+	
+	setobjectxy (LOCALID_BIKEMAPE_SWINEHERD1, 74, 35)
+	setobjectmovementtype (LOCALID_BIKEMAPE_SWINEHERD1, MOVEMENT_TYPE_FACE_DOWN)
+	
+	setobjectxy (LOCALID_BIKEMAPE_SWINEHERD2, 76, 35)
+	setobjectmovementtype (LOCALID_BIKEMAPE_SWINEHERD2, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxy (LOCALID_BIKEMAPE_ARGUS, 75, 35)
+	setobjectmovementtype (LOCALID_BIKEMAPE_ARGUS, MOVEMENT_TYPE_FACE_DOWN)
+	return
+}
+
 
 script BikeMapE_Script_UlyssesSceneIntroA {
 	setvar (VAR_TEMP_6, 1)
@@ -91,6 +111,61 @@ script BikeMapE_Script_UlyssesSceneIntro {
 	end
 }
 
+script BikeMapE_Script_UlyssesScenePostArgusA {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight2)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	call (BikeMapE_Script_UlyssesPostArgus)
+}
+
+script BikeMapE_Script_UlyssesScenePostArgusB {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+	waitmovement (0)
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+	waitmovement (0)
+	call (BikeMapE_Script_UlyssesPostArgus)
+}
+
+script BikeMapE_Script_UlyssesScenePostArgusC {
+	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp2)
+	waitmovement (0)
+	call (BikeMapE_Script_UlyssesPostArgus)
+}
+
+script BikeMapE_Script_UlyssesPostArgus {
+	//SH: Thanks he's so happy back
+	load_field_pic (FIELD_PIC_SWINEHERD, 190, 98)
+	msgbox (BikeMapE_Text_UlyssesPostArgus_Swineherd)	
+	destroy_field_pic (FIELD_PIC_SWINEHERD)
+	//U:  Of course happy to help my duty after the care you showed me
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (BikeMapE_Text_UlyssesPostArgus_Ulysses1)
+	//U et player face
+	applymovement (LOCALID_BIKEMAPE_ULYSSES, Common_Movement_FaceRight)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+	waitmovement (0)
+	//U: Well im leaving now thanks for the help see you at Nestor's 
+	msgbox (BikeMapE_Text_UlyssesPostArgus_Ulysses2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	//U exit
+	applymovement (LOCALID_BIKEMAPE_ULYSSES, Common_Movement_WalkDown6)
+	waitmovement (0)
+	//remove U
+	removeobject (LOCALID_BIKEMAPE_ULYSSES)
+	setobjectxy (LOCALID_BIKEMAPE_ULYSSES, 0, 0)
+	setobjectmovementtype (LOCALID_BIKEMAPE_ULYSSES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_BIKEMAPE_ULYSSES)
+	//set vars
+	setvar (VAR_ULYSSES_STATE, 26)
+	//fin
+}
+
 script BikeMapE_Script_SwineHerd1 {
 	faceplayer
 	if (var(VAR_ULYSSES_STATE < 24)) {
@@ -148,6 +223,18 @@ text BikeMapE_Text_UlyssesIntro1  {
 }
 
 text BikeMapE_Text_UlyssesIntro2  {
+	format("")
+}
+
+text BikeMapE_Text_UlyssesPostArgus_Swineherd {
+	format("")
+}
+
+text BikeMapE_Text_UlyssesPostArgus_Ulysses1 {
+	format("")
+}
+
+text BikeMapE_Text_UlyssesPostArgus_Ulysses2 {
 	format("")
 }
 

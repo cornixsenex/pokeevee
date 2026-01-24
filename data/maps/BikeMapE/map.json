@@ -205,6 +205,33 @@
       "var": "VAR_ULYSSES_STATE",
       "var_value": "23",
       "script": "BikeMapE_Script_UlyssesSceneIntroC"
+    },
+    {
+      "type": "trigger",
+      "x": 74,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "25",
+      "script": "BikeMapE_Script_UlyssesScenePostArgusA"
+    },
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "25",
+      "script": "BikeMapE_Script_UlyssesScenePostArgusB"
+    },
+    {
+      "type": "trigger",
+      "x": 76,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "25",
+      "script": "BikeMapE_Script_UlyssesScenePostArgusC"
     }
   ],
   "bg_events": []
