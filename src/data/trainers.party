@@ -3476,10 +3476,10 @@ Roselia
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_COLE ===
-Name: COLE
-Class: Kindler
-Pic: Kindler
+=== TRAINER_ULYSSES ===
+Name: ULYSSES
+Class: Brave 
+Pic: Brock
 Gender: Male
 Music: Hiker
 Double Battle: No

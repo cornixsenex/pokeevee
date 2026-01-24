@@ -204,10 +204,10 @@
 #define TRAINER_KLYTMNESTRA                 198
 #define TRAINER_LOTUS_HEAD                  199
 #define TRAINER_CIRCE                       200
+#define TRAINER_ULYSSES                     201
 
 //BREAK// 
 
-#define TRAINER_COLE                        201
 #define TRAINER_JEFF                        202
 #define TRAINER_AXLE                        203
 #define TRAINER_JACE                        204

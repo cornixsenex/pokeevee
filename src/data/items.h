@@ -15831,6 +15831,22 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PinapBerry,
         .iconPalette = gItemIconPalette_PinapBerry,
     },
+    
+	[ITEM_PENELOPE_RING] =
+    {
+        .name = ITEM_NAME("Penelope's Ring"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A pretty ring\n"
+            "with a huge\n"
+            "gemstone."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_ZRing,
+        .iconPalette = gItemIconPalette_ZRing,
+    },
 
 ///	KUSTOM ITEMS END ///
 

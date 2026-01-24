@@ -9138,14 +9138,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 3479
-    [DIFFICULTY_NORMAL][TRAINER_COLE] =
+    [DIFFICULTY_NORMAL][TRAINER_ULYSSES] =
     {
 #line 3480
-        .trainerName = _("COLE"),
+        .trainerName = _("ULYSSES"),
 #line 3481
-        .trainerClass = TRAINER_CLASS_KINDLER,
+        .trainerClass = TRAINER_CLASS_BRAVE,
 #line 3482
-        .trainerPic = TRAINER_PIC_KINDLER,
+        .trainerPic = TRAINER_PIC_BROCK,
         .encounterMusic_gender =
 #line 3484
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -9154,7 +9154,7 @@ F_TRAINER_FEMALE |
 #line 3486
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 0
-        .trainerBackPic = TRAINER_PIC_KINDLER,
+        .trainerBackPic = TRAINER_PIC_BROCK,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {

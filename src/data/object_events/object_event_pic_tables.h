@@ -2089,7 +2089,7 @@ static const struct SpriteFrameImage sPicTable_BrockLyingDown[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_OldManFirered[] = {
-    obj_frame_tiles(gObjectEventPic_OldManFirered),
+    overworld_ascending_frames(gObjectEventPic_OldManFirered, 2, 4),
 };
 
 

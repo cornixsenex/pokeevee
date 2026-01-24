@@ -193,8 +193,8 @@
       "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 5,
-      "movement_range_y": 2,
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -255,6 +255,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_TUCSON_DOORMAN",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 21,
       "y": 17,
@@ -264,7 +265,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Tucson_Script_Doorman",
       "flag": "0"
     },
     {
@@ -308,16 +309,16 @@
     },
     {
       "local_id": "LOCALID_TUCSON_BEGGAR",
-      "graphics_id": "OBJ_EVENT_GFX_MAUVILLE_OLD_MAN_2",
-      "x": 5,
-      "y": 0,
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_FIRERED",
+      "x": 93,
+      "y": 28,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Tucson_Script_Beggar",
       "flag": "0"
     }
   ],

@@ -161,6 +161,8 @@
 																// 24: Ulysses at Swineherd after intro, setup Argus in the woods
 																// 25: After Argus returned. Ulysses post swineherd trigger
 																// 26: After swineherd, Ulysses as beggar, Penelope loses ring
+																// 27: Post ulysses battle. Ulysses at the doorway
+																// 28: After doorway. Ulysses in Nestor's House (Fin!)
 																// NOTE: Update '69' where applicable (rn nowhere I know of)
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var

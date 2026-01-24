@@ -5151,8 +5151,6 @@ $(OBJEVENTGFXDIR)/people/old_man_firered.4bpp: %.4bpp: %.png
 
 
 
-
-
 $(OBJEVENTGFXDIR)/pokemon/species/001.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

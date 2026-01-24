@@ -46,6 +46,15 @@ mapscripts Tucson_MapScripts {
 			call (Tucson_Script_HideNestor)
 		}
 
+		//Ulysses as Beggar
+		if (var(VAR_ULYSSES_STATE) == 26) {
+			call (Tucson_Script_SetupBeggar)
+		}
+		//Ulysses at doorway
+		if (var(VAR_ULYSSES_STATE) == 27) {
+			call (Tucson_Script_SetupUlyssesDoorway)
+		}
+
 	}
 
 	//Set player visibility / facing direction
@@ -88,7 +97,7 @@ script Tucson_Script_ShowNestorHousePreWedding {
 	}
 	//Aeneas
     if (var(VAR_AENEID_STATE) > 11) {
-		setobjectxyperm (LOCALID_TUCSON_AENEAS, 22, 10)
+		setobjectxyperm (LOCALID_TUCSON_AENEAS, 24, 10)
 		setobjectmovementtype (LOCALID_TUCSON_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
     }
 	
@@ -99,6 +108,10 @@ script Tucson_Script_ShowNestorHousePreWedding {
 	}
 
 	//Ulysses
+	if (var(VAR_ULYSSES_STATE) > 27) {
+		setobjectxyperm (LOCALID_TUCSON_ULYSSES, 40, 17)
+		setobjectmovementtype (LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND)
+	}
 
 	return
 }
@@ -106,6 +119,20 @@ script Tucson_Script_ShowNestorHousePreWedding {
 script Tucson_Script_FacePlayerNorth {
 	turnobject (OBJ_EVENT_ID_PLAYER, DIR_NORTH)
 	end
+}
+
+script Tucson_Script_SetupBeggar {
+	setobjectxyperm (LOCALID_TUCSON_BEGGAR, 93, 28)
+	setobjectmovementtype (LOCALID_TUCSON_BEGGAR, MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT)
+	return
+}
+
+script Tucson_Script_SetupUlyssesDoorway {
+	setobjectxyperm (LOCALID_TUCSON_ULYSSES, 21, 18)
+	setobjectmovementtype (LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_UP)
+
+	setobjectmovementtype (LOCALID_TUCSON_DOORMAN, MOVEMENT_TYPE_FACE_DOWN)
+	return
 }
 
 script Tucson_Script_ShowDioscuri {
@@ -373,6 +400,100 @@ script Tucson_Script_Hector {
 	end
 }
 
+script Tucson_Script_Beggar {
+	faceplayer
+	showmoneybox (18, 0)
+	msgbox (Tucson_Text_Beggar1, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		removemoney (1)
+		updatemoneybox
+		playse (SE_SHOP)
+		waitse
+		msgbox (Tucson_Text_Beggar2)
+		checkitem (ITEM_PENELOPE_RING)
+		if (var(VAR_RESULT) == TRUE) {
+			call (Tucson_Script_UlyssesFight)
+		}
+	}
+	hidemoneybox
+	closemessage
+	unfaceplayer
+	end
+}
+
+script Tucson_Script_Doorman {
+	//If during ulysses at tdoorway do doorway
+	//If ante helen 
+	//elif during helen
+	//else post helen
+}
+
+script Tucson_Script_UlyssesFight {
+	applymovement (LOCALID_TUCSON_BEGGAR, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//B: Where did you find that ring? Give it here. My precious! Penelope!
+	msgbox (Tucson_Text_BeggarUlysses)
+	closemessage 
+	//Just do a fade reveal U
+	fadescreenswapbuffers (FADE_TO_BLACK)
+	removeobject (LOCALID_TUCSON_BEGGAR)
+	setobjectxyperm (LOCALID_TUCSON_BEGGAR, 0, 0)
+	setobjectmovementtype (LOCALID_TUCSON_BEGGAR, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_TUCSON_BEGGAR)
+	removeobject (LOCALID_TUCSON_ULYSSES)
+	setobjectxyperm (LOCALID_TUCSON_ULYSSES, 93, 28)
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	switch (var(VAR_RESULT)) {
+		case DIR_NORTH:
+			setobjectmovementtype (LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_DOWN)
+		case DIR_WEST:
+			setobjectmovementtype (LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT)
+		case DIR_EAST:
+			setobjectmovementtype (LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_LEFT)
+		default:
+			setobjectmovementtype (LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_UP)
+	}
+	addobject (LOCALID_TUCSON_ULYSSES)
+	fadescreenswapbuffers (FADE_FROM_BLACK)
+	//U: you think you can Cuckold the brilliant Ulysses! You'll pay for this!
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (Tucson_Text_UlyssesPre)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	//Battle
+	trainerbattle_no_intro (TRAINER_ULYSSES, Tucson_Text_UlyssesLost)
+	//U: Fine fine I'll go to Nestor's house but just give me that ring back
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (Tucson_Text_UlyssesPost1)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	//give ring
+	removeitem (ITEM_PENELOPE_RING)
+	msgbox (Tucson_Text_GaveRing)
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (Tucson_Text_UlyssesPost2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	//Exit U
+	specialvar (VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_EAST) {
+		applymovement (LOCALID_TUCSON_ULYSSES, Common_Movement_WalkDown)
+		waitmovement (0)
+	}
+	applymovement (LOCALID_TUCSON_ULYSSES, Common_Movement_WalkLeft9)
+	waitmovement (0)
+	//update U position (setup doorway)
+	removeobject (LOCALID_TUCSON_ULYSSES)
+	removeobject (LOCALID_TUCSON_DOORMAN)
+	call (Tucson_Script_SetupUlyssesDoorway)
+	addobject (LOCALID_TUCSON_ULYSSES)
+	addobject (LOCALID_TUCSON_DOORMAN)
+	//set var
+	setvar (VAR_ULYSSES_STATE, 27)
+	//fin
+	end
+}
+
+
 text Tucson_Text_Nestor_Intro {
 	format("I've lived a happy and eventful life but now I see my end approaching fast. Without a son to inherit my wealth I must rely on Helen, my daughter, to give birth to a legitimate heir and to that end I've arranged a marriage between her and one of the two suitors: Menelaus, that brilliant business man, and the absent minded pretty Paris.")
 }
@@ -472,3 +593,37 @@ text Tucson_Text_Menelaus_OnAgamemnon {
 text Tucson_Text_Menelaus_OnUlysses {
 	format("Cunning Ulysses, who made great riches with me in the business industry, lives with wife and son on his private island.")
 }
+
+text Tucson_Text_Beggar1 {
+	format("Oh please sir, help! A coin for this beggar?")
+}
+
+text Tucson_Text_Beggar2 {
+	format("Blessings on you from he who governs all!")
+}
+
+text Tucson_Text_BeggarUlysses {
+	format("")
+}
+
+text Tucson_Text_UlyssesPre {
+	format("")
+}
+
+text Tucson_Text_UlyssesLost {
+	format("")
+}
+
+text Tucson_Text_UlyssesPost1 {
+	format("")
+}
+
+text Tucson_Text_GaveRing {
+	format("{PLAYER} gave Ulysses Penelope's Ring")
+}
+
+text Tucson_Text_UlyssesPost2 {
+	format("")
+}
+
+
