@@ -597,6 +597,9 @@ const u16 gTrainerPalette_Zelda[] = INCBIN_U16("graphics/trainers/palettes/zelda
 const u32 gTrainerFrontPic_Mom[] = INCBIN_U32("graphics/trainers/front_pics/mom.4bpp.smol");
 const u16 gTrainerPalette_Mom[] = INCBIN_U16("graphics/trainers/palettes/mom.gbapal");
 
+const u32 gTrainerFrontPic_Butler[] = INCBIN_U32("graphics/trainers/front_pics/butler.4bpp.smol");
+const u16 gTrainerPalette_Butler[] = INCBIN_U16("graphics/trainers/palettes/butler.gbapal");
+
 
 
 // The first two parameters invoke a front pic and palette by
@@ -810,6 +813,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_SHEIK, gTrainerFrontPic_Sheik, gTrainerPalette_Sheik),               
     TRAINER_SPRITE(TRAINER_PIC_ZELDA, gTrainerFrontPic_Zelda, gTrainerPalette_Zelda),               
     TRAINER_SPRITE(TRAINER_PIC_MOM, gTrainerFrontPic_Mom, gTrainerPalette_Mom),               
+    TRAINER_SPRITE(TRAINER_PIC_BUTLER, gTrainerFrontPic_Butler, gTrainerPalette_Butler),               
 	//END KUSTOM TRAINER SPRITES
 };
 

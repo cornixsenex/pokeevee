@@ -2092,6 +2092,10 @@ static const struct SpriteFrameImage sPicTable_OldManFirered[] = {
     overworld_ascending_frames(gObjectEventPic_OldManFirered, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Butler[] = {
+    overworld_ascending_frames(gObjectEventPic_Butler, 2, 4),
+};
+
 
 /// BREAK ///
 

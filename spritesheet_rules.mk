@@ -5149,6 +5149,9 @@ $(OBJEVENTGFXDIR)/people/olympia.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/old_man_firered.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/butler.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/pokemon/species/001.4bpp: %.4bpp: %.png

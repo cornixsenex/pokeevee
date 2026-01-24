@@ -634,6 +634,9 @@ const u16 gObjectEventPal_BrockLyingDown[] = INCBIN_U16("graphics/object_events/
 const u32 gObjectEventPic_OldManFirered[] = INCBIN_U32("graphics/object_events/pics/people/old_man_firered.4bpp"); 
 const u16 gObjectEventPal_OldManFirered[] = INCBIN_U16("graphics/object_events/pics/people/old_man_firered.gbapal");    
 
+const u32 gObjectEventPic_Butler[] = INCBIN_U32("graphics/object_events/pics/people/butler.4bpp"); 
+const u16 gObjectEventPal_Butler[] = INCBIN_U16("graphics/object_events/pics/people/butler.gbapal");    
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
