@@ -631,6 +631,9 @@ const u16 gObjectEventPal_Zelda[] = INCBIN_U16("graphics/object_events/pics/peop
 const u32 gObjectEventPic_BrockLyingDown[] = INCBIN_U32("graphics/object_events/pics/people/brock_lying_down.4bpp"); 
 const u16 gObjectEventPal_BrockLyingDown[] = INCBIN_U16("graphics/object_events/palettes/brock_lying_down.gbapal");    
 
+const u32 gObjectEventPic_OldManFirered[] = INCBIN_U32("graphics/object_events/pics/people/old_man_firered.4bpp"); 
+const u16 gObjectEventPal_OldManFirered[] = INCBIN_U16("graphics/object_events/pics/people/old_man_firered.gbapal");    
+
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");

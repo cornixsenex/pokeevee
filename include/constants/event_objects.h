@@ -337,9 +337,10 @@
 #define OBJ_EVENT_GFX_ZELDA   		             329
 #define OBJ_EVENT_GFX_APRICORN_TREE              330 //rhh
 #define OBJ_EVENT_GFX_BROCK_LYING_DOWN   		 331
+#define OBJ_EVENT_GFX_OLD_MAN_FIRERED   		 332
 
 //UPDATE MAX
-#define NUM_OBJ_EVENT_GFX                        332
+#define NUM_OBJ_EVENT_GFX                        333
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
@@ -604,6 +605,7 @@
 #define OBJ_EVENT_PAL_TAG_SHEIK                   0x1195
 #define OBJ_EVENT_PAL_TAG_ZELDA                   0x1196
 #define OBJ_EVENT_PAL_TAG_BROCK_LYING_DOWN        0x1197
+#define OBJ_EVENT_PAL_TAG_OLD_MAN_FIRERED         0x1198
 
 //MAX is (prolly) 0x11FF
 

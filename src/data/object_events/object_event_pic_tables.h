@@ -2074,6 +2074,7 @@ static const struct SpriteFrameImage sPicTable_Zelda[] = {
     obj_frame_tiles(gObjectEventPic_Zelda),
 };
 
+
 //NOTE THIS ONE IS DIFFERENT LYINGDOWN DOES NOT MOVE!!!!!!!!!
 static const struct SpriteFrameImage sPicTable_BrockLyingDown[] = {
     overworld_frame(gObjectEventPic_BrockLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
@@ -2085,6 +2086,10 @@ static const struct SpriteFrameImage sPicTable_BrockLyingDown[] = {
     overworld_frame(gObjectEventPic_BrockLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
     overworld_frame(gObjectEventPic_BrockLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
     overworld_frame(gObjectEventPic_BrockLyingDown, 4, 4, 0),  ///DID YOU READ THE NOTE?
+};
+
+static const struct SpriteFrameImage sPicTable_OldManFirered[] = {
+    obj_frame_tiles(gObjectEventPic_OldManFirered),
 };
 
 
