@@ -1,1 +1,153 @@
-mapscripts BikeMapE_MapScripts {}
+
+//TEMP_VAR_6: Switch on Player position for Ulysses Scene
+
+mapscripts BikeMapE_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION {
+		//Setup Ulysses with the Swineherda
+		if (var(VAR_ULYSSES_STATE) == 23 || var(VAR_ULYSSES_STATE) == 24) {
+			call (BikeMapE_Script_SetupUlyssesSceneIntro)
+		}
+	}
+			
+}
+
+script BikeMapE_Script_SetupUlyssesSceneIntro {
+	setobjectxy (LOCALID_BIKEMAPE_ULYSSES, 75, 36)
+	setobjectmovementtype (LOCALID_BIKEMAPE_ULYSSES, MOVEMENT_TYPE_FACE_UP)
+	
+	setobjectxy (LOCALID_BIKEMAPE_SWINEHERD1, 74, 35)
+	setobjectmovementtype (LOCALID_BIKEMAPE_SWINEHERD1, MOVEMENT_TYPE_FACE_DOWN)
+	
+	setobjectxy (LOCALID_BIKEMAPE_SWINEHERD2, 76, 35)
+	setobjectmovementtype (LOCALID_BIKEMAPE_SWINEHERD2, MOVEMENT_TYPE_FACE_DOWN)
+
+	setobjectxy (LOCALID_BIKEMAPE_ARGUS, 0, 0)
+	setobjectmovementtype (LOCALID_BIKEMAPE_ARGUS, MOVEMENT_TYPE_INVISIBLE)
+
+	return
+}
+
+script BikeMapE_Script_UlyssesSceneIntroA {
+	setvar (VAR_TEMP_6, 1)
+	call (BikeMapE_Script_UlyssesSceneIntro)
+}
+
+script BikeMapE_Script_UlyssesSceneIntroB {
+	setvar (VAR_TEMP_6, 2)
+	call (BikeMapE_Script_UlyssesSceneIntro)
+}
+
+script BikeMapE_Script_UlyssesSceneIntroC {
+	setvar (VAR_TEMP_6, 3)
+	call (BikeMapE_Script_UlyssesSceneIntro)
+}
+
+script BikeMapE_Script_UlyssesSceneIntro {
+	//U:Terrible. Something must be done!
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (BikeMapE_Text_UlyssesIntro1)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	//P to U (switch on VAR_TEMP_6)
+	switch (var(VAR_TEMP_6))  {
+		case 1:
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+			waitmovement (0)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+		case 2:
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+		case 3:
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
+			waitmovement (0)
+			applymovement (LOCALID_PLAYER, Common_Movement_WalkRight)
+			waitmovement (0)
+			applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+		default:
+			msgbox ("VAR_TEMP_6 OOB")
+			closemessage
+			end
+	}
+	waitmovement (0)
+	//Alert U 
+	applymovement (LOCALID_BIKEMAPE_ULYSSES, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//Face U
+	applymovement (LOCALID_BIKEMAPE_ULYSSES, Common_Movement_FaceDown)
+	waitmovement (0)
+	//These swineherds were kind to me but Argus is lost. We must find him
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (BikeMapE_Text_UlyssesIntro2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	closemessage
+	//Reface U
+	applymovement (LOCALID_BIKEMAPE_ULYSSES, Common_Movement_FaceUp)
+	waitmovement (0)
+	//set var
+	setvar (VAR_ULYSSES_STATE, 24)	
+	//fin
+	end
+}
+
+script BikeMapE_Script_SwineHerd1 {
+	faceplayer
+	if (var(VAR_ULYSSES_STATE < 24)) {
+		msgbox (BikeMapE_Text_SwineHerd1_AnteUlysses)
+	} elif (var(VAR_ULYSSES_STATE) == 24) {
+		msgbox (BikeMapE_Text_SwineHerd1_DuringUlysses)
+	} else {
+		msgbox (BikeMapE_Text_SwineHerd1_PostUlysses)
+	}
+	closemessage
+	unfaceplayer
+	end
+}
+
+script BikeMapE_Script_SwineHerd2 {
+	faceplayer
+	if (var(VAR_ULYSSES_STATE < 24)) {
+		msgbox (BikeMapE_Text_SwineHerd2_AnteUlysses)
+	} elif (var(VAR_ULYSSES_STATE) == 24) {
+		msgbox (BikeMapE_Text_SwineHerd2_DuringUlysses)
+	} else {
+		msgbox (BikeMapE_Text_SwineHerd2_PostUlysses)
+	}
+	closemessage
+	unfaceplayer
+	end
+}
+
+text BikeMapE_Text_SwineHerd1_AnteUlysses {
+	format("")
+}
+
+text BikeMapE_Text_SwineHerd1_DuringUlysses {
+	format("")
+}
+
+text BikeMapE_Text_SwineHerd1_PostUlysses {
+	format("")
+}
+
+text BikeMapE_Text_SwineHerd2_AnteUlysses {
+	format("")
+}
+
+text BikeMapE_Text_SwineHerd2_DuringUlysses {
+	format("")
+}
+
+text BikeMapE_Text_SwineHerd2_PostUlysses {
+	format("")
+}
+
+text BikeMapE_Text_UlyssesIntro1  {
+	format("")
+}
+
+text BikeMapE_Text_UlyssesIntro2  {
+	format("")
+}
+

@@ -39,7 +39,129 @@
       "direction": "down"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 69,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_Script_Swinub",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 67,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_Script_Swinub",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 71,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_Script_Swinub",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 80,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_Script_Swinub",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 84,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_Script_Swinub",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_BIKEMAPE_SWINEHERD1",
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 69,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BikeMapE_Script_SwineHerd1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_BIKEMAPE_SWINEHERD2",
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 74,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BikeMapE_Script_SwineHerd2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_BIKEMAPE_ULYSSES",
+      "graphics_id": "OBJ_EVENT_GFX_BROCK",
+      "x": 74,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_BIKEMAPE_ARGUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROWLITHE)",
+      "x": 73,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_Script_Growlithe",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
       "x": 125,
@@ -56,6 +178,34 @@
       "dest_warp_id": "5"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 74,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "23",
+      "script": "BikeMapE_Script_UlyssesSceneIntroA"
+    },
+    {
+      "type": "trigger",
+      "x": 75,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "23",
+      "script": "BikeMapE_Script_UlyssesSceneIntroB"
+    },
+    {
+      "type": "trigger",
+      "x": 76,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_ULYSSES_STATE",
+      "var_value": "23",
+      "script": "BikeMapE_Script_UlyssesSceneIntroC"
+    }
+  ],
   "bg_events": []
 }
