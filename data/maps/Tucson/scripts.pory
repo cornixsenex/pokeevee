@@ -423,6 +423,9 @@ script Tucson_Script_Beggar {
 
 script Tucson_Script_Doorman {
 	//If during ulysses at tdoorway do doorway
+	if (var(VAR_ULYSSES_STATE) == 27) {
+		call (Tucson_Script_UlyssesDoorway)
+	}
 	//If ante helen 
 	//elif during helen
 	//else post helen
@@ -491,6 +494,28 @@ script Tucson_Script_UlyssesFight {
 	setvar (VAR_ULYSSES_STATE, 27)
 	//fin
 	end
+}
+
+script Tucson_Script_UlyssesDoorway {
+	//D: Be gone. The house of Nestor is not open to beggars.
+	//U: Beggar? I am the mighty lord Ulysses invited here for the wedding
+	//alert D
+	//Excuse me sir, I was decieved by your disheveled appearance. Please come in. We have been expecting you
+	//U exit right
+	//reset U position
+	//reset D face
+	//set var
+	setvar (VAR_ULYSSES_STATE, 28)
+	//fin
+	end
+}
+
+script Tucson_Script_Ulysses {
+	//Doorway scene
+	if (var(VAR_ULYSSES_STATE) == 27) {
+		call (Tucson_Script_UlyssesDoorway)
+	}
+
 }
 
 

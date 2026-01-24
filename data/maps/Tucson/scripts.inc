@@ -645,122 +645,148 @@ Tucson_Script_Beggar_4:
 
 
 Tucson_Script_Doorman::
+# 426 "data/maps/Tucson/scripts.pory"
+	compare VAR_ULYSSES_STATE, 27
+	goto_if_eq Tucson_Script_Doorman_1
+	return
+
+Tucson_Script_Doorman_1:
+# 427 "data/maps/Tucson/scripts.pory"
+	call Tucson_Script_UlyssesDoorway
 	return
 
 
 Tucson_Script_UlyssesFight::
-# 432 "data/maps/Tucson/scripts.pory"
-	applymovement LOCALID_TUCSON_BEGGAR, Common_Movement_ExclamationMark
-# 433 "data/maps/Tucson/scripts.pory"
-	waitmovement 0
 # 435 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_BeggarUlysses
+	applymovement LOCALID_TUCSON_BEGGAR, Common_Movement_ExclamationMark
 # 436 "data/maps/Tucson/scripts.pory"
-	closemessage
+	waitmovement 0
 # 438 "data/maps/Tucson/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	msgbox Tucson_Text_BeggarUlysses
 # 439 "data/maps/Tucson/scripts.pory"
-	removeobject LOCALID_TUCSON_BEGGAR
-# 440 "data/maps/Tucson/scripts.pory"
-	setobjectxyperm LOCALID_TUCSON_BEGGAR, 0, 0
+	closemessage
 # 441 "data/maps/Tucson/scripts.pory"
-	setobjectmovementtype LOCALID_TUCSON_BEGGAR, MOVEMENT_TYPE_INVISIBLE
+	fadescreenswapbuffers FADE_TO_BLACK
 # 442 "data/maps/Tucson/scripts.pory"
-	addobject LOCALID_TUCSON_BEGGAR
+	removeobject LOCALID_TUCSON_BEGGAR
 # 443 "data/maps/Tucson/scripts.pory"
-	removeobject LOCALID_TUCSON_ULYSSES
+	setobjectxyperm LOCALID_TUCSON_BEGGAR, 0, 0
 # 444 "data/maps/Tucson/scripts.pory"
-	setobjectxyperm LOCALID_TUCSON_ULYSSES, 93, 28
+	setobjectmovementtype LOCALID_TUCSON_BEGGAR, MOVEMENT_TYPE_INVISIBLE
 # 445 "data/maps/Tucson/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
+	addobject LOCALID_TUCSON_BEGGAR
 # 446 "data/maps/Tucson/scripts.pory"
-	switch VAR_RESULT
+	removeobject LOCALID_TUCSON_ULYSSES
 # 447 "data/maps/Tucson/scripts.pory"
-	case DIR_NORTH, Tucson_Script_UlyssesFight_3
+	setobjectxyperm LOCALID_TUCSON_ULYSSES, 93, 28
+# 448 "data/maps/Tucson/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 449 "data/maps/Tucson/scripts.pory"
+	switch VAR_RESULT
+# 450 "data/maps/Tucson/scripts.pory"
+	case DIR_NORTH, Tucson_Script_UlyssesFight_3
+# 452 "data/maps/Tucson/scripts.pory"
 	case DIR_WEST, Tucson_Script_UlyssesFight_4
-# 451 "data/maps/Tucson/scripts.pory"
-	case DIR_EAST, Tucson_Script_UlyssesFight_5
 # 454 "data/maps/Tucson/scripts.pory"
+	case DIR_EAST, Tucson_Script_UlyssesFight_5
+# 457 "data/maps/Tucson/scripts.pory"
 	setobjectmovementtype LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_UP
 Tucson_Script_UlyssesFight_1:
-# 456 "data/maps/Tucson/scripts.pory"
-	addobject LOCALID_TUCSON_ULYSSES
-# 457 "data/maps/Tucson/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
 # 459 "data/maps/Tucson/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+	addobject LOCALID_TUCSON_ULYSSES
 # 460 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_UlyssesPre
-# 461 "data/maps/Tucson/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 462 "data/maps/Tucson/scripts.pory"
-	closemessage
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 463 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_UlyssesPre
 # 464 "data/maps/Tucson/scripts.pory"
-	trainerbattle_no_intro TRAINER_ULYSSES, Tucson_Text_UlyssesLost
-# 466 "data/maps/Tucson/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 467 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_UlyssesPost1
-# 468 "data/maps/Tucson/scripts.pory"
 	destroy_field_pic FIELD_PIC_ULYSSES
-# 470 "data/maps/Tucson/scripts.pory"
-	removeitem ITEM_PENELOPE_RING
-# 471 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_GaveRing
-# 472 "data/maps/Tucson/scripts.pory"
-	load_field_pic FIELD_PIC_ULYSSES, 190, 98
-# 473 "data/maps/Tucson/scripts.pory"
-	msgbox Tucson_Text_UlyssesPost2
-# 474 "data/maps/Tucson/scripts.pory"
-	destroy_field_pic FIELD_PIC_ULYSSES
-# 475 "data/maps/Tucson/scripts.pory"
+# 465 "data/maps/Tucson/scripts.pory"
 	closemessage
+# 467 "data/maps/Tucson/scripts.pory"
+	trainerbattle_no_intro TRAINER_ULYSSES, Tucson_Text_UlyssesLost
+# 469 "data/maps/Tucson/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 470 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_UlyssesPost1
+# 471 "data/maps/Tucson/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
+# 473 "data/maps/Tucson/scripts.pory"
+	removeitem ITEM_PENELOPE_RING
+# 474 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_GaveRing
+# 475 "data/maps/Tucson/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 476 "data/maps/Tucson/scripts.pory"
+	msgbox Tucson_Text_UlyssesPost2
 # 477 "data/maps/Tucson/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
+	destroy_field_pic FIELD_PIC_ULYSSES
 # 478 "data/maps/Tucson/scripts.pory"
+	closemessage
+# 480 "data/maps/Tucson/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 481 "data/maps/Tucson/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq Tucson_Script_UlyssesFight_8
 Tucson_Script_UlyssesFight_7:
-# 482 "data/maps/Tucson/scripts.pory"
-	applymovement LOCALID_TUCSON_ULYSSES, Common_Movement_WalkLeft9
-# 483 "data/maps/Tucson/scripts.pory"
-	waitmovement 0
 # 485 "data/maps/Tucson/scripts.pory"
-	removeobject LOCALID_TUCSON_ULYSSES
+	applymovement LOCALID_TUCSON_ULYSSES, Common_Movement_WalkLeft9
 # 486 "data/maps/Tucson/scripts.pory"
-	removeobject LOCALID_TUCSON_DOORMAN
-# 487 "data/maps/Tucson/scripts.pory"
-	call Tucson_Script_SetupUlyssesDoorway
+	waitmovement 0
 # 488 "data/maps/Tucson/scripts.pory"
-	addobject LOCALID_TUCSON_ULYSSES
+	removeobject LOCALID_TUCSON_ULYSSES
 # 489 "data/maps/Tucson/scripts.pory"
-	addobject LOCALID_TUCSON_DOORMAN
+	removeobject LOCALID_TUCSON_DOORMAN
+# 490 "data/maps/Tucson/scripts.pory"
+	call Tucson_Script_SetupUlyssesDoorway
 # 491 "data/maps/Tucson/scripts.pory"
+	addobject LOCALID_TUCSON_ULYSSES
+# 492 "data/maps/Tucson/scripts.pory"
+	addobject LOCALID_TUCSON_DOORMAN
+# 494 "data/maps/Tucson/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 27
 	end
 
 Tucson_Script_UlyssesFight_3:
-# 448 "data/maps/Tucson/scripts.pory"
+# 451 "data/maps/Tucson/scripts.pory"
 	setobjectmovementtype LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_DOWN
 	goto Tucson_Script_UlyssesFight_1
 
 Tucson_Script_UlyssesFight_4:
-# 450 "data/maps/Tucson/scripts.pory"
+# 453 "data/maps/Tucson/scripts.pory"
 	setobjectmovementtype LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_RIGHT
 	goto Tucson_Script_UlyssesFight_1
 
 Tucson_Script_UlyssesFight_5:
-# 452 "data/maps/Tucson/scripts.pory"
+# 455 "data/maps/Tucson/scripts.pory"
 	setobjectmovementtype LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_FACE_LEFT
 	goto Tucson_Script_UlyssesFight_1
 
 Tucson_Script_UlyssesFight_8:
-# 479 "data/maps/Tucson/scripts.pory"
+# 482 "data/maps/Tucson/scripts.pory"
 	applymovement LOCALID_TUCSON_ULYSSES, Common_Movement_WalkDown
-# 480 "data/maps/Tucson/scripts.pory"
+# 483 "data/maps/Tucson/scripts.pory"
 	waitmovement 0
 	goto Tucson_Script_UlyssesFight_7
+
+
+Tucson_Script_UlyssesDoorway::
+# 508 "data/maps/Tucson/scripts.pory"
+	setvar VAR_ULYSSES_STATE, 28
+	end
+
+
+Tucson_Script_Ulysses::
+# 515 "data/maps/Tucson/scripts.pory"
+	compare VAR_ULYSSES_STATE, 27
+	goto_if_eq Tucson_Script_Ulysses_1
+	return
+
+Tucson_Script_Ulysses_1:
+# 516 "data/maps/Tucson/scripts.pory"
+	call Tucson_Script_UlyssesDoorway
+	return
 
 
 Tucson_Script_Helen_Text_0:
@@ -798,7 +824,7 @@ Tucson_Script_Menelaus_Text_5:
 	.string "NESTOR STATE OOB$"
 
 Tucson_Text_Nestor_Intro::
-# 497 "data/maps/Tucson/scripts.pory"
+# 522 "data/maps/Tucson/scripts.pory"
 	.string "I've lived a happy and eventful life but\n"
 	.string "now I see my end approaching fast.\l"
 	.string "Without a son to inherit my wealth I\l"
@@ -810,21 +836,21 @@ Tucson_Text_Nestor_Intro::
 	.string "and the absent minded pretty Paris.$"
 
 Tucson_Text_Nestor1::
-# 501 "data/maps/Tucson/scripts.pory"
+# 526 "data/maps/Tucson/scripts.pory"
 	.string "My daughter Helen, much to my dismay,\n"
 	.string "refuses to marry until Castor and\l"
 	.string "Pollux her twin brothers return home.\l"
 	.string "Tell Castor and Pollux to hurry home.$"
 
 Tucson_Text_Nestor2::
-# 505 "data/maps/Tucson/scripts.pory"
+# 530 "data/maps/Tucson/scripts.pory"
 	.string "Thank you for helping to bring my sons\n"
 	.string "home. Without delay the preparations\l"
 	.string "for Helen's wedding must begin. Call\l"
 	.string "them in!$"
 
 Tucson_Text_Nestor3A::
-# 509 "data/maps/Tucson/scripts.pory"
+# 534 "data/maps/Tucson/scripts.pory"
 	.string "With great rejoicing we welcome back\n"
 	.string "the Dioscuri. Champion Castor and the\l"
 	.string "proud Pollux were gone for far too long\l"
@@ -853,7 +879,7 @@ Tucson_Text_Nestor3A::
 	.string "made tycoon of commerce and trade.$"
 
 Tucson_Text_Nestor3B::
-# 513 "data/maps/Tucson/scripts.pory"
+# 538 "data/maps/Tucson/scripts.pory"
 	.string "One of these two is my hand chosen heir\n"
 	.string "and groom to my only daughter, Helen.\l"
 	.string "This decision has kept me up at night,\l"
@@ -882,13 +908,13 @@ Tucson_Text_Nestor3B::
 	.string "thus?$"
 
 Tucson_Text_NestorGather1_Menelaus1::
-# 517 "data/maps/Tucson/scripts.pory"
+# 542 "data/maps/Tucson/scripts.pory"
 	.string "I swear, Nestor the wise, to hold Paris\n"
 	.string "as my brother if he, by your consent,\l"
 	.string "marries Helen and takes all your estate.$"
 
 Tucson_Text_NestorGather1_Paris1::
-# 521 "data/maps/Tucson/scripts.pory"
+# 546 "data/maps/Tucson/scripts.pory"
 	.string "Though it is most unlike myself to swear\n"
 	.string "an oath, for often oathes are lightly\l"
 	.string "made and quickly forgotten by those\l"
@@ -901,7 +927,7 @@ Tucson_Text_NestorGather1_Paris1::
 	.string "Helen shall wed.$"
 
 Tucson_Text_Nestor4A::
-# 525 "data/maps/Tucson/scripts.pory"
+# 550 "data/maps/Tucson/scripts.pory"
 	.string "It has been sworn. Now that we have\n"
 	.string "agreed that we shall hold eachother as\l"
 	.string "brothers before, during, and after the\l"
@@ -923,7 +949,7 @@ Tucson_Text_Nestor4A::
 	.string "attend will likewise be extraordinary.$"
 
 Tucson_Text_Nestor4B::
-# 529 "data/maps/Tucson/scripts.pory"
+# 554 "data/maps/Tucson/scripts.pory"
 	.string "I know the both of you have many men\n"
 	.string "under consideration to invite. Think\l"
 	.string "carefully and choose your men wisely,\l"
@@ -946,18 +972,18 @@ Tucson_Text_Nestor4B::
 	.string "us gentle and swift.$"
 
 Tucson_Text_Nestor5::
-# 533 "data/maps/Tucson/scripts.pory"
+# 558 "data/maps/Tucson/scripts.pory"
 	.string "Bring the suitors text$"
 
 Tucson_Text_Hector::
-# 537 "data/maps/Tucson/scripts.pory"
+# 562 "data/maps/Tucson/scripts.pory"
 	.string "It is a great honor and true privledge\n"
 	.string "to be here in the great house of Nestor\l"
 	.string "to see the wedding of lovely Helen\l"
 	.string "whether my brother is the groom or not.$"
 
 Tucson_Text_Helen1::
-# 541 "data/maps/Tucson/scripts.pory"
+# 566 "data/maps/Tucson/scripts.pory"
 	.string "Despite the radiant glow of your face\n"
 	.string "my heart still shivers cold, I'm\l"
 	.string "trembling. Dear Paris, know these tears\l"
@@ -967,13 +993,13 @@ Tucson_Text_Helen1::
 	.string "long and I now fear the worst.$"
 
 Tucson_Text_Helen2::
-# 545 "data/maps/Tucson/scripts.pory"
+# 570 "data/maps/Tucson/scripts.pory"
 	.string "Please leave us be unless you bring us\n"
 	.string "news that Castor and Pollux have\l"
 	.string "returned home.$"
 
 Tucson_Text_Helen3::
-# 549 "data/maps/Tucson/scripts.pory"
+# 574 "data/maps/Tucson/scripts.pory"
 	.string "Dear Paris I must not have slept last\n"
 	.string "night between my dreams of you and\l"
 	.string "those nightmares which filled my\l"
@@ -982,7 +1008,7 @@ Tucson_Text_Helen3::
 	.string "I be merry again.$"
 
 Tucson_Text_Helen4::
-# 553 "data/maps/Tucson/scripts.pory"
+# 578 "data/maps/Tucson/scripts.pory"
 	.string "I secretly hope that your mission fails\n"
 	.string "and the invited guests never arrive so\l"
 	.string "my Paris and I can remain here as I fear\l"
@@ -990,7 +1016,7 @@ Tucson_Text_Helen4::
 	.string "hideous as that face: Menelaus.$"
 
 Tucson_Text_Paris1::
-# 557 "data/maps/Tucson/scripts.pory"
+# 582 "data/maps/Tucson/scripts.pory"
 	.string "Do not defraud the world of your beauty\n"
 	.string "by desecrating your radiant glow with\l"
 	.string "worried looks, anxious breathes, or\l"
@@ -998,20 +1024,20 @@ Tucson_Text_Paris1::
 	.string "give me.$"
 
 Tucson_Text_Paris_GiveInvites::
-# 561 "data/maps/Tucson/scripts.pory"
+# 586 "data/maps/Tucson/scripts.pory"
 	.string "Out of many brothers, and many friends,\n"
 	.string "I have decided who I shall invite. The\l"
 	.string "mighty Hector, my eldest brother, and\l"
 	.string "wise Aeneas my long time mentor.$"
 
 Tucson_Text_Paris_OnHector::
-# 565 "data/maps/Tucson/scripts.pory"
+# 590 "data/maps/Tucson/scripts.pory"
 	.string "Hector is a man of great discipline who\n"
 	.string "trains his body daily without rest. He\l"
 	.string "loves the cave beside the Bulbus Beach.$"
 
 Tucson_Text_Paris_OnAeneas::
-# 569 "data/maps/Tucson/scripts.pory"
+# 594 "data/maps/Tucson/scripts.pory"
 	.string "Old Aeneas departed these lands to\n"
 	.string "seek out Lavinian Shores across the\l"
 	.string "sea. He purposed to found a city upon\l"
@@ -1019,12 +1045,12 @@ Tucson_Text_Paris_OnAeneas::
 	.string "Exactly where that is, I do not know.$"
 
 Tucson_Text_BringGuests::
-# 573 "data/maps/Tucson/scripts.pory"
+# 598 "data/maps/Tucson/scripts.pory"
 	.string "Deliver my invitations swiftly, gather\n"
 	.string "my guests so we can be married.$"
 
 Tucson_Text_Paris2::
-# 577 "data/maps/Tucson/scripts.pory"
+# 602 "data/maps/Tucson/scripts.pory"
 	.string "Thank you. It is a blessing to see my\n"
 	.string "brother, Hector, and dear old Aeneas,\l"
 	.string "gathered together with me in this\l"
@@ -1035,60 +1061,60 @@ Tucson_Text_Paris2::
 	.string "Helen.$"
 
 Tucson_Text_Menelaus1::
-# 581 "data/maps/Tucson/scripts.pory"
+# 606 "data/maps/Tucson/scripts.pory"
 	.string "The thought of conquering Helen is more\n"
 	.string "exciting than all of the wealth I stand\l"
 	.string "to inherit from her father, Nestor.$"
 
 Tucson_Text_Menelaus_GiveInvites::
-# 585 "data/maps/Tucson/scripts.pory"
+# 610 "data/maps/Tucson/scripts.pory"
 	.string "I know exactly who I will invite to be in\n"
 	.string "attendance when I marry the luscious\l"
 	.string "Helen. My eldest brother Agamemnon and\l"
 	.string "my friend Ulysses.$"
 
 Tucson_Text_Menelaus_OnAgamemnon::
-# 589 "data/maps/Tucson/scripts.pory"
+# 614 "data/maps/Tucson/scripts.pory"
 	.string "My dear older brother Agamemnon lives\n"
 	.string "with his family in Albion Town.$"
 
 Tucson_Text_Menelaus_OnUlysses::
-# 593 "data/maps/Tucson/scripts.pory"
+# 618 "data/maps/Tucson/scripts.pory"
 	.string "Cunning Ulysses, who made great riches\n"
 	.string "with me in the business industry, lives\l"
 	.string "with wife and son on his private island.$"
 
 Tucson_Text_Beggar1::
-# 597 "data/maps/Tucson/scripts.pory"
+# 622 "data/maps/Tucson/scripts.pory"
 	.string "Oh please sir, help! A coin for this\n"
 	.string "beggar?$"
 
 Tucson_Text_Beggar2::
-# 601 "data/maps/Tucson/scripts.pory"
+# 626 "data/maps/Tucson/scripts.pory"
 	.string "Blessings on you from he who governs\n"
 	.string "all!$"
 
 Tucson_Text_BeggarUlysses::
-# 605 "data/maps/Tucson/scripts.pory"
+# 630 "data/maps/Tucson/scripts.pory"
 	.string "$"
 
 Tucson_Text_UlyssesPre::
-# 609 "data/maps/Tucson/scripts.pory"
+# 634 "data/maps/Tucson/scripts.pory"
 	.string "$"
 
 Tucson_Text_UlyssesLost::
-# 613 "data/maps/Tucson/scripts.pory"
+# 638 "data/maps/Tucson/scripts.pory"
 	.string "$"
 
 Tucson_Text_UlyssesPost1::
-# 617 "data/maps/Tucson/scripts.pory"
+# 642 "data/maps/Tucson/scripts.pory"
 	.string "$"
 
 Tucson_Text_GaveRing::
-# 621 "data/maps/Tucson/scripts.pory"
+# 646 "data/maps/Tucson/scripts.pory"
 	.string "{PLAYER} gave Ulysses Penelope's\n"
 	.string "Ring$"
 
 Tucson_Text_UlyssesPost2::
-# 625 "data/maps/Tucson/scripts.pory"
+# 650 "data/maps/Tucson/scripts.pory"
 	.string "$"
