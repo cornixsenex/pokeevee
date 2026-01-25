@@ -32,7 +32,9 @@ script Scheria_Script_UlyssesScene {
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	//Intro
+	
 	//Notice Player
+	//Alc: Who is this who enters the house of Alcinous uninvited
 	//U: My companion
 	//Alc: Approach
 	//Player to Alc

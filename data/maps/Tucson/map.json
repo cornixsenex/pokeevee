@@ -31,7 +31,8 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_JUAN",
+      "local_id": "LOCALID_TUCSON_NESTOR",
+      "graphics_id": "OBJ_EVENT_GFX_NESTOR",
       "x": 36,
       "y": 15,
       "elevation": 0,
@@ -44,7 +45,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BRANDON",
+      "local_id": "LOCALID_TUCSON_PARIS",
+      "graphics_id": "OBJ_EVENT_GFX_PARIS",
       "x": 53,
       "y": 15,
       "elevation": 0,
@@ -57,7 +59,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "local_id": "LOCALID_TUCSON_HELEN",
+      "graphics_id": "OBJ_EVENT_GFX_HELEN",
       "x": 52,
       "y": 15,
       "elevation": 0,
@@ -70,7 +73,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "local_id": "LOCALID_TUCSON_MENELAUS",
+      "graphics_id": "OBJ_EVENT_GFX_SILVER",
       "x": 23,
       "y": 22,
       "elevation": 0,
@@ -83,7 +87,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "local_id": "LOCALID_TUCSON_CASTOR",
+      "graphics_id": "OBJ_EVENT_GFX_SORDWARD",
       "x": 0,
       "y": 0,
       "elevation": 0,
@@ -96,7 +101,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "local_id": "LOCALID_TUCSON_POLLUX",
+      "graphics_id": "OBJ_EVENT_GFX_SHIELBERT",
       "x": 1,
       "y": 0,
       "elevation": 0,
@@ -229,7 +235,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "local_id": "LOCALID_TUCSON_HECTOR",
+      "graphics_id": "OBJ_EVENT_GFX_LANCE",
       "x": 6,
       "y": 0,
       "elevation": 0,
@@ -258,9 +265,9 @@
       "local_id": "LOCALID_TUCSON_DOORMAN",
       "graphics_id": "OBJ_EVENT_GFX_BUTLER",
       "x": 21,
-      "y": 5,
+      "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_DOWN_UP_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 3,
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",

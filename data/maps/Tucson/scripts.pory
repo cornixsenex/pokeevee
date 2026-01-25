@@ -84,7 +84,7 @@ script Tucson_Script_Transition_Deseret {
 script Tucson_Script_ShowNestorHousePreWedding {
 	//Show the always visible: Nestor, Helen, Paris, Menelaus
 
-	//Check if the conditions are satisfied for the characters to appear
+//Check if the conditions are satisfied for the characters to appear
 
 	//Dioscuri
 	if (var(VAR_ARGO_STATE > 19)) {
@@ -100,13 +100,11 @@ script Tucson_Script_ShowNestorHousePreWedding {
 		setobjectxyperm (LOCALID_TUCSON_AENEAS, 24, 10)
 		setobjectmovementtype (LOCALID_TUCSON_AENEAS, MOVEMENT_TYPE_FACE_DOWN)
     }
-	
 	//Agamemnon
 	if (var(VAR_ORESTES_STATE) == 13) {
 		setobjectxyperm (LOCALID_TUCSON_AGAMEMNON, 22, 22)
 		setobjectmovementtype (LOCALID_TUCSON_AGAMEMNON, MOVEMENT_TYPE_FACE_DOWN)
 	}
-
 	//Ulysses
 	if (var(VAR_ULYSSES_STATE) > 27) {
 		setobjectxyperm (LOCALID_TUCSON_ULYSSES, 40, 17)
@@ -205,6 +203,7 @@ script Tucson_Script_Nestor {
 		msgbox (Tucson_Text_Nestor1, MSGBOX_DEFAULT)
 		closemessage
 	} else {
+		//After Dioscuri return - First Nestor Gather (invitations)
 		if (var(VAR_NESTOR_STATE) < 1) {
 			//Thank you for bringing the Dioscuri back
 			msgbox (Tucson_Text_Nestor2, MSGBOX_DEFAULT)
@@ -373,7 +372,7 @@ script Tucson_Script_Menelaus {
 				msgbox (Tucson_Text_BringGuests, MSGBOX_DEFAULT)
 			} else {
 				//Check is Agamemnon Here
-				if (var(VAR_AGAMEMNON_STATE) > 0) {
+				if (var(VAR_ORESTES_STATE) > 12) {
 					msgbox (format("Agamemnon is here"), MSGBOX_DEFAULT)
 				} else {
 					msgbox (format("Agamemnon is NOT here"), MSGBOX_DEFAULT)
@@ -498,17 +497,46 @@ script Tucson_Script_UlyssesFight {
 
 script Tucson_Script_UlyssesDoorway {
 	//D: Be gone. The house of Nestor is not open to beggars.
+	load_field_pic(FIELD_PIC_BUTLER, 190, 98)
+	msgbox (Tucson_Text_UlyssesDoorway_Doorman1)
+	destroy_field_pic (FIELD_PIC_BUTLER)
 	//U: Beggar? I am the mighty lord Ulysses invited here for the wedding
+	load_field_pic(FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (Tucson_Text_UlyssesDoorway_Ulysses1)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
 	//alert D
+	applymovement (LOCALID_TUCSON_DOORMAN, Common_Movement_ExclamationMark)
+	waitmovement (0)
 	//Excuse me sir, I was decieved by your disheveled appearance. Please come in. We have been expecting you
+	load_field_pic(FIELD_PIC_BUTLER, 190, 98)
+	msgbox (Tucson_Text_UlyssesDoorway_Doorman2)
+	destroy_field_pic (FIELD_PIC_BUTLER)
+	closemessage
 	//U exit right
+	applymovement (LOCALID_TUCSON_ULYSSES, Common_Movement_WalkRight8)
+	waitmovement (0)
 	//reset U position
+	removeobject (LOCALID_TUCSON_ULYSSES)
+	setobjectxyperm (LOCALID_TUCSON_ULYSSES, 40, 17)
+	setobjectmovementtype (LOCALID_TUCSON_ULYSSES, MOVEMENT_TYPE_WANDER_AROUND)
+	addobject (LOCALID_TUCSON_ULYSSES)
 	//reset D face
+	applymovement (LOCALID_TUCSON_DOORMAN, Common_Movement_FaceLeft)
+	waitmovement (0)
+	setobjectmovementtype (LOCALID_TUCSON_DOORMAN, MOVEMENT_TYPE_FACE_LEFT)
 	//set var
 	setvar (VAR_ULYSSES_STATE, 28)
+	//Check if Wedding Ready
+	if (
+			(flag(FLAG_GYMNASIUM_HECTORLEFT)) &&
+			(var(VAR_AENEID_STATE) > 11) &&
+			(var(VAR_ORESTES_STATE) == 13)
+	   ) {
+	}
 	//fin
 	end
 }
+
 
 script Tucson_Script_Ulysses {
 	//Doorway scene
@@ -560,11 +588,11 @@ text Tucson_Text_Nestor5 {
 }
 
 text Tucson_Text_Hector {
-	format("It is a great honor and true privledge to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
+	format("It is a great honor and true privilege to be here in the great house of Nestor to see the wedding of lovely Helen whether my brother is the groom or not.")
 }
 
 text Tucson_Text_Helen1 {
-	format ("Despite the radiant glow of your face my heart still shivers cold, I'm trembling. Dear Paris, know these tears that wet my cheecks are shed out of longing for Castor and Pollux. My dear brothers have been away for far too long and I now fear the worst.")
+	format ("Despite the radiant glow of your face my heart still shivers cold, I'm trembling. Dear Paris, know these tears that wet my cheeks are shed out of longing for Castor and Pollux. My dear brothers have been away for far too long and I now fear the worst.")
 }
 
 text Tucson_Text_Helen2 {
@@ -588,7 +616,9 @@ text Tucson_Text_Paris_GiveInvites {
 }
 
 text Tucson_Text_Paris_OnHector {
-	format("Hector is a man of great discipline who trains his body daily without rest. He loves the cave beside the Bulbus Beach.")
+	format("Hector is a man of great discipline 
+			who trains his body daily without rest.
+			He competes often at Gymnasium.")
 }
 
 text Tucson_Text_Paris_OnAeneas {
@@ -651,4 +681,15 @@ text Tucson_Text_UlyssesPost2 {
 	format("")
 }
 
+text Tucson_Text_UlyssesDoorway_Doorman1 {
+	format("")
+}
+
+text Tucson_Text_UlyssesDoorway_Ulysses1 {
+	format("")
+}
+
+text Tucson_Text_UlyssesDoorway_Doorman2 {
+	format("")
+}
 

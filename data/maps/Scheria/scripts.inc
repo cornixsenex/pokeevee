@@ -51,33 +51,33 @@ Scheria_Script_UlyssesScene::
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 33 "data/maps/Scheria/scripts.pory"
 	waitmovement 0
-# 39 "data/maps/Scheria/scripts.pory"
+# 41 "data/maps/Scheria/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-# 40 "data/maps/Scheria/scripts.pory"
+# 42 "data/maps/Scheria/scripts.pory"
 	waitmovement 0
-# 48 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_FaceRight
-# 49 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 # 50 "data/maps/Scheria/scripts.pory"
-	waitmovement 0
-# 53 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkDown2
-# 54 "data/maps/Scheria/scripts.pory"
+	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_FaceRight
+# 51 "data/maps/Scheria/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 52 "data/maps/Scheria/scripts.pory"
 	waitmovement 0
 # 55 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkDown2
 # 56 "data/maps/Scheria/scripts.pory"
 	waitmovement 0
+# 57 "data/maps/Scheria/scripts.pory"
+	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkInPlaceFasterDown
 # 58 "data/maps/Scheria/scripts.pory"
-	removeobject LOCALID_SCHERIA_ULYSSES
-# 59 "data/maps/Scheria/scripts.pory"
-	setobjectxyperm LOCALID_SCHERIA_ULYSSES, 0, 0
+	waitmovement 0
 # 60 "data/maps/Scheria/scripts.pory"
-	setobjectmovementtype LOCALID_SCHERIA_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+	removeobject LOCALID_SCHERIA_ULYSSES
 # 61 "data/maps/Scheria/scripts.pory"
-	addobject LOCALID_SCHERIA_ULYSSES
+	setobjectxyperm LOCALID_SCHERIA_ULYSSES, 0, 0
+# 62 "data/maps/Scheria/scripts.pory"
+	setobjectmovementtype LOCALID_SCHERIA_ULYSSES, MOVEMENT_TYPE_INVISIBLE
 # 63 "data/maps/Scheria/scripts.pory"
+	addobject LOCALID_SCHERIA_ULYSSES
+# 65 "data/maps/Scheria/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 23
 	end
 

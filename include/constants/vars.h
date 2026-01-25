@@ -260,7 +260,7 @@
 																//3: Talk to Nestor after all guests have arrived. Trigger NestorGather2 on Tucson Frame Table
 																//4: After NestorGather2 - Nestor house empty. Church ready for NestorChurch script
 #define VAR_UNUSED_4075                                  0x4075 // - UNUSED 
-#define VAR_AGAMEMNON_STATE                              0x4076 // - Tracks Orestreia and updates maps associated
+#define VAR_UNUSED_4076                                  0x4076 // - UNUSED 
 #define VAR_UNUSED_4077                                  0x4077 // - UNUSED
 #define VAR_SURFSCHOOL_STATE                             0x4079 // - Tracks progress in surf school and triggers battles, misty scene
                                                                 //0: Begin
@@ -289,7 +289,7 @@
                                                                 //22 Aeneas et Elissa scene
                                                                 //23 After Elissa fight - fin
 
-						// BREAK
+						// BREAK  !!! UNUSED ABOVE !!!
 
 
 
