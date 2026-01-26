@@ -32,15 +32,51 @@ script Scheria_Script_UlyssesScene {
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	//Intro
-	
+	//Alc: You've rested now tell us your name
+    load_field_pic (FIELD_PIC_ALCINOUS, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Alcinous1)
+	destroy_field_pic (FIELD_PIC_ALCINOUS)
+	//U: I am Ulysses
+    load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Ulysses1)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	//Are: It's a wonder you were washed ashore (Cut off)
+    load_field_pic (FIELD_PIC_ARETE, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Arete1)
+	destroy_field_pic (FIELD_PIC_ARETE)
+	closemessage
 	//Notice Player
+	applymovement (LOCALID_SCHERIA_ULYSSES, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_SCHERIA_NAUSICAA, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_SCHERIA_ARETE, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_SCHERIA_ALCINOUS, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	//U face player
+	applymovement (LOCALID_SCHERIA_ULYSSES, Common_Movement_FaceDown)
+	waitmovement (0)
 	//Alc: Who is this who enters the house of Alcinous uninvited
+    load_field_pic (FIELD_PIC_ALCINOUS, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Alcinous2)
+	destroy_field_pic (FIELD_PIC_ALCINOUS)
+	//U face Alc
+	applymovement (LOCALID_SCHERIA_ULYSSES, Common_Movement_FaceUp)
+	waitmovement (0)
 	//U: My companion
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Ulysses2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
 	//Alc: Approach
+	load_field_pic (FIELD_PIC_ALCINOUS, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Alcinous3)
+	destroy_field_pic (FIELD_PIC_ALCINOUS)
+	closemessage
 	//Player to Alc
 	applymovement (LOCALID_PLAYER, Common_Movement_WalkUp)
 	waitmovement (0)
 	//Alc: I know you are eager to leave but you need your strength and beside we would hear the tale
+	load_field_pic (FIELD_PIC_ALCINOUS, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Alcinous4)
+	destroy_field_pic (FIELD_PIC_ALCINOUS) 
 	//U: Ok..........LONG ASS STORY
 	//N: And that's when I found him on the beach
 	//Aret: Terrible story
@@ -77,4 +113,42 @@ script Scheria_Script_Alcinous {
 
 script Scheria_Script_Nausicaa {
 
+}
+
+text Scheria_Text_UlyssesScene_Alcinous1 {
+	format("Now come, weary stranger, your strength returns
+			and I would have your name, and what business
+			brought you to my island.")
+}
+
+text Scheria_Text_UlyssesScene_Ulysses1 {
+	format("I'm Ulysses,
+			Lord of Ithaca. I was lost at sea
+			and shipwrecked while I journeyed to the house
+			of Nestor where my friend will be married.")
+}
+
+text Scheria_Text_UlyssesScene_Arete1 {
+	format("It was a miracle that you survived
+			and washed ashore on our friendly isle
+			where Nausicaa found you...")
+}
+
+text Scheria_Text_UlyssesScene_Alcinous2 {
+	format("Who dares enter
+			the house of Alcinous unbidden?")
+}
+
+text Scheria_Text_UlyssesScene_Ulysses2 {
+	format("Great lord, he is my friend and companion
+			on the long, wayward journey that brought me
+			through perils to the mercy of your house.")
+}
+
+text Scheria_Text_UlyssesScene_Alcinous3 {
+	format("Very well, friend, approach! Stand before me!")
+}
+
+text Scheria_Text_UlyssesScene_Alcinous4 {
+	format("")
 }
