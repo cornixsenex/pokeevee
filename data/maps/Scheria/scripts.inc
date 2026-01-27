@@ -119,29 +119,35 @@ Scheria_Script_UlyssesScene::
 	msgbox Scheria_Text_UlyssesScene_Alcinous4
 # 79 "data/maps/Scheria/scripts.pory"
 	destroy_field_pic FIELD_PIC_ALCINOUS
-# 86 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_FaceRight
-# 87 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-# 88 "data/maps/Scheria/scripts.pory"
-	waitmovement 0
-# 91 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkDown2
-# 92 "data/maps/Scheria/scripts.pory"
-	waitmovement 0
+# 81 "data/maps/Scheria/scripts.pory"
+	load_field_pic FIELD_PIC_ULYSSES, 190, 98
+# 82 "data/maps/Scheria/scripts.pory"
+	msgbox Scheria_Text_UlyssesScene_Ulysses2
+# 83 "data/maps/Scheria/scripts.pory"
+	destroy_field_pic FIELD_PIC_ULYSSES
 # 93 "data/maps/Scheria/scripts.pory"
-	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_FaceRight
 # 94 "data/maps/Scheria/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+# 95 "data/maps/Scheria/scripts.pory"
 	waitmovement 0
-# 96 "data/maps/Scheria/scripts.pory"
-	removeobject LOCALID_SCHERIA_ULYSSES
-# 97 "data/maps/Scheria/scripts.pory"
-	setobjectxyperm LOCALID_SCHERIA_ULYSSES, 0, 0
 # 98 "data/maps/Scheria/scripts.pory"
-	setobjectmovementtype LOCALID_SCHERIA_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkDown2
 # 99 "data/maps/Scheria/scripts.pory"
-	addobject LOCALID_SCHERIA_ULYSSES
+	waitmovement 0
+# 100 "data/maps/Scheria/scripts.pory"
+	applymovement LOCALID_SCHERIA_ULYSSES, Common_Movement_WalkInPlaceFasterDown
 # 101 "data/maps/Scheria/scripts.pory"
+	waitmovement 0
+# 103 "data/maps/Scheria/scripts.pory"
+	removeobject LOCALID_SCHERIA_ULYSSES
+# 104 "data/maps/Scheria/scripts.pory"
+	setobjectxyperm LOCALID_SCHERIA_ULYSSES, 0, 0
+# 105 "data/maps/Scheria/scripts.pory"
+	setobjectmovementtype LOCALID_SCHERIA_ULYSSES, MOVEMENT_TYPE_INVISIBLE
+# 106 "data/maps/Scheria/scripts.pory"
+	addobject LOCALID_SCHERIA_ULYSSES
+# 108 "data/maps/Scheria/scripts.pory"
 	setvar VAR_ULYSSES_STATE, 23
 	end
 
@@ -159,41 +165,58 @@ Scheria_Script_Nausicaa::
 
 
 Scheria_Text_UlyssesScene_Alcinous1::
-# 118 "data/maps/Scheria/scripts.pory"
+# 125 "data/maps/Scheria/scripts.pory"
 	.string "Now come, weary stranger, your strength\n"
 	.string "returns and I would have your name, and\l"
 	.string "what business brought you to my island.$"
 
 Scheria_Text_UlyssesScene_Ulysses1::
-# 124 "data/maps/Scheria/scripts.pory"
+# 131 "data/maps/Scheria/scripts.pory"
 	.string "I'm Ulysses, Lord of Ithaca. I was lost\n"
 	.string "at sea and shipwrecked while I\l"
 	.string "journeyed to the house of Nestor where\l"
 	.string "my friend will be married.$"
 
 Scheria_Text_UlyssesScene_Arete1::
-# 131 "data/maps/Scheria/scripts.pory"
+# 138 "data/maps/Scheria/scripts.pory"
 	.string "It was a miracle that you survived and\n"
 	.string "washed ashore on our friendly isle\l"
 	.string "where Nausicaa found you...$"
 
 Scheria_Text_UlyssesScene_Alcinous2::
-# 137 "data/maps/Scheria/scripts.pory"
+# 144 "data/maps/Scheria/scripts.pory"
 	.string "Who dares enter the house of Alcinous\n"
 	.string "unbidden?$"
 
 Scheria_Text_UlyssesScene_Ulysses2::
-# 142 "data/maps/Scheria/scripts.pory"
+# 149 "data/maps/Scheria/scripts.pory"
 	.string "Great lord, he is my friend and\n"
 	.string "companion on the long, wayward journey\l"
 	.string "that brought me through perils to the\l"
 	.string "mercy of your house.$"
 
 Scheria_Text_UlyssesScene_Alcinous3::
-# 148 "data/maps/Scheria/scripts.pory"
+# 155 "data/maps/Scheria/scripts.pory"
 	.string "Very well, friend, approach! Stand\n"
 	.string "before me!$"
 
 Scheria_Text_UlyssesScene_Alcinous4::
-# 152 "data/maps/Scheria/scripts.pory"
+# 159 "data/maps/Scheria/scripts.pory"
+	.string "I see you both are weary from the road.\n"
+	.string "Content yourselves to know you shall\l"
+	.string "find rest and comfort here, so long as\l"
+	.string "my house stands. Once recovered, you\l"
+	.string "should find your next road more easy\l"
+	.string "than your last. You have arrived not far\l"
+	.string "from shore and civilization. I'm sure\l"
+	.string "you both will be eager to reach the\l"
+	.string "house of Nestor but, before you go, I\l"
+	.string "will make one request. Ulysses, I would\l"
+	.string "hear the tale of your long travels, the\l"
+	.string "perils of the ocean you braved, and the\l"
+	.string "catastrophe which brought you to my\l"
+	.string "house.$"
+
+Scheria_Text_UlyssesScene_Ulysses3::
+# 235 "data/maps/Scheria/scripts.pory"
 	.string "$"

@@ -78,6 +78,13 @@ script Scheria_Script_UlyssesScene {
 	msgbox (Scheria_Text_UlyssesScene_Alcinous4)
 	destroy_field_pic (FIELD_PIC_ALCINOUS) 
 	//U: Ok..........LONG ASS STORY
+	load_field_pic (FIELD_PIC_ULYSSES, 190, 98)
+	msgbox (Scheria_Text_UlyssesScene_Ulysses2)
+	destroy_field_pic (FIELD_PIC_ULYSSES)
+	//Nausicaa interrupt during cyclops
+	//Arete: Don't interrupt
+	//Alc: Forgive them, please continue 
+	//U part two
 	//N: And that's when I found him on the beach
 	//Aret: Terrible story
 	//Alc: You are strong to survive. Good news you have reached Mare Internum and you are near your goal. Take those provisions and may you reach your dest soon
@@ -150,5 +157,81 @@ text Scheria_Text_UlyssesScene_Alcinous3 {
 }
 
 text Scheria_Text_UlyssesScene_Alcinous4 {
+	format("I see you both are weary from the road.
+			Content yourselves to know you shall find rest
+			and comfort here, so long as my house stands.
+			Once recovered, you should find your next road
+			more easy than your last. You have arrived
+			not far from shore and civilization.
+			I'm sure you both will be eager to reach
+			the house of Nestor but, before you go,
+			I will make one request. Ulysses, I
+			would hear the tale of your long travels, the
+			perils of the ocean you braved, and the
+			catastrophe which brought you to my house.")
+}
+
+//thanks to Alcinous #
+//My lord, I am humbled that you would trade 
+//generous hospitality for such
+//little price as my tale of wandering.
+//Though I am no poet or master bard
+//who, like an eagle high above the field,
+//might find words and poetic images
+//like tiny field mice hiding among grass,
+//I will tell you in full all that happened,
+//using what art of words I might command.
+
+//Invocation of the muse #
+//Calliope, patron of poetry,
+//lend me your art so I might better pay
+//my gracious patron back his room and board.
+
+//medias res - flashback as pig #
+//My story begins in medias res.
+
+
+//home
+
+//insanity with telemachus
+
+//player arrives and tauros
+
+//invitations
+
+//lotus
+
+//cyclops
+
+//N interrupts
+
+//player lotus head cyclops
+
+//circe island setup
+
+//circe
+
+//transformed
+
+//player moly
+
+//as a dream
+
+//save the prisoners
+
+//unpure, sacrifices
+
+//sirens
+
+//scylla
+
+//calypso
+
+//storm
+
+//here
+//
+
+text Scheria_Text_UlyssesScene_Ulysses3 {
 	format("")
 }
