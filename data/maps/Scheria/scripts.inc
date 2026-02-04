@@ -218,5 +218,5 @@ Scheria_Text_UlyssesScene_Alcinous4::
 	.string "house.$"
 
 Scheria_Text_UlyssesScene_Ulysses3::
-# 235 "data/maps/Scheria/scripts.pory"
+# 245 "data/maps/Scheria/scripts.pory"
 	.string "$"

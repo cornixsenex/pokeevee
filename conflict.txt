@@ -1,0 +1,5 @@
+CONFLICT (modify/delete): include/constants/script_commands.h deleted in 2d17ad27f921ebda03ad35e8dd00d40b6ac29114 and modified in HEAD.  Version HEAD of include/constants/script_commands.h left in tree.
+	>just deleted check compile
+!CONFLICT (content): Merge conflict in src/field_player_avatar.c
+	>check it compiles extremely ugly line
+	>static const struct __atribute__((packed)) lmfao just copy rhh if no compile
