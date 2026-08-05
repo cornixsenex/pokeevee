@@ -66,6 +66,11 @@ static bool32 Fishing_FoundTreasure(struct Task *);   //Cornix Custom Sunken Tre
     #define FISHING_SUPER_ROD_ODDS 50
 #endif
 
+static const u8 sText_OhABite[] = _("Oh! A bite!");
+static const u8 sText_PokemonOnHook[] = _("A POKéMON's on the hook!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_NotEvenANibble[] = _("Not even a nibble…{PAUSE_UNTIL_PRESS}");
+static const u8 sText_ItGotAway[] = _("It got away…{PAUSE_UNTIL_PRESS}");
+
 struct FriendshipHookChanceBoost
 {
     u8 threshold;
@@ -301,7 +306,7 @@ static bool32 Fishing_GotBite(struct Task *task)
 	}
 		
     AlignFishingAnimationFrames();
-    AddTextPrinterParameterized(0, FONT_NORMAL, gText_OhABite, 0, 17, 0, NULL);
+    AddTextPrinterParameterized(0, FONT_NORMAL, sText_OhABite, 0, 17, 0, NULL);
     task->tStep = FISHING_CHANGE_MINIGAME;
     task->tFrameCounter = 0;
     return FALSE;
@@ -393,7 +398,7 @@ static bool32 Fishing_MonOnHook(struct Task *task)
 {
     AlignFishingAnimationFrames();
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gText_PokemonOnHook, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_PokemonOnHook, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     task->tStep = FISHING_START_ENCOUNTER;
     task->tFrameCounter = 0;
     return FALSE;
@@ -408,7 +413,7 @@ static bool32 Fishing_StartEncounter(struct Task *task)
 
     if (task->tFrameCounter == 0)
     {
-        if (!IsTextPrinterActive(0))
+        if (!IsTextPrinterActiveOnWindow(0))
         {
             struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
@@ -447,8 +452,13 @@ static bool32 Fishing_NotEvenNibble(struct Task *task)
     AlignFishingAnimationFrames();
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
+<<<<<<< HEAD
     AddTextPrinterParameterized2(0, FONT_NORMAL, gText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
 	task->tStep = FISHING_NO_MON;
+=======
+    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    task->tStep = FISHING_NO_MON;
+>>>>>>> e80ae569039786564381723fca22aac07afc3503
     return TRUE;
 }
 
@@ -458,7 +468,7 @@ static bool32 Fishing_GotAway(struct Task *task)
     AlignFishingAnimationFrames();
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gText_ItGotAway, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_ItGotAway, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     task->tStep = FISHING_NO_MON;
     return TRUE;
 }
@@ -491,7 +501,7 @@ static bool32 Fishing_PutRodAway(struct Task *task)
 static bool32 Fishing_EndNoMon(struct Task *task)
 {
     RunTextPrinters();
-    if (!IsTextPrinterActive(0))
+    if (!IsTextPrinterActiveOnWindow(0))
     {
         gPlayerAvatar.preventStep = FALSE;
         UnlockPlayerFieldControls();
@@ -579,7 +589,8 @@ static u32 CalculateFishingFollowerBoost()
 static u32 CalculateFishingProximityBoost()
 {
     s16 bobber_x, bobber_y, tile_x, tile_y;
-    u32 direction, facingDirection, numQualifyingTile = 0;
+    enum Direction direction, facingDirection;
+    u32 numQualifyingTile = 0;
     struct ObjectEvent *objectEvent;
 
     if (!I_FISHING_PROXIMITY)
@@ -605,7 +616,7 @@ static u32 CalculateFishingProximityBoost()
             numQualifyingTile++;
         else if (MapGridGetCollisionAt(tile_x, tile_y))
             numQualifyingTile++;
-        else if (GetMapBorderIdAt(tile_x, tile_y) == -1)
+        else if (GetMapBorderIdAt(tile_x, tile_y) == CONNECTION_INVALID)
             numQualifyingTile++;
     }
 

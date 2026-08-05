@@ -689,6 +689,7 @@ extern const u8 EventScript_LostSignal[];
 extern const u8 EventScript_TooDark[];
 extern const u8 EventScript_MovedTooFast[];
 
+<<<<<<< HEAD
 
 //		BEGIN 	KUSTOMS		///
 
@@ -1040,4 +1041,7 @@ extern const u8 MareS7_Script_TaurosTelemachus[];
 
 //		END		KUSTOMS		///
 
+=======
+extern const u8 MoveTutor_AfterChooseBoxMon[];
+>>>>>>> e80ae569039786564381723fca22aac07afc3503
 #endif // GUARD_EVENT_SCRIPTS_H
