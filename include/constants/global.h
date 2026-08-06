@@ -203,24 +203,6 @@ enum __attribute__((packed)) Direction
     DIR_NORTHEAST,
 };
 
-<<<<<<< HEAD
-#define AXIS_X     0
-#define AXIS_Y     1
-#define AXIS_COUNT 2
-
-//Pretty sure I don't need either of these - 12-24
-#define FOLLOW_ME_IMPLEMENTED   TRUE            //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
-#define DYNAMIC_OW_PALS         TRUE
-
-#define CONNECTION_INVALID -1
-#define CONNECTION_NONE     0
-#define CONNECTION_SOUTH    1
-#define CONNECTION_NORTH    2
-#define CONNECTION_WEST     3
-#define CONNECTION_EAST     4
-#define CONNECTION_DIVE     5
-#define CONNECTION_EMERGE   6
-=======
 enum Connection
 {
     CONNECTION_INVALID = -1,
@@ -232,7 +214,6 @@ enum Connection
     CONNECTION_DIVE,
     CONNECTION_EMERGE
 };
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 
 #if TESTING
 #include "config/test.h"

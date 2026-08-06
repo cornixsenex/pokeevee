@@ -16,9 +16,16 @@
 	>config
 #CONFLICT (content): Merge conflict in include/config/pokemon.h
 	>config
-CONFLICT (content): Merge conflict in include/constants/battle_frontier.h
-CONFLICT (content): Merge conflict in include/constants/global.h
-CONFLICT (content): Merge conflict in include/constants/items.h
+?CONFLICT (content): Merge conflict in include/constants/battle_frontier.h
+	>Multi Battles were changed. I had been using a custom for stuff like salty spitoon and etc
+	>I will have to move everything to upstream format may need changes
+	>Match upstream
+#CONFLICT (content): Merge conflict in include/constants/global.h
+	>Removed AXIS_X, AXIS_Y, AXIS_COUNT, FOLLOW_ME_IMPLEMENTED, DYNAMIC_OW_PALS macrsos to match upstream
+!CONFLICT (content): Merge conflict in include/constants/items.h
+	>In progress
+	>Items moved from macro to an enum
+	>Add custom items to bottom of enum
 CONFLICT (content): Merge conflict in include/constants/pokemon.h
 CONFLICT (modify/delete): include/constants/script_commands.h deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of include/constants/script_commands.h left in tree.
 CONFLICT (content): Merge conflict in include/constants/trainers.h
@@ -47,3 +54,5 @@ CONFLICT (content): Merge conflict in src/scrcmd.c
 CONFLICT (content): Merge conflict in src/strings.c
 CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
 Automatic merge failed; fix conflicts and then commit the result.
+
+> Multi Battles (Salty Spitoon, etc?)
