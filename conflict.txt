@@ -22,13 +22,19 @@
 	>Match upstream
 #CONFLICT (content): Merge conflict in include/constants/global.h
 	>Removed AXIS_X, AXIS_Y, AXIS_COUNT, FOLLOW_ME_IMPLEMENTED, DYNAMIC_OW_PALS macrsos to match upstream
-!CONFLICT (content): Merge conflict in include/constants/items.h
+#CONFLICT (content): Merge conflict in include/constants/items.h
 	>In progress
 	>Items moved from macro to an enum
 	>Add custom items to bottom of enum
-CONFLICT (content): Merge conflict in include/constants/pokemon.h
-CONFLICT (modify/delete): include/constants/script_commands.h deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of include/constants/script_commands.h left in tree.
-CONFLICT (content): Merge conflict in include/constants/trainers.h
+#CONFLICT (content): Merge conflict in include/constants/pokemon.h
+	>Cleanup from vestigial surskitty trainer controls
+	>Match upstream
+?CONFLICT (modify/delete): include/constants/script_commands.h deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of include/constants/script_commands.h left in tree.
+	>file was deleted
+	>Delete to match upstream
+	>Ensure compat with custom scripts (MULTVAR, DIVVAR, COPYMONEY, REMOVEMONEY)
+#CONFLICT (content): Merge conflict in include/constants/trainers.h
+	>trainer front pics moved from macros to enums
 CONFLICT (content): Merge conflict in include/event_object_movement.h
 CONFLICT (content): Merge conflict in include/field_effect_helpers.h
 CONFLICT (content): Merge conflict in include/strings.h
@@ -55,4 +61,9 @@ CONFLICT (content): Merge conflict in src/strings.c
 CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
 Automatic merge failed; fix conflicts and then commit the result.
 
-> Multi Battles (Salty Spitoon, etc?)
+> Multi Battles
+	>Salty Spitoon, Turris Saltus? etc?
+> Custom script commands (multvar, divvar, copymoney, removevarmoney)
+	>Casinos
+> Custom traienr pics
+

@@ -194,19 +194,12 @@ enum __attribute__((packed)) Stat
 
 #define MAX_DYNAMAX_LEVEL 10
 
-<<<<<<< HEAD
-#define OT_ID_PLAYER_ID       0
-#define OT_ID_PRESET          1
-#define OT_ID_RANDOM_NO_SHINY 2
-#define OT_ID_SHINY           3
-=======
 enum OtIdMethod
 {
     OT_ID_PLAYER_ID,
     OT_ID_PRESET,
     OT_ID_RANDOM_NO_SHINY
 };
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 
 #define MON_GIVEN_TO_PARTY      0
 #define MON_GIVEN_TO_PC         1
