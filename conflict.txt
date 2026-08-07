@@ -46,8 +46,12 @@
 #CONFLICT (content): Merge conflict in src/battle_controller_player.c
 	>u32 battler -> enum BattlerId battler
 	>remove old comments and match upstream
-CONFLICT (content): Merge conflict in src/battle_tower.c
-CONFLICT (content): Merge conflict in src/bike.c
+#CONFLICT (content): Merge conflict in src/battle_tower.c
+	>multi cleanup
+	>match upstream
+!CONFLICT (content): Merge conflict in src/bike.c
+	>WIP
+	> u8 direction -> enum Direction direction
 CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
 CONFLICT (content): Merge conflict in src/data/items.h
 CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
@@ -70,6 +74,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 > Multi Battles
 	>Salty Spitoon, Turris Saltus? etc?
+	>Pair battle with Aeneas
 > Custom script commands (multvar, divvar, copymoney, removevarmoney)
 	>Casinos
 > Custom traienr pics

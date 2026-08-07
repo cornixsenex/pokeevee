@@ -167,24 +167,7 @@ static void MovePlayerOnMachBike(enum Direction direction, u16 newKeys, u16 held
 static enum MachTransition GetMachBikeTransition(enum Direction *dirTraveling)
 {
     // if the dir updated before this function, get the relevent new direction to check later.
-<<<<<<< HEAD
-    u8 direction = GetPlayerMovementDirection();
-    
-    // fix direction when moving on sideways stairs
-    switch (direction)
-    {
-    case DIR_SOUTHWEST:
-    case DIR_NORTHWEST:
-        direction = DIR_WEST;
-        break;
-    case DIR_SOUTHEAST:
-    case DIR_NORTHEAST:
-        direction = DIR_EAST;
-        break;
-    }
-=======
     enum Direction direction = GetPlayerMovementDirection();
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 
     // fix direction when moving on sideways stairs
     switch (direction)
