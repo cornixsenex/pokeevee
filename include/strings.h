@@ -2275,7 +2275,15 @@ extern const u8 gText_Cancel3[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
-<<<<<<< HEAD
+// Move Relearner
+extern const u8 MoveRelearner_Text_LevelUpMoveLWR[];
+extern const u8 MoveRelearner_Text_EggMoveLWR[];
+extern const u8 MoveRelearner_Text_TMMoveLWR[];
+extern const u8 MoveRelearner_Text_TutorMoveLWR[];
+extern const u8 MoveRelearner_Text_MoveLWR[];
+
+// CUSTOMS //
+
 //Book Verse
 extern const u8 gText_BookVerse1[];
 extern const u8 gText_BookVerse2[];
@@ -2332,34 +2340,6 @@ extern const u8 gText_Aglaopheme[];
 //Scylla
 extern const u8 gText_Scylla[];
 extern const u8 gText_Charybdis[];
-
-extern const u8 gText_BasePointsResetToZero[];
-
-// Map name pop-up
-extern const u8 gText_AM[];
-extern const u8 gText_PM[];
-
-// FRLG whiteout
-extern const u8 gText_PlayerScurriedToCenter[];
-extern const u8 gText_PlayerScurriedBackHome[];
-extern const u8 gText_PlayerRegroupCenter[];
-extern const u8 gText_PlayerRegroupHome[];
-
-extern const u8 gText_Relearn[]; // move relearner from summary screen
-extern const u8 gText_Relearn_LevelUp[];
-extern const u8 gText_Relearn_Egg[];
-extern const u8 gText_Relearn_TM[];
-extern const u8 gText_Relearn_Tutor[];
-extern const u8 gText_Rename[]; // change nickname from summary screen
-
-=======
-// Move Relearner
->>>>>>> e80ae569039786564381723fca22aac07afc3503
-extern const u8 MoveRelearner_Text_LevelUpMoveLWR[];
-extern const u8 MoveRelearner_Text_EggMoveLWR[];
-extern const u8 MoveRelearner_Text_TMMoveLWR[];
-extern const u8 MoveRelearner_Text_TutorMoveLWR[];
-extern const u8 MoveRelearner_Text_MoveLWR[];
 
 #endif // GUARD_STRINGS_H
 

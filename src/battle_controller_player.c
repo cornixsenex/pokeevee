@@ -153,14 +153,7 @@ static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(enum BattlerId
     [CONTROLLER_TERMINATOR_NOP]           = BtlController_TerminatorNop
 };
 
-<<<<<<< HEAD
-//static EWRAM_DATA bool8 UNUSED sAckBallUseBtn = FALSE;
-//static EWRAM_DATA bool8 UNUSED sBallSwapped = FALSE;
-
-void SetControllerToPlayer(u32 battler)
-=======
 void SetControllerToPlayer(enum BattlerId battler)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     gBattlerBattleController[battler] = BATTLE_CONTROLLER_PLAYER;
     gBattlerControllerEndFuncs[battler] = PlayerBufferExecCompleted;

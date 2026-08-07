@@ -35,10 +35,17 @@
 	>Ensure compat with custom scripts (MULTVAR, DIVVAR, COPYMONEY, REMOVEMONEY)
 #CONFLICT (content): Merge conflict in include/constants/trainers.h
 	>trainer front pics moved from macros to enums
-CONFLICT (content): Merge conflict in include/event_object_movement.h
-CONFLICT (content): Merge conflict in include/field_effect_helpers.h
-CONFLICT (content): Merge conflict in include/strings.h
-CONFLICT (content): Merge conflict in src/battle_controller_player.c
+#CONFLICT (content): Merge conflict in include/event_object_movement.h
+	>LoadPlayerObjectEventPalette arg type u8 gender -> enum Gender gender
+	>u8 direction -> enum Direction direction
+#CONFLICT (content): Merge conflict in include/field_effect_helpers.h
+	>remove vestigial func dec, match upstream
+#CONFLICT (content): Merge conflict in include/strings.h
+	>remove unused strings decs
+	>move custom string decs to bottom and match upstream
+#CONFLICT (content): Merge conflict in src/battle_controller_player.c
+	>u32 battler -> enum BattlerId battler
+	>remove old comments and match upstream
 CONFLICT (content): Merge conflict in src/battle_tower.c
 CONFLICT (content): Merge conflict in src/bike.c
 CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
@@ -66,4 +73,4 @@ Automatic merge failed; fix conflicts and then commit the result.
 > Custom script commands (multvar, divvar, copymoney, removevarmoney)
 	>Casinos
 > Custom traienr pics
-
+> SlideCushion_Slide
