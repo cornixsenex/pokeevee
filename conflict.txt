@@ -49,7 +49,7 @@
 #CONFLICT (content): Merge conflict in src/battle_tower.c
 	>multi cleanup
 	>match upstream
-!CONFLICT (content): Merge conflict in src/bike.c
+#CONFLICT (content): Merge conflict in src/bike.c
 	>WIP
 	> u8 direction -> enum Direction direction
 CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
@@ -79,3 +79,4 @@ Automatic merge failed; fix conflicts and then commit the result.
 	>Casinos
 > Custom traienr pics
 > SlideCushion_Slide
+> Bike pull tiles
