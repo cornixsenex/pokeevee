@@ -159,7 +159,6 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
-<<<<<<< HEAD
 //CUSTOMS
 
 static const u8 sKindBudDesc[] = _(
@@ -297,10 +296,7 @@ static const u8 sPinaFruitDesc[] = _(
 
 //END KUSTOMS
 
-const struct Item gItemsInfo[] =
-=======
 const struct ItemInfo gItemsInfo[] =
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     [ITEM_NONE] =
     {
