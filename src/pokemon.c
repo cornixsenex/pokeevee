@@ -69,11 +69,8 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/moves.h"
-<<<<<<< HEAD
 #include "constants/metatile_behaviors.h" //CornixSenex
-=======
 #include "constants/party_menu.h"
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 #include "constants/regions.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -1214,12 +1211,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personal
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
 }
 
-<<<<<<< HEAD
-
-void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
-=======
 static bool32 IsValidGender(u32 gender)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     switch (gender)
     {

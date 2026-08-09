@@ -60,22 +60,40 @@
 	>Just delete, it's auto-generated anyways
 #CONFLICT (content): Merge conflict in src/event_object_movement.c
 	>just keep fallback return collision
-!CONFLICT (content): Merge conflict in src/field_control_avatar.c
+#CONFLICT (content): Merge conflict in src/field_control_avatar.c
 	> WIP
 	> Apparently AutoRun isn't RHH? IDK (confirmed it's NOT rhh idk)
-CONFLICT (content): Merge conflict in src/field_player_avatar.c
-CONFLICT (content): Merge conflict in src/field_specials.c
-CONFLICT (content): Merge conflict in src/fishing.c
-CONFLICT (content): Merge conflict in src/item.c
-CONFLICT (content): Merge conflict in src/main_menu.c
-CONFLICT (content): Merge conflict in src/match_call.c
-CONFLICT (content): Merge conflict in src/naming_screen.c
-CONFLICT (content): Merge conflict in src/party_menu.c
-CONFLICT (content): Merge conflict in src/pokemon.c
-CONFLICT (content): Merge conflict in src/pokemon_icon.c
-CONFLICT (content): Merge conflict in src/scrcmd.c
-CONFLICT (content): Merge conflict in src/strings.c
-CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
+#CONFLICT (content): Merge conflict in src/field_player_avatar.c
+	> update spin tiles to use enum direction
+#CONFLICT (content): Merge conflict in src/field_specials.c
+	>That ugly dash check and special object collisions
+#CONFLICT (content): Merge conflict in src/fishing.c
+	>Cant see a difference - match upstream
+#CONFLICT (content): Merge conflict in src/item.c
+	> u16 item -> enum Item itemId
+#CONFLICT (content): Merge conflict in src/main_menu.c
+	> diasble female choice
+#CONFLICT (content): Merge conflict in src/match_call.c
+	>gText_Amy -> COMPOUND_STRING("AMY")
+	> match upstream, remove Gaby matchall 
+#CONFLICT (content): Merge conflict in src/naming_screen.c
+	> Cant see a change - match upstream
+#CONFLICT (content): Merge conflict in src/party_menu.c
+	> Changes to CreatePartyMonIconSprite
+		> isEgg specific thingy
+	> Match upstream
+#CONFLICT (content): Merge conflict in src/pokemon.c
+	>remove unused vestigial func CreateMonWithNature
+		>Is mentioned in the tutorial docs...?
+#CONFLICT (content): Merge conflict in src/pokemon_icon.c
+	>GetMonIconTiles -> GetMonIconTilesIsEgg
+	>match upstream
+#CONFLICT (content): Merge conflict in src/scrcmd.c
+	> added new ScrCmd_setstartingstatus()
+#CONFLICT (content): Merge conflict in src/strings.c
+	> Support kustom strings (pokemon names)
+#CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
+	>Was removed in 1.14 I guess I missed that
 Automatic merge failed; fix conflicts and then commit the result.
 
 > Multi Battles
@@ -86,3 +104,17 @@ Automatic merge failed; fix conflicts and then commit the result.
 > Custom traienr pics
 > SlideCushion_Slide
 > Bike pull tiles
+> Auto Run
+> Spin Tiles
+> Dashing in general with follower
+> No Female player choice
+> Custom naming boxes
+	>rival
+	>leaf
+	>philosophy
+	>rhetoric
+> CreateMon and CreateBoxMon were changed!
+	> docs/tutorials/mon_generationl.md
+? Name boxes
+	>docs/tutorials/how_to_namebox.md
+> Sound lol

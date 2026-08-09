@@ -448,17 +448,13 @@ static bool32 Fishing_NotEvenNibble(struct Task *task)
 		task->tStep = FISHING_FOUND_TREASURE;
 		return TRUE;
 	}
+
     gChainFishingDexNavStreak = 0;
     AlignFishingAnimationFrames();
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
-<<<<<<< HEAD
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-	task->tStep = FISHING_NO_MON;
-=======
     AddTextPrinterParameterized2(0, FONT_NORMAL, sText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     task->tStep = FISHING_NO_MON;
->>>>>>> e80ae569039786564381723fca22aac07afc3503
     return TRUE;
 }
 

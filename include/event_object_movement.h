@@ -545,10 +545,6 @@ void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 // run slow
 u8 GetPlayerRunSlowMovementAction(u32);
-//sideways stairs
-u8 GetSidewaysStairsToRightDirection(s16, s16, u8);
-u8 GetSidewaysStairsToLeftDirection(s16, s16, u8);
-u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 currentBehavior, u8 nextBehavior, u8 collision);
 
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);

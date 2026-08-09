@@ -1368,19 +1368,11 @@ const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
-<<<<<<< HEAD
-const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
-const u8 gText_AM[] = _("AM");
-const u8 gText_PM[] = _("PM");
-const u8 gText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
-const u8 gText_Relearn_LevelUp[] = _("{START_BUTTON} RELEARN LEVEL");
-const u8 gText_Relearn_Egg[] = _("{START_BUTTON} RELEARN EGG");
-const u8 gText_Relearn_TM[] = _("{START_BUTTON} RELEARN TM");
-const u8 gText_Relearn_Tutor[] = _("{START_BUTTON} RELEARN TUTOR");
-const u8 gText_Rename[] = _("RENAME");
-const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 
-//Kustom Pokemon Names
+const u8 gText_CannotSendMonToBoxActive[] = _("Cannot send an active battler\nto the box.{PAUSE_UNTIL_PRESS}");
+const u8 gText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't,\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
+
+//Kustom Stings (pokemon names)
 const u8 gText_Lupa[] = _("LUPA");
 const u8 gText_Granon[] = _("GRANON");
 //Sirens
@@ -1391,8 +1383,3 @@ const u8 gText_Aglaopheme[] = _("AGLAOPHEME");
 const u8 gText_Scylla[] = _("SCYLLA");
 //Charybdis
 const u8 gText_Charybdis[] = _("CHARYBDIS");
-
-const u8 gText_CannotSendMonToBoxActive[] = _("Cannot send an active battler\nto the box.{PAUSE_UNTIL_PRESS}");
-const u8 gText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't,\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
-=======
->>>>>>> e80ae569039786564381723fca22aac07afc3503

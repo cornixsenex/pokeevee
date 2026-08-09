@@ -197,13 +197,7 @@ u8 CreateMonIconNoPersonalityIsEgg(u16 species, void (*callback)(struct Sprite *
         .paletteTag = POKE_ICON_BASE_PAL_TAG + gSpeciesInfo[species].iconPalIndex,
     };
 
-<<<<<<< HEAD
-
-    iconTemplate.image = GetMonIconTiles(species, 0);
-
-=======
     iconTemplate.image = GetMonIconTilesIsEgg(species, 0, isEgg);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
     spriteId = CreateMonIconSprite(&iconTemplate, x, y, subpriority);
 
     UpdateMonIconFrame(&gSprites[spriteId]);

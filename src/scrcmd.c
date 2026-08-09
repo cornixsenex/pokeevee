@@ -3336,7 +3336,6 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
     return FALSE;
 }
 
-<<<<<<< HEAD
 //Cornix Custom
 bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
 {
@@ -3347,7 +3346,8 @@ bool8 ScrCmd_copymoney(struct ScriptContext *ctx)
     Script_RequestWriteVar(varId);
 
     *ptr = GetMoneyForCopyMoney();
-    return FALSE;
+   
+	return FALSE;
 }
 
 //Cornix Custom
@@ -3363,13 +3363,15 @@ bool8 ScrCmd_removevarmoney(struct ScriptContext *ctx)
 
         RemoveMoney(&gSaveBlock1Ptr->money, *ptr);
     }
-=======
+
+	return FALSE;
+}
+
 bool8 ScrCmd_setstartingstatus(struct ScriptContext *ctx)
 {
     enum StartingStatus status = ScriptReadByte(ctx);
 
     SetStartingStatus(status);
 
->>>>>>> e80ae569039786564381723fca22aac07afc3503
     return FALSE;
 }
