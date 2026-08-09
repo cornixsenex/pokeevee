@@ -769,7 +769,7 @@ static bool32 Fishing_FoundTreasure(struct Task *task)
     if (task->tFrameCounter == 0)
     {
 		StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
-        if (!IsTextPrinterActive(0))
+        if (!IsTextPrinterActiveOnWindow(0))
         {
             task->tFrameCounter++;
             return FALSE;

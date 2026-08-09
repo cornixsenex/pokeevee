@@ -183,7 +183,6 @@ static void Task_WaitStopSurfing(u8 taskId);
 static void CreateStartSurfingTask(u8);
 static void Task_StartSurfingInit(u8 taskId);
 static void Task_WaitStartSurfing(u8 taskId);
-static bool8 CanStopSurfing(s16, s16, u8);
 static bool8 CanStartSurfing(s16, s16, u8);
 
 //Kustom Collisions

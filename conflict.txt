@@ -119,3 +119,4 @@ Automatic merge failed; fix conflicts and then commit the result.
 ? Name boxes
 	>docs/tutorials/how_to_namebox.md
 > Sound lol
+> Treasure Fishing

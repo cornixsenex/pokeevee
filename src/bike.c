@@ -847,6 +847,7 @@ static enum AcroTransition AcroBikeHandleInputPullRight(enum Direction *directio
 }
 	
 
+static void AcroBikeTransition_FaceDirection(enum Direction direction)
 {
     PlayerFaceDirection(direction);
 }
