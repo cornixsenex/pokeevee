@@ -52,6 +52,7 @@
 #CONFLICT (content): Merge conflict in src/bike.c
 	>WIP
 	> u8 direction -> enum Direction direction
+	> u8 -> enum AcroTransition
 ?CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
 	>I can't see what changed here tbh
 #CONFLICT (content): Merge conflict in src/data/items.h
@@ -103,7 +104,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 	>Casinos
 > Custom traienr pics
 > SlideCushion_Slide
-> Bike pull tiles
+> Bike pull tiles - and just normal bikery (AcroBikeHandleInputTurning() )
 > Auto Run
 > Spin Tiles
 > Dashing in general with follower

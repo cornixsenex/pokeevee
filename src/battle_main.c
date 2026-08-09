@@ -6048,7 +6048,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
         break;
     case EFFECT_NATURE_POWER:
         if (state == MON_IN_BATTLE)
-            return GetMoveType(GetNaturePowerMove(battler));
+            return GetMoveType(GetNaturePowerMove());
         break;
     default:
         break;
