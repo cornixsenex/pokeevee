@@ -100,6 +100,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 > Multi Battles
 	>Salty Spitoon, Turris Saltus? etc?
 	>Pair battle with Aeneas
+		>Speak Aeneas on MareS9 with VAR_AENEID_STATE = 2
+		>MareS8_Script_ArriveHesperia
 > Custom script commands (multvar, divvar, copymoney, removevarmoney)
 	>Casinos
 > Custom traienr pics
@@ -117,5 +119,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 	> docs/tutorials/mon_generationl.md
 ? Name boxes
 	>docs/tutorials/how_to_namebox.md
-> Sound lol
 > Treasure Fishing
+> Map name popup
+	>Portus Primus is fine
+	>Castalia is wrong
+	>The mares and islas are all wrong
