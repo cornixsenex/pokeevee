@@ -97,11 +97,6 @@
 	>Was removed in 1.14 I guess I missed that
 Automatic merge failed; fix conflicts and then commit the result.
 
-> Multi Battles
-	>Salty Spitoon, Turris Saltus? etc?
-	>Pair battle with Aeneas
-		>Steven sprite and pallete all kinds of wrong 
-		>Aeneis party very bad
 > Custom script commands (multvar, divvar, copymoney, removevarmoney)
 	>Casinos
 > Custom traienr pics

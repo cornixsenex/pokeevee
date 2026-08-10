@@ -823,302 +823,298 @@ SaltySpitoon_2F_EventScript_AmbushBlue::
 	waitmovement 0
 # 463 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_two_trainers TRAINER_BLUE6, SaltySpitoon_2F_Text_Blue1Lost, TRAINER_BLUE7, SaltySpitoon_2F_Text_Blue2Lost
-# 464 "data/maps/SaltySpitoon_2F/scripts.pory"
-	waitstate
-# 467 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 466 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush2
+# 467 "data/maps/SaltySpitoon_2F/scripts.pory"
+	closemessage
 # 468 "data/maps/SaltySpitoon_2F/scripts.pory"
-	closemessage
-# 469 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 3, Common_Movement_WalkUp
-# 470 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 469 "data/maps/SaltySpitoon_2F/scripts.pory"
 	waitmovement 0
-# 471 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 470 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_no_intro TRAINER_BIGBLUE, SaltySpitoon_2F_Text_BigBlueLost
-# 473 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 472 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush3
-# 474 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 473 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 475 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 474 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 1, MAP_SALTY_SPITOON_2F
-# 476 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 475 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 3, MAP_SALTY_SPITOON_2F
-# 477 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 476 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 2, MAP_SALTY_SPITOON_2F
-# 478 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 477 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 1
-# 479 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 478 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 3
-# 480 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 479 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 2
-# 481 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 480 "data/maps/SaltySpitoon_2F/scripts.pory"
 	setflag FLAG_SS2F_BLUE
-# 482 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 481 "data/maps/SaltySpitoon_2F/scripts.pory"
 	call SaltySpitoon_2F_EventScript_IncVar
 	return
 
 
 SaltySpitoon_2F_EventScript_AmbushYellow::
-# 492 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 491 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 4, SaltySpitoon_2F_Movement_Ambush1
-# 493 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 492 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 6, SaltySpitoon_2F_Movement_AmbushBig
-# 494 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 493 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 5, SaltySpitoon_2F_Movement_Ambush2
-# 495 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 494 "data/maps/SaltySpitoon_2F/scripts.pory"
 	waitmovement 0
-# 497 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 496 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush1
-# 498 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 497 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 500 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 499 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 4, Common_Movement_WalkUp
-# 501 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 500 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 5, Common_Movement_WalkUp
-# 502 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 501 "data/maps/SaltySpitoon_2F/scripts.pory"
 	waitmovement 0
-# 504 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 503 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_two_trainers TRAINER_YELLOW6, SaltySpitoon_2F_Text_Yellow1Lost, TRAINER_YELLOW7, SaltySpitoon_2F_Text_Yellow2Lost
-# 505 "data/maps/SaltySpitoon_2F/scripts.pory"
-	waitstate
-# 508 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 506 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush2
-# 509 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 507 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 510 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 508 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 6, Common_Movement_WalkUp
-# 511 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 509 "data/maps/SaltySpitoon_2F/scripts.pory"
 	waitmovement 0
-# 512 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 510 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_no_intro TRAINER_BIGYELLOW, SaltySpitoon_2F_Text_BigYellowLost
-# 514 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 512 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush3
-# 515 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 513 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 516 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 514 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 4, MAP_SALTY_SPITOON_2F
-# 517 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 515 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 6, MAP_SALTY_SPITOON_2F
-# 518 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 516 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 5, MAP_SALTY_SPITOON_2F
-# 519 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 517 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 4
-# 520 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 518 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 6
-# 521 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 519 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 5
-# 522 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 520 "data/maps/SaltySpitoon_2F/scripts.pory"
 	setflag FLAG_SS2F_YELLOW
-# 523 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 521 "data/maps/SaltySpitoon_2F/scripts.pory"
 	call SaltySpitoon_2F_EventScript_IncVar
 	return
 
 
 SaltySpitoon_2F_EventScript_AmbushRed::
-# 533 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 531 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 7, SaltySpitoon_2F_Movement_Ambush1
-# 534 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 532 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 9, SaltySpitoon_2F_Movement_AmbushBig
-# 535 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 533 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 8, SaltySpitoon_2F_Movement_Ambush2
+# 534 "data/maps/SaltySpitoon_2F/scripts.pory"
+	waitmovement 0
 # 536 "data/maps/SaltySpitoon_2F/scripts.pory"
-	waitmovement 0
-# 538 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush1
+# 537 "data/maps/SaltySpitoon_2F/scripts.pory"
+	closemessage
 # 539 "data/maps/SaltySpitoon_2F/scripts.pory"
-	closemessage
-# 541 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 7, Common_Movement_WalkUp
-# 542 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 540 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 8, Common_Movement_WalkUp
+# 541 "data/maps/SaltySpitoon_2F/scripts.pory"
+	waitmovement 0
 # 543 "data/maps/SaltySpitoon_2F/scripts.pory"
-	waitmovement 0
-# 545 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_two_trainers TRAINER_RED6, SaltySpitoon_2F_Text_Red1Lost, TRAINER_RED7, SaltySpitoon_2F_Text_Red2Lost
-# 548 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 546 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush2
-# 549 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 547 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 550 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 548 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 9, Common_Movement_WalkUp
-# 551 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 549 "data/maps/SaltySpitoon_2F/scripts.pory"
 	waitmovement 0
-# 552 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 550 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_no_intro TRAINER_BIGRED, SaltySpitoon_2F_Text_BigRedLost
-# 554 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 552 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush3
-# 555 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 553 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 556 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 554 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 7, MAP_SALTY_SPITOON_2F
-# 557 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 555 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 9, MAP_SALTY_SPITOON_2F
-# 558 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 556 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 8, MAP_SALTY_SPITOON_2F
-# 559 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 557 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 7
-# 560 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 558 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 9
-# 561 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 559 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 8
-# 562 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 560 "data/maps/SaltySpitoon_2F/scripts.pory"
 	setflag FLAG_SS2F_RED
-# 563 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 561 "data/maps/SaltySpitoon_2F/scripts.pory"
 	call SaltySpitoon_2F_EventScript_IncVar
 	return
 
 
 SaltySpitoon_2F_EventScript_AmbushGreen::
-# 573 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 571 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 10, SaltySpitoon_2F_Movement_Ambush1
-# 574 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 572 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 12, SaltySpitoon_2F_Movement_AmbushBig
-# 575 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 573 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 11, SaltySpitoon_2F_Movement_Ambush2
+# 574 "data/maps/SaltySpitoon_2F/scripts.pory"
+	waitmovement 0
 # 576 "data/maps/SaltySpitoon_2F/scripts.pory"
-	waitmovement 0
-# 578 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush1
+# 577 "data/maps/SaltySpitoon_2F/scripts.pory"
+	closemessage
 # 579 "data/maps/SaltySpitoon_2F/scripts.pory"
-	closemessage
-# 581 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 10, Common_Movement_WalkUp
-# 582 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 580 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 11, Common_Movement_WalkUp
+# 581 "data/maps/SaltySpitoon_2F/scripts.pory"
+	waitmovement 0
 # 583 "data/maps/SaltySpitoon_2F/scripts.pory"
-	waitmovement 0
-# 585 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_two_trainers TRAINER_GREEN6, SaltySpitoon_2F_Text_Green1Lost, TRAINER_GREEN7, SaltySpitoon_2F_Text_Green2Lost
-# 588 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 586 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush2
-# 589 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 587 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 590 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 588 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement 12, Common_Movement_WalkUp
-# 591 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 589 "data/maps/SaltySpitoon_2F/scripts.pory"
 	waitmovement 0
-# 592 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 590 "data/maps/SaltySpitoon_2F/scripts.pory"
 	trainerbattle_no_intro TRAINER_BIGGREEN, SaltySpitoon_2F_Text_BigGreenLost
-# 594 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 592 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_Ambush3
-# 595 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 593 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 596 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 594 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 12, MAP_SALTY_SPITOON_2F
-# 597 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 595 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 12
-# 599 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 597 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_GetTattoo
-# 600 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 598 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 601 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 599 "data/maps/SaltySpitoon_2F/scripts.pory"
 	call Common_EventScript_OutOfCenterPartyHeal
-# 602 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 600 "data/maps/SaltySpitoon_2F/scripts.pory"
 	giveitem ITEM_TATTOO
-# 603 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 601 "data/maps/SaltySpitoon_2F/scripts.pory"
 	msgbox SaltySpitoon_2F_Text_GetTattoo2
-# 604 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 602 "data/maps/SaltySpitoon_2F/scripts.pory"
 	closemessage
-# 605 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 603 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 10, MAP_SALTY_SPITOON_2F
-# 606 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 604 "data/maps/SaltySpitoon_2F/scripts.pory"
 	hideobjectat 11, MAP_SALTY_SPITOON_2F
-# 607 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 605 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 11
-# 608 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 606 "data/maps/SaltySpitoon_2F/scripts.pory"
 	removeobject 10
+# 607 "data/maps/SaltySpitoon_2F/scripts.pory"
+	setflag FLAG_SS2F_GREEN
+# 608 "data/maps/SaltySpitoon_2F/scripts.pory"
+	setflag FLAG_SS2F_GREEN
 # 609 "data/maps/SaltySpitoon_2F/scripts.pory"
-	setflag FLAG_SS2F_GREEN
-# 610 "data/maps/SaltySpitoon_2F/scripts.pory"
-	setflag FLAG_SS2F_GREEN
-# 611 "data/maps/SaltySpitoon_2F/scripts.pory"
 	setvar VAR_GANG_STATE, 5
-# 612 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 610 "data/maps/SaltySpitoon_2F/scripts.pory"
 	setmetatile 17, 1, METATILE_BrendansMaysHouse_StairsDown, 0
 	return
 
 
 SaltySpitoon_2F_EventScript_AmbushPositionPlayer::
-# 620 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 618 "data/maps/SaltySpitoon_2F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, SaltySpitoon_2F_Movement_PlayerAmbush
-# 621 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 619 "data/maps/SaltySpitoon_2F/scripts.pory"
 	waitmovement 0
 	return
 
 
-# 626 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 624 "data/maps/SaltySpitoon_2F/scripts.pory"
 SaltySpitoon_2F_Movement_PlayerAmbush:
-# 627 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 625 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 627 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 625 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 627 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 625 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 628 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 626 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_right
-# 629 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 627 "data/maps/SaltySpitoon_2F/scripts.pory"
 	face_down
 	step_end
 
-# 633 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 631 "data/maps/SaltySpitoon_2F/scripts.pory"
 SaltySpitoon_2F_Movement_FollowerAmbush:
-# 634 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 632 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 634 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 632 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 634 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 632 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 634 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 632 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 635 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 633 "data/maps/SaltySpitoon_2F/scripts.pory"
 	face_down
 	step_end
 
-# 638 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 636 "data/maps/SaltySpitoon_2F/scripts.pory"
 SaltySpitoon_2F_Movement_Ambush1:
-# 639 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 637 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 639 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 637 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 639 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 637 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 639 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 637 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
 	step_end
 
-# 642 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 640 "data/maps/SaltySpitoon_2F/scripts.pory"
 SaltySpitoon_2F_Movement_AmbushBig:
-# 643 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 641 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_left
-# 644 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 642 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 644 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 642 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 644 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 642 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 645 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 643 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_right
-# 646 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 644 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
 	step_end
 
-# 649 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 647 "data/maps/SaltySpitoon_2F/scripts.pory"
 SaltySpitoon_2F_Movement_Ambush2:
-# 650 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 648 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_left
-# 650 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 648 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_left
-# 651 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 649 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 651 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 649 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 651 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 649 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
-# 652 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 650 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_right
-# 652 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 650 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_right
-# 653 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 651 "data/maps/SaltySpitoon_2F/scripts.pory"
 	walk_up
 	step_end
 
@@ -1131,75 +1127,75 @@ SaltySpitoon_2F_EventScript_IncVar_Text_0:
 	.string "IncVar Var out of scope$"
 
 SaltySpitoon_2F_Text_LockDoor::
-# 656 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 654 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "The door locks behind you.$"
 
 SaltySpitoon_2F_Text_DoorSign::
-# 660 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 658 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "The door is locked.$"
 
 SaltySpitoon_2F_Text_Ambush1::
-# 664 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 662 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Get him boys.$"
 
 SaltySpitoon_2F_Text_Blue1Lost::
-# 668 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 666 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "This can't be happening!$"
 
 SaltySpitoon_2F_Text_Blue2Lost::
-# 672 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 670 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Another lousy day...$"
 
 SaltySpitoon_2F_Text_Yellow1Lost::
-# 676 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 674 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "This can't be happening!$"
 
 SaltySpitoon_2F_Text_Yellow2Lost::
-# 680 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 678 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Another lousy day...$"
 
 SaltySpitoon_2F_Text_Red1Lost::
-# 684 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 682 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "This can't be happening!$"
 
 SaltySpitoon_2F_Text_Red2Lost::
-# 688 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 686 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Another lousy day...$"
 
 SaltySpitoon_2F_Text_Green1Lost::
-# 692 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 690 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "This can't be happening!$"
 
 SaltySpitoon_2F_Text_Green2Lost::
-# 696 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 694 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Another lousy day...$"
 
 SaltySpitoon_2F_Text_Ambush2::
-# 700 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 698 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "You wont get away from me!$"
 
 SaltySpitoon_2F_Text_BigBlueLost::
-# 704 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 702 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Where'd this go so wrong?$"
 
 SaltySpitoon_2F_Text_BigYellowLost::
-# 708 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 706 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Where'd this go so wrong?$"
 
 SaltySpitoon_2F_Text_BigRedLost::
-# 712 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 710 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Where'd this go so wrong?$"
 
 SaltySpitoon_2F_Text_BigGreenLost::
-# 716 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 714 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Where'd this go so wrong?$"
 
 SaltySpitoon_2F_Text_Ambush3::
-# 720 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 718 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Well shit. Let's get out of here!$"
 
 SaltySpitoon_2F_Text_GetTattoo::
-# 724 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 722 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Like zoinks dude you're super strong\n"
 	.string "man!\n"
 	.string "Like yeah man we're totally your dudes\l"
@@ -1210,7 +1206,7 @@ SaltySpitoon_2F_Text_GetTattoo::
 	.string "take a sec...$"
 
 SaltySpitoon_2F_Text_GetTattoo2::
-# 728 "data/maps/SaltySpitoon_2F/scripts.pory"
+# 726 "data/maps/SaltySpitoon_2F/scripts.pory"
 	.string "Hey! That looks real cool man! Like\n"
 	.string "zoinks you look like a real tough guy\l"
 	.string "now. I'm gonna head back to the shack\l"

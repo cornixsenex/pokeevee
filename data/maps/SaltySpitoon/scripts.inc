@@ -1261,338 +1261,336 @@ SaltySpitoon_EventScript_HiLoKabuto_Fight::
 # 527 "data/maps/SaltySpitoon/scripts.pory"
 	trainerbattle_two_trainers TRAINER_REESE, SaltySpitoon_Text_ReeseLost, TRAINER_JOHN, SaltySpitoon_Text_JohnLost
 # 528 "data/maps/SaltySpitoon/scripts.pory"
-	waitstate
-# 529 "data/maps/SaltySpitoon/scripts.pory"
 	release
 	end
 
 
 SaltySpitoon_EventScript_HiLoKabuto_PlayAgain::
-# 534 "data/maps/SaltySpitoon/scripts.pory"
+# 533 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_HiLoKabuto_PlayAgain, MSGBOX_YESNO
-# 535 "data/maps/SaltySpitoon/scripts.pory"
+# 534 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 536 "data/maps/SaltySpitoon/scripts.pory"
+# 535 "data/maps/SaltySpitoon/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq SaltySpitoon_EventScript_HiLoKabuto_PlayAgain_1
-# 539 "data/maps/SaltySpitoon/scripts.pory"
+# 538 "data/maps/SaltySpitoon/scripts.pory"
 	call SaltySpitoon_EventScript_HiLoKabuto_Goodbye
 	return
 
 SaltySpitoon_EventScript_HiLoKabuto_PlayAgain_1:
-# 537 "data/maps/SaltySpitoon/scripts.pory"
+# 536 "data/maps/SaltySpitoon/scripts.pory"
 	call SaltySpitoon_EventScript_HiLoKabuto_GetWager
 	return
 
 
 SaltySpitoon_EventScript_HiLoKabuto_Reset::
-# 544 "data/maps/SaltySpitoon/scripts.pory"
+# 543 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_1
-# 545 "data/maps/SaltySpitoon/scripts.pory"
+# 544 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_2
-# 546 "data/maps/SaltySpitoon/scripts.pory"
+# 545 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_3
-# 547 "data/maps/SaltySpitoon/scripts.pory"
+# 546 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_4
-# 548 "data/maps/SaltySpitoon/scripts.pory"
+# 547 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_5
-# 549 "data/maps/SaltySpitoon/scripts.pory"
+# 548 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_6
-# 550 "data/maps/SaltySpitoon/scripts.pory"
+# 549 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_7
-# 551 "data/maps/SaltySpitoon/scripts.pory"
+# 550 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_8
-# 552 "data/maps/SaltySpitoon/scripts.pory"
+# 551 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_9
-# 553 "data/maps/SaltySpitoon/scripts.pory"
+# 552 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_A
-# 554 "data/maps/SaltySpitoon/scripts.pory"
+# 553 "data/maps/SaltySpitoon/scripts.pory"
 	clearflag FLAG_TEMP_B
-# 555 "data/maps/SaltySpitoon/scripts.pory"
+# 554 "data/maps/SaltySpitoon/scripts.pory"
 	setvar VAR_TEMP_A, 0
-# 556 "data/maps/SaltySpitoon/scripts.pory"
+# 555 "data/maps/SaltySpitoon/scripts.pory"
 	setvar VAR_TEMP_B, 0
-# 557 "data/maps/SaltySpitoon/scripts.pory"
+# 556 "data/maps/SaltySpitoon/scripts.pory"
 	setvar VAR_TEMP_C, 0
-# 558 "data/maps/SaltySpitoon/scripts.pory"
+# 557 "data/maps/SaltySpitoon/scripts.pory"
 	setvar VAR_TEMP_D, 0
-# 559 "data/maps/SaltySpitoon/scripts.pory"
+# 558 "data/maps/SaltySpitoon/scripts.pory"
 	setvar VAR_TEMP_E, 0
 	return
 
 
 SaltySpitoon_EventScript_Bartender::
-# 566 "data/maps/SaltySpitoon/scripts.pory"
+# 565 "data/maps/SaltySpitoon/scripts.pory"
 	lock
-# 567 "data/maps/SaltySpitoon/scripts.pory"
+# 566 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_Bartender1
-# 568 "data/maps/SaltySpitoon/scripts.pory"
+# 567 "data/maps/SaltySpitoon/scripts.pory"
 	waitmessage
-# 569 "data/maps/SaltySpitoon/scripts.pory"
+# 568 "data/maps/SaltySpitoon/scripts.pory"
 	pokemart SaltySpitoon_Mart_Bartender
-# 570 "data/maps/SaltySpitoon/scripts.pory"
+# 569 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_Bartender2
-# 571 "data/maps/SaltySpitoon/scripts.pory"
+# 570 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 572 "data/maps/SaltySpitoon/scripts.pory"
+# 571 "data/maps/SaltySpitoon/scripts.pory"
 	goto_if_unset FLAG_SALTYSPITOON_BRAWL, SaltySpitoon_EventScript_Bartender_2
 SaltySpitoon_EventScript_Bartender_1:
 	end
 
 SaltySpitoon_EventScript_Bartender_2:
-# 573 "data/maps/SaltySpitoon/scripts.pory"
+# 572 "data/maps/SaltySpitoon/scripts.pory"
 	call SaltySpitoon_EventScript_CantinaBrawl
 	goto SaltySpitoon_EventScript_Bartender_1
 
 
 SaltySpitoon_EventScript_CantinaBrawl::
-# 579 "data/maps/SaltySpitoon/scripts.pory"
+# 578 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement 17, Common_Movement_FaceRight
-# 580 "data/maps/SaltySpitoon/scripts.pory"
+# 579 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement 18, Common_Movement_FaceLeft
-# 581 "data/maps/SaltySpitoon/scripts.pory"
+# 580 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 581 "data/maps/SaltySpitoon/scripts.pory"
+	waitmovement 0
 # 582 "data/maps/SaltySpitoon/scripts.pory"
-	waitmovement 0
-# 583 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+# 583 "data/maps/SaltySpitoon/scripts.pory"
+	waitmovement 0
 # 584 "data/maps/SaltySpitoon/scripts.pory"
-	waitmovement 0
-# 585 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_EvazanIntro
+# 585 "data/maps/SaltySpitoon/scripts.pory"
+	closemessage
 # 586 "data/maps/SaltySpitoon/scripts.pory"
-	closemessage
-# 587 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 588 "data/maps/SaltySpitoon/scripts.pory"
+# 587 "data/maps/SaltySpitoon/scripts.pory"
 	waitmovement 0
-# 589 "data/maps/SaltySpitoon/scripts.pory"
+# 588 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_PondaBabuIntro
-# 590 "data/maps/SaltySpitoon/scripts.pory"
+# 589 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 593 "data/maps/SaltySpitoon/scripts.pory"
+# 592 "data/maps/SaltySpitoon/scripts.pory"
 	trainerbattle_two_trainers TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABU, SaltySpitoon_Text_PondaBabuLost
-# 594 "data/maps/SaltySpitoon/scripts.pory"
+# 593 "data/maps/SaltySpitoon/scripts.pory"
 	setflag FLAG_SALTYSPITOON_BRAWL
 	return
 
 
 SaltySpitoon_EventScript_PondaBabu::
-# 599 "data/maps/SaltySpitoon/scripts.pory"
+# 598 "data/maps/SaltySpitoon/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 601 "data/maps/SaltySpitoon/scripts.pory"
+# 600 "data/maps/SaltySpitoon/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq SaltySpitoon_EventScript_PondaBabu_4
 SaltySpitoon_EventScript_PondaBabu_3:
-# 604 "data/maps/SaltySpitoon/scripts.pory"
+# 603 "data/maps/SaltySpitoon/scripts.pory"
 	faceplayer
-# 605 "data/maps/SaltySpitoon/scripts.pory"
+# 604 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_PondaBabuPost
-# 606 "data/maps/SaltySpitoon/scripts.pory"
+# 605 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 607 "data/maps/SaltySpitoon/scripts.pory"
+# 606 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement 18, Common_Movement_FaceUp
-# 608 "data/maps/SaltySpitoon/scripts.pory"
+# 607 "data/maps/SaltySpitoon/scripts.pory"
 	waitmovement 0
 SaltySpitoon_EventScript_PondaBabu_1:
 	end
 
 SaltySpitoon_EventScript_PondaBabu_2:
-# 602 "data/maps/SaltySpitoon/scripts.pory"
+# 601 "data/maps/SaltySpitoon/scripts.pory"
 	call SaltySpitoon_EventScript_CantinaBrawl
 	goto SaltySpitoon_EventScript_PondaBabu_1
 
 SaltySpitoon_EventScript_PondaBabu_4:
-# 601 "data/maps/SaltySpitoon/scripts.pory"
+# 600 "data/maps/SaltySpitoon/scripts.pory"
 	goto_if_unset FLAG_SALTYSPITOON_BRAWL, SaltySpitoon_EventScript_PondaBabu_2
 	goto SaltySpitoon_EventScript_PondaBabu_3
 
 
 SaltySpitoon_EventScript_Evazan::
-# 614 "data/maps/SaltySpitoon/scripts.pory"
+# 613 "data/maps/SaltySpitoon/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 616 "data/maps/SaltySpitoon/scripts.pory"
+# 615 "data/maps/SaltySpitoon/scripts.pory"
 	compare VAR_RESULT, DIR_WEST
 	goto_if_eq SaltySpitoon_EventScript_Evazan_4
 SaltySpitoon_EventScript_Evazan_3:
-# 619 "data/maps/SaltySpitoon/scripts.pory"
+# 618 "data/maps/SaltySpitoon/scripts.pory"
 	faceplayer
-# 620 "data/maps/SaltySpitoon/scripts.pory"
+# 619 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_EvazanPost
-# 621 "data/maps/SaltySpitoon/scripts.pory"
+# 620 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 622 "data/maps/SaltySpitoon/scripts.pory"
+# 621 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement 17, Common_Movement_FaceUp
-# 623 "data/maps/SaltySpitoon/scripts.pory"
+# 622 "data/maps/SaltySpitoon/scripts.pory"
 	waitmovement 0
 SaltySpitoon_EventScript_Evazan_1:
 	end
 
 SaltySpitoon_EventScript_Evazan_2:
-# 617 "data/maps/SaltySpitoon/scripts.pory"
+# 616 "data/maps/SaltySpitoon/scripts.pory"
 	call SaltySpitoon_EventScript_CantinaBrawl
 	goto SaltySpitoon_EventScript_Evazan_1
 
 SaltySpitoon_EventScript_Evazan_4:
-# 616 "data/maps/SaltySpitoon/scripts.pory"
+# 615 "data/maps/SaltySpitoon/scripts.pory"
 	goto_if_unset FLAG_SALTYSPITOON_BRAWL, SaltySpitoon_EventScript_Evazan_2
 	goto SaltySpitoon_EventScript_Evazan_3
 
 
 SaltySpitoon_EventScript_Test::
-# 629 "data/maps/SaltySpitoon/scripts.pory"
+# 628 "data/maps/SaltySpitoon/scripts.pory"
 	lock
-# 630 "data/maps/SaltySpitoon/scripts.pory"
+# 629 "data/maps/SaltySpitoon/scripts.pory"
 	faceplayer
-# 631 "data/maps/SaltySpitoon/scripts.pory"
+# 630 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_EventScript_Test_Text_0
+# 631 "data/maps/SaltySpitoon/scripts.pory"
+	closemessage
 # 632 "data/maps/SaltySpitoon/scripts.pory"
-	closemessage
-# 633 "data/maps/SaltySpitoon/scripts.pory"
 	trainerbattle_two_trainers TRAINER_EVAZAN, SaltySpitoon_Text_EvazanLost, TRAINER_PONDA_BABU, SaltySpitoon_Text_PondaBabuLost
-# 634 "data/maps/SaltySpitoon/scripts.pory"
+# 633 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_EventScript_Test_Text_1
-# 635 "data/maps/SaltySpitoon/scripts.pory"
+# 634 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 636 "data/maps/SaltySpitoon/scripts.pory"
+# 635 "data/maps/SaltySpitoon/scripts.pory"
 	release
 	end
 
 
 SaltySpitoon_EventScript_DeathsticksGuy::
-# 641 "data/maps/SaltySpitoon/scripts.pory"
+# 640 "data/maps/SaltySpitoon/scripts.pory"
 	lock
-# 642 "data/maps/SaltySpitoon/scripts.pory"
+# 641 "data/maps/SaltySpitoon/scripts.pory"
 	faceplayer
-# 643 "data/maps/SaltySpitoon/scripts.pory"
+# 642 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_Deathsticks1
-# 644 "data/maps/SaltySpitoon/scripts.pory"
+# 643 "data/maps/SaltySpitoon/scripts.pory"
 	waitmessage
-# 645 "data/maps/SaltySpitoon/scripts.pory"
+# 644 "data/maps/SaltySpitoon/scripts.pory"
 	pokemart SaltySpitoon_Mart_Deathsticks
-# 646 "data/maps/SaltySpitoon/scripts.pory"
+# 645 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_Deathsticks2
-# 647 "data/maps/SaltySpitoon/scripts.pory"
+# 646 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 648 "data/maps/SaltySpitoon/scripts.pory"
+# 647 "data/maps/SaltySpitoon/scripts.pory"
 	release
 	end
 
 
 SaltySpitoon_EventScript_BigGreen::
-# 653 "data/maps/SaltySpitoon/scripts.pory"
+# 652 "data/maps/SaltySpitoon/scripts.pory"
 	lock
-# 654 "data/maps/SaltySpitoon/scripts.pory"
+# 653 "data/maps/SaltySpitoon/scripts.pory"
 	faceplayer
-# 655 "data/maps/SaltySpitoon/scripts.pory"
+# 654 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_BigGreen1
-# 656 "data/maps/SaltySpitoon/scripts.pory"
+# 655 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement 12, Common_Movement_ExclamationMark
-# 657 "data/maps/SaltySpitoon/scripts.pory"
+# 656 "data/maps/SaltySpitoon/scripts.pory"
 	waitmovement 0
-# 658 "data/maps/SaltySpitoon/scripts.pory"
+# 657 "data/maps/SaltySpitoon/scripts.pory"
 	msgbox SaltySpitoon_Text_BigGreen2
-# 659 "data/maps/SaltySpitoon/scripts.pory"
+# 658 "data/maps/SaltySpitoon/scripts.pory"
 	closemessage
-# 660 "data/maps/SaltySpitoon/scripts.pory"
+# 659 "data/maps/SaltySpitoon/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 661 "data/maps/SaltySpitoon/scripts.pory"
+# 660 "data/maps/SaltySpitoon/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq SaltySpitoon_EventScript_BigGreen_2
-# 664 "data/maps/SaltySpitoon/scripts.pory"
+# 663 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement 12, SaltySpitoon_Movement_BigGreenExitL
 SaltySpitoon_EventScript_BigGreen_1:
-# 666 "data/maps/SaltySpitoon/scripts.pory"
+# 665 "data/maps/SaltySpitoon/scripts.pory"
 	waitmovement 0
-# 667 "data/maps/SaltySpitoon/scripts.pory"
+# 666 "data/maps/SaltySpitoon/scripts.pory"
 	removeobject 12
-# 668 "data/maps/SaltySpitoon/scripts.pory"
+# 667 "data/maps/SaltySpitoon/scripts.pory"
 	setflag FLAG_SALTYSPITOON_BIGGREEN
-# 669 "data/maps/SaltySpitoon/scripts.pory"
+# 668 "data/maps/SaltySpitoon/scripts.pory"
 	setvar VAR_GANG_STATE, 1
-# 670 "data/maps/SaltySpitoon/scripts.pory"
+# 669 "data/maps/SaltySpitoon/scripts.pory"
 	release
 	end
 
 SaltySpitoon_EventScript_BigGreen_2:
-# 662 "data/maps/SaltySpitoon/scripts.pory"
+# 661 "data/maps/SaltySpitoon/scripts.pory"
 	applymovement 12, SaltySpitoon_Movement_BigGreenExitR
 	goto SaltySpitoon_EventScript_BigGreen_1
 
 
-# 674 "data/maps/SaltySpitoon/scripts.pory"
+# 673 "data/maps/SaltySpitoon/scripts.pory"
 SaltySpitoon_Movement_BigGreenExitL:
-# 675 "data/maps/SaltySpitoon/scripts.pory"
+# 674 "data/maps/SaltySpitoon/scripts.pory"
+	walk_left
+# 674 "data/maps/SaltySpitoon/scripts.pory"
+	walk_left
+# 674 "data/maps/SaltySpitoon/scripts.pory"
+	walk_left
+# 674 "data/maps/SaltySpitoon/scripts.pory"
 	walk_left
 # 675 "data/maps/SaltySpitoon/scripts.pory"
-	walk_left
+	walk_down
 # 675 "data/maps/SaltySpitoon/scripts.pory"
-	walk_left
+	walk_down
 # 675 "data/maps/SaltySpitoon/scripts.pory"
-	walk_left
-# 676 "data/maps/SaltySpitoon/scripts.pory"
 	walk_down
-# 676 "data/maps/SaltySpitoon/scripts.pory"
+# 675 "data/maps/SaltySpitoon/scripts.pory"
 	walk_down
-# 676 "data/maps/SaltySpitoon/scripts.pory"
+# 675 "data/maps/SaltySpitoon/scripts.pory"
 	walk_down
-# 676 "data/maps/SaltySpitoon/scripts.pory"
-	walk_down
-# 676 "data/maps/SaltySpitoon/scripts.pory"
-	walk_down
-# 676 "data/maps/SaltySpitoon/scripts.pory"
+# 675 "data/maps/SaltySpitoon/scripts.pory"
 	walk_down
 	step_end
 
-# 679 "data/maps/SaltySpitoon/scripts.pory"
+# 678 "data/maps/SaltySpitoon/scripts.pory"
 SaltySpitoon_Movement_BigGreenExitR:
-# 680 "data/maps/SaltySpitoon/scripts.pory"
+# 679 "data/maps/SaltySpitoon/scripts.pory"
+	walk_right
+# 679 "data/maps/SaltySpitoon/scripts.pory"
+	walk_right
+# 679 "data/maps/SaltySpitoon/scripts.pory"
+	walk_right
+# 679 "data/maps/SaltySpitoon/scripts.pory"
+	walk_right
+# 679 "data/maps/SaltySpitoon/scripts.pory"
 	walk_right
 # 680 "data/maps/SaltySpitoon/scripts.pory"
-	walk_right
+	walk_down
 # 680 "data/maps/SaltySpitoon/scripts.pory"
-	walk_right
+	walk_down
 # 680 "data/maps/SaltySpitoon/scripts.pory"
-	walk_right
+	walk_down
 # 680 "data/maps/SaltySpitoon/scripts.pory"
-	walk_right
-# 681 "data/maps/SaltySpitoon/scripts.pory"
 	walk_down
-# 681 "data/maps/SaltySpitoon/scripts.pory"
+# 680 "data/maps/SaltySpitoon/scripts.pory"
 	walk_down
-# 681 "data/maps/SaltySpitoon/scripts.pory"
-	walk_down
-# 681 "data/maps/SaltySpitoon/scripts.pory"
-	walk_down
-# 681 "data/maps/SaltySpitoon/scripts.pory"
-	walk_down
-# 681 "data/maps/SaltySpitoon/scripts.pory"
+# 680 "data/maps/SaltySpitoon/scripts.pory"
 	walk_down
 	step_end
 
 	.align 2
-# 684 "data/maps/SaltySpitoon/scripts.pory"
+# 683 "data/maps/SaltySpitoon/scripts.pory"
 SaltySpitoon_Mart_Deathsticks:
-# 685 "data/maps/SaltySpitoon/scripts.pory"
+# 684 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_RARE_CANDY
-# 686 "data/maps/SaltySpitoon/scripts.pory"
+# 685 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_LOTUS_LEAF
-# 687 "data/maps/SaltySpitoon/scripts.pory"
+# 686 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_DEATH_STICK
 	.2byte ITEM_NONE
 
 	.align 2
-# 690 "data/maps/SaltySpitoon/scripts.pory"
+# 689 "data/maps/SaltySpitoon/scripts.pory"
 SaltySpitoon_Mart_Bartender:
-# 691 "data/maps/SaltySpitoon/scripts.pory"
+# 690 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_LAVA_COOKIE
-# 692 "data/maps/SaltySpitoon/scripts.pory"
+# 691 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_MOOMOO_MILK
-# 693 "data/maps/SaltySpitoon/scripts.pory"
+# 692 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_RARE_CANDY
-# 694 "data/maps/SaltySpitoon/scripts.pory"
+# 693 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_LEMONADE
-# 695 "data/maps/SaltySpitoon/scripts.pory"
+# 694 "data/maps/SaltySpitoon/scripts.pory"
 	.2byte ITEM_BERRY_JUICE
 	.2byte ITEM_NONE
 
@@ -1889,41 +1887,41 @@ SaltySpitoon_EventScript_HiLoKabuto_PlayerWon_Text_0:
 	.string "PROBLEMO bottom of Pay Wager swithc$"
 
 SaltySpitoon_EventScript_Test_Text_0:
-# 631 "data/maps/SaltySpitoon/scripts.pory"
+# 630 "data/maps/SaltySpitoon/scripts.pory"
 	.string "TEST DOUBLE BATTLE$"
 
 SaltySpitoon_EventScript_Test_Text_1:
-# 634 "data/maps/SaltySpitoon/scripts.pory"
+# 633 "data/maps/SaltySpitoon/scripts.pory"
 	.string "TEST DONE$"
 
 SaltySpitoon_Text_Deathsticks1::
-# 698 "data/maps/SaltySpitoon/scripts.pory"
+# 697 "data/maps/SaltySpitoon/scripts.pory"
 	.string "You wanna buy some deathsticks?$"
 
 SaltySpitoon_Text_Deathsticks2::
-# 702 "data/maps/SaltySpitoon/scripts.pory"
+# 701 "data/maps/SaltySpitoon/scripts.pory"
 	.string "I don't wanna sell you any deathsticks.\n"
 	.string "I wanna go home and rethink my life...$"
 
 SaltySpitoon_Text_Bartender1::
-# 706 "data/maps/SaltySpitoon/scripts.pory"
+# 705 "data/maps/SaltySpitoon/scripts.pory"
 	.string "You wanna buy something?$"
 
 SaltySpitoon_Text_Bartender2::
-# 710 "data/maps/SaltySpitoon/scripts.pory"
+# 709 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Allright stranger.$"
 
 SaltySpitoon_Text_HiLoKabuto_Intro::
-# 714 "data/maps/SaltySpitoon/scripts.pory"
+# 713 "data/maps/SaltySpitoon/scripts.pory"
 	.string "We're playing High Low Kabuto. You in?$"
 
 SaltySpitoon_Text_HiLoKabuto_GetWager::
-# 718 "data/maps/SaltySpitoon/scripts.pory"
+# 717 "data/maps/SaltySpitoon/scripts.pory"
 	.string "How much will you be wagering this\n"
 	.string "round?$"
 
 SaltySpitoon_Text_HiLoKabuto_DescribeGame::
-# 722 "data/maps/SaltySpitoon/scripts.pory"
+# 721 "data/maps/SaltySpitoon/scripts.pory"
 	.string "On the table we have ten playing cards\n"
 	.string "the numbers one through nine and\l"
 	.string "Kabuto. Kabuto's value is zero or ten\l"
@@ -1931,85 +1929,85 @@ SaltySpitoon_Text_HiLoKabuto_DescribeGame::
 	.string "low.$"
 
 SaltySpitoon_Text_HiLoKabuto_Goodbye::
-# 726 "data/maps/SaltySpitoon/scripts.pory"
+# 725 "data/maps/SaltySpitoon/scripts.pory"
 	.string "When you feel like playing we'll still be\n"
 	.string "here.$"
 
 SaltySpitoon_Text_HiLoKabuto_WagerPoor::
-# 730 "data/maps/SaltySpitoon/scripts.pory"
+# 729 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Looks like you're short on coin to back\n"
 	.string "that bet.$"
 
 SaltySpitoon_Text_HiLoKabuto_KabutoLo::
-# 734 "data/maps/SaltySpitoon/scripts.pory"
+# 733 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Gentlemen, Kabuto is low this game. Now\n"
 	.string "take your cards and let's see who has\l"
 	.string "won.$"
 
 SaltySpitoon_Text_HiLoKabuto_KabutoHi::
-# 738 "data/maps/SaltySpitoon/scripts.pory"
+# 737 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Gentlemen, Kabuto is high this game. Now\n"
 	.string "take your cards and let's see who has\l"
 	.string "won.$"
 
 SaltySpitoon_Text_HiLoKabuto_YouLost::
-# 742 "data/maps/SaltySpitoon/scripts.pory"
+# 741 "data/maps/SaltySpitoon/scripts.pory"
 	.string "That means you lose your wager kind\n"
 	.string "stranger.$"
 
 SaltySpitoon_Text_HiLoKabuto_YouWon::
-# 746 "data/maps/SaltySpitoon/scripts.pory"
+# 745 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Congratulations {PLAYER} you won\n"
 	.string "this round.$"
 
 SaltySpitoon_Text_HiLoKabuto_PlayAgain::
-# 750 "data/maps/SaltySpitoon/scripts.pory"
+# 749 "data/maps/SaltySpitoon/scripts.pory"
 	.string "That was a good game. Will we play\n"
 	.string "again?$"
 
 SaltySpitoon_Text_EvazanIntro::
-# 754 "data/maps/SaltySpitoon/scripts.pory"
+# 753 "data/maps/SaltySpitoon/scripts.pory"
 	.string "He doesn't like you. I don't like you\n"
 	.string "either.$"
 
 SaltySpitoon_Text_EvazanLost::
-# 758 "data/maps/SaltySpitoon/scripts.pory"
+# 757 "data/maps/SaltySpitoon/scripts.pory"
 	.string "You will be sorry.$"
 
 SaltySpitoon_Text_EvazanPost::
-# 762 "data/maps/SaltySpitoon/scripts.pory"
+# 761 "data/maps/SaltySpitoon/scripts.pory"
 	.string "You need to be more careful round here\n"
 	.string "kid.$"
 
 SaltySpitoon_Text_PondaBabuIntro::
-# 766 "data/maps/SaltySpitoon/scripts.pory"
+# 765 "data/maps/SaltySpitoon/scripts.pory"
 	.string "We're wanted men. I have the death\n"
 	.string "sentence.$"
 
 SaltySpitoon_Text_PondaBabuLost::
-# 770 "data/maps/SaltySpitoon/scripts.pory"
+# 769 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Cold blood! Ow! My arm!$"
 
 SaltySpitoon_Text_PondaBabuPost::
-# 774 "data/maps/SaltySpitoon/scripts.pory"
+# 773 "data/maps/SaltySpitoon/scripts.pory"
 	.string "You watch yourself. They say this place\n"
 	.string "is rough.$"
 
 SaltySpitoon_Text_ReeseLost::
-# 778 "data/maps/SaltySpitoon/scripts.pory"
+# 777 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Prolly cheated at that too...$"
 
 SaltySpitoon_Text_JohnLost::
-# 782 "data/maps/SaltySpitoon/scripts.pory"
+# 781 "data/maps/SaltySpitoon/scripts.pory"
 	.string "Tarnation!$"
 
 SaltySpitoon_Text_NoGame::
-# 786 "data/maps/SaltySpitoon/scripts.pory"
+# 785 "data/maps/SaltySpitoon/scripts.pory"
 	.string "We're not playing right now so get you\n"
 	.string "gone.$"
 
 SaltySpitoon_Text_HiLoKabuto_Fight::
-# 790 "data/maps/SaltySpitoon/scripts.pory"
+# 789 "data/maps/SaltySpitoon/scripts.pory"
 	.string "No one can win three hands\n"
 	.string "successively! This kind stranger\l"
 	.string "{PLAYER} here must be cheating! To\l"
@@ -2017,7 +2015,7 @@ SaltySpitoon_Text_HiLoKabuto_Fight::
 	.string "man!$"
 
 SaltySpitoon_Text_BigGreen1::
-# 794 "data/maps/SaltySpitoon/scripts.pory"
+# 793 "data/maps/SaltySpitoon/scripts.pory"
 	.string "I'm here because I am a troubled man.\n"
 	.string "These dancing girls help me forget\l"
 	.string "trouble, let sorrow waste away as time\l"
@@ -2025,7 +2023,7 @@ SaltySpitoon_Text_BigGreen1::
 	.string "I decline. Oh woe is me!$"
 
 SaltySpitoon_Text_BigGreen2::
-# 798 "data/maps/SaltySpitoon/scripts.pory"
+# 797 "data/maps/SaltySpitoon/scripts.pory"
 	.string "But where are my manners? My name is\n"
 	.string "Melvin. You call me Big Green. I'm sure\l"
 	.string "you're looking to make a fortune and\l"
