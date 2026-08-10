@@ -100,8 +100,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 > Multi Battles
 	>Salty Spitoon, Turris Saltus? etc?
 	>Pair battle with Aeneas
-		>Speak Aeneas on MareS9 with VAR_AENEID_STATE = 2
-		>MareS8_Script_ArriveHesperia
+		>Steven sprite and pallete all kinds of wrong 
+		>Aeneis party very bad
 > Custom script commands (multvar, divvar, copymoney, removevarmoney)
 	>Casinos
 > Custom traienr pics
