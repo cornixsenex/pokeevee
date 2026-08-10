@@ -4,9 +4,9 @@ PacifidlogTown_House3_MapScripts::
 PacifidlogTown_House3_EventScript_Trader::
 	lock
 	faceplayer
-	goto_if_set FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED, PacifidlogTown_House3_EventScript_TradeCompleted
+@@	goto_if_set FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED, PacifidlogTown_House3_EventScript_TradeCompleted
 	ingame_trade INGAME_TRADE_HORSEA, PacifidlogTown_House3_Text_WillingToTradeIt, PacifidlogTown_House3_EventScript_DeclineTrade, PacifidlogTown_House3_EventScript_NotRequestedMon, PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou
-	setflag FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED
+@@	setflag FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED
 	release
 	end
 

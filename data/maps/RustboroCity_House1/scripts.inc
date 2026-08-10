@@ -4,9 +4,9 @@ RustboroCity_House1_MapScripts::
 RustboroCity_House1_EventScript_Trader::
 	lock
 	faceplayer
-	goto_if_set FLAG_RUSTBORO_NPC_TRADE_COMPLETED, RustboroCity_House1_EventScript_TradeCompleted
+@@	goto_if_set FLAG_RUSTBORO_NPC_TRADE_COMPLETED, RustboroCity_House1_EventScript_TradeCompleted
 	ingame_trade INGAME_TRADE_SEEDOT, RustboroCity_House1_Text_IllTradeIfYouWant, RustboroCity_House1_EventScript_DeclineTrade, RustboroCity_House1_EventScript_NotRequestedMon, RustboroCity_House1_Text_PleaseBeGoodToMyPokemon
-	setflag FLAG_RUSTBORO_NPC_TRADE_COMPLETED
+@@	setflag FLAG_RUSTBORO_NPC_TRADE_COMPLETED
 	release
 	end
 

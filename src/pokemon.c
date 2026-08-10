@@ -6889,7 +6889,6 @@ bool32 IsSpeciesOfType(u32 species, enum Type type)
     return FALSE;
 }
 
-<<<<<<< HEAD
 //Cornix Custom - Live Bait Tools
 bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
 {
@@ -6950,9 +6949,8 @@ bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
 	else
 		return FALSE;
 }
+// Above was a custom func
 
-
-=======
 struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void)
 {
     struct BoxPokemon *boxmon;
@@ -7005,4 +7003,3 @@ void ChangePokemonNicknameWithCallback(void (*callback)(void))
     GetBoxMonData(boxMon, MON_DATA_NICKNAME, gStringVar2);
     DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, GetBoxMonData(boxMon, MON_DATA_SPECIES), GetBoxMonGender(boxMon), GetBoxMonData(boxMon, MON_DATA_PERSONALITY), callback);
 }
->>>>>>> e80ae569039786564381723fca22aac07afc3503

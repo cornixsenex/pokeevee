@@ -15977,7 +15977,7 @@ const struct ItemInfo gItemsInfo[] =
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = 0,
-        .iconPic = gItemIcon_ResistFeather,
+        .iconPic = gItemIcon_EVFeather,
         .iconPalette = gItemIconPalette_ResistFeather,
     },
 	
@@ -16206,7 +16206,7 @@ const struct ItemInfo gItemsInfo[] =
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_Ostracon,
         .secondaryId = 0,
-        .iconPic = gItemIcon_EarthPlate,
+        .iconPic = gItemIcon_Plate,
         .iconPalette = gItemIconPalette_EarthPlate,
 	},
 
@@ -16544,7 +16544,7 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_FishingBait,
         .secondaryId = GOOD_ROD,
-        .iconPic = gItemIcon_BlackApricorn,
+        .iconPic = gItemIcon_Apricorn,
         .iconPalette = gItemIconPalette_BlackApricorn,
     },
 	

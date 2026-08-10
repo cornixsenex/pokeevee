@@ -4,9 +4,9 @@ FortreeCity_House1_MapScripts::
 FortreeCity_House1_EventScript_Trader::
 	lock
 	faceplayer
-	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_TradeCompleted
+@@	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_TradeCompleted
 	ingame_trade INGAME_TRADE_PLUSLE, FortreeCity_House1_Text_YouWillTradeWontYou, FortreeCity_House1_EventScript_DeclineTrade, FortreeCity_House1_EventScript_NotRequestedMon, FortreeCity_House1_Text_MonYouTakeCare
-	setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
+@@	setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
 	release
 	end
 

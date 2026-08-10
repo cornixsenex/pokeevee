@@ -6109,12 +6109,14 @@ void DoShinyMareepBattle(void)
 	u16 thunderbolt = MOVE_THUNDERBOLT;
 	u16 thunderwave = MOVE_THUNDER_WAVE;
 	u16 recover = MOVE_RECOVER;
+	u32 personality = Random32();
 	bool32 makeShiny = TRUE;
 	mon = &gEnemyParty[0];
 	//Create ScriptedWildMon
     ZeroEnemyPartyMons();
 	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+//	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Make Shiny Mareep	
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &thunder);
@@ -6146,7 +6148,7 @@ void DoLupaBattle(void)
 	do
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Assign mon data
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
 	SetMonData(mon, MON_DATA_MOVE2, &move2);
@@ -6177,7 +6179,7 @@ void DoGranonBattle(void)
 	do
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_MALE);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Assign Mon Data
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
 	SetMonData(mon, MON_DATA_MOVE2, &move2);
@@ -6547,7 +6549,7 @@ void DoMolpeBattle(void)
 	do
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Assign Mon Data
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
@@ -6580,7 +6582,7 @@ void DoThelxiepiaBattle(void)
 	do
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Assign Mon Data
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
@@ -6613,7 +6615,7 @@ void DoAglaophemeBattle(void)
 	do
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Assign Mon Data
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
@@ -6646,7 +6648,7 @@ void DoScyllaBattle(void)
 	do
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Assign Mon Data
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
@@ -6679,7 +6681,7 @@ void DoCharybdisBattle(void)
 	do
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, MAX_PER_STAT_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
 	//Assign Mon Data
 	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
