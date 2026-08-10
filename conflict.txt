@@ -105,7 +105,6 @@ Automatic merge failed; fix conflicts and then commit the result.
 > Custom traienr pics
 > SlideCushion_Slide
 > Bike pull tiles - and just normal bikery (AcroBikeHandleInputTurning() )
-> Auto Run
 > Spin Tiles
 > Dashing in general with follower
 > No Female player choice

@@ -461,7 +461,6 @@ script SaltySpitoon_2F_EventScript_AmbushBlue {
 	waitmovement(0)
 	//duo battle
 	trainerbattle_two_trainers (TRAINER_BLUE6, SaltySpitoon_2F_Text_Blue1Lost, TRAINER_BLUE7, SaltySpitoon_2F_Text_Blue2Lost)
-	waitstate
 	//duo complain then dip
 	//biggie approaches, speal, battle
 	msgbox(SaltySpitoon_2F_Text_Ambush2)
@@ -502,7 +501,6 @@ script SaltySpitoon_2F_EventScript_AmbushYellow {
 	waitmovement(0)
 	//duo battle
 	trainerbattle_two_trainers (TRAINER_YELLOW6, SaltySpitoon_2F_Text_Yellow1Lost, TRAINER_YELLOW7, SaltySpitoon_2F_Text_Yellow2Lost)
-	waitstate
 	//duo complain then dip
 	//biggie approaches, speal, battle
 	msgbox(SaltySpitoon_2F_Text_Ambush2)
