@@ -99,6 +99,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 > Custom script commands (multvar, divvar, copymoney, removevarmoney)
 	>Casinos
+	>mutlvar all good
 > Custom traienr pics
 > SlideCushion_Slide
 > Bike pull tiles - and just normal bikery (AcroBikeHandleInputTurning() )
