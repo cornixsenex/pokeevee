@@ -97,20 +97,6 @@
 	>Was removed in 1.14 I guess I missed that
 Automatic merge failed; fix conflicts and then commit the result.
 
-> Custom script commands (multvar, divvar, copymoney, removevarmoney)
-	>Casinos
-	>mutlvar all good
-> Custom traienr pics
-> SlideCushion_Slide
-> Bike pull tiles - and just normal bikery (AcroBikeHandleInputTurning() )
-> Spin Tiles
-> Dashing in general with follower
-> No Female player choice
-> Custom naming boxes
-	>rival
-	>leaf
-	>philosophy
-	>rhetoric
 > CreateMon and CreateBoxMon were changed!
 	> docs/tutorials/mon_generationl.md
 ? Name boxes
