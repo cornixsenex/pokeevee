@@ -6141,6 +6141,7 @@ void DoLupaBattle(void)
 	u16  move2= MOVE_SUCKER_PUNCH;
 	u16  move3= MOVE_LAST_RESORT;
 	u16  move4= MOVE_MILK_DRINK;
+	
 	//setup
 	mon = &gEnemyParty[0];
     StringCopy(nickname, gText_Lupa);
@@ -6149,13 +6150,31 @@ void DoLupaBattle(void)
 		personality = Random32();
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
 	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
+	CalculateMonStats(mon);
+	
 	//Assign mon data
+	u32 pp;
+	struct BoxPokemon *boxMon = &mon->box;
+
 	SetMonData(mon, MON_DATA_MOVE1, &move1);
+	pp = GetMovePP(move1);
+	SetBoxMonData(boxMon, MON_DATA_PP1, &pp);
+
 	SetMonData(mon, MON_DATA_MOVE2, &move2);
+	pp = GetMovePP(move2);
+	SetBoxMonData(boxMon, MON_DATA_PP2, &pp);
+	
 	SetMonData(mon, MON_DATA_MOVE3, &move3);
+	pp = GetMovePP(move3);
+	SetBoxMonData(boxMon, MON_DATA_PP3, &pp);
+	
 	SetMonData(mon, MON_DATA_MOVE4, &move4);   
+	pp = GetMovePP(move4);
+	SetBoxMonData(boxMon, MON_DATA_PP4, &pp);
+	
     SetMonData(mon, MON_DATA_NICKNAME, nickname);
-	//DoWildBattle
+	
+	// DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
 }
