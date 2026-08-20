@@ -222,6 +222,7 @@ enum OtIdMethod
 #define MON_FEMALE     0xFE
 #define MON_GENDERLESS 0xFF
 
+
 #define MON_GENDER_RANDOM         0x01
 #define MON_GENDER_MAY_CUTE_CHARM 0x02
 

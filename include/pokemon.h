@@ -917,8 +917,19 @@ struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void);
 u32 GiveScriptedMonToPlayer(struct Pokemon *mon, u8 slot);
 void ChangePokemonNicknameWithCallback(void (*callback)(void));
 
-//CornixSenex Custom Dynamic Map support
-u32 DetermineDynamicMapsecValue (void);
+//CornixSenex Customs
+
+// Note: Genders should be an enum in the first place - I expect this to change upstream eventually, when it does you can remove this and update Cornix_CreateSpecialMon()
+enum CornixGender {
+	CORNIX_GENDER_NONE,
+	CORNIX_GENDER_MALE,
+	CORNIX_GENDER_FEMALE,
+	CORNIX_GENDER_GENDERLESS,
+	CORNIX_GENDER_UNSPECIFIED,
+	CORNIX_GENDER_COUNT
+};
+
 bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon);
+void Cornix_CreateSpecialMon(const u16 species, const u8 level, const u8* nicknameString, const u16 move1, const u16 move2, const u16 move3, const u16 move4, enum CornixGender gender, bool32 isShiny);
 
 #endif // GUARD_POKEMON_H

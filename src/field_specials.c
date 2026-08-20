@@ -6101,28 +6101,7 @@ void SetupColchisForcedBattle(void)
 
 void DoShinyMareepBattle(void)
 {
-	//SetWildBattle
-	u16 species = SPECIES_MAREEP;
-	u8 level = 18;
-	struct Pokemon *mon;
-	u16 thunder = MOVE_THUNDER;
-	u16 thunderbolt = MOVE_THUNDERBOLT;
-	u16 thunderwave = MOVE_THUNDER_WAVE;
-	u16 recover = MOVE_RECOVER;
-	u32 personality = Random32();
-	bool32 makeShiny = TRUE;
-	mon = &gEnemyParty[0];
-	//Create ScriptedWildMon
-    ZeroEnemyPartyMons();
-	//CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-//	CreateMon(mon, species, level, MAX_PER_STAT_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	//Make Shiny Mareep	
-	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
-	SetMonData(mon, MON_DATA_MOVE1, &thunder);
-	SetMonData(mon, MON_DATA_MOVE2, &thunderbolt);
-	SetMonData(mon, MON_DATA_MOVE3, &thunderwave);
-	SetMonData(mon, MON_DATA_MOVE4, &recover);
+	Cornix_CreateSpecialMon(SPECIES_MAREEP, 18, NULL, MOVE_THUNDER, MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_RECOVER, CORNIX_GENDER_UNSPECIFIED, TRUE);
 	
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
@@ -6131,48 +6110,7 @@ void DoShinyMareepBattle(void)
 
 void DoLupaBattle(void)
 {
-	//vars
-	u16 species = SPECIES_MIGHTYENA;
-	u8 level = 18;
-    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
-	struct Pokemon *mon;
-	u32 personality;
-	u16  move1= MOVE_CRUNCH;
-	u16  move2= MOVE_SUCKER_PUNCH;
-	u16  move3= MOVE_LAST_RESORT;
-	u16  move4= MOVE_MILK_DRINK;
-	
-	//setup
-	mon = &gEnemyParty[0];
-    StringCopy(nickname, gText_Lupa);
-    ZeroEnemyPartyMons();
-	do
-		personality = Random32();
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	CalculateMonStats(mon);
-	
-	//Assign mon data
-	u32 pp;
-	struct BoxPokemon *boxMon = &mon->box;
-
-	SetMonData(mon, MON_DATA_MOVE1, &move1);
-	pp = GetMovePP(move1);
-	SetBoxMonData(boxMon, MON_DATA_PP1, &pp);
-
-	SetMonData(mon, MON_DATA_MOVE2, &move2);
-	pp = GetMovePP(move2);
-	SetBoxMonData(boxMon, MON_DATA_PP2, &pp);
-	
-	SetMonData(mon, MON_DATA_MOVE3, &move3);
-	pp = GetMovePP(move3);
-	SetBoxMonData(boxMon, MON_DATA_PP3, &pp);
-	
-	SetMonData(mon, MON_DATA_MOVE4, &move4);   
-	pp = GetMovePP(move4);
-	SetBoxMonData(boxMon, MON_DATA_PP4, &pp);
-	
-    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	Cornix_CreateSpecialMon(SPECIES_MIGHTYENA, 18, gText_Lupa, MOVE_CRUNCH, MOVE_SUCKER_PUNCH, MOVE_LAST_RESORT, MOVE_MILK_DRINK, CORNIX_GENDER_FEMALE, FALSE);
 	
 	// DoWildBattle
     BattleSetup_StartScriptedWildBattle();
@@ -6181,30 +6119,8 @@ void DoLupaBattle(void)
 
 void DoGranonBattle(void)
 {
-	//vars
-	u16 species = SPECIES_GRANBULL;
-	u8 level = 18;
-    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
-	struct Pokemon *mon;
-	u32 personality;
-	u16  move1= MOVE_FAINT_ATTACK;
-	u16  move2= MOVE_FIRE_PUNCH;
-	u16  move3= MOVE_EARTHQUAKE;
-	u16  move4= MOVE_CLOSE_COMBAT;
-	//setup
-	mon = &gEnemyParty[0];
-    StringCopy(nickname, gText_Granon);
-    ZeroEnemyPartyMons();
-	do
-		personality = Random32();
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_MALE);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	//Assign Mon Data
-	SetMonData(mon, MON_DATA_MOVE1, &move1);
-	SetMonData(mon, MON_DATA_MOVE2, &move2);
-	SetMonData(mon, MON_DATA_MOVE3, &move3);
-	SetMonData(mon, MON_DATA_MOVE4, &move4);   
-    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	Cornix_CreateSpecialMon(SPECIES_GRANBULL, 18, gText_Granon, MOVE_FAINT_ATTACK, MOVE_FIRE_PUNCH, MOVE_EARTHQUAKE, MOVE_CLOSE_COMBAT, CORNIX_GENDER_MALE, FALSE);
+
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
@@ -6550,32 +6466,8 @@ bool32 CheckSelectedMonValidSacrifice(void)
 
 void DoMolpeBattle(void)
 {
-	//vars
-	u16 species = SPECIES_JIGGLYPUFF;
-	u8 level = 18;
-    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
-	struct Pokemon *mon;
-	u32 personality;
-	u16  move1= MOVE_SING;
-	u16  move2= MOVE_HYPER_VOICE;
-	u16  move3= MOVE_WISH;
-	u16  move4= MOVE_PERISH_SONG;
-	//setup
-	bool32 makeShiny = TRUE;
-	mon = &gEnemyParty[0];
-    StringCopy(nickname, gText_Molpe);
-    ZeroEnemyPartyMons();
-	do
-		personality = Random32();
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	//Assign Mon Data
-	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
-	SetMonData(mon, MON_DATA_MOVE1, &move1);
-	SetMonData(mon, MON_DATA_MOVE2, &move2);
-	SetMonData(mon, MON_DATA_MOVE3, &move3);
-	SetMonData(mon, MON_DATA_MOVE4, &move4);   
-    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	Cornix_CreateSpecialMon(SPECIES_JIGGLYPUFF, 18, gText_Molpe, MOVE_SING, MOVE_HYPER_VOICE, MOVE_WISH, MOVE_PERISH_SONG, CORNIX_GENDER_FEMALE, TRUE);
+
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
@@ -6583,32 +6475,8 @@ void DoMolpeBattle(void)
 
 void DoThelxiepiaBattle(void)
 {
-	//vars
-	u16 species = SPECIES_JIGGLYPUFF;
-	u8 level = 18;
-    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
-	struct Pokemon *mon;
-	u32 personality;
-	u16  move1= MOVE_SING;
-	u16  move2= MOVE_REST;
-	u16  move3= MOVE_HYPER_VOICE;
-	u16  move4= MOVE_SLEEP_TALK;
-	//setup
-	bool32 makeShiny = TRUE;
-	mon = &gEnemyParty[0];
-    StringCopy(nickname, gText_Thelxiepia);
-    ZeroEnemyPartyMons();
-	do
-		personality = Random32();
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	//Assign Mon Data
-	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
-	SetMonData(mon, MON_DATA_MOVE1, &move1);
-	SetMonData(mon, MON_DATA_MOVE2, &move2);
-	SetMonData(mon, MON_DATA_MOVE3, &move3);
-	SetMonData(mon, MON_DATA_MOVE4, &move4);   
-    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	Cornix_CreateSpecialMon(SPECIES_JIGGLYPUFF, 18, gText_Thelxiepia, MOVE_SING, MOVE_REST, MOVE_HYPER_VOICE, MOVE_SLEEP_TALK, CORNIX_GENDER_FEMALE, TRUE);
+	
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
@@ -6616,32 +6484,7 @@ void DoThelxiepiaBattle(void)
 
 void DoAglaophemeBattle(void)
 {
-	//vars
-	u16 species = SPECIES_JIGGLYPUFF;
-	u8 level = 18;
-    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
-	struct Pokemon *mon;
-	u32 personality;
-	u16  move1= MOVE_SING;
-	u16  move2= MOVE_WISH;
-	u16  move3= MOVE_DREAM_EATER;
-	u16  move4= MOVE_HYPER_VOICE;
-	//setup
-	bool32 makeShiny = TRUE;
-	mon = &gEnemyParty[0];
-    StringCopy(nickname, gText_Aglaopheme);
-    ZeroEnemyPartyMons();
-	do
-		personality = Random32();
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	//Assign Mon Data
-	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
-	SetMonData(mon, MON_DATA_MOVE1, &move1);
-	SetMonData(mon, MON_DATA_MOVE2, &move2);
-	SetMonData(mon, MON_DATA_MOVE3, &move3);
-	SetMonData(mon, MON_DATA_MOVE4, &move4);   
-    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	Cornix_CreateSpecialMon(SPECIES_JIGGLYPUFF, 18, gText_Aglaopheme, MOVE_SING, MOVE_WISH, MOVE_DREAM_EATER, MOVE_HYPER_VOICE, CORNIX_GENDER_FEMALE, TRUE);
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
@@ -6649,32 +6492,8 @@ void DoAglaophemeBattle(void)
 
 void DoScyllaBattle(void)
 {
-	//vars
-	u16 species = SPECIES_TENTACRUEL;
-	u8 level = 18;
-    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
-	struct Pokemon *mon;
-	u32 personality;
-	u16  move1= MOVE_WHIRLPOOL;
-	u16  move2= MOVE_HYDRO_PUMP;
-	u16  move3= MOVE_SLUDGE_WAVE;
-	u16  move4= MOVE_WRING_OUT;
-	//setup
-	bool32 makeShiny = TRUE;
-	mon = &gEnemyParty[0];
-    StringCopy(nickname, gText_Scylla);
-    ZeroEnemyPartyMons();
-	do
-		personality = Random32();
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	//Assign Mon Data
-	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
-	SetMonData(mon, MON_DATA_MOVE1, &move1);
-	SetMonData(mon, MON_DATA_MOVE2, &move2);
-	SetMonData(mon, MON_DATA_MOVE3, &move3);
-	SetMonData(mon, MON_DATA_MOVE4, &move4);   
-    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	Cornix_CreateSpecialMon(SPECIES_TENTACRUEL, 18, gText_Scylla, MOVE_WHIRLPOOL, MOVE_HYDRO_PUMP, MOVE_SLUDGE_WAVE, MOVE_WRING_OUT, CORNIX_GENDER_FEMALE, TRUE);
+
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
@@ -6682,32 +6501,8 @@ void DoScyllaBattle(void)
 
 void DoCharybdisBattle(void)
 {
-	//vars
-	u16 species = SPECIES_WAILORD;
-	u8 level = 18;
-    u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)]; 
-	struct Pokemon *mon;
-	u32 personality;
-	u16  move1= MOVE_DIVE;
-	u16  move2= MOVE_HYDRO_PUMP;
-	u16  move3= MOVE_HEAVY_SLAM;
-	u16  move4= MOVE_AMNESIA;
-	//setup
-	bool32 makeShiny = TRUE;
-	mon = &gEnemyParty[0];
-    StringCopy(nickname, gText_Charybdis);
-    ZeroEnemyPartyMons();
-	do
-		personality = Random32();
-    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
-	CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID); 
-	//Assign Mon Data
-	SetMonData(mon, MON_DATA_IS_SHINY, &makeShiny);
-	SetMonData(mon, MON_DATA_MOVE1, &move1);
-	SetMonData(mon, MON_DATA_MOVE2, &move2);
-	SetMonData(mon, MON_DATA_MOVE3, &move3);
-	SetMonData(mon, MON_DATA_MOVE4, &move4);   
-    SetMonData(mon, MON_DATA_NICKNAME, nickname);
+	Cornix_CreateSpecialMon(SPECIES_WAILORD, 18, gText_Charybdis, MOVE_DIVE, MOVE_HYDRO_PUMP, MOVE_HEAVY_SLAM, MOVE_AMNESIA, CORNIX_GENDER_FEMALE, TRUE);
+
 	//DoWildBattle
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();

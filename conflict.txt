@@ -97,8 +97,6 @@
 	>Was removed in 1.14 I guess I missed that
 Automatic merge failed; fix conflicts and then commit the result.
 
-> CreateMon and CreateBoxMon were changed!
-	> docs/tutorials/mon_generationl.md
 ? Name boxes
 	>docs/tutorials/how_to_namebox.md
 > Treasure Fishing
