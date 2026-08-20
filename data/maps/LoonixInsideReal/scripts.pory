@@ -125,6 +125,7 @@ script LoonixInsideReal_Script_GrannyScene1 {
 	applymovement (OBJ_EVENT_GRANNY, Common_Movement_FaceRight)
 	waitmovement (0)
 	//You're finally awake good to see you
+	setspeaker("Granny")
 	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
 	msgbox (LoonixInsideReal_Text_Granny1A, MSGBOX_DEFAULT)
 	destroy_field_pic(FIELD_PIC_GRANNY)
@@ -134,6 +135,7 @@ script LoonixInsideReal_Script_GrannyScene1 {
 	applymovement (OBJ_EVENT_GRANNY, LoonixInsideReal_Movement_Granny1_ApproachPlayer)
 	waitmovement (0)
 	//Stil working on breakfast, Your friend came by again, whats her name agai
+	setspeaker("Granny")
 	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
 	msgbox (LoonixInsideReal_Text_Granny1B, MSGBOX_DEFAULT)
 	destroy_field_pic(FIELD_PIC_GRANNY)
@@ -143,6 +145,7 @@ script LoonixInsideReal_Script_GrannyScene1 {
 	waitstate
 	//That's right she waiting outside for you. What a nice girl
 	//Be safe and remember to stay away from the tall grass
+	setspeaker("Granny")
 	load_field_pic(FIELD_PIC_GRANNY, 190, 98)
 	msgbox (LoonixInsideReal_Text_Granny1C, MSGBOX_DEFAULT)
 	destroy_field_pic(FIELD_PIC_GRANNY)
