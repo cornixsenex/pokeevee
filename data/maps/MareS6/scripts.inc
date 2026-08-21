@@ -1739,9 +1739,9 @@ MareS6_Text_UlyssesResponseToFisherman::
 
 MareS6_Text_UlyssesCallToAction::
 # 1089 "data/maps/MareS6/scripts.pory"
-	.string "My goodness, {PLAYER}, am I glad to\n"
-	.string "see you! I washed ashore and these\l"
-	.string "good people of the island gave me food,\l"
+	.string "My goodness, {PLAYER}, am I glad to see\n"
+	.string "you! I washed ashore and these good\l"
+	.string "people of the island gave me food,\l"
 	.string "water, and clothes. I was about to leave\l"
 	.string "when I just learned an evil witch, who\l"
 	.string "lives out in the woods, is kidnapping\l"
@@ -1757,9 +1757,9 @@ MareS6_Text_UlyssesCallToAction::
 
 MareS6_Text_UlyssesJungle::
 # 1105 "data/maps/MareS6/scripts.pory"
-	.string "This jungle more dangerous than I had\n"
-	.string "expected but we cannot turn back. Lets\l"
-	.string "muscle our way to the witches lair!$"
+	.string "This jungle is more dangerous than I\n"
+	.string "had expected, but we cannot turn back.\l"
+	.string "Let's muscle our way to the witch's lair!$"
 
 MareS6_Text_UlyssesAntePortam::
 # 1111 "data/maps/MareS6/scripts.pory"
@@ -1869,8 +1869,8 @@ MareS6_Text_GenericRestored::
 
 MareS6_Text_UlyssesDuringPen::
 # 1205 "data/maps/MareS6/scripts.pory"
-	.string "Hurry {PLAYER}! Save them with the\n"
-	.string "piña fruit.$"
+	.string "Hurry {PLAYER}! Save them with the piña\n"
+	.string "fruit.$"
 
 MareS6_Text_UlyssesAfterPen::
 # 1209 "data/maps/MareS6/scripts.pory"
@@ -1928,8 +1928,8 @@ MareS6_Text_UlyssesShadesIntro2::
 
 MareS6_Text_UlyssesShadesIntro3::
 # 1258 "data/maps/MareS6/scripts.pory"
-	.string "Oh, {PLAYER}! I'm glad you didn't\n"
-	.string "forget me.$"
+	.string "Oh, {PLAYER}! I'm glad you didn't forget\n"
+	.string "me.$"
 
 MareS6_Text_UlyssesBringSacrifice::
 # 1262 "data/maps/MareS6/scripts.pory"
@@ -1948,9 +1948,8 @@ MareS6_Text_NoToSacrifice::
 
 MareS6_Text_SacrificeNotValid::
 # 1275 "data/maps/MareS6/scripts.pory"
-	.string "I'm sorry, {PLAYER}, but\n"
-	.string "{STR_VAR_1} is not a proper Pokemon\l"
-	.string "to sacrifice.$"
+	.string "I'm sorry, {PLAYER}, but {STR_VAR_1}\n"
+	.string "is not a proper Pokemon to sacrifice.$"
 
 MareS6_Text_GiveSacrifice::
 # 1279 "data/maps/MareS6/scripts.pory"

@@ -97,6 +97,9 @@
 	>Was removed in 1.14 I guess I missed that
 Automatic merge failed; fix conflicts and then commit the result.
 
+! Poryscript update - auto strings
+	>Wrap all iambic broken lines in "" (see MareS6 for example of working)
+	>Causing compiler errors so use make to track them down - have fun :D
 ? Name boxes
 	>docs/tutorials/how_to_namebox.md
 > Treasure Fishing

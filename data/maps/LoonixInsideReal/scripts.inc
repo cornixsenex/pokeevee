@@ -975,9 +975,9 @@ LoonixInsideReal_Text_TVX::
 LoonixInsideReal_Text_Granny2A::
 # 592 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "I told you to keep out of the tall\n"
-	.string "grass! Oh {PLAYER}, what can I say?\l"
-	.string "I'm worried sick, so scared for you, for\l"
-	.string "me. I still see you as that rambunctious\l"
+	.string "grass! Oh {PLAYER}, what can I say? I'm\l"
+	.string "worried sick, so scared for you, for me.\l"
+	.string "I still see you as that rambunctious\l"
 	.string "boy you used to be but now you're\l"
 	.string "growing up and I'm afraid of losing you\l"
 	.string "like I lost your father. I long to keep\l"
