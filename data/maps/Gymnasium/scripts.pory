@@ -210,8 +210,8 @@ text Gymnasium_Text_BlackBelt3 {
 }
 
 text Gymnasium_Text_Hector1 {
-	format("I've trained all my life for this tournanment.
-			I'm ready. I will be the champion.")
+	format("I've trained all my life for this tournanment."
+			"I'm ready. I will be the champion.")
 }
 
 text Gymnasium_Text_Hector_Wedding1 {
@@ -219,23 +219,23 @@ text Gymnasium_Text_Hector_Wedding1 {
 }
 
 text Gymnasium_Text_Hector_Wedding2 {
-	format("Wonderful news! My young brother, Paris,
-			is staying as a guest at Nestor's house
-			and is one of two candidates to wed
-			Nestor's lovely daughter, Helen! I must
-			attend. As much as I would like to stay,
-			to win, to become the champion I
-			have worked so hard to be, my family
-			comes first. I will not act dishonorably
-			by chasing vain glory and scorning the
-			pious obligation to attend my
-			brother's wedding. Even if he is not
-			the groom, an invitation to the house
-			of Nestor is honorable as well.
-			Therefore, I lay down my bid for the wreath
-			of laurel and my fight for victory.
-			Farewell, all! I must be off for the house
-			of Nestor to be with my dear Paris.")
+	format("Wonderful news! My young brother, Paris,"
+			"is staying as a guest at Nestor's house"
+			"and is one of two candidates to wed"
+			"Nestor's lovely daughter, Helen! I must"
+			"attend. As much as I would like to stay,"
+			"to win, to become the champion I"
+			"have worked so hard to be, my family"
+			"comes first. I will not act dishonorably"
+			"by chasing vain glory and scorning the"
+			"pious obligation to attend my"
+			"brother's wedding. Even if he is not"
+			"the groom, an invitation to the house"
+			"of Nestor is honorable as well."
+			"Therefore, I lay down my bid for the wreath"
+			"of laurel and my fight for victory."
+			"Farewell, all! I must be off for the house"
+			"of Nestor to be with my dear Paris.")
 }
 
 text Gymnasium_Text_GiveInvitation {
@@ -247,8 +247,8 @@ text Gymnasium_Text_Protesilaus1 {
 }
 
 text Gymnasium_Text_Protesilaus2 {
-	format("That man over there, Hector, he is much
-			larger and confident than I assumed.")
+	format("That man over there, Hector, he is much"
+			"larger and confident than I assumed.")
 }
 
 text Gymnasium_Text_Protesilaus3 {
@@ -256,29 +256,29 @@ text Gymnasium_Text_Protesilaus3 {
 }
 
 text Gymnasium_Text_Protesilaus4 {
-	format("My years of training have finally paid off!
-			Look here, kid, if you work hard all your life
-			perhaps one day you too can be the champ.")
+	format("My years of training have finally paid off!"
+			"Look here, kid, if you work hard all your life"
+			"perhaps one day you too can be the champ.")
 }
 
 text Gymnasium_Text_Chiron1 {
-	format("Hello, my name is Chiron I am the
-			the grandmaster of the Gymnasium
-			and preside over the Grand Tournement.")
+	format("Hello, my name is Chiron I am the"
+			"the grandmaster of the Gymnasium"
+			"and preside over the Grand Tournement.")
 }
 
 text Gymnasium_Text_Chiron2 {
-	format("The championship fight will soon begin.
-			I have seen dozens of champions crowned
-			since the days of my youth when I myself
-			crowned champion with the laurel wreath.
-			In all those years no fight has been so far
-			mismatched as today between Hector and
-			Protesilaus. Hector is by far
-			stronger, faster, more noble, and more calm.
-			This fight will likely not last two whole rounds.
-			I'm sure Hector will win, but still they must
-			compete to determine the champion.")
+	format("The championship fight will soon begin."
+			"I have seen dozens of champions crowned"
+			"since the days of my youth when I myself"
+			"crowned champion with the laurel wreath."
+			"In all those years no fight has been so far"
+			"mismatched as today between Hector and"
+			"Protesilaus. Hector is by far"
+			"stronger, faster, more noble, and more calm."
+			"This fight will likely not last two whole rounds."
+			"I'm sure Hector will win, but still they must"
+			"compete to determine the champion.")
 }
 
 text Gymnasium_Text_Chiron3 {
@@ -286,14 +286,14 @@ text Gymnasium_Text_Chiron3 {
 }
 
 text Gymnasium_Text_Chiron4 {
-	format("The champion, Protesilaus, has
-			not earned his laurel wreath by victory
-			but on a technicality. Without
-			an opponent to challenge him he is
-			the champion by default. If I were
-			only fifteen years younger, a far cry
-			from the figher I was back in my youth,
-			I'd challenge this default champion and win!")
+	format("The champion, Protesilaus, has"
+			"not earned his laurel wreath by victory"
+			"but on a technicality. Without"
+			"an opponent to challenge him he is"
+			"the champion by default. If I were"
+			"only fifteen years younger, a far cry"
+			"from the figher I was back in my youth,"
+			"I'd challenge this default champion and win!")
 }
 
 text Gymnasium_Text_ProtesilausTrainer1 {

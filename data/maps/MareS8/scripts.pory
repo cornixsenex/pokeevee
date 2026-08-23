@@ -1245,11 +1245,11 @@ script MareS8_Script_Kecleon6 {
 }
 
 text MareS8_Text_Beroe1 {
-    format("Leave it to Aeneas to find a way
-            to put us in a worse situation.
-            We lost our ship and still have no idea
-            where we are or where Heperia is.
-            I can't see how this could get any worse!")
+    format("Leave it to Aeneas to find a way"
+            "to put us in a worse situation."
+            "We lost our ship and still have no idea"
+            "where we are or where Heperia is."
+            "I can't see how this could get any worse!")
 }
 
 //Death to the foemen!
@@ -1262,9 +1262,9 @@ text MareS8_Text_Aeneas_GetWorse {
 }
 
 text MareS8_Text_AeneasSetup {
-    format("We're being attacked by two savages!
-            Let's unite and defeat them as a team.
-            Select three Pokemon you will fight with.")
+    format("We're being attacked by two savages!"
+            "Let's unite and defeat them as a team."
+            "Select three Pokemon you will fight with.")
 }
 
 //Lets drive the enemy into the sea
@@ -1289,34 +1289,34 @@ text MareS8_Text_RutulianAmbushPost {
 
 
 text MareS8_Text_Beroe2 {
-	format("Well, Aeneas, you're right. It's now much worse.
-            We're lost without a ship and stranded on
-            some hostile island.")
+	format("Well, Aeneas, you're right. It's now much worse."
+            "We're lost without a ship and stranded on"
+            "some hostile island.")
 }
 
 text MareS8_Text_AeneasHesperia {
-	format("Didn't you hear?
-            That savage said this is Hesperia!
-            At long last we have arrived in that land
-            where I'm destined to found a great city!
-            Rejoice, for our long voyage has at last
-            reached its destination! All that remains
-            for us to do is clear this island of
-            its heathen natives and then start building.")
+	format("Didn't you hear?"
+            "That savage said this is Hesperia!"
+            "At long last we have arrived in that land"
+            "where I'm destined to found a great city!"
+            "Rejoice, for our long voyage has at last"
+            "reached its destination! All that remains"
+            "for us to do is clear this island of"
+            "its heathen natives and then start building.")
 }
 
 text MareS8_Text_AeneasGoToWar {
-	format("I will wait here, and guard the party from
-            any ambush those primitives might launch.
-            You go ahead, make war on the natives,
-            bring down their chief, expel the savages,
-            and make the island safe for construction.
-            Go forth! Win glory for Aeneas' men!")
+	format("I will wait here, and guard the party from"
+            "any ambush those primitives might launch."
+            "You go ahead, make war on the natives,"
+            "bring down their chief, expel the savages,"
+            "and make the island safe for construction."
+            "Go forth! Win glory for Aeneas' men!")
 }
 
 text MareS8_Text_AscaniusDuringWar {
-    format("While I'm nervous of a savage ambush
-            I'm quite relieved my boys finally calmed down.")
+    format("While I'm nervous of a savage ambush"
+            "I'm quite relieved my boys finally calmed down.")
 }
 
 text MareS8_Text_AeneasDuringWar {
@@ -1329,8 +1329,8 @@ text MareS8_Text_FaustulusDuringWar {
 }
 
 text MareS8_Text_RomulusDuringWar {
-    format("I think we would be safer if we built
-            a mighty wall to keep out the natives.")
+    format("I think we would be safer if we built"
+            "a mighty wall to keep out the natives.")
 }
 
 text MareS8_Text_RemusDuringWar {
@@ -1443,19 +1443,19 @@ text MareS8_Text_RutuliBlock {
 }
 
 text MareS8_Text_BeroeDuringSearch {
-	format("The boys, Romulus and Remus, are gone!
-			I hope they turn up soon...It's terrible!")
+	format("The boys, Romulus and Remus, are gone!"
+			"I hope they turn up soon...It's terrible!")
 }
 
 text MareS8_Text_Ulysses1 {
-	format("Please, help me {PLAYER}! Help me! I'm being chased
-			by some kind of invisible monsters!")
+	format("Please, help me {PLAYER}! Help me! I'm being chased"
+			"by some kind of invisible monsters!")
 }
 
 text MareS8_Text_Ulysses2 {
-	format("Thank you, {PLAYER}. Those monsters had me trapped
-			on this island with no hope of escape.
-			Now I must be gone. I cannot delay
-			my journey to Nestor's house where my friend
-			Menelaus will celebrate marriage.")
+	format("Thank you, {PLAYER}. Those monsters had me trapped"
+			"on this island with no hope of escape."
+			"Now I must be gone. I cannot delay"
+			"my journey to Nestor's house where my friend"
+			"Menelaus will celebrate marriage.")
 }

@@ -535,114 +535,114 @@ script AedesTrivis_Script_TrivisCompleteScene2 {
 }
 
 text AedesTrivis_Text_OrestesSageScene_Orestes1 {
-	format("What do you mean 'The Speaker is not here?'
-			I must consult the oracle!")
+	format("What do you mean 'The Speaker is not here?"
+			"I must consult the oracle!")
 }
 
 text AedesTrivis_Text_OrestesSageScene_Sage1 {
-	format("He's gone.
-			I already told you ever since the
-			green robed pirate carried off the Trivis
-			the speaker's pedestal has been vacant.")
+	format("He's gone."
+			"I already told you ever since the"
+			"green robed pirate carried off the Trivis"
+			"the speaker's pedestal has been vacant.")
 }
 
 text AedesTrivis_Text_OrestesSageScene_Orestes2 {
-	format("Well, if this tree vest is so important
-			to the temple, why don't you go get it?")
+	format("Well, if this tree vest is so important"
+			"to the temple, why don't you go get it?")
 }
 
 text AedesTrivis_Text_OrestesSageScene_Sage2 {
-	format("I'm bound by oathe to attend the Aedes
-			Trivis. Only in death may I depart.
-			Someone, perhaps you or your champion,
-			must seek out the three pieces of Trivis
-			broken by that scoundrel who came in green
-			and robbed our sacred place of the Trivis.")
+	format("I'm bound by oathe to attend the Aedes"
+			"Trivis. Only in death may I depart."
+			"Someone, perhaps you or your champion,"
+			"must seek out the three pieces of Trivis"
+			"broken by that scoundrel who came in green"
+			"and robbed our sacred place of the Trivis.")
 }
 
 text AedesTrivis_Text_OrestesSageScene_Orestes3 {
-	format("Despair! I know now there turly is no
-			God, Gods, or Goddess looking down on me!
-			My query on the bridge has been answered
-			by the total absence of a reply.
-			My mind's made up, I must now jump...now die.")
+	format("Despair! I know now there turly is no"
+			"God, Gods, or Goddess looking down on me!"
+			"My query on the bridge has been answered"
+			"by the total absence of a reply."
+			"My mind's made up, I must now jump...now die.")
 }
 
 text AedesTrivis_Text_OrestesSageScene_Orestes4 {
-	format("Who are you!? Why have you come to this place?
-			I hope you did not come seeking guidance
-			since that charlatan is offering none.
-			He says some green pirate stole his tree vest
-			so he can't tell anyone their future.")
+	format("Who are you!? Why have you come to this place?"
+			"I hope you did not come seeking guidance"
+			"since that charlatan is offering none."
+			"He says some green pirate stole his tree vest"
+			"so he can't tell anyone their future.")
 }
 
 text AedesTrivis_Text_OrestesSageScene_Orestes5 {
-	format("I just realized you're the answer to my
-			desperate supplication for help. The odds
-			of another traveller arriving
-			here just as I'm leaving...impossible!
-			You must be here to restore the temple
-			and bring the oracle back to tell me
-			what is it I must do. I simply must
-			speak with him soon or I will surely die!
-			So please, hurry, find the missing tree vest
-			and bring the oracle back. Maybe try
-			to talk to that pretender and see if
-			he has any helpful advice for you.
-			Thank you God, Gods, Goddesses, or Goddess
-			for answering my most desperate prayers!")
+	format("I just realized you're the answer to my"
+			"desperate supplication for help. The odds"
+			"of another traveller arriving"
+			"here just as I'm leaving...impossible!"
+			"You must be here to restore the temple"
+			"and bring the oracle back to tell me"
+			"what is it I must do. I simply must"
+			"speak with him soon or I will surely die!"
+			"So please, hurry, find the missing tree vest"
+			"and bring the oracle back. Maybe try"
+			"to talk to that pretender and see if"
+			"he has any helpful advice for you."
+			"Thank you God, Gods, Goddesses, or Goddess"
+			"for answering my most desperate prayers!")
 }
 
 text AedesTrivis_Text_OrestesDuringTrivisQuest {
-	format("Please help me! Please repair the tree vest and
-			bring back the oracle, else I must die!")
+	format("Please help me! Please repair the tree vest and"
+			"bring back the oracle, else I must die!")
 }
 
 text AedesTrivis_Text_SageIntroQuest {
-    format("The thief in green snuck in during the night
-			and stole the Trivis from this sacred place.
-			That he wore green seems no coincidence
-			for this was once the land of Hylia
-			where young men were clothed in tunics of green
-			when they reached the age of majority.
-			Whether this thief was just a copycat,
-			or if some of the Hylians survive
-			underground, in the caves along the Drake,
-			is not clear but I think the thief must have
-			been inspired to take the Trivis by
-			the Hylian people, living or dead.")
+    format("The thief in green snuck in during the night"
+			"and stole the Trivis from this sacred place."
+			"That he wore green seems no coincidence"
+			"for this was once the land of Hylia"
+			"where young men were clothed in tunics of green"
+			"when they reached the age of majority."
+			"Whether this thief was just a copycat,"
+			"or if some of the Hylians survive"
+			"underground, in the caves along the Drake,"
+			"is not clear but I think the thief must have"
+			"been inspired to take the Trivis by"
+			"the Hylian people, living or dead.")
 }
 
 text AedesTrivis_Text_SageDuringQuest {
-    format("If you intend to rescue the Trivis
-			and return the temple's stolen glory
-			I would begin your search inside the caves
-			that run deep underground along the Drake.
-			I know of one just south of the temple,
-			along the western shore, not far from here.
-			There are others as well. I am not sure
-			if the thief has them or hid them or might
-			be trying to use their power for ill.
-			Tread carefully, good luck, and please return.")
+    format("If you intend to rescue the Trivis"
+			"and return the temple's stolen glory"
+			"I would begin your search inside the caves"
+			"that run deep underground along the Drake."
+			"I know of one just south of the temple,"
+			"along the western shore, not far from here."
+			"There are others as well. I am not sure"
+			"if the thief has them or hid them or might"
+			"be trying to use their power for ill."
+			"Tread carefully, good luck, and please return.")
 }
 
 //Trivis Complete Scene
 
 //O: I told you I'm cursed I need to know what to do because as we wait my father is dishonored but it's my mother doing the defiling! I must know whether to act the anguish will lead me to death
 text AedesTrivis_Text_Orestes_TrivisComplete1 {
-	format("You don't understand! This is Urgent! I
-			must have guidance! The guilt is killing me!")
+	format("You don't understand! This is Urgent! I"
+			"must have guidance! The guilt is killing me!")
 }
 
 //S: And I told you I am a mere custodian of this place. The speaker has gone and only the Trivis Returned could possibly bring him back
 text AedesTrivis_Text_Sage_TrivisComplete1 {
-	format("And as I told you, many times before,
-			I am a mere custodian. I can't
-			give you any advice worth more than words.
-			Until the Trivis is returned, and the
-			Speaker assumes his post, there is no one
-			who can help you here and raising your voice
-			will not change that. Now, please, compose yourself.")
+	format("And as I told you, many times before,"
+			"I am a mere custodian. I can't"
+			"give you any advice worth more than words."
+			"Until the Trivis is returned, and the"
+			"Speaker assumes his post, there is no one"
+			"who can help you here and raising your voice"
+			"will not change that. Now, please, compose yourself.")
 }
 
 text AedesTrivis_Text_Orestes_TrivisComplete2 {
@@ -662,9 +662,9 @@ text AedesTrivis_Text_Orestes_TrivisComplete3 {
 }
 
 text AedesTrivis_Text_Sage_TrivisComplete3 {
-	format("What happy day! You've done it lad! You have
-			returned our temple to its lost glory!
-			The Trivis, at long last, has been restored!")
+	format("What happy day! You've done it lad! You have"
+			"returned our temple to its lost glory!"
+			"The Trivis, at long last, has been restored!")
 }
 
 text AedesTrivis_Text_Orestes_TrivisComplete4 {
@@ -684,11 +684,11 @@ text AedesTrivis_Text_Sage_TrivisComplete4 {
 }
 
 text AedesTrivis_Text_Slowking_TrivisComplete2 {
-	format("The speaker? Yes, that's what they once called us.
-			After the Trivis was stolen from here
-			we were unable to take corporal
-			form but, now that the temple is restored,
-			we have returned to serve devout pilgrims.")
+	format("The speaker? Yes, that's what they once called us."
+			"After the Trivis was stolen from here"
+			"we were unable to take corporal"
+			"form but, now that the temple is restored,"
+			"we have returned to serve devout pilgrims.")
 }
 
 text AedesTrivis_Text_Orestes_TrivisComplete6 {
@@ -696,54 +696,54 @@ text AedesTrivis_Text_Orestes_TrivisComplete6 {
 }
 
 text AedesTrivis_Text_Orestes_TrivisComplete7 {
-	format("I'm Orestes, son of Agamemnon,
-			and I desperately need divine advice!")
+	format("I'm Orestes, son of Agamemnon,"
+			"and I desperately need divine advice!")
 }
 
 text AedesTrivis_Text_Slowking_TrivisComplete3 {
-	format("Hasty Orestes, long have we observed
-			your haughty family act beyond the will
-			of He who holds the scale to judge our lives.
-			Despite the godless actions of your kin,
-			your own abstainment  from ritual prayer
-			up to this point, and your rude impatience,
-			we welcome and invite you to approach
-			our platform and tell us what bothers you.")
+	format("Hasty Orestes, long have we observed"
+			"your haughty family act beyond the will"
+			"of He who holds the scale to judge our lives."
+			"Despite the godless actions of your kin,"
+			"your own abstainment  from ritual prayer"
+			"up to this point, and your rude impatience,"
+			"we welcome and invite you to approach"
+			"our platform and tell us what bothers you.")
 }
 
 text AedesTrivis_Text_Orestes_TrivisComplete8 {
-	format("My father, who's soul may be stained with sin,
-			lies petrified in bed, bewitched by my
-			mother, who's own life is no more righteous.
-			The shame of knowing my father lies there
-			disgraced and cursed while I do nothing to
-			avenge or rescue him from that sad fate
-			fills me with deep remorse and thoughts of death.
-			Yet neither can I act upon these pains
-			without crossing mother, another sin.
-			You say my family's sinful, and that I
-			have ever scored the will of the divine.
-			These things are true, but now I want to change.
-			I came here to ask what action to take,
-			to learn, then do, the will of the divine.
-			I'm sorry if I seem hasty, or base,
-			but my situation's indeed dire!")
+	format("My father, who's soul may be stained with sin,"
+			"lies petrified in bed, bewitched by my"
+			"mother, who's own life is no more righteous."
+			"The shame of knowing my father lies there"
+			"disgraced and cursed while I do nothing to"
+			"avenge or rescue him from that sad fate"
+			"fills me with deep remorse and thoughts of death."
+			"Yet neither can I act upon these pains"
+			"without crossing mother, another sin."
+			"You say my family's sinful, and that I"
+			"have ever scored the will of the divine."
+			"These things are true, but now I want to change."
+			"I came here to ask what action to take,"
+			"to learn, then do, the will of the divine."
+			"I'm sorry if I seem hasty, or base,"
+			"but my situation's indeed dire!")
 }
 
 //Hear ya, your father is wrongly dishonored and something must be done to save him. Your mother must be punished and defeated but yea you cannot be the one to do it. Find someone to do your dirty work for you, orchestrate the revival of your father and the downfall of your mother but you cannot be the hand of her downfall. That is the will of the divine as I see it.
 text AedesTrivis_Text_Slowking_TrivisComplete4 {
-	format("Your father has unjustly been abused
-			and as his son you must see justice done.
-			Since the offending party's your mother
-			the hand of justice cannot be your own.
-			You must find someone else to break the spell
-			and free Agamemnon. Orestes, know
-			your mother will not persist in this world.
-			After her curse is broken she will die,
-			but you will not be guilty for her death
-			instead renowned as your father's savior.
-			Therefore depart, find someone else to bring
-			justice to your father, death to your mom.")
+	format("Your father has unjustly been abused"
+			"and as his son you must see justice done."
+			"Since the offending party's your mother"
+			"the hand of justice cannot be your own."
+			"You must find someone else to break the spell"
+			"and free Agamemnon. Orestes, know"
+			"your mother will not persist in this world."
+			"After her curse is broken she will die,"
+			"but you will not be guilty for her death"
+			"instead renowned as your father's savior."
+			"Therefore depart, find someone else to bring"
+			"justice to your father, death to your mom.")
 }
 
 //But...
@@ -753,36 +753,36 @@ text AedesTrivis_Text_Orestes_TrivisComplete9 {
 
 //Enought I have spoken be gone
 text AedesTrivis_Text_Slowking_TrivisComplete5 {
-	format("No buts! We've said our prophecy.
-			Be gone! Attend to your urgent business.")
+	format("No buts! We've said our prophecy."
+			"Be gone! Attend to your urgent business.")
 }
 
 //Nor approach player
 text AedesTrivis_Text_Slowking_TrivisComplete6 {
-	format("Now, {PLAYER}, approach our dais. We would thank
-			you for your great service to our temple.")
+	format("Now, {PLAYER}, approach our dais. We would thank"
+			"you for your great service to our temple.")
 }
 
 //You have done great deed take this gift
 text AedesTrivis_Text_Slowking_TrivisComplete7 {
-	format("Most valiant and pure hearted {PLAYER}, we thank
-			you for returning the stolen Trivis
-			and restoring this place of light. Accept
-			this gift on behalf of our diocese")
+	format("Most valiant and pure hearted {PLAYER}, we thank"
+			"you for returning the stolen Trivis"
+			"and restoring this place of light. Accept"
+			"this gift on behalf of our diocese")
 }
 
 //that rock, use well, return sometime
 text AedesTrivis_Text_Slowking_TrivisComplete8 {
-	format("That ancient stone was once regalia
-			of the Hylian Kings. It has been kept
-			in our possession all this tired age.
-			Now it is yours, to do with as you please.
-			Use it wisely. Keep to the righteous path
-			and by persistence you'll achieve your quest.
-			Now farewell, {PLAYER}. Be about your business.")
+	format("That ancient stone was once regalia"
+			"of the Hylian Kings. It has been kept"
+			"in our possession all this tired age."
+			"Now it is yours, to do with as you please."
+			"Use it wisely. Keep to the righteous path"
+			"and by persistence you'll achieve your quest."
+			"Now farewell, {PLAYER}. Be about your business.")
 }
 
 text AedesTrivis_Text_Slowking_Return {
-	format("If during your journey you require
-			additional advice, return to us.")
+	format("If during your journey you require"
+			"additional advice, return to us.")
 }

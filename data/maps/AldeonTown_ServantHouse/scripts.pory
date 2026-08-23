@@ -221,8 +221,8 @@ text AldeonTown_ServantHouse_Text_OrestesScene_Servant1 {
 }
 
 text AldeonTown_ServantHouse_Text_OrestesScene_Orestes1 {
-	format("I have no time to waste on pleasantries
-            I must make haste, I'm here to save father...")
+	format("I have no time to waste on pleasantries"
+            "I must make haste, I'm here to save father...")
 }
 
 text AldeonTown_ServantHouse_Text_OrestesScene_Servant2 {
@@ -230,9 +230,9 @@ text AldeonTown_ServantHouse_Text_OrestesScene_Servant2 {
 }
 
 text AldeonTown_ServantHouse_Text_OrestesScene_Orestes2 {
-    format("Enough! I did not come to bandy words
-            with foolish servants! Open the passage
-            to the kitchen. I must be one my way!")
+    format("Enough! I did not come to bandy words"
+            "with foolish servants! Open the passage"
+            "to the kitchen. I must be one my way!")
 }
 
 text AldeonTown_ServantHouse_Text_OrestesScene_Servant3 {

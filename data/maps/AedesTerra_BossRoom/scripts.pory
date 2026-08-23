@@ -88,10 +88,10 @@ script AedesTerra_BossRoom_Script_WarpSign {
 
 text AedesTerra_BossRoom_Text_GanondorfPre
 {
-	format("You foolish child! You opened the path
-			to the sacred power the green hero
-			sealed here. Now all that's left for me to do
-			is finish you and seize it for myself.")
+	format("You foolish child! You opened the path"
+			"to the sacred power the green hero"
+			"sealed here. Now all that's left for me to do"
+			"is finish you and seize it for myself.")
 }
 
 text AedesTerra_BossRoom_Text_GanondorfLost

@@ -306,17 +306,17 @@ text Tranquilitas_Text_TouristF {
 }
 
 text Tranquilitas_Text_MistyBlock {
-	format("I'm sorry sir, but the Surf School is booked 
-			all season long. I haven't any room
-			for single registration, but I might
-			be able to accomodate a pair.
-			If you find someone to sign up with you 
-			come speak with me. I'll try to fit you in!")
+	format("I'm sorry sir, but the Surf School is booked "
+			"all season long. I haven't any room"
+			"for single registration, but I might"
+			"be able to accomodate a pair."
+			"If you find someone to sign up with you "
+			"come speak with me. I'll try to fit you in!")
 }
 
 text Tranquilitas_Text_Leaf1 {
-	format("Where have you been {PLAYER}? You kept me waiting 
-			for so long! Are you ready for Surf School?")
+	format("Where have you been {PLAYER}? You kept me waiting"
+			"for so long! Are you ready for Surf School?")
 }
 
 text Tranquilitas_Text_LeafNotReady {
@@ -324,30 +324,30 @@ text Tranquilitas_Text_LeafNotReady {
 }
 
 text Tranquilitas_Text_Leaf2 {
-	format("This is so romantic! I cannot wait
-			to learn to surf the seas with you, my love.
-			C'mon! Let's go meet our surf instructor.")
+	format("This is so romantic! I cannot wait"
+			"to learn to surf the seas with you, my love."
+			"C'mon! Let's go meet our surf instructor.")
 }
 
 text Tranquilitas_Text_Misty1 {
-	format("Hello and welcome to Tranquilitas
-			Surf School. I'm Misty, the surf instructor.
-			Unfortunately we are fully booked,
-			I couldn't possibly allow you two
-			to join...")
+	format("Hello and welcome to Tranquilitas"
+			"Surf School. I'm Misty, the surf instructor."
+			"Unfortunately we are fully booked,"
+			"I couldn't possibly allow you two"
+			"to join...")
 }
 
 text Tranquilitas_Text_Leaf3 {
-    format("But we have a reservation!
-            It should be under my boyfriend's name, {PLAYER}.")
+    format("But we have a reservation!"
+            "It should be under my boyfriend's name, {PLAYER}.")
 }
 
 text Tranquilitas_Text_Misty2 {
-    format("Of course, forgive me, I remember now.
-            You made a reservation earlier
-            for a couple's package at the Surf School.
-            We've been expecting you, but first thing's first,
-            you'll need to pay the registration fee.")
+    format("Of course, forgive me, I remember now."
+            "You made a reservation earlier"
+            "for a couple's package at the Surf School."
+            "We've been expecting you, but first thing's first,"
+            "you'll need to pay the registration fee.")
 }
 
 text Tranquilitas_Text_Registration {
@@ -355,41 +355,41 @@ text Tranquilitas_Text_Registration {
 }
 
 text Tranquilitas_Text_LeafNoRegistration {
-	format("But {PLAYER} you promised for our honeymooon
-            that you would take us to learn how to surf!
-            You still want me, don't you? This will be fun!
-            Just pay the fee, and let's learn how to surf!")
+	format("But {PLAYER} you promised for our honeymooon"
+            "that you would take us to learn how to surf!"
+            "You still want me, don't you? This will be fun!"
+            "Just pay the fee, and let's learn how to surf!")
 }
 
 text Tranquilitas_Text_MistyNoMoney {
-    format("I'm sorry sir, but it seems you do not
-            have enough cash to cover the small fee
-            required to register at Surf School.
-            You will have to return with more money.")
+    format("I'm sorry sir, but it seems you do not"
+            "have enough cash to cover the small fee"
+            "required to register at Surf School."
+            "You will have to return with more money.")
 }
 
 text Tranquilitas_Text_LeafNoMoney {
-    format("This can't be real! It's so embarrising!
-            How could you do something like this to me?
-            You need to make more money if you want
-            me to be your girlfriend. {PLAYER}, I have needs!
-            Don't talk to me until you can afford
-            to pay for our Surf School registration.")
+    format("This can't be real! It's so embarrising!"
+            "How could you do something like this to me?"
+            "You need to make more money if you want"
+            "me to be your girlfriend. {PLAYER}, I have needs!"
+            "Don't talk to me until you can afford"
+            "to pay for our Surf School registration.")
 }
 
 text Tranquilitas_Text_Misty3 {
-    format("Thank you. I'm sure you're excited to start
-            learning to surf, so let's not waste more time.
-            Follow me in, we'll begin the lesson.")
+    format("Thank you. I'm sure you're excited to start"
+            "learning to surf, so let's not waste more time."
+            "Follow me in, we'll begin the lesson.")
 }
 
 text Tranquilitas_Text_Leaf4 {
-    format("Oh {PLAYER}, isn't this like a dream come true?
-            Just you, and me, and a group of strangers,
-            surrounded by a team of teenage girls
-            learning how to surf in an indoor pool...
-            I can't imagine any better way
-            to celebrate our new relationship.
-            C'mon, let's go inside and get started!")
+    format("Oh {PLAYER}, isn't this like a dream come true?"
+            "Just you, and me, and a group of strangers,"
+            "surrounded by a team of teenage girls"
+            "learning how to surf in an indoor pool..."
+            "I can't imagine any better way"
+            "to celebrate our new relationship."
+            "C'mon, let's go inside and get started!")
 }
 

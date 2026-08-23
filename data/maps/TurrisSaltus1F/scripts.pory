@@ -336,11 +336,11 @@ script TurrisSaltus_Script_HandmaidenPost {
 }
 
 text TurrisSaltus1F_Text_DoorGuardPre {
-	format("Halt!\pStop right there!\pThis tower is private
-			property of the Tyrian Maidens.\p
-			Since you were not invited by our queen,
-			but somehow managed to gain entrance here,
-			we must kill you.\pA dead man tells no tales.")
+	format("Halt!\pStop right there!\pThis tower is private"
+			"property of the Tyrian Maidens.\p"
+			"Since you were not invited by our queen,"
+			"but somehow managed to gain entrance here,"
+			"we must kill you.\pA dead man tells no tales.")
 }
 
 text TurrisSaltus1F_Text_DoorGuard1Lost {

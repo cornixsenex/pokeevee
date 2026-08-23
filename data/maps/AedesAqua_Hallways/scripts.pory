@@ -260,19 +260,19 @@ script  EventScript_SunkenTreasure_Error {
 }
 
 text AedesAqua_Text_LinkMessage {
-    format("The golden power which you seek\n
-            Is not for anyone to keep.\p
-            Too dangerous to leave alone,\n
-            I took it from its former home.\p
-            The three components I have hid\n
-            Within three temples dark and dim.\p
-            The one I hide under the lake\n
-            I have decided to unmake.\p
-            The golden shards, which number eight,\n
-            have been sunk to preserve our fate.\p
-            The first is in this very room\n
-            The rest under the sun and moon.\p
-            The map will show you where they lie\n
-            On the lake bed where fishes die.\p
-            Would you like to return to the beginning of the temple?")
+    format("The golden power which you seek\n"
+            "Is not for anyone to keep.\p"
+            "Too dangerous to leave alone,\n"
+            "I took it from its former home.\p"
+            "The three components I have hid\n"
+            "Within three temples dark and dim.\p"
+            "The one I hide under the lake\n"
+            "I have decided to unmake.\p"
+            "The golden shards, which number eight,\n"
+            "have been sunk to preserve our fate.\p"
+            "The first is in this very room\n"
+            "The rest under the sun and moon.\p"
+            "The map will show you where they lie\n"
+            "On the lake bed where fishes die.\p"
+            "Would you like to return to the beginning of the temple?")
 }
