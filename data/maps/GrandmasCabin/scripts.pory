@@ -144,7 +144,7 @@ script GrandmasCabin_Script_LeafGame1 {
 	
 	setvar (VAR_GRANNY_STATE, 3)
 
-	setspeaker(SP_NAME_LEAF)
+	setspeaker(SP_NAME_PLAYER)
 	msgbox (GrandmasCabin_Text_Leaf1, MSGBOX_DEFAULT)
 	closemessage
 
@@ -156,7 +156,7 @@ script GrandmasCabin_Script_LeafGame1 {
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
 	waitmovement (0)
 
-	setspeaker (SP_NAME_LEAF)
+	setspeaker (SP_NAME_PLAYER)
 	msgbox (GrandmasCabin_Text_Leaf2, MSGBOX_DEFAULT)
 	closemessage
 
