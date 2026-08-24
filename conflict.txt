@@ -103,3 +103,5 @@ Automatic merge failed; fix conflicts and then commit the result.
 	>The mares and islas are all wrong
 
 	>ISSUE is it cuts off the first N of the map string in the box
+	>GetMapNameGeneric()
+	>withoutPrefixPtr ?
