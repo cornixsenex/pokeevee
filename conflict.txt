@@ -97,10 +97,9 @@
 	>Was removed in 1.14 I guess I missed that
 Automatic merge failed; fix conflicts and then commit the result.
 
-? Name boxes
-	>docs/tutorials/how_to_namebox.md
-> Treasure Fishing
 > Map name popup
 	>Portus Primus is fine
 	>Castalia is wrong
 	>The mares and islas are all wrong
+
+	>ISSUE is it cuts off the first N of the map string in the box
