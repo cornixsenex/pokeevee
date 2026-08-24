@@ -201,7 +201,7 @@ GrandmasCabin_Script_LeafGame1::
 # 145 "data/maps/GrandmasCabin/scripts.pory"
 	setvar VAR_GRANNY_STATE, 3
 # 147 "data/maps/GrandmasCabin/scripts.pory"
-	setspeaker SP_NAME_PLAYER
+	setspeaker SP_NAME_LEAF
 # 148 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_Text_Leaf1, MSGBOX_DEFAULT
 # 149 "data/maps/GrandmasCabin/scripts.pory"
@@ -219,7 +219,7 @@ GrandmasCabin_Script_LeafGame1::
 # 157 "data/maps/GrandmasCabin/scripts.pory"
 	waitmovement 0
 # 159 "data/maps/GrandmasCabin/scripts.pory"
-	setspeaker SP_NAME_PLAYER
+	setspeaker SP_NAME_LEAF
 # 160 "data/maps/GrandmasCabin/scripts.pory"
 	msgbox GrandmasCabin_Text_Leaf2, MSGBOX_DEFAULT
 # 161 "data/maps/GrandmasCabin/scripts.pory"
