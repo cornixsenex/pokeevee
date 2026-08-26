@@ -979,9 +979,9 @@ BulbusTown_Text_SailorAfterStrike9::
 
 BulbusTown_Text_Jason1::
 # 583 "data/maps/BulbusTown/scripts.pory"
-	.string "Well met {PLAYER}! It's good to see\n"
-	.string "you again. I helped negotiate an end to\l"
-	.string "the dock worker's strike. Bringing Shiny\l"
+	.string "Well met {PLAYER}! It's good to see you\n"
+	.string "again. I helped negotiate an end to the\l"
+	.string "dock worker's strike. Bringing Shiny\l"
 	.string "Mareep to live in the harbor has made\l"
 	.string "the men and women agree to go back to\l"
 	.string "work. As thanks for your assitance to\l"

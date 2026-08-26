@@ -2174,9 +2174,9 @@ MareS8_Text_Ulysses1::
 
 MareS8_Text_Ulysses2::
 # 1455 "data/maps/MareS8/scripts.pory"
-	.string "Thank you, {PLAYER}. Those monsters\n"
-	.string "had me trapped on this island with no\l"
-	.string "hope of escape. Now I must be gone. I\l"
-	.string "cannot delay my journey to Nestor's\l"
-	.string "house where my friend Menelaus will\l"
-	.string "celebrate marriage.$"
+	.string "Thank you, {PLAYER}. Those monsters had\n"
+	.string "me trapped on this island with no hope\l"
+	.string "of escape. Now I must be gone. I cannot\l"
+	.string "delay my journey to Nestor's house\l"
+	.string "where my friend Menelaus will celebrate\l"
+	.string "marriage.$"

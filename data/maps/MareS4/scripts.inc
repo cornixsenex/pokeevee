@@ -3529,8 +3529,8 @@ MareS4_Text_Aeneas_TakeAction::
 	.string "regain your composure and then search\l"
 	.string "the beaches for any sign of the boys.\l"
 	.string "Faustulus, you will search the northern\l"
-	.string "half of the island. {PLAYER} search\l"
-	.string "the southern half. I'll wait here in case\l"
+	.string "half of the island. {PLAYER} search the\l"
+	.string "southern half. I'll wait here in case\l"
 	.string "they, or the natives, decide to return\l"
 	.string "to the chieftain's hut.$"
 
@@ -3596,8 +3596,8 @@ MareS4_Text_Aeneas_Wedding1::
 
 MareS4_Text_GiveInvitation::
 # 2314 "data/maps/MareS4/scripts.pory"
-	.string "{PLAYER} gave the Wedding Invitation\n"
-	.string "to Aeneas.$"
+	.string "{PLAYER} gave the Wedding Invitation to\n"
+	.string "Aeneas.$"
 
 MareS4_Text_Aeneas_Wedding2::
 # 2318 "data/maps/MareS4/scripts.pory"
@@ -3617,10 +3617,10 @@ MareS4_Text_Aeneas_Wedding2::
 
 MareS4_Text_UlyssesAnteScylla::
 # 2333 "data/maps/MareS4/scripts.pory"
-	.string "Oh no, {PLAYER}! It seem we cannot go\n"
-	.string "on. That impassable whirlpool blocks\l"
-	.string "the way forward. We could not hope to\l"
-	.string "get across!$"
+	.string "Oh no, {PLAYER}! It seem we cannot go on.\n"
+	.string "That impassable whirlpool blocks the\l"
+	.string "way forward. We could not hope to get\l"
+	.string "across!$"
 
 MareS4_Text_UlyssesDuringScylla::
 # 2339 "data/maps/MareS4/scripts.pory"

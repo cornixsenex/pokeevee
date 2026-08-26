@@ -1109,8 +1109,8 @@ CasaAtrei_Text_AgamemnonKlytmnestraScene7::
 	.string "Let her grieve in peace. She will come\n"
 	.string "around eventually. Now tell me, son how\l"
 	.string "did you manage to break Klytmnestra's\l"
-	.string "spell, and tell me of {PLAYER} who\l"
-	.string "helped you do it.$"
+	.string "spell, and tell me of {PLAYER} who helped\l"
+	.string "you do it.$"
 
 CasaAtrei_Text_OrestesKlytmnestraScene7::
 # 791 "data/maps/CasaAtrei/scripts.pory"
@@ -1138,10 +1138,10 @@ CasaAtrei_Text_OrestesKlytmnestraScene7::
 	.string "Trivis where I presented my problem to\l"
 	.string "the Slowking who told me I must help you\l"
 	.string "be revived but that my hand could not\l"
-	.string "strike my mother's. I met young\l"
-	.string "{PLAYER} there, he agreed to help, and\l"
-	.string "it was him who sent Klytmnestra down to\l"
-	.string "the pits of Hell and saved your life.$"
+	.string "strike my mother's. I met young {PLAYER}\l"
+	.string "there, he agreed to help, and it was him\l"
+	.string "who sent Klytmnestra down to the pits\l"
+	.string "of Hell and saved your life.$"
 
 CasaAtrei_Text_AgamemnonKlytmnestraScene8::
 # 821 "data/maps/CasaAtrei/scripts.pory"
@@ -1209,8 +1209,8 @@ CasaAtrei_Text_IphigeniaInRoom::
 
 CasaAtrei_Text_AgamemnonGift1::
 # 881 "data/maps/CasaAtrei/scripts.pory"
-	.string "Hello again, {PLAYER}, it's great to\n"
-	.string "see you. I'm pleased you have come back.\l"
+	.string "Hello again, {PLAYER}, it's great to see\n"
+	.string "you. I'm pleased you have come back.\l"
 	.string "Forgive me for having to rest before,\l"
 	.string "but now I am feeling myself again. I\l"
 	.string "have a gift I'd like to give you for\l"
@@ -1235,8 +1235,8 @@ CasaAtrei_Text_AgamemnonInvite1::
 
 CasaAtrei_Text_GaveInvite::
 # 903 "data/maps/CasaAtrei/scripts.pory"
-	.string "{PLAYER} gave the Wedding Invitation\n"
-	.string "to Agamemnon.$"
+	.string "{PLAYER} gave the Wedding Invitation to\n"
+	.string "Agamemnon.$"
 
 CasaAtrei_Text_AgamemnonInvite2::
 # 907 "data/maps/CasaAtrei/scripts.pory"

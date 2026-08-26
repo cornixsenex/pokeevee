@@ -164,15 +164,15 @@ text MareS5_Text_UlyssesSleep {
 }
 
 text MareS5_Text_UlyssesAwake {
-	format("That song! I dreamt three beautiful voices
-			sang in chorus the sweetest melody
-			that ever in my days has graced my ears.
-			I wish indeed you had not silenced them.
-			This bitter, waking world appears hollow,
-			like some pathetic mockery of that
-			usullied light, radient perfection
-			of those dreams that song had lulled me into.
-			Being awake I will resign myself
-			to re-attend my quest. I must be off
-			for Nestor's house and my brother's wedding.")
+	format("That song! I dreamt three beautiful voices"
+			"sang in chorus the sweetest melody"
+			"that ever in my days has graced my ears."
+			"I wish indeed you had not silenced them."
+			"This bitter, waking world appears hollow,"
+			"like some pathetic mockery of that"
+			"usullied light, radient perfection"
+			"of those dreams that song had lulled me into."
+			"Being awake I will resign myself"
+			"to re-attend my quest. I must be off"
+			"for Nestor's house and my brother's wedding.")
 }

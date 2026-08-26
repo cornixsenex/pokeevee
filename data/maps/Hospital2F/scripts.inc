@@ -249,10 +249,10 @@ Hospital2F_Text_Stoner11::
 	.string "good shit man! Fuck yeah can't wait to\l"
 	.string "spark this shit up...Here lemme see\l"
 	.string "those forms...Let's see uhh\l"
-	.string "name...{PLAYER}...uhh birthday...uhh\l"
-	.string "Four Twenty Sixty Nine hehe...uhh\l"
-	.string "income Fat Zeros hahaha uhh...sign and\l"
-	.string "date. There ya go kid!$"
+	.string "name...{PLAYER}...uhh birthday...uhh Four\l"
+	.string "Twenty Sixty Nine hehe...uhh income Fat\l"
+	.string "Zeros hahaha uhh...sign and date. There\l"
+	.string "ya go kid!$"
 
 Hospital2F_Text_Stoner12::
 # 146 "data/maps/Hospital2F/scripts.pory"

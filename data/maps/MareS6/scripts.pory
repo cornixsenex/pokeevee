@@ -1087,32 +1087,32 @@ text MareS6_Text_UlyssesResponseToFisherman {
 }
 
 text MareS6_Text_UlyssesCallToAction {
-    format("My goodness, {PLAYER}, am I glad to see you!
-            I washed ashore and these good people of
-            the island gave me food, water, and clothes.
-            I was about to leave when I just learned
-            an evil witch, who lives out in the woods,
-            is kidnapping the people who live here.
-            After the hospitality they showed
-            to this stranger in his time of great need,
-            it wouldn't be right for me to leave now
-            without paying them back by finding this
-            murderous witch and saving the island.
-            Let's head for the jungle and search for the
-            secret lair of the witch. I'll meet you there!")
+    format("My goodness, {PLAYER}, am I glad to see you!"
+            "I washed ashore and these good people of"
+            "the island gave me food, water, and clothes."
+            "I was about to leave when I just learned"
+            "an evil witch, who lives out in the woods,"
+            "is kidnapping the people who live here."
+            "After the hospitality they showed"
+            "to this stranger in his time of great need,"
+            "it wouldn't be right for me to leave now"
+            "without paying them back by finding this"
+            "murderous witch and saving the island."
+            "Let's head for the jungle and search for the"
+            "secret lair of the witch. I'll meet you there!")
 }
 
 text MareS6_Text_UlyssesJungle {
-    format("This jungle more dangerous than I
-            had expected but we cannot turn back.
-            Lets muscle our way to the witches lair!")
+    format("This jungle is more dangerous than I"
+            "had expected, but we cannot turn back."
+            "Let's muscle our way to the witch's lair!")
 }
 
 text MareS6_Text_UlyssesAntePortam {
-    format("This must be it, the evil witch's lair.
-            Be cautious, we don't know what kind of tricks
-            she has waiting for us once we're inside.
-            Now follow me forward. Let's save the town!")
+    format("This must be it, the evil witch's lair."
+            "Be cautious, we don't know what kind of tricks"
+            "she has waiting for us once we're inside."
+            "Now follow me forward. Let's save the town!")
 }
 
 text MareS6_Text_MeetsGaze {
@@ -1136,21 +1136,21 @@ text MareS6_Text_PinaFruitFell {
 }
 
 text MareS6_Text_FruitFan1 {
-    format("This piña tree is preparing to bloom!
-            How do I know? I can talk to the trees.")
+    format("This piña tree is preparing to bloom!"
+            "How do I know? I can talk to the trees.")
 }
 
 text MareS6_Text_FruitFan2 {
-    format("The piña tree has borne fruit! Do you know
-            how rare that is? Sometimes not even one
-            tree on the whole island will fruit all year!")
+    format("The piña tree has borne fruit! Do you know"
+            "how rare that is? Sometimes not even one"
+            "tree on the whole island will fruit all year!")
 }
 
 text MareS6_Text_PinaFruitFanPre {
-    format("The piña fruit! What have you done with it?
-            That should belong to the men and women
-            of the island in common, not for some
-            foreign child to steal! You'll pay for this!")
+    format("The piña fruit! What have you done with it?"
+            "That should belong to the men and women"
+            "of the island in common, not for some"
+            "foreign child to steal! You'll pay for this!")
 }
 
 text MareS6_Text_PinaFruitFanLost {
@@ -1158,13 +1158,13 @@ text MareS6_Text_PinaFruitFanLost {
 }
 
 text MareS6_Text_PinaFruitFanPost {
-	format("Well, now the piña fruit is yours. I hope
-			you at least put that rare fruit to good use.")
+	format("Well, now the piña fruit is yours. I hope"
+			"you at least put that rare fruit to good use.")
 }
 
 text MareS6_Text_PinaFruitFanPost2 {
-	format("Another fruit will grow another day,
-			and I will make sure that no one steals it.")
+	format("Another fruit will grow another day,"
+			"and I will make sure that no one steals it.")
 }
 
 text MareS6_Text_PlayerGaveMoly {
@@ -1172,30 +1172,30 @@ text MareS6_Text_PlayerGaveMoly {
 }
 
 text MareS6_Text_SailorRestored {
-	format("What terrible dreams I've suffered of late!
-			I dreamt my ship had crashed and I had washed
-			ashore upon some cursed island of Shinx.")
+	format("What terrible dreams I've suffered of late!"
+			"I dreamt my ship had crashed and I had washed"
+			"ashore upon some cursed island of Shinx.")
 }
 
 text MareS6_Text_CamperRestored {
-	format("All the merit badges I earned could not
-			Save me from Circe's curse. I'm in your debt.")
+	format("All the merit badges I earned could not"
+			"Save me from Circe's curse. I'm in your debt.")
 }
 
 text MareS6_Text_Man3Restored { 
-	format("We came to save the town from Circe but
-			in the end we ourselves needed saving.")
+	format("We came to save the town from Circe but"
+			"in the end we ourselves needed saving.")
 }
 
 text MareS6_Text_OldMan2Restored { 
-	format("I've lived a long time. Never in my days
-			have I seen people turned to Pokemon.")
+	format("I've lived a long time. Never in my days"
+			"have I seen people turned to Pokemon.")
 }
 
 text MareS6_Text_HikerRestored { 
-	format("It feels such a relief to be brought back
-			into my old body again. I feared
-			I'd be stuck as a Pokemon for good!")
+	format("It feels such a relief to be brought back"
+			"into my old body again. I feared"
+			"I'd be stuck as a Pokemon for good!")
 }
 
 text MareS6_Text_GenericRestored {
@@ -1207,52 +1207,52 @@ text MareS6_Text_UlyssesDuringPen {
 }
 
 text MareS6_Text_UlyssesAfterPen {
-	format("We did it {PLAYER}! We saved the townspeople.
-			Now finally we can depart this place,
-			however, even since being restored
-			to my human body I feel unclean
-			like one who still reeks of the witch's curse.
-			I must be purified before I set
-			out on the road to Nestor's house again.
-			I must appease the powers who govern
-			the turbulent seas and the endless skies
-			by making sacrifice upon the shores.
-			Meet me at the island's westernmost point
-			and bring me a suitable sacrifice.")
+	format("We did it {PLAYER}! We saved the townspeople."
+			"Now finally we can depart this place,"
+			"however, even since being restored"
+			"to my human body I feel unclean"
+			"like one who still reeks of the witch's curse."
+			"I must be purified before I set"
+			"out on the road to Nestor's house again."
+			"I must appease the powers who govern"
+			"the turbulent seas and the endless skies"
+			"by making sacrifice upon the shores."
+			"Meet me at the island's westernmost point"
+			"and bring me a suitable sacrifice.")
 }
 
 text MareS6_Text_SailorPostRestored {
-	format("It feels so calming to gaze at the sea.
-			I had feared I would never get the chance
-			to see her again while I had been cursed.")
+	format("It feels so calming to gaze at the sea."
+			"I had feared I would never get the chance"
+			"to see her again while I had been cursed.")
 }
 
 text MareS6_Text_CamperPostRestored {
-	format("I'm glad to be back home. I try to tell
-			myself that it was all just a bad dream
-			but I have lost that rash, impulsive drive
-			to dive headfirst into danger. I fear
-			I'll be hesitant if danger returns.")
+	format("I'm glad to be back home. I try to tell"
+			"myself that it was all just a bad dream"
+			"but I have lost that rash, impulsive drive"
+			"to dive headfirst into danger. I fear"
+			"I'll be hesitant if danger returns.")
 }
 
 text MareS6_Text_HikerPostRestored {
-	format("They say the air gets thinner as you climb.
-			That may be true, but one thing is for sure.
-			Climbing brings peace of mind, and heals all hurts.")
+	format("They say the air gets thinner as you climb."
+			"That may be true, but one thing is for sure."
+			"Climbing brings peace of mind, and heals all hurts.")
 }
 
 text MareS6_Text_UlyssesShadesIntro1 {
-	format("The western sea, the boundary between
-			this living world of men, and the unknown,
-			undying lands where the sun never sets.")
+	format("The western sea, the boundary between"
+			"this living world of men, and the unknown,"
+			"undying lands where the sun never sets.")
 }
 
 text MareS6_Text_UlyssesShadesIntro2 {
-	format("I fear my passage to those western shores
-			we all must reach, after our lives are done,
-			will be hindered by my accursed soul.
-			I must make myself clean from suffering
-			under the witch's curse with sacrifice.")
+	format("I fear my passage to those western shores"
+			"we all must reach, after our lives are done,"
+			"will be hindered by my accursed soul."
+			"I must make myself clean from suffering"
+			"under the witch's curse with sacrifice.")
 }
 
 text MareS6_Text_UlyssesShadesIntro3 {
@@ -1264,12 +1264,12 @@ text MareS6_Text_UlyssesBringSacrifice {
 }
 
 text MareS6_Text_NoToSacrifice {
-	format("You must bring me a Pokemon to throw
-			into the ocean to please the powers
-			who guard the way to the undying lands
-			from those who have impure souls, like myself.
-			Until then I will remain on these shores,
-			I will not leave until I've sacrificed.")
+	format("You must bring me a Pokemon to throw"
+			"into the ocean to please the powers"
+			"who guard the way to the undying lands"
+			"from those who have impure souls, like myself."
+			"Until then I will remain on these shores,"
+			"I will not leave until I've sacrificed.")
 }
 
 text MareS6_Text_SacrificeNotValid {
@@ -1285,19 +1285,19 @@ text MareS6_Text_UlyssesSacrifice1 {
 }
 
 text MareS6_Text_UlyssesSacrifice2 {
-	format("Now hear me, you powers beyond the sea,
-			Ulysses, ever your faithful servant,
-			have brought you {STR_VAR_1} and offer you it's life
-			in exchange for your purification
-			of my soul, recently tormented by
-			the evil witch's curse. {STR_VAR_1}! I cast you into the sea!
-			May your death be pleasing to those who guard
-			the westward path to the undying lands.")
+	format("Now hear me, you powers beyond the sea,"
+			"Ulysses, ever your faithful servant,"
+			"have brought you {STR_VAR_1} and offer you it's life"
+			"in exchange for your purification"
+			"of my soul, recently tormented by"
+			"the evil witch's curse. {STR_VAR_1}! I cast you into the sea!"
+			"May your death be pleasing to those who guard"
+			"the westward path to the undying lands.")
 }
 
 text MareS6_Text_UlyssesSacrifice3 {
-	format("It is done, let us be gone from this place.
-			I am quite ready to set sail again
-			and, at long last, arrive at Nestor's home
-			to attend my brother's joyous wedding.")
+	format("It is done, let us be gone from this place."
+			"I am quite ready to set sail again"
+			"and, at long last, arrive at Nestor's home"
+			"to attend my brother's joyous wedding.")
 }

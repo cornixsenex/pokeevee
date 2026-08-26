@@ -122,8 +122,8 @@ text Pyramids_Text_PyramidClearBlock2 {
 }
 
 text Pyramids_Text_Scientist {
-	format("Dedicating my life to the pursuit
-			of archaelogical discovery
-			for the general benefit of mankind
-			has been a most rewarding decision.")
+	format("Dedicating my life to the pursuit"
+			"of archaelogical discovery"
+			"for the general benefit of mankind"
+			"has been a most rewarding decision.")
 }

@@ -223,26 +223,26 @@ script Route17_Script_OrestesAfterAedesTrivis {
 }
 
 text Route17_Text_Block1 {
-	format("This is the Via Fluvia which leads 
-			to Lacus Drako and the town Salix
-			but it is impossible to use now.
-			The storm has destroyed two bridges ahead 
-			and it will be some time before they're fixed.")
+	format("This is the Via Fluvia which leads "
+			"to Lacus Drako and the town Salix"
+			"but it is impossible to use now."
+			"The storm has destroyed two bridges ahead "
+			"and it will be some time before they're fixed.")
 }
 
 text Route17_Text_Block2 {
-	format("We managed to repair the lower bridge
-			but the second one, up by Dragon Lake,
-			is still broken. Be careful of the road
-			many wild, powerful pokemon
-			attacked us while our men were hard at work.
-			What's more the way to Salix has been shut
-            by sleeping Snorlaxes...Snorlacii?
-			We've sent word back to Urbia to send
-			more men,and something to wake them, but that
-			could be some time from now. You know how the
-			bureaucrats in the capital forget
-			about us common folk up in the hills.")
+	format("We managed to repair the lower bridge"
+			"but the second one, up by Dragon Lake,"
+			"is still broken. Be careful of the road"
+			"many wild, powerful pokemon"
+			"attacked us while our men were hard at work."
+			"What's more the way to Salix has been shut"
+            "by sleeping Snorlaxes...Snorlacii?"
+			"We've sent word back to Urbia to send"
+			"more men,and something to wake them, but that"
+			"could be some time from now. You know how the"
+			"bureaucrats in the capital forget"
+			"about us common folk up in the hills.")
 }
 
 //motif - river
@@ -271,51 +271,51 @@ text Route17_Text_Block2 {
 //If there is no God then it doesn't matter what I do but if He does exist then I must do as I"m instructed 
 //Therefore whether I believe or not does not matter the only thing to do is go to the temple and seek guidance for my present situation
 text Route17_Text_OrestesBridge {
-	format("Familiar Drake, unchanged since happy days
-			long gone, transformed into my present grief,
-			do you still recognize Orestes, or
-			is this face too twisted by pain and tears?
-			How else could a good son compose himself
-			while his father, no ordinary man
-			but that Hyperion among satyrs
-			mighty Agamemnon, lies comatose
-			in bed, bewitched by that accursed...Accursed?
-			My wrath betrays my tongue to pronounce sin
-			for how could a good son call his mother
-			accursed? There lies the heart of my despair.
-			I cannot leave my father unavenged
-			neither can I avenge him by fighting
-			mother. Therefore I am resolved to end
-			the pain of my conflicted heart. I've come
-			to drown myself and sink down to the Styx,
-			sink down to sweet release, sink down to death.
-			Sink down to Tartarus! To Sisyphus!
-			Aye, there's the rub, for if in death we're judged,
-			and punished for the sins we do in life,
-			then jumping now would be no sweet release
-			but condemnation to fiery hell
-			as I must answer for my unavenged
-			father as well as heartbroken mother
-			and my own cowardice. What can I do?
-			Both action and inaction reek of sin!
-			If only I could ask the judge himself
-			to know what I might do to avoid it.
-			I must be satisfied to ask the one
-			who is known as his representative.
-			Though he may be a liar my conscience
-			will be guiltless if I trust him in faith.
-			I'll go consult the oracle at the 
-			Aedes Trivis, his words will set me free.")
+	format("Familiar Drake, unchanged since happy days"
+			"long gone, transformed by my present grief,"
+			"do you still recognize Orestes, or"
+			"is this face too twisted by pain and tears?"
+			"How else could a good son compose himself"
+			"while his father, no ordinary man"
+			"but that Hyperion among satyrs"
+			"mighty Agamemnon, lies comatose"
+			"in bed, bewitched by that accursed...Accursed?"
+			"My wrath betrays my tongue to pronounce sin"
+			"for how could a good son call his mother"
+			"accursed? There lies the heart of my despair."
+			"I cannot leave my father unavenged"
+			"neither can I avenge him by fighting"
+			"mother. Therefore I am resolved to end"
+			"the pain of my conflicted heart. I've come"
+			"to drown myself and sink down to the Styx,"
+			"sink down to sweet release, sink down to death."
+			"Sink down to Tartarus! To Sisyphus!"
+			"Aye, there's the rub, for if in death we're judged,"
+			"and punished for the sins we do in life,"
+			"then jumping now would be no sweet release"
+			"but condemnation to fiery hell"
+			"as I must answer for my unavenged"
+			"father as well as heartbroken mother"
+			"and my own cowardice. What can I do?"
+			"Both action and inaction reek of sin!"
+			"If only I could ask the judge himself"
+			"to know what I might do to avoid it."
+			"I must be satisfied to ask the one"
+			"who is known as his representative."
+			"Though he may be a liar my conscience"
+			"will be guiltless if I trust him in faith."
+			"I'll go consult the oracle at the"
+			"Aedes Trivis, his words will set me free.")
 }
 
 text Route17_Text_OrestesAfterAedesTrivis {
-	format("Hey {PLAYER}, sorry I had to wait outside.
-			Did you hear what that talking Slowking said?
-			I need someone to help me save my dad
-			and after you found the Tree Vest I think
-			you would be the perfect person to ask.
-			Don't worry I can sneak you in the house
-			and my father, Agamemnon, surely
-			will reward you handsomely for your work.
-			Our house is in Aldeon, meet me there.")
+	format("Hey {PLAYER}, sorry I had to wait outside."
+			"Did you hear what that talking Slowking said?"
+			"I need someone to help me save my dad"
+			"and after you found the Tree Vest I think"
+			"you would be the perfect person to ask."
+			"Don't worry I can sneak you in the house"
+			"and my father, Agamemnon, surely"
+			"will reward you handsomely for your work."
+			"Our house is in Aldeon, meet me there.")
 }

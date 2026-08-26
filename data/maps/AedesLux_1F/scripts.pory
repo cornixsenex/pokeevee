@@ -3536,10 +3536,10 @@ text AedesLux_Text_PoleCompleted {
 }
 
 text AedesLux_Text_ZeldaPre {
-    format("I am Zelda, the princess of Hyrule.
-            The Green Hero trusted me to protect
-            the Trivis Sapientiae. You will
-            never take it, as long as I draw breath!")
+    format("I am Zelda, the princess of Hyrule."
+            "The Green Hero trusted me to protect"
+            "the Trivis Sapientiae. You will"
+            "never take it, as long as I draw breath!")
 }
 
 text AedesLux_Text_ZeldaLost {

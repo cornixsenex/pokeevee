@@ -2280,12 +2280,12 @@ SuperWeenieHutJr_Text_DoorBlockC::
 
 SuperWeenieHutJr_Text_Graduate::
 # 894 "data/maps/SuperWeenieHutJr/scripts.pory"
-	.string "Congratulations {PLAYER} I see that\n"
-	.string "you are gifted and prepared to\l"
-	.string "graduate. I hereby knight you Squire\l"
-	.string "Weenie Hut and invite you to our\l"
-	.string "exclusive lounge right down the street\l"
-	.string "three buildings to west.$"
+	.string "Congratulations {PLAYER} I see that you\n"
+	.string "are gifted and prepared to graduate. I\l"
+	.string "hereby knight you Squire Weenie Hut and\l"
+	.string "invite you to our exclusive lounge right\l"
+	.string "down the street three buildings to\l"
+	.string "west.$"
 
 SuperWeenieHutJr_Text_TicTacToe_YesNo::
 # 898 "data/maps/SuperWeenieHutJr/scripts.pory"

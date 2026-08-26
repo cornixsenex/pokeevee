@@ -348,8 +348,8 @@ CasaUlyssis_Text_Ulysses_Depart2::
 
 CasaUlyssis_Text_GaveInvite::
 # 250 "data/maps/CasaUlyssis/scripts.pory"
-	.string "{PLAYER} gave the Wedding Invitation\n"
-	.string "to Ulysses.$"
+	.string "{PLAYER} gave the Wedding Invitation to\n"
+	.string "Ulysses.$"
 
 CasaUlyssis_Text_Ulysses_Depart3::
 # 254 "data/maps/CasaUlyssis/scripts.pory"

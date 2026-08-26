@@ -2479,10 +2479,10 @@ BigIslandN_Text_JasonExeunt1::
 	.string "Though grivously we lost great Heracles\l"
 	.string "and Philoctetes too shall not return,\l"
 	.string "that which we set out for has been\l"
-	.string "achieved. A special thanks to\l"
-	.string "{PLAYER} and Medea without who our\l"
-	.string "objective would have failed. Three\l"
-	.string "cheers from all for our new companions.$"
+	.string "achieved. A special thanks to {PLAYER}\l"
+	.string "and Medea without who our objective\l"
+	.string "would have failed. Three cheers from all\l"
+	.string "for our new companions.$"
 
 BigIslandN_Text_ThreeCheers::
 # 1399 "data/maps/BigIslandN/scripts.pory"

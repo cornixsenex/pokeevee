@@ -376,7 +376,7 @@ Route17_Text_Block2::
 Route17_Text_OrestesBridge::
 # 273 "data/maps/Route17/scripts.pory"
 	.string "Familiar Drake, unchanged since happy\n"
-	.string "days long gone, transformed into my\l"
+	.string "days long gone, transformed by my\l"
 	.string "present grief, do you still recognize\l"
 	.string "Orestes, or is this face too twisted by\l"
 	.string "pain and tears? How else could a good\l"

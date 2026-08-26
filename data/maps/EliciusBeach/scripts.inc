@@ -539,9 +539,9 @@ Tranquilitas_Text_MistyBlock::
 
 Tranquilitas_Text_Leaf1::
 # 317 "data/maps/EliciusBeach/scripts.pory"
-	.string "Where have you been {PLAYER}? You\n"
-	.string "kept me waiting for so long! Are you\l"
-	.string "ready for Surf School?$"
+	.string "Where have you been {PLAYER}? You kept\n"
+	.string "me waiting for so long! Are you ready\l"
+	.string "for Surf School?$"
 
 Tranquilitas_Text_LeafNotReady::
 # 322 "data/maps/EliciusBeach/scripts.pory"
@@ -603,10 +603,10 @@ Tranquilitas_Text_LeafNoMoney::
 	.string "This can't be real! It's so embarrising!\n"
 	.string "How could you do something like this to\l"
 	.string "me? You need to make more money if you\l"
-	.string "want me to be your girlfriend.\l"
-	.string "{PLAYER}, I have needs! Don't talk to\l"
-	.string "me until you can afford to pay for our\l"
-	.string "Surf School registration.$"
+	.string "want me to be your girlfriend. {PLAYER},\l"
+	.string "I have needs! Don't talk to me until you\l"
+	.string "can afford to pay for our Surf School\l"
+	.string "registration.$"
 
 Tranquilitas_Text_Misty3::
 # 380 "data/maps/EliciusBeach/scripts.pory"
@@ -617,9 +617,9 @@ Tranquilitas_Text_Misty3::
 
 Tranquilitas_Text_Leaf4::
 # 386 "data/maps/EliciusBeach/scripts.pory"
-	.string "Oh {PLAYER}, isn't this like a dream\n"
-	.string "come true? Just you, and me, and a group\l"
-	.string "of strangers, surrounded by a team of\l"
+	.string "Oh {PLAYER}, isn't this like a dream come\n"
+	.string "true? Just you, and me, and a group of\l"
+	.string "strangers, surrounded by a team of\l"
 	.string "teenage girls learning how to surf in an\l"
 	.string "indoor pool... I can't imagine any better\l"
 	.string "way to celebrate our new relationship.\l"

@@ -635,8 +635,8 @@ CasaCirces_Text_Ulysses_Restored1::
 CasaCirces_Text_Ulysses_Restored2::
 # 447 "data/maps/CasaCirces/scripts.pory"
 	.string "That was no dream! You saved me,\n"
-	.string "{PLAYER}! I can't thank you enough.\l"
-	.string "The witch must have transformed the\l"
+	.string "{PLAYER}! I can't thank you enough. The\l"
+	.string "witch must have transformed the\l"
 	.string "missing men who came here from the\l"
 	.string "town. We must act now and save them!\l"
 	.string "C'mon, {PLAYER}, no time to lose.$"

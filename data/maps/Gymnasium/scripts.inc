@@ -421,8 +421,8 @@ Gymnasium_Text_Hector_Wedding2::
 
 Gymnasium_Text_GiveInvitation::
 # 241 "data/maps/Gymnasium/scripts.pory"
-	.string "{PLAYER} gave the Wedding Invitation\n"
-	.string "to Hector$"
+	.string "{PLAYER} gave the Wedding Invitation to\n"
+	.string "Hector$"
 
 Gymnasium_Text_Protesilaus1::
 # 245 "data/maps/Gymnasium/scripts.pory"

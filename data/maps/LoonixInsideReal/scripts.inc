@@ -188,708 +188,718 @@ LoonixInsideReal_Script_GrannyScene1::
 # 126 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
 # 128 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
+	setspeaker LoonixInsideReal_Script_GrannyScene1_Text_0
 # 129 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny1A, MSGBOX_DEFAULT
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
 # 130 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
+	msgbox LoonixInsideReal_Text_Granny1A, MSGBOX_DEFAULT
 # 131 "data/maps/LoonixInsideReal/scripts.pory"
+	destroy_field_pic FIELD_PIC_GRANNY
+# 132 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
-# 133 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 # 134 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, LoonixInsideReal_Movement_Granny1_ApproachPlayer
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 # 135 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, LoonixInsideReal_Movement_Granny1_ApproachPlayer
+# 136 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
-# 137 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
 # 138 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny1B, MSGBOX_DEFAULT
+	setspeaker LoonixInsideReal_Script_GrannyScene1_Text_0
 # 139 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
-# 140 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
-# 142 "data/maps/LoonixInsideReal/scripts.pory"
-	special NameLeaf
-# 143 "data/maps/LoonixInsideReal/scripts.pory"
-	waitstate
-# 146 "data/maps/LoonixInsideReal/scripts.pory"
 	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 147 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny1C, MSGBOX_DEFAULT
-# 148 "data/maps/LoonixInsideReal/scripts.pory"
+# 140 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_Granny1B, MSGBOX_DEFAULT
+# 141 "data/maps/LoonixInsideReal/scripts.pory"
 	destroy_field_pic FIELD_PIC_GRANNY
-# 149 "data/maps/LoonixInsideReal/scripts.pory"
+# 142 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
+# 144 "data/maps/LoonixInsideReal/scripts.pory"
+	special NameLeaf
+# 145 "data/maps/LoonixInsideReal/scripts.pory"
+	waitstate
+# 148 "data/maps/LoonixInsideReal/scripts.pory"
+	setspeaker LoonixInsideReal_Script_GrannyScene1_Text_0
+# 149 "data/maps/LoonixInsideReal/scripts.pory"
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 150 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_Granny1C, MSGBOX_DEFAULT
 # 151 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, LoonixInsideReal_Movement_Granny1_ReturnToKitchen
+	destroy_field_pic FIELD_PIC_GRANNY
 # 152 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
+	closemessage
 # 154 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, LoonixInsideReal_Movement_Granny1_ReturnToKitchen
+# 155 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 157 "data/maps/LoonixInsideReal/scripts.pory"
 	releaseall
 	end
 
 
 LoonixInsideReal_Script_GrannyScene2::
-# 159 "data/maps/LoonixInsideReal/scripts.pory"
-	lockall
 # 162 "data/maps/LoonixInsideReal/scripts.pory"
-	setvar VAR_GRANNY_STATE, 7
-# 164 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
+	lockall
 # 165 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny2A, MSGBOX_DEFAULT
-# 166 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
+	setvar VAR_GRANNY_STATE, 7
 # 167 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 168 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_Granny2A, MSGBOX_DEFAULT
 # 169 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, LoonixInsideReal_Movement_Granny2_ApproachPlayer
-# 170 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
-# 174 "data/maps/LoonixInsideReal/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 175 "data/maps/LoonixInsideReal/scripts.pory"
-	special SetUnlockedPokedexFlags
-# 176 "data/maps/LoonixInsideReal/scripts.pory"
-	setflag FLAG_SYS_POKEDEX_GET
-# 177 "data/maps/LoonixInsideReal/scripts.pory"
-	setflag FLAG_SYS_NATIONAL_DEX
-# 178 "data/maps/LoonixInsideReal/scripts.pory"
-	special EnableNationalPokedex
-# 179 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 180 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny2B, MSGBOX_DEFAULT
-# 181 "data/maps/LoonixInsideReal/scripts.pory"
 	destroy_field_pic FIELD_PIC_GRANNY
-# 182 "data/maps/LoonixInsideReal/scripts.pory"
+# 170 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
-# 187 "data/maps/LoonixInsideReal/scripts.pory"
-	giveitem ITEM_POKE_BALL, 6
-# 191 "data/maps/LoonixInsideReal/scripts.pory"
+# 172 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, LoonixInsideReal_Movement_Granny2_ApproachPlayer
+# 173 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 177 "data/maps/LoonixInsideReal/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 178 "data/maps/LoonixInsideReal/scripts.pory"
+	special SetUnlockedPokedexFlags
+# 179 "data/maps/LoonixInsideReal/scripts.pory"
+	setflag FLAG_SYS_POKEDEX_GET
+# 180 "data/maps/LoonixInsideReal/scripts.pory"
+	setflag FLAG_SYS_NATIONAL_DEX
+# 181 "data/maps/LoonixInsideReal/scripts.pory"
+	special EnableNationalPokedex
+# 182 "data/maps/LoonixInsideReal/scripts.pory"
 	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 192 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny2C, MSGBOX_YESNO
+# 183 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_Granny2B, MSGBOX_DEFAULT
+# 184 "data/maps/LoonixInsideReal/scripts.pory"
+	destroy_field_pic FIELD_PIC_GRANNY
+# 185 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 190 "data/maps/LoonixInsideReal/scripts.pory"
+	giveitem ITEM_POKE_BALL, 6
 # 194 "data/maps/LoonixInsideReal/scripts.pory"
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 195 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_Granny2C, MSGBOX_YESNO
+# 197 "data/maps/LoonixInsideReal/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq LoonixInsideReal_Script_GrannyScene2_2
 LoonixInsideReal_Script_GrannyScene2_1:
-# 199 "data/maps/LoonixInsideReal/scripts.pory"
+# 202 "data/maps/LoonixInsideReal/scripts.pory"
 	msgbox LoonixInsideReal_Text_Granny2D, MSGBOX_DEFAULT
-# 200 "data/maps/LoonixInsideReal/scripts.pory"
+# 203 "data/maps/LoonixInsideReal/scripts.pory"
 	destroy_field_pic FIELD_PIC_GRANNY
-# 201 "data/maps/LoonixInsideReal/scripts.pory"
+# 204 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
-# 208 "data/maps/LoonixInsideReal/scripts.pory"
-	removeitem ITEM_POKE_BALL, 1
 # 211 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, LoonixInsideReal_Movement_Granny2_GrannyToTable
-# 212 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny2_PlayerToTable
-# 213 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 2, LoonixInsideReal_Movement_Granny2_EeveeToTable
+	removeitem ITEM_POKE_BALL, 1
 # 214 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
+	applymovement 1, LoonixInsideReal_Movement_Granny2_GrannyToTable
+# 215 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny2_PlayerToTable
 # 216 "data/maps/LoonixInsideReal/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	applymovement 2, LoonixInsideReal_Movement_Granny2_EeveeToTable
 # 217 "data/maps/LoonixInsideReal/scripts.pory"
-	playfanfare MUS_HEAL
-# 218 "data/maps/LoonixInsideReal/scripts.pory"
-	waitfanfare
-# 219 "data/maps/LoonixInsideReal/scripts.pory"
-	removeobject 2
-# 220 "data/maps/LoonixInsideReal/scripts.pory"
-	setobjectxyperm 2, 11, 0
-# 221 "data/maps/LoonixInsideReal/scripts.pory"
-	setobjectmovementtype 2, MOVEMENT_TYPE_INVISIBLE
-# 222 "data/maps/LoonixInsideReal/scripts.pory"
-	addobject 2
-# 223 "data/maps/LoonixInsideReal/scripts.pory"
-	showobjectat 2, MAP_LOONIX_INSIDE_REAL
-# 224 "data/maps/LoonixInsideReal/scripts.pory"
-	special HealPlayerParty
-# 225 "data/maps/LoonixInsideReal/scripts.pory"
-	callnative UpdateFollowingPokemon
-# 226 "data/maps/LoonixInsideReal/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 229 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 230 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny2E, MSGBOX_DEFAULT
-# 231 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
-# 232 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
-# 235 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
-# 236 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
+# 219 "data/maps/LoonixInsideReal/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 220 "data/maps/LoonixInsideReal/scripts.pory"
+	playfanfare MUS_HEAL
+# 221 "data/maps/LoonixInsideReal/scripts.pory"
+	waitfanfare
+# 222 "data/maps/LoonixInsideReal/scripts.pory"
+	removeobject 2
+# 223 "data/maps/LoonixInsideReal/scripts.pory"
+	setobjectxyperm 2, 11, 0
+# 224 "data/maps/LoonixInsideReal/scripts.pory"
+	setobjectmovementtype 2, MOVEMENT_TYPE_INVISIBLE
+# 225 "data/maps/LoonixInsideReal/scripts.pory"
+	addobject 2
+# 226 "data/maps/LoonixInsideReal/scripts.pory"
+	showobjectat 2, MAP_LOONIX_INSIDE_REAL
+# 227 "data/maps/LoonixInsideReal/scripts.pory"
+	special HealPlayerParty
+# 228 "data/maps/LoonixInsideReal/scripts.pory"
+	callnative UpdateFollowingPokemon
+# 229 "data/maps/LoonixInsideReal/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 232 "data/maps/LoonixInsideReal/scripts.pory"
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 233 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_Granny2E, MSGBOX_DEFAULT
+# 234 "data/maps/LoonixInsideReal/scripts.pory"
+	destroy_field_pic FIELD_PIC_GRANNY
+# 235 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
 # 238 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 239 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 241 "data/maps/LoonixInsideReal/scripts.pory"
 	release
 	end
 
 LoonixInsideReal_Script_GrannyScene2_2:
-# 195 "data/maps/LoonixInsideReal/scripts.pory"
+# 198 "data/maps/LoonixInsideReal/scripts.pory"
 	setvar VAR_0x8004, 0
-# 196 "data/maps/LoonixInsideReal/scripts.pory"
+# 199 "data/maps/LoonixInsideReal/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto LoonixInsideReal_Script_GrannyScene2_1
 
 
 LoonixInsideReal_Script_GrannyScene3::
-# 243 "data/maps/LoonixInsideReal/scripts.pory"
-	lockall
-# 244 "data/maps/LoonixInsideReal/scripts.pory"
-	setvar VAR_GRANNY_STATE, 11
 # 246 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_ExclamationMark
+	lockall
 # 247 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
-# 248 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
+	setvar VAR_GRANNY_STATE, 11
 # 249 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, Common_Movement_ExclamationMark
+# 250 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
 # 251 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
+	applymovement 1, Common_Movement_FaceDown
 # 252 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrannyStorm1, MSGBOX_DEFAULT
-# 253 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
-# 254 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
-# 256 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny3_PlayerToTable
-# 257 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
-# 259 "data/maps/LoonixInsideReal/scripts.pory"
+# 254 "data/maps/LoonixInsideReal/scripts.pory"
 	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 260 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrannyStorm2, MSGBOX_DEFAULT
-# 261 "data/maps/LoonixInsideReal/scripts.pory"
+# 255 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrannyStorm1, MSGBOX_DEFAULT
+# 256 "data/maps/LoonixInsideReal/scripts.pory"
 	destroy_field_pic FIELD_PIC_GRANNY
-# 262 "data/maps/LoonixInsideReal/scripts.pory"
+# 257 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
+# 259 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_Granny3_PlayerToTable
+# 260 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 262 "data/maps/LoonixInsideReal/scripts.pory"
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
 # 263 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrannyStorm2, MSGBOX_DEFAULT
+# 264 "data/maps/LoonixInsideReal/scripts.pory"
+	destroy_field_pic FIELD_PIC_GRANNY
+# 265 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 266 "data/maps/LoonixInsideReal/scripts.pory"
 	release
 	end
 
 
 LoonixInsideReal_Script_TV::
-# 268 "data/maps/LoonixInsideReal/scripts.pory"
-	lock
-# 270 "data/maps/LoonixInsideReal/scripts.pory"
-	switch VAR_GRANNY_STATE
 # 271 "data/maps/LoonixInsideReal/scripts.pory"
-	case 0, LoonixInsideReal_Script_TV_3
-# 272 "data/maps/LoonixInsideReal/scripts.pory"
-	case 1, LoonixInsideReal_Script_TV_3
+	lock
 # 273 "data/maps/LoonixInsideReal/scripts.pory"
-	case 2, LoonixInsideReal_Script_TV_3
+	switch VAR_GRANNY_STATE
 # 274 "data/maps/LoonixInsideReal/scripts.pory"
-	case 3, LoonixInsideReal_Script_TV_3
+	case 0, LoonixInsideReal_Script_TV_3
 # 275 "data/maps/LoonixInsideReal/scripts.pory"
-	case 4, LoonixInsideReal_Script_TV_3
+	case 1, LoonixInsideReal_Script_TV_3
 # 276 "data/maps/LoonixInsideReal/scripts.pory"
-	case 5, LoonixInsideReal_Script_TV_3
+	case 2, LoonixInsideReal_Script_TV_3
 # 277 "data/maps/LoonixInsideReal/scripts.pory"
-	case 6, LoonixInsideReal_Script_TV_3
+	case 3, LoonixInsideReal_Script_TV_3
+# 278 "data/maps/LoonixInsideReal/scripts.pory"
+	case 4, LoonixInsideReal_Script_TV_3
 # 279 "data/maps/LoonixInsideReal/scripts.pory"
-	case 7, LoonixInsideReal_Script_TV_4
+	case 5, LoonixInsideReal_Script_TV_3
+# 280 "data/maps/LoonixInsideReal/scripts.pory"
+	case 6, LoonixInsideReal_Script_TV_3
 # 282 "data/maps/LoonixInsideReal/scripts.pory"
+	case 7, LoonixInsideReal_Script_TV_4
+# 285 "data/maps/LoonixInsideReal/scripts.pory"
 	msgbox LoonixInsideReal_Text_TVX, MSGBOX_SIGN
 LoonixInsideReal_Script_TV_1:
-# 284 "data/maps/LoonixInsideReal/scripts.pory"
+# 287 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
-# 286 "data/maps/LoonixInsideReal/scripts.pory"
+# 289 "data/maps/LoonixInsideReal/scripts.pory"
 	release
 	end
 
 LoonixInsideReal_Script_TV_3:
-# 278 "data/maps/LoonixInsideReal/scripts.pory"
+# 281 "data/maps/LoonixInsideReal/scripts.pory"
 	msgbox LoonixInsideReal_Text_TV1, MSGBOX_SIGN
 	goto LoonixInsideReal_Script_TV_1
 
 LoonixInsideReal_Script_TV_4:
-# 280 "data/maps/LoonixInsideReal/scripts.pory"
+# 283 "data/maps/LoonixInsideReal/scripts.pory"
 	msgbox LoonixInsideReal_Text_TV2, MSGBOX_SIGN
 	goto LoonixInsideReal_Script_TV_1
 
 
 LoonixInsideReal_Script_Statue::
-# 291 "data/maps/LoonixInsideReal/scripts.pory"
+# 294 "data/maps/LoonixInsideReal/scripts.pory"
 	lock
-# 292 "data/maps/LoonixInsideReal/scripts.pory"
+# 295 "data/maps/LoonixInsideReal/scripts.pory"
 	msgbox LoonixInsideReal_Script_Statue_Text_0
-# 293 "data/maps/LoonixInsideReal/scripts.pory"
+# 296 "data/maps/LoonixInsideReal/scripts.pory"
 	release
 	end
 
 
 LoonixInsideReal_Script_Junk::
-# 298 "data/maps/LoonixInsideReal/scripts.pory"
+# 301 "data/maps/LoonixInsideReal/scripts.pory"
 	lock
-# 299 "data/maps/LoonixInsideReal/scripts.pory"
+# 302 "data/maps/LoonixInsideReal/scripts.pory"
 	msgbox LoonixInsideReal_Script_Junk_Text_0
-# 300 "data/maps/LoonixInsideReal/scripts.pory"
+# 303 "data/maps/LoonixInsideReal/scripts.pory"
 	release
 	end
 
 
 LoonixInsideReal_Script_Special::
-# 305 "data/maps/LoonixInsideReal/scripts.pory"
-	lock
-# 306 "data/maps/LoonixInsideReal/scripts.pory"
-	showmonpic SPECIES_KRABBY, 10, 3
-# 307 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Script_Special_Text_0
 # 308 "data/maps/LoonixInsideReal/scripts.pory"
-	hidemonpic
+	lock
 # 309 "data/maps/LoonixInsideReal/scripts.pory"
+	showmonpic SPECIES_KRABBY, 10, 3
+# 310 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Script_Special_Text_0
+# 311 "data/maps/LoonixInsideReal/scripts.pory"
+	hidemonpic
+# 312 "data/maps/LoonixInsideReal/scripts.pory"
 	release
 	end
 
 
 LoonixInsideReal_Script_GrannyScene4::
-# 314 "data/maps/LoonixInsideReal/scripts.pory"
-	lockall
-# 315 "data/maps/LoonixInsideReal/scripts.pory"
-	setvar VAR_GRANNY_STATE, 14
-# 316 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 317 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
+	lockall
 # 318 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
+	setvar VAR_GRANNY_STATE, 14
 # 319 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_Granny4A, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 320 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
+	waitmovement 0
 # 321 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
-# 322 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerToGma
-# 323 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
-# 324 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
-# 325 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
-# 326 "data/maps/LoonixInsideReal/scripts.pory"
 	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 327 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrandmaTVSpeech
-# 328 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, LoonixInsideReal_Movement_GrandmaMono
-# 329 "data/maps/LoonixInsideReal/scripts.pory"
+# 322 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_Granny4A, MSGBOX_DEFAULT
+# 323 "data/maps/LoonixInsideReal/scripts.pory"
+	destroy_field_pic FIELD_PIC_GRANNY
+# 324 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 325 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerToGma
+# 326 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
-# 330 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrandmaMono
-# 331 "data/maps/LoonixInsideReal/scripts.pory"
+# 327 "data/maps/LoonixInsideReal/scripts.pory"
 	applymovement 1, Common_Movement_FaceLeft
+# 328 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 329 "data/maps/LoonixInsideReal/scripts.pory"
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 330 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrandmaTVSpeech
+# 331 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, LoonixInsideReal_Movement_GrandmaMono
 # 332 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
 # 333 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrandmaToBed
+	msgbox LoonixInsideReal_Text_GrandmaMono
 # 334 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
-# 335 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
-# 336 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, LoonixInsideReal_Movement_GrandmaBed
-# 337 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerBed
-# 338 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
-# 339 "data/maps/LoonixInsideReal/scripts.pory"
 	applymovement 1, Common_Movement_FaceLeft
-# 340 "data/maps/LoonixInsideReal/scripts.pory"
+# 335 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
-# 341 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 342 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrandmaBed
-# 343 "data/maps/LoonixInsideReal/scripts.pory"
+# 336 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrandmaToBed
+# 337 "data/maps/LoonixInsideReal/scripts.pory"
 	destroy_field_pic FIELD_PIC_GRANNY
-# 344 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 345 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
-# 346 "data/maps/LoonixInsideReal/scripts.pory"
+# 338 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
+# 339 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, LoonixInsideReal_Movement_GrandmaBed
+# 340 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PlayerBed
+# 341 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 342 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 343 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 344 "data/maps/LoonixInsideReal/scripts.pory"
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 345 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrandmaBed
+# 346 "data/maps/LoonixInsideReal/scripts.pory"
+	destroy_field_pic FIELD_PIC_GRANNY
 # 347 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 348 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 349 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 350 "data/maps/LoonixInsideReal/scripts.pory"
 	releaseall
 	end
 
 
 LoonixInsideReal_Script_PreventExit::
-# 353 "data/maps/LoonixInsideReal/scripts.pory"
-	lockall
-# 354 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Script_PreventExit_Text_0
-# 355 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PreventExit
 # 356 "data/maps/LoonixInsideReal/scripts.pory"
-	waitmovement 0
+	lockall
 # 357 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Script_PreventExit_Text_0
+# 358 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LoonixInsideReal_Movement_PreventExit
+# 359 "data/maps/LoonixInsideReal/scripts.pory"
+	waitmovement 0
+# 360 "data/maps/LoonixInsideReal/scripts.pory"
 	releaseall
 	end
 
 
 LoonixInsideReal_Script_Grandma::
-# 362 "data/maps/LoonixInsideReal/scripts.pory"
+# 365 "data/maps/LoonixInsideReal/scripts.pory"
 	lockall
-# 364 "data/maps/LoonixInsideReal/scripts.pory"
+# 367 "data/maps/LoonixInsideReal/scripts.pory"
 	compare VAR_GRANNY_STATE, 14
 	goto_if_ne LoonixInsideReal_Script_Grandma_2
 LoonixInsideReal_Script_Grandma_1:
-# 368 "data/maps/LoonixInsideReal/scripts.pory"
-	switch VAR_GRANNY_STATE
-# 369 "data/maps/LoonixInsideReal/scripts.pory"
-	case 0, LoonixInsideReal_Script_Grandma_6
-# 370 "data/maps/LoonixInsideReal/scripts.pory"
-	case 1, LoonixInsideReal_Script_Grandma_6
 # 371 "data/maps/LoonixInsideReal/scripts.pory"
-	case 2, LoonixInsideReal_Script_Grandma_6
+	switch VAR_GRANNY_STATE
 # 372 "data/maps/LoonixInsideReal/scripts.pory"
-	case 3, LoonixInsideReal_Script_Grandma_6
+	case 0, LoonixInsideReal_Script_Grandma_6
 # 373 "data/maps/LoonixInsideReal/scripts.pory"
-	case 4, LoonixInsideReal_Script_Grandma_6
+	case 1, LoonixInsideReal_Script_Grandma_6
 # 374 "data/maps/LoonixInsideReal/scripts.pory"
-	case 5, LoonixInsideReal_Script_Grandma_6
+	case 2, LoonixInsideReal_Script_Grandma_6
 # 375 "data/maps/LoonixInsideReal/scripts.pory"
-	case 6, LoonixInsideReal_Script_Grandma_6
+	case 3, LoonixInsideReal_Script_Grandma_6
+# 376 "data/maps/LoonixInsideReal/scripts.pory"
+	case 4, LoonixInsideReal_Script_Grandma_6
 # 377 "data/maps/LoonixInsideReal/scripts.pory"
-	case 7, LoonixInsideReal_Script_Grandma_7
+	case 5, LoonixInsideReal_Script_Grandma_6
 # 378 "data/maps/LoonixInsideReal/scripts.pory"
-	case 8, LoonixInsideReal_Script_Grandma_7
-# 379 "data/maps/LoonixInsideReal/scripts.pory"
-	case 9, LoonixInsideReal_Script_Grandma_7
+	case 6, LoonixInsideReal_Script_Grandma_6
+# 380 "data/maps/LoonixInsideReal/scripts.pory"
+	case 7, LoonixInsideReal_Script_Grandma_7
 # 381 "data/maps/LoonixInsideReal/scripts.pory"
+	case 8, LoonixInsideReal_Script_Grandma_7
+# 382 "data/maps/LoonixInsideReal/scripts.pory"
+	case 9, LoonixInsideReal_Script_Grandma_7
+# 384 "data/maps/LoonixInsideReal/scripts.pory"
 	case 11, LoonixInsideReal_Script_Grandma_8
-# 383 "data/maps/LoonixInsideReal/scripts.pory"
-	case 14, LoonixInsideReal_Script_Grandma_9
 # 386 "data/maps/LoonixInsideReal/scripts.pory"
+	case 14, LoonixInsideReal_Script_Grandma_9
+# 389 "data/maps/LoonixInsideReal/scripts.pory"
 	msgbox LoonixInsideReal_Script_Grandma_Text_0, MSGBOX_DEFAULT
-# 387 "data/maps/LoonixInsideReal/scripts.pory"
+# 390 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
 LoonixInsideReal_Script_Grandma_4:
-# 389 "data/maps/LoonixInsideReal/scripts.pory"
+# 392 "data/maps/LoonixInsideReal/scripts.pory"
 	releaseall
 	end
 
 LoonixInsideReal_Script_Grandma_2:
-# 365 "data/maps/LoonixInsideReal/scripts.pory"
+# 368 "data/maps/LoonixInsideReal/scripts.pory"
 	faceplayer
 	goto LoonixInsideReal_Script_Grandma_1
 
 LoonixInsideReal_Script_Grandma_6:
-# 376 "data/maps/LoonixInsideReal/scripts.pory"
+# 379 "data/maps/LoonixInsideReal/scripts.pory"
 	call LoonixInsideReal_Script_GrannyKitchen
 	goto LoonixInsideReal_Script_Grandma_4
 
 LoonixInsideReal_Script_Grandma_7:
-# 380 "data/maps/LoonixInsideReal/scripts.pory"
+# 383 "data/maps/LoonixInsideReal/scripts.pory"
 	call LoonixInsideReal_Script_GrannyTable
 	goto LoonixInsideReal_Script_Grandma_4
 
 LoonixInsideReal_Script_Grandma_8:
-# 382 "data/maps/LoonixInsideReal/scripts.pory"
+# 385 "data/maps/LoonixInsideReal/scripts.pory"
 	call LoonixInsideReal_Script_GrannyStorm
 	goto LoonixInsideReal_Script_Grandma_4
 
 LoonixInsideReal_Script_Grandma_9:
-# 384 "data/maps/LoonixInsideReal/scripts.pory"
+# 387 "data/maps/LoonixInsideReal/scripts.pory"
 	call LoonixInsideReal_Script_GrannyBed
 	goto LoonixInsideReal_Script_Grandma_4
 
 
 LoonixInsideReal_Script_GrannyKitchen::
-# 395 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 396 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrannyKitchen, MSGBOX_DEFAULT
-# 397 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
 # 398 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 399 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrannyKitchen, MSGBOX_DEFAULT
 # 400 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_FaceUp
+	destroy_field_pic FIELD_PIC_GRANNY
 # 401 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 403 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, Common_Movement_FaceUp
+# 404 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
 	return
 
 
 LoonixInsideReal_Script_GrannyTable::
-# 407 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 408 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrannyTable1, MSGBOX_DEFAULT
-# 409 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
 # 410 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
-# 412 "data/maps/LoonixInsideReal/scripts.pory"
-	call Common_EventScript_OutOfCenterPartyHeal
-# 414 "data/maps/LoonixInsideReal/scripts.pory"
 	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 415 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrannyTable2, MSGBOX_DEFAULT
-# 416 "data/maps/LoonixInsideReal/scripts.pory"
+# 411 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrannyTable1, MSGBOX_DEFAULT
+# 412 "data/maps/LoonixInsideReal/scripts.pory"
 	destroy_field_pic FIELD_PIC_GRANNY
-# 417 "data/maps/LoonixInsideReal/scripts.pory"
+# 413 "data/maps/LoonixInsideReal/scripts.pory"
 	closemessage
+# 415 "data/maps/LoonixInsideReal/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
+# 417 "data/maps/LoonixInsideReal/scripts.pory"
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 418 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrannyTable2, MSGBOX_DEFAULT
 # 419 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
+	destroy_field_pic FIELD_PIC_GRANNY
 # 420 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 422 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 423 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
 	return
 
 
 LoonixInsideReal_Script_GrannyStorm::
-# 427 "data/maps/LoonixInsideReal/scripts.pory"
-	load_field_pic FIELD_PIC_GRANNY, 190, 98
-# 428 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrannyStorm3, MSGBOX_DEFAULT
-# 429 "data/maps/LoonixInsideReal/scripts.pory"
-	destroy_field_pic FIELD_PIC_GRANNY
 # 430 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
+	load_field_pic FIELD_PIC_GRANNY, 190, 98
+# 431 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrannyStorm3, MSGBOX_DEFAULT
 # 432 "data/maps/LoonixInsideReal/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
+	destroy_field_pic FIELD_PIC_GRANNY
 # 433 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 435 "data/maps/LoonixInsideReal/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 436 "data/maps/LoonixInsideReal/scripts.pory"
 	waitmovement 0
 	return
 
 
 LoonixInsideReal_Script_GrannyBed::
-# 439 "data/maps/LoonixInsideReal/scripts.pory"
-	lock
-# 440 "data/maps/LoonixInsideReal/scripts.pory"
-	msgbox LoonixInsideReal_Text_GrannyBed, MSGBOX_DEFAULT
-# 441 "data/maps/LoonixInsideReal/scripts.pory"
-	closemessage
 # 442 "data/maps/LoonixInsideReal/scripts.pory"
+	lock
+# 443 "data/maps/LoonixInsideReal/scripts.pory"
+	msgbox LoonixInsideReal_Text_GrannyBed, MSGBOX_DEFAULT
+# 444 "data/maps/LoonixInsideReal/scripts.pory"
+	closemessage
+# 445 "data/maps/LoonixInsideReal/scripts.pory"
 	release
 	end
 
 
-# 446 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_PreventExit:
-# 447 "data/maps/LoonixInsideReal/scripts.pory"
-	face_up
-# 448 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 448 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 448 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 448 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
 # 449 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_PreventExit:
+# 450 "data/maps/LoonixInsideReal/scripts.pory"
+	face_up
+# 451 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 451 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 451 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 451 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 452 "data/maps/LoonixInsideReal/scripts.pory"
 	face_down
 	step_end
 
-# 452 "data/maps/LoonixInsideReal/scripts.pory"
+# 455 "data/maps/LoonixInsideReal/scripts.pory"
 LoonixInsideReal_Movement_GrandmaTV:
-# 453 "data/maps/LoonixInsideReal/scripts.pory"
+# 456 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
-# 454 "data/maps/LoonixInsideReal/scripts.pory"
+# 457 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
-# 454 "data/maps/LoonixInsideReal/scripts.pory"
+# 457 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
 	step_end
 
-# 457 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_GrandmaBed:
-# 458 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 458 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 459 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 459 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 459 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
 # 460 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_GrandmaBed:
+# 461 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
 # 461 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 462 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 462 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 462 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 463 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 464 "data/maps/LoonixInsideReal/scripts.pory"
 	face_down
 	step_end
 
-# 464 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_PlayerBed:
-# 465 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 465 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 465 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 466 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 466 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 466 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
 # 467 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_PlayerBed:
+# 468 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 468 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 468 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 469 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 469 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 469 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 470 "data/maps/LoonixInsideReal/scripts.pory"
 	face_right
 	step_end
 
-# 470 "data/maps/LoonixInsideReal/scripts.pory"
+# 473 "data/maps/LoonixInsideReal/scripts.pory"
 LoonixInsideReal_Movement_GrandmaUp:
-# 471 "data/maps/LoonixInsideReal/scripts.pory"
+# 474 "data/maps/LoonixInsideReal/scripts.pory"
 	face_up
 	step_end
 
-# 474 "data/maps/LoonixInsideReal/scripts.pory"
+# 477 "data/maps/LoonixInsideReal/scripts.pory"
 LoonixInsideReal_Movement_GrandmaMono:
-# 475 "data/maps/LoonixInsideReal/scripts.pory"
+# 478 "data/maps/LoonixInsideReal/scripts.pory"
 	face_down
 	step_end
 
-# 478 "data/maps/LoonixInsideReal/scripts.pory"
+# 481 "data/maps/LoonixInsideReal/scripts.pory"
 LoonixInsideReal_Movement_PlayerToGma:
-# 479 "data/maps/LoonixInsideReal/scripts.pory"
+# 482 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_left
-# 480 "data/maps/LoonixInsideReal/scripts.pory"
+# 483 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
-# 480 "data/maps/LoonixInsideReal/scripts.pory"
+# 483 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
-# 480 "data/maps/LoonixInsideReal/scripts.pory"
+# 483 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
-# 480 "data/maps/LoonixInsideReal/scripts.pory"
+# 483 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
-# 481 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 481 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-	step_end
-
 # 484 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_Granny1_ApproachPlayer:
-# 485 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
-# 485 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 485 "data/maps/LoonixInsideReal/scripts.pory"
+# 484 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
 	step_end
 
+# 487 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_Granny1_ApproachPlayer:
 # 488 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 488 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 488 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+	step_end
+
+# 491 "data/maps/LoonixInsideReal/scripts.pory"
 LoonixInsideReal_Movement_Granny1_ReturnToKitchen:
-# 489 "data/maps/LoonixInsideReal/scripts.pory"
+# 492 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_left
-# 489 "data/maps/LoonixInsideReal/scripts.pory"
+# 492 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_left
-# 489 "data/maps/LoonixInsideReal/scripts.pory"
+# 492 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_left
-# 490 "data/maps/LoonixInsideReal/scripts.pory"
+# 493 "data/maps/LoonixInsideReal/scripts.pory"
 	face_up
 	step_end
 
-# 493 "data/maps/LoonixInsideReal/scripts.pory"
+# 496 "data/maps/LoonixInsideReal/scripts.pory"
 LoonixInsideReal_Movement_Granny2_ApproachPlayer:
-# 494 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_down
-	step_end
-
 # 497 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_Granny2_GrannyToTable:
-# 498 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 499 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 499 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 499 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 499 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 499 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 500 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
 	step_end
 
+# 500 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_Granny2_GrannyToTable:
+# 501 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 502 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 502 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 502 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 502 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 502 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
 # 503 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_Granny2_PlayerToTable:
-# 504 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 504 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 505 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
+	step_end
+
 # 506 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 506 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 506 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_Granny2_PlayerToTable:
+# 507 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
 # 507 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-	step_end
-
-# 510 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_Granny2_EeveeToTable:
-# 511 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
-# 511 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 511 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 512 "data/maps/LoonixInsideReal/scripts.pory"
+# 508 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_down
-# 513 "data/maps/LoonixInsideReal/scripts.pory"
+# 509 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
-# 513 "data/maps/LoonixInsideReal/scripts.pory"
+# 509 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
+# 509 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 510 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+	step_end
+
 # 513 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_Granny2_EeveeToTable:
+# 514 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 514 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 514 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 515 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_down
+# 516 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 516 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 516 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_right
 	step_end
 
-# 516 "data/maps/LoonixInsideReal/scripts.pory"
-LoonixInsideReal_Movement_Granny3_PlayerToTable:
-# 517 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_up
-# 518 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 518 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 518 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 518 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
-# 518 "data/maps/LoonixInsideReal/scripts.pory"
-	walk_right
 # 519 "data/maps/LoonixInsideReal/scripts.pory"
+LoonixInsideReal_Movement_Granny3_PlayerToTable:
+# 520 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_up
+# 521 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 521 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 521 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 521 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 521 "data/maps/LoonixInsideReal/scripts.pory"
+	walk_right
+# 522 "data/maps/LoonixInsideReal/scripts.pory"
 	walk_up
 	step_end
+
+LoonixInsideReal_Script_GrannyScene1_Text_0:
+# 128 "data/maps/LoonixInsideReal/scripts.pory"
+	.string "Granny$"
 
 LoonixInsideReal_Script_Statue_Text_0:
-# 292 "data/maps/LoonixInsideReal/scripts.pory"
+# 295 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "This is the statue they sent us after\n"
 	.string "Dad left...$"
 
 LoonixInsideReal_Script_Junk_Text_0:
-# 299 "data/maps/LoonixInsideReal/scripts.pory"
+# 302 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Here's another pile of junk left lying\n"
 	.string "around...$"
 
 LoonixInsideReal_Script_Special_Text_0:
-# 307 "data/maps/LoonixInsideReal/scripts.pory"
+# 310 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "What's for dinner?$"
 
 LoonixInsideReal_Script_PreventExit_Text_0:
-# 354 "data/maps/LoonixInsideReal/scripts.pory"
+# 357 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "You don't have a Pokemon yet!$"
 
 LoonixInsideReal_Script_Grandma_Text_0:
-# 386 "data/maps/LoonixInsideReal/scripts.pory"
+# 389 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "DEFAULT$"
 
 LoonixInsideReal_Text_GrandmaTVSpeech::
-# 522 "data/maps/LoonixInsideReal/scripts.pory"
+# 525 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "It's all over the news that Mew's\n"
 	.string "returned!\n"
 	.string "My boy, this is a God sent mircale.\p"
@@ -898,33 +908,33 @@ LoonixInsideReal_Text_GrandmaTVSpeech::
 	.string "would ask.$"
 
 LoonixInsideReal_Text_GrandmaMono::
-# 526 "data/maps/LoonixInsideReal/scripts.pory"
+# 529 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "But now the strength of life has left\n"
 	.string "these bones, and I can hardly walk\l"
 	.string "across the yard. Castalia is just too\l"
 	.string "far away for this old crow to fly.$"
 
 LoonixInsideReal_Text_GrandmaToBed::
-# 530 "data/maps/LoonixInsideReal/scripts.pory"
+# 533 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "I'll have to stay.\p"
 	.string "{PLAYER}, will you help me into bed?$"
 
 LoonixInsideReal_Text_GrandmaBed::
-# 534 "data/maps/LoonixInsideReal/scripts.pory"
+# 537 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Thank you.$"
 
 LoonixInsideReal_Text_Granny1A::
-# 538 "data/maps/LoonixInsideReal/scripts.pory"
+# 541 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Good morning sleepyhead!$"
 
 LoonixInsideReal_Text_Granny1B::
-# 542 "data/maps/LoonixInsideReal/scripts.pory"
+# 545 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "I'm still cooking breakfast but your\n"
 	.string "friend came by earlier. What was her\l"
 	.string "name again?$"
 
 LoonixInsideReal_Text_Granny1C::
-# 547 "data/maps/LoonixInsideReal/scripts.pory"
+# 550 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "That's right, {LEAF}! She's such a sweet and\n"
 	.string "beautiful young girl. I think she's still\l"
 	.string "waiting outside for you. Go out, have\l"
@@ -932,42 +942,42 @@ LoonixInsideReal_Text_Granny1C::
 	.string "tall grass where wild pokemon roam.$"
 
 LoonixInsideReal_Text_GrannyKitchen::
-# 551 "data/maps/LoonixInsideReal/scripts.pory"
+# 554 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Go have fun with {LEAF} but please stay safe.$"
 
 LoonixInsideReal_Text_GrannyTable1::
-# 555 "data/maps/LoonixInsideReal/scripts.pory"
+# 558 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "So nice to see you {PLAYER}! Sit down\n"
 	.string "and rest.$"
 
 LoonixInsideReal_Text_GrannyTable2::
-# 559 "data/maps/LoonixInsideReal/scripts.pory"
+# 562 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Come back anytime and good luck at\n"
 	.string "school.$"
 
 LoonixInsideReal_Text_TV1::
-# 563 "data/maps/LoonixInsideReal/scripts.pory"
+# 566 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Humans and aliens working together to\n"
 	.string "explore new worlds, seek out strange\l"
 	.string "new life, and boldly go where no one has\l"
 	.string "ever gone before.$"
 
 LoonixInsideReal_Text_TV2::
-# 567 "data/maps/LoonixInsideReal/scripts.pory"
+# 570 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Handsome men in suits discuss\n"
 	.string "transportation infrastructure with a\l"
 	.string "member of the Restoration Party.$"
 
 LoonixInsideReal_Text_TVX::
-# 571 "data/maps/LoonixInsideReal/scripts.pory"
+# 574 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Looks like the TV is switched off.$"
 
 LoonixInsideReal_Text_Granny2A::
-# 589 "data/maps/LoonixInsideReal/scripts.pory"
+# 592 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "I told you to keep out of the tall\n"
-	.string "grass! Oh {PLAYER}, what can I say?\l"
-	.string "I'm worried sick, so scared for you, for\l"
-	.string "me. I still see you as that rambunctious\l"
+	.string "grass! Oh {PLAYER}, what can I say? I'm\l"
+	.string "worried sick, so scared for you, for me.\l"
+	.string "I still see you as that rambunctious\l"
 	.string "boy you used to be but now you're\l"
 	.string "growing up and I'm afraid of losing you\l"
 	.string "like I lost your father. I long to keep\l"
@@ -982,7 +992,7 @@ LoonixInsideReal_Text_Granny2A::
 	.string "know it's for the best.$"
 
 LoonixInsideReal_Text_Granny2B::
-# 593 "data/maps/LoonixInsideReal/scripts.pory"
+# 596 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Your father would have wanted you to\n"
 	.string "have his Pokedex when you were old\l"
 	.string "enough. The Pokedex is an electronic\l"
@@ -990,7 +1000,7 @@ LoonixInsideReal_Text_Granny2B::
 	.string "find. And here, take these.$"
 
 LoonixInsideReal_Text_Granny2C::
-# 597 "data/maps/LoonixInsideReal/scripts.pory"
+# 600 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "You can keep Pokemon in Pokeballs, but\n"
 	.string "Eevee seems to prefer the fresh air. I\l"
 	.string "see that you and him have a strong\l"
@@ -998,7 +1008,7 @@ LoonixInsideReal_Text_Granny2C::
 	.string "nickname?$"
 
 LoonixInsideReal_Text_Granny2D::
-# 601 "data/maps/LoonixInsideReal/scripts.pory"
+# 604 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Your father left when you were both\n"
 	.string "infants and I raised you and him here\l"
 	.string "together, so I know he will always be\l"
@@ -1012,19 +1022,19 @@ LoonixInsideReal_Text_Granny2D::
 	.string "and get something to eat.$"
 
 LoonixInsideReal_Text_Granny2E::
-# 605 "data/maps/LoonixInsideReal/scripts.pory"
+# 608 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Just promise me you'll go to Trainer\n"
 	.string "School and come back anytime to rest at\l"
 	.string "home.$"
 
 LoonixInsideReal_Text_GrannyStorm1::
-# 609 "data/maps/LoonixInsideReal/scripts.pory"
+# 612 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Oh {PLAYER}! I was so worried! Thank\n"
 	.string "goodness that you're ok! Come here. Let\l"
 	.string "me see you.$"
 
 LoonixInsideReal_Text_GrannyStorm2::
-# 613 "data/maps/LoonixInsideReal/scripts.pory"
+# 616 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "This storm feels almost supernatural,\n"
 	.string "like it was sent from heaven with\l"
 	.string "purpose. I'm overjoyed to see you back\l"
@@ -1036,14 +1046,14 @@ LoonixInsideReal_Text_GrannyStorm2::
 	.string "have passed and all will be good.$"
 
 LoonixInsideReal_Text_GrannyStorm3::
-# 617 "data/maps/LoonixInsideReal/scripts.pory"
+# 620 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "You'll be ok as long as you're with me. Go\n"
 	.string "up to bed and let the weather pass.$"
 
 LoonixInsideReal_Text_Granny4A::
-# 621 "data/maps/LoonixInsideReal/scripts.pory"
+# 624 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "Oh {PLAYER}! Come here sweetie.$"
 
 LoonixInsideReal_Text_GrannyBed::
-# 625 "data/maps/LoonixInsideReal/scripts.pory"
+# 628 "data/maps/LoonixInsideReal/scripts.pory"
 	.string "She must be sleeping...$"

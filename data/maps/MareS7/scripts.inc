@@ -810,8 +810,7 @@ MareS7_Text_PolyphemusNoLotus::
 
 MareS7_Text_GavePolyphemusLotus::
 # 489 "data/maps/MareS7/scripts.pory"
-	.string "{PLAYER} gave Lotus Leaf to\n"
-	.string "Polyphemus.$"
+	.string "{PLAYER} gave Lotus Leaf to Polyphemus.$"
 
 MareS7_Text_PolyphemusLotus1::
 # 493 "data/maps/MareS7/scripts.pory"

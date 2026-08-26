@@ -668,9 +668,9 @@ text AldeonTown_Text_OrestesNotReady {
 }
 
 text AldeonTown_Text_OrestesYesReady {
-	format("Follow me, we can't just go in the main
-			entrance. My mother, Klytmnestra, has
-			it guarded well. We'll have to go in through
-			the servant's tunnel to save my father.")
+	format("Follow me, we can't just go in the main"
+			"entrance. My mother, Klytmnestra, has"
+			"it guarded well. We'll have to go in through"
+			"the servant's tunnel to save my father.")
 }
 

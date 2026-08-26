@@ -972,8 +972,8 @@ Ardor_Uni_GeologyClass_Text_GiveFossil::
 
 Ardor_Uni_GeologyClass_Text_ObtainedPokemon::
 # 467 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"
-	.string "{PLAYER} received {STR_VAR_2}\n"
-	.string "from the machine.$"
+	.string "{PLAYER} received {STR_VAR_2} from\n"
+	.string "the machine.$"
 
 Ardor_Uni_GeologyClass_Text_NoFossil::
 # 471 "data/maps/Ardor_Uni_GeologyClass/scripts.pory"

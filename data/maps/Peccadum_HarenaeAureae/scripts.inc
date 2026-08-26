@@ -2342,8 +2342,8 @@ DealerHiLoKabuto_Text_AnnounceOp4Kabuto::
 
 HiLoKabuto_Group_Text_PlayerWin::
 # 1153 "data/maps/Peccadum_HarenaeAureae/scripts.pory"
-	.string "Congratulations {PLAYER}! You win\n"
-	.string "this hand!$"
+	.string "Congratulations {PLAYER}! You win this\n"
+	.string "hand!$"
 
 HiLoKabuto_Text_Gambler1Won::
 # 1157 "data/maps/Peccadum_HarenaeAureae/scripts.pory"

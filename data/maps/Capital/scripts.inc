@@ -1974,8 +1974,8 @@ Capital_Text_Gio6::
 	.string "You must be powerful to destroy Blaine\n"
 	.string "and find your way to our coronation.\l"
 	.string "I've heard many rumours about you\l"
-	.string "{PLAYER} and now I see you with my\l"
-	.string "own two eyes. I am Giovanni your tyrant\l"
+	.string "{PLAYER} and now I see you with my own\l"
+	.string "two eyes. I am Giovanni your tyrant\l"
 	.string "king. You may be great but Mewtwo far\l"
 	.string "greater. I'm giving you the choice, you\l"
 	.string "may join me or be destroyed. Now speak.\l"
@@ -2132,8 +2132,8 @@ Capital_Text_Maxie2::
 
 Capital_Text_Maxie3::
 # 1174 "data/maps/Capital/scripts.pory"
-	.string "And {PLAYER} I must repeat what I\n"
-	.string "just said$"
+	.string "And {PLAYER} I must repeat what I just\n"
+	.string "said$"
 
 Capital_Text_Maxie4::
 # 1178 "data/maps/Capital/scripts.pory"

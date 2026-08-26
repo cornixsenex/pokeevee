@@ -1733,8 +1733,8 @@ CityClara_Text_Leaf2::
 	.string "There's no way after traveling out here\n"
 	.string "that we're going to go sit in a club\l"
 	.string "while Mew herself awaits us in that\l"
-	.string "Church! Come with me {PLAYER} we need\l"
-	.string "to find a way to get into that Church\l"
+	.string "Church! Come with me {PLAYER} we need to\l"
+	.string "find a way to get into that Church\l"
 	.string "ASAP!$"
 
 CityClara_Text_Woman3_1::

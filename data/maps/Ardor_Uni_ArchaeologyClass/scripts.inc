@@ -651,10 +651,10 @@ Ardor_Uni_ArchaeologyClass_Text_Indy5::
 	.string "leader of this rebel band. When we were\l"
 	.string "forced to hide from the Rockets I took\l"
 	.string "up that disguise to lie in wait. As fate\l"
-	.string "would have it I had asked for\l"
-	.string "{PLAYER} to meet me here with the\l"
-	.string "intention of recruiting him into our\l"
-	.string "rebel band but he was here for me.$"
+	.string "would have it I had asked for {PLAYER}\l"
+	.string "to meet me here with the intention of\l"
+	.string "recruiting him into our rebel band but\l"
+	.string "he was here for me.$"
 
 Ardor_Uni_ArchaeologyClass_Text_Leaf3::
 # 371 "data/maps/Ardor_Uni_ArchaeologyClass/scripts.pory"

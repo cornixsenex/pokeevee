@@ -828,7 +828,7 @@ AedesTrivis_Script_TrivisCompleteScene2::
 AedesTrivis_Text_OrestesSageScene_Orestes1::
 # 537 "data/maps/AedesTrivis/scripts.pory"
 	.string "What do you mean 'The Speaker is not\n"
-	.string "here?' I must consult the oracle!$"
+	.string "here? I must consult the oracle!$"
 
 AedesTrivis_Text_OrestesSageScene_Sage1::
 # 542 "data/maps/AedesTrivis/scripts.pory"
@@ -1067,11 +1067,11 @@ AedesTrivis_Text_Slowking_TrivisComplete6::
 
 AedesTrivis_Text_Slowking_TrivisComplete7::
 # 767 "data/maps/AedesTrivis/scripts.pory"
-	.string "Most valiant and pure hearted\n"
-	.string "{PLAYER}, we thank you for returning\l"
-	.string "the stolen Trivis and restoring this\l"
-	.string "place of light. Accept this gift on\l"
-	.string "behalf of our diocese$"
+	.string "Most valiant and pure hearted {PLAYER},\n"
+	.string "we thank you for returning the stolen\l"
+	.string "Trivis and restoring this place of light.\l"
+	.string "Accept this gift on behalf of our\l"
+	.string "diocese$"
 
 AedesTrivis_Text_Slowking_TrivisComplete8::
 # 775 "data/maps/AedesTrivis/scripts.pory"
@@ -1081,8 +1081,8 @@ AedesTrivis_Text_Slowking_TrivisComplete8::
 	.string "is yours, to do with as you please. Use\l"
 	.string "it wisely. Keep to the righteous path\l"
 	.string "and by persistence you'll achieve your\l"
-	.string "quest. Now farewell, {PLAYER}. Be\l"
-	.string "about your business.$"
+	.string "quest. Now farewell, {PLAYER}. Be about\l"
+	.string "your business.$"
 
 AedesTrivis_Text_Slowking_Return::
 # 785 "data/maps/AedesTrivis/scripts.pory"

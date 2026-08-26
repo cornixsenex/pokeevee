@@ -653,7 +653,7 @@ SurfSchool_Text_Surfer4Post::
 
 SurfSchool_Text_Leaf1::
 # 396 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	.string "Ok, let's do this, let's leran how to\n"
+	.string "Ok, let's do this, let's learn how to\n"
 	.string "surf.$"
 
 SurfSchool_Text_Misty1::
@@ -735,14 +735,13 @@ SurfSchool_Text_Misty4::
 
 SurfSchool_Text_Leaf3::
 # 472 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	.string "I'm so excited {PLAYER} I can't\n"
-	.string "believe we finally have surfboards of\l"
-	.string "our own. I can't wait to go out and ride\l"
-	.string "the waves. C'mon! I'll catch you on the\l"
-	.string "seven seas, and don't worry you know\l"
-	.string "I'll stay away from the deep oceans of\l"
-	.string "the east and west and south and the\l"
-	.string "Mare Mortuorum.$"
+	.string "I'm so excited {PLAYER} I can't believe\n"
+	.string "we finally have surfboards of our own. I\l"
+	.string "can't wait to go out and ride the waves.\l"
+	.string "C'mon! I'll catch you on the seven seas,\l"
+	.string "and don't worry you know I'll stay away\l"
+	.string "from the deep oceans of the east and\l"
+	.string "west and south and the Mare Mortuorum.$"
 
 SurfSchool_Text_Misty5::
 # 482 "data/maps/Tranquillitas_SurfSchool/scripts.pory"

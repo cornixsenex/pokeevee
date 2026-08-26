@@ -107,19 +107,19 @@ text Argo_Text_Philoctetes {
 }
 
 text Argo_Text_Jason1 {
-	format("Though we be lost at sea we travel on 
-			until we reach Colchis. We started out 
-			swearing an oath on the docks of Bulbus 
-			to never quit until we have retrieved 
-			SHINY MAREEP to end the bitter strike. 
-			We'll find the way forward, or die trying.")
+	format("Though we be lost at sea we travel on"
+			"until we reach Colchis. We started out"
+			"swearing an oath on the docks of Bulbus"
+			"to never quit until we have retrieved"
+			"SHINY MAREEP to end the bitter strike."
+			"We'll find the way forward, or die trying.")
 }
 
 text Argo_Text_Jason2 {
-	format("What's this? You have possesion of a map
-			showing our location on this wide sea?
-			Most noble friend, will you lend me your map
-			and join our quest to find SHINNY MAREEP?")
+	format("What's this? You have possesion of a map"
+			"showing our location on this wide sea?"
+			"Most noble friend, will you lend me your map"
+			"and join our quest to find SHINNY MAREEP?")
 }
 
 text Argo_Text_Jason3 {
@@ -127,19 +127,19 @@ text Argo_Text_Jason3 {
 }
 
 text Argo_Text_Jason4 {
-    format("Have you changed your mind, lad? Will you let me
-            take a look at your map to find Colchis?")
+    format("Have you changed your mind, lad? Will you let me"
+            "take a look at your map to find Colchis?")
 }
 
 text Argo_Text_BeginAdventure {
-	format("Many thanks friend. With this map we will reach 
-            Colchis and find fabled SHINY MAREEP. 
-            In order to become an Argonaut 
-            you first must swear the oath. Repeat these words: 
-            I swear to sail under Jason's command
-            and serve the Argo, even to my death, 
-            until we have attained SHINY MAREEP. 
-            That being done let's have no more delay. 
-            Assemble Argonauts! We sail at once!")
+	format("Many thanks friend. With this map we will reach"
+            "Colchis and find fabled SHINY MAREEP."
+            "In order to become an Argonaut"
+            "you first must swear the oath. Repeat these words:"
+            "I swear to sail under Jason's command"
+            "and serve the Argo, even to my death,"
+            "until we have attained SHINY MAREEP."
+            "That being done let's have no more delay."
+            "Assemble Argonauts! We sail at once!")
 }
 

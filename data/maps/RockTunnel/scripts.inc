@@ -283,10 +283,10 @@ RockTunnel_Text_Leaf1::
 RockTunnel_Text_RivalIntro::
 # 129 "data/maps/RockTunnel/scripts.pory"
 	.string "I've been waiting for you some time now\n"
-	.string "{PLAYER} while you were still too weak\l"
-	.string "to break those rocks I was mastering\l"
-	.string "the art of battle. I will destroy you\l"
-	.string "here once and for all.$"
+	.string "{PLAYER} while you were still too weak to\l"
+	.string "break those rocks I was mastering the\l"
+	.string "art of battle. I will destroy you here\l"
+	.string "once and for all.$"
 
 RockTunnel_Text_RivalLost::
 # 133 "data/maps/RockTunnel/scripts.pory"

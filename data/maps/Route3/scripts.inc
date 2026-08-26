@@ -599,8 +599,8 @@ Route3_Text_OldMan::
 
 Route3_Text_Leaf2::
 # 419 "data/maps/Route3/scripts.pory"
-	.string "Look out {PLAYER} it's {RIVAL}\n"
-	.string "this is a trap!$"
+	.string "Look out {PLAYER} it's {RIVAL} this\n"
+	.string "is a trap!$"
 
 Route3_Text_RivalIntro::
 # 423 "data/maps/Route3/scripts.pory"
@@ -625,8 +625,8 @@ Route3_Text_RivalPost::
 	.string "life from me. There's nothing to go back,\l"
 	.string "nothing to return to. I'm all alone with\l"
 	.string "nothing, and therefore nothing to\l"
-	.string "loose. I swear to you now {PLAYER} on\l"
-	.string "my own heart and by the mighty power of\l"
+	.string "loose. I swear to you now {PLAYER} on my\l"
+	.string "own heart and by the mighty power of\l"
 	.string "the sun, in recognition of the River\l"
 	.string "Styx, and under penalty of doom and\l"
 	.string "death you will be met with Justice by my\l"
@@ -636,11 +636,11 @@ Route3_Text_RivalPost::
 
 Route3_Text_Leaf3::
 # 435 "data/maps/Route3/scripts.pory"
-	.string "Wow {PLAYER} I'm glad you're here all\n"
-	.string "big and strong to protect me from\l"
-	.string "creeps like that {RIVAL}. It's\l"
-	.string "getting late and I want to see Mew!\l"
-	.string "C'mon silly we need to find my dad!$"
+	.string "Wow {PLAYER} I'm glad you're here all big\n"
+	.string "and strong to protect me from creeps\l"
+	.string "like that {RIVAL}. It's getting late\l"
+	.string "and I want to see Mew! C'mon silly we\l"
+	.string "need to find my dad!$"
 
 Route3_Text_SaeclaraSign::
 # 439 "data/maps/Route3/scripts.pory"
@@ -670,7 +670,7 @@ Route3_Text_Scott2::
 # 463 "data/maps/Route3/scripts.pory"
 	.string "We'll have to journey into glum Silva in\n"
 	.string "hopes of finding some sure way across.\l"
-	.string "Be careful {PLAYER}. In Silva many\l"
-	.string "folk pushed out of town, criminals, and\l"
-	.string "wild {PKMN} lurk in shadows and tall grass.\l"
+	.string "Be careful {PLAYER}. In Silva many folk\l"
+	.string "pushed out of town, criminals, and wild\l"
+	.string "{PKMN} lurk in shadows and tall grass.\l"
 	.string "Tread carefully, and carry a big stick!$"

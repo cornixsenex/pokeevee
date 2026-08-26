@@ -341,11 +341,11 @@ Ardor_Uni2F_Text_ArchaeologyDoorSign::
 
 Ardor_Uni2F_Text_Leaf0::
 # 180 "data/maps/Ardor_Uni2F/scripts.pory"
-	.string "Oh hey {PLAYER} I found an Indianus.\n"
-	.string "His door is halfway down the eastern\l"
-	.string "hall but it won't open. I can't\l"
-	.string "understand anything anybody even says\l"
-	.string "so I don't know where Indianus is.$"
+	.string "Oh hey {PLAYER} I found an Indianus. His\n"
+	.string "door is halfway down the eastern hall\l"
+	.string "but it won't open. I can't understand\l"
+	.string "anything anybody even says so I don't\l"
+	.string "know where Indianus is.$"
 
 Ardor_Uni2F_Text_Leaf1::
 # 185 "data/maps/Ardor_Uni2F/scripts.pory"
@@ -417,9 +417,9 @@ Ardor_Uni2F_Text_PsychologyDoorSign::
 
 Ardor_Uni2F_Text_LeafGraduate::
 # 234 "data/maps/Ardor_Uni2F/scripts.pory"
-	.string "Congratulations {PLAYER}! We\n"
-	.string "finished school but have only begun our\l"
-	.string "long journey of self improvement and\l"
+	.string "Congratulations {PLAYER}! We finished\n"
+	.string "school but have only begun our long\l"
+	.string "journey of self improvement and\l"
 	.string "education. While many see this as the\l"
 	.string "end, I see the beginning of something\l"
 	.string "even more rewarding than what we have\l"

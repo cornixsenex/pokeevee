@@ -2212,15 +2212,15 @@ text MareS4_Text_DoorguardPost {
 }
 
 text MareS4_Text_Aeneas_GoodJob {
-    format("My lad! Good job, you've ran the savages
-			off the island. I saw the last of them
-			jump in the sea like they were being chased
-			by swarms of hornets! Now we can begin...")
+    format("My lad! Good job, you've ran the savages"
+			"off the island. I saw the last of them"
+			"jump in the sea like they were being chased"
+			"by swarms of hornets! Now we can begin...")
 }
 
 text MareS4_Text_Ascanius_Help {
-	format("Aeneas! Come quick! Something terrible
-			has happened!")
+	format("Aeneas! Come quick! Something terrible"
+			"has happened!")
 }
 
 text MareS4_Text_Aeneas_WhatsWrong {
@@ -2245,14 +2245,14 @@ text MareS4_Text_Ascanius_OrCaptured {
 }
 
 text MareS4_Text_Aeneas_TakeAction {
-	format("This is time for action, not blind panic.
-			Ascianus I know it must be hard
-			but regain your composure and then search
-			the beaches for any sign of the boys.
-			Faustulus, you will search the northern half
-			of the island. {PLAYER} search the southern half.
-			I'll wait here in case they, or the natives,
-			decide to return to the chieftain's hut.")
+	format("This is time for action, not blind panic."
+			"Ascianus I know it must be hard"
+			"but regain your composure and then search"
+			"the beaches for any sign of the boys."
+			"Faustulus, you will search the northern half"
+			"of the island. {PLAYER} search the southern half."
+			"I'll wait here in case they, or the natives,"
+			"decide to return to the chieftain's hut.")
 }
 
 text MareS4_Text_Aeneas_Search {
@@ -2260,8 +2260,8 @@ text MareS4_Text_Aeneas_Search {
 }
 
 text MareS4_Text_Ascanius_Search {
-	format("Oh Remus! Romulus! Come back to me!
-			We need to find my boys! I'm so worried!")
+	format("Oh Remus! Romulus! Come back to me!"
+			"We need to find my boys! I'm so worried!")
 }
 
 //I know the boys are ok, I know it in my heart. They're just playing around somewhere. There are so many places for them to be hiding. I'm sure we'll find them behind some rock, or up some tree, or in a cave around here.
@@ -2270,11 +2270,11 @@ text MareS4_Text_Faustulus_Search {
 }
 
 text MareS4_Text_Aeneas_Found {
-	format("At last, I can relax. We found the boys,
-			expelled the natives and fully control 
-			Isla Hesperia. All that remains
-			is to build a mighty city upon
-			the seven hills of this noble island.")
+	format("At last, I can relax. We found the boys,"
+			"expelled the natives and fully control "
+			"Isla Hesperia. All that remains"
+			"is to build a mighty city upon"
+			"the seven hills of this noble island.")
 }
 
 //Warms my heart to see the boys safe and playing again
@@ -2283,28 +2283,28 @@ text MareS4_Text_Faustulus_Found {
 }
 
 text MareS4_Text_Beroe_Found {
-	format("Even with the island all to ourselves
-			I can't help but feel lost, and vulnerable
-			in this exotic wilderness. I miss
-			the fields of Ilium... the walls of Troy...")
+	format("Even with the island all to ourselves"
+			"I can't help but feel lost, and vulnerable"
+			"in this exotic wilderness. I miss"
+			"the fields of Ilium... the walls of Troy...")
 }
 
 text MareS4_Text_Ascanius_Found {
-	format("My boys are back! I was deathly afriad
-			that I had lost them just like I lost
-			their mother on our bitter journey here.")
+	format("My boys are back! I was deathly afriad"
+			"that I had lost them just like I lost"
+			"their mother on our bitter journey here.")
 }
 
 text MareS4_Text_Romulus_Found {
-	format("When I get older I will build my house
-			upon the hill where the she wolf nursed us.")
+	format("When I get older I will build my house"
+			"upon the hill where the she wolf nursed us.")
 }
 
 text MareS4_Text_Remus_Found {
-	format("I'm staying far away from that dark cave
-			where that monster kept us from our father.
-			The furthest southern hill is where I will
-			build my house to avoid that cursed place.")
+	format("I'm staying far away from that dark cave"
+			"where that monster kept us from our father."
+			"The furthest southern hill is where I will"
+			"build my house to avoid that cursed place.")
 }
 
 text MareS4_Text_Aeneas_Wedding1 {
@@ -2316,46 +2316,46 @@ text MareS4_Text_GiveInvitation {
 }
 
 text MareS4_Text_Aeneas_Wedding2 {
-    format("My dear friend Paris is at the great house
-            of Nestor as a guest and expects to
-            take his daughter, Helen, to be his wife!
-            Wonderful news! I must be off at once!
-            Though I am loathe to leave my destiny
-            to wait on this island I must attend
-            this most consequential ceremony.
-            With the primitives purged Hesperia
-            will be kept safe by my Ascanius
-            while I attend my good friend's wedding day.
-            Therefore I take my leave. When I return
-            we shall begin to build the great city!")
+    format("My dear friend Paris is at the great house"
+            "of Nestor as a guest and expects to"
+            "take his daughter, Helen, to be his wife!"
+            "Wonderful news! I must be off at once!"
+            "Though I am loathe to leave my destiny"
+            "to wait on this island I must attend"
+            "this most consequential ceremony."
+            "With the primitives purged Hesperia"
+            "will be kept safe by my Ascanius"
+            "while I attend my good friend's wedding day."
+            "Therefore I take my leave. When I return"
+            "we shall begin to build the great city!")
 }
 
 text MareS4_Text_UlyssesAnteScylla {
-	format("Oh no, {PLAYER}! It seem we cannot go on.
-			That impassable whirlpool blocks the way
-			forward. We could not hope to get across!")
+	format("Oh no, {PLAYER}! It seem we cannot go on."
+			"That impassable whirlpool blocks the way"
+			"forward. We could not hope to get across!")
 }
 
 text MareS4_Text_UlyssesDuringScylla {
-	format("That sea monster must be responsible
-			for the whirlpool. Quick! Get down there and find
-			a way to drive away the monster and
-			clear the whirlpool so we can journey on.")
+	format("That sea monster must be responsible"
+			"for the whirlpool. Quick! Get down there and find"
+			"a way to drive away the monster and"
+			"clear the whirlpool so we can journey on.")
 }
 
 text MareS4_Text_UlyssesDuringCharybdis {
-	format("The monster's gone, but the whirlpool remains.
-			There must be something else responsible.
-			Get back down there and try to find a way
-			to clear that whirlpool so we can move on.")
+	format("The monster's gone, but the whirlpool remains."
+			"There must be something else responsible."
+			"Get back down there and try to find a way"
+			"to clear that whirlpool so we can move on.")
 }
 
 text MareS4_Text_UlyssesAfterCharybdis {
-	format("I can't believe...I mean, you did it {PLAYER}!
-			You've triumphed over the deep sea monster
-			and cleared the treacherous whirlpool. Now we
-			can finally resume the long journey
-			to Nestor's house, to my dear friend's wedding.")
+	format("I can't believe...I mean, you did it {PLAYER}!"
+			"You've triumphed over the deep sea monster"
+			"and cleared the treacherous whirlpool. Now we"
+			"can finally resume the long journey"
+			"to Nestor's house, to my dear friend's wedding.")
 }
 
 

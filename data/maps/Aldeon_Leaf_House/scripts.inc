@@ -587,14 +587,14 @@ Aldeon_Leaf_House_Text_Leaf3A::
 	.string "Daddy! I'm fine! For just as Mew\n"
 	.string "appeared to you last night she helped\l"
 	.string "me to escape once the storm passed\l"
-	.string "then Mr. {PLAYER} the brave defended\l"
-	.string "me and thanks to him I have returned\l"
-	.string "home safe.$"
+	.string "then Mr. {PLAYER} the brave defended me\l"
+	.string "and thanks to him I have returned home\l"
+	.string "safe.$"
 
 Aldeon_Leaf_House_Text_Leaf3B::
 # 337 "data/maps/Aldeon_Leaf_House/scripts.pory"
-	.string "Please come here {PLAYER}, I want you\n"
-	.string "to meet dad.$"
+	.string "Please come here {PLAYER}, I want you to\n"
+	.string "meet dad.$"
 
 Aldeon_Leaf_House_Text_Leaf3C::
 # 341 "data/maps/Aldeon_Leaf_House/scripts.pory"

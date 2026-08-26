@@ -2589,24 +2589,23 @@ CityClara_Church_Text_Dad5::
 # 1258 "data/maps/CityClara_Church/scripts.pory"
 	.string "Of course! How could I not notice\n"
 	.string "before? This kid, this {PLAYER} will\l"
-	.string "defeat the party! But {PLAYER}\l"
-	.string "cannot defeat them all alone, we need\l"
-	.string "allies when all the world's afraid to\l"
-	.string "fight for that which is worth fighting\l"
-	.string "for.$"
+	.string "defeat the party! But {PLAYER} cannot\l"
+	.string "defeat them all alone, we need allies\l"
+	.string "when all the world's afraid to fight for\l"
+	.string "that which is worth fighting for.$"
 
 CityClara_Church_Text_Dad6::
 # 1262 "data/maps/CityClara_Church/scripts.pory"
 	.string "I think I know someone who just might\n"
-	.string "help. You should {PLAYER} travel\l"
-	.string "north to the desert and there seek out\l"
-	.string "the university. It stands in the\l"
-	.string "ancient city, Ardor. There you will meet\l"
-	.string "my old friend from the war, Indiana is in\l"
-	.string "hiding disguised as an archaeology\l"
-	.string "professor. If there still stands a man\l"
-	.string "with will to fight it will be him. Tell him\l"
-	.string "the time has come.$"
+	.string "help. You should {PLAYER} travel north\l"
+	.string "to the desert and there seek out the\l"
+	.string "university. It stands in the ancient\l"
+	.string "city, Ardor. There you will meet my old\l"
+	.string "friend from the war, Indiana is in hiding\l"
+	.string "disguised as an archaeology professor.\l"
+	.string "If there still stands a man with will to\l"
+	.string "fight it will be him. Tell him the time has\l"
+	.string "come.$"
 
 CityClara_Church_Text_Sage7::
 # 1266 "data/maps/CityClara_Church/scripts.pory"
@@ -2627,10 +2626,10 @@ CityClara_Church_Text_Sage8::
 
 CityClara_Church_Text_Dad7::
 # 1274 "data/maps/CityClara_Church/scripts.pory"
-	.string "That's right {PLAYER} you know I\n"
-	.string "believe in you. So Leaf what say you we\l"
-	.string "be on our way back to the club in order\l"
-	.string "to protect in case any Rockets should\l"
+	.string "That's right {PLAYER} you know I believe\n"
+	.string "in you. So Leaf what say you we be on\l"
+	.string "our way back to the club in order to\l"
+	.string "protect in case any Rockets should\l"
 	.string "come around?$"
 
 CityClara_Church_Text_Dad8::
@@ -2706,8 +2705,8 @@ CityClara_Church_Text_ERROR::
 
 CityClara_Church_Text_Leaf1::
 # 1322 "data/maps/CityClara_Church/scripts.pory"
-	.string "Hey {PLAYER}! C'mon! Why didn't you\n"
-	.string "wait up? What happened here? Where's\l"
+	.string "Hey {PLAYER}! C'mon! Why didn't you wait\n"
+	.string "up? What happened here? Where's\l"
 	.string "everyone? Where's MEW?$"
 
 CityClara_Church_Text_Pythia1::
@@ -2800,16 +2799,16 @@ CityClara_Church_Text_Pythia3B::
 
 CityClara_Church_Text_Leaf6::
 # 1366 "data/maps/CityClara_Church/scripts.pory"
-	.string "C'mon {PLAYER} this is what we're\n"
-	.string "meant to do. Ardor University is far\l"
-	.string "north over the mountains in the great\l"
-	.string "desert and the road there will be both\l"
-	.string "long and hard but you and I will get\l"
-	.string "there in the end. Let's go! Mewra, and\l"
-	.string "Mew, and the entire world, are counting\l"
-	.string "on us to find Maximus, restore the old\l"
-	.string "kingdom, and rescue Mew. There is no\l"
-	.string "time to wait! We depart now.$"
+	.string "C'mon {PLAYER} this is what we're meant\n"
+	.string "to do. Ardor University is far north\l"
+	.string "over the mountains in the great desert\l"
+	.string "and the road there will be both long and\l"
+	.string "hard but you and I will get there in the\l"
+	.string "end. Let's go! Mewra, and Mew, and the\l"
+	.string "entire world, are counting on us to find\l"
+	.string "Maximus, restore the old kingdom, and\l"
+	.string "rescue Mew. There is no time to wait! We\l"
+	.string "depart now.$"
 
 CityClara_Church_Text_Pythia4::
 # 1370 "data/maps/CityClara_Church/scripts.pory"
