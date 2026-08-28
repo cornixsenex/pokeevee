@@ -214,9 +214,9 @@ script CasaUlyssis_Script_UlyssesDepart {
 }
 
 text CasaUlyssis_Text_UlyssesBeforeInvite {
-    format("Hello, my name is Ulysses. I'm blessed
-            to have my own beautiful family,
-            farmland, and house. There's nothing more I need.")
+    format("Hello, my name is Ulysses. I'm blessed"
+            "to have my own beautiful family,"
+            "farmland, and house. There's nothing more I need.")
 }
 
 text CasaUlyssis_Text_UlyssesFinal {
@@ -232,15 +232,15 @@ text CasaUlyssis_Text_TelemachusBeforeInvite {
 }
 
 text CasaUlyssis_Text_Ulysses_Depart1 {
-    format("Welcome, fiend, to our happy little home.
-            I'd like to introduce Penelope,
-            my wife, and Telemachus, my young boy.
-            Despite my recent loss of sanity
-            I count myself among the luckiet
-            people alive. I am wealthy in both
-            material things and in family.
-            Now tell me, friend, what brings you out this far
-            across the ocean to our blessed home?")
+    format("Welcome, fiend, to our happy little home."
+            "I'd like to introduce Penelope,"
+            "my wife, and Telemachus, my young boy."
+            "Despite my recent loss of sanity"
+            "I count myself among the luckiet"
+            "people alive. I am wealthy in both"
+            "material things and in family."
+            "Now tell me, friend, what brings you out this far"
+            "across the ocean to our blessed home?")
 }
 
 text CasaUlyssis_Text_Ulysses_Depart2 {
@@ -252,9 +252,9 @@ text CasaUlyssis_Text_GaveInvite {
 }
 
 text CasaUlyssis_Text_Ulysses_Depart3 {
-    format("An old friend of mine, Menelaus, is
-            getting married and wants me to be the 
-            best man at his wedding.")
+    format("An old friend of mine, Menelaus, is"
+            "getting married and wants me to be the "
+            "best man at his wedding.")
 }
 
 text CasaUlyssis_Text_Penelope_Depart1 {
@@ -266,64 +266,64 @@ text CasaUlyssis_Text_Penelope_Depart2 {
 }
 
 text CasaUlyssis_Text_Ulysses_Depart4 {
-    format("He's an old coworker of mine from the
-            Commerce Guild. Though we never were too close,
-            in fact I never respected the guy,
-            he's Agamemnon's own younger brother
-            so I have little choice but to attend.")
+    format("He's an old coworker of mine from the"
+            "Commerce Guild. Though we never were too close,"
+            "in fact I never respected the guy,"
+            "he's Agamemnon's own younger brother"
+            "so I have little choice but to attend.")
 }
 
 text CasaUlyssis_Text_Penelope_Depart3 {
-    format("It's strange he'd ask you to be his best man
-            if the two of you were never that close
-            but I understand you will have to go.
-            We owe our fortunes to Agamemnon.")
+    format("It's strange he'd ask you to be his best man"
+            "if the two of you were never that close"
+            "but I understand you will have to go."
+            "We owe our fortunes to Agamemnon.")
 }
 
 text CasaUlyssis_Text_Ulysses_Depart5 {
-    format("He always was, let's say, an eccentric
-            and irritating man. I'd imagine
-            he has no one else in his life to ask.
-            We worked together for a couple years,
-            that may have been the deepest connection
-            he formed with anyone. While I'm away
-            be well assured, my one and only wife,
-            I will endevour tirelessly to
-            return promptly. Know that my mind is like
-            the fixed course of the stars across the sky
-            and that neither adventure nor women
-            will draw me from my course. I'll be direct
-            in my journey, just there and back again.")
+    format("He always was, let's say, an eccentric"
+            "and irritating man. I'd imagine"
+            "he has no one else in his life to ask."
+            "We worked together for a couple years,"
+            "that may have been the deepest connection"
+            "he formed with anyone. While I'm away"
+            "be well assured, my one and only wife,"
+            "I will endevour tirelessly to"
+            "return promptly. Know that my mind is like"
+            "the fixed course of the stars across the sky"
+            "and that neither adventure nor women"
+            "will draw me from my course. I'll be direct"
+            "in my journey, just there and back again.")
 }
 
 text CasaUlyssis_Text_Penelope_Depart4 {
-    format("Faithful husband, my one and only love,
-            I want to believe the sweet words you say
-            but last time you...")
+    format("Faithful husband, my one and only love,"
+            "I want to believe the sweet words you say"
+            "but last time you...")
 }
 
 text CasaUlyssis_Text_Ulysses_Depart6 {
-    format("Penelope! I've changed!
-            I was a younger man, on business trips,
-            and I told you she tricked me in...")
+    format("Penelope! I've changed!"
+            "I was a younger man, on business trips,"
+            "and I told you she tricked me in...")
 }
 
 text CasaUlyssis_Text_Penelope_Depart5 {
-    format("Farewell...
-            I know no words of mine can sway your will
-            and once you've made your mind up to depart
-            nothing short of the wrath of the Ocean
-            can delay, let alone break off, your leave.
-            Be safe, my love, be quick in your return,
-            and trust that I will wait here patiently,
-            faithful, and lonesome until you return.")
+    format("Farewell..."
+            "I know no words of mine can sway your will"
+            "and once you've made your mind up to depart"
+            "nothing short of the wrath of the Ocean"
+            "can delay, let alone break off, your leave."
+            "Be safe, my love, be quick in your return,"
+            "and trust that I will wait here patiently,"
+            "faithful, and lonesome until you return.")
 }
 
 text CasaUlyssis_Text_Ulysses_Depart7 {
-    format("Thank you for bringing me this urgent mail.
-            Unfortunately, I must now be off.
-            Excuse me for being an unkind host,
-            but I have pressing business to attend.")
+    format("Thank you for bringing me this urgent mail."
+            "Unfortunately, I must now be off."
+            "Excuse me for being an unkind host,"
+            "but I have pressing business to attend.")
 }
 
 text CasaUlyssis_Text_PenelopeWhileUlyssesAway {
@@ -331,6 +331,6 @@ text CasaUlyssis_Text_PenelopeWhileUlyssesAway {
 }
 
 text CasaUlyssis_Text_PenelopeAfterUlyssesReturns {
-	format("After what felt like an eternity,
-			our happy family's reunited!")
+	format("After what felt like an eternity,"
+			"our happy family's reunited!")
 }

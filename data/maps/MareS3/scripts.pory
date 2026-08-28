@@ -454,9 +454,9 @@ text MareS3_Text_UlyssesExit4 {
 }
 
 text MareS3_Text_UlyssesExit5 {
-	format("How terrible! My stomach's been relieved,
-			but now I feel a deep burning headache.
-			I'm sorry you had to witness that, {PLAYER},
-			but now I am feeling myself again
-			and will leave for Menelaus' wedding.")
+	format("How terrible! My stomach's been relieved,"
+			"but now I feel a deep burning headache."
+			"I'm sorry you had to witness that, {PLAYER},"
+			"but now I am feeling myself again"
+			"and will leave for Menelaus' wedding.")
 }

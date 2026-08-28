@@ -653,7 +653,7 @@ SurfSchool_Text_Surfer4Post::
 
 SurfSchool_Text_Leaf1::
 # 396 "data/maps/Tranquillitas_SurfSchool/scripts.pory"
-	.string "Ok, let's do this, let's leran how to\n"
+	.string "Ok, let's do this, let's learn how to\n"
 	.string "surf.$"
 
 SurfSchool_Text_Misty1::

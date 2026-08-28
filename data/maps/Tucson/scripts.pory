@@ -616,9 +616,9 @@ text Tucson_Text_Paris_GiveInvites {
 }
 
 text Tucson_Text_Paris_OnHector {
-	format("Hector is a man of great discipline 
-			who trains his body daily without rest.
-			He competes often at Gymnasium.")
+	format("Hector is a man of great discipline"
+			"who trains his body daily without rest."
+			"He competes often at Gymnasium.")
 }
 
 text Tucson_Text_Paris_OnAeneas {

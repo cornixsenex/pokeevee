@@ -155,10 +155,10 @@ text Route3_Text_TrevorPost {
 }
 
 text BeachCave_Text_Hector {
-	format("I dedicate every waking moment 
-			to self improvement, pious discipline, 
-			and rightous action. Now, if you don't mind,
-			please step aside. I must get back to work.")
+	format("I dedicate every waking moment "
+			"to self improvement, pious discipline, "
+			"and rightous action. Now, if you don't mind,"
+			"please step aside. I must get back to work.")
 }
 
 text BeachCave_Text_HectorTrainer1  {
@@ -170,8 +170,8 @@ text BeachCave_Text_HectorTrainer2  {
 }
 
 text BeachCave_Text_Lass1 {
-	format("All day and night I love to stand right here
-			and watch Hector exercise his body.")
+	format("All day and night I love to stand right here"
+			"and watch Hector exercise his body.")
 }
 
 text BeachCave_Text_Lass2 {

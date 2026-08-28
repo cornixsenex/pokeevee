@@ -620,10 +620,10 @@ script CasaAtrei_Script_Maid {
 
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight1 {
-    format("Oh, {PLAYER}! You made it, good! The coast seems clear
-			but I'm not sure where 4everyone has gone.
-			I already checked my sister's room and 
-			saw no trace of...")
+    format("Oh, {PLAYER}! You made it, good! The coast seems clear"
+			"but I'm not sure where 4everyone has gone."
+			"I already checked my sister's room and "
+			"saw no trace of...")
 }
 
 text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1 {
@@ -631,32 +631,32 @@ text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight1 {
 }
 
 text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight2 {
-    format("I know you come to stop our mother! I
-			will not allow you to revive father!")
+    format("I know you come to stop our mother! I"
+			"will not allow you to revive father!")
 }
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight2 {
-    format("My purpose, Iphigenia, is plain
-			for all to see. I will see dad rescued
-			but fear not, I won't touch a single hair
-			upon the foul head of that wicked witch.")
+    format("My purpose, Iphigenia, is plain"
+			"for all to see. I will see dad rescued"
+			"but fear not, I won't touch a single hair"
+			"upon the foul head of that wicked witch.")
 }
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight3 {
-    format("Be quick! Go on! Find Klytmnestra! I'll
-			keep my sister occupied here with me.")
+    format("Be quick! Go on! Find Klytmnestra! I'll"
+			"keep my sister occupied here with me.")
 }
 
 text CasaAtrei_Text_OrestesBeforeIphegeniaFight4 {
-	format("This is your final warning, dear sister,
-			I do not wish to come to blows with you
-			but I will do what I must in order
-			to see mother defeated, father saved.")
+	format("This is your final warning, dear sister,"
+			"I do not wish to come to blows with you"
+			"but I will do what I must in order"
+			"to see mother defeated, father saved.")
 }
 
 text CasaAtrei_Text_IphigeniaBeforeIphegeniaFight3 {
-    format("The die is cast, foul brother Orestes.
-			I won't let you bring harm to our mother!")
+    format("The die is cast, foul brother Orestes."
+			"I won't let you bring harm to our mother!")
 }
 
 text CasaAtrei_Text_OrestesDuringIphigeniaFight {
@@ -672,19 +672,19 @@ text CasaAtrei_Text_Klytmnestra1 {
 }
 
 text CasaAtrei_Text_Klytmnestra2 {
-	format("I've known for some time my son would betray
-			the woman who birthed, raised, clothed, and fed him.
-			While this attack has long been foreseen I
-			must admit that he would entrust the task
-			of confronting me to someone like you
-			is quite a shock. Perhaps I did not raise
-			the boy as well as I had once believed.
-			I am Klytmnestra, the enchantress.
-			While typically I like to play with my
-			food before I eat it, this is different.
-			Since my very own life is threatened, I
-			must make an exception and quickly see
-			your soul dispatched to hell. Prepare to die!")
+	format("I've known for some time my son would betray"
+			"the woman who birthed, raised, clothed, and fed him."
+			"While this attack has long been foreseen I"
+			"must admit that he would entrust the task"
+			"of confronting me to someone like you"
+			"is quite a shock. Perhaps I did not raise"
+			"the boy as well as I had once believed."
+			"I am Klytmnestra, the enchantress."
+			"While typically I like to play with my"
+			"food before I eat it, this is different."
+			"Since my very own life is threatened, I"
+			"must make an exception and quickly see"
+			"your soul dispatched to hell. Prepare to die!")
 }
 
 text CasaAtrei_Text_KlytmnestraLost {
@@ -696,8 +696,8 @@ text CasaAtrei_Text_OrestesKlytmnestraScene1 {
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene2 {
-	format("You broke the witch's spell
-			and lifted the curse!")
+	format("You broke the witch's spell"
+			"and lifted the curse!")
 }
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene1 {
@@ -709,36 +709,36 @@ text CasaAtrei_Text_OrestesKlytmnestraScene3 {
 }
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene2 {
-	format("Orestes! What happened? I feel so cold
-			like the winds of winter howl in my bones.
-			My head aches, I must have had a bad dream...")
+	format("Orestes! What happened? I feel so cold"
+			"like the winds of winter howl in my bones."
+			"My head aches, I must have had a bad dream...")
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene4 {
-	format("Rest now father, your nightmare's at its end.
-			You have been several months under a spell
-			but your son, and the young heroic {PLAYER},
-			have rescued you.")
+	format("Rest now father, your nightmare's at its end."
+			"You have been several months under a spell"
+			"but your son, and the young heroic {PLAYER},"
+			"have rescued you.")
 }
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene3 {
-	format("A spell? Impossible? How could this be?
-			I was just getting into bed with your
-			mother, then I don't know... My memories
-			are confusing, icy cold and jet black....
-			What evil witch could have done this to me?")
+	format("A spell? Impossible? How could this be?"
+			"I was just getting into bed with your"
+			"mother, then I don't know... My memories"
+			"are confusing, icy cold and jet black...."
+			"What evil witch could have done this to me?")
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene5 {
-	format("Your own wife, my mother, Klytmnestra
-			was none other than that accursed witch
-			who held you here entranced for all this time.")
+	format("Your own wife, my mother, Klytmnestra"
+			"was none other than that accursed witch"
+			"who held you here entranced for all this time.")
 }
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene4 {
-	format("Klytmnestra? My wife, did this? I can't
-			believe it! She was the love of my life!
-			Mother of my two children...")
+	format("Klytmnestra? My wife, did this? I can't"
+			"believe it! She was the love of my life!"
+			"Mother of my two children...")
 }
 
 text CasaAtrei_Text_IphigeniaKlytmnestraScene1 {
@@ -750,122 +750,122 @@ text CasaAtrei_Text_AgamemnonKlytmnestraScene5 {
 }
 
 text CasaAtrei_Text_IphigeniaKlytmnestraScene2 {
-	format("How could you do this?
-			You killed your own mother! Have you no shame?")
+	format("How could you do this?"
+			"You killed your own mother! Have you no shame?")
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene6 {
-	format("I did no such thing! My hands are blameless
-			in mother's tragic, but well deserved, death.")
+	format("I did no such thing! My hands are blameless"
+			"in mother's tragic, but well deserved, death.")
 }
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene6 {
-	format("My dearest firstborn daughter, please don't cry
-			for losing your treacherous mother but
-			smile for regaining your lost father.
-			Though you have ever been more like her in
-			similar mind, body, spirit and soul,
-			think not that her sins must be passed to you,
-			nor that you must do penance for the way
-			you sided with her while I was poisoned.
-			Instead, rejoice to see your father well,
-			and take cheer in the restoration of
-			your life's genitor, of your family's king.")
+	format("My dearest firstborn daughter, please don't cry"
+			"for losing your treacherous mother but"
+			"smile for regaining your lost father."
+			"Though you have ever been more like her in"
+			"similar mind, body, spirit and soul,"
+			"think not that her sins must be passed to you,"
+			"nor that you must do penance for the way"
+			"you sided with her while I was poisoned."
+			"Instead, rejoice to see your father well,"
+			"and take cheer in the restoration of"
+			"your life's genitor, of your family's king.")
 }
 
 text CasaAtrei_Text_IphigeniaKlytmnestraScene3 {
-	format("I'll never honor you, mother was right!
-			We women ought to be in charge of things
-			and one day I will see mother avenged.
-			Until then I will curse you and your son
-			from the oppressive prison of my room!")
+	format("I'll never honor you, mother was right!"
+			"We women ought to be in charge of things"
+			"and one day I will see mother avenged."
+			"Until then I will curse you and your son"
+			"from the oppressive prison of my room!")
 }
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene7 {
-	format("Let her grieve in peace. She will come around
-			eventually. Now tell me, son how did
-			you manage to break Klytmnestra's spell,
-			and tell me of {PLAYER} who helped you do it.")
+	format("Let her grieve in peace. She will come around"
+			"eventually. Now tell me, son how did"
+			"you manage to break Klytmnestra's spell,"
+			"and tell me of {PLAYER} who helped you do it.")
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene7 {
-   format("At first, I believed what mother told me,
-		   that you had fallen ill, but over time
-		   I grew restless and couldn't understand
-		   why I wasn't allowed to visit you.
-		   One day I heard Iphigenia boast
-		   that female sex was supreme in our house
-		   and my impatience turned to suspicion.
-		   I krept out one night, unable to sleep,
-		   and snuck into this very same bedroom
-		   where I witnessed that witch, Klytmnestra,
-		   casting black spells over your limp body.
-		   That was when I realized what had been done.
-		   For weeks I wondered what I ought to do.
-		   I knew I had to help you, but how could
-		   I justify crossing my own mother?
-		   The torment of my confusion led me
-		   to run away from home. It drove mad
-		   even to the near edge of suicide
-		   when I heard the voice of the divine call
-		   me to consult the oracle. I went
-		   upstream to the Aedes Trivis where I
-		   presented my problem to the Slowking
-		   who told me I must help you be revived
-		   but that my hand could not strike my mother's.
-		   I met young {PLAYER} there, he agreed to help,
-		   and it was him who sent Klytmnestra
-		   down to the pits of Hell and saved your life.")
+   format("At first, I believed what mother told me,"
+		   "that you had fallen ill, but over time"
+		   "I grew restless and couldn't understand"
+		   "why I wasn't allowed to visit you."
+		   "One day I heard Iphigenia boast"
+		   "that female sex was supreme in our house"
+		   "and my impatience turned to suspicion."
+		   "I krept out one night, unable to sleep,"
+		   "and snuck into this very same bedroom"
+		   "where I witnessed that witch, Klytmnestra,"
+		   "casting black spells over your limp body."
+		   "That was when I realized what had been done."
+		   "For weeks I wondered what I ought to do."
+		   "I knew I had to help you, but how could"
+		   "I justify crossing my own mother?"
+		   "The torment of my confusion led me"
+		   "to run away from home. It drove mad"
+		   "even to the near edge of suicide"
+		   "when I heard the voice of the divine call"
+		   "me to consult the oracle. I went"
+		   "upstream to the Aedes Trivis where I"
+		   "presented my problem to the Slowking"
+		   "who told me I must help you be revived"
+		   "but that my hand could not strike my mother's."
+		   "I met young {PLAYER} there, he agreed to help,"
+		   "and it was him who sent Klytmnestra"
+		   "down to the pits of Hell and saved your life.")
 }	   
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene8 {
-	format("A horrible story! I'm so sorry
-			that you were put in that position, son,
-			but in the darkest nights do heroic
-			actions shine brightest. Thank you, thank you both
-			for waking me from that most deathlike sleep.
-			Now {PLAYER}, please come here. I would introduce
-			myself and give you my most sincere thanks.")
+	format("A horrible story! I'm so sorry"
+			"that you were put in that position, son,"
+			"but in the darkest nights do heroic"
+			"actions shine brightest. Thank you, thank you both"
+			"for waking me from that most deathlike sleep."
+			"Now {PLAYER}, please come here. I would introduce"
+			"myself and give you my most sincere thanks.")
 }
 
 text CasaAtrei_Text_AgamemnonKlytmnestraScene9 {
-	format("Apologies for remaining in bed
-			when I first shake your hand but the effects
-			of the late witch's spell still linger on
-			and make more strenuous activity
-			impossible for now but still I must
-			introduce myself to the one who's life
-			I am indebted to for my freedom
-			before I close my eyes again. I am
-			Agamemnon, lord of the Commerce Guild,
-			father of Orestes and resident
-			of Albion. It is my great pleasure
-			to meet you and I offer you my deep,
-			sincere, heartfelt, eternal gratitude.
-			Thank you for defeating Klytmnestra,
-			breaking the witch's spell, and waking me
-			I must regain my strengh, but please return
-			after I've rested I will give to you
-			the princely gift you've earned by your valor.
-			Now please, excuse me boys, and let me rest.")
+	format("Apologies for remaining in bed"
+			"when I first shake your hand but the effects"
+			"of the late witch's spell still linger on"
+			"and make more strenuous activity"
+			"impossible for now but still I must"
+			"introduce myself to the one who's life"
+			"I am indebted to for my freedom"
+			"before I close my eyes again. I am"
+			"Agamemnon, lord of the Commerce Guild,"
+			"father of Orestes and resident"
+			"of Albion. It is my great pleasure"
+			"to meet you and I offer you my deep,"
+			"sincere, heartfelt, eternal gratitude."
+			"Thank you for defeating Klytmnestra,"
+			"breaking the witch's spell, and waking me"
+			"I must regain my strengh, but please return"
+			"after I've rested I will give to you"
+			"the princely gift you've earned by your valor."
+			"Now please, excuse me boys, and let me rest.")
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene8 {
-	format("Very well, father, we'll leave and let you rest.
-			C'mon {PLAYER}, let's leave my father alone.")
+	format("Very well, father, we'll leave and let you rest."
+			"C'mon {PLAYER}, let's leave my father alone.")
 }
 
 text CasaAtrei_Text_OrestesKlytmnestraScene9 {
-	format("Thank you again, but father needs his rest.
-			I'm sure he'll be up and feeling well soon
-			and doubltess he will give you your gift then
-			but until then why not let him alone,
-			let him rest up but please do come back soon.")
+	format("Thank you again, but father needs his rest."
+			"I'm sure he'll be up and feeling well soon"
+			"and doubltess he will give you your gift then"
+			"but until then why not let him alone,"
+			"let him rest up but please do come back soon.")
 }
 
 text CasaAtrei_Text_OrestesBlock {
-	format("Father must rest now to regain his strength.
-			Please come back later to recieve your gift.")
+	format("Father must rest now to regain his strength."
+			"Please come back later to recieve your gift.")
 }
 
 text CasaAtrei_Text_DoorBlock {
@@ -873,23 +873,23 @@ text CasaAtrei_Text_DoorBlock {
 }
 
 text CasaAtrei_Text_IphigeniaInRoom {
-	format("You men are all the same, ignorant pigs!
-			One day I'll run away and go somewhere
-			without any men, a real paradise!")
+	format("You men are all the same, ignorant pigs!"
+			"One day I'll run away and go somewhere"
+			"without any men, a real paradise!")
 }
 
 text CasaAtrei_Text_AgamemnonGift1 {
-	format("Hello again, {PLAYER}, it's great to see you.
-			I'm pleased you have come back. Forgive me for
-			having to rest before, but now I am
-			feeling myself again. I have a gift
-			I'd like to give you for saving my life.")
+	format("Hello again, {PLAYER}, it's great to see you."
+			"I'm pleased you have come back. Forgive me for"
+			"having to rest before, but now I am"
+			"feeling myself again. I have a gift"
+			"I'd like to give you for saving my life.")
 }
 
 text CasaAtrei_Text_AgamemnonGift2 {
-	format("That Amulet Coin was my lucky charm.
-			I carried it while building my business.
-			I hope it brings you good luck and fortune.")
+	format("That Amulet Coin was my lucky charm."
+			"I carried it while building my business."
+			"I hope it brings you good luck and fortune.")
 }
 
 text CasaAtrei_Text_AgamemnonAfterGift {
@@ -905,8 +905,8 @@ text CasaAtrei_Text_GaveInvite {
 }
 
 text CasaAtrei_Text_AgamemnonInvite2 {
-	format("My brother, Menelaus, is getting
-			married at Nestors house! I'm invited
-			to attend this spectacular event.
-			I must make haste, to delay would be rude!")
+	format("My brother, Menelaus, is getting"
+			"married at Nestors house! I'm invited"
+			"to attend this spectacular event."
+			"I must make haste, to delay would be rude!")
 }

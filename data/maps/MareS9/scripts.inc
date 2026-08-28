@@ -2774,16 +2774,16 @@ MareS9_Text_Aeneas_Funeral7::
 
 MareS9_Text_Beroe_Funeral3::
 # 1197 "data/maps/MareS9/scripts.pory"
-	.string "I will burn the ship to ashes if you will\n"
-	.string "not swiftly depart!$"
+	.string "I will burn this ship to ashes if we do\n"
+	.string "not depart at once!$"
 
 MareS9_Text_Aeneas_Funeral8::
 # 1203 "data/maps/MareS9/scripts.pory"
 	.string "You'd burn the ship? Let's not be hasty\n"
 	.string "now! There is much reason to your\l"
 	.string "argument. The wind is fair, our party\l"
-	.string "full of strength, and proud Pristis\l"
-	.string "repaired, and not aflame. Let us be off!\l"
+	.string "full of strength, the proud Pristis\l"
+	.string "repaired, and not aflame, let us be off!\l"
 	.string "Assemble! To the boat!$"
 
 MareS9_Text_Aeneas_Funeral9::

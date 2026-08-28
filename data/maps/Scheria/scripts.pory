@@ -123,33 +123,33 @@ script Scheria_Script_Nausicaa {
 }
 
 text Scheria_Text_UlyssesScene_Alcinous1 {
-	format("Now come, weary stranger, your strength returns
-			and I would have your name, and what business
-			brought you to my island.")
+	format("Now come, weary stranger, your strength returns"
+			"and I would have your name, and what business"
+			"brought you to my island.")
 }
 
 text Scheria_Text_UlyssesScene_Ulysses1 {
-	format("I'm Ulysses,
-			Lord of Ithaca. I was lost at sea
-			and shipwrecked while I journeyed to the house
-			of Nestor where my friend will be married.")
+	format("I'm Ulysses,"
+			"Lord of Ithaca. I was lost at sea"
+			"and shipwrecked while I journeyed to the house"
+			"of Nestor where my friend will be married.")
 }
 
 text Scheria_Text_UlyssesScene_Arete1 {
-	format("It was a miracle that you survived
-			and washed ashore on our friendly isle
-			where Nausicaa found you...")
+	format("It was a miracle that you survived"
+			"and washed ashore on our friendly isle"
+			"where Nausicaa found you...")
 }
 
 text Scheria_Text_UlyssesScene_Alcinous2 {
-	format("Who dares enter
-			the house of Alcinous unbidden?")
+	format("Who dares enter"
+			"the house of Alcinous unbidden?")
 }
 
 text Scheria_Text_UlyssesScene_Ulysses2 {
-	format("Great lord, he is my friend and companion
-			on the long, wayward journey that brought me
-			through perils to the mercy of your house.")
+	format("Great lord, he is my friend and companion"
+			"on the long, wayward journey that brought me"
+			"through perils to the mercy of your house.")
 }
 
 text Scheria_Text_UlyssesScene_Alcinous3 {
@@ -157,18 +157,18 @@ text Scheria_Text_UlyssesScene_Alcinous3 {
 }
 
 text Scheria_Text_UlyssesScene_Alcinous4 {
-	format("I see you both are weary from the road.
-			Content yourselves to know you shall find rest
-			and comfort here, so long as my house stands.
-			Once recovered, you should find your next road
-			more easy than your last. You have arrived
-			not far from shore and civilization.
-			I'm sure you both will be eager to reach
-			the house of Nestor but, before you go,
-			I will make one request. Ulysses, I
-			would hear the tale of your long travels, the
-			perils of the ocean you braved, and the
-			catastrophe which brought you to my house.")
+	format("I see you both are weary from the road."
+			"Content yourselves to know you shall find rest"
+			"and comfort here, so long as my house stands."
+			"Once recovered, you should find your next road"
+			"more easy than your last. You have arrived"
+			"not far from shore and civilization."
+			"I'm sure you both will be eager to reach"
+			"the house of Nestor but, before you go,"
+			"I will make one request. Ulysses, I"
+			"would hear the tale of your long travels, the"
+			"perils of the ocean you braved, and the"
+			"catastrophe which brought you to my house.")
 }
 
 //thanks to Alcinous #

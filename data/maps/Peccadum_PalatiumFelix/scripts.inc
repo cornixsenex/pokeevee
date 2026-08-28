@@ -4434,7 +4434,7 @@ Peccadum_PalatiumFelix_Text_Cornelius3::
 	.string "desk. Mention my name.$"
 
 Peccadum_PalatiumFelix_Text_Cornelius4::
-# 2202 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2201 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "Officially, we only transport rocks, but\n"
 	.string "there are other things, from time to\l"
 	.string "time, which may have been misplaced by\l"
@@ -4468,6 +4468,6 @@ Peccadum_PalatiumFelix_Text_Cornelius4::
 	.string "lead you to peace.$"
 
 Peccadum_PalatiumFelix_Text_CorneliusDeny::
-# 2234 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
+# 2232 "data/maps/Peccadum_PalatiumFelix/scripts.pory"
 	.string "I understand. Good luck. Have a nice\n"
 	.string "day.$"

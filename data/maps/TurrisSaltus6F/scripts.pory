@@ -375,8 +375,8 @@ text TurrisSaltus6F_Text_DoorguardPre1 {
 }
 
 text TurrisSaltus6F_Text_DoorguardPre2 {
-    format("No one may enter her private chamber
-            without getting past us. Prepare to fall!")
+    format("No one may enter her private chamber"
+            "without getting past us. Prepare to fall!")
 }
 
 text TurrisSaltus6F_Text_DoorGuard1Lost {
@@ -388,11 +388,11 @@ text TurrisSaltus6F_Text_DoorGuard2Lost {
 }
 
 text TurrisSaltus6F_Text_DoorguardPost {
-    format("You have destroyed our way of life today
-            and violated our most sacred place.
-            The Tyrians you defeated today
-            will neither forgive nor forget your acts.
-            Disgraced, and defeated, we shall depart.")
+    format("You have destroyed our way of life today"
+            "and violated our most sacred place."
+            "The Tyrians you defeated today"
+            "will neither forgive nor forget your acts."
+            "Disgraced, and defeated, we shall depart.")
 }
 
 text TurrisSaltus6F_Text_Elissa1 {
@@ -400,33 +400,33 @@ text TurrisSaltus6F_Text_Elissa1 {
 }
 
 text TurrisSaltus6F_Text_Elissa2 {
-    format("What nightmare has 
-            disturbed our love filled bed? What vagabond 
-            would so roughly violate our tower
-            and break the royal seal of our chamber?")
+    format("What nightmare has"
+            "disturbed our love filled bed? What vagabond"
+            "would so roughly violate our tower"
+            "and break the royal seal of our chamber?")
 }
 
 text TurrisSaltus6F_Text_Elissa3 {
-    format("This can't be so! How could you scorn our love?
-            I'm sure this must be some outrageous scheme
-            to pacify this violent tresspasser
-            before you waste him and return to bed.")
+    format("This can't be so! How could you scorn our love?"
+            "I'm sure this must be some outrageous scheme"
+            "to pacify this violent tresspasser"
+            "before you waste him and return to bed.")
 }
 
 text TurrisSaltus6F_Text_Elissa4 {
-    format("Aeneas! You will curse this betrayal!
-            I name you traitor, enemy of our state,
-            and declare bitter war on you and your
-            descendants forever! War without end!
-            And you!")
+    format("Aeneas! You will curse this betrayal!"
+            "I name you traitor, enemy of our state,"
+            "and declare bitter war on you and your"
+            "descendants forever! War without end!"
+            "And you!")
 }
 
 text TurrisSaltus6F_Text_Elissa5 {
-    format("You are the arrow cruelly shot
-            that pierced my heart and tore away my love!
-            For violating our Turris Saltus,
-            befriending the traitor, Aeneas Pig,
-            and butchering my love, you die today.")
+    format("You are the arrow cruelly shot"
+            "that pierced my heart and tore away my love!"
+            "For violating our Turris Saltus,"
+            "befriending the traitor, Aeneas Pig,"
+            "and butchering my love, you die today.")
 }
 
 text TurrisSaltus6_Text_ElissaLost {
@@ -434,29 +434,29 @@ text TurrisSaltus6_Text_ElissaLost {
 }
 
 text TurrisSaltus6F_Text_Elissa6 {
-    format("Too sick to scream, too weak to have revenge,
-            too lowly to hope for recovery,
-            I persist in this world devoid of light
-            like some kind of ghost or fallen angel,
-            who once dwelt happily in the glow of love,
-            now ripped out and cast down to Tartarus.
-            The one and only choice I've left to make,
-            this life in hell, or death. I choose to die.")
+    format("Too sick to scream, too weak to have revenge,"
+            "too lowly to hope for recovery,"
+            "I persist in this world devoid of light"
+            "like some kind of ghost or fallen angel,"
+            "who once dwelt happily in the glow of love,"
+            "now ripped out and cast down to Tartarus."
+            "The one and only choice I've left to make,"
+            "this life in hell, or death. I choose to die.")
 }
 
 text TurrisSaltus6F_Text_Aeneas1 {
-    format("This man is my companioin on our quest 
-            to reach Hesperia and found a new
-            mighty city to one day rule the world.
-            His arrival reminds me of that quest.
-            Elissa, queen, I must be on my way
-            for as sweetly as I have come to love
-            your royal bed, and all fruits held therin,
-            my piety, sacred obedience,
-            and love of destiny is stronger yet.")
+    format("This man is my companioin on our quest "
+            "to reach Hesperia and found a new"
+            "mighty city to one day rule the world."
+            "His arrival reminds me of that quest."
+            "Elissa, queen, I must be on my way"
+            "for as sweetly as I have come to love"
+            "your royal bed, and all fruits held therin,"
+            "my piety, sacred obedience,"
+            "and love of destiny is stronger yet.")
 }
 
 text TurrisSaltus6F_Text_Aeneas2 {
-    format("Elissa, by the sun, the moon, and stars,
-            I do not lie. I must leave you. Goodbye.")
+    format("Elissa, by the sun, the moon, and stars,"
+            "I do not lie. I must leave you. Goodbye.")
 }

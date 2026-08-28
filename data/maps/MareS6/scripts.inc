@@ -1757,9 +1757,9 @@ MareS6_Text_UlyssesCallToAction::
 
 MareS6_Text_UlyssesJungle::
 # 1105 "data/maps/MareS6/scripts.pory"
-	.string "This jungle more dangerous than I had\n"
-	.string "expected but we cannot turn back. Lets\l"
-	.string "muscle our way to the witches lair!$"
+	.string "This jungle is more dangerous than I\n"
+	.string "had expected, but we cannot turn back.\l"
+	.string "Let's muscle our way to the witch's lair!$"
 
 MareS6_Text_UlyssesAntePortam::
 # 1111 "data/maps/MareS6/scripts.pory"

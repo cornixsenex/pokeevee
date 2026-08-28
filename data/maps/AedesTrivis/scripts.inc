@@ -828,7 +828,7 @@ AedesTrivis_Script_TrivisCompleteScene2::
 AedesTrivis_Text_OrestesSageScene_Orestes1::
 # 537 "data/maps/AedesTrivis/scripts.pory"
 	.string "What do you mean 'The Speaker is not\n"
-	.string "here?' I must consult the oracle!$"
+	.string "here? I must consult the oracle!$"
 
 AedesTrivis_Text_OrestesSageScene_Sage1::
 # 542 "data/maps/AedesTrivis/scripts.pory"

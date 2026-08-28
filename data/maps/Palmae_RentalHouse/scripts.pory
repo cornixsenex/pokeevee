@@ -192,146 +192,146 @@ script Palmae_RentalHouse_Script_LeafExitNorth {
 
 
 text Palmae_RentalHouse_Text_Leaf1 {
-    format("This house may not be much, but still, I'm proud
-            to have a place to call my home. It's not
-            easy for a single woman in this
-            economy to become sucessful.
-            Please go find Indianus! Let's save Mew!")
+    format("This house may not be much, but still, I'm proud"
+            "to have a place to call my home. It's not"
+            "easy for a single woman in this"
+            "economy to become sucessful."
+            "Please go find Indianus! Let's save Mew!")
 }
 
 text Palmae_RentalHouse_Text_Leaf2 {
-	format("Oh {PLAYER}! It seems like so much time has passed
-			since we set out together on the road.
-			Across the land, beneath the hills, in caves
-			across the bitter deserted wasteland,
-			and now out on our own as graduates
-			from Ardens School. Now I begin to feel
-			the constant click of time grinding the gears
-			of my youthful beauty approaching its
-			inevitable end. I think it's time
-			to settle down and find a good husband.
-			Though not to say we must give up our quest
-			but that it's taken up much of our lives
-			blindly searching for Indianus and
-			we still have nothing to show for our search.
-			It would be folly to ignore the great
-			diversity of experiences
-			available to us in mortal life.
-			So while you bravely continue your search
-			I will being an amorous search o'my own.")
+	format("Oh {PLAYER}! It seems like so much time has passed"
+			"since we set out together on the road."
+			"Across the land, beneath the hills, in caves"
+			"across the bitter deserted wasteland,"
+			"and now out on our own as graduates"
+			"from Ardens School. Now I begin to feel"
+			"the constant click of time grinding the gears"
+			"of my youthful beauty approaching its"
+			"inevitable end. I think it's time"
+			"to settle down and find a good husband."
+			"Though not to say we must give up our quest"
+			"but that it's taken up much of our lives"
+			"blindly searching for Indianus and"
+			"we still have nothing to show for our search."
+			"It would be folly to ignore the great"
+			"diversity of experiences"
+			"available to us in mortal life."
+			"So while you bravely continue your search"
+			"I will being an amorous search o'my own.")
 }
 
 text Palmae_RentalHouse_Text_Leaf3 {
-	format("What's that? You say you've found Indianus!
-			My goodness, {PLAYER}, that's just spectacular.
-			Tell me, has he agreed to help save Mew?
-			...You must be joking. He never said that!")
+	format("What's that? You say you've found Indianus!"
+			"My goodness, {PLAYER}, that's just spectacular."
+			"Tell me, has he agreed to help save Mew?"
+			"...You must be joking. He never said that!")
 }
 
 text Palmae_RentalHouse_Text_Leaf4 {
-	format("I'm sorry {PLAYER} but you're like my brother!
-			I've known you since we both were little kids
-			and loving you like that would just feel wrong.
-			Besides, you're not my type, I only like
-			the hot bad boys with six figure wallets
-			who shower me with tokens of their love.")
+	format("I'm sorry {PLAYER} but you're like my brother!"
+			"I've known you since we both were little kids"
+			"and loving you like that would just feel wrong."
+			"Besides, you're not my type, I only like"
+			"the hot bad boys with six figure wallets"
+			"who shower me with tokens of their love.")
 }
 
 text Palmae_RentalHouse_Text_Leaf5 {
-	format("Hello again there, {PLAYER}, how goes your search
-			for a girlfriend. I know you'll find the one!
-			What's that? No dude I don't like you like that!")
+	format("Hello again there, {PLAYER}, how goes your search"
+			"for a girlfriend. I know you'll find the one!"
+			"What's that? No dude I don't like you like that!")
 }
 
 text Palmae_RentalHouse_Text_LeafTattooDesire {
-	format("I want a man who's tall, dark, and handsome,
-            a rugged badboy who does what he wants,
-            someone I'm scared to bring around my dad.")
+	format("I want a man who's tall, dark, and handsome,"
+            "a rugged badboy who does what he wants,"
+            "someone I'm scared to bring around my dad.")
 }
 
 text Palmae_RentalHouse_Text_LeafRichDesire {
-	format("I need a man who has enough money
-            to fully support my lavish lifestyle,
-            his bank account needs to have six figures.")
+	format("I need a man who has enough money"
+            "to fully support my lavish lifestyle,"
+            "his bank account needs to have six figures.")
 }
 
 text Palmae_RentalHouse_Text_LeafTokenDesire {
-	format("Of course my man needs to show me he cares
-            by bringing me the most extravagent
-            tokens of love, even when I don't ask.")
+	format("Of course my man needs to show me he cares"
+            "by bringing me the most extravagent"
+            "tokens of love, even when I don't ask.")
 }
 
 text Palmae_RentalHouse_Text_LeafTattooSatisfy {
-	format("Oh my! Is that a tattoo you have {PLAYER}?
-            I never knew you were such a badboy!")
+	format("Oh my! Is that a tattoo you have {PLAYER}?"
+            "I never knew you were such a badboy!")
 }
 
 text Palmae_RentalHouse_Text_LeafRichSatisfy {
-	format("Oh {PLAYER}! I see your bank account has six
-            figures! I never knew you were so rich!")
+	format("Oh {PLAYER}! I see your bank account has six"
+            "figures! I never knew you were so rich!")
 }
 
 text Palmae_RentalHouse_Text_LeafTokenSatisfy {
-	format("Is that a real heart scale? That's a lovely
-            token of honest love. Wow! How sweet {PLAYER}!")
+	format("Is that a real heart scale? That's a lovely"
+            "token of honest love. Wow! How sweet {PLAYER}!")
 }
 
 text Palmae_RentalHouse_Text_LeafFriendZone {
-	format("Apologies, but {PLAYER} you're more like my
-            little brother, not my unfound lover.
-            I know Indianus told you to find
-            a girlfriend before he would help save Mew
-            but I must not betray my virgin heart
-            and feign love for one I don't truly love.
-            Both from respect for you and faith to my
-            honest proclivity for certain types
-            of men. I'm sure you'll find a girlfriend soon!
-            She's out there! Go find her and let's save Mew!")
+	format("I'm sorry {PLAYER}, but to me you're more like"
+            "a little brother, not my next lover."
+            "I know Indianus told you to find"
+            "a girlfriend before he would help save Mew"
+            "but I cannot betray my virgin heart"
+            "and feign love for one I don't truly love."
+            "Both from respect for you and faith to my"
+            "honest proclivity for certain types"
+            "of men. I'm sure you'll find a girlfriend soon!"
+            "She's out there! Go find her and let's save Mew!")
 }
 
 text Palmae_RentalHouse_Text_Leaf6 {
-	format("My {PLAYER}... how much you have grown in my eye!
-            No longer do I see that little boy
-            picking boogers and playing hide and seek
-            but a handsome, wealthy, and full grown man
-            equipped with all necessary virtues
-            to satisfy, provide for, and obtain
-            the willful love of woman such as I.
-            Desire has ignited in my heart
-            to hold you, and be held, to know I am
-            the only one for you, that I'm enough
-            to fulfill and complete your bachelor's life.
-            My cheeks are burned with blush, a trmble siezed
-            my fragile, dainty hands, my breath is choked
-            and nervousness erupts as I admit
-            both to myself and to the one I love
-            that you're the one I want, {PLAYER}. You're the one...")
+	format("My {PLAYER}... how much you have grown in my eye!"
+            "No longer do I see that little boy"
+            "picking boogers and playing hide and seek"
+            "but a handsome, wealthy, and full grown man"
+            "equipped with all necessary virtues"
+            "to satisfy, provide for, and obtain"
+            "the willful love of woman such as I."
+            "Desire has ignited in my heart"
+            "to hold you, and be held, to know I am"
+            "the only one for you, that I'm enough"
+            "to fulfill and complete your bachelor's life."
+            "My cheeks are burned with blush, a trmble siezed"
+            "my fragile, dainty hands, my breath is choked"
+            "and nervousness erupts as I admit"
+            "both to myself and to the one I love"
+            "that you're the one I want, {PLAYER}. You're the one...")
 }
 
 text Palmae_RentalHouse_Text_Leaf7 {
-	format("I accept this heart scale as token of
-            your precious love promised only to me
-            and in return I promise to wear it
-            around my neck as a collar, or yoke,
-            and swear ever to honor and respect
-            you as my lord and man. I will cherish
-			you and love you and think of you
-			only in sickness, health, in life, in death,
-			forever. You and I are joined as one.
-			Allow me to consumate our union.
-			Close your eyes, {PLAYER}, relax. {LEAF} loves you.")
+	format("I accept this heart scale as token of"
+            "your precious love promised only to me"
+            "and in return I promise to wear it"
+            "around my neck as a collar, or yoke,"
+            "and swear ever to honor and respect"
+            "you as my lord and man. I will cherish"
+			"you and love you and think of you"
+			"only in sickness, health, in life, in death,"
+			"forever. You and I are joined as one."
+			"Allow me to consumate our union."
+			"Close your eyes, {PLAYER}, relax. {LEAF} loves you.")
 }
 
 text Palmae_RentalHouse_Text_Leaf8 {
-	format("Teehee!
-			Now that we're official I think we should
-			enjoy a honeymoon. Indianus
-			and Mew can wait. We ought to celebrate
-			our new relationship the proper way.
-			I know! Let's go take suring lessons in
-			Tranquilitas! The beach is romantic
-			and there's a surfing school with a special
-			for new couples. Let's go! I'll meet you there!")
+	format("Teehee!"
+			"Now that we're official I think we should"
+			"enjoy a honeymoon. Indianus"
+			"and Mew can wait. We ought to celebrate"
+			"our new relationship the proper way."
+			"I know! Let's go take suring lessons in"
+			"Tranquilitas! The beach is romantic"
+			"and there's a surfing school with a special"
+			"for new couples. Let's go! I'll meet you there!")
 }
 
 text Palmae_RentalHouse_Text_GaveHeartScale {

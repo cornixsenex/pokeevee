@@ -410,17 +410,17 @@ script MareS7_Script_HidePrisoners {
     return
 }
 text MareS7_Text_Penelope1 {
-    format("What ever shall I do? My poor husband,
-            the resourceful and brilliant Ulysses,
-            has gone insane! Look how he wanders round
-            without sense while Tauros destroy our fields!")
+    format("What ever shall I do? My poor husband,"
+            "the resourceful and brilliant Ulysses,"
+            "has gone insane! Look how he wanders round"
+            "without sense while Tauros destroy our fields!")
 }
 
 text MareS7_Text_Penelope2 {
-    format("I'm so sorry but I must ask you to
-            respect our privacy during this time
-            of tragedy. Please leave, my husband is
-            not well. Curse the madness of Ulysses!")
+    format("I'm so sorry but I must ask you to"
+            "respect our privacy during this time"
+            "of tragedy. Please leave, my husband is"
+            "not well. Curse the madness of Ulysses!")
 }
 
 text MareS7_Text_UlyssesMadness6 {
@@ -456,18 +456,18 @@ text MareS7_Text_UlyssesSaveTelemachus1 {
 }
 
 text MareS7_Text_UlyssesSaveTelemachus2 {
-    format("My darling son, are you OK? You're not
-            injured? That was nearly catastrophe!")
+    format("My darling son, are you OK? You're not"
+            "injured? That was nearly catastrophe!")
 }
 
 text MareS7_Text_UlyssesSaveTelemachus3 {
-    format("Oh! Hello...uhh I uhh...didn't see you there. Wow! I uhh.. I'm feeling just like myself again! Yeah, that's right!
-            I've been miraculously healed of my
-            former condition, now I'm thinking straight
-            and seeing clearly. Praise to the divine!
-            But where are my manners, you are our guest
-            on out family home, Isla Ithaca.
-            We should all head inside. Please, come with me.")
+    format("Oh! Hello...uhh I uhh...didn't see you there. Wow! I uhh.. I'm feeling just like myself again! Yeah, that's right!"
+            "I've been miraculously healed of my"
+            "former condition, now I'm thinking straight"
+            "and seeing clearly. Praise to the divine!"
+            "But where are my manners, you are our guest"
+            "on out family home, Isla Ithaca."
+            "We should all head inside. Please, come with me.")
 }
 
 text MareS7_Text_PolyphemusBeforeUlysses {
@@ -495,11 +495,11 @@ text MareS7_Text_PolyphemusLotus1 {
 }
 
 text MareS7_Text_UlyssesAfterPolyphemus {
-    format("That was a close one, but thanks to you {PLAYER}
-			I've managed to escape the jaws of death
-			and free myself from Polyphemus' pen.
-			I must depart and, with haste, make for the
-			house of Nestor, where I am expected.")
+    format("That was a close one, but thanks to you {PLAYER}"
+			"I've managed to escape the jaws of death"
+			"and free myself from Polyphemus' pen."
+			"I must depart and, with haste, make for the"
+			"house of Nestor, where I am expected.")
 }
 
 text MareS7_Text_PolyphemusDancing {
