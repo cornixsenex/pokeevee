@@ -33,10 +33,10 @@
     .itemSlots = gSaveBlock1Ptr->pcItems,   \
 }
 
-static bool32 CheckPyramidBagHasItem(u16 itemId, u16 count);
-static bool32 CheckPyramidBagHasSpace(u16 itemId, u16 count);
-static const u8 *GetItemPluralName(u16);
-static bool32 DoesItemHavePluralName(u16);
+static bool32 CheckPyramidBagHasItem(enum Item itemId, u16 count);
+static bool32 CheckPyramidBagHasSpace(enum Item itemId, u16 count);
+static const u8 *GetItemPluralName(enum Item);
+static bool32 DoesItemHavePluralName(enum Item);
 static void NONNULL BagPocket_CompactItems(struct BagPocket *pocket);
 
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
@@ -136,7 +136,7 @@ void NONNULL BagPocket_SetSlotData(struct BagPocket *pocket, u32 pocketPos, stru
 void ApplyNewEncryptionKeyToBagItems(u32 newKey)
 {
     enum Pocket pocketId;
-    u32 item;
+    enum Item item;
     for (pocketId = 0; pocketId < POCKETS_COUNT; pocketId++)
     {
         for (item = 0; item < gBagPockets[pocketId].capacity; item++)
@@ -167,14 +167,14 @@ void SetBagItemsPointers(void)
     gBagPockets[POCKET_BERRIES].id = POCKET_BERRIES;
 }
 
-u8 *CopyItemName(u16 itemId, u8 *dst)
+u8 *CopyItemName(enum Item itemId, u8 *dst)
 {
     return StringCopy(dst, GetItemName(itemId));
 }
 
 const u8 sText_s[] =_("s");
 
-u8 *CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity)
+u8 *CopyItemNameHandlePlural(enum Item itemId, u8 *dst, u32 quantity)
 {
 //    u8 *end = StringCopy(dst, ItemId_GetName(itemId)) - 1;
 //    if (quantity < 2)
@@ -208,7 +208,7 @@ bool32 IsBagPocketNonEmpty(enum Pocket pocketId)
     return FALSE;
 }
 
-static bool32 NONNULL BagPocket_CheckHasItem(struct BagPocket *pocket, u16 itemId, u16 count)
+static bool32 NONNULL BagPocket_CheckHasItem(struct BagPocket *pocket, enum Item itemId, u16 count)
 {
     struct ItemSlot tempItem;
 
@@ -223,7 +223,7 @@ static bool32 NONNULL BagPocket_CheckHasItem(struct BagPocket *pocket, u16 itemI
     return count == 0;
 }
 
-bool32 CheckBagHasItem(u16 itemId, u16 count)
+bool32 CheckBagHasItem(enum Item itemId, u16 count)
 {
     if (GetItemPocket(itemId) >= POCKETS_COUNT)
         return FALSE;
@@ -247,13 +247,13 @@ bool32 HasAtLeastOnePokeBall(void)
 {
     for (enum PokeBall ballId = BALL_STRANGE; ballId < POKEBALL_COUNT; ballId++)
     {
-        if (CheckBagHasItem(gBallItemIds[ballId], 1) == TRUE)
+        if (CheckBagHasItem(gPokeBalls[ballId].itemId, 1) == TRUE)
             return TRUE;
     }
     return FALSE;
 }
 
-bool32 CheckBagHasSpace(u16 itemId, u16 count)
+bool32 CheckBagHasSpace(enum Item itemId, u16 count)
 {
     if (GetItemPocket(itemId) >= POCKETS_COUNT)
         return FALSE;
@@ -264,7 +264,7 @@ bool32 CheckBagHasSpace(u16 itemId, u16 count)
     return GetFreeSpaceForItemInBag(itemId) >= count;
 }
 
-static u32 NONNULL BagPocket_GetFreeSpaceForItem(struct BagPocket *pocket, u16 itemId)
+static u32 NONNULL BagPocket_GetFreeSpaceForItem(struct BagPocket *pocket, enum Item itemId)
 {
     u32 spaceForItem = 0;
     struct ItemSlot tempItem;
@@ -280,7 +280,7 @@ static u32 NONNULL BagPocket_GetFreeSpaceForItem(struct BagPocket *pocket, u16 i
     return spaceForItem;
 }
 
-u32 GetFreeSpaceForItemInBag(u16 itemId)
+u32 GetFreeSpaceForItemInBag(enum Item itemId)
 {
     if (GetItemPocket(itemId) >= POCKETS_COUNT)
         return 0;
@@ -288,7 +288,7 @@ u32 GetFreeSpaceForItemInBag(u16 itemId)
     return BagPocket_GetFreeSpaceForItem(&gBagPockets[GetItemPocket(itemId)], itemId);
 }
 
-static inline bool32 NONNULL CheckSlotAndUpdateCount(struct BagPocket *pocket, u16 itemId, u32 pocketPos, u32 *nextPocketPos, u16 *count, u16 *tempPocketSlotQuantities)
+static inline bool32 NONNULL CheckSlotAndUpdateCount(struct BagPocket *pocket, enum Item itemId, u32 pocketPos, u32 *nextPocketPos, u16 *count, u16 *tempPocketSlotQuantities)
 {
     struct ItemSlot tempItem = BagPocket_GetSlotData(pocket, pocketPos);
     if (tempItem.itemId == ITEM_NONE || tempItem.itemId == itemId)
@@ -311,7 +311,7 @@ static inline bool32 NONNULL CheckSlotAndUpdateCount(struct BagPocket *pocket, u
     return FALSE;
 }
 
-static bool32 NONNULL BagPocket_AddItem(struct BagPocket *pocket, u16 itemId, u16 count)
+static bool32 NONNULL BagPocket_AddItem(struct BagPocket *pocket, enum Item itemId, u16 count)
 {
     u32 itemLookupIndex, itemAddIndex = 0;
 
@@ -353,7 +353,7 @@ static bool32 NONNULL BagPocket_AddItem(struct BagPocket *pocket, u16 itemId, u1
     return count == 0;
 }
 
-bool32 AddBagItem(u16 itemId, u16 count)
+bool32 AddBagItem(enum Item itemId, u16 count)
 {
     if (GetItemPocket(itemId) >= POCKETS_COUNT)
         return FALSE;
@@ -365,7 +365,7 @@ bool32 AddBagItem(u16 itemId, u16 count)
     return BagPocket_AddItem(&gBagPockets[GetItemPocket(itemId)], itemId, count);
 }
 
-static bool32 NONNULL BagPocket_RemoveItem(struct BagPocket *pocket, u16 itemId, u16 count)
+static bool32 NONNULL BagPocket_RemoveItem(struct BagPocket *pocket, enum Item itemId, u16 count)
 {
     u32 itemLookupIndex, itemRemoveIndex = 0, totalQuantity = 0;
     struct ItemSlot tempItem;
@@ -409,7 +409,7 @@ static bool32 NONNULL BagPocket_RemoveItem(struct BagPocket *pocket, u16 itemId,
     return totalQuantity >= count;
 }
 
-bool32 RemoveBagItem(u16 itemId, u16 count)
+bool32 RemoveBagItem(enum Item itemId, u16 count)
 {
     if (GetItemPocket(itemId) >= POCKETS_COUNT || itemId == ITEM_NONE)
         return FALSE;
@@ -446,7 +446,7 @@ u8 CountUsedPCItemSlots(void)
     return BagPocket_CountUsedItemSlots(&dummyPocket);
 }
 
-static bool32 NONNULL BagPocket_CheckPocketForItemCount(struct BagPocket *pocket, u16 itemId, u16 count)
+static bool32 NONNULL BagPocket_CheckPocketForItemCount(struct BagPocket *pocket, enum Item itemId, u16 count)
 {
     struct ItemSlot tempItem;
 
@@ -459,13 +459,13 @@ static bool32 NONNULL BagPocket_CheckPocketForItemCount(struct BagPocket *pocket
     return FALSE;
 }
 
-bool32 CheckPCHasItem(u16 itemId, u16 count)
+bool32 CheckPCHasItem(enum Item itemId, u16 count)
 {
     struct BagPocket dummyPocket = DUMMY_PC_BAG_POCKET;
     return BagPocket_CheckPocketForItemCount(&dummyPocket, itemId, count);
 }
 
-bool32 AddPCItem(u16 itemId, u16 count)
+bool32 AddPCItem(enum Item itemId, u16 count)
 {
     struct BagPocket dummyPocket = DUMMY_PC_BAG_POCKET;
     return BagPocket_AddItem(&dummyPocket, itemId, count);
@@ -566,7 +566,7 @@ void ClearBag(void)
     CpuFastFill(0, &gSaveBlock1Ptr->bag, sizeof(struct Bag));
 }
 
-static inline u16 NONNULL BagPocket_CountTotalItemQuantity(struct BagPocket *pocket, u16 itemId)
+static inline u16 NONNULL BagPocket_CountTotalItemQuantity(struct BagPocket *pocket, enum Item itemId)
 {
     u32 ownedCount = 0;
     struct ItemSlot tempItem;
@@ -581,12 +581,12 @@ static inline u16 NONNULL BagPocket_CountTotalItemQuantity(struct BagPocket *poc
     return ownedCount;
 }
 
-u16 CountTotalItemQuantityInBag(u16 itemId)
+u16 CountTotalItemQuantityInBag(enum Item itemId)
 {
     return BagPocket_CountTotalItemQuantity(&gBagPockets[GetItemPocket(itemId)], itemId);
 }
 
-static bool32 CheckPyramidBagHasItem(u16 itemId, u16 count)
+static bool32 CheckPyramidBagHasItem(enum Item itemId, u16 count)
 {
     u8 i;
     u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
@@ -612,7 +612,7 @@ static bool32 CheckPyramidBagHasItem(u16 itemId, u16 count)
     return FALSE;
 }
 
-static bool32 CheckPyramidBagHasSpace(u16 itemId, u16 count)
+static bool32 CheckPyramidBagHasSpace(enum Item itemId, u16 count)
 {
     u8 i;
     u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
@@ -638,7 +638,7 @@ static bool32 CheckPyramidBagHasSpace(u16 itemId, u16 count)
     return FALSE;
 }
 
-bool32 AddPyramidBagItem(u16 itemId, u16 count)
+bool32 AddPyramidBagItem(enum Item itemId, u16 count)
 {
     u16 i;
 
@@ -716,7 +716,7 @@ bool32 AddPyramidBagItem(u16 itemId, u16 count)
     }
 }
 
-bool32 RemovePyramidBagItem(u16 itemId, u16 count)
+bool32 RemovePyramidBagItem(enum Item itemId, u16 count)
 {
     u16 i;
 
@@ -787,37 +787,39 @@ bool32 RemovePyramidBagItem(u16 itemId, u16 count)
     }
 }
 
-static u16 SanitizeItemId(u16 itemId)
+static u16 SanitizeItemId(enum Item itemId)
 {
-    if (itemId >= ITEMS_COUNT)
+    assertf(itemId < ITEMS_COUNT, "invalid item: %d", itemId)
+    {
         return ITEM_NONE;
-    else
-        return itemId;
+    }
+
+    return itemId;
 }
 
-const u8 *GetItemName(u16 itemId)
+const u8 *GetItemName(enum Item itemId)
 {
     const u8 *name = gItemsInfo[SanitizeItemId(itemId)].name;
 
     return name == NULL ? gQuestionMarksItemName : name;
 }
 
-u32 GetItemPrice(u16 itemId)
+u32 GetItemPrice(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].price;
 }
 
-static bool32 DoesItemHavePluralName(u16 itemId)
+static bool32 DoesItemHavePluralName(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].pluralName != NULL;
 }
 
-static const u8 *GetItemPluralName(u16 itemId)
+static const u8 *GetItemPluralName(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].pluralName;
 }
 
-const u8 *GetItemEffect(u32 itemId)
+const u8 *GetItemEffect(enum Item itemId)
 {
     if (itemId == ITEM_ENIGMA_BERRY_E_READER)
     #if FREE_ENIGMA_BERRY == FALSE
@@ -829,50 +831,50 @@ const u8 *GetItemEffect(u32 itemId)
         return gItemsInfo[SanitizeItemId(itemId)].effect;
 }
 
-enum HoldEffect GetItemHoldEffect(u32 itemId)
+enum HoldEffect GetItemHoldEffect(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].holdEffect;
 }
 
-u32 GetItemHoldEffectParam(u32 itemId)
+u32 GetItemHoldEffectParam(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].holdEffectParam;
 }
 
-const u8 *GetItemDescription(u16 itemId)
+const u8 *GetItemDescription(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].description;
 }
 
-u8 GetItemImportance(u16 itemId)
+u8 GetItemImportance(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].importance;
 }
 
-u8 GetItemConsumability(u16 itemId)
+u8 GetItemConsumability(enum Item itemId)
 {
     return !gItemsInfo[SanitizeItemId(itemId)].notConsumed;
 }
 
-enum Pocket GetItemPocket(u16 itemId)
+enum Pocket GetItemPocket(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].pocket;
 }
 
-u8 GetItemType(u16 itemId)
+enum ItemType GetItemType(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].type;
 }
 
-ItemUseFunc GetItemFieldFunc(u16 itemId)
+ItemUseFunc GetItemFieldFunc(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].fieldUseFunc;
 }
 
 // Returns an item's battle effect script ID.
-u8 GetItemBattleUsage(u16 itemId)
+enum EffectItem GetItemBattleUsage(enum Item itemId)
 {
-    u16 item = SanitizeItemId(itemId);
+    enum Item item = SanitizeItemId(itemId);
     // Handle E-Reader berries.
     if (item == ITEM_ENIGMA_BERRY_E_READER)
     {
@@ -901,17 +903,22 @@ u8 GetItemBattleUsage(u16 itemId)
         return gItemsInfo[item].battleUsage;
 }
 
-u32 GetItemSecondaryId(u32 itemId)
+u32 GetItemSecondaryId(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].secondaryId;
 }
 
-u32 GetItemFlingPower(u32 itemId)
+u32 GetItemFlingPower(enum Item itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].flingPower;
 }
 
+<<<<<<< HEAD
 u32 GetItemStatus1Mask(u16 itemId)
+=======
+
+u32 GetItemStatus1Mask(enum Item itemId)
+>>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     const u8 *effect = GetItemEffect(itemId);
     switch (effect[3])
@@ -919,7 +926,7 @@ u32 GetItemStatus1Mask(u16 itemId)
         case ITEM3_PARALYSIS:
             return STATUS1_PARALYSIS;
         case ITEM3_FREEZE:
-            return STATUS1_FREEZE | STATUS1_FROSTBITE;
+            return STATUS1_ICY_ANY;
         case ITEM3_BURN:
             return STATUS1_BURN;
         case ITEM3_POISON:
@@ -932,7 +939,7 @@ u32 GetItemStatus1Mask(u16 itemId)
     return 0;
 }
 
-bool32 ItemHasVolatileFlag(u16 itemId, enum Volatile _volatile)
+bool32 ItemHasVolatileFlag(enum Item itemId, enum Volatile _volatile)
 {
     const u8 *effect = GetItemEffect(itemId);
     switch (_volatile)
@@ -946,7 +953,7 @@ bool32 ItemHasVolatileFlag(u16 itemId, enum Volatile _volatile)
     }
 }
 
-u32 GetItemSellPrice(u32 itemId)
+u32 GetItemSellPrice(enum Item itemId)
 {
     return GetItemPrice(itemId) / ITEM_SELL_FACTOR;
 }

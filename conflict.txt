@@ -1,5 +1,98 @@
-CONFLICT (modify/delete): include/constants/script_commands.h deleted in 2d17ad27f921ebda03ad35e8dd00d40b6ac29114 and modified in HEAD.  Version HEAD of include/constants/script_commands.h left in tree.
-	>just deleted check compile
-!CONFLICT (content): Merge conflict in src/field_player_avatar.c
-	>check it compiles extremely ugly line
-	>static const struct __atribute__((packed)) lmfao just copy rhh if no compile
+#CONFLICT (content): Merge conflict in Makefile
+	>poryscript
+#CONFLICT (content): Merge conflict in data/battle_anim_scripts.s
+	>checkout rhh - idk why there was any differences
+#CONFLICT (content): Merge conflict in data/battle_scripts_1.s
+	>checkout rhh upstream
+#CONFLICT (content): Merge conflict in data/maps/BattleFrontier_BattlePyramidTop/scripts.inc
+	>comment out unused facility trainer battle
+#CONFLICT (content): Merge conflict in data/maps/BattleFrontier_Lounge6/scripts.inc
+	>removed FLAG_BATTLE_FRONTIER_TRADE_DONE
+#CONFLICT (content): Merge conflict in data/maps/FortreeCity_House1/scripts.inc
+	>remove FLAG_FORTREE_NPC_TRADE_COMPLETED
+#CONFLICT (content): Merge conflict in data/maps/PacifidlogTown_House3/scripts.inc
+	>Remove flag
+#CONFLICT (content): Merge conflict in data/maps/RustboroCity_House1/scripts.inc
+	>remove flag
+#CONFLICT (content): Merge conflict in include/battle.h
+	>upstream, no cornix commits
+#CONFLICT (content): Merge conflict in include/battle_util.h
+	>upstream, no cornix commits
+#CONFLICT (content): Merge conflict in include/config/overworld.h
+	>config
+#CONFLICT (content): Merge conflict in include/constants/battle_frontier.h
+	>match upstream
+#CONFLICT (content): Merge conflict in include/constants/expansion.h
+#CONFLICT (content): Merge conflict in include/constants/generational_changes.h
+	>rhh upstream
+#CONFLICT (content): Merge conflict in include/constants/global.h
+#CONFLICT (content): Merge conflict in include/constants/items.h
+	>Items moved from defines to enums
+#CONFLICT (content): Merge conflict in include/constants/pokemon.h
+	>match upstream
+#CONFLICT (content): Merge conflict in include/constants/trainers.h
+	>TRAINER_PIC_X moved to enum from macro
+#CONFLICT (content): Merge conflict in include/event_object_movement.h
+	>direction from u8 to enum
+#CONFLICT (content): Merge conflict in include/event_scripts.h
+	>rhh
+#CONFLICT (content): Merge conflict in include/field_effect_helpers.h
+#CONFLICT (content): Merge conflict in include/strings.h
+	>remove unused strings
+#CONFLICT (content): Merge conflict in include/test/battle.h
+	>rhh
+#CONFLICT (content): Merge conflict in src/battle_ai_main.c
+#CONFLICT (content): Merge conflict in src/battle_ai_switch.c
+#CONFLICT (content): Merge conflict in src/battle_ai_util.c
+#CONFLICT (content): Merge conflict in src/battle_anim_dark.c
+#CONFLICT (content): Merge conflict in src/battle_anim_effects_1.c
+#CONFLICT (content): Merge conflict in src/battle_anim_normal.c
+#CONFLICT (content): Merge conflict in src/battle_controller_player.c
+#CONFLICT (content): Merge conflict in src/battle_controller_player_partner.c
+#CONFLICT (content): Merge conflict in src/battle_controller_recorded_partner.c
+#CONFLICT (content): Merge conflict in src/battle_controllers.c
+#CONFLICT (content): Merge conflict in src/battle_end_turn.c
+#CONFLICT (content): Merge conflict in src/battle_hold_effects.c
+
+WIP HERE
+!CONFLICT (content): Merge conflict in src/battle_main.c
+	>New Classes!
+
+DID YOU START ABOVE??
+CONFLICT (content): Merge conflict in src/battle_script_commands.c
+CONFLICT (content): Merge conflict in src/battle_tower.c
+CONFLICT (content): Merge conflict in src/battle_util.c
+CONFLICT (content): Merge conflict in src/bike.c
+CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
+CONFLICT (content): Merge conflict in src/data/items.h
+CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
+CONFLICT (content): Merge conflict in src/debug.c
+CONFLICT (content): Merge conflict in src/event_object_movement.c
+CONFLICT (content): Merge conflict in src/field_control_avatar.c
+CONFLICT (content): Merge conflict in src/field_player_avatar.c
+CONFLICT (content): Merge conflict in src/field_specials.c
+CONFLICT (content): Merge conflict in src/fishing.c
+CONFLICT (content): Merge conflict in src/generational_changes.c
+CONFLICT (content): Merge conflict in src/item.c
+CONFLICT (content): Merge conflict in src/main_menu.c
+CONFLICT (content): Merge conflict in src/match_call.c
+CONFLICT (content): Merge conflict in src/naming_screen.c
+CONFLICT (content): Merge conflict in src/party_menu.c
+CONFLICT (content): Merge conflict in src/pokemon.c
+CONFLICT (content): Merge conflict in src/pokemon_icon.c
+CONFLICT (content): Merge conflict in src/scrcmd.c
+CONFLICT (content): Merge conflict in src/strings.c
+CONFLICT (content): Merge conflict in test/battle/ability/commander.c
+CONFLICT (content): Merge conflict in test/battle/ability/dazzling.c
+CONFLICT (content): Merge conflict in test/battle/move_effect/defog.c
+CONFLICT (content): Merge conflict in test/battle/move_effect/powder.c
+CONFLICT (content): Merge conflict in test/battle/move_effect/protect.c
+CONFLICT (modify/delete): test/battle/move_effect/psyblade.c deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of test/battle/move_effect/psyblade.c left in tree.
+CONFLICT (modify/delete): test/battle/move_effect/sheer_cold.c deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of test/battle/move_effect/sheer_cold.c left in tree.
+CONFLICT (content): Merge conflict in test/battle/spread_moves.c
+CONFLICT (content): Merge conflict in test/battle/trainer_slides.c
+warning: Cannot merge binary files: tools/aif2pcm/aif2pcm (HEAD vs. e80ae569039786564381723fca22aac07afc3503)
+CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
+
+>Aedes terra boulder puzzle
+>Ulysses Tauros functionality
