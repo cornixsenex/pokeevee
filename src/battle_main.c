@@ -590,24 +590,11 @@ static void CB2_InitBattleInternal(void)
         TryFormChange(i, B_SIDE_PLAYER, FORM_CHANGE_BEGIN_BATTLE);
         TryFormChange(i, B_SIDE_OPPONENT, FORM_CHANGE_BEGIN_BATTLE);
     }
-<<<<<<< HEAD
-    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
-    {
-        TryFormChange(0, B_SIDE_OPPONENT, FORM_CHANGE_BEGIN_WILD_ENCOUNTER);
-        TryFormChange(1, B_SIDE_OPPONENT, FORM_CHANGE_BEGIN_WILD_ENCOUNTER);// Only tries to change the first two opposing slots, assuming these are the only ones occupied in a wild battle.
-    }
-    if (TESTING)
-    {
-        gPlayerPartyCount = CalculatePartyCount(gPlayerParty);
-        gEnemyPartyCount = CalculatePartyCount(gEnemyParty);
-    }
-=======
 
     #if TESTING
     gPlayerPartyCount = CalculatePartyCount(gPlayerParty);
     gEnemyPartyCount = CalculatePartyCount(gEnemyParty);
     #endif
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 
     gBattleCommunication[MULTIUSE_STATE] = 0;
 }
@@ -3092,14 +3079,8 @@ static void ClearSetBScriptingStruct(void)
     gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
     #if TESTING
         gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
-<<<<<<< HEAD
-    else
-        gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
-    gBattleScripting.expOnCatch = (GetConfig(B_EXP_CATCH) >= GEN_6);
-=======
     #endif
     gBattleScripting.expOnCatch = (GetConfig(CONFIG_EXP_CATCH) >= GEN_6);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
     gBattleScripting.specialTrainerBattleType = specialBattleType;
 }
 
@@ -3235,13 +3216,9 @@ void SwitchInClearSetData(enum BattlerId battler, struct Volatiles *volatilesCop
             gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
         for (enum BattlerId i = 0; i < gBattlersCount; i++)
         {
-<<<<<<< HEAD
-            if (gBattleMons[i].volatiles.lockOn && gDisableStructs[i].battlerWithSureHit == battler)
-=======
             if (gBattleMons[i].volatiles.escapePrevention && gBattleMons[i].volatiles.battlerPreventingEscape == battler)
                 gBattleMons[i].volatiles.escapePrevention = FALSE;
             if (gBattleMons[i].volatiles.lockOn && gBattleMons[i].volatiles.battlerWithSureHit == battler)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
             {
                 gBattleMons[i].volatiles.lockOn = 0;
                 gBattleMons[i].volatiles.battlerWithSureHit = 0;
@@ -3449,14 +3426,7 @@ const u8* FaintClearSetData(enum BattlerId battler)
 
     if (gBattleStruct->battlerState[battler].commanderSpecies != SPECIES_NONE)
     {
-<<<<<<< HEAD
-        u32 partner = BATTLE_PARTNER(battler);
-        // Clear commander state immediately so a replacement doesn't inherit it.
-        gBattleStruct->battlerState[battler].commanderSpecies = SPECIES_NONE;
-        gBattleMons[partner].volatiles.semiInvulnerable = STATE_NONE;
-=======
         enum BattlerId partner = BATTLE_PARTNER(battler);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
         if (IsBattlerAlive(partner))
         {
             BtlController_EmitSpriteInvisibility(partner, B_COMM_TO_CONTROLLER, FALSE);
@@ -3935,73 +3905,9 @@ static void TryDoEventsBeforeFirstTurn(void)
         BattleScriptPushCursorAndCallback(BattleScript_FirstTurnSwitchInEvents);
         gBattleStruct->eventState.beforeFirstTurn++;
         break;
-<<<<<<< HEAD
-    case FIRST_TURN_EVENTS_SWITCH_IN_ABILITIES:
-        while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
-        {
-            u32 battler = gBattlerByTurnOrder[gBattleStruct->switchInBattlerCounter++];
-
-            if (TryPrimalReversion(battler))
-                return;
-            if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0, 0))
-                return;
-            if (TryClearIllusion(battler, ABILITYEFFECT_ON_SWITCHIN))
-                return;
-            if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN_IMMUNITIES, battler, 0, 0, 0) != 0)
-                return;
-        }
-        gBattleStruct->switchInBattlerCounter = 0;
-        gBattleStruct->eventState.beforeFirstTurn++;
-        break;
-    case FIRST_TURN_EVENTS_ITEM_EFFECTS:
-        while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
-        {
-            u32 battler = gBattlerByTurnOrder[gBattleStruct->switchInBattlerCounter++];
-            gBattlerAttacker = battler;
-            if (ItemBattleEffects(battler, 0, GetBattlerHoldEffect(battler), IsOnSwitchInFirstTurnActivation))
-                return;
-        }
-        gBattleStruct->switchInBattlerCounter = 0;
-        gBattleStruct->eventState.beforeFirstTurn++;
-        break;
-    case FIRST_TURN_EVENTS_WHITE_HERB:
-        while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
-        {
-            u32 battler = gBattlerByTurnOrder[gBattleStruct->switchInBattlerCounter++];
-            if (ItemBattleEffects(battler, 0, GetBattlerHoldEffect(battler), IsWhiteHerbFirstTurnActivation))
-                return;
-        }
-        gBattleStruct->switchInBattlerCounter = 0;
-        gBattleStruct->eventState.beforeFirstTurn++;
-        break;
-    case FIRST_TURN_EVENTS_OPPORTUNIST:
-        while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
-        {
-            u32 battler = gBattlerByTurnOrder[gBattleStruct->switchInBattlerCounter++];
-            if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST_FIRST_TURN, battler, GetBattlerAbility(battler), 0, 0))
-                return;
-        }
-        gBattleStruct->switchInBattlerCounter = 0;
-        gBattleStruct->eventState.beforeFirstTurn++;
-        break;
-    case FIRST_TURN_EVENTS_MIRROR_HERB:
-        while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
-        {
-            u32 battler = gBattlerByTurnOrder[gBattleStruct->switchInBattlerCounter++];
-            if (ItemBattleEffects(battler, 0, GetBattlerHoldEffect(battler), IsMirrorHerbFirstTurnActivation))
-                return;
-        }
-        gBattleStruct->switchInBattlerCounter = 0;
-        gBattleStruct->eventState.beforeFirstTurn++;
-        break;
-    case FIRST_TURN_EVENTS_EJECT_PACK:
-        gBattleStruct->eventState.beforeFirstTurn++;
-        if (TrySwitchInEjectPack(FIRST_TURN))
-=======
     case FIRST_TURN_FAINTED_BATTLERS:
         // Handle any Pokemon that fainted from starting hazards before transitioning to action selection
         if (HandleFaintedMonActions())
->>>>>>> e80ae569039786564381723fca22aac07afc3503
             return;
         gBattleStruct->eventState.faintedAction = 0;
         gBattleStruct->eventState.beforeFirstTurn++;
@@ -4357,11 +4263,7 @@ static void HandleTurnActionSelectionState(void)
                         gBattleStruct->moveTarget[battler] = gBattleResources->bufferB[battler][3];
                         return;
                     }
-<<<<<<< HEAD
-                    else if (GetConfig(B_ENCORE_TARGET) < GEN_5 && gDisableStructs[battler].encoredMove != MOVE_NONE)
-=======
                     else if (GetConfig(CONFIG_ENCORE_TARGET) < GEN_5 && gBattleMons[battler].volatiles.encoredMove != MOVE_NONE)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
                     {
                         gChosenMoveByBattler[battler] = gBattleMons[battler].volatiles.encoredMove;
                         gBattleStruct->chosenMovePositions[battler] = gBattleMons[battler].volatiles.encoredMovePos;

@@ -53,15 +53,14 @@
 #CONFLICT (content): Merge conflict in src/battle_controllers.c
 #CONFLICT (content): Merge conflict in src/battle_end_turn.c
 #CONFLICT (content): Merge conflict in src/battle_hold_effects.c
-
-WIP HERE
-!CONFLICT (content): Merge conflict in src/battle_main.c
-	>New Classes!
-
-DID YOU START ABOVE??
-CONFLICT (content): Merge conflict in src/battle_script_commands.c
-CONFLICT (content): Merge conflict in src/battle_tower.c
-CONFLICT (content): Merge conflict in src/battle_util.c
+#CONFLICT (content): Merge conflict in src/battle_main.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/battle_script_commands.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/battle_tower.c
+	>pv2 and partner battles overhauld
+#CONFLICT (content): Merge conflict in src/battle_util.c
+	>rhh with custom obedience
 CONFLICT (content): Merge conflict in src/bike.c
 CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
 CONFLICT (content): Merge conflict in src/data/items.h
@@ -96,3 +95,12 @@ CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
 
 >Aedes terra boulder puzzle
 >Ulysses Tauros functionality
+>Pv2 battles were overhauled
+	>First confirm your way works now
+	>Check MossdeepCity_SpaceCenter_2F Maxie battle for how it's done now
+	>I see the extern const script declarations were removed in src/battle_tower.c
+>Player et Partner vs 2 overhauled as well
+	>Aeneas partner battle
+>Level Caps
+
+
