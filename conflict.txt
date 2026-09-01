@@ -61,11 +61,18 @@
 	>pv2 and partner battles overhauld
 #CONFLICT (content): Merge conflict in src/battle_util.c
 	>rhh with custom obedience
-CONFLICT (content): Merge conflict in src/bike.c
-CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
-CONFLICT (content): Merge conflict in src/data/items.h
-CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
-CONFLICT (content): Merge conflict in src/debug.c
+?CONFLICT (content): Merge conflict in src/bike.c
+	>u8 direction -> enum Direction direction
+	>u8 collision -> enum Collision collision
+	>u8 -> enum AcroTransition
+#CONFLICT (content): Merge conflict in src/data/graphics/trainers.h
+	>just add custom trainers to bottom
+#CONFLICT (content): Merge conflict in src/data/items.h
+	>cosnt struct Item gItemsInto -> const struct ItemInfo gItemsInfo
+#CONFLICT (modify/delete): src/data/pokemon/teachable_learnsets.h deleted in e80ae569039786564381723fca22aac07afc3503 and modified in HEAD.  Version HEAD of src/data/pokemon/teachable_learnsets.h left in tree.
+	>removed upstream rhh
+#CONFLICT (content): Merge conflict in src/debug.c
+	>rhh
 CONFLICT (content): Merge conflict in src/event_object_movement.c
 CONFLICT (content): Merge conflict in src/field_control_avatar.c
 CONFLICT (content): Merge conflict in src/field_player_avatar.c
@@ -102,5 +109,6 @@ CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
 >Player et Partner vs 2 overhauled as well
 	>Aeneas partner battle
 >Level Caps
+>Bike (regular et pull tiles)
 
 

@@ -130,13 +130,13 @@ static bool8 ObjectEventExecSingleMovementAction(struct ObjectEvent *, struct Sp
 static bool32 UpdateMonMoveInPlace(struct ObjectEvent *, struct Sprite *);
 static void SetMovementDelay(struct Sprite *, s16);
 static bool8 WaitForMovementDelay(struct Sprite *);
-<<<<<<< HEAD
-static u32 GetCopyDirection(u8, u32, u32);
-=======
 static u8 GetCollisionInDirection(struct ObjectEvent *, enum Direction);
 static enum Direction GetCopyDirection(u8, enum Direction, enum Direction);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
-static void TryEnableObjectEventAnim(struct ObjectEvent *, struct Sprite *);
+
+// Cornix moved to header because it's used in src/field_player_avatar.c
+// to support aedes terra boulder push puzzles
+// static void TryEnableObjectEventAnim(struct ObjectEvent *, struct Sprite *);
+
 static void ObjectEventExecHeldMovementAction(struct ObjectEvent *, struct Sprite *);
 static void UpdateObjectEventSpriteAnimPause(struct ObjectEvent *, struct Sprite *);
 static bool8 IsCoordOutsideObjectEventMovementRange(struct ObjectEvent *, s16, s16);
