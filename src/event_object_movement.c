@@ -6650,10 +6650,6 @@ enum Collision GetCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 
     default:
         return collision;
     }
-<<<<<<< HEAD
-    return collision;
-=======
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 }
 
 u8 GetCollisionFlagsAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction direction)

@@ -130,26 +130,17 @@ static bool8 PlayerAnimIsMultiFrameStationaryAndStateNotTurning(void);
 static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
-<<<<<<< HEAD
-//Spin Tiles
-static void PlayerGoSpin(u8 direction);
+//Spin Tiles Begin
+static void PlayerGoSpin(enum Direction direction);
 static void PlayerApplyTileForcedMovement(u8 metatileBehavior);
-static void PlayerWalkSlow(u8 direction); // UNUSED in Expansion 1.11.1 BUT used by GHOUL SIDEWAYS STAIRS
+//Spin Tiles End
 
-static void PlayerWalkSlowStairs(u8 direction);
-
-static void PlayerRunSlow(u8 direction);
-static void PlayerRun(u8);
-static void PlayerNotOnBikeCollide(u8);
-static void PlayerNotOnBikeCollideWithFarawayIslandMew(u8);
-=======
 static void PlayerWalkSlowStairs(enum Direction direction);
 static void UNUSED PlayerWalkSlow(enum Direction direction);
 static void PlayerRunSlow(enum Direction direction);
 static void PlayerRun(enum Direction);
 static void PlayerNotOnBikeCollide(enum Direction);
 static void PlayerNotOnBikeCollideWithFarawayIslandMew(enum Direction);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 
 static void PlayCollisionSoundIfNotFacingWarp(enum Direction);
 
@@ -193,9 +184,11 @@ static void Task_StartSurfingInit(u8 taskId);
 static void Task_WaitStartSurfing(u8 taskId);
 static bool8 CanStopSurfing(s16, s16, u8);
 static bool8 CanStartSurfing(s16, s16, u8);
+// End Surfboard
 
-//Kustom Collisions
-static bool8 CheckSpecialObjectCollision(s16, s16, u8);
+// Special Collisions (script on collision)
+static bool8 CheckSpecialObjectCollision(s16, s16, enum Direction);
+// End Special Collisions
 
 // .rodata
 
@@ -724,7 +717,6 @@ static bool8 ForcedMovement_MuddySlope(void)
     }
 }
 
-<<<<<<< HEAD
 static bool8 ForcedMovement_SpinRight(void)
 {
     PlaySpinSound();
@@ -755,10 +747,7 @@ static void PlaySpinSound(void)
 }
 
 
-static void MovePlayerNotOnBike(u8 direction, u16 heldKeys)
-=======
 static void MovePlayerNotOnBike(enum Direction direction, u16 heldKeys)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     sPlayerNotOnBikeFuncs[CheckMovementInputNotOnBike(direction)](direction, heldKeys);
 }
@@ -905,13 +894,8 @@ static void PlayerNotOnBikeTurningInPlace(enum Direction direction, u16 heldKeys
 
 static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
 {
-<<<<<<< HEAD
-    u8 collision = CheckForPlayerAvatarCollision(direction);
-    
-=======
     enum Collision collision = CheckForPlayerAvatarCollision(direction);
 
->>>>>>> e80ae569039786564381723fca22aac07afc3503
     if (collision)
     {
         if (collision == COLLISION_LEDGE_JUMP)
@@ -1107,8 +1091,7 @@ static bool8 ShouldJumpLedge(s16 x, s16 y, enum Direction direction)
         return FALSE;
 }
 
-<<<<<<< HEAD
-static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
+static bool8 CheckSpecialObjectCollision(s16 x, s16 y, enum Direction direction)
 {
 	u8 objectEventId = GetObjectEventIdByXY(x, y);
 	const u8 *script;
@@ -1134,10 +1117,7 @@ static bool8 CheckSpecialObjectCollision(s16 x, s16 y, u8 direction)
 	return FALSE;
 }
 
-static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
-=======
 static bool8 TryPushBoulder(s16 x, s16 y, enum Direction direction)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     if (FlagGet(FLAG_SYS_USE_STRENGTH))
     {
@@ -1452,13 +1432,8 @@ static void PlayerWalkSlowStairs(enum Direction direction)
     PlayerSetAnimId(GetWalkSlowStairsMovementAction(direction), COPY_MOVE_WALK);
 }
 
-<<<<<<< HEAD
 // slow - UNUSED in expansion but used in CORNIX for Ghoul Sideways Stairs (I THINK)
-static void PlayerWalkSlow(u8 direction)
-=======
-// slow
-static void UNUSED PlayerWalkSlow(enum Direction direction)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
+static void PlayerWalkSlow(enum Direction direction)
 {
     PlayerSetAnimId(GetWalkSlowMovementAction(direction), COPY_MOVE_WALK);
 }
@@ -1479,12 +1454,7 @@ void PlayerWalkFast(enum Direction direction)
     PlayerSetAnimId(GetWalkFastMovementAction(direction), COPY_MOVE_WALK);
 }
 
-<<<<<<< HEAD
-// acro bike speed
-void PlayerRideWaterCurrent(u8 direction)
-=======
 void PlayerRideWaterCurrent(enum Direction direction)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     PlayerSetAnimId(GetRideWaterCurrentMovementAction(direction), COPY_MOVE_WALK);
 }

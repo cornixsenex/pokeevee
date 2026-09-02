@@ -2,12 +2,9 @@
 #include "debug.h"
 #include "malloc.h"
 #include "battle.h"
-<<<<<<< HEAD
 #include "battle_setup.h"
-#include "battle_tower.h"
-=======
 #include "battle_special.h"
->>>>>>> e80ae569039786564381723fca22aac07afc3503
+#include "battle_tower.h"
 #include "cable_club.h"
 #include "data.h"
 #include "daycare.h"
@@ -155,19 +152,17 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
-<<<<<<< HEAD
 
-//False Floor Functions
+//False Floor Functions Begin
 static void CheckIgnisMons3FFalseFloorFallWait(s16, s16);
 static void CheckIgnisMons2FFalseFloorFallWait(s16, s16);
 static void CheckTurrisSaltus5FFalseFloorFallWait(s16, s16);
 static void CheckTurrisSaltus4FFalseFloorFallWait(s16, s16);
 static void CheckTurrisSaltus3FFalseFloorFallWait(s16, s16);
+//False Floor Functions End
 
-=======
 static void CB2_ReturnToFieldWhileLearningMove(void);
 static void Task_ReturnToFieldWhileLearningMove(u8);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 #if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
@@ -573,13 +568,8 @@ void SpawnLinkPartnerObjectEvent(void)
         {-1,  0}
     };
     u8 myLinkPlayerNumber;
-<<<<<<< HEAD
-    u8 playerFacingDirection;
-    u16 linkSpriteId;
-=======
     enum Direction playerFacingDirection;
-    u8 linkSpriteId;
->>>>>>> e80ae569039786564381723fca22aac07afc3503
+    u16 linkSpriteId;
     u8 i;
 
     myLinkPlayerNumber = GetMultiplayerId();
@@ -1652,16 +1642,16 @@ u16 ScriptGetPartyMonSpecies(void)
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
 }
 
-<<<<<<< HEAD
+// Cornix Custom Func
 u16 ScriptGetPartyMonIsShiny(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_IS_SHINY, NULL);
-=======
+}
+
 u16 ScriptGetSelectedMonSpecies(void)
 {
     struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
     return GetBoxMonData(boxmon, MON_DATA_SPECIES_OR_EGG);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 }
 
 // Removed for Emerald

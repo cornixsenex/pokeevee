@@ -69,11 +69,8 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/moves.h"
-<<<<<<< HEAD
 #include "constants/metatile_behaviors.h" //CornixSenex
-=======
 #include "constants/party_menu.h"
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 #include "constants/regions.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -1214,12 +1211,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personal
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
 }
 
-<<<<<<< HEAD
-
-void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
-=======
 static bool32 IsValidGender(u32 gender)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     switch (gender)
     {
@@ -3892,18 +3884,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
 
                     case 2: // ITEM4_HEAL_HP
                     {
-<<<<<<< HEAD
-                        u32 currentHP = GetMonData(mon, MON_DATA_HP, NULL);
-                        u32 maxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
-                        if (isLevelUpItem && !didLevelUp && (effectFlags & (ITEM4_REVIVE >> 2)))
-                        {
-                            itemEffectParam++;
-                            break;
-                        }
-=======
                         u32 currentHP = GetMonData(mon, MON_DATA_HP);
                         u32 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
                         // Check use validity.
                         if ((effectFlags & (ITEM4_REVIVE >> 2) && currentHP != 0)
                               || (!(effectFlags & (ITEM4_REVIVE >> 2)) && currentHP == 0))
@@ -6915,7 +6897,6 @@ bool32 IsSpeciesOfType(u32 species, enum Type type)
     return FALSE;
 }
 
-<<<<<<< HEAD
 //Cornix Custom - Live Bait Tools
 bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
 {
@@ -6976,9 +6957,9 @@ bool32 PokemonCanBeUsedAsLiveBait(struct Pokemon *mon)
 	else
 		return FALSE;
 }
+// End Live Bait
 
 
-=======
 struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void)
 {
     struct BoxPokemon *boxmon;
@@ -7031,4 +7012,3 @@ void ChangePokemonNicknameWithCallback(void (*callback)(void))
     GetBoxMonData(boxMon, MON_DATA_NICKNAME, gStringVar2);
     DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, GetBoxMonData(boxMon, MON_DATA_SPECIES), GetBoxMonGender(boxMon), GetBoxMonData(boxMon, MON_DATA_PERSONALITY), callback);
 }
->>>>>>> e80ae569039786564381723fca22aac07afc3503

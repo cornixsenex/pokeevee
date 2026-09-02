@@ -73,21 +73,36 @@
 	>removed upstream rhh
 #CONFLICT (content): Merge conflict in src/debug.c
 	>rhh
-CONFLICT (content): Merge conflict in src/event_object_movement.c
-CONFLICT (content): Merge conflict in src/field_control_avatar.c
-CONFLICT (content): Merge conflict in src/field_player_avatar.c
-CONFLICT (content): Merge conflict in src/field_specials.c
-CONFLICT (content): Merge conflict in src/fishing.c
-CONFLICT (content): Merge conflict in src/generational_changes.c
-CONFLICT (content): Merge conflict in src/item.c
-CONFLICT (content): Merge conflict in src/main_menu.c
-CONFLICT (content): Merge conflict in src/match_call.c
-CONFLICT (content): Merge conflict in src/naming_screen.c
-CONFLICT (content): Merge conflict in src/party_menu.c
-CONFLICT (content): Merge conflict in src/pokemon.c
-CONFLICT (content): Merge conflict in src/pokemon_icon.c
-CONFLICT (content): Merge conflict in src/scrcmd.c
-CONFLICT (content): Merge conflict in src/strings.c
+#CONFLICT (content): Merge conflict in src/event_object_movement.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/field_control_avatar.c
+	>rhh (direction enum)
+#CONFLICT (content): Merge conflict in src/field_player_avatar.c
+	>direction enum
+#CONFLICT (content): Merge conflict in src/field_specials.c
+	>I've just hacked this file a lot so adding in the new changes triggered conflicts - nothing serious 
+#CONFLICT (content): Merge conflict in src/fishing.c
+	>gText NotNibble -> sText NotNibble
+#CONFLICT (content): Merge conflict in src/generational_changes.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/item.c
+	>rhh (extra whitespace)
+#CONFLICT (content): Merge conflict in src/main_menu.c
+	>Ignore female selection
+#CONFLICT (content): Merge conflict in src/match_call.c
+	>removed TRAINER_GABBY_AND_TY_1
+#CONFLICT (content): Merge conflict in src/naming_screen.c
+	>remove sText_EnterCode
+#CONFLICT (content): Merge conflict in src/party_menu.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/pokemon.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/pokemon_icon.c
+	>rhh
+#CONFLICT (content): Merge conflict in src/scrcmd.c
+	>rhh added new ScrCmd_setstartingstatus to bottom
+#CONFLICT (content): Merge conflict in src/strings.c
+	>I just deleted all the "extra" strings - looks like rhh moved the defines into the individual src files - if it builds all goody else might need to re-implement
 CONFLICT (content): Merge conflict in test/battle/ability/commander.c
 CONFLICT (content): Merge conflict in test/battle/ability/dazzling.c
 CONFLICT (content): Merge conflict in test/battle/move_effect/defog.c
@@ -110,5 +125,11 @@ CONFLICT (add/add): Merge conflict in tools/aif2pcm/aif2pcm
 	>Aeneas partner battle
 >Level Caps
 >Bike (regular et pull tiles)
-
-
+>auto run
+>tombstones
+>spin tiles
+>sideways stairs (and warps)
+>Ignore Female character selection
+>Live Bait et tools
+>removevarmoney
+>copymoney

@@ -76,22 +76,14 @@ static void UpdateFollowerStepCounter(void);
 #if OW_POISON_DAMAGE < GEN_5
 static bool8 UpdatePoisonStepCounter(void);
 #endif // OW_POISON_DAMAGE
-<<<<<<< HEAD
 static bool8 EnableAutoRun(void); //Apparently auto run isn't in rhh? IDK
-static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition * position, u32 metatileBehavior, u32 playerDirection);
-static void SetMsgSignPostAndVarFacing(u32 playerDirection);
-static void SetUpWalkIntoSignScript(const u8 *script, u32 playerDirection);
-static u32 GetFacingSignpostType(u16 metatileBehvaior, u32 direction);
-static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition * position);
-//Cornix Tombstones
-static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position);
-=======
 static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, enum Direction playerDirection);
 static void SetMsgSignPostAndVarFacing(enum Direction playerDirection);
 static void SetUpWalkIntoSignScript(const u8 *script, enum Direction playerDirection);
 static u32 GetFacingSignpostType(u16 metatileBehvaior, enum Direction direction);
 static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition *position);
->>>>>>> e80ae569039786564381723fca22aac07afc3503
+//Cornix Tombstones
+static const u8 *GetTombstoneScriptAtMapPosition(struct MapPosition *position);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -1620,7 +1612,6 @@ int SetCableClubWarp(void)
     return 0;
 }
 
-<<<<<<< HEAD
 //Begin Auto Run
 extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
@@ -1646,10 +1637,7 @@ static bool8 EnableAutoRun(void)
 }
 //End Auto Run
 
-static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, u32 playerDirection)
-=======
 static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, enum Direction playerDirection)
->>>>>>> e80ae569039786564381723fca22aac07afc3503
 {
     const u8 *script;
 
