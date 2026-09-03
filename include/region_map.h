@@ -123,7 +123,7 @@ void SetFlyDestination(struct RegionMap* regionMap);
 //Cornix Custom - Dynamic Maps
 bool32 IsRoute3RiverDelta(bool32 useWarpInfo);
 u32 GetDynamicMapSec_MareWWW(bool32 useWarpInfo);
-u32 GetDynamicMapSec_Route17(bool32 useWarpInfo);
+u32 GetDynamicMapSec_Route17CS(bool32 useWarpInfo);
 u32 GetDynamicMapSec_LakeIra(bool32 useWarpInfo);
 bool32 IsLakeIraSouthUpperDracoWest(bool32 useWarpInfo);
 bool32 IsSilvanWoodsNUpperDracoEast(bool32 useWarpInfo);

@@ -610,7 +610,7 @@ gSpecials::
 	def_special CheckSelectedMonValidSacrifice
 	def_special IsRoute3RiverDelta_F
 	def_special GetDynamicMapSec_MareWWW_F
-	def_special GetDynamicMapSec_Route17_F
+	def_special GetDynamicMapSec_Route17CS_F
 	def_special GetDynamicMapSec_LakeIra_F
 	def_special GetDynamicMapSec_SilvanWoods_F
 	def_special GetDynamicMapSec_MareS6_F

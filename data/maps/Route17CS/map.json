@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE17",
-  "name": "Route17",
-  "layout": "LAYOUT_ROUTE17",
+  "id": "MAP_ROUTE17CS",
+  "name": "Route17CS",
+  "layout": "LAYOUT_ROUTE17CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -51,7 +51,7 @@
   ],
   "object_events": [
     {
-      "local_id": "LOCALID_ROUTE17_BRIDGEBLOCK1",
+      "local_id": "LOCALID_ROUTE17CS_BRIDGEBLOCK1",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 20,
       "y": 163,
@@ -61,11 +61,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route17_Script_BridgeBlock",
+      "script": "Route17CS_Script_BridgeBlock",
       "flag": "NULL"
     },
     {
-      "local_id": "LOCALID_ROUTE17_BRIDGEBLOCK2",
+      "local_id": "LOCALID_ROUTE17CS_BRIDGEBLOCK2",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 21,
       "y": 163,
@@ -75,7 +75,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route17_Script_BridgeBlock",
+      "script": "Route17CS_Script_BridgeBlock",
       "flag": "NULL"
     },
     {
@@ -92,7 +92,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ROUTE17_ORESTES",
+      "local_id": "LOCALID_ROUTE17CS_ORESTES",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 8,
       "y": 123,
@@ -201,7 +201,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "6",
-      "script": "Route17_Script_Transition_LowerDracoWest"
+      "script": "Route17CS_Script_Transition_LowerDracoWest"
     },
     {
       "type": "trigger",
@@ -210,7 +210,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "6",
-      "script": "Route17_Script_Transition_LowerDracoWest"
+      "script": "Route17CS_Script_Transition_LowerDracoWest"
     },
     {
       "type": "trigger",
@@ -219,7 +219,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "8",
-      "script": "Route17_Script_Transition_LowerDracoEast"
+      "script": "Route17CS_Script_Transition_LowerDracoEast"
     },
     {
       "type": "trigger",
@@ -228,7 +228,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "8",
-      "script": "Route17_Script_Transition_LowerDracoEast"
+      "script": "Route17CS_Script_Transition_LowerDracoEast"
     },
     {
       "type": "trigger",
@@ -237,7 +237,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "6",
-      "script": "Route17_Script_Transition_UpperDracoEast"
+      "script": "Route17CS_Script_Transition_UpperDracoEast"
     },
     {
       "type": "trigger",
@@ -246,7 +246,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "6",
-      "script": "Route17_Script_Transition_UpperDracoEast"
+      "script": "Route17CS_Script_Transition_UpperDracoEast"
     },
     {
       "type": "trigger",
@@ -255,7 +255,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LowerRioDraco"
+      "script": "Route17CS_Script_Transition_LowerRioDraco"
     },
     {
       "type": "trigger",
@@ -264,7 +264,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LowerRioDraco"
+      "script": "Route17CS_Script_Transition_LowerRioDraco"
     },
     {
       "type": "trigger",
@@ -273,7 +273,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LowerRioDraco"
+      "script": "Route17CS_Script_Transition_LowerRioDraco"
     },
     {
       "type": "trigger",
@@ -282,7 +282,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LowerRioDraco"
+      "script": "Route17CS_Script_Transition_LowerRioDraco"
     },
     {
       "type": "trigger",
@@ -291,7 +291,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "5",
-      "script": "Route17_Script_Transition_LowerDracoEast"
+      "script": "Route17CS_Script_Transition_LowerDracoEast"
     },
     {
       "type": "trigger",
@@ -300,7 +300,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LagoDraco"
+      "script": "Route17CS_Script_Transition_LagoDraco"
     },
     {
       "type": "trigger",
@@ -309,7 +309,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LagoDraco"
+      "script": "Route17CS_Script_Transition_LagoDraco"
     },
     {
       "type": "trigger",
@@ -318,7 +318,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LagoDraco"
+      "script": "Route17CS_Script_Transition_LagoDraco"
     },
     {
       "type": "trigger",
@@ -327,7 +327,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LagoDraco"
+      "script": "Route17CS_Script_Transition_LagoDraco"
     },
     {
       "type": "trigger",
@@ -336,7 +336,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route17_Script_Transition_UpperRioDraco"
+      "script": "Route17CS_Script_Transition_UpperRioDraco"
     },
     {
       "type": "trigger",
@@ -345,7 +345,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route17_Script_Transition_UpperRioDraco"
+      "script": "Route17CS_Script_Transition_UpperRioDraco"
     },
     {
       "type": "trigger",
@@ -354,7 +354,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route17_Script_Transition_UpperRioDraco"
+      "script": "Route17CS_Script_Transition_UpperRioDraco"
     },
     {
       "type": "trigger",
@@ -363,7 +363,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route17_Script_Transition_UpperRioDraco"
+      "script": "Route17CS_Script_Transition_UpperRioDraco"
     },
     {
       "type": "trigger",
@@ -372,7 +372,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LagoDraco"
+      "script": "Route17CS_Script_Transition_LagoDraco"
     },
     {
       "type": "trigger",
@@ -381,7 +381,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LowerRioDraco"
+      "script": "Route17CS_Script_Transition_LowerRioDraco"
     },
     {
       "type": "trigger",
@@ -390,7 +390,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LowerRioDraco"
+      "script": "Route17CS_Script_Transition_LowerRioDraco"
     },
     {
       "type": "trigger",
@@ -399,7 +399,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "3",
-      "script": "Route17_Script_Transition_LowerRioDraco"
+      "script": "Route17CS_Script_Transition_LowerRioDraco"
     },
     {
       "type": "trigger",
@@ -408,7 +408,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "5",
-      "script": "Route17_Script_Transition_LowerDracoEast"
+      "script": "Route17CS_Script_Transition_LowerDracoEast"
     },
     {
       "type": "trigger",
@@ -417,7 +417,7 @@
       "elevation": 4,
       "var": "VAR_ORESTES_STATE",
       "var_value": "0",
-      "script": "Route17_Script_OrestesBridgeScene"
+      "script": "Route17CS_Script_OrestesBridgeScene"
     },
     {
       "type": "trigger",
@@ -426,7 +426,7 @@
       "elevation": 4,
       "var": "VAR_ORESTES_STATE",
       "var_value": "0",
-      "script": "Route17_Script_OrestesBridgeScene"
+      "script": "Route17CS_Script_OrestesBridgeScene"
     },
     {
       "type": "trigger",
@@ -435,7 +435,7 @@
       "elevation": 0,
       "var": "VAR_ORESTES_STATE",
       "var_value": "1",
-      "script": "Route17_Script_OrestesWalkScene"
+      "script": "Route17CS_Script_OrestesWalkScene"
     },
     {
       "type": "trigger",
@@ -444,7 +444,7 @@
       "elevation": 0,
       "var": "VAR_ORESTES_STATE",
       "var_value": "1",
-      "script": "Route17_Script_OrestesWalkScene"
+      "script": "Route17CS_Script_OrestesWalkScene"
     },
     {
       "type": "trigger",
@@ -453,7 +453,7 @@
       "elevation": 0,
       "var": "VAR_ORESTES_STATE",
       "var_value": "1",
-      "script": "Route17_Script_OrestesWalkScene"
+      "script": "Route17CS_Script_OrestesWalkScene"
     }
   ],
   "bg_events": []

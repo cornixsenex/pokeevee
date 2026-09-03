@@ -1650,10 +1650,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 			}
 
 		}
-		//Route17
+		//Route17CS
 		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
 		{
-			n = GetDynamicMapSec_Route17(FALSE);
+			n = GetDynamicMapSec_Route17CS(FALSE);
 			switch (n)
 			{
 				case 0:
@@ -2952,7 +2952,7 @@ u32 GetDynamicMapSec_MareWWW(bool32 useWarpInfo) //Obviously not cormplete atm
 		return 3;
 }
 
-u32 GetDynamicMapSec_Route17(bool32 useWarpInfo)
+u32 GetDynamicMapSec_Route17CS(bool32 useWarpInfo)
 {
 	//0: OOB
 	//1: Lacus Dracus

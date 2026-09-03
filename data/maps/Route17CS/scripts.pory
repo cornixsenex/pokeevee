@@ -12,11 +12,11 @@
 //8: Lower Draco West
 
 
-mapscripts Route17_MapScripts {
+mapscripts Route17CS_MapScripts {
 
 	MAP_SCRIPT_ON_TRANSITION {
 		//Handle Dymnamic Maps
-		specialvar (VAR_RESULT, GetDynamicMapSec_Route17_F)
+		specialvar (VAR_RESULT, GetDynamicMapSec_Route17CS_F)
 		switch (var(VAR_RESULT)) {
 			case 1:
 				setvar (VAR_TEMP_5, 1)
@@ -37,100 +37,100 @@ mapscripts Route17_MapScripts {
 		}
 		//Handle Bridge Block - Just clear if you have surfboard
 		if (var(VAR_SURFSCHOOL_STATE) > 4) {
-			call (Route17_Script_RemoveBridgeBlock)
+			call (Route17CS_Script_RemoveBridgeBlock)
 		}
 		//Setup Orestes Locations
 		//Orestes Bridge
 		if (var(VAR_ORESTES_STATE) == 0) {
-			call (Route17_Script_ShowOrestesBridge)
+			call (Route17CS_Script_ShowOrestesBridge)
 		}
 		//Orestes after Aedes Trivis
 		if (var(VAR_ORESTES_STATE) == 6) {
-			call (Route17_Script_ShowOrestesAfterAedesTrivis)
+			call (Route17CS_Script_ShowOrestesAfterAedesTrivis)
 		}
 	}
 
 	MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_ORESTES_STATE, 6: Route17_Script_OrestesAfterAedesTrivis
+		VAR_ORESTES_STATE, 6: Route17CS_Script_OrestesAfterAedesTrivis
 	]
 
 }
 
-script Route17_Script_ShowOrestesBridge {
-	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 25, 139)
-	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
+script Route17CS_Script_ShowOrestesBridge {
+	setobjectxyperm (LOCALID_ROUTE17CS_ORESTES, 25, 139)
+	setobjectmovementtype (LOCALID_ROUTE17CS_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
 
-script Route17_Script_ShowOrestesAfterAedesTrivis {
-	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 7, 52)
-	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
+script Route17CS_Script_ShowOrestesAfterAedesTrivis {
+	setobjectxyperm (LOCALID_ROUTE17CS_ORESTES, 7, 52)
+	setobjectmovementtype (LOCALID_ROUTE17CS_ORESTES, MOVEMENT_TYPE_FACE_DOWN)
 	return
 }
 
-script Route17_Script_RemoveBridgeBlock {
-	setobjectxyperm (LOCALID_ROUTE17_BRIDGEBLOCK1, 20, 156)
-	setobjectxyperm (LOCALID_ROUTE17_BRIDGEBLOCK2, 21, 156)
+script Route17CS_Script_RemoveBridgeBlock {
+	setobjectxyperm (LOCALID_ROUTE17CS_BRIDGEBLOCK1, 20, 156)
+	setobjectxyperm (LOCALID_ROUTE17CS_BRIDGEBLOCK2, 21, 156)
 	return
 }
 
-script Route17_Script_Transition_LagoDraco {
+script Route17CS_Script_Transition_LagoDraco {
 	setvar (VAR_TEMP_5, 1)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_Transition_LagoDracoShore {
+script Route17CS_Script_Transition_LagoDracoShore {
 	setvar (VAR_TEMP_5, 2)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_Transition_UpperRioDraco {
+script Route17CS_Script_Transition_UpperRioDraco {
 	setvar (VAR_TEMP_5, 3)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_Transition_LowerRioDraco {
+script Route17CS_Script_Transition_LowerRioDraco {
 	setvar (VAR_TEMP_5, 4)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_Transition_UpperDracoEast {
+script Route17CS_Script_Transition_UpperDracoEast {
 	setvar (VAR_TEMP_5, 5)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_Transition_LowerDracoEast {
+script Route17CS_Script_Transition_LowerDracoEast {
 	setvar (VAR_TEMP_5, 6)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_Transition_UpperDracoWest {
+script Route17CS_Script_Transition_UpperDracoWest {
 	setvar (VAR_TEMP_5, 7)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_Transition_LowerDracoWest {
+script Route17CS_Script_Transition_LowerDracoWest {
 	setvar (VAR_TEMP_5, 8)
 	special (TransitionMapMusic)
 	special (ShowMapNamePopup)
 }
 
-script Route17_Script_BridgeBlock {
+script Route17CS_Script_BridgeBlock {
 	if (var(VAR_SURFSCHOOL_STATE) > 4) {
-		msgbox (Route17_Text_Block2, MSGBOX_NPC)
+		msgbox (Route17CS_Text_Block2, MSGBOX_NPC)
 	} else {
-		msgbox (Route17_Text_Block1, MSGBOX_NPC)
+		msgbox (Route17CS_Text_Block1, MSGBOX_NPC)
 	}
 }
 
-script Route17_Script_OrestesBridgeScene {
+script Route17CS_Script_OrestesBridgeScene {
 	//setup
 	setflag  (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//alert player
@@ -138,17 +138,17 @@ script Route17_Script_OrestesBridgeScene {
 	waitmovement (0)
 	//Orestes monologue
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
-	msgbox (Route17_Text_OrestesBridge)
+	msgbox (Route17CS_Text_OrestesBridge)
 	destroy_field_pic (FIELD_PIC_ORESTES)
 	closemessage
 	//exit Orestes
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight4)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkRight4)
 	waitmovement (0)
 	//remove Orestes
-	removeobject (LOCALID_ROUTE17_ORESTES)
-	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 0, 0 )
-	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_ROUTE17_ORESTES)
+	removeobject (LOCALID_ROUTE17CS_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17CS_ORESTES, 0, 0 )
+	setobjectmovementtype (LOCALID_ROUTE17CS_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_ROUTE17CS_ORESTES)
 	//update var
 	setvar (VAR_ORESTES_STATE, 1)
 	//fin
@@ -156,29 +156,29 @@ script Route17_Script_OrestesBridgeScene {
 	end
 }
 
-script Route17_Script_OrestesWalkScene {
+script Route17CS_Script_OrestesWalkScene {
 	//setup
 	setflag  (FLAG_SAFE_FOLLOWER_MOVEMENT)
 	//alert player
 	applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	//setup orestes position
-	removeobject (LOCALID_ROUTE17_ORESTES)
-	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 2, 73)
-	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_FACE_UP)
-	addobject (LOCALID_ROUTE17_ORESTES)
+	removeobject (LOCALID_ROUTE17CS_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17CS_ORESTES, 2, 73)
+	setobjectmovementtype (LOCALID_ROUTE17CS_ORESTES, MOVEMENT_TYPE_FACE_UP)
+	addobject (LOCALID_ROUTE17CS_ORESTES)
 	//do orestes walk
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp7)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkUp7)
 	waitmovement (0)
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkLeft2)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkLeft2)
 	waitmovement (0)
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp5)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkUp5)
 	waitmovement (0)
 	//remove orestes
-	removeobject (LOCALID_ROUTE17_ORESTES)
-	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 0, 0 )
-	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_ROUTE17_ORESTES)
+	removeobject (LOCALID_ROUTE17CS_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17CS_ORESTES, 0, 0 )
+	setobjectmovementtype (LOCALID_ROUTE17CS_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_ROUTE17CS_ORESTES)
 	//update var
 	setvar (VAR_ORESTES_STATE, 2)
 	//fin	
@@ -186,35 +186,35 @@ script Route17_Script_OrestesWalkScene {
 	end
 }
 
-script Route17_Script_OrestesAfterAedesTrivis {
+script Route17CS_Script_OrestesAfterAedesTrivis {
 	lockall
 	//alert O
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_ExclamationMark)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	//O to player
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkUp2)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkUp2)
 	waitmovement (0)
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkLeft)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkLeft)
 	waitmovement (0)
 	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
 	waitmovement (0)
 	//O: You heard SK my father must be avenged but I can't be the one to do it. I need you player to be my hands. Trust me my father agamemnon is wealth he's the head of the commerce guild he will reward you. Meet me in Aldeon Town later I have a plan.
     load_field_pic (FIELD_PIC_ORESTES, 190, 98)
-	msgbox (Route17_Text_OrestesAfterAedesTrivis)
+	msgbox (Route17CS_Text_OrestesAfterAedesTrivis)
 	destroy_field_pic (FIELD_PIC_ORESTES)
 	closemessage
 	//exit O
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkDown3)
 	waitmovement (0)
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkRight3)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkRight3)
 	waitmovement (0)
-	applymovement (LOCALID_ROUTE17_ORESTES, Common_Movement_WalkDown3)
+	applymovement (LOCALID_ROUTE17CS_ORESTES, Common_Movement_WalkDown3)
 	waitmovement (0)
 	//remove O
-	removeobject (LOCALID_ROUTE17_ORESTES)
-	setobjectxyperm (LOCALID_ROUTE17_ORESTES, 0, 0)
-	setobjectmovementtype (LOCALID_ROUTE17_ORESTES, MOVEMENT_TYPE_INVISIBLE)
-	addobject (LOCALID_ROUTE17_ORESTES)
+	removeobject (LOCALID_ROUTE17CS_ORESTES)
+	setobjectxyperm (LOCALID_ROUTE17CS_ORESTES, 0, 0)
+	setobjectmovementtype (LOCALID_ROUTE17CS_ORESTES, MOVEMENT_TYPE_INVISIBLE)
+	addobject (LOCALID_ROUTE17CS_ORESTES)
 	//setvars
 	setvar (VAR_ORESTES_STATE, 7)
 	//fin
@@ -222,7 +222,7 @@ script Route17_Script_OrestesAfterAedesTrivis {
 	end
 }
 
-text Route17_Text_Block1 {
+text Route17CS_Text_Block1 {
 	format("This is the Via Fluvia which leads "
 			"to Lacus Drako and the town Salix"
 			"but it is impossible to use now."
@@ -230,7 +230,7 @@ text Route17_Text_Block1 {
 			"and it will be some time before they're fixed.")
 }
 
-text Route17_Text_Block2 {
+text Route17CS_Text_Block2 {
 	format("We managed to repair the lower bridge"
 			"but the second one, up by Dragon Lake,"
 			"is still broken. Be careful of the road"
@@ -270,7 +270,7 @@ text Route17_Text_Block2 {
 //Then that's just what I'll do! I'll go upstream to the ancient trivis temple and ask the oracle for advice.
 //If there is no God then it doesn't matter what I do but if He does exist then I must do as I"m instructed 
 //Therefore whether I believe or not does not matter the only thing to do is go to the temple and seek guidance for my present situation
-text Route17_Text_OrestesBridge {
+text Route17CS_Text_OrestesBridge {
 	format("Familiar Drake, unchanged since happy days"
 			"long gone, transformed by my present grief,"
 			"do you still recognize Orestes, or"
@@ -308,7 +308,7 @@ text Route17_Text_OrestesBridge {
 			"Aedes Trivis, his words will set me free.")
 }
 
-text Route17_Text_OrestesAfterAedesTrivis {
+text Route17CS_Text_OrestesAfterAedesTrivis {
 	format("Hey {PLAYER}, sorry I had to wait outside."
 			"Did you hear what that talking Slowking said?"
 			"I need someone to help me save my dad"

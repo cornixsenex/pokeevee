@@ -1,5 +1,80 @@
-CONFLICT (modify/delete): include/constants/script_commands.h deleted in 2d17ad27f921ebda03ad35e8dd00d40b6ac29114 and modified in HEAD.  Version HEAD of include/constants/script_commands.h left in tree.
-	>just deleted check compile
-!CONFLICT (content): Merge conflict in src/field_player_avatar.c
-	>check it compiles extremely ugly line
-	>static const struct __atribute__((packed)) lmfao just copy rhh if no compile
+NOTE: It's possible there are more issues. General work flow is first rename the maps (known issue) then rename all the frlg pics / event objects (I think it's easiest to do it this way, rename them, then port in the rhh frlg versions, then if you want delete the extra cornix customs if need be etc)
+Then try to merge 1.15.0 again BUT be prepared there may be another "large" issue that needs fixing possibly even back on main again. Tilesets or something I haven't considered yet etc
+
+# New Branch rename-maps
+# Rename all 17 maps
+# Merge onto main
+# Test build
+# commit upstream
+
+# New branch rename-trainers
+# Rename all 21 object events (Good news! Trainer Pics are appended with _FRLG)
+# Merge onto main
+# Test build
+# commmit upstream
+
+> Rename maps (Routes 1 - 17)
+> Just go Route1 -> Route1CS
+Route1
+Route2
+Route3
+Route4
+Route5
+Route6
+Route7
+Route8
+Route9
+Route10
+Route11
+Route12
+Route13
+Route14
+Route15
+Route16
+Route17
+
+>data/maps/RouteX
+>RouteX_Script_Name (map scripts)
+>LAYOUT_ROUTEX
+>RouteX
+>ROUTEX
+
+>rename data/maps/RouteX -> RouteXCS
+>rename map scripts
+>rename map.json
+>data/layouts/RouteX/ -> RouteXCS/
+>data/layouts/layouts.json
+>data/maps/map_grousp.json
+>data/event_scripts.s
+>src/data/region_map_region_map_sections.json
+>src/map_name_popup.c
+>dynamic maps
+>porymap.user.cfg (Should not have the maps open lol)
+>Connector map's map.json (grep ROUTEX)
+>MAP_X
+
+
+> Handle FRLG trainers being merged in
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/agatha.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/biker.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/bill.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/blaine.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/blue.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/brock.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/bruno.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/channeler.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/chef.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/giovanni.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/lance.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/lorelei.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/lt_surge.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/misty.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/old_man_lying_down.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/policeman.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/prof_oak.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocker.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocket_f.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/rocket_m.png
+CONFLICT (add/add): Merge conflict in graphics/object_events/pics/people/sabrina.png
+
+

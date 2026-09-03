@@ -6592,9 +6592,9 @@ u32 GetDynamicMapSec_MareWWW_F(void)
     return GetDynamicMapSec_MareWWW(FALSE);
 }
 
-u32 GetDynamicMapSec_Route17_F(void)
+u32 GetDynamicMapSec_Route17CS_F(void)
 {
-    return GetDynamicMapSec_Route17(FALSE);
+    return GetDynamicMapSec_Route17CS(FALSE);
 }
 
 u32 GetDynamicMapSec_LakeIra_F(void)

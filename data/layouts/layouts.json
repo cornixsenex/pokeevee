@@ -4962,14 +4962,14 @@
       "blockdata_filepath": "data/layouts/MareWW/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE17",
-      "name": "Route17_Layout",
+      "id": "LAYOUT_ROUTE17CS",
+      "name": "Route17CS_Layout",
       "width": 40,
       "height": 172,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
-      "border_filepath": "data/layouts/Route17/border.bin",
-      "blockdata_filepath": "data/layouts/Route17/map.bin"
+      "border_filepath": "data/layouts/Route17CS/border.bin",
+      "blockdata_filepath": "data/layouts/Route17CS/map.bin"
     },
     {
       "id": "LAYOUT_WILLOW",

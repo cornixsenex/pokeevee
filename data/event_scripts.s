@@ -1234,7 +1234,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route16/scripts.inc"
 	.include "data/maps/MareW/scripts.inc"
 	.include "data/maps/MareWW/scripts.inc"
-	.include "data/maps/Route17/scripts.inc"
+	.include "data/maps/Route17CS/scripts.inc"
 	.include "data/maps/Willow/scripts.inc"
 	.include "data/maps/WillowEast/scripts.inc"
 	.include "data/maps/Aldeon_Leaf_House/scripts.inc"

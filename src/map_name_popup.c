@@ -793,7 +793,7 @@ static void LoadMapNamePopUpWindowBg(void)
 		//Route 17
 		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
 		{
-			n = GetDynamicMapSec_Route17(FALSE);
+			n = GetDynamicMapSec_Route17CS(FALSE);
 			switch (n)
 			{
 				case 0:

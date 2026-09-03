@@ -966,7 +966,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 				if ( x > 54 && x < 83 && y < 0)
 					ShowMapNamePopup();
 			}
-			//SilvanWoods - From Route3 OR 1 square from Route17
+			//SilvanWoods - From Route3 OR 1 square from Route17CS
 			if (destMapNum == MAP_NUM(MAP_SILVAN_WOODS) && destMapGroup == MAP_GROUP(MAP_SILVAN_WOODS))
 			{
 				if
@@ -974,7 +974,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 					//From Route3 - EXCLUDE WESTERN TRANSITION
 					//(y > 66 && x > 11 && x < 19) ||
 					(y > 66) ||
-					//ONE SQUARE from Route17 :/
+					//ONE SQUARE from Route17CS :/
 					(x < 1 && y == 17)
 					)
 						ShowMapNamePopup();
@@ -1001,7 +1001,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 				if (x < 1 && y > 85 && y < 94)
 					ShowMapNamePopup();
 			}
-			//Route17 - Handle ONE SQUARE from Silvan Woods :/
+			//Route17CS - Handle ONE SQUARE from Silvan Woods :/
 			if (destMapNum == MAP_NUM(MAP_ROUTE17) && destMapGroup == MAP_GROUP(MAP_ROUTE17) && y == 163)
 				ShowMapNamePopup();
 			//Route6 - Handle from Route7
@@ -4183,10 +4183,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 				return MAPSEC_DYNAMIC;
 		}
 	}
-	//Route17 - 8 different locations :/
+	//Route17CS - 8 different locations :/
 	if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
 	{
-		n = GetDynamicMapSec_Route17(FALSE);
+		n = GetDynamicMapSec_Route17CS(FALSE);
 		switch (n) {
 			case 0:
 				return MAPSEC_DYNAMIC;
@@ -4968,10 +4968,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 				return MUS_CANTINA;
 		}
 	}
-	//Route17 - 8 different locations :/
+	//Route17CS - 8 different locations :/
 	if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
 	{
-		n = GetDynamicMapSec_Route17(useWarpInfo);
+		n = GetDynamicMapSec_Route17CS(useWarpInfo);
 		switch (n) {
 			//fallback
 			case 0:
