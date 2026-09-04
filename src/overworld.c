@@ -1028,8 +1028,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 				if (x < 2 && y < 17)
 					ShowMapNamePopup();
 			}
-			//Route16 - Handle from Peccatum
-			if (destMapNum == MAP_NUM(MAP_ROUTE16) && destMapGroup == MAP_GROUP(MAP_ROUTE16))
+			//Route16CS - Handle from Peccatum
+			if (destMapNum == MAP_NUM(MAP_ROUTE16CS) && destMapGroup == MAP_GROUP(MAP_ROUTE16CS))
 			{
 				if (x > 45 && y < 17)
 					ShowMapNamePopup();
@@ -4470,10 +4470,10 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		else 
 			return MAPSEC_MONTES_VIGILIAE;
 	}
-	//Route16 - Venator Mons or Cacnorum
-	if (mapGroup == MAP_GROUP(MAP_ROUTE16) && mapNum == MAP_NUM(MAP_ROUTE16)) 
+	//Route16CS - Venator Mons or Cacnorum
+	if (mapGroup == MAP_GROUP(MAP_ROUTE16CS) && mapNum == MAP_NUM(MAP_ROUTE16CS)) 
 	{
-		if (IsRoute16VenatorMons(FALSE))
+		if (IsRoute16CSVenatorMons(FALSE))
 			return MAPSEC_VENATOR_MONS;
 		else 
 			return MAPSEC_D_COLUMNARIS;
@@ -5308,10 +5308,10 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		else 
 			return MUS_B_FRONTIER;
 	}
-	//Route16 - Venator Mons or Cacnorum 
-	if (mapGroup == MAP_GROUP(MAP_ROUTE16) && mapNum == MAP_NUM(MAP_ROUTE16)) 
+	//Route16CS - Venator Mons or Cacnorum 
+	if (mapGroup == MAP_GROUP(MAP_ROUTE16CS) && mapNum == MAP_NUM(MAP_ROUTE16CS)) 
 	{
-		if (IsRoute16VenatorMons(useWarpInfo))
+		if (IsRoute16CSVenatorMons(useWarpInfo))
 			return MUS_ROUTE119;
 		else 
 			return MUS_DESERT;

@@ -1231,7 +1231,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Phoenix/scripts.inc"
 	.include "data/maps/Route15/scripts.inc"
 	.include "data/maps/Vegas/scripts.inc"
-	.include "data/maps/Route16/scripts.inc"
+	.include "data/maps/Route16CS/scripts.inc"
 	.include "data/maps/MareW/scripts.inc"
 	.include "data/maps/MareWW/scripts.inc"
 	.include "data/maps/Route17CS/scripts.inc"

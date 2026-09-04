@@ -624,7 +624,7 @@ gSpecials::
 	def_special GetDynamicMapSec_Route7_F
 	def_special TransitionMapMusic
     def_special DoPeccadumTruckScene
-	def_special IsRoute16VenatorMons_F
+	def_special IsRoute16CSVenatorMons_F
 	def_special BlueRouletteSpin
 	def_special GetDynamicMapSec_Tucson_F
     def_special IsPyramidsDCactorum_F

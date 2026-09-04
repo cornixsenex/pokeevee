@@ -6652,9 +6652,9 @@ u32 GetDynamicMapSec_Route7_F(void)
     return GetDynamicMapSec_Route7(FALSE);
 }
 
-bool32 IsRoute16VenatorMons_F(void)
+bool32 IsRoute16CSVenatorMons_F(void)
 {
-    return IsRoute16VenatorMons(FALSE);
+    return IsRoute16CSVenatorMons(FALSE);
 }
 
 u32 GetDynamicMapSec_Tucson_F(void)

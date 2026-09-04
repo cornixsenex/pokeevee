@@ -1955,10 +1955,10 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
             else
                 return StringCopy(dest, COMPOUND_STRING("MONTES VIGILIAE"));
         }
-		//Route16 - Venator Mons or D. Columnaris 
-		if (mapGroup == MAP_GROUP(MAP_ROUTE16) && mapNum == MAP_NUM(MAP_ROUTE16))
+		//Route16CS - Venator Mons or D. Columnaris 
+		if (mapGroup == MAP_GROUP(MAP_ROUTE16CS) && mapNum == MAP_NUM(MAP_ROUTE16CS))
         {
-            if (IsRoute16VenatorMons(FALSE))
+            if (IsRoute16CSVenatorMons(FALSE))
                 return StringCopy(dest, COMPOUND_STRING("VENATOR MONS"));
             else
                 return StringCopy(dest, COMPOUND_STRING("D. COLVMNARIS"));
@@ -4403,7 +4403,7 @@ bool32 IsRoute9ViaSaxosa(bool32 useWarpInfo)
         return TRUE;
 }
 
-bool32 IsRoute16VenatorMons(bool32 useWarpInfo)
+bool32 IsRoute16CSVenatorMons(bool32 useWarpInfo)
 {
    	
     s16 x, y;

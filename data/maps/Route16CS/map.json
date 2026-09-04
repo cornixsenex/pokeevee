@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE16",
-  "name": "Route16",
-  "layout": "LAYOUT_ROUTE16",
+  "id": "MAP_ROUTE16CS",
+  "name": "Route16CS",
+  "layout": "LAYOUT_ROUTE16CS",
   "music": "MUS_DYNAMIC",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
@@ -37,7 +37,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route16_Script_VenatorMonsTransition"
+      "script": "Route16CS_Script_VenatorMonsTransition"
     },
     {
       "type": "trigger",
@@ -46,7 +46,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "2",
-      "script": "Route16_Script_VenatorMonsTransition"
+      "script": "Route16CS_Script_VenatorMonsTransition"
     },
     {
       "type": "trigger",
@@ -55,7 +55,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route16_Script_CacnorumTransition"
+      "script": "Route16CS_Script_CacnorumTransition"
     },
     {
       "type": "trigger",
@@ -64,7 +64,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_5",
       "var_value": "1",
-      "script": "Route16_Script_CacnorumTransition"
+      "script": "Route16CS_Script_CacnorumTransition"
     }
   ],
   "bg_events": []
