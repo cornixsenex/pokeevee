@@ -2457,7 +2457,7 @@ static void Task_WaitStopSurfing(u8 taskId)
 			)
 			ShowMapNamePopup();
             TransitionMapMusic();
-		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17)) 
+		if (mapGroup == MAP_GROUP(MAP_ROUTE17CS) && mapNum == MAP_NUM(MAP_ROUTE17CS)) 
 		{
 			//Update VAR_TEMP_5
 			mapSection = GetDynamicMapSec_Route17CS(FALSE);
@@ -2727,7 +2727,7 @@ static void Task_WaitStartSurfing(u8 taskId)
 			ShowMapNamePopup();
             TransitionMapMusic();
 		//Route17CS
-		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17)) 
+		if (mapGroup == MAP_GROUP(MAP_ROUTE17CS) && mapNum == MAP_NUM(MAP_ROUTE17CS)) 
 		{
 			//Update VAR_TEMP_5
 			mapSection = GetDynamicMapSec_Route17CS(FALSE);

@@ -31,13 +31,14 @@ Route13
 Route14
 Route15
 Route16
-Route17
+#Route17
 
 >data/maps/RouteX
 >RouteX_Script_Name (map scripts)
 >LAYOUT_ROUTEX
 >RouteX
 >ROUTEX
+>ROUTE_X
 
 >rename data/maps/RouteX -> RouteXCS
 >rename map scripts
@@ -46,12 +47,12 @@ Route17
 >data/layouts/layouts.json
 >data/maps/map_grousp.json
 >data/event_scripts.s
->src/data/region_map_region_map_sections.json
 >src/map_name_popup.c
 >dynamic maps
 >porymap.user.cfg (Should not have the maps open lol)
 >Connector map's map.json (grep ROUTEX)
->MAP_X
+src/map_name_popup.c
+src/data/region_map_region_map_sections.json
 
 
 > Handle FRLG trainers being merged in

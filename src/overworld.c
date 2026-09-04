@@ -1002,7 +1002,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 					ShowMapNamePopup();
 			}
 			//Route17CS - Handle ONE SQUARE from Silvan Woods :/
-			if (destMapNum == MAP_NUM(MAP_ROUTE17) && destMapGroup == MAP_GROUP(MAP_ROUTE17) && y == 163)
+			if (destMapNum == MAP_NUM(MAP_ROUTE17CS) && destMapGroup == MAP_GROUP(MAP_ROUTE17CS) && y == 163)
 				ShowMapNamePopup();
 			//Route6 - Handle from Route7
 			if (destMapNum == MAP_NUM(MAP_ROUTE6) && destMapGroup == MAP_GROUP(MAP_ROUTE6) && x > 70)
@@ -4184,7 +4184,7 @@ u32 DetermineDynamicMapsecValue(void) //CornixSenex Custom to accomodate custom 
 		}
 	}
 	//Route17CS - 8 different locations :/
-	if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
+	if (mapGroup == MAP_GROUP(MAP_ROUTE17CS) && mapNum == MAP_NUM(MAP_ROUTE17CS))
 	{
 		n = GetDynamicMapSec_Route17CS(FALSE);
 		switch (n) {
@@ -4969,7 +4969,7 @@ u16 GetDynamicMusic(bool32 useWarpInfo)
 		}
 	}
 	//Route17CS - 8 different locations :/
-	if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
+	if (mapGroup == MAP_GROUP(MAP_ROUTE17CS) && mapNum == MAP_NUM(MAP_ROUTE17CS))
 	{
 		n = GetDynamicMapSec_Route17CS(useWarpInfo);
 		switch (n) {

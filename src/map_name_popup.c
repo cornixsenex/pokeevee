@@ -207,7 +207,7 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - 1] =
 	[MAPSEC_ROUTE_14] =                     MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_ROUTE_15] =                     MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_ROUTE_16] =                     MAPPOPUP_THEME_BRICK, 
-	[MAPSEC_ROUTE_17] =                     MAPPOPUP_THEME_BRICK, 
+	[MAPSEC_ROUTE_17CS] =                   MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_ROUTE_18] =                     MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_ROUTE_19] =                     MAPPOPUP_THEME_BRICK, 
 	[MAPSEC_ROUTE_20] =                     MAPPOPUP_THEME_BRICK, 
@@ -791,7 +791,7 @@ static void LoadMapNamePopUpWindowBg(void)
 				regionMapSectionId = MAPSEC_DYNAMIC;
 		}
 		//Route 17
-		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE17CS) && mapNum == MAP_NUM(MAP_ROUTE17CS))
 		{
 			n = GetDynamicMapSec_Route17CS(FALSE);
 			switch (n)

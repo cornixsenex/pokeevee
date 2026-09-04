@@ -1651,7 +1651,7 @@ u8 *GetMapNameGeneric(u8 *dest, mapsec_u16_t mapSecId)
 
 		}
 		//Route17CS
-		if (mapGroup == MAP_GROUP(MAP_ROUTE17) && mapNum == MAP_NUM(MAP_ROUTE17))
+		if (mapGroup == MAP_GROUP(MAP_ROUTE17CS) && mapNum == MAP_NUM(MAP_ROUTE17CS))
 		{
 			n = GetDynamicMapSec_Route17CS(FALSE);
 			switch (n)
