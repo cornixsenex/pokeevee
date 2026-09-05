@@ -1229,7 +1229,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/BikeRouteNWS/scripts.inc"
 	.include "data/maps/Pyramids/scripts.inc"
 	.include "data/maps/Phoenix/scripts.inc"
-	.include "data/maps/Route15/scripts.inc"
+	.include "data/maps/Route15CS/scripts.inc"
 	.include "data/maps/Vegas/scripts.inc"
 	.include "data/maps/Route16CS/scripts.inc"
 	.include "data/maps/MareW/scripts.inc"

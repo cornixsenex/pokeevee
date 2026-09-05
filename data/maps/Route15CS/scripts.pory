@@ -3,23 +3,23 @@
 //VAR_TEMP_4: Which direction to move during block
 //VAR_TEMP_5: DYNAMIC MAP
 
-mapscripts Route15_MapScripts {
+mapscripts Route15CS_MapScripts {
 
 	MAP_SCRIPT_ON_LOAD {
 		if (flag(FLAG_ROUTE15_DESERTCAVE_OPEN)) {
-			call (Route15_EventScript_ShowCaveDoor)
+			call (Route15CS_EventScript_ShowCaveDoor)
 		}
 	}
 
 }
 
-script Route15_EventScript_ShowCaveDoor {
+script Route15CS_EventScript_ShowCaveDoor {
 	setmetatile (43, 38, METATILE_General_CaveEntrance_Bottom, 0)
 	setmetatile (43, 37, METATILE_General_CaveEntrance_Top, 1)
 	end
 }
 
-script Route15_EventScript_DesertTempleWarp {
+script Route15CS_EventScript_DesertTempleWarp {
 	lockall
 	delay (20)
 	applymovement (OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
@@ -33,28 +33,28 @@ script Route15_EventScript_DesertTempleWarp {
 	end
 }
 
-script Route15_Script_SunTrigger {
+script Route15CS_Script_SunTrigger {
     setweather (WEATHER_SUNNY)
     doweather
     end
 }
 
-script Route15_Script_SandstormTriggerUp {
+script Route15CS_Script_SandstormTriggerUp {
     setvar (VAR_TEMP_4, 2)
-    call (Route15_Script_SandstormTrigger)
+    call (Route15CS_Script_SandstormTrigger)
 }
 
-script Route15_Script_SandstormTriggerLeft {
+script Route15CS_Script_SandstormTriggerLeft {
     setvar (VAR_TEMP_4, 1)
-    call (Route15_Script_SandstormTrigger)
+    call (Route15CS_Script_SandstormTrigger)
 }
 
-script Route15_Script_SandstormTriggerRight {
+script Route15CS_Script_SandstormTriggerRight {
     setvar (VAR_TEMP_4, 3)
-    call (Route15_Script_SandstormTrigger)
+    call (Route15CS_Script_SandstormTrigger)
 }
 
-script Route15_Script_SandstormTrigger {
+script Route15CS_Script_SandstormTrigger {
     setweather (WEATHER_SANDSTORM)
     doweather
     checkitem (ITEM_GO_GOGGLES)

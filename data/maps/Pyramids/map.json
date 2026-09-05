@@ -149,7 +149,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
+      "script": "Route15CS_Script_SandstormTriggerUp"
     },
     {
       "type": "trigger",
@@ -158,7 +158,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
+      "script": "Route15CS_Script_SandstormTriggerUp"
     },
     {
       "type": "trigger",
@@ -167,7 +167,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
+      "script": "Route15CS_Script_SandstormTriggerUp"
     },
     {
       "type": "trigger",
@@ -176,7 +176,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerLeft"
+      "script": "Route15CS_Script_SandstormTriggerLeft"
     },
     {
       "type": "trigger",
@@ -185,7 +185,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
+      "script": "Route15CS_Script_SandstormTriggerUp"
     },
     {
       "type": "trigger",
@@ -194,7 +194,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerRight"
+      "script": "Route15CS_Script_SandstormTriggerRight"
     },
     {
       "type": "trigger",
@@ -203,7 +203,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerRight"
+      "script": "Route15CS_Script_SandstormTriggerRight"
     },
     {
       "type": "trigger",
@@ -212,7 +212,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerLeft"
+      "script": "Route15CS_Script_SandstormTriggerLeft"
     },
     {
       "type": "trigger",
@@ -221,7 +221,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerLeft"
+      "script": "Route15CS_Script_SandstormTriggerLeft"
     },
     {
       "type": "trigger",
@@ -230,7 +230,7 @@
       "elevation": 0,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
-      "script": "Route15_Script_SunTrigger"
+      "script": "Route15CS_Script_SunTrigger"
     },
     {
       "type": "trigger",
@@ -239,7 +239,7 @@
       "elevation": 0,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
-      "script": "Route15_Script_SunTrigger"
+      "script": "Route15CS_Script_SunTrigger"
     },
     {
       "type": "trigger",
@@ -248,7 +248,7 @@
       "elevation": 0,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
-      "script": "Route15_Script_SunTrigger"
+      "script": "Route15CS_Script_SunTrigger"
     },
     {
       "type": "trigger",
@@ -257,7 +257,7 @@
       "elevation": 0,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
-      "script": "Route15_Script_SunTrigger"
+      "script": "Route15CS_Script_SunTrigger"
     },
     {
       "type": "trigger",
@@ -266,7 +266,7 @@
       "elevation": 0,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
-      "script": "Route15_Script_SunTrigger"
+      "script": "Route15CS_Script_SunTrigger"
     },
     {
       "type": "trigger",
@@ -275,7 +275,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "Route15_Script_SandstormTriggerUp"
+      "script": "Route15CS_Script_SandstormTriggerUp"
     }
   ],
   "bg_events": []

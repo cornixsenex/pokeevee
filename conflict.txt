@@ -29,7 +29,7 @@ Route11
 Route12
 Route13
 Route14
-Route15
+#Route15
 #Route16
 #Route17
 
@@ -38,6 +38,7 @@ Route15
 >LAYOUT_ROUTEX
 >RouteX
 >ROUTEX
+>MAP_ROUTEX
 
 >NOTE DO not need to update the MAPSEC_ROUTE_X because those are placehodlers for the FRLG maps
 (Also note the MAPSEC_COUNT may need to be expanded or smth idk could be an issue during merge)
@@ -45,8 +46,7 @@ Route15
 >rename directory data/maps/RouteX -> data/maps/RouteXCS
 >data/maps/RouteX/script.pory
 >data/maps/RouteX/map.json
->data/maps/map_grousp.json
->include/constants/layouts.h
+>data/maps/map_groups.json
 >rename directory data/layouts/RouteX/ -> data/layoutsRouteXCS/
 >data/layouts/layouts.json
 >data/event_scripts.s

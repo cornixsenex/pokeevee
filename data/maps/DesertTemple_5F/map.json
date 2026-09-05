@@ -54,14 +54,14 @@
       "x": 7,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE15",
+      "dest_map": "MAP_ROUTE15CS",
       "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE15",
+      "dest_map": "MAP_ROUTE15CS",
       "dest_warp_id": "0"
     }
   ],
